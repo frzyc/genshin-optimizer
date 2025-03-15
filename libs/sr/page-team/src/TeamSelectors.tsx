@@ -36,7 +36,7 @@ const TeammateSelector = memo(function TeammateSelector({
     if (cKey === '') {
       database.teams.set(
         teamId,
-        (team) => (team.teamMetadata[teamMetadataIndex] = undefined)
+        (team) => (team.teamMetadata[teamMetadataIndex] = undefined),
       )
       return
     }
@@ -46,7 +46,7 @@ const TeammateSelector = memo(function TeammateSelector({
 
     // Check if character is already in the team.
     const existingIndex = team.teamMetadata.findIndex(
-      (teammateDatum) => teammateDatum?.characterKey === cKey
+      (teammateDatum) => teammateDatum?.characterKey === cKey,
     )
     // If not exists, insert it
     if (existingIndex === -1) {

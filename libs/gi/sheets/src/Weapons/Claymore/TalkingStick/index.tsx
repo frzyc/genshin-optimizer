@@ -16,18 +16,18 @@ const [condAffectedPyroPath, condAffectedPyro] = cond(key, 'affectedPyro')
 const atk_ = equal(
   condAffectedPyro,
   'on',
-  subscript(input.weapon.refinement, atk_arr)
+  subscript(input.weapon.refinement, atk_arr),
 )
 
 const [condAffectedOtherPath, condAffectedOther] = cond(key, 'affectedOther')
 const all_ele_dmg_ = equal(
   condAffectedOther,
   'on',
-  subscript(input.weapon.refinement, all_ele_dmg_arr)
+  subscript(input.weapon.refinement, all_ele_dmg_arr),
 )
 const all_ele_dmg_map = objKeyMap(
   allElementKeys.map((ele) => `${ele}_dmg_`),
-  () => ({ ...all_ele_dmg_ })
+  () => ({ ...all_ele_dmg_ }),
 )
 
 const data = dataObjForWeaponSheet(key, {

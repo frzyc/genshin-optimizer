@@ -42,7 +42,7 @@ export function DiscInventory({ onAdd, onEdit }: DiscInventoryProps) {
 
   useEffect(
     () => database.discs.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
+    [database, setDirtyDatabase],
   )
 
   const { discIds, totalDiscsNum } = useMemo(() => {
@@ -70,12 +70,12 @@ export function DiscInventory({ onAdd, onEdit }: DiscInventoryProps) {
       : totalDiscsNum
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    discIds.length
+    discIds.length,
   )
 
   const discsIdsToShow = useMemo(
     () => discIds.slice(0, numShow),
-    [discIds, numShow]
+    [discIds, numShow],
   )
   const showingTextProps = {
     numShowing: discsIdsToShow.length,

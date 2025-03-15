@@ -16,8 +16,8 @@ const all_dmg_ = equal(
   equal(
     condPassive,
     'on',
-    subscript(input.weapon.refinement, all_dmg_arr, { unit: '%' })
-  )
+    subscript(input.weapon.refinement, all_dmg_arr, { unit: '%' }),
+  ),
 )
 
 const data = dataObjForWeaponSheet(key, {

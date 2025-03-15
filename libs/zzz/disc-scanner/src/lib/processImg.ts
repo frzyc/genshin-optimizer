@@ -51,9 +51,9 @@ export async function processEntry(
   entry: Outstanding,
   textsFromImage: (
     imageData: ImageData,
-    options?: object | undefined
+    options?: object | undefined,
   ) => Promise<string[]>,
-  debug = false
+  debug = false,
 ): Promise<Processed> {
   const { f, fName } = entry
   const imageURL = await fileToURL(f)
@@ -77,30 +77,30 @@ export async function processEntry(
 
   const whiteTexts = (await textsFromImage(bwHeader)).map((t) => t.trim())
   const mainStatTextIndex = whiteTexts.findIndex(
-    (t) => levenshteinDistance(t.toLowerCase(), 'main stat') < 2
+    (t) => levenshteinDistance(t.toLowerCase(), 'main stat') < 2,
   )
   const substatTextIndex = whiteTexts.findIndex(
-    (t) => levenshteinDistance(t.toLowerCase(), 'sub-stats') < 2
+    (t) => levenshteinDistance(t.toLowerCase(), 'sub-stats') < 2,
   )
   let setEffectTextIndex = whiteTexts.findIndex(
-    (t) => levenshteinDistance(t.toLowerCase(), 'set effect') < 2
+    (t) => levenshteinDistance(t.toLowerCase(), 'set effect') < 2,
   )
   if (setEffectTextIndex === -1) setEffectTextIndex = whiteTexts.length - 1
 
   if (mainStatTextIndex === -1 || substatTextIndex === -1) {
     retProcessed.texts.push(
-      'Could not detect main stat, substats or set effect.'
+      'Could not detect main stat, substats or set effect.',
     )
     return retProcessed
   }
   const setLvlTexts = whiteTexts.slice(0, mainStatTextIndex)
   const mainStatTexts = whiteTexts.slice(
     mainStatTextIndex + 1,
-    substatTextIndex
+    substatTextIndex,
   )
   const substatTexts = whiteTexts.slice(
     substatTextIndex + 1,
-    setEffectTextIndex
+    setEffectTextIndex,
   )
   const setEffectTexts = whiteTexts.slice(setEffectTextIndex + 1)
   if (
@@ -109,7 +109,7 @@ export async function processEntry(
     substatTexts.length === 0
   ) {
     retProcessed.texts.push(
-      'Could not detect main stat, substats or set effect.'
+      'Could not detect main stat, substats or set effect.',
     )
     return retProcessed
   }
@@ -121,14 +121,14 @@ export async function processEntry(
     if (!setKey) {
       setKey = 'AstralVoice'
       retProcessed.texts.push(
-        'Could not detect set key. Assuming Astral Voice.'
+        'Could not detect set key. Assuming Astral Voice.',
       )
     }
   }
   let { level, rarity } = parseLvlRarity(setLvlTexts)
   if (!rarity || !level) {
     retProcessed.texts.push(
-      'Could not detect rarity + level, assuming S Lv.15/15'
+      'Could not detect rarity + level, assuming S Lv.15/15',
     )
     rarity = 'S'
     level = 15
@@ -137,15 +137,15 @@ export async function processEntry(
   if (!mainStatKey) {
     mainStatKey = discSlotToMainStatKeys[slotKey!][0]
     retProcessed.texts.push(
-      `Could not detect main stat key, defaulting to ${statMapEngMap[mainStatKey]}`
+      `Could not detect main stat key, defaulting to ${statMapEngMap[mainStatKey]}`,
     )
   } else if (!slotKey && mainStatKey) {
     slotKey = Object.entries(discSlotToMainStatKeys).find(([_, v]) =>
-      v.includes(mainStatKey as any)
+      v.includes(mainStatKey as any),
     )?.[0] as DiscSlotKey
     if (slotKey)
       retProcessed.texts.push(
-        `Could not detect slot key. inferring it to be ${slotKey}.`
+        `Could not detect slot key. inferring it to be ${slotKey}.`,
       )
   }
   if (!slotKey) {
@@ -169,12 +169,12 @@ export async function processEntry(
 }
 function cropDiscCard(
   imageData: ImageData,
-  debugImgs?: Record<string, string>
+  debugImgs?: Record<string, string>,
 ) {
   const histogram = histogramContAnalysis(
     imageData,
     darkerColor(blackColor),
-    lighterColor(blackColor)
+    lighterColor(blackColor),
   )
   let skipCrop = imageData.width < 500
   let a = 0
@@ -213,7 +213,7 @@ function cropDiscCard(
     cropped,
     darkerColor(blackColor),
     lighterColor(blackColor),
-    false
+    false,
   )
   let bot = 0
   let top = cropped.height
@@ -239,7 +239,7 @@ function cropDiscCard(
         b: 0,
         a: 100,
       },
-      false
+      false,
     )
     drawline(canvas, a, { r: 0, g: 255, b: 0, a: 150 }, false)
     drawline(canvas, b, { r: 0, g: 0, b: 255, a: 150 }, false)

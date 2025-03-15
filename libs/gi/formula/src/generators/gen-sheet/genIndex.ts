@@ -25,7 +25,7 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 
 async function writeCharIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { TagMapNodeEntries } from '../util'
 ${allCharacterKeys
@@ -38,14 +38,14 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
 
 async function writeArtifactIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { TagMapNodeEntries } from '../util'
 ${allArtifactSetKeys
@@ -58,14 +58,14 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
 
 async function writeWeaponIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { TagMapNodeEntries } from '../util'
 ${allWeaponKeys
@@ -79,7 +79,7 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }

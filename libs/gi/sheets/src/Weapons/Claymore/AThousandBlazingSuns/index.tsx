@@ -29,7 +29,7 @@ const critDMG2_ = equal(
   condPassive,
   'on',
   equal(condNightsoul, 'on', prod(base_critDMG_, nsFactor)),
-  { path: 'critDMG_' }
+  { path: 'critDMG_' },
 )
 const base_atk_ = subscript(input.weapon.refinement, atk_arr, { unit: '%' })
 const atk1_ = equal(condPassive, 'on', base_atk_, { path: 'atk_' })
@@ -37,7 +37,7 @@ const atk2_ = equal(
   condPassive,
   'on',
   equal(condNightsoul, 'on', prod(base_atk_, nsFactor)),
-  { path: 'atk_' }
+  { path: 'atk_' },
 )
 
 const data = dataObjForWeaponSheet(key, {

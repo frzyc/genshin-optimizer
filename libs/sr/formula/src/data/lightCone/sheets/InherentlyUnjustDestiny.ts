@@ -30,10 +30,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        shieldProvided.ifOn(subscript(superimpose, dm.crit_dmg_))
-      )
+        shieldProvided.ifOn(subscript(superimpose, dm.crit_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'common_dmg_',
@@ -41,10 +41,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        followUpHit.ifOn(subscript(superimpose, dm.common_dmg_))
-      )
+        followUpHit.ifOn(subscript(superimpose, dm.common_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

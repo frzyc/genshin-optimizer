@@ -69,14 +69,14 @@ export function WengineEditor({
     (newWengine: Partial<ICachedWengine>) => {
       database.wengines.set(propWengineId, newWengine)
     },
-    [database.wengines, propWengineId]
+    [database.wengines, propWengineId],
   )
 
   const setLocation = useCallback(
     (k: LocationKey | '') => {
       id && database.wengines.set(id, { location: k })
     },
-    [database, id]
+    [database, id],
   )
 
   const deleteWengine = useCallback(
@@ -89,7 +89,7 @@ export function WengineEditor({
       if (propWengineId === key)
         database.displayWengine.set({ editWengineId: '' })
     },
-    [wengine, t, database.wengines, database.displayWengine, propWengineId]
+    [wengine, t, database.wengines, database.displayWengine, propWengineId],
   )
 
   const [showModal, onShowModal, onHideModal] = useBoolState()

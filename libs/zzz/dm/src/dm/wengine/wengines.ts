@@ -12,16 +12,16 @@ const wenginesJsonData = JSON.parse(readHakushinJSON('weapon.json')) as Record<
 
 const wengineIdMap = objFilter(
   objMap(wenginesJsonData, ({ EN }) => nameToKey(EN)),
-  (key) => !!key && !key.startsWith('ItemWeapon')
+  (key) => !!key && !key.startsWith('ItemWeapon'),
 )
 
 dumpPrettyFile(
   `${PROJROOT_PATH}/src/dm/wengine/wengineIdMap.json`,
-  wengineIdMap
+  wengineIdMap,
 )
 dumpPrettyFile(
   `${PROJROOT_PATH}/src/dm/wengine/wengineKeys.json`,
-  Object.values(wengineIdMap).sort()
+  Object.values(wengineIdMap).sort(),
 )
 
 export { wenginesJsonData }

@@ -26,7 +26,7 @@ const normal_dmg_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const hp_ = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refinement, hp_arr)
+  subscript(input.weapon.refinement, hp_arr),
 )
 
 const [condStacksPath, condStacks] = cond(key, 'stacks')
@@ -36,10 +36,10 @@ const normal_dmg_ = lookup(
   objKeyMap(stacksArr, (stack) =>
     prod(
       stack,
-      subscript(input.weapon.refinement, normal_dmg_arr, { unit: '%' })
-    )
+      subscript(input.weapon.refinement, normal_dmg_arr, { unit: '%' }),
+    ),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

@@ -25,10 +25,10 @@ type AvatarTalentExcelConfigData = {
   // ]
 }
 const avatarTalentExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarTalentExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/AvatarTalentExcelConfigData.json'),
 ) as AvatarTalentExcelConfigData[]
 const avatarTalentExcelConfigData = Object.fromEntries(
-  avatarTalentExcelConfigDataSrc.map((data) => [data.talentId, data])
+  avatarTalentExcelConfigDataSrc.map((data) => [data.talentId, data]),
 ) as { [id: number]: AvatarTalentExcelConfigData }
 
 export { avatarTalentExcelConfigData }

@@ -154,7 +154,7 @@ export class UpOptCalculator {
   skippableDerivatives: boolean[]
   eval: (
     stats: DynStat,
-    slot: ArtifactSlotKey
+    slot: ArtifactSlotKey,
   ) => { v: number; grads: number[] }[]
 
   artifacts: UpOptArtifact[] = []
@@ -172,10 +172,10 @@ export class UpOptCalculator {
     thresholds: number[],
     equippedBuild: Record<ArtifactSlotKey, ICachedArtifact | undefined>,
     artifacts: ICachedArtifact[],
-    calc4th = true
+    calc4th = true,
   ) {
     this.baseBuild = objMap(equippedBuild, (art) =>
-      art ? this.toArtifact(art) : { id: '', values: {} }
+      art ? this.toArtifact(art) : { id: '', values: {} },
     )
     this.nodes = nodes
     this.thresholds = thresholds
@@ -185,23 +185,23 @@ export class UpOptCalculator {
     nodes.forEach((n) => {
       toEval.push(
         n,
-        ...allSubstatKeys.map((sub) => ddx(n, (fo) => fo.path[1], sub))
+        ...allSubstatKeys.map((sub) => ddx(n, (fo) => fo.path[1], sub)),
       )
     })
     const evalOpt = optimize(toEval, {}, ({ path: [p] }) => p !== 'dyn')
 
     const evalFn = precompute(evalOpt, {}, (f) => f.path[1], 5)
     thresholds[0] = evalFn(
-      Object.values(this.baseBuild) as ArtifactBuildData[] & { length: 5 }
+      Object.values(this.baseBuild) as ArtifactBuildData[] & { length: 5 },
     )[0] // dmg threshold is current objective value
 
     this.skippableDerivatives = allSubstatKeys.map((sub) =>
-      nodes.every((n) => zero_deriv(n, (f) => f.path[1], sub))
+      nodes.every((n) => zero_deriv(n, (f) => f.path[1], sub)),
     )
     this.eval = (stats: DynStat, slot: ArtifactSlotKey) => {
       const b2 = { ...this.baseBuild, [slot]: { id: '', values: stats } }
       const out = evalFn(
-        Object.values(b2) as ArtifactBuildData[] & { length: 5 }
+        Object.values(b2) as ArtifactBuildData[] & { length: 5 },
       )
       return nodes.map((_, i) => {
         const ix = i * (1 + allSubstatKeys.length)
@@ -242,7 +242,7 @@ export class UpOptCalculator {
             .map((substat) => [
               substat.key,
               toDecimal(substat.key, substat.accurateValue),
-            ])
+            ]),
         ), // Assumes substats cannot match main stat key
       },
     }
@@ -278,11 +278,11 @@ export class UpOptCalculator {
 
       const meanA = a.result!.distr.gmm.reduce(
         (pv, { phi, mu }) => pv + phi * mu,
-        0
+        0,
       )
       const meanB = b.result!.distr.gmm.reduce(
         (pv, { phi, mu }) => pv + phi * mu,
-        0
+        0,
       )
       return meanB - meanA
     }
@@ -310,7 +310,7 @@ export class UpOptCalculator {
    *   present in `distr[]`, they are aggregated following standard mixture distribution methods.
    */
   _toResultFast(
-    distr: { prob: number; mu: number[]; cov: number[] }[]
+    distr: { prob: number; mu: number[]; cov: number[] }[],
   ): UpOptResult {
     let ptot = 0
     let upAvgtot = 0
@@ -359,7 +359,7 @@ export class UpOptCalculator {
     const objective = this.eval(stats, slotKey)
     const gaussians = objective.map(({ v: mu, grads }) => {
       const ks = subs.map(
-        (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub)
+        (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub),
       )
       const ksum = ks.reduce((a, b) => a + b, 0)
       const ksum2 = ks.reduce((a, b) => a + b * b, 0)
@@ -386,7 +386,7 @@ export class UpOptCalculator {
     const N = rollsLeft - 1 // Minus 1 because 4th slot takes 1.
 
     const subsToConsider = allSubstatKeys.filter(
-      (s) => !subs.includes(s) && s !== mainStat
+      (s) => !subs.includes(s) && s !== mainStat,
     )
 
     const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
@@ -402,7 +402,7 @@ export class UpOptCalculator {
       const objective = this.eval(stats, slotKey)
       const gaussians = objective.map(({ v: mu, grads }) => {
         const ks = subs.map(
-          (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub)
+          (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub),
         )
         const k4 = grads[allSubstatKeys.indexOf(subKey4)] * scale(subKey4)
         const ksum = ks.reduce((a, b) => a + b, k4)
@@ -429,7 +429,7 @@ export class UpOptCalculator {
    *   following standard mixture distribution methods.
    */
   _toResultSlow(
-    distr: { prob: number; mu: number[]; cov: number[][] }[]
+    distr: { prob: number; mu: number[]; cov: number[][] }[],
   ): UpOptResult {
     let ptot = 0
     let upAvgtot = 0
@@ -482,13 +482,13 @@ export class UpOptCalculator {
 
       const objective = this.eval(stats, slotKey)
       const obj_ks = objective.map(({ grads }) =>
-        subs.map((sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub))
+        subs.map((sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub)),
       )
       const mu = objective.map((o) => o.v)
       const cov = obj_ks.map((k1) =>
         obj_ks.map((k2) =>
-          k1.reduce((pv, cv, j) => pv + k1[j] * k2[j] * ns[j], 0)
-        )
+          k1.reduce((pv, cv, j) => pv + k1[j] * k2[j] * ns[j], 0),
+        ),
       )
       distrs.push({ prob, mu, cov })
     })
@@ -505,7 +505,7 @@ export class UpOptCalculator {
     const N = rollsLeft - 1 // only for 5*
 
     const subsToConsider = allSubstatKeys.filter(
-      (s) => !subs.includes(s) && s !== mainStat
+      (s) => !subs.includes(s) && s !== mainStat,
     )
 
     const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
@@ -524,7 +524,7 @@ export class UpOptCalculator {
         const objective = this.eval(stats, slotKey)
         const obj_ks = objective.map(({ grads }) => {
           const ks = subs.map(
-            (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub)
+            (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub),
           )
           ks.push(grads[allSubstatKeys.indexOf(subKey4)] * scale(subKey4))
           return ks
@@ -532,8 +532,8 @@ export class UpOptCalculator {
         const mu = objective.map((o) => o.v)
         const cov = obj_ks.map((k1) =>
           obj_ks.map((k2) =>
-            k1.reduce((pv, cv, j) => pv + k1[j] * k2[j] * ns[j], 0)
-          )
+            k1.reduce((pv, cv, j) => pv + k1[j] * k2[j] * ns[j], 0),
+          ),
         )
         distrs.push({ prob, mu, cov })
       })
@@ -595,7 +595,7 @@ export class UpOptCalculator {
       const vals = ns.map((ni, i) =>
         subs[i] && !this.skippableDerivatives[allSubstatKeys.indexOf(subs[i])]
           ? range(7 * ni, 10 * ni)
-          : [NaN]
+          : [NaN],
       )
 
       cartesian(...vals).forEach((upVals) => {
@@ -631,7 +631,7 @@ export class UpOptCalculator {
     const N = rollsLeft - 1 // only for 5*
 
     const subsToConsider = allSubstatKeys.filter(
-      (s) => !subs.includes(s) && s !== mainStat
+      (s) => !subs.includes(s) && s !== mainStat,
     )
     const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
     const distrs: { prob: number; val: number[] }[] = []
@@ -703,7 +703,7 @@ export class UpOptCalculator {
               substat.key,
               toDecimal(substat.key, substat.accurateValue),
             ])
-            .filter(([, value]) => value !== 0)
+            .filter(([, value]) => value !== 0),
         ),
       },
       subs: art.substats.reduce((sub: SubstatKey[], x) => {

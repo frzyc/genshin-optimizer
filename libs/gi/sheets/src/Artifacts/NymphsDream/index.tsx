@@ -32,8 +32,8 @@ const set4_atk_ = greaterEq(
   lookup(
     condSet4,
     objKeyMap(stacksArr, (stack) => constant(atk_arr[stack - 1])),
-    naught
-  )
+    naught,
+  ),
 )
 const set4_hydro_dmg_ = greaterEq(
   input.artSet.NymphsDream,
@@ -41,9 +41,9 @@ const set4_hydro_dmg_ = greaterEq(
   lookup(
     condSet4,
     objKeyMap(stacksArr, (stack) => constant(hydro_dmg_arr[stack - 1])),
-    naught
+    naught,
   ),
-  { path: 'hydro_dmg_' }
+  { path: 'hydro_dmg_' },
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

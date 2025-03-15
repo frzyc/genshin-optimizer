@@ -16,10 +16,10 @@ export function TagDisplay({ tag }: { tag: Tag }) {
 }
 const extraHandlingStats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_'] as const
 const isExtraHandlingStats = (
-  stat: string
+  stat: string,
 ): stat is (typeof extraHandlingStats)[number] =>
   extraHandlingStats.includes(
-    stat as 'hp' | 'hp_' | 'atk' | 'atk_' | 'def' | 'def_'
+    stat as 'hp' | 'hp_' | 'atk' | 'atk_' | 'def' | 'def_',
   )
 const qtMap = {
   initial: 'Initial',

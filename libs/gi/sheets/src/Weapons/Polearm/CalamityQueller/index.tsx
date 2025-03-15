@@ -29,21 +29,21 @@ const dmg_Nodes = Object.fromEntries(
   allElementKeys.map((e) => [
     `${e}_dmg_`,
     subscript(input.weapon.refinement, dmg_),
-  ])
+  ]),
 )
 const atkInc = prod(
   compareEq(
     target.charKey,
     input.activeCharKey,
     infoMut(constant(1), { name: trm('active') }),
-    infoMut(constant(2), { name: trm('inactive') })
+    infoMut(constant(2), { name: trm('inactive') }),
   ),
   lookup(
     condStack,
     objKeyMap(range(1, 6), (i) => infoMut(constant(i), { name: st('stacks') })),
-    0
+    0,
   ),
-  subscript(input.weapon.refinement, atk_)
+  subscript(input.weapon.refinement, atk_),
 )
 
 export const data = dataObjForWeaponSheet(key, {
@@ -75,7 +75,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

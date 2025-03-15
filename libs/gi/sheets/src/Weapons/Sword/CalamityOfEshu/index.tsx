@@ -13,13 +13,13 @@ const [condPassivePath, condPassive] = cond(key, 'passive')
 const normal_dmg_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, dmg_arr, { unit: '%' })
+  subscript(input.weapon.refinement, dmg_arr, { unit: '%' }),
 )
 const charged_dmg_ = { ...normal_dmg_ }
 const normal_critRate_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, critRate_arr, { unit: '%' })
+  subscript(input.weapon.refinement, critRate_arr, { unit: '%' }),
 )
 const charged_critRate_ = { ...normal_critRate_ }
 

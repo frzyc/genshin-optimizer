@@ -95,7 +95,7 @@ const dm = {
 const stacksArr = range(1, 4)
 const [condDeclensionStacksPath, condDeclensionStacks] = cond(
   key,
-  'declensionStacks'
+  'declensionStacks',
 )
 const declension_dmg_ = infoMut(
   lookup(
@@ -108,21 +108,21 @@ const declension_dmg_ = infoMut(
             name: st('bonusScaling.skill_'),
             unit: '%',
           }),
-          infoMut(constant(stacks), { name: ct.ch('declensionStacks') })
+          infoMut(constant(stacks), { name: ct.ch('declensionStacks') }),
         ),
-      ])
+      ]),
     ),
-    naught
+    naught,
   ),
-  { name: st('bonusScaling.skill_'), unit: '%' }
+  { name: st('bonusScaling.skill_'), unit: '%' },
 )
 const conviction_dmg_ = infoMut(
   equal(
     condDeclensionStacks,
     '4',
-    subscript(input.total.skillIndex, dm.skill.conviction_dmg_, { unit: '%' })
+    subscript(input.total.skillIndex, dm.skill.conviction_dmg_, { unit: '%' }),
   ),
-  { name: st('bonusScaling.skill_'), unit: '%' }
+  { name: st('bonusScaling.skill_'), unit: '%' },
 )
 const totalStacks_dmg_ = sum(declension_dmg_, conviction_dmg_)
 
@@ -130,7 +130,7 @@ const [condSkillHitPath, condSkillHit] = cond(key, 'skillHit')
 const a4_eleMasDisp = greaterEq(
   input.asc,
   4,
-  equal(condSkillHit, 'on', dm.passive2.eleMas)
+  equal(condSkillHit, 'on', dm.passive2.eleMas),
 )
 const a4_eleMas = unequal(target.charKey, key, a4_eleMasDisp)
 
@@ -141,7 +141,7 @@ const [condTakeFieldPath, condTakeField] = cond(key, 'takeField')
 const c1_atkSpd_ = greaterEq(
   input.constellation,
   1,
-  equal(condTakeField, 'on', percent(dm.constellation1.atkSpd_))
+  equal(condTakeField, 'on', percent(dm.constellation1.atkSpd_)),
 )
 
 const c6_skill_critRate_ = greaterEq(
@@ -154,22 +154,22 @@ const c6_skill_critRate_ = greaterEq(
         stacks,
         prod(
           percent(dm.constellation6.hsCritRate_),
-          infoMut(constant(stacks), { name: ct.ch('declensionStacks') })
+          infoMut(constant(stacks), { name: ct.ch('declensionStacks') }),
         ),
-      ])
+      ]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 const c6_skill_critDMG_ = greaterEq(
   input.constellation,
   6,
-  equal(condDeclensionStacks, '4', percent(dm.constellation6.hsCritDmg_))
+  equal(condDeclensionStacks, '4', percent(dm.constellation6.hsCritDmg_)),
 )
 
 export const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -180,12 +180,12 @@ export const dmgFormulas = {
       prod(
         sum(
           subscript(input.total.skillIndex, dm.skill.dmg, { unit: '%' }),
-          totalStacks_dmg_
+          totalStacks_dmg_,
         ),
-        input.total.atk
+        input.total.atk,
       ),
       'skill',
-      { hit: { ele: constant('anemo') } }
+      { hit: { ele: constant('anemo') } },
     ),
   },
   burst: {
@@ -196,7 +196,7 @@ export const dmgFormulas = {
         dmgNode('atk', dm.burst.iris_dmg, 'burst', {
           hit: { ele: constant(ele) },
         }),
-      ])
+      ]),
     ),
   },
 }
@@ -315,7 +315,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.condTem('passive2', {
@@ -366,7 +366,7 @@ const sheet: TalentSheet = {
             ],
             {
               name: ct.chg(`burst.skillParams.1`),
-            }
+            },
           ),
         })),
         {
@@ -385,7 +385,7 @@ const sheet: TalentSheet = {
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem(
-    'passive3' /* TODO: after non-stacking buffs, [{ fields: [{ node: staminaSprintDec_ }] }]*/
+    'passive3' /* TODO: after non-stacking buffs, [{ fields: [{ node: staminaSprintDec_ }] }]*/,
   ),
   constellation1: ct.talentTem('constellation1', [
     ct.condTem('constellation1', {

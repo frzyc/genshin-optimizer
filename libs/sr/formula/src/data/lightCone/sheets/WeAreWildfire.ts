@@ -32,10 +32,10 @@ const sheet = registerLightCone(
       prod(
         subscript(superimpose, dm.healScaling),
         target.final.hp,
-        percent(prod(0.01, hpDifference))
-      )
+        percent(prod(0.01, hpDifference)),
+      ),
     ),
-    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'infer', '') }
-  )
+    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'infer', '') },
+  ),
 )
 export default sheet

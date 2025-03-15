@@ -19,8 +19,8 @@ const healing = equal(
   input.weapon.key,
   key,
   customHealNode(
-    prod(input.total.hp, subscript(input.weapon.refinement, healing_s))
-  )
+    prod(input.total.hp, subscript(input.weapon.refinement, healing_s)),
+  ),
 )
 
 const data = dataObjForWeaponSheet(key, undefined, { healing })

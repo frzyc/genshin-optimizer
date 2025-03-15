@@ -139,7 +139,7 @@ function Accounts() {
         fetchAccounts()
       }
     },
-    [fetchAccounts, profile, supabase]
+    [fetchAccounts, profile, supabase],
   )
 
   const updateProfile = useCallback(
@@ -157,7 +157,7 @@ function Accounts() {
         alert('Error updating the data!')
       }
     },
-    [profile?.id, supabase]
+    [profile?.id, supabase],
   )
 
   return (

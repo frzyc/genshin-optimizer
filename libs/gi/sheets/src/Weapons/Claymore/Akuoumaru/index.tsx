@@ -27,11 +27,11 @@ const burst_dmg_ = lookup(
       i,
       min(
         prod(subscript(input.weapon.refinement, ratio, { unit: '%' }), i),
-        subscript(input.weapon.refinement, max, { unit: '%' })
+        subscript(input.weapon.refinement, max, { unit: '%' }),
       ),
-    ])
+    ]),
   ),
-  naught
+  naught,
 )
 const data = dataObjForWeaponSheet(key, {
   premod: {
@@ -53,7 +53,7 @@ const sheet: IWeaponSheet = {
             name: i.toString(),
             fields: [{ node: burst_dmg_ }],
           },
-        ])
+        ]),
       ),
     },
   ],

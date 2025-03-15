@@ -22,10 +22,10 @@ const sheet = registerRelic(
       cmpGE(
         relicCount,
         2,
-        cmpGE(own.final.eff_, dm[2].eff_threshold, dm[2].extra_def_)
-      )
+        cmpGE(own.final.eff_, dm[2].eff_threshold, dm[2].extra_def_),
+      ),
     ),
-    cmpGE(relicCount, 2, 'infer', '')
-  )
+    cmpGE(relicCount, 2, 'infer', ''),
+  ),
 )
 export default sheet

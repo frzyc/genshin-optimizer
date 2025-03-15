@@ -60,9 +60,9 @@ export async function processEntry(
   entry: Outstanding,
   textsFromImage: (
     imageData: ImageData,
-    options?: object | undefined
+    options?: object | undefined,
   ) => Promise<string[]>,
-  debug = false
+  debug = false,
 ): Promise<Processed> {
   const { f, fName } = entry
   const imageURL = await fileToURL(f)
@@ -81,12 +81,12 @@ export async function processEntry(
     artifactCardImageData,
     darkerColor(cardWhite),
     lighterColor(cardWhite),
-    false
+    false,
   )
   const [whiteCardTop, whiteCardBotOri] = findHistogramRange(
     whiteCardHistogram,
     0.8,
-    2
+    2,
   )
   let whiteCardBot = whiteCardBotOri
 
@@ -94,11 +94,11 @@ export async function processEntry(
     imageData,
     darkerColor(equipColor),
     lighterColor(equipColor),
-    false
+    false,
   )
 
   const hasEquip = equipHistogram.some(
-    (i) => i > artifactCardImageData.width * 0.5
+    (i) => i > artifactCardImageData.width * 0.5,
   )
   const [equipTop, equipBot] = findHistogramRange(equipHistogram)
 
@@ -112,7 +112,7 @@ export async function processEntry(
       artifactCardImageData,
       darkerColor(greenTextColor),
       lighterColor(greenTextColor),
-      false
+      false,
     )
 
     const [greenTextTop, greenTextBot] = findHistogramRange(greentextHisto, 0.2)
@@ -121,7 +121,7 @@ export async function processEntry(
       whiteCardBot = clamp(
         greenTextBot + greenTextBuffer,
         0,
-        artifactCardImageData.height
+        artifactCardImageData.height,
       )
   }
 
@@ -169,14 +169,14 @@ export async function processEntry(
           b: 150,
           a: 100,
         },
-        false
+        false,
       )
 
     drawHistogram(
       canvas,
       whiteCardHistogram,
       { r: 150, g: 0, b: 0, a: 100 },
-      false
+      false,
     )
     drawHistogram(canvas, equipHistogram, { r: 0, g: 0, b: 100, a: 100 }, false)
 
@@ -185,7 +185,7 @@ export async function processEntry(
       canvas,
       hasEquip ? equipBot : whiteCardBot,
       { r: 0, g: 0, b: 255, a: 200 },
-      false
+      false,
     )
     drawline(canvas, whiteCardTop, { r: 255, g: 0, b: 200, a: 200 }, false)
 
@@ -204,7 +204,7 @@ export async function processEntry(
     whiteCardCropped,
     darkerColor(greenTextColor),
     lighterColor(greenTextColor),
-    false
+    false,
   )
 
   const [greenTextTop, greenTextBot] = findHistogramRange(greentextHisto, 0.2)
@@ -230,7 +230,7 @@ export async function processEntry(
   const lockHisto = histogramAnalysis(
     whiteCardCropped,
     darkerColor(lockColor),
-    lighterColor(lockColor)
+    lighterColor(lockColor),
   )
   const locked = lockHisto.filter((v) => v > 5).length > 5
 
@@ -245,7 +245,7 @@ export async function processEntry(
     greenTextCropped,
     { r: 30, g: 100, b: 30 },
     { r: 200, g: 255, b: 200 },
-    'bw'
+    'bw',
   )
   const bwEquipped =
     equippedCropped &&
@@ -253,7 +253,7 @@ export async function processEntry(
       equippedCropped,
       darkerColor(textColorDark),
       lighterColor(textColorLight),
-      'bw'
+      'bw',
     )
   if (debugImgs) {
     debugImgs['bwHeader'] = imageDataToCanvas(bwHeader).toDataURL()
@@ -286,7 +286,7 @@ export async function processEntry(
     parseMainStatKeys(whiteTexts),
     parseMainStatValues(whiteTexts),
     equippedTexts ? parseLocation(equippedTexts) : '',
-    locked
+    locked,
   )
 
   return {
@@ -299,12 +299,12 @@ export async function processEntry(
 }
 function verticallyCropArtifactCard(
   imageData: ImageData,
-  debugImgs?: Record<string, string>
+  debugImgs?: Record<string, string>,
 ) {
   const histogram = histogramContAnalysis(
     imageData,
     darkerColor(cardWhite),
-    lighterColor(cardWhite)
+    lighterColor(cardWhite),
   )
 
   const [a, b] = findHistogramRange(histogram)
@@ -333,13 +333,13 @@ function verticallyCropArtifactCard(
 
 function parseRarity(
   headerData: ImageData,
-  debugImgs?: Record<string, string>
+  debugImgs?: Record<string, string>,
 ) {
   const hist = histogramContAnalysis(
     headerData,
     darkerColor(starColor),
     lighterColor(starColor),
-    false
+    false,
   )
   const [starTop, starBot] = findHistogramRange(hist, 0.3)
 
@@ -351,7 +351,7 @@ function parseRarity(
   const starsHistogram = histogramContAnalysis(
     stars,
     darkerColor(starColor),
-    lighterColor(starColor)
+    lighterColor(starColor),
   )
   if (debugImgs) {
     const canvas = imageDataToCanvas(stars)
@@ -386,7 +386,7 @@ function findTitle(artifactCardImageData: ImageData) {
       darkerColor(darkerTitleColor, 20),
       lighterColor(LighterTitleColor, 20),
       false,
-      [0, 0.3] // only scan the top 30% of the img
+      [0, 0.3], // only scan the top 30% of the img
     )
     if (hist.find((v) => v > widthThreshold)) return hist
     return null
@@ -399,6 +399,6 @@ function findTitle(artifactCardImageData: ImageData) {
   // Return first detected title color
   return titleColors.reduce(
     (a, curr) => (a ? a : findTitleColored(curr[0], curr[1])),
-    null as null | number[]
+    null as null | number[],
   )
 }

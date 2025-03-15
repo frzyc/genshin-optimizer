@@ -28,7 +28,7 @@ export default function TabOverview() {
       ...data,
       compareData,
     }),
-    [data, compareData]
+    [data, compareData],
   )
   return (
     <Stack spacing={1}>

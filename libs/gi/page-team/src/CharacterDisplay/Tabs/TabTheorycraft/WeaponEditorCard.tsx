@@ -42,7 +42,7 @@ export function WeaponEditorCard({
         charTC.weapon = { ...charTC.weapon, ...weapon }
       })
     },
-    [setCharTC]
+    [setCharTC],
   )
   const weapon: ICachedWeapon = useMemo(
     () => ({
@@ -51,7 +51,7 @@ export function WeaponEditorCard({
       lock: false,
       id: '',
     }),
-    [buildTc]
+    [buildTc],
   )
   const { key, level = 0, refinement = 1, ascension = 0 } = weapon
   const weaponSheet = getWeaponSheet(key)
@@ -59,7 +59,7 @@ export function WeaponEditorCard({
   const { data } = useContext(DataContext)
   const weaponUIData = useMemo(
     () => weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
-    [weaponSheet, weapon]
+    [weaponSheet, weapon],
   )
   const hasRefinement = weaponHasRefinement(weapon.key)
   return (
@@ -131,7 +131,7 @@ export function WeaponEditorCard({
                       component={ListItem}
                     />
                   )
-                }
+                },
               )}
             </FieldDisplayList>
           )}

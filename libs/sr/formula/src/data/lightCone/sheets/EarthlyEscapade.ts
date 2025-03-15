@@ -21,16 +21,16 @@ const sheet = registerLightCone(
   registerBuff(
     'crit_',
     notOwnBuff.premod.crit_.add(
-      cmpGE(lcCount, 1, mask.ifOn(subscript(superimpose, dm.crit_)))
+      cmpGE(lcCount, 1, mask.ifOn(subscript(superimpose, dm.crit_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'crit_dmg_',
     notOwnBuff.premod.crit_dmg_.add(
-      cmpGE(lcCount, 1, mask.ifOn(subscript(superimpose, dm.crit_dmg_)))
+      cmpGE(lcCount, 1, mask.ifOn(subscript(superimpose, dm.crit_dmg_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

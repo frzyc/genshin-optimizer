@@ -27,11 +27,11 @@ const sheet = registerRelic(
         cmpGE(
           own.final.crit_dmg_,
           dm[2].crit_dmg_threshold,
-          firstAttack.ifOn(dm[2].crit_)
-        )
-      )
+          firstAttack.ifOn(dm[2].crit_),
+        ),
+      ),
     ),
-    cmpGE(relicCount, 2, 'infer', '')
-  )
+    cmpGE(relicCount, 2, 'infer', ''),
+  ),
 )
 export default sheet

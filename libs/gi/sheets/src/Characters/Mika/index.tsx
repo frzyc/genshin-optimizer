@@ -91,17 +91,17 @@ const skillInSoulwind_atkSPD_disp = equal(
   subscript(input.total.skillIndex, dm.skill.atkSPD_, {
     path: 'atkSPD_',
     isTeamBuff: true,
-  })
+  }),
 )
 const skillInSoulwind_atkSPD_ = equal(
   input.activeCharKey,
   target.charKey,
-  skillInSoulwind_atkSPD_disp
+  skillInSoulwind_atkSPD_disp,
 )
 
 const [condA1DetectorStacksPath, condA1DetectorStacks] = cond(
   key,
-  'a1DetectorStacks'
+  'a1DetectorStacks',
 )
 const detectorStacksArr = range(1, 5)
 const a1DetectorStacks_physical_dmg_disp = greaterEq(
@@ -115,17 +115,17 @@ const a1DetectorStacks_physical_dmg_disp = greaterEq(
       objKeyMap(detectorStacksArr, (stack) => {
         const totalPhysical_dmg_ = prod(
           stack,
-          percent(dm.passive1.physical_dmg_)
+          percent(dm.passive1.physical_dmg_),
         )
         // Check for A4 or C6
         if (stack === 4) {
           return greaterEq(
             sum(
               greaterEq(input.constellation, 6, 1),
-              greaterEq(input.asc, 4, 1)
+              greaterEq(input.asc, 4, 1),
             ),
             1,
-            totalPhysical_dmg_
+            totalPhysical_dmg_,
           )
         }
         // Check for both A4 and C6
@@ -133,20 +133,20 @@ const a1DetectorStacks_physical_dmg_disp = greaterEq(
           return greaterEq(
             input.constellation,
             6,
-            greaterEq(input.asc, 4, totalPhysical_dmg_)
+            greaterEq(input.asc, 4, totalPhysical_dmg_),
           )
         }
         return totalPhysical_dmg_
       }),
       naught,
-      { path: 'physical_dmg_', isTeamBuff: true }
-    )
-  )
+      { path: 'physical_dmg_', isTeamBuff: true },
+    ),
+  ),
 )
 const a1DetectorStacks_physical_dmg_ = equal(
   input.activeCharKey,
   target.charKey,
-  a1DetectorStacks_physical_dmg_disp
+  a1DetectorStacks_physical_dmg_disp,
 )
 const [condC6CritPath, condC6Crit] = cond(key, 'c6Crit')
 const c6InSoulwind_physical_critDMG_disp = greaterEq(
@@ -158,18 +158,18 @@ const c6InSoulwind_physical_critDMG_disp = greaterEq(
     equal(condC6Crit, 'on', dm.constellation6.physical_critDMG_, {
       path: 'physical_critDMG_',
       isTeamBuff: true,
-    })
-  )
+    }),
+  ),
 )
 const c6InSoulwind_physical_critDMG_ = equal(
   input.activeCharKey,
   target.charKey,
-  c6InSoulwind_physical_critDMG_disp
+  c6InSoulwind_physical_critDMG_disp,
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -185,13 +185,13 @@ const dmgFormulas = {
       'hp',
       dm.burst.castHealHp,
       dm.burst.castHealBase,
-      'burst'
+      'burst',
     ),
     plumeHeal: healNodeTalent(
       'hp',
       dm.burst.plumeHealHp,
       dm.burst.plumeHealBase,
-      'burst'
+      'burst',
     ),
   },
 }

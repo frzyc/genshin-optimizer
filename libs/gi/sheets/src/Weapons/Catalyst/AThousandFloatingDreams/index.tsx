@@ -30,14 +30,14 @@ const numSameElement = lookup(
     allElementKeys.map((ele) => [
       ele,
       infoMut(sum(tally[ele], -1), { asConst: true }), // Subtract wielder from count
-    ])
+    ]),
   ),
-  naught
+  naught,
 )
 const partySize = sum(...allElementKeys.map((ele) => tally[ele]))
 const self_eleMas = prod(
   numSameElement,
-  subscript(input.weapon.refinement, self_eleMasArr)
+  subscript(input.weapon.refinement, self_eleMasArr),
 )
 const self_eleDmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
@@ -49,17 +49,17 @@ const self_eleDmg_ = Object.fromEntries(
         infoMut(sum(partySize, -1, prod(numSameElement, -1)), {
           asConst: true,
         }),
-        subscript(input.weapon.refinement, self_eleDmg_arr, { unit: '%' })
-      )
+        subscript(input.weapon.refinement, self_eleDmg_arr, { unit: '%' }),
+      ),
     ),
-  ])
+  ]),
 )
 
 const team_eleMasDisp = equal(
   input.weapon.key,
   key,
   subscript(input.weapon.refinement, team_eleMasArr),
-  { path: 'eleMas', isTeamBuff: true }
+  { path: 'eleMas', isTeamBuff: true },
 )
 // Apply to non-equipped character
 const team_eleMas = unequal(input.charKey, target.charKey, team_eleMasDisp)

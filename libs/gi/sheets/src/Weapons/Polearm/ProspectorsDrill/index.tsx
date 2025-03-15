@@ -23,23 +23,23 @@ const marksConsumedArr = range(1, 3)
 const atk_ = lookup(
   condMarksConsumed,
   objKeyMap(marksConsumedArr, (symbol) =>
-    prod(symbol, subscript(input.weapon.refinement, atk_arr, { unit: '%' }))
+    prod(symbol, subscript(input.weapon.refinement, atk_arr, { unit: '%' })),
   ),
-  naught
+  naught,
 )
 const ele_dmg_ = lookup(
   condMarksConsumed,
   objKeyMap(marksConsumedArr, (symbol) =>
     prod(
       symbol,
-      subscript(input.weapon.refinement, all_ele_dmg_arr, { unit: '%' })
-    )
+      subscript(input.weapon.refinement, all_ele_dmg_arr, { unit: '%' }),
+    ),
   ),
-  naught
+  naught,
 )
 const all_ele_dmg_ = objKeyMap(
   allElementKeys.map((ele) => `${ele}_dmg_`),
-  () => ({ ...ele_dmg_ })
+  () => ({ ...ele_dmg_ }),
 )
 
 const data = dataObjForWeaponSheet(key, {

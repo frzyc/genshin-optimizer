@@ -27,7 +27,7 @@ export default function OptimizationTargetDisplay({
     () =>
       optimizationTarget &&
       getDisplayHeader(data, optimizationTarget[0], database),
-    [data, optimizationTarget, database]
+    [data, optimizationTarget, database],
   )
 
   if (!defaultText) defaultText = t('targetSelector.selectOptTarget')

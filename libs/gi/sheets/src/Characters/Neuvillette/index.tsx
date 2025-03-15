@@ -98,9 +98,9 @@ const a1Stacks_judgmentSpecialMult_ = threshold(
   lookup(
     condA1Stacks,
     objKeyMap(a1StacksArr, (stack) => percent(1 + dm.passive1.dmg_[stack])),
-    one
+    one,
   ),
-  one
+  one,
 )
 
 const a4Arr = range(1, 50)
@@ -111,8 +111,8 @@ const a4Hp_hydro_dmg_ = greaterEq(
   lookup(
     condA4Hp,
     objKeyMap(a4Arr, (hp) => percent(hp * dm.passive2.hydro_dmg_)),
-    naught
-  )
+    naught,
+  ),
 )
 
 const c2Judgment_critDMG_ = greaterEq(
@@ -121,15 +121,15 @@ const c2Judgment_critDMG_ = greaterEq(
   lookup(
     condA1Stacks,
     objKeyMap(a1StacksArr, (stack) =>
-      percent(stack * dm.constellation2.charged_critDMG_)
+      percent(stack * dm.constellation2.charged_critDMG_),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -143,7 +143,7 @@ const dmgFormulas = {
         },
       },
       // TODO: Is this really special multiplier?
-      a1Stacks_judgmentSpecialMult_
+      a1Stacks_judgmentSpecialMult_,
     ),
     hpRestore: healNode('hp', dm.charged.hpRestore, 0),
     hpLoss: prod(percent(dm.charged.hpCost), input.total.hp),
@@ -165,15 +165,15 @@ const dmgFormulas = {
         prod(
           percent(dm.constellation6.current_dmg_),
           input.total.hp,
-          a1Stacks_judgmentSpecialMult_
+          a1Stacks_judgmentSpecialMult_,
         ),
         'charged',
         {
           premod: {
             charged_critDMG_: c2Judgment_critDMG_,
           },
-        }
-      )
+        },
+      ),
     ),
   },
 }

@@ -51,7 +51,7 @@ export function TeamCalcProvider({
         ...teamData(
           team.teamMetadata
             .map((meta) => meta?.characterKey)
-            .filter((m): m is Member => !!m)
+            .filter((m): m is Member => !!m),
         ),
         // Add actual member data
         ...member0,
@@ -70,21 +70,21 @@ export function TeamCalcProvider({
               condValue
                 ? withPreset(
                     `preset${frameIndex}` as Preset,
-                    conditionalEntries(sheet, src, dst)(condKey, condValue)
+                    conditionalEntries(sheet, src, dst)(condKey, condValue),
                   )
-                : []
-            )
+                : [],
+            ),
         ),
         ...team.bonusStats.flatMap(({ tag, values }) =>
           values.flatMap((value, frameIndex) =>
             withPreset(`preset${frameIndex}` as Preset, {
               tag: { ...tag },
               value: constant(value),
-            })
-          )
+            }),
+          ),
         ),
       ]),
-    [team, member0, member1, member2, member3]
+    [team, member0, member1, member2, member3],
   )
 
   return (
@@ -96,7 +96,7 @@ export function TeamCalcProvider({
 
 function useCharacterAndEquipment(
   metas: (TeammateDatum | undefined)[],
-  index: number
+  index: number,
 ) {
   const meta = metas[index]
   const character = useCharacter(meta?.characterKey)
@@ -106,15 +106,15 @@ function useCharacterAndEquipment(
     meta?.buildType === 'equipped'
       ? character?.equippedLightCone
       : meta?.buildType === 'real'
-      ? build?.lightConeId
-      : undefined
+        ? build?.lightConeId
+        : undefined,
   )
   const relics = useRelics(
     meta?.buildType === 'equipped'
       ? character?.equippedRelics
       : meta?.buildType === 'real'
-      ? build?.relicIds
-      : undefined
+        ? build?.relicIds
+        : undefined,
   )
   const lcTagEntries = useMemo(() => {
     const lc =
@@ -124,7 +124,7 @@ function useCharacterAndEquipment(
       lc.key,
       lc.level,
       lc.ascension,
-      lc.superimpose
+      lc.superimpose,
     )
   }, [meta?.buildType, buildTc?.lightCone, lightCone])
   const relicTagEntries = useMemo(() => {
@@ -139,7 +139,7 @@ function useCharacterAndEquipment(
       character.key,
       ...charTagMapNodeEntries(character, index + 1),
       ...lcTagEntries,
-      ...relicTagEntries
+      ...relicTagEntries,
     )
   }, [character, index, lcTagEntries, relicTagEntries])
 }

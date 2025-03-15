@@ -10,7 +10,7 @@ import { getMainStatValue } from '@genshin-optimizer/gi/util'
 export function compactArtifacts(
   arts: ICachedArtifact[],
   mainStatAssumptionLevel: number,
-  allowPartial: boolean
+  allowPartial: boolean,
 ): ArtifactsBySlot {
   const result: ArtifactsBySlot = {
     base: {},
@@ -24,8 +24,8 @@ export function compactArtifacts(
       art.rarity,
       Math.max(
         Math.min(mainStatAssumptionLevel, artMaxLevel[art.rarity]),
-        art.level
-      )
+        art.level,
+      ),
     )
 
     const data: ArtifactBuildData = {
@@ -40,7 +40,7 @@ export function compactArtifacts(
             substat.key.endsWith('_')
               ? substat.accurateValue / 100
               : substat.accurateValue,
-          ])
+          ]),
         ),
       },
     }

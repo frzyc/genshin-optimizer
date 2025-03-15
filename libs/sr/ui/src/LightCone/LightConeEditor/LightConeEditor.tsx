@@ -57,12 +57,12 @@ export function LightConeEditor({
       }
       clear()
     },
-    [t, lightConeState, clear]
+    [t, lightConeState, clear],
   )
 
   const validatedLightcone = useMemo(
     () => validateLightCone(lightConeState),
-    [lightConeState]
+    [lightConeState],
   )
 
   const footer = useMemo(
@@ -110,7 +110,7 @@ export function LightConeEditor({
         )}
       </Box>
     ),
-    [clear, database, dbLightCone, t, validatedLightcone]
+    [clear, database, dbLightCone, t, validatedLightcone],
   )
 
   return (

@@ -73,7 +73,7 @@ export function ArtifactFilterDisplay({
 
   const filteredIdMap = useMemo(
     () => objKeyMap(filteredIds, (_) => true),
-    [filteredIds]
+    [filteredIds],
   )
 
   const {
@@ -161,7 +161,7 @@ export function ArtifactFilterDisplay({
           ctMap['locationTotal'][location].current++
           ctMap['excludedTotal'][excluded].current++
         }
-      })
+      }),
     )
   }, [database, disableSlotFilter, excludedIds, filteredIdMap, filterOption])
 

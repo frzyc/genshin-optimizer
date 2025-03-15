@@ -28,10 +28,14 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        cmpEq(atk_crit_dmg_enerRegen_.value, 1, subscript(superimpose, dm.atk_))
-      )
+        cmpEq(
+          atk_crit_dmg_enerRegen_.value,
+          1,
+          subscript(superimpose, dm.atk_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'crit_dmg_',
@@ -42,11 +46,11 @@ const sheet = registerLightCone(
         cmpEq(
           atk_crit_dmg_enerRegen_.value,
           2,
-          subscript(superimpose, dm.crit_dmg_)
-        )
-      )
+          subscript(superimpose, dm.crit_dmg_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'enerRegen_',
@@ -57,11 +61,11 @@ const sheet = registerLightCone(
         cmpEq(
           atk_crit_dmg_enerRegen_.value,
           3,
-          subscript(superimpose, dm.enerRegen_)
-        )
-      )
+          subscript(superimpose, dm.enerRegen_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

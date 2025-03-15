@@ -24,15 +24,15 @@ export function DiscSetMultiAutocomplete({
   const toImg = useCallback(
     (key: DiscSetKey | '') =>
       key ? <ImgIcon src={discDefIcon(key)} size={2} /> : undefined,
-    []
+    [],
   )
   const toExLabel = useCallback(
     (key: DiscSetKey) => <strong>{totals[key]}</strong>,
-    [totals]
+    [totals],
   )
   const toExItemLabel = useCallback(
     (key: DiscSetKey) => <Chip size="small" label={totals[key]} />,
-    [totals]
+    [totals],
   )
 
   const allDiscSetsAndRarities = useMemo(
@@ -47,7 +47,7 @@ export function DiscSetMultiAutocomplete({
         })
         .filter((group) => allowRarities.includes(group.grouper))
         .sort(),
-    [allowRarities, t]
+    [allowRarities, t],
   )
 
   return (

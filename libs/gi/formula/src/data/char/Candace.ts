@@ -85,12 +85,14 @@ const normalEle_dmg_ = afterBurst.ifOn(percent(dm.burst.dmg_bonus_))
 const a4_normalEle_dmg_ = cmpGE(
   ascension,
   4,
-  afterBurst.ifOn(prod(percent(dm.passive2.normalEle_dmg_), final.hp, 1 / 1000))
+  afterBurst.ifOn(
+    prod(percent(dm.passive2.normalEle_dmg_), final.hp, 1 / 1000),
+  ),
 )
 const c2_hp_ = cmpGE(
   constellation,
   2,
-  c2AfterSkillHit.ifOn(percent(dm.constellation2.hp_))
+  c2AfterSkillHit.ifOn(percent(dm.constellation2.hp_)),
 )
 
 export default register(
@@ -102,30 +104,32 @@ export default register(
   ownBuff.premod.hp_.add(c2_hp_),
 
   allElementKeys.map((ele) =>
-    teamBuff.premod.dmg_.normal[ele].add(sum(normalEle_dmg_, a4_normalEle_dmg_))
+    teamBuff.premod.dmg_.normal[ele].add(
+      sum(normalEle_dmg_, a4_normalEle_dmg_),
+    ),
   ),
   teamBuff.reaction.infusionIndex.add(afterBurst.ifOn(infusionPrio.team.hydro)),
 
   // Formulas
   dm.normal.hitArr.flatMap((arr, i) =>
-    dmg(`normal_${i}`, info, 'atk', arr, 'normal')
+    dmg(`normal_${i}`, info, 'atk', arr, 'normal'),
   ),
   dmg(`charged`, info, 'atk', dm.charged.dmg, 'charged'),
   Object.entries(dm.plunging).flatMap(([name, arr]) =>
-    dmg(`plunging_${name}`, info, 'atk', arr, 'plunging')
+    dmg(`plunging_${name}`, info, 'atk', arr, 'plunging'),
   ),
   (['basic', 'charged'] as const).flatMap((k) =>
-    dmg(`skill_${k}`, info, 'hp', dm.skill[`${k}_dmg`], 'skill')
+    dmg(`skill_${k}`, info, 'hp', dm.skill[`${k}_dmg`], 'skill'),
   ),
   (['skill', 'wave'] as const).flatMap((k) =>
-    dmg(`burst_${k}`, info, 'hp', dm.burst[`${k}_dmg`], 'burst')
+    dmg(`burst_${k}`, info, 'hp', dm.burst[`${k}_dmg`], 'burst'),
   ),
   shield(
     `skill_shield`,
     'hp',
     dm.skill.shield_hp_,
     dm.skill.shield_base,
-    'skill'
+    'skill',
   ),
   shield(
     `skill_hydroShield`,
@@ -133,9 +137,9 @@ export default register(
     dm.skill.shield_hp_,
     dm.skill.shield_base,
     'skill',
-    { ele: 'hydro' }
+    { ele: 'hydro' },
   ),
   customDmg(`c6`, info.ele, 'burst', prod(dm.constellation6.dmg, final.hp), {
     cond: cmpGE(own.char.constellation, 6, 'infer', ''),
-  })
+  }),
 )

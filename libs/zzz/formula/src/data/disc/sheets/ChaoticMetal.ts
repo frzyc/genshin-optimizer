@@ -17,15 +17,15 @@ const sheet = registerDisc(
   registerBuff(
     'set4_passive',
     ownBuff.combat.crit_dmg_.add(cmpGE(discCount, 4, 0.2)),
-    showCond4Set
+    showCond4Set,
   ),
   // Conditional buffs
   registerBuff(
     'set4_cond_trigger_corruption',
     ownBuff.combat.crit_dmg_.add(
-      cmpGE(discCount, 4, prod(trigger_corruption, 0.055))
+      cmpGE(discCount, 4, prod(trigger_corruption, 0.055)),
     ),
-    showCond4Set
-  )
+    showCond4Set,
+  ),
 )
 export default sheet

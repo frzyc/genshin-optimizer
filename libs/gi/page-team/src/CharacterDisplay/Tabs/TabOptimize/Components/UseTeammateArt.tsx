@@ -53,11 +53,11 @@ export const UseTeammateArt = memo(function UseTeammateArt({
               {loadoutData
                 .filter(notEmpty)
                 .filter(
-                  (loadoutDatum) => loadoutDatum.teamCharId !== teamCharId
+                  (loadoutDatum) => loadoutDatum.teamCharId !== teamCharId,
                 )
                 .map((loadoutDatum) => {
                   const characterKey = database.teamChars.get(
-                    loadoutDatum?.teamCharId
+                    loadoutDatum?.teamCharId,
                   )?.key
                   const artifacts =
                     loadoutDatum.buildType === 'tc'

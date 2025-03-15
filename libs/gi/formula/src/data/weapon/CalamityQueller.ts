@@ -26,7 +26,7 @@ export default register(
   key,
   entriesForWeapon(key),
   allElementKeys.map((ele) =>
-    ownBuff.premod.dmg_[ele].add(subscript(refinement, dmg_))
+    ownBuff.premod.dmg_[ele].add(subscript(refinement, dmg_)),
   ),
-  ownBuff.premod.atk_.add(atkInc)
+  ownBuff.premod.atk_.add(atkInc),
 )

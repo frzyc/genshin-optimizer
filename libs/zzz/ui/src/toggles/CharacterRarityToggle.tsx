@@ -24,11 +24,11 @@ export function CharacterRarityToggle({
   const xs = !useMediaQuery(theme.breakpoints.up('sm'))
   const rarityHandler = useMemo(
     () => handleMultiSelect([...allCharacterRarityKeys]),
-    []
+    [],
   )
   const handleClick = useCallback(
     (key: CharacterRarityKey) => () => onChange(rarityHandler(value, key)),
-    [onChange, rarityHandler, value]
+    [onChange, rarityHandler, value],
   )
   return (
     <SolidToggleButtonGroup exclusive value={value} {...props}>

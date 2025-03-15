@@ -59,25 +59,25 @@ export function LocationAutocomplete({
             silly ? 'sillyWisher_charNames' : 'charNames_gen'
           }:${charKeyToLocGenderedCharKey(
             database.chars.LocationToCharacterKey(key),
-            gender
-          )}`
+            gender,
+          )}`,
         ),
-    [database, gender, t]
+    [database, gender, t],
   )
 
   const [charListDirty, setCharListDirty] = useForceUpdate()
   useEffect(
     () =>
       database.arts.followAny(
-        (_, r) => ['new', 'remove'].includes(r) && setCharListDirty()
+        (_, r) => ['new', 'remove'].includes(r) && setCharListDirty(),
       ),
-    [database, setCharListDirty]
+    [database, setCharListDirty],
   )
 
   const charInDb = useMemo(
     () =>
       charListDirty && database.chars.keys.map((c) => charKeyToLocCharKey(c)),
-    [charListDirty, database]
+    [charListDirty, database],
   )
 
   const toImg = useCallback(
@@ -91,16 +91,16 @@ export function LocationAutocomplete({
           />
         </Box>
       ),
-    [database, charInDb]
+    [database, charInDb],
   )
   const isFavorite = useCallback(
     (key: LocationCharacterKey) =>
       key === 'Traveler'
         ? allTravelerKeys.some((key) => database.charMeta.get(key).favorite)
         : key
-        ? database.charMeta.get(key).favorite
-        : false,
-    [database]
+          ? database.charMeta.get(key).favorite
+          : false,
+    [database],
   )
 
   const values: GeneralAutocompleteOption<LocationKey>[] = useMemo(
@@ -112,9 +112,9 @@ export function LocationAutocomplete({
       ...Array.from(
         new Set(
           allLocationCharacterKeys.filter((k) =>
-            filter(database.chars.LocationToCharacterKey(k))
-          )
-        )
+            filter(database.chars.LocationToCharacterKey(k)),
+          ),
+        ),
       )
         .map(
           (v): GeneralAutocompleteOption<LocationKey> => ({
@@ -123,7 +123,7 @@ export function LocationAutocomplete({
             favorite: isFavorite(v),
             alternateNames: silly ? [toText(!silly)(v)] : undefined,
             color: charInDb.includes(v) ? undefined : ('secondary' as Variant),
-          })
+          }),
         )
         .sort((a, b) => {
           if (a.favorite && !b.favorite) return -1
@@ -133,7 +133,7 @@ export function LocationAutocomplete({
           return a.label.localeCompare(b.label)
         }),
     ],
-    [t, database, charInDb, filter, toText, silly, isFavorite]
+    [t, database, charInDb, filter, toText, silly, isFavorite],
   )
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>

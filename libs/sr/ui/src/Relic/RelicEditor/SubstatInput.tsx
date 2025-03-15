@@ -83,7 +83,7 @@ export default function SubstatInput({
             ...getSubstatSummedRolls(rarity, key).map((v) => ({ value: v })),
           ]
         : [{ value: 0 }],
-    [key, rarity]
+    [key, rarity],
   )
 
   return (
@@ -220,7 +220,7 @@ export default function SubstatInput({
                     color={`roll${clamp(
                       rollOffset + rollData.indexOf(val),
                       1,
-                      6
+                      6,
                     )}.main`}
                     sx={{ ml: 1 }}
                   >

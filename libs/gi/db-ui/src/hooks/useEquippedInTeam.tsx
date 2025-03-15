@@ -8,7 +8,7 @@ import { useDatabase } from './useDatabase'
 /** Check if any of the teammates are using the weapon/arts inputted */
 export function useEquippedInTeam(
   weaponId: string,
-  artifactIds: Record<ArtifactSlotKey, string | undefined>
+  artifactIds: Record<ArtifactSlotKey, string | undefined>,
 ) {
   const database = useDatabase()
   const {
@@ -19,7 +19,7 @@ export function useEquippedInTeam(
     (loadoutDatum) =>
       loadoutDatum &&
       loadoutDatum.teamCharId !== teamCharId &&
-      database.teams.getLoadoutWeapon(loadoutDatum).id === weaponId
+      database.teams.getLoadoutWeapon(loadoutDatum).id === weaponId,
   )
   const weaponUsedInTeamCharKey =
     weaponUsedInLoadoutDatum &&
@@ -35,13 +35,13 @@ export function useEquippedInTeam(
             loadoutDatum &&
             loadoutDatum.teamCharId !== teamCharId &&
             database.teams.getLoadoutArtifacts(loadoutDatum)[slotKey]?.id ===
-              artId
+              artId,
         )
         return (
           loadoutDatum && database.teamChars.get(loadoutDatum.teamCharId)!.key
         )
       }),
-    [artifactIds, database, loadoutData, teamCharId]
+    [artifactIds, database, loadoutData, teamCharId],
   )
 
   return {

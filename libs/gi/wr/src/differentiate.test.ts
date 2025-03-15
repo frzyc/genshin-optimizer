@@ -27,7 +27,7 @@ describe('differentiate', () => {
     expect(ddx(x, (n) => n.path[1], 'x')).toEqual(constant(1))
     const d2x = optimize(
       [ddx(prod(x, constant(2.2)), (n) => n.path[1], 'x')],
-      {}
+      {},
     )
     expect(d2x[0]).toEqual(constant(2.2))
     const dxy = optimize([ddx(prod(x, y), (n) => n.path[1], 'x')], {})
@@ -37,17 +37,17 @@ describe('differentiate', () => {
   test('polynomial', () => {
     const d2xxy = optimize(
       [ddx(prod(x, x, y, constant(2.2)), (n) => n.path[1], 'x')],
-      {}
+      {},
     )
     expect(d2xxy[0]).toEqual(
-      sum(prod(constant(2.2), x, y), prod(constant(2.2), x, y))
+      sum(prod(constant(2.2), x, y), prod(constant(2.2), x, y)),
     ) // 2.2xy + 2.2xy
   })
 
   test('sum', () => {
     const dx_xy_y = optimize(
       [ddx(sum(x, prod(x, y), y), (n) => n.path[1], 'x')],
-      {}
+      {},
     )
     expect(dx_xy_y[0]).toEqual(sum(constant(1), y)) // 1 + y
   })
@@ -68,24 +68,24 @@ describe('differentiate', () => {
   test('min', () => {
     const mx3 = min(x, 3)
     expect(optimize([ddx(mx3, (n) => n.path[1], 'x')], {})[0]).toEqual(
-      threshold(3, x, 1, 0)
+      threshold(3, x, 1, 0),
     )
 
     const mx3xy = min(x, 3, prod(x, y))
     expect(optimize([ddx(mx3xy, (n) => n.path[1], 'x')], {})[0]).toEqual(
-      threshold(prod(x, y), min(3, x), threshold(3, x, 1, 0), y)
+      threshold(prod(x, y), min(3, x), threshold(3, x, 1, 0), y),
     )
   })
 
   test('max', () => {
     const mx3 = max(x, 3)
     expect(optimize([ddx(mx3, (n) => n.path[1], 'x')], {})[0]).toEqual(
-      threshold(3, x, 0, 1)
+      threshold(3, x, 0, 1),
     )
 
     const mx3xy = max(x, 3, prod(x, y))
     expect(optimize([ddx(mx3xy, (n) => n.path[1], 'x')], {})[0]).toEqual(
-      threshold(prod(x, y), max(3, x), y, threshold(3, x, 0, 1))
+      threshold(prod(x, y), max(3, x), y, threshold(3, x, 0, 1)),
     )
   })
 })

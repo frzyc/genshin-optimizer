@@ -19,15 +19,15 @@ const eleMasArr = [-1, 40, 50, 60, 70, 80]
 
 const [condSymbolsConsumedPath, condSymbolsConsumed] = cond(
   key,
-  'symbolsConsumed'
+  'symbolsConsumed',
 )
 const symbolsConsumedArr = range(1, 3)
 const eleMas = lookup(
   condSymbolsConsumed,
   objKeyMap(symbolsConsumedArr, (symbol) =>
-    prod(symbol, subscript(input.weapon.refinement, eleMasArr, { unit: '%' }))
+    prod(symbol, subscript(input.weapon.refinement, eleMasArr, { unit: '%' })),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

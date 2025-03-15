@@ -30,7 +30,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   constructor(
     problem: OptProblemInput,
     status: GOSolver['status'],
-    numWorker: number
+    numWorker: number,
   ) {
     const workers = Array(numWorker)
       .fill(NaN)
@@ -38,7 +38,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
         (_) =>
           new Worker(new URL('./BackgroundWorker.ts', import.meta.url), {
             type: 'module',
-          })
+          }),
       )
     super(workers, ['iterate', 'split', 'count'], (r, w) => {
       switch (r.resultType) {
@@ -173,7 +173,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
       this.buildValues.filter(({ w }) => w !== worker)
       this.buildValues.push(
-        ...r.buildValues.map((val) => ({ w: worker!, val }))
+        ...r.buildValues.map((val) => ({ w: worker!, val })),
       )
       this.buildValues.sort((a, b) => b.val - a.val).splice(topN)
 

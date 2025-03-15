@@ -26,16 +26,16 @@ const shield = equal(
     customShieldNode(
       prod(
         subscript(input.weapon.refinement, shieldSrc, { unit: '%' }),
-        input.total.hp
-      )
-    )
-  )
+        input.total.hp,
+      ),
+    ),
+  ),
 )
 const [condWithShieldPath, condWithShield] = cond(key, 'WithShield')
 const all_dmg_ = equal(
   condWithShield,
   'protected',
-  subscript(input.weapon.refinement, allDmgSrc, { unit: '%' })
+  subscript(input.weapon.refinement, allDmgSrc, { unit: '%' }),
 )
 
 const data = dataObjForWeaponSheet(
@@ -47,7 +47,7 @@ const data = dataObjForWeaponSheet(
   },
   {
     shield,
-  }
+  },
 )
 const sheet: IWeaponSheet = {
   document: [

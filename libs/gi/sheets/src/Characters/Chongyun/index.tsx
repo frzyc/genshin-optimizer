@@ -95,7 +95,7 @@ const skillDmg = dmgNode('atk', dm.skill.dmg, 'skill')
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spinningDmg: dmgNode('atk', dm.charged.spin_dmg, 'charged'),
@@ -118,8 +118,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation1.dmg), input.total.atk),
         'elemental',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
   },
 }
@@ -128,7 +128,7 @@ const nodeAsc4 = greaterEq(input.asc, 4, equal(condAsc4, 'hit', -0.1))
 const activeInArea = equal(
   'activeInArea',
   condSkill,
-  equal(input.activeCharKey, target.charKey, 1)
+  equal(input.activeCharKey, target.charKey, 1),
 )
 
 const nodeAsc1Disp = greaterEq(input.asc, 1, percent(0.08))
@@ -137,19 +137,19 @@ const nodeAsc1 = equal(activeInArea, 1, nodeAsc1Disp)
 const correctWep = lookup(
   target.weaponType,
   { sword: constant(1), claymore: constant(1), polearm: constant(1) },
-  constant(0)
+  constant(0),
 )
 
 const activeInAreaInfusion = equalStr(
   correctWep,
   1,
-  equalStr(activeInArea, 1, elementKey)
+  equalStr(activeInArea, 1, elementKey),
 )
 
 const nodeC6 = greaterEq(
   input.constellation,
   6,
-  equal(condC6, 'on', dm.constellation6.burst_dmg_)
+  equal(condC6, 'on', dm.constellation6.burst_dmg_),
 )
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -271,7 +271,7 @@ const sheet: TalentSheet = {
               text: ct.chg('skill.skillParams.1'),
               value: (data) =>
                 data.get(
-                  subscript(input.total.skillIndex, dm.skill.infusionDuration)
+                  subscript(input.total.skillIndex, dm.skill.infusionDuration),
                 ).value,
               unit: 's',
               fixed: 1,

@@ -7,7 +7,7 @@ import type { GenMapGeneratorSchema } from './schema'
 export default async function genMap(
   tree: Tree,
   options: GenMapGeneratorSchema,
-  verbose = false
+  verbose = false,
 ) {
   console.log(options)
   const { map_type } = options
@@ -18,8 +18,8 @@ export default async function genMap(
       console.warn(
         `Map at ${path.join(
           file_location,
-          `${options.map}.ts`
-        )} already exists.`
+          `${options.map}.ts`,
+        )} already exists.`,
       )
     return
   }

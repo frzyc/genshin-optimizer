@@ -15,17 +15,21 @@ export type RelicMainAffixConfig = {
 }
 
 export const relicMainAffixConfig = JSON.parse(
-  readDMJSON('ExcelOutput/RelicMainAffixConfig.json')
+  readDMJSON('ExcelOutput/RelicMainAffixConfig.json'),
 ) as RelicMainAffixConfig[]
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/relic/RelicMainAffixConfig_groupId_gen.json`,
-  [...new Set(relicMainAffixConfig.map(({ GroupID }) => GroupID.toString()))]
+  [...new Set(relicMainAffixConfig.map(({ GroupID }) => GroupID.toString()))],
 )
 dumpFile(`${PROJROOT_PATH}/src/dm/relic/RelicMainAffixConfig_keys_gen.json`, [
   ...new Set(relicMainAffixConfig.map(({ Property }) => Property)),
 ])
 dumpFile(
   `${PROJROOT_PATH}/src/dm/relic/RelicMainAffixConfig_keysmapped_gen.json`,
-  [...new Set(relicMainAffixConfig.map(({ Property }) => statKeyMap[Property]))]
+  [
+    ...new Set(
+      relicMainAffixConfig.map(({ Property }) => statKeyMap[Property]),
+    ),
+  ],
 )

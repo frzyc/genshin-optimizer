@@ -91,7 +91,7 @@ const dm = {
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -114,7 +114,7 @@ const dmgFormulas = {
       1,
       customDmgNode(prod(input.total.atk, dm.constellation1.dmg), 'elemental', {
         hit: { ele: constant(elementKey) },
-      })
+      }),
     ),
   },
 }
@@ -126,14 +126,14 @@ const [condAfterRecastPath, condAfterRecast] = cond(key, 'afterRecast')
 const afterRecastInfusion = greaterEqStr(
   input.asc,
   1,
-  equalStr('afterRecast', condAfterRecast, elementKey)
+  equalStr('afterRecast', condAfterRecast, elementKey),
 )
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')
 const afterBurstCritRate_ = greaterEq(
   input.asc,
   4,
-  equal('afterBurst', condAfterBurst, percent(dm.passive2.critInc_))
+  equal('afterBurst', condAfterBurst, percent(dm.passive2.critInc_)),
 )
 const afterBurstEnerRech_ = { ...afterBurstCritRate_ }
 
@@ -141,7 +141,7 @@ const [condAfterReactPath, condAfterReact] = cond(key, 'afterReact')
 const afterReactAtk_ = greaterEq(
   input.constellation,
   4,
-  equal('afterReact', condAfterReact, percent(dm.constellation4.atkInc))
+  equal('afterReact', condAfterReact, percent(dm.constellation4.atkInc)),
 )
 
 const [condC6StackPath, condC6Stack] = cond(key, 'c6Stack')
@@ -152,10 +152,10 @@ const c6Electro_dmg_ = greaterEq(
     lookup(
       condC6Stack,
       objKeyMap(range(1, 4), (i) => constant(i)),
-      constant(0)
+      constant(0),
     ),
-    dm.constellation6.electroInc
-  )
+    dm.constellation6.electroInc,
+  ),
 )
 
 export const data = dataObjForCharacterSheet(key, dmgFormulas, {

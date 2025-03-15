@@ -92,57 +92,57 @@ const regen = healNodeTalent(
   'atk',
   dm.burst.burstActivationAtkModifier,
   dm.burst.burstActionFlatModifier,
-  'burst'
+  'burst',
 )
 const contRegen = healNodeTalent(
   'atk',
   dm.burst.burstRegenAtkModifier,
   dm.burst.burstRegenFlatModifier,
-  'burst'
+  'burst',
 )
 const a1Regen = greaterEq(
   input.asc,
   1,
-  customHealNode(prod(percent(dm.passive1.atkPercentage), input.total.atk))
+  customHealNode(prod(percent(dm.passive1.atkPercentage), input.total.atk)),
 )
 
 const [condC1Path, condC1] = cond(key, 'c1')
 const skill_dmg_ = greaterEq(
   input.constellation,
   1,
-  equal(condC1, 'on', dm.constellation1.increaseDmg)
+  equal(condC1, 'on', dm.constellation1.increaseDmg),
 )
 
 const [condC2Path, condC2] = cond(key, 'c2')
 const atkSPD_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2, 'on', percent(dm.constellation2.atkSpd))
+  equal(condC2, 'on', percent(dm.constellation2.atkSpd)),
 )
 const moveSPD_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2, 'on', percent(dm.constellation2.moveSpd))
+  equal(condC2, 'on', percent(dm.constellation2.moveSpd)),
 )
 
 const [condC4Path, condC4] = cond(key, 'c4')
 const anemo_enemyRes_ = greaterEq(
   input.constellation,
   4,
-  equal(condC4, 'on', percent(-Math.abs(dm.constellation4.anemoRes)))
+  equal(condC4, 'on', percent(-Math.abs(dm.constellation4.anemoRes))),
 )
 
 const [condC6Path, condC6] = cond(key, 'c6')
 const dmgRed_disp = greaterEq(
   input.constellation,
   6,
-  equal(condC6, 'on', percent(dm.constellation6.dmgReduction))
+  equal(condC6, 'on', percent(dm.constellation6.dmgReduction)),
 )
 const dmgRed_ = equal(input.activeCharKey, target.charKey, dmgRed_disp)
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),

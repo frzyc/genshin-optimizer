@@ -24,9 +24,9 @@ export const displayDataMap = Object.fromEntries(
     mergeData(
       Object.entries(WeaponData)
         .filter(([wKey, _]) => getWeaponStat(wKey).weaponType === k)
-        .map(([_, sheet]) => ({ display: sheet.data.display }))
+        .map(([_, sheet]) => ({ display: sheet.data.display })),
     ),
-  ])
+  ]),
 ) as Record<WeaponTypeKey, Data>
 
 export function getWeaponSheet(wKey: WeaponKey) {

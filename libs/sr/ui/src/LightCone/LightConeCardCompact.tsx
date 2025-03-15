@@ -67,16 +67,16 @@ export function LightConeCardCompactObj({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
 
   const { key, level, location, ascension, superimpose } = lightCone
   const calc = useMemo(
     () =>
       srCalculatorWithEntries(
-        lightConeTagMapNodeEntries(key, level, ascension, superimpose)
+        lightConeTagMapNodeEntries(key, level, ascension, superimpose),
       ),
-    [ascension, key, level, superimpose]
+    [ascension, key, level, superimpose],
   )
   const { rarity } = getLightConeStat(key)
   return (
@@ -144,7 +144,7 @@ export function LightConeCardCompactObj({
                       }}
                       src={characterAsset(
                         characterKeyToGenderedKey(location),
-                        'icon'
+                        'icon',
                       )}
                     />
                   ) : (
@@ -222,7 +222,7 @@ export function LightConeCardCompactEmpty({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   return (
     <CardThemed

@@ -13,12 +13,12 @@ const emArr = [-1, 48, 60, 72, 84, 96]
 const atk_ = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, atk_arr, { unit: '%' })
+  subscript(input.weapon.refinement, atk_arr, { unit: '%' }),
 )
 const eleMas = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, emArr)
+  subscript(input.weapon.refinement, emArr),
 )
 
 const data = dataObjForWeaponSheet(key, {

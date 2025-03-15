@@ -98,11 +98,11 @@ const a1Shield_disp = greaterEq(
   lookup(
     condA1Stacks,
     Object.fromEntries(
-      a1StacksArr.map((stack) => [stack, prod(stack, dm.passive1.shield_)])
+      a1StacksArr.map((stack) => [stack, prod(stack, dm.passive1.shield_)]),
     ),
-    naught
+    naught,
   ),
-  { path: 'shield_', isTeamBuff: true }
+  { path: 'shield_', isTeamBuff: true },
 )
 const a1Shield_ = equal(input.activeCharKey, target.charKey, a1Shield_disp)
 
@@ -110,9 +110,9 @@ const a4_starDmgInc = infoMut(
   greaterEq(
     input.asc,
     4,
-    prod(percent(dm.passive2.starHpDmgInc), input.total.hp)
+    prod(percent(dm.passive2.starHpDmgInc), input.total.hp),
   ),
-  { name: ct.ch(`starDmgInc`) }
+  { name: ct.ch(`starDmgInc`) },
 )
 
 const [condC4ActivePath, condC4Active] = cond(key, 'c4Active')
@@ -122,15 +122,15 @@ const c4_normal_dmgInc = greaterEq(
   equal(
     condC4Active,
     'on',
-    prod(percent(dm.constellation4.normalChargedDmgInc), input.total.hp)
-  )
+    prod(percent(dm.constellation4.normalChargedDmgInc), input.total.hp),
+  ),
 )
 const c4_charged_dmgInc = { ...c4_normal_dmgInc }
 
 const c6_starDmg_ = greaterEq(
   input.constellation,
   6,
-  percent(dm.constellation6.starSlugDmg_)
+  percent(dm.constellation6.starSlugDmg_),
 )
 const c6_slugDmg_ = { ...c6_starDmg_ }
 
@@ -141,14 +141,14 @@ const skillShield = prod(
     infoMut(greaterEq(input.constellation, 1, dm.constellation1.shield_), {
       name: ct.ch(`c1ShieldBonusKey_`),
       unit: '%',
-    })
+    }),
   ),
-  shieldNodeTalent('hp', dm.skill.shieldHp_, dm.skill.shieldBase, 'skill')
+  shieldNodeTalent('hp', dm.skill.shieldHp_, dm.skill.shieldBase, 'skill'),
 )
 const skillCryoShield = shieldElement('cryo', skillShield)
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -175,12 +175,12 @@ const dmgFormulas = {
     partyShield: greaterEq(
       input.constellation,
       1,
-      prod(percent(dm.constellation1.partyShield_), skillShield)
+      prod(percent(dm.constellation1.partyShield_), skillShield),
     ),
     partyCryoShield: greaterEq(
       input.constellation,
       1,
-      prod(percent(dm.constellation1.partyShield_), skillCryoShield)
+      prod(percent(dm.constellation1.partyShield_), skillCryoShield),
     ),
   },
 }
@@ -312,7 +312,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.headerTem('passive2', {

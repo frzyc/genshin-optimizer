@@ -82,31 +82,31 @@ const skillShield = shieldNodeTalent(
   'atk',
   dm.skill.shieldMult,
   dm.skill.shieldFlat,
-  'skill'
+  'skill',
 )
 
 const a4_skill_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(input.total.eleMas, percent(dm.passive2.skill_dmgInc))
+  prod(input.total.eleMas, percent(dm.passive2.skill_dmgInc)),
 )
 const a4_burst_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(input.total.eleMas, percent(dm.passive2.burst_dmgInc))
+  prod(input.total.eleMas, percent(dm.passive2.burst_dmgInc)),
 )
 
 const [condC4AfterBurstPath, condC4AfterBurst] = cond(key, 'c4AfterBurst')
 const c4AfterBurst_eleMas = greaterEq(
   input.constellation,
   4,
-  equal(condC4AfterBurst, 'on', dm.constellation4.eleMas)
+  equal(condC4AfterBurst, 'on', dm.constellation4.eleMas),
 )
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -131,9 +131,9 @@ const dmgFormulas = {
           dm.skill.ringDmg,
           'skill',
           hitEle[ele],
-          percent(dm.passive1.dmg)
-        )
-      )
+          percent(dm.passive1.dmg),
+        ),
+      ),
     ),
   },
   passive2: {

@@ -10,7 +10,7 @@ export function useBuildArtifacts(loadoutDatum: LoadoutDatum) {
   // for when the entire loadoutDatum is changed.
   const arts = useMemo(
     () => dbDirty && database.teams.getLoadoutArtifacts(loadoutDatum),
-    [dbDirty, database.teams, loadoutDatum]
+    [dbDirty, database.teams, loadoutDatum],
   )
 
   // for smaller artifact/build changes.
@@ -19,13 +19,13 @@ export function useBuildArtifacts(loadoutDatum: LoadoutDatum) {
       art?.id
         ? database.arts.follow(
             art.id,
-            (_k, r) => (r === 'update' || r === 'remove') && setDbDirty()
+            (_k, r) => (r === 'update' || r === 'remove') && setDbDirty(),
           )
-        : () => {}
+        : () => {},
     )
     const unfollowBuild = database.builds.follow(
       loadoutDatum.buildId,
-      (_, r) => r === 'update' && setDbDirty()
+      (_, r) => r === 'update' && setDbDirty(),
     )
     return () => {
       unfollows.forEach((unfollow) => unfollow())

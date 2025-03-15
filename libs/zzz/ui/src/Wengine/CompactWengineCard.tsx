@@ -29,11 +29,11 @@ export function CompactWengineCard({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   const falseWrapperFunc = useCallback(
     (children: ReactNode) => <Box>{children}</Box>,
-    []
+    [],
   )
   const {
     key,

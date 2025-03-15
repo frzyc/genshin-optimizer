@@ -11,7 +11,7 @@ type ReliquaryAffixExcelConfigData = {
   propValue: number //0.062199998646974564,
 }
 const artifactSubstatDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/ReliquaryAffixExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/ReliquaryAffixExcelConfigData.json'),
 ) as ReliquaryAffixExcelConfigData[]
 
 type artifaceSubstatData = {

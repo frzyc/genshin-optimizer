@@ -116,7 +116,7 @@ const [condA1JudicationPath, condA1Judication] = cond(key, 'a1Judication')
 const a1Judication_soulfarer_dmg_ = greaterEq(
   input.asc,
   1,
-  equal(condA1Judication, 'on', dm.passive1.skill_dmg_)
+  equal(condA1Judication, 'on', dm.passive1.skill_dmg_),
 )
 
 // TODO: Check if this is total or premod
@@ -125,18 +125,18 @@ const a1Judication_soulfarer_dmg_ = greaterEq(
 const a4_burstNormal_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(percent(dm.passive2.burst_normal_dmgInc_), input.total.eleMas)
+  prod(percent(dm.passive2.burst_normal_dmgInc_), input.total.eleMas),
 )
 const a4_bolt_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(percent(dm.passive2.bolt_dmgInc_), input.total.eleMas)
+  prod(percent(dm.passive2.bolt_dmgInc_), input.total.eleMas),
 )
 
 const c2NormHitStacksArr = range(1, dm.constellation2.maxStacks)
 const [condC2NormHitStacksPath, condC2NormHitStacks] = cond(
   key,
-  'c2NormHitStacks'
+  'c2NormHitStacks',
 )
 const c2_electro_dmg_ = greaterEq(
   input.constellation,
@@ -147,15 +147,15 @@ const c2_electro_dmg_ = greaterEq(
       c2NormHitStacksArr.map((stack) => [
         stack,
         prod(percent(dm.constellation2.electro_dmg_), stack),
-      ])
+      ]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -176,23 +176,23 @@ const dmgFormulas = {
         customDmgNode(
           prod(
             subscript(input.total.burstIndex, arr, { unit: '%' }),
-            input.total.atk
+            input.total.atk,
           ),
           'normal',
           {
             hit: { ele: constant(elementKey) },
             premod: { normal_dmgInc: a4_burstNormal_dmgInc },
-          }
+          },
         ),
-      ])
+      ]),
     ),
     charged: customDmgNode(
       prod(
         subscript(input.total.burstIndex, dm.burst.charged.dmg, { unit: '%' }),
-        input.total.atk
+        input.total.atk,
       ),
       'charged',
-      { hit: { ele: constant(elementKey) } }
+      { hit: { ele: constant(elementKey) } },
     ),
     ...Object.fromEntries(
       Object.entries(dm.burst.plunging).map(([key, value]) => [
@@ -200,12 +200,12 @@ const dmgFormulas = {
         customDmgNode(
           prod(
             subscript(input.total.burstIndex, value, { unit: '%' }),
-            input.total.atk
+            input.total.atk,
           ),
           key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
-          { hit: { ele: constant(elementKey) } }
+          { hit: { ele: constant(elementKey) } },
         ),
-      ])
+      ]),
     ),
   },
   passive1: {
@@ -215,7 +215,7 @@ const dmgFormulas = {
       customDmgNode(prod(dm.passive1.boltDmg, input.total.atk), 'skill', {
         hit: { ele: constant(elementKey) },
         premod: { skill_dmgInc: a4_bolt_dmgInc },
-      })
+      }),
     ),
   },
   passive2: {
@@ -367,7 +367,7 @@ const sheet: TalentSheet = {
             {
               name: ct.chg(`burst.skillParams.${i}`),
               multi: i === 3 ? 2 : undefined,
-            }
+            },
           ),
         })),
         {
@@ -386,7 +386,7 @@ const sheet: TalentSheet = {
             ],
             {
               name: stg(`plunging.${key}`),
-            }
+            },
           ),
         })),
         {
@@ -457,7 +457,7 @@ const sheet: TalentSheet = {
             name: st('stack', { count: stack }),
             fields: [{ node: c2_electro_dmg_ }],
           },
-        ])
+        ]),
       ),
     }),
   ]),

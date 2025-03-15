@@ -107,14 +107,14 @@ const skillEye_ = equal(
     subscript(input.total.skillIndex, dm.skill.burstDmg_bonus, {
       fixed: 2,
       unit: '%',
-    })
-  )
+    }),
+  ),
 )
 const [condInBurstPath, condInBurst] = cond(key, 'InBurst')
 const defIgn_ = greaterEq(
   input.constellation,
   2,
-  equal(condInBurst, 'on', dm.constellation2.def_ignore)
+  equal(condInBurst, 'on', dm.constellation2.def_ignore),
 )
 
 function skillDmg(atkType: number[]) {
@@ -129,21 +129,21 @@ const skillEyeTeamBurstDmgIncDisp = infoMut(
     lookup(
       condSkillEyeTeam,
       objKeyMap(energyCosts, (i) =>
-        infoMut(constant(i), { name: st('energy') })
+        infoMut(constant(i), { name: st('energy') }),
       ),
-      0
+      0,
     ),
     subscript(input.total.skillIndex, dm.skill.burstDmg_bonus, {
       fixed: 2,
       unit: '%',
-    })
+    }),
   ),
-  { path: 'burst_dmg_', isTeamBuff: true }
+  { path: 'burst_dmg_', isTeamBuff: true },
 )
 const skillEyeTeamBurstDmgInc = unequal(
   key,
   target.charKey,
-  skillEyeTeamBurstDmgIncDisp
+  skillEyeTeamBurstDmgIncDisp,
 )
 
 const resolveStacks = [10, 20, 30, 40, 50, 60]
@@ -153,23 +153,23 @@ const resolveStackNode = infoMut(
   lookup(
     condResolveStack,
     objKeyMap(resolveStacks, (i) => constant(i)),
-    0
+    0,
   ),
-  { name: ct.ch('burst.resolves') }
+  { name: ct.ch('burst.resolves') },
 )
 const resolveInitialBonus_ = prod(
   infoMut(subscript(input.total.burstIndex, dm.burst.resolveBonus1), {
     name: ct.ch('burst.resolveInitial_'),
     unit: '%',
   }),
-  resolveStackNode
+  resolveStackNode,
 )
 const resolveInfusedBonus_ = prod(
   infoMut(subscript(input.total.burstIndex, dm.burst.resolveBonus2), {
     name: ct.ch('burst.resolveInfused_'),
     unit: '%',
   }),
-  resolveStackNode
+  resolveStackNode,
 )
 function burstResolve(mvArr: number[], initial = false) {
   const resolveBonus = initial ? resolveInitialBonus_ : resolveInfusedBonus_
@@ -178,16 +178,16 @@ function burstResolve(mvArr: number[], initial = false) {
     prod(
       sum(
         subscript(input.total.burstIndex, mvArr, { unit: '%' }),
-        resolveBonus
+        resolveBonus,
       ),
-      input.total.atk
+      input.total.atk,
     ),
     'burst',
     {
       hit: {
         ele: constant('electro'),
       },
-    }
+    },
   )
 }
 
@@ -198,13 +198,13 @@ const a4EnergyRestore_ = infoMut(
     prod(
       sum(input.total.enerRech_, percent(-dm.passive2.er)),
       percent(dm.passive2.energyGen),
-      100
-    )
+      100,
+    ),
   ),
   {
     name: ct.ch('a4.enerRest'),
     unit: '%',
-  }
+  },
 )
 
 const [condC4Path, condC4] = cond(key, 'c4')
@@ -214,13 +214,13 @@ const c4AtkBonus_ = greaterEq(
   equal(
     'c4',
     condC4,
-    unequal(input.activeCharKey, target.charKey, dm.constellation4.atk_bonus)
-  )
+    unequal(input.activeCharKey, target.charKey, dm.constellation4.atk_bonus),
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -246,7 +246,7 @@ const dmgFormulas = {
     plungeHigh: burstResolve(dm.burst.plungeHigh),
     energyGen: prod(
       subscript(input.total.burstIndex, dm.burst.enerGen),
-      sum(one, a4EnergyRestore_)
+      sum(one, a4EnergyRestore_),
     ),
   },
   passive2: {
@@ -256,8 +256,8 @@ const dmgFormulas = {
       prod(
         sum(input.premod.enerRech_, percent(-dm.passive2.er)),
         percent(dm.passive2.electroDmg_bonus),
-        100
-      )
+        100,
+      ),
     ),
     energyRestore: a4EnergyRestore_,
   },
@@ -389,7 +389,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),
@@ -510,7 +510,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.condTem('burst', {

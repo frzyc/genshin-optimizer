@@ -21,9 +21,9 @@ const atk_ = prod(
   lookup(
     condPassive,
     objKeyMap(opponentsDefeated, (i) => constant(i)),
-    0
+    0,
   ),
-  subscript(input.weapon.refinement, atkInc)
+  subscript(input.weapon.refinement, atkInc),
 )
 
 const data = dataObjForWeaponSheet(key, {
@@ -54,7 +54,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

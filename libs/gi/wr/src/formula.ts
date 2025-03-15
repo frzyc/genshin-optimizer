@@ -192,13 +192,13 @@ export const allInputPremodKeys = [...allModStats, ...allNonModStats] as const
 export type InputPremodKey = (typeof allInputPremodKeys)[number]
 
 const talent = objKeyMap(allTalents, (t) =>
-  read(undefined, { ...info(t), prefix: 'char' })
+  read(undefined, { ...info(t), prefix: 'char' }),
 )
 const allModStatNodes = objKeyMap(allModStats, (key) =>
-  read(undefined, info(key))
+  read(undefined, info(key)),
 )
 const allNonModStatNodes = objKeyMap(allNonModStats, (key) =>
-  read(undefined, info(key))
+  read(undefined, info(key)),
 )
 
 for (const ele of allElements) {
@@ -225,14 +225,14 @@ allModStatNodes.heal_.info!.variant = 'heal'
 
 function withDefaultInfo<T extends NodeData<NumNode | StrNode>>(
   info: Info,
-  value: T
+  value: T,
 ): T {
   value = deepNodeClone(value)
   crawlObject(
     value,
     [],
     (x: any) => x.operation,
-    (x: NumNode | StrNode) => (x.info = { ...info, ...x.info })
+    (x: NumNode | StrNode) => (x.info = { ...info, ...x.info }),
   )
   return value
 }
@@ -243,7 +243,7 @@ function markAccu<T>(accu: ReadNode<number>['accu'], value: T): void {
     (x: any) => x.operation,
     (x: NumNode | StrNode) => {
       if (x.operation === 'read' && x.type === 'number') x.accu = accu
-    }
+    },
   )
 }
 
@@ -270,7 +270,7 @@ const inputBase = {
     {
       ...allModStatNodes,
       ...allNonModStatNodes,
-    }
+    },
   ),
   premod: { ...talent, ...allModStatNodes, ...allNonModStatNodes },
   total: withDefaultInfo(
@@ -282,7 +282,7 @@ const inputBase = {
       ...allNonModStatNodes,
       /** Total Crit Rate capped to [0%, 100%] */
       cappedCritRate: read(undefined, info('critRate_')),
-    }
+    },
   ),
 
   art: withDefaultInfo(
@@ -293,7 +293,7 @@ const inputBase = {
         id: stringRead(),
         set: stringRead(),
       })),
-    }
+    },
   ),
   artSet: objKeyMap(allArtifactSetKeys, (set) => read('add', { path: set })),
 
@@ -310,7 +310,7 @@ const inputBase = {
       main: read(),
       sub: read(),
       sub2: read(),
-    }
+    },
   ),
 
   enemy: {
@@ -318,7 +318,7 @@ const inputBase = {
     transDef: read('add', { ...info('enemyDef_multi_'), pivot }),
     ...objKeyMap(
       allElements.map((ele) => `${ele}_resMulti_` as const),
-      (_) => read()
+      (_) => read(),
     ),
 
     level: read(undefined, info('enemyLevel')),
@@ -372,7 +372,7 @@ const baseAddBonus = sum(one, prod(5, frac(total.eleMas, 1200)))
 const common: Data = {
   base: objKeyMap(
     ['atk', 'def', 'hp'],
-    (key) => input.customBonus[`base_${key}`]
+    (key) => input.customBonus[`base_${key}`],
   ),
   premod: {
     ...objKeyMap(allTalents, (talent) => premod[`${talent}Boost`]),
@@ -381,7 +381,7 @@ const common: Data = {
 
       if (key.endsWith('_enemyRes_'))
         operands.push(
-          enemy[key.replace(/_enemyRes_$/, '_res_') as keyof typeof enemy]
+          enemy[key.replace(/_enemyRes_$/, '_res_') as keyof typeof enemy],
         )
 
       const list = [...operands, customBonus[key]].filter((x) => x)
@@ -405,10 +405,10 @@ const common: Data = {
               objKeyMap(allMoves, (move) =>
                 move.includes('plunging')
                   ? sum(premod[`${move}_critRate_`], premod.plunging_critRate_)
-                  : premod[`${move}_critRate_`]
+                  : premod[`${move}_critRate_`],
               ),
-              0
-            )
+              0,
+            ),
           )
           break
         case 'critDMG_':
@@ -417,7 +417,7 @@ const common: Data = {
             lookup(
               hit.ele,
               objKeyMap(allElements, (ele) => premod[`${ele}_critDMG_`]),
-              0
+              0,
             ),
             lookup(
               hit.move,
@@ -425,10 +425,10 @@ const common: Data = {
               objKeyMap(allMoves, (move) =>
                 move.includes('plunging')
                   ? sum(premod[`${move}_critDMG_`], premod.plunging_critDMG_)
-                  : premod[`${move}_critDMG_`]
+                  : premod[`${move}_critDMG_`],
               ),
-              0
-            )
+              0,
+            ),
           )
           break
         case 'enerRech_':
@@ -453,7 +453,7 @@ const common: Data = {
     ]),
     stamina: sum(
       constant(100, { ...info('stamina'), prefix: 'default' }),
-      customBonus.stamina
+      customBonus.stamina,
     ),
 
     cappedCritRate: max(min(total.critRate_, one), naught),
@@ -468,20 +468,20 @@ const common: Data = {
         objKeyMap(allMoves, (move) =>
           move.includes('plunging')
             ? sum(total[`${move}_dmg_`], total.plunging_dmg_)
-            : total[`${move}_dmg_`]
+            : total[`${move}_dmg_`],
         ),
-        naught
+        naught,
       ),
       lookup(
         hit.ele,
         objKeyMap(allElements, (ele) => total[`${ele}_dmg_`]),
-        naught
+        naught,
       ),
       equal(
         hit.move,
         'normal',
-        unequal(hit.ele, 'physical', total.normalEle_dmg_)
-      )
+        unequal(hit.ele, 'physical', total.normalEle_dmg_),
+      ),
     ),
     dmgInc: sum(
       infoMut(
@@ -490,7 +490,7 @@ const common: Data = {
           lookup(
             hit.ele,
             objKeyMap(allElements, (element) => total[`${element}_dmgInc`]),
-            NaN
+            NaN,
           ),
           lookup(
             hit.move,
@@ -498,14 +498,14 @@ const common: Data = {
             objKeyMap(allMoves, (move) =>
               move.includes('plunging')
                 ? sum(total[`${move}_dmgInc`], total.plunging_dmgInc)
-                : total[`${move}_dmgInc`]
+                : total[`${move}_dmgInc`],
             ),
-            NaN
-          )
+            NaN,
+          ),
         ),
-        { ...info('dmgInc'), pivot }
+        { ...info('dmgInc'), pivot },
       ),
-      hit.addTerm
+      hit.addTerm,
     ),
     addTerm: lookup(
       hit.reaction,
@@ -516,9 +516,9 @@ const common: Data = {
           prod(
             subscript(input.lvl, transformativeReactionLevelMultipliers),
             1.25,
-            sum(baseAddBonus, total.spread_dmg_)
+            sum(baseAddBonus, total.spread_dmg_),
           ),
-          info('spread_dmgInc')
+          info('spread_dmgInc'),
         ),
         aggravate: equal(
           hit.ele,
@@ -526,12 +526,12 @@ const common: Data = {
           prod(
             subscript(input.lvl, transformativeReactionLevelMultipliers),
             1.15,
-            sum(baseAddBonus, total.aggravate_dmg_)
+            sum(baseAddBonus, total.aggravate_dmg_),
           ),
-          info('aggravate_dmgInc')
+          info('aggravate_dmgInc'),
         ),
       },
-      naught
+      naught,
     ),
     dmg: prod(
       sum(hit.base, hit.dmgInc),
@@ -543,15 +543,15 @@ const common: Data = {
           critHit: sum(one, total.critDMG_),
           avgHit: sum(one, prod(total.cappedCritRate, total.critDMG_)),
         },
-        NaN
+        NaN,
       ),
       enemy.def,
       lookup(
         hit.ele,
         objKeyMap(allElements, (ele) => enemy[`${ele}_resMulti_` as const]),
-        NaN
+        NaN,
       ),
-      hit.ampMulti
+      hit.ampMulti,
     ),
     ampMulti: lookup(
       hit.reaction,
@@ -561,31 +561,31 @@ const common: Data = {
           {
             hydro: prod(
               constant(2, info('vaporize_multi_')),
-              sum(baseAmpBonus, total.vaporize_dmg_)
+              sum(baseAmpBonus, total.vaporize_dmg_),
             ),
             pyro: prod(
               constant(1.5, info('vaporize_multi_')),
-              sum(baseAmpBonus, total.vaporize_dmg_)
+              sum(baseAmpBonus, total.vaporize_dmg_),
             ),
           },
-          one
+          one,
         ),
         melt: lookup(
           hit.ele,
           {
             pyro: prod(
               constant(2, info('melt_multi_')),
-              sum(baseAmpBonus, total.melt_dmg_)
+              sum(baseAmpBonus, total.melt_dmg_),
             ),
             cryo: prod(
               constant(1.5, info('melt_multi_')),
-              sum(baseAmpBonus, total.melt_dmg_)
+              sum(baseAmpBonus, total.melt_dmg_),
             ),
           },
-          one
+          one,
         ),
       },
-      one
+      one,
     ),
   },
 
@@ -596,16 +596,16 @@ const common: Data = {
       prod(
         sum(enemy.level, 100),
         sum(one, prod(-1, enemy.defRed)),
-        sum(one, prod(-1, enemy.defIgn))
-      )
+        sum(one, prod(-1, enemy.defIgn)),
+      ),
     ),
     transDef: frac(
       99999999,
       prod(
         sum(prod(5, enemy.level), 500),
         sum(one, prod(-1, enemy.defRed)),
-        sum(one, prod(-1, enemy.defIgn))
-      )
+        sum(one, prod(-1, enemy.defIgn)),
+      ),
     ),
     defRed: total.enemyDefRed_,
     ...objKeyValMap(allElements, (ele) => [
@@ -622,7 +622,7 @@ const _tally = setReadNodeKeys(
     ...objKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
     maxEleMas: read('max'),
   },
-  ['tally']
+  ['tally'],
 )
 const tally = {
   ..._tally,
@@ -632,7 +632,7 @@ const tally = {
 
 const nonStacking = setReadNodeKeys(
   objKeyMap(allNonstackBuffs, () => stringRead('small')),
-  ['nonStacking']
+  ['nonStacking'],
 )
 
 /**
@@ -649,7 +649,7 @@ const uiInput = input
 export const infusionNode = stringPrio(
   input.infusion.nonOverridableSelf,
   unequalStr(input.infusion.team, none, input.infusion.team),
-  input.infusion.overridableSelf
+  input.infusion.overridableSelf,
 )
 
 export { common, customBonus, input, nonStacking, tally, target, uiInput }

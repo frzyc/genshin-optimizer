@@ -32,18 +32,20 @@ export function CalcWrapper({
     if (!team) return null
     const data: TagMapNodeEntries = [
       ...teamData(
-        team.team_loadouts.map((team_loadout) => members[team_loadout.index])
+        team.team_loadouts.map((team_loadout) => members[team_loadout.index]),
       ),
       ...team.team_loadouts
         .flatMap((team_loadout) => {
           return withMember(
             members[team_loadout.index],
             ...charData(
-              TeamLoadoutCharacterToICharacter(team_loadout.loadout!.character!)
+              TeamLoadoutCharacterToICharacter(
+                team_loadout.loadout!.character!,
+              ),
             ),
             ...(team_loadout.loadout?.character?.weapon
               ? weaponData(
-                  team_loadout.loadout.character.weapon as unknown as IWeapon
+                  team_loadout.loadout.character.weapon as unknown as IWeapon,
                 )
               : []),
             ...(team_loadout.loadout?.character?.artifacts
@@ -56,7 +58,7 @@ export function CalcWrapper({
                         value: getMainStatValue(
                           art.mainStatKey,
                           art.rarity as any,
-                          art.level
+                          art.level,
                         ),
                       },
                       ...art.substats.map(({ value, key }) => ({
@@ -64,9 +66,9 @@ export function CalcWrapper({
                         value,
                       })),
                     ],
-                  }))
+                  })),
                 )
-              : [])
+              : []),
           )
         })
         .filter(notEmpty),

@@ -98,19 +98,19 @@ const normal_dmg_ = lookup(
       unit: '%',
     }),
   },
-  naught
+  naught,
 )
 
 const [condA1Path, condA1] = cond(key, 'A1')
 const atk_ = greaterEq(
   input.asc,
   1,
-  equal(condA1, 'on', equal(target.charKey, key, percent(dm.passive1.atkInc)))
+  equal(condA1, 'on', equal(target.charKey, key, percent(dm.passive1.atkInc))),
 )
 const teamAtk_disp = greaterEq(
   input.asc,
   1,
-  equal(condA1, 'on', percent(dm.passive1.teamAtkInc))
+  equal(condA1, 'on', percent(dm.passive1.teamAtkInc)),
 )
 const teamAtk_ = unequal(target.charKey, key, teamAtk_disp)
 
@@ -121,10 +121,10 @@ const cryo_dmg_ = greaterEq(
   lookup(
     condA4,
     Object.fromEntries(
-      range(1, 10).map((i) => [i, percent(dm.passive2.cryoDmgBonus * i)])
+      range(1, 10).map((i) => [i, percent(dm.passive2.cryoDmgBonus * i)]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const dmgFormulas = {
@@ -136,7 +136,7 @@ const dmgFormulas = {
           ele: compareEq('rush', condCoil, elementKey, 'physical'),
         },
       }),
-    ])
+    ]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -240,7 +240,7 @@ const sheet: TalentSheet = {
             {
               name: ct.chg(`skill.skillParams.2`),
               unit: '%',
-            }
+            },
           ),
         },
         {
@@ -271,7 +271,7 @@ const sheet: TalentSheet = {
                 },
               ],
             },
-          ])
+          ]),
         ),
         rush: {
           name: ct.ch('skill.rush'),
@@ -352,7 +352,7 @@ const sheet: TalentSheet = {
             name: st('seconds', { count: i }),
             fields: [{ node: cryo_dmg_ }],
           },
-        ])
+        ]),
       ),
     }),
   ]),

@@ -89,8 +89,8 @@ const nodeA4 = greaterEq(
   subscript(
     sum(...allElementKeys.map((ele) => greaterEq(tally[ele], 1, 1))),
     [0, ...dm.passive2.dmgInc],
-    { unit: '%' }
-  )
+    { unit: '%' },
+  ),
 )
 
 const [condBurstPath, condBurst] = cond(key, 'skill')
@@ -102,34 +102,34 @@ const nodeSkill = equal(
       input.premod.def,
       sum(
         subscript(input.total.burstIndex, dm.burst.dmgInc, { unit: '%' }),
-        nodeA4
-      )
-    )
-  )
+        nodeA4,
+      ),
+    ),
+  ),
 )
 
 const nodeC2 = greaterEq(
   input.constellation,
   2,
-  equal('on', condBurst, dm.constellation2.normalInc)
+  equal('on', condBurst, dm.constellation2.normalInc),
 )
 
 const [condC4Path, condC4] = cond(key, 'c4')
 const nodeC4 = greaterEq(
   input.constellation,
   4,
-  equal('on', condC4, dm.constellation4.def_)
+  equal('on', condC4, dm.constellation4.def_),
 )
 
 const nodeC6 = greaterEq(
   input.constellation,
   6,
-  equal('on', condBurst, dm.constellation6.atkSpd)
+  equal('on', condBurst, dm.constellation6.atkSpd),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -141,7 +141,7 @@ const dmgFormulas = {
     dmg2: dmgNode('def', dm.skill.dmg2, 'skill'),
     shield: shieldElement(
       'geo',
-      shieldNodeTalent('hp', dm.skill.shield_, dm.skill.shield, 'skill')
+      shieldNodeTalent('hp', dm.skill.shield_, dm.skill.shield, 'skill'),
     ),
   },
   burst: {
@@ -175,7 +175,7 @@ const sheet: TalentSheet = {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], {
           name: ct.chg(
-            `auto.skillParams.${i + (i > 2 ? -1 : 0) + (i > 4 ? -1 : 0)}`
+            `auto.skillParams.${i + (i > 2 ? -1 : 0) + (i > 4 ? -1 : 0)}`,
           ),
           textSuffix:
             i === 2 || i === 4 ? '(1)' : i === 3 || i === 5 ? '(2)' : '',
@@ -250,7 +250,7 @@ const sheet: TalentSheet = {
           value: (data) =>
             data.get(input.constellation).value >= 1
               ? `${dm.skill.cd} - 18% = ${(dm.skill.cd * (1 - 0.18)).toFixed(
-                  2
+                  2,
                 )}`
               : `${dm.skill.cd}`,
           unit: 's',

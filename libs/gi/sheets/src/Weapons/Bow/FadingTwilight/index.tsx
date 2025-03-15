@@ -12,15 +12,15 @@ const [condStatePath, condState] = cond(key, 'state')
 const state_dmg_dict = {
   evengleam: subscript(
     input.weapon.refinement,
-    [-1, 0.06, 0.075, 0.09, 0.105, 0.12]
+    [-1, 0.06, 0.075, 0.09, 0.105, 0.12],
   ),
   afterglow: subscript(
     input.weapon.refinement,
-    [-1, 0.1, 0.125, 0.15, 0.175, 0.2]
+    [-1, 0.1, 0.125, 0.15, 0.175, 0.2],
   ),
   dawnblaze: subscript(
     input.weapon.refinement,
-    [-1, 0.14, 0.175, 0.21, 0.245, 0.28]
+    [-1, 0.14, 0.175, 0.21, 0.245, 0.28],
   ),
 }
 const state_dmg_ = lookup(condState, state_dmg_dict, naught)
@@ -45,7 +45,7 @@ const sheet: IWeaponSheet = {
             name: trm(`states.${state}`),
             fields: [{ node: state_dmg_ }],
           },
-        ])
+        ]),
       ),
     },
   ],

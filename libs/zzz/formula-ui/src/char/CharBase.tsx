@@ -24,7 +24,7 @@ export const charBaseUiSheet: TagField[] = (
 ).map((statKey) => {
   if (
     allAttributeDamageKeys.includes(
-      statKey as (typeof allAttributeDamageKeys)[number]
+      statKey as (typeof allAttributeDamageKeys)[number],
     )
   ) {
     const tag = {
@@ -60,7 +60,7 @@ charBaseUiSheet.push(
         name: 'standardDmgInst',
       },
       title: <ColorText color={attr}>{elementalData[attr]} Damage</ColorText>,
-    })
+    }),
   ),
   ...allAttributeKeys.map(
     (attr): TagField => ({
@@ -75,6 +75,6 @@ charBaseUiSheet.push(
       title: (
         <ColorText color={attr}>{elementalData[attr]} Anomaly Damage</ColorText>
       ),
-    })
-  )
+    }),
+  ),
 )

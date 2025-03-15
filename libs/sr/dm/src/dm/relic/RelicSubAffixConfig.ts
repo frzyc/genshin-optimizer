@@ -16,7 +16,7 @@ export type RelicSubAffixConfig = {
 }
 
 const relicSubAffixConfigFlat = JSON.parse(
-  readDMJSON('ExcelOutput/RelicSubAffixConfig.json')
+  readDMJSON('ExcelOutput/RelicSubAffixConfig.json'),
 ) as RelicSubAffixConfig[]
 
 export const relicSubAffixConfig = relicSubAffixConfigFlat.reduce(
@@ -27,12 +27,12 @@ export const relicSubAffixConfig = relicSubAffixConfigFlat.reduce(
     fullConfig[GroupID][`${AffixID}`] = config
     return fullConfig
   },
-  {} as Record<RelicRarityKey, Record<string, RelicSubAffixConfig>>
+  {} as Record<RelicRarityKey, Record<string, RelicSubAffixConfig>>,
 )
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/relic/RelicSubAffixConfig_gen.json`,
-  relicSubAffixConfig
+  relicSubAffixConfig,
 )
 
 dumpFile(`${PROJROOT_PATH}/src/dm/relic/RelicSubAffixConfig_keys_gen.json`, [
@@ -42,7 +42,7 @@ dumpFile(
   `${PROJROOT_PATH}/src/dm/relic/RelicSubAffixConfig_keysmapped_gen.json`,
   [
     ...new Set(
-      relicSubAffixConfigFlat.map(({ Property }) => statKeyMap[Property])
+      relicSubAffixConfigFlat.map(({ Property }) => statKeyMap[Property]),
     ),
-  ]
+  ],
 )

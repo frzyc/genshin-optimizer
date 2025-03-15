@@ -4,7 +4,7 @@ import { type User } from '@supabase/supabase-js'
 
 export default async function getProfile(
   supabase: SupabaseClient,
-  user: User | null
+  user: User | null,
 ) {
   if (!user) return null
   const { data } = await supabase

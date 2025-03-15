@@ -163,18 +163,18 @@ export const relicSlotToMainStatKeys: Record<RelicSlotKey, RelicMainStatKey[]> =
   }
 
 export const allRelicMainSubStatKeys = Array.from(
-  new Set([...allRelicSubStatKeys, ...allRelicMainStatKeys] as const)
+  new Set([...allRelicSubStatKeys, ...allRelicMainStatKeys] as const),
 )
 export type RelicMainSubStatKey = (typeof allRelicMainSubStatKeys)[number]
 
 export function isCavernRelicSetKey(
-  key: RelicSetKey
+  key: RelicSetKey,
 ): key is RelicCavernSetKey {
   return allRelicCavernSetKeys.includes(key as RelicCavernSetKey)
 }
 
 export function isPlanarRelicSetKey(
-  key: RelicSetKey
+  key: RelicSetKey,
 ): key is RelicPlanarSetKey {
   return allRelicPlanarSetKeys.includes(key as RelicPlanarSetKey)
 }

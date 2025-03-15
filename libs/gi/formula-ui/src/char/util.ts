@@ -19,7 +19,7 @@ export interface ICharacterTemplate {
   ch: (i18key: string) => ReactNode
   talentTem: (
     talentKey: TalentSheetElementKey,
-    docSections?: Document[]
+    docSections?: Document[],
   ) => UISheetElement
   // headerTem: (
   //   talentKey: TalentSheetElementKey,
@@ -68,7 +68,7 @@ const talentTemplate = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
   img: string | StaticImageData,
-  documents?: Document[]
+  documents?: Document[],
 ): UISheetElement => ({
   title: tr(`${talentKey}.name`),
   img,

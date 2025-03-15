@@ -19,12 +19,15 @@ type ArtifactSetBadgesProps = {
 export function ArtifactSetBadges({ artifacts }: ArtifactSetBadgesProps) {
   const setToSlots = useMemo(() => {
     const setToSlots: Partial<Record<ArtifactSetKey, ArtifactSlotKey[]>> =
-      artifacts.filter(notEmpty).reduce((acc, curr) => {
-        acc[curr.setKey]
-          ? acc[curr.setKey]!.push(curr.slotKey)
-          : (acc[curr.setKey] = [curr.slotKey])
-        return acc
-      }, {} as Partial<Record<ArtifactSetKey, ArtifactSlotKey[]>>)
+      artifacts.filter(notEmpty).reduce(
+        (acc, curr) => {
+          acc[curr.setKey]
+            ? acc[curr.setKey]!.push(curr.slotKey)
+            : (acc[curr.setKey] = [curr.slotKey])
+          return acc
+        },
+        {} as Partial<Record<ArtifactSetKey, ArtifactSlotKey[]>>,
+      )
     Object.keys(setToSlots).forEach((setKey) => {
       if (setToSlots[setKey]?.length === 1) delete setToSlots[setKey]
     })
@@ -35,7 +38,7 @@ export function ArtifactSetBadges({ artifacts }: ArtifactSetBadgesProps) {
       {Object.entries(setToSlots)
         .sort(
           ([_k1, slotarr1], [_k2, slotarr2]) =>
-            slotarr2.length - slotarr1.length
+            slotarr2.length - slotarr1.length,
         )
         .map(([key, slotarr]) => (
           <ArtifactSetBadge key={key} setKey={key} slotarr={slotarr} />

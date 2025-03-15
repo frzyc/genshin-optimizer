@@ -49,7 +49,7 @@ type Rarity =
   | 'CombatPowerLightconeRarity5'
 
 const equipmentConfigSrc = parse(
-  readDMJSON('ExcelOutput/EquipmentConfig.json')
+  readDMJSON('ExcelOutput/EquipmentConfig.json'),
 ) as EquipmentConfig[]
 
 dumpFile(
@@ -57,23 +57,23 @@ dumpFile(
   objKeyValMap(equipmentConfigSrc, (config) => [
     config.EquipmentID,
     nameToKey(TextMapEN[config.EquipmentName.Hash.toString()]),
-  ])
+  ]),
 )
 dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/EquipmentConfig_keys_gen.json`,
   [
     ...new Set(
       Object.entries(equipmentConfigSrc).map(([, data]) =>
-        nameToKey(TextMapEN[data.EquipmentName.Hash.toString()])
-      )
+        nameToKey(TextMapEN[data.EquipmentName.Hash.toString()]),
+      ),
     ),
   ]
     .filter((s) => s && s !== 'NICKNAME')
-    .sort()
+    .sort(),
 )
 
 const equipmentConfig = objFilterKeys(
   objKeyValMap(equipmentConfigSrc, (config) => [config.EquipmentID, config]),
-  Object.keys(lightConeIdMap) as LightConeId[]
+  Object.keys(lightConeIdMap) as LightConeId[],
 ) as Record<LightConeId, EquipmentConfig>
 export { equipmentConfig }

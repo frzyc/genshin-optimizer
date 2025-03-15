@@ -22,7 +22,7 @@ const swirl_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 4, percent(0.6))
 
 const condSwirlPaths = objKeyMap(absorbableEle, (e) => [key, `swirl${e}`])
 const condSwirls = objKeyMap(absorbableEle, (e) =>
-  condReadNode(condSwirlPaths[e])
+  condReadNode(condSwirlPaths[e]),
 )
 const set4TallyWrites = objKeyValMap(absorbableEle, (e) => [
   `vv4${e}`,
@@ -72,7 +72,7 @@ const sheet: SetEffectSheet = {
               name: st(`swirlReaction.${eleKey}`),
               fields: [
                 ...Object.values(condSwirlNodes[`${eleKey}_enemyRes_`]).map(
-                  (node) => ({ node })
+                  (node) => ({ node }),
                 ),
                 {
                   text: st(`effectDuration.${eleKey}`),
@@ -81,7 +81,7 @@ const sheet: SetEffectSheet = {
                 },
               ],
             },
-          ])
+          ]),
         ),
       },
     ],

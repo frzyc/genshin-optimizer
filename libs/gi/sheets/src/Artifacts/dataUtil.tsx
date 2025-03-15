@@ -9,7 +9,7 @@ import {
 export function dataObjForArtifactSheet(
   key: ArtifactSetKey,
   data: Data = {},
-  displayArtifact: DisplaySub = {}
+  displayArtifact: DisplaySub = {},
 ): Data {
   return mergeData([
     inferInfoMut(data, key),

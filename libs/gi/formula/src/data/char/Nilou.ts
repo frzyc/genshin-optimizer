@@ -102,22 +102,22 @@ const {
   char: { ascension, constellation },
 } = own
 const { a1AfterSkill, a1AfterHit, c4AfterPirHit } = allBoolConditionals(
-  info.key
+  info.key,
 )
 const { c2Hydro, c2Dendro } = allBoolConditionals(info.key)
 
 const onlyDendroHydroTeam = cmpGE(
   team.common.count.dendro,
   1,
-  cmpEq(own.common.eleCount, 2, 1)
+  cmpEq(own.common.eleCount, 2, 1),
 )
 const isGoldenChaliceBountyActive = cmpGE(
   ascension,
   1,
-  a1AfterSkill.ifOn(cmpEq(onlyDendroHydroTeam, 1, 1))
+  a1AfterSkill.ifOn(cmpEq(onlyDendroHydroTeam, 1, 1)),
 )
 const a1AfterSkillAndHit_eleMas = a1AfterHit.ifOn(
-  cmpEq(isGoldenChaliceBountyActive, 1, dm.passive1.eleMas)
+  cmpEq(isGoldenChaliceBountyActive, 1, dm.passive1.eleMas),
 )
 
 const bountifulBloom_dmg_ = cmpGE(
@@ -129,17 +129,17 @@ const bountifulBloom_dmg_ = cmpGE(
     min(
       prod(
         percent(dm.passive2.dmg_),
-        prod(max(sum(final.hp, dm.passive2.minHp), 0), 1 / 1000)
+        prod(max(sum(final.hp, dm.passive2.minHp), 0), 1 / 1000),
       ),
-      percent(dm.passive2.maxDmg_)
-    )
-  )
+      percent(dm.passive2.maxDmg_),
+    ),
+  ),
 )
 
 const c1_moon_dmg_ = cmpGE(
   constellation,
   1,
-  percent(dm.constellation1.moon_dmg_)
+  percent(dm.constellation1.moon_dmg_),
 )
 const c2_hydro_enemyRes_ = cmpGE(
   constellation,
@@ -147,8 +147,8 @@ const c2_hydro_enemyRes_ = cmpGE(
   cmpEq(
     isGoldenChaliceBountyActive,
     1,
-    c2Hydro.ifOn(percent(dm.constellation2.hydro_enemyRes_))
-  )
+    c2Hydro.ifOn(percent(dm.constellation2.hydro_enemyRes_)),
+  ),
 )
 const c2_dendro_enemyRes_ = cmpGE(
   constellation,
@@ -156,29 +156,29 @@ const c2_dendro_enemyRes_ = cmpGE(
   cmpEq(
     isGoldenChaliceBountyActive,
     1,
-    c2Dendro.ifOn(percent(dm.constellation2.dendro_enemyRes_))
-  )
+    c2Dendro.ifOn(percent(dm.constellation2.dendro_enemyRes_)),
+  ),
 )
 const c4_burst_dmg_ = cmpGE(
   constellation,
   4,
-  c4AfterPirHit.ifOn(percent(dm.constellation4.burst_dmg_))
+  c4AfterPirHit.ifOn(percent(dm.constellation4.burst_dmg_)),
 )
 const c6_critRate_ = cmpGE(
   constellation,
   6,
   min(
     prod(percent(dm.constellation6.critRate_), final.hp, 1 / 1000),
-    percent(dm.constellation6.maxCritRate_)
-  )
+    percent(dm.constellation6.maxCritRate_),
+  ),
 )
 const c6_critDMG_ = cmpGE(
   constellation,
   6,
   min(
     prod(percent(dm.constellation6.critDmg_), final.hp, 1 / 1000),
-    percent(dm.constellation6.maxCritDmg_)
-  )
+    percent(dm.constellation6.maxCritDmg_),
+  ),
 )
 
 export default register(
@@ -199,16 +199,16 @@ export default register(
 
   // Formulas
   dm.normal.hitArr.flatMap((arr, i) =>
-    dmg(`normal_${i}`, info, 'atk', arr, 'normal')
+    dmg(`normal_${i}`, info, 'atk', arr, 'normal'),
   ),
   ([1, 2] as const).flatMap((i) =>
-    dmg(`charged_${i}`, info, 'atk', dm.charged[`hit${i}`], 'charged')
+    dmg(`charged_${i}`, info, 'atk', dm.charged[`hit${i}`], 'charged'),
   ),
   Object.entries(dm.plunging).flatMap(([k, v]) =>
-    dmg(`plunging_${k}`, info, 'atk', v, 'plunging')
+    dmg(`plunging_${k}`, info, 'atk', v, 'plunging'),
   ),
   (['skill', 'dance1', 'dance2', 'whirl1', 'whirl2', 'wheel'] as const).flatMap(
-    (k) => dmg(`skill_${k}`, info, 'hp', dm.skill[`${k}Dmg`], 'skill')
+    (k) => dmg(`skill_${k}`, info, 'hp', dm.skill[`${k}Dmg`], 'skill'),
   ),
   dmg(
     `skill_moon`,
@@ -217,9 +217,9 @@ export default register(
     dm.skill[`moonDmg`],
     'skill',
     undefined,
-    ownBuff.premod.dmg_.add(c1_moon_dmg_)
+    ownBuff.premod.dmg_.add(c1_moon_dmg_),
   ),
   (['skill', 'aeon'] as const).flatMap((k) =>
-    dmg(`burst_${k}`, info, 'hp', dm.burst[`${k}Dmg`], 'burst')
-  )
+    dmg(`burst_${k}`, info, 'hp', dm.burst[`${k}Dmg`], 'burst'),
+  ),
 )

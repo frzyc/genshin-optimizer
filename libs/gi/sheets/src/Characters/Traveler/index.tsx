@@ -17,7 +17,7 @@ import { dmgNode } from '../dataUtil'
 type TravelerTalentFunc = (
   key: CharacterSheetKey,
   charKey: CharacterKey,
-  dmgForms: { [key: string]: DisplaySub }
+  dmgForms: { [key: string]: DisplaySub },
 ) => {
   talent: Partial<Record<TalentSheetElementKey, TalentSheetElement>>
   data: Data
@@ -25,7 +25,7 @@ type TravelerTalentFunc = (
 export function travelerSheet(
   key: CharacterSheetKey,
   charKey: CharacterKey,
-  talentFunc: TravelerTalentFunc
+  talentFunc: TravelerTalentFunc,
 ) {
   const skillParam_gen = allStats.char.skillParam[key]
   const dm = {
@@ -52,7 +52,7 @@ export function travelerSheet(
 
   const dmgFormulas = {
     normal: Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
     charged: {
       dmg1: dmgNode('atk', dm.charged.hit1, 'charged'),
@@ -64,9 +64,9 @@ export function travelerSheet(
         dmgNode(
           'atk',
           value,
-          key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+          key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
         ),
-      ])
+      ]),
     ),
   } as const
 

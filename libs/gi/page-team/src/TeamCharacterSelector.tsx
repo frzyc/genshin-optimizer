@@ -51,12 +51,12 @@ export default function TeamCharacterSelector({
       const teamChar = database.teamChars.get(loadoutDatum.teamCharId)
       if (!teamChar) return
       return getCharEle(teamChar.key)
-    }
+    },
   )
   const selectedIndex = loadoutData.findIndex(
     (loadoutDatum) =>
       loadoutDatum &&
-      database.teamChars.get(loadoutDatum?.teamCharId)?.key === characterKey
+      database.teamChars.get(loadoutDatum?.teamCharId)?.key === characterKey,
   )
   const selectedEle = elementArray[selectedIndex]
   const theme = useTheme()
@@ -67,7 +67,7 @@ export default function TeamCharacterSelector({
       sx={(theme) => {
         const backrgba = colorToRgbaString(
           hexToColor(theme.palette['contentLight'].main)!,
-          !characterKey ? 1 : 0.5
+          !characterKey ? 1 : 0.5,
         )!
         const rgbas = [
           // color for team setting
@@ -91,7 +91,7 @@ export default function TeamCharacterSelector({
           background: `linear-gradient(to right, ${rgbas
             .map(
               (rgba, i, arr) =>
-                `${rgba} ${i * (100 / arr.length) + 50 / arr.length}%`
+                `${rgba} ${i * (100 / arr.length) + 50 / arr.length}%`,
             )
             .join(', ')})`,
           borderBottom: `2px ${rgba} solid`,

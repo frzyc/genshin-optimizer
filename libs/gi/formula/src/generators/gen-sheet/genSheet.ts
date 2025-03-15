@@ -7,7 +7,7 @@ import type { GenSheetGeneratorSchema } from './schema'
 export default async function genSheet(
   tree: Tree,
   options: GenSheetGeneratorSchema,
-  verbose = false
+  verbose = false,
 ) {
   const { sheet_type } = options
   const file_location = `libs/gi/formula/src/data/${sheet_type}`
@@ -17,8 +17,8 @@ export default async function genSheet(
       console.warn(
         `Sheet at ${path.join(
           file_location,
-          `${options.sheet}.ts`
-        )} already exists.`
+          `${options.sheet}.ts`,
+        )} already exists.`,
       )
     return
   }

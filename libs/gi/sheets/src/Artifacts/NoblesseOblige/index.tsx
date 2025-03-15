@@ -21,7 +21,7 @@ const [condSet4Path, condSet4] = cond(key, 'set4')
 const set4TallyWrite = greaterEqStr(
   input.artSet.NoblesseOblige,
   4,
-  equalStr(condSet4, 'on', input.charKey)
+  equalStr(condSet4, 'on', input.charKey),
 )
 const [set4, set4Inactive] = nonStackBuff('no4', 'atk_', percent(0.2))
 

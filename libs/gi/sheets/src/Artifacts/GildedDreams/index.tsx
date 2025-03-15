@@ -35,8 +35,8 @@ const autoSameNum = greaterEq(teamSameNum, 2, sum(teamSameNum, -1))
 
 const autoOtherNum = sum(
   ...allElementKeys.map((ele) =>
-    greaterEq(tally[ele], 1, unequal(ele, input.charEle, tally[ele]))
-  )
+    greaterEq(tally[ele], 1, unequal(ele, input.charEle, tally[ele])),
+  ),
 )
 
 const [condOverrideOtherPath, condOverrideOther] = cond(key, 'overrideOther')
@@ -44,13 +44,13 @@ const overrideArr = range(0, 3)
 const overrideOtherNum = lookup(
   condOverrideOther,
   objKeyMap(overrideArr, (numOther) => constant(numOther)),
-  -1
+  -1,
 )
 const [condOverrideSamePath, condOverrideSame] = cond(key, 'overrideSame')
 const overrideSameNum = lookup(
   condOverrideSame,
   objKeyMap(overrideArr, (numSame) => constant(numSame)),
-  -1
+  -1,
 )
 
 const set4_atk_ = greaterEq(
@@ -61,9 +61,9 @@ const set4_atk_ = greaterEq(
     'on',
     prod(
       percent(0.14),
-      compareEq(overrideSameNum, -1, autoSameNum, overrideSameNum)
-    )
-  )
+      compareEq(overrideSameNum, -1, autoSameNum, overrideSameNum),
+    ),
+  ),
 )
 
 const set4_eleMas = greaterEq(
@@ -73,8 +73,8 @@ const set4_eleMas = greaterEq(
     condPassive,
     'on',
     prod(50, compareEq(overrideOtherNum, -1, autoOtherNum, overrideOtherNum)),
-    { path: 'eleMas' }
-  )
+    { path: 'eleMas' },
+  ),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

@@ -32,7 +32,7 @@ export default function ScalesWith({
                     <ArtifactStatWithUnit statKey={k} />
                   </strong>
                 ))([...scalesWith][i / 2])
-              : str
+              : str,
           )}
         <Trans t={t} i18nKey="tabTheorycraft.optAlert.distribute">
           . The solver will only distribute stats to these substats.

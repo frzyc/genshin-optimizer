@@ -25,15 +25,15 @@ const sheet = registerLightCone(
         cmpGE(
           sum(
             ...allPathKeys.map((path) =>
-              cmpEq(target.char.path, path, team.common.count.withPath(path))
-            )
+              cmpEq(target.char.path, path, team.common.count.withPath(path)),
+            ),
           ),
           2,
-          subscript(superimpose, dm.crit_dmg_)
-        )
-      )
+          subscript(superimpose, dm.crit_dmg_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

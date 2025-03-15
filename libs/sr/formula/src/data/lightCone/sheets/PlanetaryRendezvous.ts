@@ -22,10 +22,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        cmpEq(own.char.ele, 'physical', subscript(superimpose, dm.ele_dmg_))
-      )
+        cmpEq(own.char.ele, 'physical', subscript(superimpose, dm.ele_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'quantum_dmg_',
@@ -33,10 +33,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        cmpEq(own.char.ele, 'quantum', subscript(superimpose, dm.ele_dmg_))
-      )
+        cmpEq(own.char.ele, 'quantum', subscript(superimpose, dm.ele_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'lightning_dmg_',
@@ -44,10 +44,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        cmpEq(own.char.ele, 'lightning', subscript(superimpose, dm.ele_dmg_))
-      )
+        cmpEq(own.char.ele, 'lightning', subscript(superimpose, dm.ele_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'ice_dmg_',
@@ -55,10 +55,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        cmpEq(own.char.ele, 'ice', subscript(superimpose, dm.ele_dmg_))
-      )
+        cmpEq(own.char.ele, 'ice', subscript(superimpose, dm.ele_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'wind_dmg_',
@@ -66,10 +66,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        cmpEq(own.char.ele, 'wind', subscript(superimpose, dm.ele_dmg_))
-      )
+        cmpEq(own.char.ele, 'wind', subscript(superimpose, dm.ele_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'fire_dmg_',
@@ -77,10 +77,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        cmpEq(own.char.ele, 'fire', subscript(superimpose, dm.ele_dmg_))
-      )
+        cmpEq(own.char.ele, 'fire', subscript(superimpose, dm.ele_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'imaginary_dmg_',
@@ -88,10 +88,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        cmpEq(own.char.ele, 'imaginary', subscript(superimpose, dm.ele_dmg_))
-      )
+        cmpEq(own.char.ele, 'imaginary', subscript(superimpose, dm.ele_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

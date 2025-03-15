@@ -108,19 +108,19 @@ export type BaseKeys = keyof typeof baseMap
 
 export type EleDmgKey = `${ElementWithPhyKey}_dmg_`
 export const allEleDmgKeys = allElementWithPhyKeys.map(
-  (e) => `${e}_dmg_`
+  (e) => `${e}_dmg_`,
 ) as EleDmgKey[]
 
 export type EleResKey = `${ElementWithPhyKey}_res_`
 export const allEleResKeys = allElementWithPhyKeys.map(
-  (e) => `${e}_res_`
+  (e) => `${e}_res_`,
 ) as EleResKey[]
 
 type EleDmgIncKey = `${ElementWithPhyKey}_dmgInc`
 
 export type EleEnemyResKey = `${ElementWithPhyKey}_enemyRes_`
 export const allEleEnemyResKeys = allElementWithPhyKeys.map(
-  (e) => `${e}_enemyRes_`
+  (e) => `${e}_enemyRes_`,
 ) as EleEnemyResKey[]
 
 type EleECritDmgKey = `${ElementWithPhyKey}_critDMG_`
@@ -197,12 +197,10 @@ type TransformativeReactionsCritDMGKey =
   `${CrittableTransformativeReactionsKey}_critDMG_`
 
 crittableTransformativeReactions.forEach((reaction) => {
-  statMap[
-    `${reaction}_critRate_`
-  ] = `${transformativeReactions[reaction].name} Crit Rate`
-  statMap[
-    `${reaction}_critDMG_`
-  ] = `${transformativeReactions[reaction].name} Crit DMG`
+  statMap[`${reaction}_critRate_`] =
+    `${transformativeReactions[reaction].name} Crit Rate`
+  statMap[`${reaction}_critDMG_`] =
+    `${transformativeReactions[reaction].name} Crit DMG`
 })
 const crystallizeElements = ['cryo', 'hydro', 'pyro', 'electro'] as const
 export type CrystallizeKey =
@@ -259,7 +257,7 @@ export class KeyMap {
     return KeyMap.getStr(key) ?? key
   }
   static getVariant(
-    key = ''
+    key = '',
   ):
     | ElementWithPhyKey
     | TransformativeReactionKey
@@ -268,15 +266,15 @@ export class KeyMap {
     | 'heal'
     | undefined {
     const trans = Object.keys(transformativeReactions).find((e) =>
-      key.startsWith(e)
+      key.startsWith(e),
     ) as undefined | keyof typeof transformativeReactions
     if (trans) return trans
     const amp = Object.keys(amplifyingReactions).find((e) =>
-      key.startsWith(e)
+      key.startsWith(e),
     ) as undefined | keyof typeof amplifyingReactions
     if (amp) return amp
     const add = Object.keys(additiveReactions).find((e) =>
-      key.startsWith(e)
+      key.startsWith(e),
     ) as undefined | keyof typeof additiveReactions
     if (add) return add
     if (key.includes('heal')) return 'heal'

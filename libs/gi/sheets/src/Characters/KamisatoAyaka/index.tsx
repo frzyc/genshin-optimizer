@@ -95,31 +95,31 @@ const [condAfterSkillA1Path, condAfterSkillA1] = cond(key, 'afterSkillA1')
 const a1NormDmg_ = greaterEq(
   input.asc,
   1,
-  equal('afterSkill', condAfterSkillA1, percent(dm.passive1.dmg_bonus))
+  equal('afterSkill', condAfterSkillA1, percent(dm.passive1.dmg_bonus)),
 )
 const a1ChargedDmg_ = greaterEq(
   input.asc,
   1,
   equal('afterSkill', condAfterSkillA1, percent(dm.passive1.dmg_bonus), {
     path: 'charged_dmg_',
-  })
+  }),
 )
 
 const [condAfterApplySprintPath, condAfterApplySprint] = cond(
   key,
-  'afterApplySprint'
+  'afterApplySprint',
 )
 const afterApplySprintCryo = greaterEq(
   input.asc,
   4,
-  equal('afterApplySprint', condAfterApplySprint, percent(dm.passive2.cryo))
+  equal('afterApplySprint', condAfterApplySprint, percent(dm.passive2.cryo)),
 )
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')
 const afterBurst = greaterEq(
   input.constellation,
   4,
-  equal('c4', condAfterBurst, dm.constellation4.def_red)
+  equal('c4', condAfterBurst, dm.constellation4.def_red),
 )
 
 const [condC6Path, condC6] = cond(key, 'C6')
@@ -127,12 +127,12 @@ const c6ChargedDmg_ = greaterEq(
   input.constellation,
   6,
   equal('c6', condC6, dm.constellation6.charged_bonus),
-  { path: 'charged_dmg_' }
+  { path: 'charged_dmg_' },
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -154,8 +154,8 @@ const dmgFormulas = {
         dm.burst.cutDmg,
         'burst',
         undefined,
-        percent(dm.constellation2.snowflake)
-      )
+        percent(dm.constellation2.snowflake),
+      ),
     ),
     bloom: greaterEq(
       input.constellation,
@@ -165,8 +165,8 @@ const dmgFormulas = {
         dm.burst.bloomDmg,
         'burst',
         undefined,
-        percent(dm.constellation2.snowflake)
-      )
+        percent(dm.constellation2.snowflake),
+      ),
     ),
   },
 }

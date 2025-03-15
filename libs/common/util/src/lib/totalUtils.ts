@@ -8,7 +8,7 @@ type CatTotalKey = string | number | symbol
 // A helper function to generate multiple `current/total` formated string object with categories using a single callback
 export function bulkCatTotal(
   catTotals: Record<CatTotalKey, readonly CatTotalKey[]>,
-  cb: (ctMap: Record<CatTotalKey, Record<CatTotalKey, Entry>>) => void
+  cb: (ctMap: Record<CatTotalKey, Record<CatTotalKey, Entry>>) => void,
 ) {
   const ctMap = objMap(catTotals, (keys) => catTotalObj(keys))
   cb(ctMap)
@@ -17,7 +17,7 @@ export function bulkCatTotal(
 // A helper function to generate a `current/total` formated string object with categories
 export function catTotal<T extends CatTotalKey>(
   keys: readonly T[],
-  cb: (ct: Record<T, Entry>) => void
+  cb: (ct: Record<T, Entry>) => void,
 ) {
   const ct = catTotalObj(keys)
   cb(ct)
@@ -25,15 +25,15 @@ export function catTotal<T extends CatTotalKey>(
 }
 
 function catTotalObj<T extends CatTotalKey>(
-  keys: readonly T[]
+  keys: readonly T[],
 ): Record<T, Entry> {
   return Object.fromEntries(
-    keys.map((k) => [k, { total: 0, current: 0 }])
+    keys.map((k) => [k, { total: 0, current: 0 }]),
   ) as Record<T, Entry>
 }
 
 function catTotalToStringObj<T extends CatTotalKey>(tot: Record<T, Entry>) {
   return objMap(tot, ({ total, current }) =>
-    current === total ? `${total}` : `${current}/${total}`
+    current === total ? `${total}` : `${current}/${total}`,
   ) as Record<T, string>
 }

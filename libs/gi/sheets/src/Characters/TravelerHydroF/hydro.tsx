@@ -32,7 +32,7 @@ import {
 export default function dendro(
   key: CharacterSheetKey,
   charKey: CharacterKey,
-  dmgForms: { [key: string]: DisplaySub }
+  dmgForms: { [key: string]: DisplaySub },
 ) {
   const condCharKey = 'TravelerHydro'
   const ct = charTemplates(key)
@@ -87,15 +87,15 @@ export default function dendro(
 
   const [condSkillSuffusionPath, condSkillSuffusion] = cond(
     condCharKey,
-    'suffusion'
+    'suffusion',
   )
   const suffusion_dewdrop_dmgInc = equal(
     condSkillSuffusion,
     'on',
     prod(
       subscript(input.total.skillIndex, dm.skill.dmgBonus, { unit: '%' }),
-      input.total.hp
-    )
+      input.total.hp,
+    ),
   )
 
   const suffusion_hpCost = prod(percent(dm.skill.hpCost), input.total.hp)
@@ -110,39 +110,39 @@ export default function dendro(
   ]
   const [condA4HpConsumedPercentPath, condA4HpConsumedPercent] = cond(
     condCharKey,
-    'a4HpConsumedPercent'
+    'a4HpConsumedPercent',
   )
   const a4HpConsumed = lookup(
     condA4HpConsumedPercent,
     objKeyMap(a4HpConsumedPercentArr, (percentage) =>
-      prod(input.total.hp, percent(percentage))
+      prod(input.total.hp, percent(percentage)),
     ),
-    naught
+    naught,
   )
   const a4HpConsumed_surge_dmgInc = greaterEq(
     input.asc,
     4,
     min(
       dm.passive2.maxSurge_dmgInc,
-      prod(percent(dm.passive2.surge_dmgInc), a4HpConsumed)
-    )
+      prod(percent(dm.passive2.surge_dmgInc), a4HpConsumed),
+    ),
   )
 
   const c4Shield = greaterEq(
     input.constellation,
     4,
-    shieldNode('hp', dm.constellation4.shield_, 0)
+    shieldNode('hp', dm.constellation4.shield_, 0),
   )
   const c4HydroShield = greaterEq(
     input.constellation,
     4,
-    shieldElement('hydro', c4Shield)
+    shieldElement('hydro', c4Shield),
   )
   // Taken off of optimization targets as it scales on receiving character's HP.
   const c6healing = greaterEq(
     input.constellation,
     6,
-    healNode('hp', dm.constellation6.heal, 0)
+    healNode('hp', dm.constellation6.heal, 0),
   )
 
   const dmgFormulas = {

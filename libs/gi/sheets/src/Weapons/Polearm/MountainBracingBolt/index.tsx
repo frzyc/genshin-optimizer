@@ -14,18 +14,21 @@ const skill_dmg_ = equal(
   subscript(input.weapon.refinement, skill_dmg_arr, {
     path: 'skill_dmg_',
     unit: '%',
-  })
+  }),
 )
 
 const [condAfterOtherSkillPath, condAfterOtherSkill] = cond(
   key,
-  'afterOtherSkill'
+  'afterOtherSkill',
 )
 const dmg_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const skill_dmg_2 = equal(
   condAfterOtherSkill,
   'on',
-  subscript(input.weapon.refinement, dmg_arr, { path: 'skill_dmg_', unit: '%' })
+  subscript(input.weapon.refinement, dmg_arr, {
+    path: 'skill_dmg_',
+    unit: '%',
+  }),
 )
 
 const data = dataObjForWeaponSheet(key, {

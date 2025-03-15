@@ -85,30 +85,30 @@ const dm = {
 const burst_critRate_ = greaterEq(
   input.asc,
   1,
-  percent(dm.passive1.critRateInc)
+  percent(dm.passive1.critRateInc),
 )
 const [condA4Path, condA4] = cond(key, 'A4')
 const atk_ = greaterEq(
   input.asc,
   4,
-  equal('on', condA4, percent(dm.passive2.atkInc))
+  equal('on', condA4, percent(dm.passive2.atkInc)),
 )
 
 const [condC6Path, condC6] = cond(key, 'C6')
 const moveSPD_ = greaterEq(
   input.constellation,
   6,
-  equal('on', condC6, percent(dm.constellation6.moveSpdInc))
+  equal('on', condC6, percent(dm.constellation6.moveSpdInc)),
 )
 const teamAtk_ = greaterEq(
   input.constellation,
   6,
-  equal('on', condC6, percent(dm.constellation6.atkInc))
+  equal('on', condC6, percent(dm.constellation6.atkInc)),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -120,7 +120,7 @@ const dmgFormulas = {
   skill: {
     inheritedHp: prod(
       subscript(input.total.skillIndex, dm.skill.inheritedHp),
-      input.total.hp
+      input.total.hp,
     ),
     dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
   },
@@ -134,8 +134,8 @@ const dmgFormulas = {
       1,
       prod(
         percent(dm.constellation1.secArrowDmg),
-        dmgNode('atk', dm.charged.aimed, 'charged')
-      )
+        dmgNode('atk', dm.charged.aimed, 'charged'),
+      ),
     ),
     secondAimedCharged: greaterEq(
       input.constellation,
@@ -144,8 +144,8 @@ const dmgFormulas = {
         dmgNode('atk', dm.charged.aimedCharged, 'charged', {
           hit: { ele: constant('pyro') },
         }),
-        percent(dm.constellation1.secArrowDmg)
-      )
+        percent(dm.constellation1.secArrowDmg),
+      ),
     ),
   },
   constellation2: {
@@ -154,7 +154,7 @@ const dmgFormulas = {
       2,
       dmgNode('atk', dm.skill.dmg, 'skill', {
         premod: { skill_dmg_: percent(dm.constellation2.manualDetionationDmg) },
-      })
+      }),
     ),
   },
 }

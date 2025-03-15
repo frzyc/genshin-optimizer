@@ -26,9 +26,9 @@ const baseAtk = equal(
   key,
   prod(
     subscript(input.weapon.refinement, baseAtkArr, { unit: '%' }),
-    input.premod.eleMas
+    input.premod.eleMas,
   ),
-  { path: 'atk' }
+  { path: 'atk' },
 )
 const stacksAtk = lookup(
   condStacks,
@@ -38,12 +38,12 @@ const stacksAtk = lookup(
       prod(
         stack,
         subscript(input.weapon.refinement, stacksAttArr, { unit: '%' }),
-        input.premod.eleMas
+        input.premod.eleMas,
       ),
-    ])
+    ]),
   ),
   naught,
-  { path: 'atk' }
+  { path: 'atk' },
 )
 const atk = equal(input.weapon.key, key, sum(baseAtk, stacksAtk))
 
@@ -56,7 +56,7 @@ const data = dataObjForWeaponSheet(
   },
   {
     atk,
-  }
+  },
 )
 
 const sheet: IWeaponSheet = {
@@ -90,7 +90,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

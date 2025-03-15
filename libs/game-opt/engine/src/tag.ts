@@ -13,7 +13,7 @@ export const createConvert =
   <Read_ extends Read<Tag>>() =>
   <V extends Record<string, Record<string, Desc<Sheet<Read['tag']>>>>>(
     v: V,
-    tag: Omit<Read_['tag'], 'qt' | 'q'>
+    tag: Omit<Read_['tag'], 'qt' | 'q'>,
   ): {
     [j in 'withTag' | keyof V]: j extends 'withTag'
       ? (_: Read_['tag']) => Read_
@@ -30,7 +30,7 @@ export const createConvert =
           if (sheet && !tag['sheet']) r = r.sheet(sheet) // `tag.sheet` overrides `Desc`
           return r
         }),
-      { withTag: (tag: Read_['tag']) => r.withTag(tag) }
+      { withTag: (tag: Read_['tag']) => r.withTag(tag) },
     ) as any
   }
 
@@ -62,14 +62,14 @@ export const createAllNumConditionals =
     int_only = true,
     min?: number,
     max?: number,
-    ignored?: CondIgnored
+    ignored?: CondIgnored,
   ) =>
     allConditionals(
       nullTag,
       sheet,
       ignored,
       { type: 'num', int_only, min, max },
-      (r) => r
+      (r) => r,
     )
 
 export const createConditionalEntries =
@@ -90,7 +90,7 @@ function allConditionals<T, Tag_ extends Tag>(
   sheet: Sheet<Tag_>,
   shared: CondIgnored = 'none',
   meta: IBaseConditionalData,
-  transform: (r: Read<Tag_>, q: string) => T
+  transform: (r: Read<Tag_>, q: string) => T,
 ): Record<string, T> {
   // Keep the base tag "full" here so that `cond` returns consistent tags
   const baseTag: Omit<Tag_, 'preset' | 'src' | 'dst' | 'q'> = {

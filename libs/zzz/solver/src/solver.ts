@@ -38,7 +38,7 @@ export class Solver {
     setFilter4: DiscSetKey[], // [] means rainbow
     discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
     numWorkers: number,
-    setProgress: (progress: ProgressResult) => void
+    setProgress: (progress: ProgressResult) => void,
   ) {
     this.formulaKey = formulaKey
     this.baseStats = baseStats

@@ -49,15 +49,15 @@ export function TeamDelModal({
         if (!loadoutDatum) return []
         const { teamCharId } = loadoutDatum
         return database.teams.values.filter(({ loadoutData: data }) =>
-          data.find((datum) => datum?.teamCharId === teamCharId)
+          data.find((datum) => datum?.teamCharId === teamCharId),
         )
       }),
-    [database, loadoutData]
+    [database, loadoutData],
   )
   const [delArr, setDelArry] = useState(() =>
     inTeamsData
       .map((teams, i) => (teams.length === 1 ? i : undefined))
-      .filter(notEmpty)
+      .filter(notEmpty),
   )
   const onDelete = () => {
     database.teams.remove(teamId)
@@ -112,7 +112,7 @@ export function TeamDelModal({
                 onClick={() => setDelArry((arr) => toggleArr(arr, i))}
                 inTeams={inTeamsData[i]}
               />
-            ) : null
+            ) : null,
           )}
         </CardContent>
         <Divider />

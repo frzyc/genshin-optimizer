@@ -105,12 +105,12 @@ const burstNormalDmgInc = equal(
       greaterEq(
         input.asc,
         4,
-        prod(percent(dm.p2.heal_ratio_), input.premod.heal_)
-      )
+        prod(percent(dm.p2.heal_ratio_), input.premod.heal_),
+      ),
     ),
-    input.premod.hp
+    input.premod.hp,
   ),
-  { variant: 'invalid' }
+  { variant: 'invalid' },
 )
 const burstChargedDmgInc = equal(
   condBurst,
@@ -121,20 +121,20 @@ const burstChargedDmgInc = equal(
       greaterEq(
         input.asc,
         4,
-        prod(percent(dm.p2.heal_ratio_), input.premod.heal_)
-      )
+        prod(percent(dm.p2.heal_ratio_), input.premod.heal_),
+      ),
     ),
-    input.premod.hp
+    input.premod.hp,
   ),
-  { variant: 'invalid' }
+  { variant: 'invalid' },
 )
 const burstSkillDmgInc = equal(
   condBurst,
   'on',
   prod(
     subscript(input.total.burstIndex, dm.burst.sBonus_, { unit: '%' }),
-    input.premod.hp
-  )
+    input.premod.hp,
+  ),
 )
 
 const passiveHeal_ = constant(dm.p.heal_)
@@ -142,23 +142,23 @@ const passiveCritRate_ = constant(dm.p.critRate_)
 const c2SkillHeal = greaterEq(
   input.constellation,
   2,
-  equal(condC2, 'on', prod(percent(dm.c2.s_heal_), input.total.hp))
+  equal(condC2, 'on', prod(percent(dm.c2.s_heal_), input.total.hp)),
 )
 const c2BurstHeal = greaterEq(
   input.constellation,
   2,
-  equal(condC2, 'on', prod(percent(dm.c2.nc_heal_), input.total.hp))
+  equal(condC2, 'on', prod(percent(dm.c2.nc_heal_), input.total.hp)),
 )
 const c4AtkSpd_ = greaterEq(input.constellation, 4, dm.c4.atkSPD_)
 const c6Hydro_ = greaterEq(
   input.constellation,
   6,
-  equal(condC6, 'on', dm.c6.hydro_)
+  equal(condC6, 'on', dm.c6.hydro_),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -182,7 +182,7 @@ const dmgFormulas = {
       1,
       customDmgNode(prod(input.total.hp, percent(dm.c1.hp_)), 'elemental', {
         hit: { ele: constant(elementKey) },
-      })
+      }),
     ),
   },
 }

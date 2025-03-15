@@ -105,12 +105,12 @@ const onlyDendroHydroTeam = greaterEq(tally.dendro, 1, equal(tally.ele, 2, 1))
 const isGoldenChaliceBountyActive = greaterEq(
   input.asc,
   1,
-  equal(onlyDendroHydroTeam, 1, equal(condA1AfterSkill, 'on', 1))
+  equal(onlyDendroHydroTeam, 1, equal(condA1AfterSkill, 'on', 1)),
 )
 const a1AfterSkillAndHit_eleMas = equal(
   isGoldenChaliceBountyActive,
   1,
-  equal(condA1AfterHit, 'on', dm.passive1.eleMas)
+  equal(condA1AfterHit, 'on', dm.passive1.eleMas),
 )
 
 const bountifulBloom_dmg_ = greaterEq(
@@ -122,11 +122,11 @@ const bountifulBloom_dmg_ = greaterEq(
     min(
       prod(
         percent(dm.passive2.dmg_),
-        prod(max(sum(input.total.hp, dm.passive2.minHp), 0), 1 / 1000)
+        prod(max(sum(input.total.hp, dm.passive2.minHp), 0), 1 / 1000),
       ),
-      percent(dm.passive2.maxDmg_)
-    )
-  )
+      percent(dm.passive2.maxDmg_),
+    ),
+  ),
 )
 
 const c1_illusion_dmg_ = greaterEq(
@@ -134,7 +134,7 @@ const c1_illusion_dmg_ = greaterEq(
   1,
   infoMut(percent(dm.constellation1.illusion_dmg_), {
     name: ct.ch(`c1.illusion_dmg_`),
-  })
+  }),
 )
 
 const [condC2HydroPath, condC2Hydro] = cond(key, 'c2Hydro')
@@ -145,8 +145,8 @@ const c2_hydro_enemyRes_ = greaterEq(
   equal(
     isGoldenChaliceBountyActive,
     1,
-    equal(condC2Hydro, 'hydro', percent(dm.constellation2.hydro_enemyRes_))
-  )
+    equal(condC2Hydro, 'hydro', percent(dm.constellation2.hydro_enemyRes_)),
+  ),
 )
 const c2_dendro_enemyRes_ = greaterEq(
   input.constellation,
@@ -154,15 +154,15 @@ const c2_dendro_enemyRes_ = greaterEq(
   equal(
     isGoldenChaliceBountyActive,
     1,
-    equal(condC2Dendro, 'dendro', percent(dm.constellation2.dendro_enemyRes_))
-  )
+    equal(condC2Dendro, 'dendro', percent(dm.constellation2.dendro_enemyRes_)),
+  ),
 )
 
 const [condC4AfterPirHitPath, condC4AfterPirHit] = cond(key, 'c4AfterPirHit')
 const c4_burst_dmg_ = greaterEq(
   input.constellation,
   4,
-  equal(condC4AfterPirHit, 'on', percent(dm.constellation4.burst_dmg_))
+  equal(condC4AfterPirHit, 'on', percent(dm.constellation4.burst_dmg_)),
 )
 
 const c6_critRate_ = greaterEq(
@@ -170,21 +170,21 @@ const c6_critRate_ = greaterEq(
   6,
   min(
     prod(percent(dm.constellation6.critRate_), input.total.hp, 1 / 1000),
-    percent(dm.constellation6.maxCritRate_)
-  )
+    percent(dm.constellation6.maxCritRate_),
+  ),
 )
 const c6_critDMG_ = greaterEq(
   input.constellation,
   6,
   min(
     prod(percent(dm.constellation6.critDmg_), input.total.hp, 1 / 1000),
-    percent(dm.constellation6.maxCritDmg_)
-  )
+    percent(dm.constellation6.maxCritDmg_),
+  ),
 )
 
 export const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.hit1, 'charged'),

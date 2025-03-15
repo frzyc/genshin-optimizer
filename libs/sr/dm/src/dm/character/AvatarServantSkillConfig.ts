@@ -39,7 +39,7 @@ export type AvatarServantSkillConfig = {
 }
 
 const avatarServantSkillConfigSrc = parse(
-  readDMJSON('ExcelOutput/AvatarServantSkillConfig.json')
+  readDMJSON('ExcelOutput/AvatarServantSkillConfig.json'),
 ) as AvatarServantSkillConfig[]
 
 const avatarServantSkillConfig = {} as Record<
@@ -54,7 +54,7 @@ avatarServantSkillConfigSrc.forEach((config) => {
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarServantSkillConfig_gen.json`,
-  avatarServantSkillConfig
+  avatarServantSkillConfig,
 )
 
 export { avatarServantSkillConfig }

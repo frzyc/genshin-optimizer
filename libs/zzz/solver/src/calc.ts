@@ -24,7 +24,7 @@ import type { DiscStats } from './common'
 export function passSetFilter(
   discs: DiscStats[],
   filter2: DiscSetKey[],
-  filter4: DiscSetKey[]
+  filter4: DiscSetKey[],
 ): boolean {
   const setCount: Partial<Record<DiscSetKey, number>> = {}
   if (!filter4.length && !filter2.length) return true
@@ -58,7 +58,7 @@ export function passSetFilter(
 export function applyCalc(
   baseStats: Stats,
   conditionals: Partial<Record<CondKey, number>>,
-  discs: DiscStats[]
+  discs: DiscStats[],
 ) {
   const sum = { ...baseStats }
   const s = (key: string) => sum[key] || 0
@@ -89,7 +89,7 @@ export function applyCalc(
   // Apply wengine Stats and Conditionals
   const w = wengineSheets[allWengineKeys[s('wengineIndex')]]?.getStats(
     conditionals,
-    sum
+    sum,
   )
   if (w) objSumInPlace(sum, w)
 
@@ -134,7 +134,7 @@ const formulas: Record<FormulaKey, (sums: Record<string, number>) => number> = {
         // DMG Taken Multipler skipped
         // Stunned Multiplier skipped
       )
-    }
+    },
   ),
   ...objKeyMap(allAnomalyDmgKeys, (dmg_) => (sums: Record<string, number>) => {
     const s = (key: string) => sums[key] || 0
@@ -163,7 +163,7 @@ function defMulti(s: (k: string) => number) {
     lvlFactor /
     (Math.max(
       s('enemyDef') * (1 - s('enemyDefRed_')) * (1 - s('pen_')) - s('pen'),
-      0
+      0,
     ) +
       lvlFactor)
   )

@@ -30,14 +30,14 @@ const columns = {
 const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
   const { optConfig } = useContext(OptConfigContext)
   const generatedBuildList = useGeneratedBuildList(
-    optConfig.generatedBuildListId ?? ''
+    optConfig.generatedBuildListId ?? '',
   )
   return (
     <Stack spacing={1}>
       {generatedBuildList?.builds.map((build, i) => (
         <CardThemed
           key={`${i}-${build.wengineId}-${Object.values(build.discIds).join(
-            '-'
+            '-',
           )}`}
         >
           <CardContent>
@@ -81,7 +81,7 @@ function EquipBtn({
     if (!characterKey) return
     Object.entries(discIds).forEach(
       ([_slotKey, discId]) =>
-        discId && database.discs.set(discId, { location: characterKey })
+        discId && database.discs.set(discId, { location: characterKey }),
     )
     wengineId && database.wengines.set(wengineId, { location: characterKey })
   }, [characterKey, discIds, wengineId, database.wengines, database.discs])

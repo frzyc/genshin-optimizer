@@ -23,11 +23,11 @@ export function ArtifactSetsEditor({
       if (!setKey) return
       setBuildTc((buildTc) => {
         buildTc.artifact.sets[setKey] = parseInt(
-          Object.keys(getArtSheet(setKey).setEffects)[0]
+          Object.keys(getArtSheet(setKey).setEffects)[0],
         ) as 1 | 2 | 4
       })
     },
-    [setBuildTc]
+    [setBuildTc],
   )
 
   const remaining = 5 - Object.values(artSet).reduce((a, b) => a + b, 0)
@@ -52,7 +52,7 @@ export function ArtifactSetsEditor({
             Object.keys(artSet).includes(key as ArtifactSetKey) ||
             !key ||
             Object.keys(getArtSheet(key).setEffects).every(
-              (n) => parseInt(n) > remaining
+              (n) => parseInt(n) > remaining,
             )
           }
           disabled={disabled}

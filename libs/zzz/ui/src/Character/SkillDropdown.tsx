@@ -26,7 +26,7 @@ export function SkillDropdown({ skillKey }: { skillKey: SkillKey }) {
       database.chars.set(characterKey, {
         [skillKey]: val,
       }),
-    [database, characterKey, skillKey]
+    [database, characterKey, skillKey],
   )
   return (
     <DropdownButton

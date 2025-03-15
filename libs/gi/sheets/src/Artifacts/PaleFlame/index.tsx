@@ -25,7 +25,7 @@ const set2 = greaterEq(
   input.artSet.PaleFlame,
   2,
   percent(0.25),
-  physical_dmg_info
+  physical_dmg_info,
 )
 
 const stackArr = range(1, 2)
@@ -35,8 +35,8 @@ const set4Atk = greaterEq(
   lookup(
     condStack,
     Object.fromEntries(stackArr.map((i) => [i, percent(0.09 * i)])),
-    naught
-  )
+    naught,
+  ),
 )
 const set4Phys = greaterEq(
   input.artSet.PaleFlame,
@@ -44,9 +44,9 @@ const set4Phys = greaterEq(
   lookup(
     condStack,
     Object.fromEntries(stackArr.map((i) => [i, equal(i, 2, percent(0.25))])),
-    naught
+    naught,
   ),
-  physical_dmg_info
+  physical_dmg_info,
 )
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -82,7 +82,7 @@ const sheet: SetEffectSheet = {
                 },
               ],
             },
-          ])
+          ]),
         ),
       },
     ],

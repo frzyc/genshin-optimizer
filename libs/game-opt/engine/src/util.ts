@@ -2,7 +2,7 @@ import type { IConditionalData } from './IConditionalData'
 
 export function correctConditionalValue(
   conditional: IConditionalData,
-  value: number
+  value: number,
 ) {
   if (conditional.type === 'bool') {
     return +!!value

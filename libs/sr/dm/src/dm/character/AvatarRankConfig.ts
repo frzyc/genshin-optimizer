@@ -25,7 +25,7 @@ export type Rank = (typeof allRanks)[number]
 type SkillAddLevelList = Partial<Record<string, number>>
 
 const avatarRankConfigSrc = parse(
-  readDMJSON('ExcelOutput/AvatarRankConfig.json')
+  readDMJSON('ExcelOutput/AvatarRankConfig.json'),
 ) as AvatarRankConfig[]
 const avatarRankConfigMap = objKeyValMap(avatarRankConfigSrc, (config) => [
   config.RankID,
@@ -41,13 +41,13 @@ const avatarRankConfig = Object.fromEntries(
       avatarConfig.RankIDList.map((rankId) => [
         avatarRankConfigMap[rankId].Rank, // Map Eidolon #1-6
         avatarRankConfigMap[rankId], // to Config
-      ])
+      ]),
     ),
-  ])
+  ]),
 )
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarRankConfig_charMapped_gen.json`,
-  avatarRankConfig
+  avatarRankConfig,
 )
 export { avatarRankConfig }

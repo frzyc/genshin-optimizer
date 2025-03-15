@@ -23,14 +23,14 @@ const normal_dmg_ = lookup(
   {
     ...objKeyMap(range(1, 2), (i) => prod(normalInc, i)),
   },
-  naught
+  naught,
 )
 const charged_dmg_ = lookup(
   condPassive,
   {
     ...objKeyMap(range(1, 2), (i) => prod(chargedInc, i)),
   },
-  naught
+  naught,
 )
 const atk = equal(input.activeCharKey, 'Aloy', 66)
 
@@ -68,7 +68,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

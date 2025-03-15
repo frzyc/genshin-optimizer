@@ -25,10 +25,10 @@ const heal = equal(
     customHealNode(
       prod(
         subscript(input.weapon.refinement, hpRegen, { unit: '%' }),
-        input.total.hp
-      )
-    )
-  )
+        input.total.hp,
+      ),
+    ),
+  ),
 )
 
 export const data = dataObjForWeaponSheet(key, undefined, { heal })

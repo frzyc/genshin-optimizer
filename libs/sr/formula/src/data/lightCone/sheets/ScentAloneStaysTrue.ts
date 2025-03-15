@@ -35,13 +35,13 @@ const sheet = registerLightCone(
             cmpGE(
               own.final.brEffect_,
               dm.brEffect_threshold,
-              subscript(superimpose, dm.extra_common_dmg_)
-            )
-          )
-        )
-      )
+              subscript(superimpose, dm.extra_common_dmg_),
+            ),
+          ),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

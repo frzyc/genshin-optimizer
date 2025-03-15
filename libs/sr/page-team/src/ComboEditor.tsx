@@ -73,7 +73,7 @@ function Combo({ frame, index }: { frame: Frame; index: number }) {
       if (event.altKey) setRead(read)
       else setPresetIndex(index)
     },
-    [index, read, setPresetIndex, setRead]
+    [index, read, setPresetIndex, setRead],
   )
   return (
     <CardThemed

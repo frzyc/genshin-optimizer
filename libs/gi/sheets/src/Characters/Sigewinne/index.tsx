@@ -117,7 +117,7 @@ const [condSkillTierPath, condSkillTier] = cond(key, 'skillTier')
 const skillTier = lookup(
   condSkillTier,
   objKeyMap(skillTierArr, (tier) => constant(tier)),
-  naught
+  naught,
 )
 const skillTier_skill_dmg_ = prod(percent(dm.skill.tier_dmg), skillTier)
 const skillTier_heal_ = {
@@ -128,7 +128,7 @@ const [condA1BedrestPath, condA1Bedrest] = cond(key, 'a1BedRest')
 const a1Bedrest_hydro_dmg_ = greaterEq(
   input.asc,
   1,
-  equal(condA1Bedrest, 'on', dm.passive1.hydro_dmg_)
+  equal(condA1Bedrest, 'on', dm.passive1.hydro_dmg_),
 )
 
 const [condA1ConvaPath, condA1Conva] = cond(key, 'a1Conva')
@@ -137,13 +137,13 @@ const convaMaxDmgInc = threshold(
   input.constellation,
   1,
   dm.constellation1.maxDmgInc,
-  dm.passive1.maxDmgInc
+  dm.passive1.maxDmgInc,
 )
 const convaDmgInc = threshold(
   input.constellation,
   1,
   dm.constellation1.dmgInc / 1000,
-  dm.passive1.dmgInc / 1000
+  dm.passive1.dmgInc / 1000,
 )
 const a1Conva_skill_dmgInc = greaterEq(
   input.asc,
@@ -151,8 +151,8 @@ const a1Conva_skill_dmgInc = greaterEq(
   equal(
     condA1Conva,
     'on',
-    min(convaMaxDmgInc, prod(convaAdjustedHp, convaDmgInc))
-  )
+    min(convaMaxDmgInc, prod(convaAdjustedHp, convaDmgInc)),
+  ),
 )
 
 const a4TeamBondArr = range(1000, 10000, 1000)
@@ -160,12 +160,12 @@ const [condA4TeamBondPath, condA4TeamBond] = cond(key, 'a4TeamBond')
 const a4TeamBond = lookup(
   condA4TeamBond,
   objKeyMap(a4TeamBondArr, (bond) => constant(bond)),
-  naught
+  naught,
 )
 const a4TeamBond_heal_ = greaterEq(
   input.asc,
   4,
-  prod(percent(dm.passive2.heal_ / 1000), a4TeamBond)
+  prod(percent(dm.passive2.heal_ / 1000), a4TeamBond),
 )
 
 const c2Shield = shieldNode('hp', percent(dm.constellation2.shield), 0)
@@ -174,7 +174,7 @@ const [condC2AfterHitPath, condC2AfterHit] = cond(key, 'c2AfterHit')
 const c2AfterHit_hydro_enemyRes_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2AfterHit, 'on', -dm.constellation2.hydro_enemyRes_)
+  equal(condC2AfterHit, 'on', -dm.constellation2.hydro_enemyRes_),
 )
 
 const [condC6AfterHealPath, condC6AfterHeal] = cond(key, 'c6AfterHeal')
@@ -184,21 +184,21 @@ const c6AfterHeal_burst_critRate_ = greaterEq(
   6,
   min(
     prod(c6AdjustedHp, percent(dm.constellation6.critRate_)),
-    percent(dm.constellation6.maxCritRate_)
-  )
+    percent(dm.constellation6.maxCritRate_),
+  ),
 )
 const c6AfterHeal_burst_critDMG_ = greaterEq(
   input.constellation,
   6,
   min(
     prod(c6AdjustedHp, percent(dm.constellation6.critDMG_)),
-    percent(dm.constellation6.maxCritDMG_)
-  )
+    percent(dm.constellation6.maxCritDMG_),
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -217,7 +217,7 @@ const dmgFormulas = {
       dm.skill.teammateHealMult,
       dm.skill.teammateHealFlat,
       'skill',
-      skillTier_heal_
+      skillTier_heal_,
     ),
     selfHeal: healNode('hp', dm.skill.selfHealMult, 0),
     bladeDmg: dmgNode('hp', dm.skill.bladeDmg, 'skill'),
@@ -231,7 +231,7 @@ const dmgFormulas = {
     hydroShield: greaterEq(
       input.constellation,
       2,
-      shieldElement('hydro', c2Shield)
+      shieldElement('hydro', c2Shield),
     ),
   },
   constellation6: {

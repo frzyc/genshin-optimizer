@@ -23,12 +23,12 @@ const schedulers = new BorrowManager(
   },
   (_language, value) => {
     value.then((value) => value.terminate())
-  }
+  },
 )
 
 export async function textsFromImage(
   imageData: ImageData,
-  options: object | undefined = undefined
+  options: object | undefined = undefined,
 ): Promise<string[]> {
   const canvas = imageDataToCanvas(imageData)
   const rec = await schedulers.borrow(
@@ -36,7 +36,7 @@ export async function textsFromImage(
     async (scheduler) =>
       (await (
         await scheduler
-      ).addJob('recognize', canvas, options)) as RecognizeResult
+      ).addJob('recognize', canvas, options)) as RecognizeResult,
   )
   return rec.data.lines.map((line) => line.text)
 }

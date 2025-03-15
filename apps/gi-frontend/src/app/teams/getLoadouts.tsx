@@ -4,7 +4,7 @@ import type { Database } from '@genshin-optimizer/gi/supabase'
 import type { SupabaseClient } from '@supabase/supabase-js'
 export default async function getLoadouts(
   supabase: SupabaseClient<Database>,
-  accountId: string | null
+  accountId: string | null,
 ) {
   if (!accountId) return []
   const { data, error } = await supabase
@@ -17,7 +17,7 @@ export default async function getLoadouts(
       character_key,
       name,
       description
-      `
+      `,
     )
     .eq('account_id', accountId)
 

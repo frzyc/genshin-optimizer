@@ -85,7 +85,7 @@ interface DiscReducerState {
 function handleSubstats(
   index: number,
   substat: ISubstat | undefined,
-  disc: Partial<ICachedDisc>
+  disc: Partial<ICachedDisc>,
 ): ISubstat[] {
   const substats = [...(disc.substats || [])]
   if (substat) {
@@ -111,7 +111,7 @@ function handleSubstats(
 }
 function reducer(
   state: DiscReducerState,
-  action: Partial<ICachedDisc>
+  action: Partial<ICachedDisc>,
 ): DiscReducerState {
   if (!action || Object.keys(action).length === 0)
     return {
@@ -174,7 +174,7 @@ export function DiscEditor({
     if (dbDisc) return { prev: dbDisc, prevEditType: 'edit' }
     if (disc === undefined) return { prev: undefined, prevEditType: '' }
     const { duplicated, upgraded } = database.discs.findDups(
-      disc as ICachedDisc
+      disc as ICachedDisc,
     )
     return {
       prev: duplicated[0] ?? upgraded[0],
@@ -199,7 +199,7 @@ export function DiscEditor({
 
       setDisc({ substats })
     },
-    [disc, setDisc]
+    [disc, setDisc],
   )
   const onCloseModal = useCallback(
     (e: MouseEvent) => {
@@ -213,7 +213,7 @@ export function DiscEditor({
       onClose()
       reset()
     },
-    [t, disc, onClose, reset]
+    [t, disc, onClose, reset],
   )
   const isValid = !errors?.length
   const theme = useTheme()
@@ -224,14 +224,14 @@ export function DiscEditor({
 
   // Scanning stuff
   const queueRef = useRef(
-    new ScanningQueue(textsFromImage, shouldShowDevComponents)
+    new ScanningQueue(textsFromImage, shouldShowDevComponents),
   )
   const queue = queueRef.current
   const [{ processedNum, outstandingNum, scanningNum }, setScanningData] =
     useState({ processedNum: 0, outstandingNum: 0, scanningNum: 0 })
 
   const [scannedData, setScannedData] = useState(
-    undefined as undefined | Omit<Processed, 'disc'>
+    undefined as undefined | Omit<Processed, 'disc'>,
   )
 
   const { fileName, imageURL, debugImgs, texts } = scannedData ?? {}
@@ -243,7 +243,7 @@ export function DiscEditor({
       onShow()
       queue.addFiles(Array.from(files).map((f) => ({ f, fName: f.name })))
     },
-    [onShow, queue]
+    [onShow, queue],
   )
   const clearQueue = useCallback(() => {
     queue.clearQueue()
@@ -255,7 +255,7 @@ export function DiscEditor({
       uploadFiles(e.target.files)
       e.target.value = '' // reset the value so the same file can be uploaded again...
     },
-    [uploadFiles]
+    [uploadFiles],
   )
 
   // When there is scanned artifacts and no artifact in editor, put latest scanned artifact in editor
@@ -417,9 +417,9 @@ export function DiscEditor({
                       {disc?.mainStatKey
                         ? `${toPercent(
                             getDiscMainStatVal(rarity, disc.mainStatKey, level),
-                            disc.mainStatKey
+                            disc.mainStatKey,
                           ).toFixed(
-                            statKeyToFixed(disc.mainStatKey)
+                            statKeyToFixed(disc.mainStatKey),
                           )}${getUnitStr(disc.mainStatKey)}`
                         : t('mainStat')}
                     </Typography>
@@ -622,9 +622,7 @@ export function DiscEditor({
             {/* Error alert */}
             {!isValid && (
               <Alert variant="filled" severity="error">
-                {errors?.map((e, i) => (
-                  <div key={i}>{e}</div>
-                ))}
+                {errors?.map((e, i) => <div key={i}>{e}</div>)}
               </Alert>
             )}
             {/* Buttons */}

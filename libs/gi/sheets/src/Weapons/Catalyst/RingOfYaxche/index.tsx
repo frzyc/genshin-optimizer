@@ -20,11 +20,11 @@ const afterSkill_normal_dmg_ = equal(
       prod(
         subscript(input.weapon.refinement, normal_dmg_arr, { unit: '%' }),
         input.total.hp,
-        1 / 1000
+        1 / 1000,
       ),
-      subscript(input.weapon.refinement, max_normal_dmg_arr, { unit: '%' })
-    )
-  )
+      subscript(input.weapon.refinement, max_normal_dmg_arr, { unit: '%' }),
+    ),
+  ),
 )
 
 const data = dataObjForWeaponSheet(
@@ -36,7 +36,7 @@ const data = dataObjForWeaponSheet(
   },
   {
     afterSkill_normal_dmg_,
-  }
+  },
 )
 
 const sheet: IWeaponSheet = {

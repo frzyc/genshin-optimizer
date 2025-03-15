@@ -26,7 +26,7 @@ export function extrapolateFloat(val: number, options: Options = {}): number {
   const { mantissaLen: n = 23, forced = false } = options
   if (!forced && roundMantissa(val, n) !== val) {
     console.error(
-      `Extrapolation error: ${val} uses more than ${n} bits for mantissa`
+      `Extrapolation error: ${val} uses more than ${n} bits for mantissa`,
     )
     return val
   }
@@ -37,7 +37,7 @@ export function extrapolateFloat(val: number, options: Options = {}): number {
   // Make sure we get the right number
   if (!forced && Math.fround(parseFloat(string)) !== val)
     console.error(
-      `Extrapolation error: extrapolated ${val} to an incorrect number ${string}`
+      `Extrapolation error: extrapolated ${val} to an incorrect number ${string}`,
     )
   return parseFloat(string)
 }
@@ -73,13 +73,13 @@ function shortestInRange(lower: number, upper: number, float: number): string {
       const string = digits.join('')
       if (upper === 0)
         console.warn(
-          `Extrapolation error: extrapolating ${float} results in a midpoint} `
+          `Extrapolation error: extrapolating ${float} results in a midpoint} `,
         )
       if (uDigit - lDigit !== 1) {
         console.warn(
           `Extrapolation error: ambiguous value of ${float} (use ${string}), the least significant digit could be ${
             lDigit + 1
-          } `
+          } `,
         )
         // ambiguity
         return float.toString()
@@ -92,7 +92,7 @@ function shortestInRange(lower: number, upper: number, float: number): string {
 /** Return the range of numbers that would be rounded (to-nearest) to `val` under `n`-bit-mantissa rounding */
 function roundingRange(
   float: number,
-  n: number
+  n: number,
 ): [lower: number, upper: number] {
   const [sig, mul] = normalize(float)
   const ulpOfOne = Math.pow(1 / 2, n)

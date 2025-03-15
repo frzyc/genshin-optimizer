@@ -8,7 +8,7 @@ type UpdateMessage = { type: 'update'; relic: Partial<IRelic> }
 type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
 export function relicReducer(
   state: IRelic | undefined,
-  action: Message
+  action: Message,
 ): IRelic | undefined {
   const handle = () => {
     switch (action.type) {

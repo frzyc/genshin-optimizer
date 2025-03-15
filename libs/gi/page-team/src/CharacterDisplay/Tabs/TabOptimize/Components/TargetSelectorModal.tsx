@@ -63,9 +63,9 @@ export function TargetSelectorModal({
                     return false
 
                   return true
-                })
+                }),
               ) as DisplaySub<CalcResult>,
-            ] as [string, DisplaySub<CalcResult>]
+            ] as [string, DisplaySub<CalcResult>],
         )
         // Determine if a section has all empty entries
         .filter(([_key, sectionObj]) => Object.keys(sectionObj).length)
@@ -114,7 +114,7 @@ function SelectorSection({
   const database = useDatabase()
   const header = useMemo(
     () => getDisplayHeader(data, sectionKey, database),
-    [data, sectionKey, database]
+    [data, sectionKey, database],
   )
   return (
     <CardThemed bgt="light" key={sectionKey as string}>

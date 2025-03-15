@@ -46,7 +46,7 @@ export function CharacterCard({
   const data = teamData?.[characterKey]?.target
   const onClickHandler = useCallback(
     () => characterKey && onClick?.(characterKey),
-    [characterKey, onClick]
+    [characterKey, onClick],
   )
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -57,7 +57,7 @@ export function CharacterCard({
         {children}
       </CardActionArea>
     ),
-    [onClickHandler]
+    [onClickHandler],
   )
 
   const characterContextObj: CharacterContextObj | undefined = useMemo(
@@ -65,7 +65,7 @@ export function CharacterCard({
       character && {
         character,
       },
-    [character]
+    [character],
   )
   const dataContextObj: dataContextObj | undefined = useMemo(
     () =>
@@ -74,7 +74,7 @@ export function CharacterCard({
         data,
         teamData,
       },
-    [data, teamData]
+    [data, teamData],
   )
 
   const { favorite } = useCharMeta(characterKey)

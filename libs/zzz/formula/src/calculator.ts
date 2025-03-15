@@ -13,7 +13,7 @@ export class Calculator extends Base<Tag, never> {
     return new DebugCalculator(
       this,
       tagStr,
-      createFilterDebug([...allWengineKeys, ...allDiscSetKeys])
+      createFilterDebug([...allWengineKeys, ...allDiscSetKeys]),
     )
   }
   override defaultAccu(tag: Tag): Read['ex'] {

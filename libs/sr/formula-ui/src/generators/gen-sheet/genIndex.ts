@@ -25,7 +25,7 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 
 async function writeCharIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
@@ -41,14 +41,14 @@ export const uiSheets: Record<
   ${allCharacterKeys.join('\n,  ')}
 } as const
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
 
 async function writeRelicIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
@@ -60,14 +60,14 @@ export const relicUiSheets: Record<RelicSetKey, UISheet<'2' | '4'>> = {
   ${allRelicSetKeys.join('\n,  ')}
 }
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
 
 async function writeLightConeIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
@@ -81,7 +81,7 @@ export const lightConeUiSheets: Record<LightConeKey, UISheetElement> =
     ${allLightConeKeys.join(',\n  ')}
   }
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }

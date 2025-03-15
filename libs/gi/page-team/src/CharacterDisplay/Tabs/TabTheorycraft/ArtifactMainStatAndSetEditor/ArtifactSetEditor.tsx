@@ -40,7 +40,7 @@ export function ArtifactSetEditor({
         buildTc.artifact.sets[setKey] = value
       })
     },
-    [setBuildTc, setKey]
+    [setBuildTc, setKey],
   )
   const deleteValue = useCallback(() => {
     setBuildTc((buildTc) => {
@@ -57,8 +57,8 @@ export function ArtifactSetEditor({
       (setNumKey) =>
         +setNumKey <= value &&
         artifactSheet.setEffects[setNumKey]?.document.some(
-          (doc) => 'states' in doc
-        )
+          (doc) => 'states' in doc,
+        ),
     )
   }, [artifactSheet, value])
 

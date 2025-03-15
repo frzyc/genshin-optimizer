@@ -104,7 +104,7 @@ export type ServantSkillTreeType = (typeof allServantSkillTreeTypes)[number]
 export type SkillTreeType = (typeof allSkillTreeTypes)[number]
 
 const avatarSkillTreeConfigSrc = parse(
-  readDMJSON('ExcelOutput/AvatarSkillTreeConfig.json')
+  readDMJSON('ExcelOutput/AvatarSkillTreeConfig.json'),
 ) as AvatarSkillTreeConfig[]
 
 const avatarSkillTreeConfig = objKeyMap(
@@ -118,12 +118,12 @@ const avatarSkillTreeConfig = objKeyMap(
       }
     })
     return data
-  }
+  },
 ) as Record<AvatarId, Record<string, AvatarSkillTreeConfig[]>>
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarSkillTreeConfig_gen.json`,
-  avatarSkillTreeConfig
+  avatarSkillTreeConfig,
 )
 
 export { avatarSkillTreeConfig }

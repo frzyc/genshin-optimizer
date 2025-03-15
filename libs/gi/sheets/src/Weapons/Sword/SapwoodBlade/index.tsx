@@ -21,7 +21,7 @@ const nonstackWrite = equalStr(condPassive, 'on', input.charKey)
 const [eleMas_disp, eleMas_dispInactive] = nonStackBuff(
   'leafCon',
   'eleMas',
-  subscript(input.weapon.refinement, eleMasArr)
+  subscript(input.weapon.refinement, eleMasArr),
 )
 const eleMas = equal(input.activeCharKey, target.charKey, eleMas_disp)
 

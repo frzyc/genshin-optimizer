@@ -23,7 +23,7 @@ type FormulaText = {
 }
 export function formulaText(
   data: CalcResult<number, Output>,
-  cache: Map<CalcResult<number, Output>, FormulaText> = new Map()
+  cache: Map<CalcResult<number, Output>, FormulaText> = new Map(),
 ): FormulaText {
   const old = cache.get(data)
   if (old) return old
@@ -39,7 +39,7 @@ export function formulaText(
   const deps = new Set<FormulaText>()
   function getString(
     ops: CalcResult<number, Output>[],
-    prec: number
+    prec: number,
   ): ReactNode[] {
     return ops.map((op, i) => {
       const text = formulaText(op, cache)

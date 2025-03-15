@@ -5,7 +5,7 @@ export function sortFunction<Keys extends string, T>(
   sortbyKeys: Keys[],
   ascending: boolean,
   configs: SortConfigs<Keys, T>,
-  ascendingBypass: Keys[] = []
+  ascendingBypass: Keys[] = [],
 ) {
   return (a: T, b: T): number => {
     for (const sortby of sortbyKeys) {
@@ -28,7 +28,7 @@ export function sortFunction<Keys extends string, T>(
 type FilterConfig<T> = (
   obj: T,
   filter: any,
-  filters: { [str: string]: any }
+  filters: { [str: string]: any },
 ) => boolean
 export type FilterConfigs<Keys extends string, T> = Record<
   Keys,
@@ -36,12 +36,12 @@ export type FilterConfigs<Keys extends string, T> = Record<
 >
 export function filterFunction<Keys extends string, T>(
   filterOptions: Partial<Record<Keys, any>>,
-  filterConfigs: FilterConfigs<Keys, T>
+  filterConfigs: FilterConfigs<Keys, T>,
 ) {
   return (obj: T) =>
     Object.entries(filterOptions).every(
       ([optionKey, optionVal]) =>
         filterConfigs[optionKey as Keys] &&
-        filterConfigs[optionKey as Keys](obj, optionVal, filterOptions)
+        filterConfigs[optionKey as Keys](obj, optionVal, filterOptions),
     )
 }

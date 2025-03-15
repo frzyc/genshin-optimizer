@@ -30,7 +30,7 @@ const sheet: UISheetElement = {
           {(superimpose) =>
             chg(
               'passive.description',
-              getLightConeInterpolateObject(key, superimpose)
+              getLightConeInterpolateObject(key, superimpose),
             )
           }
         </SuperImposeWrapper>

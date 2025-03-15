@@ -102,7 +102,7 @@ const p3_staminaGlidingDec_ = constant(dm.passive3.stam_)
 
 const [condBurstAbsorptionPath, condBurstAbsorption] = cond(
   key,
-  'burstAbsorption'
+  'burstAbsorption',
 )
 
 const [condC2Path, condC2] = cond(key, 'c2')
@@ -115,8 +115,8 @@ const c2Hit_anemo_enemyRes_ = greaterEq(
       hit: constant(dm.constellation2.res_),
       launched: prod(dm.constellation2.res_, 2),
     },
-    naught
-  )
+    naught,
+  ),
 )
 const c2Hit_phys_enemyRes__ = { ...c2Hit_anemo_enemyRes_ }
 
@@ -124,14 +124,14 @@ const [condC4Path, condC4] = cond(key, 'c4')
 const c4_anemo_dmg_ = greaterEq(
   input.constellation,
   4,
-  equal(condC4, 'pickup', dm.constellation4.anemo_dmg_)
+  equal(condC4, 'pickup', dm.constellation4.anemo_dmg_),
 )
 
 const [condC6Path, condC6] = cond(key, 'c6')
 const c6_anemo_enemyRes_ = greaterEq(
   input.constellation,
   6,
-  equal(condC6, 'takeDmg', dm.constellation6.res_)
+  equal(condC6, 'takeDmg', dm.constellation6.res_),
 )
 const c6_ele_enemyRes_arr = Object.fromEntries(
   absorbableEle.map((ele) => [
@@ -142,15 +142,15 @@ const c6_ele_enemyRes_arr = Object.fromEntries(
       equal(
         condC6,
         'takeDmg',
-        equal(ele, condBurstAbsorption, dm.constellation6.res_)
-      )
+        equal(ele, condBurstAbsorption, dm.constellation6.res_),
+      ),
     ),
-  ])
+  ]),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -170,7 +170,7 @@ const dmgFormulas = {
       undefined,
       dmgNode('atk', dm.burst.absorbDmg, 'burst', {
         hit: { ele: condBurstAbsorption },
-      })
+      }),
     ),
   },
   constellation1: {
@@ -181,10 +181,10 @@ const dmgFormulas = {
         prod(
           percent(dm.constellation1.dmgRatio),
           subscript(input.total.autoIndex, dm.charged.aimed, { unit: '%' }),
-          input.total.atk
+          input.total.atk,
         ),
-        'charged'
-      )
+        'charged',
+      ),
     ),
     fully: greaterEq(
       input.constellation,
@@ -193,11 +193,11 @@ const dmgFormulas = {
         prod(
           percent(dm.constellation1.dmgRatio),
           subscript(input.total.autoIndex, dm.charged.fully, { unit: '%' }),
-          input.total.atk
+          input.total.atk,
         ),
         'charged',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
   },
 }
@@ -401,7 +401,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.headerTem('passive2', {
@@ -438,7 +438,7 @@ const sheet: TalentSheet = {
       canShow: unequal(
         condBurstAbsorption,
         undefined,
-        equal(condC6, 'takeDmg', equal(target.charKey, key, 1))
+        equal(condC6, 'takeDmg', equal(target.charKey, key, 1)),
       ),
     }),
     ct.condTem('constellation6', {
@@ -461,7 +461,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),

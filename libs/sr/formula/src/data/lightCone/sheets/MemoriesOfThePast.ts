@@ -8,6 +8,6 @@ const data_gen = allStats.lightCone[key]
 const sheet = registerLightCone(
   key,
   // Handles base stats and passive buffs
-  entriesForLightCone(key, data_gen)
+  entriesForLightCone(key, data_gen),
 )
 export default sheet

@@ -86,7 +86,7 @@ const dm = {
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -104,14 +104,14 @@ const dmgFormulas = {
             subscript(input.total.skillIndex, dm.skill.summonDmg, {
               unit: '%',
             }),
-            greaterEq(input.constellation, 2, percent(dm.constellation2.dmg))
+            greaterEq(input.constellation, 2, percent(dm.constellation2.dmg)),
           ),
-          { asConst: true, unit: '%' }
+          { asConst: true, unit: '%' },
         ),
-        input.total.atk
+        input.total.atk,
       ),
       'skill',
-      { hit: { ele: constant('electro') } }
+      { hit: { ele: constant('electro') } },
     ),
   },
   burst: {
@@ -128,8 +128,8 @@ const dmgFormulas = {
         {
           hit: { ele: constant('electro') },
         },
-        percent(dm.passive1.dmg)
-      )
+        percent(dm.passive1.dmg),
+      ),
     ),
   },
   passive2: {
@@ -138,7 +138,7 @@ const dmgFormulas = {
       4,
       customDmgNode(prod(input.total.atk, percent(dm.passive2.dmg)), 'skill', {
         hit: { ele: constant('electro') },
-      })
+      }),
     ),
   },
   constellation1: {
@@ -148,8 +148,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(input.total.atk, percent(dm.constellation1.dmg)),
         'normal',
-        { hit: { ele: constant('physical') } }
-      )
+        { hit: { ele: constant('physical') } },
+      ),
     ),
   },
   constellation4: {
@@ -159,13 +159,13 @@ const dmgFormulas = {
       customDmgNode(
         prod(input.total.atk, percent(dm.constellation4.dmg)),
         'burst',
-        { hit: { ele: constant('electro') } }
-      )
+        { hit: { ele: constant('electro') } },
+      ),
     ),
     burstRegen: greaterEq(
       input.constellation,
       4,
-      customHealNode(prod(input.total.hp, percent(dm.constellation4.regen)))
+      customHealNode(prod(input.total.hp, percent(dm.constellation4.regen))),
     ),
   },
   constellation6: {
@@ -175,8 +175,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(input.total.atk, percent(dm.constellation6.dmg)),
         'skill',
-        { hit: { ele: constant('electro') } }
-      )
+        { hit: { ele: constant('electro') } },
+      ),
     ),
   },
 }

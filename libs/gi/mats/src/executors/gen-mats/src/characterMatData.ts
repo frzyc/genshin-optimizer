@@ -36,7 +36,7 @@ export default function characterMatData(): CharacterMatDatas {
   function genMats(
     keys: string[],
     depot: AvatarSkillDepotExcelConfigData,
-    ascensionData: AscensionRecord
+    ascensionData: AscensionRecord,
   ) {
     const {
       energySkill: burst,
@@ -60,13 +60,13 @@ export default function characterMatData(): CharacterMatDatas {
               })
               .map((item) => ({
                 item: nameToKey(
-                  TextMapEN[materialExcelConfigData[item.id].nameTextMapHash]
+                  TextMapEN[materialExcelConfigData[item.id].nameTextMapHash],
                 ),
                 amount: item.count,
               })),
             cost: skill.coinCost ?? 0,
           },
-        ])
+        ]),
       )
       layeredAssignment(data, keys, levels)
     }
@@ -75,19 +75,19 @@ export default function characterMatData(): CharacterMatDatas {
       [...talents, 'normal'],
       proudSkillExcelConfigData[
         avatarSkillExcelConfigData[normal].proudSkillGroupId
-      ]
+      ],
     )
     genTalents(
       [...talents, 'skill'],
       proudSkillExcelConfigData[
         avatarSkillExcelConfigData[skill].proudSkillGroupId
-      ]
+      ],
     )
     genTalents(
       [...talents, 'burst'],
       proudSkillExcelConfigData[
         avatarSkillExcelConfigData[burst].proudSkillGroupId
-      ]
+      ],
     )
 
     const ascensionLevels: Record<number, UpgradeCost> = Object.fromEntries(
@@ -105,13 +105,13 @@ export default function characterMatData(): CharacterMatDatas {
             .map((item) => {
               return {
                 item: nameToKey(
-                  TextMapEN[materialExcelConfigData[item.id].nameTextMapHash]
+                  TextMapEN[materialExcelConfigData[item.id].nameTextMapHash],
                 ),
                 amount: item.count,
               }
             }),
         },
-      ])
+      ]),
     )
 
     layeredAssignment(data, ascension, ascensionLevels)
@@ -129,34 +129,34 @@ export default function characterMatData(): CharacterMatDatas {
       genMats(
         ['TravelerAnemo'],
         avatarSkillDepotExcelConfigData[anemo],
-        ascension
+        ascension,
       )
       genMats(['TravelerGeo'], avatarSkillDepotExcelConfigData[geo], ascension)
       genMats(
         ['TravelerElectro'],
         avatarSkillDepotExcelConfigData[electro],
-        ascension
+        ascension,
       )
       genMats(
         ['TravelerDendro'],
         avatarSkillDepotExcelConfigData[dendro],
-        ascension
+        ascension,
       )
       genMats(
         ['TravelerHydro'],
         avatarSkillDepotExcelConfigData[hydro],
-        ascension
+        ascension,
       )
       genMats(
         ['TravelerPyro'],
         avatarSkillDepotExcelConfigData[pyro],
-        ascension
+        ascension,
       )
     } else {
       genMats(
         [characterIdMap[charId]],
         avatarSkillDepotExcelConfigData[skillDepotId],
-        ascension
+        ascension,
       )
     }
   })

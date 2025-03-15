@@ -44,11 +44,11 @@ export function findBestArtifact(
   mainStatKeys: Set<MainStatKey>,
   mainStatValues: { mainStatValue: number; unit?: string }[],
   location: LocationKey,
-  lock = false
+  lock = false,
 ): [IArtifact, Partial<Record<TextKey, ReactNode>>] {
   const texts = {
     lock: detectedText(lock, 'Lock', (value) =>
-      value ? 'Locked' : 'Unlocked'
+      value ? 'Locked' : 'Unlocked',
     ),
   } as Partial<Record<TextKey, ReactNode>>
   if (location)
@@ -79,7 +79,7 @@ export function findBestArtifact(
       const count = [...textSetKeys].reduce(
         (count, set) =>
           count + (allStats.art.data[set].rarities.includes(rarity) ? 1 : 0),
-        0
+        0,
       )
       score += count / textSetKeys.size
     }
@@ -92,7 +92,7 @@ export function findBestArtifact(
             .length
             ? 1
             : 0),
-        0
+        0,
       )
       score += (count / substats.length) * 2
     }
@@ -112,11 +112,11 @@ export function findBestArtifact(
         .filter((value) => value.unit !== '%' || mainStatUnit === '%') // Ignore "%" text if key isn't "%"
         .map((value) => value.mainStatValue)
       for (const [rarityString, rarityIndividualScore] of Object.entries(
-        rarityRates
+        rarityRates,
       )) {
         const rarity = parseInt(rarityString) as ArtifactRarity
         const setKeys = relevantSetKey.filter((setKey) =>
-          allStats.art.data[setKey].rarities.includes(rarity)
+          allStats.art.data[setKey].rarities.includes(rarity),
         )
         const rarityScore = mainStatScore + rarityIndividualScore
 
@@ -127,8 +127,8 @@ export function findBestArtifact(
           const level = Math.max(
             0,
             values.findIndex(
-              (level) => level + mainStatOffset >= minimumMainStatValue
-            )
+              (level) => level + mainStatOffset >= minimumMainStatValue,
+            ),
           )
           const mainStatVal = values[level]
           const mainStatValScore =
@@ -192,12 +192,12 @@ export function findBestArtifact(
     resultMainStatVal = getMainStatDisplayValue(
       result.mainStatKey,
       result.rarity,
-      result.level
+      result.level,
     )!
   result.substats = substats.filter(
     (substat, i) =>
       substat.key !== result.mainStatKey &&
-      substats.slice(0, i).every((other) => other.key !== substat.key)
+      substats.slice(0, i).every((other) => other.key !== substat.key),
   )
   for (let i = result.substats.length; i < 4; i++)
     result.substats.push({ key: '', value: 0 })
@@ -213,7 +213,7 @@ export function findBestArtifact(
   function unknownText<T>(
     value: T,
     name: ReactNode,
-    text: (arg: T) => ReactNode
+    text: (arg: T) => ReactNode,
   ) {
     return (
       <>
@@ -226,7 +226,7 @@ export function findBestArtifact(
     value: T,
     available: T[],
     name: ReactNode,
-    text: (arg: T) => ReactNode
+    text: (arg: T) => ReactNode,
   ) {
     return (
       <>
@@ -246,7 +246,7 @@ export function findBestArtifact(
   function detectedText<T>(
     value: T,
     name: ReactNode,
-    text: (arg: T) => ReactNode
+    text: (arg: T) => ReactNode,
   ) {
     return (
       <>
@@ -257,7 +257,7 @@ export function findBestArtifact(
   function inferredText<T>(
     value: T,
     name: ReactNode,
-    text: (arg: T) => ReactNode
+    text: (arg: T) => ReactNode,
   ) {
     return (
       <>
@@ -270,10 +270,10 @@ export function findBestArtifact(
     key: TextKey,
     available: Set<any>,
     name: ReactNode,
-    text: (value: unknown) => ReactNode
+    text: (value: unknown) => ReactNode,
   ) {
     const recommended = new Set(
-      [...chosen[key]!].filter((value) => available.has(value))
+      [...chosen[key]!].filter((value) => available.has(value)),
     )
     const resKey = result[key as keyof IArtifact]
     if (recommended.size > 1)
@@ -327,7 +327,7 @@ export function findBestArtifact(
     mainStatValues.find(
       (value) =>
         value.mainStatValue.toFixed(toFixed) ===
-        resultMainStatVal.toFixed(toFixed)
+        resultMainStatVal.toFixed(toFixed),
     )
   ) {
     if (mainStatKeys.has(result.mainStatKey)) {
@@ -335,14 +335,14 @@ export function findBestArtifact(
       texts.mainStatVal = detectedText(
         resultMainStatVal,
         'Main Stat value',
-        valueStrFunc
+        valueStrFunc,
       )
     } else {
       texts.level = inferredText(result.level, 'Level', (value) => '+' + value)
       texts.mainStatVal = inferredText(
         resultMainStatVal,
         'Main Stat value',
-        valueStrFunc
+        valueStrFunc,
       )
     }
   } else {
@@ -350,7 +350,7 @@ export function findBestArtifact(
     texts.mainStatVal = unknownText(
       resultMainStatVal,
       'Main Stat value',
-      valueStrFunc
+      valueStrFunc,
     )
   }
 

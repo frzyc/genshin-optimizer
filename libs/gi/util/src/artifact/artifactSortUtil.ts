@@ -64,7 +64,7 @@ export function initialArtifactFilterOption(): ArtifactFilterOption {
 }
 
 export function artifactSortConfigs(
-  effFilterSet: Set<SubstatKey>
+  effFilterSet: Set<SubstatKey>,
 ): SortConfigs<ArtifactSortKey, IArtifact> {
   return {
     rarity: (art) => art.rarity ?? 0,
@@ -109,7 +109,7 @@ export function artifactFilterConfigs({
       const { useMaxRV } = filters
       const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
         art,
-        effFilterSet
+        effFilterSet,
       )
       const efficiencyToCompare = useMaxRV ? maxEfficiency : currentEfficiency
       return filter <= efficiencyToCompare
@@ -120,7 +120,7 @@ export function artifactFilterConfigs({
       const { useMaxRV } = filters
       const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
         art,
-        effFilterSet
+        effFilterSet,
       )
       const efficiencyToCompare = useMaxRV ? maxEfficiency : currentEfficiency
       return filter >= efficiencyToCompare

@@ -26,7 +26,7 @@ const atk_ = lookup(
     '3': subscript(input.weapon.refinement, ashenStack3),
     '4': subscript(input.weapon.refinement, ashenStack4),
   },
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

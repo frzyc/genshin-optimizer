@@ -79,7 +79,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
                 color={`roll${clamp(rolls.length, 1, 6)}` as RollColorKey} //TODO: stat.rolls.length instead of 1
                 prefix="+"
               />
-            )
+            ),
         )}
       </Box>
 

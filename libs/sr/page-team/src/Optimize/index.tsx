@@ -48,7 +48,7 @@ export default function Optimize() {
 
     database.teams.set(teamId, (team) => {
       const meta = team.teamMetadata.find(
-        (meta) => meta?.characterKey === teammateDatum.characterKey
+        (meta) => meta?.characterKey === teammateDatum.characterKey,
       )
       if (meta) {
         const newOptConfigId = database.optConfigs.new()
@@ -101,9 +101,9 @@ function OptimizeWrapper() {
           body: [],
           sphere: [],
           rope: [],
-        } as Record<RelicSlotKey, ICachedRelic[]>
+        } as Record<RelicSlotKey, ICachedRelic[]>,
       ),
-    [database.relics.values]
+    [database.relics.values],
   )
   const lightCones = useMemo(() => {
     const { path } = getCharStat(characterKey)
@@ -117,9 +117,9 @@ function OptimizeWrapper() {
     () =>
       Object.values(relicsBySlot).reduce(
         (total, relics) => total * relics.length,
-        1
+        1,
       ) * lightCones.length,
-    [lightCones.length, relicsBySlot]
+    [lightCones.length, relicsBySlot],
   )
 
   const [optimizing, setOptimizing] = useState(false)
@@ -155,7 +155,7 @@ function OptimizeWrapper() {
       lightCones,
       relicsBySlot,
       numWorkers,
-      setProgress
+      setProgress,
     )
 
     cancelled.then(() => optimizer.terminate('user cancelled'))
@@ -175,7 +175,7 @@ function OptimizeWrapper() {
           lightConeId: ids[0],
           relicIds: objKeyMap(
             allRelicSlotKeys,
-            (_slot, index) => ids[index + 1]
+            (_slot, index) => ids[index + 1],
           ),
           value,
         })),

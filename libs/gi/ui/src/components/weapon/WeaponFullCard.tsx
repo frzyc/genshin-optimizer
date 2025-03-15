@@ -35,7 +35,7 @@ export function WeaponFullCardObj({
         weaponSheet.data,
         dataObjForWeapon(weapon as ICachedWeapon),
       ]),
-    [weaponSheet, weapon]
+    [weaponSheet, weapon],
   )
   if (!weapon || !weaponSheet || !UIData) return null
   return (

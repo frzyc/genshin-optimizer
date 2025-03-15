@@ -88,12 +88,12 @@ const [condC4Path, condC4] = cond(key, 'C4')
 const cryo_enemyRes_ = greaterEq(
   input.constellation,
   1,
-  equal('on', condC1, percent(dm.constellation1.opCryoRes))
+  equal('on', condC1, percent(dm.constellation1.opCryoRes)),
 )
 const cryo_dmg_disp = greaterEq(
   input.asc,
   4,
-  equal('on', condA4, percent(dm.passive2.cryoDmgBonus))
+  equal('on', condA4, percent(dm.passive2.cryoDmgBonus)),
 )
 const cryo_dmg_ = equal(input.activeCharKey, target.charKey, cryo_dmg_disp)
 const all_dmg_ = greaterEq(
@@ -102,13 +102,13 @@ const all_dmg_ = greaterEq(
   lookup(
     condC4,
     Object.fromEntries(range(1, 5).map((i) => [i, percent(0.05 * i)])),
-    naught
-  )
+    naught,
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -120,7 +120,7 @@ const dmgFormulas = {
         critRate_: greaterEq(
           input.asc,
           1,
-          equal(condA1, 'on', percent(dm.passive1.critRateInc))
+          equal(condA1, 'on', percent(dm.passive1.critRateInc)),
         ),
       },
       hit: { ele: constant('cryo') },
@@ -130,7 +130,7 @@ const dmgFormulas = {
         critRate_: greaterEq(
           input.asc,
           1,
-          equal(condA1, 'on', percent(dm.passive1.critRateInc))
+          equal(condA1, 'on', percent(dm.passive1.critRateInc)),
         ),
       },
       hit: { ele: constant('cryo') },
@@ -140,7 +140,7 @@ const dmgFormulas = {
   skill: {
     inheritedHp: prod(
       subscript(input.total.skillIndex, dm.skill.inheritedHp),
-      input.total.hp
+      input.total.hp,
     ),
     dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
   },
@@ -350,7 +350,7 @@ const sheet: TalentSheet = {
               { text: ct.ch('c4.lingerDuration'), value: 3, unit: 's' },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),

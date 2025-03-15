@@ -9,7 +9,7 @@ describe('TagMapKeys', () => {
   describe('compileTagMapKeys', () => {
     it('can encode 32 bits in one word', () => {
       const keys = compileTagMapKeys(
-        [...Array(8)].map((_, i) => tagList(`cat${i}`, 15))
+        [...Array(8)].map((_, i) => tagList(`cat${i}`, 15)),
       )
       // Each of the eights categories requires 4 bit, requiring exactly 32-bit in total
       expect(keys.tagLen).toEqual(1)

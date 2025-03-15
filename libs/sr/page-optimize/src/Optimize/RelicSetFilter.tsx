@@ -299,7 +299,7 @@ function AdvSetFilterRelicCavernCard({
             setSetFilter4Cavern(
               setFilter4Cavern.length
                 ? toggleInArr([...setFilter4Cavern], setKey)
-                : [setKey]
+                : [setKey],
             )
           }
         >
@@ -315,7 +315,7 @@ function AdvSetFilterRelicCavernCard({
             setSetFilter2Cavern(
               setFilter2Cavern.length
                 ? toggleInArr([...setFilter2Cavern], setKey)
-                : [setKey]
+                : [setKey],
             )
           }
         >
@@ -356,7 +356,7 @@ function AdvSetFilterRelicPlanarCard({
             setSetFilter2Planar(
               setFilter2Planar.length
                 ? toggleInArr([...setFilter2Planar], setKey)
-                : [setKey]
+                : [setKey],
             )
           }
         >

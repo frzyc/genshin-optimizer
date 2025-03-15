@@ -15,12 +15,12 @@ const [condSet4Path, condSet4] = cond(key, 'set4')
 const atkSPD_ = greaterEq(
   input.artSet.DesertPavilionChronicle,
   4,
-  equal(condSet4, 'on', percent(0.1))
+  equal(condSet4, 'on', percent(0.1)),
 )
 const normal_dmg_ = greaterEq(
   input.artSet.DesertPavilionChronicle,
   4,
-  equal(condSet4, 'on', percent(0.4))
+  equal(condSet4, 'on', percent(0.4)),
 )
 const charged_dmg_ = { ...normal_dmg_ }
 const plunging_dmg_ = { ...normal_dmg_ }

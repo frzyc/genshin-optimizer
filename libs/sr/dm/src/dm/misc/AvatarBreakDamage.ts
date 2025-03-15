@@ -9,7 +9,7 @@ export type AvatarBreakDamage = {
 }
 
 const avatarBreakDamage = JSON.parse(
-  readDMJSON('ExcelOutput/AvatarBreakDamage.json')
+  readDMJSON('ExcelOutput/AvatarBreakDamage.json'),
 ) as AvatarBreakDamage[]
 
 dumpFile(`${PROJROOT_PATH}/src/dm/character/AvatarBreakDamage_list_gen.json`, [

@@ -20,7 +20,7 @@ export function registerLightCone(
 
 export function entriesForLightCone(
   key: LightConeKey,
-  dataGen: LightConeDatum
+  dataGen: LightConeDatum,
 ): TagMapNodeEntries {
   const { ascension, superimpose } = own.lightCone
   // The "add" only applies to lvl - 1, since "base" is stat at lvl1
@@ -37,9 +37,9 @@ export function entriesForLightCone(
           1,
           sum(
             subscript(ascension, basePerAsc),
-            prod(lvl1, subscript(ascension, addPerAsc))
-          )
-        )
+            prod(lvl1, subscript(ascension, addPerAsc)),
+          ),
+        ),
       )
     }),
     // Passive stats
@@ -55,12 +55,16 @@ export function entriesForLightCone(
             cmpGE(
               lcCount,
               1,
-              cmpEq(dataGen.path, own.char.path, subscript(superimpose, values))
-            )
+              cmpEq(
+                dataGen.path,
+                own.char.path,
+                subscript(superimpose, values),
+              ),
+            ),
           ),
-          cmpGE(lcCount, 1, 'unique', '')
+          cmpGE(lcCount, 1, 'unique', ''),
         )
-      }
+      },
     ),
   ]
 }

@@ -6,7 +6,7 @@ export function bandPass(
   pixelData: ImageData,
   color1: Color,
   color2: Color,
-  mode = 'color' as 'bw' | 'color' | 'invert'
+  mode = 'color' as 'bw' | 'color' | 'invert',
 ) {
   const d = Uint8ClampedArray.from(pixelData.data)
 
@@ -34,7 +34,7 @@ export function histogramAnalysis(
   imageData: ImageData,
   color1: Color,
   color2: Color,
-  hori = true
+  hori = true,
 ): number[] {
   const height = imageData.height
   const width = imageData.width
@@ -58,7 +58,7 @@ export function histogramContAnalysis(
   color1: Color,
   color2: Color,
   hori = true,
-  range = [0, 1]
+  range = [0, 1],
 ): number[] {
   const height = imageData.height
   const width = imageData.width
@@ -101,7 +101,7 @@ export function getPixelIndex(x: number, y: number, width: number) {
 export function findHistogramRange(
   histogram: number[],
   threshold = 0.7,
-  window = 3
+  window = 3,
 ) {
   const max = Math.max(...histogram)
   const hMax = max * threshold
@@ -215,7 +215,7 @@ function blurARGB(
   pixels: Uint8ClampedArray,
   width: number,
   height: number,
-  radius: number
+  radius: number,
 ) {
   const numPackedPixels = width * height
   const argb = new Int32Array(numPackedPixels)

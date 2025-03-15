@@ -42,7 +42,7 @@ describe('example', () => {
         ]),
 
         // custom buff
-        userBuff.premod.def.add(30)
+        userBuff.premod.def.add(30),
       ),
       ...withMember(
         '1',
@@ -50,7 +50,7 @@ describe('example', () => {
         ...weaponData(rawData[1].weapon as IWeapon),
         ...artifactsData([
           /* per art stat */
-        ])
+        ]),
       ),
 
       // Conditionals
@@ -113,7 +113,7 @@ describe('example', () => {
     expect(mem0.compute(own.common.eleCount).val).toBe(2)
 
     expect(calc.compute(team.final.eleMas.sum).val).toEqual(
-      mem0.compute(own.final.eleMas).val + mem1.compute(own.final.eleMas).val
+      mem0.compute(own.final.eleMas).val + mem1.compute(own.final.eleMas).val,
     )
   })
   describe('retrieve formulas in a listing', () => {
@@ -135,7 +135,7 @@ describe('example', () => {
     // Simple check that all tags are in the correct format
     const names: string[] = []
     for (const { name, move, ...tag } of listing.filter(
-      (x) => x.sheet === 'Nahida' && x.qt == 'formula' // exclude stats
+      (x) => x.sheet === 'Nahida' && x.qt == 'formula', // exclude stats
     )) {
       names.push(name!)
       expect(name).toBeTruthy()
@@ -236,7 +236,7 @@ describe('example', () => {
       detached,
       'q', // Tag category for object key
       2, // Number of slots
-      {} // Initial values
+      {}, // Initial values
     )
 
     // Step 5: Calculate the value

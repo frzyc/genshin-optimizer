@@ -52,14 +52,14 @@ export function WengineSelectionModal({
 }: WengineSelectionModalProps) {
   const { t } = useTranslation(['page_wengine'])
   const [wengineFilter, setWenginefilter] = useState<SpecialityKey[]>(
-    wengineTypeFilter ? [wengineTypeFilter] : [...allSpecialityKeys]
+    wengineTypeFilter ? [wengineTypeFilter] : [...allSpecialityKeys],
   )
 
   const { database } = useDatabaseContext()
   const [state, setState] = useState(database.displayWengine.get())
   useEffect(
     () => database.displayWengine.follow((_, dbMeta) => setState(dbMeta)),
-    [database]
+    [database],
   )
 
   useEffect(() => {
@@ -79,7 +79,7 @@ export function WengineSelectionModal({
             !deferredSearchTerm ||
             t(`${wKey}`)
               .toLowerCase()
-              .includes(deferredSearchTerm.toLowerCase())
+              .includes(deferredSearchTerm.toLowerCase()),
         )
         .filter((wKey) => rarity.includes(getWengineStat(wKey).rarity))
         .sort((a, b) => {
@@ -89,7 +89,7 @@ export function WengineSelectionModal({
             wengineSortRarityMap.indexOf(getWengineStat(b).rarity)
           )
         }),
-    [deferredSearchTerm, rarity, t, wengineFilter]
+    [deferredSearchTerm, rarity, t, wengineFilter],
   )
 
   const wengineTotals = useMemo(
@@ -101,9 +101,9 @@ export function WengineSelectionModal({
             ct[wtk].total++
             if (wengineIdList.includes(wk)) ct[wtk].current++
           }
-        })
+        }),
       ),
-    [wengineIdList]
+    [wengineIdList],
   )
 
   const wengineRarityTotals = useMemo(
@@ -115,9 +115,9 @@ export function WengineSelectionModal({
             ct[wr].total++
             if (wengineIdList.includes(wk)) ct[wr].current++
           }
-        })
+        }),
       ),
-    [wengineIdList]
+    [wengineIdList],
   )
 
   return (

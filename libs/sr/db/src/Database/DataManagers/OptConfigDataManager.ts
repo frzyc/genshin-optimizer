@@ -129,7 +129,7 @@ export class OptConfigDataManager extends DataManager<
     slotSphereKeys = validateArr(
       slotSphereKeys,
       relicSlotToMainStatKeys.sphere,
-      []
+      [],
     )
     slotRopeKeys = validateArr(slotRopeKeys, relicSlotToMainStatKeys.rope, [])
     setFilter2Cavern = validateArr(setFilter2Cavern, allRelicCavernSetKeys, [])
@@ -160,7 +160,7 @@ export class OptConfigDataManager extends DataManager<
 
     if (
       !maxBuildsToShowList.includes(
-        maxBuildsToShow as (typeof maxBuildsToShowList)[number]
+        maxBuildsToShow as (typeof maxBuildsToShowList)[number],
       )
     )
       maxBuildsToShow = maxBuildsToShowDefault

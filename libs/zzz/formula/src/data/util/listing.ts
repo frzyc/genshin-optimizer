@@ -44,7 +44,7 @@ export const flatAndPercentStats = [
 ] as const
 export const nonFlatAndPercentStats = stats.filter(
   (stat) =>
-    !flatAndPercentStats.flatMap((stat) => [stat, `${stat}_`]).includes(stat)
+    !flatAndPercentStats.flatMap((stat) => [stat, `${stat}_`]).includes(stat),
 )
 
 export const attributes = [...allAttributeKeys] as const

@@ -58,7 +58,7 @@ export function BuildAlert({
   const durationString = (
     <Monospace>
       {timeStringMs(
-        Math.round((finishTime ?? performance.now()) - (startTime ?? NaN))
+        Math.round((finishTime ?? performance.now()) - (startTime ?? NaN)),
       )}
     </Monospace>
   )

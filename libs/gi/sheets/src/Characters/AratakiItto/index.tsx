@@ -101,15 +101,15 @@ const [condC4Path, condC4] = cond(key, 'constellation4')
 
 const nodeSkillHP = prod(
   subscript(input.total.skillIndex, dm.skill.hp, { path: 'hp_' }),
-  input.total.hp
+  input.total.hp,
 )
 const nodeBurstAtk = equal(
   condBurst,
   'on',
   prod(
     subscript(input.total.burstIndex, dm.burst.defConv, { path: 'def_' }),
-    input.total.def
-  )
+    input.total.def,
+  ),
 )
 const nodeBurstAtkSpd = equal(condBurst, 'on', dm.burst.atkSpd, {
   path: 'atkSPD_',
@@ -118,13 +118,13 @@ const allNodeBurstRes = Object.fromEntries(
   allElementWithPhyKeys.map((ele) => [
     `${ele}_res_`,
     equal(condBurst, 'on', -dm.burst.resDec),
-  ])
+  ]),
 )
 const nodeBurstInfusion = equalStr(condBurst, 'on', 'geo')
 const nodeA4Bonus = greaterEq(
   input.asc,
   4,
-  prod(percent(dm.passive2.def_), input.premod.def)
+  prod(percent(dm.passive2.def_), input.premod.def),
 )
 const nodeP1AtkSpd = greaterEq(
   input.asc,
@@ -135,33 +135,33 @@ const nodeP1AtkSpd = greaterEq(
       range(1, dm.passive1.maxStacks).map((i) => [
         i,
         constant(dm.passive1.atkSPD_ * i),
-      ])
+      ]),
     ),
     0,
-    { path: 'atkSPD_' }
-  )
+    { path: 'atkSPD_' },
+  ),
 )
 const nodeC2BurstRed = prod(min(tally.geo, 3), dm.constellation2.burstCdRed)
 const nodeC2EnergyRegen = prod(min(tally.geo, 3), dm.constellation2.energyRegen)
 const nodeC4Atk = equal(
   condC4,
   'on',
-  greaterEq(input.constellation, 4, dm.constellation4.atk_)
+  greaterEq(input.constellation, 4, dm.constellation4.atk_),
 )
 const nodeC4Def = equal(
   condC4,
   'on',
-  greaterEq(input.constellation, 4, dm.constellation4.def_)
+  greaterEq(input.constellation, 4, dm.constellation4.def_),
 )
 const nodeC6CritDMG = greaterEq(
   input.constellation,
   6,
-  dm.constellation6.charged_critDMG_
+  dm.constellation6.charged_critDMG_,
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     sSlash: dmgNode('atk', dm.charged.sSlash, 'charged'),
@@ -262,7 +262,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.headerTem('passive2', {

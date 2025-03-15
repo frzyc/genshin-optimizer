@@ -128,7 +128,7 @@ describe('sheet', () => {
   })
   test('name uniqueness', () => {
     const namesBySheet = Object.fromEntries(
-      sheets.map((s) => [s, new Set()])
+      sheets.map((s) => [s, new Set()]),
     ) as Record<Sheet, Set<string>>
     for (const { tag, value } of entries)
       if (tag.qt === 'formula' && tag.q === 'listing') {

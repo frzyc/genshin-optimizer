@@ -12,7 +12,7 @@ export const weaponExpCurve = Object.fromEntries(
     const result = [-1]
     Object.entries(v).forEach(([lvl, v]) => (result[+lvl] = v))
     return [k, result]
-  })
+  }),
 ) as Record<WeaponGrowCurveKey, number[]>
 
 export const charExpCurve = Object.fromEntries(
@@ -20,5 +20,5 @@ export const charExpCurve = Object.fromEntries(
     const result = [-1]
     Object.entries(v).forEach(([lvl, v]) => (result[+lvl] = v))
     return [k, result]
-  })
+  }),
 ) as Record<CharacterGrowCurveKey, number[]>

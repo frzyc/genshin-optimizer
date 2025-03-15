@@ -105,7 +105,8 @@ function Page({ teamId }: { teamId: string }) {
     const loadoutDatum = loadoutData.find(
       (loadoutDatum) =>
         loadoutDatum?.teamCharId &&
-        database.teamChars.get(loadoutDatum.teamCharId)?.key === characterKeyRaw
+        database.teamChars.get(loadoutDatum.teamCharId)?.key ===
+          characterKeyRaw,
     )
 
     return loadoutDatum
@@ -136,18 +137,18 @@ function Page({ teamId }: { teamId: string }) {
         ? t(
             `${
               silly ? 'sillyWisher_charNames' : 'charNames_gen'
-            }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
+            }:${charKeyToLocGenderedCharKey(characterKey, gender)}`,
           )
         : t('page_team:teamSettings.tab.team')
       const tabName = tab
         ? t(`page_character:tabs.${tab}`)
         : characterKey
-        ? t('page_character:tabs.setting')
-        : tab
+          ? t('page_character:tabs.setting')
+          : tab
       return tabName
         ? `${team.name} - ${charName} - ${tabName}`
         : `${team.name} - ${charName}`
-    }, [t, team.name, silly, characterKey, gender, tab])
+    }, [t, team.name, silly, characterKey, gender, tab]),
   )
 
   const teamCharacterContextValue: TeamCharacterContextObj | undefined =
@@ -236,11 +237,11 @@ function InnerContent({ tab }: { tab?: string }) {
       character && {
         character,
       },
-    [character]
+    [character],
   )
 
   const [chartData, setChartDataState] = useState<ChartData | undefined>(
-    chartDataAll[teamCharId]
+    chartDataAll[teamCharId],
   )
   const [graphBuilds, setGraphBuildState] = useState<
     GeneratedBuild[] | undefined
@@ -275,15 +276,15 @@ function InnerContent({ tab }: { tab?: string }) {
     (data: SetBuildTcAction) => {
       database.buildTcs.set(loadoutDatum.buildTcId, data)
     },
-    [loadoutDatum.buildTcId, database]
+    [loadoutDatum.buildTcId, database],
   )
   const buildTCContextObj = useMemo(
     () =>
       ({
         buildTc: loadoutDatum.buildType === 'tc' ? buildTc : undefined,
         setBuildTc,
-      } as BuildTcContexObj),
-    [buildTc, loadoutDatum.buildType, setBuildTc]
+      }) as BuildTcContexObj,
+    [buildTc, loadoutDatum.buildType, setBuildTc],
   )
   if (!CharacterContextValue) return fallback
   return (

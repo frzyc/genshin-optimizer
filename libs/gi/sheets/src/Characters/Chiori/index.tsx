@@ -100,20 +100,20 @@ const [condA1InfusionPath, condA1Infusion] = cond(key, 'a1Infusion')
 const a1Infusion = greaterEqStr(
   input.asc,
   1,
-  equalStr(condA1Infusion, 'on', constant('geo'))
+  equalStr(condA1Infusion, 'on', constant('geo')),
 )
 
 const [condA4ConstructPath, condA4Construct] = cond(key, 'a4Construct')
 const a4Construct_geo_dmg_ = greaterEq(
   input.asc,
   4,
-  equal(condA4Construct, 'on', dm.passive2.geo_dmg_)
+  equal(condA4Construct, 'on', dm.passive2.geo_dmg_),
 )
 
 const c6Beauty_normal_dmgInc = greaterEq(
   input.constellation,
   6,
-  prod(percent(dm.constellation6.auto_dmgInc_def), input.total.def)
+  prod(percent(dm.constellation6.auto_dmgInc_def), input.total.def),
 )
 
 function sweepDmg(specialMultiplier?: NumNode) {
@@ -122,7 +122,7 @@ function sweepDmg(specialMultiplier?: NumNode) {
     [dm.skill.sweepDmg_atk, dm.skill.sweepDmg_def],
     'skill',
     undefined,
-    specialMultiplier
+    specialMultiplier,
   )
 }
 
@@ -132,14 +132,14 @@ function turretDmg(specialMultiplier?: NumNode) {
     [dm.skill.turretDmg_atk, dm.skill.turretDmg_def],
     'skill',
     undefined,
-    specialMultiplier
+    specialMultiplier,
   )
 }
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -154,7 +154,7 @@ const dmgFormulas = {
     bloomDmg: splitScaleDmgNode(
       ['atk', 'def'],
       [dm.burst.bloomDmg_atk, dm.burst.bloomDmg_def],
-      'burst'
+      'burst',
     ),
   },
   passive1: {
@@ -164,7 +164,7 @@ const dmgFormulas = {
     dollDmg: greaterEq(
       input.constellation,
       2,
-      turretDmg(percent(dm.passive1.dollDmg * dm.constellation2.dmg))
+      turretDmg(percent(dm.passive1.dollDmg * dm.constellation2.dmg)),
     ),
   },
   constellation6: {

@@ -89,17 +89,17 @@ const dm = {
 const wave_bite_dmgInc = infoMut(
   prod(
     subscript(input.total.skillIndex, dm.skill.waveDmgBonus, { unit: '%' }),
-    input.total.hp
+    input.total.hp,
   ),
-  { name: ct.ch('bite_dmgInc') }
+  { name: ct.ch('bite_dmgInc') },
 )
 const wave2_bite_dmgInc = prod(2, { ...wave_bite_dmgInc })
 const surging_bite_dmgInc = sum(
   prod(3, { ...wave_bite_dmgInc }),
   prod(
     subscript(input.total.skillIndex, dm.skill.surgingDmgBonus, { unit: '%' }),
-    input.total.hp
-  )
+    input.total.hp,
+  ),
 )
 
 const a4StacksArr = range(1, dm.passive2.dmg.length)
@@ -107,33 +107,33 @@ const [condA4StacksPath, condA4Stacks] = cond(key, 'a4Stacks')
 const a4Stacks = lookup(
   condA4Stacks,
   objKeyMap(a4StacksArr, (stack) => constant(stack)),
-  naught
+  naught,
 )
 const a4Stacks_burst_dmgInc = greaterEq(
   input.asc,
   4,
   prod(
     subscript(a4Stacks, [0, ...dm.passive2.dmg] as number[], { unit: '%' }),
-    input.total.hp
-  )
+    input.total.hp,
+  ),
 )
 
 const c1First_surging_dmgInc = greaterEq(
   input.constellation,
   1,
-  prod(percent(dm.constellation1.dmgInc), input.total.hp)
+  prod(percent(dm.constellation1.dmgInc), input.total.hp),
 )
 
 const c4_burst_dmg_ = greaterEq(
   input.constellation,
   4,
-  dm.constellation4.shot_dmg_
+  dm.constellation4.shot_dmg_,
 )
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -147,7 +147,7 @@ const dmgFormulas = {
       'normal',
       undefined,
       undefined,
-      'skill'
+      'skill',
     ),
     stack1Dmg: dmgNode(
       'hp',
@@ -157,7 +157,7 @@ const dmgFormulas = {
         premod: { normal_dmgInc: wave_bite_dmgInc },
       },
       undefined,
-      'skill'
+      'skill',
     ),
     stack2Dmg: dmgNode(
       'hp',
@@ -167,7 +167,7 @@ const dmgFormulas = {
         premod: { normal_dmgInc: wave2_bite_dmgInc },
       },
       undefined,
-      'skill'
+      'skill',
     ),
     surgingDmg: dmgNode(
       'hp',
@@ -179,7 +179,7 @@ const dmgFormulas = {
         },
       },
       undefined,
-      'skill'
+      'skill',
     ),
   },
   burst: {
@@ -202,8 +202,8 @@ const dmgFormulas = {
           },
         },
         undefined,
-        'skill'
-      )
+        'skill',
+      ),
     ),
   },
 }

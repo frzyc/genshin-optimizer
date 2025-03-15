@@ -43,6 +43,6 @@ export function registerEquipment<Tag_ extends Tag>(
     ]
   }
   return data.flatMap((data) =>
-    Array.isArray(data) ? data.flatMap(internal) : internal(data)
+    Array.isArray(data) ? data.flatMap(internal) : internal(data),
   )
 }

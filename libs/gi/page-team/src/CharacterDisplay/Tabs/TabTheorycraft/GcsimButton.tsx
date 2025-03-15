@@ -78,22 +78,22 @@ export default function GcsimButton({ disabled }: { disabled: boolean }) {
   const setText = Object.entries(sets)
     .map(
       ([key, num]) =>
-        `${charKeyLow} add set="${key.toLowerCase()}" count=${num};`
+        `${charKeyLow} add set="${key.toLowerCase()}" count=${num};`,
     )
     .join('\n')
 
   const mainStatsText = Object.entries(slots)
     .map(
       ([_, { level, statKey, rarity }]) =>
-        `${GOODtoSRL[statKey]}=${getMainStatValue(statKey, rarity, level)}`
+        `${GOODtoSRL[statKey]}=${getMainStatValue(statKey, rarity, level)}`,
     )
     .join(' ')
   const substatsText = Object.entries(substats)
     .map(
       ([key, value]) =>
         `${GOODtoSRL[key]}=${toDecimal(value, key).toFixed(
-          key.endsWith('_') ? 4 : 2
-        )}`
+          key.endsWith('_') ? 4 : 2,
+        )}`,
     )
     .join(' ')
 

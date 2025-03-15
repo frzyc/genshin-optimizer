@@ -15,16 +15,16 @@ export function getBuildTcArtifactData(buildTc: BuildTc): Data {
   } = buildTc
   const allStats: Partial<Record<MainStatKey | SubstatKey, number>> = objMap(
     substats,
-    (v, k) => toDecimal(v, k)
+    (v, k) => toDecimal(v, k),
   )
   Object.values(slots).forEach(
     ({ statKey, rarity, level }) =>
       (allStats[statKey] =
-        (allStats[statKey] ?? 0) + getMainStatValue(statKey, rarity, level))
+        (allStats[statKey] ?? 0) + getMainStatValue(statKey, rarity, level)),
   )
   return {
     art: objMap(allStats, (v, k) =>
-      k.endsWith('_') ? percent(v) : constant(v)
+      k.endsWith('_') ? percent(v) : constant(v),
     ),
     artSet: objMap(sets, (v) => constant(v)),
   }

@@ -39,13 +39,13 @@ const sheet = register(
   registerBuff(
     'e6_dmg_',
     ownBuff.premod.common_dmg_.add(
-      cmpGE(char.eidolon, 6, boolConditional.ifOn(1))
-    )
+      cmpGE(char.eidolon, 6, boolConditional.ifOn(1)),
+    ),
   ),
   registerBuff(
     'team_dmg_',
-    teamBuff.premod.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
+    teamBuff.premod.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
   ),
-  registerBuff('enemy_defRed_', enemyDebuff.common.defRed_.add(numConditional))
+  registerBuff('enemy_defRed_', enemyDebuff.common.defRed_.add(numConditional)),
 )
 export default sheet

@@ -34,7 +34,7 @@ export function DiscSetAutocomplete({
   const toImg = useCallback(
     (key: DiscSetKey | '') =>
       key ? <ImgIcon src={discDefIcon(key)} size={1.5} /> : undefined,
-    []
+    [],
   )
 
   const options = useMemo(
@@ -43,12 +43,12 @@ export function DiscSetAutocomplete({
         key: set,
         label: t(`discNames_gen:${set}`),
       })),
-    [t]
+    [t],
   )
 
   const onChange = useCallback(
     (k: DiscSetKey | '' | null) => setDiscSetKey(k ?? ''),
-    [setDiscSetKey]
+    [setDiscSetKey],
   )
   return (
     <GeneralAutocomplete

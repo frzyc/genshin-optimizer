@@ -34,9 +34,9 @@ const set4_stacks_skill_dmg_ = greaterEq(
   lookup(
     condSet4,
     objKeyMap(stacksArr, (stack) => constant(stack * 0.08)),
-    naught
+    naught,
   ),
-  { path: 'skill_dmg_' }
+  { path: 'skill_dmg_' },
 )
 const set4_stacks_burst_dmg_ = greaterEq(
   input.artSet.VourukashasGlow,
@@ -44,9 +44,9 @@ const set4_stacks_burst_dmg_ = greaterEq(
   lookup(
     condSet4,
     objKeyMap(stacksArr, (stack) => constant(stack * 0.08)),
-    naught
+    naught,
   ),
-  { path: 'burst_dmg_' }
+  { path: 'burst_dmg_' },
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

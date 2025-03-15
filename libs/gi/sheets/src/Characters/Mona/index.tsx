@@ -99,30 +99,30 @@ const [condOmenPath, condOmen] = cond(key, 'Omen')
 const all_dmg_ = equal(
   'on',
   condOmen,
-  subscript(input.total.burstIndex, dm.burst.dmgBonus, { unit: '%' })
+  subscript(input.total.burstIndex, dm.burst.dmgBonus, { unit: '%' }),
 )
 
 const [condPoSPath, condPoS] = cond(key, 'ProphecyOfSubmersion')
 const electrocharged_dmg_ = greaterEq(
   input.constellation,
   1,
-  equal('on', condPoS, percent(dm.constellation1.electroChargeDmgInc))
+  equal('on', condPoS, percent(dm.constellation1.electroChargeDmgInc)),
 )
 const swirl_dmg_ = greaterEq(
   input.constellation,
   1,
-  equal('on', condPoS, percent(dm.constellation1.hydroSwirlDmgInc))
+  equal('on', condPoS, percent(dm.constellation1.hydroSwirlDmgInc)),
 )
 const vaporize_dmg_ = greaterEq(
   input.constellation,
   1,
-  equal('on', condPoS, percent(dm.constellation1.vaporizeDmgInc))
+  equal('on', condPoS, percent(dm.constellation1.vaporizeDmgInc)),
 )
 
 const critRate_ = greaterEq(
   input.constellation,
   4,
-  equal(condOmen, 'on', percent(dm.constellation4.critRateInc))
+  equal(condOmen, 'on', percent(dm.constellation4.critRateInc)),
 )
 
 const [condRoCPath, condRoC] = cond(key, 'RhetoricsOfCalamitas')
@@ -132,13 +132,13 @@ const charged_dmg_ = greaterEq(
   lookup(
     condRoC,
     objKeyMap(range(1, 3), (i) => percent(i * dm.constellation6.dmgBonus)),
-    0
-  )
+    0,
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -157,15 +157,15 @@ const dmgFormulas = {
       1,
       prod(
         dmgNode('atk', dm.skill.dmg, 'skill'),
-        percent(dm.passive1.percentage)
-      )
+        percent(dm.passive1.percentage),
+      ),
     ),
   },
   passive2: {
     hydro_dmg_: greaterEq(
       input.asc,
       4,
-      prod(input.premod.enerRech_, percent(dm.passive2.percentage))
+      prod(input.premod.enerRech_, percent(dm.passive2.percentage)),
     ),
   },
 }
@@ -422,7 +422,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),

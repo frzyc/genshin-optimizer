@@ -62,17 +62,17 @@ export function CharCalcProvider({
           ({ sheet, src, dst, condKey, condValue }) =>
             withPreset(
               `preset0`,
-              conditionalEntries(sheet, src, dst)(condKey, condValue)
-            )
+              conditionalEntries(sheet, src, dst)(condKey, condValue),
+            ),
         ),
         ...charOpt.bonusStats.flatMap(({ tag, value }) =>
           withPreset(`preset0`, {
             tag: { ...tag },
             value: constant(toDecimal(value, tag.q ?? '')),
-          })
+          }),
         ),
       ]),
-    [member0, charOpt, character.key]
+    [member0, charOpt, character.key],
   )
 
   return (
@@ -91,7 +91,7 @@ function useCharacterAndEquipment(character: ICachedCharacter) {
       wengine.key,
       wengine.level,
       wengine.modification,
-      wengine.phase
+      wengine.phase,
     )
   }, [wengine])
   const discTagEntries = useMemo(() => {
@@ -104,7 +104,7 @@ function useCharacterAndEquipment(character: ICachedCharacter) {
       character.key,
       ...charTagMapNodeEntries(character),
       ...wengineTagEntries,
-      ...discTagEntries
+      ...discTagEntries,
     )
   }, [character, wengineTagEntries, discTagEntries])
 }

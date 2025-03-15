@@ -67,7 +67,7 @@ export class DiscDataManager extends DataManager<
         this.database.chars.setEquippedDisc(
           prevChar.key,
           slotKey,
-          prevDisc?.id ?? ''
+          prevDisc?.id ?? '',
         )
     } else
       newDisc.location &&
@@ -117,7 +117,7 @@ export class DiscDataManager extends DataManager<
   }
   override importZOD(
     zod: IZenlessObjectDescription & IZZZDatabase,
-    result: ImportResult
+    result: ImportResult,
   ) {
     result.discs.beforeMerge = this.values.length
 
@@ -152,7 +152,7 @@ export class DiscDataManager extends DataManager<
       if (!result.ignoreDups) {
         const { duplicated, upgraded } = this.findDups(
           disc,
-          Array.from(idsToRemove)
+          Array.from(idsToRemove),
         )
         if (duplicated[0] || upgraded[0]) {
           foundDupOrUpgrade = true
@@ -163,8 +163,8 @@ export class DiscDataManager extends DataManager<
             upgraded[0]?.location === disc.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((a) => a.id === importId)
@@ -212,7 +212,7 @@ export class DiscDataManager extends DataManager<
   }
   findDups(
     editorDisc: IDisc,
-    idList = this.keys
+    idList = this.keys,
   ): { duplicated: ICachedDisc[]; upgraded: ICachedDisc[] } {
     const {
       setKey,
@@ -237,8 +237,8 @@ export class DiscDataManager extends DataManager<
           (substat, i) =>
             !candidate.substats[i]?.key || // Candidate doesn't have anything on this slot
             (substat.key === candidate.substats[i]?.key && // Or editor simply has better substat
-              substat.upgrades >= candidate.substats[i]?.upgrades)
-        )
+              substat.upgrades >= candidate.substats[i]?.upgrades),
+        ),
     )
 
     // Strictly upgraded disc
@@ -250,23 +250,23 @@ export class DiscDataManager extends DataManager<
             ? substats.every(
                 (
                   substat,
-                  i // Has no extra roll
+                  i, // Has no extra roll
                 ) =>
                   substat.key === candidate.substats[i]?.key &&
-                  substat.upgrades === candidate.substats[i]?.upgrades
+                  substat.upgrades === candidate.substats[i]?.upgrades,
               )
             : substats.some(
                 (
                   substat,
-                  i // Has extra rolls
+                  i, // Has extra rolls
                 ) =>
                   candidate.substats[i]?.key
                     ? substat.upgrades > candidate.substats[i]?.upgrades // Extra roll to existing substat
-                    : substat.key // Extra roll to new substat
-              ))
+                    : substat.key, // Extra roll to new substat
+              )),
       )
       .sort((candidates) =>
-        candidates.location === editorDisc.location ? -1 : 1
+        candidates.location === editorDisc.location ? -1 : 1,
       )
     // Strictly duplicated disc
     const duplicated = candidates
@@ -279,12 +279,12 @@ export class DiscDataManager extends DataManager<
               candidate.substats.some(
                 (candidateSubstat) =>
                   substat.key === candidateSubstat.key && // Or same slot
-                  substat.upgrades === candidateSubstat.upgrades
-              )
-          )
+                  substat.upgrades === candidateSubstat.upgrades,
+              ),
+          ),
       )
       .sort((candidates) =>
-        candidates.location === editorDisc.location ? -1 : 1
+        candidates.location === editorDisc.location ? -1 : 1,
       )
     return { duplicated, upgraded }
   }
@@ -293,7 +293,7 @@ export class DiscDataManager extends DataManager<
 export function validateDisc(
   obj: unknown = {},
   allowZeroSub = false,
-  sortSubs = true
+  sortSubs = true,
 ): IDisc | undefined {
   if (!obj || typeof obj !== 'object') return undefined
   let {
@@ -359,7 +359,7 @@ export function validateDiscBasedOnRarity(disc: Partial<ICachedDisc>) {
       errors.push(
         `Substat at row ${dupSubIndex + 1} with ${
           statKeyTextMap[mainStatKey]
-        } is the same as mainstat.`
+        } is the same as mainstat.`,
       )
   }
 
@@ -371,15 +371,15 @@ export function validateDiscBasedOnRarity(disc: Partial<ICachedDisc>) {
 
     if (totalUpgrades > upperBound)
       errors.push(
-        `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} upgrades. It currently has ${totalUpgrades} upgrades.`
+        `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} upgrades. It currently has ${totalUpgrades} upgrades.`,
       )
     else if (totalUpgrades < lowerBound)
       errors.push(
-        `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} upgrades. It currently has ${totalUpgrades} upgrades.`
+        `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} upgrades. It currently has ${totalUpgrades} upgrades.`,
       )
   } else {
     errors.push(
-      `${rarity}-rank disc (level ${level}) should have at least ${minSubstats} substats. It currently has ${substats?.length} substats.`
+      `${rarity}-rank disc (level ${level}) should have at least ${minSubstats} substats. It currently has ${substats?.length} substats.`,
     )
   }
 
@@ -390,7 +390,7 @@ export function validateDiscBasedOnRarity(disc: Partial<ICachedDisc>) {
         `Substat ${
           statKeyTextMap[substat.key as keyof typeof statKeyTextMap] ??
           substat.key
-        } has > 1 upgrade, but not all substats are unlocked.`
+        } has > 1 upgrade, but not all substats are unlocked.`,
       )
   }
 
@@ -401,7 +401,7 @@ function parseSubstats(
   obj: unknown,
   _rarity: DiscRarityKey,
   _allowZeroSub = false,
-  _sortSubs = true
+  _sortSubs = true,
 ): ISubstat[] {
   if (!Array.isArray(obj)) return []
   const substats = (obj as ISubstat[])

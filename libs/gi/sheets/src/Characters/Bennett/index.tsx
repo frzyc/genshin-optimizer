@@ -101,14 +101,14 @@ const burstAtkRatio = subscript(input.total.burstIndex, dm.burst.atkBonus, {
 const c1AtkRatio = greaterEq(
   input.constellation,
   1,
-  percent(dm.constellation1.atk_inc)
+  percent(dm.constellation1.atk_inc),
 )
 const burstAddlAtk = prod(sum(burstAtkRatio, c1AtkRatio), input.base.atk)
 const [condInAreaPath, condInArea] = cond(key, 'activeInArea')
 const activeInArea = equal(
   'activeInArea',
   condInArea,
-  equal(input.activeCharKey, target.charKey, 1)
+  equal(input.activeCharKey, target.charKey, 1),
 )
 const activeInAreaAtkDisp = infoMut(burstAddlAtk, { ...{ path: 'atk' } })
 const activeInAreaAtk = equal(activeInArea, 1, activeInAreaAtkDisp)
@@ -118,7 +118,7 @@ const a1SkillCd = greaterEq(input.asc, 1, dm.passive1.cd_red)
 const activeInAreaA4 = greaterEq(
   input.asc,
   4,
-  equal(activeInArea, 1, dm.passive2.cd_red)
+  equal(activeInArea, 1, dm.passive2.cd_red),
 )
 
 const c6AndCorrectWep = greaterEq(
@@ -127,30 +127,30 @@ const c6AndCorrectWep = greaterEq(
   lookup(
     target.weaponType,
     { sword: constant(1), claymore: constant(1), polearm: constant(1) },
-    constant(0)
-  )
+    constant(0),
+  ),
 )
 const activeInAreaC6PyroDmg = equal(
   activeInArea,
   1,
-  greaterEq(input.constellation, 6, dm.constellation6.pyro_dmg)
+  greaterEq(input.constellation, 6, dm.constellation6.pyro_dmg),
 )
 const activeInAreaC6Infusion = equalStr(
   c6AndCorrectWep,
   1,
-  equalStr(activeInArea, 1, elementKey)
+  equalStr(activeInArea, 1, elementKey),
 )
 
 const [condUnderHPPath, condUnderHP] = cond(key, 'underHP')
 const underHP = greaterEq(
   input.constellation,
   2,
-  equal('underHP', condUnderHP, dm.constellation2.er_inc)
+  equal('underHP', condUnderHP, dm.constellation2.er_inc),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -174,7 +174,7 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.constellation,
       4,
-      prod(dmgNode('atk', dm.skill.hold1_2, 'skill'), dm.constellation4.dmg)
+      prod(dmgNode('atk', dm.skill.hold1_2, 'skill'), dm.constellation4.dmg),
     ),
   },
 }

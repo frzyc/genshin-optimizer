@@ -95,7 +95,7 @@ export class DisplayWengineEntry extends DataEntry<
     value:
       | Partial<IDisplayWengine>
       | ((v: IDisplayWengine) => Partial<IDisplayWengine> | void)
-      | { action: 'reset' }
+      | { action: 'reset' },
   ): boolean {
     if ('action' in value) {
       if (value.action === 'reset') return super.set(initialOption())

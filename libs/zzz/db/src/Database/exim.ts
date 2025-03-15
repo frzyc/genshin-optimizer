@@ -17,7 +17,7 @@ function newCounter<T>(): ImportResultCounter<T> {
 export function newImportResult(
   source: string,
   keepNotInImport: boolean,
-  ignoreDups: boolean
+  ignoreDups: boolean,
 ): ImportResult {
   return {
     type: 'ZZZ',

@@ -27,9 +27,9 @@ const sheet = registerLightCone(
   registerBuff(
     'common_dmg_',
     ownBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, prod(trick, subscript(superimpose, dm.common_dmg_)))
+      cmpGE(lcCount, 1, prod(trick, subscript(superimpose, dm.common_dmg_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuffFormula(
     'atk_',
@@ -37,10 +37,14 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        cmpGE(own.final.eff_, dm.eff_threshold, subscript(superimpose, dm.atk_))
-      )
+        cmpGE(
+          own.final.eff_,
+          dm.eff_threshold,
+          subscript(superimpose, dm.atk_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

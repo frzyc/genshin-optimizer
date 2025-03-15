@@ -63,12 +63,12 @@ export function DiscSwapModal({
 
   const filterOptionReducer = useCallback(
     (state: any, action: any) => ({ ...state, ...action, slotKeys: [slotKey] }),
-    [slotKey]
+    [slotKey],
   )
 
   const [filterOption, filterOptionDispatch]: [
     DiscFilterOption,
-    (action: any) => void
+    (action: any) => void,
   ] = useReducer(filterOptionReducer, {
     ...initialDiscFilterOption(),
     slotKeys: [slotKey],
@@ -83,7 +83,7 @@ export function DiscSwapModal({
 
   const filterConfigs = useMemo(() => discFilterConfigs(), [])
   const totalDiscNum = database.discs.values.filter(
-    (s) => s.slotKey === filterOption.slotKeys[0]
+    (s) => s.slotKey === filterOption.slotKeys[0],
   ).length
 
   const discsIds = useMemo(() => {
@@ -101,12 +101,12 @@ export function DiscSwapModal({
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    discsIds.length
+    discsIds.length,
   )
 
   const discIdsToShow = useMemo(
     () => discsIds.slice(0, numShow),
-    [discsIds, numShow]
+    [discsIds, numShow],
   )
 
   const totalShowing =

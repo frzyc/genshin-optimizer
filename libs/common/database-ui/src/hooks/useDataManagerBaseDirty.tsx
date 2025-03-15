@@ -10,12 +10,12 @@ export function useDataManagerBaseDirty<
   B extends string,
   C extends D,
   D,
-  E extends Database
+  E extends Database,
 >(manager: DataManagerBase<A, B, C, D, E>) {
   const [dirty, setDirty] = useForceUpdate()
   useEffect(
     () => manager.followAny((_k, r) => r === 'update' && setDirty()),
-    [manager, setDirty]
+    [manager, setDirty],
   )
   return dirty
 }

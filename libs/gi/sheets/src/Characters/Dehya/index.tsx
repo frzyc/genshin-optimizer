@@ -105,25 +105,25 @@ const c1_hp_ = greaterEq(input.constellation, 1, dm.c1.hp_)
 const c1_skill_dmgInc = greaterEq(
   input.constellation,
   1,
-  prod(percent(dm.c1.skill_dmgInc), input.total.hp)
+  prod(percent(dm.c1.skill_dmgInc), input.total.hp),
 )
 const c1_burst_dmgInc = greaterEq(
   input.constellation,
   1,
-  prod(percent(dm.c1.burst_dmgInc), input.total.hp)
+  prod(percent(dm.c1.burst_dmgInc), input.total.hp),
 )
 
 const [condC2InFieldPath, condC2InField] = cond(key, 'c2InField')
 const c2InField_field_dmg_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2InField, 'on', dm.c2.field_dmg_)
+  equal(condC2InField, 'on', dm.c2.field_dmg_),
 )
 
 const c6_burst_critRate_ = greaterEq(
   input.constellation,
   6,
-  dm.c6.burst_critRate_
+  dm.c6.burst_critRate_,
 )
 const c6CritStacksArr = range(1, 4)
 const [condC6CritStacksPath, condC6CritStacks] = cond(key, 'c6CritStacks')
@@ -133,15 +133,15 @@ const c6CritStacks_burst_critDMG_ = greaterEq(
   lookup(
     condC6CritStacks,
     objKeyMap(c6CritStacksArr, (stack) =>
-      prod(stack, percent(dm.c6.burst_critDMG_))
+      prod(stack, percent(dm.c6.burst_critDMG_)),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spin: dmgNode('atk', dm.charged.spin, 'charged'),
@@ -155,7 +155,7 @@ const dmgFormulas = {
       ['atk', 'hp'],
       [dm.skill.fieldDmgAtk, dm.skill.fieldDmgHp],
       'skill',
-      { premod: { skill_dmg_: c2InField_field_dmg_ } }
+      { premod: { skill_dmg_: c2InField_field_dmg_ } },
     ),
     redmaneMax: prod(percent(dm.skill.redmaneMax), input.total.hp),
   },
@@ -163,24 +163,24 @@ const dmgFormulas = {
     fistDmg: splitScaleDmgNode(
       ['atk', 'hp'],
       [dm.burst.fistDmgAtk, dm.burst.fistDmgHp],
-      'burst'
+      'burst',
     ),
     driveDmg: splitScaleDmgNode(
       ['atk', 'hp'],
       [dm.burst.driveDmgAtk, dm.burst.driveDmgHp],
-      'burst'
+      'burst',
     ),
   },
   passive2: {
     initialHeal: greaterEq(
       input.asc,
       4,
-      customHealNode(prod(percent(dm.passive2.initialHeal), input.total.hp))
+      customHealNode(prod(percent(dm.passive2.initialHeal), input.total.hp)),
     ),
     dotHeal: greaterEq(
       input.asc,
       4,
-      customHealNode(prod(percent(dm.passive2.dotHeal), input.total.hp))
+      customHealNode(prod(percent(dm.passive2.dotHeal), input.total.hp)),
     ),
   },
   constellation1: {
@@ -191,7 +191,7 @@ const dmgFormulas = {
     heal: greaterEq(
       input.constellation,
       4,
-      customHealNode(prod(percent(dm.c4.heal), input.total.hp))
+      customHealNode(prod(percent(dm.c4.heal), input.total.hp)),
     ),
   },
 } as const
@@ -292,7 +292,7 @@ const sheet: TalentSheet = {
             {
               name: ct.chg('skill.skillParams.3'),
               unit: '%',
-            }
+            },
           ),
         },
         {

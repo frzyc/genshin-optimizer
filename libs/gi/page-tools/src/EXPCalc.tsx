@@ -346,7 +346,7 @@ export default function EXPCalc() {
                   curExp: finalExp,
                   books: objMap(
                     bookResultObj,
-                    (val, bookKey) => books[bookKey] - val
+                    (val, bookKey) => books[bookKey] - val,
                   ) as any,
                   mora: finalMora,
                 })

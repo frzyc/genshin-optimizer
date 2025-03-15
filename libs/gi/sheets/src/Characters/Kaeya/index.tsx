@@ -72,7 +72,7 @@ const dm = {
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -89,22 +89,22 @@ const dmgFormulas = {
     heal: greaterEq(
       input.asc,
       1,
-      healNode('atk', percent(dm.passive2.healAtk_), 0)
+      healNode('atk', percent(dm.passive2.healAtk_), 0),
     ),
   },
   constellation4: {
     shield: greaterEq(
       input.constellation,
       4,
-      shieldNode('hp', percent(dm.constellation4.shieldHp_), 0)
+      shieldNode('hp', percent(dm.constellation4.shieldHp_), 0),
     ),
     cryoShield: greaterEq(
       input.constellation,
       4,
       shieldElement(
         'cryo',
-        shieldNode('hp', percent(dm.constellation4.shieldHp_), 0)
-      )
+        shieldNode('hp', percent(dm.constellation4.shieldHp_), 0),
+      ),
     ),
   },
 }
@@ -117,12 +117,12 @@ const [condC1Path, condC1Cryo] = cond(key, 'CryoC1')
 const nodeC1NormalCritRate = greaterEq(
   input.constellation,
   1,
-  equal(condC1Cryo, 'on', dm.constellation1.critRate_)
+  equal(condC1Cryo, 'on', dm.constellation1.critRate_),
 )
 const nodeC1ChargeCritRate = greaterEq(
   input.constellation,
   1,
-  equal(condC1Cryo, 'on', dm.constellation1.critRate_)
+  equal(condC1Cryo, 'on', dm.constellation1.critRate_),
 )
 
 export const data = dataObjForCharacterSheet(key, dmgFormulas, {

@@ -15,7 +15,7 @@ const nonstackWrite = equalStr(condPassive, 'on', input.charKey)
 const [atkTeam_, atkTeam_inactive] = nonStackBuff(
   'wolf',
   'atk_',
-  subscript(input.weapon.refinement, atkTeam_Src)
+  subscript(input.weapon.refinement, atkTeam_Src),
 )
 
 const data = dataObjForWeaponSheet(key, {

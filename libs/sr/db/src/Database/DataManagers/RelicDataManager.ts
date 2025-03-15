@@ -76,7 +76,7 @@ export class RelicDataManager extends DataManager<
         this.database.chars.setEquippedRelic(
           prevChar.key,
           slotKey,
-          prevRelic?.id ?? ''
+          prevRelic?.id ?? '',
         )
     } else
       newRelic.location &&
@@ -123,7 +123,7 @@ export class RelicDataManager extends DataManager<
   }
   override importSROD(
     srod: ISrObjectDescription & ISroDatabase,
-    result: ImportResult
+    result: ImportResult,
   ) {
     result.relics.beforeMerge = this.values.length
 
@@ -158,7 +158,7 @@ export class RelicDataManager extends DataManager<
       if (!result.ignoreDups) {
         const { duplicated, upgraded } = this.findDups(
           relic,
-          Array.from(idsToRemove)
+          Array.from(idsToRemove),
         )
         if (duplicated[0] || upgraded[0]) {
           foundDupOrUpgrade = true
@@ -169,8 +169,8 @@ export class RelicDataManager extends DataManager<
             upgraded[0]?.location === relic.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((a) => a.id === importId)
@@ -218,7 +218,7 @@ export class RelicDataManager extends DataManager<
   }
   findDups(
     editorRelic: IRelic,
-    idList = this.keys
+    idList = this.keys,
   ): { duplicated: ICachedRelic[]; upgraded: ICachedRelic[] } {
     const { setKey, rarity, level, slotKey, mainStatKey, substats } =
       editorRelic
@@ -237,8 +237,8 @@ export class RelicDataManager extends DataManager<
           (substat, i) =>
             !candidate.substats[i].key || // Candidate doesn't have anything on this slot
             (substat.key === candidate.substats[i].key && // Or editor simply has better substat
-              substat.value >= candidate.substats[i].value)
-        )
+              substat.value >= candidate.substats[i].value),
+        ),
     )
 
     // Strictly upgraded relic
@@ -250,23 +250,23 @@ export class RelicDataManager extends DataManager<
             ? substats.every(
                 (
                   substat,
-                  i // Has no extra roll
+                  i, // Has no extra roll
                 ) =>
                   substat.key === candidate.substats[i].key &&
-                  substat.value === candidate.substats[i].value
+                  substat.value === candidate.substats[i].value,
               )
             : substats.some(
                 (
                   substat,
-                  i // Has extra rolls
+                  i, // Has extra rolls
                 ) =>
                   candidate.substats[i].key
                     ? substat.value > candidate.substats[i].value // Extra roll to existing substat
-                    : substat.key // Extra roll to new substat
-              ))
+                    : substat.key, // Extra roll to new substat
+              )),
       )
       .sort((candidates) =>
-        candidates.location === editorRelic.location ? -1 : 1
+        candidates.location === editorRelic.location ? -1 : 1,
       )
     // Strictly duplicated relic
     const duplicated = candidates
@@ -279,12 +279,12 @@ export class RelicDataManager extends DataManager<
               candidate.substats.some(
                 (candidateSubstat) =>
                   substat.key === candidateSubstat.key && // Or same slot
-                  substat.value === candidateSubstat.value
-              )
-          )
+                  substat.value === candidateSubstat.value,
+              ),
+          ),
       )
       .sort((candidates) =>
-        candidates.location === editorRelic.location ? -1 : 1
+        candidates.location === editorRelic.location ? -1 : 1,
       )
     return { duplicated, upgraded }
   }
@@ -292,11 +292,11 @@ export class RelicDataManager extends DataManager<
 
 export function cachedRelic(
   flex: IRelic,
-  id: string
+  id: string,
 ): { relic: ICachedRelic; errors: string[] } {
   const { location, lock, setKey, slotKey, rarity, mainStatKey } = flex
   const level = Math.round(
-    Math.min(Math.max(0, flex.level), relicMaxLevel[rarity])
+    Math.min(Math.max(0, flex.level), relicMaxLevel[rarity]),
   )
   const mainStatVal = getRelicMainStatVal(rarity, mainStatKey, level)
 
@@ -440,7 +440,7 @@ export function cachedRelic(
 export function validateRelic(
   obj: unknown = {},
   allowZeroSub = false,
-  sortSubs = true
+  sortSubs = true,
 ): IRelic | undefined {
   if (!obj || typeof obj !== 'object') return undefined
   const { setKey, rarity, slotKey } = obj as IRelic
@@ -486,7 +486,7 @@ function parseSubstats(
   obj: unknown,
   rarity: RelicRarityKey,
   allowZeroSub = false,
-  sortSubs = true
+  sortSubs = true,
 ): ISubstat[] {
   if (!Array.isArray(obj)) return new Array(4).map((_) => defSub())
   let substats = (obj as ISubstat[]).map(({ key = '', value = 0 }) => {

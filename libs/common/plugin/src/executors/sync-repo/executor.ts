@@ -7,7 +7,7 @@ import type { SyncRepoExecutorSchema } from './schema'
 
 export default async function runExecutor(
   options: SyncRepoExecutorSchema,
-  context: ExecutorContext
+  context: ExecutorContext,
 ): Promise<{ success: boolean }> {
   const { outputPath, prefixPath: prefix = true } = options
 
@@ -23,7 +23,7 @@ export default async function runExecutor(
   console.log(
     `
 Caution: if this is part of nx cache replay,
-         no git command is actually executed.` + '\n '
+         no git command is actually executed.` + '\n ',
   )
 
   {

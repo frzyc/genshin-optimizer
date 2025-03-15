@@ -29,18 +29,18 @@ const sheet = registerLightCone(
     cmpGE(
       lcCount,
       1,
-      prod(subscript(superimpose, dm.healAmount), target.final.hp)
+      prod(subscript(superimpose, dm.healAmount), target.final.hp),
     ),
-    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'infer', '') }
+    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'infer', '') },
   ),
 
   // Conditional buffs
   registerBuff(
     'atk_',
     teamBuff.premod.atk_.add(
-      cmpGE(lcCount, 1, prod(healingProvided, subscript(superimpose, dm.atk_)))
+      cmpGE(lcCount, 1, prod(healingProvided, subscript(superimpose, dm.atk_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

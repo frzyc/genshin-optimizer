@@ -17,7 +17,7 @@ test('crawlObject', () => {
     (o, keys) => {
       expect(o).toBe('Test')
       expect(keys).toEqual(['a', 'b', 'c'])
-    }
+    },
   )
 })
 
@@ -38,7 +38,7 @@ describe('getObjectKeysRecursive', () => {
   test('should get keys', () => {
     const obj = { a: { b: { c: 3 }, d: 'e' } }
     expect(getObjectKeysRecursive(obj).sort()).toEqual(
-      ['a', 'b', 'c', 'd', 'e'].sort()
+      ['a', 'b', 'c', 'd', 'e'].sort(),
     )
   })
   test('should handle string', () => {

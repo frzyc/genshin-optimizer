@@ -71,11 +71,11 @@ type CookRecipeExcelConfigData = {
 }
 
 const cookRecipeExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/CookRecipeExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/CookRecipeExcelConfigData.json'),
 ) as CookRecipeExcelConfigData[]
 //character data
 const cookRecipeExcelConfigData = Object.fromEntries(
-  cookRecipeExcelConfigDataSrc.map((data) => [data.id, data])
+  cookRecipeExcelConfigDataSrc.map((data) => [data.id, data]),
 ) as { [AvatarId: number]: CookRecipeExcelConfigData }
 
 dumpFile(
@@ -84,8 +84,8 @@ dumpFile(
     cookRecipeExcelConfigDataSrc.map((data) => [
       data.id,
       nameToKey(TextMapEN[data.nameTextMapHash]),
-    ])
-  )
+    ]),
+  ),
 )
 
 export { cookRecipeExcelConfigData }

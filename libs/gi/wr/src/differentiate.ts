@@ -8,7 +8,7 @@ import { constant, frac, max, min, prod, sum, threshold } from './utils'
 export function zero_deriv(
   f: OptNode,
   binding: (readNode: ReadNode<number>) => string,
-  x: string
+  x: string,
 ): boolean {
   let ret = true
   forEachNodes(
@@ -22,7 +22,7 @@ export function zero_deriv(
             throw new Error(`Unsupported [${operation}] node in zero_deriv`)
           if (binding(f) === x) ret = false
       }
-    }
+    },
   )
   return ret
 }
@@ -39,7 +39,7 @@ export function zero_deriv(
 export function ddx(
   f: OptNode,
   binding: (readNode: ReadNode<number>) => string,
-  x: string
+  x: string,
 ): OptNode {
   const { operation } = f
   switch (operation) {
@@ -61,7 +61,7 @@ export function ddx(
       return sum(...f.operands.map((fi) => ddx(fi, binding, x)))
     case 'mul': {
       const ops = f.operands.map((fi, i) =>
-        prod(ddx(fi, binding, x), ...f.operands.filter((_, ix) => ix !== i))
+        prod(ddx(fi, binding, x), ...f.operands.filter((_, ix) => ix !== i)),
       )
       return sum(...ops)
     }
@@ -94,7 +94,7 @@ export function ddx(
       const [value, thr, pass, fail] = f.operands
       if (!zero_deriv(value, binding, x) || !zero_deriv(thr, binding, x))
         throw new Error(
-          `[${operation}] node must branch on constant inputs. ${f}`
+          `[${operation}] node must branch on constant inputs. ${f}`,
         )
       return threshold(value, thr, ddx(pass, binding, x), ddx(fail, binding, x))
     }

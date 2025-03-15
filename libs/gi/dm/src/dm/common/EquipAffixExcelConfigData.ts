@@ -39,7 +39,7 @@ type EquipAffixExcelConfigData = {
   // ]
 }
 const equipAffixExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/EquipAffixExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/EquipAffixExcelConfigData.json'),
 ) as EquipAffixExcelConfigData[]
 
 const equipAffixExcelConfigData = {} as Record<
@@ -58,8 +58,8 @@ dumpFile(
     equipAffixExcelConfigDataSrc.map((data) => [
       data.id,
       nameToKey(TextMapEN[data.nameTextMapHash]),
-    ])
-  )
+    ]),
+  ),
 )
 
 export { equipAffixExcelConfigData }

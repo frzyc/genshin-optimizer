@@ -19,22 +19,22 @@ import { uiHashData } from './uiHashData'
 export type LanguageData = typeof HashData
 
 const charNames = Object.fromEntries(
-  Object.entries(allCharHashData).map(([key, data]) => [key, data.name])
+  Object.entries(allCharHashData).map(([key, data]) => [key, data.name]),
 )
 verifyObjKeys(charNames, allCharacterGenderedKeys)
 
 const servantNames = Object.fromEntries(
-  Object.entries(allServantHashData).map(([key, data]) => [key, data.name])
+  Object.entries(allServantHashData).map(([key, data]) => [key, data.name]),
 )
 verifyObjKeys(servantNames, allServantKeys)
 
 const relicNames = Object.fromEntries(
-  Object.entries(allRelicHashData).map(([key, data]) => [key, data.setName])
+  Object.entries(allRelicHashData).map(([key, data]) => [key, data.setName]),
 )
 verifyObjKeys(relicNames, allRelicSetKeys)
 
 const lightConeNames = Object.fromEntries(
-  Object.entries(allLightConeHashData).map(([key, data]) => [key, data.name])
+  Object.entries(allLightConeHashData).map(([key, data]) => [key, data.name]),
 )
 verifyObjKeys(lightConeNames, allLightConeKeys)
 

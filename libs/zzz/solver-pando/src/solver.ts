@@ -39,7 +39,7 @@ export function optimize(
   wengines: ICachedWengine[],
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
   numWorkers: number,
-  setProgress: (progress: Progress) => void
+  setProgress: (progress: Progress) => void,
 ) {
   const discSetKeys = new Set(allDiscSetKeys)
   const wengineKeys = new Set(allWengineKeys)
@@ -49,14 +49,14 @@ export function optimize(
       ...frames.map((frame, i) =>
         prod(
           frame.multiplier,
-          new Read(frame.tag, 'sum').with('preset', `preset${i}` as Preset)
-        )
-      )
+          new Read(frame.tag, 'sum').with('preset', `preset${i}` as Preset),
+        ),
+      ),
     ),
     // stat filters
     ...statFilters.map(({ tag, isMax }) =>
       // Invert max constraints for pruning
-      isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum')
+      isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum'),
     ),
     // other calcs (graph, etc) *go in* `nodes.push` below
   ]
@@ -89,7 +89,7 @@ export function optimize(
     // filter4: if not empty, at least one >= 4
     setFilter4.length
       ? max(...setFilter4.map((q) => read({ q }, 'sum')))
-      : constant(Infinity)
+      : constant(Infinity),
     // other calcs (graph, etc)
   )
 
@@ -108,7 +108,7 @@ export function optimize(
       -Infinity, // opt-target itself is also used as a min constraint
       // Invert max constraints for pruning
       ...statFilters.map((filter) =>
-        filter.isMax ? filter.value * -1 : filter.value
+        filter.isMax ? filter.value * -1 : filter.value,
       ),
       2, // setFilter2
       4, // setFilter4
@@ -130,7 +130,7 @@ function convertDiscToStats(disc: ICachedDisc): Candidate<string> {
         .map(({ key, upgrades }) => [
           key,
           getDiscSubStatBaseVal(key, rarity) * upgrades,
-        ])
+        ]),
     ),
     [setKey]: 1,
   } as Candidate<string>

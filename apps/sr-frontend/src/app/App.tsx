@@ -20,10 +20,10 @@ import PageHome from './PageHome'
 
 const PageRelics = lazy(() => import('@genshin-optimizer/sr/page-relics'))
 const PageLightCones = lazy(
-  () => import('@genshin-optimizer/sr/page-lightcones')
+  () => import('@genshin-optimizer/sr/page-lightcones'),
 )
 const PageCharacters = lazy(
-  () => import('@genshin-optimizer/sr/page-characters')
+  () => import('@genshin-optimizer/sr/page-characters'),
 )
 const PageTeams = lazy(() => import('@genshin-optimizer/sr/page-teams'))
 const PageTeam = lazy(() => import('@genshin-optimizer/sr/page-team'))

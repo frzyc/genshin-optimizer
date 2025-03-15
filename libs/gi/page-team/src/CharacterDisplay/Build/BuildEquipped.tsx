@@ -49,7 +49,7 @@ export function BuildEquipped({
       teamCharId,
       weaponTypeKey,
       database.weapons.get(equippedWeapon),
-      Object.values(equippedArtifacts).map((id) => database.arts.get(id))
+      Object.values(equippedArtifacts).map((id) => database.arts.get(id)),
     )
     if (!newBuildTcId) return
     // copy over name

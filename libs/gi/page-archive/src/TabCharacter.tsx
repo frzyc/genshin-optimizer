@@ -64,7 +64,7 @@ export default function TabCharacter() {
   const characterOptionDispatch = useCallback(
     (option: Partial<ArchiveCharacterOption>) =>
       database.displayArchive.set({ character: { ...character, ...option } }),
-    [database, character]
+    [database, character],
   )
   const charKeys = useMemo(() => {
     return allCharacterKeys.filter((cKey) => {
@@ -114,11 +114,11 @@ export default function TabCharacter() {
         element: (cKey: CharacterKey) => getCharEle(cKey),
         type: (cKey: CharacterKey) => getCharStat(cKey).weaponType,
       } as SortConfigs<SortKey, CharacterKey>),
-    [character.sortOrder, character.sortOrderBy, silly]
+    [character.sortOrder, character.sortOrderBy, silly],
   )
   const charKeysToShow = useMemo(
     () => charKeys.sort(sortedCharKeys).slice(0, numShow),
-    [charKeys, numShow, sortedCharKeys]
+    [charKeys, numShow, sortedCharKeys],
   )
   const columns: { key: SortKey; label: string; width: number }[] = [
     { key: 'name', label: 'Name', width: 40 },
@@ -245,8 +245,8 @@ const CharacterRow = memo(function CharacterRow({
           skill: 10,
           burst: 10,
         },
-      } as ICachedCharacter),
-    [cKey]
+      }) as ICachedCharacter,
+    [cKey],
   )
   return (
     <Suspense

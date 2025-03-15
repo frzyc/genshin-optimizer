@@ -18,22 +18,25 @@ import { Link as RouterLink } from 'react-router-dom'
 export default function ResinCard() {
   const database = useDatabase()
   const [{ timeZoneKey, resin, resinDate }, setState] = useState(() =>
-    database.displayTool.get()
+    database.displayTool.get(),
   )
   useEffect(
     () => database.displayTool.follow((r, s) => setState(s)),
-    [database]
+    [database],
   )
   const [time, setTime] = useState(
-    new Date(Date.now() + timeZones[timeZoneKey])
+    new Date(Date.now() + timeZones[timeZoneKey]),
   )
 
   useEffect(() => {
     const setSecondTimeout = () => {
       setTime(new Date(Date.now() + timeZones[timeZoneKey]))
-      return setTimeout(() => {
-        interval = setSecondTimeout()
-      }, SECOND_MS - (Date.now() % SECOND_MS))
+      return setTimeout(
+        () => {
+          interval = setSecondTimeout()
+        },
+        SECOND_MS - (Date.now() % SECOND_MS),
+      )
     }
     let interval = setSecondTimeout()
     return () => clearTimeout(interval)
@@ -48,7 +51,7 @@ export default function ResinCard() {
     } else
       resinIncrement.current = setTimeout(
         () => console.log('set resin', newResin + 1),
-        RESIN_RECH_MS
+        RESIN_RECH_MS,
       )
     database.displayTool.set({
       resin: newResin,
@@ -62,7 +65,7 @@ export default function ResinCard() {
       const resinToMax = RESIN_MAX - resin
       const resinSinceLastDate = Math.min(
         Math.floor((now - resinDate) / RESIN_RECH_MS),
-        resinToMax
+        resinToMax,
       )
       const catchUpResin = resin + resinSinceLastDate
       const newDate = resinDate + resinSinceLastDate * RESIN_RECH_MS
@@ -70,7 +73,7 @@ export default function ResinCard() {
       if (catchUpResin < RESIN_MAX)
         resinIncrement.current = setTimeout(
           () => setResin(catchUpResin + 1),
-          now - newDate
+          now - newDate,
         )
     }
     return () => resinIncrement.current && clearTimeout(resinIncrement.current)

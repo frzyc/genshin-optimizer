@@ -62,7 +62,7 @@ export function DDSToZOD(data: DDS[]): IZenlessObjectDescription {
             let key = allDiscSubStatKeys.find(
               (k) =>
                 isPercentStat(k) === isSubPercent &&
-                statKeyTextMap[k] === keyStr
+                statKeyTextMap[k] === keyStr,
             )
             // Address issue scanning atk% as atk
             if (
@@ -82,7 +82,8 @@ export function DDSToZOD(data: DDS[]): IZenlessObjectDescription {
           // likely due to issue with scanning overflow with Anomaly Proficiency.
           // Unfortunately, it can be +2/+3/+4
           const anomIndex = substats.findIndex(
-            ({ key }, i, arr) => key === 'anomProf' && arr[i + 1]?.key === 'pen'
+            ({ key }, i, arr) =>
+              key === 'anomProf' && arr[i + 1]?.key === 'pen',
           )
           if (anomIndex > -1) {
             substats[anomIndex].upgrades = 2
@@ -101,7 +102,7 @@ export function DDSToZOD(data: DDS[]): IZenlessObjectDescription {
           trash: false,
           substats,
         } as IDisc
-      }
+      },
     )
     .filter(notEmpty)
 

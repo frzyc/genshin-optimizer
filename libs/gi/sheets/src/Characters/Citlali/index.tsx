@@ -120,7 +120,7 @@ const skillShield = shieldNodeTalent(
   'eleMas',
   dm.skill.shieldMult,
   dm.skill.shieldBase,
-  'skill'
+  'skill',
 )
 
 const [condA1NsFreezeMeltPath, condA1NsFreezeMelt] = cond(key, 'a1NsFreezeMelt')
@@ -131,7 +131,7 @@ const a1NsFreezeMelt_pyro_enemyRes_ = greaterEq(
   {
     path: 'pyro_enemyRes_',
     isTeamBuff: true,
-  }
+  },
 )
 const a1NsFreezeMelt_hydro_enemyRes_ = greaterEq(
   input.asc,
@@ -140,18 +140,18 @@ const a1NsFreezeMelt_hydro_enemyRes_ = greaterEq(
   {
     path: 'hydro_enemyRes_',
     isTeamBuff: true,
-  }
+  },
 )
 
 const a4FrostfallStorm_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(input.total.eleMas, percent(dm.passive2.frostfallStorm_dmgInc))
+  prod(input.total.eleMas, percent(dm.passive2.frostfallStorm_dmgInc)),
 )
 const a4IceStorm_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(input.total.eleMas, percent(dm.passive2.iceStorm_dmgInc))
+  prod(input.total.eleMas, percent(dm.passive2.iceStorm_dmgInc)),
 )
 
 const [condC1BladeConsumePath, condC1BladeConsume] = cond(key, 'c1BladeConsume')
@@ -165,14 +165,14 @@ const c1BladeConsume_dmgInc_disp = objKeyValMap(
       equal(
         condC1BladeConsume,
         'on',
-        prod(input.total.eleMas, percent(dm.constellation1.dmgInc))
+        prod(input.total.eleMas, percent(dm.constellation1.dmgInc)),
       ),
-      { path: `${key}_dmgInc`, isTeamBuff: true }
+      { path: `${key}_dmgInc`, isTeamBuff: true },
     ),
-  ]
+  ],
 )
 const c1BladeConsume_dmgInc = objMap(c1BladeConsume_dmgInc_disp, (node) =>
-  unequal(target.charKey, key, node)
+  unequal(target.charKey, key, node),
 )
 
 const c2EleMas = greaterEq(input.constellation, 2, dm.constellation2.selfEleMas)
@@ -181,12 +181,12 @@ const c2ShieldEleMas_disp = greaterEq(
   input.constellation,
   2,
   equal(condC2ShieldEleMas, 'on', dm.constellation2.teamEleMas),
-  { path: 'eleMas', isTeamBuff: true }
+  { path: 'eleMas', isTeamBuff: true },
 )
 const c2ShieldEleMas = unequal(
   target.charKey,
   key,
-  equal(target.charKey, input.activeCharKey, c2ShieldEleMas_disp)
+  equal(target.charKey, input.activeCharKey, c2ShieldEleMas_disp),
 )
 
 const c2NsFreezeMelt_pyro_enemyRes_ = greaterEq(
@@ -195,7 +195,7 @@ const c2NsFreezeMelt_pyro_enemyRes_ = greaterEq(
   {
     ...a1NsFreezeMelt_pyro_enemyRes_,
   },
-  { path: 'pyro_enemyRes_', isTeamBuff: true }
+  { path: 'pyro_enemyRes_', isTeamBuff: true },
 )
 const c2NsFreezeMelt_hydro_enemyRes_ = greaterEq(
   input.constellation,
@@ -203,40 +203,40 @@ const c2NsFreezeMelt_hydro_enemyRes_ = greaterEq(
   {
     ...a1NsFreezeMelt_hydro_enemyRes_,
   },
-  { path: 'hydro_enemyRes_', isTeamBuff: true }
+  { path: 'hydro_enemyRes_', isTeamBuff: true },
 )
 
 const [condC6NsConsumedPath, condC6NsConsumed] = cond(key, 'c6NsConsumed')
 const c6NsConsumedArr = range(
   dm.constellation6.maxStacks / 20,
   dm.constellation6.maxStacks,
-  dm.constellation6.maxStacks / 20
+  dm.constellation6.maxStacks / 20,
 )
 const c6NsConsumed = lookup(
   condC6NsConsumed,
   objKeyMap(c6NsConsumedArr, (ns) => constant(ns)),
-  naught
+  naught,
 )
 const c6NsConsumed_pyro_dmg_ = greaterEq(
   input.constellation,
   6,
-  prod(c6NsConsumed, dm.constellation6.pyro_dmg_)
+  prod(c6NsConsumed, dm.constellation6.pyro_dmg_),
 )
 const c6NsConsumed_hydro_dmg_ = greaterEq(
   input.constellation,
   6,
-  prod(c6NsConsumed, dm.constellation6.hydro_dmg_)
+  prod(c6NsConsumed, dm.constellation6.hydro_dmg_),
 )
 const c6NsConsumed_all_dmg_ = greaterEq(
   input.constellation,
   6,
-  prod(c6NsConsumed, dm.constellation6.all_dmg_)
+  prod(c6NsConsumed, dm.constellation6.all_dmg_),
 )
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -267,8 +267,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(input.total.eleMas, percent(dm.constellation4.dmg)),
         'elemental',
-        hitEle.cryo
-      )
+        hitEle.cryo,
+      ),
     ),
   },
 }
@@ -287,11 +287,11 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     premod: {
       hydro_enemyRes_: sum(
         a1NsFreezeMelt_hydro_enemyRes_,
-        c2NsFreezeMelt_hydro_enemyRes_
+        c2NsFreezeMelt_hydro_enemyRes_,
       ),
       pyro_enemyRes_: sum(
         a1NsFreezeMelt_pyro_enemyRes_,
-        c2NsFreezeMelt_pyro_enemyRes_
+        c2NsFreezeMelt_pyro_enemyRes_,
       ),
       ...c1BladeConsume_dmgInc,
       eleMas: c2ShieldEleMas,

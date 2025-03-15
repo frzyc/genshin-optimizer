@@ -51,7 +51,7 @@ export default function OptimizationTargetEditorList({
       }
       setStatFilters({ ...statFilters_ })
     },
-    [setStatFilters, statFilters]
+    [setStatFilters, statFilters],
   )
 
   const delTarget = useCallback(
@@ -64,7 +64,7 @@ export default function OptimizationTargetEditorList({
       else delete statFilters_[pathStr]
       setStatFilters({ ...statFilters_ })
     },
-    [setStatFilters, statFilters]
+    [setStatFilters, statFilters],
   )
 
   const setTargetValue = useCallback(
@@ -76,7 +76,7 @@ export default function OptimizationTargetEditorList({
       statFilters_[pathStr] = filterArr
       setStatFilters({ ...statFilters_ })
     },
-    [setStatFilters, statFilters]
+    [setStatFilters, statFilters],
   )
 
   const setTargetDisabled = useCallback(
@@ -88,7 +88,7 @@ export default function OptimizationTargetEditorList({
       statFilters_[pathStr] = filterArr
       setStatFilters({ ...statFilters_ })
     },
-    [setStatFilters, statFilters]
+    [setStatFilters, statFilters],
   )
 
   return (
@@ -106,7 +106,7 @@ export default function OptimizationTargetEditorList({
             disabled={disabled}
             key={pathStr + index}
           />
-        ))
+        )),
       )}
       <OptimizationTargetSelector
         showEmptyTargets
@@ -145,7 +145,7 @@ function OptimizationTargetEditorItem({
   const { data } = useContext(DataContext)
   const onChange = useCallback(
     (val: number | undefined) => setValue(path, index, val ?? 0),
-    [setValue, path, index]
+    [setValue, path, index],
   )
   const buttonStyle = { p: 1, flexBasis: 30, flexGrow: 0, flexShrink: 0 }
 

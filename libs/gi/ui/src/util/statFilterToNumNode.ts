@@ -5,7 +5,7 @@ import { resolveInfo } from '../util'
 // Put in gi/ui due to dependency on `resolveInfo`
 export function statFilterToNumNode(
   workerData: Data,
-  statFilters: OptConfig['statFilters']
+  statFilters: OptConfig['statFilters'],
 ): Array<{ value: NumNode; minimum: number }> {
   return Object.entries(statFilters)
     .flatMap(([pathStr, settings]) =>
@@ -14,13 +14,13 @@ export function statFilterToNumNode(
         .map((setting) => {
           const filterNode: NumNode = objPathValue(
             workerData.display ?? {},
-            JSON.parse(pathStr)
+            JSON.parse(pathStr),
           )
           const infoResolved = filterNode?.info && resolveInfo(filterNode.info)
           const minimum =
             infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
           return { value: filterNode, minimum: minimum }
-        })
+        }),
     )
     .filter((x) => x.value && x.minimum > -Infinity)
 }

@@ -48,7 +48,7 @@ export async function interactionCreate(interaction: Interaction) {
 export async function messageReactionAdd(
   reaction: MessageReaction | PartialMessageReaction,
   user: User | PartialUser,
-  _details: MessageReactionEventDetails
+  _details: MessageReactionEventDetails,
 ) {
   if (reaction.partial) {
     try {

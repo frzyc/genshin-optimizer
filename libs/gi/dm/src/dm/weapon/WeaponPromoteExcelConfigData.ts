@@ -49,7 +49,7 @@ type WeaponPromoteExcelConfigData = {
   requiredPlayerLevel: number //50
 }
 const weaponPromoteExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/WeaponPromoteExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/WeaponPromoteExcelConfigData.json'),
 ) as WeaponPromoteExcelConfigData[]
 
 const weaponPromoteExcelConfigData = {} as Record<
@@ -66,7 +66,7 @@ weaponPromoteExcelConfigDataSrc.forEach((data) => {
   layeredAssignment(
     weaponPromoteExcelConfigData,
     [weaponPromoteId, promoteLevel],
-    data
+    data,
   )
 })
 

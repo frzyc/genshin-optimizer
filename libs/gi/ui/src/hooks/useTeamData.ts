@@ -46,7 +46,7 @@ type TeamDataBundle = {
 export function useTeamData(
   mainStatAssumptionLevel = 0,
   overrideArt?: ICachedArtifact[] | Data,
-  overrideWeapon?: ICachedWeapon
+  overrideWeapon?: ICachedWeapon,
 ): TeamData | undefined {
   const { teamId, teamCharId: overrideTeamCharId } =
     useContext(TeamCharacterContext)
@@ -55,7 +55,7 @@ export function useTeamData(
     overrideTeamCharId,
     mainStatAssumptionLevel,
     overrideArt,
-    overrideWeapon
+    overrideWeapon,
   )
 }
 export function useTeamDataNoContext(
@@ -63,7 +63,7 @@ export function useTeamDataNoContext(
   overrideTeamCharId: string,
   mainStatAssumptionLevel = 0,
   overrideArt?: ICachedArtifact[] | Data,
-  overrideWeapon?: ICachedWeapon
+  overrideWeapon?: ICachedWeapon,
 ): TeamData | undefined {
   const database = useDatabase()
   const [dbDirty, setDbDirty] = useForceUpdate()
@@ -82,7 +82,7 @@ export function useTeamDataNoContext(
         overrideTeamCharId,
         mainStatAssumptionLevel,
         overrideArt,
-        overrideWeapon
+        overrideWeapon,
       ),
     [
       dbDirtyDeferred,
@@ -93,12 +93,12 @@ export function useTeamDataNoContext(
       overrideTeamCharId,
       overrideArt,
       overrideWeapon,
-    ]
+    ],
   )
 
   useEffect(
     () => (teamId ? database.teams.follow(teamId, setDbDirty) : undefined),
-    [teamId, setDbDirty, database]
+    [teamId, setDbDirty, database],
   )
 
   useEffect(() => {
@@ -107,15 +107,15 @@ export function useTeamDataNoContext(
       if (!loadoutDatum) return () => {}
       const unfollowTeamChar = database.teamChars.follow(
         loadoutDatum.teamCharId,
-        setDbDirty
+        setDbDirty,
       )
       const unfollowChar = database.teamChars.followChar(
         loadoutDatum.teamCharId,
-        setDbDirty
+        setDbDirty,
       )
       const unfollowBuild = database.teams.followLoadoutDatum(
         loadoutDatum,
-        setDbDirty
+        setDbDirty,
       )
       return () => {
         unfollowTeamChar()
@@ -140,7 +140,7 @@ export function getTeamDataCalc(
   mainStatAssumptionLevel = 0,
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon,
-  overrideChar?: Omit<ICharacter, 'key'>
+  overrideChar?: Omit<ICharacter, 'key'>,
 ): TeamData | undefined {
   if (!teamId) return undefined
   const activeChar = database.teams.getActiveTeamChar(teamId)
@@ -154,7 +154,7 @@ export function getTeamDataCalc(
       mainStatAssumptionLevel,
       overrideArt,
       overrideWeapon,
-      overrideChar
+      overrideChar,
     ) ?? {}
   if (!teamData || !teamBundle) return undefined
 
@@ -175,7 +175,7 @@ export function getTeamData(
   // OverrideArt/overrideWeapon is only applied to the teamchar of activeTeamCharId
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon,
-  overrideChar?: Omit<ICharacter, 'key'>
+  overrideChar?: Omit<ICharacter, 'key'>,
 ): TeamDataBundle | undefined {
   if (!teamId) return undefined
   const team = database.teams.get(teamId)
@@ -220,7 +220,7 @@ export function getTeamData(
         if (buildType === 'tc' && buildTcId)
           return getBuildTcArtifactData(database.buildTcs.get(buildTcId)!)
         return Object.values(
-          database.teams.getLoadoutArtifacts(loadoutDatum)
+          database.teams.getLoadoutArtifacts(loadoutDatum),
         ).filter(notEmpty) as ICachedArtifact[]
       })()
       const mainLevel = (() => {
@@ -250,7 +250,7 @@ export function getTeamData(
           reaction,
         },
         weapon,
-        arts
+        arts,
       )
     })
     .filter((bundle) => bundle) as CharBundle[]
@@ -259,7 +259,7 @@ export function getTeamData(
     (teamBundleArr.filter((b) => b) as CharBundle[]).map((bundle) => [
       bundle.character.key,
       bundle,
-    ])
+    ]),
   )
   const teamData = objMap(teamBundle, ({ data }) => data)
   return { teamData, teamBundle }
@@ -278,7 +278,7 @@ function getCharDataBundle(
   mainStatAssumptionLevel: number,
   charInfo: CharInfo,
   weapon: ICachedWeapon,
-  artifacts: ICachedArtifact[] | Data
+  artifacts: ICachedArtifact[] | Data,
 ): CharBundle | undefined {
   const character = database.chars.get(charInfo.key)!
   const characterSheet = getCharSheet(charInfo.key, database.gender)

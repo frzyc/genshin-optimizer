@@ -27,12 +27,12 @@ export const milestoneLevels = [[60, 5], ...milestoneLevelsLow] as const
 
 export const getLevelString = (
   level: number,
-  promotion: MilestoneKey
+  promotion: MilestoneKey,
 ): string => `${level}/${milestoneMaxLevel[promotion]}`
 
 export function validateLevelMilestone(
   inputLevel: number,
-  milestone: MilestoneKey
+  milestone: MilestoneKey,
 ): { sanitizedLevel: number; milestone: MilestoneKey } {
   let sanitizedLevel = inputLevel
   if (
@@ -49,7 +49,7 @@ export function validateLevelMilestone(
     sanitizedLevel < (milestoneMaxLevel[milestone - 1] ?? 0)
   )
     milestone = milestoneMaxLevel.findIndex(
-      (maxLvl) => sanitizedLevel <= maxLvl
+      (maxLvl) => sanitizedLevel <= maxLvl,
     ) as MilestoneKey
   return { sanitizedLevel, milestone }
 }

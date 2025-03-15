@@ -24,7 +24,7 @@ const charged_dmg_arr = [-1, 0.14, 0.18, 0.22, 0.26, 0.3]
 const hp_ = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refinement, hp_arr)
+  subscript(input.weapon.refinement, hp_arr),
 )
 
 const [condHpChangesPath, condHpChanges] = cond(key, 'hpChanges')
@@ -34,10 +34,10 @@ const charged_dmg_ = lookup(
   objKeyMap(hpChangesArr, (symbol) =>
     prod(
       symbol,
-      subscript(input.weapon.refinement, charged_dmg_arr, { unit: '%' })
-    )
+      subscript(input.weapon.refinement, charged_dmg_arr, { unit: '%' }),
+    ),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

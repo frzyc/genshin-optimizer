@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import { statPercent } from './util'
 
 export function SubstatMultiAutocomplete<
-  SubstatKeyParam extends SubstatKey | WeaponSubstatKey
+  SubstatKeyParam extends SubstatKey | WeaponSubstatKey,
 >({
   substatKeys,
   setSubstatKeys,
@@ -29,21 +29,21 @@ export function SubstatMultiAutocomplete<
         key,
         label: `${tk(key)}${statPercent(key)}`,
       })),
-    [tk, allSubstatKeys]
+    [tk, allSubstatKeys],
   )
   const toImg = useCallback(
     (key: SubstatKeyParam) => (
       <StatIcon statKey={key} iconProps={{ sx: { ml: 1 } }} />
     ),
-    []
+    [],
   )
   const toExLabel = useCallback(
     (key: SubstatKeyParam) => <strong>{totals[key]}</strong>,
-    [totals]
+    [totals],
   )
   const toExItemLabel = useCallback(
     (key: SubstatKeyParam) => <Chip size="small" label={totals[key]} />,
-    [totals]
+    [totals],
   )
   return (
     <GeneralAutocompleteMulti

@@ -13,14 +13,14 @@ export function optimizeNodesForScaling(
   teamDataProp: TeamData,
   characterKey: CharacterKey,
   optimizationTarget: OptConfig['optimizationTarget'],
-  statFilters: OptConfig['statFilters']
+  statFilters: OptConfig['statFilters'],
 ) {
   if (!optimizationTarget) return {}
   const workerData = teamDataProp[characterKey]?.target.data![0]
   if (!workerData) return {}
   const unoptimizedOptimizationTargetNode = objPathValue(
     workerData.display ?? {},
-    optimizationTarget
+    optimizationTarget,
   ) as NumNode | undefined
   if (!unoptimizedOptimizationTargetNode) return {}
 
@@ -37,7 +37,7 @@ export function optimizeNodesForScaling(
     unoptimizedNodes,
     workerData,
     ({ path: [p, stat] }) =>
-      p !== 'dyn' || !allMainSubStatKeys.includes(stat as MainSubStatKey)
+      p !== 'dyn' || !allMainSubStatKeys.includes(stat as MainSubStatKey),
   )
   return { nodes, valueFilter }
 }

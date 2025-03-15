@@ -72,7 +72,7 @@ function populatePFillerSeq(
   prefix: (0 | Weight)[],
   prob: { [key in Weight]: number },
   sumProb: number,
-  current: number
+  current: number,
 ) {
   if (prefix.length === 5) {
     layeredAssignment(pFillerSeq, prefix as any, current)
@@ -85,7 +85,7 @@ function populatePFillerSeq(
         [...prefix, i],
         { ...prob, [i]: prob[i] - i },
         sumProb - i,
-        (current * prob[i]) / sumProb
+        (current * prob[i]) / sumProb,
       )
 }
 populatePFillerSeq([0], { 3: 6, 4: 20, 6: 18 }, 44, 1)
@@ -143,7 +143,7 @@ for (const array of pNExtra) {
 /** Probability that `artifact` will have at least `target` stats at max level */
 function probability(
   artifact: IArtifact,
-  _target: { [key in SubstatKey]?: number }
+  _target: { [key in SubstatKey]?: number },
 ): number {
   if (artifact.rarity <= 2) return NaN // Doesn't work with 1* and 2* should we decide to add them
 
@@ -184,7 +184,7 @@ function probability(
   for (const [key, value] of Object.entries(target))
     target[key] = Math.max(
       Math.ceil((10 * value) / getSubstatValue(key, rarity)),
-      1
+      1,
     )
 
   let minTotalUpgrades = 0
@@ -286,7 +286,7 @@ function pRollInto(m: number, n: number, M: number) {
 function calculatePFillerRolls(
   mainStat: MainStatKey,
   substats: ISubstat[],
-  required: Set<SubstatKey>
+  required: Set<SubstatKey>,
 ) {
   // Instead of picking substats in a particular order [critDMG_, atk_, ...],
   // We pick substat weights first [3, 4, 3, ...], then assign proper substats
@@ -330,7 +330,7 @@ function calculatePFillerRolls(
       }
 
       pFillerRolls += sum
-    }
+    },
   )
 
   for (const i of allWeights)

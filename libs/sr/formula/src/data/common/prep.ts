@@ -28,16 +28,16 @@ const data: TagMapNodeEntries = [
         tagVal('elementalType'),
         '',
         tagVal('elementalType'),
-        own.char.ele
+        own.char.ele,
       ),
-    })
+    }),
   ),
   ownBuff.formula.shield.add(
-    prod(own.formula.base, sum(percent(1), own.premod.shield_))
+    prod(own.formula.base, sum(percent(1), own.premod.shield_)),
   ),
   // Use semiOwn to handle targeted heals that scale off target's stats
   ownBuff.formula.heal.add(
-    prod(semiOwn.formula.base, sum(percent(1), own.final.heal_))
+    prod(semiOwn.formula.base, sum(percent(1), own.final.heal_)),
   ),
   ownBuff.formula.breakDmg.add(
     prod(
@@ -45,8 +45,8 @@ const data: TagMapNodeEntries = [
       lookup(own.char.ele, breakBaseRatios),
       subscript(own.char.lvl, allStats.misc.breakLevelMulti),
       sum(percent(1), own.final.brEffect_),
-      own.dmg.inDmg
-    )
+      own.dmg.inDmg,
+    ),
   ),
 ]
 export default data

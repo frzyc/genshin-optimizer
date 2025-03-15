@@ -22,19 +22,19 @@ const discNames = Object.fromEntries(
   Object.values(discsJsonData).map(({ EN: { name } }) => [
     nameToKey(name),
     name,
-  ])
+  ]),
 )
 
 dumpPrettyFile(`${PROJROOT_PATH}/src/dm/disc/discNames.json`, discNames)
 
 const discIdMap = objFilter(
   objMap(discsJsonData, ({ EN: { name } }) => nameToKey(name)),
-  (key) => !!key && !key.startsWith('EquipmentSuit')
+  (key) => !!key && !key.startsWith('EquipmentSuit'),
 )
 dumpPrettyFile(`${PROJROOT_PATH}/src/dm/disc/discIdMap.json`, discIdMap)
 dumpPrettyFile(
   `${PROJROOT_PATH}/src/dm/disc/discKeys.json`,
-  Object.values(discIdMap).sort()
+  Object.values(discIdMap).sort(),
 )
 
 export { discsJsonData }

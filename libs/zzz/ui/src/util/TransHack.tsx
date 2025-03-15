@@ -9,7 +9,7 @@ export function TransHack({ text }: { text: string }) {
   const string = useMemo(
     () =>
       text.replaceAll('<color=', '<ct color=').replaceAll('</color>', '</ct>'),
-    [text]
+    [text],
   )
   return (
     <Trans

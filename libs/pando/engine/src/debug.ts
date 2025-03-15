@@ -31,7 +31,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
   constructor(
     calc: BaseCalculator<any>,
     tagStr: TagStr,
-    filter: Predicate = () => true
+    filter: Predicate = () => true,
   ) {
     super(calc.cache.keys)
     this.nodes = calc.nodes
@@ -61,13 +61,13 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
             const readSeq: ReadSeq = [...x.meta.readSeq!, { tag, value: n }]
             return Object.freeze({ ...x, meta: { ...x.meta, readSeq } })
           })
-        : [this.markGathered(cache.tag, tag, n, this._compute(n, cache))]
+        : [this.markGathered(cache.tag, tag, n, this._compute(n, cache))],
     )
     return (cache.val = { pre })
   }
   override _compute(
     n: AnyNode,
-    cache: TagCache<DebugMeta>
+    cache: TagCache<DebugMeta>,
   ): CalcResult<any, DebugMeta> {
     try {
       return super._compute(n, cache)
@@ -76,7 +76,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
         val: NaN,
         meta: {
           formula: `err: ${(e as any).message} in ${this.tagStr(
-            cache.tag
+            cache.tag,
           )}: ${nodeString(n, this.tagStr)}`,
           deps: [],
           isRead: true,
@@ -90,7 +90,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     _tag: Tag,
     entryTag: Tag,
     n: AnyNode | undefined,
-    { val, meta }: CalcResult<number | string, DebugMeta>
+    { val, meta }: CalcResult<number | string, DebugMeta>,
   ): CalcResult<number | string, DebugMeta> {
     meta = { ...meta, readSeq: [{ tag: entryTag!, value: n! }] }
     return Object.freeze({ val, meta })
@@ -100,7 +100,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     val: number | string,
     x: (CalcResult<number | string, DebugMeta> | undefined)[],
     br: CalcResult<number | string, DebugMeta>[],
-    tag: Tag | undefined
+    tag: Tag | undefined,
   ): DebugMeta {
     if (typeof val !== 'number') val = `"${val}"`
     else if (Math.round(val) === val) val = `${val}`
@@ -124,7 +124,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
       result.formula = `gather ${
         x.length
       } node(s) (${filtered} filtered) for ${this.tagStr(n.tag)} (${this.tagStr(
-        tag
+        tag,
       )})`
     }
     return result
@@ -133,7 +133,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
 
 export function nodeString(
   node: AnyNode,
-  tagStr: TagStr = (t) => JSON.stringify(t)
+  tagStr: TagStr = (t) => JSON.stringify(t),
 ): string {
   return map([node], (node, map: (n: AnyNode) => string) => {
     const { op, tag, br, x } = node

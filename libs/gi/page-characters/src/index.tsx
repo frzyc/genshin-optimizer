@@ -91,11 +91,11 @@ export default function PageCharacter() {
   const { silly } = useContext(SillyContext)
 
   const [displayCharacter, setDisplayCharacter] = useState(() =>
-    database.displayCharacter.get()
+    database.displayCharacter.get(),
   )
   useEffect(
     () => database.displayCharacter.follow((r, s) => setDisplayCharacter(s)),
-    [database, setDisplayCharacter]
+    [database, setDisplayCharacter],
   )
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -108,14 +108,14 @@ export default function PageCharacter() {
   useEffect(() => {
     ReactGA.send({ hitType: 'pageview', page: '/characters' })
     return database.chars.followAny(
-      (k, r) => (r === 'new' || r === 'remove') && forceUpdate()
+      (k, r) => (r === 'new' || r === 'remove') && forceUpdate(),
     )
   }, [forceUpdate, database])
 
   // character favorite updater
   useEffect(
     () => database.charMeta.followAny((_s) => forceUpdate()),
-    [forceUpdate, database]
+    [forceUpdate, database],
   )
 
   const editCharacter = useCharSelectionCallback()
@@ -130,16 +130,16 @@ export default function PageCharacter() {
       .filter(
         filterFunction(
           { element, weaponType, rarity, name: deferredSearchTerm },
-          characterFilterConfigs(database, silly)
-        )
+          characterFilterConfigs(database, silly),
+        ),
       )
       .sort(
         sortFunction(
           characterSortMap[sortType] ?? [],
           ascending,
           characterSortConfigs(database, silly),
-          ['new', 'favorite']
-        )
+          ['new', 'favorite'],
+        ),
       )
     return deferredDbDirty && { charKeys, totalCharNum }
   }, [database, deferredState, deferredSearchTerm, silly, deferredDbDirty])
@@ -155,9 +155,9 @@ export default function PageCharacter() {
           const wtk = getWeaponStat(weapon.key).weaponType
           ct[wtk].total++
           if (charKeys.includes(ck)) ct[wtk].current++
-        })
+        }),
       ),
-    [database, charKeys]
+    [database, charKeys],
   )
 
   const elementTotals = useMemo(
@@ -167,9 +167,9 @@ export default function PageCharacter() {
           const eleKey = getCharEle(char.key)
           ct[eleKey].total++
           if (charKeys.includes(ck)) ct[eleKey].current++
-        })
+        }),
       ),
-    [database, charKeys]
+    [database, charKeys],
   )
 
   const rarityTotals = useMemo(
@@ -179,18 +179,18 @@ export default function PageCharacter() {
           const key = getCharStat(char.key).rarity
           ct[key].total++
           if (charKeys.includes(ck)) ct[key].current++
-        })
+        }),
       ),
-    [database, charKeys]
+    [database, charKeys],
   )
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    charKeys.length
+    charKeys.length,
   )
   const charKeysToShow = useMemo(
     () => charKeys.slice(0, numShow),
-    [charKeys, numShow]
+    [charKeys, numShow],
   )
 
   const totalShowing =

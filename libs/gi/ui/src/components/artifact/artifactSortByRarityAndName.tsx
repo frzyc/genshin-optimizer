@@ -6,7 +6,7 @@ import { i18n } from '@genshin-optimizer/gi/i18n'
 
 export function sortByRarityAndName(
   a: { key: ArtifactSetKey; grouper: ArtifactRarity },
-  b: { key: ArtifactSetKey; grouper: ArtifactRarity }
+  b: { key: ArtifactSetKey; grouper: ArtifactRarity },
 ) {
   if (a.grouper > b.grouper) {
     return -1

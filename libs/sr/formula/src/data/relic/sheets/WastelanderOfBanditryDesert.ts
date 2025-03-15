@@ -21,16 +21,16 @@ const sheet = registerRelic(
   registerBuff(
     'set4_crit_',
     ownBuff.premod.crit_.add(
-      cmpGE(relicCount, 4, attackingDebuffed.ifOn(dm[4].crit_))
+      cmpGE(relicCount, 4, attackingDebuffed.ifOn(dm[4].crit_)),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
+    cmpGE(relicCount, 4, 'infer', ''),
   ),
   registerBuff(
     'set4_crit_dmg_',
     ownBuff.premod.crit_dmg_.add(
-      cmpGE(relicCount, 4, enemyImprisoned.ifOn(dm[4].crit_dmg_))
+      cmpGE(relicCount, 4, enemyImprisoned.ifOn(dm[4].crit_dmg_)),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
-  )
+    cmpGE(relicCount, 4, 'infer', ''),
+  ),
 )
 export default sheet

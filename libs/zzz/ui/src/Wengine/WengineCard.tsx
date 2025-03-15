@@ -64,11 +64,11 @@ export function WengineCard({
     (children: ReactNode) => (
       <CardActionArea onClick={() => onClick?.()}>{children}</CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   const falseWrapperFunc = useCallback(
     (children: ReactNode) => <Box>{children}</Box>,
-    []
+    [],
   )
   const {
     id = '',

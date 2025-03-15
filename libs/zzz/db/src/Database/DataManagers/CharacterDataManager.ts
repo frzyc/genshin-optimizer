@@ -68,7 +68,7 @@ export class CharacterDataManager extends DataManager<
 
     const { sanitizedLevel, milestone: promotion } = validateLevelMilestone(
       rawLevel,
-      rawAscension
+      rawAscension,
     )
     if (typeof basic !== 'number') basic = 1
     basic = clamp(basic, 1, skillLimits[promotion])
@@ -96,7 +96,7 @@ export class CharacterDataManager extends DataManager<
     stats = objFilter(
       stats,
       //enemyDefRed was a field used very temporarily
-      (val, k) => typeof val === 'number' && !!val && k !== 'enemyDefRed'
+      (val, k) => typeof val === 'number' && !!val && k !== 'enemyDefRed',
     )
 
     if (formulaKey && !allFormulaKeys.includes(formulaKey))
@@ -106,7 +106,7 @@ export class CharacterDataManager extends DataManager<
     constraints = objFilter(
       constraints,
       ({ value, isMax }) =>
-        typeof value === 'number' && typeof isMax === 'boolean'
+        typeof value === 'number' && typeof isMax === 'boolean',
     )
     constraints = objFilterKeys(
       constraints,
@@ -120,7 +120,7 @@ export class CharacterDataManager extends DataManager<
         'anomProf',
         'pen',
         ...allAttributeDamageKeys,
-      ]
+      ],
     )
     useEquipped = !!useEquipped
 
@@ -172,7 +172,7 @@ export class CharacterDataManager extends DataManager<
 
   override toCache(
     storageObj: IDbCharacter,
-    id: CharacterKey
+    id: CharacterKey,
   ): ICachedCharacter {
     const oldChar = this.get(id)
     return {
@@ -182,14 +182,14 @@ export class CharacterDataManager extends DataManager<
             allDiscSlotKeys,
             (sk) =>
               Object.values(this.database.discs?.data ?? {}).find(
-                (a) => a?.location === id && a.slotKey === sk
-              )?.id ?? ''
+                (a) => a?.location === id && a.slotKey === sk,
+              )?.id ?? '',
           ),
       equippedWengine: oldChar
         ? oldChar.equippedWengine
-        : Object.values(this.database.wengines?.data ?? {}).find(
-            (w) => w?.location === id
-          )?.id ?? '',
+        : (Object.values(this.database.wengines?.data ?? {}).find(
+            (w) => w?.location === id,
+          )?.id ?? ''),
       ...storageObj,
     }
   }
@@ -295,7 +295,7 @@ export class CharacterDataManager extends DataManager<
    */
   setEquippedWengine(
     key: CharacterKey,
-    equippedWengine: ICachedCharacter['equippedWengine']
+    equippedWengine: ICachedCharacter['equippedWengine'],
   ) {
     const char = super.get(key)
     if (!char) return

@@ -119,13 +119,13 @@ export function TeammateDisplay({
         teamChar,
         loadoutDatum,
       },
-    [teamId, team, teamCharId, teamChar, dataBundle, loadoutDatum]
+    [teamId, team, teamCharId, teamChar, dataBundle, loadoutDatum],
   )
   const characterContext: CharacterContextObj | undefined = useMemo(
     () => ({
       character,
     }),
-    [character]
+    [character],
   )
   const teamMateDataContext: dataContextObj | undefined = useMemo(
     () =>
@@ -133,7 +133,7 @@ export function TeammateDisplay({
         data: dataBundle.target,
         teamData: teamData,
       },
-    [dataBundle, teamData]
+    [dataBundle, teamData],
   )
   if (
     !teamMateKey ||
@@ -266,9 +266,11 @@ function CharArtifactCondDisplay() {
   const sections = useMemo(
     () =>
       Object.entries(dataSetEffects(data)).flatMap(([setKey, setNums]) =>
-        setNums.flatMap((sn) => getArtSheet(setKey).setEffectDocument(sn) ?? [])
+        setNums.flatMap(
+          (sn) => getArtSheet(setKey).setEffectDocument(sn) ?? [],
+        ),
       ),
-    [data]
+    [data],
   )
   if (!sections) return null
   return <DocumentDisplay bgt="light" sections={sections} teamBuffOnly={true} />
@@ -295,7 +297,7 @@ function CharTalentCondDisplay() {
   const { teamData } = useContext(DataContext)
   const characterSheet = teamData[charKey]!.characterSheet as CharacterSheet
   const sections = Object.values(characterSheet.talent).flatMap(
-    (sts) => sts.sections
+    (sts) => sts.sections,
   )
   if (!sections) return null
   return <DocumentDisplay bgt="light" sections={sections} teamBuffOnly={true} />

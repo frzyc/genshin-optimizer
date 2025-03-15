@@ -17,7 +17,7 @@ const base_hp_ = subscript(input.weapon.refinement, hp_arr)
 const cond_dmg_ = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, dmg_arr)
+  subscript(input.weapon.refinement, dmg_arr),
 )
 
 const data = dataObjForWeaponSheet(key, {

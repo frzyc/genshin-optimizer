@@ -22,12 +22,12 @@ const nonstackWrite = equalStr(condPassive, 'on', input.charKey)
 const [atk_, atk_inactive] = nonStackBuff(
   'millenialatk',
   'atk_',
-  subscript(input.weapon.refinement, atk_Src)
+  subscript(input.weapon.refinement, atk_Src),
 )
 const normal_dmg_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, autoSrc)
+  subscript(input.weapon.refinement, autoSrc),
 )
 const charged_dmg_ = { ...normal_dmg_ }
 const plunging_dmg_ = { ...normal_dmg_ }

@@ -39,7 +39,7 @@ const sheet = register(
     [dm.e6.dmg],
     {
       cond: cmpGE(char.eidolon, 6, 'infer', ''),
-    }
+    },
   ),
 
   // Buffs
@@ -50,28 +50,28 @@ const sheet = register(
         skillStacks,
         2,
         cmpGE(own.char.eidolon, 2, dm.skill.spd_ * 2, dm.skill.spd_),
-        cmpGE(skillStacks, 1, dm.skill.spd_)
-      )
-    )
+        cmpGE(skillStacks, 1, dm.skill.spd_),
+      ),
+    ),
   ),
   registerBuff(
     'amplification_dmg_',
     ownBuff.premod.common_dmg_.add(
-      amplification.ifOn(subscript(char.talent, dm.talent.dmg_))
-    )
+      amplification.ifOn(subscript(char.talent, dm.talent.dmg_)),
+    ),
   ),
   registerBuff(
     'ba2_resPen_',
     ownBuff.premod.resPen_.quantum.add(
-      cmpEq(char.bonusAbility1, 1, amplification.ifOn(dm.b2.resPen_quantum))
-    )
+      cmpEq(char.bonusAbility1, 1, amplification.ifOn(dm.b2.resPen_quantum)),
+    ),
   ),
   registerBuff(
     'e1_crit_',
     ownBuff.premod.crit_.add(
-      enemyLowerThan80_.ifOn(cmpGE(char.eidolon, 1, dm.e1.crit_))
-    )
-  )
+      enemyLowerThan80_.ifOn(cmpGE(char.eidolon, 1, dm.e1.crit_)),
+    ),
+  ),
   // TODO: Add E2 conditional conditional stacking
   // registerBuff('e2_spd')
 )

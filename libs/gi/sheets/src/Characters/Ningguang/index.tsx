@@ -65,19 +65,19 @@ const [condC4Path, condC4] = cond(key, 'Constellation4')
 const nodeA4GeoDmgBonus_ = greaterEq(
   input.asc,
   4,
-  equal(condA4, 'on', percent(dm.passive2.geoDmgBonus_))
+  equal(condA4, 'on', percent(dm.passive2.geoDmgBonus_)),
 )
 
 const nodesC4 = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_res_`,
     greaterEq(input.constellation, 4, equal(condC4, 'on', percent(0.1))),
-  ])
+  ]),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     baseDmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -87,7 +87,7 @@ const dmgFormulas = {
   skill: {
     screenHp: prod(
       subscript(input.total.skillIndex, dm.skill.screenHp, { unit: '%' }),
-      input.total.hp
+      input.total.hp,
     ),
     dmg: dmgNode('atk', dm.skill.skillDmg, 'skill'),
   },

@@ -25,7 +25,7 @@ const normal_dmg_ = lookup(
     less: subscript(input.weapon.refinement, dmg_arr, { path: 'normal_dmg_' }),
     more: percent(-0.1, { path: 'normal_dmg_' }),
   },
-  naught
+  naught,
 )
 const charged_dmg_ = { ...normal_dmg_ }
 

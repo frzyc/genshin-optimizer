@@ -88,8 +88,8 @@ function Page({ teamId }: { teamId: string }) {
       ({
         presetIndex,
         setPresetIndex,
-      } as PresetContextObj),
-    [presetIndex, setPresetIndex]
+      }) as PresetContextObj,
+    [presetIndex, setPresetIndex],
   )
   const team = useTeam(teamId)!
   const { teamMetadata } = team
@@ -104,14 +104,14 @@ function Page({ teamId }: { teamId: string }) {
   const teamMetadatumIndex = useMemo(() => {
     const index = teamMetadata.findIndex(
       (teammateDatum) =>
-        teammateDatum && teammateDatum.characterKey === characterKeyRaw
+        teammateDatum && teammateDatum.characterKey === characterKeyRaw,
     )
     if (index === -1) return 0
     return index
   }, [teamMetadata, characterKeyRaw])
   const teammateDatum = useMemo(
     () => teamMetadata[teamMetadatumIndex],
-    [teamMetadata, teamMetadatumIndex]
+    [teamMetadata, teamMetadatumIndex],
   )
   const characterKey = teammateDatum?.characterKey
   useEffect(() => {
@@ -128,7 +128,7 @@ function Page({ teamId }: { teamId: string }) {
           t('charNames_gen:Character')
         : t('Team Settings')
       return `${team.name} - ${charName}`
-    }, [characterKey, t, team.name])
+    }, [characterKey, t, team.name]),
   )
 
   const teamContextObj = useMemo(
@@ -136,7 +136,7 @@ function Page({ teamId }: { teamId: string }) {
       teamId,
       team,
     }),
-    [team, teamId]
+    [team, teamId],
   )
   const srcDstDisplayContextValue = useMemo(() => {
     const charList = team.teamMetadata
@@ -160,7 +160,7 @@ function Page({ teamId }: { teamId: string }) {
         condKey,
         condValue: condValues[presetIndex],
       })),
-    [presetIndex, team.conditionals]
+    [presetIndex, team.conditionals],
   )
   const setConditional = useCallback<SetConditionalFunc>(
     (
@@ -168,7 +168,7 @@ function Page({ teamId }: { teamId: string }) {
       condKey: string,
       src: string,
       dst: string | null,
-      condValue: number
+      condValue: number,
     ) => {
       if (!isSheet(sheet) || !isMember(src) || !(dst === null || isMember(dst)))
         return
@@ -182,10 +182,10 @@ function Page({ teamId }: { teamId: string }) {
         src,
         dst,
         condValue,
-        presetIndex
+        presetIndex,
       )
     },
-    [database.teams, presetIndex, teamId]
+    [database.teams, presetIndex, teamId],
   )
   const tag = useMemo<Tag>(
     () => ({
@@ -193,7 +193,7 @@ function Page({ teamId }: { teamId: string }) {
       dst: characterKey,
       preset: `preset${presetIndex}` as Preset,
     }),
-    [characterKey, presetIndex]
+    [characterKey, presetIndex],
   )
 
   const [debugRead, setDebugRead] = useState<BaseRead>()
@@ -202,7 +202,7 @@ function Page({ teamId }: { teamId: string }) {
       read: debugRead,
       setRead: setDebugRead,
     }),
-    [debugRead]
+    [debugRead],
   )
 
   const { height, ref } = useRefSize()

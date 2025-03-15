@@ -213,7 +213,7 @@ function AdvSetFilterDiscCard({
             setSetFilter4(
               setFilter4.length
                 ? toggleInArr([...setFilter4], setKey)
-                : [setKey]
+                : [setKey],
             )
           }
         >
@@ -229,7 +229,7 @@ function AdvSetFilterDiscCard({
             setSetFilter2(
               setFilter2.length
                 ? toggleInArr([...setFilter2], setKey)
-                : [setKey]
+                : [setKey],
             )
           }
         >

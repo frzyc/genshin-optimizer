@@ -11,7 +11,7 @@ import type { Tag } from '../../data/util'
 import type { GenDescExecutorSchema } from './schema'
 
 export default async function runExecutor(
-  options: GenDescExecutorSchema
+  options: GenDescExecutorSchema,
 ): Promise<{ success: boolean }> {
   const { outputPath } = options
 
@@ -41,13 +41,13 @@ export default async function runExecutor(
 
   const cwd = path.join(workspaceRoot, outputPath)
   const prettierRc = await prettier.resolveConfig(cwd)
-  const str = prettier.format(
+  const str = await prettier.format(
     `
 // WARNING: Generated file, do not modify
 export const conditionals = ${JSON.stringify(conditionals)} as const
 export const formulas = ${JSON.stringify(formulas)} as const
 `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(cwd, str)
 

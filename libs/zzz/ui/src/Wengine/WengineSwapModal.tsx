@@ -86,14 +86,14 @@ export function WengineSwapModal({
     (wengineKey: WengineKey) => {
       setEditWengineId(database.wengines.new(initialWengine(wengineKey)))
     },
-    [database]
+    [database],
   )
   const resetEditWengine = useCallback(() => setEditWengineId(''), [])
 
   const [dbDirty, forceUpdate] = useForceUpdate()
   useEffect(
     () => database.wengines.followAny(forceUpdate),
-    [forceUpdate, database]
+    [forceUpdate, database],
   )
 
   const brPt = useMediaQueryUp()
@@ -108,12 +108,12 @@ export function WengineSwapModal({
   const wengineIds = useMemo(() => {
     const filterFunc = filterFunction(
       { speciality, rarity, name: deferredSearchTerm },
-      wengineFilterConfigs()
+      wengineFilterConfigs(),
     )
     const sortFunc = sortFunction(
       wengineSortMap['level'] ?? [],
       false,
-      wengineSortConfigs()
+      wengineSortConfigs(),
     )
     let wengineIds = database.wengines.values
       .filter(filterFunc)
@@ -136,11 +136,11 @@ export function WengineSwapModal({
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    wengineIds.length
+    wengineIds.length,
   )
   const wengineIdsToShow = useMemo(
     () => wengineIds.slice(0, numShow),
-    [wengineIds, numShow]
+    [wengineIds, numShow],
   )
 
   // for pagination

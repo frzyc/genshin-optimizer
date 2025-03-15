@@ -23,7 +23,7 @@ export const CardThemed = styled(Card, {
   const palette = (
     bgt && bgt in bgMap
       ? bgMap[bgt as CardBackgroundColor]
-      : bgt ?? 'contentNormal'
+      : (bgt ?? 'contentNormal')
   ) as keyof Palette
   const paletteColor = theme.palette[palette] as PaletteColor
   return {

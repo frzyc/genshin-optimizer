@@ -78,19 +78,19 @@ export function BuildsDisplay({ onClose }: { onClose?: () => void }) {
   const [dbTCDirty, setDbTCDirty] = useForceUpdate()
   const buildIds = useMemo(
     () => dbDirty && database.builds.getBuildIds(characterKey),
-    [dbDirty, database, characterKey]
+    [dbDirty, database, characterKey],
   )
   const buildTcIds = useMemo(
     () => dbTCDirty && database.buildTcs.getBuildTcIds(characterKey),
-    [dbTCDirty, database, characterKey]
+    [dbTCDirty, database, characterKey],
   )
   useEffect(
     () => database.builds.followAny(setDbDirty),
-    [database.builds, setDbDirty]
+    [database.builds, setDbDirty],
   )
   useEffect(
     () => database.buildTcs.followAny(setDbTCDirty),
-    [database.buildTcs, setDbTCDirty]
+    [database.buildTcs, setDbTCDirty],
   )
 
   return (
@@ -132,7 +132,7 @@ export function BuildsDisplay({ onClose }: { onClose?: () => void }) {
 }
 function useActiveBuildSwap(
   newBuildType: TeammateDatum['buildType'],
-  newBuildId = ''
+  newBuildId = '',
 ) {
   const { database } = useDatabaseContext()
   const { characterKey, buildType, buildId, buildTcId } = useTeammateContext()
@@ -144,16 +144,16 @@ function useActiveBuildSwap(
         buildType === 'equipped'
           ? buildType === newBuildType
           : buildType === 'real'
-          ? buildId === newBuildId
-          : buildType === 'tc' && buildTcId === newBuildId,
+            ? buildId === newBuildId
+            : buildType === 'tc' && buildTcId === newBuildId,
       onActive: () => {
         database.teams.set(teamId, (team) => {
           const teammateDatum = team.teamMetadata.find(
-            (teammateDatum) => teammateDatum?.characterKey === characterKey
+            (teammateDatum) => teammateDatum?.characterKey === characterKey,
           )
           if (!teammateDatum) {
             console.error(
-              `Teammate data not found for character ${characterKey}`
+              `Teammate data not found for character ${characterKey}`,
             )
             return
           }
@@ -174,7 +174,7 @@ function useActiveBuildSwap(
       newBuildId,
       newBuildType,
       teamId,
-    ]
+    ],
   )
 }
 export function EquippedBuild() {
@@ -276,7 +276,7 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
         lightCone: { ...buildTc.lightCone, ...data } as BuildTCLightCone,
       }))
     },
-    [buildTcId, database.buildTcs]
+    [buildTcId, database.buildTcs],
   )
   const setSlot = useCallback(
     (slotKey: RelicSlotKey, data: Partial<BuildTcRelicSlot>) => {
@@ -290,7 +290,7 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
         },
       }))
     },
-    [buildTcId, database.buildTcs]
+    [buildTcId, database.buildTcs],
   )
   const setSubstat = useCallback(
     (statKey: RelicSubStatKey, value: number) => {
@@ -307,7 +307,7 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
         },
       }))
     },
-    [buildTcId, database.buildTcs]
+    [buildTcId, database.buildTcs],
   )
   const setType = useCallback(
     (type: RelicSubstatTypeKey) => {
@@ -321,7 +321,7 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
         },
       }))
     },
-    [buildTcId, database.buildTcs]
+    [buildTcId, database.buildTcs],
   )
   const setSets = useCallback(
     (setKey: RelicSetKey, count: number) => {
@@ -335,7 +335,7 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
         },
       }))
     },
-    [buildTcId, database.buildTcs]
+    [buildTcId, database.buildTcs],
   )
   const removeSet = useCallback(
     (setKey: RelicSetKey) => {
@@ -350,7 +350,7 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
         }
       })
     },
-    [buildTcId, database.buildTcs]
+    [buildTcId, database.buildTcs],
   )
   return (
     <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
@@ -490,7 +490,7 @@ function TCMainsEditor({
                     setSlot(slotKey as RelicSlotKey, { level })
                   }
                 />
-              )
+              ),
             )}
           </Stack>
         </CardContent>
@@ -677,7 +677,7 @@ function TCRelicSetEditor({
         setLocalSetKey(setKey)
       }
     },
-    [setSets]
+    [setSets],
   )
   const setRelicSetCount = useCallback(
     (count: 2 | 4) => {
@@ -686,7 +686,7 @@ function TCRelicSetEditor({
         setLocalSetKey(null)
       }
     },
-    [localSetKey, setSets]
+    [localSetKey, setSets],
   )
   return (
     <ModalWrapper

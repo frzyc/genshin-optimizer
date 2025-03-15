@@ -7,7 +7,7 @@ export class DataManagerBase<
   DataKey extends string,
   CacheValue extends StorageValue,
   StorageValue,
-  DatabaseType extends Database
+  DatabaseType extends Database,
 > {
   database: DatabaseType
   /**
@@ -76,7 +76,7 @@ export class DataManagerBase<
     valueOrFunc:
       | Partial<StorageValue>
       | ((v: StorageValue) => Partial<StorageValue> | void | false),
-    notify = true
+    notify = true,
   ): boolean {
     const old = this.getStorage(key)
     if (typeof valueOrFunc === 'function' && !old) {
@@ -84,7 +84,9 @@ export class DataManagerBase<
       return false
     }
     const value =
-      typeof valueOrFunc === 'function' ? valueOrFunc(old) ?? old : valueOrFunc
+      typeof valueOrFunc === 'function'
+        ? (valueOrFunc(old) ?? old)
+        : valueOrFunc
     if (value === false) return false
     const validated = this.validate({ ...(old ?? {}), ...value }, key)
     if (!validated) {
@@ -171,12 +173,12 @@ export class DataManagerBase<
   }
   saveStorage() {
     Object.entries(this.data).forEach(([k, v]) =>
-      this.saveStorageEntry(k as CacheKey, v as CacheValue)
+      this.saveStorageEntry(k as CacheKey, v as CacheValue),
     )
   }
 }
 export type DataManagerCallback<Arg> = (
   key: Arg,
   reason: TriggerString,
-  object: any
+  object: any,
 ) => void

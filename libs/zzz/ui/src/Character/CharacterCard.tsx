@@ -17,7 +17,7 @@ export function CharacterCard({
   const character = useCharacter(characterKey)
   const onClickHandler = useCallback(
     () => characterKey && onClick?.(characterKey),
-    [characterKey, onClick]
+    [characterKey, onClick],
   )
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -28,7 +28,7 @@ export function CharacterCard({
         {children}
       </CardActionArea>
     ),
-    [onClickHandler]
+    [onClickHandler],
   )
 
   return (

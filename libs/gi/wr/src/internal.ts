@@ -2,7 +2,7 @@ import type { AnyNode, Base, NodeData, NumNode, StrNode } from './type'
 import { constant } from './utils'
 
 export function deepNodeClone<
-  T extends NodeData<NumNode | StrNode | undefined>
+  T extends NodeData<NumNode | StrNode | undefined>,
 >(data: T): T {
   const map = new Map()
   function internal(orig: any) {
@@ -16,7 +16,7 @@ export function deepNodeClone<
           Object.entries(orig).map(([key, val]) => [
             key,
             key === 'info' ? val : internal(val),
-          ])
+          ]),
         )
     map.set(orig, cache)
     return cache
@@ -27,7 +27,7 @@ export function deepNodeClone<
 export function forEachNodes<T extends Base<T> = AnyNode>(
   formulas: T[],
   topDown: (formula: T) => void,
-  bottomUp: (formula: T) => void = () => {}
+  bottomUp: (formula: T) => void = () => {},
 ): void {
   const visiting = new Set<T>(),
     visited = new Set<T>()
@@ -57,11 +57,11 @@ export function forEachNodes<T extends Base<T> = AnyNode>(
 export function mapFormulas<
   Input extends Base<Input> = AnyNode,
   Interim extends Base<Interim> = Input,
-  Output extends Base<Output> = Interim
+  Output extends Base<Output> = Interim,
 >(
   formulas: Input[],
   topDownMap: (formula: Input | Interim) => Interim,
-  bottomUpMap: (current: Interim | Output, orig: Input | Interim) => Output
+  bottomUpMap: (current: Interim | Output, orig: Input | Interim) => Output,
 ): Output[] {
   const visiting = new Set<Input | Interim>()
   const topDownMapped = new Map<Input | Interim, Output>()
@@ -109,8 +109,8 @@ export function customMapFormula<Context, Output, Input extends Base<Input>>(
   map: (
     formula: Input,
     context: Context,
-    map: (node: Input, context: Context) => Output
-  ) => Output
+    map: (node: Input, context: Context) => Output,
+  ) => Output,
 ): Output[] {
   const contextMapping = new Map<Context, [Set<Input>, Map<Input, Output>]>()
   function internalMap(formula: Input, context: Context): Output {
@@ -137,7 +137,7 @@ export function customMapFormula<Context, Output, Input extends Base<Input>>(
 
 function arrayEqual<T>(
   a: readonly T[] | undefined,
-  b: readonly T[] | undefined
+  b: readonly T[] | undefined,
 ): boolean {
   if (a === undefined) return b === undefined
   if (b === undefined) return false

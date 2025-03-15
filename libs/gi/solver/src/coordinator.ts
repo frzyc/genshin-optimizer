@@ -2,7 +2,7 @@ import { FIFO } from '@genshin-optimizer/common/util'
 
 export class WorkerCoordinator<
   Command extends { command: string; resultType?: never },
-  Response extends { command?: never; resultType: string }
+  Response extends { command?: never; resultType: string },
 > {
   prio: Map<Command['command'], number>
   commands: FIFO<Command>[]
@@ -18,7 +18,7 @@ export class WorkerCoordinator<
   constructor(
     workers: Worker[],
     prio: Command['command'][],
-    callback: (_: Response, w: Worker) => void
+    callback: (_: Response, w: Worker) => void,
   ) {
     this.commands = prio.map((_) => new FIFO())
     this.prio = new Map(prio.map((p, i) => [p, i]))
@@ -53,7 +53,7 @@ export class WorkerCoordinator<
       if (command === undefined) {
         const hasCommand = await Promise.race([
           new Promise<boolean>(
-            (res) => (this.notifyNonEmpty = () => res(true))
+            (res) => (this.notifyNonEmpty = () => res(true)),
           ),
           Promise.all([...this.workers, processingInput]).then((_) => false),
           this.cancelled,
@@ -98,8 +98,8 @@ export class WorkerCoordinator<
         (w) =>
           new Promise((res) => {
             this.workDone.set(w, () => res(w))
-          })
-      )
+          }),
+      ),
     )
     this._workers.forEach((w) => w.postMessage(command))
   }

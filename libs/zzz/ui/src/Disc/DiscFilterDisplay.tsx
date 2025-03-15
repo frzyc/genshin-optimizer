@@ -69,7 +69,7 @@ export function DiscFilterDisplay({
 
   const filteredIdMap = useMemo(
     () => objKeyMap(filteredIds, (_) => true),
-    [filteredIds]
+    [filteredIds],
   )
   const {
     discSetKeys = [],
@@ -152,7 +152,7 @@ export function DiscFilterDisplay({
           if (location) ctMap['locationTotal'][location].current++
           ctMap['excludedTotal'][excluded].current++
         }
-      })
+      }),
     )
   }, [
     database.discs.entries,

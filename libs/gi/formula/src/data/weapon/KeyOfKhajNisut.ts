@@ -22,17 +22,17 @@ const { afterSkillStacks } = allNumConditionals(key, true, 0, 3)
 const selfElemas = prod(
   afterSkillStacks,
   percent(subscript(refinement, selfEmSrc)),
-  final.hp_
+  final.hp_,
 )
 const teamEleMas = cmpEq(
   afterSkillStacks,
   3,
-  prod(percent(subscript(refinement, teamEmSrc)), final.hp)
+  prod(percent(subscript(refinement, teamEmSrc)), final.hp),
 )
 
 export default register(
   key,
   entriesForWeapon(key),
   ownBuff.final.eleMas.add(selfElemas),
-  teamBuff.final.eleMas.add(teamEleMas)
+  teamBuff.final.eleMas.add(teamEleMas),
 )

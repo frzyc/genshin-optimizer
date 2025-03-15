@@ -38,7 +38,7 @@ export function RVSlide({
       setsliderLow(l)
       setsliderHigh(h)
     },
-    [setsliderLow, setsliderHigh]
+    [setsliderLow, setsliderHigh],
   )
   useEffect(() => setsliderLow(rvLow), [setsliderLow, rvLow])
 

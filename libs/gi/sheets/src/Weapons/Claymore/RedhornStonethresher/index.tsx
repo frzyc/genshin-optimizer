@@ -16,16 +16,16 @@ const normal_dmgInc = equal(
   key,
   prod(
     subscript(input.weapon.refinement, normal_dmg_Src, { unit: '%' }),
-    input.premod.def
-  )
+    input.premod.def,
+  ),
 )
 const charged_dmgInc = equal(
   input.weapon.key,
   key,
   prod(
     subscript(input.weapon.refinement, charged_dmg_Src, { unit: '%' }),
-    input.premod.def
-  )
+    input.premod.def,
+  ),
 )
 
 const data = dataObjForWeaponSheet(
@@ -40,7 +40,7 @@ const data = dataObjForWeaponSheet(
   {
     normal_dmgInc,
     charged_dmgInc,
-  }
+  },
 )
 const sheet: IWeaponSheet = {
   document: [

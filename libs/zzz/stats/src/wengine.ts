@@ -18,7 +18,7 @@ export function getWengineStats(
   wk: WengineKey,
   level: number,
   wenginePhase: number,
-  wengineAscension?: number
+  wengineAscension?: number,
 ) {
   const { atk_base, second_statkey, second_statvalue } = getWengineStat(wk)
   const ascension = wengineAscension ?? clamp(Math.floor(level / 10), 0, 5) //TODO: Remove clamp once we can get wengine from characters for optimize
@@ -36,6 +36,6 @@ export function getWengineStats(
 export function getWengineParams(wk: WengineKey) {
   const { phase } = getWengineStat(wk)
   return transposeArray(phase.map((singlePhase) => singlePhase.params)).map(
-    (params) => [-1, ...params]
+    (params) => [-1, ...params],
   )
 }

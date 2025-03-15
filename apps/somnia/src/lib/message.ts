@@ -10,7 +10,7 @@ export async function send(
   content: string,
   embed?: EmbedBuilder,
   components?: ActionRowBuilder,
-  ephemeral = false
+  ephemeral = false,
 ) {
   const msg: any = { content: content }
   if (embed) msg['embeds'] = [embed]

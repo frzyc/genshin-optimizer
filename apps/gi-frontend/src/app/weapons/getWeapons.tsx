@@ -4,7 +4,7 @@ import type { Database } from '@genshin-optimizer/gi/supabase'
 import type { SupabaseClient } from '@supabase/supabase-js'
 export default async function getWeapons(
   supabase: SupabaseClient<Database>,
-  accountId: string | null
+  accountId: string | null,
 ) {
   if (!accountId) return []
   const { data, error } = await supabase

@@ -12,22 +12,22 @@ const setHeader = setHeaderTemplate(key)
 
 const [cond2NightsoulBlessingPath, cond2NightsoulBlessing] = cond(
   key,
-  '2NightsoulBlessing'
+  '2NightsoulBlessing',
 )
 const set2_dmg_ = greaterEq(
   input.artSet.ObsidianCodex,
   2,
-  equal(cond2NightsoulBlessing, 'on', percent(0.15))
+  equal(cond2NightsoulBlessing, 'on', percent(0.15)),
 )
 
 const [cond4NightsoulConsumePath, cond4NightsoulConsume] = cond(
   key,
-  '4NightsoulConsume'
+  '4NightsoulConsume',
 )
 const set4_critRate_ = greaterEq(
   input.artSet.ObsidianCodex,
   4,
-  equal(cond4NightsoulConsume, 'on', percent(0.4))
+  equal(cond4NightsoulConsume, 'on', percent(0.4)),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

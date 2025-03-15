@@ -30,14 +30,14 @@ const dmg = equal(
     customDmgNode(
       prod(
         subscript(input.weapon.refinement, atkSrc_, { unit: '%' }),
-        input.premod.atk
+        input.premod.atk,
       ),
       'elemental',
       {
         hit: { ele: constant('physical') },
-      }
-    )
-  )
+      },
+    ),
+  ),
 )
 const critRate_arr = data_gen.refinementBonus.critRate_
 if (!critRate_arr)
@@ -53,7 +53,7 @@ const data = dataObjForWeaponSheet(
       atkSPD_,
     },
   },
-  { dmg }
+  { dmg },
 )
 const sheet: IWeaponSheet = {
   document: [

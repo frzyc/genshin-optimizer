@@ -23,7 +23,7 @@ export type RelicSetConfig = {
 }
 
 const relicSetConfigSrc = parse(
-  readDMJSON('ExcelOutput/RelicSetConfig.json')
+  readDMJSON('ExcelOutput/RelicSetConfig.json'),
 ) as RelicSetConfig[]
 
 const prePath = `${PROJROOT_PATH}/src/dm/relic/RelicSetConfig`
@@ -33,19 +33,19 @@ dumpFile(
   objKeyValMap(relicSetConfigSrc, (config) => [
     config.SetID,
     nameToKey(TextMapEN[config.SetName.Hash.toString()]),
-  ])
+  ]),
 )
 dumpFile(
   `${prePath}_keys_gen.json`,
   [
     ...new Set(
       relicSetConfigSrc.map((data) =>
-        nameToKey(TextMapEN[data.SetName.Hash.toString()])
-      )
+        nameToKey(TextMapEN[data.SetName.Hash.toString()]),
+      ),
     ),
   ]
     .filter((s) => s)
-    .sort()
+    .sort(),
 )
 
 dumpFile(
@@ -54,11 +54,11 @@ dumpFile(
     ...new Set(
       relicSetConfigSrc
         .filter((d) => d.IsPlanarSuit)
-        .map((data) => nameToKey(TextMapEN[data.SetName.Hash.toString()]))
+        .map((data) => nameToKey(TextMapEN[data.SetName.Hash.toString()])),
     ),
   ]
     .filter((s) => s)
-    .sort()
+    .sort(),
 )
 
 dumpFile(
@@ -67,14 +67,14 @@ dumpFile(
     ...new Set(
       relicSetConfigSrc
         .filter((d) => !d.IsPlanarSuit)
-        .map((data) => nameToKey(TextMapEN[data.SetName.Hash.toString()]))
+        .map((data) => nameToKey(TextMapEN[data.SetName.Hash.toString()])),
     ),
   ]
     .filter((s) => s)
-    .sort()
+    .sort(),
 )
 
 export const relicSetConfig = objFilterKeys(
   objKeyValMap(relicSetConfigSrc, (config) => [config.SetID, config]),
-  Object.keys(relicSetIdMap) as RelicSetId[]
+  Object.keys(relicSetIdMap) as RelicSetId[],
 ) as Record<RelicSetId, RelicSetConfig>

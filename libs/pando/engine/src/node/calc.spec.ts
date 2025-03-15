@@ -21,14 +21,14 @@ describe('Calculator', () => {
           tag: { cat1: 'val1', cat2: 'val1', cat3: 'val2' },
           value: constant(4),
         },
-      ])
+      ]),
     )
 
     expect(
       calc
         .gather({ cat1: 'val1', cat2: 'val1', cat3: 'val2' })
         .map((x) => x.val)
-        .sort()
+        .sort(),
     ).toEqual([3, 4])
     expect(calc.gather({})).toEqual([])
   })
@@ -41,11 +41,11 @@ describe('Calculator', () => {
           tag: { cat1: 'val1', cat2: 'val1', cat3: 'val2' },
           value: constant(4),
         },
-      ])
+      ]),
     )
 
     expect(
-      calc.gather({ cat1: 'val1', cat2: 'val1' }).map((x) => x.val)
+      calc.gather({ cat1: 'val1', cat2: 'val1' }).map((x) => x.val),
     ).toEqual([3])
   })
   it('can detect a nonexistent tag category', () => {

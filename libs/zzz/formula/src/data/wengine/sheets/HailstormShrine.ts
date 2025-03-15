@@ -37,24 +37,26 @@ const sheet = registerWengine(
     ownBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(subscript(modification, [0.1, 0.2, 0.3, 0.4, 0.5]))
-      )
+        boolConditional.ifOn(
+          subscript(modification, [0.1, 0.2, 0.3, 0.4, 0.5]),
+        ),
+      ),
     ),
-    showSpecialtyAndEquipped(key)
+    showSpecialtyAndEquipped(key),
   ),
   registerBuff(
     'team_dmg_',
     teamBuff.combat.common_dmg_.add(
-      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
+      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 })),
     ),
-    showSpecialtyAndEquipped(key)
+    showSpecialtyAndEquipped(key),
   ),
   registerBuff(
     'enemy_defIgn_',
     enemyDebuff.common.dmgRed_.add(
-      cmpSpecialtyAndEquipped(key, numConditional)
+      cmpSpecialtyAndEquipped(key, numConditional),
     ),
-    showSpecialtyAndEquipped(key)
-  )
+    showSpecialtyAndEquipped(key),
+  ),
 )
 export default sheet

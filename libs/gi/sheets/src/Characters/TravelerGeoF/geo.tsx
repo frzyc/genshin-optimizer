@@ -23,7 +23,7 @@ import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 export default function geo(
   key: CharacterSheetKey,
   charKey: CharacterKey,
-  dmgForms: { [key: string]: DisplaySub }
+  dmgForms: { [key: string]: DisplaySub },
 ) {
   const elementKey: ElementKey = 'geo'
   const condCharKey = 'TravelerGeo'
@@ -66,17 +66,17 @@ export default function geo(
 
   const [condC1BurstAreaPath, condC1BurstArea] = cond(
     condCharKey,
-    `${elementKey}C1BurstArea`
+    `${elementKey}C1BurstArea`,
   )
   const c1BurstArea_critRate_Disp = greaterEq(
     input.constellation,
     1,
-    equal(condC1BurstArea, 'on', dm.constellation1.critRate_)
+    equal(condC1BurstArea, 'on', dm.constellation1.critRate_),
   )
   const c1BurstArea_critRate_ = equal(
     input.activeCharKey,
     target.charKey,
-    c1BurstArea_critRate_Disp
+    c1BurstArea_critRate_Disp,
   )
 
   const dmgFormulas = {
@@ -91,14 +91,14 @@ export default function geo(
       dmg: customDmgNode(
         prod(input.total.atk, dm.passive2.geoDmg),
         'elemental',
-        { hit: { ele: constant('geo') } }
+        { hit: { ele: constant('geo') } },
       ),
     },
     constellation2: {
       dmg: greaterEq(
         input.constellation,
         2,
-        dmgNode('atk', dm.skill.dmg, 'skill')
+        dmgNode('atk', dm.skill.dmg, 'skill'),
       ),
     },
   } as const

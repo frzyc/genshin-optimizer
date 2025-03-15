@@ -16,13 +16,13 @@ const dmg_1 = unequal(
   condBond,
   undefined,
   subscript(input.weapon.refinement, dmg_1Arr),
-  { path: 'all_dmg_' }
+  { path: 'all_dmg_' },
 )
 const dmg_2 = equal(
   condBond,
   '2',
   subscript(input.weapon.refinement, dmg_2Arr),
-  { path: 'all_dmg_' }
+  { path: 'all_dmg_' },
 )
 
 const all_dmg_ = sum(dmg_1, dmg_2)

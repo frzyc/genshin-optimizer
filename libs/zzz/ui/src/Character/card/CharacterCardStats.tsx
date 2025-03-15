@@ -87,7 +87,7 @@ function SubstatDisplay({
 }) {
   if (!value) return null
   const displayValue = toPercent(value, substat).toFixed(
-    statKeyToFixed(substat)
+    statKeyToFixed(substat),
   )
   return (
     <Typography

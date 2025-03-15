@@ -7,7 +7,7 @@ import type { GenSheetGeneratorSchema } from './schema'
 export default async function genSheet(
   tree: Tree,
   options: GenSheetGeneratorSchema,
-  verbose = false
+  verbose = false,
 ) {
   console.log(options)
   const { sheet_type } = options
@@ -18,8 +18,8 @@ export default async function genSheet(
       console.warn(
         `Sheet at ${path.join(
           file_location,
-          `${options.sheet}.tsx`
-        )} already exists.`
+          `${options.sheet}.tsx`,
+        )} already exists.`,
       )
     return
   }

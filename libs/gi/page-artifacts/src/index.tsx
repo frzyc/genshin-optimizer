@@ -53,7 +53,7 @@ export default function PageArtifact() {
   const dbDirtyDeferred = useDeferredValue(dbDirty)
   const effFilterSet = useMemo(
     () => new Set(effFilter),
-    [effFilter]
+    [effFilter],
   ) as Set<SubstatKey>
 
   useEffect(() => {
@@ -64,11 +64,11 @@ export default function PageArtifact() {
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
   const sortConfigs = useMemo(
     () => artifactSortConfigs(effFilterSet),
-    [effFilterSet]
+    [effFilterSet],
   )
   const filterConfigs = useMemo(
     () => artifactFilterConfigs({ effFilterSet: effFilterSet }),
-    [effFilterSet]
+    [effFilterSet],
   )
   const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState)
 
@@ -82,7 +82,7 @@ export default function PageArtifact() {
     const artifactIds = allArtifacts
       .filter(filterFunction(filterOption, filterConfigs))
       .sort(
-        sortFunction(artifactSortMap[sortType] ?? [], ascending, sortConfigs)
+        sortFunction(artifactSortMap[sortType] ?? [], ascending, sortConfigs),
       )
       .map((art) => art.id)
     return { artifactIds, totalArtNum: allArtifacts.length, ...dbDirtyDeferred } //use dbDirty to shoo away warnings!
@@ -96,11 +96,11 @@ export default function PageArtifact() {
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    artifactIds.length
+    artifactIds.length,
   )
   const artifactIdsToShow = useMemo(
     () => artifactIds.slice(0, numShow),
-    [artifactIds, numShow]
+    [artifactIds, numShow],
   )
   //for pagination
   const totalShowing =

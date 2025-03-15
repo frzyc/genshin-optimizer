@@ -15,12 +15,12 @@ export function useDataManagerBase<
   B extends string,
   C extends D,
   D,
-  E extends Database
+  E extends Database,
 >(manager: DataManagerBase<A, B, C, D, E>, key: A) {
   const [dbDirty, setDBDirty] = useForceUpdate()
   const data = useMemo(
     () => dbDirty && manager.get(key),
-    [dbDirty, manager, key]
+    [dbDirty, manager, key],
   )
   useEffect(() => manager.follow(key, setDBDirty), [manager, key, setDBDirty])
   return data

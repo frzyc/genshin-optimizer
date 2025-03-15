@@ -66,13 +66,13 @@ export function RelicData(): RelicData {
             step,
             numSteps,
           },
-        ]
-      )
-    )
+        ],
+      ),
+    ),
   )
 
   const relicMainAffixConfigFlatInValidRange = relicMainAffixConfig.filter(
-    ({ GroupID }) => GroupID < 100
+    ({ GroupID }) => GroupID < 100,
   )
   const main = Object.fromEntries(
     allRelicRarityKeys.map((rarity) => [
@@ -91,10 +91,10 @@ export function RelicData(): RelicData {
                 base,
                 add,
               },
-            ]
-          )
+            ],
+          ),
       ),
-    ])
+    ]),
   )
 
   const relicSetData = Object.fromEntries(
@@ -113,13 +113,13 @@ export function RelicData(): RelicData {
                 return [{ ...property, key: statKey }]
               })
                 // Map to desired object shape
-                .map((property) => [property.key, property.Value.Value])
+                .map((property) => [property.key, property.Value.Value]),
             ),
             otherStats: config.AbilityParamList.map((param) => param.Value),
-          })
+          }),
         ),
       },
-    ])
+    ]),
   )
 
   verifyObjKeys(relicSetData, allRelicSetKeys)
@@ -138,21 +138,21 @@ export function RelicData(): RelicData {
 }
 
 function verifyMainShape(
-  main: Partial<MainStatMap>
+  main: Partial<MainStatMap>,
 ): asserts main is MainStatMap {
   verifyObjKeys(
     main,
-    allRelicRarityKeys.map((r) => r.toFixed())
+    allRelicRarityKeys.map((r) => r.toFixed()),
   )
 }
 
 function verifySubShape(
   sub: Partial<
     Record<RelicRarityKey, Partial<Record<RelicSubStatKey, SubStat>>>
-  >
+  >,
 ): asserts sub is SubStatMap {
   Object.values(sub).forEach((raritySubs) =>
-    verifyObjKeys(raritySubs, allRelicSubStatKeys)
+    verifyObjKeys(raritySubs, allRelicSubStatKeys),
   )
 
   const rarityKeys = allRelicRarityKeys.map((r) => r.toFixed())

@@ -57,7 +57,7 @@ export function TeamCharacterSelector({
                   size={1.5}
                   src={characterAsset(
                     characterKeyToGenderedKey(characterKey),
-                    'icon'
+                    'icon',
                   )}
                 />
               ) : (

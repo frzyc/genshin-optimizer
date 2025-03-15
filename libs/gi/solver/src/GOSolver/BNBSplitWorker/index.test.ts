@@ -17,7 +17,7 @@ import { linearUB as linearUpperBound } from './linearUB'
 function apply(value: DynStat, linear: Linear): number {
   return Object.entries(linear).reduce(
     (accu, [k, v]) => accu + v * (value[k] ?? 0),
-    linear.$c
+    linear.$c,
   )
 }
 
@@ -80,7 +80,7 @@ describe('linearUpperBound can transform', () => {
     const op = allOperations.res,
       bounds = linearUpperBound(
         [res(rx), res(sum(rx, -4)), res(sum(rx, 20)), res(sum(rx, -20))],
-        arts
+        arts,
       )
     // Checking min/max
     expect(apply({ x: 0 }, bounds[0])).toBeCloseTo(op([0]), 8)
@@ -116,7 +116,7 @@ describe('linearUpperBound can transform', () => {
         prod(-1, threshold(rx, 4, -5, -10)),
         prod(-1, threshold(rx, 4, -10, -5)),
       ],
-      arts
+      arts,
     )
 
     // Checking min/thresh/max

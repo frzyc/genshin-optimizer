@@ -39,7 +39,7 @@ const SillyCharIconSideWrapper = styled(
     slot: 'Root',
     shouldForwardProp: (pn) =>
       !['size', 'sideMargin'].includes(pn as 'size' | 'sideMargin'),
-  }
+  },
 )<ImgIconProps>(({ size = 2, sideMargin = false }) => ({
   display: 'inline-block',
   width: `${size}em`,

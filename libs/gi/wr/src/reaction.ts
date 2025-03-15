@@ -29,7 +29,7 @@ import {
 const crystallizeMulti1 = subscript(
   input.lvl,
   crystallizeLevelMultipliers,
-  info('crystallize_level_multi_')
+  info('crystallize_level_multi_'),
 )
 const crystallizeElemas = prod(40 / 9, frac(input.total.eleMas, 1400))
 const crystallizeHit = infoMut(
@@ -38,15 +38,15 @@ const crystallizeHit = infoMut(
       pivot: true,
       ...info('base_crystallize_multi_'),
     }),
-    crystallizeMulti1
+    crystallizeMulti1,
   ),
-  info('crystallize')
+  info('crystallize'),
 )
 
 const transMulti1 = subscript(
   input.lvl,
   transformativeReactionLevelMultipliers,
-  info('transformative_level_multi')
+  info('transformative_level_multi'),
 )
 const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
 const trans = {
@@ -60,7 +60,7 @@ const trans = {
             pivot: true,
             ...info('base_transformative_multi_'),
           }),
-          input.total[`${reaction}_dmg_`]
+          input.total[`${reaction}_dmg_`],
         ),
         lookup(
           input.hit.hitMode,
@@ -73,7 +73,7 @@ const trans = {
                     `${
                       reaction as CrittableTransformativeReactionsKey
                     }_critDMG_`
-                  ]
+                  ],
                 )
               : one,
             avgHit: canCrit
@@ -88,9 +88,9 @@ const trans = {
                               reaction as CrittableTransformativeReactionsKey
                             }_critRate_`
                           ],
-                          sum(one, one)
+                          sum(one, one),
                         ),
-                        naught
+                        naught,
                       ),
                       {
                         ...input.total[
@@ -99,23 +99,23 @@ const trans = {
                           }_critRate_`
                         ].info,
                         pivot: true,
-                      }
+                      },
                     ),
                     input.total[
                       `${
                         reaction as CrittableTransformativeReactionsKey
                       }_critDMG_`
-                    ]
-                  )
+                    ],
+                  ),
                 )
               : one,
           },
-          NaN
+          NaN,
         ),
         input.enemy.transDef,
-        input.enemy[`${resist}_resMulti_`]
+        input.enemy[`${resist}_resMulti_`],
       ),
-      info(`${reaction}_hit`)
+      info(`${reaction}_hit`),
     )
   }),
   swirl: objKeyMap(transformativeReactions.swirl.variants, (ele) => {
@@ -123,17 +123,17 @@ const trans = {
       prod(
         prod(
           constant(transformativeReactions.swirl.multi, info('swirl_multi_')),
-          transMulti1
+          transMulti1,
         ),
         sum(
           infoMut(sum(one, transMulti2), {
             pivot: true,
             ...info('base_transformative_multi_'),
           }),
-          input.total.swirl_dmg_
-        )
+          input.total.swirl_dmg_,
+        ),
       ),
-      input.total.swirl_dmgInc
+      input.total.swirl_dmgInc,
     )
     const res = input.enemy[`${ele}_resMulti_`]
     const crit = sum(one, input.total.swirl_critDMG_)
@@ -144,8 +144,8 @@ const trans = {
           ...input.total.swirl_critRate_.info,
           pivot: true,
         }),
-        input.total.swirl_critDMG_
-      )
+        input.total.swirl_critDMG_,
+      ),
     )
     const critFactor = lookup(
       input.hit.hitMode,
@@ -154,7 +154,7 @@ const trans = {
         avgHit: avgCrit,
         hit: one,
       },
-      NaN
+      NaN,
     )
     return infoMut(
       // CAUTION:
@@ -173,7 +173,7 @@ const trans = {
               hit: { ele: constant(ele) },
             })
         : prod(base, res),
-      info(`${ele}_swirl_hit`)
+      info(`${ele}_swirl_hit`),
     )
   }),
 } as any
@@ -182,34 +182,34 @@ const infusionReactions = {
     greaterEq(
       sum(equal(infusionNode, 'pyro', 1), equal(infusionNode, 'electro', 1)),
       1,
-      trans.overloaded
+      trans.overloaded,
     ),
-    info('overloaded_hit')
+    info('overloaded_hit'),
   ),
   electrocharged: infoMut(
     greaterEq(
       sum(equal(infusionNode, 'hydro', 1), equal(infusionNode, 'electro', 1)),
       1,
-      trans.electrocharged
+      trans.electrocharged,
     ),
-    info('electrocharged_hit')
+    info('electrocharged_hit'),
   ),
   superconduct: infoMut(
     equal(infusionNode, 'cryo', trans.superconduct),
-    info('superconduct_hit')
+    info('superconduct_hit'),
   ),
   burning: infoMut(
     equal(infusionNode, 'pyro', trans.burning),
-    info('burning_hit')
+    info('burning_hit'),
   ),
   bloom: infoMut(equal(infusionNode, 'hydro', trans.bloom), info('bloom_hit')),
   burgeon: infoMut(
     equal(infusionNode, 'pyro', trans.burgeon),
-    info('burgeon_hit')
+    info('burgeon_hit'),
   ),
   hyperbloom: infoMut(
     equal(infusionNode, 'electro', trans.hyperbloom),
-    info('hyperbloom_hit')
+    info('hyperbloom_hit'),
   ),
 }
 export const reactions = {

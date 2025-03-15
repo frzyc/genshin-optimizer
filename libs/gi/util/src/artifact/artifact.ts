@@ -33,40 +33,40 @@ export function artDisplayValue(value: number, unit: Unit): string {
 
 export function getSubstatValuesPercent(
   substatKey: SubstatKey,
-  rarity: ArtifactRarity
+  rarity: ArtifactRarity,
 ) {
   return allStats.art.sub[rarity][substatKey].map((v) =>
-    toPercent(v, substatKey)
+    toPercent(v, substatKey),
   )
 }
 
 export function getSubstatRolls(
   substatKey: SubstatKey,
   substatValue: number,
-  rarity: ArtifactRarity
+  rarity: ArtifactRarity,
 ): number[][] {
   const rollData = getSubstatValuesPercent(substatKey, rarity)
   const table = allStats.art.subRoll[rarity][substatKey]
   const lookupValue = artDisplayValue(substatValue, getUnitStr(substatKey))
   return (
     table[lookupValue as unknown as keyof typeof table]?.map((roll) =>
-      roll.map((i) => rollData[i])
+      roll.map((i) => rollData[i]),
     ) ?? []
   )
 }
 
 export function getSubstatSummedRolls(
   rarity: ArtifactRarity,
-  key: SubstatKey
+  key: SubstatKey,
 ): number[] {
   return Object.keys(allStats.art.subRoll[rarity][key]).map((v) =>
-    parseFloat(v)
+    parseFloat(v),
   )
 }
 
 export function getSubstatEfficiency(
   substatKey: SubstatKey | '',
-  rolls: number[]
+  rolls: number[],
 ): number {
   const sum = rolls.reduce((a, b) => a + b, 0)
   const max = substatKey ? getSubstatValue(substatKey) * rolls.length : 0
@@ -78,7 +78,7 @@ export function getSubstatValue(
   substatKey: SubstatKey,
   rarity: ArtifactRarity = 5,
   type: 'max' | 'min' | 'mid' = 'max',
-  percent = true
+  percent = true,
 ): number {
   const cacheKey = `${substatKey},${rarity},${type}`
   let value = substatCache.get(cacheKey)
@@ -88,8 +88,8 @@ export function getSubstatValue(
       type === 'max'
         ? Math.max(...substats)
         : type === 'min'
-        ? Math.min(...substats)
-        : substats.reduce((a, b) => a + b, 0) / substats.length
+          ? Math.min(...substats)
+          : substats.reduce((a, b) => a + b, 0) / substats.length
     substatCache.set(cacheKey, value)
   }
   return percent ? toPercent(value, substatKey) : value
@@ -105,7 +105,7 @@ export function getSubstatValue(
 export function getMainStatValue(
   statKey: MainStatKey,
   rarity: ArtifactRarity,
-  level: number
+  level: number,
 ) {
   return allStats.art.main[rarity][statKey][level]
 }
@@ -118,17 +118,17 @@ export function getMainStatValue(
  */
 export function getMainStatDisplayValues(
   rarity: ArtifactRarity,
-  statKey: MainStatKey
+  statKey: MainStatKey,
 ): number[] {
   return allStats.art.main[rarity][statKey].map((k: number) =>
-    statKey === 'eleMas' ? Math.round(k) : toPercent(k, statKey)
+    statKey === 'eleMas' ? Math.round(k) : toPercent(k, statKey),
   )
 }
 
 export function getMainStatDisplayValue(
   key: MainStatKey,
   rarity: ArtifactRarity,
-  level: number
+  level: number,
 ): number {
   const val = getMainStatValue(key, rarity, level)
   return key === 'eleMas' ? Math.round(val) : toPercent(val, key)
@@ -138,12 +138,12 @@ export function getMainStatDisplayStr(
   key: MainStatKey,
   rarity: ArtifactRarity,
   level: number,
-  showUnit = true
+  showUnit = true,
 ): string {
   return (
     artDisplayValue(
       getMainStatDisplayValue(key, rarity, level),
-      getUnitStr(key)
+      getUnitStr(key),
     ) + (showUnit ? getUnitStr(key) : '')
   )
 }
@@ -167,14 +167,14 @@ export function getTotalPossibleRolls(rarity: ArtifactRarity) {
 const maxSubstatRollEfficiency = objKeyMap(allArtifactRarityKeys, (rarity) =>
   Math.max(
     ...allSubstatKeys.map(
-      (substat) => getSubstatValue(substat, rarity) / getSubstatValue(substat)
-    )
-  )
+      (substat) => getSubstatValue(substat, rarity) / getSubstatValue(substat),
+    ),
+  ),
 )
 
 export function getArtifactEfficiency(
   artifact: IArtifact,
-  filter: Set<SubstatKey> = new Set(allSubstatKeys)
+  filter: Set<SubstatKey> = new Set(allSubstatKeys),
 ): { currentEfficiency: number; maxEfficiency: number } {
   const { substats, rarity, level } = artifact
   const { artifactMeta } = getArtifactMeta(artifact)
@@ -184,13 +184,13 @@ export function getArtifactEfficiency(
       key && filter.has(key)
         ? sum + (artifactMeta.substats[i]?.efficiency ?? 0)
         : sum,
-    0
+    0,
   )
 
   const rollsRemaining = getRollsRemaining(level, rarity)
   const emptySlotCount = substats.filter((s) => !s.key).length
   const matchedSlotCount = substats.filter(
-    (s) => s.key && filter.has(s.key)
+    (s) => s.key && filter.has(s.key),
   ).length
   const unusedFilterCount =
     filter.size -
@@ -209,10 +209,10 @@ export function getArtifactEfficiency(
 }
 
 export const setKeysByRarities = Object.fromEntries(
-  allArtifactRarityKeys.map((r) => [r, [] as ArtifactSetKey[]])
+  allArtifactRarityKeys.map((r) => [r, [] as ArtifactSetKey[]]),
 ) as Record<ArtifactRarity, ArtifactSetKey[]>
 allArtifactSetKeys.forEach((setKey) =>
   setKeysByRarities[
     Math.max(...getArtSetStat(setKey).rarities) as ArtifactRarity
-  ].push(setKey)
+  ].push(setKey),
 )

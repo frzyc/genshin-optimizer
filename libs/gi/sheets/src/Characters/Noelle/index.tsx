@@ -109,35 +109,35 @@ const nodeBurstAtk = equal(
       greaterEq(
         input.constellation,
         6,
-        percent(dm.constellation6.burstAtkBonus)
-      )
-    )
-  )
+        percent(dm.constellation6.burstAtkBonus),
+      ),
+    ),
+  ),
 )
 
 const nodeSkillHealChanceBase = infoMut(
   subscript(input.total.skillIndex, dm.skill.healChance),
-  { name: ct.chg('skill.skillParams.3'), unit: '%' }
+  { name: ct.chg('skill.skillParams.3'), unit: '%' },
 )
 const nodeSkillHealChanceC1BurstOn = infoMut(
   equal('on', condBurst, percent(dm.constellation1.healingChance)),
-  { name: ct.chg('skill.skillParams.3'), unit: '%' }
+  { name: ct.chg('skill.skillParams.3'), unit: '%' },
 )
 const nodeSkillHealChanceC1BurstOff = unequal(
   'on',
   condBurst,
-  nodeSkillHealChanceBase
+  nodeSkillHealChanceBase,
 )
 
 const nodeC2ChargeDMG = greaterEq(
   input.constellation,
   2,
-  percent(dm.constellation2.chargeDmg_)
+  percent(dm.constellation2.chargeDmg_),
 )
 const nodeC2ChargeDec = greaterEq(
   input.constellation,
   2,
-  percent(-dm.constellation2.chargeStamina)
+  percent(-dm.constellation2.chargeStamina),
 )
 const nodeC4dmg = greaterEq(
   input.constellation,
@@ -145,13 +145,13 @@ const nodeC4dmg = greaterEq(
   customDmgNode(
     prod(input.total.atk, percent(dm.constellation4.skillDmg)),
     'elemental',
-    { hit: { ele: constant(elementKey) } }
-  )
+    { hit: { ele: constant(elementKey) } },
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spinningDmg: dmgNode('atk', dm.charged.spinningDmg, 'charged'),
@@ -162,7 +162,7 @@ const dmgFormulas = {
     dmg: dmgNode('def', dm.skill.skillDmg, 'skill'),
     shield: shieldElement(
       'geo',
-      shieldNodeTalent('def', dm.skill.shieldDef, dm.skill.shieldFlat, 'skill')
+      shieldNodeTalent('def', dm.skill.shieldDef, dm.skill.shieldFlat, 'skill'),
     ),
     heal: healNodeTalent('def', dm.skill.healDef, dm.skill.healFlat, 'skill'),
   },
@@ -175,7 +175,7 @@ const dmgFormulas = {
     devotionShield: greaterEq(
       input.asc,
       1,
-      shieldElement('geo', shieldNode('def', percent(dm.passive1.shield), 0))
+      shieldElement('geo', shieldNode('def', percent(dm.passive1.shield), 0)),
     ),
   },
   constellation4: {

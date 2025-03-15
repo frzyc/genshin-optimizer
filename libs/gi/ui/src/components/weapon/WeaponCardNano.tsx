@@ -85,14 +85,14 @@ export function WeaponCardNanoObj({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   const UIData = useMemo(
     () =>
       weaponSheet &&
       weapon &&
       computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
-    [weaponSheet, weapon]
+    [weaponSheet, weapon],
   )
   return (
     <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
@@ -144,7 +144,7 @@ export function WeaponCardNanoObj({
                   location ? (
                     <CharIconSide
                       characterKey={database.chars.LocationToCharacterKey(
-                        location
+                        location,
                       )}
                     />
                   ) : (

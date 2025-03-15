@@ -20,9 +20,9 @@ const passiveArr = range(1, 6)
 const charged_dmg_ = lookup(
   condPassive,
   objKeyMap(passiveArr, (i) =>
-    prod(subscript(input.weapon.refinement, charged_dmg_arr, { unit: '%' }), i)
+    prod(subscript(input.weapon.refinement, charged_dmg_arr, { unit: '%' }), i),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

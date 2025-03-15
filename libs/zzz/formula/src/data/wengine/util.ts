@@ -42,9 +42,9 @@ export function entriesForWengine(key: WengineKey): TagMapNodeEntries {
         1,
         prod(
           atk_base,
-          sum(1, subscript(lvl, atk_multiplier), prod(0.8922, modification))
-        )
-      )
+          sum(1, subscript(lvl, atk_multiplier), prod(0.8922, modification)),
+        ),
+      ),
     ),
     // Sub stat
     // second_statvalue * (1 + 0.3 * modification)
@@ -52,8 +52,8 @@ export function entriesForWengine(key: WengineKey): TagMapNodeEntries {
       cmpGE(
         wengineCount,
         1,
-        prod(second_statvalue, sum(1, prod(0.3, modification)))
-      )
+        prod(second_statvalue, sum(1, prod(0.3, modification))),
+      ),
     ),
   ]
 }

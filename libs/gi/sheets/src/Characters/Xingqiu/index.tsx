@@ -86,7 +86,7 @@ const [condC2Path, condC2] = cond(key, 'c2')
 const nodeC2 = greaterEq(
   input.constellation,
   2,
-  equal(condC2, 'on', dm.constellation2.hydro_enemyRes_)
+  equal(condC2, 'on', dm.constellation2.hydro_enemyRes_),
 )
 
 const [condSkillPath, condSkill] = cond(key, 'skill')
@@ -97,9 +97,9 @@ const nodeC4 = infoMut(
     greaterEq(input.constellation, 4, equal(condBurst, 'on', 1)),
     1,
     dm.constellation4.dmg_,
-    one
+    one,
   ),
-  { name: st('dmgMult.skill'), unit: '%' }
+  { name: st('dmgMult.skill'), unit: '%' },
 )
 
 const nodeSkillDmgRed_ = equal(
@@ -107,17 +107,17 @@ const nodeSkillDmgRed_ = equal(
   'on',
   sum(
     subscript(input.total.skillIndex, dm.skill.dmgRed_, { unit: '%' }),
-    min(percent(0.24), prod(percent(0.2), input.premod.hydro_dmg_))
-  )
+    min(percent(0.24), prod(percent(0.2), input.premod.hydro_dmg_)),
+  ),
 )
 
 const nodeA1Heal = customHealNode(
-  greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06)))
+  greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06))),
 )
 
 export const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.hit1, 'charged'),

@@ -5,7 +5,7 @@ import type { GenHakushinDataExecutorSchema } from './schema'
 // const folderPath = `${workspaceRoot}/libs/zzz/dm/HakushinData`
 
 const runExecutor: PromiseExecutor<GenHakushinDataExecutorSchema> = async (
-  options
+  options,
 ) => {
   console.log('Running Executor for GenHakushinData', options)
   await getDataFromHakushin()

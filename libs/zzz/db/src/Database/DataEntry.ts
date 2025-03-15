@@ -7,7 +7,7 @@ export class DataEntry<
   Key extends string,
   ZOKey extends string,
   CacheValue,
-  StorageValue
+  StorageValue,
 > extends DataEntryBase<Key, ZOKey, CacheValue, StorageValue, ZzzDatabase> {
   exportZOD(zoDb: Partial<IZZZDatabase & IZenlessObjectDescription>) {
     zoDb[this.dataKey] = this.data
@@ -15,7 +15,7 @@ export class DataEntry<
   importZOD(
     zoDb: IZenlessObjectDescription &
       IZZZDatabase & { [k in ZOKey]?: Partial<StorageValue> | never },
-    _result: ImportResult
+    _result: ImportResult,
   ) {
     const data = zoDb[this.dataKey]
     if (data) this.set(data)

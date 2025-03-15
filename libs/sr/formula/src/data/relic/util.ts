@@ -14,7 +14,7 @@ export function registerRelic(
 
 export function entriesForRelic(
   key: RelicSetKey,
-  dataGen: RelicSetDatum
+  dataGen: RelicSetDatum,
 ): TagMapNodeEntries {
   const relicCount = own.common.count.sheet(key)
   return [
@@ -24,11 +24,11 @@ export function entriesForRelic(
         registerBuff(
           `set${numRequired}_passive_${statKey}`,
           getStatFromStatKey(ownBuff.premod, statKey).add(
-            cmpGE(relicCount, numRequired, value)
+            cmpGE(relicCount, numRequired, value),
           ),
-          cmpGE(relicCount, numRequired, 'unique', '')
-        )
-      )
+          cmpGE(relicCount, numRequired, 'unique', ''),
+        ),
+      ),
     ),
   ]
 }

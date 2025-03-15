@@ -16,7 +16,7 @@ const set4 = greaterEq(
   input.artSet.Berserker,
   4,
   equal('70', condNode, percent(0.24)),
-  critRate_info
+  critRate_info,
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

@@ -50,11 +50,11 @@ export const slashcommand = new SlashCommandBuilder()
           .setName('name')
           .setDescription('Character name')
           .setAutocomplete(true)
-          .setRequired(true)
+          .setRequired(true),
       )
       .addStringOption((o) =>
-        o.setName('talent').setDescription('Talent name').setAutocomplete(true)
-      )
+        o.setName('talent').setDescription('Talent name').setAutocomplete(true),
+      ),
   )
   .addSubcommand((s) =>
     s
@@ -65,7 +65,7 @@ export const slashcommand = new SlashCommandBuilder()
           .setName('name')
           .setDescription('Weapon name')
           .setAutocomplete(true)
-          .setRequired(true)
+          .setRequired(true),
       )
       .addStringOption((o) =>
         o
@@ -76,9 +76,9 @@ export const slashcommand = new SlashCommandBuilder()
             { name: 'Refinement 2', value: '1' },
             { name: 'Refinement 3', value: '2' },
             { name: 'Refinement 4', value: '3' },
-            { name: 'Refinement 5', value: '4' }
-          )
-      )
+            { name: 'Refinement 5', value: '4' },
+          ),
+      ),
   )
   .addSubcommand(
     (s) =>
@@ -90,8 +90,8 @@ export const slashcommand = new SlashCommandBuilder()
             .setName('name')
             .setDescription('Artifact set name')
             .setAutocomplete(true)
-            .setRequired(true)
-        )
+            .setRequired(true),
+        ),
     //.addStringOption((o) =>
     //  o
     //    .setName('lang')
@@ -115,7 +115,7 @@ function translate(
   key: string,
   lang = 'en',
   object = false,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ): any {
   return i18nInstance.t(`${namespace}:${key}`, {
     returnObjects: object,
@@ -141,7 +141,7 @@ export function clean(s: string) {
   s = s.trim()
   //italics become small
   s = s.replace(/(<i>[\s\S]*)\n([\s\S]*<\/i>)/g, (m) =>
-    m.replace(/\n/g, '\n-# ')
+    m.replace(/\n/g, '\n-# '),
   )
   s = s.replaceAll(/(<i>)+/g, '*-# ')
   s = s.replaceAll(/(<\/i>)+/g, '*')
@@ -195,7 +195,7 @@ async function archiveMessage(
   subcommand: ArchiveSubcommand,
   id: string,
   arg: string,
-  lang: string
+  lang: string,
 ) {
   //character archive
   if (subcommand === 'char') {
@@ -237,7 +237,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
 
 export async function selectmenu(
   interaction: StringSelectMenuInteraction,
-  args: string[]
+  args: string[],
 ) {
   const subcommand = args[1] as ArchiveSubcommand
   const id = args[2]
@@ -255,7 +255,7 @@ export async function selectmenu(
 export async function reaction(
   reaction: MessageReaction,
   user: User | PartialUser,
-  arg: string[]
+  arg: string[],
 ) {
   if (
     reaction.emoji.name === '❌' &&

@@ -41,7 +41,7 @@ function getDropdown(id: string, lang: string, refine: string) {
       new StringSelectMenuBuilder()
         .setCustomId(`${slashcommand.name} weapon ${id} ${lang} ${refine}`)
         .setPlaceholder(`Refinement ${refine}`)
-        .addOptions(options)
+        .addOptions(options),
     ),
   ]
 }
@@ -62,7 +62,7 @@ export async function weaponArchive(id: WeaponKey, args: string, lang: string) {
         allStats.weapon.expCurve[stat.mainStat.curve][weaponMaxLevel[rarity]] +
         ascension[weaponMaxAscension[rarity]],
       getUnitStr(stat.mainStat.type),
-      getFixed(stat.mainStat.type)
+      getFixed(stat.mainStat.type),
     ) +
     ' ' +
     i18nInstance.t(`statKey_gen:${stat.mainStat.type}`)
@@ -74,7 +74,7 @@ export async function weaponArchive(id: WeaponKey, args: string, lang: string) {
     let substat = valueString(
       sub,
       getUnitStr(stat.subStat.type),
-      getFixed(stat.subStat.type)
+      getFixed(stat.subStat.type),
     )
     substat += ' ' + i18nInstance.t(`statKey_gen:${stat.subStat.type}`)
     text += `\n**${substat}**`
@@ -94,7 +94,7 @@ export async function weaponArchive(id: WeaponKey, args: string, lang: string) {
       translate(namespace, 'passiveName') +
       ':** ' +
       Object.values(
-        translate(namespace, `passiveDescription.${refine}`, lang, true)
+        translate(namespace, `passiveDescription.${refine}`, lang, true),
       ).join('\n')
     //create dropdown menu
     msg['components'] = getDropdown(id, lang, refine)

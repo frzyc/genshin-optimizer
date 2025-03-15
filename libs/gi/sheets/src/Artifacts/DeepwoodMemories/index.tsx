@@ -21,12 +21,12 @@ const [condSet4Path, condSet4] = cond(key, 'set4')
 const set4TallyWrite = greaterEqStr(
   input.artSet[key],
   4,
-  equalStr(condSet4, 'on', input.charKey)
+  equalStr(condSet4, 'on', input.charKey),
 )
 const [set4, set4Inactive] = nonStackBuff(
   'dm4',
   'dendro_enemyRes_',
-  percent(-0.3)
+  percent(-0.3),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

@@ -102,14 +102,14 @@ const dm = {
 
 const [condSkillAbsorptionPath, condSkillAbsorption] = cond(
   key,
-  'skillAbsorption'
+  'skillAbsorption',
 )
 
 const [condC2SkillStackPath, condC2SkillStack] = cond(key, 'c2SkillStack')
 const c2_kickPressDmg_ = greaterEq(
   input.constellation,
   2,
-  percent(dm.constellation2.dmgInc)
+  percent(dm.constellation2.dmgInc),
 )
 const c2_kickDmg_ = greaterEq(
   input.constellation,
@@ -120,10 +120,10 @@ const c2_kickDmg_ = greaterEq(
       range(1, dm.constellation2.maxStacks).map((stack) => [
         stack,
         prod(stack, percent(dm.constellation2.dmgInc)),
-      ])
+      ]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const c6_daruma_dmg_inc = greaterEq(
@@ -132,32 +132,32 @@ const c6_daruma_dmg_inc = greaterEq(
   prod(
     min(input.total.eleMas, dm.constellation6.maxStacks),
     dm.constellation6.darumaDmgInc,
-    input.total.atk
-  )
+    input.total.atk,
+  ),
 )
 const c6_daruma_heal_inc = greaterEq(
   input.constellation,
   6,
   prod(
     min(input.total.eleMas, dm.constellation6.maxStacks),
-    dm.constellation6.darumaHealInc
-  )
+    dm.constellation6.darumaHealInc,
+  ),
 )
 // Using customHealNode so I can have healInc
 const darumaHeal = customHealNode(
   sum(
     prod(
       subscript(input.total.burstIndex, dm.burst.darumaAtkHeal, { unit: '%' }),
-      input.total.atk
+      input.total.atk,
     ),
     subscript(input.total.burstIndex, dm.burst.darumaBaseHeal),
-    c6_daruma_heal_inc
-  )
+    c6_daruma_heal_inc,
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spin: dmgNode('atk', dm.charged.spin, 'charged'),
@@ -180,9 +180,9 @@ const dmgFormulas = {
           dmgNode('atk', dm.skill.eleWheelDmg, 'skill', {
             hit: { ele: constant(eleKey) },
           }),
-        ])
+        ]),
       ),
-      naught
+      naught,
     ),
     eleKickDmg: lookup(
       condSkillAbsorption,
@@ -193,9 +193,9 @@ const dmgFormulas = {
             hit: { ele: constant(eleKey) },
             premod: { skill_dmg_: c2_kickDmg_ },
           }),
-        ])
+        ]),
       ),
-      naught
+      naught,
     ),
   },
   burst: {
@@ -204,7 +204,7 @@ const dmgFormulas = {
       'atk',
       dm.burst.pressAtkHeal,
       dm.burst.pressBaseHeal,
-      'burst'
+      'burst',
     ),
     darumaDmg: dmgNode('atk', dm.burst.darumaDmg, 'burst', {
       premod: { burst_dmgInc: c6_daruma_dmg_inc },
@@ -216,15 +216,15 @@ const dmgFormulas = {
       input.asc,
       1,
       customHealNode(
-        sum(dm.passive1.baseHeal, prod(dm.passive1.emHeal, input.total.eleMas))
-      )
+        sum(dm.passive1.baseHeal, prod(dm.passive1.emHeal, input.total.eleMas)),
+      ),
     ),
   },
   passive2: {
     extraHeal: greaterEq(
       input.asc,
       4,
-      prod(darumaHeal, percent(dm.passive2.nearHeal))
+      prod(darumaHeal, percent(dm.passive2.nearHeal)),
     ),
   },
 }
@@ -351,7 +351,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.headerTem('constellation2', {
@@ -382,7 +382,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),

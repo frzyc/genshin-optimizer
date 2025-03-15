@@ -16,7 +16,7 @@ function getEmbed(
   id: CharacterGenderedKey,
   name: string,
   data: any,
-  talent: string
+  talent: string,
 ) {
   //character profile
   //if (talent === 'p') return profileEmbed(id, name, data)
@@ -60,7 +60,7 @@ function skillEmbed(
   ability: Exclude<AbilityKey, 'servantTalent' | 'servantSkill'>,
   id: CharacterGenderedKey,
   name: string,
-  data: any
+  data: any,
 ) {
   let text = ''
   // TODO: fix any typing
@@ -80,7 +80,7 @@ function eidolonsEmbed(
   id: CharacterGenderedKey,
   name: string,
   data: any,
-  arg: string
+  arg: string,
 ) {
   let text = ''
   //select constellations
@@ -106,7 +106,7 @@ export function charBank(
   id: CharacterGenderedKey,
   name: string,
   data: any,
-  args: string
+  args: string,
 ) {
   const embed = getEmbed(id, name, data, args)
 
@@ -123,7 +123,7 @@ export function charBank(
     new StringSelectMenuBuilder()
       .setCustomId(`databank char ${id} ${args}`)
       .setPlaceholder(skillsList[args[0] as keyof typeof skillsList].name)
-      .addOptions(options)
+      .addOptions(options),
   )
 
   return {

@@ -25,7 +25,7 @@ import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 export default function electro(
   key: CharacterSheetKey,
   charKey: CharacterKey,
-  dmgForms: { [key: string]: DisplaySub }
+  dmgForms: { [key: string]: DisplaySub },
 ) {
   const elementKey: ElementKey = 'electro'
   const condCharKey = 'TravelerElectro'
@@ -75,37 +75,37 @@ export default function electro(
 
   const [condSkillAmuletPath, condSkillAmulet] = cond(
     condCharKey,
-    `${elementKey}SkillAmulet`
+    `${elementKey}SkillAmulet`,
   )
   const p2_enerRech_ = greaterEq(
     input.asc,
     4,
-    prod(input.premod.enerRech_, percent(dm.passive2.enerRech_))
+    prod(input.premod.enerRech_, percent(dm.passive2.enerRech_)),
   )
   const skillAmulet_enerRech_Disp = equal(
     condSkillAmulet,
     'on',
-    sum(percent(dm.skill.enerRech_), p2_enerRech_)
+    sum(percent(dm.skill.enerRech_), p2_enerRech_),
   )
   const skillAmulet_enerRech_ = equal(
     input.activeCharKey,
     target.charKey,
-    skillAmulet_enerRech_Disp
+    skillAmulet_enerRech_Disp,
   )
 
   const burstEnergyRestore = infoMut(
     subscript(input.total.burstIndex, dm.burst.energyRestore),
-    { name: ct.chg(`burst.skillParmas.2`) }
+    { name: ct.chg(`burst.skillParmas.2`) },
   )
 
   const [condC2ThunderPath, condC2Thunder] = cond(
     condCharKey,
-    `${elementKey}C2Thunder`
+    `${elementKey}C2Thunder`,
   )
   const c2Thunder_electro_enemyRes_ = greaterEq(
     input.constellation,
     2,
-    equal(condC2Thunder, 'on', dm.constellation2.electro_enemyRes)
+    equal(condC2Thunder, 'on', dm.constellation2.electro_enemyRes),
   )
 
   const dmgFormulas = {
@@ -125,11 +125,11 @@ export default function electro(
               unit: '%',
             }),
             percent(dm.constellation6.thunder_dmg_),
-            input.total.atk
+            input.total.atk,
           ),
           'burst',
-          { hit: { ele: constant(elementKey) } }
-        )
+          { hit: { ele: constant(elementKey) } },
+        ),
       ),
     },
   } as const
@@ -167,7 +167,7 @@ export default function electro(
               subscript(input.total.skillIndex, dm.skill.energyRestore),
               {
                 name: ch(`skill.enerRest.none`),
-              }
+              },
             ),
           },
           {
@@ -176,7 +176,7 @@ export default function electro(
               subscript(input.total.skillIndex, dm.skill.energyRestore),
               {
                 name: ch('skill.enerRest.over35'),
-              }
+              },
             ),
           },
           {
@@ -184,9 +184,9 @@ export default function electro(
             node: infoMut(
               prod(
                 subscript(input.total.skillIndex, dm.skill.energyRestore),
-                2
+                2,
               ),
-              { name: ch('skill.enerRest.under35') }
+              { name: ch('skill.enerRest.under35') },
             ),
           },
           {

@@ -224,7 +224,7 @@ export class TeamDataManager extends DataManager<
   }
   export(
     teamId: string,
-    loadoutDataExportSetting: LoadoutDataExportSetting
+    loadoutDataExportSetting: LoadoutDataExportSetting,
   ): object {
     const team = this.database.teams.get(teamId)
     if (!team) return {}
@@ -236,8 +236,8 @@ export class TeamDataManager extends DataManager<
           loadoutData?.teamCharId &&
           this.database.teamChars.export(
             loadoutData?.teamCharId,
-            loadoutDataExportSetting[i]
-          )
+            loadoutDataExportSetting[i],
+          ),
       ),
     }
   }
@@ -252,7 +252,7 @@ export class TeamDataManager extends DataManager<
           (obj) =>
             obj && {
               teamCharId: this.database.teamChars.import(obj),
-            }
+            },
         ),
       } as Team)
     )
@@ -296,7 +296,7 @@ export class TeamDataManager extends DataManager<
   #getWeaponId(
     teamCharId: string,
     buildType: BuildTypeKey,
-    buildId: string
+    buildId: string,
   ): string | undefined {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return undefined
@@ -344,17 +344,18 @@ export class TeamDataManager extends DataManager<
     const team = this.get(teamId)
     if (!team) return undefined
     return team.loadoutData.find(
-      (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId
+      (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId,
     )
   }
   setLoadoutDatum(
     teamId: string,
     teamCharId: string,
-    data: Partial<LoadoutDatum>
+    data: Partial<LoadoutDatum>,
   ) {
     this.set(teamId, (team) => {
       const loadoutDataInd = team.loadoutData.findIndex(
-        (loadoutDatum) => loadoutDatum && loadoutDatum.teamCharId === teamCharId
+        (loadoutDatum) =>
+          loadoutDatum && loadoutDatum.teamCharId === teamCharId,
       )
       if (loadoutDataInd < 0) return
 
@@ -378,7 +379,7 @@ export class TeamDataManager extends DataManager<
 
   getEditArtifactIds(
     buildToEdit: string,
-    teamCharId: string
+    teamCharId: string,
   ): Record<ArtifactSlotKey, string | undefined> {
     const editType = buildToEdit === 'equipped' ? 'equipped' : 'real'
     return this.#getArtifactIds(teamCharId, editType, buildToEdit)
@@ -387,7 +388,7 @@ export class TeamDataManager extends DataManager<
   #getArtifactIds(
     teamCharId: string,
     buildType: BuildTypeKey,
-    buildId: string
+    buildId: string,
   ): Record<ArtifactSlotKey, string | undefined> {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return objKeyMap(allArtifactSlotKeys, () => undefined)
@@ -411,7 +412,7 @@ export class TeamDataManager extends DataManager<
    * Note: this doesnt return any artifacts(all undefined) when the current teamchar is using a TC Build.
    */
   getLoadoutArtifacts(
-    loadouDatum: LoadoutDatum
+    loadouDatum: LoadoutDatum,
   ): Record<ArtifactSlotKey, ICachedArtifact | undefined> {
     const artIds = this.getLoadoutArtifactIds(loadouDatum)
     return objMap(artIds, (id) => this.database.arts.get(id))
@@ -432,11 +433,14 @@ export class TeamDataManager extends DataManager<
     }
     const artifacts = this.getLoadoutArtifacts(loadoutDatum)
     return {
-      setNum: Object.values(artifacts).reduce((acc, art) => {
-        if (!art) return acc
-        acc[art.setKey] = (acc[art.setKey] ?? 0) + 1
-        return acc
-      }, {} as Exclude<ArtifactData['setNum'], undefined>),
+      setNum: Object.values(artifacts).reduce(
+        (acc, art) => {
+          if (!art) return acc
+          acc[art.setKey] = (acc[art.setKey] ?? 0) + 1
+          return acc
+        },
+        {} as Exclude<ArtifactData['setNum'], undefined>,
+      ),
       mains: {
         sands: artifacts.sands?.mainStatKey,
         goblet: artifacts.goblet?.mainStatKey,
@@ -447,7 +451,7 @@ export class TeamDataManager extends DataManager<
 
   followLoadoutDatum(
     { buildType, buildId, buildTcId }: LoadoutDatum,
-    callback: () => void
+    callback: () => void,
   ) {
     if (buildType === 'real') {
       const build = this.database.builds.get(buildId)
@@ -457,7 +461,7 @@ export class TeamDataManager extends DataManager<
         ? this.database.weapons.follow(build.weaponId, callback)
         : () => {}
       const unfollowArts = Object.values(build.artifactIds).map((id) =>
-        id ? this.database.arts.follow(id, callback) : () => {}
+        id ? this.database.arts.follow(id, callback) : () => {},
       )
       return () => {
         unfollowBuild()
@@ -470,20 +474,20 @@ export class TeamDataManager extends DataManager<
   }
   followLoadoutDatumCompare(
     { compareType, compareBuildId, compareBuildTcId }: LoadoutDatum,
-    callback: () => void
+    callback: () => void,
   ) {
     if (compareType === 'real') {
       const build = this.database.builds.get(compareBuildId)
       if (!build) return () => {}
       const unfollowBuild = this.database.builds.follow(
         compareBuildId,
-        callback
+        callback,
       )
       const unfollowWeapon = build.weaponId
         ? this.database.weapons.follow(build.weaponId, callback)
         : () => {}
       const unfollowArts = Object.values(build.artifactIds).map((id) =>
-        id ? this.database.arts.follow(id, callback) : () => {}
+        id ? this.database.arts.follow(id, callback) : () => {},
       )
       return () => {
         unfollowBuild()
@@ -496,7 +500,7 @@ export class TeamDataManager extends DataManager<
   }
   getActiveBuildName(
     { buildType, buildId, buildTcId }: LoadoutDatum,
-    equippedName = 'Equipped Build'
+    equippedName = 'Equipped Build',
   ) {
     switch (buildType) {
       case 'equipped':

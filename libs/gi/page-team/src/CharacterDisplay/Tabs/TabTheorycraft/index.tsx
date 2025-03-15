@@ -77,7 +77,7 @@ export default function TabTheorycraft() {
     (optimizationTarget: string[]) => {
       database.optConfigs.set(optConfigId, { optimizationTarget })
     },
-    [database, optConfigId]
+    [database, optConfigId],
   )
 
   const distributedSubstats = buildTc.optimization.distributedSubstats
@@ -87,7 +87,7 @@ export default function TabTheorycraft() {
         data_.optimization.distributedSubstats = distributedSubstats
       })
     },
-    [setBuildTc]
+    [setBuildTc],
   )
   const workerRef = useRef<Worker | null>(null)
   if (workerRef.current === null) workerRef.current = TCWorker()
@@ -103,16 +103,16 @@ export default function TabTheorycraft() {
 
   const { minSubLines, minOtherRolls } = useMemo(
     () => getMinSubAndOtherRolls(buildTc),
-    [buildTc]
+    [buildTc],
   )
   const maxTotalRolls = useMemo(
     () =>
       Object.values(buildTc.artifact.slots).reduce(
         (accu, { level, rarity }) =>
           accu + artSubstatRollData[rarity].high + Math.floor(level / 4),
-        0
+        0,
       ),
-    [buildTc]
+    [buildTc],
   )
 
   const optimizeSubstats = (apply: boolean) => {
@@ -128,14 +128,14 @@ export default function TabTheorycraft() {
       teamCharId,
       0,
       getBuildTcArtifactData(buildTc),
-      getBuildTcWeaponData(buildTc)
+      getBuildTcWeaponData(buildTc),
     )
     if (!tempTeamData) return
     const { nodes, valueFilter } = optimizeNodesForScaling(
       tempTeamData,
       characterKey,
       optimizationTarget,
-      statFilters
+      statFilters,
     )
     if (!nodes || !valueFilter) return
     workerRef.current.postMessage({ buildTc, nodes, valueFilter })
@@ -184,7 +184,7 @@ export default function TabTheorycraft() {
           setBuildTc((buildTc) => {
             buildTc.artifact.substats.stats = objMap(
               buildTc.artifact.substats.stats,
-              (v, k) => v + toPercent(maxBuffer![k] ?? 0, k)
+              (v, k) => v + toPercent(maxBuffer![k] ?? 0, k),
             )
             buildTc.optimization.distributedSubstats =
               distributedSubstats - distributed
@@ -219,11 +219,11 @@ export default function TabTheorycraft() {
           const rollsPerSlot = 2
           const diffSlot = 5
           const sameSlot = Object.entries(slots).filter(
-            ([_slotKey, { statKey: mainStatKey }]) => mainStatKey === statKey
+            ([_slotKey, { statKey: mainStatKey }]) => mainStatKey === statKey,
           ).length
           // +2 for the inital fixed rolls
           return 2 + (diffSlot - sameSlot) * rollsPerSlot
-        }
+        },
       )
     })
   }, [setBuildTc])

@@ -124,19 +124,19 @@ const [condBondPercentPath, condBondPercent] = cond(key, 'bondPercent')
 const bondPercent = lookup(
   condBondPercent,
   objKeyMap(bondPercentArr, (per) => percent(per / 100)),
-  naught
+  naught,
 )
 
 const infusion = greaterEqStr(
   bondPercent,
   dm.infusion.bondLimit,
-  constant('pyro')
+  constant('pyro'),
 )
 
 const bond_normal_dmgInc = prod(
   subscript(input.total.autoIndex, dm.infusion.normal_dmgInc, { unit: '%' }),
   input.total.atk,
-  bondPercent
+  bondPercent,
 )
 
 const a0_pyro_dmg_ = percent(dm.passive3.pyro_dmg_)
@@ -144,44 +144,44 @@ const a0_pyro_dmg_ = percent(dm.passive3.pyro_dmg_)
 const c1_normal_dmgInc = greaterEq(
   input.constellation,
   1,
-  prod(percent(dm.constellation1.infusionDmgInc), input.total.atk, bondPercent)
+  prod(percent(dm.constellation1.infusionDmgInc), input.total.atk, bondPercent),
 )
 
 const [condC2AfterAbsorbPath, condC2AfterAbsorb] = cond(key, 'c2AfterAbsorb')
 const c2AfterAbsorb_res_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2AfterAbsorb, 'on', dm.constellation2.all_res_)
+  equal(condC2AfterAbsorb, 'on', dm.constellation2.all_res_),
 )
 const c2AfterAbsorb_all_res_ = objKeyMap(allEleResKeys, (key) =>
-  infoMut({ ...c2AfterAbsorb_res_ }, { path: key })
+  infoMut({ ...c2AfterAbsorb_res_ }, { path: key }),
 )
 
 const c6BondPercent_dmgInc = greaterEq(
   input.constellation,
   6,
-  prod(percent(dm.constellation6.burstDmg), input.total.atk, bondPercent)
+  prod(percent(dm.constellation6.burstDmg), input.total.atk, bondPercent),
 )
 
 const [condC6AfterSkillPath, condC6AfterSkill] = cond(key, 'c6AfterSkill')
 const c6AfterSkill_normal_critRate_ = greaterEq(
   input.constellation,
   6,
-  equal(condC6AfterSkill, 'on', dm.constellation6.normal_burst_critRate_)
+  equal(condC6AfterSkill, 'on', dm.constellation6.normal_burst_critRate_),
 )
 const c6AfterSkill_burst_critRate_ = { ...c6AfterSkill_normal_critRate_ }
 
 const c6AfterSkill_normal_critDMG_ = greaterEq(
   input.constellation,
   6,
-  equal(condC6AfterSkill, 'on', dm.constellation6.normal_burst_critDMG_)
+  equal(condC6AfterSkill, 'on', dm.constellation6.normal_burst_critDMG_),
 )
 const c6AfterSkill_burst_critDMG_ = { ...c6AfterSkill_normal_critDMG_ }
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -204,13 +204,13 @@ const dmgFormulas = {
         min(
           prod(
             max(sum(input.total.atk, -dm.passive2.atkThresh), 0),
-            percent(1 / (dm.passive2.maxAttack / dm.passive2.maxRes))
+            percent(1 / (dm.passive2.maxAttack / dm.passive2.maxRes)),
           ),
-          percent(dm.passive2.maxRes)
-        )
+          percent(dm.passive2.maxRes),
+        ),
       ),
-      { path: key }
-    )
+      { path: key },
+    ),
   ),
   constellation2: {
     bloodfireDmg: greaterEq(
@@ -222,9 +222,9 @@ const dmgFormulas = {
         customDmgNode(
           prod(percent(dm.constellation2.bloodfireDmg), input.total.atk),
           'elemental',
-          { hit: { ele: constant('pyro') } }
-        )
-      )
+          { hit: { ele: constant('pyro') } },
+        ),
+      ),
     ),
   },
 }
@@ -236,7 +236,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     autoBoost: autoC3,
     burstBoost: burstC5,
     ...objKeyMap(allEleResKeys, (key) =>
-      sum(dmgFormulas.passive2[key], c2AfterAbsorb_all_res_[key])
+      sum(dmgFormulas.passive2[key], c2AfterAbsorb_all_res_[key]),
     ),
     normal_dmgInc: sum(bond_normal_dmgInc, c1_normal_dmgInc),
     normal_critRate_: c6AfterSkill_normal_critRate_,

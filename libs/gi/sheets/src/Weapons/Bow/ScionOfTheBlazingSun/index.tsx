@@ -21,15 +21,15 @@ const charged_dmg_arr = [-1, 0.28, 0.35, 0.42, 0.49, 0.56]
 const dmg = customDmgNode(
   prod(
     subscript(input.weapon.refinement, dmgArr, { unit: '%' }),
-    input.total.atk
+    input.total.atk,
   ),
-  'elemental'
+  'elemental',
 )
 const [condAfterHitPath, condAfterHit] = cond(key, 'afterHit')
 const charged_dmg_ = equal(
   condAfterHit,
   'on',
-  subscript(input.weapon.refinement, charged_dmg_arr)
+  subscript(input.weapon.refinement, charged_dmg_arr),
 )
 
 const data = dataObjForWeaponSheet(key, {

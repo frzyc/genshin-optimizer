@@ -171,7 +171,7 @@ export class DisplayDiscEntry extends DataEntry<
     value:
       | Partial<IDisplayDisc>
       | ((v: IDisplayDisc) => Partial<IDisplayDisc> | void)
-      | { action: 'reset' }
+      | { action: 'reset' },
   ): boolean {
     if ('action' in value) {
       if (value.action === 'reset')

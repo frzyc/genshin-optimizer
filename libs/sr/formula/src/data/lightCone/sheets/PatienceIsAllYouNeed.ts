@@ -30,19 +30,19 @@ const sheet = registerLightCone(
     cmpGE(
       lcCount,
       1,
-      prod(own.final.atk, percent(subscript(superimpose, dm.erode)))
+      prod(own.final.atk, percent(subscript(superimpose, dm.erode))),
     ),
     [1],
-    { cond: cmpGE(lcCount, 1, 'infer', '') }
+    { cond: cmpGE(lcCount, 1, 'infer', '') },
   ),
 
   // Conditional buffs
   registerBuff(
     'spd_',
     ownBuff.premod.spd_.add(
-      cmpGE(lcCount, 1, prod(attackCount, subscript(superimpose, dm.spd_)))
+      cmpGE(lcCount, 1, prod(attackCount, subscript(superimpose, dm.spd_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

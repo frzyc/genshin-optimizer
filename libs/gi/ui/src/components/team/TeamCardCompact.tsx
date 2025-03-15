@@ -50,7 +50,7 @@ export function TeamCardCompact({
       const teamChar = database.teamChars.get(loadoutDatum.teamCharId)
       if (!teamChar) return
       return getCharEle(teamChar.key)
-    }
+    },
   )
   return (
     <CardThemed
@@ -152,7 +152,7 @@ function HoverCard({
     if (buildType === 'tc' && buildTcId)
       return getBuildTcArtifactData(database.buildTcs.get(buildTcId)!)
     return Object.values(
-      database.teams.getLoadoutArtifacts(loadoutDatum)
+      database.teams.getLoadoutArtifacts(loadoutDatum),
     ).filter((a) => a) as ICachedArtifact[]
   })()
 
@@ -164,7 +164,7 @@ function HoverCard({
       character && {
         character,
       },
-    [character]
+    [character],
   )
   const dataContextObj: dataContextObj | undefined = useMemo(
     () =>
@@ -173,7 +173,7 @@ function HoverCard({
         data,
         teamData,
       },
-    [data, teamData]
+    [data, teamData],
   )
   if (!characterContextObj || !dataContextObj) return null
   return (

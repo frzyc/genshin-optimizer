@@ -122,7 +122,7 @@ function ReactionChip({
 
   if (
     !['pyro', 'hydro', 'cryo', 'electro', 'dendro'].some(
-      (e) => e === ele || e === infusionAura
+      (e) => e === ele || e === infusionAura,
     )
   )
     return null

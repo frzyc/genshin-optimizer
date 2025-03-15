@@ -25,7 +25,7 @@ export class ComputeWorker {
 
   constructor(
     { arts, optTarget, constraints, plotBase, topN }: Setup,
-    callback: (interim: Interim) => void
+    callback: (interim: Interim) => void,
   ) {
     this.arts = arts
     this.min = constraints.map((x) => x.min)
@@ -59,16 +59,16 @@ export class ComputeWorker {
       {
         pruneArtRange: true,
         pruneNodeRange: true,
-      }
+      },
     ))
     const arts = Object.values(preArts.values).sort(
-      (a, b) => a.length - b.length
+      (a, b) => a.length - b.length,
     )
     const compute = precompute(
       nodes,
       preArts.base,
       (f) => f.path[1],
-      arts.length
+      arts.length,
     )
 
     const buffer = Array<ArtifactBuildData>(arts.length)
@@ -131,13 +131,13 @@ export class ComputeWorker {
       this.buildValues = this.builds.map((x) => x.value)
       this.threshold = Math.max(
         this.threshold,
-        this.buildValues[topN - 1] ?? -Infinity
+        this.buildValues[topN - 1] ?? -Infinity,
       )
     }
   }
   interimReport(
     count: { tested: number; failed: number; skipped: number },
-    forced = false
+    forced = false,
   ) {
     this.refresh(forced)
     this.callback({

@@ -24,12 +24,12 @@ const atk_ = lookup(
     oneOrNone: subscript(input.weapon.refinement, atkInc, { unit: '%' }),
     moreThanOne: subscript(input.weapon.refinement, atkDefInc, { unit: '%' }),
   },
-  naught
+  naught,
 )
 const def_ = equal(
   condStack,
   'moreThanOne',
-  subscript(input.weapon.refinement, atkDefInc, { unit: '%' })
+  subscript(input.weapon.refinement, atkDefInc, { unit: '%' }),
 )
 
 export const data = dataObjForWeaponSheet(key, {

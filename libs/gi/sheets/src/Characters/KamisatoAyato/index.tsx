@@ -116,38 +116,38 @@ const skillStacks_dmgInc = lookup(
               subscript(input.total.skillIndex, dm.skill.stackHpDmgInc, {
                 unit: '%',
               }),
-              input.total.hp
-            )
+              input.total.hp,
+            ),
           )
         : prod(
             stacks,
             subscript(input.total.skillIndex, dm.skill.stackHpDmgInc, {
               unit: '%',
             }),
-            input.total.hp
+            input.total.hp,
           ),
-    ])
+    ]),
   ),
-  naught
+  naught,
 )
 
 const [condBurstInAreaPath, condBurstInArea] = cond(key, 'burstInArea')
 const burst_normal_dmg_Disp = equal(
   condBurstInArea,
   'on',
-  subscript(input.total.burstIndex, dm.burst.normal_dmg_)
+  subscript(input.total.burstIndex, dm.burst.normal_dmg_),
 )
 const burst_normal_dmg_ = equal(
   input.activeCharKey,
   target.charKey,
-  burst_normal_dmg_Disp
+  burst_normal_dmg_Disp,
 )
 
 const [condC1OppHpPath, condC1OppHp] = cond(key, 'c1OppHp')
 const c1Shun_dmg_ = greaterEq(
   input.constellation,
   1,
-  equal(condC1OppHp, 'on', dm.constellation1.shunDmg_)
+  equal(condC1OppHp, 'on', dm.constellation1.shunDmg_),
 )
 
 const c2_hp_ = greaterEq(
@@ -159,17 +159,17 @@ const c2_hp_ = greaterEq(
       range(dm.constellation2.stackThresh, 5).map((stacks) => [
         stacks,
         percent(dm.constellation2.hp_),
-      ])
+      ]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const [condC4AfterBurstPath, condC4AfterBurst] = cond(key, 'c4AfterBurst')
 const c4_atkSPD_ = greaterEq(
   input.constellation,
   4,
-  equal(condC4AfterBurst, 'on', dm.constellation4.atkSPD)
+  equal(condC4AfterBurst, 'on', dm.constellation4.atkSPD),
 )
 
 const shunAddl: Data = {
@@ -184,7 +184,7 @@ const shunAddl: Data = {
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -197,12 +197,12 @@ const dmgFormulas = {
         customDmgNode(
           prod(
             subscript(input.total.skillIndex, arr, { unit: '%' }),
-            input.total.atk
+            input.total.atk,
           ),
           'normal',
-          shunAddl
+          shunAddl,
         ),
-      ])
+      ]),
     ),
     illusionDmg: dmgNode('atk', dm.skill.illusionDmg, 'skill'),
   },
@@ -220,8 +220,8 @@ const dmgFormulas = {
         {
           hit: { ele: constant(elementKey) },
           premod: { normal_dmg_: c1Shun_dmg_ },
-        }
-      )
+        },
+      ),
     ),
   },
 }
@@ -302,7 +302,7 @@ const sheet: TalentSheet = {
             dmgFormulas.skill[`dmg${i}` as keyof typeof dmgFormulas.skill],
             {
               name: ct.chg(`skill.skillParams.${i}`),
-            }
+            },
           ),
         })),
         {
@@ -358,8 +358,8 @@ const sheet: TalentSheet = {
                   },
                 ],
               },
-            ]
-          )
+            ],
+          ),
         ),
     }),
     ct.condTem('constellation1', {

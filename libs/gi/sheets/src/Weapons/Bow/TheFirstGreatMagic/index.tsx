@@ -35,8 +35,8 @@ const moveSPD_arrs = [
 const sameElementTeammates = lookup(input.charEle, tally, naught)
 const otherElementTeammates = sum(
   ...allElementKeys.map((ele) =>
-    greaterEq(tally[ele], 1, unequal(ele, input.charEle, tally[ele]))
-  )
+    greaterEq(tally[ele], 1, unequal(ele, input.charEle, tally[ele])),
+  ),
 )
 const charged_dmg_ = subscript(input.weapon.refinement, charged_dmg_arr)
 const atk_ = threshold(
@@ -47,8 +47,8 @@ const atk_ = threshold(
     sameElementTeammates,
     2,
     subscript(input.weapon.refinement, stackAtk_arrs[1]),
-    subscript(input.weapon.refinement, stackAtk_arrs[0])
-  )
+    subscript(input.weapon.refinement, stackAtk_arrs[0]),
+  ),
 )
 const moveSPD_ = threshold(
   otherElementTeammates,
@@ -61,9 +61,9 @@ const moveSPD_ = threshold(
     equal(
       otherElementTeammates,
       1,
-      subscript(input.weapon.refinement, moveSPD_arrs[0])
-    )
-  )
+      subscript(input.weapon.refinement, moveSPD_arrs[0]),
+    ),
+  ),
 )
 
 const data = dataObjForWeaponSheet(key, {

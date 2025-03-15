@@ -21,9 +21,9 @@ const sheet = registerLightCone(
   registerBuff(
     'atk_',
     ownBuff.premod.atk_.add(
-      cmpGE(lcCount, 1, prod(enemiesDefeated, subscript(superimpose, dm.atk_)))
+      cmpGE(lcCount, 1, prod(enemiesDefeated, subscript(superimpose, dm.atk_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

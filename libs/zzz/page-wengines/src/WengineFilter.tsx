@@ -90,7 +90,7 @@ export default function WengineFilter({
           ctMap['wengineTotals'][speciality].current++
           if (rarity) ctMap['wengineRarityTotals'][rarity].current++
         }
-      })
+      }),
     )
   }, [database.wengines.entries, wengineIds])
 

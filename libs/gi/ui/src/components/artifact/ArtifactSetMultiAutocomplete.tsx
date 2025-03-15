@@ -31,15 +31,15 @@ export function ArtifactSetMultiAutocomplete({
 
   const toImg = useCallback(
     (key: ArtifactSetKey) => <ImgIcon src={artifactDefIcon(key)} size={3} />,
-    []
+    [],
   )
   const toExLabel = useCallback(
     (key: ArtifactSetKey) => <strong>{totals[key]}</strong>,
-    [totals]
+    [totals],
   )
   const toExItemLabel = useCallback(
     (key: ArtifactSetKey) => <Chip size="small" label={totals[key]} />,
-    [totals]
+    [totals],
   )
 
   const allArtifactSetsAndRarities = useMemo(
@@ -50,11 +50,11 @@ export function ArtifactSetMultiAutocomplete({
             key: set,
             grouper: +rarity as ArtifactRarity,
             label: t(`artifactNames_gen:${set}`),
-          }))
+          })),
         )
         .filter((group) => allowRarities.includes(group.grouper))
         .sort(sortByRarityAndName),
-    [t, allowRarities]
+    [t, allowRarities],
   )
 
   return (

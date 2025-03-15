@@ -125,15 +125,15 @@ const burstSpiritArr = range(100, dm.burst.spiritLimit, 10)
 const burstSpirit = lookup(
   condBurstSpirit,
   objKeyMap(burstSpiritArr, (spirit) => constant(spirit)),
-  naught
+  naught,
 )
 const sunfell_dmgInc = infoMut(
   prod(
     input.total.atk,
     subscript(input.total.burstIndex, dm.burst.sunfell_dmgInc, { unit: '%' }),
-    burstSpirit
+    burstSpirit,
   ),
-  { path: 'burst_dmgInc' }
+  { path: 'burst_dmgInc' },
 )
 const flameNormal_dmgInc = infoMut(
   prod(
@@ -141,9 +141,9 @@ const flameNormal_dmgInc = infoMut(
     subscript(input.total.burstIndex, dm.burst.flameNormal_dmgInc, {
       unit: '%',
     }),
-    burstSpirit
+    burstSpirit,
   ),
-  { name: ct.ch('flameNormal_dmgInc') }
+  { name: ct.ch('flameNormal_dmgInc') },
 )
 const flameCharged_dmgInc = infoMut(
   prod(
@@ -151,9 +151,9 @@ const flameCharged_dmgInc = infoMut(
     subscript(input.total.burstIndex, dm.burst.flameCharged_dmgInc, {
       unit: '%',
     }),
-    burstSpirit
+    burstSpirit,
   ),
-  { name: ct.ch('flameCharged_dmgInc') }
+  { name: ct.ch('flameCharged_dmgInc') },
 )
 
 const [condA1NsBurstPath, condA1NsBurst] = cond(key, 'a1NsBurst')
@@ -161,18 +161,18 @@ const a1NsBurst_atk_ = greaterEq(
   input.asc,
   1,
   equal(condA1NsBurst, 'on', dm.passive1.atk_),
-  { path: 'atk_' }
+  { path: 'atk_' },
 )
 
 const [condA4TimeSinceBurstPath, condA4TimeSinceBurst] = cond(
   key,
-  'a4TimeSinceBurst'
+  'a4TimeSinceBurst',
 )
 const a4TimeSinceBurstArr = range(0, dm.passive2.duration - 1)
 const a4TimeSinceBurst = lookup(
   condA4TimeSinceBurst,
   objKeyMap(a4TimeSinceBurstArr, (time) => constant(time)),
-  naught
+  naught,
 )
 const a4TimeSinceBurst_dmg_disp = greaterEq(
   input.asc,
@@ -186,16 +186,16 @@ const a4TimeSinceBurst_dmg_disp = greaterEq(
       1 / dm.passive2.duration,
       sum(
         dm.passive2.duration,
-        prod(-1, threshold(input.constellation, 4, 0, a4TimeSinceBurst))
-      )
-    )
+        prod(-1, threshold(input.constellation, 4, 0, a4TimeSinceBurst)),
+      ),
+    ),
   ),
-  { path: 'all_dmg_', isTeamBuff: true }
+  { path: 'all_dmg_', isTeamBuff: true },
 )
 const a4TimeSinceBurst_dmg_ = equal(
   input.activeCharKey,
   target.charKey,
-  a4TimeSinceBurst_dmg_disp
+  a4TimeSinceBurst_dmg_disp,
 )
 
 const [condC1GainSpiritPath, condC1GainSpirit] = cond(key, 'c1GainSpirit')
@@ -203,7 +203,7 @@ const c1GainSpirit_atk_ = greaterEq(
   input.constellation,
   1,
   equal(condC1GainSpirit, 'on', dm.constellation1.atk_),
-  { path: 'atk_' }
+  { path: 'atk_' },
 )
 
 const [condC2RingFormPath, condC2RingForm] = cond(key, 'c2RingForm')
@@ -214,18 +214,18 @@ const c2AnyForm_base_atk = greaterEq(
   greaterEq(
     sum(equal(condC2RingForm, 'on', 1), equal(condC2FlameForm, 'on', 1)),
     1,
-    dm.constellation2.base_atk
-  )
+    dm.constellation2.base_atk,
+  ),
 )
 const c2RingForm_enemyDefRed_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2RingForm, 'on', dm.constellation2.enemyDefRed_)
+  equal(condC2RingForm, 'on', dm.constellation2.enemyDefRed_),
 )
 const antiC2RingForm_enemyDefRed_ = lessThan(
   input.constellation,
   6,
-  prod(-1, c2RingForm_enemyDefRed_)
+  prod(-1, c2RingForm_enemyDefRed_),
 )
 
 const c2FlameForm_normal_dmgInc = greaterEq(
@@ -234,8 +234,8 @@ const c2FlameForm_normal_dmgInc = greaterEq(
   equal(
     condC2FlameForm,
     'on',
-    prod(input.total.atk, percent(dm.constellation2.normal_dmgInc))
-  )
+    prod(input.total.atk, percent(dm.constellation2.normal_dmgInc)),
+  ),
 )
 const c2FlameForm_charged_dmgInc = greaterEq(
   input.constellation,
@@ -243,8 +243,8 @@ const c2FlameForm_charged_dmgInc = greaterEq(
   equal(
     condC2FlameForm,
     'on',
-    prod(input.total.atk, percent(dm.constellation2.charged_dmgInc))
-  )
+    prod(input.total.atk, percent(dm.constellation2.charged_dmgInc)),
+  ),
 )
 const c2FlameForm_burst_dmgInc = greaterEq(
   input.constellation,
@@ -252,9 +252,9 @@ const c2FlameForm_burst_dmgInc = greaterEq(
   equal(
     condC2FlameForm,
     'on',
-    prod(input.total.atk, percent(dm.constellation2.burst_dmgInc))
+    prod(input.total.atk, percent(dm.constellation2.burst_dmgInc)),
   ),
-  { path: 'burst_dmgInc' }
+  { path: 'burst_dmgInc' },
 )
 
 const c4AfterBurst_dmg_disp = greaterEq(
@@ -263,14 +263,14 @@ const c4AfterBurst_dmg_disp = greaterEq(
   greaterEq(
     input.asc,
     4,
-    unequal(condA4TimeSinceBurst, undefined, dm.constellation4.all_dmg_)
+    unequal(condA4TimeSinceBurst, undefined, dm.constellation4.all_dmg_),
   ),
-  { path: 'all_dmg_', isTeamBuff: true }
+  { path: 'all_dmg_', isTeamBuff: true },
 )
 const c4AfterBurst_dmg_ = equal(
   input.activeCharKey,
   target.charKey,
-  c4AfterBurst_dmg_disp
+  c4AfterBurst_dmg_disp,
 )
 
 const flameNormalAddl = {
@@ -290,7 +290,7 @@ const flameChargedAddl = {
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -306,7 +306,7 @@ const dmgFormulas = {
       'normal',
       flameNormalAddl,
       undefined,
-      'skill'
+      'skill',
     ),
     normal2Dmg: dmgNode(
       'atk',
@@ -314,7 +314,7 @@ const dmgFormulas = {
       'normal',
       flameNormalAddl,
       undefined,
-      'skill'
+      'skill',
     ),
     normal3Dmg: dmgNode(
       'atk',
@@ -322,7 +322,7 @@ const dmgFormulas = {
       'normal',
       flameNormalAddl,
       undefined,
-      'skill'
+      'skill',
     ),
     normal4Dmg: dmgNode(
       'atk',
@@ -330,7 +330,7 @@ const dmgFormulas = {
       'normal',
       flameNormalAddl,
       undefined,
-      'skill'
+      'skill',
     ),
     normal5Dmg: dmgNode(
       'atk',
@@ -338,7 +338,7 @@ const dmgFormulas = {
       'normal',
       flameNormalAddl,
       undefined,
-      'skill'
+      'skill',
     ),
     // TODO: Check what damage type this is
     sprintDmg: dmgNode('atk', dm.skill.sprintDmg, 'skill', {
@@ -350,7 +350,7 @@ const dmgFormulas = {
       'charged',
       flameChargedAddl,
       undefined,
-      'skill'
+      'skill',
     ),
     chargedFinalDmg: dmgNode(
       'atk',
@@ -358,7 +358,7 @@ const dmgFormulas = {
       'charged',
       flameChargedAddl,
       undefined,
-      'skill'
+      'skill',
     ),
     plungeDmg: dmgNode(
       'atk',
@@ -369,7 +369,7 @@ const dmgFormulas = {
         ...hitEle.pyro,
       },
       undefined,
-      'skill'
+      'skill',
     ),
   },
   burst: {
@@ -391,16 +391,16 @@ const dmgFormulas = {
       6,
       customDmgNode(
         prod(input.total.atk, percent(dm.constellation6.flamestriderDmg)),
-        'skill'
-      )
+        'skill',
+      ),
     ),
     ringDmg: greaterEq(
       input.constellation,
       6,
       customDmgNode(
         prod(input.total.atk, percent(dm.constellation6.ringDmg)),
-        'skill'
-      )
+        'skill',
+      ),
     ),
   },
 }

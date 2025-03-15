@@ -32,25 +32,25 @@ export default defineConfig(() => ({
       targets: [
         {
           src: normalizePath(
-            resolve('../../libs/common/localization/assets/locales')
+            resolve('../../libs/common/localization/assets/locales'),
           ),
           dest: 'assets',
         },
         {
           src: normalizePath(
-            resolve('../../libs/gi/localization/assets/locales')
+            resolve('../../libs/gi/localization/assets/locales'),
           ),
           dest: 'assets',
         },
         {
           src: normalizePath(
-            resolve('../../libs/gi/dm-localization/assets/locales')
+            resolve('../../libs/gi/dm-localization/assets/locales'),
           ),
           dest: 'assets',
         },
         {
           src: normalizePath(
-            resolve('../../libs/gi/silly-wisher-names/assets/locales')
+            resolve('../../libs/gi/silly-wisher-names/assets/locales'),
           ),
           dest: 'assets',
         },

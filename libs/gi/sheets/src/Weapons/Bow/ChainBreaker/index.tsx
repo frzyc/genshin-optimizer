@@ -25,17 +25,17 @@ const charArr = range(1, 4)
 const charCount = lookup(
   condNatlanOrNonEle,
   objKeyMap(charArr, (n) => constant(n)),
-  naught
+  naught,
 )
 
 const atk_ = prod(
   subscript(input.weapon.refinement, atk_arr, { unit: '%' }),
-  charCount
+  charCount,
 )
 const eleMas = greaterEq(
   charCount,
   3,
-  subscript(input.weapon.refinement, eleMasArr)
+  subscript(input.weapon.refinement, eleMasArr),
 )
 
 export const data = dataObjForWeaponSheet(key, {

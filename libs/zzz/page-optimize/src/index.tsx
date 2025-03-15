@@ -83,7 +83,7 @@ export default function PageOptimize() {
     (stats: Stats) => {
       character && database.chars.set(character.key, { stats })
     },
-    [character, database.chars]
+    [character, database.chars],
   )
 
   const characterStats = useMemo(() => {
@@ -96,7 +96,7 @@ export default function PageOptimize() {
     return getWengineStats(
       character.wengineKey,
       character.wengineLvl,
-      character.wenginePhase
+      character.wenginePhase,
     )
   }, [character])
 
@@ -106,16 +106,16 @@ export default function PageOptimize() {
         ? combineStats(
             characterStats ?? {},
             wengineStats ?? {},
-            objMap(character.stats, (v, k) => toDecimal(v, k))
+            objMap(character.stats, (v, k) => toDecimal(v, k)),
           )
         : {},
-    [characterStats, character, wengineStats]
+    [characterStats, character, wengineStats],
   )
 
   const [dbDirty, setDbDirty] = useForceUpdate()
   useEffect(
     () => database.discs.followAny(setDbDirty),
-    [database.discs, setDbDirty]
+    [database.discs, setDbDirty],
   )
   const discIds = useMemo(
     () =>
@@ -126,13 +126,13 @@ export default function PageOptimize() {
           (character &&
             database.discs.values.find(
               ({ slotKey, location }) =>
-                slotKey === k && location === character.key
+                slotKey === k && location === character.key,
             )?.id) ??
             '',
-        ])
+        ]),
       ) as Record<DiscSlotKey, string>),
 
-    [character, database.discs.values, dbDirty]
+    [character, database.discs.values, dbDirty],
   )
   const handleLocationKeyChange = useCallback((locationKey: LocationKey) => {
     const newKey = locationKey
@@ -283,7 +283,7 @@ function CharacterSection({
     (key: FormulaKey) => {
       character && database.chars.set(character.key, { formulaKey: key })
     },
-    [character, database.chars]
+    [character, database.chars],
   )
   const charMetaDesc =
     locationKey && database.charMeta.get(locationKey).description
@@ -294,7 +294,7 @@ function CharacterSection({
       character &&
       sheet?.getStats &&
       sheet.getStats(character.conditionals, baseStats),
-    [baseStats, character, sheet]
+    [baseStats, character, sheet],
   )
 
   const setDescription = useCallback(
@@ -302,7 +302,7 @@ function CharacterSection({
       if (!locationKey || !description) return
       database.charMeta.set(locationKey, { description: description })
     },
-    [database.charMeta, locationKey]
+    [database.charMeta, locationKey],
   )
 
   return (
@@ -425,7 +425,7 @@ function CharacterSection({
                 <StatsDisplay
                   stats={objFilter(
                     wengineStats,
-                    (_, k) => !k.startsWith('wengine')
+                    (_, k) => !k.startsWith('wengine'),
                   )}
                 />
               )}

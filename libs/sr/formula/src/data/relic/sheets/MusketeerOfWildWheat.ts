@@ -20,9 +20,9 @@ const sheet = registerRelic(
     'set4_basic_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'basic',
-      cmpGE(relicCount, 4, dm[4].basic_)
+      cmpGE(relicCount, 4, dm[4].basic_),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
-  )
+    cmpGE(relicCount, 4, 'infer', ''),
+  ),
 )
 export default sheet

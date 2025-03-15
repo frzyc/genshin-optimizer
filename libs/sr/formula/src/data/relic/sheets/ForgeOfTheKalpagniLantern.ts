@@ -21,9 +21,9 @@ const sheet = registerRelic(
   registerBuff(
     'set2_brEffect_',
     ownBuff.premod.brEffect_.add(
-      cmpGE(relicCount, 2, enemyHit.ifOn(dm[2].brEffect_))
+      cmpGE(relicCount, 2, enemyHit.ifOn(dm[2].brEffect_)),
     ),
-    cmpGE(relicCount, 2, 'infer', '')
-  )
+    cmpGE(relicCount, 2, 'infer', ''),
+  ),
 )
 export default sheet

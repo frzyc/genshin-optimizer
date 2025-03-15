@@ -97,7 +97,7 @@ export function CharacterSingleSelectionModal({
 
   const teamCharKeys = loadoutData.map(
     (loadoutDatum) =>
-      database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
+      database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? '',
   )
 
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -105,7 +105,7 @@ export function CharacterSingleSelectionModal({
   // character favorite updater
   useEffect(
     () => database.charMeta.followAny(() => forceUpdate()),
-    [forceUpdate, database]
+    [forceUpdate, database],
   )
 
   const [searchTerm, setSearchTerm] = useState('')
@@ -125,16 +125,16 @@ export function CharacterSingleSelectionModal({
         .filter(
           filterFunction(
             { element, weaponType, name: deferredSearchTerm },
-            characterFilterConfigs(database, silly)
-          )
+            characterFilterConfigs(database, silly),
+          ),
         )
         .sort(
           sortFunction(
             sortByKeys,
             ascending,
             characterSortConfigs(database, silly),
-            ['new', 'favorite']
-          )
+            ['new', 'favorite'],
+          ),
         )
     return teamCharKeys.filter((key) => key !== '').concat(filteredKeys)
   }, [
@@ -231,10 +231,10 @@ export function CharacterMultiSelectionModal({
       setTeamCharKeys(
         loadoutData.map(
           (loadoutDatum) =>
-            database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
-        )
+            database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? '',
+        ),
       ),
-    [database, loadoutData, setTeamCharKeys]
+    [database, loadoutData, setTeamCharKeys],
   )
 
   // used for generating characterKeyList below, only updated when filter/sort/search is applied to prevent characters
@@ -250,10 +250,10 @@ export function CharacterMultiSelectionModal({
       setCachedTeamCharKeys(
         loadoutData.map(
           (loadoutDatum) =>
-            database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
-        )
+            database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? '',
+        ),
       ),
-    [database, loadoutData, setCachedTeamCharKeys]
+    [database, loadoutData, setCachedTeamCharKeys],
   )
 
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -261,7 +261,7 @@ export function CharacterMultiSelectionModal({
   // character favorite updater
   useEffect(
     () => database.charMeta.followAny(() => forceUpdate()),
-    [forceUpdate, database]
+    [forceUpdate, database],
   )
 
   const [searchTerm, setSearchTerm] = useState('')
@@ -281,16 +281,16 @@ export function CharacterMultiSelectionModal({
         .filter(
           filterFunction(
             { element, weaponType, name: deferredSearchTerm },
-            characterFilterConfigs(database, silly)
-          )
+            characterFilterConfigs(database, silly),
+          ),
         )
         .sort(
           sortFunction(
             sortByKeys,
             ascending,
             characterSortConfigs(database, silly),
-            ['new', 'favorite']
-          )
+            ['new', 'favorite'],
+          ),
         )
     return cachedTeamCharKeys.filter((key) => key !== '').concat(filteredKeys)
   }, [
@@ -424,9 +424,9 @@ function CharacterSelectionModalBase({
           const wtk = getCharStat(ck).weaponType
           ct[wtk].total++
           if (charactersToShow.includes(ck)) ct[wtk].current++
-        })
+        }),
       ),
-    [charactersToShow]
+    [charactersToShow],
   )
 
   const elementTotals = useMemo(
@@ -436,9 +436,9 @@ function CharacterSelectionModalBase({
           const ele = getCharEle(ck)
           ct[ele].total++
           if (charactersToShow.includes(ck)) ct[ele].current++
-        })
+        }),
       ),
-    [charactersToShow]
+    [charactersToShow],
   )
 
   const { weaponType, element, sortType, ascending } = state

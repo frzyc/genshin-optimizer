@@ -10,13 +10,13 @@ import type { GenAssetsExecutorSchema } from './schema'
 export const DEST_PROJ_PATH = `${workspaceRoot}/libs/gi/assets/src` as const
 
 export default async function runExecutor(
-  _options: GenAssetsExecutorSchema
+  _options: GenAssetsExecutorSchema,
 ): Promise<{ success: boolean }> {
   // Still continue working, so we can generate the asset index files.
   let copyAssets = true
   if (!fs.existsSync(DM2D_PATH)) {
     console.log(
-      `Texture2D does not exist, no assets will be copied. Only index files will be generated.`
+      `Texture2D does not exist, no assets will be copied. Only index files will be generated.`,
     )
     copyAssets = false
   }
@@ -40,9 +40,9 @@ export default async function runExecutor(
       (icon, keys) => {
         copyFile(
           `${DM2D_PATH}/${icon}.png`,
-          `${DEST_PROJ_PATH}/gen/${keys.slice(0, -1).join('/')}/${icon}.png`
+          `${DEST_PROJ_PATH}/gen/${keys.slice(0, -1).join('/')}/${icon}.png`,
         )
-      }
+      },
     )
   }
 

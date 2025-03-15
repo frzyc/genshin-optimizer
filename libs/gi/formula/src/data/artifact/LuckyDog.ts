@@ -31,6 +31,6 @@ export default registerArt(
   // Applies non-stacking teambuff
   teamBuff.premod.atk_.addOnce(
     key,
-    someBoolConditional.ifOn(cmpGE(count, 4, percent(1)))
-  )
+    someBoolConditional.ifOn(cmpGE(count, 4, percent(1))),
+  ),
 )

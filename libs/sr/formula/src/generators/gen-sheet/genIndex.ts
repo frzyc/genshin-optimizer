@@ -25,7 +25,7 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 
 async function writeCharIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { TagMapNodeEntries } from '../util'
 ${allCharacterKeys
@@ -38,14 +38,14 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
 
 async function writeRelicIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { TagMapNodeEntries } from '../util'
 ${allRelicSetKeys
@@ -58,19 +58,19 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
 
 async function writeLightConeIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { TagMapNodeEntries } from '../util'
 ${allLightConeKeys
   .map(
-    (lightConeKey) => `import ${lightConeKey} from './sheets/${lightConeKey}'`
+    (lightConeKey) => `import ${lightConeKey} from './sheets/${lightConeKey}'`,
   )
   .join('\n')}
 
@@ -81,7 +81,7 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }

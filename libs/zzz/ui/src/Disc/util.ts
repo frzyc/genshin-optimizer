@@ -47,7 +47,7 @@ export function useSpinner() {
     dragging.current = true
     lastAngle.current = Math.atan2(
       e.clientY - center.current.y,
-      e.clientX - center.current.x
+      e.clientX - center.current.x,
     )
     lastTime.current = Date.now()
     setVelocity(0)
@@ -61,7 +61,7 @@ export function useSpinner() {
 
     const angle = Math.atan2(
       e.clientY - center.current.y,
-      e.clientX - center.current.x
+      e.clientX - center.current.x,
     )
     const deltaAngle = (angle - lastAngle.current) * (180 / Math.PI)
 

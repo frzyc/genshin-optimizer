@@ -101,7 +101,7 @@ function CharacterSection() {
   const character = useCharacterContext()!
   const { key: characterKey } = character
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
-    undefined
+    undefined,
   )
   return (
     <Stack spacing={1}>

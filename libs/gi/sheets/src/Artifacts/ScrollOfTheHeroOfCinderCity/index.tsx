@@ -26,10 +26,10 @@ const setHeader = setHeaderTemplate(key)
 // Have a checkbox for each elemental reaction
 const condReactPaths = objKeyMap(allElementKeys, (ele) => [key, `react_${ele}`])
 const condReacts = objKeyMap(allElementKeys, (ele) =>
-  condReadNode(condReactPaths[ele])
+  condReadNode(condReactPaths[ele]),
 )
 const reactNodeOnCount = sum(
-  ...allElementKeys.map((ele) => equal(condReacts[ele], ele, 1))
+  ...allElementKeys.map((ele) => equal(condReacts[ele], ele, 1)),
 )
 
 // If one of following is true, the element is buffed
@@ -39,11 +39,11 @@ const isReactEleBuffed = objKeyMap(allElementKeys, (ele) =>
       // buffing self elemental damage; check if any reactions are enabled
       equal(input.charEle, ele, greaterEq(reactNodeOnCount, 1, 1)),
       // buffing other elemental damage; check if that conditional is enabled
-      equal(condReacts[ele], ele, 1)
+      equal(condReacts[ele], ele, 1),
     ),
     1,
-    1
-  )
+    1,
+  ),
 )
 
 const set4BaseTallyWrites = objKeyValMap(allElementKeys, (ele) => [
@@ -51,12 +51,12 @@ const set4BaseTallyWrites = objKeyValMap(allElementKeys, (ele) => [
   greaterEqStr(
     input.artSet[key],
     4,
-    greaterEqStr(isReactEleBuffed[ele], 1, input.charKey)
+    greaterEqStr(isReactEleBuffed[ele], 1, input.charKey),
   ),
 ])
 
 const condReactBuffs = objKeyMap(allElementKeys, (ele) =>
-  nonStackBuff(`scroll4base${ele}`, `${ele}_dmg_`, percent(0.12))
+  nonStackBuff(`scroll4base${ele}`, `${ele}_dmg_`, percent(0.12)),
 )
 
 const condNightsoulPaths = objKeyMap(allElementKeys, (ele) => [
@@ -64,12 +64,12 @@ const condNightsoulPaths = objKeyMap(allElementKeys, (ele) => [
   `nightsoul_${ele}`,
 ])
 const condNightsouls = objKeyMap(allElementKeys, (ele) =>
-  condReadNode(condNightsoulPaths[ele])
+  condReadNode(condNightsoulPaths[ele]),
 )
 const reactAndNightsoulOnCount = sum(
   ...allElementKeys.map((ele) =>
-    equal(condReacts[ele], ele, equal(condNightsouls[ele], ele, 1))
-  )
+    equal(condReacts[ele], ele, equal(condNightsouls[ele], ele, 1)),
+  ),
 )
 
 // If one of following is true, the element is buffed
@@ -79,11 +79,11 @@ const isNsEleBuffed = objKeyMap(allElementKeys, (ele) =>
       // buffing self elemental damage; check if any reactions are enabled
       equal(input.charEle, ele, greaterEq(reactAndNightsoulOnCount, 1, 1)),
       // buffing other elemental damage; check if that conditional is enabled
-      equal(condNightsouls[ele], ele, equal(condReacts[ele], ele, 1))
+      equal(condNightsouls[ele], ele, equal(condReacts[ele], ele, 1)),
     ),
     1,
-    1
-  )
+    1,
+  ),
 )
 
 const set4NsTallyWrites = objKeyValMap(allElementKeys, (ele) => [
@@ -91,12 +91,12 @@ const set4NsTallyWrites = objKeyValMap(allElementKeys, (ele) => [
   greaterEqStr(
     input.artSet[key],
     4,
-    equalStr(isNsEleBuffed[ele], 1, input.charKey)
+    equalStr(isNsEleBuffed[ele], 1, input.charKey),
   ),
 ])
 
 const condNightsoulBuffs = objKeyMap(allElementKeys, (ele) =>
-  nonStackBuff(`scroll4ns${ele}`, `${ele}_dmg_`, percent(0.28))
+  nonStackBuff(`scroll4ns${ele}`, `${ele}_dmg_`, percent(0.28)),
 )
 
 const totalBuffs = objKeyValMap(allElementKeys, (ele) => [
@@ -127,14 +127,14 @@ const sheet: SetEffectSheet = {
           objKeyMap(
             // Hide current char ele,
             allElementKeys.filter(
-              (ele) => data.get(input.charEle).value !== ele
+              (ele) => data.get(input.charEle).value !== ele,
             ),
             (ele) => ({
               value: condReacts[ele],
               path: condReactPaths[ele],
               name: st(`elementalReaction.${ele}`),
               fields: [],
-            })
+            }),
           ),
       },
       {
@@ -150,7 +150,7 @@ const sheet: SetEffectSheet = {
               // Hide buffs that aren't enabled by conditionals, since we are showing the buffs separately from the checkboxes
               canShow: (data: UIData) =>
                 data.get(isReactEleBuffed[key]).value >= 1,
-            }))
+            })),
           ),
           {
             text: stg('duration'),
@@ -172,7 +172,7 @@ const sheet: SetEffectSheet = {
               path: condNightsoulPaths[ele],
               name: st(`elementalReaction.nightsoul.${ele}`),
               fields: [],
-            })
+            }),
           ),
       },
       {
@@ -188,7 +188,7 @@ const sheet: SetEffectSheet = {
               // Hide buffs that aren't enabled by conditionals, since we are showing the buffs separately from the checkboxes
               canShow: (data: UIData) =>
                 data.get(isNsEleBuffed[key]).value >= 1,
-            }))
+            })),
           ),
           {
             text: stg('duration'),

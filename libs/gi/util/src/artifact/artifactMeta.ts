@@ -62,7 +62,7 @@ export function getArtifactMeta(flex: IArtifact): {
       }
 
       const rolls = possibleRolls.reduce((best, current) =>
-        best.length < current.length ? best : current
+        best.length < current.length ? best : current,
       )
       const accurateValue = rolls.reduce((a, b) => a + b, 0)
       efficiency = accurateValue / max5Value
@@ -93,7 +93,7 @@ export function getArtifactMeta(flex: IArtifact): {
   const tryAllSubstats = (
     rolls: { index: number; roll: number[] }[],
     currentScore: number,
-    total: number
+    total: number,
   ) => {
     if (rolls.length === allPossibleRolls.length) {
       if (
@@ -129,25 +129,25 @@ export function getArtifactMeta(flex: IArtifact): {
 
   const totalRolls = substats.reduce(
     (accu, { rolls }) => accu + rolls.length,
-    0
+    0,
   )
 
   if (totalRolls > upperBound)
     errors.push(
-      `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`
+      `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`,
     )
   else if (totalRolls < lowerBound)
     errors.push(
-      `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`
+      `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`,
     )
 
   if (substats.length < 4 || flex.substats.some(({ key }) => !key)) {
     const index = substats.findIndex(
-      (substat) => (substat.rolls?.length ?? 0) > 1
+      (substat) => (substat.rolls?.length ?? 0) > 1,
     )
     if (index !== -1)
       errors.push(
-        `Substat ${flex.substats[index].key} has > 1 roll, but not all substats are unlocked.`
+        `Substat ${flex.substats[index].key} has > 1 roll, but not all substats are unlocked.`,
       )
   }
 

@@ -9,7 +9,7 @@ import { Translate } from '@genshin-optimizer/sr/i18n'
 import type { ReactNode } from 'react'
 export const st = (
   strKey: string,
-  values?: Record<string, string | number>
+  values?: Record<string, string | number>,
 ) => <Translate ns="sheet" key18={strKey} values={values} />
 export const stg = (strKey: string) => (
   <Translate ns="characters_gen" key18={strKey} />
@@ -17,7 +17,7 @@ export const stg = (strKey: string) => (
 
 type Translated = [
   trg: (i18key: string, values?: Record<string, string | number>) => ReactNode,
-  tr: (i18key: string, values?: Record<string, string | number>) => ReactNode
+  tr: (i18key: string, values?: Record<string, string | number>) => ReactNode,
 ]
 
 export function trans(typeKey: 'char', key: CharacterGenderedKey): Translated
@@ -29,7 +29,7 @@ export function trans(
     | NonTrailblazerCharacterKey
     | TrailblazerGenderedKey
     | LightConeKey
-    | RelicSetKey
+    | RelicSetKey,
 ): Translated {
   return [
     (strKey: string, values?: Record<string, string | number>) => (

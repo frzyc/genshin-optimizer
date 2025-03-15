@@ -9,7 +9,7 @@ export class DataEntryBase<
   Datakey extends string,
   CacheValue,
   StorageValue,
-  DatabaseType extends Database = Database
+  DatabaseType extends Database = Database,
 > {
   database: DatabaseType
   init: (database: DatabaseType) => StorageValue
@@ -20,7 +20,7 @@ export class DataEntryBase<
     database: DatabaseType,
     key: Key,
     init: (database: DatabaseType) => StorageValue,
-    dataKey: Datakey
+    dataKey: Datakey,
   ) {
     this.database = database
     this.key = key
@@ -59,7 +59,7 @@ export class DataEntryBase<
   set(
     valueOrFunc:
       | Partial<StorageValue>
-      | ((v: StorageValue) => Partial<StorageValue> | void)
+      | ((v: StorageValue) => Partial<StorageValue> | void),
   ): boolean {
     const old = this.getStorage()
     if (typeof valueOrFunc === 'function' && !old) {
@@ -67,7 +67,9 @@ export class DataEntryBase<
       return false
     }
     const value =
-      typeof valueOrFunc === 'function' ? valueOrFunc(old) ?? old : valueOrFunc
+      typeof valueOrFunc === 'function'
+        ? (valueOrFunc(old) ?? old)
+        : valueOrFunc
     const validated = this.validate({ ...old, ...value })
     if (!validated) {
       this.trigger('invalid', value)

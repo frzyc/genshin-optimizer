@@ -18,7 +18,7 @@ export function entriesForDisc(key: DiscSetKey): TagMapNodeEntries {
   return [
     // Passive stats
     ...Object.entries(dataGen).map(([stat, value]) =>
-      getStatFromStatKey(ownBuff.initial, stat).add(cmpGE(discCount, 2, value))
+      getStatFromStatKey(ownBuff.initial, stat).add(cmpGE(discCount, 2, value)),
     ),
   ]
 }

@@ -78,16 +78,16 @@ describe('export and import test', () => {
     expect(importTeam).toBeTruthy()
 
     const raidenTeamChar = database.teamChars.get(
-      importTeam.loadoutData[0]?.teamCharId
+      importTeam.loadoutData[0]?.teamCharId,
     )
     expect(raidenTeamChar?.key).toEqual('RaidenShogun')
     expect(raidenTeamChar?.buildIds.length).toEqual(0)
     expect(raidenTeamChar?.buildTcIds.length).toEqual(1)
     expect(
-      database.optConfigs.get(raidenTeamChar?.optConfigId)?.optimizationTarget
+      database.optConfigs.get(raidenTeamChar?.optConfigId)?.optimizationTarget,
     ).toEqual(['test'])
     const bennettTeamChar = database.teamChars.get(
-      importTeam.loadoutData[2]?.teamCharId
+      importTeam.loadoutData[2]?.teamCharId,
     )
     expect(bennettTeamChar?.key).toEqual('Bennett')
     expect(bennettTeamChar?.buildIds.length).toEqual(0)

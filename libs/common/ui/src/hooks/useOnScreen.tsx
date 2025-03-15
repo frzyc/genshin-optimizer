@@ -11,7 +11,7 @@ export function useOnScreen(element?: HTMLElement) {
   const observerRef = useRef<IntersectionObserver | null>(null)
   if (!observerRef.current && typeof window !== 'undefined')
     observerRef.current = new IntersectionObserver(([entry]) =>
-      setIsOnScreen(entry.isIntersecting)
+      setIsOnScreen(entry.isIntersecting),
     )
   useEffect(() => {
     setIsOnScreen(false)

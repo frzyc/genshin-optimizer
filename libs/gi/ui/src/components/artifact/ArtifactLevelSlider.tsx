@@ -34,7 +34,7 @@ export function ArtifactLevelSlider({
       setsliderLow(l)
       setsliderHigh(h)
     },
-    [setsliderLow, setsliderHigh]
+    [setsliderLow, setsliderHigh],
   )
   useEffect(() => setsliderLow(levelLow), [setsliderLow, levelLow])
 

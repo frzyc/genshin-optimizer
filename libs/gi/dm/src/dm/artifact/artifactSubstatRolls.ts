@@ -12,14 +12,14 @@ function getRolls(
   key: string,
   possibleRolls: number[],
   maxRolls: number,
-  rarity: string
+  rarity: string,
 ): { [value: number]: number[][] } {
   const accurateStrings: Set<string> = new Set()
   const accuratePossibleRolls = possibleRolls.map((roll) =>
-    key.endsWith('_') ? Math.fround(Math.fround(roll) * 100) : roll
+    key.endsWith('_') ? Math.fround(Math.fround(roll) * 100) : roll,
   )
   const fastPossibleRolls = possibleRolls.map((roll) =>
-    key.endsWith('_') ? roll * 100 : roll
+    key.endsWith('_') ? roll * 100 : roll,
   )
 
   const root: RollValue = {
@@ -41,7 +41,7 @@ function getRolls(
       // Generate both "accurateValue" that matches in-game calculation
       // and "fastValue" which is easier for on-site calculation.
       const accurateValue = Math.fround(
-        current.accurateValue + accuratePossibleRolls[i]
+        current.accurateValue + accuratePossibleRolls[i],
       )
       const fastValue = current.fastValue + fastPossibleRolls[i]
 
@@ -96,7 +96,7 @@ function getRolls(
     // Pick rolls with the fewest "bad children", i.e., children where fast value
     // doesn't match any accurate value.
     const index = array.findIndex(
-      (other) => other.rolls.length === current.rolls.length
+      (other) => other.rolls.length === current.rolls.length,
     )
     if (index === -1)
       array.push(current) // Doesn't have roll of this length yet
@@ -132,7 +132,7 @@ function getRolls(
     Object.entries(outputRolls).map(([key, value]) => [
       key,
       value.map((roll) => roll.rolls),
-    ])
+    ]),
   )
 }
 
@@ -144,10 +144,10 @@ export const artifactSubstatRollData = Object.fromEntries(
         ([statKey, rolls]) => [
           statKey,
           getRolls(statKey, rolls as number[], maxRolls, rarity),
-        ]
-      )
+        ],
+      ),
     ),
-  ])
+  ]),
 )
 
 type RollValue = {

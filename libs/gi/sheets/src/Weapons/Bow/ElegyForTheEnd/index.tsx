@@ -16,14 +16,14 @@ const eleMas = subscript(input.weapon.refinement, eleMasInc, { path: 'eleMas' })
 const eleMas2 = equal(
   condNode,
   'on',
-  subscript(input.weapon.refinement, eleMasInc2, { path: 'eleMas' })
+  subscript(input.weapon.refinement, eleMasInc2, { path: 'eleMas' }),
 )
 
 const nonstackWrite = equalStr(condNode, 'on', input.charKey)
 const [atk_, atk_inactive] = nonStackBuff(
   'millenialatk',
   'atk_',
-  subscript(input.weapon.refinement, atk_s)
+  subscript(input.weapon.refinement, atk_s),
 )
 
 export const data = dataObjForWeaponSheet(key, {

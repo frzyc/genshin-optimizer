@@ -17,7 +17,7 @@ import type { GenAssetsExecutorSchema } from './schema'
 const DEST_PROJ_PATH = `${workspaceRoot}/libs/sr/assets/src` as const
 
 export default async function runExecutor(
-  options: GenAssetsExecutorSchema
+  options: GenAssetsExecutorSchema,
 ): Promise<{ success: boolean }> {
   function copyFile(src: string, dest: string) {
     if (!fs.existsSync(src)) {
@@ -45,17 +45,17 @@ export default async function runExecutor(
         if (typeof filePath === 'string') {
           copyFile(
             `${DM2D_PATH}/${filePath.toLocaleLowerCase()}`,
-            `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}.png`
+            `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}.png`,
           )
         } else {
           filePath.forEach((fp, index) =>
             copyFile(
               `${DM2D_PATH}/${fp.toLocaleLowerCase()}`,
-              `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}_${index}.png`
-            )
+              `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}_${index}.png`,
+            ),
           )
         }
-      }
+      },
     )
   } else if (options.fetchAssets === 'yatta') {
     console.log('Fetching from yatta.top')
@@ -67,7 +67,7 @@ export default async function runExecutor(
         const fileName = keys.slice(-1)[0]
         const subFolderPath = keys.slice(0, -1).join('/')
         const destFolder = path.resolve(
-          `${DEST_PROJ_PATH}/gen/${subFolderPath}`
+          `${DEST_PROJ_PATH}/gen/${subFolderPath}`,
         )
         if (!fs.existsSync(destFolder)) fs.mkdirSync(destFolder)
 
@@ -76,11 +76,11 @@ export default async function runExecutor(
         } else {
           await Promise.all(
             filePath.map((fp, index) =>
-              saveFromYatta(fp, destFolder, `${fileName}_${index}`)
-            )
+              saveFromYatta(fp, destFolder, `${fileName}_${index}`),
+            ),
           )
         }
-      }
+      },
     )
   } else {
     console.log('No assets will be copied.')
@@ -105,7 +105,7 @@ export default async function runExecutor(
           layeredAssignment(indexData, newKeys, `${fileName}_${index}`)
         })
       }
-    }
+    },
   )
   await generateIndexFromObj(indexData, `${DEST_PROJ_PATH}/gen`)
   return { success: true }
@@ -114,7 +114,7 @@ export default async function runExecutor(
 async function saveFromYatta(
   filePath: string,
   destFolder: string,
-  fileName: string
+  fileName: string,
 ) {
   const yattaFileName = filePath.split('/').at(-1) ?? ''
   const yatta = `https://api.yatta.top/hsr/assets/UI/skill/${yattaFileName}`
@@ -129,11 +129,11 @@ async function saveFromYatta(
       return
     }
     await finished(
-      Readable.fromWeb(yattaImage.body as ReadableStream<any>).pipe(filestream)
+      Readable.fromWeb(yattaImage.body as ReadableStream<any>).pipe(filestream),
     )
   } catch (exception) {
     console.log(
-      `Exception when fetching ${yatta} for ${destFile}: ${exception}`
+      `Exception when fetching ${yatta} for ${destFile}: ${exception}`,
     )
     throw exception
   }

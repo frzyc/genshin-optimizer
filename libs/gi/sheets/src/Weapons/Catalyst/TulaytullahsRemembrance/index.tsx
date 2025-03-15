@@ -26,7 +26,7 @@ const max_normal_dmg_arr = [-1, 0.48, 0.6, 0.72, 0.84, 0.96]
 const atkSPD_ = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refinement, atkSPD_arr)
+  subscript(input.weapon.refinement, atkSPD_arr),
 )
 
 const [condTimePassivePath, condTimePassive] = cond(key, 'timePassive')
@@ -42,13 +42,13 @@ const time_normal_dmg_ = equal(
           time,
           subscript(input.weapon.refinement, time_normal_dmg_arr, {
             unit: '%',
-          })
+          }),
         ),
-      ])
+      ]),
     ),
     naught,
-    { path: 'normal_dmg_' }
-  )
+    { path: 'normal_dmg_' },
+  ),
 )
 
 const [condHitPassivePath, condHitPassive] = cond(key, 'hitPassive')
@@ -62,18 +62,18 @@ const hit_normal_dmg_ = equal(
         hit,
         prod(
           hit,
-          subscript(input.weapon.refinement, hit_normal_dmg_arr, { unit: '%' })
+          subscript(input.weapon.refinement, hit_normal_dmg_arr, { unit: '%' }),
         ),
-      ])
+      ]),
     ),
     naught,
-    { path: 'normal_dmg_' }
-  )
+    { path: 'normal_dmg_' },
+  ),
 )
 
 const finalNormal_dmg_ = min(
   subscript(input.weapon.refinement, max_normal_dmg_arr, { unit: '%' }),
-  sum(time_normal_dmg_, hit_normal_dmg_)
+  sum(time_normal_dmg_, hit_normal_dmg_),
 )
 
 const data = dataObjForWeaponSheet(key, {
@@ -121,7 +121,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
     {
@@ -145,7 +145,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

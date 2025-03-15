@@ -25,17 +25,17 @@ const eleMas = lookup(
     stacksArr.map((stacks) => [
       stacks,
       prod(subscript(input.weapon.refinement, eleMasArr), stacks),
-    ])
+    ]),
   ),
-  naught
+  naught,
 )
 
 const atk_ = lookup(
   condStacks,
   Object.fromEntries(
-    stacksArr.map((stacks) => [stacks, prod(percent(-0.05), stacks)])
+    stacksArr.map((stacks) => [stacks, prod(percent(-0.05), stacks)]),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {
@@ -67,7 +67,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

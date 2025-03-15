@@ -26,7 +26,7 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
       weaponSheet &&
       weapon &&
       computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
-    [weaponSheet, weapon]
+    [weaponSheet, weapon],
   )
   if (!weapon || !weaponSheet || !UIData) return null
 

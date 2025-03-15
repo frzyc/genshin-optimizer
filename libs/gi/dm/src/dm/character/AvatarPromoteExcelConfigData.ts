@@ -55,7 +55,7 @@ type AvatarPromoteExcelConfigData = {
   requiredPlayerLevel: number // 15
 }
 const ascensionSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarPromoteExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/AvatarPromoteExcelConfigData.json'),
 ) as AvatarPromoteExcelConfigData[]
 
 export type AscensionRecord = {
@@ -84,7 +84,7 @@ ascensionSrc.forEach((asc) => {
   if (!ascensionData[avatarPromoteId]) ascensionData[avatarPromoteId] = []
   ascensionData[avatarPromoteId][promoteLevel] = {
     props: Object.fromEntries(
-      addProps.map(({ propType, value = 0 }) => [propTypeMap[propType], value])
+      addProps.map(({ propType, value = 0 }) => [propTypeMap[propType], value]),
     ),
     scoinCost: scoinCost ?? 0,
     costItems,

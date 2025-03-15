@@ -22,7 +22,7 @@ export default function BonusStatsCard() {
   const { data } = useContext(DataContext)
   const bonusStatsKeys = Object.keys(bonusStats)
   const nodes = bonusStatsKeys.map((k) =>
-    data.get(input.customBonus[k] as NumNode)
+    data.get(input.customBonus[k] as NumNode),
   )
   return (
     <CardThemed bgt="light">

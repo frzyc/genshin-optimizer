@@ -43,12 +43,12 @@ export class Calculator<M = any> {
     return (calc.val ??= Object.assign(
       new (this.constructor as any)(this.cache.keys),
       this,
-      { cache: this.cache.with(tag), calc }
+      { cache: this.cache.with(tag), calc },
     ))
   }
 
   gather<V extends number | string = number | string>(
-    tag: Tag
+    tag: Tag,
   ): CalcResult<V, M>[]
   gather(tag: Tag): CalcResult<number | string, M>[] {
     return this._gather(this.cache.with(tag)).pre
@@ -68,7 +68,7 @@ export class Calculator<M = any> {
       .flatMap(({ tag, value: n }) =>
         n.op === 'reread'
           ? this._gather(cache.with(n.tag)).pre
-          : [this.markGathered(cache.tag, tag, n, this._compute(n, cache))]
+          : [this.markGathered(cache.tag, tag, n, this._compute(n, cache))],
       )
     return (cache.val = { pre })
   }
@@ -81,7 +81,7 @@ export class Calculator<M = any> {
       val: number | string,
       x: (CalcResult<number | string, M> | undefined)[],
       br: CalcResult<number | string, M>[],
-      tag?: Tag
+      tag?: Tag,
     ) => Object.freeze({ val, meta: this.computeMeta(n, val, x, br, tag) })
 
     const { op } = n
@@ -119,7 +119,7 @@ export class Calculator<M = any> {
       case 'dtag': {
         const tags = n.br.map((br) => this._compute(br, cache))
         const newCache = cache.with(
-          Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.val]))
+          Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.val])),
         )
         const result = this._compute(n.x[0]!, newCache)
         return finalize(result.val, [result], tags, newCache.tag)
@@ -152,7 +152,7 @@ export class Calculator<M = any> {
     _tag: Tag,
     _entryTag: Tag,
     _n: AnyNode | undefined,
-    result: CalcResult<number | string, M>
+    result: CalcResult<number | string, M>,
   ): CalcResult<number | string, M> {
     return result
   }
@@ -161,7 +161,7 @@ export class Calculator<M = any> {
     _value: number | string,
     _x: (CalcResult<number | string, M> | undefined)[],
     _br: CalcResult<number | string, M>[],
-    _tag: Tag | undefined
+    _tag: Tag | undefined,
   ): M {
     return undefined as any
   }

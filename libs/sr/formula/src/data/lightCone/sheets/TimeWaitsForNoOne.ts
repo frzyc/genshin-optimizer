@@ -25,11 +25,11 @@ const sheet = registerLightCone(
       1,
       prod(
         recordedHealing,
-        percent(subscript(superimpose, dm.additional_dmg_scaling))
-      )
+        percent(subscript(superimpose, dm.additional_dmg_scaling)),
+      ),
     ),
     [1],
-    { cond: cmpGE(lcCount, 1, 'infer', '') }
-  )
+    { cond: cmpGE(lcCount, 1, 'infer', '') },
+  ),
 )
 export default sheet

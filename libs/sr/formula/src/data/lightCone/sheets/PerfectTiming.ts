@@ -23,11 +23,11 @@ const sheet = registerLightCone(
         1,
         min(
           subscript(superimpose, dm.max_heal_),
-          prod(own.final.eff_res_, subscript(superimpose, dm.heal_scaling))
-        )
-      )
+          prod(own.final.eff_res_, subscript(superimpose, dm.heal_scaling)),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

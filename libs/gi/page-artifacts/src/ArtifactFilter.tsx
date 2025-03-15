@@ -29,7 +29,7 @@ export default function ArtifactFilter({
       database.displayArtifact.set({
         filterOption: { ...filterOption, ...option },
       }),
-    [database, filterOption]
+    [database, filterOption],
   )
 
   return (
@@ -92,27 +92,27 @@ export function ArtifactRedButtons({ artifactIds }: { artifactIds: string[] }) {
   const database = useDatabase()
   const { numDelete, numUnequip, numUnlock, numLock } = useMemo(() => {
     const artifacts = artifactIds.map((id) =>
-      database.arts.get(id)
+      database.arts.get(id),
     ) as ICachedArtifact[]
     const numUnlock = artifacts.reduce((a, art) => a + (art.lock ? 0 : 1), 0)
     const numLock = artifacts.length - numUnlock
     const numDelete = numUnlock
     const numUnequip = artifacts.reduce(
       (a, art) => a + (art.location ? 1 : 0),
-      0
+      0,
     )
     return { numDelete, numUnequip, numUnlock, numLock }
   }, [artifactIds, database])
 
   const unequipArtifacts = () =>
     window.confirm(
-      `Are you sure you want to unequip ${numUnequip} artifacts currently equipped on characters?`
+      `Are you sure you want to unequip ${numUnequip} artifacts currently equipped on characters?`,
     ) && artifactIds.map((id) => database.arts.set(id, { location: '' }))
 
   const deleteArtifacts = () =>
     window.confirm(`Are you sure you want to delete ${numDelete} artifacts?`) &&
     artifactIds.map(
-      (id) => !database.arts.get(id)?.lock && database.arts.remove(id)
+      (id) => !database.arts.get(id)?.lock && database.arts.remove(id),
     )
 
   const lockArtifacts = () =>

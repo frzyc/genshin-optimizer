@@ -101,7 +101,7 @@ export default function weaponData() {
         ascensionBonus,
       }
       return [weaponIdMap[weaponid], result]
-    })
+    }),
   ) as Record<WeaponKey, WeaponDataGen>
   data.QuantumCatalyst = quantumCatalystData as WeaponDataGen
   return data

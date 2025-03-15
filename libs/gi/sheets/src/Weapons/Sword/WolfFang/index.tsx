@@ -28,8 +28,8 @@ const skill_critRate_ = prod(
   lookup(
     condSkillStacks,
     objKeyMap(stacksArr, (stack) => constant(stack)),
-    naught
-  )
+    naught,
+  ),
 )
 
 const [condBurstStacksPath, condBurstStacks] = cond(key, 'burstStacks')
@@ -38,8 +38,8 @@ const burst_critRate_ = prod(
   lookup(
     condBurstStacks,
     objKeyMap(stacksArr, (stack) => constant(stack)),
-    naught
-  )
+    naught,
+  ),
 )
 
 const data = dataObjForWeaponSheet(key, {

@@ -330,9 +330,9 @@ function CharacterKeyPane() {
         `"${k}" //${t(
           `charNames_gen:${charKeyToLocGenderedCharKey(
             database.chars.LocationToCharacterKey(k),
-            gender
-          )}`
-        )}`
+            gender,
+          )}`,
+        )}`,
     )
     .join(`\n  | `)}`
   return (

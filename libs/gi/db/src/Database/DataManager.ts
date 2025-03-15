@@ -7,7 +7,7 @@ export class DataManager<
   DataKey extends string,
   CacheValue extends StorageValue,
   StorageValue,
-  DatabaseType extends Database
+  DatabaseType extends Database,
 > extends DataManagerBase<
   CacheKey,
   DataKey,

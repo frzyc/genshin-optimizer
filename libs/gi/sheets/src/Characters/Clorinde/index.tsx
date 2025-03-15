@@ -118,13 +118,13 @@ const a1AtkRatio = threshold(
   input.constellation,
   2,
   percent(dm.constellation2.atkRatio),
-  percent(dm.passive1.atkRatio)
+  percent(dm.passive1.atkRatio),
 )
 const a1MaxDmgInc = threshold(
   input.constellation,
   2,
   dm.constellation2.maxDmgInc,
-  dm.passive1.maxDmgInc
+  dm.passive1.maxDmgInc,
 )
 const a1Reactions_normal_dmgInc = greaterEq(
   input.asc,
@@ -134,12 +134,12 @@ const a1Reactions_normal_dmgInc = greaterEq(
     lookup(
       condA1Reactions,
       objKeyMap(a1ReactionsArr, (stack) =>
-        prod(a1AtkRatio, input.total.atk, stack)
+        prod(a1AtkRatio, input.total.atk, stack),
       ),
-      naught
-    )
+      naught,
+    ),
   ),
-  { path: 'normal_dmgInc' }
+  { path: 'normal_dmgInc' },
 )
 const a1Reactions_burst_dmgInc = { ...a1Reactions_normal_dmgInc }
 
@@ -152,29 +152,29 @@ const a4BondChanges_critRate_ = infoMut(
     lookup(
       condA4BondChanges,
       objKeyMap(a4BondChangesArr, (stack) =>
-        percent(stack * dm.passive2.critRate_)
+        percent(stack * dm.passive2.critRate_),
       ),
-      naught
-    )
+      naught,
+    ),
   ),
-  { path: 'critRate_' }
+  { path: 'critRate_' },
 )
 
 const c4BondPercentArr = range(
   10,
   dm.constellation4.max_burst_dmg_ / dm.constellation4.burst_dmg_,
-  5
+  5,
 )
 const [condC4BondPercentPath, condC4BondPercent] = cond(key, 'c4BondPercent')
 const c4BondPercentValue = lookup(
   condC4BondPercent,
   objKeyMap(c4BondPercentArr, (per) => constant(per)),
-  naught
+  naught,
 )
 const c4_burst_dmg_ = greaterEq(
   input.constellation,
   4,
-  prod(percent(dm.constellation4.burst_dmg_), c4BondPercentValue)
+  prod(percent(dm.constellation4.burst_dmg_), c4BondPercentValue),
 )
 
 const [condC6AfterSkillPath, condC6AfterSkill] = cond(key, 'c6AfterSkill')
@@ -182,14 +182,14 @@ const c6AfterSkill_critRate_ = infoMut(
   greaterEq(
     input.constellation,
     6,
-    equal(condC6AfterSkill, 'on', dm.constellation6.critRate_)
+    equal(condC6AfterSkill, 'on', dm.constellation6.critRate_),
   ),
-  { path: 'critRate_' }
+  { path: 'critRate_' },
 )
 const c6AfterSkill_critDMG_ = greaterEq(
   input.constellation,
   6,
-  equal(condC6AfterSkill, 'on', dm.constellation6.critDMG_)
+  equal(condC6AfterSkill, 'on', dm.constellation6.critDMG_),
 )
 
 const electroNormalHit = {
@@ -200,7 +200,7 @@ const electroNormalHit = {
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -214,7 +214,7 @@ const dmgFormulas = {
       'normal',
       electroNormalHit,
       undefined,
-      'skill'
+      'skill',
     ),
     piercingDmg: dmgNode(
       'atk',
@@ -222,7 +222,7 @@ const dmgFormulas = {
       'normal',
       electroNormalHit,
       undefined,
-      'skill'
+      'skill',
     ),
     thrust1Dmg: dmgNode(
       'atk',
@@ -230,7 +230,7 @@ const dmgFormulas = {
       'normal',
       electroNormalHit,
       undefined,
-      'skill'
+      'skill',
     ),
     thrust2Dmg: dmgNode(
       'atk',
@@ -238,7 +238,7 @@ const dmgFormulas = {
       'normal',
       electroNormalHit,
       undefined,
-      'skill'
+      'skill',
     ),
     thrust3Dmg: dmgNode(
       'atk',
@@ -246,7 +246,7 @@ const dmgFormulas = {
       'normal',
       electroNormalHit,
       undefined,
-      'skill'
+      'skill',
     ),
     bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill'),
   },
@@ -264,8 +264,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation1.dmg), input.total.atk),
         'normal',
-        electroNormalHit
-      )
+        electroNormalHit,
+      ),
     ),
   },
   constellation6: {
@@ -275,8 +275,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation6.dmg), input.total.atk),
         'normal',
-        electroNormalHit
-      )
+        electroNormalHit,
+      ),
     ),
   },
 }

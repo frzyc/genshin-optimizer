@@ -16,12 +16,12 @@ const [condNormalPath, condNormal] = cond(key, 'EvernightDuetNormal')
 const skill_dmg_ = equal(
   condSkill,
   'on',
-  subscript(input.weapon.refinement, skill_dmg_s)
+  subscript(input.weapon.refinement, skill_dmg_s),
 )
 const normal_dmg_ = equal(
   condNormal,
   'on',
-  subscript(input.weapon.refinement, normal_dmg_s)
+  subscript(input.weapon.refinement, normal_dmg_s),
 )
 
 const data = dataObjForWeaponSheet(key, {

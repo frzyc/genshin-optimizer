@@ -11,7 +11,7 @@ const plunging_critRate_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
 const plunging_critRate_ = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refinement, plunging_critRate_arr, { unit: '%' })
+  subscript(input.weapon.refinement, plunging_critRate_arr, { unit: '%' }),
 )
 
 const [condAfterPlungingPath, condAfterPlunging] = cond(key, 'afterPlunging')
@@ -19,7 +19,7 @@ const dmg_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
 const normal_dmg_ = equal(
   condAfterPlunging,
   'on',
-  subscript(input.weapon.refinement, dmg_arr, { unit: '%' })
+  subscript(input.weapon.refinement, dmg_arr, { unit: '%' }),
 )
 const charged_dmg_ = { ...normal_dmg_ }
 const plunging_dmg_ = { ...normal_dmg_ }

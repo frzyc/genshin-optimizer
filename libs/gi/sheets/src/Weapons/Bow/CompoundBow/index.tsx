@@ -21,19 +21,19 @@ const atk_ = lookup(
   condPassive,
   {
     ...objKeyMap(range(1, 4), (i) =>
-      prod(subscript(input.weapon.refinement, atk_s), i)
+      prod(subscript(input.weapon.refinement, atk_s), i),
     ),
   },
-  naught
+  naught,
 )
 const atkSPD_ = lookup(
   condPassive,
   {
     ...objKeyMap(range(1, 4), (i) =>
-      prod(subscript(input.weapon.refinement, atkSPD_s), i)
+      prod(subscript(input.weapon.refinement, atkSPD_s), i),
     ),
   },
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {
@@ -64,7 +64,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

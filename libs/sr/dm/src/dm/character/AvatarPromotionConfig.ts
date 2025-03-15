@@ -32,7 +32,7 @@ export type PromotionCostList = {
 }
 
 const avatarPromotionConfigSrc = JSON.parse(
-  readDMJSON('ExcelOutput/AvatarPromotionConfig.json')
+  readDMJSON('ExcelOutput/AvatarPromotionConfig.json'),
 ) as AvatarPromotionConfig[]
 
 const avatarPromotionConfig = {} as Record<AvatarId, AvatarPromotionConfig[]>
@@ -44,6 +44,6 @@ avatarPromotionConfigSrc.forEach((config) => {
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarPromotionConfig_arrayed_gen.json`,
-  avatarPromotionConfig
+  avatarPromotionConfig,
 )
 export { avatarPromotionConfig }

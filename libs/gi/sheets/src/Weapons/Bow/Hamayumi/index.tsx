@@ -22,12 +22,12 @@ const [condPassivePath, condPassive] = cond(key, 'FullDraw')
 const normal_passive = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, normal_dmg_s, { path: 'normal_dmg_' })
+  subscript(input.weapon.refinement, normal_dmg_s, { path: 'normal_dmg_' }),
 )
 const charged_passive = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, charged_dmg_s, { path: 'charged_dmg_' })
+  subscript(input.weapon.refinement, charged_dmg_s, { path: 'charged_dmg_' }),
 )
 
 const data = dataObjForWeaponSheet(key, {

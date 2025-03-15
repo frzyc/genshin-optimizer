@@ -29,7 +29,7 @@ const passive_dmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
     subscript(input.weapon.refinement, passiveRefine, { path: `${ele}_dmg_` }),
-  ])
+  ]),
 )
 const stacks_dmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
@@ -40,19 +40,19 @@ const stacks_dmg_ = Object.fromEntries(
       lookup(
         condNode,
         objKeyMap(stacks, (stack) =>
-          subscript(input.weapon.refinement, stacksRefine[stack])
+          subscript(input.weapon.refinement, stacksRefine[stack]),
         ),
         naught,
-        { path: `${ele}_dmg_` }
-      )
+        { path: `${ele}_dmg_` },
+      ),
     ),
-  ])
+  ]),
 )
 const allEle_dmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
     sum(passive_dmg_[`${ele}_dmg_`], stacks_dmg_[`${ele}_dmg_`]),
-  ])
+  ]),
 )
 
 export const data = dataObjForWeaponSheet(key, {
@@ -83,7 +83,7 @@ const sheet: IWeaponSheet = {
               node: stacks_dmg_[`${ele}_dmg_`],
             })),
           },
-        ])
+        ]),
       ),
     },
   ],

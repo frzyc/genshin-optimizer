@@ -17,7 +17,7 @@ export class MaxPrio<V> {
     const [_, maxDegree] = this.list.reduce(
       (max, cur, iCur) =>
         !cur || (max[0] && max[0].key > cur.key) ? max : [cur, iCur],
-      [undefined as PrioNode<V> | undefined, -1]
+      [undefined as PrioNode<V> | undefined, -1],
     )
     if (maxDegree === this.list.length - 1) this.maxNode = this.list.pop()
     else this.maxNode = this.popNode(maxDegree)

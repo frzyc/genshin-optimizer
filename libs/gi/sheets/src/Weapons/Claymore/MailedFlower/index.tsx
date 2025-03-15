@@ -15,12 +15,12 @@ const [condPassivePath, condPassive] = cond(key, 'passive')
 const atk_ = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, atk_arr, { unit: '%' })
+  subscript(input.weapon.refinement, atk_arr, { unit: '%' }),
 )
 const eleMas = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, eleMasArr)
+  subscript(input.weapon.refinement, eleMasArr),
 )
 const data = dataObjForWeaponSheet(key, {
   premod: {

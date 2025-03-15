@@ -94,38 +94,38 @@ const [condA4StacksPath, condA4Stacks] = cond(key, 'a4Stacks')
 const a4Stacks = lookup(
   condA4Stacks,
   objKeyMap(a4StacksArr, (stack) => constant(stack)),
-  naught
+  naught,
 )
 const a4Stacks_cannon_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(a4Stacks, percent(dm.passive2.dmgPerStack), input.total.atk)
+  prod(a4Stacks, percent(dm.passive2.dmgPerStack), input.total.atk),
 )
 
 const c1Cannon_critDMG_ = greaterEq(
   input.constellation,
   1,
-  dm.constellation1.cannon_critDMG_
+  dm.constellation1.cannon_critDMG_,
 )
 
 const [condC2HitPath, condC2Hit] = cond(key, 'c2Hit')
 const c2Hit_dendro_enemyRes_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2Hit, 'on', -dm.constellation2.dendro_enemyRes_)
+  equal(condC2Hit, 'on', -dm.constellation2.dendro_enemyRes_),
 )
 
 const [condC2FirstHitPath, condC2FirstHit] = cond(key, 'c2FirstHit')
 const c2FirstHit_cannon_dmg_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2FirstHit, 'on', dm.constellation2.cannon_dmg_)
+  equal(condC2FirstHit, 'on', dm.constellation2.cannon_dmg_),
 )
 
 const c4_burst_dmg_ = greaterEq(
   input.constellation,
   4,
-  dm.constellation4.burst_dmg_
+  dm.constellation4.burst_dmg_,
 )
 
 const cannonAddl = {
@@ -138,7 +138,7 @@ const cannonAddl = {
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -166,8 +166,8 @@ const dmgFormulas = {
         {
           hit: { ele: constant('dendro') },
           ...cannonAddl,
-        }
-      )
+        },
+      ),
     ),
   },
 }

@@ -73,14 +73,14 @@ export function ArtifactSwapModal({
       ...action,
       slotKeys: [slotKey],
     }),
-    [slotKey]
+    [slotKey],
   )
 
   const [showEditor, onShowEditor, onHideEditor] = useBoolState(false)
 
   const [filterOption, filterOptionDispatch]: [
     ArtifactFilterOption,
-    (action: any) => void
+    (action: any) => void,
   ] = useReducer(filterOptionReducer, {
     ...initialArtifactFilterOption(),
     slotKeys: [slotKey],
@@ -95,7 +95,7 @@ export function ArtifactSwapModal({
 
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
   const totalArtNum = database.arts.values.filter(
-    (s) => s.slotKey === filterOption.slotKeys[0]
+    (s) => s.slotKey === filterOption.slotKeys[0],
   ).length
 
   const artifactIds = useMemo(() => {
@@ -113,12 +113,12 @@ export function ArtifactSwapModal({
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    artifactIds.length
+    artifactIds.length,
   )
 
   const artifactIdsToShow = useMemo(
     () => artifactIds.slice(0, numShow),
-    [artifactIds, numShow]
+    [artifactIds, numShow],
   )
 
   const totalShowing =

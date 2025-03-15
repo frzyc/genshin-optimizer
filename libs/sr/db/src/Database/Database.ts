@@ -147,7 +147,7 @@ export class SroDatabase extends Database {
   importSROD(
     srod: ISrObjectDescription & ISroDatabase,
     keepNotInImport: boolean,
-    ignoreDups: boolean
+    ignoreDups: boolean,
   ): ImportResult {
     srod = migrateSROD(srod)
     const source = srod.source ?? 'Unknown'
@@ -155,13 +155,13 @@ export class SroDatabase extends Database {
     if (source !== SroSource) {
       srod.relics?.forEach((a) => delete (a as unknown as { id?: string }).id)
       srod.lightCones?.forEach(
-        (a) => delete (a as unknown as { id?: string }).id
+        (a) => delete (a as unknown as { id?: string }).id,
       )
     }
     const result: ImportResult = newImportResult(
       source,
       keepNotInImport,
-      ignoreDups
+      ignoreDups,
     )
 
     // Follow updates from char/relic/lightCone to gather import results
@@ -173,10 +173,10 @@ export class SroDatabase extends Database {
         else arr[ind] = value
       }),
       this.relics.followAny((_key, reason, value) =>
-        result.relics[reason].push(value)
+        result.relics[reason].push(value),
       ),
       this.lightCones.followAny((_key, reason, value) =>
-        result.lightCones[reason].push(value)
+        result.lightCones[reason].push(value),
       ),
     ]
 

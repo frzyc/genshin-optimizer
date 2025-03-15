@@ -21,9 +21,9 @@ const [condEnergyStacksPath, condEnergyStacks] = cond(key, 'energyStacks')
 const eleMas = lookup(
   condEnergyStacks,
   objKeyMap(energyStacksArr, (stack) =>
-    prod(subscript(input.weapon.refinement, eleMas_arr), stack)
+    prod(subscript(input.weapon.refinement, eleMas_arr), stack),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

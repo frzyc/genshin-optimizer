@@ -114,7 +114,7 @@ export class CharacterOptManager extends DataManager<
     condKey: string,
     src: Src,
     dst: Dst,
-    condValue: number
+    condValue: number,
   ) {
     this.set(charKey, (charOpt) => {
       const conditionals = [...charOpt.conditionals]
@@ -123,7 +123,7 @@ export class CharacterOptManager extends DataManager<
           c.condKey === condKey &&
           c.sheet === sheet &&
           c.src === src &&
-          c.dst === dst
+          c.dst === dst,
       )
       if (condIndex === -1) {
         conditionals.push({
@@ -157,7 +157,7 @@ export class CharacterOptManager extends DataManager<
     charKey: CharacterKey,
     tag: Tag,
     value: number | null, // use null to remove the stat
-    index?: number // to edit an existing stat
+    index?: number, // to edit an existing stat
   ) {
     this.set(charKey, (charOpt) => {
       const statIndex =

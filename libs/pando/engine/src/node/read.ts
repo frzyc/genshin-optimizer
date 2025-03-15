@@ -32,24 +32,24 @@ export class TypedRead<T extends Tag> implements BaseRead {
   }
   withAll<C extends keyof T & string>(
     cat: C,
-    keys: (T[C] & string)[]
+    keys: (T[C] & string)[],
   ): Record<T[C] & string, this>
   withAll<C extends keyof T & string, V>(
     cat: C,
     keys: (T[C] & string)[],
-    transform: (r: this, k: T[C] & string) => V
+    transform: (r: this, k: T[C] & string) => V,
   ): Record<T[C] & string, V>
   withAll<C extends keyof T & string, V, Base>(
     cat: C,
     keys: (T[C] & string)[],
     transform: (r: this, k: T[C] & string) => V,
-    base: Base
+    base: Base,
   ): { [k in (T[C] & string) | keyof Base]: k extends keyof Base ? Base[k] : V }
   withAll<C extends keyof T & string, V>(
     cat: C,
     keys: (T[C] & string)[],
     transform: (r: this, k: T[C] & string) => V | this = (x) => x,
-    base: object = {}
+    base: object = {},
   ): Record<T[C] & string, V | this> {
     return new Proxy(base as Record<T[C] & string, V | this>, {
       ownKeys: (_) => keys,

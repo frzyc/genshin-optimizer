@@ -27,15 +27,15 @@ const [condBlessingStacksPath, condBlessingStacks] = cond(key, 'blessingStacks')
 const hp_ = lookup(
   condBlessingStacks,
   objKeyMap(blessingStacksArr, (stack) =>
-    subscript(input.weapon.refinement, stackHp_arrs[stack - 1])
+    subscript(input.weapon.refinement, stackHp_arrs[stack - 1]),
   ),
-  naught
+  naught,
 )
 
 const burst_critRate_ = equal(
   condBlessingStacks,
   '3',
-  subscript(input.weapon.refinement, burst_critRate_arr)
+  subscript(input.weapon.refinement, burst_critRate_arr),
 )
 
 const data = dataObjForWeaponSheet(key, {

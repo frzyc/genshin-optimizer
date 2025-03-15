@@ -62,15 +62,15 @@ type MaterialExcelConfigData = {
 }
 
 const materialExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/MaterialExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/MaterialExcelConfigData.json'),
 ) as MaterialExcelConfigData[]
 //character data
 const materialExcelConfigData = Object.fromEntries(
-  materialExcelConfigDataSrc.map((data) => [data.id, data])
+  materialExcelConfigDataSrc.map((data) => [data.id, data]),
 ) as { [id: number]: MaterialExcelConfigData }
 
 const materialType = new Set(
-  materialExcelConfigDataSrc.map((data) => data.materialType)
+  materialExcelConfigDataSrc.map((data) => data.materialType),
 )
 dumpFile(`${__dirname}/MaterialExcelConfigData_MaterialType_gen.json`, [
   ...materialType,
@@ -82,8 +82,8 @@ dumpFile(
     materialExcelConfigDataSrc.map((data) => [
       data.id,
       nameToKey(TextMapEN[data.nameTextMapHash]),
-    ])
-  )
+    ]),
+  ),
 )
 
 // Debug file for seeing what items are in each Material type

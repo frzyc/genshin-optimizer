@@ -180,7 +180,7 @@ export default function TabBuild() {
     useTeammateBuild,
   } = buildSetting
   const { builds: buildsDb, buildDate } = useGeneratedBuildList(
-    generatedBuildListId ?? ''
+    generatedBuildListId ?? '',
   ) ?? { builds: [] as GeneratedBuild[] }
 
   const builds = useConstObj(buildsDb)
@@ -194,7 +194,7 @@ export default function TabBuild() {
   //register changes in artifact database
   useEffect(
     () => database.arts.followAny(setArtsDirty),
-    [setArtsDirty, database]
+    [setArtsDirty, database],
   )
 
   const deferredArtsDirty = useDeferredValue(artsDirty)
@@ -244,9 +244,9 @@ export default function TabBuild() {
     () =>
       objKeyMap(
         filteredArts.map(({ id }) => id),
-        (_) => true
+        (_) => true,
       ),
-    [filteredArts]
+    [filteredArts],
   )
   const { levelTotal, allowListTotal, excludedTotal, teammateBuildTotal } =
     useMemo(() => {
@@ -283,7 +283,7 @@ export default function TabBuild() {
             if (filteredArtIdMap[id])
               ctMap['teammateBuildTotal']['in'].current++
           }
-        })
+        }),
       )
     }, [
       characterKey,
@@ -327,7 +327,7 @@ export default function TabBuild() {
     const split = compactArtifacts(
       filteredArts,
       mainStatAssumptionLevel,
-      allowPartial
+      allowPartial,
     )
 
     const teamData = getTeamData(
@@ -335,7 +335,7 @@ export default function TabBuild() {
       teamId,
       teamCharId,
       mainStatAssumptionLevel,
-      []
+      [],
     )
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, gender, activeCharKey)[
@@ -345,7 +345,7 @@ export default function TabBuild() {
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const unoptimizedOptimizationTargetNode = objPathValue(
       workerData.display ?? {},
-      optimizationTarget
+      optimizationTarget,
     ) as NumNode | undefined
     if (!unoptimizedOptimizationTargetNode) return
     const targetNode = unoptimizedOptimizationTargetNode
@@ -370,7 +370,7 @@ export default function TabBuild() {
     const nodes = optimize(
       unoptimizedNodes,
       workerData,
-      ({ path: [p] }) => p !== 'dyn'
+      ({ path: [p] }) => p !== 'dyn',
     )
     const plotBaseNode = plotBaseNumNode ? nodes.pop() : undefined
     const optimizationTargetNode = nodes.pop()!
@@ -395,7 +395,7 @@ export default function TabBuild() {
     }
     const statusUpdateTimer = setInterval(
       () => setBuildStatus({ type: 'active', ...status }),
-      100
+      100,
     )
 
     const cancellationError = new Error()
@@ -417,12 +417,12 @@ export default function TabBuild() {
         if (targetNodeinfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) =>
-              dataEntry && (dataEntry.value = dataEntry.value * 100)
+              dataEntry && (dataEntry.value = dataEntry.value * 100),
           )
         if (plotBaseNumNodeInfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) =>
-              dataEntry && (dataEntry.plot = (dataEntry.plot ?? 0) * 100)
+              dataEntry && (dataEntry.plot = (dataEntry.plot ?? 0) * 100),
           )
         setChartData({
           valueNode: targetNode,
@@ -432,8 +432,8 @@ export default function TabBuild() {
             .map(({ value, plot, artifactIds }) => ({
               artifactIds: objKeyMap(allArtifactSlotKeys, (slotKey) =>
                 artifactIds.find(
-                  (aId) => database.arts.get(aId)?.slotKey === slotKey
-                )
+                  (aId) => database.arts.get(aId)?.slotKey === slotKey,
+                ),
               ),
               weaponId,
               value,
@@ -443,7 +443,7 @@ export default function TabBuild() {
       }
       const builds = mergeBuilds(
         results.map((x) => x.builds),
-        maxBuildsToShow
+        maxBuildsToShow,
       )
       if (process.env['NODE_ENV'] === 'development')
         console.log('Build Result', builds)
@@ -452,8 +452,8 @@ export default function TabBuild() {
         builds: builds.map((build) => ({
           artifactIds: objKeyMap(allArtifactSlotKeys, (slotKey) =>
             build.artifactIds.find(
-              (aId) => database.arts.get(aId)?.slotKey === slotKey
-            )
+              (aId) => database.arts.get(aId)?.slotKey === slotKey,
+            ),
           ),
           weaponId,
         })),
@@ -515,7 +515,7 @@ export default function TabBuild() {
       database.optConfigs.set(optConfigId, { plotBase })
       setChartData(undefined)
     },
-    [database, optConfigId, setChartData]
+    [database, optConfigId, setChartData],
   )
 
   const targetSelector = (
@@ -537,7 +537,7 @@ export default function TabBuild() {
         Graph #{{ count: index + 1 }}
       </Trans>
     ),
-    [t]
+    [t],
   )
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
 
@@ -595,7 +595,7 @@ export default function TabBuild() {
                 <AssumeFullLevelToggle
                   mainStatAssumptionLevel={mainStatAssumptionLevel}
                   setmainStatAssumptionLevel={(
-                    mainStatAssumptionLevel: number
+                    mainStatAssumptionLevel: number,
                   ) =>
                     database.optConfigs.set(optConfigId, {
                       mainStatAssumptionLevel,
@@ -932,7 +932,7 @@ const BuildList = memo(function BuildList({
         setBuilds(builds_)
       }
     },
-    [builds, setBuilds]
+    [builds, setBuilds],
   )
   // retrive this value because inner calcs depends on this
   const teamCharacterContextValue = useContext(TeamCharacterContext)
@@ -1026,7 +1026,7 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
       teamCharId,
       weaponTypeKey,
       weapon,
-      Object.values(build.artifactIds).map((id) => database.arts.get(id))
+      Object.values(build.artifactIds).map((id) => database.arts.get(id)),
     )
     if (buildTcId)
       database.buildTcs.set(buildTcId, {
@@ -1191,7 +1191,7 @@ const DataContextWrapper = memo(function DataContextWrapper({
   useEffect(
     () =>
       weaponId ? database.weapons.follow(weaponId, () => setDirty()) : () => {},
-    [database, weaponId, setDirty]
+    [database, weaponId, setDirty],
   )
   const buildsArts = useMemo(
     () =>
@@ -1199,11 +1199,11 @@ const DataContextWrapper = memo(function DataContextWrapper({
       (Object.values(artifactIds)
         .map((i) => database.arts.get(i))
         .filter((a) => a) as ICachedArtifact[]),
-    [dirty, artifactIds, database]
+    [dirty, artifactIds, database],
   )
   const buildWeapon = useMemo(
     () => dirty && database.weapons.get(weaponId),
-    [dirty, weaponId, database]
+    [dirty, weaponId, database],
   )
   const teamData = useTeamData(mainStatAssumptionLevel, buildsArts, buildWeapon)
   const providerValue = useMemo(() => {

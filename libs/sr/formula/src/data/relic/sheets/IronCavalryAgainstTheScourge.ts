@@ -26,11 +26,11 @@ const sheet = registerRelic(
         cmpGE(
           own.final.brEffect_,
           dm[4].brEffect_threshold1,
-          dm[4].break_defIgn_
-        )
-      )
+          dm[4].break_defIgn_,
+        ),
+      ),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
+    cmpGE(relicCount, 4, 'infer', ''),
   ),
   // TODO: Change to Super Break
   registerBuff(
@@ -43,11 +43,11 @@ const sheet = registerRelic(
         cmpGE(
           own.final.brEffect_,
           dm[4].brEffect_threshold2,
-          dm[4].superBreak_defIgn_
-        )
-      )
+          dm[4].superBreak_defIgn_,
+        ),
+      ),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
-  )
+    cmpGE(relicCount, 4, 'infer', ''),
+  ),
 )
 export default sheet

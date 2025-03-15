@@ -26,7 +26,7 @@ const skill_dmg_arr = [-1, 0.18, 0.225, 0.27, 0.315, 0.36]
 const atk_ = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refinement, atk_arr)
+  subscript(input.weapon.refinement, atk_arr),
 )
 
 const [condSealsPath, condSeals] = cond(key, 'seals')
@@ -36,10 +36,10 @@ const skill_dmg_ = lookup(
   objKeyMap(sealsArr, (stack) =>
     prod(
       stack,
-      subscript(input.weapon.refinement, skill_dmg_arr, { unit: '%' })
-    )
+      subscript(input.weapon.refinement, skill_dmg_arr, { unit: '%' }),
+    ),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

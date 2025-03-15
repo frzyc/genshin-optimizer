@@ -33,7 +33,7 @@ export class LightConeDataManager extends DataManager<
   }
   override toCache(
     storageObj: ILightCone,
-    id: string
+    id: string,
   ): ICachedLightCone | undefined {
     const newLightCone = { ...storageObj, id }
     const oldLightCone = super.get(id)
@@ -70,7 +70,7 @@ export class LightConeDataManager extends DataManager<
       if (prevChar)
         this.database.chars.setEquippedLightCone(
           prevChar.key,
-          prevLightCone?.id
+          prevLightCone?.id,
         )
     } else
       newLightCone.location &&
@@ -95,7 +95,7 @@ export class LightConeDataManager extends DataManager<
   }
   override importSROD(
     srod: ISrObjectDescription & ISroDatabase,
-    result: ImportResult
+    result: ImportResult,
   ) {
     result.lightCones.beforeMerge = this.values.length
 
@@ -130,7 +130,7 @@ export class LightConeDataManager extends DataManager<
       if (!result.ignoreDups) {
         const { duplicated, upgraded } = this.findDups(
           lightCone,
-          Array.from(idsToRemove)
+          Array.from(idsToRemove),
         )
         if (duplicated[0] || upgraded[0]) {
           foundDupOrUpgrade = true
@@ -141,8 +141,8 @@ export class LightConeDataManager extends DataManager<
             upgraded[0]?.location === lightCone.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((w) => w.id === importId)
@@ -194,7 +194,7 @@ export class LightConeDataManager extends DataManager<
 
   findDups(
     lightCone: ILightCone,
-    idList = this.keys
+    idList = this.keys,
   ): { duplicated: ICachedLightCone[]; upgraded: ICachedLightCone[] } {
     const { key, level, ascension, superimpose } = lightCone
 
@@ -206,7 +206,7 @@ export class LightConeDataManager extends DataManager<
         key === candidate.key &&
         level >= candidate.level &&
         ascension >= candidate.ascension &&
-        superimpose >= candidate.superimpose
+        superimpose >= candidate.superimpose,
     )
 
     // Strictly upgraded lightCones
@@ -215,10 +215,10 @@ export class LightConeDataManager extends DataManager<
         (candidate) =>
           level > candidate.level ||
           ascension > candidate.ascension ||
-          superimpose > candidate.superimpose
+          superimpose > candidate.superimpose,
       )
       .sort((candidates) =>
-        candidates.location === lightCone.location ? -1 : 1
+        candidates.location === lightCone.location ? -1 : 1,
       )
     // Strictly duplicated lightCones
     const duplicated = candidates
@@ -226,10 +226,10 @@ export class LightConeDataManager extends DataManager<
         (candidate) =>
           level === candidate.level &&
           ascension === candidate.ascension &&
-          superimpose === candidate.superimpose
+          superimpose === candidate.superimpose,
       )
       .sort((candidates) =>
-        candidates.location === lightCone.location ? -1 : 1
+        candidates.location === lightCone.location ? -1 : 1,
       )
     return { duplicated, upgraded }
   }

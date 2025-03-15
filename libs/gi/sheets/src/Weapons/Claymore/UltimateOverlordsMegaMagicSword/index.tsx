@@ -28,7 +28,7 @@ const atk_ = equal(
   input.weapon.key,
   key,
   subscript(input.weapon.refinement, atk_arr),
-  { path: 'atk_' }
+  { path: 'atk_' },
 )
 
 const [condMelusinesPath, condMelusines] = cond(key, 'melusines')
@@ -37,10 +37,10 @@ const melusinesArr = range(1, 12)
 const atk_2 = lookup(
   condMelusines,
   objKeyMap(melusinesArr, (stack) =>
-    prod(stack, subscript(input.weapon.refinement, atk2_arr, { unit: '%' }))
+    prod(stack, subscript(input.weapon.refinement, atk2_arr, { unit: '%' })),
   ),
   naught,
-  { path: 'atk_' }
+  { path: 'atk_' },
 )
 
 const data = dataObjForWeaponSheet(key, {

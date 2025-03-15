@@ -98,7 +98,7 @@ export default function characterData(): CharacterData {
               const skillParamList = getSkillParamList(
                 LevelUpSkillID,
                 skillTreeType,
-                skillTree
+                skillTree,
               )
 
               const levels = skillTree.map(({ StatusAddList }) => {
@@ -106,7 +106,7 @@ export default function characterData(): CharacterData {
                 const stats = Object.fromEntries(
                   StatusAddList.map(({ PropertyType, Value }) => {
                     return [statKeyMap[PropertyType], Value.Value]
-                  })
+                  }),
                 )
                 return { stats }
               })
@@ -124,8 +124,8 @@ export default function characterData(): CharacterData {
                 },
               ]
               return tuple
-            }
-          )
+            },
+          ),
         )
         const servantSkillTree:
           | Record<ServantSkillTreeType, SkillTree>
@@ -168,7 +168,7 @@ export default function characterData(): CharacterData {
             crit_: CriticalChance.Value,
             crit_dmg_: CriticalDamage.Value,
             taunt: BaseAggro.Value,
-          })
+          }),
         )
 
         const rankMap = objKeyMap(allRanks, (eidolon): RankInfo => {
@@ -186,8 +186,8 @@ export default function characterData(): CharacterData {
                     attackType ? DmAttackTypeMap[attackType] : 'talent',
                     levelBoost,
                   ]
-                }
-              )
+                },
+              ),
             ),
             params: rankConfig.Param.map((p) => p.Value),
           }
@@ -209,8 +209,8 @@ export default function characterData(): CharacterData {
           ? (genderedKey.slice(0, -1) as TrailblazerKey)
           : genderedKey
         return [charKey, result]
-      }
-    )
+      },
+    ),
   )
 
   verifyObjKeys(data, allCharacterKeys)
@@ -221,7 +221,7 @@ export default function characterData(): CharacterData {
 function getSkillParamList(
   LevelUpSkillID: number[],
   skillTreeType: SkillTreeType,
-  skillTree: AvatarSkillTreeConfig[]
+  skillTree: AvatarSkillTreeConfig[],
 ): number[][][] {
   if (LevelUpSkillID.length > 0) {
     if (skillTree[0].PointType !== 4) {
@@ -239,7 +239,7 @@ function getSkillParamList(
 
 function getSkillParamFromAvatarSkill(
   LevelUpSkillID: number[],
-  skillTreeType: SkillTreeType
+  skillTreeType: SkillTreeType,
 ) {
   return LevelUpSkillID.map((skillId) =>
     // Add -1 at the beginning of arrays for basic, skill, ult, talent
@@ -248,13 +248,13 @@ function getSkillParamFromAvatarSkill(
         ? []
         : [
             range(1, avatarSkillConfig[skillId][0].ParamList!.length).map(
-              () => -1
+              () => -1,
             ),
           ]),
       ...avatarSkillConfig[skillId]!.map(({ ParamList }) =>
-        ParamList.map(({ Value }) => Value)
+        ParamList.map(({ Value }) => Value),
       ),
-    ])
+    ]),
   )
 }
 
@@ -269,11 +269,11 @@ function getSkillParamFromAvatarServantSkill(LevelUpSkillID: number[]) {
     transposeArray([
       // Add in -1 for level 0
       range(1, avatarServantSkillConfig[skillId][0].ParamList.length).map(
-        () => -1
+        () => -1,
       ),
       ...avatarServantSkillConfig[skillId].map(({ ParamList }) =>
-        ParamList.map(({ Value }) => Value)
+        ParamList.map(({ Value }) => Value),
       ),
-    ])
+    ]),
   )
 }

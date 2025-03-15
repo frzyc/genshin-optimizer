@@ -105,12 +105,12 @@ const [condA1HpStatusPath, condA1HpStatus] = cond(key, 'a1HpStatus')
 const a1Below_heal_ = greaterEq(
   input.asc,
   1,
-  equal(condA1HpStatus, 'below', dm.passive1.heal_)
+  equal(condA1HpStatus, 'below', dm.passive1.heal_),
 )
 const a1Above_dendro_dmg_ = greaterEq(
   input.asc,
   1,
-  equal(condA1HpStatus, 'above', dm.passive1.dendro_dmg_)
+  equal(condA1HpStatus, 'above', dm.passive1.dendro_dmg_),
 )
 
 const [condA4AfterHealPath, condA4AfterHeal] = cond(key, 'a4AfterHeal')
@@ -122,9 +122,9 @@ const a4BurningBloom_dmg_ = greaterEq(
     'on',
     min(
       (dm.passive2.maxHp / 1000) * dm.passive2.burningBloom_dmg_,
-      prod(percent(dm.passive2.burningBloom_dmg_), input.total.hp, 1 / 1000)
-    )
-  )
+      prod(percent(dm.passive2.burningBloom_dmg_), input.total.hp, 1 / 1000),
+    ),
+  ),
 )
 const a4AggSpread_dmg_ = greaterEq(
   input.asc,
@@ -134,27 +134,27 @@ const a4AggSpread_dmg_ = greaterEq(
     'on',
     min(
       (dm.passive2.maxHp / 1000) * dm.passive2.aggSpread_dmg_,
-      prod(percent(dm.passive2.aggSpread_dmg_), input.total.hp, 1 / 1000)
-    )
-  )
+      prod(percent(dm.passive2.aggSpread_dmg_), input.total.hp, 1 / 1000),
+    ),
+  ),
 )
 
 const [condC4AfterBurstPath, condC4AfterBurst] = cond(key, 'c4AfterBurst')
 const c4AfterBurst_eleMas = greaterEq(
   input.constellation,
   4,
-  equal(condC4AfterBurst, 'on', dm.constellation4.eleMas)
+  equal(condC4AfterBurst, 'on', dm.constellation4.eleMas),
 )
 
 const burstShield = shieldNodeTalent(
   'hp',
   dm.burst.shieldHp,
   dm.burst.shieldBase,
-  'burst'
+  'burst',
 )
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -188,8 +188,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation2.dmg), input.total.atk),
         'skill',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
     heal: greaterEq(
       input.constellation,
@@ -198,20 +198,20 @@ const dmgFormulas = {
         'hp',
         prod(
           subscript(input.total.skillIndex, dm.skill.healHp, { unit: '%' }),
-          percent(dm.constellation2.heal)
+          percent(dm.constellation2.heal),
         ),
         prod(
           subscript(input.total.skillIndex, dm.skill.healBase),
-          percent(dm.constellation2.heal)
-        )
-      )
+          percent(dm.constellation2.heal),
+        ),
+      ),
     ),
   },
   constellation6: {
     vein_dmgInc: greaterEq(
       input.constellation,
       6,
-      prod(percent(dm.constellation6.vein_dmgInc), input.total.hp)
+      prod(percent(dm.constellation6.vein_dmgInc), input.total.hp),
     ),
   },
 }

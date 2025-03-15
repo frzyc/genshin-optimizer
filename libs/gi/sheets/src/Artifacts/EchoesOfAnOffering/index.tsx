@@ -32,10 +32,10 @@ const normal_dmgInc = greaterEq(
         avg: percent(0.7 * 0.50204),
         ...objKeyMap(triggerArr, (chance) => percent(0.7 * chance)),
       },
-      naught
+      naught,
     ),
-    input.total.atk
-  )
+    input.total.atk,
+  ),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

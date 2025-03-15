@@ -15,7 +15,7 @@ export const otherStatKeys = [
 ] as const
 
 export const allStatKeys = Array.from(
-  new Set([...allRelicMainStatKeys, ...allRelicSubStatKeys, ...otherStatKeys])
+  new Set([...allRelicMainStatKeys, ...allRelicSubStatKeys, ...otherStatKeys]),
 )
 export type StatKey = (typeof allStatKeys)[number]
 

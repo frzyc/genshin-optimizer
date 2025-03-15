@@ -26,10 +26,10 @@ type AvatarSkillExcelConfigData = {
   globalValueKey: string //""
 }
 const avatarSkillExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarSkillExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/AvatarSkillExcelConfigData.json'),
 ) as AvatarSkillExcelConfigData[]
 const avatarSkillExcelConfigData = Object.fromEntries(
-  avatarSkillExcelConfigDataSrc.map((data) => [data.id, data])
+  avatarSkillExcelConfigDataSrc.map((data) => [data.id, data]),
 ) as { [id: number]: AvatarSkillExcelConfigData }
 
 export { avatarSkillExcelConfigData }

@@ -30,7 +30,7 @@ export default function DiscFilter({
           ...option,
         },
       }),
-    [database, filterOption]
+    [database, filterOption],
   )
   return (
     <Suspense

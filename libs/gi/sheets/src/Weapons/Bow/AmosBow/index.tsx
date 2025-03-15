@@ -33,7 +33,7 @@ const normal_dmg_arrow_ = lookup(
     ...objKeyMap(range(1, 5), (i) => prod(dmgInc, i)),
   },
   naught,
-  { path: 'normal_dmg_' }
+  { path: 'normal_dmg_' },
 )
 const charged_dmg_arrow_ = lookup(
   condPassive,
@@ -41,7 +41,7 @@ const charged_dmg_arrow_ = lookup(
     ...objKeyMap(range(1, 5), (i) => prod(dmgInc, i)),
   },
   naught,
-  { path: 'charged_dmg_' }
+  { path: 'charged_dmg_' },
 )
 
 const data = dataObjForWeaponSheet(key, {

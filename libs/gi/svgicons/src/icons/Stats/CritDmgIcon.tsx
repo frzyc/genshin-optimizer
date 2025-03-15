@@ -8,5 +8,5 @@ export const CritDmgIcon = createSvgIcon(
     />
     <path d="M 0 24 L 6 10.691406 L 3.382812 2.507812 L 12.4375 6 L 24 0 L 18 12.4375 L 20.617188 20.617188 L 12.4375 18 L 0 24 " />
   </>,
-  'CritDmg'
+  'CritDmg',
 )

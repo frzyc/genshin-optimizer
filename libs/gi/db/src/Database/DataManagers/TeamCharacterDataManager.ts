@@ -86,7 +86,7 @@ export class TeamCharacterDataManager extends DataManager<
   }
   newName(characterKey: CharacterKey) {
     const existingUndercKey = this.values.filter(
-      ({ key }) => key === characterKey
+      ({ key }) => key === characterKey,
     )
     for (
       let num = existingUndercKey.length + 1;
@@ -146,7 +146,7 @@ export class TeamCharacterDataManager extends DataManager<
     if (
       infusionAura &&
       !allInfusionAuraElementKeys.includes(
-        infusionAura as InfusionAuraElementKey
+        infusionAura as InfusionAuraElementKey,
       )
     )
       infusionAura = undefined
@@ -155,19 +155,19 @@ export class TeamCharacterDataManager extends DataManager<
     if (
       reaction &&
       !validReactionKeys.includes(
-        reaction as (typeof validReactionKeys)[number]
+        reaction as (typeof validReactionKeys)[number],
       )
     )
       reaction = undefined
 
     if (!Array.isArray(buildIds)) buildIds = []
     buildIds = buildIds.filter((buildId) =>
-      this.database.builds.keys.includes(buildId)
+      this.database.builds.keys.includes(buildId),
     )
 
     if (!Array.isArray(buildTcIds)) buildTcIds = []
     buildTcIds = buildTcIds.filter((buildTcId) =>
-      this.database.buildTcs.keys.includes(buildTcId)
+      this.database.buildTcs.keys.includes(buildTcId),
     )
 
     if (!optConfigId || !this.database.optConfigs.keys.includes(optConfigId))
@@ -198,7 +198,7 @@ export class TeamCharacterDataManager extends DataManager<
   }
   override remove(
     teamCharId: string,
-    notify?: boolean
+    notify?: boolean,
   ): TeamCharacter | undefined {
     const rem = super.remove(teamCharId, notify)
     if (!rem) return
@@ -209,7 +209,7 @@ export class TeamCharacterDataManager extends DataManager<
         this.database.teams
           .get(teamId)!
           .loadoutData.some(
-            (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId
+            (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId,
           )
       )
         this.database.teams.set(teamId, {}) // use validator to remove teamCharId entries
@@ -228,15 +228,15 @@ export class TeamCharacterDataManager extends DataManager<
     const teamChar = deepClone(teamCharRaw)
 
     teamChar.buildIds = teamChar.buildIds.map((buildId) =>
-      this.database.builds.duplicate(buildId)
+      this.database.builds.duplicate(buildId),
     )
 
     teamChar.buildTcIds = teamChar.buildTcIds.map((buildTcId) =>
-      this.database.buildTcs.duplicate(buildTcId)
+      this.database.buildTcs.duplicate(buildTcId),
     )
 
     teamChar.optConfigId = this.database.optConfigs.duplicate(
-      teamChar.optConfigId
+      teamChar.optConfigId,
     )
     teamChar.name = `${teamChar.name} (duplicated)`
     return this.new(teamChar.key, teamChar)
@@ -278,11 +278,11 @@ export class TeamCharacterDataManager extends DataManager<
     teamcharId: string,
     weaponTypeKey: WeaponTypeKey,
     weapon?: ICachedWeapon,
-    arts: Array<ICachedArtifact | undefined> = []
+    arts: Array<ICachedArtifact | undefined> = [],
   ): string | undefined {
     if (!this.get(teamcharId)) return undefined
     const buildTc = initCharTC(
-      weapon?.key ?? defaultInitialWeaponKey(weaponTypeKey)
+      weapon?.key ?? defaultInitialWeaponKey(weaponTypeKey),
     )
     toBuildTc(buildTc, weapon, arts)
     const buildTcId = this.database.buildTcs.new(buildTc)
@@ -313,12 +313,12 @@ export class TeamCharacterDataManager extends DataManager<
       const { equippedArtifacts, equippedWeapon } = char
       const weapon = this.database.weapons.get(equippedWeapon)
       const arts = Object.values(equippedArtifacts).map((id) =>
-        this.database.arts.get(id)
+        this.database.arts.get(id),
       )
       const buildTC = toBuildTc(
         initCharTC(defaultInitialWeaponKey(weaponType)),
         weapon,
-        arts
+        arts,
       )
       buildTC.name = 'Equipped(Converted)'
       buildTC.description = 'Converted from Equipped'
@@ -332,12 +332,12 @@ export class TeamCharacterDataManager extends DataManager<
         const { name, description, weaponId, artifactIds } = build
         const weapon = this.database.weapons.get(weaponId)
         const arts = Object.values(artifactIds).map((id) =>
-          this.database.arts.get(id)
+          this.database.arts.get(id),
         )
         const buildTC = toBuildTc(
           initCharTC(defaultInitialWeaponKey(weaponType)),
           weapon,
-          arts
+          arts,
         )
         buildTC.name = name
         buildTC.description = description
@@ -367,11 +367,11 @@ export class TeamCharacterDataManager extends DataManager<
         ...convertedTcBuilds,
       ].filter(notEmpty),
       customMultiTargets: customMultiTargets.filter((_, i) =>
-        exportCustomMultiTarget.includes(i)
+        exportCustomMultiTarget.includes(i),
       ),
       optConfig: this.database.optConfigs.export(
         optConfigId,
-        overrideOptTarget
+        overrideOptTarget,
       ),
     }
   }

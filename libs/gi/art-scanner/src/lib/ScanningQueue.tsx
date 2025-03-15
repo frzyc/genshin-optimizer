@@ -13,7 +13,7 @@ const maxProcessingCount = 3,
 
 type textsFromImageFunc = (
   imageData: ImageData,
-  options?: object | undefined
+  options?: object | undefined,
 ) => Promise<string[]>
 
 export class ScanningQueue {
@@ -36,7 +36,7 @@ export class ScanningQueue {
     const numProcessing = Math.min(
       maxProcessedCount - this.processed.length - this.scanning.length,
       maxProcessingCount - this.scanning.length,
-      this.outstanding.length
+      this.outstanding.length,
     )
     numProcessing &&
       this.outstanding.splice(0, numProcessing).map((p) => {

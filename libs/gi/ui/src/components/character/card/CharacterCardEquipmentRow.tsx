@@ -47,7 +47,7 @@ function Artifacts() {
           <Grid item key={key} xs={1}>
             <ArtifactCardPico artifactObj={art} slotKey={key} />
           </Grid>
-        )
+        ),
       )}
     </>
   )

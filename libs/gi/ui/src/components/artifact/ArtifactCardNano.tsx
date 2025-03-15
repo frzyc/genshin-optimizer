@@ -54,7 +54,7 @@ export function ArtifactCardNano({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   const theme = useTheme()
   if (!art)
@@ -79,10 +79,10 @@ export function ArtifactCardNano({
   const { slotKey, rarity, level, mainStatKey, substats, location } = art
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),
-    level
+    level,
   )
   const element = allElementWithPhyKeys.find((ele) =>
-    art.mainStatKey.includes(ele)
+    art.mainStatKey.includes(ele),
   )
   const color = element
     ? alpha(theme.palette[element].main, 0.6)
@@ -132,7 +132,7 @@ export function ArtifactCardNano({
                   location ? (
                     <CharIconSide
                       characterKey={database.chars.LocationToCharacterKey(
-                        location
+                        location,
                       )}
                     />
                   ) : (

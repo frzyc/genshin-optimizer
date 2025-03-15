@@ -37,7 +37,7 @@ export class DBMetaEntry extends DataEntry<
   }
   override importZOD(
     zoDb: IZZZDatabase & IZenlessObjectDescription,
-    _result: ImportResult
+    _result: ImportResult,
   ): void {
     const data = zoDb[this.dataKey]
     if (data) {

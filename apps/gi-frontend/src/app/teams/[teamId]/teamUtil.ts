@@ -3,7 +3,7 @@ import type { ICharacter } from '@genshin-optimizer/gi/good'
 import type { TeamLoadoutCharacter } from './getTeam'
 
 export function TeamLoadoutCharacterToICharacter(
-  character: TeamLoadoutCharacter
+  character: TeamLoadoutCharacter,
 ): ICharacter {
   const {
     key,

@@ -104,30 +104,30 @@ const a4_dmg_ = greaterEq(
     'on',
     min(
       prod(input.total.atk, 1 / 1000, percent(dm.passive2.burn_dmg_)),
-      percent(dm.passive2.max_burn_dmg_)
-    )
-  )
+      percent(dm.passive2.max_burn_dmg_),
+    ),
+  ),
 )
 
 const c1_skill_dmg_ = greaterEq(input.constellation, 1, dm.constellation1.dmg_)
 const c1_a1_dmg_ = greaterEq(
   input.constellation,
   1,
-  greaterEq(input.asc, 1, dm.constellation1.dmg_)
+  greaterEq(input.asc, 1, dm.constellation1.dmg_),
 )
 
 const [condC2HitPath, condC2Hit] = cond(key, 'c2Hit')
 const c2Hit_dendro_enemyRes_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2Hit, 'on', percent(-dm.constellation2.dendro_enemyRes_))
+  equal(condC2Hit, 'on', percent(-dm.constellation2.dendro_enemyRes_)),
 )
 
 const [condC6FragrancePath, condC6Fragrance] = cond(key, 'c6Fragrance')
 const c6_infusion = greaterEqStr(
   input.constellation,
   6,
-  equalStr(condC6Fragrance, 'on', 'dendro')
+  equalStr(condC6Fragrance, 'on', 'dendro'),
 )
 const c6_normal_dmgInc = greaterEq(
   input.constellation,
@@ -135,15 +135,15 @@ const c6_normal_dmgInc = greaterEq(
   equal(
     condC6Fragrance,
     'on',
-    prod(percent(dm.constellation6.dmg), input.total.atk)
-  )
+    prod(percent(dm.constellation6.dmg), input.total.atk),
+  ),
 )
 const c6_charged_dmgInc = { ...c6_normal_dmgInc }
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -166,8 +166,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.passive1.dmg), input.total.atk),
         'elemental',
-        { hit: { ele: constant('dendro') }, premod: { all_dmg_: c1_a1_dmg_ } }
-      )
+        { hit: { ele: constant('dendro') }, premod: { all_dmg_: c1_a1_dmg_ } },
+      ),
     ),
   },
   passive2: {

@@ -21,17 +21,17 @@ const sheet = registerRelic(
     'set2_followUp_',
     ownBuff.premod.dmg_.addWithDmgType(
       'followUp',
-      cmpGE(relicCount, 4, dm[2].passive_followUp_)
+      cmpGE(relicCount, 4, dm[2].passive_followUp_),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
+    cmpGE(relicCount, 4, 'infer', ''),
   ),
   // Conditional buffs
   registerBuff(
     'set4_atk_',
     ownBuff.premod.atk_.add(
-      cmpGE(relicCount, 4, prod(followUpDmgDealt, dm[4].atk_))
+      cmpGE(relicCount, 4, prod(followUpDmgDealt, dm[4].atk_)),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
-  )
+    cmpGE(relicCount, 4, 'infer', ''),
+  ),
 )
 export default sheet

@@ -22,7 +22,7 @@ const set2 = greaterEq(input.artSet.BlizzardStrayer, 2, percent(0.15))
 const set4 = greaterEq(
   input.artSet.BlizzardStrayer,
   4,
-  lookup(condState, { cryo: percent(0.2), frozen: percent(0.4) }, naught)
+  lookup(condState, { cryo: percent(0.2), frozen: percent(0.4) }, naught),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

@@ -14,7 +14,7 @@ export type ReqMapEntry = {
 }
 function reqMapEntryAsc(
   talentKey: TalentSheetElementStatBoostKey | TalentSheetElementBonusAbilityKey,
-  ascension: AscensionKey
+  ascension: AscensionKey,
 ): ReqMapEntry {
   return {
     subtitle: (
@@ -29,7 +29,7 @@ function reqMapEntryAsc(
 }
 function reqMapEntryLvl(
   talentKey: TalentSheetElementStatBoostKey | TalentSheetElementBonusAbilityKey,
-  level: number
+  level: number,
 ): ReqMapEntry {
   return {
     subtitle: (

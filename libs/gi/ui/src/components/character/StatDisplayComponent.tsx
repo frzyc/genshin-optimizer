@@ -34,7 +34,7 @@ export function StatDisplayComponent({
   const dataDisplaySections = useMemo(() => getDisplaySections(data), [data])
   const compareDataDisplaySections = useMemo(
     () => compareData && getDisplaySections(compareData),
-    [compareData]
+    [compareData],
   )
   const sections = useMemo(
     () =>
@@ -42,17 +42,17 @@ export function StatDisplayComponent({
         ([key, ns]) =>
           (BonusStatEditor && key === 'bonusStats') ||
           (CustomMTargetEditor && key === 'custom') ||
-          Object.values(ns).some((n) => !n.isEmpty)
+          Object.values(ns).some((n) => !n.isEmpty),
       ),
-    [dataDisplaySections, BonusStatEditor, CustomMTargetEditor]
+    [dataDisplaySections, BonusStatEditor, CustomMTargetEditor],
   )
   const compareSections = useMemo(
     () =>
       compareDataDisplaySections &&
       compareDataDisplaySections.filter(([, ns]) =>
-        Object.values(ns).some((n) => !n.isEmpty)
+        Object.values(ns).some((n) => !n.isEmpty),
       ),
-    [compareDataDisplaySections]
+    [compareDataDisplaySections],
   )
   const sectionKeys = useMemo(() => {
     const sectionKeys = sections.map(([key]) => key)
@@ -74,8 +74,8 @@ export function StatDisplayComponent({
               key === 'bonusStats'
                 ? BonusStatEditor
                 : key === 'custom'
-                ? CustomMTargetEditor
-                : undefined
+                  ? CustomMTargetEditor
+                  : undefined
             }
           />
         ))}
@@ -104,7 +104,7 @@ function Section({
     () =>
       getDisplayHeader(data, sectionKey, database) ??
       (compareData && getDisplayHeader(compareData, sectionKey, database)),
-    [database, data, compareData, sectionKey]
+    [database, data, compareData, sectionKey],
   )
   const keys = useMemo(() => {
     const keySet = new Set<string>()

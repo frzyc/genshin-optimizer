@@ -33,12 +33,12 @@ import { allStats } from '@genshin-optimizer/sr/stats'
 export function getRelicMainStatVal(
   rarity: RelicRarityKey,
   statKey: RelicMainStatKey,
-  level: number
+  level: number,
 ) {
   const { base, add } = allStats.relic.main[rarity][statKey] ?? {}
   if (base === undefined || add === undefined)
     throw new Error(
-      `Attempted to get relic main stat value that doesn't exist for a level ${level} ${rarity}-star, ${statKey} relic.`
+      `Attempted to get relic main stat value that doesn't exist for a level ${level} ${rarity}-star, ${statKey} relic.`,
     )
   return base + add * level
 }
@@ -46,11 +46,11 @@ export function getRelicMainStatVal(
 export function getRelicMainStatDisplayVal(
   rarity: RelicRarityKey,
   statKey: RelicMainStatKey,
-  level: number
+  level: number,
 ) {
   return toPercent(
     getRelicMainStatVal(rarity, statKey, level),
-    statKey
+    statKey,
   ).toFixed(statToFixed(statKey))
 }
 export function statToFixed(statKey: RelicMainStatKey | RelicSubStatKey) {
@@ -62,12 +62,12 @@ export function getSubstatValue(
   rarity: RelicRarityKey,
   statKey: RelicSubStatKey,
   type: 'low' | 'med' | 'high' = 'high',
-  round = true
+  round = true,
 ) {
   const { base, step } = allStats.relic.sub[rarity][statKey] ?? {}
   if (base === undefined || step === undefined)
     throw new Error(
-      `Attempted to get relic sub stat value that doesn't exist for a ${rarity}-star relic with substat ${statKey}.`
+      `Attempted to get relic sub stat value that doesn't exist for a ${rarity}-star relic with substat ${statKey}.`,
     )
   const steps = type === 'low' ? 0 : type === 'med' ? 1 : 2
   const value = base + steps * step
@@ -78,7 +78,7 @@ export function getSubstatValue(
 export function getSubstatRange(
   rarity: RelicRarityKey,
   statKey: RelicSubStatKey,
-  round = true
+  round = true,
 ) {
   const { numUpgrades } = relicSubstatRollData[rarity]
   const high =
@@ -98,7 +98,7 @@ export function randomizeRelic(base: Partial<IRelic> = {}): IRelic {
     getRandomElementFromArray(
       [...(allRelicPlanarSetKeys as readonly string[])].includes(setKey)
         ? allRelicPlanarSlotKeys
-        : allRelicCavernSlotKeys
+        : allRelicCavernSlotKeys,
     )
   const mainStatKey: RelicMainStatKey =
     base.mainStatKey ?? getRandomElementFromArray(relicSlotToMainStatKeys[slot])
@@ -116,7 +116,7 @@ export function randomizeRelic(base: Partial<IRelic> = {}): IRelic {
       allStats.relic.sub[rarity][substat].step
 
   let remainingSubstats = allRelicSubStatKeys.filter(
-    (key) => mainStatKey !== key
+    (key) => mainStatKey !== key,
   )
   for (const substat of substats.slice(0, numOfInitialSubstats)) {
     substat.key = getRandomElementFromArray(remainingSubstats)
@@ -149,7 +149,7 @@ export function randomizeRelic(base: Partial<IRelic> = {}): IRelic {
  */
 export function roundStat(
   value: number,
-  statKey: RelicMainStatKey | RelicSubStatKey
+  statKey: RelicMainStatKey | RelicSubStatKey,
 ) {
   return getUnitStr(statKey) === '%'
     ? Math.round(value * 10000) / 10000
@@ -159,18 +159,18 @@ export function roundStat(
 // TODO: implement when roll table is added
 export function getSubstatSummedRolls(
   rarity: RelicRarityKey,
-  key: RelicSubStatKey
+  key: RelicSubStatKey,
 ): number[] {
   // for now, return min and max range
   return Object.values(getSubstatRange(rarity, key, false)).map((v) =>
-    toPercent(v, key)
+    toPercent(v, key),
   )
 }
 
 // TODO: implement when roll table is added
 export function getSubstatValuesPercent(
   substatKey: RelicSubStatKey,
-  rarity: RelicRarityKey
+  rarity: RelicRarityKey,
 ) {
   console.log('getSubstatValuesPercent', substatKey, rarity)
   return []

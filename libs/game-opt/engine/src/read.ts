@@ -22,7 +22,7 @@ import type { EntryType, Preset } from './listing'
 export interface Tag<
   Sheet extends string = string,
   Src extends string | null = string | null,
-  Dst extends string | null = string | null
+  Dst extends string | null = string | null,
 > extends BaseTag {
   preset?: Preset
   src?: Src | null
@@ -67,7 +67,7 @@ export class Read<Tag_ extends Tag = Tag> extends TypedRead<Tag_> {
   }
   addOnce(
     sheet: Sheet<Tag_>,
-    value: number | NumNode
+    value: number | NumNode,
   ): TagMapNodeEntries<Tag_> {
     if (this.tag.et !== 'teamBuff' || !sheet)
       throw new Error('Unsupported non-stacking entry')
@@ -107,19 +107,19 @@ export const usedQ = new Set('_')
 
 export function tag<Tag_ extends Tag>(
   v: number | NumNode,
-  tag: Tag_
+  tag: Tag_,
 ): TagOverride<NumNode>
 export function tag<Tag_ extends Tag>(
   v: string | StrNode,
-  tag: Tag_
+  tag: Tag_,
 ): TagOverride<StrNode>
 export function tag<Tag_ extends Tag>(
   v: number | string | AnyNode,
-  tag: Tag_
+  tag: Tag_,
 ): TagOverride<AnyNode>
 export function tag<Tag_ extends Tag>(
   v: number | string | AnyNode,
-  tag: Tag_
+  tag: Tag_,
 ): TagOverride<AnyNode> {
   return typeof v == 'object' && v.op == 'tag'
     ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes

@@ -14,7 +14,7 @@ const [condPath, condNode] = cond(key, 'hp')
 const set4 = greaterEq(
   input.artSet.BraveHeart,
   4,
-  equal('50', condNode, percent(0.3))
+  equal('50', condNode, percent(0.3)),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

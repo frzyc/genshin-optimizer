@@ -28,11 +28,11 @@ const sheet = registerLightCone(
         cmpEq(
           childishness.value,
           1,
-          subscript(superimpose, dm.basic_skill_ult_dmg_)
-        )
-      )
+          subscript(superimpose, dm.basic_skill_ult_dmg_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'skill_dmg_',
@@ -44,11 +44,11 @@ const sheet = registerLightCone(
         cmpEq(
           childishness.value,
           2,
-          subscript(superimpose, dm.basic_skill_ult_dmg_)
-        )
-      )
+          subscript(superimpose, dm.basic_skill_ult_dmg_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'ult_dmg_',
@@ -60,11 +60,11 @@ const sheet = registerLightCone(
         cmpEq(
           childishness.value,
           3,
-          subscript(superimpose, dm.basic_skill_ult_dmg_)
-        )
-      )
+          subscript(superimpose, dm.basic_skill_ult_dmg_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

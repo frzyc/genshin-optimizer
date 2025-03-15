@@ -25,7 +25,7 @@ type Property = {
 }
 
 const relicSetSkillConfigSrc = JSON.parse(
-  readDMJSON('ExcelOutput/RelicSetSkillConfig.json')
+  readDMJSON('ExcelOutput/RelicSetSkillConfig.json'),
 ) as ObfRelicSetSkillConfig[]
 
 export const relicSetSkillConfig = relicSetSkillConfigSrc.reduce(
@@ -50,14 +50,14 @@ export const relicSetSkillConfig = relicSetSkillConfigSrc.reduce(
     configMap[SetID][RequireNum] = unobfConfig
     return configMap
   },
-  {} as Record<RelicSetId, Record<RelicSetCountKey, RelicSetSkillConfig>>
+  {} as Record<RelicSetId, Record<RelicSetCountKey, RelicSetSkillConfig>>,
 )
 
 const prePath = `${PROJROOT_PATH}/src/dm/relic/RelicSetSkillConfig`
 
 export const relicSetSkillConfig_bySet = objMap(
   relicSetSkillConfig,
-  (setNumConfig) => Object.values(setNumConfig)
+  (setNumConfig) => Object.values(setNumConfig),
 )
 
 dumpFile(`${prePath}_bySet_gen.json`, relicSetSkillConfig_bySet)

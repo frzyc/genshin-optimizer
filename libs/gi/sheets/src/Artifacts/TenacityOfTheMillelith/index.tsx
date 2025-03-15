@@ -20,13 +20,13 @@ const [condPath, condNode] = cond(key, 'skill')
 const set4TallyWrite = greaterEqStr(
   input.artSet[key],
   4,
-  equalStr(condNode, 'cast', input.charKey)
+  equalStr(condNode, 'cast', input.charKey),
 )
 const [set4Atk, set4AtkInactive] = nonStackBuff('totm4', 'atk_', percent(0.2))
 const [set4Shield, set4ShieldInactive] = nonStackBuff(
   'totm4',
   'shield_',
-  percent(0.2)
+  percent(0.2),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

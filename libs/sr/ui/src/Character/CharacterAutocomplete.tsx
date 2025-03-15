@@ -19,12 +19,12 @@ export function CharacterAutocomplete({
   const { database } = useDatabaseContext()
   const charInDb = useCallback(
     (charKey: CharacterKey) => !!database.chars.get(charKey),
-    [database.chars]
+    [database.chars],
   )
 
   const charIsFavorite = useCallback(
     (charKey: CharacterKey) => database.charMeta.get(charKey).favorite,
-    [database.charMeta]
+    [database.charMeta],
   )
 
   const options: GeneralAutocompleteOption<CharacterKey | ''>[] = useMemo(
@@ -39,10 +39,10 @@ export function CharacterAutocomplete({
           label: t(`charNames_gen:${key}`),
           favorite: charIsFavorite(key),
           color: charInDb(key) ? undefined : 'secondary',
-        })
+        }),
       ),
     ],
-    [charInDb, charIsFavorite, t]
+    [charInDb, charIsFavorite, t],
   )
 
   return (

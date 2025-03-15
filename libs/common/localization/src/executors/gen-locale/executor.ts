@@ -29,26 +29,26 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           if (ns.startsWith('zzz_')) {
             await dumpPrettyFile(
               `${localeDir('zzz')}${lang}/${ns.slice(3)}.json`,
-              entry
+              entry,
             )
           } else if (ns.startsWith('sr_')) {
             await dumpPrettyFile(
               `${localeDir('sr')}${lang}/${ns.slice(3)}.json`,
-              entry
+              entry,
             )
           } else if (ns.startsWith('common_')) {
             await dumpPrettyFile(
               `${localeDir('common')}${lang}/${ns.slice(7)}.json`,
-              entry
+              entry,
             )
           } else {
             //dump to gi by default, due to legacy namespacing
             if (ns.startsWith('gi_')) ns = ns.slice(3)
             await dumpPrettyFile(`${localeDir('gi')}${lang}/${ns}.json`, entry)
           }
-        })
+        }),
       )
-    })
+    }),
   )
 
   /**

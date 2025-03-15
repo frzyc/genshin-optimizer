@@ -93,7 +93,7 @@ const dm = {
 
 const burst_dusk_dmgInc = prod(
   subscript(input.total.burstIndex, dm.burst.dusk_dmgInc, { unit: '%' }),
-  input.total.eleMas
+  input.total.eleMas,
 )
 
 const [condA4SandshadePath, condA4Sandshade] = cond(key, 'a4Sandshade')
@@ -103,14 +103,14 @@ const a4Sandshade_shadow_dmgInc = greaterEq(
   equal(
     condA4Sandshade,
     'on',
-    prod(percent(dm.passive2.dmg), input.total.eleMas)
-  )
+    prod(percent(dm.passive2.dmg), input.total.eleMas),
+  ),
 )
 
 const c1_shadow_critRate_ = greaterEq(
   input.constellation,
   1,
-  dm.constellation1.shadow_crit_rate_
+  dm.constellation1.shadow_crit_rate_,
 )
 
 const c2StacksArr = range(1, dm.constellation2.maxStacks)
@@ -118,25 +118,25 @@ const [condC2StacksPath, condC2Stacks] = cond(key, 'c2Stacks')
 const c2Stacks = lookup(
   condC2Stacks,
   objKeyMap(c2StacksArr, (stack) => constant(stack)),
-  naught
+  naught,
 )
 const c2Stacks_electro_dmg_ = greaterEq(
   input.constellation,
   2,
-  prod(dm.constellation2.electro_dmg_, c2Stacks)
+  prod(dm.constellation2.electro_dmg_, c2Stacks),
 )
 
 const [condC4StrikePath, condC4Strike] = cond(key, 'c4Strike')
 const c4Strike_eleMas = greaterEq(
   input.constellation,
   4,
-  equal(condC4Strike, 'on', dm.constellation4.teamEleMas)
+  equal(condC4Strike, 'on', dm.constellation4.teamEleMas),
 )
 
 const electroHit = { hit: { ele: constant(ele) } }
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -151,7 +151,7 @@ const dmgFormulas = {
           charged_critRate_: c1_shadow_critRate_,
         },
         ...electroHit,
-      }
+      },
     ),
   },
   plunging: plungingDmgNodes('atk', dm.plunging),
@@ -169,7 +169,7 @@ const dmgFormulas = {
           },
           ...electroHit,
         }),
-      ])
+      ]),
     ),
   } as { dusk_dmgInc: NumNode; [k: string]: NumNode },
 }

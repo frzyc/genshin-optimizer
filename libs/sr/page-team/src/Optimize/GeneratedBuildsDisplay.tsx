@@ -37,14 +37,14 @@ function useGeneratedBuildList(listId: string) {
 const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
   const { optConfig } = useContext(OptConfigContext)
   const generatedBuildList = useGeneratedBuildList(
-    optConfig.generatedBuildListId ?? ''
+    optConfig.generatedBuildListId ?? '',
   )
   return (
     <Stack spacing={1}>
       {generatedBuildList?.builds.map((build, i) => (
         <CardThemed
           key={`${i}-${build.lightConeId}-${Object.values(build.relicIds).join(
-            '-'
+            '-',
           )}`}
         >
           <CardContent>

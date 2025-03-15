@@ -15,12 +15,12 @@ const set2 = greaterEq(input.artSet.RetracingBolide, 2, percent(0.35))
 const set4NA = greaterEq(
   input.artSet.RetracingBolide,
   4,
-  equal('on', condState, percent(0.4))
+  equal('on', condState, percent(0.4)),
 )
 const set4CA = greaterEq(
   input.artSet.RetracingBolide,
   4,
-  equal('on', condState, percent(0.4))
+  equal('on', condState, percent(0.4)),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

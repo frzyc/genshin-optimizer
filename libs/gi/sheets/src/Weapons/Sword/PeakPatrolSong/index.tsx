@@ -29,9 +29,9 @@ const self_ele_dmg_arr = [-1, 0.1, 0.125, 0.15, 0.175, 0.2]
 const odeStacks_def_ = lookup(
   condOdeStacks,
   objKeyMap(odeStacksArr, (stack) =>
-    prod(subscript(input.weapon.refinement, def_arr, { unit: '%' }), stack)
+    prod(subscript(input.weapon.refinement, def_arr, { unit: '%' }), stack),
   ),
-  naught
+  naught,
 )
 const odeStacks_ele_dmg_ = objKeyValMap(allElementKeys, (ele) => [
   `${ele}_dmg_`,
@@ -40,10 +40,10 @@ const odeStacks_ele_dmg_ = objKeyValMap(allElementKeys, (ele) => [
     objKeyMap(odeStacksArr, (stack) =>
       prod(
         subscript(input.weapon.refinement, self_ele_dmg_arr, { unit: '%' }),
-        stack
-      )
+        stack,
+      ),
     ),
-    naught
+    naught,
   ),
 ])
 
@@ -58,8 +58,8 @@ const ele_dmg_ = objKeyValMap(allElementKeys, (key) => [
     `${key}_dmg_`,
     prod(
       defFactor,
-      subscript(input.weapon.refinement, ele_dmg_arr, { unit: '%' })
-    )
+      subscript(input.weapon.refinement, ele_dmg_arr, { unit: '%' }),
+    ),
   ),
 ])
 
@@ -109,7 +109,7 @@ const sheet: IWeaponSheet = {
           fields: [
             // Show both active + inactive nodes
             ...Object.values(ele_dmg_).flatMap((nodes) =>
-              nodes.map((node) => ({ node }))
+              nodes.map((node) => ({ node })),
             ),
             { text: stg('duration'), value: 15, unit: 's' },
           ],

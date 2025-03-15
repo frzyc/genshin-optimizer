@@ -21,7 +21,7 @@ const { _someNumConditional } = allNumConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
+  entriesForWeapon(key),
 
   // TODO:
   // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`

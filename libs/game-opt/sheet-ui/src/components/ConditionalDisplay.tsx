@@ -58,15 +58,15 @@ export function ConditionalsDisplay({
     () =>
       conditionals.filter(
         ({ condValue, sheet: s, condKey }) =>
-          condValue && s === sheet && condKey === name
+          condValue && s === sheet && condKey === name,
       ),
-    [conditionals, sheet, name]
+    [conditionals, sheet, name],
   )
 
   const hasExisting = useCallback(
     (src: string, dst: string | null) =>
       filteredConditionals.some(({ src: s, dst: d }) => s === src && d === dst),
-    [filteredConditionals]
+    [filteredConditionals],
   )
 
   const [src, setSrc] = useState<string>(Object.keys(srcDisplay)[0])
@@ -134,7 +134,7 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
       src,
       dst,
     }),
-    [tag, src, dst]
+    [tag, src, dst],
   )
   return (
     <CardThemed bgt={bgt}>

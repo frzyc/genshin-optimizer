@@ -62,7 +62,7 @@ describe('optimization', () => {
       compiled([
         { 0: 1, 1: 2 },
         { 0: 2, 1: 2 },
-      ])
+      ]),
     ).toEqual([15, 16, 3, 3])
   })
   describe('compile computation', () => {

@@ -11,7 +11,7 @@ const eleMasArr = [-1, 100, 125, 150, 175, 200]
 const eleMas = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refinement, eleMasArr)
+  subscript(input.weapon.refinement, eleMasArr),
 )
 const dmg_arr = [-1, 0.28, 0.35, 0.42, 0.49, 0.56]
 const [condShieldPath, condShield] = cond(key, 'shield')
@@ -19,7 +19,7 @@ const nonstackWrite = equalStr(condShield, 'on', input.charKey)
 const [shield_dmg_, shield_dmg_inactive] = nonStackBuff(
   'starcaller',
   'all_dmg_',
-  subscript(input.weapon.refinement, dmg_arr)
+  subscript(input.weapon.refinement, dmg_arr),
 )
 
 const data = dataObjForWeaponSheet(key, {

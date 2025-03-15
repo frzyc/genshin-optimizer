@@ -46,13 +46,13 @@ export const allOperations: Record<
 }
 
 const commutativeMonoidOperationSet = new Set(
-  Object.keys(allCommutativeMonoidOperations) as NumNode['operation'][]
+  Object.keys(allCommutativeMonoidOperations) as NumNode['operation'][],
 )
 
 export function optimize(
   formulas: NumNode[],
   topLevelData: Data,
-  shouldFold = (_formula: ReadNode<number | string | undefined>) => false
+  shouldFold = (_formula: ReadNode<number | string | undefined>) => false,
 ): OptNode[] {
   let opts = constantFold(formulas, topLevelData, shouldFold)
   opts = flatten(opts)
@@ -73,13 +73,13 @@ export function precompute<C extends number>(
   formulas: OptNode[],
   initial: Record<string, number>, //DynStat,
   binding: (readNode: ReadNode<number>) => string,
-  slotCount: C
+  slotCount: C,
 ): (
   _: readonly {
     readonly values: Readonly<Record<string, number> /*DynStat */>
   }[] & {
     length: C
-  }
+  },
 ) => number[] {
   // res copied from the code above
   let body = `
@@ -123,7 +123,7 @@ const x0=0` // making sure `const` has at least one entry
         case 'add':
         case 'mul':
           body += `,${name}=${operandNames.join(
-            operation === 'add' ? '+' : '*'
+            operation === 'add' ? '+' : '*',
           )}\n`
           break
         case 'min':
@@ -145,7 +145,7 @@ const x0=0` // making sure `const` has at least one entry
         default:
           assertUnreachable(operation)
       }
-    }
+    },
   )
   body += `;\nreturn [${formulas.map((f) => names.get(f)!)}]`
   return new (Function as any)(`b`, body)
@@ -165,20 +165,20 @@ function flatten(formulas: OptNode[]): OptNode[] {
         const operands = formula.operands.flatMap((dep) =>
           dep.operation === operation
             ? ((flattened = true), dep.operands)
-            : [dep]
+            : [dep],
         )
         result = flattened ? { ...formula, operands } : formula
       }
 
       return result
-    }
+    },
   )
 }
 
 function arrayCompare<T>(
   a: readonly T[],
   b: readonly T[],
-  cmp: (a: T, b: T) => number
+  cmp: (a: T, b: T) => number,
 ): number {
   if (a.length !== b.length) return a.length - b.length
   for (let i = 0; i < a.length; i++) {
@@ -227,7 +227,7 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
           break
         }
       }
-    }
+    },
   )
 
   function cmpNode(n1: OptNode, n2: OptNode): number {
@@ -293,7 +293,7 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
         sortedNodes[i] = {
           ...n,
           operands: [...n.operands].sort(
-            (a, b) => nodeSortMap.get(a)! - nodeSortMap.get(b)!
+            (a, b) => nodeSortMap.get(a)! - nodeSortMap.get(b)!,
           ),
         }
     }
@@ -302,7 +302,7 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
   return mapFormulas(
     formulas,
     (f) => sortedNodes[nodeSortMap.get(f)!],
-    (_) => _
+    (_) => _,
   )
 }
 
@@ -313,7 +313,7 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
 export function constantFold(
   formulas: NumNode[],
   topLevelData: Data,
-  shouldFold = (_formula: ReadNode<number | string | undefined>) => false
+  shouldFold = (_formula: ReadNode<number | string | undefined>) => false,
 ): OptNode[] {
   type Context = {
     data: Data[]
@@ -393,7 +393,7 @@ export function constantFold(
           const f = allOperations[operation]
           if (operands.every((x) => x.operation === 'const'))
             result = constant(
-              f(operands.map((x) => (x as ConstantNode<number>).value))
+              f(operands.map((x) => (x as ConstantNode<number>).value)),
             )
           else result = { ...formula, operands }
           break
@@ -430,7 +430,7 @@ export function constantFold(
             if (folded.operation !== 'const') {
               smallest = map(
                 transpose(operand, folded, formula),
-                context
+                context,
               ) as any // wrong type, but immediately assigned to `result` anyway
               break
             }
@@ -445,7 +445,7 @@ export function constantFold(
         }
         case 'match': {
           const [v1, v2, match, unmatch] = formula.operands.map(
-            (x: NumNode | StrNode) => map(x, context)
+            (x: NumNode | StrNode) => map(x, context),
           )
           if (v1.operation !== 'const')
             result = map(transpose(formula.operands[0], v1, formula), context)
@@ -456,7 +456,7 @@ export function constantFold(
         }
         case 'threshold': {
           const [value, threshold, pass, fail] = formula.operands.map(
-            (x) => map(x, context) as OptNode
+            (x) => map(x, context) as OptNode,
           )
           if (
             pass.operation === 'const' &&
@@ -501,7 +501,7 @@ export function constantFold(
               { operation: formula.accu, operands } as
                 | ComputeNode
                 | StrPrioNode,
-              context
+              context,
             )
           break
         }
@@ -529,7 +529,7 @@ export function constantFold(
         delete result.info
       }
       return result
-    }
+    },
   ) as OptNode[]
 }
 

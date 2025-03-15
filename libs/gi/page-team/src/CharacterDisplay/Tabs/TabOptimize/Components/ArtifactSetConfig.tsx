@@ -100,20 +100,20 @@ export default function ArtifactSetConfig({
         .reverse()
         .flatMap(([, sets]) => sets)
         .filter((key) => !key.includes('Prayers')),
-    []
+    [],
   )
   const { artKeys, artSlotCount } = useMemo(() => {
     const artSlotCount = objKeyMap(artKeysByRarity, (_) =>
-      objKeyMap(allArtifactSlotKeys, (_) => 0)
+      objKeyMap(allArtifactSlotKeys, (_) => 0),
     )
     database.arts.values.forEach(
       (art) =>
-        artSlotCount[art.setKey] && artSlotCount[art.setKey][art.slotKey]++
+        artSlotCount[art.setKey] && artSlotCount[art.setKey][art.slotKey]++,
     )
     const artKeys = [...artKeysByRarity].sort(
       (a, b) =>
         +(getNumSlots(artSlotCount[a]) < 2) -
-        +(getNumSlots(artSlotCount[b]) < 2)
+        +(getNumSlots(artSlotCount[b]) < 2),
     )
     return dbDirty && { artKeys, artSlotCount }
   }, [dbDirty, database, artKeysByRarity])
@@ -133,7 +133,7 @@ export default function ArtifactSetConfig({
         if (!artSetExclusion[setKey]?.includes(4)) {
           ctMap.allowTotals['4'].current++
         }
-      })
+      }),
     )
   }, [artKeysByRarity, artSetExclusion])
   const artifactCondCount = useMemo(
@@ -141,9 +141,9 @@ export default function ArtifactSetConfig({
       Object.keys(conditional).filter(
         (k) =>
           allArtifactSetKeys.includes(k as ArtifactSetKey) &&
-          !!Object.keys(conditional[k] ?? {}).length
+          !!Object.keys(conditional[k] ?? {}).length,
       ).length,
-    [conditional]
+    [conditional],
   )
   const fakeDataContextObj = useMemo(
     () => ({
@@ -153,16 +153,16 @@ export default function ArtifactSetConfig({
           ...dataContext.data.data[0],
           artSet: objKeyMap(allArtifactSetKeys, (_) => constant(4)),
         },
-        undefined
+        undefined,
       ),
     }),
-    [dataContext]
+    [dataContext],
   )
   const resetArtConds = useCallback(() => {
     const tconditional = Object.fromEntries(
       Object.entries(conditional).filter(
-        ([k]) => !allArtifactSetKeys.includes(k as any)
-      )
+        ([k]) => !allArtifactSetKeys.includes(k as any),
+      ),
     )
     database.teamChars.set(teamCharId, (teamChar) => {
       teamChar.conditional = tconditional
@@ -181,7 +181,7 @@ export default function ArtifactSetConfig({
         artSetExclusion: artSetExclusion_,
       })
     },
-    [artKeysByRarity, artSetExclusion, database, optConfigId]
+    [artKeysByRarity, artSetExclusion, database, optConfigId],
   )
 
   return (
@@ -449,7 +449,7 @@ export default function ArtifactSetConfig({
                             artSetExclusion: handleArtSetExclusion(
                               artSetExclusion,
                               'rainbow',
-                              2
+                              2,
                             ),
                           })
                         }
@@ -474,7 +474,7 @@ export default function ArtifactSetConfig({
                             artSetExclusion: handleArtSetExclusion(
                               artSetExclusion,
                               'rainbow',
-                              4
+                              4,
                             ),
                           })
                         }
@@ -576,7 +576,7 @@ function ArtifactSetCard({
   const setExclusionSet = useMemo(
     // We have nullish fallback so this should be fine
     () => artSetExclusion?.[setKey as ArtSetExclusionKey] ?? [],
-    [artSetExclusion, setKey]
+    [artSetExclusion, setKey],
   )
   const slots = getNumSlots(slotCount)
   const sheet = getArtSheet(setKey)
@@ -589,7 +589,7 @@ function ArtifactSetCard({
         return false
       } else {
         const sheetHasConditionals = sheet.setEffects[setNumKey]?.document.some(
-          (doc) => 'states' in doc
+          (doc) => 'states' in doc,
         )
         if (setNumKey === '2') {
           const cond2CanShow = !(

@@ -35,7 +35,7 @@ function FooterContent() {
           >
             {process.env.NX_URL_GITHUB_GO_CURRENT_VERSION?.replace(
               /.*commit\//,
-              ''
+              '',
             ).substring(0, 7)}
           </a>
         </Typography>

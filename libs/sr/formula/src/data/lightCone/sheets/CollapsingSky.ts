@@ -19,17 +19,17 @@ const sheet = registerLightCone(
     'basic_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'basic',
-      cmpGE(lcCount, 1, subscript(superimpose, dm.basic_skill_dmg_))
+      cmpGE(lcCount, 1, subscript(superimpose, dm.basic_skill_dmg_)),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'skill_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'skill',
-      cmpGE(lcCount, 1, subscript(superimpose, dm.basic_skill_dmg_))
+      cmpGE(lcCount, 1, subscript(superimpose, dm.basic_skill_dmg_)),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

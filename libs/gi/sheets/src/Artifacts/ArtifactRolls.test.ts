@@ -557,7 +557,7 @@ const ehrlich = [
 /** Whether `callback` returns `true` for some permutations of `indices` */
 function somePerm(
   indices: number[],
-  callback: (current: number[]) => boolean
+  callback: (current: number[]) => boolean,
 ): boolean {
   const base = [...indices]
   const count = indices.reduce((a, _, i) => a * (i + 1), 1)
@@ -585,7 +585,7 @@ describe('Artifact Roll Model', () => {
       if (key.endsWith('_')) {
         const theoretical = indices.reduce(
           (a, b) => Math.fround(a + Math.fround(Math.fround(rolls[b]) * 100)),
-          0
+          0,
         )
         return (
           Math.round(extrapolateFloat(Math.fround(theoretical * 10))) / 10
@@ -599,7 +599,7 @@ describe('Artifact Roll Model', () => {
       if (key.endsWith('_')) {
         const theoretical = indices.reduce(
           (a, b) => Math.fround(a + Math.fround(Math.fround(rolls[b]) * 100)),
-          0
+          0,
         )
         return (Math.round(Math.fround(theoretical * 10)) / 10).toFixed(1)
       } else {
@@ -614,7 +614,7 @@ describe('Artifact Roll Model', () => {
         expect(Object.keys(allStats.art.subRoll[5][key])).toContain(string)
       })
       it(`should support ${string} ${key} with rolls [${v}] (sum to ${v.reduce(
-        (a, b) => a + b
+        (a, b) => a + b,
       )})`, () => {
         expect(somePerm(values, (i) => model1(i) === string)).toBeTruthy()
         expect(somePerm(values, (i) => model2(i) === string)).toBeTruthy()

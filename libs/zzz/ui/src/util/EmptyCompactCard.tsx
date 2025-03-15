@@ -17,7 +17,7 @@ export function EmptyCompactCard({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   const falseWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -25,7 +25,7 @@ export function EmptyCompactCard({
         {children}
       </Box>
     ),
-    []
+    [],
   )
 
   return (

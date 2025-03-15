@@ -102,7 +102,7 @@ const dm = {
 const onlyPyroElectroTeam = greaterEq(tally.electro, 1, equal(tally.ele, 2, 1))
 const [condA1AfterOverloadPath, condA1AfterOverload] = cond(
   key,
-  'a1AfterOverload'
+  'a1AfterOverload',
 )
 const a1AfterOverload_pyro_enemyRes_ = greaterEq(
   input.asc,
@@ -110,8 +110,8 @@ const a1AfterOverload_pyro_enemyRes_ = greaterEq(
   equal(
     onlyPyroElectroTeam,
     1,
-    equal(condA1AfterOverload, 'on', -dm.passive1.pyroElectro_enemyRes_)
-  )
+    equal(condA1AfterOverload, 'on', -dm.passive1.pyroElectro_enemyRes_),
+  ),
 )
 const a1AfterOverload_electro_enemyRes_ = { ...a1AfterOverload_pyro_enemyRes_ }
 
@@ -127,25 +127,25 @@ const a4AfterBall_atk_ = greaterEq(
     equal(
       sum(
         equal(target.charEle, 'pyro', 1),
-        equal(target.charEle, 'electro', 1)
+        equal(target.charEle, 'electro', 1),
       ),
       1,
       min(
         prod(
           percent(dm.passive2.atk_),
           infoMut({ ...input.premod.hp }, { pivot: true }),
-          1 / 1000
+          1 / 1000,
         ),
-        percent(dm.passive2.max_atk_)
-      )
-    )
-  )
+        percent(dm.passive2.max_atk_),
+      ),
+    ),
+  ),
 )
 
 const c6AfterHealStacksArr = range(1, dm.constellation6.maxStacks)
 const [condC6AfterHealStacksPath, condC6AfterHealStacks] = cond(
   key,
-  'c6AfterHealStacks'
+  'c6AfterHealStacks',
 )
 const c6AfterHeal_pyro_dmg_ = greaterEq(
   input.constellation,
@@ -153,17 +153,17 @@ const c6AfterHeal_pyro_dmg_ = greaterEq(
   lookup(
     condC6AfterHealStacks,
     objKeyMap(c6AfterHealStacksArr, (stack) =>
-      percent(stack * dm.constellation6.pyroElectro_dmg_)
+      percent(stack * dm.constellation6.pyroElectro_dmg_),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 const c6AfterHeal_electro_dmg_ = { ...c6AfterHeal_pyro_dmg_ }
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -191,15 +191,15 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation2.dmg), input.total.atk),
         'skill',
-        { hit: { ele: constant('pyro') } }
-      )
+        { hit: { ele: constant('pyro') } },
+      ),
     ),
   },
   constellation6: {
     heal: greaterEq(
       input.constellation,
       6,
-      healNode('hp', dm.constellation6.heal, 0)
+      healNode('hp', dm.constellation6.heal, 0),
     ),
   },
 }

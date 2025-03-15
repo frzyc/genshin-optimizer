@@ -4,7 +4,7 @@ import { StringData } from './lib/stringData'
 import type { GenLocaleExecutorSchema } from './schema'
 
 const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
-  options
+  options,
 ) => {
   console.log('Executor ran for GenLocale', options)
   //dump the language data to files
@@ -36,7 +36,7 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
 
       //lightCones/characters/relics
       Object.entries(typeData as any).forEach(([itemKey, data]) =>
-        dumpFile(`${fileDir}/${type}_${itemKey}_gen.json`, data)
+        dumpFile(`${fileDir}/${type}_${itemKey}_gen.json`, data),
       )
     })
   })

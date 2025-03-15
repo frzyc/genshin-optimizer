@@ -105,13 +105,13 @@ const skillShield = shieldNodeTalent(
   'hp',
   dm.skill.shield_hp_,
   dm.skill.shield_base,
-  'skill'
+  'skill',
 )
 const maxSkillShield = shieldNodeTalent(
   'hp',
   dm.skill.maxShield_hp_,
   dm.skill.maxShield_base,
-  'skill'
+  'skill',
 )
 const p1Shield = shieldNodeTalent(
   'hp',
@@ -119,13 +119,13 @@ const p1Shield = shieldNodeTalent(
   dm.skill.shield_base,
   'skill',
   undefined,
-  percent(dm.passive1.shieldMult_)
+  percent(dm.passive1.shieldMult_),
 )
 const c2Shield = prod(percent(dm.constellation2.shieldMult_), maxSkillShield)
 
 const [condC6AfterSkillBurstPath, condC6AfterSkillBurst] = cond(
   key,
-  'c6AfterSkillBurst'
+  'c6AfterSkillBurst',
 )
 const c6Ele_dmg_map = objKeyMap(
   allElementKeys.map((ele) => `${ele}_dmg_`),
@@ -133,13 +133,13 @@ const c6Ele_dmg_map = objKeyMap(
     greaterEq(
       input.constellation,
       6,
-      equal(condC6AfterSkillBurst, 'on', dm.constellation6.all_dmg_)
-    )
+      equal(condC6AfterSkillBurst, 'on', dm.constellation6.all_dmg_),
+    ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -167,12 +167,12 @@ const dmgFormulas = {
     skill_dmg_: greaterEq(
       input.asc,
       4,
-      prod(percent(dm.passive2.skill_dmg_), input.total.hp, 1 / 1000)
+      prod(percent(dm.passive2.skill_dmg_), input.total.hp, 1 / 1000),
     ),
     burst_dmg_: greaterEq(
       input.asc,
       4,
-      prod(percent(dm.passive2.burst_dmg_), input.total.hp, 1 / 1000)
+      prod(percent(dm.passive2.burst_dmg_), input.total.hp, 1 / 1000),
     ),
   },
   constellation1: {
@@ -191,10 +191,10 @@ const dmgFormulas = {
             input.total.hp,
             dm.constellation1.hpThresh * 2,
             2,
-            threshold(input.total.hp, dm.constellation1.hpThresh, 1, 0)
-          )
-        )
-      )
+            threshold(input.total.hp, dm.constellation1.hpThresh, 1, 0),
+          ),
+        ),
+      ),
     ),
   },
   constellation2: {
@@ -202,7 +202,7 @@ const dmgFormulas = {
     dendroShield: greaterEq(
       input.constellation,
       2,
-      shieldElement('dendro', c2Shield)
+      shieldElement('dendro', c2Shield),
     ),
   },
   constellation4: {
@@ -212,8 +212,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation4.dmg), input.total.atk),
         'burst',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
   },
 }

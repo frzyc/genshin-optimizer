@@ -90,41 +90,45 @@ const [condInFieldPath, condInField] = cond(key, 'inField')
 const skill1_defDisp = equal(
   condInField,
   'inField',
-  greaterEq(tally['geo'], 1, subscript(input.total.skillIndex, dm.skill.defInc))
+  greaterEq(
+    tally['geo'],
+    1,
+    subscript(input.total.skillIndex, dm.skill.defInc),
+  ),
 )
 const skill1_def = equal(input.activeCharKey, target.charKey, skill1_defDisp)
 const skill3_geo_dmg_Disp = equal(
   condInField,
   'inField',
-  greaterEq(tally['geo'], 3, dm.skill.geo_dmg_)
+  greaterEq(tally['geo'], 3, dm.skill.geo_dmg_),
 )
 const skill3_geo_dmg_ = equal(
   input.activeCharKey,
   target.charKey,
-  skill3_geo_dmg_Disp
+  skill3_geo_dmg_Disp,
 )
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')
 const afterBurst_def_ = greaterEq(
   input.asc,
   1,
-  equal(condAfterBurst, 'afterBurst', dm.passive1.def_)
+  equal(condAfterBurst, 'afterBurst', dm.passive1.def_),
 )
 
 const p2_skill_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(input.total.def, dm.passive2.skill_dmgInc)
+  prod(input.total.def, dm.passive2.skill_dmgInc),
 )
 const p2_burst_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(input.total.def, dm.passive2.burst_dmgInc)
+  prod(input.total.def, dm.passive2.burst_dmgInc),
 )
 
 const [condAfterSkillBurstPath, condAfterSkillBurst] = cond(
   key,
-  'afterSkillBurst'
+  'afterSkillBurst',
 )
 const c6_geo_critDMG_ = greaterEq(
   input.constellation,
@@ -132,13 +136,13 @@ const c6_geo_critDMG_ = greaterEq(
   equal(
     condAfterSkillBurst,
     'afterSkillBurst',
-    subscript(sum(tally['geo'], -1), dm.constellation6.geo_critDMG_)
-  )
+    subscript(sum(tally['geo'], -1), dm.constellation6.geo_critDMG_),
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -158,7 +162,7 @@ const dmgFormulas = {
     heal: greaterEq(
       input.constellation,
       4,
-      healNode('def', dm.constellation4.heal_def_, 0)
+      healNode('def', dm.constellation4.heal_def_, 0),
     ),
   },
 }

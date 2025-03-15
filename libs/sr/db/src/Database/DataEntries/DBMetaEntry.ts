@@ -43,7 +43,7 @@ export class DBMetaEntry extends DataEntry<
   }
   override importSROD(
     sroDb: ISroDatabase & ISrObjectDescription,
-    _result: ImportResult
+    _result: ImportResult,
   ): void {
     const data = sroDb[this.dataKey]
     if (data) {

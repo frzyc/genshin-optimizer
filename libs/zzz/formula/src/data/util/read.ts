@@ -57,7 +57,7 @@ export type Tag = BaseTag<Sheet, Src, Dst> & {
 export class Read extends BaseRead<Tag> {
   override add(
     value: number | string | AnyNode,
-    force = false
+    force = false,
   ): TagMapNodeEntry {
     if (
       !force &&
@@ -68,7 +68,7 @@ export class Read extends BaseRead<Tag> {
       !this.tag.damageType2
     ) {
       throw new Error(
-        'Tried to add to `dmg_` without optional modifier, use `common_dmg_` instead'
+        'Tried to add to `dmg_` without optional modifier, use `common_dmg_` instead',
       )
     }
     return super.add(value)
@@ -76,7 +76,7 @@ export class Read extends BaseRead<Tag> {
 
   addWithDmgType(
     dmgType: DamageType,
-    val: number | string | AnyNode
+    val: number | string | AnyNode,
   ): TagMapNodeEntry[] {
     return this[dmgType].map((r) => r.add(val))
   }

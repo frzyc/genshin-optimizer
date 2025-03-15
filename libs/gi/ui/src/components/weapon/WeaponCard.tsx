@@ -68,7 +68,7 @@ export function WeaponCardObj({
     (ck: CharacterKey) =>
       weaponKey &&
       getWeaponStat(weaponKey).weaponType === getCharStat(ck).weaponType,
-    [weaponKey]
+    [weaponKey],
   )
 
   const wrapperFunc = useCallback(
@@ -77,16 +77,16 @@ export function WeaponCardObj({
         {children}
       </CardActionArea>
     ),
-    [onClick, weapon.id]
+    [onClick, weapon.id],
   )
   const falseWrapperFunc = useCallback(
     (children: ReactNode) => <Box>{children}</Box>,
-    []
+    [],
   )
   const setLocation = useCallback(
     (k: LocationCharacterKey | '') =>
       weapon.id && database.weapons.set(weapon.id, { location: k }),
-    [database, weapon.id]
+    [database, weapon.id],
   )
 
   const UIData = useMemo(
@@ -94,14 +94,14 @@ export function WeaponCardObj({
       weaponSheet &&
       weapon &&
       computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
-    [weaponSheet, weapon]
+    [weaponSheet, weapon],
   )
 
   if (!weapon || !weaponSheet || !UIData) return null
   const { level, ascension, refinement, id, location = '', lock } = weapon
   const weaponTypeKey = UIData.get(input.weapon.type).value! as WeaponTypeKey
   const stats = [input.weapon.main, input.weapon.sub, input.weapon.sub2].map(
-    (x) => UIData.get(x)
+    (x) => UIData.get(x),
   )
   const img = weaponAsset(weapon.key, ascension >= 2)
   const weaponStat = getWeaponStat(weapon.key)

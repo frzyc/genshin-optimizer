@@ -55,7 +55,7 @@ type PhaseData = {
 export const wengineDetailedJSONData = Object.fromEntries(
   Object.entries(WengineIdMap).map(([id, name]) => {
     const raw = JSON.parse(
-      readHakushinJSON(`weapon/${id}.json`)
+      readHakushinJSON(`weapon/${id}.json`),
     ) as WengineRawData
     const second_statkey = subStatMap[raw.RandProperty.Name2]
     const data: WengineData = {
@@ -79,10 +79,10 @@ export const wengineDetailedJSONData = Object.fromEntries(
             const [_match, value, percent] = matches
             if (percent) return parseFloatBetter(value)
             return +value
-          }
+          },
         ),
       })),
     }
     return [name, data] as const
-  })
+  }),
 ) as Record<WengineKey, WengineData>

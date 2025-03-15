@@ -41,7 +41,7 @@ export class Worker {
     this.nodes = cfg.nodes
     this.minimum = cfg.minimum
     this.candidates = cfg.candidates.map(
-      (cnds) => new Map(cnds.map((c) => [c.id, c]))
+      (cnds) => new Map(cnds.map((c) => [c.id, c])),
     )
     this.topN = cfg.topN
   }
@@ -54,10 +54,10 @@ export class Worker {
         nodes: this.nodes,
         minimum: this.minimum,
         candidates: ids.map((ids, slot) =>
-          ids.map((id) => candidates[slot].get(id)!)
+          ids.map((id) => candidates[slot].get(id)!),
         ),
         count,
-      }))
+      })),
     )
     if (subworks.length === works.length) this.spreadSubworks()
   }
@@ -125,7 +125,7 @@ export class Worker {
         subwork.candidates,
         'q',
         subwork.minimum,
-        this.topN
+        this.topN,
       )
       const count = buildCount(candidates)
       progress.skipped += subwork.count - count
@@ -141,8 +141,8 @@ export class Worker {
           (candidates) => {
             const count = buildCount(candidates)
             return { nodes, candidates, minimum, count }
-          }
-        )
+          },
+        ),
       )
     }
   }
@@ -153,10 +153,10 @@ function compile(
   minimum: number[],
   topN: number,
   dynTagCat: string,
-  slotCount: number
+  slotCount: number,
 ): (
   candidates: Candidate<string>[][],
-  m0: number
+  m0: number,
 ) => {
   failed: number
   results: { ids: string[]; value: number }[]

@@ -12,7 +12,7 @@ const dmgInc = [-1, 0.2, 0.24, 0.28, 0.32, 0.36]
 const all_dmg_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, dmgInc)
+  subscript(input.weapon.refinement, dmgInc),
 )
 
 const data = dataObjForWeaponSheet(key, {

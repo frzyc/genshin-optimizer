@@ -20,9 +20,9 @@ const sheet = registerRelic(
   registerBuff(
     'set4_brEffect_',
     teamBuff.premod.brEffect_.add(
-      cmpGE(relicCount, 4, useUltimateOnAlly.ifOn(dm[4].brEffect_))
+      cmpGE(relicCount, 4, useUltimateOnAlly.ifOn(dm[4].brEffect_)),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
-  )
+    cmpGE(relicCount, 4, 'infer', ''),
+  ),
 )
 export default sheet

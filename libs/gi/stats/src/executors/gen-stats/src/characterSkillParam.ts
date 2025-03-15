@@ -55,7 +55,7 @@ export default function characterSkillParam() {
   const characterSkillParamDump = {} as SkillParamData
   function genTalentHash(
     keys: string[],
-    depot: AvatarSkillDepotExcelConfigData
+    depot: AvatarSkillDepotExcelConfigData,
   ) {
     const {
       energySkill: burst,
@@ -66,7 +66,7 @@ export default function characterSkillParam() {
 
     function parseSkillParams(
       keys: string[],
-      skillArr: ProudSkillExcelConfigData[]
+      skillArr: ProudSkillExcelConfigData[],
     ) {
       const skillParamBase = skillArr.map((proud) => proud.paramList)
 
@@ -81,7 +81,7 @@ export default function characterSkillParam() {
       })
       //filter out empty entries
       const skillParam = skillParamUntrimmed.filter(
-        (arr) => !arr.every((i) => !i)
+        (arr) => !arr.every((i) => !i),
       )
       layeredAssignment(characterSkillParamDump, keys, skillParam)
     }
@@ -89,20 +89,20 @@ export default function characterSkillParam() {
       [...keys, 'auto'],
       proudSkillExcelConfigData[
         avatarSkillExcelConfigData[normal].proudSkillGroupId
-      ]
+      ],
     )
 
     parseSkillParams(
       [...keys, 'skill'],
       proudSkillExcelConfigData[
         avatarSkillExcelConfigData[skill].proudSkillGroupId
-      ]
+      ],
     )
     parseSkillParams(
       [...keys, 'burst'],
       proudSkillExcelConfigData[
         avatarSkillExcelConfigData[burst].proudSkillGroupId
-      ]
+      ],
     )
 
     if (sprint)
@@ -110,29 +110,29 @@ export default function characterSkillParam() {
         [...keys, 'sprint'],
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[sprint].proudSkillGroupId
-        ]
+        ],
       )
 
     passive1.proudSkillGroupId &&
       parseSkillParams(
         [...keys, 'passive1'],
-        proudSkillExcelConfigData[passive1.proudSkillGroupId]
+        proudSkillExcelConfigData[passive1.proudSkillGroupId],
       )
     passive2.proudSkillGroupId &&
       parseSkillParams(
         [...keys, 'passive2'],
-        proudSkillExcelConfigData[passive2.proudSkillGroupId]
+        proudSkillExcelConfigData[passive2.proudSkillGroupId],
       )
     if (passive3?.proudSkillGroupId)
       parseSkillParams(
         [...keys, 'passive3'],
-        proudSkillExcelConfigData[passive3.proudSkillGroupId]
+        proudSkillExcelConfigData[passive3.proudSkillGroupId],
       )
     //seems to be only used by sangonomiyaKokomi
     if (passive?.proudSkillGroupId)
       parseSkillParams(
         [...keys, 'passive'],
-        proudSkillExcelConfigData[passive.proudSkillGroupId]
+        proudSkillExcelConfigData[passive.proudSkillGroupId],
       )
 
     talents.forEach((skId, i) =>
@@ -141,8 +141,8 @@ export default function characterSkillParam() {
         [...keys, `constellation${i + 1}`],
         avatarTalentExcelConfigData[skId].paramList
           .filter((i) => i)
-          .map((value) => value)
-      )
+          .map((value) => value),
+      ),
     )
   }
   Object.entries(avatarExcelConfigData).forEach(([ci, charData]) => {
@@ -156,32 +156,32 @@ export default function characterSkillParam() {
       const gender = characterIdMap[charid] === 'TravelerF' ? 'F' : 'M'
       genTalentHash(
         ['TravelerAnemo' + gender],
-        avatarSkillDepotExcelConfigData[anemo]
+        avatarSkillDepotExcelConfigData[anemo],
       )
       genTalentHash(
         ['TravelerGeo' + gender],
-        avatarSkillDepotExcelConfigData[geo]
+        avatarSkillDepotExcelConfigData[geo],
       )
       genTalentHash(
         ['TravelerElectro' + gender],
-        avatarSkillDepotExcelConfigData[electro]
+        avatarSkillDepotExcelConfigData[electro],
       )
       genTalentHash(
         ['TravelerDendro' + gender],
-        avatarSkillDepotExcelConfigData[dendro]
+        avatarSkillDepotExcelConfigData[dendro],
       )
       genTalentHash(
         ['TravelerHydro' + gender],
-        avatarSkillDepotExcelConfigData[hydro]
+        avatarSkillDepotExcelConfigData[hydro],
       )
       genTalentHash(
         ['TravelerPyro' + gender],
-        avatarSkillDepotExcelConfigData[pyro]
+        avatarSkillDepotExcelConfigData[pyro],
       )
     } else {
       genTalentHash(
         [characterIdMap[charid]],
-        avatarSkillDepotExcelConfigData[skillDepotId]
+        avatarSkillDepotExcelConfigData[skillDepotId],
       )
     }
   })

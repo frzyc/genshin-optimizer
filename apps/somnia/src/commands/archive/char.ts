@@ -27,7 +27,7 @@ function getEmbed(
   id: CharacterSheetKey,
   namespace: string,
   arg: string,
-  lang: string
+  lang: string,
 ) {
   const res: { embed: EmbedBuilder; components: AnyComponentBuilder[] } = {
     embed: {} as EmbedBuilder,
@@ -126,10 +126,10 @@ function talentFields(
   skill: string,
   params: number[][],
   level: number,
-  lang: string
+  lang: string,
 ) {
   const scalings = Object.fromEntries(
-    params.map((hit, i) => [i, hit[level - 1]])
+    params.map((hit, i) => [i, hit[level - 1]]),
   )
   let text = ''
   let val = ''
@@ -141,7 +141,7 @@ function talentFields(
         `${skill}.skillParamsEncoding.${index}`,
         lang,
         false,
-        scalings
+        scalings,
       ) + '\n'
   }
 
@@ -179,7 +179,7 @@ function profileEmbed(id: CharacterSheetKey, namespace: string, lang: string) {
           `${namespace}:description`,
           'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.',
         ],
-        { lng: lang }
+        { lng: lang },
       )
       .trim()
       .replaceAll('\n', '\n-# ') +
@@ -203,7 +203,7 @@ function normalsEmbed(
   id: CharacterSheetKey,
   namespace: string,
   level: number,
-  lang: string
+  lang: string,
 ) {
   const auto = translate(namespace, 'auto', lang, true)
   const weapon = getCharStat(sheetKeyToCharKey(id)).weaponType
@@ -212,7 +212,7 @@ function normalsEmbed(
     'auto',
     getCharParam(id).auto,
     level,
-    lang
+    lang,
   )
   //make embed
   return baseEmbed(id, lang)
@@ -224,8 +224,8 @@ function normalsEmbed(
           Object.values(auto.fields.charged).join('\n') +
           '\n\n' +
           Object.values(auto.fields.plunging).join('\n') +
-          '\n\n'
-      )
+          '\n\n',
+      ),
     )
     .setThumbnail(giURL(CommonAssetData.normalIcons[weapon]))
     .addFields(scalings)
@@ -235,7 +235,7 @@ function skillEmbed(
   id: CharacterSheetKey,
   namespace: string,
   level: number,
-  lang: string
+  lang: string,
 ) {
   const skill = translate(namespace, 'skill', lang, true)
   const scalings = talentFields(
@@ -243,7 +243,7 @@ function skillEmbed(
     'skill',
     getCharParam(id).skill,
     level,
-    lang
+    lang,
   )
   const embed = baseEmbed(id, lang)
     .setTitle(skill.name)
@@ -259,7 +259,7 @@ function burstEmbed(
   id: CharacterSheetKey,
   namespace: string,
   level: number,
-  lang: string
+  lang: string,
 ) {
   const burst = translate(namespace, 'burst', lang, true)
   const scalings = talentFields(
@@ -267,7 +267,7 @@ function burstEmbed(
     'burst',
     getCharParam(id).burst,
     level,
-    lang
+    lang,
   )
   const embed = baseEmbed(id, lang)
     .setTitle(burst.name)
@@ -291,7 +291,7 @@ function passivesEmbed(
   id: CharacterSheetKey,
   namespace: string,
   level: number,
-  lang: string
+  lang: string,
 ) {
   let text = ''
   //select passives
@@ -319,7 +319,7 @@ function constellationsEmbed(
   id: CharacterSheetKey,
   namespace: string,
   level: number,
-  lang: string
+  lang: string,
 ) {
   let text = ''
   //select constellations
@@ -331,7 +331,7 @@ function constellationsEmbed(
       namespace,
       `constellation${constellationId}`,
       lang,
-      true
+      true,
     )
     text +=
       `**${constellationId}. ${constellation.name}** ` +
@@ -351,7 +351,7 @@ function constellationsEmbed(
 export async function charArchive(
   id: CharacterSheetKey,
   arg: string,
-  lang: string
+  lang: string,
 ) {
   const namespace = `char_${id}_gen`
   await i18nInstance.loadNamespaces(namespace)
@@ -371,7 +371,7 @@ export async function charArchive(
       new StringSelectMenuBuilder()
         .setCustomId(`${slashcommand.name} char ${id} ${arg} ${lang} 0`)
         .setPlaceholder(talentlist[arg[0] as keyof typeof talentlist].name)
-        .addOptions(options)
+        .addOptions(options),
     ),
   ]
   for (const component of res.components)

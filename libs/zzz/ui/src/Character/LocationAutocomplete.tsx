@@ -53,10 +53,10 @@ export function LocationAutocomplete({
           label: t(`charNames_gen:${key}`),
           favorite: charIsFavorite(key),
           color: charInDb(key) ? undefined : 'secondary',
-        })
+        }),
       ),
     ],
-    [charInDb, charIsFavorite, t]
+    [charInDb, charIsFavorite, t],
   )
 
   const toImg = useCallback(
@@ -68,7 +68,7 @@ export function LocationAutocomplete({
           <CharIconCircle characterKey={key} />
         </Box>
       ),
-    [charInDb]
+    [charInDb],
   )
 
   return (

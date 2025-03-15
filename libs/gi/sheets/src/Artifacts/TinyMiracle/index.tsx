@@ -19,7 +19,7 @@ const set2Nodes = Object.fromEntries(
     greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), {
       path: `${ele}_res_`,
     }),
-  ])
+  ]),
 )
 
 const set4Nodes = Object.fromEntries(
@@ -28,7 +28,7 @@ const set4Nodes = Object.fromEntries(
     greaterEq(input.artSet.TinyMiracle, 4, equal(condEle, ele, percent(0.3)), {
       path: `${ele}_res_`,
     }),
-  ])
+  ]),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {
@@ -36,7 +36,7 @@ export const data: Data = dataObjForArtifactSheet(key, {
     allElementKeys.map((ele) => [
       `${ele}_res_`,
       sum(set2Nodes[ele], set4Nodes[ele]),
-    ])
+    ]),
   ),
 })
 
@@ -71,7 +71,7 @@ const sheet: SetEffectSheet = {
                 },
               ],
             },
-          ])
+          ]),
         ),
       },
     ],

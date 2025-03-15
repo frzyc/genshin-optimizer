@@ -29,16 +29,20 @@ const sheet = registerLightCone(
     cmpGE(lcCount, 1, prod(own.final.hp, percent(dm.heal))),
     {
       cond: cmpGE(lcCount, 1, 'infer', ''),
-    }
+    },
   ),
 
   // Conditional buffs
   registerBuff(
     'common_dmg_',
     ownBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, hpConsumed.ifOn(subscript(superimpose, dm.common_dmg_)))
+      cmpGE(
+        lcCount,
+        1,
+        hpConsumed.ifOn(subscript(superimpose, dm.common_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

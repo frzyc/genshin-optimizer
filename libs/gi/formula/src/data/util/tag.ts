@@ -19,12 +19,12 @@ export function percent(x: number | NumNode): NumNode {
 }
 export function priorityTable(
   entries: Record<string, Record<string, number>>,
-  defaultValue = ''
+  defaultValue = '',
 ): string[] {
   const map = new Map(
     Object.values(entries).flatMap((entries) =>
-      Object.entries(entries).map(([k, v]) => [v, k])
-    )
+      Object.entries(entries).map(([k, v]) => [v, k]),
+    ),
   )
   const max = Math.max(...map.keys()),
     table: string[] = []

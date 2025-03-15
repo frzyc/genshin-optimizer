@@ -202,13 +202,13 @@ function SetFilter({ disabled }: { disabled?: boolean }) {
     (setFilter2: DiscSetKey[]) => {
       database.optConfigs.set(optConfigId, { setFilter2 })
     },
-    [database, optConfigId]
+    [database, optConfigId],
   )
   const setSetFilter4 = useCallback(
     (setFilter4: DiscSetKey[]) => {
       database.optConfigs.set(optConfigId, { setFilter4 })
     },
-    [database, optConfigId]
+    [database, optConfigId],
   )
   return (
     <DiscSetFilter

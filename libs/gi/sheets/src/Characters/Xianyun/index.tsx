@@ -116,8 +116,8 @@ const a1_plunging_critRate_ = greaterEq(
   lookup(
     condA1Stacks,
     objKeyMap(a1StacksArr, (stack) => percent(dm.passive1.critRate[stack - 1])),
-    naught
-  )
+    naught,
+  ),
 )
 
 const [condA4HasStacksPath, condA4HasStacks] = cond(key, 'a4HasStacks')
@@ -134,27 +134,27 @@ const a4HasStacks_plunging_dmg_inc = greaterEq(
           2,
           percent(
             (1 + dm.constellation2.plunging_dmg_inc_mult) *
-              dm.passive2.plunging_dmg_inc
+              dm.passive2.plunging_dmg_inc,
           ),
-          percent(dm.passive2.plunging_dmg_inc)
+          percent(dm.passive2.plunging_dmg_inc),
         ),
-        min(input.total.atk, constant(dm.passive2.maxAtk))
-      )
-    )
-  )
+        min(input.total.atk, constant(dm.passive2.maxAtk)),
+      ),
+    ),
+  ),
 )
 
 const [condC2AfterSkillPath, condC2AfterSkill] = cond(key, 'c2AfterSkill')
 const c2AfterSkill_atk_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2AfterSkill, 'on', dm.constellation2.atk_)
+  equal(condC2AfterSkill, 'on', dm.constellation2.atk_),
 )
 
 const c6SkyladderUsesArr = range(1, 3)
 const [condC6SkyladderUsesPath, condC6SkyladderUses] = cond(
   key,
-  'c6SkyladderUses'
+  'c6SkyladderUses',
 )
 const c6Wave_critDMG_ = greaterEq(
   input.constellation,
@@ -162,30 +162,30 @@ const c6Wave_critDMG_ = greaterEq(
   lookup(
     condC6SkyladderUses,
     objKeyMap(c6SkyladderUsesArr, (uses) =>
-      percent(dm.constellation6.skill_critDMG_[uses - 1])
+      percent(dm.constellation6.skill_critDMG_[uses - 1]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const leapDmg = (lvlMultiplier: number[]) =>
   customDmgNode(
     prod(
       subscript(input.total.skillIndex, lvlMultiplier, { unit: '%' }),
-      input.total.atk
+      input.total.atk,
     ),
     'plunging_impact',
     {
       premod: {
         plunging_critDMG_: c6Wave_critDMG_,
       },
-    }
+    },
   )
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -205,13 +205,13 @@ const dmgFormulas = {
       'atk',
       dm.burst.instantHealMult,
       dm.burst.instantHealFlat,
-      'burst'
+      'burst',
     ),
     deviceHeal: healNodeTalent(
       'atk',
       dm.burst.deviceHealMult,
       dm.burst.deviceHealFlat,
-      'burst'
+      'burst',
     ),
   },
   passive2: {
@@ -221,17 +221,17 @@ const dmgFormulas = {
     heal1: greaterEq(
       input.constellation,
       4,
-      healNode('atk', percent(dm.constellation4.heal1), 0)
+      healNode('atk', percent(dm.constellation4.heal1), 0),
     ),
     heal2: greaterEq(
       input.constellation,
       4,
-      healNode('atk', percent(dm.constellation4.heal2), 0)
+      healNode('atk', percent(dm.constellation4.heal2), 0),
     ),
     heal3: greaterEq(
       input.constellation,
       4,
-      healNode('atk', percent(dm.constellation4.heal3), 0)
+      healNode('atk', percent(dm.constellation4.heal3), 0),
     ),
   },
 }

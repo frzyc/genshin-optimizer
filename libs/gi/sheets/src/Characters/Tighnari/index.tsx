@@ -96,7 +96,7 @@ const [condA1AfterWreathPath, condA1AfterWreath] = cond(key, 'p1AfterWreath')
 const a1AfterWreath_eleMas = greaterEq(
   input.asc,
   1,
-  equal(condA1AfterWreath, 'on', dm.passive1.eleMas)
+  equal(condA1AfterWreath, 'on', dm.passive1.eleMas),
 )
 
 const a4_charged_dmg_ = greaterEq(
@@ -105,10 +105,10 @@ const a4_charged_dmg_ = greaterEq(
   min(
     prod(
       percent(dm.passive2.charged_burst_dmg_, { fixed: 2 }),
-      input.total.eleMas
+      input.total.eleMas,
     ),
-    percent(dm.passive2.maxDmg_)
-  )
+    percent(dm.passive2.maxDmg_),
+  ),
 )
 const a4_burst_dmg_ = { ...a4_charged_dmg_ }
 const chargedShaftAddl: Data = {
@@ -118,14 +118,14 @@ const chargedShaftAddl: Data = {
 const c1_charged_critRate_ = greaterEq(
   input.constellation,
   1,
-  dm.constellation1.charged_critRate_
+  dm.constellation1.charged_critRate_,
 )
 
 const [condC2EnemyFieldPath, condC2EnemyField] = cond(key, 'c2EnemyField')
 const c2EnemyField_dendro_dmg_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2EnemyField, 'on', dm.constellation2.dendro_dmg_)
+  equal(condC2EnemyField, 'on', dm.constellation2.dendro_dmg_),
 )
 
 const [condC4Path, condC4] = cond(key, 'c4')
@@ -138,13 +138,13 @@ const c4_eleMas = greaterEq(
       after: constant(dm.constellation4.eleMas),
       react: constant(dm.constellation4.eleMas * 2),
     },
-    naught
-  )
+    naught,
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -152,14 +152,14 @@ const dmgFormulas = {
       'atk',
       dm.charged.aimedCharged,
       'charged',
-      chargedShaftAddl
+      chargedShaftAddl,
     ),
     wreath: dmgNode('atk', dm.charged.wreathArrow, 'charged', chargedShaftAddl),
     cluster: dmgNode(
       'atk',
       dm.charged.clusterArrow,
       'charged',
-      chargedShaftAddl
+      chargedShaftAddl,
     ),
   },
   plunging: plungingDmgNodes('atk', dm.plunging),
@@ -181,8 +181,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation6.dmg), input.total.atk),
         'charged',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
   },
 }

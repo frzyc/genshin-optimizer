@@ -20,7 +20,7 @@ export type DiscData = {
 export const discsDetailedJSONData = Object.fromEntries(
   Object.entries(DiscIdMap).map(([id, name]) => {
     const raw = JSON.parse(
-      readHakushinJSON(`equipment/${id}.json`)
+      readHakushinJSON(`equipment/${id}.json`),
     ) as DiscRawData
     const data: DiscData = {
       name: raw.Name,
@@ -30,5 +30,5 @@ export const discsDetailedJSONData = Object.fromEntries(
       icon: raw.Icon,
     }
     return [name, data] as const
-  })
+  }),
 ) as Record<DiscSetKey, DiscData>

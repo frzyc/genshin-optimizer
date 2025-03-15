@@ -27,8 +27,8 @@ export function CharacterCard({
         },
         ascension: character.ascension as ICharacter['ascension'],
         constellation: character.constellation as ICharacter['constellation'],
-      })
-    )
+      }),
+    ),
   )
   const member0 = convert(ownTag, { et: 'own', src: '0' })
   return (

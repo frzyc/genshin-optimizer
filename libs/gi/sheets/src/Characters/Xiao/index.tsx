@@ -86,7 +86,7 @@ const dm = {
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -121,11 +121,11 @@ const all_dmg_ = greaterEq(
     lookup(
       condA1BurstStack,
       Object.fromEntries(
-        a1BurstStackArr.map((i) => [i, prod(dm.passive1.dmgBonus, i + 1)])
+        a1BurstStackArr.map((i) => [i, prod(dm.passive1.dmgBonus, i + 1)]),
       ),
-      naught
-    )
-  )
+      naught,
+    ),
+  ),
 )
 
 const [condA4SkillStackPath, condA4SkillStack] = cond(key, 'a4SkillStack')
@@ -136,23 +136,23 @@ const skill_dmg_ = greaterEq(
   lookup(
     condA4SkillStack,
     Object.fromEntries(
-      a4SkillStackArr.map((i) => [i, prod(dm.passive2.skillDmgBonus, i)])
+      a4SkillStackArr.map((i) => [i, prod(dm.passive2.skillDmgBonus, i)]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 const [condC2OffFieldPath, condC2OffField] = cond(key, 'offField')
 const c2_enerRech_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2OffField, 'on', dm.constellation2.enerRech_)
+  equal(condC2OffField, 'on', dm.constellation2.enerRech_),
 )
 
 const [condC4BelowHPPath, condC4BelowHP] = cond(key, 'c4BelowHP')
 const c4BelowHP_def_ = greaterEq(
   input.constellation,
   4,
-  equal('c4BelowHP', condC4BelowHP, dm.constellation4.def_)
+  equal('c4BelowHP', condC4BelowHP, dm.constellation4.def_),
 )
 
 export const data = dataObjForCharacterSheet(key, dmgFormulas, {
@@ -256,7 +256,7 @@ const sheet: TalentSheet = {
             name: st('uses', { count: i }),
             fields: [{ node: skill_dmg_ }],
           },
-        ])
+        ]),
       ),
     }),
   ]),
@@ -329,7 +329,7 @@ const sheet: TalentSheet = {
             name: st('seconds', { count: i * 3 }),
             fields: [{ node: all_dmg_ }],
           },
-        ])
+        ]),
       ),
     }),
   ]),

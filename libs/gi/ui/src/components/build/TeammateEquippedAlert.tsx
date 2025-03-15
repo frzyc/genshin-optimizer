@@ -43,7 +43,7 @@ export function TeammateEquippedAlert({
                   is using this <ArtifactSlotName slotKey={slotKey} />.
                 </Trans>
               </Typography>
-            )
+            ),
         )}
       </Alert>
     )

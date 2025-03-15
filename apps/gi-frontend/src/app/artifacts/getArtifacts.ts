@@ -6,7 +6,7 @@ import { ARTIFACT_QUERY } from './artifactquery'
 
 export default async function getArtifacts(
   supabase: SupabaseClient<Database>,
-  accountId: string | null
+  accountId: string | null,
 ) {
   if (!accountId) return []
   const { data, error } = await supabase

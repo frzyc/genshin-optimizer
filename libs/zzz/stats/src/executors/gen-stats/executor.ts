@@ -28,22 +28,22 @@ export default async function runExecutor(_options: GenStatsExecutorSchema) {
   console.log(`Writing character data to ${path}/Characters`)
   await Promise.all(
     Object.entries(characterDataDump).map(([key, data]) =>
-      dumpPrettyFile(`${path}/Characters/${key}.json`, data)
-    )
+      dumpPrettyFile(`${path}/Characters/${key}.json`, data),
+    ),
   )
 
   console.log(`Writing wengine data to ${path}/Wengine`)
   await Promise.all(
     Object.entries(wengineDataDump).map(([key, data]) =>
-      dumpPrettyFile(`${path}/Wengine/${key}.json`, data)
-    )
+      dumpPrettyFile(`${path}/Wengine/${key}.json`, data),
+    ),
   )
 
   console.log(`Writing disc data to ${path}/Discs`)
   await Promise.all(
     Object.entries(discDataDump).map(([key, data]) =>
-      dumpPrettyFile(`${path}/Discs/${key}.json`, data)
-    )
+      dumpPrettyFile(`${path}/Discs/${key}.json`, data),
+    ),
   )
 
   console.log(`Writing combined data to ${proj_path}/src/allStat_gen.json`)

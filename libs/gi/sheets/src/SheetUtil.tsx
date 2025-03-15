@@ -24,7 +24,7 @@ import type { ReactNode } from 'react'
 
 export const st = (
   strKey: string,
-  values?: Record<string, string | number>
+  values?: Record<string, string | number>,
 ) => <Translate ns="sheet" key18={strKey} values={values} />
 export const stg = (strKey: string) => (
   <Translate ns="sheet_gen" key18={strKey} />
@@ -34,7 +34,7 @@ export const condReadNode = (path: string[]) =>
   customStringRead(['conditional', ...path])
 export function cond(
   key: CharacterKey | WeaponKey | ArtifactSetKey,
-  subKey: string
+  subKey: string,
 ): [path: string[], node: ReadNode<string>] {
   const path = [key, subKey]
   const node = condReadNode(path)
@@ -43,7 +43,7 @@ export function cond(
 
 type Translated = [
   trg: (i18key: string) => ReactNode,
-  tr: (i18key: string, values?: Record<string, string | number>) => ReactNode
+  tr: (i18key: string, values?: Record<string, string | number>) => ReactNode,
 ]
 type CharTransKey =
   | CharacterSheetKey
@@ -60,7 +60,7 @@ export function trans(typeKey: 'weapon', key: WeaponKey): Translated
 export function trans(typeKey: 'artifact', key: ArtifactSetKey): Translated
 export function trans(
   typeKey: 'char' | 'weapon' | 'artifact',
-  key: CharTransKey | WeaponKey | ArtifactSetKey
+  key: CharTransKey | WeaponKey | ArtifactSetKey,
 ): Translated {
   const nogen =
     (typeKey === 'char' && key === 'Somnia') ||
@@ -81,7 +81,7 @@ export function trans(
 export function activeCharBuff(
   buffTargetKey: string | StrNode,
   node: NumNode,
-  info: Info
+  info: Info,
 ) {
   return [
     infoMut(node, { ...info, isTeamBuff: true }),
@@ -92,7 +92,7 @@ export function activeCharBuff(
 export function nonStackBuff(
   buffName: NonStackBuff,
   path: string,
-  buffNode: NumNode | number
+  buffNode: NumNode | number,
 ) {
   return [
     equal(nonStacking[buffName], input.charKey, buffNode),

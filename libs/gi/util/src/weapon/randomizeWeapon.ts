@@ -21,7 +21,7 @@ const weaponKeys = allWeaponKeys.filter(
       'PocketGrimoire',
       'HuntersBow',
       'SeasonedHuntersBow',
-    ].includes(k)
+    ].includes(k),
 )
 export function randomizeWeapon(base: Partial<IWeapon> = {}): IWeapon {
   const key = base.key ?? getRandomElementFromArray(weaponKeys)

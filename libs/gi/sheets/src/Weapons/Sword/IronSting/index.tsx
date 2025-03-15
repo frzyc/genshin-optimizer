@@ -22,9 +22,9 @@ const all_dmg_ = prod(
   lookup(
     condPassive,
     objKeyMap(eleDmgDealtStack, (i) => constant(i)),
-    naught
+    naught,
   ),
-  subscript(input.weapon.refinement, allDmgInc)
+  subscript(input.weapon.refinement, allDmgInc),
 )
 
 const data = dataObjForWeaponSheet(key, {
@@ -55,7 +55,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

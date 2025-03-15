@@ -26,7 +26,7 @@ function newImportCounter(): ImportResultCounter {
 export function newImportResult(
   source: string,
   keepNotInImport: boolean,
-  ignoreDups: boolean
+  ignoreDups: boolean,
 ): ImportResult {
   return {
     type: 'GOOD',

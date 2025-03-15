@@ -7,7 +7,7 @@ export function giURL(
   asset: string,
   category = '.',
   base = GI_BASE_URL,
-  fileExt = '.png'
+  fileExt = '.png',
 ) {
   return new URL(`${category}/${asset}${fileExt}`, base).toString()
 }

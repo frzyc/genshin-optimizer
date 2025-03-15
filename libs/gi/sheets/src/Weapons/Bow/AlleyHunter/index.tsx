@@ -21,10 +21,10 @@ const all_dmg_ = lookup(
   condPassive,
   {
     ...objKeyMap(range(1, 10), (i) =>
-      prod(subscript(input.weapon.refinement, dmgInc), i)
+      prod(subscript(input.weapon.refinement, dmgInc), i),
     ),
   },
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {
@@ -51,7 +51,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

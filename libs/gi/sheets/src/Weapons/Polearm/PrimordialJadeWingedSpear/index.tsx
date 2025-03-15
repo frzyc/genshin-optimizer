@@ -21,14 +21,14 @@ const allDmgInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = lookup(
   condStack,
   objKeyMap(range(1, 7), (i) =>
-    prod(subscript(input.weapon.refinement, atkInc, { unit: '%' }), i)
+    prod(subscript(input.weapon.refinement, atkInc, { unit: '%' }), i),
   ),
-  naught
+  naught,
 )
 const all_dmg_ = equal(
   condStack,
   '7',
-  subscript(input.weapon.refinement, allDmgInc, { unit: '%' })
+  subscript(input.weapon.refinement, allDmgInc, { unit: '%' }),
 )
 export const data = dataObjForWeaponSheet(key, {
   premod: {
@@ -51,7 +51,7 @@ const sheet: IWeaponSheet = {
             name: st('hits', { count: i }),
             fields: [{ node: atk_ }, { node: all_dmg_ }],
           },
-        ])
+        ]),
       ),
     },
   ],

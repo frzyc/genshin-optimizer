@@ -139,8 +139,8 @@ export default async function runExecutor(_options: GenAssetsExecutorSchema) {
       .filter(([shortName, _]) => shortName && shortName in swKeyMap)
       .map(
         ([shortName, languages]) =>
-          [swKeyMap[shortName as keyof typeof swKeyMap], languages] as const
-      )
+          [swKeyMap[shortName as keyof typeof swKeyMap], languages] as const,
+      ),
   )
 
   languages.forEach((lang, idx) => {

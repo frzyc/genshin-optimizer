@@ -51,7 +51,7 @@ export default function PageWeapon() {
   const [state, setState] = useState(database.displayWeapon.get())
   useEffect(
     () => database.displayWeapon.follow((r, dbMeta) => setState(dbMeta)),
-    [database]
+    [database],
   )
 
   const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
@@ -61,7 +61,7 @@ export default function PageWeapon() {
     ReactGA.send({ hitType: 'pageview', page: '/weapon' })
     return database.weapons.followAny(
       (k, r) =>
-        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
+        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate(),
     )
   }, [forceUpdate, database])
 
@@ -78,21 +78,21 @@ export default function PageWeapon() {
       if (state.editWeaponId === key)
         database.displayWeapon.set({ editWeaponId: '' })
     },
-    [state.editWeaponId, database, t]
+    [state.editWeaponId, database, t],
   )
 
   const editWeapon = useCallback(
     (key: string | undefined) => {
       database.displayWeapon.set({ editWeaponId: key })
     },
-    [database]
+    [database],
   )
 
   const newWeapon = useCallback(
     (weaponKey: WeaponKey) => {
       editWeapon(database.weapons.new(initialWeapon(weaponKey)))
     },
-    [database, editWeapon]
+    [database, editWeapon],
   )
 
   const [searchTerm, setSearchTerm] = useState('')
@@ -124,15 +124,15 @@ export default function PageWeapon() {
             showEquipped,
             locations,
           },
-          weaponFilterConfigs()
-        )
+          weaponFilterConfigs(),
+        ),
       )
       .sort(
         sortFunction(
           weaponSortMap[sortType] ?? [],
           ascending,
-          weaponSortConfigs()
-        )
+          weaponSortConfigs(),
+        ),
       )
       .map((weapon) => weapon.id)
     return dbDirty && { weaponIds, totalWeaponNum }
@@ -152,11 +152,11 @@ export default function PageWeapon() {
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    weaponIds.length
+    weaponIds.length,
   )
   const weaponIdsToShow = useMemo(
     () => weaponIds.slice(0, numShow),
-    [weaponIds, numShow]
+    [weaponIds, numShow],
   )
 
   // Pagination
@@ -167,7 +167,7 @@ export default function PageWeapon() {
 
   const resetEditWeapon = useCallback(
     () => database.displayWeapon.set({ editWeaponId: '' }),
-    [database]
+    [database],
   )
 
   const { editWeaponId } = state

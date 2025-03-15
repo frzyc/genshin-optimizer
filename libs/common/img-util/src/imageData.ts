@@ -5,7 +5,7 @@ export function cropCanvas(
   x: number,
   y: number,
   w: number,
-  h: number
+  h: number,
 ) {
   const canvas = document.createElement('canvas')
   const ctx = canvas.getContext('2d')!
@@ -31,14 +31,14 @@ export function crop(srcCanvas: HTMLCanvasElement, options: CropOptions) {
   y2 = clamp(y2, 0, height)
   if (y1 >= y2) {
     console.warn(
-      `trying to crop with y1:${y1} y2:${y2}, with src height ${height}.`
+      `trying to crop with y1:${y1} y2:${y2}, with src height ${height}.`,
     )
     y1 = 0
     y2 = height
   }
   if (x1 >= x2) {
     console.warn(
-      `trying to crop with x1:${x1} x2:${x2}, with src width ${width}.`
+      `trying to crop with x1:${x1} x2:${x2}, with src width ${width}.`,
     )
     x1 = 0
     x2 = width

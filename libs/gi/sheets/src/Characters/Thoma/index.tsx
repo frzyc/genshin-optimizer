@@ -92,7 +92,7 @@ const dm = {
 
 const [condP1BarrierStacksPath, condP1BarrierStacks] = cond(
   key,
-  'p1BarrierStacks'
+  'p1BarrierStacks',
 )
 // This should technically only apply to the active character, but I am trying
 // to minimize the amount of jank active character fixes.
@@ -105,30 +105,30 @@ const p1_shield_ = greaterEq(
       range(1, dm.passive1.maxStacks).map((stacks) => [
         stacks,
         constant(stacks * dm.passive1.shield_),
-      ])
+      ]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const p2Collapse_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(input.total.hp, dm.passive2.collapse_dmgInc)
+  prod(input.total.hp, dm.passive2.collapse_dmgInc),
 )
 
 const [condC6AfterBarrierPath, condC6AfterBarrier] = cond(key, 'c6AfterBarrier')
 const c6_normal_dmg_ = greaterEq(
   input.constellation,
   6,
-  equal(condC6AfterBarrier, 'on', dm.c6.auto_dmg)
+  equal(condC6AfterBarrier, 'on', dm.c6.auto_dmg),
 )
 const c6_charged_dmg_ = { ...c6_normal_dmg_ }
 const c6_plunging_dmg_ = { ...c6_normal_dmg_ }
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -140,17 +140,17 @@ const dmgFormulas = {
       'hp',
       dm.skill.hpShield_,
       dm.skill.baseShield,
-      'skill'
+      'skill',
     ),
     minPyroShield: shieldElement(
       'pyro',
-      shieldNodeTalent('hp', dm.skill.hpShield_, dm.skill.baseShield, 'skill')
+      shieldNodeTalent('hp', dm.skill.hpShield_, dm.skill.baseShield, 'skill'),
     ),
     maxShield: shieldNodeTalent(
       'hp',
       dm.skill.maxHpShield_,
       dm.skill.maxBaseShield,
-      'skill'
+      'skill',
     ),
     maxPyroShield: shieldElement(
       'pyro',
@@ -158,8 +158,8 @@ const dmgFormulas = {
         'hp',
         dm.skill.maxHpShield_,
         dm.skill.maxBaseShield,
-        'skill'
-      )
+        'skill',
+      ),
     ),
   },
   burst: {
@@ -171,11 +171,11 @@ const dmgFormulas = {
       'hp',
       dm.burst.hpShield_,
       dm.burst.baseShield,
-      'burst'
+      'burst',
     ),
     pyroShield: shieldElement(
       'pyro',
-      shieldNodeTalent('hp', dm.burst.hpShield_, dm.burst.baseShield, 'burst')
+      shieldNodeTalent('hp', dm.burst.hpShield_, dm.burst.baseShield, 'burst'),
     ),
   },
 }
@@ -372,7 +372,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.headerTem('passive2', {

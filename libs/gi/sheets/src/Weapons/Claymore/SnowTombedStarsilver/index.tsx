@@ -23,13 +23,13 @@ const dmgAoe = equal(
   customDmgNode(
     prod(
       subscript(input.weapon.refinement, dmgAoePerc, { unit: '%' }),
-      input.total.atk
+      input.total.atk,
     ),
     'elemental',
     {
       hit: { ele: constant('physical') },
-    }
-  )
+    },
+  ),
 )
 const dmgOnCryoOp = equal(
   input.weapon.key,
@@ -37,13 +37,13 @@ const dmgOnCryoOp = equal(
   customDmgNode(
     prod(
       subscript(input.weapon.refinement, dmgCryoPerc, { unit: '%' }),
-      input.total.atk
+      input.total.atk,
     ),
     'elemental',
     {
       hit: { ele: constant('physical') },
-    }
-  )
+    },
+  ),
 )
 
 const data = dataObjForWeaponSheet(key, undefined, {

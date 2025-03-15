@@ -111,42 +111,42 @@ const enerRechElectroSigil_ = lookup(
   condElectroSigil,
   objKeyMap(range(1, 3), (i) => prod(i, percent(dm.skill.erBonus))),
   naught,
-  { path: 'enerRech_' }
+  { path: 'enerRech_' },
 )
 const electro_res_ = equal(
   'on',
   condTheWolfWithin,
-  percent(dm.burst.electroResBonus)
+  percent(dm.burst.electroResBonus),
 )
 const atkSPD_ = equal(
   'on',
   condTheWolfWithin,
-  subscript(input.total.burstIndex, dm.burst.atkSpdBonus, { unit: '%' })
+  subscript(input.total.burstIndex, dm.burst.atkSpdBonus, { unit: '%' }),
 )
 const enerRechA4_ = greaterEq(
   input.asc,
   4,
-  equal('on', condA4, percent(dm.passive2.erInc, { path: 'enerRech_' }))
+  equal('on', condA4, percent(dm.passive2.erInc, { path: 'enerRech_' })),
 )
 const all_dmg_ = greaterEq(
   input.constellation,
   1,
-  equal('on', condC1, percent(dm.constellation1.allDmgInc))
+  equal('on', condC1, percent(dm.constellation1.allDmgInc)),
 )
 const critRate_ = greaterEq(
   input.constellation,
   2,
-  equal('on', condC2, percent(dm.constellation2.critRateInc))
+  equal('on', condC2, percent(dm.constellation2.critRateInc)),
 )
 const enemyDefRed_ = greaterEq(
   input.constellation,
   4,
-  equal('on', condC4, percent(dm.constellation4.defDec))
+  equal('on', condC4, percent(dm.constellation4.defDec)),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spinningDmg: dmgNode('atk', dm.charged.spinningDmg, 'charged'),
@@ -163,41 +163,41 @@ const dmgFormulas = {
       prod(
         prod(
           subscript(input.total.autoIndex, dm.normal.hitArr[0]),
-          subscript(input.total.burstIndex, dm.burst.companionDmg)
+          subscript(input.total.burstIndex, dm.burst.companionDmg),
         ),
-        input.total.atk
+        input.total.atk,
       ),
-      'burst'
+      'burst',
     ),
     companionDmg2: customDmgNode(
       prod(
         prod(
           subscript(input.total.autoIndex, dm.normal.hitArr[1]),
-          subscript(input.total.burstIndex, dm.burst.companionDmg)
+          subscript(input.total.burstIndex, dm.burst.companionDmg),
         ),
-        input.total.atk
+        input.total.atk,
       ),
-      'burst'
+      'burst',
     ),
     companionDmg3: customDmgNode(
       prod(
         prod(
           subscript(input.total.autoIndex, dm.normal.hitArr[2]),
-          subscript(input.total.burstIndex, dm.burst.companionDmg)
+          subscript(input.total.burstIndex, dm.burst.companionDmg),
         ),
-        input.total.atk
+        input.total.atk,
       ),
-      'burst'
+      'burst',
     ),
     companionDmg4: customDmgNode(
       prod(
         prod(
           subscript(input.total.autoIndex, dm.normal.hitArr[3]),
-          subscript(input.total.burstIndex, dm.burst.companionDmg)
+          subscript(input.total.burstIndex, dm.burst.companionDmg),
         ),
-        input.total.atk
+        input.total.atk,
       ),
-      'burst'
+      'burst',
     ),
   },
   constellation6: {
@@ -207,8 +207,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation6.dmg), input.total.atk),
         'elemental',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
   },
 }

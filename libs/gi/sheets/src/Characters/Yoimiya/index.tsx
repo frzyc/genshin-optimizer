@@ -111,14 +111,14 @@ const normal_dmgMult = compareEq(
     name: st('dmgMult.normal'),
     unit: '%',
   }),
-  one
+  one,
 )
 const a1Stacks = lookup(
   condA1,
   Object.fromEntries(
-    range(1, dm.passive1.maxStacks).map((i) => [i, constant(i)])
+    range(1, dm.passive1.maxStacks).map((i) => [i, constant(i)]),
   ),
-  0
+  0,
 )
 const pyro_dmg_ = greaterEq(
   input.asc,
@@ -128,8 +128,8 @@ const pyro_dmg_ = greaterEq(
     'skill',
     infoMut(prod(percent(dm.passive1.pyro_dmg_), a1Stacks), {
       path: 'pyro_dmg_',
-    })
-  )
+    }),
+  ),
 )
 const atk_ = greaterEq(
   input.asc,
@@ -142,22 +142,22 @@ const atk_ = greaterEq(
       key,
       sum(
         percent(dm.passive2.fixed_atk_),
-        prod(percent(dm.passive2.var_atk_), a1Stacks)
-      )
-    )
-  )
+        prod(percent(dm.passive2.var_atk_), a1Stacks),
+      ),
+    ),
+  ),
 )
 const c1atk_ = greaterEq(
   input.constellation,
   1,
-  equal(condC1, 'c1', percent(dm.constellation1.atk_))
+  equal(condC1, 'c1', percent(dm.constellation1.atk_)),
 )
 const c2pyro_dmg_ = greaterEq(
   input.constellation,
   2,
   equal(condC2, 'c2', percent(dm.constellation2.pyro_dmg_), {
     path: 'pyro_dmg_',
-  })
+  }),
 )
 
 const normalEntries = dm.normal.hitArr.map((arr, i) => [
@@ -167,14 +167,14 @@ const normalEntries = dm.normal.hitArr.map((arr, i) => [
     arr,
     'normal',
     { hit: { ele: compareEq(condSkill, 'skill', elementKey, 'physical') } },
-    normal_dmgMult
+    normal_dmgMult,
   ),
 ])
 
 // Yoimiya C6 will only trigger per NA action. For multi-hits, it will combine the MVs
 // https://keqingmains.com/yoimiya/#Constellations
 const kindlingArrs = dm.normal.hitArr.map((arr, i) =>
-  i === 0 || i === 3 ? arr.map((val) => val * 2) : arr
+  i === 0 || i === 3 ? arr.map((val) => val * 2) : arr,
 )
 const kindlingEntries = kindlingArrs.map((arr, i) => [
   i,
@@ -192,16 +192,16 @@ const kindlingEntries = kindlingArrs.map((arr, i) => [
             unit: '%',
           }),
           input.total.atk,
-          normal_dmgMult
+          normal_dmgMult,
         ),
         'normal',
         {
           hit: {
             ele: compareEq(condSkill, 'skill', elementKey, 'physical'),
           },
-        }
-      )
-    )
+        },
+      ),
+    ),
   ),
 ])
 
@@ -263,7 +263,7 @@ const sheet: TalentSheet = {
           node: infoMut(dmgFormulas.constellation6[i], {
             name: ct.chg(`auto.skillParams.${i}`),
           }),
-        })
+        }),
       ),
     }),
     {
@@ -366,7 +366,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),
@@ -463,7 +463,7 @@ const sheet: TalentSheet = {
       canShow: unequal(
         input.activeCharKey,
         key,
-        equal(condBurst, 'on', greaterEq(input.asc, 4, 1))
+        equal(condBurst, 'on', greaterEq(input.asc, 4, 1)),
       ),
       teamBuff: true,
       value: condA1,
@@ -485,7 +485,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),

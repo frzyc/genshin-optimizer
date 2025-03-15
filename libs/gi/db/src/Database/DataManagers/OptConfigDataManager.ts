@@ -29,7 +29,7 @@ export const allArtifactSetExclusionKeys = [
         'PrayersForIllumination',
         'PrayersForWisdom',
         'PrayersToSpringtime',
-      ].includes(key)
+      ].includes(key),
   ),
   'rainbow',
 ] as ArtSetExclusionKey[]
@@ -148,21 +148,21 @@ export class OptConfigDataManager extends DataManager<
     if (!artExclusion || !Array.isArray(artExclusion)) artExclusion = []
     else
       artExclusion = [...new Set(artExclusion)].filter((id) =>
-        this.database.arts.keys.includes(id)
+        this.database.arts.keys.includes(id),
       )
 
     excludedLocations = validateArr(
       excludedLocations,
       allLocationCharacterKeys.filter((k) => k !== key),
-      [] // Remove self from list
+      [], // Remove self from list
     ).filter(
       (lk) =>
-        this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)) // Remove characters who do not exist in the DB
+        this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)), // Remove characters who do not exist in the DB
     )
 
     if (
       !maxBuildsToShowList.includes(
-        maxBuildsToShow as (typeof maxBuildsToShowList)[number]
+        maxBuildsToShow as (typeof maxBuildsToShowList)[number],
       )
     )
       maxBuildsToShow = maxBuildsToShowDefault
@@ -189,7 +189,7 @@ export class OptConfigDataManager extends DataManager<
     artSetExclusion = Object.fromEntries(
       Object.entries(artSetExclusion as ArtSetExclusion)
         .map(([k, a]) => [k, [...new Set(a)]])
-        .filter(([_, a]) => a.length)
+        .filter(([_, a]) => a.length),
     )
 
     if (
@@ -302,7 +302,7 @@ const initialBuildSettings: OptConfig = deepFreeze({
 export function handleArtSetExclusion(
   currentArtSetExclusion: ArtSetExclusion,
   setKey: ArtSetExclusionKey,
-  num: 2 | 4
+  num: 2 | 4,
 ) {
   const artSetExclusion = deepClone(currentArtSetExclusion)
   const setExclusion = artSetExclusion[setKey]

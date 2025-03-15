@@ -6,42 +6,42 @@ const artifactSubstatRoll = allStats.art.subRoll
 describe('Substat Rolls/efficiency', () => {
   test('should have valid rolls in substat roll table', () => {
     expect(Object.keys(artifactSubstatRoll[4]['critRate_'] ?? {})).toEqual(
-      expect.arrayContaining(['5.6'])
+      expect.arrayContaining(['5.6']),
     )
     expect(Object.keys(artifactSubstatRoll[4]['critDMG_'] ?? {})).toEqual(
-      expect.arrayContaining(['4.4'])
+      expect.arrayContaining(['4.4']),
     )
     expect(Object.keys(artifactSubstatRoll[4]['eleMas'] ?? {})).toEqual(
-      expect.arrayContaining(['30'])
+      expect.arrayContaining(['30']),
     )
     expect(Object.keys(artifactSubstatRoll[4]['def_'] ?? {})).toEqual(
-      expect.arrayContaining(['5.8'])
+      expect.arrayContaining(['5.8']),
     )
 
     expect(Object.keys(artifactSubstatRoll[5]['critRate_'] ?? {})).toEqual(
-      expect.arrayContaining(['6.6', '12.4'])
+      expect.arrayContaining(['6.6', '12.4']),
     )
     expect(Object.keys(artifactSubstatRoll[5]['critDMG_'] ?? {})).toEqual(
-      expect.arrayContaining(['6.2', '12.4', '21.0'])
+      expect.arrayContaining(['6.2', '12.4', '21.0']),
     )
     expect(Object.keys(artifactSubstatRoll[5]['atk'] ?? {})).toEqual(
-      expect.arrayContaining(['33'])
+      expect.arrayContaining(['33']),
     )
     expect(Object.keys(artifactSubstatRoll[5]['def'] ?? {})).toEqual(
-      expect.arrayContaining(['19', '63'])
+      expect.arrayContaining(['19', '63']),
     )
     expect(Object.keys(artifactSubstatRoll[5]['def_'] ?? {})).toEqual(
-      expect.arrayContaining(['19.0', '13.9'])
+      expect.arrayContaining(['19.0', '13.9']),
     )
     expect(Object.keys(artifactSubstatRoll[5]['hp'] ?? {})).toEqual(
-      expect.arrayContaining(['239'])
+      expect.arrayContaining(['239']),
     )
     expect(Object.keys(artifactSubstatRoll[5]['eleMas'] ?? {})).toEqual(
-      expect.arrayContaining(['23'])
+      expect.arrayContaining(['23']),
     )
 
     expect(Object.keys(artifactSubstatRoll[5]['hp_'] ?? {})).toEqual(
-      expect.arrayContaining(['26.3'])
+      expect.arrayContaining(['26.3']),
     )
   })
   test('should get correct roll base', () => {
@@ -63,7 +63,7 @@ describe('Substat Rolls/efficiency', () => {
       const rolls = getSubstatRolls('critDMG_', 32.6, 5)
       expect(rolls.length).toBeGreaterThan(1)
       rolls.forEach((roll) =>
-        expect(roll.reduce((a, b) => a + b).toFixed(1)).toEqual('32.6')
+        expect(roll.reduce((a, b) => a + b).toFixed(1)).toEqual('32.6'),
       )
     })
     test('should reject close rolls', () => {
@@ -86,13 +86,13 @@ describe('Substat Rolls/efficiency', () => {
     test('should deal with one roll', () => {
       expect(getSubstatEfficiency('def_', [0.0729 * 100])).toEqual(100)
       expect(getSubstatEfficiency('def_', [(0.0729 * 100) / 2])).toEqual(
-        100 / 2
+        100 / 2,
       )
     })
     test('should deal with invalids', () => {
       expect(getSubstatEfficiency('def_', [9999])).toEqual(100)
       expect(getSubstatEfficiency('def_', [9999, 9999, 9999, 9999])).toEqual(
-        100
+        100,
       )
       expect(getSubstatEfficiency('def_', [-1])).toEqual(0)
       expect(getSubstatEfficiency('', [-1])).toEqual(0)

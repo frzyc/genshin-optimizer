@@ -28,11 +28,11 @@ type FetterInfoExcelConfigData = {
   // ]
 }
 const fetterInfoExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/FetterInfoExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/FetterInfoExcelConfigData.json'),
 ) as FetterInfoExcelConfigData[]
 
 const fetterInfoExcelConfigData = Object.fromEntries(
-  fetterInfoExcelConfigDataSrc.map((data) => [data.avatarId, data])
+  fetterInfoExcelConfigDataSrc.map((data) => [data.avatarId, data]),
 ) as Record<CharacterId, FetterInfoExcelConfigData>
 
 export { fetterInfoExcelConfigData }

@@ -101,16 +101,16 @@ const propStacks = infoMut(
   lookup(
     condPropStacks,
     objKeyMap(propStacksArr, (stacks) => constant(stacks)),
-    constant(0)
+    constant(0),
   ),
-  { name: ct.ch('propStacks') }
+  { name: ct.ch('propStacks') },
 )
 
 // TODO: Check if this scales with Bennett ult. If it does not, change this to premod.atk
 const skillDmgInc = prod(
   propStacks,
   subscript(input.total.skillIndex, dm.skill.dmgInc, { unit: '%' }),
-  input.total.atk
+  input.total.atk,
 )
 
 const [condA1DrainHpPath, condA1DrainHp] = cond(key, 'a1DrainHp')
@@ -120,13 +120,13 @@ const a1_hatDmgInc = greaterEq(
   equal(
     condA1DrainHp,
     'on',
-    prod(percent(dm.passive1.propAddlDmg), input.total.atk)
-  )
+    prod(percent(dm.passive1.propAddlDmg), input.total.atk),
+  ),
 )
 
 const [condA4AffectedByPyroPath, condA4AffectedByPyro] = cond(
   key,
-  'a4AffectedByPyro'
+  'a4AffectedByPyro',
 )
 const numPyroOther = infoMut(min(2, sum(tally.pyro, -1)), { asConst: true })
 const a4AffectedByPyro_dmg_ = greaterEq(
@@ -137,9 +137,9 @@ const a4AffectedByPyro_dmg_ = greaterEq(
     'on',
     sum(
       percent(dm.passive2.dmg_),
-      prod(percent(dm.passive2.extraDmg_), numPyroOther)
-    )
-  )
+      prod(percent(dm.passive2.extraDmg_), numPyroOther),
+    ),
+  ),
 )
 
 const [condC2StacksPath, condC2Stacks] = cond(key, 'c2Stacks')
@@ -152,16 +152,16 @@ const c2_critDMG_ = greaterEq(
     lookup(
       condC2Stacks,
       objKeyMap(c2StacksArr, (stacks) => constant(stacks)),
-      naught
-    )
-  )
+      naught,
+    ),
+  ),
 )
 
 const [condC4HitPath, condC4Hit] = cond(key, 'c4Hit')
 const c4_pyro_enemy_res_ = greaterEq(
   input.constellation,
   4,
-  equal(condC4Hit, 'on', -dm.constellation4.enemy_pyro_res_)
+  equal(condC4Hit, 'on', -dm.constellation4.enemy_pyro_res_),
 )
 
 const hit_ele_pyro = { hit: { ele: constant(getCharEle(key)) } }
@@ -172,7 +172,7 @@ const hat_addl: Data = {
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -180,11 +180,11 @@ const dmgFormulas = {
     prop: dmgNode('atk', dm.charged.propDmg, 'charged', hit_ele_pyro),
     hpCost: prod(
       subscript(input.total.autoIndex, dm.charged.hpCost, { unit: '%' }),
-      input.total.hp
+      input.total.hp,
     ),
     hatHp: prod(
       subscript(input.total.autoIndex, dm.charged.hatHp, { unit: '%' }),
-      input.total.hp
+      input.total.hp,
     ),
     pyrotechnic: dmgNode('atk', dm.charged.pyrotechnicDmg, 'charged', hat_addl),
     spiritbreath: dmgNode('atk', dm.charged.thornDmg, 'charged', hit_ele_pyro),
@@ -199,7 +199,7 @@ const dmgFormulas = {
       new Array(15).fill(0),
       'skill',
       undefined,
-      propStacks
+      propStacks,
     ),
   },
   burst: {
@@ -218,8 +218,8 @@ const dmgFormulas = {
         dm.charged.pyrotechnicDmg,
         'charged',
         hit_ele_pyro,
-        percent(dm.constellation6.dmg)
-      )
+        percent(dm.constellation6.dmg),
+      ),
     ),
   },
 }

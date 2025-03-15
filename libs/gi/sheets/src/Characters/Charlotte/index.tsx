@@ -113,7 +113,7 @@ const numOtherFontainians = infoMut(sum(tally.fontaine, -1), { asConst: true })
 const a4_heal_ = greaterEq(
   input.asc,
   4,
-  prod(numOtherFontainians, percent(dm.passive2.heal_))
+  prod(numOtherFontainians, percent(dm.passive2.heal_)),
 )
 const numNonFontainians = infoMut(
   sum(
@@ -121,16 +121,16 @@ const numNonFontainians = infoMut(
       .filter(
         ([key]) =>
           (allRegionKeys as readonly string[]).includes(key) &&
-          key !== 'fontaine'
+          key !== 'fontaine',
       )
-      .map(([_key, value]) => value)
+      .map(([_key, value]) => value),
   ),
-  { asConst: true }
+  { asConst: true },
 )
 const a4_cryo_dmg_ = greaterEq(
   input.asc,
   4,
-  prod(numNonFontainians, percent(dm.passive2.cryo_dmg_))
+  prod(numNonFontainians, percent(dm.passive2.cryo_dmg_)),
 )
 
 const c2HitArr = range(1, 3) as Array<1 | 2 | 3>
@@ -141,21 +141,21 @@ const c2Hit_atk_ = greaterEq(
   lookup(
     condC2Hit,
     objKeyMap(c2HitArr, (hit) => percent(dm.constellation2[`atk${hit}`])),
-    naught
-  )
+    naught,
+  ),
 )
 
 const [condC4MarkedPath, condC4Marked] = cond(key, 'c4Marked')
 const c4Marked_burst_dmg_ = greaterEq(
   input.constellation,
   4,
-  equal(condC4Marked, 'on', dm.constellation4.dmg_)
+  equal(condC4Marked, 'on', dm.constellation4.dmg_),
 )
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -174,14 +174,14 @@ const dmgFormulas = {
       'atk',
       dm.burst.castHealBase,
       dm.burst.castHealFlat,
-      'burst'
+      'burst',
     ),
     skillDmg: dmgNode('atk', dm.burst.skillDmg, 'burst'),
     kameraHeal: healNodeTalent(
       'atk',
       dm.burst.kameraHealBase,
       dm.burst.kameraHealFlat,
-      'burst'
+      'burst',
     ),
     kameraDmg: dmgNode('atk', dm.burst.kameraDmg, 'burst'),
   },
@@ -189,7 +189,7 @@ const dmgFormulas = {
     heal: greaterEq(
       input.constellation,
       1,
-      healNode('atk', dm.constellation1.heal, 0)
+      healNode('atk', dm.constellation1.heal, 0),
     ),
   },
   constellation6: {
@@ -199,13 +199,13 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation6.dmg), input.total.atk),
         'burst',
-        { hit: { ele: constant('cryo') } }
-      )
+        { hit: { ele: constant('cryo') } },
+      ),
     ),
     heal: greaterEq(
       input.constellation,
       6,
-      healNode('atk', percent(dm.constellation6.heal), 0)
+      healNode('atk', percent(dm.constellation6.heal), 0),
     ),
   },
 }

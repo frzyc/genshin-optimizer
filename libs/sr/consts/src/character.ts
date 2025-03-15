@@ -121,7 +121,7 @@ export const allCharacterGenderedKeys = [
 export type CharacterGenderedKey = (typeof allCharacterGenderedKeys)[number]
 
 export function characterGenderedKeyToCharacterKey(
-  cgKey: CharacterGenderedKey
+  cgKey: CharacterGenderedKey,
 ): CharacterKey {
   if (cgKey.includes('Trailblazer')) {
     return cgKey.slice(0, -1) as TrailblazerKey

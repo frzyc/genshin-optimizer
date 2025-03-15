@@ -53,7 +53,7 @@ export const max = <P extends OP = never>(...x: Num<P>[]): Max<P | 'max'> =>
 /** x / (x + c) */
 export const sumfrac = <P extends OP = never>(
   x: Num<P>,
-  c: Num<P>
+  c: Num<P>,
 ): SumFrac<P | 'sumfrac'> => arithmetic('sumfrac', [x, c])
 function arithmetic<Op extends string, P extends OP>(op: Op, x: Num<P>[]) {
   return { op, x: toVs(x), br }
@@ -64,31 +64,31 @@ export function cmpEq<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   eq: Num<P>,
-  neq?: Num<P>
+  neq?: Num<P>,
 ): Match<NumNode<P>, P | 'match'>
 export function cmpEq<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   eq: Str<P>,
-  neq: Str<P>
+  neq: Str<P>,
 ): Match<StrNode<P>, P | 'match'>
 export function cmpEq<P extends OP = never>(
   v1: Str<P>,
   v2: Str<P>,
   eq: Num<P>,
-  neq?: Num<P>
+  neq?: Num<P>,
 ): Match<NumNode<P>, P | 'match'>
 export function cmpEq<P extends OP = never>(
   v1: Str<P>,
   v2: Str<P>,
   eq: Str<P>,
-  neq: Str<P>
+  neq: Str<P>,
 ): Match<StrNode<P>, P | 'match'>
 export function cmpEq<P extends OP = never>(
   v1: Val<P>,
   v2: Val<P>,
   eq: Val<P>,
-  neq: Val<P> = 0
+  neq: Val<P> = 0,
 ): Match<AnyNode<P>, P | 'match'> {
   return { op: 'match', x: toVs([eq, neq]), br: toVs([v1, v2]) }
 }
@@ -97,31 +97,31 @@ export function cmpNE<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   neq: Num<P>,
-  eq?: Num<P>
+  eq?: Num<P>,
 ): Match<NumNode<P>, P | 'match'>
 export function cmpNE<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   neq: Str<P>,
-  eq: Str<P>
+  eq: Str<P>,
 ): Match<StrNode<P>, P | 'match'>
 export function cmpNE<P extends OP = never>(
   v1: Str<P>,
   v2: Str<P>,
   neq: Num<P>,
-  eq?: Num<P>
+  eq?: Num<P>,
 ): Match<NumNode<P>, P | 'match'>
 export function cmpNE<P extends OP = never>(
   v1: Str<P>,
   v2: Str<P>,
   neq: Str<P>,
-  eq: Str<P>
+  eq: Str<P>,
 ): Match<StrNode<P>, P | 'match'>
 export function cmpNE<P extends OP = never>(
   v1: Val<P>,
   v2: Val<P>,
   neq: Val<P>,
-  eq: Val<P> = 0
+  eq: Val<P> = 0,
 ): Match<AnyNode<P>, P | 'match'> {
   return { op: 'match', x: toVs([eq, neq]), br: toVs([v1, v2]) }
 }
@@ -131,19 +131,19 @@ export function cmpGE<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   ge: Num<P>,
-  lt?: Num<P>
+  lt?: Num<P>,
 ): Threshold<NumNode<P>, P | 'thres'>
 export function cmpGE<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   ge: Str<P>,
-  lt: Str<P>
+  lt: Str<P>,
 ): Threshold<StrNode<P>, P | 'thres'>
 export function cmpGE<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   ge: Val<P>,
-  lt: Val<P> = 0
+  lt: Val<P> = 0,
 ): Threshold<AnyNode<P>, P | 'thres'> {
   return thres(v1, v2, ge, lt)
 }
@@ -152,19 +152,19 @@ export function cmpLT<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   lt: Num<P>,
-  ge?: Num<P>
+  ge?: Num<P>,
 ): Threshold<NumNode<P>, P | 'thres'>
 export function cmpLT<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   lt: Str<P>,
-  ge: Str<P>
+  ge: Str<P>,
 ): Threshold<StrNode<P>, P | 'thres'>
 export function cmpLT<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   lt: Val<P>,
-  ge: Val<P> = 0
+  ge: Val<P> = 0,
 ): Threshold<AnyNode<P>, P | 'thres'> {
   return thres(v1, v2, ge, lt)
 }
@@ -173,19 +173,19 @@ export function cmpLE<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   le: Num<P>,
-  gt?: Num<P>
+  gt?: Num<P>,
 ): Threshold<NumNode<P>, P | 'thres'>
 export function cmpLE<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   le: Str<P>,
-  gt: Str<P>
+  gt: Str<P>,
 ): Threshold<StrNode<P>, P | 'thres'>
 export function cmpLE<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   le: Val<P>,
-  gt: Val<P> = 0
+  gt: Val<P> = 0,
 ): Threshold<AnyNode<P>, P | 'thres'> {
   return thres(v2, v1, le, gt)
 }
@@ -194,19 +194,19 @@ export function cmpGT<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   gt: Num<P>,
-  le?: Num<P>
+  le?: Num<P>,
 ): Threshold<NumNode<P>, P | 'thres'>
 export function cmpGT<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   gt: Str<P>,
-  le: Str<P>
+  le: Str<P>,
 ): Threshold<StrNode<P>, P | 'thres'>
 export function cmpGT<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   gt: Val<P>,
-  le: Val<P> = 0
+  le: Val<P> = 0,
 ): Threshold<AnyNode<P>, P | 'thres'> {
   return thres(v2, v1, le, gt)
 }
@@ -215,7 +215,7 @@ function thres<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   ge: Val<P>,
-  lt: Val<P>
+  lt: Val<P>,
 ): Threshold<AnyNode<P>, P | 'thres'> {
   return { op: 'thres', x: toVs([ge, lt]), br: toVs([v1, v2]) }
 }
@@ -224,17 +224,17 @@ function thres<P extends OP = never>(
 export function lookup<P extends OP>(
   index: Str<P>,
   table: Record<string, Num<P>>,
-  defaultV?: Num<P>
+  defaultV?: Num<P>,
 ): Lookup<NumNode<P>, P | 'lookup'>
 export function lookup<P extends OP>(
   index: Str<P>,
   table: Record<string, Str<P>>,
-  defaultV?: Str<P>
+  defaultV?: Str<P>,
 ): Lookup<StrNode<P>, P | 'lookup'>
 export function lookup<P extends OP>(
   index: Str<P>,
   table: Record<string, Val<P>>,
-  defaultV?: Val<P>
+  defaultV?: Val<P>,
 ): Lookup<AnyNode<P>, P | 'lookup'> {
   return {
     op: 'lookup',
@@ -246,15 +246,15 @@ export function lookup<P extends OP>(
 /** table[index] */
 export function subscript<P extends OP>(
   index: Num<P>,
-  table: number[]
+  table: number[],
 ): Subscript<number, P | 'subscript'>
 export function subscript<P extends OP>(
   index: Num<P>,
-  table: string[]
+  table: string[],
 ): Subscript<string, P | 'subscript'>
 export function subscript<P extends OP>(
   index: Num<P>,
-  table: number[] | string[]
+  table: number[] | string[],
 ): Subscript<_value, P | 'subscript'> {
   return { op: 'subscript', ex: table, x, br: [toV(index)] }
 }
@@ -264,19 +264,19 @@ export function subscript<P extends OP>(
 /** Compute `v` using `{current tag}/tag` */
 export function tag<P extends OP = never>(
   v: Num<P>,
-  tag: Tag
+  tag: Tag,
 ): TagOverride<NumNode<P>, P | 'tag'>
 export function tag<P extends OP = never>(
   v: Str<P>,
-  tag: Tag
+  tag: Tag,
 ): TagOverride<StrNode<P>, P | 'tag'>
 export function tag<P extends OP = never>(
   v: Val<P>,
-  tag: Tag
+  tag: Tag,
 ): TagOverride<AnyNode<P>, P | 'tag'>
 export function tag<P extends OP = never>(
   v: Val<P>,
-  tag: Tag
+  tag: Tag,
 ): TagOverride<AnyNode<P>, P | 'tag'> {
   return { op: 'tag', x: [toV(v)], br, tag }
 }
@@ -288,19 +288,19 @@ export function tag<P extends OP = never>(
  */
 export function dynTag<P extends OP = never>(
   v: Num<P>,
-  tag: Record<string, Str<P>>
+  tag: Record<string, Str<P>>,
 ): DynamicTag<NumNode<P>, P | 'dtag'>
 export function dynTag<P extends OP = never>(
   v: Str<P>,
-  tag: Record<string, Str<P>>
+  tag: Record<string, Str<P>>,
 ): DynamicTag<StrNode<P>, P | 'dtag'>
 export function dynTag<P extends OP = never>(
   v: Val<P>,
-  tag: Record<string, Str<P>>
+  tag: Record<string, Str<P>>,
 ): DynamicTag<AnyNode<P>, P | 'dtag'>
 export function dynTag<P extends OP = never>(
   v: Val<P>,
-  tag: Record<string, Str<P>>
+  tag: Record<string, Str<P>>,
 ): DynamicTag<AnyNode<P>, P | 'dtag'> {
   return {
     op: 'dtag',

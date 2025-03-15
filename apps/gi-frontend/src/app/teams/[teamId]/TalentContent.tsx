@@ -225,7 +225,7 @@ function SkillDisplayCard({
     (children: ReactNode) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>
     ),
-    [onClickTitle]
+    [onClickTitle],
   )
 
   let header: ReactNode | null = null

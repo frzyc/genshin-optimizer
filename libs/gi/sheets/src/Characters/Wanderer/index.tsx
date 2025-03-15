@@ -98,23 +98,23 @@ const afterSkill_normal_mult_ = infoMut(
     condAfterSkill,
     'on',
     subscript(input.total.skillIndex, datamine.skill.normal_mult),
-    one
+    one,
   ),
-  { name: st('dmgMult.normal'), unit: '%' }
+  { name: st('dmgMult.normal'), unit: '%' },
 )
 const afterSkill_charged_mult_ = infoMut(
   compareEq(
     condAfterSkill,
     'on',
     subscript(input.total.skillIndex, datamine.skill.charged_mult),
-    one
+    one,
   ),
-  { name: st('dmgMult.charged'), unit: '%' }
+  { name: st('dmgMult.charged'), unit: '%' },
 )
 
 const [condSkillPyroContactPath, condSkillPyroContact] = cond(
   key,
-  'skillPyroContact'
+  'skillPyroContact',
 )
 const skillPyro_atk_ = greaterEq(
   input.asc,
@@ -122,12 +122,12 @@ const skillPyro_atk_ = greaterEq(
   equal(
     condAfterSkill,
     'on',
-    equal(condSkillPyroContact, 'pyro', datamine.passive1.pyro_atk_)
-  )
+    equal(condSkillPyroContact, 'pyro', datamine.passive1.pyro_atk_),
+  ),
 )
 const [condSkillCryoContactPath, condSkillCryoContact] = cond(
   key,
-  'skillCryoContact'
+  'skillCryoContact',
 )
 const skillCryo_critRate_ = greaterEq(
   input.asc,
@@ -135,14 +135,14 @@ const skillCryo_critRate_ = greaterEq(
   equal(
     condAfterSkill,
     'on',
-    equal(condSkillCryoContact, 'cryo', datamine.passive1.cryo_critRate_)
-  )
+    equal(condSkillCryoContact, 'cryo', datamine.passive1.cryo_critRate_),
+  ),
 )
 
 const c1AfterSkill_atkSPD_ = greaterEq(
   input.constellation,
   1,
-  equal(condAfterSkill, 'on', datamine.constellation1.atkSPD_)
+  equal(condAfterSkill, 'on', datamine.constellation1.atkSPD_),
 )
 const c1BonusScaling_ = greaterEq(
   input.constellation,
@@ -150,7 +150,7 @@ const c1BonusScaling_ = greaterEq(
   infoMut(equal(condAfterSkill, 'on', datamine.constellation1.dmg), {
     name: ct.ch('c1BonusKey'),
     unit: '%',
-  })
+  }),
 )
 
 const [condC2PointsPath, condC2Points] = cond(key, 'c2Points')
@@ -167,11 +167,11 @@ const c2AfterSkill_burst_dmg_ = greaterEq(
         c2PointsArr.map((points) => [
           points,
           prod(points, datamine.constellation2.burst_dmg_perPoint),
-        ])
+        ]),
       ),
-      naught
-    )
-  )
+      naught,
+    ),
+  ),
 )
 
 const dmgFormulas = {
@@ -179,7 +179,7 @@ const dmgFormulas = {
     datamine.normal.hitArr.map((arr, i) => [
       i,
       dmgNode('atk', arr, 'normal', undefined, afterSkill_normal_mult_),
-    ])
+    ]),
   ),
   charged: {
     dmg: dmgNode(
@@ -187,7 +187,7 @@ const dmgFormulas = {
       datamine.charged.dmg,
       'charged',
       undefined,
-      afterSkill_charged_mult_
+      afterSkill_charged_mult_,
     ),
   },
   plunging: Object.fromEntries(
@@ -196,9 +196,9 @@ const dmgFormulas = {
       dmgNode(
         'atk',
         value,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+        key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
       ),
-    ])
+    ]),
   ),
   skill: {
     dmg: dmgNode('atk', datamine.skill.dmg, 'skill'),
@@ -213,11 +213,11 @@ const dmgFormulas = {
       customDmgNode(
         prod(
           sum(percent(datamine.passive2.dmg), c1BonusScaling_),
-          input.total.atk
+          input.total.atk,
         ),
         'elemental',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
   },
   constellation6: Object.fromEntries(
@@ -237,18 +237,18 @@ const dmgFormulas = {
                 unit: '%',
               }),
               input.total.atk,
-              afterSkill_normal_mult_
+              afterSkill_normal_mult_,
             ),
             'normal',
             {
               hit: {
                 ele: constant(elementKey),
               },
-            }
-          )
-        )
+            },
+          ),
+        ),
       ),
-    ])
+    ]),
   ),
 }
 
@@ -434,7 +434,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),

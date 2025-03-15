@@ -12,7 +12,7 @@ const [condPassivePath, condPassive] = cond(key, 'Overloaded')
 const atk_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, atkInc, { unit: '%' })
+  subscript(input.weapon.refinement, atkInc, { unit: '%' }),
 )
 
 const data = dataObjForWeaponSheet(key, {
