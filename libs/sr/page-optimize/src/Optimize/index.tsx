@@ -273,7 +273,6 @@ function ProgressIndicator(props: { progress: Progress; total: number }) {
   const unskipped = computed + remaining
 
   const unskippedRatio = Math.log1p(unskipped) / Math.log1p(props.total)
-  const _computeRate = (computed / unskipped) * unskippedRatio
   const remRatio = (remaining / unskipped) * unskippedRatio
   return (
     <Box>
