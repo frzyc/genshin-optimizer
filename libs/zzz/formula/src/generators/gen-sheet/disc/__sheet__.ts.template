@@ -10,7 +10,7 @@ import {
   registerBuff,
   teamBuff,
 } from '../../util'
-import { registerDisc } from '../util'
+import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = '<%= sheet %>'
 

@@ -1,0 +1,14 @@
+{
+  "generators": {
+    "gen-map": {
+      "factory": "./src/generators/gen-map/single-generator",
+      "schema": "./src/generators/gen-map/single-schema.json",
+      "description": "Generate a single map"
+    },
+    "gen-all-maps": {
+      "factory": "./src/generators/gen-map/all-generator",
+      "schema": "./src/generators/gen-map/all-schema.json",
+      "description": "Generate all maps"
+    }
+  }
+}

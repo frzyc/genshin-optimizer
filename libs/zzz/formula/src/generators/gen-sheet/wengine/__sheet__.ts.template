@@ -16,8 +16,10 @@ import {
   registerWengine,
   showSpecialtyAndEquipped,
 } from '../util'
+import { mappedStats } from '@genshin-optimizer/zzz/stats'
 
 const key: WengineKey = '<%= sheet %>'
+const dm = mappedStats.wengine[key]
 const { modification } = own.wengine
 
 // TODO: Add conditionals
@@ -37,7 +39,7 @@ const sheet = registerWengine(
     ownBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(subscript(modification, [0.1, 0.2, 0.3, 0.4, 0.5]))
+        boolConditional.ifOn(subscript(modification, dm.cond_dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)
