@@ -7,18 +7,28 @@ import {
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
+import type { Variant } from '@mui/material/styles/createTypography'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { LevelSelect } from '../../LevelSelect'
 import { CharacterCardStats } from '../card'
-import {
-  CharacterCompactMindscapeSelector,
-  CharacterCoverArea,
-} from '../CharacterProfilePieces'
+import { CharacterCard } from '../CharacterCard'
+import { CharacterCompactMindscapeSelector } from '../CharacterProfilePieces'
 import { CoreDropdown } from '../CoreDropdown'
 import { EquippedGrid } from '../EquippedGrid'
 import { SkillDropdown } from '../SkillDropdown'
+
+const charCardConfig = {
+  cardWidth: '500px',
+  charImgWidth: '75%',
+  iconsSize: 1.5,
+  showSkills: false,
+  charNameWidth: '166px',
+  charNameVariant: 'h6' as Variant,
+  scrollingBgSize: '220px',
+}
+
 export function Content({ onClose }: { onClose?: () => void }) {
   const { t } = useTranslation(['page_characters'])
   const navigate = useNavigate()
@@ -51,7 +61,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
       </Box>
       <Box>
         <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-          <Grid item xs={8} sm={5} md={4} lg={3}>
+          <Grid item xs={7} sm={4} md={3} lg={3} xl={4}>
             <CardThemed
               bgt="light"
               sx={{
@@ -61,7 +71,10 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 gap: 1,
               }}
             >
-              <CharacterCoverArea character={character} />
+              <CharacterCard
+                characterKey={characterKey}
+                charCardConfig={charCardConfig}
+              ></CharacterCard>
               <Box sx={{ px: 1 }}>
                 <LevelSelect
                   level={character.level}
@@ -89,10 +102,10 @@ export function Content({ onClose }: { onClose?: () => void }) {
           </Grid>
           <Grid
             item
-            xs={12}
-            sm={7}
-            md={8}
-            lg={9}
+            xs={11}
+            sm={6}
+            md={7}
+            lg={8}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <Box>
