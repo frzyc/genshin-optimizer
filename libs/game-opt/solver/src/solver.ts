@@ -1,28 +1,25 @@
-import {
-  prune,
-  type Candidate,
-  type NumTagFree,
-} from '@genshin-optimizer/pando/engine'
+import type { Candidate, NumTagFree } from '@genshin-optimizer/pando/engine'
+import { prune } from '@genshin-optimizer/pando/engine'
 import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'
 import type { Command, ErrMsg, Response } from './workerHandle'
 
 const reportInterval = 50 // (minimum) progress report interval for solver, in ms
 
-export interface SolverConfig {
+export interface SolverConfig<ID> {
   nodes: NumTagFree[]
   minimum: number[]
-  candidates: Candidate<string>[][]
+  candidates: Candidate<ID>[][]
   topN: number
   numWorkers: number
   setProgress: (_: Progress) => void
 }
 
-type WorkerInfo<ID extends string> = { builds: BuildResult<ID>[] }
+type WorkerInfo<ID> = { builds: BuildResult<ID>[] }
 type IdleWorkers = { ty: 'idle'; workers: Set<Worker>; works?: never }
 type ExcessWorks = { ty: 'work'; workers?: never; works: Work[] }
 
-export class Solver<ID extends string> {
+export class Solver<ID extends string | number> {
   topN: number
   optThreshold: number
 
@@ -30,13 +27,13 @@ export class Solver<ID extends string> {
   state: IdleWorkers | ExcessWorks
   progress: Progress = { computed: 0, failed: 0, skipped: 0, remaining: 0 }
 
-  results: Promise<BuildResult[]>
+  results: Promise<BuildResult<ID>[]>
   nextReport = Date.now()
   report: () => void
-  finalize: (result: BuildResult[]) => void = () => {}
+  finalize: (result: BuildResult<ID>[]) => void = () => {}
   terminate: (reason: any) => void = () => {}
 
-  constructor(cfg: SolverConfig) {
+  constructor(cfg: SolverConfig<ID>) {
     const { progress } = this
     const { topN, numWorkers, setProgress } = cfg
     const workers = [...Array(numWorkers)].map(

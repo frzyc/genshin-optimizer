@@ -1,41 +1,35 @@
-import type { Candidate, NumTagFree } from '@genshin-optimizer/pando/engine'
-import { executionStr, prune } from '@genshin-optimizer/pando/engine'
-import type { BuildResult, Progress, Work } from './common'
-import { buildCount } from './common'
-import { splitCandidates } from './split'
+import type { NumTagFree } from '@genshin-optimizer/pando/engine'
+import { executionStr } from '@genshin-optimizer/pando/engine'
+import type { BuildResult, Candidate, Progress, Work } from './common'
+import { splitThreshold } from './common'
+import { splitSubwork } from './split'
 
-const splitThreshold = 2_000_000 // split if there are more possible builds than this
 const cleanThreshold = 3000 // clean results if there are more results than this
 
 export interface WorkerConfig {
   nodes: NumTagFree[]
   minimum: number[]
-  candidates: Candidate<string>[][]
+  candidates: Candidate[][]
   topN: number
 }
 
-type Subwork = {
+export type Subwork = {
   nodes: NumTagFree[]
   minimum: number[]
-  candidates: Candidate<string>[][]
+  candidates: Candidate[][]
   count: number
 }
 
 export class Worker {
   nodes: NumTagFree[]
   minimum: number[]
-  candidates: Map<string, Candidate<string>>[]
+  candidates: Map<Candidate['id'], Candidate>[]
   topN: number
 
   subworks: Subwork[] = []
   builds: BuildResult[] = []
 
-  progress: Progress = {
-    computed: 0,
-    failed: 0,
-    skipped: 0,
-    remaining: 0,
-  }
+  progress: Progress = { computed: 0, failed: 0, skipped: 0, remaining: 0 }
 
   constructor(cfg: WorkerConfig) {
     this.nodes = cfg.nodes
@@ -113,37 +107,18 @@ export class Worker {
     return out
   }
 
-  /** Ensure the last subwork is `pruned` and smaller than `splitThreshold` */
+  /** Ensure the last subwork is smaller than `splitThreshold` */
   spreadSubworks(): void {
-    const { subworks, progress } = this
+    const { subworks, minimum } = this
     while (subworks.length) {
       const subwork = subworks.pop()!
-      subwork.minimum[0] = this.minimum[0] // in case the threshold was updated
-
-      const { nodes, candidates, minimum, cndRanges, monotonicities } = prune(
-        subwork.nodes,
-        subwork.candidates,
-        'q',
-        subwork.minimum,
-        this.topN
-      )
-      const count = buildCount(candidates)
-      progress.skipped += subwork.count - count
-      progress.remaining -= subwork.count - count
-
-      if (!count) continue
-      if (count <= splitThreshold) {
-        subworks.push({ nodes, candidates, minimum, count })
+      subwork.minimum[0] = minimum[0] // in case the threshold was updated
+      const splitted = splitSubwork(subwork, this)
+      if (Array.isArray(splitted)) subworks.push(...splitted)
+      else {
+        subworks.push(splitted)
         return
       }
-      subworks.push(
-        ...splitCandidates(candidates, cndRanges, monotonicities).map(
-          (candidates) => {
-            const count = buildCount(candidates)
-            return { nodes, candidates, minimum, count }
-          }
-        )
-      )
     }
   }
 }
@@ -155,14 +130,11 @@ function compile(
   dynTagCat: string,
   slotCount: number
 ): (
-  candidates: Candidate<string>[][],
+  candidates: Candidate[][],
   m0: number
-) => {
-  failed: number
-  results: { ids: string[]; value: number }[]
-} {
+) => { failed: number; results: BuildResult[] } {
   const slotIds = [...new Array(slotCount)].map((_, i) => i)
-  const cnds = slotIds.map((i) => `cnds${i}`) // i0, i1, ..
+  const cnds = slotIds.map((i) => `cnds${i}`) // cnds0, cnds1, ..
   const cs = slotIds.map((i) => `c${i}`) // c0, c1, ..
 
   const { str, names } = executionStr(nodes, 'x', ({ tag }) => {

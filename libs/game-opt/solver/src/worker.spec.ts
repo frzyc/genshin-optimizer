@@ -1,19 +1,17 @@
-import type { Candidate } from '@genshin-optimizer/pando/engine'
 import { prod, read, sum } from '@genshin-optimizer/pando/engine'
-import { buildCount, type Progress } from './common'
+import type { Progress } from './common'
+import { buildCount } from './common'
 import { Worker } from './worker'
+
+type ID = any
 
 test('Worker', () => {
   const readA = read({ q: 'a' }, 'sum')
   const readB = read({ q: 'b' }, 'sum')
   const nodes = [prod(readA, sum(readB, 2))]
   const candidates = [...Array(7)].map((_) => [
-    ...[...Array(10)].map(
-      (_, i) => ({ id: 't' + i, a: i, b: 10 - i } as any as Candidate<string>)
-    ),
-    ...[...Array(9)].map(
-      (_, i) => ({ id: 'b' + i, a: i, b: 9 - i } as any as Candidate<string>)
-    ),
+    ...[...Array(10)].map((_, i) => ({ id: ('t' + i) as ID, a: i, b: 10 - i })),
+    ...[...Array(9)].map((_, i) => ({ id: ('b' + i) as ID, a: i, b: 9 - i })),
   ])
   const ids = candidates.map((cnds) => cnds.map((c) => c.id))
   const worker = new Worker({

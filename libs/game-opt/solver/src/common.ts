@@ -1,6 +1,11 @@
-export type BuildResult<ID = string> = { value: number; ids: ID[] }
+import type { Candidate as BaseCnd } from '@genshin-optimizer/pando/engine'
+
+export const splitThreshold = 2_000_000 // split if there are more possible builds than this
+
+export type Candidate = BaseCnd<string | number>
+export type BuildResult<ID = Candidate['id']> = { value: number; ids: ID[] }
 export interface Work {
-  ids: string[][] // possible ids for each slot
+  ids: Candidate['id'][][] // possible ids for each slot
   count: number // # of possible builds
 }
 

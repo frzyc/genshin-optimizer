@@ -2,6 +2,7 @@ import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
+import { buildCount } from '@genshin-optimizer/game-opt/solver'
 import {
   allDiscSlotKeys,
   type DiscSlotKey,
@@ -158,11 +159,7 @@ function OptimizeWrapper() {
   ])
 
   const totalPermutations = useMemo(
-    () =>
-      Object.values(discsBySlot).reduce(
-        (total, discs) => total * discs.length,
-        1
-      ) * wengines.length,
+    () => buildCount(Object.values(discsBySlot)) * wengines.length,
     [wengines.length, discsBySlot]
   )
 
@@ -180,22 +177,11 @@ function OptimizeWrapper() {
     setOptimizing(true)
 
     // Filter out disabled
-    const statFilters = (optConfig.statFilters ?? [])
-      .filter(({ disabled }) => !disabled)
-      .map(({ tag, value, isMax }) => ({
-        tag,
-        value,
-        isMax,
-      }))
+    const statFilters = (optConfig.statFilters ?? []).filter((s) => !s.disabled)
     const optimizer = optimize(
       characterKey,
       calc,
-      [
-        {
-          tag: target,
-          multiplier: 1,
-        },
-      ],
+      [{ tag: target, multiplier: 1 }],
       statFilters,
       optConfig.setFilter2,
       optConfig.setFilter4,
@@ -206,7 +192,7 @@ function OptimizeWrapper() {
     )
 
     cancelled.then(() => optimizer.terminate('user cancelled'))
-    let results: BuildResult[]
+    let results: BuildResult<string>[]
     try {
       results = await optimizer.results
     } catch {
@@ -252,10 +238,7 @@ function OptimizeWrapper() {
           <WengineFilter numWengine={wengines.length} />
           <DiscFilter discsBySlot={discsBySlot} />
           {progress && (
-            <ProgressIndicator
-              progress={progress}
-              totalPermutations={totalPermutations}
-            />
+            <ProgressIndicator progress={progress} total={totalPermutations} />
           )}
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <WorkerSelector
@@ -277,30 +260,31 @@ function OptimizeWrapper() {
   )
 }
 
-function ProgressIndicator({
-  progress,
-  totalPermutations,
-}: {
-  progress: Progress
-  totalPermutations: number
-}) {
+function Monospace({ value }: { value: number }): JSX.Element {
+  const str = value.toLocaleString()
+  return <Box sx={{ fontFamily: 'Monospace', display: 'inline' }}>{str}</Box>
+}
+function ProgressIndicator(props: { progress: Progress; total: number }) {
   const { t } = useTranslation('optimize')
+  const { computed, remaining, skipped } = props.progress
+  const unskipped = computed + remaining
+
+  const unskippedRatio = Math.log1p(unskipped) / Math.log1p(props.total)
+  const remRatio = (remaining / unskipped) * unskippedRatio
   return (
     <Box>
       <Typography>
-        {t('computed')}: {progress.computed.toLocaleString()} /{' '}
-        {(progress.computed + progress.remaining).toLocaleString()}
+        {t('computed')}: <Monospace value={computed} /> /{' '}
+        <Monospace value={unskipped} />{' '}
       </Typography>
       <Typography>
-        {t('computed + skipped')}:{' '}
-        {(progress.computed + progress.skipped).toLocaleString()} /{' '}
-        {totalPermutations.toLocaleString()}
+        {t('computed + skipped')}: <Monospace value={computed + skipped} /> /{' '}
+        <Monospace value={props.total} />
       </Typography>
-      <LinearProgress
+      <LinearProgress // ideally, it should be | <computed> | <remaining> | <skipped> |
         variant="determinate"
-        value={
-          ((progress.computed + progress.skipped) / totalPermutations) * 100
-        }
+        value={(1 - remRatio) * 100}
+        sx={{ height: 10, borderRadius: 5 }}
       />
     </Box>
   )
