@@ -1,5 +1,9 @@
 import { subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+<<<<<<< HEAD
+=======
+import { mappedStats } from '@genshin-optimizer/zzz/stats'
+>>>>>>> upstream/master
 import {
   allBoolConditionals,
   allListConditionals,
@@ -16,11 +20,18 @@ import {
   registerWengine,
   showSpecialtyAndEquipped,
 } from '../util'
+<<<<<<< HEAD
 import { getWengineParams } from '@genshin-optimizer/zzz/stats'
 
 const key: WengineKey = 'SeveredInnocence'
 const { modification } = own.wengine
 const params = getWengineParams(key)
+=======
+
+const key: WengineKey = 'SeveredInnocence'
+const dm = mappedStats.wengine[key]
+const { modification } = own.wengine
+>>>>>>> upstream/master
 
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)
@@ -39,7 +50,11 @@ const sheet = registerWengine(
     ownBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
+<<<<<<< HEAD
         boolConditional.ifOn(subscript(modification, params[0]))
+=======
+        boolConditional.ifOn(subscript(modification, dm.cond_dmg_))
+>>>>>>> upstream/master
       )
     ),
     showSpecialtyAndEquipped(key)

@@ -17,7 +17,7 @@ export interface ICharMeta {
 
 export interface IDbCharacter extends ICharacter {
   stats: Stats
-  formulaKey: FormulaKey
+  formulaKey?: FormulaKey
   constraints: Constraints
   useEquipped: boolean
   setFilter2: DiscSetKey[]
