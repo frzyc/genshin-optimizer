@@ -864,6 +864,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  ShadowHarmony: {
+    boolConditional: {
+      sheet: 'ShadowHarmony',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'ShadowHarmony',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'ShadowHarmony',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   SharpenedStinger: {
     boolConditional: {
       sheet: 'SharpenedStinger',
@@ -920,27 +941,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'SliceOfTime',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  SpectralGaze: {
-    boolConditional: {
-      sheet: 'SpectralGaze',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SpectralGaze',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SpectralGaze',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2329,17 +2329,6 @@ export const buffs = {
     },
   },
   BoxCutter: {
-    daze_: {
-      sheet: 'BoxCutter',
-      name: 'daze_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'daze_',
-        sheet: 'BoxCutter',
-        name: 'daze_',
-      },
-    },
     physical_dmg_: {
       sheet: 'BoxCutter',
       name: 'physical_dmg_',
@@ -3818,6 +3807,41 @@ export const buffs = {
       },
     },
   },
+  ShadowHarmony: {
+    enemy_defIgn_: {
+      sheet: 'ShadowHarmony',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'ShadowHarmony',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set4_dmg_: {
+      sheet: 'ShadowHarmony',
+      name: 'set4_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'common_dmg_',
+        sheet: 'ShadowHarmony',
+        name: 'set4_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ShadowHarmony',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'common_dmg_',
+        sheet: 'ShadowHarmony',
+        name: 'team_dmg_',
+      },
+    },
+  },
   SharpenedStinger: {
     cond_dmg_: {
       sheet: 'SharpenedStinger',
@@ -3864,30 +3888,6 @@ export const buffs = {
         sheet: 'ShockstarDisco',
         damageType1: 'basic',
         name: 'set4_basic_daze_',
-      },
-    },
-    set4_dash_daze_: {
-      sheet: 'ShockstarDisco',
-      name: 'set4_dash_daze_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'stun_',
-        sheet: 'ShockstarDisco',
-        damageType1: 'dash',
-        name: 'set4_dash_daze_',
-      },
-    },
-    set4_dodgeCounter_daze_: {
-      sheet: 'ShockstarDisco',
-      name: 'set4_dodgeCounter_daze_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'stun_',
-        sheet: 'ShockstarDisco',
-        damageType1: 'dodgeCounter',
-        name: 'set4_dodgeCounter_daze_',
       },
     },
   },
@@ -3957,41 +3957,6 @@ export const buffs = {
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'SliceOfTime',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  SpectralGaze: {
-    cond_dmg_: {
-      sheet: 'SpectralGaze',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'SpectralGaze',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'SpectralGaze',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'SpectralGaze',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SpectralGaze',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'SpectralGaze',
         name: 'team_dmg_',
       },
     },

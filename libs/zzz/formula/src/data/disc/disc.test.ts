@@ -290,12 +290,7 @@ describe('Disc sheets test', () => {
     expect(calc.compute(enemyDebuff.common.stun_.basic[0]).val).toBeCloseTo(
       1.5 + 0.2
     ) // 4p passive
-    expect(calc.compute(enemyDebuff.common.stun_.dash[0]).val).toBeCloseTo(
-      1.5 + 0.2
-    ) // 4p passive
-    expect(
-      calc.compute(enemyDebuff.common.stun_.dodgeCounter[0]).val
-    ).toBeCloseTo(1.5 + 0.2) // 4p passive
+    // TODO: add tests for daze_
   })
   it('SoulRock', () => {
     const data = testCharacterData('SoulRock')
