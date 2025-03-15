@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "GenMap",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "map_type": {
+      "type": "string",
+      "description": "Type of map (char/disc/wengine)",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What is the map type (char/disc/wengine)?"
+    },
+    "map": {
+      "type": "string",
+      "description": "Map name",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": "What is the map name?"
+    }
+  },
+  "required": ["map_type", "map"]
+}
