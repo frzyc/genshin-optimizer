@@ -128,7 +128,7 @@ export default function OptimizeWrapper({
   useEffect(() => () => cancelToken.current(), [])
 
   const onOptimize = useCallback(async () => {
-    if (!character||!formulaKey) return
+    if (!character || !formulaKey) return
     const { setFilter2, setFilter4 } = character
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
     setResults([])
@@ -257,7 +257,7 @@ export default function OptimizeWrapper({
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'success'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
-              disabled={!totalPermutations || !character}
+              disabled={!formulaKey || !totalPermutations || !character}
             >
               {optimizing ? t('cancel') : t('optimize')}
             </Button>
