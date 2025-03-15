@@ -3,10 +3,7 @@ import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
-import {
-  CharacterCoverOptimize,
-  CharacterEditor,
-} from '@genshin-optimizer/zzz/ui'
+import { CharacterCard, CharacterEditor } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
   Button,
@@ -125,7 +122,7 @@ function CharacterSection() {
             }}
           >
             <Stack spacing={1}>
-              <CharacterCoverOptimize characterKey={characterKey} />
+              <CharacterCard characterKey={characterKey} />
               <Button fullWidth disabled={!characterKey} onClick={onClick}>
                 {/* TODO: Translation */}
                 Edit Character

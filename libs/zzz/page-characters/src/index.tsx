@@ -9,7 +9,7 @@ import {
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import {
-  CharacterCoverOptimize,
+  CharacterCard,
   CharacterEditor,
   CharacterRarityToggle,
   CharacterSingleSelectionModal,
@@ -156,7 +156,7 @@ export default function PageCharacter() {
         <Grid container spacing={3} columns={columns}>
           {charKeys.map((charKey) => (
             <Grid item key={charKey} xs={1}>
-              <CharacterCoverOptimize
+              <CharacterCard
                 characterKey={charKey}
                 onClick={() => navigate(`${charKey}`)}
               />
