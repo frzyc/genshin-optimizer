@@ -87,7 +87,11 @@ export function CharCalcProvider({
   )
 }
 
-function useCharacterAndEquipment(character: ICachedCharacter, wengineId: string|undefined, discIds: DiscIds) {
+function useCharacterAndEquipment(
+  character: ICachedCharacter,
+  wengineId: string | undefined,
+  discIds: DiscIds
+) {
   const wengine = useWengine(wengineId)
   const discs = useDiscs(discIds)
   const wengineTagEntries = useMemo(() => {

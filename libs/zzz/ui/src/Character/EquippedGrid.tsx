@@ -42,7 +42,7 @@ export function EquippedGrid({
   setDisc,
 }: {
   // set undefined to unequip
-  setWengine: (id: string|undefined) => void
+  setWengine: (id: string | undefined) => void
   // set undefined to unequip
   setDisc: (slotKey: DiscSlotKey, id: string | null) => void
 }) {
