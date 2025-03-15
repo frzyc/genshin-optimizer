@@ -7,10 +7,7 @@ import {
   useCharOpt,
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
-import {
-  CharacterCoverOptimize,
-  CharacterEditor,
-} from '@genshin-optimizer/zzz/ui'
+import { CharacterCard, CharacterEditor } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
   Button,
@@ -134,7 +131,7 @@ function CharacterSection() {
             <Grid container spacing={2}>
               <Grid item xs={6} lg={5} xl={4}>
                 <Stack spacing={1}>
-                  <CharacterCoverOptimize characterKey={characterKey} />
+                  <CharacterCard characterKey={characterKey} />
                   <Button fullWidth disabled={!characterKey} onClick={onClick}>
                     {/* TODO: Translation */}
                     Edit Character
