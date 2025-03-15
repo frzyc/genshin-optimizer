@@ -1,6 +1,6 @@
 import type {
-  Database,
-  DataManagerBase
+  DataManagerBase,
+  Database
 } from '@genshin-optimizer/common/database'
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { useEffect } from 'react'

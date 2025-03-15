@@ -1,3 +1,4 @@
+import { writeFileSync } from 'fs'
 import {
   allArtifactSetKeys,
   allCharacterKeys,
@@ -5,7 +6,6 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
-import { writeFileSync } from 'fs'
 import * as prettier from 'prettier'
 
 export default async function genIndex(tree: Tree, sheet_type: string) {

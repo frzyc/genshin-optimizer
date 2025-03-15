@@ -4,10 +4,10 @@ import type {
   TagMapEntries
 } from '@genshin-optimizer/pando/engine'
 import {
+  TagMapSubset,
   addCustomOperation,
   compileTagMapValues,
-  constant,
-  TagMapSubset
+  constant
 } from '@genshin-optimizer/pando/engine'
 import { Calculator } from './calculator'
 import { keys, values } from './data'

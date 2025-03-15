@@ -1,3 +1,4 @@
+import { fail } from 'assert'
 import {
   cmpEq,
   compileTagMapValues,
@@ -6,14 +7,13 @@ import {
   sum
 } from '@genshin-optimizer/pando/engine'
 import {
-  allCharacterKeys,
-  allLightConeKeys,
-  allRelicSetKeys,
   type AscensionKey,
   type CharacterKey,
-  type LightConeKey
+  type LightConeKey,
+  allCharacterKeys,
+  allLightConeKeys,
+  allRelicSetKeys
 } from '@genshin-optimizer/sr/consts'
-import { fail } from 'assert'
 import {
   charTagMapNodeEntries,
   lightConeTagMapNodeEntries,
@@ -23,6 +23,7 @@ import {
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
 import {
+  type TagMapNodeEntries,
   convert,
   enemyTag,
   own,
@@ -33,8 +34,7 @@ import {
   tagStr,
   target,
   team,
-  teamBuff,
-  type TagMapNodeEntries
+  teamBuff
 } from './data/util'
 
 setDebugMode(true)

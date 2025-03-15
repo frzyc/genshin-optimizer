@@ -9,12 +9,12 @@ import type {
 } from '@genshin-optimizer/sr/consts'
 import type { RelicSlotDMKey } from '@genshin-optimizer/sr/dm'
 import {
+  DmAttackTypeMap,
   avatarConfig,
   avatarRankConfig,
   avatarSkillConfig,
   avatarSkillTreeConfig,
   characterIdMap,
-  DmAttackTypeMap,
   equipmentConfig,
   lightConeIdMap,
   relicDataInfo,

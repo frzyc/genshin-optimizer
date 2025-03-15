@@ -19,13 +19,13 @@ import {
 } from '../../util'
 import type { Read } from '../util'
 import {
+  type TagMapNodeEntries,
   conditionalEntries,
   convert,
   enemy,
   own,
   ownBuff,
-  ownTag,
-  type TagMapNodeEntries
+  ownTag
 } from '../util'
 
 setDebugMode(true)

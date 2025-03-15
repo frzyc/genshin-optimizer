@@ -1,7 +1,7 @@
 import {
   BootstrapTooltip,
-  ColorText,
-  type CardBackgroundColor
+  type CardBackgroundColor,
+  ColorText
 } from '@genshin-optimizer/common/ui'
 import { valueString } from '@genshin-optimizer/common/util'
 import {

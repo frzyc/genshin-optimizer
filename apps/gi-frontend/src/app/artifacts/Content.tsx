@@ -1,7 +1,7 @@
 'use client'
 import type { ArtifactRarity } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
-import { cachedArtifact, type ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { type ICachedArtifact, cachedArtifact } from '@genshin-optimizer/gi/db'
 import { ArtifactCardObj } from '@genshin-optimizer/gi/ui'
 import { randomizeArtifact } from '@genshin-optimizer/gi/util'
 import { Button, Container, Grid, Skeleton, Typography } from '@mui/material'

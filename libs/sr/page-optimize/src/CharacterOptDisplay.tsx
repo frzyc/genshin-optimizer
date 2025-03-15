@@ -19,10 +19,10 @@ import {
 import type { ReactNode } from 'react'
 import { createContext, useContext, useMemo, useState } from 'react'
 import { BonusStatsSection } from './BonusStats'
-import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { LightConeSheetsDisplay } from './LightConeSheetsDisplay'
 import Optimize from './Optimize'
 import { RelicSheetsDisplay } from './RelicSheetsDisplay'
+import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 const BOT_PX = 0
 const SECTION_SPACING_PX = 33

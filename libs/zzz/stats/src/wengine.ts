@@ -1,5 +1,5 @@
 import { clamp, transposeArray } from '@genshin-optimizer/common/util'
-import { allWengineKeys, type WengineKey } from '@genshin-optimizer/zzz/consts'
+import { type WengineKey, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import { allStats } from './allStats'
 
 export function getWengineStat(wKey: WengineKey) {

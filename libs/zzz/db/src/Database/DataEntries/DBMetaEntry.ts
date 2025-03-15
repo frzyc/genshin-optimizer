@@ -1,5 +1,5 @@
 import type { Database } from '@genshin-optimizer/common/database'
-import type { IZenlessObjectDescription, IZZZDatabase } from '../../Interfaces'
+import type { IZZZDatabase, IZenlessObjectDescription } from '../../Interfaces'
 import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'
 import type { ImportResult } from '../exim'

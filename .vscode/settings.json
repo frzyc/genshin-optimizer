@@ -1,6 +1,9 @@
 {
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit"
+  },
   "files.trimFinalNewlines": true,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,

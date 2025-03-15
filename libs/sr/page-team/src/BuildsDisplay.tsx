@@ -28,9 +28,9 @@ import type {
   IBuildTc
 } from '@genshin-optimizer/sr/db'
 import {
-  initCharTC,
   type ICachedLightCone,
-  type TeammateDatum
+  type TeammateDatum,
+  initCharTC
 } from '@genshin-optimizer/sr/db'
 import {
   useBuild,
@@ -44,8 +44,8 @@ import {
   LightConeCardCompactEmpty,
   LightConeCardCompactObj,
   LightConeEditorCard,
-  RelicMainsCardCompact,
   RelicMainStatDropdown,
+  RelicMainsCardCompact,
   RelicRarityDropdown,
   RelicSetAutocomplete,
   RelicSetCardCompact,

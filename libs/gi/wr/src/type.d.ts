@@ -9,7 +9,7 @@ import type {
   AmplifyingReactionsKey,
   TransformativeReactionsKey
 } from '@genshin-optimizer/gi/keymap'
-import type { input, NonStackBuff, uiInput } from './formula'
+import type { NonStackBuff, input, uiInput } from './formula'
 
 export type NumNode =
   | ComputeNode

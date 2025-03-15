@@ -1,7 +1,7 @@
 import {
-  prune,
   type Candidate,
-  type NumTagFree
+  type NumTagFree,
+  prune
 } from '@genshin-optimizer/pando/engine'
 import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'

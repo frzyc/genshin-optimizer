@@ -1,5 +1,5 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
-import { allPhaseKeys, type PhaseKey } from '@genshin-optimizer/zzz/consts'
+import { type PhaseKey, allPhaseKeys } from '@genshin-optimizer/zzz/consts'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 

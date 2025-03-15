@@ -1,8 +1,8 @@
-import type { ExecutorContext } from '@nx/devkit'
-import { workspaceRoot } from '@nx/devkit'
 import { execSync } from 'child_process'
 import * as fs from 'fs'
 import * as path from 'path'
+import type { ExecutorContext } from '@nx/devkit'
+import { workspaceRoot } from '@nx/devkit'
 import type { SyncRepoExecutorSchema } from './schema'
 
 export default async function runExecutor(

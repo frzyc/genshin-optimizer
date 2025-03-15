@@ -1,8 +1,8 @@
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import {
+  type DiscSlotKey,
   getDiscMainStatVal,
-  getDiscSubStatBaseVal,
-  type DiscSlotKey
+  getDiscSubStatBaseVal
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 

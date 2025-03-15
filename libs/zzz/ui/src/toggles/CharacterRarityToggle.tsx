@@ -4,7 +4,7 @@ import { handleMultiSelect } from '@genshin-optimizer/common/util'
 import type { CharacterRarityKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterRarityKeys } from '@genshin-optimizer/zzz/consts'
 import { Box, Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
-import { useCallback, useMemo, type ReactNode } from 'react'
+import { type ReactNode, useCallback, useMemo } from 'react'
 type CharacterRarityToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'

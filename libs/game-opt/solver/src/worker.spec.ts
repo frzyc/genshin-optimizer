@@ -1,6 +1,6 @@
 import type { Candidate } from '@genshin-optimizer/pando/engine'
 import { prod, read, sum } from '@genshin-optimizer/pando/engine'
-import { buildCount, type Progress } from './common'
+import { type Progress, buildCount } from './common'
 import { Worker } from './worker'
 
 test('Worker', () => {

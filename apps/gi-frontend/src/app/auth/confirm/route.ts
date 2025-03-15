@@ -1,5 +1,5 @@
 import { type EmailOtpType } from '@supabase/supabase-js'
-import { NextResponse, type NextRequest } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 import { getSupabase } from '../../../utils/supabase/server'
 
 // Creating a handler to a GET request to route /auth/confirm

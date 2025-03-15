@@ -1,5 +1,5 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import { absorbableEle, type CharacterKey } from '@genshin-optimizer/gi/consts'
+import { type CharacterKey, absorbableEle } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,

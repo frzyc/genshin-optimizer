@@ -12,6 +12,9 @@ import type {
   RelicSlotKey
 } from '@genshin-optimizer/sr/consts'
 import {
+  type RelicMainStatKey,
+  type RelicRarityKey,
+  type RelicSubStatKey,
   allRelicCavernSetKeys,
   allRelicCavernSlotKeys,
   allRelicPlanarSetKeys,
@@ -22,10 +25,7 @@ import {
   isPlanarRelicSetKey,
   relicMaxLevel,
   relicSlotToMainStatKeys,
-  relicSubstatRollData,
-  type RelicMainStatKey,
-  type RelicRarityKey,
-  type RelicSubStatKey
+  relicSubstatRollData
 } from '@genshin-optimizer/sr/consts'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { allStats } from '@genshin-optimizer/sr/stats'

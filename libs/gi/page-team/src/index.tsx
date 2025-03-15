@@ -7,25 +7,25 @@ import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterContext,
   TeamCharacterContext,
+  type TeamCharacterContextObj,
   useBuildTc,
   useCharacter,
   useDBMeta,
   useDatabase,
   useTeam,
-  useTeamChar,
-  type TeamCharacterContextObj
+  useTeamChar
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import {
+  type ChartData,
   DataContext,
   FormulaDataWrapper,
   GraphContext,
+  type GraphContextObj,
   OptTargetWrapper,
   SillyContext,
-  useTeamDataNoContext,
-  type ChartData,
-  type GraphContextObj,
-  type dataContextObj
+  type dataContextObj,
+  useTeamDataNoContext
 } from '@genshin-optimizer/gi/ui'
 import { Box, Skeleton } from '@mui/material'
 import {

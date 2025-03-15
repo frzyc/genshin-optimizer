@@ -14,9 +14,9 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { isTalentKey } from '@genshin-optimizer/gi/good'
 import {
-  getCharSheet,
   type DocumentSection,
-  type TalentSheetElementKey
+  type TalentSheetElementKey,
+  getCharSheet
 } from '@genshin-optimizer/gi/sheets'
 import {
   DataContext,

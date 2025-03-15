@@ -3,6 +3,7 @@ import type { AttributeKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import type { CharacterDatum } from '@genshin-optimizer/zzz/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
+  type TagMapNodeEntries,
   customAnomalyDmg,
   customDmg,
   customHeal,
@@ -10,8 +11,7 @@ import {
   listingItem,
   own,
   ownBuff,
-  percent,
-  type TagMapNodeEntries
+  percent
 } from '../util'
 
 type AbilityScalingType = Exclude<SkillKey, 'core'>

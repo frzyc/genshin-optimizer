@@ -11,7 +11,6 @@ import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { LevelSelect } from '../../LevelSelect'
-import { CharacterCardStats } from '../card'
 import {
   CharacterCompactMindscapeSelector,
   CharacterCoverArea
@@ -19,6 +18,7 @@ import {
 import { CoreDropdown } from '../CoreDropdown'
 import { EquippedGrid } from '../EquippedGrid'
 import { SkillDropdown } from '../SkillDropdown'
+import { CharacterCardStats } from '../card'
 export function Content({ onClose }: { onClose?: () => void }) {
   const { t } = useTranslation(['page_characters'])
   const navigate = useNavigate()

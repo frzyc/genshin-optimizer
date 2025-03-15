@@ -20,13 +20,13 @@ import {
 import { Calculator } from '../../calculator'
 import type { Read } from '../util'
 import {
+  type TagMapNodeEntries,
   conditionalEntries,
   convert,
   enemy,
   enemyDebuff,
   own,
-  ownTag,
-  type TagMapNodeEntries
+  ownTag
 } from '../util'
 
 setDebugMode(true)

@@ -6,7 +6,7 @@
 // 4. Test on import, and also on version update
 
 import type { DBStorage } from '@genshin-optimizer/common/database'
-import type { IZenlessObjectDescription, IZZZDatabase } from '../Interfaces'
+import type { IZZZDatabase, IZenlessObjectDescription } from '../Interfaces'
 
 export const currentDBVersion = 1
 

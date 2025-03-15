@@ -1,10 +1,10 @@
 import {
   Read as BaseRead,
+  type Tag as BaseTag,
   reader as baseReader,
   entryTypes,
   presets,
-  setReader,
-  type Tag as BaseTag
+  setReader
 } from '@genshin-optimizer/game-opt/engine'
 import type { AnyNode } from '@genshin-optimizer/pando/engine'
 import type {
@@ -18,14 +18,14 @@ import type {
   TagMapNodeEntry
 } from '.'
 import {
+  type Sheet,
   attributes,
   damageTypes,
   factions,
   members,
   sheets,
   skillTypes,
-  specialties,
-  type Sheet
+  specialties
 } from './listing'
 
 export const fixedTags = {

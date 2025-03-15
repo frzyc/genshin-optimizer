@@ -1,10 +1,10 @@
+import * as fs from 'fs'
+import * as path from 'path'
 import { generateIndexFromObj } from '@genshin-optimizer/common/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
 import { AssetData } from '@genshin-optimizer/zzz/assets-data'
 import { DM2D_PATH } from '@genshin-optimizer/zzz/dm'
 import { workspaceRoot } from '@nx/devkit'
-import * as fs from 'fs'
-import * as path from 'path'
 import type { GenAssetsExecutorSchema } from './schema'
 
 const DEST_PROJ_PATH = `${workspaceRoot}/libs/zzz/assets/src` as const

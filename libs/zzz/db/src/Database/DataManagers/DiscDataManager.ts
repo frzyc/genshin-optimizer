@@ -18,8 +18,8 @@ import {
 import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import type {
   ICachedDisc,
-  IZenlessObjectDescription,
-  IZZZDatabase
+  IZZZDatabase,
+  IZenlessObjectDescription
 } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'

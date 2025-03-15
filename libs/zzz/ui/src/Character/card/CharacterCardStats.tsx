@@ -8,7 +8,7 @@ import {
 import { FieldDisplayList } from '@genshin-optimizer/game-opt/sheet-ui'
 import { statKeyTextMap } from '@genshin-optimizer/zzz/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/zzz/db'
-import { getCharacterStats, getCharStat } from '@genshin-optimizer/zzz/stats'
+import { getCharStat, getCharacterStats } from '@genshin-optimizer/zzz/stats'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Box, ListItem, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'

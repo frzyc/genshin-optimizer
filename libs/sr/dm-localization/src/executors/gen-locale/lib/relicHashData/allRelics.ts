@@ -1,8 +1,8 @@
 import { verifyObjKeys } from '@genshin-optimizer/common/util'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import {
-  allRelicSetKeys,
-  type RelicSetCountKey
+  type RelicSetCountKey,
+  allRelicSetKeys
 } from '@genshin-optimizer/sr/consts'
 import {
   relicSetConfig,

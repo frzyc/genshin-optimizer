@@ -4,8 +4,8 @@ import { type DiscIds } from '@genshin-optimizer/zzz/db'
 import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { Box, Grid } from '@mui/material'
 import { CompactDiscCard, DiscSetCardCompact } from '../Disc'
-import { EmptyCompactCard } from '../util'
 import { CompactWengineCard } from '../Wengine'
+import { EmptyCompactCard } from '../util'
 const emptyDiscs = objKeyMap(allDiscSlotKeys, () => undefined)
 export function EquipGrid({
   discIds = emptyDiscs,

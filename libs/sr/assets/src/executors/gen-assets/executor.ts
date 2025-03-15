@@ -1,3 +1,6 @@
+import * as fs from 'fs'
+import * as path from 'path'
+import { Readable } from 'stream'
 import { generateIndexFromObj } from '@genshin-optimizer/common/pipeline'
 import {
   crawlObject,
@@ -7,9 +10,6 @@ import {
 import { AssetData } from '@genshin-optimizer/sr/assets-data'
 import { DM2D_PATH } from '@genshin-optimizer/sr/dm'
 import { workspaceRoot } from '@nx/devkit'
-import * as fs from 'fs'
-import * as path from 'path'
-import { Readable } from 'stream'
 import { finished } from 'stream/promises'
 import type { ReadableStream } from 'stream/web'
 import type { GenAssetsExecutorSchema } from './schema'

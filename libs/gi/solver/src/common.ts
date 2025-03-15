@@ -6,9 +6,9 @@ import {
   range
 } from '@genshin-optimizer/common/util'
 import {
-  allArtifactSlotKeys,
   type ArtifactSetKey,
-  type ArtifactSlotKey
+  type ArtifactSlotKey,
+  allArtifactSlotKeys
 } from '@genshin-optimizer/gi/consts'
 import type {
   ArtSetExclusion,

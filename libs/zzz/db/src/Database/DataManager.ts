@@ -1,5 +1,5 @@
 import { DataManagerBase } from '@genshin-optimizer/common/database'
-import type { IZenlessObjectDescription, IZZZDatabase, ZzzDatabase } from '..'
+import type { IZZZDatabase, IZenlessObjectDescription, ZzzDatabase } from '..'
 import type { ImportResult } from './exim'
 export class DataManager<
   CacheKey extends string,
