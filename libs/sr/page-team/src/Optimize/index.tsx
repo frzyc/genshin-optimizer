@@ -1,6 +1,7 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
+import { buildCount } from '@genshin-optimizer/game-opt/solver'
 import {
   allRelicSlotKeys,
   type RelicSlotKey,
@@ -114,11 +115,7 @@ function OptimizeWrapper() {
     })
   }, [characterKey, database.lightCones.values])
   const totalPermutations = useMemo(
-    () =>
-      Object.values(relicsBySlot).reduce(
-        (total, relics) => total * relics.length,
-        1
-      ) * lightCones.length,
+    () => buildCount(Object.values(relicsBySlot)) * lightCones.length,
     [lightCones.length, relicsBySlot]
   )
 
@@ -136,13 +133,7 @@ function OptimizeWrapper() {
     setOptimizing(true)
 
     // Filter out disabled
-    const statFilters = (optConfig.statFilters ?? [])
-      .filter(({ disabled }) => !disabled)
-      .map(({ tag, value, isMax }) => ({
-        tag,
-        value,
-        isMax,
-      }))
+    const statFilters = (optConfig.statFilters ?? []).filter((s) => !s.disabled)
     const optimizer = optimize(
       characterKey,
       calc,
@@ -222,40 +213,39 @@ function OptimizeWrapper() {
       <CardContent>
         <StatFilterCard />
         {progress && (
-          <ProgressIndicator
-            progress={progress}
-            totalPermutations={totalPermutations}
-          />
+          <ProgressIndicator progress={progress} total={totalPermutations} />
         )}
       </CardContent>
     </CardThemed>
   )
 }
 
-function ProgressIndicator({
-  progress,
-  totalPermutations,
-}: {
-  progress: Progress
-  totalPermutations: number
-}) {
+function Monospace({ value }: { value: number }): JSX.Element {
+  const str = value.toLocaleString()
+  return <Box sx={{ fontFamily: 'Monospace', display: 'inline' }}>{str}</Box>
+}
+function ProgressIndicator(props: { progress: Progress; total: number }) {
   const { t } = useTranslation('optimize')
+  const { computed, remaining, skipped } = props.progress
+  const unskipped = computed + remaining
+
+  const unskippedRatio = Math.log1p(unskipped) / Math.log1p(props.total)
+  const _computeRate = (computed / unskipped) * unskippedRatio
+  const remRatio = (remaining / unskipped) * unskippedRatio
   return (
     <Box>
       <Typography>
-        {t('computed')}: {progress.computed.toLocaleString()} /{' '}
-        {(progress.computed + progress.remaining).toLocaleString()}
+        {t('computed')}: <Monospace value={computed} /> /{' '}
+        <Monospace value={unskipped} />{' '}
       </Typography>
       <Typography>
-        {t('computed + skipped')}:{' '}
-        {(progress.computed + progress.skipped).toLocaleString()} /{' '}
-        {totalPermutations.toLocaleString()}
+        {t('computed + skipped')}: <Monospace value={computed + skipped} /> /{' '}
+        <Monospace value={props.total} />
       </Typography>
-      <LinearProgress
+      <LinearProgress // ideally, it should be | <computed> | <remaining> | <skipped> |
         variant="determinate"
-        value={
-          ((progress.computed + progress.skipped) / totalPermutations) * 100
-        }
+        value={(1 - remRatio) * 100}
+        sx={{ height: 10, borderRadius: 5 }}
       />
     </Box>
   )
