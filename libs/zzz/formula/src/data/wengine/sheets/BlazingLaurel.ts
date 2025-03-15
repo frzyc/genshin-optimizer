@@ -1,6 +1,6 @@
 import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { getWengineParams } from '@genshin-optimizer/zzz/stats'
+import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
   allNumConditionals,
@@ -17,11 +17,11 @@ import {
 } from '../util'
 
 const key: WengineKey = 'BlazingLaurel'
+const dm = mappedStats.wengine[key]
 const { modification } = own.wengine
-const params = getWengineParams(key)
 
 const { quickOrPerfectAssistUsed } = allBoolConditionals(key)
-const { wilt } = allNumConditionals(key, true, 0, params[3][1])
+const { wilt } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerWengine(
   key,
@@ -34,7 +34,7 @@ const sheet = registerWengine(
     ownBuff.combat.impact_.add(
       cmpSpecialtyAndEquipped(
         key,
-        quickOrPerfectAssistUsed.ifOn(subscript(modification, params[0]))
+        quickOrPerfectAssistUsed.ifOn(subscript(modification, dm.impact_))
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -44,7 +44,7 @@ const sheet = registerWengine(
     teamBuff.combat.crit_dmg_.ice.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(wilt, subscript(modification, params[4]))
+        prod(wilt, subscript(modification, dm.crit_dmg_ice_fire_))
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -54,7 +54,7 @@ const sheet = registerWengine(
     teamBuff.combat.crit_dmg_.fire.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(wilt, subscript(modification, params[4]))
+        prod(wilt, subscript(modification, dm.crit_dmg_ice_fire_))
       )
     ),
     showSpecialtyAndEquipped(key)
