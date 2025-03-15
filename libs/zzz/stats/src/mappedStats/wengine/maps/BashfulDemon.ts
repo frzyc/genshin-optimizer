@@ -1,14 +1,16 @@
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { allStats } from '../../../allStats'
+import { getWengineParams } from '../../../wengine'
 
 const key: WengineKey = 'BashfulDemon'
-const data_gen = allStats.wengine[key]
+const data_gen = getWengineParams(key)
+
+let o = 0
 
 const dm = {
-  ice_: [-1, ...data_gen.phase.map(({ params }) => params[0])] as number[],
-  atk_: [-1, ...data_gen.phase.map(({ params }) => params[1])] as number[],
-  duration: data_gen.phase[0].params[2],
-  stack: data_gen.phase[0].params[3],
+  ice_: data_gen[o++],
+  atk_: data_gen[o++],
+  duration: data_gen[o++][1],
+  stack: data_gen[o++][1],
 } as const
 
 export default dm
