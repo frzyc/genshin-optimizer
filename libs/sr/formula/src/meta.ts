@@ -226,27 +226,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  BoneCollectionsSereneDemesne: {
-    boolConditional: {
-      sheet: 'BoneCollectionsSereneDemesne',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BoneCollectionsSereneDemesne',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BoneCollectionsSereneDemesne',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Boothill: {
     boolConditional: {
       sheet: 'Boothill',
@@ -677,27 +656,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  GiantTreeOfRaptBrooding: {
-    boolConditional: {
-      sheet: 'GiantTreeOfRaptBrooding',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'GiantTreeOfRaptBrooding',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'GiantTreeOfRaptBrooding',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   GoodNightAndSleepWell: {
     debuffCount: {
       sheet: 'GoodNightAndSleepWell',
@@ -747,9 +705,14 @@ export const conditionals = {
     },
   },
   HeroOfTriumphantSong: {
-    followUpUsed: {
+    memospriteAttacks: {
       sheet: 'HeroOfTriumphantSong',
-      name: 'followUpUsed',
+      name: 'memospriteAttacks',
+      type: 'bool',
+    },
+    memospriteOnField: {
+      sheet: 'HeroOfTriumphantSong',
+      name: 'memospriteOnField',
       type: 'bool',
     },
   },
@@ -1066,27 +1029,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  LushakaTheSunkenSeas: {
-    boolConditional: {
-      sheet: 'LushakaTheSunkenSeas',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'LushakaTheSunkenSeas',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'LushakaTheSunkenSeas',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Lynx: {
     boolConditional: { sheet: 'Lynx', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -1326,34 +1268,13 @@ export const conditionals = {
       name: 'debuffCount',
       type: 'num',
       int_only: true,
-      min: 2,
+      min: 0,
       max: 3,
     },
     wearerDebuff: {
       sheet: 'PioneerDiverOfDeadWaters',
       name: 'wearerDebuff',
       type: 'bool',
-    },
-  },
-  PoetOfMourningCollapse: {
-    boolConditional: {
-      sheet: 'PoetOfMourningCollapse',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PoetOfMourningCollapse',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PoetOfMourningCollapse',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   PostOpConversation: {
@@ -1464,20 +1385,9 @@ export const conditionals = {
     ultZone: { sheet: 'RuanMei', name: 'ultZone', type: 'bool' },
   },
   SacerdosRelivedOrdeal: {
-    boolConditional: {
+    skillOrUltUsed: {
       sheet: 'SacerdosRelivedOrdeal',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SacerdosRelivedOrdeal',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SacerdosRelivedOrdeal',
-      name: 'numConditional',
+      name: 'skillOrUltUsed',
       type: 'num',
       int_only: true,
       min: 0,
@@ -1506,25 +1416,7 @@ export const conditionals = {
     woefree: { sheet: 'ScentAloneStaysTrue', name: 'woefree', type: 'bool' },
   },
   ScholarLostInErudition: {
-    boolConditional: {
-      sheet: 'ScholarLostInErudition',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ScholarLostInErudition',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ScholarLostInErudition',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'ScholarLostInErudition', name: 'ultUsed', type: 'bool' },
   },
   Seele: {
     amplification: { sheet: 'Seele', name: 'amplification', type: 'bool' },
@@ -1779,24 +1671,10 @@ export const conditionals = {
     },
   },
   TheWondrousBananAmusementPark: {
-    boolConditional: {
+    summonIsOnField: {
       sheet: 'TheWondrousBananAmusementPark',
-      name: 'boolConditional',
+      name: 'summonIsOnField',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheWondrousBananAmusementPark',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheWondrousBananAmusementPark',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ThisIsMe: {
@@ -6703,26 +6581,15 @@ export const buffs = {
     },
   },
   BoneCollectionsSereneDemesne: {
-    enemy_defRed_: {
+    set2_crit_dmg_: {
       sheet: 'BoneCollectionsSereneDemesne',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'BoneCollectionsSereneDemesne',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'BoneCollectionsSereneDemesne',
-      name: 'set2_dmg_',
+      name: 'set2_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'BoneCollectionsSereneDemesne',
-        name: 'set2_dmg_',
+        name: 'set2_crit_dmg_',
       },
     },
     set2_passive_hp_: {
@@ -6734,17 +6601,6 @@ export const buffs = {
         q: 'hp_',
         sheet: 'BoneCollectionsSereneDemesne',
         name: 'set2_passive_hp_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BoneCollectionsSereneDemesne',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BoneCollectionsSereneDemesne',
-        name: 'team_dmg_',
       },
     },
   },
@@ -9992,26 +9848,15 @@ export const buffs = {
     },
   },
   GiantTreeOfRaptBrooding: {
-    enemy_defRed_: {
+    set2_heal_: {
       sheet: 'GiantTreeOfRaptBrooding',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'GiantTreeOfRaptBrooding',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'GiantTreeOfRaptBrooding',
-      name: 'set2_dmg_',
+      name: 'set2_heal_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'heal_',
         sheet: 'GiantTreeOfRaptBrooding',
-        name: 'set2_dmg_',
+        name: 'set2_heal_',
       },
     },
     set2_passive_spd_: {
@@ -10023,17 +9868,6 @@ export const buffs = {
         q: 'spd_',
         sheet: 'GiantTreeOfRaptBrooding',
         name: 'set2_passive_spd_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'GiantTreeOfRaptBrooding',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'GiantTreeOfRaptBrooding',
-        name: 'team_dmg_',
       },
     },
   },
@@ -10445,16 +10279,26 @@ export const buffs = {
         name: 'set2_passive_atk_',
       },
     },
-    set4_ult_dmg_: {
+    set4_crit_dmg_: {
       sheet: 'HeroOfTriumphantSong',
-      name: 'set4_ult_dmg_',
+      name: 'set4_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'crit_dmg_',
         sheet: 'HeroOfTriumphantSong',
-        damageType1: 'ult',
-        name: 'set4_ult_dmg_',
+        name: 'set4_crit_dmg_',
+      },
+    },
+    set4_spd_: {
+      sheet: 'HeroOfTriumphantSong',
+      name: 'set4_spd_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd_',
+        sheet: 'HeroOfTriumphantSong',
+        name: 'set4_spd_',
       },
     },
   },
@@ -12661,6 +12505,17 @@ export const buffs = {
         name: 'set2_passive_def_',
       },
     },
+    set4_shield_: {
+      sheet: 'KnightOfPurityPalace',
+      name: 'set4_shield_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'shield_',
+        sheet: 'KnightOfPurityPalace',
+        name: 'set4_shield_',
+      },
+    },
   },
   Lingsha: {
     e6_dmg_: {
@@ -13292,26 +13147,15 @@ export const buffs = {
     },
   },
   LushakaTheSunkenSeas: {
-    enemy_defRed_: {
+    set2_atk_: {
       sheet: 'LushakaTheSunkenSeas',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'LushakaTheSunkenSeas',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'LushakaTheSunkenSeas',
-      name: 'set2_dmg_',
+      name: 'set2_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'LushakaTheSunkenSeas',
-        name: 'set2_dmg_',
+        name: 'set2_atk_',
       },
     },
     set2_passive_enerRegen_: {
@@ -13323,17 +13167,6 @@ export const buffs = {
         q: 'enerRegen_',
         sheet: 'LushakaTheSunkenSeas',
         name: 'set2_passive_enerRegen_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'LushakaTheSunkenSeas',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'LushakaTheSunkenSeas',
-        name: 'team_dmg_',
       },
     },
   },
@@ -14956,15 +14789,15 @@ export const buffs = {
     },
   },
   PanCosmicCommercialEnterprise: {
-    set2_dmg_: {
+    set2_atk_: {
       sheet: 'PanCosmicCommercialEnterprise',
-      name: 'set2_dmg_',
+      name: 'set2_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'atk_',
         sheet: 'PanCosmicCommercialEnterprise',
-        name: 'set2_dmg_',
+        name: 'set2_atk_',
       },
     },
     set2_passive_eff_: {
@@ -15428,28 +15261,6 @@ export const buffs = {
     },
   },
   PoetOfMourningCollapse: {
-    enemy_defRed_: {
-      sheet: 'PoetOfMourningCollapse',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PoetOfMourningCollapse',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'PoetOfMourningCollapse',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PoetOfMourningCollapse',
-        name: 'set2_dmg_',
-      },
-    },
     set2_passive_quantum_dmg_: {
       sheet: 'PoetOfMourningCollapse',
       name: 'set2_passive_quantum_dmg_',
@@ -15462,6 +15273,17 @@ export const buffs = {
         name: 'set2_passive_quantum_dmg_',
       },
     },
+    set4_crit_: {
+      sheet: 'PoetOfMourningCollapse',
+      name: 'set4_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'PoetOfMourningCollapse',
+        name: 'set4_crit_',
+      },
+    },
     set4_passive_spd_: {
       sheet: 'PoetOfMourningCollapse',
       name: 'set4_passive_spd_',
@@ -15471,17 +15293,6 @@ export const buffs = {
         q: 'spd_',
         sheet: 'PoetOfMourningCollapse',
         name: 'set4_passive_spd_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PoetOfMourningCollapse',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PoetOfMourningCollapse',
-        name: 'team_dmg_',
       },
     },
   },
@@ -16519,28 +16330,6 @@ export const buffs = {
     },
   },
   SacerdosRelivedOrdeal: {
-    enemy_defRed_: {
-      sheet: 'SacerdosRelivedOrdeal',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SacerdosRelivedOrdeal',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'SacerdosRelivedOrdeal',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SacerdosRelivedOrdeal',
-        name: 'set2_dmg_',
-      },
-    },
     set2_passive_spd_: {
       sheet: 'SacerdosRelivedOrdeal',
       name: 'set2_passive_spd_',
@@ -16552,15 +16341,15 @@ export const buffs = {
         name: 'set2_passive_spd_',
       },
     },
-    team_dmg_: {
+    set4_crit_dmg_: {
       sheet: 'SacerdosRelivedOrdeal',
-      name: 'team_dmg_',
+      name: 'set4_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'SacerdosRelivedOrdeal',
-        name: 'team_dmg_',
+        name: 'set4_crit_dmg_',
       },
     },
   },
@@ -16827,28 +16616,6 @@ export const buffs = {
     },
   },
   ScholarLostInErudition: {
-    enemy_defRed_: {
-      sheet: 'ScholarLostInErudition',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ScholarLostInErudition',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'ScholarLostInErudition',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ScholarLostInErudition',
-        name: 'set2_dmg_',
-      },
-    },
     set2_passive_crit_: {
       sheet: 'ScholarLostInErudition',
       name: 'set2_passive_crit_',
@@ -16860,15 +16627,40 @@ export const buffs = {
         name: 'set2_passive_crit_',
       },
     },
-    team_dmg_: {
+    set4_extra_skill_dmg_: {
       sheet: 'ScholarLostInErudition',
-      name: 'team_dmg_',
+      name: 'set4_extra_skill_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'ScholarLostInErudition',
-        name: 'team_dmg_',
+        damageType1: 'skill',
+        name: 'set4_extra_skill_dmg_',
+      },
+    },
+    set4_skill_dmg_: {
+      sheet: 'ScholarLostInErudition',
+      name: 'set4_skill_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ScholarLostInErudition',
+        damageType1: 'skill',
+        name: 'set4_skill_dmg_',
+      },
+    },
+    set4_ult_dmg_: {
+      sheet: 'ScholarLostInErudition',
+      name: 'set4_ult_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ScholarLostInErudition',
+        damageType1: 'ult',
+        name: 'set4_ult_dmg_',
       },
     },
   },
@@ -18705,26 +18497,15 @@ export const buffs = {
     },
   },
   TheWondrousBananAmusementPark: {
-    enemy_defRed_: {
+    set2_crit_dmg_: {
       sheet: 'TheWondrousBananAmusementPark',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TheWondrousBananAmusementPark',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'TheWondrousBananAmusementPark',
-      name: 'set2_dmg_',
+      name: 'set2_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'TheWondrousBananAmusementPark',
-        name: 'set2_dmg_',
+        name: 'set2_crit_dmg_',
       },
     },
     set2_passive_crit_dmg_: {
@@ -18736,17 +18517,6 @@ export const buffs = {
         q: 'crit_dmg_',
         sheet: 'TheWondrousBananAmusementPark',
         name: 'set2_passive_crit_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheWondrousBananAmusementPark',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TheWondrousBananAmusementPark',
-        name: 'team_dmg_',
       },
     },
   },

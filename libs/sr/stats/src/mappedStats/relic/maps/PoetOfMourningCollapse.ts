@@ -4,12 +4,18 @@ import { allStats } from '../../../allStats'
 const key: RelicSetKey = 'PoetOfMourningCollapse'
 const data_gen = allStats.relic[key]
 
-let o = 0
-// TODO: Load scalings
+let o = 1
+
 const dm = {
   2: {
-    cond_dmg_: data_gen.setEffects[0].otherStats[o++] ?? [1, 2],
-    passive_atk: data_gen.setEffects[0].passiveStats.atk ?? 1,
+    passive_quantum_dmg_: data_gen.setEffects[0].passiveStats.quantum_dmg_,
+  },
+  4: {
+    passive_spd_: data_gen.setEffects[1].passiveStats.spd_,
+    spd_threshold1: data_gen.setEffects[1].otherStats[o++],
+    spd_threshold2: data_gen.setEffects[1].otherStats[o++],
+    crit_1: data_gen.setEffects[1].otherStats[o++],
+    crit_2: data_gen.setEffects[1].otherStats[o++],
   },
 } as const
 

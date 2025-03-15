@@ -1,31 +1,17 @@
+import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals } from '@genshin-optimizer/sr/formula'
-import {
-  getRelicInterpolateObject,
-  mappedStats,
-} from '@genshin-optimizer/sr/stats'
+import { getRelicInterpolateObject } from '@genshin-optimizer/sr/stats'
+import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { getDefaultRelicSlot } from '@genshin-optimizer/sr/util'
 import { trans } from '../../util'
 
 const key: RelicSetKey = 'PrisonerInDeepConfinement'
 const [chg, _ch] = trans('relic', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const dm = mappedStats.relic[key]
 const icon = relicAsset(key, getDefaultRelicSlot(key))
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = conditionals[key]
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = buffs[key]
 
 const sheet: UISheet<'2' | '4'> = {
@@ -36,6 +22,44 @@ const sheet: UISheet<'2' | '4'> = {
       {
         type: 'text',
         text: chg('setEffects.2', getRelicInterpolateObject(key, 2)),
+      },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: <StatDisplay statKey="atk_" />,
+            fieldRef: buff.set2_passive_atk_.tag,
+          },
+        ],
+      },
+    ],
+  },
+  4: {
+    title: '4-Set', // TODO: L10n
+    img: icon,
+    documents: [
+      {
+        type: 'text',
+        text: chg('setEffects.4', getRelicInterpolateObject(key, 4)),
+      },
+      {
+        type: 'conditional',
+        conditional: {
+          header: {
+            icon: <ImgIcon src={icon} />,
+            text: 'DoTs afflicted on enemy', // TODO: L10n
+            additional: <SqBadge>4-Set</SqBadge>, // TODO: L10n
+          },
+          metadata: cond.dotCount,
+          label: '4-Set',
+          fields: [
+            {
+              // TODO: move to stat display
+              title: 'DEF Ignore%',
+              fieldRef: buff.set4_defIgn_.tag,
+            },
+          ],
+        },
       },
     ],
   },

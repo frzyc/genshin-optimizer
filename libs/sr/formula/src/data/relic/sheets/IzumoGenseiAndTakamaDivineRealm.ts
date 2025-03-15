@@ -28,7 +28,7 @@ const sheet = registerRelic(
               cmpEq(own.char.path, path, team.common.count.withPath(path))
             )
           ),
-          1,
+          2,
           dm[2].crit_
         )
       )

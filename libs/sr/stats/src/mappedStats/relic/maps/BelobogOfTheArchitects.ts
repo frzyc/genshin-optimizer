@@ -8,7 +8,7 @@ let o = 1
 
 const dm = {
   2: {
-    passive_def_: data_gen.setEffects[0].passiveStats.def,
+    passive_def_: data_gen.setEffects[0].passiveStats.def_,
     eff_threshold: data_gen.setEffects[0].otherStats[o++],
     extra_def_: data_gen.setEffects[0].otherStats[o++],
   },

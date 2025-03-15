@@ -32,7 +32,7 @@ const sheet: UISheet<'2' | '4'> = {
         fields: [
           {
             title: <StatDisplay statKey="brEffect_" />,
-            fieldValue: dm[2].brEffect_,
+            fieldRef: buff.set2_passive_brEffect_.tag,
           },
         ],
       },
@@ -63,7 +63,7 @@ const sheet: UISheet<'2' | '4'> = {
               fieldRef: buff.set4_brEffect_.tag,
             },
             // TODO: translate DM "Duration"
-            { title: 'Duration', fieldValue: dm['4'].duration },
+            { title: 'Duration', fieldValue: dm[4].duration },
           ],
         },
       },
