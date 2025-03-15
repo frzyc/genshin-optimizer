@@ -13,9 +13,9 @@ import type { ICachedCharacter } from '@genshin-optimizer/zzz/db'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { getLevelString } from '@genshin-optimizer/zzz/util'
-import { Box, CardActionArea, Chip, Grid, Typography } from '@mui/material'
-import { grey, yellow } from '@mui/material/colors'
+import { Box, Chip, FormControlLabel, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import { MindscapesSwitch, ZCard } from '../Components'
 import { CharacterName } from './CharacterTrans'
 
 export function CharacterCompactMindscapeSelector({
@@ -26,25 +26,64 @@ export function CharacterCompactMindscapeSelector({
   setMindscape: (mindscape: number) => void
 }) {
   const { t } = useTranslation('page_characters')
+
   return (
-    <Grid container spacing={1}>
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: '12px' }}>
       {range(1, 6).map((i) => (
-        <Grid item xs={4} key={i}>
-          <CardActionArea
-            onClick={() => setMindscape(i === mindscape ? i - 1 : i)}
-            style={{
-              border: `1px solid ${mindscape >= i ? yellow[700] : grey[200]}`,
-              borderRadius: '4px',
-              overflow: 'hidden',
-              padding: '16px',
-              textAlign: 'center',
-            }}
-          >
-            {t('mindscape', { level: i })}
-          </CardActionArea>
-        </Grid>
+        <Box key={i}>
+          <ZCard sx={{ position: 'relative', borderRadius: '40px' }}>
+            <FormControlLabel
+              control={
+                <MindscapesSwitch
+                  checked={mindscape >= i}
+                  onChange={() => setMindscape(i === mindscape ? i - 1 : i)}
+                />
+              }
+              label={
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: 9,
+                    left: mindscape >= i ? 75 : 16,
+                    transition: 'left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+                    textAlign: 'center',
+                  }}
+                >
+                  <Typography
+                    variant={'subtitle1'}
+                    sx={(theme) => ({
+                      fontWeight: 900,
+                      color:
+                        mindscape >= i
+                          ? theme.palette.mindscapeActive.main
+                          : theme.palette.mindscapeInactive.main,
+                    })}
+                  >
+                    {t('mindscape', { level: i })}
+                  </Typography>
+                  <Typography
+                    variant={'subtitle2'}
+                    sx={(theme) => ({
+                      lineHeight: 0.2,
+                      fontWeight: 900,
+                      color:
+                        mindscape >= i
+                          ? theme.palette.mindscapeActive.main
+                          : theme.palette.mindscapeInactive.main,
+                    })}
+                  >
+                    {t('mindscapeTitle')}
+                  </Typography>
+                </Box>
+              }
+              sx={{
+                margin: 0,
+              }}
+            />
+          </ZCard>
+        </Box>
       ))}
-    </Grid>
+    </Box>
   )
 }
 

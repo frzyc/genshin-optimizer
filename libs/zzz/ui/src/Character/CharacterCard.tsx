@@ -31,7 +31,7 @@ export type CharCardConfigProps = {
   cardWidth: string
   charImgWidth: string
   iconsSize: number
-  showSkills: boolean
+  isEditing: boolean
   charNameWidth: string //166px //290
   charNameVariant: Variant
   scrollingBgSize: string
@@ -54,8 +54,8 @@ export function CharacterCard({
         cardWidth: '500px',
         charImgWidth: '100%',
         iconsSize: 2,
-        showSkills: true,
-        charNameWidth: '277px', //166px
+        isEditing: false,
+        charNameWidth: '277px',
         charNameVariant: 'h5' as Variant,
         scrollingBgSize: '280px',
       }
@@ -198,7 +198,12 @@ function CharInformation({
         justifyContent: 'space-between',
       }}
     >
-      <Box>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
         <Box
           gap={2}
           sx={{
@@ -234,41 +239,49 @@ function CharInformation({
             size={charCardConfig.iconsSize}
             src={specialityDefIcon(specialty)}
           />
-          <Typography
-            variant="h5"
-            color="primary"
-            sx={{
-              fontWeight: '900',
-            }}
-          >
-            {t('mindscape', { level: character ? character.mindscape : 0 })}
-          </Typography>
-        </Box>
-        <Box sx={{ mt: '16px', display: 'flex', gap: 3 }}>
-          <Box
-            sx={(theme) => ({
-              border: `2px solid ${theme.palette['contentZzz'].main}`,
-              borderRadius: '20px',
-              display: 'flex',
-            })}
-          >
+          {!charCardConfig.isEditing ? (
             <Typography
-              sx={{ fontWeight: '900', paddingLeft: '12px', fontSize: '16px' }}
-            >
-              {t('charLevel', { level })}
-            </Typography>
-            <Typography
+              variant="h5"
               color="primary"
               sx={{
                 fontWeight: '900',
-                paddingLeft: '4px',
-                pr: '10px',
               }}
             >
-              / {milestoneMaxLevel[promotion]}
+              {t('mindscape', { level: character ? character.mindscape : 0 })}
             </Typography>
-          </Box>
-          {charCardConfig.showSkills ? (
+          ) : (
+            ''
+          )}
+        </Box>
+        {!charCardConfig.isEditing ? (
+          <Box sx={{ mt: '16px', display: 'flex', gap: 3 }}>
+            <Box
+              sx={(theme) => ({
+                border: `2px solid ${theme.palette['contentZzz'].main}`,
+                borderRadius: '20px',
+                display: 'flex',
+              })}
+            >
+              <Typography
+                sx={{
+                  fontWeight: '900',
+                  paddingLeft: '12px',
+                  fontSize: '16px',
+                }}
+              >
+                {t('charLevel', { level })}
+              </Typography>
+              <Typography
+                color="primary"
+                sx={{
+                  fontWeight: '900',
+                  paddingLeft: '4px',
+                  pr: '10px',
+                }}
+              >
+                / {milestoneMaxLevel[promotion]}
+              </Typography>
+            </Box>
             <Box sx={{ display: 'flex', gap: 2 }}>
               {allSkillKeys.map((item, index) => (
                 <Box key={index} sx={{ position: 'relative' }}>
@@ -295,10 +308,10 @@ function CharInformation({
                 </Box>
               </Box>
             </Box>
-          ) : (
-            ''
-          )}
-        </Box>
+          </Box>
+        ) : (
+          ''
+        )}
       </Box>
     </Box>
   )

@@ -6,24 +6,24 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
+import { Box, Button, Grid, IconButton } from '@mui/material'
 import type { Variant } from '@mui/material/styles/createTypography'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { LevelSelect } from '../../LevelSelect'
-import { CharacterCardStats } from '../card'
 import { CharacterCard } from '../CharacterCard'
 import { CharacterCompactMindscapeSelector } from '../CharacterProfilePieces'
 import { CoreDropdown } from '../CoreDropdown'
 import { EquippedGrid } from '../EquippedGrid'
 import { SkillDropdown } from '../SkillDropdown'
+import { CharacterCardStats } from '../card'
 
 const charCardConfig = {
   cardWidth: '500px',
   charImgWidth: '75%',
   iconsSize: 1.5,
-  showSkills: false,
+  isEditing: true,
   charNameWidth: '166px',
   charNameVariant: 'h6' as Variant,
   scrollingBgSize: '220px',
@@ -63,7 +63,6 @@ export function Content({ onClose }: { onClose?: () => void }) {
         <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
           <Grid item xs={7} sm={4} md={3} lg={3} xl={4}>
             <CardThemed
-              bgt="light"
               sx={{
                 height: '100%',
                 display: 'flex',
@@ -85,19 +84,14 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 />
               </Box>
               <CharacterCardStats bgt="light" character={character} />
-              <Typography sx={{ textAlign: 'center', pb: -1 }} variant="h6">
-                {t('mindscapeTitle')}
-              </Typography>
-              <Box sx={{ px: 1 }}>
-                <CharacterCompactMindscapeSelector
-                  mindscape={character.mindscape}
-                  setMindscape={(mindscape) =>
-                    database.chars.set(characterKey, {
-                      mindscape,
-                    })
-                  }
-                />
-              </Box>
+              <CharacterCompactMindscapeSelector
+                mindscape={character.mindscape}
+                setMindscape={(mindscape) =>
+                  database.chars.set(characterKey, {
+                    mindscape,
+                  })
+                }
+              />
             </CardThemed>
           </Grid>
           <Grid
