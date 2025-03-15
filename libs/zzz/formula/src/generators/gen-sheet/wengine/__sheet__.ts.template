@@ -1,5 +1,6 @@
 import { subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
   allListConditionals,
@@ -18,6 +19,7 @@ import {
 } from '../util'
 
 const key: WengineKey = '<%= sheet %>'
+const dm = mappedStats.wengine[key]
 const { modification } = own.wengine
 
 // TODO: Add conditionals
@@ -37,7 +39,7 @@ const sheet = registerWengine(
     ownBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(subscript(modification, [0.1, 0.2, 0.3, 0.4, 0.5]))
+        boolConditional.ifOn(subscript(modification, dm.cond_dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)
