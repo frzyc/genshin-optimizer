@@ -108,4 +108,59 @@ describe('Disc sheets test', () => {
     expect(calc.compute(char.final.dmg_.ice).val).toBeCloseTo(0.24) // passive
     expect(calc.compute(char.combat.atk_).val).toBeCloseTo(4 * 0.032) // cond
   })
+
+  // BigCyliner should be here but no conds
+
+  it('BlazingLaurel', () => {
+    const { data, characterKey } = testCharacterData('BlazingLaurel')
+    data.push(
+      cond(
+        characterKey,
+        'BlazingLaurel',
+        conditionals.BlazingLaurel.quickOrPerfectAssistUsed.name,
+        1
+      ),
+      cond(
+        characterKey,
+        'BlazingLaurel',
+        conditionals.BlazingLaurel.wilt.name,
+        30
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    // expect(calc.compute(char.final.impact_).val).toBeCloseTo(0.4)
+    // Base + W-engine cond
+    expect(calc.compute(char.final.crit_dmg_.ice).val).toBeCloseTo(
+      0.5 + 30 * 0.024
+    )
+    expect(calc.compute(char.final.crit_dmg_.fire).val).toBeCloseTo(
+      0.5 + 30 * 0.024
+    )
+  })
+
+  it('BoxCutter', () => {
+    const { data, characterKey } = testCharacterData('BoxCutter')
+    data.push(
+      cond(
+        characterKey,
+        'BoxCutter',
+        conditionals.BoxCutter.launchedAftershock.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.final.dmg_.physical).val).toBeCloseTo(0.24)
+  })
 })

@@ -20,46 +20,26 @@ export const conditionals = {
       max: 4,
     },
   },
-  BigCylinder: {
-    boolConditional: {
-      sheet: 'BigCylinder',
-      name: 'boolConditional',
+  BlazingLaurel: {
+    quickOrPerfectAssistUsed: {
+      sheet: 'BlazingLaurel',
+      name: 'quickOrPerfectAssistUsed',
       type: 'bool',
     },
-    listConditional: {
-      sheet: 'BigCylinder',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BigCylinder',
-      name: 'numConditional',
+    wilt: {
+      sheet: 'BlazingLaurel',
+      name: 'wilt',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 20,
     },
   },
-  BlazingLaurel: {
-    boolConditional: {
-      sheet: 'BlazingLaurel',
-      name: 'boolConditional',
+  BoxCutter: {
+    launchedAftershock: {
+      sheet: 'BoxCutter',
+      name: 'launchedAftershock',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BlazingLaurel',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BlazingLaurel',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   BranchBladeSong: {
@@ -842,6 +822,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  SeveredInnocence: {
+    boolConditional: {
+      sheet: 'SeveredInnocence',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'SeveredInnocence',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'SeveredInnocence',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   SharpenedStinger: {
     boolConditional: {
       sheet: 'SharpenedStinger',
@@ -898,6 +899,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'SliceOfTime',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  SpectralGaze: {
+    boolConditional: {
+      sheet: 'SpectralGaze',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'SpectralGaze',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'SpectralGaze',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1414,6 +1436,20 @@ export const formulas = {
         attribute: 'fire',
         damageType1: 'elemental',
         name: 'standardDmgInst',
+      },
+    },
+  },
+  BigCylinder: {
+    damage: {
+      sheet: 'BigCylinder',
+      name: 'damage',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'BigCylinder',
+        damageType1: 'elemental',
+        name: 'damage',
       },
     },
   },
@@ -2189,16 +2225,16 @@ export const buffs = {
     },
   },
   BashfulDemon: {
-    ice_dmg_: {
+    passive_ice_dmg_: {
       sheet: 'BashfulDemon',
-      name: 'ice_dmg_',
+      name: 'passive_ice_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'dmg_',
         sheet: 'BashfulDemon',
         attribute: 'ice',
-        name: 'ice_dmg_',
+        name: 'passive_ice_dmg_',
       },
     },
     team_atk_: {
@@ -2213,73 +2249,65 @@ export const buffs = {
       },
     },
   },
-  BigCylinder: {
-    cond_dmg_: {
-      sheet: 'BigCylinder',
-      name: 'cond_dmg_',
+  BlazingLaurel: {
+    crit_dmg_fire_: {
+      sheet: 'BlazingLaurel',
+      name: 'crit_dmg_fire_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'BigCylinder',
-        name: 'cond_dmg_',
+        q: 'crit_dmg_',
+        sheet: 'BlazingLaurel',
+        attribute: 'fire',
+        name: 'crit_dmg_fire_',
       },
     },
-    enemy_defIgn_: {
-      sheet: 'BigCylinder',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'BigCylinder',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BigCylinder',
-      name: 'team_dmg_',
+    crit_dmg_ice_: {
+      sheet: 'BlazingLaurel',
+      name: 'crit_dmg_ice_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'BigCylinder',
-        name: 'team_dmg_',
+        q: 'crit_dmg_',
+        sheet: 'BlazingLaurel',
+        attribute: 'ice',
+        name: 'crit_dmg_ice_',
+      },
+    },
+    impact_: {
+      sheet: 'BlazingLaurel',
+      name: 'impact_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'impact_',
+        sheet: 'BlazingLaurel',
+        name: 'impact_',
       },
     },
   },
-  BlazingLaurel: {
-    cond_dmg_: {
-      sheet: 'BlazingLaurel',
-      name: 'cond_dmg_',
+  BoxCutter: {
+    daze_: {
+      sheet: 'BoxCutter',
+      name: 'daze_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'BlazingLaurel',
-        name: 'cond_dmg_',
+        q: 'daze_',
+        sheet: 'BoxCutter',
+        name: 'daze_',
       },
     },
-    enemy_defIgn_: {
-      sheet: 'BlazingLaurel',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'BlazingLaurel',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BlazingLaurel',
-      name: 'team_dmg_',
+    physical_dmg_: {
+      sheet: 'BoxCutter',
+      name: 'physical_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'BlazingLaurel',
-        name: 'team_dmg_',
+        q: 'dmg_',
+        sheet: 'BoxCutter',
+        attribute: 'physical',
+        name: 'physical_dmg_',
       },
     },
   },
@@ -3678,6 +3706,41 @@ export const buffs = {
       },
     },
   },
+  SeveredInnocence: {
+    cond_dmg_: {
+      sheet: 'SeveredInnocence',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'common_dmg_',
+        sheet: 'SeveredInnocence',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'SeveredInnocence',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'SeveredInnocence',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SeveredInnocence',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'common_dmg_',
+        sheet: 'SeveredInnocence',
+        name: 'team_dmg_',
+      },
+    },
+  },
   SharpenedStinger: {
     cond_dmg_: {
       sheet: 'SharpenedStinger',
@@ -3817,6 +3880,41 @@ export const buffs = {
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'SliceOfTime',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  SpectralGaze: {
+    cond_dmg_: {
+      sheet: 'SpectralGaze',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'common_dmg_',
+        sheet: 'SpectralGaze',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'SpectralGaze',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'SpectralGaze',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SpectralGaze',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'common_dmg_',
+        sheet: 'SpectralGaze',
         name: 'team_dmg_',
       },
     },
