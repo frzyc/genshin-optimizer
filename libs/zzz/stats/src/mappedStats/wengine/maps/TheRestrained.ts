@@ -1,20 +1,16 @@
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { allStats } from '../../../allStats'
+import { getWengineParams } from '../../../wengine'
 
 const key: WengineKey = 'TheRestrained'
-const data_gen = allStats.wengine[key]
+const data_gen = getWengineParams(key)
+
+let o = 0
 
 // TODO: Load scalings
 const dm = {
-  cond_dmg_: [
-    -1,
-    ...data_gen.phase.map(({ params }) => params[0] ?? 0),
-  ] as number[],
-  passive_atk: [
-    -1,
-    ...data_gen.phase.map(({ params }) => params[1] ?? 0),
-  ] as number[],
-  duration: data_gen.phase[0].params[2],
+  cond_dmg_: data_gen[o++] ?? [-1, 1, 2, 3, 4, 5],
+  passive_atk: data_gen[o++] ?? [-1, 1, 2, 3, 4, 5],
+  duration: data_gen[o++]?.[1] ?? 0,
 } as const
 
 export default dm
