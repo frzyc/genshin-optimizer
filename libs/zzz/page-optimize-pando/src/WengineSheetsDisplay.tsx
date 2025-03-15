@@ -1,6 +1,7 @@
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { isWengineKey } from '@genshin-optimizer/zzz/consts'
 import { useCharacterContext, useCharOpt } from '@genshin-optimizer/zzz/db-ui'
+import { WengineSheetDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { WengineAutocomplete } from '@genshin-optimizer/zzz/ui'
 import { Box, Grid, Stack } from '@mui/material'
 import { useMemo, useState } from 'react'
@@ -26,8 +27,8 @@ export function WengineSheetsDisplay() {
         <Grid container columns={3} spacing={1}>
           {wList.map((wk) => (
             <Grid item xs={1} key={wk}>
-              TODO: WengineSheetDisplay for {wk}
-              {/* <WengineSheetDisplay lcKey={setKey} /> */}
+              {/* TODO: WengineSheetDisplay for {wk} */}
+              <WengineSheetDisplay wkey={wk} />
             </Grid>
           ))}
         </Grid>
