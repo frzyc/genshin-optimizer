@@ -1,31 +1,38 @@
 import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { own } from '@genshin-optimizer/zzz/formula'
+import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
+import { getFormula, own } from '@genshin-optimizer/zzz/formula'
 import { Box, ListItemText, MenuItem } from '@mui/material'
-import { useTranslation } from 'react-i18next'
 import { getDmgType } from '..'
 import { TagDisplay } from '../../components'
 import { useZzzCalcContext } from '../../hooks'
 
 export function OptimizationTargetSelector({
-  optTarget,
+  sheet,
+  name,
   setOptTarget,
   buttonProps = {},
 }: {
-  optTarget?: Tag
+  sheet?: Sheet
+  name?: string
   setOptTarget: (o: Tag) => void
-  buttonProps?: Omit<DropdownButtonProps, 'title' | 'children'>
+  buttonProps?: Omit<DropdownButtonProps, 'title' | 'children' | 'color'>
 }) {
-  const { t } = useTranslation('optimize')
   const calc = useZzzCalcContext()
+  const formula = getFormula(sheet, name)
   return (
     <DropdownButton
+      color={formula ? 'success' : 'warning'}
       title={
-        <Box sx={{ display: 'flex', gap: 1 }}>
-          {t('optTarget')}
-          {optTarget ? <TagDisplay tag={optTarget} /> : null}
-        </Box>
+        formula?.tag ? (
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            {/* TODO: translate */}
+            <strong>Optimization Target: </strong>
+            {<TagDisplay tag={formula.tag} />}
+          </Box>
+        ) : (
+          'Select an Optimization Target'
+        )
       }
       {...buttonProps}
     >

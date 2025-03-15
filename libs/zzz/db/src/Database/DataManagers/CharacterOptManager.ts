@@ -2,13 +2,18 @@ import { notEmpty, shallowCompareObj } from '@genshin-optimizer/common/util'
 import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { Dst, Sheet, Src, Tag } from '@genshin-optimizer/zzz/formula'
-import { getConditional, isMember } from '@genshin-optimizer/zzz/formula'
+import {
+  getConditional,
+  getFormula,
+  isMember,
+} from '@genshin-optimizer/zzz/formula'
 import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 import { validateTag } from '../tagUtil'
 
 export type CharOpt = {
-  target: Tag
+  targetSheet?: Sheet
+  targetName?: string
   conditionals: Array<{
     sheet: Sheet
     src: Src
@@ -19,11 +24,6 @@ export type CharOpt = {
   bonusStats: Array<{
     tag: Tag
     value: number
-  }>
-  statConstraints: Array<{
-    tag: Tag
-    value: number
-    isMax: boolean
   }>
   optConfigId?: string
 }
@@ -36,13 +36,16 @@ export class CharacterOptManager extends DataManager<
   constructor(database: ZzzDatabase) {
     super(database, 'charOpts')
   }
-  override validate(obj: unknown, key: CharacterKey): CharOpt | undefined {
+  override validate(obj: unknown): CharOpt | undefined {
     if (!obj || typeof obj !== 'object') return undefined
-    let { target, conditionals, bonusStats, statConstraints, optConfigId } =
+    let { targetName, targetSheet, conditionals, bonusStats, optConfigId } =
       obj as CharOpt
-    if (!validateTag(target)) target = defOptTarget(key)
     if (!Array.isArray(conditionals)) conditionals = []
     const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
+    if (!targetSheet || !targetName || !getFormula(targetSheet, targetName)) {
+      targetSheet = undefined
+      targetName = undefined
+    }
     conditionals = conditionals
       .map(({ sheet, condKey, src, dst, condValue }) => {
         if (!condValue) return undefined //remove conditionals when the value is 0
@@ -73,22 +76,15 @@ export class CharacterOptManager extends DataManager<
       if (typeof value !== 'number') return false
       return true
     })
-    if (!Array.isArray(statConstraints)) statConstraints = []
-    statConstraints = statConstraints.filter(({ tag, value, isMax }) => {
-      if (!validateTag(tag)) return false
-      if (typeof value !== 'number') return false
-      if (typeof isMax !== 'boolean') return false
-      return true
-    })
 
     if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = undefined
 
     const charOpt: CharOpt = {
-      target,
+      targetName,
+      targetSheet,
       conditionals,
       bonusStats,
-      statConstraints,
       optConfigId,
     }
     return charOpt
@@ -104,7 +100,7 @@ export class CharacterOptManager extends DataManager<
   }
   getOrCreate(key: CharacterKey): CharOpt {
     if (!this.keys.includes(key)) {
-      this.set(key, initialCharOpt(key))
+      this.set(key, initialCharOpt())
     }
     return this.get(key) as CharOpt
   }
@@ -177,20 +173,9 @@ export class CharacterOptManager extends DataManager<
   }
 }
 
-function defOptTarget(key: CharacterKey): CharOpt['target'] {
+export function initialCharOpt(): CharOpt {
   return {
-    src: key,
-    et: 'own',
-    qt: 'final',
-    q: 'atk',
-    sheet: 'agg',
-  }
-}
-export function initialCharOpt(key: CharacterKey): CharOpt {
-  return {
-    target: defOptTarget(key),
     conditionals: [],
     bonusStats: [],
-    statConstraints: [],
   }
 }

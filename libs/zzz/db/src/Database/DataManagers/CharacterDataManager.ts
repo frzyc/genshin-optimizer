@@ -275,11 +275,11 @@ export class CharacterDataManager extends DataManager<
     if (!char) return undefined
     for (const discKey of Object.values(char.equippedDiscs)) {
       const disc = this.database.discs.get(discKey)
-      if (disc && disc.location === key)
+      if (discKey && disc && disc.location === key)
         this.database.discs.setCached(discKey, { ...disc, location: '' })
     }
     const wengine = this.database.wengines.get(char.equippedWengine)
-    if (wengine && wengine.location === key)
+    if (char.equippedWengine && wengine && wengine.location === key)
       this.database.wengines.setCached(char.equippedWengine, {
         ...wengine,
         location: '',

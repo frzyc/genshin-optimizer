@@ -3,7 +3,6 @@ import {
   ColorText,
   DropdownButton,
   NumberInputLazy,
-  SqBadge,
 } from '@genshin-optimizer/common/ui'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
@@ -13,7 +12,7 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Attribute, Member, Tag } from '@genshin-optimizer/zzz/formula'
-import { tagFieldMap } from '@genshin-optimizer/zzz/formula-ui'
+import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
@@ -24,6 +23,7 @@ import {
   InputAdornment,
   MenuItem,
   Stack,
+  Typography,
 } from '@mui/material'
 import { useCallback } from 'react'
 
@@ -94,7 +94,7 @@ function InitialStatDropdown({
 }) {
   return (
     <DropdownButton
-      title={(tag && tagFieldMap.subset(tag)[0]?.title) ?? 'Add Bonus Stat'}
+      title={(tag && <TagDisplay tag={tag} />) ?? 'Add Bonus Stat'}
     >
       {initialStats.map((statKey) => (
         <MenuItem key={statKey} onClick={() => onSelect(statKey)}>
@@ -123,11 +123,16 @@ function BonusStatDisplay({
   return (
     <CardThemed bgt="light">
       <CardContent
-        sx={{ display: 'flex', gap: 1, justifyContent: 'space-around' }}
+        sx={{
+          display: 'flex',
+          gap: 1,
+          justifyContent: 'space-around',
+          alignItems: 'center',
+        }}
       >
-        <SqBadge sx={{ m: 'auto' }}>
-          <StatDisplay statKey={tag.q as any} />
-        </SqBadge>
+        <Typography>
+          <TagDisplay tag={tag} />
+        </Typography>
         {tag.q === 'dmg_' && (
           <AttributeDropdown
             tag={tag}

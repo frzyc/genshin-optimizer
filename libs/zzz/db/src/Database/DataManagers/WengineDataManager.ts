@@ -66,7 +66,7 @@ export class WengineDataManager extends DataManager<
         : undefined
 
       // previously equipped wengine at new location
-      let prevWengine = super.get(newChar?.equippedWengine)
+      const prevWengine = super.get(newChar?.equippedWengine)
 
       //current prevWengine <-> newChar  && newWengine <-> prevChar
       //swap to prevWengine <-> prevChar && newWengine <-> newChar(outside of this if)
@@ -76,14 +76,13 @@ export class WengineDataManager extends DataManager<
           ...prevWengine,
           location: prevChar?.key ?? '',
         })
-      else if (prevChar?.key) prevWengine = undefined
 
       if (newChar)
         this.database.chars.setEquippedWengine(newChar.key, newWengine.id)
-      if (prevChar && prevWengine)
+      if (prevChar)
         this.database.chars.setEquippedWengine(
           prevChar.key,
-          prevWengine?.id as WengineKey
+          prevWengine?.id ?? ''
         )
     } else
       newWengine.location &&

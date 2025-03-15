@@ -14,10 +14,8 @@ import {
   useCharOpt,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import {
-  StatFilterCard,
-  useZzzCalcContext,
-} from '@genshin-optimizer/zzz/formula-ui'
+import { getFormula } from '@genshin-optimizer/zzz/formula'
+import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
 import { optimize } from '@genshin-optimizer/zzz/solver-pando'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { WorkerSelector } from '@genshin-optimizer/zzz/ui'
@@ -41,7 +39,7 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DiscFilter } from './DiscFilter'
-import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
+import { StatFilterCard } from './StatFilterCard'
 import { WengineFilter } from './WengineFilter'
 
 export default function Optimize() {
@@ -61,7 +59,6 @@ export default function Optimize() {
   return (
     <OptConfigProvider optConfigId={optConfigId}>
       <OptimizeWrapper />
-      <GeneratedBuildsDisplay />
     </OptConfigProvider>
   )
 }
@@ -71,7 +68,7 @@ function OptimizeWrapper() {
   const { database } = useDatabaseContext()
   const calc = useZzzCalcContext()
   const { key: characterKey } = useCharacterContext()!
-  const { target } = useCharOpt(characterKey)!
+  const { targetName, targetSheet } = useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
@@ -175,6 +172,8 @@ function OptimizeWrapper() {
 
   const onOptimize = useCallback(async () => {
     if (!calc) return
+    const formula = getFormula(targetSheet, targetName)
+    if (!formula) return
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
     setProgress(undefined)
     setOptimizing(true)
@@ -192,7 +191,7 @@ function OptimizeWrapper() {
       calc,
       [
         {
-          tag: target,
+          tag: formula.tag,
           multiplier: 1,
         },
       ],
@@ -231,7 +230,8 @@ function OptimizeWrapper() {
     optConfig.setFilter2,
     optConfig.setFilter4,
     characterKey,
-    target,
+    targetSheet,
+    targetName,
     wengines,
     discsBySlot,
     numWorkers,
@@ -263,7 +263,7 @@ function OptimizeWrapper() {
               setNumWorkers={setNumWorkers}
             />
             <Button
-              disabled={!totalPermutations}
+              disabled={!totalPermutations || !targetName}
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'primary'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
