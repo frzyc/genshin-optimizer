@@ -34,6 +34,6 @@ export interface IDbCharacter extends ICharacter {
 }
 
 export interface ICachedCharacter extends IDbCharacter {
-  equippedDiscs: Record<DiscSlotKey, string>
-  equippedWengine: string
+  equippedDiscs: Record<DiscSlotKey, string | undefined>
+  equippedWengine?: string
 }
