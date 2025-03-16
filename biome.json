@@ -6,6 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
+    "maxSize": 20971520,
     "ignoreUnknown": false,
     "ignore": [
       "./dist",

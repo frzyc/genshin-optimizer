@@ -18,12 +18,17 @@ export async function formatText(path: string, text: string): Promise<string> {
     'bin',
     'biome'
   )
+  const biomeConfigPath = join(workspaceRoot, 'biome.json')
 
   return new Promise((resolve, reject) => {
     const spawnedProcess = spawn('node', [
       biomePath,
       'check',
       `--stdin-file-path=${path}`,
+      `--config-path=${biomeConfigPath}`,
+      '--formatter-enabled=true',
+      '--organize-imports-enabled=true',
+      '--linter-enabled=false',
       '--fix',
     ])
 
@@ -31,6 +36,7 @@ export async function formatText(path: string, text: string): Promise<string> {
     let error = ''
 
     spawnedProcess.stdout.on('data', (chunk: Buffer) => {
+      console.log(chunk.toString())
       data += chunk.toString()
     })
 
@@ -84,6 +90,7 @@ export async function generateIndexFromObj(obj: object, path: string) {
     .join('\n')
 
   const indexContent = `// This is a generated index file.
+
 ${imports}
 
 const data = {
