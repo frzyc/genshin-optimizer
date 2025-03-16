@@ -50,14 +50,20 @@ export function optimize(
       ...frames.map((frame, i) =>
         prod(
           frame.multiplier,
-          new Read(frame.tag, 'sum').with('preset', `preset${i}` as Preset)
+          new Read(
+            {
+              src: characterKey,
+              ...frame.tag,
+            },
+            undefined // undefined as 'infer'
+          ).with('preset', `preset${i}` as Preset)
         )
       )
     ),
     // stat filters
     ...statFilters.map(({ tag, isMax }) =>
-      // Invert max constraints for pruning
-      isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum')
+      // Invert max constraints for pruning, undefined as 'infer'
+      isMax ? prod(-1, new Read(tag, undefined)) : new Read(tag, undefined)
     ),
     // other calcs (graph, etc) *go in* `nodes.push` below
   ]
