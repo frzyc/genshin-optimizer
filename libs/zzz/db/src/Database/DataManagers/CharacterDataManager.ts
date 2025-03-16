@@ -99,7 +99,8 @@ export class CharacterDataManager extends DataManager<
       (val, k) => typeof val === 'number' && !!val && k !== 'enemyDefRed'
     )
 
-    if (!allFormulaKeys.includes(formulaKey)) formulaKey = allFormulaKeys[0]
+    if (formulaKey && !allFormulaKeys.includes(formulaKey))
+      formulaKey = undefined
 
     if (typeof constraints !== 'object') constraints = {}
     constraints = objFilter(
@@ -318,8 +319,8 @@ export class CharacterDataManager extends DataManager<
 export function initialCharacterData(key: CharacterKey): ICachedCharacter {
   return {
     key,
-    level: 1,
-    core: 0,
+    level: 60,
+    core: 6,
     wengineKey: allWengineKeys[0],
     wengineLvl: 60,
     wenginePhase: 1,
@@ -327,7 +328,7 @@ export function initialCharacterData(key: CharacterKey): ICachedCharacter {
       // in percent
       enemyDef: 953, // default enemy DEF
     },
-    formulaKey: allFormulaKeys[0],
+    formulaKey: undefined,
     constraints: {}, // in percent
     useEquipped: false,
     slot4: [...discSlotToMainStatKeys['4']],
