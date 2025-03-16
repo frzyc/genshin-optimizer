@@ -10,7 +10,6 @@ import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import type { StatFilters } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
-  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
@@ -87,7 +86,6 @@ export function StatFilterDisplay({
   setStatFilters: (statFilters: StatFilters) => void
   disabled: boolean
 }) {
-  const { key: characterKey } = useCharacterContext()!
   const setTarget = useCallback(
     (tag: Tag, oldIndex?: number) => {
       const statFilters_ = structuredClone(statFilters)
