@@ -1,3 +1,6 @@
+import { execSync } from 'child_process'
+import { writeFileSync } from 'fs'
+import * as path from 'path'
 import {
   allCharacterKeys,
   allLightConeKeys,
@@ -5,8 +8,20 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
-import { writeFileSync } from 'fs'
-import * as prettier from 'prettier'
+
+/**
+ * Returns Biome formatter path. Assumes, that node_modules have been initialized
+ */
+function getBiomeExec() {
+  return path.join(
+    workspaceRoot,
+    'node_modules',
+    '@biomejs',
+    'biome',
+    'bin',
+    'biome'
+  )
+}
 
 export default async function genIndex(tree: Tree, map_type: string) {
   const file_location = `${workspaceRoot}/libs/sr/stats/src/mappedStats/${map_type}/index.ts`
@@ -24,9 +39,8 @@ export default async function genIndex(tree: Tree, map_type: string) {
 }
 
 async function writeIndex(path: string, keys: readonly string[]) {
-  const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
-    `
+  const biomePath = getBiomeExec()
+  const index = `
 ${keys.map((key) => `import ${key} from './maps/${key}'`).join('\n')}
 
 const maps = {
@@ -34,8 +48,12 @@ const maps = {
 }
 export default maps
 
-  `,
-    { ...prettierRc, parser: 'typescript' }
-  )
-  writeFileSync(path, index)
+  `
+  const formatted = execSync(
+    `node ${biomePath} check --stdin-file-path=${path} --fix`,
+    {
+      input: index,
+    }
+  ).toString()
+  writeFileSync(path, formatted)
 }

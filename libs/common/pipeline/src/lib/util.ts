@@ -1,6 +1,21 @@
+import { execSync } from 'child_process'
 import { mkdirSync, writeFileSync } from 'fs'
-import { dirname } from 'path'
-import * as prettier from 'prettier'
+import { dirname, join } from 'path'
+import { workspaceRoot } from '@nx/devkit'
+
+/**
+ * Returns Biome formatter path. Assumes, that node_modules have been initialized
+ */
+function getBiomeExec() {
+  return join(
+    workspaceRoot,
+    'node_modules',
+    '@biomejs',
+    'biome',
+    'bin',
+    'biome'
+  )
+}
 
 export function dumpFile(filename: string, obj: unknown, print = false) {
   mkdirSync(dirname(filename), { recursive: true })
@@ -10,11 +25,11 @@ export function dumpFile(filename: string, obj: unknown, print = false) {
 }
 export async function dumpPrettyFile(filename: string, obj: unknown) {
   mkdirSync(dirname(filename), { recursive: true })
-  const prettierRc = await prettier.resolveConfig(filename)
-  const fileStr = prettier.format(JSON.stringify(obj), {
-    ...prettierRc,
-    parser: 'json',
-  })
+  const biomePath = getBiomeExec()
+  const fileStr = execSync(
+    `node ${biomePath} check --stdin-file-path=${filename} --fix`,
+    { input: JSON.stringify(obj) }
+  ).toString()
 
   writeFileSync(filename, fileStr)
 }
@@ -38,20 +53,23 @@ export async function generateIndexFromObj(obj: object, path: string) {
     .map((k) => `  ${k},`)
     .join('\n')
 
-  const prettierRc = await prettier.resolveConfig(path)
-  const indexContent = prettier.format(
-    `// This is a generated index file.
+  const indexContent = `// This is a generated index file.
 ${imports}
 
 const data = {
 ${dataContent}
 } as const
 export default data
-`,
-    { ...prettierRc, parser: 'typescript' }
-  )
+`
+  const biomePath = getBiomeExec()
+  const formatted = execSync(
+    `node ${biomePath} check --stdin-file-path=index.ts --fix`,
+    {
+      input: indexContent,
+    }
+  ).toString()
   mkdirSync(path, { recursive: true })
-  writeFileSync(`${path}/index.ts`, indexContent)
+  writeFileSync(`${path}/index.ts`, formatted)
 
   await Promise.all(
     Object.entries(obj).map(async ([key, val]) => {

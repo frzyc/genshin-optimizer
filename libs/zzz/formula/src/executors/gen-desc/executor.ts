@@ -1,11 +1,11 @@
+import { execSync } from 'child_process'
+import { writeFileSync } from 'fs'
+import * as path from 'path'
 import {
   extractCondMetadata,
   extractFormulaMetadata,
 } from '@genshin-optimizer/game-opt/formula'
 import { workspaceRoot } from '@nx/devkit'
-import { writeFileSync } from 'fs'
-import * as path from 'path'
-import * as prettier from 'prettier'
 import { data } from '../../data'
 import type { Tag } from '../../data/util'
 import type { GenDescExecutorSchema } from './schema'
@@ -63,17 +63,27 @@ export default async function runExecutor(
   })
 
   const cwd = path.join(workspaceRoot, outputPath)
-  const prettierRc = await prettier.resolveConfig(cwd)
-  const str = prettier.format(
-    `
+  const biomePath = path.join(
+    workspaceRoot,
+    'node_modules',
+    '@biomejs',
+    'biome',
+    'bin',
+    'biome'
+  )
+  const str = `
 // WARNING: Generated file, do not modify
 export const conditionals = ${JSON.stringify(conditionals)} as const
 export const formulas = ${JSON.stringify(formulas)} as const
 export const buffs = ${JSON.stringify(buffs)} as const
-`,
-    { ...prettierRc, parser: 'typescript' }
-  )
-  writeFileSync(cwd, str)
+`
+  const formatted = execSync(
+    `node ${biomePath} check --stdin-file-path=index.ts --fix`,
+    {
+      input: str,
+    }
+  ).toString()
+  writeFileSync(cwd, formatted)
 
   return { success: true }
 }
