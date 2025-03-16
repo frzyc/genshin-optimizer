@@ -267,7 +267,11 @@ function OptimizeWrapper() {
 
 function Monospace({ value }: { value: number }): JSX.Element {
   const str = value.toLocaleString()
-  return <Box sx={{ fontFamily: 'Monospace', display: 'inline' }}>{str}</Box>
+  return (
+    <Box component="span" sx={{ fontFamily: 'Monospace', display: 'inline' }}>
+      {str}
+    </Box>
+  )
 }
 function ProgressIndicator(props: { progress: Progress; total: number }) {
   const { t } = useTranslation('optimize')

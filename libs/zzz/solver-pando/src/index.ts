@@ -78,7 +78,7 @@ export function optimize(
     if (tag['src'] !== characterKey) return undefined // Wrong member
     if (tag['et'] !== 'own') return undefined // Not applied (only) to self
 
-    if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
+    if (tag['sheet'] === 'dyn' && tag['qt'] === 'initial')
       return { q: tag['q']! } // Disc stat bonus
     if (tag['q'] === 'count' && discSetKeys.has(tag['sheet'] as any))
       return { q: tag['sheet']! } // Disc set counter
