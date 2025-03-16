@@ -2686,6 +2686,97 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@biomejs/biome@npm:^1.9.4":
+  version: 1.9.4
+  resolution: "@biomejs/biome@npm:1.9.4"
+  dependencies:
+    "@biomejs/cli-darwin-arm64": 1.9.4
+    "@biomejs/cli-darwin-x64": 1.9.4
+    "@biomejs/cli-linux-arm64": 1.9.4
+    "@biomejs/cli-linux-arm64-musl": 1.9.4
+    "@biomejs/cli-linux-x64": 1.9.4
+    "@biomejs/cli-linux-x64-musl": 1.9.4
+    "@biomejs/cli-win32-arm64": 1.9.4
+    "@biomejs/cli-win32-x64": 1.9.4
+  dependenciesMeta:
+    "@biomejs/cli-darwin-arm64":
+      optional: true
+    "@biomejs/cli-darwin-x64":
+      optional: true
+    "@biomejs/cli-linux-arm64":
+      optional: true
+    "@biomejs/cli-linux-arm64-musl":
+      optional: true
+    "@biomejs/cli-linux-x64":
+      optional: true
+    "@biomejs/cli-linux-x64-musl":
+      optional: true
+    "@biomejs/cli-win32-arm64":
+      optional: true
+    "@biomejs/cli-win32-x64":
+      optional: true
+  bin:
+    biome: bin/biome
+  checksum: 0bb448d9cf07c76556e0af62cec4262ccdf2d2800a472459c0666c180fdb74ac602a5d87325e926e860cc41c34166fca27f753afc24b2264317f2f29861005b5
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-darwin-arm64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "@biomejs/cli-darwin-arm64@npm:1.9.4"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-darwin-x64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "@biomejs/cli-darwin-x64@npm:1.9.4"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-arm64-musl@npm:1.9.4":
+  version: 1.9.4
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:1.9.4"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-arm64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "@biomejs/cli-linux-arm64@npm:1.9.4"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-x64-musl@npm:1.9.4":
+  version: 1.9.4
+  resolution: "@biomejs/cli-linux-x64-musl@npm:1.9.4"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-linux-x64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "@biomejs/cli-linux-x64@npm:1.9.4"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-win32-arm64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "@biomejs/cli-win32-arm64@npm:1.9.4"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@biomejs/cli-win32-x64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "@biomejs/cli-win32-x64@npm:1.9.4"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
 "@bufbuild/protobuf@npm:^2.0.0":
   version: 2.2.3
   resolution: "@bufbuild/protobuf@npm:2.2.3"
@@ -13914,6 +14005,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.14.5
     "@babel/preset-react": ^7.18.6
+    "@biomejs/biome": ^1.9.4
     "@emotion/babel-plugin": 11.11.0
     "@emotion/react": 11.11.4
     "@emotion/styled": 11.11.5
@@ -13989,7 +14081,6 @@ __metadata:
     next: 14.2.5
     nx: 20.5.0
     prettier: ^2.8.4
-    prettier-plugin-organize-imports: ^3.2.4
     react: 18.3.1
     react-dom: 18.3.1
     react-ga4: ^2.1.0
@@ -20341,29 +20432,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-organize-imports@npm:^3.2.4":
-  version: 3.2.4
-  resolution: "prettier-plugin-organize-imports@npm:3.2.4"
-  peerDependencies:
-    "@volar/vue-language-plugin-pug": ^1.0.4
-    "@volar/vue-typescript": ^1.0.4
-    prettier: ">=2.0"
-    typescript: ">=2.9"
-  peerDependenciesMeta:
-    "@volar/vue-language-plugin-pug":
-      optional: true
-    "@volar/vue-typescript":
-      optional: true
-  checksum: 57ae97d7e403445e650ae92b7da586761d1d88a47e46b3ea274baeb96782165bebd0132db9c652081e185c41b50701ba1d30d615ad1c9000300cc0c67eb12b7a
-  languageName: node
-  linkType: hard
-
 "prettier@npm:^2.8.4":
-  version: 2.8.4
-  resolution: "prettier@npm:2.8.4"
+  version: 2.8.8
+  resolution: "prettier@npm:2.8.8"
   bin:
     prettier: bin-prettier.js
-  checksum: c173064bf3df57b6d93d19aa98753b9b9dd7657212e33b41ada8e2e9f9884066bb9ca0b4005b89b3ab137efffdf8fbe0b462785aba20364798ff4303aadda57e
+  checksum: b49e409431bf129dd89238d64299ba80717b57ff5a6d1c1a8b1a28b590d998a34e083fa13573bc732bb8d2305becb4c9a4407f8486c81fa7d55100eb08263cf8
   languageName: node
   linkType: hard
 
