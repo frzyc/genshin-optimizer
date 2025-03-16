@@ -62,8 +62,9 @@ export function optimize(
       )
     ),
     // stat filters
-    ...statFilters.map(({ tag, isMax }) => {
-      const newTag: Tag = { ...tag, preset: `preset0` }
+    ...statFilters.map(({ tag: { src, dst, ...tag }, isMax }) => {
+      // only apply src as tag for stat constraint
+      const newTag: Tag = { ...tag, src: characterKey, preset: `preset0` }
       // Invert max constraints for pruning, undefined as 'infer'
       return isMax
         ? prod(-1, new Read(newTag, undefined))
@@ -71,24 +72,33 @@ export function optimize(
     }),
     // other calcs (graph, etc) *go in* `nodes.push` below
   ]
+
+  // converts game-specific calc into a more general representation usable by solver.
+  // This will be reused across any number of builds
   const nodes = detach(undetachedNodes, calc, (tag: Tag) => {
-    /**
-     * Removes disc and wengine nodes from the opt character, while retaining data from the rest of the team.
-     */
+    // Removes disc and wengine nodes from the opt character, while retaining data from the rest of the team.
     if (tag['src'] !== characterKey) return undefined // Wrong member
     if (tag['et'] !== 'own') return undefined // Not applied (only) to self
 
+    // dyn is added as a layer in `discTagMapNodeEntries`
+    // only `initial` stats are in main/subs of discs.
     if (tag['sheet'] === 'dyn' && tag['qt'] === 'initial')
       return { q: tag['q']! } // Disc stat bonus
+
+    // Disc set counter
     if (tag['q'] === 'count' && discSetKeys.has(tag['sheet'] as any))
-      return { q: tag['sheet']! } // Disc set counter
+      return { q: tag['sheet']! }
+
+    // wengine bonus
     if (
       tag['qt'] == 'wengine' &&
       ['lvl', 'phase', 'modification'].includes(tag['q'] as string)
     )
-      return { q: tag['q']! } // wengine bonus
+      return { q: tag['q']! }
+
+    // wengine counter
     if (tag['q'] === 'count' && wengineKeys.has(tag['sheet'] as any))
-      return { q: tag['sheet']! } // wengine counter
+      return { q: tag['sheet']! }
 
     return undefined
   })

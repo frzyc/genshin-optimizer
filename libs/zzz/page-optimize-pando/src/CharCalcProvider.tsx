@@ -70,9 +70,10 @@ export function CharCalcProvider({
               conditionalEntries(sheet, src, dst)(condKey, condValue)
             )
         ),
-        ...charOpt.bonusStats.flatMap(({ tag, value }) =>
+        ...charOpt.bonusStats.flatMap(({ tag: { src, dst, ...tag }, value }) =>
           withPreset(`preset0`, {
-            tag: { ...tag },
+            // since bonusStats are applied to own*, needs {src:key, dst:undefined}
+            tag: { ...tag, src: character.key },
             value: constant(toDecimal(value, tag.q ?? '')),
           })
         ),

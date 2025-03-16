@@ -11,7 +11,7 @@ import {
   useCharOpt,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import type { Attribute, Member, Tag } from '@genshin-optimizer/zzz/formula'
+import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
 import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { DeleteForever } from '@mui/icons-material'
@@ -36,10 +36,9 @@ export function BonusStatsSection() {
       database.charOpts.setBonusStat(characterKey, tag, value, index),
     [database, characterKey]
   )
-  const newTarget = (q: InitialStats) => {
-    const tag = newTag(q, characterKey)
-    database.charOpts.setBonusStat(characterKey, tag, 0)
-  }
+  const newTarget = (q: InitialStats) =>
+    database.charOpts.setBonusStat(characterKey, newTag(q), 0)
+
   return (
     <CardThemed>
       <CardHeader title="Bonus Stats" />
@@ -62,9 +61,8 @@ export function BonusStatsSection() {
     </CardThemed>
   )
 }
-function newTag(q: Tag['q'], member: Member): Tag {
+function newTag(q: Tag['q']): Tag {
   return {
-    src: member,
     et: 'own',
     q,
     qt: 'combat',

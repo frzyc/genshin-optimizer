@@ -13,7 +13,7 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import type { Member, Tag } from '@genshin-optimizer/zzz/formula'
+import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import {
@@ -136,10 +136,8 @@ export function StatFilterDisplay({
     },
     [setStatFilters, statFilters]
   )
-  const newTarget = (q: InitialStats) => {
-    const tag = newTag(q, characterKey)
-    setTarget(tag)
-  }
+  const newTarget = (q: InitialStats) => setTarget(newTag(q))
+
   return (
     <Box display="flex" flexDirection="column" gap={1}>
       {statFilters.map((statFilter, i) => (
@@ -159,9 +157,8 @@ export function StatFilterDisplay({
   )
 }
 
-function newTag(q: Tag['q'], member: Member): Tag {
+function newTag(q: Tag['q']): Tag {
   return {
-    src: member,
     et: 'own',
     q,
     qt: 'final',
