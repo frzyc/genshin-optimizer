@@ -1,6 +1,5 @@
-import { execSync } from 'child_process'
 import { writeFileSync } from 'fs'
-import * as path from 'path'
+import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   allCharacterKeys,
   allDiscSetKeys,
@@ -8,20 +7,6 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
-
-/**
- * Returns Biome formatter path. Assumes, that node_modules have been initialized
- */
-function getBiomeExec() {
-  return path.join(
-    workspaceRoot,
-    'node_modules',
-    '@biomejs',
-    'biome',
-    'bin',
-    'biome'
-  )
-}
 
 export default async function genIndex(_tree: Tree, sheet_type: string) {
   const file_location = `${workspaceRoot}/libs/zzz/formula/src/data/${sheet_type}/index.ts`
@@ -39,7 +24,6 @@ export default async function genIndex(_tree: Tree, sheet_type: string) {
 }
 
 async function writeCharIndex(path: string) {
-  const biomePath = getBiomeExec()
   const index = `
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
@@ -53,17 +37,11 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `
-  const formatted = execSync(
-    `node ${biomePath} check --stdin-file-path=${path} --fix`,
-    {
-      input: index,
-    }
-  ).toString()
+  const formatted = await formatText(path, index)
   writeFileSync(path, formatted)
 }
 
 async function writeDiscIndex(path: string) {
-  const biomePath = getBiomeExec()
   const index = `
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
@@ -77,17 +55,11 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `
-  const formatted = execSync(
-    `node ${biomePath} check --stdin-file-path=${path} --fix`,
-    {
-      input: index,
-    }
-  ).toString()
+  const formatted = await formatText(path, index)
   writeFileSync(path, formatted)
 }
 
 async function writeWengineIndex(path: string) {
-  const biomePath = getBiomeExec()
   const index = `
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
@@ -102,11 +74,6 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `
-  const formatted = execSync(
-    `node ${biomePath} check --stdin-file-path=${path} --fix`,
-    {
-      input: index,
-    }
-  ).toString()
+  const formatted = await formatText(path, index)
   writeFileSync(path, formatted)
 }

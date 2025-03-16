@@ -1,6 +1,5 @@
-import { execSync } from 'child_process'
 import { writeFileSync } from 'fs'
-import * as path from 'path'
+import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   allCharacterKeys,
   allLightConeKeys,
@@ -8,20 +7,6 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
-
-/**
- * Returns Biome formatter path. Assumes, that node_modules have been initialized
- */
-function getBiomeExec() {
-  return path.join(
-    workspaceRoot,
-    'node_modules',
-    '@biomejs',
-    'biome',
-    'bin',
-    'biome'
-  )
-}
 
 export default async function genIndex(tree: Tree, sheet_type: string) {
   const file_location = `${workspaceRoot}/libs/sr/formula-ui/src/${sheet_type}/sheets/index.ts`
@@ -39,7 +24,6 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 }
 
 async function writeCharIndex(path: string) {
-  const biomePath = getBiomeExec()
   const index = `
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
@@ -55,17 +39,11 @@ export const uiSheets: Record<
   ${allCharacterKeys.join('\n,  ')}
 } as const
   `
-  const formatted = execSync(
-    `node ${biomePath} check --stdin-file-path=${path} --fix`,
-    {
-      input: index,
-    }
-  ).toString()
+  const formatted = await formatText(path, index)
   writeFileSync(path, formatted)
 }
 
 async function writeRelicIndex(path: string) {
-  const biomePath = getBiomeExec()
   const index = `
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
@@ -77,17 +55,11 @@ export const relicUiSheets: Record<RelicSetKey, UISheet<'2' | '4'>> = {
   ${allRelicSetKeys.join('\n,  ')}
 }
   `
-  const formatted = execSync(
-    `node ${biomePath} check --stdin-file-path=${path} --fix`,
-    {
-      input: index,
-    }
-  ).toString()
+  const formatted = await formatText(path, index)
   writeFileSync(path, formatted)
 }
 
 async function writeLightConeIndex(path: string) {
-  const biomePath = getBiomeExec()
   const index = `
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
@@ -101,11 +73,6 @@ export const lightConeUiSheets: Record<LightConeKey, UISheetElement> =
     ${allLightConeKeys.join(',\n  ')}
   }
   `
-  const formatted = execSync(
-    `node ${biomePath} check --stdin-file-path=${path} --fix`,
-    {
-      input: index,
-    }
-  ).toString()
+  const formatted = await formatText(path, index)
   writeFileSync(path, formatted)
 }

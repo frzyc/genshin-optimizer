@@ -1,6 +1,6 @@
-import { execSync } from 'child_process'
 import { writeFileSync } from 'fs'
 import * as path from 'path'
+import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   extractCondMetadata,
   extractFormulaMetadata,
@@ -40,25 +40,12 @@ export default async function runExecutor(
   })
 
   const cwd = path.join(workspaceRoot, outputPath)
-  const biomePath = path.join(
-    workspaceRoot,
-    'node_modules',
-    '@biomejs',
-    'biome',
-    'bin',
-    'biome'
-  )
   const str = `
 // WARNING: Generated file, do not modify
 export const conditionals = ${JSON.stringify(conditionals)} as const
 export const formulas = ${JSON.stringify(formulas)} as const
 `
-  const formatted = execSync(
-    `node ${biomePath} check --stdin-file-path=index.ts --fix`,
-    {
-      input: str,
-    }
-  ).toString()
+  const formatted = await formatText('index.ts', str)
   writeFileSync(cwd, formatted)
 
   return { success: true }

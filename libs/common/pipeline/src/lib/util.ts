@@ -1,13 +1,16 @@
-import { execSync } from 'child_process'
+import { spawn } from 'child_process'
 import { mkdirSync, writeFileSync } from 'fs'
 import { dirname, join } from 'path'
 import { workspaceRoot } from '@nx/devkit'
 
 /**
- * Returns Biome formatter path. Assumes, that node_modules have been initialized
+ * Formats text, returns formatted text. This function does not write directly to the provided file path.
+ * File path is only used for determining type of parser
+ * @param path Full path to file to get formatted, used for formatter to determine parser type
+ * @param text Contents to be formatted
  */
-function getBiomeExec() {
-  return join(
+export async function formatText(path: string, text: string): Promise<string> {
+  const biomePath = join(
     workspaceRoot,
     'node_modules',
     '@biomejs',
@@ -15,6 +18,37 @@ function getBiomeExec() {
     'bin',
     'biome'
   )
+
+  return new Promise((resolve, reject) => {
+    const spawnedProcess = spawn('node', [
+      biomePath,
+      'check',
+      `--stdin-file-path=${path}`,
+      '--fix',
+    ])
+
+    let data = ''
+    let error = ''
+
+    spawnedProcess.stdout.on('data', (chunk: Buffer) => {
+      data += chunk.toString()
+    })
+
+    spawnedProcess.stderr.on('data', (err: Buffer) => {
+      error += err.toString()
+    })
+
+    spawnedProcess.on('close', (code: number | null) => {
+      if (code === 0) {
+        resolve(data)
+      } else {
+        reject(new Error(`Process exited with code ${code}: ${error}`))
+      }
+    })
+
+    spawnedProcess.stdin.write(text)
+    spawnedProcess.stdin.end()
+  })
 }
 
 export function dumpFile(filename: string, obj: unknown, print = false) {
@@ -25,11 +59,7 @@ export function dumpFile(filename: string, obj: unknown, print = false) {
 }
 export async function dumpPrettyFile(filename: string, obj: unknown) {
   mkdirSync(dirname(filename), { recursive: true })
-  const biomePath = getBiomeExec()
-  const fileStr = execSync(
-    `node ${biomePath} check --stdin-file-path=${filename} --fix`,
-    { input: JSON.stringify(obj) }
-  ).toString()
+  const fileStr = await formatText(filename, JSON.stringify(obj))
 
   writeFileSync(filename, fileStr)
 }
@@ -61,13 +91,7 @@ ${dataContent}
 } as const
 export default data
 `
-  const biomePath = getBiomeExec()
-  const formatted = execSync(
-    `node ${biomePath} check --stdin-file-path=index.ts --fix`,
-    {
-      input: indexContent,
-    }
-  ).toString()
+  const formatted = await formatText(path, indexContent)
   mkdirSync(path, { recursive: true })
   writeFileSync(`${path}/index.ts`, formatted)
 
