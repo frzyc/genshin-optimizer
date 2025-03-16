@@ -2,7 +2,8 @@
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit"
+    "source.organizeImports.biome": "explicit",
+    "source.fixAll.eslint": "explicit"
   },
   "files.trimFinalNewlines": true,
   "files.insertFinalNewline": true,
