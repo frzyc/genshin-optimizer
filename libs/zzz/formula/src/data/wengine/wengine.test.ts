@@ -57,7 +57,7 @@ function testCharacterData(wengineKey: WengineKey) {
         special: 0,
         assist: 0,
         chain: 0,
-        core: 6,
+        core: 0,
       }),
       ...wengineTagMapNodeEntries(wengineKey, 60, 5, 5)
     ),
@@ -162,5 +162,86 @@ describe('Disc sheets test', () => {
     const char = convert(ownTag, { et: 'own', src: characterKey })
 
     expect(calc.compute(char.final.dmg_.physical).val).toBeCloseTo(0.24)
+  })
+
+  it('BunnyBand', () => {
+    const { data, characterKey } = testCharacterData('BunnyBand')
+    data.push(
+      cond(
+        characterKey,
+        'BunnyBand',
+        conditionals.BunnyBand.wearerShielded.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.hp_).val).toBeCloseTo(0.128)
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(0.16)
+  })
+
+  it('CannonRotor', () => {
+    const { data, characterKey } = testCharacterData('CannonRotor')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(0.12)
+  })
+
+  it('DeepSeaVisitor', () => {
+    const { data, characterKey } = testCharacterData('DeepSeaVisitor')
+    data.push(
+      cond(
+        characterKey,
+        'DeepSeaVisitor',
+        conditionals.DeepSeaVisitor.basicHit.name,
+        1
+      ),
+      cond(
+        characterKey,
+        'DeepSeaVisitor',
+        conditionals.DeepSeaVisitor.iceDashAtkHit.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.final.dmg_.ice).val).toBeCloseTo(0.5)
+    expect(calc.compute(char.combat.crit_).val).toBeCloseTo(0.2 + 0.2)
+  })
+
+  it('DemaraBatteryMarkII', () => {
+    const { data, characterKey } = testCharacterData('DemaraBatteryMarkII')
+    data.push(
+      cond(
+        characterKey,
+        'DemaraBatteryMarkII',
+        conditionals.DemaraBatteryMarkII.dodgeCounterOrAssistHit.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.final.dmg_.electric).val).toBeCloseTo(0.24)
+    expect(calc.compute(char.combat.enerRegen_).val).toBeCloseTo(0.275)
   })
 })

@@ -26,7 +26,7 @@ const sheet = registerWengine(
       prod(own.final.def, subscript(modification, dm.dmg_scaling))
     ),
     { cond: showSpecialtyAndEquipped(key) },
-    own.initial.crit_.add(1)
+    own.combat.crit_.add(1)
   )
 )
 export default sheet

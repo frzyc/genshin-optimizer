@@ -1,5 +1,6 @@
 import { subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import { getWengineParams } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
   allListConditionals,
@@ -16,7 +17,6 @@ import {
   registerWengine,
   showSpecialtyAndEquipped,
 } from '../util'
-import { getWengineParams } from '@genshin-optimizer/zzz/stats'
 
 const key: WengineKey = 'ReverbMarkI'
 const { modification } = own.wengine

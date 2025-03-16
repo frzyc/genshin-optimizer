@@ -1,28 +1,17 @@
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { buffs, formulas } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
+import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'CannonRotor'
 const [chg, _ch] = trans('wengine', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const dm = mappedStats.wengine[key]
 const icon = wengineAsset(key, 'icon')
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const cond = conditionals[key]
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const formula = formulas[key]
 const buff = buffs[key]
 
 const sheet: UISheetElement = {
@@ -36,6 +25,32 @@ const sheet: UISheetElement = {
           {(phase) => chg(`phaseDescs.${phase - 1}`)}
         </PhaseWrapper>
       ),
+    },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: <StatDisplay statKey="atk_" />,
+          fieldRef: buff.passive_atk_.tag,
+        },
+      ],
+    },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: 'Additional DMG',
+          fieldRef: formula.damage.tag,
+        },
+        {
+          title: 'Cooldown',
+          fieldValue: (
+            <PhaseWrapper wKey={key}>
+              {(phase) => dm.cooldown[phase]}
+            </PhaseWrapper>
+          ),
+        },
+      ],
     },
   ],
 }

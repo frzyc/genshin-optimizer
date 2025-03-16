@@ -50,45 +50,10 @@ export const conditionals = {
     },
   },
   BunnyBand: {
-    boolConditional: {
+    wearerShielded: {
       sheet: 'BunnyBand',
-      name: 'boolConditional',
+      name: 'wearerShielded',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BunnyBand',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BunnyBand',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  CannonRotor: {
-    boolConditional: {
-      sheet: 'CannonRotor',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'CannonRotor',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'CannonRotor',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ChaosJazz: {
@@ -109,45 +74,18 @@ export const conditionals = {
     },
   },
   DeepSeaVisitor: {
-    boolConditional: {
+    basicHit: { sheet: 'DeepSeaVisitor', name: 'basicHit', type: 'bool' },
+    iceDashAtkHit: {
       sheet: 'DeepSeaVisitor',
-      name: 'boolConditional',
+      name: 'iceDashAtkHit',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DeepSeaVisitor',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DeepSeaVisitor',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   DemaraBatteryMarkII: {
-    boolConditional: {
+    dodgeCounterOrAssistHit: {
       sheet: 'DemaraBatteryMarkII',
-      name: 'boolConditional',
+      name: 'dodgeCounterOrAssistHit',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DemaraBatteryMarkII',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DemaraBatteryMarkII',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   DrillRigRedAxis: {
@@ -1579,6 +1517,20 @@ export const formulas = {
       },
     },
   },
+  CannonRotor: {
+    damage: {
+      sheet: 'CannonRotor',
+      name: 'damage',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'CannonRotor',
+        damageType1: 'elemental',
+        name: 'damage',
+      },
+    },
+  },
   Corin: {
     anomalyDmgInst: {
       sheet: 'Corin',
@@ -2367,72 +2319,39 @@ export const buffs = {
     },
   },
   BunnyBand: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'BunnyBand',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'BunnyBand',
-        name: 'cond_dmg_',
+        name: 'atk_',
       },
     },
-    enemy_defIgn_: {
+    passive_hp_: {
       sheet: 'BunnyBand',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'BunnyBand',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BunnyBand',
-      name: 'team_dmg_',
+      name: 'passive_hp_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'hp_',
         sheet: 'BunnyBand',
-        name: 'team_dmg_',
+        name: 'passive_hp_',
       },
     },
   },
   CannonRotor: {
-    cond_dmg_: {
+    passive_atk_: {
       sheet: 'CannonRotor',
-      name: 'cond_dmg_',
+      name: 'passive_atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'CannonRotor',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'CannonRotor',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'CannonRotor',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'CannonRotor',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'CannonRotor',
-        name: 'team_dmg_',
+        name: 'passive_atk_',
       },
     },
   },
@@ -2515,72 +2434,63 @@ export const buffs = {
     },
   },
   DeepSeaVisitor: {
-    cond_dmg_: {
+    crit_: {
       sheet: 'DeepSeaVisitor',
-      name: 'cond_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'DeepSeaVisitor',
-        name: 'cond_dmg_',
+        name: 'crit_',
       },
     },
-    enemy_defIgn_: {
+    extra_crit_: {
       sheet: 'DeepSeaVisitor',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'DeepSeaVisitor',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DeepSeaVisitor',
-      name: 'team_dmg_',
+      name: 'extra_crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'DeepSeaVisitor',
-        name: 'team_dmg_',
+        name: 'extra_crit_',
+      },
+    },
+    passive_ice_dmg_: {
+      sheet: 'DeepSeaVisitor',
+      name: 'passive_ice_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'DeepSeaVisitor',
+        attribute: 'ice',
+        name: 'passive_ice_dmg_',
       },
     },
   },
   DemaraBatteryMarkII: {
-    cond_dmg_: {
+    enerRegen_: {
       sheet: 'DemaraBatteryMarkII',
-      name: 'cond_dmg_',
+      name: 'enerRegen_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'enerRegen_',
         sheet: 'DemaraBatteryMarkII',
-        name: 'cond_dmg_',
+        name: 'enerRegen_',
       },
     },
-    enemy_defIgn_: {
+    passive_electric_dmg_: {
       sheet: 'DemaraBatteryMarkII',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'DemaraBatteryMarkII',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DemaraBatteryMarkII',
-      name: 'team_dmg_',
+      name: 'passive_electric_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'DemaraBatteryMarkII',
-        name: 'team_dmg_',
+        attribute: 'electric',
+        name: 'passive_electric_dmg_',
       },
     },
   },
