@@ -101,6 +101,10 @@ export class OptConfigDataManager extends DataManager<
       if (typeof disabled !== 'boolean') return false
       return true
     })
+    // previous definition of tags includes dst, which is breaking the `own` namespace
+    statFilters.forEach(({ tag }) => {
+      if (tag.dst) delete tag.dst
+    })
 
     setFilter2 = validateArr(setFilter2, allDiscSetKeys, [])
     setFilter4 = validateArr(setFilter4, allDiscSetKeys, [])

@@ -162,7 +162,6 @@ export function StatFilterDisplay({
 function newTag(q: Tag['q'], member: Member): Tag {
   return {
     src: member,
-    dst: member,
     et: 'own',
     q,
     qt: 'final',

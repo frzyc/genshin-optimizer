@@ -1,3 +1,4 @@
+import { toDecimal } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import type { Candidate, Progress } from '@genshin-optimizer/game-opt/solver'
 import { Solver } from '@genshin-optimizer/game-opt/solver'
@@ -61,10 +62,13 @@ export function optimize(
       )
     ),
     // stat filters
-    ...statFilters.map(({ tag, isMax }) =>
+    ...statFilters.map(({ tag, isMax }) => {
+      const newTag: Tag = { ...tag, preset: `preset0` }
       // Invert max constraints for pruning, undefined as 'infer'
-      isMax ? prod(-1, new Read(tag, undefined)) : new Read(tag, undefined)
-    ),
+      return isMax
+        ? prod(-1, new Read(newTag, undefined))
+        : new Read(newTag, undefined)
+    }),
     // other calcs (graph, etc) *go in* `nodes.push` below
   ]
   const nodes = detach(undetachedNodes, calc, (tag: Tag) => {
@@ -114,9 +118,10 @@ export function optimize(
     minimum: [
       -Infinity, // opt-target itself is also used as a min constraint
       // Invert max constraints for pruning
-      ...statFilters.map((filter) =>
-        filter.isMax ? filter.value * -1 : filter.value
-      ),
+      ...statFilters.map(({ value, isMax, tag }) => {
+        const decimalVal = toDecimal(value, tag.q ?? '')
+        return isMax ? decimalVal * -1 : decimalVal
+      }),
       2, // setFilter2
       4, // setFilter4
     ],

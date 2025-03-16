@@ -76,6 +76,10 @@ export class CharacterOptManager extends DataManager<
       if (typeof value !== 'number') return false
       return true
     })
+    // previous definition of tags includes dst, which is breaking the `own` namespace
+    bonusStats.forEach(({ tag }) => {
+      if (tag.dst) delete tag.dst
+    })
 
     if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = undefined
