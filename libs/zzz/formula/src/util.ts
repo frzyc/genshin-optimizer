@@ -9,7 +9,7 @@ import type {
   PhaseKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
-import type { Member, TagMapNodeEntries } from './data/util'
+import type { Member, Sheet, Tag, TagMapNodeEntries } from './data/util'
 import {
   convert,
   getStatFromStatKey,
@@ -18,6 +18,7 @@ import {
   ownTag,
   reader,
 } from './data/util'
+import { formulas } from './meta'
 
 export function withPreset(
   preset: Preset,
@@ -179,4 +180,15 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // Total Team Stat
     members.map((src) => teamEntry.add(reader.withTag({ src, et: 'own' }))),
   ].flat()
+}
+
+export function getFormula(sheet: Sheet | undefined, name: string | undefined) {
+  if (!sheet || !name) return
+  return (formulas as any)[sheet]?.[name] as
+    | {
+        sheet: Sheet
+        name: string
+        tag: Tag
+      }
+    | undefined
 }

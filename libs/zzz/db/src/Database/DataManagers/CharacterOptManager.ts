@@ -2,13 +2,22 @@ import { notEmpty, shallowCompareObj } from '@genshin-optimizer/common/util'
 import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { Dst, Sheet, Src, Tag } from '@genshin-optimizer/zzz/formula'
-import { getConditional, isMember } from '@genshin-optimizer/zzz/formula'
+import {
+  getConditional,
+  getFormula,
+  isMember,
+} from '@genshin-optimizer/zzz/formula'
 import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 import { validateTag } from '../tagUtil'
 
+// Corresponds to the `own.common.critMode` libs\zzz\formula\src\data\common\dmg.ts
+export type critModeKey = 'avg' | 'crit' | 'nonCrit'
+export const critModeKeys: critModeKey[] = ['avg', 'crit', 'nonCrit'] as const
+
 export type CharOpt = {
-  target: Tag
+  targetSheet?: Sheet
+  targetName?: string
   conditionals: Array<{
     sheet: Sheet
     src: Src
@@ -20,11 +29,14 @@ export type CharOpt = {
     tag: Tag
     value: number
   }>
-  statConstraints: Array<{
-    tag: Tag
-    value: number
-    isMax: boolean
-  }>
+  critMode: critModeKey
+
+  // Enemy stuff
+  enemyLvl: number
+  enemyDef: number
+  enemyisStunned: boolean
+
+  // link to optConfig
   optConfigId?: string
 }
 export class CharacterOptManager extends DataManager<
@@ -36,13 +48,27 @@ export class CharacterOptManager extends DataManager<
   constructor(database: ZzzDatabase) {
     super(database, 'charOpts')
   }
-  override validate(obj: unknown, key: CharacterKey): CharOpt | undefined {
+  override validate(obj: unknown): CharOpt | undefined {
     if (!obj || typeof obj !== 'object') return undefined
-    let { target, conditionals, bonusStats, statConstraints, optConfigId } =
-      obj as CharOpt
-    if (!validateTag(target)) target = defOptTarget(key)
+    let {
+      targetName,
+      targetSheet,
+      conditionals,
+      bonusStats,
+      critMode,
+
+      enemyLvl,
+      enemyDef,
+      enemyisStunned,
+
+      optConfigId,
+    } = obj as CharOpt
     if (!Array.isArray(conditionals)) conditionals = []
     const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
+    if (!targetSheet || !targetName || !getFormula(targetSheet, targetName)) {
+      targetSheet = undefined
+      targetName = undefined
+    }
     conditionals = conditionals
       .map(({ sheet, condKey, src, dst, condValue }) => {
         if (!condValue) return undefined //remove conditionals when the value is 0
@@ -73,22 +99,27 @@ export class CharacterOptManager extends DataManager<
       if (typeof value !== 'number') return false
       return true
     })
-    if (!Array.isArray(statConstraints)) statConstraints = []
-    statConstraints = statConstraints.filter(({ tag, value, isMax }) => {
-      if (!validateTag(tag)) return false
-      if (typeof value !== 'number') return false
-      if (typeof isMax !== 'boolean') return false
-      return true
-    })
+
+    if (!critModeKeys.includes(critMode)) critMode = 'avg'
+
+    if (typeof enemyLvl !== 'number') enemyLvl = 80
+    if (typeof enemyDef !== 'number') enemyDef = 953
+    enemyisStunned = !!enemyisStunned
 
     if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = undefined
 
     const charOpt: CharOpt = {
-      target,
+      targetName,
+      targetSheet,
       conditionals,
       bonusStats,
-      statConstraints,
+      critMode,
+
+      enemyLvl,
+      enemyDef,
+      enemyisStunned,
+
       optConfigId,
     }
     return charOpt
@@ -104,7 +135,7 @@ export class CharacterOptManager extends DataManager<
   }
   getOrCreate(key: CharacterKey): CharOpt {
     if (!this.keys.includes(key)) {
-      this.set(key, initialCharOpt(key))
+      this.set(key, initialCharOpt())
     }
     return this.get(key) as CharOpt
   }
@@ -177,20 +208,14 @@ export class CharacterOptManager extends DataManager<
   }
 }
 
-function defOptTarget(key: CharacterKey): CharOpt['target'] {
+export function initialCharOpt(): CharOpt {
   return {
-    src: key,
-    et: 'own',
-    qt: 'final',
-    q: 'atk',
-    sheet: 'agg',
-  }
-}
-export function initialCharOpt(key: CharacterKey): CharOpt {
-  return {
-    target: defOptTarget(key),
     conditionals: [],
     bonusStats: [],
-    statConstraints: [],
+    critMode: 'avg',
+
+    enemyLvl: 80,
+    enemyDef: 953,
+    enemyisStunned: false,
   }
 }

@@ -4,26 +4,30 @@ import { valueString } from '@genshin-optimizer/common/util'
 import type { GeneratedBuild } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
+  useCharOpt,
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { EquipGrid } from '@genshin-optimizer/zzz/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
-import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  CardContent,
+  Grid,
+  Stack,
+  Typography,
+} from '@mui/material'
 import { memo, useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import { CharCalcProvider } from '../CharCalcProvider'
+import { CharStatsDisplay } from '../CharStatsDisplay'
 
 function useGeneratedBuildList(listId: string) {
   const { database } = useDatabaseContext()
   return useDataManagerBase(database.generatedBuildList, listId)
 }
-const columns = {
-  xs: 2,
-  sm: 2,
-  md: 3,
-  lg: 4,
-  xl: 4,
-} as const
+
 /**
  * A UI component that renders a list of generated builds
  */
@@ -35,33 +39,13 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
   return (
     <Stack spacing={1}>
       {generatedBuildList?.builds.map((build, i) => (
-        <CardThemed
+        <GeneratedBuildDisplay
           key={`${i}-${build.wengineId}-${Object.values(build.discIds).join(
             '-'
           )}`}
-        >
-          <CardContent>
-            <Stack spacing={1}>
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  gap: 1,
-                }}
-              >
-                <Typography>
-                  Build {i + 1}: {valueString(build.value)}
-                </Typography>
-                <EquipBtn build={build} />
-              </Box>
-              <EquipGrid
-                discIds={build.discIds}
-                wengineId={build.wengineId}
-                columns={columns}
-              />
-            </Stack>
-          </CardContent>
-        </CardThemed>
+          build={build}
+          index={i}
+        />
       ))}
     </Stack>
   )
@@ -94,5 +78,63 @@ function EquipBtn({
     >
       {t('buildDisplay.equipToCrr')}
     </Button>
+  )
+}
+const columns = {
+  xs: 1,
+  sm: 1,
+  md: 2,
+  lg: 3,
+  xl: 3,
+} as const
+function GeneratedBuildDisplay({
+  build,
+  index,
+}: {
+  build: GeneratedBuild
+  index: number
+}) {
+  const character = useCharacterContext()!
+  const charOpt = useCharOpt(character.key)!
+  return (
+    <CharCalcProvider
+      character={character}
+      charOpt={charOpt}
+      discIds={build.discIds}
+      wengineId={build.wengineId}
+    >
+      <CardThemed>
+        <CardContent>
+          <Stack spacing={1}>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                gap: 1,
+              }}
+            >
+              <Typography>
+                Build {index + 1}: {valueString(build.value)}
+              </Typography>
+              <EquipBtn build={build} />
+            </Box>
+            <Box>
+              <Grid container spacing={1}>
+                <Grid item xs={6} md={4} lg={3} xl={3}>
+                  <CharStatsDisplay />
+                </Grid>
+                <Grid item xs={6} md={8} lg={9} xl={9}>
+                  <EquipGrid
+                    discIds={build.discIds}
+                    wengineId={build.wengineId}
+                    columns={columns}
+                  />
+                </Grid>
+              </Grid>
+            </Box>
+          </Stack>
+        </CardContent>
+      </CardThemed>
+    </CharCalcProvider>
   )
 }

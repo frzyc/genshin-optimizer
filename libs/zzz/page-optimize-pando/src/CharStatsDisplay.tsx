@@ -1,11 +1,17 @@
-import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
 import type { Read } from '@genshin-optimizer/game-opt/engine'
+import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
   TagDisplay,
   formulaText,
+  getDmgType,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { ZCard } from '@genshin-optimizer/zzz/ui'
@@ -30,21 +36,43 @@ export function CharStatsDisplay() {
  */
 function StatLine({ read }: { read: Read<Tag> }) {
   const calc = useZzzCalcContext()
+
+  const character = useCharacterContext()
+  const charOpt = useCharOpt(character?.key)
+
   if (!calc) return null
   const computed = calc.compute(read)
   const name = read.tag.name || read.tag.q
   const fText = formulaText(computed)
+  const tag = read.tag
+  const emphasize =
+    tag.sheet === charOpt?.targetSheet && tag.name === charOpt?.targetName
   return (
-    <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        alignItems: 'center',
+        boxShadow: emphasize ? '0px 0px 0px 2px rgba(0,200,0,0.5)' : undefined,
+      }}
+    >
       <Box sx={{ flexGrow: 1 }}>
-        <TagDisplay tag={read.tag} />
+        <TagDisplay tag={tag} />
       </Box>
       {valueString(computed.val, getUnitStr(name ?? ''))}
       <BootstrapTooltip
         title={
           <Typography component="div">
-            <Box>
-              <TagDisplay tag={read.tag} />
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              <TagDisplay tag={tag} />
+              {/* Show DMG type */}
+              {getDmgType(tag).map((dmgType) => (
+                <SqBadge key={dmgType}>{dmgType}</SqBadge>
+              ))}
+              {/* Show Attribute */}
+              {tag.attribute && (
+                <SqBadge color={tag.attribute}>{tag.attribute}</SqBadge>
+              )}
             </Box>
             <Divider />
             <Box>{fText.formula}</Box>

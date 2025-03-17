@@ -13,6 +13,7 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import type {
   CharOpt,
+  DiscIds,
   ICachedCharacter,
   ICachedDisc,
 } from '@genshin-optimizer/zzz/db'
@@ -36,13 +37,17 @@ import { useMemo } from 'react'
 export function CharCalcProvider({
   character,
   charOpt,
+  wengineId,
+  discIds,
   children,
 }: {
   character: ICachedCharacter
   charOpt: CharOpt
+  wengineId?: string
+  discIds: DiscIds
   children: ReactNode
 }) {
-  const member0 = useCharacterAndEquipment(character)
+  const member0 = useCharacterAndEquipment(character, wengineId, discIds)
 
   const calc = useMemo(
     () =>
@@ -52,12 +57,12 @@ export function CharCalcProvider({
         // Add actual member data
         ...member0,
         // TODO: Get enemy values from db
-        enemy.common.lvl.add(80),
-        enemy.common.def.add(953),
-        enemy.common.isStunned.add(0),
+        ownBuff.common.critMode.add(charOpt.critMode),
+        enemy.common.lvl.add(charOpt.enemyLvl),
+        enemy.common.def.add(charOpt.enemyDef),
+        enemy.common.isStunned.add(charOpt.enemyisStunned ? 1 : 0),
         enemy.common.stun_.add(1.5),
         enemy.common.unstun_.add(1),
-        ownBuff.common.critMode.add('avg'),
         ...charOpt.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValue }) =>
             withPreset(
@@ -65,9 +70,10 @@ export function CharCalcProvider({
               conditionalEntries(sheet, src, dst)(condKey, condValue)
             )
         ),
-        ...charOpt.bonusStats.flatMap(({ tag, value }) =>
+        ...charOpt.bonusStats.flatMap(({ tag: { src, dst, ...tag }, value }) =>
           withPreset(`preset0`, {
-            tag: { ...tag },
+            // since bonusStats are applied to own*, needs {src:key, dst:undefined}
+            tag: { ...tag, src: character.key },
             value: constant(toDecimal(value, tag.q ?? '')),
           })
         ),
@@ -82,9 +88,13 @@ export function CharCalcProvider({
   )
 }
 
-function useCharacterAndEquipment(character: ICachedCharacter) {
-  const wengine = useWengine(character?.equippedWengine)
-  const discs = useDiscs(character?.equippedDiscs)
+function useCharacterAndEquipment(
+  character: ICachedCharacter,
+  wengineId: string | undefined,
+  discIds: DiscIds
+) {
+  const wengine = useWengine(wengineId)
+  const discs = useDiscs(discIds)
   const wengineTagEntries = useMemo(() => {
     if (!wengine) return []
     return wengineTagMapNodeEntries(

@@ -1,3 +1,4 @@
+import { toDecimal } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import type { Candidate, Progress } from '@genshin-optimizer/game-opt/solver'
 import { Solver } from '@genshin-optimizer/game-opt/solver'
@@ -50,35 +51,54 @@ export function optimize(
       ...frames.map((frame, i) =>
         prod(
           frame.multiplier,
-          new Read(frame.tag, 'sum').with('preset', `preset${i}` as Preset)
+          new Read(
+            {
+              src: characterKey,
+              ...frame.tag,
+            },
+            undefined // undefined as 'infer'
+          ).with('preset', `preset${i}` as Preset)
         )
       )
     ),
     // stat filters
-    ...statFilters.map(({ tag, isMax }) =>
-      // Invert max constraints for pruning
-      isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum')
-    ),
+    ...statFilters.map(({ tag: { src, dst, ...tag }, isMax }) => {
+      // only apply src as tag for stat constraint
+      const newTag: Tag = { ...tag, src: characterKey, preset: `preset0` }
+      // Invert max constraints for pruning, undefined as 'infer'
+      return isMax
+        ? prod(-1, new Read(newTag, undefined))
+        : new Read(newTag, undefined)
+    }),
     // other calcs (graph, etc) *go in* `nodes.push` below
   ]
+
+  // converts game-specific calc into a more general representation usable by solver.
+  // This will be reused across any number of builds
   const nodes = detach(undetachedNodes, calc, (tag: Tag) => {
-    /**
-     * Removes disc and wengine nodes from the opt character, while retaining data from the rest of the team.
-     */
+    // Removes disc and wengine nodes from the opt character, while retaining data from the rest of the team.
     if (tag['src'] !== characterKey) return undefined // Wrong member
     if (tag['et'] !== 'own') return undefined // Not applied (only) to self
 
-    if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
+    // dyn is added as a layer in `discTagMapNodeEntries`
+    // only `initial` stats are in main/subs of discs.
+    if (tag['sheet'] === 'dyn' && tag['qt'] === 'initial')
       return { q: tag['q']! } // Disc stat bonus
+
+    // Disc set counter
     if (tag['q'] === 'count' && discSetKeys.has(tag['sheet'] as any))
-      return { q: tag['sheet']! } // Disc set counter
+      return { q: tag['sheet']! }
+
+    // wengine bonus
     if (
       tag['qt'] == 'wengine' &&
       ['lvl', 'phase', 'modification'].includes(tag['q'] as string)
     )
-      return { q: tag['q']! } // wengine bonus
+      return { q: tag['q']! }
+
+    // wengine counter
     if (tag['q'] === 'count' && wengineKeys.has(tag['sheet'] as any))
-      return { q: tag['sheet']! } // wengine counter
+      return { q: tag['sheet']! }
 
     return undefined
   })
@@ -108,9 +128,10 @@ export function optimize(
     minimum: [
       -Infinity, // opt-target itself is also used as a min constraint
       // Invert max constraints for pruning
-      ...statFilters.map((filter) =>
-        filter.isMax ? filter.value * -1 : filter.value
-      ),
+      ...statFilters.map(({ value, isMax, tag }) => {
+        const decimalVal = toDecimal(value, tag.q ?? '')
+        return isMax ? decimalVal * -1 : decimalVal
+      }),
       2, // setFilter2
       4, // setFilter4
     ],
