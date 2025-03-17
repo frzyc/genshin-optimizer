@@ -11,13 +11,11 @@ const emptyDiscs = objKeyMap(allDiscSlotKeys, () => undefined)
 export function EquipGrid({
   discIds = emptyDiscs,
   wengineId,
-  columns,
   onClick,
   spacing = 1,
 }: {
   discIds?: DiscIds
   wengineId?: string
-  columns: Record<'xs' | 'sm' | 'md' | 'lg' | 'xl', number>
   onClick?: () => void
   spacing?: number
 }) {
