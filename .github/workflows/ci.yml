@@ -62,6 +62,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }} # Force checking of the whole repo when running on pushes to master
+          fetch-depth: 0
       - name: Fetch master
         if: ${{ github.event_name == 'pull_request' }}
         run: |
@@ -75,7 +76,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Check Formatting
         run: |
-          yarn biome ci --changed --verbose --since=master
+          yarn biome ci --changed
   typecheck:
     runs-on: ubuntu-latest
     timeout-minutes: 10
