@@ -5,7 +5,7 @@ import type {
   ImportResult,
   ImportResultCounter,
 } from '@genshin-optimizer/zzz/db'
-import { DDSToZOD, ZzzDatabase } from '@genshin-optimizer/zzz/db'
+import { ZzzDatabase } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
