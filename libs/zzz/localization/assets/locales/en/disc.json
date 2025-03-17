@@ -90,5 +90,6 @@
     "general": "General",
     "inventory": "Inventory",
     "rollvalue": "Roll Value"
-  }
+  },
+  "noActiveSets": "No Active Sets"
 }
