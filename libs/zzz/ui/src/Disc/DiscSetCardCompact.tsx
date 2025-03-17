@@ -44,7 +44,7 @@ export function DiscSetCardCompact({
       }}
     >
       <Box component="div" sx={{ p: '4px' }}>
-        <Stack spacing={1.2}>
+        <Stack spacing={'10px'}>
           {/* TODO: translate */}
           {Object.entries(sets).map(([key, count]) => (
             <Box

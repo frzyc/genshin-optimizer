@@ -135,7 +135,7 @@ export function CompactWengineCard({
               <Box
                 sx={{
                   display: 'flex',
-                  width: '5em',
+                  width: '80px',
                   padding: '4px 0',
                   mr: '42px',
                 }}
@@ -145,13 +145,13 @@ export function CompactWengineCard({
                     <ImgIcon
                       key={`phase-active-${index}`}
                       src={wenginePhaseIcon('singlePhase')}
-                      sx={{ width: '5em', height: '1.5em' }}
+                      sx={{ width: '80px', height: '24px' }}
                     />
                   ) : (
                     <ImgIcon
                       key={`phase-inactive-${index}`}
                       src={wenginePhaseIcon('singleNonPhase')}
-                      sx={{ width: '5em', height: '1.5em' }}
+                      sx={{ width: '80px', height: '24px' }}
                     />
                   )
                 })}
