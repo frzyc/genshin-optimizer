@@ -75,7 +75,9 @@
     "efficiency": "現サブ効果スコア",
     "mefficiency": "最大サブ効果スコア"
   },
-  "efficiencyFilter": { "title": "サブ効果スコアの計算で使用するサブ統計" },
+  "efficiencyFilter": {
+    "title": "サブ効果スコアの計算で使用するサブ統計"
+  },
   "resetFilters": "フィルターをリセット",
   "setEffectNum": "{{setNum}}-セット",
   "edit": "聖遺物を改造",
