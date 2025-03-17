@@ -75,7 +75,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Check Formatting
         run: |
-          yarn biome ci --changed --verbose --vcs-default-branch=master
+          yarn biome ci --changed --verbose --vcs-default-branch=origin/master
   typecheck:
     runs-on: ubuntu-latest
     timeout-minutes: 10
