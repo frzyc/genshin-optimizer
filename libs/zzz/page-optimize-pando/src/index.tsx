@@ -116,6 +116,12 @@ export default function PageOptimize() {
       <LocationAutocomplete
         locKey={characterKey}
         setLocKey={(ck) => ck && setCharacterKey(ck)}
+        sx={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 100,
+          background: '#0C1020',
+        }}
       />
       {character && charOpt && (
         <CharacterContext.Provider value={character}>
@@ -139,7 +145,16 @@ export default function PageOptimize() {
                           mt: 1,
                         }}
                       >
-                        <Box display="flex" gap={1}>
+                        <Box
+                          display="flex"
+                          gap={1}
+                          sx={{
+                            position: 'sticky',
+                            top: 40,
+                            zIndex: 100,
+                            background: '#0C1020',
+                          }}
+                        >
                           <OptSelector
                             character={character}
                             charOpt={charOpt}
@@ -147,7 +162,7 @@ export default function PageOptimize() {
                           <SpecificDmgTypeSelector />
                           <CritModeSelector />
                         </Box>
-                        <TeamHeaderHeightContext.Provider value={0}>
+                        <TeamHeaderHeightContext.Provider value={78}>
                           <CharacterOptDisplay />
                         </TeamHeaderHeightContext.Provider>
                       </Box>
