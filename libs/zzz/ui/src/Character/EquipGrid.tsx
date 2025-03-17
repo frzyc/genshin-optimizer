@@ -1,10 +1,11 @@
-import { objKeyMap, objMap } from '@genshin-optimizer/common/util'
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
+import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { type DiscIds } from '@genshin-optimizer/zzz/db'
 import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
-import { Box, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
+import { Stack } from '@mui/system'
 import { CompactDiscCard, DiscSetCardCompact } from '../Disc'
-import { EmptyCompactCard } from '../util'
 import { CompactWengineCard } from '../Wengine'
 const emptyDiscs = objKeyMap(allDiscSlotKeys, () => undefined)
 export function EquipGrid({
@@ -23,38 +24,26 @@ export function EquipGrid({
   const discs = useDiscs(discIds)
   const wengine = useWengine(wengineId)
   return (
-    <Box>
-      <Grid item columns={columns} container spacing={spacing}>
-        <Grid item xs={1} key={wengine?.id}>
-          {wengine ? (
-            <CompactWengineCard wengineId={wengine.id} onClick={onClick} />
-          ) : (
-            // TODO: Translation
-            <EmptyCompactCard
-              placeholder={'No Wengine Equipped'}
-              onClick={onClick}
-            />
-          )}
-        </Grid>
-        <Grid item {...objMap(columns, (br) => (8 % br ? 2 : 1))}>
+    <Grid item columns={columns} container spacing={spacing}>
+      <Grid item xs={1} key={wengine?.id}>
+        <Stack spacing={1}>
+          <CompactWengineCard wengineId={wengine?.id} onClick={onClick} />
           <DiscSetCardCompact discs={discs} />
-        </Grid>
+        </Stack>
+      </Grid>
 
+      <Grid container item xs={9} spacing={1}>
         {!!discs &&
           Object.entries(discs).map(([slotKey, disc]) => (
-            <Grid item xs={1} key={disc?.id || slotKey}>
-              {disc ? (
-                <CompactDiscCard disc={disc} onClick={onClick} />
-              ) : (
-                // TODO: Translation
-                <EmptyCompactCard
-                  placeholder={`Disc Slot ${slotKey}`}
-                  onClick={onClick}
-                />
-              )}
+            <Grid item xs={9} sm={4} key={disc?.id || slotKey}>
+              <CompactDiscCard
+                disc={disc as ICachedDisc}
+                slotKey={slotKey}
+                onClick={onClick}
+              />
             </Grid>
           ))}
       </Grid>
-    </Box>
+    </Grid>
   )
 }

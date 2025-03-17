@@ -6,7 +6,6 @@ import {
 import { range } from '@genshin-optimizer/common/util'
 import { wengineAsset, wenginePhaseIcon } from '@genshin-optimizer/zzz/assets'
 import { rarityColor } from '@genshin-optimizer/zzz/consts'
-import type { ICachedWengine } from '@genshin-optimizer/zzz/db'
 import { useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
@@ -14,13 +13,14 @@ import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback } from 'react'
 import { ZCard } from '../Components'
+import { EmptyCompactCard } from '../util'
 import { WengineSubstatDisplay } from './WengineSubstatDisplay'
 
 export function CompactWengineCard({
   wengineId,
   onClick,
 }: {
-  wengineId: string
+  wengineId: string | undefined
   onClick?: () => void
 }) {
   const wrapperFunc = useCallback(
@@ -35,14 +35,19 @@ export function CompactWengineCard({
     (children: ReactNode) => <Box>{children}</Box>,
     []
   )
-  const {
-    key,
-    level = 0,
-    phase = 1,
-    modification = 0,
-  } = useWengine(wengineId) as ICachedWengine
-  const wengineStat = getWengineStat(key)
-  const wengineStats = getWengineStats(key, level, phase, modification)
+  const wengine = useWengine(wengineId)
+  if (!wengine) {
+    return (
+      <EmptyCompactCard placeholder={'No Wengine Equipped'} onClick={onClick} />
+    )
+  }
+  const wengineStat = getWengineStat(wengine.key)
+  const wengineStats = getWengineStats(
+    wengine.key,
+    wengine.level,
+    wengine.phase,
+    wengine.modification
+  )
 
   return (
     <ZCard bgt="dark">
@@ -59,25 +64,24 @@ export function CompactWengineCard({
           wrapper={wrapperFunc}
           falseWrapper={falseWrapperFunc}
         >
-          <Box sx={{ px: '12px', py: '10px' }}>
-            <Box component={'div'} sx={{ display: 'flex' }}>
-              <Box component={'div'}>
-                <Box
-                  component={NextImage ? NextImage : 'img'}
-                  alt="Wengine Image"
-                  src={wengineAsset(key, 'icon')}
-                  sx={(theme) => ({
-                    border: `4px solid ${
-                      theme.palette[rarityColor[wengineStat.rarity]].main
-                    }`,
-                    borderRadius: '12px',
-                    background: '#2B364D',
-                    width: '145px',
-                    height: '145px',
-                  })}
-                />
-              </Box>
-              <Box component={'div'} sx={{ ml: '24px' }}>
+          <Box sx={{ p: '4px' }}>
+            <Box sx={{ display: 'flex' }}>
+              <Box
+                component={NextImage ? NextImage : 'img'}
+                alt="Wengine Image"
+                src={wengineAsset(wengine.key, 'icon')}
+                sx={(theme) => ({
+                  border: `4px solid ${
+                    theme.palette[rarityColor[wengineStat.rarity]].main
+                  }`,
+                  borderRadius: '12px',
+                  background: '#2B364D',
+                  width: '130px',
+                  height: '130px',
+                })}
+              />
+
+              <Box sx={{ ml: '10px' }}>
                 <Box
                   sx={{
                     display: 'flex',
@@ -110,7 +114,6 @@ export function CompactWengineCard({
               </Box>
             </Box>
             <Box
-              component={'div'}
               sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -127,10 +130,9 @@ export function CompactWengineCard({
                 }}
                 variant="subtitle1"
               >
-                Lv.{level}
+                Lv.{wengine.level}
               </Typography>
               <Box
-                component={'div'}
                 sx={{
                   display: 'flex',
                   width: '5em',
@@ -139,7 +141,7 @@ export function CompactWengineCard({
                 }}
               >
                 {range(1, 5).map((index: number) => {
-                  return index <= phase ? (
+                  return index <= wengine.phase ? (
                     <ImgIcon
                       key={`phase-active-${index}`}
                       src={wenginePhaseIcon('singlePhase')}

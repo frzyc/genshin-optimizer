@@ -50,7 +50,7 @@ export function EmptyCompactCard({
               px: '40px',
               py: '12px',
               justifyContent: 'center',
-              height: '204px',
+              height: '185px',
             }}
           >
             <Typography

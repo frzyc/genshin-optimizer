@@ -129,7 +129,9 @@ function CharacterSection() {
               </Button>
               <CharStatsDisplay />
             </Stack>
-            <EquippedGrid onClick={onClick} />
+            <Stack>
+              <EquippedGrid onClick={onClick} />
+            </Stack>
           </CardContent>
         </CardThemed>
         <BonusStatsSection />

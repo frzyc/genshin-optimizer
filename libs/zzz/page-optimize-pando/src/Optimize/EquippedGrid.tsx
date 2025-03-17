@@ -4,11 +4,11 @@ import { EquipGrid } from '@genshin-optimizer/zzz/ui'
 import { useContext } from 'react'
 
 const columns = {
-  xs: 1,
-  sm: 1,
-  md: 1,
-  lg: 2,
-  xl: 3,
+  xs: 2,
+  sm: 2,
+  md: 3,
+  lg: 4,
+  xl: 4,
 } as const
 
 export function EquippedGrid({ onClick }: { onClick?: () => void }) {
@@ -20,7 +20,6 @@ export function EquippedGrid({ onClick }: { onClick?: () => void }) {
       wengineId={character?.equippedWengine}
       columns={columns}
       onClick={onClick}
-      spacing={2}
     />
   )
 }

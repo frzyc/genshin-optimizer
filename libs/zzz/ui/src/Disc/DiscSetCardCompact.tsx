@@ -7,6 +7,7 @@ import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { Typography } from '@mui/material'
 import { Box, Stack } from '@mui/system'
 import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ZCard } from '../Components'
 import { EmptyCompactCard } from '../util'
 import { DiscSetName } from './DiscTrans'
@@ -16,6 +17,7 @@ export function DiscSetCardCompact({
 }: {
   discs: Record<DiscSlotKey, ICachedDisc | undefined>
 }) {
+  const { t } = useTranslation('disc')
   const sets = useMemo(() => {
     const sets: Partial<Record<DiscSetKey, number>> = {}
     Object.values(discs).forEach((disc) => {
@@ -38,33 +40,37 @@ export function DiscSetCardCompact({
     <ZCard
       bgt="dark"
       sx={{
-        height: '100%',
         width: '100%',
       }}
     >
-      <Box component="div" sx={{ px: '8px', py: '6px' }}>
-        <Stack spacing={1}>
+      <Box component="div" sx={{ p: '4px' }}>
+        <Stack spacing={1.2}>
           {/* TODO: translate */}
           {Object.entries(sets).map(([key, count]) => (
             <Box
               key={key}
-              component="div"
               sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 background: '#2B364D',
-                py: '16px',
+                py: '12px',
                 px: '5px',
                 borderRadius: '12px',
+                m: 0,
               }}
             >
-              <Box
-                component="div"
-                sx={{ display: 'flex', alignItems: 'center' }}
-                gap={2}
-              >
+              <Box sx={{ display: 'flex', alignItems: 'center' }} gap={1}>
                 <ImgIcon size={2.5} src={discDefIcon(key)} />
-                <Typography key={key} sx={{ fontWeight: '900' }}>
+                <Typography
+                  key={key}
+                  sx={{
+                    fontWeight: '900',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    maxWidth: '135px',
+                  }}
+                >
                   <DiscSetName setKey={key} />
                 </Typography>
               </Box>
@@ -77,7 +83,7 @@ export function DiscSetCardCompact({
                   fontWeight: '900',
                 }}
               >
-                {count}pc
+                {count}
               </SqBadge>
             </Box>
           ))}
@@ -85,7 +91,6 @@ export function DiscSetCardCompact({
       </Box>
     </ZCard>
   ) : (
-    // TODO: Translate
-    <EmptyCompactCard placeholder="No Active Sets" />
+    <EmptyCompactCard placeholder={t('noActiveSets')} />
   )
 }

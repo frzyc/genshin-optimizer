@@ -18,7 +18,8 @@ import type { CharacterData } from '@genshin-optimizer/zzz/dm'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
-import { CardActionArea, Typography } from '@mui/material'
+import type { BadgeProps } from '@mui/material'
+import { Badge, CardActionArea, styled, Typography } from '@mui/material'
 import type { Variant } from '@mui/material/styles/createTypography'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
@@ -51,9 +52,9 @@ export function CharacterCard({
   const config: CharCardConfigProps = charCardConfig
     ? charCardConfig
     : {
-        cardWidth: '500px',
+        cardWidth: '408px',
         charImgWidth: '100%',
-        iconsSize: 2,
+        iconsSize: 1.7,
         isEditing: false,
         charNameWidth: '277px',
         charNameVariant: 'h5' as Variant,
@@ -174,19 +175,12 @@ function CharInformation({
   const { t } = useTranslation('page_characters')
   const { attribute, rarity, specialty } = characterStat
   const character = useCharacter(characterKey)
-  const skillStyles = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    bottom: '-5px',
-    left: '-12px',
-    width: '1.9em',
-    height: '1.9em',
-    borderRadius: '20px',
-    fontWeight: '500',
-    fontSize: '0.9rem',
-  }
+  const SkillBadge = styled(Badge)<BadgeProps>(() => ({
+    '& .MuiBadge-badge': {
+      right: 26,
+      top: 13,
+    },
+  }))
   return (
     <Box
       sx={{
@@ -282,31 +276,29 @@ function CharInformation({
                 / {milestoneMaxLevel[promotion]}
               </Typography>
             </Box>
-            <Box sx={{ display: 'flex', gap: 2 }}>
+            <Box
+              gap={1.5}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
               {allSkillKeys.map((item, index) => (
-                <Box key={index} sx={{ position: 'relative' }}>
-                  <ImgIcon size={2} src={commonDefIcon(item)} />
-                  <Box
-                    sx={(theme) => ({
-                      ...skillStyles,
-                      background: `${theme.palette['background'].default}`,
-                    })}
-                  >
-                    {character ? character[item] : 0}
-                  </Box>
-                </Box>
-              ))}
-              <Box sx={{ position: 'relative' }}>
-                <ImgIcon size={2} src={commonDefIcon('core')} />
-                <Box
-                  sx={(theme) => ({
-                    ...skillStyles,
-                    background: `${theme.palette['background'].default}`,
-                  })}
+                <SkillBadge
+                  key={index}
+                  badgeContent={character ? character[item] : 0}
+                  color="primary"
                 >
-                  {character ? character.core : 0}
-                </Box>
-              </Box>
+                  <ImgIcon size={1.7} src={commonDefIcon(item)} />
+                </SkillBadge>
+              ))}
+              <SkillBadge
+                key={6}
+                badgeContent={character ? character['core'] : 0}
+                color="primary"
+              >
+                <ImgIcon size={1.7} src={commonDefIcon('core')} />
+              </SkillBadge>
             </Box>
           </Box>
         ) : (
