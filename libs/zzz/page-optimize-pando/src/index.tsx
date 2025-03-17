@@ -36,6 +36,7 @@ import { CharCalcProvider } from './CharCalcProvider'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { CritModeSelector } from './CritModeSelector'
 import { OptSelector } from './OptSelector'
+import { SpecificDmgTypeSelector } from './SpecificDmgTypeSelector'
 
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
@@ -143,6 +144,7 @@ export default function PageOptimize() {
                             character={character}
                             charOpt={charOpt}
                           />
+                          <SpecificDmgTypeSelector />
                           <CritModeSelector />
                         </Box>
                         <TeamHeaderHeightContext.Provider value={0}>

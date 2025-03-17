@@ -83,7 +83,7 @@ const initialStats: StatKey[] = [
 ] as const
 type InitialStats = (typeof initialStats)[number]
 function InitialStatDropdown({
-  tag = {},
+  tag,
   onSelect,
 }: {
   tag?: Tag

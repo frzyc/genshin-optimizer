@@ -22,7 +22,10 @@ export function OptSelector({
           targetName: name,
         })
       }
-      buttonProps={{ fullWidth: true, sx: { height: '100%' } }}
+      buttonProps={{
+        sx: { height: '100%', flexGrow: 1 },
+        variant: targetName ? 'outlined' : undefined,
+      }}
     />
   )
 }

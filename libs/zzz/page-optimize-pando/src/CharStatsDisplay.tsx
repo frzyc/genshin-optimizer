@@ -17,6 +17,7 @@ import {
 import { ZCard } from '@genshin-optimizer/zzz/ui'
 import HelpIcon from '@mui/icons-material/Help'
 import { Box, CardContent, Divider, Stack, Typography } from '@mui/material'
+import { useMemo } from 'react'
 export function CharStatsDisplay() {
   const calc = useZzzCalcContext()
   return (
@@ -40,13 +41,17 @@ function StatLine({ read }: { read: Read<Tag> }) {
   const character = useCharacterContext()
   const charOpt = useCharOpt(character?.key)
 
-  if (!calc) return null
-  const computed = calc.compute(read)
+  const computed = calc?.compute(read)
   const name = read.tag.name || read.tag.q
-  const fText = formulaText(computed)
-  const tag = read.tag
+  const fText = computed && formulaText(computed)
   const emphasize =
-    tag.sheet === charOpt?.targetSheet && tag.name === charOpt?.targetName
+    read.tag.sheet === charOpt?.targetSheet &&
+    read.tag.name === charOpt?.targetName
+  const tag = useMemo(() => {
+    if (!emphasize || !charOpt?.targetDamageType) return read.tag
+    return { ...read.tag, damageType2: charOpt.targetDamageType }
+  }, [emphasize, charOpt?.targetDamageType, read.tag])
+  if (!computed) return null
   return (
     <Box
       sx={{
@@ -75,10 +80,10 @@ function StatLine({ read }: { read: Read<Tag> }) {
               )}
             </Box>
             <Divider />
-            <Box>{fText.formula}</Box>
+            <Box>{fText?.formula}</Box>
 
             <Stack spacing={1} sx={{ pl: 1, pt: 1 }}>
-              {fText.deps.map((dep, i) => (
+              {fText?.deps.map((dep, i) => (
                 <Box key={i}>
                   <Box>{dep.name}</Box>
                   <Divider />

@@ -14,10 +14,23 @@ import { validateTag } from '../tagUtil'
 // Corresponds to the `own.common.critMode` libs\zzz\formula\src\data\common\dmg.ts
 export type critModeKey = 'avg' | 'crit' | 'nonCrit'
 export const critModeKeys: critModeKey[] = ['avg', 'crit', 'nonCrit'] as const
-
+export const specificDmgTypeKeys = [
+  'basic',
+  'dash',
+  'dodgeCounter',
+  'special',
+  'exSpecial',
+  'chain',
+  'ult',
+  'quickAssist',
+  'defensiveAssist',
+  'evasiveAssist',
+  'assistFollowUp',
+] as const
 export type CharOpt = {
   targetSheet?: Sheet
   targetName?: string
+  targetDamageType?: (typeof specificDmgTypeKeys)[number]
   conditionals: Array<{
     sheet: Sheet
     src: Src
@@ -53,6 +66,7 @@ export class CharacterOptManager extends DataManager<
     let {
       targetName,
       targetSheet,
+      targetDamageType,
       conditionals,
       bonusStats,
       critMode,
@@ -68,6 +82,12 @@ export class CharacterOptManager extends DataManager<
     if (!targetSheet || !targetName || !getFormula(targetSheet, targetName)) {
       targetSheet = undefined
       targetName = undefined
+    }
+    if (
+      targetName !== 'standardDmgInst' ||
+      (targetDamageType && !specificDmgTypeKeys.includes(targetDamageType))
+    ) {
+      targetDamageType = undefined
     }
     conditionals = conditionals
       .map(({ sheet, condKey, src, dst, condValue }) => {
@@ -112,6 +132,7 @@ export class CharacterOptManager extends DataManager<
     const charOpt: CharOpt = {
       targetName,
       targetSheet,
+      targetDamageType,
       conditionals,
       bonusStats,
       critMode,

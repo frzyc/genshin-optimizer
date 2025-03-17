@@ -29,6 +29,16 @@ export function OptimizationTargetSelector({
             {/* TODO: translate */}
             <strong>Optimization Target: </strong>
             {<TagDisplay tag={formula.tag} />}
+            {/* Show DMG type */}
+            {getDmgType(formula.tag).map((dmgType) => (
+              <SqBadge key={dmgType}>{dmgType}</SqBadge>
+            ))}
+            {/* Show Attribute */}
+            {formula.tag.attribute && (
+              <SqBadge color={formula.tag.attribute}>
+                {formula.tag.attribute}
+              </SqBadge>
+            )}
           </Box>
         ) : (
           'Select an Optimization Target'

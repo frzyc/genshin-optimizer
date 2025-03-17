@@ -69,7 +69,8 @@ function OptimizeWrapper() {
   const { database } = useDatabaseContext()
   const calc = useZzzCalcContext()
   const { key: characterKey } = useCharacterContext()!
-  const { targetName, targetSheet } = useCharOpt(characterKey)!
+  const { targetName, targetSheet, targetDamageType } =
+    useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
@@ -182,7 +183,9 @@ function OptimizeWrapper() {
       calc,
       [
         {
-          tag: formula.tag,
+          tag: targetDamageType
+            ? { ...formula.tag, targetDamageType }
+            : formula.tag,
           multiplier: 1,
         },
       ],
@@ -223,6 +226,7 @@ function OptimizeWrapper() {
     characterKey,
     targetSheet,
     targetName,
+    targetDamageType,
     wengines,
     discsBySlot,
     numWorkers,
