@@ -14,6 +14,8 @@ import { validateTag } from '../tagUtil'
 // Corresponds to the `own.common.critMode` libs\zzz\formula\src\data\common\dmg.ts
 export type critModeKey = 'avg' | 'crit' | 'nonCrit'
 export const critModeKeys: critModeKey[] = ['avg', 'crit', 'nonCrit'] as const
+
+// Corresponds to damageTypes in libs\zzz\formula\src\data\util\listing.ts
 export const specificDmgTypeKeys = [
   'basic',
   'dash',
@@ -26,6 +28,7 @@ export const specificDmgTypeKeys = [
   'defensiveAssist',
   'evasiveAssist',
   'assistFollowUp',
+  'aftershock',
 ] as const
 export type CharOpt = {
   targetSheet?: Sheet

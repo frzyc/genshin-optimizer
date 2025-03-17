@@ -4,7 +4,7 @@ import { OptimizationTargetSelector } from '@genshin-optimizer/zzz/formula-ui'
 
 export function OptSelector({
   character: { key: characterKey },
-  charOpt: { targetName, targetSheet },
+  charOpt: { targetName, targetSheet, targetDamageType },
 }: {
   charOpt: CharOpt
   character: ICachedCharacter
@@ -14,6 +14,7 @@ export function OptSelector({
     <OptimizationTargetSelector
       sheet={targetSheet}
       name={targetName}
+      dmgType={targetDamageType}
       setOptTarget={({ sheet, name }) =>
         sheet &&
         name &&

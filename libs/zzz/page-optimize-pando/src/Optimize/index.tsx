@@ -184,7 +184,7 @@ function OptimizeWrapper() {
       [
         {
           tag: targetDamageType
-            ? { ...formula.tag, targetDamageType }
+            ? { ...formula.tag, damageType2: targetDamageType }
             : formula.tag,
           multiplier: 1,
         },

@@ -1,5 +1,6 @@
 import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
+import type { CharOpt } from '@genshin-optimizer/zzz/db'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
 import { getFormula, own } from '@genshin-optimizer/zzz/formula'
 import { Box, ListItemText, MenuItem } from '@mui/material'
@@ -10,34 +11,35 @@ import { useZzzCalcContext } from '../../hooks'
 export function OptimizationTargetSelector({
   sheet,
   name,
+  dmgType,
   setOptTarget,
   buttonProps = {},
 }: {
   sheet?: Sheet
   name?: string
+  dmgType?: CharOpt['targetDamageType']
   setOptTarget: (o: Tag) => void
   buttonProps?: Omit<DropdownButtonProps, 'title' | 'children' | 'color'>
 }) {
   const calc = useZzzCalcContext()
   const formula = getFormula(sheet, name)
+  const tag = formula?.tag
   return (
     <DropdownButton
-      color={formula ? 'success' : 'warning'}
+      color={tag ? 'success' : 'warning'}
       title={
-        formula?.tag ? (
+        tag ? (
           <Box sx={{ display: 'flex', gap: 1 }}>
             {/* TODO: translate */}
             <strong>Optimization Target: </strong>
-            {<TagDisplay tag={formula.tag} />}
+            {<TagDisplay tag={tag} />}
             {/* Show DMG type */}
-            {getDmgType(formula.tag).map((dmgType) => (
+            {getDmgType({ ...tag, damageType2: dmgType }).map((dmgType) => (
               <SqBadge key={dmgType}>{dmgType}</SqBadge>
             ))}
             {/* Show Attribute */}
-            {formula.tag.attribute && (
-              <SqBadge color={formula.tag.attribute}>
-                {formula.tag.attribute}
-              </SqBadge>
+            {tag.attribute && (
+              <SqBadge color={tag.attribute}>{tag.attribute}</SqBadge>
             )}
           </Box>
         ) : (
