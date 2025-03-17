@@ -10,7 +10,6 @@ import { own } from '@genshin-optimizer/zzz/formula'
 import { CharacterCard, CharacterEditor } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
-  Button,
   CardActionArea,
   CardContent,
   Grid,
@@ -29,6 +28,7 @@ import { BonusStatsSection } from './BonusStats'
 import { CharStatsDisplay } from './CharStatsDisplay'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { DiscSheetsDisplay } from './DiscSheetsDisplay'
+import { EnemyCard } from './EnemyCard'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
 import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
@@ -131,11 +131,11 @@ function CharacterSection() {
             <Grid container spacing={2}>
               <Grid item xs={6} lg={5} xl={4}>
                 <Stack spacing={1}>
-                  <CharacterCard characterKey={characterKey} />
-                  <Button fullWidth disabled={!characterKey} onClick={onClick}>
-                    {/* TODO: Translation */}
-                    Edit Character
-                  </Button>
+                  <CharacterCard
+                    characterKey={characterKey}
+                    onClick={onClick}
+                  />
+                  <EnemyCard />
                   <CharStatsDisplay />
                 </Stack>
               </Grid>

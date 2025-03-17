@@ -34,6 +34,7 @@ import { useTranslation } from 'react-i18next'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { CharCalcProvider } from './CharCalcProvider'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
+import { CritModeSelector } from './CritModeSelector'
 import { OptSelector } from './OptSelector'
 
 export default function PageOptimize() {
@@ -134,10 +135,16 @@ export default function PageOptimize() {
                           display: 'flex',
                           gap: 1,
                           flexDirection: 'column',
-                          mt: 2,
+                          mt: 1,
                         }}
                       >
-                        <OptSelector character={character} charOpt={charOpt} />
+                        <Box display="flex" gap={1}>
+                          <OptSelector
+                            character={character}
+                            charOpt={charOpt}
+                          />
+                          <CritModeSelector />
+                        </Box>
                         <TeamHeaderHeightContext.Provider value={0}>
                           <CharacterOptDisplay />
                         </TeamHeaderHeightContext.Provider>

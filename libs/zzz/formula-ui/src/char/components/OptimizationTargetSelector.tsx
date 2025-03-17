@@ -36,22 +36,30 @@ export function OptimizationTargetSelector({
       }
       {...buttonProps}
     >
-      {calc?.listFormulas(own.listing.formulas).map((read, index) => (
-        <MenuItem
-          key={`${index}_${read.tag.sheet || read.tag.q}_${read.tag.name}`}
-          onClick={() => setOptTarget(read.tag)}
-        >
-          <ListItemText>
-            <TagDisplay tag={read.tag} />
-          </ListItemText>
-          {/* Show DMG type */}
-          <Box sx={{ display: 'flex', gap: 1, ml: 1 }}>
-            {getDmgType(read.tag).map((dmgType) => (
-              <SqBadge key={dmgType}>{dmgType}</SqBadge>
-            ))}
-          </Box>
-        </MenuItem>
-      ))}
+      {calc?.listFormulas(own.listing.formulas).map(
+        ({ tag }, index) =>
+          tag.name &&
+          tag.sheet && (
+            <MenuItem
+              key={`${index}_${tag.sheet || tag.q}_${tag.name}`}
+              onClick={() => setOptTarget(tag)}
+            >
+              <ListItemText>
+                <Box sx={{ display: 'flex', gap: 1 }}>
+                  <TagDisplay tag={tag} />
+                  {/* Show DMG type */}
+                  {getDmgType(tag).map((dmgType) => (
+                    <SqBadge key={dmgType}>{dmgType}</SqBadge>
+                  ))}
+                  {/* Show Attribute */}
+                  {tag.attribute && (
+                    <SqBadge color={tag.attribute}>{tag.attribute}</SqBadge>
+                  )}
+                </Box>
+              </ListItemText>
+            </MenuItem>
+          )
+      )}
     </DropdownButton>
   )
 }

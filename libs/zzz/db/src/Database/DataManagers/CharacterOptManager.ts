@@ -11,6 +11,10 @@ import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 import { validateTag } from '../tagUtil'
 
+// Corresponds to the `own.common.critMode` libs\zzz\formula\src\data\common\dmg.ts
+export type critModeKey = 'avg' | 'crit' | 'nonCrit'
+export const critModeKeys: critModeKey[] = ['avg', 'crit', 'nonCrit'] as const
+
 export type CharOpt = {
   targetSheet?: Sheet
   targetName?: string
@@ -25,6 +29,14 @@ export type CharOpt = {
     tag: Tag
     value: number
   }>
+  critMode: critModeKey
+
+  // Enemy stuff
+  enemyLvl: number
+  enemyDef: number
+  enemyisStunned: boolean
+
+  // link to optConfig
   optConfigId?: string
 }
 export class CharacterOptManager extends DataManager<
@@ -38,8 +50,19 @@ export class CharacterOptManager extends DataManager<
   }
   override validate(obj: unknown): CharOpt | undefined {
     if (!obj || typeof obj !== 'object') return undefined
-    let { targetName, targetSheet, conditionals, bonusStats, optConfigId } =
-      obj as CharOpt
+    let {
+      targetName,
+      targetSheet,
+      conditionals,
+      bonusStats,
+      critMode,
+
+      enemyLvl,
+      enemyDef,
+      enemyisStunned,
+
+      optConfigId,
+    } = obj as CharOpt
     if (!Array.isArray(conditionals)) conditionals = []
     const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
     if (!targetSheet || !targetName || !getFormula(targetSheet, targetName)) {
@@ -77,6 +100,12 @@ export class CharacterOptManager extends DataManager<
       return true
     })
 
+    if (!critModeKeys.includes(critMode)) critMode = 'avg'
+
+    if (typeof enemyLvl !== 'number') enemyLvl = 80
+    if (typeof enemyDef !== 'number') enemyDef = 953
+    enemyisStunned = !!enemyisStunned
+
     if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = undefined
 
@@ -85,6 +114,12 @@ export class CharacterOptManager extends DataManager<
       targetSheet,
       conditionals,
       bonusStats,
+      critMode,
+
+      enemyLvl,
+      enemyDef,
+      enemyisStunned,
+
       optConfigId,
     }
     return charOpt
@@ -177,5 +212,10 @@ export function initialCharOpt(): CharOpt {
   return {
     conditionals: [],
     bonusStats: [],
+    critMode: 'avg',
+
+    enemyLvl: 80,
+    enemyDef: 953,
+    enemyisStunned: false,
   }
 }
