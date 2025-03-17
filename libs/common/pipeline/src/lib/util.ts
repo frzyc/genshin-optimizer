@@ -36,7 +36,6 @@ export async function formatText(path: string, text: string): Promise<string> {
     let error = ''
 
     spawnedProcess.stdout.on('data', (chunk: Buffer) => {
-      console.log(chunk.toString())
       data += chunk.toString()
     })
 
@@ -57,14 +56,9 @@ export async function formatText(path: string, text: string): Promise<string> {
   })
 }
 
-export function dumpFile(
-  filename: string,
-  obj: unknown,
-  print = false,
-  newLine = false
-) {
+export function dumpFile(filename: string, obj: unknown, print = false) {
   mkdirSync(dirname(filename), { recursive: true })
-  const fileStr = JSON.stringify(obj, undefined, 2).concat(newLine ? '\n' : '')
+  const fileStr = JSON.stringify(obj, undefined, 2)
   writeFileSync(filename, fileStr)
   if (print) console.log('Generated JSON at', filename)
 }
