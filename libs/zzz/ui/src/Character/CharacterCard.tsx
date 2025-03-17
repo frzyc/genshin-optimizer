@@ -52,13 +52,13 @@ export function CharacterCard({
   const config: CharCardConfigProps = charCardConfig
     ? charCardConfig
     : {
-        cardWidth: '408px',
+        cardWidth: '100%',
         charImgWidth: '100%',
         iconsSize: 1.7,
         isEditing: false,
-        charNameWidth: '277px',
-        charNameVariant: 'h5' as Variant,
-        scrollingBgSize: '280px',
+        charNameWidth: '191px',
+        charNameVariant: 'h6' as Variant,
+        scrollingBgSize: '200px',
       }
   const onClickHandler = useCallback(
     () => characterKey && onClick?.(characterKey),
@@ -135,7 +135,7 @@ function CharImage({
           left: '0',
           right: '0',
           display: 'flex',
-          transform: 'rotate(10deg) translateX(-50%)',
+          transform: 'rotate(5deg) translateX(-50%)',
           zIndex: 2,
         }}
       >
@@ -186,7 +186,7 @@ function CharInformation({
       sx={{
         width: '100%',
         height: '100%',
-        padding: '16px',
+        padding: '8px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -199,7 +199,7 @@ function CharInformation({
         }}
       >
         <Box
-          gap={2}
+          gap={1}
           sx={{
             display: 'flex',
             alignItems: 'center',
@@ -248,7 +248,7 @@ function CharInformation({
           )}
         </Box>
         {!charCardConfig.isEditing ? (
-          <Box sx={{ mt: '16px', display: 'flex', gap: 3 }}>
+          <Box sx={{ mt: '12px', display: 'flex', gap: '14px' }}>
             <Box
               sx={(theme) => ({
                 border: `2px solid ${theme.palette['contentZzz'].main}`,
@@ -289,7 +289,7 @@ function CharInformation({
                   badgeContent={character ? character[item] : 0}
                   color="primary"
                 >
-                  <ImgIcon size={1.7} src={commonDefIcon(item)} />
+                  <ImgIcon size={1.9} src={commonDefIcon(item)} />
                 </SkillBadge>
               ))}
               <SkillBadge
@@ -297,7 +297,7 @@ function CharInformation({
                 badgeContent={character ? character['core'] : 0}
                 color="primary"
               >
-                <ImgIcon size={1.7} src={commonDefIcon('core')} />
+                <ImgIcon size={1.9} src={commonDefIcon('core')} />
               </SkillBadge>
             </Box>
           </Box>
@@ -333,7 +333,7 @@ function ScrollingBackgroundText({
         marginTop: '20px',
         fontStyle: 'italic',
         fontSize: charCardConfig.scrollingBgSize,
-        lineHeight: '223px',
+        lineHeight: '150px',
         whiteSpace: 'nowrap',
         textTransform: 'uppercase',
         display: 'flex',

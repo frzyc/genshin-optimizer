@@ -24,15 +24,15 @@ export function EquipGrid({
   const discs = useDiscs(discIds)
   const wengine = useWengine(wengineId)
   return (
-    <Grid item columns={columns} container spacing={spacing}>
-      <Grid item xs={1} key={wengine?.id}>
+    <Grid item container spacing={spacing}>
+      <Grid item xs={6} md={4} lg={3} xl={3} key={wengine?.id}>
         <Stack spacing={1}>
           <CompactWengineCard wengineId={wengine?.id} onClick={onClick} />
           <DiscSetCardCompact discs={discs} />
         </Stack>
       </Grid>
 
-      <Grid container item xs={9} spacing={1}>
+      <Grid container item xs={6} md={8} lg={9} xl={9} spacing={1}>
         {!!discs &&
           Object.entries(discs).map(([slotKey, disc]) => (
             <Grid item xs={9} sm={4} key={disc?.id || slotKey}>

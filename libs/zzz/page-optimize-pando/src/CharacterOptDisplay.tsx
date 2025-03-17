@@ -1,14 +1,18 @@
 import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
 import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
+import {
+  OptConfigProvider,
+  useCharacterContext,
+  useCharOpt,
+} from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
 import { CharacterCard, CharacterEditor } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
-  Button,
   CardActionArea,
   CardContent,
+  Grid,
   Stack,
   Typography,
 } from '@mui/material'
@@ -24,8 +28,10 @@ import { BonusStatsSection } from './BonusStats'
 import { CharStatsDisplay } from './CharStatsDisplay'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { DiscSheetsDisplay } from './DiscSheetsDisplay'
+import { EnemyCard } from './EnemyCard'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
+import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
 import { WengineSheetsDisplay } from './WengineSheetsDisplay'
 
 const BOT_PX = 0
@@ -44,6 +50,7 @@ export function CharacterOptDisplay() {
           <WengineSheetsDisplay key="wengineCond" />,
         ],
         ['opt', 'Optimize', <OptimizeSection key="opt" />],
+        ['builds', 'Builds', <BuildsSection key="builds" />],
       ] as const
     }, [])
 
@@ -121,17 +128,21 @@ function CharacterSection() {
               backgroundColor: '#1b263b',
             }}
           >
-            <Stack spacing={1}>
-              <CharacterCard characterKey={characterKey} />
-              <Button fullWidth disabled={!characterKey} onClick={onClick}>
-                {/* TODO: Translation */}
-                Edit Character
-              </Button>
-              <CharStatsDisplay />
-            </Stack>
-            <Stack>
-              <EquippedGrid onClick={onClick} />
-            </Stack>
+            <Grid container spacing={2}>
+              <Grid item xs={6} lg={5} xl={3}>
+                <Stack spacing={1}>
+                  <CharacterCard
+                    characterKey={characterKey}
+                    onClick={onClick}
+                  />
+                  <EnemyCard />
+                  <CharStatsDisplay />
+                </Stack>
+              </Grid>
+              <Grid item xs={6} lg={7} xl={9}>
+                <EquippedGrid onClick={onClick} />
+              </Grid>
+            </Grid>
           </CardContent>
         </CardThemed>
         <BonusStatsSection />
@@ -146,4 +157,14 @@ function CharacterSection() {
 
 function OptimizeSection() {
   return <Optimize />
+}
+function BuildsSection() {
+  const { key: characterKey } = useCharacterContext()!
+  const { optConfigId } = useCharOpt(characterKey)!
+  if (!optConfigId) return null
+  return (
+    <OptConfigProvider optConfigId={optConfigId}>
+      <GeneratedBuildsDisplay />
+    </OptConfigProvider>
+  )
 }
