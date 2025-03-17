@@ -66,7 +66,7 @@ jobs:
       - name: Fetch master
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          git fetch --no-tags --no-recurse-submodules --filter=blob:none origin +master:refs/heads/master
+          git fetch --no-tags --no-recurse-submodules --filter=blob:none origin +master:refs/remotes/origin/master
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -76,7 +76,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Check Formatting
         run: |
-          yarn biome ci --changed --verbose --vcs-default-branch=origin/master
+          yarn biome ci --changed
   typecheck:
     runs-on: ubuntu-latest
     timeout-minutes: 10
