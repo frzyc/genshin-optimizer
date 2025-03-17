@@ -181,6 +181,7 @@ function CharInformation({
       top: 13,
     },
   }))
+  console.log(character)
   return (
     <Box
       sx={{
@@ -288,7 +289,7 @@ function CharInformation({
               {allSkillKeys.map((item, index) => (
                 <SkillBadge
                   key={index}
-                  badgeContent={character ? character[item] : 0}
+                  badgeContent={`${character ? character[item] : 0}`}
                   color="primary"
                 >
                   <ImgIcon size={1.9} src={commonDefIcon(item)} />
@@ -296,7 +297,7 @@ function CharInformation({
               ))}
               <SkillBadge
                 key={6}
-                badgeContent={character ? character['core'] : 0}
+                badgeContent={`${character ? character['core'] : 0}`}
                 color="primary"
               >
                 <ImgIcon size={1.9} src={commonDefIcon('core')} />
