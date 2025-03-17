@@ -55,15 +55,6 @@ export function UploadCard({
         setErrorMsg('uploadCard.error.jsonParse')
         return undefined
       }
-      if (!parsed.format && Array.isArray(parsed)) {
-        // assume the format since it has no identifier
-        try {
-          parsed = DDSToZOD(parsed)
-        } catch (e) {
-          setErrorMsg('uploadCard.error.jsonParse')
-          return undefined
-        }
-      }
       // Figure out the file format
       if (parsed.format === 'ZOD') {
         // Parse as ZOD format
