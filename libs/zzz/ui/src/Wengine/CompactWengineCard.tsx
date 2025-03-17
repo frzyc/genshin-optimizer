@@ -1,9 +1,14 @@
 import {
+  CardThemed,
   ConditionalWrapper,
-  ImgIcon,
   NextImage,
 } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
+import {
+  getUnitStr,
+  range,
+  statKeyToFixed,
+  toPercent,
+} from '@genshin-optimizer/common/util'
 import { wengineAsset, wenginePhaseIcon } from '@genshin-optimizer/zzz/assets'
 import { rarityColor } from '@genshin-optimizer/zzz/consts'
 import { useWengine } from '@genshin-optimizer/zzz/db-ui'
@@ -13,8 +18,7 @@ import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback } from 'react'
 import { ZCard } from '../Components'
-import { EmptyCompactCard } from '../util'
-import { WengineSubstatDisplay } from './WengineSubstatDisplay'
+import { COMPACT_CARD_HEIGHT_PX, EmptyCompactCard } from '../util'
 
 export function CompactWengineCard({
   wengineId,
@@ -48,6 +52,7 @@ export function CompactWengineCard({
     wengine.phase,
     wengine.modification
   )
+  const substatKey = wengineStat['second_statkey']
 
   return (
     <ZCard bgt="dark">
@@ -55,7 +60,10 @@ export function CompactWengineCard({
         fallback={
           <Skeleton
             variant="rectangular"
-            sx={{ width: '100%', height: '100%', minHeight: 350 }}
+            sx={{
+              width: '100%',
+              height: `${COMPACT_CARD_HEIGHT_PX}px`,
+            }}
           />
         }
       >
@@ -64,99 +72,99 @@ export function CompactWengineCard({
           wrapper={wrapperFunc}
           falseWrapper={falseWrapperFunc}
         >
-          <Box sx={{ p: '4px' }}>
-            <Box sx={{ display: 'flex' }}>
+          <Box
+            sx={{
+              p: 0.5,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              height: `${COMPACT_CARD_HEIGHT_PX}px`,
+              gap: 0.5,
+            }}
+          >
+            <Box sx={{ display: 'flex', flexGrow: 1 }}>
               <Box
                 component={NextImage ? NextImage : 'img'}
                 alt="Wengine Image"
                 src={wengineAsset(wengine.key, 'icon')}
                 sx={(theme) => ({
-                  border: `4px solid ${
+                  border: `${theme.spacing(0.5)} solid ${
                     theme.palette[rarityColor[wengineStat.rarity]].main
                   }`,
                   borderRadius: '12px',
-                  background: '#2B364D',
-                  width: '130px',
-                  height: '130px',
+                  background: theme.palette.contentLight.main,
+                  width: `${COMPACT_CARD_HEIGHT_PX - 40}px`,
+                  height: `${COMPACT_CARD_HEIGHT_PX - 40}px`,
                 })}
               />
 
-              <Box sx={{ ml: '10px' }}>
-                <Box
+              <Box
+                sx={{
+                  ml: '10px',
+                  py: 0.5,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 2,
+                }}
+              >
+                <Typography
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '12px',
-                    width: '100%',
-                    mb: '16px',
+                    fontWeight: 'bold',
+                    gap: 1,
                   }}
                 >
-                  <Typography
-                    variant="subtitle1"
-                    noWrap
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <StatIcon statKey={'atk'} />
-                  </Typography>
-                  <Typography variant="subtitle1" sx={{ fontWeight: '900' }}>
-                    {wengineStats['atk_base'].toFixed()}
-                  </Typography>
-                </Box>
-                <WengineSubstatDisplay
-                  substatKey={wengineStat['second_statkey']}
-                  substatValue={wengineStats[wengineStat['second_statkey']]}
-                  showStatName={false}
-                  styleProps={{ fontSize: '1.2rem' }}
-                />
+                  <StatIcon statKey={'atk'} />
+                  <Box>{wengineStats['atk_base'].toFixed()}</Box>
+                </Typography>
+                <Typography
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    fontWeight: 'bold',
+                    gap: 1,
+                  }}
+                >
+                  <StatIcon statKey={substatKey} />
+                  <Box>
+                    {toPercent(wengineStats[substatKey], substatKey).toFixed(
+                      statKeyToFixed(substatKey)
+                    )}
+                    {getUnitStr(substatKey)}
+                  </Box>
+                </Typography>
               </Box>
             </Box>
-            <Box
+            <CardThemed
+              bgt="light"
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                background: '#2B364D',
-                borderRadius: '20px',
                 justifyContent: 'space-between',
-                mt: '8px',
+                px: 2,
               }}
             >
               <Typography
                 sx={{
                   fontWeight: '900',
-                  ml: '16px',
                 }}
                 variant="subtitle1"
               >
                 Lv.{wengine.level}
               </Typography>
-              <Box
-                sx={{
-                  display: 'flex',
-                  width: '80px',
-                  padding: '4px 0',
-                  mr: '42px',
-                }}
-              >
-                {range(1, 5).map((index: number) => {
-                  return index <= wengine.phase ? (
-                    <ImgIcon
-                      key={`phase-active-${index}`}
-                      src={wenginePhaseIcon('singlePhase')}
-                      sx={{ width: '80px', height: '24px' }}
-                    />
-                  ) : (
-                    <ImgIcon
-                      key={`phase-inactive-${index}`}
-                      src={wenginePhaseIcon('singleNonPhase')}
-                      sx={{ width: '80px', height: '24px' }}
-                    />
-                  )
-                })}
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                {range(1, 5).map((index: number) => (
+                  <Box
+                    component={NextImage ? (NextImage as any) : 'img'}
+                    key={`phase-active-${index}`}
+                    src={wenginePhaseIcon(
+                      index <= wengine.phase ? 'singlePhase' : 'singleNonPhase'
+                    )}
+                  />
+                ))}
               </Box>
-            </Box>
+            </CardThemed>
           </Box>
         </ConditionalWrapper>
       </Suspense>

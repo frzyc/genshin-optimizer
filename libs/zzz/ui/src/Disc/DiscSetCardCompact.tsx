@@ -1,15 +1,15 @@
 'use client'
 
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { Typography } from '@mui/material'
-import { Box, Stack } from '@mui/system'
+import { Stack } from '@mui/system'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ZCard } from '../Components'
-import { EmptyCompactCard } from '../util'
+import { COMPACT_CARD_HEIGHT_PX, EmptyCompactCard } from '../util'
 import { DiscSetName } from './DiscTrans'
 
 export function DiscSetCardCompact({
@@ -43,52 +43,54 @@ export function DiscSetCardCompact({
         width: '100%',
       }}
     >
-      <Box component="div" sx={{ p: '4px' }}>
-        <Stack spacing={'10px'}>
-          {/* TODO: translate */}
-          {Object.entries(sets).map(([key, count]) => (
-            <Box
+      <Stack
+        component="div"
+        sx={{ p: 0.5, height: `${COMPACT_CARD_HEIGHT_PX}px` }}
+        spacing={0.5}
+      >
+        {Object.entries(sets).map(([key, count]) => (
+          <CardThemed
+            key={key}
+            bgt="light"
+            sx={(theme) => ({
+              height: `${
+                (COMPACT_CARD_HEIGHT_PX - parseFloat(theme.spacing(0.5 * 4))) /
+                3
+              }px`,
+              display: 'flex',
+              px: 0.5,
+              borderRadius: '12px',
+              alignItems: 'center',
+              gap: 1,
+            })}
+          >
+            <ImgIcon size={2.4} src={discDefIcon(key)} />
+            <Typography
               key={key}
               sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                background: '#2B364D',
-                py: '12px',
-                px: '5px',
-                borderRadius: '12px',
-                m: 0,
+                fontWeight: '900',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                flexGrow: 1,
               }}
             >
-              <Box sx={{ display: 'flex', alignItems: 'center' }} gap={1}>
-                <ImgIcon size={2.5} src={discDefIcon(key)} />
-                <Typography
-                  key={key}
-                  sx={{
-                    fontWeight: '900',
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    maxWidth: '135px',
-                  }}
-                >
-                  <DiscSetName setKey={key} />
-                </Typography>
-              </Box>
-              <SqBadge
-                sx={{
-                  borderRadius: '12px',
-                  backgroundColor: '#46A046',
-                  px: '10px',
-                  py: '5px',
-                  fontWeight: '900',
-                }}
-              >
-                {count}
-              </SqBadge>
-            </Box>
-          ))}
-        </Stack>
-      </Box>
+              <DiscSetName setKey={key} />
+            </Typography>
+            <SqBadge
+              color="success"
+              sx={{
+                borderRadius: '12px',
+                px: '10px',
+                py: '5px',
+                fontWeight: '900',
+              }}
+            >
+              {count}
+            </SqBadge>
+          </CardThemed>
+        ))}
+      </Stack>
     </ZCard>
   ) : (
     <EmptyCompactCard placeholder={t('noActiveSets')} />

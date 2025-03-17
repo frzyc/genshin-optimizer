@@ -18,8 +18,7 @@ import type { CharacterData } from '@genshin-optimizer/zzz/dm'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
-import type { BadgeProps } from '@mui/material'
-import { Badge, CardActionArea, styled, Typography } from '@mui/material'
+import { Badge, CardActionArea, Typography } from '@mui/material'
 import type { Variant } from '@mui/material/styles/createTypography'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
@@ -175,13 +174,6 @@ function CharInformation({
   const { t } = useTranslation('page_characters')
   const { attribute, rarity, specialty } = characterStat
   const character = useCharacter(characterKey)
-  const SkillBadge = styled(Badge)<BadgeProps>(() => ({
-    '& .MuiBadge-badge': {
-      right: 26,
-      top: 13,
-    },
-  }))
-  console.log(character)
   return (
     <Box
       sx={{
@@ -287,21 +279,29 @@ function CharInformation({
               }}
             >
               {allSkillKeys.map((item, index) => (
-                <SkillBadge
+                <Badge
                   key={index}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                  }}
                   badgeContent={`${character ? character[item] : 0}`}
                   color="primary"
                 >
                   <ImgIcon size={1.9} src={commonDefIcon(item)} />
-                </SkillBadge>
+                </Badge>
               ))}
-              <SkillBadge
+              <Badge
                 key={6}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left',
+                }}
                 badgeContent={`${character ? character['core'] : 0}`}
                 color="primary"
               >
                 <ImgIcon size={1.9} src={commonDefIcon('core')} />
-              </SkillBadge>
+              </Badge>
             </Box>
           </Box>
         ) : (
