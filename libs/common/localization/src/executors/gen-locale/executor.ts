@@ -24,7 +24,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       const lang = file.split('.json')[0]
       const raw = readFileSync(transDirPath + file).toString()
       const json = JSON.parse(raw)
-      Object.entries(json).map(async ([ns, entry]) => {
+      Object.entries(json).map(([ns, entry]) => {
         if (ns.startsWith('zzz_')) {
           dumpFile(`${localeDir('zzz')}${lang}/${ns.slice(3)}.json`, entry)
         } else if (ns.startsWith('sr_')) {
