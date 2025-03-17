@@ -1,5 +1,5 @@
 import { timeStringMs } from '@genshin-optimizer/common/util'
-import { Alert, Grid, LinearProgress, styled, Typography } from '@mui/material'
+import { Alert, Grid, LinearProgress, Typography, styled } from '@mui/material'
 import type { ReactNode } from 'react'
 
 export const warningBuildNumber = 10000000

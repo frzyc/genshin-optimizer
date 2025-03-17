@@ -59,14 +59,16 @@ export class CharacterDataManager extends DataManager<
       bonusAbilities = objKeyMap(allBonusAbilityKeys, (key) =>
         typeof bonusAbilities[key] !== 'boolean'
           ? false
-          : bonusAbilities[key] ?? false
+          : (bonusAbilities[key] ?? false)
       )
     }
     if (typeof statBoosts !== 'object')
       statBoosts = objKeyMap(allStatBoostKeys, (_key) => false)
     else {
       statBoosts = objKeyMap(allStatBoostKeys, (key) =>
-        typeof statBoosts[key] !== 'boolean' ? false : statBoosts[key] ?? false
+        typeof statBoosts[key] !== 'boolean'
+          ? false
+          : (statBoosts[key] ?? false)
       )
     }
     basic = typeof basic !== 'number' ? 1 : clamp(basic, 1, 6)

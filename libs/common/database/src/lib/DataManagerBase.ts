@@ -7,7 +7,7 @@ export class DataManagerBase<
   DataKey extends string,
   CacheValue extends StorageValue,
   StorageValue,
-  DatabaseType extends Database
+  DatabaseType extends Database,
 > {
   database: DatabaseType
   /**
@@ -84,7 +84,9 @@ export class DataManagerBase<
       return false
     }
     const value =
-      typeof valueOrFunc === 'function' ? valueOrFunc(old) ?? old : valueOrFunc
+      typeof valueOrFunc === 'function'
+        ? (valueOrFunc(old) ?? old)
+        : valueOrFunc
     if (value === false) return false
     const validated = this.validate({ ...(old ?? {}), ...value }, key)
     if (!validated) {

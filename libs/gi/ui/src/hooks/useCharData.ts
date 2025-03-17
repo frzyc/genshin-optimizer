@@ -164,8 +164,8 @@ function TeamDataBundle(
     character,
     overrideWeapon
       ? overrideWeapon
-      : database.weapons.get(character.equippedWeapon) ??
-          defaultInitialWeapon(),
+      : (database.weapons.get(character.equippedWeapon) ??
+          defaultInitialWeapon()),
     overrideArt ??
       (Object.values(character.equippedArtifacts)
         .map((a) => database.arts.get(a))

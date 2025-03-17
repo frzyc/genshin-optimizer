@@ -197,8 +197,8 @@ export class WeaponDataManager extends DataManager<
             upgraded[0]?.location === weapon.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((w) => w.id === importId)

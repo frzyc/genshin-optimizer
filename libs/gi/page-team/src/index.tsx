@@ -7,25 +7,25 @@ import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterContext,
   TeamCharacterContext,
+  type TeamCharacterContextObj,
   useBuildTc,
   useCharacter,
   useDBMeta,
   useDatabase,
   useTeam,
   useTeamChar,
-  type TeamCharacterContextObj,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import {
+  type ChartData,
   DataContext,
   FormulaDataWrapper,
   GraphContext,
+  type GraphContextObj,
   OptTargetWrapper,
   SillyContext,
-  useTeamDataNoContext,
-  type ChartData,
-  type GraphContextObj,
   type dataContextObj,
+  useTeamDataNoContext,
 } from '@genshin-optimizer/gi/ui'
 import { Box, Skeleton } from '@mui/material'
 import {
@@ -142,8 +142,8 @@ function Page({ teamId }: { teamId: string }) {
       const tabName = tab
         ? t(`page_character:tabs.${tab}`)
         : characterKey
-        ? t('page_character:tabs.setting')
-        : tab
+          ? t('page_character:tabs.setting')
+          : tab
       return tabName
         ? `${team.name} - ${charName} - ${tabName}`
         : `${team.name} - ${charName}`
@@ -282,7 +282,7 @@ function InnerContent({ tab }: { tab?: string }) {
       ({
         buildTc: loadoutDatum.buildType === 'tc' ? buildTc : undefined,
         setBuildTc,
-      } as BuildTcContexObj),
+      }) as BuildTcContexObj,
     [buildTc, loadoutDatum.buildType, setBuildTc]
   )
   if (!CharacterContextValue) return fallback

@@ -8,8 +8,8 @@ import {
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import {
-  useCharacterContext,
   useCharOpt,
+  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Attribute, Member, Tag } from '@genshin-optimizer/zzz/formula'

@@ -2,9 +2,9 @@ import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import { DropdownButton } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
-  allAbilityLimits,
   type AbilityKey,
   type CharacterKey,
+  allAbilityLimits,
 } from '@genshin-optimizer/sr/consts'
 import { useCharacter, useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { MenuItem } from '@mui/material'

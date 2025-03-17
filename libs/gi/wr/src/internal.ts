@@ -2,7 +2,7 @@ import type { AnyNode, Base, NodeData, NumNode, StrNode } from './type'
 import { constant } from './utils'
 
 export function deepNodeClone<
-  T extends NodeData<NumNode | StrNode | undefined>
+  T extends NodeData<NumNode | StrNode | undefined>,
 >(data: T): T {
   const map = new Map()
   function internal(orig: any) {
@@ -57,7 +57,7 @@ export function forEachNodes<T extends Base<T> = AnyNode>(
 export function mapFormulas<
   Input extends Base<Input> = AnyNode,
   Interim extends Base<Interim> = Input,
-  Output extends Base<Output> = Interim
+  Output extends Base<Output> = Interim,
 >(
   formulas: Input[],
   topDownMap: (formula: Input | Interim) => Interim,

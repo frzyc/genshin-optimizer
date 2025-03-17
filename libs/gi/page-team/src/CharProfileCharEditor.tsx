@@ -182,12 +182,12 @@ function Content({ onClose }: { onClose?: () => void }) {
                             }
                         })
                       : allTravelerKeys.includes(
-                          characterKey as (typeof allTravelerKeys)[number]
-                        )
-                      ? allTravelerKeys.forEach((tkey) => {
-                          database.chars.set(tkey, data)
-                        })
-                      : database.chars.set(characterKey, data)
+                            characterKey as (typeof allTravelerKeys)[number]
+                          )
+                        ? allTravelerKeys.forEach((tkey) => {
+                            database.chars.set(tkey, data)
+                          })
+                        : database.chars.set(characterKey, data)
                   }}
                 />
               </CardThemed>

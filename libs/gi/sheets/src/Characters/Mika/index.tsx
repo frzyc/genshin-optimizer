@@ -381,7 +381,7 @@ const sheet: TalentSheet = {
                   data.get(skillInSoulwind_atkSPD_disp).value * 100
                 }% = ${(
                   dm.burst.plumeInterval *
-                  (1 - data.get(skillInSoulwind_atkSPD_disp).value)
+                    (1 - data.get(skillInSoulwind_atkSPD_disp).value)
                 ).toFixed(2)}`
               : dm.burst.plumeInterval,
           unit: 's',

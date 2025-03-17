@@ -6,7 +6,7 @@ export class DataEntry<
   Key extends string,
   GOkey extends string,
   CacheValue,
-  StorageValue
+  StorageValue,
 > extends DataEntryBase<Key, GOkey, CacheValue, StorageValue> {
   exportGOOD(go: Partial<IGO & IGOOD>) {
     go[this.dataKey] = this.data

@@ -18,24 +18,24 @@ import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
 import {
   CharacterContext,
-  useCharacter,
   useCharOpt,
+  useCharacter,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
 import {
+  type Tag,
   getConditional,
   isMember,
   isSheet,
-  type Tag,
 } from '@genshin-optimizer/sr/formula'
 import { CharacterAutocomplete, CharacterName } from '@genshin-optimizer/sr/ui'
 import { Box } from '@mui/material'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { CharCalcProvider } from './CharCalcProvider'
-import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
+import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { OptSelector } from './OptSelector'
+import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 export default function PageOptimize() {
   const { database } = useDatabaseContext()

@@ -86,9 +86,13 @@ export function wengineTagMapNodeEntries(
 ): TagMapNodeEntries {
   return [
     // Opt-in for wengine buffs, instead of enabling it by default to reduce `read` traffic
-    reader.sheet('agg').reread(reader.sheet('wengine')),
+    reader
+      .sheet('agg')
+      .reread(reader.sheet('wengine')),
     // Mark wengine cones as used
-    own.common.count.sheet(key).add(1),
+    own.common.count
+      .sheet(key)
+      .add(1),
     own.wengine.lvl.add(level),
     own.wengine.modification.add(modification),
     own.wengine.phase.add(phase),
@@ -105,7 +109,9 @@ export function discTagMapNodeEntries(
   } = convert(ownTag, { sheet: 'disc', et: 'own' })
   return [
     // Opt-in for disc buffs, instead of enabling it by default to reduce `read` traffic
-    reader.sheet('agg').reread(reader.sheet('disc')),
+    reader
+      .sheet('agg')
+      .reread(reader.sheet('disc')),
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
     // Used for disc main/sub stats, as those are fed into the builder at run-time, after nodes are optimized

@@ -19,6 +19,7 @@ import {
 import { Calculator } from '../../calculator'
 import type { Read } from '../util'
 import {
+  type TagMapNodeEntries,
   conditionalEntries,
   convert,
   enemy,
@@ -26,7 +27,6 @@ import {
   own,
   ownBuff,
   ownTag,
-  type TagMapNodeEntries,
 } from '../util'
 
 setDebugMode(true)

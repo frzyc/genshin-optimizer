@@ -187,9 +187,9 @@ export class CharacterDataManager extends DataManager<
           ),
       equippedWengine: oldChar
         ? oldChar.equippedWengine
-        : Object.values(this.database.wengines?.data ?? {}).find(
+        : (Object.values(this.database.wengines?.data ?? {}).find(
             (w) => w?.location === id
-          )?.id ?? '',
+          )?.id ?? ''),
       ...storageObj,
     }
   }

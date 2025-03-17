@@ -21,7 +21,7 @@ export function FormulaDataWrapper({ children }: { children: JSX.Element }) {
   const [open, onOpen, onClose] = useBoolState()
   const [[data, node], setState] = useState([undefined, undefined] as [
     data: UIData | undefined,
-    node: CalcResult | undefined
+    node: CalcResult | undefined,
   ])
   const setFormulaData = useCallback(
     (data?: UIData, node?: CalcResult) => {

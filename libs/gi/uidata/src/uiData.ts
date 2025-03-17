@@ -333,8 +333,8 @@ export class UIData {
         ? makeEmpty(result.value)
         : result
       : node.emptyOn === 'l'
-      ? makeEmpty(result.value)
-      : result
+        ? makeEmpty(result.value)
+        : result
   }
   private _data(
     node: DataNode<NumNode | StrNode>

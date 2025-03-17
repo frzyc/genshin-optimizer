@@ -4,8 +4,8 @@ import type { Read } from '@genshin-optimizer/game-opt/engine'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
-  formulaText,
   TagDisplay,
+  formulaText,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { ZCard } from '@genshin-optimizer/zzz/ui'

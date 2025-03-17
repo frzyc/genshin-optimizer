@@ -22,11 +22,11 @@ import {
 } from 'react'
 import { BonusStatsSection } from './BonusStats'
 import { CharStatsDisplay } from './CharStatsDisplay'
-import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { DiscSheetsDisplay } from './DiscSheetsDisplay'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
 import { WengineSheetsDisplay } from './WengineSheetsDisplay'
+import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 const BOT_PX = 0
 const SECTION_SPACING_PX = 33
