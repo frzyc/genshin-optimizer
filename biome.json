@@ -21,7 +21,8 @@
       "./libs/sr/stats/Data",
       "./libs/zzz/stats/Data",
       "./.nx/cache",
-      "./.nx/workspace-data"
+      "./.nx/workspace-data",
+      "./libs/*/localization/assets/locales/*/*.json"
     ]
   },
   "formatter": {

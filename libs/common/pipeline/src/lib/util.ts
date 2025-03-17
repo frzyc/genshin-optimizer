@@ -57,9 +57,14 @@ export async function formatText(path: string, text: string): Promise<string> {
   })
 }
 
-export function dumpFile(filename: string, obj: unknown, print = false) {
+export function dumpFile(
+  filename: string,
+  obj: unknown,
+  print = false,
+  newLine = false
+) {
   mkdirSync(dirname(filename), { recursive: true })
-  const fileStr = JSON.stringify(obj, undefined, 2)
+  const fileStr = JSON.stringify(obj, undefined, 2).concat(newLine ? '\n' : '')
   writeFileSync(filename, fileStr)
   if (print) console.log('Generated JSON at', filename)
 }
@@ -89,8 +94,7 @@ export async function generateIndexFromObj(obj: object, path: string) {
     .map((k) => `  ${k},`)
     .join('\n')
 
-  const indexContent = `// This is a generated index file.
-
+  const indexContent = `
 ${imports}
 
 const data = {
@@ -98,7 +102,9 @@ ${dataContent}
 } as const
 export default data
 `
-  const formatted = await formatText(path, indexContent)
+  const formatted =
+    '// This is a generated index file.\n' +
+    (await formatText(`${path}/index.ts`, indexContent))
   mkdirSync(path, { recursive: true })
   writeFileSync(`${path}/index.ts`, formatted)
 
