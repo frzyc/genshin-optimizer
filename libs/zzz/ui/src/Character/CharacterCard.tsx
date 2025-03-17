@@ -248,7 +248,9 @@ function CharInformation({
           )}
         </Box>
         {!charCardConfig.isEditing ? (
-          <Box sx={{ mt: '12px', display: 'flex', gap: '14px' }}>
+          <Box
+            sx={{ mt: '12px', display: 'flex', gap: '14px', flexWrap: 'wrap' }}
+          >
             <Box
               sx={(theme) => ({
                 border: `2px solid ${theme.palette['contentZzz'].main}`,

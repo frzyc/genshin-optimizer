@@ -128,8 +128,8 @@ function CharacterSection() {
               backgroundColor: '#1b263b',
             }}
           >
-            <Grid container spacing={2}>
-              <Grid item xs={6} lg={5} xl={3}>
+            <Grid container spacing={2} sx={{ flexWrap: 'wrap' }}>
+              <Grid item xs={12} sm={7} md={5} lg={4} xl={3}>
                 <Stack spacing={1}>
                   <CharacterCard
                     characterKey={characterKey}
@@ -139,7 +139,7 @@ function CharacterSection() {
                   <CharStatsDisplay />
                 </Stack>
               </Grid>
-              <Grid item xs={6} lg={7} xl={9}>
+              <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
                 <EquippedGrid onClick={onClick} />
               </Grid>
             </Grid>
