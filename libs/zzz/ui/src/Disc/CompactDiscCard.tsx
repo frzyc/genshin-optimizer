@@ -10,26 +10,30 @@ import {
   toPercent,
 } from '@genshin-optimizer/common/util'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { DiscRarityKey } from '@genshin-optimizer/zzz/consts'
+import type { DiscRarityKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
   rarityColor,
 } from '@genshin-optimizer/zzz/consts'
+import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/zzz/svgicons'
-import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
+import type { ISubstat } from '@genshin-optimizer/zzz/zood'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { Theme } from '@mui/system'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback } from 'react'
 import { ZCard } from '../Components'
+import { COMPACT_CARD_HEIGHT_PX, EmptyCompactCard } from '../util'
 import { useSpinner } from './util'
 
 export function CompactDiscCard({
   disc,
+  slotKey,
   onClick,
 }: {
-  disc: IDisc
+  disc: ICachedDisc
+  slotKey: DiscSlotKey
   onClick?: () => void
 }) {
   const {
@@ -39,7 +43,6 @@ export function CompactDiscCard({
     handleMouseUp,
     isDragging,
   } = useSpinner()
-  const { slotKey, setKey, rarity, level, mainStatKey, substats } = disc
 
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -50,21 +53,20 @@ export function CompactDiscCard({
     [onClick]
   )
   const falseWrapperFunc = useCallback(
-    (children: ReactNode) => (
-      <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-        {children}
-      </Box>
-    ),
+    (children: ReactNode) => <Box>{children}</Box>,
     []
   )
 
-  return (
+  return disc ? (
     <ZCard bgt="dark">
       <Suspense
         fallback={
           <Skeleton
             variant="rectangular"
-            sx={{ width: '100%', height: '100%', minHeight: 350 }}
+            sx={{
+              width: '100%',
+              height: `${COMPACT_CARD_HEIGHT_PX}px`,
+            }}
           />
         }
       >
@@ -76,21 +78,29 @@ export function CompactDiscCard({
           <Box
             sx={{
               display: 'flex',
-              padding: '12px',
+              padding: 0.5,
+              height: `${COMPACT_CARD_HEIGHT_PX}px`,
             }}
           >
             <CardThemed bgt="light" sx={{ borderRadius: '12px' }}>
-              <Box sx={{ padding: '8px' }}>
+              <Box
+                sx={{
+                  padding: 0.5,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
+                }}
+              >
                 <Box
                   sx={(theme: Theme) => ({
                     border: `4px solid ${
-                      theme.palette[rarityColor[rarity]].main
+                      theme.palette[rarityColor[disc.rarity]].main
                     }`,
                     borderRadius: '50%',
                   })}
                 >
                   <Box
-                    component="div"
                     onMouseDown={(e: React.MouseEvent) =>
                       handleMouseDown(e.nativeEvent)
                     }
@@ -117,14 +127,14 @@ export function CompactDiscCard({
                     <Box
                       component={NextImage ? NextImage : 'img'}
                       alt="Disc Piece Image"
-                      src={discDefIcon(setKey)}
+                      src={discDefIcon(disc.setKey)}
                       style={{
                         transform: `rotate(${rotation}deg)`,
                       }}
                       sx={{
                         width: 'auto',
                         float: 'right',
-                        height: '100px',
+                        height: '92px',
                         transition: isDragging
                           ? 'none'
                           : 'transform 0.1s ease-out',
@@ -134,18 +144,20 @@ export function CompactDiscCard({
                       sx={{
                         height: 0,
                         position: 'absolute',
-                        bottom: '70px',
+                        bottom: '66px',
                       }}
                     >
                       <SlotIcon
-                        slotKey={slotKey}
+                        slotKey={disc.slotKey}
                         iconProps={{
                           sx: (theme) => ({
                             border: '1px solid #1B263B',
                             background: '#1B263B',
                             borderRadius: '20px',
                             fontSize: '2.5rem',
-                            fill: `${theme.palette[rarityColor[rarity]].main}`,
+                            fill: `${
+                              theme.palette[rarityColor[disc.rarity]].main
+                            }`,
                           }),
                         }}
                       ></SlotIcon>
@@ -161,38 +173,41 @@ export function CompactDiscCard({
                         })}
                         variant="h6"
                       >
-                        {level}
+                        {disc.level}
                       </Typography>
                     </Box>
                   </Box>
                 </Box>
                 <CardThemed
                   sx={{
-                    display: 'flex',
-                    alignItems: 'center',
                     padding: '4px 8px',
                     width: '100%',
-                    justifyContent: 'space-around',
-                    mt: '12px',
                   }}
                 >
                   <Typography
                     variant="subtitle1"
                     noWrap
                     sx={{
+                      width: '100%',
                       display: 'flex',
                       alignItems: 'center',
                       fontWeight: 'bold',
+                      justifyContent: 'center',
+                      gap: 1,
                     }}
                   >
-                    <StatIcon statKey={mainStatKey}></StatIcon>
-                  </Typography>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-                    {toPercent(
-                      getDiscMainStatVal(rarity, mainStatKey, level),
-                      mainStatKey
-                    ).toFixed(statKeyToFixed(mainStatKey))}
-                    {getUnitStr(mainStatKey)}
+                    <StatIcon statKey={disc.mainStatKey}></StatIcon>
+                    <span>
+                      {toPercent(
+                        getDiscMainStatVal(
+                          disc.rarity,
+                          disc.mainStatKey,
+                          disc.level
+                        ),
+                        disc.mainStatKey
+                      ).toFixed(statKeyToFixed(disc.mainStatKey))}
+                      {getUnitStr(disc.mainStatKey)}
+                    </span>
                   </Typography>
                 </CardThemed>
               </Box>
@@ -201,18 +216,18 @@ export function CompactDiscCard({
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '20px',
-                ml: '24px',
-                mt: '8px',
+                justifyContent: 'space-between',
+                pl: '10px',
+                py: 0.5,
               }}
             >
-              {substats.map(
+              {disc.substats.map(
                 (substat) =>
                   substat.key && (
                     <SubstatDisplay
                       key={substat.key}
                       substat={substat}
-                      rarity={rarity}
+                      rarity={disc.rarity}
                     />
                   )
               )}
@@ -221,6 +236,8 @@ export function CompactDiscCard({
         </ConditionalWrapper>
       </Suspense>
     </ZCard>
+  ) : (
+    <EmptyCompactCard placeholder={`Disc Slot ${slotKey}`} onClick={onClick} />
   )
 }
 
@@ -239,28 +256,21 @@ function SubstatDisplay({
   ).toFixed(statKeyToFixed(key))
   return (
     <Typography
-      variant="subtitle2"
+      variant="subtitle1"
       sx={{
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
         fontWeight: 'bold',
         gap: 1,
       }}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <StatIcon statKey={key} />
-      </Box>
-      <Box sx={{ fontSize: '1rem', display: 'flex', width: '100%', ml: '4px' }}>
-        <Box sx={{ mr: '8px' }}>
-          {displayValue}
-          {getUnitStr(key)}
-        </Box>
-        <Box>
-          {upgrades > 1 && (
-            <ColorText color="warning">+{upgrades - 1}</ColorText>
-          )}
-        </Box>
+      <StatIcon statKey={key} />
+      <Box>
+        {displayValue}
+        {getUnitStr(key)}
+        {upgrades > 1 && (
+          <ColorText color="warning"> +{upgrades - 1}</ColorText>
+        )}
       </Box>
     </Typography>
   )

@@ -18,7 +18,7 @@ import type { CharacterData } from '@genshin-optimizer/zzz/dm'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
-import { CardActionArea, Typography } from '@mui/material'
+import { Badge, CardActionArea, Typography } from '@mui/material'
 import type { Variant } from '@mui/material/styles/createTypography'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
@@ -51,13 +51,13 @@ export function CharacterCard({
   const config: CharCardConfigProps = charCardConfig
     ? charCardConfig
     : {
-        cardWidth: '500px',
+        cardWidth: '100%',
         charImgWidth: '100%',
-        iconsSize: 2,
+        iconsSize: 1.7,
         isEditing: false,
-        charNameWidth: '277px',
-        charNameVariant: 'h5' as Variant,
-        scrollingBgSize: '280px',
+        charNameWidth: '191px',
+        charNameVariant: 'h6' as Variant,
+        scrollingBgSize: '200px',
       }
   const onClickHandler = useCallback(
     () => characterKey && onClick?.(characterKey),
@@ -134,7 +134,7 @@ function CharImage({
           left: '0',
           right: '0',
           display: 'flex',
-          transform: 'rotate(10deg) translateX(-50%)',
+          transform: 'rotate(5deg) translateX(-50%)',
           zIndex: 2,
         }}
       >
@@ -174,25 +174,12 @@ function CharInformation({
   const { t } = useTranslation('page_characters')
   const { attribute, rarity, specialty } = characterStat
   const character = useCharacter(characterKey)
-  const skillStyles = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    bottom: '-5px',
-    left: '-12px',
-    width: '1.9em',
-    height: '1.9em',
-    borderRadius: '20px',
-    fontWeight: '500',
-    fontSize: '0.9rem',
-  }
   return (
     <Box
       sx={{
         width: '100%',
         height: '100%',
-        padding: '16px',
+        padding: '8px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -205,7 +192,7 @@ function CharInformation({
         }}
       >
         <Box
-          gap={2}
+          gap={1}
           sx={{
             display: 'flex',
             alignItems: 'center',
@@ -254,7 +241,9 @@ function CharInformation({
           )}
         </Box>
         {!charCardConfig.isEditing ? (
-          <Box sx={{ mt: '16px', display: 'flex', gap: 3 }}>
+          <Box
+            sx={{ mt: '12px', display: 'flex', gap: '14px', flexWrap: 'wrap' }}
+          >
             <Box
               sx={(theme) => ({
                 border: `2px solid ${theme.palette['contentZzz'].main}`,
@@ -282,31 +271,37 @@ function CharInformation({
                 / {milestoneMaxLevel[promotion]}
               </Typography>
             </Box>
-            <Box sx={{ display: 'flex', gap: 2 }}>
+            <Box
+              gap={1.5}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
               {allSkillKeys.map((item, index) => (
-                <Box key={index} sx={{ position: 'relative' }}>
-                  <ImgIcon size={2} src={commonDefIcon(item)} />
-                  <Box
-                    sx={(theme) => ({
-                      ...skillStyles,
-                      background: `${theme.palette['background'].default}`,
-                    })}
-                  >
-                    {character ? character[item] : 0}
-                  </Box>
-                </Box>
-              ))}
-              <Box sx={{ position: 'relative' }}>
-                <ImgIcon size={2} src={commonDefIcon('core')} />
-                <Box
-                  sx={(theme) => ({
-                    ...skillStyles,
-                    background: `${theme.palette['background'].default}`,
-                  })}
+                <Badge
+                  key={index}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                  }}
+                  badgeContent={`${character ? character[item] : 0}`}
+                  color="primary"
                 >
-                  {character ? character.core : 0}
-                </Box>
-              </Box>
+                  <ImgIcon size={1.9} src={commonDefIcon(item)} />
+                </Badge>
+              ))}
+              <Badge
+                key={6}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left',
+                }}
+                badgeContent={`${character ? character['core'] : 0}`}
+                color="primary"
+              >
+                <ImgIcon size={1.9} src={commonDefIcon('core')} />
+              </Badge>
             </Box>
           </Box>
         ) : (
@@ -341,7 +336,7 @@ function ScrollingBackgroundText({
         marginTop: '20px',
         fontStyle: 'italic',
         fontSize: charCardConfig.scrollingBgSize,
-        lineHeight: '223px',
+        lineHeight: '150px',
         whiteSpace: 'nowrap',
         textTransform: 'uppercase',
         display: 'flex',
