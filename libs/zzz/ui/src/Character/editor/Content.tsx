@@ -61,7 +61,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
       </Box>
       <Box>
         <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-          <Grid item xs={7} sm={4} md={3} lg={3} xl={4}>
+          <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
             <CardThemed
               sx={{
                 height: '100%',
@@ -96,10 +96,11 @@ export function Content({ onClose }: { onClose?: () => void }) {
           </Grid>
           <Grid
             item
-            xs={11}
-            sm={6}
-            md={7}
+            xs={6}
+            sm={8}
+            md={8}
             lg={8}
+            xl={8}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <Box>

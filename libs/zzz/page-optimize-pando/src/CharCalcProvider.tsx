@@ -57,12 +57,12 @@ export function CharCalcProvider({
         // Add actual member data
         ...member0,
         // TODO: Get enemy values from db
-        enemy.common.lvl.add(80),
-        enemy.common.def.add(953),
-        enemy.common.isStunned.add(0),
+        ownBuff.common.critMode.add(charOpt.critMode),
+        enemy.common.lvl.add(charOpt.enemyLvl),
+        enemy.common.def.add(charOpt.enemyDef),
+        enemy.common.isStunned.add(charOpt.enemyisStunned ? 1 : 0),
         enemy.common.stun_.add(1.5),
         enemy.common.unstun_.add(1),
-        ownBuff.common.critMode.add('avg'),
         ...charOpt.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValue }) =>
             withPreset(
