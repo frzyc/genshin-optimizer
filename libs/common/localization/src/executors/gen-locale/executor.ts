@@ -1,5 +1,5 @@
 import { readFileSync, readdirSync } from 'fs'
-import { dumpFile, dumpPrettyFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import type { GenLocaleExecutorSchema } from './schema'
 
 /*
@@ -24,31 +24,19 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       const lang = file.split('.json')[0]
       const raw = readFileSync(transDirPath + file).toString()
       const json = JSON.parse(raw)
-      for (const [ns, entry] of Object.entries(json)) {
+      Object.entries(json).map(async ([ns, entry]) => {
         if (ns.startsWith('zzz_')) {
-          await dumpPrettyFile(
-            `${localeDir('zzz')}${lang}/${ns.slice(3)}.json`,
-            entry
-          )
+          dumpFile(`${localeDir('zzz')}${lang}/${ns.slice(3)}.json`, entry)
         } else if (ns.startsWith('sr_')) {
-          await dumpPrettyFile(
-            `${localeDir('sr')}${lang}/${ns.slice(3)}.json`,
-            entry
-          )
+          dumpFile(`${localeDir('sr')}${lang}/${ns.slice(3)}.json`, entry)
         } else if (ns.startsWith('common_')) {
-          await dumpPrettyFile(
-            `${localeDir('common')}${lang}/${ns.slice(7)}.json`,
-            entry
-          )
+          dumpFile(`${localeDir('common')}${lang}/${ns.slice(7)}.json`, entry)
         } else {
           //dump to gi by default, due to legacy namespacing
-          const newns = ns.startsWith('gi_') ? ns.slice(3) : ns
-          await dumpPrettyFile(`${localeDir('gi')}${lang}/${newns}.json`, entry)
+          if (ns.startsWith('gi_')) ns = ns.slice(3)
+          dumpFile(`${localeDir('gi')}${lang}/${ns}.json`, entry)
         }
-      }
-      // Object.entries(json).map(async ([ns, entry]) => {
-
-      // })
+      })
     })
   )
 
