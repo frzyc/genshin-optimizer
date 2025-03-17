@@ -4,7 +4,7 @@
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true,
-    "defaultBranch": "master"
+    "defaultBranch": "origin/master"
   },
   "files": {
     "maxSize": 20971520,

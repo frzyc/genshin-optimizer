@@ -62,6 +62,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }} # Force checking of the whole repo when running on pushes to master
+          fetch-depth: 0
       - name: Fetch master
         if: ${{ github.event_name == 'pull_request' }}
         run: |
