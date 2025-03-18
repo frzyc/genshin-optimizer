@@ -58,7 +58,7 @@ export function BonusStatsSection() {
               value={value}
               setValue={(value) => setStat(tag, value, i)}
               onDelete={() => setStat(tag, null, i)}
-              setTag={(tag) => setStat(tag, 0, i)}
+              setTag={(tag) => setStat(tag, value, i)}
             />
           ))}
           <InitialStatDropdown onSelect={newTarget} />
