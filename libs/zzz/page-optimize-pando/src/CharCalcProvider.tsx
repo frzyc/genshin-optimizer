@@ -72,7 +72,7 @@ export function CharCalcProvider({
         ),
         ...charOpt.bonusStats.flatMap(({ tag: { src, dst, ...tag }, value }) =>
           withPreset(`preset0`, {
-            // since bonusStats are applied to own*, needs {src:key, dst:undefined}
+            // since bonusStats are applied to own*, needs {src:key, dst:never}
             tag: { ...tag, src: character.key },
             value: constant(toDecimal(value, tag.q ?? '')),
           })

@@ -45,6 +45,7 @@ export function EmptyCompactCard({
               textTransform: 'uppercase',
               color: `${theme.palette.contentZzz.main}`,
               fontWeight: '900',
+              textAlign: 'center',
             })}
           >
             {placeholder}

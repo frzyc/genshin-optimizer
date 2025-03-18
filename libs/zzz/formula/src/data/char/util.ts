@@ -178,7 +178,6 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       'standardDmgInst',
       {
         attribute: data_gen.attribute,
-        damageType1: 'elemental',
       },
       prod(percent(1.5), own.final.atk)
     ),

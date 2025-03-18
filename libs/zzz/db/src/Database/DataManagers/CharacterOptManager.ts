@@ -1,7 +1,13 @@
 import { notEmpty, shallowCompareObj } from '@genshin-optimizer/common/util'
 import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import type { Dst, Sheet, Src, Tag } from '@genshin-optimizer/zzz/formula'
+import type {
+  DamageType,
+  Dst,
+  Sheet,
+  Src,
+  Tag,
+} from '@genshin-optimizer/zzz/formula'
 import {
   getConditional,
   getFormula,
@@ -15,9 +21,35 @@ import { validateTag } from '../tagUtil'
 export type critModeKey = 'avg' | 'crit' | 'nonCrit'
 export const critModeKeys: critModeKey[] = ['avg', 'crit', 'nonCrit'] as const
 
+export type SpecificDmgTypeKey = Exclude<
+  DamageType,
+  'anomaly' | 'disorder' | 'aftershock' | 'elemental'
+>
+// Corresponds to damageTypes in libs\zzz\formula\src\data\util\listing.ts
+export const specificDmgTypeKeys = [
+  'basic',
+  'dash',
+  'dodgeCounter',
+  'special',
+  'exSpecial',
+  'chain',
+  'ult',
+  'quickAssist',
+  'defensiveAssist',
+  'evasiveAssist',
+  'assistFollowUp',
+] as SpecificDmgTypeKey[]
+
+function isSpeicifcDmgTypeKey(key: string): key is SpecificDmgTypeKey {
+  return specificDmgTypeKeys.includes(key as SpecificDmgTypeKey)
+}
+
 export type CharOpt = {
   targetSheet?: Sheet
   targetName?: string
+  targetDamageType1?: SpecificDmgTypeKey
+  targetDamageType2?: 'aftershock'
+
   conditionals: Array<{
     sheet: Sheet
     src: Src
@@ -53,6 +85,8 @@ export class CharacterOptManager extends DataManager<
     let {
       targetName,
       targetSheet,
+      targetDamageType1,
+      targetDamageType2,
       conditionals,
       bonusStats,
       critMode,
@@ -69,6 +103,18 @@ export class CharacterOptManager extends DataManager<
       targetSheet = undefined
       targetName = undefined
     }
+    if (
+      targetName !== 'standardDmgInst' ||
+      (targetDamageType1 && !isSpeicifcDmgTypeKey(targetDamageType1))
+    )
+      targetDamageType1 = undefined
+
+    if (
+      targetName !== 'standardDmgInst' ||
+      (targetDamageType2 && targetDamageType2 !== 'aftershock')
+    )
+      targetDamageType2 = undefined
+
     conditionals = conditionals
       .map(({ sheet, condKey, src, dst, condValue }) => {
         if (!condValue) return undefined //remove conditionals when the value is 0
@@ -112,6 +158,8 @@ export class CharacterOptManager extends DataManager<
     const charOpt: CharOpt = {
       targetName,
       targetSheet,
+      targetDamageType1,
+      targetDamageType2,
       conditionals,
       bonusStats,
       critMode,
