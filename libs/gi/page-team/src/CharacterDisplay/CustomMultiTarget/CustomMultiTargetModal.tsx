@@ -166,7 +166,7 @@ export function CustomMultiTargetModal({
                           Note: Community created Multi-Optimization Targets can
                           be found within the
                           <a
-                            href={process.env.NX_URL_DISCORD_GO}
+                            href={process.env['NX_URL_DISCORD_GO']}
                             target="_blank"
                             rel="noreferrer"
                           >
@@ -174,7 +174,7 @@ export function CustomMultiTargetModal({
                           </a>
                           or
                           <a
-                            href={process.env.NX_URL_KQM_MULTI_GUIDE}
+                            href={process.env['NX_URL_KQM_MULTI_GUIDE']}
                             target="_blank"
                             rel="noreferrer"
                           >

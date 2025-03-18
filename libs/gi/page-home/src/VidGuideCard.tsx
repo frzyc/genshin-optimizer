@@ -11,7 +11,7 @@ import {
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
-const embeds = JSON.parse(process.env.NX_URLS_GUIDES ?? '[]') as string[]
+const embeds = JSON.parse(process.env['NX_URLS_GUIDES'] ?? '[]') as string[]
 
 export default function VidGuideCard() {
   const { t } = useTranslation(['page_home', 'ui'])
@@ -24,7 +24,7 @@ export default function VidGuideCard() {
             variant="h5"
             component={Link}
             color="inherit"
-            href={process.env.NX_URL_YOUTUBE_TUTPL}
+            href={process.env['NX_URL_YOUTUBE_TUTPL']}
             target="_blank"
             rel="noopener"
           >

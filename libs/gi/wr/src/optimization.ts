@@ -536,7 +536,7 @@ export function constantFold(
 /** "Move" branching `br`, which must be inside `parent` and folded to `fold`, to be the "container" of `parent` instead */
 function transpose(br: AnyNode, fold: AnyNode, parent: AnyNode): AnyNode {
   if (
-    process.env.NODE_ENV === 'development' &&
+    process.env['NODE_ENV'] === 'development' &&
     !parent.operands.includes(br as any as never)
   )
     throw new Error('ill-formed transpose')

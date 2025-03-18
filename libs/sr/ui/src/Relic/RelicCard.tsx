@@ -192,7 +192,7 @@ export function RelicCard({
               </strong>
             </Typography>
             <StarsDisplay stars={rarity} colored />
-            {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
+            {/* {process.env['NODE_ENV'] === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
           </Box>
           <Box sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}>
             <Box

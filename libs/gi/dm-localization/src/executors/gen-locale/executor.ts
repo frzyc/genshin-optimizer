@@ -62,7 +62,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
     )
     // layeredAssignment(mapHashData, [...keys, "descriptionDetail"], avatarDetailTextMapHash)
     // Don't override constellation name if manually specified. For Zhongli
-    !mapHashData.char[characterIdMap[charid]]?.constellationName &&
+    !mapHashData.char[characterIdMap[charid]]?.['constellationName'] &&
       layeredAssignment(
         mapHashData,
         ['char', charKey, 'constellationName'],
@@ -450,7 +450,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
 
   //dump the language data to files
   Object.entries(languageData).forEach(([lang, data]) => {
-    const fileDir = `${process.env.NX_WORKSPACE_ROOT}/libs/gi/dm-localization/assets/locales/${lang}`
+    const fileDir = `${process.env['NX_WORKSPACE_ROOT']}/libs/gi/dm-localization/assets/locales/${lang}`
 
     Object.entries(data).forEach(([type, typeData]) => {
       //general manual localization namespaces

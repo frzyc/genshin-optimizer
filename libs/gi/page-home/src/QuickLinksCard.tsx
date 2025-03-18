@@ -32,22 +32,22 @@ const genshin_optimizer_links = [
   {
     title: () => 'Discord',
     icon: <DiscordIcon />,
-    url: process.env.NX_URL_DISCORD_GO,
+    url: process.env['NX_URL_DISCORD_GO'],
   },
   {
     title: () => 'Github',
     icon: <GitHub />,
-    url: process.env.NX_URL_GITHUB_GO,
+    url: process.env['NX_URL_GITHUB_GO'],
   },
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.patchNotes.title'),
     icon: <Description />,
-    url: `${process.env.NX_URL_GITHUB_GO}/releases`,
+    url: `${process.env['NX_URL_GITHUB_GO']}/releases`,
   },
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.tyGuide.title'),
     icon: <YouTube />,
-    url: process.env.NX_URL_YOUTUBE_TUTPL,
+    url: process.env['NX_URL_YOUTUBE_TUTPL'],
   },
 ]
 
@@ -55,22 +55,22 @@ const frzyc_links = [
   {
     title: () => 'Twitch',
     icon: <TwitchIcon />,
-    url: process.env.NX_URL_TWITCH_FRZYC,
+    url: process.env['NX_URL_TWITCH_FRZYC'],
   },
   {
     title: () => 'Twitter',
     icon: <Twitter />,
-    url: process.env.NX_URL_TWITTER_FRZYC,
+    url: process.env['NX_URL_TWITTER_FRZYC'],
   },
   {
     title: () => 'Patreon',
     icon: <PatreonIcon />,
-    url: process.env.NX_URL_PATREON_FRZYC,
+    url: process.env['NX_URL_PATREON_FRZYC'],
   },
   {
     title: () => 'PayPal',
     icon: <PaypalIcon />,
-    url: process.env.NX_URL_PAYPAL_FRZYC,
+    url: process.env['NX_URL_PAYPAL_FRZYC'],
   },
 ]
 
@@ -83,12 +83,12 @@ const other_links = [
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.kqm.title'),
     icon: <Handshake />,
-    url: process.env.NX_URL_WEBSITE_KQM,
+    url: process.env['NX_URL_WEBSITE_KQM'],
   },
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.devDiscord.title'),
     icon: <DiscordIcon />,
-    url: process.env.NX_URL_DISCORD_GDEV,
+    url: process.env['NX_URL_DISCORD_GDEV'],
   },
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.good.title'),

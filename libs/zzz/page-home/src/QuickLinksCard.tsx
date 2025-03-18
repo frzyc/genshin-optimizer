@@ -14,12 +14,12 @@ const links = [
   {
     title: () => 'Gacha Optimizer Discord',
     icon: <DiscordIcon />,
-    url: process.env.NX_URL_DISCORD_GO,
+    url: process.env['NX_URL_DISCORD_GO'],
   },
   {
     title: () => 'Github',
     icon: <GitHub />,
-    url: process.env.NX_URL_GITHUB_GO,
+    url: process.env['NX_URL_GITHUB_GO'],
   },
 ] as const
 

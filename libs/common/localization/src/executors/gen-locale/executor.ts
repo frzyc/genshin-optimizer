@@ -11,7 +11,7 @@ import type { GenLocaleExecutorSchema } from './schema'
  */
 type ProjNames = 'common' | 'gi' | 'sr' | 'zzz'
 export const projRootPath = (cat: ProjNames) =>
-  `${process.env.NX_WORKSPACE_ROOT}/libs/${cat}/localization/`
+  `${process.env['NX_WORKSPACE_ROOT']}/libs/${cat}/localization/`
 
 export default async function runExecutor(_options: GenLocaleExecutorSchema) {
   // Load translation files from POEditor into the assets folder.

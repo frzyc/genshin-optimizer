@@ -377,7 +377,7 @@ export class UIData {
       case 'mul':
       case 'min':
       case 'max': {
-        if (process.env.NODE_ENV !== 'development') {
+        if (process.env['NODE_ENV'] !== 'development') {
           const identity = allOperations[operation]([])
           operands = operands.filter((operand) => operand.value !== identity)
         }

@@ -1,7 +1,7 @@
 import process = require('node:process')
+import { readFile, stat } from 'node:fs/promises'
 import type { ChatInputCommandInteraction } from 'discord.js'
 import { EmbedBuilder, SlashCommandBuilder } from 'discord.js'
-import { readFile, stat } from 'node:fs/promises'
 
 export const slashcommand = new SlashCommandBuilder()
   .setName('debug')

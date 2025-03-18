@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { parse } from 'yaml'
 import type { GenAssetsExecutorSchema } from './schema'
 
-export const PROJROOT_PATH = `${process.env.NX_WORKSPACE_ROOT}/libs/gi/silly-wisher-names`
+export const PROJROOT_PATH = `${process.env['NX_WORKSPACE_ROOT']}/libs/gi/silly-wisher-names`
 
 const languages = [
   'en',

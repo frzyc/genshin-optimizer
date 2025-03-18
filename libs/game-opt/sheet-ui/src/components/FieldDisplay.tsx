@@ -89,7 +89,7 @@ export function TagFieldDisplay({
   field,
   component = ListItem,
   emphasize,
-  showZero = process.env.NODE_ENV === 'development',
+  showZero = process.env['NODE_ENV'] === 'development',
 }: {
   field: TagField
   component?: React.ElementType

@@ -72,7 +72,7 @@ function PatchNotesCard() {
   useEffect(() => {
     const regex = /^(\d+)\.(\d+)\.(\d+)$/
     const minorVersion = __VERSION__.replace(regex, `$1.$2.${0}`)
-    fetch(process.env.NX_URL_GITHUB_API_GO_RELEASES + minorVersion)
+    fetch(process.env['NX_URL_GITHUB_API_GO_RELEASES'] + minorVersion)
       .then((res) => res.arrayBuffer())
       .then((buffer) => {
         const decoder = new TextDecoder('utf-8')

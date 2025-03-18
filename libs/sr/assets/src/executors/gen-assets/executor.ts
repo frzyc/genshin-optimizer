@@ -1,6 +1,8 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import { Readable } from 'node:stream'
+import { finished } from 'node:stream/promises'
+import type { ReadableStream } from 'node:stream/web'
 import { generateIndexFromObj } from '@genshin-optimizer/common/pipeline'
 import {
   crawlObject,
@@ -10,8 +12,6 @@ import {
 import { AssetData } from '@genshin-optimizer/sr/assets-data'
 import { DM2D_PATH } from '@genshin-optimizer/sr/dm'
 import { workspaceRoot } from '@nx/devkit'
-import { finished } from 'node:stream/promises'
-import type { ReadableStream } from 'node:stream/web'
 import type { GenAssetsExecutorSchema } from './schema'
 
 const DEST_PROJ_PATH = `${workspaceRoot}/libs/sr/assets/src` as const

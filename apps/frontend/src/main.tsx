@@ -9,7 +9,7 @@ import ReactGA from 'react-ga4'
 import App from './app/App'
 import NewTab from './app/NewTab'
 import './index.css'
-ReactGA.initialize(process.env.NX_GA_TRACKINGID as any, {
+ReactGA.initialize(process.env['NX_GA_TRACKINGID'] as any, {
   testMode: isDev,
 })
 let mode: 'main' | 'newtab' = 'main'

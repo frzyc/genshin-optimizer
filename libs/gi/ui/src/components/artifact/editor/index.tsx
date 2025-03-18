@@ -704,7 +704,7 @@ export function ArtifactEditor({
                               <span>
                                 Screenshots in file-queue:
                                 <b>{queueTotal}</b>
-                                {/* {process.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
+                                {/* {process.env['NODE_ENV'] === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
                               </span>
                             </Typography>
 
@@ -856,7 +856,7 @@ export function ArtifactEditor({
                 {t('editor.btnClear')}
               </Button>
             )}
-            {process.env.NODE_ENV === 'development' && (
+            {process.env['NODE_ENV'] === 'development' && (
               <Button
                 color="info"
                 startIcon={<Shuffle />}

@@ -21,7 +21,7 @@ const i18nInstance = i18n
 // Configure localization.
 
 i18nInstance.init({
-  // debug: process.env.NODE_ENV === "development",
+  // debug: process.env['NODE_ENV'] === "development",
   // Use English strings by default, if the current language does not include
   // the specified string.
   fallbackLng: 'en',
