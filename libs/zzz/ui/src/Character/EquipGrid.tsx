@@ -7,7 +7,6 @@ import { Grid } from '@mui/material'
 import { Stack } from '@mui/system'
 import { CompactDiscCard, DiscSetCardCompact } from '../Disc'
 import { CompactWengineCard } from '../Wengine'
-import { EmptyCompactCard } from '../util'
 const emptyDiscs = objKeyMap(allDiscSlotKeys, () => undefined)
 export function EquipGrid({
   discIds = emptyDiscs,

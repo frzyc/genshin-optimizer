@@ -10,9 +10,9 @@ import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { applyDamageTypeToTag, own } from '@genshin-optimizer/zzz/formula'
 import {
+  FullTagDisplay,
   TagDisplay,
   formulaText,
-  getDmgType,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { ZCard } from '@genshin-optimizer/zzz/ui'
