@@ -72,8 +72,16 @@ export function CharCalcProvider({
         ),
         ...charOpt.bonusStats.flatMap(({ tag: { src, dst, ...tag }, value }) =>
           withPreset(`preset0`, {
-            // since bonusStats are applied to own*, needs {src:key, dst:undefined}
-            tag: { ...tag, src: character.key },
+            // since bonusStats are applied to own*, needs {src:key, dst:never}
+            tag: {
+              ...tag,
+              src: character.key,
+              // To keep parity with how we do it in formula, both damageTypes should be defined.
+              // This prevents this cornercase: {dt1:exspecial} won't apply to {dt1:basic, dt2:exspecial}
+              ...(tag.damageType1 && !tag.damageType2
+                ? { damageType2: tag.damageType1 }
+                : {}),
+            },
             value: constant(toDecimal(value, tag.q ?? '')),
           })
         ),

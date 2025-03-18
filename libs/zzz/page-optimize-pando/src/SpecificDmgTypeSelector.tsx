@@ -81,12 +81,12 @@ export function SpecificDmgTypeDropdown({
       }
     >
       <MenuItem
-        key={'none'}
+        key={'any'}
         selected={!dmgType}
         disabled={!dmgType}
         onClick={() => setDmgType()}
       >
-        None
+        Any
       </MenuItem>
       {specificDmgTypeKeys.map((k) => (
         <MenuItem

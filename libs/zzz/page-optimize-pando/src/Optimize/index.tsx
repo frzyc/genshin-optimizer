@@ -15,7 +15,10 @@ import {
   useCharOpt,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import { getFormula } from '@genshin-optimizer/zzz/formula'
+import {
+  applyDamageTypeToTag,
+  getFormula,
+} from '@genshin-optimizer/zzz/formula'
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
 import { optimize } from '@genshin-optimizer/zzz/solver-pando'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
@@ -183,11 +186,11 @@ function OptimizeWrapper() {
       calc,
       [
         {
-          tag: {
-            ...formula.tag,
-            ...(targetDamageType1 ? { damageType1: targetDamageType1 } : {}),
-            ...(targetDamageType2 ? { damageType2: targetDamageType2 } : {}),
-          },
+          tag: applyDamageTypeToTag(
+            formula.tag,
+            targetDamageType1,
+            targetDamageType2
+          ),
           multiplier: 1,
         },
       ],

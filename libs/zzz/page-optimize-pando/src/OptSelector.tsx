@@ -1,6 +1,9 @@
 import type { CharOpt, ICachedCharacter } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { getFormula } from '@genshin-optimizer/zzz/formula'
+import {
+  applyDamageTypeToTag,
+  getFormula,
+} from '@genshin-optimizer/zzz/formula'
 import { OptimizationTargetSelector } from '@genshin-optimizer/zzz/formula-ui'
 import { useMemo } from 'react'
 
@@ -16,11 +19,8 @@ export function OptSelector({
   const formula = getFormula(targetSheet, targetName)
   const tag = useMemo(
     () =>
-      formula?.tag && {
-        ...formula.tag,
-        ...(targetDamageType1 ? { damageType1: targetDamageType1 } : {}),
-        ...(targetDamageType2 ? { damageType2: targetDamageType2 } : {}),
-      },
+      formula?.tag &&
+      applyDamageTypeToTag(formula.tag, targetDamageType1, targetDamageType2),
     [formula?.tag, targetDamageType1, targetDamageType2]
   )
 

@@ -8,7 +8,7 @@ import type { Read } from '@genshin-optimizer/game-opt/engine'
 import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
 import { useCharacterContext, useCharOpt } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { own } from '@genshin-optimizer/zzz/formula'
+import { applyDamageTypeToTag, own } from '@genshin-optimizer/zzz/formula'
 import {
   formulaText,
   FullTagDisplay,
@@ -48,15 +48,11 @@ function StatLine({ read }: { read: Read<Tag> }) {
     read.tag.name === charOpt?.targetName
   const tag = useMemo(() => {
     if (!emphasize) return read.tag
-    return {
-      ...read.tag,
-      ...(charOpt?.targetDamageType1
-        ? { damageType1: charOpt?.targetDamageType1 }
-        : {}),
-      ...(charOpt?.targetDamageType2
-        ? { damageType2: charOpt?.targetDamageType2 }
-        : {}),
-    }
+    return applyDamageTypeToTag(
+      read.tag,
+      charOpt?.targetDamageType1,
+      charOpt?.targetDamageType2
+    )
   }, [
     emphasize,
     charOpt?.targetDamageType1,
