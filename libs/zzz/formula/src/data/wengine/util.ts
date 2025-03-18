@@ -61,11 +61,11 @@ export function entriesForWengine(key: WengineKey): TagMapNodeEntries {
 export function cmpSpecialtyAndEquipped(key: WengineKey, num: NumNode) {
   const weCount = own.common.count.sheet(key)
   const type = getWengineStat(key).type
-  return cmpEq(type, own.char.specialty, cmpGE(weCount, 1, num))
+  return cmpGE(weCount, 1, cmpEq(type, own.char.specialty, num))
 }
 
 export function showSpecialtyAndEquipped(key: WengineKey) {
   const weCount = own.common.count.sheet(key)
   const type = getWengineStat(key).type
-  return cmpEq(type, own.char.specialty, cmpGE(weCount, 1, 'infer', ''), '')
+  return cmpGE(weCount, 1, cmpEq(type, own.char.specialty, 'infer', ''), '')
 }
