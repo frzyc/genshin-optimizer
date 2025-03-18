@@ -244,4 +244,93 @@ describe('Disc sheets test', () => {
     expect(calc.compute(char.final.dmg_.electric).val).toBeCloseTo(0.24)
     expect(calc.compute(char.combat.enerRegen_).val).toBeCloseTo(0.275)
   })
+
+  it('DrillRigRedAxis', () => {
+    const { data, characterKey } = testCharacterData('DrillRigRedAxis')
+    data.push(
+      cond(
+        characterKey,
+        'DrillRigRedAxis',
+        conditionals.DrillRigRedAxis.exSpecialOrChainUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.final.dmg_.electric.basic[0]).val).toBeCloseTo(0.8)
+    expect(calc.compute(char.final.dmg_.electric.dash[0]).val).toBeCloseTo(0.8)
+  })
+
+  it('ElectroLipGloss', () => {
+    const { data, characterKey } = testCharacterData('ElectroLipGloss')
+    data.push(
+      cond(
+        characterKey,
+        'ElectroLipGloss',
+        conditionals.ElectroLipGloss.anomalyOnEnemy.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(0.16)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.25)
+  })
+
+  it('ElegantVanity', () => {
+    const { data, characterKey } = testCharacterData('ElegantVanity')
+    data.push(
+      cond(
+        characterKey,
+        'ElegantVanity',
+        conditionals.ElegantVanity.consumed25Energy.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(2 * 0.16)
+  })
+
+  it('FlamemakerShaker', () => {
+    const { data, characterKey } = testCharacterData('FlamemakerShaker')
+    data.push(
+      cond(
+        characterKey,
+        'FlamemakerShaker',
+        conditionals.FlamemakerShaker.offField.name,
+        1
+      ),
+      cond(
+        characterKey,
+        'FlamemakerShaker',
+        conditionals.FlamemakerShaker.exSpecialAssistHits.name,
+        10
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(10 * 0.07 * 2)
+    expect(calc.compute(char.combat.anomProf).val).toBeCloseTo(100)
+  })
 })

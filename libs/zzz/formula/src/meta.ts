@@ -89,62 +89,23 @@ export const conditionals = {
     },
   },
   DrillRigRedAxis: {
-    boolConditional: {
+    exSpecialOrChainUsed: {
       sheet: 'DrillRigRedAxis',
-      name: 'boolConditional',
+      name: 'exSpecialOrChainUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DrillRigRedAxis',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DrillRigRedAxis',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ElectroLipGloss: {
-    boolConditional: {
+    anomalyOnEnemy: {
       sheet: 'ElectroLipGloss',
-      name: 'boolConditional',
+      name: 'anomalyOnEnemy',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ElectroLipGloss',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ElectroLipGloss',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ElegantVanity: {
-    boolConditional: {
+    consumed25Energy: {
       sheet: 'ElegantVanity',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ElegantVanity',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ElegantVanity',
-      name: 'numConditional',
+      name: 'consumed25Energy',
       type: 'num',
       int_only: true,
       min: 0,
@@ -159,25 +120,15 @@ export const conditionals = {
     },
   },
   FlamemakerShaker: {
-    boolConditional: {
+    exSpecialAssistHits: {
       sheet: 'FlamemakerShaker',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FlamemakerShaker',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FlamemakerShaker',
-      name: 'numConditional',
+      name: 'exSpecialAssistHits',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 10,
     },
+    offField: { sheet: 'FlamemakerShaker', name: 'offField', type: 'bool' },
   },
   FusionCompiler: {
     boolConditional: {
@@ -2464,107 +2415,67 @@ export const buffs = {
     },
   },
   DrillRigRedAxis: {
-    cond_dmg_: {
+    basic_eletric_dmg_: {
       sheet: 'DrillRigRedAxis',
-      name: 'cond_dmg_',
+      name: 'basic_eletric_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'DrillRigRedAxis',
-        name: 'cond_dmg_',
+        attribute: 'electric',
+        damageType1: 'basic',
+        name: 'basic_eletric_dmg_',
       },
     },
-    enemy_defIgn_: {
+    dash_eletric_dmg_: {
       sheet: 'DrillRigRedAxis',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'DrillRigRedAxis',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DrillRigRedAxis',
-      name: 'team_dmg_',
+      name: 'dash_eletric_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'DrillRigRedAxis',
-        name: 'team_dmg_',
+        attribute: 'electric',
+        damageType1: 'dash',
+        name: 'dash_eletric_dmg_',
       },
     },
   },
   ElectroLipGloss: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'ElectroLipGloss',
-      name: 'cond_dmg_',
+      name: 'atk_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'atk_',
+        sheet: 'ElectroLipGloss',
+        name: 'atk_',
+      },
+    },
+    common_dmg_: {
+      sheet: 'ElectroLipGloss',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'ElectroLipGloss',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'ElectroLipGloss',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'ElectroLipGloss',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ElectroLipGloss',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'ElectroLipGloss',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
   ElegantVanity: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'ElegantVanity',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'ElegantVanity',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'ElegantVanity',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'ElegantVanity',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ElegantVanity',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'ElegantVanity',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
@@ -2582,37 +2493,37 @@ export const buffs = {
     },
   },
   FlamemakerShaker: {
-    cond_dmg_: {
+    anomProf: {
       sheet: 'FlamemakerShaker',
-      name: 'cond_dmg_',
+      name: 'anomProf',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomProf',
+        sheet: 'FlamemakerShaker',
+        name: 'anomProf',
+      },
+    },
+    common_dmg_: {
+      sheet: 'FlamemakerShaker',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'FlamemakerShaker',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
-    enemy_defIgn_: {
+    enerRegen: {
       sheet: 'FlamemakerShaker',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'FlamemakerShaker',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FlamemakerShaker',
-      name: 'team_dmg_',
+      name: 'enerRegen',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'enerRegen',
         sheet: 'FlamemakerShaker',
-        name: 'team_dmg_',
+        name: 'enerRegen',
       },
     },
   },
