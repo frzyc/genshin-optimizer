@@ -20,8 +20,7 @@ export function CompareBuildWrapper(props: WrapperProps) {
   const characterContextObj = useContext(CharacterContext)
   if (teamCharacterContextObj?.teamChar?.optConfigId)
     return <TeamWrapper {...props} />
-  if (characterContextObj?.character)
-    return <CharacterWrapper {...props} />
+  if (characterContextObj?.character) return <CharacterWrapper {...props} />
   return null
 }
 function TeamWrapper({ artIdOrSlot, weaponId, onHide, onEquip }: WrapperProps) {

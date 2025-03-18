@@ -22,8 +22,7 @@ export async function send(
 export function error(interaction: Interaction, e: any, ephemeral = true) {
   if (!(typeof e === 'string')) {
     if ('rawError' in e) e = e.rawError
-    e =
-      `\`\`\`json\n${JSON.stringify(e, Object.getOwnPropertyNames(e)).slice(0, 1990)}\`\`\``
+    e = `\`\`\`json\n${JSON.stringify(e, Object.getOwnPropertyNames(e)).slice(0, 1990)}\`\`\``
   }
   if (!interaction.isAutocomplete())
     return interaction.reply({

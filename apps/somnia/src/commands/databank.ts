@@ -188,7 +188,8 @@ export function databankMessage(subcommand: string, id: string, arg: string) {
   //artifacts archive
   if (subcommand === 'relic') {
     return relicBank(id as RelicSetKey, name, data)
-  }throw 'Invalid selection'
+  }
+  throw 'Invalid selection'
 }
 
 export async function run(interaction: ChatInputCommandInteraction) {

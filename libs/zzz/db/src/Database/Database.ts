@@ -118,7 +118,9 @@ export class ZzzDatabase extends Database {
     const source = zod.source ?? 'Unknown'
     // Some Scanners might carry their own id field, which would conflict with GO dup resolution.
     if (source !== zzzSource) {
-      zod.discs?.forEach((a) => (a as unknown as { id?: string }).id = undefined)
+      zod.discs?.forEach(
+        (a) => ((a as unknown as { id?: string }).id = undefined)
+      )
     }
     const result: ImportResult = newImportResult(
       source,

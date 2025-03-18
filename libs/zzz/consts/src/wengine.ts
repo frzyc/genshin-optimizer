@@ -515,8 +515,7 @@ export const wengineSheets: Partial<
       const p = stats.wenginePhase - 1
       const ele_ = [0.5, 0.575, 0.65, 0.725, 0.8]
       const ret: Record<string, number> = {}
-      if (conds.DrillRigRedAxis)
-        objSumInPlace(ret, { electric_dmg_: ele_[p] })
+      if (conds.DrillRigRedAxis) objSumInPlace(ret, { electric_dmg_: ele_[p] })
       return ret
     },
   },
@@ -733,8 +732,7 @@ export const wengineSheets: Partial<
         return {
           cond_atk_:
             atk_[p] *
-            ((conds.MarcatoDesireHit ?? 0) +
-              (conds.MarcatoDesireAnomaly ?? 0)),
+            ((conds.MarcatoDesireHit ?? 0) + (conds.MarcatoDesireAnomaly ?? 0)),
         } as Record<string, number>
       return undefined
     },

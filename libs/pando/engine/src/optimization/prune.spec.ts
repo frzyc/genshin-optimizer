@@ -173,20 +173,26 @@ describe('state', () => {
       return inc ? n : sumfrac(10000, n)
     }
     function getMonotonicity(node: NumTagFree): Map<string, Monotonicity> {
-      return new State([node], [Number.NEGATIVE_INFINITY], candidates, 'q').monotonicities
+      return new State([node], [Number.NEGATIVE_INFINITY], candidates, 'q')
+        .monotonicities
     }
 
     test('only on constraint nodes', () => {
       const nodes = [r0, prod(-1, r0)]
       {
         // only the first node affect monotonicity
-        const m = new State(nodes, [Number.NEGATIVE_INFINITY], candidates, 'q').monotonicities
+        const m = new State(nodes, [Number.NEGATIVE_INFINITY], candidates, 'q')
+          .monotonicities
         expect(m).toEqual(new Map([['c0', { inc: true, dec: false }]]))
       }
       {
         // both nodes affect monotonicity
-        const m = new State(nodes, [Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY], candidates, 'q')
-          .monotonicities
+        const m = new State(
+          nodes,
+          [Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY],
+          candidates,
+          'q'
+        ).monotonicities
         expect(m).toEqual(new Map([['c0', { inc: false, dec: false }]]))
       }
     })

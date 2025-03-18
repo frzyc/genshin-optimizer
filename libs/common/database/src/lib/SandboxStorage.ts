@@ -78,7 +78,11 @@ export class SandboxStorage implements DBStorage {
     this.setString(this.dbVersionKey, version.toString())
   }
   getDBIndex(): 1 | 2 | 3 | 4 {
-    return Number.parseInt(this.getString(this.dbIndexKey) ?? '1') as 1 | 2 | 3 | 4
+    return Number.parseInt(this.getString(this.dbIndexKey) ?? '1') as
+      | 1
+      | 2
+      | 3
+      | 4
   }
   setDBIndex(ind: 1 | 2 | 3 | 4) {
     this.setString(this.dbIndexKey, ind.toString())

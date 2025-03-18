@@ -54,7 +54,8 @@ export function DiscSetCardCompact({
             bgt="light"
             sx={(theme) => ({
               height: `${
-                (COMPACT_CARD_HEIGHT_PX - Number.parseFloat(theme.spacing(0.5 * 4))) /
+                (COMPACT_CARD_HEIGHT_PX -
+                  Number.parseFloat(theme.spacing(0.5 * 4))) /
                 3
               }px`,
               display: 'flex',

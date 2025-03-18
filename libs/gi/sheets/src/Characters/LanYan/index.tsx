@@ -162,7 +162,8 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
 function autoIndex(index: number) {
   if (index > 3) {
     return index - 2
-  }if (index > 1) {
+  }
+  if (index > 1) {
     return index - 1
   }
   return index
@@ -170,7 +171,8 @@ function autoIndex(index: number) {
 function autoSuffix(index: number) {
   if (index === 1 || index === 3) {
     return '(1)'
-  }if (index === 2 || index === 4) {
+  }
+  if (index === 2 || index === 4) {
     return '(2)'
   }
   return undefined

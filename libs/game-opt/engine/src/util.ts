@@ -6,7 +6,8 @@ export function correctConditionalValue(
 ) {
   if (conditional.type === 'bool') {
     return +!!value
-  }if (conditional.type === 'num') {
+  }
+  if (conditional.type === 'num') {
     if (conditional.int_only && !Number.isInteger(value)) {
       value = Math.round(value)
     }

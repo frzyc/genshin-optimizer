@@ -72,9 +72,9 @@ export function getArtifactMeta(flex: IArtifact): {
         accurateValue,
       }
     }
-      // Invalid Substat
-      errors.push(`Invalid substat ${substat.key}`)
-      return defSubMeta()
+    // Invalid Substat
+    errors.push(`Invalid substat ${substat.key}`)
+    return defSubMeta()
   })
 
   const validated = {

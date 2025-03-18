@@ -93,7 +93,9 @@ describe('optimization', () => {
       expect(runCompile(subscript(2, ['a', 'b', 'c', 'd']))).toEqual('c')
       expect(runCompile(lookup('c', { a: 1, b: 2, c: 3, d: 4 }))).toEqual(3)
       // Lookup default branch
-      expect(runCompile(lookup('X', { a: 1, b: 2, c: 3, d: 4 }))).toEqual(Number.NaN)
+      expect(runCompile(lookup('X', { a: 1, b: 2, c: 3, d: 4 }))).toEqual(
+        Number.NaN
+      )
     })
     test('custom computation', () => {
       expect(runCompile(custom('foo', 1, 2, 3, 4))).toEqual(7)

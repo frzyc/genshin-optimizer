@@ -42,7 +42,7 @@
     "enabled": true,
     "rules": {
       "a11y": { "noSvgWithoutTitle": "off" },
-      "complexity": { "noForEach": "info" },
+      "complexity": { "noForEach": "info", "useLiteralKeys": "off" },
       "suspicious": {
         "noArrayIndexKey": "off",
         "noAssignInExpressions": "off",

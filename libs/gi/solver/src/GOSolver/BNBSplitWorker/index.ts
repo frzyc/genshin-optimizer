@@ -87,7 +87,7 @@ export class BNBSplitWorker implements SplitWorker {
       this.min[0] = newThreshold
       // All calculations become stale
       this.firstUncalculated = 0
-      this.filters.forEach((filter) => filter.calculated = undefined)
+      this.filters.forEach((filter) => (filter.calculated = undefined))
     }
   }
   *split(filter: RequestFilter, minCount: number): Generator<RequestFilter> {

@@ -95,8 +95,7 @@ export function EquippedGrid({
           )}
         </Suspense>
         <Box>
-          {wengine?.id &&
-          database.wengines.keys.includes(wengine.id) ? (
+          {wengine?.id && database.wengines.keys.includes(wengine.id) ? (
             <WengineCard
               wengineId={wengine.id}
               onEdit={() => onEditWengine(wengine.id)}

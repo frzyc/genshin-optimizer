@@ -223,55 +223,55 @@ export class CharacterDataManager extends DataManager<
     if (isSro) {
       return JSON.stringify(db) === JSON.stringify(char)
     }
-      let {
-        key,
-        level,
-        eidolon,
-        ascension,
-        basic,
-        skill,
-        ult,
-        talent,
-        bonusAbilities,
-        statBoosts,
-      } = db
-      const dbSr = {
-        key,
-        level,
-        eidolon,
-        ascension,
-        basic,
-        skill,
-        ult,
-        talent,
-        bonusAbilities,
-        statBoosts,
-      }
-      ;({
-        key,
-        level,
-        eidolon,
-        ascension,
-        basic,
-        skill,
-        ult,
-        talent,
-        bonusAbilities,
-        statBoosts,
-      } = char)
-      const charSr = {
-        key,
-        level,
-        eidolon,
-        ascension,
-        basic,
-        skill,
-        ult,
-        talent,
-        bonusAbilities,
-        statBoosts,
-      }
-      return JSON.stringify(dbSr) === JSON.stringify(charSr)
+    let {
+      key,
+      level,
+      eidolon,
+      ascension,
+      basic,
+      skill,
+      ult,
+      talent,
+      bonusAbilities,
+      statBoosts,
+    } = db
+    const dbSr = {
+      key,
+      level,
+      eidolon,
+      ascension,
+      basic,
+      skill,
+      ult,
+      talent,
+      bonusAbilities,
+      statBoosts,
+    }
+    ;({
+      key,
+      level,
+      eidolon,
+      ascension,
+      basic,
+      skill,
+      ult,
+      talent,
+      bonusAbilities,
+      statBoosts,
+    } = char)
+    const charSr = {
+      key,
+      level,
+      eidolon,
+      ascension,
+      basic,
+      skill,
+      ult,
+      talent,
+      bonusAbilities,
+      statBoosts,
+    }
+    return JSON.stringify(dbSr) === JSON.stringify(charSr)
   }
   triggerCharacter(key: CharacterKey, reason: TriggerString) {
     this.trigger(key, reason, this.get(key))

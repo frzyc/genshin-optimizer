@@ -96,8 +96,7 @@ ${dataContent}
 } as const
 export default data
 `
-  const formatted =
-    `// This is a generated index file.\n${await formatText(`${path}/index.ts`, indexContent)}`
+  const formatted = `// This is a generated index file.\n${await formatText(`${path}/index.ts`, indexContent)}`
   mkdirSync(path, { recursive: true })
   writeFileSync(`${path}/index.ts`, formatted)
 

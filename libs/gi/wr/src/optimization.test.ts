@@ -76,12 +76,12 @@ describe('optimization', () => {
       sum(r1, r2, r3),
     ])
     expect(constantFold([prod(1, r1, r2, r3)], {})).toEqual([prod(r1, r2, r3)])
-    expect(constantFold([min(Number.POSITIVE_INFINITY, r1, r2, r3)], {})).toEqual([
-      min(r1, r2, r3),
-    ])
-    expect(constantFold([max(Number.NEGATIVE_INFINITY, r1, r2, r3)], {})).toEqual([
-      max(r1, r2, r3),
-    ])
+    expect(
+      constantFold([min(Number.POSITIVE_INFINITY, r1, r2, r3)], {})
+    ).toEqual([min(r1, r2, r3)])
+    expect(
+      constantFold([max(Number.NEGATIVE_INFINITY, r1, r2, r3)], {})
+    ).toEqual([max(r1, r2, r3)])
 
     // Degenerate case
     expect(constantFold([prod(0, r1, r2, r3)], {})).toEqual([constant(0)])

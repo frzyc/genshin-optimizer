@@ -112,7 +112,8 @@ export const parsingFunctions: {
     if (strings.length === 3) {
       const [normal, charged, plunging] = strings
       return { normal, charged, plunging } as any
-    }if (strings.length === 4) {
+    }
+    if (strings.length === 4) {
       //for childe or kazuha
       const [, charkey] = keys as any
       if (charkey === 'KaedeharaKazuha') {
@@ -200,7 +201,7 @@ export const parsingFunctions: {
           if (percent === 'P') {
             return `, percent(fixed: ${floatOrInt[1]})}}%`
           }
-            return `, fixed(fixed: ${floatOrInt[1]})}}`
+          return `, fixed(fixed: ${floatOrInt[1]})}}`
         }
         // 'P'
         if (percent === 'P') {

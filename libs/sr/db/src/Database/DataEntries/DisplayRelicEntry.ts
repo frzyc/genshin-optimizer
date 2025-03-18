@@ -177,6 +177,7 @@ export class DisplayRelicEntry extends DataEntry<
       if (value.action === 'reset')
         return super.set({ filterOption: initialFilterOption() })
       return false
-    }return super.set(value)
+    }
+    return super.set(value)
   }
 }

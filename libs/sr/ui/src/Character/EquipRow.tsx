@@ -44,7 +44,9 @@ export function EquipRow({
   const theme = useTheme()
   useEffect(() => {
     if (!ref.current || !width) return
-    const fontSize = Number.parseFloat(window.getComputedStyle(ref.current).fontSize)
+    const fontSize = Number.parseFloat(
+      window.getComputedStyle(ref.current).fontSize
+    )
     const spacing = Number.parseFloat(theme.spacing(1))
     const eleWidthPx = fontSize * COMPACT_ELE_WIDTH_NUMBER
     const numCols =

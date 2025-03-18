@@ -390,10 +390,10 @@ export const disc4PeffectSheets: Partial<
       if (conds.ChaoticMetal)
         objSumInPlace(
           ret,
-          objMultiplication(
-            { crit_dmg_: 0.055 },
-            conds.ChaoticMetal
-          ) as Record<string, number>
+          objMultiplication({ crit_dmg_: 0.055 }, conds.ChaoticMetal) as Record<
+            string,
+            number
+          >
         )
       return ret
     },

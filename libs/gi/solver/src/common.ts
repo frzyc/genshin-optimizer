@@ -330,7 +330,8 @@ function pruneArtRange(
         const read = addArtRange([computeArtRange([art]), otherArtRanges[slot]])
         const newRange = computeNodeRange(nodes, read)
         return nodes.every(
-          (node, i) => newRange.get(node)!.max >= (minimum[i] ?? Number.NEGATIVE_INFINITY)
+          (node, i) =>
+            newRange.get(node)!.max >= (minimum[i] ?? Number.NEGATIVE_INFINITY)
         )
       })
       if (result.length !== wrap.arts.values[slot].length) progress = true
@@ -369,8 +370,7 @@ function pruneNodeRange(nodes: OptNode[], arts: ArtifactsBySlot): OptNode[] {
             pass.max === pass.min &&
             fail.max === fail.min &&
             pass.min === fail.min &&
-            Number.
-            isFinite(pass.min)
+            Number.isFinite(pass.min)
           )
             return constant(pass.max)
           break
@@ -501,7 +501,10 @@ export function computeNodeRange(
             current =
               x.min <= 0 && x.max >= 0
                 ? { min: Number.NaN, max: Number.NaN }
-                : { min: Number.NEGATIVE_INFINITY, max: Number.POSITIVE_INFINITY }
+                : {
+                    min: Number.NEGATIVE_INFINITY,
+                    max: Number.POSITIVE_INFINITY,
+                  }
           // TODO: Check this
           else
             current = computeMinMax([

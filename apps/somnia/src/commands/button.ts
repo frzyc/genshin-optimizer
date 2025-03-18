@@ -28,7 +28,8 @@ export async function run(interaction: ChatInputCommandInteraction) {
 
 export async function button(interaction: ButtonInteraction, args: string[]) {
   const newclicks = Number.parseInt(args[1])
-  if (newclicks && !Number.isNaN(newclicks)) clicks = Math.max(newclicks, clicks)
+  if (newclicks && !Number.isNaN(newclicks))
+    clicks = Math.max(newclicks, clicks)
   clicks++
   interaction.update(getbutton())
   return

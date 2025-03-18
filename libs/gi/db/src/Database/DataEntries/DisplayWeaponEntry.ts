@@ -101,6 +101,7 @@ export class DisplayWeaponEntry extends DataEntry<
     if ('action' in value) {
       if (value.action === 'reset') return super.set(initialOption())
       return false
-    }return super.set(value)
+    }
+    return super.set(value)
   }
 }

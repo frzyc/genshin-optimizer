@@ -7,10 +7,7 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import type {
-  AbilityKey,
-  StatBoostKey,
-} from '@genshin-optimizer/sr/consts'
+import type { AbilityKey, StatBoostKey } from '@genshin-optimizer/sr/consts'
 import type {
   CharacterDatum,
   SkillTreeNodeBonusStat,

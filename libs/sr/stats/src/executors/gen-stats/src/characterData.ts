@@ -228,11 +228,11 @@ function getSkillParamList(
       // Character skill (basic, skill, ult, talent, technique)
       return getSkillParamFromAvatarSkill(LevelUpSkillID, skillTreeType)
     }
-      // Servant skill
-      return getSkillParamFromAvatarServantSkill(LevelUpSkillID)
+    // Servant skill
+    return getSkillParamFromAvatarServantSkill(LevelUpSkillID)
   }
-    // Grab from itself (AvatarSkillTreeConfig) (bonus abilities/stat boosts)
-    return getSkillParamFromAvatarSkillTree(skillTree)
+  // Grab from itself (AvatarSkillTreeConfig) (bonus abilities/stat boosts)
+  return getSkillParamFromAvatarSkillTree(skillTree)
 }
 
 function getSkillParamFromAvatarSkill(

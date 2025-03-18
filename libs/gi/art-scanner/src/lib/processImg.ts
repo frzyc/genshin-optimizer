@@ -257,8 +257,7 @@ export async function processEntry(
     )
   if (debugImgs) {
     debugImgs.bwHeader = imageDataToCanvas(bwHeader).toDataURL()
-    debugImgs.greenTextCropped =
-      imageDataToCanvas(greenTextCropped).toDataURL()
+    debugImgs.greenTextCropped = imageDataToCanvas(greenTextCropped).toDataURL()
     debugImgs.bwGreenText = imageDataToCanvas(bwGreenText).toDataURL()
     if (bwEquipped)
       debugImgs.bwEquipped = imageDataToCanvas(bwEquipped).toDataURL()

@@ -9,14 +9,14 @@ export function validateTalent(
   if (talent === null || typeof talent !== 'object') {
     return { auto: 1, skill: 1, burst: 1 }
   }
-    // Clamp the character's talent levels according to ascension
-    const clampedTalent: ICharacterTalent = { ...talent }
-    for (const [key, value] of Object.entries(clampedTalent)) {
-      clampedTalent[key as keyof ICharacterTalent] = clamp(
-        value,
-        1,
-        talentLimits[ascension]
-      )
-    }
-    return clampedTalent
+  // Clamp the character's talent levels according to ascension
+  const clampedTalent: ICharacterTalent = { ...talent }
+  for (const [key, value] of Object.entries(clampedTalent)) {
+    clampedTalent[key as keyof ICharacterTalent] = clamp(
+      value,
+      1,
+      talentLimits[ascension]
+    )
+  }
+  return clampedTalent
 }

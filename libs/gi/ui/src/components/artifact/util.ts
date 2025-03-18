@@ -1,5 +1,5 @@
 export const artifactLevelVariant = (level: number) =>
-  (`roll${Math.floor(Math.max(level, 0) / 4) + 1}`) as RollColorKey
+  `roll${Math.floor(Math.max(level, 0) / 4) + 1}` as RollColorKey
 
 export const allRollColorKeys = [
   'roll1',

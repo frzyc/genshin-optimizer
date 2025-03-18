@@ -221,8 +221,7 @@ describe('example', () => {
       if (tag.src !== '0') return undefined // Wrong member
       if (tag.et !== 'own') return undefined // Not applied (only) to 'own'
 
-      if (tag.sheet === 'dyn' && tag.qt === 'premod')
-        return { q: tag.q! } // Art stat bonus
+      if (tag.sheet === 'dyn' && tag.qt === 'premod') return { q: tag.q! } // Art stat bonus
       if (tag.q === 'count' && allArts.has(tag.sheet as any))
         return { q: tag.sheet! } // Art set counter
       return undefined

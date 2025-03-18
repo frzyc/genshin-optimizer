@@ -254,7 +254,7 @@ export function sheetKeyToCharKey(sheetKey: CharacterSheetKey): CharacterKey {
 }
 
 export function travelerElement(element: TravelerElementKey): TravelerKey {
-  return (`Traveler${element.toUpperCase().slice(0, 1)}${element.slice(1)}`) as TravelerKey
+  return `Traveler${element.toUpperCase().slice(0, 1)}${element.slice(1)}` as TravelerKey
 }
 
 export const absorbableEle = ['hydro', 'pyro', 'cryo', 'electro'] as const

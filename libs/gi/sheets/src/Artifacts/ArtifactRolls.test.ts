@@ -591,8 +591,8 @@ describe('Artifact Roll Model', () => {
           Math.round(extrapolateFloat(Math.fround(theoretical * 10))) / 10
         ).toFixed(1)
       }
-        const theoretical = indices.reduce((a, b) => a + rolls[b], 0)
-        return Math.round(theoretical).toFixed(0)
+      const theoretical = indices.reduce((a, b) => a + rolls[b], 0)
+      return Math.round(theoretical).toFixed(0)
     }
     const model2: Model = (indices) => {
       if (key.endsWith('_')) {
@@ -602,8 +602,8 @@ describe('Artifact Roll Model', () => {
         )
         return (Math.round(Math.fround(theoretical * 10)) / 10).toFixed(1)
       }
-        const theoretical = indices.reduce((a, b) => a + rolls[b], 0)
-        return Math.round(theoretical).toFixed(0)
+      const theoretical = indices.reduce((a, b) => a + rolls[b], 0)
+      return Math.round(theoretical).toFixed(0)
     }
 
     for (const [string, ...values] of entries) {

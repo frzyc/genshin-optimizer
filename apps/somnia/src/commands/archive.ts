@@ -214,7 +214,8 @@ async function archiveMessage(
     if (!archive[subcommand].includes(id as ArtifactSetKey))
       throw 'Invalid artifact name'
     return await artifactArchive(id as ArtifactSetKey, lang)
-  }throw 'Invalid selection'
+  }
+  throw 'Invalid selection'
 }
 
 export async function run(interaction: ChatInputCommandInteraction) {

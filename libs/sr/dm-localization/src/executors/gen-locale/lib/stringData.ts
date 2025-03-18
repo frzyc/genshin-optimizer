@@ -89,17 +89,19 @@ function createValueStr(
       if (type?.startsWith('f')) {
         return `{{${index}, percent(fixed: ${type.substring(1)})}}${suffix}`
       }
-        return `{{${index}, percent}}${suffix}`
-    }if (type?.startsWith('f')) {
+      return `{{${index}, percent}}${suffix}`
+    }
+    if (type?.startsWith('f')) {
       return `{{${index}, fixed(fixed: ${type.substring(1)})}}`
     }
     return `{{${index}}}${suffix}`
-  }if (plainString) {
+  }
+  if (plainString) {
     return plainString
   }
-    throw new Error(
-      'No index, suffix, type or plainString passed to createValueStr'
-    )
+  throw new Error(
+    'No index, suffix, type or plainString passed to createValueStr'
+  )
 }
 
 const langArray = Object.entries(languageMap).map(([langKey, strings]) => {

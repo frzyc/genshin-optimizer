@@ -5,10 +5,7 @@ import {
   rarityDefIcon,
   specialityDefIcon,
 } from '@genshin-optimizer/zzz/assets'
-import type {
-  CharacterKey,
-  MilestoneKey,
-} from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey, MilestoneKey } from '@genshin-optimizer/zzz/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/zzz/db'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'

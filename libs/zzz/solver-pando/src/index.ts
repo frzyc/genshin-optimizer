@@ -82,8 +82,7 @@ export function optimize(
 
     // dyn is added as a layer in `discTagMapNodeEntries`
     // only `initial` stats are in main/subs of discs.
-    if (tag.sheet === 'dyn' && tag.qt === 'initial')
-      return { q: tag.q! } // Disc stat bonus
+    if (tag.sheet === 'dyn' && tag.qt === 'initial') return { q: tag.q! } // Disc stat bonus
 
     // Disc set counter
     if (tag.q === 'count' && discSetKeys.has(tag.sheet as any))

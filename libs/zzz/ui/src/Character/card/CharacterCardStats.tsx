@@ -52,10 +52,7 @@ export function CharacterCardStats({
     <FieldDisplayList bgt={bgt} sx={{ width: '100%', borderRadius: 0 }}>
       {stats.map((stat: string) => (
         <ListItem key={stat}>
-          <SubstatDisplay
-            substat={stat}
-            value={characterStats[stat]}
-          />
+          <SubstatDisplay substat={stat} value={characterStats[stat]} />
         </ListItem>
       ))}
 

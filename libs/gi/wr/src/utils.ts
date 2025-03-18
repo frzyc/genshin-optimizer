@@ -404,9 +404,9 @@ export function setReadNodeKeys<T extends NodeList>(
       )
     return { ...nodeList, path: prefix }
   }
-    return objKeyMap(Object.keys(nodeList), (key) =>
-      setReadNodeKeys(nodeList[key], [...prefix, key])
-    ) as any
+  return objKeyMap(Object.keys(nodeList), (key) =>
+    setReadNodeKeys(nodeList[key], [...prefix, key])
+  ) as any
 }
 export function data(base: NumNode, data: Data): DataNode<NumNode>
 export function data(base: StrNode, data: Data): DataNode<StrNode>

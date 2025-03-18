@@ -4,7 +4,7 @@ import type {
 } from '@genshin-optimizer/sr/consts'
 
 export const relicLevelVariant = (level: number) =>
-  (`roll${Math.floor(Math.max(level, 0) / 3) + 1}`) as RollColorKey
+  `roll${Math.floor(Math.max(level, 0) / 3) + 1}` as RollColorKey
 
 export const allRollColorKeys = [
   'roll1',
