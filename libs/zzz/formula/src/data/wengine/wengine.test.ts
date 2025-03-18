@@ -333,4 +333,87 @@ describe('Disc sheets test', () => {
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(10 * 0.07 * 2)
     expect(calc.compute(char.combat.anomProf).val).toBeCloseTo(100)
   })
+
+  it('FusionCompiler', () => {
+    const { data, characterKey } = testCharacterData('FusionCompiler')
+    data.push(
+      cond(
+        characterKey,
+        'FusionCompiler',
+        conditionals.FusionCompiler.specialUsed.name,
+        3
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(0.24)
+    expect(calc.compute(char.combat.anomProf).val).toBeCloseTo(3 * 50)
+  })
+
+  it('GildedBlossom', () => {
+    const { data, characterKey } = testCharacterData('GildedBlossom')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(0.096)
+    expect(calc.compute(char.final.dmg_.exSpecial[0]).val).toBeCloseTo(0.24)
+  })
+
+  it('HailstormShrine', () => {
+    const { data, characterKey } = testCharacterData('HailstormShrine')
+    data.push(
+      cond(
+        characterKey,
+        'HailstormShrine',
+        conditionals.HailstormShrine.exSpecialOrAnomaly.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    // Base + passive
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.8)
+    expect(calc.compute(char.final.dmg_.ice).val).toBeCloseTo(2 * 0.32)
+  })
+
+  it('HeartstringNocturne', () => {
+    const { data, characterKey } = testCharacterData('HeartstringNocturne')
+    data.push(
+      cond(
+        characterKey,
+        'HeartstringNocturne',
+        conditionals.HeartstringNocturne.heartstring.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    // Base + passive
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.8)
+    expect(calc.compute(char.final.resIgn_.fire.chain[0]).val).toBeCloseTo(
+      2 * 0.2
+    )
+    expect(calc.compute(char.final.resIgn_.fire.ult[0]).val).toBeCloseTo(
+      2 * 0.2
+    )
+  })
 })

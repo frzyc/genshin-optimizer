@@ -131,62 +131,19 @@ export const conditionals = {
     offField: { sheet: 'FlamemakerShaker', name: 'offField', type: 'bool' },
   },
   FusionCompiler: {
-    boolConditional: {
+    specialUsed: {
       sheet: 'FusionCompiler',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FusionCompiler',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FusionCompiler',
-      name: 'numConditional',
+      name: 'specialUsed',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
-  },
-  GildedBlossom: {
-    boolConditional: {
-      sheet: 'GildedBlossom',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'GildedBlossom',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'GildedBlossom',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      max: 3,
     },
   },
   HailstormShrine: {
-    boolConditional: {
+    exSpecialOrAnomaly: {
       sheet: 'HailstormShrine',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'HailstormShrine',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'HailstormShrine',
-      name: 'numConditional',
+      name: 'exSpecialOrAnomaly',
       type: 'num',
       int_only: true,
       min: 0,
@@ -194,20 +151,9 @@ export const conditionals = {
     },
   },
   HeartstringNocturne: {
-    boolConditional: {
+    heartstring: {
       sheet: 'HeartstringNocturne',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'HeartstringNocturne',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'HeartstringNocturne',
-      name: 'numConditional',
+      name: 'heartstring',
       type: 'num',
       int_only: true,
       min: 0,
@@ -2528,142 +2474,115 @@ export const buffs = {
     },
   },
   FusionCompiler: {
-    cond_dmg_: {
+    anomProf: {
       sheet: 'FusionCompiler',
-      name: 'cond_dmg_',
+      name: 'anomProf',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'anomProf',
         sheet: 'FusionCompiler',
-        name: 'cond_dmg_',
+        name: 'anomProf',
       },
     },
-    enemy_defIgn_: {
+    passive_atk_: {
       sheet: 'FusionCompiler',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'FusionCompiler',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FusionCompiler',
-      name: 'team_dmg_',
+      name: 'passive_atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'FusionCompiler',
-        name: 'team_dmg_',
+        name: 'passive_atk_',
       },
     },
   },
   GildedBlossom: {
-    cond_dmg_: {
+    passive_atk_: {
       sheet: 'GildedBlossom',
-      name: 'cond_dmg_',
+      name: 'passive_atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'GildedBlossom',
-        name: 'cond_dmg_',
+        name: 'passive_atk_',
       },
     },
-    enemy_defIgn_: {
+    passive_exSpecial_dmg_: {
       sheet: 'GildedBlossom',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'GildedBlossom',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'GildedBlossom',
-      name: 'team_dmg_',
+      name: 'passive_exSpecial_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'GildedBlossom',
-        name: 'team_dmg_',
+        damageType1: 'exSpecial',
+        name: 'passive_exSpecial_dmg_',
       },
     },
   },
   HailstormShrine: {
-    cond_dmg_: {
+    ice_dmg_: {
       sheet: 'HailstormShrine',
-      name: 'cond_dmg_',
+      name: 'ice_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'HailstormShrine',
-        name: 'cond_dmg_',
+        attribute: 'ice',
+        name: 'ice_dmg_',
       },
     },
-    enemy_defIgn_: {
+    passive_crit_dmg_: {
       sheet: 'HailstormShrine',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'HailstormShrine',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'HailstormShrine',
-      name: 'team_dmg_',
+      name: 'passive_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'HailstormShrine',
-        name: 'team_dmg_',
+        name: 'passive_crit_dmg_',
       },
     },
   },
   HeartstringNocturne: {
-    cond_dmg_: {
+    chain_resIgn_fire_: {
       sheet: 'HeartstringNocturne',
-      name: 'cond_dmg_',
+      name: 'chain_resIgn_fire_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'resIgn_',
         sheet: 'HeartstringNocturne',
-        name: 'cond_dmg_',
+        attribute: 'fire',
+        damageType1: 'chain',
+        name: 'chain_resIgn_fire_',
       },
     },
-    enemy_defIgn_: {
+    passive_crit_dmg_: {
       sheet: 'HeartstringNocturne',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'HeartstringNocturne',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'HeartstringNocturne',
-      name: 'team_dmg_',
+      name: 'passive_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'HeartstringNocturne',
-        name: 'team_dmg_',
+        name: 'passive_crit_dmg_',
+      },
+    },
+    ult_resIgn_fire_: {
+      sheet: 'HeartstringNocturne',
+      name: 'ult_resIgn_fire_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'resIgn_',
+        sheet: 'HeartstringNocturne',
+        attribute: 'fire',
+        damageType1: 'ult',
+        name: 'ult_resIgn_fire_',
       },
     },
   },
