@@ -24,6 +24,7 @@ import {
   useMemo,
   useState,
 } from 'react'
+import { useTranslation } from 'react-i18next'
 import { BonusStatsSection } from './BonusStats'
 import { CharStatsDisplay } from './CharStatsDisplay'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
@@ -38,21 +39,19 @@ const BOT_PX = 0
 const SECTION_SPACING_PX = 33
 const SectionNumContext = createContext(0)
 export function CharacterOptDisplay() {
-  const sections: Array<[key: string, title: ReactNode, content: ReactNode]> =
-    useMemo(() => {
-      return [
-        ['char', 'Character', <CharacterSection key="char" />],
-        // ['talent', 'Talent', <CharacterTalentPane key="talent" />],
-        ['opt', 'Optimize', <OptimizeSection key="opt" />],
-        ['builds', 'Builds', <BuildsSection key="builds" />],
-      ] as const
-    }, [])
+  const sections: Array<[key: string, content: ReactNode]> = useMemo(() => {
+    return [
+      ['char', <CharacterSection key="char" />],
+      ['opt', <OptimizeSection key="opt" />],
+      ['builds', <BuildsSection key="builds" />],
+    ] as const
+  }, [])
 
   return (
     <SectionNumContext.Provider value={sections.length}>
       <Stack gap={1}>
-        {sections.map(([key, title, content], i) => (
-          <Section key={key} title={title} index={i} zIndex={100}>
+        {sections.map(([key, content], i) => (
+          <Section key={key} title={key} index={i} zIndex={100}>
             {content}
           </Section>
         ))}
@@ -71,6 +70,7 @@ function Section({
   children: React.ReactNode
   zIndex: number
 }) {
+  const { t } = useTranslation('page_optimize')
   const [charScrollRef, onScroll] = useScrollRef()
   const numSections = useContext(SectionNumContext)
   const headerHeight = useContext(TeamHeaderHeightContext)
@@ -86,7 +86,7 @@ function Section({
         })}
       >
         <CardActionArea onClick={onScroll} sx={{ px: 1 }}>
-          <Typography variant="h6">{title}</Typography>
+          <Typography variant="h6">{t(`${title}`)}</Typography>
         </CardActionArea>
       </CardThemed>
       <Box
@@ -110,20 +110,15 @@ function CharacterSection() {
     character?.key && setCharacterKey(character.key)
   }, [character])
 
-  const characterInfoSections: Array<
-    [key: string, title: ReactNode, content: ReactNode]
-  > = useMemo(() => {
-    return [
-      ['eq', 'Equip', <EquippedGrid key={'eq'} onClick={onClick} />],
-      [
-        'wengineCond',
-        'Wengine Conditionals',
-        <WengineSheetsDisplay key={'wengineCond'} />,
-      ],
-      ['discCond', 'Disc Conditionals', <DiscSheetsDisplay key={'discCond'} />],
-      ['bonusStats', 'Bonus Stats', <BonusStatsSection key={'bonusStats'} />],
-    ] as const
-  }, [onClick])
+  const characterInfoSections: Array<[key: string, content: ReactNode]> =
+    useMemo(() => {
+      return [
+        ['eq', <EquippedGrid key={'eq'} onClick={onClick} />],
+        ['wengineCond', <WengineSheetsDisplay key={'wengineCond'} />],
+        ['discCond', <DiscSheetsDisplay key={'discCond'} />],
+        ['bonusStats', <BonusStatsSection key={'bonusStats'} />],
+      ] as const
+    }, [onClick])
   return (
     <>
       <CharacterEditor
@@ -152,8 +147,8 @@ function CharacterSection() {
               </Grid>
               <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
                 <Stack spacing={1.5}>
-                  {characterInfoSections.map(([key, title, content], i) => (
-                    <Section key={key} title={title} index={i} zIndex={1}>
+                  {characterInfoSections.map(([key, content], i) => (
+                    <Section key={key} title={key} index={i} zIndex={1}>
                       {content}
                     </Section>
                   ))}
