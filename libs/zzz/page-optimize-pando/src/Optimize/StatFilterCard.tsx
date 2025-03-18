@@ -4,7 +4,7 @@ import {
   DropdownButton,
   NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
-import { isPercentStat, type UnArray } from '@genshin-optimizer/common/util'
+import { type UnArray, isPercentStat } from '@genshin-optimizer/common/util'
 import type { AttributeKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import type { StatFilters } from '@genshin-optimizer/zzz/db'

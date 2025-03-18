@@ -37,7 +37,7 @@ const { arithmetic } = calculation
 
 export class Calculator<
   Tag_ extends Tag = Tag,
-  COp extends string = string // values of supported `Custom['ex']` if any
+  COp extends string = string, // values of supported `Custom['ex']` if any
 > extends BaseCalculator<CalcMeta<Tag_, COp>> {
   override computeMeta(
     { op, ex, tag: nTag }: AnyNode,

@@ -14,7 +14,9 @@ const data: TagMapNodeEntries = [
   // convert sheet:<char> to sheet:agg for accumulation
   // sheet:<relic> is reread in src/util.ts:relicTagMapNodeEntries()
   // sheet:<lightCone> is reread in src/util.ts:lightConeTagMapNodeEntries()
-  reader.sheet('agg').reread(reader.sheet('char')),
+  reader
+    .sheet('agg')
+    .reread(reader.sheet('char')),
 
   // Final <= Premod <= Base
   reader
@@ -35,6 +37,8 @@ const data: TagMapNodeEntries = [
   ),
 
   // Default conditionals to 0
-  reader.with('qt', 'cond').add(0),
+  reader
+    .with('qt', 'cond')
+    .add(0),
 ]
 export default data

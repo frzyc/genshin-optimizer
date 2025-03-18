@@ -5,9 +5,9 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import {
-  allArtifactRarityKeys,
   type ArtifactRarity,
   type ArtifactSetKey,
+  allArtifactRarityKeys,
 } from '@genshin-optimizer/gi/consts'
 import { setKeysByRarities } from '@genshin-optimizer/gi/util'
 import type { AutocompleteRenderGroupParams } from '@mui/material'

@@ -107,7 +107,9 @@
   },
   "buildCompleted": "ビルド生成完了",
   "notifyTooltip": "ビルドの生成が完了したら通知音が鳴ります。タブアウト時にも通知が表示されます。",
-  "bonusStats": { "title": "ボーナスステータス" },
+  "bonusStats": {
+    "title": "ボーナスステータス"
+  },
   "build_other": "<0>{{count}}</0>つのビルド",
   "thread_other": "<0>{{count}}</0>つのスレッド"
 }

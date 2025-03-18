@@ -8,8 +8,8 @@ import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { IWengine } from '@genshin-optimizer/zzz/zood'
 import type { ICachedCharacter } from '../../Interfaces'
 import type { ICachedWengine } from '../../Interfaces/IDbWengine'
-import type { ZzzDatabase } from '../Database'
 import { DataManager } from '../DataManager'
+import type { ZzzDatabase } from '../Database'
 import { initialCharacterData } from './CharacterDataManager'
 
 export class WengineDataManager extends DataManager<

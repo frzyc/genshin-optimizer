@@ -1,4 +1,8 @@
 {
-  "a4": { "heal": "Aumento de Cura da Habilidade Elemental" },
-  "c4": { "dmg": "Dano de Grama dos Trovões" }
+  "a4": {
+    "heal": "Aumento de Cura da Habilidade Elemental"
+  },
+  "c4": {
+    "dmg": "Dano de Grama dos Trovões"
+  }
 }

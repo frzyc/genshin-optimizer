@@ -22,7 +22,7 @@ import type {
   StatFilter,
   Team,
 } from '@genshin-optimizer/sr/db'
-import { Read, type Calculator, type Tag } from '@genshin-optimizer/sr/formula'
+import { type Calculator, Read, type Tag } from '@genshin-optimizer/sr/formula'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
 
 export function optimize(

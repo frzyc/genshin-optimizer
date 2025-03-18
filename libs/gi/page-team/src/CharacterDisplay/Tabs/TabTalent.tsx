@@ -14,9 +14,9 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { isTalentKey } from '@genshin-optimizer/gi/good'
 import {
-  getCharSheet,
   type DocumentSection,
   type TalentSheetElementKey,
+  getCharSheet,
 } from '@genshin-optimizer/gi/sheets'
 import {
   DataContext,
@@ -67,7 +67,7 @@ export default function CharacterTalentPane() {
   const passivesList: [
     tKey: TalentSheetElementKey,
     tText: string,
-    asc: number
+    asc: number,
   ][] = [
     ['passive1', t('unlockPassive1'), 1],
     ['passive2', t('unlockPassive2'), 4],

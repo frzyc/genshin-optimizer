@@ -1,13 +1,13 @@
 import { objMap, verifyObjKeys } from '@genshin-optimizer/common/util'
 import {
-  allRelicRarityKeys,
-  allRelicSetKeys,
-  allRelicSubStatKeys,
   type RelicMainStatKey,
   type RelicRarityKey,
   type RelicSetKey,
   type RelicSubStatKey,
   type StatKey,
+  allRelicRarityKeys,
+  allRelicSetKeys,
+  allRelicSubStatKeys,
 } from '@genshin-optimizer/sr/consts'
 import {
   relicMainAffixConfig,

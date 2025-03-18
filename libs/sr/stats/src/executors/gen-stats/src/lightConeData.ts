@@ -1,10 +1,10 @@
 import { range, verifyObjKeys } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/sr/consts'
 import {
-  allLightConeKeys,
   type LightConeKey,
   type PathKey,
   type RarityKey,
+  allLightConeKeys,
 } from '@genshin-optimizer/sr/consts'
 import {
   avatarBaseTypeMap,

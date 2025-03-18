@@ -2,13 +2,13 @@ import type { UnArray } from '@genshin-optimizer/common/util'
 import { validateArr } from '@genshin-optimizer/common/util'
 import type { SpecialityKey } from '@genshin-optimizer/zzz/consts'
 import {
+  type DiscMainStatKey,
+  type DiscSetKey,
   allDiscSetKeys,
   allSpecialityKeys,
   discMaxLevel,
   discSlotToMainStatKeys,
   wengineMaxLevel,
-  type DiscMainStatKey,
-  type DiscSetKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import type { ZzzDatabase } from '../..'

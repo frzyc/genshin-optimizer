@@ -6,13 +6,13 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { Read } from '@genshin-optimizer/game-opt/engine'
 import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
-import { useCharacterContext, useCharOpt } from '@genshin-optimizer/zzz/db-ui'
+import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { applyDamageTypeToTag, own } from '@genshin-optimizer/zzz/formula'
 import {
-  formulaText,
   FullTagDisplay,
   TagDisplay,
+  formulaText,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { ZCard } from '@genshin-optimizer/zzz/ui'

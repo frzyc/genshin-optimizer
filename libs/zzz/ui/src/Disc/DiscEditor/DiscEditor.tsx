@@ -18,8 +18,8 @@ import {
   getDiscMainStatVal,
 } from '@genshin-optimizer/zzz/consts'
 import {
-  validateDiscBasedOnRarity,
   type ICachedDisc,
+  validateDiscBasedOnRarity,
 } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import type { Processed } from '@genshin-optimizer/zzz/disc-scanner'

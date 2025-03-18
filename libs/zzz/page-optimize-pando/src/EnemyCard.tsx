@@ -1,8 +1,8 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ModalWrapper, NumberInputLazy } from '@genshin-optimizer/common/ui'
 import {
-  useCharacterContext,
   useCharOpt,
+  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { ZCard } from '@genshin-optimizer/zzz/ui'

@@ -233,8 +233,10 @@ export function pruneBottom<ID>(state: State<OP, ID>, topN: number) {
     comp.map((c) => {
       const out: Val = { incomp: [], inc: {}, c }
       for (const [cat, m] of monotonicities)
-        if (m.inc) out.inc[cat] = c[cat] ?? 0 // increasing
-        else if (m.dec) out.inc[cat] = -(c[cat] ?? 0) // decreasing
+        if (m.inc)
+          out.inc[cat] = c[cat] ?? 0 // increasing
+        else if (m.dec)
+          out.inc[cat] = -(c[cat] ?? 0) // decreasing
         else out.incomp.push(c[cat] ?? 0) // incomparable
       return out
     })

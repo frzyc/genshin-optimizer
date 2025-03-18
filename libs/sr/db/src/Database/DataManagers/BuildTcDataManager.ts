@@ -116,8 +116,8 @@ function initCharTCRelicSlots(): Record<RelicSlotKey, BuildTcRelicSlot> {
     statKey: (s === 'head'
       ? 'hp'
       : s === 'hands'
-      ? 'atk'
-      : 'atk_') as RelicMainStatKey,
+        ? 'atk'
+        : 'atk_') as RelicMainStatKey,
     rarity: 5,
   }))
 }

@@ -525,7 +525,7 @@ interface IGOCharacter extends ICharacter {
   team: [
     teammate1: CharacterKey | '',
     teammate2: CharacterKey | '',
-    teammate3: CharacterKey | ''
+    teammate3: CharacterKey | '',
   ]
   teamConditional: Partial<Record<CharacterKey, object>>
 }

@@ -83,9 +83,9 @@ export class CharacterDataManager extends DataManager<
           ),
       equippedWeapon: oldChar
         ? oldChar.equippedWeapon
-        : Object.values(this.database.weapons?.data ?? {}).find(
+        : (Object.values(this.database.weapons?.data ?? {}).find(
             (w) => w?.location === charKeyToLocCharKey(id)
-          )?.id ?? '',
+          )?.id ?? ''),
       ...storageObj,
     }
   }

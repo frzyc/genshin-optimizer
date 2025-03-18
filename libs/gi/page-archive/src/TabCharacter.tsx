@@ -245,7 +245,7 @@ const CharacterRow = memo(function CharacterRow({
           skill: 10,
           burst: 10,
         },
-      } as ICachedCharacter),
+      }) as ICachedCharacter,
     [cKey]
   )
   return (

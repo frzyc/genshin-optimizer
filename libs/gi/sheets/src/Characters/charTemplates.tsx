@@ -1,10 +1,10 @@
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import {
-  travelerFKeys,
-  travelerMKeys,
   type CharacterKey,
   type CharacterSheetKey,
+  travelerFKeys,
+  travelerMKeys,
 } from '@genshin-optimizer/gi/consts'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'

@@ -15,7 +15,7 @@ export function useDataManagerBase<
   B extends string,
   C extends D,
   D,
-  E extends Database
+  E extends Database,
 >(manager: DataManagerBase<A, B, C, D, E>, key: A) {
   const [dbDirty, setDBDirty] = useForceUpdate()
   const data = useMemo(

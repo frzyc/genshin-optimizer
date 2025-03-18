@@ -2,7 +2,7 @@ import {
   compileTagMapKeys,
   compileTagMapValues,
 } from '@genshin-optimizer/pando/engine'
-import { fixedTags, queryTypes, type TagMapNodeEntries } from './util'
+import { type TagMapNodeEntries, fixedTags, queryTypes } from './util'
 
 import { usedNames, usedQ } from '@genshin-optimizer/game-opt/engine'
 import charData from './char'
