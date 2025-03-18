@@ -6,13 +6,12 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { CalcMeta } from '@genshin-optimizer/game-opt/engine'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
-import type { ReactNode } from 'react'
-import { Fragment } from 'react'
+import type { Tag } from '@genshin-optimizer/sr/formula'
+import { Fragment, type ReactNode } from 'react'
 import { TagDisplay } from './components'
 import { getTagLabel } from './util'
 
-type Output = CalcMeta<Tag, never>
+type Output = CalcMeta<Tag, 'floor'>
 
 type FormulaText = {
   name: ReactNode | undefined
@@ -96,6 +95,10 @@ export function formulaText(
       prec = details.prod.prec
       break
     }
+    case 'floor':
+      formula = `\u230A${ops[0].val}\u230B`
+      prec = Infinity
+      break
     default:
       assertUnreachable(op)
   }

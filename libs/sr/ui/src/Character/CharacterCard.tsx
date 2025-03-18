@@ -48,9 +48,11 @@ const stats = [
 export function CharacterCard({
   character,
   onClick,
+  hideStats = false,
 }: {
   character: ICachedCharacter
   onClick?: () => void
+  hideStats?: boolean
 }) {
   const calc =
     useSrCalcContext() ??
@@ -68,16 +70,18 @@ export function CharacterCard({
         )}
 
         <Divider />
-        <CardContent>
-          {stats.map((statKey) => (
-            <StatLine
-              key={statKey}
-              calc={calc}
-              statKey={statKey}
-              characterKey={character.key}
-            />
-          ))}
-        </CardContent>
+        {!hideStats && (
+          <CardContent>
+            {stats.map((statKey) => (
+              <StatLine
+                key={statKey}
+                calc={calc}
+                statKey={statKey}
+                characterKey={character.key}
+              />
+            ))}
+          </CardContent>
+        )}
       </CardThemed>
     </Stack>
   )
