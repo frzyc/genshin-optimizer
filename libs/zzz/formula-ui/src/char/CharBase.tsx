@@ -58,7 +58,6 @@ charBaseUiSheet.push(
         qt: 'formula',
         q: 'standardDmg',
         attribute: attr,
-        damageType1: 'elemental',
         name: 'standardDmgInst',
       },
       title: <ColorText color={attr}>{elementalData[attr]} Damage</ColorText>,
