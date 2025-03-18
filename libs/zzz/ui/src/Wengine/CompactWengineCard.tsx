@@ -116,7 +116,7 @@ export function CompactWengineCard({
                   }}
                 >
                   <StatIcon statKey={'atk'} />
-                  <Box>{wengineStats['atk_base'].toFixed()}</Box>
+                  <span>{wengineStats['atk_base'].toFixed()}</span>
                 </Typography>
                 <Typography
                   sx={{
@@ -127,12 +127,12 @@ export function CompactWengineCard({
                   }}
                 >
                   <StatIcon statKey={substatKey} />
-                  <Box>
+                  <span>
                     {toPercent(wengineStats[substatKey], substatKey).toFixed(
                       statKeyToFixed(substatKey)
                     )}
                     {getUnitStr(substatKey)}
-                  </Box>
+                  </span>
                 </Typography>
               </Box>
             </Box>
