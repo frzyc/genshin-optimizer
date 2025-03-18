@@ -7,7 +7,11 @@ import {
   useCharOpt,
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
-import { CharacterCard, CharacterEditor } from '@genshin-optimizer/zzz/ui'
+import {
+  CharacterCard,
+  CharacterEditor,
+  ZCard,
+} from '@genshin-optimizer/zzz/ui'
 import {
   Box,
   CardActionArea,
@@ -44,11 +48,6 @@ export function CharacterOptDisplay() {
         ['char', 'Character', <CharacterSection key="char" />],
         // ['talent', 'Talent', <CharacterTalentPane key="talent" />],
         ['discCond', 'Disc Conditionals', <DiscSheetsDisplay key="discCond" />],
-        [
-          'wengineCond',
-          'Wengine Conditionals',
-          <WengineSheetsDisplay key="wengineCond" />,
-        ],
         ['opt', 'Optimize', <OptimizeSection key="opt" />],
         ['builds', 'Builds', <BuildsSection key="builds" />],
       ] as const
@@ -141,6 +140,16 @@ function CharacterSection() {
               </Grid>
               <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
                 <EquippedGrid onClick={onClick} />
+                <Box sx={{ mt: '12px' }}>
+                  <ZCard sx={{ padding: '8px 16px' }}>
+                    Wengine Conditionals
+                  </ZCard>
+                  <WengineSheetsDisplay />
+                </Box>
+                <Box sx={{ mt: '12px' }}>
+                  <ZCard sx={{ padding: '8px 16px' }}>Disc Conditionals</ZCard>
+                  <DiscSheetsDisplay />
+                </Box>
               </Grid>
             </Grid>
           </CardContent>
