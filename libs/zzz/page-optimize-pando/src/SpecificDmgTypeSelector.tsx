@@ -33,17 +33,32 @@ export function AfterShockToggle() {
   const character = useCharacterContext()!
   const charOpt = useCharOpt(character.key)!
   const { targetDamageType2, targetName } = charOpt
-
+  const setAfterShock = useCallback(
+    (aftershock: boolean) =>
+      database.charOpts.set(character.key, {
+        targetDamageType2: aftershock ? 'aftershock' : undefined,
+      }),
+    [database, character.key]
+  )
   if (targetName !== 'standardDmgInst') return null
   return (
+    <AfterShockToggleButton
+      isAftershock={targetDamageType2 === 'aftershock'}
+      setAftershock={setAfterShock}
+    />
+  )
+}
+export function AfterShockToggleButton({
+  isAftershock,
+  setAftershock,
+}: {
+  isAftershock: boolean
+  setAftershock: (aftershock: boolean) => void
+}) {
+  return (
     <Button
-      onClick={() =>
-        database.charOpts.set(character.key, {
-          targetDamageType2:
-            targetDamageType2 === 'aftershock' ? undefined : 'aftershock',
-        })
-      }
-      color={targetDamageType2 === 'aftershock' ? 'success' : 'secondary'}
+      onClick={() => setAftershock(!isAftershock)}
+      color={isAftershock ? 'success' : 'secondary'}
     >
       {damageTypeKeysMap.aftershock}
     </Button>

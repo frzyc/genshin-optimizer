@@ -28,7 +28,10 @@ import {
   Typography,
 } from '@mui/material'
 import { useCallback } from 'react'
-import { SpecificDmgTypeDropdown } from './SpecificDmgTypeSelector'
+import {
+  AfterShockToggleButton,
+  SpecificDmgTypeDropdown,
+} from './SpecificDmgTypeSelector'
 
 export function BonusStatsSection() {
   const { database } = useDatabaseContext()
@@ -149,6 +152,17 @@ function BonusStatDisplay({
             setDmgType={(dmgType) => {
               const { damageType1, ...rest } = tag
               setTag(dmgType ? { ...rest, damageType1: dmgType } : rest)
+            }}
+          />
+        )}
+        {(['dmg_', 'crit_dmg_'] as const).includes(
+          tag.q as 'dmg_' | 'crit_dmg_'
+        ) && (
+          <AfterShockToggleButton
+            isAftershock={tag.damageType2 === 'aftershock'}
+            setAftershock={(aftershock) => {
+              const { damageType2, ...rest } = tag
+              setTag(aftershock ? { ...rest, damageType2: 'aftershock' } : rest)
             }}
           />
         )}
