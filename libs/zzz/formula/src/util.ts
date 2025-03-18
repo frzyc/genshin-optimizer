@@ -9,7 +9,13 @@ import type {
   PhaseKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
-import type { Member, Sheet, Tag, TagMapNodeEntries } from './data/util'
+import type {
+  DamageType,
+  Member,
+  Sheet,
+  Tag,
+  TagMapNodeEntries,
+} from './data/util'
 import {
   convert,
   getStatFromStatKey,
@@ -191,4 +197,16 @@ export function getFormula(sheet: Sheet | undefined, name: string | undefined) {
         tag: Tag
       }
     | undefined
+}
+
+export function applyDamageTypeToTag(
+  tag: Tag,
+  damageType1: DamageType | undefined,
+  damageType2: DamageType | undefined
+): Tag {
+  return {
+    ...tag,
+    ...(damageType1 ? { damageType1 } : {}),
+    ...(damageType2 ? { damageType2 } : {}),
+  }
 }
