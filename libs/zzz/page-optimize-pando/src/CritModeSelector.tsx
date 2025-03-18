@@ -2,8 +2,8 @@ import { DropdownButton } from '@genshin-optimizer/common/ui'
 import type { critModeKey } from '@genshin-optimizer/zzz/db'
 import { critModeKeys } from '@genshin-optimizer/zzz/db'
 import {
-  useCharacterContext,
   useCharOpt,
+  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { Box, MenuItem } from '@mui/material'

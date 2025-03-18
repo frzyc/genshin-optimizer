@@ -35,7 +35,7 @@ export function ResonanceDisplay({
         team,
         teamCharId: '', // can be left blank since its only modifying team conditional
         teamChar: {},
-      } as TeamCharacterContextObj),
+      }) as TeamCharacterContextObj,
     [team, teamId]
   )
 

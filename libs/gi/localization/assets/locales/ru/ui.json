@@ -9,7 +9,11 @@
     "setting": "Настройки",
     "scanner": "Сканеры"
   },
-  "social": { "paypal": "Paypal", "patreon": "Patreon", "discord": "Discord" },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
   "unselect": "Отменить",
   "ascending": "По возрастанию",
   "descending": "По убыванию",
@@ -40,5 +44,8 @@
   "unlocked": "Разблокировано",
   "refinement": "Ранг пробуждения {{value}}",
   "selectlevel": "Выбрать Уровень",
-  "gender": { "F": "Женский", "M": "Мужской" }
+  "gender": {
+    "F": "Женский",
+    "M": "Мужской"
+  }
 }

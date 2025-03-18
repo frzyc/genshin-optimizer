@@ -88,8 +88,8 @@ export function getSubstatValue(
       type === 'max'
         ? Math.max(...substats)
         : type === 'min'
-        ? Math.min(...substats)
-        : substats.reduce((a, b) => a + b, 0) / substats.length
+          ? Math.min(...substats)
+          : substats.reduce((a, b) => a + b, 0) / substats.length
     substatCache.set(cacheKey, value)
   }
   return percent ? toPercent(value, substatKey) : value

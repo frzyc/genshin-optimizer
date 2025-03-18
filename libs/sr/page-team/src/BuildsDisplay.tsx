@@ -28,9 +28,9 @@ import type {
   IBuildTc,
 } from '@genshin-optimizer/sr/db'
 import {
-  initCharTC,
   type ICachedLightCone,
   type TeammateDatum,
+  initCharTC,
 } from '@genshin-optimizer/sr/db'
 import {
   useBuild,
@@ -44,8 +44,8 @@ import {
   LightConeCardCompactEmpty,
   LightConeCardCompactObj,
   LightConeEditorCard,
-  RelicMainsCardCompact,
   RelicMainStatDropdown,
+  RelicMainsCardCompact,
   RelicRarityDropdown,
   RelicSetAutocomplete,
   RelicSetCardCompact,
@@ -144,8 +144,8 @@ function useActiveBuildSwap(
         buildType === 'equipped'
           ? buildType === newBuildType
           : buildType === 'real'
-          ? buildId === newBuildId
-          : buildType === 'tc' && buildTcId === newBuildId,
+            ? buildId === newBuildId
+            : buildType === 'tc' && buildTcId === newBuildId,
       onActive: () => {
         database.teams.set(teamId, (team) => {
           const teammateDatum = team.teamMetadata.find(

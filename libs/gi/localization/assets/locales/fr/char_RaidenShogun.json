@@ -14,5 +14,7 @@
     "enerRest": "Restauration d'énergie bonus de l'<strong>Harmonie d'idéal</strong>",
     "eleDMG": "Bonus de DGT Électro"
   },
-  "c4": { "expires": "After the <strong>Musou Isshin</strong> state expires" }
+  "c4": {
+    "expires": "After the <strong>Musou Isshin</strong> state expires"
+  }
 }

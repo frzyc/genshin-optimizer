@@ -1,5 +1,5 @@
 import type { BuildResult, Progress, Work } from './common'
-import { type WorkerConfig, Worker } from './worker'
+import { Worker, type WorkerConfig } from './worker'
 
 declare function postMessage(res: Response): void
 

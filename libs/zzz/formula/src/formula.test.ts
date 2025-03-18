@@ -1,3 +1,4 @@
+import { fail } from 'assert'
 import { prettify } from '@genshin-optimizer/common/util'
 import {
   compileTagMapValues,
@@ -6,12 +7,11 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import type { MilestoneKey, WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
+  type CharacterKey,
   allCharacterKeys,
   allDiscSetKeys,
   allWengineKeys,
-  type CharacterKey,
 } from '@genshin-optimizer/zzz/consts'
-import { fail } from 'assert'
 import {
   charTagMapNodeEntries,
   discTagMapNodeEntries,
@@ -23,6 +23,7 @@ import {
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
 import {
+  type TagMapNodeEntries,
   convert,
   enemy,
   enemyDebuff,
@@ -32,7 +33,6 @@ import {
   ownTag,
   tagStr,
   team,
-  type TagMapNodeEntries,
 } from './data/util'
 
 setDebugMode(true)

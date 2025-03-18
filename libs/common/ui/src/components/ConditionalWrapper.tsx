@@ -17,7 +17,7 @@ export function ConditionalWrapper({
     condition
       ? wrapper(children)
       : falseWrapper
-      ? falseWrapper(children)
-      : children
+        ? falseWrapper(children)
+        : children
   ) as JSX.Element
 }

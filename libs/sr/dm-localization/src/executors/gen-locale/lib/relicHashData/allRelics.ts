@@ -1,8 +1,8 @@
 import { verifyObjKeys } from '@genshin-optimizer/common/util'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import {
-  allRelicSetKeys,
   type RelicSetCountKey,
+  allRelicSetKeys,
 } from '@genshin-optimizer/sr/consts'
 import {
   relicSetConfig,
@@ -26,7 +26,7 @@ const relicArray = Object.entries(relicSetConfig).map(([setId, setConfig]) => {
       ([setCount, skillConfig]) =>
         [+setCount, convertToHash(skillConfig.SkillDesc).toString()] as [
           RelicSetCountKey,
-          string
+          string,
         ]
     )
   ) as SetEffectData

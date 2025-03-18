@@ -6,9 +6,9 @@ import {
   range,
 } from '@genshin-optimizer/common/util'
 import {
-  allArtifactSlotKeys,
   type ArtifactSetKey,
   type ArtifactSlotKey,
+  allArtifactSlotKeys,
 } from '@genshin-optimizer/gi/consts'
 import type {
   ArtSetExclusion,
@@ -625,8 +625,8 @@ export function exclusionToAllowed(
         ? [0, 1]
         : [0, 1, 4, 5]
       : exclusion?.includes(4)
-      ? [0, 1, 2, 3]
-      : [0, 1, 2, 3, 4, 5]
+        ? [0, 1, 2, 3]
+        : [0, 1, 2, 3, 4, 5]
   )
 }
 /** A *disjoint* set of `RequestFilter` satisfying the exclusion rules */

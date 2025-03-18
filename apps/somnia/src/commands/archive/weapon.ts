@@ -1,9 +1,9 @@
 import { getUnitStr, range, valueString } from '@genshin-optimizer/common/util'
 import { AssetData } from '@genshin-optimizer/gi/assets-data'
 import {
+  type WeaponKey,
   weaponMaxAscension,
   weaponMaxLevel,
-  type WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import { allStats, getWeaponStat } from '@genshin-optimizer/gi/stats'

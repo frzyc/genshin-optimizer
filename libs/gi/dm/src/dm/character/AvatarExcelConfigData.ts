@@ -66,7 +66,7 @@ type AvatarExcelConfigData = {
     {
       type: 'FIGHT_PROP_BASE_DEFENSE'
       growCurve: CharacterGrowCurveKey //"GROW_CURVE_HP_S4"
-    }
+    },
   ]
   prefabPathRagdollHashSuffix: number //3565889523,
   prefabPathRagdollHashPre: number //122,

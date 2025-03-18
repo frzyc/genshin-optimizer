@@ -91,7 +91,9 @@ export function artifactsData(
     agg.reread(art), // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
-    art.with('qt', 'premod').reread(dyn),
+    art
+      .with('qt', 'premod')
+      .reread(dyn),
     ...Object.entries(stats).map(([k, v]) =>
       readStat(premod, k as MainStatKey | SubstatKey)
         .sheet('dyn')
