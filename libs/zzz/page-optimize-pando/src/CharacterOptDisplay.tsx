@@ -7,11 +7,7 @@ import {
   useCharOpt,
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
-import {
-  CharacterCard,
-  CharacterEditor,
-  ZCard,
-} from '@genshin-optimizer/zzz/ui'
+import { CharacterCard, CharacterEditor } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
   CardActionArea,
@@ -47,7 +43,6 @@ export function CharacterOptDisplay() {
       return [
         ['char', 'Character', <CharacterSection key="char" />],
         // ['talent', 'Talent', <CharacterTalentPane key="talent" />],
-        ['discCond', 'Disc Conditionals', <DiscSheetsDisplay key="discCond" />],
         ['opt', 'Optimize', <OptimizeSection key="opt" />],
         ['builds', 'Builds', <BuildsSection key="builds" />],
       ] as const
@@ -57,7 +52,7 @@ export function CharacterOptDisplay() {
     <SectionNumContext.Provider value={sections.length}>
       <Stack gap={1}>
         {sections.map(([key, title, content], i) => (
-          <Section key={key} title={title} index={i}>
+          <Section key={key} title={title} index={i} zIndex={100}>
             {content}
           </Section>
         ))}
@@ -69,10 +64,12 @@ function Section({
   index,
   title,
   children,
+  zIndex,
 }: {
   index: number
   title: React.ReactNode
   children: React.ReactNode
+  zIndex: number
 }) {
   const [charScrollRef, onScroll] = useScrollRef()
   const numSections = useContext(SectionNumContext)
@@ -81,11 +78,11 @@ function Section({
     <>
       <CardThemed
         sx={(theme) => ({
-          outline: `solid ${theme.palette.secondary.main}`,
+          outline: `2px solid ${theme.palette.secondary.main}`,
           position: 'sticky',
           top: headerHeight + index * SECTION_SPACING_PX,
           bottom: BOT_PX + (numSections - 1 - index) * SECTION_SPACING_PX,
-          zIndex: 100,
+          zIndex,
         })}
       >
         <CardActionArea onClick={onScroll} sx={{ px: 1 }}>
@@ -112,6 +109,21 @@ function CharacterSection() {
   const onClick = useCallback(() => {
     character?.key && setCharacterKey(character.key)
   }, [character])
+
+  const characterInfoSections: Array<
+    [key: string, title: ReactNode, content: ReactNode]
+  > = useMemo(() => {
+    return [
+      ['eq', 'Equip', <EquippedGrid key={'eq'} onClick={onClick} />],
+      [
+        'wengineCond',
+        'Wengine Conditionals',
+        <WengineSheetsDisplay key={'wengineCond'} />,
+      ],
+      ['discCond', 'Disc Conditionals', <DiscSheetsDisplay key={'discCond'} />],
+      ['bonusStats', 'Bonus Stats', <BonusStatsSection key={'bonusStats'} />],
+    ] as const
+  }, [onClick])
   return (
     <>
       <CharacterEditor
@@ -139,22 +151,17 @@ function CharacterSection() {
                 </Stack>
               </Grid>
               <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
-                <EquippedGrid onClick={onClick} />
-                <Box sx={{ mt: '12px' }}>
-                  <ZCard sx={{ padding: '8px 16px' }}>
-                    Wengine Conditionals
-                  </ZCard>
-                  <WengineSheetsDisplay />
-                </Box>
-                <Box sx={{ mt: '12px' }}>
-                  <ZCard sx={{ padding: '8px 16px' }}>Disc Conditionals</ZCard>
-                  <DiscSheetsDisplay />
-                </Box>
+                <Stack spacing={1.5}>
+                  {characterInfoSections.map(([key, title, content], i) => (
+                    <Section key={key} title={title} index={i} zIndex={1}>
+                      {content}
+                    </Section>
+                  ))}
+                </Stack>
               </Grid>
             </Grid>
           </CardContent>
         </CardThemed>
-        <BonusStatsSection />
         <DebugListingsDisplay
           formulasRead={own.listing.formulas}
           buffsRead={own.listing.buffs}
