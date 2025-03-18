@@ -1,9 +1,9 @@
 import {
-  sheetKeyToCharKey,
   type AscensionKey,
   type CharacterSheetKey,
   type RefinementKey,
   type WeaponKey,
+  sheetKeyToCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { TagMapNodeEntries } from '@genshin-optimizer/gi/formula'

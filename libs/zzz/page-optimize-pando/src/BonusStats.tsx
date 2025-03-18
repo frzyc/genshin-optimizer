@@ -3,17 +3,18 @@ import {
   ColorText,
   DropdownButton,
   NumberInputLazy,
-  SqBadge,
 } from '@genshin-optimizer/common/ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
+import type { SpecificDmgTypeKey } from '@genshin-optimizer/zzz/db'
 import {
-  useCharacterContext,
   useCharOpt,
+  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import type { Attribute, Member, Tag } from '@genshin-optimizer/zzz/formula'
-import { tagFieldMap } from '@genshin-optimizer/zzz/formula-ui'
+import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
+import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
@@ -24,8 +25,13 @@ import {
   InputAdornment,
   MenuItem,
   Stack,
+  Typography,
 } from '@mui/material'
 import { useCallback } from 'react'
+import {
+  AfterShockToggleButton,
+  SpecificDmgTypeDropdown,
+} from './SpecificDmgTypeSelector'
 
 export function BonusStatsSection() {
   const { database } = useDatabaseContext()
@@ -36,10 +42,9 @@ export function BonusStatsSection() {
       database.charOpts.setBonusStat(characterKey, tag, value, index),
     [database, characterKey]
   )
-  const newTarget = (q: InitialStats) => {
-    const tag = newTag(q, characterKey)
-    database.charOpts.setBonusStat(characterKey, tag, 0)
-  }
+  const newTarget = (q: InitialStats) =>
+    database.charOpts.setBonusStat(characterKey, newTag(q), 0)
+
   return (
     <CardThemed>
       <CardHeader title="Bonus Stats" />
@@ -53,7 +58,7 @@ export function BonusStatsSection() {
               value={value}
               setValue={(value) => setStat(tag, value, i)}
               onDelete={() => setStat(tag, null, i)}
-              setTag={(tag) => setStat(tag, 0, i)}
+              setTag={(tag) => setStat(tag, value, i)}
             />
           ))}
           <InitialStatDropdown onSelect={newTarget} />
@@ -62,10 +67,8 @@ export function BonusStatsSection() {
     </CardThemed>
   )
 }
-function newTag(q: Tag['q'], member: Member): Tag {
+function newTag(q: Tag['q']): Tag {
   return {
-    src: member,
-    dst: member,
     et: 'own',
     q,
     qt: 'combat',
@@ -86,7 +89,7 @@ const initialStats: StatKey[] = [
 ] as const
 type InitialStats = (typeof initialStats)[number]
 function InitialStatDropdown({
-  tag = {},
+  tag,
   onSelect,
 }: {
   tag?: Tag
@@ -94,7 +97,7 @@ function InitialStatDropdown({
 }) {
   return (
     <DropdownButton
-      title={(tag && tagFieldMap.subset(tag)[0]?.title) ?? 'Add Bonus Stat'}
+      title={(tag && <TagDisplay tag={tag} />) ?? 'Add Bonus Stat'}
     >
       {initialStats.map((statKey) => (
         <MenuItem key={statKey} onClick={() => onSelect(statKey)}>
@@ -104,7 +107,7 @@ function InitialStatDropdown({
     </DropdownButton>
   )
 }
-
+const specificDmgTypeIncStats = ['atk_', 'dmg_', 'crit_', 'crit_dmg_'] as const
 function BonusStatDisplay({
   tag,
   setTag,
@@ -118,22 +121,48 @@ function BonusStatDisplay({
   setValue: (value: number) => void
   onDelete: () => void
 }) {
-  // TODO: best way to infer percentage from tag?
   const isPercent = (tag.name || tag.q)?.endsWith('_')
   return (
     <CardThemed bgt="light">
       <CardContent
-        sx={{ display: 'flex', gap: 1, justifyContent: 'space-around' }}
+        sx={{
+          display: 'flex',
+          gap: 1,
+          justifyContent: 'space-around',
+          alignItems: 'center',
+        }}
       >
-        <SqBadge sx={{ m: 'auto' }}>
-          <StatDisplay statKey={tag.q as any} />
-        </SqBadge>
+        <Typography>
+          <TagDisplay tag={tag} />
+        </Typography>
         {tag.q === 'dmg_' && (
           <AttributeDropdown
             tag={tag}
             setAttribute={(ele) => {
               const { attribute, ...rest } = tag
               setTag(ele ? { ...rest, attribute: ele } : rest)
+            }}
+          />
+        )}
+        {specificDmgTypeIncStats.includes(
+          tag.q as (typeof specificDmgTypeIncStats)[number]
+        ) && (
+          <SpecificDmgTypeDropdown
+            dmgType={tag.damageType1 as SpecificDmgTypeKey}
+            setDmgType={(dmgType) => {
+              const { damageType1, ...rest } = tag
+              setTag(dmgType ? { ...rest, damageType1: dmgType } : rest)
+            }}
+          />
+        )}
+        {(['dmg_', 'crit_dmg_'] as const).includes(
+          tag.q as 'dmg_' | 'crit_dmg_'
+        ) && (
+          <AfterShockToggleButton
+            isAftershock={tag.damageType2 === 'aftershock'}
+            setAftershock={(aftershock) => {
+              const { damageType2, ...rest } = tag
+              setTag(aftershock ? { ...rest, damageType2: 'aftershock' } : rest)
             }}
           />
         )}
@@ -161,6 +190,16 @@ function BonusStatDisplay({
           }}
         />
       </CardContent>
+      {shouldShowDevComponents && (
+        <>
+          <Divider />
+          <CardContent>
+            <Typography sx={{ fontFamily: 'monospace' }}>
+              {JSON.stringify(tag)}
+            </Typography>
+          </CardContent>
+        </>
+      )}
     </CardThemed>
   )
 }

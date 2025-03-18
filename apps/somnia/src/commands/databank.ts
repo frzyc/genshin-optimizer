@@ -1,3 +1,5 @@
+import * as fs from 'fs'
+import * as path from 'path'
 import type {
   ApplicationCommandOptionChoiceData,
   AutocompleteInteraction,
@@ -6,8 +8,6 @@ import type {
   StringSelectMenuInteraction,
 } from 'discord.js'
 import { SlashCommandBuilder } from 'discord.js'
-import * as fs from 'fs'
-import * as path from 'path'
 
 import { error } from '../lib/message'
 import { cwd } from '../lib/util'

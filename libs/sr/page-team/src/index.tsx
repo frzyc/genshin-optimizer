@@ -26,10 +26,10 @@ import {
   useTeam,
 } from '@genshin-optimizer/sr/db-ui'
 import {
+  type Tag,
   getConditional,
   isMember,
   isSheet,
-  type Tag,
 } from '@genshin-optimizer/sr/formula'
 import { CharacterName } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
@@ -43,9 +43,6 @@ import {
   useNavigate,
   useParams,
 } from 'react-router-dom'
-import type { PresetContextObj } from './context'
-import { PresetContext, TeamContext } from './context'
-import { TeammateContext, useTeammateContext } from './context/TeammateContext'
 import { TeamCalcProvider } from './TeamCalcProvider'
 import {
   DEFAULT_HEADER_HEIGHT_PX,
@@ -54,6 +51,9 @@ import {
   TeamHeaderHeightContext,
 } from './TeamHeader'
 import TeammateDisplay from './TeammateDisplay'
+import type { PresetContextObj } from './context'
+import { PresetContext, TeamContext } from './context'
+import { TeammateContext, useTeammateContext } from './context/TeammateContext'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 
@@ -88,7 +88,7 @@ function Page({ teamId }: { teamId: string }) {
       ({
         presetIndex,
         setPresetIndex,
-      } as PresetContextObj),
+      }) as PresetContextObj,
     [presetIndex, setPresetIndex]
   )
   const team = useTeam(teamId)!

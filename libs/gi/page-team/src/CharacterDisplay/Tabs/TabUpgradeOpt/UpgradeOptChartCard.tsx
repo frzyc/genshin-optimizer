@@ -5,8 +5,8 @@ import {
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { linspace, objMap } from '@genshin-optimizer/common/util'
 import {
-  charKeyToLocCharKey,
   type ArtifactSlotKey,
+  charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {

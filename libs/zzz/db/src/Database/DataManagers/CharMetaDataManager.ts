@@ -1,8 +1,8 @@
 import { deepFreeze } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { ICharMeta } from '../../Interfaces'
-import type { ZzzDatabase } from '../Database'
 import { DataManager } from '../DataManager'
+import type { ZzzDatabase } from '../Database'
 
 const initCharMeta: ICharMeta = deepFreeze({
   description: '',

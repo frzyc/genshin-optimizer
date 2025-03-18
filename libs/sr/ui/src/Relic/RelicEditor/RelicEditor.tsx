@@ -60,8 +60,8 @@ import { RelicCard } from '../RelicCard'
 import { RelicMainStatDropdown } from '../RelicMainStatDropdown'
 import { RelicRarityDropdown } from '../RelicRarityDropdown'
 import { RelicSetAutocomplete } from '../RelicSetAutocomplete'
-import { relicReducer } from './reducer'
 import SubstatInput from './SubstatInput'
+import { relicReducer } from './reducer'
 
 // TODO: temporary until relic sheet is implemented
 interface IRelicSheet {
@@ -168,7 +168,7 @@ export function RelicEditor({
       ): T {
         return value && available.includes(value)
           ? value
-          : prefer ?? available[0]
+          : (prefer ?? available[0])
       }
 
       if (newValue.setKey) {

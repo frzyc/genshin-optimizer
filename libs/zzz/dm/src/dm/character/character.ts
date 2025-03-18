@@ -1,11 +1,11 @@
 import { isPercentStat, objMap } from '@genshin-optimizer/common/util'
 import type { FactionKey } from '@genshin-optimizer/zzz/consts'
 import {
-  allCharacterKeys,
   type AttributeKey,
   type CharacterKey,
   type CharacterRarityKey,
   type SpecialityKey,
+  allCharacterKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { readHakushinJSON } from '../../util'
 import {

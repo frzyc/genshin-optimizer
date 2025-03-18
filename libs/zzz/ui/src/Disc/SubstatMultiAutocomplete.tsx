@@ -8,7 +8,7 @@ import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export function SubstatMultiAutocomplete<
-  SubstatKeyParam extends DiscSubStatKey
+  SubstatKeyParam extends DiscSubStatKey,
 >({
   substatKeys,
   setSubstatKeys,

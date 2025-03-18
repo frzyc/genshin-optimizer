@@ -15,8 +15,8 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import {
-  artifactSortKeys,
   type ArtifactSortKey,
+  artifactSortKeys,
 } from '@genshin-optimizer/gi/util'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'

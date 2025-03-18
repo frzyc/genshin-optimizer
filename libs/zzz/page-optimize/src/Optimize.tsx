@@ -12,8 +12,8 @@ import type {
   LocationKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
-  discSlotToMainStatKeys,
   type DiscSlotKey,
+  discSlotToMainStatKeys,
 } from '@genshin-optimizer/zzz/consts'
 import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 import {

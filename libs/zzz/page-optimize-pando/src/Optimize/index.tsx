@@ -2,22 +2,24 @@ import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
+import { buildCount } from '@genshin-optimizer/game-opt/solver'
 import {
-  allDiscSlotKeys,
   type DiscSlotKey,
+  allDiscSlotKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { type ICachedDisc } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   OptConfigProvider,
-  useCharacterContext,
   useCharOpt,
+  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import {
-  StatFilterCard,
-  useZzzCalcContext,
-} from '@genshin-optimizer/zzz/formula-ui'
+  applyDamageTypeToTag,
+  getFormula,
+} from '@genshin-optimizer/zzz/formula'
+import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
 import { optimize } from '@genshin-optimizer/zzz/solver-pando'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { WorkerSelector } from '@genshin-optimizer/zzz/ui'
@@ -41,7 +43,7 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DiscFilter } from './DiscFilter'
-import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
+import { StatFilterCard } from './StatFilterCard'
 import { WengineFilter } from './WengineFilter'
 
 export default function Optimize() {
@@ -61,7 +63,6 @@ export default function Optimize() {
   return (
     <OptConfigProvider optConfigId={optConfigId}>
       <OptimizeWrapper />
-      <GeneratedBuildsDisplay />
     </OptConfigProvider>
   )
 }
@@ -71,7 +72,8 @@ function OptimizeWrapper() {
   const { database } = useDatabaseContext()
   const calc = useZzzCalcContext()
   const { key: characterKey } = useCharacterContext()!
-  const { target } = useCharOpt(characterKey)!
+  const { targetName, targetSheet, targetDamageType1, targetDamageType2 } =
+    useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
@@ -158,11 +160,7 @@ function OptimizeWrapper() {
   ])
 
   const totalPermutations = useMemo(
-    () =>
-      Object.values(discsBySlot).reduce(
-        (total, discs) => total * discs.length,
-        1
-      ) * wengines.length,
+    () => buildCount(Object.values(discsBySlot)) * wengines.length,
     [wengines.length, discsBySlot]
   )
 
@@ -175,24 +173,24 @@ function OptimizeWrapper() {
 
   const onOptimize = useCallback(async () => {
     if (!calc) return
+    const formula = getFormula(targetSheet, targetName)
+    if (!formula) return
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
     setProgress(undefined)
     setOptimizing(true)
 
     // Filter out disabled
-    const statFilters = (optConfig.statFilters ?? [])
-      .filter(({ disabled }) => !disabled)
-      .map(({ tag, value, isMax }) => ({
-        tag,
-        value,
-        isMax,
-      }))
+    const statFilters = (optConfig.statFilters ?? []).filter((s) => !s.disabled)
     const optimizer = optimize(
       characterKey,
       calc,
       [
         {
-          tag: target,
+          tag: applyDamageTypeToTag(
+            formula.tag,
+            targetDamageType1,
+            targetDamageType2
+          ),
           multiplier: 1,
         },
       ],
@@ -206,7 +204,7 @@ function OptimizeWrapper() {
     )
 
     cancelled.then(() => optimizer.terminate('user cancelled'))
-    let results: BuildResult[]
+    let results: BuildResult<string>[]
     try {
       results = await optimizer.results
     } catch {
@@ -231,7 +229,10 @@ function OptimizeWrapper() {
     optConfig.setFilter2,
     optConfig.setFilter4,
     characterKey,
-    target,
+    targetSheet,
+    targetName,
+    targetDamageType1,
+    targetDamageType2,
     wengines,
     discsBySlot,
     numWorkers,
@@ -252,10 +253,7 @@ function OptimizeWrapper() {
           <WengineFilter numWengine={wengines.length} />
           <DiscFilter discsBySlot={discsBySlot} />
           {progress && (
-            <ProgressIndicator
-              progress={progress}
-              totalPermutations={totalPermutations}
-            />
+            <ProgressIndicator progress={progress} total={totalPermutations} />
           )}
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <WorkerSelector
@@ -263,7 +261,7 @@ function OptimizeWrapper() {
               setNumWorkers={setNumWorkers}
             />
             <Button
-              disabled={!totalPermutations}
+              disabled={!totalPermutations || !targetName}
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'primary'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
@@ -277,30 +275,35 @@ function OptimizeWrapper() {
   )
 }
 
-function ProgressIndicator({
-  progress,
-  totalPermutations,
-}: {
-  progress: Progress
-  totalPermutations: number
-}) {
+function Monospace({ value }: { value: number }): JSX.Element {
+  const str = value.toLocaleString()
+  return (
+    <Box component="span" sx={{ fontFamily: 'Monospace', display: 'inline' }}>
+      {str}
+    </Box>
+  )
+}
+function ProgressIndicator(props: { progress: Progress; total: number }) {
   const { t } = useTranslation('optimize')
+  const { computed, remaining, skipped } = props.progress
+  const unskipped = computed + remaining
+
+  const unskippedRatio = Math.log1p(unskipped) / Math.log1p(props.total)
+  const remRatio = (remaining / unskipped) * unskippedRatio
   return (
     <Box>
       <Typography>
-        {t('computed')}: {progress.computed.toLocaleString()} /{' '}
-        {(progress.computed + progress.remaining).toLocaleString()}
+        {t('computed')}: <Monospace value={computed} /> /{' '}
+        <Monospace value={unskipped} />{' '}
       </Typography>
       <Typography>
-        {t('computed + skipped')}:{' '}
-        {(progress.computed + progress.skipped).toLocaleString()} /{' '}
-        {totalPermutations.toLocaleString()}
+        {t('computed + skipped')}: <Monospace value={computed + skipped} /> /{' '}
+        <Monospace value={props.total} />
       </Typography>
-      <LinearProgress
+      <LinearProgress // ideally, it should be | <computed> | <remaining> | <skipped> |
         variant="determinate"
-        value={
-          ((progress.computed + progress.skipped) / totalPermutations) * 100
-        }
+        value={(1 - remRatio) * 100}
+        sx={{ height: 10, borderRadius: 5 }}
       />
     </Box>
   )

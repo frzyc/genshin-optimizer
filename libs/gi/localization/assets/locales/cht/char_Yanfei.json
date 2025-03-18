@@ -1,5 +1,11 @@
 {
-  "seals": ["0 seals", "1 seal", "2 seals", "3 seals", "4 seals"],
+  "seals": [
+    "0 seals",
+    "1 seal",
+    "2 seals",
+    "3 seals",
+    "4 seals"
+  ],
   "perSeal": "(per seal)",
   "maxSeals": "Maximum number of Scarlet Seals",
   "charged": {
@@ -9,9 +15,19 @@
     "3": "3-Seal DMG",
     "4": "4-Seal DMG"
   },
-  "burst": { "grantMax": "Grants the maximum number of Scarlet Seals" },
-  "passive1": { "sealsConsumed": "Seals consumed by using a Charged Attack" },
-  "passive2": { "key": "Blazing Eye DMG" },
-  "c1": { "sealChargedStam_": "Charged Attack Stamina Consumption Decrease" },
-  "c6": { "maxSealInc": "Max number of Scarlet Seals increase" }
+  "burst": {
+    "grantMax": "Grants the maximum number of Scarlet Seals"
+  },
+  "passive1": {
+    "sealsConsumed": "Seals consumed by using a Charged Attack"
+  },
+  "passive2": {
+    "key": "Blazing Eye DMG"
+  },
+  "c1": {
+    "sealChargedStam_": "Charged Attack Stamina Consumption Decrease"
+  },
+  "c6": {
+    "maxSealInc": "Max number of Scarlet Seals increase"
+  }
 }

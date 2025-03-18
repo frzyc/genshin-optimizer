@@ -17,6 +17,7 @@ import {
 } from '@genshin-optimizer/sr/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
+  type TagMapNodeEntries,
   customBreakDmg,
   customDmg,
   customHeal,
@@ -27,7 +28,6 @@ import {
   ownBuff,
   percent,
   registerBuff,
-  type TagMapNodeEntries,
 } from '../util'
 
 type AbilityScalingType = Exclude<

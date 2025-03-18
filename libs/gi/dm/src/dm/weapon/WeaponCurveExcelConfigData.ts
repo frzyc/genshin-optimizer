@@ -92,7 +92,7 @@ type WeaponCurveExcelConfigData = {
       type: 'GROW_CURVE_CRITICAL_301'
       arith: 'ARITH_MULTI'
       value: number //1.0
-    }
+    },
   ]
 }
 

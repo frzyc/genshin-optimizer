@@ -55,6 +55,8 @@ const data: TagMapNodeEntries = [
   ),
 
   // Default conditionals to 0
-  reader.with('qt', 'cond').add(0),
+  reader
+    .with('qt', 'cond')
+    .add(0),
 ]
 export default data

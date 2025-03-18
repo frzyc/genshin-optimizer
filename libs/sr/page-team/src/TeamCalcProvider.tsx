@@ -24,8 +24,8 @@ import {
   withPreset,
 } from '@genshin-optimizer/sr/formula'
 import {
-  relicsTagMapNodes,
   relicTcTagMapNodes,
+  relicsTagMapNodes,
 } from '@genshin-optimizer/sr/solver'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 import type { ReactNode } from 'react'
@@ -106,15 +106,15 @@ function useCharacterAndEquipment(
     meta?.buildType === 'equipped'
       ? character?.equippedLightCone
       : meta?.buildType === 'real'
-      ? build?.lightConeId
-      : undefined
+        ? build?.lightConeId
+        : undefined
   )
   const relics = useRelics(
     meta?.buildType === 'equipped'
       ? character?.equippedRelics
       : meta?.buildType === 'real'
-      ? build?.relicIds
-      : undefined
+        ? build?.relicIds
+        : undefined
   )
   const lcTagEntries = useMemo(() => {
     const lc =

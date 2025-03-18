@@ -1,7 +1,7 @@
 import {
   BootstrapTooltip,
-  ColorText,
   type CardBackgroundColor,
+  ColorText,
 } from '@genshin-optimizer/common/ui'
 import { evalIfFunc, valueString } from '@genshin-optimizer/common/util'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
@@ -285,8 +285,8 @@ export const FieldDisplayList = styled(List)<FieldDisplayListProps>(
       bgt === 'light'
         ? 'contentLight'
         : bgt === 'dark'
-        ? 'contentDark'
-        : 'contentNormal'
+          ? 'contentDark'
+          : 'contentNormal'
     return {
       borderRadius: theme.shape.borderRadius,
       overflow: 'hidden',

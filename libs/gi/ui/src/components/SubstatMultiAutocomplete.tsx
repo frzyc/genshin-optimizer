@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import { statPercent } from './util'
 
 export function SubstatMultiAutocomplete<
-  SubstatKeyParam extends SubstatKey | WeaponSubstatKey
+  SubstatKeyParam extends SubstatKey | WeaponSubstatKey,
 >({
   substatKeys,
   setSubstatKeys,

@@ -150,7 +150,7 @@ export default function MainStatSelectionCard({
                     mainStatKey.includes(ele)
                   )
                   const color = selectedMainKeys.includes(mainStatKey)
-                    ? element ?? 'success'
+                    ? (element ?? 'success')
                     : 'secondary'
                   return (
                     <Grid

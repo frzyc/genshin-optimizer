@@ -29,8 +29,12 @@
       }
     }
   },
-  "inventoryCard": { "title": "GO 庫存" },
-  "vidGuideCard": { "title": "Video Guides" },
+  "inventoryCard": {
+    "title": "GO 庫存"
+  },
+  "vidGuideCard": {
+    "title": "Video Guides"
+  },
   "teamCard": {
     "title": "Meet the Team",
     "jobTitle": {

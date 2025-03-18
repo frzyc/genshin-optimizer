@@ -194,8 +194,8 @@ export default function ExcludeArt({
                 !numExcludedArt
                   ? 'secondary'
                   : useExcludedArts
-                  ? 'warning'
-                  : 'primary'
+                    ? 'warning'
+                    : 'primary'
               }
             >
               {useExcludedArts ? (

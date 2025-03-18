@@ -31,9 +31,12 @@ export default function ResinCard() {
   useEffect(() => {
     const setSecondTimeout = () => {
       setTime(new Date(Date.now() + timeZones[timeZoneKey]))
-      return setTimeout(() => {
-        interval = setSecondTimeout()
-      }, SECOND_MS - (Date.now() % SECOND_MS))
+      return setTimeout(
+        () => {
+          interval = setSecondTimeout()
+        },
+        SECOND_MS - (Date.now() % SECOND_MS)
+      )
     }
     let interval = setSecondTimeout()
     return () => clearTimeout(interval)

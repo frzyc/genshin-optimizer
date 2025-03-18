@@ -8,7 +8,7 @@ export class DataEntry<
   Key extends string,
   SROKey extends string,
   CacheValue,
-  StorageValue
+  StorageValue,
 > extends DataEntryBase<Key, SROKey, CacheValue, StorageValue, SroDatabase> {
   exportSROD(sroDb: Partial<ISroDatabase & ISrObjectDescription>) {
     sroDb[this.dataKey] = this.data

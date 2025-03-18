@@ -1,9 +1,9 @@
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
 import { AssetData, CommonAssetData } from '@genshin-optimizer/gi/assets-data'
 import {
-  sheetKeyToCharKey,
   type CharacterSheetKey,
   type LocationGenderedCharacterKey,
+  sheetKeyToCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import {

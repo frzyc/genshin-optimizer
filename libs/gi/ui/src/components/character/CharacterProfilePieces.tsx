@@ -15,8 +15,8 @@ import {
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import {
-  getCharSheet,
   type TalentSheetElementKey,
+  getCharSheet,
 } from '@genshin-optimizer/gi/sheets'
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
