@@ -64,7 +64,7 @@ export function pickSplitKey(
       if (heur < minHeur) return { bestKey: stat, minHeur: heur }
       return { bestKey, minHeur }
     },
-    { bestKey: '', minHeur: Infinity }
+    { bestKey: '', minHeur: Number.POSITIVE_INFINITY }
   )
 
   // Pick key that gives minimum heur (maximum reduction old -> new)

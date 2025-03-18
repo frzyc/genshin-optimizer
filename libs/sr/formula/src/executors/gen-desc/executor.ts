@@ -1,5 +1,5 @@
-import { writeFileSync } from 'fs'
-import * as path from 'path'
+import { writeFileSync } from 'node:fs'
+import * as path from 'node:path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   extractCondMetadata,
@@ -34,7 +34,7 @@ export default async function runExecutor(
       'q' in value.tag
     ) {
       const sheet = tag.sheet!
-      const name = value.tag['name']!
+      const name = value.tag.name!
       return { sheet, name, tag: { ...tag, ...value.tag } }
     }
     return undefined
@@ -53,10 +53,10 @@ export default async function runExecutor(
       'name' in value.tag &&
       'q' in value.tag &&
       // Ignore double listings for damageType
-      !(!value.tag['damageType1'] && value.tag['damageType2'] !== undefined)
+      !(!value.tag.damageType1 && value.tag.damageType2 !== undefined)
     ) {
       const sheet = tag.sheet!
-      const name = value.tag['name']!
+      const name = value.tag.name!
       return { sheet, name, tag: { ...tag, ...value.tag } }
     }
     return undefined

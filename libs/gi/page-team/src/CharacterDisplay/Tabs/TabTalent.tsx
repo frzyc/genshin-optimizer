@@ -82,12 +82,14 @@ export default function CharacterTalentPane() {
     () =>
       range(1, maxConstellationCount).map((i) => (
         <SkillDisplayCard
+          key={i}
           talentKey={`constellation${i}` as TalentSheetElementKey}
           subtitle={t('constellationLvl', { level: i })}
           onClickTitle={() =>
             buildTc?.character
               ? setBuildTc((buildTc) => {
                   if (buildTc.character) buildTc.character.constellation = i
+                  return buildTc
                 })
               : database.chars.set(characterKey, {
                   constellation: i === constellation ? i - 1 : i,
@@ -202,7 +204,7 @@ export default function CharacterTalentPane() {
 }
 function ReactionDisplay() {
   const { data } = useContext(DataContext)
-  const reaction = data.getDisplay()['reaction'] as Record<string, CalcResult>
+  const reaction = data.getDisplay().reaction as Record<string, CalcResult>
   return (
     <CardThemed bgt="light">
       <CardContent>
@@ -268,9 +270,11 @@ function SkillDisplayCard({
             ? setBuildTc((buildTc) => {
                 if (buildTc.character?.talent[talentKey])
                   buildTc.character.talent[talentKey] = talent
+                return buildTc
               })
             : database.chars.set(characterKey, (char) => {
                 char.talent[talentKey] = talent
+                return char
               })
         }
       />
@@ -349,6 +353,7 @@ export function ConstellationDropdown() {
             buildTc?.character
               ? setBuildTc((buildTc) => {
                   if (buildTc.character) buildTc.character.constellation = i
+                  return buildTc
                 })
               : database.chars.set(characterKey, {
                   constellation: i,

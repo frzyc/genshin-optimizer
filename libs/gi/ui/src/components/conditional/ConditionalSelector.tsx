@@ -39,21 +39,20 @@ export function ConditionalSelector({
         disabled={disabled}
       />
     )
-  } else if ('path' in conditional) {
+  }if ('path' in conditional) {
     return (
       <ExclusiveConditionalSelector
         conditional={conditional}
         disabled={disabled}
       />
     )
-  } /*if ("path" in Object.entries(conditional.states)[0]) */ else {
+  }
     return (
       <MultipleConditionalSelector
         conditional={conditional}
         disabled={disabled}
       />
     )
-  }
 }
 
 interface SimpleConditionalSelectorProps extends ConditionalSelectorProps {

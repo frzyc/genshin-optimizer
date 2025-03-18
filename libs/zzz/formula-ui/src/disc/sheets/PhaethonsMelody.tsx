@@ -8,18 +8,13 @@ import { Set2Display, Set4Display } from '../components'
 const key: DiscSetKey = 'PhaethonsMelody'
 const [chg, _ch] = trans('disc', key)
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 const icon = discDefIcon(key)
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const cond = conditionals[key]
+const _cond = conditionals[key]
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const buff = buffs[key]
+const _buff = buffs[key]
 
 const sheet: UISheet<'2' | '4'> = {
   2: {

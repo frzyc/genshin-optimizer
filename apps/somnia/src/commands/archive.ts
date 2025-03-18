@@ -204,17 +204,17 @@ async function archiveMessage(
     return await charArchive(id as CharacterSheetKey, arg, lang)
   }
   //weapons archive
-  else if (subcommand === 'weapon') {
+  if (subcommand === 'weapon') {
     if (!archive[subcommand].includes(id as WeaponKey))
       throw 'Invalid weapon name'
     return await weaponArchive(id as WeaponKey, arg, lang)
   }
   //artifacts archive
-  else if (subcommand === 'artifact') {
+  if (subcommand === 'artifact') {
     if (!archive[subcommand].includes(id as ArtifactSetKey))
       throw 'Invalid artifact name'
     return await artifactArchive(id as ArtifactSetKey, lang)
-  } else throw 'Invalid selection'
+  }throw 'Invalid selection'
 }
 
 export async function run(interaction: ChatInputCommandInteraction) {
@@ -263,5 +263,5 @@ export async function reaction(
   )
     return reaction.message.delete()
 
-  if (arg[1] == 'char') return charReaction(reaction)
+  if (arg[1] === 'char') return charReaction(reaction)
 }

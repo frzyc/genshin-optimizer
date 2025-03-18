@@ -7,7 +7,7 @@ import {
   type RelicSlotKey,
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
-import { type ICachedRelic } from '@genshin-optimizer/sr/db'
+import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
   OptConfigContext,
   OptConfigProvider,
@@ -194,7 +194,7 @@ function OptimizeWrapper() {
     let results: BuildResult<string>[]
     try {
       results = await optimizer.results
-    } catch (e) {
+    } catch (_e) {
       return
     } finally {
       cancelToken.current = () => {}
@@ -231,7 +231,7 @@ function OptimizeWrapper() {
   const onCancel = useCallback(() => {
     cancelToken.current()
     setOptimizing(false)
-  }, [cancelToken])
+  }, [])
 
   return (
     <CardThemed>

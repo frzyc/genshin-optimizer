@@ -1,6 +1,6 @@
-import { spawn } from 'child_process'
-import { mkdirSync, writeFileSync } from 'fs'
-import { dirname, join } from 'path'
+import { spawn } from 'node:child_process'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
 import { workspaceRoot } from '@nx/devkit'
 
 /**
@@ -97,8 +97,7 @@ ${dataContent}
 export default data
 `
   const formatted =
-    '// This is a generated index file.\n' +
-    (await formatText(`${path}/index.ts`, indexContent))
+    `// This is a generated index file.\n${await formatText(`${path}/index.ts`, indexContent)}`
   mkdirSync(path, { recursive: true })
   writeFileSync(`${path}/index.ts`, formatted)
 

@@ -98,7 +98,7 @@ export function ArtifactSubstatEditor({
         <NumberInputLazy
           color={displayValue ? 'success' : 'primary'}
           float={getUnitStr(statKey) === '%'}
-          value={parseFloat(displayValue.toFixed(2))}
+          value={Number.parseFloat(displayValue.toFixed(2))}
           onChange={(v) => v !== undefined && setValue(v)}
           size="small"
           inputProps={{
@@ -134,7 +134,7 @@ export function ArtifactSubstatEditor({
         <NumberInputLazy
           color={value ? (invalid ? 'warning' : 'success') : 'primary'}
           float
-          value={parseFloat(rolls.toFixed(2))}
+          value={Number.parseFloat(rolls.toFixed(2))}
           onChange={(v) => v !== undefined && setValue(v * substatValue)}
           size="small"
           inputProps={{
@@ -175,8 +175,8 @@ export function ArtifactSubstatEditor({
                 <Typography>
                   {t(
                     numMains
-                      ? `tabTheorycraft.maxRollsMain`
-                      : `tabTheorycraft.maxRolls`,
+                      ? 'tabTheorycraft.maxRollsMain'
+                      : 'tabTheorycraft.maxRolls',
                     { value: maxRolls }
                   )}
                 </Typography>
@@ -213,8 +213,8 @@ export function ArtifactSubstatEditor({
             step={1}
             marks
             valueLabelDisplay="auto"
-            onChange={(e, v) => setRolls(v as number)}
-            onChangeCommitted={(e, v) => setRValue(v as number)}
+            onChange={(_e, v) => setRolls(v as number)}
+            onChangeCommitted={(_e, v) => setRValue(v as number)}
             disabled={disabled}
           />
         </CardThemed>

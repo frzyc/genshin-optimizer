@@ -43,9 +43,8 @@ export function characterKeyToGenderedKey(
   if (isTrailblazerKey(ck)) {
     // TODO: implement gender
     return `${ck}F` as TrailblazerGenderedKey
-  } else {
-    return ck as NonTrailblazerCharacterKey
   }
+    return ck as NonTrailblazerCharacterKey
 }
 type LightConeAssetKey = 'icon' | 'cover'
 export function lightConeAsset(lck: LightConeKey, asset: LightConeAssetKey) {

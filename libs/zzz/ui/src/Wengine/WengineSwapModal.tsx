@@ -111,7 +111,7 @@ export function WengineSwapModal({
       wengineFilterConfigs()
     )
     const sortFunc = sortFunction(
-      wengineSortMap['level'] ?? [],
+      wengineSortMap.level ?? [],
       false,
       wengineSortConfigs()
     )

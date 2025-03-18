@@ -27,7 +27,7 @@ export const createConvert =
         r.withAll('q', Object.keys(v[qt]), (r, q) => {
           if (!v[qt][q]) console.error(`Invalid { qt:${qt} q:${q} }`)
           const { sheet } = v[qt][q]
-          if (sheet && !tag['sheet']) r = r.sheet(sheet) // `tag.sheet` overrides `Desc`
+          if (sheet && !tag.sheet) r = r.sheet(sheet) // `tag.sheet` overrides `Desc`
           return r
         }),
       { withTag: (tag: Read_['tag']) => r.withTag(tag) }
@@ -88,7 +88,7 @@ type CondIgnored = 'both' | 'src' | 'dst' | 'none'
 function allConditionals<T, Tag_ extends Tag>(
   nullTag: Tag_,
   sheet: Sheet<Tag_>,
-  shared: CondIgnored = 'none',
+  shared: CondIgnored,
   meta: IBaseConditionalData,
   transform: (r: Read<Tag_>, q: string) => T
 ): Record<string, T> {

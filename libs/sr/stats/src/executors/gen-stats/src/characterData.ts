@@ -129,14 +129,14 @@ export default function characterData(): CharacterData {
         )
         const servantSkillTree:
           | Record<ServantSkillTreeType, SkillTree>
-          | undefined = skillTree['servantSkill']
+          | undefined = skillTree.servantSkill
           ? {
-              servantSkill: skillTree['servantSkill'],
-              servantTalent: skillTree['servantTalent'],
+              servantSkill: skillTree.servantSkill,
+              servantTalent: skillTree.servantTalent,
             }
           : undefined
-        delete skillTree['servantSkill']
-        delete skillTree['servantTalent']
+        skillTree.servantSkill = undefined
+        skillTree.servantTalent = undefined
         verifyObjKeys(skillTree, allAvatarSkillTreeTypes)
 
         const ascension = avatarPromotionConfig[avatarid].map(
@@ -227,14 +227,12 @@ function getSkillParamList(
     if (skillTree[0].PointType !== 4) {
       // Character skill (basic, skill, ult, talent, technique)
       return getSkillParamFromAvatarSkill(LevelUpSkillID, skillTreeType)
-    } else {
+    }
       // Servant skill
       return getSkillParamFromAvatarServantSkill(LevelUpSkillID)
-    }
-  } else {
+  }
     // Grab from itself (AvatarSkillTreeConfig) (bonus abilities/stat boosts)
     return getSkillParamFromAvatarSkillTree(skillTree)
-  }
 }
 
 function getSkillParamFromAvatarSkill(

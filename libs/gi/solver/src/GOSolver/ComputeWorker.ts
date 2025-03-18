@@ -14,7 +14,7 @@ export class ComputeWorker {
   builds: SolverBuild[] = []
   buildValues: number[] | undefined = undefined
   plotData: PlotData | undefined
-  threshold = -Infinity
+  threshold = Number.NEGATIVE_INFINITY
   topN: number
   min: number[]
 
@@ -131,7 +131,7 @@ export class ComputeWorker {
       this.buildValues = this.builds.map((x) => x.value)
       this.threshold = Math.max(
         this.threshold,
-        this.buildValues[topN - 1] ?? -Infinity
+        this.buildValues[topN - 1] ?? Number.NEGATIVE_INFINITY
       )
     }
   }

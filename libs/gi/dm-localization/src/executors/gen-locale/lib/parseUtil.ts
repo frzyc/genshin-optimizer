@@ -112,7 +112,7 @@ export const parsingFunctions: {
     if (strings.length === 3) {
       const [normal, charged, plunging] = strings
       return { normal, charged, plunging } as any
-    } else if (strings.length === 4) {
+    }if (strings.length === 4) {
       //for childe or kazuha
       const [, charkey] = keys as any
       if (charkey === 'KaedeharaKazuha') {
@@ -174,13 +174,13 @@ export const parsingFunctions: {
     }
     throw `parsing fields error[${keys}](${lang}): ${string}`
   },
-  paragraph: (lang, string) => paragraph(string),
-  skillParam: (lang, string) => {
+  paragraph: (_lang, string) => paragraph(string),
+  skillParam: (_lang, string) => {
     if (!string) string = ''
     string = string.split('|')[0]
     return string
   },
-  skillParamEncoding: (lang, string) => {
+  skillParamEncoding: (_lang, string) => {
     if (!string) return ''
     string = string.split('|')[1]
     // Convert to i18n'able format
@@ -199,13 +199,12 @@ export const parsingFunctions: {
         if (floatOrInt?.[0] === 'F') {
           if (percent === 'P') {
             return `, percent(fixed: ${floatOrInt[1]})}}%`
-          } else {
-            return `, fixed(fixed: ${floatOrInt[1]})}}`
           }
+            return `, fixed(fixed: ${floatOrInt[1]})}}`
         }
         // 'P'
-        else if (percent === 'P') {
-          return `, percent}}%`
+        if (percent === 'P') {
+          return ', percent}}%'
         }
         // 'I' has no formatting
         return '}}'
@@ -215,12 +214,12 @@ export const parsingFunctions: {
   },
   plungeLow: (lang, string) => plungeUtil(lang, string, true),
   plungeHigh: (lang, string) => plungeUtil(lang, string, false),
-  string: (lang, string) => string,
-  constellation: (lang, string) => constellation(string),
-  talent: (lang, string) => talent(string),
-  altSprint: (lang, string) => altSprint(string),
-  passive1: (lang, string) => passive1(string),
-  passive4: (lang, string) => passive4(string),
+  string: (_lang, string) => string,
+  constellation: (_lang, string) => constellation(string),
+  talent: (_lang, string) => talent(string),
+  altSprint: (_lang, string) => altSprint(string),
+  passive1: (_lang, string) => passive1(string),
+  passive4: (_lang, string) => passive4(string),
 }
 
 export function constellation(string: string) {

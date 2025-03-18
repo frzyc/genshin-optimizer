@@ -1,7 +1,7 @@
-import process = require('process')
+import process = require('node:process')
 import type { ChatInputCommandInteraction } from 'discord.js'
 import { EmbedBuilder, SlashCommandBuilder } from 'discord.js'
-import { readFile, stat } from 'fs/promises'
+import { readFile, stat } from 'node:fs/promises'
 
 export const slashcommand = new SlashCommandBuilder()
   .setName('debug')
@@ -16,18 +16,18 @@ async function read(path: string) {
   }
 }
 
-const base = `https://github.com/frzyc/genshin-optimizer`
+const base = 'https://github.com/frzyc/genshin-optimizer'
 
 export async function run(interaction: ChatInputCommandInteraction) {
-  const mainstat = await stat(__dirname + '/main.js')
+  const mainstat = await stat(`${__dirname}/main.js`)
   const buildtime = Math.floor(mainstat.mtime.getTime() / 1000)
   const uptime = Math.floor(Date.now() / 1000 - process.uptime())
   let text = `build: <t:${buildtime}:R>\n` + `up: <t:${uptime}:R>\n`
 
-  const ref = await read(__dirname + '/ref')
+  const ref = await read(`${__dirname}/ref`)
   if (ref) text += `ref: [\`${ref}\`](<${base}/commit/${ref}>)\n`
 
-  const pr = await read(__dirname + '/prNumber')
+  const pr = await read(`${__dirname}/prNumber`)
   if (pr) text += `pr: [\`#${pr}\`](<${base}/pull/${pr}>)\n`
 
   const embed = new EmbedBuilder()

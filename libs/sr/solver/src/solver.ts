@@ -62,20 +62,20 @@ export function optimize(
     /**
      * Removes relic and lightcone nodes from the opt character, while retaining data from the rest of the team.
      */
-    if (tag['src'] !== characterKey) return undefined // Wrong member
-    if (tag['et'] !== 'own') return undefined // Not applied (only) to self
+    if (tag.src !== characterKey) return undefined // Wrong member
+    if (tag.et !== 'own') return undefined // Not applied (only) to self
 
-    if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
-      return { q: tag['q']! } // Relic stat bonus
-    if (tag['q'] === 'count' && relicSetKeys.has(tag['sheet'] as any))
-      return { q: tag['sheet']! } // Relic set counter
+    if (tag.sheet === 'dyn' && tag.qt === 'premod')
+      return { q: tag.q! } // Relic stat bonus
+    if (tag.q === 'count' && relicSetKeys.has(tag.sheet as any))
+      return { q: tag.sheet! } // Relic set counter
     if (
-      tag['qt'] == 'lightCone' &&
-      ['lvl', 'ascension', 'superimpose'].includes(tag['q'] as string)
+      tag.qt === 'lightCone' &&
+      ['lvl', 'ascension', 'superimpose'].includes(tag.q as string)
     )
-      return { q: tag['q']! } // Light cone bonus
-    if (tag['q'] === 'count' && lightConeKeys.has(tag['sheet'] as any))
-      return { q: tag['sheet']! } // Light cone counter
+      return { q: tag.q! } // Light cone bonus
+    if (tag.q === 'count' && lightConeKeys.has(tag.sheet as any))
+      return { q: tag.sheet! } // Light cone counter
 
     return undefined
   })
@@ -83,14 +83,14 @@ export function optimize(
     // filter2: if not empty, at least one >= 2
     setFilter2Cavern.length
       ? max(...setFilter2Cavern.map((q) => read({ q }, 'sum')))
-      : constant(Infinity),
+      : constant(Number.POSITIVE_INFINITY),
     setFilter2Planar.length
       ? max(...setFilter2Planar.map((q) => read({ q }, 'sum')))
-      : constant(Infinity),
+      : constant(Number.POSITIVE_INFINITY),
     // filter4: if not empty, at least one >= 4
     setFilter4Cavern.length
       ? max(...setFilter4Cavern.map((q) => read({ q }, 'sum')))
-      : constant(Infinity)
+      : constant(Number.POSITIVE_INFINITY)
     // other calcs (graph, etc)
   )
   return new Solver({
@@ -98,7 +98,7 @@ export function optimize(
     // Add -Infinity as the opt-target itself is also used as a min constraint
     // Invert max constraints for pruning
     minimum: [
-      -Infinity,
+      Number.NEGATIVE_INFINITY,
       ...statFilters.map((filter) =>
         filter.isMax ? filter.value * -1 : filter.value
       ),

@@ -243,7 +243,7 @@ export class OptConfigDataManager extends DataManager<
       listId && this.database.generatedBuildList.get(listId)
     if (listId && generatedBuildList)
       return this.database.generatedBuildList.set(listId, list)
-    else
+    
       return this.database.optConfigs.set(optConfigId, {
         generatedBuildListId: this.database.generatedBuildList.new(list),
       }) // Create a new list

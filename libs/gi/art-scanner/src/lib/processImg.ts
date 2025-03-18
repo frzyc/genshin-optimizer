@@ -189,11 +189,11 @@ export async function processEntry(
     )
     drawline(canvas, whiteCardTop, { r: 255, g: 0, b: 200, a: 200 }, false)
 
-    debugImgs['artifactCardAnalysis'] = canvas.toDataURL()
+    debugImgs.artifactCardAnalysis = canvas.toDataURL()
   }
 
   if (debugImgs)
-    debugImgs['headerCropped'] = imageDataToCanvas(headerCropped).toDataURL()
+    debugImgs.headerCropped = imageDataToCanvas(headerCropped).toDataURL()
 
   const whiteCardCropped = crop(artifactCardCanvas, {
     y1: whiteCardTop,
@@ -214,7 +214,7 @@ export async function processEntry(
     drawHistogram(canvas, greentextHisto, { r: 100, g: 0, b: 0, a: 100 }, false)
     drawline(canvas, greenTextTop, { r: 0, g: 255, b: 0, a: 200 }, false)
     drawline(canvas, greenTextBot, { r: 0, g: 0, b: 255, a: 200 }, false)
-    debugImgs['whiteCardAnalysis'] = canvas.toDataURL()
+    debugImgs.whiteCardAnalysis = canvas.toDataURL()
   }
 
   const greenTextBuffer = greenTextBot - greenTextTop
@@ -237,7 +237,7 @@ export async function processEntry(
   if (debugImgs) {
     const canvas = imageDataToCanvas(substatsCardCropped)
     drawHistogram(canvas, lockHisto, { r: 0, g: 100, b: 0, a: 100 })
-    debugImgs['substatsCardCropped'] = canvas.toDataURL()
+    debugImgs.substatsCardCropped = canvas.toDataURL()
   }
 
   const bwHeader = preprocessImage(headerCropped)
@@ -256,12 +256,12 @@ export async function processEntry(
       'bw'
     )
   if (debugImgs) {
-    debugImgs['bwHeader'] = imageDataToCanvas(bwHeader).toDataURL()
-    debugImgs['greenTextCropped'] =
+    debugImgs.bwHeader = imageDataToCanvas(bwHeader).toDataURL()
+    debugImgs.greenTextCropped =
       imageDataToCanvas(greenTextCropped).toDataURL()
-    debugImgs['bwGreenText'] = imageDataToCanvas(bwGreenText).toDataURL()
+    debugImgs.bwGreenText = imageDataToCanvas(bwGreenText).toDataURL()
     if (bwEquipped)
-      debugImgs['bwEquipped'] = imageDataToCanvas(bwEquipped).toDataURL()
+      debugImgs.bwEquipped = imageDataToCanvas(bwEquipped).toDataURL()
   }
 
   const [whiteTexts, substatTexts, artifactSetTexts, equippedTexts] =
@@ -323,7 +323,7 @@ function verticallyCropArtifactCard(
     drawline(canvas, a, { r: 0, g: 255, b: 0, a: 150 })
     drawline(canvas, b, { r: 0, g: 0, b: 255, a: 150 })
 
-    debugImgs['fullAnalysis'] = canvas.toDataURL()
+    debugImgs.fullAnalysis = canvas.toDataURL()
 
     // debugImgs['horicropped'] = imageDataToCanvas(cropped).toDataURL()
   }
@@ -356,7 +356,7 @@ function parseRarity(
   if (debugImgs) {
     const canvas = imageDataToCanvas(stars)
     drawHistogram(canvas, starsHistogram, { r: 100, g: 0, b: 0, a: 100 })
-    debugImgs['rarity'] = canvas.toDataURL()
+    debugImgs.rarity = canvas.toDataURL()
   }
   const maxThresh = Math.max(...starsHistogram) * 0.5
   let count = 0

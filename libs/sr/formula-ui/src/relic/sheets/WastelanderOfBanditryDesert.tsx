@@ -11,19 +11,13 @@ import { trans } from '../../util'
 
 const key: RelicSetKey = 'WastelanderOfBanditryDesert'
 const [chg, _ch] = trans('relic', key)
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const dm = mappedStats.relic[key]
+const _dm = mappedStats.relic[key]
 const icon = relicAsset(key, getDefaultRelicSlot(key))
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const cond = conditionals[key]
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+const _cond = conditionals[key]
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const buff = buffs[key]
+const _buff = buffs[key]
 
 const sheet: UISheet<'2' | '4'> = {
   2: {

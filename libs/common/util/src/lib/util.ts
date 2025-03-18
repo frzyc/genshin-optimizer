@@ -19,10 +19,10 @@ export function deepClone<T>(obj: T): T {
   if (!obj) return obj
   if (!Object.keys(obj).length) return {} as T
   const ret = { ...obj }
-  Object.entries(obj).forEach(([k, v]) => {
-    if (typeof v !== 'object') return
+  for (const [k, v] of Object.entries(obj)) {
+    if (typeof v !== 'object') continue
     ret[k as keyof T] = JSON.parse(JSON.stringify(v))
-  })
+  }
   return ret
 }
 

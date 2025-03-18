@@ -46,10 +46,10 @@ export default function CustomMultiTargetCard({
 }) {
   const { t } = useTranslation('page_character')
   const [target, setTarget] = useState(structuredClone(targetProp))
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (JSON.stringify(targetProp) !== JSON.stringify(target))
       setTarget(structuredClone(targetProp))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [targetProp])
 
   const { name, description } = target
@@ -72,7 +72,7 @@ export default function CustomMultiTargetCard({
       target_.targets = [...target_.targets, initCustomTarget(t, multi)]
       setTarget(target_)
     },
-    [target, setTarget]
+    [target]
   )
 
   const setCustomTarget = useCallback(
@@ -81,7 +81,7 @@ export default function CustomMultiTargetCard({
       targets[index] = ctarget
       setTarget({ ...target, targets })
     },
-    [target, setTarget]
+    [target]
   )
 
   const deleteCustomTarget = useCallback(
@@ -95,7 +95,7 @@ export default function CustomMultiTargetCard({
       targets.splice(index, 1)
       setTarget({ ...target, targets })
     },
-    [target, setTarget, t]
+    [target, t]
   )
 
   const [selectedTarget, setSelectedTarget] = useState(-1)
@@ -109,7 +109,7 @@ export default function CustomMultiTargetCard({
       setTarget({ ...target, targets })
       setSelectedTarget(newRank - 1)
     },
-    [target, setTarget]
+    [target]
   )
 
   const dupCustomTarget = useCallback(
@@ -118,7 +118,7 @@ export default function CustomMultiTargetCard({
       targets.splice(index, 0, deepClone(targets[index]))
       setTarget({ ...target, targets })
     },
-    [target, setTarget]
+    [target]
   )
 
   const copyToClipboard = () =>
@@ -131,7 +131,7 @@ export default function CustomMultiTargetCard({
     () =>
       target.targets.map((t, i) => (
         <CustomTargetDisplay
-          key={t.path.join() + i}
+          key={t.path.join()}
           selected={selectedTarget === i}
           setSelect={() =>
             selectedTarget === i ? setSelectedTarget(-1) : setSelectedTarget(i)
@@ -213,7 +213,7 @@ export default function CustomMultiTargetCard({
                         try {
                           JSON.parse(description)
                           return true
-                        } catch (e) {
+                        } catch (_e) {
                           return false
                         }
                       })()

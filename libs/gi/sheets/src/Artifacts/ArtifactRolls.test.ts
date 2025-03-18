@@ -561,7 +561,7 @@ function somePerm(
 ): boolean {
   const base = [...indices]
   const count = indices.reduce((a, _, i) => a * (i + 1), 1)
-  if (count > ehrlich.length) throw new Error(`Permutation too large`)
+  if (count > ehrlich.length) throw new Error('Permutation too large')
 
   for (let i = 0; i < count; i++) {
     if (callback(base)) return true
@@ -590,10 +590,9 @@ describe('Artifact Roll Model', () => {
         return (
           Math.round(extrapolateFloat(Math.fround(theoretical * 10))) / 10
         ).toFixed(1)
-      } else {
+      }
         const theoretical = indices.reduce((a, b) => a + rolls[b], 0)
         return Math.round(theoretical).toFixed(0)
-      }
     }
     const model2: Model = (indices) => {
       if (key.endsWith('_')) {
@@ -602,10 +601,9 @@ describe('Artifact Roll Model', () => {
           0
         )
         return (Math.round(Math.fround(theoretical * 10)) / 10).toFixed(1)
-      } else {
+      }
         const theoretical = indices.reduce((a, b) => a + rolls[b], 0)
         return Math.round(theoretical).toFixed(0)
-      }
     }
 
     for (const [string, ...values] of entries) {

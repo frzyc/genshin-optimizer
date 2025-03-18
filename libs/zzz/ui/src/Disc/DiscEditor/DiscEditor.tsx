@@ -343,7 +343,7 @@ export function DiscEditor({
                     value={level}
                     disabled={!disc.rarity}
                     onChange={(e) => {
-                      const value = parseInt(e.target.value) || 0
+                      const value = Number.parseInt(e.target.value) || 0
                       setDisc({ level: value })
                     }}
                   />
@@ -622,8 +622,8 @@ export function DiscEditor({
             {/* Error alert */}
             {!isValid && (
               <Alert variant="filled" severity="error">
-                {errors?.map((e, i) => (
-                  <div key={i}>{e}</div>
+                {errors?.map((e) => (
+                  <div key={e}>{e}</div>
                 ))}
               </Alert>
             )}

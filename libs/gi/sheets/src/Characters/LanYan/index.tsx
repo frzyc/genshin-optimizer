@@ -162,7 +162,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
 function autoIndex(index: number) {
   if (index > 3) {
     return index - 2
-  } else if (index > 1) {
+  }if (index > 1) {
     return index - 1
   }
   return index
@@ -170,7 +170,7 @@ function autoIndex(index: number) {
 function autoSuffix(index: number) {
   if (index === 1 || index === 3) {
     return '(1)'
-  } else if (index === 2 || index === 4) {
+  }if (index === 2 || index === 4) {
     return '(2)'
   }
   return undefined
@@ -196,7 +196,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
             multi: 3,
           }),
         },

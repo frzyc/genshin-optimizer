@@ -80,9 +80,9 @@ const Q = (up_rv_stdev + up_rv_mean ** 2) / 4
 const W = (up_rv_mean / 4) ** 2
 
 export enum ResultType {
-  Fast,
-  Slow,
-  Exact,
+  Fast = 0,
+  Slow = 1,
+  Exact = 2,
 }
 export type UpOptBuild = Record<ArtifactSlotKey, ArtifactBuildData>
 export type UpOptArtifact = {
@@ -207,7 +207,7 @@ export class UpOptCalculator {
         const ix = i * (1 + allSubstatKeys.length)
         return {
           v: out[ix],
-          grads: allSubstatKeys.map((sub, si) => out[ix + 1 + si]),
+          grads: allSubstatKeys.map((_sub, si) => out[ix + 1 + si]),
         }
       })
     }
@@ -487,7 +487,7 @@ export class UpOptCalculator {
       const mu = objective.map((o) => o.v)
       const cov = obj_ks.map((k1) =>
         obj_ks.map((k2) =>
-          k1.reduce((pv, cv, j) => pv + k1[j] * k2[j] * ns[j], 0)
+          k1.reduce((pv, _cv, j) => pv + k1[j] * k2[j] * ns[j], 0)
         )
       )
       distrs.push({ prob, mu, cov })
@@ -532,7 +532,7 @@ export class UpOptCalculator {
         const mu = objective.map((o) => o.v)
         const cov = obj_ks.map((k1) =>
           obj_ks.map((k2) =>
-            k1.reduce((pv, cv, j) => pv + k1[j] * k2[j] * ns[j], 0)
+            k1.reduce((pv, _cv, j) => pv + k1[j] * k2[j] * ns[j], 0)
           )
         )
         distrs.push({ prob, mu, cov })
@@ -595,14 +595,14 @@ export class UpOptCalculator {
       const vals = ns.map((ni, i) =>
         subs[i] && !this.skippableDerivatives[allSubstatKeys.indexOf(subs[i])]
           ? range(7 * ni, 10 * ni)
-          : [NaN]
+          : [Number.NaN]
       )
 
       cartesian(...vals).forEach((upVals) => {
         const stats = { ...base }
         let p_upVals = 1
         for (let i = 0; i < 4; i++) {
-          if (isNaN(upVals[i])) continue
+          if (Number.isNaN(upVals[i])) continue
 
           const key = subs[i]
           const val = upVals[i]
@@ -644,19 +644,19 @@ export class UpOptCalculator {
             ni += 1
             return !this.skippableDerivatives[allSubstatKeys.indexOf(subKey4)]
               ? range(7 * ni, 10 * ni)
-              : [NaN]
+              : [Number.NaN]
           }
           return subs[i] &&
             !this.skippableDerivatives[allSubstatKeys.indexOf(subs[i])]
             ? range(7 * ni, 10 * ni)
-            : [NaN]
+            : [Number.NaN]
         })
 
         cartesian(...vals).forEach((upVals) => {
           const stats = { ...this.artifacts[ix].values }
           let p_upVals = 1
           for (let i = 0; i < 3; i++) {
-            if (isNaN(upVals[i])) continue
+            if (Number.isNaN(upVals[i])) continue
 
             const key = subs[i]
             const val = upVals[i]
@@ -665,7 +665,7 @@ export class UpOptCalculator {
             const p_val = 4 ** -ni * quadrinomial(ni, val - 7 * ni)
             p_upVals *= p_val
           }
-          if (!isNaN(upVals[3])) {
+          if (!Number.isNaN(upVals[3])) {
             // i = 3 case
             const key = subKey4
             const val = upVals[3]
@@ -711,7 +711,7 @@ export class UpOptCalculator {
         return sub
       }, []),
     }
-    delete buildData.values['']
+    buildData.values[''] = undefined
     return buildData
   }
 }

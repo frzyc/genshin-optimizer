@@ -7,13 +7,13 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import {
-  type AbilityKey,
-  type StatBoostKey,
+import type {
+  AbilityKey,
+  StatBoostKey,
 } from '@genshin-optimizer/sr/consts'
-import {
-  type CharacterDatum,
-  type SkillTreeNodeBonusStat,
+import type {
+  CharacterDatum,
+  SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {

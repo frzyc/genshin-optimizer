@@ -82,7 +82,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       const name = `Team Name ${num}`
       if (existing.some((tc) => tc.name !== name)) return name
     }
-    return `Team Name`
+    return 'Team Name'
   }
   override validate(obj: unknown): Team | undefined {
     let {
@@ -97,9 +97,6 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     } = obj as Team
     if (typeof name !== 'string') name = this.newName()
     if (typeof description !== 'string') description = ''
-
-    // Validate teamMetadata
-    {
       // validate loadoutIds
       if (!Array.isArray(teamMetadata))
         teamMetadata = range(0, 3).map(() => undefined)
@@ -175,7 +172,6 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           optConfigId,
         } as TeammateDatum
       })
-    }
 
     if (typeof lastEdit !== 'number') lastEdit = Date.now()
 
@@ -380,7 +376,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         unfollowLightCone()
         unfollowRelics.forEach((unfollow) => unfollow())
       }
-    } else if (buildType === 'tc')
+    }if (buildType === 'tc')
       return this.database.buildTcs.follow(buildTcId, callback)
     return () => {}
   }
@@ -406,7 +402,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         unfollowLightCone()
         unfollowRelics.forEach((unfollow) => unfollow())
       }
-    } else if (compareType === 'tc')
+    }if (compareType === 'tc')
       return this.database.buildTcs.follow(compareBuildTcId, callback)
     return () => {}
   }

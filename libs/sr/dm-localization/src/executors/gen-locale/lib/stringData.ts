@@ -57,11 +57,11 @@ function processString(str: string | undefined) {
       // Bold + orange
       if (colorHex === 'f29e38ff')
         return `<${interpolationTags.orangeStrong}>${value}</${interpolationTags.orangeStrong}>`
-      else if (colorHex)
+      if (colorHex)
         throw new Error(
           `Unhandled colorHex ${colorHex} in string ${str} on match ${match}`
         )
-      else return `${value}`
+      return `${value}`
     }
   )
 
@@ -85,23 +85,21 @@ function createValueStr(
   plainString: string | null
 ) {
   if (index) {
-    if (suffix == '%') {
+    if (suffix === '%') {
       if (type?.startsWith('f')) {
         return `{{${index}, percent(fixed: ${type.substring(1)})}}${suffix}`
-      } else {
-        return `{{${index}, percent}}${suffix}`
       }
-    } else if (type?.startsWith('f')) {
+        return `{{${index}, percent}}${suffix}`
+    }if (type?.startsWith('f')) {
       return `{{${index}, fixed(fixed: ${type.substring(1)})}}`
     }
     return `{{${index}}}${suffix}`
-  } else if (plainString) {
+  }if (plainString) {
     return plainString
-  } else {
+  }
     throw new Error(
       'No index, suffix, type or plainString passed to createValueStr'
     )
-  }
 }
 
 const langArray = Object.entries(languageMap).map(([langKey, strings]) => {

@@ -23,12 +23,12 @@ export { allStats }
 
 export function getCharEle(ck: CharacterSheetKey | CharacterKey): ElementKey {
   if (ck.startsWith('TravelerAnemo')) return 'anemo'
-  else if (ck.startsWith('TravelerGeo')) return 'geo'
-  else if (ck.startsWith('TravelerElectro')) return 'electro'
-  else if (ck.startsWith('TravelerDendro')) return 'dendro'
-  else if (ck.startsWith('TravelerHydro')) return 'hydro'
-  else if (ck.startsWith('TravelerPyro')) return 'pyro'
-  else return allStats.char.data[ck as NonTravelerCharacterKey].ele!
+  if (ck.startsWith('TravelerGeo')) return 'geo'
+  if (ck.startsWith('TravelerElectro')) return 'electro'
+  if (ck.startsWith('TravelerDendro')) return 'dendro'
+  if (ck.startsWith('TravelerHydro')) return 'hydro'
+  if (ck.startsWith('TravelerPyro')) return 'pyro'
+  return allStats.char.data[ck as NonTravelerCharacterKey].ele!
 }
 
 // Omit the ele, should use getCharEle to get char element.

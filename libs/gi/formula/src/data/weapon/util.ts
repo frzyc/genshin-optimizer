@@ -1,4 +1,4 @@
-import { type WeaponKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
@@ -14,12 +14,12 @@ export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
   return [
     // Stats
     ...gen.lvlCurves.map(({ key, base, curve }) =>
-      (key == 'atk' ? ownBuff.base[key] : readStat(ownBuff.premod, key)).add(
+      (key === 'atk' ? ownBuff.base[key] : readStat(ownBuff.premod, key)).add(
         prod(base, allStatics('static')[curve])
       )
     ),
     ...Object.entries(gen.ascensionBonus).map(([key, values]) =>
-      (key == 'atk' ? ownBuff.base[key] : readStat(ownBuff.premod, key)).add(
+      (key === 'atk' ? ownBuff.base[key] : readStat(ownBuff.premod, key)).add(
         subscript(ascension, values)
       )
     ),

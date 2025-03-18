@@ -90,7 +90,7 @@ function _getCalcDisplay(
   if (typeof value !== 'number') {
     const str = value ?? ''
     return {
-      prec: Infinity,
+      prec: Number.POSITIVE_INFINITY,
       valueString: str,
       formula: str,
       formulas: [],
@@ -124,11 +124,11 @@ function _getCalcDisplay(
       )
 
     if (node.info.pivot || node.meta.op === 'const') {
-      result.prec = Infinity
+      result.prec = Number.POSITIVE_INFINITY
 
       if (result.assignment) {
         result.formulas = [result.assignment, ...result.formulas]
-        delete result.assignment
+        result.assignment = undefined
       }
     }
   }
@@ -142,13 +142,13 @@ function computeFormulaDisplay(
   const details = {
     add: { head: '', sep: ' + ', tail: '', prec: 1 },
     mul: { head: '', sep: ' * ', tail: '', prec: 2 },
-    max: { head: 'Max(', sep: ', ', tail: ')', prec: Infinity },
-    min: { head: 'Min(', sep: ', ', tail: ')', prec: Infinity },
+    max: { head: 'Max(', sep: ', ', tail: ')', prec: Number.POSITIVE_INFINITY },
+    min: { head: 'Min(', sep: ', ', tail: ')', prec: Number.POSITIVE_INFINITY },
   } as const
 
   const { op, ops } = node.meta
   const result: CalcDisplay = {
-    prec: Infinity,
+    prec: Number.POSITIVE_INFINITY,
     formula: '',
     valueString: valueString(node.value, info.unit, info.fixed),
     formulas: [...new Set(ops.flatMap((op) => GetCalcDisplay(op).formulas))],
@@ -219,20 +219,16 @@ function computeFormulaDisplay(
   }
 
   components.filter((c) => c)
-  result.formula = (
-    <>
-      {components.map((x, i) => (
-        <span
-          style={{
-            textDecoration: info.strikethrough ? 'line-through' : undefined,
-          }}
-          key={i}
-        >
-          {x}
-        </span>
-      ))}
-    </>
-  )
+  result.formula = components.map((x, i) => (
+    <span
+      style={{
+        textDecoration: info.strikethrough ? 'line-through' : undefined,
+      }}
+      key={i}
+    >
+      {x}
+    </span>
+  ))
 
   return result
 }

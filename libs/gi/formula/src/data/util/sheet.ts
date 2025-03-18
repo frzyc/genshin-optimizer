@@ -122,6 +122,6 @@ export function readStat(
   key: StatKey
 ): Read {
   return key.endsWith('_dmg_')
-    ? list['dmg_'][key.slice(0, -5) as ElementWithPhyKey]
+    ? list.dmg_[key.slice(0, -5) as ElementWithPhyKey]
     : list[key as Stat]
 }

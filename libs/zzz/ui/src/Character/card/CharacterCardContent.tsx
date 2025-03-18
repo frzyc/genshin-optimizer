@@ -49,8 +49,8 @@ export function CharacterCardContent({
           </Typography>
         </Box>
         <Box display="flex" gap={1.5} marginLeft="14px" alignItems="center">
-          {allSkillKeys.map((item, index) => (
-            <Box key={index} position="relative">
+          {allSkillKeys.map((item, _index) => (
+            <Box key={item} position="relative">
               <ImgIcon size={2} src={commonDefIcon(item)} />
               <Box
                 display="flex"

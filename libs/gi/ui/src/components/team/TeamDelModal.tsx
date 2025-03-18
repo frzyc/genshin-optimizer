@@ -106,7 +106,7 @@ export function TeamDelModal({
           {loadoutData.map((loadoutDatum, i) =>
             loadoutDatum ? (
               <LoadoutDisplay
-                key={i}
+                key={loadoutDatum.teamCharId}
                 teamCharId={loadoutDatum.teamCharId}
                 selected={delArr.includes(i)}
                 onClick={() => setDelArry((arr) => toggleArr(arr, i))}

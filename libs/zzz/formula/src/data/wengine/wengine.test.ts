@@ -79,7 +79,7 @@ function cond(
 ) {
   return conditionalEntries(wKey, characterKey, null)(name, value)
 }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: <explanation>
 function printDebug(calc: Calculator, read: Read) {
   console.log(prettify(calc.toDebug().compute(read)))
 }

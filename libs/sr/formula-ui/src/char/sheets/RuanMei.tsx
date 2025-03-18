@@ -6,7 +6,7 @@ import { buffs, conditionals, formulas } from '@genshin-optimizer/sr/formula'
 import { mappedStats } from '@genshin-optimizer/sr/stats'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { trans } from '../../util'
-import { type TalentSheetElementKey } from '../consts'
+import type { TalentSheetElementKey } from '../consts'
 import {
   bonusAbilitySheet,
   bonusStatsSheets,

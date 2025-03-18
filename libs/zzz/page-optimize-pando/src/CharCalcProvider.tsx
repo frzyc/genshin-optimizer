@@ -66,12 +66,12 @@ export function CharCalcProvider({
         ...charOpt.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValue }) =>
             withPreset(
-              `preset0`,
+              'preset0',
               conditionalEntries(sheet, src, dst)(condKey, condValue)
             )
         ),
         ...charOpt.bonusStats.flatMap(({ tag: { src, dst, ...tag }, value }) =>
-          withPreset(`preset0`, {
+          withPreset('preset0', {
             // since bonusStats are applied to own*, needs {src:key, dst:never}
             tag: { ...tag, src: character.key },
             value: constant(toDecimal(value, tag.q ?? '')),
@@ -122,15 +122,15 @@ function useCharacterAndEquipment(
 export function discsTagMapNodes(discs: ICachedDisc[]): TagMapNodeEntries {
   const sets: Partial<Record<DiscSetKey, number>> = {},
     stats: Partial<Record<DiscMainStatKey | DiscSubStatKey, number>> = {}
-  discs.forEach(({ setKey, mainStatKey, substats, level, rarity }) => {
+  for (const { setKey, mainStatKey, substats, level, rarity } of discs) {
     sets[setKey] = (sets[setKey] ?? 0) + 1
     stats[mainStatKey] =
       (stats[mainStatKey] ?? 0) + getDiscMainStatVal(rarity, mainStatKey, level)
-    substats.forEach(({ key, upgrades }) => {
-      if (!key || !upgrades) return
+    for (const { key, upgrades } of substats) {
+      if (!key || !upgrades) continue
       stats[key] =
         (stats[key] ?? 0) + getDiscSubStatBaseVal(key, rarity) * upgrades
-    })
-  })
+    }
+  }
   return discTagMapNodeEntries(stats, sets)
 }

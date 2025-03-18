@@ -160,17 +160,17 @@ export default function pyro(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.blazingDmg, {
-              name: ct.chg(`skill.skillParams.0`),
+              name: ct.chg('skill.skillParams.0'),
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.scorchingInstantDmg, {
-              name: ct.chg(`skill.skillParams.1`),
+              name: ct.chg('skill.skillParams.1'),
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.scorchingDmg, {
-              name: ct.chg(`skill.skillParams.2`),
+              name: ct.chg('skill.skillParams.2'),
             }),
           },
           {
@@ -222,7 +222,7 @@ export default function pyro(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.dmg, {
-              name: ct.chg(`burst.skillParams.0`),
+              name: ct.chg('burst.skillParams.0'),
             }),
           },
           {

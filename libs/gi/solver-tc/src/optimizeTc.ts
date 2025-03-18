@@ -45,7 +45,7 @@ export function getMinSubAndOtherRolls(charTC: BuildTc) {
       substats: { stats: substats, type: substatsType, rarity },
     },
   } = charTC
-  const existingRolls = objMap(substats, (v, k) =>
+  const existingRolls = objMap(substats, (_v, k) =>
     Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType))
   )
   const mainStatsCount = getMainStatsCount(slots)
@@ -95,11 +95,11 @@ export function optimizeTcUsingNodes(
     allSubstatKeys.includes(k as SubstatKey)
   )
 
-  const existingRolls = objMap(substats, (v, k) =>
+  const existingRolls = objMap(substats, (_v, k) =>
     Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType))
   )
   const maxSubsAssignable = objMap(maxSubstats, (v, k) => v - existingRolls[k])
-  let max = -Infinity
+  let max = Number.NEGATIVE_INFINITY
   const buffer: Record<string, number> = {} //Object.fromEntries([...subs].map((x) => [x, 0]))
   const bufferRolls: Partial<Record<SubstatKey | 'other', number>> = {
     other: 0,

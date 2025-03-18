@@ -15,7 +15,8 @@ import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, Palette, PaletteColor } from '@mui/material'
 import { Box, List, ListItem, Typography, styled } from '@mui/material'
 import type { ReactNode } from 'react'
-import React, { useCallback, useContext } from 'react'
+import type React from 'react'
+import { useCallback, useContext } from 'react'
 import type { Field, TagField, TextField } from '../types'
 
 export function FieldsDisplay({
@@ -88,7 +89,7 @@ export function TagFieldDisplay({
   field,
   component = ListItem,
   emphasize,
-  showZero = process.env['NODE_ENV'] === 'development',
+  showZero = process.env.NODE_ENV === 'development',
 }: {
   field: TagField
   component?: React.ElementType
@@ -120,7 +121,7 @@ export function TagFieldDisplay({
   if (!showZero && !calcValue && !compareCalcValue) return null
 
   let fieldVal = false as ReactNode
-  const unit = (field.fieldRef['q'] ?? '')?.endsWith('_') ? '%' : ''
+  const unit = (field.fieldRef.q ?? '')?.endsWith('_') ? '%' : ''
   const variant = '' // TODO: variant from tag like { ele: amp: cata: trans: }
   const fixed = undefined // TODO: what do here?
   // const calcDisplay = <span>TODO formula</span> //TODO: Formula display
@@ -269,10 +270,10 @@ export const FieldDisplayList = styled(List)<FieldDisplayListProps>(
       overflow: 'hidden',
       margin: 0,
       '> .MuiListItem-root:nth-of-type(even)': {
-        backgroundColor: (theme.palette[palette] as PaletteColor)['main'],
+        backgroundColor: (theme.palette[palette] as PaletteColor).main,
       },
       '> .MuiListItem-root:nth-of-type(odd)': {
-        backgroundColor: (theme.palette[palette] as PaletteColor)['dark'],
+        backgroundColor: (theme.palette[palette] as PaletteColor).dark,
       },
     }
   }

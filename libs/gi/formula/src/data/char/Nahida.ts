@@ -229,7 +229,7 @@ const t = register(
   dm.normal.hitArr.flatMap((arr, i) =>
     dmg(`normal_${i}`, info, 'atk', arr, 'normal')
   ),
-  dmg(`charged`, info, 'atk', dm.charged.dmg, 'charged'),
+  dmg('charged', info, 'atk', dm.charged.dmg, 'charged'),
   Object.entries(dm.plunging).flatMap(([k, v]) =>
     dmg(`plunging_${k}`, info, 'atk', v, 'plunging')
   ),

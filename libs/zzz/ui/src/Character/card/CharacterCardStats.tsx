@@ -1,5 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { type CardBackgroundColor } from '@genshin-optimizer/common/ui'
+import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
   statKeyToFixed,
@@ -55,7 +55,7 @@ export function CharacterCardStats({
           <SubstatDisplay
             substat={stat}
             value={characterStats[stat]}
-          ></SubstatDisplay>
+          />
         </ListItem>
       ))}
 
@@ -67,7 +67,7 @@ export function CharacterCardStats({
           <SubstatDisplay
             substat={coreStat}
             value={characterStat.coreStats[core - 1][coreStat]}
-          ></SubstatDisplay>
+          />
         ) : (
           <Typography>
             <strong>{t('characterCard.notUnlocked')}</strong>

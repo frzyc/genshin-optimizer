@@ -86,7 +86,8 @@ import {
   Typography,
 } from '@mui/material'
 import type { FormEventHandler, ReactNode } from 'react'
-import React, {
+import type React from 'react'
+import {
   Suspense,
   memo,
   useCallback,
@@ -152,7 +153,7 @@ export default function TabBuild() {
 
   const [maxWorkers, nativeThreads, setMaxWorkers] = useNumWorkers()
 
-  // Clear state when changing characters
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Clear state when changing characters
   useEffect(() => {
     setBuildStatus({
       type: 'inactive',
@@ -262,8 +263,8 @@ export default function TabBuild() {
           const { levelLow, levelHigh, excludedLocations, artExclusion } =
             deferredArtsDirty && deferredBuildSetting
           if (level >= levelLow && level <= levelHigh) {
-            ctMap['levelTotal']['in'].total++
-            if (filteredArtIdMap[id]) ctMap['levelTotal']['in'].current++
+            ctMap.levelTotal.in.total++
+            if (filteredArtIdMap[id]) ctMap.levelTotal.in.current++
           }
           const locKey = charKeyToLocCharKey(characterKey)
           if (
@@ -271,17 +272,16 @@ export default function TabBuild() {
             location !== locKey &&
             !excludedLocations.includes(location)
           ) {
-            ctMap['allowListTotal']['in'].total++
-            if (filteredArtIdMap[id]) ctMap['allowListTotal']['in'].current++
+            ctMap.allowListTotal.in.total++
+            if (filteredArtIdMap[id]) ctMap.allowListTotal.in.current++
           }
           if (artExclusion.includes(id)) {
-            ctMap['excludedTotal']['in'].total++
-            if (filteredArtIdMap[id]) ctMap['excludedTotal']['in'].current++
+            ctMap.excludedTotal.in.total++
+            if (filteredArtIdMap[id]) ctMap.excludedTotal.in.current++
           }
           if (teammateArtifactIds.includes(id)) {
-            ctMap['teammateBuildTotal']['in'].total++
-            if (filteredArtIdMap[id])
-              ctMap['teammateBuildTotal']['in'].current++
+            ctMap.teammateBuildTotal.in.total++
+            if (filteredArtIdMap[id]) ctMap.teammateBuildTotal.in.current++
           }
         })
       )
@@ -304,7 +304,7 @@ export default function TabBuild() {
       window.removeEventListener('focus', onFocus)
       window.removeEventListener('blur', onBlur)
     }
-  }, [tabFocused])
+  }, [])
 
   // Provides a function to cancel the work
   const cancelToken = useRef(() => {})
@@ -359,12 +359,15 @@ export default function TabBuild() {
       ...valueFilter.map((x) => x.value),
       unoptimizedOptimizationTargetNode,
     ]
-    const minimum = [...valueFilter.map((x) => x.minimum), -Infinity]
+    const minimum = [
+      ...valueFilter.map((x) => x.minimum),
+      Number.NEGATIVE_INFINITY,
+    ]
     const plotBaseNumNode: NumNode =
       plotBase && objPathValue(workerData.display ?? {}, plotBase)
     if (plotBaseNumNode) {
       unoptimizedNodes.push(plotBaseNumNode)
-      minimum.push(-Infinity)
+      minimum.push(Number.NEGATIVE_INFINITY)
     }
 
     const nodes = optimize(
@@ -445,7 +448,7 @@ export default function TabBuild() {
         results.map((x) => x.builds),
         maxBuildsToShow
       )
-      if (process.env['NODE_ENV'] === 'development')
+      if (process.env.NODE_ENV === 'development')
         console.log('Build Result', builds)
 
       database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
@@ -575,7 +578,7 @@ export default function TabBuild() {
         >
           {/* Level Filter */}
           <LevelFilter
-            levelTotal={levelTotal['in']}
+            levelTotal={levelTotal.in}
             levelLow={levelLow}
             levelHigh={levelHigh}
             disabled={generatingBuilds}
@@ -627,10 +630,10 @@ export default function TabBuild() {
           {/* use excluded */}
           <ExcludeArt
             disabled={generatingBuilds}
-            excludedTotal={excludedTotal['in']}
+            excludedTotal={excludedTotal.in}
           />
           <UseTeammateArt
-            totalTally={teammateBuildTotal['in']}
+            totalTally={teammateBuildTotal.in}
             useTeammateBuild={useTeammateBuild}
             disabled={generatingBuilds}
           />
@@ -664,7 +667,7 @@ export default function TabBuild() {
           {/* use equipped */}
           <UseEquipped
             disabled={generatingBuilds}
-            allowListTotal={allowListTotal['in']}
+            allowListTotal={allowListTotal.in}
           />
 
           {/*Minimum Final Stat Filter */}
@@ -945,7 +948,7 @@ const BuildList = memo(function BuildList({
     >
       {builds?.map((build, index) => (
         <DataContextWrapper
-          key={index + Object.values(build.artifactIds).join()}
+          key={Object.values(build.artifactIds).join()}
           characterKey={characterKey}
           build={build}
           compareData={compareData}

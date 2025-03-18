@@ -238,6 +238,7 @@ export default function TabWeapon() {
           <TableRow>
             {columns.map(({ key, label, width }) => (
               <TableCell
+                key={key}
                 sortDirection={
                   weapon.sortOrderBy === key ? weapon.sortOrder : false
                 }

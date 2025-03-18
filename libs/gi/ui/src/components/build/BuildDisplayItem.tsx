@@ -133,7 +133,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
 
   // state for showing art compare modal
   const [artNewOld, setArtNewOld] = useState<NewOld | undefined>()
-  const closeArt = useCallback(() => setArtNewOld(undefined), [setArtNewOld])
+  const closeArt = useCallback(() => setArtNewOld(undefined), [])
   const buildEquip = buildId && buildType === 'real'
   const equipBuild = useCallback(() => {
     if (buildEquip) {
@@ -372,6 +372,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
                         <Box>
                           {sameAsBuildIds.map((buildId) => (
                             <Typography
+                              key={buildId}
                               sx={{
                                 display: 'flex',
                                 gap: 1,

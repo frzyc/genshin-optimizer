@@ -8,7 +8,7 @@ export function validateTalent(
 ): ICharacterTalent {
   if (talent === null || typeof talent !== 'object') {
     return { auto: 1, skill: 1, burst: 1 }
-  } else {
+  }
     // Clamp the character's talent levels according to ascension
     const clampedTalent: ICharacterTalent = { ...talent }
     for (const [key, value] of Object.entries(clampedTalent)) {
@@ -19,5 +19,4 @@ export function validateTalent(
       )
     }
     return clampedTalent
-  }
 }

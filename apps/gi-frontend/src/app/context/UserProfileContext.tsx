@@ -1,5 +1,5 @@
 'use client'
-import { type User } from '@supabase/supabase-js'
+import type { User } from '@supabase/supabase-js'
 import { createContext, useEffect, useState } from 'react'
 import type { Account } from '../util/getAccount'
 import type { Profile } from '../util/getProfile'

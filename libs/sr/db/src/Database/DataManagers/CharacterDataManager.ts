@@ -222,7 +222,7 @@ export class CharacterDataManager extends DataManager<
     if (!db) return false
     if (isSro) {
       return JSON.stringify(db) === JSON.stringify(char)
-    } else {
+    }
       let {
         key,
         level,
@@ -272,7 +272,6 @@ export class CharacterDataManager extends DataManager<
         statBoosts,
       }
       return JSON.stringify(dbSr) === JSON.stringify(charSr)
-    }
   }
   triggerCharacter(key: CharacterKey, reason: TriggerString) {
     this.trigger(key, reason, this.get(key))

@@ -45,6 +45,7 @@ export function ArtifactAllSubstatEditor({
   const [maxSubstat] = maxSubstatData
   const rollsDeferred = useDeferredValue(rollsData)
   const isMount = useIsMount()
+  // biome-ignore lint/correctness/useExhaustiveDependencies: disable triggering for isMount
   useEffect(() => {
     if (isMount) return
     setBuildTc((buildTc) => {
@@ -66,12 +67,12 @@ export function ArtifactAllSubstatEditor({
         )
         return newVal
       })
+      return buildTc
     })
-    // disable triggering for isMount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rollsDeferred])
 
   const maxSubstatDeferred = useDeferredValue(maxSubstatData)
+  // biome-ignore lint/correctness/useExhaustiveDependencies: disable triggering for isMount
   useEffect(() => {
     if (isMount) return
     setBuildTc((charTC) => {
@@ -79,9 +80,8 @@ export function ArtifactAllSubstatEditor({
         charTC.optimization.maxSubstats,
         (_val, _statKey) => maxSubstatDeferred[0]
       )
+      return charTC
     })
-    // disable triggering for isMount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [maxSubstatDeferred])
 
   const maxRollsPerSub =
@@ -115,13 +115,13 @@ export function ArtifactAllSubstatEditor({
           step={1}
           marks
           valueLabelDisplay="auto"
-          onChange={(e, v) => setRolls([v as number])}
-          onChangeCommitted={(e, v) => setRolls([v as number])}
+          onChange={(_e, v) => setRolls([v as number])}
+          onChangeCommitted={(_e, v) => setRolls([v as number])}
           disabled={disabled}
         />
       </CardThemed>
       <NumberInputLazy
-        value={parseFloat((rolls ?? 0).toFixed(2))}
+        value={Number.parseFloat((rolls ?? 0).toFixed(2))}
         float
         onChange={(v) => v !== undefined && setRolls([v])}
         color={rolls && invalid ? 'warning' : 'primary'}

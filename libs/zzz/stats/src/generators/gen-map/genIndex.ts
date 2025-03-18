@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs'
+import { writeFileSync } from 'node:fs'
 import {
   allCharacterKeys,
   allDiscSetKeys,
@@ -8,7 +8,7 @@ import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
 import * as prettier from 'prettier'
 
-export default async function genIndex(tree: Tree, map_type: string) {
+export default async function genIndex(_tree: Tree, map_type: string) {
   const file_location = `${workspaceRoot}/libs/zzz/stats/src/mappedStats/${map_type}/index.ts`
   switch (map_type) {
     case 'char':

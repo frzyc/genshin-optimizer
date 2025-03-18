@@ -40,7 +40,7 @@ export default function BuildAlert({
   status: BuildStatus
   characterName: ReactNode
 }) {
-  const hasTotal = isFinite(total)
+  const hasTotal = Number.isFinite(total)
 
   const generatingBuilds = type !== 'inactive'
   const unskipped = total - skipped
@@ -56,7 +56,7 @@ export default function BuildAlert({
   const durationString = (
     <Monospace>
       {timeStringMs(
-        Math.round((finishTime ?? performance.now()) - (startTime ?? NaN))
+        Math.round((finishTime ?? performance.now()) - (startTime ?? Number.NaN))
       )}
     </Monospace>
   )
@@ -67,22 +67,22 @@ export default function BuildAlert({
     (skipped / ((finishTime ?? 1) - (startTime ?? 0))) * 1000
   const avgTestedPerSecondString = (
     <Monospace>
-      {parseFloat(avgTestedPerSecond.toFixed(1)).toLocaleString()}
+      {Number.parseFloat(avgTestedPerSecond.toFixed(1)).toLocaleString()}
     </Monospace>
   )
   const avgSkippedPerSecondString = (
     <Monospace>
-      {parseFloat(avgSkippedPerSecond.toFixed(1)).toLocaleString()}
+      {Number.parseFloat(avgSkippedPerSecond.toFixed(1)).toLocaleString()}
     </Monospace>
   )
   const testedPerSecondString = (
     <Monospace>
-      {parseFloat(testedPerSecond.toFixed(1)).toLocaleString()}
+      {Number.parseFloat(testedPerSecond.toFixed(1)).toLocaleString()}
     </Monospace>
   )
   const skippedPerSecondString = (
     <Monospace>
-      {parseFloat(skippedPerSecond.toFixed(1)).toLocaleString()}
+      {Number.parseFloat(skippedPerSecond.toFixed(1)).toLocaleString()}
     </Monospace>
   )
 

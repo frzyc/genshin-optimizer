@@ -26,8 +26,8 @@ export function NumberInputLazy({
 
   const saveValue = () => {
     const normalizedValue = float ? value.replace(',', '.') : value
-    let num = float ? parseFloat(normalizedValue) : parseInt(normalizedValue)
-    if (isNaN(num)) {
+    let num = float ? Number.parseFloat(normalizedValue) : Number.parseInt(normalizedValue)
+    if (Number.isNaN(num)) {
       num = 0
       setValue(num.toString())
     }

@@ -1,6 +1,6 @@
 import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
 import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   OptConfigProvider,
   useCharOpt,

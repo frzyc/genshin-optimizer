@@ -154,7 +154,7 @@ declare module '@mui/material/TextField' {
 const defaultTheme = createTheme({
   palette: {
     tonalOffset: 0.1,
-    mode: `dark`,
+    mode: 'dark',
   },
 })
 export const theme = createTheme({
@@ -173,11 +173,11 @@ export const theme = createTheme({
       name: 'success',
     }),
     warning: defaultTheme.palette.augmentColor({
-      color: { main: `#ffc107` },
+      color: { main: '#ffc107' },
       name: 'warning',
     }),
     error: defaultTheme.palette.augmentColor({
-      color: { main: `#c83c3c` },
+      color: { main: '#c83c3c' },
       name: 'error',
     }),
     background: {

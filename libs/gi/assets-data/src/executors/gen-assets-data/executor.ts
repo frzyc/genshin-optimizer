@@ -106,7 +106,8 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   Object.entries(avatarExcelConfigData).forEach(([charid, charData]) => {
     const { iconName, sideIconName } = charData
 
-    let banner, bar
+    let banner: string | undefined = undefined,
+      bar: string
     if (fetterCharacterCardExcelConfigData[charid as CharacterId]) {
       const { rewardId } = fetterCharacterCardExcelConfigData[charid]
       const { rewardItemList } = rewardExcelConfigData[rewardId]
@@ -166,7 +167,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       layeredAssignment(
         assetChar,
         [ck, 'burst'],
-        avatarSkillExcelConfigData[burst].skillIcon + '_HD'
+        `${avatarSkillExcelConfigData[burst].skillIcon}_HD`
       )
       if (sprint)
         layeredAssignment(
@@ -230,8 +231,8 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   // dumpFile(`${__dirname}/AssetData_gen.json`, assetChar)
 
   // Add in manually added assets that can't be datamined
-  assetData.chars['Somnia'] = {} as CharacterIcon
-  assetData.weapons['QuantumCatalyst'] = {} as {
+  assetData.chars.Somnia = {} as CharacterIcon
+  assetData.weapons.QuantumCatalyst = {} as {
     icon: string
     awakenIcon: string
   }

@@ -131,20 +131,20 @@ export default function CharacterTalentPane({
               </Grid>
             )
           })}
-          {!!characterSheet['sprint'] && (
+          {!!characterSheet.sprint && (
             <Grid item {...talentSpacing}>
               <SkillDisplayCard
                 talentKey="sprint"
                 // subtitle={t('talents.altSprint')}
-                sheetElement={characterSheet['sprint']}
+                sheetElement={characterSheet.sprint}
               />
             </Grid>
           )}
-          {!!characterSheet['passive'] && (
+          {!!characterSheet.passive && (
             <Grid item {...talentSpacing}>
               <SkillDisplayCard
                 talentKey="passive"
-                sheetElement={characterSheet['passive']}
+                sheetElement={characterSheet.passive}
               />
             </Grid>
           )}
@@ -338,7 +338,7 @@ export function ConstellationDropdown({
             //     })
           }
         >
-          {t(`constellationLvl`, { level: i })}
+          {t('constellationLvl', { level: i })}
         </MenuItem>
       ))}
     </DropdownButton>

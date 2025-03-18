@@ -23,7 +23,7 @@ export default function ResinCounter() {
     database.displayTool.get()
   )
   useEffect(
-    () => database.displayTool.follow((r, s) => setState(s)),
+    () => database.displayTool.follow((_r, s) => setState(s)),
     [database]
   )
   const resinIncrement = useRef(undefined as undefined | NodeJS.Timeout)
@@ -43,6 +43,7 @@ export default function ResinCounter() {
     })
   }
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (resin < RESIN_MAX) {
       const now = Date.now()
@@ -61,7 +62,6 @@ export default function ResinCounter() {
         )
     }
     return () => resinIncrement.current && clearTimeout(resinIncrement.current)
-    // eslint-disable-next-line
   }, [])
 
   const nextResinDateNum =
@@ -77,7 +77,7 @@ export default function ResinCounter() {
 
   const handleResinChange = (val: string) => {
     const MAX_ORIGINAL_RESIN = 2000
-    const newResin = parseInt(val)
+    const newResin = Number.parseInt(val)
     if (newResin >= 0 && newResin <= MAX_ORIGINAL_RESIN) {
       setResin(newResin)
     }
@@ -115,6 +115,7 @@ export default function ResinCounter() {
                 if (rcv === 0) {
                   return (
                     <Button
+                      key={rcv}
                       onClick={() => setResin(rcv)}
                       disabled={resin === 0}
                     >
@@ -125,6 +126,7 @@ export default function ResinCounter() {
                 if (rcv === RESIN_MAX) {
                   return (
                     <Button
+                      key={rcv}
                       onClick={() => setResin(RESIN_MAX)}
                       disabled={resin >= RESIN_MAX}
                     >
@@ -135,6 +137,7 @@ export default function ResinCounter() {
                 if (rcv > 0) {
                   return (
                     <Button
+                      key={rcv}
                       onClick={() => setResin(resin + rcv)}
                       disabled={resin >= RESIN_MAX}
                     >
@@ -145,6 +148,7 @@ export default function ResinCounter() {
 
                 return (
                   <Button
+                    key={rcv}
                     onClick={() => setResin(resin + rcv)}
                     disabled={resin < Math.abs(rcv)}
                   >

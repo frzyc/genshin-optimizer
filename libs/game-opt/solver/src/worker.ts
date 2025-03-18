@@ -42,7 +42,7 @@ export class Worker {
 
   add(works: Work[]): void {
     const { subworks, progress, candidates } = this
-    works.forEach((w) => (progress.remaining += w.count))
+    for (const w of works) progress.remaining += w.count
     subworks.unshift(
       ...works.map(({ ids, count }) => ({
         nodes: this.nodes,
@@ -150,7 +150,7 @@ function compile(
   m=out[${topN - 1}].value
 }`
   const forEachO = slotIds.map((i) => `for(const ${cs[i]} of ${cnds[i]}){`)
-  const forEachC = slotIds.map((i) => (i === 1 ? `}` + lenCheck : `}`))
+  const forEachC = slotIds.map((i) => (i === 1 ? `}${lenCheck}` : '}'))
   const body = `'use strict';
 const[${cnds}]=candidates,out=[];let failed=0
 ${forEachO.join('')}

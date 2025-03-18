@@ -155,7 +155,7 @@ function extractInfo<Tag_ extends Tag, COp>(
   let usedCats: Info<Tag_>['usedCats'] = new Set()
   for (const meta of metas) {
     conds = merge(conds, meta.conds)
-    meta.usedCats.forEach((c) => usedCats.add(c))
+    for (const c of meta.usedCats) usedCats.add(c)
   }
   const catLen = usedCats.size
   usedCats = metas.find((m) => m.usedCats.size === catLen)?.usedCats ?? usedCats

@@ -189,7 +189,7 @@ export function DiscCard({
                       justifyContent: 'center',
                       overflow: 'hidden',
                       borderRadius: '50%',
-                      border: `2px solid black`,
+                      border: '2px solid black',
                     }}
                   >
                     <Box

@@ -59,7 +59,7 @@ export default function PageOptimize() {
   useTitle(
     useMemo(() => {
       const charName = characterKey && t(`charNames_gen:${characterKey}`)
-      return charName ? `Optimize - ${charName}` : `Optimize`
+      return charName ? `Optimize - ${charName}` : 'Optimize'
     }, [characterKey, t])
   )
   const srcDstDisplayContextValue = useMemo(() => {
@@ -101,7 +101,7 @@ export default function PageOptimize() {
     () => ({
       src: characterKey,
       dst: characterKey,
-      preset: `preset0`,
+      preset: 'preset0',
     }),
     [characterKey]
   )

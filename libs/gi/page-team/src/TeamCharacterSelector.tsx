@@ -66,18 +66,18 @@ export default function TeamCharacterSelector({
     <Box
       sx={(theme) => {
         const backrgba = colorToRgbaString(
-          hexToColor(theme.palette['contentLight'].main)!,
+          hexToColor(theme.palette.contentLight.main)!,
           !characterKey ? 1 : 0.5
         )!
         const rgbas = [
           // color for team setting
           backrgba,
           ...elementArray.map((ele, i) => {
-            if (!ele) return `rgba(0,0,0,0)`
+            if (!ele) return 'rgba(0,0,0,0)'
 
             const hex = theme.palette[ele].main as string
             const color = hexToColor(hex)
-            if (!color) return `rgba(0,0,0,0)`
+            if (!color) return 'rgba(0,0,0,0)'
             return colorToRgbaString(color, selectedIndex === i ? 0.5 : 0.15)
           }),
         ]
@@ -201,7 +201,7 @@ export default function TeamCharacterSelector({
               }}
               iconPosition="start"
               value={teamCharKey ?? ind}
-              key={ind}
+              key={teamCharKey ?? ind}
               disabled={!loadoutData[ind]}
               label={
                 teamCharKey ? (

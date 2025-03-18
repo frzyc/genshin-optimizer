@@ -94,12 +94,12 @@ export class DisplayWengineEntry extends DataEntry<
   override set(
     value:
       | Partial<IDisplayWengine>
-      | ((v: IDisplayWengine) => Partial<IDisplayWengine> | void)
+      | ((v: IDisplayWengine) => Partial<IDisplayWengine> | undefined)
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {
       if (value.action === 'reset') return super.set(initialOption())
       return false
-    } else return super.set(value)
+    }return super.set(value)
   }
 }

@@ -1,4 +1,4 @@
-import * as path from 'path'
+import * as path from 'node:path'
 /// <reference types='vitest' />
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import react from '@vitejs/plugin-react'

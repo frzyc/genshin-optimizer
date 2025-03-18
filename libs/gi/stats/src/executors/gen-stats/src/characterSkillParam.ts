@@ -155,27 +155,27 @@ export default function characterSkillParam() {
         candSkillDepotIds
       const gender = characterIdMap[charid] === 'TravelerF' ? 'F' : 'M'
       genTalentHash(
-        ['TravelerAnemo' + gender],
+        [`TravelerAnemo${gender}`],
         avatarSkillDepotExcelConfigData[anemo]
       )
       genTalentHash(
-        ['TravelerGeo' + gender],
+        [`TravelerGeo${gender}`],
         avatarSkillDepotExcelConfigData[geo]
       )
       genTalentHash(
-        ['TravelerElectro' + gender],
+        [`TravelerElectro${gender}`],
         avatarSkillDepotExcelConfigData[electro]
       )
       genTalentHash(
-        ['TravelerDendro' + gender],
+        [`TravelerDendro${gender}`],
         avatarSkillDepotExcelConfigData[dendro]
       )
       genTalentHash(
-        ['TravelerHydro' + gender],
+        [`TravelerHydro${gender}`],
         avatarSkillDepotExcelConfigData[hydro]
       )
       genTalentHash(
-        ['TravelerPyro' + gender],
+        [`TravelerPyro${gender}`],
         avatarSkillDepotExcelConfigData[pyro]
       )
     } else {

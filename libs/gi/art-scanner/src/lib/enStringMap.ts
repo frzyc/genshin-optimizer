@@ -27,9 +27,9 @@ export const statMap = {
   heal_: 'Healing Bonus',
 } as Record<string, string>
 
-Object.entries(elementalData).forEach(([e, name]) => {
+for (const [e, name] of Object.entries(elementalData)) {
   statMap[`${e}_dmg_`] = `${name} DMG Bonus`
-})
+}
 
 export const artSlotNames = {
   flower: 'Flower of Life',

@@ -200,13 +200,12 @@ export class CharacterDataManager extends DataManager<
     if (!db) return false
     if (isGO) {
       return JSON.stringify(db) === JSON.stringify(char)
-    } else {
+    }
       let { key, level, constellation, ascension, talent } = db
       const dbGOOD = { key, level, constellation, ascension, talent }
       ;({ key, level, constellation, ascension, talent } = char)
       const charGOOD = { key, level, constellation, ascension, talent }
       return JSON.stringify(dbGOOD) === JSON.stringify(charGOOD)
-    }
   }
   triggerCharacter(key: LocationCharacterKey, reason: TriggerString) {
     if (key === 'Traveler')

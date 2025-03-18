@@ -266,11 +266,10 @@ export class OptConfigDataManager extends DataManager<
 
     if (listId && generatedBuildList) {
       return this.database.generatedBuildList.set(listId, list)
-    } else {
+    }
       return this.database.optConfigs.set(optConfigId, {
         generatedBuildListId: this.database.generatedBuildList.new(list),
       })
-    }
   }
 }
 
@@ -280,9 +279,9 @@ const initialBuildSettings: OptConfig = deepFreeze({
   useExcludedArts: false,
   statFilters: {},
   mainStatKeys: {
-    sands: [...artSlotMainKeys['sands']],
-    goblet: [...artSlotMainKeys['goblet']],
-    circlet: [...artSlotMainKeys['circlet']],
+    sands: [...artSlotMainKeys.sands],
+    goblet: [...artSlotMainKeys.goblet],
+    circlet: [...artSlotMainKeys.circlet],
   },
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,

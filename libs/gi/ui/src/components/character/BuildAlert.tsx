@@ -42,7 +42,7 @@ export function BuildAlert({
   characterKey: CharacterKey
   gender: GenderKey
 }) {
-  const hasTotal = isFinite(total)
+  const hasTotal = Number.isFinite(total)
 
   const generatingBuilds = type !== 'inactive'
   const unskipped = total - skipped
@@ -58,7 +58,7 @@ export function BuildAlert({
   const durationString = (
     <Monospace>
       {timeStringMs(
-        Math.round((finishTime ?? performance.now()) - (startTime ?? NaN))
+        Math.round((finishTime ?? performance.now()) - (startTime ?? Number.NaN))
       )}
     </Monospace>
   )

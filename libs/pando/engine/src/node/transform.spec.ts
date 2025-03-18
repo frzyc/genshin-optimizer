@@ -21,11 +21,11 @@ const unused = () => {
 addCustomOperation('foo', {
   range: unused,
   monotonicity: unused,
-  calc: function (args) {
+  calc: (args) => {
     const [a, b, _, d] = args as number[]
     return a + b + d
   },
-  diff: function (_x, dx) {
+  diff: (_x, dx) => {
     const [da, db, _, dd] = dx
     return da + db + dd
   },
@@ -33,7 +33,7 @@ addCustomOperation('foo', {
 addCustomOperation('bar', {
   range: unused,
   monotonicity: unused,
-  calc: function (args) {
+  calc: (args) => {
     const [a, b, c, d] = args as string[]
     return [d, c, b, a].join('/')
   },
@@ -93,7 +93,7 @@ describe('optimization', () => {
       expect(runCompile(subscript(2, ['a', 'b', 'c', 'd']))).toEqual('c')
       expect(runCompile(lookup('c', { a: 1, b: 2, c: 3, d: 4 }))).toEqual(3)
       // Lookup default branch
-      expect(runCompile(lookup('X', { a: 1, b: 2, c: 3, d: 4 }))).toEqual(NaN)
+      expect(runCompile(lookup('X', { a: 1, b: 2, c: 3, d: 4 }))).toEqual(Number.NaN)
     })
     test('custom computation', () => {
       expect(runCompile(custom('foo', 1, 2, 3, 4))).toEqual(7)

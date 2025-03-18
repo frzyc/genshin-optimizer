@@ -15,7 +15,7 @@ let clicks = 0
 function getbutton() {
   const button = new ButtonBuilder()
     .setCustomId(`button ${clicks}`)
-    .setLabel('' + clicks)
+    .setLabel(`${clicks}`)
     .setStyle(ButtonStyle.Primary)
   const row = new ActionRowBuilder<ButtonBuilder>().addComponents(button)
   return { components: [row] }
@@ -27,8 +27,8 @@ export async function run(interaction: ChatInputCommandInteraction) {
 }
 
 export async function button(interaction: ButtonInteraction, args: string[]) {
-  const newclicks = parseInt(args[1])
-  if (newclicks && !isNaN(newclicks)) clicks = Math.max(newclicks, clicks)
+  const newclicks = Number.parseInt(args[1])
+  if (newclicks && !Number.isNaN(newclicks)) clicks = Math.max(newclicks, clicks)
   clicks++
   interaction.update(getbutton())
   return

@@ -7,7 +7,7 @@ import {
   type DiscSlotKey,
   allDiscSlotKeys,
 } from '@genshin-optimizer/zzz/consts'
-import { type ICachedDisc } from '@genshin-optimizer/zzz/db'
+import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   OptConfigProvider,
@@ -243,7 +243,7 @@ function OptimizeWrapper() {
   const onCancel = useCallback(() => {
     cancelToken.current()
     setOptimizing(false)
-  }, [cancelToken])
+  }, [])
 
   return (
     <CardThemed>

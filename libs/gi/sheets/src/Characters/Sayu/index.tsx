@@ -259,12 +259,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.spin, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.final, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
           }),
         },
         {
@@ -302,17 +302,17 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.wheelDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.kickPressDmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.kickHoldDmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
@@ -341,12 +341,12 @@ const sheet: TalentSheet = {
             fields: [
               {
                 node: infoMut(dmgFormulas.skill.eleWheelDmg, {
-                  name: ct.chg(`skill.skillParams.3`),
+                  name: ct.chg('skill.skillParams.3'),
                 }),
               },
               {
                 node: infoMut(dmgFormulas.skill.eleKickDmg, {
-                  name: ct.chg(`skill.skillParams.4`),
+                  name: ct.chg('skill.skillParams.4'),
                 }),
               },
             ],
@@ -392,22 +392,22 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.pressDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.pressHeal, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.darumaDmg, {
-            name: ct.chg(`burst.skillParams.2`),
+            name: ct.chg('burst.skillParams.2'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.darumaHeal, {
-            name: ct.chg(`burst.skillParams.3`),
+            name: ct.chg('burst.skillParams.3'),
           }),
         },
         {
@@ -451,7 +451,7 @@ const sheet: TalentSheet = {
     ct.fieldsTem('passive1', {
       fields: [
         {
-          node: infoMut(dmgFormulas.passive1.heal, { name: stg(`healing`) }),
+          node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
         },
         {
           text: stg('cd'),

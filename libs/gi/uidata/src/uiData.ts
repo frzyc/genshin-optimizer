@@ -355,7 +355,7 @@ export class UIData {
   }
   private _subscript(node: SubscriptNode<number>): CalcResult<number> {
     const operand = this.computeNode(node.operands[0])
-    const value = node.list[operand.value] ?? NaN
+    const value = node.list[operand.value] ?? Number.NaN
     return this._constant(value)
   }
   private _constant<V>(value: V): CalcResult<V> {
@@ -377,7 +377,7 @@ export class UIData {
       case 'mul':
       case 'min':
       case 'max': {
-        if (process.env['NODE_ENV'] !== 'development') {
+        if (process.env.NODE_ENV !== 'development') {
           const identity = allOperations[operation]([])
           operands = operands.filter((operand) => operand.value !== identity)
         }
@@ -451,7 +451,7 @@ function mergeInfo(base: Info, override: Info): Info {
 }
 
 const illformed: CalcResult<number> = {
-  value: NaN,
+  value: Number.NaN,
   meta: {
     op: 'const',
     ops: [],
@@ -607,7 +607,7 @@ export function uiDataForTeam(
     })
   )
   mergedData.forEach(([targetKey, data]) => {
-    delete data.teamBuff
+    data.teamBuff = undefined
     const { targetRef, buffs } = result[targetKey]
     const buff = mergeData(buffs)
     crawlObject(
@@ -635,7 +635,7 @@ export function uiDataForTeam(
         { teamBuff: buff, activeCharKey: constant(activeCharKey) },
       ])
     )
-    ;(targetRef as any)['target'] = targetRef
+    ;(targetRef as any).target = targetRef
   })
   const origin = new UIData(undefined as any, undefined)
   return Object.fromEntries(

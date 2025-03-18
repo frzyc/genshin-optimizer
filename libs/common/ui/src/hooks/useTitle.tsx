@@ -12,5 +12,5 @@ export function useTitle(title?: string) {
   useEffect(() => {
     if (displayTitle) document.title = `${displayTitle} - ${pageTitle}`
     else document.title = pageTitle
-  }, [t, pageTitle, displayTitle])
+  }, [pageTitle, displayTitle])
 }

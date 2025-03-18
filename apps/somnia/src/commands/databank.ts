@@ -1,5 +1,5 @@
-import * as fs from 'fs'
-import * as path from 'path'
+import * as fs from 'node:fs'
+import * as path from 'node:path'
 import type {
   ApplicationCommandOptionChoiceData,
   AutocompleteInteraction,
@@ -95,15 +95,15 @@ const databank: Record<string, any> = {
   relic: {},
 }
 //traveler data
-for (const name in databank['key']['char']) {
-  if (name.match(/Trailblazer/)) delete databank['key']['char'][name]
+for (const name in databank.key.char) {
+  if (name.match(/Trailblazer/)) delete databank.key.char[name]
 }
-databank['key']['char']['TrailblazerPhysicalF'] = 'Trailblazer (Destruction)'
-databank['key']['char']['TrailblazerFireF'] = 'Trailblazer (Preservation)'
+databank.key.char.TrailblazerPhysicalF = 'Trailblazer (Destruction)'
+databank.key.char.TrailblazerFireF = 'Trailblazer (Preservation)'
 // TODO: databank['key']['char']['TrailblazerImaginaryF'] = 'Trailblazer (Harmony)'
 //get all the data from keys
-for (const category in databank['key']) {
-  for (const name in databank['key'][category]) {
+for (const category in databank.key) {
+  for (const name in databank.key[category]) {
     const itempath =
       category === 'lightcone'
         ? path.join(databankPath, `/lightCone_${name}_gen.json`)
@@ -143,11 +143,11 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
   //TODO: better search
   if (focus.name === 'name') {
     const text = focus.value.toLowerCase()
-    reply = Object.keys(databank['key'][subcommand])
+    reply = Object.keys(databank.key[subcommand])
       .filter((e) => e.toLocaleLowerCase().includes(text))
       .slice(0, 25)
       .map((e) => {
-        return { name: databank['key'][subcommand][e], value: e }
+        return { name: databank.key[subcommand][e], value: e }
       })
   }
 
@@ -172,7 +172,7 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
 }
 
 export function databankMessage(subcommand: string, id: string, arg: string) {
-  const name = databank['key'][subcommand][id]
+  const name = databank.key[subcommand][id]
   const data = databank[subcommand][id]
 
   //handle invalid names
@@ -182,13 +182,13 @@ export function databankMessage(subcommand: string, id: string, arg: string) {
     return charBank(id as CharacterGenderedKey, name, data, arg)
   }
   //weapons archive
-  else if (subcommand === 'lightcone') {
+  if (subcommand === 'lightcone') {
     return lightconeBank(id as LightConeKey, name, data, arg)
   }
   //artifacts archive
-  else if (subcommand === 'relic') {
+  if (subcommand === 'relic') {
     return relicBank(id as RelicSetKey, name, data)
-  } else throw 'Invalid selection'
+  }throw 'Invalid selection'
 }
 
 export async function run(interaction: ChatInputCommandInteraction) {

@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'gi-good',
   preset: '../../../jest.preset.js',

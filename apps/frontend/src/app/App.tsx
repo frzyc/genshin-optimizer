@@ -54,21 +54,20 @@ const PageTeams = lazy(() => import('@genshin-optimizer/gi/page-teams'))
 const PageTeam = lazy(() => import('@genshin-optimizer/gi/page-team'))
 
 function App() {
-  const dbIndex = parseInt(localStorage.getItem('dbIndex') || '1')
+  const dbIndex = Number.parseInt(localStorage.getItem('dbIndex') || '1')
   const [databases, setDatabases] = useState(() => {
     localStorage.removeItem('GONewTabDetection')
     localStorage.setItem('GONewTabDetection', 'debug')
     return ([1, 2, 3, 4] as const).map((index) => {
       if (index === dbIndex) {
         return new ArtCharDatabase(index, new DBLocalStorage(localStorage))
-      } else {
-        const dbName = `extraDatabase_${index}`
-        const eDB = localStorage.getItem(dbName)
-        const dbObj = eDB ? JSON.parse(eDB) : {}
-        const db = new ArtCharDatabase(index, new SandboxStorage(dbObj))
-        db.toExtraLocalDB()
-        return db
       }
+      const dbName = `extraDatabase_${index}`
+      const eDB = localStorage.getItem(dbName)
+      const dbObj = eDB ? JSON.parse(eDB) : {}
+      const db = new ArtCharDatabase(index, new SandboxStorage(dbObj))
+      db.toExtraLocalDB()
+      return db
     })
   })
   const setDatabase = useCallback(
@@ -77,13 +76,13 @@ function App() {
       dbs[index] = db
       setDatabases(dbs)
     },
-    [databases, setDatabases]
+    [databases]
   )
 
   const database = databases[dbIndex - 1]
   const dbContextObj = useMemo(
     () => ({ databases, setDatabases, database, setDatabase }),
-    [databases, setDatabases, database, setDatabase]
+    [databases, database, setDatabase]
   )
   const SillyContextObj = useSilly()
   const SnowContextObj = useSnow()

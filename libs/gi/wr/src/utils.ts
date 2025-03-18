@@ -22,7 +22,7 @@ type Str = string | undefined | StrNode
 type N_S = Num | Str
 type AnyNode = NumNode | StrNode
 
-export const todo: OptNode = constant(NaN, { path: 'TODO' })
+export const todo: OptNode = constant(Number.NaN, { path: 'TODO' })
 export const one = percent(1),
   naught = percent(0)
 export const zero = constant(0)
@@ -47,8 +47,8 @@ export function constant(
 }
 /** `value` in percentage. The value is written as non-percentage, e.g., `percent(1)` for 100% */
 export function percent(value: number, info?: Info): ConstantNode<number> {
-  if (value >= Number.MAX_VALUE / 100) value = Infinity
-  if (value <= -Number.MAX_VALUE / 100) value = -Infinity
+  if (value >= Number.MAX_VALUE / 100) value = Number.POSITIVE_INFINITY
+  if (value <= -Number.MAX_VALUE / 100) value = Number.NEGATIVE_INFINITY
   return constant(value, { unit: '%', ...info })
 }
 
@@ -403,11 +403,10 @@ export function setReadNodeKeys<T extends NodeList>(
         `Found ${(nodeList as any).operation} node while making reader`
       )
     return { ...nodeList, path: prefix }
-  } else {
+  }
     return objKeyMap(Object.keys(nodeList), (key) =>
       setReadNodeKeys(nodeList[key], [...prefix, key])
     ) as any
-  }
 }
 export function data(base: NumNode, data: Data): DataNode<NumNode>
 export function data(base: StrNode, data: Data): DataNode<StrNode>

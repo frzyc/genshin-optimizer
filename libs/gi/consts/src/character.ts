@@ -250,13 +250,11 @@ export function locCharKeyToCharKey(
 export function sheetKeyToCharKey(sheetKey: CharacterSheetKey): CharacterKey {
   if (sheetKey.includes('Traveler'))
     return sheetKey.slice(0, -1) as CharacterKey
-  else return sheetKey as CharacterKey
+  return sheetKey as CharacterKey
 }
 
 export function travelerElement(element: TravelerElementKey): TravelerKey {
-  return ('Traveler' +
-    element.toUpperCase().slice(0, 1) +
-    element.slice(1)) as TravelerKey
+  return (`Traveler${element.toUpperCase().slice(0, 1)}${element.slice(1)}`) as TravelerKey
 }
 
 export const absorbableEle = ['hydro', 'pyro', 'cryo', 'electro'] as const

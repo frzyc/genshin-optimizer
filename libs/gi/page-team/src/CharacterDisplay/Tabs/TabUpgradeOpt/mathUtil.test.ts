@@ -18,6 +18,7 @@ test('factorial', () => {
     1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600,
     6227020800, 87178291200, 1307674368000, 20922789888000, 355687428096000,
     6402373705728000, 121645100408832000, 2432902008176640000,
+    // biome-ignore lint/correctness/noPrecisionLoss: <explanation>
     51090942171709440000, 1124000727777607680000,
   ]
 
@@ -33,8 +34,8 @@ test('gaussPDF', () => {
 
 test('erf', () => {
   expect(erf(0)).toBeCloseTo(0)
-  expect(erf(Infinity)).toEqual(1)
-  expect(erf(-Infinity)).toEqual(-1)
+  expect(erf(Number.POSITIVE_INFINITY)).toEqual(1)
+  expect(erf(Number.NEGATIVE_INFINITY)).toEqual(-1)
   expect(erf(1)).toBeCloseTo(0.8427007929497148)
   expect(erf(Math.PI)).toBeCloseTo(0.9999911238536323)
   expect(erf(-0.1234)).toBeCloseTo(-0.13853843435647298)

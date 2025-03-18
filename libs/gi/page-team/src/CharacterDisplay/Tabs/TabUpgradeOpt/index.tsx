@@ -16,7 +16,7 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
-import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useBuildArtifacts,
@@ -62,6 +62,7 @@ import type { ButtonProps } from '@mui/material/Button'
 import Button from '@mui/material/Button'
 import { Stack } from '@mui/system'
 import {
+  type ChangeEvent,
   Suspense,
   useCallback,
   useContext,
@@ -197,14 +198,14 @@ export default function TabUpopt() {
         const { level, setKey, slotKey } = art
         const { upOptLevelLow, upOptLevelHigh } = optConfig
         if (level >= upOptLevelLow && level <= upOptLevelHigh) {
-          ctMap['levelTotal']['in'].total++
-          if (filteredArtIdMap[id]) ctMap['levelTotal']['in'].current++
+          ctMap.levelTotal.in.total++
+          if (filteredArtIdMap[id]) ctMap.levelTotal.in.current++
         }
-        ctMap['setTotal'][setKey].total++
-        ctMap['slotTotal'][slotKey].total++
+        ctMap.setTotal[setKey].total++
+        ctMap.slotTotal[slotKey].total++
         if (filteredArtIdMap[id]) {
-          ctMap['setTotal'][setKey].current++
-          ctMap['slotTotal'][slotKey].current++
+          ctMap.setTotal[setKey].current++
+          ctMap.slotTotal[slotKey].current++
         }
       })
     )
@@ -290,7 +291,7 @@ export default function TabUpopt() {
       })
       if (!pass) return false
 
-      if (!artSetExclusion['rainbow']) return true
+      if (!artSetExclusion.rainbow) return true
       const nRainbow = Object.values(skc).reduce((a, b) => a + (b % 2), 0)
       switch (nRainbow) {
         case 0:
@@ -298,10 +299,10 @@ export default function TabUpopt() {
           return true
         case 2:
         case 3:
-          return !artSetExclusion['rainbow'].includes(2)
+          return !artSetExclusion.rainbow.includes(2)
         case 4:
         case 5:
-          return !artSetExclusion['rainbow'].includes(4)
+          return !artSetExclusion.rainbow.includes(4)
         default:
           throw Error('error in respectSex: nRainbow > 5')
       }
@@ -329,7 +330,7 @@ export default function TabUpopt() {
 
     return new UpOptCalculator(
       nodes,
-      [-Infinity, ...valueFilter.map((x) => x.minimum)],
+      [Number.NEGATIVE_INFINITY, ...valueFilter.map((x) => x.minimum)],
       equippedArts,
       artifactsToConsider
     )
@@ -355,8 +356,8 @@ export default function TabUpopt() {
   // Paging logic
   const [pageIdex, setpageIdex] = useState(0)
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: reset paging on new upOptCalc
   useEffect(() => {
-    // reset paging on new upOptCalc
     setpageIdex(0)
   }, [upOptCalc])
 
@@ -405,7 +406,7 @@ export default function TabUpopt() {
       }
     }, [pageIdex, upOptCalc])
   const setPage = useCallback(
-    (e, value) => {
+    (_e: ChangeEvent<unknown>, value: number) => {
       if (!upOptCalc) return
       const end = value * artifactsToDisplayPerPage
       upOptCalc.calcSlowToIndex(end)
@@ -476,7 +477,7 @@ export default function TabUpopt() {
                   gap={1}
                 >
                   <LevelFilter
-                    levelTotal={levelTotal['in']}
+                    levelTotal={levelTotal.in}
                     upOptLevelLow={upOptLevelLow}
                     upOptLevelHigh={upOptLevelHigh}
                     optConfigId={optConfigId}
@@ -560,7 +561,7 @@ export default function TabUpopt() {
             <CardThemed bgt="light">
               <CardContent>
                 <Grid container spacing={1}>
-                  <Grid item></Grid>
+                  <Grid item />
                   <Grid item>
                     <HitModeToggle size="small" />
                   </Grid>

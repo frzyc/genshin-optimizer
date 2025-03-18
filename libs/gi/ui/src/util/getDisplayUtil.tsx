@@ -53,16 +53,16 @@ export function getDisplayHeader(
     return { title: 'Custom Multi Target', icon: <DashboardCustomizeIcon /> }
   if (sectionKey === 'teamBuff')
     return { title: 'Received Team Buffs', icon: <GroupsIcon /> }
-  else if (sectionKey === 'reaction')
+  if (sectionKey === 'reaction')
     return { title: 'Transformative Reactions' }
-  else if (sectionKey.includes(':')) {
+  if (sectionKey.includes(':')) {
     const [namespace, key] = sectionKey.split(':')
     if (namespace === 'artifact') {
       return {
         title: <ArtifactSetName setKey={key as ArtifactSetKey} />,
         icon: <ImgIcon size={2} src={artifactDefIcon(key as ArtifactSetKey)} />,
       }
-    } else if (namespace === 'weapon') {
+    }if (namespace === 'weapon') {
       const asc = data.get(input.weapon.asc).value
       return {
         title: <WeaponName weaponKey={key as WeaponKey} />,

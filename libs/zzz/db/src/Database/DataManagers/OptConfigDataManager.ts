@@ -126,7 +126,7 @@ export class OptConfigDataManager extends DataManager<
     // if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
 
     if (levelLow === undefined) levelLow = 0
-    if (levelHigh === undefined) levelHigh = discMaxLevel['S']
+    if (levelHigh === undefined) levelHigh = discMaxLevel.S
 
     optWengine = !!optWengine
     if (wlevelLow === undefined) wlevelLow = 0
@@ -205,7 +205,7 @@ export class OptConfigDataManager extends DataManager<
       listId && this.database.generatedBuildList.get(listId)
     if (listId && generatedBuildList)
       return this.database.generatedBuildList.set(listId, list)
-    else
+    
       return this.database.optConfigs.set(optConfigId, {
         generatedBuildListId: this.database.generatedBuildList.new(list),
       }) // Create a new list
@@ -216,8 +216,8 @@ function initialOptConfig(): OptConfig {
   return {
     statFilters: [],
 
-    levelLow: discMaxLevel['S'],
-    levelHigh: discMaxLevel['S'],
+    levelLow: discMaxLevel.S,
+    levelHigh: discMaxLevel.S,
     slot4: [...discSlotToMainStatKeys['4']],
     slot5: [...discSlotToMainStatKeys['5']],
     slot6: [...discSlotToMainStatKeys['6']],

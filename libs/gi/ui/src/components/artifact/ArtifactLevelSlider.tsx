@@ -27,18 +27,15 @@ export function ArtifactLevelSlider({
   const { t } = useTranslation('artifact')
   const [sliderLow, setsliderLow] = useState(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
-  const setSlider = useCallback(
-    (e: unknown, value: number | number[]) => {
-      if (typeof value == 'number') throw new TypeError()
-      const [l, h] = value
-      setsliderLow(l)
-      setsliderHigh(h)
-    },
-    [setsliderLow, setsliderHigh]
-  )
-  useEffect(() => setsliderLow(levelLow), [setsliderLow, levelLow])
+  const setSlider = useCallback((_e: unknown, value: number | number[]) => {
+    if (typeof value === 'number') throw new TypeError()
+    const [l, h] = value
+    setsliderLow(l)
+    setsliderHigh(h)
+  }, [])
+  useEffect(() => setsliderLow(levelLow), [levelLow])
 
-  useEffect(() => setsliderHigh(levelHigh), [setsliderHigh, levelHigh])
+  useEffect(() => setsliderHigh(levelHigh), [levelHigh])
   return (
     <Box
       sx={{
@@ -86,7 +83,7 @@ export function ArtifactLevelSlider({
         getAriaLabel={() => 'Arifact Level Range'}
         value={[sliderLow, sliderHigh]}
         onChange={setSlider}
-        onChangeCommitted={(e, value) =>
+        onChangeCommitted={(_e, value) =>
           Array.isArray(value) && setBoth(value[0], value[1])
         }
         valueLabelDisplay="auto"

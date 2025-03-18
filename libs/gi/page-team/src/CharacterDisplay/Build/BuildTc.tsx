@@ -266,20 +266,20 @@ function BuildTcEditor({
     setDesc(description)
   }, [database, buildTcId])
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Don't need to trigger when buildId is changed, only when the name is changed.
   useEffect(() => {
     database.buildTcs.set(buildTcId, (build) => {
       build.name = nameDeferred
+      return build
     })
-    // Don't need to trigger when buildId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, nameDeferred])
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Don't need to trigger when buildId is changed, only when the name is changed.
   useEffect(() => {
     database.buildTcs.set(buildTcId, (build) => {
       build.description = descDeferred
+      return build
     })
-    // Don't need to trigger when buildId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, descDeferred])
   return (
     <CardThemed>

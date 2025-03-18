@@ -201,13 +201,13 @@ export function RelicEditor({
       }
       dispatchRelic({ type: 'update', relic: newValue })
     },
-    [relic, sheet, dispatchRelic]
+    [relic, sheet]
   )
 
   const reset = useCallback(() => {
     cancelEdit?.()
     dispatchRelic({ type: 'reset' })
-  }, [cancelEdit, dispatchRelic])
+  }, [cancelEdit])
 
   const setSubstat = useCallback(
     (index: number, substat: ISubstat) =>
@@ -228,7 +228,7 @@ export function RelicEditor({
       setShowEditor(false)
       reset()
     },
-    [t, relicIdToEdit, relic, setShowEditor, reset]
+    [t, relicIdToEdit, relic, reset]
   )
 
   const theme = useTheme()
@@ -286,7 +286,7 @@ export function RelicEditor({
                     value={level}
                     disabled={!sheet}
                     onChange={(e) => {
-                      const value = parseInt(e.target.value) || 0
+                      const value = Number.parseInt(e.target.value) || 0
                       update({ level: value })
                     }}
                   />

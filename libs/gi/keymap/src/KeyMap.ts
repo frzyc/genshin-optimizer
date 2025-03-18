@@ -63,7 +63,7 @@ const baseMap = {
   amplificative_dmg_: 'Amplificative Reaction DMG Bonus',
   transformative_dmg_: 'Transformative Reaction DMG Bonus',
   crystallize_dmg_: 'Crystallize Bonus',
-  crystallize: `Crystallize`, // for displaying general crystallize
+  crystallize: 'Crystallize', // for displaying general crystallize
   base_amplifying_multi_: 'Base Amplifying Multiplier',
   base_transformative_multi_: 'Base Transformative Multiplier',
   base_crystallize_multi_: 'Base Crystallize Multiplier',

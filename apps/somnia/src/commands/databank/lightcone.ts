@@ -22,14 +22,14 @@ const superimpositions: Record<string, string> = {
 
 function getDropdown(id: string, superimposition: string) {
   const options: StringSelectMenuOptionBuilder[] = []
-  range(1, 5).forEach((i) => {
+  for (const i of range(1, 5)) {
     const r = String(i - 1)
     const option = new StringSelectMenuOptionBuilder()
       .setLabel(`Superimposition ${i}`)
       .setValue(r)
     if (superimposition === r) option.setDefault(true)
     options.push(option)
-  })
+  }
   return [
     new ActionRowBuilder().addComponents(
       new StringSelectMenuBuilder()
@@ -48,7 +48,7 @@ export function lightconeBank(
 ) {
   const msg: any = {}
   //weapon rarity color
-  const rarity = allStats['lightCone'][id].rarity
+  const rarity = allStats.lightCone[id].rarity
   //default r1 5stars
   let superimposition = '0'
   //r5 for 3/4 star
@@ -57,13 +57,13 @@ export function lightconeBank(
   if (args) superimposition = args
   //name and passive
   name += ` (S${superimpositions[superimposition]})`
-  const text = `\n\n**${data.passive.name}:** ` + data.passive.description
+  const text = `\n\n**${data.passive.name}:** ${data.passive.description}`
   //thumbnail
   const thumbnail = AssetData.lightCones[id].icon
   //create dropdown menu
-  msg['components'] = getDropdown(id, superimposition)
+  msg.components = getDropdown(id, superimposition)
   //set content
-  msg['embeds'] = [
+  msg.embeds = [
     new EmbedBuilder()
       .setTitle(name)
       .setColor(rarityColors[rarity - 1])

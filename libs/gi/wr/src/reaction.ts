@@ -110,7 +110,7 @@ const trans = {
                 )
               : one,
           },
-          NaN
+          Number.NaN
         ),
         input.enemy.transDef,
         input.enemy[`${resist}_resMulti_`]
@@ -154,7 +154,7 @@ const trans = {
         avgHit: avgCrit,
         hit: one,
       },
-      NaN
+      Number.NaN
     )
     return infoMut(
       // CAUTION:

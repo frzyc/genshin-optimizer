@@ -73,7 +73,7 @@ export default function BuildReal({
     // Cannot equip a build without weapon
     if (!weaponId) return
     const char = database.chars.get(characterKey)!
-    Object.entries(artifactIds).forEach(([slotKey, id]) => {
+    for (const [slotKey, id] of Object.entries(artifactIds)) {
       if (id)
         database.arts.set(id, { location: charKeyToLocCharKey(characterKey) })
       else {
@@ -81,7 +81,7 @@ export default function BuildReal({
         if (oldAid && database.arts.get(oldAid))
           database.arts.set(oldAid, { location: '' })
       }
-    })
+    }
     if (weaponId)
       database.weapons.set(weaponId, {
         location: charKeyToLocCharKey(characterKey),
@@ -229,20 +229,20 @@ function BuildEditor({
     setDesc(description)
   }, [database, buildId])
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     database.builds.set(buildId, (build) => {
       build.name = nameDeferred
     })
     // Don't need to trigger when buildId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, nameDeferred])
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     database.builds.set(buildId, (build) => {
       build.description = descDeferred
     })
     // Don't need to trigger when buildId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, descDeferred])
 
   return (

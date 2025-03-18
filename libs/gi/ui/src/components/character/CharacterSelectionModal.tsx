@@ -56,7 +56,8 @@ import {
   tooltipClasses,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
-import React, {
+import type React from 'react'
+import {
   useContext,
   useDeferredValue,
   useEffect,
@@ -234,7 +235,7 @@ export function CharacterMultiSelectionModal({
             database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
         )
       ),
-    [database, loadoutData, setTeamCharKeys]
+    [database, loadoutData]
   )
 
   // used for generating characterKeyList below, only updated when filter/sort/search is applied to prevent characters
@@ -253,7 +254,7 @@ export function CharacterMultiSelectionModal({
             database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
         )
       ),
-    [database, loadoutData, setCachedTeamCharKeys]
+    [database, loadoutData]
   )
 
   const [dbDirty, forceUpdate] = useForceUpdate()

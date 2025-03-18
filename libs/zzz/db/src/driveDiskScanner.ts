@@ -58,7 +58,7 @@ export function DDSToZOD(data: DDS[]): IZenlessObjectDescription {
             const isSubPercent =
               typeof subVal === 'string' && subVal.endsWith('%')
             const [keyStr, value] = keyUp.split('+')
-            const upgrades = value ? parseInt(value) + 1 : 1
+            const upgrades = value ? Number.parseInt(value) + 1 : 1
             let key = allDiscSubStatKeys.find(
               (k) =>
                 isPercentStat(k) === isSubPercent &&
@@ -93,7 +93,7 @@ export function DDSToZOD(data: DDS[]): IZenlessObjectDescription {
         return {
           setKey,
           slotKey,
-          level: parseInt(drive_current_level),
+          level: Number.parseInt(drive_current_level),
           rarity: drive_rarity,
           mainStatKey,
           location: '',

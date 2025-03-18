@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'zzz-solver-pando',
   preset: '../../../jest.preset.js',

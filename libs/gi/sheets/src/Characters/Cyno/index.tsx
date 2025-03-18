@@ -256,7 +256,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -266,7 +266,7 @@ const sheet: TalentSheet = {
       ],
     },
     {
-      text: ct.chg(`auto.fields.plunging`),
+      text: ct.chg('auto.fields.plunging'),
     },
     {
       fields: [
@@ -294,12 +294,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.skillDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.riteDmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
@@ -372,7 +372,7 @@ const sheet: TalentSheet = {
         })),
         {
           node: infoMut(dmgFormulas.burst.charged, {
-            name: ct.chg(`burst.skillParams.5`),
+            name: ct.chg('burst.skillParams.5'),
           }),
         },
         {
@@ -390,17 +390,17 @@ const sheet: TalentSheet = {
           ),
         })),
         {
-          text: ct.chg(`burst.skillParams.10`),
+          text: ct.chg('burst.skillParams.10'),
           value: dm.burst.duration,
           unit: 's',
         },
         {
-          text: ct.chg(`burst.skillParams.11`),
+          text: ct.chg('burst.skillParams.11'),
           value: dm.burst.cd,
           unit: 's',
         },
         {
-          text: ct.chg(`burst.skillParams.12`),
+          text: ct.chg('burst.skillParams.12'),
           value: dm.burst.enerCost,
         },
       ],

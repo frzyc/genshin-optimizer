@@ -24,6 +24,6 @@ export class DataManager<
   importGOOD(go: IGOOD & IGO, _result: ImportResult) {
     const entries = go[this.dataKey]
     if (entries && Array.isArray(entries))
-      entries.forEach((ele) => ele.id && this.set(ele.id, ele))
+      for (const ele of entries) ele.id && this.set(ele.id, ele)
   }
 }

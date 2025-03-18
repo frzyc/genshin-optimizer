@@ -8,7 +8,7 @@ import { Button, Container, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, useEffect, useState } from 'react'
 import { useSupabase } from '../../utils/supabase/client'
 import { ARTIFACT_QUERY } from './artifactquery'
-import { type Artifact, type Artifacts } from './getArtifacts'
+import type { Artifact, Artifacts } from './getArtifacts'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 // const numToShowMap = { xs: 5, sm: 6, md: 12, lg: 12, xl: 12 }

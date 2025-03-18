@@ -33,7 +33,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     numWorker: number
   ) {
     const workers = Array(numWorker)
-      .fill(NaN)
+      .fill(Number.NaN)
       .map(
         (_) =>
           new Worker(new URL('./BackgroundWorker.ts', import.meta.url), {
@@ -60,10 +60,10 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     this.status = status
     this.exclusion = exclusion
     this.topN = topN
-    this.status.total = NaN
+    this.status.total = Number.NaN
     this.status.testedPerSecond = 0
     this.status.skippedPerSecond = 0
-    this.buildValues = Array(topN).fill({ w: undefined as any, val: -Infinity })
+    this.buildValues = Array(topN).fill({ w: undefined as any, val: Number.NEGATIVE_INFINITY })
 
     this.notifiedBroadcast(this.preprocess(problem))
   }
@@ -90,13 +90,13 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     exclusion,
     constraints,
   }: OptProblemInput): Setup {
-    constraints = constraints.filter((x) => x.min > -Infinity)
+    constraints = constraints.filter((x) => x.min > Number.NEGATIVE_INFINITY)
 
     let nodes = [...constraints.map((x) => x.value), optimizationTarget]
-    const minimums = [...constraints.map((x) => x.min), -Infinity]
+    const minimums = [...constraints.map((x) => x.min), Number.NEGATIVE_INFINITY]
     if (plotBase) {
       nodes.push(plotBase)
-      minimums.push(-Infinity)
+      minimums.push(Number.NEGATIVE_INFINITY)
     }
 
     nodes = pruneExclusion(nodes, exclusion)
@@ -143,7 +143,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
         const testedDifference = this.status.tested - lastTested
         const skippedDifference = this.status.skipped - lastSkipped
 
-        if (elapsedTime != 0) {
+        if (elapsedTime !== 0) {
           this.status.testedPerSecond = testedDifference / elapsedTime
           this.status.skippedPerSecond = skippedDifference / elapsedTime
         }
@@ -169,7 +169,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
     if (r.buildValues) {
       const { topN } = this,
-        oldThreshold = this.buildValues[topN - 1].val ?? -Infinity
+        oldThreshold = this.buildValues[topN - 1].val ?? Number.NEGATIVE_INFINITY
 
       this.buildValues.filter(({ w }) => w !== worker)
       this.buildValues.push(
@@ -177,7 +177,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       )
       this.buildValues.sort((a, b) => b.val - a.val).splice(topN)
 
-      const threshold = this.buildValues[topN - 1].val ?? -Infinity
+      const threshold = this.buildValues[topN - 1].val ?? Number.NEGATIVE_INFINITY
       if (oldThreshold !== threshold)
         this.broadcast({ command: 'threshold', threshold })
     }

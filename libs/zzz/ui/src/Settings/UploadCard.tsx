@@ -51,7 +51,7 @@ export function UploadCard({
           setErrorMsg('uploadCard.error.jsonParse')
           return undefined
         }
-      } catch (e) {
+      } catch (_e) {
         setErrorMsg('uploadCard.error.jsonParse')
         return undefined
       }
@@ -59,7 +59,7 @@ export function UploadCard({
         // assume the format since it has no identifier
         try {
           parsed = DDSToZOD(parsed)
-        } catch (e) {
+        } catch (_e) {
           setErrorMsg('uploadCard.error.jsonParse')
           return undefined
         }

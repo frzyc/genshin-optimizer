@@ -83,7 +83,7 @@ export function CharacterMultiAutocomplete({
           const teamChar = database.teamChars.get(teamCharId)
           if (!teamChar) return
           const ck = teamChar.key
-          ctMap['characterTeamTotal'][ck].total++
+          ctMap.characterTeamTotal[ck].total++
         })
       })
       teamIds.forEach((teamId) => {
@@ -94,7 +94,7 @@ export function CharacterMultiAutocomplete({
           const teamChar = database.teamChars.get(teamCharId)
           if (!teamChar) return
           const ck = teamChar.key
-          ctMap['characterTeamTotal'][ck].current++
+          ctMap.characterTeamTotal[ck].current++
         })
       })
     })

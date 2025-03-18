@@ -214,5 +214,5 @@ for (const values of [...Object.values(ownTag), ...Object.values(enemyTag)])
   for (const q of Object.keys(values)) reader.with('q', q)
 
 export function tagToStat(tag: Tag): StatKey {
-  return (tag.q === 'dmg_' ? `${tag['ele']}_${tag.q}` : tag.q) as StatKey
+  return (tag.q === 'dmg_' ? `${tag.ele}_${tag.q}` : tag.q) as StatKey
 }

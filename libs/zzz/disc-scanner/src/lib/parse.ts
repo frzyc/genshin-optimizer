@@ -68,8 +68,8 @@ export function parseLvlRarity(texts: string[]) {
   for (const text of texts) {
     const match = /Lv.\s*([01][0-9])\/([01][0-9])/.exec(text)
     if (match) {
-      level = parseInt(match[1])
-      maxLvl = parseInt(match[2])
+      level = Number.parseInt(match[1])
+      maxLvl = Number.parseInt(match[2])
       break
     }
   }
@@ -112,7 +112,7 @@ export function parseSubstats(texts: string[]): ISubstat[] {
       if (!key) continue
       substats.push({
         key,
-        upgrades: match[3] ? parseInt(match[3]) + 1 : 1,
+        upgrades: match[3] ? Number.parseInt(match[3]) + 1 : 1,
       })
     }
   }

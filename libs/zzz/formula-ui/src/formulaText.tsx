@@ -57,11 +57,11 @@ export function formulaText(
   }
 
   let formula: ReactNode,
-    prec = Infinity
+    prec = Number.POSITIVE_INFINITY
   switch (op) {
     case 'const':
       formula = displayVal
-      prec = Infinity
+      prec = Number.POSITIVE_INFINITY
       break
     case 'sum':
     case 'prod':
@@ -119,6 +119,6 @@ export function formulaText(
 const details = {
   sum: { head: '', joiner: ' + ', end: '', prec: 1 },
   prod: { head: '', joiner: ' * ', end: '', prec: 2 },
-  max: { head: 'Max(', joiner: ', ', end: ')', prec: Infinity },
-  min: { head: 'Min(', joiner: ', ', end: ')', prec: Infinity },
+  max: { head: 'Max(', joiner: ', ', end: ')', prec: Number.POSITIVE_INFINITY },
+  min: { head: 'Min(', joiner: ', ', end: ')', prec: Number.POSITIVE_INFINITY },
 } as const

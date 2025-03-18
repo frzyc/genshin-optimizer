@@ -78,7 +78,7 @@ const sheet: IWeaponSheet = {
         stacks.map((stack) => [
           stack,
           {
-            name: st('stack', { count: parseInt(stack) }),
+            name: st('stack', { count: Number.parseInt(stack) }),
             fields: allElementKeys.map((ele) => ({
               node: stacks_dmg_[`${ele}_dmg_`],
             })),

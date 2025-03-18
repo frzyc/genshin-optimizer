@@ -86,5 +86,5 @@ function charSheetKeyToCharKey(csk: CharacterSheetKey): CharacterKey {
     travelerMKeys.includes(csk as (typeof travelerMKeys)[number])
   )
     return csk.slice(0, -1) as CharacterKey
-  else return csk as CharacterKey
+  return csk as CharacterKey
 }

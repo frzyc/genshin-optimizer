@@ -44,7 +44,7 @@ export function compactArtifacts(
         ),
       },
     }
-    delete data.values['']
+    data.values[''] = undefined
     result.values[art.slotKey].push(data)
     Object.keys(data.values).forEach((x) => keys.add(x))
   }

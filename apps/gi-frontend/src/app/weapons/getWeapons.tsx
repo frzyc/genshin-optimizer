@@ -9,7 +9,7 @@ export default async function getWeapons(
   if (!accountId) return []
   const { data, error } = await supabase
     .from('weapons')
-    .select(`id, created_at, key, level, ascension, refinement, lock`)
+    .select('id, created_at, key, level, ascension, refinement, lock')
     .eq('account_id', accountId)
 
   if (error) console.error(error)

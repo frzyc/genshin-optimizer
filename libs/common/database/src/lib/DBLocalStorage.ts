@@ -1,5 +1,5 @@
 import type { DbIndexKey, DbVersionKey } from './DBStorage'
-import { type DBStorage, type StorageType } from './DBStorage'
+import type { DBStorage, StorageType } from './DBStorage'
 
 export class DBLocalStorage implements DBStorage {
   private storage: Storage
@@ -68,13 +68,13 @@ export class DBLocalStorage implements DBStorage {
     }
   }
   getDBVersion(): number {
-    return parseInt(this.getString(this.dbVersionKey) ?? '0')
+    return Number.parseInt(this.getString(this.dbVersionKey) ?? '0')
   }
   setDBVersion(version: number): void {
     this.setString(this.dbVersionKey, version.toString())
   }
   getDBIndex(): 1 | 2 | 3 | 4 {
-    return parseInt(this.getString(this.dbIndexKey) ?? '1') as 1 | 2 | 3 | 4
+    return Number.parseInt(this.getString(this.dbIndexKey) ?? '1') as 1 | 2 | 3 | 4
   }
   setDBIndex(ind: 1 | 2 | 3 | 4) {
     this.setString(this.dbIndexKey, ind.toString())

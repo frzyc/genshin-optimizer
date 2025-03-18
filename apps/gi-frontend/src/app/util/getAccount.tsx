@@ -9,7 +9,7 @@ export default async function getAccount(
   if (!profile) return null
   const { data } = await supabase
     .from('accounts')
-    .select(`id, created_at, uid, profile, name`)
+    .select('id, created_at, uid, profile, name')
     .eq('profile', profile.id)
     .single()
 

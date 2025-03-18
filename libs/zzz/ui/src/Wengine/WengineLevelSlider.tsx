@@ -28,18 +28,15 @@ export function WengineLevelSlider({
   const { t } = useTranslation('wengine')
   const [sliderLow, setsliderLow] = useState(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
-  const setSlider = useCallback(
-    (_: unknown, value: number | number[]) => {
-      if (typeof value == 'number') throw new TypeError()
-      const [l, h] = value
-      setsliderLow(l)
-      setsliderHigh(h)
-    },
-    [setsliderLow, setsliderHigh]
-  )
-  useEffect(() => setsliderLow(levelLow), [setsliderLow, levelLow])
+  const setSlider = useCallback((_: unknown, value: number | number[]) => {
+    if (typeof value === 'number') throw new TypeError()
+    const [l, h] = value
+    setsliderLow(l)
+    setsliderHigh(h)
+  }, [])
+  useEffect(() => setsliderLow(levelLow), [levelLow])
 
-  useEffect(() => setsliderHigh(levelHigh), [setsliderHigh, levelHigh])
+  useEffect(() => setsliderHigh(levelHigh), [levelHigh])
   return (
     <Box
       sx={{

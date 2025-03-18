@@ -14,7 +14,7 @@ export function CharacterCardStats({ bgt }: { bgt?: CardBackgroundColor }) {
   const { name, icon } = resolveInfo(specialNode.info)
   return (
     <FieldDisplayList bgt={bgt} sx={{ width: '100%', borderRadius: 0 }}>
-      {Object.values(data.getDisplay()['basic']).map((n) => (
+      {Object.values(data.getDisplay().basic).map((n) => (
         <NodeFieldDisplay key={JSON.stringify(n.info)} calcRes={n} />
       ))}
       {name && (

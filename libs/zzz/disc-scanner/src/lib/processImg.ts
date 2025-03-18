@@ -72,7 +72,7 @@ export async function processEntry(
   const bwHeader = zzzPreprocessImage(discCardImageData)
 
   if (debugImgs) {
-    debugImgs['bwHeader'] = imageDataToCanvas(bwHeader).toDataURL()
+    debugImgs.bwHeader = imageDataToCanvas(bwHeader).toDataURL()
   }
 
   const whiteTexts = (await textsFromImage(bwHeader)).map((t) => t.trim())
@@ -181,7 +181,6 @@ function cropDiscCard(
   let b = imageData.width
   if (!skipCrop) {
     // look for the black line outside the card outline. This will likely be only a pixel wide
-    // eslint-disable-next-line @typescript-eslint/no-extra-semi
     ;[a, b] = findHistogramRange(histogram, 0.9, 1)
   }
 
@@ -207,7 +206,7 @@ function cropDiscCard(
     drawline(canvas, a, { r: 0, g: 255, b: 0, a: 150 })
     drawline(canvas, b, { r: 0, g: 0, b: 255, a: 150 })
 
-    debugImgs['fullAnalysis'] = canvas.toDataURL()
+    debugImgs.fullAnalysis = canvas.toDataURL()
   }
   const horihistogram = histogramContAnalysis(
     cropped,
@@ -219,7 +218,6 @@ function cropDiscCard(
   let top = cropped.height
   // look for the black line outside the card outline. This will likely be only a pixel wide
   if (!skipCrop) {
-    // eslint-disable-next-line @typescript-eslint/no-extra-semi
     ;[bot, top] = findHistogramRange(horihistogram, 0.9, 1)
   }
 

@@ -37,7 +37,7 @@ export const allOperations: Record<
   ...allCommutativeMonoidOperations,
   res: ([res]: number[]): number => {
     if (res < 0) return 1 - res / 2
-    else if (res >= 0.75) return 1 / (res * 4 + 1)
+    if (res >= 0.75) return 1 / (res * 4 + 1)
     return 1 - res
   },
   sum_frac: (x: number[]): number => x[0] / x.reduce((a, b) => a + b),
@@ -148,7 +148,7 @@ const x0=0` // making sure `const` has at least one entry
     }
   )
   body += `;\nreturn [${formulas.map((f) => names.get(f)!)}]`
-  return new (Function as any)(`b`, body)
+  return new (Function as any)('b', body)
 }
 
 function flatten(formulas: OptNode[]): OptNode[] {
@@ -365,7 +365,7 @@ export function constantFold(
           //   - (-infinity) + ... = -infinity
           // - NaN
           //   - operation(NaN, ...) = NaN
-          if (!isFinite(numericValue)) {
+          if (!Number.isFinite(numericValue)) {
             if (
               operation !== 'mul' &&
               (operation !== 'max' || numericValue > 0) &&
@@ -491,7 +491,7 @@ export function constantFold(
                 result =
                   formula.type === 'string'
                     ? constant(undefined)
-                    : constant(NaN)
+                    : constant(Number.NaN)
               else result = constant(allOperations[accu]([]))
             } else result = formula
           } else if (formula.accu === undefined || operands.length === 1)
@@ -526,7 +526,7 @@ export function constantFold(
 
       if (result.info) {
         result = { ...result }
-        delete result.info
+        result.info = undefined
       }
       return result
     }
@@ -536,7 +536,7 @@ export function constantFold(
 /** "Move" branching `br`, which must be inside `parent` and folded to `fold`, to be the "container" of `parent` instead */
 function transpose(br: AnyNode, fold: AnyNode, parent: AnyNode): AnyNode {
   if (
-    process.env['NODE_ENV'] === 'development' &&
+    process.env.NODE_ENV === 'development' &&
     !parent.operands.includes(br as any as never)
   )
     throw new Error('ill-formed transpose')

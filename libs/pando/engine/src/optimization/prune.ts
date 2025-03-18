@@ -198,7 +198,7 @@ export function pruneRange<ID>(state: State<OP, ID>, numReq: number) {
     }
     nodes.push(n)
   })
-  if (minimum.length != oldMin.length) {
+  if (minimum.length !== oldMin.length) {
     state.nodes = nodes
     state.minimum = minimum
   }
@@ -213,7 +213,7 @@ export function pruneRange<ID>(state: State<OP, ID>, numReq: number) {
       const ranges = computeNodeRanges(nodes, cat, cndRanges)
       return minimum.every((m, i) => ranges.get(nodes[i])!.max >= m)
     })
-    if (newCnds.length != cnds.length) {
+    if (newCnds.length !== cnds.length) {
       candidates[i] = newCnds
       cndRanges[i] = computeCndRanges(newCnds)
       progress = true
@@ -274,7 +274,7 @@ export function pruneBottom<ID>(state: State<OP, ID>, topN: number) {
     })
   })
 
-  if (candidates.some((cnds, i) => cnds.length != state.candidates[i].length))
+  if (candidates.some((cnds, i) => cnds.length !== state.candidates[i].length))
     state.candidates = candidates.map((cnds) => cnds.map((val) => val.c))
 }
 
@@ -309,7 +309,7 @@ export function reaffine<ID>(state: State<OP, ID>) {
         if (n.x.find((n, i) => n.op !== 'const' && i !== idx)) return // multiple non-const terms
         weight = { ...x[idx] }
         const factor = x.reduce((f, w, i) => (i === idx ? f : f * w[offset]), 1)
-        if (factor != 1) {
+        if (factor !== 1) {
           Object.keys(weight).forEach((k) => (weight[k] *= factor))
           weight[offset] *= factor
         }
@@ -342,6 +342,7 @@ export function reaffine<ID>(state: State<OP, ID>) {
     if (n.op === 'const' || n.op === 'read') return false
     if (n.op === 'sum' && n.x.length === 2)
       if (n.x[0].op === 'const' && n.x[1].op === 'read') return false
+      // biome-ignore lint/style/noUselessElse: <explanation>
       else if (n.x[1].op === 'const' && n.x[0].op === 'read') return false
     return true
   })
@@ -354,7 +355,7 @@ export function reaffine<ID>(state: State<OP, ID>) {
       const keys = Object.keys(w).sort()
       if (keys.length === 1 && w[keys[0]] === 1) return [w, keys[0]]
       // skip `w[offset]` because it doesn't go into the new `Read` nodes
-      return [w, '\u{F33D}' + keys.flatMap((k) => [k, w[k]]).join('\u{F00D}')]
+      return [w, `\u{F33D}${keys.flatMap((k) => [k, w[k]]).join('\u{F00D}')}`]
     })
   )
   if (!isDebug('calc')) {
@@ -370,7 +371,7 @@ export function reaffine<ID>(state: State<OP, ID>) {
   }
   state.candidates = candidates.map((cnds) =>
     cnds.map((c) => {
-      const result = { id: c['id'] } as Candidate<ID>
+      const result = { id: c.id } as Candidate<ID>
       readNames.forEach((name, w) => {
         if (name in result) return // same weight, different offsets
         result[name] = Object.entries(w).reduce(
@@ -445,7 +446,7 @@ function computeNodeRanges(
     switch (n.op) {
       case 'const':
         if (typeof n.ex === 'number') r = { min: n.ex, max: n.ex }
-        else r = { min: NaN, max: NaN }
+        else r = { min: Number.NaN, max: Number.NaN }
         break
       case 'sum':
         r = {
@@ -469,7 +470,7 @@ function computeNodeRanges(
         if (mins[0] + mins[1] > 0 || maxs[0] + maxs[1] < 0)
           r = cornerRange(n.op, ranges as [Range, Range])
         // Degenerate if `x + c` touches zero
-        else r = { min: NaN, max: NaN }
+        else r = { min: Number.NaN, max: Number.NaN }
         break
       case 'read': {
         r = { min: 0, max: 0 }
@@ -481,10 +482,11 @@ function computeNodeRanges(
         break
       }
       case 'subscript': {
-        if (typeof n.ex[0] !== 'number') r = { min: NaN, max: NaN }
+        if (typeof n.ex[0] !== 'number')
+          r = { min: Number.NaN, max: Number.NaN }
         else {
           // Note: this assumes there is no NaN in the array
-          r = { min: Infinity, max: -Infinity }
+          r = { min: Number.POSITIVE_INFINITY, max: Number.NEGATIVE_INFINITY }
           let { min: start, max: last } = result.get(n.br[0])!
           start = Math.max(0, Math.ceil(start))
           last = Math.min(last, n.ex.length - 1)
@@ -493,13 +495,13 @@ function computeNodeRanges(
             if (r.min > v) r.min = v
             if (r.max < v) r.max = v
           }
-          if (r.min > r.max) r = { min: NaN, max: NaN }
+          if (r.min > r.max) r = { min: Number.NaN, max: Number.NaN }
         }
         break
       }
       case 'lookup':
         // Note: this assumes that `default` branch is never reached if not presented
-        if (isNaN(mins[0]) && isNaN(maxs[0])) {
+        if (Number.isNaN(mins[0]) && Number.isNaN(maxs[0])) {
           mins.splice(0, 1)
           maxs.splice(0, 1)
         }

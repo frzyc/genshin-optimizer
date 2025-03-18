@@ -234,7 +234,7 @@ function charKeyToCharSheetKey(
 ): CharacterSheetKey {
   if (allTravelerKeys.includes(charKey as TravelerKey))
     return `${charKey}${gender}` as CharacterSheetKey
-  else return charKey as CharacterSheetKey
+  return charKey as CharacterSheetKey
 }
 
 export default characters

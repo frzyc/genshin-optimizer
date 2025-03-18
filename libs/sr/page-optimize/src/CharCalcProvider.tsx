@@ -46,12 +46,12 @@ export function CharCalcProvider({
         ...charOpt.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValue }) =>
             withPreset(
-              `preset0`,
+              'preset0',
               conditionalEntries(sheet, src, dst)(condKey, condValue)
             )
         ),
         ...charOpt.bonusStats.flatMap(({ tag, value }) =>
-          withPreset(`preset0`, {
+          withPreset('preset0', {
             tag: { ...tag },
             value: constant(value),
           })

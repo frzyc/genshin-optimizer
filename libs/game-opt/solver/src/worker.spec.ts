@@ -10,13 +10,13 @@ test('Worker', () => {
   const readB = read({ q: 'b' }, 'sum')
   const nodes = [prod(readA, sum(readB, 2))]
   const candidates = [...Array(7)].map((_) => [
-    ...[...Array(10)].map((_, i) => ({ id: ('t' + i) as ID, a: i, b: 10 - i })),
-    ...[...Array(9)].map((_, i) => ({ id: ('b' + i) as ID, a: i, b: 9 - i })),
+    ...[...Array(10)].map((_, i) => ({ id: (`t${i}`) as ID, a: i, b: 10 - i })),
+    ...[...Array(9)].map((_, i) => ({ id: (`b${i}`) as ID, a: i, b: 9 - i })),
   ])
   const ids = candidates.map((cnds) => cnds.map((c) => c.id))
   const worker = new Worker({
     nodes,
-    minimum: [-Infinity],
+    minimum: [Number.NEGATIVE_INFINITY],
     candidates,
     topN: 1,
   })

@@ -582,8 +582,8 @@ function ArtifactBuildUsageModal({
           }
         />
         <List>
-          {builds.map((build, index) => (
-            <ListItem key={index}>
+          {builds.map((build) => (
+            <ListItem key={build.buildName}>
               <ListItemIcon>
                 <CharIconSide characterKey={build.charKey} />
               </ListItemIcon>

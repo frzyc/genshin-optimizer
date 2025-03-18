@@ -21,7 +21,7 @@ import type { TagMapNodeEntries } from '../util'
 import { own, ownBuff, percent } from '../util'
 
 const transLvlMultis = [
-  NaN, // lvl 0
+  Number.NaN, // lvl 0
   17.165606,
   18.535048,
   19.904854,
@@ -115,7 +115,7 @@ const transLvlMultis = [
 ]
 // PlayerShieldLevelCo
 const cryLvlMultis = [
-  NaN, // lvl 0
+  Number.NaN, // lvl 0
   91.1791,
   98.707664,
   106.23622,
@@ -351,7 +351,7 @@ const data: TagMapNodeEntries = [
       transTriggerByEle[ele].has(trans)
     )
     if (
-      !transTriggerByEle['physical'].has(trans) &&
+      !transTriggerByEle.physical.has(trans) &&
       available.length !== allElementKeys.length
     )
       cond =

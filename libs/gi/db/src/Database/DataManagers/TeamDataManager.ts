@@ -82,7 +82,7 @@ export class TeamDataManager extends DataManager<
       const name = `Team Name ${num}`
       if (existing.some((tc) => tc.name !== name)) return name
     }
-    return `Team Name`
+    return 'Team Name'
   }
   override validate(obj: unknown): Team | undefined {
     let {
@@ -95,8 +95,6 @@ export class TeamDataManager extends DataManager<
     } = obj as Team
     if (typeof name !== 'string') name = this.newName()
     if (typeof description !== 'string') description = ''
-
-    {
       // validate enemyOverride
       if (typeof enemyOverride !== 'object') enemyOverride = {}
 
@@ -113,11 +111,8 @@ export class TeamDataManager extends DataManager<
         const key = `${ele}_enemyRes_` as EleEnemyResKey
         if (typeof enemyOverride[key] !== 'number') enemyOverride[key] = 10
       })
-    }
 
     if (!conditional) conditional = { resonance: {} }
-
-    {
       // validate teamCharIds
       if (!Array.isArray(loadoutData))
         loadoutData = range(0, 3).map(() => undefined)
@@ -193,7 +188,6 @@ export class TeamDataManager extends DataManager<
         loadoutData[0] = loadoutData[index]
         loadoutData[index] = undefined
       }
-    }
 
     if (typeof lastEdit !== 'number') lastEdit = Date.now()
 
@@ -467,7 +461,7 @@ export class TeamDataManager extends DataManager<
         unfollowWeapon()
         unfollowArts.forEach((unfollow) => unfollow())
       }
-    } else if (buildType === 'tc')
+    }if (buildType === 'tc')
       return this.database.buildTcs.follow(buildTcId, callback)
     return () => {}
   }
@@ -493,7 +487,7 @@ export class TeamDataManager extends DataManager<
         unfollowWeapon()
         unfollowArts.forEach((unfollow) => unfollow())
       }
-    } else if (compareType === 'tc')
+    }if (compareType === 'tc')
       return this.database.buildTcs.follow(compareBuildTcId, callback)
     return () => {}
   }

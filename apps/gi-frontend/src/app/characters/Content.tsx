@@ -24,7 +24,7 @@ export default function Content({
       if (characters.find((c) => c.key === ranChar.key))
         return console.warn('Created a character with the same key')
       const { auto, skill, burst } = ranChar.talent
-      delete ranChar.talent
+      ranChar.talent = undefined
       ranChar.talent_auto = auto
       ranChar.talent_skill = skill
       ranChar.talent_burst = burst

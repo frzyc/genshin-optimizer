@@ -121,7 +121,7 @@ export function CompactDiscCard({
                       justifyContent: 'center',
                       overflow: 'hidden',
                       borderRadius: '50%',
-                      border: `4px solid #1B263B`,
+                      border: '4px solid #1B263B',
                     }}
                   >
                     <Box
@@ -160,7 +160,7 @@ export function CompactDiscCard({
                             }`,
                           }),
                         }}
-                      ></SlotIcon>
+                      />
                     </Box>
                     <Box sx={{ height: 0, position: 'absolute', bottom: 20 }}>
                       <Typography
@@ -196,7 +196,7 @@ export function CompactDiscCard({
                       gap: 1,
                     }}
                   >
-                    <StatIcon statKey={disc.mainStatKey}></StatIcon>
+                    <StatIcon statKey={disc.mainStatKey} />
                     <span>
                       {toPercent(
                         getDiscMainStatVal(

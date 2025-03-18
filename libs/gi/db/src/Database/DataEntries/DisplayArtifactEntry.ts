@@ -165,13 +165,13 @@ export class DisplayArtifactEntry extends DataEntry<
   override set(
     value:
       | Partial<IDisplayArtifact>
-      | ((v: IDisplayArtifact) => Partial<IDisplayArtifact> | void)
+      | ((v: IDisplayArtifact) => Partial<IDisplayArtifact> | undefined)
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {
       if (value.action === 'reset')
         return super.set({ filterOption: initialFilterOption() })
       return false
-    } else return super.set(value)
+    }return super.set(value)
   }
 }

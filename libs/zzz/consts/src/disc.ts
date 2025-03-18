@@ -224,7 +224,7 @@ export const allDiscCondKeys = {
   },
   BranchBladeSong: {
     key: 'BranchBladeSong',
-    text: `When any squad member applies Freeze or triggers the Shatter effect on an enemy`,
+    text: 'When any squad member applies Freeze or triggers the Shatter effect on an enemy',
     min: 1,
     max: 1,
   },
@@ -345,8 +345,8 @@ export const disc4PeffectSheets: Partial<
   AstralVoice: {
     condMeta: allDiscCondKeys.AstralVoice,
     getStats: (conds) => {
-      return conds['AstralVoice']
-        ? (objMultiplication({ dmg_: 0.08 }, conds['AstralVoice']) as Record<
+      return conds.AstralVoice
+        ? (objMultiplication({ dmg_: 0.08 }, conds.AstralVoice) as Record<
             string,
             number
           >)
@@ -359,14 +359,14 @@ export const disc4PeffectSheets: Partial<
       const ret: Record<string, number> = {}
       // Have to calculate the "final" here because there are no stages for calc
       if (
-        ((stats['anomMas_base'] ?? 0) * (1 + (stats['anomMas_'] ?? 0)) +
-          (stats['anomMas'] ?? 0)) *
-          (1 + (stats['cond_anomMas_'] ?? 0)) +
-          (stats['cond_anomMas'] ?? 0) >=
+        ((stats.anomMas_base ?? 0) * (1 + (stats.anomMas_ ?? 0)) +
+          (stats.anomMas ?? 0)) *
+          (1 + (stats.cond_anomMas_ ?? 0)) +
+          (stats.cond_anomMas ?? 0) >=
         115
       )
-        ret['crit_dmg_'] = 0.3
-      if (conds['BranchBladeSong']) ret['crit_'] = 0.12
+        ret.crit_dmg_ = 0.3
+      if (conds.BranchBladeSong) ret.crit_ = 0.12
       return ret
     },
   },
@@ -377,7 +377,7 @@ export const disc4PeffectSheets: Partial<
         fire_dmg_: 0.15,
         electric_dmg_: 0.15,
       }
-      if (conds['ChaosJazz']) ret['dmg_'] = 0.2 // TODO: Should be EX Special Attacks and Assist Attacks
+      if (conds.ChaosJazz) ret.dmg_ = 0.2 // TODO: Should be EX Special Attacks and Assist Attacks
       return ret
     },
   },
@@ -387,12 +387,12 @@ export const disc4PeffectSheets: Partial<
       const ret: Record<string, number> = {
         crit_dmg_: 0.2,
       }
-      if (conds['ChaoticMetal'])
+      if (conds.ChaoticMetal)
         objSumInPlace(
           ret,
           objMultiplication(
             { crit_dmg_: 0.055 },
-            conds['ChaoticMetal']
+            conds.ChaoticMetal
           ) as Record<string, number>
         )
       return ret
@@ -401,7 +401,7 @@ export const disc4PeffectSheets: Partial<
   FangedMetal: {
     condMeta: allDiscCondKeys.FangedMetal,
     getStats: (conds) => {
-      if (conds['FangedMetal']) return { dmg_: 0.35 } // equipper deals 35% additional DMG
+      if (conds.FangedMetal) return { dmg_: 0.35 } // equipper deals 35% additional DMG
       return undefined
     },
   },
@@ -409,14 +409,14 @@ export const disc4PeffectSheets: Partial<
   HormonePunk: {
     condMeta: allDiscCondKeys.HormonePunk,
     getStats: (conds) => {
-      if (conds['HormonePunk']) return { cond_atk_: 0.25 } // ATK increased by 25%
+      if (conds.HormonePunk) return { cond_atk_: 0.25 } // ATK increased by 25%
       return undefined
     },
   },
   InfernoMetal: {
     condMeta: allDiscCondKeys.InfernoMetal,
     getStats: (conds) => {
-      if (conds['InfernoMetal']) return { crit_: 0.28 } //equipper's CRIT Rate is increased by 28%
+      if (conds.InfernoMetal) return { crit_: 0.28 } //equipper's CRIT Rate is increased by 28%
       return undefined
     },
   },
@@ -438,9 +438,9 @@ export const disc4PeffectSheets: Partial<
       allDiscCondKeys.PolarMetal,
     ],
     getStats: (conds) => {
-      if (!conds['PolarMetalBasicOrDash']) return {}
+      if (!conds.PolarMetalBasicOrDash) return {}
       const ret = { dmg_: 0.2 } // TODO: Increase the DMG of Basic Attack and Dash Attack by 20%
-      if (conds['PolarMetal']) {
+      if (conds.PolarMetal) {
         objMultiplication(ret, 2)
       }
       return ret
@@ -449,7 +449,7 @@ export const disc4PeffectSheets: Partial<
   ProtoPunk: {
     condMeta: allDiscCondKeys.ProtoPunk,
     getStats: (conds) => {
-      if (conds['ProtoPunk']) return { dmg_: 0.15 } //  all squad members deal 15% increased DMG
+      if (conds.ProtoPunk) return { dmg_: 0.15 } //  all squad members deal 15% increased DMG
       return undefined
     },
   },
@@ -460,8 +460,8 @@ export const disc4PeffectSheets: Partial<
     ],
     getStats: (conds) => {
       const ret: Record<string, number> = {}
-      if (conds['PufferElectroUltimate']) ret['dmg_'] = 0.2 //Ultimate DMG increases by 20%
-      if (conds['PufferElectro']) ret['cond_atk_'] = 0.15 // Launching an Ultimate increases the equipper's ATK by 15%
+      if (conds.PufferElectroUltimate) ret.dmg_ = 0.2 //Ultimate DMG increases by 20%
+      if (conds.PufferElectro) ret.cond_atk_ = 0.15 // Launching an Ultimate increases the equipper's ATK by 15%
       return ret
     },
   },
@@ -481,24 +481,24 @@ export const disc4PeffectSheets: Partial<
   SwingJazz: {
     condMeta: allDiscCondKeys.SwingJazz,
     getStats: (conds) => {
-      if (conds['SwingJazz']) return { dmg_: 0.15 } //increases all squad members' DMG by 15%
+      if (conds.SwingJazz) return { dmg_: 0.15 } //increases all squad members' DMG by 15%
       return undefined
     },
   },
   ThunderMetal: {
     condMeta: allDiscCondKeys.ThunderMetal,
     getStats: (conds) => {
-      if (conds['ThunderMetal']) return { cond_atk_: 0.27 } // equipper's ATK is increased by 27%
+      if (conds.ThunderMetal) return { cond_atk_: 0.27 } // equipper's ATK is increased by 27%
       return undefined
     },
   },
   WoodpeckerElectro: {
     condMeta: allDiscCondKeys.WoodpeckerElectro,
     getStats: (conds) => {
-      if (conds['WoodpeckerElectro'])
+      if (conds.WoodpeckerElectro)
         return objMultiplication(
           { cond_atk_: 0.09 },
-          conds['WoodpeckerElectro']
+          conds.WoodpeckerElectro
         ) as Record<string, number>
       return undefined
     },

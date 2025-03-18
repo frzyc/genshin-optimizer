@@ -52,7 +52,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const database = databases[index]
   const [{ name, lastEdit }, setDBMeta] = useState(database.dbMeta.get())
   useEffect(
-    () => database.dbMeta.follow((r, dbMeta) => setDBMeta(dbMeta)),
+    () => database.dbMeta.follow((_r, dbMeta) => setDBMeta(dbMeta)),
     [database]
   )
   // Need to update the dbMeta when database changes

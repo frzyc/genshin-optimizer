@@ -130,8 +130,7 @@ export default function CharacterTalentPane() {
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <EidolonDropdown eidolon={eidolon} />
-            {eidolonCards &&
-              eidolonCards.map((c, i) => (
+            {eidolonCards?.map((c, i) => (
                 <Box key={i} sx={{ opacity: eidolon >= i + 1 ? 1 : 0.5 }}>
                   {c}
                 </Box>
@@ -267,7 +266,7 @@ function SkillDisplayCard({
             [statBoostKey]: !char.statBoosts[statBoostKey],
           }
         })
-    } else if (
+    }if (
       isTalentSheetElementBonusAbilityKey(talentKey) &&
       bonusAbilityReqMap[talentKey].onClickable(calculator)
     ) {
@@ -279,7 +278,7 @@ function SkillDisplayCard({
             [bonusAbilityKey]: !char.bonusAbilities[bonusAbilityKey],
           }
         })
-    } else if (isTalentSheetElementEidolonKey(talentKey)) {
+    }if (isTalentSheetElementEidolonKey(talentKey)) {
       const eidolonKey = getEidolonKey(talentKey)
       const eidolon = calculator?.compute(own.char.eidolon).val ?? 0
       return () =>

@@ -14,8 +14,12 @@ export default function LoginPage() {
             <input id="email" name="email" type="email" required />
             <label htmlFor="password">Password:</label>
             <input id="password" name="password" type="password" required />
-            <button formAction={login}>Log in</button>
-            <button formAction={signup}>Sign up</button>
+            <button type="button" formAction={login}>
+              Log in
+            </button>
+            <button type="button" formAction={signup}>
+              Sign up
+            </button>
           </form>
         </CardContent>
       </CardThemed>

@@ -34,17 +34,17 @@ function getEmbed(
     components: [],
   }
   //parse level
-  let level = arg.length > 1 ? parseInt(arg.substring(1)) : NaN
+  let level = arg.length > 1 ? Number.parseInt(arg.substring(1)) : Number.NaN
 
   //talent level dropdown
   if ('neq'.includes(arg[0])) {
-    if (isNaN(level)) level = 10
+    if (Number.isNaN(level)) level = 10
 
     //create dropdown menu
     const options = []
     for (const tl of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) {
       const menu = new StringSelectMenuOptionBuilder()
-        .setLabel('Talent Level ' + tl)
+        .setLabel(`Talent Level ${tl}`)
         .setValue(arg[0] + tl)
       if (tl === level) menu.setDefault(true)
       options.push(menu)
@@ -52,7 +52,7 @@ function getEmbed(
     res.components = [
       new StringSelectMenuBuilder()
         .setCustomId(`${slashcommand.name} char ${id} ${arg} ${lang} 1`)
-        .setPlaceholder('Talent Level ' + level)
+        .setPlaceholder(`Talent Level ${level}`)
         .addOptions(options),
     ]
   }
@@ -74,15 +74,15 @@ function getEmbed(
     //create dropdown menu
     const options = []
     for (const cl of [0, 1, 2, 3, 4, 5, 6]) {
-      const label = cl ? 'Constellation ' + cl : 'All Constellations'
-      const value = cl ? 'c' + cl : 'c'
+      const label = cl ? `Constellation ${cl}` : 'All Constellations'
+      const value = cl ? `c${cl}` : 'c'
       const menu = new StringSelectMenuOptionBuilder()
         .setLabel(label)
         .setValue(value)
       if (value === arg) menu.setDefault(true)
       options.push(menu)
     }
-    const label = level ? 'Constellation ' + level : 'All Constellations'
+    const label = level ? `Constellation ${level}` : 'All Constellations'
     res.components = [
       new StringSelectMenuBuilder()
         .setCustomId(`${slashcommand.name} char ${id} ${arg} ${lang} 1`)
@@ -95,14 +95,14 @@ function getEmbed(
 }
 
 function getAssets(id: CharacterSheetKey) {
-  if (id.includes('Traveler')) {
-    id = 'Traveler' + id.charAt(id.length - 1)
-  }
-  return AssetData.chars[id as LocationGenderedCharacterKey]
+  const locKey = id.includes('Traveler')
+    ? `Traveler${id.charAt(id.length - 1)}`
+    : id
+  return AssetData.chars[locKey as LocationGenderedCharacterKey]
 }
 
 function getName(id: CharacterSheetKey, lang: string) {
-  return translate(`charNames_gen`, id, lang)
+  return translate('charNames_gen', id, lang)
 }
 
 function baseEmbed(id: CharacterSheetKey, lang: string) {
@@ -134,15 +134,14 @@ function talentFields(
   let text = ''
   let val = ''
   for (const index in scalings) {
-    text += translate(namespace, `${skill}.skillParams.${index}`, lang) + '\n'
-    val +=
-      translate(
-        namespace,
-        `${skill}.skillParamsEncoding.${index}`,
-        lang,
-        false,
-        scalings
-      ) + '\n'
+    text += `${translate(namespace, `${skill}.skillParams.${index}`, lang)}\n`
+    val += `${translate(
+      namespace,
+      `${skill}.skillParamsEncoding.${index}`,
+      lang,
+      false,
+      scalings
+    )}\n`
   }
 
   //format to inline embed fields
@@ -165,29 +164,26 @@ function profileEmbed(id: CharacterSheetKey, namespace: string, lang: string) {
   let text = ''
   //base stats
   const stats = baseCharStats(id)
-  Object.entries(stats).forEach(([key, val]) => {
+  for (const [key, val] of Object.entries(stats)) {
     const name = i18nInstance.t(`statKey_gen:${key}`)
     const value = valueString(val, getUnitStr(key), getFixed(key))
     text += `**${name}:** ${value}\n`
-  })
+  }
   //description
-  text +=
-    '\n*-# ' +
-    i18nInstance
-      .t(
-        [
-          `${namespace}:description`,
-          'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.',
-        ],
-        { lng: lang }
-      )
-      .trim()
-      .replaceAll('\n', '\n-# ') +
-    '*'
+  text += `\n*-# ${i18nInstance
+    .t(
+      [
+        `${namespace}:description`,
+        'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.',
+      ],
+      { lng: lang }
+    )
+    .trim()
+    .replaceAll('\n', '\n-# ')}*`
   //make embed
   const embed = baseEmbed(id, lang)
   const title = translate(namespace, 'title', lang)
-  if (title != 'title') embed.setTitle(title)
+  if (title !== 'title') embed.setTitle(title)
   embed
     .setAuthor({
       name: getName(id, lang),
@@ -219,12 +215,7 @@ function normalsEmbed(
     .setTitle(auto.name)
     .setDescription(
       clean(
-        Object.values(auto.fields.normal).join('\n') +
-          '\n\n' +
-          Object.values(auto.fields.charged).join('\n') +
-          '\n\n' +
-          Object.values(auto.fields.plunging).join('\n') +
-          '\n\n'
+        `${Object.values(auto.fields.normal).join('\n')}\n\n${Object.values(auto.fields.charged).join('\n')}\n\n${Object.values(auto.fields.plunging).join('\n')}\n\n`
       )
     )
     .setThumbnail(giURL(CommonAssetData.normalIcons[weapon]))
@@ -299,7 +290,7 @@ function passivesEmbed(
   //make embed
   for (const passiveId of showPassives) {
     const passive = translate(namespace, passiveId, lang, true)
-    if (passive == passiveId) continue
+    if (passive === passiveId) continue
     //ascension 1
     if (passiveId === 'passive1') text += `**${passive.name}** (A1)\n`
     //ascension 4
@@ -307,7 +298,7 @@ function passivesEmbed(
     //innate passives
     else text += `**${passive.name}** \n`
     //passive text
-    text += Object.values(passive.description).flat().join('\n') + '\n\n'
+    text += `${Object.values(passive.description).flat().join('\n')}\n\n`
   }
   const embed = baseEmbed(id, lang).setDescription(clean(text))
   const thumbnail = getAssets(id)[showPassives[0]]
@@ -333,15 +324,12 @@ function constellationsEmbed(
       lang,
       true
     )
-    text +=
-      `**${constellationId}. ${constellation.name}** ` +
-      Object.values(constellation.description).flat().join('\n') +
-      '\n\n'
+    text += `**${constellationId}. ${constellation.name}** ${Object.values(constellation.description).flat().join('\n')}\n\n`
   }
   //make embed
   const embed = baseEmbed(id, lang).setDescription(clean(text))
   const constellationName = translate(namespace, 'constellationName', lang)
-  if (constellationName != 'constellationName')
+  if (constellationName !== 'constellationName')
     embed.setTitle(constellationName)
   const thumbnail = getAssets(id)[`constellation${showCons[0]}`]
   if (thumbnail) embed.setThumbnail(giURL(thumbnail))

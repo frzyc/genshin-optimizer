@@ -65,7 +65,7 @@ export function discFilterConfigs({
       return true
     },
     locations: (disc, filter, filters) =>
-      disc.location && !filters['showEquipped']
+      disc.location && !filters.showEquipped
         ? filter.includes(disc.location)
         : true,
     showEquipped: () => true, // Per character filtering is applied in `locations`

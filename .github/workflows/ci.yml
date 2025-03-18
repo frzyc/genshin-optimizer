@@ -17,6 +17,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -24,9 +26,14 @@ jobs:
       - name: Yarn Install
         run: |
           yarn install --immutable --immutable-cache
-      - name: Run lint
+      - name: Lint (Changed Files)
+        if: ${{ github.event_name == 'pull_request' }}
         run: |
-          yarn run nx run-many --target=eslint:lint --fix=false --max-warnings=0
+          yarn biome ci --formatter-enabled=false --organize-imports-enabled=false --changed --diagnostic-level=warn
+      - name: Lint
+        if: ${{ github.event_name != 'pull_request' }}
+        run: |
+          yarn biome ci --formatter-enabled=false --organize-imports-enabled=false --diagnostic-level=warn
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -77,11 +84,11 @@ jobs:
       - name: Check Formatting (Changed Files)
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          yarn biome ci --changed
+          yarn biome ci --linter-enabled=false --changed
       - name: Check Formatting
         if: ${{ github.event_name != 'pull_request' }}
         run: |
-          yarn biome ci
+          yarn biome ci --linter-enabled=false
   typecheck:
     runs-on: ubuntu-latest
     timeout-minutes: 10

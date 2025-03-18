@@ -88,7 +88,7 @@ export function DiscInventory({ onAdd, onEdit }: DiscInventoryProps) {
         numShowing={totalDiscsNum}
         total={totalDiscsNum}
         discIds={discIds}
-      ></DiscFilter>
+      />
       <CardThemed bgt="dark">
         <CardContent>
           <Box

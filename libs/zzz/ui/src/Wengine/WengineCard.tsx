@@ -217,12 +217,12 @@ export function WengineCard({
                   <StatDisplay statKey={'atk'} />
                 </Typography>
                 <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-                  {wengineStats['atk_base'].toFixed()}
+                  {wengineStats.atk_base.toFixed()}
                 </Typography>
               </Box>
               <WengineSubstatDisplay
-                substatKey={wengineStat['second_statkey']}
-                substatValue={wengineStats[wengineStat['second_statkey']]}
+                substatKey={wengineStat.second_statkey}
+                substatValue={wengineStats[wengineStat.second_statkey]}
               />
             </Stack>
           </CardContent>

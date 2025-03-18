@@ -153,9 +153,9 @@ export class SroDatabase extends Database {
     const source = srod.source ?? 'Unknown'
     // Some Scanners might carry their own id field, which would conflict with GO dup resolution.
     if (source !== SroSource) {
-      srod.relics?.forEach((a) => delete (a as unknown as { id?: string }).id)
+      srod.relics?.forEach((a) => (a as unknown as { id?: string }).id = undefined)
       srod.lightCones?.forEach(
-        (a) => delete (a as unknown as { id?: string }).id
+        (a) => (a as unknown as { id?: string }).id = undefined
       )
     }
     const result: ImportResult = newImportResult(

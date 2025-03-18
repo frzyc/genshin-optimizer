@@ -1,5 +1,5 @@
-import { existsSync } from 'fs'
-import * as path from 'path'
+import { existsSync } from 'node:fs'
+import * as path from 'node:path'
 import type { Tree } from '@nx/devkit'
 import { generateFiles } from '@nx/devkit'
 import type { GenSheetGeneratorSchema } from './schema'

@@ -31,20 +31,17 @@ export function RVSlide({
   const [MRV_RV, setMRV_RV] = useState(useMaxRV) // Switch between MaxRV/RV
   const [sliderLow, setsliderLow] = useState(rvLow)
   const [sliderHigh, setsliderHigh] = useState(rvHigh)
-  const setSlider = useCallback(
-    (e: unknown, value: number | number[]) => {
-      if (typeof value == 'number') throw new TypeError()
-      const [l, h] = value
-      setsliderLow(l)
-      setsliderHigh(h)
-    },
-    [setsliderLow, setsliderHigh]
-  )
-  useEffect(() => setsliderLow(rvLow), [setsliderLow, rvLow])
+  const setSlider = useCallback((_e: unknown, value: number | number[]) => {
+    if (typeof value === 'number') throw new TypeError()
+    const [l, h] = value
+    setsliderLow(l)
+    setsliderHigh(h)
+  }, [])
+  useEffect(() => setsliderLow(rvLow), [rvLow])
 
-  useEffect(() => setsliderHigh(rvHigh), [setsliderHigh, rvHigh])
+  useEffect(() => setsliderHigh(rvHigh), [rvHigh])
 
-  useEffect(() => setMRV_RV(useMaxRV), [setMRV_RV, useMaxRV])
+  useEffect(() => setMRV_RV(useMaxRV), [useMaxRV])
   return (
     <Card
       sx={{
@@ -90,7 +87,7 @@ export function RVSlide({
         getAriaLabel={() => `Arifact ${MRV_RV ? 'Max RV' : 'RV'} Range`}
         value={[sliderLow, sliderHigh]}
         onChange={setSlider}
-        onChangeCommitted={(e, value) =>
+        onChangeCommitted={(_e, value) =>
           Array.isArray(value) && setBoth(value[0], value[1])
         }
         valueLabelDisplay="auto"

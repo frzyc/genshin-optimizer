@@ -39,7 +39,7 @@ export function weaponFilterConfigs(): FilterConfigs<
     showEquipped: () => true, // Per character filtering is applied in `locations`
     showInventory: (wp, filter) => (!wp.location ? filter : true),
     locations: (wp, filter, filters) =>
-      wp.location && !filters['showEquipped']
+      wp.location && !filters.showEquipped
         ? filter.includes(wp.location)
         : true,
   }

@@ -62,7 +62,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
     )
     // layeredAssignment(mapHashData, [...keys, "descriptionDetail"], avatarDetailTextMapHash)
     // Don't override constellation name if manually specified. For Zhongli
-    !mapHashData.char[characterIdMap[charid]]?.['constellationName'] &&
+    !mapHashData.char[characterIdMap[charid]]?.constellationName &&
       layeredAssignment(
         mapHashData,
         ['char', charKey, 'constellationName'],
@@ -258,27 +258,27 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         candSkillDepotIds
       const gender = characterIdMap[charid] === 'TravelerF' ? 'F' : 'M'
       genTalentHash(
-        ['char', 'TravelerAnemo' + gender],
+        ['char', `TravelerAnemo${gender}`],
         avatarSkillDepotExcelConfigData[anemo]
       )
       genTalentHash(
-        ['char', 'TravelerGeo' + gender],
+        ['char', `TravelerGeo${gender}`],
         avatarSkillDepotExcelConfigData[geo]
       )
       genTalentHash(
-        ['char', 'TravelerElectro' + gender],
+        ['char', `TravelerElectro${gender}`],
         avatarSkillDepotExcelConfigData[electro]
       )
       genTalentHash(
-        ['char', 'TravelerDendro' + gender],
+        ['char', `TravelerDendro${gender}`],
         avatarSkillDepotExcelConfigData[dendro]
       )
       genTalentHash(
-        ['char', 'TravelerHydro' + gender],
+        ['char', `TravelerHydro${gender}`],
         avatarSkillDepotExcelConfigData[hydro]
       )
       genTalentHash(
-        ['char', 'TravelerPyro' + gender],
+        ['char', `TravelerPyro${gender}`],
         avatarSkillDepotExcelConfigData[pyro]
       )
     } else {
@@ -400,7 +400,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           rawString.split('\\n\\n').length === 2
         ) {
           const ind = rawString.indexOf('n<color=#FFD780FF>') + 1
-          rawString = rawString.slice(0, ind) + '\\n' + rawString.slice(ind)
+          rawString = `${rawString.slice(0, ind)}\\n${rawString.slice(ind)}`
         }
         // Skip encoding strings for non EN languages
         if (processing === 'skillParamEncoding' && lang !== 'en') return
@@ -443,14 +443,14 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
     })
 
     // Add the Somnia and QuantumCatalyst
-    languageData[lang as Language].charNames['Somnia'] = 'Somnia'
-    languageData[lang as Language].weaponNames['QuantumCatalyst'] =
+    languageData[lang as Language].charNames.Somnia = 'Somnia'
+    languageData[lang as Language].weaponNames.QuantumCatalyst =
       'Quantum Cat-alyst'
   })
 
   //dump the language data to files
   Object.entries(languageData).forEach(([lang, data]) => {
-    const fileDir = `${process.env['NX_WORKSPACE_ROOT']}/libs/gi/dm-localization/assets/locales/${lang}`
+    const fileDir = `${process.env.NX_WORKSPACE_ROOT}/libs/gi/dm-localization/assets/locales/${lang}`
 
     Object.entries(data).forEach(([type, typeData]) => {
       //general manual localization namespaces

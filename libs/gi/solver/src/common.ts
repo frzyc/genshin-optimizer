@@ -55,7 +55,7 @@ export function pruneAll(
   let count = 0
   while (Object.values(should).some((x) => x) && count++ < 20) {
     if (should.pruneOrder) {
-      delete should.pruneOrder
+      should.pruneOrder = undefined
       const newArts = pruneOrder(arts, numTop, exclusion)
       if (arts !== newArts) {
         arts = newArts
@@ -63,7 +63,7 @@ export function pruneAll(
       }
     }
     if (should.pruneArtRange) {
-      delete should.pruneArtRange
+      should.pruneArtRange = undefined
       const newArts = pruneArtRange(nodes, arts, minimum)
       if (arts !== newArts) {
         arts = newArts
@@ -71,7 +71,7 @@ export function pruneAll(
       }
     }
     if (should.pruneNodeRange) {
-      delete should.pruneNodeRange
+      should.pruneNodeRange = undefined
       const newNodes = pruneNodeRange(nodes, arts)
       if (nodes !== newNodes) {
         nodes = newNodes
@@ -79,7 +79,7 @@ export function pruneAll(
       }
     }
     if (should.reaffine) {
-      delete should.reaffine
+      should.reaffine = undefined
       const { nodes: newNodes, arts: newArts } = reaffine(nodes, arts)
       if (nodes !== newNodes || arts !== newArts) {
         nodes = newNodes
@@ -330,7 +330,7 @@ function pruneArtRange(
         const read = addArtRange([computeArtRange([art]), otherArtRanges[slot]])
         const newRange = computeNodeRange(nodes, read)
         return nodes.every(
-          (node, i) => newRange.get(node)!.max >= (minimum[i] ?? -Infinity)
+          (node, i) => newRange.get(node)!.max >= (minimum[i] ?? Number.NEGATIVE_INFINITY)
         )
       })
       if (result.length !== wrap.arts.values[slot].length) progress = true
@@ -364,11 +364,12 @@ function pruneNodeRange(nodes: OptNode[], arts: ArtifactsBySlot): OptNode[] {
         case 'threshold': {
           const [value, threshold, pass, fail] = operandRanges
           if (value.min >= threshold.max) return f.operands[2]
-          else if (value.max < threshold.min) return f.operands[3]
+          if (value.max < threshold.min) return f.operands[3]
           if (
             pass.max === pass.min &&
             fail.max === fail.min &&
             pass.min === fail.min &&
+            Number.
             isFinite(pass.min)
           )
             return constant(pass.max)
@@ -499,8 +500,8 @@ export function computeNodeRange(
           if (sum.min <= 0 && sum.max >= 0)
             current =
               x.min <= 0 && x.max >= 0
-                ? { min: NaN, max: NaN }
-                : { min: -Infinity, max: Infinity }
+                ? { min: Number.NaN, max: Number.NaN }
+                : { min: Number.NEGATIVE_INFINITY, max: Number.POSITIVE_INFINITY }
           // TODO: Check this
           else
             current = computeMinMax([
@@ -553,7 +554,7 @@ export function mergeBuilds(
   maxNum: number
 ): SolverBuild[] {
   return builds
-    .flatMap((x) => x)
+    .flat()
     .sort((a, b) => b.value - a.value)
     .slice(0, maxNum)
 }

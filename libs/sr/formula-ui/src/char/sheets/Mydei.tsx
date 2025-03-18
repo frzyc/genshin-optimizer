@@ -3,7 +3,7 @@ import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals, formulas } from '@genshin-optimizer/sr/formula'
 import { mappedStats } from '@genshin-optimizer/sr/stats'
 import { trans } from '../../util'
-import { type TalentSheetElementKey } from '../consts'
+import type { TalentSheetElementKey } from '../consts'
 import {
   bonusAbilitySheet,
   bonusStatsSheets,
@@ -15,20 +15,14 @@ const key: CharacterKey = 'Mydei'
 const [chg, _ch] = trans('char', key)
 const formula = formulas[key]
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const cond = conditionals[key]
+const _cond = conditionals[key]
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const buff = buffs[key]
+const _buff = buffs[key]
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const dm = mappedStats.char[key]
+const _dm = mappedStats.char[key]
 
 const sheet: UISheet<TalentSheetElementKey> = {
   basic: talentSheet(key, 'basic', [

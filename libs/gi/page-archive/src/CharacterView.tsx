@@ -70,6 +70,7 @@ export function CharacterView({
     () =>
       range(1, maxConstellationCount).map((i) => (
         <SkillDisplayCard
+          key={i}
           characterKey={characterKey}
           talentKey={`constellation${i}` as TalentSheetElementKey}
           subtitle={t('constellationLvl', { level: i })}

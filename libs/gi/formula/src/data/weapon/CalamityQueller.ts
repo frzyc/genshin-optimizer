@@ -11,8 +11,8 @@ import {
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'CalamityQueller'
-const dmg_ = [NaN, 0.12, 0.15, 0.18, 0.21, 0.24]
-const atk_ = [NaN, 0.032, 0.04, 0.048, 0.056, 0.064]
+const dmg_ = [Number.NaN, 0.12, 0.15, 0.18, 0.21, 0.24]
+const atk_ = [Number.NaN, 0.032, 0.04, 0.048, 0.056, 0.064]
 
 const {
   weapon: { refinement },

@@ -90,13 +90,13 @@ const [condInFieldPath, condInField] = cond(key, 'inField')
 const skill1_defDisp = equal(
   condInField,
   'inField',
-  greaterEq(tally['geo'], 1, subscript(input.total.skillIndex, dm.skill.defInc))
+  greaterEq(tally.geo, 1, subscript(input.total.skillIndex, dm.skill.defInc))
 )
 const skill1_def = equal(input.activeCharKey, target.charKey, skill1_defDisp)
 const skill3_geo_dmg_Disp = equal(
   condInField,
   'inField',
-  greaterEq(tally['geo'], 3, dm.skill.geo_dmg_)
+  greaterEq(tally.geo, 3, dm.skill.geo_dmg_)
 )
 const skill3_geo_dmg_ = equal(
   input.activeCharKey,
@@ -132,7 +132,7 @@ const c6_geo_critDMG_ = greaterEq(
   equal(
     condAfterSkillBurst,
     'afterSkillBurst',
-    subscript(sum(tally['geo'], -1), dm.constellation6.geo_critDMG_)
+    subscript(sum(tally.geo, -1), dm.constellation6.geo_critDMG_)
   )
 )
 
@@ -202,12 +202,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.aimed, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.fully, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
           }),
         },
       ],
@@ -241,7 +241,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.dmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
@@ -268,7 +268,7 @@ const sheet: TalentSheet = {
               node: infoMut(skill1_defDisp, { path: 'def' }),
             },
             {
-              canShow: (data) => data.get(tally['geo']).value >= 2,
+              canShow: (data) => data.get(tally.geo).value >= 2,
               text: st('incInterRes'),
             },
             {
@@ -301,12 +301,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.crystalCollapse, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
             multi: dm.burst.crystalHits,
           }),
         },

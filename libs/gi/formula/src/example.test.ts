@@ -94,9 +94,9 @@ describe('example', () => {
     const specialized = mem0.compute(own.char.specialized)
     expect(specialized.val).toBe(0)
     // Specialized stat include the stat tag
-    expect(specialized.meta.tag?.['sheet']).toBe('Nahida')
-    expect(specialized.meta.tag!['qt']).toBe('premod')
-    expect(specialized.meta.tag!['q']).toBe('eleMas')
+    expect(specialized.meta.tag?.sheet).toBe('Nahida')
+    expect(specialized.meta.tag!.qt).toBe('premod')
+    expect(specialized.meta.tag!.q).toBe('eleMas')
   })
   test('calculate team stats', () => {
     // Nahida's contribution to `common.count`
@@ -135,7 +135,7 @@ describe('example', () => {
     // Simple check that all tags are in the correct format
     const names: string[] = []
     for (const { name, move, ...tag } of listing.filter(
-      (x) => x.sheet === 'Nahida' && x.qt == 'formula' // exclude stats
+      (x) => x.sheet === 'Nahida' && x.qt === 'formula' // exclude stats
     )) {
       names.push(name!)
       expect(name).toBeTruthy()
@@ -199,7 +199,7 @@ describe('example', () => {
     const conds = mem0.listCondFormulas(own.listing.formulas)
 
     // Read current value: all -> member0 Nilou:a1AfterHit
-    expect(conds['0']?.['1']?.['Nilou']?.['a1AfterHit']).toEqual(0)
+    expect(conds['0']?.['1']?.Nilou?.a1AfterHit).toEqual(0)
 
     // Grab metadata from an entry
     const meta = conditionals.Nilou.a1AfterHit
@@ -218,13 +218,13 @@ describe('example', () => {
     // Step 2: Detach nodes from Calculator
     const allArts = new Set(allArtifactSetKeys) // Cache for fast lookup, put in global
     let detached = detach(nodes, calc, (tag: Tag) => {
-      if (tag['src'] != '0') return undefined // Wrong member
-      if (tag['et'] != 'own') return undefined // Not applied (only) to 'own'
+      if (tag.src !== '0') return undefined // Wrong member
+      if (tag.et !== 'own') return undefined // Not applied (only) to 'own'
 
-      if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
-        return { q: tag['q']! } // Art stat bonus
-      if (tag['q'] === 'count' && allArts.has(tag['sheet'] as any))
-        return { q: tag['sheet']! } // Art set counter
+      if (tag.sheet === 'dyn' && tag.qt === 'premod')
+        return { q: tag.q! } // Art stat bonus
+      if (tag.q === 'count' && allArts.has(tag.sheet as any))
+        return { q: tag.sheet! } // Art set counter
       return undefined
     })
 
@@ -250,15 +250,15 @@ describe('weapon-only example', () => {
   test('calculate specialized stats', () => {
     const primary = calc.compute(own.weapon.primary)
     expect(primary.val).toBeCloseTo(337.96) // atk
-    expect(primary.meta.tag?.['sheet']).toEqual('KeyOfKhajNisut')
-    expect(primary.meta.tag!['qt']).toEqual('base')
-    expect(primary.meta.tag!['q']).toEqual('atk')
+    expect(primary.meta.tag?.sheet).toEqual('KeyOfKhajNisut')
+    expect(primary.meta.tag!.qt).toEqual('base')
+    expect(primary.meta.tag!.q).toEqual('atk')
 
     // If there are multiple, or none, use `calc.get` instead
     const secondary = calc.compute(own.weapon.secondary)
     expect(secondary.val).toBeCloseTo(0.458) // hp_
-    expect(secondary.meta.tag?.['sheet']).toEqual('KeyOfKhajNisut')
-    expect(secondary.meta.tag!['qt']).toEqual('premod')
-    expect(secondary.meta.tag!['q']).toEqual('hp_')
+    expect(secondary.meta.tag?.sheet).toEqual('KeyOfKhajNisut')
+    expect(secondary.meta.tag!.qt).toEqual('premod')
+    expect(secondary.meta.tag!.q).toEqual('hp_')
   })
 })

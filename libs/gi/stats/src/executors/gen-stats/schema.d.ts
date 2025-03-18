@@ -1,1 +1,1 @@
-export interface GenStatsExecutorSchema {} // eslint-disable-line
+export interface GenStatsExecutorSchema {}

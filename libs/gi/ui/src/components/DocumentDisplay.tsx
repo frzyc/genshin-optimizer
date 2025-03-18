@@ -89,7 +89,8 @@ function SectionDisplay({
         bgt={bgt}
       />
     )
-  } else if ('states' in section) {
+  }
+  if ('states' in section) {
     return (
       <ConditionalDisplay
         conditional={section}
@@ -99,13 +100,12 @@ function SectionDisplay({
         bgt={bgt}
       />
     )
-  } /* if ("text" in section) */ else {
-    return collapse ? (
-      <TextSectionDisplayCollapse section={section} />
-    ) : (
-      <TextSectionDisplay section={section} />
-    )
   }
+  return collapse ? (
+    <TextSectionDisplayCollapse section={section} />
+  ) : (
+    <TextSectionDisplay section={section} />
+  )
 }
 function FieldsSectionDisplay({
   section,

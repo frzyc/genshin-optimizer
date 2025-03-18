@@ -206,7 +206,7 @@ function EquipmentRow({
   loadoutDatum: LoadoutDatum
 }) {
   if (buildType !== 'tc') return <CharacterCardEquipmentRow hideWeapon />
-  else return <TcEquipmentRow loadoutDatum={loadoutDatum} />
+  return <TcEquipmentRow loadoutDatum={loadoutDatum} />
 }
 function TcEquipmentRow({
   loadoutDatum: { buildTcId },
@@ -256,7 +256,7 @@ function CharacterCardWeaponFull({
 
     if (weaponId && weaponId !== 'invalid')
       return database.weapons.get(weaponId)
-    else return database.teams.getLoadoutWeapon(loadoutDatum) // TC build
+    return database.teams.getLoadoutWeapon(loadoutDatum) // TC build
   }, [database, data, loadoutDatum])
   if (!weapon) return null
   return <WeaponFullCardObj weapon={weapon} bgt="light" />

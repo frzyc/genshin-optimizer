@@ -73,7 +73,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
               <CharacterCard
                 characterKey={characterKey}
                 charCardConfig={charCardConfig}
-              ></CharacterCard>
+              />
               <Box sx={{ px: 1 }}>
                 <LevelSelect
                   level={character.level}

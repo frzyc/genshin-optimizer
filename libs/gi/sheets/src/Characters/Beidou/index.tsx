@@ -213,12 +213,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.spinningDmg, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.finalDmg, {
-            name: ct.chg(`auto.skillParams.6`),
+            name: ct.chg('auto.skillParams.6'),
           }),
         },
         {
@@ -234,7 +234,7 @@ const sheet: TalentSheet = {
       ],
     },
     {
-      text: ct.chg(`auto.fields.plunging`),
+      text: ct.chg('auto.fields.plunging'),
     },
     {
       fields: [
@@ -262,17 +262,17 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.shield, {
-            name: st(`dmgAbsorption.none`),
+            name: st('dmgAbsorption.none'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.electroShield, {
-            name: st(`dmgAbsorption.electro`),
+            name: st('dmgAbsorption.electro'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.baseDmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
@@ -328,12 +328,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.burstDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.lightningDmg, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
@@ -386,12 +386,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.constellation1.shield, {
-            name: st(`dmgAbsorption.none`),
+            name: st('dmgAbsorption.none'),
           }),
         },
         {
           node: infoMut(dmgFormulas.constellation1.electroShield, {
-            name: st(`dmgAbsorption.electro`),
+            name: st('dmgAbsorption.electro'),
           }),
         },
       ],

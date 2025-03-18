@@ -94,29 +94,29 @@ export function WengineSelectionModal({
 
   const wengineTotals = useMemo(
     () =>
-      catTotal(allSpecialityKeys, (ct) =>
-        allWengineKeys.forEach((wk) => {
+      catTotal(allSpecialityKeys, (ct) => {
+        for (const wk of allWengineKeys) {
           const wtk = getWengineStat(wk).type
           if (wk) {
             ct[wtk].total++
             if (wengineIdList.includes(wk)) ct[wtk].current++
           }
-        })
-      ),
+        }
+      }),
     [wengineIdList]
   )
 
   const wengineRarityTotals = useMemo(
     () =>
-      catTotal(allWengineRarityKeys, (ct) =>
-        allWengineKeys.forEach((wk) => {
+      catTotal(allWengineRarityKeys, (ct) => {
+        for (const wk of allWengineKeys) {
           const wr = getWengineStat(wk).rarity
           if (wr) {
             ct[wr].total++
             if (wengineIdList.includes(wk)) ct[wr].current++
           }
-        })
-      ),
+        }
+      }),
     [wengineIdList]
   )
 

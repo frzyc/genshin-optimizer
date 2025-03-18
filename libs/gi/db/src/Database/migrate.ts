@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { DBStorage } from '@genshin-optimizer/common/database'
 import { notEmpty } from '@genshin-optimizer/common/util'
 import type {
@@ -52,7 +51,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
     const character = characters[charInd]
     if (!character) return
     characters.splice(charInd, 1)
-    travelerElements.forEach((ele) => {
+    for (const ele of travelerElements) {
       const targets =
         (
           character as unknown as {
@@ -64,7 +63,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         customMultiTarget: targets,
         key: `Traveler${ele[0].toUpperCase() + ele.slice(1)}` as TravelerKey,
       } as ICharacter)
-    })
+    }
   })
 
   // 8.22.0 - 8.27.0
@@ -73,7 +72,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       | Array<object & { key: string }>
       | undefined
     if (states)
-      (states as any[]).forEach((value) => {
+      for (const value of states as any[]) {
         if (value.key) {
           if (value.key === 'dbMeta') (good as any).dbMeta = value
           if (value.key === 'ArtifactDisplay')
@@ -92,7 +91,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
             else (good as any).charMetas.push(value)
           }
         }
-      })
+      }
 
     const buildSettings = (good as any).buildSettings
     if (buildSettings)
@@ -135,6 +134,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
           const excludedLocations = allLocationCharacterKeys.filter(
             (loc) => !allowLocations.includes(loc)
           )
+          // biome-ignore lint/performance/noDelete: <explanation>
           delete b.allowLocations
           return { ...b, excludedLocations }
         }
@@ -149,14 +149,20 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
     const buildSettings = (good as any).buildSettings
     if (!chars || !buildSettings) return
 
+    // biome-ignore lint/complexity/useLiteralKeys: causes index accessor error
     if (!good['teams']) good['teams'] = []
+    // biome-ignore lint/complexity/useLiteralKeys: causes index accessor error
     if (!good['teamchars']) good['teamchars'] = []
+    // biome-ignore lint/complexity/useLiteralKeys: causes index accessor error
     if (!good['optConfigs']) good['optConfigs'] = []
 
+    // biome-ignore lint/complexity/useLiteralKeys: causes index accessor error
     let teamInd = ((good['teams'] as Array<any>) ?? []).length
+    // biome-ignore lint/complexity/useLiteralKeys: causes index accessor error
     let teamCharInd = ((good['teamchars'] as Array<any>) ?? []).length
+    // biome-ignore lint/complexity/useLiteralKeys: causes index accessor error
     let optConfigInd = ((good['optConfigs'] as Array<any>) ?? []).length
-    chars.forEach((char: any) => {
+    for (const char of chars) {
       const {
         key: characterKey,
         hitMode,
@@ -193,7 +199,8 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       ;(good as any).teamchars.push({ ...teamCharMain, id: teamCharMainId })
       teamCharIds.push(teamCharMainId)
       if (charTeam) {
-        charTeam.filter(notEmpty).forEach((charK) => {
+        for (const charK of charTeam) {
+          if (!notEmpty(charK)) continue
           const teamChar: TeamCharacter = {
             key: charK,
             conditional: teamConditional[charK] as any,
@@ -203,13 +210,14 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
           const teamCharId = `teamchar_${teamCharInd++}`
           ;(good as any).teamchars.push({ ...teamChar, id: teamCharId })
           teamCharIds.push(teamCharId)
-        })
+        }
       }
       const team: Omit<Team, 'loadoutData'> & {
         teamCharIds: Array<string | undefined>
       } = {
         name: `${characterKey} Team`,
-        description: `Generated team due to database migration for GO version 10`,
+        description:
+          'Generated team due to database migration for GO version 10',
         enemyOverride,
         teamCharIds,
         conditional: { resonance: {} },
@@ -217,50 +225,48 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       }
       const teamId = `team_${teamInd++}`
       ;(good as any).teams.push({ ...team, id: teamId })
-    })
+    }
   })
 
   // 10.1.0 - present
   migrateVersion(25, () => {
+    // biome-ignore lint/complexity/useLiteralKeys: causes index accessor error
     if (!good['teams']) good['teams'] = []
     const teams = (good as any).teams
+    // biome-ignore lint/complexity/useLiteralKeys: causes index accessor error
     if (!good['teamchars']) good['teamchars'] = []
     const teamchars = (good as any).teamchars
-    teams.forEach(
-      (
-        team: Team & {
-          teamCharIds: Array<string | undefined>
-        }
-      ) => {
-        const { teamCharIds = [] } = team
-        team.loadoutData = teamCharIds.map((teamCharId) => {
-          if (!teamCharId) return undefined
-          const teamChar = teamchars.find(
-            (tc: { id: string }) => tc.id === teamCharId
-          )
-          if (!teamChar) return undefined
-          const {
-            buildType,
-            buildId,
-            buildTcId,
-            compare,
-            compareType,
-            compareBuildId,
-            compareBuildTcId,
-          } = teamChar
-          return {
-            teamCharId,
-            buildType,
-            buildId,
-            buildTcId,
-            compare,
-            compareType,
-            compareBuildId,
-            compareBuildTcId,
-          } as LoadoutDatum
-        })
-      }
-    )
+    for (const team of teams as (Team & {
+      teamCharIds: Array<string | undefined>
+    })[]) {
+      const { teamCharIds = [] } = team
+      team.loadoutData = teamCharIds.map((teamCharId) => {
+        if (!teamCharId) return undefined
+        const teamChar = teamchars.find(
+          (tc: { id: string }) => tc.id === teamCharId
+        )
+        if (!teamChar) return undefined
+        const {
+          buildType,
+          buildId,
+          buildTcId,
+          compare,
+          compareType,
+          compareBuildId,
+          compareBuildTcId,
+        } = teamChar
+        return {
+          teamCharId,
+          buildType,
+          buildId,
+          buildTcId,
+          compare,
+          compareType,
+          compareBuildId,
+          compareBuildTcId,
+        } as LoadoutDatum
+      })
+    }
   })
 
   good.dbVersion = currentDBVersion
@@ -303,6 +309,7 @@ export function migrate(storage: DBStorage) {
         if (baseStatOverrides.enerRech_) baseStatOverrides.enerRech_ -= 100
 
         character.bonusStats = baseStatOverrides
+        // biome-ignore lint/performance/noDelete: <explanation>
         delete character.baseStatOverrides
         storage.set(key, character)
       }
@@ -316,7 +323,7 @@ export function migrate(storage: DBStorage) {
     const character = storage.get(key)
     if (!character) return
     storage.remove(key)
-    travelerElements.forEach((ele) => {
+    for (const ele of travelerElements) {
       const targets = character?.customMultiTargets?.[ele] ?? []
       const charKey = `Traveler${ele[0].toUpperCase() + ele.slice(1)}`
       storage.set(`char_${charKey}`, {
@@ -324,7 +331,7 @@ export function migrate(storage: DBStorage) {
         customMultiTarget: targets,
         key: charKey,
       })
-    })
+    }
   })
 
   // 8.22.0 - 8.27.0
@@ -385,6 +392,7 @@ export function migrate(storage: DBStorage) {
           const excludedLocations = allLocationCharacterKeys.filter(
             (loc) => !allowLocations.includes(loc)
           )
+          // biome-ignore lint/performance/noDelete: <explanation>
           delete b.allowLocations
           storage.set(key, {
             ...b,
@@ -398,9 +406,9 @@ export function migrate(storage: DBStorage) {
   // 10.0.0 - 10.1.0
   migrateVersion(24, () => {
     const keys = storage.keys
-    let teamInd = keys.filter((k) => k.startsWith(`team_`)).length
-    let teamCharInd = keys.filter((k) => k.startsWith(`teamchar_`)).length
-    let optConfigInd = keys.filter((k) => k.startsWith(`optConfig_`)).length
+    let teamInd = keys.filter((k) => k.startsWith('team_')).length
+    let teamCharInd = keys.filter((k) => k.startsWith('teamchar_')).length
+    let optConfigInd = keys.filter((k) => k.startsWith('optConfig_')).length
     for (const key of keys) {
       // convert character to a Team
       if (key.startsWith('char_')) {
@@ -439,7 +447,8 @@ export function migrate(storage: DBStorage) {
         storage.set(teamCharMainId, teamCharMain)
         teamCharIds.push(teamCharMainId)
         if (charTeam) {
-          charTeam.filter(notEmpty).forEach((charK) => {
+          for (const charK of charTeam) {
+            if (!notEmpty(charK)) continue
             const teamChar: TeamCharacter = {
               key: charK,
               conditional: teamConditional[charK] as any,
@@ -449,13 +458,14 @@ export function migrate(storage: DBStorage) {
             const teamCharId = `teamchar_${teamCharInd++}`
             storage.set(teamCharId, teamChar)
             teamCharIds.push(teamCharId)
-          })
+          }
         }
         const team: Omit<Team, 'loadoutData'> & {
           teamCharIds: Array<string | undefined>
         } = {
           name: `${characterKey} Team`,
-          description: `Generated team due to database migration for GO version 10`,
+          description:
+            'Generated team due to database migration for GO version 10',
           enemyOverride,
           teamCharIds,
           conditional: { resonance: {} },

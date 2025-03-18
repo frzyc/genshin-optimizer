@@ -207,24 +207,24 @@ export default function anemo(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.initial_dmg, {
-              name: ct.chg(`skill.skillParams.0`),
+              name: ct.chg('skill.skillParams.0'),
               multi: 2,
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.initial_max, {
-              name: ct.chg(`skill.skillParams.1`),
+              name: ct.chg('skill.skillParams.1'),
               multi: 4,
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.storm_dmg, {
-              name: ct.chg(`skill.skillParams.2`),
+              name: ct.chg('skill.skillParams.2'),
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.storm_max, {
-              name: ct.chg(`skill.skillParams.3`),
+              name: ct.chg('skill.skillParams.3'),
             }),
           },
           {
@@ -293,7 +293,7 @@ export default function anemo(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.dmg, {
-              name: ct.chg(`burst.skillParams.0`),
+              name: ct.chg('burst.skillParams.0'),
             }),
           },
           {
@@ -326,7 +326,7 @@ export default function anemo(
               fields: [
                 {
                   node: infoMut(dmgFormulas.burst.absorb, {
-                    name: ct.chg(`burst.skillParams.1`),
+                    name: ct.chg('burst.skillParams.1'),
                   }),
                 },
               ],
@@ -397,7 +397,7 @@ export default function anemo(
       ct.fieldsTem('passive2', {
         fields: [
           {
-            node: infoMut(dmgFormulas.passive2.heal, { name: stg(`healing`) }),
+            node: infoMut(dmgFormulas.passive2.heal, { name: stg('healing') }),
           },
         ],
       }),

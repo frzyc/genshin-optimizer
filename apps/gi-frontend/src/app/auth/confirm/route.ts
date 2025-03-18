@@ -1,4 +1,4 @@
-import { type EmailOtpType } from '@supabase/supabase-js'
+import type { EmailOtpType } from '@supabase/supabase-js'
 import { type NextRequest, NextResponse } from 'next/server'
 import { getSupabase } from '../../../utils/supabase/server'
 
@@ -25,9 +25,8 @@ export async function GET(request: NextRequest) {
     if (!error) {
       redirectTo.searchParams.delete('next')
       return NextResponse.redirect(redirectTo)
-    } else {
-      console.error(error)
     }
+      console.error(error)
   }
 
   // return the user to an error page with some instructions

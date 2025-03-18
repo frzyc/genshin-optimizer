@@ -121,7 +121,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.normal[0], {
-            name: ct.chg(`auto.skillParams.0`),
+            name: ct.chg('auto.skillParams.0'),
           }),
         },
       ],
@@ -140,12 +140,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.baseDmg, {
-            name: ct.chg(`auto.skillParams.1`),
+            name: ct.chg('auto.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.jadeDmg, {
-            name: ct.chg(`auto.skillParams.2`),
+            name: ct.chg('auto.skillParams.2'),
           }),
         },
         {
@@ -162,7 +162,7 @@ const sheet: TalentSheet = {
       ],
     }),
     {
-      text: ct.chg(`auto.fields.plunging`),
+      text: ct.chg('auto.fields.plunging'),
     },
     {
       fields: [
@@ -190,12 +190,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.screenHp, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.dmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
@@ -250,7 +250,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.gemDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {

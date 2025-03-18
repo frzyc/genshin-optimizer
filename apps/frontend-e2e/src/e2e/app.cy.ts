@@ -1,4 +1,3 @@
-/* eslint-disable cypress/no-unnecessary-waiting */
 describe('frontend', () => {
   it('should test artifacts images to check if main stat is being parsed correctly', () => {
     cy.visit('/#/artifacts', { timeout: 600000 })

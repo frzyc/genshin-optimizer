@@ -77,7 +77,7 @@ function CharacterEditorContent({
     }
   }, [chartData, graphBuilds])
 
-  // Clear state when switching characters
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Clear state when switching characters
   useEffect(() => {
     setChartData(undefined)
     setGraphBuilds(undefined)

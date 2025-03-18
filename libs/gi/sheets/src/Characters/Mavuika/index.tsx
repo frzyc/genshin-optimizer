@@ -445,7 +445,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.finalDmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -483,12 +483,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.skillDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.radianceDmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
@@ -498,47 +498,47 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.skill.normal1Dmg, {
-            name: ct.chg(`skill.skillParams.3`),
+            name: ct.chg('skill.skillParams.3'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.normal2Dmg, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.normal3Dmg, {
-            name: ct.chg(`skill.skillParams.5`),
+            name: ct.chg('skill.skillParams.5'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.normal4Dmg, {
-            name: ct.chg(`skill.skillParams.6`),
+            name: ct.chg('skill.skillParams.6'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.normal5Dmg, {
-            name: ct.chg(`skill.skillParams.7`),
+            name: ct.chg('skill.skillParams.7'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.sprintDmg, {
-            name: ct.chg(`skill.skillParams.8`),
+            name: ct.chg('skill.skillParams.8'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.chargedCyclicDmg, {
-            name: ct.chg(`skill.skillParams.9`),
+            name: ct.chg('skill.skillParams.9'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.chargedFinalDmg, {
-            name: ct.chg(`skill.skillParams.10`),
+            name: ct.chg('skill.skillParams.10'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.plungeDmg, {
-            name: ct.chg(`skill.skillParams.11`),
+            name: ct.chg('skill.skillParams.11'),
           }),
         },
         {
@@ -564,7 +564,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.skillDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {

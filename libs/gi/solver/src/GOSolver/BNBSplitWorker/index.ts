@@ -60,7 +60,7 @@ export class BNBSplitWorker implements SplitWorker {
     callback: (interim: Interim) => void
   ) {
     this.arts = arts
-    this.min = [-Infinity, ...constraints.map((x) => x.min)]
+    this.min = [Number.NEGATIVE_INFINITY, ...constraints.map((x) => x.min)]
     this.nodes = [optTarget, ...constraints.map((x) => x.value)]
     this.callback = callback
     this.topN = topN
@@ -87,7 +87,7 @@ export class BNBSplitWorker implements SplitWorker {
       this.min[0] = newThreshold
       // All calculations become stale
       this.firstUncalculated = 0
-      this.filters.forEach((filter) => delete filter.calculated)
+      this.filters.forEach((filter) => filter.calculated = undefined)
     }
   }
   *split(filter: RequestFilter, minCount: number): Generator<RequestFilter> {

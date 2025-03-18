@@ -95,8 +95,7 @@ export function EquippedGrid({
           )}
         </Suspense>
         <Box>
-          {wengine &&
-          wengine.id &&
+          {wengine?.id &&
           database.wengines.keys.includes(wengine.id) ? (
             <WengineCard
               wengineId={wengine.id}
@@ -225,7 +224,7 @@ export function DiscSwapCard({
       }}
     >
       <CardContent>
-        <Typography>{t(`slotName`, { slotKey: slotKey })}</Typography>
+        <Typography>{t('slotName', { slotKey: slotKey })}</Typography>
       </CardContent>
       <Divider />
       <Box

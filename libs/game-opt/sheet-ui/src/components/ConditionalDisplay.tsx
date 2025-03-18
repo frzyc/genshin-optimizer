@@ -77,7 +77,7 @@ export function ConditionalsDisplay({
     <Stack spacing={1}>
       {filteredConditionals.map(({ src, dst, condKey, condValue }) => (
         <ConditionalDisplay
-          key={src ?? 'all' + dst ?? 'all' + condKey}
+          key={src ?? `all${dst}` ?? `all${condKey}`}
           conditional={conditional}
           src={src}
           dst={dst}

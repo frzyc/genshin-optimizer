@@ -146,9 +146,8 @@ function getDefaultSlotKey(
 ): Extract<ArtifactSlotKey, 'flower' | 'circlet'> {
   if (artifactSet?.startsWith('Prayers')) {
     return 'circlet'
-  } else {
-    return 'flower'
   }
+  return 'flower'
 }
 
 export type ArtifactEditorProps = {
@@ -209,7 +208,7 @@ export function ArtifactEditor({
       setShow(true)
       queue.addFiles(Array.from(files).map((f) => ({ f, fName: f.name })))
     },
-    [setShow, queue]
+    [queue]
   )
   const clearQueue = useCallback(() => {
     queue.clearQueue()
@@ -254,7 +253,7 @@ export function ArtifactEditor({
     cancelEdit?.()
     artifactDispatch({ type: 'reset' })
     setScannedData(undefined)
-  }, [cancelEdit, artifactDispatch])
+  }, [cancelEdit])
   const update = useCallback(
     (newValue: Partial<IArtifact>) => {
       const newStat =
@@ -307,14 +306,11 @@ export function ArtifactEditor({
       }
       artifactDispatch({ type: 'update', artifact: newValue })
     },
-    [artifact, artStat, artifactDispatch, fixedSlotKey]
+    [artifact, artStat, fixedSlotKey]
   )
-  const setSubstat = useCallback(
-    (index: number, substat: ISubstat) => {
-      artifactDispatch({ type: 'substat', index, substat })
-    },
-    [artifactDispatch]
-  )
+  const setSubstat = useCallback((index: number, substat: ISubstat) => {
+    artifactDispatch({ type: 'substat', index, substat })
+  }, [])
   const isValid = !errors.length
   const canClearArtifact = (): boolean =>
     window.confirm(t('editor.clearPrompt') as string)
@@ -340,7 +336,7 @@ export function ArtifactEditor({
       queue.clearQueue()
       reset()
     },
-    [t, artifactIdToEdit, queue, artifact, queueTotal, setShow, reset]
+    [t, artifactIdToEdit, queue, artifact, queueTotal, reset]
   )
 
   const theme = useTheme()
@@ -860,7 +856,7 @@ export function ArtifactEditor({
                 {t('editor.btnClear')}
               </Button>
             )}
-            {process.env['NODE_ENV'] === 'development' && (
+            {process.env.NODE_ENV === 'development' && (
               <Button
                 color="info"
                 startIcon={<Shuffle />}

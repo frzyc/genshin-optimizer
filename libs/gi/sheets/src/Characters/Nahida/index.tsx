@@ -350,7 +350,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -360,7 +360,7 @@ const sheet: TalentSheet = {
       ],
     },
     {
-      text: ct.chg(`auto.fields.plunging`),
+      text: ct.chg('auto.fields.plunging'),
     },
     {
       fields: [
@@ -388,17 +388,17 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.pressDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.holdDmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.karmaDmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
@@ -437,7 +437,7 @@ const sheet: TalentSheet = {
       canShow: equal(condPartyInBurst, 'on', sum(pyroLevel, electroLevel)),
       fields: [
         {
-          node: infoMut(burst_karma_dmg_, { name: ct.ch(`karmaDmg_`) }),
+          node: infoMut(burst_karma_dmg_, { name: ct.ch('karmaDmg_') }),
         },
         {
           text: ct.ch('karmaIntervalDec'),
@@ -452,12 +452,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.passive2.a4Karma_dmg_, {
-            name: ct.ch(`karmaDmg_`),
+            name: ct.ch('karmaDmg_'),
           }),
         },
         {
           node: infoMut(dmgFormulas.passive2.a4Karma_critRate_, {
-            name: ct.ch(`karmaCritRate_`),
+            name: ct.ch('karmaCritRate_'),
           }),
         },
       ],
