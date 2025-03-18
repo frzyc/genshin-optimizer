@@ -4,8 +4,10 @@ import {
   DropdownButton,
   NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
+import type { SpecificDmgTypeKey } from '@genshin-optimizer/zzz/db'
 import {
   useCharacterContext,
   useCharOpt,
@@ -26,6 +28,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useCallback } from 'react'
+import { SpecificDmgTypeDropdown } from './SpecificDmgTypeSelector'
 
 export function BonusStatsSection() {
   const { database } = useDatabaseContext()
@@ -101,7 +104,7 @@ function InitialStatDropdown({
     </DropdownButton>
   )
 }
-
+const specificDmgTypeIncStats = ['atk_', 'dmg_', 'crit_', 'crit_dmg_'] as const
 function BonusStatDisplay({
   tag,
   setTag,
@@ -115,7 +118,6 @@ function BonusStatDisplay({
   setValue: (value: number) => void
   onDelete: () => void
 }) {
-  // TODO: best way to infer percentage from tag?
   const isPercent = (tag.name || tag.q)?.endsWith('_')
   return (
     <CardThemed bgt="light">
@@ -136,6 +138,17 @@ function BonusStatDisplay({
             setAttribute={(ele) => {
               const { attribute, ...rest } = tag
               setTag(ele ? { ...rest, attribute: ele } : rest)
+            }}
+          />
+        )}
+        {specificDmgTypeIncStats.includes(
+          tag.q as (typeof specificDmgTypeIncStats)[number]
+        ) && (
+          <SpecificDmgTypeDropdown
+            dmgType={tag.damageType1 as SpecificDmgTypeKey}
+            setDmgType={(dmgType) => {
+              const { damageType1, ...rest } = tag
+              setTag(dmgType ? { ...rest, damageType1: dmgType } : rest)
             }}
           />
         )}
@@ -163,6 +176,16 @@ function BonusStatDisplay({
           }}
         />
       </CardContent>
+      {shouldShowDevComponents && (
+        <>
+          <Divider />
+          <CardContent>
+            <Typography sx={{ fontFamily: 'monospace' }}>
+              {JSON.stringify(tag)}
+            </Typography>
+          </CardContent>
+        </>
+      )}
     </CardThemed>
   )
 }
