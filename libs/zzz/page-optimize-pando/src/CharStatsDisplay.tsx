@@ -1,7 +1,6 @@
 import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
-  prettify,
   shouldShowDevComponents,
   valueString,
 } from '@genshin-optimizer/common/util'
@@ -87,8 +86,6 @@ function StatLine({ read }: { read: Read<Tag> }) {
         backgroundColor: emphasize ? 'rgba(0,200,0,0.2)' : undefined,
       }}
       onClick={() => {
-        shouldShowDevComponents &&
-          console.log(prettify(calc?.toDebug().compute(newRead)))
         shouldShowDevComponents && setRead(newRead)
       }}
     >
