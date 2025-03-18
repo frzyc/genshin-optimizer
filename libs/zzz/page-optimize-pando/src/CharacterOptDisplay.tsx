@@ -147,11 +147,13 @@ function CharacterSection() {
               </Grid>
               <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
                 <Stack spacing={1.5}>
-                  {characterInfoSections.map(([key, content], i) => (
-                    <Section key={key} title={key} index={i} zIndex={1}>
-                      {content}
-                    </Section>
-                  ))}
+                  <TeamHeaderHeightContext.Provider value={0}>
+                    {characterInfoSections.map(([key, content], i) => (
+                      <Section key={key} title={key} index={i} zIndex={1}>
+                        {content}
+                      </Section>
+                    ))}
+                  </TeamHeaderHeightContext.Provider>
                 </Stack>
               </Grid>
             </Grid>

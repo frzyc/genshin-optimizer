@@ -19,6 +19,7 @@ import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
   CardContent,
+  Divider,
   IconButton,
   InputAdornment,
   MenuItem,
