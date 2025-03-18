@@ -37,11 +37,25 @@
     "attributePosition": "auto",
     "bracketSpacing": true
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "organizeImports": { "enabled": true },
   "linter": {
-    "enabled": false
+    "enabled": true,
+    "rules": {
+      "a11y": { "noSvgWithoutTitle": "off" },
+      "complexity": { "noForEach": "info" },
+      "suspicious": {
+        "noArrayIndexKey": "off",
+        "noAssignInExpressions": "off",
+        "noEmptyInterface": "off",
+        "noGlobalAssign": "off"
+      },
+      "style": {
+        "noCommaOperator": "off",
+        "noParameterAssign": "off",
+        "useSingleVarDeclarator": "off"
+      }
+    },
+    "include": ["**/*.ts", "**/*.tsx"]
   },
   "javascript": {
     "formatter": {
@@ -55,5 +69,32 @@
       "attributePosition": "auto",
       "bracketSpacing": true
     }
-  }
+  },
+  "overrides": [
+    {
+      "include": ["*.ts", "*.tsx"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedImports": "error",
+            "noUnusedVariables": "warn",
+            "noUnusedFunctionParameters": "warn"
+          },
+          "style": { "noNonNullAssertion": "off" },
+          "suspicious": {
+            "noEmptyBlockStatements": "off",
+            "noExplicitAny": "off"
+          }
+        }
+      }
+    },
+    { "include": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"] },
+    {
+      "include": ["*"],
+      "linter": {
+        "rules": { "correctness": { "noConstantCondition": "error" } }
+      }
+    },
+    { "include": ["*.json"] }
+  ]
 }
