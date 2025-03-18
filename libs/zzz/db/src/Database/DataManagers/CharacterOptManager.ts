@@ -143,6 +143,11 @@ export class CharacterOptManager extends DataManager<
     bonusStats = bonusStats.filter(({ tag, value }) => {
       if (!validateTag(tag)) return false
       if (typeof value !== 'number') return false
+
+      // To keep parity with how we do it in formula, both damageTypes needs to be defined.
+      // This prevents this cornercase: {dt1:exspecial} won't apply to {dt1:basic, dt2:exspecial}
+      if (tag.damageType1 && !tag.damageType2) tag.damageType2 = tag.damageType1
+
       return true
     })
 
