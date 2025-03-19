@@ -7,6 +7,7 @@ import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { damageTypeKeysMap, getDmgType, getVariant, tagFieldMap } from '../char'
 import { getTagLabel } from '../util'
+import { qtMap } from './qtMap'
 export function TagDisplay({ tag }: { tag: Tag }) {
   return (
     <ColorText color={getVariant(tag)}>
@@ -38,13 +39,7 @@ const isExtraHandlingStats = (
   extraHandlingStats.includes(
     stat as 'hp' | 'hp_' | 'atk' | 'atk_' | 'def' | 'def_'
   )
-// TODO: translation
-export const qtMap = {
-  initial: 'Initial',
-  combat: 'Combat',
-  final: 'Final',
-  base: 'Base',
-}
+
 function TagStrDisplay({ tag }: { tag: Tag }) {
   const title = tagFieldMap.subset(tag)[0]?.title
   if (title) return title
