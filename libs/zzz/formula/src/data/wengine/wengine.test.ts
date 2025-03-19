@@ -512,4 +512,48 @@ describe('Disc sheets test', () => {
 
     expect(calc.compute(char.combat.def_).val).toBeCloseTo(0.32)
   })
+
+  // IdentityInflection should be here but no conds
+
+  it('KaboomTheCannon', () => {
+    const { data, characterKey } = testCharacterData('KaboomTheCannon')
+    data.push(
+      cond(
+        characterKey,
+        'KaboomTheCannon',
+        conditionals.KaboomTheCannon.allyHitsEnemy.name,
+        4
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(4 * 0.04)
+  })
+
+  it('LunarDecrescent', () => {
+    const { data, characterKey } = testCharacterData('LunarDecrescent')
+    data.push(
+      cond(
+        characterKey,
+        'LunarDecrescent',
+        conditionals.LunarDecrescent.chainOrUltUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.25)
+  })
+
+  // LunarNoviluna should be here but no conds
 })

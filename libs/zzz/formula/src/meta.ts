@@ -206,27 +206,6 @@ export const conditionals = {
       type: 'bool',
     },
   },
-  IdentityInflection: {
-    boolConditional: {
-      sheet: 'IdentityInflection',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IdentityInflection',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IdentityInflection',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   InfernoMetal: {
     hitting_burning_enemy: {
       sheet: 'InfernoMetal',
@@ -235,66 +214,20 @@ export const conditionals = {
     },
   },
   KaboomTheCannon: {
-    boolConditional: {
+    allyHitsEnemy: {
       sheet: 'KaboomTheCannon',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'KaboomTheCannon',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'KaboomTheCannon',
-      name: 'numConditional',
+      name: 'allyHitsEnemy',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 4,
     },
   },
   LunarDecrescent: {
-    boolConditional: {
+    chainOrUltUsed: {
       sheet: 'LunarDecrescent',
-      name: 'boolConditional',
+      name: 'chainOrUltUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'LunarDecrescent',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'LunarDecrescent',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  LunarNoviluna: {
-    boolConditional: {
-      sheet: 'LunarNoviluna',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'LunarNoviluna',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'LunarNoviluna',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   LunarPleniluna: {
@@ -2640,41 +2573,6 @@ export const buffs = {
       },
     },
   },
-  IdentityInflection: {
-    cond_dmg_: {
-      sheet: 'IdentityInflection',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'IdentityInflection',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'IdentityInflection',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'IdentityInflection',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IdentityInflection',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'IdentityInflection',
-        name: 'team_dmg_',
-      },
-    },
-  },
   InfernoMetal: {
     set4_cond_hitting_burning_enemy: {
       sheet: 'InfernoMetal',
@@ -2689,107 +2587,28 @@ export const buffs = {
     },
   },
   KaboomTheCannon: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'KaboomTheCannon',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'KaboomTheCannon',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'KaboomTheCannon',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'KaboomTheCannon',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'KaboomTheCannon',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'KaboomTheCannon',
-        name: 'team_dmg_',
+        name: 'atk_',
       },
     },
   },
   LunarDecrescent: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'LunarDecrescent',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'LunarDecrescent',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'LunarDecrescent',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'LunarDecrescent',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'LunarDecrescent',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'LunarDecrescent',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  LunarNoviluna: {
-    cond_dmg_: {
-      sheet: 'LunarNoviluna',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'LunarNoviluna',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'LunarNoviluna',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'LunarNoviluna',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'LunarNoviluna',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'LunarNoviluna',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
