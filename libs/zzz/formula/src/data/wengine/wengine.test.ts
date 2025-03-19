@@ -330,6 +330,7 @@ describe('Disc sheets test', () => {
     ).withTag({ src: characterKey, dst: characterKey })
     const char = convert(ownTag, { et: 'own', src: characterKey })
 
+    expect(calc.compute(char.combat.enerRegen).val).toBeCloseTo(1.2)
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(10 * 0.07 * 2)
     expect(calc.compute(char.combat.anomProf).val).toBeCloseTo(100)
   })
@@ -415,5 +416,100 @@ describe('Disc sheets test', () => {
     expect(calc.compute(char.final.resIgn_.fire.ult[0]).val).toBeCloseTo(
       2 * 0.2
     )
+  })
+
+  it('HellfireGears', () => {
+    const { data, characterKey } = testCharacterData('HellfireGears')
+    data.push(
+      cond(
+        characterKey,
+        'HellfireGears',
+        conditionals.HellfireGears.offField.name,
+        1
+      ),
+      cond(
+        characterKey,
+        'HellfireGears',
+        conditionals.HellfireGears.exSpecialUsed.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.enerRegen).val).toBeCloseTo(1.2)
+    expect(calc.compute(char.combat.impact_).val).toBeCloseTo(2 * 0.2)
+  })
+
+  it('Housekeeper', () => {
+    const { data, characterKey } = testCharacterData('Housekeeper')
+    data.push(
+      cond(
+        characterKey,
+        'Housekeeper',
+        conditionals.Housekeeper.offField.name,
+        1
+      ),
+      cond(
+        characterKey,
+        'Housekeeper',
+        conditionals.Housekeeper.exSpecialHits.name,
+        15
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.enerRegen).val).toBeCloseTo(0.72)
+    expect(calc.compute(char.combat.dmg_.physical).val).toBeCloseTo(15 * 0.048)
+  })
+
+  it('IceJadeTeapot', () => {
+    const { data, characterKey } = testCharacterData('IceJadeTeapot')
+    data.push(
+      cond(
+        characterKey,
+        'IceJadeTeapot',
+        conditionals.IceJadeTeapot.teariffic.name,
+        30
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.impact_).val).toBeCloseTo(30 * 0.014)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.32)
+  })
+
+  it('IdentityBase', () => {
+    const { data, characterKey } = testCharacterData('IdentityBase')
+    data.push(
+      cond(
+        characterKey,
+        'IdentityBase',
+        conditionals.IdentityBase.equipperAttacked.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.def_).val).toBeCloseTo(0.32)
   })
 })

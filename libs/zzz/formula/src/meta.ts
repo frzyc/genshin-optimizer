@@ -161,25 +161,15 @@ export const conditionals = {
     },
   },
   HellfireGears: {
-    boolConditional: {
+    exSpecialUsed: {
       sheet: 'HellfireGears',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'HellfireGears',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'HellfireGears',
-      name: 'numConditional',
+      name: 'exSpecialUsed',
       type: 'num',
       int_only: true,
       min: 0,
       max: 2,
     },
+    offField: { sheet: 'HellfireGears', name: 'offField', type: 'bool' },
   },
   HormonePunk: {
     entering_combat: {
@@ -189,66 +179,31 @@ export const conditionals = {
     },
   },
   Housekeeper: {
-    boolConditional: {
+    exSpecialHits: {
       sheet: 'Housekeeper',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Housekeeper',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Housekeeper',
-      name: 'numConditional',
+      name: 'exSpecialHits',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 15,
     },
+    offField: { sheet: 'Housekeeper', name: 'offField', type: 'bool' },
   },
   IceJadeTeapot: {
-    boolConditional: {
+    teariffic: {
       sheet: 'IceJadeTeapot',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IceJadeTeapot',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IceJadeTeapot',
-      name: 'numConditional',
+      name: 'teariffic',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 30,
     },
   },
   IdentityBase: {
-    boolConditional: {
+    equipperAttacked: {
       sheet: 'IdentityBase',
-      name: 'boolConditional',
+      name: 'equipperAttacked',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IdentityBase',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IdentityBase',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   IdentityInflection: {
@@ -2587,37 +2542,26 @@ export const buffs = {
     },
   },
   HellfireGears: {
-    cond_dmg_: {
+    enerRegen: {
       sheet: 'HellfireGears',
-      name: 'cond_dmg_',
+      name: 'enerRegen',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'enerRegen',
         sheet: 'HellfireGears',
-        name: 'cond_dmg_',
+        name: 'enerRegen',
       },
     },
-    enemy_defIgn_: {
+    impact_: {
       sheet: 'HellfireGears',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'HellfireGears',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'HellfireGears',
-      name: 'team_dmg_',
+      name: 'impact_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'impact_',
         sheet: 'HellfireGears',
-        name: 'team_dmg_',
+        name: 'impact_',
       },
     },
   },
@@ -2635,107 +2579,64 @@ export const buffs = {
     },
   },
   Housekeeper: {
-    cond_dmg_: {
+    enerRegen: {
       sheet: 'Housekeeper',
-      name: 'cond_dmg_',
+      name: 'enerRegen',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'enerRegen',
         sheet: 'Housekeeper',
-        name: 'cond_dmg_',
+        name: 'enerRegen',
       },
     },
-    enemy_defIgn_: {
+    physical_dmg_: {
       sheet: 'Housekeeper',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'Housekeeper',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Housekeeper',
-      name: 'team_dmg_',
+      name: 'physical_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'Housekeeper',
-        name: 'team_dmg_',
+        attribute: 'physical',
+        name: 'physical_dmg_',
       },
     },
   },
   IceJadeTeapot: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'IceJadeTeapot',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'IceJadeTeapot',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
-    enemy_defIgn_: {
+    impact_: {
       sheet: 'IceJadeTeapot',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'IceJadeTeapot',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IceJadeTeapot',
-      name: 'team_dmg_',
+      name: 'impact_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'impact_',
         sheet: 'IceJadeTeapot',
-        name: 'team_dmg_',
+        name: 'impact_',
       },
     },
   },
   IdentityBase: {
-    cond_dmg_: {
+    def_: {
       sheet: 'IdentityBase',
-      name: 'cond_dmg_',
+      name: 'def_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'def_',
         sheet: 'IdentityBase',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'IdentityBase',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'IdentityBase',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IdentityBase',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'IdentityBase',
-        name: 'team_dmg_',
+        name: 'def_',
       },
     },
   },

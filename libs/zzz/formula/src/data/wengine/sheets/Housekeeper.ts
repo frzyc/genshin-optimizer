@@ -1,15 +1,12 @@
-import { subscript } from '@genshin-optimizer/pando/engine'
+import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { getWengineParams } from '@genshin-optimizer/zzz/stats'
+import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
   allNumConditionals,
-  enemyDebuff,
   own,
   ownBuff,
   registerBuff,
-  teamBuff,
 } from '../../util'
 import {
   cmpSpecialtyAndEquipped,
@@ -19,42 +16,35 @@ import {
 } from '../util'
 
 const key: WengineKey = 'Housekeeper'
+const dm = mappedStats.wengine[key]
 const { modification } = own.wengine
-const params = getWengineParams(key)
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { offField } = allBoolConditionals(key)
+const { exSpecialHits } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerWengine(
   key,
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
-  // TODO: Add formulas/buffs
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.combat.common_dmg_.add(
+    'enerRegen',
+    ownBuff.combat.enerRegen.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(subscript(modification, params[0]))
+        offField.ifOn(subscript(modification, dm.enerRegen))
       )
     ),
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(
-      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
-    ),
-    showSpecialtyAndEquipped(key)
-  ),
-  registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(
-      cmpSpecialtyAndEquipped(key, numConditional)
+    'physical_dmg_',
+    ownBuff.combat.dmg_.physical.add(
+      cmpSpecialtyAndEquipped(
+        key,
+        prod(exSpecialHits, subscript(modification, dm.physical_dmg_))
+      )
     ),
     showSpecialtyAndEquipped(key)
   )
