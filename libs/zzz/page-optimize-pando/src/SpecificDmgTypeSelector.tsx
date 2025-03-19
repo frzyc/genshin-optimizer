@@ -1,4 +1,3 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
 import type { SpecificDmgTypeKey } from '@genshin-optimizer/zzz/db'
 import { specificDmgTypeKeys } from '@genshin-optimizer/zzz/db'
 import {
@@ -7,8 +6,9 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { damageTypeKeysMap } from '@genshin-optimizer/zzz/formula-ui'
-import { Box, Button, MenuItem } from '@mui/material'
+import { Button } from '@mui/material'
 import { useCallback } from 'react'
+import { DmgTypeDropdown } from './DmgTypeDropdown'
 
 export function SpecificDmgTypeSelector() {
   const { database } = useDatabaseContext()
@@ -22,8 +22,9 @@ export function SpecificDmgTypeSelector() {
   )
   if (targetName !== 'standardDmgInst') return null
   return (
-    <SpecificDmgTypeDropdown
+    <DmgTypeDropdown
       dmgType={targetDamageType1}
+      keys={specificDmgTypeKeys}
       setDmgType={setDmgType}
     />
   )
@@ -62,42 +63,5 @@ export function AfterShockToggleButton({
     >
       {damageTypeKeysMap.aftershock}
     </Button>
-  )
-}
-
-export function SpecificDmgTypeDropdown({
-  dmgType,
-  setDmgType,
-}: {
-  dmgType?: SpecificDmgTypeKey
-  setDmgType: (dmgType?: SpecificDmgTypeKey) => void
-}) {
-  return (
-    <DropdownButton
-      title={
-        <Box sx={{ textWrap: 'nowrap' }}>
-          Specific Dmg Type: {dmgType ? damageTypeKeysMap[dmgType] : 'None'}
-        </Box>
-      }
-    >
-      <MenuItem
-        key={'any'}
-        selected={!dmgType}
-        disabled={!dmgType}
-        onClick={() => setDmgType()}
-      >
-        Any
-      </MenuItem>
-      {specificDmgTypeKeys.map((k) => (
-        <MenuItem
-          key={k}
-          selected={dmgType === k}
-          disabled={dmgType === k}
-          onClick={() => setDmgType(k)}
-        >
-          {damageTypeKeysMap[k]}
-        </MenuItem>
-      ))}
-    </DropdownButton>
   )
 }
