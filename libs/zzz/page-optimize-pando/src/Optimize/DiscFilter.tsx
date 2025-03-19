@@ -121,7 +121,7 @@ function DiscFilterModal({
               >
                 Use equipped Discs
               </Button>
-              <SetFilter disabled={disabled} />
+              <SetFilter discBySlot={discsBySlot} disabled={disabled} />
             </Stack>
           </Suspense>
         </CardContent>
@@ -194,7 +194,10 @@ function MainStatSelector({
   )
 }
 
-function SetFilter({ disabled }: { disabled?: boolean }) {
+function SetFilter({
+  discBySlot,
+  disabled,
+}: { discBySlot: Record<DiscSlotKey, ICachedDisc[]>; disabled?: boolean }) {
   const { database } = useDatabaseContext()
   const { optConfigId, optConfig } = useContext(OptConfigContext)
   const { setFilter2 = [], setFilter4 = [] } = optConfig
@@ -213,6 +216,7 @@ function SetFilter({ disabled }: { disabled?: boolean }) {
   )
   return (
     <DiscSetFilter
+      discBySlot={discBySlot}
       disabled={disabled}
       setFilter2={setFilter2}
       setFilter4={setFilter4}
