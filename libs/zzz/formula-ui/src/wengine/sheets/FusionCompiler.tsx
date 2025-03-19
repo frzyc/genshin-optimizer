@@ -4,7 +4,7 @@ import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
-import { TagToTagField, trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'FusionCompiler'
@@ -41,7 +41,7 @@ const sheet: UISheetElement = {
         label: ch('cond'),
         metadata: cond.specialUsed,
         fields: [
-          TagToTagField(buff.anomProf.tag),
+          tagToTagField(buff.anomProf.tag),
           {
             title: 'Duration', // TODO: L10n,
             fieldValue: dm.duration,

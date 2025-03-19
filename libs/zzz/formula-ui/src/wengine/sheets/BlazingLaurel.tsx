@@ -3,7 +3,7 @@ import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { TagToTagField, trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'BlazingLaurel'
@@ -31,7 +31,7 @@ const sheet: UISheetElement = {
         label: ch('cond1'),
         metadata: cond.quickOrPerfectAssistUsed,
         fields: [
-          TagToTagField(buff.impact_.tag),
+          tagToTagField(buff.impact_.tag),
           {
             title: 'Duration', // TODO: L10n,
             fieldValue: dm.duration,
@@ -45,8 +45,8 @@ const sheet: UISheetElement = {
         label: ch('cond2'),
         metadata: cond.wilt,
         fields: [
-          TagToTagField(buff.crit_dmg_ice_.tag),
-          TagToTagField(buff.crit_dmg_fire_.tag),
+          tagToTagField(buff.crit_dmg_ice_.tag),
+          tagToTagField(buff.crit_dmg_fire_.tag),
           {
             title: 'Duration', // TODO: L10n,
             fieldValue: dm.wilt_duration,

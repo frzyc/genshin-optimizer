@@ -4,7 +4,7 @@ import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
-import { TagToTagField, trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'DeepSeaVisitor'
@@ -41,7 +41,7 @@ const sheet: UISheetElement = {
         label: ch('cond1'),
         metadata: cond.basicHit,
         fields: [
-          TagToTagField(buff.crit_.tag),
+          tagToTagField(buff.crit_.tag),
           {
             title: 'Duration', // TODO: L10n,
             fieldValue: dm.duration,
@@ -55,7 +55,7 @@ const sheet: UISheetElement = {
         label: ch('cond2'),
         metadata: cond.iceDashAtkHit,
         fields: [
-          TagToTagField(buff.extra_crit_.tag),
+          tagToTagField(buff.extra_crit_.tag),
           {
             title: 'Duration', // TODO: L10n,
             fieldValue: dm.extra_duration,

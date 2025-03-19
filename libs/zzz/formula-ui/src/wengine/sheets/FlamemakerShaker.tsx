@@ -3,7 +3,7 @@ import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { TagToTagField, trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'FlamemakerShaker'
@@ -30,7 +30,7 @@ const sheet: UISheetElement = {
       conditional: {
         label: ch('cond1'),
         metadata: cond.offField,
-        fields: [TagToTagField(buff.enerRegen.tag)],
+        fields: [tagToTagField(buff.enerRegen.tag)],
       },
     },
     {
@@ -39,7 +39,7 @@ const sheet: UISheetElement = {
         label: ch('cond2'),
         metadata: cond.exSpecialAssistHits,
         fields: [
-          TagToTagField(buff.common_dmg_.tag),
+          tagToTagField(buff.common_dmg_.tag),
           {
             title: 'Duration', // TODO: L10n,
             fieldValue: dm.duration,
@@ -48,7 +48,7 @@ const sheet: UISheetElement = {
             title: 'Cooldown', // TODO: L10n,
             fieldValue: dm.cooldown,
           },
-          TagToTagField(buff.anomProf.tag),
+          tagToTagField(buff.anomProf.tag),
           {
             title: 'Duration', // TODO: L10n,
             fieldValue: dm.anomProfDuration,

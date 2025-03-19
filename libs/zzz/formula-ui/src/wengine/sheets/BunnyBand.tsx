@@ -3,7 +3,7 @@ import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
-import { TagToTagField, trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'BunnyBand'
@@ -38,7 +38,7 @@ const sheet: UISheetElement = {
       conditional: {
         label: ch('cond'),
         metadata: cond.wearerShielded,
-        fields: [TagToTagField(buff.atk_.tag)],
+        fields: [tagToTagField(buff.atk_.tag)],
       },
     },
   ],

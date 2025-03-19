@@ -3,7 +3,7 @@ import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { TagToTagField, trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'DrillRigRedAxis'
@@ -32,8 +32,8 @@ const sheet: UISheetElement = {
         metadata: cond.exSpecialOrChainUsed,
         fields: [
           // TODO: specify basic and dash electric dmg
-          TagToTagField(buff.basic_eletric_dmg_.tag),
-          TagToTagField(buff.dash_eletric_dmg_.tag),
+          tagToTagField(buff.basic_eletric_dmg_.tag),
+          tagToTagField(buff.dash_eletric_dmg_.tag),
           {
             title: 'Duration', // TODO: L10n,
             fieldValue: dm.duration,
