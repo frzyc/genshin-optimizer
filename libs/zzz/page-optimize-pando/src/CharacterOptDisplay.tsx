@@ -27,12 +27,10 @@ import {
 import { useTranslation } from 'react-i18next'
 import { BonusStatsSection } from './BonusStats'
 import { CharStatsDisplay } from './CharStatsDisplay'
-import { DiscSheetsDisplay } from './DiscSheetsDisplay'
 import { EnemyCard } from './EnemyCard'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
 import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
-import { WengineSheetsDisplay } from './WengineSheetsDisplay'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 const BOT_PX = 0
@@ -64,11 +62,13 @@ function Section({
   title,
   children,
   zIndex,
+  withScrolling = true,
 }: {
   index: number
   title: React.ReactNode
   children: React.ReactNode
   zIndex: number
+  withScrolling?: boolean
 }) {
   const { t } = useTranslation('page_optimize')
   const [charScrollRef, onScroll] = useScrollRef()
@@ -85,7 +85,10 @@ function Section({
           zIndex,
         })}
       >
-        <CardActionArea onClick={onScroll} sx={{ px: 1 }}>
+        <CardActionArea
+          onClick={withScrolling ? onScroll : undefined}
+          sx={{ px: 1 }}
+        >
           <Typography variant="h6">{t(`${title}`)}</Typography>
         </CardActionArea>
       </CardThemed>
@@ -114,8 +117,7 @@ function CharacterSection() {
     useMemo(() => {
       return [
         ['eq', <EquippedGrid key={'eq'} onClick={onClick} />],
-        ['wengineCond', <WengineSheetsDisplay key={'wengineCond'} />],
-        ['discCond', <DiscSheetsDisplay key={'discCond'} />],
+        ['Conditionals', <EquippedConditionals />],
         ['bonusStats', <BonusStatsSection key={'bonusStats'} />],
       ] as const
     }, [onClick])
@@ -149,7 +151,13 @@ function CharacterSection() {
                 <Stack spacing={1.5}>
                   <TeamHeaderHeightContext.Provider value={0}>
                     {characterInfoSections.map(([key, content], i) => (
-                      <Section key={key} title={key} index={i} zIndex={1}>
+                      <Section
+                        key={key}
+                        title={key}
+                        index={i}
+                        zIndex={1}
+                        withScrolling={false}
+                      >
                         {content}
                       </Section>
                     ))}
@@ -180,4 +188,11 @@ function BuildsSection() {
       <GeneratedBuildsDisplay />
     </OptConfigProvider>
   )
+}
+
+function EquippedConditionals() {
+  const { key: characterKey } = useCharacterContext()!
+  const { optConfigId } = useCharOpt(characterKey)!
+  if (!optConfigId) return null
+  return <Box>Disc and Wengine conditionals</Box>
 }
