@@ -15,6 +15,7 @@ import {
 } from '@genshin-optimizer/sr/db-ui'
 import { own } from '@genshin-optimizer/sr/formula'
 import {
+  type TalentSheetElementKey,
   allTalentSheetElementEidolonKey,
   allTalentSheetElementStatBoostKey,
   bonusAbilityReqMap,
@@ -27,7 +28,6 @@ import {
   isTalentSheetElementEidolonKey,
   isTalentSheetElementStatBoostKey,
   uiSheets,
-  type TalentSheetElementKey,
 } from '@genshin-optimizer/sr/formula-ui'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import {

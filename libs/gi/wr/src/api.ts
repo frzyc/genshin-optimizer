@@ -254,8 +254,8 @@ export function mergeData(data: Data[]): Data {
         path[0] === 'tally'
           ? tally
           : path[0] === 'nonStacking'
-          ? nonStacking
-          : input
+            ? nonStacking
+            : input
       if (path[0] === 'tally' || path[0] === 'nonStacking') path = path.slice(1)
       /*eslint prefer-const: ["error", {"destructuring": "all"}]*/
       let { accu, type } =

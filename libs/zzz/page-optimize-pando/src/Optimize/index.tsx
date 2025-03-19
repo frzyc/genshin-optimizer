@@ -4,18 +4,21 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
 import { buildCount } from '@genshin-optimizer/game-opt/solver'
 import {
-  allDiscSlotKeys,
   type DiscSlotKey,
+  allDiscSlotKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { type ICachedDisc } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   OptConfigProvider,
-  useCharacterContext,
   useCharOpt,
+  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import { getFormula } from '@genshin-optimizer/zzz/formula'
+import {
+  applyDamageTypeToTag,
+  getFormula,
+} from '@genshin-optimizer/zzz/formula'
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
 import { optimize } from '@genshin-optimizer/zzz/solver-pando'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
@@ -69,7 +72,8 @@ function OptimizeWrapper() {
   const { database } = useDatabaseContext()
   const calc = useZzzCalcContext()
   const { key: characterKey } = useCharacterContext()!
-  const { targetName, targetSheet } = useCharOpt(characterKey)!
+  const { targetName, targetSheet, targetDamageType1, targetDamageType2 } =
+    useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
@@ -182,7 +186,11 @@ function OptimizeWrapper() {
       calc,
       [
         {
-          tag: formula.tag,
+          tag: applyDamageTypeToTag(
+            formula.tag,
+            targetDamageType1,
+            targetDamageType2
+          ),
           multiplier: 1,
         },
       ],
@@ -223,6 +231,8 @@ function OptimizeWrapper() {
     characterKey,
     targetSheet,
     targetName,
+    targetDamageType1,
+    targetDamageType2,
     wengines,
     discsBySlot,
     numWorkers,

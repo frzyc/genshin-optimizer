@@ -17,24 +17,29 @@ import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
 import {
   CharacterContext,
-  useCharacter,
   useCharOpt,
+  useCharacter,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import {
+  type Tag,
   getConditional,
   isMember,
   isSheet,
-  type Tag,
 } from '@genshin-optimizer/zzz/formula'
 import { CharacterName, LocationAutocomplete } from '@genshin-optimizer/zzz/ui'
 import { Box } from '@mui/material'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { CharCalcProvider } from './CharCalcProvider'
-import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
+import { CharacterOptDisplay } from './CharacterOptDisplay'
+import { CritModeSelector } from './CritModeSelector'
 import { OptSelector } from './OptSelector'
+import {
+  AfterShockToggle,
+  SpecificDmgTypeSelector,
+} from './SpecificDmgTypeSelector'
+import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
@@ -114,6 +119,12 @@ export default function PageOptimize() {
       <LocationAutocomplete
         locKey={characterKey}
         setLocKey={(ck) => ck && setCharacterKey(ck)}
+        sx={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 100,
+          background: '#0C1020',
+        }}
       />
       {character && charOpt && (
         <CharacterContext.Provider value={character}>
@@ -134,11 +145,28 @@ export default function PageOptimize() {
                           display: 'flex',
                           gap: 1,
                           flexDirection: 'column',
-                          mt: 2,
+                          mt: 1,
                         }}
                       >
-                        <OptSelector character={character} charOpt={charOpt} />
-                        <TeamHeaderHeightContext.Provider value={0}>
+                        <Box
+                          display="flex"
+                          gap={1}
+                          sx={{
+                            position: 'sticky',
+                            top: 40,
+                            zIndex: 100,
+                            background: '#0C1020',
+                          }}
+                        >
+                          <OptSelector
+                            character={character}
+                            charOpt={charOpt}
+                          />
+                          <SpecificDmgTypeSelector />
+                          <AfterShockToggle />
+                          <CritModeSelector />
+                        </Box>
+                        <TeamHeaderHeightContext.Provider value={78}>
                           <CharacterOptDisplay />
                         </TeamHeaderHeightContext.Provider>
                       </Box>

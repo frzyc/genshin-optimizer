@@ -24,7 +24,7 @@ type WeaponExcelConfigData = {
       propType: 'FIGHT_PROP_DEFENSE_PERCENT'
       initValue: 0.11259999871253967
       type: 'GROW_CURVE_CRITICAL_201'
-    }
+    },
   ]
   awakenTexture: string //"ART/Equip/AvatarEquip/Equip_Claymore_Exotic/Equip_Claymore_Exotic_OverrideTexture/Equip_Claymore_Exotic_02_Tex_Diffuse",
   awakenLightMapTexture: string //"ART/Equip/AvatarEquip/Equip_Claymore_Exotic/Equip_Claymore_Exotic_OverrideTexture/Equip_Claymore_Exotic_02_Tex_Lightmap",

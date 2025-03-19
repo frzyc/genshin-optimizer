@@ -4,7 +4,7 @@ import type {
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
-import { optimize, type OptNode } from '@genshin-optimizer/gi/wr'
+import { type OptNode, optimize } from '@genshin-optimizer/gi/wr'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,

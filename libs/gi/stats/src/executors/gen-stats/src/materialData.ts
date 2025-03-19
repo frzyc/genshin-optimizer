@@ -1,6 +1,6 @@
 import { nameToKey } from '@genshin-optimizer/common/util'
 import type { MaterialTypeKey } from '@genshin-optimizer/gi/dm'
-import { materialExcelConfigData, TextMapEN } from '@genshin-optimizer/gi/dm'
+import { TextMapEN, materialExcelConfigData } from '@genshin-optimizer/gi/dm'
 
 export default function materialData() {
   const materialData: Record<string, { type?: MaterialTypeKey }> = {}

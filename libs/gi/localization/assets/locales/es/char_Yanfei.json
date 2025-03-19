@@ -1,5 +1,11 @@
 {
-  "seals": ["0 sellos", "1 sello", "2 sellos", "3 sellos", "4 sellos"],
+  "seals": [
+    "0 sellos",
+    "1 sello",
+    "2 sellos",
+    "3 sellos",
+    "4 sellos"
+  ],
   "perSeal": "(por sello)",
   "maxSeals": "Número máximo de Sellos escarlatas",
   "charged": {
@@ -9,13 +15,19 @@
     "3": "Daño con 3 sellos",
     "4": "Daño con 4 sellos"
   },
-  "burst": { "grantMax": "Otorga el número máximo de Sellos escarlatas" },
+  "burst": {
+    "grantMax": "Otorga el número máximo de Sellos escarlatas"
+  },
   "passive1": {
     "sealsConsumed": "Sellos consumidos por uso de Ataque Cargado"
   },
-  "passive2": { "key": "Daño de Ojos justicieros" },
+  "passive2": {
+    "key": "Daño de Ojos justicieros"
+  },
   "c1": {
     "sealChargedStam_": "Reducción de coste de Aguante de Ataque Cargado"
   },
-  "c6": { "maxSealInc": "Aumento de número de Sellos escarlatas máximos" }
+  "c6": {
+    "maxSealInc": "Aumento de número de Sellos escarlatas máximos"
+  }
 }

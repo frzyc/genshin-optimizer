@@ -1,8 +1,8 @@
 import {
-  charKeyToLocGenderedCharKey,
   type CharacterKey,
   type GenderKey,
   type LocationGenderedCharacterKey,
+  charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import { useContext } from 'react'

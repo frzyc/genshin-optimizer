@@ -1,7 +1,7 @@
 import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import { allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
-import { mergeData, type Data } from '@genshin-optimizer/gi/wr'
+import { type Data, mergeData } from '@genshin-optimizer/gi/wr'
 import bow from './Bow'
 import catalyst from './Catalyst'
 import claymore from './Claymore'

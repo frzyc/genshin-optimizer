@@ -5,9 +5,11 @@ import {
   allAttributeKeys,
   elementalData,
 } from '@genshin-optimizer/zzz/consts'
+import { specificDmgTypeKeys } from '@genshin-optimizer/zzz/db'
 import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
+import { damageTypeKeysMap } from './util'
 export const charBaseUiSheet: TagField[] = (
   [
     // hp/atk/def handled in TagDisplay
@@ -56,11 +58,30 @@ charBaseUiSheet.push(
         qt: 'formula',
         q: 'standardDmg',
         attribute: attr,
-        damageType1: 'elemental',
         name: 'standardDmgInst',
       },
       title: <ColorText color={attr}>{elementalData[attr]} Damage</ColorText>,
     })
+  ),
+  // elemental dmg with dmg types
+  ...allAttributeKeys.flatMap((attr) =>
+    specificDmgTypeKeys.map(
+      (dmgType): TagField => ({
+        fieldRef: {
+          et: 'own',
+          qt: 'formula',
+          q: 'standardDmg',
+          attribute: attr,
+          damageType1: dmgType,
+          name: 'standardDmgInst',
+        },
+        title: (
+          <ColorText color={attr}>
+            {elementalData[attr]} {damageTypeKeysMap[dmgType]} Damage
+          </ColorText>
+        ),
+      })
+    )
   ),
   ...allAttributeKeys.map(
     (attr): TagField => ({

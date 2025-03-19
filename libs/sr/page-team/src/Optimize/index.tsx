@@ -3,8 +3,8 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
 import { buildCount } from '@genshin-optimizer/game-opt/solver'
 import {
-  allRelicSlotKeys,
   type RelicSlotKey,
+  allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
@@ -15,7 +15,7 @@ import {
 import { StatFilterCard } from '@genshin-optimizer/sr/formula-ui'
 import { optimize } from '@genshin-optimizer/sr/solver'
 import { getCharStat, getLightConeStat } from '@genshin-optimizer/sr/stats'
-import { useSrCalcContext, WorkerSelector } from '@genshin-optimizer/sr/ui'
+import { WorkerSelector, useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {

@@ -1,34 +1,30 @@
 import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
-import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
-import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
-import { getFormula, own } from '@genshin-optimizer/zzz/formula'
+import { DropdownButton } from '@genshin-optimizer/common/ui'
+import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { own } from '@genshin-optimizer/zzz/formula'
 import { Box, ListItemText, MenuItem } from '@mui/material'
-import { getDmgType } from '..'
-import { TagDisplay } from '../../components'
+import { FullTagDisplay } from '../../components'
 import { useZzzCalcContext } from '../../hooks'
 
 export function OptimizationTargetSelector({
-  sheet,
-  name,
+  tag,
   setOptTarget,
   buttonProps = {},
 }: {
-  sheet?: Sheet
-  name?: string
+  tag?: Tag
   setOptTarget: (o: Tag) => void
   buttonProps?: Omit<DropdownButtonProps, 'title' | 'children' | 'color'>
 }) {
   const calc = useZzzCalcContext()
-  const formula = getFormula(sheet, name)
   return (
     <DropdownButton
-      color={formula ? 'success' : 'warning'}
+      color={tag ? 'success' : 'warning'}
       title={
-        formula?.tag ? (
+        tag ? (
           <Box sx={{ display: 'flex', gap: 1 }}>
             {/* TODO: translate */}
             <strong>Optimization Target: </strong>
-            {<TagDisplay tag={formula.tag} />}
+            {<FullTagDisplay tag={tag} />}
           </Box>
         ) : (
           'Select an Optimization Target'
@@ -36,22 +32,22 @@ export function OptimizationTargetSelector({
       }
       {...buttonProps}
     >
-      {calc?.listFormulas(own.listing.formulas).map((read, index) => (
-        <MenuItem
-          key={`${index}_${read.tag.sheet || read.tag.q}_${read.tag.name}`}
-          onClick={() => setOptTarget(read.tag)}
-        >
-          <ListItemText>
-            <TagDisplay tag={read.tag} />
-          </ListItemText>
-          {/* Show DMG type */}
-          <Box sx={{ display: 'flex', gap: 1, ml: 1 }}>
-            {getDmgType(read.tag).map((dmgType) => (
-              <SqBadge key={dmgType}>{dmgType}</SqBadge>
-            ))}
-          </Box>
-        </MenuItem>
-      ))}
+      {calc?.listFormulas(own.listing.formulas).map(
+        ({ tag }, index) =>
+          tag.name &&
+          tag.sheet && (
+            <MenuItem
+              key={`${index}_${tag.sheet || tag.q}_${tag.name}`}
+              onClick={() => setOptTarget(tag)}
+            >
+              <ListItemText>
+                <Box sx={{ display: 'flex', gap: 1 }}>
+                  <FullTagDisplay tag={tag} />
+                </Box>
+              </ListItemText>
+            </MenuItem>
+          )
+      )}
     </DropdownButton>
   )
 }

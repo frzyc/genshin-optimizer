@@ -4,8 +4,8 @@ import { valueString } from '@genshin-optimizer/common/util'
 import type { GeneratedBuild } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
-  useCharacterContext,
   useCharOpt,
+  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { EquipGrid } from '@genshin-optimizer/zzz/ui'
@@ -80,13 +80,7 @@ function EquipBtn({
     </Button>
   )
 }
-const columns = {
-  xs: 1,
-  sm: 1,
-  md: 2,
-  lg: 3,
-  xl: 3,
-} as const
+
 function GeneratedBuildDisplay({
   build,
   index,
@@ -127,7 +121,6 @@ function GeneratedBuildDisplay({
                   <EquipGrid
                     discIds={build.discIds}
                     wengineId={build.wengineId}
-                    columns={columns}
                   />
                 </Grid>
               </Grid>

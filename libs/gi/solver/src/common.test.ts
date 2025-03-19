@@ -1,8 +1,8 @@
 import { cartesian, objKeyMap } from '@genshin-optimizer/common/util'
 import {
-  allArtifactSlotKeys,
   type ArtifactSetKey,
   type ArtifactSlotKey,
+  allArtifactSlotKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusion } from '@genshin-optimizer/gi/db'
 import type { OptNode } from '@genshin-optimizer/gi/wr'

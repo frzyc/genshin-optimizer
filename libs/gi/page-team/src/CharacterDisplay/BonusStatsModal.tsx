@@ -16,8 +16,8 @@ import {
   FieldDisplayList,
   GetCalcDisplay,
   NodeFieldDisplay,
-  resolveInfo,
   StatEditorList,
+  resolveInfo,
 } from '@genshin-optimizer/gi/ui'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
 import { allInputPremodKeys, uiInput as input } from '@genshin-optimizer/gi/wr'

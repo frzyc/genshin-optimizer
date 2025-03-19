@@ -16,12 +16,12 @@ import type {
   TagMapNodeEntry,
 } from '.'
 import {
+  type Sheet,
   damageTypes,
   elementalTypes,
   members,
   paths,
   sheets,
-  type Sheet,
 } from './listing'
 
 export const fixedTags = {

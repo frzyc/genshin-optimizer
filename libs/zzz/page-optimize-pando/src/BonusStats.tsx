@@ -4,11 +4,13 @@ import {
   DropdownButton,
   NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
+import type { SpecificDmgTypeKey } from '@genshin-optimizer/zzz/db'
 import {
-  useCharacterContext,
   useCharOpt,
+  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
@@ -26,6 +28,10 @@ import {
   Typography,
 } from '@mui/material'
 import { useCallback } from 'react'
+import {
+  AfterShockToggleButton,
+  SpecificDmgTypeDropdown,
+} from './SpecificDmgTypeSelector'
 
 export function BonusStatsSection() {
   const { database } = useDatabaseContext()
@@ -52,7 +58,7 @@ export function BonusStatsSection() {
               value={value}
               setValue={(value) => setStat(tag, value, i)}
               onDelete={() => setStat(tag, null, i)}
-              setTag={(tag) => setStat(tag, 0, i)}
+              setTag={(tag) => setStat(tag, value, i)}
             />
           ))}
           <InitialStatDropdown onSelect={newTarget} />
@@ -83,7 +89,7 @@ const initialStats: StatKey[] = [
 ] as const
 type InitialStats = (typeof initialStats)[number]
 function InitialStatDropdown({
-  tag = {},
+  tag,
   onSelect,
 }: {
   tag?: Tag
@@ -101,7 +107,7 @@ function InitialStatDropdown({
     </DropdownButton>
   )
 }
-
+const specificDmgTypeIncStats = ['atk_', 'dmg_', 'crit_', 'crit_dmg_'] as const
 function BonusStatDisplay({
   tag,
   setTag,
@@ -115,7 +121,6 @@ function BonusStatDisplay({
   setValue: (value: number) => void
   onDelete: () => void
 }) {
-  // TODO: best way to infer percentage from tag?
   const isPercent = (tag.name || tag.q)?.endsWith('_')
   return (
     <CardThemed bgt="light">
@@ -136,6 +141,28 @@ function BonusStatDisplay({
             setAttribute={(ele) => {
               const { attribute, ...rest } = tag
               setTag(ele ? { ...rest, attribute: ele } : rest)
+            }}
+          />
+        )}
+        {specificDmgTypeIncStats.includes(
+          tag.q as (typeof specificDmgTypeIncStats)[number]
+        ) && (
+          <SpecificDmgTypeDropdown
+            dmgType={tag.damageType1 as SpecificDmgTypeKey}
+            setDmgType={(dmgType) => {
+              const { damageType1, ...rest } = tag
+              setTag(dmgType ? { ...rest, damageType1: dmgType } : rest)
+            }}
+          />
+        )}
+        {(['dmg_', 'crit_dmg_'] as const).includes(
+          tag.q as 'dmg_' | 'crit_dmg_'
+        ) && (
+          <AfterShockToggleButton
+            isAftershock={tag.damageType2 === 'aftershock'}
+            setAftershock={(aftershock) => {
+              const { damageType2, ...rest } = tag
+              setTag(aftershock ? { ...rest, damageType2: 'aftershock' } : rest)
             }}
           />
         )}
@@ -163,6 +190,16 @@ function BonusStatDisplay({
           }}
         />
       </CardContent>
+      {shouldShowDevComponents && (
+        <>
+          <Divider />
+          <CardContent>
+            <Typography sx={{ fontFamily: 'monospace' }}>
+              {JSON.stringify(tag)}
+            </Typography>
+          </CardContent>
+        </>
+      )}
     </CardThemed>
   )
 }

@@ -5,13 +5,13 @@ import type {
   FormulaKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
-  allDiscSlotKeys,
   type DiscSlotKey,
+  allDiscSlotKeys,
 } from '@genshin-optimizer/zzz/consts'
 import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
 import type { BuildResult, DiscStats } from './common'
-import { convertDiscToStats, MAX_BUILDS } from './common'
+import { MAX_BUILDS, convertDiscToStats } from './common'
 import type { ProgressResult } from './solver'
 
 let workers: Worker[]

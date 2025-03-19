@@ -14,10 +14,10 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
 import {
+  type LocationKey,
   allCoreKeysWithNone,
   allDiscSlotKeys,
   wengineSheets,
-  type LocationKey,
 } from '@genshin-optimizer/zzz/consts'
 import type {
   ICachedCharacter,
@@ -29,7 +29,7 @@ import {
   useCharacter,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import { combineStats, type BuildResult } from '@genshin-optimizer/zzz/solver'
+import { type BuildResult, combineStats } from '@genshin-optimizer/zzz/solver'
 import {
   getCharacterStats,
   getWengineStats,

@@ -3,14 +3,13 @@ import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   OptConfigProvider,
-  useCharacterContext,
   useCharOpt,
+  useCharacterContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
 import { CharacterCard, CharacterEditor } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
-  Button,
   CardActionArea,
   CardContent,
   Grid,
@@ -27,12 +26,13 @@ import {
 } from 'react'
 import { BonusStatsSection } from './BonusStats'
 import { CharStatsDisplay } from './CharStatsDisplay'
-import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { DiscSheetsDisplay } from './DiscSheetsDisplay'
+import { EnemyCard } from './EnemyCard'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
 import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
 import { WengineSheetsDisplay } from './WengineSheetsDisplay'
+import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 const BOT_PX = 0
 const SECTION_SPACING_PX = 33
@@ -128,18 +128,18 @@ function CharacterSection() {
               backgroundColor: '#1b263b',
             }}
           >
-            <Grid container spacing={2}>
-              <Grid item xs={6} lg={5} xl={4}>
+            <Grid container spacing={2} sx={{ flexWrap: 'wrap' }}>
+              <Grid item xs={12} sm={7} md={5} lg={4} xl={3}>
                 <Stack spacing={1}>
-                  <CharacterCard characterKey={characterKey} />
-                  <Button fullWidth disabled={!characterKey} onClick={onClick}>
-                    {/* TODO: Translation */}
-                    Edit Character
-                  </Button>
+                  <CharacterCard
+                    characterKey={characterKey}
+                    onClick={onClick}
+                  />
+                  <EnemyCard />
                   <CharStatsDisplay />
                 </Stack>
               </Grid>
-              <Grid item xs={6} lg={7} xl={8}>
+              <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
                 <EquippedGrid onClick={onClick} />
               </Grid>
             </Grid>

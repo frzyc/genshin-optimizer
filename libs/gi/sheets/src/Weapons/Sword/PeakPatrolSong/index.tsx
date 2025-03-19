@@ -4,7 +4,7 @@ import {
   objMap,
   range,
 } from '@genshin-optimizer/common/util'
-import { allElementKeys, type WeaponKey } from '@genshin-optimizer/gi/consts'
+import { type WeaponKey, allElementKeys } from '@genshin-optimizer/gi/consts'
 import {
   equalStr,
   input,

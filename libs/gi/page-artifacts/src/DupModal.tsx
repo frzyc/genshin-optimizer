@@ -81,7 +81,7 @@ function DupContent({
       dups.push(
         [artKey, ...dupKeys]
           // sort the keys so equipped artifacts show up 1st.
-          .sort((a) => (database.arts.get(a)?.location ?? '' ? -1 : 1))
+          .sort((a) => ((database.arts.get(a)?.location ?? '') ? -1 : 1))
       )
       artKeys = artKeys.filter((id) => !dupKeys.includes(id))
     }

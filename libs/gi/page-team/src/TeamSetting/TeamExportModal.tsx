@@ -6,10 +6,10 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { toggleInArr } from '@genshin-optimizer/common/util'
 import {
-  defLoadoutExportSetting,
   type LoadoutDataExportSetting,
   type LoadoutDatum,
   type LoadoutExportSetting,
+  defLoadoutExportSetting,
 } from '@genshin-optimizer/gi/db'
 import {
   useDatabase,

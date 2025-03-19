@@ -1,7 +1,13 @@
 import { notEmpty, shallowCompareObj } from '@genshin-optimizer/common/util'
 import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import type { Dst, Sheet, Src, Tag } from '@genshin-optimizer/zzz/formula'
+import type {
+  DamageType,
+  Dst,
+  Sheet,
+  Src,
+  Tag,
+} from '@genshin-optimizer/zzz/formula'
 import {
   getConditional,
   getFormula,
@@ -11,9 +17,39 @@ import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 import { validateTag } from '../tagUtil'
 
+// Corresponds to the `own.common.critMode` libs\zzz\formula\src\data\common\dmg.ts
+export type critModeKey = 'avg' | 'crit' | 'nonCrit'
+export const critModeKeys: critModeKey[] = ['avg', 'crit', 'nonCrit'] as const
+
+export type SpecificDmgTypeKey = Exclude<
+  DamageType,
+  'anomaly' | 'disorder' | 'aftershock' | 'elemental'
+>
+// Corresponds to damageTypes in libs\zzz\formula\src\data\util\listing.ts
+export const specificDmgTypeKeys = [
+  'basic',
+  'dash',
+  'dodgeCounter',
+  'special',
+  'exSpecial',
+  'chain',
+  'ult',
+  'quickAssist',
+  'defensiveAssist',
+  'evasiveAssist',
+  'assistFollowUp',
+] as SpecificDmgTypeKey[]
+
+function isSpeicifcDmgTypeKey(key: string): key is SpecificDmgTypeKey {
+  return specificDmgTypeKeys.includes(key as SpecificDmgTypeKey)
+}
+
 export type CharOpt = {
   targetSheet?: Sheet
   targetName?: string
+  targetDamageType1?: SpecificDmgTypeKey
+  targetDamageType2?: 'aftershock'
+
   conditionals: Array<{
     sheet: Sheet
     src: Src
@@ -25,6 +61,14 @@ export type CharOpt = {
     tag: Tag
     value: number
   }>
+  critMode: critModeKey
+
+  // Enemy stuff
+  enemyLvl: number
+  enemyDef: number
+  enemyisStunned: boolean
+
+  // link to optConfig
   optConfigId?: string
 }
 export class CharacterOptManager extends DataManager<
@@ -38,14 +82,39 @@ export class CharacterOptManager extends DataManager<
   }
   override validate(obj: unknown): CharOpt | undefined {
     if (!obj || typeof obj !== 'object') return undefined
-    let { targetName, targetSheet, conditionals, bonusStats, optConfigId } =
-      obj as CharOpt
+    let {
+      targetName,
+      targetSheet,
+      targetDamageType1,
+      targetDamageType2,
+      conditionals,
+      bonusStats,
+      critMode,
+
+      enemyLvl,
+      enemyDef,
+      enemyisStunned,
+
+      optConfigId,
+    } = obj as CharOpt
     if (!Array.isArray(conditionals)) conditionals = []
     const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
     if (!targetSheet || !targetName || !getFormula(targetSheet, targetName)) {
       targetSheet = undefined
       targetName = undefined
     }
+    if (
+      targetName !== 'standardDmgInst' ||
+      (targetDamageType1 && !isSpeicifcDmgTypeKey(targetDamageType1))
+    )
+      targetDamageType1 = undefined
+
+    if (
+      targetName !== 'standardDmgInst' ||
+      (targetDamageType2 && targetDamageType2 !== 'aftershock')
+    )
+      targetDamageType2 = undefined
+
     conditionals = conditionals
       .map(({ sheet, condKey, src, dst, condValue }) => {
         if (!condValue) return undefined //remove conditionals when the value is 0
@@ -77,14 +146,28 @@ export class CharacterOptManager extends DataManager<
       return true
     })
 
+    if (!critModeKeys.includes(critMode)) critMode = 'avg'
+
+    if (typeof enemyLvl !== 'number') enemyLvl = 80
+    if (typeof enemyDef !== 'number') enemyDef = 953
+    enemyisStunned = !!enemyisStunned
+
     if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = undefined
 
     const charOpt: CharOpt = {
       targetName,
       targetSheet,
+      targetDamageType1,
+      targetDamageType2,
       conditionals,
       bonusStats,
+      critMode,
+
+      enemyLvl,
+      enemyDef,
+      enemyisStunned,
+
       optConfigId,
     }
     return charOpt
@@ -177,5 +260,10 @@ export function initialCharOpt(): CharOpt {
   return {
     conditionals: [],
     bonusStats: [],
+    critMode: 'avg',
+
+    enemyLvl: 80,
+    enemyDef: 953,
+    enemyisStunned: false,
   }
 }

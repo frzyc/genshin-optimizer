@@ -29,8 +29,12 @@
       }
     }
   },
-  "inventoryCard": { "title": "Inventaire GO" },
-  "vidGuideCard": { "title": "Guides vidéo" },
+  "inventoryCard": {
+    "title": "Inventaire GO"
+  },
+  "vidGuideCard": {
+    "title": "Guides vidéo"
+  },
   "teamCard": {
     "title": "Rencontrer l'équipe",
     "jobTitle": {

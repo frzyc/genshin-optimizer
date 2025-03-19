@@ -1,7 +1,7 @@
 import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
 import {
-  allElementKeys,
   type ArtifactSetKey,
+  allElementKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import type { Data } from '@genshin-optimizer/gi/wr'
