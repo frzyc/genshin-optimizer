@@ -1,49 +1,36 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
-  own,
-  ownBuff,
-  registerBuff,
-  teamBuff,
-} from '../../util'
-import { entriesForDisc, registerDisc } from '../util'
+import { allNumConditionals, own, ownBuff, registerBuff } from '../../util'
+import { registerDisc } from '../util'
 
 const key: DiscSetKey = 'ShadowHarmony'
 
 const discCount = own.common.count.sheet(key)
 const showCond4Set = cmpGE(discCount, 4, 'infer', '')
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { stacks } = allNumConditionals(key, true, 0, 3)
 
 const sheet = registerDisc(
   key,
   // Handle 2-set effects
-  entriesForDisc(key),
+  // entriesForDisc(key) // currrently mapped to dmg_, which is not specific enough.
+  [
+    ...ownBuff.initial.dmg_.addWithDmgType('dash', cmpGE(discCount, 2, 0.15)),
+    ...ownBuff.initial.dmg_.addWithDmgType(
+      'aftershock',
+      cmpGE(discCount, 2, 0.15)
+    ),
+  ],
 
-  // TODO: Add formulas/buffs
   // Conditional buffs
   registerBuff(
-    'set4_dmg_',
-    ownBuff.combat.common_dmg_.add(
-      cmpGE(discCount, 2, boolConditional.ifOn(0.1))
-    ),
+    'set4_stack_atk_',
+    ownBuff.combat.atk_.add(cmpGE(discCount, 2, prod(stacks, 0.04))),
     showCond4Set
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
-    showCond4Set
-  ),
-  registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(numConditional),
+    'set4_stack_crit_',
+    ownBuff.combat.crit_.add(cmpGE(discCount, 2, prod(stacks, 0.04))),
     showCond4Set
   )
 )

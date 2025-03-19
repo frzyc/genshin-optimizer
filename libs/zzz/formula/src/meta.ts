@@ -696,24 +696,15 @@ export const conditionals = {
     },
   },
   PhaethonsMelody: {
-    boolConditional: {
+    not_char_use_ex: {
       sheet: 'PhaethonsMelody',
-      name: 'boolConditional',
+      name: 'not_char_use_ex',
       type: 'bool',
     },
-    listConditional: {
+    squad_use_ex: {
       sheet: 'PhaethonsMelody',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PhaethonsMelody',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      name: 'squad_use_ex',
+      type: 'bool',
     },
   },
   PolarMetal: {
@@ -906,24 +897,13 @@ export const conditionals = {
     },
   },
   ShadowHarmony: {
-    boolConditional: {
+    stacks: {
       sheet: 'ShadowHarmony',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ShadowHarmony',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ShadowHarmony',
-      name: 'numConditional',
+      name: 'stacks',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   SharpenedStinger: {
@@ -3479,37 +3459,27 @@ export const buffs = {
     },
   },
   PhaethonsMelody: {
-    enemy_defIgn_: {
+    set4_not_self_ether_: {
       sheet: 'PhaethonsMelody',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'PhaethonsMelody',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set4_dmg_: {
-      sheet: 'PhaethonsMelody',
-      name: 'set4_dmg_',
+      name: 'set4_not_self_ether_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'PhaethonsMelody',
-        name: 'set4_dmg_',
+        attribute: 'ether',
+        name: 'set4_not_self_ether_',
       },
     },
-    team_dmg_: {
+    set4_squad_anomProf: {
       sheet: 'PhaethonsMelody',
-      name: 'team_dmg_',
+      name: 'set4_squad_anomProf',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'anomProf',
         sheet: 'PhaethonsMelody',
-        name: 'team_dmg_',
+        name: 'set4_squad_anomProf',
       },
     },
   },
@@ -3858,37 +3828,26 @@ export const buffs = {
     },
   },
   ShadowHarmony: {
-    enemy_defIgn_: {
+    set4_stack_atk_: {
       sheet: 'ShadowHarmony',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'ShadowHarmony',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set4_dmg_: {
-      sheet: 'ShadowHarmony',
-      name: 'set4_dmg_',
+      name: 'set4_stack_atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'ShadowHarmony',
-        name: 'set4_dmg_',
+        name: 'set4_stack_atk_',
       },
     },
-    team_dmg_: {
+    set4_stack_crit_: {
       sheet: 'ShadowHarmony',
-      name: 'team_dmg_',
+      name: 'set4_stack_crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'ShadowHarmony',
-        name: 'team_dmg_',
+        name: 'set4_stack_crit_',
       },
     },
   },

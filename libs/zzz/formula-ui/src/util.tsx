@@ -40,7 +40,7 @@ export function trans(
 /**
  * Only works for tag that maps to a general Stat to be displayed.
  */
-export function TagToTagField(tag: Tag): TagField {
+export function tagToTagField(tag: Tag): TagField {
   let q = tag.q
   if (q === 'dmg_' && tag.attribute) q = `${tag.attribute}_dmg_`
   return {
