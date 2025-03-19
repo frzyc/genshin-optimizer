@@ -12,18 +12,22 @@ import {
   statKeyToFixed,
   toPercent,
 } from '@genshin-optimizer/common/util'
+import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
+import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
   allSpecialityKeys,
   allWengineKeys,
 } from '@genshin-optimizer/zzz/consts'
+import type { ICachedWengine } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   useCharOpt,
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
+import { wengineUiSheets } from '@genshin-optimizer/zzz/formula-ui'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
 import {
   StatDisplay,
@@ -50,10 +54,10 @@ import { Suspense, useContext, useMemo } from 'react'
 import { CharCalcMockCountProvider } from '../CharCalcProvider'
 import { WengineLevelFilter } from './WengineLevelFilter'
 export function WengineFilter({
-  numWengine,
+  wengines,
   disabled,
 }: {
-  numWengine: number
+  wengines: ICachedWengine[]
   disabled?: boolean
 }) {
   const { database } = useDatabaseContext()
@@ -75,8 +79,8 @@ export function WengineFilter({
               sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}
             >
               Wengines:{' '}
-              <SqBadge color={numWengine ? 'primary' : 'error'}>
-                {numWengine}
+              <SqBadge color={wengines.length ? 'primary' : 'error'}>
+                {wengines.length}
               </SqBadge>
             </Box>
             <Button
@@ -98,7 +102,11 @@ export function WengineFilter({
               Optimize Wengine
             </Button>
           </Box>
-          <WengineFilterModal show={show} onClose={onClose} />
+          <WengineFilterModal
+            show={show}
+            onClose={onClose}
+            wengines={wengines}
+          />
           {/* TODO: localization */}
           <Button
             color="info"
@@ -115,10 +123,12 @@ export function WengineFilter({
 }
 
 function WengineFilterModal({
+  wengines,
   show,
   onClose,
   disabled,
 }: {
+  wengines: ICachedWengine[]
   show: boolean
   onClose: () => void
   disabled?: boolean
@@ -153,7 +163,7 @@ function WengineFilterModal({
               >
                 Use equipped Wengine
               </Button>
-              <WengineCondSelector />
+              <WengineCondSelector wengines={wengines} />
             </Stack>
           </Suspense>
         </CardContent>
@@ -210,7 +220,7 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
   )
 }
 
-function WengineCondSelector() {
+function WengineCondSelector({ wengines }: { wengines: ICachedWengine[] }) {
   const character = useCharacterContext()
   const charOpt = useCharOpt(character?.key)
   const { optConfig } = useContext(OptConfigContext)
@@ -239,7 +249,10 @@ function WengineCondSelector() {
           <Grid container spacing={1}>
             {wengineKeys.map((d) => (
               <Grid item key={d} xs={1} md={2} lg={3}>
-                <WengineCondCard wengineKey={d} />
+                <WengineCondCard
+                  wengineKey={d}
+                  count={wengines.filter((w) => w.key === d).length}
+                />
               </Grid>
             ))}
           </Grid>
@@ -248,8 +261,11 @@ function WengineCondSelector() {
     </Box>
   )
 }
-function WengineCondCard({ wengineKey }: { wengineKey: WengineKey }) {
-  // const wengineSheet = wengineSheets[wengineKey]
+function WengineCondCard({
+  wengineKey,
+  count,
+}: { wengineKey: WengineKey; count: number }) {
+  const wengineSheet = wengineUiSheets[wengineKey]
   const wengineStats = getWengineStats(wengineKey, 60, 5, 1)
   const mainStatKey = 'atk_base'
   const substatKey = getWengineStat(wengineKey)['second_statkey']
@@ -258,8 +274,11 @@ function WengineCondCard({ wengineKey }: { wengineKey: WengineKey }) {
       <CardHeader
         title={<WengineName wKey={wengineKey} />}
         avatar={<ImgIcon src={wengineAsset(wengineKey, 'icon')} size={2} />}
+        action={
+          <SqBadge color={count ? 'primary' : 'secondary'}>{count}</SqBadge>
+        }
       />
-      <CardContent>
+      <CardContent sx={{ py: 0 }}>
         <Typography sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <StatDisplay statKey={'atk'} />
           <span>
@@ -279,7 +298,26 @@ function WengineCondCard({ wengineKey }: { wengineKey: WengineKey }) {
           </span>
         </Typography>
       </CardContent>
-      <Stack divider={<Divider />}>TODO: Wengine Sheet</Stack>
+      <Box sx={{ opacity: count ? 1 : 0.5 }}>
+        <WengineUiSheetElement uiSheetElement={wengineSheet} />
+      </Box>
     </ZCard>
+  )
+}
+function WengineUiSheetElement({
+  uiSheetElement,
+}: {
+  uiSheetElement: UISheetElement
+}) {
+  const { documents, title } = uiSheetElement
+  return (
+    <CardContent>
+      <Typography variant="subtitle1">{title}</Typography>
+      <Stack spacing={1}>
+        {documents.map((doc, i) => (
+          <DocumentDisplay key={i} document={doc} />
+        ))}
+      </Stack>
+    </CardContent>
   )
 }
