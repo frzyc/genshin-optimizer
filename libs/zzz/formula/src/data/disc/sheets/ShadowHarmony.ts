@@ -1,7 +1,7 @@
 import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { allNumConditionals, own, ownBuff, registerBuff } from '../../util'
-import { registerDisc } from '../util'
+import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = 'ShadowHarmony'
 
@@ -13,14 +13,7 @@ const { stacks } = allNumConditionals(key, true, 0, 3)
 const sheet = registerDisc(
   key,
   // Handle 2-set effects
-  // entriesForDisc(key) // currrently mapped to dmg_, which is not specific enough.
-  [
-    ...ownBuff.initial.dmg_.addWithDmgType('dash', cmpGE(discCount, 2, 0.15)),
-    ...ownBuff.initial.dmg_.addWithDmgType(
-      'aftershock',
-      cmpGE(discCount, 2, 0.15)
-    ),
-  ],
+  entriesForDisc(key),
 
   // Conditional buffs
   registerBuff(
