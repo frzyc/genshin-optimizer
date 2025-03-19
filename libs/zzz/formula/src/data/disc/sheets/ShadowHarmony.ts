@@ -25,12 +25,12 @@ const sheet = registerDisc(
   // Conditional buffs
   registerBuff(
     'set4_stack_atk_',
-    ownBuff.combat.atk_.add(cmpGE(discCount, 2, prod(stacks, 0.04))),
+    ownBuff.combat.atk_.add(cmpGE(discCount, 4, prod(stacks, 0.04))),
     showCond4Set
   ),
   registerBuff(
     'set4_stack_crit_',
-    ownBuff.combat.crit_.add(cmpGE(discCount, 2, prod(stacks, 0.04))),
+    ownBuff.combat.crit_.add(cmpGE(discCount, 4, prod(stacks, 0.04))),
     showCond4Set
   )
 )

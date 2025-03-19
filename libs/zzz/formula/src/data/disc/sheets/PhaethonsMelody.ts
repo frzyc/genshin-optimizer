@@ -20,13 +20,13 @@ const sheet = registerDisc(
   // Conditional buffs
   registerBuff(
     'set4_squad_anomProf',
-    ownBuff.combat.anomProf.add(cmpGE(discCount, 2, squad_use_ex.ifOn(45))),
+    ownBuff.combat.anomProf.add(cmpGE(discCount, 4, squad_use_ex.ifOn(45))),
     showCond4Set
   ),
   registerBuff(
     'set4_not_self_ether_',
     ownBuff.combat.dmg_.ether.add(
-      cmpGE(discCount, 2, squad_use_ex.ifOn(not_char_use_ex.ifOn(0.25)))
+      cmpGE(discCount, 4, squad_use_ex.ifOn(not_char_use_ex.ifOn(0.25)))
     ),
     showCond4Set
   )
