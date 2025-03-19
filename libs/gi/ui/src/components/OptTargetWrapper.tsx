@@ -7,8 +7,8 @@ import { useContext, useMemo } from 'react'
 import { DataContext } from '../context/DataContext'
 import type { OptTargetContextObj } from '../context/OptTargetContext'
 import {
-  defOptTargetContextObj,
   OptTargetContext,
+  defOptTargetContextObj,
 } from '../context/OptTargetContext'
 import { optimizeNodesForScaling } from '../util'
 

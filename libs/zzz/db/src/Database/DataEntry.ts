@@ -1,5 +1,5 @@
 import { DataEntryBase } from '@genshin-optimizer/common/database'
-import type { IZenlessObjectDescription, IZZZDatabase } from '../Interfaces'
+import type { IZZZDatabase, IZenlessObjectDescription } from '../Interfaces'
 import type { ZzzDatabase } from './Database'
 import type { ImportResult } from './exim'
 
@@ -7,7 +7,7 @@ export class DataEntry<
   Key extends string,
   ZOKey extends string,
   CacheValue,
-  StorageValue
+  StorageValue,
 > extends DataEntryBase<Key, ZOKey, CacheValue, StorageValue, ZzzDatabase> {
   exportZOD(zoDb: Partial<IZZZDatabase & IZenlessObjectDescription>) {
     zoDb[this.dataKey] = this.data

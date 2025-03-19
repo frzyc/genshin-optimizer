@@ -8,7 +8,7 @@ import {
 import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
 import type { BoxProps } from '@mui/material'
 import type { FunctionComponent, MouseEventHandler } from 'react'
-import { useContext, useMemo, type ReactNode } from 'react'
+import { type ReactNode, useContext, useMemo } from 'react'
 import { AdButtons } from './AdButtons'
 import { DrakeAd, canShowDrakeAd } from './GoAd/DrakeAd'
 import { GOAd } from './GoAd/GOAd'

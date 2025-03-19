@@ -7,13 +7,13 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { CharacterKey, TrailblazerKey } from '@genshin-optimizer/sr/consts'
 import {
-  allCharacterKeys,
-  allTrailblazerGenderedKeys,
   type AbilityKey,
   type ElementalTypeKey,
   type PathKey,
   type RarityKey,
   type StatKey,
+  allCharacterKeys,
+  allTrailblazerGenderedKeys,
 } from '@genshin-optimizer/sr/consts'
 import type {
   Anchor,

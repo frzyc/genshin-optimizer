@@ -23,7 +23,7 @@ import {
   getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc, ICachedWengine } from '@genshin-optimizer/zzz/db'
-import { Read, type Calculator, type Tag } from '@genshin-optimizer/zzz/formula'
+import { type Calculator, Read, type Tag } from '@genshin-optimizer/zzz/formula'
 type Frames = Array<{ tag: Tag; multiplier: number }>
 type StatFilter = {
   tag: Tag

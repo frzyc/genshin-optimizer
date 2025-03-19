@@ -4,8 +4,8 @@ import { valueString } from '@genshin-optimizer/common/util'
 import type { GeneratedBuild } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
-  useCharacterContext,
   useCharOpt,
+  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { EquipGrid } from '@genshin-optimizer/zzz/ui'

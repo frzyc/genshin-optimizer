@@ -16,12 +16,12 @@ import {
 import { error } from '../lib/message'
 
 import {
-  allArtifactSetKeys,
-  allCharacterSheetKeys,
-  allWeaponKeys,
   type ArtifactSetKey,
   type CharacterSheetKey,
   type WeaponKey,
+  allArtifactSetKeys,
+  allCharacterSheetKeys,
+  allWeaponKeys,
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import permissions from '../lib/permissions'

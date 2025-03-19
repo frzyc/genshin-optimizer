@@ -18,7 +18,7 @@ export const stg = (strKey: string) => (
 
 type Translated = [
   trg: (i18key: string, values?: Record<string, string | number>) => ReactNode,
-  tr: (i18key: string, values?: Record<string, string | number>) => ReactNode
+  tr: (i18key: string, values?: Record<string, string | number>) => ReactNode,
 ]
 
 export function trans(typeKey: 'char', key: CharacterKey): Translated
@@ -40,7 +40,7 @@ export function trans(
 /**
  * Only works for tag that maps to a general Stat to be displayed.
  */
-export function TagToTagField(tag: Tag): TagField {
+export function tagToTagField(tag: Tag): TagField {
   let q = tag.q
   if (q === 'dmg_' && tag.attribute) q = `${tag.attribute}_dmg_`
   return {

@@ -2,8 +2,8 @@ import { DropdownButton } from '@genshin-optimizer/common/ui'
 import type { SpecificDmgTypeKey } from '@genshin-optimizer/zzz/db'
 import { specificDmgTypeKeys } from '@genshin-optimizer/zzz/db'
 import {
-  useCharacterContext,
   useCharOpt,
+  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { damageTypeKeysMap } from '@genshin-optimizer/zzz/formula-ui'

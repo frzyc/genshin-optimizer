@@ -38,8 +38,8 @@ function TeamWrapper({ artIdOrSlot, weaponId, onHide, onEquip }: WrapperProps) {
     slot === artIdOrSlot
       ? undefined
       : newArt?.slotKey === slot
-      ? artIdOrSlot
-      : id
+        ? artIdOrSlot
+        : id
   )
   const currentWeaponId = database.teams.getEditWeaponId(
     buildToEdit,
@@ -76,8 +76,8 @@ function CharacterWrapper({
     slot === artIdOrSlot
       ? undefined
       : newArt?.slotKey === slot
-      ? artIdOrSlot
-      : art
+        ? artIdOrSlot
+        : art
   )
   const currentWeaponId = equippedWeapon
   const newWeaponId = weaponId ?? currentWeaponId

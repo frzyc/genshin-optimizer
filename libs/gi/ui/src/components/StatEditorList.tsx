@@ -54,7 +54,7 @@ export function StatEditorList({
               ? `${tk(statKey as MainStatKey | SubstatKey)}${statPercent(
                   statKey as MainStatKey | SubstatKey
                 )}`
-              : KeyMap.getStr(statKey) ?? 'ERROR',
+              : (KeyMap.getStr(statKey) ?? 'ERROR'),
             color: KeyMap.getVariant(statKey),
           })
         )
@@ -223,8 +223,8 @@ function StatFilterItem({
               gridTemplateColumns: isOneCol
                 ? '100%'
                 : isThreeCol
-                ? '33% 33% 33%'
-                : '50% 50%',
+                  ? '33% 33% 33%'
+                  : '50% 50%',
             },
           }}
           // This needs to be done with `style` prop, not `sx` prop, or it doesn't work

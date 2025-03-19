@@ -18,8 +18,8 @@ import {
 import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import type {
   ICachedDisc,
-  IZenlessObjectDescription,
   IZZZDatabase,
+  IZenlessObjectDescription,
 } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
@@ -163,8 +163,8 @@ export class DiscDataManager extends DataManager<
             upgraded[0]?.location === disc.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((a) => a.id === importId)

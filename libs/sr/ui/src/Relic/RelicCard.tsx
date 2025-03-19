@@ -8,8 +8,8 @@ import {
 import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import {
-  allElementalDamageKeys,
   type LocationKey,
+  allElementalDamageKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'

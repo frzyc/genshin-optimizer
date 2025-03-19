@@ -2,7 +2,7 @@ import { FIFO } from '@genshin-optimizer/common/util'
 
 export class WorkerCoordinator<
   Command extends { command: string; resultType?: never },
-  Response extends { command?: never; resultType: string }
+  Response extends { command?: never; resultType: string },
 > {
   prio: Map<Command['command'], number>
   commands: FIFO<Command>[]

@@ -6,7 +6,7 @@ export class DataManager<
   CacheKey extends string,
   DataKey extends string,
   CacheValue extends StorageValue,
-  StorageValue
+  StorageValue,
 > extends DataManagerBase<
   CacheKey,
   DataKey,

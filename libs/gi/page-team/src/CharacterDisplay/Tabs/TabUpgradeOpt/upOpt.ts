@@ -13,11 +13,11 @@ import {
   getSubstatValue,
 } from '@genshin-optimizer/gi/util'
 import {
+  type OptNode,
   ddx,
   optimize,
   precompute,
   zero_deriv,
-  type OptNode,
 } from '@genshin-optimizer/gi/wr'
 import { crawlUpgrades, quadrinomial } from './mathUtil'
 import { gaussianPE, mvnPE_bad } from './mvncdf'

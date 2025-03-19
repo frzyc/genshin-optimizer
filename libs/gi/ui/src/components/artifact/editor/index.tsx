@@ -267,7 +267,7 @@ export function ArtifactEditor({
       ): T {
         return value && available.includes(value)
           ? value
-          : prefer ?? available[0]
+          : (prefer ?? available[0])
       }
 
       if (newValue.setKey && newStat) {
@@ -349,7 +349,7 @@ export function ArtifactEditor({
   const element = artifact
     ? allElementWithPhyKeys.find((ele) => artifact.mainStatKey.includes(ele))
     : undefined
-  const color = artifact ? element ?? 'success' : 'primary'
+  const color = artifact ? (element ?? 'success') : 'primary'
 
   const updateSetKey = useCallback(
     (setKey: ArtifactSetKey | '') =>

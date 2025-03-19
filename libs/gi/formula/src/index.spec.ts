@@ -13,12 +13,12 @@ import {
 } from './data/util'
 import { teamData, withMember } from './util'
 
+import { fail } from 'assert'
 import {
   allArtifactSetKeys,
   allCharacterKeys,
   allWeaponKeys,
 } from '@genshin-optimizer/gi/consts'
-import { fail } from 'assert'
 
 describe('calculator', () => {
   describe('correctness', () => {

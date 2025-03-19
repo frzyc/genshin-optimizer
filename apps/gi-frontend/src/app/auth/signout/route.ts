@@ -1,5 +1,5 @@
 import { revalidatePath } from 'next/cache'
-import { NextResponse, type NextRequest } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 import { getSupabase } from '../../../utils/supabase/server'
 
 export async function POST(req: NextRequest) {

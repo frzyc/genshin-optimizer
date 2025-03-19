@@ -1,4 +1,4 @@
-import { styled, Switch } from '@mui/material'
+import { Switch, styled } from '@mui/material'
 
 export const MindscapesSwitch = styled(Switch)(({ theme }) => ({
   padding: '4px',

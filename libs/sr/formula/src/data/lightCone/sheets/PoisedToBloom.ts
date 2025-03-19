@@ -1,5 +1,5 @@
 import { cmpEq, cmpGE, subscript, sum } from '@genshin-optimizer/pando/engine'
-import { allPathKeys, type LightConeKey } from '@genshin-optimizer/sr/consts'
+import { type LightConeKey, allPathKeys } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import { own, registerBuff, target, team, teamBuff } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'

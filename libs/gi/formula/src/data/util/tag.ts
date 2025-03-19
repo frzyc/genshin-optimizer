@@ -1,11 +1,11 @@
 import {
+  type Desc as BaseDesc,
   createAllBoolConditionals,
   createAllListConditionals,
   createAllNumConditionals,
   createConditionalEntries,
   createConvert,
   tag,
-  type Desc as BaseDesc,
 } from '@genshin-optimizer/game-opt/engine'
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode } from '@genshin-optimizer/pando/engine'

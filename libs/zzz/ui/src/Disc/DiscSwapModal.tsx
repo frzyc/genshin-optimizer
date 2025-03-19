@@ -68,7 +68,7 @@ export function DiscSwapModal({
 
   const [filterOption, filterOptionDispatch]: [
     DiscFilterOption,
-    (action: any) => void
+    (action: any) => void,
   ] = useReducer(filterOptionReducer, {
     ...initialDiscFilterOption(),
     slotKeys: [slotKey],

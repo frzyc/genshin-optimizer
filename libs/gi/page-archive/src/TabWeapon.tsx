@@ -298,7 +298,7 @@ const WeaponRow = memo(function WeaponRow({
         refinement: 1,
         location: '',
         lock: false,
-      } as ICachedWeapon),
+      }) as ICachedWeapon,
     [rarity, wKey]
   )
   const weaponUIData = useMemo(
