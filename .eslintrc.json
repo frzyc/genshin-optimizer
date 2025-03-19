@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "unused-imports"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -30,6 +30,8 @@
       "rules": {
         "@typescript-eslint/consistent-type-exports": "warn",
         "@typescript-eslint/consistent-type-imports": "warn",
+        "unused-imports/no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
         "@typescript-eslint/no-unused-vars": [
           "warn",
           {

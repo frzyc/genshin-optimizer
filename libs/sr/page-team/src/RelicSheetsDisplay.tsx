@@ -1,4 +1,4 @@
-import { isRelicSetKey, type RelicSetKey } from '@genshin-optimizer/sr/consts'
+import { type RelicSetKey, isRelicSetKey } from '@genshin-optimizer/sr/consts'
 import { RelicSheetDisplay } from '@genshin-optimizer/sr/formula-ui'
 import { RelicSetAutocomplete } from '@genshin-optimizer/sr/ui'
 import { Box, Grid, Stack } from '@mui/material'

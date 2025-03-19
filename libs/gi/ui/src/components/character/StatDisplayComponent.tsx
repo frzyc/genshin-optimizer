@@ -74,8 +74,8 @@ export function StatDisplayComponent({
               key === 'bonusStats'
                 ? BonusStatEditor
                 : key === 'custom'
-                ? CustomMTargetEditor
-                : undefined
+                  ? CustomMTargetEditor
+                  : undefined
             }
           />
         ))}

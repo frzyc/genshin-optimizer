@@ -1,3 +1,5 @@
+import { writeFileSync } from 'fs'
+import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   allArtifactSetKeys,
   allCharacterKeys,
@@ -5,8 +7,6 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
-import { writeFileSync } from 'fs'
-import * as prettier from 'prettier'
 
 export default async function genIndex(tree: Tree, sheet_type: string) {
   const file_location = `${workspaceRoot}/libs/gi/formula/src/data/${sheet_type}/index.ts`
@@ -24,9 +24,7 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 }
 
 async function writeCharIndex(path: string) {
-  const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
-    `
+  const index = `
 import type { TagMapNodeEntries } from '../util'
 ${allCharacterKeys
   .map((charKey) => `import ${charKey} from './${charKey}'`)
@@ -37,16 +35,13 @@ const data: TagMapNodeEntries[] = [
 ]
 export default data.flat()
 
-  `,
-    { ...prettierRc, parser: 'typescript' }
-  )
-  writeFileSync(path, index)
+  `
+  const formatted = await formatText(path, index)
+  writeFileSync(path, formatted)
 }
 
 async function writeArtifactIndex(path: string) {
-  const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
-    `
+  const index = `
 import type { TagMapNodeEntries } from '../util'
 ${allArtifactSetKeys
   .map((setKey) => `import ${setKey} from './${setKey}'`)
@@ -57,16 +52,13 @@ const data: TagMapNodeEntries[] = [
 ]
 export default data.flat()
 
-  `,
-    { ...prettierRc, parser: 'typescript' }
-  )
-  writeFileSync(path, index)
+  `
+  const formatted = await formatText(path, index)
+  writeFileSync(path, formatted)
 }
 
 async function writeWeaponIndex(path: string) {
-  const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
-    `
+  const index = `
 import type { TagMapNodeEntries } from '../util'
 ${allWeaponKeys
   .map((weaponKey) => `import ${weaponKey} from './${weaponKey}'`)
@@ -78,8 +70,7 @@ const data: TagMapNodeEntries[] = [
 
 export default data.flat()
 
-  `,
-    { ...prettierRc, parser: 'typescript' }
-  )
-  writeFileSync(path, index)
+  `
+  const formatted = await formatText(path, index)
+  writeFileSync(path, formatted)
 }

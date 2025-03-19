@@ -98,6 +98,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   crit_dmg_: 'CRIT DMG',
   enerRegen_: 'Energy Regen',
   enerRegen: 'Energy Regen',
+  base_enerRegen: 'Base Energy Regen',
   impact_: 'Impact',
   impact: 'Impact',
   daze_: 'Daze',
@@ -137,6 +138,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   dmg_mult_: 'DMG Multiplier',
   def_mult_: 'DEF Multiplier',
   base: 'Base Damage',
+  stun_: 'Stun Multiplier',
 }
 
 export const elementalData: Record<AttributeKey, string> = {

@@ -1,3 +1,5 @@
+import { writeFileSync } from 'fs'
+import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   allCharacterKeys,
   allLightConeKeys,
@@ -5,8 +7,6 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
-import { writeFileSync } from 'fs'
-import * as prettier from 'prettier'
 
 export default async function genIndex(tree: Tree, map_type: string) {
   const file_location = `${workspaceRoot}/libs/sr/stats/src/mappedStats/${map_type}/index.ts`
@@ -24,9 +24,7 @@ export default async function genIndex(tree: Tree, map_type: string) {
 }
 
 async function writeIndex(path: string, keys: readonly string[]) {
-  const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
-    `
+  const index = `
 ${keys.map((key) => `import ${key} from './maps/${key}'`).join('\n')}
 
 const maps = {
@@ -34,8 +32,7 @@ const maps = {
 }
 export default maps
 
-  `,
-    { ...prettierRc, parser: 'typescript' }
-  )
-  writeFileSync(path, index)
+  `
+  const formatted = await formatText(path, index)
+  writeFileSync(path, formatted)
 }

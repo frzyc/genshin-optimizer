@@ -2,10 +2,10 @@ import { cartesian, objKeyMap } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import {
-  computeFullArtRange,
-  countBuilds,
   type ArtifactBuildData,
   type ArtifactsBySlot,
+  computeFullArtRange,
+  countBuilds,
 } from '../../common'
 import type { Linear } from './linearUB'
 

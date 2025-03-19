@@ -36,7 +36,7 @@ export default function CompareBtn({
   } = loadoutDatum
   const selectedLabel =
     compareType === 'real' ? (
-      database.builds.get(compareBuildId)?.name ?? ''
+      (database.builds.get(compareBuildId)?.name ?? '')
     ) : compareType === 'tc' ? (
       <span>
         {database.buildTcs.get(compareBuildTcId)?.name ?? ''}{' '}

@@ -1,6 +1,6 @@
 import type {
-  Database,
   DataManagerBase,
+  Database,
 } from '@genshin-optimizer/common/database'
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { useEffect } from 'react'
@@ -10,7 +10,7 @@ export function useDataManagerBaseDirty<
   B extends string,
   C extends D,
   D,
-  E extends Database
+  E extends Database,
 >(manager: DataManagerBase<A, B, C, D, E>) {
   const [dirty, setDirty] = useForceUpdate()
   useEffect(

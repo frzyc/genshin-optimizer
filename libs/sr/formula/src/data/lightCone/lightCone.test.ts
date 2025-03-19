@@ -16,13 +16,13 @@ import {
 } from '../../util'
 import type { TagMapNodeEntries } from '../util'
 import {
+  Read,
   conditionalEntries,
   convert,
   enemy,
   own,
   ownBuff,
   ownTag,
-  Read,
 } from '../util'
 
 setDebugMode(true)

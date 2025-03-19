@@ -8,8 +8,8 @@ import {
 import { arrayMove, clamp, deepClone } from '@genshin-optimizer/common/util'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
 import {
-  initCustomTarget,
   type CustomMultiTarget,
+  initCustomTarget,
 } from '@genshin-optimizer/gi/db'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'

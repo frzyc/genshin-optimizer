@@ -432,11 +432,14 @@ export class TeamDataManager extends DataManager<
     }
     const artifacts = this.getLoadoutArtifacts(loadoutDatum)
     return {
-      setNum: Object.values(artifacts).reduce((acc, art) => {
-        if (!art) return acc
-        acc[art.setKey] = (acc[art.setKey] ?? 0) + 1
-        return acc
-      }, {} as Exclude<ArtifactData['setNum'], undefined>),
+      setNum: Object.values(artifacts).reduce(
+        (acc, art) => {
+          if (!art) return acc
+          acc[art.setKey] = (acc[art.setKey] ?? 0) + 1
+          return acc
+        },
+        {} as Exclude<ArtifactData['setNum'], undefined>
+      ),
       mains: {
         sands: artifacts.sands?.mainStatKey,
         goblet: artifacts.goblet?.mainStatKey,

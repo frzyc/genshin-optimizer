@@ -17,7 +17,7 @@ export interface ICharMeta {
 
 export interface IDbCharacter extends ICharacter {
   stats: Stats
-  formulaKey: FormulaKey
+  formulaKey?: FormulaKey
   constraints: Constraints
   useEquipped: boolean
   setFilter2: DiscSetKey[]
@@ -34,6 +34,6 @@ export interface IDbCharacter extends ICharacter {
 }
 
 export interface ICachedCharacter extends IDbCharacter {
-  equippedDiscs: Record<DiscSlotKey, string>
-  equippedWengine: string
+  equippedDiscs: Record<DiscSlotKey, string | undefined>
+  equippedWengine?: string
 }

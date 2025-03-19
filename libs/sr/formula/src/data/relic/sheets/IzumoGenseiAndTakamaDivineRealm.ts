@@ -1,5 +1,5 @@
 import { cmpEq, cmpGE, sum } from '@genshin-optimizer/pando/engine'
-import { allPathKeys, type RelicSetKey } from '@genshin-optimizer/sr/consts'
+import { type RelicSetKey, allPathKeys } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import { own, ownBuff, registerBuff, team } from '../../util'
 import { entriesForRelic, registerRelic } from '../util'

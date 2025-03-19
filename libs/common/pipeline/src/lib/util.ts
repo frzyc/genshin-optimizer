@@ -1,6 +1,60 @@
+import { spawn } from 'child_process'
 import { mkdirSync, writeFileSync } from 'fs'
-import { dirname } from 'path'
-import * as prettier from 'prettier'
+import { dirname, join } from 'path'
+import { workspaceRoot } from '@nx/devkit'
+
+/**
+ * Formats text, returns formatted text. This function does not write directly to the provided file path.
+ * File path is only used for determining type of parser
+ * @param path Full path to file to get formatted, used for formatter to determine parser type
+ * @param text Contents to be formatted
+ */
+export async function formatText(path: string, text: string): Promise<string> {
+  const biomePath = join(
+    workspaceRoot,
+    'node_modules',
+    '@biomejs',
+    'biome',
+    'bin',
+    'biome'
+  )
+  const biomeConfigPath = join(workspaceRoot, 'biome.json')
+
+  return new Promise((resolve, reject) => {
+    const spawnedProcess = spawn('node', [
+      biomePath,
+      'check',
+      `--stdin-file-path=${path}`,
+      `--config-path=${biomeConfigPath}`,
+      '--formatter-enabled=true',
+      '--organize-imports-enabled=true',
+      '--linter-enabled=false',
+      '--fix',
+    ])
+
+    let data = ''
+    let error = ''
+
+    spawnedProcess.stdout.on('data', (chunk: Buffer) => {
+      data += chunk.toString()
+    })
+
+    spawnedProcess.stderr.on('data', (err: Buffer) => {
+      error += err.toString()
+    })
+
+    spawnedProcess.on('close', (code: number | null) => {
+      if (code === 0) {
+        resolve(data)
+      } else {
+        reject(new Error(`Process exited with code ${code}: ${error}`))
+      }
+    })
+
+    spawnedProcess.stdin.write(text)
+    spawnedProcess.stdin.end()
+  })
+}
 
 export function dumpFile(filename: string, obj: unknown, print = false) {
   mkdirSync(dirname(filename), { recursive: true })
@@ -10,11 +64,7 @@ export function dumpFile(filename: string, obj: unknown, print = false) {
 }
 export async function dumpPrettyFile(filename: string, obj: unknown) {
   mkdirSync(dirname(filename), { recursive: true })
-  const prettierRc = await prettier.resolveConfig(filename)
-  const fileStr = prettier.format(JSON.stringify(obj), {
-    ...prettierRc,
-    parser: 'json',
-  })
+  const fileStr = await formatText(filename, JSON.stringify(obj))
 
   writeFileSync(filename, fileStr)
 }
@@ -38,20 +88,19 @@ export async function generateIndexFromObj(obj: object, path: string) {
     .map((k) => `  ${k},`)
     .join('\n')
 
-  const prettierRc = await prettier.resolveConfig(path)
-  const indexContent = prettier.format(
-    `// This is a generated index file.
+  const indexContent = `
 ${imports}
 
 const data = {
 ${dataContent}
 } as const
 export default data
-`,
-    { ...prettierRc, parser: 'typescript' }
-  )
+`
+  const formatted =
+    '// This is a generated index file.\n' +
+    (await formatText(`${path}/index.ts`, indexContent))
   mkdirSync(path, { recursive: true })
-  writeFileSync(`${path}/index.ts`, indexContent)
+  writeFileSync(`${path}/index.ts`, formatted)
 
   await Promise.all(
     Object.entries(obj).map(async ([key, val]) => {

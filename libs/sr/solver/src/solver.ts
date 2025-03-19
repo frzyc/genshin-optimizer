@@ -22,7 +22,7 @@ import type {
   StatFilter,
   Team,
 } from '@genshin-optimizer/sr/db'
-import { Read, type Calculator, type Tag } from '@genshin-optimizer/sr/formula'
+import { type Calculator, Read, type Tag } from '@genshin-optimizer/sr/formula'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
 
 export function optimize(
@@ -104,13 +104,13 @@ export function optimize(
       ),
     ],
     candidates: [
-      lightCones.map(convertLightConeToStats),
-      relicsBySlot.head.map(convertRelicToStats),
-      relicsBySlot.hands.map(convertRelicToStats),
-      relicsBySlot.body.map(convertRelicToStats),
-      relicsBySlot.feet.map(convertRelicToStats),
-      relicsBySlot.sphere.map(convertRelicToStats),
-      relicsBySlot.rope.map(convertRelicToStats),
+      lightCones.map(lightConeCandidate),
+      relicsBySlot.head.map(relicCandidate),
+      relicsBySlot.hands.map(relicCandidate),
+      relicsBySlot.body.map(relicCandidate),
+      relicsBySlot.feet.map(relicCandidate),
+      relicsBySlot.sphere.map(relicCandidate),
+      relicsBySlot.rope.map(relicCandidate),
     ],
     numWorkers,
     topN,
@@ -118,10 +118,10 @@ export function optimize(
   })
 }
 
-function convertRelicToStats(relic: ICachedRelic): Candidate<string> {
+function relicCandidate(relic: ICachedRelic): Candidate<string> {
   const { id, mainStatKey, level, rarity, setKey, substats } = relic
   return {
-    id,
+    id: id as any,
     [mainStatKey]: getRelicMainStatVal(rarity, mainStatKey, level),
     ...Object.fromEntries(
       substats
@@ -129,18 +129,16 @@ function convertRelicToStats(relic: ICachedRelic): Candidate<string> {
         .map(({ key, value }) => [key, value])
     ),
     [setKey]: 1,
-  } as Candidate<string>
+  }
 }
 
-function convertLightConeToStats(
-  lightCone: ICachedLightCone
-): Candidate<string> {
+function lightConeCandidate(lightCone: ICachedLightCone): Candidate<string> {
   const { id, key, level: lvl, ascension, superimpose } = lightCone
   return {
-    id,
+    id: id as any,
     lvl,
     superimpose,
     ascension,
     [key]: 1,
-  } as Candidate<string>
+  }
 }

@@ -5,7 +5,7 @@ import {
   NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
-import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/gi/consts'
+import { type SubstatKey, artMaxLevel } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi/util'
@@ -227,8 +227,8 @@ export function ArtifactSubstatEditor({
             rolls - 0.0001 > maxSubstat
               ? 'error'
               : maxSubstat > maxRolls
-              ? 'warning'
-              : 'success'
+                ? 'warning'
+                : 'success'
           }
           focused
           inputProps={{

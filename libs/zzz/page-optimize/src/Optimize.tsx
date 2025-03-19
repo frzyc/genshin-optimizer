@@ -12,8 +12,8 @@ import type {
   LocationKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
-  discSlotToMainStatKeys,
   type DiscSlotKey,
+  discSlotToMainStatKeys,
 } from '@genshin-optimizer/zzz/consts'
 import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 import {
@@ -50,7 +50,7 @@ export default function OptimizeWrapper({
   baseStats,
   setResults,
 }: {
-  formulaKey: FormulaKey
+  formulaKey?: FormulaKey
   location: LocationKey
   baseStats: Stats
   setResults: (builds: BuildResult[]) => void
@@ -128,7 +128,7 @@ export default function OptimizeWrapper({
   useEffect(() => () => cancelToken.current(), [])
 
   const onOptimize = useCallback(async () => {
-    if (!character) return
+    if (!character || !formulaKey) return
     const { setFilter2, setFilter4 } = character
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
     setResults([])
@@ -257,7 +257,7 @@ export default function OptimizeWrapper({
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'success'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
-              disabled={!totalPermutations || !character}
+              disabled={!formulaKey || !totalPermutations || !character}
             >
               {optimizing ? t('cancel') : t('optimize')}
             </Button>

@@ -9,7 +9,7 @@ export class DataEntryBase<
   Datakey extends string,
   CacheValue,
   StorageValue,
-  DatabaseType extends Database = Database
+  DatabaseType extends Database = Database,
 > {
   database: DatabaseType
   init: (database: DatabaseType) => StorageValue
@@ -67,7 +67,9 @@ export class DataEntryBase<
       return false
     }
     const value =
-      typeof valueOrFunc === 'function' ? valueOrFunc(old) ?? old : valueOrFunc
+      typeof valueOrFunc === 'function'
+        ? (valueOrFunc(old) ?? old)
+        : valueOrFunc
     const validated = this.validate({ ...old, ...value })
     if (!validated) {
       this.trigger('invalid', value)

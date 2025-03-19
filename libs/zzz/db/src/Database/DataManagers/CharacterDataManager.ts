@@ -99,7 +99,8 @@ export class CharacterDataManager extends DataManager<
       (val, k) => typeof val === 'number' && !!val && k !== 'enemyDefRed'
     )
 
-    if (!allFormulaKeys.includes(formulaKey)) formulaKey = allFormulaKeys[0]
+    if (formulaKey && !allFormulaKeys.includes(formulaKey))
+      formulaKey = undefined
 
     if (typeof constraints !== 'object') constraints = {}
     constraints = objFilter(
@@ -186,9 +187,9 @@ export class CharacterDataManager extends DataManager<
           ),
       equippedWengine: oldChar
         ? oldChar.equippedWengine
-        : Object.values(this.database.wengines?.data ?? {}).find(
+        : (Object.values(this.database.wengines?.data ?? {}).find(
             (w) => w?.location === id
-          )?.id ?? '',
+          )?.id ?? ''),
       ...storageObj,
     }
   }
@@ -274,11 +275,11 @@ export class CharacterDataManager extends DataManager<
     if (!char) return undefined
     for (const discKey of Object.values(char.equippedDiscs)) {
       const disc = this.database.discs.get(discKey)
-      if (disc && disc.location === key)
+      if (discKey && disc && disc.location === key)
         this.database.discs.setCached(discKey, { ...disc, location: '' })
     }
     const wengine = this.database.wengines.get(char.equippedWengine)
-    if (wengine && wengine.location === key)
+    if (char.equippedWengine && wengine && wengine.location === key)
       this.database.wengines.setCached(char.equippedWengine, {
         ...wengine,
         location: '',
@@ -318,8 +319,8 @@ export class CharacterDataManager extends DataManager<
 export function initialCharacterData(key: CharacterKey): ICachedCharacter {
   return {
     key,
-    level: 1,
-    core: 0,
+    level: 60,
+    core: 6,
     wengineKey: allWengineKeys[0],
     wengineLvl: 60,
     wenginePhase: 1,
@@ -327,7 +328,7 @@ export function initialCharacterData(key: CharacterKey): ICachedCharacter {
       // in percent
       enemyDef: 953, // default enemy DEF
     },
-    formulaKey: allFormulaKeys[0],
+    formulaKey: undefined,
     constraints: {}, // in percent
     useEquipped: false,
     slot4: [...discSlotToMainStatKeys['4']],

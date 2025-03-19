@@ -1,3 +1,5 @@
+import { readFileSync } from 'fs'
+import * as http from 'http'
 import {
   Client,
   Collection,
@@ -7,8 +9,6 @@ import {
   REST,
   Routes,
 } from 'discord.js'
-import { readFileSync } from 'fs'
-import * as http from 'http'
 
 // So we can modify config.json after building, thereby not exposing credentials in our build drop
 const { clientid, token } = JSON.parse(
