@@ -19,7 +19,6 @@ import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
   CardContent,
-  CardHeader,
   Divider,
   IconButton,
   InputAdornment,
@@ -47,8 +46,6 @@ export function BonusStatsSection() {
 
   return (
     <CardThemed>
-      <CardHeader title="Bonus Stats" />
-      <Divider />
       <CardContent>
         <Stack spacing={1}>
           {bonusStats.map(({ tag, value }, i) => (

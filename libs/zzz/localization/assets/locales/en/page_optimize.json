@@ -1,0 +1,9 @@
+{
+  "char": "Character",
+  "opt": "Optimize",
+  "builds": "Builds",
+  "eq": "Equip",
+  "wengineCond": "Wengine Conditionals",
+  "discCond": "Disc Conditionals",
+  "bonusStats": "Bonus Stats"
+}
