@@ -250,7 +250,7 @@ function OptimizeWrapper() {
       <CardContent>
         <Stack spacing={1}>
           <StatFilterCard />
-          <WengineFilter numWengine={wengines.length} />
+          <WengineFilter wengines={wengines} />
           <DiscFilter discsBySlot={discsBySlot} />
           {progress && (
             <ProgressIndicator progress={progress} total={totalPermutations} />
