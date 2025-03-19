@@ -2,7 +2,7 @@ import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
-import { TagToTagField, trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 
 const key: DiscSetKey = 'FangedMetal'
@@ -35,7 +35,7 @@ const sheet: UISheet<'2' | '4'> = {
         conditional: {
           label: ch('set4_cond'),
           metadata: cond.inflict_assault,
-          fields: [TagToTagField(buff.set4_cond_inflict_assault.tag)],
+          fields: [tagToTagField(buff.set4_cond_inflict_assault.tag)],
         },
       },
     ],

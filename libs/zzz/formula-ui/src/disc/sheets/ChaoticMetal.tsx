@@ -2,7 +2,7 @@ import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
-import { TagToTagField, trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 
 const key: DiscSetKey = 'ChaoticMetal'
@@ -32,14 +32,14 @@ const sheet: UISheet<'2' | '4'> = {
       },
       {
         type: 'fields',
-        fields: [TagToTagField(buff.set4_passive.tag)],
+        fields: [tagToTagField(buff.set4_passive.tag)],
       },
       {
         type: 'conditional',
         conditional: {
           label: ch('set4_cond'),
           metadata: cond.trigger_corruption,
-          fields: [TagToTagField(buff.set4_cond_trigger_corruption.tag)],
+          fields: [tagToTagField(buff.set4_cond_trigger_corruption.tag)],
         },
       },
     ],

@@ -15,7 +15,7 @@ import {
   OptConfigContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import { DiscSetFilter, StatDisplay } from '@genshin-optimizer/zzz/ui'
+import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Button,
@@ -30,6 +30,7 @@ import {
 import { Box } from '@mui/system'
 import { Suspense, useCallback, useContext } from 'react'
 import { DiscLevelFilter } from './DiscLevelFilter'
+import { DiscSetFilter } from './DiscSetFilter'
 
 export function DiscFilter({
   discsBySlot,
@@ -109,7 +110,6 @@ function DiscFilterModal({
             <Stack spacing={1}>
               <DiscLevelFilter disabled={disabled} />
               <MainStatSelector discsBySlot={discsBySlot} disabled={disabled} />
-              <SetFilter disabled={disabled} />
               <Button
                 disabled={disabled}
                 onClick={() =>
@@ -121,6 +121,7 @@ function DiscFilterModal({
               >
                 Use equipped Discs
               </Button>
+              <SetFilter disabled={disabled} />
             </Stack>
           </Suspense>
         </CardContent>
