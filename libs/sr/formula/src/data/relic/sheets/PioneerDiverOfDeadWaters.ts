@@ -1,4 +1,4 @@
-import { cmpEq, cmpGE, prod } from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import {
@@ -17,12 +17,7 @@ const dm = mappedStats.relic[key]
 const relicCount = own.common.count.sheet(key)
 
 const { affectedByDebuff, wearerDebuff } = allBoolConditionals(key)
-const { debuffCount } = allNumConditionals(
-  key,
-  true,
-  dm[4].debuffThreshold1,
-  dm[4].debuffThreshold2
-)
+const { debuffCount } = allNumConditionals(key, true, 0, dm[4].debuffThreshold2)
 
 const sheet = registerRelic(
   key,
@@ -43,11 +38,13 @@ const sheet = registerRelic(
       cmpGE(
         relicCount,
         4,
-        affectedByDebuff.ifOn(
-          cmpEq(
+        cmpGE(
+          debuffCount,
+          dm[4].debuffThreshold2,
+          prod(wearerDebuff.ifOn(2, 1), dm[4].crit_dmg_2),
+          cmpGE(
             debuffCount,
-            dm[4].debuffThreshold2,
-            prod(wearerDebuff.ifOn(2, 1), dm[4].crit_dmg_2),
+            dm[4].debuffThreshold1,
             prod(wearerDebuff.ifOn(2, 1), dm[4].crit_dmg_1)
           )
         )

@@ -8,7 +8,7 @@ let o = 0
 
 const dm = {
   2: {
-    dmgRed_: data_gen.setEffects[0].otherStats[o++],
+    dmgRed_: data_gen.setEffects[0].otherStats[0],
   },
   4: {
     hpThreshold: data_gen.setEffects[1].otherStats[o++],
