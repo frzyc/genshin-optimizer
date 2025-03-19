@@ -4,12 +4,15 @@ import { allStats } from '../../../allStats'
 const key: RelicSetKey = 'GiantTreeOfRaptBrooding'
 const data_gen = allStats.relic[key]
 
-let o = 0
-// TODO: Load scalings
+let o = 1
+
 const dm = {
   2: {
-    cond_dmg_: data_gen.setEffects[0].otherStats[o++] ?? [1, 2],
-    passive_atk: data_gen.setEffects[0].passiveStats.atk ?? 1,
+    passive_spd_: data_gen.setEffects[0].passiveStats.spd_,
+    spdThreshold1: data_gen.setEffects[0].otherStats[o++],
+    spdThreshold2: data_gen.setEffects[0].otherStats[o++],
+    heal_1: data_gen.setEffects[0].otherStats[o++],
+    heal_2: data_gen.setEffects[0].otherStats[o++],
   },
 } as const
 

@@ -17,7 +17,7 @@ const sheet = registerRelic(
 
   // Conditional buffs
   registerBuff(
-    'set2_dmg_',
+    'set2_atk_',
     ownBuff.premod.atk_.add(
       cmpGE(
         relicCount,

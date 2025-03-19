@@ -308,24 +308,15 @@ export const conditionals = {
     },
   },
   PhaethonsMelody: {
-    boolConditional: {
+    not_char_use_ex: {
       sheet: 'PhaethonsMelody',
-      name: 'boolConditional',
+      name: 'not_char_use_ex',
       type: 'bool',
     },
-    listConditional: {
+    squad_use_ex: {
       sheet: 'PhaethonsMelody',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PhaethonsMelody',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      name: 'squad_use_ex',
+      type: 'bool',
     },
   },
   PolarMetal: {
@@ -518,24 +509,13 @@ export const conditionals = {
     },
   },
   ShadowHarmony: {
-    boolConditional: {
+    stacks: {
       sheet: 'ShadowHarmony',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ShadowHarmony',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ShadowHarmony',
-      name: 'numConditional',
+      name: 'stacks',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   SharpenedStinger: {
@@ -1890,6 +1870,17 @@ export const formulas = {
 } as const
 export const buffs = {
   AstralVoice: {
+    set2: {
+      sheet: 'AstralVoice',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'atk_',
+        sheet: 'AstralVoice',
+        name: 'set2',
+      },
+    },
     set4_team_dmg_: {
       sheet: 'AstralVoice',
       name: 'set4_team_dmg_',
@@ -1979,6 +1970,17 @@ export const buffs = {
     },
   },
   BranchBladeSong: {
+    set2: {
+      sheet: 'BranchBladeSong',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'crit_dmg_',
+        sheet: 'BranchBladeSong',
+        name: 'set2',
+      },
+    },
     set4_cond: {
       sheet: 'BranchBladeSong',
       name: 'set4_cond',
@@ -2040,6 +2042,17 @@ export const buffs = {
     },
   },
   ChaosJazz: {
+    set2: {
+      sheet: 'ChaosJazz',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'anomProf',
+        sheet: 'ChaosJazz',
+        name: 'set2',
+      },
+    },
     set4_off_field_assist_dmg_: {
       sheet: 'ChaosJazz',
       name: 'set4_off_field_assist_dmg_',
@@ -2094,6 +2107,18 @@ export const buffs = {
     },
   },
   ChaoticMetal: {
+    set2: {
+      sheet: 'ChaoticMetal',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'dmg_',
+        sheet: 'ChaoticMetal',
+        attribute: 'ether',
+        name: 'set2',
+      },
+    },
     set4_cond_trigger_corruption: {
       sheet: 'ChaoticMetal',
       name: 'set4_cond_trigger_corruption',
@@ -2244,6 +2269,18 @@ export const buffs = {
     },
   },
   FangedMetal: {
+    set2: {
+      sheet: 'FangedMetal',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'dmg_',
+        sheet: 'FangedMetal',
+        attribute: 'physical',
+        name: 'set2',
+      },
+    },
     set4_cond_inflict_assault: {
       sheet: 'FangedMetal',
       name: 'set4_cond_inflict_assault',
@@ -2288,6 +2325,19 @@ export const buffs = {
         q: 'enerRegen',
         sheet: 'FlamemakerShaker',
         name: 'enerRegen',
+      },
+    },
+  },
+  FreedomBlues: {
+    set2: {
+      sheet: 'FreedomBlues',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'anomProf',
+        sheet: 'FreedomBlues',
+        name: 'set2',
       },
     },
   },
@@ -2429,6 +2479,17 @@ export const buffs = {
     },
   },
   HormonePunk: {
+    set2: {
+      sheet: 'HormonePunk',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'atk_',
+        sheet: 'HormonePunk',
+        name: 'set2',
+      },
+    },
     set4_cond_entering_combat: {
       sheet: 'HormonePunk',
       name: 'set4_cond_entering_combat',
@@ -2504,6 +2565,18 @@ export const buffs = {
     },
   },
   InfernoMetal: {
+    set2: {
+      sheet: 'InfernoMetal',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'dmg_',
+        sheet: 'InfernoMetal',
+        attribute: 'fire',
+        name: 'set2',
+      },
+    },
     set4_cond_hitting_burning_enemy: {
       sheet: 'InfernoMetal',
       name: 'set4_cond_hitting_burning_enemy',
@@ -2712,41 +2785,54 @@ export const buffs = {
     },
   },
   PhaethonsMelody: {
-    enemy_defIgn_: {
+    set2: {
       sheet: 'PhaethonsMelody',
-      name: 'enemy_defIgn_',
+      name: 'set2',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
+        qt: 'initial',
+        q: 'anomMas_',
         sheet: 'PhaethonsMelody',
-        name: 'enemy_defIgn_',
+        name: 'set2',
       },
     },
-    set4_dmg_: {
+    set4_not_self_ether_: {
       sheet: 'PhaethonsMelody',
-      name: 'set4_dmg_',
+      name: 'set4_not_self_ether_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'PhaethonsMelody',
-        name: 'set4_dmg_',
+        attribute: 'ether',
+        name: 'set4_not_self_ether_',
       },
     },
-    team_dmg_: {
+    set4_squad_anomProf: {
       sheet: 'PhaethonsMelody',
-      name: 'team_dmg_',
+      name: 'set4_squad_anomProf',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'anomProf',
         sheet: 'PhaethonsMelody',
-        name: 'team_dmg_',
+        name: 'set4_squad_anomProf',
       },
     },
   },
   PolarMetal: {
+    set2: {
+      sheet: 'PolarMetal',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'dmg_',
+        sheet: 'PolarMetal',
+        attribute: 'ice',
+        name: 'set2',
+      },
+    },
     set4_basic_dmg_: {
       sheet: 'PolarMetal',
       name: 'set4_basic_dmg_',
@@ -2808,6 +2894,17 @@ export const buffs = {
     },
   },
   ProtoPunk: {
+    set2: {
+      sheet: 'ProtoPunk',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'shield_',
+        sheet: 'ProtoPunk',
+        name: 'set2',
+      },
+    },
     set4_cond_def_assist_or_evasive_assist_dmg_: {
       sheet: 'ProtoPunk',
       name: 'set4_cond_def_assist_or_evasive_assist_dmg_',
@@ -2821,6 +2918,17 @@ export const buffs = {
     },
   },
   PufferElectro: {
+    set2: {
+      sheet: 'PufferElectro',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'pen_',
+        sheet: 'PufferElectro',
+        name: 'set2',
+      },
+    },
     set4_cond_launching_ult_atk_: {
       sheet: 'PufferElectro',
       name: 'set4_cond_launching_ult_atk_',
@@ -3091,37 +3199,38 @@ export const buffs = {
     },
   },
   ShadowHarmony: {
-    enemy_defIgn_: {
+    set2: {
       sheet: 'ShadowHarmony',
-      name: 'enemy_defIgn_',
+      name: 'set2',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
+        qt: 'initial',
+        q: 'dmg_',
         sheet: 'ShadowHarmony',
-        name: 'enemy_defIgn_',
+        damageType1: 'aftershock',
+        name: 'set2',
       },
     },
-    set4_dmg_: {
+    set4_stack_atk_: {
       sheet: 'ShadowHarmony',
-      name: 'set4_dmg_',
+      name: 'set4_stack_atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'ShadowHarmony',
-        name: 'set4_dmg_',
+        name: 'set4_stack_atk_',
       },
     },
-    team_dmg_: {
+    set4_stack_crit_: {
       sheet: 'ShadowHarmony',
-      name: 'team_dmg_',
+      name: 'set4_stack_crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'ShadowHarmony',
-        name: 'team_dmg_',
+        name: 'set4_stack_crit_',
       },
     },
   },
@@ -3161,6 +3270,17 @@ export const buffs = {
     },
   },
   ShockstarDisco: {
+    set2: {
+      sheet: 'ShockstarDisco',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'impact_',
+        sheet: 'ShockstarDisco',
+        name: 'set2',
+      },
+    },
     set4_basic_daze_: {
       sheet: 'ShockstarDisco',
       name: 'set4_basic_daze_',
@@ -3241,6 +3361,19 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'SliceOfTime',
         name: 'team_dmg_',
+      },
+    },
+  },
+  SoulRock: {
+    set2: {
+      sheet: 'SoulRock',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'def_',
+        sheet: 'SoulRock',
+        name: 'set2',
       },
     },
   },
@@ -3490,6 +3623,17 @@ export const buffs = {
     },
   },
   SwingJazz: {
+    set2: {
+      sheet: 'SwingJazz',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'enerRegen_',
+        sheet: 'SwingJazz',
+        name: 'set2',
+      },
+    },
     set4_cond_chain_or_ult: {
       sheet: 'SwingJazz',
       name: 'set4_cond_chain_or_ult',
@@ -3608,6 +3752,18 @@ export const buffs = {
     },
   },
   ThunderMetal: {
+    set2: {
+      sheet: 'ThunderMetal',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'dmg_',
+        sheet: 'ThunderMetal',
+        attribute: 'electric',
+        name: 'set2',
+      },
+    },
     set4_cond_enemy_shocked_atk_: {
       sheet: 'ThunderMetal',
       name: 'set4_cond_enemy_shocked_atk_',
@@ -3901,6 +4057,17 @@ export const buffs = {
     },
   },
   WoodpeckerElectro: {
+    set2: {
+      sheet: 'WoodpeckerElectro',
+      name: 'set2',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'crit_',
+        sheet: 'WoodpeckerElectro',
+        name: 'set2',
+      },
+    },
     set4_cond_crit_basic_dodge_ex_atk_: {
       sheet: 'WoodpeckerElectro',
       name: 'set4_cond_crit_basic_dodge_ex_atk_',
