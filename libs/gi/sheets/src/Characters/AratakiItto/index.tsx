@@ -223,12 +223,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.akSlash, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.akFinal, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
           }),
         },
         {
@@ -238,7 +238,7 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.charged.sSlash, {
-            name: ct.chg(`auto.skillParams.7`),
+            name: ct.chg('auto.skillParams.7'),
           }),
         },
         {
@@ -308,12 +308,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.dmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.hp, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
             variant: 'heal',
           }),
         },

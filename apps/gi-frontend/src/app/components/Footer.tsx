@@ -37,7 +37,7 @@ function FooterContent() {
           <Trans
             t={t}
             i18nKey="ui:appVersion"
-            values={{ version: process.env.go_version }}
+            values={{ version: process.env['go_version'] }}
           >
             Genshin Optimizer Version:
             <a
@@ -47,7 +47,7 @@ function FooterContent() {
               rel="noreferrer"
               style={{ color: 'inherit' }}
             >
-              {process.env.go_version}
+              {process.env['go_version']}
             </a>
           </Trans>
         </Typography>

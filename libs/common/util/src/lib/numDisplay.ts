@@ -7,9 +7,9 @@ export function valueString(
   unit: Unit = '',
   fixed = -1
 ): string {
-  if (!isFinite(value)) {
-    if (value > 0) return `\u221E`
-    if (value < 0) return `-\u221E`
+  if (!Number.isFinite(value)) {
+    if (value > 0) return '\u221E'
+    if (value < 0) return '-\u221E'
     return 'NaN'
   }
   if (unit === '%') value *= 100

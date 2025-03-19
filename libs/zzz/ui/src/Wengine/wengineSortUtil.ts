@@ -34,7 +34,7 @@ export function wengineFilterConfigs(): FilterConfigs<
     showEquipped: () => true, // Per character filtering is applied in `locations`
     showInventory: (we, filter) => (!we.location ? filter : true),
     locations: (we, filter, filters) =>
-      we.location && !filters['showEquipped']
+      we.location && !filters.showEquipped
         ? filter.includes(we.location)
         : true,
   }

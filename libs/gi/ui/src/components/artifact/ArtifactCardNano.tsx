@@ -195,8 +195,8 @@ export function ArtifactCardNano({
           justifyContent="space-between"
           sx={{ p: 1 }}
         >
-          {substats.map((stat: ICachedSubstat, i: number) => (
-            <SubstatDisplay key={i + stat.key} stat={stat} />
+          {substats.map((stat: ICachedSubstat) => (
+            <SubstatDisplay key={stat.key} stat={stat} />
           ))}
         </Box>
       </Box>

@@ -128,6 +128,7 @@ export default function QuickLinksCard() {
                 const { title, icon, url } = link
                 return (
                   <CardActionArea
+                    key={url}
                     component={Link}
                     href={url}
                     target="_blank"
@@ -156,6 +157,7 @@ export default function QuickLinksCard() {
                 const { title, icon, url } = link
                 return (
                   <CardActionArea
+                    key={url}
                     component={Link}
                     href={url}
                     target="_blank"
@@ -184,6 +186,7 @@ export default function QuickLinksCard() {
                 const { title, icon, url, to } = link
                 return (
                   <CardActionArea
+                    key={url}
                     component={to ? RouterLink : Link}
                     href={to ? undefined : url}
                     target={to ? undefined : '_blank'}

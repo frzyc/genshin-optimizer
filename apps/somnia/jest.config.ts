@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'somnia',
   preset: '../../jest.preset.js',

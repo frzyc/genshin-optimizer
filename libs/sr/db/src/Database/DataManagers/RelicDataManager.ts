@@ -493,7 +493,7 @@ function parseSubstats(
     if (
       !allRelicSubStatKeys.includes(key as RelicSubStatKey) ||
       typeof value !== 'number' ||
-      !isFinite(value)
+      !Number.isFinite(value)
     )
       return defSub()
     if (key) {

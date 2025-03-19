@@ -91,13 +91,13 @@ export function travelerSheet(
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg1, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.dmg2, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(2)',
           }),
         },
@@ -113,17 +113,17 @@ export function travelerSheet(
     {
       fields: [
         {
-          node: infoMut(dmgFormulas.plunging['dmg'], {
+          node: infoMut(dmgFormulas.plunging.dmg, {
             name: stg('plunging.dmg'),
           }),
         },
         {
-          node: infoMut(dmgFormulas.plunging['low'], {
+          node: infoMut(dmgFormulas.plunging.low, {
             name: stg('plunging.low'),
           }),
         },
         {
-          node: infoMut(dmgFormulas.plunging['high'], {
+          node: infoMut(dmgFormulas.plunging.high, {
             name: stg('plunging.high'),
           }),
         },

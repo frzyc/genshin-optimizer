@@ -120,7 +120,7 @@ function charSheetKeyToCharKey(csk: CharacterSheetKey): CharacterKey {
     travelerMKeys.includes(csk as (typeof travelerMKeys)[number])
   )
     return csk.slice(0, -1) as CharacterKey
-  else return csk as CharacterKey
+  return csk as CharacterKey
 }
 
 const headerTemplate = (
@@ -159,8 +159,8 @@ function canShowTemplate(
   if (!canShowTalentsNodes[talentKey]) {
     return canShow
   }
-  let compareVal
-  let val
+  let compareVal: NumNode
+  let val: number
   if (['passive1', 'passive2'].includes(talentKey)) {
     compareVal = input.asc
     val = +talentKey.slice(-1) === 1 ? 1 : 4

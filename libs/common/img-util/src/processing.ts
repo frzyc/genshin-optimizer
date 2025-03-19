@@ -106,19 +106,19 @@ export function findHistogramRange(
   const max = Math.max(...histogram)
   const hMax = max * threshold
   const length = histogram.length
-  let a = -Infinity
+  let a = Number.NEGATIVE_INFINITY
   for (let i = 0; i < length; i++) {
     const maxed = histogram[i] > hMax
-    if (!maxed) a = -Infinity
+    if (!maxed) a = Number.NEGATIVE_INFINITY
     else if (maxed && a < 0) a = i
     else if (maxed && i - a >= window) break
   }
   if (a < 0) a = 0
 
-  let b = Infinity
+  let b = Number.POSITIVE_INFINITY
   for (let i = length - 1; i >= 0; i--) {
     const maxed = histogram[i] > hMax
-    if (!maxed) b = Infinity
+    if (!maxed) b = Number.POSITIVE_INFINITY
     else if (maxed && b > length - 1) b = i
     else if (maxed && b - i >= window) break
   }
@@ -152,7 +152,7 @@ export function thresholdFilter(pixels: Uint8ClampedArray, level: number) {
     const g = pixels[i + 1]
     const b = pixels[i + 2]
     const gray = 0.2126 * r + 0.7152 * g + 0.0722 * b
-    let val
+    let val: number
     if (gray >= thresh) {
       val = 255
     } else {
@@ -191,7 +191,7 @@ function buildBlurKernel(r: number) {
     }
 
     let bki: number
-    let bm, bmi: Int32Array
+    let bm: Int32Array, bmi: Int32Array
 
     for (let i = 1, radiusi = radius - 1; i < radius; i++) {
       blurKernel[radius + i] = blurKernel[radiusi] = bki = radiusi * radiusi
@@ -222,16 +222,16 @@ function blurARGB(
   for (let j = 0; j < numPackedPixels; j++) {
     argb[j] = getARGB(pixels, j)
   }
-  let sum, cr, cg, cb, ca
-  let read, ri, ym, ymi, bk0
+  let sum: number, cr: number, cg: number, cb: number, ca: number
+  let read: number, ri: number, ym: number, ymi: number, bk0: number
   const a2 = new Int32Array(numPackedPixels)
   const r2 = new Int32Array(numPackedPixels)
   const g2 = new Int32Array(numPackedPixels)
   const b2 = new Int32Array(numPackedPixels)
   let yi = 0
   buildBlurKernel(radius)
-  let x, y, i
-  let bm
+  let x: number, y: number, i: number
+  let bm: Int32Array
   for (y = 0; y < height; y++) {
     for (x = 0; x < width; x++) {
       cb = cg = cr = ca = sum = 0
@@ -332,11 +332,15 @@ function dilate(pixels: Uint8ClampedArray, width: number) {
   let currIdx = 0
   const maxIdx = pixels.length ? pixels.length / 4 : 0
   const out = new Int32Array(maxIdx)
-  let currRowIdx, maxRowIdx, colOrig, colOut, currLum
+  let currRowIdx: number,
+    maxRowIdx: number,
+    colOrig: number,
+    colOut: number,
+    currLum: number
 
-  let idxRight, idxLeft, idxUp, idxDown
-  let colRight, colLeft, colUp, colDown
-  let lumRight, lumLeft, lumUp, lumDown
+  let idxRight: number, idxLeft: number, idxUp: number, idxDown: number
+  let colRight: number, colLeft: number, colUp: number, colDown: number
+  let lumRight: number, lumLeft: number, lumUp: number, lumDown: number
 
   while (currIdx < maxIdx) {
     currRowIdx = currIdx

@@ -191,8 +191,8 @@ function UserAvatar() {
       <Tooltip title="Open settings">
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
           <Avatar
-            alt={user?.user_metadata['full_name']}
-            src={user?.user_metadata['avatar_url']}
+            alt={user?.user_metadata.full_name}
+            src={user?.user_metadata.avatar_url}
           />
         </IconButton>
       </Tooltip>

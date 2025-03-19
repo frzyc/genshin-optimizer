@@ -1,5 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import { type CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import {
@@ -318,7 +318,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
           }),
         },
         {
@@ -368,19 +368,19 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.skill.thrust1Dmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
             textSuffix: st('level', { count: 1 }),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.thrust2Dmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
             textSuffix: st('level', { count: 2 }),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.thrust3Dmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
             textSuffix: st('level', { count: 3 }),
             multi: 3,
           }),
@@ -407,7 +407,7 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.skill.bladeDmg, {
-            name: ct.chg(`skill.skillParams.5`),
+            name: ct.chg('skill.skillParams.5'),
           }),
         },
         {
@@ -457,7 +457,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.skillDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
             multi: 5,
           }),
         },

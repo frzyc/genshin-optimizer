@@ -147,7 +147,7 @@ export function StatFilterDisplay({
           setTargetisMax={(isMax) => setTargetisMax(i, isMax)}
           setDisabled={(disabled) => setTargetDisabled(i, disabled)}
           disabled={disabled}
-          key={i + JSON.stringify(statFilter)}
+          key={JSON.stringify(statFilter)}
         />
       ))}
       <InitialStatDropdown onSelect={newTarget} />

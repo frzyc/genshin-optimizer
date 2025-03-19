@@ -343,7 +343,7 @@ export function DiscEditor({
                     value={level}
                     disabled={!disc.rarity}
                     onChange={(e) => {
-                      const value = parseInt(e.target.value) || 0
+                      const value = Number.parseInt(e.target.value) || 0
                       setDisc({ level: value })
                     }}
                   />
@@ -509,7 +509,7 @@ export function DiscEditor({
                                 <span>
                                   Screenshots in file-queue:
                                   <b>{queueTotal}</b>
-                                  {/* {process.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
+                                  {/* {process.env['NODE_ENV'] === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
                                 </span>
                               </Typography>
 
@@ -622,8 +622,8 @@ export function DiscEditor({
             {/* Error alert */}
             {!isValid && (
               <Alert variant="filled" severity="error">
-                {errors?.map((e, i) => (
-                  <div key={i}>{e}</div>
+                {errors?.map((e) => (
+                  <div key={e}>{e}</div>
                 ))}
               </Alert>
             )}

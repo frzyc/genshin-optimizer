@@ -11,8 +11,8 @@ import {
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'KeyOfKhajNisut'
-const selfEmSrc = [NaN, 0.0012, 0.0015, 0.0018, 0.0021, 0.0024]
-const teamEmSrc = [NaN, 0.002, 0.0025, 0.003, 0.0035, 0.004]
+const selfEmSrc = [Number.NaN, 0.0012, 0.0015, 0.0018, 0.0021, 0.0024]
+const teamEmSrc = [Number.NaN, 0.002, 0.0025, 0.003, 0.0035, 0.004]
 
 const {
   final,

@@ -1,1 +1,1 @@
-export interface GenHakushinDataExecutorSchema {} // eslint-disable-line
+export interface GenHakushinDataExecutorSchema {}

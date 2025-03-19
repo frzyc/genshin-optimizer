@@ -63,6 +63,7 @@ export default function OptimizeWrapper({
     undefined
   )
   const character = useCharacterContext()
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     setProgress(undefined)
   }, [character])
@@ -163,7 +164,7 @@ export default function OptimizeWrapper({
   const onCancel = useCallback(() => {
     cancelToken.current()
     setOptimizing(false)
-  }, [cancelToken])
+  }, [])
   const discTypo = (key: DiscSlotKey) => (
     <Typography>
       Disc {key} <SqBadge>{discsBySlot[key].length}</SqBadge>

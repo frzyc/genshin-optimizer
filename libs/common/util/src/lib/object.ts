@@ -1,23 +1,20 @@
-// crawl an object, calling a callback on every object that passes a validation function
+// Crawl an object, calling a callback on every object that passes a validation function
 export function crawlObject<T, O>(
   obj: Record<string, T> | T,
-  keys: string[] = [],
+  keys: string[],
   validate: (o: unknown, keys: string[]) => boolean,
   cb: (o: O, keys: string[]) => void
 ) {
   if (validate(obj as T, keys)) cb(obj as O, keys)
-  else
-    obj &&
-      typeof obj === 'object' &&
-      Object.entries(obj).forEach(([key, val]) =>
-        crawlObject(val, [...keys, key], validate, cb)
-      )
+  else if (obj && typeof obj === 'object')
+    for (const [key, val] of Object.entries(obj))
+      crawlObject(val, [...keys, key], validate, cb)
 }
 
-// crawl an object, calling a callback on every object that passes a validation function
+// Crawl an object, calling a callback on every object that passes a validation function
 export async function crawlObjectAsync<T, O>(
   obj: Record<string, T> | T,
-  keys: string[] = [],
+  keys: string[],
   validate: (o: unknown, keys: string[]) => boolean,
   cb: (o: O, keys: string[]) => Promise<void>
 ) {
@@ -29,7 +26,7 @@ export async function crawlObjectAsync<T, O>(
   }
 }
 
-// assign a value to a nested object, creating the path if it doesn't exist yet. obj.[keys...] = value
+// Assign a value to a nested object, creating the path if it doesn't exist yet. obj.[keys...] = value
 export function layeredAssignment<T, Obj>(
   obj: Obj,
   keys: readonly (number | string)[],
@@ -125,10 +122,10 @@ export function objKeyValMap<K, K2 extends string | number, V>(
   return Object.fromEntries(items.map((t, i) => map(t, i))) as Record<K2, V>
 }
 
-//multiplies every numerical value in the obj by a multiplier.
+// Multiplies every numerical value in the obj by a multiplier.
 export function objMultiplication(obj: Record<string, unknown>, multi: number) {
   if (multi === 1) return obj
-  Object.keys(obj).forEach((prop: any) => {
+  for (const prop of Object.keys(obj)) {
     if (typeof obj[prop] === 'object')
       objMultiplication(
         (obj as Record<string, Record<string, unknown>>)[prop],
@@ -136,10 +133,10 @@ export function objMultiplication(obj: Record<string, unknown>, multi: number) {
       )
     if (typeof obj[prop] === 'number')
       obj[prop] = (obj as Record<string, number>)[prop] * multi
-  })
+  }
   return obj
 }
-//delete the value denoted by the path. Will also delete empty objects as well.
+// Delete the value denoted by the path. Will also delete empty objects as well.
 export function deletePropPath(
   obj: Record<string, unknown>,
   path: readonly string[]
@@ -180,7 +177,7 @@ export const getObjectKeysRecursive = (obj: unknown): string[] =>
 export function deepFreeze<T>(obj: T, layers = 5): T {
   if (layers === 0) return obj
   if (obj && typeof obj === 'object')
-    Object.values(Object.freeze(obj)).forEach((o) => deepFreeze(o, layers - 1))
+    for (const o of Object.values(Object.freeze(obj))) deepFreeze(o, layers - 1)
   return obj
 }
 

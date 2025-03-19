@@ -16,26 +16,26 @@ import {
 import TabArtifact from './TabArtifact'
 import TabCharacter from './TabCharacter'
 import TabWeapon from './TabWeapon'
-type Tab = {
+type TabInfo = {
   i18Key: string
   icon: ReactElement
   value: string
   to: string
 }
-const artifacts: Tab = {
+const artifacts: TabInfo = {
   i18Key: 'tabs.artifacts',
   icon: <FlowerIcon />,
   value: 'artifacts',
   to: '/artifacts',
 }
-const weapons: Tab = {
+const weapons: TabInfo = {
   i18Key: 'tabs.weapons',
   icon: <AnvilIcon />,
   value: 'weapons',
   to: '/weapons',
 }
 
-const characters: Tab = {
+const characters: TabInfo = {
   i18Key: 'tabs.characters',
   icon: <People />,
   value: 'characters',

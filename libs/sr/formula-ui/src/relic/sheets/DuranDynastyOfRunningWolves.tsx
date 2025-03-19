@@ -12,21 +12,15 @@ import { trans } from '../../util'
 const key: RelicSetKey = 'DuranDynastyOfRunningWolves'
 const [chg, _ch] = trans('relic', key)
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const dm = mappedStats.relic[key]
+const _dm = mappedStats.relic[key]
 const icon = relicAsset(key, getDefaultRelicSlot(key))
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const cond = conditionals[key]
+const _cond = conditionals[key]
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const buff = buffs[key]
+const _buff = buffs[key]
 
 const sheet: UISheet<'2' | '4'> = {
   2: {

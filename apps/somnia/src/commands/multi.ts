@@ -32,7 +32,7 @@ async function fetchMultis(client: Client) {
   if (now - cacheTime > cacheDuration) {
     cacheTime = now
     const channel = await client.channels.fetch(multioptThread)
-    if (channel && channel.type == ChannelType.GuildForum) {
+    if (channel && channel.type === ChannelType.GuildForum) {
       const activeThreads = (await channel.threads.fetchActive()).threads
       const inactiveThreads = (await channel.threads.fetchArchived()).threads
       activeThreads.forEach((thread, id) => {
@@ -42,7 +42,7 @@ async function fetchMultis(client: Client) {
         multilist[thread.name] = id
       })
     }
-    delete multilist['Guidelines']
+    multilist.Guidelines = undefined
     console.log('refreshing multi-opt cache')
   }
 }
@@ -74,7 +74,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
   const threadId = multilist[name]
   const thread = await interaction.client.channels.fetch(threadId)
 
-  if (thread && thread.isThread()) {
+  if (thread?.isThread()) {
     const starterMsg = await thread.fetchStarterMessage()
     const thumbnail = starterMsg?.attachments.first()?.url
     const charKey = nameToKey(name)

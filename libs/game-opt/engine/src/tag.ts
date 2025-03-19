@@ -88,7 +88,7 @@ type CondIgnored = 'both' | 'src' | 'dst' | 'none'
 function allConditionals<T, Tag_ extends Tag>(
   nullTag: Tag_,
   sheet: Sheet<Tag_>,
-  shared: CondIgnored = 'none',
+  shared: CondIgnored | undefined,
   meta: IBaseConditionalData,
   transform: (r: Read<Tag_>, q: string) => T
 ): Record<string, T> {
@@ -105,6 +105,6 @@ function allConditionals<T, Tag_ extends Tag>(
   if (shared === 'both')
     base = base.withTag({ src: null, dst: null } as any as Tag_)
   else if (shared !== 'none')
-    base = base.with(shared, null as Tag_['src' | 'dst'])
+    base = base.with(shared ?? 'dst', null as Tag_['src' | 'dst']) // Conditionals ignore dst by default
   return base.withAll('q', [], transform)
 }

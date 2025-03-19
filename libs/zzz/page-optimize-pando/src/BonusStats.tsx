@@ -53,7 +53,7 @@ export function BonusStatsSection() {
         <Stack spacing={1}>
           {bonusStats.map(({ tag, value }, i) => (
             <BonusStatDisplay
-              key={JSON.stringify(tag) + i}
+              key={JSON.stringify(tag)}
               tag={tag}
               value={value}
               setValue={(value) => setStat(tag, value, i)}

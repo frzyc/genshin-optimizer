@@ -16,6 +16,6 @@ export function useDataEntryBase<
   useEffect(() => {
     setData(entry?.get())
     return entry?.follow((r, v) => r === 'update' && setData(v))
-  }, [entry, setData])
+  }, [entry])
   return data
 }

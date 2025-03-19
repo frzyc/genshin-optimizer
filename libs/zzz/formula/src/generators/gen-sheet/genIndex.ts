@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs'
+import { writeFileSync } from 'node:fs'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   allCharacterKeys,

@@ -131,35 +131,35 @@ export function ArtifactFilterDisplay({
         // The slot filter is disabled during artifact swapping, in which case our artifact total displayed by
         // the filter should reflect only the slot being swapped.
         if (!disableSlotFilter || art.slotKey === filterOption.slotKeys[0]) {
-          ctMap['rarityTotal'][rarity].total++
-          ctMap['slotTotal'][slotKey].total++
-          ctMap['lockedTotal'][lock].total++
-          ctMap['linesTotal'][lns].total++
-          ctMap['equippedTotal'][equipped].total++
-          ctMap['setTotal'][setKey].total++
-          ctMap['mainStatTotal'][mainStatKey].total++
+          ctMap.rarityTotal[rarity].total++
+          ctMap.slotTotal[slotKey].total++
+          ctMap.lockedTotal[lock].total++
+          ctMap.linesTotal[lns].total++
+          ctMap.equippedTotal[equipped].total++
+          ctMap.setTotal[setKey].total++
+          ctMap.mainStatTotal[mainStatKey].total++
           substats.forEach((sub) => {
             const subKey = sub.key
             if (!subKey) return
-            ctMap['subStatTotal'][subKey].total++
-            if (filteredIdMap[id]) ctMap['subStatTotal'][subKey].current++
+            ctMap.subStatTotal[subKey].total++
+            if (filteredIdMap[id]) ctMap.subStatTotal[subKey].current++
           })
-          ctMap['locationTotal'][location].total++
-          ctMap['excludedTotal'][excluded].total++
+          ctMap.locationTotal[location].total++
+          ctMap.excludedTotal[excluded].total++
         }
 
         if (filteredIdMap[id]) {
-          ctMap['rarityTotal'][rarity].current++
-          ctMap['slotTotal'][slotKey].current++
-          ctMap['lockedTotal'][lock].current++
-          ctMap['linesTotal'][lns].current++
-          ctMap['equippedTotal'][equipped].current++
-          ctMap['setTotal'][setKey].current++
-          ctMap['mainStatTotal'][mainStatKey].current++
+          ctMap.rarityTotal[rarity].current++
+          ctMap.slotTotal[slotKey].current++
+          ctMap.lockedTotal[lock].current++
+          ctMap.linesTotal[lns].current++
+          ctMap.equippedTotal[equipped].current++
+          ctMap.setTotal[setKey].current++
+          ctMap.mainStatTotal[mainStatKey].current++
           // substats handled above
           // substats handled above
-          ctMap['locationTotal'][location].current++
-          ctMap['excludedTotal'][excluded].current++
+          ctMap.locationTotal[location].current++
+          ctMap.excludedTotal[excluded].current++
         }
       })
     )
@@ -321,7 +321,7 @@ export function ArtifactFilterDisplay({
                 {t('artInInv')}{' '}
                 <Chip
                   sx={{ ml: 1 }}
-                  label={equippedTotal['unequipped']}
+                  label={equippedTotal.unequipped}
                   size="small"
                 />
               </Button>
@@ -336,7 +336,7 @@ export function ArtifactFilterDisplay({
                 {t('equippedArt')}{' '}
                 <Chip
                   sx={{ ml: 1 }}
-                  label={equippedTotal['equipped']}
+                  label={equippedTotal.equipped}
                   size="small"
                 />
               </Button>

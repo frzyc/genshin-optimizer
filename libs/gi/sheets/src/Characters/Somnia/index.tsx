@@ -339,7 +339,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -350,7 +350,7 @@ const sheet: TalentSheet = {
       ],
     },
     {
-      text: ct.chg(`auto.fields.plunging`),
+      text: ct.chg('auto.fields.plunging'),
     },
     {
       fields: [

@@ -62,7 +62,9 @@ export class Solver<ID extends string | number> {
       this.finalize = (result) => (this.report(), res(result))
       this.terminate = rej
     })
-    const terminate = () => workers.forEach((w) => w.terminate())
+    const terminate = () => {
+      for (const w of workers) w.terminate()
+    }
     this.results.then(terminate, terminate)
 
     for (const worker of workers) {
@@ -84,9 +86,10 @@ export class Solver<ID extends string | number> {
       return
     }
 
-    for (const worker of state.workers)
+    for (const worker of state.workers) {
       if (!this.give(works, worker)) return
-      else state.workers.delete(worker)
+      state.workers.delete(worker)
+    }
     this.state = { ty: 'work', works }
   }
 
@@ -130,7 +133,8 @@ export class Solver<ID extends string | number> {
 
           const bestBuilds = [...this.info.values()].flatMap((i) => i.builds)
           bestBuilds.sort((a, b) => b.value - a.value)
-          const threshold = bestBuilds[this.topN]?.value ?? -Infinity
+          const threshold =
+            bestBuilds[this.topN]?.value ?? Number.NEGATIVE_INFINITY
           if (threshold > this.optThreshold) {
             this.optThreshold = threshold
             this.info.forEach((_, w) => postMsg(w, { ty: 'config', threshold }))
@@ -145,7 +149,7 @@ export class Solver<ID extends string | number> {
         this.distribute(msg.works)
         break
       case 'err':
-        this.terminate(msg.msg + ' (Worker Error)')
+        this.terminate(`${msg.msg} (Worker Error)`)
     }
   }
 }

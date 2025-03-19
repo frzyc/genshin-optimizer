@@ -77,7 +77,7 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
     Object.entries(bonusStats).filter(
       ([key, value]) =>
         allInputPremodKeys.includes(key as InputPremodKey) &&
-        typeof value == 'number'
+        typeof value === 'number'
     )
   )
 

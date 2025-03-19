@@ -126,7 +126,7 @@ export function dataSetEffects(data: UIData) {
   allArtifactSetKeys.forEach((setKey) => {
     const sheet = getArtSheet(setKey)
     const setNums = (
-      Object.keys(sheet.setEffects).map((k) => parseInt(k)) as SetNum[]
+      Object.keys(sheet.setEffects).map((k) => Number.parseInt(k)) as SetNum[]
     ).filter((sn) => (data.get(input.artSet[setKey]).value ?? 0) >= sn)
     if (setNums.length) artifactSetEffect[setKey] = setNums
   })

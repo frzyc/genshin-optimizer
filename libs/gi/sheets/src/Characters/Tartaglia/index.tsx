@@ -225,12 +225,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.aimed, {
-            name: ct.chg(`auto.skillParams.6`),
+            name: ct.chg('auto.skillParams.6'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.aimedCharged, {
-            name: ct.chg(`auto.skillParams.7`),
+            name: ct.chg('auto.skillParams.7'),
           }),
         },
       ],
@@ -242,13 +242,13 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.flashDmg, {
-            name: ct.chg(`auto.skillParams.8`),
+            name: ct.chg('auto.skillParams.8'),
             multi: 3,
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.burstDmg, {
-            name: ct.chg(`auto.skillParams.9`),
+            name: ct.chg('auto.skillParams.9'),
           }),
         },
         {
@@ -290,66 +290,66 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.stanceDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.normal1, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.normal2, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.normal3, {
-            name: ct.chg(`skill.skillParams.3`),
+            name: ct.chg('skill.skillParams.3'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.normal4, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.normal5, {
-            name: ct.chg(`skill.skillParams.5`),
+            name: ct.chg('skill.skillParams.5'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.normal61, {
-            name: ct.chg(`skill.skillParams.6`),
+            name: ct.chg('skill.skillParams.6'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.normal62, {
-            name: ct.chg(`skill.skillParams.6`),
+            name: ct.chg('skill.skillParams.6'),
             textSuffix: '(2)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.charged1, {
-            name: ct.chg(`skill.skillParams.7`),
+            name: ct.chg('skill.skillParams.7'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.charged2, {
-            name: ct.chg(`skill.skillParams.7`),
+            name: ct.chg('skill.skillParams.7'),
             textSuffix: '(2)',
           }),
         },
         {
           node: infoMut(constant(dm.skill.chargedStamina), {
-            name: ct.chg(`skill.skillParams.8`),
+            name: ct.chg('skill.skillParams.8'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.riptideSlash, {
-            name: ct.chg(`skill.skillParams.9`),
+            name: ct.chg('skill.skillParams.9'),
           }),
         },
         {
@@ -389,17 +389,17 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.meleeDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.rangedDmg, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.riptideBlastDmg, {
-            name: ct.chg(`burst.skillParams.2`),
+            name: ct.chg('burst.skillParams.2'),
           }),
         },
         {

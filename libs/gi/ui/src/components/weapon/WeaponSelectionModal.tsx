@@ -60,7 +60,7 @@ export function WeaponSelectionModal({
   const database = useDatabase()
   const [state, setState] = useState(database.displayWeapon.get())
   useEffect(
-    () => database.displayWeapon.follow((r, dbMeta) => setState(dbMeta)),
+    () => database.displayWeapon.follow((_r, dbMeta) => setState(dbMeta)),
     [database]
   )
 

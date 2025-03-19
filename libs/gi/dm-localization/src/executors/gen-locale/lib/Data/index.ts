@@ -100,7 +100,7 @@ export function mapHashDataOverride() {
   mapHashData.charNames.TravelerF = 3241049361
   mapHashData.charNames.TravelerM = 2329553598
   if (!mapHashData.char.TravelerF) mapHashData.char.TravelerF = {}
-  mapHashData.char.TravelerF['name'] = 3241049361
+  mapHashData.char.TravelerF.name = 3241049361
   if (!mapHashData.char.TravelerM) mapHashData.char.TravelerM = {}
-  mapHashData.char.TravelerM['name'] = 2329553598
+  mapHashData.char.TravelerM.name = 2329553598
 }

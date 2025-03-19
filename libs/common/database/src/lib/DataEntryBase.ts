@@ -59,7 +59,7 @@ export class DataEntryBase<
   set(
     valueOrFunc:
       | Partial<StorageValue>
-      | ((v: StorageValue) => Partial<StorageValue> | void)
+      | ((v: StorageValue) => Partial<StorageValue> | undefined)
   ): boolean {
     const old = this.getStorage()
     if (typeof valueOrFunc === 'function' && !old) {
@@ -105,7 +105,7 @@ export class DataEntryBase<
   }
 
   trigger(reason: TriggerString, object?: unknown) {
-    this.listeners.forEach((cb) => cb(reason, object as CacheValue))
+    for (const cb of this.listeners) cb(reason, object as CacheValue)
   }
   follow(callback: Callback<CacheValue>) {
     this.listeners.push(callback)

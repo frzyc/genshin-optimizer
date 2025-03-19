@@ -256,7 +256,7 @@ export function compile(
   })
   const results = n.map((n) => names.get(n)!)
   const body = `'use strict';const ${str};return[${results}]`
-  return new Function(`b`, body) as any
+  return new Function('b', body) as any
 }
 
 export function compileDiff(
@@ -274,7 +274,7 @@ export function compileDiff(
   let body = `'use strict';const ${str}`
   for (const [name, f] of Object.entries(customOps))
     body += `,g${name}=${f.diff?.toString()}`
-  body += `,d=(t)=>{const _=0`
+  body += ',d=(t)=>{const _=0'
   const discrete = new Set<string>() // values that must be discrete
   traverse([n], (n, visit) => {
     const { op } = n
@@ -347,7 +347,7 @@ export function compileDiff(
   }
   body += `;return d${names.get(n)}}`
   body += `;return[${diffTags.map((t) => `d('${t}')`)}]`
-  return new Function(`b`, body) as any
+  return new Function('b', body) as any
 }
 
 /**
@@ -381,8 +381,8 @@ export function executionStr(
         break
       case 'sum':
       case 'prod':
-        if (x.length) body += x.join(op == 'sum' ? '+' : '*')
-        else body += op == 'sum' ? 0 : 1
+        if (x.length) body += x.join(op === 'sum' ? '+' : '*')
+        else body += op === 'sum' ? 0 : 1
         break
       case 'min':
       case 'max':

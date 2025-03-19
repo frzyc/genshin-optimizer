@@ -78,17 +78,17 @@ export default function WengineFilter({
         const equipped = location ? 'equipped' : 'unequipped'
         const speciality = getWengineStat(wengine.key).type
         const rarity = getWengineStat(wengine.key).rarity
-        ctMap['lockedTotal'][lock].total++
-        ctMap['equippedTotal'][equipped].total++
-        ctMap['locationTotal'][location].total++
-        ctMap['wengineTotals'][speciality].total++
-        if (rarity) ctMap['wengineRarityTotals'][rarity].total++
+        ctMap.lockedTotal[lock].total++
+        ctMap.equippedTotal[equipped].total++
+        ctMap.locationTotal[location].total++
+        ctMap.wengineTotals[speciality].total++
+        if (rarity) ctMap.wengineRarityTotals[rarity].total++
         if (wengineIds.includes(id)) {
-          ctMap['lockedTotal'][lock].current++
-          ctMap['equippedTotal'][equipped].current++
-          ctMap['locationTotal'][location].current++
-          ctMap['wengineTotals'][speciality].current++
-          if (rarity) ctMap['wengineRarityTotals'][rarity].current++
+          ctMap.lockedTotal[lock].current++
+          ctMap.equippedTotal[equipped].current++
+          ctMap.locationTotal[location].current++
+          ctMap.wengineTotals[speciality].current++
+          if (rarity) ctMap.wengineRarityTotals[rarity].current++
         }
       })
     )
@@ -196,7 +196,7 @@ export default function WengineFilter({
                     {t('wengineInInv')}{' '}
                     <Chip
                       sx={{ ml: 1 }}
-                      label={equippedTotal['unequipped']}
+                      label={equippedTotal.unequipped}
                       size="small"
                     />
                   </Button>
@@ -212,7 +212,7 @@ export default function WengineFilter({
                     {t('equippedWengine')}{' '}
                     <Chip
                       sx={{ ml: 1 }}
-                      label={equippedTotal['equipped']}
+                      label={equippedTotal.equipped}
                       size="small"
                     />
                   </Button>

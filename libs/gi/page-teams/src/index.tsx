@@ -52,7 +52,7 @@ export default function PageTeams() {
   // Set follow, should run only once
   useEffect(() => {
     return database.teams.followAny(
-      (k, r) =>
+      (_k, r) =>
         (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
     )
   }, [forceUpdate, database])
@@ -72,7 +72,7 @@ export default function PageTeams() {
       setData(location.state?.teamData)
       onShowImport()
     }
-  }, [location.state, onShowImport, setData])
+  }, [location.state, onShowImport])
   const importData = () => {
     try {
       const dataObj = JSON.parse(data)
@@ -80,7 +80,7 @@ export default function PageTeams() {
         window.alert(t('importForm.error.verifi'))
       onHideImport()
     } catch (e) {
-      window.alert(t('importForm.error.import') + `\n${e}`)
+      window.alert(`${t('importForm.error.import')}\n${e}`)
 
       return
     }

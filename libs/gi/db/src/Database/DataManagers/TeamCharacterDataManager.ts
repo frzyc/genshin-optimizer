@@ -133,8 +133,8 @@ export class TeamCharacterDataManager extends DataManager<
     if (!conditional) conditional = {}
 
     // Resonance conditionals have been moved to teams
-    if ((conditional as any)['resonance'])
-      delete (conditional as any)['resonance']
+    if ((conditional as any).resonance)
+      (conditional as any).resonance = undefined
 
     // TODO: validate bonusStats
     if (
@@ -349,8 +349,8 @@ export class TeamCharacterDataManager extends DataManager<
 
     let overrideOptTarget: string[] | undefined = undefined
     if (optimizationTarget?.[0] === 'custom') {
-      const ind = parseInt(optimizationTarget[1])
-      if (!isNaN(ind)) {
+      const ind = Number.parseInt(optimizationTarget[1])
+      if (!Number.isNaN(ind)) {
         const newInd = exportCustomMultiTarget.findIndex((i) => i === ind)
         if (newInd !== -1) {
           overrideOptTarget = structuredClone(optimizationTarget)

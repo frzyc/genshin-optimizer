@@ -7,7 +7,7 @@ export function useNumWorkers() {
   const [numWorkers, setNumWorkers] = useState(() => {
     const lsItem = localStorage.getItem(LS_KEY)
     if (!lsItem) return nativeThreads
-    const numWorkers = parseInt(lsItem)
+    const numWorkers = Number.parseInt(lsItem)
     if (!Number.isInteger(numWorkers)) return nativeThreads
     return numWorkers
   })

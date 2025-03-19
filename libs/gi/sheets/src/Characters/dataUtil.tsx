@@ -318,7 +318,7 @@ export function dataObjForCharacterSheet(
   }
   const element = getCharEle(key)
   const { region, weaponType, lvlCurves, ascensionBonus } = getCharStat(key)
-  display['basic'] = { ...commonBasic }
+  display.basic = { ...commonBasic }
   const data: Data = {
     charKey: constant(key),
     base: {},
@@ -329,8 +329,8 @@ export function dataObjForCharacterSheet(
   if (element) {
     data.charEle = constant(element)
     data.teamBuff = { tally: { [element]: constant(1) } }
-    data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
-    data.display!['reaction'] = reactions[element]
+    data.display!.basic[`${element}_dmg_`] = input.total[`${element}_dmg_`]
+    data.display!.reaction = reactions[element]
   }
   if (region)
     layeredAssignment(data, ['teamBuff', 'tally', region], constant(1))
@@ -340,8 +340,8 @@ export function dataObjForCharacterSheet(
     input.premod.eleMas
   )
   if (weaponType !== 'catalyst') {
-    if (!data.display!['basic']) data.display!['basic'] = {}
-    data.display!['basic']!['physical_dmg_'] = input.total.physical_dmg_
+    if (!data.display!.basic) data.display!.basic = {}
+    data.display!.basic!.physical_dmg_ = input.total.physical_dmg_
   }
 
   let foundSpecial: boolean | undefined

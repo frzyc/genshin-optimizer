@@ -111,7 +111,7 @@ const getCache = (database: ArtCharDatabase) => {
 function getTeamDataCalc(
   database: ArtCharDatabase,
   characterKey: CharacterKey | '',
-  mainStatAssumptionLevel = 0,
+  mainStatAssumptionLevel,
   gender: GenderKey,
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
@@ -189,7 +189,7 @@ type CharBundle = {
 
 function getCharDataBundle(
   database: ArtCharDatabase,
-  useCustom = false,
+  useCustom,
   mainStatAssumptionLevel: number,
   character: ICachedCharacter,
   weapon: ICachedWeapon,

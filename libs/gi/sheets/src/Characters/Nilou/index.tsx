@@ -133,7 +133,7 @@ const c1_illusion_dmg_ = greaterEq(
   input.constellation,
   1,
   infoMut(percent(dm.constellation1.illusion_dmg_), {
-    name: ct.ch(`c1.illusion_dmg_`),
+    name: ct.ch('c1.illusion_dmg_'),
   })
 )
 
@@ -253,13 +253,13 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg1, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
           textSuffix: '(1)',
         },
         {
           node: infoMut(dmgFormulas.charged.dmg2, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
           textSuffix: '(2)',
         },
@@ -270,7 +270,7 @@ const sheet: TalentSheet = {
       ],
     },
     {
-      text: ct.chg(`auto.fields.plunging`),
+      text: ct.chg('auto.fields.plunging'),
     },
     {
       fields: [
@@ -298,37 +298,37 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.skillDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.dance1Dmg, {
-            name: ct.ch(`skill.dance1`),
+            name: ct.ch('skill.dance1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.whirl1Dmg, {
-            name: ct.ch(`skill.whirl1`),
+            name: ct.ch('skill.whirl1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.dance2Dmg, {
-            name: ct.ch(`skill.dance2`),
+            name: ct.ch('skill.dance2'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.whirl2Dmg, {
-            name: ct.ch(`skill.whirl2`),
+            name: ct.ch('skill.whirl2'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.moonDmg, {
-            name: ct.ch(`skill.illusion`),
+            name: ct.ch('skill.illusion'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.wheelDmg, {
-            name: ct.ch(`skill.wheel`),
+            name: ct.ch('skill.wheel'),
           }),
         },
         {
@@ -391,12 +391,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.skillDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.aeonDmg, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {

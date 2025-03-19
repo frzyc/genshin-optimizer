@@ -266,7 +266,7 @@ function CoverArea({
         component={NextImage ? NextImage : 'img'}
         width="100%"
         height="auto"
-      ></Box>
+      />
     </Box>
   )
 }

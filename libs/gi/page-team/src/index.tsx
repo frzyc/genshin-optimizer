@@ -248,7 +248,7 @@ function InnerContent({ tab }: { tab?: string }) {
   useEffect(() => {
     setChartDataState(chartDataAll[teamCharId])
     setGraphBuildState(graphBuildAll[teamCharId])
-  }, [teamCharId, setChartDataState, setGraphBuildState])
+  }, [teamCharId])
 
   const graphContextValue: GraphContextObj | undefined = useMemo(() => {
     return {
@@ -263,13 +263,7 @@ function InnerContent({ tab }: { tab?: string }) {
         setGraphBuildState(data)
       },
     }
-  }, [
-    teamCharId,
-    chartData,
-    graphBuilds,
-    setChartDataState,
-    setGraphBuildState,
-  ])
+  }, [teamCharId, chartData, graphBuilds])
   const buildTc = useBuildTc(loadoutDatum.buildTcId)!
   const setBuildTc = useCallback(
     (data: SetBuildTcAction) => {

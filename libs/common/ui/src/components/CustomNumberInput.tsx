@@ -71,7 +71,7 @@ export function CustomNumberInput({
   )
 
   const parseFunc = useCallback(
-    (val: string) => (float ? parseFloat(val) : parseInt(val)),
+    (val: string) => (float ? Number.parseFloat(val) : Number.parseInt(val)),
     [float]
   )
   const onValidate = useCallback(() => {
@@ -85,7 +85,7 @@ export function CustomNumberInput({
     return change(newNum)
   }, [min, max, parseFunc, onChange, display])
 
-  useEffect(() => setDisplay(value.toString()), [value, setDisplay]) // update value on value change
+  useEffect(() => setDisplay(value.toString()), [value]) // update value on value change
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) =>

@@ -21,7 +21,7 @@ import type {
   ICachedLightCone,
   ICachedRelic,
 } from '../../Interfaces'
-import { type IBuildTc } from '../../Interfaces/IBuildTc'
+import type { IBuildTc } from '../../Interfaces/IBuildTc'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 

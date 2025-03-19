@@ -21,7 +21,7 @@ export default function ResinCard() {
     database.displayTool.get()
   )
   useEffect(
-    () => database.displayTool.follow((r, s) => setState(s)),
+    () => database.displayTool.follow((_r, s) => setState(s)),
     [database]
   )
   const [time, setTime] = useState(
@@ -59,6 +59,7 @@ export default function ResinCard() {
     })
   }
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: idk
   useEffect(() => {
     if (resin < RESIN_MAX) {
       const now = Date.now()
@@ -77,7 +78,6 @@ export default function ResinCard() {
         )
     }
     return () => resinIncrement.current && clearTimeout(resinIncrement.current)
-    // eslint-disable-next-line
   }, [database])
 
   return (

@@ -88,8 +88,8 @@ export default function ArtifactSetConfig({
   } = useContext(TeamCharacterContext)
   const { artSetExclusion } = useOptConfig(optConfigId)!
   const [open, setOpen] = useState(false)
-  const onOpen = useCallback(() => setOpen(true), [setOpen])
-  const onClose = useCallback(() => setOpen(false), [setOpen])
+  const onOpen = useCallback(() => setOpen(true), [])
+  const onClose = useCallback(() => setOpen(false), [])
 
   const [dbDirty, forceUpdate] = useForceUpdate()
   useEffect(() => database.arts.followAny(forceUpdate), [database, forceUpdate])
@@ -99,7 +99,13 @@ export default function ArtifactSetConfig({
       Object.entries(setKeysByRarities)
         .reverse()
         .flatMap(([, sets]) => sets)
-        .filter((key) => !key.includes('Prayers')),
+        .filter((key) => !key.includes('Prayers')) as Exclude<
+        ArtifactSetKey,
+        | 'PrayersForDestiny'
+        | 'PrayersForIllumination'
+        | 'PrayersForWisdom'
+        | 'PrayersToSpringtime'
+      >[],
     []
   )
   const { artKeys, artSlotCount } = useMemo(() => {
@@ -108,7 +114,9 @@ export default function ArtifactSetConfig({
     )
     database.arts.values.forEach(
       (art) =>
-        artSlotCount[art.setKey] && artSlotCount[art.setKey][art.slotKey]++
+        art.setKey in artSlotCount &&
+        artSlotCount[art.setKey as keyof typeof artSlotCount] &&
+        artSlotCount[art.setKey as keyof typeof artSlotCount][art.slotKey]++
     )
     const artKeys = [...artKeysByRarity].sort(
       (a, b) =>
@@ -166,6 +174,7 @@ export default function ArtifactSetConfig({
     )
     database.teamChars.set(teamCharId, (teamChar) => {
       teamChar.conditional = tconditional
+      return teamChar
     })
   }, [database, teamCharId, conditional])
   const setAllExclusion = useCallback(
@@ -173,7 +182,10 @@ export default function ArtifactSetConfig({
       const artSetExclusion_ = deepClone(artSetExclusion)
       artKeysByRarity.forEach((k) => {
         if (exclude)
-          artSetExclusion_[k] = [...(artSetExclusion_[k] ?? []), setnum]
+          artSetExclusion_[k] = [
+            ...(artSetExclusion_[k] ?? []),
+            setnum as 2 | 4,
+          ]
         else if (artSetExclusion_[k])
           artSetExclusion_[k] = artSetExclusion_[k].filter((n) => n !== setnum)
       })
@@ -587,20 +599,18 @@ function ArtifactSetCard({
     return Object.keys(sheet.setEffects).filter((setNumKey) => {
       if (setNumKey !== '2' && setNumKey !== '4') {
         return false
-      } else {
-        const sheetHasConditionals = sheet.setEffects[setNumKey]?.document.some(
-          (doc) => 'states' in doc
-        )
-        if (setNumKey === '2') {
-          const cond2CanShow = !(
-            setExclusionSet.includes(2) && setExclusionSet.includes(4)
-          )
-          return cond2CanShow && sheetHasConditionals
-        } /* if (setNumKey === '4') */ else {
-          const cond4CanShow = !setExclusionSet.includes(4)
-          return cond4CanShow && sheetHasConditionals
-        }
       }
+      const sheetHasConditionals = sheet.setEffects[setNumKey]?.document.some(
+        (doc) => 'states' in doc
+      )
+      if (setNumKey === '2') {
+        const cond2CanShow = !(
+          setExclusionSet.includes(2) && setExclusionSet.includes(4)
+        )
+        return cond2CanShow && sheetHasConditionals
+      }
+      const cond4CanShow = !setExclusionSet.includes(4)
+      return cond4CanShow && sheetHasConditionals
     })
   }, [sheet.setEffects, setExclusionSet])
   return (
@@ -728,7 +738,7 @@ function ArtifactSetCard({
                 <SetEffectDisplay
                   key={setNumKey}
                   setKey={setKey}
-                  setNumKey={parseInt(setNumKey) as SetNum}
+                  setNumKey={Number.parseInt(setNumKey) as SetNum}
                   hideHeader
                   conditionalsOnly
                 />

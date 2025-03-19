@@ -61,8 +61,8 @@ import {
 import { useTranslation } from 'react-i18next'
 
 enum CharListMode {
-  ToggleToAllow,
-  ToggleToExclude,
+  ToggleToAllow = 0,
+  ToggleToExclude = 1,
 }
 
 export default function UseEquipped({
@@ -158,7 +158,7 @@ export default function UseEquipped({
           const c1f = database.charMeta.get(ck1).favorite
           const c2f = database.charMeta.get(ck2).favorite
           if (c1f && !c2f) return choosec1
-          else if (c2f && !c1f) return choosec2
+          if (c2f && !c1f) return choosec2
 
           const art1 = Object.values(c1.equippedArtifacts).filter(
             (id) => id
@@ -167,7 +167,7 @@ export default function UseEquipped({
             (id) => id
           ).length
           if (art1 > art2) return choosec1
-          else if (art2 > art1) return choosec2
+          if (art2 > art1) return choosec2
           return ck1.localeCompare(ck2)
         })
         .map(([ck]) => charKeyToLocCharKey(ck))
@@ -361,7 +361,7 @@ export default function UseEquipped({
                 <Button color="success" fullWidth onClick={allowAll}>
                   {t('excludeChar.modal.allow_all')}
                   <SqBadge sx={{ ml: 1 }}>
-                    <strong>{locListTotals['allowed']}</strong>
+                    <strong>{locListTotals.allowed}</strong>
                   </SqBadge>
                 </Button>
               </Grid>
@@ -369,7 +369,7 @@ export default function UseEquipped({
                 <Button fullWidth color="error" onClick={disallowAll}>
                   {t('excludeChar.modal.disallow_All')}
                   <SqBadge sx={{ ml: 1 }}>
-                    <strong>{locListTotals['excluded']}</strong>
+                    <strong>{locListTotals.excluded}</strong>
                   </SqBadge>
                 </Button>
               </Grid>
@@ -445,7 +445,7 @@ function SelectItemGrid({
         setCharListMode(undefined)
       }
     }
-  }, [charList, setCharList, setMouseUpDetected, mouseUpDetected, toggleList])
+  }, [charList, setMouseUpDetected, mouseUpDetected, toggleList])
   return (
     <Grid
       container

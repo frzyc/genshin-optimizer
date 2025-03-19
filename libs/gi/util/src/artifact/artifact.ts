@@ -60,7 +60,7 @@ export function getSubstatSummedRolls(
   key: SubstatKey
 ): number[] {
   return Object.keys(allStats.art.subRoll[rarity][key]).map((v) =>
-    parseFloat(v)
+    Number.parseFloat(v)
   )
 }
 
@@ -150,8 +150,8 @@ export function getMainStatDisplayStr(
 
 export function getSubstatRange(rarity: ArtifactRarity, key: SubstatKey) {
   const values = Object.keys(allStats.art.subRoll[rarity][key])
-  const low = parseFloat(values[0])
-  const high = parseFloat(values[values.length - 1])
+  const low = Number.parseFloat(values[0])
+  const high = Number.parseFloat(values[values.length - 1])
   return { low, high }
 }
 

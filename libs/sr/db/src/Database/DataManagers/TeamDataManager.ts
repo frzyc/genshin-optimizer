@@ -82,7 +82,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       const name = `Team Name ${num}`
       if (existing.some((tc) => tc.name !== name)) return name
     }
-    return `Team Name`
+    return 'Team Name'
   }
   override validate(obj: unknown): Team | undefined {
     let {
@@ -97,85 +97,80 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     } = obj as Team
     if (typeof name !== 'string') name = this.newName()
     if (typeof description !== 'string') description = ''
+    // validate loadoutIds
+    if (!Array.isArray(teamMetadata))
+      teamMetadata = range(0, 3).map(() => undefined)
 
-    // Validate teamMetadata
-    {
-      // validate loadoutIds
-      if (!Array.isArray(teamMetadata))
-        teamMetadata = range(0, 3).map(() => undefined)
+    teamMetadata = range(0, 3).map((ind) => {
+      const teammateDatum = teamMetadata[ind]
+      if (!teammateDatum || typeof teammateDatum !== 'object') return undefined
+      const { characterKey } = teammateDatum
+      let {
+        buildType,
+        buildId,
+        buildTcId,
+        compare,
+        compareType,
+        compareBuildId,
+        compareBuildTcId,
+        optConfigId,
+      } = teammateDatum
 
-      teamMetadata = range(0, 3).map((ind) => {
-        const teammateDatum = teamMetadata[ind]
-        if (!teammateDatum || typeof teammateDatum !== 'object')
-          return undefined
-        const { characterKey } = teammateDatum
-        let {
-          buildType,
-          buildId,
-          buildTcId,
-          compare,
-          compareType,
-          compareBuildId,
-          compareBuildTcId,
-          optConfigId,
-        } = teammateDatum
+      if (!allCharacterKeys.includes(characterKey)) return undefined
+      if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
+      if (
+        typeof buildId !== 'string' ||
+        !this.database.builds.keys.includes(buildId)
+      )
+        buildId = ''
 
-        if (!allCharacterKeys.includes(characterKey)) return undefined
-        if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
-        if (
-          typeof buildId !== 'string' ||
-          !this.database.builds.keys.includes(buildId)
-        )
-          buildId = ''
+      if (
+        typeof buildTcId !== 'string' ||
+        !this.database.buildTcs.keys.includes(buildTcId)
+      )
+        buildTcId = ''
 
-        if (
-          typeof buildTcId !== 'string' ||
-          !this.database.buildTcs.keys.includes(buildTcId)
-        )
-          buildTcId = ''
+      if (
+        (!buildId && !buildTcId) ||
+        (buildType === 'real' && !buildId) ||
+        (buildType === 'tc' && !buildTcId)
+      )
+        buildType = 'equipped'
 
-        if (
-          (!buildId && !buildTcId) ||
-          (buildType === 'real' && !buildId) ||
-          (buildType === 'tc' && !buildTcId)
-        )
-          buildType = 'equipped'
+      if (typeof compare !== 'boolean') compare = false
+      if (!buildTypeKeys.includes(compareType)) compareType = 'equipped'
 
-        if (typeof compare !== 'boolean') compare = false
-        if (!buildTypeKeys.includes(compareType)) compareType = 'equipped'
+      if (
+        typeof compareBuildId !== 'string' ||
+        !this.database.builds.keys.includes(compareBuildId)
+      ) {
+        compareBuildId = ''
+        if (compareType === 'real') compareType = 'equipped'
+      }
 
-        if (
-          typeof compareBuildId !== 'string' ||
-          !this.database.builds.keys.includes(compareBuildId)
-        ) {
-          compareBuildId = ''
-          if (compareType === 'real') compareType = 'equipped'
-        }
+      if (
+        typeof compareBuildTcId !== 'string' ||
+        !this.database.buildTcs.keys.includes(compareBuildTcId)
+      ) {
+        compareBuildTcId = ''
+        if (compareType === 'tc') compareType = 'equipped'
+      }
 
-        if (
-          typeof compareBuildTcId !== 'string' ||
-          !this.database.buildTcs.keys.includes(compareBuildTcId)
-        ) {
-          compareBuildTcId = ''
-          if (compareType === 'tc') compareType = 'equipped'
-        }
+      if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
+        optConfigId = undefined
 
-        if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
-          optConfigId = undefined
-
-        return {
-          characterKey,
-          buildType,
-          buildId,
-          buildTcId,
-          compare,
-          compareType,
-          compareBuildId,
-          compareBuildTcId,
-          optConfigId,
-        } as TeammateDatum
-      })
-    }
+      return {
+        characterKey,
+        buildType,
+        buildId,
+        buildTcId,
+        compare,
+        compareType,
+        compareBuildId,
+        compareBuildTcId,
+        optConfigId,
+      } as TeammateDatum
+    })
 
     if (typeof lastEdit !== 'number') lastEdit = Date.now()
 
@@ -380,7 +375,8 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         unfollowLightCone()
         unfollowRelics.forEach((unfollow) => unfollow())
       }
-    } else if (buildType === 'tc')
+    }
+    if (buildType === 'tc')
       return this.database.buildTcs.follow(buildTcId, callback)
     return () => {}
   }
@@ -406,7 +402,8 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         unfollowLightCone()
         unfollowRelics.forEach((unfollow) => unfollow())
       }
-    } else if (compareType === 'tc')
+    }
+    if (compareType === 'tc')
       return this.database.buildTcs.follow(compareBuildTcId, callback)
     return () => {}
   }

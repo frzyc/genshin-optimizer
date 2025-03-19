@@ -24,7 +24,8 @@ import {
   styled,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import React, { Suspense, useCallback, useContext, useMemo } from 'react'
+import type React from 'react'
+import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { DataContext, FormulaDataContext } from '../context'
 import { GetCalcDisplay, resolveInfo } from '../util'
 import { AmpReactionModeText } from './AmpReactionModeText'
@@ -67,7 +68,8 @@ function FieldDisplay({
           component={component}
         />
       )
-    } else return <NodeFieldDisplay calcRes={node} component={component} />
+    }
+    return <NodeFieldDisplay calcRes={node} component={component} />
   }
   return <BasicFieldDisplay field={field} component={component} />
 }
@@ -292,10 +294,10 @@ export const FieldDisplayList = styled(List)<FieldDisplayListProps>(
       overflow: 'hidden',
       margin: 0,
       '> .MuiListItem-root:nth-of-type(even)': {
-        backgroundColor: (theme.palette[palette] as PaletteColor)['main'],
+        backgroundColor: (theme.palette[palette] as PaletteColor).main,
       },
       '> .MuiListItem-root:nth-of-type(odd)': {
-        backgroundColor: (theme.palette[palette] as PaletteColor)['dark'],
+        backgroundColor: (theme.palette[palette] as PaletteColor).dark,
       },
     }
   }

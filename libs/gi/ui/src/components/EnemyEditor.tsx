@@ -45,10 +45,7 @@ export default ExpandButton
 export function EnemyExpandCard({ teamId }: { teamId: string }) {
   const { t } = useTranslation('page_team')
   const [expanded, setexpanded] = useState(false)
-  const toggle = useCallback(
-    () => setexpanded(!expanded),
-    [setexpanded, expanded]
-  )
+  const toggle = useCallback(() => setexpanded(!expanded), [expanded])
   const {
     enemyOverride,
     enemyOverride: { enemyLevel, enemyDefRed_, enemyDefIgn_ },
@@ -171,11 +168,13 @@ export function EnemyEditor({
           onValueChange={(value) =>
             database.teams.set(teamId, (team) => {
               team.enemyOverride.enemyLevel = value
+              return team
             })
           }
           onReset={() =>
             database.teams.set(teamId, (team) => {
-              delete team.enemyOverride.enemyLevel
+              team.enemyOverride.enemyLevel = undefined
+              return team
             })
           }
         />
@@ -197,13 +196,18 @@ export function EnemyEditor({
                 </ColorText>
               }
               value={
-                val !== undefined ? (elementImmunity ? Infinity : val) : 10
+                val !== undefined
+                  ? elementImmunity
+                    ? Number.POSITIVE_INFINITY
+                    : val
+                  : 10
               }
               placeholder={elementImmunity ? '∞ ' : KeyMap.getStr(statKey)}
               defaultValue={defaultVal}
               onValueChange={(value) =>
                 database.teams.set(teamId, (team) => {
                   team.enemyOverride[statKey] = value
+                  return team
                 })
               }
               disabled={elementImmunity}
@@ -216,6 +220,7 @@ export function EnemyEditor({
                     team.enemyOverride[statKey] = elementImmunity
                       ? defaultVal
                       : Number.MAX_VALUE
+                    return team
                   })
                 }
                 startIcon={
@@ -242,6 +247,7 @@ export function EnemyEditor({
           onValueChange={(value) =>
             database.teams.set(teamId, (team) => {
               team.enemyOverride.enemyDefIgn_ = value
+              return team
             })
           }
           percent
@@ -257,6 +263,7 @@ export function EnemyEditor({
           onValueChange={(value) =>
             database.teams.set(teamId, (team) => {
               team.enemyOverride.enemyDefRed_ = value
+              return team
             })
           }
           percent

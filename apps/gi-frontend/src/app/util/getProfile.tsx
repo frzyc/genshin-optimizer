@@ -1,6 +1,6 @@
 import type { Unpromise } from '@genshin-optimizer/common/util'
 import type { SupabaseClient } from '@supabase/supabase-js'
-import { type User } from '@supabase/supabase-js'
+import type { User } from '@supabase/supabase-js'
 
 export default async function getProfile(
   supabase: SupabaseClient,
@@ -9,7 +9,7 @@ export default async function getProfile(
   if (!user) return null
   const { data } = await supabase
     .from('profiles')
-    .select(`id, username, active_account`)
+    .select('id, username, active_account')
     .eq('id', user.id)
     .single()
 

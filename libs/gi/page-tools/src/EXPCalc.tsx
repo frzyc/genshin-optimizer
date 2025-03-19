@@ -270,7 +270,7 @@ export default function EXPCalc() {
                 <Typography>EXP {!goUnder ? 'Waste' : 'Diff'}: </Typography>
                 <Typography>
                   <b>
-                    <ColorText color={expDiff < 0 ? `error` : `success`}>
+                    <ColorText color={expDiff < 0 ? 'error' : 'success'}>
                       {expDiff}
                     </ColorText>
                   </b>
@@ -286,7 +286,7 @@ export default function EXPCalc() {
                 <Typography>Final Mora: </Typography>
                 <Typography>
                   <b>
-                    <ColorText color={finalMora < 0 ? `error` : `success`}>
+                    <ColorText color={finalMora < 0 ? 'error' : 'success'}>
                       {finalMora}
                     </ColorText>
                   </b>
@@ -316,7 +316,7 @@ export default function EXPCalc() {
                 <Typography>Final EXP: </Typography>
                 <Typography>
                   <b>
-                    <ColorText color={finalExp < 0 ? `error` : `success`}>
+                    <ColorText color={finalExp < 0 ? 'error' : 'success'}>
                       {finalExp}
                     </ColorText>
                   </b>
@@ -418,8 +418,8 @@ function calculateBooks(c20000, c5000, c1000, required, goUnder) {
   const r1000 = Math.min(current, c1000)
   current -= r1000
   if (goUnder || current === 0) return [r20000, r5000, r1000]
-  else if (r5000 === 3 && r20000 !== c20000) return [r20000 + 1, 0, 0]
-  else if (r5000 !== c5000) return [r20000, r5000 + 1, 0]
-  else if (r20000 !== c20000) return [r20000 + 1, 0, 0]
+  if (r5000 === 3 && r20000 !== c20000) return [r20000 + 1, 0, 0]
+  if (r5000 !== c5000) return [r20000, r5000 + 1, 0]
+  if (r20000 !== c20000) return [r20000 + 1, 0, 0]
   return null
 }

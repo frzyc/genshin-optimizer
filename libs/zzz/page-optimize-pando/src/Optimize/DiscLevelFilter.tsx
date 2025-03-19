@@ -26,8 +26,8 @@ export const DiscLevelFilter = memo(function DiscLevelFilter({
       </CardContent>
       <Divider />
       <DiscLevelSlider
-        levelLow={optConfig?.levelLow ?? discMaxLevel['S']}
-        levelHigh={optConfig?.levelHigh ?? discMaxLevel['S']}
+        levelLow={optConfig?.levelLow ?? discMaxLevel.S}
+        levelHigh={optConfig?.levelHigh ?? discMaxLevel.S}
         setLow={(levelLow) =>
           database.optConfigs.set(optConfigId, { levelLow })
         }

@@ -112,7 +112,7 @@ const a4_starDmgInc = infoMut(
     4,
     prod(percent(dm.passive2.starHpDmgInc), input.total.hp)
   ),
-  { name: ct.ch(`starDmgInc`) }
+  { name: ct.ch('starDmgInc') }
 )
 
 const [condC4ActivePath, condC4Active] = cond(key, 'c4Active')
@@ -139,7 +139,7 @@ const skillShield = prod(
   sum(
     one,
     infoMut(greaterEq(input.constellation, 1, dm.constellation1.shield_), {
-      name: ct.ch(`c1ShieldBonusKey_`),
+      name: ct.ch('c1ShieldBonusKey_'),
       unit: '%',
     })
   ),
@@ -220,13 +220,13 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg1, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.dmg2, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
             textSuffix: '(2)',
           }),
         },
@@ -265,12 +265,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.skillDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.starDmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
@@ -357,7 +357,7 @@ const sheet: TalentSheet = {
     ct.headerTem('constellation6', {
       fields: [
         {
-          node: infoMut(c6_starDmg_, { name: ct.ch(`starDmg_`) }),
+          node: infoMut(c6_starDmg_, { name: ct.ch('starDmg_') }),
         },
         {
           text: ct.ch('starInterval_'),
@@ -373,7 +373,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.slugDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
@@ -395,7 +395,7 @@ const sheet: TalentSheet = {
     ct.headerTem('constellation6', {
       fields: [
         {
-          node: infoMut(c6_slugDmg_, { name: ct.ch(`slugDmg_`) }),
+          node: infoMut(c6_slugDmg_, { name: ct.ch('slugDmg_') }),
         },
       ],
     }),

@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { parse } from 'yaml'
 import type { GenAssetsExecutorSchema } from './schema'
 
@@ -154,7 +154,7 @@ export default async function runExecutor(_options: GenAssetsExecutorSchema) {
     const fileDir = `${localeDir}${langkey}`
     if (!existsSync(fileDir)) mkdirSync(fileDir, { recursive: true })
     const fileName = `${fileDir}/sillyWisher_charNames.json`
-    writeFileSync(fileName, content + '\n')
+    writeFileSync(fileName, `${content}\n`)
     console.log('Generated JSON at', fileName)
   })
   return {

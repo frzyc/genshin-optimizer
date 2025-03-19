@@ -12,21 +12,15 @@ import { SuperImposeWrapper } from '../util'
 const key: LightConeKey = 'NowhereToRun'
 const [chg, _ch] = trans('lightcone', key)
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const dm = mappedStats.lightCone[key]
+const _dm = mappedStats.lightCone[key]
 const icon = lightConeAsset(key, 'cover')
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const cond = conditionals[key]
+const _cond = conditionals[key]
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const buff = buffs[key]
+const _buff = buffs[key]
 
 const sheet: UISheetElement = {
   title: chg('passive.name'),

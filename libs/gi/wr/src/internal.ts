@@ -77,7 +77,7 @@ export function mapFormulas<
 
     if (visiting.has(topDown)) {
       console.error('Found cyclical dependency during formula mapping')
-      return constant(NaN) as any
+      return constant(Number.NaN) as any
     }
     visiting.add(topDown)
 

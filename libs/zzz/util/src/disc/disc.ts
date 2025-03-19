@@ -8,8 +8,8 @@ import {
 export const setKeysByRarities = Object.fromEntries(
   allDiscRarityKeys.map((r) => [r, [] as DiscSetKey[]])
 ) as Record<DiscRarityKey, DiscSetKey[]>
-allDiscSetKeys.forEach((setKey) => {
-  allDiscRarityKeys.slice(0, 1).forEach((rarity) => {
+for (const setKey of allDiscSetKeys) {
+  for (const rarity of allDiscRarityKeys) {
     setKeysByRarities[rarity]?.push(setKey)
-  })
-})
+  }
+}

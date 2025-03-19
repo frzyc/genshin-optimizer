@@ -1,6 +1,6 @@
 import { NumberInputLazy } from '@genshin-optimizer/common/ui'
 import { type UnArray, isPercentStat } from '@genshin-optimizer/common/util'
-import { type StatFilters } from '@genshin-optimizer/sr/db'
+import type { StatFilters } from '@genshin-optimizer/sr/db'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import {
   CheckBox,

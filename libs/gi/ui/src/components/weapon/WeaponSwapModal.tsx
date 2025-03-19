@@ -89,7 +89,7 @@ export function WeaponSwapModal({
     (weaponKey: WeaponKey) => {
       setEditWeaponId(database.weapons.new(initialWeapon(weaponKey)))
     },
-    [database, setEditWeaponId]
+    [database]
   )
   const resetEditWeapon = useCallback(() => setEditWeaponId(''), [])
 
@@ -111,7 +111,7 @@ export function WeaponSwapModal({
       weaponFilterConfigs()
     )
     const sortFunc = sortFunction(
-      weaponSortMap['level'] ?? [],
+      weaponSortMap.level ?? [],
       false,
       weaponSortConfigs()
     )

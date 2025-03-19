@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import type { GenLocaleExecutorSchema } from './schema'
 
@@ -54,14 +54,14 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
   function enToMain(enDir: string, prefix = '') {
     const jsonFiles = readdirSync(enDir).filter((fn) => fn.endsWith('.json'))
 
-    jsonFiles.forEach((jfile) => {
+    for (const jfile of jsonFiles) {
       let filename = jfile.split('.json')[0]
       // only add prefix if the prefix was not appended
       if (!filename.startsWith(prefix)) filename = prefix + filename
       const raw = readFileSync(enDir + jfile).toString()
       const json = JSON.parse(raw)
       main[filename] = json
-    })
+    }
   }
   enToMain(`${localeDir('common')}en/`, 'common_')
   enToMain(`${localeDir('gi')}en/`) // do not add prefix to gi files

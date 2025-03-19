@@ -22,7 +22,7 @@ export function ArtifactSetsEditor({
     (setKey: ArtifactSetKey | '') => {
       if (!setKey) return
       setBuildTc((buildTc) => {
-        buildTc.artifact.sets[setKey] = parseInt(
+        buildTc.artifact.sets[setKey] = Number.parseInt(
           Object.keys(getArtSheet(setKey).setEffects)[0]
         ) as 1 | 2 | 4
       })
@@ -52,7 +52,7 @@ export function ArtifactSetsEditor({
             Object.keys(artSet).includes(key as ArtifactSetKey) ||
             !key ||
             Object.keys(getArtSheet(key).setEffects).every(
-              (n) => parseInt(n) > remaining
+              (n) => Number.parseInt(n) > remaining
             )
           }
           disabled={disabled}

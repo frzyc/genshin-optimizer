@@ -45,7 +45,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
   }
 
   override _gather(cache: TagCache<DebugMeta>): PreRead<DebugMeta> {
-    if (this.gathering.has(cache)) throw new Error(`Loop detected`)
+    if (this.gathering.has(cache)) throw new Error('Loop detected')
     this.gathering.add(cache)
     const result = this.__gather(cache)
     this.gathering.delete(cache)
@@ -73,7 +73,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
       return super._compute(n, cache)
     } catch (e) {
       return {
-        val: NaN,
+        val: Number.NaN,
         meta: {
           formula: `err: ${(e as any).message} in ${this.tagStr(
             cache.tag
@@ -145,14 +145,14 @@ export function nodeString(
     if (ex) args.push(JSON.stringify(ex))
     if (tag) args.push(tagStr(tag))
     args.push(...br.map(map), ...x.map(map))
-    return `${op}(` + args.join(', ') + ')'
+    return `${op}(${args.join(', ')})`
   })[0]
 }
 
 function metaToJSON(tagStr: TagStr): (this: DebugMeta) => any {
   return function (this: DebugMeta): any {
     const { readSeq, formula, deps } = this
-    let readStr
+    let readStr: string | undefined = undefined
     if (readSeq?.some((e) => !!e)) {
       const [head, ...rem] = readSeq
       let str = ''

@@ -94,18 +94,18 @@ export function applyCalc(
   if (w) objSumInPlace(sum, w)
 
   // Rudimentary Calculations
-  sum['initial_hp'] = s('hp_base') * (1 + s('hp_')) + s('hp')
-  sum['initial_atk'] = s('atk_base') * (1 + s('atk_')) + s('atk')
-  sum['initial_def'] = s('def_base') * (1 + s('def_')) + s('def')
-  sum['final_hp'] = s('initial_hp') * (1 + s('cond_hp_')) + s('cond_hp')
-  sum['final_atk'] = s('initial_atk') * (1 + s('cond_atk_')) + s('cond_atk')
-  sum['final_def'] = s('initial_def') * (1 + s('cond_def_')) + s('cond_def')
-  sum['impact'] = s('impact') * (1 + s('impact_'))
-  sum['final_anomMas'] =
+  sum.initial_hp = s('hp_base') * (1 + s('hp_')) + s('hp')
+  sum.initial_atk = s('atk_base') * (1 + s('atk_')) + s('atk')
+  sum.initial_def = s('def_base') * (1 + s('def_')) + s('def')
+  sum.final_hp = s('initial_hp') * (1 + s('cond_hp_')) + s('cond_hp')
+  sum.final_atk = s('initial_atk') * (1 + s('cond_atk_')) + s('cond_atk')
+  sum.final_def = s('initial_def') * (1 + s('cond_def_')) + s('cond_def')
+  sum.impact = s('impact') * (1 + s('impact_'))
+  sum.final_anomMas =
     (s('anomMas_base') * (1 + s('anomMas_')) + s('anomMas')) *
       (1 + s('cond_anomMas_')) +
     s('cond_anomMas')
-  sum['crit_'] = clamp01(sum['crit_'])
+  sum.crit_ = clamp01(sum.crit_)
   return sum
 }
 
@@ -114,7 +114,7 @@ export function calcFormula(sums: Record<string, number>, formula: FormulaKey) {
 }
 
 const formulas: Record<FormulaKey, (sums: Record<string, number>) => number> = {
-  initial_atk: (sums: Record<string, number>) => sums['initial_atk'] || 0,
+  initial_atk: (sums: Record<string, number>) => sums.initial_atk || 0,
   ...objKeyMap(
     allAttributeDamageKeys,
     (dmg_) => (sums: Record<string, number>) => {

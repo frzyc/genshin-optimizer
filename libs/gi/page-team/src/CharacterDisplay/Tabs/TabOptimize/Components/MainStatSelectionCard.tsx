@@ -47,11 +47,11 @@ export default function MainStatSelectionCard({
   const database = useDatabase()
   const { mainStatSlotTots, slotTots } = useMemo(() => {
     const catKeys = {
-      flowerMainStatTots: artSlotMainKeys['flower'],
-      plumeMainStatTots: artSlotMainKeys['plume'],
-      sandsMainStatTots: artSlotMainKeys['sands'],
-      gobletMainStatTots: artSlotMainKeys['goblet'],
-      circletMainStatTots: artSlotMainKeys['circlet'],
+      flowerMainStatTots: artSlotMainKeys.flower,
+      plumeMainStatTots: artSlotMainKeys.plume,
+      sandsMainStatTots: artSlotMainKeys.sands,
+      gobletMainStatTots: artSlotMainKeys.goblet,
+      circletMainStatTots: artSlotMainKeys.circlet,
       slotTots: artifactsSlotsToSelectMainStats,
     } as const
     const catTotals = bulkCatTotal(catKeys, (ctMap) =>

@@ -40,7 +40,7 @@ export function translate(
   switch (op) {
     case 'const':
       formula = `${val}` // TODO: Add % here if `tag` indicates percent constant
-      prec = Infinity
+      prec = Number.POSITIVE_INFINITY
       break
     case 'sum':
     case 'prod':
@@ -61,7 +61,7 @@ export function translate(
     }
     case 'floor':
       formula = `\u230A${ops[0].val}\u230B`
-      prec = Infinity
+      prec = Number.POSITIVE_INFINITY
       break
     default:
       assertUnreachable(op)
@@ -87,6 +87,6 @@ export function translate(
 const details = {
   sum: { head: '', joiner: ' + ', end: '', prec: 1 },
   prod: { head: '', joiner: ' * ', end: '', prec: 2 },
-  max: { head: 'Max(', joiner: ', ', end: ')', prec: Infinity },
-  min: { head: 'Min(', joiner: ', ', end: ')', prec: Infinity },
+  max: { head: 'Max(', joiner: ', ', end: ')', prec: Number.POSITIVE_INFINITY },
+  min: { head: 'Min(', joiner: ', ', end: ')', prec: Number.POSITIVE_INFINITY },
 } as const

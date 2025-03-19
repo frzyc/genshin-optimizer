@@ -90,7 +90,7 @@ export function artifactFilterConfigs({
       return true
     },
     locations: (art, filter, filters) =>
-      art.location && !filters['showEquipped']
+      art.location && !filters.showEquipped
         ? filter.includes(art.location)
         : true,
     showEquipped: () => true, // Per character filtering is applied in `locations`

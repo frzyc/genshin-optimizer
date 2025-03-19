@@ -306,7 +306,7 @@ export function ArtifactCardObj({
                 </strong>
               </Typography>
               <StarsDisplay stars={rarity} colored />
-              {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
+              {/* {process.env['NODE_ENV'] === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
             </Box>
             <Box
               sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}
@@ -582,8 +582,8 @@ function ArtifactBuildUsageModal({
           }
         />
         <List>
-          {builds.map((build, index) => (
-            <ListItem key={index}>
+          {builds.map((build) => (
+            <ListItem key={build.buildName}>
               <ListItemIcon>
                 <CharIconSide characterKey={build.charKey} />
               </ListItemIcon>

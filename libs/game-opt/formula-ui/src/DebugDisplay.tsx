@@ -55,12 +55,12 @@ export function DebugListingsDisplay({
               {calc &&
                 debugCalc &&
                 expanded === 'formulas' &&
-                calc.listFormulas(formulasRead).map((read, index) => {
+                calc.listFormulas(formulasRead).map((read) => {
                   const computed = calc.compute(read)
                   const debugMeta = debugCalc.compute(read).meta
                   const name = read.tag.name || read.tag.q
                   return (
-                    <Box key={`${name}${index}`}>
+                    <Box key={`${name}`}>
                       <Typography>
                         {name}: {computed.val}
                       </Typography>
@@ -96,12 +96,12 @@ export function DebugListingsDisplay({
               {calc &&
                 debugCalc &&
                 expanded === 'buffs' &&
-                calc.listFormulas(buffsRead).map((read, index) => {
+                calc.listFormulas(buffsRead).map((read) => {
                   const computed = calc.compute(read)
                   const debugMeta = debugCalc.compute(read).meta
                   const name = read.tag.name || read.tag.q
                   return (
-                    <Box key={`${name}${index}`}>
+                    <Box key={`${name}`}>
                       <Typography>
                         {name}: {computed.val}
                       </Typography>
@@ -136,7 +136,7 @@ export function DebugReadModal() {
   const { read, setRead } = useContext(DebugReadContext)
   const computed = read && calculator?.compute(read)
   const debug = read && debugCalc?.compute(read)
-  const name = read?.tag['name'] || read?.tag['q']
+  const name = read?.tag.name || read?.tag.q
   const meta = debug?.meta
   const jsonStr = meta && prettify(meta)
 

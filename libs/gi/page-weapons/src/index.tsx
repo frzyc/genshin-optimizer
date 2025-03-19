@@ -8,7 +8,7 @@ import {
   useInfScroll,
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
-import { type WeaponKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
@@ -50,7 +50,7 @@ export default function PageWeapon() {
   const database = useDatabase()
   const [state, setState] = useState(database.displayWeapon.get())
   useEffect(
-    () => database.displayWeapon.follow((r, dbMeta) => setState(dbMeta)),
+    () => database.displayWeapon.follow((_r, dbMeta) => setState(dbMeta)),
     [database]
   )
 
@@ -60,7 +60,7 @@ export default function PageWeapon() {
   useEffect(() => {
     ReactGA.send({ hitType: 'pageview', page: '/weapon' })
     return database.weapons.followAny(
-      (k, r) =>
+      (_k, r) =>
         (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
     )
   }, [forceUpdate, database])

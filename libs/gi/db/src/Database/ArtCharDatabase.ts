@@ -165,10 +165,12 @@ export class ArtCharDatabase extends Database {
     const source = good.source ?? 'Unknown'
     // Some Scanners might carry their own id field, which would conflict with GO dup resolution.
     if (source !== 'Genshin Optimizer') {
-      good.artifacts?.forEach(
-        (a) => delete (a as unknown as { id?: string }).id
-      )
-      good.weapons?.forEach((a) => delete (a as unknown as { id?: string }).id)
+      if (good.artifacts)
+        for (const a of good.artifacts)
+          (a as unknown as { id?: string }).id = undefined
+      if (good.weapons)
+        for (const a of good.weapons)
+          (a as unknown as { id?: string }).id = undefined
     }
     const result: ImportResult = newImportResult(
       source,
@@ -195,7 +197,7 @@ export class ArtCharDatabase extends Database {
     this.dataManagers.map((dm) => dm.importGOOD(good, result))
     this.dataEntries.map((de) => de.importGOOD(good, result))
     this.weapons.ensureEquipments()
-    unfollows.forEach((f) => f())
+    for (const f of unfollows) f()
 
     return result
   }

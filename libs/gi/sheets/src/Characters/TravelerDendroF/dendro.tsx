@@ -168,7 +168,7 @@ export default function dendro(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.dmg, {
-              name: ct.chg(`skill.skillParams.0`),
+              name: ct.chg('skill.skillParams.0'),
             }),
           },
           {
@@ -185,12 +185,12 @@ export default function dendro(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.lampDmg, {
-              name: ct.chg(`burst.skillParams.0`),
+              name: ct.chg('burst.skillParams.0'),
             }),
           },
           {
             node: infoMut(dmgFormulas.burst.explosionDmg, {
-              name: ct.chg(`burst.skillParams.1`),
+              name: ct.chg('burst.skillParams.1'),
             }),
           },
           {

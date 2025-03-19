@@ -28,18 +28,15 @@ export function DiscLevelSlider({
   const { t } = useTranslation('artifact')
   const [sliderLow, setsliderLow] = useState(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
-  const setSlider = useCallback(
-    (_: unknown, value: number | number[]) => {
-      if (typeof value == 'number') throw new TypeError()
-      const [l, h] = value
-      setsliderLow(l)
-      setsliderHigh(h)
-    },
-    [setsliderLow, setsliderHigh]
-  )
-  useEffect(() => setsliderLow(levelLow), [setsliderLow, levelLow])
+  const setSlider = useCallback((_: unknown, value: number | number[]) => {
+    if (typeof value === 'number') throw new TypeError()
+    const [l, h] = value
+    setsliderLow(l)
+    setsliderHigh(h)
+  }, [])
+  useEffect(() => setsliderLow(levelLow), [levelLow])
 
-  useEffect(() => setsliderHigh(levelHigh), [setsliderHigh, levelHigh])
+  useEffect(() => setsliderHigh(levelHigh), [levelHigh])
   return (
     <Box
       sx={{
@@ -92,16 +89,14 @@ export function DiscLevelSlider({
         }
         valueLabelDisplay="auto"
         min={0}
-        max={discMaxLevel['S']}
+        max={discMaxLevel.S}
         step={1}
         marks
         disabled={disabled}
       />
       <CustomNumberInput
         value={sliderHigh}
-        onChange={(val) =>
-          setHigh(clamp(val ?? 0, levelLow, discMaxLevel['S']))
-        }
+        onChange={(val) => setHigh(clamp(val ?? 0, levelLow, discMaxLevel.S))}
         sx={{ px: 1, flex: '0 0 3em' }}
         inputProps={{ sx: { textAlign: 'center' } }}
         disabled={disabled}

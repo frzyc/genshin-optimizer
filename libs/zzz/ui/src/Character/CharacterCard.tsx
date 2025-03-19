@@ -154,7 +154,7 @@ function CharImage({
         height="auto"
         position="relative"
         zIndex="2"
-      ></Box>
+      />
     </Box>
   )
 }
@@ -246,7 +246,7 @@ function CharInformation({
           >
             <Box
               sx={(theme) => ({
-                border: `2px solid ${theme.palette['contentZzz'].main}`,
+                border: `2px solid ${theme.palette.contentZzz.main}`,
                 borderRadius: '20px',
                 display: 'flex',
               })}
@@ -278,9 +278,9 @@ function CharInformation({
                 alignItems: 'center',
               }}
             >
-              {allSkillKeys.map((item, index) => (
+              {allSkillKeys.map((item) => (
                 <Badge
-                  key={index}
+                  key={item}
                   anchorOrigin={{
                     vertical: 'bottom',
                     horizontal: 'left',
@@ -297,7 +297,7 @@ function CharInformation({
                   vertical: 'bottom',
                   horizontal: 'left',
                 }}
-                badgeContent={`${character ? character['core'] : 0}`}
+                badgeContent={`${character ? character.core : 0}`}
                 color="primary"
               >
                 <ImgIcon size={1.9} src={commonDefIcon('core')} />

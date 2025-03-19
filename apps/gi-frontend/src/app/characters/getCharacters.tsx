@@ -10,7 +10,7 @@ export default async function getCharacters(
   const { data, error } = await supabase
     .from('characters')
     .select(
-      `id, created_at, key, level, ascension, talent_auto, talent_skill, talent_burst, constellation`
+      'id, created_at, key, level, ascension, talent_auto, talent_skill, talent_burst, constellation'
     )
     .eq('account_id', accountId)
 

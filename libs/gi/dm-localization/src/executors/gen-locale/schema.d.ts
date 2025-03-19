@@ -1,1 +1,1 @@
-export interface GenLocaleExecutorSchema {} // eslint-disable-line
+export interface GenLocaleExecutorSchema {}

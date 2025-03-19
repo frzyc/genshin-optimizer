@@ -128,7 +128,7 @@ export function TeamContent({
         <Stack spacing={1}>
           {teamLoadouts.map((teamLoadout, i) => (
             <Teammate
-              key={i}
+              key={teamLoadout?.loadout.character_key}
               index={i}
               characters={characters}
               loadouts={loadouts}

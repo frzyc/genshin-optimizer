@@ -1,4 +1,4 @@
-import { get as httpsGet } from 'https'
+import { get as httpsGet } from 'node:https'
 
 export function fetchJsonFromUrl(url: string, debug = false) {
   debug && console.log('Fetching', url)

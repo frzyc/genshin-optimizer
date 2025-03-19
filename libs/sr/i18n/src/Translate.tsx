@@ -42,8 +42,9 @@ export function Translate({
       ns={ns}
       key18={key18}
       values={values}
-      children={children}
       components={useBadge ? badgeComponents : textComponents}
-    />
+    >
+      {children}
+    </TranslateBase>
   )
 }

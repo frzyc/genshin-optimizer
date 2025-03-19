@@ -56,7 +56,10 @@ export class DefaultSplitWorker implements SplitWorker {
       }))
       .filter(({ sets }) => sets.size > 1)
 
-    if (!candidates.length) return this.add(filter, 'id')
+    if (!candidates.length) {
+      this.add(filter, 'id')
+      return
+    }
 
     const { sets, slot } = candidates.reduce((a, b) =>
       a.sets.size < b.sets.size ? a : b

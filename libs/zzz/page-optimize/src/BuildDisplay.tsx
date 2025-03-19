@@ -77,8 +77,8 @@ export function BuildDisplay({
             spacing={1}
             columns={{ xs: 2, sm: 3, md: 3, lg: 4, xl: 6 }}
           >
-            {Object.values(discIds).map((dId, i) => (
-              <Grid item key={`${dId}_${i}`} xs={1}>
+            {Object.values(discIds).map((dId, _i) => (
+              <Grid item key={dId} xs={1}>
                 <DiscCardWrapper discId={dId} key={dId} />
               </Grid>
             ))}

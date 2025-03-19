@@ -89,7 +89,7 @@ function Page({ teamId }: { teamId: string }) {
         presetIndex,
         setPresetIndex,
       }) as PresetContextObj,
-    [presetIndex, setPresetIndex]
+    [presetIndex]
   )
   const team = useTeam(teamId)!
   const { teamMetadata } = team
@@ -114,6 +114,7 @@ function Page({ teamId }: { teamId: string }) {
     [teamMetadata, teamMetadatumIndex]
   )
   const characterKey = teammateDatum?.characterKey
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (characterKey && characterKey !== characterKeyRaw)
       navigate(`${characterKey}`, { replace: true })

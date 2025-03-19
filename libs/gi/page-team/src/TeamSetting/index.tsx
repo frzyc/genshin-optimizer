@@ -54,7 +54,7 @@ export default function TeamSetting({
 
   const onDelNoChars = () => {
     database.teams.remove(teamId)
-    navigate(`/teams`)
+    navigate('/teams')
   }
 
   const onDup = () => {
@@ -89,7 +89,7 @@ export default function TeamSetting({
           teamId={teamId}
           show={showDel}
           onHide={onHideDel}
-          onDel={() => navigate(`/teams`)}
+          onDel={() => navigate('/teams')}
         />
         <Button
           color="error"
@@ -137,6 +137,7 @@ function TeamEditor({
       database.teams.set(teamId, (team) => {
         if (!teamCharId) return
         team.loadoutData[selectedIndex] = { teamCharId } as LoadoutDatum
+        return team
       })
     } else {
       if (selectedIndex === existingIndex) return
@@ -154,6 +155,7 @@ function TeamEditor({
           ) {
             team.loadoutData[existingIndex] = destinationLoadoutDatum
           }
+          return team
         })
       } else if (
         // Only relevant during multi-selection when the teamChar at loadoutData[existingIndex] is moved to
@@ -166,6 +168,7 @@ function TeamEditor({
       ) {
         database.teams.set(teamId, (team) => {
           team.loadoutData[selectedIndex] = loadoutData[existingIndex]
+          return team
         })
       }
     }
@@ -195,6 +198,7 @@ function TeamEditor({
       // to the first slot.
       database.teams.set(teamId, (team) => {
         team.loadoutData[team.loadoutData.length - j] = undefined
+        return team
       })
     }
   }
@@ -279,7 +283,6 @@ function TeamEditor({
               />
             ) : (
               <Button
-                key={ind}
                 onClick={() => setCharSelectIndex(ind)}
                 fullWidth
                 disabled={!!ind && !loadoutData.some((id) => id)}
@@ -315,6 +318,7 @@ function CharSelButton({
   const onChangeTeamCharId = (teamCharId: string) => {
     database.teams.set(teamId, (team) => {
       team.loadoutData[index] = { teamCharId } as LoadoutDatum
+      return team
     })
   }
   const onActive = () => {
@@ -323,12 +327,14 @@ function CharSelButton({
       const oldActive = team.loadoutData[0]
       team.loadoutData[0] = loadoutDatum
       team.loadoutData[index] = oldActive
+      return team
     })
   }
 
   const onDel = () =>
     database.teams.set(teamId, (team) => {
       team.loadoutData[index] = undefined
+      return team
     })
 
   const charData = characterKey && teamData?.[characterKey]

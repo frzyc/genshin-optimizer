@@ -1,1 +1,1 @@
-export interface GenMatsExecutorSchema {} // eslint-disable-line
+export interface GenMatsExecutorSchema {}

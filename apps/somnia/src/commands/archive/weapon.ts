@@ -28,14 +28,14 @@ const refinedisplay: Record<string, string> = {
 
 function getDropdown(id: string, lang: string, refine: string) {
   const options: StringSelectMenuOptionBuilder[] = []
-  range(1, 5).forEach((i) => {
+  for (const i of range(1, 5)) {
     const r = String(i - 1)
     const option = new StringSelectMenuOptionBuilder()
       .setLabel(`Refinement ${i}`)
       .setValue(r)
     if (refine === r) option.setDefault(true)
     options.push(option)
-  })
+  }
   return [
     new ActionRowBuilder().addComponents(
       new StringSelectMenuBuilder()
@@ -56,16 +56,13 @@ export async function weaponArchive(id: WeaponKey, args: string, lang: string) {
   const rarity = stat.rarity
   //mainstat
   const ascension = stat.ascensionBonus[stat.mainStat.type] ?? [0]
-  const mainstat =
-    valueString(
-      stat.mainStat.base *
-        allStats.weapon.expCurve[stat.mainStat.curve][weaponMaxLevel[rarity]] +
-        ascension[weaponMaxAscension[rarity]],
-      getUnitStr(stat.mainStat.type),
-      getFixed(stat.mainStat.type)
-    ) +
-    ' ' +
-    i18nInstance.t(`statKey_gen:${stat.mainStat.type}`)
+  const mainstat = `${valueString(
+    stat.mainStat.base *
+      allStats.weapon.expCurve[stat.mainStat.curve][weaponMaxLevel[rarity]] +
+      ascension[weaponMaxAscension[rarity]],
+    getUnitStr(stat.mainStat.type),
+    getFixed(stat.mainStat.type)
+  )} ${i18nInstance.t(`statKey_gen:${stat.mainStat.type}`)}`
   text += `## ${mainstat}`
   //substat
   if (stat.subStat) {
@@ -76,7 +73,7 @@ export async function weaponArchive(id: WeaponKey, args: string, lang: string) {
       getUnitStr(stat.subStat.type),
       getFixed(stat.subStat.type)
     )
-    substat += ' ' + i18nInstance.t(`statKey_gen:${stat.subStat.type}`)
+    substat += ` ${i18nInstance.t(`statKey_gen:${stat.subStat.type}`)}`
     text += `\n**${substat}**`
   }
   //default r1 5stars
@@ -89,23 +86,16 @@ export async function weaponArchive(id: WeaponKey, args: string, lang: string) {
     if (args) refine = args
     //name and passive
     name += ` (R${refinedisplay[refine]})`
-    text +=
-      '\n\n**' +
-      translate(namespace, 'passiveName') +
-      ':** ' +
-      Object.values(
-        translate(namespace, `passiveDescription.${refine}`, lang, true)
-      ).join('\n')
+    text += `\n\n**${translate(namespace, 'passiveName')}:** ${Object.values(
+      translate(namespace, `passiveDescription.${refine}`, lang, true)
+    ).join('\n')}`
     //create dropdown menu
-    msg['components'] = getDropdown(id, lang, refine)
+    msg.components = getDropdown(id, lang, refine)
   }
   //append lore text
-  text +=
-    '\n\n-# *' +
-    Object.values(translate(namespace, 'description', lang, true)).join('\n') +
-    '*'
+  text += `\n\n-# *${Object.values(translate(namespace, 'description', lang, true)).join('\n')}*`
   //set content
-  msg['embeds'] = [
+  msg.embeds = [
     new EmbedBuilder()
       .setTitle(name)
       .setColor(rarityColors[rarity - 1])

@@ -13,7 +13,7 @@ import {
 } from './data/util'
 import { teamData, withMember } from './util'
 
-import { fail } from 'assert'
+import { fail } from 'node:assert'
 import {
   allArtifactSetKeys,
   allCharacterKeys,
@@ -91,19 +91,20 @@ describe('sheet', () => {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
           case 'notOwnBuff':
+          // biome-ignore lint/suspicious/noFallthroughSwitchClause: <explanation>
           case 'teamBuff': {
             const { sheet } = (ownTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
-          // eslint-disable-next-line no-fallthrough
+          // biome-ignore lint/suspicious/noFallthroughSwitchClause: <explanation>
           case 'enemyDeBuff': {
             const { sheet } = (enemyTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             if (sheet === tag.sheet) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
-          // eslint-disable-next-line no-fallthrough
+          // biome-ignore lint/suspicious/noFallthroughSwitchClause: <explanation>
           case 'own': {
             const desc = (ownTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
@@ -113,7 +114,6 @@ describe('sheet', () => {
               continue
             fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
-          // eslint-disable-next-line no-fallthrough
           case 'enemy': {
             const desc = (enemyTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
@@ -134,8 +134,9 @@ describe('sheet', () => {
       if (tag.qt === 'formula' && tag.q === 'listing') {
         // `name` has a specific structure; it must be the top `tag` in the entry
         const s = tag.sheet!,
+          // biome-ignore lint/complexity/useLiteralKeys: causes index accessor error
           name = (value.op === 'tag' && value.tag['name']) || tag.name!
-
+        // biome-ignore lint/complexity/useLiteralKeys: causes index accessor error
         if (value.tag?.['qt'] === 'base' || value.tag?.['qt'] === 'premod')
           continue // stat listing
 

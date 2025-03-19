@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'gi-frontend',
   preset: '../../jest.preset.js',

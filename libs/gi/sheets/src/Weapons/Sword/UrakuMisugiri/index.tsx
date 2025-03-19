@@ -1,4 +1,4 @@
-import { type WeaponKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   equal,
   infoMut,

@@ -85,6 +85,7 @@ export default function TabTheorycraft() {
     (distributedSubstats: BuildTc['optimization']['distributedSubstats']) => {
       setBuildTc((data_) => {
         data_.optimization.distributedSubstats = distributedSubstats
+        return data_
       })
     },
     [setBuildTc]
@@ -99,7 +100,7 @@ export default function TabTheorycraft() {
     workerRef.current?.terminate()
     workerRef.current = null
     setStatus(initialBuildStatus())
-  }, [workerRef])
+  }, [])
 
   const { minSubLines, minOtherRolls } = useMemo(
     () => getMinSubAndOtherRolls(buildTc),
@@ -209,7 +210,7 @@ export default function TabTheorycraft() {
       } = buildTc
       buildTc.optimization.distributedSubstats =
         20 - (rarity === 5 ? 0 : rarity === 4 ? 10 : 15)
-      buildTc.artifact.substats.stats = objMap(stats, (val, statKey) => {
+      buildTc.artifact.substats.stats = objMap(stats, (_val, statKey) => {
         const substatValue = getSubstatValue(statKey, rarity, type)
         return substatValue * 2
       })
@@ -225,6 +226,7 @@ export default function TabTheorycraft() {
           return 2 + (diffSlot - sameSlot) * rollsPerSlot
         }
       )
+      return buildTc
     })
   }, [setBuildTc])
 

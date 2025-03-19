@@ -54,16 +54,16 @@ export default function PageHome() {
       </Box>
     )
   // separate layout for vertical
-  else
-    return (
-      <Box my={1} display="flex" flexDirection="column" gap={1}>
-        <IntroCard />
-        <QuickLinksCard />
-        <TeamCard />
-        <Roadmap />
-        <PatchNotesCard />
-      </Box>
-    )
+
+  return (
+    <Box my={1} display="flex" flexDirection="column" gap={1}>
+      <IntroCard />
+      <QuickLinksCard />
+      <TeamCard />
+      <Roadmap />
+      <PatchNotesCard />
+    </Box>
+  )
 }
 
 function PatchNotesCard() {
@@ -80,7 +80,7 @@ function PatchNotesCard() {
         const release = JSON.parse(data)
         setState({ isLoaded: true, text: release.body })
       })
-      .catch((err) => console.log('Error: ' + err.message))
+      .catch((err) => console.log(`Error: ${err.message}`))
   }, [])
 
   return (
@@ -96,7 +96,7 @@ function PatchNotesCard() {
       />
       <CardContent>
         {isLoaded ? (
-          <ReactMarkdown children={text} remarkPlugins={[remarkGfm]} />
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
         ) : (
           'Loading...'
         )}

@@ -75,7 +75,7 @@ export class DataManagerBase<
     key: CacheKey,
     valueOrFunc:
       | Partial<StorageValue>
-      | ((v: StorageValue) => Partial<StorageValue> | void | false),
+      | ((v: StorageValue) => Partial<StorageValue> | undefined | false),
     notify = true
   ): boolean {
     const old = this.getStorage(key)
@@ -110,8 +110,9 @@ export class DataManagerBase<
   }
   /** Trigger update event */
   trigger(key: CacheKey, reason: TriggerString, object?: any) {
-    this.listeners[key]?.forEach((cb) => cb(key, reason, object))
-    this.anyListeners.forEach((cb) => cb(key, reason, object))
+    if (this.listeners[key])
+      for (const cb of this.listeners[key]) cb(key, reason, object)
+    for (const cb of this.anyListeners) cb(key, reason, object)
   }
   remove(key: CacheKey, notify = true) {
     const rem = this.data[key]
@@ -172,9 +173,8 @@ export class DataManagerBase<
     for (const key in this.data) this.removeStorageEntry(key)
   }
   saveStorage() {
-    Object.entries(this.data).forEach(([k, v]) =>
+    for (const [k, v] of Object.entries(this.data))
       this.saveStorageEntry(k as CacheKey, v as CacheValue)
-    )
   }
 }
 export type DataManagerCallback<Arg> = (

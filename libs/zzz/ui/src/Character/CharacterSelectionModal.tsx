@@ -27,7 +27,8 @@ import {
   IconButton,
   Typography,
 } from '@mui/material'
-import React, { useMemo } from 'react'
+import type React from 'react'
+import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ElementToggle, WengineToggle } from '../toggles'
 

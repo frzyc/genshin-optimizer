@@ -35,7 +35,7 @@ export default function ProfileContent() {
       })
       if (error) throw error
       alert('Profile updated!')
-    } catch (error) {
+    } catch (_error) {
       alert('Error updating the data!')
     }
   }
@@ -61,6 +61,7 @@ export default function ProfileContent() {
             <div>
               <button
                 className="button primary block"
+                type="button"
                 onClick={() => updateProfile({ username })}
               >
                 {'Update'}
@@ -87,7 +88,7 @@ export default function ProfileContent() {
 async function getAccounts(supabase: SupabaseClient, profileId: string) {
   return await supabase
     .from('accounts')
-    .select(`id, created_at, uid, profile, name`)
+    .select('id, created_at, uid, profile, name')
     .eq('profile', profileId)
 }
 type Accounts = Unpromise<ReturnType<typeof getAccounts>>['data']
@@ -107,14 +108,13 @@ function Accounts() {
       const { data, error, status } = await getAccounts(supabase, profile?.id)
       if (error && status !== 406) {
         console.error(error)
-        throw error
         return
       }
 
       if (data) {
         setAccounts(data)
       }
-    } catch (error) {
+    } catch (_error) {
       alert('Error loading user data!')
     }
   }, [profile?.id, supabase])
@@ -133,7 +133,7 @@ function Accounts() {
         })
         if (error) throw error
         alert('Profile updated!')
-      } catch (error) {
+      } catch (_error) {
         alert('Error updating the data!')
       } finally {
         fetchAccounts()
@@ -153,7 +153,7 @@ function Accounts() {
         if (error) throw error
         alert('Profile updated!')
         // TODO need to somehow refresh the profile from the server side? or optimistic update?
-      } catch (error) {
+      } catch (_error) {
         alert('Error updating the data!')
       }
     },

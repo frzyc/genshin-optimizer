@@ -257,32 +257,30 @@ export function mergeData(data: Data[]): Data {
             ? nonStacking
             : input
       if (path[0] === 'tally' || path[0] === 'nonStacking') path = path.slice(1)
-      /*eslint prefer-const: ["error", {"destructuring": "all"}]*/
       let { accu, type } =
         (objPathValue(base, path) as ReadNode<number | string> | undefined) ??
         {}
       if (accu === undefined) {
         const errMsg = `Multiple entries when merging \`unique\` for key ${path}`
         if (process.env['NODE_ENV'] === 'development') throw new Error(errMsg)
-        else console.error(errMsg)
+        console.error(errMsg)
 
         accu = type === 'number' ? 'max' : 'small'
       }
       const result: NumNode | StrNode = { operation: accu, operands: data }
       return result
-    } else {
-      return Object.fromEntries(
-        [...new Set(data.flatMap((x) => Object.keys(x) as string[]))].map(
-          (key) => [
-            key,
-            internal(
-              data.map((x) => x[key]).filter((x) => x),
-              [...path, key]
-            ),
-          ]
-        )
-      )
     }
+    return Object.fromEntries(
+      [...new Set(data.flatMap((x) => Object.keys(x) as string[]))].map(
+        (key) => [
+          key,
+          internal(
+            data.map((x) => x[key]).filter((x) => x),
+            [...path, key]
+          ),
+        ]
+      )
+    )
   }
   return data.length ? internal(data, []) : {}
 }

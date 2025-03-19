@@ -5,6 +5,7 @@ import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
 import type {
   DocumentConditional,
   DocumentSection,
+  IFieldDisplay,
 } from '@genshin-optimizer/gi/sheets'
 import { CardContent } from '@mui/material'
 import { useContext } from 'react'
@@ -32,7 +33,7 @@ export function ConditionalDisplay({
   const { teamId } = useContext(TeamCharacterContext)
   if (!data) return null
   if (!teamId) return null
-  let fields
+  let fields: IFieldDisplay[] | undefined | false | ''
   if ('path' in conditional) {
     const condVal = data.get(conditional.value).value
     const condStates = evalIfFunc(conditional.states, data)

@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs'
+import { readFileSync } from 'node:fs'
 import type {
   ChatInputCommandInteraction,
   Message,
@@ -19,7 +19,7 @@ export default {
     if ((interaction.member?.permissions as PermissionsBitField).has(arr))
       return true
     interaction.reply({
-      content: `You do not have permission to use this command.`,
+      content: 'You do not have permission to use this command.',
       ephemeral: true,
     })
     return false

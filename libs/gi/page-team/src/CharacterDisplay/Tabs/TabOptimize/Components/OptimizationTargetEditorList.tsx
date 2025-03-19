@@ -104,7 +104,7 @@ export default function OptimizationTargetEditorList({
             setValue={setTargetValue}
             setDisabled={setTargetDisabled}
             disabled={disabled}
-            key={pathStr + index}
+            key={pathStr}
           />
         ))
       )}

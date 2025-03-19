@@ -18,7 +18,7 @@ export function BuildsDisplay({
           discIds={b.discIds}
           result={b.value}
           baseStats={stats}
-          key={`${i}_${b.value}`}
+          key={Object.values(b.discIds).join('_')}
         />
       ))}
     </Stack>

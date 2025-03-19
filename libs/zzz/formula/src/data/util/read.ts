@@ -249,7 +249,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     includedBar = false
   function required(str: string | undefined | null, name: string) {
     if (!str && str !== null) return
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
     includedRequired = true
   }
   function optional(str: string | undefined | null, name: string) {
@@ -258,7 +258,7 @@ export function tagStr(tag: Tag, ex?: any): string {
       includedBar = true
       result += '| '
     }
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
   }
   required(name && `#${name}`, 'name')
   required(preset, 'preset')
@@ -274,5 +274,5 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(damageType1 && `1:${damageType1}`, 'dmg1')
   optional(damageType2 && `2:${damageType2}`, 'dmg2')
   if (ex) result += `[${ex}] `
-  return result + '}'
+  return `${result}}`
 }

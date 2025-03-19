@@ -94,8 +94,8 @@ export default function PageCharacter() {
     database.displayCharacter.get()
   )
   useEffect(
-    () => database.displayCharacter.follow((r, s) => setDisplayCharacter(s)),
-    [database, setDisplayCharacter]
+    () => database.displayCharacter.follow((_r, s) => setDisplayCharacter(s)),
+    [database]
   )
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -108,7 +108,7 @@ export default function PageCharacter() {
   useEffect(() => {
     ReactGA.send({ hitType: 'pageview', page: '/characters' })
     return database.chars.followAny(
-      (k, r) => (r === 'new' || r === 'remove') && forceUpdate()
+      (_k, r) => (r === 'new' || r === 'remove') && forceUpdate()
     )
   }, [forceUpdate, database])
 

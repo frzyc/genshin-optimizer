@@ -6,7 +6,7 @@ import {
   type RelicSlotKey,
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
-import { type ICachedRelic } from '@genshin-optimizer/sr/db'
+import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
   OptConfigContext,
   OptConfigProvider,
@@ -64,18 +64,15 @@ export default function Optimize() {
         <GeneratedBuildsDisplay />
       </OptConfigProvider>
     )
-  } else {
-    return (
-      <CardThemed>
-        <CardHeader
-          title={
-            <span>Optimize this team for {teammateDatum.characterKey}</span>
-          }
-          action={<Button onClick={createOptConfig}>Optimize</Button>}
-        />
-      </CardThemed>
-    )
   }
+  return (
+    <CardThemed>
+      <CardHeader
+        title={<span>Optimize this team for {teammateDatum.characterKey}</span>}
+        action={<Button onClick={createOptConfig}>Optimize</Button>}
+      />
+    </CardThemed>
+  )
 }
 
 function OptimizeWrapper() {
@@ -187,7 +184,7 @@ function OptimizeWrapper() {
   const onCancel = useCallback(() => {
     cancelToken.current()
     setOptimizing(false)
-  }, [cancelToken])
+  }, [])
 
   return (
     <CardThemed>

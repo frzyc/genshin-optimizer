@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'zzz-util',
   preset: '../../../jest.preset.js',

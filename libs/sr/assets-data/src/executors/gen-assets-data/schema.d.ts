@@ -1,1 +1,1 @@
-export interface GenAssetsDataExecutorSchema {} // eslint-disable-line
+export interface GenAssetsDataExecutorSchema {}

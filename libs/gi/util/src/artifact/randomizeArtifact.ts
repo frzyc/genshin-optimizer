@@ -64,7 +64,7 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
   for (const substat of substats)
     if (substat.key) {
       const value = artDisplayValue(substat.value, getUnitStr(substat.key))
-      substat.value = parseFloat(
+      substat.value = Number.parseFloat(
         allStats.art.subRollCorrection[rarity]?.[substat.key]?.[value] ?? value
       )
     }

@@ -44,7 +44,7 @@ export function dataObjForWeaponSheet(
         mainStat.base,
         subscript(input.weapon.lvl, allStats.weapon.expCurve[mainStat.curve])
       ),
-      subscript(input.weapon.asc, ascensionBonus['atk'] ?? [])
+      subscript(input.weapon.asc, ascensionBonus.atk ?? [])
     ),
     { path: mainStat.type }
   )

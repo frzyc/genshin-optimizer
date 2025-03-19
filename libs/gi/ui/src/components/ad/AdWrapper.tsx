@@ -60,8 +60,8 @@ function GOAdWrapper({
   bgt?: CardBackgroundColor
   children: ReactNode
 }) {
-  const maxHeight = (sx as any)?.['maxHeight'] || (sx as any)?.['height']
-  const maxWidth = (sx as any)?.['maxWidth'] || (sx as any)?.['width']
+  const maxHeight = (sx as any)?.maxHeight || (sx as any)?.height
+  const maxWidth = (sx as any)?.maxWidth || (sx as any)?.width
   const Comp = useMemo(() => {
     const components: Array<FunctionComponent<{ children: ReactNode }>> = [GOAd]
     if (maxHeight === undefined || canshowGoDevAd(maxHeight))

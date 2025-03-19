@@ -72,7 +72,7 @@ function CharacterEditorContent({
           value={character?.level || 0}
           onChange={(e) =>
             database.chars.set(characterKey, {
-              level: parseInt(e.target.value),
+              level: Number.parseInt(e.target.value),
             })
           }
           disabled={!character}
@@ -85,7 +85,7 @@ function CharacterEditorContent({
           value={character?.ascension || 0}
           onChange={(e) =>
             database.chars.set(characterKey, {
-              ascension: parseInt(e.target.value) as AscensionKey,
+              ascension: Number.parseInt(e.target.value) as AscensionKey,
             })
           }
           disabled={!character}

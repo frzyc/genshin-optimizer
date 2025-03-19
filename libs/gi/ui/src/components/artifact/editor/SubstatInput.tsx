@@ -165,7 +165,7 @@ export function SubstatInput({
                 color={`roll${clamp(rollOffset + i, 1, 6)}` as any}
                 disabled={(value && !rollNum) || allowedRolls <= 0}
                 onClick={() =>
-                  setSubstat(index, { key, value: parseFloat(newValue) })
+                  setSubstat(index, { key, value: Number.parseFloat(newValue) })
                 }
               >
                 {newValue}
@@ -266,8 +266,8 @@ function SliderWrapper({
       marks={marks}
       min={0}
       max={marks[marks.length - 1]?.value ?? 0}
-      onChange={(e, v) => setinnerValue(v as number)}
-      onChangeCommitted={(e, v) => setValue(v as number)}
+      onChange={(_e, v) => setinnerValue(v as number)}
+      onChangeCommitted={(_e, v) => setValue(v as number)}
       valueLabelDisplay="auto"
     />
   )

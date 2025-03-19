@@ -199,7 +199,7 @@ function NewCharacterCardContent({
           flexGrow: 1,
           height: '100%',
         }}
-      ></CardContent>
+      />
     </>
   )
 }

@@ -3,7 +3,7 @@ import {
   allLightConeKeys,
   allRelicSetKeys,
 } from '@genshin-optimizer/sr/consts'
-import { type Tree } from '@nx/devkit'
+import type { Tree } from '@nx/devkit'
 import genIndex from './genIndex'
 import genMap from './genMap'
 export default async function genMapGenerator(tree: Tree) {

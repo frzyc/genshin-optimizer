@@ -28,4 +28,4 @@ dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarPropertyConfig_list_gen.json`,
   AvatarPropertyConfig.map((config) => config.PropertyType)
 )
-export { AvatarPropertyConfig }
+export type { AvatarPropertyConfig }

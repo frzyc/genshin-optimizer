@@ -238,7 +238,7 @@ function Content(props: Props) {
           }}
         >
           <KeyboardDoubleArrowDownIcon
-            sx={{ fontSize: `5em`, zIndex: 1, opacity: 0.85 }}
+            sx={{ fontSize: '5em', zIndex: 1, opacity: 0.85 }}
           />
         </Box>
         {/* New Build */}

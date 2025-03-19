@@ -210,7 +210,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -248,31 +248,31 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.shield, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.hydroShield, {
-            name: st(`dmgAbsorption.hydro`),
+            name: st('dmgAbsorption.hydro'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.basicDmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.chargedDmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
-          text: ct.chg(`skill.skillParams.3`),
+          text: ct.chg('skill.skillParams.3'),
           value: dm.skill.pressCd,
           unit: 's',
         },
         {
-          text: ct.chg(`skill.skillParams.4`),
+          text: ct.chg('skill.skillParams.4'),
           value: (data) =>
             data.get(input.constellation).value >= 4
               ? dm.skill.pressCd
@@ -308,12 +308,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.skillDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.waveDmg, {
-            name: ct.chg(`burst.skillParams.3`),
+            name: ct.chg('burst.skillParams.3'),
           }),
         },
         {
@@ -372,7 +372,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.constellation6.dmg, {
-            name: ct.chg(`burst.skillParams.3`),
+            name: ct.chg('burst.skillParams.3'),
           }),
         },
       ],

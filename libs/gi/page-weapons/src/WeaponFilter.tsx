@@ -61,7 +61,7 @@ function WeaponFilter({
   const [state, setState] = useState(database.displayWeapon.get())
 
   useEffect(() => {
-    database.displayWeapon.follow((r, dbMeta) => setState(dbMeta))
+    database.displayWeapon.follow((_r, dbMeta) => setState(dbMeta))
   }, [database])
 
   const { weaponType, rarity, locked, showEquipped, showInventory, locations } =
@@ -102,13 +102,13 @@ function WeaponFilter({
         const location = weapon.location
         const lock = weapon.lock ? 'locked' : 'unlocked'
         const equipped = location ? 'equipped' : 'unequipped'
-        ctMap['lockedTotal'][lock].total++
-        ctMap['equippedTotal'][equipped].total++
-        ctMap['locationTotal'][location].total++
+        ctMap.lockedTotal[lock].total++
+        ctMap.equippedTotal[equipped].total++
+        ctMap.locationTotal[location].total++
         if (weaponIds.includes(id)) {
-          ctMap['lockedTotal'][lock].current++
-          ctMap['equippedTotal'][equipped].current++
-          ctMap['locationTotal'][location].current++
+          ctMap.lockedTotal[lock].current++
+          ctMap.equippedTotal[equipped].current++
+          ctMap.locationTotal[location].current++
         }
       })
     )
@@ -215,7 +215,7 @@ function WeaponFilter({
                     {t('weaponInInv')}{' '}
                     <Chip
                       sx={{ ml: 1 }}
-                      label={equippedTotal['unequipped']}
+                      label={equippedTotal.unequipped}
                       size="small"
                     />
                   </Button>
@@ -231,7 +231,7 @@ function WeaponFilter({
                     {t('equippedWeapon')}{' '}
                     <Chip
                       sx={{ ml: 1 }}
-                      label={equippedTotal['equipped']}
+                      label={equippedTotal.equipped}
                       size="small"
                     />
                   </Button>

@@ -211,10 +211,10 @@ export default register(
     (k) => dmg(`skill_${k}`, info, 'hp', dm.skill[`${k}Dmg`], 'skill')
   ),
   dmg(
-    `skill_moon`,
+    'skill_moon',
     info,
     'hp',
-    dm.skill[`moonDmg`],
+    dm.skill.moonDmg,
     'skill',
     undefined,
     ownBuff.premod.dmg_.add(c1_moon_dmg_)

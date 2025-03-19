@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'gi-dm-localization',
   preset: '../../../jest.preset.js',

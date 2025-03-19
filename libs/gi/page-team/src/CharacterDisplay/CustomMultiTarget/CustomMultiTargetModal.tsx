@@ -51,19 +51,19 @@ export function CustomMultiTargetModal({
 
   useEffect(
     () => setCustomTargets(teamChar.customMultiTargets),
-    [setCustomTargets, teamChar.customMultiTargets]
+    [teamChar.customMultiTargets]
   )
 
   const addNewCustomMultiTarget = useCallback(() => {
     setCustomTargets([initCustomMultiTarget(), ...customMultiTargets])
-  }, [customMultiTargets, setCustomTargets])
+  }, [customMultiTargets])
   const setCustomMultiTarget = useCallback(
     (ind: number) => (newTarget: CustomMultiTarget) => {
       const customTargets_ = [...customMultiTargets]
       customTargets_[ind] = newTarget
       setCustomTargets(customTargets_)
     },
-    [customMultiTargets, setCustomTargets]
+    [customMultiTargets]
   )
   const deleteCustomMultiTarget = useCallback(
     (ind: number) => () => {
@@ -78,7 +78,7 @@ export function CustomMultiTargetModal({
       customTargets_.splice(ind, 1)
       setCustomTargets(customTargets_)
     },
-    [customMultiTargets, setCustomTargets]
+    [customMultiTargets]
   )
   const dupCustomMultiTarget = useCallback(
     (ind: number) => () => {
@@ -88,7 +88,7 @@ export function CustomMultiTargetModal({
       customTargets_.splice(ind, 0, newTarget)
       setCustomTargets(customTargets_)
     },
-    [customMultiTargets, setCustomTargets]
+    [customMultiTargets]
   )
   const onClose = useCallback(() => {
     onCloseModal()
@@ -108,8 +108,8 @@ export function CustomMultiTargetModal({
       hit: { ...origData.hit },
       infusion: { ...origData.infusion },
     }
-    delete newData.hit.reaction
-    delete newData.infusion.team
+    newData.hit.reaction = undefined
+    newData.infusion.team = undefined
     return {
       data: new UIData(newData, undefined),
       teamData,

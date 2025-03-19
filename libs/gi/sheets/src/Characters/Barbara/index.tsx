@@ -160,7 +160,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -198,26 +198,26 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.regen, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.cregen, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.dmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
-          text: ct.chg(`skill.skillParams.3`),
+          text: ct.chg('skill.skillParams.3'),
           value: dm.skill.duration,
           unit: 's',
         },
         {
-          text: ct.chg(`skill.skillParams.4`),
+          text: ct.chg('skill.skillParams.4'),
           value: (data) =>
             data.get(input.constellation).value >= 2
               ? `${dm.skill.cd}s - ${dm.constellation2.cdDec * 100}%`
@@ -232,7 +232,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.regen, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {

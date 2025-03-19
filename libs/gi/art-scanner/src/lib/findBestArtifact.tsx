@@ -114,7 +114,7 @@ export function findBestArtifact(
       for (const [rarityString, rarityIndividualScore] of Object.entries(
         rarityRates
       )) {
-        const rarity = parseInt(rarityString) as ArtifactRarity
+        const rarity = Number.parseInt(rarityString) as ArtifactRarity
         const setKeys = relevantSetKey.filter((setKey) =>
           allStats.art.data[setKey].rarities.includes(rarity)
         )
@@ -235,10 +235,10 @@ export function findBestArtifact(
         {available
           .filter((v) => v !== value)
           .map((value, index) => (
-            <>
+            <span key={index}>
               <b>{index > 0 ? '/' : ''}</b>
               <ColorText color="warning">{text(value)}</ColorText>
-            </>
+            </span>
           ))}
       </>
     )
@@ -298,23 +298,19 @@ export function findBestArtifact(
   addText('mainStatKey', mainStatKeys, 'Main Stat', (value) => (
     <span>{statMap[value as string]}</span>
   ))
-  texts.substats = (
-    <>
-      {result.substats
-        .filter((substat) => substat.key !== '')
-        .map((substat, i) => (
-          <div key={i}>
-            {detectedText(substat, 'Sub Stat', (value) => (
-              <>
-                {statMap[value.key]}+
-                {artDisplayValue(value.value, getUnitStr(value.key))}
-                {getUnitStr(value.key)}
-              </>
-            ))}
-          </div>
+  texts.substats = result.substats
+    .filter((substat) => substat.key !== '')
+    .map((substat) => (
+      <div key={substat.key}>
+        {detectedText(substat, 'Sub Stat', (value) => (
+          <>
+            {statMap[value.key]}+
+            {artDisplayValue(value.value, getUnitStr(value.key))}
+            {getUnitStr(value.key)}
+          </>
         ))}
-    </>
-  )
+      </div>
+    ))
 
   const valueStrFunc = (value: number) => (
     <>
@@ -331,14 +327,14 @@ export function findBestArtifact(
     )
   ) {
     if (mainStatKeys.has(result.mainStatKey)) {
-      texts.level = detectedText(result.level, 'Level', (value) => '+' + value)
+      texts.level = detectedText(result.level, 'Level', (value) => `+${value}`)
       texts.mainStatVal = detectedText(
         resultMainStatVal,
         'Main Stat value',
         valueStrFunc
       )
     } else {
-      texts.level = inferredText(result.level, 'Level', (value) => '+' + value)
+      texts.level = inferredText(result.level, 'Level', (value) => `+${value}`)
       texts.mainStatVal = inferredText(
         resultMainStatVal,
         'Main Stat value',
@@ -346,7 +342,7 @@ export function findBestArtifact(
       )
     }
   } else {
-    texts.level = unknownText(result.level, 'Level', (value) => '+' + value)
+    texts.level = unknownText(result.level, 'Level', (value) => `+${value}`)
     texts.mainStatVal = unknownText(
       resultMainStatVal,
       'Main Stat value',

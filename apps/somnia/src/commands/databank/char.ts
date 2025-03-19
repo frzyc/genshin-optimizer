@@ -23,17 +23,16 @@ function getEmbed(
   //normal/charged/plunging attacks
   if (talent === 'n') return skillEmbed('basic', id, name, data)
   //elemental skill
-  else if (talent === 'e') return skillEmbed('skill', id, name, data)
+  if (talent === 'e') return skillEmbed('skill', id, name, data)
   //elemental burst
-  else if (talent === 'u') return skillEmbed('ult', id, name, data)
+  if (talent === 'u') return skillEmbed('ult', id, name, data)
   //technique
-  else if (talent === 't') return skillEmbed('technique', id, name, data)
+  if (talent === 't') return skillEmbed('technique', id, name, data)
   //overworld
-  else if (talent === 'o') return skillEmbed('overworld', id, name, data)
+  if (talent === 'o') return skillEmbed('overworld', id, name, data)
   //constellations
-  else if (talent.match(/c[123456]?/))
-    return eidolonsEmbed(id, name, data, talent)
-  else throw 'Invalid talent name.'
+  if (talent.match(/c[123456]?/)) return eidolonsEmbed(id, name, data, talent)
+  throw 'Invalid talent name.'
 }
 
 function getAssets(id: CharacterGenderedKey) {
@@ -89,10 +88,7 @@ function eidolonsEmbed(
     arg === 'c' ? allCons : allCons.filter((e) => e.includes(arg[1]))
   for (const constellationId of showCons) {
     const constellation = data.ranks[constellationId]
-    text +=
-      `**${constellationId}. ${constellation.name}** ` +
-      constellation.desc +
-      '\n\n'
+    text += `**${constellationId}. ${constellation.name}** ${constellation.desc}\n\n`
   }
   //make embed
   const embed = baseEmbed(id, name).setDescription(clean(text))

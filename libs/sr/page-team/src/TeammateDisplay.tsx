@@ -9,7 +9,7 @@ import {
   useScrollRef,
 } from '@genshin-optimizer/common/ui'
 import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
-import { type CharacterKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { Frame } from '@genshin-optimizer/sr/db'
 import {
   useCharacterContext,
@@ -54,7 +54,8 @@ export default function TeammateDisplay() {
   const sections: Array<[key: string, title: ReactNode, content: ReactNode]> =
     useMemo(() => {
       const frame = team.frames[presetIndex]
-      if (!frame) return [['char', 'Character', <CharacterSection />]]
+      if (!frame)
+        return [['char', 'Character', <CharacterSection key="char" />]]
       return [
         [
           'combo',
