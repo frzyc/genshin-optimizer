@@ -201,12 +201,17 @@ describe('Disc sheets test', () => {
     expect(calc.compute(anby.final.dmg_.fire).val).toBeCloseTo(0.1) // 2p passive
     expect(calc.compute(anby.final.crit_).val).toBeCloseTo(0.05 + 0.28)
   })
-  it('InfernoMetal', () => {
-    const data = testCharacterData('InfernoMetal')
+  it('PhaethonsMelody', () => {
+    const data = testCharacterData('PhaethonsMelody')
     data.push(
       cond(
-        'InfernoMetal',
-        conditionals.InfernoMetal.hitting_burning_enemy.name,
+        'PhaethonsMelody',
+        conditionals.PhaethonsMelody.squad_use_ex.name,
+        1
+      ),
+      cond(
+        'PhaethonsMelody',
+        conditionals.PhaethonsMelody.not_char_use_ex.name,
         1
       )
     )
@@ -216,8 +221,9 @@ describe('Disc sheets test', () => {
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-    expect(calc.compute(anby.final.dmg_.fire).val).toBeCloseTo(0.1) // 2p passive
-    expect(calc.compute(anby.final.crit_).val).toBeCloseTo(0.05 + 0.28)
+    expect(calc.compute(anby.final.anomMas).val).toBeCloseTo(94 * 1.08) // 2p passive
+    expect(calc.compute(anby.final.anomProf).val).toBeCloseTo(93 + 45)
+    expect(calc.compute(anby.final.dmg_.ether).val).toBeCloseTo(0.25)
   })
   it('PolarMetal no cond', () => {
     const data = testCharacterData('PolarMetal')
