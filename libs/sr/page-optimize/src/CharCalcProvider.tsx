@@ -2,7 +2,6 @@ import { notEmpty } from '@genshin-optimizer/common/util'
 import type { Calculator } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
 import { constant } from '@genshin-optimizer/pando/engine'
-import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import type { CharOpt, ICachedCharacter } from '@genshin-optimizer/sr/db'
 import { useLightCone, useRelics } from '@genshin-optimizer/sr/db-ui'
 import {
@@ -10,7 +9,6 @@ import {
   conditionalEntries,
   enemyDebuff,
   lightConeTagMapNodeEntries,
-  own,
   ownBuff,
   srCalculatorWithEntries,
   teamData,
@@ -92,11 +90,7 @@ function useCharacterAndEquipment(character: ICachedCharacter) {
       character.key,
       ...charTagMapNodeEntries(character, 1),
       ...lcTagEntries,
-      ...relicTagEntries,
-      ...allLightConeKeys.map((lc) => own.common.count.sheet(lc).add(1)),
-      ...allRelicSetKeys.map((relicSet) =>
-        own.common.count.sheet(relicSet).add(4)
-      )
+      ...relicTagEntries
     )
   }, [character, lcTagEntries, relicTagEntries])
 }
