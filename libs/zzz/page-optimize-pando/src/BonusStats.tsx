@@ -7,14 +7,13 @@ import {
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
-import type { SpecificDmgTypeKey } from '@genshin-optimizer/zzz/db'
 import {
   useCharOpt,
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
-import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
+import type { Attribute, DamageType, Tag } from '@genshin-optimizer/zzz/formula'
+import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
@@ -28,10 +27,8 @@ import {
   Typography,
 } from '@mui/material'
 import { useCallback } from 'react'
-import {
-  AfterShockToggleButton,
-  SpecificDmgTypeDropdown,
-} from './SpecificDmgTypeSelector'
+import { DmgTypeDropdown } from './DmgTypeDropdown'
+import { AfterShockToggleButton } from './SpecificDmgTypeSelector'
 
 export function BonusStatsSection() {
   const { database } = useDatabaseContext()
@@ -86,6 +83,10 @@ const initialStats: StatKey[] = [
   'enerRegen_',
   'crit_',
   'crit_dmg_',
+  'anomProf',
+  'impact_',
+  'anomMas_',
+  'anomMas',
 ] as const
 type InitialStats = (typeof initialStats)[number]
 function InitialStatDropdown({
@@ -107,7 +108,26 @@ function InitialStatDropdown({
     </DropdownButton>
   )
 }
-const specificDmgTypeIncStats = ['atk_', 'dmg_', 'crit_', 'crit_dmg_'] as const
+
+// Could add 'elemental' back if there is all elemental dmg bonus in the future
+type DmgBonusDamageTypes = Exclude<DamageType, 'elemental' | 'aftershock'>
+const dmgBonusDamageTypes: DmgBonusDamageTypes[] = [
+  'basic',
+  'dash',
+  'dodgeCounter',
+  'special',
+  'exSpecial',
+  'chain',
+  'ult',
+  'quickAssist',
+  'defensiveAssist',
+  'evasiveAssist',
+  'assistFollowUp',
+  'anomaly',
+  'disorder',
+] as const
+
+const dmgTypeIncStats = ['atk_', 'dmg_', 'crit_', 'crit_dmg_'] as const
 function BonusStatDisplay({
   tag,
   setTag,
@@ -135,6 +155,7 @@ function BonusStatDisplay({
         <Typography>
           <TagDisplay tag={tag} />
         </Typography>
+        <QtDropdown qt={tag.qt} setQt={(qt) => setTag({ ...tag, qt })} />
         {tag.q === 'dmg_' && (
           <AttributeDropdown
             tag={tag}
@@ -144,11 +165,12 @@ function BonusStatDisplay({
             }}
           />
         )}
-        {specificDmgTypeIncStats.includes(
-          tag.q as (typeof specificDmgTypeIncStats)[number]
+        {dmgTypeIncStats.includes(
+          tag.q as (typeof dmgTypeIncStats)[number]
         ) && (
-          <SpecificDmgTypeDropdown
-            dmgType={tag.damageType1 as SpecificDmgTypeKey}
+          <DmgTypeDropdown
+            dmgType={tag.damageType1 as DmgBonusDamageTypes}
+            keys={dmgBonusDamageTypes}
             setDmgType={(dmgType) => {
               const { damageType1, ...rest } = tag
               setTag(dmgType ? { ...rest, damageType1: dmgType } : rest)
@@ -228,6 +250,30 @@ function AttributeDropdown({
           <ColorText color={attr}>
             <AttributeName attribute={attr} />
           </ColorText>
+        </MenuItem>
+      ))}
+    </DropdownButton>
+  )
+}
+
+const qtKeys = ['combat', 'base', 'initial'] as const
+function QtDropdown({
+  qt,
+  setQt,
+}: {
+  qt: Tag['qt']
+  setQt: (ele: (typeof qtKeys)[number]) => void
+}) {
+  return (
+    <DropdownButton title={qt && qtMap[qt as keyof typeof qtMap]}>
+      {qtKeys.map((q) => (
+        <MenuItem
+          key={q}
+          onClick={() => setQt(q)}
+          selected={qt === q}
+          disabled={qt === q}
+        >
+          {qtMap[q]}
         </MenuItem>
       ))}
     </DropdownButton>

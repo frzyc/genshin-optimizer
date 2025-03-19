@@ -38,7 +38,8 @@ const isExtraHandlingStats = (
   extraHandlingStats.includes(
     stat as 'hp' | 'hp_' | 'atk' | 'atk_' | 'def' | 'def_'
   )
-const qtMap = {
+// TODO: translation
+export const qtMap = {
   initial: 'Initial',
   combat: 'Combat',
   final: 'Final',
