@@ -1,15 +1,36 @@
 import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import { allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
+import {
+  CardThemed,
+  ImgIcon,
+  ModalWrapper,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
+import {
+  getUnitStr,
+  objKeyMap,
+  statKeyToFixed,
+  toPercent,
+} from '@genshin-optimizer/common/util'
+import { wengineAsset } from '@genshin-optimizer/zzz/assets'
+import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import {
+  allSpecialityKeys,
+  allWengineKeys,
+} from '@genshin-optimizer/zzz/consts'
 import {
   OptConfigContext,
+  useCharOpt,
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import { getWengineStat } from '@genshin-optimizer/zzz/stats'
-import { WengineToggle } from '@genshin-optimizer/zzz/ui'
+import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
+import {
+  StatDisplay,
+  WengineName,
+  WengineToggle,
+  ZCard,
+} from '@genshin-optimizer/zzz/ui'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CloseIcon from '@mui/icons-material/Close'
@@ -18,12 +39,15 @@ import {
   CardContent,
   CardHeader,
   Divider,
+  Grid,
   IconButton,
   Skeleton,
   Stack,
+  Typography,
 } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useContext, useMemo } from 'react'
+import { CharCalcMockCountProvider } from '../CharCalcProvider'
 import { WengineLevelFilter } from './WengineLevelFilter'
 export function WengineFilter({
   numWengine,
@@ -129,6 +153,7 @@ function WengineFilterModal({
               >
                 Use equipped Wengine
               </Button>
+              <WengineCondSelector />
             </Stack>
           </Suspense>
         </CardContent>
@@ -182,5 +207,79 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
       totals={totals}
       fullWidth
     />
+  )
+}
+
+function WengineCondSelector() {
+  const character = useCharacterContext()
+  const charOpt = useCharOpt(character?.key)
+  const { optConfig } = useContext(OptConfigContext)
+  const { wEngineTypes } = optConfig
+  const wengineKeys = useMemo(
+    () =>
+      wEngineTypes.length
+        ? allWengineKeys.filter((d) =>
+            wEngineTypes.includes(getWengineStat(d).type)
+          )
+        : allWengineKeys,
+    [wEngineTypes]
+  )
+  return (
+    <Box>
+      <Typography variant="h6">Wengine Condtional Configuration</Typography>
+      <Typography>
+        Wengine stats are displayed to be Lvl 60/60, P1, actual level/phase of
+        wengine will be used in the solver.
+      </Typography>
+      {character && charOpt && (
+        <CharCalcMockCountProvider
+          character={character}
+          conditionals={charOpt.conditionals}
+        >
+          <Grid container spacing={1}>
+            {wengineKeys.map((d) => (
+              <Grid item key={d} xs={1} md={2} lg={3}>
+                <WengineCondCard wengineKey={d} />
+              </Grid>
+            ))}
+          </Grid>
+        </CharCalcMockCountProvider>
+      )}
+    </Box>
+  )
+}
+function WengineCondCard({ wengineKey }: { wengineKey: WengineKey }) {
+  // const wengineSheet = wengineSheets[wengineKey]
+  const wengineStats = getWengineStats(wengineKey, 60, 5, 1)
+  const mainStatKey = 'atk_base'
+  const substatKey = getWengineStat(wengineKey)['second_statkey']
+  return (
+    <ZCard bgt="light" sx={{ height: '100%' }}>
+      <CardHeader
+        title={<WengineName wKey={wengineKey} />}
+        avatar={<ImgIcon src={wengineAsset(wengineKey, 'icon')} size={2} />}
+      />
+      <CardContent>
+        <Typography sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <StatDisplay statKey={'atk'} />
+          <span>
+            {toPercent(wengineStats[mainStatKey], mainStatKey).toFixed(
+              statKeyToFixed(mainStatKey)
+            )}
+            {getUnitStr(mainStatKey)}
+          </span>
+        </Typography>
+        <Typography sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <StatDisplay statKey={substatKey} />
+          <span>
+            {toPercent(wengineStats[substatKey], substatKey).toFixed(
+              statKeyToFixed(substatKey)
+            )}
+            {getUnitStr(substatKey)}
+          </span>
+        </Typography>
+      </CardContent>
+      <Stack divider={<Divider />}>TODO: Wengine Sheet</Stack>
+    </ZCard>
   )
 }

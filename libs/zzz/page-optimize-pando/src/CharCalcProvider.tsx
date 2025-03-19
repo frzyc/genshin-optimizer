@@ -1,4 +1,4 @@
-import { notEmpty, toDecimal } from '@genshin-optimizer/common/util'
+import { notEmpty, objKeyMap, toDecimal } from '@genshin-optimizer/common/util'
 import type { Calculator } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
 import { constant } from '@genshin-optimizer/pando/engine'
@@ -8,6 +8,8 @@ import type {
   DiscSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
+  allDiscSetKeys,
+  allWengineKeys,
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
@@ -24,7 +26,9 @@ import {
   conditionalEntries,
   discTagMapNodeEntries,
   enemy,
+  own,
   ownBuff,
+  reader,
   teamData,
   wengineTagMapNodeEntries,
   withMember,
@@ -133,4 +137,63 @@ export function discsTagMapNodes(discs: ICachedDisc[]): TagMapNodeEntries {
     })
   })
   return discTagMapNodeEntries(stats, sets)
+}
+
+/**
+ * A minimal Provider with all the disc sets and wengine count mocked
+ */
+export function CharCalcMockCountProvider({
+  character,
+  conditionals,
+  children,
+}: {
+  character: ICachedCharacter
+  conditionals: CharOpt['conditionals']
+  children: ReactNode
+}) {
+  const calc = useMemo(
+    () =>
+      zzzCalculatorWithEntries([
+        // Specify members present in the team
+        ...teamData([character.key]),
+        // Add actual member data
+        ...withMember(
+          character.key,
+          ...charTagMapNodeEntries(character),
+          ...discTagMapNodeEntries(
+            {},
+            objKeyMap(allDiscSetKeys, () => 4)
+          ),
+          // mock wengine
+          // Opt-in for wengine buffs, instead of enabling it by default to reduce `read` traffic
+          reader
+            .sheet('agg')
+            .reread(reader.sheet('wengine')),
+          own.wengine.lvl.add(60),
+          own.wengine.modification.add(5),
+          own.wengine.phase.add(1),
+          ...allWengineKeys.map((key) => own.common.count.sheet(key).add(1))
+        ),
+        // TODO: Get enemy values from db
+        ownBuff.common.critMode.add('avg'),
+        enemy.common.lvl.add(100),
+        enemy.common.def.add(900),
+        enemy.common.isStunned.add(0),
+        enemy.common.stun_.add(1.5),
+        enemy.common.unstun_.add(1),
+        ...conditionals.flatMap(({ sheet, src, dst, condKey, condValue }) =>
+          withPreset(
+            `preset0`,
+            conditionalEntries(sheet, src, dst)(condKey, condValue)
+          )
+        ),
+      ]),
+    [character, conditionals]
+  )
+
+  return (
+    <CalcContext.Provider value={calc as Calculator}>
+      {children}
+    </CalcContext.Provider>
+  )
 }
