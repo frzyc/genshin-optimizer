@@ -556,4 +556,60 @@ describe('Disc sheets test', () => {
   })
 
   // LunarNoviluna should be here but no conds
+
+  it('LunarPleniluna', () => {
+    const { data, characterKey } = testCharacterData('LunarPleniluna')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.final.dmg_.basic[0]).val).toBeCloseTo(0.2)
+    expect(calc.compute(char.final.dmg_.dash[0]).val).toBeCloseTo(0.2)
+    expect(calc.compute(char.final.dmg_.dodgeCounter[0]).val).toBeCloseTo(0.2)
+  })
+
+  it('MagneticStormAlpha', () => {
+    const { data, characterKey } = testCharacterData('MagneticStormAlpha')
+    data.push(
+      cond(
+        characterKey,
+        'MagneticStormAlpha',
+        conditionals.MagneticStormAlpha.anomalyBuildupIncreased.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.anomMas).val).toBeCloseTo(40)
+  })
+
+  it('MagneticStormBravo', () => {
+    const { data, characterKey } = testCharacterData('MagneticStormBravo')
+    data.push(
+      cond(
+        characterKey,
+        'MagneticStormBravo',
+        conditionals.MagneticStormBravo.anomalyBuildupIncreased.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.anomProf).val).toBeCloseTo(40)
+  })
+
+  // MagneticStormCharlie should be here but no conds
 })

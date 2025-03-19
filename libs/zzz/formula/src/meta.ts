@@ -230,88 +230,18 @@ export const conditionals = {
       type: 'bool',
     },
   },
-  LunarPleniluna: {
-    boolConditional: {
-      sheet: 'LunarPleniluna',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'LunarPleniluna',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'LunarPleniluna',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   MagneticStormAlpha: {
-    boolConditional: {
+    anomalyBuildupIncreased: {
       sheet: 'MagneticStormAlpha',
-      name: 'boolConditional',
+      name: 'anomalyBuildupIncreased',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MagneticStormAlpha',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MagneticStormAlpha',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   MagneticStormBravo: {
-    boolConditional: {
+    anomalyBuildupIncreased: {
       sheet: 'MagneticStormBravo',
-      name: 'boolConditional',
+      name: 'anomalyBuildupIncreased',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MagneticStormBravo',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MagneticStormBravo',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  MagneticStormCharlie: {
-    boolConditional: {
-      sheet: 'MagneticStormCharlie',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MagneticStormCharlie',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MagneticStormCharlie',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   MarcatoDesire: {
@@ -2613,142 +2543,66 @@ export const buffs = {
     },
   },
   LunarPleniluna: {
-    cond_dmg_: {
+    basic_dmg_: {
       sheet: 'LunarPleniluna',
-      name: 'cond_dmg_',
+      name: 'basic_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'LunarPleniluna',
-        name: 'cond_dmg_',
+        damageType1: 'basic',
+        name: 'basic_dmg_',
       },
     },
-    enemy_defIgn_: {
+    dash_dmg_: {
       sheet: 'LunarPleniluna',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'LunarPleniluna',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'LunarPleniluna',
-      name: 'team_dmg_',
+      name: 'dash_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'LunarPleniluna',
-        name: 'team_dmg_',
+        damageType1: 'dash',
+        name: 'dash_dmg_',
+      },
+    },
+    dodgeCounter_dmg_: {
+      sheet: 'LunarPleniluna',
+      name: 'dodgeCounter_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'LunarPleniluna',
+        damageType1: 'dodgeCounter',
+        name: 'dodgeCounter_dmg_',
       },
     },
   },
   MagneticStormAlpha: {
-    cond_dmg_: {
+    anomMas: {
       sheet: 'MagneticStormAlpha',
-      name: 'cond_dmg_',
+      name: 'anomMas',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'anomMas',
         sheet: 'MagneticStormAlpha',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'MagneticStormAlpha',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'MagneticStormAlpha',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MagneticStormAlpha',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'MagneticStormAlpha',
-        name: 'team_dmg_',
+        name: 'anomMas',
       },
     },
   },
   MagneticStormBravo: {
-    cond_dmg_: {
+    anomProf: {
       sheet: 'MagneticStormBravo',
-      name: 'cond_dmg_',
+      name: 'anomProf',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'anomProf',
         sheet: 'MagneticStormBravo',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'MagneticStormBravo',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'MagneticStormBravo',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MagneticStormBravo',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'MagneticStormBravo',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  MagneticStormCharlie: {
-    cond_dmg_: {
-      sheet: 'MagneticStormCharlie',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'MagneticStormCharlie',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'MagneticStormCharlie',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'MagneticStormCharlie',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MagneticStormCharlie',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'MagneticStormCharlie',
-        name: 'team_dmg_',
+        name: 'anomProf',
       },
     },
   },
