@@ -3,6 +3,7 @@ import {
   ColorText,
   DropdownButton,
   NumberInputLazy,
+  TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
@@ -26,13 +27,17 @@ import {
   Typography,
 } from '@mui/material'
 import { useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import { DmgTypeDropdown } from './DmgTypeDropdown'
 import { AfterShockToggleButton } from './SpecificDmgTypeSelector'
 
 export function BonusStatsSection() {
+  const { t } = useTranslation('page_optimize')
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
   const { bonusStats } = useCharOpt(characterKey)!
+  const charMetaDesc =
+    characterKey && database.charMeta.get(characterKey).description
   const setStat = useCallback(
     (tag: Tag, value: number | null, index?: number) =>
       database.charOpts.setBonusStat(characterKey, tag, value, index),
@@ -40,7 +45,13 @@ export function BonusStatsSection() {
   )
   const newTarget = (q: InitialStats) =>
     database.charOpts.setBonusStat(characterKey, newTag(q), 0)
-
+  const setDescription = useCallback(
+    (description: string | undefined) => {
+      if (!characterKey || !description) return
+      database.charMeta.set(characterKey, { description: description })
+    },
+    [database.charMeta, characterKey]
+  )
   return (
     <Stack spacing={1}>
       {bonusStats.map(({ tag, value }, i) => (
@@ -54,6 +65,16 @@ export function BonusStatsSection() {
         />
       ))}
       <InitialStatDropdown onSelect={newTarget} />
+      <TextFieldLazy
+        placeholder={t('bonusStatsNotes')}
+        value={charMetaDesc}
+        disabled={!characterKey}
+        onChange={(value) => setDescription(value)}
+        autoFocus
+        multiline
+        minRows={5}
+        fullWidth={true}
+      />
     </Stack>
   )
 }

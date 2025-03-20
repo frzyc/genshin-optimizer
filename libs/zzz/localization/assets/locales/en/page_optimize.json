@@ -5,5 +5,6 @@
   "eq": "Equip",
   "wengineCond": "Wengine Conditionals",
   "discCond": "Disc Conditionals",
-  "bonusStats": "Bonus Stats"
+  "bonusStats": "Bonus Stats",
+  "bonusStatsNotes": "Write some notes about how you play your character"
 }
