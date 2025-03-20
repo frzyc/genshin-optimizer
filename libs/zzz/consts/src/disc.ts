@@ -470,7 +470,7 @@ export const disc4PeffectSheets: Partial<
     getStats: (conds) => {
       if (conds.ShadowHarmony)
         return {
-          atk_: 0.04 * conds.ShadowHarmony,
+          cond_atk_: 0.04 * conds.ShadowHarmony,
           crit_: 0.04 * conds.ShadowHarmony,
         }
       return undefined
