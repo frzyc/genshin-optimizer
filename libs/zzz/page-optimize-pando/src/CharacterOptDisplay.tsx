@@ -135,23 +135,47 @@ function CharacterSection() {
         onClose={() => setCharacterKey(undefined)}
       />
       <Stack spacing={1}>
-        <CardThemed>
+        {/* `overflow: 'visible'` for the CardThemed and CardContent is needed to allow the CharStatsDisplay to be sticky */}
+        <CardThemed sx={{ overflow: 'visible' }}>
           <CardContent
             sx={{
               display: 'flex',
               gap: 1,
-              backgroundColor: '#1b263b',
+              overflow: 'visible',
             }}
           >
-            <Grid container spacing={2} sx={{ flexWrap: 'wrap' }}>
-              <Grid item xs={12} sm={7} md={5} lg={4} xl={3}>
-                <Stack spacing={1}>
+            <Grid
+              container
+              spacing={2}
+              sx={{ flexWrap: 'wrap', overflow: 'visible' }}
+            >
+              <Grid
+                item
+                xs={12}
+                sm={7}
+                md={5}
+                lg={4}
+                xl={3}
+                sx={{ height: '100%', overflow: 'visible' }}
+              >
+                <Stack spacing={1} sx={{ height: '100%' }}>
                   <CharacterCard
                     characterKey={characterKey}
                     onClick={onClick}
                   />
                   <EnemyCard />
-                  <CharStatsDisplay />
+                  {/* This container is the "sticky" area for the stats display */}
+                  <Box sx={{ flexGrow: 1 }}>
+                    <Box
+                      sx={{
+                        position: 'sticky',
+                        top: '115px',
+                        bottom: '0px',
+                      }}
+                    >
+                      <CharStatsDisplay />
+                    </Box>
+                  </Box>
                 </Stack>
               </Grid>
               <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
