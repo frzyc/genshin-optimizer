@@ -249,13 +249,23 @@ function OptimizeWrapper() {
     <CardThemed>
       <CardContent>
         <Stack spacing={1}>
-          <StatFilterCard />
-          <WengineFilter wengines={wengines} />
-          <DiscFilter discsBySlot={discsBySlot} />
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 1,
+              flexWrap: 'wrap',
+              '& .MuiPaper-root': { flexGrow: 1 },
+            }}
+          >
+            <StatFilterCard />
+            <WengineFilter wengines={wengines} />
+            <DiscFilter discsBySlot={discsBySlot} />
+          </Box>
+
           {progress && (
             <ProgressIndicator progress={progress} total={totalPermutations} />
           )}
-          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
             <WorkerSelector
               numWorkers={numWorkers}
               setNumWorkers={setNumWorkers}

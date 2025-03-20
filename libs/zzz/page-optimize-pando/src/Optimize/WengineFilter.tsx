@@ -229,9 +229,9 @@ function WengineCondSelector({ wengines }: { wengines: ICachedWengine[] }) {
           character={character}
           conditionals={charOpt.conditionals}
         >
-          <Grid container spacing={1}>
+          <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
             {wengineKeys.map((d) => (
-              <Grid item key={d} xs={1} md={2} lg={3}>
+              <Grid item key={d} xs={1}>
                 <WengineCondCard
                   wengineKey={d}
                   count={wengines.filter((w) => w.key === d).length}
