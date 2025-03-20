@@ -304,87 +304,34 @@ export const conditionals = {
     },
   },
   RainforestGourmet: {
-    boolConditional: {
+    energyConsumed: {
       sheet: 'RainforestGourmet',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'RainforestGourmet',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'RainforestGourmet',
-      name: 'numConditional',
+      name: 'energyConsumed',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 10,
     },
   },
   ReverbMarkI: {
-    boolConditional: {
+    exSpecialUsed: {
       sheet: 'ReverbMarkI',
-      name: 'boolConditional',
+      name: 'exSpecialUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ReverbMarkI',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ReverbMarkI',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ReverbMarkII: {
-    boolConditional: {
+    exSpecialOrChainUsed: {
       sheet: 'ReverbMarkII',
-      name: 'boolConditional',
+      name: 'exSpecialOrChainUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ReverbMarkII',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ReverbMarkII',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ReverbMarkIII: {
-    boolConditional: {
+    chainOrUltUsed: {
       sheet: 'ReverbMarkIII',
-      name: 'boolConditional',
+      name: 'chainOrUltUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ReverbMarkIII',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ReverbMarkIII',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   RiotSuppressorMarkVI: {
@@ -2806,142 +2753,65 @@ export const buffs = {
     },
   },
   RainforestGourmet: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'RainforestGourmet',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'RainforestGourmet',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'RainforestGourmet',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'RainforestGourmet',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'RainforestGourmet',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'RainforestGourmet',
-        name: 'team_dmg_',
+        name: 'atk_',
       },
     },
   },
   ReverbMarkI: {
-    cond_dmg_: {
+    impact_: {
       sheet: 'ReverbMarkI',
-      name: 'cond_dmg_',
+      name: 'impact_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'impact_',
         sheet: 'ReverbMarkI',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'ReverbMarkI',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'ReverbMarkI',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ReverbMarkI',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'ReverbMarkI',
-        name: 'team_dmg_',
+        name: 'impact_',
       },
     },
   },
   ReverbMarkII: {
-    cond_dmg_: {
+    anomMas: {
       sheet: 'ReverbMarkII',
-      name: 'cond_dmg_',
+      name: 'anomMas',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'anomMas',
         sheet: 'ReverbMarkII',
-        name: 'cond_dmg_',
+        name: 'anomMas',
       },
     },
-    enemy_defIgn_: {
+    anomProf: {
       sheet: 'ReverbMarkII',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'ReverbMarkII',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ReverbMarkII',
-      name: 'team_dmg_',
+      name: 'anomProf',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'anomProf',
         sheet: 'ReverbMarkII',
-        name: 'team_dmg_',
+        name: 'anomProf',
       },
     },
   },
   ReverbMarkIII: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'ReverbMarkIII',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'ReverbMarkIII',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'ReverbMarkIII',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'ReverbMarkIII',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ReverbMarkIII',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'ReverbMarkIII',
-        name: 'team_dmg_',
+        name: 'atk_',
       },
     },
   },

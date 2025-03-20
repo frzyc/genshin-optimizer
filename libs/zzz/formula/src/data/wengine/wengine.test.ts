@@ -682,4 +682,85 @@ describe('Disc sheets test', () => {
   })
 
   // TODO: add PreciousFossilizedCore
+
+  it('RainforestGourmet', () => {
+    const { data, characterKey } = testCharacterData('RainforestGourmet')
+    data.push(
+      cond(
+        characterKey,
+        'RainforestGourmet',
+        conditionals.RainforestGourmet.energyConsumed.name,
+        10
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(10 * 0.04)
+  })
+
+  it('ReverbMarkI', () => {
+    const { data, characterKey } = testCharacterData('ReverbMarkI')
+    data.push(
+      cond(
+        characterKey,
+        'ReverbMarkI',
+        conditionals.ReverbMarkI.exSpecialUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.impact_).val).toBeCloseTo(0.12)
+  })
+
+  it('ReverbMarkII', () => {
+    const { data, characterKey } = testCharacterData('ReverbMarkII')
+    data.push(
+      cond(
+        characterKey,
+        'ReverbMarkII',
+        conditionals.ReverbMarkII.exSpecialOrChainUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.anomMas).val).toBeCloseTo(16)
+    expect(calc.compute(char.combat.anomProf).val).toBeCloseTo(16)
+  })
+
+  it('ReverbMarkIII', () => {
+    const { data, characterKey } = testCharacterData('ReverbMarkIII')
+    data.push(
+      cond(
+        characterKey,
+        'ReverbMarkIII',
+        conditionals.ReverbMarkIII.chainOrUltUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(0.12)
+  })
 })
