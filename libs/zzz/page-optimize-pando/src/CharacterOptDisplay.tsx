@@ -204,17 +204,22 @@ function EquippedConditionals() {
   const wengine = useWengine(equippedWengine)
   return (
     <Box>
-      <Stack spacing={1}>
-        {wengine && <WengineSheetDisplay wengine={wengine} />}
+      <Grid container spacing={1} columns={{ xs: 1, sm: 1, md: 2, lg: 3 }}>
+        {wengine && (
+          <Grid item xs={1}>
+            <WengineSheetDisplay wengine={wengine} />
+          </Grid>
+        )}
         {Object.entries(sets).map(([setKey, count]) => (
-          <DiscSheetDisplay
-            key={setKey}
-            setKey={setKey}
-            fade2={count < 2}
-            fade4={count < 4}
-          />
+          <Grid item key={setKey} xs={1}>
+            <DiscSheetDisplay
+              setKey={setKey}
+              fade2={count < 2}
+              fade4={count < 4}
+            />
+          </Grid>
         ))}
-      </Stack>
+      </Grid>
     </Box>
   )
 }
