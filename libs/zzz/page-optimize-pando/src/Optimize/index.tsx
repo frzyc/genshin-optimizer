@@ -7,7 +7,7 @@ import {
   type DiscSlotKey,
   allDiscSlotKeys,
 } from '@genshin-optimizer/zzz/consts'
-import { type ICachedDisc } from '@genshin-optimizer/zzz/db'
+import { type ICachedDisc, targetTag } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   OptConfigProvider,
@@ -15,10 +15,6 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import {
-  applyDamageTypeToTag,
-  getFormula,
-} from '@genshin-optimizer/zzz/formula'
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
 import { optimize } from '@genshin-optimizer/zzz/solver-pando'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
@@ -72,8 +68,7 @@ function OptimizeWrapper() {
   const { database } = useDatabaseContext()
   const calc = useZzzCalcContext()
   const { key: characterKey } = useCharacterContext()!
-  const { targetName, targetSheet, targetDamageType1, targetDamageType2 } =
-    useCharOpt(characterKey)!
+  const { target } = useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
@@ -172,9 +167,7 @@ function OptimizeWrapper() {
   useEffect(() => () => cancelToken.current(), [])
 
   const onOptimize = useCallback(async () => {
-    if (!calc) return
-    const formula = getFormula(targetSheet, targetName)
-    if (!formula) return
+    if (!calc || !target) return
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
     setProgress(undefined)
     setOptimizing(true)
@@ -186,11 +179,7 @@ function OptimizeWrapper() {
       calc,
       [
         {
-          tag: applyDamageTypeToTag(
-            formula.tag,
-            targetDamageType1,
-            targetDamageType2
-          ),
+          tag: targetTag(target),
           multiplier: 1,
         },
       ],
@@ -225,14 +214,11 @@ function OptimizeWrapper() {
       })
   }, [
     calc,
+    target,
     optConfig.statFilters,
     optConfig.setFilter2,
     optConfig.setFilter4,
     characterKey,
-    targetSheet,
-    targetName,
-    targetDamageType1,
-    targetDamageType2,
     wengines,
     discsBySlot,
     numWorkers,
@@ -271,7 +257,7 @@ function OptimizeWrapper() {
               setNumWorkers={setNumWorkers}
             />
             <Button
-              disabled={!totalPermutations || !targetName}
+              disabled={!totalPermutations || !target}
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'primary'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
