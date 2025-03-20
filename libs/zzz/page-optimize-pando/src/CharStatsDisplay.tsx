@@ -45,8 +45,7 @@ function StatLine({ read }: { read: Read<Tag> }) {
   const emphasize =
     (read.tag.sheet === charOpt?.target?.sheet &&
       read.tag.name === charOpt?.target?.name) ||
-    charOpt?.target?.q === read.tag.q ||
-    (read.tag.q === 'cappedCrit_' && charOpt?.target?.q === 'crit_')
+    charOpt?.target?.q === read.tag.q
   const tag = useMemo(() => {
     if (
       read.tag.sheet === charOpt?.target?.sheet &&
