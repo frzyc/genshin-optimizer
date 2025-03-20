@@ -5,8 +5,15 @@ import {
   OptConfigProvider,
   useCharOpt,
   useCharacterContext,
+  useDiscSets,
+  useDiscs,
+  useWengine,
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
+import {
+  DiscSheetDisplay,
+  WengineSheetDisplay,
+} from '@genshin-optimizer/zzz/formula-ui'
 import { CharacterCard, CharacterEditor } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -191,8 +198,23 @@ function BuildsSection() {
 }
 
 function EquippedConditionals() {
-  const { key: characterKey } = useCharacterContext()!
-  const { optConfigId } = useCharOpt(characterKey)!
-  if (!optConfigId) return null
-  return <Box>Disc and Wengine conditionals</Box>
+  const { equippedDiscs, equippedWengine } = useCharacterContext()!
+  const discs = useDiscs(equippedDiscs)
+  const sets = useDiscSets(discs)
+  const wengine = useWengine(equippedWengine)
+  return (
+    <Box>
+      <Stack spacing={1}>
+        {wengine && <WengineSheetDisplay wengine={wengine} />}
+        {Object.entries(sets).map(([setKey, count]) => (
+          <DiscSheetDisplay
+            key={setKey}
+            setKey={setKey}
+            fade2={count < 2}
+            fade4={count < 4}
+          />
+        ))}
+      </Stack>
+    </Box>
+  )
 }

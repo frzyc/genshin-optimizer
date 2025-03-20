@@ -1,25 +1,11 @@
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import { objKeyMap, toggleInArr } from '@genshin-optimizer/common/util'
-import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
-import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
-import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSetKeys, allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
-import { discUiSheets } from '@genshin-optimizer/zzz/formula-ui'
-import { DiscSetName, ZCard } from '@genshin-optimizer/zzz/ui'
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  CardContent,
-  CardHeader,
-  Divider,
-  Grid,
-  Stack,
-  Typography,
-} from '@mui/material'
+import { DiscSheetDisplay } from '@genshin-optimizer/zzz/formula-ui'
+import { Box, Button, ButtonGroup, Grid, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import { CharCalcMockCountProvider } from '../CharCalcProvider'
 
@@ -106,13 +92,10 @@ function AdvSetFilterDiscCard({
   setSetFilter4: (setFilter4: DiscSetKey[]) => void
   setSetFilter2: (setFilter2: DiscSetKey[]) => void
 }) {
-  const discSheet = discUiSheets[setKey]
+  const greyOut2 = !!setFilter2.length && !setFilter2.includes(setKey)
+  const greyOut4 = !!setFilter4.length && !setFilter4.includes(setKey)
   return (
-    <ZCard bgt="light" sx={{ height: '100%' }}>
-      <CardHeader
-        title={<DiscSetName setKey={setKey} />}
-        avatar={<ImgIcon src={discDefIcon(setKey)} size={2} />}
-      />
+    <DiscSheetDisplay setKey={setKey} fade2={greyOut2} fade4={greyOut4}>
       <Box sx={{ display: 'flex', justifyContent: 'space-around', pb: 1 }}>
         {Object.entries(numSlot).map(([slotKey, count]) => (
           <Box key={slotKey}>
@@ -156,39 +139,6 @@ function AdvSetFilterDiscCard({
           Allow 2p
         </Button>
       </ButtonGroup>
-      <Stack divider={<Divider />}>
-        {Object.entries(discSheet).map(([key, uiSheetElement]) => {
-          const setArr = key === '2' ? setFilter2 : setFilter4
-          const emphasize = !setArr.length || setArr.includes(setKey)
-          return (
-            <Box
-              key={key}
-              sx={{
-                opacity: emphasize ? 1 : 0.5,
-              }}
-            >
-              <DiscUiSheetElement uiSheetElement={uiSheetElement} />
-            </Box>
-          )
-        })}
-      </Stack>
-    </ZCard>
-  )
-}
-function DiscUiSheetElement({
-  uiSheetElement,
-}: {
-  uiSheetElement: UISheetElement
-}) {
-  const { documents, title } = uiSheetElement
-  return (
-    <CardContent>
-      <Typography variant="subtitle1">{title}</Typography>
-      <Stack spacing={1}>
-        {documents.map((doc, i) => (
-          <DocumentDisplay key={i} document={doc} />
-        ))}
-      </Stack>
-    </CardContent>
+    </DiscSheetDisplay>
   )
 }

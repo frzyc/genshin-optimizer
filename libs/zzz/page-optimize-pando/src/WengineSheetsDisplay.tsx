@@ -27,8 +27,16 @@ export function WengineSheetsDisplay() {
         <Grid container columns={3} spacing={1}>
           {wList.map((wk) => (
             <Grid item xs={1} key={wk}>
-              {/* TODO: WengineSheetDisplay for {wk} */}
-              <WengineSheetDisplay wkey={wk} />
+              <WengineSheetDisplay
+                wengine={{
+                  key: wk,
+                  level: 60,
+                  phase: 5,
+                  modification: 1,
+                  lock: false,
+                  location: '',
+                }}
+              />
             </Grid>
           ))}
         </Grid>
