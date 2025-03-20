@@ -15,7 +15,7 @@ const cond = conditionals[key]
 const buff = buffs[key]
 
 const sheet: UISheetElement = {
-  title: chg('passive.name'),
+  title: chg('phase'),
   img: icon,
   documents: [
     {

@@ -12,7 +12,7 @@ const icon = wengineAsset(key, 'icon')
 const buff = buffs[key]
 
 const sheet: UISheetElement = {
-  title: chg('passive.name'),
+  title: chg('phase'),
   img: icon,
   documents: [
     {

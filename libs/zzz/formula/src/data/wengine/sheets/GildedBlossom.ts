@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'GildedBlossom'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const sheet = registerWengine(
   key,
@@ -25,7 +25,7 @@ const sheet = registerWengine(
       // TODO: remove the prod when parsing is (maybe) fixed
       cmpSpecialtyAndEquipped(
         key,
-        prod(subscript(modification, dm.passive_atk_), 1 / 100)
+        prod(subscript(phase, dm.passive_atk_), 1 / 100)
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -34,10 +34,7 @@ const sheet = registerWengine(
     'passive_exSpecial_dmg_',
     ownBuff.combat.dmg_.addWithDmgType(
       'exSpecial',
-      cmpSpecialtyAndEquipped(
-        key,
-        subscript(modification, dm.passive_exSpecial_dmg_)
-      )
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.passive_exSpecial_dmg_))
     ),
     showSpecialtyAndEquipped(key)
   )

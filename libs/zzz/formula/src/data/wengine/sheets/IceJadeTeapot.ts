@@ -17,7 +17,7 @@ import {
 
 const key: WengineKey = 'IceJadeTeapot'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { teariffic } = allNumConditionals(key, true, 0, dm.stacks)
 
@@ -32,7 +32,7 @@ const sheet = registerWengine(
     ownBuff.combat.impact_.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(teariffic, subscript(modification, dm.impact_))
+        prod(teariffic, subscript(phase, dm.impact_))
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -42,11 +42,7 @@ const sheet = registerWengine(
     teamBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
-        cmpGE(
-          teariffic,
-          dm.stackThreshold,
-          subscript(modification, dm.common_dmg_)
-        )
+        cmpGE(teariffic, dm.stackThreshold, subscript(phase, dm.common_dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)

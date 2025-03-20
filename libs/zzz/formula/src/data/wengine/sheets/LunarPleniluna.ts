@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'LunarPleniluna'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const sheet = registerWengine(
   key,
@@ -25,7 +25,7 @@ const sheet = registerWengine(
       'basic',
       cmpSpecialtyAndEquipped(
         key,
-        subscript(modification, dm.basic_dash_dodgeCounter_dmg_)
+        subscript(phase, dm.basic_dash_dodgeCounter_dmg_)
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -36,7 +36,7 @@ const sheet = registerWengine(
       'dash',
       cmpSpecialtyAndEquipped(
         key,
-        subscript(modification, dm.basic_dash_dodgeCounter_dmg_)
+        subscript(phase, dm.basic_dash_dodgeCounter_dmg_)
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -47,7 +47,7 @@ const sheet = registerWengine(
       'dodgeCounter',
       cmpSpecialtyAndEquipped(
         key,
-        subscript(modification, dm.basic_dash_dodgeCounter_dmg_)
+        subscript(phase, dm.basic_dash_dodgeCounter_dmg_)
       )
     ),
     showSpecialtyAndEquipped(key)

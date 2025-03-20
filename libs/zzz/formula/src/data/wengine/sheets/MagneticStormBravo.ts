@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'MagneticStormBravo'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { anomalyBuildupIncreased } = allBoolConditionals(key)
 
@@ -26,7 +26,7 @@ const sheet = registerWengine(
     ownBuff.combat.anomProf.add(
       cmpSpecialtyAndEquipped(
         key,
-        anomalyBuildupIncreased.ifOn(subscript(modification, dm.anomProf))
+        anomalyBuildupIncreased.ifOn(subscript(phase, dm.anomProf))
       )
     ),
     showSpecialtyAndEquipped(key)

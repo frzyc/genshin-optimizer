@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'KaboomTheCannon'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { allyHitsEnemy } = allNumConditionals(key, true, 0, dm.stacks)
 
@@ -26,7 +26,7 @@ const sheet = registerWengine(
     teamBuff.combat.atk_.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(allyHitsEnemy, subscript(modification, dm.atk_))
+        prod(allyHitsEnemy, subscript(phase, dm.atk_))
       )
     ),
     showSpecialtyAndEquipped(key)

@@ -19,7 +19,7 @@ import {
 } from '../util'
 
 const key: WengineKey = 'RiotSuppressorMarkVI'
-const { modification } = own.wengine
+const { phase } = own.wengine
 const params = getWengineParams(key)
 
 // TODO: Add conditionals
@@ -39,7 +39,7 @@ const sheet = registerWengine(
     ownBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(subscript(modification, params[0]))
+        boolConditional.ifOn(subscript(phase, params[0]))
       )
     ),
     showSpecialtyAndEquipped(key)

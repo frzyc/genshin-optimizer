@@ -18,7 +18,7 @@ import {
 
 const key: WengineKey = 'BlazingLaurel'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { quickOrPerfectAssistUsed } = allBoolConditionals(key)
 const { wilt } = allNumConditionals(key, true, 0, dm.stacks)
@@ -34,7 +34,7 @@ const sheet = registerWengine(
     ownBuff.combat.impact_.add(
       cmpSpecialtyAndEquipped(
         key,
-        quickOrPerfectAssistUsed.ifOn(subscript(modification, dm.impact_))
+        quickOrPerfectAssistUsed.ifOn(subscript(phase, dm.impact_))
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -44,7 +44,7 @@ const sheet = registerWengine(
     teamBuff.combat.crit_dmg_.ice.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(wilt, subscript(modification, dm.crit_dmg_ice_fire_))
+        prod(wilt, subscript(phase, dm.crit_dmg_ice_fire_))
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -54,7 +54,7 @@ const sheet = registerWengine(
     teamBuff.combat.crit_dmg_.fire.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(wilt, subscript(modification, dm.crit_dmg_ice_fire_))
+        prod(wilt, subscript(phase, dm.crit_dmg_ice_fire_))
       )
     ),
     showSpecialtyAndEquipped(key)

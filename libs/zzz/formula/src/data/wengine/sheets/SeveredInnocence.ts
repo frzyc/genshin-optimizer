@@ -20,7 +20,7 @@ import {
 
 const key: WengineKey = 'SeveredInnocence'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)
@@ -39,7 +39,7 @@ const sheet = registerWengine(
     ownBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(subscript(modification, dm.cond_dmg_))
+        boolConditional.ifOn(subscript(phase, dm.cond_dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)

@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'DemaraBatteryMarkII'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { dodgeCounterOrAssistHit } = allBoolConditionals(key)
 
@@ -24,10 +24,7 @@ const sheet = registerWengine(
   registerBuff(
     'passive_electric_dmg_',
     ownBuff.combat.dmg_.electric.add(
-      cmpSpecialtyAndEquipped(
-        key,
-        subscript(modification, dm.passive_electric_dmg_)
-      )
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.passive_electric_dmg_))
     ),
     showSpecialtyAndEquipped(key)
   ),
@@ -38,7 +35,7 @@ const sheet = registerWengine(
     ownBuff.combat.enerRegen_.add(
       cmpSpecialtyAndEquipped(
         key,
-        dodgeCounterOrAssistHit.ifOn(subscript(modification, dm.enerRegen_))
+        dodgeCounterOrAssistHit.ifOn(subscript(phase, dm.enerRegen_))
       )
     ),
     showSpecialtyAndEquipped(key)

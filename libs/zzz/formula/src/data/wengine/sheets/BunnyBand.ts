@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'BunnyBand'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { wearerShielded } = allBoolConditionals(key)
 
@@ -23,7 +23,7 @@ const sheet = registerWengine(
   registerBuff(
     'passive_hp_',
     ownBuff.combat.hp_.add(
-      cmpSpecialtyAndEquipped(key, subscript(modification, dm.hp_))
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.hp_))
     ),
     showSpecialtyAndEquipped(key)
   ),
@@ -34,7 +34,7 @@ const sheet = registerWengine(
     ownBuff.combat.atk_.add(
       cmpSpecialtyAndEquipped(
         key,
-        wearerShielded.ifOn(subscript(modification, dm.atk_))
+        wearerShielded.ifOn(subscript(phase, dm.atk_))
       )
     ),
     showSpecialtyAndEquipped(key)

@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'ElegantVanity'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { consumed25Energy } = allNumConditionals(key, true, 0, dm.stacks)
 
@@ -26,7 +26,7 @@ const sheet = registerWengine(
     teamBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(consumed25Energy, subscript(modification, dm.common_dmg_))
+        prod(consumed25Energy, subscript(phase, dm.common_dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)

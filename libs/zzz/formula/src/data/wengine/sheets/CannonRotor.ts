@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'CannonRotor'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const sheet = registerWengine(
   key,
@@ -23,7 +23,7 @@ const sheet = registerWengine(
     { damageType1: 'elemental' },
     cmpSpecialtyAndEquipped(
       key,
-      prod(own.final.atk, subscript(modification, dm.dmg_scaling))
+      prod(own.final.atk, subscript(phase, dm.dmg_scaling))
     ),
     { cond: showSpecialtyAndEquipped(key) },
     own.combat.crit_.add(1)
@@ -31,7 +31,7 @@ const sheet = registerWengine(
   registerBuff(
     'passive_atk_',
     ownBuff.combat.atk_.add(
-      cmpSpecialtyAndEquipped(key, subscript(modification, dm.passive_atk_))
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.passive_atk_))
     ),
     showSpecialtyAndEquipped(key)
   )

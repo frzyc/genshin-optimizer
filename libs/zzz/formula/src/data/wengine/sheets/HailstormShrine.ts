@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'HailstormShrine'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { exSpecialOrAnomaly } = allNumConditionals(key, true, 0, dm.stacks)
 
@@ -24,10 +24,7 @@ const sheet = registerWengine(
   registerBuff(
     'passive_crit_dmg_',
     ownBuff.combat.crit_dmg_.add(
-      cmpSpecialtyAndEquipped(
-        key,
-        subscript(modification, dm.passive_crit_dmg_)
-      )
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.passive_crit_dmg_))
     ),
     showSpecialtyAndEquipped(key)
   ),
@@ -38,7 +35,7 @@ const sheet = registerWengine(
     ownBuff.combat.dmg_.ice.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(exSpecialOrAnomaly, subscript(modification, dm.ice_dmg_))
+        prod(exSpecialOrAnomaly, subscript(phase, dm.ice_dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)

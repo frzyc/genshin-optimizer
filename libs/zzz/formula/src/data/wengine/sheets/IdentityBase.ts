@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'IdentityBase'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { equipperAttacked } = allBoolConditionals(key)
 
@@ -26,7 +26,7 @@ const sheet = registerWengine(
     ownBuff.combat.def_.add(
       cmpSpecialtyAndEquipped(
         key,
-        equipperAttacked.ifOn(subscript(modification, dm.def_))
+        equipperAttacked.ifOn(subscript(phase, dm.def_))
       )
     ),
     showSpecialtyAndEquipped(key)

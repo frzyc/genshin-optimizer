@@ -17,7 +17,7 @@ import {
 
 const key: WengineKey = 'HellfireGears'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { offField } = allBoolConditionals(key)
 const { exSpecialUsed } = allNumConditionals(key, true, 0, dm.stacks)
@@ -33,7 +33,7 @@ const sheet = registerWengine(
     ownBuff.combat.enerRegen.add(
       cmpSpecialtyAndEquipped(
         key,
-        offField.ifOn(subscript(modification, dm.enerRegen))
+        offField.ifOn(subscript(phase, dm.enerRegen))
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -43,7 +43,7 @@ const sheet = registerWengine(
     ownBuff.combat.impact_.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(exSpecialUsed, subscript(modification, dm.impact_))
+        prod(exSpecialUsed, subscript(phase, dm.impact_))
       )
     ),
     showSpecialtyAndEquipped(key)

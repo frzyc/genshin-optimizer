@@ -13,7 +13,7 @@ const icon = wengineAsset(key, 'icon')
 const formula = formulas[key]
 
 const sheet: UISheetElement = {
-  title: chg('passive.name'),
+  title: chg('phase'),
   img: icon,
   documents: [
     {

@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'DeepSeaVisitor'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { basicHit, iceDashAtkHit } = allBoolConditionals(key)
 
@@ -24,7 +24,7 @@ const sheet = registerWengine(
   registerBuff(
     'passive_ice_dmg_',
     ownBuff.combat.dmg_.ice.add(
-      cmpSpecialtyAndEquipped(key, subscript(modification, dm.passive_ice_dmg_))
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.passive_ice_dmg_))
     ),
     showSpecialtyAndEquipped(key)
   ),
@@ -33,10 +33,7 @@ const sheet = registerWengine(
   registerBuff(
     'crit_',
     ownBuff.combat.crit_.add(
-      cmpSpecialtyAndEquipped(
-        key,
-        basicHit.ifOn(subscript(modification, dm.crit_))
-      )
+      cmpSpecialtyAndEquipped(key, basicHit.ifOn(subscript(phase, dm.crit_)))
     ),
     showSpecialtyAndEquipped(key)
   ),
@@ -45,7 +42,7 @@ const sheet = registerWengine(
     ownBuff.combat.crit_.add(
       cmpSpecialtyAndEquipped(
         key,
-        iceDashAtkHit.ifOn(subscript(modification, dm.extra_crit_))
+        iceDashAtkHit.ifOn(subscript(phase, dm.extra_crit_))
       )
     ),
     showSpecialtyAndEquipped(key)

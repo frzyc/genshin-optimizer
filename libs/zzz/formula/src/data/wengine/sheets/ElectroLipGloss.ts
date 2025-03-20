@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'ElectroLipGloss'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { anomalyOnEnemy } = allBoolConditionals(key)
 
@@ -26,7 +26,7 @@ const sheet = registerWengine(
     ownBuff.combat.atk_.add(
       cmpSpecialtyAndEquipped(
         key,
-        anomalyOnEnemy.ifOn(subscript(modification, dm.atk_))
+        anomalyOnEnemy.ifOn(subscript(phase, dm.atk_))
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -36,7 +36,7 @@ const sheet = registerWengine(
     ownBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
-        anomalyOnEnemy.ifOn(subscript(modification, dm.common_dmg_))
+        anomalyOnEnemy.ifOn(subscript(phase, dm.common_dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)

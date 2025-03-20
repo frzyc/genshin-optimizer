@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'DrillRigRedAxis'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { exSpecialOrChainUsed } = allBoolConditionals(key)
 
@@ -27,9 +27,7 @@ const sheet = registerWengine(
       'basic',
       cmpSpecialtyAndEquipped(
         key,
-        exSpecialOrChainUsed.ifOn(
-          subscript(modification, dm.basic_dash_electric_dmg_)
-        )
+        exSpecialOrChainUsed.ifOn(subscript(phase, dm.basic_dash_electric_dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -40,9 +38,7 @@ const sheet = registerWengine(
       'dash',
       cmpSpecialtyAndEquipped(
         key,
-        exSpecialOrChainUsed.ifOn(
-          subscript(modification, dm.basic_dash_electric_dmg_)
-        )
+        exSpecialOrChainUsed.ifOn(subscript(phase, dm.basic_dash_electric_dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)

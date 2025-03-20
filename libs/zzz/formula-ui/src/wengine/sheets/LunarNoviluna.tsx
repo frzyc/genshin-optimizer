@@ -9,7 +9,7 @@ const [chg, _ch] = trans('wengine', key)
 const icon = wengineAsset(key, 'icon')
 
 const sheet: UISheetElement = {
-  title: chg('passive.name'),
+  title: chg('phase'),
   img: icon,
   documents: [
     {

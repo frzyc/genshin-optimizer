@@ -17,7 +17,7 @@ import {
 
 const key: WengineKey = 'Housekeeper'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { offField } = allBoolConditionals(key)
 const { exSpecialHits } = allNumConditionals(key, true, 0, dm.stacks)
@@ -33,7 +33,7 @@ const sheet = registerWengine(
     ownBuff.combat.enerRegen.add(
       cmpSpecialtyAndEquipped(
         key,
-        offField.ifOn(subscript(modification, dm.enerRegen))
+        offField.ifOn(subscript(phase, dm.enerRegen))
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -43,7 +43,7 @@ const sheet = registerWengine(
     ownBuff.combat.dmg_.physical.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(exSpecialHits, subscript(modification, dm.physical_dmg_))
+        prod(exSpecialHits, subscript(phase, dm.physical_dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)

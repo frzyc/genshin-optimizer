@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'BigCylinder'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const sheet = registerWengine(
   key,
@@ -23,7 +23,7 @@ const sheet = registerWengine(
     { damageType1: 'elemental' },
     cmpSpecialtyAndEquipped(
       key,
-      prod(own.final.def, subscript(modification, dm.dmg_scaling))
+      prod(own.final.def, subscript(phase, dm.dmg_scaling))
     ),
     { cond: showSpecialtyAndEquipped(key) },
     own.combat.crit_.add(1)

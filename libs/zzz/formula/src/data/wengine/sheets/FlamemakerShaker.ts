@@ -17,7 +17,7 @@ import {
 
 const key: WengineKey = 'FlamemakerShaker'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { offField } = allBoolConditionals(key)
 const { exSpecialAssistHits } = allNumConditionals(key, true, 0, dm.stacks)
@@ -33,7 +33,7 @@ const sheet = registerWengine(
     ownBuff.combat.enerRegen.add(
       cmpSpecialtyAndEquipped(
         key,
-        offField.ifOn(subscript(modification, dm.enerRegen))
+        offField.ifOn(subscript(phase, dm.enerRegen))
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -45,7 +45,7 @@ const sheet = registerWengine(
         key,
         prod(
           exSpecialAssistHits,
-          subscript(modification, dm.common_dmg_),
+          subscript(phase, dm.common_dmg_),
           offField.ifOn(2, 1)
         )
       )
@@ -60,7 +60,7 @@ const sheet = registerWengine(
         cmpGE(
           exSpecialAssistHits,
           dm.stackThreshold,
-          subscript(modification, dm.anomProf)
+          subscript(phase, dm.anomProf)
         )
       )
     ),

@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'FusionCompiler'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { specialUsed } = allNumConditionals(key, true, 0, dm.stacks)
 
@@ -24,7 +24,7 @@ const sheet = registerWengine(
   registerBuff(
     'passive_atk_',
     ownBuff.combat.atk_.add(
-      cmpSpecialtyAndEquipped(key, subscript(modification, dm.passive_atk_))
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.passive_atk_))
     ),
     showSpecialtyAndEquipped(key)
   ),
@@ -35,7 +35,7 @@ const sheet = registerWengine(
     ownBuff.combat.anomProf.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(specialUsed, subscript(modification, dm.anomProf))
+        prod(specialUsed, subscript(phase, dm.anomProf))
       )
     ),
     showSpecialtyAndEquipped(key)

@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'HeartstringNocturne'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { heartstring } = allNumConditionals(key, true, 0, dm.stacks)
 
@@ -24,10 +24,7 @@ const sheet = registerWengine(
   registerBuff(
     'passive_crit_dmg_',
     ownBuff.combat.crit_dmg_.add(
-      cmpSpecialtyAndEquipped(
-        key,
-        subscript(modification, dm.passive_crit_dmg_)
-      )
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.passive_crit_dmg_))
     ),
     showSpecialtyAndEquipped(key)
   ),
@@ -39,7 +36,7 @@ const sheet = registerWengine(
       'chain',
       cmpSpecialtyAndEquipped(
         key,
-        prod(heartstring, subscript(modification, dm.chain_ult_resIgn_fire_))
+        prod(heartstring, subscript(phase, dm.chain_ult_resIgn_fire_))
       )
     ),
     showSpecialtyAndEquipped(key)
@@ -50,7 +47,7 @@ const sheet = registerWengine(
       'ult',
       cmpSpecialtyAndEquipped(
         key,
-        prod(heartstring, subscript(modification, dm.chain_ult_resIgn_fire_))
+        prod(heartstring, subscript(phase, dm.chain_ult_resIgn_fire_))
       )
     ),
     showSpecialtyAndEquipped(key)

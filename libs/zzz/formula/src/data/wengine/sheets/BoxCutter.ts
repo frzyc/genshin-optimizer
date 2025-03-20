@@ -11,7 +11,7 @@ import {
 
 const key: WengineKey = 'BoxCutter'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { launchedAftershock } = allBoolConditionals(key)
 
@@ -26,7 +26,7 @@ const sheet = registerWengine(
     ownBuff.combat.dmg_.physical.add(
       cmpSpecialtyAndEquipped(
         key,
-        launchedAftershock.ifOn(subscript(modification, dm.physical_dmg_))
+        launchedAftershock.ifOn(subscript(phase, dm.physical_dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)
