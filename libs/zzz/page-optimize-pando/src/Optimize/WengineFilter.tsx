@@ -1,20 +1,7 @@
 import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import {
-  CardThemed,
-  ImgIcon,
-  ModalWrapper,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
-import {
-  getUnitStr,
-  objKeyMap,
-  statKeyToFixed,
-  toPercent,
-} from '@genshin-optimizer/common/util'
-import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
-import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
-import { wengineAsset } from '@genshin-optimizer/zzz/assets'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
   allSpecialityKeys,
@@ -27,14 +14,10 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import { wengineUiSheets } from '@genshin-optimizer/zzz/formula-ui'
-import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
-import {
-  StatDisplay,
-  WengineName,
-  WengineToggle,
-  ZCard,
-} from '@genshin-optimizer/zzz/ui'
+import { WengineSheetDisplay } from '@genshin-optimizer/zzz/formula-ui'
+import { getWengineStat } from '@genshin-optimizer/zzz/stats'
+import { WengineToggle } from '@genshin-optimizer/zzz/ui'
+import type { IWengine } from '@genshin-optimizer/zzz/zood'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CloseIcon from '@mui/icons-material/Close'
@@ -246,9 +229,9 @@ function WengineCondSelector({ wengines }: { wengines: ICachedWengine[] }) {
           character={character}
           conditionals={charOpt.conditionals}
         >
-          <Grid container spacing={1}>
+          <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
             {wengineKeys.map((d) => (
-              <Grid item key={d} xs={1} md={2} lg={3}>
+              <Grid item key={d} xs={1}>
                 <WengineCondCard
                   wengineKey={d}
                   count={wengines.filter((w) => w.key === d).length}
@@ -261,63 +244,28 @@ function WengineCondSelector({ wengines }: { wengines: ICachedWengine[] }) {
     </Box>
   )
 }
+function getWengine(key: WengineKey): IWengine {
+  return {
+    key,
+    level: 60,
+    modification: 5,
+    phase: 1,
+    location: '',
+    lock: false,
+  }
+}
 function WengineCondCard({
   wengineKey,
   count,
 }: { wengineKey: WengineKey; count: number }) {
-  const wengineSheet = wengineUiSheets[wengineKey]
-  const wengineStats = getWengineStats(wengineKey, 60, 5, 1)
-  const mainStatKey = 'atk_base'
-  const substatKey = getWengineStat(wengineKey)['second_statkey']
+  const wengine = useMemo(() => getWengine(wengineKey), [wengineKey])
   return (
-    <ZCard bgt="light" sx={{ height: '100%' }}>
-      <CardHeader
-        title={<WengineName wKey={wengineKey} />}
-        avatar={<ImgIcon src={wengineAsset(wengineKey, 'icon')} size={2} />}
-        action={
-          <SqBadge color={count ? 'primary' : 'secondary'}>{count}</SqBadge>
-        }
-      />
-      <CardContent sx={{ py: 0 }}>
-        <Typography sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <StatDisplay statKey={'atk'} />
-          <span>
-            {toPercent(wengineStats[mainStatKey], mainStatKey).toFixed(
-              statKeyToFixed(mainStatKey)
-            )}
-            {getUnitStr(mainStatKey)}
-          </span>
-        </Typography>
-        <Typography sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <StatDisplay statKey={substatKey} />
-          <span>
-            {toPercent(wengineStats[substatKey], substatKey).toFixed(
-              statKeyToFixed(substatKey)
-            )}
-            {getUnitStr(substatKey)}
-          </span>
-        </Typography>
-      </CardContent>
-      <Box sx={{ opacity: count ? 1 : 0.5 }}>
-        <WengineUiSheetElement uiSheetElement={wengineSheet} />
-      </Box>
-    </ZCard>
-  )
-}
-function WengineUiSheetElement({
-  uiSheetElement,
-}: {
-  uiSheetElement: UISheetElement
-}) {
-  const { documents, title } = uiSheetElement
-  return (
-    <CardContent>
-      <Typography variant="subtitle1">{title}</Typography>
-      <Stack spacing={1}>
-        {documents.map((doc, i) => (
-          <DocumentDisplay key={i} document={doc} />
-        ))}
-      </Stack>
-    </CardContent>
+    <WengineSheetDisplay
+      wengine={wengine}
+      headerAction={
+        <SqBadge color={count ? 'primary' : 'secondary'}>{count}</SqBadge>
+      }
+      fade={!count}
+    />
   )
 }

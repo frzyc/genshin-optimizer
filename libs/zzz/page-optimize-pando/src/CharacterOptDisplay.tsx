@@ -5,8 +5,15 @@ import {
   OptConfigProvider,
   useCharOpt,
   useCharacterContext,
+  useDiscSets,
+  useDiscs,
+  useWengine,
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
+import {
+  DiscSheetDisplay,
+  WengineSheetDisplay,
+} from '@genshin-optimizer/zzz/formula-ui'
 import { CharacterCard, CharacterEditor } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -128,23 +135,47 @@ function CharacterSection() {
         onClose={() => setCharacterKey(undefined)}
       />
       <Stack spacing={1}>
-        <CardThemed>
+        {/* `overflow: 'visible'` for the CardThemed and CardContent is needed to allow the CharStatsDisplay to be sticky */}
+        <CardThemed sx={{ overflow: 'visible' }}>
           <CardContent
             sx={{
               display: 'flex',
               gap: 1,
-              backgroundColor: '#1b263b',
+              overflow: 'visible',
             }}
           >
-            <Grid container spacing={2} sx={{ flexWrap: 'wrap' }}>
-              <Grid item xs={12} sm={7} md={5} lg={4} xl={3}>
-                <Stack spacing={1}>
+            <Grid
+              container
+              spacing={2}
+              sx={{ flexWrap: 'wrap', overflow: 'visible' }}
+            >
+              <Grid
+                item
+                xs={12}
+                sm={7}
+                md={5}
+                lg={4}
+                xl={3}
+                sx={{ height: '100%', overflow: 'visible' }}
+              >
+                <Stack spacing={1} sx={{ height: '100%' }}>
                   <CharacterCard
                     characterKey={characterKey}
                     onClick={onClick}
                   />
                   <EnemyCard />
-                  <CharStatsDisplay />
+                  {/* This container is the "sticky" area for the stats display */}
+                  <Box sx={{ flexGrow: 1 }}>
+                    <Box
+                      sx={{
+                        position: 'sticky',
+                        top: '115px',
+                        bottom: '0px',
+                      }}
+                    >
+                      <CharStatsDisplay />
+                    </Box>
+                  </Box>
                 </Stack>
               </Grid>
               <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
@@ -191,8 +222,28 @@ function BuildsSection() {
 }
 
 function EquippedConditionals() {
-  const { key: characterKey } = useCharacterContext()!
-  const { optConfigId } = useCharOpt(characterKey)!
-  if (!optConfigId) return null
-  return <Box>Disc and Wengine conditionals</Box>
+  const { equippedDiscs, equippedWengine } = useCharacterContext()!
+  const discs = useDiscs(equippedDiscs)
+  const sets = useDiscSets(discs)
+  const wengine = useWengine(equippedWengine)
+  return (
+    <Box>
+      <Grid container spacing={1} columns={{ xs: 1, sm: 1, md: 2, lg: 3 }}>
+        {wengine && (
+          <Grid item xs={1}>
+            <WengineSheetDisplay wengine={wengine} />
+          </Grid>
+        )}
+        {Object.entries(sets).map(([setKey, count]) => (
+          <Grid item key={setKey} xs={1}>
+            <DiscSheetDisplay
+              setKey={setKey}
+              fade2={count < 2}
+              fade4={count < 4}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  )
 }

@@ -52,34 +52,32 @@ export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
     [database, optConfigId]
   )
   return (
-    <Box>
-      <CardThemed bgt="light">
-        <CardContent
-          sx={{
-            display: 'flex',
-            gap: 1,
-            justifyContent: 'space-between',
-            flexDirection: 'column',
-          }}
-        >
-          <Box display="flex" justifyContent="space-between">
-            {/* TODO: Translate */}
-            <Typography sx={{ fontWeight: 'bold' }}>Stat Filter</Typography>
-            {/* <InfoTooltip
+    <CardThemed bgt="light">
+      <CardContent
+        sx={{
+          display: 'flex',
+          gap: 1,
+          justifyContent: 'space-between',
+          flexDirection: 'column',
+        }}
+      >
+        <Box display="flex" justifyContent="space-between">
+          {/* TODO: Translate */}
+          <Typography sx={{ fontWeight: 'bold' }}>Stat Filter</Typography>
+          {/* <InfoTooltip
               title={<Typography>{t('constraintFilter.tooltip')}</Typography>}
             /> */}
-          </Box>
-        </CardContent>
-        <Divider />
-        <CardContent>
-          <StatFilterDisplay
-            statFilters={statFilters}
-            setStatFilters={setStatFilters}
-            disabled={disabled}
-          />
-        </CardContent>
-      </CardThemed>
-    </Box>
+        </Box>
+      </CardContent>
+      <Divider />
+      <CardContent>
+        <StatFilterDisplay
+          statFilters={statFilters}
+          setStatFilters={setStatFilters}
+          disabled={disabled}
+        />
+      </CardContent>
+    </CardThemed>
   )
 }
 
