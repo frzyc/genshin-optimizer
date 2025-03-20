@@ -6,14 +6,20 @@ import {
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
+import type { BonusStatKey, BonusStatTag } from '@genshin-optimizer/zzz/db'
+import {
+  bonusStatDamageTypes,
+  bonusStatDmgTypeIncStats,
+  bonusStatQtKeys,
+} from '@genshin-optimizer/zzz/db'
+import { bonusStatKeys, newBonusStatTag } from '@genshin-optimizer/zzz/db'
 import {
   useCharOpt,
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import type { Attribute, DamageType, Tag } from '@genshin-optimizer/zzz/formula'
+import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
 import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { DeleteForever } from '@mui/icons-material'
@@ -28,8 +34,8 @@ import {
 } from '@mui/material'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { AfterShockToggleButton } from './AfterShockToggleButton'
 import { DmgTypeDropdown } from './DmgTypeDropdown'
-import { AfterShockToggleButton } from './SpecificDmgTypeSelector'
 
 export function BonusStatsSection() {
   const { t } = useTranslation('page_optimize')
@@ -39,12 +45,12 @@ export function BonusStatsSection() {
   const charMetaDesc =
     characterKey && database.charMeta.get(characterKey).description
   const setStat = useCallback(
-    (tag: Tag, value: number | null, index?: number) =>
+    (tag: BonusStatTag, value: number | null, index?: number) =>
       database.charOpts.setBonusStat(characterKey, tag, value, index),
     [database, characterKey]
   )
-  const newTarget = (q: InitialStats) =>
-    database.charOpts.setBonusStat(characterKey, newTag(q), 0)
+  const newTarget = (q: BonusStatKey) =>
+    database.charOpts.setBonusStat(characterKey, newBonusStatTag(q), 0)
   const setDescription = useCallback(
     (description: string | undefined) => {
       if (!characterKey || !description) return
@@ -78,43 +84,19 @@ export function BonusStatsSection() {
     </Stack>
   )
 }
-function newTag(q: Tag['q']): Tag {
-  return {
-    et: 'own',
-    q,
-    qt: 'combat',
-    sheet: 'agg',
-  }
-}
-const initialStats: StatKey[] = [
-  'hp',
-  'hp_',
-  'def',
-  'def_',
-  'atk',
-  'atk_',
-  'dmg_',
-  'enerRegen_',
-  'crit_',
-  'crit_dmg_',
-  'anomProf',
-  'impact_',
-  'anomMas_',
-  'anomMas',
-] as const
-type InitialStats = (typeof initialStats)[number]
+
 function InitialStatDropdown({
   tag,
   onSelect,
 }: {
   tag?: Tag
-  onSelect: (key: (typeof initialStats)[number]) => void
+  onSelect: (key: BonusStatKey) => void
 }) {
   return (
     <DropdownButton
       title={(tag && <TagDisplay tag={tag} />) ?? 'Add Bonus Stat'}
     >
-      {initialStats.map((statKey) => (
+      {bonusStatKeys.map((statKey) => (
         <MenuItem key={statKey} onClick={() => onSelect(statKey)}>
           <StatDisplay statKey={statKey} showPercent />
         </MenuItem>
@@ -123,25 +105,6 @@ function InitialStatDropdown({
   )
 }
 
-// Could add 'elemental' back if there is all elemental dmg bonus in the future
-type DmgBonusDamageTypes = Exclude<DamageType, 'elemental' | 'aftershock'>
-const dmgBonusDamageTypes: DmgBonusDamageTypes[] = [
-  'basic',
-  'dash',
-  'dodgeCounter',
-  'special',
-  'exSpecial',
-  'chain',
-  'ult',
-  'quickAssist',
-  'defensiveAssist',
-  'evasiveAssist',
-  'assistFollowUp',
-  'anomaly',
-  'disorder',
-] as const
-
-const dmgTypeIncStats = ['atk_', 'dmg_', 'crit_', 'crit_dmg_'] as const
 function BonusStatDisplay({
   tag,
   setTag,
@@ -149,13 +112,13 @@ function BonusStatDisplay({
   setValue,
   onDelete,
 }: {
-  tag: Tag
-  setTag: (tag: Tag) => void
+  tag: BonusStatTag
+  setTag: (tag: BonusStatTag) => void
   value: number
   setValue: (value: number) => void
   onDelete: () => void
 }) {
-  const isPercent = (tag.name || tag.q)?.endsWith('_')
+  const isPercent = tag.q?.endsWith('_')
   return (
     <CardThemed bgt="light">
       <CardContent
@@ -164,6 +127,7 @@ function BonusStatDisplay({
           gap: 1,
           justifyContent: 'space-around',
           alignItems: 'center',
+          flexWrap: 'wrap',
         }}
       >
         <Typography>
@@ -179,18 +143,19 @@ function BonusStatDisplay({
             }}
           />
         )}
-        {dmgTypeIncStats.includes(
-          tag.q as (typeof dmgTypeIncStats)[number]
+        {bonusStatDmgTypeIncStats.includes(
+          tag.q as (typeof bonusStatDmgTypeIncStats)[number]
         ) && (
           <DmgTypeDropdown
-            dmgType={tag.damageType1 as DmgBonusDamageTypes}
-            keys={dmgBonusDamageTypes}
+            dmgType={tag.damageType1}
+            keys={bonusStatDamageTypes}
             setDmgType={(dmgType) => {
               const { damageType1, ...rest } = tag
               setTag(dmgType ? { ...rest, damageType1: dmgType } : rest)
             }}
           />
         )}
+        {/* in-game there is only buffs that increase aftershock dmg_ and crit_dmg_ */}
         {(['dmg_', 'crit_dmg_'] as const).includes(
           tag.q as 'dmg_' | 'crit_dmg_'
         ) && (
@@ -244,7 +209,7 @@ function AttributeDropdown({
   tag,
   setAttribute,
 }: {
-  tag: Tag
+  tag: BonusStatTag
   setAttribute: (ele: Attribute | null) => void
 }) {
   return (
@@ -270,17 +235,16 @@ function AttributeDropdown({
   )
 }
 
-const qtKeys = ['combat', 'base', 'initial'] as const
 function QtDropdown({
   qt,
   setQt,
 }: {
   qt: Tag['qt']
-  setQt: (ele: (typeof qtKeys)[number]) => void
+  setQt: (ele: (typeof bonusStatQtKeys)[number]) => void
 }) {
   return (
     <DropdownButton title={qt && qtMap[qt as keyof typeof qtMap]}>
-      {qtKeys.map((q) => (
+      {bonusStatQtKeys.map((q) => (
         <MenuItem
           key={q}
           onClick={() => setQt(q)}

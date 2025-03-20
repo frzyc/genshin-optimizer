@@ -73,6 +73,7 @@
     "json-bigint": "^1.0.0",
     "jsonc-eslint-parser": "^2.1.0",
     "nx": "20.5.0",
+    "prettier": "^3.5.3",
     "react-refresh": "^0.10.0",
     "supabase": "^1.178.2",
     "swc-loader": "0.1.15",

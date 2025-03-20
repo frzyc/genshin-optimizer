@@ -291,3 +291,19 @@ export function objSumInPlace(
 export function prettify(obj: object | undefined) {
   return JSON.stringify(obj, undefined, 2)
 }
+
+/**
+ * Removes all fields from an object whose values are `undefined`, in place.
+ *
+ * @param obj - The object from which `undefined` fields should be removed.
+ * @returns `obj` with all `undefined` fields removed.
+ */
+
+export function removeUndefinedFields<K extends string, V>(
+  obj: Record<K, V>
+): Record<K, V> {
+  Object.keys(obj).forEach(
+    (key) => obj[key as K] === undefined && delete obj[key as K]
+  )
+  return obj
+}
