@@ -335,66 +335,20 @@ export const conditionals = {
     },
   },
   RiotSuppressorMarkVI: {
-    boolConditional: {
-      sheet: 'RiotSuppressorMarkVI',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'RiotSuppressorMarkVI',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'RiotSuppressorMarkVI',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    charge: { sheet: 'RiotSuppressorMarkVI', name: 'charge', type: 'bool' },
   },
   RoaringRide: {
-    boolConditional: {
-      sheet: 'RoaringRide',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'RoaringRide',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'RoaringRide',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    anomProf: { sheet: 'RoaringRide', name: 'anomProf', type: 'bool' },
+    atk_: { sheet: 'RoaringRide', name: 'atk_', type: 'bool' },
   },
   SeveredInnocence: {
-    boolConditional: {
+    basicSpecialAftershockHit: {
       sheet: 'SeveredInnocence',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SeveredInnocence',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SeveredInnocence',
-      name: 'numConditional',
+      name: 'basicSpecialAftershockHit',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   ShadowHarmony: {
@@ -408,24 +362,13 @@ export const conditionals = {
     },
   },
   SharpenedStinger: {
-    boolConditional: {
+    predatoryInstinct: {
       sheet: 'SharpenedStinger',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SharpenedStinger',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SharpenedStinger',
-      name: 'numConditional',
+      name: 'predatoryInstinct',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   SixShooter: {
@@ -2816,107 +2759,88 @@ export const buffs = {
     },
   },
   RiotSuppressorMarkVI: {
-    cond_dmg_: {
+    basic_ether_dmg_: {
       sheet: 'RiotSuppressorMarkVI',
-      name: 'cond_dmg_',
+      name: 'basic_ether_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'RiotSuppressorMarkVI',
-        name: 'cond_dmg_',
+        attribute: 'ether',
+        damageType1: 'basic',
+        name: 'basic_ether_dmg_',
       },
     },
-    enemy_defIgn_: {
+    passive_crit_: {
       sheet: 'RiotSuppressorMarkVI',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'RiotSuppressorMarkVI',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'RiotSuppressorMarkVI',
-      name: 'team_dmg_',
+      name: 'passive_crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'RiotSuppressorMarkVI',
-        name: 'team_dmg_',
+        name: 'passive_crit_',
       },
     },
   },
   RoaringRide: {
-    cond_dmg_: {
+    anomProf: {
       sheet: 'RoaringRide',
-      name: 'cond_dmg_',
+      name: 'anomProf',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'anomProf',
         sheet: 'RoaringRide',
-        name: 'cond_dmg_',
+        name: 'anomProf',
       },
     },
-    enemy_defIgn_: {
+    atk_: {
       sheet: 'RoaringRide',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'RoaringRide',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'RoaringRide',
-      name: 'team_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'RoaringRide',
-        name: 'team_dmg_',
+        name: 'atk_',
       },
     },
   },
   SeveredInnocence: {
-    cond_dmg_: {
+    crit_dmg_: {
       sheet: 'SeveredInnocence',
-      name: 'cond_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'SeveredInnocence',
-        name: 'cond_dmg_',
+        name: 'crit_dmg_',
       },
     },
-    enemy_defIgn_: {
+    electric_dmg_: {
       sheet: 'SeveredInnocence',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'SeveredInnocence',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SeveredInnocence',
-      name: 'team_dmg_',
+      name: 'electric_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'SeveredInnocence',
-        name: 'team_dmg_',
+        attribute: 'electric',
+        name: 'electric_dmg_',
+      },
+    },
+    passive_crit_dmg_: {
+      sheet: 'SeveredInnocence',
+      name: 'passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'SeveredInnocence',
+        name: 'passive_crit_dmg_',
       },
     },
   },
@@ -2957,37 +2881,16 @@ export const buffs = {
     },
   },
   SharpenedStinger: {
-    cond_dmg_: {
+    physical_dmg_: {
       sheet: 'SharpenedStinger',
-      name: 'cond_dmg_',
+      name: 'physical_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'SharpenedStinger',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'SharpenedStinger',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'SharpenedStinger',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SharpenedStinger',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'SharpenedStinger',
-        name: 'team_dmg_',
+        attribute: 'physical',
+        name: 'physical_dmg_',
       },
     },
   },

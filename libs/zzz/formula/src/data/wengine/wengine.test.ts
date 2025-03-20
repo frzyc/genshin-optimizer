@@ -763,4 +763,92 @@ describe('Disc sheets test', () => {
 
     expect(calc.compute(char.combat.atk_).val).toBeCloseTo(0.12)
   })
+
+  it('RiotSuppressorMarkVI', () => {
+    const { data, characterKey } = testCharacterData('RiotSuppressorMarkVI')
+    data.push(
+      cond(
+        characterKey,
+        'RiotSuppressorMarkVI',
+        conditionals.RiotSuppressorMarkVI.charge.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    // Base + wengine bonus
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.3)
+    expect(calc.compute(char.final.dmg_.ether.basic[0]).val).toBeCloseTo(0.7)
+  })
+
+  it('RoaringRide', () => {
+    const { data, characterKey } = testCharacterData('RoaringRide')
+    data.push(
+      cond(characterKey, 'RoaringRide', conditionals.RoaringRide.atk_.name, 1),
+      cond(
+        characterKey,
+        'RoaringRide',
+        conditionals.RoaringRide.anomProf.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(0.128)
+    expect(calc.compute(char.combat.anomProf).val).toBeCloseTo(64)
+    // TODO: check anomaly buildup rate
+  })
+
+  it('SeveredInnocence', () => {
+    const { data, characterKey } = testCharacterData('SeveredInnocence')
+    data.push(
+      cond(
+        characterKey,
+        'SeveredInnocence',
+        conditionals.SeveredInnocence.basicSpecialAftershockHit.name,
+        3
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    // Base + wengine bonus
+    expect(calc.compute(char.combat.crit_dmg_).val).toBeCloseTo(0.48 + 3 * 0.16)
+    expect(calc.compute(char.combat.dmg_.electric).val).toBeCloseTo(0.32)
+  })
+
+  it('SharpenedStinger', () => {
+    const { data, characterKey } = testCharacterData('SharpenedStinger')
+    data.push(
+      cond(
+        characterKey,
+        'SharpenedStinger',
+        conditionals.SharpenedStinger.predatoryInstinct.name,
+        3
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.dmg_.physical).val).toBeCloseTo(3 * 0.24)
+    // TODO: check anomaly buildup rate
+  })
 })
