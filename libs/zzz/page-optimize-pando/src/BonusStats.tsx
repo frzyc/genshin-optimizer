@@ -134,6 +134,7 @@ function BonusStatDisplay({
             }}
           />
         )}
+        {/* in-game there is only buffs that increase aftershock dmg_ and crit_dmg_ */}
         {(['dmg_', 'crit_dmg_'] as const).includes(
           tag.q as 'dmg_' | 'crit_dmg_'
         ) && (

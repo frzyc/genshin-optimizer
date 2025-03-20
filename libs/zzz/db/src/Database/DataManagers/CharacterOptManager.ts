@@ -259,6 +259,7 @@ export class CharacterOptManager extends DataManager<
         if (damageType1)
           damageType1 = validateValue(damageType1, bonusStatDamageTypes)
 
+        // damageType2 is only 'aftershock', and in-game there is only buffs that increase its dmg_ and crit_dmg_
         if (q !== 'dmg_' && q !== 'crit_dmg_') damageType2 = undefined
         if (damageType2 && damageType2 !== 'aftershock') damageType2 = undefined
 
