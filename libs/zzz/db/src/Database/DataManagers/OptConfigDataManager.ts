@@ -29,7 +29,6 @@ export const statFilterStatKeys = [
   'crit_',
   'crit_dmg_',
   'pen',
-  'enerRegen_',
   'anomProf',
   'anomMas',
 ] as const

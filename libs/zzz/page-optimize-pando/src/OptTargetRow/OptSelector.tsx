@@ -89,7 +89,7 @@ export function OptSelector({
               database.charOpts.set(characterKey, {
                 target: {
                   q: q as TargetTag['q'],
-                  qt: q as 'final',
+                  qt: qt as 'final',
                 },
               })
             }
