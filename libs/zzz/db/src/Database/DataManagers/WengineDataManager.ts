@@ -149,8 +149,8 @@ export class WengineDataManager extends DataManager<
 export const initialWengine = (key: WengineKey): ICachedWengine => ({
   id: '',
   key,
-  level: 1,
-  modification: 0,
+  level: 60,
+  modification: 5,
   phase: 1,
   location: '',
   lock: false,

@@ -5,8 +5,15 @@ import {
   OptConfigProvider,
   useCharOpt,
   useCharacterContext,
+  useDiscSets,
+  useDiscs,
+  useWengine,
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
+import {
+  DiscSheetDisplay,
+  WengineSheetDisplay,
+} from '@genshin-optimizer/zzz/formula-ui'
 import { CharacterCard, CharacterEditor } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -24,41 +31,32 @@ import {
   useMemo,
   useState,
 } from 'react'
+import { useTranslation } from 'react-i18next'
 import { BonusStatsSection } from './BonusStats'
 import { CharStatsDisplay } from './CharStatsDisplay'
-import { DiscSheetsDisplay } from './DiscSheetsDisplay'
 import { EnemyCard } from './EnemyCard'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
 import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
-import { WengineSheetsDisplay } from './WengineSheetsDisplay'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 const BOT_PX = 0
 const SECTION_SPACING_PX = 33
 const SectionNumContext = createContext(0)
 export function CharacterOptDisplay() {
-  const sections: Array<[key: string, title: ReactNode, content: ReactNode]> =
-    useMemo(() => {
-      return [
-        ['char', 'Character', <CharacterSection key="char" />],
-        // ['talent', 'Talent', <CharacterTalentPane key="talent" />],
-        ['discCond', 'Disc Conditionals', <DiscSheetsDisplay key="discCond" />],
-        [
-          'wengineCond',
-          'Wengine Conditionals',
-          <WengineSheetsDisplay key="wengineCond" />,
-        ],
-        ['opt', 'Optimize', <OptimizeSection key="opt" />],
-        ['builds', 'Builds', <BuildsSection key="builds" />],
-      ] as const
-    }, [])
+  const sections: Array<[key: string, content: ReactNode]> = useMemo(() => {
+    return [
+      ['char', <CharacterSection key="char" />],
+      ['opt', <OptimizeSection key="opt" />],
+      ['builds', <BuildsSection key="builds" />],
+    ] as const
+  }, [])
 
   return (
     <SectionNumContext.Provider value={sections.length}>
       <Stack gap={1}>
-        {sections.map(([key, title, content], i) => (
-          <Section key={key} title={title} index={i}>
+        {sections.map(([key, content], i) => (
+          <Section key={key} title={key} index={i} zIndex={100}>
             {content}
           </Section>
         ))}
@@ -70,11 +68,16 @@ function Section({
   index,
   title,
   children,
+  zIndex,
+  withScrolling = true,
 }: {
   index: number
   title: React.ReactNode
   children: React.ReactNode
+  zIndex: number
+  withScrolling?: boolean
 }) {
+  const { t } = useTranslation('page_optimize')
   const [charScrollRef, onScroll] = useScrollRef()
   const numSections = useContext(SectionNumContext)
   const headerHeight = useContext(TeamHeaderHeightContext)
@@ -82,15 +85,18 @@ function Section({
     <>
       <CardThemed
         sx={(theme) => ({
-          outline: `solid ${theme.palette.secondary.main}`,
+          outline: `2px solid ${theme.palette.secondary.main}`,
           position: 'sticky',
           top: headerHeight + index * SECTION_SPACING_PX,
           bottom: BOT_PX + (numSections - 1 - index) * SECTION_SPACING_PX,
-          zIndex: 100,
+          zIndex,
         })}
       >
-        <CardActionArea onClick={onScroll} sx={{ px: 1 }}>
-          <Typography variant="h6">{title}</Typography>
+        <CardActionArea
+          onClick={withScrolling ? onScroll : undefined}
+          sx={{ px: 1 }}
+        >
+          <Typography variant="h6">{t(`${title}`)}</Typography>
         </CardActionArea>
       </CardThemed>
       <Box
@@ -113,6 +119,15 @@ function CharacterSection() {
   const onClick = useCallback(() => {
     character?.key && setCharacterKey(character.key)
   }, [character])
+
+  const characterInfoSections: Array<[key: string, content: ReactNode]> =
+    useMemo(() => {
+      return [
+        ['eq', <EquippedGrid key={'eq'} onClick={onClick} />],
+        ['Conditionals', <EquippedConditionals />],
+        ['bonusStats', <BonusStatsSection key={'bonusStats'} />],
+      ] as const
+    }, [onClick])
   return (
     <>
       <CharacterEditor
@@ -120,32 +135,69 @@ function CharacterSection() {
         onClose={() => setCharacterKey(undefined)}
       />
       <Stack spacing={1}>
-        <CardThemed>
+        {/* `overflow: 'visible'` for the CardThemed and CardContent is needed to allow the CharStatsDisplay to be sticky */}
+        <CardThemed sx={{ overflow: 'visible' }}>
           <CardContent
             sx={{
               display: 'flex',
               gap: 1,
-              backgroundColor: '#1b263b',
+              overflow: 'visible',
             }}
           >
-            <Grid container spacing={2} sx={{ flexWrap: 'wrap' }}>
-              <Grid item xs={12} sm={7} md={5} lg={4} xl={3}>
-                <Stack spacing={1}>
+            <Grid
+              container
+              spacing={2}
+              sx={{ flexWrap: 'wrap', overflow: 'visible' }}
+            >
+              <Grid
+                item
+                xs={12}
+                sm={7}
+                md={5}
+                lg={4}
+                xl={3}
+                sx={{ height: '100%', overflow: 'visible' }}
+              >
+                <Stack spacing={1} sx={{ height: '100%' }}>
                   <CharacterCard
                     characterKey={characterKey}
                     onClick={onClick}
                   />
                   <EnemyCard />
-                  <CharStatsDisplay />
+                  {/* This container is the "sticky" area for the stats display */}
+                  <Box sx={{ flexGrow: 1 }}>
+                    <Box
+                      sx={{
+                        position: 'sticky',
+                        top: '115px',
+                        bottom: '0px',
+                      }}
+                    >
+                      <CharStatsDisplay />
+                    </Box>
+                  </Box>
                 </Stack>
               </Grid>
               <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
-                <EquippedGrid onClick={onClick} />
+                <Stack spacing={1.5}>
+                  <TeamHeaderHeightContext.Provider value={0}>
+                    {characterInfoSections.map(([key, content], i) => (
+                      <Section
+                        key={key}
+                        title={key}
+                        index={i}
+                        zIndex={1}
+                        withScrolling={false}
+                      >
+                        {content}
+                      </Section>
+                    ))}
+                  </TeamHeaderHeightContext.Provider>
+                </Stack>
               </Grid>
             </Grid>
           </CardContent>
         </CardThemed>
-        <BonusStatsSection />
         <DebugListingsDisplay
           formulasRead={own.listing.formulas}
           buffsRead={own.listing.buffs}
@@ -166,5 +218,32 @@ function BuildsSection() {
     <OptConfigProvider optConfigId={optConfigId}>
       <GeneratedBuildsDisplay />
     </OptConfigProvider>
+  )
+}
+
+function EquippedConditionals() {
+  const { equippedDiscs, equippedWengine } = useCharacterContext()!
+  const discs = useDiscs(equippedDiscs)
+  const sets = useDiscSets(discs)
+  const wengine = useWengine(equippedWengine)
+  return (
+    <Box>
+      <Grid container spacing={1} columns={{ xs: 1, sm: 1, md: 2, lg: 3 }}>
+        {wengine && (
+          <Grid item xs={1}>
+            <WengineSheetDisplay wengine={wengine} />
+          </Grid>
+        )}
+        {Object.entries(sets).map(([setKey, count]) => (
+          <Grid item key={setKey} xs={1}>
+            <DiscSheetDisplay
+              setKey={setKey}
+              fade2={count < 2}
+              fade4={count < 4}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   )
 }

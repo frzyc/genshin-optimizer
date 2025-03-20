@@ -26,7 +26,7 @@ export type SpecificDmgTypeKey = Exclude<
   'anomaly' | 'disorder' | 'aftershock' | 'elemental'
 >
 // Corresponds to damageTypes in libs\zzz\formula\src\data\util\listing.ts
-export const specificDmgTypeKeys = [
+export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
   'basic',
   'dash',
   'dodgeCounter',
@@ -38,7 +38,7 @@ export const specificDmgTypeKeys = [
   'defensiveAssist',
   'evasiveAssist',
   'assistFollowUp',
-] as SpecificDmgTypeKey[]
+] as const
 
 function isSpeicifcDmgTypeKey(key: string): key is SpecificDmgTypeKey {
   return specificDmgTypeKeys.includes(key as SpecificDmgTypeKey)

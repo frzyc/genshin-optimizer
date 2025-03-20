@@ -71,6 +71,7 @@ function StatLine({ read }: { read: Read<Tag> }) {
   const fText = computed && formulaText(computed)
 
   if (!computed) return null
+  const valDisplay = valueString(computed.val, getUnitStr(name ?? ''))
   return (
     <Box
       sx={{
@@ -88,12 +89,13 @@ function StatLine({ read }: { read: Read<Tag> }) {
       <Box sx={{ flexGrow: 1 }}>
         <TagDisplay tag={tag} />
       </Box>
-      {valueString(computed.val, getUnitStr(name ?? ''))}
+      {valDisplay}
       <BootstrapTooltip
         title={
           <Typography component="div">
             <Box sx={{ display: 'flex', gap: 1 }}>
               <FullTagDisplay tag={tag} />
+              <span>{valDisplay}</span>
             </Box>
             <Divider />
             <Box>{fText?.formula}</Box>
