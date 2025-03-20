@@ -28,7 +28,7 @@ export class TagMapKeys {
       id[offset] |= word! // non-existent `value` is treated as zero
 
       if (isDebug('tag_db') && word === undefined)
-        throw `NonExistent tag ${category}:${value}`
+        throw `NonExistent tag ${category}:${value} in ${JSON.stringify(tag)}`
     }
     return id
   }
@@ -51,7 +51,7 @@ export class TagMapKeys {
       maskArr[offset] |= mask
 
       if (isDebug('tag_db') && word === undefined)
-        throw `NonExistent tag ${category}:${value}`
+        throw `NonExistent tag ${category}:${value} in ${JSON.stringify(tag)}`
     }
     return { id, mask: maskArr }
   }
@@ -75,7 +75,7 @@ export class TagMapKeys {
       id[offset] |= word! // non-existent `value` is treated as zero
 
       if (isDebug('tag_db') && word === undefined)
-        throw `NonExistent tag ${category}:${value}`
+        throw `NonExistent tag ${category}:${value} in ${JSON.stringify(extra)}`
     }
     return { id, firstReplacedByte }
   }
