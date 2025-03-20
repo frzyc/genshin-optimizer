@@ -5,9 +5,15 @@ import {
   NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
 import { type UnArray, isPercentStat } from '@genshin-optimizer/common/util'
-import type { AttributeKey, StatKey } from '@genshin-optimizer/zzz/consts'
+import type { AttributeKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
-import type { StatFilters } from '@genshin-optimizer/zzz/db'
+import type { StatFilterTag } from '@genshin-optimizer/zzz/db'
+import {
+  type StatFilterStatKey,
+  type StatFilters,
+  newStatFilterTag,
+  statFilterStatKeys,
+} from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   useDatabaseContext,
@@ -87,7 +93,7 @@ export function StatFilterDisplay({
   disabled: boolean
 }) {
   const setTarget = useCallback(
-    (tag: Tag, oldIndex?: number) => {
+    (tag: StatFilterTag, oldIndex?: number) => {
       const statFilters_ = structuredClone(statFilters)
       if (typeof oldIndex === 'undefined')
         statFilters_.push({
@@ -134,7 +140,7 @@ export function StatFilterDisplay({
     },
     [setStatFilters, statFilters]
   )
-  const newTarget = (q: InitialStats) => setTarget(newTag(q))
+  const newTarget = (q: StatFilterStatKey) => setTarget(newStatFilterTag(q))
 
   return (
     <Box display="flex" flexDirection="column" gap={1}>
@@ -155,36 +161,18 @@ export function StatFilterDisplay({
   )
 }
 
-function newTag(q: Tag['q']): Tag {
-  return {
-    et: 'own',
-    q,
-    qt: 'final',
-    sheet: 'agg',
-  }
-}
-const initialStats: StatKey[] = [
-  'hp',
-  'def',
-  'atk',
-  'dmg_',
-  'enerRegen_',
-  'crit_',
-  'crit_dmg_',
-] as const
-type InitialStats = (typeof initialStats)[number]
 function InitialStatDropdown({
   tag,
   onSelect,
 }: {
   tag?: Tag
-  onSelect: (key: (typeof initialStats)[number]) => void
+  onSelect: (key: (typeof statFilterStatKeys)[number]) => void
 }) {
   return (
     <DropdownButton
       title={(tag && <TagDisplay tag={tag} />) ?? 'Add Final Stat Filter'}
     >
-      {initialStats.map((statKey) => (
+      {statFilterStatKeys.map((statKey) => (
         <MenuItem key={statKey} onClick={() => onSelect(statKey)}>
           <StatDisplay statKey={statKey} showPercent />
         </MenuItem>
@@ -204,7 +192,7 @@ function StatFilterItem({
 }: {
   statFilter: UnArray<StatFilters>
   delTarget: () => void
-  setTarget: (tag: Tag) => void
+  setTarget: (tag: StatFilterTag) => void
   setTargetValue: (value: number) => void
   setTargetisMax: (isMax: boolean) => void
   setDisabled: (disabled: boolean) => void
@@ -212,7 +200,7 @@ function StatFilterItem({
 }) {
   const { tag, value, isMax, disabled: valueDisabled } = statFilter
 
-  const isPercent = isPercentStat(tag.name ?? tag.q ?? '')
+  const isPercent = isPercentStat(tag.q ?? '')
   return (
     <CardThemed>
       <CardContent sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>

@@ -1,9 +1,14 @@
 import type { UnArray } from '@genshin-optimizer/common/util'
-import { validateArr } from '@genshin-optimizer/common/util'
-import type { SpecialityKey } from '@genshin-optimizer/zzz/consts'
+import {
+  removeUndefinedFields,
+  validateArr,
+  validateValue,
+} from '@genshin-optimizer/common/util'
+import type { AttributeKey, SpecialityKey } from '@genshin-optimizer/zzz/consts'
 import {
   type DiscMainStatKey,
   type DiscSetKey,
+  allAttributeKeys,
   allDiscSetKeys,
   allSpecialityKeys,
   discMaxLevel,
@@ -13,8 +18,22 @@ import {
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
-import { validateTag } from '../tagUtil'
 import type { GeneratedBuildList } from './GeneratedBuildListDataManager'
+
+export const statFilterStatKeys = [
+  'hp',
+  'def',
+  'atk',
+  'dmg_',
+  'enerRegen_',
+  'crit_',
+  'crit_dmg_',
+  'pen',
+  'enerRegen_',
+  'anomProf',
+  'anomMas',
+] as const
+export type StatFilterStatKey = (typeof statFilterStatKeys)[number]
 
 export const allAllowLocationsState = [
   'unequippedOnly',
@@ -22,8 +41,12 @@ export const allAllowLocationsState = [
   'all',
 ] as const
 export type AllowLocationsState = (typeof allAllowLocationsState)[number]
+export type StatFilterTag = {
+  q: StatFilterStatKey
+  attribute?: AttributeKey
+}
 export type StatFilter = {
-  tag: Tag
+  tag: StatFilterTag
   value: number
   isMax: boolean
   disabled: boolean
@@ -93,13 +116,26 @@ export class OptConfigDataManager extends DataManager<
     } = obj as OptConfig
 
     if (!Array.isArray(statFilters)) statFilters = []
-    statFilters = statFilters.filter((statFilter) => {
-      const { tag, value, isMax, disabled } = statFilter as UnArray<StatFilters>
-      if (!validateTag(tag)) return false
-      if (typeof value !== 'number') return false
-      if (typeof isMax !== 'boolean') return false
-      if (typeof disabled !== 'boolean') return false
-      return true
+    statFilters = statFilters.map((statFilter) => {
+      let {
+        tag: { q, attribute },
+        value,
+        isMax,
+        disabled,
+      } = statFilter as UnArray<StatFilters>
+      q = validateValue(q, statFilterStatKeys) ?? statFilterStatKeys[0]
+      if (q !== 'dmg_') attribute = undefined
+      if (attribute) attribute = validateValue(attribute, allAttributeKeys)
+
+      if (typeof value !== 'number') value = 0
+      isMax = !!isMax
+      disabled = !!disabled
+      return {
+        tag: removeUndefinedFields({ q, attribute }) as StatFilterTag,
+        value,
+        isMax,
+        disabled,
+      }
     })
 
     setFilter2 = validateArr(setFilter2, allDiscSetKeys, [])
@@ -235,5 +271,20 @@ function initialOptConfig(): OptConfig {
     useEquippedWengine: false,
 
     generatedBuildListId: undefined,
+  }
+}
+
+export function newStatFilterTag(q: StatFilterStatKey): StatFilterTag {
+  return {
+    q,
+  }
+}
+
+export function StatFilterTagToTag(tag: StatFilterTag): Tag {
+  return {
+    ...tag,
+    et: 'own',
+    qt: 'final',
+    sheet: 'agg',
   }
 }

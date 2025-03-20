@@ -22,14 +22,14 @@ import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc, ICachedWengine } from '@genshin-optimizer/zzz/db'
+import type { StatFilter } from '@genshin-optimizer/zzz/db'
+import {
+  type ICachedDisc,
+  type ICachedWengine,
+  StatFilterTagToTag,
+} from '@genshin-optimizer/zzz/db'
 import { type Calculator, Read, type Tag } from '@genshin-optimizer/zzz/formula'
 type Frames = Array<{ tag: Tag; multiplier: number }>
-type StatFilter = {
-  tag: Tag
-  value: number
-  isMax: boolean
-}
 
 export function optimize(
   characterKey: CharacterKey,
@@ -62,9 +62,13 @@ export function optimize(
       )
     ),
     // stat filters
-    ...statFilters.map(({ tag: { src, dst, ...tag }, isMax }) => {
+    ...statFilters.map(({ tag, isMax }) => {
       // only apply src as tag for stat constraint
-      const newTag: Tag = { ...tag, src: characterKey, preset: `preset0` }
+      const newTag: Tag = {
+        ...StatFilterTagToTag(tag),
+        src: characterKey,
+        preset: `preset0`,
+      }
       // Invert max constraints for pruning, undefined as 'infer'
       return isMax
         ? prod(-1, new Read(newTag, undefined))

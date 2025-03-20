@@ -5,7 +5,16 @@ import { own } from '@genshin-optimizer/zzz/formula'
 import { Box, ListItemText, MenuItem } from '@mui/material'
 import { FullTagDisplay } from '../../components'
 import { useZzzCalcContext } from '../../hooks'
-
+const statTargets = [
+  own.final.atk,
+  own.final.hp,
+  own.final.def,
+  own.final.crit_,
+  own.final.crit_dmg_,
+  own.final.enerRegen,
+  own.final.anomProf,
+  own.final.anomMas,
+]
 export function OptimizationTargetSelector({
   tag,
   setOptTarget,
@@ -48,6 +57,15 @@ export function OptimizationTargetSelector({
             </MenuItem>
           )
       )}
+      {statTargets.map(({ tag }, i) => (
+        <MenuItem key={i} onClick={() => setOptTarget(tag)}>
+          <ListItemText>
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              <FullTagDisplay tag={tag} />
+            </Box>
+          </ListItemText>
+        </MenuItem>
+      ))}
     </DropdownButton>
   )
 }

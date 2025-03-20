@@ -33,12 +33,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharCalcProvider } from './CharCalcProvider'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
-import { CritModeSelector } from './CritModeSelector'
-import { OptSelector } from './OptSelector'
-import {
-  AfterShockToggle,
-  SpecificDmgTypeSelector,
-} from './SpecificDmgTypeSelector'
+
+import { OptTargetRow } from './OptTargetRow'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 export default function PageOptimize() {
@@ -148,24 +144,7 @@ export default function PageOptimize() {
                           mt: 1,
                         }}
                       >
-                        <Box
-                          display="flex"
-                          gap={1}
-                          sx={{
-                            position: 'sticky',
-                            top: 40,
-                            zIndex: 100,
-                            background: '#0C1020',
-                          }}
-                        >
-                          <OptSelector
-                            character={character}
-                            charOpt={charOpt}
-                          />
-                          <SpecificDmgTypeSelector />
-                          <AfterShockToggle />
-                          <CritModeSelector />
-                        </Box>
+                        <OptTargetRow character={character} charOpt={charOpt} />
                         <TeamHeaderHeightContext.Provider value={78}>
                           <CharacterOptDisplay />
                         </TeamHeaderHeightContext.Provider>
