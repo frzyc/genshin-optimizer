@@ -245,66 +245,29 @@ export const conditionals = {
     },
   },
   MarcatoDesire: {
-    boolConditional: {
+    attributeAnomalyInflicted: {
       sheet: 'MarcatoDesire',
-      name: 'boolConditional',
+      name: 'attributeAnomalyInflicted',
       type: 'bool',
     },
-    listConditional: {
+    exSpecialOrChainHitsEnemy: {
       sheet: 'MarcatoDesire',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MarcatoDesire',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      name: 'exSpecialOrChainHitsEnemy',
+      type: 'bool',
     },
   },
   OriginalTransmorpher: {
-    boolConditional: {
+    equipperHit: {
       sheet: 'OriginalTransmorpher',
-      name: 'boolConditional',
+      name: 'equipperHit',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'OriginalTransmorpher',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'OriginalTransmorpher',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   PeacekeeperSpecialized: {
-    boolConditional: {
+    shielded: {
       sheet: 'PeacekeeperSpecialized',
-      name: 'boolConditional',
+      name: 'shielded',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PeacekeeperSpecialized',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PeacekeeperSpecialized',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   PhaethonsMelody: {
@@ -324,27 +287,6 @@ export const conditionals = {
       sheet: 'PolarMetal',
       name: 'freeze_shatter',
       type: 'bool',
-    },
-  },
-  PreciousFossilizedCore: {
-    boolConditional: {
-      sheet: 'PreciousFossilizedCore',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PreciousFossilizedCore',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PreciousFossilizedCore',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ProtoPunk: {
@@ -2680,107 +2622,52 @@ export const buffs = {
     },
   },
   MarcatoDesire: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'MarcatoDesire',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'MarcatoDesire',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'MarcatoDesire',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'MarcatoDesire',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MarcatoDesire',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'MarcatoDesire',
-        name: 'team_dmg_',
+        name: 'atk_',
       },
     },
   },
   OriginalTransmorpher: {
-    cond_dmg_: {
+    impact_: {
       sheet: 'OriginalTransmorpher',
-      name: 'cond_dmg_',
+      name: 'impact_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'impact_',
         sheet: 'OriginalTransmorpher',
-        name: 'cond_dmg_',
+        name: 'impact_',
       },
     },
-    enemy_defIgn_: {
+    passive_hp_: {
       sheet: 'OriginalTransmorpher',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'OriginalTransmorpher',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'OriginalTransmorpher',
-      name: 'team_dmg_',
+      name: 'passive_hp_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'hp_',
         sheet: 'OriginalTransmorpher',
-        name: 'team_dmg_',
+        name: 'passive_hp_',
       },
     },
   },
   PeacekeeperSpecialized: {
-    cond_dmg_: {
+    enerRegen: {
       sheet: 'PeacekeeperSpecialized',
-      name: 'cond_dmg_',
+      name: 'enerRegen',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'enerRegen',
         sheet: 'PeacekeeperSpecialized',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'PeacekeeperSpecialized',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'PeacekeeperSpecialized',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PeacekeeperSpecialized',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'PeacekeeperSpecialized',
-        name: 'team_dmg_',
+        name: 'enerRegen',
       },
     },
   },
@@ -2855,41 +2742,6 @@ export const buffs = {
         sheet: 'PolarMetal',
         damageType1: 'dash',
         name: 'set4_dash_dmg_',
-      },
-    },
-  },
-  PreciousFossilizedCore: {
-    cond_dmg_: {
-      sheet: 'PreciousFossilizedCore',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'PreciousFossilizedCore',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'PreciousFossilizedCore',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'PreciousFossilizedCore',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PreciousFossilizedCore',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'PreciousFossilizedCore',
-        name: 'team_dmg_',
       },
     },
   },

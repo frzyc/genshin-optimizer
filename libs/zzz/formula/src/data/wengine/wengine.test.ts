@@ -612,4 +612,74 @@ describe('Disc sheets test', () => {
   })
 
   // MagneticStormCharlie should be here but no conds
+
+  it('MarcatoDesire', () => {
+    const { data, characterKey } = testCharacterData('MarcatoDesire')
+    data.push(
+      cond(
+        characterKey,
+        'MarcatoDesire',
+        conditionals.MarcatoDesire.exSpecialOrChainHitsEnemy.name,
+        1
+      ),
+      cond(
+        characterKey,
+        'MarcatoDesire',
+        conditionals.MarcatoDesire.attributeAnomalyInflicted.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(2 * 0.096)
+  })
+
+  it('OriginalTransmorpher', () => {
+    const { data, characterKey } = testCharacterData('OriginalTransmorpher')
+    data.push(
+      cond(
+        characterKey,
+        'OriginalTransmorpher',
+        conditionals.OriginalTransmorpher.equipperHit.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.hp_).val).toBeCloseTo(0.125)
+    expect(calc.compute(char.combat.impact_).val).toBeCloseTo(0.16)
+  })
+
+  it('PeacekeeperSpecialized', () => {
+    const { data, characterKey } = testCharacterData('PeacekeeperSpecialized')
+    data.push(
+      cond(
+        characterKey,
+        'PeacekeeperSpecialized',
+        conditionals.PeacekeeperSpecialized.shielded.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+
+    expect(calc.compute(char.combat.enerRegen).val).toBeCloseTo(0.64)
+    // TODO: check anomaly buildup
+  })
+
+  // TODO: add PreciousFossilizedCore
 })

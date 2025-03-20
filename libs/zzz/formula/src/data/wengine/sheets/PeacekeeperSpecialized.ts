@@ -1,16 +1,7 @@
 import { subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { getWengineParams } from '@genshin-optimizer/zzz/stats'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
-  own,
-  ownBuff,
-  registerBuff,
-  teamBuff,
-} from '../../util'
+import { mappedStats } from '@genshin-optimizer/zzz/stats'
+import { allBoolConditionals, own, ownBuff, registerBuff } from '../../util'
 import {
   cmpSpecialtyAndEquipped,
   entriesForWengine,
@@ -19,42 +10,27 @@ import {
 } from '../util'
 
 const key: WengineKey = 'PeacekeeperSpecialized'
+const dm = mappedStats.wengine[key]
 const { phase } = own.wengine
-const params = getWengineParams(key)
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { shielded } = allBoolConditionals(key)
 
 const sheet = registerWengine(
   key,
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
-  // TODO: Add formulas/buffs
+  // Passive buffs
+  // TODO: add anomaly buildup passives
+
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.combat.common_dmg_.add(
+    'enerRegen',
+    ownBuff.combat.enerRegen.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(subscript(phase, params[0]))
+        shielded.ifOn(subscript(phase, dm.enerRegen))
       )
-    ),
-    showSpecialtyAndEquipped(key)
-  ),
-  registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(
-      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
-    ),
-    showSpecialtyAndEquipped(key)
-  ),
-  registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(
-      cmpSpecialtyAndEquipped(key, numConditional)
     ),
     showSpecialtyAndEquipped(key)
   )
