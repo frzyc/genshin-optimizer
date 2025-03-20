@@ -42,23 +42,19 @@ export function BonusStatsSection() {
     database.charOpts.setBonusStat(characterKey, newTag(q), 0)
 
   return (
-    <CardThemed>
-      <CardContent>
-        <Stack spacing={1}>
-          {bonusStats.map(({ tag, value }, i) => (
-            <BonusStatDisplay
-              key={JSON.stringify(tag) + i}
-              tag={tag}
-              value={value}
-              setValue={(value) => setStat(tag, value, i)}
-              onDelete={() => setStat(tag, null, i)}
-              setTag={(tag) => setStat(tag, value, i)}
-            />
-          ))}
-          <InitialStatDropdown onSelect={newTarget} />
-        </Stack>
-      </CardContent>
-    </CardThemed>
+    <Stack spacing={1}>
+      {bonusStats.map(({ tag, value }, i) => (
+        <BonusStatDisplay
+          key={JSON.stringify(tag) + i}
+          tag={tag}
+          value={value}
+          setValue={(value) => setStat(tag, value, i)}
+          onDelete={() => setStat(tag, null, i)}
+          setTag={(tag) => setStat(tag, value, i)}
+        />
+      ))}
+      <InitialStatDropdown onSelect={newTarget} />
+    </Stack>
   )
 }
 function newTag(q: Tag['q']): Tag {
