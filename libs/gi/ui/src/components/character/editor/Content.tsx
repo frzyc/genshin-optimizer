@@ -219,7 +219,6 @@ function EquipmentSection() {
 function InTeam() {
   const { t } = useTranslation('page_character')
   const navigate = useNavigate()
-
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -228,19 +227,32 @@ function InTeam() {
   const [dbDirty, setDbDirty] = useForceUpdate()
   const loadoutTeamMap = useMemo(() => {
     const loadoutTeamMap: Record<string, string[]> = {}
-    database.teamChars.entries.map(([teamCharId, teamChar]) => {
-      if (teamChar.key !== characterKey) return
-      if (!loadoutTeamMap[teamCharId]) loadoutTeamMap[teamCharId] = []
-    })
-    database.teams.entries.forEach(([teamId, team]) => {
-      const teamCharIdWithCKey = team.loadoutData.find(
-        (loadoutDatum) =>
-          loadoutDatum &&
-          database.teamChars.get(loadoutDatum?.teamCharId)?.key === characterKey
-      )
-      if (teamCharIdWithCKey)
-        loadoutTeamMap[teamCharIdWithCKey?.teamCharId].push(teamId)
-    })
+    database.teamChars.entries
+      .sort((a, b) => {
+        const [, ateam] = a
+        const [, bteam] = b
+        return ateam.name.localeCompare(bteam.name)
+      })
+      .map(([teamCharId, teamChar]) => {
+        if (teamChar.key !== characterKey) return
+        if (!loadoutTeamMap[teamCharId]) loadoutTeamMap[teamCharId] = []
+      })
+    database.teams.entries
+      .sort((a, b) => {
+        const [, ateam] = a
+        const [, bteam] = b
+        return ateam.name.localeCompare(bteam.name)
+      })
+      .forEach(([teamId, team]) => {
+        const teamCharIdWithCKey = team.loadoutData.find(
+          (loadoutDatum) =>
+            loadoutDatum &&
+            database.teamChars.get(loadoutDatum?.teamCharId)?.key ===
+              characterKey
+        )
+        if (teamCharIdWithCKey)
+          loadoutTeamMap[teamCharIdWithCKey?.teamCharId].push(teamId)
+      })
     return dbDirty && loadoutTeamMap
   }, [dbDirty, characterKey, database])
   useEffect(
