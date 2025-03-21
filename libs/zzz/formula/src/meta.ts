@@ -760,45 +760,24 @@ export const conditionals = {
     },
   },
   WeepingCradle: {
-    boolConditional: {
+    attack: { sheet: 'WeepingCradle', name: 'attack', type: 'bool' },
+    stacks: {
       sheet: 'WeepingCradle',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'WeepingCradle',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WeepingCradle',
-      name: 'numConditional',
+      name: 'stacks',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 6,
     },
   },
   WeepingGemini: {
-    boolConditional: {
+    anomaly_stack: {
       sheet: 'WeepingGemini',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'WeepingGemini',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WeepingGemini',
-      name: 'numConditional',
+      name: 'anomaly_stack',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 4,
     },
   },
   WoodpeckerElectro: {
@@ -812,24 +791,10 @@ export const conditionals = {
     },
   },
   ZanshinHerbCase: {
-    boolConditional: {
+    apply_anom_stun: {
       sheet: 'ZanshinHerbCase',
-      name: 'boolConditional',
+      name: 'apply_anom_stun',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ZanshinHerbCase',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ZanshinHerbCase',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
 } as const
@@ -2845,16 +2810,28 @@ export const buffs = {
     },
   },
   ShadowHarmony: {
-    set2: {
+    set2_aftershock: {
       sheet: 'ShadowHarmony',
-      name: 'set2',
+      name: 'set2_aftershock',
       tag: {
         et: 'display',
         qt: 'initial',
         q: 'dmg_',
         sheet: 'ShadowHarmony',
         damageType1: 'aftershock',
-        name: 'set2',
+        name: 'set2_aftershock',
+      },
+    },
+    set2_dash: {
+      sheet: 'ShadowHarmony',
+      name: 'set2_dash',
+      tag: {
+        et: 'display',
+        qt: 'initial',
+        q: 'dmg_',
+        sheet: 'ShadowHarmony',
+        damageType1: 'dash',
+        name: 'set2_dash',
       },
     },
     set4_stack_atk_: {
@@ -3623,61 +3600,18 @@ export const buffs = {
         name: 'cond_dmg_',
       },
     },
-    enemy_defIgn_: {
-      sheet: 'WeepingCradle',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'WeepingCradle',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'WeepingCradle',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'WeepingCradle',
-        name: 'team_dmg_',
-      },
-    },
   },
   WeepingGemini: {
-    cond_dmg_: {
+    anomaly_stack: {
       sheet: 'WeepingGemini',
-      name: 'cond_dmg_',
+      name: 'anomaly_stack',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'anomProf',
         sheet: 'WeepingGemini',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'WeepingGemini',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'WeepingGemini',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'WeepingGemini',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'WeepingGemini',
-        name: 'team_dmg_',
+        dst: null,
+        name: 'anomaly_stack',
       },
     },
   },
@@ -3706,37 +3640,39 @@ export const buffs = {
     },
   },
   ZanshinHerbCase: {
-    cond_dmg_: {
+    cond_crit_: {
       sheet: 'ZanshinHerbCase',
-      name: 'cond_dmg_',
+      name: 'cond_crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'ZanshinHerbCase',
-        name: 'cond_dmg_',
+        name: 'cond_crit_',
       },
     },
-    enemy_defIgn_: {
+    passive_crit_: {
       sheet: 'ZanshinHerbCase',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'ZanshinHerbCase',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ZanshinHerbCase',
-      name: 'team_dmg_',
+      name: 'passive_crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'ZanshinHerbCase',
-        name: 'team_dmg_',
+        name: 'passive_crit_',
+      },
+    },
+    passive_electric_dmg_: {
+      sheet: 'ZanshinHerbCase',
+      name: 'passive_electric_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ZanshinHerbCase',
+        attribute: 'electric',
+        damageType1: 'dash',
+        name: 'passive_electric_dmg_',
       },
     },
   },
