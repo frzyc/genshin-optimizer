@@ -73,7 +73,12 @@ function WengineUiSheetElement({
       <Typography variant="subtitle1">{title}</Typography>
       <Stack spacing={1}>
         {documents.map((doc, i) => (
-          <DocumentDisplay key={i} document={doc} />
+          <DocumentDisplay
+            key={i}
+            document={doc}
+            typoVariant="body2"
+            collapse
+          />
         ))}
       </Stack>
     </CardContent>

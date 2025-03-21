@@ -112,9 +112,9 @@ export default function Header({ anchor }: { anchor: string }) {
 const maincontent = [
   discs,
   optimize,
-  ...(shouldShowDevComponents ? [optimizePando] : []),
   ...(shouldShowDevComponents ? [characters] : []),
   ...(shouldShowDevComponents ? [wengines] : []),
+  ...(shouldShowDevComponents ? [optimizePando] : []),
   settings,
 ] as const //Todo remove shouldShowDevComponents for characters once it's ready for prod
 
@@ -221,9 +221,9 @@ function DesktopHeader({
 const mobileContent = [
   discs,
   optimize,
-  ...(shouldShowDevComponents ? [optimizePando] : []),
   ...(shouldShowDevComponents ? [characters] : []),
   ...(shouldShowDevComponents ? [wengines] : []),
+  ...(shouldShowDevComponents ? [optimizePando] : []),
   settings,
 ] as const //Todo remove shouldShowDevComponents for characters once it's ready for prod
 
