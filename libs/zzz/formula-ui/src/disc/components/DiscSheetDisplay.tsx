@@ -42,7 +42,10 @@ export function DiscSheetDisplay({
               opacity: (key === '2' ? fade2 : fade4) ? 0.5 : 1,
             }}
           >
-            <DiscUiSheetElement uiSheetElement={uiSheetElement} />
+            <DiscUiSheetElement
+              uiSheetElement={uiSheetElement}
+              collapse={key !== '2'}
+            />
           </Box>
         ))}
       </Stack>
@@ -51,8 +54,10 @@ export function DiscSheetDisplay({
 }
 function DiscUiSheetElement({
   uiSheetElement,
+  collapse = false,
 }: {
   uiSheetElement: UISheetElement
+  collapse?: boolean
 }) {
   const { documents, title } = uiSheetElement
   return (
@@ -60,7 +65,12 @@ function DiscUiSheetElement({
       <Typography variant="subtitle1">{title}</Typography>
       <Stack spacing={1}>
         {documents.map((doc, i) => (
-          <DocumentDisplay key={i} document={doc} />
+          <DocumentDisplay
+            key={i}
+            document={doc}
+            typoVariant="body2"
+            collapse={collapse}
+          />
         ))}
       </Stack>
     </CardContent>
