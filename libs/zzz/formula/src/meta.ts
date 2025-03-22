@@ -371,48 +371,6 @@ export const conditionals = {
       max: 3,
     },
   },
-  SixShooter: {
-    boolConditional: {
-      sheet: 'SixShooter',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SixShooter',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SixShooter',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  SliceOfTime: {
-    boolConditional: {
-      sheet: 'SliceOfTime',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SliceOfTime',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SliceOfTime',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   SpectralGaze: {
     hit_aftershock_electric: {
       sheet: 'SpectralGaze',
@@ -2649,76 +2607,6 @@ export const buffs = {
         sheet: 'ShockstarDisco',
         damageType1: 'basic',
         name: 'set4_basic_daze_',
-      },
-    },
-  },
-  SixShooter: {
-    cond_dmg_: {
-      sheet: 'SixShooter',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'SixShooter',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'SixShooter',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'SixShooter',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SixShooter',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'SixShooter',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  SliceOfTime: {
-    cond_dmg_: {
-      sheet: 'SliceOfTime',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'SliceOfTime',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'SliceOfTime',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'SliceOfTime',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SliceOfTime',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'SliceOfTime',
-        name: 'team_dmg_',
       },
     },
   },
