@@ -19,9 +19,7 @@ import '../styles.scss'
 import Footer from './Footer'
 import Header from './Header'
 const PageDiscs = lazy(() => import('@genshin-optimizer/zzz/page-discs'))
-const PageOptimize = lazy(
-  () => import('@genshin-optimizer/zzz/page-optimize-pando')
-)
+const PageOptimize = lazy(() => import('@genshin-optimizer/zzz/page-optimize'))
 const PageCharacters = lazy(
   () => import('@genshin-optimizer/zzz/page-characters')
 )

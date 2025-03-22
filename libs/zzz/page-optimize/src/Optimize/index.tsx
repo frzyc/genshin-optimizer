@@ -16,7 +16,7 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
-import { optimize } from '@genshin-optimizer/zzz/solver-pando'
+import { optimize } from '@genshin-optimizer/zzz/solver'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { WorkerSelector } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
