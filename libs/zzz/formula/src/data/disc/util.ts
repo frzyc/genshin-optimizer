@@ -19,12 +19,12 @@ export function entriesForDisc(key: DiscSetKey): TagMapNodeEntries {
   if (key === 'ShadowHarmony')
     return [
       ...registerBuff(
-        'set2',
+        'set2_dash',
         ownBuff.initial.dmg_.addWithDmgType('dash', cmpGE(discCount, 2, 0.15)),
         showCond2Set
       ),
       ...registerBuff(
-        'set2',
+        'set2_aftershock',
         ownBuff.initial.dmg_.addWithDmgType(
           'aftershock',
           cmpGE(discCount, 2, 0.15)

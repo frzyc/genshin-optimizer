@@ -18,19 +18,7 @@ const sheet = registerDisc(
     'set4_basic_daze_',
     enemyDebuff.common.stun_.addWithDmgType('basic', cmpGE(discCount, 4, 0.2)),
     showCond4Set
-  ),
-  registerBuff(
-    'set4_dash_daze_',
-    enemyDebuff.common.stun_.addWithDmgType('dash', cmpGE(discCount, 4, 0.2)),
-    showCond4Set
-  ),
-  registerBuff(
-    'set4_dodgeCounter_daze_',
-    enemyDebuff.common.stun_.addWithDmgType(
-      'dodgeCounter',
-      cmpGE(discCount, 4, 0.2)
-    ),
-    showCond4Set
   )
+  // TODO: add daze_
 )
 export default sheet

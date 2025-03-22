@@ -6,11 +6,9 @@ const data_gen = getWengineParams(key)
 
 let o = 0
 
-// TODO: Load scalings
 const dm = {
-  cond_dmg_: data_gen[o++] ?? [-1, 1, 2, 3, 4, 5],
-  passive_atk: data_gen[o++] ?? [-1, 1, 2, 3, 4, 5],
-  duration: data_gen[o++]?.[1] ?? 0,
+  enerRegen: data_gen[o++],
+  passive_exSpecial_assist_anomBuildup_: data_gen[o++],
 } as const
 
 export default dm
