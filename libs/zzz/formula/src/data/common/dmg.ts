@@ -8,7 +8,7 @@ import {
   sumfrac,
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, own, ownBuff, percent } from '../util'
+import { enemy, enemyDebuff, own, ownBuff, percent } from '../util'
 
 const defLevelFactor = [
   -1, 50, 54, 58, 62, 66, 71, 76, 82, 88, 94, 100, 107, 114, 121, 129, 137, 145,
@@ -35,13 +35,17 @@ const data: TagMapNodeEntries = [
   // Buff Multiplier (e.g. Timeweaver Disorder DMG Bonus)
   ownBuff.dmg.buff_mult_.add(sum(percent(1), own.final.buff_)),
   // DEF Multiplier
-  // levelFactor / (max(def * (1 - pen_) - pen, 0) + levelFactor)
+  // levelFactor / (max(def * (1 - defRed_) * (1 - pen_) - pen, 0) + levelFactor)
   ownBuff.dmg.def_mult_.add(
     sumfrac(
       subscript(own.char.lvl, defLevelFactor),
       max(
         sum(
-          prod(enemy.common.def, sum(percent(1), prod(-1, own.final.pen_))),
+          prod(
+            enemy.common.def,
+            sum(percent(1), prod(-1, enemyDebuff.common.defRed_)),
+            sum(percent(1), prod(-1, own.final.pen_))
+          ),
           prod(-1, own.final.pen)
         ),
         0

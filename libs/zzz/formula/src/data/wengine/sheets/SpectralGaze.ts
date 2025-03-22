@@ -1,15 +1,18 @@
-import { subscript } from '@genshin-optimizer/pando/engine'
+import {
+  cmpGE,
+  constant,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
   allNumConditionals,
   enemyDebuff,
   own,
-  ownBuff,
   registerBuff,
-  teamBuff,
 } from '../../util'
 import {
   cmpSpecialtyAndEquipped,
@@ -20,41 +23,41 @@ import {
 
 const key: WengineKey = 'SpectralGaze'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { hit_aftershock_electric } = allBoolConditionals(key)
+const { spiritLock } = allNumConditionals(key, true, 0, dm.max_stack)
 
 const sheet = registerWengine(
   key,
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
-  // TODO: Add formulas/buffs
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.combat.common_dmg_.add(
+    'cond_defRed_',
+    enemyDebuff.common.defRed_.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(subscript(modification, dm.cond_dmg_))
+        hit_aftershock_electric.ifOn(subscript(phase, dm.defRed_))
       )
     ),
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(
-      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
-    ),
-    showSpecialtyAndEquipped(key)
-  ),
-  registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(
-      cmpSpecialtyAndEquipped(key, numConditional)
+    'cond_impact_',
+    own.combat.impact_.add(
+      cmpSpecialtyAndEquipped(
+        key,
+        sum(
+          prod(spiritLock, subscript(phase, dm.impact_)),
+          cmpGE(
+            spiritLock,
+            constant(dm.max_stack),
+            subscript(phase, dm.add_impact_)
+          )
+        )
+      )
     ),
     showSpecialtyAndEquipped(key)
   )

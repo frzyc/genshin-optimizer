@@ -177,6 +177,7 @@ export const enemyTag = {
   common: {
     lvl: fixed,
     def: agg,
+    defRed_: agg,
     res_: agg,
     resRed_: agg,
     dmgInc_: agg,

@@ -6,8 +6,8 @@ import type {
 } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { Translate } from '@genshin-optimizer/zzz/i18n'
-import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import type { ReactNode } from 'react'
+import { TagDisplay } from './components'
 export const st = (
   strKey: string,
   values?: Record<string, string | number>
@@ -41,10 +41,8 @@ export function trans(
  * Only works for tag that maps to a general Stat to be displayed.
  */
 export function tagToTagField(tag: Tag): TagField {
-  let q = tag.q
-  if (q === 'dmg_' && tag.attribute) q = `${tag.attribute}_dmg_`
   return {
-    title: <StatDisplay statKey={q as any} />,
+    title: <TagDisplay tag={tag} />,
     fieldRef: tag,
   }
 }

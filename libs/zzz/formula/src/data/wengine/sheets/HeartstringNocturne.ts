@@ -1,15 +1,7 @@
-import { subscript } from '@genshin-optimizer/pando/engine'
+import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
-  own,
-  ownBuff,
-  registerBuff,
-  teamBuff,
-} from '../../util'
+import { mappedStats } from '@genshin-optimizer/zzz/stats'
+import { allNumConditionals, own, ownBuff, registerBuff } from '../../util'
 import {
   cmpSpecialtyAndEquipped,
   entriesForWengine,
@@ -18,41 +10,45 @@ import {
 } from '../util'
 
 const key: WengineKey = 'HeartstringNocturne'
-const { modification } = own.wengine
+const dm = mappedStats.wengine[key]
+const { phase } = own.wengine
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { heartstring } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerWengine(
   key,
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
-  // TODO: Add formulas/buffs
+  // Passive buffs
+  registerBuff(
+    'passive_crit_dmg_',
+    ownBuff.combat.crit_dmg_.add(
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.passive_crit_dmg_))
+    ),
+    showSpecialtyAndEquipped(key)
+  ),
+
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.combat.common_dmg_.add(
+    'chain_resIgn_fire_',
+    ownBuff.combat.resIgn_.fire.addWithDmgType(
+      'chain',
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(subscript(modification, [0.1, 0.2, 0.3, 0.4, 0.5]))
+        prod(heartstring, subscript(phase, dm.chain_ult_resIgn_fire_))
       )
     ),
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(
-      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
-    ),
-    showSpecialtyAndEquipped(key)
-  ),
-  registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(
-      cmpSpecialtyAndEquipped(key, numConditional)
+    'ult_resIgn_fire_',
+    ownBuff.combat.resIgn_.fire.addWithDmgType(
+      'ult',
+      cmpSpecialtyAndEquipped(
+        key,
+        prod(heartstring, subscript(phase, dm.chain_ult_resIgn_fire_))
+      )
     ),
     showSpecialtyAndEquipped(key)
   )

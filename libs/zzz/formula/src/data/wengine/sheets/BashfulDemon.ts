@@ -17,7 +17,7 @@ import {
 
 const key: WengineKey = 'BashfulDemon'
 const dm = mappedStats.wengine[key]
-const { modification } = own.wengine
+const { phase } = own.wengine
 
 const { launch_ex_attack } = allNumConditionals(key, true, 0, 4)
 
@@ -28,9 +28,9 @@ const sheet = registerWengine(
 
   // passive buffs
   registerBuff(
-    'ice_dmg_',
+    'passive_ice_dmg_',
     ownBuff.combat.dmg_.ice.add(
-      cmpSpecialtyAndEquipped(key, subscript(modification, dm.ice_))
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.ice_))
     ),
     showSpecialtyAndEquipped(key)
   ),
@@ -41,7 +41,7 @@ const sheet = registerWengine(
     teamBuff.combat.atk_.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(launch_ex_attack, subscript(modification, dm.atk_))
+        prod(launch_ex_attack, subscript(phase, dm.atk_))
       )
     ),
     showSpecialtyAndEquipped(key)
