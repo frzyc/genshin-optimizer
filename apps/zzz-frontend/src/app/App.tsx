@@ -19,7 +19,8 @@ import '../styles.scss'
 import Footer from './Footer'
 import Header from './Header'
 const PageDiscs = lazy(() => import('@genshin-optimizer/zzz/page-discs'))
-const PageOptimize = lazy(
+const PageOptimize = lazy(() => import('@genshin-optimizer/zzz/page-optimize'))
+const PageOptimizePando = lazy(
   () => import('@genshin-optimizer/zzz/page-optimize-pando')
 )
 const PageCharacters = lazy(
@@ -71,6 +72,7 @@ function Content() {
             <Route index element={<PageHome />} />
             <Route path="/discs" element={<PageDiscs />} />
             <Route path="/optimize" element={<PageOptimize />} />
+            <Route path="/optimize-pando" element={<PageOptimizePando />} />
             <Route path="/characters/*" element={<PageCharacters />} />
             <Route path="/wengines" element={<PageWengines />} />
             <Route path="/settings" element={<PageSettings />} />
