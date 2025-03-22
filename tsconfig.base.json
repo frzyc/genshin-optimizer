@@ -196,9 +196,6 @@
         "libs/zzz/page-discs/src/index.tsx"
       ],
       "@genshin-optimizer/zzz/page-home": ["libs/zzz/page-home/src/index.tsx"],
-      "@genshin-optimizer/zzz/page-optimize": [
-        "libs/zzz/page-optimize/src/index.tsx"
-      ],
       "@genshin-optimizer/zzz/page-optimize-pando": [
         "libs/zzz/page-optimize-pando/src/index.tsx"
       ],
@@ -208,7 +205,6 @@
       "@genshin-optimizer/zzz/page-wengines": [
         "libs/zzz/page-wengines/src/index.tsx"
       ],
-      "@genshin-optimizer/zzz/solver": ["libs/zzz/solver/src/index.ts"],
       "@genshin-optimizer/zzz/solver-pando": [
         "libs/zzz/solver-pando/src/index.ts"
       ],
