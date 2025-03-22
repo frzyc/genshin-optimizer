@@ -606,25 +606,7 @@ export const conditionals = {
     },
   },
   TheVault: {
-    boolConditional: {
-      sheet: 'TheVault',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheVault',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheVault',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ether_hit: { sheet: 'TheVault', name: 'ether_hit', type: 'bool' },
   },
   ThunderMetal: {
     enemy_shocked: {
@@ -634,130 +616,24 @@ export const conditionals = {
     },
   },
   Timeweaver: {
-    boolConditional: {
-      sheet: 'Timeweaver',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Timeweaver',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Timeweaver',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    hit_anomaly: { sheet: 'Timeweaver', name: 'hit_anomaly', type: 'bool' },
   },
   TusksOfFury: {
-    boolConditional: {
+    interrupt_perfdodge: {
       sheet: 'TusksOfFury',
-      name: 'boolConditional',
+      name: 'interrupt_perfdodge',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TusksOfFury',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TusksOfFury',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   UnfetteredGameBall: {
-    boolConditional: {
+    anomaly_counter: {
       sheet: 'UnfetteredGameBall',
-      name: 'boolConditional',
+      name: 'anomaly_counter',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'UnfetteredGameBall',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'UnfetteredGameBall',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  VortexArrow: {
-    boolConditional: {
-      sheet: 'VortexArrow',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'VortexArrow',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'VortexArrow',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   VortexHatchet: {
-    boolConditional: {
-      sheet: 'VortexHatchet',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'VortexHatchet',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'VortexHatchet',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  VortexRevolver: {
-    boolConditional: {
-      sheet: 'VortexRevolver',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'VortexRevolver',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'VortexRevolver',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    entering: { sheet: 'VortexHatchet', name: 'entering', type: 'bool' },
   },
   WeepingCradle: {
     attack: { sheet: 'WeepingCradle', name: 'attack', type: 'bool' },
@@ -3330,28 +3206,6 @@ export const buffs = {
         name: 'cond_dmg_',
       },
     },
-    enemy_defIgn_: {
-      sheet: 'TheVault',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'TheVault',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheVault',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'TheVault',
-        name: 'team_dmg_',
-      },
-    },
   },
   ThunderMetal: {
     set2: {
@@ -3379,37 +3233,27 @@ export const buffs = {
     },
   },
   Timeweaver: {
-    cond_dmg_: {
+    cond_anomProf: {
       sheet: 'Timeweaver',
-      name: 'cond_dmg_',
+      name: 'cond_anomProf',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'Timeweaver',
-        name: 'cond_dmg_',
+        name: 'cond_anomProf',
       },
     },
-    enemy_defIgn_: {
+    passive_disorder_dmg_: {
       sheet: 'Timeweaver',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'Timeweaver',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Timeweaver',
-      name: 'team_dmg_',
+      name: 'passive_disorder_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'Timeweaver',
-        name: 'team_dmg_',
+        damageType1: 'disorder',
+        name: 'passive_disorder_dmg_',
       },
     },
   },
@@ -3425,166 +3269,41 @@ export const buffs = {
         name: 'cond_dmg_',
       },
     },
-    enemy_defIgn_: {
+    passive_shield_: {
       sheet: 'TusksOfFury',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'TusksOfFury',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TusksOfFury',
-      name: 'team_dmg_',
+      name: 'passive_shield_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'shield_',
         sheet: 'TusksOfFury',
-        name: 'team_dmg_',
+        name: 'passive_shield_',
       },
     },
   },
   UnfetteredGameBall: {
-    cond_dmg_: {
+    cond_crit_: {
       sheet: 'UnfetteredGameBall',
-      name: 'cond_dmg_',
+      name: 'cond_crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'UnfetteredGameBall',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'UnfetteredGameBall',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'UnfetteredGameBall',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'UnfetteredGameBall',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'UnfetteredGameBall',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  VortexArrow: {
-    cond_dmg_: {
-      sheet: 'VortexArrow',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'VortexArrow',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'VortexArrow',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'VortexArrow',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'VortexArrow',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'VortexArrow',
-        name: 'team_dmg_',
+        name: 'cond_crit_',
       },
     },
   },
   VortexHatchet: {
-    cond_dmg_: {
+    cond_impact_: {
       sheet: 'VortexHatchet',
-      name: 'cond_dmg_',
+      name: 'cond_impact_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'impact_',
         sheet: 'VortexHatchet',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'VortexHatchet',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'VortexHatchet',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'VortexHatchet',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'VortexHatchet',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  VortexRevolver: {
-    cond_dmg_: {
-      sheet: 'VortexRevolver',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'VortexRevolver',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'VortexRevolver',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'VortexRevolver',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'VortexRevolver',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'VortexRevolver',
-        name: 'team_dmg_',
+        name: 'cond_impact_',
       },
     },
   },
