@@ -3,7 +3,6 @@ import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
@@ -28,12 +27,7 @@ const sheet: UISheetElement = {
     },
     {
       type: 'fields',
-      fields: [
-        {
-          title: <StatDisplay statKey="crit_dmg_" />,
-          fieldRef: buff.passive_crit_dmg_.tag,
-        },
-      ],
+      fields: [tagToTagField(buff.passive_crit_dmg_.tag)],
     },
     {
       type: 'conditional',

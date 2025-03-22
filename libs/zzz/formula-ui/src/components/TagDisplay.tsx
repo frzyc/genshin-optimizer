@@ -39,7 +39,12 @@ const isExtraHandlingStats = (
   extraHandlingStats.includes(
     stat as 'hp' | 'hp_' | 'atk' | 'atk_' | 'def' | 'def_'
   )
-
+const labelMap = {
+  // TODO: translation
+  dmg_: 'DMG',
+  common_dmg_: 'DMG',
+  resIgn_: 'Res Ignore',
+} as const
 function TagStrDisplay({ tag }: { tag: Tag }) {
   const title = tagFieldMap.subset(tag)[0]?.title
   if (title) return title
@@ -57,12 +62,12 @@ function TagStrDisplay({ tag }: { tag: Tag }) {
         </span>
       </span>
     )
-  if (label === 'dmg_' || label === 'common_dmg_') {
+  if (labelMap[label as keyof typeof labelMap]) {
     const strs = [
       ...(tag.attribute ? [elementalData[tag.attribute]] : []),
       ...(tag.damageType1 ? [damageTypeKeysMap[tag.damageType1]] : []),
       ...(tag.damageType2 ? [damageTypeKeysMap[tag.damageType2]] : []),
-      'DMG', // TODO: translation
+      labelMap[label as keyof typeof labelMap],
     ]
     return <span>{strs.join(' ')}</span>
   }

@@ -31,7 +31,6 @@ const sheet: UISheetElement = {
         label: ch('cond'),
         metadata: cond.exSpecialOrChainUsed,
         fields: [
-          // TODO: specify basic and dash electric dmg
           tagToTagField(buff.basic_eletric_dmg_.tag),
           tagToTagField(buff.dash_eletric_dmg_.tag),
           {

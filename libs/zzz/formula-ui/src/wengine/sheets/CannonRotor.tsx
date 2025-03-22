@@ -3,8 +3,7 @@ import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, formulas } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { StatDisplay } from '@genshin-optimizer/zzz/ui'
-import { trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'CannonRotor'
@@ -28,12 +27,7 @@ const sheet: UISheetElement = {
     },
     {
       type: 'fields',
-      fields: [
-        {
-          title: <StatDisplay statKey="atk_" />,
-          fieldRef: buff.passive_atk_.tag,
-        },
-      ],
+      fields: [tagToTagField(buff.passive_atk_.tag)],
     },
     {
       type: 'fields',

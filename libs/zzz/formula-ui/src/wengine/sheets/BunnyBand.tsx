@@ -2,7 +2,6 @@ import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
-import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
@@ -26,12 +25,7 @@ const sheet: UISheetElement = {
     },
     {
       type: 'fields',
-      fields: [
-        {
-          title: <StatDisplay statKey="hp_" />,
-          fieldRef: buff.passive_hp_.tag,
-        },
-      ],
+      fields: [tagToTagField(buff.passive_hp_.tag)],
     },
     {
       type: 'conditional',

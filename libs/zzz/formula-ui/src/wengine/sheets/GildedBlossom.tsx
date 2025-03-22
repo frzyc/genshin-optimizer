@@ -2,8 +2,7 @@ import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { buffs } from '@genshin-optimizer/zzz/formula'
-import { StatDisplay } from '@genshin-optimizer/zzz/ui'
-import { trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'GildedBlossom'
@@ -26,15 +25,8 @@ const sheet: UISheetElement = {
     {
       type: 'fields',
       fields: [
-        {
-          title: <StatDisplay statKey="atk_" />,
-          fieldRef: buff.passive_atk_.tag,
-        },
-        {
-          // TODO: change to exSpecial_dmg_
-          title: <StatDisplay statKey="dmg_" />,
-          fieldRef: buff.passive_exSpecial_dmg_.tag,
-        },
+        tagToTagField(buff.passive_atk_.tag),
+        tagToTagField(buff.passive_exSpecial_dmg_.tag),
       ],
     },
   ],
