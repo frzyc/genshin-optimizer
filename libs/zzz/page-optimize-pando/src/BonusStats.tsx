@@ -76,10 +76,9 @@ export function BonusStatsSection() {
         value={charMetaDesc}
         disabled={!characterKey}
         onChange={(value) => setDescription(value)}
-        autoFocus
         multiline
-        minRows={5}
-        fullWidth={true}
+        minRows={3}
+        fullWidth
       />
     </Stack>
   )
