@@ -414,195 +414,75 @@ export const conditionals = {
     },
   },
   SpectralGaze: {
-    boolConditional: {
+    hit_aftershock_electric: {
       sheet: 'SpectralGaze',
-      name: 'boolConditional',
+      name: 'hit_aftershock_electric',
       type: 'bool',
     },
-    listConditional: {
+    spiritLock: {
       sheet: 'SpectralGaze',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SpectralGaze',
-      name: 'numConditional',
+      name: 'spiritLock',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   SpringEmbrace: {
-    boolConditional: {
+    when_attacked: {
       sheet: 'SpringEmbrace',
-      name: 'boolConditional',
+      name: 'when_attacked',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SpringEmbrace',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SpringEmbrace',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   StarlightEngine: {
-    boolConditional: {
+    dodgecounter_quickassist: {
       sheet: 'StarlightEngine',
-      name: 'boolConditional',
+      name: 'dodgecounter_quickassist',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'StarlightEngine',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'StarlightEngine',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   StarlightEngineReplica: {
-    boolConditional: {
+    hit_away: {
       sheet: 'StarlightEngineReplica',
-      name: 'boolConditional',
+      name: 'hit_away',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'StarlightEngineReplica',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'StarlightEngineReplica',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   SteamOven: {
-    boolConditional: {
+    stacks: {
       sheet: 'SteamOven',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SteamOven',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SteamOven',
-      name: 'numConditional',
+      name: 'stacks',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 8,
     },
   },
   SteelCushion: {
-    boolConditional: {
-      sheet: 'SteelCushion',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SteelCushion',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SteelCushion',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    hit_behind: { sheet: 'SteelCushion', name: 'hit_behind', type: 'bool' },
   },
   StreetSuperstar: {
-    boolConditional: {
+    charge: {
       sheet: 'StreetSuperstar',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'StreetSuperstar',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'StreetSuperstar',
-      name: 'numConditional',
+      name: 'charge',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   SwingJazz: {
     chain_or_ult: { sheet: 'SwingJazz', name: 'chain_or_ult', type: 'bool' },
   },
   TheBrimstone: {
-    boolConditional: {
+    hit_basic_dash_dodge: {
       sheet: 'TheBrimstone',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheBrimstone',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheBrimstone',
-      name: 'numConditional',
+      name: 'hit_basic_dash_dodge',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
-  },
-  TheRestrained: {
-    boolConditional: {
-      sheet: 'TheRestrained',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheRestrained',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheRestrained',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      max: 8,
     },
   },
   TheVault: {
@@ -2856,72 +2736,40 @@ export const buffs = {
     },
   },
   SpectralGaze: {
-    cond_dmg_: {
+    cond_defRed_: {
       sheet: 'SpectralGaze',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'SpectralGaze',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'SpectralGaze',
-      name: 'enemy_defIgn_',
+      name: 'cond_defRed_',
       tag: {
         et: 'display',
         qt: 'common',
-        q: 'dmgRed_',
+        q: 'defRed_',
         sheet: 'SpectralGaze',
-        name: 'enemy_defIgn_',
+        name: 'cond_defRed_',
       },
     },
-    team_dmg_: {
+    cond_impact_: {
       sheet: 'SpectralGaze',
-      name: 'team_dmg_',
+      name: 'cond_impact_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'impact_',
         sheet: 'SpectralGaze',
-        name: 'team_dmg_',
+        dst: null,
+        name: 'cond_impact_',
       },
     },
   },
   SpringEmbrace: {
-    cond_dmg_: {
+    cond_enerRegen_: {
       sheet: 'SpringEmbrace',
-      name: 'cond_dmg_',
+      name: 'cond_enerRegen_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'enerRegen_',
         sheet: 'SpringEmbrace',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'SpringEmbrace',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'SpringEmbrace',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SpringEmbrace',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'SpringEmbrace',
-        name: 'team_dmg_',
+        name: 'cond_enerRegen_',
       },
     },
   },
@@ -2932,31 +2780,9 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'StarlightEngine',
         name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'StarlightEngine',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'StarlightEngine',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'StarlightEngine',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'StarlightEngine',
-        name: 'team_dmg_',
       },
     },
   },
@@ -2967,66 +2793,23 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'StarlightEngineReplica',
+        attribute: 'physical',
         name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'StarlightEngineReplica',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'StarlightEngineReplica',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'StarlightEngineReplica',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'StarlightEngineReplica',
-        name: 'team_dmg_',
       },
     },
   },
   SteamOven: {
-    cond_dmg_: {
+    cond_impact_: {
       sheet: 'SteamOven',
-      name: 'cond_dmg_',
+      name: 'cond_impact_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'impact_',
         sheet: 'SteamOven',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'SteamOven',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'SteamOven',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SteamOven',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'SteamOven',
-        name: 'team_dmg_',
+        name: 'cond_impact_',
       },
     },
   },
@@ -3042,61 +2825,30 @@ export const buffs = {
         name: 'cond_dmg_',
       },
     },
-    enemy_defIgn_: {
+    passive_physical_dmg_: {
       sheet: 'SteelCushion',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'SteelCushion',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SteelCushion',
-      name: 'team_dmg_',
+      name: 'passive_physical_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'SteelCushion',
-        name: 'team_dmg_',
+        attribute: 'physical',
+        name: 'passive_physical_dmg_',
       },
     },
   },
   StreetSuperstar: {
-    cond_dmg_: {
+    cond_ult_dmg_: {
       sheet: 'StreetSuperstar',
-      name: 'cond_dmg_',
+      name: 'cond_ult_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'StreetSuperstar',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'StreetSuperstar',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'StreetSuperstar',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'StreetSuperstar',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'StreetSuperstar',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'cond_ult_dmg_',
       },
     },
   },
@@ -3125,72 +2877,15 @@ export const buffs = {
     },
   },
   TheBrimstone: {
-    cond_dmg_: {
+    cond_atk_: {
       sheet: 'TheBrimstone',
-      name: 'cond_dmg_',
+      name: 'cond_atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'TheBrimstone',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'TheBrimstone',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'TheBrimstone',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheBrimstone',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'TheBrimstone',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  TheRestrained: {
-    cond_dmg_: {
-      sheet: 'TheRestrained',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'TheRestrained',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'TheRestrained',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'TheRestrained',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheRestrained',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'TheRestrained',
-        name: 'team_dmg_',
+        name: 'cond_atk_',
       },
     },
   },
@@ -3239,7 +2934,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'anomProf',
         sheet: 'Timeweaver',
         name: 'cond_anomProf',
       },

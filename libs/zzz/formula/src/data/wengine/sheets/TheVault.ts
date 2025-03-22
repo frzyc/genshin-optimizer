@@ -13,7 +13,6 @@ const key: WengineKey = 'TheVault'
 const dm = mappedStats.wengine[key]
 const { phase } = own.wengine
 
-// TODO: Add conditionals
 const { ether_hit } = allBoolConditionals(key)
 
 const sheet = registerWengine(

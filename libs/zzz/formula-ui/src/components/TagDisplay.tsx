@@ -1,7 +1,7 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
-import { statKeyTextMap } from '@genshin-optimizer/zzz/consts'
+import { elementalData, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
@@ -53,10 +53,18 @@ function TagStrDisplay({ tag }: { tag: Tag }) {
         <span>
           {(tag.qt && qtMap[tag.qt as keyof typeof qtMap]) ?? tag.qt}{' '}
           {statKeyTextMap[label]}
-          {tag.sheet && tag.sheet !== 'agg' ? ` (${tag.sheet})` : ''}
+          {/* {tag.sheet && tag.sheet !== 'agg' ? ` (${tag.sheet})` : ''} */}
         </span>
       </span>
     )
-
+  if (label === 'dmg_' || label === 'common_dmg_') {
+    const strs = [
+      ...(tag.attribute ? [elementalData[tag.attribute]] : []),
+      ...(tag.damageType1 ? [damageTypeKeysMap[tag.damageType1]] : []),
+      ...(tag.damageType2 ? [damageTypeKeysMap[tag.damageType2]] : []),
+      'DMG', // TODO: translation
+    ]
+    return <span>{strs.join(' ')}</span>
+  }
   return <StatDisplay statKey={label as StatKey} />
 }

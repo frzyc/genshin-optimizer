@@ -38,7 +38,7 @@ const sheet = registerWengine(
   // Conditional buffs
   registerBuff(
     'cond_anomProf',
-    ownBuff.combat.common_dmg_.add(
+    ownBuff.combat.anomProf.add(
       cmpSpecialtyAndEquipped(
         key,
         hit_anomaly.ifOn(subscript(phase, dm.anomProf))
