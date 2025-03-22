@@ -34,13 +34,17 @@ import { useTranslation } from 'react-i18next'
 import { CharCalcProvider } from './CharCalcProvider'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
 
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { OptTargetRow } from './OptTargetRow'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
-  const [characterKey, setCharacterKey] = useState<CharacterKey>(
-    allCharacterKeys[0]
+  const { optCharKey } = useDataEntryBase(database.dbMeta)
+  const characterKey = optCharKey ?? allCharacterKeys[0]
+  const setCharacterKey = useCallback(
+    (ck: CharacterKey) => database.dbMeta.set({ optCharKey: ck }),
+    [database.dbMeta]
   )
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
