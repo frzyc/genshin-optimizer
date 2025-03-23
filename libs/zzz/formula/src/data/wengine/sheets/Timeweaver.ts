@@ -22,8 +22,8 @@ const sheet = registerWengine(
 
   // Passive buffs
   registerBuff(
-    'electric_anomBuildup_',
-    ownBuff.combat.dmg_.electric.add(
+    'passive_electric_anomBuildup_',
+    ownBuff.combat.anomBuildup_.electric.add(
       cmpSpecialtyAndEquipped(key, subscript(phase, dm.electric_anom_buildup_))
     )
   ),

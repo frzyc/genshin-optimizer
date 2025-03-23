@@ -3046,18 +3046,6 @@ export const buffs = {
         name: 'cond_anomProf',
       },
     },
-    electric_anomBuildup_: {
-      sheet: 'Timeweaver',
-      name: 'electric_anomBuildup_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'Timeweaver',
-        attribute: 'electric',
-        name: 'electric_anomBuildup_',
-      },
-    },
     passive_disorder_dmg_: {
       sheet: 'Timeweaver',
       name: 'passive_disorder_dmg_',
@@ -3068,6 +3056,18 @@ export const buffs = {
         sheet: 'Timeweaver',
         damageType1: 'disorder',
         name: 'passive_disorder_dmg_',
+      },
+    },
+    passive_electric_anomBuildup_: {
+      sheet: 'Timeweaver',
+      name: 'passive_electric_anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'Timeweaver',
+        attribute: 'electric',
+        name: 'passive_electric_anomBuildup_',
       },
     },
   },
