@@ -30,7 +30,7 @@ export function characterSortConfigs(
 
 export const characterFilterKeys = [
   'attribute',
-  'wengineType',
+  'specialtyType',
   'rarity',
   'name',
   'new',
@@ -46,7 +46,7 @@ export function characterFilterConfigs(
 ): CharacterFilterConfigs {
   return {
     attribute: (ck, filter) => filter.includes(getCharStat(ck).attribute),
-    wengineType: (ck, filter) => filter.includes(getCharStat(ck).specialty),
+    specialtyType: (ck, filter) => filter.includes(getCharStat(ck).specialty),
     rarity: (ck, filter) => filter.includes(getCharStat(ck).rarity),
     name: (ck, filter) =>
       filter === undefined ||
@@ -68,14 +68,14 @@ export const characterSortMap: Partial<
 export const initialCharacterDisplayState = (): {
   sortType: CharacterSortKey
   ascending: boolean
-  wengineType: SpecialityKey[]
+  specialtyType: SpecialityKey[]
   attribute: AttributeKey[]
   rarity: CharacterRarityKey[]
   pageIndex: number
 } => ({
   sortType: characterSortKeys[0],
   ascending: false,
-  wengineType: [...allSpecialityKeys],
+  specialtyType: [...allSpecialityKeys],
   attribute: [...allAttributeKeys],
   rarity: [...allCharacterRarityKeys],
   pageIndex: 0,

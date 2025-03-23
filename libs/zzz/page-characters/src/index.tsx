@@ -20,18 +20,20 @@ import {
   allSpecialityKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
+import { getCharStat } from '@genshin-optimizer/zzz/stats'
+import type { CharacterSortKey } from '@genshin-optimizer/zzz/ui'
 import {
+  CharSpecialtyToggle,
   CharacterCard,
   CharacterEditor,
   CharacterRarityToggle,
   CharacterSingleSelectionModal,
   ElementToggle,
-  WengineToggle,
   characterFilterConfigs,
   characterSortConfigs,
   characterSortMap,
 } from '@genshin-optimizer/zzz/ui'
+import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
   Button,
@@ -68,7 +70,7 @@ export default function PageCharacter() {
     database.displayCharacter.get()
   )
   useEffect(
-    () => database.displayCharacter.follow((r, s) => setDisplayCharacter(s)),
+    () => database.displayCharacter.follow((_, s) => setDisplayCharacter(s)),
     [database, setDisplayCharacter]
   )
   const [searchTerm, setSearchTerm] = useState('')
@@ -89,7 +91,7 @@ export default function PageCharacter() {
   // Set follow, should run only once
   useEffect(() => {
     return database.chars.followAny(
-      (k, r) => (r === 'new' || r === 'remove') && forceUpdate()
+      (_, r) => (r === 'new' || r === 'remove') && forceUpdate()
     )
   }, [forceUpdate, database])
 
@@ -109,12 +111,12 @@ export default function PageCharacter() {
   const { charKeys, totalCharNum } = useMemo(() => {
     const chars = database.chars.keys
     const totalCharNum = chars.length
-    const { attribute, wengineType, rarity, sortType, ascending } =
+    const { attribute, specialtyType, rarity, sortType, ascending } =
       deferredState
     const charKeys = database.chars.keys
       .filter(
         filterFunction(
-          { attribute, wengineType, rarity, name: deferredSearchTerm },
+          { attribute, specialtyType, rarity, name: deferredSearchTerm },
           characterFilterConfigs(database)
         )
       )
@@ -129,16 +131,16 @@ export default function PageCharacter() {
     return deferredDbDirty && { charKeys, totalCharNum }
   }, [database, deferredState, deferredSearchTerm, deferredDbDirty])
 
-  const { wengineType, attribute, rarity, sortType, ascending } =
+  const { specialtyType, attribute, rarity, sortType, ascending } =
     displayCharacter
 
-  const wengineTotals = useMemo(
+  const charSpecialtyTotals = useMemo(
     () =>
       catTotal(allSpecialityKeys, (sk) =>
-        database.wengines.entries.forEach(([id, wengine]) => {
-          const specialty = getWengineStat(wengine.key).type
+        database.chars.entries.forEach(([id, char]) => {
+          const specialty = getCharStat(char.key).specialty
           sk[specialty].total++
-          if (database.wengines.keys.includes(id)) sk[specialty].current++
+          if (database.chars.keys.includes(id)) sk[specialty].current++
         })
       ),
     [database]
@@ -192,13 +194,15 @@ export default function PageCharacter() {
   const sortByButtonProps = {
     sortKeys: [...sortKeys],
     value: sortType,
-    onChange: (sortType) => database.displayCharacter.set({ sortType }),
+    onChange: (sortType: string) =>
+      database.displayCharacter.set({ sortType: sortType as CharacterSortKey }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayCharacter.set({ ascending }),
+    onChangeAsc: (ascending: boolean) =>
+      database.displayCharacter.set({ ascending }),
   }
 
   return (
-    <Box display="flex" flexDirection="column" gap={5}>
+    <Box display="flex" flexDirection="column" gap={2}>
       {characterKey && (
         <CharacterEditor
           characterKey={characterKey}
@@ -216,15 +220,15 @@ export default function PageCharacter() {
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Grid container spacing={1}>
             <Grid item>
-              <WengineToggle
+              <CharSpecialtyToggle
                 sx={{ height: '100%' }}
-                onChange={(wengineType) =>
-                  database.displayCharacter.set({ wengineType })
+                onChange={(specialtyType) =>
+                  database.displayCharacter.set({ specialtyType })
                 }
-                value={wengineType}
-                totals={wengineTotals}
+                value={specialtyType}
+                totals={charSpecialtyTotals}
                 size="small"
-              ></WengineToggle>
+              ></CharSpecialtyToggle>
             </Grid>
             <Grid item>
               <ElementToggle
@@ -276,7 +280,12 @@ export default function PageCharacter() {
           </Box>
         </CardContent>
       </CardThemed>
-      <Button fullWidth onClick={() => setnewCharacter(true)} color="info">
+      <Button
+        fullWidth
+        onClick={() => setnewCharacter(true)}
+        color="info"
+        startIcon={<AddIcon />}
+      >
         {t('addNew')}
       </Button>
       <Suspense
@@ -287,7 +296,7 @@ export default function PageCharacter() {
           />
         }
       >
-        <Grid container spacing={3} columns={columns}>
+        <Grid container spacing={2} columns={columns}>
           {charKeysToShow.map((charKey) => (
             <Grid item key={charKey} xs={1}>
               <CharacterCard

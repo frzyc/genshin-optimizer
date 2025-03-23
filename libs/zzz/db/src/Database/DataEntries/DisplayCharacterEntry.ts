@@ -18,7 +18,7 @@ export type CharacterSortKey = (typeof characterSortKeys)[number]
 export interface IDisplayCharacterEntry {
   sortType: CharacterSortKey
   ascending: boolean
-  wengineType: SpecialityKey[]
+  specialtyType: SpecialityKey[]
   attribute: AttributeKey[]
   rarity: CharacterRarityKey[]
 }
@@ -26,7 +26,7 @@ export interface IDisplayCharacterEntry {
 const initialState = (): IDisplayCharacterEntry => ({
   sortType: 'level',
   ascending: false,
-  wengineType: [...allSpecialityKeys],
+  specialtyType: [...allSpecialityKeys],
   attribute: [...allAttributeKeys],
   rarity: [...allCharacterRarityKeys],
 })
@@ -42,20 +42,20 @@ export class DisplayCharacterEntry extends DataEntry<
   }
   override validate(obj: any): IDisplayCharacterEntry | undefined {
     if (typeof obj !== 'object') return undefined
-    let { sortType, ascending, wengineType, attribute, rarity } = obj
+    let { sortType, ascending, specialtyType, attribute, rarity } = obj
 
     //Disallow sorting by "new" explicitly.
     if (sortType === 'new' || !characterSortKeys.includes(sortType))
       sortType = 'level'
     if (typeof ascending !== 'boolean') ascending = false
-    wengineType = validateArr(wengineType, allSpecialityKeys)
+    specialtyType = validateArr(specialtyType, allSpecialityKeys)
     attribute = validateArr(attribute, allAttributeKeys)
     rarity = validateArr(rarity, allCharacterRarityKeys)
 
     const data: IDisplayCharacterEntry = {
       sortType,
       ascending,
-      wengineType,
+      specialtyType,
       attribute,
       rarity,
     }
