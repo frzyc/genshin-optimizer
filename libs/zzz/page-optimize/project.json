@@ -4,5 +4,6 @@
   "sourceRoot": "libs/zzz/page-optimize/src",
   "projectType": "library",
   "tags": [],
+  "// targets": "to see all targets run: nx show project zzz-page-optimizes --web",
   "targets": {}
 }

@@ -1,478 +1,166 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useTitle } from '@genshin-optimizer/common/ui'
+import { objKeyMap } from '@genshin-optimizer/common/util'
+import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
-  CardThemed,
-  DropdownButton,
-  NumberInputLazy,
-  TextFieldLazy,
-  useScrollRef,
-} from '@genshin-optimizer/common/ui'
+  DebugReadContext,
+  DebugReadModal,
+  TagContext,
+} from '@genshin-optimizer/game-opt/formula-ui'
+import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
-  objFilter,
-  objMap,
-  range,
-  toDecimal,
-} from '@genshin-optimizer/common/util'
-import type { DiscSlotKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
-import {
-  type LocationKey,
-  allCoreKeysWithNone,
-  allDiscSlotKeys,
-  wengineSheets,
-} from '@genshin-optimizer/zzz/consts'
-import type {
-  ICachedCharacter,
-  Stats,
-  ZzzDatabase,
-} from '@genshin-optimizer/zzz/db'
+  ConditionalValuesContext,
+  SetConditionalContext,
+  SrcDstDisplayContext,
+} from '@genshin-optimizer/game-opt/sheet-ui'
+import type { BaseRead } from '@genshin-optimizer/pando/engine'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
 import {
   CharacterContext,
+  useCharOpt,
   useCharacter,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import { type BuildResult, combineStats } from '@genshin-optimizer/zzz/solver'
 import {
-  getCharacterStats,
-  getWengineStats,
-} from '@genshin-optimizer/zzz/stats'
-import {
-  LocationAutocomplete,
-  WengineAutocomplete,
-  WengineRefineDesc,
-  WengineRefineName,
-} from '@genshin-optimizer/zzz/ui'
-import {
-  Box,
-  CardActionArea,
-  CardContent,
-  InputAdornment,
-  MenuItem,
-  Typography,
-} from '@mui/material'
-import { Stack } from '@mui/system'
-import type { ReactNode } from 'react'
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
-import BaseStatCard from './BaseStatCard'
-import { BuildDisplay } from './BuildDisplay'
-import { BuildsDisplay } from './BuildsDisplay'
-import { ConditionalToggles } from './ConditionalToggle'
-import { DiscConditionalsCard } from './DiscConditionalCard'
-import OptimizeWrapper from './Optimize'
-import { OptimizeTargetSelector } from './OptimizeTargetSelector'
-import { StatsDisplay } from './StatsDisplay'
+  type Tag,
+  getConditional,
+  isMember,
+  isSheet,
+} from '@genshin-optimizer/zzz/formula'
+import { CharacterName, LocationAutocomplete } from '@genshin-optimizer/zzz/ui'
+import { Box } from '@mui/material'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { CharCalcProvider } from './CharCalcProvider'
+import { CharacterOptDisplay } from './CharacterOptDisplay'
 
-const BOT_PX = 0
-const SECTION_SPACING_PX = 33
-const SectionNumContext = createContext(0)
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
+import { OptTargetRow } from './OptTargetRow'
+import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
+
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
-  const [builds, setBuilds] = useState<BuildResult[]>([])
-  const [locationKey, setLocationKey] = useState<LocationKey>('')
-
-  const character =
-    useCharacter(locationKey) ??
-    (locationKey ? database.chars.getOrCreate(locationKey) : undefined)
-
-  const setStats = useCallback(
-    (stats: Stats) => {
-      character && database.chars.set(character.key, { stats })
-    },
-    [character, database.chars]
+  const { optCharKey } = useDataEntryBase(database.dbMeta)
+  const characterKey = optCharKey ?? allCharacterKeys[0]
+  const setCharacterKey = useCallback(
+    (ck: CharacterKey) => database.dbMeta.set({ optCharKey: ck }),
+    [database.dbMeta]
   )
 
-  const characterStats = useMemo(() => {
-    if (!character) return undefined
-    return getCharacterStats(character.key, character.level, character.core)
-  }, [character])
-
-  const wengineStats = useMemo(() => {
-    if (!character) return undefined
-    return getWengineStats(
-      character.wengineKey,
-      character.wengineLvl,
-      character.wenginePhase
-    )
-  }, [character])
-
-  const baseStats = useMemo(
-    () =>
-      character
-        ? combineStats(
-            characterStats ?? {},
-            wengineStats ?? {},
-            objMap(character.stats, (v, k) => toDecimal(v, k))
-          )
-        : {},
-    [characterStats, character, wengineStats]
-  )
-
-  const [dbDirty, setDbDirty] = useForceUpdate()
-  useEffect(
-    () => database.discs.followAny(setDbDirty),
-    [database.discs, setDbDirty]
-  )
-  const discIds = useMemo(
-    () =>
-      dbDirty &&
-      (Object.fromEntries(
-        allDiscSlotKeys.map((k) => [
-          k,
-          (character &&
-            database.discs.values.find(
-              ({ slotKey, location }) =>
-                slotKey === k && location === character.key
-            )?.id) ??
-            '',
-        ])
-      ) as Record<DiscSlotKey, string>),
-
-    [character, database.discs.values, dbDirty]
-  )
-  const handleLocationKeyChange = useCallback((locationKey: LocationKey) => {
-    const newKey = locationKey
-    setLocationKey(newKey)
-    setBuilds([])
-  }, [])
-
-  const sections: Array<[key: string, title: ReactNode, content: ReactNode]> =
+  const { t } = useTranslation(['charNames_gen', 'page_character'])
+  const character = useCharacter(characterKey)
+  useEffect(() => {
+    if (characterKey && !character) database.chars.getOrCreate(characterKey)
+  }, [characterKey, character, database.chars])
+  const charOpt = useCharOpt(characterKey)
+  useEffect(() => {
+    if (characterKey && !charOpt) database.charOpts.getOrCreate(characterKey)
+  }, [characterKey, charOpt, database.charOpts])
+  useTitle(
     useMemo(() => {
-      return [
-        [
-          'char',
-          'Character',
-          <CharacterSection
-            key="char"
-            database={database}
-            setLocationKey={handleLocationKeyChange}
-            locationKey={locationKey}
-            discIds={discIds}
-            baseStats={baseStats}
-            character={character}
-            characterStats={characterStats}
-            wengineStats={wengineStats}
-          />,
-        ],
-        [
-          'bonusStats',
-          'Bonus Stats',
-          <BaseStatCard
-            key="bonusStats"
-            locationKey={locationKey}
-            baseStats={character?.stats ?? {}}
-            setBaseStats={setStats}
-          />,
-        ],
-        [
-          'disc4pCond',
-          'Disc 4p Conditionals',
-          <DiscConditionalsCard key="disc4pCond" baseStats={baseStats} />,
-        ],
-        [
-          'opt',
-          'Optimize',
-          <OptimizeWrapper
-            key="opt"
-            setResults={setBuilds}
-            baseStats={baseStats}
-            location={locationKey}
-            formulaKey={character?.formulaKey}
-          />,
-        ],
-        [
-          'buildDisplay',
-          'Build Display',
-          <BuildsDisplay
-            key="buildDisplay"
-            builds={builds}
-            stats={baseStats}
-          />,
-        ],
-      ] as const
-    }, [
-      baseStats,
-      builds,
-      character,
-      characterStats,
-      database,
-      discIds,
-      locationKey,
-      setStats,
-      handleLocationKeyChange,
-      wengineStats,
-    ])
-
-  return (
-    <CharacterContext.Provider value={character}>
-      <SectionNumContext.Provider value={sections.length}>
-        <Stack gap={1}>
-          {sections.map(([key, title, content], i) => (
-            <Section key={key} title={title} index={i}>
-              {content}
-            </Section>
-          ))}
-        </Stack>
-      </SectionNumContext.Provider>
-    </CharacterContext.Provider>
+      const charName = characterKey && t(`charNames_gen:${characterKey}`)
+      return charName ? `Optimize - ${charName}` : `Optimize`
+    }, [characterKey, t])
   )
-}
+  const srcDstDisplayContextValue = useMemo(() => {
+    const charList = characterKey ? [characterKey] : []
+    const charDisplay = objKeyMap(charList, (ck) => (
+      <CharacterName characterKey={ck} />
+    ))
+    return {
+      srcDisplay: charDisplay,
+      dstDisplay: charDisplay,
+    }
+  }, [characterKey])
 
-function Section({
-  index,
-  title,
-  children,
-}: {
-  index: number
-  title: React.ReactNode
-  children: React.ReactNode
-}) {
-  const [charScrollRef, onScroll] = useScrollRef()
-  const numSections = useContext(SectionNumContext)
+  const setConditional = useCallback<SetConditionalFunc>(
+    (
+      sheet: string,
+      condKey: string,
+      src: string,
+      dst: string | null,
+      condValue: number
+    ) => {
+      if (!isSheet(sheet) || !isMember(src) || !(dst === null || isMember(dst)))
+        return
+      const cond = getConditional(sheet, condKey)
+      if (!cond) return
+
+      database.charOpts.setConditional(
+        characterKey,
+        sheet,
+        condKey,
+        src,
+        dst,
+        condValue
+      )
+    },
+    [characterKey, database.charOpts]
+  )
+  const tag = useMemo<Tag>(
+    () => ({
+      src: characterKey,
+      dst: characterKey,
+      preset: `preset0`,
+    }),
+    [characterKey]
+  )
+
+  const [debugRead, setDebugRead] = useState<BaseRead>()
+  const debugObj = useMemo<DebugReadContextObj>(
+    () => ({
+      read: debugRead,
+      setRead: setDebugRead,
+    }),
+    [debugRead]
+  )
   return (
-    <>
-      <CardThemed
-        sx={(theme) => ({
-          outline: `solid ${theme.palette.secondary.main}`,
-          position: 'sticky',
-          top: index * SECTION_SPACING_PX,
-          bottom: BOT_PX + (numSections - 1 - index) * SECTION_SPACING_PX,
-          zIndex: 100,
-        })}
-      >
-        <CardActionArea onClick={onScroll} sx={{ px: 1 }}>
-          <Typography variant="h6">{title}</Typography>
-        </CardActionArea>
-      </CardThemed>
-      <Box
-        ref={charScrollRef}
+    <Box>
+      <LocationAutocomplete
+        locKey={characterKey}
+        setLocKey={(ck) => ck && setCharacterKey(ck)}
         sx={{
-          scrollMarginTop: (index + 1) * SECTION_SPACING_PX,
+          position: 'sticky',
+          top: 0,
+          zIndex: 100,
+          background: '#0C1020',
         }}
-      >
-        {children}
-      </Box>
-    </>
-  )
-}
-
-function CharacterSection({
-  database,
-  setLocationKey,
-  locationKey,
-  discIds,
-  baseStats,
-  character,
-  characterStats,
-  wengineStats,
-}: {
-  database: ZzzDatabase
-  setLocationKey: (lk: LocationKey) => void
-  locationKey: LocationKey
-  discIds: Record<DiscSlotKey, string>
-  baseStats: Stats
-  character: ICachedCharacter | undefined
-  characterStats: Record<string, number> | undefined
-  wengineStats: Record<string, number> | undefined
-}) {
-  const setFormulaKey = useCallback(
-    (key: FormulaKey) => {
-      character && database.chars.set(character.key, { formulaKey: key })
-    },
-    [character, database.chars]
-  )
-  const charMetaDesc =
-    locationKey && database.charMeta.get(locationKey).description
-  const sheet = character && wengineSheets[character.wengineKey]
-
-  const wengineCondstats = useMemo(
-    () =>
-      character &&
-      sheet?.getStats &&
-      sheet.getStats(character.conditionals, baseStats),
-    [baseStats, character, sheet]
-  )
-
-  const setDescription = useCallback(
-    (description: string | undefined) => {
-      if (!locationKey || !description) return
-      database.charMeta.set(locationKey, { description: description })
-    },
-    [database.charMeta, locationKey]
-  )
-
-  return (
-    <CharacterContext.Provider value={character}>
-      <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
-        <CardThemed>
-          <CardContent>
-            <Stack spacing={1}>
-              <Typography variant="h6">Character</Typography>
-              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                <LocationAutocomplete
-                  locKey={locationKey}
-                  setLocKey={setLocationKey}
-                  sx={{ flexGrow: 1 }}
-                  autoFocus
-                />
-
-                <NumberInputLazy
-                  disabled={!character}
-                  value={character?.level ?? 60}
-                  onChange={(l) =>
-                    l !== undefined &&
-                    character &&
-                    database.chars.set(character.key, { level: l })
-                  }
-                  size="small"
-                  inputProps={{
-                    sx: { width: '2ch' },
-                    max: 60,
-                    min: 1,
-                  }}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">Lv.</InputAdornment>
-                    ),
-                  }}
-                />
-
-                <DropdownButton
-                  title={`Core: ${allCoreKeysWithNone[character?.core ?? 0]}`}
-                  disabled={!character}
-                >
-                  {allCoreKeysWithNone.map((n, i) => (
-                    <MenuItem
-                      key={n}
-                      onClick={() =>
-                        character &&
-                        database.chars.set(character.key, { core: i })
-                      }
-                    >
-                      {n}
-                    </MenuItem>
-                  ))}
-                </DropdownButton>
-              </Box>
-              {characterStats && <StatsDisplay stats={characterStats} />}
-              <OptimizeTargetSelector
-                disabled={!character}
-                formulaKey={character?.formulaKey}
-                setFormulaKey={setFormulaKey}
-              />
-            </Stack>
-          </CardContent>
-        </CardThemed>
-        <CardThemed>
-          <CardContent>
-            <Stack spacing={1}>
-              <Typography variant="h6">Wengine</Typography>
-              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                <WengineAutocomplete
-                  disabled={!character}
-                  wkey={character?.wengineKey ?? ''}
-                  setWKey={(wk) =>
-                    wk &&
-                    character &&
-                    database.chars.set(character.key, { wengineKey: wk })
-                  }
-                  sx={{ flexGrow: 1 }}
-                  autoFocus
-                />
-                {/* TODO: Translation */}
-                <DropdownButton
-                  title={`Phase: ${character?.wenginePhase ?? 1}`}
-                  disabled={!character}
-                >
-                  {range(1, 5).map((n) => (
-                    <MenuItem
-                      key={n}
-                      onClick={() =>
-                        character &&
-                        database.chars.set(character.key, { wenginePhase: n })
-                      }
-                    >
-                      Phase {n}
-                    </MenuItem>
-                  ))}
-                </DropdownButton>
-                <NumberInputLazy
-                  disabled={!character}
-                  value={character?.wengineLvl ?? 60}
-                  onChange={(l) =>
-                    l !== undefined &&
-                    character &&
-                    database.chars.set(character.key, { wengineLvl: l })
-                  }
-                  size="small"
-                  inputProps={{
-                    sx: { width: '2ch' },
-                    max: 60,
-                    min: 1,
-                  }}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">Lv.</InputAdornment>
-                    ),
-                  }}
-                />
-              </Box>
-              {wengineStats && (
-                <StatsDisplay
-                  stats={objFilter(
-                    wengineStats,
-                    (_, k) => !k.startsWith('wengine')
-                  )}
-                />
-              )}
-              {character && (
-                <Typography variant="h6">
-                  <WengineRefineName
-                    wKey={character.wengineKey}
-                    phase={character.wenginePhase}
-                  />
-                </Typography>
-              )}
-              {character && (
-                <Typography>
-                  <WengineRefineDesc
-                    wKey={character.wengineKey}
-                    phase={character.wenginePhase}
-                  />
-                </Typography>
-              )}
-            </Stack>
-          </CardContent>
-          {sheet && <ConditionalToggles condMetas={sheet.condMeta} />}
-          {!!wengineCondstats && !!Object.keys(wengineCondstats).length && (
-            <CardContent>
-              <StatsDisplay stats={wengineCondstats} />
-            </CardContent>
-          )}
-        </CardThemed>
-        <CardThemed>
-          <CardContent>
-            <Typography variant="h6" marginBottom={'12px'}>
-              Character Notes
-            </Typography>
-            <TextFieldLazy
-              placeholder={'Some notes on how you play your character'}
-              value={charMetaDesc}
-              disabled={!locationKey}
-              onChange={(value) => setDescription(value)}
-              autoFocus
-              multiline
-              minRows={5}
-              fullWidth={true}
-            />
-          </CardContent>
-        </CardThemed>
-        {character && <BuildDisplay discIds={discIds} baseStats={baseStats} />}
-      </Box>
-    </CharacterContext.Provider>
+      />
+      {character && charOpt && (
+        <CharacterContext.Provider value={character}>
+          <TagContext.Provider value={tag}>
+            <CharCalcProvider
+              character={character}
+              charOpt={charOpt}
+              wengineId={character.equippedWengine}
+              discIds={character.equippedDiscs}
+            >
+              <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
+                <ConditionalValuesContext.Provider value={charOpt.conditionals}>
+                  <SetConditionalContext.Provider value={setConditional}>
+                    <DebugReadContext.Provider value={debugObj}>
+                      <DebugReadModal />
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          gap: 1,
+                          flexDirection: 'column',
+                          mt: 1,
+                        }}
+                      >
+                        <OptTargetRow character={character} charOpt={charOpt} />
+                        <TeamHeaderHeightContext.Provider value={78}>
+                          <CharacterOptDisplay />
+                        </TeamHeaderHeightContext.Provider>
+                      </Box>
+                    </DebugReadContext.Provider>
+                  </SetConditionalContext.Provider>
+                </ConditionalValuesContext.Provider>
+              </SrcDstDisplayContext.Provider>
+            </CharCalcProvider>
+          </TagContext.Provider>
+        </CharacterContext.Provider>
+      )}
+    </Box>
   )
 }
