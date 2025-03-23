@@ -6,6 +6,7 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { Read } from '@genshin-optimizer/game-opt/engine'
 import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
+import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { applyDamageTypeToTag } from '@genshin-optimizer/zzz/db'
 import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
@@ -16,7 +17,12 @@ import {
   formulaText,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
-import { ZCard } from '@genshin-optimizer/zzz/ui'
+import {
+  StatHighlightContext,
+  ZCard,
+  getHighlightRGBA,
+  isHighlight,
+} from '@genshin-optimizer/zzz/ui'
 import HelpIcon from '@mui/icons-material/Help'
 import { Box, CardContent, Divider, Stack, Typography } from '@mui/material'
 import { useContext, useMemo } from 'react'
@@ -75,10 +81,24 @@ function StatLine({ read }: { read: Read<Tag> }) {
   const name = tag.name || tag.q
   const fText = computed && formulaText(computed)
 
+  const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
+  const tagQStatKqy = tag.name
+    ? ''
+    : tag.attribute
+      ? `${tag.attribute}_${tag.q}`
+      : tag.q === 'cappedCrit_'
+        ? 'crit_'
+        : tag.q
+  const isHL = tagQStatKqy
+    ? isHighlight(statHighlight, tagQStatKqy as StatKey)
+    : false
+
   if (!computed) return null
   const valDisplay = valueString(computed.val, getUnitStr(name ?? ''))
   return (
     <Box
+      onMouseEnter={() => tagQStatKqy && setStatHighlight(tagQStatKqy)}
+      onMouseLeave={() => setStatHighlight('')}
       sx={{
         display: 'flex',
         gap: 1,
@@ -86,6 +106,19 @@ function StatLine({ read }: { read: Read<Tag> }) {
         p: 0.5,
         borderRadius: 0.5,
         backgroundColor: emphasize ? 'rgba(0,200,0,0.2)' : undefined,
+        position: 'relative',
+        '::after': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          borderRadius: 0.5,
+          backgroundColor: getHighlightRGBA(isHL),
+          transition: 'background-color 0.3s ease-in-out',
+          pointerEvents: 'none',
+        },
       }}
       onClick={() => {
         shouldShowDevComponents && setRead(newRead)
