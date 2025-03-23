@@ -130,6 +130,9 @@ export const conditionals = {
     },
     offField: { sheet: 'FlamemakerShaker', name: 'offField', type: 'bool' },
   },
+  FreedomBlues: {
+    exSpecialHit: { sheet: 'FreedomBlues', name: 'exSpecialHit', type: 'bool' },
+  },
   FusionCompiler: {
     specialUsed: {
       sheet: 'FusionCompiler',
@@ -289,6 +292,18 @@ export const conditionals = {
       type: 'bool',
     },
   },
+  PreciousFossilizedCore: {
+    enemyHpGE50: {
+      sheet: 'PreciousFossilizedCore',
+      name: 'enemyHpGE50',
+      type: 'bool',
+    },
+    enemyHpGE75: {
+      sheet: 'PreciousFossilizedCore',
+      name: 'enemyHpGE75',
+      type: 'bool',
+    },
+  },
   ProtoPunk: {
     def_assist_or_evasive_assist: {
       sheet: 'ProtoPunk',
@@ -338,6 +353,7 @@ export const conditionals = {
     charge: { sheet: 'RiotSuppressorMarkVI', name: 'charge', type: 'bool' },
   },
   RoaringRide: {
+    anomBuildup_: { sheet: 'RoaringRide', name: 'anomBuildup_', type: 'bool' },
     anomProf: { sheet: 'RoaringRide', name: 'anomProf', type: 'bool' },
     atk_: { sheet: 'RoaringRide', name: 'atk_', type: 'bool' },
   },
@@ -370,6 +386,19 @@ export const conditionals = {
       min: 0,
       max: 3,
     },
+  },
+  SixShooter: {
+    charge: {
+      sheet: 'SixShooter',
+      name: 'charge',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 6,
+    },
+  },
+  SoulRock: {
+    hitLostHp: { sheet: 'SoulRock', name: 'hitLostHp', type: 'bool' },
   },
   SpectralGaze: {
     hit_aftershock_electric: {
@@ -441,6 +470,16 @@ export const conditionals = {
       int_only: true,
       min: 0,
       max: 8,
+    },
+  },
+  TheRestrained: {
+    dmg_daze_: {
+      sheet: 'TheRestrained',
+      name: 'dmg_daze_',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
     },
   },
   TheVault: {
@@ -1429,6 +1468,19 @@ export const buffs = {
       },
     },
   },
+  BigCylinder: {
+    passive_dmg_red_: {
+      sheet: 'BigCylinder',
+      name: 'passive_dmg_red_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_red_',
+        sheet: 'BigCylinder',
+        name: 'passive_dmg_red_',
+      },
+    },
+  },
   BlazingLaurel: {
     crit_dmg_fire_: {
       sheet: 'BlazingLaurel',
@@ -1467,6 +1519,17 @@ export const buffs = {
     },
   },
   BoxCutter: {
+    daze_: {
+      sheet: 'BoxCutter',
+      name: 'daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'BoxCutter',
+        name: 'daze_',
+      },
+    },
     physical_dmg_: {
       sheet: 'BoxCutter',
       name: 'physical_dmg_',
@@ -1840,6 +1903,17 @@ export const buffs = {
     },
   },
   FreedomBlues: {
+    anomBuildupRes_: {
+      sheet: 'FreedomBlues',
+      name: 'anomBuildupRes_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'anomBuildupRes_',
+        sheet: 'FreedomBlues',
+        name: 'anomBuildupRes_',
+      },
+    },
     set2: {
       sheet: 'FreedomBlues',
       name: 'set2',
@@ -2239,6 +2313,30 @@ export const buffs = {
         name: 'enerRegen',
       },
     },
+    passive_assist_anomBuildup_: {
+      sheet: 'PeacekeeperSpecialized',
+      name: 'passive_assist_anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'PeacekeeperSpecialized',
+        damageType1: 'assistFollowUp',
+        name: 'passive_assist_anomBuildup_',
+      },
+    },
+    passive_exSpecial_anomBuildup_: {
+      sheet: 'PeacekeeperSpecialized',
+      name: 'passive_exSpecial_anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'PeacekeeperSpecialized',
+        damageType1: 'exSpecial',
+        name: 'passive_exSpecial_anomBuildup_',
+      },
+    },
   },
   PhaethonsMelody: {
     set2: {
@@ -2311,6 +2409,19 @@ export const buffs = {
         sheet: 'PolarMetal',
         damageType1: 'dash',
         name: 'set4_dash_dmg_',
+      },
+    },
+  },
+  PreciousFossilizedCore: {
+    daze_: {
+      sheet: 'PreciousFossilizedCore',
+      name: 'daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'PreciousFossilizedCore',
+        name: 'daze_',
       },
     },
   },
@@ -2464,6 +2575,17 @@ export const buffs = {
     },
   },
   RoaringRide: {
+    anomBuildup_: {
+      sheet: 'RoaringRide',
+      name: 'anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'RoaringRide',
+        name: 'anomBuildup_',
+      },
+    },
     anomProf: {
       sheet: 'RoaringRide',
       name: 'anomProf',
@@ -2572,6 +2694,17 @@ export const buffs = {
     },
   },
   SharpenedStinger: {
+    anomBuildup_: {
+      sheet: 'SharpenedStinger',
+      name: 'anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'SharpenedStinger',
+        name: 'anomBuildup_',
+      },
+    },
     physical_dmg_: {
       sheet: 'SharpenedStinger',
       name: 'physical_dmg_',
@@ -2602,15 +2735,64 @@ export const buffs = {
       name: 'set4_basic_daze_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'stun_',
+        qt: 'combat',
+        q: 'dazeInc_',
         sheet: 'ShockstarDisco',
         damageType1: 'basic',
         name: 'set4_basic_daze_',
       },
     },
+    set4_dash_daze_: {
+      sheet: 'ShockstarDisco',
+      name: 'set4_dash_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'ShockstarDisco',
+        damageType1: 'dash',
+        name: 'set4_dash_daze_',
+      },
+    },
+    set4_dodgeCounter_daze_: {
+      sheet: 'ShockstarDisco',
+      name: 'set4_dodgeCounter_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'ShockstarDisco',
+        damageType1: 'dodgeCounter',
+        name: 'set4_dodgeCounter_daze_',
+      },
+    },
+  },
+  SixShooter: {
+    exSpecial_daze_: {
+      sheet: 'SixShooter',
+      name: 'exSpecial_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'SixShooter',
+        damageType1: 'exSpecial',
+        name: 'exSpecial_daze_',
+      },
+    },
   },
   SoulRock: {
+    dmg_red_: {
+      sheet: 'SoulRock',
+      name: 'dmg_red_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_red_',
+        sheet: 'SoulRock',
+        name: 'dmg_red_',
+      },
+    },
     set2: {
       sheet: 'SoulRock',
       name: 'set2',
@@ -2658,6 +2840,17 @@ export const buffs = {
         q: 'enerRegen_',
         sheet: 'SpringEmbrace',
         name: 'cond_enerRegen_',
+      },
+    },
+    passive_dmg_red_: {
+      sheet: 'SpringEmbrace',
+      name: 'passive_dmg_red_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_red_',
+        sheet: 'SpringEmbrace',
+        name: 'passive_dmg_red_',
       },
     },
   },
@@ -2777,6 +2970,32 @@ export const buffs = {
       },
     },
   },
+  TheRestrained: {
+    basic_daze_: {
+      sheet: 'TheRestrained',
+      name: 'basic_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'TheRestrained',
+        damageType1: 'basic',
+        name: 'basic_daze_',
+      },
+    },
+    basic_dmg_: {
+      sheet: 'TheRestrained',
+      name: 'basic_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'TheRestrained',
+        damageType1: 'basic',
+        name: 'basic_dmg_',
+      },
+    },
+  },
   TheVault: {
     cond_dmg_: {
       sheet: 'TheVault',
@@ -2827,6 +3046,18 @@ export const buffs = {
         name: 'cond_anomProf',
       },
     },
+    electric_anomBuildup_: {
+      sheet: 'Timeweaver',
+      name: 'electric_anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'Timeweaver',
+        attribute: 'electric',
+        name: 'electric_anomBuildup_',
+      },
+    },
     passive_disorder_dmg_: {
       sheet: 'Timeweaver',
       name: 'passive_disorder_dmg_',
@@ -2850,6 +3081,17 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'TusksOfFury',
         name: 'cond_dmg_',
+      },
+    },
+    daze_: {
+      sheet: 'TusksOfFury',
+      name: 'daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'TusksOfFury',
+        name: 'daze_',
       },
     },
     passive_shield_: {
@@ -2877,6 +3119,19 @@ export const buffs = {
       },
     },
   },
+  VortexArrow: {
+    passive_daze_: {
+      sheet: 'VortexArrow',
+      name: 'passive_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'VortexArrow',
+        name: 'passive_daze_',
+      },
+    },
+  },
   VortexHatchet: {
     cond_impact_: {
       sheet: 'VortexHatchet',
@@ -2887,6 +3142,20 @@ export const buffs = {
         q: 'impact_',
         sheet: 'VortexHatchet',
         name: 'cond_impact_',
+      },
+    },
+  },
+  VortexRevolver: {
+    passive_exSpecial_daze_: {
+      sheet: 'VortexRevolver',
+      name: 'passive_exSpecial_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'VortexRevolver',
+        damageType1: 'exSpecial',
+        name: 'passive_exSpecial_daze_',
       },
     },
   },
@@ -2904,16 +3173,16 @@ export const buffs = {
     },
   },
   WeepingGemini: {
-    anomaly_stack: {
+    anomProf: {
       sheet: 'WeepingGemini',
-      name: 'anomaly_stack',
+      name: 'anomProf',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'anomProf',
         sheet: 'WeepingGemini',
         dst: null,
-        name: 'anomaly_stack',
+        name: 'anomProf',
       },
     },
   },

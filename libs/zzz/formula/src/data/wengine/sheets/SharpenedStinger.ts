@@ -1,4 +1,4 @@
-import { prod, subscript } from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import { allNumConditionals, own, ownBuff, registerBuff } from '../../util'
@@ -30,7 +30,20 @@ const sheet = registerWengine(
       )
     ),
     showSpecialtyAndEquipped(key)
+  ),
+  registerBuff(
+    'anomBuildup_',
+    ownBuff.combat.anomBuildup_.add(
+      cmpSpecialtyAndEquipped(
+        key,
+        cmpGE(
+          predatoryInstinct,
+          dm.stackThreshold,
+          subscript(phase, dm.anomBuildup_)
+        )
+      )
+    ),
+    showSpecialtyAndEquipped(key)
   )
-  // TODO: add anomaly buildup rate
 )
 export default sheet

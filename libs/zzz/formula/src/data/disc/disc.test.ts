@@ -161,6 +161,9 @@ describe('Disc sheets test', () => {
   })
   it('FreedomBlues', () => {
     const data = testCharacterData('FreedomBlues')
+    data.push(
+      cond('FreedomBlues', conditionals.FreedomBlues.exSpecialHit.name, 1)
+    )
     const calc = new Calculator(
       keys,
       values,
@@ -168,6 +171,9 @@ describe('Disc sheets test', () => {
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.initial.anomProf).val).toBeCloseTo(93 + 30) // 2p passive
+    expect(calc.compute(enemyDebuff.common.anomBuildupRes_).val).toBeCloseTo(
+      0.2
+    ) // 4p cond
   })
   it('HormonePunk', () => {
     const data = testCharacterData('HormonePunk')
@@ -293,20 +299,25 @@ describe('Disc sheets test', () => {
       values,
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Anby', dst: 'Anby' })
-    expect(calc.compute(enemyDebuff.common.stun_.basic[0]).val).toBeCloseTo(
-      1.5 + 0.2
-    ) // 4p passive
-    // TODO: add tests for daze_
+    const anby = convert(ownTag, { et: 'own', src: 'Anby' })
+    expect(calc.compute(anby.final.dazeInc_.basic[0]).val).toBeCloseTo(0.2) // 4p passive
+    expect(calc.compute(anby.final.dazeInc_.dash[0]).val).toBeCloseTo(0.2) // 4p passive
+    expect(calc.compute(anby.final.dazeInc_.dodgeCounter[0]).val).toBeCloseTo(
+      // 4p passive
+      0.2
+    )
   })
   it('SoulRock', () => {
     const data = testCharacterData('SoulRock')
+    data.push(cond('SoulRock', conditionals.SoulRock.hitLostHp.name, 1))
     const calc = new Calculator(
       keys,
       values,
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-    expect(calc.compute(anby.initial.def_).val).toBeCloseTo(0.16) //2p passive
+    expect(calc.compute(anby.initial.def_).val).toBeCloseTo(0.16) // 2p passive
+    expect(calc.compute(anby.final.dmg_red_).val).toBeCloseTo(0.4) // 4p cond
   })
   it('SwingJazz', () => {
     const data = testCharacterData('SwingJazz', undefined, [

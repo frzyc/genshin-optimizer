@@ -100,11 +100,15 @@ const stats: Record<Stat, Desc> = {
   anomProf_: agg,
   anomMas: agg,
   anomMas_: agg,
+  anomBuildup_: agg,
   dmg_: agg,
   common_dmg_: agg,
   buff_: agg,
   resIgn_: agg,
   shield_: agg,
+  dazeInc_: agg,
+  dazeRed_: agg,
+  dmg_red_: agg,
 } as const
 const finalStats = objFilterKeys(stats, [
   ...flatAndPercentStats,
@@ -162,6 +166,8 @@ export const ownTag = {
     standardDmg: prepProd,
     anomalyDmg: prepProd,
     shield: prep,
+    anomalyBuildup: prep,
+    dazeBuildup: prep,
   },
   listing: {
     // Anything that is intended to be allowed as an optimization target.
@@ -184,6 +190,10 @@ export const enemyTag = {
     dmgRed_: agg,
     stun_: agg,
     unstun_: agg,
+    dazeRes_: agg,
+    dazeInc_: agg,
+    dazeRed_: agg,
+    anomBuildupRes_: agg,
     isStunned: iso,
     anomTimePassed: iso,
   },

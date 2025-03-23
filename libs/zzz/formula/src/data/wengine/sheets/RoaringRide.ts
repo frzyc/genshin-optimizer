@@ -13,7 +13,7 @@ const key: WengineKey = 'RoaringRide'
 const dm = mappedStats.wengine[key]
 const { phase } = own.wengine
 
-const { atk_, anomProf } = allBoolConditionals(key)
+const { atk_, anomProf, anomBuildup_ } = allBoolConditionals(key)
 
 const sheet = registerWengine(
   key,
@@ -34,7 +34,16 @@ const sheet = registerWengine(
       cmpSpecialtyAndEquipped(key, anomProf.ifOn(subscript(phase, dm.anomProf)))
     ),
     showSpecialtyAndEquipped(key)
+  ),
+  registerBuff(
+    'anomBuildup_',
+    ownBuff.combat.anomBuildup_.add(
+      cmpSpecialtyAndEquipped(
+        key,
+        anomBuildup_.ifOn(subscript(phase, dm.anomBuildup_))
+      )
+    ),
+    showSpecialtyAndEquipped(key)
   )
-  // TODO: add anomaly build up rate
 )
 export default sheet

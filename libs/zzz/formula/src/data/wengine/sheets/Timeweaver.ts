@@ -20,7 +20,25 @@ const sheet = registerWengine(
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
-  // TODO: Electric Anomaly Buildup Rate
+  // Passive buffs
+  registerBuff(
+    'electric_anomBuildup_',
+    ownBuff.combat.dmg_.electric.add(
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.electric_anom_buildup_))
+    )
+  ),
+
+  // Conditional buffs
+  registerBuff(
+    'cond_anomProf',
+    ownBuff.combat.anomProf.add(
+      cmpSpecialtyAndEquipped(
+        key,
+        hit_anomaly.ifOn(subscript(phase, dm.anomProf))
+      )
+    ),
+    showSpecialtyAndEquipped(key)
+  ),
   registerBuff(
     'passive_disorder_dmg_',
     ownBuff.combat.common_dmg_.addWithDmgType(
@@ -34,17 +52,6 @@ const sheet = registerWengine(
         )
       )
     )
-  ),
-  // Conditional buffs
-  registerBuff(
-    'cond_anomProf',
-    ownBuff.combat.anomProf.add(
-      cmpSpecialtyAndEquipped(
-        key,
-        hit_anomaly.ifOn(subscript(phase, dm.anomProf))
-      )
-    ),
-    showSpecialtyAndEquipped(key)
   )
 )
 export default sheet
