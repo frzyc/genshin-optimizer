@@ -3,6 +3,7 @@ import { Database, SandboxStorage } from '@genshin-optimizer/common/database'
 import type { IZZZDatabase, IZenlessObjectDescription } from '../Interfaces'
 import { zzzSource } from '../Interfaces'
 import { DBMetaEntry, DisplayDiscEntry } from './DataEntries/'
+import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
 import { DisplayWengineEntry } from './DataEntries/DisplayWengineEntry'
 import { CharMetaDataManager, DiscDataManager } from './DataManagers/'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
@@ -22,6 +23,7 @@ export class ZzzDatabase extends Database {
   charMeta: CharMetaDataManager
   dbMeta: DBMetaEntry
   displayDisc: DisplayDiscEntry
+  displayCharacter: DisplayCharacterEntry
   displayWengine: DisplayWengineEntry
   generatedBuildList: GeneratedBuildListDataManager
   dbIndex: 1 | 2 | 3 | 4
@@ -60,6 +62,7 @@ export class ZzzDatabase extends Database {
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
     this.displayDisc = new DisplayDiscEntry(this)
+    this.displayCharacter = new DisplayCharacterEntry(this)
     this.displayWengine = new DisplayWengineEntry(this)
 
     this.discs.followAny(() => {
@@ -71,10 +74,13 @@ export class ZzzDatabase extends Database {
     this.charMeta.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
-    this.displayWengine.follow(() => {
+    this.displayDisc.follow(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
-    this.displayDisc.follow(() => {
+    this.displayCharacter.follow(() => {
+      this.dbMeta.set({ lastEdit: Date.now() })
+    })
+    this.displayWengine.follow(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
   }
@@ -91,7 +97,12 @@ export class ZzzDatabase extends Database {
     ] as const
   }
   get dataEntries() {
-    return [this.dbMeta, this.displayDisc, this.displayWengine] as const
+    return [
+      this.dbMeta,
+      this.displayDisc,
+      this.displayCharacter,
+      this.displayWengine,
+    ] as const
   }
 
   clear() {
