@@ -19,7 +19,7 @@ const sheet = registerDisc(
   registerBuff(
     'set4_cond_def_assist_or_evasive_assist_dmg_',
     ownBuff.combat.common_dmg_.add(
-      cmpGE(discCount, 2, def_assist_or_evasive_assist.ifOn(0.15))
+      cmpGE(discCount, 4, def_assist_or_evasive_assist.ifOn(0.15))
     ),
     showCond4Set
   )
