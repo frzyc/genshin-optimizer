@@ -63,7 +63,7 @@ export interface Lookup<Output, PermitOP extends OP = OP>
 /** ex[br0] */
 export interface Subscript<
   Type extends number | string,
-  PermitOP extends OP = OP
+  PermitOP extends OP = OP,
 > extends Base<'subscript' & PermitOP, never, NumNode<PermitOP>> {
   ex: Type[]
 }

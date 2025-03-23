@@ -22,7 +22,7 @@ import type { EntryType, Preset } from './listing'
 export interface Tag<
   Sheet extends string = string,
   Src extends string | null = string | null,
-  Dst extends string | null = string | null
+  Dst extends string | null = string | null,
 > extends BaseTag {
   preset?: Preset
   src?: Src | null

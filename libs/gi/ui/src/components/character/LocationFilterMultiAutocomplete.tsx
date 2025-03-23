@@ -67,8 +67,8 @@ export function LocationFilterMultiAutocomplete({
       key === 'Traveler'
         ? allTravelerKeys.some((key) => database.charMeta.get(key).favorite)
         : key
-        ? database.charMeta.get(key).favorite
-        : false,
+          ? database.charMeta.get(key).favorite
+          : false,
     [database]
   )
 

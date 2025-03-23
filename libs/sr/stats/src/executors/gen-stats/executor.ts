@@ -1,4 +1,4 @@
-import { dumpPrettyFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile, dumpPrettyFile } from '@genshin-optimizer/common/pipeline'
 import { workspaceRoot } from '@nx/devkit'
 import type { GenStatsExecutorSchema } from './schema'
 import type {
@@ -65,7 +65,7 @@ export default async function runExecutor(_options: GenStatsExecutorSchema) {
   )
 
   console.log(`Writing combined data to ${proj_path}/src/allStat_gen.json`)
-  await dumpPrettyFile(`${proj_path}/src/allStat_gen.json`, allStat)
+  dumpFile(`${proj_path}/src/allStat_gen.json`, allStat)
 
   return { success: true }
 }

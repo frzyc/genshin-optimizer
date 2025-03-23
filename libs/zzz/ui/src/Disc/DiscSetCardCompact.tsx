@@ -1,14 +1,15 @@
 'use client'
 
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
+import { useDiscSets } from '@genshin-optimizer/zzz/db-ui'
 import { Typography } from '@mui/material'
-import { Box, Stack } from '@mui/system'
-import { useMemo } from 'react'
+import { Stack } from '@mui/system'
+import { useTranslation } from 'react-i18next'
 import { ZCard } from '../Components'
-import { EmptyCompactCard } from '../util'
+import { COMPACT_CARD_HEIGHT_PX, EmptyCompactCard } from '../util'
 import { DiscSetName } from './DiscTrans'
 
 export function DiscSetCardCompact({
@@ -16,76 +17,66 @@ export function DiscSetCardCompact({
 }: {
   discs: Record<DiscSlotKey, ICachedDisc | undefined>
 }) {
-  const sets = useMemo(() => {
-    const sets: Partial<Record<DiscSetKey, number>> = {}
-    Object.values(discs).forEach((disc) => {
-      const setKey = disc?.setKey
-      if (!setKey) return
-      sets[setKey] = (sets[setKey] || 0) + 1
-    })
-    return Object.fromEntries(
-      Object.entries(sets)
-        .map(([setKey, count]): [DiscSetKey, number] => {
-          if (count >= 4) return [setKey as DiscSetKey, 4]
-          if (count >= 2) return [setKey as DiscSetKey, 2]
-          return [setKey as DiscSetKey, 0]
-        })
-        .filter(([, count]) => count > 0)
-    ) as Partial<Record<DiscSetKey, 2 | 4>>
-  }, [discs])
+  const { t } = useTranslation('disc')
+  const sets = useDiscSets(discs)
 
   return sets && Object.keys(sets).length ? (
     <ZCard
       bgt="dark"
       sx={{
-        height: '100%',
         width: '100%',
       }}
     >
-      <Box component="div" sx={{ padding: '8px' }}>
-        <Stack spacing={1}>
-          {/* TODO: translate */}
-          {Object.entries(sets).map(([key, count]) => (
-            <Box
+      <Stack
+        component="div"
+        sx={{ p: 0.5, height: `${COMPACT_CARD_HEIGHT_PX}px` }}
+        spacing={0.5}
+      >
+        {Object.entries(sets).map(([key, count]) => (
+          <CardThemed
+            key={key}
+            bgt="light"
+            sx={(theme) => ({
+              height: `${
+                (COMPACT_CARD_HEIGHT_PX - parseFloat(theme.spacing(0.5 * 4))) /
+                3
+              }px`,
+              display: 'flex',
+              px: 0.5,
+              borderRadius: '12px',
+              alignItems: 'center',
+              gap: 1,
+            })}
+          >
+            <ImgIcon size={2.4} src={discDefIcon(key)} />
+            <Typography
               key={key}
-              component="div"
               sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                background: '#2B364D',
-                py: '16px',
-                px: '5px',
-                borderRadius: '12px',
+                fontWeight: '900',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                flexGrow: 1,
               }}
             >
-              <Box
-                component="div"
-                sx={{ display: 'flex', alignItems: 'center' }}
-                gap={2}
-              >
-                <ImgIcon size={2.5} src={discDefIcon(key)} />
-                <Typography key={key} sx={{ fontWeight: '900' }}>
-                  <DiscSetName setKey={key} />
-                </Typography>
-              </Box>
-              <SqBadge
-                sx={{
-                  borderRadius: '12px',
-                  backgroundColor: '#46A046',
-                  px: '10px',
-                  py: '5px',
-                  fontWeight: '900',
-                }}
-              >
-                {count}pc
-              </SqBadge>
-            </Box>
-          ))}
-        </Stack>
-      </Box>
+              <DiscSetName setKey={key} />
+            </Typography>
+            <SqBadge
+              color="success"
+              sx={{
+                borderRadius: '12px',
+                px: '10px',
+                py: '5px',
+                fontWeight: '900',
+              }}
+            >
+              {count}
+            </SqBadge>
+          </CardThemed>
+        ))}
+      </Stack>
     </ZCard>
   ) : (
-    // TODO: Translate
-    <EmptyCompactCard placeholder="No Active Sets" />
+    <EmptyCompactCard placeholder={t('noActiveSets')} />
   )
 }

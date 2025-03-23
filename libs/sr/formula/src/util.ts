@@ -79,10 +79,14 @@ export function lightConeTagMapNodeEntries(
 ): TagMapNodeEntries {
   return [
     // Opt-in for light cone buffs, instead of enabling it by default to reduce `read` traffic
-    reader.sheet('agg').reread(reader.sheet('lightCone')),
+    reader
+      .sheet('agg')
+      .reread(reader.sheet('lightCone')),
 
     // Mark light cones as used
-    own.common.count.sheet(key).add(1),
+    own.common.count
+      .sheet(key)
+      .add(1),
     own.lightCone.lvl.add(level),
     own.lightCone.ascension.add(ascension),
     own.lightCone.superimpose.add(superimpose),
@@ -102,7 +106,9 @@ export function relicTagMapNodeEntries(
   })
   return [
     // Opt-in for relic buffs, instead of enabling it by default to reduce `read` traffic
-    reader.sheet('agg').reread(reader.sheet('relic')),
+    reader
+      .sheet('agg')
+      .reread(reader.sheet('relic')),
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
     reader

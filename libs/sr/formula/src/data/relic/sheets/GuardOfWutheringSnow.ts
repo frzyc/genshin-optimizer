@@ -1,7 +1,7 @@
 import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { allBoolConditionals, customHeal, own } from '../../util'
+import { customHeal, own, percent } from '../../util'
 import { entriesForRelic, registerRelic } from '../util'
 
 const key: RelicSetKey = 'GuardOfWutheringSnow'
@@ -9,8 +9,6 @@ const data_gen = allStats.relic[key]
 const dm = mappedStats.relic[key]
 
 const relicCount = own.common.count.sheet(key)
-
-const { hpLowerThan50 } = allBoolConditionals(key)
 
 const sheet = registerRelic(
   key,
@@ -20,8 +18,10 @@ const sheet = registerRelic(
   // Conditional buffs
   customHeal(
     'set4_heal',
-    hpLowerThan50.ifOn(prod(own.final.hp, dm[4].hpRestore)),
-    { cond: cmpGE(relicCount, 4, 'infer', '') }
+    cmpGE(relicCount, 4, prod(own.final.hp, percent(dm[4].hpRestore))),
+    {
+      cond: cmpGE(relicCount, 4, 'infer', ''),
+    }
   )
 )
 export default sheet

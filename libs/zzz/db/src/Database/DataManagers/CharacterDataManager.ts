@@ -1,65 +1,32 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
-import {
-  clamp,
-  deepClone,
-  objFilter,
-  objFilterKeys,
-  objKeyMap,
-  validateArr,
-} from '@genshin-optimizer/common/util'
+import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
-  allAttributeDamageKeys,
   allCharacterKeys,
-  allDiscSetKeys,
   allDiscSlotKeys,
-  allFormulaKeys,
-  allWengineKeys,
   coreLimits,
-  discSlotToMainStatKeys,
   skillLimits,
 } from '@genshin-optimizer/zzz/consts'
 import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
-import type { ICachedCharacter, IDbCharacter } from '../../Interfaces'
+import type { ICharacter } from '@genshin-optimizer/zzz/zood'
+import type { ICachedCharacter } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
 export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
   ICachedCharacter,
-  IDbCharacter
+  ICharacter
 > {
   constructor(database: ZzzDatabase) {
     super(database, 'characters')
   }
-  override validate(obj: unknown): IDbCharacter | undefined {
+  override validate(obj: unknown): ICharacter | undefined {
     if (!obj || typeof obj !== 'object') return undefined
-    const { key: characterKey } = obj as IDbCharacter
-    let {
-      core,
-      wengineKey,
-      wengineLvl,
-      wenginePhase,
-      stats,
-      formulaKey,
-      constraints,
-      useEquipped,
-      slot4,
-      slot5,
-      slot6,
-      levelLow,
-      levelHigh,
-      setFilter2,
-      setFilter4,
-      conditionals,
-      mindscape,
-      dodge,
-      basic,
-      chain,
-      special,
-      assist,
-    } = obj as IDbCharacter
-    const { level: rawLevel, promotion: rawAscension } = obj as IDbCharacter
+    const { key: characterKey } = obj as ICharacter
+    let { core, mindscape, dodge, basic, chain, special, assist } =
+      obj as ICharacter
+    const { level: rawLevel, promotion: rawAscension } = obj as ICharacter
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
@@ -84,80 +51,10 @@ export class CharacterDataManager extends DataManager<
     if (typeof core !== 'number') core = 0
     core = clamp(core, 0, coreLimits[promotion])
 
-    if (!allWengineKeys.includes(wengineKey)) wengineKey = allWengineKeys[0]
-
-    if (typeof wengineLvl !== 'number') wengineLvl = 60
-    wengineLvl = clamp(wengineLvl, 1, 60)
-
-    if (typeof wenginePhase !== 'number') wenginePhase = 1
-    wenginePhase = clamp(wenginePhase, 1, 5)
-
-    if (typeof stats !== 'object') stats = {}
-    stats = objFilter(
-      stats,
-      //enemyDefRed was a field used very temporarily
-      (val, k) => typeof val === 'number' && !!val && k !== 'enemyDefRed'
-    )
-
-    if (!allFormulaKeys.includes(formulaKey)) formulaKey = allFormulaKeys[0]
-
-    if (typeof constraints !== 'object') constraints = {}
-    constraints = objFilter(
-      constraints,
-      ({ value, isMax }) =>
-        typeof value === 'number' && typeof isMax === 'boolean'
-    )
-    constraints = objFilterKeys(
-      constraints,
-      // Taken from StatFilterCard
-      [
-        'hp',
-        'def',
-        'atk',
-        'crit_',
-        'crit_dmg_',
-        'anomProf',
-        'pen',
-        ...allAttributeDamageKeys,
-      ]
-    )
-    useEquipped = !!useEquipped
-
-    slot4 = validateArr(slot4, discSlotToMainStatKeys['4'])
-    slot5 = validateArr(slot5, discSlotToMainStatKeys['5'])
-    slot6 = validateArr(slot6, discSlotToMainStatKeys['6'])
-
-    if (typeof levelLow !== 'number') levelLow = 15
-    levelLow = clamp(levelLow, 0, 15)
-
-    if (typeof levelHigh !== 'number') levelHigh = 15
-    levelHigh = clamp(levelHigh, 0, 15)
-
-    setFilter2 = validateArr(setFilter2, allDiscSetKeys, [])
-    setFilter4 = validateArr(setFilter4, allDiscSetKeys, [])
-
-    if (typeof conditionals !== 'object') conditionals = {}
-    conditionals = objFilter(conditionals, (value) => typeof value === 'number')
-
-    const char: IDbCharacter = {
+    const char: ICharacter = {
       key: characterKey,
       level: sanitizedLevel,
       core,
-      wengineKey,
-      wengineLvl,
-      wenginePhase,
-      stats,
-      formulaKey,
-      constraints,
-      useEquipped,
-      slot4,
-      slot5,
-      slot6,
-      levelLow,
-      levelHigh,
-      setFilter2,
-      setFilter4,
-      conditionals,
       mindscape,
       dodge,
       basic,
@@ -169,10 +66,7 @@ export class CharacterDataManager extends DataManager<
     return char
   }
 
-  override toCache(
-    storageObj: IDbCharacter,
-    id: CharacterKey
-  ): ICachedCharacter {
+  override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)
     return {
       equippedDiscs: oldChar
@@ -186,9 +80,9 @@ export class CharacterDataManager extends DataManager<
           ),
       equippedWengine: oldChar
         ? oldChar.equippedWengine
-        : Object.values(this.database.wengines?.data ?? {}).find(
+        : (Object.values(this.database.wengines?.data ?? {}).find(
             (w) => w?.location === id
-          )?.id ?? '',
+          )?.id ?? ''),
       ...storageObj,
     }
   }
@@ -274,11 +168,11 @@ export class CharacterDataManager extends DataManager<
     if (!char) return undefined
     for (const discKey of Object.values(char.equippedDiscs)) {
       const disc = this.database.discs.get(discKey)
-      if (disc && disc.location === key)
+      if (discKey && disc && disc.location === key)
         this.database.discs.setCached(discKey, { ...disc, location: '' })
     }
     const wengine = this.database.wengines.get(char.equippedWengine)
-    if (wengine && wengine.location === key)
+    if (char.equippedWengine && wengine && wengine.location === key)
       this.database.wengines.setCached(char.equippedWengine, {
         ...wengine,
         location: '',
@@ -318,26 +212,8 @@ export class CharacterDataManager extends DataManager<
 export function initialCharacterData(key: CharacterKey): ICachedCharacter {
   return {
     key,
-    level: 1,
-    core: 0,
-    wengineKey: allWengineKeys[0],
-    wengineLvl: 60,
-    wenginePhase: 1,
-    stats: {
-      // in percent
-      enemyDef: 953, // default enemy DEF
-    },
-    formulaKey: allFormulaKeys[0],
-    constraints: {}, // in percent
-    useEquipped: false,
-    slot4: [...discSlotToMainStatKeys['4']],
-    slot5: [...discSlotToMainStatKeys['5']],
-    slot6: [...discSlotToMainStatKeys['6']],
-    levelLow: 15,
-    levelHigh: 15,
-    setFilter2: [],
-    setFilter4: [],
-    conditionals: {},
+    level: 60,
+    core: 6,
     promotion: 0,
     mindscape: 0,
     dodge: 1,

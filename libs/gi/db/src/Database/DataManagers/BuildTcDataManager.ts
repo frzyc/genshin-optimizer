@@ -146,8 +146,8 @@ function initCharTCArtifactSlots() {
     statKey: (s === 'flower'
       ? 'hp'
       : s === 'plume'
-      ? 'atk'
-      : 'atk_') as MainStatKey,
+        ? 'atk'
+        : 'atk_') as MainStatKey,
   }))
 }
 function validateBuildTCChar(char: unknown): BuildTc['character'] {
@@ -300,10 +300,10 @@ export function toBuildTc(
         value === 3
           ? 2
           : value === 5
-          ? 4
-          : value === 1 && !(key as string).startsWith('PrayersFor')
-          ? 0
-          : value,
+            ? 4
+            : value === 1 && !(key as string).startsWith('PrayersFor')
+              ? 0
+              : value,
       ])
       .filter(([, value]) => value)
   )

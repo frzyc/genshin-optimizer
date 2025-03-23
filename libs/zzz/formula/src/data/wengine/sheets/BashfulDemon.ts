@@ -1,5 +1,6 @@
 import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allNumConditionals,
   own,
@@ -15,7 +16,8 @@ import {
 } from '../util'
 
 const key: WengineKey = 'BashfulDemon'
-const { modification } = own.wengine
+const dm = mappedStats.wengine[key]
+const { phase } = own.wengine
 
 const { launch_ex_attack } = allNumConditionals(key, true, 0, 4)
 
@@ -26,12 +28,9 @@ const sheet = registerWengine(
 
   // passive buffs
   registerBuff(
-    'ice_dmg_',
+    'passive_ice_dmg_',
     ownBuff.combat.dmg_.ice.add(
-      cmpSpecialtyAndEquipped(
-        key,
-        subscript(modification, [-1, 0.15, 0.175, 0.2, 0.22, 0.24])
-      )
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.ice_))
     ),
     showSpecialtyAndEquipped(key)
   ),
@@ -42,10 +41,7 @@ const sheet = registerWengine(
     teamBuff.combat.atk_.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(
-          launch_ex_attack,
-          subscript(modification, [-1, 0.02, 0.023, 0.026, 0.029, 0.032])
-        )
+        prod(launch_ex_attack, subscript(phase, dm.atk_))
       )
     ),
     showSpecialtyAndEquipped(key)

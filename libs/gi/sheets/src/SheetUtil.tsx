@@ -43,7 +43,7 @@ export function cond(
 
 type Translated = [
   trg: (i18key: string) => ReactNode,
-  tr: (i18key: string, values?: Record<string, string | number>) => ReactNode
+  tr: (i18key: string, values?: Record<string, string | number>) => ReactNode,
 ]
 type CharTransKey =
   | CharacterSheetKey

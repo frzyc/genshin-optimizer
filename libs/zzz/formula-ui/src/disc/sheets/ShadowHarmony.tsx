@@ -2,23 +2,13 @@ import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 
 const key: DiscSetKey = 'ShadowHarmony'
-const [chg, _ch] = trans('disc', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+const [chg, ch] = trans('disc', key)
 const icon = discDefIcon(key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = conditionals[key]
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = buffs[key]
 
 const sheet: UISheet<'2' | '4'> = {
@@ -39,6 +29,17 @@ const sheet: UISheet<'2' | '4'> = {
       {
         type: 'text',
         text: chg('desc4'),
+      },
+      {
+        type: 'conditional',
+        conditional: {
+          label: ch('set4_cond_stacks'),
+          metadata: cond.stacks,
+          fields: [
+            tagToTagField(buff.set4_stack_atk_.tag),
+            tagToTagField(buff.set4_stack_crit_.tag),
+          ],
+        },
       },
     ],
   },

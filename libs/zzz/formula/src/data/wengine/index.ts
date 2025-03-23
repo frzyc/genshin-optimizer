@@ -3,6 +3,7 @@ import type { TagMapNodeEntries } from '../util'
 import BashfulDemon from './sheets/BashfulDemon'
 import BigCylinder from './sheets/BigCylinder'
 import BlazingLaurel from './sheets/BlazingLaurel'
+import BoxCutter from './sheets/BoxCutter'
 import BunnyBand from './sheets/BunnyBand'
 import CannonRotor from './sheets/CannonRotor'
 import DeepSeaVisitor from './sheets/DeepSeaVisitor'
@@ -37,9 +38,11 @@ import ReverbMarkII from './sheets/ReverbMarkII'
 import ReverbMarkIII from './sheets/ReverbMarkIII'
 import RiotSuppressorMarkVI from './sheets/RiotSuppressorMarkVI'
 import RoaringRide from './sheets/RoaringRide'
+import SeveredInnocence from './sheets/SeveredInnocence'
 import SharpenedStinger from './sheets/SharpenedStinger'
 import SixShooter from './sheets/SixShooter'
 import SliceOfTime from './sheets/SliceOfTime'
+import SpectralGaze from './sheets/SpectralGaze'
 import SpringEmbrace from './sheets/SpringEmbrace'
 import StarlightEngine from './sheets/StarlightEngine'
 import StarlightEngineReplica from './sheets/StarlightEngineReplica'
@@ -63,6 +66,7 @@ const data: TagMapNodeEntries[] = [
   BashfulDemon,
   BigCylinder,
   BlazingLaurel,
+  BoxCutter,
   BunnyBand,
   CannonRotor,
   DeepSeaVisitor,
@@ -97,9 +101,11 @@ const data: TagMapNodeEntries[] = [
   ReverbMarkIII,
   RiotSuppressorMarkVI,
   RoaringRide,
+  SeveredInnocence,
   SharpenedStinger,
   SixShooter,
   SliceOfTime,
+  SpectralGaze,
   SpringEmbrace,
   StarlightEngine,
   StarlightEngineReplica,

@@ -36,9 +36,14 @@ export function LoadoutDropdown({
   const database = useDatabase()
   const { key: characterKey, name } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
-  const teamCharIds = database.teamChars.keys.filter(
-    (teamCharId) => database.teamChars.get(teamCharId)!.key === characterKey
-  )
+  const teamCharIds = database.teamChars.entries
+    .filter(([_, team]) => team.key === characterKey)
+    .sort((a, b) => {
+      const [, ateam] = a
+      const [, bteam] = b
+      return ateam.name.localeCompare(bteam.name)
+    })
+    .map(([teamId, _]) => teamId)
 
   const [show, onShow, onHide] = useBoolState()
   const [newName, setNewName] = useState('')

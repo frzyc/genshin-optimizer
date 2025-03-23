@@ -4,6 +4,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
 import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import type { TypographyOwnProps } from '@mui/material'
 import { Box, Collapse, Typography } from '@mui/material'
 import { useContext, useState } from 'react'
 import type { Document, FieldsDocument, TextDocument } from '../types'
@@ -15,19 +16,24 @@ export function DocumentDisplay({
   document,
   bgt = 'normal',
   collapse = false,
+  typoVariant = 'body1',
 }: {
   document: Document
   bgt?: CardBackgroundColor
   collapse?: boolean
+  typoVariant?: TypographyOwnProps['variant']
 }) {
   switch (document.type) {
     case 'fields':
       return <FieldsSectionDisplay fieldsDocument={document} bgt={bgt} />
     case 'text':
       return collapse ? (
-        <TextSectionDisplayCollapse textDocument={document} />
+        <TextSectionDisplayCollapse
+          textDocument={document}
+          typoVariant={typoVariant}
+        />
       ) : (
-        <TextSectionDisplay textDocument={document} />
+        <TextSectionDisplay textDocument={document} typoVariant={typoVariant} />
       )
     case 'conditional':
       return (
@@ -64,20 +70,28 @@ function FieldsSectionDisplay({
   )
 }
 
-function TextSectionDisplay({ textDocument }: { textDocument: TextDocument }) {
+function TextSectionDisplay({
+  textDocument,
+  typoVariant,
+}: {
+  textDocument: TextDocument
+  typoVariant?: TypographyOwnProps['variant']
+}) {
   const calculator = useContext(CalcContext)
   const tag = useContext(TagContext)
   if (!calculator) return null
   return (
-    <Typography>
+    <Typography variant={typoVariant}>
       {evalIfFunc(textDocument.text, calculator.withTag(tag))}
     </Typography>
   )
 }
 function TextSectionDisplayCollapse({
   textDocument,
+  typoVariant,
 }: {
   textDocument: TextDocument
+  typoVariant?: TypographyOwnProps['variant']
 }) {
   const [expanded, setExpanded] = useState(false)
   const [hover, setHover] = useState(false)
@@ -121,7 +135,10 @@ function TextSectionDisplayCollapse({
           },
         }}
       >
-        <TextSectionDisplay textDocument={textDocument} />
+        <TextSectionDisplay
+          textDocument={textDocument}
+          typoVariant={typoVariant}
+        />
       </Collapse>
     </Box>
   )

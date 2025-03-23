@@ -29,8 +29,12 @@
       }
     }
   },
-  "inventoryCard": { "title": "GOインベントリー" },
-  "vidGuideCard": { "title": "ガイド動画" },
+  "inventoryCard": {
+    "title": "GOインベントリー"
+  },
+  "vidGuideCard": {
+    "title": "ガイド動画"
+  },
   "teamCard": {
     "title": "チーム紹介",
     "jobTitle": {

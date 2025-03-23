@@ -1,9 +1,9 @@
 import { ConditionalWrapper } from '@genshin-optimizer/common/ui'
-import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
+import { Box, CardActionArea, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
-import { Suspense, useCallback } from 'react'
+import { useCallback } from 'react'
 import { ZCard } from '../Components'
-
+export const COMPACT_CARD_HEIGHT_PX = 165
 export function EmptyCompactCard({
   placeholder,
   onClick,
@@ -20,52 +20,38 @@ export function EmptyCompactCard({
     [onClick]
   )
   const falseWrapperFunc = useCallback(
-    (children: ReactNode) => (
-      <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-        {children}
-      </Box>
-    ),
+    (children: ReactNode) => <Box>{children}</Box>,
     []
   )
 
   return (
     <ZCard bgt="dark">
-      <Suspense
-        fallback={
-          <Skeleton
-            variant="rectangular"
-            sx={{ width: '100%', height: '100%', minHeight: 350 }}
-          />
-        }
+      <ConditionalWrapper
+        condition={!!onClick}
+        wrapper={wrapperFunc}
+        falseWrapper={falseWrapperFunc}
       >
-        <ConditionalWrapper
-          condition={!!onClick}
-          wrapper={wrapperFunc}
-          falseWrapper={falseWrapperFunc}
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: `${COMPACT_CARD_HEIGHT_PX}px`,
+          }}
         >
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              px: '16px',
-              justifyContent: 'center',
-              height: '212px',
-            }}
+          <Typography
+            variant="h5"
+            sx={(theme) => ({
+              textTransform: 'uppercase',
+              color: `${theme.palette.contentZzz.main}`,
+              fontWeight: '900',
+              textAlign: 'center',
+            })}
           >
-            <Typography
-              variant="h5"
-              sx={(theme) => ({
-                textTransform: 'uppercase',
-                color: `${theme.palette.contentZzz.main}`,
-                fontWeight: '900',
-                textAlign: 'center',
-              })}
-            >
-              {placeholder}
-            </Typography>
-          </Box>
-        </ConditionalWrapper>
-      </Suspense>
+            {placeholder}
+          </Typography>
+        </Box>
+      </ConditionalWrapper>
     </ZCard>
   )
 }

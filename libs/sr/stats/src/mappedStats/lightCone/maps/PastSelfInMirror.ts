@@ -4,13 +4,14 @@ import { allStats } from '../../../allStats'
 const key: LightConeKey = 'PastSelfInMirror'
 const data_gen = allStats.lightCone[key]
 
-let o = 0
+let o = 1
+
 const dm = {
-  _brEffect_: data_gen.superimpose.otherStats[o++],
-  dmg_: data_gen.superimpose.otherStats[o++],
-  duration: data_gen.superimpose.otherStats[o++],
-  brEffect_thresh_: data_gen.superimpose.otherStats[o++],
-  enerRegn: data_gen.superimpose.otherStats[o++],
+  passive_brEffect_: data_gen.superimpose.passiveStats.brEffect_,
+  common_dmg_: data_gen.superimpose.otherStats[o++],
+  duration: data_gen.superimpose.otherStats[o++][1],
+  brEffect_threshold: data_gen.superimpose.otherStats[o++][1],
+  energy: data_gen.superimpose.otherStats[o++],
 } as const
 
 export default dm

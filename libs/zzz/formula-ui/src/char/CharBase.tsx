@@ -1,15 +1,20 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
-import { allAttributeDamageKeys } from '@genshin-optimizer/zzz/consts'
+import {
+  allAttributeDamageKeys,
+  allAttributeKeys,
+  elementalData,
+} from '@genshin-optimizer/zzz/consts'
+import { specificDmgTypeKeys } from '@genshin-optimizer/zzz/db'
 import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
+import { damageTypeKeysMap } from './util'
 export const charBaseUiSheet: TagField[] = (
   [
+    // hp/atk/def handled in TagDisplay
     'crit_',
     'crit_dmg_',
-    'hp',
-    'atk',
-    'def',
     'impact',
     'pen',
     'pen_',
@@ -43,3 +48,54 @@ export const charBaseUiSheet: TagField[] = (
     title: <StatDisplay statKey={statKey} />,
   }
 })
+
+// generated standard targets for sheets
+charBaseUiSheet.push(
+  ...allAttributeKeys.map(
+    (attr): TagField => ({
+      fieldRef: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        attribute: attr,
+        name: 'standardDmgInst',
+      },
+      title: <ColorText color={attr}>{elementalData[attr]} Damage</ColorText>,
+    })
+  ),
+  // elemental dmg with dmg types
+  ...allAttributeKeys.flatMap((attr) =>
+    specificDmgTypeKeys.map(
+      (dmgType): TagField => ({
+        fieldRef: {
+          et: 'own',
+          qt: 'formula',
+          q: 'standardDmg',
+          attribute: attr,
+          damageType1: dmgType,
+          name: 'standardDmgInst',
+        },
+        title: (
+          <ColorText color={attr}>
+            {elementalData[attr]} {damageTypeKeysMap[dmgType]} Damage
+          </ColorText>
+        ),
+      })
+    )
+  ),
+  ...allAttributeKeys.map(
+    (attr): TagField => ({
+      fieldRef: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomalyDmg',
+        attribute: attr,
+        damageType1: 'anomaly',
+        name: 'anomalyDmgInst',
+      },
+      title: (
+        <ColorText color={attr}>{elementalData[attr]} Anomaly Damage</ColorText>
+      ),
+    })
+  )
+)

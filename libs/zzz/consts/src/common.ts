@@ -1,11 +1,5 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { DiscCondKey } from './disc'
-import {
-  allDiscCondKeys,
-  allDiscMainStatKeys,
-  allDiscSubStatKeys,
-} from './disc'
-import type { WengineCondKey } from './wengine'
+import { allDiscMainStatKeys, allDiscSubStatKeys } from './disc'
 
 export const otherStatKeys = [
   // Used by calc, likely will be bundled into pando
@@ -98,6 +92,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   crit_dmg_: 'CRIT DMG',
   enerRegen_: 'Energy Regen',
   enerRegen: 'Energy Regen',
+  base_enerRegen: 'Base Energy Regen',
   impact_: 'Impact',
   impact: 'Impact',
   daze_: 'Daze',
@@ -131,6 +126,13 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   cond_atk_: 'Combat ATK%',
   cond_anomMas_: 'Combat Anomaly Mastery%',
   cond_anomMas: 'Combat Anomaly Mastery',
+
+  // Formula display stuff
+  crit_mult_: 'CRIT Multiplier',
+  dmg_mult_: 'DMG Multiplier',
+  def_mult_: 'DEF Multiplier',
+  base: 'Base Damage',
+  stun_: 'Stun Multiplier',
 }
 
 export const elementalData: Record<AttributeKey, string> = {
@@ -144,15 +146,6 @@ export const elementalData: Record<AttributeKey, string> = {
 Object.entries(elementalData).forEach(([e, name]) => {
   statKeyTextMap[`${e}_dmg_`] = `${name} DMG Bonus`
 })
-
-export type CondKey = DiscCondKey | WengineCondKey
-export const allCondKeys = Object.keys(allDiscCondKeys) as CondKey[]
-export type CondMeta = {
-  key: CondKey
-  text: string | ((val: number) => string)
-  max: number
-  min: number
-}
 
 export const rarityColor = {
   S: 'rankS',

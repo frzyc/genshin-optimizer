@@ -35,14 +35,17 @@ export function layeredAssignment<T, Obj>(
   keys: readonly (number | string)[],
   value: T
 ): Obj {
-  keys.reduce((accu, key, i, arr) => {
-    if (i === arr.length - 1) {
-      accu[key] = value
-      return accu
-    }
-    if (!accu[key]) accu[key] = {}
-    return accu[key] as Record<number | string, unknown>
-  }, obj as Record<number | string, unknown>)
+  keys.reduce(
+    (accu, key, i, arr) => {
+      if (i === arr.length - 1) {
+        accu[key] = value
+        return accu
+      }
+      if (!accu[key]) accu[key] = {}
+      return accu[key] as Record<number | string, unknown>
+    },
+    obj as Record<number | string, unknown>
+  )
   return obj
 }
 
@@ -171,8 +174,8 @@ export const getObjectKeysRecursive = (obj: unknown): string[] =>
         .flatMap(getObjectKeysRecursive)
         .concat(Object.keys(obj as Record<string, unknown>))
     : typeof obj === 'string'
-    ? [obj]
-    : []
+      ? [obj]
+      : []
 
 export function deepFreeze<T>(obj: T, layers = 5): T {
   if (layers === 0) return obj
@@ -287,4 +290,20 @@ export function objSumInPlace(
 
 export function prettify(obj: object | undefined) {
   return JSON.stringify(obj, undefined, 2)
+}
+
+/**
+ * Removes all fields from an object whose values are `undefined`, in place.
+ *
+ * @param obj - The object from which `undefined` fields should be removed.
+ * @returns `obj` with all `undefined` fields removed.
+ */
+
+export function removeUndefinedFields<K extends string, V>(
+  obj: Record<K, V>
+): Record<K, V> {
+  Object.keys(obj).forEach(
+    (key) => obj[key as K] === undefined && delete obj[key as K]
+  )
+  return obj
 }

@@ -1,14 +1,137 @@
-import { notEmpty, shallowCompareObj } from '@genshin-optimizer/common/util'
+import {
+  notEmpty,
+  removeUndefinedFields,
+  shallowCompareObj,
+  validateValue,
+} from '@genshin-optimizer/common/util'
 import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import type { Dst, Sheet, Src, Tag } from '@genshin-optimizer/zzz/formula'
-import { getConditional, isMember } from '@genshin-optimizer/zzz/formula'
+import {
+  type AttributeKey,
+  type CharacterKey,
+  allAttributeKeys,
+} from '@genshin-optimizer/zzz/consts'
+import type {
+  DamageType,
+  Dst,
+  Sheet,
+  Src,
+  Tag,
+} from '@genshin-optimizer/zzz/formula'
+import {
+  formulas,
+  getConditional,
+  isMember,
+} from '@genshin-optimizer/zzz/formula'
 import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
-import { validateTag } from '../tagUtil'
+
+// Corresponds to the `own.common.critMode` libs\zzz\formula\src\data\common\dmg.ts
+export type critModeKey = 'avg' | 'crit' | 'nonCrit'
+export const critModeKeys: critModeKey[] = ['avg', 'crit', 'nonCrit'] as const
+
+// Target
+export type SpecificDmgTypeKey = Exclude<
+  DamageType,
+  'anomaly' | 'disorder' | 'aftershock' | 'elemental'
+>
+// Corresponds to damageTypes in libs\zzz\formula\src\data\util\listing.ts
+export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
+  'basic',
+  'dash',
+  'dodgeCounter',
+  'special',
+  'exSpecial',
+  'chain',
+  'ult',
+  'quickAssist',
+  'defensiveAssist',
+  'evasiveAssist',
+  'assistFollowUp',
+] as const
+
+function isSpeicifcDmgTypeKey(key: string): key is SpecificDmgTypeKey {
+  return specificDmgTypeKeys.includes(key as SpecificDmgTypeKey)
+}
+export const targetQ = [
+  'hp',
+  'atk',
+  'def',
+  'pen',
+  'impact',
+  'enerRegen',
+  'anomProf',
+  'anomMas',
+] as const
+export const targetQt = ['initial', 'final'] as const
+
+export type TargetTag = {
+  sheet?: string
+  name?: string
+  damageType1?: SpecificDmgTypeKey
+  damageType2?: 'aftershock'
+  q?: (typeof targetQ)[number]
+  qt?: (typeof targetQt)[number]
+}
+
+// Bonus Stats
+export const bonusStatQtKeys = ['combat', 'base', 'initial'] as const
+export const bonusStatKeys = [
+  'hp',
+  'hp_',
+  'def',
+  'def_',
+  'atk',
+  'atk_',
+  'dmg_',
+  'enerRegen_',
+  'crit_',
+  'crit_dmg_',
+  'anomProf',
+  'impact_',
+  'anomMas_',
+  'anomMas',
+] as const
+export type BonusStatKey = (typeof bonusStatKeys)[number]
+
+export const bonusStatDmgTypeIncStats = [
+  'atk_',
+  'dmg_',
+  'crit_',
+  'crit_dmg_',
+] as const
+
+// Could add 'elemental' back if there is all elemental dmg bonus in the future
+export type BonusStatDamageType = Exclude<
+  DamageType,
+  'elemental' | 'aftershock'
+>
+export const bonusStatDamageTypes: BonusStatDamageType[] = [
+  'basic',
+  'dash',
+  'dodgeCounter',
+  'special',
+  'exSpecial',
+  'chain',
+  'ult',
+  'quickAssist',
+  'defensiveAssist',
+  'evasiveAssist',
+  'assistFollowUp',
+  'anomaly',
+  'disorder',
+] as const
+
+export type BonusStatTag = {
+  q: BonusStatKey
+  qt: (typeof bonusStatQtKeys)[number]
+  attribute?: AttributeKey
+  damageType1?: BonusStatDamageType
+  damageType2?: 'aftershock'
+}
 
 export type CharOpt = {
-  target: Tag
+  target?: TargetTag
+
   conditionals: Array<{
     sheet: Sheet
     src: Src
@@ -17,14 +140,17 @@ export type CharOpt = {
     condValue: number
   }>
   bonusStats: Array<{
-    tag: Tag
+    tag: BonusStatTag
     value: number
   }>
-  statConstraints: Array<{
-    tag: Tag
-    value: number
-    isMax: boolean
-  }>
+  critMode: critModeKey
+
+  // Enemy stuff
+  enemyLvl: number
+  enemyDef: number
+  enemyisStunned: boolean
+
+  // link to optConfig
   optConfigId?: string
 }
 export class CharacterOptManager extends DataManager<
@@ -36,12 +162,59 @@ export class CharacterOptManager extends DataManager<
   constructor(database: ZzzDatabase) {
     super(database, 'charOpts')
   }
-  override validate(obj: unknown, key: CharacterKey): CharOpt | undefined {
+  override validate(obj: unknown): CharOpt | undefined {
     if (!obj || typeof obj !== 'object') return undefined
-    let { target, conditionals, bonusStats, statConstraints, optConfigId } =
-      obj as CharOpt
-    if (!validateTag(target)) target = defOptTarget(key)
+    let {
+      target,
+      conditionals,
+      bonusStats,
+      critMode,
+
+      enemyLvl,
+      enemyDef,
+      enemyisStunned,
+
+      optConfigId,
+    } = obj as CharOpt
     if (!Array.isArray(conditionals)) conditionals = []
+    // Validate target for formula
+    if (target?.name) {
+      const formula = getFormula(target)
+      if (formula) {
+        let { damageType1, damageType2 } = target
+        if (formula.name !== 'standardDmgInst') {
+          damageType1 = undefined
+          damageType2 = undefined
+        }
+        if (damageType1 && !isSpeicifcDmgTypeKey(damageType1))
+          damageType1 = undefined
+        if (damageType2 && damageType2 !== 'aftershock') damageType2 = undefined
+        target = removeUndefinedFields({
+          sheet: formula.sheet,
+          name: formula.name,
+          damageType1,
+          damageType2,
+        }) as TargetTag
+      } else {
+        target = undefined
+      }
+    } else if (target) {
+      // target is a stat
+      const { q, qt } = target
+      if (
+        !q ||
+        !qt ||
+        !targetQ.includes(q as (typeof targetQ)[number]) ||
+        !targetQt.includes(qt as (typeof targetQt)[number])
+      )
+        target = undefined
+      else
+        target = {
+          q,
+          qt,
+        }
+    }
+
     const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
     conditionals = conditionals
       .map(({ sheet, condKey, src, dst, condValue }) => {
@@ -68,18 +241,46 @@ export class CharacterOptManager extends DataManager<
       })
       .filter(notEmpty)
     if (!Array.isArray(bonusStats)) bonusStats = []
-    bonusStats = bonusStats.filter(({ tag, value }) => {
-      if (!validateTag(tag)) return false
-      if (typeof value !== 'number') return false
-      return true
-    })
-    if (!Array.isArray(statConstraints)) statConstraints = []
-    statConstraints = statConstraints.filter(({ tag, value, isMax }) => {
-      if (!validateTag(tag)) return false
-      if (typeof value !== 'number') return false
-      if (typeof isMax !== 'boolean') return false
-      return true
-    })
+    bonusStats = bonusStats.map(
+      ({ tag: { q, qt, attribute, damageType1, damageType2 }, value }) => {
+        if (typeof value !== 'number') value = 0
+        q = validateValue(q, bonusStatKeys) ?? 'atk'
+        qt = validateValue(qt, bonusStatQtKeys) ?? 'combat'
+
+        if (q !== 'dmg_') attribute = undefined
+        if (attribute) attribute = validateValue(attribute, allAttributeKeys)
+
+        if (
+          !bonusStatDmgTypeIncStats.includes(
+            q as (typeof bonusStatDmgTypeIncStats)[number]
+          )
+        )
+          damageType1 = undefined
+        if (damageType1)
+          damageType1 = validateValue(damageType1, bonusStatDamageTypes)
+
+        // damageType2 is only 'aftershock', and in-game there is only buffs that increase its dmg_ and crit_dmg_
+        if (q !== 'dmg_' && q !== 'crit_dmg_') damageType2 = undefined
+        if (damageType2 && damageType2 !== 'aftershock') damageType2 = undefined
+
+        return {
+          tag: removeUndefinedFields({
+            q,
+            qt,
+            attribute,
+            damageType1,
+            damageType2,
+          }) as BonusStatTag,
+          value,
+        }
+      }
+    )
+
+    if (!critModeKeys.includes(critMode)) critMode = 'avg'
+
+    if (typeof enemyLvl !== 'number') enemyLvl = 80
+    if (typeof enemyDef !== 'number') enemyDef = 953
+    enemyisStunned = !!enemyisStunned
 
     if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = undefined
@@ -88,7 +289,12 @@ export class CharacterOptManager extends DataManager<
       target,
       conditionals,
       bonusStats,
-      statConstraints,
+      critMode,
+
+      enemyLvl,
+      enemyDef,
+      enemyisStunned,
+
       optConfigId,
     }
     return charOpt
@@ -104,7 +310,7 @@ export class CharacterOptManager extends DataManager<
   }
   getOrCreate(key: CharacterKey): CharOpt {
     if (!this.keys.includes(key)) {
-      this.set(key, initialCharOpt(key))
+      this.set(key, initialCharOpt())
     }
     return this.get(key) as CharOpt
   }
@@ -155,7 +361,7 @@ export class CharacterOptManager extends DataManager<
   }
   setBonusStat(
     charKey: CharacterKey,
-    tag: Tag,
+    tag: BonusStatTag,
     value: number | null, // use null to remove the stat
     index?: number // to edit an existing stat
   ) {
@@ -177,20 +383,58 @@ export class CharacterOptManager extends DataManager<
   }
 }
 
-function defOptTarget(key: CharacterKey): CharOpt['target'] {
+export function initialCharOpt(): CharOpt {
   return {
-    src: key,
+    conditionals: [],
+    bonusStats: [],
+    critMode: 'avg',
+
+    enemyLvl: 80,
+    enemyDef: 953,
+    enemyisStunned: false,
+  }
+}
+
+export function applyDamageTypeToTag(
+  tag: Tag,
+  damageType1: DamageType | undefined | null,
+  damageType2: DamageType | undefined | null
+): Tag {
+  return {
+    ...tag,
+    ...(damageType1 ? { damageType1 } : {}),
+    ...(damageType2 ? { damageType2 } : {}),
+  }
+}
+
+function getFormula({ sheet, name }: TargetTag) {
+  if (!sheet || !name) return
+  return (formulas as any)[sheet]?.[name] as
+    | {
+        sheet: Sheet
+        name: string
+        tag: Tag
+      }
+    | undefined
+}
+
+export function targetTag(target: Exclude<CharOpt['target'], undefined>): Tag {
+  const { damageType1, damageType2 } = target
+  const formula = getFormula(target)
+  if (formula)
+    return applyDamageTypeToTag(formula.tag, damageType1, damageType2)
+  // stat target
+  return {
     et: 'own',
-    qt: 'final',
-    q: 'atk',
+    q: target.q ?? 'atk',
+    qt: target.qt ?? 'final',
     sheet: 'agg',
   }
 }
-export function initialCharOpt(key: CharacterKey): CharOpt {
+
+export function newBonusStatTag(q: BonusStatKey): BonusStatTag {
   return {
-    target: defOptTarget(key),
-    conditionals: [],
-    bonusStats: [],
-    statConstraints: [],
+    q,
+    qt: 'combat',
   }
 }

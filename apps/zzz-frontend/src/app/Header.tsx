@@ -65,12 +65,6 @@ const optimize: ITab = {
   to: '/optimize',
   value: 'optimize',
 }
-const optimizePando: ITab = {
-  i18Key: 'tabs.optimize_pando',
-  icon: <CalculateIcon />,
-  to: '/optimize-pando',
-  value: 'optimize-pando',
-}
 
 const settings: ITab = {
   i18Key: 'tabs.settings',
@@ -109,14 +103,7 @@ export default function Header({ anchor }: { anchor: string }) {
   )
 }
 
-const maincontent = [
-  discs,
-  optimize,
-  ...(shouldShowDevComponents ? [optimizePando] : []),
-  ...(shouldShowDevComponents ? [characters] : []),
-  ...(shouldShowDevComponents ? [wengines] : []),
-  settings,
-] as const //Todo remove shouldShowDevComponents for characters once it's ready for prod
+const maincontent = [discs, wengines, characters, optimize, settings] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
@@ -218,14 +205,7 @@ function DesktopHeader({
   )
 }
 
-const mobileContent = [
-  discs,
-  optimize,
-  ...(shouldShowDevComponents ? [optimizePando] : []),
-  ...(shouldShowDevComponents ? [characters] : []),
-  ...(shouldShowDevComponents ? [wengines] : []),
-  settings,
-] as const //Todo remove shouldShowDevComponents for characters once it's ready for prod
+const mobileContent = [discs, wengines, characters, optimize, settings] as const
 
 function MobileHeader({
   anchor,

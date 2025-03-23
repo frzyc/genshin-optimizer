@@ -1,14 +1,13 @@
-import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
+  customHeal,
   own,
-  ownBuff,
+  percent,
   registerBuff,
+  target,
   teamBuff,
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
@@ -19,39 +18,33 @@ const dm = mappedStats.lightCone[key]
 const lcCount = own.common.count.sheet(key)
 const { superimpose } = own.lightCone
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { wearerHpReduced } = allBoolConditionals(key)
 
 const sheet = registerLightCone(
   key,
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
 
-  // TODO: Add formulas/buffs
+  customHeal(
+    'maxHeal',
+    cmpGE(
+      lcCount,
+      1,
+      prod(percent(subscript(superimpose, dm.healScaling)), target.final.hp)
+    ),
+    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'infer', '') }
+  ),
+
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.premod.common_dmg_.add(
+    'common_dmg_',
+    teamBuff.premod.common_dmg_.add(
       cmpGE(
         lcCount,
         1,
-        boolConditional.ifOn(subscript(superimpose, dm.cond_dmg_))
+        wearerHpReduced.ifOn(subscript(superimpose, dm.common_dmg_))
       )
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  ),
-  registerBuff(
-    'team_dmg_',
-    teamBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, listConditional.map({ val1: 1, val2: 2 }))
-    ),
-    cmpGE(lcCount, 1, 'infer', '')
-  ),
-  registerBuff(
-    'enemy_defRed_',
-    enemyDebuff.common.defRed_.add(cmpGE(lcCount, 1, numConditional)),
     cmpGE(lcCount, 1, 'infer', '')
   )
 )

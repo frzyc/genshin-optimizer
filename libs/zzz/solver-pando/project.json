@@ -1,9 +1,0 @@
-{
-  "name": "zzz-solver-pando",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/zzz/solver-pando/src",
-  "projectType": "library",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project zzz-solver-pando --web",
-  "targets": {}
-}

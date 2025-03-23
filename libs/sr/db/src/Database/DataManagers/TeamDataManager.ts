@@ -13,10 +13,10 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { Dst, Src } from '@genshin-optimizer/sr/formula'
 import {
-  getConditional,
-  isMember,
   type Sheet,
   type Tag,
+  getConditional,
+  isMember,
 } from '@genshin-optimizer/sr/formula'
 import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'

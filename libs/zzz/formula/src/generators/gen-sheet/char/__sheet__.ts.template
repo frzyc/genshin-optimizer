@@ -38,7 +38,9 @@ const sheet = register(
   // Buffs
   registerBuff(
     'e6_dmg_',
-    ownBuff.premod.common_dmg_.add(cmpGE(char.eidolon, 6, boolConditional.ifOn(1)))
+    ownBuff.premod.common_dmg_.add(
+      cmpGE(char.eidolon, 6, boolConditional.ifOn(1))
+    )
   ),
   registerBuff(
     'team_dmg_',

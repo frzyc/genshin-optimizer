@@ -16,6 +16,20 @@ export function validateArr<T>(
 }
 
 /**
+ * Validates a value by checking if it is a valid value
+ * @param val - the value to validate
+ * @param validKeys - the valid values
+ * @returns the valid value, or undefined
+ */
+export function validateValue<T>(
+  val: unknown,
+  validKeys: readonly T[]
+): T | undefined {
+  if (!validKeys.includes(val as T)) return undefined
+  return val as T
+}
+
+/**
  * This code validates the given object by using the given functions to validate the keys and values.
  * The function returns a new object that contains only the valid keys and values.
  * @param obj The object to validate

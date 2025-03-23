@@ -1,5 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import { allRegionKeys, type CharacterKey } from '@genshin-optimizer/gi/consts'
+import { type CharacterKey, allRegionKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,

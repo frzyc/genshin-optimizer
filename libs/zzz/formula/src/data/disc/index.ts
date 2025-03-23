@@ -8,9 +8,11 @@ import FangedMetal from './sheets/FangedMetal'
 import FreedomBlues from './sheets/FreedomBlues'
 import HormonePunk from './sheets/HormonePunk'
 import InfernoMetal from './sheets/InfernoMetal'
+import PhaethonsMelody from './sheets/PhaethonsMelody'
 import PolarMetal from './sheets/PolarMetal'
 import ProtoPunk from './sheets/ProtoPunk'
 import PufferElectro from './sheets/PufferElectro'
+import ShadowHarmony from './sheets/ShadowHarmony'
 import ShockstarDisco from './sheets/ShockstarDisco'
 import SoulRock from './sheets/SoulRock'
 import SwingJazz from './sheets/SwingJazz'
@@ -26,9 +28,11 @@ const data: TagMapNodeEntries[] = [
   FreedomBlues,
   HormonePunk,
   InfernoMetal,
+  PhaethonsMelody,
   PolarMetal,
   ProtoPunk,
   PufferElectro,
+  ShadowHarmony,
   ShockstarDisco,
   SoulRock,
   SwingJazz,

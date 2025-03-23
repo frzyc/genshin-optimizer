@@ -36,14 +36,7 @@ const sheet: UISheet<'2' | '4'> = {
             title: 'Basic Attack Daze', // TODO: L10n
             fieldRef: buff.set4_basic_daze_.tag,
           },
-          {
-            title: 'Dash Attack Daze', // TODO: L10n
-            fieldRef: buff.set4_dash_daze_.tag,
-          },
-          {
-            title: 'Dodge Counter Daze', // TODO: L10n
-            fieldRef: buff.set4_dodgeCounter_daze_.tag,
-          },
+          // TODO: add daze_
         ],
       },
     ],

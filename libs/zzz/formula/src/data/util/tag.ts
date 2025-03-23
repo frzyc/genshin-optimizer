@@ -1,12 +1,12 @@
 import { objFilterKeys } from '@genshin-optimizer/common/util'
 import {
+  type Desc as BaseDesc,
   createAllBoolConditionals,
   createAllListConditionals,
   createAllNumConditionals,
   createConditionalEntries,
   createConvert,
   tag,
-  type Desc as BaseDesc,
 } from '@genshin-optimizer/game-opt/engine'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
@@ -177,6 +177,7 @@ export const enemyTag = {
   common: {
     lvl: fixed,
     def: agg,
+    defRed_: agg,
     res_: agg,
     resRed_: agg,
     dmgInc_: agg,

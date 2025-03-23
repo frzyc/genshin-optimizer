@@ -5,9 +5,9 @@ import type {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
 import {
-  characterGenderedKeyToCharacterKey,
   type CharacterGenderedKey,
   type StatKey,
+  characterGenderedKeyToCharacterKey,
 } from '@genshin-optimizer/sr/consts'
 import { buffs, own } from '@genshin-optimizer/sr/formula'
 import { Translate } from '@genshin-optimizer/sr/i18n'
@@ -17,15 +17,15 @@ import {
 } from '@genshin-optimizer/sr/stats'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { trans } from '../util'
+import { EidolonSubtitle } from './EidolonSubtitle'
+import { SkillSubtitle } from './SkillSubtitle'
+import { bonusAbilityReqMap, bonusStatsReqMap } from './StatBoostBonusAbility'
 import type {
   TalentSheetElementBonusAbilityKey,
   TalentSheetElementEidolonKey,
   TalentSheetElementStatBoostKey,
 } from './consts'
 import { allTalentSheetElementStatBoostKey, getEidolonKey } from './consts'
-import { EidolonSubtitle } from './EidolonSubtitle'
-import { SkillSubtitle } from './SkillSubtitle'
-import { bonusAbilityReqMap, bonusStatsReqMap } from './StatBoostBonusAbility'
 
 export function talentSheet(
   ckey: CharacterGenderedKey,

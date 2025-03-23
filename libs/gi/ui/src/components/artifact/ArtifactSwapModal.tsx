@@ -13,8 +13,8 @@ import {
 import { filterFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import {
-  allArtifactSlotKeys,
   type ArtifactSlotKey,
+  allArtifactSlotKeys,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
@@ -80,7 +80,7 @@ export function ArtifactSwapModal({
 
   const [filterOption, filterOptionDispatch]: [
     ArtifactFilterOption,
-    (action: any) => void
+    (action: any) => void,
   ] = useReducer(filterOptionReducer, {
     ...initialArtifactFilterOption(),
     slotKeys: [slotKey],

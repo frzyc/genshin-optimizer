@@ -19,13 +19,13 @@ import {
 } from '../../util'
 import type { Read } from '../util'
 import {
+  type TagMapNodeEntries,
   conditionalEntries,
   convert,
   enemy,
   own,
   ownBuff,
   ownTag,
-  type TagMapNodeEntries,
 } from '../util'
 
 setDebugMode(true)
@@ -73,7 +73,7 @@ function testTeamData(
   otherCharData: TagMapNodeEntries = []
 ) {
   const data: TagMapNodeEntries = [
-    ...teamData(['Seele', 'SilverWolf']),
+    ...teamData(['Seele', 'SilverWolf', 'TopazAndNumby']),
     ...withMember(
       'Seele',
       ...charTagMapNodeEntries(
@@ -114,6 +114,27 @@ function testTeamData(
           statBoosts: {},
         },
         2
+      ),
+      ...otherCharData
+    ),
+    ...withMember(
+      'TopazAndNumby',
+      ...charTagMapNodeEntries(
+        {
+          level: 80,
+          ascension: 6,
+          key: 'TopazAndNumby',
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          servantSkill: 0,
+          servantTalent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        },
+        3
       ),
       ...otherCharData
     ),
@@ -166,6 +187,22 @@ describe('Relic sheets test', () => {
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
     expect(calc.compute(seele.final.def_).val).toBeCloseTo(0.3)
+  })
+
+  it('BoneCollectionsSereneDemesne', () => {
+    const data = testCharacterData('BoneCollectionsSereneDemesne', undefined, [
+      ownBuff.premod.hp.add(5000),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.hp_).val).toBeCloseTo(0.12)
+    // Base + 2 piece cond
+    expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.28)
   })
 
   it('BrokenKeel', () => {
@@ -328,6 +365,48 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.brEffect_).val).toBeCloseTo(0.4)
   })
 
+  it('GiantTreeOfRaptBrooding', () => {
+    const data = testCharacterData('GiantTreeOfRaptBrooding', undefined, [
+      ownBuff.premod.spd.add(65),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.06)
+    expect(calc.compute(seele.final.heal_).val).toBeCloseTo(0.2)
+  })
+
+  it('HeroOfTriumphantSong', () => {
+    const data = testCharacterData('HeroOfTriumphantSong')
+    data.push(
+      cond(
+        'HeroOfTriumphantSong',
+        conditionals.HeroOfTriumphantSong.memospriteOnField.name,
+        1
+      ),
+      cond(
+        'HeroOfTriumphantSong',
+        conditionals.HeroOfTriumphantSong.memospriteAttacks.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.atk_).val).toBeCloseTo(0.12)
+    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.06)
+    // Base + 4 piece cond
+    expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.3)
+  })
+
   it('GeniusOfBrilliantStars', () => {
     const data = testCharacterData('GeniusOfBrilliantStars')
     data.push(
@@ -404,7 +483,7 @@ describe('Relic sheets test', () => {
   })
 
   it('IzumoGenseiAndTakamaDivineRealm', () => {
-    const data = testCharacterData('IzumoGenseiAndTakamaDivineRealm')
+    const data = testTeamData('IzumoGenseiAndTakamaDivineRealm')
     const calc = new Calculator(
       keys,
       values,
@@ -444,6 +523,23 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.hp_).val).toBeCloseTo(0.12)
     // Base + 4 set bonus
     expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.16)
+  })
+
+  it('LushakaTheSunkenSeas', () => {
+    const data = testTeamData('LushakaTheSunkenSeas', undefined, [
+      // Register relics for all teammates
+      ...relicTagMapNodeEntries({}, { LushakaTheSunkenSeas: 4 }),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // Multiply by 2 due to all teammates having the same relic bonus
+    expect(calc.compute(seele.final.enerRegen_).val).toBeCloseTo(2 * 0.05)
+    expect(calc.compute(seele.final.atk_).val).toBeCloseTo(2 * 0.12)
   })
 
   it('MessengerTraversingHackerspace', () => {
@@ -561,6 +657,24 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 2 * 0.12)
   })
 
+  it('PoetOfMourningCollapse', () => {
+    const data = testCharacterData('PoetOfMourningCollapse', undefined, [
+      ownBuff.premod.spd.add(-11),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.dmg_.quantum).val).toBeCloseTo(0.1)
+    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(-0.08)
+    // Base + 4 piece cond
+    expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.32)
+    // TODO: Check memosprite buff
+  })
+
   it('PrisonerInDeepConfinement', () => {
     const data = testCharacterData('PrisonerInDeepConfinement')
     data.push(
@@ -596,6 +710,49 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.57 + 0.08)
     expect(calc.compute(seele.final.dmg_.basic[0]).val).toBeCloseTo(0.2)
     expect(calc.compute(seele.final.dmg_.skill[0]).val).toBeCloseTo(0.2)
+  })
+
+  it('SacerdosRelivedOrdeal', () => {
+    const data = testCharacterData('SacerdosRelivedOrdeal')
+    data.push(
+      cond(
+        'SacerdosRelivedOrdeal',
+        conditionals.SacerdosRelivedOrdeal.skillOrUltUsed.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.06)
+    // Base + 4 piece cond
+    expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 2 * 0.18)
+  })
+
+  it('ScholarLostInErudition', () => {
+    const data = testCharacterData('ScholarLostInErudition')
+    data.push(
+      cond(
+        'ScholarLostInErudition',
+        conditionals.ScholarLostInErudition.ultUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // Base + 2 piece passive
+    expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.08)
+    expect(calc.compute(seele.final.dmg_.skill[0]).val).toBeCloseTo(0.2 + 0.25)
+    expect(calc.compute(seele.final.dmg_.ult[0]).val).toBeCloseTo(0.2)
   })
 
   it('SigoniaTheUnclaimedDesolation', () => {
@@ -700,6 +857,28 @@ describe('Relic sheets test', () => {
     // Base + 4 set bonus
     expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.06)
     expect(calc.compute(seele.final.dmg_.ult[0]).val).toBeCloseTo(0.36)
+  })
+
+  it('TheWondrousBananAmusementPark', () => {
+    const data = testCharacterData('TheWondrousBananAmusementPark')
+    data.push(
+      cond(
+        'TheWondrousBananAmusementPark',
+        conditionals.TheWondrousBananAmusementPark.summonIsOnField.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // Base + relic bonuses
+    expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(
+      0.5 + 0.16 + 0.32
+    )
   })
 
   it('ThiefOfShootingMeteor', () => {

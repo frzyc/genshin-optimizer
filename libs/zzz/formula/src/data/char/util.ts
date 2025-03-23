@@ -3,6 +3,7 @@ import type { AttributeKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import type { CharacterDatum } from '@genshin-optimizer/zzz/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
+  type TagMapNodeEntries,
   customAnomalyDmg,
   customDmg,
   customHeal,
@@ -11,7 +12,6 @@ import {
   own,
   ownBuff,
   percent,
-  type TagMapNodeEntries,
 } from '../util'
 
 type AbilityScalingType = Exclude<SkillKey, 'core'>
@@ -178,7 +178,6 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       'standardDmgInst',
       {
         attribute: data_gen.attribute,
-        damageType1: 'elemental',
       },
       prod(percent(1.5), own.final.atk)
     ),
