@@ -6,7 +6,8 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "jsxImportSource": "@emotion/react",
-    "exactOptionalPropertyTypes": false
+    "exactOptionalPropertyTypes": false,
+    "noPropertyAccessFromIndexSignature": false
   },
   "files": [],
   "include": [],

@@ -37,9 +37,7 @@ export function trans(
     ),
   ]
 }
-/**
- * Only works for tag that maps to a general Stat to be displayed.
- */
+
 export function tagToTagField(tag: Tag): TagField {
   return {
     title: <TagDisplay tag={tag} />,
