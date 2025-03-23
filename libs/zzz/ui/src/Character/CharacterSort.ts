@@ -42,8 +42,7 @@ export type CharacterFilterConfigs = FilterConfigs<
   CharacterKey
 >
 export function characterFilterConfigs(
-  database: ZzzDatabase,
-  silly: boolean
+  database: ZzzDatabase
 ): CharacterFilterConfigs {
   return {
     attribute: (ck, filter) => filter.includes(getCharStat(ck).attribute),
@@ -51,8 +50,7 @@ export function characterFilterConfigs(
     rarity: (ck, filter) => filter.includes(getCharStat(ck).rarity),
     name: (ck, filter) =>
       filter === undefined ||
-      i18n.t(ck).toLowerCase().includes(filter.toLowerCase()) ||
-      (silly && i18n.t(ck).toLowerCase().includes(filter.toLowerCase())),
+      i18n.t(ck).toLowerCase().includes(filter.toLowerCase()),
     new: (ck, filter) =>
       filter === undefined ||
       filter === (database.chars.get(ck as CharacterKey) ? 'no' : 'yes'),

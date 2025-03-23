@@ -1,19 +1,36 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { catTotal } from '@genshin-optimizer/common/util'
+import {
+  useForceUpdate,
+  useMediaQueryUp,
+} from '@genshin-optimizer/common/react-util'
+import {
+  CardThemed,
+  ShowingAndSortOptionSelect,
+  useInfScroll,
+} from '@genshin-optimizer/common/ui'
+import {
+  catTotal,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeKeys,
   allCharacterKeys,
   allCharacterRarityKeys,
+  allSpecialityKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { getCharStat } from '@genshin-optimizer/zzz/stats'
+import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import {
   CharacterCard,
   CharacterEditor,
   CharacterRarityToggle,
   CharacterSingleSelectionModal,
   ElementToggle,
+  WengineToggle,
+  characterFilterConfigs,
+  characterSortConfigs,
+  characterSortMap,
 } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -23,10 +40,20 @@ import {
   Skeleton,
   TextField,
 } from '@mui/material'
-import { Suspense, useCallback, useMemo, useState } from 'react'
+import type { ChangeEvent } from 'react'
+import {
+  Suspense,
+  useCallback,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 import { useMatch, useNavigate } from 'react-router-dom'
-const columns = { xs: 1, sm: 1, md: 1, lg: 2, xl: 3 }
+const columns = { xs: 1, sm: 2, md: 2, lg: 3, xl: 4 }
+const numToShowMap = { xs: 1, sm: 2, md: 2, lg: 3, xl: 12 }
+const sortKeys = Object.keys(characterSortMap)
 
 export default function PageCharacter() {
   const { t } = useTranslation('page_characters')
@@ -37,10 +64,15 @@ export default function PageCharacter() {
   } = useMatch({ path: '/characters/:characterKey', end: false }) ?? {
     params: {},
   }
-  const { charKeys } = useMemo(() => {
-    const charKeys = database.chars.keys
-    return { charKeys }
-  }, [database])
+  const [displayCharacter, setDisplayCharacter] = useState(() =>
+    database.displayCharacter.get()
+  )
+  useEffect(
+    () => database.displayCharacter.follow((r, s) => setDisplayCharacter(s)),
+    [database, setDisplayCharacter]
+  )
+  const [searchTerm, setSearchTerm] = useState('')
+  const deferredSearchTerm = useDeferredValue(searchTerm)
 
   const characterKey = useMemo(() => {
     if (!characterKeyRaw) return null
@@ -52,6 +84,14 @@ export default function PageCharacter() {
   }, [characterKeyRaw, navigate])
 
   const [newCharacter, setnewCharacter] = useState(false)
+  const [dbDirty, forceUpdate] = useForceUpdate()
+
+  // Set follow, should run only once
+  useEffect(() => {
+    return database.chars.followAny(
+      (k, r) => (r === 'new' || r === 'remove') && forceUpdate()
+    )
+  }, [forceUpdate, database])
 
   const editCharacter = useCallback(
     (characterKey: CharacterKey) => {
@@ -62,6 +102,46 @@ export default function PageCharacter() {
       navigate(`/characters/${characterKey}`)
     },
     [database.chars, navigate]
+  )
+
+  const deferredState = useDeferredValue(displayCharacter)
+  const deferredDbDirty = useDeferredValue(dbDirty)
+  const { charKeys, totalCharNum } = useMemo(() => {
+    const chars = database.chars.keys
+    const totalCharNum = chars.length
+    const { attribute, wengineType, rarity, sortType, ascending } =
+      deferredState
+    const charKeys = database.chars.keys
+      .filter(
+        filterFunction(
+          { attribute, wengineType, rarity, name: deferredSearchTerm },
+          characterFilterConfigs(database)
+        )
+      )
+      .sort(
+        sortFunction(
+          characterSortMap[sortType] ?? [],
+          ascending,
+          characterSortConfigs(database),
+          ['new']
+        )
+      )
+    return deferredDbDirty && { charKeys, totalCharNum }
+  }, [database, deferredState, deferredSearchTerm, deferredDbDirty])
+
+  const { wengineType, attribute, rarity, sortType, ascending } =
+    displayCharacter
+
+  const wengineTotals = useMemo(
+    () =>
+      catTotal(allSpecialityKeys, (sk) =>
+        database.wengines.entries.forEach(([id, wengine]) => {
+          const specialty = getWengineStat(wengine.key).type
+          sk[specialty].total++
+          if (database.wengines.keys.includes(id)) sk[specialty].current++
+        })
+      ),
+    [database]
   )
 
   const attributeTotals = useMemo(
@@ -87,6 +167,35 @@ export default function PageCharacter() {
       ),
     [database]
   )
+  const brPt = useMediaQueryUp()
+  const { numShow, setTriggerElement } = useInfScroll(
+    numToShowMap[brPt],
+    charKeys.length
+  )
+  const charKeysToShow = useMemo(
+    () => charKeys.slice(0, numShow),
+    [charKeys, numShow]
+  )
+
+  const totalShowing =
+    charKeys.length !== totalCharNum
+      ? `${charKeys.length}/${totalCharNum}`
+      : `${totalCharNum}`
+
+  const showingTextProps = {
+    numShowing: charKeysToShow.length,
+    total: totalShowing,
+    t: t,
+    namespace: 'page_character',
+  }
+
+  const sortByButtonProps = {
+    sortKeys: [...sortKeys],
+    value: sortType,
+    onChange: (sortType) => database.displayCharacter.set({ sortType }),
+    ascending: ascending,
+    onChangeAsc: (ascending) => database.displayCharacter.set({ ascending }),
+  }
 
   return (
     <Box display="flex" flexDirection="column" gap={5}>
@@ -106,12 +215,24 @@ export default function PageCharacter() {
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Grid container spacing={1}>
-            <Grid item>Wengine Toggle</Grid>
+            <Grid item>
+              <WengineToggle
+                sx={{ height: '100%' }}
+                onChange={(wengineType) =>
+                  database.displayCharacter.set({ wengineType })
+                }
+                value={wengineType}
+                totals={wengineTotals}
+                size="small"
+              ></WengineToggle>
+            </Grid>
             <Grid item>
               <ElementToggle
                 sx={{ height: '100%' }}
-                onChange={() => {}}
-                value={['fire']}
+                onChange={(attribute) =>
+                  database.displayCharacter.set({ attribute })
+                }
+                value={attribute}
                 totals={attributeTotals}
                 size="small"
               />
@@ -119,8 +240,8 @@ export default function PageCharacter() {
             <Grid item>
               <CharacterRarityToggle
                 sx={{ height: '100%' }}
-                onChange={() => {}}
-                value={['S']}
+                onChange={(rarity) => database.displayCharacter.set({ rarity })}
+                value={rarity}
                 totals={rarityTotals}
                 size="small"
               />
@@ -129,8 +250,10 @@ export default function PageCharacter() {
             <Grid item>
               <TextField
                 autoFocus
-                value={'term'}
-                onChange={() => {}}
+                value={searchTerm}
+                onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+                  setSearchTerm(e.target.value)
+                }
                 label={t('characterName')}
                 size="small"
                 sx={{ height: '100%' }}
@@ -140,6 +263,17 @@ export default function PageCharacter() {
               />
             </Grid>
           </Grid>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            <ShowingAndSortOptionSelect
+              showingTextProps={showingTextProps}
+              sortByButtonProps={sortByButtonProps}
+            />
+          </Box>
         </CardContent>
       </CardThemed>
       <Button fullWidth onClick={() => setnewCharacter(true)} color="info">
@@ -154,7 +288,7 @@ export default function PageCharacter() {
         }
       >
         <Grid container spacing={3} columns={columns}>
-          {charKeys.map((charKey) => (
+          {charKeysToShow.map((charKey) => (
             <Grid item key={charKey} xs={1}>
               <CharacterCard
                 characterKey={charKey}
@@ -164,6 +298,18 @@ export default function PageCharacter() {
           ))}
         </Grid>
       </Suspense>
+      {charKeys.length !== charKeysToShow.length && (
+        <Skeleton
+          ref={(node) => {
+            if (!node) return
+            setTriggerElement(node)
+          }}
+          sx={{ borderRadius: 1 }}
+          variant="rectangular"
+          width="100%"
+          height={100}
+        />
+      )}
     </Box>
   )
 }
