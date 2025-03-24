@@ -66,8 +66,7 @@ export function optimize(
     if (tag['et'] !== 'own') return undefined // Not applied (only) to self
 
     if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
-      if (tag.q === 'dmg_')
-        return { q: `${tag.elementalType}_dmg_` } // per-element dmg bonus
+      if (tag.q === 'dmg_') return { q: `${tag.elementalType}_dmg_` }
       else return { q: tag['q']! } // Relic stat bonus
     if (tag['q'] === 'count' && relicSetKeys.has(tag['sheet'] as any))
       return { q: tag['sheet']! } // Relic set counter
