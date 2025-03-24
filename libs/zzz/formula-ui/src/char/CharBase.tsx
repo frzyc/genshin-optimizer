@@ -21,7 +21,6 @@ export const charBaseUiSheet: TagField[] = (
     'enerRegen',
     'anomProf',
     'anomMas',
-    'dmg_',
   ] as const
 ).map((statKey) => {
   if (

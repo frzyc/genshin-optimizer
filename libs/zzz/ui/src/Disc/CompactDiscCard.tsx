@@ -22,8 +22,9 @@ import type { ISubstat } from '@genshin-optimizer/zzz/zood'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { Theme } from '@mui/system'
 import type { ReactNode } from 'react'
-import { Suspense, useCallback } from 'react'
+import { Suspense, useCallback, useContext } from 'react'
 import { ZCard } from '../Components'
+import { StatHighlightContext, getHighlightRGBA, isHighlight } from '../context'
 import { COMPACT_CARD_HEIGHT_PX, EmptyCompactCard } from '../util'
 import { useSpinner } from './util'
 
@@ -32,7 +33,7 @@ export function CompactDiscCard({
   slotKey,
   onClick,
 }: {
-  disc: ICachedDisc
+  disc?: ICachedDisc
   slotKey: DiscSlotKey
   onClick?: () => void
 }) {
@@ -43,6 +44,11 @@ export function CompactDiscCard({
     handleMouseUp,
     isDragging,
   } = useSpinner()
+
+  const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
+  const isHL = disc?.mainStatKey
+    ? isHighlight(statHighlight, disc?.mainStatKey)
+    : false
 
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -160,7 +166,7 @@ export function CompactDiscCard({
                             }`,
                           }),
                         }}
-                      ></SlotIcon>
+                      />
                     </Box>
                     <Box sx={{ height: 0, position: 'absolute', bottom: 20 }}>
                       <Typography
@@ -185,6 +191,8 @@ export function CompactDiscCard({
                   }}
                 >
                   <Typography
+                    onMouseEnter={() => setStatHighlight(disc.mainStatKey)}
+                    onMouseLeave={() => setStatHighlight('')}
                     variant="subtitle1"
                     noWrap
                     sx={{
@@ -194,6 +202,19 @@ export function CompactDiscCard({
                       fontWeight: 'bold',
                       justifyContent: 'center',
                       gap: 1,
+                      position: 'relative',
+                      overflow: 'visible',
+                      '::after': {
+                        content: '""',
+                        position: 'absolute',
+                        py: 0.5,
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: 0.5,
+                        backgroundColor: getHighlightRGBA(isHL),
+                        transition: 'background-color 0.3s ease-in-out',
+                        pointerEvents: 'none',
+                      },
                     }}
                   >
                     <StatIcon statKey={disc.mainStatKey}></StatIcon>
@@ -218,6 +239,7 @@ export function CompactDiscCard({
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 pl: '10px',
+                flexGrow: 1,
                 py: 0.5,
               }}
             >
@@ -249,6 +271,8 @@ function SubstatDisplay({
   rarity: DiscRarityKey
 }) {
   const { key, upgrades } = substat
+  const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
+  const isHL = isHighlight(statHighlight, key)
   if (!upgrades || !key) return null
   const displayValue = toPercent(
     getDiscSubStatBaseVal(key, rarity) * upgrades,
@@ -256,12 +280,25 @@ function SubstatDisplay({
   ).toFixed(statKeyToFixed(key))
   return (
     <Typography
+      onMouseEnter={() => setStatHighlight(key)}
+      onMouseLeave={() => setStatHighlight('')}
       variant="subtitle1"
       sx={{
         display: 'flex',
         alignItems: 'center',
         fontWeight: 'bold',
         gap: 1,
+        position: 'relative',
+        '::after': {
+          content: '""',
+          position: 'absolute',
+          left: '-5%',
+          width: '105%',
+          height: '130%',
+          borderRadius: 0.5,
+          backgroundColor: getHighlightRGBA(isHL),
+          transition: 'background-color 0.3s ease-in-out',
+        },
       }}
     >
       <StatIcon statKey={key} />
