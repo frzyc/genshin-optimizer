@@ -1,3 +1,4 @@
+import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   ColorText,
@@ -32,7 +33,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AfterShockToggleButton } from './AfterShockToggleButton'
 import { DmgTypeDropdown } from './DmgTypeDropdown'
@@ -42,7 +43,10 @@ export function BonusStatsSection() {
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
   const { bonusStats } = useCharOpt(characterKey)!
-  const [charMetaDesc, setCharMetaDesc] = useState<string | undefined>('')
+  const charMetaDesc = useDataManagerBase(
+    database.charMeta,
+    characterKey
+  )?.description
   const setStat = useCallback(
     (tag: BonusStatTag, value: number | null, index?: number) =>
       database.charOpts.setBonusStat(characterKey, tag, value, index),
@@ -53,14 +57,10 @@ export function BonusStatsSection() {
   const setDescription = useCallback(
     (description: string | undefined) => {
       database.charMeta.set(characterKey, { description })
-      setCharMetaDesc(description)
     },
     [database.charMeta, characterKey]
   )
 
-  useEffect(() => {
-    setCharMetaDesc(database.charMeta.get(characterKey)?.description)
-  }, [characterKey, database.charMeta])
   return (
     <Stack spacing={1}>
       {bonusStats.map(({ tag, value }, i) => (
