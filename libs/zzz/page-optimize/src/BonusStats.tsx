@@ -1,3 +1,4 @@
+import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   ColorText,
@@ -42,8 +43,10 @@ export function BonusStatsSection() {
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
   const { bonusStats } = useCharOpt(characterKey)!
-  const charMetaDesc =
-    characterKey && database.charMeta.get(characterKey).description
+  const charMetaDesc = useDataManagerBase(
+    database.charMeta,
+    characterKey
+  )?.description
   const setStat = useCallback(
     (tag: BonusStatTag, value: number | null, index?: number) =>
       database.charOpts.setBonusStat(characterKey, tag, value, index),
@@ -53,11 +56,11 @@ export function BonusStatsSection() {
     database.charOpts.setBonusStat(characterKey, newBonusStatTag(q), 0)
   const setDescription = useCallback(
     (description: string | undefined) => {
-      if (!characterKey || !description) return
-      database.charMeta.set(characterKey, { description: description })
+      database.charMeta.set(characterKey, { description })
     },
     [database.charMeta, characterKey]
   )
+
   return (
     <Stack spacing={1}>
       {bonusStats.map(({ tag, value }, i) => (
