@@ -14,7 +14,7 @@ export function TextFieldLazy<T extends string | undefined | null>({
   value: T
   onChange: (value: T) => void
 } & Omit<TextFieldProps, 'value' | 'onChange' | 'onBlur' | 'onKeyDown'>) {
-  const [value, setValue] = useState(valueProp)
+  const [value, setValue] = useState(valueProp ?? ('' as T))
 
   useEffect(() => {
     setValue(valueProp)

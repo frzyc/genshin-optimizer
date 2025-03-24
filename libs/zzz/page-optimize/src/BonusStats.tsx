@@ -32,7 +32,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AfterShockToggleButton } from './AfterShockToggleButton'
 import { DmgTypeDropdown } from './DmgTypeDropdown'
@@ -42,8 +42,7 @@ export function BonusStatsSection() {
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
   const { bonusStats } = useCharOpt(characterKey)!
-  const charMetaDesc =
-    characterKey && database.charMeta.get(characterKey).description
+  const [charMetaDesc, setCharMetaDesc] = useState<string | undefined>('')
   const setStat = useCallback(
     (tag: BonusStatTag, value: number | null, index?: number) =>
       database.charOpts.setBonusStat(characterKey, tag, value, index),
@@ -53,11 +52,15 @@ export function BonusStatsSection() {
     database.charOpts.setBonusStat(characterKey, newBonusStatTag(q), 0)
   const setDescription = useCallback(
     (description: string | undefined) => {
-      if (!characterKey || !description) return
-      database.charMeta.set(characterKey, { description: description })
+      database.charMeta.set(characterKey, { description })
+      setCharMetaDesc(description)
     },
     [database.charMeta, characterKey]
   )
+
+  useEffect(() => {
+    setCharMetaDesc(database.charMeta.get(characterKey)?.description)
+  }, [characterKey, database.charMeta])
   return (
     <Stack spacing={1}>
       {bonusStats.map(({ tag, value }, i) => (
