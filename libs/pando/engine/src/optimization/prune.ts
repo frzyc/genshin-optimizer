@@ -307,7 +307,7 @@ export function reaffine<ID>(state: State<OP, ID>) {
       case 'prod': {
         const idx = n.x.findIndex((n) => n.op !== 'const')
         if (n.x.find((n, i) => n.op !== 'const' && i !== idx)) return // multiple non-const terms
-        weight = { ...x[idx] }
+        weight = idx !== -1 ? { ...x[idx] } : { [offset]: 1 }
         const factor = x.reduce((f, w, i) => (i === idx ? f : f * w[offset]), 1)
         if (factor != 1) {
           Object.keys(weight).forEach((k) => (weight[k] *= factor))
