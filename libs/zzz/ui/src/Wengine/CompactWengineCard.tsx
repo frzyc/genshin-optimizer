@@ -16,8 +16,9 @@ import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
-import { Suspense, useCallback } from 'react'
+import { Suspense, useCallback, useContext } from 'react'
 import { ZCard } from '../Components'
+import { StatHighlightContext, getHighlightRGBA, isHighlight } from '../context'
 import { COMPACT_CARD_HEIGHT_PX, EmptyCompactCard } from '../util'
 
 export function CompactWengineCard({
@@ -27,6 +28,7 @@ export function CompactWengineCard({
   wengineId: string | undefined
   onClick?: () => void
 }) {
+  const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
       <CardActionArea sx={{ borderRadius: 0 }} onClick={() => onClick?.()}>
@@ -108,11 +110,27 @@ export function CompactWengineCard({
                 }}
               >
                 <Typography
+                  onMouseEnter={() => setStatHighlight('atk')}
+                  onMouseLeave={() => setStatHighlight('')}
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
                     fontWeight: 'bold',
                     gap: 1,
+                    position: 'relative',
+                    overflow: 'visible',
+                    '::after': {
+                      content: '""',
+                      position: 'absolute',
+                      left: '-5%',
+                      width: '110%',
+                      height: '150%',
+                      borderRadius: 0.5,
+                      backgroundColor: getHighlightRGBA(
+                        isHighlight(statHighlight, 'atk')
+                      ),
+                      transition: 'background-color 0.3s ease-in-out',
+                    },
                   }}
                 >
                   <StatIcon statKey={'atk'} />
@@ -124,6 +142,19 @@ export function CompactWengineCard({
                     alignItems: 'center',
                     fontWeight: 'bold',
                     gap: 1,
+                    position: 'relative',
+                    '::after': {
+                      content: '""',
+                      position: 'absolute',
+                      left: '-5%',
+                      width: '110%',
+                      height: '150%',
+                      borderRadius: 0.5,
+                      backgroundColor: getHighlightRGBA(
+                        isHighlight(statHighlight, substatKey)
+                      ),
+                      transition: 'background-color 0.3s ease-in-out',
+                    },
                   }}
                 >
                   <StatIcon statKey={substatKey} />

@@ -35,7 +35,7 @@ export function ElementToggle({
             minWidth: sm ? 0 : '6em',
             display: 'flex',
           }}
-          selectedColor={atr}
+          selectedColor={'primary'}
           onClick={() => onChange(elementHandler(value, atr))}
         >
           <ElementIcon

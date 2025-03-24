@@ -20,5 +20,6 @@
     "swapWengine": "Swap Wengine"
   },
   "mindscapeTitle": "Mindscape",
-  "mindscape": "M{{level}}"
+  "mindscape": "M{{level}}",
+  "characterName": "Character Name"
 }

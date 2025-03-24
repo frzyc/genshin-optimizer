@@ -1,6 +1,5 @@
 import { objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { type DiscIds } from '@genshin-optimizer/zzz/db'
 import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { Grid } from '@mui/material'
@@ -42,7 +41,7 @@ export function EquipGrid({
             Object.entries(discs).map(([slotKey, disc]) => (
               <Grid item xs={1} key={disc?.id || slotKey}>
                 <CompactDiscCard
-                  disc={disc as ICachedDisc}
+                  disc={disc}
                   slotKey={slotKey}
                   onClick={onClick}
                 />

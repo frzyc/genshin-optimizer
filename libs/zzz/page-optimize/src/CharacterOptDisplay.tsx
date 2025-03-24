@@ -14,7 +14,11 @@ import {
   DiscSheetDisplay,
   WengineSheetDisplay,
 } from '@genshin-optimizer/zzz/formula-ui'
-import { CharacterCard, CharacterEditor } from '@genshin-optimizer/zzz/ui'
+import {
+  CharacterCard,
+  CharacterEditor,
+  StatHighlightContext,
+} from '@genshin-optimizer/zzz/ui'
 import {
   Box,
   CardActionArea,
@@ -46,6 +50,11 @@ const BOT_PX = 0
 const SECTION_SPACING_PX = 33
 const SectionNumContext = createContext(0)
 export function CharacterOptDisplay() {
+  const [statHighlight, setStatHighlight] = useState('')
+  const statHLContextObj = useMemo(
+    () => ({ statHighlight, setStatHighlight }),
+    [statHighlight, setStatHighlight]
+  )
   const sections: Array<[key: string, content: ReactNode]> = useMemo(() => {
     return [
       ['char', <CharacterSection key="char" />],
@@ -55,15 +64,17 @@ export function CharacterOptDisplay() {
   }, [])
 
   return (
-    <SectionNumContext.Provider value={sections.length}>
-      <Stack gap={1}>
-        {sections.map(([key, content], i) => (
-          <Section key={key} title={key} index={i} zIndex={100}>
-            {content}
-          </Section>
-        ))}
-      </Stack>
-    </SectionNumContext.Provider>
+    <StatHighlightContext.Provider value={statHLContextObj}>
+      <SectionNumContext.Provider value={sections.length}>
+        <Stack gap={1}>
+          {sections.map(([key, content], i) => (
+            <Section key={key} title={key} index={i} zIndex={100}>
+              {content}
+            </Section>
+          ))}
+        </Stack>
+      </SectionNumContext.Provider>
+    </StatHighlightContext.Provider>
   )
 }
 function Section({
