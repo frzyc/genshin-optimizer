@@ -1,9 +1,16 @@
 import type { SolidToggleButtonGroupProps } from '@genshin-optimizer/common/ui'
-import { SolidToggleButtonGroup } from '@genshin-optimizer/common/ui'
+import { ImgIcon, SolidColoredToggleButton } from '@genshin-optimizer/common/ui'
 import { handleMultiSelect } from '@genshin-optimizer/common/util'
+import { rarityDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { CharacterRarityKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterRarityKeys } from '@genshin-optimizer/zzz/consts'
-import { Box, Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
+import {
+  Box,
+  Chip,
+  ToggleButtonGroup,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material'
 import { type ReactNode, useCallback, useMemo } from 'react'
 type CharacterRarityToggleProps = Omit<
   SolidToggleButtonGroupProps,
@@ -31,9 +38,9 @@ export function CharacterRarityToggle({
     [onChange, rarityHandler, value]
   )
   return (
-    <SolidToggleButtonGroup exclusive value={value} {...props}>
+    <ToggleButtonGroup exclusive value={value} {...props}>
       {allCharacterRarityKeys.map((rKey) => (
-        <ToggleButton
+        <SolidColoredToggleButton
           key={rKey}
           value={rKey}
           sx={{
@@ -42,14 +49,15 @@ export function CharacterRarityToggle({
             display: 'flex',
             gap: xs ? 0 : 1,
           }}
+          selectedColor={'primary'}
           onClick={handleClick(rKey)}
         >
-          <Box display="flex">
-            <strong>{rKey}</strong>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <ImgIcon src={rarityDefIcon(rKey)} size={1.5} sideMargin />
             {!xs && <Chip label={totals[rKey]} size="small" />}
           </Box>
-        </ToggleButton>
+        </SolidColoredToggleButton>
       ))}
-    </SolidToggleButtonGroup>
+    </ToggleButtonGroup>
   )
 }
