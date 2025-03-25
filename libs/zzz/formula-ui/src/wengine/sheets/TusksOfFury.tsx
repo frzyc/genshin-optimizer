@@ -36,6 +36,7 @@ const sheet: UISheetElement = {
         metadata: cond.interrupt_perfdodge,
         fields: [
           tagToTagField(buff.cond_dmg_.tag),
+          tagToTagField(buff.daze_.tag),
           {
             title: 'Duration', // TODO: L10n,
             fieldValue: dm.duration,

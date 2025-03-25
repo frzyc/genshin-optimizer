@@ -53,6 +53,20 @@ const sheet: UISheetElement = {
         ],
       },
     },
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('cond_anomBuildup_'),
+        metadata: cond.anomBuildup_,
+        fields: [
+          tagToTagField(buff.anomBuildup_.tag),
+          {
+            title: 'Duration', // TODO: L10n,
+            fieldValue: dm.duration,
+          },
+        ],
+      },
+    },
   ],
 }
 

@@ -11,7 +11,7 @@ const dm = {
   cooldown: data_gen[o++][1],
   atk_: data_gen[o++],
   anomProf: data_gen[o++],
-  anomBuildupRate: data_gen[o++],
+  anomBuildup_: data_gen[o++],
 } as const
 
 export default dm

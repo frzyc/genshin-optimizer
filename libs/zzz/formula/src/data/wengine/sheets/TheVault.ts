@@ -1,7 +1,7 @@
 import { subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { allBoolConditionals, own, ownBuff, registerBuff } from '../../util'
+import { allBoolConditionals, own, registerBuff, teamBuff } from '../../util'
 import {
   cmpSpecialtyAndEquipped,
   entriesForWengine,
@@ -24,7 +24,7 @@ const sheet = registerWengine(
   registerBuff(
     // TODO: teambuff
     'cond_dmg_',
-    ownBuff.combat.common_dmg_.add(
+    teamBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(key, ether_hit.ifOn(subscript(phase, dm.dmg_)))
     ),
     showSpecialtyAndEquipped(key)

@@ -13,7 +13,7 @@ const dm = {
   stacks: data_gen[o++][1],
   cooldown: data_gen[o++][1],
   stackThreshold: data_gen[o++][1],
-  anomBuildupRate: data_gen[o++][1],
+  anomBuildup_: data_gen[o++],
 } as const
 
 export default dm

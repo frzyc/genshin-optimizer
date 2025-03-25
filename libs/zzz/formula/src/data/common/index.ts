@@ -8,12 +8,16 @@ import {
   percent,
   reader,
 } from '../util'
+import anomalyBuildup from './anomalyBuildup'
+import daze from './daze'
 import dmg from './dmg'
 import prep from './prep'
 
 const data: TagMapNodeEntries = [
   ...dmg,
   ...prep,
+  ...anomalyBuildup,
+  ...daze,
 
   reader.withTag({ sheet: 'iso', et: 'own' }).reread(reader.sheet('custom')),
   reader.withTag({ sheet: 'agg', et: 'own' }).reread(reader.sheet('custom')),

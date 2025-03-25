@@ -21,7 +21,28 @@ const sheet = registerWengine(
   entriesForWengine(key),
 
   // Passive buffs
-  // TODO: add anomaly buildup passives
+  registerBuff(
+    'passive_exSpecial_anomBuildup_',
+    ownBuff.combat.anomBuildup_.addWithDmgType(
+      'exSpecial',
+      cmpSpecialtyAndEquipped(
+        key,
+        subscript(phase, dm.passive_exSpecial_assist_anomBuildup_)
+      )
+    ),
+    showSpecialtyAndEquipped(key)
+  ),
+  registerBuff(
+    'passive_assist_anomBuildup_',
+    ownBuff.combat.anomBuildup_.addWithDmgType(
+      'assistFollowUp',
+      cmpSpecialtyAndEquipped(
+        key,
+        subscript(phase, dm.passive_exSpecial_assist_anomBuildup_)
+      )
+    ),
+    showSpecialtyAndEquipped(key)
+  ),
 
   // Conditional buffs
   registerBuff(

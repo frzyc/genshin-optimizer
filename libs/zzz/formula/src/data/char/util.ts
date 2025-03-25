@@ -4,7 +4,9 @@ import type { CharacterDatum } from '@genshin-optimizer/zzz/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
   type TagMapNodeEntries,
+  customAnomalyBuildup,
   customAnomalyDmg,
+  customDaze,
   customDmg,
   customHeal,
   customShield,
@@ -190,6 +192,8 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       },
       prod(percent(anomalyMultipliers[data_gen.attribute]), own.final.atk)
     ),
+    ...customAnomalyBuildup('anomalyBuildupInst', percent(1)),
+    ...customDaze('dazeInst', percent(1)),
     // Formula listings for stats
     // TODO: Reorder this
     ownBuff.listing.formulas.add(listingItem(own.final.hp)),

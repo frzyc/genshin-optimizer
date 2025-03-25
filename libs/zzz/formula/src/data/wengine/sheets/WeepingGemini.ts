@@ -13,8 +13,7 @@ const key: WengineKey = 'WeepingGemini'
 const dm = mappedStats.wengine[key]
 const { phase } = own.wengine
 
-// TODO: Add conditionals
-const { anomaly_stack } = allNumConditionals(key, true, 0, 4)
+const { anomaly_stack } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerWengine(
   key,
@@ -23,7 +22,7 @@ const sheet = registerWengine(
 
   // Conditional buffs
   registerBuff(
-    'anomaly_stack',
+    'anomProf',
     own.combat.anomProf.add(
       cmpSpecialtyAndEquipped(
         key,

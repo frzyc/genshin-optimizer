@@ -8,7 +8,7 @@ import {
   sumfrac,
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, enemyDebuff, own, ownBuff, percent } from '../util'
+import { enemy, own, ownBuff, percent } from '../util'
 
 const defLevelFactor = [
   -1, 50, 54, 58, 62, 66, 71, 76, 82, 88, 94, 100, 107, 114, 121, 129, 137, 145,
@@ -43,7 +43,7 @@ const data: TagMapNodeEntries = [
         sum(
           prod(
             enemy.common.def,
-            sum(percent(1), prod(-1, enemyDebuff.common.defRed_)),
+            sum(percent(1), prod(-1, enemy.common.defRed_)),
             sum(percent(1), prod(-1, own.final.pen_))
           ),
           prod(-1, own.final.pen)

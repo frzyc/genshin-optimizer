@@ -130,6 +130,9 @@ export const conditionals = {
     },
     offField: { sheet: 'FlamemakerShaker', name: 'offField', type: 'bool' },
   },
+  FreedomBlues: {
+    exSpecialHit: { sheet: 'FreedomBlues', name: 'exSpecialHit', type: 'bool' },
+  },
   FusionCompiler: {
     specialUsed: {
       sheet: 'FusionCompiler',
@@ -289,6 +292,18 @@ export const conditionals = {
       type: 'bool',
     },
   },
+  PreciousFossilizedCore: {
+    enemyHpGE50: {
+      sheet: 'PreciousFossilizedCore',
+      name: 'enemyHpGE50',
+      type: 'bool',
+    },
+    enemyHpGE75: {
+      sheet: 'PreciousFossilizedCore',
+      name: 'enemyHpGE75',
+      type: 'bool',
+    },
+  },
   ProtoPunk: {
     def_assist_or_evasive_assist: {
       sheet: 'ProtoPunk',
@@ -338,6 +353,7 @@ export const conditionals = {
     charge: { sheet: 'RiotSuppressorMarkVI', name: 'charge', type: 'bool' },
   },
   RoaringRide: {
+    anomBuildup_: { sheet: 'RoaringRide', name: 'anomBuildup_', type: 'bool' },
     anomProf: { sheet: 'RoaringRide', name: 'anomProf', type: 'bool' },
     atk_: { sheet: 'RoaringRide', name: 'atk_', type: 'bool' },
   },
@@ -370,6 +386,19 @@ export const conditionals = {
       min: 0,
       max: 3,
     },
+  },
+  SixShooter: {
+    charge: {
+      sheet: 'SixShooter',
+      name: 'charge',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 6,
+    },
+  },
+  SoulRock: {
+    hitLostHp: { sheet: 'SoulRock', name: 'hitLostHp', type: 'bool' },
   },
   SpectralGaze: {
     hit_aftershock_electric: {
@@ -443,6 +472,16 @@ export const conditionals = {
       max: 8,
     },
   },
+  TheRestrained: {
+    dmg_daze_: {
+      sheet: 'TheRestrained',
+      name: 'dmg_daze_',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+  },
   TheVault: {
     ether_hit: { sheet: 'TheVault', name: 'ether_hit', type: 'bool' },
   },
@@ -514,6 +553,17 @@ export const conditionals = {
 } as const
 export const formulas = {
   Anby: {
+    anomalyBuildupInst: {
+      sheet: 'Anby',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Anby',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Anby',
       name: 'anomalyDmgInst',
@@ -525,6 +575,17 @@ export const formulas = {
         attribute: 'electric',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Anby',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Anby',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -541,6 +602,17 @@ export const formulas = {
     },
   },
   Anton: {
+    anomalyBuildupInst: {
+      sheet: 'Anton',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Anton',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Anton',
       name: 'anomalyDmgInst',
@@ -552,6 +624,17 @@ export const formulas = {
         attribute: 'electric',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Anton',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Anton',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -568,6 +651,17 @@ export const formulas = {
     },
   },
   Astra: {
+    anomalyBuildupInst: {
+      sheet: 'Astra',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Astra',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Astra',
       name: 'anomalyDmgInst',
@@ -579,6 +673,17 @@ export const formulas = {
         attribute: 'ether',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Astra',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Astra',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -595,6 +700,17 @@ export const formulas = {
     },
   },
   Ben: {
+    anomalyBuildupInst: {
+      sheet: 'Ben',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Ben',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Ben',
       name: 'anomalyDmgInst',
@@ -606,6 +722,17 @@ export const formulas = {
         attribute: 'fire',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Ben',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Ben',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -636,6 +763,17 @@ export const formulas = {
     },
   },
   Billy: {
+    anomalyBuildupInst: {
+      sheet: 'Billy',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Billy',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Billy',
       name: 'anomalyDmgInst',
@@ -647,6 +785,17 @@ export const formulas = {
         attribute: 'physical',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Billy',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Billy',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -663,6 +812,17 @@ export const formulas = {
     },
   },
   Burnice: {
+    anomalyBuildupInst: {
+      sheet: 'Burnice',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Burnice',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Burnice',
       name: 'anomalyDmgInst',
@@ -674,6 +834,17 @@ export const formulas = {
         attribute: 'fire',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Burnice',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Burnice',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -690,6 +861,17 @@ export const formulas = {
     },
   },
   Caesar: {
+    anomalyBuildupInst: {
+      sheet: 'Caesar',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Caesar',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Caesar',
       name: 'anomalyDmgInst',
@@ -701,6 +883,17 @@ export const formulas = {
         attribute: 'physical',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Caesar',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Caesar',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -731,6 +924,17 @@ export const formulas = {
     },
   },
   Corin: {
+    anomalyBuildupInst: {
+      sheet: 'Corin',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Corin',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Corin',
       name: 'anomalyDmgInst',
@@ -742,6 +946,17 @@ export const formulas = {
         attribute: 'physical',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Corin',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Corin',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -758,6 +973,17 @@ export const formulas = {
     },
   },
   Ellen: {
+    anomalyBuildupInst: {
+      sheet: 'Ellen',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Ellen',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Ellen',
       name: 'anomalyDmgInst',
@@ -769,6 +995,17 @@ export const formulas = {
         attribute: 'ice',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Ellen',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Ellen',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -785,6 +1022,17 @@ export const formulas = {
     },
   },
   Evelyn: {
+    anomalyBuildupInst: {
+      sheet: 'Evelyn',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Evelyn',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Evelyn',
       name: 'anomalyDmgInst',
@@ -796,6 +1044,17 @@ export const formulas = {
         attribute: 'fire',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Evelyn',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Evelyn',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -812,6 +1071,17 @@ export const formulas = {
     },
   },
   Grace: {
+    anomalyBuildupInst: {
+      sheet: 'Grace',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Grace',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Grace',
       name: 'anomalyDmgInst',
@@ -823,6 +1093,17 @@ export const formulas = {
         attribute: 'electric',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Grace',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Grace',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -839,6 +1120,17 @@ export const formulas = {
     },
   },
   Harumasa: {
+    anomalyBuildupInst: {
+      sheet: 'Harumasa',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Harumasa',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Harumasa',
       name: 'anomalyDmgInst',
@@ -850,6 +1142,17 @@ export const formulas = {
         attribute: 'electric',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Harumasa',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Harumasa',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -866,6 +1169,17 @@ export const formulas = {
     },
   },
   Jane: {
+    anomalyBuildupInst: {
+      sheet: 'Jane',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Jane',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Jane',
       name: 'anomalyDmgInst',
@@ -877,6 +1191,17 @@ export const formulas = {
         attribute: 'physical',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Jane',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Jane',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -893,6 +1218,17 @@ export const formulas = {
     },
   },
   Koleda: {
+    anomalyBuildupInst: {
+      sheet: 'Koleda',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Koleda',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Koleda',
       name: 'anomalyDmgInst',
@@ -904,6 +1240,17 @@ export const formulas = {
         attribute: 'fire',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Koleda',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Koleda',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -920,6 +1267,17 @@ export const formulas = {
     },
   },
   Lighter: {
+    anomalyBuildupInst: {
+      sheet: 'Lighter',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Lighter',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Lighter',
       name: 'anomalyDmgInst',
@@ -931,6 +1289,17 @@ export const formulas = {
         attribute: 'fire',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Lighter',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Lighter',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -947,6 +1316,17 @@ export const formulas = {
     },
   },
   Lucy: {
+    anomalyBuildupInst: {
+      sheet: 'Lucy',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Lucy',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Lucy',
       name: 'anomalyDmgInst',
@@ -958,6 +1338,17 @@ export const formulas = {
         attribute: 'fire',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Lucy',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Lucy',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -974,6 +1365,17 @@ export const formulas = {
     },
   },
   Lycaon: {
+    anomalyBuildupInst: {
+      sheet: 'Lycaon',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Lycaon',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Lycaon',
       name: 'anomalyDmgInst',
@@ -985,6 +1387,17 @@ export const formulas = {
         attribute: 'ice',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Lycaon',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Lycaon',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1001,6 +1414,17 @@ export const formulas = {
     },
   },
   Miyabi: {
+    anomalyBuildupInst: {
+      sheet: 'Miyabi',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Miyabi',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Miyabi',
       name: 'anomalyDmgInst',
@@ -1012,6 +1436,17 @@ export const formulas = {
         attribute: 'ice',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Miyabi',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Miyabi',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1028,6 +1463,17 @@ export const formulas = {
     },
   },
   Nekomata: {
+    anomalyBuildupInst: {
+      sheet: 'Nekomata',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Nekomata',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Nekomata',
       name: 'anomalyDmgInst',
@@ -1039,6 +1485,17 @@ export const formulas = {
         attribute: 'physical',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Nekomata',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Nekomata',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1055,6 +1512,17 @@ export const formulas = {
     },
   },
   Nicole: {
+    anomalyBuildupInst: {
+      sheet: 'Nicole',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Nicole',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Nicole',
       name: 'anomalyDmgInst',
@@ -1066,6 +1534,17 @@ export const formulas = {
         attribute: 'ether',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Nicole',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Nicole',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1082,6 +1561,17 @@ export const formulas = {
     },
   },
   Piper: {
+    anomalyBuildupInst: {
+      sheet: 'Piper',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Piper',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Piper',
       name: 'anomalyDmgInst',
@@ -1093,6 +1583,17 @@ export const formulas = {
         attribute: 'physical',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Piper',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Piper',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1109,6 +1610,17 @@ export const formulas = {
     },
   },
   Pulchra: {
+    anomalyBuildupInst: {
+      sheet: 'Pulchra',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Pulchra',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Pulchra',
       name: 'anomalyDmgInst',
@@ -1120,6 +1632,17 @@ export const formulas = {
         attribute: 'physical',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Pulchra',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Pulchra',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1136,6 +1659,17 @@ export const formulas = {
     },
   },
   QingYi: {
+    anomalyBuildupInst: {
+      sheet: 'QingYi',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'QingYi',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'QingYi',
       name: 'anomalyDmgInst',
@@ -1147,6 +1681,17 @@ export const formulas = {
         attribute: 'electric',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'QingYi',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'QingYi',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1163,6 +1708,17 @@ export const formulas = {
     },
   },
   Rina: {
+    anomalyBuildupInst: {
+      sheet: 'Rina',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Rina',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Rina',
       name: 'anomalyDmgInst',
@@ -1174,6 +1730,17 @@ export const formulas = {
         attribute: 'electric',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Rina',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Rina',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1190,6 +1757,17 @@ export const formulas = {
     },
   },
   Seth: {
+    anomalyBuildupInst: {
+      sheet: 'Seth',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Seth',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Seth',
       name: 'anomalyDmgInst',
@@ -1201,6 +1779,17 @@ export const formulas = {
         attribute: 'electric',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Seth',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Seth',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1217,6 +1806,17 @@ export const formulas = {
     },
   },
   Soldier0Anby: {
+    anomalyBuildupInst: {
+      sheet: 'Soldier0Anby',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Soldier0Anby',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Soldier0Anby',
       name: 'anomalyDmgInst',
@@ -1228,6 +1828,17 @@ export const formulas = {
         attribute: 'electric',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Soldier0Anby',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Soldier0Anby',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1244,6 +1855,17 @@ export const formulas = {
     },
   },
   Soldier11: {
+    anomalyBuildupInst: {
+      sheet: 'Soldier11',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Soldier11',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Soldier11',
       name: 'anomalyDmgInst',
@@ -1255,6 +1877,17 @@ export const formulas = {
         attribute: 'fire',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Soldier11',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Soldier11',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1271,6 +1904,17 @@ export const formulas = {
     },
   },
   Soukaku: {
+    anomalyBuildupInst: {
+      sheet: 'Soukaku',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Soukaku',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Soukaku',
       name: 'anomalyDmgInst',
@@ -1282,6 +1926,17 @@ export const formulas = {
         attribute: 'ice',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Soukaku',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Soukaku',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1298,6 +1953,17 @@ export const formulas = {
     },
   },
   Trigger: {
+    anomalyBuildupInst: {
+      sheet: 'Trigger',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Trigger',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Trigger',
       name: 'anomalyDmgInst',
@@ -1309,6 +1975,17 @@ export const formulas = {
         attribute: 'electric',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Trigger',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Trigger',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1325,6 +2002,17 @@ export const formulas = {
     },
   },
   Yanagi: {
+    anomalyBuildupInst: {
+      sheet: 'Yanagi',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Yanagi',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'Yanagi',
       name: 'anomalyDmgInst',
@@ -1336,6 +2024,17 @@ export const formulas = {
         attribute: 'electric',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Yanagi',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Yanagi',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1352,6 +2051,17 @@ export const formulas = {
     },
   },
   ZhuYuan: {
+    anomalyBuildupInst: {
+      sheet: 'ZhuYuan',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'ZhuYuan',
+        name: 'anomalyBuildupInst',
+      },
+    },
     anomalyDmgInst: {
       sheet: 'ZhuYuan',
       name: 'anomalyDmgInst',
@@ -1363,6 +2073,17 @@ export const formulas = {
         attribute: 'ether',
         damageType1: 'anomaly',
         name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'ZhuYuan',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'ZhuYuan',
+        name: 'dazeInst',
       },
     },
     standardDmgInst: {
@@ -1429,6 +2150,19 @@ export const buffs = {
       },
     },
   },
+  BigCylinder: {
+    passive_dmg_red_: {
+      sheet: 'BigCylinder',
+      name: 'passive_dmg_red_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_red_',
+        sheet: 'BigCylinder',
+        name: 'passive_dmg_red_',
+      },
+    },
+  },
   BlazingLaurel: {
     crit_dmg_fire_: {
       sheet: 'BlazingLaurel',
@@ -1467,6 +2201,17 @@ export const buffs = {
     },
   },
   BoxCutter: {
+    daze_: {
+      sheet: 'BoxCutter',
+      name: 'daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'BoxCutter',
+        name: 'daze_',
+      },
+    },
     physical_dmg_: {
       sheet: 'BoxCutter',
       name: 'physical_dmg_',
@@ -1840,6 +2585,17 @@ export const buffs = {
     },
   },
   FreedomBlues: {
+    anomBuildupRes_: {
+      sheet: 'FreedomBlues',
+      name: 'anomBuildupRes_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'anomBuildupRes_',
+        sheet: 'FreedomBlues',
+        name: 'anomBuildupRes_',
+      },
+    },
     set2: {
       sheet: 'FreedomBlues',
       name: 'set2',
@@ -2239,6 +2995,30 @@ export const buffs = {
         name: 'enerRegen',
       },
     },
+    passive_assist_anomBuildup_: {
+      sheet: 'PeacekeeperSpecialized',
+      name: 'passive_assist_anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'PeacekeeperSpecialized',
+        damageType1: 'assistFollowUp',
+        name: 'passive_assist_anomBuildup_',
+      },
+    },
+    passive_exSpecial_anomBuildup_: {
+      sheet: 'PeacekeeperSpecialized',
+      name: 'passive_exSpecial_anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'PeacekeeperSpecialized',
+        damageType1: 'exSpecial',
+        name: 'passive_exSpecial_anomBuildup_',
+      },
+    },
   },
   PhaethonsMelody: {
     set2: {
@@ -2311,6 +3091,19 @@ export const buffs = {
         sheet: 'PolarMetal',
         damageType1: 'dash',
         name: 'set4_dash_dmg_',
+      },
+    },
+  },
+  PreciousFossilizedCore: {
+    daze_: {
+      sheet: 'PreciousFossilizedCore',
+      name: 'daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'PreciousFossilizedCore',
+        name: 'daze_',
       },
     },
   },
@@ -2464,6 +3257,17 @@ export const buffs = {
     },
   },
   RoaringRide: {
+    anomBuildup_: {
+      sheet: 'RoaringRide',
+      name: 'anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'RoaringRide',
+        name: 'anomBuildup_',
+      },
+    },
     anomProf: {
       sheet: 'RoaringRide',
       name: 'anomProf',
@@ -2572,6 +3376,17 @@ export const buffs = {
     },
   },
   SharpenedStinger: {
+    anomBuildup_: {
+      sheet: 'SharpenedStinger',
+      name: 'anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'SharpenedStinger',
+        name: 'anomBuildup_',
+      },
+    },
     physical_dmg_: {
       sheet: 'SharpenedStinger',
       name: 'physical_dmg_',
@@ -2602,15 +3417,64 @@ export const buffs = {
       name: 'set4_basic_daze_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'stun_',
+        qt: 'combat',
+        q: 'dazeInc_',
         sheet: 'ShockstarDisco',
         damageType1: 'basic',
         name: 'set4_basic_daze_',
       },
     },
+    set4_dash_daze_: {
+      sheet: 'ShockstarDisco',
+      name: 'set4_dash_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'ShockstarDisco',
+        damageType1: 'dash',
+        name: 'set4_dash_daze_',
+      },
+    },
+    set4_dodgeCounter_daze_: {
+      sheet: 'ShockstarDisco',
+      name: 'set4_dodgeCounter_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'ShockstarDisco',
+        damageType1: 'dodgeCounter',
+        name: 'set4_dodgeCounter_daze_',
+      },
+    },
+  },
+  SixShooter: {
+    exSpecial_daze_: {
+      sheet: 'SixShooter',
+      name: 'exSpecial_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'SixShooter',
+        damageType1: 'exSpecial',
+        name: 'exSpecial_daze_',
+      },
+    },
   },
   SoulRock: {
+    dmg_red_: {
+      sheet: 'SoulRock',
+      name: 'dmg_red_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_red_',
+        sheet: 'SoulRock',
+        name: 'dmg_red_',
+      },
+    },
     set2: {
       sheet: 'SoulRock',
       name: 'set2',
@@ -2658,6 +3522,17 @@ export const buffs = {
         q: 'enerRegen_',
         sheet: 'SpringEmbrace',
         name: 'cond_enerRegen_',
+      },
+    },
+    passive_dmg_red_: {
+      sheet: 'SpringEmbrace',
+      name: 'passive_dmg_red_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_red_',
+        sheet: 'SpringEmbrace',
+        name: 'passive_dmg_red_',
       },
     },
   },
@@ -2777,6 +3652,32 @@ export const buffs = {
       },
     },
   },
+  TheRestrained: {
+    basic_daze_: {
+      sheet: 'TheRestrained',
+      name: 'basic_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'TheRestrained',
+        damageType1: 'basic',
+        name: 'basic_daze_',
+      },
+    },
+    basic_dmg_: {
+      sheet: 'TheRestrained',
+      name: 'basic_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'TheRestrained',
+        damageType1: 'basic',
+        name: 'basic_dmg_',
+      },
+    },
+  },
   TheVault: {
     cond_dmg_: {
       sheet: 'TheVault',
@@ -2839,6 +3740,18 @@ export const buffs = {
         name: 'passive_disorder_dmg_',
       },
     },
+    passive_electric_anomBuildup_: {
+      sheet: 'Timeweaver',
+      name: 'passive_electric_anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'Timeweaver',
+        attribute: 'electric',
+        name: 'passive_electric_anomBuildup_',
+      },
+    },
   },
   TusksOfFury: {
     cond_dmg_: {
@@ -2850,6 +3763,17 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'TusksOfFury',
         name: 'cond_dmg_',
+      },
+    },
+    daze_: {
+      sheet: 'TusksOfFury',
+      name: 'daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'TusksOfFury',
+        name: 'daze_',
       },
     },
     passive_shield_: {
@@ -2877,6 +3801,19 @@ export const buffs = {
       },
     },
   },
+  VortexArrow: {
+    passive_daze_: {
+      sheet: 'VortexArrow',
+      name: 'passive_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'VortexArrow',
+        name: 'passive_daze_',
+      },
+    },
+  },
   VortexHatchet: {
     cond_impact_: {
       sheet: 'VortexHatchet',
@@ -2887,6 +3824,20 @@ export const buffs = {
         q: 'impact_',
         sheet: 'VortexHatchet',
         name: 'cond_impact_',
+      },
+    },
+  },
+  VortexRevolver: {
+    passive_exSpecial_daze_: {
+      sheet: 'VortexRevolver',
+      name: 'passive_exSpecial_daze_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dazeInc_',
+        sheet: 'VortexRevolver',
+        damageType1: 'exSpecial',
+        name: 'passive_exSpecial_daze_',
       },
     },
   },
@@ -2904,16 +3855,16 @@ export const buffs = {
     },
   },
   WeepingGemini: {
-    anomaly_stack: {
+    anomProf: {
       sheet: 'WeepingGemini',
-      name: 'anomaly_stack',
+      name: 'anomProf',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'anomProf',
         sheet: 'WeepingGemini',
         dst: null,
-        name: 'anomaly_stack',
+        name: 'anomProf',
       },
     },
   },

@@ -32,7 +32,7 @@ const sheet: UISheetElement = {
         metadata: cond.launchedAftershock,
         fields: [
           tagToTagField(buff.physical_dmg_.tag),
-          // TODO: add daze_
+          tagToTagField(buff.daze_.tag),
           {
             title: 'Duration', // TODO: L10n,
             fieldValue: dm.duration,

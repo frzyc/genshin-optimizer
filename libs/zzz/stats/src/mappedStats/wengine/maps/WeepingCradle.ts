@@ -9,9 +9,9 @@ let o = 0
 const dm = {
   enerRegen: data_gen[o++],
   dmg_: data_gen[o++],
-  duration: data_gen[o++]?.[1],
+  duration: data_gen[o++][1],
   inc_dmg_: data_gen[o++],
-  period: data_gen[o++]?.[1],
+  period: data_gen[o++][1],
   max_dmg_: data_gen[o++],
 } as const
 

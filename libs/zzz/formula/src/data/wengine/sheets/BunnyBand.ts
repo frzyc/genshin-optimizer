@@ -20,6 +20,7 @@ const sheet = registerWengine(
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
+  // Passive buffs
   registerBuff(
     'passive_hp_',
     ownBuff.combat.hp_.add(
