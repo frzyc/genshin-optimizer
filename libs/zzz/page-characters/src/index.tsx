@@ -214,6 +214,7 @@ export default function PageCharacter() {
           show={newCharacter}
           onHide={() => setnewCharacter(false)}
           onSelect={editCharacter}
+          newFirst={true}
         />
       </Suspense>
       <CardThemed>

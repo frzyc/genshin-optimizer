@@ -1,20 +1,30 @@
 'use client'
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
   NextImage,
+  SortByButton,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
-import { catTotal } from '@genshin-optimizer/common/util'
+import {
+  catTotal,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import { characterAsset, rarityDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  AttributeKey,
+  CharacterKey,
+  SpecialityKey,
+} from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeKeys,
   allCharacterKeys,
   allSpecialityKeys,
 } from '@genshin-optimizer/zzz/consts'
-import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
+import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
 import CloseIcon from '@mui/icons-material/Close'
@@ -25,30 +35,91 @@ import {
   Divider,
   Grid,
   IconButton,
+  TextField,
   Typography,
 } from '@mui/material'
-import React, { useMemo } from 'react'
+import type { ChangeEvent } from 'react'
+import React, { useDeferredValue, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharSpecialtyToggle, ElementToggle } from '../toggles'
+import {
+  type CharacterSortKey,
+  characterFilterConfigs,
+  characterSortConfigs,
+  characterSortMap,
+} from './CharacterSort'
 
 export function CharacterSingleSelectionModal({
   show,
   onHide,
   onSelect,
+  newFirst = false,
 }: {
   show: boolean
   onHide: () => void
   onSelect: (cKey: CharacterKey) => void
+  newFirst: boolean
 }) {
+  const { database } = useDatabaseContext()
+  const displayCharacter = useDataEntryBase(database.displayCharacter)
+  const [searchTerm, setSearchTerm] = useState('')
+  const deferredSearchTerm = useDeferredValue(searchTerm)
+  const deferredState = useDeferredValue(displayCharacter)
+  const characterKeyList = useMemo(() => {
+    const { attribute, specialtyType, sortType, ascending } = deferredState
+    const sortByKeys = [
+      ...(newFirst ? ['new'] : []),
+      ...(characterSortMap[sortType] ?? []),
+    ] as CharacterSortKey[]
+    const filteredKeys = allCharacterKeys
+      .filter(
+        filterFunction(
+          { attribute, specialtyType, name: deferredSearchTerm },
+          characterFilterConfigs(database)
+        )
+      )
+      .sort(
+        sortFunction(sortByKeys, ascending, characterSortConfigs(database), [
+          'new',
+        ])
+      )
+    return filteredKeys
+  }, [deferredState, newFirst, deferredSearchTerm, database])
+
   const onClose = () => {
+    setSearchTerm('')
     onHide()
   }
 
+  const filterSearchSortProps = {
+    searchTerm: searchTerm,
+    onChangeSpecialtyFilter: (specialtyType: SpecialityKey[]) => {
+      database.displayCharacter.set({ specialtyType })
+    },
+    onChangeAttributeFilter: (attribute: AttributeKey[]) => {
+      database.displayCharacter.set({ attribute })
+    },
+    onChangeSearch: (e: ChangeEvent<HTMLTextAreaElement>) => {
+      setSearchTerm(e.target.value)
+    },
+    onChangeSort: (sortType: CharacterSortKey) => {
+      database.displayCharacter.set({ sortType })
+    },
+    onChangeAsc: (ascending: boolean) => {
+      database.displayCharacter.set({ ascending })
+    },
+  }
+
   return (
-    <CharacterSelectionModalBase show={show} onClose={onClose}>
+    <CharacterSelectionModalBase
+      show={show}
+      charactersToShow={characterKeyList}
+      filterSearchSortProps={filterSearchSortProps}
+      onClose={onClose}
+    >
       <CardContent sx={{ flex: '1', overflow: 'auto' }}>
         <Grid container spacing={0.5} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
-          {allCharacterKeys.map((characterKey) => (
+          {characterKeyList.map((characterKey) => (
             <Grid item key={characterKey} xs={1}>
               <CardThemed
                 bgt="light"
@@ -77,40 +148,60 @@ export function CharacterSingleSelectionModal({
   )
 }
 
+type FilterSearchSortProps = {
+  searchTerm: string
+  onChangeSpecialtyFilter: (weaps: SpecialityKey[]) => void
+  onChangeAttributeFilter: (elements: AttributeKey[]) => void
+  onChangeSearch: (e: ChangeEvent<HTMLTextAreaElement>) => void
+  onChangeSort: (sortType: CharacterSortKey) => void
+  onChangeAsc: (asc: boolean) => void
+}
+
 type CharacterSelectionModalBaseProps = {
   show: boolean
+  charactersToShow: CharacterKey[]
+  filterSearchSortProps: FilterSearchSortProps
   onClose: () => void
   children: React.ReactNode
 }
+const sortKeys = Object.keys(characterSortMap)
 
 function CharacterSelectionModalBase({
   show,
+  charactersToShow,
+  filterSearchSortProps,
   onClose,
   children,
 }: CharacterSelectionModalBaseProps) {
-  const weaponTotals = useMemo(
+  const { t } = useTranslation('page_characters')
+  const { database } = useDatabaseContext()
+  const displayCharacter = useDataEntryBase(database.displayCharacter)
+
+  const charSpecialtyTotals = useMemo(
     () =>
-      catTotal(allSpecialityKeys, (ct) =>
-        allCharacterKeys.forEach((ck) => {
-          const wtk = getCharStat(ck).specialty
-          ct[wtk].total++
-          if (allCharacterKeys.includes(ck)) ct[wtk].current++
+      catTotal(allSpecialityKeys, (sk) =>
+        database.chars.entries.forEach(([id, char]) => {
+          const specialty = getCharStat(char.key).specialty
+          sk[specialty].total++
+          if (charactersToShow.includes(id)) sk[specialty].current++
         })
       ),
-    []
+    [charactersToShow, database.chars.entries]
   )
 
   const attributeTotals = useMemo(
     () =>
       catTotal(allAttributeKeys, (ct) =>
-        allCharacterKeys.forEach((ck) => {
-          const attr = getCharStat(ck).attribute
-          ct[attr].total++
-          if (allCharacterKeys.includes(ck)) ct[attr].current++
+        Object.entries(database.chars.data).forEach(([ck]) => {
+          const attribute = getCharStat(ck).attribute
+          ct[attribute].total++
+          if (charactersToShow.includes(ck)) ct[attribute].current++
         })
       ),
-    []
+    [charactersToShow, database.chars.data]
   )
+
+  const { specialtyType, attribute, sortType, ascending } = displayCharacter
 
   return (
     <ModalWrapper
@@ -140,14 +231,18 @@ function CharacterSelectionModalBase({
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               <CharSpecialtyToggle
-                onChange={() => {}}
-                value={['attack']}
-                totals={weaponTotals}
+                onChange={(specialtyType) =>
+                  database.displayCharacter.set({ specialtyType })
+                }
+                value={specialtyType}
+                totals={charSpecialtyTotals}
                 size="small"
               />
               <ElementToggle
-                onChange={() => {}}
-                value={['fire']}
+                onChange={(attribute) =>
+                  database.displayCharacter.set({ attribute })
+                }
+                value={attribute}
                 totals={attributeTotals}
                 size="small"
               />
@@ -155,6 +250,32 @@ function CharacterSelectionModalBase({
             <IconButton sx={{ ml: 'auto' }} onClick={() => onClose()}>
               <CloseIcon />
             </IconButton>
+          </Box>
+          <Box display="flex" gap={1}>
+            <TextField
+              autoFocus
+              value={filterSearchSortProps.searchTerm}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+                filterSearchSortProps.onChangeSearch(e)
+              }
+              label={t('characterName')}
+              size="small"
+              sx={{ height: '100%', mr: 'auto' }}
+              InputProps={{
+                sx: { height: '100%' },
+              }}
+            />
+            <SortByButton
+              sortKeys={sortKeys}
+              value={sortType}
+              onChange={(sortType) =>
+                filterSearchSortProps.onChangeSort(sortType)
+              }
+              ascending={ascending}
+              onChangeAsc={(ascending) =>
+                filterSearchSortProps.onChangeAsc(ascending)
+              }
+            />
           </Box>
         </CardContent>
         <Divider />
