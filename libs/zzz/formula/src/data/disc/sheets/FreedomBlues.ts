@@ -19,7 +19,7 @@ const sheet = registerDisc(
   registerBuff(
     'anomBuildupRes_',
     enemyDebuff.common.anomBuildupRes_.add(
-      cmpGE(discCount, 4, exSpecialHit.ifOn(0.2))
+      cmpGE(discCount, 4, exSpecialHit.ifOn(-0.2))
     ),
     showCond4Set
   )
