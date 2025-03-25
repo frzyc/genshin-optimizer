@@ -223,7 +223,7 @@ function StatFilterItem({
           />
         )}
         <Button onClick={() => setTargetisMax(!isMax)} size="small">
-          <strong>{isMax ? '<=' : '>='}</strong>
+          <strong>{isMax ? 'MAX' : 'MIN'}</strong>
         </Button>
 
         <NumberInputLazy
