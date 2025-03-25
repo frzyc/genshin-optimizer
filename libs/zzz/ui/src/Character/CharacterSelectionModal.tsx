@@ -29,7 +29,7 @@ import {
 } from '@mui/material'
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ElementToggle, WengineToggle } from '../toggles'
+import { CharSpecialtyToggle, ElementToggle } from '../toggles'
 
 export function CharacterSingleSelectionModal({
   show,
@@ -47,19 +47,19 @@ export function CharacterSingleSelectionModal({
   return (
     <CharacterSelectionModalBase show={show} onClose={onClose}>
       <CardContent sx={{ flex: '1', overflow: 'auto' }}>
-        <Grid container spacing={1} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
+        <Grid container spacing={0.5} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
           {allCharacterKeys.map((characterKey) => (
             <Grid item key={characterKey} xs={1}>
               <CardThemed
                 bgt="light"
-                sx={() => {
-                  return {
-                    position: 'relative',
-                    flexGrow: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }
-                }}
+                sx={(theme) => ({
+                  position: 'relative',
+                  flexGrow: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  borderRadius: '30px 16px 16px 30px',
+                  border: `3px solid ${theme.palette.contentZzz.main}`,
+                })}
               >
                 <SelectionCard
                   characterKey={characterKey}
@@ -139,7 +139,7 @@ function CharacterSelectionModalBase({
         >
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-              <WengineToggle
+              <CharSpecialtyToggle
                 onChange={() => {}}
                 value={['attack']}
                 totals={weaponTotals}
@@ -179,9 +179,12 @@ function SelectionCard({
   return (
     <CardActionArea onClick={onClick}>
       <Box
-        display="flex"
-        position="relative"
-        sx={{
+        sx={(theme) => ({
+          position: 'relative',
+          width: '100%',
+          display: 'flex',
+          padding: '3px',
+          gap: 1,
           '&::before': {
             content: '""',
             display: 'block',
@@ -191,45 +194,63 @@ function SelectionCard({
             width: '100%',
             height: '100%',
             opacity: 0.7,
+            background:
+              theme.palette[getCharStat(characterKey).attribute].light,
           },
-        }}
-        width="100%"
+        })}
       >
         <Box
-          flexShrink={1}
-          sx={{ maxWidth: { xs: '33%', lg: '30%' } }}
-          alignSelf="flex-end"
-          display="flex"
-          flexDirection="column"
-          zIndex={1}
+          sx={{
+            maxWidth: { xs: '33%', lg: '30%' },
+            alignSelf: 'flex-end',
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: 1,
+            flexShrink: 1,
+          }}
         >
           <Box
             component={NextImage ? NextImage : 'img'}
             src={characterAsset(characterKey, 'circle')}
-            width="100%"
-            height="auto"
-            maxWidth={256}
-            sx={{ mt: 'auto' }}
+            sx={(theme) => ({
+              mt: 'auto',
+              border: `4px solid ${theme.palette.contentZzz.main}`,
+              borderRadius: '30px',
+            })}
           />
         </Box>
         <Box
-          flexGrow={1}
-          sx={{ pr: 1, pt: 1 }}
-          display="flex"
-          flexDirection="column"
-          zIndex={1}
-          justifyContent="space-evenly"
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: 1,
+            justifyContent: 'space-evenly',
+          }}
         >
-          <Typography variant="body2" sx={{ flexGrow: 1 }}>
-            <SqBadge
-              color={getCharStat(characterKey).attribute}
-              sx={{ opacity: 0.85, textShadow: '0 0 5px gray' }}
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <ImgIcon size={1.5} src={rarityDefIcon(rarity)} />
+            <Typography
+              variant="body1"
+              sx={(theme) => ({
+                flexGrow: 1,
+                color: theme.palette.contentNormal.main,
+                fontWeight: '900',
+              })}
             >
               {t(`charNames_gen:${characterKey}`)}
-            </SqBadge>
-          </Typography>
+            </Typography>
+          </Box>
           {character ? (
-            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            <Box
+              sx={(theme) => ({
+                display: 'flex',
+                gap: 1,
+                alignItems: 'center',
+                background: theme.palette.contentNormal.main,
+                padding: '4px 12px',
+                borderRadius: '20px',
+              })}
+            >
               <Box sx={{ textShadow: '0 0 5px gray' }}>
                 <Typography
                   variant="body2"
@@ -250,10 +271,9 @@ function SelectionCard({
             </Box>
           ) : (
             <Typography component="span" variant="body2">
-              <SqBadge>{t('characterEditor.new')}</SqBadge>
+              <SqBadge color={'electric'}>{t('characterEditor.new')}</SqBadge>
             </Typography>
           )}
-          <ImgIcon size={1.5} src={rarityDefIcon(rarity)} />
         </Box>
       </Box>
     </CardActionArea>
