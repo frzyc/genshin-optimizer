@@ -37,6 +37,7 @@ import {
   IconButton,
   TextField,
   Typography,
+  useTheme,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import React, { useDeferredValue, useMemo, useState } from 'react'
@@ -128,7 +129,7 @@ export function CharacterSingleSelectionModal({
                   flexGrow: 1,
                   display: 'flex',
                   flexDirection: 'column',
-                  borderRadius: '30px 16px 16px 30px',
+                  borderRadius: '40px 16px 16px 40px',
                   border: `3px solid ${theme.palette.contentZzz.main}`,
                 })}
               >
@@ -293,19 +294,24 @@ function SelectionCard({
   onClick: () => void
 }) {
   const { t } = useTranslation(['page_characters', 'charNames_gen'])
+  const theme = useTheme()
   const character = useCharacter(characterKey)
-  const { rarity } = getCharStat(characterKey)
+  const { rarity, attribute } = getCharStat(characterKey)
   const { level = 1, promotion = 0, mindscape = 0 } = character ?? {}
+  const selectorBackgroundColor =
+    attribute === 'electric'
+      ? theme.palette[attribute].light
+      : theme.palette[attribute].main
 
   return (
     <CardActionArea onClick={onClick}>
       <Box
-        sx={(theme) => ({
+        sx={{
           position: 'relative',
           width: '100%',
           display: 'flex',
           padding: '3px',
-          gap: 1,
+          gap: 0.5,
           '&::before': {
             content: '""',
             display: 'block',
@@ -315,10 +321,9 @@ function SelectionCard({
             width: '100%',
             height: '100%',
             opacity: 0.7,
-            background:
-              theme.palette[getCharStat(characterKey).attribute].light,
+            background: selectorBackgroundColor,
           },
-        })}
+        }}
       >
         <Box
           sx={{
@@ -332,12 +337,7 @@ function SelectionCard({
         >
           <Box
             component={NextImage ? NextImage : 'img'}
-            src={characterAsset(characterKey, 'circle')}
-            sx={(theme) => ({
-              mt: 'auto',
-              border: `4px solid ${theme.palette.contentZzz.main}`,
-              borderRadius: '30px',
-            })}
+            src={characterAsset(characterKey, 'interknot')}
           />
         </Box>
         <Box
@@ -348,10 +348,10 @@ function SelectionCard({
             justifyContent: 'space-evenly',
           }}
         >
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
             <ImgIcon size={1.5} src={rarityDefIcon(rarity)} />
             <Typography
-              variant="body1"
+              variant="subtitle2"
               sx={(theme) => ({
                 flexGrow: 1,
                 color: theme.palette.contentNormal.main,
