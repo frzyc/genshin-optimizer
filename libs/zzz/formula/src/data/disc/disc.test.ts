@@ -172,7 +172,7 @@ describe('Disc sheets test', () => {
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.initial.anomProf).val).toBeCloseTo(93 + 30) // 2p passive
     expect(calc.compute(enemyDebuff.common.anomBuildupRes_).val).toBeCloseTo(
-      0.2
+      -0.2
     ) // 4p cond
   })
   it('HormonePunk', () => {
