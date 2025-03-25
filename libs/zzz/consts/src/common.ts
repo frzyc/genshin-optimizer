@@ -134,6 +134,13 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   def_mult_: 'DEF Multiplier',
   base: 'Base Damage',
   stun_: 'Stun Multiplier',
+  enemyAnomBuildupRes_mult_: 'Enemy Anomaly Buildup RES Multiplier',
+  anomBuildup_mult_: 'Anomaly Buildup Bonus Multiplier',
+  anomMas_mult_: 'Anomaly Mastery Bonus',
+  anomalyBuildupInst: 'Anomaly Buildup',
+  daze_mult_: 'Daze Multiplier',
+  enemyDazeRes_mult: 'Enemy Daze Resistance Multiplier',
+  enemyDazeTaken_mult: 'Enemy Daze Taken Multiplier',
 }
 
 export const elementalData: Record<AttributeKey, string> = {
