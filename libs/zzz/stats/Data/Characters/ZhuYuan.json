@@ -6,6 +6,7 @@
   "specialty": "attack",
   "faction": "CriminalInvestigationSpecialResponseTeam",
   "fullname": "Zhu Yuan",
+  "name": "Zhu Yuan",
   "stats": {
     "atk_base": 132,
     "atk_growth": 8.0729,

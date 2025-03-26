@@ -6,6 +6,7 @@
   "specialty": "stun",
   "faction": "SonsOfCalydon",
   "fullname": "Pulchra",
+  "name": "Pulchra",
   "stats": {
     "atk_base": 96,
     "atk_growth": 5.4887,

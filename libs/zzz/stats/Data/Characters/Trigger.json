@@ -6,6 +6,7 @@
   "specialty": "stun",
   "faction": "NewEriduDefenseForce",
   "fullname": "Trigger",
+  "name": "Trigger",
   "stats": {
     "atk_base": 108,
     "atk_growth": 6.3517,

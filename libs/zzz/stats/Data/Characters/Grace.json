@@ -6,6 +6,7 @@
   "specialty": "anomaly",
   "faction": "BelebogHeavyIndustries",
   "fullname": "Grace Howard",
+  "name": "Grace",
   "stats": {
     "atk_base": 119,
     "atk_growth": 7.1181,

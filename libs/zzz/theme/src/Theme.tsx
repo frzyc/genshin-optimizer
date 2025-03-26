@@ -101,15 +101,15 @@ export const theme = createTheme({
       name: 'mindscapeInactive',
     }),
     fire: commonTheme.palette.augmentColor({
-      color: { main: '#FF5623', contrastText: '#fff' },
+      color: { main: '#FF5623', light: '#FF4000', contrastText: '#fff' },
       name: 'fire',
     }),
     ice: commonTheme.palette.augmentColor({
-      color: { main: '#95EAE9', contrastText: '#fff' },
+      color: { main: '#95EAE9', light: '#22D7C1', contrastText: '#fff' },
       name: 'ice',
     }),
     electric: commonTheme.palette.augmentColor({
-      color: { main: '#0177FF', contrastText: '#fff' },
+      color: { main: '#0177FF', light: '#009EFF', contrastText: '#fff' },
       name: 'electric',
     }),
     frost: commonTheme.palette.augmentColor({
@@ -117,11 +117,11 @@ export const theme = createTheme({
       name: 'frost',
     }),
     physical: commonTheme.palette.augmentColor({
-      color: { main: '#EDCC2C', contrastText: '#fff' },
+      color: { main: '#EDCC2C', light: '#FFCB00', contrastText: '#fff' },
       name: 'physical',
     }),
     ether: commonTheme.palette.augmentColor({
-      color: { main: '#FE427E', contrastText: '#fff' },
+      color: { main: '#FE427E', light: '#FF0068', contrastText: '#fff' },
       name: 'ether',
     }),
     rankS: commonTheme.palette.augmentColor({

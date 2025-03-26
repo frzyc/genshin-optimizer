@@ -6,6 +6,7 @@
   "specialty": "attack",
   "faction": "VictoriaHousekeepingCo",
   "fullname": "Ellen Joe",
+  "name": "Ellen",
   "stats": {
     "atk_base": 135,
     "atk_growth": 8.2578,

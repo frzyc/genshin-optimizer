@@ -181,6 +181,7 @@ export type CharacterData = {
   cores: CharacterRawData['Passive']
   mindscapes: CharacterRawData['Talent']
   fullname: string
+  name: string
 }
 export const charactersDetailedJSONData = Object.fromEntries(
   Object.entries(characterIdMap)
@@ -203,6 +204,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
         specialty: specialityMap[Object.keys(raw.WeaponType)[0] as any],
         faction: factionMap[Object.keys(raw.Camp)[0] as any],
         fullname,
+        name: raw.Name,
         stats: {
           atk_base: raw.Stats.Attack,
           atk_growth: raw.Stats.AttackGrowth / PERCENT_SCALING,
