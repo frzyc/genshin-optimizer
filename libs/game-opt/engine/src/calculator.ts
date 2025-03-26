@@ -84,7 +84,7 @@ export class Calculator<
       case 'max':
       case 'sumfrac':
         if (x.length > 1) {
-          const empty = arithmetic[op]([], ex)
+          const empty = arithmetic[op]([])
           x = x.filter((x) => x.val !== empty)
         }
         if (x.length === 1) return wrap(x[0])
