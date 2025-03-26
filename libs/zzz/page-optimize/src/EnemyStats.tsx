@@ -4,7 +4,7 @@ import {
   DropdownButton,
   NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
-import { isIn, shouldShowDevComponents } from '@genshin-optimizer/common/util'
+import { isIn } from '@genshin-optimizer/common/util'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import type { EnemyStatKey, EnemyStatsTag } from '@genshin-optimizer/zzz/db'
 import { enemyStatKeys, newEnemyStatTag } from '@genshin-optimizer/zzz/db'
@@ -21,7 +21,6 @@ import {
   Box,
   Button,
   CardContent,
-  Divider,
   IconButton,
   InputAdornment,
   MenuItem,
@@ -192,16 +191,6 @@ function EnemyStatDisplay({
           }}
         />
       </CardContent>
-      {shouldShowDevComponents && (
-        <>
-          <Divider />
-          <CardContent>
-            <Typography sx={{ fontFamily: 'monospace' }}>
-              {JSON.stringify(tag)}
-            </Typography>
-          </CardContent>
-        </>
-      )}
     </CardThemed>
   )
 }
