@@ -6,6 +6,9 @@ export function getCharStat(ck: CharacterKey) {
   return allStats.char[ck]
 }
 
+/**
+ * @deprecated for pando calc
+ */
 export function getCharacterStats(
   ck: CharacterKey,
   level: number,

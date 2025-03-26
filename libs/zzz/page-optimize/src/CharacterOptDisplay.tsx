@@ -40,7 +40,7 @@ import {
 import { useTranslation } from 'react-i18next'
 import { BonusStatsSection } from './BonusStats'
 import { CharStatsDisplay } from './CharStatsDisplay'
-import { EnemyCard } from './EnemyCard'
+import { EnemyStatsSection } from './EnemyStats'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
 import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
@@ -138,8 +138,9 @@ function CharacterSection() {
     useMemo(() => {
       return [
         ['eq', <EquippedGrid key={'eq'} onClick={onClick} />],
-        ['Conditionals', <EquippedConditionals />],
+        ['Conditionals', <EquippedConditionals key={'conditionals'} />],
         ['bonusStats', <BonusStatsSection key={'bonusStats'} />],
+        ['enemyStats', <EnemyStatsSection key={'enemyStats'} />],
       ] as const
     }, [onClick])
   const theme = useTheme()
@@ -186,7 +187,6 @@ function CharacterSection() {
                     characterKey={characterKey}
                     onClick={onClick}
                   />
-                  <EnemyCard />
                   {/* This container is the "sticky" area for the stats display */}
                   <Box sx={{ flexGrow: 1 }}>
                     <Box
@@ -212,7 +212,7 @@ function CharacterSection() {
                       key={key}
                       title={key}
                       index={i}
-                      zIndex={1}
+                      zIndex={99} // lower than the outer wrapper sections
                       // This is hardcoded to have 1 section above, and 2 below.
                       // Any changes to outer sections needs to update this.
                       top={SECTION_SPACING_PX}

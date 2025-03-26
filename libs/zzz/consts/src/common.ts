@@ -131,8 +131,13 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   crit_mult_: 'CRIT Multiplier',
   dmg_mult_: 'DMG Multiplier',
   def_mult_: 'DEF Multiplier',
+  res_mult_: 'Resistance Multiplier',
   base: 'Base Damage',
-  stun_: 'Stun Multiplier',
+  stun_: 'Stun DMG Multiplier',
+  unstun_: 'Unstun DMG Multiplier',
+  defRed_: 'Defense Reduction',
+  res_: 'Resistance',
+  resRed_: 'Resistance Reduction',
 }
 
 export const elementalData: Record<AttributeKey, string> = {

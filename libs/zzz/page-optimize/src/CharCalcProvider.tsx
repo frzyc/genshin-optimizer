@@ -54,7 +54,7 @@ export function CharCalcProvider({
         enemy.common.lvl.add(charOpt.enemyLvl),
         enemy.common.def.add(charOpt.enemyDef),
         enemy.common.isStunned.add(charOpt.enemyisStunned ? 1 : 0),
-        enemy.common.stun_.add(1.5),
+        enemy.common.stun_.add(charOpt.enemyStunMultiplier / 100),
         enemy.common.unstun_.add(1),
         ...charOpt.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValue }) =>
@@ -67,6 +67,12 @@ export function CharCalcProvider({
           withPreset(`preset0`, {
             // since bonusStats are applied to own*, needs {src:key, dst:never}
             tag: { ...tag, src: character.key, sheet: 'agg', et: 'own' },
+            value: constant(toDecimal(value, tag.q ?? '')),
+          })
+        ),
+        ...charOpt.enemyStats.flatMap(({ tag, value }) =>
+          withPreset(`preset0`, {
+            tag: { ...tag, qt: 'common', et: 'enemy', sheet: 'agg' },
             value: constant(toDecimal(value, tag.q ?? '')),
           })
         ),
