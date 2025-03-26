@@ -76,8 +76,7 @@ export class Calculator<
           [dst ?? 'All']: { [src]: { [sheet!]: { [q!]: val } } },
         })
     }
-    if (op === 'read')
-      [op, ex] = [ex ?? this.defaultAccu(tag!) ?? 'read', undefined]
+    if (op === 'read' && ex !== 'unique') [op, ex] = [ex, undefined]
     switch (op) {
       case 'sum':
       case 'prod':

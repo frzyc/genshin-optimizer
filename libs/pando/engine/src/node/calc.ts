@@ -129,6 +129,7 @@ export class Calculator<M = any> {
         const computed = this._gather(newCache)
         const { pre } = computed
         const ex = n.ex ?? this.defaultAccu(newCache.tag) ?? 'unique'
+        if (ex !== n.ex) n = { ...n, ex }
 
         if (computed[ex]) return computed[ex]
         if (isDebug('calc') && ex === 'unique' && pre.length !== 1)
