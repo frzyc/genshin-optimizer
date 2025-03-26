@@ -16,6 +16,8 @@ import type {
   Sheet,
   Src,
   Tag,
+  enemy,
+  own,
 } from '@genshin-optimizer/zzz/formula'
 import {
   formulas,
@@ -56,7 +58,6 @@ export const targetQ = [
   'hp',
   'atk',
   'def',
-  'pen',
   'impact',
   'enerRegen',
   'anomProf',
@@ -75,7 +76,7 @@ export type TargetTag = {
 
 // Bonus Stats
 export const bonusStatQtKeys = ['combat', 'base', 'initial'] as const
-export const bonusStatKeys = [
+export const bonusStatKeys: Array<keyof typeof own.final> = [
   'hp',
   'hp_',
   'def',
@@ -99,6 +100,16 @@ export const bonusStatDmgTypeIncStats = [
   'crit_',
   'crit_dmg_',
 ] as const
+
+export const enemyStatKeys: Array<keyof typeof enemy.common> = [
+  'defRed_',
+  'res_',
+  'resRed_',
+  'stun_',
+  'unstun_',
+] as const
+
+export type EnemyStatKey = (typeof enemyStatKeys)[number]
 
 // Could add 'elemental' back if there is all elemental dmg bonus in the future
 export type BonusStatDamageType = Exclude<
@@ -129,6 +140,11 @@ export type BonusStatTag = {
   damageType2?: 'aftershock'
 }
 
+export type EnemyStatsTag = {
+  q: EnemyStatKey
+  attribute?: AttributeKey
+}
+
 export type CharOpt = {
   target?: TargetTag
 
@@ -149,6 +165,11 @@ export type CharOpt = {
   enemyLvl: number
   enemyDef: number
   enemyisStunned: boolean
+  enemyStunMultiplier: number
+  enemyStats: Array<{
+    tag: EnemyStatsTag
+    value: number
+  }>
 
   // link to optConfig
   optConfigId?: string
@@ -173,6 +194,8 @@ export class CharacterOptManager extends DataManager<
       enemyLvl,
       enemyDef,
       enemyisStunned,
+      enemyStunMultiplier,
+      enemyStats,
 
       optConfigId,
     } = obj as CharOpt
@@ -241,11 +264,14 @@ export class CharacterOptManager extends DataManager<
       })
       .filter(notEmpty)
     if (!Array.isArray(bonusStats)) bonusStats = []
-    bonusStats = bonusStats.map(
-      ({ tag: { q, qt, attribute, damageType1, damageType2 }, value }) => {
+    bonusStats = bonusStats
+      .map(({ tag: { q, qt, attribute, damageType1, damageType2 }, value }) => {
         if (typeof value !== 'number') value = 0
-        q = validateValue(q, bonusStatKeys) ?? 'atk'
-        qt = validateValue(qt, bonusStatQtKeys) ?? 'combat'
+        const q_ = validateValue(q, bonusStatKeys)
+        const qt_ = validateValue(qt, bonusStatQtKeys)
+        if (!q_ || !qt_) return undefined
+        q = q_
+        qt = qt_
 
         if (q !== 'dmg_') attribute = undefined
         if (attribute) attribute = validateValue(attribute, allAttributeKeys)
@@ -273,14 +299,35 @@ export class CharacterOptManager extends DataManager<
           }) as BonusStatTag,
           value,
         }
-      }
-    )
+      })
+      .filter(notEmpty)
 
     if (!critModeKeys.includes(critMode)) critMode = 'avg'
 
     if (typeof enemyLvl !== 'number') enemyLvl = 80
     if (typeof enemyDef !== 'number') enemyDef = 953
     enemyisStunned = !!enemyisStunned
+
+    if (typeof enemyStunMultiplier !== 'number') enemyStunMultiplier = 150
+    if (!Array.isArray(enemyStats)) enemyStats = []
+    enemyStats = enemyStats
+      .map(({ tag: { q, attribute }, value }) => {
+        if (typeof value !== 'number') value = 0
+        const q_ = validateValue(q, enemyStatKeys)
+        if (!q_) return undefined
+        q = q_
+
+        if (attribute) attribute = validateValue(attribute, allAttributeKeys)
+
+        return {
+          tag: removeUndefinedFields({
+            q,
+            attribute,
+          }) as EnemyStatsTag,
+          value,
+        }
+      })
+      .filter(notEmpty)
 
     if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = undefined
@@ -294,6 +341,8 @@ export class CharacterOptManager extends DataManager<
       enemyLvl,
       enemyDef,
       enemyisStunned,
+      enemyStunMultiplier,
+      enemyStats,
 
       optConfigId,
     }
@@ -381,6 +430,28 @@ export class CharacterOptManager extends DataManager<
       return { bonusStats }
     })
   }
+  setEnemyStat(
+    charKey: CharacterKey,
+    tag: EnemyStatsTag,
+    value: number | null, // use null to remove the stat
+    index?: number // to edit an existing stat
+  ) {
+    this.set(charKey, (charOpt) => {
+      const statIndex =
+        index ??
+        charOpt.enemyStats.findIndex((s) => shallowCompareObj(s.tag, tag))
+      const enemyStats = [...charOpt.enemyStats]
+      if (statIndex === -1 && value !== null) {
+        enemyStats.push({ tag, value })
+      } else if (value === null && statIndex > -1) {
+        enemyStats.splice(statIndex, 1)
+      } else if (value !== null && statIndex > -1) {
+        enemyStats[statIndex].value = value
+        enemyStats[statIndex].tag = tag
+      }
+      return { enemyStats }
+    })
+  }
 }
 
 export function initialCharOpt(): CharOpt {
@@ -392,6 +463,8 @@ export function initialCharOpt(): CharOpt {
     enemyLvl: 80,
     enemyDef: 953,
     enemyisStunned: false,
+    enemyStunMultiplier: 150,
+    enemyStats: [],
   }
 }
 
@@ -436,5 +509,10 @@ export function newBonusStatTag(q: BonusStatKey): BonusStatTag {
   return {
     q,
     qt: 'combat',
+  }
+}
+export function newEnemyStatTag(q: EnemyStatKey): EnemyStatsTag {
+  return {
+    q,
   }
 }

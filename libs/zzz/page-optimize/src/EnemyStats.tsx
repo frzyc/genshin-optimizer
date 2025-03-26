@@ -1,31 +1,25 @@
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   ColorText,
   DropdownButton,
   NumberInputLazy,
-  TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
+import { isIn, shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
-import type { BonusStatKey, BonusStatTag } from '@genshin-optimizer/zzz/db'
-import {
-  bonusStatDamageTypes,
-  bonusStatDmgTypeIncStats,
-  bonusStatQtKeys,
-} from '@genshin-optimizer/zzz/db'
-import { bonusStatKeys, newBonusStatTag } from '@genshin-optimizer/zzz/db'
+import type { EnemyStatKey, EnemyStatsTag } from '@genshin-optimizer/zzz/db'
+import { enemyStatKeys, newEnemyStatTag } from '@genshin-optimizer/zzz/db'
 import {
   useCharOpt,
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
-import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
-import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
+import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
+import { AttributeName } from '@genshin-optimizer/zzz/ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
+  Box,
+  Button,
   CardContent,
   Divider,
   IconButton,
@@ -35,37 +29,65 @@ import {
   Typography,
 } from '@mui/material'
 import { useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
-import { AfterShockToggleButton } from './AfterShockToggleButton'
-import { DmgTypeDropdown } from './DmgTypeDropdown'
 
-export function BonusStatsSection() {
-  const { t } = useTranslation('page_optimize')
+export function EnemyStatsSection() {
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
-  const { bonusStats } = useCharOpt(characterKey)!
-  const charMetaDesc = useDataManagerBase(
-    database.charMeta,
-    characterKey
-  )?.description
+  const {
+    enemyStats,
+    enemyLvl,
+    enemyDef,
+    enemyisStunned,
+    enemyStunMultiplier,
+  } = useCharOpt(characterKey)!
+
   const setStat = useCallback(
-    (tag: BonusStatTag, value: number | null, index?: number) =>
-      database.charOpts.setBonusStat(characterKey, tag, value, index),
+    (tag: EnemyStatsTag, value: number | null, index?: number) =>
+      database.charOpts.setEnemyStat(characterKey, tag, value, index),
     [database, characterKey]
   )
-  const newTarget = (q: BonusStatKey) =>
-    database.charOpts.setBonusStat(characterKey, newBonusStatTag(q), 0)
-  const setDescription = useCallback(
-    (description: string | undefined) => {
-      database.charMeta.set(characterKey, { description })
-    },
-    [database.charMeta, characterKey]
-  )
+  const newTarget = (q: EnemyStatKey) =>
+    database.charOpts.setEnemyStat(characterKey, newEnemyStatTag(q), 0)
 
   return (
     <Stack spacing={1}>
-      {bonusStats.map(({ tag, value }, i) => (
-        <BonusStatDisplay
+      <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+        <NumberInputLazy
+          label="Enemy Lvl"
+          value={enemyLvl}
+          inputProps={{ min: 0, sx: { width: '4em' } }}
+          onChange={(v) => database.charOpts.set(characterKey, { enemyLvl: v })}
+        />
+        <NumberInputLazy
+          label="Enemy DEF"
+          value={enemyDef}
+          inputProps={{ min: 0, sx: { width: '4em' } }}
+          onChange={(v) => database.charOpts.set(characterKey, { enemyDef: v })}
+        />
+        <NumberInputLazy
+          label="Enemy Stun Multiplier"
+          value={enemyStunMultiplier}
+          inputProps={{ min: 0, sx: { width: '8em' } }}
+          onChange={(v) =>
+            database.charOpts.set(characterKey, { enemyStunMultiplier: v })
+          }
+          InputProps={{
+            endAdornment: <InputAdornment position="end">%</InputAdornment>,
+          }}
+        />
+        <Button
+          onClick={() =>
+            database.charOpts.set(characterKey, {
+              enemyisStunned: !enemyisStunned,
+            })
+          }
+          color={enemyisStunned ? 'success' : 'secondary'}
+        >
+          {enemyisStunned ? 'Stunned' : 'Not Stunned'}
+        </Button>
+      </Box>
+      {enemyStats.map(({ tag, value }, i) => (
+        <EnemyStatDisplay
           key={JSON.stringify(tag) + i}
           tag={tag}
           value={value}
@@ -75,15 +97,6 @@ export function BonusStatsSection() {
         />
       ))}
       <InitialStatDropdown onSelect={newTarget} />
-      <TextFieldLazy
-        placeholder={t('bonusStatsNotes')}
-        value={charMetaDesc}
-        disabled={!characterKey}
-        onChange={(value) => setDescription(value)}
-        multiline
-        minRows={3}
-        fullWidth
-      />
     </Stack>
   )
 }
@@ -93,30 +106,40 @@ function InitialStatDropdown({
   onSelect,
 }: {
   tag?: Tag
-  onSelect: (key: BonusStatKey) => void
+  onSelect: (key: EnemyStatKey) => void
 }) {
   return (
     <DropdownButton
-      title={(tag && <TagDisplay tag={tag} />) ?? 'Add Bonus Stat'}
+      title={
+        (tag && (
+          <TagDisplay
+            tag={{ ...tag, qt: 'common', et: 'enemy', sheet: 'agg' }}
+          />
+        )) ??
+        'Add Enemy Stat'
+      }
     >
-      {bonusStatKeys.map((statKey) => (
+      {enemyStatKeys.map((statKey) => (
         <MenuItem key={statKey} onClick={() => onSelect(statKey)}>
-          <StatDisplay statKey={statKey as StatKey} showPercent />
+          <TagDisplay
+            tag={{ q: statKey, qt: 'common', et: 'enemy', sheet: 'agg' }}
+            showPercent
+          />
         </MenuItem>
       ))}
     </DropdownButton>
   )
 }
 
-function BonusStatDisplay({
+function EnemyStatDisplay({
   tag,
   setTag,
   value,
   setValue,
   onDelete,
 }: {
-  tag: BonusStatTag
-  setTag: (tag: BonusStatTag) => void
+  tag: EnemyStatsTag
+  setTag: (tag: EnemyStatsTag) => void
   value: number
   setValue: (value: number) => void
   onDelete: () => void
@@ -136,37 +159,12 @@ function BonusStatDisplay({
         <Typography>
           <TagDisplay tag={tag} />
         </Typography>
-        <QtDropdown qt={tag.qt} setQt={(qt) => setTag({ ...tag, qt })} />
-        {tag.q === 'dmg_' && (
+        {isIn(['res_', 'resRed_'] as const, tag.q) && (
           <AttributeDropdown
             tag={tag}
             setAttribute={(ele) => {
               const { attribute, ...rest } = tag
               setTag(ele ? { ...rest, attribute: ele } : rest)
-            }}
-          />
-        )}
-        {bonusStatDmgTypeIncStats.includes(
-          tag.q as (typeof bonusStatDmgTypeIncStats)[number]
-        ) && (
-          <DmgTypeDropdown
-            dmgType={tag.damageType1}
-            keys={bonusStatDamageTypes}
-            setDmgType={(dmgType) => {
-              const { damageType1, ...rest } = tag
-              setTag(dmgType ? { ...rest, damageType1: dmgType } : rest)
-            }}
-          />
-        )}
-        {/* in-game there is only buffs that increase aftershock dmg_ and crit_dmg_ */}
-        {(['dmg_', 'crit_dmg_'] as const).includes(
-          tag.q as 'dmg_' | 'crit_dmg_'
-        ) && (
-          <AfterShockToggleButton
-            isAftershock={tag.damageType2 === 'aftershock'}
-            setAftershock={(aftershock) => {
-              const { damageType2, ...rest } = tag
-              setTag(aftershock ? { ...rest, damageType2: 'aftershock' } : rest)
             }}
           />
         )}
@@ -183,7 +181,7 @@ function BonusStatDisplay({
               <InputAdornment position="end" sx={{ ml: 0 }}>
                 {isPercent ? '%' : undefined}{' '}
                 <IconButton
-                  aria-label="Delete Bonus Stat"
+                  aria-label="Delete Enemy Stat"
                   onClick={onDelete}
                   edge="end"
                 >
@@ -212,7 +210,7 @@ function AttributeDropdown({
   tag,
   setAttribute,
 }: {
-  tag: BonusStatTag
+  tag: EnemyStatsTag
   setAttribute: (ele: Attribute | null) => void
 }) {
   return (
@@ -232,29 +230,6 @@ function AttributeDropdown({
           <ColorText color={attr}>
             <AttributeName attribute={attr} />
           </ColorText>
-        </MenuItem>
-      ))}
-    </DropdownButton>
-  )
-}
-
-function QtDropdown({
-  qt,
-  setQt,
-}: {
-  qt: Tag['qt']
-  setQt: (ele: (typeof bonusStatQtKeys)[number]) => void
-}) {
-  return (
-    <DropdownButton title={qt && qtMap[qt as keyof typeof qtMap]}>
-      {bonusStatQtKeys.map((q) => (
-        <MenuItem
-          key={q}
-          onClick={() => setQt(q)}
-          selected={qt === q}
-          disabled={qt === q}
-        >
-          {qtMap[q]}
         </MenuItem>
       ))}
     </DropdownButton>
