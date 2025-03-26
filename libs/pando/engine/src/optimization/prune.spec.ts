@@ -19,6 +19,7 @@ import { State, pruneBranches, pruneRange, reaffine } from './prune'
 const r0 = read({ q: 'c0' })
 const r1 = read({ q: 'c1' })
 const r2 = read({ q: 'c2' })
+const r4 = read({ q: 'c4' })
 
 addCustomOperation('sqrt', {
   range: ([r]) => {
@@ -47,6 +48,9 @@ describe('pruning', () => {
     const nodes = [
       prod(7, sum(r0, prod(3, r1), 6), sum(r0, r1, 2)),
       constant(11),
+      sum(r0, prod(3, 4, 5)),
+      sum(r0, sum(3, 4, 5)),
+      sum(r0, 77),
     ]
     const state = new State(nodes, [], candidates, 'q')
     state.progress = false
@@ -54,15 +58,21 @@ describe('pruning', () => {
     expect(state.progress).toBe(true)
     // Normally the reaffined keys are unspecified, but since the current
     // algorithm is deterministic, we can just run it and note the keys
-    // [c0, c1] = [c0 + 3c1, c0 + c1]
+    // [c0, c1, c4] = [c0 + 3c1, c0 + c1, c0]
     expect(state.candidates).toEqual([
       [
-        { id: 1, c0: 9, c1: 3 },
-        { id: 2, c0: 12, c1: 8 },
-        { id: 3, c0: 13, c1: 11 },
+        { id: 1, c0: 9, c1: 3, c4: 0 },
+        { id: 2, c0: 12, c1: 8, c4: 6 },
+        { id: 3, c0: 13, c1: 11, c4: 10 },
       ],
     ])
-    expect(state.nodes).toEqual([prod(7, sum(6, r0), sum(2, r1)), constant(11)])
+    expect(state.nodes).toEqual([
+      prod(7, sum(6, r0), sum(2, r1)),
+      constant(11),
+      sum(60, r4),
+      sum(12, r4),
+      sum(77, r4),
+    ])
   })
   test('pruneBranches', () => {
     const nodes = [
