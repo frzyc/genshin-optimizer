@@ -22,7 +22,7 @@ export function OptTargetRow({
       gap={1}
       sx={{
         position: 'sticky',
-        top: 40,
+        top: 36,
         zIndex: 100,
         background: '#0C1020',
       }}

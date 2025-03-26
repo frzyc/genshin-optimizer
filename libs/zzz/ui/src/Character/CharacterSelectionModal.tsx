@@ -35,12 +35,13 @@ import {
   Divider,
   Grid,
   IconButton,
+  Skeleton,
   TextField,
   Typography,
   useTheme,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
-import React, { useDeferredValue, useMemo, useState } from 'react'
+import React, { Suspense, useDeferredValue, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharSpecialtyToggle, ElementToggle } from '../toggles'
 import {
@@ -59,7 +60,7 @@ export function CharacterSingleSelectionModal({
   show: boolean
   onHide: () => void
   onSelect: (cKey: CharacterKey) => void
-  newFirst: boolean
+  newFirst?: boolean
 }) {
   const { database } = useDatabaseContext()
   const displayCharacter = useDataEntryBase(database.displayCharacter)
@@ -119,31 +120,41 @@ export function CharacterSingleSelectionModal({
       onClose={onClose}
     >
       <CardContent sx={{ flex: '1', overflow: 'auto' }}>
-        <Grid container spacing={0.5} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
-          {characterKeyList.map((characterKey) => (
-            <Grid item key={characterKey} xs={1}>
-              <CardThemed
-                bgt="light"
-                sx={(theme) => ({
-                  position: 'relative',
-                  flexGrow: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  borderRadius: '40px 16px 16px 40px',
-                  border: `3px solid ${theme.palette.contentZzz.main}`,
-                })}
-              >
-                <SelectionCard
-                  characterKey={characterKey}
-                  onClick={() => {
-                    onHide()
-                    onSelect(characterKey)
-                  }}
-                />
-              </CardThemed>
-            </Grid>
-          ))}
-        </Grid>
+        <Suspense
+          fallback={
+            <Skeleton variant="rectangular" width="100%" height={1000} />
+          }
+        >
+          <Grid
+            container
+            spacing={0.5}
+            columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}
+          >
+            {characterKeyList.map((characterKey) => (
+              <Grid item key={characterKey} xs={1}>
+                <CardThemed
+                  bgt="light"
+                  sx={(theme) => ({
+                    position: 'relative',
+                    flexGrow: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    borderRadius: '40px 16px 16px 40px',
+                    border: `3px solid ${theme.palette.contentZzz.main}`,
+                  })}
+                >
+                  <SelectionCard
+                    characterKey={characterKey}
+                    onClick={() => {
+                      onHide()
+                      onSelect(characterKey)
+                    }}
+                  />
+                </CardThemed>
+              </Grid>
+            ))}
+          </Grid>
+        </Suspense>
       </CardContent>
     </CharacterSelectionModalBase>
   )

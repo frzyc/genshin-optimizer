@@ -20,7 +20,7 @@ export function CharIconCircle({
 }: {
   characterKey: CharacterKey
 }) {
-  const genshinAsset = characterAsset(characterKey, 'circle')
+  const charAsset = characterAsset(characterKey, 'circle')
 
-  return <CharIconWrapper src={genshinAsset} />
+  return <CharIconWrapper src={charAsset} />
 }
