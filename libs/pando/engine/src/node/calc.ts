@@ -94,7 +94,7 @@ export class Calculator<M = any> {
       case 'max':
       case 'sumfrac': {
         const x = n.x.map((n) => this._compute(n, cache))
-        return finalize(arithmetic[op](getV(x), n.ex), x, [])
+        return finalize(arithmetic[op](getV(x)), x, [])
       }
       case 'thres':
       case 'match':
@@ -134,7 +134,7 @@ export class Calculator<M = any> {
         if (computed[ex]) return computed[ex]
         if (isDebug('calc') && ex === 'unique' && pre.length !== 1)
           throw new Error(`Ill-form read for ${tagString(newCache.tag)}`)
-        const val = arithmetic[ex](getV(pre) as number[], undefined)
+        const val = arithmetic[ex](getV(pre) as number[])
         return (computed[ex] = finalize(val, pre, [], newCache.tag))
       }
       case 'custom': {

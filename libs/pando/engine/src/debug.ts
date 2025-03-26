@@ -112,7 +112,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     const op = n.op === 'read' ? n.ex : n.op
     const omitted: DebugMeta[] = []
     if (op! in arithmetic) {
-      const ignorable = arithmetic[op as keyof typeof arithmetic]([], undefined)
+      const ignorable = arithmetic[op as keyof typeof arithmetic]([])
       for (const arg of [...br, ...x])
         if (arg.val !== ignorable || this.filter(arg)) args.push(arg)
         else omitted.push(arg)

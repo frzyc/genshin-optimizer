@@ -433,10 +433,10 @@ function computeNodeRanges(
     ): Range {
       const calc = arithmetic[op]
       const vals = [
-        calc([x0.min, x1.min], undefined),
-        calc([x0.min, x1.max], undefined),
-        calc([x0.max, x1.min], undefined),
-        calc([x0.max, x1.max], undefined),
+        calc([x0.min, x1.min]),
+        calc([x0.min, x1.max]),
+        calc([x0.max, x1.min]),
+        calc([x0.max, x1.max]),
       ]
       return { min: Math.min(...vals), max: Math.max(...vals) }
     }
