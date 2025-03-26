@@ -6,6 +6,7 @@
   "specialty": "defense",
   "faction": "CriminalInvestigationSpecialResponseTeam",
   "fullname": "Seth Lowell",
+  "name": "Seth",
   "stats": {
     "atk_base": 93,
     "atk_growth": 5.2593,

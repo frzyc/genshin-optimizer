@@ -5,10 +5,10 @@ export function dumpChars(fileDir: string) {
   const charNames = {} as Record<CharacterKey, string>
 
   Object.entries(charactersDetailedJSONData).forEach(([charKey, charData]) => {
-    charNames[charKey] = charData.fullname
+    charNames[charKey] = charData.name
 
     dumpFile(`${fileDir}/char_${charKey}_gen.json`, {
-      name: charData.fullname,
+      name: charData.name,
       // TODO: actual skill/core data
     })
   })

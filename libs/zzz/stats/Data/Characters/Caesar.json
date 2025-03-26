@@ -6,6 +6,7 @@
   "specialty": "defense",
   "faction": "SonsOfCalydon",
   "fullname": "Caesar King",
+  "name": "Caesar",
   "stats": {
     "atk_base": 101,
     "atk_growth": 5.8761,

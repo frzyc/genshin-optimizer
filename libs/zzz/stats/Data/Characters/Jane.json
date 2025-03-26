@@ -6,6 +6,7 @@
   "specialty": "anomaly",
   "faction": "CriminalInvestigationSpecialResponseTeam",
   "fullname": "Jane Doe",
+  "name": "Jane",
   "stats": {
     "atk_base": 127,
     "atk_growth": 7.6728,

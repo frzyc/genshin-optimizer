@@ -1,20 +1,30 @@
 'use client'
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
   NextImage,
+  SortByButton,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
-import { catTotal } from '@genshin-optimizer/common/util'
+import {
+  catTotal,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import { characterAsset, rarityDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  AttributeKey,
+  CharacterKey,
+  SpecialityKey,
+} from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeKeys,
   allCharacterKeys,
   allSpecialityKeys,
 } from '@genshin-optimizer/zzz/consts'
-import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
+import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
 import CloseIcon from '@mui/icons-material/Close'
@@ -25,41 +35,103 @@ import {
   Divider,
   Grid,
   IconButton,
+  TextField,
   Typography,
+  useTheme,
 } from '@mui/material'
-import React, { useMemo } from 'react'
+import type { ChangeEvent } from 'react'
+import React, { useDeferredValue, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ElementToggle, WengineToggle } from '../toggles'
+import { CharSpecialtyToggle, ElementToggle } from '../toggles'
+import {
+  type CharacterSortKey,
+  characterFilterConfigs,
+  characterSortConfigs,
+  characterSortMap,
+} from './CharacterSort'
 
 export function CharacterSingleSelectionModal({
   show,
   onHide,
   onSelect,
+  newFirst = false,
 }: {
   show: boolean
   onHide: () => void
   onSelect: (cKey: CharacterKey) => void
+  newFirst: boolean
 }) {
+  const { database } = useDatabaseContext()
+  const displayCharacter = useDataEntryBase(database.displayCharacter)
+  const [searchTerm, setSearchTerm] = useState('')
+  const deferredSearchTerm = useDeferredValue(searchTerm)
+  const deferredState = useDeferredValue(displayCharacter)
+  const characterKeyList = useMemo(() => {
+    const { attribute, specialtyType, sortType, ascending } = deferredState
+    const sortByKeys = [
+      ...(newFirst ? ['new'] : []),
+      ...(characterSortMap[sortType] ?? []),
+    ] as CharacterSortKey[]
+    const filteredKeys = allCharacterKeys
+      .filter(
+        filterFunction(
+          { attribute, specialtyType, name: deferredSearchTerm },
+          characterFilterConfigs(database)
+        )
+      )
+      .sort(
+        sortFunction(sortByKeys, ascending, characterSortConfigs(database), [
+          'new',
+        ])
+      )
+    return filteredKeys
+  }, [deferredState, newFirst, deferredSearchTerm, database])
+
   const onClose = () => {
+    setSearchTerm('')
     onHide()
   }
 
+  const filterSearchSortProps = {
+    searchTerm: searchTerm,
+    onChangeSpecialtyFilter: (specialtyType: SpecialityKey[]) => {
+      database.displayCharacter.set({ specialtyType })
+    },
+    onChangeAttributeFilter: (attribute: AttributeKey[]) => {
+      database.displayCharacter.set({ attribute })
+    },
+    onChangeSearch: (e: ChangeEvent<HTMLTextAreaElement>) => {
+      setSearchTerm(e.target.value)
+    },
+    onChangeSort: (sortType: CharacterSortKey) => {
+      database.displayCharacter.set({ sortType })
+    },
+    onChangeAsc: (ascending: boolean) => {
+      database.displayCharacter.set({ ascending })
+    },
+  }
+
   return (
-    <CharacterSelectionModalBase show={show} onClose={onClose}>
+    <CharacterSelectionModalBase
+      show={show}
+      charactersToShow={characterKeyList}
+      filterSearchSortProps={filterSearchSortProps}
+      onClose={onClose}
+    >
       <CardContent sx={{ flex: '1', overflow: 'auto' }}>
-        <Grid container spacing={1} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
-          {allCharacterKeys.map((characterKey) => (
+        <Grid container spacing={0.5} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
+          {characterKeyList.map((characterKey) => (
             <Grid item key={characterKey} xs={1}>
               <CardThemed
                 bgt="light"
-                sx={() => {
-                  return {
-                    position: 'relative',
-                    flexGrow: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }
-                }}
+                sx={(theme) => ({
+                  position: 'relative',
+                  flexGrow: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  borderRadius: '40px 16px 16px 40px',
+                  border: `3px solid ${theme.palette.contentZzz.main}`,
+                })}
               >
                 <SelectionCard
                   characterKey={characterKey}
@@ -77,40 +149,60 @@ export function CharacterSingleSelectionModal({
   )
 }
 
+type FilterSearchSortProps = {
+  searchTerm: string
+  onChangeSpecialtyFilter: (weaps: SpecialityKey[]) => void
+  onChangeAttributeFilter: (elements: AttributeKey[]) => void
+  onChangeSearch: (e: ChangeEvent<HTMLTextAreaElement>) => void
+  onChangeSort: (sortType: CharacterSortKey) => void
+  onChangeAsc: (asc: boolean) => void
+}
+
 type CharacterSelectionModalBaseProps = {
   show: boolean
+  charactersToShow: CharacterKey[]
+  filterSearchSortProps: FilterSearchSortProps
   onClose: () => void
   children: React.ReactNode
 }
+const sortKeys = Object.keys(characterSortMap)
 
 function CharacterSelectionModalBase({
   show,
+  charactersToShow,
+  filterSearchSortProps,
   onClose,
   children,
 }: CharacterSelectionModalBaseProps) {
-  const weaponTotals = useMemo(
+  const { t } = useTranslation('page_characters')
+  const { database } = useDatabaseContext()
+  const displayCharacter = useDataEntryBase(database.displayCharacter)
+
+  const charSpecialtyTotals = useMemo(
     () =>
-      catTotal(allSpecialityKeys, (ct) =>
-        allCharacterKeys.forEach((ck) => {
-          const wtk = getCharStat(ck).specialty
-          ct[wtk].total++
-          if (allCharacterKeys.includes(ck)) ct[wtk].current++
+      catTotal(allSpecialityKeys, (sk) =>
+        database.chars.entries.forEach(([id, char]) => {
+          const specialty = getCharStat(char.key).specialty
+          sk[specialty].total++
+          if (charactersToShow.includes(id)) sk[specialty].current++
         })
       ),
-    []
+    [charactersToShow, database.chars.entries]
   )
 
   const attributeTotals = useMemo(
     () =>
       catTotal(allAttributeKeys, (ct) =>
-        allCharacterKeys.forEach((ck) => {
-          const attr = getCharStat(ck).attribute
-          ct[attr].total++
-          if (allCharacterKeys.includes(ck)) ct[attr].current++
+        Object.entries(database.chars.data).forEach(([ck]) => {
+          const attribute = getCharStat(ck).attribute
+          ct[attribute].total++
+          if (charactersToShow.includes(ck)) ct[attribute].current++
         })
       ),
-    []
+    [charactersToShow, database.chars.data]
   )
+
+  const { specialtyType, attribute, sortType, ascending } = displayCharacter
 
   return (
     <ModalWrapper
@@ -139,15 +231,19 @@ function CharacterSelectionModalBase({
         >
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-              <WengineToggle
-                onChange={() => {}}
-                value={['attack']}
-                totals={weaponTotals}
+              <CharSpecialtyToggle
+                onChange={(specialtyType) =>
+                  database.displayCharacter.set({ specialtyType })
+                }
+                value={specialtyType}
+                totals={charSpecialtyTotals}
                 size="small"
               />
               <ElementToggle
-                onChange={() => {}}
-                value={['fire']}
+                onChange={(attribute) =>
+                  database.displayCharacter.set({ attribute })
+                }
+                value={attribute}
                 totals={attributeTotals}
                 size="small"
               />
@@ -155,6 +251,32 @@ function CharacterSelectionModalBase({
             <IconButton sx={{ ml: 'auto' }} onClick={() => onClose()}>
               <CloseIcon />
             </IconButton>
+          </Box>
+          <Box display="flex" gap={1}>
+            <TextField
+              autoFocus
+              value={filterSearchSortProps.searchTerm}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+                filterSearchSortProps.onChangeSearch(e)
+              }
+              label={t('characterName')}
+              size="small"
+              sx={{ height: '100%', mr: 'auto' }}
+              InputProps={{
+                sx: { height: '100%' },
+              }}
+            />
+            <SortByButton
+              sortKeys={sortKeys}
+              value={sortType}
+              onChange={(sortType) =>
+                filterSearchSortProps.onChangeSort(sortType)
+              }
+              ascending={ascending}
+              onChangeAsc={(ascending) =>
+                filterSearchSortProps.onChangeAsc(ascending)
+              }
+            />
           </Box>
         </CardContent>
         <Divider />
@@ -172,16 +294,24 @@ function SelectionCard({
   onClick: () => void
 }) {
   const { t } = useTranslation(['page_characters', 'charNames_gen'])
+  const theme = useTheme()
   const character = useCharacter(characterKey)
-  const { rarity } = getCharStat(characterKey)
+  const { rarity, attribute } = getCharStat(characterKey)
   const { level = 1, promotion = 0, mindscape = 0 } = character ?? {}
+  const selectorBackgroundColor =
+    attribute === 'electric'
+      ? theme.palette[attribute].light
+      : theme.palette[attribute].main
 
   return (
     <CardActionArea onClick={onClick}>
       <Box
-        display="flex"
-        position="relative"
         sx={{
+          position: 'relative',
+          width: '100%',
+          display: 'flex',
+          padding: '3px',
+          gap: 0.5,
           '&::before': {
             content: '""',
             display: 'block',
@@ -191,45 +321,57 @@ function SelectionCard({
             width: '100%',
             height: '100%',
             opacity: 0.7,
+            background: selectorBackgroundColor,
           },
         }}
-        width="100%"
       >
         <Box
-          flexShrink={1}
-          sx={{ maxWidth: { xs: '33%', lg: '30%' } }}
-          alignSelf="flex-end"
-          display="flex"
-          flexDirection="column"
-          zIndex={1}
+          sx={{
+            maxWidth: { xs: '33%', lg: '30%' },
+            alignSelf: 'flex-end',
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: 1,
+            flexShrink: 1,
+          }}
         >
           <Box
             component={NextImage ? NextImage : 'img'}
-            src={characterAsset(characterKey, 'circle')}
-            width="100%"
-            height="auto"
-            maxWidth={256}
-            sx={{ mt: 'auto' }}
+            src={characterAsset(characterKey, 'interknot')}
           />
         </Box>
         <Box
-          flexGrow={1}
-          sx={{ pr: 1, pt: 1 }}
-          display="flex"
-          flexDirection="column"
-          zIndex={1}
-          justifyContent="space-evenly"
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: 1,
+            justifyContent: 'space-evenly',
+          }}
         >
-          <Typography variant="body2" sx={{ flexGrow: 1 }}>
-            <SqBadge
-              color={getCharStat(characterKey).attribute}
-              sx={{ opacity: 0.85, textShadow: '0 0 5px gray' }}
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <ImgIcon size={1.5} src={rarityDefIcon(rarity)} />
+            <Typography
+              variant="subtitle2"
+              sx={(theme) => ({
+                flexGrow: 1,
+                color: theme.palette.contentNormal.main,
+                fontWeight: '900',
+              })}
             >
               {t(`charNames_gen:${characterKey}`)}
-            </SqBadge>
-          </Typography>
+            </Typography>
+          </Box>
           {character ? (
-            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            <Box
+              sx={(theme) => ({
+                display: 'flex',
+                gap: 1,
+                alignItems: 'center',
+                background: theme.palette.contentNormal.main,
+                padding: '4px 12px',
+                borderRadius: '20px',
+              })}
+            >
               <Box sx={{ textShadow: '0 0 5px gray' }}>
                 <Typography
                   variant="body2"
@@ -250,10 +392,9 @@ function SelectionCard({
             </Box>
           ) : (
             <Typography component="span" variant="body2">
-              <SqBadge>{t('characterEditor.new')}</SqBadge>
+              <SqBadge color={'electric'}>{t('characterEditor.new')}</SqBadge>
             </Typography>
           )}
-          <ImgIcon size={1.5} src={rarityDefIcon(rarity)} />
         </Box>
       </Box>
     </CardActionArea>
