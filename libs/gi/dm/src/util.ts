@@ -56,7 +56,7 @@ const mapping: Record<string, string> = {
 ...{"GAKPNNNEMDA": "curveInfos", "BHFAPOEDIDB": "level"}, // 0 0 ExcelBinOutput/WeaponCurveExcelConfigData.json
 ...{"FJJHHKBDGBF": "destroyReturnMaterial", "DNINKKHEILA": "nameTextMapHash", "APHNFHKGLIK": "gachaCardNameHash", "ONBFCEGNNFL": "unRotate", "CKGCIFHOIGE": "storyId", "CIOOHIIEJLK": "awakenCosts", "IMNCLIODOBL": "rankLevel", "HFHCFPFILAF": "awakenLightMapTexture", "PJELHADHEFE": "destroyRule", "PGEPICIANFN": "descTextMapHash", "ECNHCKIACML": "destroyReturnMaterialCount", "CNPCNIGHGJJ": "icon", "MIIFBCAILME": "skillAffix", "JDJMHFKKGHH": "awakenTexture", "KMOCENBGOEM": "awakenIcon", "OBBFNHPMPDI": "weight", "CEBMMGCMIJM": "itemType", "FDNEGCICNBJ": "weaponProp", "JIEFGEDPAMG": "weaponType", "FOPEFBACEOP": "gadgetId", "NMHNGBPGPIL": "awakenMaterial", "PGGBIAAPEKB": "weaponBaseExp", "HMPDBGCJLMI": "rank", "FBBLKIKOFMD": "enhanceRule", "BIJNJPAKLGP": "initialLockState"}, // 4 2 ExcelBinOutput/WeaponExcelConfigData.json
 ...{"PNKJCBDHHHP": "addProps", "DGMGGMHAGOA": "weaponPromoteId", "IGOGOJFLEAD": "coinCost", "AKPHFJACMIB": "promoteLevel", "IGFEOKBEJCH": "costItems", "HEGKMDJHGCI": "requiredPlayerLevel", "OJIICILLMLH": "unlockMaxLevel"}, // 0 0 ExcelBinOutput/WeaponPromoteExcelConfigData.json
-"CMEOJJCIBDE": "value", "DELBOOLKFAO": "type", "IGIFKIGJHFB": "arith", "HKJMLLBFLOL": "count", "JBJFIDPCEAG": "growCurve", "JFALAEEKFMI": "talentId", "LLGCOHKLGGH": "initValue",
+"CMEOJJCIBDE": "value", "DELBOOLKFAO": "type", "IGIFKIGJHFB": "arith", "HKJMLLBFLOL": "count", "JBJFIDPCEAG": "growCurve", "JFALAEEKFMI": "talentId", "LLGCOHKLGGH": "initValue", "DDLIPFNCOMP": "itemCount", "JIOHEGJODPF": "itemId",
 }
 
 export function readTextmapJSON(path: string): Record<string, string> {

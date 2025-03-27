@@ -61,7 +61,7 @@ const ascensionSrc = readExcelJSON(
 export type AscensionRecord = {
   props: { [key: string]: number }
   scoinCost: number
-  costItems: Array<
+  costItems?: Array<
     | {
         id: number
         count: number

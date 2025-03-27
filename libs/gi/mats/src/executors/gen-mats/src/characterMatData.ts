@@ -51,7 +51,7 @@ export default function characterMatData(): CharacterMatDatas {
         skillArr.map((skill) => [
           skill.level,
           {
-            items: skill.costItems
+            items: (skill.costItems ?? [])
               .filter((item) => {
                 if ('id' in item && 'count' in item) {
                   return true
@@ -95,7 +95,7 @@ export default function characterMatData(): CharacterMatDatas {
         asc.promoteLevel as AscensionKey,
         {
           cost: asc.scoinCost,
-          items: asc.costItems
+          items: (asc.costItems ?? [])
             .filter((item) => {
               if ('id' in item && 'count' in item) {
                 return true
@@ -122,7 +122,7 @@ export default function characterMatData(): CharacterMatDatas {
     const { candSkillDepotIds, skillDepotId, avatarPromoteId } = charData
     const ascension = ascensionData[avatarPromoteId]
 
-    if (candSkillDepotIds.length) {
+    if (candSkillDepotIds?.length) {
       const [_1, pyro, hydro, anemo, _5, geo, electro, dendro] =
         candSkillDepotIds
 

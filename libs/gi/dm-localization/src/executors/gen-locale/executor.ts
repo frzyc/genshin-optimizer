@@ -252,7 +252,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       })
     }
 
-    if (candSkillDepotIds.length) {
+    if (candSkillDepotIds?.length) {
       //Traveler
       const [_1, pyro, hydro, anemo, _5, geo, electro, dendro] =
         candSkillDepotIds
@@ -333,7 +333,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
   //generate the MapHashes for localization for weapons
   Object.entries(weaponExcelConfigData).forEach(([weaponid, weaponData]) => {
     const { nameTextMapHash, descTextMapHash, skillAffix } = weaponData
-    const [ascensionDataId] = skillAffix
+    const [ascensionDataId] = skillAffix ?? []
     const ascData =
       ascensionDataId && equipAffixExcelConfigData[ascensionDataId]
     const weaponKey = weaponIdMap[weaponid]

@@ -14,7 +14,7 @@ export type ProudSkillExcelConfigData = {
   descTextMapHash: number //59436107,
   unlockDescTextMapHash: number //4234322242,
   icon: string //"UI_Talent_S_Noel_05",
-  costItems: CostItem[]
+  costItems?: CostItem[]
   // [
   //   {},
   //   {},

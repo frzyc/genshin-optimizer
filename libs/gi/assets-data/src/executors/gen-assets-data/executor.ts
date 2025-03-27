@@ -211,7 +211,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       })
     }
 
-    if (candSkillDepotIds.length) {
+    if (candSkillDepotIds?.length) {
       // Traveler
       const [, pyro, hydro, anemo, , geo, electro, dendro] = candSkillDepotIds
       // const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"

@@ -21,7 +21,7 @@ type WeaponExcelConfigData = {
       type: 'GROW_CURVE_ATTACK_201'
     },
     {
-      propType: 'FIGHT_PROP_DEFENSE_PERCENT'
+      propType: 'FIGHT_PROP_DEFENSE_PERCENT' | 'FIGHT_PROP_NONE'
       initValue: 0.11259999871253967
       type: 'GROW_CURVE_CRITICAL_201'
     },
