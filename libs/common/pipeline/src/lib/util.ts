@@ -26,9 +26,6 @@ export async function formatText(path: string, text: string): Promise<string> {
       'check',
       `--stdin-file-path=${path}`,
       `--config-path=${biomeConfigPath}`,
-      '--formatter-enabled=true',
-      '--organize-imports-enabled=true',
-      '--linter-enabled=false',
       '--fix',
     ])
 
