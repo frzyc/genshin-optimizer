@@ -12,9 +12,27 @@
     "curve": "GROW_CURVE_CRITICAL_101"
   },
   "lvlCurves": [
-    { "key": "atk", "base": 38.7413, "curve": "GROW_CURVE_ATTACK_101" },
-    { "key": "enerRech_", "base": 0.085, "curve": "GROW_CURVE_CRITICAL_101" }
+    {
+      "key": "atk",
+      "base": 38.7413,
+      "curve": "GROW_CURVE_ATTACK_101"
+    },
+    {
+      "key": "enerRech_",
+      "base": 0.085,
+      "curve": "GROW_CURVE_CRITICAL_101"
+    }
   ],
   "refinementBonus": {},
-  "ascensionBonus": { "atk": [0, 19.5, 38.9, 58.4, 77.8, 97.3, 116.7] }
+  "ascensionBonus": {
+    "atk": [
+      0,
+      19.5,
+      38.9,
+      58.4,
+      77.8,
+      97.3,
+      116.7
+    ]
+  }
 }
