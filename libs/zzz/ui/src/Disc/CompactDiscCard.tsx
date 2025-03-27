@@ -11,11 +11,7 @@ import {
   toPercent,
 } from '@genshin-optimizer/common/util'
 import { characterAsset, discDefIcon } from '@genshin-optimizer/zzz/assets'
-import type {
-  CharacterKey,
-  DiscRarityKey,
-  DiscSlotKey,
-} from '@genshin-optimizer/zzz/consts'
+import type { DiscRarityKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
@@ -117,7 +113,7 @@ export function CompactDiscCard({
                 >
                   {location ? (
                     <ImgIcon
-                      src={characterAsset(location as CharacterKey, 'circle')}
+                      src={characterAsset(location, 'circle')}
                       sx={(theme: Theme) => ({
                         border: `4px solid ${
                           theme.palette[rarityColor[disc.rarity]].main
