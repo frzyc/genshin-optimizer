@@ -2,6 +2,7 @@ import type { AnyNode, BaseRead, CalcResult, PreRead, TagCache } from './node'
 import { Calculator as BaseCalculator } from './node'
 import { arithmetic } from './node/formula'
 import type { Tag } from './tag'
+import { tagString } from './util'
 
 type TagStr = (tag: Tag, ex?: any) => string
 type Predicate = (debug: DebugMeta) => boolean
@@ -28,7 +29,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
 
   constructor(
     calc: BaseCalculator<any>,
-    tagStr: TagStr,
+    tagStr: TagStr = tagString,
     filter: Predicate = () => true
   ) {
     super(calc.cache.keys)
