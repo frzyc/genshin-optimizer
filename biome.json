@@ -20,8 +20,6 @@
       "./libs/zzz/dm/HakushinData",
       "**/*_gen.json",
       "./libs/gi/stats/Data/**",
-      "./libs/sr/stats/Data/**",
-      "./libs/zzz/stats/Data/**",
       "./.nx/cache",
       "./.nx/workspace-data",
       "./libs/*/localization/assets/locales/*/*.json"
