@@ -6,6 +6,8 @@ import type {
 } from '@genshin-optimizer/gi/dm'
 import {
   equipAffixExcelConfigData,
+  getHakushinWepData,
+  hakushinWeapons,
   propTypeMap,
   weaponExcelConfigData,
   weaponIdMap,
@@ -104,5 +106,39 @@ export default function weaponData() {
     })
   ) as Record<WeaponKey, WeaponDataGen>
   data.QuantumCatalyst = quantumCatalystData as WeaponDataGen
+  for (const key of hakushinWeapons) {
+    data[key] = getDataFromHakushin(key)
+  }
   return data
+}
+
+function getDataFromHakushin(key: WeaponKey) {
+  const data = getHakushinWepData(key)
+
+  const stats: WeaponDataGen = {
+    rarity: data.Rarity,
+    weaponType: weaponMap[data.WeaponType],
+    mainStat: {
+      type: propTypeMap[data.WeaponProp[0].propType],
+      base: data.WeaponProp[0].initValue,
+      curve: data.WeaponProp[0].type,
+    },
+    subStat: {
+      type: propTypeMap[data.WeaponProp[1].propType],
+      base: data.WeaponProp[1].initValue,
+      curve: data.WeaponProp[1].type,
+    },
+    lvlCurves: data.WeaponProp.map((prop) => ({
+      key: propTypeMap[prop.propType],
+      base: prop.initValue,
+      curve: prop.type,
+    })),
+    refinementBonus: {},
+    ascensionBonus: {
+      atk: Object.values(data.Ascension).map(
+        (asc) => asc.FIGHT_PROP_BASE_ATTACK
+      ),
+    },
+  }
+  return stats
 }

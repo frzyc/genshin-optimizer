@@ -1,6 +1,7 @@
 import type {
   ElementKey,
   LocationCharacterKey,
+  NonTravelerCharacterKey,
   RegionKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
@@ -14,6 +15,8 @@ import {
   characterIdMap,
   elementMap,
   fetterInfoExcelConfigData,
+  getHakushinCharData,
+  hakushinChars,
   propTypeMap,
   regionMap,
   weaponMap,
@@ -43,6 +46,7 @@ export type CharacterDataGen = {
   }
 }
 export type CharacterDatas = Record<LocationCharacterKey, CharacterDataGen>
+
 export default function characterData() {
   const data = Object.fromEntries(
     Object.entries(avatarExcelConfigData).map(([charid, charData]) => {
@@ -100,5 +104,41 @@ export default function characterData() {
     })
   ) as CharacterDatas
   data.Somnia = somniaData as CharacterDataGen
+  for (const key of hakushinChars) {
+    data[key] = getDataFromHakushin(key)
+  }
   return data
+}
+
+function getDataFromHakushin(key: NonTravelerCharacterKey) {
+  const data = getHakushinCharData(key)
+
+  const bases = [data.BaseHP, data.BaseATK, data.BaseDEF]
+  const ascension: CharacterDataGen['ascensionBonus'] = {}
+  for (const asc of data.StatsModifier.Ascension) {
+    for (const [prop, value] of Object.entries(asc)) {
+      const statKey = propTypeMap[prop]
+      if (!ascension[statKey]) ascension[statKey] = [0]
+      ascension[statKey].push(value)
+    }
+  }
+  const stats: CharacterDataGen = {
+    key,
+    rarity: QualityTypeMap[data.Rarity],
+    birthday: {
+      month: data.CharaInfo.Birth[0],
+      day: data.CharaInfo.Birth[1],
+    },
+    region: regionMap[data.CharaInfo.Region],
+    ele: elementMap[data.CharaInfo.Vision],
+    weaponType: weaponMap[data.Weapon],
+    lvlCurves: data.StatsModifier.PropGrowCurves.map((curve, index) => ({
+      curve: curve.growCurve,
+      key: propTypeMap[curve.type],
+      base: bases[index],
+    })),
+    ascensionBonus: ascension,
+  }
+
+  return stats
 }
