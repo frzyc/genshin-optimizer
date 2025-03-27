@@ -824,6 +824,10 @@
       "icon": "UI_EquipIcon_Bow_Qoyllorsnova",
       "awakenIcon": "UI_EquipIcon_Bow_Qoyllorsnova_Awaken"
     },
+    "VividNotions": {
+      "icon": "UI_EquipIcon_Catalyst_VaresaTransformer",
+      "awakenIcon": "UI_EquipIcon_Catalyst_VaresaTransformer_Awaken"
+    },
     "QuantumCatalyst": {}
   },
   "artifacts": {
@@ -1181,6 +1185,20 @@
       "sands": "UI_RelicIcon_15038_5",
       "goblet": "UI_RelicIcon_15038_1",
       "circlet": "UI_RelicIcon_15038_3"
+    },
+    "FinaleOfTheDeepGalleries": {
+      "goblet": "UI_RelicIcon_15040_1",
+      "plume": "UI_RelicIcon_15040_2",
+      "circlet": "UI_RelicIcon_15040_3",
+      "flower": "UI_RelicIcon_15040_4",
+      "sands": "UI_RelicIcon_15040_5"
+    },
+    "LongNightsOath": {
+      "goblet": "UI_RelicIcon_15039_1",
+      "plume": "UI_RelicIcon_15039_2",
+      "circlet": "UI_RelicIcon_15039_3",
+      "flower": "UI_RelicIcon_15039_4",
+      "sands": "UI_RelicIcon_15039_5"
     }
   },
   "chars": {
@@ -2872,6 +2890,40 @@
       "constellation4": "UI_Talent_S_PlayerFire_03",
       "constellation5": "UI_Talent_U_PlayerFire_02",
       "constellation6": "UI_Talent_S_PlayerFire_04"
+    },
+    "Iansan": {
+      "icon": "UI_AvatarIcon_Iansan",
+      "iconSide": "UI_AvatarIcon_Side_Iansan",
+      "banner": "UI_NameCardPic_Iansan_P",
+      "bar": "",
+      "skill": "Skill_S_Iansan_01",
+      "burst": "Skill_E_Iansan_01",
+      "passive1": "UI_Talent_S_Iansan_05",
+      "passive2": "UI_Talent_S_Iansan_06",
+      "passive3": "UI_Talent_S_Iansan_08",
+      "constellation1": "UI_Talent_S_Iansan_01",
+      "constellation2": "UI_Talent_S_Iansan_02",
+      "constellation3": "UI_Talent_U_Iansan_01",
+      "constellation4": "UI_Talent_S_Iansan_03",
+      "constellation5": "UI_Talent_U_Iansan_02",
+      "constellation6": "UI_Talent_S_Iansan_04"
+    },
+    "Varesa": {
+      "icon": "UI_AvatarIcon_Varesa",
+      "iconSide": "UI_AvatarIcon_Side_Varesa",
+      "banner": "UI_NameCardPic_Varesa_P",
+      "bar": "",
+      "skill": "Skill_S_Varesa_01",
+      "burst": "Skill_E_Varesa_01",
+      "passive1": "UI_Talent_S_Varesa_05",
+      "passive2": "UI_Talent_S_Varesa_06",
+      "passive3": "UI_Talent_S_Varesa_08",
+      "constellation1": "UI_Talent_S_Varesa_01",
+      "constellation2": "UI_Talent_S_Varesa_02",
+      "constellation3": "UI_Talent_U_Varesa_01",
+      "constellation4": "UI_Talent_S_Varesa_03",
+      "constellation5": "UI_Talent_U_Varesa_02",
+      "constellation6": "UI_Talent_S_Varesa_04"
     },
     "Somnia": {}
   }

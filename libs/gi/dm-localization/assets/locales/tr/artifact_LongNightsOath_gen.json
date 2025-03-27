@@ -1,0 +1,29 @@
+{
+  "setName": "Long Night's Oath",
+  "setEffects": {
+    "2": "Plunging Attack DMG increased by 25%.",
+    "4": "After the equipping character's Plunging Attack/Charged Attack/Elemental Skill hits an opponent, they will gain 1/2/2 stack(s) of \"Radiance Everlasting.\" Plunging Attacks, Charged Attacks, or Elemental Skills can each trigger this effect once every 1s. Radiance Everlasting: Plunging Attacks deal 15% increased DMG for 6s. Max 5 stacks. Each stack's duration is counted independently."
+  },
+  "pieces": {
+    "goblet": {
+      "name": "A Horn Unwinded",
+      "desc": "A horn that was once used to summon those who had sworn oaths. It has long since lost its purpose."
+    },
+    "plume": {
+      "name": "Nightingale's Tail Feather",
+      "desc": "A hat ornament intricately crafted from the feathers of a nightingale. They say that its form was first conceived by the original Torchforger."
+    },
+    "circlet": {
+      "name": "Dyed Tassel",
+      "desc": "An ancient heavy helmet. It is an heirloom that bears the mark of a venerable lineage of northern warriors."
+    },
+    "flower": {
+      "name": "Lightkeeper's Pledge",
+      "desc": "A metal flower that was worn by the Ratniki. It symbolizes the oath of eternal vigilance taken by its original owner."
+    },
+    "sands": {
+      "name": "Undying One's Mourning Bell",
+      "desc": "A bronze bell that was carried by a warrior who walked through the dark abyss. Its peal can be heard on pitch-black nights."
+    }
+  }
+}

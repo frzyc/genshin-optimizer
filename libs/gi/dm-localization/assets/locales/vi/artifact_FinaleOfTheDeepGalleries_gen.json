@@ -1,0 +1,29 @@
+{
+  "setName": "Finale of the Deep Galleries",
+  "setEffects": {
+    "2": "Cryo DMG Bonus +15%",
+    "4": "When the equipping character has 0 Elemental Energy, Normal Attack DMG is increased by 60% and Elemental Burst DMG is increased by 60%. After the equipping character deals Normal Attack DMG, the aforementioned Elemental Burst effect will stop applying for 6s. After the equipping character deals Elemental Burst DMG, the aforementioned Normal Attack effect will stop applying for 6s. This effect can trigger even if the equipping character is off the field."
+  },
+  "pieces": {
+    "goblet": {
+      "name": "Deep Gallery's Bestowed Banquet",
+      "desc": "A cup fashioned from northland jade. They say that the people of an ancient civilization once used it as a ceremonial vessel to make offerings to the heavens."
+    },
+    "plume": {
+      "name": "Deep Gallery's Distant Pact",
+      "desc": "A feathered accessory fashioned from northland jade that shimmers with an otherworldly glow."
+    },
+    "circlet": {
+      "name": "Deep Gallery's Lost Crown",
+      "desc": "A helmet steeped in obsession, just like the mind of its previous owner. Its jade ornamentation seems to come from an age more ancient still."
+    },
+    "flower": {
+      "name": "Deep Gallery's Echoing Song",
+      "desc": "An icy flower fashioned from northland jade. Over the course of its long life, its petals have crumbled to dust."
+    },
+    "sands": {
+      "name": "Deep Gallery's Moment of Oblivion",
+      "desc": "A pocket watch fashioned from northland jade. Its hands are forever frozen in the moment of its destruction."
+    }
+  }
+}
