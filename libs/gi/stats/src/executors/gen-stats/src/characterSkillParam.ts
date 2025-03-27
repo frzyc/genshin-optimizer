@@ -15,7 +15,6 @@ import {
   avatarTalentExcelConfigData,
   characterIdMap,
   getHakushinCharData,
-  hakushinChars,
   proudSkillExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
 import * as somniaData from './Somnia/skillParam.json'
@@ -191,12 +190,13 @@ export default function characterSkillParam() {
     }
   })
   characterSkillParamDump.Somnia = somniaData as CharacterSkillParams
-  for (const key of hakushinChars) {
-    characterSkillParamDump[key] = getDataFromHakushin(key)
-  }
+  // for (const key of hakushinChars) {
+  //   characterSkillParamDump[key] = getDataFromHakushin(key)
+  // }
   return characterSkillParamDump
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getDataFromHakushin(key: NonTravelerCharacterKey) {
   const data = getHakushinCharData(key)
 

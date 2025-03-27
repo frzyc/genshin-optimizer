@@ -16,7 +16,6 @@ import {
   elementMap,
   fetterInfoExcelConfigData,
   getHakushinCharData,
-  hakushinChars,
   propTypeMap,
   regionMap,
   weaponMap,
@@ -104,12 +103,13 @@ export default function characterData() {
     })
   ) as CharacterDatas
   data.Somnia = somniaData as CharacterDataGen
-  for (const key of hakushinChars) {
-    data[key] = getDataFromHakushin(key)
-  }
+  // for (const key of hakushinChars) {
+  //   data[key] = getDataFromHakushin(key)
+  // }
   return data
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getDataFromHakushin(key: NonTravelerCharacterKey) {
   const data = getHakushinCharData(key)
 

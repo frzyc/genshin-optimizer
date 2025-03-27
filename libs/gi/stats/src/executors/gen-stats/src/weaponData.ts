@@ -7,7 +7,6 @@ import type {
 import {
   equipAffixExcelConfigData,
   getHakushinWepData,
-  hakushinWeapons,
   propTypeMap,
   weaponExcelConfigData,
   weaponIdMap,
@@ -106,12 +105,13 @@ export default function weaponData() {
     })
   ) as Record<WeaponKey, WeaponDataGen>
   data.QuantumCatalyst = quantumCatalystData as WeaponDataGen
-  for (const key of hakushinWeapons) {
-    data[key] = getDataFromHakushin(key)
-  }
+  // for (const key of hakushinWeapons) {
+  //   data[key] = getDataFromHakushin(key)
+  // }
   return data
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getDataFromHakushin(key: WeaponKey) {
   const data = getHakushinWepData(key)
 

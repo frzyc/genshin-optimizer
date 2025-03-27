@@ -54,8 +54,6 @@ export const artifactIdMap: Record<string | number, ArtifactSetKey> = {
   15036: 'UnfinishedReverie',
   15037: 'ScrollOfTheHeroOfCinderCity',
   15038: 'ObsidianCodex',
-  15039: 'LongNightsOath',
-  15040: 'FinaleOfTheDeepGalleries',
 } as const
 
 export const artifactSlotMap = {

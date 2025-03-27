@@ -193,7 +193,6 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   14516: 'SurfsUp',
   14517: 'StarcallersWatch',
   14518: 'SunnyMorningSleepIn',
-  14519: 'VividNotions',
 
   //bow
   15101: 'HuntersBow',

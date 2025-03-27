@@ -6,7 +6,6 @@ import {
   artifactIdMap,
   artifactSlotMap,
   getHakushinArtiData,
-  hakushinArtis,
   reliquaryCodexExcelConfigData,
   reliquarySetExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
@@ -40,12 +39,13 @@ export default function artifactData() {
       return [artifactIdMap[setid], result]
     })
   ) as Record<ArtifactSetKey, ArtifactDataGen>
-  for (const key of hakushinArtis) {
-    data[key] = getDataFromHakushin(key)
-  }
+  // for (const key of hakushinArtis) {
+  //   data[key] = getDataFromHakushin(key)
+  // }
   return data
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getDataFromHakushin(key: ArtifactSetKey) {
   const data = getHakushinArtiData(key)
 
