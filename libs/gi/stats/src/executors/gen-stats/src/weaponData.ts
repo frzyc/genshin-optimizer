@@ -35,7 +35,7 @@ export default function weaponData() {
       const { weaponType, rankLevel, weaponProp, skillAffix, weaponPromoteId } =
         weaponData
       const [main, sub] = weaponProp
-      const [refinementDataId] = skillAffix
+      const [refinementDataId] = skillAffix ?? []
       const refData = refinementDataId
         ? equipAffixExcelConfigData[refinementDataId]
         : []

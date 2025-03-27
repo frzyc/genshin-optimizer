@@ -68,7 +68,7 @@ export default function characterSkillParam() {
       keys: string[],
       skillArr: ProudSkillExcelConfigData[]
     ) {
-      const skillParamBase = skillArr.map((proud) => proud.paramList)
+      const skillParamBase = skillArr.map((proud) => proud.paramList ?? [])
 
       //need to transpose the skillParam
       const skillParamUntrimmed: Array<Array<number>> = []
@@ -105,13 +105,15 @@ export default function characterSkillParam() {
       ]
     )
 
-    if (sprint)
+    // work around dim deleting zeros in `skills`, causing `sprint` to potentially not be a sprint
+    if (sprint && avatarSkillExcelConfigData[sprint].costStamina) {
       parseSkillParams(
         [...keys, 'sprint'],
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[sprint].proudSkillGroupId
         ]
       )
+    }
 
     passive1.proudSkillGroupId &&
       parseSkillParams(
@@ -139,7 +141,7 @@ export default function characterSkillParam() {
       layeredAssignment(
         characterSkillParamDump,
         [...keys, `constellation${i + 1}`],
-        avatarTalentExcelConfigData[skId].paramList
+        (avatarTalentExcelConfigData[skId]?.paramList ?? [])
           .filter((i) => i)
           .map((value) => value)
       )
@@ -149,7 +151,7 @@ export default function characterSkillParam() {
     const charid: CharacterId = ci as unknown as CharacterId
     const { candSkillDepotIds, skillDepotId } = charData
 
-    if (candSkillDepotIds.length) {
+    if (candSkillDepotIds?.length) {
       //Traveler
       const [_1, pyro, hydro, anemo, _5, geo, electro, dendro] =
         candSkillDepotIds

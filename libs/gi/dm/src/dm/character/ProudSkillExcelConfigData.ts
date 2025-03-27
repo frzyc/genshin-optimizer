@@ -52,7 +52,7 @@ export type ProudSkillExcelConfigData = {
   //     {},
   //     {}
   // ],
-  paramList: number[]
+  paramList?: number[]
   // [
   //     0.30000001192092896,
   //     4.0,

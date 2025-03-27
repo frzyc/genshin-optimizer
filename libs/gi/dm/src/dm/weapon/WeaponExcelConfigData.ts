@@ -9,7 +9,7 @@ type WeaponExcelConfigData = {
   weaponType: DWeaponTypeKey // "WEAPON_CLAYMORE",
   rankLevel: 1 | 2 | 3 | 4 | 5 //4,
   weaponBaseExp: number //50000,
-  skillAffix: number[]
+  skillAffix?: number[]
   // [
   //   112407,
   //   0

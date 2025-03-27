@@ -14,7 +14,7 @@ type AvatarTalentExcelConfigData = {
   //     {},
   //     {}
   // ],
-  paramList: number[]
+  paramList?: number[]
   // [
   //     0.0,
   //     0.0,

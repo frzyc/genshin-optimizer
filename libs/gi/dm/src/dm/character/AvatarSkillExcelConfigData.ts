@@ -24,6 +24,7 @@ type AvatarSkillExcelConfigData = {
   buffIcon: string //"",
   proudSkillGroupId: number //3439,
   globalValueKey: string //""
+  costStamina?: number
 }
 const avatarSkillExcelConfigDataSrc = readExcelJSON(
   'ExcelBinOutput/AvatarSkillExcelConfigData.json'
