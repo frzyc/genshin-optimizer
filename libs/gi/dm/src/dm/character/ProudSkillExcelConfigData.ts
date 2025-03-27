@@ -1,4 +1,4 @@
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type CostItem = {
   id: number
@@ -75,8 +75,8 @@ export type ProudSkillExcelConfigData = {
   //     0.0
   // ]
 }
-const proudSkillExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/ProudSkillExcelConfigData.json')
+const proudSkillExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/ProudSkillExcelConfigData.json'
 ) as ProudSkillExcelConfigData[]
 
 const proudSkillExcelConfigData = {} as {

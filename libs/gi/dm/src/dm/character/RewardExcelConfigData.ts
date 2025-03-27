@@ -1,4 +1,4 @@
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type RewardExcelConfigData = {
   rewardId: number //241012,
@@ -8,8 +8,8 @@ type RewardExcelConfigData = {
   }[]
 }
 
-const rewardExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/RewardExcelConfigData.json')
+const rewardExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/RewardExcelConfigData.json'
 ) as RewardExcelConfigData[]
 //character data
 const rewardExcelConfigData = Object.fromEntries(

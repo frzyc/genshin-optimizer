@@ -1,24 +1,24 @@
 import type { Language } from '@genshin-optimizer/common/pipeline'
-import { readDMJSON } from './util'
+import { readTextmapJSON } from './util'
 
-export const TextMapCHS = JSON.parse(readDMJSON('TextMap/TextMapCHS.json'))
-export const TextMapCHT = JSON.parse(readDMJSON('TextMap/TextMapCHT.json'))
-export const TextMapDE = JSON.parse(readDMJSON('TextMap/TextMapDE.json'))
-export const TextMapEN = JSON.parse(readDMJSON('TextMap/TextMapEN.json'))
-export const TextMapES = JSON.parse(readDMJSON('TextMap/TextMapES.json'))
-export const TextMapFR = JSON.parse(readDMJSON('TextMap/TextMapFR.json'))
-export const TextMapID = JSON.parse(readDMJSON('TextMap/TextMapID.json'))
-export const TextMapIT = JSON.parse(readDMJSON('TextMap/TextMapIT.json'))
-export const TextMapJP = JSON.parse(readDMJSON('TextMap/TextMapJP.json'))
-export const TextMapKR = JSON.parse(readDMJSON('TextMap/TextMapKR.json'))
-export const TextMapPT = JSON.parse(readDMJSON('TextMap/TextMapPT.json'))
-export const TextMapRU = JSON.parse(readDMJSON('TextMap/TextMapRU.json'))
+export const TextMapCHS = readTextmapJSON('TextMap/TextMapCHS.json')
+export const TextMapCHT = readTextmapJSON('TextMap/TextMapCHT.json')
+export const TextMapDE = readTextmapJSON('TextMap/TextMapDE.json')
+export const TextMapEN = readTextmapJSON('TextMap/TextMapEN.json')
+export const TextMapES = readTextmapJSON('TextMap/TextMapES.json')
+export const TextMapFR = readTextmapJSON('TextMap/TextMapFR.json')
+export const TextMapID = readTextmapJSON('TextMap/TextMapID.json')
+export const TextMapIT = readTextmapJSON('TextMap/TextMapIT.json')
+export const TextMapJP = readTextmapJSON('TextMap/TextMapJP.json')
+export const TextMapKR = readTextmapJSON('TextMap/TextMapKR.json')
+export const TextMapPT = readTextmapJSON('TextMap/TextMapPT.json')
+export const TextMapRU = readTextmapJSON('TextMap/TextMapRU.json')
 export const TextMapTH = {
-  ...JSON.parse(readDMJSON('TextMap/TextMapTH_0.json')),
-  ...JSON.parse(readDMJSON('TextMap/TextMapTH_1.json')),
+  ...readTextmapJSON('TextMap/TextMapTH_0.json'),
+  ...readTextmapJSON('TextMap/TextMapTH_1.json'),
 }
-export const TextMapTR = JSON.parse(readDMJSON('TextMap/TextMapTR.json'))
-export const TextMapVI = JSON.parse(readDMJSON('TextMap/TextMapVI.json'))
+export const TextMapTR = readTextmapJSON('TextMap/TextMapTR.json')
+export const TextMapVI = readTextmapJSON('TextMap/TextMapVI.json')
 
 export const languageMap = {
   chs: TextMapCHS,

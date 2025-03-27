@@ -1,5 +1,5 @@
 import type { AvatarAssocType, CharacterId } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type FetterInfoExcelConfigData = {
   infoBirthMonth: number //3,
@@ -27,8 +27,8 @@ type FetterInfoExcelConfigData = {
   //   }
   // ]
 }
-const fetterInfoExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/FetterInfoExcelConfigData.json')
+const fetterInfoExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/FetterInfoExcelConfigData.json'
 ) as FetterInfoExcelConfigData[]
 
 const fetterInfoExcelConfigData = Object.fromEntries(

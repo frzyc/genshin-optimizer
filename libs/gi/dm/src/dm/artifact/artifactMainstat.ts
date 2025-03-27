@@ -1,7 +1,7 @@
 import { layeredAssignment } from '@genshin-optimizer/common/util'
 import type { MainStatKey, PropTypeKey } from '../../mapping'
 import { MainPropMap, propTypeMap } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type ReliquaryLevelExcelConfigData = {
   rank: number
@@ -12,9 +12,9 @@ type ReliquaryLevelExcelConfigData = {
     value: number //129.0
   }[]
 }
-const artifactMainstatDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/ReliquaryLevelExcelConfigData.json')
-) as ReliquaryLevelExcelConfigData[]
+const artifactMainstatDataSrc: ReliquaryLevelExcelConfigData[] = readExcelJSON(
+  'ExcelBinOutput/ReliquaryLevelExcelConfigData.json'
+)
 
 export type artifaceMainstatData = {
   [rank: number]: Record<MainStatKey, number[]>

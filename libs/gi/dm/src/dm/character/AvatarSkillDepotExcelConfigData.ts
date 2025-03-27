@@ -1,4 +1,4 @@
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 export type AvatarSkillDepotExcelConfigData = {
   id: number //3401,
@@ -41,8 +41,8 @@ export type AvatarSkillDepotExcelConfigData = {
  * const#     AvatarSkillExcelConfigData
  */
 
-const avatarSkillDepotExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarSkillDepotExcelConfigData.json')
+const avatarSkillDepotExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/AvatarSkillDepotExcelConfigData.json'
 ) as AvatarSkillDepotExcelConfigData[]
 
 const avatarSkillDepotExcelConfigData = Object.fromEntries(

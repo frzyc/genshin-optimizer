@@ -1,4 +1,4 @@
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type AvatarTalentExcelConfigData = {
   talentId: number //293,
@@ -24,8 +24,8 @@ type AvatarTalentExcelConfigData = {
   //     0.0
   // ]
 }
-const avatarTalentExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarTalentExcelConfigData.json')
+const avatarTalentExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/AvatarTalentExcelConfigData.json'
 ) as AvatarTalentExcelConfigData[]
 const avatarTalentExcelConfigData = Object.fromEntries(
   avatarTalentExcelConfigDataSrc.map((data) => [data.talentId, data])

@@ -4,7 +4,7 @@ import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { CharacterId, DQualityKey, DWeaponTypeKey } from '../../mapping'
 import { characterIdMap } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 import type { CharacterGrowCurveKey } from './AvatarCurveExcelConfigData'
 
 type AvatarExcelConfigData = {
@@ -83,9 +83,9 @@ type AvatarExcelConfigData = {
   LODPatternName: string //""
 }
 
-const avatarExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarExcelConfigData.json')
-) as AvatarExcelConfigData[]
+const avatarExcelConfigDataSrc: AvatarExcelConfigData[] = readExcelJSON(
+  'ExcelBinOutput/AvatarExcelConfigData.json'
+)
 //character data
 const avatarExcelConfigData = Object.fromEntries(
   avatarExcelConfigDataSrc

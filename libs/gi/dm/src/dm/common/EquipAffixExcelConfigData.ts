@@ -2,7 +2,7 @@ import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { layeredAssignment, nameToKey } from '@genshin-optimizer/common/util'
 import { TextMapEN } from '../../TextMapUtil'
 import type { PropTypeKey, WeaponId } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type EquipAffixExcelConfigData = {
   affixId: number //1125034,
@@ -38,8 +38,8 @@ type EquipAffixExcelConfigData = {
   //   0.0
   // ]
 }
-const equipAffixExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/EquipAffixExcelConfigData.json')
+const equipAffixExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/EquipAffixExcelConfigData.json'
 ) as EquipAffixExcelConfigData[]
 
 const equipAffixExcelConfigData = {} as Record<

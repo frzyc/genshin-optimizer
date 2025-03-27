@@ -1,7 +1,7 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { nameToKey } from '@genshin-optimizer/common/util'
 import { TextMapEN } from '../../TextMapUtil'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type CookRecipeExcelConfigData = {
   //Adeptus' Temptation
@@ -70,8 +70,8 @@ type CookRecipeExcelConfigData = {
   // ]
 }
 
-const cookRecipeExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/CookRecipeExcelConfigData.json')
+const cookRecipeExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/CookRecipeExcelConfigData.json'
 ) as CookRecipeExcelConfigData[]
 //character data
 const cookRecipeExcelConfigData = Object.fromEntries(

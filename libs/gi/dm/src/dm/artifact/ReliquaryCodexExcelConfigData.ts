@@ -1,4 +1,4 @@
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type ReliquaryCodexExcelConfigData = {
   Id: number
@@ -11,8 +11,7 @@ type ReliquaryCodexExcelConfigData = {
   sandId?: number
   SortOrder: number
 }
-const reliquaryCodexExcelConfigData = JSON.parse(
-  readDMJSON('ExcelBinOutput/ReliquaryCodexExcelConfigData.json')
-) as ReliquaryCodexExcelConfigData[]
+const reliquaryCodexExcelConfigData: ReliquaryCodexExcelConfigData[] =
+  readExcelJSON('ExcelBinOutput/ReliquaryCodexExcelConfigData.json')
 
 export { reliquaryCodexExcelConfigData }

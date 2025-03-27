@@ -1,6 +1,6 @@
 import type { PropTypeKey } from '../../mapping'
 import { propTypeMap } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type AvatarPromoteExcelConfigData = {
   avatarPromoteId: number //2,
@@ -54,8 +54,8 @@ type AvatarPromoteExcelConfigData = {
   // ],
   requiredPlayerLevel: number // 15
 }
-const ascensionSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarPromoteExcelConfigData.json')
+const ascensionSrc = readExcelJSON(
+  'ExcelBinOutput/AvatarPromoteExcelConfigData.json'
 ) as AvatarPromoteExcelConfigData[]
 
 export type AscensionRecord = {
