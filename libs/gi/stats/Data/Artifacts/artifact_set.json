@@ -1,886 +1,267 @@
 {
   "ResolutionOfSojourner": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [3, 4],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "BraveHeart": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [3, 4],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "DefendersWill": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [3, 4],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "TinyMiracle": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [3, 4],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "Berserker": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [3, 4],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "MartialArtist": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [3, 4],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "Instructor": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [3, 4],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "Gambler": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [3, 4],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "TheExile": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [3, 4],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "Adventurer": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      1,
-      2,
-      3
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [1, 2, 3],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "LuckyDog": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      1,
-      2,
-      3
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [1, 2, 3],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "Scholar": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [3, 4],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "TravelingDoctor": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      1,
-      2,
-      3
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [1, 2, 3],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "BlizzardStrayer": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "Thundersoother": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "Lavawalker": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "MaidenBeloved": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "GladiatorsFinale": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "ViridescentVenerer": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "WanderersTroupe": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "ThunderingFury": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "CrimsonWitchOfFlames": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "NoblesseOblige": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "BloodstainedChivalry": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "PrayersForIllumination": {
-    "setNum": [
-      1
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "circlet"
-    ]
+    "setNum": [1],
+    "rarities": [3, 4],
+    "slots": ["circlet"]
   },
   "PrayersForDestiny": {
-    "setNum": [
-      1
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "circlet"
-    ]
+    "setNum": [1],
+    "rarities": [3, 4],
+    "slots": ["circlet"]
   },
   "PrayersForWisdom": {
-    "setNum": [
-      1
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "circlet"
-    ]
+    "setNum": [1],
+    "rarities": [3, 4],
+    "slots": ["circlet"]
   },
   "PrayersToSpringtime": {
-    "setNum": [
-      1
-    ],
-    "rarities": [
-      3,
-      4
-    ],
-    "slots": [
-      "circlet"
-    ]
+    "setNum": [1],
+    "rarities": [3, 4],
+    "slots": ["circlet"]
   },
   "ArchaicPetra": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "RetracingBolide": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "HeartOfDepth": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "TenacityOfTheMillelith": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "PaleFlame": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "ShimenawasReminiscence": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "EmblemOfSeveredFate": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "HuskOfOpulentDreams": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "OceanHuedClam": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "VermillionHereafter": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "EchoesOfAnOffering": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "DeepwoodMemories": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "GildedDreams": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "DesertPavilionChronicle": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "FlowerOfParadiseLost": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "NymphsDream": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "VourukashasGlow": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "MarechausseeHunter": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "GoldenTroupe": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "SongOfDaysPast": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "NighttimeWhispersInTheEchoingWoods": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "FragmentOfHarmonicWhimsy": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "UnfinishedReverie": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "ScrollOfTheHeroOfCinderCity": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   },
   "ObsidianCodex": {
-    "setNum": [
-      2,
-      4
-    ],
-    "rarities": [
-      4,
-      5
-    ],
-    "slots": [
-      "goblet",
-      "plume",
-      "circlet",
-      "flower",
-      "sands"
-    ]
+    "setNum": [2, 4],
+    "rarities": [4, 5],
+    "slots": ["goblet", "plume", "circlet", "flower", "sands"]
   }
 }
