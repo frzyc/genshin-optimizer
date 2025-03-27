@@ -4,6 +4,7 @@ import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   LocationGenderedCharacterKey,
+  NonTravelerCharacterKey,
   TravelerKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
@@ -21,6 +22,12 @@ import {
   avatarTalentExcelConfigData,
   characterIdMap,
   fetterCharacterCardExcelConfigData,
+  getHakushinArtiData,
+  getHakushinCharData,
+  getHakushinWepData,
+  hakushinArtis,
+  hakushinChars,
+  hakushinWeapons,
   materialExcelConfigData,
   proudSkillExcelConfigData,
   reliquaryExcelConfigData,
@@ -37,11 +44,8 @@ const proj_path = `${workspaceRoot}/libs/gi/assets-data`
 
 // An object to store all the asset related data.
 const assetData = {
-  weapons: {} as Record<WeaponKey, { icon: string; awakenIcon: string }>,
-  artifacts: {} as Record<
-    ArtifactSetKey,
-    Partial<Record<ArtifactSlotKey, string>>
-  >,
+  weapons: {} as Record<WeaponKey, WepIcons>,
+  artifacts: {} as Record<ArtifactSetKey, ArtiIcons>,
   chars: {} as CharacterIconData,
 }
 export type AssetData = typeof assetData
@@ -69,6 +73,9 @@ type CharacterIconData = Record<
   LocationGenderedCharacterKey | TravelerKey,
   CharacterIcon
 >
+
+type ArtiIcons = Partial<Record<ArtifactSlotKey, string>>
+type WepIcons = { icon: string; awakenIcon: string }
 
 const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   options
@@ -229,6 +236,16 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   // Dump out the asset List.
   // dumpFile(`${__dirname}/AssetData_gen.json`, assetChar)
 
+  for (const key of hakushinChars) {
+    assetData.chars[key] = getCharAssetsFromHakushin(key)
+  }
+  for (const key of hakushinArtis) {
+    assetData.artifacts[key] = getArtiAssetsFromHakushin(key)
+  }
+  for (const key of hakushinWeapons) {
+    assetData.weapons[key] = getWepAssetsFromHakushin(key)
+  }
+
   // Add in manually added assets that can't be datamined
   assetData.chars['Somnia'] = {} as CharacterIcon
   assetData.weapons['QuantumCatalyst'] = {} as {
@@ -243,3 +260,50 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
 }
 
 export default runExecutor
+
+function getCharAssetsFromHakushin(key: NonTravelerCharacterKey) {
+  const data = getHakushinCharData(key)
+  const assets: CharacterIcon = {
+    icon: data.Icon,
+    iconSide: data.Icon.replace('AvatarIcon', 'AvatarIcon_Side'), // Janky, but best we can do
+    banner: data.CharaInfo.Namecard.Icon,
+    bar: '', // No one uses this anyways
+    skill: data.Skills[1].Promote[0].Icon,
+    // Alternate sprint might be [2], burst always seems to be last
+    burst: data.Skills[data.Skills.length - 1].Promote[0].Icon,
+    // sprint: 'Skill_S_Ayaka_02', // TODO: Add handling if needed
+    passive1: data.Passives[0].Icon,
+    passive2: data.Passives[1].Icon,
+    // Natlan passive might be [2]
+    // TODO: passive might be last, add some handling if needed
+    passive3: data.Passives[data.Passives.length - 1].Icon,
+    // passive: '' // TODO: add handling if needed
+    constellation1: data.Constellations[0].Icon,
+    constellation2: data.Constellations[1].Icon,
+    constellation3: data.Constellations[2].Icon,
+    constellation4: data.Constellations[3].Icon,
+    constellation5: data.Constellations[4].Icon,
+    constellation6: data.Constellations[5].Icon,
+  }
+  return assets
+}
+
+function getArtiAssetsFromHakushin(key: ArtifactSetKey) {
+  const data = getHakushinArtiData(key)
+  const assets: ArtiIcons = Object.fromEntries(
+    Object.entries(data.Parts).map(([dmKey, info]) => [
+      artifactSlotMap[dmKey],
+      info.Icon,
+    ])
+  )
+  return assets
+}
+
+function getWepAssetsFromHakushin(key: WeaponKey) {
+  const data = getHakushinWepData(key)
+  const assets: WepIcons = {
+    icon: data.Icon,
+    awakenIcon: `${data.Icon}_Awaken`, // Janky, but best we can do
+  }
+  return assets
+}
