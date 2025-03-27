@@ -20,7 +20,7 @@ import {
 } from '@genshin-optimizer/gi/dm'
 import * as somniaData from './Somnia/skillParam.json'
 
-export type CharacterSkillParams = {
+type CharacterSkillParams = {
   auto: number[][]
   skill: number[][]
   burst: number[][]

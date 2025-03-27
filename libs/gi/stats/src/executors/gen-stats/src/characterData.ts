@@ -124,18 +124,18 @@ function getDataFromHakushin(key: NonTravelerCharacterKey) {
   }
   const stats: CharacterDataGen = {
     key,
-    rarity: QualityTypeMap[data.Rarity],
+    ele: elementMap[data.CharaInfo.Vision],
+    region: regionMap[data.CharaInfo.Region],
+    weaponType: weaponMap[data.Weapon],
     birthday: {
       month: data.CharaInfo.Birth[0],
       day: data.CharaInfo.Birth[1],
     },
-    region: regionMap[data.CharaInfo.Region],
-    ele: elementMap[data.CharaInfo.Vision],
-    weaponType: weaponMap[data.Weapon],
+    rarity: QualityTypeMap[data.Rarity],
     lvlCurves: data.StatsModifier.PropGrowCurves.map((curve, index) => ({
-      curve: curve.growCurve,
       key: propTypeMap[curve.type],
       base: bases[index],
+      curve: curve.growCurve,
     })),
     ascensionBonus: ascension,
   }

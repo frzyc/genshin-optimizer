@@ -550,7 +550,7 @@ function getLocalizationForHakushinChar(key: NonTravelerCharacterKey) {
     },
     skill: {
       name: data.Skills[1].Name,
-      fields: parseString('paragraph', data.Skills[1].Desc),
+      description: parseString('paragraph', data.Skills[1].Desc),
       skillParams: getSkillParams(data.Skills[1].Promote[0].Desc),
       skillParamsEncoding: getSkillParamsEncoding(
         data.Skills[1].Promote[0].Desc
@@ -559,7 +559,7 @@ function getLocalizationForHakushinChar(key: NonTravelerCharacterKey) {
     // Alternate sprint might be [2], burst always seems to be last
     burst: {
       name: data.Skills[data.Skills.length - 1].Name,
-      fields: parseString(
+      description: parseString(
         'paragraph',
         data.Skills[data.Skills.length - 1].Desc
       ),

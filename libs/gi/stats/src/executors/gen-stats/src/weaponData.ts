@@ -116,8 +116,8 @@ function getDataFromHakushin(key: WeaponKey) {
   const data = getHakushinWepData(key)
 
   const stats: WeaponDataGen = {
-    rarity: data.Rarity,
     weaponType: weaponMap[data.WeaponType],
+    rarity: data.Rarity,
     mainStat: {
       type: propTypeMap[data.WeaponProp[0].propType],
       base: data.WeaponProp[0].initValue,
@@ -135,9 +135,12 @@ function getDataFromHakushin(key: WeaponKey) {
     })),
     refinementBonus: {},
     ascensionBonus: {
-      atk: Object.values(data.Ascension).map(
-        (asc) => asc.FIGHT_PROP_BASE_ATTACK
-      ),
+      atk: [
+        0,
+        ...Object.values(data.Ascension).map(
+          (asc) => asc.FIGHT_PROP_BASE_ATTACK
+        ),
+      ],
     },
   }
   return stats

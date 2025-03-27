@@ -267,7 +267,7 @@ function getCharAssetsFromHakushin(key: NonTravelerCharacterKey) {
     icon: data.Icon,
     iconSide: data.Icon.replace('AvatarIcon', 'AvatarIcon_Side'), // Janky, but best we can do
     banner: data.CharaInfo.Namecard.Icon,
-    bar: '', // No one uses this anyways
+    bar: data.Skills[1].Promote[0].Icon.replace(/_P$/, '_Alpha'), // Jank, but no one uses this anyways
     skill: data.Skills[1].Promote[0].Icon,
     // Alternate sprint might be [2], burst always seems to be last
     burst: data.Skills[data.Skills.length - 1].Promote[0].Icon,
