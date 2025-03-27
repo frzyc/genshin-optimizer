@@ -33,6 +33,7 @@ import Gaming from './Gaming'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
+import Iansan from './Iansan'
 import Jean from './Jean'
 import Kachina from './Kachina'
 import KaedeharaKazuha from './KaedeharaKazuha'
@@ -85,6 +86,7 @@ import TravelerGeo from './TravelerGeo'
 import TravelerHydro from './TravelerHydro'
 import TravelerM from './TravelerM'
 import TravelerPyro from './TravelerPyro'
+import Varesa from './Varesa'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
@@ -138,6 +140,7 @@ const data = {
   Ganyu,
   Gorou,
   HuTao,
+  Iansan,
   Jean,
   Kachina,
   KaedeharaKazuha,
@@ -190,6 +193,7 @@ const data = {
   TravelerHydro,
   TravelerM,
   TravelerPyro,
+  Varesa,
   Venti,
   Wanderer,
   Wriothesley,
