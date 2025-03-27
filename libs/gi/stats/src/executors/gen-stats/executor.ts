@@ -50,7 +50,7 @@ const allStat = {
 export type AllStats = typeof allStat
 
 export default async function runExecutor(_options: GenStatsExecutorSchema) {
-  const promises = []
+  const promises: Promise<any>[] = []
   console.log(`Writing basic character data to ${path}/Characters`)
   Object.entries(characterDataDump).forEach(([characterKey, data]) =>
     promises.push(
