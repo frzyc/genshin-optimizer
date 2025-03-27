@@ -231,7 +231,6 @@ export const allWeaponCatalystKeys = [
   'TomeOfTheEternalFlow',
   'TulaytullahsRemembrance',
   'TwinNephrite',
-  'VividNotions',
   'WanderingEvenstar',
   'WaveridingWhirl',
   'WineAndSong',
