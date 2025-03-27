@@ -1,13 +1,16 @@
 import type { Language } from '@genshin-optimizer/common/pipeline'
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile, langKeys } from '@genshin-optimizer/common/pipeline'
 import {
   crawlObject,
   layeredAssignment,
   nameToKey,
+  objKeyValMap,
 } from '@genshin-optimizer/common/util'
 import type {
+  ArtifactSetKey,
   ElementKey,
   LocationGenderedCharacterKey,
+  NonTravelerCharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { allGenderKeys } from '@genshin-optimizer/gi/consts'
@@ -23,6 +26,12 @@ import {
   characterIdMap,
   equipAffixExcelConfigData,
   fetterInfoExcelConfigData,
+  getHakushinArtiData,
+  getHakushinCharData,
+  getHakushinWepData,
+  hakushinArtis,
+  hakushinChars,
+  hakushinWeapons,
   languageMap,
   materialExcelConfigData,
   proudSkillExcelConfigData,
@@ -374,6 +383,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       sheet: {
         element: Record<ElementKey, string>
       }
+      [key: string]: any
     }
   >
   Object.entries(languageMap).forEach(([lang, langStrings]) => {
@@ -442,6 +452,33 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       })
     })
 
+    // Just duplicate EN to all languages for Hakushin
+    for (const lang of langKeys) {
+      for (const key of hakushinChars) {
+        layeredAssignment(
+          languageData,
+          [lang, 'char', key],
+          getLocalizationForHakushinChar(key)
+        )
+      }
+
+      for (const key of hakushinArtis) {
+        layeredAssignment(
+          languageData,
+          [lang, 'artifact', key],
+          getLocalizationForHakushinArti(key)
+        )
+      }
+
+      for (const key of hakushinWeapons) {
+        layeredAssignment(
+          languageData,
+          [lang, 'weapon', key],
+          getLocalizationForHakushinWep(key)
+        )
+      }
+    }
+
     // Add the Somnia and QuantumCatalyst
     languageData[lang as Language].charNames['Somnia'] = 'Somnia'
     languageData[lang as Language].weaponNames['QuantumCatalyst'] =
@@ -476,4 +513,150 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
     })
   })
   return { success: true }
+}
+
+function getLocalizationForHakushinChar(key: NonTravelerCharacterKey) {
+  const data = getHakushinCharData(key)
+
+  function parseString(type: string, str: string) {
+    return parsingFunctions[type]('en', preprocess(str), ['char', key])
+  }
+  function getSkillParams(strs: string[]) {
+    return Object.fromEntries(
+      strs.map((param, index) => [index, parseString('skillParam', param)])
+    )
+  }
+  function getSkillParamsEncoding(strs: string[]) {
+    return Object.fromEntries(
+      strs.map((param, index) => [
+        index,
+        parseString('skillParamEncoding', param),
+      ])
+    )
+  }
+
+  const localization = {
+    name: data.Name,
+    title: data.CharaInfo.Title,
+    description: data.CharaInfo.Detail,
+    constellationName: data.CharaInfo.Constellation,
+    auto: {
+      name: parseString('autoName', data.Skills[0].Name),
+      fields: parseString('autoFields', data.Skills[0].Desc),
+      skillParams: getSkillParams(data.Skills[0].Promote[0].Desc),
+      skillParamsEncoding: getSkillParamsEncoding(
+        data.Skills[0].Promote[0].Desc
+      ),
+    },
+    skill: {
+      name: data.Skills[1].Name,
+      fields: parseString('paragraph', data.Skills[1].Desc),
+      skillParams: getSkillParams(data.Skills[1].Promote[0].Desc),
+      skillParamsEncoding: getSkillParamsEncoding(
+        data.Skills[1].Promote[0].Desc
+      ),
+    },
+    // Alternate sprint might be [2], burst always seems to be last
+    burst: {
+      name: data.Skills[data.Skills.length - 1].Name,
+      fields: parseString(
+        'paragraph',
+        data.Skills[data.Skills.length - 1].Desc
+      ),
+      skillParams: getSkillParams(
+        data.Skills[data.Skills.length - 1].Promote[0].Desc
+      ),
+      skillParamsEncoding: getSkillParamsEncoding(
+        data.Skills[data.Skills.length - 1].Promote[0].Desc
+      ),
+    },
+    passive1: {
+      name: data.Passives[0].Name,
+      description: parseString('paragraph', data.Passives[0].Desc),
+    },
+    passive2: {
+      name: data.Passives[1].Name,
+      description: parseString('paragraph', data.Passives[1].Desc),
+    },
+    // Natlan passive might be [2]
+    // TODO: passive might be last, add some handling if needed
+    passive3: {
+      name: data.Passives[data.Passives.length - 1].Name,
+      description: parseString(
+        'paragraph',
+        data.Passives[data.Passives.length - 1].Desc
+      ),
+    },
+    constellation1: {
+      name: data.Constellations[0].Name,
+      description: parseString('paragraph', data.Constellations[0].Desc),
+    },
+    constellation2: {
+      name: data.Constellations[1].Name,
+      description: parseString('paragraph', data.Constellations[1].Desc),
+    },
+    constellation3: {
+      name: data.Constellations[2].Name,
+      description: parseString('paragraph', data.Constellations[2].Desc),
+    },
+    constellation4: {
+      name: data.Constellations[3].Name,
+      description: parseString('paragraph', data.Constellations[3].Desc),
+    },
+    constellation5: {
+      name: data.Constellations[4].Name,
+      description: parseString('paragraph', data.Constellations[4].Desc),
+    },
+    constellation6: {
+      name: data.Constellations[5].Name,
+      description: parseString('paragraph', data.Constellations[5].Desc),
+    },
+  }
+  return localization
+}
+
+function getLocalizationForHakushinArti(key: ArtifactSetKey) {
+  const data = getHakushinArtiData(key)
+
+  const localization = {
+    setName: data.Affix[0].Name,
+    setEffects: objKeyValMap(data.Need, (setCount, index) => [
+      setCount,
+      data.Affix[index].Desc,
+    ]),
+    pieces: Object.fromEntries(
+      Object.entries(data.Parts).map(([dmKey, info]) => [
+        artifactSlotMap[dmKey],
+        {
+          name: info.Name,
+          desc: info.Desc,
+        },
+      ])
+    ),
+  }
+  return localization
+}
+
+function getLocalizationForHakushinWep(key: WeaponKey) {
+  const data = getHakushinWepData(key)
+
+  const localization = {
+    name: data.Name,
+    description: parsingFunctions['paragraph']('en', preprocess(data.Desc), [
+      'weapon',
+      key,
+    ]),
+    passiveName: data.Refinement[1].Name,
+    passiveDescription: objKeyValMap(
+      Object.values(data.Refinement),
+      (info, index) => [
+        index,
+        parsingFunctions['paragraph']('en', preprocess(info.Desc), [
+          'weapon',
+          key,
+        ]),
+      ]
+    ),
+  }
+  return localization
 }
