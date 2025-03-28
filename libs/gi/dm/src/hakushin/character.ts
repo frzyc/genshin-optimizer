@@ -3,7 +3,6 @@ import type {
   AvatarAssocType,
   DQualityKey,
   DWeaponTypeKey,
-  InternalElement,
   PropTypeKey,
 } from '../mapping'
 
@@ -13,7 +12,7 @@ export type HakushinChar = {
   CharaInfo: {
     ReleaseDate: string // "2025-03-25 00:00:00",
     Birth: [number, number] // [11, 15],
-    Vision: InternalElement // "Electro",
+    Vision: string // "Electro",
     Constellation: string // "Mascara Luctatori",
     Region: AvatarAssocType // "ASSOC_TYPE_NATLAN",
     Title: string // "Strength in Serenity",

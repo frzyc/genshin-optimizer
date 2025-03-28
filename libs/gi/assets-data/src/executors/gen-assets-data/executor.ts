@@ -25,6 +25,9 @@ import {
   getHakushinArtiData,
   getHakushinCharData,
   getHakushinWepData,
+  hakushinArtis,
+  hakushinChars,
+  hakushinWeapons,
   materialExcelConfigData,
   proudSkillExcelConfigData,
   reliquaryExcelConfigData,
@@ -234,15 +237,15 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   // dumpFile(`${__dirname}/AssetData_gen.json`, assetChar)
 
   // Hakushin asset data
-  // for (const key of hakushinChars) {
-  //   assetData.chars[key] = getCharAssetsFromHakushin(key)
-  // }
-  // for (const key of hakushinArtis) {
-  //   assetData.artifacts[key] = getArtiAssetsFromHakushin(key)
-  // }
-  // for (const key of hakushinWeapons) {
-  //   assetData.weapons[key] = getWepAssetsFromHakushin(key)
-  // }
+  for (const key of hakushinChars) {
+    assetData.chars[key] = getCharAssetsFromHakushin(key)
+  }
+  for (const key of hakushinArtis) {
+    assetData.artifacts[key] = getArtiAssetsFromHakushin(key)
+  }
+  for (const key of hakushinWeapons) {
+    assetData.weapons[key] = getWepAssetsFromHakushin(key)
+  }
 
   // Add in manually added assets that can't be datamined
   assetData.chars['Somnia'] = {} as CharacterIcon
@@ -259,7 +262,6 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
 
 export default runExecutor
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getCharAssetsFromHakushin(key: NonTravelerCharacterKey) {
   const data = getHakushinCharData(key)
   const assets: CharacterIcon = {
@@ -287,7 +289,6 @@ function getCharAssetsFromHakushin(key: NonTravelerCharacterKey) {
   return assets
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getArtiAssetsFromHakushin(key: ArtifactSetKey) {
   const data = getHakushinArtiData(key)
   const assets: ArtiIcons = Object.fromEntries(
@@ -299,7 +300,6 @@ function getArtiAssetsFromHakushin(key: ArtifactSetKey) {
   return assets
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getWepAssetsFromHakushin(key: WeaponKey) {
   const data = getHakushinWepData(key)
   const assets: WepIcons = {
