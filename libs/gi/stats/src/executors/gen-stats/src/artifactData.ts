@@ -4,8 +4,6 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import {
   artifactIdMap,
-  artifactSlotMap,
-  getHakushinArtiData,
   reliquaryCodexExcelConfigData,
   reliquarySetExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
@@ -45,14 +43,13 @@ export default function artifactData() {
   return data
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getDataFromHakushin(key: ArtifactSetKey) {
-  const data = getHakushinArtiData(key)
+// function getDataFromHakushin(key: ArtifactSetKey) {
+//   const data = getHakushinArtiData(key)
 
-  const stats: ArtifactDataGen = {
-    setNum: data.Need,
-    rarities: data.Rank,
-    slots: Object.keys(data.Parts).map((part) => artifactSlotMap[part]),
-  }
-  return stats
-}
+//   const stats: ArtifactDataGen = {
+//     setNum: data.Need,
+//     rarities: data.Rank,
+//     slots: Object.keys(data.Parts).map((part) => artifactSlotMap[part]),
+//   }
+//   return stats
+// }
