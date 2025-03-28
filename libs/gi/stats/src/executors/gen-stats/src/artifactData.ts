@@ -37,5 +37,22 @@ export default function artifactData() {
       return [artifactIdMap[setid], result]
     })
   ) as Record<ArtifactSetKey, ArtifactDataGen>
+
+  // Hakushin stats
+  // for (const key of hakushinArtis) {
+  //   data[key] = getDataFromHakushin(key)
+  // }
+
   return data
 }
+
+// function getDataFromHakushin(key: ArtifactSetKey) {
+//   const data = getHakushinArtiData(key)
+
+//   const stats: ArtifactDataGen = {
+//     setNum: data.Need,
+//     rarities: data.Rank,
+//     slots: Object.keys(data.Parts).map((part) => artifactSlotMap[part]),
+//   }
+//   return stats
+// }

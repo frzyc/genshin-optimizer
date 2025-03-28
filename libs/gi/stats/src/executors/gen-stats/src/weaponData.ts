@@ -104,5 +104,45 @@ export default function weaponData() {
     })
   ) as Record<WeaponKey, WeaponDataGen>
   data.QuantumCatalyst = quantumCatalystData as WeaponDataGen
+
+  // Hakushin stats
+  // for (const key of hakushinWeapons) {
+  //   data[key] = getDataFromHakushin(key)
+  // }
+
   return data
 }
+
+// function getDataFromHakushin(key: WeaponKey) {
+//   const data = getHakushinWepData(key)
+
+//   const stats: WeaponDataGen = {
+//     weaponType: weaponMap[data.WeaponType],
+//     rarity: data.Rarity,
+//     mainStat: {
+//       type: propTypeMap[data.WeaponProp[0].propType],
+//       base: data.WeaponProp[0].initValue,
+//       curve: data.WeaponProp[0].type,
+//     },
+//     subStat: {
+//       type: propTypeMap[data.WeaponProp[1].propType],
+//       base: data.WeaponProp[1].initValue,
+//       curve: data.WeaponProp[1].type,
+//     },
+//     lvlCurves: data.WeaponProp.map((prop) => ({
+//       key: propTypeMap[prop.propType],
+//       base: prop.initValue,
+//       curve: prop.type,
+//     })),
+//     refinementBonus: {},
+//     ascensionBonus: {
+//       atk: [
+//         0,
+//         ...Object.values(data.Ascension).map(
+//           (asc) => asc.FIGHT_PROP_BASE_ATTACK
+//         ),
+//       ],
+//     },
+//   }
+//   return stats
+// }

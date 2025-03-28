@@ -154,6 +154,10 @@ export const parsingFunctions: {
         const [normal, charged, plunging, nightsoul] = strings
         return { normal, charged, plunging, nightsoul } as any
       }
+      if (charkey === 'Iansan') {
+        const [normal, charged, plunging, nightsoul] = strings
+        return { normal, charged, plunging, nightsoul } as any
+      }
     } else if (strings.length === 5) {
       const [, charkey] = keys as any
       if (charkey === 'Neuvillette') {
@@ -170,6 +174,28 @@ export const parsingFunctions: {
       if (charkey === 'Lyney') {
         const [normal, plunging, charged, grinMalkin, arkhe] = strings
         return { normal, charged, plunging, grinMalkin, arkhe } as any
+      }
+    } else if (strings.length === 7) {
+      const [, charkey] = keys as any
+      if (charkey === 'Varesa') {
+        const [
+          normal,
+          charged,
+          plunging,
+          fieryPassion,
+          fpNormal,
+          fpCharged,
+          fpPlunging,
+        ] = strings
+        return {
+          normal,
+          charged,
+          plunging,
+          fieryPassion,
+          fpNormal,
+          fpCharged,
+          fpPlunging,
+        } as any
       }
     }
     throw `parsing fields error[${keys}](${lang}): ${string}`

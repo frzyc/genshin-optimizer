@@ -11,3 +11,7 @@
 	path = libs/zzz/dm/ZenlessData
 	url = https://git.mero.moe/dimbreath/ZenlessData.git
 	shallow = true
+[submodule "libs/gi/dm/HakushinData"]
+	path = libs/gi/dm/HakushinData
+	url = https://github.com/genshin-optimizer/gi-hakushin-data
+	shallow = true
