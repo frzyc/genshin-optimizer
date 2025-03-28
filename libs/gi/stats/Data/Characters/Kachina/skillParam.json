@@ -325,6 +325,11 @@
     ]
   ],
   "passive3": [],
+  "passive": [
+    [
+      20
+    ]
+  ],
   "constellation1": [
     3,
     5

@@ -1,241 +1,91 @@
 {
-  "CharacterEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "AdventureEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "Stardust": {
-    "type": "MATERIAL_NONE"
-  },
-  "Starglitter": {
-    "type": "MATERIAL_NONE"
-  },
-  "CompanionshipEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "OriginalResin": {
-    "type": "MATERIAL_NONE"
-  },
-  "StoryKey": {
-    "type": "MATERIAL_NONE"
-  },
-  "FadingStarsMight": {
-    "type": "MATERIAL_NONE"
-  },
-  "FadingStarsEssence": {
-    "type": "MATERIAL_NONE"
-  },
-  "GlimmeringEssence": {
-    "type": "MATERIAL_NONE"
-  },
-  "WarmEssence": {
-    "type": "MATERIAL_NONE"
-  },
-  "MiraculousEssence": {
-    "type": "MATERIAL_NONE"
-  },
+  "CharacterEXP": {},
+  "AdventureEXP": {},
+  "Stardust": {},
+  "Starglitter": {},
+  "CompanionshipEXP": {},
+  "OriginalResin": {},
+  "StoryKey": {},
+  "FadingStarsMight": {},
+  "FadingStarsEssence": {},
+  "GlimmeringEssence": {},
+  "WarmEssence": {},
+  "MiraculousEssence": {},
   "IronCoin": {
     "type": "MATERIAL_FAKE_ABSORBATE"
   },
-  "PeaceTalisman": {
-    "type": "MATERIAL_NONE"
-  },
-  "FestiveFever": {
-    "type": "MATERIAL_NONE"
-  },
-  "VeneficusSigil": {
-    "type": "MATERIAL_NONE"
-  },
-  "FestiveTourTicket": {
-    "type": "MATERIAL_NONE"
-  },
-  "PeculiarCollabCoupon": {
-    "type": "MATERIAL_NONE"
-  },
-  "HeartOfTheSpring": {
-    "type": "MATERIAL_NONE"
-  },
-  "Trust": {
-    "type": "MATERIAL_NONE"
-  },
-  "FracturedFruitData": {
-    "type": "MATERIAL_NONE"
-  },
-  "WindtraceCoins": {
-    "type": "MATERIAL_NONE"
-  },
-  "ShinyFlotsam": {
-    "type": "MATERIAL_NONE"
-  },
-  "MiniHarpastum": {
-    "type": "MATERIAL_NONE"
-  },
-  "EnigmaGear": {
-    "type": "MATERIAL_NONE"
-  },
-  "ThunderPellet": {
-    "type": "MATERIAL_NONE"
-  },
-  "ThunderCrystal": {
-    "type": "MATERIAL_NONE"
-  },
-  "MechanicusMasteryEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "WondrousTalisman": {
-    "type": "MATERIAL_NONE"
-  },
-  "MoonchaseFestivalFestiveFever": {
-    "type": "MATERIAL_NONE"
-  },
-  "BatteredShikifuda": {
-    "type": "MATERIAL_NONE"
-  },
-  "DamagedReplica": {
-    "type": "MATERIAL_NONE"
-  },
-  "AgedToken": {
-    "type": "MATERIAL_NONE"
-  },
-  "SnowstriderSeal": {
-    "type": "MATERIAL_NONE"
-  },
-  "VanquishersEmblem": {
-    "type": "MATERIAL_NONE"
-  },
-  "AffluenceTalisman": {
-    "type": "MATERIAL_NONE"
-  },
-  "ImmaculateTalisman": {
-    "type": "MATERIAL_NONE"
-  },
-  "ConquestTalisman": {
-    "type": "MATERIAL_NONE"
-  },
-  "MoonlitCragstone": {
-    "type": "MATERIAL_NONE"
-  },
-  "IridescentFlotsam": {
-    "type": "MATERIAL_NONE"
-  },
-  "StratagemShard": {
-    "type": "MATERIAL_NONE"
-  },
-  "CreativeNote": {
-    "type": "MATERIAL_NONE"
-  },
-  "WhimsicalDraft": {
-    "type": "MATERIAL_NONE"
-  },
+  "PeaceTalisman": {},
+  "FestiveFever": {},
+  "VeneficusSigil": {},
+  "FestiveTourTicket": {},
+  "PeculiarCollabCoupon": {},
+  "HeartOfTheSpring": {},
+  "Trust": {},
+  "FracturedFruitData": {},
+  "WindtraceCoins": {},
+  "ShinyFlotsam": {},
+  "MiniHarpastum": {},
+  "EnigmaGear": {},
+  "ThunderPellet": {},
+  "ThunderCrystal": {},
+  "MechanicusMasteryEXP": {},
+  "WondrousTalisman": {},
+  "MoonchaseFestivalFestiveFever": {},
+  "BatteredShikifuda": {},
+  "DamagedReplica": {},
+  "AgedToken": {},
+  "SnowstriderSeal": {},
+  "VanquishersEmblem": {},
+  "AffluenceTalisman": {},
+  "ImmaculateTalisman": {},
+  "ConquestTalisman": {},
+  "MoonlitCragstone": {},
+  "IridescentFlotsam": {},
+  "StratagemShard": {},
+  "CreativeNote": {},
+  "WhimsicalDraft": {},
   "AncientIronCoin": {
     "type": "MATERIAL_FAKE_ABSORBATE"
   },
-  "PlayerEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "BusinessEarnings": {
-    "type": "MATERIAL_NONE"
-  },
-  "UsableFunds": {
-    "type": "MATERIAL_NONE"
-  },
-  "StrategicInspiration": {
-    "type": "MATERIAL_NONE"
-  },
-  "MushroomCurrency": {
-    "type": "MATERIAL_NONE"
-  },
-  "FungusMedal": {
-    "type": "MATERIAL_NONE"
-  },
-  "ShatteredPhenocryst": {
-    "type": "MATERIAL_NONE"
-  },
-  "CourageTestTicket": {
-    "type": "MATERIAL_NONE"
-  },
-  "FloralCoupon": {
-    "type": "MATERIAL_NONE"
-  },
-  "GalaExcitement": {
-    "type": "MATERIAL_NONE"
-  },
-  "FestiveTicket": {
-    "type": "MATERIAL_NONE"
-  },
-  "InvokationCoupons": {
-    "type": "MATERIAL_NONE"
-  },
-  "JoyeuxVoucher": {
-    "type": "MATERIAL_NONE"
-  },
-  "FascinatingPhenocryst": {
-    "type": "MATERIAL_NONE"
-  },
-  "EnigmaticCopperMainspring": {
-    "type": "MATERIAL_NONE"
-  },
-  "PoetryGalaFervor": {
-    "type": "MATERIAL_NONE"
-  },
-  "ThelxiesBadge": {
-    "type": "MATERIAL_NONE"
-  },
-  "TheaterTickets": {
-    "type": "MATERIAL_NONE"
-  },
-  "FilmForFun": {
-    "type": "MATERIAL_NONE"
-  },
-  "Funds": {
-    "type": "MATERIAL_NONE"
-  },
-  "IridescenceTourTickets": {
-    "type": "MATERIAL_NONE"
-  },
-  "AnalysisProgress": {
-    "type": "MATERIAL_NONE"
-  },
-  "ExcerptsOfBliss": {
-    "type": "MATERIAL_NONE"
-  },
-  "KeyOfEchoes": {
-    "type": "MATERIAL_NONE"
-  },
-  "StarsailCoin": {
-    "type": "MATERIAL_NONE"
-  },
-  "ColorfulContemplation": {
-    "type": "MATERIAL_NONE"
-  },
-  "FestiveFervor": {
-    "type": "MATERIAL_NONE"
-  },
-  "IncenseAshcrystals": {
-    "type": "MATERIAL_NONE"
-  },
-  "FestivalStamp": {
-    "type": "MATERIAL_NONE"
-  },
+  "PlayerEXP": {},
+  "BusinessEarnings": {},
+  "UsableFunds": {},
+  "StrategicInspiration": {},
+  "MushroomCurrency": {},
+  "FungusMedal": {},
+  "ShatteredPhenocryst": {},
+  "CourageTestTicket": {},
+  "FloralCoupon": {},
+  "GalaExcitement": {},
+  "FestiveTicket": {},
+  "InvokationCoupons": {},
+  "JoyeuxVoucher": {},
+  "FascinatingPhenocryst": {},
+  "EnigmaticCopperMainspring": {},
+  "PoetryGalaFervor": {},
+  "ThelxiesBadge": {},
+  "TheaterTickets": {},
+  "FilmForFun": {},
+  "Funds": {},
+  "IridescenceTourTickets": {},
+  "AnalysisProgress": {},
+  "ExcerptsOfBliss": {},
+  "KeyOfEchoes": {},
+  "StarsailCoin": {},
+  "ColorfulContemplation": {},
+  "FestiveFervor": {},
+  "IncenseAshcrystals": {},
+  "FestivalStamp": {},
   "Primogem": {
     "type": "MATERIAL_ADSORBATE"
   },
   "Mora": {
     "type": "MATERIAL_ADSORBATE"
   },
-  "GenesisCrystal": {
-    "type": "MATERIAL_NONE"
-  },
-  "RealmCurrency": {
-    "type": "MATERIAL_NONE"
-  },
-  "ToyMedal": {
-    "type": "MATERIAL_NONE"
-  },
-  "RepertoireCoins": {
-    "type": "MATERIAL_NONE"
-  },
+  "GenesisCrystal": {},
+  "RealmCurrency": {},
+  "ToyMedal": {},
+  "RepertoireCoins": {},
   "OriginalEssenceInvalidated": {
     "type": "MATERIAL_CONSUME"
   },
@@ -275,39 +125,17 @@
   "GeoSigil": {
     "type": "MATERIAL_CONSUME"
   },
-  "InazumaReputationEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "MondstadtReputationEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "SumeruReputationEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "LiyueReputationEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "FontaineReputationEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "ScionsOfTheCanopyReputationEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "PeopleOfTheSpringsReputationEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "ChildrenOfEchoesReputationEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "FlowerFeatherClanReputationEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "MastersOfTheNightWindReputationEXP": {
-    "type": "MATERIAL_NONE"
-  },
-  "CollectiveOfPlentyReputationEXP": {
-    "type": "MATERIAL_NONE"
-  },
+  "InazumaReputationEXP": {},
+  "MondstadtReputationEXP": {},
+  "SumeruReputationEXP": {},
+  "LiyueReputationEXP": {},
+  "FontaineReputationEXP": {},
+  "ScionsOfTheCanopyReputationEXP": {},
+  "PeopleOfTheSpringsReputationEXP": {},
+  "ChildrenOfEchoesReputationEXP": {},
+  "FlowerFeatherClanReputationEXP": {},
+  "MastersOfTheNightWindReputationEXP": {},
+  "CollectiveOfPlentyReputationEXP": {},
   "MemoryOfEternalFlames": {
     "type": "MATERIAL_TALENT"
   },
@@ -3275,21 +3103,11 @@
   "NorthlanderPolearmBillet": {
     "type": "MATERIAL_EXCHANGE"
   },
-  "NorthlanderSword": {
-    "type": "MATERIAL_NONE"
-  },
-  "NorthlanderBow": {
-    "type": "MATERIAL_NONE"
-  },
-  "NorthlanderClaymore": {
-    "type": "MATERIAL_NONE"
-  },
-  "NorthlanderCatalyst": {
-    "type": "MATERIAL_NONE"
-  },
-  "NorthlanderPolearm": {
-    "type": "MATERIAL_NONE"
-  },
+  "NorthlanderSword": {},
+  "NorthlanderBow": {},
+  "NorthlanderClaymore": {},
+  "NorthlanderCatalyst": {},
+  "NorthlanderPolearm": {},
   "MidlanderSwordBillet": {
     "type": "MATERIAL_EXCHANGE"
   },
