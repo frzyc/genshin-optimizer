@@ -14,4 +14,4 @@
 [submodule "libs/gi/dm/HakushinData"]
 	path = libs/gi/dm/HakushinData
 	url = https://github.com/genshin-optimizer/gi-hakushin-data
-  shallow = true
+	shallow = true
