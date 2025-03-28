@@ -159,7 +159,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         ][0].paramDescList.map((id) => [id, 'skillParamEncoding'])
       )
 
-      if (sprint) {
+      if (sprint && avatarSkillExcelConfigData[sprint].costStamina) {
         layeredAssignment(
           mapHashData,
           [...keys, 'sprint', 'name'],

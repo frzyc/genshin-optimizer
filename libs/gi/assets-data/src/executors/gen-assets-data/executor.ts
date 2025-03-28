@@ -174,13 +174,13 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         [ck, 'burst'],
         avatarSkillExcelConfigData[burst].skillIcon + '_HD'
       )
-      if (sprint)
+      if (sprint && avatarSkillExcelConfigData[sprint].costStamina) {
         layeredAssignment(
           assetChar,
           [ck, 'sprint'],
           avatarSkillExcelConfigData[sprint].skillIcon
         )
-
+      }
       passive1.proudSkillGroupId &&
         layeredAssignment(
           assetChar,

@@ -8,9 +8,9 @@ export default function materialData() {
     const { nameTextMapHash, materialType } = material
     const key = nameToKey(TextMapEN[nameTextMapHash])
     if (!key) return
-    materialData[key] = {
+    materialData[key] = materialType !== "MATERIAL_NONE" ? {
       type: materialType,
-    }
+    } : {}
   })
   return materialData
 }
