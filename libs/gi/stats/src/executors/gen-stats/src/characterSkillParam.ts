@@ -61,7 +61,13 @@ export default function characterSkillParam() {
       energySkill: burst,
       skills: [normal, skill, sprint],
       talents,
-      inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+      inherentProudSkillOpens: [
+        passive1,
+        passive2,
+        passive3,
+        passive4,
+        passive,
+      ],
     } = depot
 
     function parseSkillParams(
@@ -130,7 +136,13 @@ export default function characterSkillParam() {
         [...keys, 'passive3'],
         proudSkillExcelConfigData[passive3.proudSkillGroupId]
       )
-    //seems to be only used by sangonomiyaKokomi
+    if (passive4?.proudSkillGroupId) {
+      parseSkillParams(
+        [...keys, 'passive'],
+        proudSkillExcelConfigData[passive4.proudSkillGroupId]
+      )
+    }
+    //seems to be only used by sangonomiyaKokomi and Natlan Night Realm's Gift Passive
     if (passive?.proudSkillGroupId)
       parseSkillParams(
         [...keys, 'passive'],

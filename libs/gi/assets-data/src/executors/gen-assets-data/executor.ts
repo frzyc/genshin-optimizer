@@ -152,7 +152,13 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         energySkill: burst,
         skills: [_normal, skill, sprint],
         talents,
-        inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+        inherentProudSkillOpens: [
+          passive1,
+          passive2,
+          passive3,
+          passive4,
+          passive,
+        ],
       } = depot
 
       // skill icon
@@ -194,6 +200,12 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
           proudSkillExcelConfigData[passive3.proudSkillGroupId][0].icon
         )
 
+      if (passive4?.proudSkillGroupId)
+        layeredAssignment(
+          assetChar,
+          [ck, 'passive'],
+          proudSkillExcelConfigData[passive4.proudSkillGroupId][0].icon
+        )
       // Seems to be only used by SangonomiyaKokomi
       if (passive?.proudSkillGroupId)
         layeredAssignment(
