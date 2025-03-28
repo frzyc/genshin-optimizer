@@ -48,11 +48,11 @@ const avatarSkillDepotExcelConfigDataSrc = readExcelJSON(
 const avatarSkillDepotExcelConfigData = Object.fromEntries(
   avatarSkillDepotExcelConfigDataSrc
     .map((skill) => {
-      // //FIXME: custom processing because there are empty objects in here. for RaidenShogun only...
-      // if (skill.id === 5201) {
-      //   const [k1, k2, , , k5] = skill.inherentProudSkillOpens
-      //   skill.inherentProudSkillOpens = [k1, k2, k5, {}, {}]
-      // }
+      //FIXME: custom processing because there are empty objects in here. for RaidenShogun only...
+      if (skill.id === 5201) {
+        const [k1, k2, , k5] = skill.inherentProudSkillOpens
+        skill.inherentProudSkillOpens = [k1, k2, k5, {}, {}]
+      }
       return skill
     })
     .map((skill) => [skill.id, skill])
