@@ -235,8 +235,7 @@ describe('example', () => {
     const compiled = compile(
       detached,
       'q', // Tag category for object key
-      2, // Number of slots
-      {} // Initial values
+      2 // Number of slots
     )
 
     // Step 5: Calculate the value

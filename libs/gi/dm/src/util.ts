@@ -1,5 +1,5 @@
 import { existsSync, readFileSync } from 'fs'
-import { DM_PATH } from './consts'
+import { DM_PATH, HAKUSHIN_PATH } from './consts'
 
 export function readExcelJSON(path: string) {
   const fullPath = `${DM_PATH}/${path}`
@@ -63,4 +63,10 @@ export function readTextmapJSON(path: string): Record<string, string> {
   const fullPath = `${DM_PATH}/${path}`
   if (!existsSync(fullPath)) throw `File not found :${fullPath}`
   return JSON.parse(readFileSync(fullPath).toString())
+}
+
+export function readHakushinJSON(path: string) {
+  const fullPath = `${HAKUSHIN_PATH}/${path}`
+  if (!existsSync(fullPath)) throw `File not found :${fullPath}`
+  return readFileSync(fullPath).toString()
 }

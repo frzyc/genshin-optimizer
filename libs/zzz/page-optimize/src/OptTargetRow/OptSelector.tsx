@@ -18,8 +18,6 @@ const statTargets = [
   own.final.atk,
   own.final.hp,
   own.final.def,
-  own.final.crit_,
-  own.final.crit_dmg_,
   own.final.enerRegen,
   own.final.anomProf,
   own.final.anomMas,

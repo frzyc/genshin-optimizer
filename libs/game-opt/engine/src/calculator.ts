@@ -76,8 +76,7 @@ export class Calculator<
           [dst ?? 'All']: { [src]: { [sheet!]: { [q!]: val } } },
         })
     }
-    if (op === 'read')
-      [op, ex] = [ex ?? this.defaultAccu(tag!) ?? 'read', undefined]
+    if (op === 'read' && ex !== 'unique') [op, ex] = [ex, undefined]
     switch (op) {
       case 'sum':
       case 'prod':
@@ -85,7 +84,7 @@ export class Calculator<
       case 'max':
       case 'sumfrac':
         if (x.length > 1) {
-          const empty = arithmetic[op]([], ex)
+          const empty = arithmetic[op]([])
           x = x.filter((x) => x.val !== empty)
         }
         if (x.length === 1) return wrap(x[0])

@@ -420,12 +420,9 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.passive2.extraHeal, {
-            name: stg('healing'),
+            name: ct.ch('p2Heal'),
             variant: 'heal',
           }),
-        },
-        {
-          text: ct.ch('p2Aoe'),
         },
       ],
     }),

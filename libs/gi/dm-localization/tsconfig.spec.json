@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../../dist/out-tsc",
-    "types": ["jest", "node"]
+    "types": ["jest", "node", "object-overrides"]
   },
   "include": [
     "jest.config.ts",

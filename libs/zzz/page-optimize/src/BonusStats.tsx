@@ -6,7 +6,7 @@ import {
   NumberInputLazy,
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
+import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import type { BonusStatKey, BonusStatTag } from '@genshin-optimizer/zzz/db'
 import {
@@ -26,7 +26,6 @@ import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
   CardContent,
-  Divider,
   IconButton,
   InputAdornment,
   MenuItem,
@@ -100,7 +99,7 @@ function InitialStatDropdown({
     >
       {bonusStatKeys.map((statKey) => (
         <MenuItem key={statKey} onClick={() => onSelect(statKey)}>
-          <StatDisplay statKey={statKey} showPercent />
+          <StatDisplay statKey={statKey as StatKey} showPercent />
         </MenuItem>
       ))}
     </DropdownButton>
@@ -193,16 +192,6 @@ function BonusStatDisplay({
           }}
         />
       </CardContent>
-      {shouldShowDevComponents && (
-        <>
-          <Divider />
-          <CardContent>
-            <Typography sx={{ fontFamily: 'monospace' }}>
-              {JSON.stringify(tag)}
-            </Typography>
-          </CardContent>
-        </>
-      )}
     </CardThemed>
   )
 }

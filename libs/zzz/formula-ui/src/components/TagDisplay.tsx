@@ -1,5 +1,6 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { elementalData, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
@@ -8,10 +9,13 @@ import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { damageTypeKeysMap, getDmgType, getVariant, tagFieldMap } from '../char'
 import { getTagLabel } from '../util'
 import { qtMap } from './qtMap'
-export function TagDisplay({ tag }: { tag: Tag }) {
+export function TagDisplay({
+  tag,
+  showPercent,
+}: { tag: Tag; showPercent?: boolean }) {
   return (
     <ColorText color={getVariant(tag)}>
-      <TagStrDisplay tag={tag} />
+      <TagStrDisplay tag={tag} showPercent={showPercent} />
     </ColorText>
   )
 }
@@ -45,7 +49,10 @@ const labelMap = {
   common_dmg_: 'DMG',
   resIgn_: 'Res Ignore',
 } as const
-function TagStrDisplay({ tag }: { tag: Tag }) {
+function TagStrDisplay({
+  tag,
+  showPercent,
+}: { tag: Tag; showPercent?: boolean }) {
   const title = tagFieldMap.subset(tag)[0]?.title
   if (title) return title
 
@@ -58,6 +65,7 @@ function TagStrDisplay({ tag }: { tag: Tag }) {
         <span>
           {(tag.qt && qtMap[tag.qt as keyof typeof qtMap]) ?? tag.qt}{' '}
           {statKeyTextMap[label]}
+          {showPercent && getUnitStr(label)}
           {/* {tag.sheet && tag.sheet !== 'agg' ? ` (${tag.sheet})` : ''} */}
         </span>
       </span>
@@ -71,5 +79,5 @@ function TagStrDisplay({ tag }: { tag: Tag }) {
     ]
     return <span>{strs.join(' ')}</span>
   }
-  return <StatDisplay statKey={label as StatKey} />
+  return <StatDisplay statKey={label as StatKey} showPercent={showPercent} />
 }

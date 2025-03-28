@@ -6,6 +6,7 @@
   "specialty": "stun",
   "faction": "VictoriaHousekeepingCo",
   "fullname": "Von Lycaon",
+  "name": "Lycaon",
   "stats": {
     "atk_base": 105,
     "atk_growth": 6.1287,

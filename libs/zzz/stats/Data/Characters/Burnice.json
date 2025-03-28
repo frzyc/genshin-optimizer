@@ -6,6 +6,7 @@
   "specialty": "anomaly",
   "faction": "SonsOfCalydon",
   "fullname": "Burnice White",
+  "name": "Burnice",
   "stats": {
     "atk_base": 124,
     "atk_growth": 7.4992,
