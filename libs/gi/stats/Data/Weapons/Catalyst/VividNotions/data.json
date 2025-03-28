@@ -1,6 +1,6 @@
 {
-  "rarity": 5,
   "weaponType": "catalyst",
+  "rarity": 5,
   "mainStat": {
     "type": "atk",
     "base": 47.537,
@@ -26,6 +26,7 @@
   "refinementBonus": {},
   "ascensionBonus": {
     "atk": [
+      0,
       31.1,
       62.2,
       93.4,
