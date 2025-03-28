@@ -1,5 +1,5 @@
 import type { Language } from '@genshin-optimizer/common/pipeline'
-import { dumpFile, langKeys } from '@genshin-optimizer/common/pipeline'
+import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import {
   crawlObject,
   layeredAssignment,
@@ -452,38 +452,28 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       })
     })
 
-    // Just duplicate EN to all languages for Hakushin
-    for (const lang of langKeys) {
-      for (const key of hakushinChars) {
-        layeredAssignment(
-          languageData,
-          [lang, 'char', key],
-          getLocalizationForHakushinChar(key)
-        )
-      }
-
-      for (const key of hakushinArtis) {
-        layeredAssignment(
-          languageData,
-          [lang, 'artifact', key],
-          getLocalizationForHakushinArti(key)
-        )
-      }
-
-      for (const key of hakushinWeapons) {
-        layeredAssignment(
-          languageData,
-          [lang, 'weapon', key],
-          getLocalizationForHakushinWep(key)
-        )
-      }
-    }
-
     // Add the Somnia and QuantumCatalyst
     languageData[lang as Language].charNames['Somnia'] = 'Somnia'
     languageData[lang as Language].weaponNames['QuantumCatalyst'] =
       'Quantum Cat-alyst'
   })
+
+  // Hakushin localization
+  for (const key of hakushinChars) {
+    const localization = getLocalizationForHakushinChar(key)
+    layeredAssignment(languageData, ['en', 'char', key], localization)
+    languageData.en.charNames[key] = localization.name
+  }
+  for (const key of hakushinArtis) {
+    const localization = getLocalizationForHakushinArti(key)
+    layeredAssignment(languageData, ['en', 'artifact', key], localization)
+    languageData.en['artifactNames'][key] = localization.setName
+  }
+  for (const key of hakushinWeapons) {
+    const localization = getLocalizationForHakushinWep(key)
+    layeredAssignment(languageData, ['en', 'weapon', key], localization)
+    languageData.en.weaponNames[key] = localization.name
+  }
 
   //dump the language data to files
   Object.entries(languageData).forEach(([lang, data]) => {

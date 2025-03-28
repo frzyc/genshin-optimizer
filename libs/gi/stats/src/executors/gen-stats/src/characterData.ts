@@ -101,9 +101,12 @@ export default function characterData() {
     })
   ) as CharacterDatas
   data.Somnia = somniaData as CharacterDataGen
+
+  // Hakushin stats
   // for (const key of hakushinChars) {
   //   data[key] = getDataFromHakushin(key)
   // }
+
   return data
 }
 

@@ -104,9 +104,12 @@ export default function weaponData() {
     })
   ) as Record<WeaponKey, WeaponDataGen>
   data.QuantumCatalyst = quantumCatalystData as WeaponDataGen
+
+  // Hakushin stats
   // for (const key of hakushinWeapons) {
   //   data[key] = getDataFromHakushin(key)
   // }
+
   return data
 }
 

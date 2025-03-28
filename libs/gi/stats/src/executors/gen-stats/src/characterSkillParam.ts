@@ -186,9 +186,12 @@ export default function characterSkillParam() {
     }
   })
   characterSkillParamDump.Somnia = somniaData as CharacterSkillParams
+
+  // Hakushin stats
   // for (const key of hakushinChars) {
   //   characterSkillParamDump[key] = getDataFromHakushin(key)
   // }
+
   return characterSkillParamDump
 }
 

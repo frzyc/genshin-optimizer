@@ -233,6 +233,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   // Dump out the asset List.
   // dumpFile(`${__dirname}/AssetData_gen.json`, assetChar)
 
+  // Hakushin asset data
   // for (const key of hakushinChars) {
   //   assetData.chars[key] = getCharAssetsFromHakushin(key)
   // }
