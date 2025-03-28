@@ -74,7 +74,7 @@
   },
   "skill": {
     "name": "Riding the Night-Rainbow",
-    "fields": {
+    "description": {
       "0": "With footwork swift as lightning and fierce as thunder, Varesa displays the true spirit of lucha libre, rushing forward a certain distance and dealing Nightsoul-aligned <electro>Electro DMG</electro> to opponents in her path.",
       "1": "After using this Skill, Varesa gains 20 Nightsoul points and gains the \"Follow-Up Strike\" effect: Varesa has increased interruption resistance during this time, and upon pressing her Normal Attack, she will quickly unleash a Charged Attack that does not consume Stamina. \"Follow-Up Strike\" will be canceled after Varesa uses a Charged Attack.",
       "2": "She will use different techniques based on whether the skill is Tapped or Held.",
@@ -141,7 +141,7 @@
   },
   "burst": {
     "name": "Guardian Vent!",
-    "fields": {
+    "description": {
       "0": "Leaps into the air before using the momentum of the drop to unleash a powerful flying kick, dealing Nightsoul-aligned <electro>AoE Electro DMG</electro> to opponents — just like those heroes of justice in woven scrolls for kids!",
       "1": "After using this Skill, Varesa's Nightsoul points will be restored to maximum and she will enter the Fiery Passion state.",
       "2": "<br/>",

@@ -62,7 +62,7 @@
   },
   "skill": {
     "name": "Thunderbolt Rush",
-    "fields": {
+    "description": {
       "0": "Iansan charges forward a certain distance, dealing Nightsoul-aligned <electro>Electro DMG</electro> to all opponents in her path.",
       "1": "After this Skill is used, Iansan will regain 54 Nightsoul points and enter the Nightsoul's Blessing state. Within 5s after this is done, using a Normal Attack will trigger 1 quick Swift Stormflight stomp from Iansan that will not consume Stamina.",
       "2": "<br/>",
@@ -114,7 +114,7 @@
   },
   "burst": {
     "name": "The Three Principles of Power",
-    "fields": {
+    "description": {
       "0": "Iansan's stomping foot shatters the very earth with \"Power,\" dealing Nightsoul-aligned <electro>AoE Electro DMG</electro>. She then whips out her \"Limited-Edition Kinetic Energy Scale (For Workouts).\"",
       "1": "When this Skill is used, Iansan will gain 15 Nightsoul points and enter the Nightsoul's Blessing state.",
       "2": "When the Kinetic Energy Scale leaves the field, Iansan's Nightsoul's Blessing state will end.",
