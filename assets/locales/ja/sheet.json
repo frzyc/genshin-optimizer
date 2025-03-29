@@ -179,6 +179,8 @@
   "times_other": "{{count}}回",
   "activeChar": "フィールド上のキャラクター",
   "otherHpChange": "チームメンバーのHPが増減後",
-  "reactionOp": { "overload": "<overloaded>過負荷反応</overloaded>を発動後" },
+  "reactionOp": {
+    "overload": "<overloaded>過負荷反応</overloaded>を発動後"
+  },
   "afterOverflow": "回復上限を超えた"
 }

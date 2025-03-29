@@ -99,9 +99,15 @@
   "TravelerGeoF": "Lumine (Geo)",
   "TravelerElectroF": "Lumine (Electro)",
   "TravelerDendroF": "Lumine (Dendro)",
+  "TravelerHydroF": "Lumine (Hydro)",
+  "TravelerPyroF": "Lumine (Pyro)",
   "TravelerAnemoM": "Aether (Anemo)",
   "TravelerGeoM": "Aether (Geo)",
   "TravelerElectroM": "Aether (Electro)",
   "TravelerDendroM": "Aether (Dendro)",
-  "Somnia": "Somnia"
+  "TravelerHydroM": "Aether (Hydro)",
+  "TravelerPyroM": "Aether (Pyro)",
+  "Somnia": "Somnia",
+  "Iansan": "Iansan",
+  "Varesa": "Varesa"
 }

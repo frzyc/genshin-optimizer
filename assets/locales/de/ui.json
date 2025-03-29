@@ -7,7 +7,11 @@
     "weapons": "Waffen",
     "setting": "Einstellungen"
   },
-  "social": { "paypal": "Paypal", "patreon": "Patreon", "discord": "Discord" },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
   "unselect": "Abwählen",
   "ascending": "Aufsteigend",
   "descending": "Absteigend",
