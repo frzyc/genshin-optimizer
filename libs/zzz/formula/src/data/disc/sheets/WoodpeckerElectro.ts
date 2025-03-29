@@ -1,6 +1,12 @@
 import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { allNumConditionals, own, ownBuff, registerBuff } from '../../util'
+import {
+  allNumConditionals,
+  own,
+  ownBuff,
+  percent,
+  registerBuff,
+} from '../../util'
 import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = 'WoodpeckerElectro'
@@ -19,7 +25,7 @@ const sheet = registerDisc(
   registerBuff(
     'set4_cond_crit_basic_dodge_ex_atk_',
     ownBuff.combat.atk_.add(
-      cmpGE(discCount, 4, prod(0.09, crit_basic_dodge_ex))
+      cmpGE(discCount, 4, prod(percent(0.09), crit_basic_dodge_ex))
     ),
     showCond4Set
   )
