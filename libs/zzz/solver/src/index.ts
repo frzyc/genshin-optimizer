@@ -41,6 +41,7 @@ export function optimize(
   wengines: ICachedWengine[],
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
   numWorkers: number,
+  numOfBuilds: number,
   setProgress: (progress: Progress) => void
 ) {
   const discSetKeys = new Set(allDiscSetKeys)
@@ -141,7 +142,7 @@ export function optimize(
       4, // setFilter4
     ],
     numWorkers,
-    topN: 10, // TODO
+    topN: numOfBuilds,
     setProgress,
   })
 }
