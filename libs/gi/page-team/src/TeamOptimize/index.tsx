@@ -376,9 +376,7 @@ function TeammateMiniDisplay({
   return (
     <DataContext.Provider value={dataContextValue}>
       <OptCharacterCard characterKey={characterKey} hideStats />
-      <StatDisplayComponent
-        columns={{ md: 1 }}
-      />
+      <StatDisplayComponent columns={{ md: 1 }} />
     </DataContext.Provider>
   )
 }
