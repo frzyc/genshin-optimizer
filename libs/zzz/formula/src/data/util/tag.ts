@@ -171,8 +171,8 @@ export const ownTag = {
     enemyAnomBuildupRes_mult_: prep,
     anomBuildup: prep,
     daze_mult_: prep,
-    enemyDazeRes_mult: prep,
-    enemyDazeTaken_mult: prep,
+    enemyDazeRes_mult_: prep,
+    enemyDazeTaken_mult_: prep,
     dazeBuildup: prep,
   },
   listing: {

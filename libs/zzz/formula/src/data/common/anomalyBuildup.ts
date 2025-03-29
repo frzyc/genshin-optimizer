@@ -20,7 +20,7 @@ const data: TagMapNodeEntries = [
       own.formula.base,
       own.formula.anomMas_mult_,
       own.formula.anomBuildup_mult_,
-      ownBuff.formula.enemyAnomBuildupRes_mult_
+      own.formula.enemyAnomBuildupRes_mult_
     )
   ),
 ]

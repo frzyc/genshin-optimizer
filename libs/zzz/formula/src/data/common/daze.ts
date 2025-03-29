@@ -8,11 +8,11 @@ const data: TagMapNodeEntries = [
     sum(percent(1), own.final.dazeInc_, prod(-1, own.final.dazeRed_))
   ),
   // Enemy Daze Resistance Multiplier
-  ownBuff.formula.enemyDazeRes_mult.add(
+  ownBuff.formula.enemyDazeRes_mult_.add(
     sum(percent(1), prod(-1, enemy.common.dazeRes_))
   ),
   // Enemy Daze Taken Multiplier
-  ownBuff.formula.enemyDazeTaken_mult.add(
+  ownBuff.formula.enemyDazeTaken_mult_.add(
     sum(percent(1), enemy.common.dazeInc_, prod(-1, enemy.common.dazeRed_))
   ),
 
@@ -22,8 +22,8 @@ const data: TagMapNodeEntries = [
       own.formula.base,
       own.final.impact,
       own.formula.daze_mult_,
-      own.formula.enemyDazeRes_mult,
-      own.formula.enemyDazeTaken_mult
+      own.formula.enemyDazeRes_mult_,
+      own.formula.enemyDazeTaken_mult_
     )
   ),
 ]
