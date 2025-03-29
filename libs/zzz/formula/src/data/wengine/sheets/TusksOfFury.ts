@@ -37,7 +37,6 @@ const sheet = registerWengine(
 
   // Conditional buffs
   registerBuff(
-    // TODO: teambuff
     'cond_dmg_',
     teamBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
@@ -48,7 +47,6 @@ const sheet = registerWengine(
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
-    // TODO: teambuff
     'daze_',
     teamBuff.combat.dazeInc_.add(
       cmpSpecialtyAndEquipped(

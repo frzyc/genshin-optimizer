@@ -37,7 +37,6 @@ const sheet = registerWengine(
 
   // Conditional buffs
   registerBuff(
-    // TODO: teambuff
     'cond_enerRegen_',
     teamBuff.combat.enerRegen_.add(
       cmpSpecialtyAndEquipped(

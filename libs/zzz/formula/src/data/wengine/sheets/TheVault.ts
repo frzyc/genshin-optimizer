@@ -22,7 +22,6 @@ const sheet = registerWengine(
 
   // Conditional buffs
   registerBuff(
-    // TODO: teambuff
     'cond_dmg_',
     teamBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(key, ether_hit.ifOn(subscript(phase, dm.dmg_)))
