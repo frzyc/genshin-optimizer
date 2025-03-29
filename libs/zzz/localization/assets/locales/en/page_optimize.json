@@ -7,7 +7,7 @@
   "discCond": "Disc Conditionals",
   "bonusStats": "Bonus Stats",
   "enemyStats": "Enemy Editor",
-  "buildDropdownDesc": "Decreasing the number of generated build will decrease build calculation time for large number of builds.",
+  "buildDropdownDesc": "Reducing generated builds shortens calculation time.",
   "bonusStatsNotes": "Write some notes about how you play your character",
   "build_one": "{{count}} Build",
   "build_other": "{{count}} Builds",

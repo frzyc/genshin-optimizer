@@ -1,25 +1,32 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
+import { maxBuildsToShowList } from '@genshin-optimizer/zzz/db'
+import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { MenuItem, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
 export function BuildsSelector({
-  numOfBuilds,
-  setNumOfBuilds,
+  maxBuildsToShow,
+  optConfigId,
 }: {
-  numOfBuilds: number
-  setNumOfBuilds: (w: number) => void
+  maxBuildsToShow: number
+  optConfigId: string
 }) {
+  const { database } = useDatabaseContext()
   const { t } = useTranslation('page_optimize')
-  const numToSelect = [1, 2, 3, 5, 10]
   return (
-    <DropdownButton title={`${numOfBuilds} Builds`}>
+    <DropdownButton title={t('build', { count: maxBuildsToShow })}>
       <MenuItem>
         <Typography variant="caption" color="info.main">
           {t('buildDropdownDesc')}
         </Typography>
       </MenuItem>
-      {numToSelect.map((n) => (
-        <MenuItem key={n} onClick={() => setNumOfBuilds(n)}>
+      {maxBuildsToShowList.map((n) => (
+        <MenuItem
+          key={n}
+          onClick={() =>
+            database.optConfigs.set(optConfigId, { maxBuildsToShow: n })
+          }
+        >
           {t('build', { count: n })}
         </MenuItem>
       ))}

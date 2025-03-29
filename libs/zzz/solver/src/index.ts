@@ -142,7 +142,7 @@ export function optimize(
       4, // setFilter4
     ],
     numWorkers,
-    topN: numOfBuilds, // TODO
+    topN: numOfBuilds,
     setProgress,
   })
 }

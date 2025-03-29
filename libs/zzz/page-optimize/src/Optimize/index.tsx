@@ -70,7 +70,6 @@ function OptimizeWrapper() {
   const { key: characterKey } = useCharacterContext()!
   const { target } = useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
-  const [numOfBuilds, setNumOfBuilds] = useState(5)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
   const discDirty = useDataManagerBaseDirty(database.discs)
@@ -190,7 +189,7 @@ function OptimizeWrapper() {
       wengines,
       discsBySlot,
       numWorkers,
-      numOfBuilds,
+      optConfig.maxBuildsToShow,
       setProgress
     )
 
@@ -207,7 +206,7 @@ function OptimizeWrapper() {
     // Save results to optConfig
     if (results.length)
       database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
-        builds: results.slice(0, 5).map(({ ids, value }) => ({
+        builds: results.map(({ ids, value }) => ({
           wengineId: ids[0],
           discIds: objKeyMap(allDiscSlotKeys, (_slot, index) => ids[index + 1]),
           value,
@@ -220,10 +219,10 @@ function OptimizeWrapper() {
     optConfig.statFilters,
     optConfig.setFilter2,
     optConfig.setFilter4,
+    optConfig.maxBuildsToShow,
     characterKey,
     wengines,
     discsBySlot,
-    numOfBuilds,
     numWorkers,
     database.optConfigs,
     optConfigId,
@@ -256,8 +255,8 @@ function OptimizeWrapper() {
           )}
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
             <BuildsSelector
-              numOfBuilds={numOfBuilds}
-              setNumOfBuilds={setNumOfBuilds}
+              maxBuildsToShow={optConfig.maxBuildsToShow}
+              optConfigId={optConfigId}
             />
             <WorkerSelector
               numWorkers={numWorkers}
