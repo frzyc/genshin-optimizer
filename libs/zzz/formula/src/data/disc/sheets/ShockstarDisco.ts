@@ -1,6 +1,6 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { enemyDebuff, own, registerBuff } from '../../util'
+import { enemyDebuff, own, percent, registerBuff } from '../../util'
 import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = 'ShockstarDisco'
@@ -16,7 +16,10 @@ const sheet = registerDisc(
   // Passives
   registerBuff(
     'set4_basic_daze_',
-    enemyDebuff.common.stun_.addWithDmgType('basic', cmpGE(discCount, 4, 0.2)),
+    enemyDebuff.common.stun_.addWithDmgType(
+      'basic',
+      cmpGE(discCount, 4, percent(0.2))
+    ),
     showCond4Set
   )
   // TODO: add daze_

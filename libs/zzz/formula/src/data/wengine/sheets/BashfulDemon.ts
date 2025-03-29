@@ -5,6 +5,7 @@ import {
   allNumConditionals,
   own,
   ownBuff,
+  percent,
   registerBuff,
   teamBuff,
 } from '../../util'
@@ -41,7 +42,7 @@ const sheet = registerWengine(
     teamBuff.combat.atk_.add(
       cmpSpecialtyAndEquipped(
         key,
-        prod(launch_ex_attack, subscript(phase, dm.atk_))
+        prod(launch_ex_attack, percent(subscript(phase, dm.atk_)))
       )
     ),
     showSpecialtyAndEquipped(key)

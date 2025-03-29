@@ -7,6 +7,7 @@ import {
   enemyDebuff,
   own,
   ownBuff,
+  percent,
   registerBuff,
   teamBuff,
 } from '../../util'
@@ -32,7 +33,7 @@ const sheet = registerDisc(
   registerBuff(
     'set4_dmg_',
     ownBuff.combat.common_dmg_.add(
-      cmpGE(discCount, 4, boolConditional.ifOn(0.1))
+      cmpGE(discCount, 4, boolConditional.ifOn(percent(0.1)))
     ),
     showCond4Set
   ),

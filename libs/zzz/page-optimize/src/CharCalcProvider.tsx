@@ -1,6 +1,7 @@
 import { notEmpty, objKeyMap, toDecimal } from '@genshin-optimizer/common/util'
 import type { Calculator } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
+import { FormulaTextCacheContext } from '@genshin-optimizer/game-opt/sheet-ui'
 import { constant } from '@genshin-optimizer/pando/engine'
 import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import type {
@@ -79,11 +80,15 @@ export function CharCalcProvider({
       ]),
     [member0, charOpt, character.key]
   )
+  // Refresh the formula text cache per calc
+  const formulaTextCache = useMemo(() => calc && new Map(), [calc])
 
   return (
-    <CalcContext.Provider value={calc as Calculator}>
-      {children}
-    </CalcContext.Provider>
+    <FormulaTextCacheContext.Provider value={formulaTextCache}>
+      <CalcContext.Provider value={calc as Calculator}>
+        {children}
+      </CalcContext.Provider>
+    </FormulaTextCacheContext.Provider>
   )
 }
 

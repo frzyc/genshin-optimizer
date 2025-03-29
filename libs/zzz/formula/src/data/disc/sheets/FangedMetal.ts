@@ -1,6 +1,12 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { allBoolConditionals, own, ownBuff, registerBuff } from '../../util'
+import {
+  allBoolConditionals,
+  own,
+  ownBuff,
+  percent,
+  registerBuff,
+} from '../../util'
 import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = 'FangedMetal'
@@ -18,7 +24,7 @@ const sheet = registerDisc(
   registerBuff(
     'set4_cond_inflict_assault',
     ownBuff.combat.common_dmg_.add(
-      cmpGE(discCount, 4, inflict_assault.ifOn(0.35))
+      cmpGE(discCount, 4, inflict_assault.ifOn(percent(0.35)))
     ),
     showCond4Set
   )

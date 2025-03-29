@@ -3,7 +3,9 @@ import {
   type CardBackgroundColor,
   ColorText,
 } from '@genshin-optimizer/common/ui'
-import { valueString } from '@genshin-optimizer/common/util'
+import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
+import type { Tag } from '@genshin-optimizer/game-opt/engine'
+import { Read } from '@genshin-optimizer/game-opt/engine'
 import {
   CalcContext,
   DebugReadContext,
@@ -13,9 +15,22 @@ import { read } from '@genshin-optimizer/pando/engine'
 import GroupsIcon from '@mui/icons-material/Groups'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, Palette, PaletteColor } from '@mui/material'
-import { Box, List, ListItem, Typography, styled } from '@mui/material'
+import {
+  Box,
+  Divider,
+  List,
+  ListItem,
+  Stack,
+  Typography,
+  styled,
+} from '@mui/material'
 import type { ReactNode } from 'react'
-import React, { useCallback, useContext } from 'react'
+import React, { useCallback, useContext, useMemo } from 'react'
+import {
+  FormulaTextCacheContext,
+  FormulaTextContext,
+  FullTagDisplayContext,
+} from '../context'
 import type { Field, TagField, TextField } from '../types'
 
 export function FieldsDisplay({
@@ -98,7 +113,7 @@ export function TagFieldDisplay({
   showZero?: boolean
 }) {
   const calc = useContext(CalcContext)
-  const tag = useContext(TagContext)
+  const contextTag = useContext(TagContext)
   const { setRead } = useContext(DebugReadContext)
   const calcRead = read(field.fieldRef) // we assume default accumulator
 
@@ -107,7 +122,7 @@ export function TagFieldDisplay({
   if (!calc) return null
   // if (!calc && !compareCalc) return null
 
-  const valueCalcRes = calc.withTag(tag).compute(calcRead)
+  const valueCalcRes = calc.withTag(contextTag).compute(calcRead)
   // const compareValueCalcRes: CalcResult<number, CalcMeta> | null = null
 
   // const { setFormulaData } = useContext(FormulaDataContext)
@@ -212,43 +227,55 @@ export function TagFieldDisplay({
         {multiDisplay}
         {fieldVal}
       </Typography>
-      <HelpIcon onClick={onClick} fontSize="inherit" sx={{ cursor: 'help' }} />
-      {/* {!!calcDisplay.formula && (
-        <BootstrapTooltip
-          placement="top"
-          title={
-            <Typography>
-              <Suspense
-                fallback={
-                  <Skeleton variant="rectangular" width={300} height={30} />
-                }
-              >
-                {allAmpReactionKeys.includes(variant as any) && (
-                  <Box sx={{ display: 'inline-flex', gap: 1, mr: 1 }}>
-                    <Box>
-                      <AmpReactionModeText
-                        reaction={variant as AmpReactionKey}
-                        trigger={
-                          subVariant as 'cryo' | 'pyro' | 'hydro' | undefined
-                        }
-                      />
-                    </Box>
-                    <Divider orientation="vertical" flexItem />
-                  </Box>
-                )}
-                <span>{calcDisplay.formula}</span>
-              </Suspense>
-            </Typography>
-          }
-        >
-          <HelpIcon
-            onClick={onClick}
-            fontSize="inherit"
-            sx={{ cursor: 'help' }}
-          />
-        </BootstrapTooltip>
-      )} */}
+      <FormulaHelpIcon tag={field.fieldRef} onClick={onClick} />
     </Box>
+  )
+}
+export function FormulaHelpIcon({
+  tag,
+  onClick,
+}: { tag: Tag; onClick?: () => void }) {
+  const calc = useContext(CalcContext)
+  const contextTag = useContext(TagContext)
+  const FullTagDisplay = useContext(FullTagDisplayContext)
+  const formulaText = useContext(FormulaTextContext)
+  const formulaTextCache = useContext(FormulaTextCacheContext)
+  const name = tag.name || tag.q
+  const read = useMemo(() => new Read(tag, undefined), [tag])
+  const computed = useMemo(
+    () => calc?.withTag(contextTag).compute(read),
+    [calc, contextTag, read]
+  )
+  const valDisplay = valueString(computed?.val ?? 0, getUnitStr(name ?? ''))
+  const fText = useMemo(
+    () => computed && formulaText(computed as any, formulaTextCache),
+    [computed, formulaText, formulaTextCache]
+  )
+  return (
+    <BootstrapTooltip
+      title={
+        <Typography component="div">
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            <FullTagDisplay tag={tag} />
+            <span>{valDisplay}</span>
+          </Box>
+          <Divider />
+          <Box>{fText?.formula}</Box>
+
+          <Stack spacing={1} sx={{ pl: 1, pt: 1 }}>
+            {fText?.deps.map((dep, i) => (
+              <Box key={i}>
+                <Box>{dep.name}</Box>
+                <Divider />
+                <Box> {dep.formula}</Box>
+              </Box>
+            ))}
+          </Stack>
+        </Typography>
+      }
+    >
+      <HelpIcon onClick={onClick} fontSize="inherit" sx={{ cursor: 'help' }} />
+    </BootstrapTooltip>
   )
 }
 

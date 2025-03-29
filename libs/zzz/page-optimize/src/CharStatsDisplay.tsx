@@ -1,4 +1,3 @@
-import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
   shouldShowDevComponents,
@@ -6,15 +5,14 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { Read } from '@genshin-optimizer/game-opt/engine'
 import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
+import { FormulaHelpIcon } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { applyDamageTypeToTag } from '@genshin-optimizer/zzz/db'
 import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
-  FullTagDisplay,
   TagDisplay,
-  formulaText,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
 import {
@@ -23,8 +21,7 @@ import {
   getHighlightRGBA,
   isHighlight,
 } from '@genshin-optimizer/zzz/ui'
-import HelpIcon from '@mui/icons-material/Help'
-import { Box, CardContent, Divider, Stack, Typography } from '@mui/material'
+import { Box, CardContent } from '@mui/material'
 import { useContext, useMemo } from 'react'
 export function CharStatsDisplay() {
   const calc = useZzzCalcContext()
@@ -79,7 +76,6 @@ function StatLine({ read }: { read: Read<Tag> }) {
   )
   const computed = calc?.compute(newRead)
   const name = tag.name || tag.q
-  const fText = computed && formulaText(computed)
 
   const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
   const tagQStatKqy = tag.name
@@ -120,38 +116,17 @@ function StatLine({ read }: { read: Read<Tag> }) {
           pointerEvents: 'none',
         },
       }}
-      onClick={() => {
-        shouldShowDevComponents && setRead(newRead)
-      }}
     >
       <Box sx={{ flexGrow: 1 }}>
         <TagDisplay tag={tag} />
       </Box>
       {valDisplay}
-      <BootstrapTooltip
-        title={
-          <Typography component="div">
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <FullTagDisplay tag={tag} />
-              <span>{valDisplay}</span>
-            </Box>
-            <Divider />
-            <Box>{fText?.formula}</Box>
-
-            <Stack spacing={1} sx={{ pl: 1, pt: 1 }}>
-              {fText?.deps.map((dep, i) => (
-                <Box key={i}>
-                  <Box>{dep.name}</Box>
-                  <Divider />
-                  <Box> {dep.formula}</Box>
-                </Box>
-              ))}
-            </Stack>
-          </Typography>
-        }
-      >
-        <HelpIcon />
-      </BootstrapTooltip>
+      <FormulaHelpIcon
+        tag={tag}
+        onClick={() => {
+          shouldShowDevComponents && setRead(newRead)
+        }}
+      />
     </Box>
   )
 }
