@@ -226,7 +226,7 @@ const dmgFormulas = {
   },
   skill: {
     rushDmg: dmgNode('atk', dm.skill.rushDmg, 'skill'),
-    fpRushDmg: dmgNode('atk', dm.skill.rushDmg, 'skill'),
+    fpRushDmg: dmgNode('atk', dm.skill.fpRushDmg, 'skill'),
   },
   burst: {
     kickDmg: dmgNode('atk', dm.burst.kickDmg, 'burst'),
