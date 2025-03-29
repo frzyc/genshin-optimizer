@@ -6,6 +6,7 @@
   "specialty": "attack",
   "faction": "VictoriaHousekeepingCo",
   "fullname": "Corin Wickes",
+  "name": "Corin",
   "stats": {
     "atk_base": 116,
     "atk_growth": 6.9346,

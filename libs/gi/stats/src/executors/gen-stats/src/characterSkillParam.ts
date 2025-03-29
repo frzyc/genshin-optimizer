@@ -1,4 +1,7 @@
-import { layeredAssignment } from '@genshin-optimizer/common/util'
+import {
+  layeredAssignment,
+  transposeArray,
+} from '@genshin-optimizer/common/util'
 import type { NonTravelerCharacterKey } from '@genshin-optimizer/gi/consts'
 import type {
   AvatarSkillDepotExcelConfigData,
@@ -11,6 +14,8 @@ import {
   avatarSkillExcelConfigData,
   avatarTalentExcelConfigData,
   characterIdMap,
+  getHakushinCharData,
+  hakushinChars,
   proudSkillExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
 import * as somniaData from './Somnia/skillParam.json'
@@ -186,5 +191,46 @@ export default function characterSkillParam() {
     }
   })
   characterSkillParamDump.Somnia = somniaData as CharacterSkillParams
+
+  // Hakushin stats
+  for (const key of hakushinChars) {
+    characterSkillParamDump[key] = getDataFromHakushin(key)
+  }
+
   return characterSkillParamDump
+}
+
+function getDataFromHakushin(key: NonTravelerCharacterKey) {
+  const data = getHakushinCharData(key)
+
+  const skillParams: CharacterSkillParams = {
+    auto: convertSkillsPromoteParamToParams(data.Skills[0].Promote),
+    skill: convertSkillsPromoteParamToParams(data.Skills[1].Promote),
+    // Alternate sprint might be [2], burst always seems to be last
+    burst: convertSkillsPromoteParamToParams(
+      data.Skills[data.Skills.length - 1].Promote
+    ),
+    passive1: data.Passives[0].ParamList.map((val) => [val]),
+    passive2: data.Passives[1].ParamList.map((val) => [val]),
+    // Natlan passive might be [2]
+    // TODO: passive might be last, add some handling if needed
+    passive3: data.Passives[data.Passives.length - 1].ParamList.map((val) => [
+      val,
+    ]),
+    constellation1: data.Constellations[0].ParamList,
+    constellation2: data.Constellations[1].ParamList,
+    constellation3: data.Constellations[2].ParamList,
+    constellation4: data.Constellations[3].ParamList,
+    constellation5: data.Constellations[4].ParamList,
+    constellation6: data.Constellations[5].ParamList,
+  }
+  return skillParams
+}
+
+function convertSkillsPromoteParamToParams(
+  skillsPromote: Record<string, { Param: number[] }>
+) {
+  return transposeArray(
+    Object.values(skillsPromote).map((level) => level.Param)
+  )
 }

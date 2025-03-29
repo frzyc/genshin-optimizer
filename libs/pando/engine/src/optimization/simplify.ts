@@ -52,13 +52,10 @@ export function combineConst<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
         const constX = n.x.filter((x) => x.op === 'const') as Const<number>[]
         if (constX.length > 1) {
           const varX = n.x.filter((x) => x.op !== 'const') as NumNode<I>[]
-          const constVal = arithmetic[op](
-            constX.map((x) => x.ex),
-            n.ex
-          )
+          const constVal = arithmetic[op](constX.map((x) => x.ex))
 
           // Vacuous const part; don't add the unnecessary const term
-          if (constVal === arithmetic[op]([], n.ex))
+          if (constVal === arithmetic[op]([]))
             return { ...n, x: varX } as NumNode<I>
           return { ...n, x: [constant(constVal), ...varX] } as NumNode<I>
         }

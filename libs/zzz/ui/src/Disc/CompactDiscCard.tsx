@@ -2,6 +2,7 @@ import {
   CardThemed,
   ColorText,
   ConditionalWrapper,
+  ImgIcon,
   NextImage,
 } from '@genshin-optimizer/common/ui'
 import {
@@ -9,7 +10,7 @@ import {
   statKeyToFixed,
   toPercent,
 } from '@genshin-optimizer/common/util'
-import { discDefIcon } from '@genshin-optimizer/zzz/assets'
+import { characterAsset, discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscRarityKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
   getDiscMainStatVal,
@@ -19,6 +20,7 @@ import {
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import type { ISubstat } from '@genshin-optimizer/zzz/zood'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { Theme } from '@mui/system'
 import type { ReactNode } from 'react'
@@ -49,6 +51,7 @@ export function CompactDiscCard({
   const isHL = disc?.mainStatKey
     ? isHighlight(statHighlight, disc?.mainStatKey)
     : false
+  const location = disc?.location
 
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -96,8 +99,50 @@ export function CompactDiscCard({
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   height: '100%',
+                  position: 'relative',
                 }}
               >
+                <Box
+                  sx={{
+                    height: 0,
+                    position: 'absolute',
+                    top: '4px',
+                    right: '4px',
+                    zIndex: 1,
+                  }}
+                >
+                  {location ? (
+                    <ImgIcon
+                      src={characterAsset(location, 'circle')}
+                      sx={(theme: Theme) => ({
+                        border: `4px solid ${
+                          theme.palette[rarityColor[disc.rarity]].main
+                        }`,
+                        borderRadius: '50%',
+                        width: '40px',
+                        height: '40px',
+                      })}
+                    />
+                  ) : (
+                    <Box
+                      sx={(theme: Theme) => ({
+                        border: `4px solid ${
+                          theme.palette[rarityColor[disc.rarity]].main
+                        }`,
+                        borderRadius: '50%',
+                        width: '40px',
+                        height: '40px',
+                        background: theme.palette['contentNormal'].main,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        paddingBottom: '1px',
+                      })}
+                    >
+                      <BusinessCenterIcon fontSize={'small'} />
+                    </Box>
+                  )}
+                </Box>
                 <Box
                   sx={(theme: Theme) => ({
                     border: `4px solid ${
@@ -146,6 +191,7 @@ export function CompactDiscCard({
                           : 'transform 0.1s ease-out',
                       }}
                     />
+
                     <Box
                       sx={{
                         height: 0,

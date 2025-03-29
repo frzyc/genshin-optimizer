@@ -44,7 +44,7 @@ export const fixedTags = {
   specialty: specialties,
   faction: factions,
 }
-export type Tag = BaseTag<Sheet, Src, Dst> & {
+export interface Tag extends BaseTag<Sheet, Src, Dst> {
   attribute?: Attribute | null
   skillType?: SkillType | null
   damageType1?: DamageType | null

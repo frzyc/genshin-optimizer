@@ -14,7 +14,10 @@
         }
       ]
     },
-    "gen-file": {}
+    "get-hakushin": {
+      "executor": "@genshin-optimizer/gi/dm:gen-hakushin",
+      "outputs": ["{projectRoot}/HakushinData/**/*"]
+    }
   },
   "tags": []
 }

@@ -1,4 +1,6 @@
 export * from './consts'
 export * from './dm'
+export * from './hakushin'
 export * from './mapping'
 export * from './TextMapUtil'
+export * from './util'

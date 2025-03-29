@@ -33,6 +33,7 @@ import Gaming from './Gaming'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
+import Iansan from './Iansan'
 import Jean from './Jean'
 import Kachina from './Kachina'
 import KaedeharaKazuha from './KaedeharaKazuha'
@@ -83,6 +84,7 @@ import TravelerElectro from './TravelerElectro'
 import TravelerGeo from './TravelerGeo'
 import TravelerHydro from './TravelerHydro'
 import TravelerPyro from './TravelerPyro'
+import Varesa from './Varesa'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
@@ -136,6 +138,7 @@ const data: TagMapNodeEntries[] = [
   Ganyu,
   Gorou,
   HuTao,
+  Iansan,
   Jean,
   Kachina,
   KaedeharaKazuha,
@@ -180,6 +183,7 @@ const data: TagMapNodeEntries[] = [
   Tartaglia,
   Thoma,
   Tighnari,
+  Varesa,
   Venti,
   Wanderer,
   Wriothesley,

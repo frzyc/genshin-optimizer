@@ -6,6 +6,7 @@
   "specialty": "stun",
   "faction": "CunningHares",
   "fullname": "Anby Demara",
+  "name": "Anby",
   "stats": {
     "atk_base": 95,
     "atk_growth": 5.423,

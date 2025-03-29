@@ -1,6 +1,7 @@
 import { notEmpty, objKeyMap, toDecimal } from '@genshin-optimizer/common/util'
 import type { Calculator } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
+import { FormulaTextCacheContext } from '@genshin-optimizer/game-opt/sheet-ui'
 import { constant } from '@genshin-optimizer/pando/engine'
 import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import type {
@@ -54,7 +55,7 @@ export function CharCalcProvider({
         enemy.common.lvl.add(charOpt.enemyLvl),
         enemy.common.def.add(charOpt.enemyDef),
         enemy.common.isStunned.add(charOpt.enemyisStunned ? 1 : 0),
-        enemy.common.stun_.add(1.5),
+        enemy.common.stun_.add(charOpt.enemyStunMultiplier / 100),
         enemy.common.unstun_.add(1),
         ...charOpt.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValue }) =>
@@ -70,14 +71,24 @@ export function CharCalcProvider({
             value: constant(toDecimal(value, tag.q ?? '')),
           })
         ),
+        ...charOpt.enemyStats.flatMap(({ tag, value }) =>
+          withPreset(`preset0`, {
+            tag: { ...tag, qt: 'common', et: 'enemy', sheet: 'agg' },
+            value: constant(toDecimal(value, tag.q ?? '')),
+          })
+        ),
       ]),
     [member0, charOpt, character.key]
   )
+  // Refresh the formula text cache per calc
+  const formulaTextCache = useMemo(() => calc && new Map(), [calc])
 
   return (
-    <CalcContext.Provider value={calc as Calculator}>
-      {children}
-    </CalcContext.Provider>
+    <FormulaTextCacheContext.Provider value={formulaTextCache}>
+      <CalcContext.Provider value={calc as Calculator}>
+        {children}
+      </CalcContext.Provider>
+    </FormulaTextCacheContext.Provider>
   )
 }
 

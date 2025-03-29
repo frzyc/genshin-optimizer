@@ -1,4 +1,6 @@
-import { useTitle } from '@genshin-optimizer/common/ui'
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { ImgIcon, useTitle } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
@@ -6,13 +8,22 @@ import {
   DebugReadModal,
   TagContext,
 } from '@genshin-optimizer/game-opt/formula-ui'
-import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
+import type {
+  FormulaTextFunc,
+  FullTagDisplayComponent,
+  SetConditionalFunc,
+  TagDisplayComponent,
+} from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   ConditionalValuesContext,
+  FormulaTextContext,
+  FullTagDisplayContext,
   SetConditionalContext,
   SrcDstDisplayContext,
+  TagDisplayContext,
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
+import { characterAsset } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
 import {
@@ -27,14 +38,21 @@ import {
   isMember,
   isSheet,
 } from '@genshin-optimizer/zzz/formula'
-import { CharacterName, LocationAutocomplete } from '@genshin-optimizer/zzz/ui'
-import { Box } from '@mui/material'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import {
+  FullTagDisplay,
+  TagDisplay,
+  formulaText,
+} from '@genshin-optimizer/zzz/formula-ui'
+import { getCharStat } from '@genshin-optimizer/zzz/stats'
+import {
+  CharacterName,
+  CharacterSingleSelectionModal,
+} from '@genshin-optimizer/zzz/ui'
+import { Box, Button } from '@mui/material'
+import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharCalcProvider } from './CharCalcProvider'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
-
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { OptTargetRow } from './OptTargetRow'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
@@ -42,6 +60,7 @@ export default function PageOptimize() {
   const { database } = useDatabaseContext()
   const { optCharKey } = useDataEntryBase(database.dbMeta)
   const characterKey = optCharKey ?? allCharacterKeys[0]
+  const [show, onShow, onHide] = useBoolState()
   const setCharacterKey = useCallback(
     (ck: CharacterKey) => database.dbMeta.set({ optCharKey: ck }),
     [database.dbMeta]
@@ -115,52 +134,94 @@ export default function PageOptimize() {
     [debugRead]
   )
   return (
-    <Box>
-      <LocationAutocomplete
-        locKey={characterKey}
-        setLocKey={(ck) => ck && setCharacterKey(ck)}
-        sx={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 100,
-          background: '#0C1020',
-        }}
-      />
-      {character && charOpt && (
-        <CharacterContext.Provider value={character}>
-          <TagContext.Provider value={tag}>
-            <CharCalcProvider
-              character={character}
-              charOpt={charOpt}
-              wengineId={character.equippedWengine}
-              discIds={character.equippedDiscs}
-            >
-              <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
-                <ConditionalValuesContext.Provider value={charOpt.conditionals}>
-                  <SetConditionalContext.Provider value={setConditional}>
-                    <DebugReadContext.Provider value={debugObj}>
-                      <DebugReadModal />
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          gap: 1,
-                          flexDirection: 'column',
-                          mt: 1,
-                        }}
-                      >
-                        <OptTargetRow character={character} charOpt={charOpt} />
-                        <TeamHeaderHeightContext.Provider value={78}>
-                          <CharacterOptDisplay />
-                        </TeamHeaderHeightContext.Provider>
-                      </Box>
-                    </DebugReadContext.Provider>
-                  </SetConditionalContext.Provider>
-                </ConditionalValuesContext.Provider>
-              </SrcDstDisplayContext.Provider>
-            </CharCalcProvider>
-          </TagContext.Provider>
-        </CharacterContext.Provider>
-      )}
-    </Box>
+    <Providers>
+      <Box>
+        <Suspense fallback={false}>
+          <CharacterSingleSelectionModal
+            show={show}
+            onHide={onHide}
+            onSelect={setCharacterKey}
+          />
+        </Suspense>
+        <Box
+          sx={{
+            position: 'sticky',
+            top: 0,
+            zIndex: 100,
+            background: '#0C1020',
+          }}
+        >
+          <Button
+            fullWidth
+            color={getCharStat(characterKey).attribute}
+            sx={{
+              justifyContent: 'flex-start',
+              pl: '6px',
+            }}
+            onClick={onShow}
+          >
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              <ImgIcon size={2} src={characterAsset(characterKey, 'circle')} />
+              {t(`charNames_gen:${characterKey}`)}
+            </Box>
+          </Button>
+        </Box>
+        {character && charOpt && (
+          <CharacterContext.Provider value={character}>
+            <TagContext.Provider value={tag}>
+              <CharCalcProvider
+                character={character}
+                charOpt={charOpt}
+                wengineId={character.equippedWengine}
+                discIds={character.equippedDiscs}
+              >
+                <SrcDstDisplayContext.Provider
+                  value={srcDstDisplayContextValue}
+                >
+                  <ConditionalValuesContext.Provider
+                    value={charOpt.conditionals}
+                  >
+                    <SetConditionalContext.Provider value={setConditional}>
+                      <DebugReadContext.Provider value={debugObj}>
+                        <DebugReadModal />
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            gap: 1,
+                            flexDirection: 'column',
+                            mt: 1,
+                          }}
+                        >
+                          <OptTargetRow
+                            character={character}
+                            charOpt={charOpt}
+                          />
+                          <TeamHeaderHeightContext.Provider value={74}>
+                            <CharacterOptDisplay />
+                          </TeamHeaderHeightContext.Provider>
+                        </Box>
+                      </DebugReadContext.Provider>
+                    </SetConditionalContext.Provider>
+                  </ConditionalValuesContext.Provider>
+                </SrcDstDisplayContext.Provider>
+              </CharCalcProvider>
+            </TagContext.Provider>
+          </CharacterContext.Provider>
+        )}
+      </Box>
+    </Providers>
+  )
+}
+function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <FormulaTextContext.Provider value={formulaText as FormulaTextFunc}>
+      <TagDisplayContext.Provider value={TagDisplay as TagDisplayComponent}>
+        <FullTagDisplayContext.Provider
+          value={FullTagDisplay as FullTagDisplayComponent}
+        >
+          {children}
+        </FullTagDisplayContext.Provider>
+      </TagDisplayContext.Provider>
+    </FormulaTextContext.Provider>
   )
 }

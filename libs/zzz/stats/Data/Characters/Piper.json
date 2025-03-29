@@ -6,6 +6,7 @@
   "specialty": "anomaly",
   "faction": "SonsOfCalydon",
   "fullname": "Piper",
+  "name": "Piper",
   "stats": {
     "atk_base": 109,
     "atk_growth": 6.4308,

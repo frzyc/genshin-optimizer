@@ -136,6 +136,7 @@
       "specialty": "stun",
       "faction": "CunningHares",
       "fullname": "Anby Demara",
+      "name": "Anby",
       "stats": {
         "atk_base": 95,
         "atk_growth": 5.423,
@@ -1456,6 +1457,7 @@
       "specialty": "attack",
       "faction": "CunningHares",
       "fullname": "Nekomiya Mana",
+      "name": "Nekomata",
       "stats": {
         "atk_base": 131,
         "atk_growth": 7.9762,
@@ -2808,6 +2810,7 @@
       "specialty": "support",
       "faction": "CunningHares",
       "fullname": "Nicole Demara",
+      "name": "Nicole",
       "stats": {
         "atk_base": 93,
         "atk_growth": 5.3249,
@@ -4861,6 +4864,7 @@
       "specialty": "attack",
       "faction": "NewEriduDefenseForce",
       "fullname": "Soldier 11",
+      "name": "Soldier 11",
       "stats": {
         "atk_base": 128,
         "atk_growth": 7.7554,
@@ -6354,6 +6358,7 @@
       "specialty": "attack",
       "faction": "VictoriaHousekeepingCo",
       "fullname": "Corin Wickes",
+      "name": "Corin",
       "stats": {
         "atk_base": 116,
         "atk_growth": 6.9346,
@@ -7895,6 +7900,7 @@
       "specialty": "defense",
       "faction": "SonsOfCalydon",
       "fullname": "Caesar King",
+      "name": "Caesar",
       "stats": {
         "atk_base": 101,
         "atk_growth": 5.8761,
@@ -9594,6 +9600,7 @@
       "specialty": "attack",
       "faction": "CunningHares",
       "fullname": "Billy Kid",
+      "name": "Billy",
       "stats": {
         "atk_base": 113,
         "atk_growth": 6.7335,
@@ -10998,6 +11005,7 @@
       "specialty": "anomaly",
       "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Hoshimi Miyabi",
+      "name": "Miyabi",
       "stats": {
         "atk_base": 127,
         "atk_growth": 7.6728,
@@ -12620,6 +12628,7 @@
       "specialty": "stun",
       "faction": "BelebogHeavyIndustries",
       "fullname": "Koleda Belobog",
+      "name": "Koleda",
       "stats": {
         "atk_base": 106,
         "atk_growth": 6.2007,
@@ -14233,6 +14242,7 @@
       "specialty": "attack",
       "faction": "BelebogHeavyIndustries",
       "fullname": "Anton Ivanov",
+      "name": "Anton",
       "stats": {
         "atk_base": 114,
         "atk_growth": 6.7737,
@@ -15806,6 +15816,7 @@
       "specialty": "defense",
       "faction": "BelebogHeavyIndustries",
       "fullname": "Ben Bigger",
+      "name": "Ben",
       "stats": {
         "atk_base": 94,
         "atk_growth": 5.3574,
@@ -17191,6 +17202,7 @@
       "specialty": "support",
       "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Soukaku",
+      "name": "Soukaku",
       "stats": {
         "atk_base": 96,
         "atk_growth": 5.4887,
@@ -18873,6 +18885,7 @@
       "specialty": "stun",
       "faction": "VictoriaHousekeepingCo",
       "fullname": "Von Lycaon",
+      "name": "Lycaon",
       "stats": {
         "atk_base": 105,
         "atk_growth": 6.1287,
@@ -20656,6 +20669,7 @@
       "specialty": "support",
       "faction": "SonsOfCalydon",
       "fullname": "Luciana de Montefio",
+      "name": "Lucy",
       "stats": {
         "atk_base": 95,
         "atk_growth": 5.423,
@@ -22256,6 +22270,7 @@
       "specialty": "stun",
       "faction": "SonsOfCalydon",
       "fullname": "Lighter",
+      "name": "Lighter",
       "stats": {
         "atk_base": 109,
         "atk_growth": 6.3891,
@@ -24099,6 +24114,7 @@
       "specialty": "anomaly",
       "faction": "SonsOfCalydon",
       "fullname": "Burnice White",
+      "name": "Burnice",
       "stats": {
         "atk_base": 124,
         "atk_growth": 7.4992,
@@ -25706,6 +25722,7 @@
       "specialty": "anomaly",
       "faction": "BelebogHeavyIndustries",
       "fullname": "Grace Howard",
+      "name": "Grace",
       "stats": {
         "atk_base": 119,
         "atk_growth": 7.1181,
@@ -26928,6 +26945,7 @@
       "specialty": "attack",
       "faction": "VictoriaHousekeepingCo",
       "fullname": "Ellen Joe",
+      "name": "Ellen",
       "stats": {
         "atk_base": 135,
         "atk_growth": 8.2578,
@@ -28577,6 +28595,7 @@
       "specialty": "attack",
       "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Asaba Harumasa",
+      "name": "Harumasa",
       "stats": {
         "atk_base": 132,
         "atk_growth": 8.027,
@@ -30200,6 +30219,7 @@
       "specialty": "support",
       "faction": "VictoriaHousekeepingCo",
       "fullname": "Alexandrina Sebastiane",
+      "name": "Rina",
       "stats": {
         "atk_base": 103,
         "atk_growth": 6.0201,
@@ -31437,6 +31457,7 @@
       "specialty": "anomaly",
       "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Tsukishiro Yanagi",
+      "name": "Yanagi",
       "stats": {
         "atk_base": 126,
         "atk_growth": 7.586,
@@ -33025,6 +33046,7 @@
       "specialty": "attack",
       "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Zhu Yuan",
+      "name": "Zhu Yuan",
       "stats": {
         "atk_base": 132,
         "atk_growth": 8.0729,
@@ -34629,6 +34651,7 @@
       "specialty": "stun",
       "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Qingyi",
+      "name": "Qingyi",
       "stats": {
         "atk_base": 109,
         "atk_growth": 6.4272,
@@ -36282,6 +36305,7 @@
       "specialty": "anomaly",
       "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Jane Doe",
+      "name": "Jane",
       "stats": {
         "atk_base": 127,
         "atk_growth": 7.6728,
@@ -38126,6 +38150,7 @@
       "specialty": "defense",
       "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Seth Lowell",
+      "name": "Seth",
       "stats": {
         "atk_base": 93,
         "atk_growth": 5.2593,
@@ -39522,6 +39547,7 @@
       "specialty": "anomaly",
       "faction": "SonsOfCalydon",
       "fullname": "Piper",
+      "name": "Piper",
       "stats": {
         "atk_base": 109,
         "atk_growth": 6.4308,
@@ -40993,6 +41019,7 @@
       "specialty": "support",
       "faction": "StarsOfLyra",
       "fullname": "Astra Yao",
+      "name": "Astra Yao",
       "stats": {
         "atk_base": 103,
         "atk_growth": 5.9961,
@@ -42584,6 +42611,7 @@
       "specialty": "attack",
       "faction": "StarsOfLyra",
       "fullname": "Evelyn Chevalier",
+      "name": "Evelyn",
       "stats": {
         "atk_base": 134,
         "atk_growth": 8.1654,
@@ -44217,6 +44245,7 @@
       "specialty": "stun",
       "faction": "SonsOfCalydon",
       "fullname": "Pulchra",
+      "name": "Pulchra",
       "stats": {
         "atk_base": 96,
         "atk_growth": 5.4887,
@@ -45507,6 +45536,7 @@
       "specialty": "stun",
       "faction": "NewEriduDefenseForce",
       "fullname": "Trigger",
+      "name": "Trigger",
       "stats": {
         "atk_base": 108,
         "atk_growth": 6.3517,
@@ -47059,6 +47089,7 @@
       "specialty": "attack",
       "faction": "NewEriduDefenseForce",
       "fullname": "Soldier 0 - Anby",
+      "name": "Soldier 0 - Anby",
       "stats": {
         "atk_base": 134,
         "atk_growth": 8.1654,

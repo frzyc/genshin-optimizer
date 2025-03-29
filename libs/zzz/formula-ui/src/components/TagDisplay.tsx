@@ -1,24 +1,39 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
+import { evalIfFunc, getUnitStr } from '@genshin-optimizer/common/util'
+import type { Calculator as GameOptCalculator } from '@genshin-optimizer/game-opt/engine'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { elementalData, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { Read, type Tag } from '@genshin-optimizer/zzz/formula'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
-import { damageTypeKeysMap, getDmgType, getVariant, tagFieldMap } from '../char'
+import {
+  condMap,
+  damageTypeKeysMap,
+  getDmgType,
+  getVariant,
+  tagFieldMap,
+} from '../char'
+import { useZzzCalcContext } from '../hooks'
 import { getTagLabel } from '../util'
 import { qtMap } from './qtMap'
-export function TagDisplay({ tag }: { tag: Tag }) {
+export function TagDisplay({
+  tag,
+  showPercent,
+}: { tag: Tag; showPercent?: boolean }) {
   return (
     <ColorText color={getVariant(tag)}>
-      <TagStrDisplay tag={tag} />
+      <TagStrDisplay tag={tag} showPercent={showPercent} />
     </ColorText>
   )
 }
-export function FullTagDisplay({ tag }: { tag: Tag }) {
+export function FullTagDisplay({
+  tag,
+  showPercent,
+}: { tag: Tag; showPercent?: boolean }) {
   return (
     <>
-      <TagDisplay tag={tag} />
+      <TagDisplay tag={tag} showPercent={showPercent} />
       {/* Show DMG type */}
       {getDmgType(tag).map((dmgType) => (
         <SqBadge key={dmgType}>{damageTypeKeysMap[dmgType]}</SqBadge>
@@ -45,10 +60,23 @@ const labelMap = {
   common_dmg_: 'DMG',
   resIgn_: 'Res Ignore',
 } as const
-function TagStrDisplay({ tag }: { tag: Tag }) {
+function TagStrDisplay({
+  tag,
+  showPercent,
+}: { tag: Tag; showPercent?: boolean }) {
+  const calc = useZzzCalcContext()
   const title = tagFieldMap.subset(tag)[0]?.title
   if (title) return title
-
+  // Conditional label handling
+  if (tag.qt === 'cond' && tag.q && tag.sheet && calc) {
+    const cond = condMap.get(`${tag.sheet}:${tag.q}`)
+    if (cond)
+      return evalIfFunc(
+        cond.label,
+        calc as GameOptCalculator,
+        calc?.compute(new Read(tag, 'max')).val
+      )
+  }
   const label = getTagLabel(tag)
 
   if (isExtraHandlingStats(label))
@@ -58,6 +86,7 @@ function TagStrDisplay({ tag }: { tag: Tag }) {
         <span>
           {(tag.qt && qtMap[tag.qt as keyof typeof qtMap]) ?? tag.qt}{' '}
           {statKeyTextMap[label]}
+          {showPercent && getUnitStr(label)}
           {/* {tag.sheet && tag.sheet !== 'agg' ? ` (${tag.sheet})` : ''} */}
         </span>
       </span>
@@ -71,5 +100,5 @@ function TagStrDisplay({ tag }: { tag: Tag }) {
     ]
     return <span>{strs.join(' ')}</span>
   }
-  return <StatDisplay statKey={label as StatKey} />
+  return <StatDisplay statKey={label as StatKey} showPercent={showPercent} />
 }

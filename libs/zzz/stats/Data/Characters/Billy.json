@@ -6,6 +6,7 @@
   "specialty": "attack",
   "faction": "CunningHares",
   "fullname": "Billy Kid",
+  "name": "Billy",
   "stats": {
     "atk_base": 113,
     "atk_growth": 6.7335,

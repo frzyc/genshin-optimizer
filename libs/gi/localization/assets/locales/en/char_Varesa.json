@@ -1,0 +1,11 @@
+{
+  "fpLow": "Fiery Passion Low Plunge DMG",
+  "fpHigh": "Fiery Passion High Plunge DMG",
+  "fpImpact_dmgInc": "Fiery Passion Plunging Impact DMG Increase",
+  "a1RainbowCond": "Under the Rainbow Crash effect",
+  "a1FpCond": "In the Fiery Passion state",
+  "c1Text": "Passive Talent \"Tag-Team Triple Jump!\" enhanced",
+  "c1Effect": "Fiery Passion Plunging Impact DMG Increase from Passive 1 now applied to Volcano Kablam DMG",
+  "c4DiligentCond": "Under the Diligent Refinement effect",
+  "c4FpApexCond": "In either the Fiery Passion or Apex Drive state"
+}
