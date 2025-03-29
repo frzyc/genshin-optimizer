@@ -481,7 +481,7 @@ const sheet: TalentSheet = {
               node: c2_hydro_enemyRes_,
             },
             {
-              text: stg('effectDuration.hydro'),
+              text: st('effectDuration.hydro'),
               value: dm.constellation2.duration,
               unit: 's',
             },
@@ -496,7 +496,7 @@ const sheet: TalentSheet = {
               node: c2_dendro_enemyRes_,
             },
             {
-              text: stg('effectDuration.dendro'),
+              text: st('effectDuration.dendro'),
               value: dm.constellation2.duration,
               unit: 's',
             },

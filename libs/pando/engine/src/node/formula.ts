@@ -14,7 +14,7 @@ type Branching<Output> = Match<Output> | Threshold<Output> | Lookup<Output>
 
 export const arithmetic: Record<
   Arithmetics['op'] | 'unique',
-  (x: number[], ex: any) => number
+  (x: number[]) => number
 > = {
   sum: (x) => x.reduce((a, b) => a + b, 0),
   prod: (x) => x.reduce((a, b) => a * b, 1),
@@ -25,7 +25,7 @@ export const arithmetic: Record<
 }
 export const branching: Record<
   Branching<unknown>['op'],
-  (br: any[], ex: any) => number
+  (br: (number | string)[], ex: any) => number
 > = {
   match: ([v1, v2]) => (v1 === v2 ? 0 : 1),
   thres: ([v1, v2]) => (v1 >= v2 ? 0 : 1),

@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "gen-hakushin": {
+      "implementation": "./src/executors/gen-hakushin/executor",
+      "schema": "./src/executors/gen-hakushin/schema.json",
+      "description": "gen-hakushin executor"
+    }
+  }
+}

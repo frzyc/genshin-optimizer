@@ -1,26 +1,25 @@
-import type {
-  AnyNode,
-  BaseRead,
-  CalcResult,
-  PreRead,
-  ReRead,
-  TagCache,
-} from './node'
-import { Calculator as BaseCalculator, map } from './node'
-import type { Tag, TagMapEntries, TagMapEntry } from './tag'
+import type { AnyNode, BaseRead, CalcResult, PreRead, TagCache } from './node'
+import { Calculator as BaseCalculator } from './node'
+import { arithmetic } from './node/formula'
+import type { Tag } from './tag'
+import { tagString } from './util'
 
 type TagStr = (tag: Tag, ex?: any) => string
 type Predicate = (debug: DebugMeta) => boolean
 
-/** Sequence of entries matched by gathering, in reverse order (final entry first) */
-type ReadSeq = [TagMapEntry<AnyNode>, ...TagMapEntries<ReRead>]
-export type DebugMeta = {
-  readSeq?: ReadSeq
+export interface DebugMeta {
+  readSeq?: string
   formula: string
   deps: DebugMeta[]
+  omitted: DebugMeta[]
 
-  isRead: boolean
-  toJSON(): any
+  val: number | string
+  x: DebugMeta[]
+  br: DebugMeta[]
+
+  comp: string
+  pivot: boolean
+  toJSON: (this: DebugMeta) => any
 }
 export class DebugCalculator extends BaseCalculator<DebugMeta> {
   tagStr: TagStr
@@ -30,7 +29,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
 
   constructor(
     calc: BaseCalculator<any>,
-    tagStr: TagStr,
+    tagStr: TagStr = tagString,
     filter: Predicate = () => true
   ) {
     super(calc.cache.keys)
@@ -45,7 +44,8 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
   }
 
   override _gather(cache: TagCache<DebugMeta>): PreRead<DebugMeta> {
-    if (this.gathering.has(cache)) throw new Error(`Loop detected`)
+    if (this.gathering.has(cache))
+      throw new Error(`Loop detected for ${this.tagStr(cache.tag)}`)
     this.gathering.add(cache)
     const result = this.__gather(cache)
     this.gathering.delete(cache)
@@ -54,17 +54,17 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
 
   __gather(cache: TagCache<DebugMeta>): PreRead<DebugMeta> {
     if (cache.val) return cache.val
-
     const pre = this.nodes.entries(cache.id).flatMap(({ tag, value: n }) =>
       n.op === 'reread'
         ? this._gather(cache.with(n.tag)).pre.map((x) => {
-            const readSeq: ReadSeq = [...x.meta.readSeq!, { tag, value: n }]
+            const readSeq = `${this.tagStr(tag)} <= ${this.tagStr(n.tag)} : ${x.meta.readSeq}`
             return Object.freeze({ ...x, meta: { ...x.meta, readSeq } })
           })
         : [this.markGathered(cache.tag, tag, n, this._compute(n, cache))]
     )
     return (cache.val = { pre })
   }
+
   override _compute(
     n: AnyNode,
     cache: TagCache<DebugMeta>
@@ -72,98 +72,95 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     try {
       return super._compute(n, cache)
     } catch (e) {
-      return {
+      return Object.freeze({
         val: NaN,
         meta: {
-          formula: `err: ${(e as any).message} in ${this.tagStr(
-            cache.tag
-          )}: ${nodeString(n, this.tagStr)}`,
+          formula: `${e}`,
           deps: [],
-          isRead: true,
-          toJSON: metaToJSON(this.tagStr),
+          omitted: [],
+
+          val: NaN,
+          x: [],
+          br: [],
+          comp: 'ERR',
+          pivot: true,
+          toJSON,
         },
-      }
+      })
     }
   }
 
   override markGathered(
-    _tag: Tag,
+    tag: Tag,
     entryTag: Tag,
-    n: AnyNode | undefined,
-    { val, meta }: CalcResult<number | string, DebugMeta>
+    _n: AnyNode | undefined,
+    result: CalcResult<number | string, DebugMeta>
   ): CalcResult<number | string, DebugMeta> {
-    meta = { ...meta, readSeq: [{ tag: entryTag!, value: n! }] }
-    return Object.freeze({ val, meta })
+    const readSeq = `${this.tagStr(entryTag)} <- ${this.tagStr(tag)}`
+    return { ...result, meta: { ...result.meta, readSeq, pivot: true } }
   }
   override computeMeta(
     n: AnyNode,
     val: number | string,
-    x: (CalcResult<number | string, DebugMeta> | undefined)[],
-    br: CalcResult<number | string, DebugMeta>[],
+    _x: (CalcResult<number | string, DebugMeta> | undefined)[],
+    _br: CalcResult<number | string, DebugMeta>[],
     tag: Tag | undefined
   ): DebugMeta {
-    if (typeof val !== 'number') val = `"${val}"`
-    else if (Math.round(val) === val) val = `${val}`
-    else val = val.toFixed(2)
-
-    const result: DebugMeta = {
-      formula: `[${val}] ${nodeString(n, this.tagStr)}`,
-      deps: [
-        ...x.map((x) => x?.meta).filter((x) => !!x),
-        ...br.map((br) => br.meta),
-      ].flatMap((x) => (x.isRead ? [x] : x.deps)),
-      isRead: n.op === 'read',
-      toJSON: metaToJSON(this.tagStr),
-    }
-    if (n.op === 'read') {
-      tag = Object.fromEntries(Object.entries(tag!).filter(([_, v]) => v))
-      result.deps = x.map((x) => x!.meta)
-      const oldDepCount = result.deps.length
-      result.deps = result.deps.filter(this.filter)
-      const filtered = oldDepCount - result.deps.length
-      result.formula = `gather ${
-        x.length
-      } node(s) (${filtered} filtered) for ${this.tagStr(n.tag)} (${this.tagStr(
-        tag
-      )})`
-    }
-    return result
-  }
-}
-
-export function nodeString(
-  node: AnyNode,
-  tagStr: TagStr = (t) => JSON.stringify(t)
-): string {
-  return map([node], (node, map: (n: AnyNode) => string) => {
-    const { op, tag, br, x } = node
-    let { ex } = node
-    if (op === 'const') return `${ex}`
-    if (op === 'read') return tagStr(tag, ex)
-    if (op === 'subscript') ex = undefined
-    const args: string[] = []
-    if (ex) args.push(JSON.stringify(ex))
-    if (tag) args.push(tagStr(tag))
-    args.push(...br.map(map), ...x.map(map))
-    return `${op}(` + args.join(', ') + ')'
-  })[0]
-}
-
-function metaToJSON(tagStr: TagStr): (this: DebugMeta) => any {
-  return function (this: DebugMeta): any {
-    const { readSeq, formula, deps } = this
-    let readStr
-    if (readSeq?.some((e) => !!e)) {
-      const [head, ...rem] = readSeq
-      let str = ''
-      for (let i = rem.length - 1; i >= 0; i--) {
-        if (rem[i]) {
-          const { tag: dst, value } = rem[i]
-          str += `${tagStr(dst)} <= ${tagStr(value.tag)} : `
-        } else str += '!! : '
+    let comp: string, formula: string | undefined
+    const x = _x.filter((n) => n!).map((n) => n!.meta)
+    const br = _br.map((n) => n.meta)
+    const args: DebugMeta[] = []
+    const op = n.op === 'read' ? n.ex : n.op
+    const omitted: DebugMeta[] = []
+    if (op! in arithmetic) {
+      const ignorable = arithmetic[op as keyof typeof arithmetic]([])
+      for (const arg of [...br, ...x])
+        if (arg.val !== ignorable || this.filter(arg)) args.push(arg)
+        else omitted.push(arg)
+    } else args.push(...br, ...x)
+    switch (n.op) {
+      case 'const':
+        comp = valStr(n.ex)
+        break
+      case 'read':
+        formula = `gather ${x.length} node(s)`
+        formula += ` matching ${this.tagStr(tag!, n.ex)}`
+        formula += ` (for ${this.tagStr(n.tag!)})`
+        if (omitted.length) formula += ` <${omitted.length} omitted>`
+        comp = `${this.tagStr(n.tag!)}`
+        break
+      default: {
+        const argStrs: string[] = []
+        if (n.ex && n.op !== 'subscript') argStrs.push(JSON.stringify(n.ex))
+        if (n.tag) argStrs.push(this.tagStr(n.tag))
+        argStrs.push(...args.map((m) => m.comp))
+        if (omitted.length) argStrs.push(`<${omitted.length} omitted>`)
+        comp = `${n.op}(` + argStrs.join(', ') + `)`
       }
-      readStr = str + (head ? `matches ${tagStr(head.tag)}` : '!!')
     }
-    return { ...(readStr && { readSeq: readStr }), formula, deps }
+    omitted.push(...args.flatMap((m) => (m.pivot ? [] : m.omitted)))
+    return Object.freeze({
+      formula: `[${valStr(val)}] ${formula ?? comp}`,
+      deps: [...new Set(args.flatMap((m) => (m.pivot ? [m] : m.deps)))],
+      omitted: [...new Set(omitted)],
+
+      val,
+      x,
+      br,
+      comp,
+      pivot: n.op === 'read',
+      toJSON,
+    })
   }
+}
+
+const valStr = (val: number | string) =>
+  typeof val === 'string' ? `"${val}"` : val.toString()
+function toJSON(this: DebugMeta) {
+  const { formula, readSeq, deps } = this
+  const result: any = { readSeq, formula, deps }
+  if (!result.readSeq) delete result.readSeq
+  if (!result.deps.length) delete result.deps
+  if (Object.keys(result).length === 1) return result.formula
+  return result
 }

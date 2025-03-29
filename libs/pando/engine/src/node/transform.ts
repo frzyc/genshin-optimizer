@@ -65,16 +65,10 @@ export function detach(
   }
   function fold(
     x: NumTagFree[],
-    op: Exclude<keyof typeof arithmetic, 'unique'>,
-    ex: any
+    op: Exclude<keyof typeof arithmetic, 'unique'>
   ): NumTagFree {
     if (x.every((x) => x.op === 'const'))
-      return constant(
-        arithmetic[op](
-          x.map((x) => x.ex),
-          ex
-        )
-      )
+      return constant(arithmetic[op](x.map((x) => x.ex)))
     return { op, x, br: [] }
   }
 
@@ -91,7 +85,7 @@ export function detach(
         const ex = n.ex ?? calc.defaultAccu(newCache.tag) ?? 'unique'
         const x = detachRead(newCache, ex)
         if (ex === 'unique') return x[0] ?? constant(undefined as any)
-        return fold(x as NumTagFree[], ex, n.ex)
+        return fold(x as NumTagFree[], ex)
       }
       case 'sum':
       case 'prod':
@@ -99,7 +93,7 @@ export function detach(
       case 'max':
       case 'sumfrac': {
         const x = n.x.map((x) => map(x, cache))
-        return fold(x, op, n.ex)
+        return fold(x, op)
       }
       case 'thres':
       case 'match':
@@ -110,10 +104,8 @@ export function detach(
           map(br, cache)
         ) as unknown as Const<string>[]
         if (br.every((n) => n.op === 'const')) {
-          const branchID = branching[n.op](
-            br.map((br) => br.ex),
-            n.ex
-          )
+          const brV = br.map((br) => br.ex)
+          const branchID = branching[n.op](brV, n.ex)
           return map(n.x[branchID]!, cache)
         }
         return { ...n, x: n.x.map((x) => map(x, cache)), br } as AnyTagFree
