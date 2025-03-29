@@ -103,6 +103,13 @@ export const conditionals = {
       type: 'bool',
     },
   },
+  FinaleOfTheDeepGalleries: {
+    someBoolConditional: {
+      sheet: 'FinaleOfTheDeepGalleries',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
   FlowerOfParadiseLost: {
     someBoolConditional: {
       sheet: 'FlowerOfParadiseLost',
@@ -179,6 +186,13 @@ export const conditionals = {
   Lavawalker: {
     someBoolConditional: {
       sheet: 'Lavawalker',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
+  LongNightsOath: {
+    someBoolConditional: {
+      sheet: 'LongNightsOath',
       name: 'someBoolConditional',
       type: 'bool',
     },
@@ -1096,6 +1110,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'HuTao',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Iansan: {
+    normal1: {
+      sheet: 'Iansan',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Iansan',
         move: 'normal',
         name: 'normal1',
       },
@@ -2107,6 +2135,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'TravelerHydro',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Varesa: {
+    normal1: {
+      sheet: 'Varesa',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Varesa',
         move: 'normal',
         name: 'normal1',
       },

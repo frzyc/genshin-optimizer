@@ -193,6 +193,7 @@ import TwinNephrite from './TwinNephrite'
 import UltimateOverlordsMegaMagicSword from './UltimateOverlordsMegaMagicSword'
 import UrakuMisugiri from './UrakuMisugiri'
 import Verdict from './Verdict'
+import VividNotions from './VividNotions'
 import VortexVanquisher from './VortexVanquisher'
 import WanderingEvenstar from './WanderingEvenstar'
 import WasterGreatsword from './WasterGreatsword'
@@ -412,6 +413,7 @@ const data: TagMapNodeEntries[] = [
   TomeOfTheEternalFlow,
   TulaytullahsRemembrance,
   TwinNephrite,
+  VividNotions,
   WanderingEvenstar,
   WaveridingWhirl,
   WineAndSong,

@@ -1,27 +1,28 @@
 {
   "key": "Varesa",
-  "rarity": 5,
+  "ele": "electro",
+  "region": "natlan",
+  "weaponType": "catalyst",
   "birthday": {
     "month": 11,
     "day": 15
   },
-  "region": "natlan",
-  "weaponType": "catalyst",
+  "rarity": 5,
   "lvlCurves": [
     {
-      "curve": "GROW_CURVE_HP_S5",
       "key": "hp",
-      "base": 988.59283
+      "base": 988.59283,
+      "curve": "GROW_CURVE_HP_S5"
     },
     {
-      "curve": "GROW_CURVE_ATTACK_S5",
       "key": "atk",
-      "base": 27.7438
+      "base": 27.7438,
+      "curve": "GROW_CURVE_ATTACK_S5"
     },
     {
-      "curve": "GROW_CURVE_HP_S5",
       "key": "def",
-      "base": 60.84711
+      "base": 60.84711,
+      "curve": "GROW_CURVE_HP_S5"
     }
   ],
   "ascensionBonus": {

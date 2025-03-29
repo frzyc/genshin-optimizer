@@ -33,6 +33,7 @@ import Gaming from './Character_Gaming_Card.jpg'
 import Ganyu from './Character_Ganyu_Card.png'
 import Gorou from './Character_Gorou_Card.png'
 import HuTao from './Character_Hu_Tao_Card.png'
+import Iansan from './Character_Iansan_Card.jpg'
 import Jean from './Character_Jean_Card.jpg'
 import Kachina from './Character_Kachina_Card.jpg'
 import Kaeya from './Character_Kaeya_Card.jpg'
@@ -77,6 +78,7 @@ import Sucrose from './Character_Sucrose_Card.jpg'
 import Tartaglia from './Character_Tartaglia_Card.png'
 import Thoma from './Character_Thoma_Card.jpg'
 import Tighnari from './Character_Tighnari_Card.jpg'
+import Varesa from './Character_Varesa_Card.jpg'
 import Venti from './Character_Venti_Card.jpg'
 import Wanderer from './Character_Wanderer_Card.jpg'
 import Wriothesley from './Character_Wriothesley_Card.jpg'
@@ -132,6 +134,7 @@ const charCards = {
   Ganyu,
   Gorou,
   HuTao,
+  Iansan,
   Jean,
   Kachina,
   KaedeharaKazuha,
@@ -178,6 +181,7 @@ const charCards = {
   Tighnari,
   TravelerF,
   TravelerM,
+  Varesa,
   Venti,
   Wanderer,
   Wriothesley,

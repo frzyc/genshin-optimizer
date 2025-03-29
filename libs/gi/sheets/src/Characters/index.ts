@@ -41,6 +41,7 @@ import Gaming from './Gaming'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
+import Iansan from './Iansan'
 import Jean from './Jean'
 import Kachina from './Kachina'
 import KaedeharaKazuha from './KaedeharaKazuha'
@@ -97,6 +98,7 @@ import TravelerHydroF from './TravelerHydroF'
 import TravelerHydroM from './TravelerHydroM'
 import TravelerPyroF from './TravelerPyroF'
 import TravelerPyroM from './TravelerPyroM'
+import Varesa from './Varesa'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
@@ -150,6 +152,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Ganyu,
   Gorou,
   HuTao,
+  Iansan,
   Jean,
   Kachina,
   KaedeharaKazuha,
@@ -206,6 +209,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   TravelerHydroM,
   TravelerPyroF,
   TravelerPyroM,
+  Varesa,
   Venti,
   Wanderer,
   Wriothesley,
