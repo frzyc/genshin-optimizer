@@ -6,5 +6,7 @@
   "c1": {
     "condName": "Gegner nimmt Schaden durch einen Phase 2 Frostblütenpfeil oder dem Erblühen eines Frostblütenpfeils"
   },
-  "c4": { "lingerDuration": "Effekt-Anhaltedauer" }
+  "c4": {
+    "lingerDuration": "Effekt-Anhaltedauer"
+  }
 }

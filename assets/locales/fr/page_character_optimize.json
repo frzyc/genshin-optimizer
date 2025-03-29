@@ -109,7 +109,9 @@
   },
   "buildCompleted": "Construction achevée",
   "notifyTooltip": "Joue un son lorsque les constructions finissent d'être générées. Affiche également un message d'alarme lorsque l'on quitte l'écran.",
-  "bonusStats": { "title": "Bonus Stats" },
+  "bonusStats": {
+    "title": "Bonus Stats"
+  },
   "build_one": "<0>{{count}}</0> Construire",
   "build_other": "<0><0>Excluding<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
   "thread_one": "<0>{{count}}</0> File d'attente",
