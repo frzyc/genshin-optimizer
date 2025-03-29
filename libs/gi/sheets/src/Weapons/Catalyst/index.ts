@@ -41,6 +41,7 @@ import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 import TomeOfTheEternalFlow from './TomeOfTheEternalFlow'
 import TulaytullahsRemembrance from './TulaytullahsRemembrance'
 import TwinNephrite from './TwinNephrite'
+import VividNotions from './VividNotions'
 import WanderingEvenstar from './WanderingEvenstar'
 import WaveridingWhirl from './WaveridingWhirl'
 import WineAndSong from './WineAndSong'
@@ -86,6 +87,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   TomeOfTheEternalFlow,
   TulaytullahsRemembrance,
   TwinNephrite,
+  VividNotions,
   WanderingEvenstar,
   WaveridingWhirl,
   WineAndSong,

@@ -27,6 +27,7 @@
   "times_other": "{{count}} Times",
   "points_one": "{{count}} Point",
   "points_other": "{{count}} Points",
+  "greaterEqPoints": ">= {{count}} Points",
   "level": "Level {{count}}",
   "afterDefeatEnemy": "After defeating an opponent",
   "hitOp": {
@@ -236,6 +237,7 @@
     "partyBurst": "After nearby party members trigger a Nightsoul Burst",
     "blessing": "While in the Nightsoul's Blessing state",
     "consuming": "After consuming Nightsoul points",
-    "consumed": "Nightsoul points consumed"
+    "consumed": "Nightsoul points consumed",
+    "current": "Current Nightsoul points"
   }
 }
