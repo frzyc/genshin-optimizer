@@ -106,15 +106,19 @@ const burstNs = lookup(
   objKeyMap(burstNsArr, (ns) => constant(ns)),
   naught
 )
-const burstNs_atk = min(
-  threshold(
-    burstNs,
-    42,
-    prod(percent(dm.burst.highAtkConversion), input.premod.atk),
-    prod(percent(dm.burst.lowAtkConversionPerNs), burstNs, input.premod.atk)
+const burstNs_atkDisp = infoMut(
+  min(
+    threshold(
+      burstNs,
+      42,
+      prod(percent(dm.burst.highAtkConversion), input.premod.atk),
+      prod(percent(dm.burst.lowAtkConversionPerNs), burstNs, input.premod.atk)
+    ),
+    subscript(input.total.burstIndex, dm.burst.maxAtk)
   ),
-  subscript(input.total.burst, dm.burst.maxAtk)
+  { path: 'atk', isTeamBuff: true }
 )
+const burstNs_atk = equal(input.activeCharKey, target.charKey, burstNs_atkDisp)
 
 const [condA1PrecisePath, condA1Precise] = cond(key, 'a1Precise')
 const a1Precise_atk_ = greaterEq(
@@ -168,7 +172,7 @@ const dmgFormulas = {
   },
   burst: {
     skillDmg: dmgNode('atk', dm.burst.skillDmg, 'burst'),
-    burstNs_atk,
+    burstNs_atkDisp,
   },
   passive2: {
     heal: customHealNode(prod(percent(dm.passive2.heal), input.total.atk)),
@@ -316,7 +320,7 @@ const sheet: TalentSheet = {
             : st('points', { count: ns }),
         fields: [
           {
-            node: burstNs_atk,
+            node: burstNs_atkDisp,
           },
         ],
       })),
@@ -389,6 +393,7 @@ const sheet: TalentSheet = {
     ct.condTem('constellation6', {
       path: condC6ExtremePath,
       value: condC6Extreme,
+      teamBuff: true,
       name: ct.ch('c6Cond'),
       states: {
         on: {

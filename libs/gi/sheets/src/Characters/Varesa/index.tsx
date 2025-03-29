@@ -2,19 +2,17 @@ import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
-  compareEq,
   constant,
   equal,
   greaterEq,
   infoMut,
   input,
-  lessThan,
   lookup,
   min,
   naught,
   percent,
   prod,
-  sum,
+  threshold,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -113,7 +111,6 @@ const dm = {
 } as const
 
 const [condA1RainbowPath, condA1Rainbow] = cond(key, 'a1Rainbow')
-const [condA1FpPath, condA1Fp] = cond(key, 'a1Fp')
 const a1Rainbow_impact_dmgInc = greaterEq(
   input.asc,
   1,
@@ -121,13 +118,9 @@ const a1Rainbow_impact_dmgInc = greaterEq(
     condA1Rainbow,
     'on',
     prod(
-      // If in FP or > C1, give 180% of atk, otherwise 50%
-      compareEq(
-        greaterEq(
-          sum(equal(condA1Fp, 'on', 1), greaterEq(input.constellation, 1, 1)),
-          1,
-          1
-        ),
+      // If > C1, give 180% of atk, otherwise 50%
+      threshold(
+        input.constellation,
         1,
         percent(dm.passive1.fpImpact_dmgInc),
         percent(dm.passive1.impact_dmgInc)
@@ -136,6 +129,18 @@ const a1Rainbow_impact_dmgInc = greaterEq(
     )
   ),
   { path: 'plunging_impact_dmgInc' }
+)
+const a1Rainbow_fpImpact_dmgInc = infoMut(
+  greaterEq(
+    input.asc,
+    1,
+    equal(
+      condA1Rainbow,
+      'on',
+      prod(percent(dm.passive1.fpImpact_dmgInc), input.total.atk)
+    )
+  ),
+  { name: ct.ch('fpImpact_dmgInc') }
 )
 
 const [condA4NsBurstPath, condA4NsBurst] = cond(key, 'a4NsBurst')
@@ -185,6 +190,17 @@ const c6_plunging_critDMG_ = greaterEq(
 const c6_burst_critRate_ = { ...c6_plunging_critRate_ }
 const c6_burst_critDMG_ = { ...c6_plunging_critDMG_ }
 
+const nonFpPlungingAddl = {
+  premod: {
+    plunging_impact_dmgInc: a1Rainbow_impact_dmgInc,
+  },
+}
+const fpPlungingAddl = {
+  premod: {
+    plunging_impact_dmgInc: a1Rainbow_fpImpact_dmgInc,
+  },
+}
+
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
@@ -202,15 +218,15 @@ const dmgFormulas = {
     fpDmg: dmgNode('atk', dm.fp.charged.dmg, 'charged'),
   },
   plunging: {
-    ...plungingDmgNodes('atk', dm.plunging),
+    ...plungingDmgNodes('atk', dm.plunging, nonFpPlungingAddl),
     ...objKeyValMap(
-      Object.entries(plungingDmgNodes('atk', dm.fp.plunging)),
+      Object.entries(plungingDmgNodes('atk', dm.fp.plunging, fpPlungingAddl)),
       ([k, v]) => [`fp${k}`, v]
     ),
   },
   skill: {
     rushDmg: dmgNode('atk', dm.skill.rushDmg, 'skill'),
-    fpRushDmg: dmgNode('atk', dm.skill.rushDmg, 'skill'),
+    fpRushDmg: dmgNode('atk', dm.skill.fpRushDmg, 'skill'),
   },
   burst: {
     kickDmg: dmgNode('atk', dm.burst.kickDmg, 'burst'),
@@ -224,6 +240,11 @@ const dmgFormulas = {
           plunging_dmg_: c4FpApex_burst_dmg_,
           plunging_critRate_: c6_burst_critRate_,
           plunging_critDMG_: c6_burst_critDMG_,
+          plunging_impact_dmgInc: greaterEq(
+            input.constellation,
+            1,
+            a1Rainbow_fpImpact_dmgInc
+          ),
         },
       },
       undefined,
@@ -232,6 +253,7 @@ const dmgFormulas = {
   },
   passive1: {
     a1Rainbow_impact_dmgInc,
+    a1Rainbow_fpImpact_dmgInc,
   },
   constellation4: {
     c4Diligent_impact_dmgInc,
@@ -246,10 +268,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     autoBoost: autoC5,
     burstBoost: burstC3,
     atk_: a4NsBurst_atk_,
-    plunging_impact_dmgInc: sum(
-      a1Rainbow_impact_dmgInc,
-      c4Diligent_impact_dmgInc
-    ),
+    plunging_impact_dmgInc: c4Diligent_impact_dmgInc,
     burst_dmg_: c4FpApex_burst_dmg_,
     burst_critRate_: c6_burst_critRate_,
     burst_critDMG_: c6_burst_critDMG_,
@@ -439,28 +458,12 @@ const sheet: TalentSheet = {
               node: a1Rainbow_impact_dmgInc,
             },
             {
+              node: a1Rainbow_fpImpact_dmgInc,
+            },
+            {
               text: stg('duration'),
               value: dm.passive1.duration,
               unit: 's',
-            },
-          ],
-        },
-      },
-    }),
-    ct.condTem('passive1', {
-      path: condA1FpPath,
-      value: condA1Fp,
-      canShow: greaterEq(
-        equal(condA1Rainbow, 'on', lessThan(input.constellation, 1, 1)),
-        1,
-        1
-      ),
-      name: ct.ch('a1FpCond'),
-      states: {
-        on: {
-          fields: [
-            {
-              text: ct.ch('a1FpText'),
             },
           ],
         },
@@ -493,6 +496,9 @@ const sheet: TalentSheet = {
       fields: [
         {
           text: ct.ch('c1Text'),
+        },
+        {
+          text: ct.ch('c1Effect'),
         },
       ],
     }),
