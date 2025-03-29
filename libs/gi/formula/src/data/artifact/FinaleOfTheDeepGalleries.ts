@@ -1,5 +1,5 @@
-import type { ArtifactSetKey } from "@genshin-optimizer/gi/consts";
-import { cmpGE } from "@genshin-optimizer/pando/engine";
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import { cmpGE } from '@genshin-optimizer/pando/engine'
 import {
   allBoolConditionals,
   allListConditionals,
@@ -7,15 +7,15 @@ import {
   ownBuff,
   percent,
   teamBuff,
-} from "../util";
-import { artCount, registerArt } from "./util";
+} from '../util'
+import { artCount, registerArt } from './util'
 
-const key: ArtifactSetKey = "FinaleOfTheDeepGalleries";
-const count = artCount(key);
+const key: ArtifactSetKey = 'FinaleOfTheDeepGalleries'
+const count = artCount(key)
 // TODO: Conditionals
-const { someBoolConditional } = allBoolConditionals(key);
-const { _someListConditional } = allListConditionals(key, []);
-const { _someNumConditional } = allNumConditionals(key);
+const { someBoolConditional } = allBoolConditionals(key)
+const { _someListConditional } = allListConditionals(key, [])
+const { _someNumConditional } = allNumConditionals(key)
 
 export default registerArt(
   key,
@@ -31,6 +31,6 @@ export default registerArt(
   // Applies non-stacking teambuff
   teamBuff.premod.atk_.addOnce(
     key,
-    someBoolConditional.ifOn(cmpGE(count, 4, percent(1))),
-  ),
-);
+    someBoolConditional.ifOn(cmpGE(count, 4, percent(1)))
+  )
+)
