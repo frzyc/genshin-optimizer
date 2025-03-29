@@ -1,6 +1,12 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { allBoolConditionals, own, ownBuff, registerBuff } from '../../util'
+import {
+  allBoolConditionals,
+  own,
+  ownBuff,
+  percent,
+  registerBuff,
+} from '../../util'
 import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = 'PhaethonsMelody'
@@ -26,7 +32,11 @@ const sheet = registerDisc(
   registerBuff(
     'set4_not_self_ether_',
     ownBuff.combat.dmg_.ether.add(
-      cmpGE(discCount, 4, squad_use_ex.ifOn(not_char_use_ex.ifOn(0.25)))
+      cmpGE(
+        discCount,
+        4,
+        squad_use_ex.ifOn(not_char_use_ex.ifOn(percent(0.25)))
+      )
     ),
     showCond4Set
   )

@@ -1,6 +1,12 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { allBoolConditionals, own, ownBuff, registerBuff } from '../../util'
+import {
+  allBoolConditionals,
+  own,
+  ownBuff,
+  percent,
+  registerBuff,
+} from '../../util'
 import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = 'InfernoMetal'
@@ -19,7 +25,7 @@ const sheet = registerDisc(
   registerBuff(
     'set4_cond_hitting_burning_enemy',
     ownBuff.combat.crit_.add(
-      cmpGE(discCount, 4, hitting_burning_enemy.ifOn(0.28))
+      cmpGE(discCount, 4, hitting_burning_enemy.ifOn(percent(0.28)))
     ),
     showCond4Set
   )
