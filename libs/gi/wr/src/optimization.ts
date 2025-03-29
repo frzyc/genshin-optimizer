@@ -264,6 +264,8 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
         s2.sort((a, b) => a - b)
         return arrayCompare(s1, s2, (n1, n2) => n1 - n2)
       }
+      default:
+        assertUnreachable(op1)
     }
   }
 

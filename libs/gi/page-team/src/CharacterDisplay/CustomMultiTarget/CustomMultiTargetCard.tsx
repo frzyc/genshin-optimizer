@@ -5,13 +5,8 @@ import {
   ModalWrapper,
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
-import { arrayMove, clamp, deepClone } from '@genshin-optimizer/common/util'
-import type { CustomTarget } from '@genshin-optimizer/gi/db'
-import {
-  type CustomMultiTarget,
-  initCustomTarget,
-} from '@genshin-optimizer/gi/db'
-import AddIcon from '@mui/icons-material/Add'
+import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
+import { targetListToExpression } from '@genshin-optimizer/gi/db'
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
@@ -27,12 +22,12 @@ import {
   IconButton,
   Typography,
 } from '@mui/material'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelectorModal'
-import CustomTargetDisplay from './CustomTargetDisplay'
 import JsonDescWarning from './JsonDescWarning'
-import MTargetEditor from './MTargetEditor'
+import TargetExpressionEditor from './TargetExpressionEditor'
+import TargetListEditor from './TargetListEditor'
+
 export default function CustomMultiTargetCard({
   customMultiTarget: targetProp,
   setTarget: setTargetProp,
@@ -61,65 +56,13 @@ export default function CustomMultiTargetCard({
     onHide()
   }
 
+  const [expression, setExpression] = useState(target.expression)
+  const [functions, setFunctions] = useState(target.functions)
+
   const onSave = useCallback(() => {
     onHide()
-    setTargetProp(target)
-  }, [onHide, setTargetProp, target])
-
-  const addTarget = useCallback(
-    (t: string[], multi?: number) => {
-      const target_ = { ...target }
-      target_.targets = [...target_.targets, initCustomTarget(t, multi)]
-      setTarget(target_)
-    },
-    [target, setTarget]
-  )
-
-  const setCustomTarget = useCallback(
-    (index: number) => (ctarget: CustomTarget) => {
-      const targets = [...target.targets]
-      targets[index] = ctarget
-      setTarget({ ...target, targets })
-    },
-    [target, setTarget]
-  )
-
-  const deleteCustomTarget = useCallback(
-    (index: number) => () => {
-      if (
-        Object.values(target.targets[index].bonusStats).length &&
-        !window.confirm(t('multiTarget.confirm'))
-      )
-        return
-      const targets = [...target.targets]
-      targets.splice(index, 1)
-      setTarget({ ...target, targets })
-    },
-    [target, setTarget, t]
-  )
-
-  const [selectedTarget, setSelectedTarget] = useState(-1)
-  const setTargetIndex = useCallback(
-    (oldInd: number) => (newRank?: number) => {
-      if (newRank === undefined || newRank === 0) return
-      newRank = clamp(newRank, 1, target.targets.length)
-      const newInd = newRank - 1
-      const targets = [...target.targets]
-      arrayMove(targets, oldInd, newInd)
-      setTarget({ ...target, targets })
-      setSelectedTarget(newRank - 1)
-    },
-    [target, setTarget]
-  )
-
-  const dupCustomTarget = useCallback(
-    (index: number) => () => {
-      const targets = [...target.targets]
-      targets.splice(index, 0, deepClone(targets[index]))
-      setTarget({ ...target, targets })
-    },
-    [target, setTarget]
-  )
+    setTargetProp({ ...target, expression, functions })
+  }, [expression, functions, onHide, setTargetProp, target])
 
   const copyToClipboard = () =>
     navigator.clipboard
@@ -127,26 +70,6 @@ export default function CustomMultiTargetCard({
       .then(() => alert(t('multiTarget.copyMsg')))
       .catch(console.error)
 
-  const customTargetDisplays = useMemo(
-    () =>
-      target.targets.map((t, i) => (
-        <CustomTargetDisplay
-          key={t.path.join() + i}
-          selected={selectedTarget === i}
-          setSelect={() =>
-            selectedTarget === i ? setSelectedTarget(-1) : setSelectedTarget(i)
-          }
-          customTarget={t}
-          rank={i + 1}
-        />
-      )),
-    [selectedTarget, target.targets]
-  )
-  const selectedTargetValid = clamp(
-    selectedTarget,
-    -1,
-    target.targets.length - 1
-  )
   return (
     <>
       <CardThemed bgt="light">
@@ -154,19 +77,31 @@ export default function CustomMultiTargetCard({
           <CardHeader
             title={
               <Box display="flex" gap={1} alignItems="center">
-                <Chip
-                  sx={{ minWidth: '8em' }}
-                  color={target.targets.length ? 'success' : undefined}
-                  label={
-                    <Trans
-                      t={t}
-                      i18nKey="multiTarget.target"
-                      count={target.targets.length}
-                    >
-                      {{ count: target.targets.length }} Targets
-                    </Trans>
-                  }
-                />
+                {target.expression ? (
+                  <Chip
+                    sx={{ minWidth: '8em' }}
+                    color="electro"
+                    label={
+                      <Trans t={t} i18nKey="multiTarget.expression">
+                        Expression
+                      </Trans>
+                    }
+                  />
+                ) : (
+                  <Chip
+                    sx={{ minWidth: '8em' }}
+                    color={target.targets.length ? 'success' : undefined}
+                    label={
+                      <Trans
+                        t={t}
+                        i18nKey="multiTarget.target"
+                        count={target.targets.length}
+                      >
+                        {{ count: target.targets.length }} Targets
+                      </Trans>
+                    }
+                  />
+                )}
                 <Typography>{name}</Typography>
                 {target.description && (
                   <InfoTooltip title={<Typography>{description}</Typography>} />
@@ -245,6 +180,14 @@ export default function CustomMultiTargetCard({
               >
                 {t('multiTarget.export')}
               </Button>
+              {!target.expression && (
+                <Button
+                  color="warning"
+                  onClick={() => setTarget(targetListToExpression(target))}
+                >
+                  {t`multiTarget.convertToExpression`}
+                </Button>
+              )}
               <Button color="error" onClick={onDelete}>
                 <DeleteForeverIcon />
               </Button>
@@ -259,61 +202,22 @@ export default function CustomMultiTargetCard({
               position: 'relative',
             }}
           >
-            {customTargetDisplays}
-            <AddCustomTargetBtn setTarget={addTarget} />
-            {target.targets[selectedTargetValid] && (
-              <MTargetEditor
-                customTarget={target.targets[selectedTargetValid]}
-                setCustomTarget={setCustomTarget(selectedTargetValid)}
-                deleteCustomTarget={deleteCustomTarget(selectedTargetValid)}
-                rank={selectedTargetValid + 1}
-                maxRank={target.targets.length}
-                setTargetIndex={setTargetIndex(selectedTargetValid)}
-                onDup={dupCustomTarget(selectedTargetValid)}
+            {target.expression ? (
+              <TargetExpressionEditor
+                expression={expression}
+                setExpression={setExpression}
+                functions={functions}
+                setFunctions={setFunctions}
+              />
+            ) : (
+              <TargetListEditor
+                customMultiTarget={target}
+                setCustomMultiTarget={setTarget}
               />
             )}
           </CardContent>
         </CardThemed>
       </ModalWrapper>
-    </>
-  )
-}
-
-function AddCustomTargetBtn({
-  setTarget,
-}: {
-  setTarget: (t: string[], m?: number) => void
-}) {
-  const { t } = useTranslation('page_character')
-  const [show, onShow, onClose] = useBoolState(false)
-  const setTargetHandler = useCallback(
-    (target: string[], multi?: number) => {
-      onClose()
-      setTarget(target, multi)
-    },
-    [onClose, setTarget]
-  )
-
-  return (
-    <>
-      <Button fullWidth onClick={onShow} startIcon={<AddIcon />} sx={{ mb: 1 }}>
-        {t('multiTarget.addNewTarget')}
-      </Button>
-      <TargetSelectorModal
-        showEmptyTargets
-        flatOnly
-        excludeHeal
-        show={show}
-        onClose={onClose}
-        setTarget={setTargetHandler}
-        excludeSections={[
-          'basic',
-          'bonusStats',
-          'custom',
-          'character',
-          'teamBuff',
-        ]}
-      />
     </>
   )
 }

@@ -380,6 +380,7 @@ export class UIData {
         if (process.env['NODE_ENV'] !== 'development') {
           const identity = allOperations[operation]([])
           operands = operands.filter((operand) => operand.value !== identity)
+          if (operands.length === 0) return makeEmpty(identity)
         }
       }
     }
@@ -428,7 +429,7 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
       case 'invalid':
         return -1
       default:
-        assertUnreachable(variant as never)
+        assertUnreachable(variant)
     }
   }
   const variants = new Set(
