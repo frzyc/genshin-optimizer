@@ -1,7 +1,7 @@
 import { layeredAssignment } from '@genshin-optimizer/common/util'
 import type { DSubstatKey, SubstatKey } from '../../mapping'
 import { SubStatPropTypeMap } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type ReliquaryAffixExcelConfigData = {
   id: number //996004, AFAIK, not used
@@ -10,9 +10,9 @@ type ReliquaryAffixExcelConfigData = {
   propType: DSubstatKey //"FIGHT_PROP_CRITICAL",
   propValue: number //0.062199998646974564,
 }
-const artifactSubstatDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/ReliquaryAffixExcelConfigData.json')
-) as ReliquaryAffixExcelConfigData[]
+const artifactSubstatDataSrc: ReliquaryAffixExcelConfigData[] = readExcelJSON(
+  'ExcelBinOutput/ReliquaryAffixExcelConfigData.json'
+)
 
 type artifaceSubstatData = {
   [Rarity: number]: Record<SubstatKey, number[]>

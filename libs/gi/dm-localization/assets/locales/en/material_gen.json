@@ -305,6 +305,9 @@
   "MastersOfTheNightWindReputationEXP": {
     "name": "\"Masters of the Night-Wind\" Reputation EXP"
   },
+  "CollectiveOfPlentyReputationEXP": {
+    "name": "\"Collective of Plenty\" Reputation EXP"
+  },
   "MemoryOfEternalFlames": {
     "name": "Memory of Eternal Flames"
   },
@@ -920,6 +923,9 @@
   "PhlogistonEnergyOrbSeparateDrop": {
     "name": "Phlogiston Energy Orb (Separate Drop)"
   },
+  "PhlogistonEnergyOrbCloseRange": {
+    "name": "Phlogiston Energy Orb (Close-Range)"
+  },
   "TestRandomTreasureChest": {
     "name": "Test Random Treasure Chest"
   },
@@ -1010,6 +1016,12 @@
   "YumemizukiMizuki": {
     "name": "Yumemizuki Mizuki"
   },
+  "Iansan": {
+    "name": "Iansan"
+  },
+  "Varesa": {
+    "name": "Varesa"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina's Stella Fortuna"
   },
@@ -1039,6 +1051,12 @@
   },
   "YumemizukiMizukisStellaFortuna": {
     "name": "Yumemizuki Mizuki's Stella Fortuna"
+  },
+  "IansansStellaFortuna": {
+    "name": "Iansan's Stella Fortuna"
+  },
+  "VaresasStellaFortuna": {
+    "name": "Varesa's Stella Fortuna"
   },
   "Apple": {
     "name": "Apple"
@@ -1548,7 +1566,7 @@
     "name": "The Pale Princess and the Six Pygmies (VII)"
   },
   "1000YearsOfLoneliness": {
-    "name": "1000 Years of Loneliness"
+    "name": "1,000 Years of Loneliness"
   },
   "TeyvatTravelGuideMondstadt": {
     "name": "Teyvat Travel Guide - Mondstadt"
@@ -3460,6 +3478,15 @@
   },
   "WitheringPurpurbloom": {
     "name": "Withering Purpurbloom"
+  },
+  "SkysplitGembloom": {
+    "name": "Skysplit Gembloom"
+  },
+  "Dracolite": {
+    "name": "Dracolite"
+  },
+  "RedBerryshroom": {
+    "name": "Red Berryshroom"
   },
   "BirchWood": {
     "name": "Birch Wood"
@@ -7535,6 +7562,66 @@
   "DreamsOfHealing": {
     "name": "Dreams of Healing"
   },
+  "SuspiciousCheesyCrabHotpot": {
+    "name": "Suspicious Cheesy Crab Hotpot"
+  },
+  "CheesyCrabHotpot": {
+    "name": "Cheesy Crab Hotpot"
+  },
+  "DeliciousCheesyCrabHotpot": {
+    "name": "Delicious Cheesy Crab Hotpot"
+  },
+  "SuspiciousFruitsAplenty": {
+    "name": "Suspicious Fruits Aplenty"
+  },
+  "FruitsAplenty": {
+    "name": "Fruits Aplenty"
+  },
+  "DeliciousFruitsAplenty": {
+    "name": "Delicious Fruits Aplenty"
+  },
+  "SuspiciousPuffedGrainfruitBars": {
+    "name": "Suspicious Puffed Grainfruit Bars"
+  },
+  "PuffedGrainfruitBars": {
+    "name": "Puffed Grainfruit Bars"
+  },
+  "DeliciousPuffedGrainfruitBars": {
+    "name": "Delicious Puffed Grainfruit Bars"
+  },
+  "SuspiciousMagmaEggs": {
+    "name": "Suspicious Magma Eggs"
+  },
+  "MagmaEggs": {
+    "name": "Magma Eggs"
+  },
+  "DeliciousMagmaEggs": {
+    "name": "Delicious Magma Eggs"
+  },
+  "SuspiciousCheesyMushroomSkewer": {
+    "name": "Suspicious Cheesy Mushroom Skewer"
+  },
+  "CheesyMushroomSkewer": {
+    "name": "Cheesy Mushroom Skewer"
+  },
+  "DeliciousCheesyMushroomSkewer": {
+    "name": "Delicious Cheesy Mushroom Skewer"
+  },
+  "GoldStandardHealthyMeal": {
+    "name": "Gold-Standard Healthy Meal"
+  },
+  "MtMushroomForOne": {
+    "name": "Mt. Mushroom (For One)"
+  },
+  "SuspiciousHarvestsBoon": {
+    "name": "Suspicious Harvest's Boon"
+  },
+  "HarvestsBoon": {
+    "name": "Harvest's Boon"
+  },
+  "DeliciousHarvestsBoon": {
+    "name": "Delicious Harvest's Boon"
+  },
   "RecipeItem": {
     "name": "Recipe Item"
   },
@@ -8216,6 +8303,24 @@
   "RecipeBathhouseManjuu": {
     "name": "Recipe: Bathhouse Manjuu"
   },
+  "RecipeMagmaEggs": {
+    "name": "Recipe: Magma Eggs"
+  },
+  "RecipePuffedGrainfruitBars": {
+    "name": "Recipe: Puffed Grainfruit Bars"
+  },
+  "RecipeCheesyMushroomSkewer": {
+    "name": "Recipe: Cheesy Mushroom Skewer"
+  },
+  "RecipeFruitsAplenty": {
+    "name": "Recipe: Fruits Aplenty"
+  },
+  "RecipeHarvestsBoon": {
+    "name": "Recipe: Harvest's Boon"
+  },
+  "RecipeCheesyCrabHotpot": {
+    "name": "Recipe: Cheesy Crab Hotpot"
+  },
   "CraftedItems": {
     "name": "Crafted Items"
   },
@@ -8699,6 +8804,15 @@
   "IllusoryLeafcoil": {
     "name": "Illusory Leafcoil"
   },
+  "ColdCrackedShellshard": {
+    "name": "Cold-Cracked Shellshard"
+  },
+  "WarmBackShell": {
+    "name": "Warm Back-Shell"
+  },
+  "BlazingPrismshell": {
+    "name": "Blazing Prismshell"
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed"
   },
@@ -8911,6 +9025,9 @@
   },
   "TalismanOfTheEnigmaticLand": {
     "name": "Talisman of the Enigmatic Land"
+  },
+  "SparklessStatueCore": {
+    "name": "Sparkless Statue Core"
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
@@ -11657,6 +11774,12 @@
   "CrimsonObsidianRing": {
     "name": "Crimson Obsidian Ring"
   },
+  "SunsetBlueObsidianFragment": {
+    "name": "Sunset-Blue Obsidian Fragment"
+  },
+  "SunsetBlueObsidianRing": {
+    "name": "Sunset-Blue Obsidian Ring"
+  },
   "PakpakaFlyingSchoolFlyingTournamentInvitationLetter": {
     "name": "Pakpaka Flying School Flying Tournament Invitation Letter"
   },
@@ -11804,6 +11927,9 @@
   "SaurusCrackersTepetlisaurus": {
     "name": "Saurus Crackers: Tepetlisaurus"
   },
+  "ThatWhichWasOnceEhecatl": {
+    "name": "That Which Was Once Ehecatl"
+  },
   "AisaBathhouseVIPPass": {
     "name": "Aisa Bathhouse VIP Pass"
   },
@@ -11824,6 +11950,114 @@
   },
   "MenOfLithinIII": {
     "name": "Men of Lithin (III)"
+  },
+  "GreenBerryshroom": {
+    "name": "Green Berryshroom"
+  },
+  "PermitToTheSacredHeart": {
+    "name": "Permit to the Sacred Heart"
+  },
+  "PhlogistonUnit": {
+    "name": "Phlogiston Unit"
+  },
+  "Leaderboard": {
+    "name": "Leaderboard"
+  },
+  "ACommemorativePhoto": {
+    "name": "A Commemorative Photo"
+  },
+  "PhlogistonConverterExperimentalReport": {
+    "name": "\"Phlogiston Converter\" Experimental Report"
+  },
+  "ResearchersNotes": {
+    "name": "Researcher's Notes"
+  },
+  "UnsignedLetter": {
+    "name": "Unsigned Letter"
+  },
+  "LetterForAnna": {
+    "name": "Letter for Anna"
+  },
+  "FusionProfusionDJRemixSelections": {
+    "name": "Fusion Profusion: DJ Remix Selections"
+  },
+  "Kamera": {
+    "name": "Kamera"
+  },
+  "KomporeTheCunningI": {
+    "name": "Kompore the Cunning (I)"
+  },
+  "KomporeTheCunningII": {
+    "name": "Kompore the Cunning (II)"
+  },
+  "KomporeTheCunningIII": {
+    "name": "Kompore the Cunning (III)"
+  },
+  "SundjattasFirstForayI": {
+    "name": "Sundjatta's First Foray (I)"
+  },
+  "SundjattasFirstForayII": {
+    "name": "Sundjatta's First Foray (II)"
+  },
+  "SundjattasFirstForayIII": {
+    "name": "Sundjatta's First Foray (III)"
+  },
+  "RangiNuisEnd": {
+    "name": "Rangi Nui's End"
+  },
+  "TheHeadlessCoquitaoI": {
+    "name": "The Headless Coquitao (I)"
+  },
+  "TheHeadlessCoquitaoII": {
+    "name": "The Headless Coquitao (II)"
+  },
+  "TheBookOfFiveSprings": {
+    "name": "The Book of Five Springs"
+  },
+  "PhotoWithTravelCompanions": {
+    "name": "Photo With Travel Companions"
+  },
+  "HazardWarning": {
+    "name": "Hazard Warning"
+  },
+  "RecordsRegardingCreatingTheSecretSourceServants": {
+    "name": "Records Regarding \"Creating the Secret Source Servants...\""
+  },
+  "RecordsRegardingHumansAndExceptionalIndividualsThereof": {
+    "name": "Records Regarding \"Humans... and Exceptional Individuals Thereof\""
+  },
+  "RecordsRegardingCorrosionAndPhysicalConditions": {
+    "name": "Records Regarding \"Corrosion and Physical Conditions\""
+  },
+  "RecordsRegardingItemsThatShouldPerhapsBeDeleted": {
+    "name": "Records Regarding \"Items That Should Perhaps Be Deleted...\""
+  },
+  "IridescentLegacyPartI": {
+    "name": "Iridescent Legacy: Part I"
+  },
+  "IridescentLegacyPartII": {
+    "name": "Iridescent Legacy: Part II"
+  },
+  "IridescentLegacyPartIII": {
+    "name": "Iridescent Legacy: Part III"
+  },
+  "IridescentLegacyPartIV": {
+    "name": "Iridescent Legacy: Part IV"
+  },
+  "ChamberOfDeliberationSovereignRulersCouncilRecords": {
+    "name": "Chamber of Deliberation: Sovereign Rulers' Council Records"
+  },
+  "SecretSourceDragonIdolWorkshopEngraving": {
+    "name": "Secret Source Dragon Idol Workshop Engraving"
+  },
+  "NestExperimentLog": {
+    "name": "Nest Experiment Log"
+  },
+  "RecordLeftByTheFlamestealer": {
+    "name": "Record Left by the \"Flamestealer\""
+  },
+  "DamagedBounty": {
+    "name": "Damaged Bounty"
   },
   "TearsAmongTheStars": {
     "name": "Tears Among the Stars"
@@ -11941,6 +12175,9 @@
   },
   "GlowingHornshroomSpore": {
     "name": "Glowing Hornshroom Spore"
+  },
+  "SkysplitGembloomSeed": {
+    "name": "Skysplit Gembloom Seed"
   },
   "Medaka": {
     "name": "Medaka"
@@ -12073,6 +12310,9 @@
   },
   "PseudosharkUnihornfish": {
     "name": "Pseudoshark Unihornfish"
+  },
+  "SecretSourceScoutSweeper": {
+    "name": "Secret Source Scout Sweeper"
   },
   "WingsOfFirstFlight": {
     "name": "Wings of First Flight"
@@ -12610,6 +12850,21 @@
   },
   "RadiantSpincrystal147": {
     "name": "Radiant Spincrystal 147"
+  },
+  "RadiantSpincrystal148": {
+    "name": "Radiant Spincrystal 148"
+  },
+  "RadiantSpincrystal149": {
+    "name": "Radiant Spincrystal 149"
+  },
+  "RadiantSpincrystal150": {
+    "name": "Radiant Spincrystal 150"
+  },
+  "RadiantSpincrystal151": {
+    "name": "Radiant Spincrystal 151"
+  },
+  "RadiantSpincrystal152": {
+    "name": "Radiant Spincrystal 152"
   },
   "LanternFiber": {
     "name": "Lantern Fiber"
@@ -13538,6 +13793,21 @@
   "TravelNotesWondrousReverie": {
     "name": "Travel Notes: Wondrous Reverie"
   },
+  "VaresaPowerhouse": {
+    "name": "Varesa: Powerhouse"
+  },
+  "IansanUnyielding": {
+    "name": "Iansan: Unyielding"
+  },
+  "NatlanDraconicGaze": {
+    "name": "Natlan: Draconic Gaze"
+  },
+  "AchievementTranquilPeace": {
+    "name": "Achievement: Tranquil Peace"
+  },
+  "TravelNotesBloomingGlory": {
+    "name": "Travel Notes: Blooming Glory"
+  },
   "EchoDandelionKnight": {
     "name": "Echo: Dandelion Knight"
   },
@@ -13564,6 +13834,12 @@
   },
   "EchoScarletLeavesPursueWildWaves": {
     "name": "Echo: Scarlet Leaves Pursue Wild Waves"
+  },
+  "EchoWindborneBard": {
+    "name": "Echo: Windborne Bard"
+  },
+  "EchoFlameMane": {
+    "name": "Echo: Flame-Mane"
   },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone"
@@ -13606,9 +13882,6 @@
   },
   "WarmingBottle": {
     "name": "Warming Bottle"
-  },
-  "Kamera": {
-    "name": "Kamera"
   },
   "KuriousKamera": {
     "name": "Kurious Kamera"
@@ -14138,6 +14411,99 @@
   "EarnestNegotiation": {
     "name": "Earnest Negotiation"
   },
+  "SurveyingSurroundings": {
+    "name": "Surveying Surroundings"
+  },
+  "GentleCountenance": {
+    "name": "Gentle Countenance"
+  },
+  "PerformanceTime": {
+    "name": "Performance Time"
+  },
+  "GuardUp": {
+    "name": "Guard Up"
+  },
+  "KindGreeting": {
+    "name": "Kind Greeting"
+  },
+  "ByMyCommand": {
+    "name": "By My Command"
+  },
+  "ComposedNegotiation": {
+    "name": "Composed Negotiation"
+  },
+  "EngineeringPrep": {
+    "name": "Engineering Prep"
+  },
+  "Incandescence": {
+    "name": "Incandescence"
+  },
+  "TheDuelBegins": {
+    "name": "The Duel Begins"
+  },
+  "LookingAroundHappily": {
+    "name": "Looking Around Happily"
+  },
+  "PlayfulShushing": {
+    "name": "Playful Shushing"
+  },
+  "BoisterousGreeting": {
+    "name": "Boisterous Greeting"
+  },
+  "AgilePosture": {
+    "name": "Agile Posture"
+  },
+  "GeneralsGrandeur": {
+    "name": "General's Grandeur"
+  },
+  "ElegantStringedMelody": {
+    "name": "Elegant Stringed Melody"
+  },
+  "PrinzessinsMajesty": {
+    "name": "Prinzessin's Majesty"
+  },
+  "AShortBreak": {
+    "name": "A Short Break"
+  },
+  "ReadingTime": {
+    "name": "Reading Time"
+  },
+  "AuspiciousBeastsReadyToLeap": {
+    "name": "Auspicious Beasts Ready to Leap"
+  },
+  "Bombonanza": {
+    "name": "Bombonanza"
+  },
+  "ALittleSleepy": {
+    "name": "A Little Sleepy"
+  },
+  "GuujisTrick": {
+    "name": "Guuji's Trick"
+  },
+  "Showtime": {
+    "name": "Showtime"
+  },
+  "TimeToShine": {
+    "name": "Time to Shine"
+  },
+  "CarefulObservation": {
+    "name": "Careful Observation"
+  },
+  "LeisurelyLabor": {
+    "name": "Leisurely Labor"
+  },
+  "ComfortableCountenance": {
+    "name": "Comfortable Countenance"
+  },
+  "CloseReading": {
+    "name": "Close Reading"
+  },
+  "Stargazing": {
+    "name": "Stargazing"
+  },
+  "AQuickLookAround": {
+    "name": "A Quick Look Around"
+  },
   "FantasticalMarvel": {
     "name": "Fantastical Marvel"
   },
@@ -14173,6 +14539,12 @@
   },
   "WaterAndJustice": {
     "name": "Water and Justice"
+  },
+  "FireAndWar": {
+    "name": "Fire and War"
+  },
+  "OdeToAzureSkies": {
+    "name": "Ode to Azure Skies"
   },
   "RhodeiaOfLoch": {
     "name": "Rhodeia of Loch"
@@ -14579,8 +14951,14 @@
   "AllReprisalsAndArrearsMineToBear": {
     "name": "All Reprisals and Arrears, Mine to Bear"
   },
-  "RepaidInFull": {
-    "name": "Repaid in Full"
+  "NightRealmsGiftRepaidInFull": {
+    "name": "Night Realm's Gift: Repaid in Full"
+  },
+  "NightRealmsGiftHeartOfUnity": {
+    "name": "Night Realm's Gift: Heart of Unity"
+  },
+  "MarcotteSillage": {
+    "name": "Marcotte Sillage"
   },
   "MagicGuide": {
     "name": "Magic Guide"
@@ -14867,6 +15245,9 @@
   "Qucusaurus": {
     "name": "Qucusaurus"
   },
+  "Waverider": {
+    "name": "Waverider"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -15031,6 +15412,9 @@
   },
   "FlowerFeatherClan": {
     "name": "\"Flower-Feather Clan\""
+  },
+  "MastersOfTheNightWind": {
+    "name": "\"Masters of the Night-Wind\""
   },
   "ElementalResonanceWovenIce": {
     "name": "Elemental Resonance: Woven Ice"
@@ -15220,6 +15604,9 @@
   },
   "LittleTepetlisaurTreasureHunterAtLarge": {
     "name": "Little Tepetlisaur — Treasure Hunter at Large"
+  },
+  "InTheNameOfTheExtreme": {
+    "name": "In the Name of the Extreme"
   },
   "Origin": {
     "name": "Origin"
@@ -15640,6 +16027,12 @@
   },
   "MastersOfTheNightWindsTranquility": {
     "name": "Masters of the Night-Wind's Tranquility"
+  },
+  "GallantMarchOfTheCollectiveOfPlenty": {
+    "name": "Gallant March of the Collective of Plenty"
+  },
+  "CompanionsHaven": {
+    "name": "Companions' Haven"
   },
   "TimberWallWithJadeEaves": {
     "name": "Timber Wall With Jade Eaves"
@@ -16703,6 +17096,9 @@
   "RidingTheTranquilWaters": {
     "name": "Riding the Tranquil Waters"
   },
+  "ModelDishSaurusCrackers": {
+    "name": "Model Dish: Saurus Crackers"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Realizations from the Land of Wisdom\""
   },
@@ -17512,6 +17908,24 @@
   },
   "PilgrimageOfFlame": {
     "name": "Pilgrimage of Flame"
+  },
+  "VillaOfPlentyStowProStoreroom": {
+    "name": "Villa of Plenty: Stow-Pro Storeroom"
+  },
+  "VillaOfPlentyEverydayEssentials": {
+    "name": "Villa of Plenty: Everyday Essentials"
+  },
+  "HutOfPlentyPermanentPick": {
+    "name": "Hut of Plenty: Permanent Pick"
+  },
+  "HutOfPlentyStopgapSelection": {
+    "name": "Hut of Plenty: Stopgap Selection"
+  },
+  "LandOfPlentysContention": {
+    "name": "Land of Plenty's Contention"
+  },
+  "LandOfPlentysSentinel": {
+    "name": "Land of Plenty's Sentinel"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Bird and Blossom Design Fountain"
@@ -18506,6 +18920,9 @@
   "SpringtimeFoldingScreenFragranceFillsTheAir": {
     "name": "Springtime Folding Screen: Fragrance Fills the Air"
   },
+  "PortraitOfHeroicMight": {
+    "name": "Portrait of Heroic Might"
+  },
   "BookshelfFreeReading": {
     "name": "Bookshelf: Free Reading"
   },
@@ -18596,6 +19013,15 @@
   "MusingsOnColorsAndHues": {
     "name": "Musings on Colors and Hues"
   },
+  "ArtOfTransport": {
+    "name": "Art of Transport"
+  },
+  "FixedTorchSafeguard": {
+    "name": "Fixed Torch: Safeguard"
+  },
+  "FixedTorchExtremity": {
+    "name": "Fixed Torch: Extremity"
+  },
   "WeatheredBambooFence": {
     "name": "Weathered Bamboo Fence"
   },
@@ -18674,6 +19100,9 @@
   "PaddockGateFoundationalFramework": {
     "name": "Paddock Gate: Foundational Framework"
   },
+  "LandOfPlentysBounds": {
+    "name": "Land of Plenty's Bounds"
+  },
   "SmoothWoodenBench": {
     "name": "Smooth Wooden Bench"
   },
@@ -18718,6 +19147,9 @@
   },
   "SurgingHarmoniesOfTheSprings": {
     "name": "\"Surging Harmonies of the Springs\""
+  },
+  "AlignedVolcanicStoneStool": {
+    "name": "\"Aligned\" Volcanic Stone Stool"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "Two-Story Hilichurl Sentry Tower"
@@ -18895,5 +19327,17 @@
   },
   "PaddockStrawMattressMakeshiftBed": {
     "name": "Paddock Straw Mattress: Makeshift Bed"
+  },
+  "SauriansMight": {
+    "name": "Saurian's Might"
+  },
+  "BarbellRackHeftiestLoad": {
+    "name": "Barbell Rack: Heftiest Load"
+  },
+  "Storage101": {
+    "name": "Storage 101"
+  },
+  "GrainfruitPuffer": {
+    "name": "Grainfruit Puffer"
   }
 }

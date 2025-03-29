@@ -133,7 +133,7 @@
   "constellation2": {
     "name": "Rhétorique",
     "description": {
-      "0": "Lorsqu'Alhaitham génère un miroir de diffraction, sa maîtrise élémentaire augmente de 50 pts pendant 8 s. Cet effet peut être cumulé 4 fois maximum, la durée de chaque cumul étant calculée indépendamment. Cet effet peut être déclenché même si le nombre de miroirs de diffraction a atteint la limite."
+      "0": "Lorsque Alhaitham génère un miroir de diffraction, sa maîtrise élémentaire augmente de 50 pts pendant 8 s. Cet effet peut être cumulé 4 fois maximum, la durée de chaque cumul étant calculée indépendamment. Cet effet peut être déclenché même si le nombre de miroirs de diffraction a atteint la limite."
     }
   },
   "constellation3": {

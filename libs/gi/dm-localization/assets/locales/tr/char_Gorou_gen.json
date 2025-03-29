@@ -48,7 +48,7 @@
       "3": "Kullanıldığı anda gruptaki <geo>Toprak</geo> karakterlerin sayısına göre becerinin etki alanındaki aktif karakterlere en fazla 3 güçlendirme verir:",
       "4": [
         "1 Toprak karakteri: \"Teslim Olmayan\" güçlendirmesi verir. - Savunma Bonusu.",
-        "2 Toprak karakteri: \"Yenilmez\" güçlendirmesi verir. - Müdahale direnci artar.",
+        "2 Toprak karakteri: \"Yenilmez\" güçlendirmesi verir. - Müdahaleye karşı direnci artar.",
         "3 Toprak karakteri: \"Ezip Geçen\" güçlendirmesi verir. - <geo>Toprak Hasarı Bonusu</geo>."
       ],
       "5": "<br/>",

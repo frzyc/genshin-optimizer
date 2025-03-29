@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder del hielo y se lanza desde el aire para golpear el suelo y dañar a los enemigos a su paso, infligiendo <cryo>Daño Cryo en el AdE</cryo> en el momento del impacto."
+        "1": "Concentra el poder del hielo y se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <cryo>Daño Cryo en el AdE</cryo> en el momento del impacto."
       }
     },
     "skillParams": {

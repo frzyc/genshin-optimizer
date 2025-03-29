@@ -1,6 +1,6 @@
 import { layeredAssignment } from '@genshin-optimizer/common/util'
 import type { PropTypeKey } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 type WeaponPromoteExcelConfigData = {
   weaponPromoteId: number //12406,
   promoteLevel: number //6,
@@ -48,8 +48,8 @@ type WeaponPromoteExcelConfigData = {
   unlockMaxLevel: number //90,
   requiredPlayerLevel: number //50
 }
-const weaponPromoteExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/WeaponPromoteExcelConfigData.json')
+const weaponPromoteExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/WeaponPromoteExcelConfigData.json'
 ) as WeaponPromoteExcelConfigData[]
 
 const weaponPromoteExcelConfigData = {} as Record<
