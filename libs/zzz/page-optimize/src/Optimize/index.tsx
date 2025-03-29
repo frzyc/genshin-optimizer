@@ -18,7 +18,7 @@ import {
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
 import { optimize } from '@genshin-optimizer/zzz/solver'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
-import { WorkerSelector } from '@genshin-optimizer/zzz/ui'
+import { BuildsSelector, WorkerSelector } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -70,6 +70,7 @@ function OptimizeWrapper() {
   const { key: characterKey } = useCharacterContext()!
   const { target } = useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
+  const [numOfBuilds, setNumOfBuilds] = useState(5)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
   const discDirty = useDataManagerBaseDirty(database.discs)
@@ -189,6 +190,7 @@ function OptimizeWrapper() {
       wengines,
       discsBySlot,
       numWorkers,
+      numOfBuilds,
       setProgress
     )
 
@@ -221,6 +223,7 @@ function OptimizeWrapper() {
     characterKey,
     wengines,
     discsBySlot,
+    numOfBuilds,
     numWorkers,
     database.optConfigs,
     optConfigId,
@@ -252,6 +255,10 @@ function OptimizeWrapper() {
             <ProgressIndicator progress={progress} total={totalPermutations} />
           )}
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
+            <BuildsSelector
+              numOfBuilds={numOfBuilds}
+              setNumOfBuilds={setNumOfBuilds}
+            />
             <WorkerSelector
               numWorkers={numWorkers}
               setNumWorkers={setNumWorkers}
