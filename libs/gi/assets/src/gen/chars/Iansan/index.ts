@@ -1,6 +1,6 @@
 // This is a generated index file.
-import bar from './.png'
 import burst from './Skill_E_Iansan_01.png'
+import bar from './Skill_S_Iansan_01.png'
 import skill from './Skill_S_Iansan_01.png'
 import icon from './UI_AvatarIcon_Iansan.png'
 import iconSide from './UI_AvatarIcon_Side_Iansan.png'
