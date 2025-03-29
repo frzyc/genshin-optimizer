@@ -107,7 +107,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   dmg_red_: 'DMG Taken Reduction',
   charLvl: 'Character Level',
   enemyDef: 'Enemy DEF',
-  defRed_: 'Enemy DEF Shred',
+  defRed_: 'Enemy DEF Reduction',
   enemyRes_: 'Enemy Resistance',
   enemyResRed_: 'Enemy Resistance Reduction',
   enemyResIgn_: 'Enemy Resistance Ignore',
@@ -143,7 +143,6 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   enemyDazeTaken_mult_: 'Enemy Daze Taken Multiplier',
   stun_: 'Stun DMG Multiplier',
   unstun_: 'Unstun DMG Multiplier',
-  defRed_: 'Defense Reduction',
   res_: 'Resistance',
   resRed_: 'Resistance Reduction',
 }
