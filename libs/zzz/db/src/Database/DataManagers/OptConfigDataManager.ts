@@ -20,6 +20,9 @@ import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 import type { GeneratedBuildList } from './GeneratedBuildListDataManager'
 
+export const maxBuildsToShowList = [1, 2, 3, 5, 10] as const
+export const maxBuildsToShowDefault = 5
+
 export const statFilterStatKeys = [
   'hp',
   'def',
@@ -54,7 +57,7 @@ export type StatFilters = Array<StatFilter>
 
 export interface OptConfig {
   statFilters: StatFilters
-
+  maxBuildsToShow: number
   // Disc Filters
   levelLow: number
   levelHigh: number
@@ -110,7 +113,7 @@ export class OptConfigDataManager extends DataManager<
       wlevelHigh,
       wEngineTypes,
       useEquippedWengine,
-
+      maxBuildsToShow,
       generatedBuildListId,
     } = obj as OptConfig
 
@@ -176,6 +179,13 @@ export class OptConfigDataManager extends DataManager<
     )
       generatedBuildListId = undefined
 
+    if (
+      !maxBuildsToShowList.includes(
+        maxBuildsToShow as (typeof maxBuildsToShowList)[number]
+      )
+    )
+      maxBuildsToShow = maxBuildsToShowDefault
+
     return {
       statFilters,
 
@@ -196,7 +206,7 @@ export class OptConfigDataManager extends DataManager<
       wlevelHigh,
       wEngineTypes,
       useEquippedWengine,
-
+      maxBuildsToShow,
       generatedBuildListId,
     }
   }
@@ -262,7 +272,7 @@ function initialOptConfig(): OptConfig {
     // discExclusionIds: [],
     // excludedLocations: [],
     // allowLocationsState: 'unequippedOnly',
-
+    maxBuildsToShow: 5,
     optWengine: false,
     wlevelLow: wengineMaxLevel,
     wlevelHigh: wengineMaxLevel,
