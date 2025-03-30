@@ -8,11 +8,19 @@ import {
   DebugReadModal,
   TagContext,
 } from '@genshin-optimizer/game-opt/formula-ui'
-import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
+import type {
+  FormulaTextFunc,
+  FullTagDisplayComponent,
+  SetConditionalFunc,
+  TagDisplayComponent,
+} from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   ConditionalValuesContext,
+  FormulaTextContext,
+  FullTagDisplayContext,
   SetConditionalContext,
   SrcDstDisplayContext,
+  TagDisplayContext,
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterAsset } from '@genshin-optimizer/zzz/assets'
@@ -30,6 +38,11 @@ import {
   isMember,
   isSheet,
 } from '@genshin-optimizer/zzz/formula'
+import {
+  FullTagDisplay,
+  TagDisplay,
+  formulaText,
+} from '@genshin-optimizer/zzz/formula-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import {
   CharacterName,
@@ -121,67 +134,94 @@ export default function PageOptimize() {
     [debugRead]
   )
   return (
-    <Box>
-      <Suspense fallback={false}>
-        <CharacterSingleSelectionModal
-          show={show}
-          onHide={onHide}
-          onSelect={setCharacterKey}
-        />
-      </Suspense>
-      <Box
-        sx={{ position: 'sticky', top: 0, zIndex: 100, background: '#0C1020' }}
-      >
-        <Button
-          fullWidth
-          color={getCharStat(characterKey).attribute}
+    <Providers>
+      <Box>
+        <Suspense fallback={false}>
+          <CharacterSingleSelectionModal
+            show={show}
+            onHide={onHide}
+            onSelect={setCharacterKey}
+          />
+        </Suspense>
+        <Box
           sx={{
-            justifyContent: 'flex-start',
-            pl: '6px',
+            position: 'sticky',
+            top: 0,
+            zIndex: 100,
+            background: '#0C1020',
           }}
-          onClick={onShow}
         >
-          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-            <ImgIcon size={2} src={characterAsset(characterKey, 'circle')} />
-            {t(`charNames_gen:${characterKey}`)}
-          </Box>
-        </Button>
+          <Button
+            fullWidth
+            color={getCharStat(characterKey).attribute}
+            sx={{
+              justifyContent: 'flex-start',
+              pl: '6px',
+            }}
+            onClick={onShow}
+          >
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              <ImgIcon size={2} src={characterAsset(characterKey, 'circle')} />
+              {t(`charNames_gen:${characterKey}`)}
+            </Box>
+          </Button>
+        </Box>
+        {character && charOpt && (
+          <CharacterContext.Provider value={character}>
+            <TagContext.Provider value={tag}>
+              <CharCalcProvider
+                character={character}
+                charOpt={charOpt}
+                wengineId={character.equippedWengine}
+                discIds={character.equippedDiscs}
+              >
+                <SrcDstDisplayContext.Provider
+                  value={srcDstDisplayContextValue}
+                >
+                  <ConditionalValuesContext.Provider
+                    value={charOpt.conditionals}
+                  >
+                    <SetConditionalContext.Provider value={setConditional}>
+                      <DebugReadContext.Provider value={debugObj}>
+                        <DebugReadModal />
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            gap: 1,
+                            flexDirection: 'column',
+                            mt: 1,
+                          }}
+                        >
+                          <OptTargetRow
+                            character={character}
+                            charOpt={charOpt}
+                          />
+                          <TeamHeaderHeightContext.Provider value={74}>
+                            <CharacterOptDisplay />
+                          </TeamHeaderHeightContext.Provider>
+                        </Box>
+                      </DebugReadContext.Provider>
+                    </SetConditionalContext.Provider>
+                  </ConditionalValuesContext.Provider>
+                </SrcDstDisplayContext.Provider>
+              </CharCalcProvider>
+            </TagContext.Provider>
+          </CharacterContext.Provider>
+        )}
       </Box>
-      {character && charOpt && (
-        <CharacterContext.Provider value={character}>
-          <TagContext.Provider value={tag}>
-            <CharCalcProvider
-              character={character}
-              charOpt={charOpt}
-              wengineId={character.equippedWengine}
-              discIds={character.equippedDiscs}
-            >
-              <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
-                <ConditionalValuesContext.Provider value={charOpt.conditionals}>
-                  <SetConditionalContext.Provider value={setConditional}>
-                    <DebugReadContext.Provider value={debugObj}>
-                      <DebugReadModal />
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          gap: 1,
-                          flexDirection: 'column',
-                          mt: 1,
-                        }}
-                      >
-                        <OptTargetRow character={character} charOpt={charOpt} />
-                        <TeamHeaderHeightContext.Provider value={74}>
-                          <CharacterOptDisplay />
-                        </TeamHeaderHeightContext.Provider>
-                      </Box>
-                    </DebugReadContext.Provider>
-                  </SetConditionalContext.Provider>
-                </ConditionalValuesContext.Provider>
-              </SrcDstDisplayContext.Provider>
-            </CharCalcProvider>
-          </TagContext.Provider>
-        </CharacterContext.Provider>
-      )}
-    </Box>
+    </Providers>
+  )
+}
+function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <FormulaTextContext.Provider value={formulaText as FormulaTextFunc}>
+      <TagDisplayContext.Provider value={TagDisplay as TagDisplayComponent}>
+        <FullTagDisplayContext.Provider
+          value={FullTagDisplay as FullTagDisplayComponent}
+        >
+          {children}
+        </FullTagDisplayContext.Provider>
+      </TagDisplayContext.Provider>
+    </FormulaTextContext.Provider>
   )
 }

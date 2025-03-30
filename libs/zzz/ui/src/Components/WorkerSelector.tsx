@@ -1,6 +1,7 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { MenuItem } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
 export function WorkerSelector({
   numWorkers,
@@ -9,15 +10,14 @@ export function WorkerSelector({
   numWorkers: number
   setNumWorkers: (w: number) => void
 }) {
+  const { t } = useTranslation('page_optimize')
   const maxWorkers = navigator.hardwareConcurrency || 8
   return (
     <DropdownButton title={`${numWorkers} Workers`}>
       <MenuItem disabled>Scales with available CPU cores.</MenuItem>
       {range(1, maxWorkers).map((n) => (
         <MenuItem key={n} onClick={() => setNumWorkers(n)}>
-          {n} Workers
-          {/* TODO: Translation */}
-          {/* {t('workers', { count: n })} */}
+          {t('worker', { count: n })}
         </MenuItem>
       ))}
     </DropdownButton>

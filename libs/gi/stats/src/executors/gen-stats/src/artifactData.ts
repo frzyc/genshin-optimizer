@@ -4,6 +4,9 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import {
   artifactIdMap,
+  artifactSlotMap,
+  getHakushinArtiData,
+  hakushinArtis,
   reliquaryCodexExcelConfigData,
   reliquarySetExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
@@ -39,20 +42,20 @@ export default function artifactData() {
   ) as Record<ArtifactSetKey, ArtifactDataGen>
 
   // Hakushin stats
-  // for (const key of hakushinArtis) {
-  //   data[key] = getDataFromHakushin(key)
-  // }
+  for (const key of hakushinArtis) {
+    data[key] = getDataFromHakushin(key)
+  }
 
   return data
 }
 
-// function getDataFromHakushin(key: ArtifactSetKey) {
-//   const data = getHakushinArtiData(key)
+function getDataFromHakushin(key: ArtifactSetKey) {
+  const data = getHakushinArtiData(key)
 
-//   const stats: ArtifactDataGen = {
-//     setNum: data.Need,
-//     rarities: data.Rank,
-//     slots: Object.keys(data.Parts).map((part) => artifactSlotMap[part]),
-//   }
-//   return stats
-// }
+  const stats: ArtifactDataGen = {
+    setNum: data.Need,
+    rarities: data.Rank,
+    slots: Object.keys(data.Parts).map((part) => artifactSlotMap[part]),
+  }
+  return stats
+}

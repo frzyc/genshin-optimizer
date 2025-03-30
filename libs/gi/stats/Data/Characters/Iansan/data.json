@@ -1,27 +1,28 @@
 {
   "key": "Iansan",
-  "rarity": 4,
+  "ele": "electro",
+  "region": "natlan",
+  "weaponType": "polearm",
   "birthday": {
     "month": 8,
     "day": 8
   },
-  "region": "natlan",
-  "weaponType": "polearm",
+  "rarity": 4,
   "lvlCurves": [
     {
-      "curve": "GROW_CURVE_HP_S4",
       "key": "hp",
-      "base": 893.5552
+      "base": 893.5552,
+      "curve": "GROW_CURVE_HP_S4"
     },
     {
-      "curve": "GROW_CURVE_ATTACK_S4",
       "key": "atk",
-      "base": 21.54768
+      "base": 21.54768,
+      "curve": "GROW_CURVE_ATTACK_S4"
     },
     {
-      "curve": "GROW_CURVE_HP_S4",
       "key": "def",
-      "base": 53.505375
+      "base": 53.505375,
+      "curve": "GROW_CURVE_HP_S4"
     }
   ],
   "ascensionBonus": {

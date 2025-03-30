@@ -1,6 +1,7 @@
 import type {
   ElementKey,
   LocationCharacterKey,
+  NonTravelerCharacterKey,
   RegionKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
@@ -14,6 +15,8 @@ import {
   characterIdMap,
   elementMap,
   fetterInfoExcelConfigData,
+  getHakushinCharData,
+  hakushinChars,
   propTypeMap,
   regionMap,
   weaponMap,
@@ -103,42 +106,42 @@ export default function characterData() {
   data.Somnia = somniaData as CharacterDataGen
 
   // Hakushin stats
-  // for (const key of hakushinChars) {
-  //   data[key] = getDataFromHakushin(key)
-  // }
+  for (const key of hakushinChars) {
+    data[key] = getDataFromHakushin(key)
+  }
 
   return data
 }
 
-// function getDataFromHakushin(key: NonTravelerCharacterKey) {
-//   const data = getHakushinCharData(key)
+function getDataFromHakushin(key: NonTravelerCharacterKey) {
+  const data = getHakushinCharData(key)
 
-//   const bases = [data.BaseHP, data.BaseATK, data.BaseDEF]
-//   const ascension: CharacterDataGen['ascensionBonus'] = {}
-//   for (const asc of data.StatsModifier.Ascension) {
-//     for (const [prop, value] of Object.entries(asc)) {
-//       const statKey = propTypeMap[prop]
-//       if (!ascension[statKey]) ascension[statKey] = [0]
-//       ascension[statKey].push(value)
-//     }
-//   }
-//   const stats: CharacterDataGen = {
-//     key,
-//     ele: elementMap[data.CharaInfo.Vision],
-//     region: regionMap[data.CharaInfo.Region],
-//     weaponType: weaponMap[data.Weapon],
-//     birthday: {
-//       month: data.CharaInfo.Birth[0],
-//       day: data.CharaInfo.Birth[1],
-//     },
-//     rarity: QualityTypeMap[data.Rarity],
-//     lvlCurves: data.StatsModifier.PropGrowCurves.map((curve, index) => ({
-//       key: propTypeMap[curve.type],
-//       base: bases[index],
-//       curve: curve.growCurve,
-//     })),
-//     ascensionBonus: ascension,
-//   }
+  const bases = [data.BaseHP, data.BaseATK, data.BaseDEF]
+  const ascension: CharacterDataGen['ascensionBonus'] = {}
+  for (const asc of data.StatsModifier.Ascension) {
+    for (const [prop, value] of Object.entries(asc)) {
+      const statKey = propTypeMap[prop]
+      if (!ascension[statKey]) ascension[statKey] = [0]
+      ascension[statKey].push(value)
+    }
+  }
+  const stats: CharacterDataGen = {
+    key,
+    ele: data.CharaInfo.Vision.toLowerCase() as ElementKey,
+    region: regionMap[data.CharaInfo.Region],
+    weaponType: weaponMap[data.Weapon],
+    birthday: {
+      month: data.CharaInfo.Birth[0],
+      day: data.CharaInfo.Birth[1],
+    },
+    rarity: QualityTypeMap[data.Rarity],
+    lvlCurves: data.StatsModifier.PropGrowCurves.map((curve, index) => ({
+      key: propTypeMap[curve.type],
+      base: bases[index],
+      curve: curve.growCurve,
+    })),
+    ascensionBonus: ascension,
+  }
 
-//   return stats
-// }
+  return stats
+}

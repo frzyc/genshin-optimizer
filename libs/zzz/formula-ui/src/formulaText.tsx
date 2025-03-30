@@ -5,6 +5,7 @@ import {
   valueString,
 } from '@genshin-optimizer/common/util'
 import type { CalcMeta } from '@genshin-optimizer/game-opt/engine'
+import type { FormulaText } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import type { ReactNode } from 'react'
@@ -14,14 +15,6 @@ import { getTagLabel } from './util'
 
 type Output = CalcMeta<Tag, never>
 
-type FormulaText = {
-  name: ReactNode | undefined
-  formula: ReactNode
-  sheet: string | undefined
-  prec: number
-
-  deps: FormulaText[]
-}
 export function formulaText(
   data: CalcResult<number, Output>,
   cache: Map<CalcResult<number, Output>, FormulaText> = new Map()
@@ -101,11 +94,13 @@ export function formulaText(
   }
   let name: ReactNode, sheet: string | undefined
   if (usedTag) {
-    name = (
-      <span>
-        <TagDisplay tag={usedTag} /> {displayVal}
-      </span>
-    )
+    name =
+      // Prevent the values that are misc/percent from being displayed
+      usedTag.q === '_' ? undefined : (
+        <span>
+          <TagDisplay tag={usedTag} /> {displayVal}
+        </span>
+      )
     sheet = undefined
   }
 

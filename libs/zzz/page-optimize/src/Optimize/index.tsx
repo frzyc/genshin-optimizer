@@ -18,7 +18,7 @@ import {
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
 import { optimize } from '@genshin-optimizer/zzz/solver'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
-import { WorkerSelector } from '@genshin-optimizer/zzz/ui'
+import { BuildsSelector, WorkerSelector } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -189,6 +189,7 @@ function OptimizeWrapper() {
       wengines,
       discsBySlot,
       numWorkers,
+      optConfig.maxBuildsToShow,
       setProgress
     )
 
@@ -205,7 +206,7 @@ function OptimizeWrapper() {
     // Save results to optConfig
     if (results.length)
       database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
-        builds: results.slice(0, 5).map(({ ids, value }) => ({
+        builds: results.map(({ ids, value }) => ({
           wengineId: ids[0],
           discIds: objKeyMap(allDiscSlotKeys, (_slot, index) => ids[index + 1]),
           value,
@@ -218,6 +219,7 @@ function OptimizeWrapper() {
     optConfig.statFilters,
     optConfig.setFilter2,
     optConfig.setFilter4,
+    optConfig.maxBuildsToShow,
     characterKey,
     wengines,
     discsBySlot,
@@ -252,6 +254,10 @@ function OptimizeWrapper() {
             <ProgressIndicator progress={progress} total={totalPermutations} />
           )}
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
+            <BuildsSelector
+              maxBuildsToShow={optConfig.maxBuildsToShow}
+              optConfigId={optConfigId}
+            />
             <WorkerSelector
               numWorkers={numWorkers}
               setNumWorkers={setNumWorkers}
