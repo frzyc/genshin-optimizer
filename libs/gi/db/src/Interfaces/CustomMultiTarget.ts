@@ -145,7 +145,7 @@ export interface TeamTarget {
 }
 
 export type ExpressionUnit<
-  Target extends CustomTarget | TeamTarget = CustomTarget
+  Target extends CustomTarget | TeamTarget = CustomTarget,
 > =
   | ConstantUnit
   | TargetUnit<Target>
@@ -165,7 +165,7 @@ export interface ConstantUnit extends BaseUnit {
 }
 
 export interface TargetUnit<
-  Target extends CustomTarget | TeamTarget = CustomTarget
+  Target extends CustomTarget | TeamTarget = CustomTarget,
 > extends BaseUnit {
   type: 'target'
   target: Target

@@ -623,7 +623,7 @@ export function targetListToExpression(
 }
 
 export function itemAddressValue<
-  T extends AddressItemTypesMap | [undefined, undefined]
+  T extends AddressItemTypesMap | [undefined, undefined],
 >(
   expression: ExpressionUnit[],
   functions: CustomFunction[],
