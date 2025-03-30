@@ -58,6 +58,10 @@ export default function CustomMultiTargetCard({
 
   const [expression, setExpression] = useState(target.expression)
   const [functions, setFunctions] = useState(target.functions)
+  useEffect(() => {
+    setExpression(target.expression)
+    setFunctions(target.functions)
+  }, [target])
 
   const onSave = useCallback(() => {
     onHide()
