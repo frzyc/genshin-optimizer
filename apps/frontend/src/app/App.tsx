@@ -4,6 +4,7 @@ import {
 } from '@genshin-optimizer/common/database'
 import {
   AdBlockContextWrapper,
+  DailyLogin,
   ScrollTop,
   useRefSize,
   useTitle,
@@ -101,6 +102,7 @@ function App() {
                     <Content />
                   </AdBlockContextWrapper>
                   <ScrollTop />
+                  <DailyLogin />
                 </HashRouter>
               </ErrorBoundary>
             </DatabaseContext.Provider>

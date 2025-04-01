@@ -459,6 +459,9 @@ export default function TabBuild() {
         })),
         buildDate: Date.now(),
       })
+      database.dbMeta.set(({ dailyOptCount }) => ({
+        dailyOptCount: dailyOptCount + 1,
+      }))
 
       setTimeout(() => {
         // Using a ref because a user can cancel the notification while the build is going.
