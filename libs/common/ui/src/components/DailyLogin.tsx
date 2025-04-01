@@ -100,6 +100,9 @@ function DailyLoginModal({
             <Typography variant="body1">
               You can claim <strong>5% optimizer speed</strong> as your rewards
               on the 7th day
+              <br />
+              Also try your luck on our <strong>Speed Gacha</strong> on the
+              Optimize tab
             </Typography>
 
             <CardThemed bgt="dark">
