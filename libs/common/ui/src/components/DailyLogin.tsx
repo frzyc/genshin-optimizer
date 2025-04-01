@@ -98,7 +98,7 @@ function DailyLoginModal({
               ))}
             </Stepper>
             <Typography variant="body1">
-              You can claim <strong>5% optimzier speed</strong> as your rewards
+              You can claim <strong>5% optimizer speed</strong> as your rewards
               on the 7th day
             </Typography>
 

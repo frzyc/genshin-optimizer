@@ -13,6 +13,9 @@ export interface IDBMeta {
   dailyOptCount: number
   dailyArtCount: number
   visitZO: boolean
+  gachaCoins: number
+  gachaDollars: number
+  gachaWishes: number
 }
 
 function dbMetaInit(database: Database): IDBMeta {
@@ -23,6 +26,9 @@ function dbMetaInit(database: Database): IDBMeta {
     dailyOptCount: 0,
     dailyArtCount: 0,
     visitZO: false,
+    gachaCoins: 10,
+    gachaDollars: 0,
+    gachaWishes: 0,
   }
 }
 
@@ -37,7 +43,17 @@ export class DBMetaEntry extends DataEntry<
   }
   override validate(obj: any): IDBMeta | undefined {
     if (typeof obj !== 'object') return undefined
-    let { name, lastEdit, gender, dailyOptCount, dailyArtCount, visitZO } = obj
+    let {
+      name,
+      lastEdit,
+      gender,
+      dailyOptCount,
+      dailyArtCount,
+      visitZO,
+      gachaCoins,
+      gachaDollars,
+      gachaWishes,
+    } = obj
     if (typeof name !== 'string')
       name = `Database ${this.database.storage.getDBIndex()}`
     if (typeof lastEdit !== 'number') console.warn('lastEdit INVALID')
@@ -47,6 +63,9 @@ export class DBMetaEntry extends DataEntry<
     if (typeof dailyOptCount !== 'number') dailyOptCount = 0
     if (typeof dailyArtCount !== 'number') dailyArtCount = 0
     visitZO = !!visitZO
+    if (typeof gachaCoins !== 'number') gachaCoins = 10
+    if (typeof gachaDollars !== 'number') gachaDollars = 10
+    if (typeof gachaWishes !== 'number') gachaWishes = 10
     return {
       name,
       lastEdit,
@@ -54,6 +73,9 @@ export class DBMetaEntry extends DataEntry<
       dailyOptCount,
       dailyArtCount,
       visitZO,
+      gachaCoins,
+      gachaDollars,
+      gachaWishes,
     } as IDBMeta
   }
   override importGOOD(go: IGO & IGOOD, _result: ImportResult): void {

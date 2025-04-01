@@ -12,6 +12,7 @@ import {
   SqBadge,
   useConstObj,
 } from '@genshin-optimizer/common/ui'
+import { SpeedUpGacha } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   notEmpty,
@@ -747,6 +748,7 @@ export default function TabBuild() {
             </Button>
           </Box>
         </BootstrapTooltip>
+        <SpeedUpGacha />
         <BootstrapTooltip
           placement="top"
           title={!optimizationTarget ? t('selectTargetFirst') : ''}

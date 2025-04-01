@@ -238,8 +238,6 @@ const dmgFormulas = {
       {
         premod: {
           plunging_dmg_: c4FpApex_burst_dmg_,
-          plunging_critRate_: c6_burst_critRate_,
-          plunging_critDMG_: c6_burst_critDMG_,
           plunging_impact_dmgInc: greaterEq(
             input.constellation,
             1,
