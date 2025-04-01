@@ -16,9 +16,6 @@ import { Stack } from '@mui/material'
 import { useCallback, useState } from 'react'
 import { CardThemed } from './Card'
 import { ModalWrapper } from './ModalWrapper'
-import blueWish from './blueWish.gif'
-import goldWish from './goldWish.gif'
-import purpleWish from './purpleWish.gif'
 
 export function SpeedUpGacha() {
   const [show, onShow, onClose] = useBoolState(false)
@@ -199,10 +196,10 @@ function SpeedUpModal({
                           option === -1
                             ? undefined
                             : option < 6
-                              ? blueWish
+                              ? 'assets/blueWish.gif'
                               : option < 9
-                                ? purpleWish
-                                : goldWish
+                                ? 'assets/purpleWish.gif'
+                                : 'assets/goldWish.gif'
                         }
                         alt="wish"
                       />
