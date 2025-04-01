@@ -438,7 +438,7 @@ const sheet: TalentSheet = {
         },
         {
           text: ct.chg('burst.skillParams.5'),
-          value: dm.burst.enerCost,
+          value: dm.burst.volcanoCost,
         },
       ],
     },
