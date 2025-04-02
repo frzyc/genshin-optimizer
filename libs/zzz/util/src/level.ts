@@ -41,7 +41,7 @@ export function validateLevelMilestone(
     sanitizedLevel > 60
   )
     sanitizedLevel = 1
-  if (typeof milestone !== 'number' || milestone < 0 || milestone > 6)
+  if (typeof milestone !== 'number' || milestone < 0 || milestone > 5)
     milestone = 0
 
   if (
