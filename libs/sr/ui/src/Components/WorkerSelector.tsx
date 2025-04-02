@@ -10,13 +10,13 @@ export function WorkerSelector({
   numWorkers: number
   setNumWorkers: (w: number) => void
 }) {
-  const { t } = useTranslation('optimize')
+  const { t } = useTranslation('page_optimize')
   const maxWorkers = navigator.hardwareConcurrency || 8
   return (
-    <DropdownButton title={`${t('numWorkers')}: ${numWorkers}`}>
+    <DropdownButton title={`${numWorkers} Workers`}>
       {range(1, maxWorkers).map((n) => (
         <MenuItem key={n} onClick={() => setNumWorkers(n)}>
-          {t('workers', { count: n })}
+          {t('worker', { count: n })}
         </MenuItem>
       ))}
     </DropdownButton>

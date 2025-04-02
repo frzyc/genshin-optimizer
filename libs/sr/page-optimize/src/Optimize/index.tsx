@@ -18,7 +18,11 @@ import {
 import { StatFilterCard } from '@genshin-optimizer/sr/formula-ui'
 import { optimize } from '@genshin-optimizer/sr/solver'
 import { getLightConeStat } from '@genshin-optimizer/sr/stats'
-import { WorkerSelector, useSrCalcContext } from '@genshin-optimizer/sr/ui'
+import {
+  BuildsSelector,
+  WorkerSelector,
+  useSrCalcContext,
+} from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -179,7 +183,7 @@ function OptimizeWrapper() {
       characterKey,
       calc,
       [{ tag: target, multiplier: 1 }],
-      10, // TODO: topN
+      5,
       statFilters,
       optConfig.setFilter2Cavern,
       optConfig.setFilter4Cavern,
@@ -203,7 +207,7 @@ function OptimizeWrapper() {
     // Save results to optConfig
     if (results.length)
       database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
-        builds: results.slice(0, 5).map(({ ids, value }) => ({
+        builds: results.map(({ ids, value }) => ({
           lightConeId: ids[0],
           relicIds: objKeyMap(
             allRelicSlotKeys,
@@ -216,6 +220,7 @@ function OptimizeWrapper() {
   }, [
     calc,
     optConfig.statFilters,
+    // optConfig.maxBuildsToShow,
     optConfig.setFilter2Cavern,
     optConfig.setFilter4Cavern,
     optConfig.setFilter2Planar,
@@ -244,6 +249,10 @@ function OptimizeWrapper() {
             <ProgressIndicator progress={progress} total={totalPermutations} />
           )}
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <BuildsSelector
+              maxBuildsToShow={optConfig.maxBuildsToShow}
+              optConfigId={optConfigId}
+            />
             <WorkerSelector
               numWorkers={numWorkers}
               setNumWorkers={setNumWorkers}
