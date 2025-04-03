@@ -181,7 +181,9 @@ export function WengineEditor({
                     <LevelSelect
                       level={level}
                       milestone={modification}
-                      setBoth={wengineDispatch}
+                      setBoth={({ level, milestone }) =>
+                        wengineDispatch({ level, modification: milestone })
+                      }
                     />
                   )}
                 </Box>

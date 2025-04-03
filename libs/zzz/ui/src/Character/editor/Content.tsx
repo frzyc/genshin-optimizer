@@ -78,9 +78,12 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 <LevelSelect
                   level={character.level}
                   milestone={character.promotion}
-                  setBoth={(data) => {
-                    database.chars.set(characterKey, data)
-                  }}
+                  setBoth={({ level, milestone }) =>
+                    database.chars.set(characterKey, {
+                      level,
+                      promotion: milestone,
+                    })
+                  }
                 />
               </Box>
               <CharacterCardStats bgt="light" character={character} />
