@@ -183,7 +183,7 @@ function OptimizeWrapper() {
       characterKey,
       calc,
       [{ tag: target, multiplier: 1 }],
-      5,
+      optConfig.maxBuildsToShow,
       statFilters,
       optConfig.setFilter2Cavern,
       optConfig.setFilter4Cavern,
@@ -220,7 +220,7 @@ function OptimizeWrapper() {
   }, [
     calc,
     optConfig.statFilters,
-    // optConfig.maxBuildsToShow,
+    optConfig.maxBuildsToShow,
     optConfig.setFilter2Cavern,
     optConfig.setFilter4Cavern,
     optConfig.setFilter2Planar,
