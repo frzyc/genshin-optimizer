@@ -1,7 +1,6 @@
 import { toDecimal } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import type { Candidate, Progress } from '@genshin-optimizer/game-opt/solver'
-import { Solver } from '@genshin-optimizer/game-opt/solver'
 
 import {
   constant,
@@ -34,7 +33,7 @@ const EPSILON = 1e-7
 
 type Frames = Array<{ tag: Tag; multiplier: number }>
 
-export function optimize(
+export function createSolverConfig(
   characterKey: CharacterKey,
   calc: Calculator,
   frames: Frames,
@@ -123,7 +122,7 @@ export function optimize(
     // other calcs (graph, etc)
   )
 
-  return new Solver({
+  return {
     nodes,
     candidates: [
       wengines.map(wengineCandidate),
@@ -147,7 +146,7 @@ export function optimize(
     numWorkers,
     topN: numOfBuilds,
     setProgress,
-  })
+  }
 }
 
 function discCandidate(disc: ICachedDisc): Candidate<string> {
