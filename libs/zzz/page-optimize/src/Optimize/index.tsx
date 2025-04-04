@@ -2,7 +2,7 @@ import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
-import { buildCount } from '@genshin-optimizer/game-opt/solver'
+import { Solver, buildCount } from '@genshin-optimizer/game-opt/solver'
 import {
   type DiscSlotKey,
   allDiscSlotKeys,
@@ -17,7 +17,7 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
-import { createSolverConfig, optimize } from '@genshin-optimizer/zzz/solver'
+import { createSolverConfig } from '@genshin-optimizer/zzz/solver'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { BuildsSelector, WorkerSelector } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -204,7 +204,7 @@ function OptimizeWrapper() {
         return
       }
 
-      const optimizer = optimize(config)
+      const optimizer = new Solver(config)
 
       cancelled.then(() => optimizer.terminate('user cancelled'))
       let results: BuildResult<string>[]

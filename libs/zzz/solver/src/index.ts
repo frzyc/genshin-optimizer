@@ -1,11 +1,6 @@
 import { toDecimal } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import type {
-  Candidate,
-  Progress,
-  SolverConfig,
-} from '@genshin-optimizer/game-opt/solver'
-import { Solver } from '@genshin-optimizer/game-opt/solver'
+import type { Candidate, Progress } from '@genshin-optimizer/game-opt/solver'
 
 import {
   constant,
@@ -37,10 +32,6 @@ import { type Calculator, Read, type Tag } from '@genshin-optimizer/zzz/formula'
 const EPSILON = 1e-7
 
 type Frames = Array<{ tag: Tag; multiplier: number }>
-
-export function optimize(cfg: SolverConfig<string>) {
-  return new Solver(cfg)
-}
 
 export function createSolverConfig(
   characterKey: CharacterKey,
