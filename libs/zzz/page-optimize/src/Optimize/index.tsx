@@ -217,18 +217,14 @@ function OptimizeWrapper() {
         setOptimizing(false)
       }
       // Save results to optConfig
-      if (results.length)
-        database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
-          builds: results.map(({ ids, value }) => ({
-            wengineId: ids[0],
-            discIds: objKeyMap(
-              allDiscSlotKeys,
-              (_slot, index) => ids[index + 1]
-            ),
-            value,
-          })),
-          buildDate: Date.now(),
-        })
+      database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
+        builds: results.map(({ ids, value }) => ({
+          wengineId: ids[0],
+          discIds: objKeyMap(allDiscSlotKeys, (_slot, index) => ids[index + 1]),
+          value,
+        })),
+        buildDate: Date.now(),
+      })
     },
     [
       calc,
