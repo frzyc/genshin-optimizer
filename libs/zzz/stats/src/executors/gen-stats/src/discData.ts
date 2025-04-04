@@ -1,10 +1,9 @@
+import { objMap } from '@genshin-optimizer/common/util'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import type { DiscData } from '@genshin-optimizer/zzz/dm'
 import { discsDetailedJSONData } from '@genshin-optimizer/zzz/dm'
-
-export type DiscDatum = DiscData
+import type { DiscDatum } from '../../../disc'
 
 export type discsData = Record<DiscSetKey, DiscDatum>
 export function getDiscsData(): discsData {
-  return discsDetailedJSONData
+  return objMap(discsDetailedJSONData, (_d) => ({}))
 }
