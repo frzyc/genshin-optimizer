@@ -204,7 +204,6 @@ function OptimizeWrapper() {
       setOptimizing(false)
     }
     // Save results to optConfig
-    if (results.length)
       database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
         builds: results.map(({ ids, value }) => ({
           wengineId: ids[0],
