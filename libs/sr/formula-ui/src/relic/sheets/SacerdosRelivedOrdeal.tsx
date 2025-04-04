@@ -18,8 +18,6 @@ const icon = relicAsset(key, getDefaultRelicSlot(key))
 const cond = conditionals[key]
 const buff = buffs[key]
 
-console.log('dm', dm[4])
-
 const sheet: UISheet<'2' | '4'> = {
   2: {
     title: '2-Set', // TODO: L10n
