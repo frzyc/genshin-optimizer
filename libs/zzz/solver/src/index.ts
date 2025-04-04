@@ -29,6 +29,9 @@ import {
   StatFilterTagToTag,
 } from '@genshin-optimizer/zzz/db'
 import { type Calculator, Read, type Tag } from '@genshin-optimizer/zzz/formula'
+
+const EPSILON = 1e-7
+
 type Frames = Array<{ tag: Tag; multiplier: number }>
 
 export function optimize(
@@ -136,7 +139,7 @@ export function optimize(
       // Invert max constraints for pruning
       ...statFilters.map(({ value, isMax, tag }) => {
         const decimalVal = toDecimal(value, tag.q ?? '')
-        return isMax ? decimalVal * -1 : decimalVal
+        return (isMax ? decimalVal * -1 : decimalVal) - EPSILON
       }),
       2, // setFilter2
       4, // setFilter4
