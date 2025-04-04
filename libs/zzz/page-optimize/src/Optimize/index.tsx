@@ -42,8 +42,6 @@ import { DiscFilter } from './DiscFilter'
 import { StatFilterCard } from './StatFilterCard'
 import { WengineFilter } from './WengineFilter'
 
-const EPSILON = 1e-7
-
 export default function Optimize() {
   const { key: characterKey } = useCharacterContext()!
   const { optConfigId } = useCharOpt(characterKey)!
@@ -175,9 +173,7 @@ function OptimizeWrapper() {
     setOptimizing(true)
 
     // Filter out disabled
-    const statFilters = (optConfig.statFilters ?? [])
-      .filter((s) => !s.disabled)
-      .map((s) => ({ ...s, value: s.value + EPSILON }))
+    const statFilters = (optConfig.statFilters ?? []).filter((s) => !s.disabled)
     const optimizer = optimize(
       characterKey,
       calc,
