@@ -42,6 +42,8 @@ import { DiscFilter } from './DiscFilter'
 import { StatFilterCard } from './StatFilterCard'
 import { WengineFilter } from './WengineFilter'
 
+const EPSILON = 1e-7
+
 export default function Optimize() {
   const { key: characterKey } = useCharacterContext()!
   const { optConfigId } = useCharOpt(characterKey)!
@@ -173,7 +175,9 @@ function OptimizeWrapper() {
     setOptimizing(true)
 
     // Filter out disabled
-    const statFilters = (optConfig.statFilters ?? []).filter((s) => !s.disabled)
+    const statFilters = (optConfig.statFilters ?? [])
+      .filter((s) => !s.disabled)
+      .map((s) => ({ ...s, value: s.value + EPSILON }))
     const optimizer = optimize(
       characterKey,
       calc,
@@ -204,14 +208,14 @@ function OptimizeWrapper() {
       setOptimizing(false)
     }
     // Save results to optConfig
-      database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
-        builds: results.map(({ ids, value }) => ({
-          wengineId: ids[0],
-          discIds: objKeyMap(allDiscSlotKeys, (_slot, index) => ids[index + 1]),
-          value,
-        })),
-        buildDate: Date.now(),
-      })
+    database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
+      builds: results.map(({ ids, value }) => ({
+        wengineId: ids[0],
+        discIds: objKeyMap(allDiscSlotKeys, (_slot, index) => ids[index + 1]),
+        value,
+      })),
+      buildDate: Date.now(),
+    })
   }, [
     calc,
     target,
