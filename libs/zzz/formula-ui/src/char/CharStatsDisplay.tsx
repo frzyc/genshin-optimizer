@@ -12,10 +12,6 @@ import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
-  TagDisplay,
-  useZzzCalcContext,
-} from '@genshin-optimizer/zzz/formula-ui'
-import {
   StatHighlightContext,
   ZCard,
   getHighlightRGBA,
@@ -23,6 +19,8 @@ import {
 } from '@genshin-optimizer/zzz/ui'
 import { Box, CardContent } from '@mui/material'
 import { useContext, useMemo } from 'react'
+import { TagDisplay } from '../components'
+import { useZzzCalcContext } from '../hooks'
 export function CharStatsDisplay() {
   const calc = useZzzCalcContext()
   return (

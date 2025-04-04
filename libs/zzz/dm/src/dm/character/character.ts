@@ -167,7 +167,7 @@ export type CharacterData = {
     def_growth: number
     hp_base: number
     hp_growth: number
-    anomMas_base: number
+    anomMas: number
     anomProf: number
     impact: number
     enerRegen: number
@@ -212,7 +212,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
           def_growth: raw.Stats.DefenceGrowth / PERCENT_SCALING,
           hp_base: raw.Stats.HpMax,
           hp_growth: raw.Stats.HpGrowth / PERCENT_SCALING,
-          anomMas_base: raw.Stats.ElementAbnormalPower,
+          anomMas: raw.Stats.ElementAbnormalPower,
           anomProf: raw.Stats.ElementMystery,
           impact: raw.Stats.BreakStun,
           enerRegen: raw.Stats.SpRecover / FLAT_SCALING,
