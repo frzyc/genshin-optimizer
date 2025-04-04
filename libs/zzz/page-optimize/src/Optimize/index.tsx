@@ -7,6 +7,7 @@ import {
   type DiscSlotKey,
   allDiscSlotKeys,
 } from '@genshin-optimizer/zzz/consts'
+
 import { type ICachedDisc, targetTag } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
@@ -16,7 +17,7 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
-import { optimize } from '@genshin-optimizer/zzz/solver'
+import { createSolverConfig, optimize } from '@genshin-optimizer/zzz/solver'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { BuildsSelector, WorkerSelector } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -29,6 +30,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import type { MouseEvent } from 'react'
 import {
   useCallback,
   useContext,
@@ -166,44 +168,55 @@ function OptimizeWrapper() {
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
 
-  const onOptimize = useCallback(async () => {
-    if (!calc || !target) return
-    const cancelled = new Promise<void>((r) => (cancelToken.current = r))
-    setProgress(undefined)
-    setOptimizing(true)
+  const onOptimize = useCallback(
+    async (event: MouseEvent) => {
+      if (!calc || !target) return
+      const cancelled = new Promise<void>((r) => (cancelToken.current = r))
+      setProgress(undefined)
+      setOptimizing(true)
 
-    // Filter out disabled
-    const statFilters = (optConfig.statFilters ?? []).filter((s) => !s.disabled)
-    const optimizer = optimize(
-      characterKey,
-      calc,
-      [
-        {
-          tag: targetTag(target),
-          multiplier: 1,
-        },
-      ],
-      statFilters,
-      optConfig.setFilter2,
-      optConfig.setFilter4,
-      wengines,
-      discsBySlot,
-      numWorkers,
-      optConfig.maxBuildsToShow,
-      setProgress
-    )
+      // Filter out disabled
+      const statFilters = (optConfig.statFilters ?? []).filter(
+        (s) => !s.disabled
+      )
+      const config = createSolverConfig(
+        characterKey,
+        calc,
+        [
+          {
+            tag: targetTag(target),
+            multiplier: 1,
+          },
+        ],
+        statFilters,
+        optConfig.setFilter2,
+        optConfig.setFilter4,
+        wengines,
+        discsBySlot,
+        numWorkers,
+        optConfig.maxBuildsToShow,
+        setProgress
+      )
 
-    cancelled.then(() => optimizer.terminate('user cancelled'))
-    let results: BuildResult<string>[]
-    try {
-      results = await optimizer.results
-    } catch {
-      return
-    } finally {
-      cancelToken.current = () => {}
-      setOptimizing(false)
-    }
-    // Save results to optConfig
+      if (event.altKey) {
+        console.log(config)
+        setOptimizing(false)
+        return
+      }
+
+      const optimizer = optimize(config)
+
+      cancelled.then(() => optimizer.terminate('user cancelled'))
+      let results: BuildResult<string>[]
+      try {
+        results = await optimizer.results
+      } catch {
+        return
+      } finally {
+        cancelToken.current = () => {}
+        setOptimizing(false)
+      }
+      // Save results to optConfig
       database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
         builds: results.map(({ ids, value }) => ({
           wengineId: ids[0],
@@ -212,20 +225,22 @@ function OptimizeWrapper() {
         })),
         buildDate: Date.now(),
       })
-  }, [
-    calc,
-    target,
-    optConfig.statFilters,
-    optConfig.setFilter2,
-    optConfig.setFilter4,
-    optConfig.maxBuildsToShow,
-    characterKey,
-    wengines,
-    discsBySlot,
-    numWorkers,
-    database.optConfigs,
-    optConfigId,
-  ])
+    },
+    [
+      calc,
+      target,
+      optConfig.statFilters,
+      optConfig.setFilter2,
+      optConfig.setFilter4,
+      optConfig.maxBuildsToShow,
+      characterKey,
+      wengines,
+      discsBySlot,
+      numWorkers,
+      database.optConfigs,
+      optConfigId,
+    ]
+  )
 
   const onCancel = useCallback(() => {
     cancelToken.current()
