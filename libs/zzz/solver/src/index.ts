@@ -139,7 +139,7 @@ export function optimize(
       // Invert max constraints for pruning
       ...statFilters.map(({ value, isMax, tag }) => {
         const decimalVal = toDecimal(value, tag.q ?? '')
-        return isMax ? decimalVal * -1 + EPSILON : decimalVal - EPSILON
+        return (isMax ? decimalVal * -1 : decimalVal) - EPSILON
       }),
       2, // setFilter2
       4, // setFilter4
