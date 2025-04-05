@@ -1,4 +1,4 @@
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 //exp curve
 type AvatarCurveExcelConfigData = {
@@ -33,9 +33,8 @@ export type CharacterGrowCurveKey =
   | 'GROW_CURVE_HP_S5'
   | 'GROW_CURVE_ATTACK_S5'
 
-const avatarCurveExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarCurveExcelConfigData.json')
-) as AvatarCurveExcelConfigData[]
+const avatarCurveExcelConfigDataSrc: AvatarCurveExcelConfigData[] =
+  readExcelJSON('ExcelBinOutput/AvatarCurveExcelConfigData.json')
 
 export type CharacterExpCurveData = {
   GROW_CURVE_HP_S4: {

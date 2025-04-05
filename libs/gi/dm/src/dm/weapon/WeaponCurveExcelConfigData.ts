@@ -1,4 +1,4 @@
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type WeaponCurveExcelConfigData = {
   level: 1
@@ -116,8 +116,8 @@ export type WeaponGrowCurveKey =
   | 'GROW_CURVE_ATTACK_305'
   | 'GROW_CURVE_CRITICAL_301'
 
-const weaponCurveExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/WeaponCurveExcelConfigData.json')
+const weaponCurveExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/WeaponCurveExcelConfigData.json'
 ) as WeaponCurveExcelConfigData[]
 
 export type WeaponExpCurveData = Record<

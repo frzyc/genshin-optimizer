@@ -37,7 +37,7 @@ export default function weaponData() {
       const { weaponType, rankLevel, weaponProp, skillAffix, weaponPromoteId } =
         weaponData
       const [main, sub] = weaponProp
-      const [refinementDataId] = skillAffix
+      const [refinementDataId] = skillAffix ?? []
       const refData = refinementDataId
         ? equipAffixExcelConfigData[refinementDataId]
         : []
@@ -76,20 +76,21 @@ export default function weaponData() {
           base: main.initValue,
           curve: main.type,
         },
-        subStat: sub.propType
-          ? {
-              type: propTypeMap[sub.propType],
-              base: sub.initValue,
-              curve: sub.type,
-            }
-          : undefined,
+        subStat:
+          sub.propType && sub.propType !== 'FIGHT_PROP_NONE'
+            ? {
+                type: propTypeMap[sub.propType],
+                base: sub.initValue,
+                curve: sub.type,
+              }
+            : undefined,
         lvlCurves: [
           {
             key: propTypeMap[main.propType],
             base: main.initValue,
             curve: main.type,
           },
-          ...(sub.propType
+          ...(sub.propType && sub.propType !== 'FIGHT_PROP_NONE'
             ? [
                 {
                   key: propTypeMap[sub.propType],

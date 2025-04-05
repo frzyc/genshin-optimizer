@@ -94,7 +94,7 @@
         " Les RÉS élémentaires et physique d'Arataki Itto diminuent de 20 %."
       ],
       "3": "<br/>",
-      "4": "Les effets du roi oni courroucé prennent fin lorsqu'Arataki Itto quitte le champ de bataille.",
+      "4": "Les effets du roi oni courroucé prennent fin lorsque Arataki Itto quitte le champ de bataille.",
       "5": "<br/>",
       "6": "<i>C'est la meilleure super technique ultime d'Itto... Enfin, d'après lui... Il est inutile pour Arataki Itto d'imiter qui que ce soit d'autre pour devenir plus fort, car il est sans conteste l'Oni le plus fort et le plus terrible de tout le pays. En gros, Itto ne prend exemple que sur lui-même !</i>",
       "7": "<i>Shouta trouve que c'est super cool.</i>"
@@ -121,13 +121,13 @@
   "passive1": {
     "name": "Arataki au top",
     "description": {
-      "0": "Lorsqu'Arataki Itto effectue une série de kesa giri d'Arataki, il obtient les effets suivants :",
+      "0": "Lorsque Arataki Itto effectue une série de kesa giri d'Arataki, il obtient les effets suivants :",
       "1": [
         " Chaque frappe augmente la VIT d'attaque de la prochaine de 10 %. La VIT d'attaque peut être augmentée d'un maximum de 30 % de cette manière.",
         " Sa RÉS à l'interruption augmente."
       ],
       "2": "<br/>",
-      "3": "Ces effets prennent fin lorsqu'Arataki Itto arrête d'utiliser cette série d'attaques."
+      "3": "Ces effets prennent fin lorsque Arataki Itto arrête d'utiliser cette série d'attaques."
     }
   },
   "passive2": {

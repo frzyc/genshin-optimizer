@@ -1,5 +1,5 @@
 import { artifactIdMap } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type ReliquarySetExcelConfigData = {
   setId: number //15008,
@@ -19,9 +19,8 @@ type ReliquarySetExcelConfigData = {
   //   82330
   // ]
 }
-const reliquarySetExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/ReliquarySetExcelConfigData.json')
-) as ReliquarySetExcelConfigData[]
+const reliquarySetExcelConfigDataSrc: ReliquarySetExcelConfigData[] =
+  readExcelJSON('ExcelBinOutput/ReliquarySetExcelConfigData.json')
 
 const reliquarySetExcelConfigData = Object.fromEntries(
   reliquarySetExcelConfigDataSrc

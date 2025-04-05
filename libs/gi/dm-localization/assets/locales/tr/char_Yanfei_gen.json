@@ -123,7 +123,7 @@
   "constellation1": {
     "name": "Kanunlar Affetmez",
     "description": {
-      "0": "Yanfei Yüklü Saldırı yaparken var olan her bir Kızıl Mühür, bu Yüklü Saldırının dayanıklılık maliyetini %10 azaltır ve müdahale direncini de artırır."
+      "0": "Yanfei Yüklü Saldırı yaparken var olan her bir Kızıl Mühür, bu Yüklü Saldırının dayanıklılık maliyetini %10 azaltır ve müdahaleye karşı direncini de artırır."
     }
   },
   "constellation2": {

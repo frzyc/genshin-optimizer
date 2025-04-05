@@ -66,14 +66,20 @@ export default function characterSkillParam() {
       energySkill: burst,
       skills: [normal, skill, sprint],
       talents,
-      inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+      inherentProudSkillOpens: [
+        passive1,
+        passive2,
+        passive3,
+        passive4,
+        passive,
+      ],
     } = depot
 
     function parseSkillParams(
       keys: string[],
       skillArr: ProudSkillExcelConfigData[]
     ) {
-      const skillParamBase = skillArr.map((proud) => proud.paramList)
+      const skillParamBase = skillArr.map((proud) => proud.paramList ?? [])
 
       //need to transpose the skillParam
       const skillParamUntrimmed: Array<Array<number>> = []
@@ -110,13 +116,15 @@ export default function characterSkillParam() {
       ]
     )
 
-    if (sprint)
+    // work around dim deleting zeros in `skills`, causing `sprint` to potentially not be a sprint
+    if (sprint && avatarSkillExcelConfigData[sprint].costStamina) {
       parseSkillParams(
         [...keys, 'sprint'],
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[sprint].proudSkillGroupId
         ]
       )
+    }
 
     passive1.proudSkillGroupId &&
       parseSkillParams(
@@ -133,7 +141,13 @@ export default function characterSkillParam() {
         [...keys, 'passive3'],
         proudSkillExcelConfigData[passive3.proudSkillGroupId]
       )
-    //seems to be only used by sangonomiyaKokomi
+    if (passive4?.proudSkillGroupId) {
+      parseSkillParams(
+        [...keys, 'passive'],
+        proudSkillExcelConfigData[passive4.proudSkillGroupId]
+      )
+    }
+    //seems to be only used by sangonomiyaKokomi and Natlan Night Realm's Gift Passive
     if (passive?.proudSkillGroupId)
       parseSkillParams(
         [...keys, 'passive'],
@@ -144,7 +158,7 @@ export default function characterSkillParam() {
       layeredAssignment(
         characterSkillParamDump,
         [...keys, `constellation${i + 1}`],
-        avatarTalentExcelConfigData[skId].paramList
+        (avatarTalentExcelConfigData[skId]?.paramList ?? [])
           .filter((i) => i)
           .map((value) => value)
       )
@@ -154,7 +168,7 @@ export default function characterSkillParam() {
     const charid: CharacterId = ci as unknown as CharacterId
     const { candSkillDepotIds, skillDepotId } = charData
 
-    if (candSkillDepotIds.length) {
+    if (candSkillDepotIds?.length) {
       //Traveler
       const [_1, pyro, hydro, anemo, _5, geo, electro, dendro] =
         candSkillDepotIds

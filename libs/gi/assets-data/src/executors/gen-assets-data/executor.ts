@@ -159,7 +159,13 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         energySkill: burst,
         skills: [_normal, skill, sprint],
         talents,
-        inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+        inherentProudSkillOpens: [
+          passive1,
+          passive2,
+          passive3,
+          passive4,
+          passive,
+        ],
       } = depot
 
       // skill icon
@@ -175,13 +181,13 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         [ck, 'burst'],
         avatarSkillExcelConfigData[burst].skillIcon + '_HD'
       )
-      if (sprint)
+      if (sprint && avatarSkillExcelConfigData[sprint].costStamina) {
         layeredAssignment(
           assetChar,
           [ck, 'sprint'],
           avatarSkillExcelConfigData[sprint].skillIcon
         )
-
+      }
       passive1.proudSkillGroupId &&
         layeredAssignment(
           assetChar,
@@ -201,6 +207,12 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
           proudSkillExcelConfigData[passive3.proudSkillGroupId][0].icon
         )
 
+      if (passive4?.proudSkillGroupId)
+        layeredAssignment(
+          assetChar,
+          [ck, 'passive'],
+          proudSkillExcelConfigData[passive4.proudSkillGroupId][0].icon
+        )
       // Seems to be only used by SangonomiyaKokomi
       if (passive?.proudSkillGroupId)
         layeredAssignment(
@@ -218,7 +230,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       })
     }
 
-    if (candSkillDepotIds.length) {
+    if (candSkillDepotIds?.length) {
       // Traveler
       const [, pyro, hydro, anemo, , geo, electro, dendro] = candSkillDepotIds
       // const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"

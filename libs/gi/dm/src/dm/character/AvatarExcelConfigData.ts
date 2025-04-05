@@ -4,7 +4,7 @@ import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { CharacterId, DQualityKey, DWeaponTypeKey } from '../../mapping'
 import { characterIdMap } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 import type { CharacterGrowCurveKey } from './AvatarCurveExcelConfigData'
 
 type AvatarExcelConfigData = {
@@ -38,7 +38,7 @@ type AvatarExcelConfigData = {
   cutsceneShow: string //"",
   skillDepotId: number //3401,
   staminaRecoverSpeed: number //25.0,
-  candSkillDepotIds: number[] //[], used by Traveler?
+  candSkillDepotIds?: number[] //[], used by Traveler?
   manekinJsonConfigHashSuffix: number //4186788044,
   manekinJsonConfigHashPre: number //152,
   manekinMotionConfig: number //103,
@@ -83,9 +83,9 @@ type AvatarExcelConfigData = {
   LODPatternName: string //""
 }
 
-const avatarExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarExcelConfigData.json')
-) as AvatarExcelConfigData[]
+const avatarExcelConfigDataSrc: AvatarExcelConfigData[] = readExcelJSON(
+  'ExcelBinOutput/AvatarExcelConfigData.json'
+)
 //character data
 const avatarExcelConfigData = Object.fromEntries(
   avatarExcelConfigDataSrc

@@ -1,4 +1,4 @@
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 export type AvatarSkillDepotExcelConfigData = {
   id: number //3401,
@@ -41,8 +41,8 @@ export type AvatarSkillDepotExcelConfigData = {
  * const#     AvatarSkillExcelConfigData
  */
 
-const avatarSkillDepotExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarSkillDepotExcelConfigData.json')
+const avatarSkillDepotExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/AvatarSkillDepotExcelConfigData.json'
 ) as AvatarSkillDepotExcelConfigData[]
 
 const avatarSkillDepotExcelConfigData = Object.fromEntries(
@@ -50,7 +50,7 @@ const avatarSkillDepotExcelConfigData = Object.fromEntries(
     .map((skill) => {
       //FIXME: custom processing because there are empty objects in here. for RaidenShogun only...
       if (skill.id === 5201) {
-        const [k1, k2, , , k5] = skill.inherentProudSkillOpens
+        const [k1, k2, , k5] = skill.inherentProudSkillOpens
         skill.inherentProudSkillOpens = [k1, k2, k5, {}, {}]
       }
       return skill

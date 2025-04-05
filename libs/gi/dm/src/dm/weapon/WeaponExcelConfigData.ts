@@ -3,13 +3,13 @@ import { nameToKey } from '@genshin-optimizer/common/util'
 import { TextMapEN } from '../../TextMapUtil'
 import type { DWeaponTypeKey, WeaponId } from '../../mapping'
 import { weaponIdMap } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type WeaponExcelConfigData = {
   weaponType: DWeaponTypeKey // "WEAPON_CLAYMORE",
   rankLevel: 1 | 2 | 3 | 4 | 5 //4,
   weaponBaseExp: number //50000,
-  skillAffix: number[]
+  skillAffix?: number[]
   // [
   //   112407,
   //   0
@@ -21,7 +21,7 @@ type WeaponExcelConfigData = {
       type: 'GROW_CURVE_ATTACK_201'
     },
     {
-      propType: 'FIGHT_PROP_DEFENSE_PERCENT'
+      propType: 'FIGHT_PROP_DEFENSE_PERCENT' | 'FIGHT_PROP_NONE'
       initValue: 0.11259999871253967
       type: 'GROW_CURVE_CRITICAL_201'
     },
@@ -57,8 +57,8 @@ type WeaponExcelConfigData = {
   rank: 10
   gadgetId: 50012407
 }
-const weaponExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/WeaponExcelConfigData.json')
+const weaponExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/WeaponExcelConfigData.json'
 ) as WeaponExcelConfigData[]
 const weaponExcelConfigData = Object.fromEntries(
   weaponExcelConfigDataSrc
