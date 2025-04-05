@@ -192,7 +192,11 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       },
       prod(percent(anomalyMultipliers[data_gen.attribute]), own.final.atk)
     ),
-    ...customAnomalyBuildup('anomalyBuildupInst', percent(1)),
+    ...customAnomalyBuildup(
+      'anomalyBuildupInst',
+      { attribute: data_gen.attribute },
+      percent(1)
+    ),
     ...customDaze('dazeInst', percent(1)),
     // Formula listings for stats
     // TODO: Reorder this

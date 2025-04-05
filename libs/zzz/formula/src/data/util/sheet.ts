@@ -274,6 +274,7 @@ export function customDaze(
  */
 export function customAnomalyBuildup(
   name: string,
+  dmgTag: DmgTag,
   base: NumNode,
   { team, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
@@ -282,7 +283,7 @@ export function customAnomalyBuildup(
     name,
     team,
     'anomBuildup',
-    cond,
+    tag(cond, dmgTag),
     ownBuff.formula.base.add(base),
     ...extra
   )

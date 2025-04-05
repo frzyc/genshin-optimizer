@@ -107,6 +107,10 @@ export const enemyStatKeys: Array<keyof typeof enemy.common> = [
   'resRed_',
   'stun_',
   'unstun_',
+  'anomBuildupRes_',
+  'dazeRes_',
+  'dazeInc_',
+  'dazeRed_',
 ] as const
 
 export type EnemyStatKey = (typeof enemyStatKeys)[number]
