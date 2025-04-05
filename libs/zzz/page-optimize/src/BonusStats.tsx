@@ -67,7 +67,7 @@ export function BonusStatsSection() {
     [database, characterKey]
   )
   const newTarget = (q: BonusStatKey) =>
-    database.charOpts.setBonusStat(characterKey, newBonusStatTag(q), 0, true)
+    database.charOpts.setBonusStat(characterKey, newBonusStatTag(q), 0, false)
   const setDescription = useCallback(
     (description: string | undefined) => {
       database.charMeta.set(characterKey, { description })
