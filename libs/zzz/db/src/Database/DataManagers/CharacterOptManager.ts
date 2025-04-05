@@ -414,20 +414,17 @@ export class CharacterOptManager extends DataManager<
     charKey: CharacterKey,
     tag: BonusStatTag,
     value: number | null, // use null to remove the stat
-    index?: number // to edit an existing stat
+    index = -1 // to edit an existing stat
   ) {
     this.set(charKey, (charOpt) => {
-      const statIndex =
-        index ??
-        charOpt.bonusStats.findIndex((s) => shallowCompareObj(s.tag, tag))
       const bonusStats = [...charOpt.bonusStats]
-      if (statIndex === -1 && value !== null) {
+      if (index === -1 && value !== null) {
         bonusStats.push({ tag, value })
-      } else if (value === null && statIndex > -1) {
-        bonusStats.splice(statIndex, 1)
-      } else if (value !== null && statIndex > -1) {
-        bonusStats[statIndex].value = value
-        bonusStats[statIndex].tag = tag
+      } else if (value === null && index > -1) {
+        bonusStats.splice(index, 1)
+      } else if (value !== null && index > -1) {
+        bonusStats[index].value = value
+        bonusStats[index].tag = tag
       }
       return { bonusStats }
     })
