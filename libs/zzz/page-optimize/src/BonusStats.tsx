@@ -23,7 +23,11 @@ import {
 import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
 import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
-import { DeleteForever } from '@mui/icons-material'
+import {
+  CheckBox,
+  CheckBoxOutlineBlank,
+  DeleteForever,
+} from '@mui/icons-material'
 import {
   CardContent,
   IconButton,
@@ -47,12 +51,23 @@ export function BonusStatsSection() {
     characterKey
   )?.description
   const setStat = useCallback(
-    (tag: BonusStatTag, value: number | null, index?: number) =>
-      database.charOpts.setBonusStat(characterKey, tag, value, index),
+    (
+      tag: BonusStatTag,
+      value: number | null,
+      isEnabled: boolean,
+      index?: number
+    ) =>
+      database.charOpts.setBonusStat(
+        characterKey,
+        tag,
+        value,
+        isEnabled,
+        index
+      ),
     [database, characterKey]
   )
   const newTarget = (q: BonusStatKey) =>
-    database.charOpts.setBonusStat(characterKey, newBonusStatTag(q), 0)
+    database.charOpts.setBonusStat(characterKey, newBonusStatTag(q), 0, false)
   const setDescription = useCallback(
     (description: string | undefined) => {
       database.charMeta.set(characterKey, { description })
@@ -62,14 +77,16 @@ export function BonusStatsSection() {
 
   return (
     <Stack spacing={1}>
-      {bonusStats.map(({ tag, value }, i) => (
+      {bonusStats.map(({ tag, value, disabled }, i) => (
         <BonusStatDisplay
           key={JSON.stringify(tag) + i}
           tag={tag}
           value={value}
-          setValue={(value) => setStat(tag, value, i)}
-          onDelete={() => setStat(tag, null, i)}
-          setTag={(tag) => setStat(tag, value, i)}
+          disabled={disabled}
+          setValue={(value) => setStat(tag, value, disabled, i)}
+          onDelete={() => setStat(tag, null, disabled, i)}
+          setTag={(tag) => setStat(tag, value, disabled, i)}
+          toggleDisabled={() => setStat(tag, value, !disabled, i)}
         />
       ))}
       <InitialStatDropdown onSelect={newTarget} />
@@ -110,18 +127,22 @@ function BonusStatDisplay({
   tag,
   setTag,
   value,
+  disabled,
   setValue,
   onDelete,
+  toggleDisabled,
 }: {
   tag: BonusStatTag
   setTag: (tag: BonusStatTag) => void
   value: number
+  disabled: boolean
   setValue: (value: number) => void
   onDelete: () => void
+  toggleDisabled: () => void
 }) {
   const isPercent = tag.q?.endsWith('_')
   return (
-    <CardThemed bgt="light">
+    <CardThemed bgt="light" sx={{ opacity: disabled ? 0.4 : undefined }}>
       <CardContent
         sx={{
           display: 'flex',
@@ -131,6 +152,9 @@ function BonusStatDisplay({
           flexWrap: 'wrap',
         }}
       >
+        <IconButton onClick={toggleDisabled}>
+          {disabled ? <CheckBoxOutlineBlank /> : <CheckBox />}
+        </IconButton>
         <Typography>
           <TagDisplay tag={tag} />
         </Typography>

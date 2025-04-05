@@ -64,13 +64,15 @@ export function CharCalcProvider({
               conditionalEntries(sheet, src, dst)(condKey, condValue)
             )
         ),
-        ...charOpt.bonusStats.flatMap(({ tag, value }) =>
-          withPreset(`preset0`, {
-            // since bonusStats are applied to own*, needs {src:key, dst:never}
-            tag: { ...tag, src: character.key, sheet: 'agg', et: 'own' },
-            value: constant(toDecimal(value, tag.q ?? '')),
-          })
-        ),
+        ...charOpt.bonusStats
+          .filter(({ disabled }) => !disabled)
+          .flatMap(({ tag, value }) =>
+            withPreset(`preset0`, {
+              // since bonusStats are applied to own*, needs {src:key, dst:never}
+              tag: { ...tag, src: character.key, sheet: 'agg', et: 'own' },
+              value: constant(toDecimal(value, tag.q ?? '')),
+            })
+          ),
         ...charOpt.enemyStats.flatMap(({ tag, value }) =>
           withPreset(`preset0`, {
             tag: { ...tag, qt: 'common', et: 'enemy', sheet: 'agg' },

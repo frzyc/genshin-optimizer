@@ -91,6 +91,8 @@ export const bonusStatKeys: Array<keyof typeof own.final> = [
   'impact_',
   'anomMas_',
   'anomMas',
+  'pen_',
+  'pen',
 ] as const
 export type BonusStatKey = (typeof bonusStatKeys)[number]
 
@@ -158,6 +160,7 @@ export type CharOpt = {
   bonusStats: Array<{
     tag: BonusStatTag
     value: number
+    disabled: boolean
   }>
   critMode: critModeKey
 
@@ -265,41 +268,51 @@ export class CharacterOptManager extends DataManager<
       .filter(notEmpty)
     if (!Array.isArray(bonusStats)) bonusStats = []
     bonusStats = bonusStats
-      .map(({ tag: { q, qt, attribute, damageType1, damageType2 }, value }) => {
-        if (typeof value !== 'number') value = 0
-        const q_ = validateValue(q, bonusStatKeys)
-        const qt_ = validateValue(qt, bonusStatQtKeys)
-        if (!q_ || !qt_) return undefined
-        q = q_
-        qt = qt_
-
-        if (q !== 'dmg_') attribute = undefined
-        if (attribute) attribute = validateValue(attribute, allAttributeKeys)
-
-        if (
-          !bonusStatDmgTypeIncStats.includes(
-            q as (typeof bonusStatDmgTypeIncStats)[number]
-          )
-        )
-          damageType1 = undefined
-        if (damageType1)
-          damageType1 = validateValue(damageType1, bonusStatDamageTypes)
-
-        // damageType2 is only 'aftershock', and in-game there is only buffs that increase its dmg_ and crit_dmg_
-        if (q !== 'dmg_' && q !== 'crit_dmg_') damageType2 = undefined
-        if (damageType2 && damageType2 !== 'aftershock') damageType2 = undefined
-
-        return {
-          tag: removeUndefinedFields({
-            q,
-            qt,
-            attribute,
-            damageType1,
-            damageType2,
-          }) as BonusStatTag,
+      .map(
+        ({
+          tag: { q, qt, attribute, damageType1, damageType2 },
           value,
+          disabled,
+        }) => {
+          if (typeof value !== 'number') value = 0
+          const q_ = validateValue(q, bonusStatKeys)
+          const qt_ = validateValue(qt, bonusStatQtKeys)
+          if (!q_ || !qt_) return undefined
+          q = q_
+          qt = qt_
+
+          if (q !== 'dmg_') attribute = undefined
+          if (attribute) attribute = validateValue(attribute, allAttributeKeys)
+
+          if (
+            !bonusStatDmgTypeIncStats.includes(
+              q as (typeof bonusStatDmgTypeIncStats)[number]
+            )
+          )
+            damageType1 = undefined
+          if (damageType1)
+            damageType1 = validateValue(damageType1, bonusStatDamageTypes)
+
+          // damageType2 is only 'aftershock', and in-game there is only buffs that increase its dmg_ and crit_dmg_
+          if (q !== 'dmg_' && q !== 'crit_dmg_') damageType2 = undefined
+          if (damageType2 && damageType2 !== 'aftershock')
+            damageType2 = undefined
+
+          disabled = !!disabled
+
+          return {
+            tag: removeUndefinedFields({
+              q,
+              qt,
+              attribute,
+              damageType1,
+              damageType2,
+            }) as BonusStatTag,
+            value,
+            disabled,
+          }
         }
-      })
+      )
       .filter(notEmpty)
 
     if (!critModeKeys.includes(critMode)) critMode = 'avg'
@@ -412,20 +425,19 @@ export class CharacterOptManager extends DataManager<
     charKey: CharacterKey,
     tag: BonusStatTag,
     value: number | null, // use null to remove the stat
-    index?: number // to edit an existing stat
+    disabled: boolean,
+    index = -1 // to edit an existing stat
   ) {
     this.set(charKey, (charOpt) => {
-      const statIndex =
-        index ??
-        charOpt.bonusStats.findIndex((s) => shallowCompareObj(s.tag, tag))
       const bonusStats = [...charOpt.bonusStats]
-      if (statIndex === -1 && value !== null) {
-        bonusStats.push({ tag, value })
-      } else if (value === null && statIndex > -1) {
-        bonusStats.splice(statIndex, 1)
-      } else if (value !== null && statIndex > -1) {
-        bonusStats[statIndex].value = value
-        bonusStats[statIndex].tag = tag
+      if (index === -1 && value !== null) {
+        bonusStats.push({ tag, value, disabled })
+      } else if (value === null && index > -1) {
+        bonusStats.splice(index, 1)
+      } else if (value !== null && index > -1) {
+        bonusStats[index].value = value
+        bonusStats[index].tag = tag
+        bonusStats[index].disabled = disabled
       }
       return { bonusStats }
     })
