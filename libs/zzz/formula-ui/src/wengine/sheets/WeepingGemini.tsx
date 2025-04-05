@@ -28,7 +28,7 @@ const sheet: UISheetElement = {
       conditional: {
         label: ch('cond'),
         metadata: cond.anomaly_stack,
-        fields: [tagToTagField(buff.anomaly_stack.tag)],
+        fields: [tagToTagField(buff.anomProf.tag)],
       },
     },
   ],

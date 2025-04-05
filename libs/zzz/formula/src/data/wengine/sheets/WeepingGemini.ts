@@ -1,7 +1,7 @@
 import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { allNumConditionals, own, registerBuff } from '../../util'
+import { allNumConditionals, own, ownBuff, registerBuff } from '../../util'
 import {
   cmpSpecialtyAndEquipped,
   entriesForWengine,
@@ -13,8 +13,7 @@ const key: WengineKey = 'WeepingGemini'
 const dm = mappedStats.wengine[key]
 const { phase } = own.wengine
 
-// TODO: Add conditionals
-const { anomaly_stack } = allNumConditionals(key, true, 0, 4)
+const { anomaly_stack } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerWengine(
   key,
@@ -23,8 +22,8 @@ const sheet = registerWengine(
 
   // Conditional buffs
   registerBuff(
-    'anomaly_stack',
-    own.combat.anomProf.add(
+    'anomProf',
+    ownBuff.combat.anomProf.add(
       cmpSpecialtyAndEquipped(
         key,
         prod(anomaly_stack, subscript(phase, dm.anomProf))

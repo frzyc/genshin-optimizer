@@ -22,7 +22,6 @@ const sheet = registerWengine(
 
   // Conditional buffs
   registerBuff(
-    // TODO: teambuff
     'anomMas',
     teamBuff.combat.anomMas.add(
       cmpSpecialtyAndEquipped(
@@ -33,7 +32,6 @@ const sheet = registerWengine(
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
-    // TODO: teambuff
     'anomProf',
     teamBuff.combat.anomProf.add(
       cmpSpecialtyAndEquipped(

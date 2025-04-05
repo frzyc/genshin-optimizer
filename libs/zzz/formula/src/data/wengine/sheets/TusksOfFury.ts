@@ -1,7 +1,13 @@
 import { subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { allBoolConditionals, own, ownBuff, registerBuff } from '../../util'
+import {
+  allBoolConditionals,
+  own,
+  ownBuff,
+  registerBuff,
+  teamBuff,
+} from '../../util'
 import {
   cmpSpecialtyAndEquipped,
   entriesForWengine,
@@ -19,6 +25,8 @@ const sheet = registerWengine(
   key,
   // Handles base stats and passive buffs
   entriesForWengine(key),
+
+  // Passive buffs
   registerBuff(
     'passive_shield_',
     ownBuff.combat.shield_.add(
@@ -26,18 +34,27 @@ const sheet = registerWengine(
     ),
     showSpecialtyAndEquipped(key)
   ),
+
   // Conditional buffs
   registerBuff(
-    // TODO: teambuff
     'cond_dmg_',
-    ownBuff.combat.common_dmg_.add(
+    teamBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
         interrupt_perfdodge.ifOn(subscript(phase, dm.dmg_))
       )
     ),
     showSpecialtyAndEquipped(key)
+  ),
+  registerBuff(
+    'daze_',
+    teamBuff.combat.dazeInc_.add(
+      cmpSpecialtyAndEquipped(
+        key,
+        interrupt_perfdodge.ifOn(subscript(phase, dm.daze_))
+      )
+    ),
+    showSpecialtyAndEquipped(key)
   )
-  // TODO: daze
 )
 export default sheet

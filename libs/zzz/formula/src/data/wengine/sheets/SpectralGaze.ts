@@ -12,6 +12,7 @@ import {
   allNumConditionals,
   enemyDebuff,
   own,
+  ownBuff,
   registerBuff,
 } from '../../util'
 import {
@@ -46,7 +47,7 @@ const sheet = registerWengine(
   ),
   registerBuff(
     'cond_impact_',
-    own.combat.impact_.add(
+    ownBuff.combat.impact_.add(
       cmpSpecialtyAndEquipped(
         key,
         sum(

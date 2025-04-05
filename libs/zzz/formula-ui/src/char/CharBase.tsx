@@ -96,5 +96,30 @@ charBaseUiSheet.push(
         <ColorText color={attr}>{elementalData[attr]} Anomaly Damage</ColorText>
       ),
     })
-  )
+  ),
+  ...allAttributeKeys.map(
+    (attr): TagField => ({
+      fieldRef: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        attribute: attr,
+        name: 'anomalyBuildupInst',
+      },
+      title: (
+        <ColorText color={attr}>
+          {elementalData[attr]} Anomaly Buildup
+        </ColorText>
+      ),
+    })
+  ),
+  {
+    fieldRef: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      name: 'dazeInst',
+    },
+    title: 'Daze Buildup',
+  }
 )

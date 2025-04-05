@@ -18,7 +18,6 @@ import {
   registerWengine,
   showSpecialtyAndEquipped,
 } from '../util'
-import { getWengineParams } from '@genshin-optimizer/zzz/stats'
 
 const key: WengineKey = '<%= sheet %>'
 const dm = mappedStats.wengine[key]

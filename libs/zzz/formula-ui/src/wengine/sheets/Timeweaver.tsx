@@ -27,7 +27,10 @@ const sheet: UISheetElement = {
     },
     {
       type: 'fields',
-      fields: [tagToTagField(buff.passive_disorder_dmg_.tag)],
+      fields: [
+        tagToTagField(buff.passive_electric_anomBuildup_.tag),
+        tagToTagField(buff.passive_disorder_dmg_.tag),
+      ],
     },
     {
       type: 'conditional',

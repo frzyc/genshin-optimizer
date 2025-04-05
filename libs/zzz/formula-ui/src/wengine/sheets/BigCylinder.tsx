@@ -1,15 +1,16 @@
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { formulas } from '@genshin-optimizer/zzz/formula'
+import { buffs, formulas } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'BigCylinder'
 const [chg, _ch] = trans('wengine', key)
 const dm = mappedStats.wengine[key]
 const icon = wengineAsset(key, 'icon')
+const buff = buffs[key]
 const formula = formulas[key]
 
 const sheet: UISheetElement = {
@@ -23,6 +24,10 @@ const sheet: UISheetElement = {
           {(phase) => chg(`phaseDescs.${phase - 1}`)}
         </PhaseWrapper>
       ),
+    },
+    {
+      type: 'fields',
+      fields: [tagToTagField(buff.passive_dmg_red_.tag)],
     },
     {
       type: 'fields',

@@ -26,11 +26,15 @@ export const stats = [
   'anomProf_',
   'anomMas',
   'anomMas_',
+  'anomBuildup_',
   'dmg_',
   'common_dmg_',
   'buff_',
   'resIgn_',
   'shield_',
+  'dazeInc_',
+  'dazeRed_',
+  'dmg_red_',
 ] as const
 
 export const flatAndPercentStats = [

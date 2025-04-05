@@ -30,7 +30,16 @@ const sheet = registerWengine(
       )
     ),
     showSpecialtyAndEquipped(key)
+  ),
+  registerBuff(
+    'daze_',
+    ownBuff.combat.dazeInc_.add(
+      cmpSpecialtyAndEquipped(
+        key,
+        launchedAftershock.ifOn(subscript(phase, dm.daze_))
+      )
+    ),
+    showSpecialtyAndEquipped(key)
   )
-  // TODO: add daze_
 )
 export default sheet
