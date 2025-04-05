@@ -1,7 +1,6 @@
 import { toDecimal } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import type { Candidate, Progress } from '@genshin-optimizer/game-opt/solver'
-import { Solver } from '@genshin-optimizer/game-opt/solver'
 
 import {
   constant,
@@ -29,9 +28,12 @@ import {
   StatFilterTagToTag,
 } from '@genshin-optimizer/zzz/db'
 import { type Calculator, Read, type Tag } from '@genshin-optimizer/zzz/formula'
+
+const EPSILON = 1e-7
+
 type Frames = Array<{ tag: Tag; multiplier: number }>
 
-export function optimize(
+export function createSolverConfig(
   characterKey: CharacterKey,
   calc: Calculator,
   frames: Frames,
@@ -120,7 +122,7 @@ export function optimize(
     // other calcs (graph, etc)
   )
 
-  return new Solver({
+  return {
     nodes,
     candidates: [
       wengines.map(wengineCandidate),
@@ -136,7 +138,7 @@ export function optimize(
       // Invert max constraints for pruning
       ...statFilters.map(({ value, isMax, tag }) => {
         const decimalVal = toDecimal(value, tag.q ?? '')
-        return isMax ? decimalVal * -1 : decimalVal
+        return (isMax ? decimalVal * -1 : decimalVal) - EPSILON
       }),
       2, // setFilter2
       4, // setFilter4
@@ -144,7 +146,7 @@ export function optimize(
     numWorkers,
     topN: numOfBuilds,
     setProgress,
-  })
+  }
 }
 
 function discCandidate(disc: ICachedDisc): Candidate<string> {
