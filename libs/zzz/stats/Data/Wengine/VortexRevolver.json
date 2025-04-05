@@ -1,39 +1,14 @@
 {
-  "name": "[Vortex] Revolver",
   "rarity": "B",
   "type": "stun",
   "atk_base": 32,
   "second_statkey": "atk_",
   "second_statvalue": 0.08,
-  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_07.png",
-  "desc": "An energy-storage type W-Engine with a unique operation circuit. It will absorb scattered energy up to a certain amount before unleashing it, dealing some extra impact. It's impossible to control when that energy is unleashed, but when it is, it'll give you the joy of winning a prize draw.",
-  "desc2": "Equip to increase Stun Agents' combat capabilities",
-  "desc3": "An energy-storage type W-Engine with a unique operation circuit. It will absorb scattered energy up to a certain amount before unleashing it all at once.",
   "phase": [
-    {
-      "name": "Undercurrent",
-      "desc": "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>10%</color> more Daze.",
-      "params": [0.1]
-    },
-    {
-      "name": "Undercurrent",
-      "desc": "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>11.5%</color> more Daze.",
-      "params": [0.115]
-    },
-    {
-      "name": "Undercurrent",
-      "desc": "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>13%</color> more Daze.",
-      "params": [0.13]
-    },
-    {
-      "name": "Undercurrent",
-      "desc": "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>14.5%</color> more Daze.",
-      "params": [0.145]
-    },
-    {
-      "name": "Undercurrent",
-      "desc": "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>16%</color> more Daze.",
-      "params": [0.16]
-    }
+    { "params": [0.1] },
+    { "params": [0.115] },
+    { "params": [0.13] },
+    { "params": [0.145] },
+    { "params": [0.16] }
   ]
 }

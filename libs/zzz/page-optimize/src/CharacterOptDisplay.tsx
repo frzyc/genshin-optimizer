@@ -11,14 +11,12 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
+  CharStatsDisplay,
+  CharacterEditor,
   DiscSheetDisplay,
   WengineSheetDisplay,
 } from '@genshin-optimizer/zzz/formula-ui'
-import {
-  CharacterCard,
-  CharacterEditor,
-  StatHighlightContext,
-} from '@genshin-optimizer/zzz/ui'
+import { CharacterCard, StatHighlightContext } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
   CardActionArea,
@@ -39,7 +37,6 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BonusStatsSection } from './BonusStats'
-import { CharStatsDisplay } from './CharStatsDisplay'
 import { EnemyStatsSection } from './EnemyStats'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'

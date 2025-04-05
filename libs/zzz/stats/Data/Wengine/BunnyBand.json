@@ -1,39 +1,14 @@
 {
-  "name": "Bunny Band",
   "rarity": "A",
   "type": "defense",
   "atk_base": 40,
   "second_statkey": "def_",
   "second_statvalue": 0.16,
-  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_10.png",
-  "desc": "A special W-Engine decorated with a fluffy bunny. Although it is a mere imitation of the real animal, even the fiercest of Hollow Raiders can relieve stress by petting their bunnies while taking a break, which enhances their combat performance. There are many similar models in this series of W-Engines: a portable bunny, a foldable bunny, a furless bunny... Everyone can find one they will not be able to refuse.",
-  "desc2": "Equip to increase Defense Agents' combat capabilities",
-  "desc3": "A special W-Engine decorated with a fluffy bunny. However, it is just an imitation of the real animal.",
   "phase": [
-    {
-      "name": "Pet the Bunny",
-      "desc": "Increases Max HP by <color=#2BAD00>8%</color>. Increases the equipper's ATK by <color=#2BAD00>10%</color> when they are shielded.",
-      "params": [0.08, 0.1]
-    },
-    {
-      "name": "Pet the Bunny",
-      "desc": "Increases Max HP by <color=#2BAD00>9.2%</color>. Increases the equipper's ATK by <color=#2BAD00>11.5%</color> when they are shielded.",
-      "params": [0.092, 0.115]
-    },
-    {
-      "name": "Pet the Bunny",
-      "desc": "Increases Max HP by <color=#2BAD00>10.4%</color>. Increases the equipper's ATK by <color=#2BAD00>13%</color> when they are shielded.",
-      "params": [0.104, 0.13]
-    },
-    {
-      "name": "Pet the Bunny",
-      "desc": "Increases Max HP by <color=#2BAD00>11.6%</color>. Increases the equipper's ATK by <color=#2BAD00>14.5%</color> when they are shielded.",
-      "params": [0.116, 0.145]
-    },
-    {
-      "name": "Pet the Bunny",
-      "desc": "Increases Max HP by <color=#2BAD00>12.8%</color>. Increases the equipper's ATK by <color=#2BAD00>16%</color> when they are shielded.",
-      "params": [0.128, 0.16]
-    }
+    { "params": [0.08, 0.1] },
+    { "params": [0.092, 0.115] },
+    { "params": [0.104, 0.13] },
+    { "params": [0.116, 0.145] },
+    { "params": [0.128, 0.16] }
   ]
 }

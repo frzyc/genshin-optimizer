@@ -3,10 +3,10 @@ import { GeneralAutocomplete, ImgIcon } from '@genshin-optimizer/common/ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { allWengineKeys } from '@genshin-optimizer/zzz/consts'
-import { getWengineStat } from '@genshin-optimizer/zzz/stats'
 import type { AutocompleteProps } from '@mui/material'
 import { Skeleton } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export function WengineAutocomplete({
   wkey,
@@ -24,7 +24,7 @@ export function WengineAutocomplete({
   >,
   'options' | 'valueKey' | 'onChange' | 'toImg' | 'renderInput'
 >) {
-  // const { t } = useTranslation(['common', 'charNames_gen'])
+  const { t } = useTranslation('wengineNames_gen')
 
   const options: GeneralAutocompleteOption<WengineKey | ''>[] = useMemo(
     () => [
@@ -35,11 +35,11 @@ export function WengineAutocomplete({
       ...allWengineKeys.map(
         (key): GeneralAutocompleteOption<WengineKey | ''> => ({
           key,
-          label: getWengineStat(key).name, //t(`charNames_gen:${key}`)
+          label: t(key),
         })
       ),
     ],
-    []
+    [t]
   )
   const toImg = useCallback(
     (key: WengineKey | '') =>

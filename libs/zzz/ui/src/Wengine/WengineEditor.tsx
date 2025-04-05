@@ -11,6 +11,7 @@ import { rarityDefIcon, wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { LocationKey } from '@genshin-optimizer/zzz/consts'
 import type { ICachedWengine } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext, useWengine } from '@genshin-optimizer/zzz/db-ui'
+import { Translate } from '@genshin-optimizer/zzz/i18n'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
 import { Lock, LockOpen } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
@@ -30,11 +31,14 @@ import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete, StatDisplay } from '../Character'
 import { LevelSelect } from '../LevelSelect'
-import { TransHack } from '../util/TransHack'
 import { PhaseDropdown } from './PhaseDropdown'
 import { WengineSelectionModal } from './WengineSelectionModal'
 import { WengineSubstatDisplay } from './WengineSubstatDisplay'
-import { WengineName } from './WengineTrans'
+import {
+  WengineName,
+  WengineRefineDesc,
+  WengineRefineName,
+} from './WengineTrans'
 
 type WengineStatsEditorCardProps = {
   wengineId: string
@@ -145,7 +149,11 @@ export function WengineEditor({
                   </Grid>
                   <Grid item xs={6} sm={12}>
                     <Typography>
-                      <small>{key && wengineStat.desc3}</small>
+                      <small>
+                        {key && (
+                          <Translate ns={`wengine_${key}_gen`} key18="desc3" />
+                        )}
+                      </small>
                     </Typography>
                   </Grid>
                 </Grid>
@@ -189,17 +197,10 @@ export function WengineEditor({
                 </Box>
                 <ImgIcon size={1.5} src={rarityDefIcon(wengineStat.rarity)} />
                 <Typography variant="subtitle1">
-                  <strong>{key && wengineStat.phase[phase - 1].name}</strong>
+                  <strong>{key && <WengineRefineName wKey={key} />}</strong>
                 </Typography>
                 <Typography gutterBottom>
-                  {key && (
-                    <TransHack
-                      text={
-                        wengineStat.phase[phase - 1].desc ??
-                        'Unknown Description'
-                      }
-                    />
-                  )}
+                  {key && <WengineRefineDesc phase={phase} wKey={key} />}
                 </Typography>
                 <Box display="flex" flexDirection="column" gap={1}>
                   <CardThemed>

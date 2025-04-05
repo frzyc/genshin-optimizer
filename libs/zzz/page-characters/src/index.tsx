@@ -20,12 +20,12 @@ import {
   allSpecialityKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+import { CharacterEditor } from '@genshin-optimizer/zzz/formula-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import type { CharacterSortKey } from '@genshin-optimizer/zzz/ui'
 import {
   CharSpecialtyToggle,
   CharacterCard,
-  CharacterEditor,
   CharacterRarityToggle,
   CharacterSingleSelectionModal,
   ElementToggle,

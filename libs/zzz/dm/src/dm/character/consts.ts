@@ -3,6 +3,7 @@ import type {
   CharacterRarityKey,
   FactionKey,
   SpecialityKey,
+  StatKey,
 } from '@genshin-optimizer/zzz/consts'
 
 // Copied from libs\zzz\dm\src\dm\character\characterIdMap.json
@@ -71,15 +72,13 @@ export const characterRarityMap: Record<number, CharacterRarityKey> = {
   4: 'S',
 } as const
 
-// TODO: everything is base here
-// Remove the 'base' portion to make stat names match what is in Pando
-export const coreStatMap = {
-  'Base ATK': 'atk_base',
+export const coreStatMap: Record<string, StatKey> = {
+  'Base ATK': 'atk',
   Impact: 'impact',
   'CRIT Rate': 'crit_',
   'CRIT DMG': 'crit_dmg_',
-  'Base Energy Regen': 'base_enerRegen',
+  'Base Energy Regen': 'enerRegen',
   'Anomaly Proficiency': 'anomProf',
-  'Anomaly Mastery': 'anomMas_base',
+  'Anomaly Mastery': 'anomMas',
   'PEN Ratio': 'pen_',
 } as const

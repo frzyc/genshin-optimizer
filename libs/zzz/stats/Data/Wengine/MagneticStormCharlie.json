@@ -1,39 +1,14 @@
 {
-  "name": "[Magnetic Storm] Charlie",
   "rarity": "B",
   "type": "anomaly",
   "atk_base": 32,
   "second_statkey": "pen_",
   "second_statvalue": 0.064,
-  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_12.png",
-  "desc": "A high-capacity W-Engine that features a built-in generator, allowing it to keep a stable storage of electrical power without any manual operation from the operator. As a result, it proves to be exceptionally used in battle as its electric current can stun tough enemies.",
-  "desc2": "Equip to increase Anomaly Agents' combat capabilities",
-  "desc3": "A high-capacity W-Engine that features a built-in generator, which allows it to keep a stable storage of electrical power.",
   "phase": [
-    {
-      "name": "Charge Overload",
-      "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <color=#2BAD00>3.5</color> Energy. This effect can trigger once every 12s.",
-      "params": [3.5, 12]
-    },
-    {
-      "name": "Charge Overload",
-      "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <color=#2BAD00>4</color> Energy. This effect can trigger once every 12s.",
-      "params": [4, 12]
-    },
-    {
-      "name": "Charge Overload",
-      "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <color=#2BAD00>4.5</color> Energy. This effect can trigger once every 12s.",
-      "params": [4.5, 12]
-    },
-    {
-      "name": "Charge Overload",
-      "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <color=#2BAD00>5</color> Energy. This effect can trigger once every 12s.",
-      "params": [5, 12]
-    },
-    {
-      "name": "Charge Overload",
-      "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <color=#2BAD00>5.5</color> Energy. This effect can trigger once every 12s.",
-      "params": [5.5, 12]
-    }
+    { "params": [3.5, 12] },
+    { "params": [4, 12] },
+    { "params": [4.5, 12] },
+    { "params": [5, 12] },
+    { "params": [5.5, 12] }
   ]
 }

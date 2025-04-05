@@ -14,7 +14,7 @@ import {
   allSkillKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
-import type { CharacterData } from '@genshin-optimizer/zzz/dm'
+import type { CharacterDatum } from '@genshin-optimizer/zzz/stats'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
@@ -109,7 +109,7 @@ function CharImage({
   charCardConfig,
 }: {
   characterKey: CharacterKey
-  characterStat: CharacterData
+  characterStat: CharacterDatum
   charCardConfig: CharCardConfigProps
 }) {
   const { attribute, id } = characterStat
@@ -166,7 +166,7 @@ function CharInformation({
   charCardConfig,
 }: {
   characterKey: CharacterKey
-  characterStat: CharacterData
+  characterStat: CharacterDatum
   promotion: MilestoneKey
   level: number
   charCardConfig: CharCardConfigProps

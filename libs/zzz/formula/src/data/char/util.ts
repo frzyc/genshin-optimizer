@@ -155,23 +155,13 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     }),
     // Other base stats
-    ...(['anomProf', 'impact', 'enerRegen'] as const).map((stat) =>
+    ...(['anomMas', 'anomProf', 'impact', 'enerRegen'] as const).map((stat) =>
       ownBuff.base[stat].add(data_gen.stats[stat])
     ),
-    ownBuff.base.anomMas.add(data_gen.stats.anomMas_base),
     // Core skill stat boost
-    ...Object.entries(coreStats).map(([stat, values]) => {
-      switch (stat) {
-        case 'atk_base':
-          return ownBuff.base.atk.add(subscript(core, values))
-        case 'base_enerRegen':
-          return ownBuff.base.enerRegen.add(subscript(core, values))
-        case 'anomMas_base':
-          return ownBuff.base.anomMas.add(subscript(core, values))
-        default:
-          return ownBuff.base[stat].add(subscript(core, values))
-      }
-    }),
+    ...Object.entries(coreStats).map(([stat, values]) =>
+      ownBuff.base[stat].add(subscript(core, values))
+    ),
     // TODO: Remove this once we have character sheets
     // Standard DMG
     ...customDmg(
