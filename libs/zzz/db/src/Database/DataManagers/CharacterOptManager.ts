@@ -91,6 +91,8 @@ export const bonusStatKeys: Array<keyof typeof own.final> = [
   'impact_',
   'anomMas_',
   'anomMas',
+  'pen_',
+  'pen',
 ] as const
 export type BonusStatKey = (typeof bonusStatKeys)[number]
 
