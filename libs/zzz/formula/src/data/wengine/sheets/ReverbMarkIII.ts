@@ -22,7 +22,6 @@ const sheet = registerWengine(
 
   // Conditional buffs
   registerBuff(
-    // TODO: teambuff
     'atk_',
     teamBuff.combat.atk_.add(
       cmpSpecialtyAndEquipped(

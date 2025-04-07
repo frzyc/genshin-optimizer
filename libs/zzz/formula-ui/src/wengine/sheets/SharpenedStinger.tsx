@@ -39,6 +39,10 @@ const sheet: UISheetElement = {
         ],
       },
     },
+    {
+      type: 'fields',
+      fields: [tagToTagField(buff.anomBuildup_.tag)],
+    },
   ],
 }
 

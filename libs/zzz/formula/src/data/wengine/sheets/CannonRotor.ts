@@ -26,7 +26,7 @@ const sheet = registerWengine(
       prod(own.final.atk, subscript(phase, dm.dmg_scaling))
     ),
     { cond: showSpecialtyAndEquipped(key) },
-    own.combat.crit_.add(1)
+    ownBuff.combat.crit_.add(1)
   ),
   registerBuff(
     'passive_atk_',

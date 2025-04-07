@@ -13,7 +13,6 @@ const key: WengineKey = 'StarlightEngine'
 const dm = mappedStats.wengine[key]
 const { phase } = own.wengine
 
-// TODO: Add conditionals
 const { dodgecounter_quickassist } = allBoolConditionals(key)
 
 const sheet = registerWengine(

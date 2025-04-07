@@ -8,6 +8,7 @@ let o = 0
 
 const dm = {
   anomProf: data_gen[o++],
+  stacks: data_gen[o++][1],
 } as const
 
 export default dm

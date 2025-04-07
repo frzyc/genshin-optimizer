@@ -7,9 +7,9 @@ const data_gen = getWengineParams(key)
 let o = 0
 
 const dm = {
-  daze_: data_gen[o++] ?? [-1, 1, 2, 3, 4, 5],
-  duration: data_gen[o++]?.[1] ?? 0,
-  stacks: data_gen[o++] ?? [-1, 1, 2, 3, 4, 5],
+  dmg_daze_: data_gen[o++],
+  duration: data_gen[o++][1],
+  stacks: data_gen[o++][1],
 } as const
 
 export default dm
