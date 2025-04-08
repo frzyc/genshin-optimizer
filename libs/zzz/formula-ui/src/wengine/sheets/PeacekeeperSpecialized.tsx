@@ -31,6 +31,13 @@ const sheet: UISheetElement = {
         fields: [tagToTagField(buff.enerRegen.tag)],
       },
     },
+    {
+      type: 'fields',
+      fields: [
+        tagToTagField(buff.passive_exSpecial_anomBuildup_.tag),
+        tagToTagField(buff.passive_assist_anomBuildup_.tag),
+      ],
+    },
   ],
 }
 

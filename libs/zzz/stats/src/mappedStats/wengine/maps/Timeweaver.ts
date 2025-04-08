@@ -7,7 +7,7 @@ const data_gen = getWengineParams(key)
 let o = 0
 
 const dm = {
-  anom_buildup_: data_gen[o++],
+  electric_anom_buildup_: data_gen[o++],
   anomProf: data_gen[o++],
   duration: data_gen[o++][1],
   anomProf_thresh: data_gen[o++][1],

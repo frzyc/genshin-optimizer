@@ -1,0 +1,8 @@
+{
+  "build": "",
+  "buildDropdownDesc": "Reducing generated builds shortens calculation time.",
+  "build_one": "{{count}} Build",
+  "build_other": "{{count}} Builds",
+  "worker_one": "{{count}} Worker",
+  "worker_other": "{{count}} Workers"
+}
