@@ -12,6 +12,7 @@ import {
   filterFunction,
   sortFunction,
 } from '@genshin-optimizer/common/util'
+import { TagContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeKeys,
@@ -19,8 +20,16 @@ import {
   allCharacterRarityKeys,
   allSpecialityKeys,
 } from '@genshin-optimizer/zzz/consts'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { CharacterEditor } from '@genshin-optimizer/zzz/formula-ui'
+import {
+  useCharOpt,
+  useCharacter,
+  useDatabaseContext,
+} from '@genshin-optimizer/zzz/db-ui'
+import type { Tag } from '@genshin-optimizer/zzz/formula'
+import {
+  CharCalcProvider,
+  CharacterEditor,
+} from '@genshin-optimizer/zzz/formula-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import type { CharacterSortKey } from '@genshin-optimizer/zzz/ui'
 import {
@@ -29,6 +38,7 @@ import {
   CharacterRarityToggle,
   CharacterSingleSelectionModal,
   ElementToggle,
+  StatHighlightContext,
   characterFilterConfigs,
   characterSortConfigs,
   characterSortMap,
@@ -53,6 +63,7 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useMatch, useNavigate } from 'react-router-dom'
+
 const columns = { xs: 1, sm: 2, md: 2, lg: 3, xl: 4 }
 const numToShowMap = { xs: 1, sm: 2, md: 2, lg: 3, xl: 12 }
 const sortKeys = Object.keys(characterSortMap)
@@ -76,6 +87,12 @@ export default function PageCharacter() {
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
+  const [statHighlight, setStatHighlight] = useState('')
+  const statHLContextObj = useMemo(
+    () => ({ statHighlight, setStatHighlight }),
+    [statHighlight, setStatHighlight]
+  )
+
   const characterKey = useMemo(() => {
     if (!characterKeyRaw) return null
     if (!allCharacterKeys.includes(characterKeyRaw as CharacterKey)) {
@@ -84,6 +101,16 @@ export default function PageCharacter() {
     }
     return characterKeyRaw as CharacterKey
   }, [characterKeyRaw, navigate])
+  const character = useCharacter(characterKey ?? undefined)
+  const charOpt = useCharOpt(characterKey ?? undefined)
+  const tag = useMemo<Tag>(
+    () => ({
+      src: characterKey,
+      dst: characterKey,
+      preset: `preset0`,
+    }),
+    [characterKey]
+  )
 
   const [newCharacter, setnewCharacter] = useState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -203,11 +230,22 @@ export default function PageCharacter() {
 
   return (
     <Box display="flex" flexDirection="column" gap={2}>
-      {characterKey && (
-        <CharacterEditor
-          characterKey={characterKey}
-          onClose={() => navigate('/characters')}
-        />
+      {characterKey && character && charOpt && (
+        <TagContext.Provider value={tag}>
+          <StatHighlightContext.Provider value={statHLContextObj}>
+            <CharCalcProvider
+              character={character}
+              charOpt={charOpt}
+              wengineId={character.equippedWengine}
+              discIds={character.equippedDiscs}
+            >
+              <CharacterEditor
+                characterKey={characterKey}
+                onClose={() => navigate('/characters')}
+              />
+            </CharCalcProvider>
+          </StatHighlightContext.Provider>
+        </TagContext.Provider>
       )}
       <Suspense fallback={false}>
         <CharacterSingleSelectionModal

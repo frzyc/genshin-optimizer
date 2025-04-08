@@ -23,6 +23,7 @@ import { TagDisplay } from '../components'
 import { useZzzCalcContext } from '../hooks'
 export function CharStatsDisplay() {
   const calc = useZzzCalcContext()
+  console.log(calc?.listFormulas(own.listing.formulas))
   return (
     <ZCard>
       <CardContent>

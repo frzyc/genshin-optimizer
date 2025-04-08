@@ -39,6 +39,7 @@ import {
   isSheet,
 } from '@genshin-optimizer/zzz/formula'
 import {
+  CharCalcProvider,
   FullTagDisplay,
   TagDisplay,
   formulaText,
@@ -51,7 +52,6 @@ import {
 import { Box, Button } from '@mui/material'
 import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharCalcProvider } from './CharCalcProvider'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { OptTargetRow } from './OptTargetRow'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'

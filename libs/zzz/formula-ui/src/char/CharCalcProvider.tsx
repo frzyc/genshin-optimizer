@@ -14,6 +14,7 @@ import {
   charTagMapNodeEntries,
   conditionalEntries,
   discTagMapNodeEntries,
+  discsToTagMapNodeEntries,
   enemy,
   own,
   ownBuff,
@@ -26,7 +27,6 @@ import {
 } from '@genshin-optimizer/zzz/formula'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
-import { discsTagMapNodes } from './discsTagMapNodes'
 
 export function CharCalcProvider({
   character,
@@ -112,7 +112,7 @@ function useCharacterAndEquipment(
   }, [wengine])
   const discTagEntries = useMemo(() => {
     if (!discs) return []
-    return discsTagMapNodes(Object.values(discs).filter(notEmpty))
+    return discsToTagMapNodeEntries(Object.values(discs).filter(notEmpty))
   }, [discs])
   return useMemo(() => {
     if (!character) return []
