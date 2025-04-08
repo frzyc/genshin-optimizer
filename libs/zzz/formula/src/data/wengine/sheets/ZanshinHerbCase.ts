@@ -20,6 +20,7 @@ const sheet = registerWengine(
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
+  // Passive buffs
   registerBuff(
     'passive_crit_',
     ownBuff.combat.crit_.add(
@@ -35,6 +36,7 @@ const sheet = registerWengine(
     ),
     showSpecialtyAndEquipped(key)
   ),
+
   // Conditional buffs
   registerBuff(
     'cond_crit_',

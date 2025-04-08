@@ -1,12 +1,14 @@
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { trans } from '../../util'
+import { buffs } from '@genshin-optimizer/zzz/formula'
+import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'VortexArrow'
 const [chg, _ch] = trans('wengine', key)
 const icon = wengineAsset(key, 'icon')
+const buff = buffs[key]
 
 const sheet: UISheetElement = {
   title: chg('phase'),
@@ -19,6 +21,10 @@ const sheet: UISheetElement = {
           {(phase) => chg(`phaseDescs.${phase - 1}`)}
         </PhaseWrapper>
       ),
+    },
+    {
+      type: 'fields',
+      fields: [tagToTagField(buff.passive_daze_.tag)],
     },
   ],
 }

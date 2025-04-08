@@ -26,6 +26,10 @@ const sheet: UISheetElement = {
       ),
     },
     {
+      type: 'fields',
+      fields: [tagToTagField(buff.passive_dmg_red_.tag)],
+    },
+    {
       type: 'conditional',
       conditional: {
         label: ch('cond'),

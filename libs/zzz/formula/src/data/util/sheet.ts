@@ -104,7 +104,13 @@ export function registerBuffFormula(
 function registerFormula(
   name: string,
   team: boolean | undefined,
-  q: 'standardDmg' | 'heal' | 'shield' | 'anomalyDmg',
+  q:
+    | 'standardDmg'
+    | 'heal'
+    | 'shield'
+    | 'anomalyDmg'
+    | 'dazeBuildup'
+    | 'anomBuildup',
   cond: string | StrNode,
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
@@ -224,6 +230,59 @@ export function customAnomalyDmg(
     name,
     team,
     'anomalyDmg',
+    tag(cond, dmgTag),
+    ownBuff.formula.base.add(base),
+    ...extra
+  )
+}
+
+/**
+ * Creates TagMapNodeEntries representing a daze instance, and registers the formula
+ * @param name Base name to be used as the key
+ * @param base Node representing the daze value
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`, and also show the formula in teammates' listing.
+ *
+ * `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this damage instance
+ * @returns TagMapNodeEntries representing the daze instance
+ */
+export function customDaze(
+  name: string,
+  base: NumNode,
+  { team, cond = 'infer' }: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  return registerFormula(
+    name,
+    team,
+    'dazeBuildup',
+    cond,
+    ownBuff.formula.base.add(base),
+    ...extra
+  )
+}
+
+/**
+ * Creates TagMapNodeEntries representing an anomaly buildup instance, and registers the formula
+ * @param name Base name to be used as the key
+ * @param base Node representing the anomaly buildup value
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`, and also show the formula in teammates' listing.
+ *
+ * `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this damage instance
+ * @returns TagMapNodeEntries representing the anomaly buildup instance
+ */
+export function customAnomalyBuildup(
+  name: string,
+  dmgTag: DmgTag,
+  base: NumNode,
+  { team, cond = 'infer' }: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  return registerFormula(
+    name,
+    team,
+    'anomBuildup',
     tag(cond, dmgTag),
     ownBuff.formula.base.add(base),
     ...extra
