@@ -17,7 +17,7 @@ jobs:
       - name: Get version
         id: get-version
         run: |
-          echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
+          echo "version=${{ inputs.version }}+zo" >> $GITHUB_OUTPUT
       - name: Set git config
         run: |
           git config user.name "github-actions[bot]"
