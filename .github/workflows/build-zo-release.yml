@@ -31,10 +31,9 @@ jobs:
           TEMP_FILE=$(mktemp)
           # List tags for ZO and get the latest one
           git fetch --tags --force
-          git tag --list
           oldTag=$(git tag --list '*+zo' --sort=creatordate | tail -n 1)
           echo -e "**What's Changed**\n" >> $TEMP_FILE
-          git log --pretty='format:* %s' $oldTag..HEAD -- . ':!libs/gi' ':!libs/sr' :!apps/frontend' :!apps/frontend-e2e' :!apps/gi-frontend' :!apps/gi-frontend-e2e' :!apps/sr-frontend' :!apps/sr-frontend-e2e' :!apps/somnia' :!apps/somnia-e2e' >> $TEMP_FILE
+          git log --pretty='format:* %s' $oldTag..HEAD -- . ':!libs/gi' ':!libs/sr' ':!apps/frontend' ':!apps/frontend-e2e' ':!apps/gi-frontend' ':!apps/gi-frontend-e2e' ':!apps/sr-frontend' ':!apps/sr-frontend-e2e' ':!apps/somnia' ':!apps/somnia-e2e' >> $TEMP_FILE
           echo -e "\n\n**Full Changelog**: https://github.com/${{ github.repository }}/compare/$oldTag..${{ steps.get-version.outputs.version }}" >> $TEMP_FILE
           gh release create ${{ steps.get-version.outputs.version }} -F $TEMP_FILE -t ${{steps.get-version.outputs.version}} --target $(git rev-parse HEAD)
         env:
