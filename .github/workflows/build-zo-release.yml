@@ -32,6 +32,7 @@ jobs:
         run: |
           TEMP_FILE=$(mktemp)
           # List tags for ZO and get the latest one
+          git tag --list
           oldTag=$(git tag --list '*+zo' --sort=creatordate | tail -n 1)
           echo "**What's Changed**\n" >> $TEMP_FILE
           git log --pretty='format:* %s' $oldTag..HEAD -- . ':!libs/gi' ':!libs/sr' :!apps/frontend' :!apps/frontend-e2e' :!apps/gi-frontend' :!apps/gi-frontend-e2e' :!apps/sr-frontend' :!apps/sr-frontend-e2e' :!apps/somnia' :!apps/somnia-e2e' >> $TEMP_FILE
