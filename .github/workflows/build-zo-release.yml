@@ -1,0 +1,33 @@
+name: Build ZO Release
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  call-build-frontend:
+    uses: ./.github/workflows/build-frontend.yml
+    if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'zo-release') }}
+    with:
+      frontend_name: 'zzz-frontend'
+      deployment_name: ''
+      repo_var_name: 'ZO_REPO'
+      repo_deploy_secret_name: 'ZO_REPO_SSH_KEY'
+      show_dev_components: false
+      nested_deployments: false
+  create-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release') }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get version
+        id: get-version
+        run: |
+          echo "version=$(printf '%s' '${{ github.event.pull_request.title }}' | awk '{print $3}')" >> $GITHUB_OUTPUT
+      - name: Make release
+        if: steps.get-version.outputs.version != ''
+        run: |
+          gh release create ${{ steps.get-version.outputs.version }} --generate-notes --target $(git rev-parse HEAD)
+        env:
+          GH_TOKEN: ${{ github.token }}
