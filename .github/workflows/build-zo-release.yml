@@ -24,7 +24,7 @@ jobs:
       - name: Get version
         id: get-version
         run: |
-          echo "version=$(printf '%s' '${{ github.event.pull_request.title }}' | awk '{print $3}')" >> $GITHUB_OUTPUT
+          echo "version=$(printf '%s' '${{ github.event.pull_request.title }}' | awk '{print $4}')" >> $GITHUB_OUTPUT
       - name: Make release
         if: steps.get-version.outputs.version != ''
         run: |
