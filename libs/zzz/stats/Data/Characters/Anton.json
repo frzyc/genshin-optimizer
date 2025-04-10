@@ -31,5 +31,277 @@
     { "atk": 50, "crit_": 0.096 },
     { "atk": 50, "crit_": 0.144 },
     { "atk": 75, "crit_": 0.144 }
-  ]
+  ],
+  "skillParams": {
+    "basic": {
+      "BasicAttackEnthusiasticDrills": [
+        {
+          "DamagePercentage": 0.678,
+          "DamagePercentageGrowth": 0.062,
+          "StunRatio": 0.339,
+          "StunRatioGrowth": 0.016,
+          "SpRecovery": 122,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 932.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0.923,
+          "DamagePercentageGrowth": 0.084,
+          "StunRatio": 0.753,
+          "StunRatioGrowth": 0.035,
+          "SpRecovery": 270.9,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2070.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 1.098,
+          "DamagePercentageGrowth": 0.1,
+          "StunRatio": 0.933,
+          "StunRatioGrowth": 0.043,
+          "SpRecovery": 335.7,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2565.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 2.291,
+          "DamagePercentageGrowth": 0.209,
+          "StunRatio": 1.814,
+          "StunRatioGrowth": 0.083,
+          "SpRecovery": 653,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 4988.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "BasicAttackEnthusiasticDrillsBurstMode": [
+        {
+          "DamagePercentage": 2.409,
+          "DamagePercentageGrowth": 0.219,
+          "StunRatio": 1.66,
+          "StunRatioGrowth": 0.076,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 5835.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 177.49
+        },
+        {
+          "DamagePercentage": 4.692,
+          "DamagePercentageGrowth": 0.427,
+          "StunRatio": 3.233,
+          "StunRatioGrowth": 0.147,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 11365.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 345.73
+        },
+        {
+          "DamagePercentage": 4.569,
+          "DamagePercentageGrowth": 0.416,
+          "StunRatio": 3.148,
+          "StunRatioGrowth": 0.144,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 11066,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 336.68
+        }
+      ]
+    },
+    "dodge": {
+      "DodgeLetsMove": [],
+      "DashAttackFireWithFire": [
+        {
+          "DamagePercentage": 0.684,
+          "DamagePercentageGrowth": 0.063,
+          "StunRatio": 0.342,
+          "StunRatioGrowth": 0.016,
+          "SpRecovery": 123,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 940.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "DodgeCounterRetaliation": [
+        {
+          "DamagePercentage": 2.712,
+          "DamagePercentageGrowth": 0.247,
+          "StunRatio": 2.317,
+          "StunRatioGrowth": 0.106,
+          "SpRecovery": 474.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3621.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "DodgeCounterOverloadDrillBurstMode": [
+        {
+          "DamagePercentage": 4.654,
+          "DamagePercentageGrowth": 0.424,
+          "StunRatio": 3.518,
+          "StunRatioGrowth": 0.16,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 8849.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 269.23
+        }
+      ]
+    },
+    "special": {
+      "SpecialAttackSpinBro": [
+        {
+          "DamagePercentage": 0.442,
+          "DamagePercentageGrowth": 0.041,
+          "StunRatio": 0.442,
+          "StunRatioGrowth": 0.021,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1215.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 44.18
+        }
+      ],
+      "EXSpecialAttackSmashTheHorizonBro": [
+        {
+          "DamagePercentage": 1.951,
+          "DamagePercentageGrowth": 0.178,
+          "StunRatio": 1.951,
+          "StunRatioGrowth": 0.089,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 5365.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 195.03
+        }
+      ],
+      "SpecialAttackExplosiveDrillBurstMode": [
+        {
+          "DamagePercentage": 2.314,
+          "DamagePercentageGrowth": 0.211,
+          "StunRatio": 1.184,
+          "StunRatioGrowth": 0.054,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 7141.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 217.21
+        }
+      ]
+    },
+    "chain": {
+      "ChainAttackGoGoGo": [
+        {
+          "DamagePercentage": 6.407,
+          "DamagePercentageGrowth": 0.583,
+          "StunRatio": 2.417,
+          "StunRatioGrowth": 0.11,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 24934.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 441.13
+        }
+      ],
+      "UltimateGoGoGoGoGo": [
+        {
+          "DamagePercentage": 18.164,
+          "DamagePercentageGrowth": 1.652,
+          "StunRatio": 2.434,
+          "StunRatioGrowth": 0.111,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 243.36
+        }
+      ]
+    },
+    "assist": {
+      "QuickAssistShoulderToShoulder": [
+        {
+          "DamagePercentage": 2.634,
+          "DamagePercentageGrowth": 0.24,
+          "StunRatio": 1.317,
+          "StunRatioGrowth": 0.06,
+          "SpRecovery": 474.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3621.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "QuickAssistProtectiveDrillBurstMode": [
+        {
+          "DamagePercentage": 3.654,
+          "DamagePercentageGrowth": 0.333,
+          "StunRatio": 2.518,
+          "StunRatioGrowth": 0.115,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 8849.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 269.23
+        }
+      ],
+      "DefensiveAssistIronWrist": [
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.467,
+          "StunRatioGrowth": 0.113,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 3.117,
+          "StunRatioGrowth": 0.142,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.517,
+          "StunRatioGrowth": 0.069,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "AssistFollowUpLimitBurst": [
+        {
+          "DamagePercentage": 3.258,
+          "DamagePercentageGrowth": 0.297,
+          "StunRatio": 2.827,
+          "StunRatioGrowth": 0.129,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 10144.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 304.22
+        }
+      ]
+    }
+  }
 }
