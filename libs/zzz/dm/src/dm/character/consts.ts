@@ -2,6 +2,7 @@ import type {
   AttributeKey,
   CharacterRarityKey,
   FactionKey,
+  SkillKey,
   SpecialityKey,
   StatKey,
 } from '@genshin-optimizer/zzz/consts'
@@ -82,3 +83,17 @@ export const coreStatMap: Record<string, StatKey> = {
   'Anomaly Mastery': 'anomMas',
   'PEN Ratio': 'pen_',
 } as const
+
+export type HakushinSkillKey =
+  | 'Basic'
+  | 'Dodge'
+  | 'Special'
+  | 'Chain'
+  | 'Assist'
+export const hakushinSkillMap: Record<HakushinSkillKey, SkillKey> = {
+  Basic: 'basic',
+  Dodge: 'dodge',
+  Special: 'special',
+  Chain: 'chain',
+  Assist: 'assist',
+}

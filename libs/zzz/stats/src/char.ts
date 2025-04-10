@@ -4,6 +4,7 @@ import type {
   CharacterKey,
   CharacterRarityKey,
   FactionKey,
+  SkillKey,
   SpecialityKey,
 } from '@genshin-optimizer/zzz/consts'
 import { allStats } from './allStats'
@@ -28,6 +29,18 @@ export type CharacterDatum = {
   }
   promotionStats: Array<{ hp: number; atk: number; def: number }>
   coreStats: Array<Partial<Record<BaseStatKey, number>>>
+  skillParams: Record<SkillKey, Record<string, SkillParam[]>>
+}
+export type SkillParam = {
+  DamagePercentage: number
+  DamagePercentageGrowth: number
+  StunRatio: number
+  StunRatioGrowth: number
+  SpRecovery: number
+  SpRecoveryGrowth: number
+  FeverRecovery: number
+  FeverRecoveryGrowth: number
+  AttributeInfliction: number
 }
 
 export function getCharStat(ck: CharacterKey) {
