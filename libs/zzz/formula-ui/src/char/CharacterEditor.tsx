@@ -1,23 +1,90 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
+'use client'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import {
+  CharacterContext,
+  useCharacter,
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
+import {
+  CharacterCard,
+  CharacterCompactMindscapeSelector,
+  CoreDropdown,
+  EquippedGrid,
+  LevelSelect,
+  SkillDropdown,
+} from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import { Box, Button, Grid, IconButton } from '@mui/material'
+import {
+  Box,
+  Button,
+  CardContent,
+  Grid,
+  IconButton,
+  Skeleton,
+} from '@mui/material'
 import type { Variant } from '@mui/material/styles/createTypography'
-import { useCallback } from 'react'
+import { Suspense, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { LevelSelect } from '../../LevelSelect'
-import { CharacterCard } from '../CharacterCard'
-import { CharacterCompactMindscapeSelector } from '../CharacterProfilePieces'
-import { CoreDropdown } from '../CoreDropdown'
-import { EquippedGrid } from '../EquippedGrid'
-import { SkillDropdown } from '../SkillDropdown'
-import { CharacterCardStats } from '../card'
+import { CharStatsDisplay } from './CharStatsDisplay'
+
+export function CharacterEditor({
+  characterKey,
+  onClose,
+}: {
+  characterKey?: CharacterKey
+  onClose: () => void
+}) {
+  return (
+    <ModalWrapper open={!!characterKey} onClose={onClose}>
+      <Suspense
+        fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}
+      >
+        {characterKey && (
+          <CharacterEditorContent
+            key={characterKey}
+            characterKey={characterKey}
+            onClose={onClose}
+          />
+        )}
+      </Suspense>
+    </ModalWrapper>
+  )
+}
+
+type CharacterDisplayCardProps = {
+  characterKey: CharacterKey
+  onClose?: () => void
+}
+function CharacterEditorContent({
+  characterKey,
+  onClose,
+}: CharacterDisplayCardProps) {
+  const character = useCharacter(characterKey)
+
+  return (
+    <CardThemed>
+      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <Suspense
+          fallback={
+            <Skeleton variant="rectangular" width="100%" height={1000} />
+          }
+        >
+          {character ? (
+            <CharacterContext.Provider value={character}>
+              <Content onClose={onClose} />
+            </CharacterContext.Provider>
+          ) : (
+            <Skeleton variant="rectangular" width="100%" height={1000} />
+          )}
+        </Suspense>
+      </CardContent>
+    </CardThemed>
+  )
+}
 
 const charCardConfig = {
   cardWidth: '500px',
@@ -86,7 +153,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
                   }
                 />
               </Box>
-              <CharacterCardStats bgt="light" character={character} />
+              <CharStatsDisplay />
               <CharacterCompactMindscapeSelector
                 mindscape={character.mindscape}
                 setMindscape={(mindscape) =>

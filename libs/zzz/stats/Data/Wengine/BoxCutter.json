@@ -1,39 +1,14 @@
 {
-  "name": "Box Cutter",
   "rarity": "A",
   "type": "stun",
   "atk_base": 42,
   "second_statkey": "impact_",
   "second_statvalue": 0.06,
-  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1351.png",
-  "desc": "...",
-  "desc2": "Equip to increase Stun Agents' combat capabilities",
-  "desc3": "An energy W-Engine modded from spare parts of a truck's engine. It converts the original cylinder into an energy storage unit, which is highly advantageous.",
   "phase": [
-    {
-      "name": "Watch Your Fingers",
-      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>15%</color>, and Daze increases by <color=#2BAD00>10%</color>, lasting 10s.",
-      "params": [0.15, 0.1, 10]
-    },
-    {
-      "name": "Watch Your Fingers",
-      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>17.3%</color>, and Daze increases by <color=#2BAD00>11.5%</color>, lasting 10s.",
-      "params": [0.173, 0.115, 10]
-    },
-    {
-      "name": "Watch Your Fingers",
-      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>19.5%</color>, and Daze increases by <color=#2BAD00>13%</color>, lasting 10s.",
-      "params": [0.195, 0.13, 10]
-    },
-    {
-      "name": "Watch Your Fingers",
-      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>21.8%</color>, and Daze increases by <color=#2BAD00>14.5%</color>, lasting 10s.",
-      "params": [0.218, 0.145, 10]
-    },
-    {
-      "name": "Watch Your Fingers",
-      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>24%</color>, and Daze increases by <color=#2BAD00>16%</color>, lasting 10s.",
-      "params": [0.24, 0.16, 10]
-    }
+    { "params": [0.15, 0.1, 10] },
+    { "params": [0.173, 0.115, 10] },
+    { "params": [0.195, 0.13, 10] },
+    { "params": [0.218, 0.145, 10] },
+    { "params": [0.24, 0.16, 10] }
   ]
 }

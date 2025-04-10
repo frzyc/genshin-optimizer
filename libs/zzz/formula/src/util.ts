@@ -1,14 +1,17 @@
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
-import type {
-  CharacterKey,
-  DiscMainStatKey,
-  DiscSetKey,
-  DiscSubStatKey,
-  MilestoneKey,
-  PhaseKey,
-  WengineKey,
+import {
+  type CharacterKey,
+  type DiscMainStatKey,
+  type DiscSetKey,
+  type DiscSubStatKey,
+  type MilestoneKey,
+  type PhaseKey,
+  type WengineKey,
+  getDiscMainStatVal,
+  getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
+import type { IDisc } from '@genshin-optimizer/zzz/zood'
 import type { Member, TagMapNodeEntries } from './data/util'
 import {
   convert,
@@ -126,6 +129,22 @@ export function discTagMapNodeEntries(
       count.sheet(k as DiscSetKey).add(v)
     ),
   ]
+}
+
+export function discsToTagMapNodeEntries(discs: IDisc[]): TagMapNodeEntries {
+  const sets: Partial<Record<DiscSetKey, number>> = {},
+    stats: Partial<Record<DiscMainStatKey | DiscSubStatKey, number>> = {}
+  discs.forEach(({ setKey, mainStatKey, substats, level, rarity }) => {
+    sets[setKey] = (sets[setKey] ?? 0) + 1
+    stats[mainStatKey] =
+      (stats[mainStatKey] ?? 0) + getDiscMainStatVal(rarity, mainStatKey, level)
+    substats.forEach(({ key, upgrades }) => {
+      if (!key || !upgrades) return
+      stats[key] =
+        (stats[key] ?? 0) + getDiscSubStatBaseVal(key, rarity) * upgrades
+    })
+  })
+  return discTagMapNodeEntries(stats, sets)
 }
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
