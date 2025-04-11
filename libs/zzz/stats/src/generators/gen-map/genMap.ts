@@ -44,7 +44,19 @@ const key: CharacterKey = '${charKey}'
 const data_gen = getCharStat(key)
 
 const dm =
-  ${JSON.stringify(objMap(allStats.char[charKey].skillParams, (param, skillKey) => objMap(param, (_skillParams, key) => `data_gen.skillParams['${skillKey}']['${key}']`))).replace(/"(data_gen.skillParams\[.*?\]\[.*?\])"/g, (_match, contents) => contents)} as const
+  ${JSON.stringify(
+    objMap(allStats.char[charKey].skillParams, (param, skillKey) =>
+      objMap(
+        param,
+        (_skillParams, key) => `data_gen.skillParams['${skillKey}']['${key}']`
+      )
+    )
+  )
+    // Remove the double quotes inserted by stringify
+    .replace(
+      /"(data_gen.skillParams\[.*?\]\[.*?\])"/g,
+      (_match, contents) => contents
+    )} as const
 
 export default dm
 
