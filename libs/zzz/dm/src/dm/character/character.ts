@@ -248,7 +248,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
                   if ('Param' in param) {
                     return {
                       ...param,
-                      Param: objMap(param.Param, (param2) => ({
+                      Param: objMap(param.Param ?? {}, (param2) => ({
                         ...param2,
                         Main: param2.Main / FLAT_SCALING,
                         Growth: param2.Growth / PERCENT_SCALING,
