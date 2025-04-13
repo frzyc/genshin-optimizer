@@ -26,7 +26,7 @@ const [set4Atk, set4AtkInactive] = nonStackBuff('totm4', 'atk_', percent(0.2))
 const [set4Shield, set4ShieldInactive] = nonStackBuff(
   'totm4',
   'shield_',
-  percent(0.2)
+  percent(0.3)
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {
