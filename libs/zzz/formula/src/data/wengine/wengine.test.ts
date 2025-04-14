@@ -59,7 +59,12 @@ function testCharacterData(wengineKey: WengineKey) {
         chain: 0,
         core: 0,
       }),
-      ...wengineTagMapNodeEntries(wengineKey, 60, 5, 5)
+      ...wengineTagMapNodeEntries({
+        key: wengineKey,
+        level: 60,
+        modification: 5,
+        phase: 5,
+      })
     ),
     own.common.critMode.add('avg'),
     enemy.common.def.add(953),

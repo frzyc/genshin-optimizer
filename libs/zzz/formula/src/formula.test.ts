@@ -112,12 +112,12 @@ describe('wengine test', () => {
             chain: 0,
             core: 0,
           }),
-          ...wengineTagMapNodeEntries(
-            wengKey,
-            lvl,
-            modification as MilestoneKey,
-            1
-          )
+          ...wengineTagMapNodeEntries({
+            key: wengKey,
+            level: lvl,
+            modification: modification as MilestoneKey,
+            phase: 1,
+          })
         ),
       ]
       const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -150,7 +150,12 @@ describe('char+wengine test', () => {
           chain: 0,
           core: 0,
         }),
-        ...wengineTagMapNodeEntries('SteamOven', 0, 0, 1)
+        ...wengineTagMapNodeEntries({
+          key: 'SteamOven',
+          level: 0,
+          modification: 0,
+          phase: 1,
+        })
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -173,7 +178,12 @@ describe('char+wengine test', () => {
           chain: 0,
           core: 6,
         }),
-        ...wengineTagMapNodeEntries('VortexRevolver', 60, 5, 1),
+        ...wengineTagMapNodeEntries({
+          key: 'VortexRevolver',
+          level: 60,
+          modification: 5,
+          phase: 1,
+        }),
         ownBuff.initial.atk.add(25),
         ownBuff.combat.atk.add(100),
         ownBuff.combat.atk_.add(0.08)
@@ -209,7 +219,12 @@ describe('char+wengine test', () => {
             chain: 0,
             core: 6,
           }),
-          ...wengineTagMapNodeEntries('VortexRevolver', 60, 5, 1),
+          ...wengineTagMapNodeEntries({
+            key: 'VortexRevolver',
+            level: 60,
+            modification: 5,
+            phase: 1,
+          }),
 
           ownBuff.initial.atk.add(25),
           ownBuff.combat.atk.add(100),
@@ -266,7 +281,12 @@ describe('char+wengine test', () => {
           chain: 0,
           core: 6,
         }),
-        ...wengineTagMapNodeEntries('VortexRevolver', 60, 5, 1),
+        ...wengineTagMapNodeEntries({
+          key: 'VortexRevolver',
+          level: 60,
+          modification: 5,
+          phase: 1,
+        }),
 
         ownBuff.initial.atk.add(25),
         ownBuff.combat.atk.add(100),
