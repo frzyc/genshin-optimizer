@@ -82,10 +82,14 @@ export function charTagMapNodeEntries(data: TempICharacter): TagMapNodeEntries {
 }
 
 export function wengineTagMapNodeEntries(
-  key: WengineKey,
-  level: number,
-  modification: MilestoneKey,
-  phase: PhaseKey
+  wengInfo:
+    | {
+        key: WengineKey
+        level: number
+        modification: MilestoneKey
+        phase: PhaseKey
+      }
+    | undefined
 ): TagMapNodeEntries {
   return [
     // Opt-in for wengine buffs, instead of enabling it by default to reduce `read` traffic
@@ -93,12 +97,14 @@ export function wengineTagMapNodeEntries(
       .sheet('agg')
       .reread(reader.sheet('wengine')),
     // Mark wengine cones as used
-    own.common.count
-      .sheet(key)
-      .add(1),
-    own.wengine.lvl.add(level),
-    own.wengine.modification.add(modification),
-    own.wengine.phase.add(phase),
+    ...(wengInfo
+      ? [
+          own.common.count.sheet(wengInfo.key).add(1),
+          own.wengine.lvl.add(wengInfo.level),
+          own.wengine.modification.add(wengInfo.modification),
+          own.wengine.phase.add(wengInfo.phase),
+        ]
+      : []),
   ]
 }
 

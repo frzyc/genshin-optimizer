@@ -101,28 +101,24 @@ function useCharacterAndEquipment(
 ) {
   const wengine = useWengine(wengineId)
   const discs = useDiscs(discIds)
-  const wengineTagEntries = useMemo(() => {
-    if (!wengine) return []
-    return wengineTagMapNodeEntries(
-      wengine.key,
-      wengine.level,
-      wengine.modification,
-      wengine.phase
-    )
-  }, [wengine])
-  const discTagEntries = useMemo(() => {
-    if (!discs) return []
-    return discsToTagMapNodeEntries(Object.values(discs).filter(notEmpty))
-  }, [discs])
-  return useMemo(() => {
-    if (!character) return []
-    return withMember(
-      character.key,
-      ...charTagMapNodeEntries(character),
-      ...wengineTagEntries,
-      ...discTagEntries
-    )
-  }, [character, wengineTagEntries, discTagEntries])
+  const wengineTagEntries = useMemo(
+    () => wengineTagMapNodeEntries(wengine),
+    [wengine]
+  )
+  const discTagEntries = useMemo(
+    () => discsToTagMapNodeEntries(Object.values(discs).filter(notEmpty)),
+    [discs]
+  )
+  return useMemo(
+    () =>
+      withMember(
+        character.key,
+        ...charTagMapNodeEntries(character),
+        ...wengineTagEntries,
+        ...discTagEntries
+      ),
+    [character, wengineTagEntries, discTagEntries]
+  )
 }
 
 /**
