@@ -16,6 +16,13 @@ export default defineConfig(() => ({
   server: {
     port: 4200,
     host: 'localhost',
+    // Vite automatically blocks files being served outside of the 'project root'
+    // Because of the added project.json for version tracking in apps/zzz-frontend,
+    // the project root is changed to apps/zzz-frontend incorrectly.
+    // This sets it back to the correct workspace root
+    fs: {
+      allow: ['../..'],
+    },
   },
 
   preview: {
