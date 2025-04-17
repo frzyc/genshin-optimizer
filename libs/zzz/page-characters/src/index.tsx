@@ -122,6 +122,10 @@ export default function PageCharacter() {
     )
   }, [forceUpdate, database])
 
+  useEffect(() => {
+    if (characterKey && !charOpt) database.charOpts.getOrCreate(characterKey)
+  }, [characterKey, charOpt, database.charOpts])
+
   const editCharacter = useCallback(
     (characterKey: CharacterKey) => {
       const character = database.chars.get(characterKey)
@@ -227,7 +231,6 @@ export default function PageCharacter() {
     onChangeAsc: (ascending: boolean) =>
       database.displayCharacter.set({ ascending }),
   }
-
   return (
     <Box display="flex" flexDirection="column" gap={2}>
       {characterKey && character && charOpt && (
