@@ -102,7 +102,9 @@ export default function PageCharacter() {
     return characterKeyRaw as CharacterKey
   }, [characterKeyRaw, navigate])
   const character = useCharacter(characterKey ?? undefined)
-  const charOpt = useCharOpt(characterKey ?? undefined)
+  const charOpt =
+    useCharOpt(characterKey ?? undefined) ??
+    (characterKey && database.charOpts.getOrCreate(characterKey))
   const tag = useMemo<Tag>(
     () => ({
       src: characterKey,
@@ -121,10 +123,6 @@ export default function PageCharacter() {
       (_, r) => (r === 'new' || r === 'remove') && forceUpdate()
     )
   }, [forceUpdate, database])
-
-  useEffect(() => {
-    if (characterKey && !charOpt) database.charOpts.getOrCreate(characterKey)
-  }, [characterKey, charOpt, database.charOpts])
 
   const editCharacter = useCallback(
     (characterKey: CharacterKey) => {
