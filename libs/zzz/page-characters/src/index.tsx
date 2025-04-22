@@ -102,7 +102,9 @@ export default function PageCharacter() {
     return characterKeyRaw as CharacterKey
   }, [characterKeyRaw, navigate])
   const character = useCharacter(characterKey ?? undefined)
-  const charOpt = useCharOpt(characterKey ?? undefined)
+  const charOpt =
+    useCharOpt(characterKey ?? undefined) ??
+    (characterKey && database.charOpts.getOrCreate(characterKey))
   const tag = useMemo<Tag>(
     () => ({
       src: characterKey,
@@ -227,7 +229,6 @@ export default function PageCharacter() {
     onChangeAsc: (ascending: boolean) =>
       database.displayCharacter.set({ ascending }),
   }
-
   return (
     <Box display="flex" flexDirection="column" gap={2}>
       {characterKey && character && charOpt && (
