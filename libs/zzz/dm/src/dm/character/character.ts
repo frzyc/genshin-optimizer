@@ -8,6 +8,7 @@ import {
   allCharacterKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { readHakushinJSON } from '../../util'
+import type { HakushinSkillKey } from './consts'
 import {
   attributeMap,
   characterIdMap,
@@ -85,7 +86,7 @@ type CharacterRawData = {
     }
   >
   Skill: Record<
-    'Basic' | 'Dodge' | 'Special' | 'Chain' | 'Assist',
+    HakushinSkillKey,
     {
       Description: Array<{
         Name: string
@@ -93,7 +94,7 @@ type CharacterRawData = {
         Param?: Array<{
           Name: string
           Desc: string
-          Param: Record<
+          Param?: Record<
             string,
             {
               Main: number
@@ -247,7 +248,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
                   if ('Param' in param) {
                     return {
                       ...param,
-                      Param: objMap(param.Param, (param2) => ({
+                      Param: objMap(param.Param ?? {}, (param2) => ({
                         ...param2,
                         Main: param2.Main / FLAT_SCALING,
                         Growth: param2.Growth / PERCENT_SCALING,
