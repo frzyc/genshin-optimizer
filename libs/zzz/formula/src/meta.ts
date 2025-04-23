@@ -136,7 +136,7 @@ export const conditionals = {
       name: 'etherDmg',
       type: 'num',
       int_only: true,
-      min: 1,
+      min: 0,
       max: 6,
     },
   },
