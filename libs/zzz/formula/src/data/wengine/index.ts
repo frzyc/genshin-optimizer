@@ -12,6 +12,7 @@ import DrillRigRedAxis from './sheets/DrillRigRedAxis'
 import ElectroLipGloss from './sheets/ElectroLipGloss'
 import ElegantVanity from './sheets/ElegantVanity'
 import FlamemakerShaker from './sheets/FlamemakerShaker'
+import FlightOfFancy from './sheets/FlightOfFancy'
 import FusionCompiler from './sheets/FusionCompiler'
 import GildedBlossom from './sheets/GildedBlossom'
 import HailstormShrine from './sheets/HailstormShrine'
@@ -29,6 +30,7 @@ import MagneticStormAlpha from './sheets/MagneticStormAlpha'
 import MagneticStormBravo from './sheets/MagneticStormBravo'
 import MagneticStormCharlie from './sheets/MagneticStormCharlie'
 import MarcatoDesire from './sheets/MarcatoDesire'
+import MyriadEclipse from './sheets/MyriadEclipse'
 import OriginalTransmorpher from './sheets/OriginalTransmorpher'
 import PeacekeeperSpecialized from './sheets/PeacekeeperSpecialized'
 import PreciousFossilizedCore from './sheets/PreciousFossilizedCore'
@@ -75,6 +77,7 @@ const data: TagMapNodeEntries[] = [
   ElectroLipGloss,
   ElegantVanity,
   FlamemakerShaker,
+  FlightOfFancy,
   FusionCompiler,
   GildedBlossom,
   HailstormShrine,
@@ -92,6 +95,7 @@ const data: TagMapNodeEntries[] = [
   MagneticStormBravo,
   MagneticStormCharlie,
   MarcatoDesire,
+  MyriadEclipse,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PreciousFossilizedCore,

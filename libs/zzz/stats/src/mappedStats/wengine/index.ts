@@ -11,6 +11,7 @@ import DrillRigRedAxis from './maps/DrillRigRedAxis'
 import ElectroLipGloss from './maps/ElectroLipGloss'
 import ElegantVanity from './maps/ElegantVanity'
 import FlamemakerShaker from './maps/FlamemakerShaker'
+import FlightOfFancy from './maps/FlightOfFancy'
 import FusionCompiler from './maps/FusionCompiler'
 import GildedBlossom from './maps/GildedBlossom'
 import HailstormShrine from './maps/HailstormShrine'
@@ -28,6 +29,7 @@ import MagneticStormAlpha from './maps/MagneticStormAlpha'
 import MagneticStormBravo from './maps/MagneticStormBravo'
 import MagneticStormCharlie from './maps/MagneticStormCharlie'
 import MarcatoDesire from './maps/MarcatoDesire'
+import MyriadEclipse from './maps/MyriadEclipse'
 import OriginalTransmorpher from './maps/OriginalTransmorpher'
 import PeacekeeperSpecialized from './maps/PeacekeeperSpecialized'
 import PreciousFossilizedCore from './maps/PreciousFossilizedCore'
@@ -74,6 +76,7 @@ const maps = {
   ElectroLipGloss,
   ElegantVanity,
   FlamemakerShaker,
+  FlightOfFancy,
   FusionCompiler,
   GildedBlossom,
   HailstormShrine,
@@ -91,6 +94,7 @@ const maps = {
   MagneticStormBravo,
   MagneticStormCharlie,
   MarcatoDesire,
+  MyriadEclipse,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PreciousFossilizedCore,
