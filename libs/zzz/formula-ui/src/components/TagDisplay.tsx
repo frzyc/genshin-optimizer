@@ -58,6 +58,7 @@ const labelMap = {
   // TODO: translation
   dmg_: 'DMG',
   common_dmg_: 'DMG',
+  defIgn_: 'DEF Ignore',
   resIgn_: 'Res Ignore',
 } as const
 function TagStrDisplay({

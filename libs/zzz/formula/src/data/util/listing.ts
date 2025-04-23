@@ -30,6 +30,7 @@ export const stats = [
   'dmg_',
   'common_dmg_',
   'buff_',
+  'defIgn_',
   'resIgn_',
   'shield_',
   'dazeInc_',
