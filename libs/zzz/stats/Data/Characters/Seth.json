@@ -174,7 +174,7 @@
       ]
     },
     "chain": {
-      "ChainAttackFinalJudgement": [
+      "ChainAttackFinalJudgment": [
         {
           "DamagePercentage": 7.041,
           "DamagePercentageGrowth": 0.641,

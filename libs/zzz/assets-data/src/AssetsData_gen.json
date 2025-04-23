@@ -292,6 +292,13 @@
       "select": "IconRoleSelect28.png",
       "interknot": "IconInterKnotRole0028.png"
     },
+    "Hugo": {
+      "full": "IconRole42.png",
+      "circle": "IconRoleCircle42.png",
+      "trap": "IconRoleGeneral42.png",
+      "select": "IconRoleSelect42.png",
+      "interknot": "IconInterKnotRole0042.png"
+    },
     "Astra": {
       "full": "IconRole36.png",
       "circle": "IconRoleCircle36.png",
@@ -305,6 +312,13 @@
       "trap": "IconRoleGeneral37.png",
       "select": "IconRoleSelect37.png",
       "interknot": "IconInterKnotRole0037.png"
+    },
+    "Vivian": {
+      "full": "IconRole41.png",
+      "circle": "IconRoleCircle41.png",
+      "trap": "IconRoleGeneral41.png",
+      "select": "IconRoleSelect41.png",
+      "interknot": "IconInterKnotRole0041.png"
     },
     "Pulchra": {
       "full": "IconRole38.png",
@@ -557,6 +571,10 @@
       "icon": "Weapon_S_1261.png",
       "big": "Weapon_S_1261Big.png"
     },
+    "MyriadEclipse": {
+      "icon": "Weapon_S_1291.png",
+      "big": "Weapon_S_1291Big.png"
+    },
     "ElegantVanity": {
       "icon": "Weapon_S_1311.png",
       "big": "Weapon_S_1311Big.png"
@@ -564,6 +582,10 @@
     "HeartstringNocturne": {
       "icon": "Weapon_S_1321.png",
       "big": "Weapon_S_1321Big.png"
+    },
+    "FlightOfFancy": {
+      "icon": "Weapon_S_1331.png",
+      "big": "Weapon_S_1331Big.png"
     },
     "SpectralGaze": {
       "icon": "Weapon_S_1361.png",

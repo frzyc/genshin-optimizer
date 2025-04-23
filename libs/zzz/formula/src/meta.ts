@@ -1180,6 +1180,56 @@ export const formulas = {
       },
     },
   },
+  Hugo: {
+    anomalyBuildupInst: {
+      sheet: 'Hugo',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Hugo',
+        attribute: 'ice',
+        name: 'anomalyBuildupInst',
+      },
+    },
+    anomalyDmgInst: {
+      sheet: 'Hugo',
+      name: 'anomalyDmgInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomalyDmg',
+        sheet: 'Hugo',
+        attribute: 'ice',
+        damageType1: 'anomaly',
+        name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Hugo',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Hugo',
+        name: 'dazeInst',
+      },
+    },
+    standardDmgInst: {
+      sheet: 'Hugo',
+      name: 'standardDmgInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'Hugo',
+        attribute: 'ice',
+        name: 'standardDmgInst',
+      },
+    },
+  },
   Jane: {
     anomalyBuildupInst: {
       sheet: 'Jane',
@@ -2026,6 +2076,56 @@ export const formulas = {
         q: 'standardDmg',
         sheet: 'Trigger',
         attribute: 'electric',
+        name: 'standardDmgInst',
+      },
+    },
+  },
+  Vivian: {
+    anomalyBuildupInst: {
+      sheet: 'Vivian',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Vivian',
+        attribute: 'ether',
+        name: 'anomalyBuildupInst',
+      },
+    },
+    anomalyDmgInst: {
+      sheet: 'Vivian',
+      name: 'anomalyDmgInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomalyDmg',
+        sheet: 'Vivian',
+        attribute: 'ether',
+        damageType1: 'anomaly',
+        name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Vivian',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Vivian',
+        name: 'dazeInst',
+      },
+    },
+    standardDmgInst: {
+      sheet: 'Vivian',
+      name: 'standardDmgInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'Vivian',
+        attribute: 'ether',
         name: 'standardDmgInst',
       },
     },
