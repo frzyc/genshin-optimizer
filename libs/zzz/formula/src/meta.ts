@@ -130,6 +130,16 @@ export const conditionals = {
     },
     offField: { sheet: 'FlamemakerShaker', name: 'offField', type: 'bool' },
   },
+  FlightOfFancy: {
+    etherDmg: {
+      sheet: 'FlightOfFancy',
+      name: 'etherDmg',
+      type: 'num',
+      int_only: true,
+      min: 1,
+      max: 6,
+    },
+  },
   FreedomBlues: {
     exSpecialHit: { sheet: 'FreedomBlues', name: 'exSpecialHit', type: 'bool' },
   },
@@ -256,6 +266,13 @@ export const conditionals = {
     exSpecialOrChainHitsEnemy: {
       sheet: 'MarcatoDesire',
       name: 'exSpecialOrChainHitsEnemy',
+      type: 'bool',
+    },
+  },
+  MyriadEclipse: {
+    deathSentence: {
+      sheet: 'MyriadEclipse',
+      name: 'deathSentence',
       type: 'bool',
     },
   },
@@ -2715,6 +2732,30 @@ export const buffs = {
       },
     },
   },
+  FlightOfFancy: {
+    anomBuildup_: {
+      sheet: 'FlightOfFancy',
+      name: 'anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'FlightOfFancy',
+        name: 'anomBuildup_',
+      },
+    },
+    etherDmg_anomProf: {
+      sheet: 'FlightOfFancy',
+      name: 'etherDmg_anomProf',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomProf',
+        sheet: 'FlightOfFancy',
+        name: 'etherDmg_anomProf',
+      },
+    },
+  },
   FreedomBlues: {
     anomBuildupRes_: {
       sheet: 'FreedomBlues',
@@ -3087,6 +3128,30 @@ export const buffs = {
         q: 'atk_',
         sheet: 'MarcatoDesire',
         name: 'atk_',
+      },
+    },
+  },
+  MyriadEclipse: {
+    crit_dmg_: {
+      sheet: 'MyriadEclipse',
+      name: 'crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'MyriadEclipse',
+        name: 'crit_dmg_',
+      },
+    },
+    deathSentence_defIgn_: {
+      sheet: 'MyriadEclipse',
+      name: 'deathSentence_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'defIgn_',
+        sheet: 'MyriadEclipse',
+        name: 'deathSentence_defIgn_',
       },
     },
   },
