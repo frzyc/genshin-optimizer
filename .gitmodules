@@ -18,4 +18,4 @@
 [submodule "libs/zzz/dm/HakushinData"]
 	path = libs/zzz/dm/HakushinData
 	url = https://github.com/genshin-optimizer/zzz-hakushin-data
-  shallow = true
+	shallow = true
