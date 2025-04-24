@@ -88,9 +88,9 @@
           "StunRatioGrowth": 0.011,
           "SpRecovery": 136.2,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 4160.75,
+          "FeverRecovery": 1042.25,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 108.03
+          "AttributeInfliction": 27
         },
         {
           "DamagePercentage": 2.339,
@@ -295,7 +295,7 @@
           "StunRatioGrowth": 0.149,
           "SpRecovery": 0,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 2774.75,
+          "FeverRecovery": 12141.25,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 369.51
         }

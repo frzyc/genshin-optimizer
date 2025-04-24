@@ -1,8 +1,8 @@
 {
   "name": "Severed Innocence",
-  "desc": "...",
+  "desc": "If a storm subdued still has the power to save a certain person... The ringing of the old sword in its crate speaks of the \"good\" old days that one doesn't want to remember.\n\n<ct color=#959595>\"Nekomata, put it down. No, there's no secret... Nicole, please let me explain, she was the one who started it...\" — Anby, just a typical day with the Cunning Hares.</ct>",
   "desc2": "Equip to increase Attack Agents' combat capabilities",
-  "desc3": "...",
+  "desc3": "The sheen of silver is not innocence. Can the blades of the past cut through fate's connections?",
   "phase": "Tranquil Blossom",
   "phaseDescs": [
     "CRIT DMG is increased by <ct color=#2BAD00>30%</ct>. When the equipper lands a hit with a <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>Aftershock</ct>, they gain 1 stack of a buff. Each stack increases the equipper's CRIT DMG by an additional <ct color=#2BAD00>10%</ct>, stacking up to 3 times. The effect lasts for 30s, with each stack's duration calculated separately, and can only be triggered once per use of a skill. With all 3 stacks, the equipper's <ct color=#2EB6FF>Electric DMG</ct> increases by <ct color=#2BAD00>20%</ct>.",

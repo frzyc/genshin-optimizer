@@ -12,6 +12,7 @@ export const allCharacterKeys = [
   'Evelyn',
   'Grace',
   'Harumasa',
+  'Hugo',
   'Jane',
   'Koleda',
   'Lighter',
@@ -29,6 +30,7 @@ export const allCharacterKeys = [
   'Soldier11',
   'Soukaku',
   'Trigger',
+  'Vivian',
   'Yanagi',
   'ZhuYuan',
 ] as const
@@ -56,6 +58,7 @@ export const allFactionKeys = [
   'SonsOfCalydon',
   'HollowSpecialOoperationsSection6',
   'StarsOfLyra',
+  'Mockingbird',
 ] as const
 export type FactionKey = (typeof allFactionKeys)[number]
 

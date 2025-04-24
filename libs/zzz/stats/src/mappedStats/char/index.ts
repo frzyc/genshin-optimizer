@@ -11,6 +11,7 @@ import Ellen from './maps/Ellen'
 import Evelyn from './maps/Evelyn'
 import Grace from './maps/Grace'
 import Harumasa from './maps/Harumasa'
+import Hugo from './maps/Hugo'
 import Jane from './maps/Jane'
 import Koleda from './maps/Koleda'
 import Lighter from './maps/Lighter'
@@ -28,6 +29,7 @@ import Soldier0Anby from './maps/Soldier0Anby'
 import Soldier11 from './maps/Soldier11'
 import Soukaku from './maps/Soukaku'
 import Trigger from './maps/Trigger'
+import Vivian from './maps/Vivian'
 import Yanagi from './maps/Yanagi'
 import ZhuYuan from './maps/ZhuYuan'
 
@@ -44,6 +46,7 @@ const maps = {
   Evelyn,
   Grace,
   Harumasa,
+  Hugo,
   Jane,
   Koleda,
   Lighter,
@@ -61,6 +64,7 @@ const maps = {
   Soldier11,
   Soukaku,
   Trigger,
+  Vivian,
   Yanagi,
   ZhuYuan,
 }

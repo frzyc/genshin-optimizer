@@ -35,8 +35,10 @@ export const characterIdMap = {
   '1261': 'Jane',
   '1271': 'Seth',
   '1281': 'Piper',
+  '1291': 'Hugo',
   '1311': 'Astra',
   '1321': 'Evelyn',
+  '1331': 'Vivian',
   '1351': 'Pulchra',
   '1361': 'Trigger',
   '1381': 'Soldier0Anby',
@@ -66,6 +68,7 @@ export const factionMap: Record<number, FactionKey> = {
   6: 'HollowSpecialOoperationsSection6',
   7: 'CriminalInvestigationSpecialResponseTeam',
   8: 'StarsOfLyra',
+  9: 'Mockingbird',
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {

@@ -130,6 +130,16 @@ export const conditionals = {
     },
     offField: { sheet: 'FlamemakerShaker', name: 'offField', type: 'bool' },
   },
+  FlightOfFancy: {
+    etherDmg: {
+      sheet: 'FlightOfFancy',
+      name: 'etherDmg',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 6,
+    },
+  },
   FreedomBlues: {
     exSpecialHit: { sheet: 'FreedomBlues', name: 'exSpecialHit', type: 'bool' },
   },
@@ -256,6 +266,13 @@ export const conditionals = {
     exSpecialOrChainHitsEnemy: {
       sheet: 'MarcatoDesire',
       name: 'exSpecialOrChainHitsEnemy',
+      type: 'bool',
+    },
+  },
+  MyriadEclipse: {
+    deathSentence: {
+      sheet: 'MyriadEclipse',
+      name: 'deathSentence',
       type: 'bool',
     },
   },
@@ -1180,6 +1197,56 @@ export const formulas = {
       },
     },
   },
+  Hugo: {
+    anomalyBuildupInst: {
+      sheet: 'Hugo',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Hugo',
+        attribute: 'ice',
+        name: 'anomalyBuildupInst',
+      },
+    },
+    anomalyDmgInst: {
+      sheet: 'Hugo',
+      name: 'anomalyDmgInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomalyDmg',
+        sheet: 'Hugo',
+        attribute: 'ice',
+        damageType1: 'anomaly',
+        name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Hugo',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Hugo',
+        name: 'dazeInst',
+      },
+    },
+    standardDmgInst: {
+      sheet: 'Hugo',
+      name: 'standardDmgInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'Hugo',
+        attribute: 'ice',
+        name: 'standardDmgInst',
+      },
+    },
+  },
   Jane: {
     anomalyBuildupInst: {
       sheet: 'Jane',
@@ -2030,6 +2097,56 @@ export const formulas = {
       },
     },
   },
+  Vivian: {
+    anomalyBuildupInst: {
+      sheet: 'Vivian',
+      name: 'anomalyBuildupInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomBuildup',
+        sheet: 'Vivian',
+        attribute: 'ether',
+        name: 'anomalyBuildupInst',
+      },
+    },
+    anomalyDmgInst: {
+      sheet: 'Vivian',
+      name: 'anomalyDmgInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomalyDmg',
+        sheet: 'Vivian',
+        attribute: 'ether',
+        damageType1: 'anomaly',
+        name: 'anomalyDmgInst',
+      },
+    },
+    dazeInst: {
+      sheet: 'Vivian',
+      name: 'dazeInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'Vivian',
+        name: 'dazeInst',
+      },
+    },
+    standardDmgInst: {
+      sheet: 'Vivian',
+      name: 'standardDmgInst',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'Vivian',
+        attribute: 'ether',
+        name: 'standardDmgInst',
+      },
+    },
+  },
   Yanagi: {
     anomalyBuildupInst: {
       sheet: 'Yanagi',
@@ -2615,6 +2732,30 @@ export const buffs = {
       },
     },
   },
+  FlightOfFancy: {
+    anomBuildup_: {
+      sheet: 'FlightOfFancy',
+      name: 'anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'FlightOfFancy',
+        name: 'anomBuildup_',
+      },
+    },
+    etherDmg_anomProf: {
+      sheet: 'FlightOfFancy',
+      name: 'etherDmg_anomProf',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomProf',
+        sheet: 'FlightOfFancy',
+        name: 'etherDmg_anomProf',
+      },
+    },
+  },
   FreedomBlues: {
     anomBuildupRes_: {
       sheet: 'FreedomBlues',
@@ -2987,6 +3128,30 @@ export const buffs = {
         q: 'atk_',
         sheet: 'MarcatoDesire',
         name: 'atk_',
+      },
+    },
+  },
+  MyriadEclipse: {
+    crit_dmg_: {
+      sheet: 'MyriadEclipse',
+      name: 'crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'MyriadEclipse',
+        name: 'crit_dmg_',
+      },
+    },
+    deathSentence_defIgn_: {
+      sheet: 'MyriadEclipse',
+      name: 'deathSentence_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'defIgn_',
+        sheet: 'MyriadEclipse',
+        name: 'deathSentence_defIgn_',
       },
     },
   },
