@@ -77,7 +77,7 @@ jobs:
       - name: Check Formatting (Changed Files)
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          yarn biome ci --changed
+          yarn biome ci --changed --no-errors-on-unmatched
       - name: Check Formatting
         if: ${{ github.event_name != 'pull_request' }}
         run: |
