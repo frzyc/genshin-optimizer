@@ -1,10 +1,11 @@
 name: New ZO Release
+run-name: New ZO Release ${{ inputs.version }}
 
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version'
+        description: 'Version. Provide as `xx.yy.zz`. The `+zo` metadata suffix will be automatically added for you.'
         type: string
 
 jobs:
