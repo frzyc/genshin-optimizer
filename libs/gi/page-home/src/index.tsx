@@ -1,8 +1,9 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { AdResponsive } from '@genshin-optimizer/gi/ui'
+import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
+import { AdResponsive, LOOTBAR_LINK, lootbar } from '@genshin-optimizer/gi/ui'
 import DescriptionIcon from '@mui/icons-material/Description'
 import {
   Box,
+  CardActionArea,
   CardContent,
   CardHeader,
   Divider,
@@ -50,6 +51,7 @@ export default function PageHome() {
           sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
         >
           <IntroCard />
+          <LootbarCard />
           <InventoryCard />
           <VidGuideCard />
           <PatchNotesCard />
@@ -60,6 +62,7 @@ export default function PageHome() {
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
       <IntroCard />
+      <LootbarCard />
       <QuickLinksCard />
       <InventoryCard />
       <ResinCard />
@@ -91,6 +94,24 @@ function IntroCard() {
           </Trans>
         </Typography>
       </CardContent>
+    </CardThemed>
+  )
+}
+function LootbarCard() {
+  return (
+    <CardThemed>
+      <CardActionArea
+        LinkComponent={Link}
+        href={LOOTBAR_LINK}
+        target="_blank"
+        sx={{ margin: 'auto' }}
+      >
+        <Box
+          component={NextImage ? NextImage : 'img'}
+          src={lootbar}
+          sx={{ width: '100%', height: 'auto', marginBottom: '-7px' }}
+        />
+      </CardActionArea>
     </CardThemed>
   )
 }

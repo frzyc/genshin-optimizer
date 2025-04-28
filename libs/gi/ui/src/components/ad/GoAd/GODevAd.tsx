@@ -1,11 +1,14 @@
-import { Typography } from '@mui/material'
+import { Link, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
-import { toDiscord } from '../util'
+import { DISCORD_LINK } from '../util'
 
 export function GODevAd({ children }: { children: ReactNode }) {
   return (
     <Box
+      component={Link}
+      href={DISCORD_LINK}
+      target="_blank"
       sx={{
         position: 'relative',
         display: 'flex',
@@ -17,7 +20,6 @@ export function GODevAd({ children }: { children: ReactNode }) {
         minHeight: '100%',
         minWidth: '100%',
       }}
-      onClick={toDiscord}
     >
       {children}
       <Typography variant="h5" color="crimson">
