@@ -105,9 +105,11 @@ function LootbarCard() {
         href={LOOTBAR_LINK}
         target="_blank"
         sx={{ margin: 'auto' }}
+        aria-label="Visit Lootbar.gg for Genshin Impact top-ups"
       >
         <Box
           component={NextImage ? NextImage : 'img'}
+          alt="Lootbar.gg Banner"
           src={lootbar}
           sx={{ width: '100%', height: 'auto', marginBottom: '-7px' }}
         />

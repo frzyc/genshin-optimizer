@@ -16,7 +16,6 @@ export function LootbarAd({ children }: { children: ReactNode }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        cursor: 'pointer',
         minHeight: '100%',
         minWidth: '100%',
         height: '100%',
@@ -27,11 +26,14 @@ export function LootbarAd({ children }: { children: ReactNode }) {
       <Box
         component={NextImage ? NextImage : 'img'}
         src={lootbar}
-        maxWidth="100%"
-        maxHeight="100%"
-        width="100%"
-        height="100%"
-        sx={{ objectFit: 'contain' }}
+        sx={{
+          objectFit: 'contain',
+          maxWidth: '100%',
+          maxHeight: '100%',
+          width: '100%',
+          height: '100%',
+        }}
+        alt="Lootbar.gg advertisement"
       />
     </Box>
   )
