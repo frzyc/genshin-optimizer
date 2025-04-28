@@ -1,5 +1,6 @@
 import '@genshin-optimizer/gi/theme'
 import './App.scss'
+export * from './assets'
 export * from './components'
 export * from './consts'
 export * from './context'
