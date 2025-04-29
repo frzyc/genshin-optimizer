@@ -105,13 +105,13 @@
   "passive1": {
     "name": "Surcharge offensive",
     "description": {
-      "0": "Lorsqu'Aloy est sous l'effet d'une bobine de <strong>Frozen Wilds</strong>, son ATQ augmente de 16 %, tandis que celle des personnages de l'équipe à proximité augmente de 8 %. Cet effet dure 10 s."
+      "0": "Lorsque Aloy est sous l'effet d'une bobine de <strong>Frozen Wilds</strong>, son ATQ augmente de 16 %, tandis que celle des personnages de l'équipe à proximité augmente de 8 %. Cet effet dure 10 s."
     }
   },
   "passive2": {
     "name": "Frappe puissante",
     "description": {
-      "0": "Lorsqu'Aloy est dans l'état Glace précipitée accordé par <strong>Frozen Wilds</strong>, son <cryo>bonus de DGT Cryo</cryo> augmente de 3,5 % toutes les secondes. Son <cryo>bonus de DGT Cryo</cryo> peut augmenter de cette manière jusqu'à 35 %."
+      "0": "Lorsque Aloy est dans l'état Glace précipitée accordé par <strong>Frozen Wilds</strong>, son <cryo>bonus de DGT Cryo</cryo> augmente de 3,5 % toutes les secondes. Son <cryo>bonus de DGT Cryo</cryo> peut augmenter de cette manière jusqu'à 35 %."
     }
   },
   "passive3": {

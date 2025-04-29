@@ -24,6 +24,7 @@
   "1402": "TroutAmandine",
   "1501": "GrilledFishInMintSauce",
   "1502": "CupOGrainfruit",
+  "1503": "MagmaEggs",
   "2001": "FlamingRedBolognese",
   "2002": "SweetMadame",
   "2003": "NorthernSmokedChicken",
@@ -88,6 +89,8 @@
   "2504": "GrainfruitChips",
   "2505": "BBQBeefHeartSkewers",
   "2506": "GrainfruitWrap",
+  "2507": "PuffedGrainfruitBars",
+  "2508": "CheesyMushroomSkewer",
   "3001": "CallaLilySeafoodSoup",
   "3002": "SautedMatsutake",
   "3003": "ColdCutPlatter",
@@ -196,6 +199,7 @@
   "3508": "SurfTurfAndPerch",
   "3509": "VolcanoCake",
   "3510": "MagmicOde",
+  "3511": "FruitsAplenty",
   "3901": "CrispCroissantCombo",
   "3902": "DelightsOfWondrousWanderings",
   "4001": "MoonPie",
@@ -222,7 +226,9 @@
   "4503": "PuffPops",
   "4504": "MystiqueSoup",
   "4505": "SingYourHeartOut",
+  "4506": "HarvestsBoon",
   "4901": "Blubbercream",
   "4902": "GoldenApplePastry",
-  "5101": "AdeptusTemptation"
+  "5101": "AdeptusTemptation",
+  "5502": "CheesyCrabHotpot"
 }

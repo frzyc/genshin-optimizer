@@ -1,10 +1,11 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { nameToKey } from '@genshin-optimizer/common/util'
 import { TextMapEN } from '../../TextMapUtil'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 export type MaterialTypeKey =
   | null
+  | 'MATERIAL_NONE'
   | 'MATERIAL_FAKE_ABSORBATE'
   | 'MATERIAL_ADSORBATE' // Iron Coin only?
   | 'MATERIAL_CONSUME' // Silgils, cooking recipes, consumable recipes
@@ -61,8 +62,8 @@ type MaterialExcelConfigData = {
   picPath: string[]
 }
 
-const materialExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/MaterialExcelConfigData.json')
+const materialExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/MaterialExcelConfigData.json'
 ) as MaterialExcelConfigData[]
 //character data
 const materialExcelConfigData = Object.fromEntries(

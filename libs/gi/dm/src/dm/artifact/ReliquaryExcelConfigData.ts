@@ -3,7 +3,7 @@ import { nameToKey } from '@genshin-optimizer/common/util'
 import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { DArtifactSlotKey } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type ReliquaryExcelConfigData = {
   equipType: DArtifactSlotKey //"EQUIP_BRACER",
@@ -41,9 +41,9 @@ type ReliquaryExcelConfigData = {
   rank: number //10,
   gadgetId: number //70600041
 }
-const reliquaryExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/ReliquaryExcelConfigData.json')
-) as ReliquaryExcelConfigData[]
+const reliquaryExcelConfigDataSrc: ReliquaryExcelConfigData[] = readExcelJSON(
+  'ExcelBinOutput/ReliquaryExcelConfigData.json'
+)
 
 const reliquaryExcelConfigData = Object.fromEntries(
   reliquaryExcelConfigDataSrc.map((data) => [data.id, data])

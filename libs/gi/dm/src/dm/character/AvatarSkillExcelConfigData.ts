@@ -1,5 +1,5 @@
 import type { InternalElement } from '../../mapping'
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type AvatarSkillExcelConfigData = {
   id: number // 10343,
@@ -24,9 +24,10 @@ type AvatarSkillExcelConfigData = {
   buffIcon: string //"",
   proudSkillGroupId: number //3439,
   globalValueKey: string //""
+  costStamina?: number
 }
-const avatarSkillExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarSkillExcelConfigData.json')
+const avatarSkillExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/AvatarSkillExcelConfigData.json'
 ) as AvatarSkillExcelConfigData[]
 const avatarSkillExcelConfigData = Object.fromEntries(
   avatarSkillExcelConfigDataSrc.map((data) => [data.id, data])

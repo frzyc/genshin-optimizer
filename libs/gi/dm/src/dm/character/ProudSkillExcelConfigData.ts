@@ -1,4 +1,4 @@
-import { readDMJSON } from '../../util'
+import { readExcelJSON } from '../../util'
 
 type CostItem = {
   id: number
@@ -14,7 +14,7 @@ export type ProudSkillExcelConfigData = {
   descTextMapHash: number //59436107,
   unlockDescTextMapHash: number //4234322242,
   icon: string //"UI_Talent_S_Noel_05",
-  costItems: CostItem[]
+  costItems?: CostItem[]
   // [
   //   {},
   //   {},
@@ -52,7 +52,7 @@ export type ProudSkillExcelConfigData = {
   //     {},
   //     {}
   // ],
-  paramList: number[]
+  paramList?: number[]
   // [
   //     0.30000001192092896,
   //     4.0,
@@ -75,8 +75,8 @@ export type ProudSkillExcelConfigData = {
   //     0.0
   // ]
 }
-const proudSkillExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/ProudSkillExcelConfigData.json')
+const proudSkillExcelConfigDataSrc = readExcelJSON(
+  'ExcelBinOutput/ProudSkillExcelConfigData.json'
 ) as ProudSkillExcelConfigData[]
 
 const proudSkillExcelConfigData = {} as {

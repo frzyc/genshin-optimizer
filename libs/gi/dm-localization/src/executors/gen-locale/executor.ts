@@ -85,7 +85,13 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         energySkill: burst,
         skills: [normal, skill, sprint],
         talents,
-        inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+        inherentProudSkillOpens: [
+          passive1,
+          passive2,
+          passive3,
+          passive4,
+          passive,
+        ],
       } = depot
       layeredAssignment(
         mapHashData,
@@ -162,7 +168,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         ][0].paramDescList.map((id) => [id, 'skillParamEncoding'])
       )
 
-      if (sprint) {
+      if (sprint && avatarSkillExcelConfigData[sprint].costStamina) {
         layeredAssignment(
           mapHashData,
           [...keys, 'sprint', 'name'],
@@ -228,7 +234,24 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           ]
         )
       }
-      //seems to be only used by SangonomiyaKokomi
+      if (passive4?.proudSkillGroupId) {
+        layeredAssignment(
+          mapHashData,
+          [...keys, 'passive', 'name'],
+          proudSkillExcelConfigData[passive4.proudSkillGroupId][0]
+            .nameTextMapHash
+        )
+        layeredAssignment(
+          mapHashData,
+          [...keys, 'passive', 'description'],
+          [
+            proudSkillExcelConfigData[passive4.proudSkillGroupId][0]
+              .descTextMapHash,
+            'paragraph',
+          ]
+        )
+      }
+      //seems to be only used by SangonomiyaKokomi and Natlan Night Realm's Gift Passive
       if (passive?.proudSkillGroupId) {
         layeredAssignment(
           mapHashData,
@@ -261,7 +284,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       })
     }
 
-    if (candSkillDepotIds.length) {
+    if (candSkillDepotIds?.length) {
       //Traveler
       const [_1, pyro, hydro, anemo, _5, geo, electro, dendro] =
         candSkillDepotIds
@@ -342,7 +365,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
   //generate the MapHashes for localization for weapons
   Object.entries(weaponExcelConfigData).forEach(([weaponid, weaponData]) => {
     const { nameTextMapHash, descTextMapHash, skillAffix } = weaponData
-    const [ascensionDataId] = skillAffix
+    const [ascensionDataId] = skillAffix ?? []
     const ascData =
       ascensionDataId && equipAffixExcelConfigData[ascensionDataId]
     const weaponKey = weaponIdMap[weaponid]
