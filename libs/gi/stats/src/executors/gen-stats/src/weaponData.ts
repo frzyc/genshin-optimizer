@@ -17,7 +17,7 @@ import {
 import * as quantumCatalystData from './QuantumCatalyst/data.json'
 
 type WeaponProp = {
-  type: StatKey
+  type?: StatKey
   base: number
   curve: WeaponGrowCurveKey
 }
@@ -25,8 +25,8 @@ export type WeaponDataGen = {
   weaponType: WeaponTypeKey
   rarity: 1 | 2 | 3 | 4 | 5
   mainStat: WeaponProp
-  subStat?: WeaponProp | undefined
-  lvlCurves: { key: StatKey; base: number; curve: WeaponGrowCurveKey }[]
+  subStat: WeaponProp | undefined
+  lvlCurves: { key?: StatKey; base: number; curve: WeaponGrowCurveKey }[]
   refinementBonus: { [key in StatKey]?: number[] }
   ascensionBonus: { [key in StatKey]?: number[] }
 }
