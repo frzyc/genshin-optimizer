@@ -4,4 +4,8 @@ export const hakushinArtis = [
   'FinaleOfTheDeepGalleries',
   'LongNightsOath',
 ] as const
-export const hakushinWeapons = ['VividNotions', 'SymphonistOfScents', 'SequenceOfSolitude'] as const
+export const hakushinWeapons = [
+  'VividNotions',
+  'SymphonistOfScents',
+  'SequenceOfSolitude',
+] as const
