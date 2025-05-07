@@ -52,7 +52,7 @@ export default function characterMatData(): CharacterMatDatas {
           skill.level,
           {
             items: skill.costItems
-              .filter((item) => {
+              ?.filter((item) => {
                 if ('id' in item && 'count' in item) {
                   return true
                 }
@@ -96,7 +96,7 @@ export default function characterMatData(): CharacterMatDatas {
         {
           cost: asc.scoinCost,
           items: asc.costItems
-            .filter((item) => {
+            ?.filter((item) => {
               if ('id' in item && 'count' in item) {
                 return true
               }

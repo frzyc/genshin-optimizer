@@ -1,0 +1,160 @@
+{
+  "name": "Ifá",
+  "title": "El Guiado por Vientos Errantes",
+  "description": "Un veterinario de la Tribu Plumaflora que ama la compañía de personas, animales y demás seres vivos.",
+  "constellationName": "Catena Opele",
+  "auto": {
+    "name": "Ritual disipavientos",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques, los cuales infligen <anemo>Daño Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante y dispara hacia delante para infligir <anemo>Daño Anemo en el AdE</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Aeroprevención de enfermedades",
+    "description": {
+      "0": "¡Colegas a la batalla! Ifá llama a Cacucu para que luche junto a él.",
+      "1": "Tras usar esta habilidad, Ifá obtiene 80 pts. de noctambulismo y entra en el estado de <strong>bendición noctámbula</strong>. Mientras este estado está activo, Ifá flota con la ayuda de Cacucu y, al realizar un Ataque Normal, ejecuta un <strong>disparo auxiliar</strong> de distintas formas dependiendo de si se pulsa una vez o se mantiene pulsado. Con el disparo auxiliar, Ifá lanza una bala medicinal que regenera Vida a todos los miembros del equipo.",
+      "2": "<br/>",
+      "3": "Además, mientras la bendición noctámbula esté activa, al mantener pulsado para liberar la Habilidad Elemental, <strong>Aeroprevención de enfermedades</strong>, en su lugar, Ifá ejecutará un Ataque Descendente de naturaleza noctámbula. Al dejar de mantener pulsado, el Ataque Descendente puede ser interrumpido e Ifá permanecerá en el aire. La bendición noctámbula terminará cuando el Ataque Descendente sea ejecutado."
+    },
+    "skillParams": {
+      "0": "Daño de bala medicinal",
+      "1": "Curación de bala medicinal al golpear",
+      "2": "Límite de pts. de noctambulismo",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Campo de sedación complejo",
+    "description": {
+      "0": "Dispara un sedante terapéutico contra un enemigo (que esté agresivo). Al golpear al objetivo, el sedante explota y crea un campo de viento amarrador que atrae a los objetos y enemigos cercanos e inflige <anemo>Daño Anemo en el AdE</anemo> de naturaleza noctámbula.",
+      "1": "Cuando el sedante terapéutico golpea a un enemigo afectado por <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> o <electro>Electro</electro>, le aplicará una <strong>marca tranquilizante</strong>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de marca tranquilizante",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Visión de campo médica",
+    "description": {
+      "0": "Cuando Ifá está en el estado de bendición noctámbula, obtiene 1 pt. de <strong>fundamentos de rescate</strong> por cada pt. de noctambulismo que tengan todos los miembros del equipo en conjunto. Los fundamentos de rescate aumentan el daño de las reacciones de Torbellino y Electrocargado de los personajes cercanos del equipo."
+    }
+  },
+  "passive2": {
+    "name": "Acuerdo de ayuda mutua",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo causa una explosión noctámbula, la Maestría Elemental de Ifá aumenta en 80 pts. durante 10 s."
+    }
+  },
+  "passive3": {
+    "name": "Gracia de la noche: Rescate de emergencia",
+    "description": {
+      "0": "Cuando no tenga más pts. de noctambulismo, Ifá consumirá flogisto para conservar la bendición noctámbula.",
+      "1": "Al encontrarse en una zona con alguna mecánica de flogisto de Natlan, podrá utilizar “Transmisión noctambular: Ifá”. Cuando el personaje en uso esté a cierta altura en el aire, al cambiar a Ifá, este entrará en estado de bendición noctámbula y obtendrá 32 pts. de noctambulismo. Tu equipo solo puede activar Transmisión noctambular una vez cada 10 s."
+    }
+  },
+  "passive": {
+    "name": "Vendaje térmico de compresión",
+    "description": {
+      "0": "Al encontrarse en una zona con alguna mecánica de flogisto de Natlan, si tu personaje en uso del equipo o el saurio al que has transferido tu alma tienen menos del 40% de Vida, Ifá consumirá 10 pts. de flogisto para regenerarles un 40% de Vida. Esto solo puede ocurrir una vez cada 10 s y no tendrá efecto en dominios, Dominios de la cruzada o la Espiral del Abismo."
+    }
+  },
+  "constellation1": {
+    "name": "Elixir vitífero",
+    "description": {
+      "0": "Al golpear a un enemigo con un <strong>disparo auxiliar</strong>, Ifá recupera 6 pts. de Energía Elemental. Solo se puede recuperar Energía Elemental una vez cada 8 s de esta manera."
+    }
+  },
+  "constellation2": {
+    "name": "Espíritu de oración balística",
+    "description": {
+      "0": "Cuando Ifá está en el estado de bendición noctámbula, obtiene 4 pts. de <strong>fundamentos de rescate</strong> por cada pt. de noctambulismo que tengan todos los miembros del equipo en conjunto por encima de los 60 pts.",
+      "1": "Además, aumenta en 50 el límite de pts. de fundamentos de rescate que puede tener Ifá.",
+      "2": "Es necesario desbloquear el talento pasivo <strong>Visión de campo médica</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Refutación de la discusión con la noche",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Aeroprevención de enfermedades</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Permutación de cuerpo descompuesto",
+    "description": {
+      "0": "La duración del campo de viento amarrador creado con la Habilidad Definitiva, <strong>Campo de sedación complejo</strong>, aumenta a 3 s.",
+      "1": "Además, tras usar la Habilidad Definitiva, <strong>Campo de sedación complejo</strong>, la Maestría Elemental de Ifá aumenta en 100 pts. durante 15 s."
+    }
+  },
+  "constellation5": {
+    "name": "Juramento de coexistencia universal",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Campo de sedación complejo</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Promesa del nudo plumífero",
+    "description": {
+      "0": "Al mantener pulsado para ejecutar un <strong>disparo auxiliar</strong>, Ifá tiene un 50% de probabilidad de disparar una bala medicinal adicional que inflige Daño Anemo en una cantidad equivalente al 120% de su ATQ. Este daño se considera daño de Ataque Normal.",
+      "1": "Además, mientras no está en combate, el consumo de pts. de noctambulismo y flogisto de la bendición noctámbula de Ifá se reduce en un 20%."
+    }
+  }
+}

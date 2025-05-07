@@ -1,0 +1,185 @@
+{
+  "name": "Iansan",
+  "title": "Forgée dans la roche volcanique",
+  "description": "Entraîneuse principale du club de fitness du Collectif de l'abondance et nutritionniste réputée de Natlan.",
+  "constellationName": "Carnotaurus",
+  "auto": {
+    "name": "Pointe lestée",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis en chemin."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      },
+      "nightsoul": {
+        "0": "<strong>Bénédiction noctâme : Volée tonitruante</strong>",
+        "1": "Pendant sa bénédiction noctâme, l'attaque chargée d'Iansan lui fait effectuer une courageuse volée tonitruante qui consomme de l'endurance, afin de piétiner violemment la zone en avant et d'infliger des <electro>DGT Électro de zone</electro> infusés de noctâme."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "DGT volée tonitruante",
+      "5": "Coût d'endurance (Attaque chargée et volée tonitruante)",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ruée fulminante",
+    "description": {
+      "0": "Iansan se rue en avant sur une certaine distance, infligeant des <electro>DGT Électro</electro> infusés de noctâme aux ennemis en chemin.",
+      "1": "Après utilisation, Iansan récupère 54 pts de noctâme et entre dans l'état Bénédiction noctâme. Pendant 5 s après cette ruée, utiliser une attaque normale avec un appui simple lui permet de déclencher rapidement le piétinement violent d'une volée tonitruante sans consommer d'endurance.",
+      "2": "<br/>",
+      "3": "<strong>Bénédiction noctâme : Iansan</strong>",
+      "4": "La bénédiction noctâme d'Iansan consomme de façon continue ses points de noctâme et prend fin une fois les points épuisés ou lors d'une nouvelle utilisation de la compétence. L'état Bénédiction noctâme d'Iansan possède les propriétés spéciales suivantes :",
+      "5": [
+        " La VIT de déplacement d'Iansan augmente.",
+        " En utilisant le sprint avec un appui long, Iansan déclenche le mode « Fulmination rapide », ce qui augmente grandement sa VIT de déplacement de façon temporaire. Ce mode permet également à Iansan d'utiliser la topographie du terrain pour bondir dans les airs ou de consommer des points de noctâme supplémentaires pour se déplacer sur l'eau et sur le phlogistique liquide sans en subir les DGT."
+      ],
+      "6": "<br/>",
+      "7": "<i>« Plus vite, plus fort ! C'est à ça que sert tout ce dur labeur ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Limite de noctâme",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Triple principe de la force",
+    "description": {
+      "0": "La « force » d'Iansan permet à son piétinement de fracturer la terre, infligeant des <electro>DGT Électro de zone</electro> infusés de noctâme avant qu'elle ne sorte sa jauge d'énergie cinétique en édition limitée dédiée à la musculation.",
+      "1": "Après utilisation, Iansan obtient 15 pts de noctâme et entre dans l'état Bénédiction noctâme.",
+      "2": "La bénédiction noctâme d'Iansan prend fin lorsque la jauge d'énergie cinétique quitte le champ de bataille.",
+      "3": "<br/>",
+      "4": "<strong>Jauge d'énergie cinétique</strong>",
+      "5": "La jauge suit les déplacements de votre personnage déployé et augmente son ATQ de différentes manières selon les points de noctâme d'Iansan :",
+      "6": [
+        " Avec moins de 42 pts, Iansan accorde un bonus d'ATQ qui dépend de son noctâme et de son ATQ.",
+        " Avec 42 pts ou plus, la jauge d'énergie cinétique passe en mode « Soutien Ardent ! », dans lequel elle accorde un meilleur bonus d'ATQ qui dépend de son ATQ."
+      ],
+      "7": "De plus, la jauge enregistre la distance parcourue par votre personnage déployé (hormis Iansan) tant qu'elle est active, afin de restaurer les points de noctâme d'Iansan toutes les secondes selon la distance parcourue pendant la seconde précédente.",
+      "8": "La jauge d'énergie cinétique disparaît lorsque la bénédiction noctâme d'Iansan prend fin, ou après 1 s si Iansan n'est pas dans un combat. Pendant que la jauge est active, la bénédiction noctâme d'Iansan ne prend pas fin lorsque cette dernière n'est pas déployée.",
+      "9": "<br/>",
+      "10": "<i>« La force n'est pas une question de talent naturel. La force naît d'une pratique incessante. La force doit être utilisée correctement. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Taux de conversion d'ATQ (Noctâme élevé)",
+      "2": "Taux de conversion d'ATQ (Noctâme faible)",
+      "3": "Limite de bonus d'ATQ",
+      "4": "Durée",
+      "5": "Durée (Hors combat)",
+      "6": "Temps de recharge",
+      "7": "Énergie élémentaire",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Formation de résistance améliorée",
+    "description": {
+      "0": "Lorsque sa volée tonitruante a touché un ennemi, Iansan obtient l'effet Mouvement précis pendant 15 s.",
+      "1": "Pendant la durée de l'effet, l'ATQ d'Iansan augmente de 20 % et elle récupère 1 pt de noctâme supplémentaire lorsque la jauge d'énergie cinétique du déchaînement élémentaire <strong>Triple principe de la force</strong> restaure du noctâme. De plus, si votre personnage déployé a consommé ou restauré des points de noctâme, Iansan récupérera 4 pts de noctâme supplémentaires au lieu de 1 la prochaine fois qu'elle restaure son noctâme avec sa jauge d'énergie cinétique, cet effet pouvant être déclenché une fois toutes les 2,8 s.",
+      "2": "L'effet Mouvement précis disparaît lorsque la bénédiction noctâme d'Iansan prend fin."
+    }
+  },
+  "passive2": {
+    "name": "Test de gradient cinétique",
+    "description": {
+      "0": "Iansan obtient l'effet Étirement d'échauffement pendant 10 s lorsqu'un membre de l'équipe à proximité déclenche une éruption noctâme.",
+      "1": "Lorsque Iansan restaure au moins 1 pt de noctâme pendant cet effet, elle restaure également les PV de votre personnage déployé d'une valeur équivalant à 60 % de son ATQ, cet effet pouvant être déclenché une fois toutes les 2,8 s."
+    }
+  },
+  "passive3": {
+    "name": "Don de la nuit : Transmission vigoureuse",
+    "description": {
+      "0": "Après avoir épuisé ses points de noctâme alors qu'elle est déployée, Iansan change pour consommer du phlogistique afin de maintenir sa bénédiction noctâme.",
+      "1": "Dans une zone de Natlan avec des mécanismes phlogistiques, la transmission noctâme « Iansan » peut être utilisée. Lorsque le personnage déployé sprinte, est en plein mouvement provoqué par une aptitude particulière ou est à une certaine hauteur dans les airs, le déploiement d'Iansan déclenche l'effet suivant : Iansan entre dans l'état Bénédiction noctâme et obtient 25 pts de noctâme. La transmission noctâme peut être déclenchée une fois toutes les 10 s par votre équipe.",
+      "2": "Dans une zone de Natlan avec des mécanismes phlogistiques, Iansan ne subit pas de DGT de chute lorsqu'elle utilise les différences de terrain pour sauter."
+    }
+  },
+  "passive": {
+    "name": "Programme d'équilibrage calorique",
+    "description": {
+      "0": "Dans une zone de Natlan avec des mécanismes phlogistiques, tomber de plus de 50 % de phlogistique à moins de 50 % permet de restaurer 10 pts de phlogistique, cet effet pouvant être déclenché une fois toutes les 10 s."
+    }
+  },
+  "constellation1": {
+    "name": "Le plus dur, c'est le début !",
+    "description": {
+      "0": "Lorsque Iansan bénéficie d'une bénédiction noctâme en combat, elle récupère 15 pts d'énergie élémentaire à chaque fois qu'elle consomme 6 pts de noctâme. Cet effet peut être déclenché une fois toutes les 18 s."
+    }
+  },
+  "constellation2": {
+    "name": "Le plus dangereux, c'est la paresse !",
+    "description": {
+      "0": "Lors de l'utilisation du déchaînement élémentaire <strong>Triple principe de la force</strong>, Iansan obtient également l'effet Mouvement précis de son aptitude passive « Formation de résistance améliorée » pendant 15 s. De plus, l'ATQ de votre personnage déployé augmente de 30 % si Iansan fait partie de l'équipe mais n'est pas déployée pendant la durée de l'effet Mouvement précis. L'aptitude passive « Formation de résistance améliorée » doit être déjà débloquée."
+    }
+  },
+  "constellation3": {
+    "name": "Planification alimentaire scientifique",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Ruée fulminante</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Lentement mais sûrement, c'est la clé !",
+    "description": {
+      "0": "Tant que sa jauge d'énergie cinétique est active, Iansan obtient 2 cumuls de force inspirante lorsque votre personnage déployé (hormis Iansan) a utilisé un déchaînement élémentaire, les cumuls durant jusqu'à ce que la jauge quitte le terrain et chaque jauge ne pouvant déclencher cet effet qu'une seule fois. Lorsque Iansan restaure son noctâme grâce à sa jauge d'énergie cinétique, elle consomme un cumul de force inspirante pour obtenir 4 pts de noctâme supplémentaires.",
+      "1": "De plus, si le noctâme restauré par sa jauge dépasse la quantité maximum qu'elle peut recevoir, Iansan récupérera 50 % de l'excès la prochaine fois qu'elle restaure son noctâme avec sa jauge d'énergie cinétique."
+    }
+  },
+  "constellation5": {
+    "name": "Les limites, c'est fait pour être repoussé !",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Triple principe de la force</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Enseignements du Collectif de l'abondance",
+    "description": {
+      "0": "La durée de la jauge d'énergie cinétique augmente de 3 s.",
+      "1": "De plus, si la quantité restaurée dépasse la quantité maximum qu'Iansan peut recevoir lorsqu'elle déclenche un effet de restauration de noctâme, elle obtient l'effet Effort extrême, ce qui augmente les DGT infligés par votre personnage déployé de 25 % pendant 3 s."
+    }
+  }
+}

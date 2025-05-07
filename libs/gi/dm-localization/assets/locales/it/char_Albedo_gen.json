@@ -4,7 +4,7 @@
   "description": "Un genio conosciuto come Kreideprinz, è capo alchimista e capitano della squadra investigativa dei Cavalieri di Favonius.",
   "constellationName": "Princeps Cretaceus",
   "auto": {
-    "name": "Tecnica di Favonius - Weiss",
+    "name": "Weiss",
     "fields": {
       "normal": {
         "0": "<strong>Attacco normale</strong>",

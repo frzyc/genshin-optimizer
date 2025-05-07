@@ -1,0 +1,185 @@
+{
+  "name": "Iansan",
+  "title": "Tempered in Molten Stone",
+  "description": "Kepala pelatih di klub fitnes suku Berlimpah Jaya, merupakan seorang ahli gizi yang terkenal di Natlan.",
+  "constellationName": "Carnotaurus",
+  "auto": {
+    "name": "Weighted Spike",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalur terjangan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      },
+      "nightsoul": {
+        "0": "<strong>Nightsoul State: Swift Stormflight</strong>",
+        "1": "Saat berada dalam status Nightsoul's Blessing: Charged Attack Iansan akan berubah menjadi Swift Stormflight yang kuat, mengonsumsi sejumlah Stamina untuk menginjak tanah dengan kuat dan mengakibatkan Nightsoul-aligned <electro>Electro DMG Area</electro>."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "DMg Swift Stormflight",
+      "5": "Konsumsi Stamina Charged Attack & Swift Stormflight",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Thunderbolt Rush",
+    "description": {
+      "0": "Iansan menerjang maju dan mengakibatkan Nightsoul-aligned <electro>Electro DMG</electro> terhadap seluruh musuh dalam jalur terjangannya.",
+      "1": "Setelah dilancarkan, Iansan akan memulihkan 54 poin Nightsoul dan memasuki status Nightsoul's Blessing. Menekan Normal Attack dalam kurun waktu 5 detik setelah terjangannya berakhir akan membuat Iansan melancarkan satu injakan Swift Stormflight yang tidak mengonsumsi Stamina.",
+      "2": "<br/>",
+      "3": "<strong>Nightsoul's Blessing: Iansan</strong>",
+      "4": "Terus mengonsumsi poin Nightsoul. Saat poin Nightsoul habis dikonsumsi atau saat skill ini dilancarkan sekali lagi, maka Nightsoul's Blessing Iansan akan berakhir. Status Nightsoul's Blessing memiliki karakteristik berikut:",
+      "5": [
+        "Meningkatkan Movement SPD Iansan.",
+        "Menahan tombol \"Lari\" akan membuat Iansan memasuki mode Rushing Thunderbolt yang meningkatkan Movement SPD Iansan secara signifikan dalam waktu singkat. Dalam mode ini, Iansan dapat menggunakan perbedaan medan untuk melompat, atau mengonsumsi poin Nightsoul tambahan untuk bergerak di atas permukaan air atau Phlogiston cair, dan kebal terhadap DMG dari Phlogiston cair."
+      ],
+      "6": "<br/>",
+      "7": "<i>\"Lebih cepat! Lebih kuat! Itulah fungsi latihan selama ini!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Batas Poin Nightsoul",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "The Three Principles of Power",
+    "description": {
+      "0": "Iansan menginjakkan kakinya ke tanah atas nama \"Kekuatan\" untuk mengakibatkan Nightsoul-aligned <electro>Electro DMG Area</electro>, lalu mengeluarkan \"Kinetic Energy Scale Edisi Terbatas (Khusus Fitnes)\" miliknya.",
+      "1": "Saat dilancarkan, Iansan akan mendapatkan 15 poin Nightsoul dan memasuki status Nightsoul's Blessing.",
+      "2": "Status Nightsoul's Blessing Iansan akan berakhir saat Kinetic Energy Scale keluar dari medan pertempuran.",
+      "3": "<br/>",
+      "4": "<strong>Kinetic Energy Scale</strong>",
+      "5": "Kinetic Energy Scale akan mengikuti gerakan Karakter dan meningkatkan ATK Karakter aktifmu dengan cara yang berbeda-beda berdasarkan poin Nightsoul Iansan:",
+      "6": [
+        "Jika poin Nightsoul Iansan kurang dari 42 poin, akan mendapatkan bonus ATK berdasarkan poin Nightsoul dan ATK Iansan.",
+        "Jika Iansan memiliki setidaknya 42 poin Nightsoul, Kinetic Energy Scale akan beralih ke mode \"Ardent Support!\", lalu memberikan bonus ATK yang lebih tinggi berdasarkan ATK Iansan."
+      ],
+      "7": "Selain itu, selama Kinetic Energy Scale aktif, ia akan mencatat jarak gerakan Karakter aktif di dalam party (selain Iansan). Kemudian Kinetic Energy Scale akan memulihkan poin Nightsoul Iansan setiap detik berdasarkan jarak gerakan yang tercatat pada detik sebelumnya.",
+      "8": "Kinetic Energy Scale akan hilang saat status Nightsoul's Blessing Iansan berakhir. Kinetic Energy Scale akan hilang jika Karakter tidak berada dalam kondisi bertempur selama lebih dari 1 detik. Selama Kinetic Energy Scale masih ada, status Nightsoul's Blessing tidak akan berakhir meskipun Iansan tidak berada di medan pertempuran.",
+      "9": "<br/>",
+      "10": "<i>\"Kekuatan bukan bakat alami, kekuatan berasal dari latihan tanpa henti, dan kekuatan harus dimanfaatkan dengan tepat.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Rasio Konversi ATK Poin Nightsoul Tinggi",
+      "2": "Rasio Konversi ATK Poin Nightsoul Rendah",
+      "3": "Bonus ATK Maksimum",
+      "4": "Durasi",
+      "5": "Durasi Tidak dalam Status Bertempur",
+      "6": "Cooldown",
+      "7": "Konsumsi Energy",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Enhanced Resistance Training",
+    "description": {
+      "0": "Setelah Swift Stormflight mengenai musuh, akan mendapatkan efek Precise Movement selama 15 detik.",
+      "1": "Selama durasi ini, ATK Iansan meningkat 20%. Setiap kali Kinetic Energy Scale dari Elemental Burst <strong>The Three Principles of Power</strong> memulihkan poin Nightsoul, maka dia akan memulihkan 1 poin Nightsoul tambahan. Selain itu, setelah Karakter aktif di dalam party mengonsumsi atau memulihkan poin Nightsoul, maka poin Nightsoul tambahan yang didapat saat Kinetic Energy Scale memulihkan poin Nightsoul berikutnya akan bertambah menjadi 4 poin. Efek ini dapat terpicu sekali setiap 2,8 detik.",
+      "2": "Efek \"Precise Movement\" juga akan hilang setelah Nightsoul's Blessing Iansan berakhir."
+    }
+  },
+  "passive2": {
+    "name": "Kinetic Energy Gradient Test",
+    "description": {
+      "0": "Saat anggota party di sekitar memicu Nightsoul Burst, Iansan akan mendapatkan efek Warming Up selama 10 detik.",
+      "1": "Selama durasi ini, saat Iansan memulihkan setidaknya 1 poin Nightsoul, ia akan memulihkan HP Karakter aktif sebesar 60% ATK Iansan. Efek ini dapat terpicu sekali setiap 2,8 detik."
+    }
+  },
+  "passive3": {
+    "name": "Night Realm's Gift: Hard Work and Drive",
+    "description": {
+      "0": "Setelah poin Nightsoul habis terpakai, Iansan akan mengonsumsi Phlogiston untuk mempertahankan status Nightsoul's Blessing-nya.",
+      "1": "Saat ada area dengan Phlogiston Mechanic di Natlan, dapat melancarkan Nightsoul Transmission: Iansan. Saat Karakter aktif sedang berlari atau bergerak yang dikarenakan oleh Talenta tertentu, atau saat melayang di ketinggian tertentu, dan mengganti Karakter menjadi Iansan, akan memicu efek: Iansan akan memasuki status Nightsoul's Blessing dan mendapatkan 25 poin Nightsoul. Nightsoul Transmission party sendiri dapat terpicu sekali setiap 10 detik.",
+      "2": "Selain itu, saat ada area dengan Phlogiston Mechanic di Natlan, Iansan tidak akan menerima DMG jatuh saat melompat dengan memanfaatkan perbedaan medan."
+    }
+  },
+  "passive": {
+    "name": "Caloric Balancing Plan",
+    "description": {
+      "0": "Saat berada di area dengan Phlogiston Mechanic di Natlan, Iansan akan memulihkan 10 poin Phlogiston saat nilai Phlogiston berkurang dari lebih dari 50% ke kurang dari 50%. Efek ini dapat terpicu sekali setiap 10 detik."
+    }
+  },
+  "constellation1": {
+    "name": "Starting's Never Easy",
+    "description": {
+      "0": "Saat Iansan berada dalam kondisi bertempur dan dalam status Nightsoul's Blessing, Iansan akan memulihkan 15 poin Energy ke dirinya sendiri untuk setiap 6 poin Nightsoul yang dikonsumsi. Efek ini dapat terpicu sekali setiap 18 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Laziness is the Enemy!",
+    "description": {
+      "0": "Saat melancarkan Elemental Burst <strong>The Three Principles of Power</strong>, Iansan juga akan mendapatkan efek Precise Movement dari Talenta Pasif \"Enhanced Resistance Training\" selama 15 detik. Selain itu, saat Iansan ada di dalam party namun sedang tidak berada di medan pertempuran, efek Precise Movement juga akan meningkatkan 30% ATK Karakter aktif. Harus membuka Talenta Pasif \"Enhanced Resistance Training\" terlebih dahulu untuk mendapatkan efek di atas."
+    }
+  },
+  "constellation3": {
+    "name": "Scientific Diet Planning",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong>Thunderbolt Rush</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Slow and Steady Wins the Race",
+    "description": {
+      "0": "Saat Kinetic Energy Scale aktif, Iansan akan mendapatkan 2 lapis Surging Force setelah Karakter aktif party sendiri (selain Iansan) melancarkan Elemental Burst. Surging Force akan bertahan hingga Kinetic Energy Scale meninggalkan medan pertempuran dan hanya bisa didapatkan satu kali setiap kali memanggil Kinetic Energy Scale. Setiap kali Iansan memulihkan poin Nightsoul melalui Kinetic Energy Scale, maka ia akan mengonsumsi 1 lapis Surging Force untuk memulihkan 4 poin Nightsoul tambahan.",
+      "1": "Selain itu, jika pemulihan poin Nightsoul dari Kinetic Energy Scale berlebih, maka pemulihan poin Nightsoul dari Kinetic Energy Scale yang selanjutnya akan bertambah 50% sebesar jumlah yang berlebihan kali ini."
+    }
+  },
+  "constellation5": {
+    "name": "We Can Push it Further!",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>The Three Principles of Power</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Teachings of the Collective of Plenty",
+    "description": {
+      "0": "Durasi Kinetic Energy Scale diperpanjang 3 detik.",
+      "1": "Selain itu, ketika Iansan memicu efek pemulihan poin Nightsoul dan pemulihannya melebihi batas maksimum poin Nightsoul, maka Iansan akan mendapatkan efek Extreme Force: meningkatkan 25% DMG yang diakibatkan Karakter aktif milik sendiri di dalam party selama 3 detik."
+    }
+  }
+}

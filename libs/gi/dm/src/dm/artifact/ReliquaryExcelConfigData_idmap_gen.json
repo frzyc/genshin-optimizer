@@ -1,10 +1,10 @@
 {
   "20002": [
-    null,
+    0,
     "InitiatesFeather"
   ],
   "20004": [
-    null,
+    0,
     "InitiatesFlower"
   ],
   "20412": [
@@ -168,123 +168,123 @@
     "TheSunkenYears"
   ],
   "23300": [
-    null,
+    0,
     ""
   ],
   "23301": [
-    null,
+    0,
     ""
   ],
   "23302": [
-    null,
+    0,
     ""
   ],
   "23303": [
-    null,
+    0,
     ""
   ],
   "23304": [
-    null,
+    0,
     ""
   ],
   "23305": [
-    null,
+    0,
     ""
   ],
   "23306": [
-    null,
+    0,
     ""
   ],
   "23307": [
-    null,
+    0,
     ""
   ],
   "23308": [
-    null,
+    0,
     ""
   ],
   "23309": [
-    null,
+    0,
     ""
   ],
   "23310": [
-    null,
+    0,
     ""
   ],
   "23311": [
-    null,
+    0,
     ""
   ],
   "23312": [
-    null,
+    0,
     ""
   ],
   "23313": [
-    null,
+    0,
     ""
   ],
   "23314": [
-    null,
+    0,
     ""
   ],
   "23315": [
-    null,
+    0,
     ""
   ],
   "23316": [
-    null,
+    0,
     ""
   ],
   "23317": [
-    null,
+    0,
     ""
   ],
   "23318": [
-    null,
+    0,
     ""
   ],
   "23329": [
-    null,
+    0,
     ""
   ],
   "23330": [
-    null,
+    0,
     ""
   ],
   "23331": [
-    null,
+    0,
     ""
   ],
   "23332": [
-    null,
+    0,
     ""
   ],
   "23334": [
-    null,
+    0,
     ""
   ],
   "23335": [
-    null,
+    0,
     ""
   ],
   "23336": [
-    null,
+    0,
     ""
   ],
   "23337": [
-    null,
+    0,
     ""
   ],
   "23338": [
-    null,
+    0,
     ""
   ],
   "23339": [
-    null,
+    0,
     ""
   ],
   "23340": [
-    null,
+    0,
     ""
   ],
   "23341": [
@@ -1913,7 +1913,7 @@
   ],
   "23747": [
     15037,
-    "MountainRangersMarker"
+    "WanderingScholarsClawCup"
   ],
   "23748": [
     15037,
@@ -1966,6 +1966,86 @@
   "23760": [
     15038,
     "MythsOfTheNightRealm"
+  ],
+  "23761": [
+    15039,
+    "AHornUnwinded"
+  ],
+  "23762": [
+    15039,
+    "NightingalesTailFeather"
+  ],
+  "23763": [
+    15039,
+    "DyedTassel"
+  ],
+  "23764": [
+    15039,
+    "LightkeepersPledge"
+  ],
+  "23765": [
+    15039,
+    "UndyingOnesMourningBell"
+  ],
+  "23766": [
+    15039,
+    "AHornUnwinded"
+  ],
+  "23767": [
+    15039,
+    "NightingalesTailFeather"
+  ],
+  "23768": [
+    15039,
+    "DyedTassel"
+  ],
+  "23769": [
+    15039,
+    "LightkeepersPledge"
+  ],
+  "23770": [
+    15039,
+    "UndyingOnesMourningBell"
+  ],
+  "23771": [
+    15040,
+    "DeepGallerysBestowedBanquet"
+  ],
+  "23772": [
+    15040,
+    "DeepGallerysDistantPact"
+  ],
+  "23773": [
+    15040,
+    "DeepGallerysLostCrown"
+  ],
+  "23774": [
+    15040,
+    "DeepGallerysEchoingSong"
+  ],
+  "23775": [
+    15040,
+    "DeepGallerysMomentOfOblivion"
+  ],
+  "23776": [
+    15040,
+    "DeepGallerysBestowedBanquet"
+  ],
+  "23777": [
+    15040,
+    "DeepGallerysDistantPact"
+  ],
+  "23778": [
+    15040,
+    "DeepGallerysLostCrown"
+  ],
+  "23779": [
+    15040,
+    "DeepGallerysEchoingSong"
+  ],
+  "23780": [
+    15040,
+    "DeepGallerysMomentOfOblivion"
   ],
   "24101": [
     15001,
@@ -3926,6 +4006,166 @@
   "38554": [
     15038,
     "MythsOfTheNightRealm"
+  ],
+  "39412": [
+    15039,
+    "AHornUnwinded"
+  ],
+  "39413": [
+    15039,
+    "AHornUnwinded"
+  ],
+  "39422": [
+    15039,
+    "NightingalesTailFeather"
+  ],
+  "39423": [
+    15039,
+    "NightingalesTailFeather"
+  ],
+  "39432": [
+    15039,
+    "DyedTassel"
+  ],
+  "39433": [
+    15039,
+    "DyedTassel"
+  ],
+  "39442": [
+    15039,
+    "LightkeepersPledge"
+  ],
+  "39443": [
+    15039,
+    "LightkeepersPledge"
+  ],
+  "39452": [
+    15039,
+    "UndyingOnesMourningBell"
+  ],
+  "39453": [
+    15039,
+    "UndyingOnesMourningBell"
+  ],
+  "39513": [
+    15039,
+    "AHornUnwinded"
+  ],
+  "39514": [
+    15039,
+    "AHornUnwinded"
+  ],
+  "39523": [
+    15039,
+    "NightingalesTailFeather"
+  ],
+  "39524": [
+    15039,
+    "NightingalesTailFeather"
+  ],
+  "39533": [
+    15039,
+    "DyedTassel"
+  ],
+  "39534": [
+    15039,
+    "DyedTassel"
+  ],
+  "39543": [
+    15039,
+    "LightkeepersPledge"
+  ],
+  "39544": [
+    15039,
+    "LightkeepersPledge"
+  ],
+  "39553": [
+    15039,
+    "UndyingOnesMourningBell"
+  ],
+  "39554": [
+    15039,
+    "UndyingOnesMourningBell"
+  ],
+  "40412": [
+    15040,
+    "DeepGallerysBestowedBanquet"
+  ],
+  "40413": [
+    15040,
+    "DeepGallerysBestowedBanquet"
+  ],
+  "40422": [
+    15040,
+    "DeepGallerysDistantPact"
+  ],
+  "40423": [
+    15040,
+    "DeepGallerysDistantPact"
+  ],
+  "40432": [
+    15040,
+    "DeepGallerysLostCrown"
+  ],
+  "40433": [
+    15040,
+    "DeepGallerysLostCrown"
+  ],
+  "40442": [
+    15040,
+    "DeepGallerysEchoingSong"
+  ],
+  "40443": [
+    15040,
+    "DeepGallerysEchoingSong"
+  ],
+  "40452": [
+    15040,
+    "DeepGallerysMomentOfOblivion"
+  ],
+  "40453": [
+    15040,
+    "DeepGallerysMomentOfOblivion"
+  ],
+  "40513": [
+    15040,
+    "DeepGallerysBestowedBanquet"
+  ],
+  "40514": [
+    15040,
+    "DeepGallerysBestowedBanquet"
+  ],
+  "40523": [
+    15040,
+    "DeepGallerysDistantPact"
+  ],
+  "40524": [
+    15040,
+    "DeepGallerysDistantPact"
+  ],
+  "40533": [
+    15040,
+    "DeepGallerysLostCrown"
+  ],
+  "40534": [
+    15040,
+    "DeepGallerysLostCrown"
+  ],
+  "40543": [
+    15040,
+    "DeepGallerysEchoingSong"
+  ],
+  "40544": [
+    15040,
+    "DeepGallerysEchoingSong"
+  ],
+  "40553": [
+    15040,
+    "DeepGallerysMomentOfOblivion"
+  ],
+  "40554": [
+    15040,
+    "DeepGallerysMomentOfOblivion"
   ],
   "51110": [
     10001,

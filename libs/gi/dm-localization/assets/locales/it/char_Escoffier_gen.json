@@ -1,0 +1,169 @@
+{
+  "name": "Escoffier",
+  "title": "Eccellenza di sapori",
+  "description": "L'ex chef de cuisine dell'Hotel Débord, la Pâtissière Suprême rinomata in tutta Fontaine e leader della gastronomia di precisione. Ha degli standard estremamente rigorosi quando si tratta di cucina.",
+  "constellationName": "Dulciaria Structura",
+  "auto": {
+    "name": "Abilità culinarie",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 3 colpi di lancia consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per eseguire un fendente verso l'alto."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore attacco caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cottura a bassa temperatura",
+    "description": {
+      "0": "Ammirate il vero significato della \"cucina\"! Escoffier dimostra diverse tecniche culinarie in base alla diversa pressione dell'abilità, ma niente paura: ciascuna di esse è il fiore all'occhiello di Fontaine.",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Escoffier attiva il suo Meka da cucina multiuso nella modalità Refrigerazione e infligge <cryo>DAN da Cryo ad area</cryo> agli avversari vicini.",
+      "4": "<br/>",
+      "5": "<strong>Meka da cucina: modalità Refrigerazione</strong>",
+      "6": "Segue il personaggio attivo e scaglia dei Parfait congelati contro gli avversari vicini periodicamente, infliggendo <cryo>DAN da Cryo</cryo>.",
+      "7": "<br/>",
+      "8": "<strong>Archè: Ousia</strong>",
+      "9": "A intervalli, Escoffier genera una Lama nascente quando attiva il suo Meka da cucina in modalità Refrigerazione, infliggendo <cryo>DAN da Cryo ad area</cryo> di polarità Ousia.",
+      "10": "<br/>",
+      "11": "<strong>Pressione prolungata</strong>",
+      "12": "Attiva la modalità <strong>Cucina estemporanea</strong> del suo Meka da cucina multiuso."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Parfait congelato",
+      "2": "Durata modalità Refrigerazione",
+      "3": "DAN da Lama nascente",
+      "4": "Intervallo TdR Lama nascente",
+      "5": "TdR pressione",
+      "6": "TdR (pressione prolungata)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tecnica di taglio",
+    "description": {
+      "0": "Escoffier dimostra le sue straordinarie abilità con il coltello, infliggendo <cryo>DAN da Cryo ad area</cryo> e ripristinando i PS di tutti i membri del gruppo vicini in base al suo ATT."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Guarigione",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Mangiare bene è la cura migliore",
+    "description": {
+      "0": "Dopo aver usato il Tripudio elementale <strong>Tecnica di taglio</strong>, Escoffier ottiene l'effetto Dieta riabilitativa per 9 s, grazie al quale ripristina i PS dei personaggi attivi vicini ogni 1 s in base a un 138,24% del suo ATT."
+    }
+  },
+  "passive2": {
+    "name": "Condimento ispiratore",
+    "description": {
+      "0": "Quando nel gruppo sono presenti 1/2/3/4 personaggi di <hydro>Hydro</hydro> o <cryo>Cryo</cryo>, Escoffier riduce la <hydro>RES a Hydro</hydro> e la <cryo>RES a Cryo</cryo> di ogni avversario colpito dalla sua abilità elementale <strong>Cottura a bassa temperatura</strong> o dal suo Tripudio elementale <strong>Tecnica di taglio</strong> di un 5%/10%/15%/55% per 12 s."
+    }
+  },
+  "passive3": {
+    "name": "Cucina estemporanea costante",
+    "description": {
+      "0": "Con la pressione prolungata dell'abilità elementale <strong>Cottura a bassa temperatura</strong>, Escoffier attiva il suo Meka da cucina multiuso nella modalità Cucina estemporanea.",
+      "1": "<br/>",
+      "2": "<strong>Meka da cucina: modalità Cucina estemporanea</strong>",
+      "3": [
+        " Il Meka da cucina viene posizionato in campo e assorbe gli attacchi elementali. Quando l'energia elementale assorbita raggiunge un certo limite, Escoffier converte gli ingredienti contenuti nel Meka in dei piatti deliziosi.",
+        " Escoffier ha bisogno di tempo per comprare nuovi ingredienti, quindi può creare in questo modo solo un certo numero di piatti alla settimana. Il numero di piatti che Escoffier può preparare si ripristina ogni lunedì alle 04:00."
+      ]
+    }
+  },
+  "constellation1": {
+    "name": "Danza per il palato",
+    "description": {
+      "0": "Quando 4 membri del gruppo sono di <hydro>Hydro</hydro> o di <cryo>Cryo</cryo>, i loro DAN da CRIT di <cryo>Cryo</cryo> aumentano di un 60% per 15 s dall'uso dell'abilità elementale <strong>Cottura a bassa temperatura</strong> o del Tripudio elementale <strong>Tecnica di taglio</strong> di Escoffier.",
+      "1": "Richiede il talento passivo Condimento ispiratore."
+    }
+  },
+  "constellation2": {
+    "name": "Uno stufato fresco e fragrante è un'arte",
+    "description": {
+      "0": "Quando Escoffier attiva il Meka da cucina nella sua <strong>modalità Refrigerazione</strong>, ottiene l'effetto Prelibatezza del giorno per 15 s. In questo periodo di tempo, Escoffier riceve 5 accumuli di Piatto freddo. Ogni volta che i personaggi attivi vicini, esclusa Escoffier, infliggono <cryo>DAN da Cryo</cryo> con un attacco normale, caricato o in picchiata, oppure con un'abilità o un Tripudio elementale, viene consumato 1 accumulo di Piatto freddo per aumentare i DAN inflitti di un 240% dell'ATT di Escoffier.",
+      "1": "Colpendo più avversari con una singola iterazione di <cryo>DAN da Cryo</cryo>, gli accumuli di Piatto freddo vengono consumati in base al numero di avversari colpiti."
+    }
+  },
+  "constellation3": {
+    "name": "La magia della caramellizzazione",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Cottura a bassa temperatura</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ricetta segreta con rosmarino",
+    "description": {
+      "0": "La durata di <strong>Dieta riabilitativa</strong> aumenta di 6 s. Mentre l'effetto è attivo, c'è una probabilità di ripristinare un 100% di PS aggiuntivi e 2 punti di energia di Escoffier quando si ripristinano PS tramite <strong>Dieta riabilitativa</strong>. Tale probabilità corrisponde al tasso di CRIT di Escoffier. È possibile innescare quest'effetto 7 volte entro la durata di ciascuna iterazione di <strong>Dieta riabilitativa</strong>. Richiede il talento passivo Mangiare bene è la cura migliore."
+    }
+  },
+  "constellation5": {
+    "name": "Sinfonia di mille salse",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Tecnica di taglio</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Ricevimento del tè multicolore",
+    "description": {
+      "0": "<strong>Meka da cucina: modalità Refrigerazione</strong> viene potenziato.",
+      "1": [
+        " Quando gli attacchi normali, caricati e in picchiata del personaggio attivo del gruppo colpiscono gli avversari, il Meka da cucina: modalità Refrigerazione spara un altro Parfait congelato speciale, che infligge <cryo>DAN da Cryo ad area</cryo> pari a un 500% dell'ATT di Escoffier. Tali DAN sono considerati DAN da abilità elementale."
+      ],
+      "2": "Quest'effetto può attivarsi una volta ogni 0,5 s, per un massimo di 6 volte entro la durata di ciascun Meka da cucina: modalità Refrigerazione."
+    }
+  }
+}

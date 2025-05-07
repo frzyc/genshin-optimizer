@@ -4,7 +4,7 @@
   "description": "Ein Mitglied der „Goldbrigade“, einer Söldnergruppe, die die Wüste Sumerus durchstreift. Sie ist mutig und stark und genießt innerhalb der „Goldbrigade“ einen hervorragenden Ruf.",
   "constellationName": "Mantichora",
   "auto": {
-    "name": "Standardangriff – Schwertkunst des Goldenen Sturms",
+    "name": "Schwertkunst des Goldenen Sturms",
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",

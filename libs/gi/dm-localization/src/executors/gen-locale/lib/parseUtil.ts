@@ -21,6 +21,9 @@ export function preprocess(string: string): string {
   string = string
     .replaceAll(/\{SPACE\}/g, ' ')
     .replaceAll(/\{NON_BREAK_SPACE\}/g, '\u00A0')
+    // TODO: Properly add some linking support?
+    .replaceAll(/\{LINK#[A-Z0-9]*\}/g, '')
+    .replaceAll(/\{\/LINK\}/g, '')
 
   if (string.startsWith('#')) {
     // `{}` tags

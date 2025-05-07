@@ -1,0 +1,29 @@
+{
+  "setName": "Eid der Nacht",
+  "setEffects": {
+    "2": "Erhöht den mit Angriffen aus dem Fall verursachten Schaden um 25 %.",
+    "4": "Erhält beim Treffen von Gegnern mit Angriffen aus dem Fall, heftigen Schlägen oder Elementarfähigkeiten des Trägers 1/2/2 Stapelung(en) „Ewiger Glanz“. 1 s Abklingzeit für jeden durch die oben genannten Angriffe erzeugten Effekt. Ewiger Glanz: Erhöht den mit Angriffen aus dem Fall verursachten Schaden 6 s um 15 %, 5-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Schwur des Lichthüters",
+      "desc": "Eine eiserne Blume, die man als Ratnik bei sich hat und die das Symbol für dessen ewigen Schwur ist, stets Wache zu halten."
+    },
+    "plume": {
+      "name": "Schwanzfeder der Nachtigall",
+      "desc": "Ein sorgfältig gefertigter Kopfschmuck aus Nachtigallenfedern, dessen Form angeblich vom ersten Fackelmacher festgelegt wurde."
+    },
+    "sands": {
+      "name": "Glockenschlag des Unsterblichen",
+      "desc": "Eine Bronzeglocke, getragen von Kriegern, die durch finstere Abgründe wandern. In lichtlosen Nächten hört man oft ihr klagendes Läuten."
+    },
+    "goblet": {
+      "name": "Ungeblasenes Horn",
+      "desc": "Das Horn, das einst die Eidgebundenen zusammenrief, hat heute längst seine Funktion verloren."
+    },
+    "circlet": {
+      "name": "Gefärbter Quastenhelm",
+      "desc": "Ein uralter und schwerer Helm, der als Erbstück die Abstammung der alten Kriegerfamilien des Nordens kennzeichnet."
+    }
+  }
+}

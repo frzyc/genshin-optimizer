@@ -1,0 +1,160 @@
+{
+  "name": "Ifa",
+  "title": "Başıboş Rüzgarların İzinde",
+  "description": "İster insan olsun ister hayvan, her canlının ve yaşamın kıymetini bilerek hayatını sürdüren, Çiçek Tüyü Klanından bir veteriner hekim.",
+  "constellationName": "Kader Zinciri",
+  "auto": {
+    "name": "Rüzgarları Dindirme Ayini",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "<anemo>Rüzgar Hasarı</anemo> veren en fazla 3 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak bir atış yapar ve <anemo>Rüzgar Alan Hasarı</anemo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yere doğru dalışa geçer ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <anemo>Rüzgar Alan Hasarı</anemo> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Havadan Bulaşan Hastalıkları Önleme",
+    "description": {
+      "0": "Gerçek dostluk budur! Ifa, Cacucu'yu desteğe çağırır.",
+      "1": "Bu Beceriyi kullandıktan sonra Ifa 80 Gece Ruhu puanı kazanır ve <strong>Gece Ruhunun Lütfu</strong> durumuna girer. Gece Ruhunun Lütfu durumundayken Ifa, Cacucu'nun yardımıyla havada süzülür. Ifa bu durumdayken Normal Saldırı yaptığında Dokunma veya Basılı Tutma durumuna göre farklı türlerde <strong>Destek Ateşi</strong> kullanır ve tüm grup üyelerini iyileştiren Tonik Atışları yapar.",
+      "2": "<br/>",
+      "3": "Ayrıca Ifa, Gece Ruhunun Lütfu durumundayken <strong>Havadan Bulaşan Hastalıkları Önleme</strong> Element Becerisi Basılı Tutulduğunda Gece Ruhu tesirli bir Havadan Saldırı kullanır. Element Becerisi butonu bırakıldığında bu Havadan Saldırı yarıda kesilir ve Ifa süzülmeye devam eder. Ifa eğer bu Havadan Saldırıyla yere inerse Gece Ruhunun Lütfu durumu sona erer."
+    },
+    "skillParams": {
+      "0": "Tonik Atışı Hasarı",
+      "1": "Tonik Atışı İyileştirmesi",
+      "2": "Gece Ruhu Puanı Sınırı",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Güçlü Sakinleştirici Alan",
+    "description": {
+      "0": "\"Geçici\" saldırganlık gösteren bir düşmana bir Sakinleştirici ateşler. Sakinleştirici isabet ettiğinde patlayarak yakındaki nesnelerle düşmanları içine çekip hapseden ve Gece Ruhu tesirli <anemo>Rüzgar Alan Hasarı</anemo> veren bir rüzgar akımı oluşturur.",
+      "1": "Sakinleştirici, <hydro>Su</hydro>/<pyro>Ateş</pyro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> etkisindeki bir düşmana isabet ettiğinde bir <strong>Sakinleştirici İşaret</strong> uygular."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Sakinleştirici İşaret Hasarı",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Saha Doktorunun Gayreti",
+    "description": {
+      "0": "Ifa Gece Ruhunun Lütfu durumundayken gruptaki tüm karakterlerin sahip olduğu toplam Gece Ruhu puanı kadar <strong>Kurtarma Kiti</strong> puanı kazanır. Kurtarma Kiti, yakındaki tüm grup üyelerinin verdiği Elektrik Yüklü ve Girdap Hasarını artırır."
+    }
+  },
+  "passive2": {
+    "name": "Karşılıklı Yardımlaşma Protokolü",
+    "description": {
+      "0": "Yakındaki grup üyeleri Gece Ruhu Patlaması tetiklediğinde 10 saniyeliğine Ifa'nın Element Ustalığı 80 artar."
+    }
+  },
+  "passive3": {
+    "name": "Gece Diyarının Armağanı: Kritik İlk Yardım",
+    "description": {
+      "0": "Ifa, Gece Ruhu puanları tükendiğinde Filojiston harcayarak Gece Ruhunun Lütfu durumunda kalmaya devam eder.",
+      "1": "Ifa, Natlan'da Filojiston Mekanikleri olan bir bölgedeyken \"Gece Ruhu Aktarımı: Ifa\" kullanabilir. Aktif karakter havada belirli bir yükseklikteyken Ifa'ya geçildiğinde şu etkiler tetiklenir: Ifa Gece Ruhunun Lütfu durumuna girer ve 32 Gece Ruhu puanı kazanır. Gece Ruhu Aktarımı kendi takımın tarafından 10 saniyede bir tetiklenebilir."
+    }
+  },
+  "passive": {
+    "name": "Taktik Sıcak Kompres Pansumanı",
+    "description": {
+      "0": "Natlan'da Filojiston Mekanikleri olan bir bölgedeyken mevcut aktif grup üyesinin veya ele geçirilen Sürüngenin Canı %40'ın altındaysa Ifa 10 Filojiston tüketerek Canlarının %40'ını iyileştirir. Bu etki her 10 saniyede bir tetiklenebilir. Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında tetiklenmez."
+    }
+  },
+  "constellation1": {
+    "name": "Şifalı Sarmaşık İksiri",
+    "description": {
+      "0": "<strong>Destek Ateşi</strong> bir düşmana isabet ettiğinde Ifa için 6 Enerji yeniler. Bu şekilde bir Enerji yenilemesi her 8 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation2": {
+    "name": "İsabetli Atış Duası",
+    "description": {
+      "0": "Ifa Gece Ruhunun Lütfu durumundayken grubun sahip olduğu toplam Gece Ruhu puanı 60'ın üzerindeyse, 60'ın üzerindeki her 1 puan başına Ifa fazladan 4 <strong>Kurtarma Kiti</strong> puanı kazanır.",
+      "1": "Ek olarak, Ifa'nın Kurtarma Kiti sınırı 50 artar.",
+      "2": "<strong>Saha Doktorunun Gayreti</strong> Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation3": {
+    "name": "Geceyle Müzakerede İtiraz",
+    "description": {
+      "0": "<strong>Havadan Bulaşan Hastalıkları Önleme</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yitik Suretin Dönüşümü",
+    "description": {
+      "0": "<strong>Güçlü Sakinleştirici Alan</strong> Element Patlamasının oluşturduğu hapseden rüzgar akımının süresi artarak 3 saniye olur.",
+      "1": "Ayrıca Ifa <strong>Güçlü Sakinleştirici Alan</strong> Element Patlamasını kullandıktan sonra 15 saniyeliğine 100 Element Ustalığı kazanır."
+    }
+  },
+  "constellation5": {
+    "name": "Evrensel Uyum Sözü",
+    "description": {
+      "0": "<strong>Güçlü Sakinleştirici Alan</strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Tüylü Düğüm Yemini",
+    "description": {
+      "0": "Ifa, <strong>Destek Ateşinin</strong> Basılı Tutma modunu kullandığında %50 ihtimalle fazladan bir Tonik Atışı daha yapar ve bu Atışla Saldırısının %120'si kadar Rüzgar Hasarı verir. Bu Hasar, Normal Saldırı Hasarı sayılır.",
+      "1": "Ayrıca Ifa savaşta değilken Gece Ruhunun Lütfu durumuna girdiğinde %20 daha az Gece Ruhu puanı ve Filojiston harcar."
+    }
+  }
+}

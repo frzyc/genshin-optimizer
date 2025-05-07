@@ -1,0 +1,24 @@
+{
+  "name": "Parlak Düşünceler",
+  "description": {
+    "0": "Bereket Kolektifinden gelen değerli taşlardan ve Çiçek Tüyü Klanından gelen kristallerden yapılmış bir kupa. Bir zamanlar efsanevi bir güreşçiye aitmiş."
+  },
+  "passiveName": "Düşen Gökkuşağının Dileği",
+  "passiveDescription": {
+    "0": {
+      "0": "Saldırı <cryo>%28</cryo> artar. Havadan Saldırı yapıldığında \"Şafağın İlk Renkleri\" etkisi kazanılır, bu etki Havadan Saldırı Kritik Hasarını <cryo>%28</cryo> artırır. Element Becerisi veya Element Patlaması kullanıldığında \"Alacakaranlığın İhtişamı\" etkisi kazanılır, bu etki Havadan Saldırı Kritik Hasarını <cryo>%40</cryo> artırır. Bu iki etki birbirinden bağımsız olarak 15sn sürer ve Havadan Saldırının yere vuruşu bir hedefe isabet ettikten 0,1sn sonra kaldırılır."
+    },
+    "1": {
+      "0": "Saldırı <cryo>%35</cryo> artar. Havadan Saldırı yapıldığında \"Şafağın İlk Renkleri\" etkisi kazanılır, bu etki Havadan Saldırı Kritik Hasarını <cryo>%35</cryo> artırır. Element Becerisi veya Element Patlaması kullanıldığında \"Alacakaranlığın İhtişamı\" etkisi kazanılır, bu etki Havadan Saldırı Kritik Hasarını <cryo>%50</cryo> artırır. Bu iki etki birbirinden bağımsız olarak 15sn sürer ve Havadan Saldırının yere vuruşu bir hedefe isabet ettikten 0,1sn sonra kaldırılır."
+    },
+    "2": {
+      "0": "Saldırı <cryo>%42</cryo> artar. Havadan Saldırı yapıldığında \"Şafağın İlk Renkleri\" etkisi kazanılır, bu etki Havadan Saldırı Kritik Hasarını <cryo>%42</cryo> artırır. Element Becerisi veya Element Patlaması kullanıldığında \"Alacakaranlığın İhtişamı\" etkisi kazanılır, bu etki Havadan Saldırı Kritik Hasarını <cryo>%60</cryo> artırır. Bu iki etki birbirinden bağımsız olarak 15sn sürer ve Havadan Saldırının yere vuruşu bir hedefe isabet ettikten 0,1sn sonra kaldırılır."
+    },
+    "3": {
+      "0": "Saldırı <cryo>%49</cryo> artar. Havadan Saldırı yapıldığında \"Şafağın İlk Renkleri\" etkisi kazanılır, bu etki Havadan Saldırı Kritik Hasarını <cryo>%49</cryo> artırır. Element Becerisi veya Element Patlaması kullanıldığında \"Alacakaranlığın İhtişamı\" etkisi kazanılır, bu etki Havadan Saldırı Kritik Hasarını <cryo>%70</cryo> artırır. Bu iki etki birbirinden bağımsız olarak 15sn sürer ve Havadan Saldırının yere vuruşu bir hedefe isabet ettikten 0,1sn sonra kaldırılır."
+    },
+    "4": {
+      "0": "Saldırı <cryo>%56</cryo> artar. Havadan Saldırı yapıldığında \"Şafağın İlk Renkleri\" etkisi kazanılır, bu etki Havadan Saldırı Kritik Hasarını <cryo>%56</cryo> artırır. Element Becerisi veya Element Patlaması kullanıldığında \"Alacakaranlığın İhtişamı\" etkisi kazanılır, bu etki Havadan Saldırı Kritik Hasarını <cryo>%80</cryo> artırır. Bu iki etki birbirinden bağımsız olarak 15sn sürer ve Havadan Saldırının yere vuruşu bir hedefe isabet ettikten 0,1sn sonra kaldırılır."
+    }
+  }
+}

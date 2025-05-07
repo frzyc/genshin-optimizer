@@ -1,0 +1,24 @@
+{
+  "name": "Notions colorées",
+  "description": {
+    "0": "Un trophée fabriqué à partir des pierres précieuses du Collectif de l'abondance et des cristaux du Clan des fleurplumes. On dit qu'il a appartenu à un lutteur légendaire."
+  },
+  "passiveName": "Souhait d'arc-en-ciel tombant",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ de <cryo>28 %</cryo>. De plus, utiliser une attaque plongeante accorde l'effet Teinte d'aube, augmentant les DGT CRIT des attaques plongeantes de <cryo>28 %</cryo>, tandis qu'utiliser une compétence élémentaire ou un déchaînement élémentaire accorde l'effet Splendeur d'aurore, augmentant les DGT CRIT des attaques plongeantes de <cryo>40 %</cryo>. Chacun de ces deux effets dure 15 s et prend fin 0,1 s après qu'un impact au sol touche."
+    },
+    "1": {
+      "0": "Augmente l'ATQ de <cryo>35 %</cryo>. De plus, utiliser une attaque plongeante accorde l'effet Teinte d'aube, augmentant les DGT CRIT des attaques plongeantes de <cryo>35 %</cryo>, tandis qu'utiliser une compétence élémentaire ou un déchaînement élémentaire accorde l'effet Splendeur d'aurore, augmentant les DGT CRIT des attaques plongeantes de <cryo>50 %</cryo>. Chacun de ces deux effets dure 15 s et prend fin 0,1 s après qu'un impact au sol touche."
+    },
+    "2": {
+      "0": "Augmente l'ATQ de <cryo>42 %</cryo>. De plus, utiliser une attaque plongeante accorde l'effet Teinte d'aube, augmentant les DGT CRIT des attaques plongeantes de <cryo>42 %</cryo>, tandis qu'utiliser une compétence élémentaire ou un déchaînement élémentaire accorde l'effet Splendeur d'aurore, augmentant les DGT CRIT des attaques plongeantes de <cryo>60 %</cryo>. Chacun de ces deux effets dure 15 s et prend fin 0,1 s après qu'un impact au sol touche."
+    },
+    "3": {
+      "0": "Augmente l'ATQ de <cryo>49 %</cryo>. De plus, utiliser une attaque plongeante accorde l'effet Teinte d'aube, augmentant les DGT CRIT des attaques plongeantes de <cryo>49 %</cryo>, tandis qu'utiliser une compétence élémentaire ou un déchaînement élémentaire accorde l'effet Splendeur d'aurore, augmentant les DGT CRIT des attaques plongeantes de <cryo>70 %</cryo>. Chacun de ces deux effets dure 15 s et prend fin 0,1 s après qu'un impact au sol touche."
+    },
+    "4": {
+      "0": "Augmente l'ATQ de <cryo>56 %</cryo>. De plus, utiliser une attaque plongeante accorde l'effet Teinte d'aube, augmentant les DGT CRIT des attaques plongeantes de <cryo>56 %</cryo>, tandis qu'utiliser une compétence élémentaire ou un déchaînement élémentaire accorde l'effet Splendeur d'aurore, augmentant les DGT CRIT des attaques plongeantes de <cryo>80 %</cryo>. Chacun de ces deux effets dure 15 s et prend fin 0,1 s après qu'un impact au sol touche."
+    }
+  }
+}

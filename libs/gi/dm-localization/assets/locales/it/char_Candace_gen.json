@@ -4,7 +4,7 @@
   "description": "Una discendente di Re Deshret, nonché protettrice del Villaggio di Aaru. Il suo occhio sinistro ha il colore dell'ambra.",
   "constellationName": "Sagitta Scutum",
   "auto": {
-    "name": "Lancia splendente - Posizione del guardiano",
+    "name": "Posizione del guardiano",
     "fields": {
       "normal": {
         "0": "<strong>Attacco normale</strong>",

@@ -4,7 +4,7 @@
   "description": "口数が少なく、表情に乏しいマジックアシスタント。その性格は猫のようにつかみどころがない。",
   "constellationName": "白尾猫座",
   "auto": {
-    "name": "ラピッド·レイピア",
+    "name": "ラピッド・レイピア",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

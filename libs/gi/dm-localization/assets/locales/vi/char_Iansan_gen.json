@@ -1,0 +1,185 @@
+{
+  "name": "Iansan",
+  "title": "Phôi Đá Bách Luyện",
+  "description": "Chuyên gia dinh dưỡng nổi tiếng ở Natlan, huấn luyện viên trưởng của câu lạc bộ thể hình tại Cộng Đồng Trù Phú.",
+  "constellationName": "Cung Cương Long",
+  "auto": {
+    "name": "Mũi Nhọn Trọng Lượng",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      },
+      "nightsoul": {
+        "0": "<strong>Trạng Thái Dạ Hồn - Cú Đáp Rền Vang</strong>",
+        "1": "Trong trạng thái Dạ Hồn Chúc Phúc, Trọng Kích của Iansan chuyển thành thi triển Cú Đáp Rền Vang, tiêu hao thể lực nhất định để giẫm mạnh về phía trước, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> mang thuộc tính Dạ Hồn."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Trọng Kích",
+      "4": "Sát Thương Cú Đáp Rền Vang",
+      "5": "Thể Lực Trọng Kích & Cú Đáp Rền Vang Tiêu Hao",
+      "6": "Sát Thương Khi Đáp",
+      "7": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Tia Sấm Chớp Nhoáng",
+    "description": {
+      "0": "Iansan lao về phía trước một đoạn, gây <electro>Sát Thương Nguyên Tố Lôi</electro> mang thuộc tính Dạ Hồn cho kẻ địch trên đường.",
+      "1": "Sau khi thi triển, Iansan sẽ hồi phục 54 điểm Dạ Hồn và tiến vào trạng thái Dạ Hồn Chúc Phúc. Đồng thời trong 5s sau khi kết thúc lao lên, nếu nhấn Tấn Công Thường, Iansan sẽ thi triển nhanh một lần Cú Đáp Rền Vang không tiêu hao thể lực.",
+      "2": "<br/>",
+      "3": "<strong>Dạ Hồn Chúc Phúc - Iansan</strong>",
+      "4": "Liên tục tiêu hao điểm Dạ Hồn. Khi tiêu hao hết điểm Dạ Hồn hoặc thi triển lần nữa, Dạ Hồn Chúc Phúc của Iansan sẽ kết thúc. Trạng thái Dạ Hồn Chúc Phúc có đặc tính sau:",
+      "5": [
+        "Tăng Tốc Độ Di Chuyển của Iansan.",
+        "Nhấn giữ xung kích sẽ đổi sang dạng Tia Chớp Siêu Tốc, trong thời gian ngắn sẽ tăng mạnh Tốc Độ Di Chuyển của Iansan. Trong trạng thái này, Iansan có thể lợi dụng địa hình để nhảy bay, hoặc tiêu hao thêm điểm Dạ Hồn để di chuyển trên mặt nước và Phlogiston Thể Lỏng, đồng thời miễn dịch sát thương Phlogiston Thể Lỏng."
+      ],
+      "6": "<br/>",
+      "7": "<i>\"Nhanh hơn, mạnh hơn! Sự nỗ lực không ngừng nghỉ chính là vì khoảnh khắc này.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Giới Hạn Điểm Dạ Hồn",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ba Nguyên Lý Sức Mạnh",
+    "description": {
+      "0": "Nhân danh \"Sức Mạnh\" để giẫm nát mặt đất, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> mang thuộc tính Dạ Hồn, đồng thời triệu hồi \"Thang Năng Lượng Phiên Bản Giới Hạn (Dùng cho tập luyện).\"",
+      "1": "Khi thi triển, Iansan sẽ nhận được 15 điểm Dạ Hồn và vào trạng thái Dạ Hồn Chúc Phúc.",
+      "2": "Khi Thang Năng Lượng rời trận, Dạ Hồn Chúc Phúc của Iansan sẽ kết thúc.",
+      "3": "<br/>",
+      "4": "<strong>Thang Năng Lượng</strong>",
+      "5": "Thang Năng Lượng sẽ theo chân nhân vật hành động, đồng thời căn cứ vào điểm Dạ Hồn của Iansan để tăng tấn công cho nhân vật ra trận trong đội bản thân với cách thức khác nhau:",
+      "6": [
+        "Nếu điểm Dạ Hồn của Iansan ít hơn 42 điểm, sẽ nhận Buff Tăng Tấn Công dựa trên điểm Dạ Hồn và điểm Tấn Công của Iansan.",
+        "Nếu Iansan có ít nhất 42 điểm Dạ Hồn, Thang Năng Lượng sẽ chuyển sang dạng \"Chi Viện Nồng Nhiệt!\", nhận Buff Tăng Tấn Công mạnh mẽ hơn dựa trên điểm Tấn Công của Iansan."
+      ],
+      "7": "Ngoài ra, trong thời gian Thang Năng Lượng tồn tại, sẽ ghi lại cự ly di chuyển của nhân vật ra trận trong đội bản thân (ngoài Iansan), khôi phục điểm Dạ Hồn cho Iansan mỗi giây dựa trên cự ly di chuyển trong giây trước đó.",
+      "8": "Thang Năng Lượng sẽ biến mất khi Dạ Hồn Chúc Phúc của Iansan kết thúc. Khi không trong trạng thái chiến đấu, Thang Năng Lượng sẽ biến mất sau 1s. Trong thời gian Thang Năng Lượng tồn tại, khi Iansan không ra trận thì Dạ Hồn Chúc Phúc cũng sẽ không kết thúc.",
+      "9": "<br/>",
+      "10": "<i>\"Sức mạnh không phải là món quà trời ban, mà đến từ sự nỗ lực không ngừng nghỉ và cần có phương pháp rèn luyện đúng đắn.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Tỉ Lệ Điểm Dạ Hồn Cao Chuyển Hóa Tấn Công",
+      "2": "Tỉ Lệ Điểm Dạ Hồn Thấp Chuyển Hóa Tấn Công",
+      "3": "Buff Tấn Công Tối Đa",
+      "4": "Thời Gian Duy Trì",
+      "5": "Thời Gian Duy Trì Khi Không Chiến Đấu",
+      "6": "CD",
+      "7": "Năng Lượng Nguyên Tố",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Luyện Tập Sức Bền",
+    "description": {
+      "0": "Cú Đáp Rền Vang sau khi trúng kẻ địch, Iansan sẽ nhận được hiệu quả \"Động Tác Tiêu Chuẩn\" trong 15s.",
+      "1": "Trong thời gian duy trì, Tấn Công của Iansan tăng 20%, khi hồi phục điểm Dạ Hồn từ Thang Năng Lượng của Kỹ Năng Nộ <strong>Ba Nguyên Lý Sức Mạnh</strong>, sẽ hồi phục thêm 1 điểm Dạ Hồn. Ngoài ra, nhân vật ra trận hiện tại trong đội bản thân sau khi tiêu hao hoặc hồi phục điểm Dạ Hồn thì trong lần tiếp theo Iansan hồi phục điểm Dạ Hồn từ Thang Năng Lượng, điểm Dạ Hồn hồi phục thêm sẽ tăng đến 4 điểm. Hiệu quả này mỗi 2.8s tối đa kích hoạt một lần.",
+      "2": "Hiệu quả \"Động Tác Tiêu Chuẩn\" sẽ biến mất khi Dạ Hồn Chúc Phúc của Iansan kết thúc."
+    }
+  },
+  "passive2": {
+    "name": "Thử Nghiệm Động Năng",
+    "description": {
+      "0": "Nhân vật trong đội gần đó khi kích hoạt Dạ Hồn Bùng Nổ, Iansan sẽ nhận hiệu ứng \"Làm Nóng\" trong 10s.",
+      "1": "Trong thời gian duy trì, khi Iansan hồi phục ít nhất 1 điểm Dạ Hồn thì sẽ hồi phục HP cho nhân vật trong trận hiện tại của bản thân, lượng hồi phục tương đương 60% Tấn Công của Iansan. Hiệu quả này mỗi 2.8s tối đa kích hoạt một lần."
+    }
+  },
+  "passive3": {
+    "name": "Món Quà Dạ Vực - Hoạt Động Nỗ Lực",
+    "description": {
+      "0": "Sau khi dùng hết điểm Dạ Hồn, nếu Iansan trong trận sẽ chuyển sang tiêu hao Phlogiston để duy trì trạng thái Dạ Hồn Chúc Phúc.",
+      "1": "Khi ở trong khu vực có cơ chế Phlogiston của Natlan, có thể tiến hành Dạ Hồn Chuyển Hóa - Iansan. Nhân vật trong trận khi xung kích, ở trong trạng thái di chuyển đặc biệt của thiên phú hoặc đang ở độ cao nhất định trên không, đổi sang Iansan ra trận sẽ kích hoạt: Iansan sẽ vào trạng thái Dạ Hồn Chúc Phúc và nhận được 25 điểm Dạ Hồn. Đội bản thân mỗi 10s có thể kích hoạt một lần Dạ Hồn Chuyển Hóa.",
+      "2": "Ngoài ra, khi ở trong khu vực có cơ chế Phlogiston của Natlan, khi lợi dụng địa hình để nhảy bay, Iansan sẽ không phải chịu sát thương đáp đất."
+    }
+  },
+  "passive": {
+    "name": "Kế Hoạch Cân Bằng Năng Lượng",
+    "description": {
+      "0": "Khi ở trong khu vực có cơ chế Phlogiston của Natlan, khi Phlogiston từ trên 50% giảm xuống đến dưới 50% thì sẽ hồi phục 10 điểm Phlogiston. Hiệu quả này mỗi 10s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation1": {
+    "name": "Vạn Sự Khởi Đầu Nan",
+    "description": {
+      "0": "Trong chiến đấu, khi Iansan ở trong trạng thái Dạ Hồn Chúc Phúc, mỗi tiêu hao 6 điểm Dạ Hồn sẽ hồi phục 15 Năng Lượng Nguyên Tố cho bản thân Iansan. Hiệu quả này mỗi 18s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation2": {
+    "name": "Lười Biếng Là Kẻ Thù!",
+    "description": {
+      "0": "Khi thi triển Kỹ Năng Nộ <strong>Ba Nguyên Lý Sức Mạnh</strong>, Iansan cũng sẽ nhận được hiệu quả \"Động Tác Tiêu Chuẩn\" của thiên phú \"Luyện Tập Sức Bền\" trong 15s. Ngoài ra, trong thời gian duy trì hiệu quả \"Động Tác Tiêu Chuẩn\", nếu Iansan không ra trận, sẽ khiến Tấn Công của nhân vật ra trận hiện tại trong đội bản thân tăng 30%. Hiệu quả này cần mở thiên phú \"Luyện Tập Sức Bền\" trước."
+    }
+  },
+  "constellation3": {
+    "name": "Kế Hoạch Ăn Uống Khoa Học",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tia Sấm Chớp Nhoáng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Từng Bước Mới Là Mấu Chốt",
+    "description": {
+      "0": "Trong thời gian Thang Năng Lượng tồn tại, sau khi nhân vật ra trận trong đội bản thân (ngoài Iansan) thi triển Kỹ Năng Nộ, Iansan sẽ nhận được hai tầng \"Sức Mạnh Dâng Trào\", duy trì đến khi Thang Năng Lượng rời trận, mỗi lần triệu hồi Thang Năng Lượng tối đa kích hoạt một lần hiệu quả này. Khi Iansan hồi phục điểm Dạ Hồn thông qua Thang Năng Lượng, sẽ tiêu hao một tầng \"Sức Mạnh Dâng Trào\" để hồi phục thêm 4 điểm Dạ Hồn cho Iansan.",
+      "1": "Ngoài ra, nếu lượng hồi phục điểm Dạ Hồn của Thang Năng Lượng bị dư ra, thì trong lần hồi phục điểm Dạ Hồn tiếp theo từ Thang Năng Lượng của Iansan, sẽ hồi phục thêm 50% lượng điểm Dạ Hồn dư ra của lần này."
+    }
+  },
+  "constellation5": {
+    "name": "Vẫn Chưa Đến Giới Hạn!",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Ba Nguyên Lý Sức Mạnh</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Huấn Luyện Viên Của Cộng Đồng Trù Phú",
+    "description": {
+      "0": "Thời gian duy trì của Thang Năng Lượng kéo dài thêm 3s.",
+      "1": "Ngoài ra, khi Iansan kích hoạt hiệu quả hồi phục điểm Dạ Hồn, nếu điểm Dạ Hồn hồi phục bị dư ra thì sẽ nhận được hiệu quả \"Sức Mạnh Cực Hạn\", khiến nhân vật ra trận trong đội bản thân tăng 25% sát thương gây ra trong 3s."
+    }
+  }
+}

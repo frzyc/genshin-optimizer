@@ -13,11 +13,13 @@ export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
 
   return [
     // Stats
-    ...gen.lvlCurves.map(({ key, base, curve }) =>
-      (key == 'atk' ? ownBuff.base[key] : readStat(ownBuff.premod, key)).add(
-        prod(base, allStatics('static')[curve])
-      )
-    ),
+    ...gen.lvlCurves
+      .filter(({ key }) => !!key)
+      .map(({ key, base, curve }) =>
+        (key == 'atk' ? ownBuff.base[key] : readStat(ownBuff.premod, key!)).add(
+          prod(base, allStatics('static')[curve])
+        )
+      ),
     ...Object.entries(gen.ascensionBonus).map(([key, values]) =>
       (key == 'atk' ? ownBuff.base[key] : readStat(ownBuff.premod, key)).add(
         subscript(ascension, values)
@@ -30,8 +32,10 @@ export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
     // Specialized stats, items here are sheet-specific data (i.e., `sheet:<key>`)
     // Read from `ownBuff` to include only sheet's contribution.
     ownBuff.weapon.primary.add(ownBuff.base[primaryStat].sheet(key)),
-    ...[...nonPrimaryStat].map((stat) =>
-      ownBuff.weapon.secondary.add(readStat(ownBuff.premod, stat).sheet(key))
-    ),
+    ...[...nonPrimaryStat]
+      .filter((s) => !!s)
+      .map((stat) =>
+        ownBuff.weapon.secondary.add(readStat(ownBuff.premod, stat).sheet(key))
+      ),
   ]
 }

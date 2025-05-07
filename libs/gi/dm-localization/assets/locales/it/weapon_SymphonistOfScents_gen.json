@@ -1,0 +1,24 @@
+{
+  "name": "Sinfonista di fragranze",
+  "description": {
+    "0": "Una lancia finemente realizzata. Si dice che sia stata la bacchetta di un direttore d'orchestra, brandita da un grande musicista per unire la musica al gusto."
+  },
+  "passiveName": "Sinfonia di sapori",
+  "passiveDescription": {
+    "0": {
+      "0": "L'ATT aumenta di un <cryo>12%</cryo>. Quando il personaggio che equipaggia l'arma non è in campo, l'ATT aumenta di un ulteriore <cryo>12%</cryo>. Quando il personaggio che equipaggia l'arma apporta effetti di guarigione, sia quest'ultimo che i personaggi guariti ricevono l'effetto Dolci echi, che aumenta l'ATT di un <cryo>32%</cryo> per 3 s. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "L'ATT aumenta di un <cryo>15%</cryo>. Quando il personaggio che equipaggia l'arma non è in campo, l'ATT aumenta di un ulteriore <cryo>15%</cryo>. Quando il personaggio che equipaggia l'arma apporta effetti di guarigione, sia quest'ultimo che i personaggi guariti ricevono l'effetto Dolci echi, che aumenta l'ATT di un <cryo>40%</cryo> per 3 s. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "L'ATT aumenta di un <cryo>18%</cryo>. Quando il personaggio che equipaggia l'arma non è in campo, l'ATT aumenta di un ulteriore <cryo>18%</cryo>. Quando il personaggio che equipaggia l'arma apporta effetti di guarigione, sia quest'ultimo che i personaggi guariti ricevono l'effetto Dolci echi, che aumenta l'ATT di un <cryo>48%</cryo> per 3 s. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "L'ATT aumenta di un <cryo>21%</cryo>. Quando il personaggio che equipaggia l'arma non è in campo, l'ATT aumenta di un ulteriore <cryo>21%</cryo>. Quando il personaggio che equipaggia l'arma apporta effetti di guarigione, sia quest'ultimo che i personaggi guariti ricevono l'effetto Dolci echi, che aumenta l'ATT di un <cryo>56%</cryo> per 3 s. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "L'ATT aumenta di un <cryo>24%</cryo>. Quando il personaggio che equipaggia l'arma non è in campo, l'ATT aumenta di un ulteriore <cryo>24%</cryo>. Quando il personaggio che equipaggia l'arma apporta effetti di guarigione, sia quest'ultimo che i personaggi guariti ricevono l'effetto Dolci echi, che aumenta l'ATT di un <cryo>64%</cryo> per 3 s. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

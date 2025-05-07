@@ -38,7 +38,7 @@
   "description": "La descendiente del clan Kamisato, perteneciente a la Comisión Yashiro de Inazuma. Una persona solemne, refinada, inteligente y tenaz.",
   "constellationName": "Grus Nivis",
   "auto": {
-    "name": "Estilo Kamisato - Elegancia",
+    "name": "Elegancia",
     "fields": {
       "normal": {
         "0": "<strong>Ataque Normal</strong>",

@@ -4,7 +4,7 @@
   "description": "호박색 왼쪽 눈을 가진 적왕의 후예. 아루 마을의 수호자다",
   "constellationName": "화살방패자리",
   "auto": {
-    "name": "섬광 창술·수호 태세",
+    "name": "수호 태세",
     "fields": {
       "normal": {
         "0": "<strong>일반 공격</strong>",

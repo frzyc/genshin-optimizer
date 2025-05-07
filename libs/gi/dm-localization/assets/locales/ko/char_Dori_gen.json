@@ -4,7 +4,7 @@
   "description": "신출귀몰한 여행 잡화 상인. 빛나는 모라를 가장 좋아한다",
   "constellationName": "요술램프자리",
   "auto": {
-    "name": "오묘한 검무·개조",
+    "name": "개조",
     "fields": {
       "normal": {
         "0": "<strong>일반 공격</strong>",

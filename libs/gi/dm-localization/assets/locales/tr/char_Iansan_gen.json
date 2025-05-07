@@ -1,0 +1,185 @@
+{
+  "name": "Iansan",
+  "title": "Kızgın Kayalarda Dövülmüş",
+  "description": "Bereket Kolektifindeki spor kulübünün başantrenörü ve Natlan'ın ünlü beslenme uzmanı.",
+  "constellationName": "Yırtıcı Boğa",
+  "auto": {
+    "name": "Ağır Çivi",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 3 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "İleri atılırken belirli miktarda Dayanıklılık harcar ve önündeki düşmanlara hasar verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      },
+      "nightsoul": {
+        "0": "<strong>Gece Ruhu Durumu: Çevik Fırtına Dalışı</strong>",
+        "1": "Gece Ruhunun Lütfu durumundayken Iansan'ın Yüklü Saldırısı, güçlü Çevik Fırtına Dalışına dönüşür. Belirli miktarda Dayanıklılık harcayarak ayağıyla yeri şiddetle teper ve Gece Ruhu tesirli <electro>Elektrik Alan Hasarı</electro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Çevik Fırtına Dalışı Hasarı",
+      "5": "Yüklü Saldırı ve Çevik Fırtına Dalışı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Yıldırım Koşusu",
+    "description": {
+      "0": "Iansan belirli bir mesafe ileri atılarak yoluna çıkan tüm düşmanlara Gece Ruhu tesirli <electro>Elektrik Hasarı</electro> verir.",
+      "1": "Bu beceriyi kullandıktan sonra Iansan 54 Gece Ruhu puanı yeniler ve Gece Ruhunun Lütfu durumuna girer. Bundan 5 saniye sonra Normal Saldırı yaptığında Iansan 1 defa hızlı Çevik Fırtına Dalışı tetikler ve Dayanıklılık harcamaz.",
+      "2": "<br/>",
+      "3": "<strong>Gece Ruhunun Lütfu: Iansan</strong>",
+      "4": "Sürekli olarak Gece Ruhu puanı tüketir, puan tükendiğinde veya bu Beceri yeniden kullanıldığında Gece Ruhunun Lütfu durumu sona erer. Şu özellikleri sağlar:",
+      "5": [
+        "Iansan'ın Hareket Hızını artırır.",
+        "Depar butonuna basılı tutulduğunda Iansan Koşan Yıldırım moduna girer ve Hareket Hızı geçici olarak büyük ölçüde artar. Bu durumdayken Iansan araziyi kullanarak uçarcasına sıçrayabilir veya fazladan Gece Ruhu puanı harcayarak su ile Sıvı Filojiston üzerinde hareket edebilir, bu esnada Sıvı Filojistondan Hasar almaz."
+      ],
+      "6": "<br/>",
+      "7": "<i>\"Tüm çabalarımızın tek bir amacı var! Daha hızlı ve daha kuvvetli olmak!\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Gece Ruhu Puanı Sınırı",
+      "2": "BS",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Gücün Üç Prensibi",
+    "description": {
+      "0": "Iansan'ın ayağıyla yaptığı vuruşun \"Gücü\" yeri sallar ve Gece Ruhu tesirli <electro>Elektrik Alan Hasarı</electro> verir. Iansan daha sonra \"Sınırlı Üretim Kinetik Enerji Ölçeğini (İdmana Özel)\" çıkarır.",
+      "1": "Bu beceri kullanıldığında Iansan 15 Gece Ruhu puanı kazanır ve Gece Ruhunun Lütfu durumuna girer.",
+      "2": "Kinetik Enerji Ölçeği alandan kalktığında Iansan'ın Gece Ruhunun Lütfu durumu sona erer.",
+      "3": "<br/>",
+      "4": "<strong>Kinetik Enerji Ölçeği</strong>",
+      "5": "Kinetik Enerji Ölçeği karakteri takip eder ve Iansan'ın Gece Ruhu puanına göre farklı şekillerde aktif grup üyesinin Saldırısını artırır.",
+      "6": [
+        "Iansan'ın Gece Ruhu puanı 42'den azsa Gece Ruhu puanı ve Saldırısına göre Saldırı bonusu sağlar.",
+        "Iansan'ın Gece Ruhu puanı 42 veya üzeriyse \"Hararetli Destek!\" durumuna girer. Bu durumdayken Saldırı bonusu güçlenir ve yalnızca Saldırısına göre hesaplanır."
+      ],
+      "7": "Ayrıca Ölçek aktif kaldığı süre boyunca, aktif karakterin (Iansan hariç) hareket ettiği mesafeyi ölçer ve her saniye, bir önceki saniyeye göre katettiği mesafeye bağlı olarak Iansan'a Gece Ruhu puanı yeniler.",
+      "8": "Gece Ruhunun Lütfu durumu sona erdiğinde Ölçek kaybolur. Ölçek, Savaş durumundan çıktıktan 1sn sonra da kaybolur. Ölçek etkinken Iansan'ın Gece Ruhunun Lütfu durumu, Iansan savaş alanında olmasa dahi sona ermez.",
+      "9": "<br/>",
+      "10": "<i>\"Güç, doğuştan gelen bir yetenek değildir. Güç, durmaksızın çalışarak kazanılır. Güç, doğru şekilde kullanılmalıdır.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Yüksek Gece Ruhu Puanı Saldırı Dönüşüm Oranı",
+      "2": "Düşük Gece Ruhu Puanı Saldırı Dönüşüm Oranı",
+      "3": "Maks. Saldırı Bonusu",
+      "4": "Süre",
+      "5": "Savaş Dışı Durum Süresi",
+      "6": "BS",
+      "7": "Enerji Maliyeti",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Gelişmiş Direnç Antrenmanı",
+    "description": {
+      "0": "Çevik Fırtına Dalışı düşmanlara vurduktan sonra Iansan 15 saniyeliğine Hassas Hareket etkisi kazanır.",
+      "1": "Bu süre boyunca Saldırısı %20 artar ve <strong>Gücün Üç Prensibi</strong> Element Patlamasındaki Kinetik Enerji Ölçeği ile Gece Ruhu puanı elde ettiğinde fazladan 1 Gece Ruhu puanı yeniler. Ayrıca aktif grup üyesi Gece Ruhu puanı tükettiğinde veya yenilediğinde, Iansan'ın Ölçek ile yenileyeceği bir sonraki fazladan Gece Ruhu puanı 4'e yükselir. Bu etki her 2,8 saniyede bir uygulanabilir.",
+      "2": "\"Hassas Hareket\", Iansan'ın Gece Ruhunun Lütfu durumu bittiğinde sona erer."
+    }
+  },
+  "passive2": {
+    "name": "Kinetik Enerji Aralığı Testi",
+    "description": {
+      "0": "Yakındaki bir grup üyesi Gece Ruhu Patlaması tetiklediğinde Iansan 10 saniyeliğine Isınma etkisi kazanır.",
+      "1": "Bu süre boyunca Iansan en az 1 Gece Ruhu puanı yenilediğinde kendi Saldırısının %60'ı kadar aktif karakteri iyileştirir. Bu etki 2,8 saniyede bir tetiklenebilir."
+    }
+  },
+  "passive3": {
+    "name": "Gece Diyarının Armağanı: Sıkı İdman",
+    "description": {
+      "0": "Iansan savaş alanındayken Gece Ruhu puanı tamamen tükenirse Gece Ruhunun Lütfunu sürdürmek için Filojiston kullanır.",
+      "1": "Iansan, Natlan'da Filojiston Mekanikleri bulunan bir bölgedeyken \"Gece Ruhu Aktarımı: Iansan\" kullanabilir. Aktif karakter depar atarken, Yeteneklerden kaynaklı bir hareket modundayken veya havada belirli bir yükseklikteyken Iansan'a geçildiğinde şu etkiler tetiklenir: Iansan Gece Ruhunun Lütfu durumuna girer ve 25 Gece Ruhu puanı elde eder. Gece Ruhu Aktarımı kendi grubun tarafından her 10 saniyede bir tetiklenebilir.",
+      "2": "Natlan'da Filojiston Mekanikleri olan bir bölgedeyken Iansan arazi farklılıklarını kullanarak atladığında Düşme Hasarı almaz."
+    }
+  },
+  "passive": {
+    "name": "Kalori Dengeleme Planı",
+    "description": {
+      "0": "Natlan'da Filojiston Mekanikleri olan bir bölgedeyken Filojiston seviyesi %50'nin altına düşerse 10 Filojiston yenilenir. Bu etki 10 saniyede bir gerçekleşebilir."
+    }
+  },
+  "constellation1": {
+    "name": "Başlamaktır Zor Olan",
+    "description": {
+      "0": "Iansan savaştayken ve Gece Ruhunun Lütfu durumundayken tükettiği her 6 Gece Ruhu puanı için 15 Element Enerjisi yeniler. Bu etki her 18 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation2": {
+    "name": "Tembelliktir Baş Düşman!",
+    "description": {
+      "0": "Iansan, <strong>Gücün Üç Prensibi</strong> Element Patlamasını kullandığında 15 saniyeliğine \"Gelişmiş Direnç Antrenmanı\" Pasif Yeteneğinden gelen Hassas Hareket etkisini de kazanır. Ayrıca Hassas Hareket etkinken Iansan savaş alanında değilse mevcut aktif karakterinin Saldırısı %30 artar. Bu etkiyi kullanmak için \"Gelişmiş Direnç Antrenmanı\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation3": {
+    "name": "Bilimsel Beslenme Planı",
+    "description": {
+      "0": "<strong>Yıldırım Koşusu</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yavaş Ama İstikrarlı Olan Kazanır",
+    "description": {
+      "0": "Kinetik Enerji Ölçeği mevcutken aktif karakterin (Iansan hariç) Element Patlamasını kullandığında Iansan 2 kademe Kuvvet Dalgası kazanır. Bu kademeler, Ölçek alandan ayrılana kadar sürer ve her Ölçek çağrısı başına bir defa Kuvvet Dalgası kazanılabilir. Iansan, Ölçek aracılığıyla her Gece Ruhu puanı yenilediğinde 1 Kuvvet Dalgası kademesi harcar ve ilave 4 Gece Ruhu puanı daha yeniler.",
+      "1": "Ek olarak, eğer Iansan Ölçekle maksimumun üzerinde Gece Ruhu puanı yenilerse Ölçekle Gece Ruhu puanı yenilediği bir sonraki seferde fazlalık Gece Ruhu puanlarının %50'sini kazanır."
+    }
+  },
+  "constellation5": {
+    "name": "Daha Fazla Zorlayabiliriz!",
+    "description": {
+      "0": "<strong>Gücün Üç Prensibi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Bereket Kolektifi Öğretileri",
+    "description": {
+      "0": "Kinetik Enerji Ölçeğinin süresi 3sn artar.",
+      "1": "Buna ek olarak Iansan, Gece Ruhu puanı yenilediğinde maksimumun üzerinde Gece Ruhu puanı yenilerse Ekstrem Kuvvet etkisini kazanır. Bu etki, 3 saniyeliğine mevcut aktif karakterinin verdiği Hasarı %25 artırır."
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "name": "Varesa",
+  "title": "Force tranquille",
+  "description": "Propriétaire d'un verger décontractée et guerrière du Collectif de l'abondance. Cette héroïne en herbe est en quête de justice... et de buffets à volonté !",
+  "constellationName": "Mascara Luctatori",
+  "auto": {
+    "name": "Par les cornes",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Il faut essayer... de combattre comme le font les plus grandes luchadoras ! Varesa enchaîne jusqu'à 3 coups infligeant des <electro>DGT Électro</electro>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour donner un coup de tête aux ennemis en avant, infligeant des <electro>DGT Électro</electro> infusés de noctâme et profitant de l'élan pour bondir dans les airs."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, attaquant les ennemis en chemin et infligeant des <electro>DGT Électro de zone</electro> infusés de noctâme à l'impact. Si Varesa est en combat à ce moment-là ou touche un ennemi lors de l'impact, elle obtient 25 pts de noctâme. Lorsque son noctâme atteint le maximum grâce à cette méthode, Varesa entre dans l'état Passion ardente."
+      },
+      "fieryPassion": {
+        "0": "<strong>Passion ardente</strong>",
+        "1": "Dans cet état, les attaques normales, plongées et chargées de Varesa sont renforcées :"
+      },
+      "fpNormal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Pour combattre comme une vraie luchadora championne ! Varesa enchaîne jusqu'à 3 coups violents infligeant davantage de <electro>DGT Électro</electro>."
+      },
+      "fpCharged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour percuter violemment les ennemis en avant, infligeant davantage de <electro>DGT Électro</electro> infusés de noctâme et profitant de l'élan pour bondir dans les airs."
+      },
+      "fpPlunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Consomme tous les points de noctâme et plonge depuis les airs pour frapper le sol, attaquant les ennemis en chemin et infligeant davantage de <electro>DGT Électro de zone</electro> infusés de noctâme à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "DGT 1er coup (Passion ardente)",
+      "8": "DGT 2e coup (Passion ardente)",
+      "9": "DGT 3e coup (Passion ardente)",
+      "10": "DGT attaque chargée (Passion ardente)",
+      "11": "Coût d'endurance attaque chargée (Passion ardente)",
+      "12": "DGT durant la chute (Passion ardente)",
+      "13": "DGT chute basse/élevée (Passion ardente)",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sur l'arc-en-ciel nocturne",
+    "description": {
+      "0": "Avec un jeu de jambes rapide comme l'éclair et féroce comme le tonnerre, Varesa montre le véritable esprit de la lucha libre, se ruant vers l'avant sur une certaine distance pour infliger des <electro>DGT Électro</electro> infusés de noctâme aux ennemis en chemin.",
+      "1": "Après utilisation, Varesa obtient 20 pts de noctâme et l'effet Coup de suivi, ce dernier augmentant sa RÉS à l'interruption et lui permettant d'utiliser son attaque normale avec un appui simple pour déclencher rapidement une attaque chargée qui ne consomme pas d'endurance. L'effet Coup de suivi disparaît après l'utilisation de l'attaque chargée.",
+      "2": "Différents effets se produisent selon la méthode de déclenchement :",
+      "3": "<br/>",
+      "4": "<strong>Appui simple</strong>",
+      "5": "Varesa se rue rapidement en avant sur une certaine distance.",
+      "6": "<br/>",
+      "7": "<strong>Appui long</strong>",
+      "8": "Varesa entre dans l'état Bénédiction noctâme et passe en mode Avancée soudaine.",
+      "9": "<br/>",
+      "10": "<strong>Avancée soudaine</strong>",
+      "11": "Le mode Avancée soudaine de Varesa consomme de façon continue ses points de noctâme, augmente sa VIT de déplacement et sa RÉS à l'interruption et lui permet d'utiliser la topographie du terrain pour bondir dans les airs ou de consommer des points de noctâme supplémentaires pour se déplacer sur l'eau et sur le phlogistique liquide sans en subir les DGT.",
+      "12": "<br/>",
+      "13": "<strong>Bénédiction noctâme : Varesa</strong>",
+      "14": "La bénédiction noctâme de Varesa prend fin une fois ses points de noctâme épuisés. Lorsque Varesa est en mode Avancée soudaine ou dans l'état Passion ardente, elle est considérée comme bénéficiant d'une bénédiction noctâme.",
+      "15": "<br/>",
+      "16": "Varesa possède 2 utilisations disponibles. Lorsqu'elle déclenche sa passion ardente, elle obtient une occasion supplémentaire d'utiliser sa compétence élémentaire avec un appui simple et en augmente les DGT.",
+      "17": "<br/>",
+      "18": "<strong>Passion ardente</strong>",
+      "19": [
+        " Lorsqu'elle n'est pas dans l'état Passion ardente, Varesa peut utiliser ses attaques plongeantes pour restaurer ses points de noctâme. Varesa déclenche sa passion ardente lorsque son noctâme atteint le maximum grâce à cette méthode ou qu'elle utilise son déchaînement élémentaire <strong>Avènement protecteur !</strong>.",
+        " Pendant sa passion ardente, les attaques normales, les compétences élémentaires et les déchaînements élémentaires de Varesa bénéficient de renforcements distincts et elle peut également utiliser un déchaînement élémentaire spécial un court instant après avoir utilisé une attaque plongeante.",
+        " L'état Passion ardente dure un maximum de 15 s ou prend fin lorsque les points de noctâme sont épuisés ou après avoir été hors combat pendant un moment."
+      ],
+      "20": "<br/>",
+      "21": "<i>« Maintenant, je suis ma propre héroïne. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT ruée",
+      "1": "DGT ruée (Passion ardente)",
+      "2": "Durée de coup de suivi",
+      "3": "Limite de noctâme",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Avènement protecteur !",
+    "description": {
+      "0": "Exactement comme tous ces héros que l'on voit dans les rouleaux tissés pour enfants, Varesa bondit dans les airs et utilise l'élan de sa chute pour déclencher un puissant coup de pied volant, infligeant des <electro>DGT Électro de zone</electro> infusés de noctâme.",
+      "1": "Après utilisation, Varesa restaure ses points de noctâme jusqu'à la limite et déclenche sa passion ardente.",
+      "2": "<br/>",
+      "3": "Pendant sa passion ardente, le déchaînement élémentaire de Varesa inflige davantage de <electro>DGT Électro de zone</electro> infusés de noctâme aux ennemis.",
+      "4": "<br/>",
+      "5": "De plus, Varesa active brièvement l'état Transmission extrême après avoir utilisé une attaque plongeante pendant sa passion ardente.",
+      "6": "<br/>",
+      "7": "<strong>Transmission extrême</strong>",
+      "8": "Cet état augmente la RÉS à l'interruption de Varesa et lui permet d'ignorer le TdR de ses déchaînements élémentaires, de consommer moins d'énergie élémentaire et d'utiliser le déchaînement élémentaire spécial « Avènement protecteur : Effondrement volcanique » : exécute la puissante attaque plongeante « Éruption-tornade tonitruante », infligeant des <electro>DGT Électro de zone</electro> infusés de noctâmes à l'impact et mettant fin à la transmission extrême, ces DGT étant considérés comme des DGT d'attaque plongeante.",
+      "9": "Utiliser une compétence élémentaire met fin à la transmission extrême.",
+      "10": "<br/>",
+      "11": "<i>En vérité, le nom original que Varesa avait donné à ce mouvement était « Invincible coup de pied supersonique dynamique méga-giga-ultime fendant héroïquement le ciel ». Hélas, ce nom s'est avéré trop long, et elle était trop gênée pour le crier à voix haute devant tout le monde, même avec son masque. Elle a donc opté pour ce qui est maintenant son nom officiel.</i>"
+    },
+    "skillParams": {
+      "0": "DGT coup de pied volant",
+      "1": "DGT coup de pied volant (Passion ardente)",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "DGT effondrement volcanique",
+      "5": "Énergie élémentaire (Effondrement volcanique)",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Le triple saut en tag team !",
+    "description": {
+      "0": "Après avoir utilisé sa compétence élémentaire <strong>Sur l'arc-en-ciel nocturne</strong>, Varesa obtient l'effet Effondrement d'arc-en-ciel pendant 5 s.",
+      "1": "Pendant cet effet, l'impact des attaques plongeantes de Varesa inflige des DGT supplémentaires d'une valeur équivalant à 50 % de son ATQ, ou à 180 % de son ATQ pendant sa passion ardente.",
+      "2": "<br/>",
+      "3": "L'effet Effondrement d'arc-en-ciel disparaît lorsqu'un ennemi est touché avec un impact ou à la fin de sa durée."
+    }
+  },
+  "passive2": {
+    "name": "L'héroïne une nouvelle fois de retour !",
+    "description": {
+      "0": "Lorsqu'un membre de l'équipe à proximité déclenche une éruption noctâme, l'ATQ de Varesa augmente de 35 % pendant 12 s. Cet effet peut être cumulé 2 fois maximum, la durée de chaque cumul étant calculée de façon indépendante."
+    }
+  },
+  "passive3": {
+    "name": "Don de la nuit : Torche incinérant le mal",
+    "description": {
+      "0": "Après avoir épuisé ses points de noctâme, Varesa change pour consommer du phlogistique afin de maintenir le mode Avancée soudaine de sa bénédiction noctâme.",
+      "1": "Dans une zone de Natlan avec des mécanismes phlogistiques, la transmission noctâme « Varesa » peut être utilisée. Lorsque le personnage déployé sprinte, est en plein mouvement provoqué par une aptitude particulière ou est à une certaine hauteur dans les airs, le déploiement de Varesa déclenche l'effet suivant : Varesa entre dans l'état Bénédiction noctâme, passe en mode Avancée soudaine et obtient 20 pts de noctâme. La transmission noctâme peut être déclenchée une fois toutes les 10 s par votre équipe.",
+      "2": "Dans une zone de Natlan avec des mécanismes phlogistiques, Varesa ne subit pas de DGT de chute lorsqu'elle utilise les différences de terrain pour sauter."
+    }
+  },
+  "passive": {
+    "name": "Cœur ardent, toujours vers l'avant !",
+    "description": {
+      "0": "La VIT de sprint de Varesa augmente, ainsi que l'endurance consommée par ses sprints en dehors des combats.",
+      "1": "De plus, vos personnages dans l'équipe récupèrent 20 pts de phlogistique lorsqu'ils utilisent de la nourriture dans une zone de Natlan avec des mécanismes phlogistiques. Cet effet peut être déclenché une fois toutes les 10 secondes et ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées."
+    }
+  },
+  "constellation1": {
+    "name": "Passion éternelle",
+    "description": {
+      "0": "L'aptitude passive « Le triple saut en tag team ! » est renforcée :",
+      "1": "Lorsqu'elle effectue son attaque plongeante spéciale « Éruption-tornade tonitruante », Varesa obtient également l'effet Effondrement d'arc-en-ciel pendant 5 s.",
+      "2": "Pendant la durée de l'effet Effondrement d'arc-en-ciel, l'impact des attaques plongeantes de Varesa inflige des DGT supplémentaires d'une valeur équivalant à 180 % de son ATQ que sa passion ardente soit activée ou non, l'aptitude passive « Le triple saut en tag team ! » devant être déjà débloquée.",
+      "3": "<br/>",
+      "4": "De plus, lorsque Varesa est dans le mode Avancée soudaine de sa bénédiction noctâme, les points de noctâme ou le phlogistique qu'elle consomme diminuent de 30 %."
+    }
+  },
+  "constellation2": {
+    "name": "Au-delà des limites de la lumière",
+    "description": {
+      "0": "Varesa active l'état Transmission extrême après avoir utilisé une attaque plongeante, que ce soit ou non pendant sa passion ardente.",
+      "1": "Pendant sa transmission extrême, la RÉS à l'interruption de Varesa augmente davantage.",
+      "2": "De plus, Varesa récupère 11,5 pts d'énergie élémentaire lorsque l'impact de son attaque plongeante touche un ennemi."
+    }
+  },
+  "constellation3": {
+    "name": "Détermination inébranlable",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Avènement protecteur !</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Le courage de continuer",
+    "description": {
+      "0": "Lors de l'utilisation du déchaînement élémentaire <strong>Avènement protecteur !</strong>, Varesa obtient différents bonus selon son état :",
+      "1": [
+        " Si Varesa ne bénéficie ni d'une passion ardente ni d'une transmission extrême : elle obtient l'effet Affinage diligent pendant 15 s, ce qui augmente les DGT infligés par l'impact de ses attaques plongeantes d'une valeur équivalant à 500 % de son ATQ, les DGT pouvant être augmentés d'un maximum de 20 000 pts de cette manière. Cet effet disparaît lorsqu'un ennemi est touché avec un impact ou à la fin de sa durée.",
+        " Si Varesa bénéficie d'une passion ardente ou d'une transmission extrême : les DGT infligés par cette utilisation du déchaînement élémentaire <strong>Avènement protecteur !</strong> augmentent de 100 %."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Pensées flottant dans la brise chaude",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Attaque normale : Par les cornes</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Le triomphe d'une héroïne de la justice",
+    "description": {
+      "0": "Varesa récupère 30 pts d'énergie élémentaire lorsqu'elle active sa transmission extrême.",
+      "1": "Le taux CRIT de l'attaque plongeante et du déchaînement élémentaire <strong>Avènement protecteur !</strong> de Varesa augmente de 10 % et leurs DGT CRIT de 100 %.",
+      "2": "De plus, Varesa restaure ses points de noctâme jusqu'à la limite lorsqu'elle utilise sa compétence élémentaire <strong>Sur l'arc-en-ciel nocturne</strong> avec un appui long ou qu'elle l'utilise avec un appui simple pendant le mode Avancée soudaine."
+    }
+  }
+}

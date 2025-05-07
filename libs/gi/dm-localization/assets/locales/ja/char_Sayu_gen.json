@@ -4,7 +4,7 @@
   "description": "「終末番」に所属する忍。小柄で、いつも眠たそうにしている。",
   "constellationName": "子貉座",
   "auto": {
-    "name": "忍刀·終末番",
+    "name": "忍刀・終末番",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

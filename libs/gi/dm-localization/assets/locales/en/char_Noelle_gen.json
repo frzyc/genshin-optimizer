@@ -107,7 +107,7 @@
   "description": "A maid who faithfully serves the Knights of Favonius. She dreams of joining their ranks someday.",
   "constellationName": "Parma Cordis",
   "auto": {
-    "name": "Favonius Bladework - Maid",
+    "name": "Maid",
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",

@@ -44,7 +44,7 @@
   "description": "Cavaliere dell'Onda danzante, discendente dell'antica aristocrazia e capitana della compagnia di ricognizione dei Cavalieri di Favonius. Il motivo per cui una giovane nobile abbia voluto unirsi ai Cavalieri rimane tuttora un grande mistero in tutta Mondstadt.",
   "constellationName": "Aphros Delos",
   "auto": {
-    "name": "Tecnica di Favonius - Edel",
+    "name": "Edel",
     "fields": {
       "normal": {
         "0": "<strong>Attacco normale</strong>",

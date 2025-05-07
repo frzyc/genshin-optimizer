@@ -4,7 +4,7 @@
   "description": "心の中にある「正義」を常に遵守する特巡隊隊長。その手にある銃は罪人だけに向けられる。",
   "constellationName": "刀銃座",
   "auto": {
-    "name": "戦列槍術·改",
+    "name": "戦列槍術・改",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

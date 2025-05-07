@@ -4,7 +4,7 @@
   "description": "トラロカンの「調停者」。幾千万の争いを終結させる者。",
   "constellationName": "ヴァルチャー・グリフィス座",
   "auto": {
-    "name": "通常攻撃・フェザー・フルーリー",
+    "name": "フェザー・フルーリー",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

@@ -164,7 +164,7 @@
   "constellation4": {
     "name": "Crâne spirituel de non-mortel",
     "description": {
-      "0": "Pendant la compétence élémentaire <strong>Étoile d'aurore givrée</strong>, toucher un ennemi avec une tempête de givre d'Itzpapa permet d'invoquer en plus un <strong>crâne possédé d'obsidienne</strong>. En explosant, un crâne invoqué de cette manière inflige des <cryo>DGT Cryo de zone</cryo> infusés de noctâme d'une valeur équivalant à 1 200 % de la maîtrise élémentaire de Citlali et restaure à cette dernière 16 pts de noctâme et 8 pts d'énergie élémentaire, cet effet pouvant être déclenché une fois toutes les 8 s et ces DGT n'étant pas considérés comme des DGT de déchaînement élémentaire."
+      "0": "Pendant sa compétence élémentaire <strong>Étoile d'aurore givrée</strong>, toucher un ennemi avec une tempête de givre d'Itzpapa permet à Citlali d'invoquer en plus un <strong>crâne possédé d'obsidienne</strong>. En explosant, un crâne ainsi invoqué inflige des <cryo>DGT Cryo de zone</cryo> infusés de noctâme d'une valeur équivalant à 1 800 % de la maîtrise élémentaire de Citlali et restaure à cette dernière 16 pts de noctâme et 8 pts d'énergie élémentaire, cet effet pouvant être déclenché une fois toutes les 8 s et ces DGT n'étant pas considérés comme des DGT de déchaînement élémentaire."
     }
   },
   "constellation5": {
@@ -180,7 +180,7 @@
       "0": "Invoqué par la compétence élémentaire <strong>Étoile d'aurore givrée</strong>, Itzpapa est constamment dans l'état Feu d'opale, l'état ne prenant pas fin lorsque les points de noctâme sont épuisés.",
       "1": "De plus, Itzpapa consomme tous les points de noctâme lors de l'utilisation de la compétence élémentaire <strong>Étoile d'aurore givrée</strong> et consomme de façon continue des points de noctâme tant qu'elle est sur le terrain, chaque point ainsi consommé accordant 1 pt de loi secrète à Citlali.",
       "2": "Citlali peut cumuler un maximum de 40 pts de loi secrète, chaque point accordant à tous les personnages de l'équipe à proximité des bonus de DGT <pyro>Pyro</pyro> et <hydro>Hydro</hydro> de 1,5 % et augmentant les DGT infligés par Citlali de 2,5 %.",
-      "3": "Tous les points de loi secrète de Citlali sont annulés lorsqu'Itzpapa quitte le terrain ou que la compétence élémentaire est à nouveau utilisée."
+      "3": "Tous les points de loi secrète de Citlali sont annulés lorsque Itzpapa quitte le terrain ou que la compétence élémentaire est à nouveau utilisée."
     }
   }
 }

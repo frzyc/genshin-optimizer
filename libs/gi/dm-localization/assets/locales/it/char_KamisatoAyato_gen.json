@@ -4,7 +4,7 @@
   "description": "Il giovane ma particolarmente abile capo del clan Kamisato della Commissione Yashiro. Un uomo dalle mille risorse, colto e garbato.",
   "constellationName": "Cypressus Custos",
   "auto": {
-    "name": "Arte Kamisato - Marobashi",
+    "name": "Marobashi",
     "fields": {
       "normal": {
         "0": "<strong>Attacco normale</strong>",
