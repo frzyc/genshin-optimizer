@@ -163,6 +163,8 @@ export const characterIdMap: Record<
   10000109: 'YumemizukiMizuki',
   10000110: 'Iansan',
   10000111: 'Varesa',
+  10000112: 'Escoffier',
+  10000113: 'Ifa',
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
