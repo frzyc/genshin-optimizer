@@ -1,0 +1,29 @@
+{
+  "setName": "Finale der tiefen Korridore",
+  "setEffects": {
+    "2": "Erhöht den Kryo-Schaden um 15 %.",
+    "4": "Erhöht den mit Standardangriffen verursachten Schaden um 60 % und den mit Spezialfähigkeiten verursachten Schaden um 60 %, wenn die Elementarenergie des Trägers 0 Punkte beträgt. Macht den Schadenbonus für Spezialfähigkeiten 6 s lang unwirksam, wenn der Träger mit seinem Standardangriff Schaden verursacht. Macht den Schadensbonus für Standardangriffe 6 s lang unwirksam, wenn der Träger mit seiner Spezialfähigkeit Schaden verursacht. Kann auch ausgelöst werden, wenn sich die Figur inaktiv in der Truppe befindet."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hallendes Lied der tiefen Korridore",
+      "desc": "Diese aus Jade aus dem Norden gefertigte Eisblume hatte einst Blütenblätter, die jedoch im Laufe der Jahre zu Staub zerfielen."
+    },
+    "plume": {
+      "name": "Ferner Pakt der tiefen Korridore",
+      "desc": "Dieser aus Jade aus dem Norden gefertigte Federschmuck strahlt einen geheimnisvollen Schimmer aus, als käme er aus einer anderen Welt."
+    },
+    "sands": {
+      "name": "Stunde des Untergangs der tiefen Korridore",
+      "desc": "Diese aus Jade aus dem Norden gefertigte Taschenuhr ist für alle Zeit im Moment der Auslöschung stehen geblieben."
+    },
+    "goblet": {
+      "name": "Ehrenbankett der tiefen Korridore",
+      "desc": "Dieser aus Jade aus dem Norden gefertigte Kelch war angeblich einst ein heiliges Gefäß, in dem eine uralte Zivilisation dem hohen Himmel ihre Opfergaben darbrachte."
+    },
+    "circlet": {
+      "name": "Verlorene Krone der tiefen Korridore",
+      "desc": "Wie der Geist ihres ehemaligen Besitzers ist diese Maske von derselben „Besessenheit“ durchdrungen. Die Jade, die sie schmückt, stammt wohl aus einer noch älteren Zeit."
+    }
+  }
+}

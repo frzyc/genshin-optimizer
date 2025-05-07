@@ -4,7 +4,7 @@
   "description": "秘密を瓶の中に隠す、フォンテーヌの調香師。",
   "constellationName": "ポムム·ドゥ·アンブラ座",
   "auto": {
-    "name": "影追いの槍術·改",
+    "name": "影追いの槍術・改",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

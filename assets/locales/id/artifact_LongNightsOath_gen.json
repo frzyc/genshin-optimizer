@@ -1,0 +1,29 @@
+{
+  "setName": "Long Night's Oath",
+  "setEffects": {
+    "2": "DMG Plunging Attack meningkat 25%.",
+    "4": "Setelah Plunging Attack/Charged Attack/Elemental Skill dari Karakter yang mengenakan mengenai musuh, akan mendapatkan 1/2/2 lapis efek \"Radiance Everlasting\". Masing-masing Plunging Attack, Charged Attack, atau Elemental Skill dapat memicu efek ini sekali setiap detik. Efek \"Radiance Everlasting\": DMG Plunging Attack meningkat 15% selama 6 detik, dapat ditumpuk sampai 5 lapis dan durasi setiap lapisannya dihitung terpisah."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Lightkeeper's Pledge",
+      "desc": "Bunga besi yang dikenakan oleh Ratniki, melambangkan sumpah yang telah diucapkan untuk menjaga selamanya."
+    },
+    "plume": {
+      "name": "Nightingale's Tail Feather",
+      "desc": "Ornamen penutup kepala yang terbuat dari bulu burung bulbul dengan sangat hati-hati. Konon bentuknya ditentukan oleh Penempa Obor."
+    },
+    "sands": {
+      "name": "Undying One's Mourning Bell",
+      "desc": "Lonceng tembaga yang selalu dibawa oleh pejuang yang berjalan di jurang gelap. Suaranya sering terdengar di malam yang gelap."
+    },
+    "goblet": {
+      "name": "A Horn Unwinded",
+      "desc": "Sangkakala yang dulunya digunakan untuk memanggil orang yang menepati sumpah. Kini telah kehilangan fungsinya."
+    },
+    "circlet": {
+      "name": "Dyed Tassel",
+      "desc": "Helm kuno dan berat, adalah warisan dari klan pejuang kuno utara."
+    }
+  }
+}

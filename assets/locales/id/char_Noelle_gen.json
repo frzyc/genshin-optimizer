@@ -71,7 +71,7 @@
   "description": "Seorang pelayan yang bekerja di Knights of Favonius, memiliki impian untuk menjadi seorang Knight suatu hari kelak.",
   "constellationName": "Parma Cordis",
   "auto": {
-    "name": "Favonius Bladework - Maid",
+    "name": "Maid",
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",

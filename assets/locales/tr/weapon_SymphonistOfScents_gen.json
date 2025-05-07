@@ -1,0 +1,24 @@
+{
+  "name": "Aromaların Ezgisi",
+  "description": {
+    "0": "Zarif işçiliğe sahip bir mızrak. Melodileri ve lezzetleri bir araya getirebilen büyük bir müzisyene ait bir orkestra şefi batonu olduğu söylenir."
+  },
+  "passiveName": "Lezzet Senfonisi",
+  "passiveDescription": {
+    "0": {
+      "0": "Saldırıyı <cryo>%12</cryo> artırır. Kuşanan karakter savaş alanında değilken Saldırı ek <cryo>%12</cryo> daha artar. İyileştirmeden sonra, kuşanan karakter ve onun iyileştirdiği karakterler \"Tatlı Yankılar\" etkisini kazanır ve 3 saniyeliğine Saldırıları <cryo>%32</cryo> artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Saldırıyı <cryo>%15</cryo> artırır. Kuşanan karakter savaş alanında değilken Saldırı ek <cryo>%15</cryo> daha artar. İyileştirmeden sonra, kuşanan karakter ve onun iyileştirdiği karakterler \"Tatlı Yankılar\" etkisini kazanır ve 3 saniyeliğine Saldırıları <cryo>%40</cryo> artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Saldırıyı <cryo>%18</cryo> artırır. Kuşanan karakter savaş alanında değilken Saldırı ek <cryo>%18</cryo> daha artar. İyileştirmeden sonra, kuşanan karakter ve onun iyileştirdiği karakterler \"Tatlı Yankılar\" etkisini kazanır ve 3 saniyeliğine Saldırıları <cryo>%48</cryo> artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Saldırıyı <cryo>%21</cryo> artırır. Kuşanan karakter savaş alanında değilken Saldırı ek <cryo>%21</cryo> daha artar. İyileştirmeden sonra, kuşanan karakter ve onun iyileştirdiği karakterler \"Tatlı Yankılar\" etkisini kazanır ve 3 saniyeliğine Saldırıları <cryo>%56</cryo> artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Saldırıyı <cryo>%24</cryo> artırır. Kuşanan karakter savaş alanında değilken Saldırı ek <cryo>%24</cryo> daha artar. İyileştirmeden sonra, kuşanan karakter ve onun iyileştirdiği karakterler \"Tatlı Yankılar\" etkisini kazanır ve 3 saniyeliğine Saldırıları <cryo>%64</cryo> artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    }
+  }
+}

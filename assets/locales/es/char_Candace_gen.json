@@ -4,7 +4,7 @@
   "description": "Custodia de la Aldea Aaru. Esta muchacha con un ojo color ámbar es descendiente del Rey Deshret.",
   "constellationName": "Sagitta Scutum",
   "auto": {
-    "name": "Lanza radiante - En guardia",
+    "name": "En guardia",
     "fields": {
       "normal": {
         "0": "<strong>Ataque Normal</strong>",

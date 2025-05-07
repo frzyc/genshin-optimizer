@@ -4,7 +4,7 @@
   "description": "「キオンゴズィ」の古名を受け継いだナタの指導者。聖火で戦争の国を照らせることを願っている。",
   "constellationName": "不敗の日輪座",
   "auto": {
-    "name": "通常攻撃・命を紡ぐ炎",
+    "name": "命を紡ぐ炎",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

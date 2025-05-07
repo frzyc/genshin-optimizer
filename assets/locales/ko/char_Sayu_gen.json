@@ -4,7 +4,7 @@
   "description": "「종말번대」 소속 닌자. 체구가 작고 앙증맞으며 항상 졸려 보인다",
   "constellationName": "너구리자리",
   "auto": {
-    "name": "인도(忍刀)·종말번대",
+    "name": "종말번대",
     "fields": {
       "normal": {
         "0": "<strong>일반 공격</strong>",

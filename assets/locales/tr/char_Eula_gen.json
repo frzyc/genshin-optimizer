@@ -44,7 +44,7 @@
   "description": "Dalgalar Şövalyesi, Favonius Keşif Bölüğü Şövalyelerinin Yüzbaşısı. Eski asillerin soyundan gelen birinin Şövalyelere ne sebeple katıldığı, bugüne kadar Mondstadt'ta büyük bir gizem olarak kaldı.",
   "constellationName": "Deniz Köpüğü",
   "auto": {
-    "name": "Favonius Kılıç Tekniği - Edel",
+    "name": "Edel",
     "fields": {
       "normal": {
         "0": "<strong>Normal Saldırı</strong>",

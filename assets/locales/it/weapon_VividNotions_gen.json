@@ -1,0 +1,24 @@
+{
+  "name": "Pensieri vivaci",
+  "description": {
+    "0": "Un trofeo realizzato con gemme preziose della Comunità dell'Abbondanza e cristalli del Clan Piumafiore. Sembra sia appartenuto a una lottatrice leggendaria."
+  },
+  "passiveName": "Desiderio dell'arcobaleno cadente",
+  "passiveDescription": {
+    "0": {
+      "0": "L'ATT aumenta di un <cryo>28%</cryo>. Quando il personaggio esegue un attacco in picchiata, ottiene l'effetto Primo colore dell'aurora; quando usa l'abilità o il Tripudio elementale, invece, ottiene l'effetto Splendore del crepuscolo. Ciascun effetto aumenta i DAN da CRIT degli attacchi in picchiata rispettivamente di un <cryo>28%</cryo> e di un <cryo>40%</cryo>. Entrambi gli effetti durano un massimo di 15 s e si annullano 0,1 s dopo che l'onda d'urto causata dall'impatto sul terreno ha colpito un obiettivo."
+    },
+    "1": {
+      "0": "L'ATT aumenta di un <cryo>35%</cryo>. Quando il personaggio esegue un attacco in picchiata, ottiene l'effetto Primo colore dell'aurora; quando usa l'abilità o il Tripudio elementale, invece, ottiene l'effetto Splendore del crepuscolo. Ciascun effetto aumenta i DAN da CRIT degli attacchi in picchiata rispettivamente di un <cryo>35%</cryo> e di un <cryo>50%</cryo>. Entrambi gli effetti durano un massimo di 15 s e si annullano 0,1 s dopo che l'onda d'urto causata dall'impatto sul terreno ha colpito un obiettivo."
+    },
+    "2": {
+      "0": "L'ATT aumenta di un <cryo>42%</cryo>. Quando il personaggio esegue un attacco in picchiata, ottiene l'effetto Primo colore dell'aurora; quando usa l'abilità o il Tripudio elementale, invece, ottiene l'effetto Splendore del crepuscolo. Ciascun effetto aumenta i DAN da CRIT degli attacchi in picchiata rispettivamente di un <cryo>42%</cryo> e di un <cryo>60%</cryo>. Entrambi gli effetti durano un massimo di 15 s e si annullano 0,1 s dopo che l'onda d'urto causata dall'impatto sul terreno ha colpito un obiettivo."
+    },
+    "3": {
+      "0": "L'ATT aumenta di un <cryo>49%</cryo>. Quando il personaggio esegue un attacco in picchiata, ottiene l'effetto Primo colore dell'aurora; quando usa l'abilità o il Tripudio elementale, invece, ottiene l'effetto Splendore del crepuscolo. Ciascun effetto aumenta i DAN da CRIT degli attacchi in picchiata rispettivamente di un <cryo>49%</cryo> e di un <cryo>70%</cryo>. Entrambi gli effetti durano un massimo di 15 s e si annullano 0,1 s dopo che l'onda d'urto causata dall'impatto sul terreno ha colpito un obiettivo."
+    },
+    "4": {
+      "0": "L'ATT aumenta di un <cryo>56%</cryo>. Quando il personaggio esegue un attacco in picchiata, ottiene l'effetto Primo colore dell'aurora; quando usa l'abilità o il Tripudio elementale, invece, ottiene l'effetto Splendore del crepuscolo. Ciascun effetto aumenta i DAN da CRIT degli attacchi in picchiata rispettivamente di un <cryo>56%</cryo> e di un <cryo>80%</cryo>. Entrambi gli effetti durano un massimo di 15 s e si annullano 0,1 s dopo che l'onda d'urto causata dall'impatto sul terreno ha colpito un obiettivo."
+    }
+  }
+}

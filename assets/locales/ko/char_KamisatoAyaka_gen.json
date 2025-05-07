@@ -38,7 +38,7 @@
   "description": "이나즈마 「야시로 봉행」 카미사토 가문의 아가씨. 단정하고 우아하며 지혜롭고 굳건하다",
   "constellationName": "설학자리",
   "auto": {
-    "name": "카미사토류·경(傾)",
+    "name": "경(傾)",
     "fields": {
       "normal": {
         "0": "<strong>일반 공격</strong>",

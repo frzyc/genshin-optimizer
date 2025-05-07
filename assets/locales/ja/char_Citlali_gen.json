@@ -4,7 +4,7 @@
   "description": "謎煙の主の大シャーマン。一族の誰もが敬う「黒曜石の老婆」。",
   "constellationName": "アナワトルの鏡座",
   "auto": {
-    "name": "通常攻撃・憑霊影縛",
+    "name": "憑霊影縛",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

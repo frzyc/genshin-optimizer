@@ -4,7 +4,7 @@
   "description": "A young knight born to an ordinary family. He serves as a Front-Line Surveyor in his Company. He is a low-key and cautious character.",
   "constellationName": "Palumbus",
   "auto": {
-    "name": "Spear of Favonius - Arrow's Passage",
+    "name": "Arrow's Passage",
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",

@@ -1,0 +1,24 @@
+{
+  "name": "Symphonist of Scents",
+  "description": {
+    "0": "Tombak yang elegan. konon katanya merupakan tongkat konduktor yang pernah digunakan oleh seorang musisi hebat untuk membangun jembatan antara melodi dan indra perasa."
+  },
+  "passiveName": "Seasoned Symphony",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK meningkat <cryo>12%</cryo>. Saat Karakter yang mengenakan berada dalam party, namun tidak sedang bertarung, maka ATK-nya akan meningkat lagi sebesar <cryo>12%</cryo>. Setelah melakukan pemulihan HP, maka Karakter yang memakai senjata ini dan Karakter yang menerima pemulihan HP akan mendapatkan efek \"Sweet Echoes\", meningkatkan ATK sebesar <cryo>32%</cryo> selama 3 detik. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "ATK meningkat <cryo>15%</cryo>. Saat Karakter yang mengenakan berada dalam party, namun tidak sedang bertarung, maka ATK-nya akan meningkat lagi sebesar <cryo>15%</cryo>. Setelah melakukan pemulihan HP, maka Karakter yang memakai senjata ini dan Karakter yang menerima pemulihan HP akan mendapatkan efek \"Sweet Echoes\", meningkatkan ATK sebesar <cryo>40%</cryo> selama 3 detik. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "ATK meningkat <cryo>18%</cryo>. Saat Karakter yang mengenakan berada dalam party, namun tidak sedang bertarung, maka ATK-nya akan meningkat lagi sebesar <cryo>18%</cryo>. Setelah melakukan pemulihan HP, maka Karakter yang memakai senjata ini dan Karakter yang menerima pemulihan HP akan mendapatkan efek \"Sweet Echoes\", meningkatkan ATK sebesar <cryo>48%</cryo> selama 3 detik. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "ATK meningkat <cryo>21%</cryo>. Saat Karakter yang mengenakan berada dalam party, namun tidak sedang bertarung, maka ATK-nya akan meningkat lagi sebesar <cryo>21%</cryo>. Setelah melakukan pemulihan HP, maka Karakter yang memakai senjata ini dan Karakter yang menerima pemulihan HP akan mendapatkan efek \"Sweet Echoes\", meningkatkan ATK sebesar <cryo>56%</cryo> selama 3 detik. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "ATK meningkat <cryo>24%</cryo>. Saat Karakter yang mengenakan berada dalam party, namun tidak sedang bertarung, maka ATK-nya akan meningkat lagi sebesar <cryo>24%</cryo>. Setelah melakukan pemulihan HP, maka Karakter yang memakai senjata ini dan Karakter yang menerima pemulihan HP akan mendapatkan efek \"Sweet Echoes\", meningkatkan ATK sebesar <cryo>64%</cryo> selama 3 detik. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

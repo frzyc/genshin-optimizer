@@ -4,7 +4,7 @@
   "description": "ウィッツトランの竜狩り人。代償を量ることに長けている。",
   "constellationName": "キメラ·アレブリヘス座",
   "auto": {
-    "name": "武闘術·白夜",
+    "name": "武闘術・白夜",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

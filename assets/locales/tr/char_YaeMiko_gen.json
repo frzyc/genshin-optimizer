@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Yüklü Saldırı</strong>",
-        "1": " Kısa süre kullanıldıktan sonra belirli miktarda Dayanıklılık harcayarak <electro>Elektrik Alan Hasarı</electro> verir."
+        "1": "Kısa süre kullanıldıktan sonra belirli miktarda Dayanıklılık harcayarak <electro>Elektrik Alan Hasarı</electro> verir."
       },
       "plunging": {
         "0": "<strong>Havadan Saldırı</strong>",

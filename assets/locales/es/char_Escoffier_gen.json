@@ -1,0 +1,170 @@
+{
+  "name": "Escoffier",
+  "title": "La Guinda del Pastel",
+  "description": "La exjefa de cocina del Bistró Debord, famosa en toda Fontaine, pionera de la cocina de precisión y condecorada con el título de “pâtissière suprême”. Lo estricta que es en la cocina no tiene parangón.",
+  "constellationName": "Dulciaria Structura",
+  "auto": {
+    "name": "Habilidades culinarias",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para realizar un ataque ascendente."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cocina a baja temperatura",
+    "description": {
+      "0": "¡Presencia la verdadera esencia de la cocina! Dependiendo de si se pulsa una vez o se mantiene pulsado, Escoffier mostrará diferentes técnicas culinarias, cada una de las cuales representa un orgullo para Fontaine.",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Activa el mecachef multitarea de amplio espectro en modo “crioalmacenamiento” e inflige <cryo>Daño Cryo en el AdE</cryo> a los enemigos cercanos.",
+      "4": "<br/>",
+      "5": "<strong>Mecachef: modo crioalmacenamiento</strong>",
+      "6": "El mecachef sigue al personaje en uso y, cada cierto tiempo, lanza un parfait helado a los enemigos cercanos que inflige <cryo>Daño Cryo</cryo>.",
+      "7": "<br/>",
+      "8": "<strong>Arjé: ousía</strong>",
+      "9": "Cada cierto tiempo, cuando Escoffier activa el mecachef multitarea de amplio espectro en modo crioalmacenamiento, invoca un filo fluyente que inflige <cryo>Daño Cryo en el AdE</cryo> cargado de energía ousía.",
+      "10": "<br/>",
+      "11": "<strong>Mantener pulsado</strong>",
+      "12": "Activa el mecachef en <strong>modo cocina improvisada</strong>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de parfait helado",
+      "2": "Duración de modo crioalmacenamiento",
+      "3": "Daño de filo fluyente",
+      "4": "Intervalo de filo fluyente",
+      "5": "TdE al pulsar una vez",
+      "6": "TdE de mantener pulsado",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Técnica de corte",
+    "description": {
+      "0": "En un alarde de su excepcional habilidad con el cuchillo, Escoffier inflige <cryo>Daño Cryo en el AdE</cryo> y regenera Vida a todos los personajes cercanos del equipo en función del ATQ de Escoffier."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Curación",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Más vale comer que curar",
+    "description": {
+      "0": "Tras usar su Habilidad Definitiva, <strong>Técnica de corte</strong>, Escoffier obtiene el efecto de “dieta rehabilitadora” durante 9 s, con el cual regenera Vida cada segundo a los personajes en uso cercanos en una cantidad equivalente al 138.24% del ATQ de Escoffier."
+    }
+  },
+  "passive2": {
+    "name": "Condimentación inspirada",
+    "description": {
+      "0": "Si en el equipo hay 1/2/3/4 personajes <hydro>Hydro</hydro> o <cryo>Cryo</cryo>, al golpear a un enemigo con la Habilidad Elemental, <strong>Cocina a baja temperatura</strong>, o la Habilidad Definitiva, <strong>Técnica de corte</strong>, de Escoffier, la RES <hydro>Hydro</hydro> y la RES <cryo>Cryo</cryo> de dicho enemigo se reducen en un 5%/10%/15%/55% durante 12 s."
+    }
+  },
+  "passive3": {
+    "name": "Siempre lista para improvisar",
+    "description": {
+      "0": "Al mantener pulsada la Habilidad Elemental, <strong>Cocina a baja temperatura</strong>, Escoffier activará el mecachef multitarea de amplio espectro en modo cocina improvisada.",
+      "1": "<br/>",
+      "2": "<strong>Mecachef: modo cocina improvisada</strong>",
+      "3": [
+        "Coloca al mecachef en el campo de batalla. El mecachef puede absorber ataques elementales. Cuando la Energía Elemental absorbida alcance el límite, Escoffier podrá convertir los ingredientes que ha colocado en él en platos de comida.",
+        "Escoffier necesita tiempo para comprar nuevos ingredientes y solo puede cocinar cierta cantidad de comida de esta manera semanalmente. Los intentos para cocinar se reinician todos los lunes a las 4:00 a.m."
+      ]
+    }
+  },
+  "constellation1": {
+    "name": "Danza de sabores para el paladar",
+    "description": {
+      "0": "Cuando en el equipo haya 4 personajes <hydro>Hydro</hydro> o <cryo>Cryo</cryo>, el <cryo>Daño CRIT Cryo</cryo> de todos los miembros del equipo cercanos aumentará en un 60% durante 15 s después de que Escoffier use la Habilidad Elemental <strong>Cocina a baja temperatura</strong> o la Habilidad Definitiva <strong>Técnica de corte</strong>.",
+      "1": "Es necesario desbloquear el talento pasivo “Condimentación inspirada”."
+    }
+  },
+  "constellation2": {
+    "name": "El arte de guisar: fragancia y frescura",
+    "description": {
+      "0": "Cuando Escoffier activa el mecachef en <strong>modo crioalmacenamiento</strong>, obtiene el efecto de “delicatessen recién hecha” durante 15 s. Mientras este efecto está activo, Escoffier obtiene 5 cargas de “platos fríos”, de manera que, cuando un personaje en uso cercano (a excepción de Escoffier) inflige <cryo>Daño Cryo</cryo> contra un enemigo con un Ataque Normal, Cargado o Descendente, o con su Habilidad Elemental o Definitiva, se consumirá una carga de platos fríos y aumentará el daño infligido en una cantidad equivalente al 240% del ATQ de Escoffier.",
+      "1": "Al golpear a varios enemigos a la vez con un solo golpe de <cryo>Daño Cryo</cryo>, se consumirán cargas de platos fríos dependiendo del número de enemigos golpeados."
+    }
+  },
+  "constellation3": {
+    "name": "La magia de la caramelización al horno",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Cocina a baja temperatura</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Receta secreta de romero",
+    "description": {
+      "0": "Aumenta en 6 s la duración de <strong>dieta rehabilitadora</strong>. Mientras este efecto está activo, la curación por medio de <strong>dieta rehabilitadora</strong> tiene una probabilidad equivalente a la Prob. CRIT de Escoffier de aumentar en un 100% la cantidad de curación realizada y de que Escoffier recupere 2 pts. de Energía Elemental. Este efecto puede ocurrir hasta 7 veces cada vez que <strong>dieta rehabilitadora</strong> está activa.",
+      "1": "Es necesario desbloquear el talento pasivo “Más vale comer que curar”."
+    }
+  },
+  "constellation5": {
+    "name": "Sinfonía de mil salsas",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Técnica de corte</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fiesta del té con dulces multicolor",
+    "description": {
+      "0": "El <strong>mecachef: modo crioalmacenamiento</strong> se fortalece:",
+      "1": [
+        "Cuando tu personaje en uso golpee a un enemigo con un Ataque Normal, Cargado o Descendente, el mecachef: modo crioalmacenamiento lanzará un parfait helado especial adicional que inflige <cryo>Daño Cryo en el AdE</cryo> en una cantidad equivalente al 500% del ATQ de Escoffier. Este daño se considera daño de Habilidad Elemental."
+      ],
+      "2": "Este efecto solo puede activarse una vez cada 0.5 s, y puede ocurrir hasta 6 veces mientras un mismo mecachef: modo crioalmacenamiento esté activo."
+    }
+  }
+}

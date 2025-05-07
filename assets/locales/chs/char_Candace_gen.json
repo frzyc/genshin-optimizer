@@ -4,7 +4,7 @@
   "description": "有着琥珀色左眼的赤王后裔，阿如村的守护者。",
   "constellationName": "箭盾座",
   "auto": {
-    "name": "流耀枪术·守势",
+    "name": "守势",
     "fields": {
       "normal": {
         "0": "<strong>普通攻击</strong>",

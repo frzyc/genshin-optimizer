@@ -218,6 +218,12 @@
   "FestivalStamp": {
     "name": "놀이 스탬프"
   },
+  "SmileySnacks": {
+    "name": "낙원 쿠키"
+  },
+  "ActionPoints": {
+    "name": "행동력"
+  },
   "Primogem": {
     "name": "원석"
   },
@@ -304,6 +310,9 @@
   },
   "MastersOfTheNightWindReputationEXP": {
     "name": "평판 경험치·「연기 주인」"
+  },
+  "CollectiveOfPlentyReputationEXP": {
+    "name": "평판 경험치·「비옥한 터전」"
   },
   "MemoryOfEternalFlames": {
     "name": "꺼지지 않는 불의 기억"
@@ -920,6 +929,9 @@
   "PhlogistonEnergyOrbSeparateDrop": {
     "name": "열소 에너지 오브(나눠져서 드랍)"
   },
+  "PhlogistonEnergyOrbCloseRange": {
+    "name": "열소 에너지 오브(근거리)"
+  },
   "TestRandomTreasureChest": {
     "name": "테스트 랜덤 보물상자"
   },
@@ -1010,6 +1022,18 @@
   "YumemizukiMizuki": {
     "name": "유메미즈키 미즈키"
   },
+  "Iansan": {
+    "name": "얀사"
+  },
+  "Varesa": {
+    "name": "바레사"
+  },
+  "Escoffier": {
+    "name": "에스코피에"
+  },
+  "Ifa": {
+    "name": "이파"
+  },
   "KachinasStellaFortuna": {
     "name": "카치나의 운명의 별"
   },
@@ -1039,6 +1063,18 @@
   },
   "YumemizukiMizukisStellaFortuna": {
     "name": "유메미즈키 미즈키의 운명의 별"
+  },
+  "IansansStellaFortuna": {
+    "name": "얀사의 운명의 별"
+  },
+  "VaresasStellaFortuna": {
+    "name": "바레사의 운명의 별"
+  },
+  "EscoffiersStellaFortuna": {
+    "name": "에스코피에의 운명의 별"
+  },
+  "IfasStellaFortuna": {
+    "name": "이파의 운명의 별"
   },
   "Apple": {
     "name": "사과"
@@ -2405,8 +2441,8 @@
   "StrangeTooth": {
     "name": "기이한 「이빨」"
   },
-  "VitalizedDragontooth": {
-    "name": "생명력을 흡수한 용의 이빨"
+  "EmpoweredDragontooth": {
+    "name": "힘을 흡수한 용의 이빨"
   },
   "PrincessBox": {
     "name": "공주의 함"
@@ -3460,6 +3496,15 @@
   },
   "WitheringPurpurbloom": {
     "name": "잿보라꽃"
+  },
+  "SkysplitGembloom": {
+    "name": "구름바위 꽃"
+  },
+  "Dracolite": {
+    "name": "비늘 결정석"
+  },
+  "RedBerryshroom": {
+    "name": "빨간 과일버섯"
   },
   "BirchWood": {
     "name": "자작나무"
@@ -7535,6 +7580,102 @@
   "DreamsOfHealing": {
     "name": "「꿈의 치유」"
   },
+  "SuspiciousCheesyCrabHotpot": {
+    "name": "이상한 치즈 게 전골"
+  },
+  "CheesyCrabHotpot": {
+    "name": "치즈 게 전골"
+  },
+  "DeliciousCheesyCrabHotpot": {
+    "name": "맛있는 치즈 게 전골"
+  },
+  "SuspiciousFruitsAplenty": {
+    "name": "이상한 비옥한 땅의 과일 주스"
+  },
+  "FruitsAplenty": {
+    "name": "비옥한 땅의 과일 주스"
+  },
+  "DeliciousFruitsAplenty": {
+    "name": "맛있는 비옥한 땅의 과일 주스"
+  },
+  "SuspiciousPuffedGrainfruitBars": {
+    "name": "이상한 알갱이 열매 뻥튀기"
+  },
+  "PuffedGrainfruitBars": {
+    "name": "알갱이 열매 뻥튀기"
+  },
+  "DeliciousPuffedGrainfruitBars": {
+    "name": "맛있는 알갱이 열매 뻥튀기"
+  },
+  "SuspiciousMagmaEggs": {
+    "name": "이상한 흑흑 까만 알"
+  },
+  "MagmaEggs": {
+    "name": "흑흑 까만 알"
+  },
+  "DeliciousMagmaEggs": {
+    "name": "맛있는 흑흑 까만 알"
+  },
+  "SuspiciousCheesyMushroomSkewer": {
+    "name": "이상한 치즈 버섯 꼬치"
+  },
+  "CheesyMushroomSkewer": {
+    "name": "치즈 버섯 꼬치"
+  },
+  "DeliciousCheesyMushroomSkewer": {
+    "name": "맛있는 치즈 버섯 꼬치"
+  },
+  "GoldStandardHealthyMeal": {
+    "name": "초일류 건강식"
+  },
+  "MtMushroomForOne": {
+    "name": "버섯산(1인분)"
+  },
+  "SuspiciousHarvestsBoon": {
+    "name": "이상한 비옥한 축복"
+  },
+  "HarvestsBoon": {
+    "name": "비옥한 축복"
+  },
+  "DeliciousHarvestsBoon": {
+    "name": "맛있는 비옥한 축복"
+  },
+  "SuspiciousPetitGateauDebordRevisedVersion": {
+    "name": "이상한 드보르 미니 케이크·개량형"
+  },
+  "PetitGateauDebordRevisedVersion": {
+    "name": "드보르 미니 케이크·개량형"
+  },
+  "DeliciousPetitGateauDebordRevisedVersion": {
+    "name": "맛있는 드보르 미니 케이크·개량형"
+  },
+  "SuspiciousCandyShells": {
+    "name": "이상한 진주조개 사탕"
+  },
+  "CandyShells": {
+    "name": "진주조개 사탕"
+  },
+  "DeliciousCandyShells": {
+    "name": "맛있는 진주조개 사탕"
+  },
+  "GateauDebordMagnifique": {
+    "name": "드보르 케이크·호화판"
+  },
+  "EmotionalSupport": {
+    "name": "「정서적 지지」"
+  },
+  "VerdantGift": {
+    "name": "푸르른 꽃다발"
+  },
+  "WaveKissedSands": {
+    "name": "하얀 파도와 모래"
+  },
+  "GildedHall": {
+    "name": "황금성"
+  },
+  "AutumnFrost": {
+    "name": "가을 서리"
+  },
   "RecipeItem": {
     "name": "레시피 아이템"
   },
@@ -8216,6 +8357,30 @@
   "RecipeBathhouseManjuu": {
     "name": "레시피: 대중탕 만쥬"
   },
+  "RecipeMagmaEggs": {
+    "name": "레시피: 흑흑 까만 알"
+  },
+  "RecipePuffedGrainfruitBars": {
+    "name": "레시피: 알갱이 열매 뻥튀기"
+  },
+  "RecipeCheesyMushroomSkewer": {
+    "name": "레시피: 치즈 버섯 꼬치"
+  },
+  "RecipeFruitsAplenty": {
+    "name": "레시피: 비옥한 땅의 과일 주스"
+  },
+  "RecipeHarvestsBoon": {
+    "name": "레시피: 비옥한 축복"
+  },
+  "RecipeCheesyCrabHotpot": {
+    "name": "레시피: 치즈 게 전골"
+  },
+  "RecipePetitGateauDebordRevisedVersion": {
+    "name": "레시피: 드보르 미니 케이크·개량형"
+  },
+  "RecipeCandyShells": {
+    "name": "레시피: 진주조개 사탕"
+  },
   "CraftedItems": {
     "name": "합성 산물"
   },
@@ -8699,6 +8864,15 @@
   "IllusoryLeafcoil": {
     "name": "빛을 미혹하는 잎말이"
   },
+  "ColdCrackedShellshard": {
+    "name": "차갑게 식은 껍질"
+  },
+  "WarmBackShell": {
+    "name": "열기를 품은 껍질"
+  },
+  "BlazingPrismshell": {
+    "name": "밝게 타오르는 껍질"
+  },
   "HurricaneSeed": {
     "name": "폭풍의 씨앗"
   },
@@ -8911,6 +9085,21 @@
   },
   "TalismanOfTheEnigmaticLand": {
     "name": "수수께끼 땅의 부적"
+  },
+  "SparklessStatueCore": {
+    "name": "무지의 코어"
+  },
+  "AscendedSampleKnight": {
+    "name": "승격·나이트"
+  },
+  "AscendedSampleRook": {
+    "name": "승격·룩"
+  },
+  "AscendedSampleQueen": {
+    "name": "승격·퀸"
+  },
+  "SecretSourceAirflowAccumulator": {
+    "name": "비밀근원 분사구"
   },
   "TileOfDecarabiansTower": {
     "name": "고탑 왕의 잔해"
@@ -9226,6 +9415,9 @@
   },
   "TalentShareBundle": {
     "name": "특성 조력 공유 패키지"
+  },
+  "OutfitOptionBundlePhaseII": {
+    "name": "코스튬 선택 상자·두 번째"
   },
   "BEP": {
     "name": "기행 경험치"
@@ -11657,6 +11849,12 @@
   "CrimsonObsidianRing": {
     "name": "진홍색 흑요석 고리"
   },
+  "SunsetBlueObsidianFragment": {
+    "name": "자청색 흑요석 조각"
+  },
+  "SunsetBlueObsidianRing": {
+    "name": "자청색 흑요석 고리"
+  },
   "PakpakaFlyingSchoolFlyingTournamentInvitationLetter": {
     "name": "파파카 비행 학교의 비행 대회 초대장"
   },
@@ -11804,6 +12002,9 @@
   "SaurusCrackersTepetlisaurus": {
     "name": "용용 쿠키·산룡"
   },
+  "ThatWhichWasOnceEhecatl": {
+    "name": "「에헤카틀」이었던 기계"
+  },
   "AisaBathhouseVIPPass": {
     "name": "아이사 대중탕 VIP 초대장"
   },
@@ -11824,6 +12025,132 @@
   },
   "MenOfLithinIII": {
     "name": "석소 인간·3권"
+  },
+  "GreenBerryshroom": {
+    "name": "초록 과일버섯"
+  },
+  "PermitToTheSacredHeart": {
+    "name": "신성한 산의 심장으로 가는 「허가」"
+  },
+  "PhlogistonUnit": {
+    "name": "「열소 유닛」"
+  },
+  "Leaderboard": {
+    "name": "랭킹"
+  },
+  "ACommemorativePhoto": {
+    "name": "기념사진"
+  },
+  "PhlogistonConverterExperimentalReport": {
+    "name": "「열소 상태 전환기」에 관한 실험 보고서"
+  },
+  "ResearchersNotes": {
+    "name": "연구자의 기록"
+  },
+  "UnsignedLetter": {
+    "name": "서명이 없는 편지"
+  },
+  "LetterForAnna": {
+    "name": "안나 언니에게 보내는 편지"
+  },
+  "FusionProfusionDJRemixSelections": {
+    "name": "《퓨전·디제이 리믹스 특선》"
+  },
+  "Kamera": {
+    "name": "사진기"
+  },
+  "CafLuteceHouseGrounds": {
+    "name": "뤼테스 카페 한정 커피"
+  },
+  "KomporeTheCunningI": {
+    "name": "교활한 캉브레·1권"
+  },
+  "KomporeTheCunningII": {
+    "name": "교활한 캉브레·2권"
+  },
+  "KomporeTheCunningIII": {
+    "name": "교활한 캉브레·3권"
+  },
+  "SundjattasFirstForayI": {
+    "name": "순디자타의 첫 출진·첫 번째"
+  },
+  "SundjattasFirstForayII": {
+    "name": "순디자타의 첫 출진·두 번째"
+  },
+  "SundjattasFirstForayIII": {
+    "name": "순디자타의 첫 출진·세 번째"
+  },
+  "RangiNuisEnd": {
+    "name": "랑기누이 아래"
+  },
+  "TheHeadlessCoquitaoI": {
+    "name": "머리 없는 코키타오·1권"
+  },
+  "TheHeadlessCoquitaoII": {
+    "name": "머리 없는 코키타오·2권"
+  },
+  "TheBookOfFiveSprings": {
+    "name": "《온천도》"
+  },
+  "PhotoWithTravelCompanions": {
+    "name": "여행 동료와 함께 찍은 사진"
+  },
+  "HazardWarning": {
+    "name": "경고"
+  },
+  "RecordsRegardingCreatingTheSecretSourceServants": {
+    "name": "「용의 하인 제작」 기록"
+  },
+  "RecordsRegardingHumansAndExceptionalIndividualsThereof": {
+    "name": "「인류… 와 걸출한 자」의 기록"
+  },
+  "RecordsRegardingCorrosionAndPhysicalConditions": {
+    "name": "「침식 및 신체 상태」 기록"
+  },
+  "RecordsRegardingItemsThatShouldPerhapsBeDeleted": {
+    "name": "「어쩌면 삭제했어야 할…」 기록"
+  },
+  "IridescentLegacyPartI": {
+    "name": "빛새김 기록·첫 번째"
+  },
+  "IridescentLegacyPartII": {
+    "name": "빛새김 기록·두 번째"
+  },
+  "IridescentLegacyPartIII": {
+    "name": "빛새김 기록·세 번째"
+  },
+  "IridescentLegacyPartIV": {
+    "name": "빛새김 기록·네 번째"
+  },
+  "ChamberOfDeliberationSovereignRulersCouncilRecords": {
+    "name": "심의회-지고한 영주 평의회의 기록"
+  },
+  "SecretSourceDragonIdolWorkshopEngraving": {
+    "name": "비밀근원 용조각상 공방의 각인"
+  },
+  "NestExperimentLog": {
+    "name": "사육실 실험 일지"
+  },
+  "RecordLeftByTheFlamestealer": {
+    "name": "「불을 훔친 자」가 남긴 기록"
+  },
+  "DamagedBounty": {
+    "name": "얼룩진 현상 토벌 의뢰서"
+  },
+  "ChevalmarinAmusementParkCommemorativeMap": {
+    "name": "슈벨마 테마파크 기념 지도"
+  },
+  "HandDrawnMap": {
+    "name": "노트 속의 지도"
+  },
+  "MysteriousMap": {
+    "name": "신비한 지도"
+  },
+  "DazzlingMysteriousGift": {
+    "name": "신비롭게 반짝이는 선물"
+  },
+  "LetterOfUnknownOrigin": {
+    "name": "출처 불명의 편지"
   },
   "TearsAmongTheStars": {
     "name": "뭇별 사이의 눈물"
@@ -11941,6 +12268,9 @@
   },
   "GlowingHornshroomSpore": {
     "name": "「형광 뿔버섯」 포자"
+  },
+  "SkysplitGembloomSeed": {
+    "name": "「구름바위 꽃」 씨앗"
   },
   "Medaka": {
     "name": "구피"
@@ -12073,6 +12403,9 @@
   },
   "PseudosharkUnihornfish": {
     "name": "상어 위장 외뿔어"
+  },
+  "SecretSourceScoutSweeper": {
+    "name": "비밀근원 장치·순찰자"
   },
   "WingsOfFirstFlight": {
     "name": "최초의 날개"
@@ -12611,6 +12944,21 @@
   "RadiantSpincrystal147": {
     "name": "빛나는 결정·147"
   },
+  "RadiantSpincrystal148": {
+    "name": "빛나는 결정·148"
+  },
+  "RadiantSpincrystal149": {
+    "name": "빛나는 결정·149"
+  },
+  "RadiantSpincrystal150": {
+    "name": "빛나는 결정·150"
+  },
+  "RadiantSpincrystal151": {
+    "name": "빛나는 결정·151"
+  },
+  "RadiantSpincrystal152": {
+    "name": "빛나는 결정·152"
+  },
   "LanternFiber": {
     "name": "등불 종이 섬유"
   },
@@ -12694,6 +13042,9 @@
   },
   "SmolderingPhosphorescentFlame": {
     "name": "희미한 도깨비불"
+  },
+  "CompositeBowTuningKit": {
+    "name": "활 조율 도구 세트"
   },
   "FalconsDance": {
     "name": "송골매의 춤"
@@ -13538,6 +13889,30 @@
   "TravelNotesWondrousReverie": {
     "name": "기행·좋은 꿈"
   },
+  "VaresaPowerhouse": {
+    "name": "바레사·힘의 근원"
+  },
+  "IansanUnyielding": {
+    "name": "얀사·노력"
+  },
+  "NatlanDraconicGaze": {
+    "name": "나타·용의 눈동자"
+  },
+  "AchievementTranquilPeace": {
+    "name": "업적·평온"
+  },
+  "TravelNotesBloomingGlory": {
+    "name": "기행·영광의 꽃"
+  },
+  "EscoffierCharm": {
+    "name": "에스코피에·풍미"
+  },
+  "IfaBro": {
+    "name": "이파·형씨"
+  },
+  "TravelNotesBalletica": {
+    "name": "기행·왈츠"
+  },
   "EchoDandelionKnight": {
     "name": "궤적·민들레 기사"
   },
@@ -13564,6 +13939,12 @@
   },
   "EchoScarletLeavesPursueWildWaves": {
     "name": "궤적·파도를 쫓는 단풍"
+  },
+  "EchoWindborneBard": {
+    "name": "궤적·바람의 시인"
+  },
+  "EchoFlameMane": {
+    "name": "궤적·화염 갈기의 사자"
   },
   "AnemoculusResonanceStone": {
     "name": "바람 신의 눈동자 공명석"
@@ -13606,9 +13987,6 @@
   },
   "WarmingBottle": {
     "name": "발열병"
-  },
-  "Kamera": {
-    "name": "사진기"
   },
   "KuriousKamera": {
     "name": "특이한 「사진기」"
@@ -14138,6 +14516,105 @@
   "EarnestNegotiation": {
     "name": "성실한 협상"
   },
+  "SurveyingSurroundings": {
+    "name": "주변 살피기"
+  },
+  "GentleCountenance": {
+    "name": "차분한 자태"
+  },
+  "PerformanceTime": {
+    "name": "연주 시간"
+  },
+  "GuardUp": {
+    "name": "머리 보호"
+  },
+  "KindGreeting": {
+    "name": "상냥한 인사"
+  },
+  "ByMyCommand": {
+    "name": "명령 하달"
+  },
+  "ComposedNegotiation": {
+    "name": "침착한 협상"
+  },
+  "EngineeringPrep": {
+    "name": "프로젝트 준비"
+  },
+  "Incandescence": {
+    "name": "선향불꽃"
+  },
+  "TheDuelBegins": {
+    "name": "결투 시작"
+  },
+  "LookingAroundHappily": {
+    "name": "구경·기쁨"
+  },
+  "PlayfulShushing": {
+    "name": "쉿·익살"
+  },
+  "BoisterousGreeting": {
+    "name": "호탕한 인사"
+  },
+  "AgilePosture": {
+    "name": "사뿐한 춤"
+  },
+  "GeneralsGrandeur": {
+    "name": "대장의 기세"
+  },
+  "ElegantStringedMelody": {
+    "name": "우아한 현악"
+  },
+  "PrinzessinsMajesty": {
+    "name": "황녀의 위엄"
+  },
+  "AShortBreak": {
+    "name": "짧은 휴식"
+  },
+  "ReadingTime": {
+    "name": "독서 시간"
+  },
+  "AuspiciousBeastsReadyToLeap": {
+    "name": "영물의 환희"
+  },
+  "Bombonanza": {
+    "name": "폭탄 한가득"
+  },
+  "ALittleSleepy": {
+    "name": "피곤"
+  },
+  "GuujisTrick": {
+    "name": "궁사의 묘책"
+  },
+  "Showtime": {
+    "name": "쇼타임"
+  },
+  "TimeToShine": {
+    "name": "공연 시간"
+  },
+  "CarefulObservation": {
+    "name": "집중 관찰"
+  },
+  "LeisurelyLabor": {
+    "name": "여유로운 일"
+  },
+  "ComfortableCountenance": {
+    "name": "자유로운 자태"
+  },
+  "CloseReading": {
+    "name": "자세히 읽기"
+  },
+  "Stargazing": {
+    "name": "별빛 관찰"
+  },
+  "AQuickLookAround": {
+    "name": "재빠른 관찰"
+  },
+  "CasualConversation": {
+    "name": "편한 대화"
+  },
+  "ACloudyMoment": {
+    "name": "불쾌한 순간"
+  },
   "FantasticalMarvel": {
     "name": "절묘한 트릭"
   },
@@ -14173,6 +14650,12 @@
   },
   "WaterAndJustice": {
     "name": "물과 정의"
+  },
+  "FireAndWar": {
+    "name": "불과 전쟁"
+  },
+  "OdeToAzureSkies": {
+    "name": "맑은 하늘의 시"
   },
   "RhodeiaOfLoch": {
     "name": "물의 정령·로데이아"
@@ -14342,17 +14825,29 @@
   "ProliferatingSpores": {
     "name": "포자 증식"
   },
+  "LightningStorm": {
+    "name": "하늘의 벽력"
+  },
+  "PoundingSurprise": {
+    "name": "펑펑 선물"
+  },
   "WellspringOfWarLust": {
     "name": "솟구치는 전투의 욕망"
   },
   "TamakushiCasket": {
     "name": "함 속의 타마쿠시"
   },
-  "PoundingSurprise": {
-    "name": "펑펑 선물"
+  "SinOfPride": {
+    "name": "아계(我界)"
   },
-  "LightningStorm": {
-    "name": "하늘의 벽력"
+  "KyoukaFuushi": {
+    "name": "거울 속의 자태"
+  },
+  "AratakiIchiban": {
+    "name": "아라타키 제일"
+  },
+  "KeenSight": {
+    "name": "예리한 안목"
   },
   "EmbraceOfWinds": {
     "name": "여풍의 포옹"
@@ -14363,20 +14858,8 @@
   "DominanceOfEarth": {
     "name": "호의호식"
   },
-  "KeenSight": {
-    "name": "예리한 안목"
-  },
   "AbsorbingPrism": {
     "name": "에너지 흡수 결정"
-  },
-  "SinOfPride": {
-    "name": "아계(我界)"
-  },
-  "KyoukaFuushi": {
-    "name": "거울 속의 자태"
-  },
-  "AratakiIchiban": {
-    "name": "아라타키 제일"
   },
   "MysticalAbandon": {
     "name": "망현"
@@ -14492,8 +14975,8 @@
   "CountlessSightsToSee": {
     "name": "배송 중의 경치"
   },
-  "ElectroCicinsFlicker": {
-    "name": "반짝이는 번개 치친"
+  "ElectroCicinsGleam": {
+    "name": "번개 치친의 섬광"
   },
   "ToWardWeakness": {
     "name": "나약을 떨쳐내는 마음"
@@ -14549,8 +15032,8 @@
   "TheyCallHerCloudRetainer": {
     "name": "류운 선인!"
   },
-  "HydrodartSlime": {
-    "name": "물 표창 슬라임"
+  "FeatherweightFoam": {
+    "name": "경쾌한 물거품"
   },
   "InFiveColorsDyed": {
     "name": "오색 염색"
@@ -14577,10 +15060,22 @@
     "name": "밤을 가르는 불꽃"
   },
   "AllReprisalsAndArrearsMineToBear": {
-    "name": "모든 원한과 빚은 내가 갚고"
+    "name": "모든 원한과 빚은 내가 갚고…"
   },
-  "RepaidInFull": {
-    "name": "마땅한 대가"
+  "NightRealmsGiftRepaidInFull": {
+    "name": "밤 영역의 선물·마땅한 대가"
+  },
+  "NightRealmsGiftHeartOfUnity": {
+    "name": "밤 영역의 선물·노심 단결"
+  },
+  "MarcotteSillage": {
+    "name": "마코트 베이스 노트"
+  },
+  "PylonOfTheSojourningSunTemple": {
+    "name": "순환하는 태양의 파일론"
+  },
+  "TourOfTepeilhuitl": {
+    "name": "산으로 번지는 단조의 불"
   },
   "MagicGuide": {
     "name": "마도 서론"
@@ -14693,6 +15188,9 @@
   "GeneralsAncientHelm": {
     "name": "장수의 투구"
   },
+  "FavoniusSword": {
+    "name": "페보니우스 검"
+  },
   "AmosBow": {
     "name": "아모스의 활"
   },
@@ -14716,9 +15214,6 @@
   },
   "SkywardBlade": {
     "name": "천공의 검"
-  },
-  "FavoniusSword": {
-    "name": "페보니우스 검"
   },
   "EmblemOfSeveredFate": {
     "name": "절연의 기치"
@@ -14867,8 +15362,14 @@
   "Qucusaurus": {
     "name": "깃룡"
   },
+  "Waverider": {
+    "name": "파도 배"
+  },
+  "Tatankasaurus": {
+    "name": "뿔룡"
+  },
   "LiyueHarborWharf": {
-    "name": "리월항"
+    "name": "리월 항구"
   },
   "KnightsOfFavoniusLibrary": {
     "name": "기사단 도서관"
@@ -15032,6 +15533,12 @@
   "FlowerFeatherClan": {
     "name": "「꽃깃회」"
   },
+  "MastersOfTheNightWind": {
+    "name": "「연기 주인」"
+  },
+  "CollectiveOfPlenty": {
+    "name": "「비옥한 터전」"
+  },
   "ElementalResonanceWovenIce": {
     "name": "원소 공명: 뒤엉킨 얼음"
   },
@@ -15108,7 +15615,7 @@
     "name": "성물 안치 축사"
   },
   "QuickKnit": {
-    "name": "빠른 바느질 기술"
+    "name": "빠른 바느질 술법"
   },
   "SendOff": {
     "name": "널 저세상으로 데려다줄게"
@@ -15221,6 +15728,12 @@
   "LittleTepetlisaurTreasureHunterAtLarge": {
     "name": "꼬마 산룡! 보물 발견!"
   },
+  "InTheNameOfTheExtreme": {
+    "name": "극한의 정신"
+  },
+  "ArtOfSleepyMeditation": {
+    "name": "수면 명상술"
+  },
   "Origin": {
     "name": "원초"
   },
@@ -15277,6 +15790,9 @@
   },
   "EnkanomiyaCrown": {
     "name": "연하궁·왕관"
+  },
+  "GreatRedSandLongNight": {
+    "name": "적색 모래바다·긴 밤"
   },
   "BeginnerPlayerBadge": {
     "name": "초급 플레이어 배지"
@@ -15641,6 +16157,12 @@
   "MastersOfTheNightWindsTranquility": {
     "name": "「연기 주인」의 평온"
   },
+  "GallantMarchOfTheCollectiveOfPlenty": {
+    "name": "「비옥한 터전」의 힘찬 전진"
+  },
+  "CompanionsHaven": {
+    "name": "동료와 터전"
+  },
   "TimberWallWithJadeEaves": {
     "name": "깔끔한 목제 처마 벽"
   },
@@ -15916,6 +16438,9 @@
   },
   "FairsThoughtsInOrder": {
     "name": "「시장의 정리정돈」"
+  },
+  "XochicuicatlMarketingMethod": {
+    "name": "「꽃노래의 집중 홍보」"
   },
   "TwoTierLibraryBookshelf": {
     "name": "도서관 이층 책장"
@@ -16469,6 +16994,15 @@
   "QuadripedalPuppetReadySteady": {
     "name": "네발 목각 인형-「안정적」"
   },
+  "ModelContraptionBoomBoomBuff": {
+    "name": "장치 모형-「소리 증폭」"
+  },
+  "RhythmicSynchrony": {
+    "name": "「합창의 박자」"
+  },
+  "HeroicWarcry": {
+    "name": "「용맹한 포효」"
+  },
   "TrustyPortableLamp": {
     "name": "꺼지지 않는 휴대용 등불"
   },
@@ -16703,6 +17237,9 @@
   "RidingTheTranquilWaters": {
     "name": "「평온한 항해」"
   },
+  "ModelDishSaurusCrackers": {
+    "name": "음식 모형-「용용 쿠키」"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "「탁견의 땅의 불변」"
   },
@@ -16816,6 +17353,12 @@
   },
   "PhlogistonHangingLampRoadGuide": {
     "name": "열소 조명-「길잡이」"
+  },
+  "BobblyWobblyWaterDonut": {
+    "name": "「둥실둥실 튜브」"
+  },
+  "SaveyWaveyLifeRing": {
+    "name": "「긴급 구명 튜브」"
   },
   "LingeringMoment": {
     "name": "「유대의 순간」"
@@ -17429,6 +17972,9 @@
   "ResourcefulResidenceInTheMusicmakingTown": {
     "name": "「작곡 마을의 정교한 거처」"
   },
+  "GrandRepertoryPlayhouse": {
+    "name": "「명작 극장」"
+  },
   "StonehutOfEchoesStandardWorkshop": {
     "name": "메아리 돌집-「표준 공방」"
   },
@@ -17512,6 +18058,24 @@
   },
   "PilgrimageOfFlame": {
     "name": "「불길의 순례」"
+  },
+  "VillaOfPlentyStowProStoreroom": {
+    "name": "비옥한 땅의 별장-「저장 비결」"
+  },
+  "VillaOfPlentyEverydayEssentials": {
+    "name": "비옥한 땅의 별장-「실용성」"
+  },
+  "HutOfPlentyPermanentPick": {
+    "name": "비옥한 땅의 텐트-「장기용」"
+  },
+  "HutOfPlentyStopgapSelection": {
+    "name": "비옥한 땅의 텐트-「임시용」"
+  },
+  "LandOfPlentysContention": {
+    "name": "「풍요로운 땅의 각축」"
+  },
+  "LandOfPlentysSentinel": {
+    "name": "「풍요로운 땅의 보초」"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "꽃과 새 장식 분수"
@@ -18071,6 +18635,9 @@
   "OrigamiModelHardAsCanBe": {
     "name": "종이 모형-「딱딱」"
   },
+  "ExquisiteCarving": {
+    "name": "「완벽한 얼음 조각」"
+  },
   "PottedPlantVerdantVastness": {
     "name": "식물용 화분-「작고 푸른 낙원」"
   },
@@ -18506,6 +19073,15 @@
   "SpringtimeFoldingScreenFragranceFillsTheAir": {
     "name": "봄볕 병풍-「봄 내음」"
   },
+  "PortraitOfHeroicMight": {
+    "name": "「열정과 힘이 담긴 그림」"
+  },
+  "RevelrousOutburst": {
+    "name": "「솟구치는 기쁨」"
+  },
+  "FilmStandSurintendanteChevalmarin": {
+    "name": "영화 입간판-「슈벨마 부인」"
+  },
   "BookshelfFreeReading": {
     "name": "출판물 진열대-「자유 접근」"
   },
@@ -18596,6 +19172,15 @@
   "MusingsOnColorsAndHues": {
     "name": "「무르익는 색채」"
   },
+  "ArtOfTransport": {
+    "name": "「운반의 비결」"
+  },
+  "FixedTorchSafeguard": {
+    "name": "고정식 횃불-「수호」"
+  },
+  "FixedTorchExtremity": {
+    "name": "고정식 횃불-「익스트림」"
+  },
   "WeatheredBambooFence": {
     "name": "풍파를 겪은 대나무 울타리"
   },
@@ -18674,6 +19259,9 @@
   "PaddockGateFoundationalFramework": {
     "name": "축사의 나무 문-「건축의 기본」"
   },
+  "LandOfPlentysBounds": {
+    "name": "「풍요로운 땅의 로프」"
+  },
   "SmoothWoodenBench": {
     "name": "평평한 나무 벤치"
   },
@@ -18718,6 +19306,9 @@
   },
   "SurgingHarmoniesOfTheSprings": {
     "name": "「샘물의 파도 소리」"
+  },
+  "AlignedVolcanicStoneStool": {
+    "name": "「특화」 화산암 의자"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "츄츄족 이층 경계탑"
@@ -18895,5 +19486,17 @@
   },
   "PaddockStrawMattressMakeshiftBed": {
     "name": "축사의 멍석-「간이침대」"
+  },
+  "SauriansMight": {
+    "name": "「용처럼 강인한 자」"
+  },
+  "BarbellRackHeftiestLoad": {
+    "name": "바벨 거치대-「중심 잡기」"
+  },
+  "Storage101": {
+    "name": "「저장의 규칙」"
+  },
+  "GrainfruitPuffer": {
+    "name": "「알갱이 열매 뻥튀기 기계」"
   }
 }

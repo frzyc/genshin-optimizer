@@ -4,7 +4,7 @@
   "description": "항상 마음속의 「정의」를 지키는 특별 순찰대 대장. 손에 들린 화승총의 총구는 오직 죄인만을 겨눈다",
   "constellationName": "총검자리",
   "auto": {
-    "name": "전열 창술·개량",
+    "name": "개량",
     "fields": {
       "normal": {
         "0": "<strong>일반 공격</strong>",

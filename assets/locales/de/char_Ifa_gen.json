@@ -1,0 +1,160 @@
+{
+  "name": "Ifa",
+  "title": "In den Spuren schweifender Winde",
+  "description": "Ein Tierarzt aus dem Blumenfeder-Klan, der jeden in sein Herz schließt, sei es nun Mensch oder Tier, für ihn ist jedes Lebewesen ein Gefährte.",
+  "constellationName": "Catena Opele",
+  "auto": {
+    "name": "Ritual des Windbanns",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 aufeinanderfolgende Angriffe aus und verursacht <anemo>Anemo-Schaden</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schießt nach vorn, verursacht dabei <anemo>Anemo-Flächenschaden</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <anemo>Anemo-Flächenschaden</anemo>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Prophylaxe aus der Luft",
+    "description": {
+      "0": "Zeit für die echten Kampfbrüder! Ifa fordert Cacucus Unterstützung an.",
+      "1": "Nach dem Auslösen erhält Ifa 80 Nachtseelenpunkte und tritt in den Zustand <strong>Nachtseelensegen</strong> ein. Ifa schwebt in diesem Zustand dank Cacucus Unterstützung. Wenn Ifa während des Schwebens einen Standardangriff ausführt, verwendet er je nachdem, ob gedrückt oder gedrückt gehalten wird, unterschiedliche Arten von <strong>„Unterstützungsfeuer“</strong> und schießt dabei Elixierkugeln ab, die allen Truppenmitgliedern LP wiederherstellen können.",
+      "2": "<br/>",
+      "3": "Führt, wenn sich Ifa im Zustand Nachtseelensegen befindet und seine Elementarfähigkeit <strong>Prophylaxe aus der Luft</strong> durch Gedrückthalten einsetzt, einen mit Nachtseelen versehenen Angriff aus dem Fall aus. Wird die Fähigkeit losgelassen, so wird der Angriff aus dem Fall unterbrochen und der Schwebezustand wird aufrechterhalten. Beim Aufkommen des Angriffs aus dem Fall endet Ifas Nachtseelensegen."
+    },
+    "skillParams": {
+      "0": "SCH Elixierkugel",
+      "1": "Heilung bei Treffern mit Elixierkugeln",
+      "2": "Max. Nachtseelenpunkte",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sammelsedierungsfeld",
+    "description": {
+      "0": "Schießt ein therapeutisches Sedativum auf Gegner, die sich noch immer nicht beruhigt haben. Beim Treffen des Gegners explodiert das Sedativum und erzeugt ein bändigendes Windfeld, das Gegner und Objekte in der Nähe anzieht und dabei mit Nachtseelen versehenen <anemo>Anemo-Flächenschaden</anemo> verursacht.",
+      "1": "Fügt, wenn die vom therapeutischen Sedativum getroffenen Gegner von <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Kraft betroffen sind, diesen Gegnern den Effekt <strong>„Sedierungsmarker“</strong> zu."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH Sedierungsmarker",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sichtfeld des Feldarztes",
+    "description": {
+      "0": "Verleiht Ifa im Zustand Nachtseelensegen für jeden Nachtseelenpunkt aller Truppenmitglieder 1 Punkt <strong>„Rettungsprinzipien“</strong>. Rettungsprinzipien erhöhen den von Truppenmitgliedern in der Nähe mit den Reaktionen Verwirbelung und Unter Strom verursachten Schaden."
+    }
+  },
+  "passive2": {
+    "name": "Vereinbarung zur gegenseitigen Hilfe",
+    "description": {
+      "0": "Erhöht Ifas Elementarkunde 10 s lang um 80 Punkte, sobald ein Truppenmitglied in der Nähe „Nachtseelenaufbruch“ auslöst."
+    }
+  },
+  "passive3": {
+    "name": "Geschenk des Nachtreichs – Intensivtherapie",
+    "description": {
+      "0": "Nachdem seine Nachtseelenpunkte aufgebraucht sind, wechselt Ifa zum Verbrauch von Phlogiston, um seinen „Nachtseelensegen“ aufrechtzuerhalten.",
+      "1": "Beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan kann die Nachtseelen-Übertragung – Ifa verwendet werden. Wenn die aktuelle Figur sich in einer gewissen Höhe in der Luft befindet, wird beim Wechsel zu Ifa Folgendes ausgelöst: Ifa tritt in den Zustand des Nachtseelensegens ein und erhält 32 Nachtseelenpunkte. 10 s Abklingzeit für das Auslösen der Nachtseelen-Übertragung innerhalb der eigenen Truppe."
+    }
+  },
+  "passive": {
+    "name": "Wärmender Kompressionsverband",
+    "description": {
+      "0": "Ifa verbraucht beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan, wenn die LP der aktuellen eigenen Figur oder eines übernommenen Sauriers in der Truppe unter 40 % liegen, 10 Punkte Phlogiston, um dieser Figur oder diesem Saurier 40 % LP wiederherzustellen, 10 s Abklingzeit. Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund."
+    }
+  },
+  "constellation1": {
+    "name": "Arzneimittelherstellung aus Rankengewächsen",
+    "description": {
+      "0": "Stellt Ifa beim Treffen von Gegnern mit <strong>„Unterstützungsfeuer“</strong> 6 Punkte Elementarenergie wieder her, 8 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Gebet an den Geist der Ballistik",
+    "description": {
+      "0": "Verleiht Ifa im Zustand Nachtseelensegen für jeden Nachtseelenpunkt aller Truppenmitglieder insgesamt über 60 Punkten 4 Punkte <strong>„Rettungsprinzipien“</strong>.",
+      "1": "Erhöht außerdem das Limit für Ifas „Rettungsprinzipien“ um 50 Punkte.",
+      "2": "Das passive Talent <strong>„Sichtfeld des Feldarztes“</strong> muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "Widerlegung in den Verhandlungen mit der Nacht",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Prophylaxe aus der Luft</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Austausch des verfallenen Wirts",
+    "description": {
+      "0": "Verlängert die Dauer des durch die Spezialfähigkeit <strong>Sammelsedierungsfeld</strong> erzeugten bändigenden Windfelds auf 3 s.",
+      "1": "Erhöht außerdem nach dem Anwenden der Spezialfähigkeit <strong>Sammelsedierungsfeld</strong> Ifas Elementarkunde 15 s lang um 100 Punkte."
+    }
+  },
+  "constellation5": {
+    "name": "Schwur des Zusammenlebens",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Sammelsedierungsfeld</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Versprechen des gefiederten Knotens",
+    "description": {
+      "0": "Schießt beim Gedrückthalten von <strong>„Unterstützungsfeuer“</strong> mit einer Wahrscheinlichkeit von 50 % eine zusätzliche Elixierkugel ab, die Anemo-Schaden in Höhe von 120 % des ANG von Ifa verursacht. Hierdurch verursachter Schaden gilt als Schaden des Standardangriffs.",
+      "1": "Verringert Ifas Verbrauch an Nachtseelenpunkten und Phlogiston außerhalb des Kampfs im Zustand Nachtseelensegen um 20 %."
+    }
+  }
+}

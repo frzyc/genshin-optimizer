@@ -4,7 +4,7 @@
   "description": "話術に長け、優れた表現力を持つフォンテーヌの名高い魔術師。巧妙な手品と言葉で観客たちの心を動かす。",
   "constellationName": "黒斑猫座",
   "auto": {
-    "name": "フォース·カード",
+    "name": "フォース・カード",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

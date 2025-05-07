@@ -71,7 +71,7 @@
   "description": "「페보니우스 기사단」의 믿음직한 메이드. 언젠가는 정식으로 기사가 되겠다는 꿈을 가지고 있다",
   "constellationName": "심호자리",
   "auto": {
-    "name": "페보니우스 검술·메이드",
+    "name": "메이드",
     "fields": {
       "normal": {
         "0": "<strong>일반 공격</strong>",

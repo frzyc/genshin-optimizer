@@ -1,0 +1,24 @@
+{
+  "name": "Tâm Niệm Sắc Màu",
+  "description": {
+    "0": "Chiếc cúp được đúc từ đá quý của Cộng Đồng Trù Phú và pha lê từ Hội Hoa Vũ, nghe nói từng thuộc về một tuyển thủ đấu vật huyền thoại nào đó."
+  },
+  "passiveName": "Nguyện Ước Cầu Vồng Rơi",
+  "passiveDescription": {
+    "0": {
+      "0": "Tấn Công tăng <cryo>28%</cryo>. Khi tiến hành Tấn Công Khi Đáp sẽ nhận hiệu ứng \"Sắc Màu Ban Mai\": Sát Thương Bạo Kích của Tấn Công Khi Đáp tăng <cryo>28%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng \"Ánh Sáng Chạng Vạng\": Sát Thương Bạo Kích của Tấn Công Khi Đáp tăng <cryo>40%</cryo>. Hai hiệu quả nêu trên độc lập duy trì trong 15s, đồng thời sẽ bị xóa sau 0.1s kể từ khi đòn tấn công đáp đất trúng mục tiêu."
+    },
+    "1": {
+      "0": "Tấn Công tăng <cryo>35%</cryo>. Khi tiến hành Tấn Công Khi Đáp sẽ nhận hiệu ứng \"Sắc Màu Ban Mai\": Sát Thương Bạo Kích của Tấn Công Khi Đáp tăng <cryo>35%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng \"Ánh Sáng Chạng Vạng\": Sát Thương Bạo Kích của Tấn Công Khi Đáp tăng <cryo>50%</cryo>. Hai hiệu quả nêu trên độc lập duy trì trong 15s, đồng thời sẽ bị xóa sau 0.1s kể từ khi đòn tấn công đáp đất trúng mục tiêu."
+    },
+    "2": {
+      "0": "Tấn Công tăng <cryo>42%</cryo>. Khi tiến hành Tấn Công Khi Đáp sẽ nhận hiệu ứng \"Sắc Màu Ban Mai\": Sát Thương Bạo Kích của Tấn Công Khi Đáp tăng <cryo>42%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng \"Ánh Sáng Chạng Vạng\": Sát Thương Bạo Kích của Tấn Công Khi Đáp tăng <cryo>60%</cryo>. Hai hiệu quả nêu trên độc lập duy trì trong 15s, đồng thời sẽ bị xóa sau 0.1s kể từ khi đòn tấn công đáp đất trúng mục tiêu."
+    },
+    "3": {
+      "0": "Tấn Công tăng <cryo>49%</cryo>. Khi tiến hành Tấn Công Khi Đáp sẽ nhận hiệu ứng \"Sắc Màu Ban Mai\": Sát Thương Bạo Kích của Tấn Công Khi Đáp tăng <cryo>49%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng \"Ánh Sáng Chạng Vạng\": Sát Thương Bạo Kích của Tấn Công Khi Đáp tăng <cryo>70%</cryo>. Hai hiệu quả nêu trên độc lập duy trì trong 15s, đồng thời sẽ bị xóa sau 0.1s kể từ khi đòn tấn công đáp đất trúng mục tiêu."
+    },
+    "4": {
+      "0": "Tấn Công tăng <cryo>56%</cryo>. Khi tiến hành Tấn Công Khi Đáp sẽ nhận hiệu ứng \"Sắc Màu Ban Mai\": Sát Thương Bạo Kích của Tấn Công Khi Đáp tăng <cryo>56%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng \"Ánh Sáng Chạng Vạng\": Sát Thương Bạo Kích của Tấn Công Khi Đáp tăng <cryo>80%</cryo>. Hai hiệu quả nêu trên độc lập duy trì trong 15s, đồng thời sẽ bị xóa sau 0.1s kể từ khi đòn tấn công đáp đất trúng mục tiêu."
+    }
+  }
+}

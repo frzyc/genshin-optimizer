@@ -1,0 +1,29 @@
+{
+  "setName": "Uzun Gecenin Yemini",
+  "setEffects": {
+    "2": "Havadan Saldırı Hasarı %25 artar.",
+    "4": "Kuşanan karakterin Havadan Saldırısı/Yüklü Saldırısı/Element Becerisi bir düşmana isabet ettiğinde 1/2/2 kademe \"Ebedi İhtişam\" kazanır. Havadan Saldırılar, Yüklü Saldırılar veya Element Becerileri bu etkiyi her 1 saniyede bir tetikleyebilir. Ebedi İhtişam: 6 saniyeliğine Havadan Saldırı Hasarı %15 artar. 5 kademeye kadar birikir. Her kademenin süresi birbirinden bağımsızdır."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Işık Muhafızının Yemini",
+      "desc": "Ratnikler tarafından takılan metal bir çiçek. Asıl sahibinin verdiği ebedi nöbet yeminini simgeliyor."
+    },
+    "plume": {
+      "name": "Bülbülün Kuyruk Tüyü",
+      "desc": "Bir bülbülün tüylerinden özenle yapılmış bir şapka süsü. Söylenene göre bu şekli ilk Meşale Ustası bulmuş."
+    },
+    "sands": {
+      "name": "Ölümsüzün Yas Çanı",
+      "desc": "Karanlık hiçlikte yürüyen bir savaşçının taşıdığı bronz bir çan. Sesinin çınlamasını zifiri karanlık gecelerde duymak mümkündür."
+    },
+    "goblet": {
+      "name": "Üflenmeyen Boru",
+      "desc": "Eskiden yemin edenleri çağırmak için kullanılan bir boru. Amacını yitireli çok uzun zaman oldu."
+    },
+    "circlet": {
+      "name": "Boyalı Püskül",
+      "desc": "Kadim ve ağır bir miğfer. Muhterem bir kuzeyli savaşçı soyunun işaretini taşıyan bir aile yadigarıdır."
+    }
+  }
+}

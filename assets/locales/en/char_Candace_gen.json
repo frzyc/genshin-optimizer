@@ -4,7 +4,7 @@
   "description": "A descendant of King Deshret with an amber left eye. The defender of Aaru Village.",
   "constellationName": "Sagitta Scutum",
   "auto": {
-    "name": "Gleaming Spear - Guardian Stance",
+    "name": "Guardian Stance",
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",

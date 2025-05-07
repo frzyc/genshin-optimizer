@@ -1,0 +1,223 @@
+{
+  "name": "Varesa",
+  "title": "Strength in Serenity",
+  "description": "Seorang pemilik kebun yang santai dan pejuang dari Berlimpah Jaya. Calon pahlawan yang mendambakan keadilan ... dan banyak makanan!",
+  "constellationName": "Mascara Luctatori",
+  "auto": {
+    "name": "By the Horns",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Aku harus ... bertarung seperti pegulat yang hebat! Varesa melancarkan maksimum 3 serangan, dan mengakibatkan <electro>Electro DMG</electro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina dan menyeruduk musuh di depan, mengakibatkan Nightsoul-aligned <electro>Electro DMG</electro>, lalu melompat ke atas setelahnya."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan Nightsoul-aligned <electro>Electro DMG Area</electro>. Jika Varesa berada dalam kondisi bertempur saat mendarat, atau jika serangannya mengenai musuh saat menghantam tanah, maka Varesa akan mendapatkan 25 poin Nightsoul. Saat poin Nightsoul mencapai nilai maksimum melalui cara ini, maka Varesa akan otomatis memasuki status Fiery Passion."
+      },
+      "fieryPassion": {
+        "0": "<strong>Fiery Passion</strong>",
+        "1": "Dalam status ini, Normal Attack, Charged Attack, dan Plunging Attack Varesa akan mendapatkan buff yang berikut:"
+      },
+      "fpNormal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Bertarung tanpa rasa takut seperti seorang pegulat juara! Melancarkan maksimum 3 serangan, dan mengakibatkan <electro>Electro DMG</electro> yang lebih kuat."
+      },
+      "fpCharged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina, dan menggunakan kepalanya untuk menyeruduk musuh di depan dengan kuat, mengakibatkan Nightsoul-aligned <electro>Electro DMG</electro> yang lebih kuat, lalu melompat ke atas setelahnya."
+      },
+      "fpPlunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengonsumsi seluruh poin Nightsoul dan menghantam tanah dari udara untuk menyerang musuh di jalur terjangannya dan mengakibatkan Nightsoul-aligned <electro>Electro DMG Area</electro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "DMG Tahap 1 (Status Fiery Passion)",
+      "8": "DMG Tahap 2 (Status Fiery Passion)",
+      "9": "DMG Tahap 3 (Status Fiery Passion)",
+      "10": "DMG Charged Attack (Status Fiery Passion)",
+      "11": "Konsumsi Stamina Charged Attack (Status Fiery Passion)",
+      "12": "DMG Selama Plunging (Status Fiery Passion)",
+      "13": "DMG Plunging Attack Rendah/Tinggi (Status Fiery Passion)",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Riding the Night-Rainbow",
+    "description": {
+      "0": "Dengan langkah secepat kilat dan gagah seperti petir, Varesa menunjukkan makna gulat yang sebenarnya. Varesa menerjang ke depan dan mengakibatkan Nightsoul-aligned <electro>Electro DMG</electro> pada musuh di sepanjang jalurnya.",
+      "1": "Setelah melancarkan skill ini, Varesa akan mendapatkan 20 poin Nightsoul dan efek \"Follow-Up Strike\": Selama efek ini aktif, ketahanan Varesa terhadap interupsi akan meningkat. Saat menekan tombol Normal Attack, Varesa akan melakukan Charged Attack dengan cepat tanpa mengonsumsi Stamina. Efek Follow-Up Strike akan hilang setelah Varesa melakukan Charged Attack.",
+      "2": "Varesa akan menunjukkan teknik bergulat yang berbeda saat melancarkan skill ini dengan Mode Tekan atau Mode Tahan.",
+      "3": "<br/>",
+      "4": "<strong>Mode Tekan</strong>",
+      "5": "Menerjang ke depan dengan cepat.",
+      "6": "<br/>",
+      "7": "<strong>Mode Tahan</strong>",
+      "8": "Varesa memasuki status Nightsoul's Blessing dan berganti ke mode Sudden Onrush.",
+      "9": "<br/>",
+      "10": "<strong>Sudden Onrush</strong>",
+      "11": "Terus mengonsumsi poin Nightsoul. Dalam status ini, Movement SPD dan ketahanan Varesa terhadap interupsi akan meningkat, dan ia bisa memanfaatkan perbedaan medan untuk melompat, atau mengonsumsi poin Nightsoul tambahan untuk bergerak di atas permukaan air dan Phlogiston cair, serta menjadi kebal terhadap DMG dari Phlogiston cair.",
+      "12": "<br/>",
+      "13": "<strong>Nightsoul's Blessing: Varesa</strong>",
+      "14": "Status Nightsoul's Blessing Varesa akan berakhir saat poin Nightsoul-nya habis. Saat Varesa berada dalam status Sudden Onrush atau Fiery Passion, ia akan dianggap berada dalam status Nightsoul's Blessing.",
+      "15": "<br/>",
+      "16": "Elemental Skill Varesa memiliki jumlah penggunaan 2 kali. Saat Varesa memasuki status Fiery Passion, ia akan mendapatkan tambahan jumlah penggunaan Elemental Skill (Mode Tekan) sebanyak satu kali dan DMG Elemental Skill-nya akan meningkat.",
+      "17": "<br/>",
+      "18": "<strong>Fiery Passion</strong>",
+      "19": [
+        "Saat tidak berada dalam status Fiery Passion, Varesa dapat memulihkan poin Nightsoul-nya dengan cara melancarkan Plunging Attack. Varesa akan otomatis memasuki status Fiery Passion saat poin Nightsoul-nya mencapai maksimum melalui cara ini, atau saat ia melancarkan Elemental Burst <strong>Guardian Vent!</strong>."
+      ],
+      "20": "<br/>",
+      "21": [
+        "Saat berada dalam status Fiery Passion, Normal Attack, Elemental Skill, dan Elemental Burst Varesa akan mendapat penguatan tertentu, dan dalam waktu singkat setelah melancarkan Plunging Attack, Varesa dapat melancarkan Elemental Burst yang spesial.",
+        "Status Fiery Passion dapat berlangsung maksimum 15 detik dan akan menghilang jika poin Nightsoul habis atau Varesa keluar dari status bertempur selama beberapa saat."
+      ],
+      "22": "<i>\"Sekarang, akulah pahlawanku.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Terjangan",
+      "1": "DMG Terjangan (Status Fiery Passion)",
+      "2": "Durasi Efek \"Follow-Up Strike\"",
+      "3": "Batas Poin Nightsoul",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Guardian Vent!",
+    "description": {
+      "0": "Layaknya pahlawan keadilan yang digambarkan di dalam gulungan cerita yang diperlihatkan kepada anak-anak, Varesa melompat tinggi dan menggunakan momentum jatuhnya untuk melancarkan tendangan melompat yang sangat kuat dan mengakibatkan Nightsoul-aligned <electro>Electro DMG Area</electro>.",
+      "1": "Setelah melancarkan skill ini, Varesa akan memulihkan poin Nightsoul-nya hingga maksimum dan memasuki status Fiery Passion.",
+      "2": "<br/>",
+      "3": "Dalam status Fiery Passion, Elemental Burst Varesa akan berubah menjadi serangan yang mengakibatkan Nightsoul-aligned <electro>Electro DMG Area</electro> yang lebih kuat.",
+      "4": "<br/>",
+      "5": "Selain itu, jika Varesa melancarkan Plunging Attack dalam status Fiery Passion, maka Varesa akan memasuki status Apex Drive selama beberapa saat.",
+      "6": "<br/>",
+      "7": "<strong>Apex Drive</strong>",
+      "8": "Meningkatkan ketahanan Varesa terhadap interupsi. Saat berada dalam status ini, Varesa dapat mengabaikan CD Elemental Burst dan mengonsumsi Energy yang lebih sedikit untuk melancarkan Elemental Burst spesialnya \"Guardian Vent: Volcano Kablam\": Varesa akan melakukan Plunging Attack \"Thunderous Tornado Eruption\" yang sangat kuat dan mengakibatkan Nightsoul-aligned <electro>Electro DMG Area</electro> saat mendarat, dan akan keluar dari status Apex Drive. DMG ini dianggap sebagai DMG Plunging Attack.",
+      "9": "Setelah melancarkan Elemental Skill, akan keluar dari status Apex Drive.",
+      "10": "<br/>",
+      "11": "<i>Sebenarnya nama yang Varesa berikan untuk gerakan ini adalah \"Tendangan Petir Super Mega Ultimate Penghancur Langit dengan Ledakan Sonic Super Dinamis Pahlawan Keadilan Tak Terkalahkan!\" Sayangnya, nama ini terlalu panjang dan dia terlalu malu untuk menyebutkan nama ini dengan lantang di depan semua orang, meski saat ia memakai topengnya sekalipun. Makanya, Varesa mengambil keputusan untuk mengganti namanya jadi seperti yang sekarang ini.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tendangan Melompat",
+      "1": "DMG Tendangan Melompat (Status Fiery Passion)",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "DMG Volcano Kablam",
+      "5": "Konsumsi Energy Volcano Kablam",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tag-Team Triple Jump!",
+    "description": {
+      "0": "Setelah melancarkan Elemental Skill <strong>Riding the Night-Rainbow</strong>, Varesa akan mendapatkan efek \"Rainbow Crash\" selama 5 detik.",
+      "1": "Jika Varesa melancarkan Plunging Attack selama durasi ini, maka ia akan mengakibatkan DMG tambahan sebesar 50% ATK saat menghantam tanah. Jika Varesa berada dalam status Fiery Passion, maka hantaman ini akan mengakibatkan DMG tambahan sebesar 180% ATK.",
+      "2": "<br/>",
+      "3": "Efek \"Rainbow Crash\" akan hilang saat Plunging Attack mengenai musuh atau saat durasinya berakhir."
+    }
+  },
+  "passive2": {
+    "name": "The Hero Twice-Returned!",
+    "description": {
+      "0": "Saat anggota party di sekitar memicu Nightsoul Burst, ATK Varesa meningkat 35% selama 12 detik. Efek ini dapat ditumpuk 2 kali, durasi setiap lapisnya dihitung terpisah."
+    }
+  },
+  "passive3": {
+    "name": "Night Realm's Gift: A Torch That Incinerates Evil",
+    "description": {
+      "0": "Setelah poin Nightsoul habis terpakai, Varesa akan mengonsumsi Phlogiston untuk mempertahankan status Nightsoul's Blessing dan mode Sudden Onrush.",
+      "1": "Saat ada area dengan Phlogiston Mechanic di Natlan, dapat melancarkan Nightsoul Transmission: Varesa. Saat Karakter aktif sedang berlari, memanjat, atau sedang bergerak yang dikarenakan oleh Talenta tertentu, atau saat melayang di ketinggian tertentu, dan mengganti Karakter menjadi Varesa, akan memicu efek berikut: Varesa memasuki status Nightsoul's Blessing, berganti ke mode Sudden Onrush, dan mendapatkan 20 poin Nightsoul. Nightsoul Transmission party sendiri dapat terpicu sekali setiap 10 detik.",
+      "2": "Selain itu, saat ada area dengan Phlogiston Mechanic di Natlan, Varesa tidak akan menerima DMG jatuh saat melompat dengan memanfaatkan perbedaan medan."
+    }
+  },
+  "passive": {
+    "name": "Blazing Heart, Singular Advance!",
+    "description": {
+      "0": "Kecepatan Varesa saat berlari meningkat. Saat tidak berada dalam kondisi bertempur, Stamina yang dikonsumsi saat berlari juga akan meningkat.",
+      "1": "Selain itu, Saat ada area dengan Phlogiston Mechanic di Natlan, Makanan yang dikonsumsi oleh anggota party sendiri akan memulihkan 20 poin Phlogiston. Efek ini dapat terpicu sekali setiap 10 detik, tapi tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss."
+    }
+  },
+  "constellation1": {
+    "name": "Undying Passion",
+    "description": {
+      "0": "Efek Talenta Pasif \"Tag-Team Triple Jump!!\" diperkuat:",
+      "1": "Saat melakukan Plunging Attack Spesial \"Thunderous Tornado Eruption\", Varesa juga akan mendapatkan \"Rainbow Crash\" selama 5 detik.",
+      "2": "Selama durasi \"Rainbow Crash\", terlepas dari Varesa berada dalam status Fiery Passion atau tidak, saat Varesa melakukan Plunging Attack, DMG tambahan saat Plunging Attack menghantam tanah akan mengakibatkan 180% ATK. Harus membuka Talenta Pasif \"The Tag-Team Triple Jump!\" terlebih dahulu agar efek ini bisa aktif.",
+      "3": "<br/>",
+      "4": "Selain itu, saat Varesa berada dalam status Nightsoul's Blessing: Sudden Onrush, poin Nightsoul atau Phlogiston yang dikonsumsi berkurang 30%."
+    }
+  },
+  "constellation2": {
+    "name": "Beyond the Edge of Light",
+    "description": {
+      "0": "Terlepas dari Varesa berada dalam status Fiery Passion atau tidak, Varesa tetap akan memasuki status Apex Drive setelah melancarkan Plunging Attack.",
+      "1": "Saat dalam status Apex Drive, ketahanan Varesa terhadap interupsi juga akan meningkat lebih lanjut.",
+      "2": "Selain itu, Varesa akan memulihkan 11,5 poin Energy saat melancarkan Plunging Attack dan hantamannya mengenai musuh."
+    }
+  },
+  "constellation3": {
+    "name": "Unbowed Resolve",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>Guardian Vent!</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Courage to Press On",
+    "description": {
+      "0": "Varesa akan mendapatkan efek penguatan yang berbeda berdasarkan status Varesa saat ia melancarkan Elemental Burst <strong>Guardian Vent!</strong>. Jika Varesa:",
+      "1": [
+        "Tidak berada dalam status Fiery Passion atau Apex Drive, maka Varesa akan mendapatkan efek Diligent Refinement selama 15 detik. Efek ini akan meningkatkan DMG yang diakibatkan Plunging Attack Varesa sebesar 500% ATK Varesa, dengan peningkatan DMG maksimum sebesar 20.000 poin. Efek ini akan hilang saat hantaman Plunging Attack mengenai musuh atau saat durasinya berakhir.",
+        "Sedang berada dalam status Fiery Passion atau Apex Drive, maka DMG yang diakibatkan Elemental Burst <strong>Guardian Vent!</strong> kali ini meningkat sebesar 100%."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Thoughts Floating on the Warm Breeze",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Normal Attack: By the Horns</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "A Hero of Justice's Triumph",
+    "description": {
+      "0": "Saat memasuki status Apex Drive, Varesa akan memulihkan 30 poin Energy.",
+      "1": "Plunging Attack dan Elemental Burst <strong>Guardian Vent!</strong> Varesa akan mendapatkan peningkatan 10% CRIT Rate dan 100% CRIT DMG.",
+      "2": "Selain itu, Varesa akan memulihkan poin Nightsoul-nya hingga batas maksimum saat melancarkan Elemental Skill <strong>Riding the Night-Rainbow</strong> dalam Mode Tahan, atau saat menekan Elemental Skill dalam mode Sudden Onrush."
+    }
+  }
+}

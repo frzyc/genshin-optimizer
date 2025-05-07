@@ -1,0 +1,221 @@
+{
+  "name": "Varesa",
+  "title": "Dinginlikte Yatan Güç",
+  "description": "Bereket Kolektifinden rahatına düşkün bir meyve bahçesi yöneticisi ve savaşçı. Adalet ve bol miktarda yiyecek için can atan, hevesli bir kahraman!",
+  "constellationName": "Maskeli Güreşçi",
+  "auto": {
+    "name": "Boynuz Darbesi",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Şampiyon luchadorlar gibi savaşmak gerek! Varesa en fazla 3 saldırı yaparak <electro>Elektrik Hasarı</electro> verir."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak önündeki düşmanlara kafa atıp Gece Ruhu tesirli <electro>Elektrik Hasarı</electro> verir ve bu sırada kazandığı hızdan faydalanarak havaya sıçrar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Gece Ruhu tesirli <electro>Elektrik Alan Hasarı</electro> verir. Varesa yere indiğinde savaş durumundaysa veya Havadan Saldırısının şok dalgası bir düşmana isabet ederse Varesa 25 Gece Ruhu puanı kazanır. Bu şekilde maksimum Gece Ruhu puanına ulaştığında Ateşli Tutku durumuna girer."
+      },
+      "fieryPassion": {
+        "0": "<strong>Ateşli Tutku</strong>",
+        "1": "Bu durumdayken Varesa'nın Normal, Yüklü ve Havadan Saldırıları şu güçlendirmeleri kazanır:"
+      },
+      "fpNormal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Yıldız bir şampiyon luchador gibi dövüş! Daha yüksek <electro>Elektrik Hasarı</electro> veren en fazla 3 sert saldırı yapar."
+      },
+      "fpCharged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak düşmanlarına çarpıp daha yüksek Gece Ruhu tesirli <electro>Elektrik Hasarı</electro> verir ve bu sırada kazandığı hızdan faydalanarak havaya sıçrar."
+      },
+      "fpPlunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Varesa tüm Gece Ruhu puanlarını kullanarak havadan yere vurur ve yoluna çıkan düşmanlara Hasar verir. Yere vurduğunda daha yüksek Gece Ruhu tesirli <electro>Elektrik Alan Hasarı</electro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "Ateşli Tutku 1 Vuruş Hasarı",
+      "8": "Ateşli Tutku 2 Vuruş Hasarı",
+      "9": "Ateşli Tutku 3 Vuruş Hasarı",
+      "10": "Ateşli Tutku Yüklü Saldırı Hasarı",
+      "11": "Ateşli Tutku Yüklü Saldırı Dayanıklılık Maliyeti",
+      "12": "Ateşli Tutku Havadan Saldırı Hasarı",
+      "13": "Ateşli Tutku Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Gece Gökkuşağının Üzerinde",
+    "description": {
+      "0": "Varesa şimşek gibi hızlı, yıldırım gibi şiddetli adımlarla gerçek güreş ruhunu sergileyerek belirli bir mesafe ileriye doğru atılır ve yoluna çıkan düşmanlara Gece Ruhu tesirli <electro>Elektrik Hasarı</electro> verir.",
+      "1": "Varesa bu beceriyi kullandıktan sonra 20 Gece Ruhu puanı elde eder ve \"Takip Vuruşu\" etkisi kazanır. Bu etki süresi boyunca Varesa'nın müdahaleye karşı direnci artar ve Normal Saldırıya basıldığında Dayanıklılık harcamadan hızlı bir Yüklü Saldırı yapar. Varesa bir Yüklü Saldırı yaptığında \"Takip Vuruşu\" iptal olur.",
+      "2": "Varesa, Dokunma veya Basılı Tutma durumuna göre farklı teknikler kullanır.",
+      "3": "<br/>",
+      "4": "<strong>Dokun</strong>",
+      "5": "Hızla belirli bir mesafe ileriye atılır.",
+      "6": "<br/>",
+      "7": "<strong>Basılı Tut</strong>",
+      "8": "Varesa, Gece Ruhunun Lütfu durumuna girer ve Ani Taarruz moduna geçer.",
+      "9": "<br/>",
+      "10": "<strong>Ani Taarruz</strong>",
+      "11": "Sürekli Gece Ruhu puanı harcar. Bu durumdayken Varesa'nın Hareket Hızı ve müdahaleye karşı direnci artar. Varesa, araziyi kullanarak uçarcasına sıçrayabilir veya ek Gece Ruhu puanı harcayarak su ve Sıvı Filojiston üzerinde hareket edebilir, Sıvı Filojistondan Hasar almaz.",
+      "12": "<br/>",
+      "13": "<strong>Gece Ruhunun Lütfu: Varesa</strong>",
+      "14": "Varesa'nın Gece Ruhu puanı tükendiğinde Gece Ruhunun Lütfu durumu kaldırılır. Varesa Ani Taarruz veya Ateşli Tutku durumundayken her zaman Gece Ruhunun Lütfu durumundaymış gibi sayılır.",
+      "15": "<br/>",
+      "16": "2 defa kullanılabilir. Varesa, Ateşli Tutku durumuna girdiğinde Dokunarak Element Becerisini bir defa daha kullanabilir ve becerinin Hasarı artar.",
+      "17": "<br/>",
+      "18": "<strong>Ateşli Tutku</strong>",
+      "19": [
+        "Varesa, Ateşli Tutku durumunda değilken Havadan Saldırı yaparak Gece Ruhu puanı elde edebilir, bu yöntemle maksimum Gece Ruhu puanına ulaştığında veya <strong>İhtişamlı İniş!</strong> Element Patlamasını kullandığında Ateşli Tutku durumuna girer.",
+        "Varesa, Ateşli Tutku durumundayken Normal Saldırıları, Element Becerisi ve Element Patlaması özel güçlendirmeler kazanır, Havadan Saldırı yaptıktan kısa bir süre sonra özel bir Element Patlaması kullanabilir.",
+        "Ateşli Tutku durumu en fazla 15sn sürer ve Gece Ruhu puanı tükendiğinde veya savaştan çıktıktan bir süre sonra sona erer."
+      ],
+      "20": "<br/>",
+      "21": "<i>\"Şu an ben kendimin kahramanıyım.\"</i>"
+    },
+    "skillParams": {
+      "0": "Atılma Hasarı",
+      "1": "Ateşli Tutku Atılma Hasarı",
+      "2": "Takip Vuruşu Süresi",
+      "3": "Gece Ruhu Puanı Sınırı",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "İhtişamlı İniş!",
+    "description": {
+      "0": "Havaya sıçrar ve düşmenin kattığı ivmeyle kuvvetli bir uçan tekme savurarak düşmanlara Gece Ruhu tesirli <electro>Elektrik Alan Hasarı</electro> verir. Tıpkı çocuklar için hazırlanan dokuma parşömenlerdeki adalet savaşçıları gibi!",
+      "1": "Bu beceriyi kullandıktan sonra Varesa Gece Ruhu puanını tamamen yeniler ve Ateşli Tutku durumuna girer.",
+      "2": "<br/>",
+      "3": "Ateşli Tutku durumundayken Varesa'nın Element Patlaması daha yüksek Gece Ruhu tesirli <electro>Elektrik Alan Hasarı</electro> verir.",
+      "4": "<br/>",
+      "5": "Ayrıca Ateşli Tutku durumundayken Havadan Saldırı yaptığında kısa süreliğine Gücün Zirvesi durumunu etkinleştirir.",
+      "6": "<br/>",
+      "7": "<strong>Gücün Zirvesi</strong>",
+      "8": "Varesa'nın müdahaleye karşı direnci artar. Gücün Zirvesi etkinken Varesa, Element Patlaması Bekleme Süresini görmezden gelir ve \"İhtişamlı İniş: Yanardağ Gümlemesi\" özel Element Patlamasını kullanmak için daha az Enerji harcar. Bu sayede güçlü Havadan Saldırısı \"Gürleyen Kasırga Patlaması\"nı kullanabilir ve yere indiğinde Gece Ruhu tesirli <electro>Elektrik Alan Hasarı</electro> verip Gücün Zirvesi durumundan çıkar. Bu Hasar, Havadan Saldırı Hasarı sayılır.",
+      "9": "Varesa, Element Becerisini kullandıktan sonra Gücün Zirvesi durumundan çıkar.",
+      "10": "<br/>",
+      "11": "<i>Varesa aslında bu saldırıya en başta \"Ölümsüz Dinamik Adalet Kahramanının Gökleri Yaran Görkemli Yıldırım Süpersonik Patlama Tekmesi\" adını vermeyi planlamıştı. Fakat isim çok uzun olduğundan Varesa, maskesine rağmen bunu herkesin önünde söylemeye çekindi. O yüzden saldırının ismini değiştirdi.</i>"
+    },
+    "skillParams": {
+      "0": "Uçan Tekme Hasarı",
+      "1": "Ateşli Tutku Uçan Tekme Hasarı",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "Yanardağ Gümlemesi Hasarı",
+      "5": "Yanardağ Gümlemesi Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Güreş Takımının Üçlü Sıçrayışı!",
+    "description": {
+      "0": "<strong>Gece Gökkuşağının Üzerinde</strong> Element Becerisi kullanıldıktan sonra Varesa, 5 saniyeliğine \"Gökkuşağı Çarpışması\" kazanır.",
+      "1": "Bu sürede Varesa Havadan Saldırısıyla yere vurduğunda çıkan şok dalgasının verdiği Hasar, Saldırısının %50'si kadar artar. Varesa eğer Ateşli Tutku durumundaysa şok dalgasının verdiği Hasar, Saldırısının %180'i kadar artar.",
+      "2": "<br/>",
+      "3": "Gökkuşağı Çarpışması etkisi, Havadan Saldırının şok dalgası bir düşmana isabet ettiğinde veya etkinin süresi dolduğunda sona erer."
+    }
+  },
+  "passive2": {
+    "name": "Kahramanın İkinci Dönüşü!",
+    "description": {
+      "0": "Yakındaki bir grup üyesi Gece Ruhu Patlaması tetiklediğinde 12 saniyeliğine Varesa'nın Saldırısı %35 artar. 2 kademeye kadar birikir. Her kademenin süresi birbirinden bağımsızdır."
+    }
+  },
+  "passive3": {
+    "name": "Gece Diyarının Armağanı: Kötülüğü Yakan Meşale",
+    "description": {
+      "0": "Varesa, Gece Ruhu puanı tükendiğinde Gece Ruhunun Lütfu durumundan gelen Ani Taarruz durumunu sürdürmek için Filojiston harcar.",
+      "1": "Varesa, Natlan'da Filojiston Mekanikleri bulunan bir bölgedeyken \"Gece Ruhu Aktarımı: Varesa\" kullanabilir. Aktif karakter depar atarken, Yeteneklerden kaynaklı bir hareket modundayken veya havada belirli bir yükseklikteyken Varesa'ya geçildiğinde şu etkiler tetiklenir: Varesa, Gece Ruhunun Lütfu durumuna girer ve Ani Taarruz moduna geçerek 20 Gece Ruhu puanı kazanır. Gece Ruhu Aktarımı kendi grubun tarafından her 10 saniyede bir tetiklenebilir.",
+      "2": "Natlan'da Filojiston Mekanikleri olan bir bölgedeyken Varesa, arazi farklılıklarını kullanarak atladığında Düşme Hasarı almaz."
+    }
+  },
+  "passive": {
+    "name": "Alevli Kalbin Birinci Yolu!",
+    "description": {
+      "0": "Varesa'nın Depar hızı artar. Varesa savaşta değilken Depar Dayanıklılık tüketimi de artar.",
+      "1": "Ek olarak Natlan'da Filojiston Mekanikleri olan bir bölgedeyken grup üyeleri yiyecek tüketince 20 Filojiston yeniler. Bu etki her 10 saniyede bir uygulanabilir. Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında etkili değildir."
+    }
+  },
+  "constellation1": {
+    "name": "Sönmeyen Tutku",
+    "description": {
+      "0": "\"Güreş Takımının Üçlü Sıçrayışı!\" Pasif Yeteneğinin etkileri geliştirilir:",
+      "1": "Varesa, \"Gürleyen Kasırga Patlaması\" Özel Havadan Saldırısını kullanırken 5 saniyeliğine \"Gökkuşağı Çarpışması\" etkisini kazanır.",
+      "2": "\"Gökkuşağı Çarpışması\" etkinken Varesa'nın Havadan Saldırısının yere vuruş Hasarı, Varesa'nın Ateşli Tutku durumunda olup olmaması fark etmeksizin Saldırısının %180'i kadar artar. Bu etkiyi kullanmak için \"Güreş Takımının Üçlü Sıçrayışı!\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "3": "<br/>",
+      "4": "Ayrıca Varesa Gece Ruhunun Lütfu durumundaki Ani Taarruz modundayken %30 daha az Gece Ruhu puanı veya Filojiston tüketir."
+    }
+  },
+  "constellation2": {
+    "name": "Işığın Sınırının Ötesinde",
+    "description": {
+      "0": "Varesa, Ateşli Tutku durumunda olup olmaması fark etmeksizin Havadan Saldırı yaptıktan sonra Gücün Zirvesi durumuna girer.",
+      "1": "Gücün Zirvesi aktifken Varesa'nın müdahaleye karşı direnci daha da artar.",
+      "2": "Buna ek olarak Varesa, Havadan Saldırısının yere vuruşu bir düşmana isabet ettiğinde 11,5 Enerji yeniler."
+    }
+  },
+  "constellation3": {
+    "name": "Boyun Eğmeyen İrade",
+    "description": {
+      "0": "<strong>İhtişamlı İniş!</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yola Devam Edecek Cesaret",
+    "description": {
+      "0": "Varesa, <strong>İhtişamlı İniş!</strong> kullanırken içinde bulunduğu duruma göre çeşitli güçlendirmeler kazanır.",
+      "1": [
+        "Eğer Ateşli Tutku ve Gücün Zirvesi aktif değilse Varesa 15 saniyeliğine İtinalı Gelişim kazanır ve Havadan Saldırı yere vurma Hasarı, Varesa'nın Saldırısının %500'ü oranında artar. Bu artış en fazla 20.000 Hasar olabilir. Bu etki, yere vuruş bir düşmana isabet ettiğinde veya etkinin süresi sona erdiğinde kaybolur.",
+        "Eğer Ateşli Tutku veya Gücün Zirvesi aktifse <strong>İhtişamlı İniş!</strong> Element Patlamasının bu seferki Hasarı %100 artar."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Sıcak Esintide Süzülen Düşünceler",
+    "description": {
+      "0": "<strong>Normal Saldırı: Boynuz Darbesi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Adalet Kahramanının Zaferi",
+    "description": {
+      "0": "Varesa, Gücün Zirvesi durumuna girdiğinde 30 Enerji yeniler.",
+      "1": "Havadan Saldırılarının ve <strong>İhtişamlı İniş!</strong> Element Patlamasının Kritik Oranı %10 ve Kritik Hasarı %100 artar.",
+      "2": "Ayrıca Varesa, <strong>Gece Gökkuşağının Üzerinde</strong> Element Becerisinin Basılı Tutma modunu kullandığında veya Ani Taarruz durumundayken Element Becerisine Dokunduğunda Gece Ruhu puanını maksimum seviyeye yeniler."
+    }
+  }
+}

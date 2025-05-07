@@ -4,7 +4,7 @@
   "description": "Jeune chevalier né dans une famille ordinaire, il occupe le poste d'arpenteur dans son unité. C'est un personnage au caractère discret et prudent.",
   "constellationName": "Palumbus",
   "auto": {
-    "name": "Lance de Favonius - Carreau filant",
+    "name": "Carreau filant",
     "fields": {
       "normal": {
         "0": "<strong>Attaque normale</strong>",

@@ -1,0 +1,29 @@
+{
+  "setName": "Finale of the Deep Galleries",
+  "setEffects": {
+    "2": "Cryo DMG Bonus +15%",
+    "4": "Saat Karakter yang mengenakan memiliki 0 Energy, maka DMG Normal Attack meningkat 60% dan DMG Elemental Burst meningkat 60%. Setelah Karakter yang mengenakan mengakibatkan DMG dengan Normal Attack, maka efek peningkatan DMG Elemental Burst di atas akan hilang selama 6 detik. Setelah Karakter yang mengenakan mengakibatkan DMG dengan Elemental Burst, maka efek peningkatan DMG Normal Attack di atas akan hilang selama 6 detik. Efek-efek ini tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Deep Gallery's Echoing Song",
+      "desc": "Bunga es yang terbuat dari batu giok utara. Kelopak bunganya telah mengkristal seiring berjalannya waktu."
+    },
+    "plume": {
+      "name": "Deep Gallery's Distant Pact",
+      "desc": "Jimat bulu yang terbuat dari batu giok utara. Pantulan cahaya yang menyilaukan seolah tidak berasal dari dunia ini."
+    },
+    "sands": {
+      "name": "Deep Gallery's Moment of Oblivion",
+      "desc": "Jam saku yang terbuat dari batu giok di utara. Jarum jamnya telah berhenti selamanya pada saat kehancuran."
+    },
+    "goblet": {
+      "name": "Deep Gallery's Bestowed Banquet",
+      "desc": "Sebuah piala yang terbuat dari batu giok di utara. Konon katanya, peradaban kuno menggunakannya sebagai wadah upacara untuk pemberian kepada para dewa."
+    },
+    "circlet": {
+      "name": "Deep Gallery's Lost Crown",
+      "desc": "Topeng yang diselimuti oleh obsesi, sama seperti pikiran pemiliknya yang lama. Batu giok yang terdapat di atasnya tampaknya berasal dari zaman yang lebih kuno."
+    }
+  }
+}

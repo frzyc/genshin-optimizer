@@ -4,7 +4,7 @@
   "description": "페보니우스 기사단 수석 연금술사이자 수사대 대장. 「백악의 아이」라 불리는 천재이다",
   "constellationName": "백악의 아이 자리",
   "auto": {
-    "name": "페보니우스 검술·백",
+    "name": "백",
     "fields": {
       "normal": {
         "0": "<strong>일반 공격</strong>",

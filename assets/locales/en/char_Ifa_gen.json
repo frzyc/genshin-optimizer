@@ -1,0 +1,207 @@
+{
+  "name": "Ifa",
+  "title": "In the Wake of Wandering Winds",
+  "description": "A vet from the Flower-Feather Clan who cherishes the life he leads alongside all manner of living things — people, animals, you name it.",
+  "constellationName": "Catena Opele",
+  "auto": {
+    "name": "Rite of Dispelling Winds",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 3 attacks, dealing <anemo>Anemo DMG</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina and fires off a shot, dealing <anemo>AoE Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges towards the ground from mid-air, damaging all opponents along the path. Deals <anemo>AoE Anemo DMG</anemo> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Charged Attack DMG",
+      "4": "Charged Attack Stamina Cost",
+      "5": "Plunge DMG",
+      "6": "Low/High Plunge DMG",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, fixed(fixed: 1)}}",
+      "5": "{{5, percent(fixed: 1)}}%",
+      "6": "{{6, percent}}%/{{7, percent}}%",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Airborne Disease Prevention",
+    "description": {
+      "0": "It's time for the real bash bros to step up! Ifa calls Cacucu in as backup.",
+      "1": "After using this skill, Ifa gains 80 Nightsoul points and enters the <strong>Nightsoul's Blessing</strong> state. In the Nightsoul's Blessing state, Ifa will hover with Cacucu's help. When he uses Normal Attacks in this state, he will use different kinds of <strong>Supporting Fire</strong> depending on whether you Tap or Hold, firing Tonicshots that are capable of healing all party members.",
+      "2": "<br/>",
+      "3": "Additionally, Holding the Elemental Skill <strong>Airborne Disease Prevention</strong> while Ifa is in Nightsoul's Blessing will cause him to use a Nightsoul-aligned Plunging Attack. Letting go of the skill button will interrupt this Plunging Attack to maintain his hover. If Ifa lands due to this Plunging Attack, his Nightsoul's Blessing state will end."
+    },
+    "skillParams": {
+      "0": "Tonicshot DMG",
+      "1": "Tonicshot Healing On Hit",
+      "2": "Nightsoul Point Limit",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}% Elemental Mastery+{{2, fixed(fixed: 1)}}",
+      "2": "{{3, fixed(fixed: 1)}}",
+      "3": "{{4, fixed(fixed: 1)}}s",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Compound Sedation Field",
+    "description": {
+      "0": "Fires a Therapeutic Sedative at a (temporarily aggressive) opponent. The sedative will explode on impact, creating a restraining wind current that pulls nearby objects and opponents in while dealing Nightsoul-aligned <anemo>AoE Anemo DMG</anemo>.",
+      "1": "When the Therapeutic Sedative hits an opponent affected by <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will apply a <strong>Sedation Mark</strong> to them."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Sedation Mark DMG",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, fixed(fixed: 1)}}s",
+      "3": "{{3}}",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Field Medic's Vision",
+    "description": {
+      "0": "When Ifa is in the Nightsoul's Blessing state, every 1 Nightsoul point out of the total in his entire party will grant him 1 <strong>Rescue Essentials</strong> point. Rescue Essentials will increase the Swirl and Electro-Charged DMG dealt by all nearby party members."
+    }
+  },
+  "passive2": {
+    "name": "Mutual Aid Agreement",
+    "description": {
+      "0": "When nearby party members trigger Nightsoul Bursts, Ifa's Elemental Mastery increases by 80 for 10s."
+    }
+  },
+  "passive3": {
+    "name": "Tactical Warm Compress Bandaging",
+    "description": {
+      "0": "While in an area with Phlogiston Mechanics within Natlan, when the current active party member or indwelt saurian has less than 40% HP, Ifa will consume 10 Phlogiston and restore 40% of their HP. This effect can trigger once every 10s, and does not take effect in Domains, Trounce Domains, or the Spiral Abyss."
+    }
+  },
+  "constellation1": {
+    "name": "Vitiferous Elixir's Concoction",
+    "description": {
+      "0": "When <strong>Supporting Fire</strong> hits an opponent, it will restore 6 Energy for Ifa. One such Energy restoration can be triggered once every 8s."
+    }
+  },
+  "constellation2": {
+    "name": "Guiding Spirit of Ballistic Prayer",
+    "description": {
+      "0": "When Ifa is in the Nightsoul's Blessing state, every Nightsoul point the party has above a total of 60 will grant Ifa 4 additional <strong>Rescue Essentials</strong> points.",
+      "1": "Additionally, Ifa's Rescue Essentials limit is increased by 50.",
+      "2": "You must first unlock the Passive Talent <strong>Field Medic's Vision</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Rebuttal in Negotiations With the Night",
+    "description": {
+      "0": "Increases the Level of <strong>Airborne Disease Prevention</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Decayed Vessel's Permutation",
+    "description": {
+      "0": "The restraining wind current created by the Elemental Burst <strong>Compound Sedation Field</strong> has its duration extended to 3s.",
+      "1": "Additionally, Ifa gains 100 Elemental Mastery for 15s after using his Elemental Burst <strong>Compound Sedation Field</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Vow of Universal Coexistence",
+    "description": {
+      "0": "Increases the Level of <strong>Compound Sedation Field</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Oath on a Feathered Knot",
+    "description": {
+      "0": "When Ifa uses the Hold version of his <strong>Supporting Fire</strong>, there is a 50% chance that he will fire an additional Tonicshot that deals 120% of Ifa's ATK as Anemo DMG. This DMG is considered Normal Attack DMG.",
+      "1": "Additionally, when he is not in combat, Ifa will consume 20% less Nightsoul points and Phlogiston in his Nightsoul's Blessing state."
+    }
+  }
+}

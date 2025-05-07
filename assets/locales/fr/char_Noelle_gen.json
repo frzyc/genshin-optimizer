@@ -71,7 +71,7 @@
   "description": "Une jeune fille travaillant comme servante à l'Ordre de Favonius. Elle a toujours rêvé de devenir un jour chevalier.",
   "constellationName": "Parma Cordis",
   "auto": {
-    "name": "Escrime de Favonius - Servante",
+    "name": "Servante",
     "fields": {
       "normal": {
         "0": "<strong>Attaque normale</strong>",
