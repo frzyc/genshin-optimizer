@@ -125,6 +125,7 @@
   "113511": "HeatHazeAtHorizonsEnd",
   "113512": "AshenSunsShadow",
   "113513": "BrightDawnOverture",
+  "113514": "SeasonedSymphony",
   "114301": "BaneOfStormAndTide",
   "114302": "Heritage",
   "114303": "EnergyShower",
@@ -169,6 +170,7 @@
   "114516": "AquaRemembrance",
   "114517": "OfferingUntoWindAndSun",
   "114518": "BathhousesHawksAndNarukami",
+  "114519": "FallingRainbowsWish",
   "115301": "BaneOfFlameAndWater",
   "115302": "Precise",
   "115303": "CullTheWeak",
@@ -200,6 +202,7 @@
   "115427": "MasonsDitty",
   "115430": "InflorescenceUnattainable",
   "115431": "FlowerFeatherSong",
+  "115432": "SilentTrigger",
   "115501": "EchoingBallad",
   "115502": "StrongWilled",
   "115503": "ThePartingRefrain",
@@ -266,5 +269,7 @@
   "215035": "FragmentOfHarmonicWhimsy",
   "215036": "UnfinishedReverie",
   "215037": "ScrollOfTheHeroOfCinderCity",
-  "215038": "ObsidianCodex"
+  "215038": "ObsidianCodex",
+  "215039": "LongNightsOath",
+  "215040": "FinaleOfTheDeepGalleries"
 }

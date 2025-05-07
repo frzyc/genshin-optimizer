@@ -1,0 +1,170 @@
+{
+  "name": "Escoffier",
+  "title": "Lezzette Mükemmeliyet",
+  "description": "Debord Otelin eski baş şefi, Fontaine'de Usta Pastacı ve hassas gastronominin önde gelen temsilcilerinden biri olarak tanınır. Konu yemek pişirmek olduğunda standartlarından asla taviz vermez.",
+  "constellationName": "Pasta Kulesi",
+  "auto": {
+    "name": "Mutfak Hünerleri",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 3 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak yukarı doğru bir saldırı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kısık Ateşte Pişirme",
+    "description": {
+      "0": "İşte \"yemek\" dediğin böyle yapılır! Escoffier, Dokunma veya Basılı Tutma durumuna göre farklı pişirme teknikleri kullanır. Ama hiç şüphen olmasın, her biri Fontaine'in gururudur.",
+      "1": "<br/>",
+      "2": "<strong>Dokun</strong>",
+      "3": "Çok Amaçlı Yemek Mekasını Soğuk Muhafaza Modunda çalıştırır ve yakındaki düşmanlara <cryo>Buz Alan Hasarı</cryo> verir.",
+      "4": "<br/>",
+      "5": "<strong>Yemek Mekası: Soğuk Muhafaza Modu</strong>",
+      "6": "Mevcut aktif karakteri takip eder ve belirli aralıklarla düşmanlara Buzlu Parfeler ateşleyerek <cryo>Buz Hasarı</cryo> verir.",
+      "7": "<br/>",
+      "8": "<strong>Arkhe: Öz</strong>",
+      "9": "Belirli aralıklarla Escoffier, Yemek Mekasını Soğuk Muhafaza Modunda çalıştırdığında düşmanların olduğu yere Öz tesirli <cryo>Buz Alan Hasarı</cryo> veren bir Çalkantılı Kılıç çağırır.",
+      "10": "<br/>",
+      "11": "<strong>Basılı Tut</strong>",
+      "12": "Çok Amaçlı Yemek Mekasının <strong>Doğaçlama Pişirme Modunu</strong> etkinleştirir."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Buzlu Parfe Hasarı",
+      "2": "Soğuk Muhafaza Modu Süresi",
+      "3": "Çalkantılı Kılıç Hasarı",
+      "4": "Çalkantılı Kılıç Aralığı",
+      "5": "Basma BS",
+      "6": "BS (Basılı Tutma)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ahenkli Kesikler",
+    "description": {
+      "0": "Escoffier, eşsiz bıçak kullanma hünerlerini göstererek <cryo>Buz Alan Hasarı</cryo> verir ve kendi Saldırısına bağlı olarak yakındaki tüm grup üyelerinin Canını yeniler."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "İyileştirme",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Can Boğazdan Gelir",
+    "description": {
+      "0": "<strong>Ahenkli Kesikler</strong> Element Patlamasını kullandıktan sonra Escoffier 9 saniyeliğine Şifa Diyeti etkisi kazanır. Bu etki her 1 saniyede bir yakındaki aktif karakterlere Escoffier'nin Saldırısının %138,24'ü kadar Can yeniler."
+    }
+  },
+  "passive2": {
+    "name": "İlham Veren Aromalar",
+    "description": {
+      "0": "Grupta 1/2/3/4 <hydro>Su</hydro> veya <cryo>Buz</cryo> karakteri varsa Escoffier'nin <strong>Kısık Ateşte Pişirme</strong> Element Becerisi veya <strong>Ahenkli Kesikler</strong> Element Patlaması bir düşmana isabet ettiğinde 12 saniyeliğine düşmanın <hydro>Su Direnci</hydro> ve <cryo>Buz Direnci</cryo> %5/%10/%15/%55 azalır."
+    }
+  },
+  "passive3": {
+    "name": "Sürekli Doğaçlama Pişirme",
+    "description": {
+      "0": "Escoffier, <strong>Kısık Ateşte Pişirme</strong> Element Becerisinin Basılı Tutma halini kullanarak Çok Amaçlı Yemek Mekasının Doğaçlama Pişirme Modunu etkinleştirir.",
+      "1": "<br/>",
+      "2": "<strong>Yemek Mekası: Doğaçlama Pişirme Modu</strong>",
+      "3": [
+        "Yemek Mekasını alana yerleştirir. Yemek Mekası element saldırılarını emebilir. Emilen element enerjisi belirli bir sınıra ulaştığında Escoffier, mekasındaki malzemeleri muhteşem lezzetli yemeklere dönüştürür.",
+        "Escoffier'nin yeni malzemeler almak için zamana ihtiyacı vardır, bu yüzden her hafta bu yemeklerden sadece belirli bir sayıda pişirebilir. Escoffier'nin yemek pişirme hakkı her Pazartesi saat 04:00'da yenilenir."
+      ]
+    }
+  },
+  "constellation1": {
+    "name": "Damakları Şenlendiren Açılış Dansı",
+    "description": {
+      "0": "4 grup üyesi de <hydro>Su</hydro> veya <cryo>Buz</cryo> elementindense Escoffier <strong>Kısık Ateşte Pişirme</strong> Element Becerisi veya <strong>Ahenkli Kesikler</strong> Element Patlamasını kullandıktan sonra 15sn boyunca yakındaki tüm grup üyelerinin <cryo>Buz Hasarının</cryo> Kritik Hasarı %60 artar.",
+      "1": "\"İlham Veren Aromalar\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation2": {
+    "name": "Mis Kokulu Taze Yahni Sanatı",
+    "description": {
+      "0": "Escoffier, Yemek Mekasının <strong>Soğuk Muhafaza Modunu</strong> etkinleştirdiğinde 15sn boyunca \"Taptaze Lezzet\" etkisini kazanır. Bu süre içinde Escoffier, 5 Soğuk Yemek kademesi elde eder. Escoffier hariç yakındaki diğer aktif karakterler Normal, Yüklü ve Havadan Saldırılarla ya da bir Element Becerisi veya Element Patlamasıyla <cryo>Buz Hasarı</cryo> verdiğinde 1 Soğuk Yemek kademesi tüketilir ve verilen Hasar, Escoffier'nin Saldırısının %240'ı kadar artar.",
+      "1": "Tek seferde birden fazla düşmana <cryo>Buz Hasarı</cryo> verildiğinde isabet alan düşman sayısına göre Soğuk Yemek kademesi tüketilir."
+    }
+  },
+  "constellation3": {
+    "name": "Pastacının Karamel Büyüsü",
+    "description": {
+      "0": "<strong>Kısık Ateşte Pişirme</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Gizli Biberiye Tarifi",
+    "description": {
+      "0": "<strong>Şifa Diyeti</strong> 6 saniye daha uzun sürer. <strong>Şifa Diyeti</strong> etkinken iyileştirme tetiklendiğinde Escoffier fazladan %100 Can iyileştirme ve 2 Enerji yenileme şansı kazanır. Bu şans, Escoffier'nin Kritik Oranına denktir. Tek bir <strong>Şifa Diyeti</strong> süresince bu etki 7 defa tetiklenebilir.",
+      "1": "\"Can Boğazdan Gelir\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation5": {
+    "name": "Binbir Sos Senfonisi",
+    "description": {
+      "0": "<strong>Ahenkli Kesikler</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Rengarenk Çay Partileri",
+    "description": {
+      "0": "<strong>Yemek Mekası: Soğuk Muhafaza Modu</strong> gelişir:",
+      "1": [
+        "Grubundaki aktif karakterin Normal, Yüklü veya Havadan Saldırıları düşmanlara isabet ettiğinde Yemek Mekası: Soğuk Muhafaza Modu bir adet Özel Buzlu Parfe fırlatarak Escoffier'nin Saldırısının %500'ü kadar <cryo>Buz Alan Hasarı</cryo> verir. Bu Hasar, Element Becerisi Hasarı sayılır."
+      ],
+      "2": "Bu etki her 0,5 saniyede bir defa ve bir Yemek Mekası: Soğuk Muhafaza Modu süresince 6 defa tetiklenebilir."
+    }
+  }
+}

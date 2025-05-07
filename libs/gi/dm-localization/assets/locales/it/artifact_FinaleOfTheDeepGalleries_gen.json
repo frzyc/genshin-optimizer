@@ -1,0 +1,29 @@
+{
+  "setName": "Finale delle gallerie profonde",
+  "setEffects": {
+    "2": "Bonus DAN da Cryo +15%.",
+    "4": "Quando l'energia elementale del personaggio è pari a zero, i DAN da attacco normale e da Tripudio elementale aumentano di un 60%. Dopo aver inflitto DAN da attacco normale, l'effetto relativo al Tripudio elementale si disattiva per 6 s. Allo stesso modo, dopo aver inflitto DAN da Tripudio elementale, l'effetto relativo agli attacchi normali si disattiva per la stessa quantità di tempo. L'effetto può attivarsi anche se il personaggio che equipaggia il set non è in campo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Canzone echeggiante della Galleria profonda",
+      "desc": "Un fiore di ghiaccio scolpito con giada del Nord, i cui petali si sono sgretolati nel corso del suo lungo ciclo vitale."
+    },
+    "plume": {
+      "name": "Patto antico della Galleria profonda",
+      "desc": "Un accessorio dalla forma piumata scolpito con giada del Nord, che sfavilla di un bagliore ultraterreno."
+    },
+    "sands": {
+      "name": "Istante d'oblio della Galleria profonda",
+      "desc": "Un orologio da tasca scolpito con giada del Nord, le cui lancette si sono bloccate per sempre nell'attimo della sua distruzione."
+    },
+    "goblet": {
+      "name": "Banchetto d'onore della Galleria profonda",
+      "desc": "Una coppa scolpita con giada del Nord. Si dice che un tempo un'antica civiltà la utilizzasse come recipiente cerimoniale per compiere offerte ai cieli."
+    },
+    "circlet": {
+      "name": "Corona perduta della Galleria profonda",
+      "desc": "Un elmo impregnato d'ossessione, proprio come la mente del suo precedente proprietario. Il suo ornamento di giada sembra risalire a un'epoca ancora più antica."
+    }
+  }
+}

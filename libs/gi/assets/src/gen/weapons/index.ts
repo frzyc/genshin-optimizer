@@ -143,6 +143,7 @@ import SacrificialSword from './SacrificialSword'
 import SapwoodBlade from './SapwoodBlade'
 import ScionOfTheBlazingSun from './ScionOfTheBlazingSun'
 import SeasonedHuntersBow from './SeasonedHuntersBow'
+import SequenceOfSolitude from './SequenceOfSolitude'
 import SerpentSpine from './SerpentSpine'
 import SharpshootersOath from './SharpshootersOath'
 import SilverSword from './SilverSword'
@@ -169,6 +170,7 @@ import SunnyMorningSleepIn from './SunnyMorningSleepIn'
 import SurfsUp from './SurfsUp'
 import SwordOfDescension from './SwordOfDescension'
 import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
+import SymphonistOfScents from './SymphonistOfScents'
 import TalkingStick from './TalkingStick'
 import TamayurateiNoOhanashi from './TamayurateiNoOhanashi'
 import TheAlleyFlash from './TheAlleyFlash'
@@ -353,6 +355,7 @@ const data = {
   SapwoodBlade,
   ScionOfTheBlazingSun,
   SeasonedHuntersBow,
+  SequenceOfSolitude,
   SerpentSpine,
   SharpshootersOath,
   SilverSword,
@@ -379,6 +382,7 @@ const data = {
   SurfsUp,
   SwordOfDescension,
   SwordOfNarzissenkreuz,
+  SymphonistOfScents,
   TalkingStick,
   TamayurateiNoOhanashi,
   TheAlleyFlash,

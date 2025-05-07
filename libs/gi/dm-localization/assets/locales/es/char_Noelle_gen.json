@@ -70,7 +70,7 @@
   "description": "La criada de confianza de los Caballeros de Favonius. Sueña con convertirse algún día en una de ellos.",
   "constellationName": "Parma Cordis",
   "auto": {
-    "name": "Técnica de espada Favonius - Criada",
+    "name": "Criada",
     "fields": {
       "normal": {
         "0": "<strong>Ataque Normal</strong>",

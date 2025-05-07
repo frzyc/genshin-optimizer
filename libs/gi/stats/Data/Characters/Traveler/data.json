@@ -1,7 +1,10 @@
 {
   "key": "Traveler",
   "weaponType": "sword",
-  "birthday": {},
+  "birthday": {
+    "month": 0,
+    "day": 0
+  },
   "rarity": 5,
   "lvlCurves": [
     {

@@ -4,7 +4,7 @@
   "description": "若く有能な社奉行神里家の現当主。穏やかで礼儀正しく、物事をそつなく処理する。",
   "constellationName": "神守柏座",
   "auto": {
-    "name": "神里流·転",
+    "name": "神里流・転",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",
@@ -148,7 +148,7 @@
   "constellation4": {
     "name": "細流厭わず",
     "description": {
-      "0": "<strong>神里流·水囿</strong>発動後、周囲チーム全員の通常攻撃速度+15%、継続期間15秒。"
+      "0": "<strong>神里流·水囿</strong>発動後、周囲チーム全員の通常攻撃速度+15%、継続時間15秒。"
     }
   },
   "constellation5": {

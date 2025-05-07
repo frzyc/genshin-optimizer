@@ -4,7 +4,7 @@
   "description": "西风骑士团首席炼金术士兼调查小队队长，被称做「白垩之子」的天才。",
   "constellationName": "白垩之子座",
   "auto": {
-    "name": "西风剑术·白",
+    "name": "白",
     "fields": {
       "normal": {
         "0": "<strong>普通攻击</strong>",

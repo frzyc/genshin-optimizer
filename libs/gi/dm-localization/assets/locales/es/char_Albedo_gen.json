@@ -4,7 +4,7 @@
   "description": "Alquimista Jefe de los Caballeros de Favonius y Capitán de la Compañía de Investigación. Lo llaman el “Príncipe de la Roca Caliza”.",
   "constellationName": "Princeps Cretaceus",
   "auto": {
-    "name": "Técnica de espada Favonius - Albor",
+    "name": "Albor",
     "fields": {
       "normal": {
         "0": "<strong>Ataque Normal</strong>",

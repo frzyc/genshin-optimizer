@@ -4,7 +4,7 @@
   "description": "Un joven caballero procedente de una familia normal. Es el tímido y precavido topógrafo de avanzada de la Compañía de Reconocimiento.",
   "constellationName": "Palumbus",
   "auto": {
-    "name": "Lanza de Favonius - Punta afilada",
+    "name": "Punta afilada",
     "fields": {
       "normal": {
         "0": "<strong>Ataque Normal</strong>",

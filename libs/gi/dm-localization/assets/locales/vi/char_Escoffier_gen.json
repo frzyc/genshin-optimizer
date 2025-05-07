@@ -1,0 +1,170 @@
+{
+  "name": "Escoffier",
+  "title": "Muôn Hương Hòa Quyện",
+  "description": "Bếp trưởng tiền nhiệm của Khách Sạn Debord Fontaine, người tiên phong trong lĩnh vực \"ẩm thực kỹ thuật\", có danh hiệu Đại Tá Bánh Ngọt, yêu cầu cực kỳ nghiêm khắc trong việc nấu nướng.",
+  "constellationName": "Cung Hương Cao Tháp",
+  "auto": {
+    "name": "Tay Nghề Làm Bếp",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định và chém lên trên."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Trọng Kích",
+      "4": "Thể Lực Trọng Kích Tiêu Hao",
+      "5": "Sát Thương Khi Đáp",
+      "6": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nấu Với Lửa Nhỏ",
+    "description": {
+      "0": "Hãy chứng kiến ý nghĩa thực sự của \"nấu nướng\" nào! Bằng cách Nhấn hoặc Nhấn Giữ để thể hiện nghệ thuật nấu nướng đáng tự hào của Fontaine dưới cách thức khác nhau.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Khởi động Máy Nấu Nướng Đa Chức Năng ở chế độ \"Cấp Đông\", gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> cho kẻ địch xung quanh.",
+      "4": "<br/>",
+      "5": "<strong>Máy Nấu Nướng: Chế Độ Cấp Đông</strong>",
+      "6": "Bám theo nhân vật trong trận hiện tại, phóng Parfait Sương Giá vào kẻ địch ở gần theo chu kỳ, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
+      "7": "<br/>",
+      "8": "<strong>Sức Mạnh Nền Tảng: Ousia</strong>",
+      "9": "Mỗi cách một khoảng thời gian, khi Escoffier khởi động Máy Nấu Nướng ở chế độ Cấp Đông, sẽ triệu hồi Lưỡi Dao Nổi Sóng, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> thuộc tính Ousia.",
+      "10": "<br/>",
+      "11": "<strong>Nhấn Giữ</strong>",
+      "12": "Khởi động Máy Nấu Nướng Đa Chức Năng ở <strong>Chế Độ Nấu Nướng Ngẫu Hứng</strong>."
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Parfait Sương Giá",
+      "2": "Thời Gian Duy Trì Chế Độ Cấp Đông",
+      "3": "Sát Thương Lưỡi Dao Nổi Sóng",
+      "4": "Giãn Cách Lưỡi Dao Nổi Sóng",
+      "5": "CD Nhấn",
+      "6": "CD Nhấn Giữ",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tuyệt Kỹ Cắt Gọt",
+    "description": {
+      "0": "Thể hiện kỹ năng dùng dao xuất sắc, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> và hồi phục HP cho tất cả nhân vật trong đội gần đó, lượng hồi phục dựa trên Tấn Công của Escoffier."
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Lượng Trị Liệu",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Món Ngon Còn Hơn Thuốc Bổ",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nộ <strong>Tuyệt Kỹ Cắt Gọt</strong>, Escoffier sẽ nhận hiệu quả Chế Độ Ăn Phục Hồi trong 9s: Mỗi 1s sẽ hồi phục HP cho nhân vật trong trận ở gần, lượng hồi phục dựa trên 138.24% Tấn Công của Escoffier."
+    }
+  },
+  "passive2": {
+    "name": "Đưa Cảm Hứng Vào Hương Vị",
+    "description": {
+      "0": "Khi trong đội có 1/2/3/4 nhân vật nguyên tố <hydro>Thủy</hydro> hoặc <cryo>Băng</cryo>, khi Kỹ Năng Nguyên Tố <strong>Nấu Với Lửa Nhỏ</strong> hoặc Kỹ Năng Nộ <strong>Tuyệt Kỹ Cắt Gọt</strong> của Escoffier đánh trúng kẻ địch, sẽ khiến kẻ địch đó giảm 5%/10%/15%/55% Kháng Nguyên Tố <hydro>Thủy</hydro> và <cryo>Băng</cryo> trong 12s."
+    }
+  },
+  "passive3": {
+    "name": "Nấu Nướng Ngẫu Hứng Mọi Lúc",
+    "description": {
+      "0": "Khi Nhấn Giữ thi triển Kỹ Năng Nguyên Tố <strong>Nấu Với Lửa Nhỏ</strong>, sẽ khởi động Máy Nấu Nướng Đa Chức Năng ở chế độ Nấu Nướng Ngẫu Hứng.",
+      "1": "<br/>",
+      "2": "<strong>Máy Nấu Nướng Đa Chức Năng: Chế Độ Nấu Nướng Ngẫu Hứng</strong>",
+      "3": [
+        "Đặt Máy Nấu Nướng trên sân. Máy Nấu Nướng có thể hấp thụ đòn tấn công nguyên tố. Khi Năng Lượng Nguyên Tố hấp thụ đến mức giới hạn sẽ chuyển hóa nguyên liệu mà Escoffier đặt trong đó thành món ăn ngon.",
+        "Escoffier cần thời gian để mua nguyên liệu mới. Mỗi tuần chỉ có thể thông qua cách thức này để chế biến một lượng món ăn nhất định, số lần sẽ làm mới lúc 4:00 sáng mỗi thứ hai."
+      ]
+    }
+  },
+  "constellation1": {
+    "name": "Vũ Điệu Trước Bữa Ăn",
+    "description": {
+      "0": "Khi loại nguyên tố của 4 nhân vật trong đội là <hydro>Thủy</hydro> hoặc <cryo>Băng</cryo>, trong vòng 15s sau khi Escoffier thi triển Kỹ Năng Nguyên Tố <strong>Nấu Với Lửa Nhỏ</strong> hoặc Kỹ Năng Nộ <strong>Tuyệt Kỹ Cắt Gọt</strong>, tất cả nhân vật trong đội gần đó khi gây <cryo>Sát Thương Nguyên Tố Băng</cryo> sẽ tăng 60% Sát Thương Bạo Kích.",
+      "1": "Cần mở khóa thiên phú cố định \"Đưa Cảm Hứng Vào Hương Vị\"."
+    }
+  },
+  "constellation2": {
+    "name": "Nghệ Thuật Hầm Thơm Ngon",
+    "description": {
+      "0": "Khi Escoffier khởi động Máy Nấu Nướng ở <strong>Chế Độ Cấp Đông</strong>, sẽ nhận hiệu quả \"Món Ăn Nổi Tiếng\" trong 15s: Trong thời gian duy trì, Escoffier nhận được 5 tầng \"Nấu Lạnh\", khi nhân vật trong trận hiện tại gần đó (ngoài Escoffier) dùng Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây <cryo>Sát Thương Nguyên Tố Băng</cryo>, sẽ tiêu hao 1 tầng \"Nấu Lạnh\" và tăng sát thương gây ra, mức tăng tương đương 240% Tấn Công của Escoffier.",
+      "1": "Nếu trong một lần gây <cryo>Sát Thương Nguyên Tố Băng</cryo> trúng nhiều kẻ địch cùng lúc, sẽ căn cứ vào số lượng kẻ địch trúng đòn để tiêu hao số tầng \"Nấu Lạnh\"."
+    }
+  },
+  "constellation3": {
+    "name": "Ma Thuật Nướng Sốt Caramel",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Nấu Với Lửa Nhỏ</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Công Thức Hương Thảo Thần Bí",
+    "description": {
+      "0": "Thời gian duy trì <strong>Chế Độ Ăn Phục Hồi</strong> kéo dài thêm 6s. Trong thời gian duy trì, khi kích hoạt chữa trị thông qua <strong>Chế Độ Ăn Phục Hồi</strong>, có xác suất nhất định khiến lượng chữa trị tăng 100%, đồng thời hồi phục 2 điểm Năng Lượng Nguyên Tố cho Escoffier, xác suất này tương đương với Tỷ Lệ Bạo Kích của Escoffier. Trong một lần duy trì <strong>Chế Độ Ăn Phục Hồi</strong>, hiệu quả này tối đa kích hoạt 7 lần.",
+      "1": "Cần mở khóa thiên phú cố định \"Món Ngon Còn Hơn Thuốc Bổ\"."
+    }
+  },
+  "constellation5": {
+    "name": "Giao Hưởng Mùi Vị Ngàn Loại Sốt",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tuyệt Kỹ Cắt Gọt</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tiệc Trà Rực Rỡ Sắc Màu",
+    "description": {
+      "0": "<strong>Máy Nấu Nướng: Chế Độ Cấp Đông</strong> được cường hóa:",
+      "1": [
+        "Nhân vật ra trận hiện tại trong đội bản thân khi Tấn Công Thường, Trọng Kích hoặc Tấn Công Khi Đáp trúng kẻ địch, Máy Nấu Nướng: Chế Độ Cấp Đông sẽ bắn thêm một Parfait Sương Giá Đặc Biệt, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> tương đương 500% Tấn Công của Escoffier. Sát thương này được xem là sát thương Kỹ Năng Nguyên Tố."
+      ],
+      "2": "Hiệu quả này mỗi 0.5s tối đa kích hoạt một lần, trong một lần duy trì Máy Nấu Nướng: Chế Độ Cấp Đông, hiệu quả này tối đa kích hoạt 6 lần."
+    }
+  }
+}

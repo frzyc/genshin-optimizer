@@ -1,0 +1,29 @@
+{
+  "setName": "Juramento da Noite Eterna",
+  "setEffects": {
+    "2": "Dano do Ataque Imersivo aumenta em 25%.",
+    "4": "Quando o personagem que está com esse conjunto equipado atinge um Ataque Imersivo/Carregado/Habilidade Elemental no inimigo, obtém 1/2/2 acúmulo(s) de Brilho Eterno. Ataques Imersivos, Carregados ou Habilidades Elementais podem gerar esse efeito uma vez por segundo. Brilho Eterno: aumenta o Dano causado por Ataques Imersivos em 15% por 6s, acumula até 5 vezes. A duração de cada acúmulo é contada independentemente."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Juramento do Portador da Lâmpada",
+      "desc": "Uma flor de metal usada pelo Portador da Lâmpada que simboliza o juramento solene de vigilância eterna que essa pessoa fez."
+    },
+    "plume": {
+      "name": "Pluma da Rouxinol Noturna",
+      "desc": "Um acessório de chapéu feito cuidadosamente com penas de rouxinóis. Dizem que sua forma foi definida pelo primeiro Iluminador."
+    },
+    "sands": {
+      "name": "Sino Fúnebre do Imortal",
+      "desc": "Um sino de bronze carregado pelo guerreiro que caminhava no abismo. Seu som estridente ecoava na escuridão."
+    },
+    "goblet": {
+      "name": "Trompa Não Soprada",
+      "desc": "O chifre que uma vez foi usado para chamar os devotos agora está inútil."
+    },
+    "circlet": {
+      "name": "Elmo Tingido",
+      "desc": "Um capacete antigo e pesado, símbolo da herança de uma antiga linhagem de guerreiros do norte."
+    }
+  }
+}

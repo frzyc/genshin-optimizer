@@ -24,6 +24,7 @@ import Diluc from './Diluc'
 import Diona from './Diona'
 import Dori from './Dori'
 import Emilie from './Emilie'
+import Escoffier from './Escoffier'
 import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
@@ -34,6 +35,7 @@ import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
 import Iansan from './Iansan'
+import Ifa from './Ifa'
 import Jean from './Jean'
 import Kachina from './Kachina'
 import KaedeharaKazuha from './KaedeharaKazuha'
@@ -131,6 +133,7 @@ const data = {
   Diona,
   Dori,
   Emilie,
+  Escoffier,
   Eula,
   Faruzan,
   Fischl,
@@ -141,6 +144,7 @@ const data = {
   Gorou,
   HuTao,
   Iansan,
+  Ifa,
   Jean,
   Kachina,
   KaedeharaKazuha,

@@ -4,7 +4,7 @@
   "description": "Die göttliche Priesterin und das höchste Oberhaupt von Watatsumi.",
   "constellationName": "Dracaena Somnolenta",
   "auto": {
-    "name": "Standardangriff – Form des Wassers",
+    "name": "Form des Wassers",
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",

@@ -1,0 +1,24 @@
+{
+  "name": "Coração Resplandecente",
+  "description": {
+    "0": "Um troféu feito de gemas do Coletivo da Fartura e cristais do Clã das Plumas de Flores. Dizem que pertenceu a um lendário lutador."
+  },
+  "passiveName": "Desejo do Arco-Íris Cadente",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o ATQ em <cryo>28%</cryo>. Ao fazer um Ataque Imersivo, obtém o efeito \"Cores do Crepúsculo\": aumenta o Dano CRIT causado pelo Ataque Imersivo em <cryo>28%</cryo>. Quando lançar uma Habilidade Elemental ou Supremo, obtém o efeito \"Esplendor do Crepúsculo\": aumenta o Dano CRIT causado pelo Ataque Imersivo em <cryo>40%</cryo>. Esses efeitos possuem cada um uma duração de 15s, e serão removidos 0.1s após a Onda Mergulhadora atingir o alvo."
+    },
+    "1": {
+      "0": "Aumenta o ATQ em <cryo>35%</cryo>. Ao fazer um Ataque Imersivo, obtém o efeito \"Cores do Crepúsculo\": aumenta o Dano CRIT causado pelo Ataque Imersivo em <cryo>35%</cryo>. Quando lançar uma Habilidade Elemental ou Supremo, obtém o efeito \"Esplendor do Crepúsculo\": aumenta o Dano CRIT causado pelo Ataque Imersivo em <cryo>50%</cryo>. Esses efeitos possuem cada um uma duração de 15s, e serão removidos 0.1s após a Onda Mergulhadora atingir o alvo."
+    },
+    "2": {
+      "0": "Aumenta o ATQ em <cryo>42%</cryo>. Ao fazer um Ataque Imersivo, obtém o efeito \"Cores do Crepúsculo\": aumenta o Dano CRIT causado pelo Ataque Imersivo em <cryo>42%</cryo>. Quando lançar uma Habilidade Elemental ou Supremo, obtém o efeito \"Esplendor do Crepúsculo\": aumenta o Dano CRIT causado pelo Ataque Imersivo em <cryo>60%</cryo>. Esses efeitos possuem cada um uma duração de 15s, e serão removidos 0.1s após a Onda Mergulhadora atingir o alvo."
+    },
+    "3": {
+      "0": "Aumenta o ATQ em <cryo>49%</cryo>. Ao fazer um Ataque Imersivo, obtém o efeito \"Cores do Crepúsculo\": aumenta o Dano CRIT causado pelo Ataque Imersivo em <cryo>49%</cryo>. Quando lançar uma Habilidade Elemental ou Supremo, obtém o efeito \"Esplendor do Crepúsculo\": aumenta o Dano CRIT causado pelo Ataque Imersivo em <cryo>70%</cryo>. Esses efeitos possuem cada um uma duração de 15s, e serão removidos 0.1s após a Onda Mergulhadora atingir o alvo."
+    },
+    "4": {
+      "0": "Aumenta o ATQ em <cryo>56%</cryo>. Ao fazer um Ataque Imersivo, obtém o efeito \"Cores do Crepúsculo\": aumenta o Dano CRIT causado pelo Ataque Imersivo em <cryo>56%</cryo>. Quando lançar uma Habilidade Elemental ou Supremo, obtém o efeito \"Esplendor do Crepúsculo\": aumenta o Dano CRIT causado pelo Ataque Imersivo em <cryo>80%</cryo>. Esses efeitos possuem cada um uma duração de 15s, e serão removidos 0.1s após a Onda Mergulhadora atingir o alvo."
+    }
+  }
+}

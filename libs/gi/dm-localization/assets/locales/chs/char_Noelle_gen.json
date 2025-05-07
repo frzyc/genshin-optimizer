@@ -71,7 +71,7 @@
   "description": "「西风骑士团」的可靠女仆，梦想有一天能成为正式的骑士。",
   "constellationName": "心护座",
   "auto": {
-    "name": "西风剑术·女仆",
+    "name": "女仆",
     "fields": {
       "normal": {
         "0": "<strong>普通攻击</strong>",

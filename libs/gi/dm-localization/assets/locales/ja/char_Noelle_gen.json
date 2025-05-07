@@ -71,7 +71,7 @@
   "description": "「西風騎士団」の頼もしいメイド。いつか本当の騎士になることを夢見ている。",
   "constellationName": "心護座",
   "auto": {
-    "name": "西風剣術·メイド",
+    "name": "西風剣術・メイド",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

@@ -4,7 +4,7 @@
   "description": "时刻恪守着心中「正义」的特巡队队长，手中的铳枪只会指向负罪之人。",
   "constellationName": "剑铳座",
   "auto": {
-    "name": "线列枪刺·改",
+    "name": "改",
     "fields": {
       "normal": {
         "0": "<strong>普通攻击</strong>",

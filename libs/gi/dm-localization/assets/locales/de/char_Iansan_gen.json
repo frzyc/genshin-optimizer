@@ -1,0 +1,185 @@
+{
+  "name": "Iansan",
+  "title": "Von geschmolzenem Gestein gehärtet",
+  "description": "Trainingsleiterin des Fitnessklubs des Kollektivs der Fülle und berühmte Ernährungsexpertin Natlans.",
+  "constellationName": "Carnotaurus",
+  "auto": {
+    "name": "Beschwerter Stab",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden auf, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      },
+      "nightsoul": {
+        "0": "<strong>Nachtseelensegen – Donnerstampfer</strong>",
+        "1": "Wandelt den heftigen Schlag von Iansan im Zustand „Nachtseelensegen“ zu einem mächtigen „Donnerstampfer“ um, bei dem Iansan eine gewisse Menge Ausdauer verbraucht, dabei nach vorn aufstampft und mit Nachtseelen versehenen <electro>Elektro-Flächenschaden</electro> verursacht."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "SCH Donnerstampfer",
+      "5": "Ausdauerverbrauch heftiger Schläge und Donnerstampfer",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Schnell wie der Blitz",
+    "description": {
+      "0": "Iansan stößt eine gewisse Entfernung nach vorn und fügt Gegnern in der Bahn mit Nachtseelen versehenen <electro>Elektro-Schaden</electro> zu.",
+      "1": "Stellt Iansan nach dem Anwenden 54 Nachtseelenpunkte wieder her und tritt in den Zustand Nachtseelensegen ein. Iansan löst schnell einen „Donnerstampfer“ aus, der keine Ausdauer verbraucht, wenn innerhalb von 5 s nach dem Ende des Vorstoßes der Standardangriff durch Drücken angewendet wird.",
+      "2": "<br/>",
+      "3": "<strong>Nachtseelensegen – Iansan</strong>",
+      "4": "Verbraucht fortlaufend Nachtseelenpunkte. Wenn diese aufgebraucht sind oder wenn die Fähigkeit erneut eingesetzt wird, endet Iansans Zustand Nachtseelensegen. Der Zustand Nachtseelensegen hat die folgenden Eigenschaften:",
+      "5": [
+        " Erhöht Iansans Bewegungs-GSW;",
+        " Wechselt durch Gedrückthalten der Rennen-Fähigkeit in den Modus „Blitzesschnelle“ und erhöht Iansans Bewegungs-GSW für kurze Zeit enorm. Ermöglicht es Iansan, in diesem Zustand durch Nutzung des Geländes Flugsprünge auszuführen und durch Verbrauchen von Nachtseelenpunkten über die Wasseroberfläche oder flüssiges Phlogiston zu laufen, und macht sie immun gegen Schaden von flüssigem Phlogiston."
+      ],
+      "6": "<br/>",
+      "7": "<i>„Schneller, stärker! Genau dafür habe ich die ganze Zeit trainiert.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Max. Nachtseelenpunkte",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Drei Prinzipien der Stärke",
+    "description": {
+      "0": "Erschüttert die Erde mit ihrer unbändigen „Stärke“, verursacht damit mit Nachtseelen versehenen <electro>Elektro-Flächenschaden</electro> und holt die Sonderausgabe einer kinetischen Markierung (für Trainingszwecke) hervor.",
+      "1": "Verleiht Iansan beim Anwenden 15 Nachtseelenpunkte und versetzt sie in den Zustand Nachtseelensegen.",
+      "2": "Beendet Iansans Nachtseelensegen, sobald die kinetische Markierung vom Feld verschwindet.",
+      "3": "<br/>",
+      "4": "<strong>Kinetische Markierung</strong>",
+      "5": "Die kinetische Markierung folgt den Bewegungen der Figur und verleiht der aktuellen eigenen Figur in der Truppe gemäß Iansans Nachtseelenpunkten auf verschiedene Weise ANG-Bonus:",
+      "6": [
+        " Verleiht bei weniger als 42 Nachtseelenpunkten ANG-Bonus basierend auf Iansans Nachtseelenpunkten und ihrem ANG.",
+        " Bei mindestens 42 Nachtseelenpunkten wechselt die kinetische Markierung in den Modus „Glühender Beistand!“ und verleiht noch höheren ANG-Bonus basierend auf Iansans ANG."
+      ],
+      "7": "Zählt während der Wirkungsdauer darüber hinaus die von aktuellen eigenen Figuren in der Truppe (außer Iansan selbst) zurückgelegte Entfernung und stellt Iansan jede Sekunde Nachtseelenpunkte anhand der in der vorigen Sekunde zurückgelegten Entfernung wieder her.",
+      "8": "Die kinetische Markierung verschwindet, sobald Iansans Nachtseelensegen-Zustand endet. Sie verschwindet auch nach 1 s, wenn du dich nicht im Kampfzustand befindest. Der Nachtseelensegen endet nicht, wenn Iansan sich während der Wirkungsdauer der kinetischen Markierung inaktiv in der Truppe befindet.",
+      "9": "<br/>",
+      "10": "<i>„Stärke ist kein angeborenes Talent. Stärke entsteht durch unablässiges Training. Stärke muss ordnungsgemäß ausgeübt werden.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "ANG-Umwandlungsrate hoher Nachtseelenpunkte",
+      "2": "ANG-Umwandlungsrate niedriger Nachtseelenpunkte",
+      "3": "Max. ANG-Bonus",
+      "4": "Dauer",
+      "5": "Dauer außerhalb des Kampfs",
+      "6": "Abklingzeit",
+      "7": "Elementarenergie",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Intensives Widerstandstraining",
+    "description": {
+      "0": "Verleiht Iansan nach dem Treffen von Gegnern mit „Donnerstampfer“ 15 s lang den Effekt „Exakte Bewegung“.",
+      "1": "Erhöht Iansans ANG während der Wirkungsdauer um 20 %. Stellt beim Wiederherstellen von Nachtseelenpunkten durch die kinetische Markierung der Spezialfähigkeit <strong>Drei Prinzipien der Stärke</strong> zusätzlich 1 Nachtseelenpunkt wieder her. Erhöht die beim nächsten Mal durch die kinetische Markierung von Iansan zusätzlich wiederhergestellten Nachtseelenpunkte auf 4 Punkte, wenn eine eigene aktuelle Figur in der Truppe Nachtseelenpunkte verbraucht oder wiederherstellt, 2,8 s Abklingzeit.",
+      "2": "Der Effekt „Exakte Bewegung“ verschwindet mit dem Ende von Iansans Nachtseelensegen."
+    }
+  },
+  "passive2": {
+    "name": "Gradueller Kinetiktest",
+    "description": {
+      "0": "Verleiht Iansan, wenn ein Truppenmitglied in der Nähe einen Nachtseelenaufbruch auslöst, 10 s lang einen „Aufwärmeffekt“.",
+      "1": "Stellt der aktuellen eigenen Figur LP in Höhe von 60 % von Iansans ANG wieder her, wenn Iansan mindestens 1 Nachtseelenpunkt während der Wirkungsdauer wiederherstellt, 2,8 s Abklingzeit."
+    }
+  },
+  "passive3": {
+    "name": "Geschenk des Nachtreichs – Mühsal und Antrieb",
+    "description": {
+      "0": "Wechselt, nachdem Iansans Nachtseelenpunkte aufgebraucht sind und sie auf dem Feld ist, zum Verbrauch von Phlogiston, um ihren Nachtseelensegen aufrechtzuerhalten.",
+      "1": "Beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan kann die Nachtseelen-Übertragung – Iansan verwendet werden. Wenn die aktuelle Figur gerade rennt, sich in einem Bewegungsmodus befindet, der durch bestimmte Talente ausgelöst wird, oder sich in einer bestimmten Höhe in der Luft befindet, wird beim Wechsel zu Iansan Folgendes ausgelöst: Iansan tritt in den Zustand Nachtseelensegen ein und erhält 25 Nachtseelenpunkte. 10 s Abklingzeit für das Auslösen der Nachtseelen-Übertragung innerhalb der eigenen Truppe.",
+      "2": "Iansan erleidet beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan keinen Schaden durch den Fall, wenn sie das Gelände nutzt, um Flugsprünge auszuführen."
+    }
+  },
+  "passive": {
+    "name": "Plan zum energetischen Gleichgewicht",
+    "description": {
+      "0": "Stellt beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan 10 Punkte Phlogiston wieder her, wenn die Menge an Phlogiston von 50 % oder mehr auf weniger als 50 % fällt. 10 s Abklingzeit."
+    }
+  },
+  "constellation1": {
+    "name": "Aller Anfang ist schwer",
+    "description": {
+      "0": "Stellt Iansan selbst jedes Mal, wenn sie im Zustand Nachtseelensegen im Kampf 6 Nachtseelenpunkte verbraucht, 15 Punkte Elementarenergie wieder her, 18 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Faulheit ist der größte Feind der Fitness!",
+    "description": {
+      "0": "Verleiht Iansan beim Anwenden der Spezialfähigkeit <strong>Drei Prinzipien der Stärke</strong> 15 s lang den Effekt „Exakte Bewegung“ ihres passiven Talents „Intensives Widerstandstraining“. Erhöht außerdem den ANG der aktuellen eigenen Figur in der Truppe um 30 %, wenn sich Iansan während der Wirkungsdauer des Effekts „Exakte Bewegung“ inaktiv in der Truppe befindet. Das passive Talent „Intensives Widerstandstraining“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "Wissenschaftliche Ernährungsplanung",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Schnell wie der Blitz</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Langsam und stetig zum Ziel",
+    "description": {
+      "0": "Verleiht Iansan 2 Stapelungen des Effekts „Aufbrausen der Kraft“, wenn eine eigene aktuelle Figur in der Truppe außer Iansan während der Wirkungsdauer der kinetischen Markierung eine Spezialfähigkeit anwendet. Hält bis zum Ende der kinetischen Markierung und kann jedes Mal während der Wirkungsdauer der kinetischen Markierung nur einmal ausgelöst werden. Verbraucht 1 Stapelung „Aufbrausen der Kraft“, wenn Iansan mithilfe der kinetischen Markierung Nachtseelenpunkte wiederherstellt, und stellt ihr zusätzlich 4 Nachtseelenpunkte wieder her.",
+      "1": "Stellt Iansan außerdem beim Wiederherstellen von Nachtseelenpunkten mithilfe der kinetischen Markierung zusätzlich 50 % der Menge an Nachtseelenpunkten wieder her, die beim Mal davor über die Höchstmenge hinausgingen, falls zutreffend."
+    }
+  },
+  "constellation5": {
+    "name": "Da geht noch was!",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Drei Prinzipien der Stärke</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Lehren des „Kollektivs der Fülle“",
+    "description": {
+      "0": "Verlängert die Wirkungsdauer der kinetischen Markierung um 3 s.",
+      "1": "Verleiht Iansan außerdem den Effekt „Äußerste Kraftaufwendung“, wenn ihre Nachtseelenpunkte durchs Auslösen des Effekts zum Wiederherstellen von Nachtseelenpunkten über die Höchstmenge hinausgehen würden, und erhöht damit den von der eigenen aktuellen Figur in der Truppe verursachten Schaden 3 s lang um 25 %."
+    }
+  }
+}

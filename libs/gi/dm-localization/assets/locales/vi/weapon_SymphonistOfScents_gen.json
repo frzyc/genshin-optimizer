@@ -1,0 +1,24 @@
+{
+  "name": "Nhạc Sĩ Hương Thơm",
+  "description": {
+    "0": "Ngọn thương dài với tạo hình tao nhã, nghe nói từng là gậy chỉ huy của một nhạc sĩ vĩ đại nào đó sử dụng để tạo nên cây cầu nối giữa âm nhạc và vị giác."
+  },
+  "passiveName": "Giao Hưởng Bách Vị",
+  "passiveDescription": {
+    "0": {
+      "0": "Tấn Công tăng <cryo>12%</cryo>. Khi nhân vật trang bị vũ khí này không ra trận, Tấn Công tăng thêm <cryo>12%</cryo>. Sau khi tiến hành chữa trị, người trang bị và nhân vật được chữa trị sẽ nhận hiệu ứng \"Hương Thơm Nồng Nàn\", Tấn Công tăng <cryo>32%</cryo> trong 3s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Tấn Công tăng <cryo>15%</cryo>. Khi nhân vật trang bị vũ khí này không ra trận, Tấn Công tăng thêm <cryo>15%</cryo>. Sau khi tiến hành chữa trị, người trang bị và nhân vật được chữa trị sẽ nhận hiệu ứng \"Hương Thơm Nồng Nàn\", Tấn Công tăng <cryo>40%</cryo> trong 3s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Tấn Công tăng <cryo>18%</cryo>. Khi nhân vật trang bị vũ khí này không ra trận, Tấn Công tăng thêm <cryo>18%</cryo>. Sau khi tiến hành chữa trị, người trang bị và nhân vật được chữa trị sẽ nhận hiệu ứng \"Hương Thơm Nồng Nàn\", Tấn Công tăng <cryo>48%</cryo> trong 3s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Tấn Công tăng <cryo>21%</cryo>. Khi nhân vật trang bị vũ khí này không ra trận, Tấn Công tăng thêm <cryo>21%</cryo>. Sau khi tiến hành chữa trị, người trang bị và nhân vật được chữa trị sẽ nhận hiệu ứng \"Hương Thơm Nồng Nàn\", Tấn Công tăng <cryo>56%</cryo> trong 3s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Tấn Công tăng <cryo>24%</cryo>. Khi nhân vật trang bị vũ khí này không ra trận, Tấn Công tăng thêm <cryo>24%</cryo>. Sau khi tiến hành chữa trị, người trang bị và nhân vật được chữa trị sẽ nhận hiệu ứng \"Hương Thơm Nồng Nàn\", Tấn Công tăng <cryo>64%</cryo> trong 3s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

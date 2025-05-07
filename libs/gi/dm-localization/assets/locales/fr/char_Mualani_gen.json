@@ -134,7 +134,7 @@
     "name": "Le Meztli oisif...",
     "description": {
       "0": "Les DGT infligés par la première morsure déferlante de Requinou après le début de la bénédiction noctâme et par les missiles de Requinou que cette morsure déclenche augmentent d'une valeur équivalant à 66 % des PV max de Mualani. Ces DGT sont cependant sujets à la règle d'atténuation des DGT de <strong>Squalisurf brise-vagues</strong>.",
-      "1": "De plus, la consommation de points de noctâme ou de phlogistique de l'état Bénédiction noctâme de Mualani diminue de 30 % lorsqu'elle n'est pas en combat."
+      "1": "De plus, la consommation de points de noctâme et de phlogistique de l'état Bénédiction noctâme de Mualani diminue de 30 % lorsqu'elle n'est pas en combat."
     }
   },
   "constellation2": {

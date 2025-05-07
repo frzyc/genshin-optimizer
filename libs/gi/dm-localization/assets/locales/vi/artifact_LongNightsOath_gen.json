@@ -1,0 +1,29 @@
+{
+  "setName": "Lời Thề Đêm Dài",
+  "setEffects": {
+    "2": "Tăng 25% sát thương Tấn Công Khi Đáp.",
+    "4": "Sau khi đòn Tấn Công Khi Đáp/Trọng Kích/Kỹ Năng Nguyên Tố của người trang bị đánh trúng kẻ địch, sẽ nhận được 1/2/2 tầng \"Rạng Rỡ Vĩnh Cửu\". Tấn Công Khi Đáp, Trọng Kích hoặc Kỹ Năng Nguyên Tố mỗi 1s tối đa kích hoạt riêng biệt hiệu quả này một lần. Rạng Rỡ Vĩnh Cửu: Tăng 15% sát thương Tấn Công Khi Đáp trong 6s, tối đa cộng dồn 5 tầng, mỗi tầng tính giờ riêng."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Lời Thề Người Giữ Đèn",
+      "desc": "Hoa sắt được Ratnik đeo, tượng trưng cho lời thề canh gác vĩnh cửu mà người này đã lập ra."
+    },
+    "plume": {
+      "name": "Lông Đuôi Của Dạ Oanh",
+      "desc": "Trang sức cài mũ được chế tác tinh xảo từ lông chim Dạ Oanh, nghe nói hình dạng của nó được quyết định bởi Người Đúc Đèn đầu tiên."
+    },
+    "sands": {
+      "name": "Tiếng Chuông Người Bất Tử",
+      "desc": "Chuông đồng được các chiến binh mang theo khi bước đi giữa vực thẳm hắc ám, trong đêm đen u tối vẫn thường nghe thấy tiếng vang của nó."
+    },
+    "goblet": {
+      "name": "Tù Và Chưa Thổi Vang",
+      "desc": "Tù và từng được dùng để triệu tập những người giữ vững lời thề, nay đã không còn tác dụng nữa."
+    },
+    "circlet": {
+      "name": "Mũ Giáp Bị Nhuốm Màu",
+      "desc": "Mũ giáp cổ xưa và nặng nề, là vật gia truyền của dòng dõi chiến binh phương bắc xa xưa."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Sinfoniker der Düfte",
+  "description": {
+    "0": "Ein elegant konstruierter Speer, von dem es heißt, er sei einst ein Dirigentenstab gewesen, der von einem großen Musiker geschwungen wurde, um Melodie und Geschmack zu vereinen."
+  },
+  "passiveName": "Würzige Sinfonie",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG um <cryo>12 %</cryo>. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird ihr ANG zusätzlich um <cryo>12 %</cryo> erhöht. Nach Heilen wird dem Träger und der geheilten Figur der Effekt „Süße Echos“ verliehen, der ihren ANG 3 s lang um <cryo>32 %</cryo> erhöht. Dieser Effekt kann auch ausgelöst werden, wenn die mit dieser Waffe ausgerüstete Figur inaktiv in der Truppe ist."
+    },
+    "1": {
+      "0": "Erhöht den ANG um <cryo>15 %</cryo>. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird ihr ANG zusätzlich um <cryo>15 %</cryo> erhöht. Nach Heilen wird dem Träger und der geheilten Figur der Effekt „Süße Echos“ verliehen, der ihren ANG 3 s lang um <cryo>40 %</cryo> erhöht. Dieser Effekt kann auch ausgelöst werden, wenn die mit dieser Waffe ausgerüstete Figur inaktiv in der Truppe ist."
+    },
+    "2": {
+      "0": "Erhöht den ANG um <cryo>18 %</cryo>. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird ihr ANG zusätzlich um <cryo>18 %</cryo> erhöht. Nach Heilen wird dem Träger und der geheilten Figur der Effekt „Süße Echos“ verliehen, der ihren ANG 3 s lang um <cryo>48 %</cryo> erhöht. Dieser Effekt kann auch ausgelöst werden, wenn die mit dieser Waffe ausgerüstete Figur inaktiv in der Truppe ist."
+    },
+    "3": {
+      "0": "Erhöht den ANG um <cryo>21 %</cryo>. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird ihr ANG zusätzlich um <cryo>21 %</cryo> erhöht. Nach Heilen wird dem Träger und der geheilten Figur der Effekt „Süße Echos“ verliehen, der ihren ANG 3 s lang um <cryo>56 %</cryo> erhöht. Dieser Effekt kann auch ausgelöst werden, wenn die mit dieser Waffe ausgerüstete Figur inaktiv in der Truppe ist."
+    },
+    "4": {
+      "0": "Erhöht den ANG um <cryo>24 %</cryo>. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird ihr ANG zusätzlich um <cryo>24 %</cryo> erhöht. Nach Heilen wird dem Träger und der geheilten Figur der Effekt „Süße Echos“ verliehen, der ihren ANG 3 s lang um <cryo>64 %</cryo> erhöht. Dieser Effekt kann auch ausgelöst werden, wenn die mit dieser Waffe ausgerüstete Figur inaktiv in der Truppe ist."
+    }
+  }
+}

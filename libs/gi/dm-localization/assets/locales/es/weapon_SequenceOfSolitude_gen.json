@@ -1,0 +1,24 @@
+{
+  "name": "Cadencia de la Soledad",
+  "description": {
+    "0": "Un arco largo mecánico fabricado específicamente para disparar a larga distancia y asesinar con el máximo silencio. El sonido de su disparo se desvanece en la oscuridad de la noche, como una sinfonía fría y solitaria."
+  },
+  "passiveName": "Disparo silencioso",
+  "passiveDescription": {
+    "0": {
+      "0": "Al golpear a un enemigo, inflige en su ubicación Daño en el AdE en una cantidad equivalente al <cryo>40%</cryo> de la Vida Máx. Este efecto solo se puede activar una vez cada 15 s."
+    },
+    "1": {
+      "0": "Al golpear a un enemigo, inflige en su ubicación Daño en el AdE en una cantidad equivalente al <cryo>50%</cryo> de la Vida Máx. Este efecto solo se puede activar una vez cada 15 s."
+    },
+    "2": {
+      "0": "Al golpear a un enemigo, inflige en su ubicación Daño en el AdE en una cantidad equivalente al <cryo>60%</cryo> de la Vida Máx. Este efecto solo se puede activar una vez cada 15 s."
+    },
+    "3": {
+      "0": "Al golpear a un enemigo, inflige en su ubicación Daño en el AdE en una cantidad equivalente al <cryo>70%</cryo> de la Vida Máx. Este efecto solo se puede activar una vez cada 15 s."
+    },
+    "4": {
+      "0": "Al golpear a un enemigo, inflige en su ubicación Daño en el AdE en una cantidad equivalente al <cryo>80%</cryo> de la Vida Máx. Este efecto solo se puede activar una vez cada 15 s."
+    }
+  }
+}

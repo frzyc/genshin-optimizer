@@ -44,7 +44,7 @@
   "description": "La Caballera de la Marea, procedente de una familia con un gran linaje y Capitana de la Compañía de Reconocimiento de los Caballeros de Favonius. Aunque es descendiente de la antigua aristocracia, se unió a los Caballeros de Favonius, sus archienemigos, algo que sigue siendo un gran enigma para toda Mondstadt hasta hoy en día.",
   "constellationName": "Aphros Delos",
   "auto": {
-    "name": "Técnica de espada Favonius - Nobleza",
+    "name": "Nobleza",
     "fields": {
       "normal": {
         "0": "<strong>Ataque Normal</strong>",

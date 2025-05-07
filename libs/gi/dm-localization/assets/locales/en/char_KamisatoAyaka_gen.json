@@ -56,7 +56,7 @@
   "description": "Daughter of the Yashiro Commission's Kamisato Clan. Dignified and elegant, as well as wise and strong.",
   "constellationName": "Grus Nivis",
   "auto": {
-    "name": "Kamisato Art - Kabuki",
+    "name": "Kabuki",
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",

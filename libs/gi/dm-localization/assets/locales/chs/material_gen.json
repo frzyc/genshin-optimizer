@@ -218,6 +218,12 @@
   "FestivalStamp": {
     "name": "游艺印章"
   },
+  "SmileySnacks": {
+    "name": "欢乐零食"
+  },
+  "ActionPoints": {
+    "name": "行动点"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -304,6 +310,9 @@
   },
   "MastersOfTheNightWindReputationEXP": {
     "name": "声望经验·「烟谜主」"
+  },
+  "CollectiveOfPlentyReputationEXP": {
+    "name": "声望经验·「沃陆之邦」"
   },
   "MemoryOfEternalFlames": {
     "name": "恒常燃烧的记忆"
@@ -920,6 +929,9 @@
   "PhlogistonEnergyOrbSeparateDrop": {
     "name": "燃素能量球（分开掉落）"
   },
+  "PhlogistonEnergyOrbCloseRange": {
+    "name": "燃素能量球(近距离)"
+  },
   "TestRandomTreasureChest": {
     "name": "(test)测试随机宝箱"
   },
@@ -1010,6 +1022,18 @@
   "YumemizukiMizuki": {
     "name": "梦见月瑞希"
   },
+  "Iansan": {
+    "name": "伊安珊"
+  },
+  "Varesa": {
+    "name": "瓦雷莎"
+  },
+  "Escoffier": {
+    "name": "爱可菲"
+  },
+  "Ifa": {
+    "name": "伊法"
+  },
   "KachinasStellaFortuna": {
     "name": "卡齐娜的命星"
   },
@@ -1039,6 +1063,18 @@
   },
   "YumemizukiMizukisStellaFortuna": {
     "name": "梦见月瑞希的命星"
+  },
+  "IansansStellaFortuna": {
+    "name": "伊安珊的命星"
+  },
+  "VaresasStellaFortuna": {
+    "name": "瓦雷莎的命星"
+  },
+  "EscoffiersStellaFortuna": {
+    "name": "爱可菲的命星"
+  },
+  "IfasStellaFortuna": {
+    "name": "伊法的命星"
   },
   "Apple": {
     "name": "苹果"
@@ -2405,8 +2441,8 @@
   "StrangeTooth": {
     "name": "奇异的「牙齿」"
   },
-  "VitalizedDragontooth": {
-    "name": "汲取了生命力的龙牙"
+  "EmpoweredDragontooth": {
+    "name": "汲取了力量的龙牙"
   },
   "PrincessBox": {
     "name": "公主之匣"
@@ -3460,6 +3496,15 @@
   },
   "WitheringPurpurbloom": {
     "name": "枯叶紫英"
+  },
+  "SkysplitGembloom": {
+    "name": "云岩裂叶"
+  },
+  "Dracolite": {
+    "name": "琉鳞石"
+  },
+  "RedBerryshroom": {
+    "name": "红果果菇"
   },
   "BirchWood": {
     "name": "桦木"
@@ -7535,6 +7580,102 @@
   "DreamsOfHealing": {
     "name": "「一梦治愈」"
   },
+  "SuspiciousCheesyCrabHotpot": {
+    "name": "奇怪的酪香蟹蟹锅"
+  },
+  "CheesyCrabHotpot": {
+    "name": "酪香蟹蟹锅"
+  },
+  "DeliciousCheesyCrabHotpot": {
+    "name": "美味的酪香蟹蟹锅"
+  },
+  "SuspiciousFruitsAplenty": {
+    "name": "奇怪的沃陆果饮"
+  },
+  "FruitsAplenty": {
+    "name": "沃陆果饮"
+  },
+  "DeliciousFruitsAplenty": {
+    "name": "美味的沃陆果饮"
+  },
+  "SuspiciousPuffedGrainfruitBars": {
+    "name": "奇怪的粒果膨膨棒"
+  },
+  "PuffedGrainfruitBars": {
+    "name": "粒果膨膨棒"
+  },
+  "DeliciousPuffedGrainfruitBars": {
+    "name": "美味的粒果膨膨棒"
+  },
+  "SuspiciousMagmaEggs": {
+    "name": "奇怪的乌乌黑蛋"
+  },
+  "MagmaEggs": {
+    "name": "乌乌黑蛋"
+  },
+  "DeliciousMagmaEggs": {
+    "name": "美味的乌乌黑蛋"
+  },
+  "SuspiciousCheesyMushroomSkewer": {
+    "name": "奇怪的酪烤菇菇串"
+  },
+  "CheesyMushroomSkewer": {
+    "name": "酪烤菇菇串"
+  },
+  "DeliciousCheesyMushroomSkewer": {
+    "name": "美味的酪烤菇菇串"
+  },
+  "GoldStandardHealthyMeal": {
+    "name": "金牌健康餐"
+  },
+  "MtMushroomForOne": {
+    "name": "菇菇山脉（单人份）"
+  },
+  "SuspiciousHarvestsBoon": {
+    "name": "奇怪的丰稔之赐"
+  },
+  "HarvestsBoon": {
+    "name": "丰稔之赐"
+  },
+  "DeliciousHarvestsBoon": {
+    "name": "美味的丰稔之赐"
+  },
+  "SuspiciousPetitGateauDebordRevisedVersion": {
+    "name": "奇怪的德波小蛋糕·改良型"
+  },
+  "PetitGateauDebordRevisedVersion": {
+    "name": "德波小蛋糕·改良型"
+  },
+  "DeliciousPetitGateauDebordRevisedVersion": {
+    "name": "美味的德波小蛋糕·改良型"
+  },
+  "SuspiciousCandyShells": {
+    "name": "奇怪的贝壳彩糖"
+  },
+  "CandyShells": {
+    "name": "贝壳彩糖"
+  },
+  "DeliciousCandyShells": {
+    "name": "美味的贝壳彩糖"
+  },
+  "GateauDebordMagnifique": {
+    "name": "德波大蛋糕·绚丽型"
+  },
+  "EmotionalSupport": {
+    "name": "「情感支持」"
+  },
+  "VerdantGift": {
+    "name": "一捧绿野"
+  },
+  "WaveKissedSands": {
+    "name": "白浪拂沙"
+  },
+  "GildedHall": {
+    "name": "鎏金殿堂"
+  },
+  "AutumnFrost": {
+    "name": "雾凇秋分"
+  },
   "RecipeItem": {
     "name": "食谱道具"
   },
@@ -8216,6 +8357,30 @@
   "RecipeBathhouseManjuu": {
     "name": "食谱：钱汤馒头"
   },
+  "RecipeMagmaEggs": {
+    "name": "食谱：乌乌黑蛋"
+  },
+  "RecipePuffedGrainfruitBars": {
+    "name": "食谱：粒果膨膨棒"
+  },
+  "RecipeCheesyMushroomSkewer": {
+    "name": "食谱：酪烤菇菇串"
+  },
+  "RecipeFruitsAplenty": {
+    "name": "食谱：沃陆果饮"
+  },
+  "RecipeHarvestsBoon": {
+    "name": "食谱：丰稔之赐"
+  },
+  "RecipeCheesyCrabHotpot": {
+    "name": "食谱：酪香蟹蟹锅"
+  },
+  "RecipePetitGateauDebordRevisedVersion": {
+    "name": "食谱：德波小蛋糕·改良型"
+  },
+  "RecipeCandyShells": {
+    "name": "食谱：贝壳彩糖"
+  },
   "CraftedItems": {
     "name": "合成产物"
   },
@@ -8699,6 +8864,15 @@
   "IllusoryLeafcoil": {
     "name": "迷光的蜷叶之心"
   },
+  "ColdCrackedShellshard": {
+    "name": "冷裂壳块"
+  },
+  "WarmBackShell": {
+    "name": "蕴热的背壳"
+  },
+  "BlazingPrismshell": {
+    "name": "明燃的棱状壳"
+  },
   "HurricaneSeed": {
     "name": "飓风之种"
   },
@@ -8911,6 +9085,21 @@
   },
   "TalismanOfTheEnigmaticLand": {
     "name": "谜土的护符"
+  },
+  "SparklessStatueCore": {
+    "name": "龙像的无智核"
+  },
+  "AscendedSampleKnight": {
+    "name": "升扬样本·骑士"
+  },
+  "AscendedSampleRook": {
+    "name": "升扬样本·战车"
+  },
+  "AscendedSampleQueen": {
+    "name": "升扬样本·王族"
+  },
+  "SecretSourceAirflowAccumulator": {
+    "name": "秘源积气喉"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
@@ -9226,6 +9415,9 @@
   },
   "TalentShareBundle": {
     "name": "天赋助力分享包"
+  },
+  "OutfitOptionBundlePhaseII": {
+    "name": "衣装心选包·二期"
   },
   "BEP": {
     "name": "纪行经验"
@@ -11657,6 +11849,12 @@
   "CrimsonObsidianRing": {
     "name": "灼赤曜石环"
   },
+  "SunsetBlueObsidianFragment": {
+    "name": "青绛曜石断片"
+  },
+  "SunsetBlueObsidianRing": {
+    "name": "青绛曜石环"
+  },
   "PakpakaFlyingSchoolFlyingTournamentInvitationLetter": {
     "name": "帕帕卡飞行学校飞行竞赛邀请函"
   },
@@ -11804,6 +12002,9 @@
   "SaurusCrackersTepetlisaurus": {
     "name": "龙龙饼干·嵴锋"
   },
+  "ThatWhichWasOnceEhecatl": {
+    "name": "曾是「厄卡特尔」之物"
+  },
   "AisaBathhouseVIPPass": {
     "name": "秋沙钱汤贵宾邀请函"
   },
@@ -11824,6 +12025,132 @@
   },
   "MenOfLithinIII": {
     "name": "石素人·卷三"
+  },
+  "GreenBerryshroom": {
+    "name": "绿果果菇"
+  },
+  "PermitToTheSacredHeart": {
+    "name": "前往圣心的「许可」"
+  },
+  "PhlogistonUnit": {
+    "name": "「单位燃素」"
+  },
+  "Leaderboard": {
+    "name": "排行榜"
+  },
+  "ACommemorativePhoto": {
+    "name": "纪念合影"
+  },
+  "PhlogistonConverterExperimentalReport": {
+    "name": "关于「燃素状态转换器」的实验报告"
+  },
+  "ResearchersNotes": {
+    "name": "研究者的手记"
+  },
+  "UnsignedLetter": {
+    "name": "没有署名的信"
+  },
+  "LetterForAnna": {
+    "name": "给安娜姐姐的信"
+  },
+  "FusionProfusionDJRemixSelections": {
+    "name": "《至强融合·控碟乐师重混甄选》"
+  },
+  "Kamera": {
+    "name": "留影机"
+  },
+  "CafLuteceHouseGrounds": {
+    "name": "露泽咖啡厅限定咖啡"
+  },
+  "KomporeTheCunningI": {
+    "name": "狡诈的康波雷·卷一"
+  },
+  "KomporeTheCunningII": {
+    "name": "狡诈的康波雷·卷二"
+  },
+  "KomporeTheCunningIII": {
+    "name": "狡诈的康波雷·卷三"
+  },
+  "SundjattasFirstForayI": {
+    "name": "松伽塔的初阵·其一"
+  },
+  "SundjattasFirstForayII": {
+    "name": "松伽塔的初阵·其二"
+  },
+  "SundjattasFirstForayIII": {
+    "name": "松伽塔的初阵·其三"
+  },
+  "RangiNuisEnd": {
+    "name": "兰吉努伊之底"
+  },
+  "TheHeadlessCoquitaoI": {
+    "name": "无头的科奎塔奥·卷一"
+  },
+  "TheHeadlessCoquitaoII": {
+    "name": "无头的科奎塔奥·卷二"
+  },
+  "TheBookOfFiveSprings": {
+    "name": "《烈泉道》"
+  },
+  "PhotoWithTravelCompanions": {
+    "name": "与旅行伙伴的合影"
+  },
+  "HazardWarning": {
+    "name": "危险警告"
+  },
+  "RecordsRegardingCreatingTheSecretSourceServants": {
+    "name": "关于「制作龙仆…」的记录"
+  },
+  "RecordsRegardingHumansAndExceptionalIndividualsThereof": {
+    "name": "关于「人类…和其杰出者」的记录"
+  },
+  "RecordsRegardingCorrosionAndPhysicalConditions": {
+    "name": "关于「侵蚀及身体状况」的记录"
+  },
+  "RecordsRegardingItemsThatShouldPerhapsBeDeleted": {
+    "name": "关于「或许应该删除…」的记录"
+  },
+  "IridescentLegacyPartI": {
+    "name": "镌光的遗记·其一"
+  },
+  "IridescentLegacyPartII": {
+    "name": "镌光的遗记·其二"
+  },
+  "IridescentLegacyPartIII": {
+    "name": "镌光的遗记·其三"
+  },
+  "IridescentLegacyPartIV": {
+    "name": "镌光的遗记·其四"
+  },
+  "ChamberOfDeliberationSovereignRulersCouncilRecords": {
+    "name": "审议之庭-至高领主共识评议会记录"
+  },
+  "SecretSourceDragonIdolWorkshopEngraving": {
+    "name": "秘源龙像工坊铭刻"
+  },
+  "NestExperimentLog": {
+    "name": "养育巢实验日志"
+  },
+  "RecordLeftByTheFlamestealer": {
+    "name": "「盗火者」留下的记录"
+  },
+  "DamagedBounty": {
+    "name": "污损的讨伐悬赏"
+  },
+  "ChevalmarinAmusementParkCommemorativeMap": {
+    "name": "海薇玛乐园全景纪念图"
+  },
+  "HandDrawnMap": {
+    "name": "手稿中的地图"
+  },
+  "MysteriousMap": {
+    "name": "神秘的地图"
+  },
+  "DazzlingMysteriousGift": {
+    "name": "绮灿而神秘的赠礼"
+  },
+  "LetterOfUnknownOrigin": {
+    "name": "来源不明的信件"
   },
   "TearsAmongTheStars": {
     "name": "星间之泪"
@@ -11941,6 +12268,9 @@
   },
   "GlowingHornshroomSpore": {
     "name": "「微光角菌」的孢子"
+  },
+  "SkysplitGembloomSeed": {
+    "name": "「云岩裂叶」的种子"
   },
   "Medaka": {
     "name": "花鳉"
@@ -12073,6 +12403,9 @@
   },
   "PseudosharkUnihornfish": {
     "name": "伪装鲨鲨独角鱼"
+  },
+  "SecretSourceScoutSweeper": {
+    "name": "秘源机关·巡戒使"
   },
   "WingsOfFirstFlight": {
     "name": "初始之翼"
@@ -12611,6 +12944,21 @@
   "RadiantSpincrystal147": {
     "name": "旋曜玉帛·其一百四十七"
   },
+  "RadiantSpincrystal148": {
+    "name": "旋曜玉帛·其一百四十八"
+  },
+  "RadiantSpincrystal149": {
+    "name": "旋曜玉帛·其一百四十九"
+  },
+  "RadiantSpincrystal150": {
+    "name": "旋曜玉帛·其一百五十"
+  },
+  "RadiantSpincrystal151": {
+    "name": "旋曜玉帛·其一百五十一"
+  },
+  "RadiantSpincrystal152": {
+    "name": "旋曜玉帛·其一百五十二"
+  },
   "LanternFiber": {
     "name": "灯纸纤维"
   },
@@ -12694,6 +13042,9 @@
   },
   "SmolderingPhosphorescentFlame": {
     "name": "灼幽的磷焰"
+  },
+  "CompositeBowTuningKit": {
+    "name": "强弓校调工具组"
   },
   "FalconsDance": {
     "name": "鹰隼之舞"
@@ -13538,6 +13889,30 @@
   "TravelNotesWondrousReverie": {
     "name": "纪行·绮梦"
   },
+  "VaresaPowerhouse": {
+    "name": "瓦雷莎·力源"
+  },
+  "IansanUnyielding": {
+    "name": "伊安珊·不懈"
+  },
+  "NatlanDraconicGaze": {
+    "name": "纳塔·眬瞳"
+  },
+  "AchievementTranquilPeace": {
+    "name": "成就·寂宁"
+  },
+  "TravelNotesBloomingGlory": {
+    "name": "纪行·荣花"
+  },
+  "EscoffierCharm": {
+    "name": "爱可菲·韵味"
+  },
+  "IfaBro": {
+    "name": "伊法·哥们"
+  },
+  "TravelNotesBalletica": {
+    "name": "纪行·舞剧"
+  },
   "EchoDandelionKnight": {
     "name": "游迹·蒲公英骑士"
   },
@@ -13564,6 +13939,12 @@
   },
   "EchoScarletLeavesPursueWildWaves": {
     "name": "游迹·红叶逐荒波"
+  },
+  "EchoWindborneBard": {
+    "name": "游迹·风色诗人"
+  },
+  "EchoFlameMane": {
+    "name": "游迹·炽鬃之狮"
   },
   "AnemoculusResonanceStone": {
     "name": "风神瞳共鸣石"
@@ -13606,9 +13987,6 @@
   },
   "WarmingBottle": {
     "name": "放热瓶"
-  },
-  "Kamera": {
-    "name": "留影机"
   },
   "KuriousKamera": {
     "name": "奇特的「留影机」"
@@ -14138,6 +14516,105 @@
   "EarnestNegotiation": {
     "name": "诚恳交涉"
   },
+  "SurveyingSurroundings": {
+    "name": "回首周视"
+  },
+  "GentleCountenance": {
+    "name": "娴静仪容"
+  },
+  "PerformanceTime": {
+    "name": "演奏时刻"
+  },
+  "GuardUp": {
+    "name": "抱头防御"
+  },
+  "KindGreeting": {
+    "name": "和蔼问候"
+  },
+  "ByMyCommand": {
+    "name": "御令示下"
+  },
+  "ComposedNegotiation": {
+    "name": "从容交涉"
+  },
+  "EngineeringPrep": {
+    "name": "工程准备"
+  },
+  "Incandescence": {
+    "name": "线香烟火"
+  },
+  "TheDuelBegins": {
+    "name": "决斗开始"
+  },
+  "LookingAroundHappily": {
+    "name": "快乐张望"
+  },
+  "PlayfulShushing": {
+    "name": "俏皮噤声"
+  },
+  "BoisterousGreeting": {
+    "name": "豪爽问候"
+  },
+  "AgilePosture": {
+    "name": "轻灵舞姿"
+  },
+  "GeneralsGrandeur": {
+    "name": "大将气势"
+  },
+  "ElegantStringedMelody": {
+    "name": "弦上雅音"
+  },
+  "PrinzessinsMajesty": {
+    "name": "皇女威仪"
+  },
+  "AShortBreak": {
+    "name": "小小休憩"
+  },
+  "ReadingTime": {
+    "name": "阅读时间"
+  },
+  "AuspiciousBeastsReadyToLeap": {
+    "name": "瑞兽将跃"
+  },
+  "Bombonanza": {
+    "name": "炸弹满满"
+  },
+  "ALittleSleepy": {
+    "name": "小小困倦"
+  },
+  "GuujisTrick": {
+    "name": "宫司妙法"
+  },
+  "Showtime": {
+    "name": "表演时间"
+  },
+  "TimeToShine": {
+    "name": "演唱之时"
+  },
+  "CarefulObservation": {
+    "name": "凝神观望"
+  },
+  "LeisurelyLabor": {
+    "name": "从容工作"
+  },
+  "ComfortableCountenance": {
+    "name": "自在仪容"
+  },
+  "CloseReading": {
+    "name": "细致阅览"
+  },
+  "Stargazing": {
+    "name": "注视星光"
+  },
+  "AQuickLookAround": {
+    "name": "机敏张望"
+  },
+  "CasualConversation": {
+    "name": "轻松畅谈"
+  },
+  "ACloudyMoment": {
+    "name": "不悦时刻"
+  },
   "FantasticalMarvel": {
     "name": "幻戏瑰意"
   },
@@ -14173,6 +14650,12 @@
   },
   "WaterAndJustice": {
     "name": "水与正义"
+  },
+  "FireAndWar": {
+    "name": "火与战争"
+  },
+  "OdeToAzureSkies": {
+    "name": "天青之诗"
   },
   "RhodeiaOfLoch": {
     "name": "纯水精灵·洛蒂娅"
@@ -14342,17 +14825,29 @@
   "ProliferatingSpores": {
     "name": "孢子增殖"
   },
+  "LightningStorm": {
+    "name": "霹雳连霄"
+  },
+  "PoundingSurprise": {
+    "name": "砰砰礼物"
+  },
   "WellspringOfWarLust": {
     "name": "战欲涌现"
   },
   "TamakushiCasket": {
     "name": "匣中玉栉"
   },
-  "PoundingSurprise": {
-    "name": "砰砰礼物"
+  "SinOfPride": {
+    "name": "我界"
   },
-  "LightningStorm": {
-    "name": "霹雳连霄"
+  "KyoukaFuushi": {
+    "name": "镜华风姿"
+  },
+  "AratakiIchiban": {
+    "name": "荒泷第一"
+  },
+  "KeenSight": {
+    "name": "眼识殊明"
   },
   "EmbraceOfWinds": {
     "name": "绪风之拥"
@@ -14363,20 +14858,8 @@
   "DominanceOfEarth": {
     "name": "炊金馔玉"
   },
-  "KeenSight": {
-    "name": "眼识殊明"
-  },
   "AbsorbingPrism": {
     "name": "汲能棱晶"
-  },
-  "SinOfPride": {
-    "name": "我界"
-  },
-  "KyoukaFuushi": {
-    "name": "镜华风姿"
-  },
-  "AratakiIchiban": {
-    "name": "荒泷第一"
   },
   "MysticalAbandon": {
     "name": "忘玄"
@@ -14492,8 +14975,8 @@
   "CountlessSightsToSee": {
     "name": "沿途百景会心"
   },
-  "ElectroCicinsFlicker": {
-    "name": "雷萤闪烁"
+  "ElectroCicinsGleam": {
+    "name": "雷萤浮闪"
   },
   "ToWardWeakness": {
     "name": "割舍软弱之心"
@@ -14549,8 +15032,8 @@
   "TheyCallHerCloudRetainer": {
     "name": "知是留云僊"
   },
-  "HydrodartSlime": {
-    "name": "水镖史莱姆"
+  "FeatherweightFoam": {
+    "name": "轻盈水沫"
   },
   "InFiveColorsDyed": {
     "name": "落染五色"
@@ -14577,10 +15060,22 @@
     "name": "破夜的明焰"
   },
   "AllReprisalsAndArrearsMineToBear": {
-    "name": "所有的仇与债皆由我偿还"
+    "name": "所有的仇与债皆由我偿…"
   },
-  "RepaidInFull": {
-    "name": "索报皆偿"
+  "NightRealmsGiftRepaidInFull": {
+    "name": "夜域赐礼·索报皆偿"
+  },
+  "NightRealmsGiftHeartOfUnity": {
+    "name": "夜域赐礼·团结炉心"
+  },
+  "MarcotteSillage": {
+    "name": "茉洁香迹"
+  },
+  "PylonOfTheSojourningSunTemple": {
+    "name": "巡日塔门书"
+  },
+  "TourOfTepeilhuitl": {
+    "name": "丛山锻火驰行"
   },
   "MagicGuide": {
     "name": "魔导绪论"
@@ -14693,6 +15188,9 @@
   "GeneralsAncientHelm": {
     "name": "将帅兜鍪"
   },
+  "FavoniusSword": {
+    "name": "西风剑"
+  },
   "AmosBow": {
     "name": "阿莫斯之弓"
   },
@@ -14716,9 +15214,6 @@
   },
   "SkywardBlade": {
     "name": "天空之刃"
-  },
-  "FavoniusSword": {
-    "name": "西风剑"
   },
   "EmblemOfSeveredFate": {
     "name": "绝缘之旗印"
@@ -14866,6 +15361,12 @@
   },
   "Qucusaurus": {
     "name": "绒翼龙"
+  },
+  "Waverider": {
+    "name": "浪船"
+  },
+  "Tatankasaurus": {
+    "name": "突角龙"
   },
   "LiyueHarborWharf": {
     "name": "璃月港口"
@@ -15031,6 +15532,12 @@
   },
   "FlowerFeatherClan": {
     "name": "「花羽会」"
+  },
+  "MastersOfTheNightWind": {
+    "name": "「烟谜主」"
+  },
+  "CollectiveOfPlenty": {
+    "name": "「沃陆之邦」"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鸣：交织之冰"
@@ -15221,6 +15728,12 @@
   "LittleTepetlisaurTreasureHunterAtLarge": {
     "name": "小嵴锋龙！发现宝藏！"
   },
+  "InTheNameOfTheExtreme": {
+    "name": "以极限之名"
+  },
+  "ArtOfSleepyMeditation": {
+    "name": "困困冥想术"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -15277,6 +15790,9 @@
   },
   "EnkanomiyaCrown": {
     "name": "渊下宫·冠冕"
+  },
+  "GreatRedSandLongNight": {
+    "name": "大赤沙海·长夜"
   },
   "BeginnerPlayerBadge": {
     "name": "初级牌手徽章"
@@ -15641,6 +16157,12 @@
   "MastersOfTheNightWindsTranquility": {
     "name": "「烟谜主」的安适"
   },
+  "GallantMarchOfTheCollectiveOfPlenty": {
+    "name": "「沃陆之邦」的勇进"
+  },
+  "CompanionsHaven": {
+    "name": "伙伴与家园"
+  },
   "TimberWallWithJadeEaves": {
     "name": "玉面檐枋墙"
   },
@@ -15916,6 +16438,9 @@
   },
   "FairsThoughtsInOrder": {
     "name": "「市集的归纳静思」"
+  },
+  "XochicuicatlMarketingMethod": {
+    "name": "「花歌的主推方式」"
   },
   "TwoTierLibraryBookshelf": {
     "name": "图书馆双层书架"
@@ -16469,6 +16994,15 @@
   "QuadripedalPuppetReadySteady": {
     "name": "四足木偶-「稳稳当当」"
   },
+  "ModelContraptionBoomBoomBuff": {
+    "name": "机关模型-「轰轰增益」"
+  },
+  "RhythmicSynchrony": {
+    "name": "「齐唱的节奏」"
+  },
+  "HeroicWarcry": {
+    "name": "「勇力的战吼」"
+  },
   "TrustyPortableLamp": {
     "name": "恒亮不熄的提灯"
   },
@@ -16703,6 +17237,9 @@
   "RidingTheTranquilWaters": {
     "name": "「行驶在平静水面」"
   },
+  "ModelDishSaurusCrackers": {
+    "name": "菜肴模型-「龙龙饼干」"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "「卓识之地的余醒」"
   },
@@ -16816,6 +17353,12 @@
   },
   "PhlogistonHangingLampRoadGuide": {
     "name": "燃素挂灯-「路引」"
+  },
+  "BobblyWobblyWaterDonut": {
+    "name": "「晃晃戏水圈」"
+  },
+  "SaveyWaveyLifeRing": {
+    "name": "「急急救生圈」"
   },
   "LingeringMoment": {
     "name": "「萦绊之刻」"
@@ -17429,6 +17972,9 @@
   "ResourcefulResidenceInTheMusicmakingTown": {
     "name": "「制乐之镇的巧居」"
   },
+  "GrandRepertoryPlayhouse": {
+    "name": "「名篇荟演剧场」"
+  },
   "StonehutOfEchoesStandardWorkshop": {
     "name": "回声石屋-「标准工坊」"
   },
@@ -17512,6 +18058,24 @@
   },
   "PilgrimageOfFlame": {
     "name": "「烈火的巡礼」"
+  },
+  "VillaOfPlentyStowProStoreroom": {
+    "name": "沃陆院墅-「仓储要诀」"
+  },
+  "VillaOfPlentyEverydayEssentials": {
+    "name": "沃陆院墅-「实用需求」"
+  },
+  "HutOfPlentyPermanentPick": {
+    "name": "沃陆棚屋-「久驻之选」"
+  },
+  "HutOfPlentyStopgapSelection": {
+    "name": "沃陆棚屋-「临时之选」"
+  },
+  "LandOfPlentysContention": {
+    "name": "「安饶之陆的角逐」"
+  },
+  "LandOfPlentysSentinel": {
+    "name": "「安饶之陆的哨卫」"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "花鸟喷泉"
@@ -18071,6 +18635,9 @@
   "OrigamiModelHardAsCanBe": {
     "name": "折纸模型-「硬邦邦」"
   },
+  "ExquisiteCarving": {
+    "name": "「臻品雕琢」"
+  },
   "PottedPlantVerdantVastness": {
     "name": "绿植盆栽-「苍翠寸泓中」"
   },
@@ -18506,6 +19073,15 @@
   "SpringtimeFoldingScreenFragranceFillsTheAir": {
     "name": "春曦屏风-「满庭芳」"
   },
+  "PortraitOfHeroicMight": {
+    "name": "「诚勇伟力之绘」"
+  },
+  "RevelrousOutburst": {
+    "name": "「欢闹涌动」"
+  },
+  "FilmStandSurintendanteChevalmarin": {
+    "name": "映影立牌-「海薇玛夫人」"
+  },
   "BookshelfFreeReading": {
     "name": "书报架-「自由取阅」"
   },
@@ -18596,6 +19172,15 @@
   "MusingsOnColorsAndHues": {
     "name": "「酝酿的流彩」"
   },
+  "ArtOfTransport": {
+    "name": "「输运的要诀」"
+  },
+  "FixedTorchSafeguard": {
+    "name": "固定火炬-「卫护」"
+  },
+  "FixedTorchExtremity": {
+    "name": "固定火炬-「极限」"
+  },
   "WeatheredBambooFence": {
     "name": "饱经风雨的竹制围篱"
   },
@@ -18674,6 +19259,9 @@
   "PaddockGateFoundationalFramework": {
     "name": "厩舍木门-「搭建基础」"
   },
+  "LandOfPlentysBounds": {
+    "name": "「安饶之陆的边绳」"
+  },
   "SmoothWoodenBench": {
     "name": "平整的木制长凳"
   },
@@ -18718,6 +19306,9 @@
   },
   "SurgingHarmoniesOfTheSprings": {
     "name": "「流泉的涌浪和声」"
+  },
+  "AlignedVolcanicStoneStool": {
+    "name": "火山岩「定向」石凳"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "丘丘双层警戒台"
@@ -18895,5 +19486,17 @@
   },
   "PaddockStrawMattressMakeshiftBed": {
     "name": "厩舍草垫-「临时床铺」"
+  },
+  "SauriansMight": {
+    "name": "「健壮如龙者」"
+  },
+  "BarbellRackHeftiestLoad": {
+    "name": "杠铃架-「重中之重」"
+  },
+  "Storage101": {
+    "name": "「存储的规则」"
+  },
+  "GrainfruitPuffer": {
+    "name": "「粒果膨膨机」"
   }
 }

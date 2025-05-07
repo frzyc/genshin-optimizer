@@ -4,7 +4,7 @@
   "description": "폰타인의 조향사. 병 안에 비밀을 숨기고 있다",
   "constellationName": "향료병자리",
   "auto": {
-    "name": "그림자 사냥 창술·개량",
+    "name": "개량",
     "fields": {
       "normal": {
         "0": "<strong>일반 공격</strong>",

@@ -4,7 +4,7 @@
   "description": "隶属于「终末番」的忍者。身形小巧，总像没睡饱一样。",
   "constellationName": "小貉座",
   "auto": {
-    "name": "忍刀·终末番",
+    "name": "终末番",
     "fields": {
       "normal": {
         "0": "<strong>普通攻击</strong>",
