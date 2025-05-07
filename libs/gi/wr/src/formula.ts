@@ -86,6 +86,7 @@ const allNonstackBuffs = [
   'hakushindendro',
   'ttds',
   'wolf',
+  'symphonist',
 ] as const
 export type NonStackBuff = (typeof allNonstackBuffs)[number]
 const allMoves = [
