@@ -1,0 +1,29 @@
+{
+  "setName": "Juramento de la Noche",
+  "setEffects": {
+    "2": "Aumenta en un 25% el daño del Ataque Descendente.",
+    "4": "Cuando el portador de este conjunto golpea a un enemigo con un Ataque Descendente/Ataque Cargado/Habilidad Elemental, obtiene 1/2/2 cargas de “resplandor eterno”. Los Ataques Descendentes, Ataques Cargados o Habilidades Elementales pueden activar este efecto una vez por segundo de forma independiente. Resplandor eterno: el daño de los Ataques Descendentes aumenta en un 15% durante 6 s. Este efecto puede acumularse hasta 5 veces y la duración de cada acumulación se calcula de manera independiente."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Juramento del Lamparero",
+      "desc": "Una flor de metal que solían llevar los soldados ratnik y que simboliza el solemne juramento de vigilancia eterna que hizo su dueño original."
+    },
+    "plume": {
+      "name": "Pluma del Ruiseñor",
+      "desc": "Un accesorio para sombrero fabricado cuidadosamente con plumas de ruiseñor. Se dice que su forma fue definida por el primer forjador de lámparas."
+    },
+    "sands": {
+      "name": "Campana Fúnebre del Inmortal",
+      "desc": "Una campana de bronce que llevaba un guerrero que se adentró en un abismo. Su lamento resuena a menudo en la oscuridad de la noche."
+    },
+    "goblet": {
+      "name": "Cuerno Insonoro",
+      "desc": "Un cuerno que en el pasado se utilizaba para convocar a los devotos de un juramento. Hace tiempo que perdió su utilidad."
+    },
+    "circlet": {
+      "name": "Morrión Contaminado",
+      "desc": "Un antiguo y pesado casco que simboliza el legado de un antiguo linaje de guerreros del norte."
+    }
+  }
+}

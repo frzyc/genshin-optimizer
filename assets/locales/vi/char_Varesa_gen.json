@@ -1,0 +1,221 @@
+{
+  "name": "Varesa",
+  "title": "Sức Mạnh Nhàn Nhã",
+  "description": "Chiến binh ung dung thong thả của Cộng Đồng Trù Phú kiêm chủ vườn trái cây, vị anh hùng yêu thích sức mạnh tràn trề và cả rất nhiều đồ ăn ngon!",
+  "constellationName": "Cung Đấu Sĩ Giả Diện",
+  "auto": {
+    "name": "Cặp Sừng Càn Quét",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Phải chiến đấu... dũng cảm như quán quân đô vật! Varesa tiến hành tối đa ba lần tấn công, gây <electro>Sát Thương Nguyên Tố Lôi</electro>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để húc đầu vào kẻ địch phía trước, gây <electro>Sát Thương Nguyên Tố Lôi</electro> mang thuộc tính Dạ Hồn, đồng thời mượn lực để nhảy lên cao."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường đi, khi tiếp đất sẽ gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> mang thuộc tính Dạ Hồn. Nếu lúc này Varesa đang trong trạng thái chiến đấu, hoặc lần đáp đất đó trúng kẻ địch, thì Varesa sẽ nhận 25 điểm Dạ Hồn. Khi điểm Dạ Hồn đạt giới hạn thông qua cách này, Varesa sẽ vào trạng thái \"Nhiệt Huyết Cháy Bỏng\"."
+      },
+      "fieryPassion": {
+        "0": "<strong>Nhiệt Huyết Cháy Bỏng</strong>",
+        "1": "Trong trạng thái này, Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp của Varesa sẽ nhận được cường hóa tương ứng:"
+      },
+      "fpNormal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Chiến đấu dũng cảm như ngôi sao đấu vật! Tiến hành tối đa ba lần tấn công dũng mãnh, gây <electro>Sát Thương Nguyên Tố Lôi</electro> mạnh hơn."
+      },
+      "fpCharged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để tông mạnh vào kẻ địch phía trước, gây <electro>Sát Thương Nguyên Tố Lôi</electro> mạnh hơn mang thuộc tính Dạ Hồn, đồng thời mượn lực để nhảy lên cao."
+      },
+      "fpPlunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Tiêu hao toàn bộ điểm Dạ Hồn để đáp đất từ trên cao, tấn công kẻ địch trên đường đi, khi tiếp đất sẽ gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> mạnh hơn mang thuộc tính Dạ Hồn."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Trọng Kích",
+      "4": "Thể Lực Trọng Kích Tiêu Hao",
+      "5": "Sát Thương Khi Đáp",
+      "6": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "7": "Sát Thương Lần 1 Dạng Nhiệt Huyết Cháy Bỏng",
+      "8": "Sát Thương Lần 2 Dạng Nhiệt Huyết Cháy Bỏng",
+      "9": "Sát Thương Lần 3 Dạng Nhiệt Huyết Cháy Bỏng",
+      "10": "Sát Thương Trọng Kích Dạng Nhiệt Huyết Cháy Bỏng",
+      "11": "Thể Lực Trọng Kích Tiêu Hao Dạng Nhiệt Huyết Cháy Bỏng",
+      "12": "Sát Thương Khi Đáp Dạng Nhiệt Huyết Cháy Bỏng",
+      "13": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao Dạng Nhiệt Huyết Cháy Bỏng",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cưỡi Cầu Vồng Đêm",
+    "description": {
+      "0": "Dùng bộ pháp nhanh như điện và mạnh như sấm để triển khai ý chí đấu vật. Varesa lao về phía trước một đoạn, gây <electro>Sát Thương Nguyên Tố Lôi</electro> mang thuộc tính Dạ Hồn cho kẻ địch trên đường.",
+      "1": "Sau khi thi triển, Varesa sẽ nhận được 20 điểm Dạ Hồn, đồng thời nhận được hiệu quả \"Truy Kích\": Trong thời gian duy trì, Varesa tăng khả năng Kháng Gián Đoạn, đồng thời khi nhấn Tấn Công Thường thì Varesa sẽ tiến hành Trọng Kích nhanh mà không tiêu hao thể lực. Hiệu quả Truy Kích sẽ biến mất sau khi tiến hành Trọng Kích.",
+      "2": "Căn cứ vào Nhấn hoặc Nhấn Giữ để triển khai phong cách chiến đấu khác nhau.",
+      "3": "<br/>",
+      "4": "<strong>Nhấn</strong>",
+      "5": "Lao nhanh về phía trước một đoạn.",
+      "6": "<br/>",
+      "7": "<strong>Nhấn Giữ</strong>",
+      "8": "Varesa tiến vào trạng thái Dạ Hồn Chúc Phúc và đổi sang dạng \"Tốc Độ Dũng Mãnh\".",
+      "9": "<br/>",
+      "10": "<strong>Tốc Độ Dũng Mãnh</strong>",
+      "11": "Liên tục tiêu hao điểm Dạ Hồn. Trong trạng thái này, Tốc Độ Di Chuyển và Kháng Gián Đoạn của Varesa được gia tăng, đồng thời có thể lợi dụng địa hình để nhảy bay, hoặc tiêu hao thêm điểm Dạ Hồn để di chuyển trên mặt nước và Phlogiston Thể Lỏng, đồng thời miễn dịch sát thương Phlogiston Thể Lỏng.",
+      "12": "<br/>",
+      "13": "<strong>Dạ Hồn Chúc Phúc - Varesa</strong>",
+      "14": "Khi tiêu hao hết điểm Dạ Hồn, trạng thái Dạ Hồn Chúc Phúc của Varesa sẽ kết thúc. Khi Varesa trong trạng thái Tốc Độ Dũng Mãnh hoặc Nhiệt Huyết Cháy Bỏng, sẽ luôn được xem như đang trong trạng thái Dạ Hồn Chúc Phúc.",
+      "15": "<br/>",
+      "16": "Có 2 lần sử dụng. Khi Varesa vào trạng thái Nhiệt Huyết Cháy Bỏng, Kỹ Năng Nguyên Tố sẽ nhận thêm một lần nhấn sử dụng và tăng sát thương Kỹ Năng Nguyên Tố gây ra.",
+      "17": "<br/>",
+      "18": "<strong>Nhiệt Huyết Cháy Bỏng</strong>",
+      "19": [
+        "Khi không trong trạng thái Nhiệt Huyết Cháy Bỏng, Varesa có thể thông qua Tấn Công Khi Đáp để hồi điểm Dạ Hồn. Khi hồi đầy điểm Dạ Hồn thông qua cách thức này hoặc thi triển Kỹ Năng Nộ <strong>Tia Chớp Giáng Lâm</strong>, Varesa sẽ vào trạng thái Nhiệt Huyết Cháy Bỏng.",
+        "Trong trạng thái Nhiệt Huyết Cháy Bỏng, Tấn Công Thường, Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của Varesa sẽ nhận được cường hóa tương ứng, đồng thời trong khoảng thời gian ngắn sau khi thực hiện Tấn Công Khi Đáp, Varesa có thể thi triển Kỹ Năng Nộ đặc biệt.",
+        "Trạng thái Nhiệt Huyết Cháy Bỏng tối đa duy trì 15s, đồng thời sẽ kết thúc sau khi dùng hết điểm Dạ Hồn hoặc sau khi rời khỏi chiến đấu một khoảng thời gian."
+      ],
+      "20": "<br/>",
+      "21": "<i>\"Bây giờ, tôi sẽ là vị anh hùng của chính tôi.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Lao Đến",
+      "1": "Sát Thương Lao Đến Dạng Nhiệt Huyết Cháy Bỏng",
+      "2": "Thời Gian Duy Trì Truy Kích",
+      "3": "Giới Hạn Điểm Dạ Hồn",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tia Chớp Giáng Lâm",
+    "description": {
+      "0": "Giống như vị anh hùng chính nghĩa được miêu tả trong cuộn dệt của bọn trẻ, Varesa nhảy lên không trung, mượn lực lao xuống để tung cú đá đầy uy lực, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> mang thuộc tính Dạ Hồn cho kẻ địch.",
+      "1": "Sau khi thi triển, Varesa sẽ hồi phục điểm Dạ Hồn đến mức tối đa, đồng thời vào trạng thái Nhiệt Huyết Cháy Bỏng.",
+      "2": "<br/>",
+      "3": "Trong trạng thái Nhiệt Huyết Cháy Bỏng, Kỹ Năng Nộ của Varesa sẽ chuyển thành gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> mạnh hơn mang thuộc tính Dạ Hồn cho kẻ địch.",
+      "4": "<br/>",
+      "5": "Ngoài ra, Varesa trong trạng thái Nhiệt Huyết Cháy Bỏng sau khi tiến hành Tấn Công Khi Đáp, sẽ tiến vào trạng thái \"Động Cơ Cực Hạn\" trong thời gian ngắn.",
+      "6": "<br/>",
+      "7": "<strong>Động Cơ Cực Hạn</strong>",
+      "8": "Tăng khả năng Kháng Gián Đoạn của Varesa. Trong trạng thái này, Varesa sẽ bỏ qua thời gian chờ của Kỹ Năng Nộ và tiêu hao ít Năng Lượng Nguyên Tố hơn để thi triển Kỹ Năng Nộ đặc biệt \"Tia Chớp Giáng Lâm - Núi Lửa Sụp Đổ\": Tiến hành Tấn Công Khi Đáp - Núi Lửa Sấm Rền mạnh mẽ hơn, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> mang thuộc tính Dạ Hồn khi tiếp đất và thoát trạng thái Động Cơ Cực Hạn. Sát thương này được tính là sát thương Tấn Công Khi Đáp.",
+      "9": "Sau khi thi triển Kỹ Năng Nguyên Tố sẽ thoát trạng thái Động Cơ Cực Hạn.",
+      "10": "<br/>",
+      "11": "<i>Thực ra ban đầu Varesa định đặt tên cho chiêu thức này là \"Tuyệt Kỹ Siêu Đỉnh Cao - Cú Đá Siêu Thanh Vang Dội Vô Địch Của Siêu Anh Hùng Sấm Sét Chính Nghĩa Giáng Lâm\". Chỉ là cái tên này dài quá, dù cô ấy có mang mặt nạ thì cũng hơi ngại khi hô tên chiêu thức trước mặt mọi người. Cuối cùng, cô ấy đã chọn cái tên hiện tại.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Cú Đá",
+      "1": "Sát Thương Cú Đá Dạng Nhiệt Huyết Cháy Bỏng",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "Sát Thương Núi Lửa Sụp Đổ",
+      "5": "Năng Lượng Nguyên Tố Núi Lửa Sụp Đổ",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ba Lần Nhảy Cao",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Cưỡi Cầu Vồng Đêm</strong>, Varesa nhận được hiệu ứng \"Cầu Vồng Giáng Lâm\" trong 5s.",
+      "1": "Trong thời gian duy trì, khi Varesa Tấn Công Khi Đáp, cú đáp sẽ gây thêm sát thương bằng 50% Tấn Công. Nếu Varesa đang trong trạng thái Nhiệt Huyết Cháy Bỏng, cú đáp sẽ chuyển sang gây thêm sát thương bằng 180% Tấn Công.",
+      "2": "<br/>",
+      "3": "Hiệu quả Cầu Vồng Giáng Lâm sẽ bị xóa khi tiếp đất trúng kẻ địch hoặc kết thúc thời gian duy trì."
+    }
+  },
+  "passive2": {
+    "name": "Anh Hùng Tái Xuất",
+    "description": {
+      "0": "Khi nhân vật trong đội gần đó kích hoạt Dạ Hồn Bùng Nổ, Tấn Công của Varesa sẽ tăng 35% trong 12s. Hiệu quả này tối đa cộng dồn hai tầng, mỗi tầng tính giờ riêng."
+    }
+  },
+  "passive3": {
+    "name": "Món Quà Dạ Vực - Ánh Đuốc Diệt Ác",
+    "description": {
+      "0": "Sau khi dùng hết điểm Dạ Hồn, Varesa sẽ chuyển sang tiêu hao Phlogiston để duy trì dạng \"Tốc Độ Dũng Mãnh\" của trạng thái Dạ Hồn Chúc Phúc.",
+      "1": "Khi ở trong khu vực có cơ chế Phlogiston của Natlan, có thể tiến hành Dạ Hồn Chuyển Hóa - Varesa. Nhân vật trong trận khi xung kích, ở trong trạng thái di chuyển đặc biệt của thiên phú hoặc đang ở độ cao nhất định trên không, đổi sang Varesa ra trận sẽ kích hoạt: Varesa sẽ vào trạng thái Dạ Hồn Chúc Phúc, đổi thành dạng \"Tốc Độ Dũng Mãnh\" và nhận được 20 điểm Dạ Hồn. Đội bản thân mỗi 10s có thể kích hoạt một lần Dạ Hồn Chuyển Hóa.",
+      "2": "Ngoài ra, khi ở trong khu vực có cơ chế Phlogiston của Natlan, khi lợi dụng địa hình để nhảy bay, Varesa sẽ không phải chịu sát thương đáp đất."
+    }
+  },
+  "passive": {
+    "name": "Trái Tim Quả Cảm",
+    "description": {
+      "0": "Tốc độ xung kích của Varesa được gia tăng. Khi không trong trạng thái chiến đấu, thể lực tiêu hao khi xung kích cũng sẽ tăng.",
+      "1": "Ngoài ra, khi ở trong khu vực có cơ chế Phlogiston của Natlan, nhân vật trong đội bản thân dùng Thực Phẩm sẽ hồi phục 20 điểm Phlogiston, hiệu quả này mỗi 10s tối đa kích hoạt một lần, vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh."
+    }
+  },
+  "constellation1": {
+    "name": "Nhiệt Huyết Cháy Mãi",
+    "description": {
+      "0": "Hiệu quả của thiên phú cố định \"Ba Lần Nhảy Cao\" được cường hóa:",
+      "1": "Khi tiến hành Tấn Công Khi Đáp đặc biệt \"Núi Lửa Sấm Rền\", Varesa cũng sẽ nhận được \"Cầu Vồng Giáng Lâm\" trong 5s.",
+      "2": "Trong thời gian \"Cầu Vồng Giáng Lâm\", cho dù Varesa có ở trong trạng thái Nhiệt Huyết Cháy Bỏng hay không thì khi tiến hành Tấn Công Khi Đáp, cú đáp cũng sẽ gây thêm sát thương bằng 180% Tấn Công. Hiệu quả này cần mở khóa thiên phú \"Ba Lần Nhảy Cao\".",
+      "3": "<br/>",
+      "4": "Ngoài ra, khi Varesa ở trong dạng \"Tốc Độ Dũng Mãnh\" của trạng thái Dạ Hồn Chúc Phúc, mức tiêu hao Dạ Hồn hoặc Phlogiston giảm 30%."
+    }
+  },
+  "constellation2": {
+    "name": "Cực Hạn Ngút Trời",
+    "description": {
+      "0": "Bất kể có ở trong trạng thái Nhiệt Huyết Cháy Bỏng hay không thì sau khi Varesa tiến hành Tấn Công Khi Đáp cũng sẽ vào trạng thái Động Cơ Cực Hạn.",
+      "1": "Khi trong trạng thái Động Cơ Cực Hạn, Varesa sẽ tăng thêm khả năng Kháng Gián Đoạn.",
+      "2": "Ngoài ra, Tấn Công Khi Đáp của Varesa khi tiếp đất trúng kẻ địch sẽ hồi phục cho Varesa 11.5 Năng Lượng Nguyên Tố."
+    }
+  },
+  "constellation3": {
+    "name": "Quyết Tâm Bất Khuất",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tia Chớp Giáng Lâm</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Dũng Cảm Xông Pha",
+    "description": {
+      "0": "Khi thi triển Kỹ Năng Nộ <strong>Tia Chớp Giáng Lâm</strong>, dựa vào trạng thái của Varesa để sản sinh hiệu quả cường hóa tương ứng. Nếu Varesa:",
+      "1": [
+        "Không ở trong trạng thái Nhiệt Huyết Cháy Bỏng hoặc Động Cơ Cực Hạn: Varesa nhận hiệu quả \"Dũng Mãnh Tiến Bước\" trong 15s, căn cứ vào 500% Tấn Công của Varesa để tăng sát thương gây ra khi tiếp đất từ đòn Tấn Công Khi Đáp của cô ấy, tối đa tăng 20000 thông qua cách thức này. Hiệu quả này sẽ bị xóa khi tiếp đất trúng kẻ địch hoặc kết thúc thời gian duy trì.",
+        "Ở trong trạng thái Nhiệt Huyết Cháy Bỏng hoặc Động Cơ Cực Hạn: Sát thương lần Kỹ Năng Nộ <strong>Tia Chớp Giáng Lâm</strong> này tăng 100%."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Tâm Niệm Ấm Áp",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tấn Công Thường - Cặp Sừng Càn Quét</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Chính Nghĩa Khải Hoàn",
+    "description": {
+      "0": "Khi vào trạng thái Động Cơ Cực Hạn sẽ hồi phục cho Varesa 30 Năng Lượng Nguyên Tố.",
+      "1": "Tấn Công Khi Đáp và Kỹ Năng Nộ <strong>Tia Chớp Giáng Lâm</strong> của Varesa tăng 10% Tỷ Lệ Bạo Kích, tăng 100% Sát Thương Bạo Kích.",
+      "2": "Ngoài ra, khi Varesa nhấn giữ thi triển Kỹ Năng Nguyên Tố <strong>Cưỡi Cầu Vồng Đêm</strong>, hoặc nhấn thi triển Kỹ Năng Nguyên Tố khi ở trong dạng Tốc Độ Dũng Mãnh, Varesa sẽ hồi phục điểm Dạ Hồn đến mức tối đa."
+    }
+  }
+}

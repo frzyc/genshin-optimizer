@@ -4,7 +4,7 @@
   "description": "謎煙の主出身だが、無数の命と共に、集落の外で生きる若者。",
   "constellationName": "チスイコウモリ座",
   "auto": {
-    "name": "通常攻撃・憑霊の閃矢",
+    "name": "憑霊の閃矢",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

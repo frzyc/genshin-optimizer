@@ -4,7 +4,7 @@
   "description": "時刻恪守著心中「正義」的特巡隊隊長，手中的銃槍只會指向負罪之人。",
   "constellationName": "劍銃座",
   "auto": {
-    "name": "線列槍刺·改",
+    "name": "改",
     "fields": {
       "normal": {
         "0": "<strong>普通攻擊</strong>",

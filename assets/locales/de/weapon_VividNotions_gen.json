@@ -1,0 +1,24 @@
+{
+  "name": "Farbenfrohe Gedanken",
+  "description": {
+    "0": "Eine Trophäe, geschmiedet aus den Edelsteinen des Kollektivs der Fülle und den Kristallen des Blumenfeder-Klans. Sie soll einst einem legendären Ringkämpfer gehört haben."
+  },
+  "passiveName": "Wunsch des gefallenen Regenbogens",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG um <cryo>28 %</cryo>. Löst, wenn die Figur einen Angriff aus dem Fall einsetzt, den Effekt „Farbe der Morgendämmerung“ aus: Erhöht den mit Angriffen aus dem Fall verursachten KSCH um <cryo>28 %</cryo>. Löst, wenn die Figur eine Elementarfähigkeit oder Spezialfähigkeit einsetzt, den Effekt „Glanz der Abenddämmerung“ aus: Erhöht den mit Angriffen aus dem Fall verursachten KSCH um <cryo>40 %</cryo>. Die beiden oben beschriebenen Effekte halten jeweils 15 s. Die Effekte werden 0,1 s nach dem Treffen von Gegnern durch Aufkommen auf dem Boden entfernt."
+    },
+    "1": {
+      "0": "Erhöht den ANG um <cryo>35 %</cryo>. Löst, wenn die Figur einen Angriff aus dem Fall einsetzt, den Effekt „Farbe der Morgendämmerung“ aus: Erhöht den mit Angriffen aus dem Fall verursachten KSCH um <cryo>35 %</cryo>. Löst, wenn die Figur eine Elementarfähigkeit oder Spezialfähigkeit einsetzt, den Effekt „Glanz der Abenddämmerung“ aus: Erhöht den mit Angriffen aus dem Fall verursachten KSCH um <cryo>50 %</cryo>. Die beiden oben beschriebenen Effekte halten jeweils 15 s. Die Effekte werden 0,1 s nach dem Treffen von Gegnern durch Aufkommen auf dem Boden entfernt."
+    },
+    "2": {
+      "0": "Erhöht den ANG um <cryo>42 %</cryo>. Löst, wenn die Figur einen Angriff aus dem Fall einsetzt, den Effekt „Farbe der Morgendämmerung“ aus: Erhöht den mit Angriffen aus dem Fall verursachten KSCH um <cryo>42 %</cryo>. Löst, wenn die Figur eine Elementarfähigkeit oder Spezialfähigkeit einsetzt, den Effekt „Glanz der Abenddämmerung“ aus: Erhöht den mit Angriffen aus dem Fall verursachten KSCH um <cryo>60 %</cryo>. Die beiden oben beschriebenen Effekte halten jeweils 15 s. Die Effekte werden 0,1 s nach dem Treffen von Gegnern durch Aufkommen auf dem Boden entfernt."
+    },
+    "3": {
+      "0": "Erhöht den ANG um <cryo>49 %</cryo>. Löst, wenn die Figur einen Angriff aus dem Fall einsetzt, den Effekt „Farbe der Morgendämmerung“ aus: Erhöht den mit Angriffen aus dem Fall verursachten KSCH um <cryo>49 %</cryo>. Löst, wenn die Figur eine Elementarfähigkeit oder Spezialfähigkeit einsetzt, den Effekt „Glanz der Abenddämmerung“ aus: Erhöht den mit Angriffen aus dem Fall verursachten KSCH um <cryo>70 %</cryo>. Die beiden oben beschriebenen Effekte halten jeweils 15 s. Die Effekte werden 0,1 s nach dem Treffen von Gegnern durch Aufkommen auf dem Boden entfernt."
+    },
+    "4": {
+      "0": "Erhöht den ANG um <cryo>56 %</cryo>. Löst, wenn die Figur einen Angriff aus dem Fall einsetzt, den Effekt „Farbe der Morgendämmerung“ aus: Erhöht den mit Angriffen aus dem Fall verursachten KSCH um <cryo>56 %</cryo>. Löst, wenn die Figur eine Elementarfähigkeit oder Spezialfähigkeit einsetzt, den Effekt „Glanz der Abenddämmerung“ aus: Erhöht den mit Angriffen aus dem Fall verursachten KSCH um <cryo>80 %</cryo>. Die beiden oben beschriebenen Effekte halten jeweils 15 s. Die Effekte werden 0,1 s nach dem Treffen von Gegnern durch Aufkommen auf dem Boden entfernt."
+    }
+  }
+}

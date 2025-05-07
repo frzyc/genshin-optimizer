@@ -1,0 +1,29 @@
+{
+  "setName": "Derin Geçitlerin Sonu",
+  "setEffects": {
+    "2": "+%15 Buz Hasarı Bonusu.",
+    "4": "Kuşanan karakterin Element Enerjisi 0 olduğunda Normal Saldırı Hasarı ve Element Patlaması Hasarı %60 artar. Kuşanan karakter Normal Saldırı Hasarı verdiğinde Element Patlaması Hasarı bonusu 6 saniyeliğine kaldırılır. Kuşanan karakter Element Patlaması Hasarı verdiğinde Normal Saldırı Hasarı bonusu 6 saniyeliğine kaldırılır. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Derin Geçidin Yankılanan Şarkısı",
+      "desc": "Kuzey yeşiminden yapılmış bir buzul çiçeği. Uzun ömrü boyunca yaprakları toz olup gitmiş."
+    },
+    "plume": {
+      "name": "Derin Geçidin Uzun Vadeli Antlaşması",
+      "desc": "Kuzey yeşiminden yapılmış tüylü bir aksesuar. Başka dünyadan gelen bir ışık gibi parıldar."
+    },
+    "sands": {
+      "name": "Derin Geçidin Yok Oluş Anı",
+      "desc": "Kuzey yeşiminden yapılmış bir cep saati. Akrep ve yelkovanı, yok olduğu o anda sonsuza dek durmuş."
+    },
+    "goblet": {
+      "name": "Derin Geçidin Bahşettiği Ziyafet",
+      "desc": "Kuzey yeşiminden yapılmış bir kadeh. Kadim bir uygarlığın halkının göklere adak sunmak için kullandığı bir tören kadehi olduğu söylenir."
+    },
+    "circlet": {
+      "name": "Derin Geçidin Kayıp Tacı",
+      "desc": "Tıpkı önceki sahibinin zihni gibi saplantıyla dolu bir miğfer. Yeşim süsleri çok daha kadim bir çağa ait duruyor."
+    }
+  }
+}

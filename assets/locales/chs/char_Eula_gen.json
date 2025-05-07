@@ -44,7 +44,7 @@
   "description": "古老家族出身的「浪花骑士」，西风骑士团游击小队队长。身为旧贵族后裔却加入了堪称死对头的西风骑士团，该事件至今仍是蒙德一大谜团。",
   "constellationName": "浪沫座",
   "auto": {
-    "name": "西风剑术·宗室",
+    "name": "宗室",
     "fields": {
       "normal": {
         "0": "<strong>普通攻击</strong>",

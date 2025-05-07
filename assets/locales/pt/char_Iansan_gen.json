@@ -1,0 +1,185 @@
+{
+  "name": "Iansan",
+  "title": "Forjada na Pedra Ardente",
+  "description": "Treinadora-chefe do Clube de Condicionamento Físico, nutricionista renomada em Natlan.",
+  "constellationName": "Carnotaurus",
+  "auto": {
+    "name": "Espinho Pesado",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 3 golpes com a lança."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para se lançar para a frente, infligindo Dano em seu trajeto."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      },
+      "nightsoul": {
+        "0": "<strong>Estado Espírito da Noite: Descida Trovejante</strong>",
+        "1": "Enquanto estiver no estado Bênção do Espírito da Noite: o Ataque Carregado de Iansan será transformado na formidável Descida Trovejante, consumindo uma certa quantidade de Stamina para descer com força, causando <electro>Dano Electro em uma AdE</electro> com alinhamento Espírito da Noite."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Dano da Descida Trovejante",
+      "5": "Consumo de Stamina do Ataque Carregado e da Descida Trovejante",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Investida Trovejante",
+    "description": {
+      "0": "Iansan avança uma certa distância, causando <electro>Dano Electro</electro> com alinhamento Espírito da Noite a todos os inimigos em seu caminho.",
+      "1": "Após usar esta Habilidade, Iansan recuperará 54 pontos de Espírito da Noite e entrará no estado de Bênção do Espírito da Noite. Nos 5s após essa investida e ao pressionar para lançar um Ataque Normal, Iansan rapidamente lançará uma Descida Trovejante que não consumirá Stamina.",
+      "2": "<br/>",
+      "3": "<strong>Bênção do Espírito da Noite: Iansan</strong>",
+      "4": "Consome continuamente pontos de Espírito da Noite. Caso fiquem esgotados, ou caso a Habilidade seja usada novamente, o estado de Bênção do Espírito da Noite terminará. Este estado possui as seguintes propriedades:",
+      "5": [
+        " Aumenta a Velocidade de Movimento de Iansan.",
+        " Segurar o comando de corrida alternará para o modo Investida Relampejante, aumentando significativamente a Velocidade de Movimento de Iansan temporariamente. Nesse modo, Iansan pode realizar saltos longos usando o terreno, ou consumir pontos adicionais de Espírito da Noite para se mover sobre a água ou Flogisto Líquido enquanto permanece imune a dano causado por este último."
+      ],
+      "6": "<br/>",
+      "7": "<i>\"Mais rápido, mais forte! É pra isso que todo esse esforço serve!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Limite de Pontos de Espírito da Noite",
+      "2": "Recarga",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Os Três Princípios do Poder",
+    "description": {
+      "0": "Seu pé esmaga a terra com o nome do Poder, causando <electro>Dano Electro em AdE</electro> com alinhamento Espírito da Noite, e então retira sua Escala Cinética de Edição Limitada (Para Treinos).",
+      "1": "Ao lançar, Iansan obtém 15 pontos de Espírito da Noite, e entra no estado Bênção do Espírito da Noite.",
+      "2": "Quando a Escala Cinética sair do campo, o estado Bênção do Espírito da Noite de Iansan terminará.",
+      "3": "<br/>",
+      "4": "<strong>Escala Cinética</strong>",
+      "5": "A Escala Cinética acompanha o personagem ativo, e aumenta o ATQ do personagem ativo com base nos pontos de Espírito da Noite de Iansan de formas diferentes:",
+      "6": [
+        " Se Iansan tiver menos de 42 pontos de Espírito da Noite, recebe um bônus de ATQ baseado dos pontos de Espírito da Noite e do ATQ dela.",
+        " Se Iansan tiver pelo menos 42 pontos de Espírito da Noite, a Escala Cinética será trocada para o modo \"Suporte Flamejante!\", recebendo um bônus de ATQ ainda maior, baseado apenas no ATQ dela."
+      ],
+      "7": "Além disso, enquanto a Escala Cinética existir, ela registrará a distância percorrida pelo personagem ativo, exceto a própria Iansan, registrando essa distância a cada segundo para regenerar pontos de Espírito da Noite para Iansan.",
+      "8": "A Escala Cinética desaparecerá quando o estado Bênção do Espírito da Noite de Iansan acabar. Quando ela não estiver em combate, a Escala Cinética desaparecerá depois de 1s. Enquanto a Escala Cinética existir e Iansan não for a personagem ativa, a Bênção do Espírito da Noite não terminará.",
+      "9": "<br/>",
+      "10": "<i>\"Poder não é uma questão de talento natural. O poder vem da prática constante. O poder deve ser utilizado corretamente.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Taxa de Conversão de ATQ dos Pontos de Espírito da Noite Elevados",
+      "2": "Taxa de Conversão de ATQ dos Pontos de Espírito da Noite Baixos",
+      "3": "Bônus Máximo de ATQ",
+      "4": "Duração",
+      "5": "Duração do Estado Fora de Combate",
+      "6": "Tempo de Recarga",
+      "7": "Energia Elemental",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Treinamento de Resistência Fortalecida",
+    "description": {
+      "0": "Depois de Descida Trovejante atingir um inimigo, Iansan obtém o efeito Objetivo do Treino por 15s.",
+      "1": "Nesse período, aumenta o ATQ de Iansan em 20%, e quando regenera pontos de Espírito da Noite através da Escala Cinética do Supremo <strong>Os Três Princípios do Poder</strong>, regenerará mais 1 ponto adicional. Além disso, quando o personagem ativo da equipe consumir ou regenerar pontos de Espírito da Noite, a próxima Escala Cinética de Iansan regenerará até 4 pontos de Espírito da Noite adicionais. Esse efeito pode ser desencadeado uma vez a cada 2.8s.",
+      "2": "O efeito Objetivo do Treino desaparecerá quando o estado Bênção do Espírito da Noite de Iansan acabar."
+    }
+  },
+  "passive2": {
+    "name": "Teste de Gradiente de Energia Cinética",
+    "description": {
+      "0": "Quando um membro próximo da equipe desencadeia Explosão do Espírito da Noite, Iansan obtém Aquecimento por 10s.",
+      "1": "Nesse período, quando Iansan regenerar pelo menos 1 ponto de Espírito da Noite, regenerará pontos de Espírito da Noite para o personagem ativo. A quantidade regenerada é baseada em 60% do ATQ de Iansan. Esse efeito pode ser desencadeado uma vez a cada 2.8s."
+    }
+  },
+  "passive3": {
+    "name": "Presente do Reino da Noite: Movimentos Poderosos",
+    "description": {
+      "0": "Quando consumir todos os pontos de Espírito da Noite, e quando Iansan estiver em campo, passará a consumir Flogisto para manter o estado Bênção do Espírito da Noite.",
+      "1": "Quando está em uma área de Natlan com Dispositivos de Flogisto, poderá fazer Transmissão do Espírito da Noite: Iansan. Quando o personagem ativo está correndo, ou em um estado de movimento especial concedido por um Talento, ou a uma certa altura no ar, trocar para Iansan como personagem ativa fará: ela entrará no estado Bênção do Espírito da Noite, e obterá 25 pontos de Espírito da Noite. A Transmissão do Espírito da Noite pode ser desencadeada uma vez a cada 10s por equipe.",
+      "2": "Além disso, nas áreas de Natlan onde existe o mecanismo de Flogisto, ao utilizar a diferença de terreno para saltar, Iansan não sofrerá Dano de Queda."
+    }
+  },
+  "passive": {
+    "name": "Plano de Balanceamento Calórico",
+    "description": {
+      "0": "Enquanto está em uma área de Natlan com um Dispositivo de Flogisto, obtém novamente 10 de Flogisto quando ele cair de acima de 50% para abaixo de 50%. Esse efeito pode ocorrer uma vez a cada 10s."
+    }
+  },
+  "constellation1": {
+    "name": "Todo Começo é Difícil",
+    "description": {
+      "0": "Quando Iansan estiver em batalha e no estado Bênção do Espírito da Noite, regenera 15 de Energia Elemental para ela a cada 6 pontos de Espírito da Noite consumidos. Esse efeito pode ser desencadeado uma vez a cada 18s."
+    }
+  },
+  "constellation2": {
+    "name": "Proibido Preguiça no Treino!",
+    "description": {
+      "0": "Quando lança o Supremo <strong>Os Três Princípios do Poder</strong>, Iansan obtém o efeito \"Objetivo do Treino\" do Talento Passivo \"Treinamento de Resistência Fortalecida\" por 15s. Além disso, enquanto o efeito \"Objetivo do Treino\" durar, se Iansan não for a personagem ativa, aumenta o ATQ do personagem ativo da equipe em 30%. Esse efeito requer que o Talento Passivo \"Treinamento de Resistência Fortalecida\" esteja desbloqueado."
+    }
+  },
+  "constellation3": {
+    "name": "Plano Nutricional Científico",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong>Investida Trovejante</strong> em 3 níveis. ",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "O Segredo é um Passo Atrás do Outro",
+    "description": {
+      "0": "Após o personagem ativo da equipe lançar o Supremo, com exceção da própria Iansan, enquanto a Escala Cinética existir, faz Iansan obter 2 acúmulos de \"Poder Original\", que duram até a Escala Cinética desaparecer. Cada Escala Cinética invocada pode desencadear esse efeito uma vez. Quando Iansan recuperar pontos de Espírito da Noite através da Escala Cinética, ela consumirá 1 acúmulo de Poder Original para regenerar 4 pontos de Espírito da Noite adicionais.",
+      "1": "Além disso, quando a Escala Cinética regenerar mais pontos de Espírito da Noite do que o limite máximo, a próxima vez que Iansan regenerar pontos de Espírito da Noite através da Escala Cinética regenerará adicionalmente 50% da quantidade regenerada além do limite máximo dessa vez."
+    }
+  },
+  "constellation5": {
+    "name": "Ainda Não Cheguei ao Limite!",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong>Os Três Princípios do Poder</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Treinamento do Coletivo da Fartura",
+    "description": {
+      "0": "Prolonga a duração da Escala Cinética em 3s.",
+      "1": "Além disso, quando Iansan desencadear o efeito regenerador de pontos de Espírito da Noite, se regenerar esses pontos de Espírito da Noite além do limite máximo, obtém o efeito \"Poder Superlativo\", aumentando o Dano causado pelo personagem ativo em 25% por 3s."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Đoạn Kết Hành Lang Sâu",
+  "setEffects": {
+    "2": "Tăng sát thương nguyên tố Băng 15%",
+    "4": "Khi Năng Lượng Nguyên Tố của người trang bị bằng 0, tăng 60% sát thương Tấn Công Thường, tăng 60% sát thương Kỹ Năng Nộ. Sau khi người trang bị gây sát thương Tấn Công Thường, hiệu quả tăng sát thương Kỹ Năng Nộ nêu trên sẽ mất hiệu lực trong 6s. Sau khi người trang bị gây sát thương Kỹ Năng Nộ, hiệu quả tăng sát thương Tấn Công Thường nêu trên sẽ mất hiệu lực trong 6s. Nhân vật đang dự bị cũng có thể kích hoạt hiệu quả này."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Tiếng Vọng Hành Lang Sâu",
+      "desc": "Đóa hoa băng làm từ ngọc thạch của bắc quốc, cánh hoa đã phai tàn thành bụi qua năm tháng dông dài."
+    },
+    "plume": {
+      "name": "Hẹn Ước Hành Lang Sâu",
+      "desc": "Lông vũ làm từ ngọc thạch của bắc quốc, ánh sáng mờ ảo phản chiếu dường như không thuộc về thế giới này."
+    },
+    "sands": {
+      "name": "Thời Khắc Hành Lang Sâu",
+      "desc": "Đồng hồ làm từ ngọc thạch của bắc quốc, kim đồng hồ đã vĩnh viễn dừng lại tại thời khắc bị chôn vùi."
+    },
+    "goblet": {
+      "name": "Yến Tiệc Hành Lang Sâu",
+      "desc": "Chiếc ly làm từ ngọc thạch của bắc quốc, nghe nói từng là lễ vật hiến dâng lên trời cao của nền văn minh cổ xưa."
+    },
+    "circlet": {
+      "name": "Vương Miện Hành Lang Sâu",
+      "desc": "Chiếc mũ ô nhiễm vì \"chấp niệm\", giống như tâm hồn của vị chủ nhân cũ. Ngọc thạch trang trí trên đó dường như đến từ thời đại cổ xưa hơn."
+    }
+  }
+}

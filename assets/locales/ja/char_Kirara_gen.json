@@ -4,7 +4,7 @@
   "description": "稲妻の配達会社「狛荷屋」の配達員。仕事を愛し、人間社会に憧れている「猫又」。",
   "constellationName": "箱筥座",
   "auto": {
-    "name": "段板紙·切り裂き術",
+    "name": "段板紙・切り裂き術",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

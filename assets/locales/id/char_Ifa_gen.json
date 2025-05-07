@@ -1,0 +1,160 @@
+{
+  "name": "Ifa",
+  "title": "In the Wake of Wandering Winds",
+  "description": "Dokter hewan dari suku Bunga Bersayap, yang sangat menyukai kehidupan bersama manusia, hewan, dan makhluk hidup lainnya.",
+  "constellationName": "Catena Opele",
+  "auto": {
+    "name": "Rite of Dispelling Winds",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan dan mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina dan menembak ke arah depan, mengakibatkan <anemo>Anemo DMG Area</anemo> setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG Area</anemo> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Airborne Disease Prevention",
+    "description": {
+      "0": "Waktunya memanggil bala bantuan! Maju, bos! Ifa memanggil Cacucu untuk bertempur bersama.",
+      "1": "Setelah dilancarkan, Ifa memulihkan 80 poin Nightsoul-nya dan memasuki status <strong>Nightsoul's Blessing</strong>. Selama durasi Nightsoul's Blessing, Ifa akan melayang dengan bantuan Cacucu. Saat melancarkan Normal Attack dalam status ini, serangannya akan dikonversi menjadi <strong>Supporting Fire</strong> yang berbeda berdasarkan Mode Tekan dan Mode Tahan, untuk menembakkan Tonicshot yang dapat memulihkan HP seluruh anggota party.",
+      "2": "<br/>",
+      "3": "Selain itu, saat berada dalam status Nightsoul's Blessing dan Ifa melancarkan Elemental Skill <strong>Airborne Disease Prevention</strong> dalam Mode Tahan, maka Ifa akan melancarkan Nightsoul-aligned Plunging Attack. Melepaskan tombol skill akan menghentikan Plunging Attack ini agar Ifa tetap melayang di udara. Jika Ifa menyentuh tanah saat melancarkan Plunging Attack, maka status Nightsoul's Blessing-nya akan berakhir."
+    },
+    "skillParams": {
+      "0": "DMG Tonicshot",
+      "1": "Jumlah Pemulihan HP saat Tonicshot Mengenai Musuh",
+      "2": "Batas Poin Nightsoul",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Compound Sedation Field",
+    "description": {
+      "0": "Menembakkan sebuah obat penenang kepada musuh (yang masih belum bisa tenang). Obat penenang ini akan meledak setelah mengenai musuh, dan akan menghasilkan pusaran angin pengikat yang dapat menarik item dan musuh di sekitar sambil mengakibatkan Nightsoul-aligned <anemo>Anemo DMG Area</anemo>.",
+      "1": "Saat obat penenang ini mengenai musuh yang sedang terpengaruh elemen <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka akan memberikan efek <strong>Sedation Mark</strong> kepada musuh-musuh ini."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Sedation Mark",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Field Medic's Vision",
+    "description": {
+      "0": "Saat Ifa berada dalam status Nightsoul's Blessing, setiap poin Nightsoul dari jumlah total yang dimiliki oleh seluruh anggota party akan memberikan Ifa 1 poin <strong>Rescue Essentials</strong>, meningkatkan DMG reaksi Swirl dan Electro-Charged yang diakibatkan seluruh anggota party di sekitar."
+    }
+  },
+  "passive2": {
+    "name": "Mutual Aid Agreement",
+    "description": {
+      "0": "Saat anggota party di sekitar memicu Nightsoul Burst, Elemental Mastery Ifa meningkat 80 poin selama 10 detik."
+    }
+  },
+  "passive3": {
+    "name": "Night Realm's Gift: Focused Emergency Rescue",
+    "description": {
+      "0": "Setelah poin Nightsoul habis terpakai, Ifa akan mengonsumsi Phlogiston untuk mempertahankan status Nightsoul's Blessing-nya.",
+      "1": "Saat ada area dengan Phlogiston Mechanic di Natlan, Ifa bisa melancarkan Nightsoul Transmission: Ifa. Saat Karakter aktif melayang di ketinggian tertentu, dan mengganti Karakter menjadi Ifa, akan memicu efek berikut: Ifa akan memasuki status Nightsoul's Blessing dan mendapatkan 32 poin Nightsoul. Nightsoul Transmission party sendiri dapat terpicu sekali setiap 10 detik."
+    }
+  },
+  "passive": {
+    "name": "Tactical Warm Compress Bandaging",
+    "description": {
+      "0": "Saat ada area dengan Phlogiston Mechanic di Natlan, dan HP Karakter aktif sendiri atau HP Saurian yang menyatu kurang dari 40%, Ifa akan mengonsumsi 10 poin Phlogiston untuk memulihkan 40% HP mereka. Efek ini dapat terpicu setiap 10 detik. Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss."
+    }
+  },
+  "constellation1": {
+    "name": "Vitiferous Elixir's Concoction",
+    "description": {
+      "0": "Saat <strong>Supporting Fire</strong> mengenai musuh, akan memulihkan 6 poin Energy Ifa. Pemulihan Energy dengan cara ini dapat terpicu sekali setiap 8 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Guiding Spirit of Ballistic Prayer",
+    "description": {
+      "0": "Saat Ifa berada dalam status Nightsoul's Blessing, dari total jumlah poin Nightsoul yang dimiliki seluruh anggota party, untuk setiap poin di atas 60 poin, maka Ifa akan mendapatkan 4 poin <strong>Rescue Essentials</strong> tambahan.",
+      "1": "Selain itu, batas Rescue Essentials milik Ifa bertambah 50 poin.",
+      "2": "Harus membuka Talenta Pasif <strong>Field Medic's Vision</strong> terlebih dahulu."
+    }
+  },
+  "constellation3": {
+    "name": "Rebuttal in Negotiations With the Night",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong>Airborne Disease Prevention</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Decayed Vessel's Permutation",
+    "description": {
+      "0": "Durasi pusaran angin pengikat yang dihasilkan Elemental Burst <strong>Compound Sedation Field</strong> diperpanjang 3 detik.",
+      "1": "Selain itu, setelah melancarkan Elemental Burst <strong>Compound Sedation Field</strong>, Elemental Mastery Ifa meningkat 100 poin selama 15 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Vow of Universal Coexistence",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>Compound Sedation Field</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Oath on a Feathered Knot",
+    "description": {
+      "0": "Saat Ifa menggunakan <strong>Supporting Fire</strong> dalam Mode Tahan, ada 50% kemungkinan untuk menembakkan satu Tonicshot tambahan yang mengakibatkan Anemo DMG sebesar 120% ATK Ifa. DMG ini dianggap sebagai DMG Normal Attack.",
+      "1": "Selain itu, saat tidak dalam kondisi bertempur, konsumsi poin Nightsoul dan Phlogiston Ifa dalam status Nightsoul's Blessing berkurang 20%."
+    }
+  }
+}

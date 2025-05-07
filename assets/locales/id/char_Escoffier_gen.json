@@ -1,0 +1,170 @@
+{
+  "name": "Escoffier",
+  "title": "Tasteful Excellence",
+  "description": "Mantan Koki Kepala di Hotel Debord, pelopor \"Gastronomi Presisi\" yang terkenal dan memiliki gelar Patissiere Supreme di Fontaine, memiliki standar memasak yang sangat ketat.",
+  "constellationName": "Dulciaria Structura",
+  "auto": {
+    "name": "Kitchen Skills",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menyerang ke atas."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Low-Temperature Cooking",
+    "description": {
+      "0": "Silakan saksikan makna \"memasak\" yang sebenarnya! Melancarkan keterampilan memasak Escoffier yang dibangga-banggakan berdasarkan Mode Tekan atau Mode Tahan.",
+      "1": "<br/>",
+      "2": "<strong>Mode Tekan</strong>",
+      "3": "Mengaktifkan All-Spectrum Multi-Use Cooking Mek dalam Cold Storage Mode dan mengakibatkan <cryo>Cryo DMG Area</cryo> ke musuh sekitar.",
+      "4": "<br/>",
+      "5": "<strong>Cooking Mek: Cold Storage Mode</strong>",
+      "6": "Akan mengikuti Karakter aktif dan menembakkan Frosty Parfait yang mengakibatkan <cryo>Cryo DMG</cryo> ke musuh di sekitar secara berkala.",
+      "7": "<br/>",
+      "8": "<strong>Arkhe: Ousia</strong>",
+      "9": "Setiap satu kurun waktu, saat Escoffier mengaktifkan Cooking Mek dalam Cold Storage Mode, akan menjatuhkan Surging Blade yang mengakibatkan Ousia-aligned <cryo>Cryo DMG Area</cryo>.",
+      "10": "<br/>",
+      "11": "<strong>Mode Tahan</strong>",
+      "12": "Mengaktifkan <strong>Off-the-Cuff Cookery Mode</strong> pada Cooking Mek miliknya."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Frosty Parfait",
+      "2": "Durasi Cold Storage Mode",
+      "3": "DMG Surging Blade",
+      "4": "Jeda CD Surging Blade",
+      "5": "Cooldown (Mode Tekan)",
+      "6": "Cooldown (Mode Tahan)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Scoring Cuts",
+    "description": {
+      "0": "Escoffier menunjukkan keahlian pisaunya, mengakibatkan <cryo>Cryo DMG Area</cryo> dan memulihkan HP seluruh karakter party di sekitar berdasarkan ATK Escoffier."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Jumlah Pemulihan HP",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Better to Salivate Than Medicate",
+    "description": {
+      "0": "Setelah melancarkan Elemental Burst <strong>Scoring Cuts</strong>, Escoffier akan mendapatkan efek Rehab Diet selama 9 detik: Memulihkan HP Karakter aktif di sekitar sebesar 138,24% ATK Escoffier setiap detiknya."
+    }
+  },
+  "passive2": {
+    "name": "Inspiration-Immersed Seasoning",
+    "description": {
+      "0": "Saat ada 1/2/3/4 Karakter <hydro>Hydro</hydro> atau <cryo>Cryo</cryo> di dalam party, setelah Elemental Skill <strong>Low-Temperature Cooking</strong> atau Elemental Burst <strong>Scoring Cuts</strong> miliknya mengenai musuh, akan mengurangi <hydro>Hydro RES</hydro> dan <cryo>Cryo RES</cryo> musuh ini sebesar 5%/10%/15%/55% selama 12 detik."
+    }
+  },
+  "passive3": {
+    "name": "Constant Off-the-Cuff Cookery",
+    "description": {
+      "0": "Saat menahan tombol Elemental Skill <strong>Low-Temperature Cooking</strong>, Escoffier akan mengaktifkan All-Spectrum Multi-Use Cooking Mek dalam Off-the-Cuff Cookery Mode.",
+      "1": "<br/>",
+      "2": "<strong>Cooking Mek: Off-the-Cuff Cookery Mode</strong>",
+      "3": [
+        "Meletakkan Cooking Mek di medan pertempuran. Cooking Mek bisa menyerap serangan elemental. Saat energi elemental yang diserap mencapai batas tertentu, Escoffier akan mengonversi Bahan Masak yang sudah diletakkan sebelumnya menjadi makanan yang lezat.",
+        "Escoffier membutuhkan waktu untuk membeli Bahan Masak yang baru. Setiap minggunya, dia hanya dapat menggunakan cara ini untuk menghasilkan Makanan dalam jumlah tertentu, jumlah ini akan direset setiap hari Senin pukul 04:00."
+      ]
+    }
+  },
+  "constellation1": {
+    "name": "Pre-Dinner Dance for Your Taste Buds",
+    "description": {
+      "0": "Saat 4 Karakter di dalam party berelemen <hydro>Hydro</hydro> atau <cryo>Cryo</cryo>, maka CRIT DMG <cryo>Cryo DMG</cryo> seluruh anggota party akan meningkat 60% selama 15 detik setelah Escoffier melancarkan Elemental Skill <strong>Low-Temperature Cooking</strong> atau Elemental Burst <strong>Scoring Cuts</strong>.",
+      "1": "Harus membuka Talenta Pasif \"Inspiration-Immersed Seasoning\" terlebih dahulu."
+    }
+  },
+  "constellation2": {
+    "name": "Fresh, Fragrant Stew is an Art",
+    "description": {
+      "0": "Saat Escoffier mengaktifkan Cooking Mek dalam <strong>Cold Storage Mode</strong>, ia akan mendapatkan efek \"Freshly-Prepped Delicacy\" selama 15 detik. Selama durasi ini, Escoffier akan mendapatkan 5 lapis Cold Dish. Saat Karakter aktif di sekitar selain Escoffier mengakibatkan <cryo>Cryo DMG</cryo> dengan Normal, Charged, Plunging Attack, Elemental Skill, atau Elemental Burst, mereka akan mengonsumsi 1 lapis Cold Dish untuk meningkatkan DMG yang diakibatkan sebesar 240% ATK Escoffier.",
+      "1": "Saat satu kali <cryo>Cryo DMG</cryo> mengenai beberapa musuh secara bersamaan, jumlah lapisan Cold Dish yang dikonsumsi dan efeknya akan disesuaikan dengan jumlah musuh yang terkena serangan."
+    }
+  },
+  "constellation3": {
+    "name": "The Bakery Magic of Caramel Browning",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Low-Temperature Cooking</strong> dari Elemental Skill.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Secret Rosemary Recipe",
+    "description": {
+      "0": "Durasi efek <strong>Rehab Diet</strong> diperpanjang 6 detik. Saat aktif, jika pemulihan HP <strong>Rehab Diet</strong> terpicu, ada kemungkinan untuk meningkatkan pemulihan sebesar 100% dan memulihkan 2 poin Energy Escoffier. Persentase kemungkinan ini didasarkan pada CRIT Rate Escoffier. Efek ini dapat terpicu maksimum 7 kali dalam satu kali durasi <strong>Rehab Diet</strong>.",
+      "1": "Harus membuka Talenta Pasif \"Better to Salivate Than Medicate\" terlebih dahulu."
+    }
+  },
+  "constellation5": {
+    "name": "Symphony of a Thousand Sauces",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>Scoring Cuts</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tea Parties Bursting With Color",
+    "description": {
+      "0": "<strong>Cooking Mek: Cold Storage Mode</strong> mendapatkan penguatan berikut:",
+      "1": [
+        "Saat Normal Attack, Charged Attack, atau Plunging Attack Karakter aktif di dalam party mengenai musuh, Cooking Mek: Cold Storage Mode akan menembakkan sebuah Special-Grade Frosty Parfait tambahan, mengakibatkan <cryo>Cryo DMG Area</cryo> sebesar 500% ATK Escoffier. DMG ini dianggap sebagai DMG Elemental Skill."
+      ],
+      "2": "Efek ini dapat terpicu sekali setiap 0,5 detik. Efek ini dapat terpicu maksimum 6 kali dalam satu kali durasi Cooking Mek: Cold Storage Mode."
+    }
+  }
+}

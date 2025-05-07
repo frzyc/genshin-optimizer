@@ -1,0 +1,221 @@
+{
+  "name": "Varesa",
+  "title": "La Heroína Sosegada",
+  "description": "Una horticultora y guerrera de la Comunidad de la Feracidad de carácter superrelajado. ¡Le encantan los héroes fuertes y la comida en grandes cantidades!",
+  "constellationName": "Mascara Luctatori",
+  "auto": {
+    "name": "¡Usa la cabeza!",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "“Debo... ¡Debo luchar con el ímpetu de un campeón de lucha libre!”. Varesa ejecuta hasta 3 ataques consecutivos que infligen <electro>Daño Electro</electro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para dar un cabezazo frontal contra el enemigo, infligir <electro>Daño Electro</electro> de naturaleza noctámbula y dar un salto aprovechando el impulso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <electro>Daño Electro en el AdE</electro> de naturaleza noctámbula en el momento del impacto. Si, al hacer esto, Varesa está en combate o su impacto golpea a un enemigo, obtiene 25 pts. de noctambulismo. Cuando alcanza el máximo de pts. de noctambulismo de este modo, Varesa entra en estado de “fervor ardiente”."
+      },
+      "fieryPassion": {
+        "0": "<strong>Fervor ardiente</strong>",
+        "1": "En este estado, los Ataques Normales, Cargados y Descendentes de Varesa se fortalecen:"
+      },
+      "fpNormal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "¡Lucha con la valentía de una estrella de la lucha libre! Ejecuta hasta 3 fieros ataques consecutivos que infligen una mayor cantidad de <electro>Daño Electro</electro>."
+      },
+      "fpCharged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para lanzarse ferozmente contra el enemigo, infligiendo mayor cantidad de <electro>Daño Electro</electro> de naturaleza noctámbula y dando un salto aprovechando el impulso."
+      },
+      "fpPlunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Consume todos los pts. de noctambulismo para golpear el suelo desde el aire, atacando a los enemigos que encuentre en su trayecto e infligiendo una mayor cantidad de <electro>Daño Electro en el AdE</electro> de naturaleza noctámbula en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "Daño de 1er golpe en estado de fervor ardiente",
+      "8": "Daño de 2.º golpe en estado de fervor ardiente",
+      "9": "Daño de 3er golpe en estado de fervor ardiente",
+      "10": "Daño de ATQ Cargado en estado de fervor ardiente",
+      "11": "Coste de Aguante de ATQ Cargado en estado de fervor ardiente",
+      "12": "Daño de Caída en estado de fervor ardiente",
+      "13": "Daño de impacto de caída baja/alta en estado de fervor ardiente",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Salto del arcoíris nocturno",
+    "description": {
+      "0": "Con la celeridad de un rayo y la ferocidad de un trueno, Varesa hace gala de su espíritu de luchadora para arremeter hacia delante cierta distancia e infligir <electro>Daño Electro</electro> de naturaleza noctámbula a los enemigos en su camino.",
+      "1": "Tras usar esta habilidad, Varesa obtiene 20 pts. de noctambulismo y el efecto de “asalto”, el cual aumenta su RES a interrupción y, al ejecutar un Ataque Normal pulsando una vez, realiza rápidamente un Ataque Cargado que no consume Aguante. El efecto de asalto desaparecerá tras ejecutar un Ataque Cargado.",
+      "2": "Varesa utiliza distintos estilos de lucha libre dependiendo de si libera esta habilidad pulsando una vez o manteniendo pulsado.",
+      "3": "<br/>",
+      "4": "<strong>Pulsar una vez</strong>",
+      "5": "Arremete hacia delante a gran velocidad.",
+      "6": "<br/>",
+      "7": "<strong>Mantener pulsado</strong>",
+      "8": "Varesa entra en estado de bendición noctámbula y cambia al modo “avance impetuoso”.",
+      "9": "<br/>",
+      "10": "<strong>Avance impetuoso</strong>",
+      "11": "Consume continuamente pts. de noctambulismo. En este estado, la Vel. Movimiento y la RES a interrupción de Varesa aumentan, y puede aprovechar los desniveles del terreno para realizar saltos voladores o consumir pts. de noctambulismo adicionales para moverse sobre el agua y sobre el flogisto líquido, a cuyo daño será inmune.",
+      "12": "<br/>",
+      "13": "<strong>Bendición noctámbula: Varesa</strong>",
+      "14": "La bendición noctámbula de Varesa termina cuando agota todos sus pts. de noctambulismo. Sin embargo, cuando Varesa esté en el modo de avance impetuoso o fervor ardiente, permanecerá bajo el estado de bendición noctámbula en todo momento.",
+      "15": "<br/>",
+      "16": "Esta habilidad tiene 2 cargas. Cuando Varesa entra en estado de fervor ardiente, obtiene una carga adicional de pulsar una vez su Habilidad Elemental y aumenta el daño que inflige con ella.",
+      "17": "<br/>",
+      "18": "<strong>Fervor ardiente</strong>",
+      "19": [
+        "Si no está en estado de fervor ardiente, Varesa puede recuperar pts. de noctambulismo ejecutando Ataques Descendentes. Entrará en este estado cuando sus pts. de noctambulismo lleguen al máximo de este modo, o al ejecutar su Habilidad Definitiva, “<strong>¡Descenso fulgurante!</strong>”.",
+        "En el estado de fervor ardiente, los Ataques Normales, la Habilidad Elemental y la Habilidad Definitiva de Varesa se fortalecen. Además, durante un breve periodo de tiempo tras realizar un Ataque Descendente, Varesa podrá ejecutar una Habilidad Definitiva especial.",
+        "El estado de fervor ardiente dura un máximo de 15 s y termina al agotar todos los pts. de noctambulismo o tras abandonar el combate durante cierto periodo de tiempo."
+      ],
+      "20": "<br/>",
+      "21": "<i>“Ahora mismo, soy mi propia heroína”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de arremetida",
+      "1": "Daño de arremetida en estado de fervor ardiente",
+      "2": "Duración de asalto",
+      "3": "Límite de pts. de noctambulismo",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "¡Descenso fulgurante!",
+    "description": {
+      "0": "Como si de una heroína de las que aparecen en los pergaminos para niños se tratara, salta en el aire y aprovecha el impulso de la caída para lanzar una potente patada voladora que inflige <electro>Daño Electro en el AdE</electro> de naturaleza noctámbula.",
+      "1": "Tras usar esta habilidad, Varesa recupera todos sus pts. de noctambulismo y entra en estado de fervor ardiente.",
+      "2": "<br/>",
+      "3": "Mientras esté en este estado, la Habilidad Definitiva de Varesa infligirá una mayor cantidad de <electro>Daño Electro en el AdE</electro> de naturaleza noctámbula.",
+      "4": "<br/>",
+      "5": "Además, tras ejecutar un Ataque Descendente durante el estado de fervor ardiente, Varesa entra en el estado de “propulsión extrema” durante un breve periodo de tiempo.",
+      "6": "<br/>",
+      "7": "<strong>Propulsión extrema</strong>",
+      "8": "Aumenta la RES a interrupción de Varesa. Mientras se encuentre en este estado, Varesa podrá ignorar el TdE de su Habilidad Definitiva y consumir menos Energía Elemental para liberar una versión especial de su Habilidad Definitiva llamada “Descenso fulgurante: Colapso volcánico”, con lo que podrá ejecutar un “Ataque Descendente: Erupción furiatormenta” extremadamente poderoso que inflige <electro>Daño Electro en el AdE</electro> de naturaleza noctámbula, y sale del estado de propulsión extrema. Este daño se considera daño de Ataque Descendente.",
+      "9": "Tras usar la Habilidad Elemental, saldrá del estado de propulsión extrema.",
+      "10": "<br/>",
+      "11": "<i>A decir verdad, el nombre original con el que Varesa quería bautizar este movimiento era “Superultramegapatada voladora suprema justiciera ultrasónica perforacielos definitiva”, pero era demasiado largo y le daba vergüenza gritarlo en voz alta incluso con la máscara puesta, así que al final le puso el nombre que tiene ahora.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de patada voladora",
+      "1": "Daño de patada voladora en estado de fervor ardiente",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "Daño de Colapso volcánico",
+      "5": "Energía Elemental de Colapso volcánico",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Impulso y... ¡salto triple!",
+    "description": {
+      "0": "Tras usar su Habilidad Elemental, <strong>Salto del arcoíris nocturno</strong>, Varesa obtiene el efecto de “colisión iridiscente” durante 5 s.",
+      "1": "Mientras este efecto está activo, cuando Varesa ejecute un Ataque Descendente, el daño de dicho ataque aumenta en una cantidad equivalente al 50% de su ATQ. Si Varesa está en el estado de fervor ardiente, dicho aumento pasará a ser del 180%.",
+      "2": "<br/>",
+      "3": "El efecto de colisión iridiscente desaparece al golpear a un enemigo con un Ataque Descendente o cuando termina su duración."
+    }
+  },
+  "passive2": {
+    "name": "¡La heroína ha vuelto!",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo causa una explosión noctámbula, el ATQ de Varesa aumenta en un 35% durante 12 s. Este efecto puede acumularse hasta 2 veces y la duración de cada acumulación se calcula de manera independiente."
+    }
+  },
+  "passive3": {
+    "name": "Gracia de la noche: Abrasión del mal",
+    "description": {
+      "0": "Cuando no tenga más pts. de noctambulismo, Varesa consumirá flogisto para conservar el modo de avance impetuoso de su estado de bendición noctámbula.",
+      "1": "Al encontrarse en una zona con alguna mecánica de flogisto de Natlan, se podrá utilizar “Transmisión noctambular: Varesa”. Cuando el personaje en uso esprinte, esté en un estado de movimiento derivado de algún talento o esté a cierta altura en el aire, al cambiar a Varesa, esta entrará en estado de bendición noctámbula, cambiará al modo de avance impetuoso y obtendrá 20 pts. de noctambulismo. Tu equipo solo puede activar Transmisión noctambular una vez cada 10 s.",
+      "2": "Además, al encontrarse en una zona con alguna mecánica de flogisto de Natlan, cuando Varesa aproveche el desnivel del terreno para saltar, no recibirá daño de caída."
+    }
+  },
+  "passive": {
+    "name": "¡Avanza, corazón ardiente!",
+    "description": {
+      "0": "Aumenta la velocidad de esprint de Varesa, pero su Coste de Aguante también aumenta cuando no está en combate.",
+      "1": "Además, al encontrarse en una zona con alguna mecánica de flogisto de Natlan, tus personajes del equipo podrán recuperar 20 pts. de flogisto al consumir comida. Este efecto solo se activará una vez cada 10 s y no tendrá efecto en dominios, Dominios de la cruzada o la Espiral del Abismo."
+    }
+  },
+  "constellation1": {
+    "name": "Fervor inextinguible",
+    "description": {
+      "0": "Fortalece el efecto del talento pasivo “Impulso y... ¡salto triple!”:",
+      "1": "Al ejecutar el Ataque Descendente especial: Erupción furiatormenta, Varesa obtendrá también el efecto de colisión iridiscente durante 5 s.",
+      "2": "Mientras el efecto de “colisión iridiscente” esté activo, el daño de los Ataques Descendentes de Varesa aumentará en una cantidad equivalente al 180% de su ATQ, independientemente de si está en el estado de fervor ardiente o no. Para activar este efecto, es necesario desbloquear el talento pasivo “Impulso y... ¡salto triple!”.",
+      "3": "<br/>",
+      "4": "Además, cuando Varesa está en el modo de avance impetuoso del estado de bendición noctámbula, el consumo de pts. de noctambulismo o flogisto disminuye en un 30%."
+    }
+  },
+  "constellation2": {
+    "name": "Más allá de la luz",
+    "description": {
+      "0": "Tras ejecutar un Ataque Descendente, Varesa entra en el estado de propulsión extrema independientemente de si está en el estado de fervor ardiente o no.",
+      "1": "Mientras está en el estado de propulsión extrema, su RES a interrupción aumenta aún más.",
+      "2": "Además, al golpear a un enemigo con su Ataque Descendente, Varesa recupera 11.5 pts. de Energía Elemental."
+    }
+  },
+  "constellation3": {
+    "name": "Determinación inquebrantable",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>¡Descenso fulgurante!</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "El valor de seguir adelante",
+    "description": {
+      "0": "Al usar la Habilidad Definitiva, <strong>¡Descenso fulgurante!</strong>, se producen distintos efectos según el estado en el que se encuentre Varesa:",
+      "1": [
+        "Si Varesa no está en el estado de fervor ardiente o de propulsión extrema, obtiene el efecto de “pujanza intrépida”, el cual aumenta el daño del impacto contra el suelo de su Ataque Descendente en una cantidad equivalente al 500% de su ATQ durante 15 s, hasta un aumento máximo de 20 000 pts. Este efecto desaparece al golpear a un enemigo con un Ataque Descendente o cuando termina su duración.",
+        "Si Varesa está en el estado de fervor ardiente o de propulsión extrema, el daño infligido con <strong>¡Descenso fulgurante!</strong> aumenta en un 100%."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Pensamientos en un cálido aire",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Ataque Normal: ¡Usa la cabeza!</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Triunfo de la heroína justiciera",
+    "description": {
+      "0": "Al entrar en el estado de propulsión extrema, Varesa recupera 30 pts. de Energía Elemental.",
+      "1": "La Prob. CRIT del Ataque Descendente de Varesa y de su Habilidad Definitiva, <strong>¡Descenso fulgurante!</strong>, aumenta en un 10%, y su Daño CRIT aumenta en un 100%.",
+      "2": "Además, al mantener pulsado para liberar la Habilidad Elemental, <strong>Salto del arcoíris nocturno</strong>, o al pulsar una vez la Habilidad Elemental en el modo de avance impetuoso, Varesa recupera todos los pts. de noctambulismo."
+    }
+  }
+}

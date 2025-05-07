@@ -38,7 +38,7 @@
   "description": "Figlia del clan Kamisato della Commissione Yashiro. Rispettabile ed elegante, nonché saggia e forte.",
   "constellationName": "Grus Nivis",
   "auto": {
-    "name": "Arte Kamisato - Kabuki",
+    "name": "Kabuki",
     "fields": {
       "normal": {
         "0": "<strong>Attacco normale</strong>",

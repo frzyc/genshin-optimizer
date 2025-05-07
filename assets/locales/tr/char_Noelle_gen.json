@@ -71,7 +71,7 @@
   "description": "Favonius Şövalyelerine sadakatle hizmet eden bir hizmetçi. Bir gün tam teşekküllü bir şövalye olmayı hayal ediyor.",
   "constellationName": "Yüreğin Kalkanı",
   "auto": {
-    "name": "Favonius Kılıç Tekniği - Hizmetçi",
+    "name": "Hizmetçi",
     "fields": {
       "normal": {
         "0": "<strong>Normal Saldırı</strong>",

@@ -69,7 +69,7 @@
   "description": "Uma empregada em serviço dos Cavaleiros de Favonius que sonha em se juntar aos cavaleiros um dia.",
   "constellationName": "Parma Cordis",
   "auto": {
-    "name": "Técnica de Espada de Favonius - Empregada",
+    "name": "Empregada",
     "fields": {
       "normal": {
         "0": "<strong>Ataque Normal</strong>",

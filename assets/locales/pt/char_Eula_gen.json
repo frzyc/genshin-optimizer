@@ -43,7 +43,7 @@
   "description": "A Cavaleira das Ondas, uma descendente da antiga aristocracia, e a Capitã de Reconhecimento dos Cavaleiros de Favonius. A razão pela qual uma descendente dos antigos nobres poderia se juntar aos Cavaleiros permanece um grande mistério em Mondstadt até os dias de hoje.",
   "constellationName": "Aphros Delos",
   "auto": {
-    "name": "Técnica da Espada de Favonius - Nobreza",
+    "name": "Nobreza",
     "fields": {
       "normal": {
         "0": "<strong>Ataque Normal</strong>",

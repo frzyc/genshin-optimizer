@@ -44,7 +44,7 @@
   "description": "\"อัศวิน Spindrift\" จากตระกูลเก่าแก่ หัวหน้ากองสอดแนมของกองอัศวินแห่ง Favonius ทั้งที่เป็นถึงลูกหลานของชนชั้นสูง แต่เธอกลับเข้าร่วมกับกองอัศวินแห่ง Favonius ซึ่งถือเป็นศัตรูตัวฉกาจของตระกูล เหตุการณ์ดังกล่าวยังคงเป็นปริศนาของ Mondstadt มาจนทุกวันนี้",
   "constellationName": "Aphros Delos",
   "auto": {
-    "name": "Favonius Bladework - Edel",
+    "name": "Edel",
     "fields": {
       "normal": {
         "0": "<strong>โจมตีปกติ</strong>",

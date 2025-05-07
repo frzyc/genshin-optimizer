@@ -4,7 +4,7 @@
   "description": "Le jeune, mais néanmoins très talentueux, chef du Clan Kamisato de la Commission culturelle. Cultivé et poli, c'est un homme aux multiples facettes.",
   "constellationName": "Cypressus Custos",
   "auto": {
-    "name": "École Kamisato - Transition",
+    "name": "Transition",
     "fields": {
       "normal": {
         "0": "<strong>Attaque normale</strong>",
@@ -53,7 +53,7 @@
         " Il est impossible d'utiliser des attaques chargées ou plongeantes."
       ],
       "7": "<br/>",
-      "8": "L'état Réflexion torrentielle cesse lorsqu'Ayato quitte le champ de bataille. Utiliser à nouveau École Kamisato : Beauté réfléchie dans l'état Réflexion torrentielle y mettra fin.",
+      "8": "L'état Réflexion torrentielle cesse lorsque Ayato quitte le champ de bataille. Utiliser à nouveau École Kamisato : Beauté réfléchie dans l'état Réflexion torrentielle y mettra fin.",
       "9": "<br/>",
       "10": "<i>« Quand, je me demande, en êtes-vous arrivé à penser que vous aviez le dessus ? »</i>",
       "11": "<i>Ayato est ainsi qu'il s'agisse de prouesses martiales ou d'intrigues politiques... Cependant, afin de préserver la dignité des autres Commissaires, il ne leur dit pas de telles choses en face. Ainsi, seuls Thomas, Itto et Ayaka ont déjà entendu ces mots.</i>"
@@ -135,7 +135,7 @@
   "constellation2": {
     "name": "Source du monde",
     "description": {
-      "0": "Le <strong>flash onduleux</strong> peut maintenant être cumulé 5 fois maximum. Lorsqu'Ayato possède au moins 3 cumuls de flash onduleux, ses PV max augmentent de 50 %."
+      "0": "Le <strong>flash onduleux</strong> peut maintenant être cumulé 5 fois maximum. Lorsque Ayato possède au moins 3 cumuls de flash onduleux, ses PV max augmentent de 50 %."
     }
   },
   "constellation3": {

@@ -1,0 +1,170 @@
+{
+  "name": "Escoffier",
+  "title": "Kulinarischer Glanz",
+  "description": "Die allseits bekannte, ehemalige Küchenchefin des Hotel Debord in Fontaine, eine Pionierin der „Präzisions-Kochkunst“, die den Titel „Pâtissière Suprême“ trägt und für ihre höchsten kulinarischen Anforderungen berühmt ist.",
+  "constellationName": "Dulciaria Structura",
+  "auto": {
+    "name": "Kochkünste",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Angriff nach oben aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Niedrigtemperaturgaren",
+    "description": {
+      "0": "Werde Zeuge der wahren Bedeutung des „Kochens“! Drücke oder halte gedrückt, damit Escoffier die berühmten Kochtechniken Fontaines auf verschiedene Weise zur Schau stellt.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Aktiviert den multifunktionalen Gastro-Mecha im Modus „Kaltlagerung“ und fügt den Gegnern in der Umgebung <cryo>Kryo-Flächenschaden</cryo> zu.",
+      "4": "<br/>",
+      "5": "<strong>Gastro-Mecha – Modus „Kaltlagerung“</strong>",
+      "6": "Folgt der aktuellen Figur und feuert in gewissen Abständen „Frostparfaits“ auf Gegner in der Nähe ab, die <cryo>Kryo-Schaden</cryo> verursachen.",
+      "7": "<br/>",
+      "8": "<strong>Arkhe: Ousia</strong>",
+      "9": "Erschafft in bestimmten Abständen, wenn Escoffier den Gastro-Mecha im Modus „Kaltlagerung“ aktiviert, eine Wogenklinge, die mit Ousia versehenen <cryo>Kryo-Flächenschaden</cryo> verursacht.",
+      "10": "<br/>",
+      "11": "<strong>Gedrückt halten</strong>",
+      "12": "Aktiviert den multifunktionalen Gastro-Mecha im Modus <strong>Improvisationskochen</strong>."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH Frostparfait",
+      "2": "Dauer Modus „Kaltlagerung“",
+      "3": "Wogenklinge-SCH",
+      "4": "Wogenklinge-Intervall",
+      "5": "Abklingzeit für Drücken",
+      "6": "Abklingzeit für Gedrückthalten",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Schnitttechnik",
+    "description": {
+      "0": "Mit ihren herausragenden Messerfertigkeiten verursacht Escoffier <cryo>Kryo-Flächenschaden</cryo> und stellt allen Truppenmitgliedern in der Nähe LP basierend auf Escoffiers ANG wieder her."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Heilung",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Köstlichkeiten heilen besser als Kräuter",
+    "description": {
+      "0": "Verleiht Escoffier nach Anwenden der Spezialfähigkeit <strong>Schnitttechnik</strong> den 9 s haltenden Effekt „Reha-Kost“: Stellt aktuellen Figuren in der Nähe jede Sekunde LP basierend auf 138,24 % von Escoffiers ANG wieder her."
+    }
+  },
+  "passive2": {
+    "name": "Inspirierte Würze",
+    "description": {
+      "0": "Verringert, wenn sich 1/2/3/4 Figuren mit <hydro>Hydro</hydro>- oder <cryo>Kryo</cryo>-Kraft in der Truppe befinden, beim Treffen von Gegnern mit Escoffiers Elementarfähigkeit <strong>Niedrigtemperaturgaren</strong> oder ihrer Spezialfähigkeit <strong>Schnitttechnik</strong> den <hydro>Hydro</hydro>- und <cryo>Kryo</cryo>-WDS dieser Gegner 12 s lang um 5/10/15/55 %."
+    }
+  },
+  "passive3": {
+    "name": "Jederzeit improvisiertes Kochen",
+    "description": {
+      "0": "Aktiviert beim Gedrückthalten der Elementarfähigkeit <strong>Niedrigtemperaturgaren</strong> den Multifunktionalen Gastro-Mecha im Modus „Improvisationskochen“.",
+      "1": "<br/>",
+      "2": "<strong>Gastro-Mecha – Modus „Improvisationskochen“</strong>",
+      "3": [
+        " Lässt den Gastro-Mecha erscheinen, der Elementarangriffe absorbieren kann und die Zutaten, die Escoffier zuvor in den Mecha gegeben hat, in ein leckeres Gericht umwandelt, sobald die absorbierte Elementarenergie die benötigte Menge erreicht.",
+        " Escoffier braucht Zeit, um neue Zutaten zu besorgen. Nur eine bestimmte Menge Gerichte kann pro Woche auf diese Weise zubereitet werden. Die Anzahl der Gerichte, die auf diese Weise zubereitet werden können, wird jeden Montag um 4 Uhr morgens zurückgesetzt."
+      ]
+    }
+  },
+  "constellation1": {
+    "name": "Tanz zur Vorbereitung der Geschmacksknospen",
+    "description": {
+      "0": "Erhöht den KSCH des von allen Truppenmitgliedern in der Nähe verursachten <cryo>Kryo-Schadens</cryo> 15 s lang um 60 %, nachdem Escoffier ihre Elementarfähigkeit <strong>Niedrigtemperaturgaren</strong> oder ihre Spezialfähigkeit <strong>Schnitttechnik</strong> angewendet hat, sofern der Elementartyp aller 4 Truppenmitglieder <hydro>Hydro</hydro> oder <cryo>Kryo</cryo> ist.",
+      "1": "Das passive Talent „Inspirierte Würze“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation2": {
+    "name": "Duftende und schmackhafte Kochkunst",
+    "description": {
+      "0": "Verleiht Escoffier beim Aktivieren des Gastro-Mechas im <strong>Modus „Kaltlagerung“</strong> den 15 s haltenden Effekt „Frisch zu Tisch“: Verleiht Escoffier 5 Stapelungen „Kalte Speise“ und verbraucht, wenn aktive Figuren in der Nähe außer Escoffier selbst an Gegnern mit ihren Standardangriffen, heftigen Schlägen, Angriffen aus dem Fall, Elementar- und Spezialfähigkeiten <cryo>Kryo-Schaden</cryo> verursachen, 1 Stapelung „Kalte Speise“, was den verursachten Schaden um 240 % von Escoffiers ANG erhöht.",
+      "1": "Beim Treffen mehrerer Gegner gleichzeitig mit <cryo>Kryo-Schaden</cryo> wird die entsprechende Menge an Stapelungen von „Kalte Speise“ verbraucht."
+    }
+  },
+  "constellation3": {
+    "name": "Backmagie des Karamellisierens",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Niedrigtemperaturgaren</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Geheimrezept für Rosmarinduft",
+    "description": {
+      "0": "Verlängert die Wirkungsdauer von <strong>Reha-Kost</strong> um 6 s. Erhöht die während der Wirkungsdauer durch <strong>Reha-Kost</strong> ausgelöste Heilung mit einer Wahrscheinlichkeit in Höhe von Escoffiers KT um 100 % und stellt Escoffier 2 Punkte Elementarenergie wieder her. Dieser Effekt kann während der Wirkungsdauer von <strong>Reha-Kost</strong> höchstens 7-mal ausgelöst werden.",
+      "1": "Das passive Talent „Köstlichkeiten heilen besser als Kräuter“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation5": {
+    "name": "Sinfonie der tausend Soßen",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Schnitttechnik</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Kunterbunter Nachtisch",
+    "description": {
+      "0": "Verstärkt <strong>Gastro-Mecha – Modus „Kaltlagerung“</strong>:",
+      "1": [
+        " Schießt beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall der aktuellen eigenen Figur in der Truppe ein zusätzliches besonderes Frostparfait ab, das <cryo>Kryo-Flächenschaden</cryo> in Höhe von 500 % von Escoffiers ANG verursacht. Hierdurch verursachter Schaden gilt als Schaden der Elementarfähigkeit."
+      ],
+      "2": "0,5 s Abklingzeit, 6-mal während der Wirkungsdauer von Gastro-Mecha – Modus „Kaltlagerung“ auslösbar."
+    }
+  }
+}

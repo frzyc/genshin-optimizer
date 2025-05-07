@@ -1,0 +1,220 @@
+{
+  "name": "Varesa",
+  "title": "Ócio Vigoroso",
+  "description": "Uma guerreira e também dona de um pomar no relaxado e tranquilo Coletivo da Fartura, que adora heróis poderosos e um monte de comida!",
+  "constellationName": "Mascara Luctatori",
+  "auto": {
+    "name": "Chifres Poderosos",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Tenho que tentar lutar como os maiores campeões lutadores! Varesa realiza até três ataques, causando <electro>Dano Electro</electro>"
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para dar uma cabeçada contra os inimigos em frente, causando <electro>Dano Electro</electro> com alinhamento Espírito da Noite, e aproveitando o impulso para saltar no ar."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Se lança do ar para atacar o chão, causando dano aos oponentes ao longo do caminho, e ao impactar o chão causa <electro>Dano Electro em AdE</electro> com alinhamento Espírito da Noite. Se Varesa estiver em combate, ou se essa Onda Mergulhadora atingir um inimigo, ela obtém 25 pontos de Espírito da Noite. Quando Varesa alcançar o limite máximo de pontos de Espírito da Noite obtidos desta forma, entrará no estado Calor Escaldante."
+      },
+      "fieryPassion": {
+        "0": "<strong>Calor Escaldante</strong>",
+        "1": "Quando estiver nesse estado, os Ataques Normais, Carregados e Imersivos de Varesa obtêm os respectivos fortalecimentos:"
+      },
+      "fpNormal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Lutando como estrela lutadora! Lança até 3 ataques, causando mais <electro>Dano Electro</electro>."
+      },
+      "fpCharged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para avançar contra os inimigos, causando mais <electro>Dano Electro</electro> com alinhamento Espírito da Noite, e aproveitando o impulso para saltar no ar."
+      },
+      "fpPlunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Consome todos os pontos de Espírito da Noite para mergulhar do ar até o chão, causando Dano contra os inimigos no caminho, e causando mais <electro>Dano Electro</electro> com alinhamento Espírito da Noite ao impactar contra o chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Consumo de Stamina de Ataque Carregado",
+      "5": "Dano Durante a Queda",
+      "6": "Dano de Queda de Baixa/Alta Altitude",
+      "7": "Dano do 1° Golpe do Estado Calor Escaldante",
+      "8": "Dano do 2° Golpe do Estado Calor Escaldante",
+      "9": "Dano do 3° Golpe do Estado Calor Escaldante",
+      "10": "Dano de Ataque Carregado do Estado Calor Escaldante",
+      "11": "Consumo de Stamina de Ataque Carregado do Estado Calor Escaldante",
+      "12": "Dano Durante a Queda no Estado Calor Escaldante",
+      "13": "Dano de Queda de Baixa/Alta Altitude no Estado Calor Escaldante",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cavalgando o Arco-Íris da Noite",
+    "description": {
+      "0": "Com passos velozes como raios e trovões, Varesa exibe o verdadeiro espírito da luta livre, avançando em frente uma certa distância, e causando <electro>Dano Electro</electro> com alinhamento Espírito da Noite contra os inimigos no caminho.",
+      "1": "Depois de lançar, Varesa obtém 20 pontos de Espírito da Noite, e obtém o efeito Ataque Perseguidor: na sua duração, aumenta a Resistência contra Interrupção de Varesa, e ao pressionar seu Ataque Normal, ela realiza um Ataque Carregado rápido, e esse Ataque Carregado rápido não consumirá Stamina. O efeito Ataque Perseguidor desaparecerá depois que o Ataque Carregado for lançado.",
+      "2": "Exibe um estilo de luta diferente se pressionar ou manter pressionado.",
+      "3": "<br/>",
+      "4": "<strong>Pressionar</strong>",
+      "5": "Avança uma certa distância em frente.",
+      "6": "<br/>",
+      "7": "<strong>Manter pressionado</strong>",
+      "8": "Varesa entra no estado Bênção do Espírito da Noite, e troca para o modo Investida Frenética.",
+      "9": "<br/>",
+      "10": "<strong>Investida Frenética</strong>",
+      "11": "Consome continuamente os pontos de Espírito da Noite. Nesse estado, a Veloc. Mov. e a Resistência contra Interrupção de Varesa aumentam, e ela pode usar os diferentes terrenos para saltar no ar, ou pode consumir mais pontos de Espírito da Noite para se locomover sobre a água e Flogisto Líquido, ficando imune ao Dano do Flogisto Líquido.",
+      "12": "<br/>",
+      "13": "<strong>Bênção do Espírito da Noite: Varesa</strong>",
+      "14": "Quando acabar de consumir os pontos de Espírito da Noite, o estado Bênção do Espírito da Noite de Varesa acabará. Quando Varesa estiver no modo Investida Frenética ou no estado Calor Escaldante, será considerado como se ela estivesse na Bênção do Espírito da Noite o tempo inteiro.",
+      "15": "<br/>",
+      "16": "Possui 2 usos. Quando Varesa entra no estado Calor Escaldante, ela obterá um uso adicional do pressionar rápido de sua Habilidade Elemental, e seu Dano será aumentado.",
+      "17": "<br/>",
+      "18": "<strong>Calor Escaldante</strong>",
+      "19": [
+        " Quando não está no estado Calor Escaldante, Varesa pode fazer Ataques Imersivos para regenerar pontos de Espírito da Noite. Quando os regenerar até o máximo dessa forma, ou quando lançar o Supremo <strong>A Estrela Chegou!</strong>, Varesa entra no estado Calor Escaldante.",
+        " Quando estiver no estado Calor Escaldante, o Ataque Normal, a Habilidade Elemental e o Supremo de Varesa obterão fortalecimentos respectivos, e lançará um Supremo especial pouco tempo após realizar um Ataque Imersivo.",
+        " O estado Calor Escaldante dura até 15s, e acabará quando os pontos de Espírito da Noite se exaurirem, ou um certo tempo após sair de uma batalha."
+      ],
+      "20": "<br/>",
+      "21": "<i>\"Agora, eu sou a heroína.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Investida",
+      "1": "Dano de Investida do Estado Calor Escaldante",
+      "2": "Duração do Ataque Perseguidor",
+      "3": "Limite de Pontos de Espírito da Noite",
+      "4": "Tempo de Recarga",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "A Estrela Chegou!",
+    "description": {
+      "0": "Salta no ar para usar o impulso da queda para fazer um poderos Chute Voador, causando <electro>Dano Electro em AdE</electro> com alinhamento Espírito da Noite contra os inimigos, igual aos heróis da justiça nos pergaminhos para crianças!",
+      "1": "Depois de lançar, Varesa regenera seus pontos de Espírito da Noite até o máximo, e entra no estado Calor Escaldante.",
+      "2": "<br/>",
+      "3": "Quando está no Calor Escaldante, o Supremo de Varesa causará mais <electro>Dano Electro em AdE</electro> com alinhamento Espírito da Noite contra os inimigos.",
+      "4": "<br/>",
+      "5": "Além disso, quando Varesa fizer um Ataque Imersivo durante o estado Calor Escaldante, pouco tempo depois entrará no estado \"Força Extrema\".",
+      "6": "<br/>",
+      "7": "<strong>Força Extrema</strong>",
+      "8": "Aumenta a Resistência contra Interrupção de Varesa. Nesse estado, Varesa ignorará a recarga do Supremo, e consumirá menos Energia Elemental, lançando o Supremo especial \"A Estrela Chegou: Grande Colapso Vulcânico\": lança um excepcionalmente poderoso Ataque Imersivo: Fúria do Redemoinho Vulcânico, causando <electro>Dano Electro em AdE</electro> com alinhamento Espírito da Noite ao impactar o chão, e sai do estado Força Extrema. Esse Dano é considerado Dano de Ataque Imersivo.",
+      "9": "Depois de lançar a Habilidade Elemental, sai do estado Força Extrema.",
+      "10": "<i>Na verdade, o nome original que Varesa deu para esse movimento foi \"Chute Supersônico Rompedor dos Céus e da Dinâmica Heroica Invencível da Justiça\". Entretanto, esse nome era muito grande, e ela passou a ter vergonha de gritá-lo, mesmo com sua máscara. Por isso, ela preferiu utilizar o que hoje é o seu nome atual.</i>"
+    },
+    "skillParams": {
+      "0": "Dano do Chute Voador",
+      "1": "Dano do Chute Voador do Estado Calor Escaldante",
+      "2": "Recarga",
+      "3": "Energia Elemental",
+      "4": "Dano do Grande Colapso Vulcânico",
+      "5": "Energia Elemental do Grande Colapso Vulcânico",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Poder e Salto Triplo!",
+    "description": {
+      "0": "Depois de lançar a Habilidade Elemental <strong>Cavalgando o Arco-Íris da Noite</strong>, Varesa obtém Imersão Colorida por 5s.",
+      "1": "Nesse período, quando Varesa fizer um Ataque Imersivo, aumenta o Dano causado por Onda Mergulhadora em 50% de ATQ. Se Varesa estiver no estado Calor Escaldante, aumenta o Dano causado pela Onda Mergulhadora em 180% de ATQ.",
+      "2": "<br/>",
+      "3": "O efeito Imersão Colorida será removido depois que a Onda Mergulhadora atingir um inimigo ou quando a duração acabar."
+    }
+  },
+  "passive2": {
+    "name": "A Heroína Tá de Volta!",
+    "description": {
+      "0": "Quando um membro próximo da equipe desencadeia a Explosão do Espírito da Noite, aumenta o ATQ de Varesa em 35% por 12s. Esse efeito pode ser acumulado até 2 vezes, e a duração de cada acúmulo é contada de forma independente."
+    }
+  },
+  "passive3": {
+    "name": "Presente do Reino da Noite: Chamas Queimadoras do Mal",
+    "description": {
+      "0": "Depois de consumir pontos de Espírito da Noite, Varesa passará a consumir Flogisto para manter o modo \"Investida Frenética\" do estado Bênção do Espírito da Noite.",
+      "1": "Quando está em uma área de Natlan com Dispositivos de Flogisto, ou a uma certa altura no ar, ela pode realizar a Transmissão do Espírito da Noite: Varesa. Quando o personagem ativo está correndo, ou em um estado de movimento especial concedido por um Talento, ou a uma certa altura no ar e ao trocar para Varesa: ela entra no estado Bênção do Espírito da Noite, trocando para o modo Investida Frenética e obtendo 20 pontos de Espírito da Noite. Essa Transmissão do Espírito da Noite pode ser desencadeada uma vez a cada 10s por equipe.",
+      "2": "Além disso, nas áreas de Natlan onde existe o mecanismo de Flogisto, ao utilizar a diferença de terreno para saltar, Varesa não sofrerá Dano de Queda."
+    }
+  },
+  "passive": {
+    "name": "Coração Incinerador, Em Frente!",
+    "description": {
+      "0": "Varesa obtém um aumento de velocidade ao correr. Quando não está em combate, correr consumirá mais Stamina.",
+      "1": "Além disso, quando está em uma área de Natlan com Dispositivo de Flogisto e um personagem da equipe utilizar um Alimento, poderá regenerar 20 de Flogisto. Esse efeito pode ser desencadeado uma vez a cada 10s, e não surtirá efeito em Domínios, Domínios Dizimados e Abismo do Espiral."
+    }
+  },
+  "constellation1": {
+    "name": "Fervor Inextinguível",
+    "description": {
+      "0": "O efeito do Talento Passivo \"Poder e Salto Triplo!\" é fortalecido.",
+      "1": "Quando fizer um Ataque Imersivo: Fúria do Redemoinho Vulcânico especial, Varesa obtém Imersão Colorida por 5s.",
+      "2": "Enquanto Imersão Colorida durar, independentemente de Varesa estar ou não no estado Calor Escaldante, quando realizar um Ataque Imersivo, o Dano causado pela Onda Mergulhadora será convertido em um adicional de 180% do ATQ. Esse efeito requer que o Talento Passivo \"Poder e Salto Triplo!\" esteja desbloqueado.",
+      "3": "<br/>",
+      "4": "Quando Varesa estiver no modo Investida Frenética do estado Bênção do Espírito da Noite, reduz o consumo de pontos de Espírito da Noite ou de Flogisto em 30%."
+    }
+  },
+  "constellation2": {
+    "name": "Além da Luz",
+    "description": {
+      "0": "Independentemente de Varesa estar ou não no estado Calor Escaldante, entrará no estado Força Extrema quando fizer um Ataque Imersivo.",
+      "1": "Quando estiver em Força Extrema, sua Resistência contra Interrupção será aumentada ainda mais.",
+      "2": "Além disso, quando a Onda Mergulhadora do Ataque Imersivo de Varesa atingir um inimigo, regenerará 11.5 de Energia Elemental para ela."
+    }
+  },
+  "constellation3": {
+    "name": "Determinação Inabalável",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong>A Estrela Chegou!</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Coragem para Enfrentar o Caminho Futuro",
+    "description": {
+      "0": "Ao lançar o Supremo <strong>A Estrela Chegou!</strong>, gera efeitos fortalecedores correspondentes de acordo com o estado de Varesa. Se Varesa:",
+      "1": [
+        " Não estiver no estado Calor Escaldante ou Força Extrema: Varesa obtém o efeito Fúria Corajosa por 15s, aumentando o Dano causado pela Onda Mergulhadora do Ataque Imersivo de Varesa com base em 500% de seu ATQ. É possível aumentar em até 20.000 dessa forma. Esse efeito será removido quando a Onda Mergulhadora atingir um inimigo ou quando sua duração acabar.",
+        " Quando estiver no estado Calor Escaldante ou Força Extrema: aumenta o Dano causado por essa instância do Supremo <strong>A Estrela Chegou!</strong> em 100%."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Pensamentos à Deriva em uma Brisa Suave",
+    "description": {
+      "0": "Aumenta o nível do <strong>Ataque Normal: Chifres Poderosos</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Triunfo da Heroína",
+    "description": {
+      "0": "Ao entrar no estado Força Extrema, regenera 30 pontos de Energia Elemental para Varesa.",
+      "1": "Aumenta a Taxa CRIT do Ataque Imersivo e do Supremo <strong>A Estrela Chegou!</strong> de Varesa em 10%, e o Dano CRIT em 100%.",
+      "2": "Além disso, quando Varesa mantém pressionado para lançar sua Habilidade Elemental <strong>Cavalgando o Arco-Íris da Noite</strong>, ou quando pressionar sua Habilidade Elemental durante \"Investida Frenética\", Varesa regenera seus pontos de Espírito da Noite até o limite máximo."
+    }
+  }
+}
