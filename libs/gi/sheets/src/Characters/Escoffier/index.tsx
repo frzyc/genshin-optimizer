@@ -126,7 +126,11 @@ const c1AfterSkillBurst_cryo_critDMG_ = greaterEq(
   greaterEq(
     input.asc,
     4,
-    equal(hydroCryoTeammates, 4, dm.constellation1.cryo_critDMG_)
+    equal(
+      hydroCryoTeammates,
+      4,
+      equal(condC1AfterSkillBurst, 'on', dm.constellation1.cryo_critDMG_)
+    )
   )
 )
 
