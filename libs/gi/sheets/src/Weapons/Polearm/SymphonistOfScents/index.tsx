@@ -1,6 +1,12 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { equal, input, subscript, sum, unequal } from '@genshin-optimizer/gi/wr'
-import { cond, st, stg } from '../../../SheetUtil'
+import {
+  equalStr,
+  input,
+  subscript,
+  sum,
+  unequal,
+} from '@genshin-optimizer/gi/wr'
+import { cond, nonStackBuff, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -19,9 +25,10 @@ const offField_atk_ = unequal(
 )
 
 const [condHealingPath, condHealing] = cond(key, 'healing')
-const healing_atk_ = equal(
-  condHealing,
-  'on',
+const nonstackWrite = equalStr(condHealing, 'on', input.charKey)
+const [healing_atk_, healing_atk_inactive] = nonStackBuff(
+  'symphonist',
+  'atk_',
   subscript(input.weapon.refinement, team_atk_arr)
 )
 
@@ -29,7 +36,10 @@ const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_: sum(atk_, offField_atk_),
   },
-  teamBuff: { premod: { atk_: healing_atk_ } },
+  teamBuff: {
+    premod: { atk_: healing_atk_ },
+    nonStacking: { symphonist: nonstackWrite },
+  },
 })
 
 const sheet: IWeaponSheet = {
@@ -56,6 +66,9 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: healing_atk_,
+            },
+            {
+              node: healing_atk_inactive,
             },
             {
               text: stg('duration'),

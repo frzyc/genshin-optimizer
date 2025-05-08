@@ -10,6 +10,7 @@ import {
   subscript,
   sum,
   tally,
+  target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
@@ -135,10 +136,20 @@ const c1AfterSkillBurst_cryo_critDMG_ = greaterEq(
 )
 
 const [condC2StacksPath, condC2Stacks] = cond(key, 'c2Stacks')
-const c2Stacks_cryo_dmgInc = greaterEq(
+const c2Stacks_cryo_dmgIncDisp = greaterEq(
   input.constellation,
   2,
-  prod(percent(dm.constellation2.dmgInc), input.total.atk)
+  equal(
+    condC2Stacks,
+    'on',
+    prod(percent(dm.constellation2.dmgInc), input.total.atk)
+  ),
+  { path: 'cryo_dmgInc', isTeamBuff: true }
+)
+const c2Stacks_cryo_dmgInc = unequal(
+  target.charKey,
+  key,
+  c2Stacks_cryo_dmgIncDisp
 )
 
 const dmgFormulas = {
@@ -404,7 +415,7 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: c2Stacks_cryo_dmgInc,
+              node: c2Stacks_cryo_dmgIncDisp,
             },
             {
               text: st('triggerQuota'),
