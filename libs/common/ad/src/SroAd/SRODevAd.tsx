@@ -2,7 +2,8 @@ import { NextImage } from '@genshin-optimizer/common/ui'
 import { Link, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
-import { DISCORD_LINK } from '../util'
+import type { AdDims } from '../type'
+import { DISCORD_LINK } from '../urlUtil'
 import sro from './sro.png'
 export function SRODevAd({ children }: { children: ReactNode }) {
   return (
@@ -38,7 +39,7 @@ export function SRODevAd({ children }: { children: ReactNode }) {
     </Box>
   )
 }
-export function canshowSroDevAd(height: number) {
-  if (height < 120) return false
+export function getSRODevAd(dims: AdDims) {
+  if ((dims.height ?? 120) < 120) return false
   return true
 }

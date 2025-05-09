@@ -27,6 +27,7 @@
     "allowSyntheticDefaultImports": false,
     "typeRoots": ["./node_modules/@types", "./node_modules", "./types"],
     "paths": {
+      "@genshin-optimizer/common/ad": ["libs/common/ad/src/index.ts"],
       "@genshin-optimizer/common/database": [
         "libs/common/database/src/index.ts"
       ],

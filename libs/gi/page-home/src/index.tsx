@@ -1,5 +1,10 @@
+import {
+  AdResponsive,
+  GO_LOOTBAR_LINK,
+  go_lootbar_banner,
+} from '@genshin-optimizer/common/ad'
 import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
-import { AdResponsive, LOOTBAR_LINK, lootbar } from '@genshin-optimizer/gi/ui'
+import { GOAdWrapper } from '@genshin-optimizer/gi/ui'
 import DescriptionIcon from '@mui/icons-material/Description'
 import {
   Box,
@@ -41,7 +46,7 @@ export default function PageHome() {
         >
           <QuickLinksCard />
           <ResinCard />
-          <AdResponsive dataAdSlot="6687816711" />
+          <AdResponsive dataAdSlot="6687816711" Ad={GOAdWrapper} />
         </Grid>
         <Grid
           item
@@ -102,7 +107,7 @@ function LootbarCard() {
     <CardThemed>
       <CardActionArea
         LinkComponent={Link}
-        href={LOOTBAR_LINK}
+        href={GO_LOOTBAR_LINK}
         target="_blank"
         sx={{ margin: 'auto' }}
         aria-label="Visit Lootbar.gg for Genshin Impact top-ups"
@@ -110,7 +115,7 @@ function LootbarCard() {
         <Box
           component={NextImage ? NextImage : 'img'}
           alt="Lootbar.gg Banner"
-          src={lootbar}
+          src={go_lootbar_banner}
           sx={{ width: '100%', height: 'auto', marginBottom: '-7px' }}
         />
       </CardActionArea>

@@ -1,11 +1,18 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { ZCard } from '@genshin-optimizer/zzz/ui'
+import {
+  AdResponsive,
+  ZO_LOOTBAR_LINK,
+  zo_lootbar_banner,
+} from '@genshin-optimizer/common/ad'
+import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
+import { ZCard, ZOAdWrapper } from '@genshin-optimizer/zzz/ui'
 import DescriptionIcon from '@mui/icons-material/Description'
 import {
   Box,
+  CardActionArea,
   CardContent,
   CardHeader,
   Grid,
+  Link,
   Typography,
   useMediaQuery,
   useTheme,
@@ -35,6 +42,7 @@ export default function PageHome() {
             sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
             <IntroCard />
+            <LootbarCard />
             <Roadmap />
             <ZCard>
               <PatchNotesCard />
@@ -49,6 +57,7 @@ export default function PageHome() {
           >
             <QuickLinksCard />
             <TeamCard />
+            <AdResponsive dataAdSlot="2501378510" Ad={ZOAdWrapper} />
           </Grid>
         </Grid>
       </Box>
@@ -58,6 +67,7 @@ export default function PageHome() {
     return (
       <Box my={1} display="flex" flexDirection="column" gap={1}>
         <IntroCard />
+        <LootbarCard />
         <QuickLinksCard />
         <TeamCard />
         <Roadmap />
@@ -102,5 +112,25 @@ function PatchNotesCard() {
         )}
       </CardContent>
     </CardThemed>
+  )
+}
+function LootbarCard() {
+  return (
+    <ZCard>
+      <CardActionArea
+        LinkComponent={Link}
+        href={ZO_LOOTBAR_LINK}
+        target="_blank"
+        sx={{ margin: 'auto' }}
+        aria-label="Visit Lootbar.gg for Zenless Zone Zero top-ups"
+      >
+        <Box
+          component={NextImage ? NextImage : 'img'}
+          alt="Lootbar.gg Banner"
+          src={zo_lootbar_banner}
+          sx={{ width: '100%', height: 'auto', marginBottom: '-7px' }}
+        />
+      </CardActionArea>
+    </ZCard>
   )
 }
