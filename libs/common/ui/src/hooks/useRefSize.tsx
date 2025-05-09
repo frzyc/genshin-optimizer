@@ -1,15 +1,16 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { useDeferredValue, useEffect, useRef, useState } from 'react'
 
 /**
  * NOTE: the values of `width` & `height` starts at 0, since ref takes a rendering cycle to attach.
  * @returns
  */
-export function useRefSize() {
+export function useRefSize(deferred = false) {
   const ref = useRef<HTMLElement>()
   const [width, setWidth] = useState(0)
   const [height, setHeight] = useState(0)
-
+  const deferredWidth = useDeferredValue(width)
+  const deferredHeight = useDeferredValue(height)
   useEffect(() => {
     const handleResize = () => {
       setWidth(ref.current?.clientWidth ?? 0)
@@ -21,5 +22,6 @@ export function useRefSize() {
       window.removeEventListener('resize', handleResize)
     }
   }, []) // Safe to keep empty as we only want mount/unmount behavior
+  if (deferred) return { width: deferredWidth, height: deferredHeight, ref }
   return { width, height, ref }
 }

@@ -1,9 +1,10 @@
 import { Link, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
-import { DISCORD_LINK } from '../util'
+import type { AdDims } from '../type'
+import { DISCORD_LINK } from '../urlUtil'
 
-export function GODevAd({ children }: { children: ReactNode }) {
+function GODevAd({ children }: { children: ReactNode }) {
   return (
     <Box
       component={Link}
@@ -43,7 +44,7 @@ export function GODevAd({ children }: { children: ReactNode }) {
     </Box>
   )
 }
-export function canshowGoDevAd(height: number) {
-  if (height < 120) return false
-  return true
+export function getGODevAd(dims: AdDims) {
+  if ((dims.height ?? 120) >= 120) return GODevAd
+  return
 }

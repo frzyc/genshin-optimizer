@@ -12,8 +12,8 @@ export function AdButtons({ onClose }: { onClose: MouseEventHandler }) {
         height: '1em',
         stroke: '#00aecd',
         fill: '#00aecd',
-        right: 0,
-        top: 0,
+        right: 2,
+        top: 2,
         zIndex: 100,
       }}
       onClick={onClose}
