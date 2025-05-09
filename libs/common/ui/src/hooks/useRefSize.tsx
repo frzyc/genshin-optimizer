@@ -3,6 +3,7 @@ import { useDeferredValue, useEffect, useRef, useState } from 'react'
 
 /**
  * NOTE: the values of `width` & `height` starts at 0, since ref takes a rendering cycle to attach.
+ * @param deferred - When true, returns deferred values that update less frequently to improve performance
  * @returns
  */
 export function useRefSize(deferred = false) {

@@ -1,17 +1,3 @@
-/**
- * @deprecated
- * This this prevent the on hover of an element showing the URL it's going to. Should probably use href and onClick somehow
- */
-export function toMainSite() {
-  if (
-    window.location.hostname === 'frzyc.github.io' &&
-    window.location.pathname === '/genshin-optimizer/'
-  )
-    window.alert(
-      'Why did you click on this? You are already on Genshin Optimizer!'
-    )
-  else window.open('https://frzyc.github.io/genshin-optimizer/', '_blank')
-}
 export const GACHA_OPT_HOSTNAME = 'frzyc.github.io'
 export const GO_PATHNAME = '/genshin-optimizer/'
 export const ZO_PATHNAME = '/zenless-optimizer/'

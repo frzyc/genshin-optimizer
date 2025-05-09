@@ -22,21 +22,19 @@ export function AdRailSticky({
   return (
     // Adding a padding of 60 ensures that there is at least 60px between ads (from top or bottom)
     <Box sx={{ flexShrink: 1, position: 'sticky', top: 0, py: '60px' }}>
-      {adWidth >= MIN_RAIL_WIDTH && (
-        <AdWrapper
-          dataAdSlot={dataAdSlot}
-          sx={{
-            minWidth: MIN_RAIL_WIDTH,
-            maxWidth: Math.min(
-              hasBothRails ? adWidth * 0.5 : adWidth,
-              AD_RAIL_MAXWIDTH
-            ),
-            height: AD_RAIL_HEIGHT,
-            width: '100%',
-          }}
-          Ad={Ad}
-        />
-      )}
+      <AdWrapper
+        dataAdSlot={dataAdSlot}
+        sx={{
+          minWidth: MIN_RAIL_WIDTH,
+          maxWidth: Math.min(
+            hasBothRails ? adWidth * 0.5 : adWidth,
+            AD_RAIL_MAXWIDTH
+          ),
+          height: AD_RAIL_HEIGHT,
+          width: '100%',
+        }}
+        Ad={Ad}
+      />
     </Box>
   )
 }
