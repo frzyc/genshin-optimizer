@@ -11,13 +11,15 @@ const normal_dmgInc_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
 
 const [condAfterSprintPath, condAfterSprint] = cond(key, 'afterSprint')
 const normal_dmgInc = equal(
-  condAfterSprint,
   'on',
+  condAfterSprint,
   prod(
     subscript(input.weapon.refinement, normal_dmgInc_arr, { unit: '%' }),
     input.total.atk
   )
 )
+
+const dmg = equal(input.weapon.key, key, normal_dmgInc)
 
 const data = dataObjForWeaponSheet(
   key,
@@ -26,7 +28,7 @@ const data = dataObjForWeaponSheet(
       normal_dmgInc,
     },
   },
-  { normal_dmgInc }
+  { dmg }
 )
 const sheet: IWeaponSheet = {
   document: [
