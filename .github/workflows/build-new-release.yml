@@ -11,6 +11,8 @@ jobs:
     if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release') }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -61,6 +63,13 @@ jobs:
       - name: Make release
         if: steps.get-version.outputs.version != ''
         run: |
-          gh release create ${{ steps.get-version.outputs.version }} --generate-notes --target $(git rev-parse HEAD)
+          TEMP_FILE=$(mktemp)
+          # List tags for GI and get the latest one
+          git fetch --tags --force
+          oldTag=$(git tag --list '*[!zo]' --sort=creatordate | tail -n 1)
+          echo -e "**What's Changed**\n" >> $TEMP_FILE
+          git log --pretty='format:* %s' $oldTag..HEAD -- . ':!apps/somnia' ':!apps/somnia-e2e' ':!apps/sr-frontend' ':!apps/sr-frontend-e2e' ':!apps/zzz-frontend' ':!apps/zzz-frontend-e2e' ':!libs/gi/formula' ':!libs/gi/formula-ui' ':!libs/gi/i18n-node' ':!libs/game-opt' ':!libs/pando' ':!libs/sr' ':!libs/zzz' >> $TEMP_FILE
+          echo -e "\n\n**Full Changelog**: https://github.com/${{ github.repository }}/compare/$oldTag..${{ steps.get-version.outputs.version }}" >> $TEMP_FILE
+          gh release create ${{ steps.get-version.outputs.version }} -F $TEMP_FILE -t ${{ steps.get-version.outputs.version }} --target $(git rev-parse HEAD)
         env:
           GH_TOKEN: ${{ github.token }}

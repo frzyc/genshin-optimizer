@@ -1,0 +1,29 @@
+{
+  "setName": "Finale des galeries profondes",
+  "setEffects": {
+    "2": "Confère un bonus de DGT Cryo de 15 %.",
+    "4": "Lorsque le personnage équipé de l'artéfact a 0 pt d'énergie élémentaire, les DGT infligés par les attaques normales et les déchaînements élémentaires augmentent de 60 %. Le bonus ainsi accordé aux déchaînements élémentaires s'arrête pendant 6 s après que le personnage équipé de l'artéfact inflige des DGT grâce à une attaque normale. De même, le bonus ainsi accordé aux attaques normales s'arrête pendant 6 s après que le personnage équipé de l'artéfact inflige des DGT grâce à un déchaînement élémentaire. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Chant d'écho des galeries profondes",
+      "desc": "Une fleur glacée façonnée à partir de jade du nord. Au cours de sa longue vie, ses pétales ont été réduits en poussière."
+    },
+    "plume": {
+      "name": "Pacte distant des galeries profondes",
+      "desc": "Un accessoire à plumes façonné à partir de jade du nord qui scintille d'une lueur d'un autre monde."
+    },
+    "sands": {
+      "name": "Moment d'oubli des galeries profondes",
+      "desc": "Une montre de poche façonnée à partir de jade du nord. Ses aiguilles sont figées à jamais au moment de sa destruction."
+    },
+    "goblet": {
+      "name": "Banquet accordé des galeries profondes",
+      "desc": "Une coupe façonnée à partir de jade du nord. On dit que les peuples d'une ancienne civilisation l'utilisaient autrefois comme récipient cérémoniel pour faire des offrandes aux cieux."
+    },
+    "circlet": {
+      "name": "Couronne perdue des galeries profondes",
+      "desc": "Un casque imprégné d'obsession, à l'image de l'esprit de son précédent propriétaire. Son ornementation en jade semble provenir d'une époque plus ancienne encore."
+    }
+  }
+}

@@ -71,7 +71,7 @@
   "description": "Una cameriera al servizio dei Cavalieri di Favonius. Sogna di unirsi ai loro ranghi, un giorno.",
   "constellationName": "Parma Cordis",
   "auto": {
-    "name": "Tecnica di Favonius - Domestica",
+    "name": "Domestica",
     "fields": {
       "normal": {
         "0": "<strong>Attacco normale</strong>",

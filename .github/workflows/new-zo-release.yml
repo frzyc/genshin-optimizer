@@ -1,15 +1,48 @@
 name: New ZO Release
+run-name: New ZO Release ${{ inputs.version }}
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version. Provide as `xx.yy.zz`. The `+zo` metadata suffix will be automatically added for you.'
+        type: string
 
 jobs:
-  call-build-frontend:
-    uses: ./.github/workflows/build-frontend.yml
-    with:
-      frontend_name: 'zzz-frontend'
-      deployment_name: ''
-      repo_var_name: 'ZO_REPO'
-      repo_deploy_secret_name: 'ZO_REPO_SSH_KEY'
-      show_dev_components: false
-      nested_deployments: false
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Get version
+        id: get-version
+        run: |
+          echo "version=${{ inputs.version }}+zo" >> $GITHUB_OUTPUT
+      - name: Set git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Change version
+        if: steps.get-version.outputs.version != ''
+        run: |
+          TEMP_FILE=$(mktemp)
+          jq --arg v "${{ steps.get-version.outputs.version }}" '.version = $v' apps/zzz-frontend/package.json > $TEMP_FILE
+          cp $TEMP_FILE apps/zzz-frontend/package.json
+          git add .
+          git commit -m "${{ steps.get-version.outputs.version }}"
+      - name: Get commit msg
+        id: get-commit-msg
+        run: |
+          if [[ -z "${{ steps.get-version.outputs.version }}" ]]; then
+            echo "title-release=ZO: Release ref $(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          else
+            echo "title-release=ZO: Release version ${{ steps.get-version.outputs.version }} $(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          fi
+      - name: Create PR
+        run: |
+          git status
+          git push origin HEAD:actions/new-zo-release --force
+          gh pr create --base $(git rev-parse --abbrev-ref HEAD) --head actions/new-zo-release --title '${{ steps.get-commit-msg.outputs.title-release }}' --body '' --label zo-release
+        env:
+          GH_TOKEN: ${{ github.token }}

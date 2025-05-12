@@ -4,7 +4,7 @@
   "description": "ナナツカヤンの名鋳り師。山積みの仕事と快適な暮らしのバランスを取るのが得意。",
   "constellationName": "オセロット座",
   "auto": {
-    "name": "通常攻撃・エエカトル・ロアー",
+    "name": "エエカトル・ロアー",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

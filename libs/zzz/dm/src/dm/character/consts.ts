@@ -2,7 +2,9 @@ import type {
   AttributeKey,
   CharacterRarityKey,
   FactionKey,
+  SkillKey,
   SpecialityKey,
+  StatKey,
 } from '@genshin-optimizer/zzz/consts'
 
 // Copied from libs\zzz\dm\src\dm\character\characterIdMap.json
@@ -33,8 +35,10 @@ export const characterIdMap = {
   '1261': 'Jane',
   '1271': 'Seth',
   '1281': 'Piper',
+  '1291': 'Hugo',
   '1311': 'Astra',
   '1321': 'Evelyn',
+  '1331': 'Vivian',
   '1351': 'Pulchra',
   '1361': 'Trigger',
   '1381': 'Soldier0Anby',
@@ -64,6 +68,7 @@ export const factionMap: Record<number, FactionKey> = {
   6: 'HollowSpecialOoperationsSection6',
   7: 'CriminalInvestigationSpecialResponseTeam',
   8: 'StarsOfLyra',
+  9: 'Mockingbird',
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {
@@ -71,15 +76,27 @@ export const characterRarityMap: Record<number, CharacterRarityKey> = {
   4: 'S',
 } as const
 
-// TODO: everything is base here
-// Remove the 'base' portion to make stat names match what is in Pando
-export const coreStatMap = {
-  'Base ATK': 'atk_base',
+export const coreStatMap: Record<string, StatKey> = {
+  'Base ATK': 'atk',
   Impact: 'impact',
   'CRIT Rate': 'crit_',
   'CRIT DMG': 'crit_dmg_',
-  'Base Energy Regen': 'base_enerRegen',
+  'Base Energy Regen': 'enerRegen',
   'Anomaly Proficiency': 'anomProf',
-  'Anomaly Mastery': 'anomMas_base',
+  'Anomaly Mastery': 'anomMas',
   'PEN Ratio': 'pen_',
 } as const
+
+export type HakushinSkillKey =
+  | 'Basic'
+  | 'Dodge'
+  | 'Special'
+  | 'Chain'
+  | 'Assist'
+export const hakushinSkillMap: Record<HakushinSkillKey, SkillKey> = {
+  Basic: 'basic',
+  Dodge: 'dodge',
+  Special: 'special',
+  Chain: 'chain',
+  Assist: 'assist',
+}

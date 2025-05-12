@@ -1,0 +1,29 @@
+{
+  "setName": "Réquiem del Corredor",
+  "setEffects": {
+    "2": "Bono de Daño Cryo +15%.",
+    "4": "Cuando el portador de este conjunto tiene 0 pts. de Energía Elemental, tanto el daño de su Ataque Normal como el de su Habilidad Definitiva aumentan en un 60%. Cuando dicho portador inflige daño con su Ataque Normal, el aumento de daño de la Habilidad Definitiva se anulará durante 6 s. Después de que el portador inflija daño con su Habilidad Definitiva, el aumento de daño del Ataque Normal anteriormente mencionado se anulará durante 6 s. Este efecto puede activarse incluso cuando el personaje que lleva este conjunto está en tu equipo pero no en uso."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Canción Reverberante del Corredor",
+      "desc": "Una flor de hielo hecha de jade del Reino del Norte. Los pétalos de la flor se han convertido en polvo con el tiempo."
+    },
+    "plume": {
+      "name": "Promesa Perdurable del Corredor",
+      "desc": "Una pluma hecha de jade del Reino del Norte. La luz que refleja no parece pertenecer a este mundo."
+    },
+    "sands": {
+      "name": "Momento Olvidado del Corredor",
+      "desc": "Un reloj de bolsillo elaborado con jade del Reino del Norte. La aguja se detuvo para siempre en el momento de su destrucción."
+    },
+    "goblet": {
+      "name": "Gran Banquete del Corredor",
+      "desc": "Un cáliz hecho de jade del Reino del Norte. Se dice que una antigua civilización lo utilizaba como objeto ceremonial para hacer ofrendas al cielo."
+    },
+    "circlet": {
+      "name": "Corona Perdida del Corredor",
+      "desc": "Una máscara nublada por la obsesión, igual que la mente de su antiguo dueño. El jade que contiene parece ser de una época más antigua."
+    }
+  }
+}

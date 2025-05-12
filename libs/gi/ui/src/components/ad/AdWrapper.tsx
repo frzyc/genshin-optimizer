@@ -13,6 +13,7 @@ import { AdButtons } from './AdButtons'
 import { DrakeAd, canShowDrakeAd } from './GoAd/DrakeAd'
 import { GOAd } from './GoAd/GOAd'
 import { GODevAd, canshowGoDevAd } from './GoAd/GODevAd'
+import { LootbarAd, canshowLootbarAd } from './GoAd/LootbarAd'
 import { SRODevAd, canshowSroDevAd } from './GoAd/SRODevAd'
 
 export function AdWrapper({
@@ -70,8 +71,11 @@ function GOAdWrapper({
       components.push(SRODevAd)
     if (maxHeight === undefined || canShowDrakeAd(maxHeight, maxWidth))
       components.push(DrakeAd)
+    if (maxHeight === undefined || canshowLootbarAd(maxHeight))
+      components.push(LootbarAd)
     return getRandomElementFromArray(components)
   }, [maxHeight, maxWidth])
+  if (!Comp) return null
   return (
     <CardThemed
       bgt={bgt}

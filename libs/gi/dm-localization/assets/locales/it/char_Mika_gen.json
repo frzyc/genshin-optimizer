@@ -4,7 +4,7 @@
   "description": "Un giovane cavaliere di umili natali. Svolge l'incarico di topografo di prima linea all'interno della sua compagnia. Ha un carattere cauto e discreto.",
   "constellationName": "Palumbus",
   "auto": {
-    "name": "Lancia di Favonius - Perforazione pungente",
+    "name": "Perforazione pungente",
     "fields": {
       "normal": {
         "0": "<strong>Attacco normale</strong>",

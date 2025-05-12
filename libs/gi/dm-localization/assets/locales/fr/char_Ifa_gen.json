@@ -1,0 +1,160 @@
+{
+  "name": "Ifa",
+  "title": "Zéphyr spirituel",
+  "description": "Un vétérinaire du Clan des fleurplumes qui apprécie sincèrement la compagnie des gens, des animaux et de tous les autres êtres vivants.",
+  "constellationName": "Catena Opele",
+  "auto": {
+    "name": "Rite des vents dissipateurs",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 attaques qui infligent des <anemo>DGT Anémo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour tirer en avant et infliger des <anemo>DGT Anémo de zone</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs, infligeant des DGT aux ennemis en chemin et des <anemo>DGT Anémo de zone</anemo> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Prévention des maladies aériennes",
+    "description": {
+      "0": "Il est temps qu'un vrai poto prenne le relais ! Ifa appelle Cacucu en renfort.",
+      "1": "Après utilisation, Ifa obtient 80 pts de noctâme et entre dans l'état <strong>Bénédiction noctâme</strong>. Pendant sa bénédiction noctâme, Ifa flotte dans les airs avec l'aide de Cacucu et ses attaques normales sont converties en <strong>tirs de soutien</strong> qui diffèrent selon qu'ils sont déclenchés avec un appui simple ou un appui long, envoyant des tirs toniques qui peuvent soigner tous les personnages de l'équipe.",
+      "2": "<br/>",
+      "3": "De plus, utiliser sa compétence élémentaire <strong>Prévention des maladies aériennes</strong> avec un appui long pendant sa bénédiction noctâme permet à Ifa de déclencher à la place une attaque plongeante infusée de noctâme, relâcher la compétence permettant d'interrompre l'attaque plongeante tout en continuant à flotter. La bénédiction noctâme d'Ifa prend cependant fin lorsqu'il touche terre après cette attaque plongeante."
+    },
+    "skillParams": {
+      "0": "DGT tir tonique",
+      "1": "Soins tir tonique",
+      "2": "Limite de noctâme",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Champ de sédation composé",
+    "description": {
+      "0": "Ifa envoie un sédatif thérapeutique sur un ennemi (temporairement agressif). Le sédatif explose à l'impact, créant un champ de vent restrictif qui attire les éléments et ennemis proches tout en infligeant des <anemo>DGT Anémo de zone</anemo> infusés de noctâme.",
+      "1": "En touchant un ennemi affecté par l'élément <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> ou <electro>Électro</electro>, le sédatif thérapeutique applique à ce dernier une <strong>marque de sédation</strong>."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT marque de sédation",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Vision de médecin de terrain",
+    "description": {
+      "0": "Pendant sa bénédiction noctâme, Ifa obtient 1 pt d'<strong>Essentiels de sauvetage</strong> pour chaque point de noctâme que tous les personnages de l'équipe possèdent actuellement. Les points d'Essentiels de sauvetage augmentent les DGT des réactions de Dispersion et d'Électrocution déclenchées par les membres de l'équipe à proximité."
+    }
+  },
+  "passive2": {
+    "name": "Accord d'entraide",
+    "description": {
+      "0": "Lorsqu'un membre de l'équipe à proximité déclenche une éruption noctâme, la maîtrise élémentaire d'Ifa augmente de 80 pts pendant 10 s."
+    }
+  },
+  "passive3": {
+    "name": "Don de la nuit : Secours d'urgence ciblé",
+    "description": {
+      "0": "Après avoir épuisé ses points de noctâme, Ifa change pour consommer du phlogistique afin de maintenir sa bénédiction noctâme.",
+      "1": "Dans une zone de Natlan avec des mécanismes phlogistiques, la transmission noctâme « Ifa » peut être utilisée. Lorsque le personnage déployé est à une certaine hauteur dans les airs, le déploiement d'Ifa déclenche l'effet suivant : Ifa entre dans l'état Bénédiction noctâme et obtient 32 pts de noctâme. La transmission noctâme peut être déclenchée une fois toutes les 10 s par votre équipe."
+    }
+  },
+  "passive": {
+    "name": "Bandage tactique à compresses chaudes",
+    "description": {
+      "0": "Lorsque votre personnage déployé ou saurien habité a moins de 40 % de PV dans une zone de Natlan avec des mécanismes phlogistiques, Ifa consomme 10 pts de phlogistique pour restaurer 40 % de ses PV. Cet effet peut être déclenché une fois toutes les 10 s et ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées."
+    }
+  },
+  "constellation1": {
+    "name": "Concoction d'élixir vitifère",
+    "description": {
+      "0": "Lorsqu'un <strong>tir de soutien</strong> touche un ennemi, Ifa récupère 6 pts d'énergie élémentaire, l'énergie élémentaire pouvant être restaurée une fois toutes les 8 s de cette manière."
+    }
+  },
+  "constellation2": {
+    "name": "Esprit guide de prière balistique",
+    "description": {
+      "0": "Pendant sa bénédiction noctâme, Ifa obtient 4 pts d'<strong>Essentiels de sauvetage</strong> supplémentaires pour chaque point de noctâme que tous les personnages de l'équipe possèdent actuellement au-dessus d'un total de 60 pts.",
+      "1": "De plus, la limite de points d'Essentiels de sauvetage d'Ifa augmente de 50.",
+      "2": "L'aptitude passive « <strong>Vision de médecin de terrain</strong> » doit être déjà débloquée."
+    }
+  },
+  "constellation3": {
+    "name": "Réfutation des négociations avec la nuit",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Prévention des maladies aériennes</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Permutation de vaisseau en décomposition",
+    "description": {
+      "0": "La durée du champ de vent restrictif créé par le déchaînement élémentaire <strong>Champ de sédation composé</strong> augmente à 3 s.",
+      "1": "De plus, utiliser son déchaînement élémentaire <strong>Champ de sédation composé</strong> augmente la maîtrise élémentaire d'Ifa de 100 pts pendant 15 s."
+    }
+  },
+  "constellation5": {
+    "name": "Vœu de coexistence universelle",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Champ de sédation composé</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Serment sur nœud à plumes",
+    "description": {
+      "0": "Lorsque Ifa utilise un <strong>tir de soutien</strong> avec un appui long, il a 50 % de chances de déclencher un tir tonique supplémentaire qui inflige des DGT Anémo d'une valeur équivalant à 120 % de l'ATQ d'Ifa, ces DGT étant considérés comme des DGT d'attaque normale.",
+      "1": "De plus, la consommation de points de noctâme et de phlogistique d'Ifa pendant sa bénédiction noctâme diminue de 20 % lorsqu'il n'est pas en combat."
+    }
+  }
+}

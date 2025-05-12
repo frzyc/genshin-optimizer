@@ -11,6 +11,7 @@ import DrillRigRedAxis from './DrillRigRedAxis'
 import ElectroLipGloss from './ElectroLipGloss'
 import ElegantVanity from './ElegantVanity'
 import FlamemakerShaker from './FlamemakerShaker'
+import FlightOfFancy from './FlightOfFancy'
 import FusionCompiler from './FusionCompiler'
 import GildedBlossom from './GildedBlossom'
 import HailstormShrine from './HailstormShrine'
@@ -28,6 +29,7 @@ import MagneticStormAlpha from './MagneticStormAlpha'
 import MagneticStormBravo from './MagneticStormBravo'
 import MagneticStormCharlie from './MagneticStormCharlie'
 import MarcatoDesire from './MarcatoDesire'
+import MyriadEclipse from './MyriadEclipse'
 import OriginalTransmorpher from './OriginalTransmorpher'
 import PeacekeeperSpecialized from './PeacekeeperSpecialized'
 import PreciousFossilizedCore from './PreciousFossilizedCore'
@@ -74,6 +76,7 @@ const data = {
   ElectroLipGloss,
   ElegantVanity,
   FlamemakerShaker,
+  FlightOfFancy,
   FusionCompiler,
   GildedBlossom,
   HailstormShrine,
@@ -91,6 +94,7 @@ const data = {
   MagneticStormBravo,
   MagneticStormCharlie,
   MarcatoDesire,
+  MyriadEclipse,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PreciousFossilizedCore,

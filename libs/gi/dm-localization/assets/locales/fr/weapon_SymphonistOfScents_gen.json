@@ -1,0 +1,24 @@
+{
+  "name": "Symphoniste des senteurs",
+  "description": {
+    "0": "Une lance élégamment construite, qui aurait été un bâton de chef d'orchestre utilisé par un grand musicien pour concilier mélodie et goût."
+  },
+  "passiveName": "Symphonie assaisonnée",
+  "passiveDescription": {
+    "0": {
+      "0": "L'ATQ augmente de <cryo>12 %</cryo>. Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, l'ATQ augmente de <cryo>12 %</cryo> supplémentaires. Lorsque le personnage équipé de l'arme a effectué des soins, le ou les personnages soignés et lui obtiennent l'effet Doux écho, effet qui augmente l'ATQ de <cryo>32 %</cryo> pendant 3 s, cet effet pouvant être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "L'ATQ augmente de <cryo>15 %</cryo>. Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, l'ATQ augmente de <cryo>15 %</cryo> supplémentaires. Lorsque le personnage équipé de l'arme a effectué des soins, le ou les personnages soignés et lui obtiennent l'effet Doux écho, effet qui augmente l'ATQ de <cryo>40 %</cryo> pendant 3 s, cet effet pouvant être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "L'ATQ augmente de <cryo>18 %</cryo>. Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, l'ATQ augmente de <cryo>18 %</cryo> supplémentaires. Lorsque le personnage équipé de l'arme a effectué des soins, le ou les personnages soignés et lui obtiennent l'effet Doux écho, effet qui augmente l'ATQ de <cryo>48 %</cryo> pendant 3 s, cet effet pouvant être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "L'ATQ augmente de <cryo>21 %</cryo>. Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, l'ATQ augmente de <cryo>21 %</cryo> supplémentaires. Lorsque le personnage équipé de l'arme a effectué des soins, le ou les personnages soignés et lui obtiennent l'effet Doux écho, effet qui augmente l'ATQ de <cryo>56 %</cryo> pendant 3 s, cet effet pouvant être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "L'ATQ augmente de <cryo>24 %</cryo>. Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, l'ATQ augmente de <cryo>24 %</cryo> supplémentaires. Lorsque le personnage équipé de l'arme a effectué des soins, le ou les personnages soignés et lui obtiennent l'effet Doux écho, effet qui augmente l'ATQ de <cryo>64 %</cryo> pendant 3 s, cet effet pouvant être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

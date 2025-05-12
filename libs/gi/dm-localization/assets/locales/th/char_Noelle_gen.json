@@ -71,7 +71,7 @@
   "description": "สาวใช้ผู้เป็นที่พึ่งพาได้เสมอของ \"กองอัศวินแห่ง Favonius\" มีความฝันว่าสักวันหนึ่งจะเป็นอัศวินอย่างเต็มตัวให้ได้",
   "constellationName": "Parma Cordis",
   "auto": {
-    "name": "Favonius Bladework - Maid",
+    "name": "Maid",
     "fields": {
       "normal": {
         "0": "<strong>โจมตีปกติ</strong>",

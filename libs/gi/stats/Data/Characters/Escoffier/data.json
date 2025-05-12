@@ -1,0 +1,66 @@
+{
+  "key": "Escoffier",
+  "ele": "cryo",
+  "region": "fontaine",
+  "weaponType": "polearm",
+  "birthday": {
+    "month": 6,
+    "day": 8
+  },
+  "rarity": 5,
+  "lvlCurves": [
+    {
+      "key": "hp",
+      "base": 1039.1188,
+      "curve": "GROW_CURVE_HP_S5"
+    },
+    {
+      "key": "atk",
+      "base": 26.999,
+      "curve": "GROW_CURVE_ATTACK_S5"
+    },
+    {
+      "key": "def",
+      "base": 56.95816,
+      "curve": "GROW_CURVE_HP_S5"
+    }
+  ],
+  "ascensionBonus": {
+    "hp": [
+      0,
+      890.95044,
+      1523.9941,
+      2368.0525,
+      3001.0962,
+      3634.14,
+      4267.1836
+    ],
+    "def": [
+      0,
+      48.8376,
+      83.538,
+      129.8052,
+      164.5056,
+      199.206,
+      233.9064
+    ],
+    "atk": [
+      0,
+      23.14751,
+      39.594425,
+      61.523643,
+      77.97056,
+      94.41747,
+      110.86439
+    ],
+    "critRate_": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ]
+  }
+}

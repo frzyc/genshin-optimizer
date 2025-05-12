@@ -105,6 +105,7 @@ const stats: Record<Stat, Desc> = {
   common_dmg_: agg,
   buff_: agg,
   resIgn_: agg,
+  defIgn_: agg,
   shield_: agg,
   dazeInc_: agg,
   dazeRed_: agg,

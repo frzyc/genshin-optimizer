@@ -1,0 +1,24 @@
+{
+  "name": "Vivid Notions",
+  "description": {
+    "0": "Sebuah trofi yang terbuat dari permata suku Berlimpah Jaya dan kristal suku Bunga Bersayap. Konon katanya, trofi ini dulunya dimiliki oleh seorang pegulat legendaris."
+  },
+  "passiveName": "Falling Rainbow's Wish",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK meningkat <cryo>28%</cryo>. Saat Karakter melancarkan Plunging Attack, akan mendapatkan efek \"Dawn's First Hue\": CRIT DMG Plunging Attack meningkat <cryo>28%</cryo>. Saat Karakter melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek \"Twilight's Splendor\": CRIT DMG Plunging Attack meningkat <cryo>40%</cryo>. Kedua efek di atas masing-masing berlangsung selama 15 detik, dan akan hilang 0,1 detik setelah Plunging Attack menghantam tanah dan mengenai musuh."
+    },
+    "1": {
+      "0": "ATK meningkat <cryo>35%</cryo>. Saat Karakter melancarkan Plunging Attack, akan mendapatkan efek \"Dawn's First Hue\": CRIT DMG Plunging Attack meningkat <cryo>35%</cryo>. Saat Karakter melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek \"Twilight's Splendor\": CRIT DMG Plunging Attack meningkat <cryo>50%</cryo>. Kedua efek di atas masing-masing berlangsung selama 15 detik, dan akan hilang 0,1 detik setelah Plunging Attack menghantam tanah dan musuh."
+    },
+    "2": {
+      "0": "ATK meningkat <cryo>42%</cryo>. Saat Karakter melancarkan Plunging Attack, akan mendapatkan efek \"Dawn's First Hue\": CRIT DMG Plunging Attack meningkat <cryo>42%</cryo>. Saat Karakter melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek \"Twilight's Splendor\": CRIT DMG Plunging Attack meningkat <cryo>60%</cryo>. Kedua efek di atas masing-masing berlangsung selama 15 detik, dan akan hilang 0,1 detik setelah Plunging Attack menghantam tanah dan mengenai musuh."
+    },
+    "3": {
+      "0": "ATK meningkat <cryo>49%</cryo>. Saat Karakter melancarkan Plunging Attack, akan mendapatkan efek \"Dawn's First Hue\": CRIT DMG Plunging Attack meningkat <cryo>49%</cryo>. Saat Karakter melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek \"Twilight's Splendor\": CRIT DMG Plunging Attack meningkat <cryo>70%</cryo>. Kedua efek di atas masing-masing berlangsung selama 15 detik, dan akan hilang 0,1 detik setelah Plunging Attack menghantam tanah dan mengenai musuh."
+    },
+    "4": {
+      "0": "ATK meningkat <cryo>56%</cryo>. Saat Karakter melancarkan Plunging Attack, akan mendapatkan efek \"Dawn's First Hue\": CRIT DMG Plunging Attack meningkat <cryo>56%</cryo>. Saat Karakter melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek \"Twilight's Splendor\": CRIT DMG Plunging Attack meningkat <cryo>80%</cryo>. Kedua efek di atas masing-masing berlangsung selama 15 detik, dan akan hilang 0,1 detik setelah Plunging Attack menghantam tanah dan mengenai musuh."
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "name": "Varesa",
+  "title": "Gelassene Stärke",
+  "description": "Die durch und durch gemütliche Kriegerin und Besitzerin der Obstplantage aus dem „Kollektiv der Fülle“. Sie liebt mächtige Helden ebenso sehr wie riesige Essensportionen.",
+  "constellationName": "Mascara Luctatori",
+  "auto": {
+    "name": "An den Hörnern gepackt",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Ich ... Ich muss so kämpfen wie eine echte Ringermeisterin! Führt bis zu 3 Angriffe aus, die <electro>Elektro-Schaden</electro> verursachen."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, stürzt sich mit dem Kopf nach vorn auf einen Gegner, dem sie mit Nachtseelen versehenen <electro>Elektro-Schaden</electro> zufügt, und springt danach in die Luft."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen mit Nachtseelen versehenen <electro>Elektro-Flächenschaden</electro>. Verleiht Varesa, wenn sie sich dabei im Kampf befindet oder beim Aufkommen einen Gegner trifft, 25 Nachtseelenpunkte. Varesa tritt beim Erreichen der Höchstmenge an Nachtseelenpunkten auf diese Weise in den Zustand „Brennende Leidenschaft“ ein."
+      },
+      "fieryPassion": {
+        "0": "<strong>Brennende Leidenschaft</strong>",
+        "1": "Verstärkt in diesem Zustand Varesas Standardangriffe, heftige Schläge und Angriffe aus dem Fall:"
+      },
+      "fpNormal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Kämpft wie eine echte Starringerin! Führt bis zu 3 stärkere Angriffe aus, die höheren <electro>Elektro-Schaden</electro> verursachen."
+      },
+      "fpCharged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, stürmt auf den Gegner zu, verursacht höheren mit Nachtseelen versehenen <electro>Elektro-Schaden</electro> und springt danach in die Luft."
+      },
+      "fpPlunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Verbraucht alle Nachtseelenpunkte, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen höheren mit Nachtseelen versehenen <electro>Elektro-Flächenschaden</electro>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "SCH Phase 1 im Zustand Brennende Leidenschaft",
+      "8": "SCH Phase 2 im Zustand Brennende Leidenschaft",
+      "9": "SCH Phase 3 im Zustand Brennende Leidenschaft",
+      "10": "SCH heftiger Schläge im Zustand Brennende Leidenschaft",
+      "11": "Ausdauerverbrauch heftiger Schläge im Zustand Brennende Leidenschaft",
+      "12": "SCH beim Fallen im Zustand Brennende Leidenschaft",
+      "13": "SCH beim Fallen aus niedriger/großer Höhe im Zustand Brennende Leidenschaft",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sprung über den nächtlichen Regenbogen",
+    "description": {
+      "0": "Mit der Schnelligkeit eines Blitzes und der Gewaltigkeit des Donners zeigt Varesa die wahre Natur des Ringens. Varesa stürmt eine gewisse Entfernung nach vorn und fügt den Gegnern in ihrer Bahn mit Nachtseelen versehenen <electro>Elektro-Schaden</electro> zu.",
+      "1": "Verleiht Varesa nach dem Anwenden 20 Nachtseelenpunkte sowie den Effekt „Folgeschlag“: Erhöht während der Wirkungsdauer Varesas Unterbrechungs-WDS. Führt beim Drücken des Standardangriffs schnell einen heftigen Schlag aus, für den keine Ausdauer verbraucht wird. Der Effekt „Folgeschlag“ wird nach dem Anwenden des heftigen Schlags entfernt.",
+      "2": "Wendet beim Drücken oder Gedrückthalten verschiedene Ringstile an.",
+      "3": "<br/>",
+      "4": "<strong>Drücken</strong>",
+      "5": "Stürmt schnell eine gewisse Entfernung nach vorn.",
+      "6": "<br/>",
+      "7": "<strong>Gedrückt halten</strong>",
+      "8": "Varesa tritt in den Zustand Nachtseelensegen ein und wechselt in den Modus „Stürmischer Vorstoß“.",
+      "9": "<br/>",
+      "10": "<strong>Stürmischer Vorstoß</strong>",
+      "11": "Verbraucht fortlaufend Nachtseelenpunkte. Erhöht in diesem Modus Varesas Bewegungs-GSW sowie Unterbrechungs-WDS; ermöglicht es ihr, durch Nutzung des Geländes Flugsprünge auszuführen und durch Verbrauchen von Nachtseelenpunkten über die Wasseroberfläche oder flüssiges Phlogiston zu laufen, und macht Varesa immun gegen Schaden von flüssigem Phlogiston.",
+      "12": "<br/>",
+      "13": "<strong>Nachtseelensegen – Varesa</strong>",
+      "14": "Varesas Nachtseelensegen endet, sobald alle Nachtseelenpunkte aufgebraucht sind. Im Modus Stürmischer Vorstoß sowie im Zustand „Brennende Leidenschaft“ ist Varesa stets im Zustand Nachtseelensegen.",
+      "15": "<br/>",
+      "16": "Kann 2-mal angewendet werden. Verleiht, wenn Varesa den Zustand „Brennende Leidenschaft“ betritt, ihrer Elementarfähigkeit eine weitere Anwendungsmöglichkeit, die durch Drücken angewendet werden kann, und erhöht den mit ihrer Elementarfähigkeit verursachten Schaden.",
+      "17": "<br/>",
+      "18": "<strong>Brennende Leidenschaft</strong>",
+      "19": [
+        " Varesa kann, wenn sie sich nicht im Zustand „Brennende Leidenschaft“ befindet, ihre Nachtseelenpunkte durch Angriffe aus dem Fall wiederherstellen. Varesa tritt in den Zustand „Brennende Leidenschaft“ ein, wenn sie auf diese Weise die Höchstmenge an Nachtseelenpunkten erreicht oder wenn sie ihre Spezialfähigkeit <strong>Blitzartiger Auftritt!</strong> anwendet.",
+        " Verstärkt im Zustand „Brennende Leidenschaft“ Varesas Standardangriff, Elementarfähigkeit und Spezialfähigkeit und ermöglicht es ihr, innerhalb kurzer Zeit nach Anwenden eines Angriffs aus dem Fall eine besondere Spezialfähigkeit auszulösen.",
+        " Zustand Brennende Leidenschaft hält bis zu 15 s und endet nach Verbrauchen von Nachtseelenpunkte oder eine gewisse Zeit nach Verlassen des Kampfes."
+      ],
+      "20": "<br/>",
+      "21": "<i>„Jetzt bin ich meine eigene Heldin.“</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Vorstoß",
+      "1": "SCH bei Vorstoß im Zustand Brennende Leidenschaft",
+      "2": "Dauer von Folgeschlag",
+      "3": "Max. Nachtseelenpunkte",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Blitzartiger Auftritt!",
+    "description": {
+      "0": "Einer gerechten Heldin gleich, wie sie in den Geweberollen für Kinder beschrieben wird, springt Varesa in die Luft und nutzt die Wucht des Falls, um einen fliegenden Tritt auszuführen, der den Gegnern mit Nachtseelen versehenen <electro>Elektro-Flächenschaden</electro> zufügt.",
+      "1": "Stellt Varesa nach dem Anwenden alle Nachtseelenpunkte wieder her und lässt sie in den Zustand „Brennende Leidenschaft“ treten.",
+      "2": "<br/>",
+      "3": "Fügt Gegnern im Zustand „Brennende Leidenschaft“ mit ihrer Spezialfähigkeit höheren mit Nachtseelen versehenen <electro>Elektro-Flächenschaden</electro> zu.",
+      "4": "<br/>",
+      "5": "Varesa tritt außerdem nach dem Auslösen eines Angriffs aus dem Fall im Zustand „Brennende Leidenschaft“ kurzzeitig in den Zustand „Äußerster Antrieb“ ein.",
+      "6": "<br/>",
+      "7": "<strong>Äußerster Antrieb</strong>",
+      "8": "Erhöht Varesas Unterbrechungs-WDS. Ignoriert in diesem Zustand die Abklingzeit ihrer Spezialfähigkeit und verbraucht weniger Elementarenergie, um die besondere Version ihrer Spezialfähigkeit „Blitzartiger Auftritt – Vulkaneinbruch“ auszuführen: Führt den besonders starken „Angriff aus dem Fall – Wilder Vulkanwirbel“ aus, der beim Aufkommen mit Nachtseelen versehenen <electro>Elektro-Flächenschaden</electro> verursacht, und verlässt danach den Zustand „Äußerster Antrieb“. Hierdurch verursachter Schaden gilt als Schaden des Angriffs aus dem Fall.",
+      "9": "Nach Anwenden der Elementarfähigkeit wird Varesa den Zustand „Äußerster Antrieb“ verlassen.",
+      "10": "<br/>",
+      "11": "<i>Eigentlich wollte Varesa dieser Fähigkeit ja den Namen „Ultimativer und unschlagbarer Superduper-Heldentritt der mit Schallgeschwindigkeit nahenden Gerechtigkeit“ geben, aber das war letztendlich doch etwas zu lang. Und selbst wenn Varesa eine Maske aufgesetzt hätte, wäre es zu peinlich gewesen, diesen Namen vor versammelter Mannschaft laut zu rufen. Deshalb hatte sie sich am Ende doch für die aktuelle Variante des Namens entschieden.</i>"
+    },
+    "skillParams": {
+      "0": "SCH fliegender Tritt",
+      "1": "SCH fliegender Tritt im Zustand Brennende Leidenschaft",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "SCH Vulkaneinbruch",
+      "5": "Elementarenergie für Vulkaneinbruch",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Siegesbewusster Dreifachsprung!",
+    "description": {
+      "0": "Verleiht Varesa nach Anwenden der Elementarfähigkeit <strong>Sprung über den nächtlichen Regenbogen</strong> 5 s lang „Regenbogensturzangriff“.",
+      "1": "Verursacht beim Aufkommen vom Angriff aus dem Fall während der Wirkungsdauer zusätzlich Schaden in Höhe von 50 % ANG. Verursacht beim Aufkommen stattdessen zusätzlich Schaden in Höhe von 180 % ANG, wenn Varesa im Zustand „Brennende Leidenschaft“ ist.",
+      "2": "<br/>",
+      "3": "Entfernt den Effekt „Regenbogensturzangriff“, sobald Gegner beim Aufkommen getroffen werden oder die Wirkungsdauer endet."
+    }
+  },
+  "passive2": {
+    "name": "Zweite Rückkehr der Heldin!",
+    "description": {
+      "0": "Erhöht Varesas ANG 12 s lang um 35 %, wenn ein Truppenmitglied in der Nähe den Nachtseelenaufbruch auslöst. 2-fach stapelbar, Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet."
+    }
+  },
+  "passive3": {
+    "name": "Geschenk des Nachtreichs – Verbrennung des Bösen",
+    "description": {
+      "0": "Wechselt, nachdem Varesas Nachtseelenpunkte aufgebraucht sind, zum Verbrauch von Phlogiston, um „Stürmischer Vorstoß“ in ihrem Nachtseelensegen aufrechtzuerhalten.",
+      "1": "Beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan kann die Nachtseelen-Übertragung – Varesa verwendet werden. Wenn die aktuelle Figur gerade rennt, sich in einem Bewegungsmodus befindet, der durch bestimmte Talente ausgelöst wird, oder sich in einer bestimmten Höhe in der Luft befindet, wird beim Wechsel zu Varesa Folgendes ausgelöst: Varesa tritt in den Zustand Nachtseelensegen ein, wechselt in den Modus „Stürmischer Vorstoß“ und erhält 20  Nachtseelenpunkte. 10 s Abklingzeit für das Auslösen der Nachtseelen-Übertragung innerhalb der eigenen Truppe.",
+      "2": "Varesa erleidet beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan keinen Schaden durch den Fall, wenn sie das Gelände nutzt, um Flugsprünge auszuführen."
+    }
+  },
+  "passive": {
+    "name": "Mit brennendem Herzen voran!",
+    "description": {
+      "0": "Erhöht Varesas Geschwindigkeit beim Rennen. Erhöht außerdem die beim Rennen verbrauchte Ausdauer, wenn sie sich nicht im Kampf befindet.",
+      "1": "Stellt eigenen Truppenmitgliedern außerdem beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan durch das Verwenden von Nahrung 20 Punkte Phlogiston wieder her. 10 s Abklingzeit. Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund."
+    }
+  },
+  "constellation1": {
+    "name": "Nicht auslöschbare Leidenschaft",
+    "description": {
+      "0": "Verstärkt den Effekt des passiven Talents „Siegesbewusster Dreifachsprung!“:",
+      "1": "Verleiht Varesa auch beim Ausführen des besonderen „Angriffs aus dem Fall – Wilder Vulkanwirbel“ 5 s lang den „Regenbogensturzangriff“.",
+      "2": "Verursacht während der Dauer des „Regenbogensturzangriffs“ beim Aufkommen mit dem Angriff aus dem Fall stattdessen zusätzlich Schaden in Höhe von 180 % ANG, unabhängig davon, ob Varesa sich im Zustand der „Brennende Leidenschaft“ befindet. Das passive Talent „Siegesbewusster Dreifachsprung!“ muss zuerst freigeschaltet werden.",
+      "3": "<br/>",
+      "4": "Verringert Varesas Verbrauch an Nachtseelenpunkten oder Phlogiston, wenn sie sich im Modus „Stürmischer Vorstoß“ des Zustands Nachtseelensegen befindet, um 30 %."
+    }
+  },
+  "constellation2": {
+    "name": "Jenseits des Lichts",
+    "description": {
+      "0": "Varesa tritt unabhängig davon, ob sie sich im Zustand „Brennende Leidenschaft“ befindet, nach dem Ausführen eines Angriffs aus dem Fall in den Zustand „Äußerster Antrieb“ ein.",
+      "1": "Erhöht Varesas Unterbrechungs-WDS im Zustand „Äußerster Antrieb“ zusätzlich.",
+      "2": "Stellt Varesa außerdem 11,5 Punkte Elementarenergie wieder her, wenn sie beim Aufkommen nach einem Angriff aus dem Fall Gegner trifft."
+    }
+  },
+  "constellation3": {
+    "name": "Unbeugsame Entschlossenheit",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Blitzartiger Auftritt!</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Mutig vorwärts",
+    "description": {
+      "0": "Erzeugt entsprechend Varesas Zustand beim Auslösen ihrer Spezialfähigkeit <strong>Blitzartiger Auftritt!</strong> verschiedene Verstärkungseffekte. Wenn Varesa:",
+      "1": [
+        " nicht im Zustand „Brennende Leidenschaft“ oder „Äußerster Antrieb“ ist, erhält Varesa den Effekt „Erlernte Furchtlosigkeit“, der 15 s hält und den beim Aufkommen nach einem Angriff aus dem Fall verursachten Schaden basierend auf 500 % von Varesas ANG erhöht, aber um höchstens 20.000. Entfernt diesen Effekt, sobald beim Aufkommen Gegner getroffen werden oder die Wirkungsdauer abläuft.",
+        " im Zustand „Brennende Leidenschaft“ oder „Äußerster Antrieb“ ist, wird der durch diese Anwendung ihrer Spezialfähigkeit <strong>Blitzartiger Auftritt!</strong> verursachte Schaden um 100 % erhöht."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Gedanken in der warmen Brise",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Standardangriff: An den Hörnern gepackt</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Triumph einer Heldin der Gerechtigkeit",
+    "description": {
+      "0": "Stellt Varesa 30 Punkte Elementarenergie wieder her, wenn sie in den Zustand „Äußerster Antrieb“ eintritt.",
+      "1": "Erhöht die KT von Varesas Angriff aus dem Fall sowie ihrer Spezialfähigkeit <strong>Blitzartiger Auftritt!</strong> um 10 % und den entsprechenden KSCH um 100 %.",
+      "2": "Stellt außerdem Varesas Nachtseelenpunkte vollständig wieder her, wenn ihre Elementarfähigkeit <strong>Sprung über den nächtlichen Regenbogen</strong> durch Gedrückthalten oder im Modus „Stürmischer Vorstoß“ durch Drücken ausgelöst wird."
+    }
+  }
+}

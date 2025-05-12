@@ -1,0 +1,29 @@
+{
+  "setName": "Epílogo do Corredor",
+  "setEffects": {
+    "2": "Bônus de Dano Cryo +15%",
+    "4": "Quando a Energia Elemental do personagem que está com esse conjunto equipado for 0, aumenta o Dano causado por seu Ataque Normal em 60%, e o Dano causado pelo Supremo em 60%. Depois que o personagem que está com esse conjunto equipado causar Dano de Ataque Normal, o efeito de aumento de Dano de Supremo desaparecerá após 6s, e o efeito de aumento de Dano de Ataque Normal também desaparecerá depois de 6s. Esse efeito pode ser desencadeado, ainda que o personagem não esteja ativo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Ecos do Corredor Profundo",
+      "desc": "Uma flor de gelo feita de jade do norte. Os pétalas dessa flor se transformaram em pó com o passar dos anos."
+    },
+    "plume": {
+      "name": "Promessa do Corredor Profundo",
+      "desc": "Uma pena feita de jade do norte. O brilho refletido não parece pertencer a este mundo."
+    },
+    "sands": {
+      "name": "Passagem do Corredor Profundo",
+      "desc": "Um relógio de bolso feito de jade do norte. Seus ponteiros foram paralisados eternamente no momento da aniquilação."
+    },
+    "goblet": {
+      "name": "Banquete do Corredor Profundo",
+      "desc": "Um cálice feito de jade do norte. Dizem que era um antigo sacrifício para uma civilização antiga."
+    },
+    "circlet": {
+      "name": "Coroa Perdida do Corredor Profundo",
+      "desc": "Como a mente de seu antigo dono, a máscara foi tingida pela \"obsessão\". A jade decorando o capacete parece ser de uma era ainda mais antiga."
+    }
+  }
+}

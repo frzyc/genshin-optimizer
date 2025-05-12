@@ -8,6 +8,10 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
+import {
+  CharCalcProvider,
+  CharStatsDisplay,
+} from '@genshin-optimizer/zzz/formula-ui'
 import { EquipGrid } from '@genshin-optimizer/zzz/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import {
@@ -20,8 +24,6 @@ import {
 } from '@mui/material'
 import { memo, useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharCalcProvider } from '../CharCalcProvider'
-import { CharStatsDisplay } from '../CharStatsDisplay'
 
 function useGeneratedBuildList(listId: string) {
   const { database } = useDatabaseContext()

@@ -381,5 +381,23 @@ export const theme = createTheme({
         },
       },
     },
+    MuiPopper: {
+      styleOverrides: {
+        root: {
+          '&:has(> div[style*="opacity: 0"])': {
+            pointerEvents: 'none',
+          },
+        },
+      },
+    },
+    MuiModal: {
+      styleOverrides: {
+        root: {
+          '&:has(> div[style*="opacity: 0"])': {
+            pointerEvents: 'none',
+          },
+        },
+      },
+    },
   },
 })

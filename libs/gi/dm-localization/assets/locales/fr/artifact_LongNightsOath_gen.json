@@ -1,0 +1,29 @@
+{
+  "setName": "Serment de la longue nuit",
+  "setEffects": {
+    "2": "Les DGT infligés par les attaques plongeantes augmentent de 25 %.",
+    "4": "Lorsque le personnage équipé de l'artéfact a touché un ennemi avec une attaque plongeante, une attaque chargée ou une compétence élémentaire, il obtient respectivement 1, 2 ou 2 cumuls de radiance éternelle, ces différents types d'attaque pouvant chacun déclencher cet effet une fois toutes les secondes. La radiance éternelle augmente les DGT infligés par les attaques plongeantes de 15 % pendant 6 s et peut se cumuler 5 fois maximum, la durée de chaque cumul étant calculée de façon indépendante."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Serment du gardien de lumière",
+      "desc": "Une fleur en métal portée par un ratniki. Elle symbolise le serment de vigilance éternelle prêté par son propriétaire d'origine."
+    },
+    "plume": {
+      "name": "Plume de queue de rossignol",
+      "desc": "Un ornement de chapeau finement confectionné à partir de plumes de rossignol. On dit que sa forme a été conçue à l'origine par le forge-torche originel."
+    },
+    "sands": {
+      "name": "Cloche de deuil de l'éternel",
+      "desc": "Une cloche en bronze portée par un guerrier qui traversait les ténèbres abyssales. Son carillon peut être entendu dans les nuits noires."
+    },
+    "goblet": {
+      "name": "Cor silencieux",
+      "desc": "Une corne qui servait autrefois à appeler ceux qui avaient prêté serment. Elle a depuis longtemps perdu son utilité."
+    },
+    "circlet": {
+      "name": "Pompon teint",
+      "desc": "Un ancien casque lourd. C'est un héritage qui porte la marque d'une vénérable lignée de guerriers du nord."
+    }
+  }
+}

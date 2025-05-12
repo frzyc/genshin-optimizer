@@ -1,12 +1,9 @@
 {
   "id": "1171",
-  "icon": "IconRole32",
   "rarity": "S",
   "attribute": "fire",
   "specialty": "anomaly",
   "faction": "SonsOfCalydon",
-  "fullname": "Burnice White",
-  "name": "Burnice",
   "stats": {
     "atk_base": 124,
     "atk_growth": 7.4992,
@@ -14,7 +11,7 @@
     "def_growth": 6.5524,
     "hp_base": 592,
     "hp_growth": 80.3931,
-    "anomMas_base": 118,
+    "anomMas": 118,
     "anomProf": 120,
     "impact": 83,
     "enerRegen": 1.2
@@ -28,1331 +25,290 @@
     { "hp": 2033, "atk": 222, "def": 166 }
   ],
   "coreStats": [
-    { "atk_base": 0, "base_enerRegen": 12 },
-    { "atk_base": 25, "base_enerRegen": 12 },
-    { "atk_base": 25, "base_enerRegen": 24 },
-    { "atk_base": 50, "base_enerRegen": 24 },
-    { "atk_base": 50, "base_enerRegen": 36 },
-    { "atk_base": 75, "base_enerRegen": 36 }
+    { "atk": 0, "enerRegen": 12 },
+    { "atk": 25, "enerRegen": 12 },
+    { "atk": 25, "enerRegen": 24 },
+    { "atk": 50, "enerRegen": 24 },
+    { "atk": 50, "enerRegen": 36 },
+    { "atk": 75, "enerRegen": 36 }
   ],
-  "skills": {
-    "Basic": {
-      "Description": [
+  "skillParams": {
+    "basic": {
+      "BasicAttackDirectFlameBlend": [
         {
-          "Name": "Basic Attack: Direct Flame Blend",
-          "Desc": "Press <IconMap:Icon_Normal> to activate:\nUnleashes up to 5 attacks in front, dealing <color=#F0D12B>Physical DMG</color> and <color=#FF5521>Fire DMG</color>."
+          "DamagePercentage": 0.448,
+          "DamagePercentageGrowth": 0.041,
+          "StunRatio": 0.187,
+          "StunRatioGrowth": 0.009,
+          "SpRecovery": 61,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 467.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 16.94
         },
         {
-          "Name": "Basic Attack: Mixed Flame Blend",
-          "Desc": "In the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state, hold <IconMap:Icon_Normal> to activate:\nSpin continuously while spraying flames around, followed by a Finishing Move that inflicts <color=#FF5521>Fire DMG</color>. Continuing to hold extends the flame-spraying duration.\nWhen the move is activated, it consumes 20 <color=#FFFFFF>Heat</color>;\nAnti-Interrupt level is increased while using this skill.\nAfter executing the Finishing Move, press <IconMap:Icon_SpecialReady> to immediately follow up with <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color>."
+          "DamagePercentage": 0.435,
+          "DamagePercentageGrowth": 0.04,
+          "StunRatio": 0.308,
+          "StunRatioGrowth": 0.014,
+          "SpRecovery": 100.7,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 770,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
         },
         {
-          "Name": "Basic Attack: Direct Flame Blend",
-          "Param": [
-            {
-              "Name": "1st-Hit DMG Multiplier",
-              "Desc": "{Skill:1171001, Prop:1001}",
-              "Param": {
-                "1171001": {
-                  "Main": 44.8,
-                  "Growth": 0.041,
-                  "Format": "%",
-                  "DamagePercentage": 0.448,
-                  "DamagePercentageGrowth": 0.041,
-                  "StunRatio": 0.187,
-                  "StunRatioGrowth": 0.009,
-                  "SpRecovery": 61,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 467.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 16.94,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "2nd-Hit DMG Multiplier",
-              "Desc": "{Skill:1171002, Prop:1001}",
-              "Param": {
-                "1171002": {
-                  "Main": 43.5,
-                  "Growth": 0.04,
-                  "Format": "%",
-                  "DamagePercentage": 0.435,
-                  "DamagePercentageGrowth": 0.04,
-                  "StunRatio": 0.308,
-                  "StunRatioGrowth": 0.014,
-                  "SpRecovery": 100.7,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 770,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "3rd-Hit DMG Multiplier",
-              "Desc": "{Skill:1171003, Prop:1001}",
-              "Param": {
-                "1171003": {
-                  "Main": 71.7,
-                  "Growth": 0.066,
-                  "Format": "%",
-                  "DamagePercentage": 0.717,
-                  "DamagePercentageGrowth": 0.066,
-                  "StunRatio": 0.478,
-                  "StunRatioGrowth": 0.022,
-                  "SpRecovery": 156.2,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1193.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 43.37,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "4th-Hit DMG Multiplier",
-              "Desc": "{Skill:1171004, Prop:1001}",
-              "Param": {
-                "1171004": {
-                  "Main": 66.6,
-                  "Growth": 0.061,
-                  "Format": "%",
-                  "DamagePercentage": 0.666,
-                  "DamagePercentageGrowth": 0.061,
-                  "StunRatio": 0.304,
-                  "StunRatioGrowth": 0.014,
-                  "SpRecovery": 99.2,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 759,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 27.54,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "5th-Hit DMG Multiplier",
-              "Desc": "{Skill:1171005, Prop:1001}",
-              "Param": {
-                "1171005": {
-                  "Main": 96.3,
-                  "Growth": 0.088,
-                  "Format": "%",
-                  "DamagePercentage": 0.963,
-                  "DamagePercentageGrowth": 0.088,
-                  "StunRatio": 0.52,
-                  "StunRatioGrowth": 0.024,
-                  "SpRecovery": 169.9,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1298,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 47.19,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "1st-Hit Daze Multiplier",
-              "Desc": "{Skill:1171001, Prop:1002}",
-              "Param": {
-                "1171001": {
-                  "Main": 18.7,
-                  "Growth": 0.009,
-                  "Format": "%",
-                  "DamagePercentage": 0.448,
-                  "DamagePercentageGrowth": 0.041,
-                  "StunRatio": 0.187,
-                  "StunRatioGrowth": 0.009,
-                  "SpRecovery": 61,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 467.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 16.94,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "2nd-Hit Daze Multiplier",
-              "Desc": "{Skill:1171002, Prop:1002}",
-              "Param": {
-                "1171002": {
-                  "Main": 30.8,
-                  "Growth": 0.014,
-                  "Format": "%",
-                  "DamagePercentage": 0.435,
-                  "DamagePercentageGrowth": 0.04,
-                  "StunRatio": 0.308,
-                  "StunRatioGrowth": 0.014,
-                  "SpRecovery": 100.7,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 770,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "3rd-Hit Daze Multiplier",
-              "Desc": "{Skill:1171003, Prop:1002}",
-              "Param": {
-                "1171003": {
-                  "Main": 47.8,
-                  "Growth": 0.022,
-                  "Format": "%",
-                  "DamagePercentage": 0.717,
-                  "DamagePercentageGrowth": 0.066,
-                  "StunRatio": 0.478,
-                  "StunRatioGrowth": 0.022,
-                  "SpRecovery": 156.2,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1193.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 43.37,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "4th-Hit Daze Multiplier",
-              "Desc": "{Skill:1171004, Prop:1002}",
-              "Param": {
-                "1171004": {
-                  "Main": 30.4,
-                  "Growth": 0.014,
-                  "Format": "%",
-                  "DamagePercentage": 0.666,
-                  "DamagePercentageGrowth": 0.061,
-                  "StunRatio": 0.304,
-                  "StunRatioGrowth": 0.014,
-                  "SpRecovery": 99.2,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 759,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 27.54,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "5th-Hit Daze Multiplier",
-              "Desc": "{Skill:1171005, Prop:1002}",
-              "Param": {
-                "1171005": {
-                  "Main": 52,
-                  "Growth": 0.024,
-                  "Format": "%",
-                  "DamagePercentage": 0.963,
-                  "DamagePercentageGrowth": 0.088,
-                  "StunRatio": 0.52,
-                  "StunRatioGrowth": 0.024,
-                  "SpRecovery": 169.9,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1298,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 47.19,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 0.717,
+          "DamagePercentageGrowth": 0.066,
+          "StunRatio": 0.478,
+          "StunRatioGrowth": 0.022,
+          "SpRecovery": 156.2,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1193.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 43.37
         },
         {
-          "Name": "Basic Attack: Mixed Flame Blend",
-          "Param": [
-            {
-              "Name": "Continuous Spray DMG Multiplier",
-              "Desc": "{Skill:1171006, Prop:1001}",
-              "Param": {
-                "1171006": {
-                  "Main": 125.4,
-                  "Growth": 0.114,
-                  "Format": "%",
-                  "DamagePercentage": 1.254,
-                  "DamagePercentageGrowth": 0.114,
-                  "StunRatio": 0.965,
-                  "StunRatioGrowth": 0.044,
-                  "SpRecovery": 157.8,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2411.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 95.98,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Finishing Move DMG Multiplier",
-              "Desc": "{Skill:1171007, Prop:1001}",
-              "Param": {
-                "1171007": {
-                  "Main": 232.8,
-                  "Growth": 0.212,
-                  "Format": "%",
-                  "DamagePercentage": 2.328,
-                  "DamagePercentageGrowth": 0.212,
-                  "StunRatio": 1.791,
-                  "StunRatioGrowth": 0.082,
-                  "SpRecovery": 293.1,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 4477,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 171.11,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Continuous Spray Daze Multiplier",
-              "Desc": "{Skill:1171006, Prop:1002}",
-              "Param": {
-                "1171006": {
-                  "Main": 96.5,
-                  "Growth": 0.044,
-                  "Format": "%",
-                  "DamagePercentage": 1.254,
-                  "DamagePercentageGrowth": 0.114,
-                  "StunRatio": 0.965,
-                  "StunRatioGrowth": 0.044,
-                  "SpRecovery": 157.8,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2411.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 95.98,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Finishing Move Daze Multiplier",
-              "Desc": "{Skill:1171007, Prop:1002}",
-              "Param": {
-                "1171007": {
-                  "Main": 179.1,
-                  "Growth": 0.082,
-                  "Format": "%",
-                  "DamagePercentage": 2.328,
-                  "DamagePercentageGrowth": 0.212,
-                  "StunRatio": 1.791,
-                  "StunRatioGrowth": 0.082,
-                  "SpRecovery": 293.1,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 4477,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 171.11,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 0.666,
+          "DamagePercentageGrowth": 0.061,
+          "StunRatio": 0.304,
+          "StunRatioGrowth": 0.014,
+          "SpRecovery": 99.2,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 759,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 27.54
+        },
+        {
+          "DamagePercentage": 0.963,
+          "DamagePercentageGrowth": 0.088,
+          "StunRatio": 0.52,
+          "StunRatioGrowth": 0.024,
+          "SpRecovery": 169.9,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1298,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 47.19
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100111": 2 },
-        "2": { "10": 3000, "100111": 3 },
-        "3": { "10": 6000, "100121": 2 },
-        "4": { "10": 9000, "100121": 3 },
-        "5": { "10": 12000, "100121": 4 },
-        "6": { "10": 18000, "100121": 6 },
-        "7": { "10": 45000, "100131": 5 },
-        "8": { "10": 67500, "100131": 8 },
-        "9": { "10": 90000, "100131": 10 },
-        "10": { "10": 112500, "100131": 12 },
-        "11": { "10": 135000, "100131": 15, "100941": 1 },
-        "12": {}
-      }
+      "BasicAttackMixedFlameBlend": [
+        {
+          "DamagePercentage": 1.254,
+          "DamagePercentageGrowth": 0.114,
+          "StunRatio": 0.965,
+          "StunRatioGrowth": 0.044,
+          "SpRecovery": 157.8,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2411.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 95.98
+        },
+        {
+          "DamagePercentage": 2.328,
+          "DamagePercentageGrowth": 0.212,
+          "StunRatio": 1.791,
+          "StunRatioGrowth": 0.082,
+          "SpRecovery": 293.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 4477,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 171.11
+        }
+      ]
     },
-    "Dodge": {
-      "Description": [
+    "dodge": {
+      "DodgeFieryPhantomDash": [],
+      "DashAttackDangerousFermentation": [
         {
-          "Name": "Dodge: Fiery Phantom Dash",
-          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Dash Attack: Dangerous Fermentation",
-          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nPerform a forward rush attack with the flamethrower, dealing <color=#FF5521>Fire DMG</color>."
-        },
-        {
-          "Name": "Dodge Counter: Fluttering Steps",
-          "Desc": "Press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nLaunch a series of attacks on enemies in front while spraying flames, dealing <color=#F0D12B>Physical DMG</color> and <color=#FF5521>Fire DMG</color>.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Dash Attack: Dangerous Fermentation",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1171014, Prop:1001}",
-              "Param": {
-                "1171014": {
-                  "Main": 67.9,
-                  "Growth": 0.062,
-                  "Format": "%",
-                  "DamagePercentage": 0.679,
-                  "DamagePercentageGrowth": 0.062,
-                  "StunRatio": 0.34,
-                  "StunRatioGrowth": 0.016,
-                  "SpRecovery": 111,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 849.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 30.83,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1171014, Prop:1002}",
-              "Param": {
-                "1171014": {
-                  "Main": 34,
-                  "Growth": 0.016,
-                  "Format": "%",
-                  "DamagePercentage": 0.679,
-                  "DamagePercentageGrowth": 0.062,
-                  "StunRatio": 0.34,
-                  "StunRatioGrowth": 0.016,
-                  "SpRecovery": 111,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 849.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 30.83,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Dodge Counter: Fluttering Steps",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1171015, Prop:1001}",
-              "Param": {
-                "1171015": {
-                  "Main": 219.7,
-                  "Growth": 0.2,
-                  "Format": "%",
-                  "DamagePercentage": 2.197,
-                  "DamagePercentageGrowth": 0.2,
-                  "StunRatio": 1.944,
-                  "StunRatioGrowth": 0.089,
-                  "SpRecovery": 138,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2109.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 76.66,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1171015, Prop:1002}",
-              "Param": {
-                "1171015": {
-                  "Main": 194.4,
-                  "Growth": 0.089,
-                  "Format": "%",
-                  "DamagePercentage": 2.197,
-                  "DamagePercentageGrowth": 0.2,
-                  "StunRatio": 1.944,
-                  "StunRatioGrowth": 0.089,
-                  "SpRecovery": 138,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2109.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 76.66,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 0.679,
+          "DamagePercentageGrowth": 0.062,
+          "StunRatio": 0.34,
+          "StunRatioGrowth": 0.016,
+          "SpRecovery": 111,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 849.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 30.83
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100111": 2 },
-        "2": { "10": 3000, "100111": 3 },
-        "3": { "10": 6000, "100121": 2 },
-        "4": { "10": 9000, "100121": 3 },
-        "5": { "10": 12000, "100121": 4 },
-        "6": { "10": 18000, "100121": 6 },
-        "7": { "10": 45000, "100131": 5 },
-        "8": { "10": 67500, "100131": 8 },
-        "9": { "10": 90000, "100131": 10 },
-        "10": { "10": 112500, "100131": 12 },
-        "11": { "10": 135000, "100131": 15, "100941": 1 },
-        "12": {}
-      }
+      "DodgeCounterFlutteringSteps": [
+        {
+          "DamagePercentage": 2.197,
+          "DamagePercentageGrowth": 0.2,
+          "StunRatio": 1.944,
+          "StunRatioGrowth": 0.089,
+          "SpRecovery": 138,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2109.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 76.66
+        }
+      ]
     },
-    "Special": {
-      "Description": [
+    "special": {
+      "SpecialAttackIntenseHeatAgingMethod": [
         {
-          "Name": "Special Attack: Intense Heat Aging Method",
-          "Desc": "Press <IconMap:Icon_Special> to activate:\nUnleash a fire blast forward, inflicting <color=#FF5521>Fire DMG</color>;\nPress and hold <IconMap:Icon_Special> to charge, boosting the move's power.\nAnti-Interrupt level is increased while using this skill."
+          "DamagePercentage": 0.578,
+          "DamagePercentageGrowth": 0.053,
+          "StunRatio": 0.578,
+          "StunRatioGrowth": 0.027,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1446.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 52.51
         },
         {
-          "Name": "EX Special Attack: Intense Heat Stirring Method",
-          "Desc": "With enough energy, press <IconMap:Icon_SpecialReady> to activate:\nContinuously spray flames with a one-handed flamethrower, then release a fire blast in a straight line ahead, dealing massive <color=#FF5521>Fire DMG</color>. Continue holding to steadily consume energy and extend the spray's duration.\nWhile continuously spraying, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to execute a sidestep dodge, adjusting your position in the corresponding direction.\nAnti-Interrupt Level is increased while continuously spraying, and DMG taken is reduced by 40%.\nCharacter is invulnerable during sidestep dodge and fire blast."
-        },
-        {
-          "Name": "EX Special Attack: Intense Heat Stirring Method - Double Shot",
-          "Desc": "While using <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method</color>, with enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nUse both flamethrowers to continuously spray flames, followed by a fire blast in a front line, dealing massive <color=#FF5521>Fire DMG</color>. Keep holding to continue consuming Energy and extend the spray's duration.\nCharacter is invulnerable during the moment the spray is activated and during the activation of the fire blast.\nAnti-Interrupt Level is increased while spraying, and DMG received is reduced by 40%."
-        },
-        {
-          "Name": "Special Attack: Intense Heat Aging Method",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1171008, Prop:1001}",
-              "Param": {
-                "1171008": {
-                  "Main": 57.8,
-                  "Growth": 0.053,
-                  "Format": "%",
-                  "DamagePercentage": 0.578,
-                  "DamagePercentageGrowth": 0.053,
-                  "StunRatio": 0.578,
-                  "StunRatioGrowth": 0.027,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1446.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 52.51,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Charged Attack DMG Multiplier",
-              "Desc": "{Skill:1171009, Prop:1001}",
-              "Param": {
-                "1171009": {
-                  "Main": 62.4,
-                  "Growth": 0.057,
-                  "Format": "%",
-                  "DamagePercentage": 0.624,
-                  "DamagePercentageGrowth": 0.057,
-                  "StunRatio": 0.624,
-                  "StunRatioGrowth": 0.029,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1559.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 56.68,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1171008, Prop:1002}",
-              "Param": {
-                "1171008": {
-                  "Main": 57.8,
-                  "Growth": 0.027,
-                  "Format": "%",
-                  "DamagePercentage": 0.578,
-                  "DamagePercentageGrowth": 0.053,
-                  "StunRatio": 0.578,
-                  "StunRatioGrowth": 0.027,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1446.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 52.51,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Charged Daze Multiplier",
-              "Desc": "{Skill:1171009, Prop:1002}",
-              "Param": {
-                "1171009": {
-                  "Main": 62.4,
-                  "Growth": 0.029,
-                  "Format": "%",
-                  "DamagePercentage": 0.624,
-                  "DamagePercentageGrowth": 0.057,
-                  "StunRatio": 0.624,
-                  "StunRatioGrowth": 0.029,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1559.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 56.68,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "EX Special Attack: Intense Heat Stirring Method",
-          "Param": [
-            {
-              "Name": "Continuous Spray DMG Multiplier",
-              "Desc": "{Skill:1171010, Prop:1001}",
-              "Param": {
-                "1171010": {
-                  "Main": 543.8,
-                  "Growth": 0.495,
-                  "Format": "%",
-                  "DamagePercentage": 5.438,
-                  "DamagePercentageGrowth": 0.495,
-                  "StunRatio": 3.786,
-                  "StunRatioGrowth": 0.173,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 13675.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 411.1,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Continuous Spray Daze Multiplier",
-              "Desc": "{Skill:1171010, Prop:1002}",
-              "Param": {
-                "1171010": {
-                  "Main": 378.6,
-                  "Growth": 0.173,
-                  "Format": "%",
-                  "DamagePercentage": 5.438,
-                  "DamagePercentageGrowth": 0.495,
-                  "StunRatio": 3.786,
-                  "StunRatioGrowth": 0.173,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 13675.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 411.1,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Fire Blast DMG Multiplier",
-              "Desc": "{Skill:1171011, Prop:1001}",
-              "Param": {
-                "1171011": {
-                  "Main": 96.7,
-                  "Growth": 0.088,
-                  "Format": "%",
-                  "DamagePercentage": 0.967,
-                  "DamagePercentageGrowth": 0.088,
-                  "StunRatio": 0.657,
-                  "StunRatioGrowth": 0.03,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2400.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 71.55,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Fire Blast Daze Multiplier",
-              "Desc": "{Skill:1171011, Prop:1002}",
-              "Param": {
-                "1171011": {
-                  "Main": 65.7,
-                  "Growth": 0.03,
-                  "Format": "%",
-                  "DamagePercentage": 0.967,
-                  "DamagePercentageGrowth": 0.088,
-                  "StunRatio": 0.657,
-                  "StunRatioGrowth": 0.03,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2400.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 71.55,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            { "Name": "Energy Cost to Use", "Desc": "40" },
-            { "Name": "Continuous Spray Energy Cost", "Desc": "12.5/s" },
-            { "Name": "Fire Blast Energy Cost", "Desc": "5" }
-          ]
-        },
-        {
-          "Name": "EX Special Attack: Intense Heat Stirring Method - Double Shot",
-          "Param": [
-            {
-              "Name": "Continuous Spray DMG Multiplier",
-              "Desc": "{Skill:1171012, Prop:1001}",
-              "Param": {
-                "1171012": {
-                  "Main": 958.1,
-                  "Growth": 0.871,
-                  "Format": "%",
-                  "DamagePercentage": 9.581,
-                  "DamagePercentageGrowth": 0.871,
-                  "StunRatio": 5.857,
-                  "StunRatioGrowth": 0.267,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 18397.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 530.24,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Continuous Spray Daze Multiplier",
-              "Desc": "{Skill:1171012, Prop:1002}",
-              "Param": {
-                "1171012": {
-                  "Main": 585.7,
-                  "Growth": 0.267,
-                  "Format": "%",
-                  "DamagePercentage": 9.581,
-                  "DamagePercentageGrowth": 0.871,
-                  "StunRatio": 5.857,
-                  "StunRatioGrowth": 0.267,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 18397.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 530.24,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Fire Blast DMG Multiplier",
-              "Desc": "{Skill:1171013, Prop:1001}",
-              "Param": {
-                "1171013": {
-                  "Main": 287.1,
-                  "Growth": 0.261,
-                  "Format": "%",
-                  "DamagePercentage": 2.871,
-                  "DamagePercentageGrowth": 0.261,
-                  "StunRatio": 2.078,
-                  "StunRatioGrowth": 0.095,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6036.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 183.65,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Fire Blast Daze Multiplier",
-              "Desc": "{Skill:1171013, Prop:1002}",
-              "Param": {
-                "1171013": {
-                  "Main": 207.8,
-                  "Growth": 0.095,
-                  "Format": "%",
-                  "DamagePercentage": 2.871,
-                  "DamagePercentageGrowth": 0.261,
-                  "StunRatio": 2.078,
-                  "StunRatioGrowth": 0.095,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6036.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 183.65,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            { "Name": "Energy Cost to Use", "Desc": "10" },
-            { "Name": "Continuous Spray Energy Cost", "Desc": "25/s" },
-            { "Name": "Fire Blast Energy Cost", "Desc": "10" }
-          ]
+          "DamagePercentage": 0.624,
+          "DamagePercentageGrowth": 0.057,
+          "StunRatio": 0.624,
+          "StunRatioGrowth": 0.029,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1559.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 56.68
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100111": 2 },
-        "2": { "10": 3000, "100111": 3 },
-        "3": { "10": 6000, "100121": 2 },
-        "4": { "10": 9000, "100121": 3 },
-        "5": { "10": 12000, "100121": 4 },
-        "6": { "10": 18000, "100121": 6 },
-        "7": { "10": 45000, "100131": 5 },
-        "8": { "10": 67500, "100131": 8 },
-        "9": { "10": 90000, "100131": 10 },
-        "10": { "10": 112500, "100131": 12 },
-        "11": { "10": 135000, "100131": 15, "100941": 1 },
-        "12": {}
-      }
-    },
-    "Chain": {
-      "Description": [
+      "EXSpecialAttackIntenseHeatStirringMethod": [
         {
-          "Name": "Chain Attack: Fuel-Fed Flame",
-          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nQuickly dash forward while spraying flames in all directions, then launch a fire blast in a fan-shaped area ahead, dealing massive <color=#FF5521>Fire DMG</color>.\nCharacter is invulnerable while using this skill.\nAfter using the skill, press <IconMap:Icon_SpecialReady> to immediately follow up with <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color>."
+          "DamagePercentage": 5.438,
+          "DamagePercentageGrowth": 0.495,
+          "StunRatio": 3.786,
+          "StunRatioGrowth": 0.173,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 13675.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 411.1
         },
         {
-          "Name": "Ultimate: Glorious Inferno",
-          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nDash forward quickly, then leap into the air and continuously spray flames over a wide area ahead, dealing massive <color=#FF5521>Fire DMG</color>.\nWhen leaping into the air, a <color=#FFFFFF>Quick Assist</color> will be triggered. If the <color=#FFFFFF>Quick Assist</color> is activated, Burnice will extend the duration of her flame spray.\nUpon activation, recover 50 <color=#FFFFFF>Heat</color>.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Chain Attack: Fuel-Fed Flame",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1171016, Prop:1001}",
-              "Param": {
-                "1171016": {
-                  "Main": 680.9,
-                  "Growth": 0.619,
-                  "Format": "%",
-                  "DamagePercentage": 6.809,
-                  "DamagePercentageGrowth": 0.619,
-                  "StunRatio": 2.42,
-                  "StunRatioGrowth": 0.11,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 24337.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 1002.96,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1171016, Prop:1002}",
-              "Param": {
-                "1171016": {
-                  "Main": 242,
-                  "Growth": 0.11,
-                  "Format": "%",
-                  "DamagePercentage": 6.809,
-                  "DamagePercentageGrowth": 0.619,
-                  "StunRatio": 2.42,
-                  "StunRatioGrowth": 0.11,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 24337.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 1002.96,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Ultimate: Glorious Inferno",
-          "Param": [
-            {
-              "Name": "Maximum DMG Multiplier",
-              "Desc": "{Skill:1171017, Prop:1001}",
-              "Param": {
-                "1171017": {
-                  "Main": 2012.2,
-                  "Growth": 1.83,
-                  "Format": "%",
-                  "DamagePercentage": 20.122,
-                  "DamagePercentageGrowth": 1.83,
-                  "StunRatio": 1.064,
-                  "StunRatioGrowth": 0.049,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 861.16,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Maximum Daze Multiplier",
-              "Desc": "{Skill:1171017, Prop:1002}",
-              "Param": {
-                "1171017": {
-                  "Main": 106.4,
-                  "Growth": 0.049,
-                  "Format": "%",
-                  "DamagePercentage": 20.122,
-                  "DamagePercentageGrowth": 1.83,
-                  "StunRatio": 1.064,
-                  "StunRatioGrowth": 0.049,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 861.16,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 0.967,
+          "DamagePercentageGrowth": 0.088,
+          "StunRatio": 0.657,
+          "StunRatioGrowth": 0.03,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2400.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 71.55
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100111": 2 },
-        "2": { "10": 3000, "100111": 3 },
-        "3": { "10": 6000, "100121": 2 },
-        "4": { "10": 9000, "100121": 3 },
-        "5": { "10": 12000, "100121": 4 },
-        "6": { "10": 18000, "100121": 6 },
-        "7": { "10": 45000, "100131": 5 },
-        "8": { "10": 67500, "100131": 8 },
-        "9": { "10": 90000, "100131": 10 },
-        "10": { "10": 112500, "100131": 12 },
-        "11": { "10": 135000, "100131": 15, "100941": 1 },
-        "12": {}
-      }
+      "EXSpecialAttackIntenseHeatStirringMethodDoubleShot": [
+        {
+          "DamagePercentage": 9.581,
+          "DamagePercentageGrowth": 0.871,
+          "StunRatio": 5.857,
+          "StunRatioGrowth": 0.267,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 18397.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 530.24
+        },
+        {
+          "DamagePercentage": 2.871,
+          "DamagePercentageGrowth": 0.261,
+          "StunRatio": 2.078,
+          "StunRatioGrowth": 0.095,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 6036.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 183.65
+        }
+      ]
     },
-    "Assist": {
-      "Description": [
+    "chain": {
+      "ChainAttackFuelFedFlame": [
         {
-          "Name": "Quick Assist: Energizing Specialty Drink",
-          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nUnleash a flurry of attacks on enemies in front while spraying flames, dealing <color=#F0D12B>Physical DMG</color> and <color=#FF5521>Fire DMG</color>.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Defensive Assist: Smoky Cauldron",
-          "Desc": "When the character on field is about to be attacked, press <IconMap:Icon_Switch> to activate:\nParries the enemy's attack, dealing massive Daze.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Assist Follow-Up: Scorching Dew",
-          "Desc": "Press <IconMap:Icon_Normal> after a <color=#FFFFFF>Defensive Assist</color> to activate:\nLeap into the air and quickly spin forward while spraying flames in all directions, dealing <color=#FF5521>Fire DMG</color>.\nCharacter is invulnerable while using this skill.\nAfter using the skill, press <IconMap:Icon_SpecialReady> to immediately follow up with <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color>."
-        },
-        {
-          "Name": "Quick Assist: Energizing Specialty Drink",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1171018, Prop:1001}",
-              "Param": {
-                "1171018": {
-                  "Main": 84.4,
-                  "Growth": 0.077,
-                  "Format": "%",
-                  "DamagePercentage": 0.844,
-                  "DamagePercentageGrowth": 0.077,
-                  "StunRatio": 0.844,
-                  "StunRatioGrowth": 0.039,
-                  "SpRecovery": 138,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2109.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 76.66,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1171018, Prop:1002}",
-              "Param": {
-                "1171018": {
-                  "Main": 84.4,
-                  "Growth": 0.039,
-                  "Format": "%",
-                  "DamagePercentage": 0.844,
-                  "DamagePercentageGrowth": 0.077,
-                  "StunRatio": 0.844,
-                  "StunRatioGrowth": 0.039,
-                  "SpRecovery": 138,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2109.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 76.66,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Defensive Assist: Smoky Cauldron",
-          "Param": [
-            {
-              "Name": "Light Defensive Daze Multiplier",
-              "Desc": "{Skill:1171019, Prop:1002}",
-              "Param": {
-                "1171019": {
-                  "Main": 271.3,
-                  "Growth": 0.124,
-                  "Format": "%",
-                  "DamagePercentage": 0,
-                  "DamagePercentageGrowth": 0,
-                  "StunRatio": 2.713,
-                  "StunRatioGrowth": 0.124,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Heavy Defensive Daze Multiplier",
-              "Desc": "{Skill:1171020, Prop:1002}",
-              "Param": {
-                "1171020": {
-                  "Main": 342.8,
-                  "Growth": 0.156,
-                  "Format": "%",
-                  "DamagePercentage": 0,
-                  "DamagePercentageGrowth": 0,
-                  "StunRatio": 3.428,
-                  "StunRatioGrowth": 0.156,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Chain Defensive Daze Multiplier",
-              "Desc": "{Skill:1171021, Prop:1002}",
-              "Param": {
-                "1171021": {
-                  "Main": 166.8,
-                  "Growth": 0.076,
-                  "Format": "%",
-                  "DamagePercentage": 0,
-                  "DamagePercentageGrowth": 0,
-                  "StunRatio": 1.668,
-                  "StunRatioGrowth": 0.076,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Assist Follow-Up: Scorching Dew",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1171022, Prop:1001}",
-              "Param": {
-                "1171022": {
-                  "Main": 327.6,
-                  "Growth": 0.298,
-                  "Format": "%",
-                  "DamagePercentage": 3.276,
-                  "DamagePercentageGrowth": 0.298,
-                  "StunRatio": 2.824,
-                  "StunRatioGrowth": 0.129,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 9319.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 277.22,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1171022, Prop:1002}",
-              "Param": {
-                "1171022": {
-                  "Main": 282.4,
-                  "Growth": 0.129,
-                  "Format": "%",
-                  "DamagePercentage": 3.276,
-                  "DamagePercentageGrowth": 0.298,
-                  "StunRatio": 2.824,
-                  "StunRatioGrowth": 0.129,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 9319.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 277.22,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 6.809,
+          "DamagePercentageGrowth": 0.619,
+          "StunRatio": 2.42,
+          "StunRatioGrowth": 0.11,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 24337.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 1002.96
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100111": 2 },
-        "2": { "10": 3000, "100111": 3 },
-        "3": { "10": 6000, "100121": 2 },
-        "4": { "10": 9000, "100121": 3 },
-        "5": { "10": 12000, "100121": 4 },
-        "6": { "10": 18000, "100121": 6 },
-        "7": { "10": 45000, "100131": 5 },
-        "8": { "10": 67500, "100131": 8 },
-        "9": { "10": 90000, "100131": 10 },
-        "10": { "10": 112500, "100131": 12 },
-        "11": { "10": 135000, "100131": 15, "100941": 1 },
-        "12": {}
-      }
-    }
-  },
-  "skillList": {
-    "1171001": {
-      "Name": "Basic Attack: Direct Flame Blend",
-      "Desc": "<IconMap:Icon_Normal>",
-      "ElementType": 201,
-      "HitType": 103
+      "UltimateGloriousInferno": [
+        {
+          "DamagePercentage": 20.122,
+          "DamagePercentageGrowth": 1.83,
+          "StunRatio": 1.064,
+          "StunRatioGrowth": 0.049,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 861.16
+        }
+      ]
     },
-    "1171002": {
-      "Name": "Basic Attack: Mixed Flame Blend",
-      "Desc": "<IconMap:Icon_Normal> (Nitro-Fuel Cocktail) (Hold)",
-      "ElementType": 201,
-      "HitType": 103
-    },
-    "1171003": {
-      "Name": "Special Attack: Intense Heat Aging Method",
-      "Desc": "<IconMap:Icon_Special>",
-      "ElementType": 201,
-      "HitType": 103
-    },
-    "1171004": {
-      "Name": "EX Special Attack: Intense Heat Stirring Method",
-      "Desc": "<IconMap:Icon_SpecialReady>(Can Hold Down)",
-      "ElementType": 201,
-      "HitType": 103
-    },
-    "1171005": {
-      "Name": "EX Special Attack: Intense Heat Stirring Method - Double Shot",
-      "Desc": "<IconMap:Icon_SpecialReady> (During EX Special Attack: Intense Heat Stirring Method)",
-      "ElementType": 201,
-      "HitType": 103
-    },
-    "1171006": {
-      "Name": "Dash Attack: Dangerous Fermentation",
-      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
-      "ElementType": 201,
-      "HitType": 103
-    },
-    "1171007": {
-      "Name": "Dodge Counter: Fluttering Steps",
-      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
-      "ElementType": 201,
-      "HitType": 103
-    },
-    "1171008": {
-      "Name": "Chain Attack: Fuel-Fed Flame",
-      "Desc": "<IconMap:Icon_QTE>",
-      "ElementType": 201,
-      "HitType": 103
-    },
-    "1171009": {
-      "Name": "Ultimate: Glorious Inferno",
-      "Desc": "<IconMap:Icon_UltimateReady>",
-      "ElementType": 201,
-      "HitType": 103
-    },
-    "1171010": {
-      "Name": "Quick Assist: Energizing Specialty Drink",
-      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
-      "ElementType": 201,
-      "HitType": 103
-    },
-    "1171011": {
-      "Name": "Defensive Assist: Smoky Cauldron",
-      "Desc": "<IconMap:Icon_Switch> (When Triggering Defensive Assist)",
-      "ElementType": 0,
-      "HitType": 0
-    },
-    "1171012": {
-      "Name": "Assist Follow-Up: Scorching Dew",
-      "Desc": "<IconMap:Icon_Normal> (After Defensive Assist)",
-      "ElementType": 201,
-      "HitType": 103
-    }
-  },
-  "cores": {
-    "Level": {
-      "1": {
-        "Level": 1,
-        "Id": 1171501,
-        "Name": [
-          "Core Passive: Nitro-Fuel Cocktail",
-          "Additional Ability: Fire Kindling"
-        ],
-        "Desc": [
-          "When Burnice expends Energy, she accumulates <color=#FFFFFF>Heat</color>, up to a max of 100. She gains 1.4 <color=#FFFFFF>Heat</color> for each 1 point of Energy consumed. At 50 <color=#FFFFFF>Heat</color>, she enters the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state until all <color=#FFFFFF>Heat</color> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <color=#FFFFFF>Heat</color>.\nWhile in the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state, when Burnice hits an enemy with a <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she applies the <color=#FFFFFF>Scorched</color> effect to the target until she exits the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state. When other squad members hit enemies under the <color=#FFFFFF>Scorched</color> status, it triggers the <color=#FFFFFF>Afterburn</color> effect, expending 8 <color=#FFFFFF>Heat</color> to deal <color=#FF5521>Fire DMG</color> equal to <color=#2BAD00>175%</color> of Burnice's ATK and accumulate <color=#FF5521>Fire Anomaly Buildup</color>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <color=#FFFFFF>Afterburn</color> DMG increases by 1%, up to a max of 30%. DMG from the <color=#FFFFFF>Afterburn</color> effect is considered <color=#FFFFFF>Assist Attack</color> DMG.",
-          "When another character in your squad is an <color=#FFFFFF>Anomaly</color> character or shares the same Faction:\nWhen Burnice's <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method</color> or <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color> hits an enemy, or when the <color=#FFFFFF>Afterburn</color> effect is triggered, the move's accumulated <color=#FF5521>Fire Anomaly Buildup</color> increases by 65%. When any squad member applies the <color=#FF5521>Burn</color> effect to an enemy, the duration of that effect is extended by 3s."
-        ]
-      },
-      "2": {
-        "Level": 2,
-        "Id": 1171502,
-        "Name": [
-          "Core Passive: Nitro-Fuel Cocktail",
-          "Additional Ability: Fire Kindling"
-        ],
-        "Desc": [
-          "When Burnice expends Energy, she accumulates <color=#FFFFFF>Heat</color>, up to a max of 100. She gains 1.4 <color=#FFFFFF>Heat</color> for each 1 point of Energy consumed. At 50 <color=#FFFFFF>Heat</color>, she enters the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state until all <color=#FFFFFF>Heat</color> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <color=#FFFFFF>Heat</color>.\nWhile in the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state, when Burnice hits an enemy with a <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she applies the <color=#FFFFFF>Scorched</color> effect to the target until she exits the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state. When other squad members hit enemies under the <color=#FFFFFF>Scorched</color> status, it triggers the <color=#FFFFFF>Afterburn</color> effect, expending 8 <color=#FFFFFF>Heat</color> to deal <color=#FF5521>Fire DMG</color> equal to <color=#2BAD00>205%</color> of Burnice's ATK and accumulate <color=#FF5521>Fire Anomaly Buildup</color>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <color=#FFFFFF>Afterburn</color> DMG increases by 1%, up to a max of 30%. DMG from the <color=#FFFFFF>Afterburn</color> effect is considered <color=#FFFFFF>Assist Attack</color> DMG.",
-          "When another character in your squad is an <color=#FFFFFF>Anomaly</color> character or shares the same Faction:\nWhen Burnice's <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method</color> or <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color> hits an enemy, or when the <color=#FFFFFF>Afterburn</color> effect is triggered, the move's accumulated <color=#FF5521>Fire Anomaly Buildup</color> increases by 65%. When any squad member applies the <color=#FF5521>Burn</color> effect to an enemy, the duration of that effect is extended by 3s."
-        ]
-      },
-      "3": {
-        "Level": 3,
-        "Id": 1171503,
-        "Name": [
-          "Core Passive: Nitro-Fuel Cocktail",
-          "Additional Ability: Fire Kindling"
-        ],
-        "Desc": [
-          "When Burnice expends Energy, she accumulates <color=#FFFFFF>Heat</color>, up to a max of 100. She gains 1.4 <color=#FFFFFF>Heat</color> for each 1 point of Energy consumed. At 50 <color=#FFFFFF>Heat</color>, she enters the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state until all <color=#FFFFFF>Heat</color> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <color=#FFFFFF>Heat</color>.\nWhile in the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state, when Burnice hits an enemy with a <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she applies the <color=#FFFFFF>Scorched</color> effect to the target until she exits the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state. When other squad members hit enemies under the <color=#FFFFFF>Scorched</color> status, it triggers the <color=#FFFFFF>Afterburn</color> effect, expending 8 <color=#FFFFFF>Heat</color> to deal <color=#FF5521>Fire DMG</color> equal to <color=#2BAD00>235%</color> of Burnice's ATK and accumulate <color=#FF5521>Fire Anomaly Buildup</color>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <color=#FFFFFF>Afterburn</color> DMG increases by 1%, up to a max of 30%. DMG from the <color=#FFFFFF>Afterburn</color> effect is considered <color=#FFFFFF>Assist Attack</color> DMG.",
-          "When another character in your squad is an <color=#FFFFFF>Anomaly</color> character or shares the same Faction:\nWhen Burnice's <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method</color> or <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color> hits an enemy, or when the <color=#FFFFFF>Afterburn</color> effect is triggered, the move's accumulated <color=#FF5521>Fire Anomaly Buildup</color> increases by 65%. When any squad member applies the <color=#FF5521>Burn</color> effect to an enemy, the duration of that effect is extended by 3s."
-        ]
-      },
-      "4": {
-        "Level": 4,
-        "Id": 1171504,
-        "Name": [
-          "Core Passive: Nitro-Fuel Cocktail",
-          "Additional Ability: Fire Kindling"
-        ],
-        "Desc": [
-          "When Burnice expends Energy, she accumulates <color=#FFFFFF>Heat</color>, up to a max of 100. She gains 1.4 <color=#FFFFFF>Heat</color> for each 1 point of Energy consumed. At 50 <color=#FFFFFF>Heat</color>, she enters the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state until all <color=#FFFFFF>Heat</color> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <color=#FFFFFF>Heat</color>.\nWhile in the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state, when Burnice hits an enemy with a <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she applies the <color=#FFFFFF>Scorched</color> effect to the target until she exits the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state. When other squad members hit enemies under the <color=#FFFFFF>Scorched</color> status, it triggers the <color=#FFFFFF>Afterburn</color> effect, expending 8 <color=#FFFFFF>Heat</color> to deal <color=#FF5521>Fire DMG</color> equal to <color=#2BAD00>262%</color> of Burnice's ATK and accumulate <color=#FF5521>Fire Anomaly Buildup</color>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <color=#FFFFFF>Afterburn</color> DMG increases by 1%, up to a max of 30%. DMG from the <color=#FFFFFF>Afterburn</color> effect is considered <color=#FFFFFF>Assist Attack</color> DMG.",
-          "When another character in your squad is an <color=#FFFFFF>Anomaly</color> character or shares the same Faction:\nWhen Burnice's <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method</color> or <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color> hits an enemy, or when the <color=#FFFFFF>Afterburn</color> effect is triggered, the move's accumulated <color=#FF5521>Fire Anomaly Buildup</color> increases by 65%. When any squad member applies the <color=#FF5521>Burn</color> effect to an enemy, the duration of that effect is extended by 3s."
-        ]
-      },
-      "5": {
-        "Level": 5,
-        "Id": 1171505,
-        "Name": [
-          "Core Passive: Nitro-Fuel Cocktail",
-          "Additional Ability: Fire Kindling"
-        ],
-        "Desc": [
-          "When Burnice expends Energy, she accumulates <color=#FFFFFF>Heat</color>, up to a max of 100. She gains 1.4 <color=#FFFFFF>Heat</color> for each 1 point of Energy consumed. At 50 <color=#FFFFFF>Heat</color>, she enters the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state until all <color=#FFFFFF>Heat</color> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <color=#FFFFFF>Heat</color>.\nWhile in the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state, when Burnice hits an enemy with a <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she applies the <color=#FFFFFF>Scorched</color> effect to the target until she exits the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state. When other squad members hit enemies under the <color=#FFFFFF>Scorched</color> status, it triggers the <color=#FFFFFF>Afterburn</color> effect, expending 8 <color=#FFFFFF>Heat</color> to deal <color=#FF5521>Fire DMG</color> equal to <color=#2BAD00>290%</color> of Burnice's ATK and accumulate <color=#FF5521>Fire Anomaly Buildup</color>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <color=#FFFFFF>Afterburn</color> DMG increases by 1%, up to a max of 30%. DMG from the <color=#FFFFFF>Afterburn</color> effect is considered <color=#FFFFFF>Assist Attack</color> DMG.",
-          "When another character in your squad is an <color=#FFFFFF>Anomaly</color> character or shares the same Faction:\nWhen Burnice's <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method</color> or <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color> hits an enemy, or when the <color=#FFFFFF>Afterburn</color> effect is triggered, the move's accumulated <color=#FF5521>Fire Anomaly Buildup</color> increases by 65%. When any squad member applies the <color=#FF5521>Burn</color> effect to an enemy, the duration of that effect is extended by 3s."
-        ]
-      },
-      "6": {
-        "Level": 6,
-        "Id": 1171506,
-        "Name": [
-          "Core Passive: Nitro-Fuel Cocktail",
-          "Additional Ability: Fire Kindling"
-        ],
-        "Desc": [
-          "When Burnice expends Energy, she accumulates <color=#FFFFFF>Heat</color>, up to a max of 100. She gains 1.4 <color=#FFFFFF>Heat</color> for each 1 point of Energy consumed. At 50 <color=#FFFFFF>Heat</color>, she enters the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state until all <color=#FFFFFF>Heat</color> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <color=#FFFFFF>Heat</color>.\nWhile in the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state, when Burnice hits an enemy with a <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she applies the <color=#FFFFFF>Scorched</color> effect to the target until she exits the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state. When other squad members hit enemies under the <color=#FFFFFF>Scorched</color> status, it triggers the <color=#FFFFFF>Afterburn</color> effect, expending 8 <color=#FFFFFF>Heat</color> to deal <color=#FF5521>Fire DMG</color> equal to <color=#2BAD00>320%</color> of Burnice's ATK and accumulate <color=#FF5521>Fire Anomaly Buildup</color>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <color=#FFFFFF>Afterburn</color> DMG increases by 1%, up to a max of 30%. DMG from the <color=#FFFFFF>Afterburn</color> effect is considered <color=#FFFFFF>Assist Attack</color> DMG.",
-          "When another character in your squad is an <color=#FFFFFF>Anomaly</color> character or shares the same Faction:\nWhen Burnice's <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method</color> or <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color> hits an enemy, or when the <color=#FFFFFF>Afterburn</color> effect is triggered, the move's accumulated <color=#FF5521>Fire Anomaly Buildup</color> increases by 65%. When any squad member applies the <color=#FF5521>Burn</color> effect to an enemy, the duration of that effect is extended by 3s."
-        ]
-      },
-      "7": {
-        "Level": 7,
-        "Id": 1171507,
-        "Name": [
-          "Core Passive: Nitro-Fuel Cocktail",
-          "Additional Ability: Fire Kindling"
-        ],
-        "Desc": [
-          "When Burnice expends Energy, she accumulates <color=#FFFFFF>Heat</color>, up to a max of 100. She gains 1.4 <color=#FFFFFF>Heat</color> for each 1 point of Energy consumed. At 50 <color=#FFFFFF>Heat</color>, she enters the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state until all <color=#FFFFFF>Heat</color> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <color=#FFFFFF>Heat</color>.\nWhile in the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state, when Burnice hits an enemy with a <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she applies the <color=#FFFFFF>Scorched</color> effect to the target until she exits the <color=#FFFFFF>Nitro-Fuel Cocktail</color> state. When other squad members hit enemies under the <color=#FFFFFF>Scorched</color> status, it triggers the <color=#FFFFFF>Afterburn</color> effect, expending 8 <color=#FFFFFF>Heat</color> to deal <color=#FF5521>Fire DMG</color> equal to <color=#2BAD00>350%</color> of Burnice's ATK and accumulate <color=#FF5521>Fire Anomaly Buildup</color>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <color=#FFFFFF>Afterburn</color> DMG increases by 1%, up to a max of 30%. DMG from the <color=#FFFFFF>Afterburn</color> effect is considered <color=#FFFFFF>Assist Attack</color> DMG.",
-          "When another character in your squad is an <color=#FFFFFF>Anomaly</color> character or shares the same Faction:\nWhen Burnice's <color=#FFFFFF>Basic Attack: Mixed Flame Blend</color>, <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method</color> or <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color> hits an enemy, or when the <color=#FFFFFF>Afterburn</color> effect is triggered, the move's accumulated <color=#FF5521>Fire Anomaly Buildup</color> increases by 65%. When any squad member applies the <color=#FF5521>Burn</color> effect to an enemy, the duration of that effect is extended by 3s."
-        ]
-      }
-    },
-    "Materials": {
-      "1": { "10": 5000 },
-      "2": { "10": 12000, "110507": 2 },
-      "3": { "10": 28000, "110507": 4 },
-      "4": { "10": 60000, "110004": 2, "110507": 9 },
-      "5": { "10": 100000, "110004": 3, "110507": 15 },
-      "6": { "10": 200000, "110004": 4, "110507": 30 }
-    }
-  },
-  "mindscapes": {
-    "1": {
-      "Level": 1,
-      "Name": "Kindred Flames",
-      "Desc": "Increases the limit of <color=#FFFFFF>Heat</color> from 100 to 140. Upon entering the battlefield, Burnice accumulates an additional 40 <color=#FFFFFF>Heat</color>. Increases the DMG Multiplier of the <color=#FFFFFF>Afterburn</color> effect by 100% of Burnice's ATK. Additionally, the accumulated <color=#FF5521>Fire Anomaly Buildup</color> from the <color=#FFFFFF>Afterburn</color> effect is increased by 25%.",
-      "Desc2": "\"Everyone has rough times; it's perfectly normal!\"\n\"Cheer up, Caesar! How about a Nitro-Fuel special? I added a ton of sugar!\""
-    },
-    "2": {
-      "Level": 2,
-      "Name": "Extra at No Additional Charge",
-      "Desc": "When triggering the <color=#FFFFFF>Afterburn</color> effect, <color=#FFFFFF>Thermal Penetration</color> is applied to the enemy, stacking up to 5 times and lasting 6s. Repeated triggers reset the duration. When any allied unit in the squad hits the enemy, the attack's PEN Ratio is increased by 4% for each stack of <color=#FFFFFF>Thermal Penetration</color>, up to a max of 20%.",
-      "Desc2": "As the mixologist for the Sons of Calydon, Burnice takes great pleasure in crafting the best Nitro-Fuel drinks in New Eridu for her friends.\nOf course, if you happen to be her enemy... you might have the opportunity to try a new and unique flavor too.\n\"It's a once-in-a-lifetime, absolutely exquisite taste!\""
-    },
-    "3": {
-      "Level": 3,
-      "Name": "Optimistic by Nature",
-      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
-      "Desc2": "\"That Burnice, she's always so full of energy! Even right after waking up! I have no idea where she gets all that energy...\"\n\"What's even scarier is that she can get everyone around her to be just as enthusiastic! It's almost like she's some kind of monster!\"\n\"But... I don't really dislike it, to be honest...\"\n— From a boar manager who wishes to remain unnamed"
-    },
-    "4": {
-      "Level": 4,
-      "Name": "Ultimate Fuel Supply",
-      "Desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color> hits an enemy, the move's CRIT Rate increases by 30%. The max flame spray duration of <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color> is increased by 1s.",
-      "Desc2": "\"You like the drink I mixed? Thanks! Steeltusk likes them too~ That guy can drink 200 liters in one go!\"\n\"Oh, Steeltusk is our big truck!\"\n\"Wanna try some of its special fuel? It's pretty fiery~\""
-    },
-    "5": {
-      "Level": 5,
-      "Name": "Dance of Fire and Ice",
-      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
-      "Desc2": "When mixing drinks, ice is a crucial element.\nWithout an intense chill, the intense heat just doesn't stand out.\n\"That fusion of fire and ice~ It's truly captivating!\""
-    },
-    "6": {
-      "Level": 6,
-      "Name": "Burning Invitation",
-      "Desc": "When Burnice hits an enemy with <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color>, it triggers an additional special <color=#FFFFFF>Afterburn</color> effect, dealing 60% of Burnice's ATK as <color=#FF5521>Fire DMG</color> to the target. This effect can trigger once every 0.5s and does not consume <color=#FFFFFF>Heat</color>. After hitting an enemy with <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color>, while the move is active, <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color>, special <color=#FFFFFF>Afterburn</color> effects, and <color=#FF5521>Burn</color> effects will ignore 25% of the target's <color=#FF5521>Fire RES</color>. When <color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</color>'s fire blast hits an enemy, if that enemy is <color=#FF5521>Burned</color>, trigger an additional instance of <color=#FF5521>Burn</color> DMG equal to 1,800% of the original DMG. This effect can trigger once every 20s for each target.",
-      "Desc2": "It seems like no one has ever seen Burnice truly angry.\n\"Trust me, you don't want to see it.\"\n— From a driver getting ready to sleep atop Steeltusk"
+    "assist": {
+      "QuickAssistEnergizingSpecialtyDrink": [
+        {
+          "DamagePercentage": 0.844,
+          "DamagePercentageGrowth": 0.077,
+          "StunRatio": 0.844,
+          "StunRatioGrowth": 0.039,
+          "SpRecovery": 138,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2109.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 76.66
+        }
+      ],
+      "DefensiveAssistSmokyCauldron": [
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.713,
+          "StunRatioGrowth": 0.124,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 3.428,
+          "StunRatioGrowth": 0.156,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.668,
+          "StunRatioGrowth": 0.076,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "AssistFollowUpScorchingDew": [
+        {
+          "DamagePercentage": 3.276,
+          "DamagePercentageGrowth": 0.298,
+          "StunRatio": 2.824,
+          "StunRatioGrowth": 0.129,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 9319.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 277.22
+        }
+      ]
     }
   }
 }

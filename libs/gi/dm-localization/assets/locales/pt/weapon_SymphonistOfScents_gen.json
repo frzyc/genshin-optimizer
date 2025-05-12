@@ -1,0 +1,24 @@
+{
+  "name": "Sinfonista de Aromas",
+  "description": {
+    "0": "Uma lança elegante, dizem que foi a batuta de um maestro, empunhada por um grande músico para ser a ponte entre a música e o bom gosto."
+  },
+  "passiveName": "Sinfonia Temperada",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o ATQ em <cryo>12%</cryo>. Quando o personagem que está com essa arma equipada não estiver ativo, aumenta o ATQ em mais <cryo>12%</cryo>. Depois de curar, o personagem que está com essa arma equipada e o curado obterão o efeito \"Doce Ressonância\", aumentando o ATQ em <cryo>32%</cryo> por 3s. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "1": {
+      "0": "Aumenta o ATQ em <cryo>15%</cryo>. Quando o personagem que está com essa arma equipada não estiver ativo, aumenta o ATQ em mais <cryo>15%</cryo>. Depois de curar, o personagem que está com essa arma equipada e o curado obterão o efeito \"Doce Ressonância\", aumentando o ATQ em <cryo>40%</cryo> por 3s. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "2": {
+      "0": "Aumenta o ATQ em <cryo>18%</cryo>. Quando o personagem que está com essa arma equipada não estiver ativo, aumenta o ATQ em mais <cryo>18%</cryo>. Depois de curar, o personagem que está com essa arma equipada e o curado obterão o efeito \"Doce Ressonância\", aumentando o ATQ em <cryo>48%</cryo> por 3s. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "3": {
+      "0": "Aumenta o ATQ em <cryo>21%</cryo>. Quando o personagem que está com essa arma equipada não estiver ativo, aumenta o ATQ em mais <cryo>21%</cryo>. Depois de curar, o personagem que está com essa arma equipada e o curado obterão o efeito \"Doce Ressonância\", aumentando o ATQ em <cryo>56%</cryo> por 3s. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "4": {
+      "0": "Aumenta o ATQ em <cryo>24%</cryo>. Quando o personagem que está com essa arma equipada não estiver ativo, aumenta o ATQ em mais <cryo>24%</cryo>. Depois de curar, o personagem que está com essa arma equipada e o curado obterão o efeito \"Doce Ressonância\", aumentando o ATQ em <cryo>64%</cryo> por 3s. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    }
+  }
+}

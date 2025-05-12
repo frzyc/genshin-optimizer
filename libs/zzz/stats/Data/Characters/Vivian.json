@@ -1,0 +1,273 @@
+{
+  "id": "1331",
+  "rarity": "S",
+  "attribute": "ether",
+  "specialty": "anomaly",
+  "faction": "Mockingbird",
+  "stats": {
+    "atk_base": 127,
+    "atk_growth": 7.6728,
+    "def_base": 49,
+    "def_growth": 6.6203,
+    "hp_base": 617,
+    "hp_growth": 83.7238,
+    "anomMas": 108,
+    "anomProf": 118,
+    "impact": 86,
+    "enerRegen": 1.2
+  },
+  "promotionStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 423, "atk": 45, "def": 33 },
+    { "hp": 847, "atk": 90, "def": 67 },
+    { "hp": 1270, "atk": 136, "def": 100 },
+    { "hp": 1694, "atk": 181, "def": 134 },
+    { "hp": 2117, "atk": 226, "def": 167 }
+  ],
+  "coreStats": [
+    { "atk": 0, "anomMas": 12 },
+    { "atk": 25, "anomMas": 12 },
+    { "atk": 25, "anomMas": 24 },
+    { "atk": 50, "anomMas": 24 },
+    { "atk": 50, "anomMas": 36 },
+    { "atk": 75, "anomMas": 36 }
+  ],
+  "skillParams": {
+    "basic": {
+      "BasicAttackFeatheredStrike": [
+        {
+          "DamagePercentage": 0.341,
+          "DamagePercentageGrowth": 0.031,
+          "StunRatio": 0.424,
+          "StunRatioGrowth": 0.02,
+          "SpRecovery": 138.7,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1061.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0.242,
+          "DamagePercentageGrowth": 0.022,
+          "StunRatio": 0.281,
+          "StunRatioGrowth": 0.013,
+          "SpRecovery": 92,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 704,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0.769,
+          "DamagePercentageGrowth": 0.07,
+          "StunRatio": 0.818,
+          "StunRatioGrowth": 0.038,
+          "SpRecovery": 267.5,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2046,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 1.284,
+          "DamagePercentageGrowth": 0.117,
+          "StunRatio": 1.272,
+          "StunRatioGrowth": 0.058,
+          "SpRecovery": 416,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3179,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 86.61
+        }
+      ],
+      "BasicAttackNoblewomanWaltz": [
+        {
+          "DamagePercentage": 0.478,
+          "DamagePercentageGrowth": 0.044,
+          "StunRatio": 0.372,
+          "StunRatioGrowth": 0.017,
+          "SpRecovery": 121.5,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 929.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 33.75
+        }
+      ],
+      "BasicAttackFlutteringFrockSuspension": [
+        {
+          "DamagePercentage": 0.802,
+          "DamagePercentageGrowth": 0.073,
+          "StunRatio": 0.624,
+          "StunRatioGrowth": 0.029,
+          "SpRecovery": 204,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1559.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 56.65
+        }
+      ],
+      "BasicAttackFeatherbloom": [
+        {
+          "DamagePercentage": 2.2,
+          "DamagePercentageGrowth": 0.2,
+          "StunRatio": 0,
+          "StunRatioGrowth": 0,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 126
+        }
+      ]
+    },
+    "dodge": {
+      "DodgeLightstream": [],
+      "DashAttackSilverThornedMelody": [
+        {
+          "DamagePercentage": 0.496,
+          "DamagePercentageGrowth": 0.046,
+          "StunRatio": 0.248,
+          "StunRatioGrowth": 0.012,
+          "SpRecovery": 81.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 621.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "DodgeCounterWingbladeReverb": [
+        {
+          "DamagePercentage": 2.364,
+          "DamagePercentageGrowth": 0.215,
+          "StunRatio": 2.073,
+          "StunRatioGrowth": 0.095,
+          "SpRecovery": 318.2,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2431,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 70.69
+        }
+      ],
+      "DodgeDaintySteps": []
+    },
+    "special": {
+      "SpecialAttackSongOfSilverWings": [
+        {
+          "DamagePercentage": 0.569,
+          "DamagePercentageGrowth": 0.052,
+          "StunRatio": 0.569,
+          "StunRatioGrowth": 0.026,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1421.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 41.34
+        }
+      ],
+      "EXSpecialAttackVioletRequiem": [
+        {
+          "DamagePercentage": 5.926,
+          "DamagePercentageGrowth": 0.539,
+          "StunRatio": 4.848,
+          "StunRatioGrowth": 0.221,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 17512,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 352.56
+        }
+      ]
+    },
+    "chain": {
+      "ChainAttackChorusOfCelestialWings": [
+        {
+          "DamagePercentage": 6.589,
+          "DamagePercentageGrowth": 0.599,
+          "StunRatio": 2.2,
+          "StunRatioGrowth": 0.1,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 23787.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 319.57
+        }
+      ],
+      "UltimateSoaringBirdsSong": [
+        {
+          "DamagePercentage": 16.868,
+          "DamagePercentageGrowth": 1.534,
+          "StunRatio": 2.494,
+          "StunRatioGrowth": 0.114,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 808.56
+        }
+      ]
+    },
+    "assist": {
+      "QuickAssistFrostwingGuard": [
+        {
+          "DamagePercentage": 0.973,
+          "DamagePercentageGrowth": 0.089,
+          "StunRatio": 0.487,
+          "StunRatioGrowth": 0.023,
+          "SpRecovery": 159.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1215.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 35.34
+        }
+      ],
+      "DefensiveAssistSilverUmbrellaFormation": [
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.713,
+          "StunRatioGrowth": 0.124,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 3.428,
+          "StunRatioGrowth": 0.156,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.668,
+          "StunRatioGrowth": 0.076,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "AssistFollowUpFeatherbladeExecution": [
+        {
+          "DamagePercentage": 3.739,
+          "DamagePercentageGrowth": 0.34,
+          "StunRatio": 3.253,
+          "StunRatioGrowth": 0.148,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 10560,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 236.56
+        }
+      ]
+    }
+  }
+}

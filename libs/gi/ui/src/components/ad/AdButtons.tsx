@@ -14,7 +14,7 @@ export function AdButtons({ onClose }: { onClose: MouseEventHandler }) {
         fill: '#00aecd',
         right: 0,
         top: 0,
-        z: 100,
+        zIndex: 100,
       }}
       onClick={onClose}
     >

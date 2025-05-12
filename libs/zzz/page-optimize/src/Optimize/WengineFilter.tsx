@@ -14,7 +14,10 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import { WengineSheetDisplay } from '@genshin-optimizer/zzz/formula-ui'
+import {
+  CharCalcMockCountProvider,
+  WengineSheetDisplay,
+} from '@genshin-optimizer/zzz/formula-ui'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { WengineToggle } from '@genshin-optimizer/zzz/ui'
 import type { IWengine } from '@genshin-optimizer/zzz/zood'
@@ -34,7 +37,6 @@ import {
 } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useContext, useMemo } from 'react'
-import { CharCalcMockCountProvider } from '../CharCalcProvider'
 import { WengineLevelFilter } from './WengineLevelFilter'
 export function WengineFilter({
   wengines,

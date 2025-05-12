@@ -71,7 +71,7 @@
   "description": "「西風騎士團」的可靠女僕，夢想有一天能成為正式的騎士。",
   "constellationName": "心護座",
   "auto": {
-    "name": "西風劍術·女僕",
+    "name": "女僕",
     "fields": {
       "normal": {
         "0": "<strong>普通攻擊</strong>",

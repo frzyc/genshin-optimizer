@@ -24,7 +24,7 @@ export default async function genIndex(tree: Tree, map_type: string) {
 }
 
 async function writeIndex(path: string, keys: readonly string[]) {
-  const index = `
+  const index = `// WARNING: Generated file, do not modify
 ${keys.map((key) => `import ${key} from './maps/${key}'`).join('\n')}
 
 const maps = {

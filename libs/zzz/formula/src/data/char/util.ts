@@ -1,6 +1,6 @@
 import { constant, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import type { AttributeKey, SkillKey } from '@genshin-optimizer/zzz/consts'
-import type { CharacterDatum } from '@genshin-optimizer/zzz/stats'
+import type { CharacterDatum, SkillParam } from '@genshin-optimizer/zzz/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
   type TagMapNodeEntries,
@@ -27,7 +27,7 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
  * @param name Base name to be used as the key
  * @param dmgTag Tag object containing damageType1, damageType2 and attribute
  * @param stat Stat that the damage scales on
- * @param levelScaling Array representing the scaling at different levels of the ability
+ * @param skillParam SkillParam object corresponding to the specific hit
  * @param abilityScalingType Ability level that the scaling depends on.
  * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
@@ -37,7 +37,7 @@ export function dmg(
   name: string,
   dmgTag: DmgTag,
   stat: Stat,
-  levelScaling: number[],
+  skillParam: SkillParam,
   abilityScalingType: AbilityScalingType,
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
@@ -46,7 +46,10 @@ export function dmg(
     throw Error(
       `No damageType specified on ${name}. Please specify at least one.`
     )
-  const multi = percent(subscript(own.char[abilityScalingType], levelScaling))
+  const multi = sum(
+    skillParam.DamagePercentage,
+    prod(own.char[abilityScalingType], skillParam.DamagePercentageGrowth)
+  )
   const base = prod(own.final[stat], multi)
   return customDmg(name, dmgTag, base, arg, ...extra)
 }
@@ -157,23 +160,13 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     }),
     // Other base stats
-    ...(['anomProf', 'impact', 'enerRegen'] as const).map((stat) =>
+    ...(['anomMas', 'anomProf', 'impact', 'enerRegen'] as const).map((stat) =>
       ownBuff.base[stat].add(data_gen.stats[stat])
     ),
-    ownBuff.base.anomMas.add(data_gen.stats.anomMas_base),
     // Core skill stat boost
-    ...Object.entries(coreStats).map(([stat, values]) => {
-      switch (stat) {
-        case 'atk_base':
-          return ownBuff.base.atk.add(subscript(core, values))
-        case 'base_enerRegen':
-          return ownBuff.base.enerRegen.add(subscript(core, values))
-        case 'anomMas_base':
-          return ownBuff.base.anomMas.add(subscript(core, values))
-        default:
-          return ownBuff.base[stat].add(subscript(core, values))
-      }
-    }),
+    ...Object.entries(coreStats).map(([stat, values]) =>
+      ownBuff.base[stat].add(subscript(core, values))
+    ),
     // TODO: Remove this once we have character sheets
     // Standard DMG
     ...customDmg(

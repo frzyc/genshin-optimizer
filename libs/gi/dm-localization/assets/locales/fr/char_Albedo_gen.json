@@ -4,7 +4,7 @@
   "description": "Génie connu sous le surnom de « Kreideprinz », Albedo est l'alchimiste en chef et le capitaine des enquêteurs de l'Ordre de Favonius.",
   "constellationName": "Princeps Cretaceus",
   "auto": {
-    "name": "Escrime de Favonius - Blanche",
+    "name": "Blanche",
     "fields": {
       "normal": {
         "0": "<strong>Attaque normale</strong>",

@@ -1,39 +1,14 @@
 {
-  "name": "Drill Rig - Red Axis",
   "rarity": "A",
   "type": "attack",
   "atk_base": 42,
   "second_statkey": "enerRegen_",
   "second_statvalue": 0.2,
-  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1111.png",
-  "desc": "Originally a high-rev W-Engine, it has been modified by Anton with the most expensive rotary drill parts. These modifications allow the engine to temporarily exceed its output limits, enabling it to better serve Anton's \"bro.\" When it comes to anything involving his \"bro,\" Anton spares no expense.\n\n<color=#959595>\"Ben bought the materials, Grace helped with the modding, and the force was signed off by the president herself... Bro, the blessings of all Belobog are inside you. Let's do this!\" — Anton muttering to himself the first time he starts it up</color>",
-  "desc2": "Equip to increase Attack Agents' combat capabilities",
-  "desc3": "Originally a rev-enhanced W-Engine, it has been modified by Anton with the most expensive rotary drill parts that allow it to exceed its output limits.",
   "phase": [
-    {
-      "name": "Hell's Generator",
-      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>50%</color> for 10s. This effect can trigger once every 15s.",
-      "params": [0.5, 10, 15]
-    },
-    {
-      "name": "Hell's Generator",
-      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>57.5%</color> for 10s. This effect can trigger once every 15s.",
-      "params": [0.575, 10, 15]
-    },
-    {
-      "name": "Hell's Generator",
-      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>65%</color> for 10s. This effect can trigger once every 15s.",
-      "params": [0.65, 10, 15]
-    },
-    {
-      "name": "Hell's Generator",
-      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>72.5%</color> for 10s. This effect can trigger once every 15s.",
-      "params": [0.725, 10, 15]
-    },
-    {
-      "name": "Hell's Generator",
-      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>80%</color> for 10s. This effect can trigger once every 15s.",
-      "params": [0.8, 10, 15]
-    }
+    { "params": [0.5, 10, 15] },
+    { "params": [0.575, 10, 15] },
+    { "params": [0.65, 10, 15] },
+    { "params": [0.725, 10, 15] },
+    { "params": [0.8, 10, 15] }
   ]
 }

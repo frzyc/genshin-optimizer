@@ -30,6 +30,7 @@ import RoyalSpear from './RoyalSpear'
 import SkywardSpine from './SkywardSpine'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
+import SymphonistOfScents from './SymphonistOfScents'
 import TamayurateiNoOhanashi from './TamayurateiNoOhanashi'
 import TheCatch from './TheCatch'
 import VortexVanquisher from './VortexVanquisher'
@@ -66,6 +67,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   SkywardSpine,
   StaffOfHoma,
   StaffOfTheScarletSands,
+  SymphonistOfScents,
   TamayurateiNoOhanashi,
   TheCatch,
   VortexVanquisher,

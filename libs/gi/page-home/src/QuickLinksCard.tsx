@@ -152,7 +152,7 @@ export default function QuickLinksCard() {
               frzyc
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-              {frzyc_links.map((link) => {
+              {frzyc_links.map((link, i) => {
                 const { title, icon, url } = link
                 return (
                   <CardActionArea
@@ -165,6 +165,7 @@ export default function QuickLinksCard() {
                       gap: 1,
                       justifyContent: 'flex-start',
                     }}
+                    key={i}
                   >
                     {icon}
                     {title()}
@@ -180,10 +181,11 @@ export default function QuickLinksCard() {
               Other links
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-              {other_links.map((link) => {
+              {other_links.map((link, i) => {
                 const { title, icon, url, to } = link
                 return (
                   <CardActionArea
+                    key={i}
                     component={to ? RouterLink : Link}
                     href={to ? undefined : url}
                     target={to ? undefined : '_blank'}

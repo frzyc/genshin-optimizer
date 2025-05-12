@@ -141,6 +141,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   13511: 'StaffOfTheScarletSands',
   13512: 'CrimsonMoonsSemblance',
   13513: 'LumidouceElegy',
+  13514: 'SymphonistOfScents',
 
   //catalyst
   14101: 'ApprenticesNotes',
@@ -229,6 +230,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   15427: 'RangeGauge',
   15430: 'FlowerWreathedFeathers',
   15431: 'ChainBreaker',
+  15432: 'SequenceOfSolitude',
   15501: 'SkywardHarp',
   15502: 'AmosBow',
   15503: 'ElegyForTheEnd',

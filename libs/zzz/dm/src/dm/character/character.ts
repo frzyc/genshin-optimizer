@@ -8,6 +8,7 @@ import {
   allCharacterKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { readHakushinJSON } from '../../util'
+import type { HakushinSkillKey } from './consts'
 import {
   attributeMap,
   characterIdMap,
@@ -85,7 +86,7 @@ type CharacterRawData = {
     }
   >
   Skill: Record<
-    'Basic' | 'Dodge' | 'Special' | 'Chain' | 'Assist',
+    HakushinSkillKey,
     {
       Description: Array<{
         Name: string
@@ -93,7 +94,7 @@ type CharacterRawData = {
         Param?: Array<{
           Name: string
           Desc: string
-          Param: Record<
+          Param?: Record<
             string,
             {
               Main: number
@@ -167,7 +168,7 @@ export type CharacterData = {
     def_growth: number
     hp_base: number
     hp_growth: number
-    anomMas_base: number
+    anomMas: number
     anomProf: number
     impact: number
     enerRegen: number
@@ -212,7 +213,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
           def_growth: raw.Stats.DefenceGrowth / PERCENT_SCALING,
           hp_base: raw.Stats.HpMax,
           hp_growth: raw.Stats.HpGrowth / PERCENT_SCALING,
-          anomMas_base: raw.Stats.ElementAbnormalPower,
+          anomMas: raw.Stats.ElementAbnormalPower,
           anomProf: raw.Stats.ElementMystery,
           impact: raw.Stats.BreakStun,
           enerRegen: raw.Stats.SpRecover / FLAT_SCALING,
@@ -247,7 +248,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
                   if ('Param' in param) {
                     return {
                       ...param,
-                      Param: objMap(param.Param, (param2) => ({
+                      Param: objMap(param.Param ?? {}, (param2) => ({
                         ...param2,
                         Main: param2.Main / FLAT_SCALING,
                         Growth: param2.Growth / PERCENT_SCALING,

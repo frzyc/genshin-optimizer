@@ -4,7 +4,7 @@
   "description": "平凡な家庭に生まれた若い騎士。小隊では「前進測量士」を担当している。控えめで慎重な性格の持ち主。",
   "constellationName": "森鳩座",
   "auto": {
-    "name": "西風槍術·鏑矢",
+    "name": "西風槍術・鏑矢",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

@@ -4,7 +4,7 @@
   "description": "沈玉の谷出身の籐編み職人。端正な面持ちがすっきりとした印象を与える、泉のように瑞々しい少女。",
   "constellationName": "玄鳥座",
   "auto": {
-    "name": "通常攻撃・玄鳥画水",
+    "name": "玄鳥画水",
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",

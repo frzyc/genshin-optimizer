@@ -1,12 +1,9 @@
 {
   "id": "1091",
-  "icon": "IconRole13",
   "rarity": "S",
   "attribute": "ice",
   "specialty": "anomaly",
   "faction": "HollowSpecialOoperationsSection6",
-  "fullname": "Hoshimi Miyabi",
-  "name": "Miyabi",
   "stats": {
     "atk_base": 127,
     "atk_growth": 7.6728,
@@ -14,7 +11,7 @@
     "def_growth": 6.6203,
     "hp_base": 617,
     "hp_growth": 83.7238,
-    "anomMas_base": 116,
+    "anomMas": 116,
     "anomProf": 148,
     "impact": 86,
     "enerRegen": 1.2
@@ -28,1358 +25,310 @@
     { "hp": 2117, "atk": 226, "def": 167 }
   ],
   "coreStats": [
-    { "atk_base": 0, "anomProf": 30 },
-    { "atk_base": 25, "anomProf": 30 },
-    { "atk_base": 25, "anomProf": 60 },
-    { "atk_base": 50, "anomProf": 60 },
-    { "atk_base": 50, "anomProf": 90 },
-    { "atk_base": 75, "anomProf": 90 }
+    { "atk": 0, "anomProf": 30 },
+    { "atk": 25, "anomProf": 30 },
+    { "atk": 25, "anomProf": 60 },
+    { "atk": 50, "anomProf": 60 },
+    { "atk": 50, "anomProf": 90 },
+    { "atk": 75, "anomProf": 90 }
   ],
-  "skills": {
-    "Basic": {
-      "Description": [
+  "skillParams": {
+    "basic": {
+      "BasicAttackKazahana": [
         {
-          "Name": "Basic Attack: Kazahana",
-          "Desc": "Press <IconMap:Icon_Normal> to activate:\nUnleashes up to five slashes ahead, the first two deal <color=#F0D12B>Physical DMG</color>, and the last three deal <color=#98EFF0>Frost DMG</color>.\nBlock enemy attacks during the 5th hit of the <color=#FFFFFF>Basic Attack</color>."
+          "DamagePercentage": 0.269,
+          "DamagePercentageGrowth": 0.025,
+          "StunRatio": 0.135,
+          "StunRatioGrowth": 0.007,
+          "SpRecovery": 44,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 338.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
         },
         {
-          "Name": "Basic Attack: Shimotsuki",
-          "Desc": "With at least 2 points of <color=#FFFFFF>Fallen Frost</color>, hold <IconMap:Icon_Normal> to activate:\nHoshimi Miyabi sheaths her blade, enters <color=#FFFFFF>Shimotsuki Stance</color> and starts to charge up. Every level of charge will consume 2 points of <color=#FFFFFF>Fallen Frost</color>, up to a maximum of three levels of charge.\nWhen releasing <IconMap:Icon_Normal>, or when <color=#FFFFFF>Fallen Frost</color> is completely depleted, Hoshimi Miyabi will draw her blade and unleash a powerful slash ahead based on the current charge level, dealing massive <color=#98EFF0>Frost DMG</color>. She then exits <color=#FFFFFF>Shimotsuki Stance</color>.\nCharacter is invulnerable during <color=#FFFFFF>Shimotsuki Stance</color>.\nHoshimi Miyabi can have up to 6 points of <color=#FFFFFF>Fallen Frost</color>. Upon entering the battlefield, Hoshimi Miyabi immediately obtains 3 points of <color=#FFFFFF>Fallen Frost</color>."
+          "DamagePercentage": 0.296,
+          "DamagePercentageGrowth": 0.027,
+          "StunRatio": 0.269,
+          "StunRatioGrowth": 0.013,
+          "SpRecovery": 87.9,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 673.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
         },
         {
-          "Name": "Basic Attack: Kazahana",
-          "Param": [
-            {
-              "Name": "1st-Hit DMG Multiplier",
-              "Desc": "{Skill:1091001, Prop:1001}",
-              "Param": {
-                "1091001": {
-                  "Main": 26.9,
-                  "Growth": 0.025,
-                  "Format": "%",
-                  "DamagePercentage": 0.269,
-                  "DamagePercentageGrowth": 0.025,
-                  "StunRatio": 0.135,
-                  "StunRatioGrowth": 0.007,
-                  "SpRecovery": 44,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 338.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "2nd-Hit DMG Multiplier",
-              "Desc": "{Skill:1091002, Prop:1001}",
-              "Param": {
-                "1091002": {
-                  "Main": 29.6,
-                  "Growth": 0.027,
-                  "Format": "%",
-                  "DamagePercentage": 0.296,
-                  "DamagePercentageGrowth": 0.027,
-                  "StunRatio": 0.269,
-                  "StunRatioGrowth": 0.013,
-                  "SpRecovery": 87.9,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 673.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "3rd-Hit DMG Multiplier",
-              "Desc": "{Skill:1091003, Prop:1001}",
-              "Param": {
-                "1091003": {
-                  "Main": 62.8,
-                  "Growth": 0.058,
-                  "Format": "%",
-                  "DamagePercentage": 0.628,
-                  "DamagePercentageGrowth": 0.058,
-                  "StunRatio": 0.464,
-                  "StunRatioGrowth": 0.022,
-                  "SpRecovery": 151.7,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1160.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 62.9,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "4th-Hit DMG Multiplier",
-              "Desc": "{Skill:1091004, Prop:1001}",
-              "Param": {
-                "1091004": {
-                  "Main": 96.5,
-                  "Growth": 0.088,
-                  "Format": "%",
-                  "DamagePercentage": 0.965,
-                  "DamagePercentageGrowth": 0.088,
-                  "StunRatio": 0.821,
-                  "StunRatioGrowth": 0.038,
-                  "SpRecovery": 268.6,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2051.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 91.21,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "5th-Hit DMG Multiplier",
-              "Desc": "{Skill:1091005, Prop:1001}",
-              "Param": {
-                "1091005": {
-                  "Main": 129,
-                  "Growth": 0.118,
-                  "Format": "%",
-                  "DamagePercentage": 1.29,
-                  "DamagePercentageGrowth": 0.118,
-                  "StunRatio": 1.31,
-                  "StunRatioGrowth": 0.06,
-                  "SpRecovery": 428.5,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3275.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 129.27,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "1st-Hit Daze Multiplier",
-              "Desc": "{Skill:1091001, Prop:1002}",
-              "Param": {
-                "1091001": {
-                  "Main": 13.5,
-                  "Growth": 0.007,
-                  "Format": "%",
-                  "DamagePercentage": 0.269,
-                  "DamagePercentageGrowth": 0.025,
-                  "StunRatio": 0.135,
-                  "StunRatioGrowth": 0.007,
-                  "SpRecovery": 44,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 338.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "2nd-Hit Daze Multiplier",
-              "Desc": "{Skill:1091002, Prop:1002}",
-              "Param": {
-                "1091002": {
-                  "Main": 26.9,
-                  "Growth": 0.013,
-                  "Format": "%",
-                  "DamagePercentage": 0.296,
-                  "DamagePercentageGrowth": 0.027,
-                  "StunRatio": 0.269,
-                  "StunRatioGrowth": 0.013,
-                  "SpRecovery": 87.9,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 673.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "3rd-Hit Daze Multiplier",
-              "Desc": "{Skill:1091003, Prop:1002}",
-              "Param": {
-                "1091003": {
-                  "Main": 46.4,
-                  "Growth": 0.022,
-                  "Format": "%",
-                  "DamagePercentage": 0.628,
-                  "DamagePercentageGrowth": 0.058,
-                  "StunRatio": 0.464,
-                  "StunRatioGrowth": 0.022,
-                  "SpRecovery": 151.7,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1160.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 62.9,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "4th-Hit Daze Multiplier",
-              "Desc": "{Skill:1091004, Prop:1002}",
-              "Param": {
-                "1091004": {
-                  "Main": 82.1,
-                  "Growth": 0.038,
-                  "Format": "%",
-                  "DamagePercentage": 0.965,
-                  "DamagePercentageGrowth": 0.088,
-                  "StunRatio": 0.821,
-                  "StunRatioGrowth": 0.038,
-                  "SpRecovery": 268.6,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2051.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 91.21,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "5th-Hit Daze Multiplier",
-              "Desc": "{Skill:1091005, Prop:1002}",
-              "Param": {
-                "1091005": {
-                  "Main": 131,
-                  "Growth": 0.06,
-                  "Format": "%",
-                  "DamagePercentage": 1.29,
-                  "DamagePercentageGrowth": 0.118,
-                  "StunRatio": 1.31,
-                  "StunRatioGrowth": 0.06,
-                  "SpRecovery": 428.5,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3275.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 129.27,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 0.628,
+          "DamagePercentageGrowth": 0.058,
+          "StunRatio": 0.464,
+          "StunRatioGrowth": 0.022,
+          "SpRecovery": 151.7,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1160.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 62.9
         },
         {
-          "Name": "Basic Attack: Shimotsuki",
-          "Param": [
-            {
-              "Name": "Charge Level One Slash DMG Multiplier",
-              "Desc": "{Skill:1091027, Prop:1001}",
-              "Param": {
-                "1091027": {
-                  "Main": 454.7,
-                  "Growth": 0.414,
-                  "Format": "%",
-                  "DamagePercentage": 4.547,
-                  "DamagePercentageGrowth": 0.414,
-                  "StunRatio": 0.44,
-                  "StunRatioGrowth": 0.02,
-                  "SpRecovery": 144,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1100,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 39.98,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Charge Level Two Slash DMG Multiplier",
-              "Desc": "{Skill:1091028, Prop:1001}",
-              "Param": {
-                "1091028": {
-                  "Main": 858.1,
-                  "Growth": 0.781,
-                  "Format": "%",
-                  "DamagePercentage": 8.581,
-                  "DamagePercentageGrowth": 0.781,
-                  "StunRatio": 0.624,
-                  "StunRatioGrowth": 0.029,
-                  "SpRecovery": 204.1,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1559.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 56.68,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Charge Level Three Slash DMG Multiplier",
-              "Desc": "{Skill:1091029, Prop:1001}",
-              "Param": {
-                "1091029": {
-                  "Main": 2141.1,
-                  "Growth": 1.947,
-                  "Format": "%",
-                  "DamagePercentage": 21.411,
-                  "DamagePercentageGrowth": 1.947,
-                  "StunRatio": 3.778,
-                  "StunRatioGrowth": 0.172,
-                  "SpRecovery": 618.1,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 9443.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 343.36,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Charge Level One Slash Daze Multiplier",
-              "Desc": "{Skill:1091027, Prop:1002}",
-              "Param": {
-                "1091027": {
-                  "Main": 44,
-                  "Growth": 0.02,
-                  "Format": "%",
-                  "DamagePercentage": 4.547,
-                  "DamagePercentageGrowth": 0.414,
-                  "StunRatio": 0.44,
-                  "StunRatioGrowth": 0.02,
-                  "SpRecovery": 144,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1100,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 39.98,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Charge Level Two Slash Daze Multiplier",
-              "Desc": "{Skill:1091028, Prop:1002}",
-              "Param": {
-                "1091028": {
-                  "Main": 62.4,
-                  "Growth": 0.029,
-                  "Format": "%",
-                  "DamagePercentage": 8.581,
-                  "DamagePercentageGrowth": 0.781,
-                  "StunRatio": 0.624,
-                  "StunRatioGrowth": 0.029,
-                  "SpRecovery": 204.1,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1559.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 56.68,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Charge Level Three Slash Daze Multiplier",
-              "Desc": "{Skill:1091029, Prop:1002}",
-              "Param": {
-                "1091029": {
-                  "Main": 377.8,
-                  "Growth": 0.172,
-                  "Format": "%",
-                  "DamagePercentage": 21.411,
-                  "DamagePercentageGrowth": 1.947,
-                  "StunRatio": 3.778,
-                  "StunRatioGrowth": 0.172,
-                  "SpRecovery": 618.1,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 9443.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 343.36,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 0.965,
+          "DamagePercentageGrowth": 0.088,
+          "StunRatio": 0.821,
+          "StunRatioGrowth": 0.038,
+          "SpRecovery": 268.6,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2051.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 91.21
+        },
+        {
+          "DamagePercentage": 1.29,
+          "DamagePercentageGrowth": 0.118,
+          "StunRatio": 1.31,
+          "StunRatioGrowth": 0.06,
+          "SpRecovery": 428.5,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3275.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 129.27
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100112": 2 },
-        "2": { "10": 3000, "100112": 3 },
-        "3": { "10": 6000, "100122": 2 },
-        "4": { "10": 9000, "100122": 3 },
-        "5": { "10": 12000, "100122": 4 },
-        "6": { "10": 18000, "100122": 6 },
-        "7": { "10": 45000, "100132": 5 },
-        "8": { "10": 67500, "100132": 8 },
-        "9": { "10": 90000, "100132": 10 },
-        "10": { "10": 112500, "100132": 12 },
-        "11": { "10": 135000, "100132": 15, "100941": 1 },
-        "12": {}
-      }
+      "BasicAttackShimotsuki": [
+        {
+          "DamagePercentage": 4.547,
+          "DamagePercentageGrowth": 0.414,
+          "StunRatio": 0.44,
+          "StunRatioGrowth": 0.02,
+          "SpRecovery": 144,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1100,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 39.98
+        },
+        {
+          "DamagePercentage": 8.581,
+          "DamagePercentageGrowth": 0.781,
+          "StunRatio": 0.624,
+          "StunRatioGrowth": 0.029,
+          "SpRecovery": 204.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1559.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 56.68
+        },
+        {
+          "DamagePercentage": 21.411,
+          "DamagePercentageGrowth": 1.947,
+          "StunRatio": 3.778,
+          "StunRatioGrowth": 0.172,
+          "SpRecovery": 618.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 9443.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 343.36
+        }
+      ]
     },
-    "Dodge": {
-      "Description": [
+    "dodge": {
+      "DodgeMizutori": [],
+      "DashAttackFuyubachi": [
         {
-          "Name": "Dodge: Mizutori",
-          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill.\nWhile dodging, repeatedly press or hold <IconMap:Icon_Evade> to activate:\nA dash dodge that covers a lot of ground.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Dash Attack: Fuyubachi",
-          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nSlashes enemies in front, dealing <color=#F0D12B>Physical DMG</color>."
-        },
-        {
-          "Name": "Dodge Counter: Kan Suzume",
-          "Desc": "Press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nSlashes enemies in front, dealing <color=#98EFF0>Frost DMG</color>.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Dash Attack: Fuyubachi",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1091013, Prop:1001}",
-              "Param": {
-                "1091013": {
-                  "Main": 25.8,
-                  "Growth": 0.024,
-                  "Format": "%",
-                  "DamagePercentage": 0.258,
-                  "DamagePercentageGrowth": 0.024,
-                  "StunRatio": 0.129,
-                  "StunRatioGrowth": 0.006,
-                  "SpRecovery": 42.1,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 321.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1091013, Prop:1002}",
-              "Param": {
-                "1091013": {
-                  "Main": 12.9,
-                  "Growth": 0.006,
-                  "Format": "%",
-                  "DamagePercentage": 0.258,
-                  "DamagePercentageGrowth": 0.024,
-                  "StunRatio": 0.129,
-                  "StunRatioGrowth": 0.006,
-                  "SpRecovery": 42.1,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 321.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Dodge Counter: Kan Suzume",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1091014, Prop:1001}",
-              "Param": {
-                "1091014": {
-                  "Main": 245.9,
-                  "Growth": 0.224,
-                  "Format": "%",
-                  "DamagePercentage": 2.459,
-                  "DamagePercentageGrowth": 0.224,
-                  "StunRatio": 2.145,
-                  "StunRatioGrowth": 0.098,
-                  "SpRecovery": 342,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2612.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 94.99,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1091014, Prop:1002}",
-              "Param": {
-                "1091014": {
-                  "Main": 214.5,
-                  "Growth": 0.098,
-                  "Format": "%",
-                  "DamagePercentage": 2.459,
-                  "DamagePercentageGrowth": 0.224,
-                  "StunRatio": 2.145,
-                  "StunRatioGrowth": 0.098,
-                  "SpRecovery": 342,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2612.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 94.99,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 0.258,
+          "DamagePercentageGrowth": 0.024,
+          "StunRatio": 0.129,
+          "StunRatioGrowth": 0.006,
+          "SpRecovery": 42.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 321.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100112": 2 },
-        "2": { "10": 3000, "100112": 3 },
-        "3": { "10": 6000, "100122": 2 },
-        "4": { "10": 9000, "100122": 3 },
-        "5": { "10": 12000, "100122": 4 },
-        "6": { "10": 18000, "100122": 6 },
-        "7": { "10": 45000, "100132": 5 },
-        "8": { "10": 67500, "100132": 8 },
-        "9": { "10": 90000, "100132": 10 },
-        "10": { "10": 112500, "100132": 12 },
-        "11": { "10": 135000, "100132": 15, "100941": 1 },
-        "12": {}
-      }
+      "DodgeCounterKanSuzume": [
+        {
+          "DamagePercentage": 2.459,
+          "DamagePercentageGrowth": 0.224,
+          "StunRatio": 2.145,
+          "StunRatioGrowth": 0.098,
+          "SpRecovery": 342,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2612.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 94.99
+        }
+      ]
     },
-    "Special": {
-      "Description": [
+    "special": {
+      "SpecialAttackMiyuki": [
         {
-          "Name": "Special Attack: Miyuki",
-          "Desc": "Press <IconMap:Icon_Special> to activate:\nQuickly draws her blade and slashes ahead, dealing <color=#98EFF0>Frost DMG</color>.\nAnti-Interrupt level is increased while using this skill."
-        },
-        {
-          "Name": "EX Special Attack: Hisetsu",
-          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nRush forward, unleashing powerful slashes against enemies along the way, dealing massive <color=#98EFF0>Frost DMG</color>.\nUpon activating this skill, gain 2 points of <color=#FFFFFF>Fallen Frost</color>.\nCharacter is invulnerable while using this skill.\nAfter using this skill, with enough Energy, press <IconMap:Icon_SpecialReady> again to activate:\nConsume extra Energy and unleash a powerful follow-up attack against enemies in front, dealing massive <color=#98EFF0>Frost DMG</color>.\nUpon activating this skill, gain 2 points of <color=#FFFFFF>Fallen Frost</color>.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Special Attack: Miyuki",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1091008, Prop:1001}",
-              "Param": {
-                "1091008": {
-                  "Main": 35.8,
-                  "Growth": 0.033,
-                  "Format": "%",
-                  "DamagePercentage": 0.358,
-                  "DamagePercentageGrowth": 0.033,
-                  "StunRatio": 0.358,
-                  "StunRatioGrowth": 0.017,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 896.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 32.51,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1091008, Prop:1002}",
-              "Param": {
-                "1091008": {
-                  "Main": 35.8,
-                  "Growth": 0.017,
-                  "Format": "%",
-                  "DamagePercentage": 0.358,
-                  "DamagePercentageGrowth": 0.033,
-                  "StunRatio": 0.358,
-                  "StunRatioGrowth": 0.017,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 896.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 32.51,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "EX Special Attack: Hisetsu",
-          "Param": [
-            {
-              "Name": "Slash DMG Multiplier",
-              "Desc": "{{Skill:1091009, Prop:1001} + {Skill:1091010, Prop:1001}}",
-              "Param": {
-                "1091009": {
-                  "Main": 157.4,
-                  "Growth": 0.144,
-                  "Format": "%",
-                  "DamagePercentage": 1.574,
-                  "DamagePercentageGrowth": 0.144,
-                  "StunRatio": 1.287,
-                  "StunRatioGrowth": 0.059,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 4653,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 157.75,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1091010": {
-                  "Main": 236,
-                  "Growth": 0.215,
-                  "Format": "%",
-                  "DamagePercentage": 2.36,
-                  "DamagePercentageGrowth": 0.215,
-                  "StunRatio": 1.93,
-                  "StunRatioGrowth": 0.088,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6976.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 250.52,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Follow-Up DMG Multiplier",
-              "Desc": "{{Skill:1091011, Prop:1001} + {Skill:1091012, Prop:1001}}",
-              "Param": {
-                "1091011": {
-                  "Main": 193.3,
-                  "Growth": 0.176,
-                  "Format": "%",
-                  "DamagePercentage": 1.933,
-                  "DamagePercentageGrowth": 0.176,
-                  "StunRatio": 1.62,
-                  "StunRatioGrowth": 0.074,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 5615.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 189.25,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1091012": {
-                  "Main": 289.9,
-                  "Growth": 0.264,
-                  "Format": "%",
-                  "DamagePercentage": 2.899,
-                  "DamagePercentageGrowth": 0.264,
-                  "StunRatio": 2.43,
-                  "StunRatioGrowth": 0.111,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 8420.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 297.77,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Slash Daze Multiplier",
-              "Desc": "{{Skill:1091009, Prop:1002} + {Skill:1091010, Prop:1002}}",
-              "Param": {
-                "1091009": {
-                  "Main": 128.7,
-                  "Growth": 0.059,
-                  "Format": "%",
-                  "DamagePercentage": 1.574,
-                  "DamagePercentageGrowth": 0.144,
-                  "StunRatio": 1.287,
-                  "StunRatioGrowth": 0.059,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 4653,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 157.75,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1091010": {
-                  "Main": 193,
-                  "Growth": 0.088,
-                  "Format": "%",
-                  "DamagePercentage": 2.36,
-                  "DamagePercentageGrowth": 0.215,
-                  "StunRatio": 1.93,
-                  "StunRatioGrowth": 0.088,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6976.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 250.52,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Follow-Up Daze Multiplier",
-              "Desc": "{{Skill:1091011, Prop:1002} + {Skill:1091012, Prop:1002}}",
-              "Param": {
-                "1091011": {
-                  "Main": 162,
-                  "Growth": 0.074,
-                  "Format": "%",
-                  "DamagePercentage": 1.933,
-                  "DamagePercentageGrowth": 0.176,
-                  "StunRatio": 1.62,
-                  "StunRatioGrowth": 0.074,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 5615.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 189.25,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1091012": {
-                  "Main": 243,
-                  "Growth": 0.111,
-                  "Format": "%",
-                  "DamagePercentage": 2.899,
-                  "DamagePercentageGrowth": 0.264,
-                  "StunRatio": 2.43,
-                  "StunRatioGrowth": 0.111,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 8420.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 297.77,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            { "Name": "Slash Energy Cost", "Desc": "40" },
-            { "Name": "Follow-Up Energy Cost", "Desc": "40" }
-          ]
+          "DamagePercentage": 0.358,
+          "DamagePercentageGrowth": 0.033,
+          "StunRatio": 0.358,
+          "StunRatioGrowth": 0.017,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 896.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 32.51
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100112": 2 },
-        "2": { "10": 3000, "100112": 3 },
-        "3": { "10": 6000, "100122": 2 },
-        "4": { "10": 9000, "100122": 3 },
-        "5": { "10": 12000, "100122": 4 },
-        "6": { "10": 18000, "100122": 6 },
-        "7": { "10": 45000, "100132": 5 },
-        "8": { "10": 67500, "100132": 8 },
-        "9": { "10": 90000, "100132": 10 },
-        "10": { "10": 112500, "100132": 12 },
-        "11": { "10": 135000, "100132": 15, "100941": 1 },
-        "12": {}
-      }
+      "EXSpecialAttackHisetsu": [
+        {
+          "DamagePercentage": 1.574,
+          "DamagePercentageGrowth": 0.144,
+          "StunRatio": 1.287,
+          "StunRatioGrowth": 0.059,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 4653,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 157.75
+        },
+        {
+          "DamagePercentage": 2.36,
+          "DamagePercentageGrowth": 0.215,
+          "StunRatio": 1.93,
+          "StunRatioGrowth": 0.088,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 6976.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 250.52
+        },
+        {
+          "DamagePercentage": 1.933,
+          "DamagePercentageGrowth": 0.176,
+          "StunRatio": 1.62,
+          "StunRatioGrowth": 0.074,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 5615.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 189.25
+        },
+        {
+          "DamagePercentage": 2.899,
+          "DamagePercentageGrowth": 0.264,
+          "StunRatio": 2.43,
+          "StunRatioGrowth": 0.111,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 8420.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 297.77
+        }
+      ]
     },
-    "Chain": {
-      "Description": [
+    "chain": {
+      "ChainAttackSpringsCall": [
         {
-          "Name": "Chain Attack: Spring's Call",
-          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nUnleashes a powerful slash at enemies in front in a large area, dealing massive <color=#98EFF0>Frost DMG</color>.\nCharacter is invulnerable while using this skill."
+          "DamagePercentage": 1.884,
+          "DamagePercentageGrowth": 0.172,
+          "StunRatio": 0.567,
+          "StunRatioGrowth": 0.026,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 6905.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 111.36
         },
         {
-          "Name": "Ultimate: Lingering Snow",
-          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nUnleashes powerful slashes at enemies ahead in a large area then pauses, before unleashing a Finishing Move, dealing massive <color=#98EFF0>Frost DMG</color>.\nUpon activating this skill, gain 3 points of <color=#FFFFFF>Fallen Frost</color> and increase <color=#98EFF0>Ice DMG</color> by 30% for 12s.\nCharacter is invulnerable while using this skill."
+          "DamagePercentage": 1.884,
+          "DamagePercentageGrowth": 0.172,
+          "StunRatio": 0.567,
+          "StunRatioGrowth": 0.026,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 6905.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 111.36
         },
         {
-          "Name": "Chain Attack: Spring's Call",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{{Skill:1091015, Prop:1001} + {Skill:1091016, Prop:1001} + {Skill:1091017, Prop:1001}}",
-              "Param": {
-                "1091015": {
-                  "Main": 188.4,
-                  "Growth": 0.172,
-                  "Format": "%",
-                  "DamagePercentage": 1.884,
-                  "DamagePercentageGrowth": 0.172,
-                  "StunRatio": 0.567,
-                  "StunRatioGrowth": 0.026,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6905.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 111.36,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1091016": {
-                  "Main": 188.4,
-                  "Growth": 0.172,
-                  "Format": "%",
-                  "DamagePercentage": 1.884,
-                  "DamagePercentageGrowth": 0.172,
-                  "StunRatio": 0.567,
-                  "StunRatioGrowth": 0.026,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6905.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 111.36,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1091017": {
-                  "Main": 251.2,
-                  "Growth": 0.229,
-                  "Format": "%",
-                  "DamagePercentage": 2.512,
-                  "DamagePercentageGrowth": 0.229,
-                  "StunRatio": 0.756,
-                  "StunRatioGrowth": 0.035,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 9204.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 148.48,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{{Skill:1091015, Prop:1002} + {Skill:1091016, Prop:1002} + {Skill:1091017, Prop:1002}}",
-              "Param": {
-                "1091015": {
-                  "Main": 56.7,
-                  "Growth": 0.026,
-                  "Format": "%",
-                  "DamagePercentage": 1.884,
-                  "DamagePercentageGrowth": 0.172,
-                  "StunRatio": 0.567,
-                  "StunRatioGrowth": 0.026,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6905.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 111.36,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1091016": {
-                  "Main": 56.7,
-                  "Growth": 0.026,
-                  "Format": "%",
-                  "DamagePercentage": 1.884,
-                  "DamagePercentageGrowth": 0.172,
-                  "StunRatio": 0.567,
-                  "StunRatioGrowth": 0.026,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6905.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 111.36,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1091017": {
-                  "Main": 75.6,
-                  "Growth": 0.035,
-                  "Format": "%",
-                  "DamagePercentage": 2.512,
-                  "DamagePercentageGrowth": 0.229,
-                  "StunRatio": 0.756,
-                  "StunRatioGrowth": 0.035,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 9204.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 148.48,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Ultimate: Lingering Snow",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1091018, Prop:1001}",
-              "Param": {
-                "1091018": {
-                  "Main": 2388,
-                  "Growth": 2.171,
-                  "Format": "%",
-                  "DamagePercentage": 23.88,
-                  "DamagePercentageGrowth": 2.171,
-                  "StunRatio": 3.704,
-                  "StunRatioGrowth": 0.169,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 1137.16,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1091018, Prop:1002}",
-              "Param": {
-                "1091018": {
-                  "Main": 370.4,
-                  "Growth": 0.169,
-                  "Format": "%",
-                  "DamagePercentage": 23.88,
-                  "DamagePercentageGrowth": 2.171,
-                  "StunRatio": 3.704,
-                  "StunRatioGrowth": 0.169,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 1137.16,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 2.512,
+          "DamagePercentageGrowth": 0.229,
+          "StunRatio": 0.756,
+          "StunRatioGrowth": 0.035,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 9204.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 148.48
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100112": 2 },
-        "2": { "10": 3000, "100112": 3 },
-        "3": { "10": 6000, "100122": 2 },
-        "4": { "10": 9000, "100122": 3 },
-        "5": { "10": 12000, "100122": 4 },
-        "6": { "10": 18000, "100122": 6 },
-        "7": { "10": 45000, "100132": 5 },
-        "8": { "10": 67500, "100132": 8 },
-        "9": { "10": 90000, "100132": 10 },
-        "10": { "10": 112500, "100132": 12 },
-        "11": { "10": 135000, "100132": 15, "100941": 1 },
-        "12": {}
-      }
+      "UltimateLingeringSnow": [
+        {
+          "DamagePercentage": 23.88,
+          "DamagePercentageGrowth": 2.171,
+          "StunRatio": 3.704,
+          "StunRatioGrowth": 0.169,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 1137.16
+        }
+      ]
     },
-    "Assist": {
-      "Description": [
+    "assist": {
+      "QuickAssistDancingPetals": [
         {
-          "Name": "Quick Assist: Dancing Petals",
-          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nSlashes enemies in front, dealing <color=#98EFF0>Frost DMG</color>.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Defensive Assist: Drifting Petals",
-          "Desc": "When the on-field character is about to be attacked, press <IconMap:Icon_Switch> to activate:\nParries the enemy's attack, dealing massive Daze.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Assist Follow-Up: Falling Petals",
-          "Desc": "Press <IconMap:Icon_Normal> after a <color=#FFFFFF>Defensive Assist</color> to activate:\nCharges and slashes enemies in front, dealing <color=#98EFF0>Frost DMG</color>.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Quick Assist: Dancing Petals",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1091021, Prop:1001}",
-              "Param": {
-                "1091021": {
-                  "Main": 104.5,
-                  "Growth": 0.095,
-                  "Format": "%",
-                  "DamagePercentage": 1.045,
-                  "DamagePercentageGrowth": 0.095,
-                  "StunRatio": 1.045,
-                  "StunRatioGrowth": 0.048,
-                  "SpRecovery": 342,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2612.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 94.99,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1091021, Prop:1002}",
-              "Param": {
-                "1091021": {
-                  "Main": 104.5,
-                  "Growth": 0.048,
-                  "Format": "%",
-                  "DamagePercentage": 1.045,
-                  "DamagePercentageGrowth": 0.095,
-                  "StunRatio": 1.045,
-                  "StunRatioGrowth": 0.048,
-                  "SpRecovery": 342,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2612.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 94.99,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Defensive Assist: Drifting Petals",
-          "Param": [
-            {
-              "Name": "Light Defensive Daze Multiplier",
-              "Desc": "{Skill:1091022, Prop:1002}",
-              "Param": {
-                "1091022": {
-                  "Main": 271.3,
-                  "Growth": 0.124,
-                  "Format": "%",
-                  "DamagePercentage": 0,
-                  "DamagePercentageGrowth": 0,
-                  "StunRatio": 2.713,
-                  "StunRatioGrowth": 0.124,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Heavy Defensive Daze Multiplier",
-              "Desc": "{Skill:1091023, Prop:1002}",
-              "Param": {
-                "1091023": {
-                  "Main": 342.8,
-                  "Growth": 0.156,
-                  "Format": "%",
-                  "DamagePercentage": 0,
-                  "DamagePercentageGrowth": 0,
-                  "StunRatio": 3.428,
-                  "StunRatioGrowth": 0.156,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Chain Defensive Daze Multiplier",
-              "Desc": "{Skill:1091024, Prop:1002}",
-              "Param": {
-                "1091024": {
-                  "Main": 128.3,
-                  "Growth": 0.059,
-                  "Format": "%",
-                  "DamagePercentage": 0,
-                  "DamagePercentageGrowth": 0,
-                  "StunRatio": 1.283,
-                  "StunRatioGrowth": 0.059,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Assist Follow-Up: Falling Petals",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1091025, Prop:1001}",
-              "Param": {
-                "1091025": {
-                  "Main": 337.8,
-                  "Growth": 0.308,
-                  "Format": "%",
-                  "DamagePercentage": 3.378,
-                  "DamagePercentageGrowth": 0.308,
-                  "StunRatio": 2.919,
-                  "StunRatioGrowth": 0.133,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 9594.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 286.17,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1091025, Prop:1002}",
-              "Param": {
-                "1091025": {
-                  "Main": 291.9,
-                  "Growth": 0.133,
-                  "Format": "%",
-                  "DamagePercentage": 3.378,
-                  "DamagePercentageGrowth": 0.308,
-                  "StunRatio": 2.919,
-                  "StunRatioGrowth": 0.133,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 9594.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 286.17,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 1.045,
+          "DamagePercentageGrowth": 0.095,
+          "StunRatio": 1.045,
+          "StunRatioGrowth": 0.048,
+          "SpRecovery": 342,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2612.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 94.99
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100112": 2 },
-        "2": { "10": 3000, "100112": 3 },
-        "3": { "10": 6000, "100122": 2 },
-        "4": { "10": 9000, "100122": 3 },
-        "5": { "10": 12000, "100122": 4 },
-        "6": { "10": 18000, "100122": 6 },
-        "7": { "10": 45000, "100132": 5 },
-        "8": { "10": 67500, "100132": 8 },
-        "9": { "10": 90000, "100132": 10 },
-        "10": { "10": 112500, "100132": 12 },
-        "11": { "10": 135000, "100132": 15, "100941": 1 },
-        "12": {}
-      }
-    }
-  },
-  "skillList": {
-    "1091001": {
-      "Name": "Basic Attack: Kazahana (1st and 2nd hit)",
-      "Desc": "<IconMap:Icon_Normal>",
-      "ElementType": 200,
-      "HitType": 101
-    },
-    "1091002": {
-      "Name": "Basic Attack: Kazahana (3rd, 4th, and 5th hit)",
-      "Desc": "<IconMap:Icon_Normal>",
-      "ElementType": 202,
-      "HitType": 101
-    },
-    "1091003": {
-      "Name": "Basic Attack: Shimotsuki",
-      "Desc": "<IconMap:Icon_Normal> (Hold) (With at least 2 points of Fallen Frost)",
-      "ElementType": 202,
-      "HitType": 101
-    },
-    "1091004": {
-      "Name": "Special Attack: Miyuki",
-      "Desc": "<IconMap:Icon_Special>",
-      "ElementType": 202,
-      "HitType": 101
-    },
-    "1091005": {
-      "Name": "EX Special Attack: Hisetsu",
-      "Desc": "<IconMap:Icon_SpecialReady> ; <IconMap:Icon_SpecialReady>",
-      "ElementType": 202,
-      "HitType": 101
-    },
-    "1091006": {
-      "Name": "Dash Attack: Fuyubachi",
-      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
-      "ElementType": 200,
-      "HitType": 101
-    },
-    "1091007": {
-      "Name": "Dodge Counter: Kan Suzume",
-      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
-      "ElementType": 202,
-      "HitType": 101
-    },
-    "1091008": {
-      "Name": "Chain Attack: Spring's Call",
-      "Desc": "<IconMap:Icon_QTE>",
-      "ElementType": 202,
-      "HitType": 101
-    },
-    "1091009": {
-      "Name": "Ultimate: Lingering Snow",
-      "Desc": "<IconMap:Icon_UltimateReady>",
-      "ElementType": 202,
-      "HitType": 101
-    },
-    "1091010": {
-      "Name": "Quick Assist: Dancing Petals",
-      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
-      "ElementType": 202,
-      "HitType": 101
-    },
-    "1091011": {
-      "Name": "Defensive Assist: Drifting Petals",
-      "Desc": "<IconMap:Icon_Switch> (When Triggering Defensive Assist)",
-      "ElementType": 0,
-      "HitType": 0
-    },
-    "1091012": {
-      "Name": "Assist Follow-Up: Falling Petals",
-      "Desc": "<IconMap:Icon_Special> (After Defensive Assist)",
-      "ElementType": 202,
-      "HitType": 101
-    }
-  },
-  "cores": {
-    "Level": {
-      "1": {
-        "Level": 1,
-        "Id": 1091501,
-        "Name": [
-          "Core Passive: Searing Cold",
-          "Additional Ability: Bask in Frost"
-        ],
-        "Desc": [
-          "When Hoshimi Miyabi deals <color=#98EFF0>Frost DMG</color>, she applies <color=#FFFFFF>Icefire</color> to the target, lasting 30s. When accumulating <color=#98EFF0>Frost Anomaly Buildup</color> against targets with <color=#FFFFFF>Icefire</color>, increases <color=#98EFF0>Frost Anomaly Buildup Rate</color> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <color=#98EFF0>Frost Anomaly Buildup</color>, it has its own independent Attribute Anomaly Buildup gauge and triggers <color=#98EFF0>Freeze</color>, <color=#98EFF0>Shatter</color>, and <color=#98EFF0>Frostbite</color> that can react with other Attribute Anomalies, including <color=#98EFF0>Ice Attribute Anomaly</color>, to trigger <color=#FFFFFF>Disorder</color>.\nWhen Hoshimi Miyabi applies <color=#98EFF0>Frostbite</color> to enemies with <color=#FFFFFF>Icefire</color>, it will consume the <color=#FFFFFF>Icefire</color> to trigger <color=#FFFFFF>Frostburn - Break</color>, dealing <color=#98EFF0>Frost DMG</color> equal to <color=#2BAD00>750%</color> of Hoshimi Miyabi's ATK and causing the target to enter the <color=#FFFFFF>Frostburn</color> state. All squad members accumulate <color=#2BAD00>14%</color> more Anomaly Buildup against enemies under the <color=#FFFFFF>Frostburn</color> state, but Hoshimi Miyabi cannot reapply <color=#FFFFFF>Icefire</color> to these enemies. The <color=#FFFFFF>Frostburn</color> state ends when <color=#98EFF0>Frostbite</color> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <color=#98EFF0>Frostbite</color> and remove <color=#FFFFFF>Frostburn</color>.\nUpon triggering <color=#FFFFFF>Frostburn - Break</color>, Hoshimi Miyabi obtains 1 point of <color=#FFFFFF>Fallen Frost</color>. This effect can trigger once every 10s.",
-          "When another character in your squad is a <color=#FFFFFF>Support</color> character or shares the same Faction:\n<color=#FFFFFF>Basic Attack: Shimotsuki</color> DMG increases by 60%. When any squad member triggers <color=#FFFFFF>Disorder</color>, Hoshimi Miyabi obtains 2 points of <color=#FFFFFF>Fallen Frost</color> and <color=#FFFFFF>Basic Attack: Shimotsuki</color> during the next <color=#FFFFFF>Shimotsuki Stance</color> will ignore 30% of the target's <color=#98EFF0>Ice RES</color>."
-        ]
-      },
-      "2": {
-        "Level": 2,
-        "Id": 1091502,
-        "Name": [
-          "Core Passive: Searing Cold",
-          "Additional Ability: Bask in Frost"
-        ],
-        "Desc": [
-          "When Hoshimi Miyabi deals <color=#98EFF0>Frost DMG</color>, she applies <color=#FFFFFF>Icefire</color> to the target, lasting 30s. When accumulating <color=#98EFF0>Frost Anomaly Buildup</color> against targets with <color=#FFFFFF>Icefire</color>, increases <color=#98EFF0>Frost Anomaly Buildup Rate</color> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <color=#98EFF0>Frost Anomaly Buildup</color>, it has its own independent Attribute Anomaly Buildup gauge and triggers <color=#98EFF0>Freeze</color>, <color=#98EFF0>Shatter</color>, and <color=#98EFF0>Frostbite</color> that can react with other Attribute Anomalies, including <color=#98EFF0>Ice Attribute Anomaly</color>, to trigger <color=#FFFFFF>Disorder</color>.\nWhen Hoshimi Miyabi applies <color=#98EFF0>Frostbite</color> to enemies with <color=#FFFFFF>Icefire</color>, it will consume the <color=#FFFFFF>Icefire</color> to trigger <color=#FFFFFF>Frostburn - Break</color>, dealing <color=#98EFF0>Frost DMG</color> equal to <color=#2BAD00>875%</color> of Hoshimi Miyabi's ATK and causing the target to enter the <color=#FFFFFF>Frostburn</color> state. All squad members accumulate <color=#2BAD00>15%</color> more Anomaly Buildup against enemies under the <color=#FFFFFF>Frostburn</color> state, but Hoshimi Miyabi cannot reapply <color=#FFFFFF>Icefire</color> to these enemies. The <color=#FFFFFF>Frostburn</color> state ends when <color=#98EFF0>Frostbite</color> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <color=#98EFF0>Frostbite</color> and remove <color=#FFFFFF>Frostburn</color>.\nUpon triggering <color=#FFFFFF>Frostburn - Break</color>, Hoshimi Miyabi obtains 1 point of <color=#FFFFFF>Fallen Frost</color>. This effect can trigger once every 10s.",
-          "When another character in your squad is a <color=#FFFFFF>Support</color> character or shares the same Faction:\n<color=#FFFFFF>Basic Attack: Shimotsuki</color> DMG increases by 60%. When any squad member triggers <color=#FFFFFF>Disorder</color>, Hoshimi Miyabi obtains 2 points of <color=#FFFFFF>Fallen Frost</color> and <color=#FFFFFF>Basic Attack: Shimotsuki</color> during the next <color=#FFFFFF>Shimotsuki Stance</color> will ignore 30% of the target's <color=#98EFF0>Ice RES</color>."
-        ]
-      },
-      "3": {
-        "Level": 3,
-        "Id": 1091503,
-        "Name": [
-          "Core Passive: Searing Cold",
-          "Additional Ability: Bask in Frost"
-        ],
-        "Desc": [
-          "When Hoshimi Miyabi deals <color=#98EFF0>Frost DMG</color>, she applies <color=#FFFFFF>Icefire</color> to the target, lasting 30s. When accumulating <color=#98EFF0>Frost Anomaly Buildup</color> against targets with <color=#FFFFFF>Icefire</color>, increases <color=#98EFF0>Frost Anomaly Buildup Rate</color> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <color=#98EFF0>Frost Anomaly Buildup</color>, it has its own independent Attribute Anomaly Buildup gauge and triggers <color=#98EFF0>Freeze</color>, <color=#98EFF0>Shatter</color>, and <color=#98EFF0>Frostbite</color> that can react with other Attribute Anomalies, including <color=#98EFF0>Ice Attribute Anomaly</color>, to trigger <color=#FFFFFF>Disorder</color>.\nWhen Hoshimi Miyabi applies <color=#98EFF0>Frostbite</color> to enemies with <color=#FFFFFF>Icefire</color>, it will consume the <color=#FFFFFF>Icefire</color> to trigger <color=#FFFFFF>Frostburn - Break</color>, dealing <color=#98EFF0>Frost DMG</color> equal to <color=#2BAD00>1,000%</color> of Hoshimi Miyabi's ATK and causing the target to enter the <color=#FFFFFF>Frostburn</color> state. All squad members accumulate <color=#2BAD00>16%</color> more Anomaly Buildup against enemies under the <color=#FFFFFF>Frostburn</color> state, but Hoshimi Miyabi cannot reapply <color=#FFFFFF>Icefire</color> to these enemies. The <color=#FFFFFF>Frostburn</color> state ends when <color=#98EFF0>Frostbite</color> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <color=#98EFF0>Frostbite</color> and remove <color=#FFFFFF>Frostburn</color>.\nUpon triggering <color=#FFFFFF>Frostburn - Break</color>, Hoshimi Miyabi obtains 1 point of <color=#FFFFFF>Fallen Frost</color>. This effect can trigger once every 10s.",
-          "When another character in your squad is a <color=#FFFFFF>Support</color> character or shares the same Faction:\n<color=#FFFFFF>Basic Attack: Shimotsuki</color> DMG increases by 60%. When any squad member triggers <color=#FFFFFF>Disorder</color>, Hoshimi Miyabi obtains 2 points of <color=#FFFFFF>Fallen Frost</color> and <color=#FFFFFF>Basic Attack: Shimotsuki</color> during the next <color=#FFFFFF>Shimotsuki Stance</color> will ignore 30% of the target's <color=#98EFF0>Ice RES</color>."
-        ]
-      },
-      "4": {
-        "Level": 4,
-        "Id": 1091504,
-        "Name": [
-          "Core Passive: Searing Cold",
-          "Additional Ability: Bask in Frost"
-        ],
-        "Desc": [
-          "When Hoshimi Miyabi deals <color=#98EFF0>Frost DMG</color>, she applies <color=#FFFFFF>Icefire</color> to the target, lasting 30s. When accumulating <color=#98EFF0>Frost Anomaly Buildup</color> against targets with <color=#FFFFFF>Icefire</color>, increases <color=#98EFF0>Frost Anomaly Buildup Rate</color> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <color=#98EFF0>Frost Anomaly Buildup</color>, it has its own independent Attribute Anomaly Buildup gauge and triggers <color=#98EFF0>Freeze</color>, <color=#98EFF0>Shatter</color>, and <color=#98EFF0>Frostbite</color> that can react with other Attribute Anomalies, including <color=#98EFF0>Ice Attribute Anomaly</color>, to trigger <color=#FFFFFF>Disorder</color>.\nWhen Hoshimi Miyabi applies <color=#98EFF0>Frostbite</color> to enemies with <color=#FFFFFF>Icefire</color>, it will consume the <color=#FFFFFF>Icefire</color> to trigger <color=#FFFFFF>Frostburn - Break</color>, dealing <color=#98EFF0>Frost DMG</color> equal to <color=#2BAD00>1,125%</color> of Hoshimi Miyabi's ATK and causing the target to enter the <color=#FFFFFF>Frostburn</color> state. All squad members accumulate <color=#2BAD00>17%</color> more Anomaly Buildup against enemies under the <color=#FFFFFF>Frostburn</color> state, but Hoshimi Miyabi cannot reapply <color=#FFFFFF>Icefire</color> to these enemies. The <color=#FFFFFF>Frostburn</color> state ends when <color=#98EFF0>Frostbite</color> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <color=#98EFF0>Frostbite</color> and remove <color=#FFFFFF>Frostburn</color>.\nUpon triggering <color=#FFFFFF>Frostburn - Break</color>, Hoshimi Miyabi obtains 1 point of <color=#FFFFFF>Fallen Frost</color>. This effect can trigger once every 10s.",
-          "When another character in your squad is a <color=#FFFFFF>Support</color> character or shares the same Faction:\n<color=#FFFFFF>Basic Attack: Shimotsuki</color> DMG increases by 60%. When any squad member triggers <color=#FFFFFF>Disorder</color>, Hoshimi Miyabi obtains 2 points of <color=#FFFFFF>Fallen Frost</color> and <color=#FFFFFF>Basic Attack: Shimotsuki</color> during the next <color=#FFFFFF>Shimotsuki Stance</color> will ignore 30% of the target's <color=#98EFF0>Ice RES</color>."
-        ]
-      },
-      "5": {
-        "Level": 5,
-        "Id": 1091505,
-        "Name": [
-          "Core Passive: Searing Cold",
-          "Additional Ability: Bask in Frost"
-        ],
-        "Desc": [
-          "When Hoshimi Miyabi deals <color=#98EFF0>Frost DMG</color>, she applies <color=#FFFFFF>Icefire</color> to the target, lasting 30s. When accumulating <color=#98EFF0>Frost Anomaly Buildup</color> against targets with <color=#FFFFFF>Icefire</color>, increases <color=#98EFF0>Frost Anomaly Buildup Rate</color> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <color=#98EFF0>Frost Anomaly Buildup</color>, it has its own independent Attribute Anomaly Buildup gauge and triggers <color=#98EFF0>Freeze</color>, <color=#98EFF0>Shatter</color>, and <color=#98EFF0>Frostbite</color> that can react with other Attribute Anomalies, including <color=#98EFF0>Ice Attribute Anomaly</color>, to trigger <color=#FFFFFF>Disorder</color>.\nWhen Hoshimi Miyabi applies <color=#98EFF0>Frostbite</color> to enemies with <color=#FFFFFF>Icefire</color>, it will consume the <color=#FFFFFF>Icefire</color> to trigger <color=#FFFFFF>Frostburn - Break</color>, dealing <color=#98EFF0>Frost DMG</color> equal to <color=#2BAD00>1,250%</color> of Hoshimi Miyabi's ATK and causing the target to enter the <color=#FFFFFF>Frostburn</color> state. All squad members accumulate <color=#2BAD00>18%</color> more Anomaly Buildup against enemies under the <color=#FFFFFF>Frostburn</color> state, but Hoshimi Miyabi cannot reapply <color=#FFFFFF>Icefire</color> to these enemies. The <color=#FFFFFF>Frostburn</color> state ends when <color=#98EFF0>Frostbite</color> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <color=#98EFF0>Frostbite</color> and remove <color=#FFFFFF>Frostburn</color>.\nUpon triggering <color=#FFFFFF>Frostburn - Break</color>, Hoshimi Miyabi obtains 1 point of <color=#FFFFFF>Fallen Frost</color>. This effect can trigger once every 10s.",
-          "When another character in your squad is a <color=#FFFFFF>Support</color> character or shares the same Faction:\n<color=#FFFFFF>Basic Attack: Shimotsuki</color> DMG increases by 60%. When any squad member triggers <color=#FFFFFF>Disorder</color>, Hoshimi Miyabi obtains 2 points of <color=#FFFFFF>Fallen Frost</color> and <color=#FFFFFF>Basic Attack: Shimotsuki</color> during the next <color=#FFFFFF>Shimotsuki Stance</color> will ignore 30% of the target's <color=#98EFF0>Ice RES</color>."
-        ]
-      },
-      "6": {
-        "Level": 6,
-        "Id": 1091506,
-        "Name": [
-          "Core Passive: Searing Cold",
-          "Additional Ability: Bask in Frost"
-        ],
-        "Desc": [
-          "When Hoshimi Miyabi deals <color=#98EFF0>Frost DMG</color>, she applies <color=#FFFFFF>Icefire</color> to the target, lasting 30s. When accumulating <color=#98EFF0>Frost Anomaly Buildup</color> against targets with <color=#FFFFFF>Icefire</color>, increases <color=#98EFF0>Frost Anomaly Buildup Rate</color> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <color=#98EFF0>Frost Anomaly Buildup</color>, it has its own independent Attribute Anomaly Buildup gauge and triggers <color=#98EFF0>Freeze</color>, <color=#98EFF0>Shatter</color>, and <color=#98EFF0>Frostbite</color> that can react with other Attribute Anomalies, including <color=#98EFF0>Ice Attribute Anomaly</color>, to trigger <color=#FFFFFF>Disorder</color>.\nWhen Hoshimi Miyabi applies <color=#98EFF0>Frostbite</color> to enemies with <color=#FFFFFF>Icefire</color>, it will consume the <color=#FFFFFF>Icefire</color> to trigger <color=#FFFFFF>Frostburn - Break</color>, dealing <color=#98EFF0>Frost DMG</color> equal to <color=#2BAD00>1,375%</color> of Hoshimi Miyabi's ATK and causing the target to enter the <color=#FFFFFF>Frostburn</color> state. All squad members accumulate <color=#2BAD00>19%</color> more Anomaly Buildup against enemies under the <color=#FFFFFF>Frostburn</color> state, but Hoshimi Miyabi cannot reapply <color=#FFFFFF>Icefire</color> to these enemies. The <color=#FFFFFF>Frostburn</color> state ends when <color=#98EFF0>Frostbite</color> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <color=#98EFF0>Frostbite</color> and remove <color=#FFFFFF>Frostburn</color>.\nUpon triggering <color=#FFFFFF>Frostburn - Break</color>, Hoshimi Miyabi obtains 1 point of <color=#FFFFFF>Fallen Frost</color>. This effect can trigger once every 10s.",
-          "When another character in your squad is a <color=#FFFFFF>Support</color> character or shares the same Faction:\n<color=#FFFFFF>Basic Attack: Shimotsuki</color> DMG increases by 60%. When any squad member triggers <color=#FFFFFF>Disorder</color>, Hoshimi Miyabi obtains 2 points of <color=#FFFFFF>Fallen Frost</color> and <color=#FFFFFF>Basic Attack: Shimotsuki</color> during the next <color=#FFFFFF>Shimotsuki Stance</color> will ignore 30% of the target's <color=#98EFF0>Ice RES</color>."
-        ]
-      },
-      "7": {
-        "Level": 7,
-        "Id": 1091507,
-        "Name": [
-          "Core Passive: Searing Cold",
-          "Additional Ability: Bask in Frost"
-        ],
-        "Desc": [
-          "When Hoshimi Miyabi deals <color=#98EFF0>Frost DMG</color>, she applies <color=#FFFFFF>Icefire</color> to the target, lasting 30s. When accumulating <color=#98EFF0>Frost Anomaly Buildup</color> against targets with <color=#FFFFFF>Icefire</color>, increases <color=#98EFF0>Frost Anomaly Buildup Rate</color> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <color=#98EFF0>Frost Anomaly Buildup</color>, it has its own independent Attribute Anomaly Buildup gauge and triggers <color=#98EFF0>Freeze</color>, <color=#98EFF0>Shatter</color>, and <color=#98EFF0>Frostbite</color> that can react with other Attribute Anomalies, including <color=#98EFF0>Ice Attribute Anomaly</color>, to trigger <color=#FFFFFF>Disorder</color>.\nWhen Hoshimi Miyabi applies <color=#98EFF0>Frostbite</color> to enemies with <color=#FFFFFF>Icefire</color>, it will consume the <color=#FFFFFF>Icefire</color> to trigger <color=#FFFFFF>Frostburn - Break</color>, dealing <color=#98EFF0>Frost DMG</color> equal to <color=#2BAD00>1,500%</color> of Hoshimi Miyabi's ATK and causing the target to enter the <color=#FFFFFF>Frostburn</color> state. All squad members accumulate <color=#2BAD00>20%</color> more Anomaly Buildup against enemies under the <color=#FFFFFF>Frostburn</color> state, but Hoshimi Miyabi cannot reapply <color=#FFFFFF>Icefire</color> to these enemies. The <color=#FFFFFF>Frostburn</color> state ends when <color=#98EFF0>Frostbite</color> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <color=#98EFF0>Frostbite</color> and remove <color=#FFFFFF>Frostburn</color>.\nUpon triggering <color=#FFFFFF>Frostburn - Break</color>, Hoshimi Miyabi obtains 1 point of <color=#FFFFFF>Fallen Frost</color>. This effect can trigger once every 10s.",
-          "When another character in your squad is a <color=#FFFFFF>Support</color> character or shares the same Faction:\n<color=#FFFFFF>Basic Attack: Shimotsuki</color> DMG increases by 60%. When any squad member triggers <color=#FFFFFF>Disorder</color>, Hoshimi Miyabi obtains 2 points of <color=#FFFFFF>Fallen Frost</color> and <color=#FFFFFF>Basic Attack: Shimotsuki</color> during the next <color=#FFFFFF>Shimotsuki Stance</color> will ignore 30% of the target's <color=#98EFF0>Ice RES</color>."
-        ]
-      }
-    },
-    "Materials": {
-      "1": { "10": 5000 },
-      "2": { "10": 12000, "110508": 2 },
-      "3": { "10": 28000, "110508": 4 },
-      "4": { "10": 60000, "110005": 2, "110508": 9 },
-      "5": { "10": 100000, "110005": 3, "110508": 15 },
-      "6": { "10": 200000, "110005": 4, "110508": 30 }
-    }
-  },
-  "mindscapes": {
-    "1": {
-      "Level": 1,
-      "Name": "Frost Atop the Snow",
-      "Desc": "While in <color=#FFFFFF>Shimotsuki Stance</color>, every 1 point of <color=#FFFFFF>Fallen Frost</color> consumed will allow <color=#FFFFFF>Basic Attack: Shimotsuki</color> to ignore 6% of DEF, stacking up to 6 times and lasting until <color=#FFFFFF>Shimotsuki Stance</color> ends. When the slash for charge level three of <color=#FFFFFF>Basic Attack: Shimotsuki</color> hits an enemy under <color=#FFFFFF>Frostburn</color>, it will immediately remove the <color=#FFFFFF>Frostburn</color> state and increase all squad members' Anomaly Buildup Rate by 20% for 10s.",
-      "Desc2": "Miyabi has loved reciting poems about the cold since she was a child. She might not understand them completely, but she still does it every day.\nBefore long, she came to realize their true meaning.\nShe found clarity not on a still and snowy night, but rather upon the battlefield."
-    },
-    "2": {
-      "Level": 2,
-      "Name": "Breath Technique",
-      "Desc": "<color=#FFFFFF>Basic Attack: Kazahana</color> and <color=#FFFFFF>Dodge Counter</color> DMG increases by 30%. Hoshimi Miyabi gains 1 point of <color=#FFFFFF>Fallen Frost</color> when the final move of the 5th hit of <color=#FFFFFF>Basic Attack: Kazahana</color> hits an enemy. Upon entering the battlefield, Hoshimi Miyabi immediately obtains 6 points of <color=#FFFFFF>Fallen Frost</color> and her CRIT Rate increases by 15%.",
-      "Desc2": "\"As goes the sword, so goes the heart.\" This is a key disciplinary concept of the Hoshimi school of swordsmanship.\nDefeating the enemy is but the first step on the path to victory. \nMaintaining constant vigilance at all times is the true way of a warrior."
-    },
-    "3": {
-      "Level": 3,
-      "Name": "Martial Discipline",
-      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
-      "Desc2": "Miyabi, whose family has a tradition of martial arts, has excellent training habits. Her commitment to swordsmanship practice is unwavering. What? A meeting? She won't be going."
-    },
-    "4": {
-      "Level": 4,
-      "Name": "Rupture",
-      "Desc": "<color=#FFFFFF>Frostburn - Break</color> DMG increases by 30%. Upon triggering <color=#FFFFFF>Frostburn - Break</color>, Hoshimi Miyabi generates 250 more Decibels.",
-      "Desc2": "Reciting poems during the heat of battle can regulate one's respiratory rhythm.\nWhether it's her mindset or breathing, Miyabi always keeps calm."
-    },
-    "5": {
-      "Level": 5,
-      "Name": "Anniversary",
-      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
-      "Desc2": "The girl arrives at that all too familiar place with flowers, her breath misting and then vanishing into the cold air.\nHer fingers ghost over that name on the monument.\nEverything is quiet, like that most silence observer."
-    },
-    "6": {
-      "Level": 6,
-      "Name": "Prodigious Talent",
-      "Desc": "During <color=#FFFFFF>Shimotsuki Stance</color>, Hoshimi Miyabi obtains <color=#FFFFFF>Polar</color>, which increases <color=#FFFFFF>Basic Attack: Shimotsuki</color> DMG by 30%. After obtaining <color=#FFFFFF>Polar</color>, Hoshimi Miyabi will automatically draw her blade and unleash powerful slashes based on the current charge level upon consuming <color=#FFFFFF>Fallen Frost</color>. Before <color=#FFFFFF>Fallen Frost</color> is completely depleted, the draw and slashes will not interrupt charging under <color=#FFFFFF>Shimotsuki Stance</color>. Each occurrence of <color=#FFFFFF>Shimotsuki Stance</color> can perform up to 3 draws and slashes.",
-      "Desc2": "The more she battles, the more it becomes evident to outsiders: If there is a god of swordsmanship, it must greatly favor Hoshimi Miyabi."
+      "DefensiveAssistDriftingPetals": [
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.713,
+          "StunRatioGrowth": 0.124,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 3.428,
+          "StunRatioGrowth": 0.156,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.283,
+          "StunRatioGrowth": 0.059,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "AssistFollowUpFallingPetals": [
+        {
+          "DamagePercentage": 3.378,
+          "DamagePercentageGrowth": 0.308,
+          "StunRatio": 2.919,
+          "StunRatioGrowth": 0.133,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 9594.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 286.17
+        }
+      ]
     }
   }
 }

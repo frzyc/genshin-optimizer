@@ -4,7 +4,7 @@
   "description": "Keturunan Raja Deshret yang memiliki mata kiri berwarna kuning keemasan. Pelindung Desa Aaru.",
   "constellationName": "Sagitta Scutum",
   "auto": {
-    "name": "Gleaming Spear - Guardian Stance",
+    "name": "Guardian Stance",
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",

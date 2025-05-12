@@ -33,6 +33,7 @@ import Rust from './Rust'
 import SacrificialBow from './SacrificialBow'
 import ScionOfTheBlazingSun from './ScionOfTheBlazingSun'
 import SeasonedHuntersBow from './SeasonedHuntersBow'
+import SequenceOfSolitude from './SequenceOfSolitude'
 import SharpshootersOath from './SharpshootersOath'
 import SilvershowerHeartstrings from './SilvershowerHeartstrings'
 import SkywardHarp from './SkywardHarp'
@@ -76,6 +77,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   SacrificialBow,
   ScionOfTheBlazingSun,
   SeasonedHuntersBow,
+  SequenceOfSolitude,
   SharpshootersOath,
   SilvershowerHeartstrings,
   SkywardHarp,

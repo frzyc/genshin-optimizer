@@ -4,7 +4,7 @@
   "description": "Guardiã da Vila Aaru, descendente do Rei Deshret, seu olho esquerdo é da cor do âmbar.",
   "constellationName": "Sagitta Scutum",
   "auto": {
-    "name": "Lança Reluzente - Postura Guardiã",
+    "name": "Postura Guardiã",
     "fields": {
       "normal": {
         "0": "<strong>Ataque Normal</strong>",

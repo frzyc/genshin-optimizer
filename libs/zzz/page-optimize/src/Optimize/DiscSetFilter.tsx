@@ -4,10 +4,12 @@ import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSetKeys, allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
-import { DiscSheetDisplay } from '@genshin-optimizer/zzz/formula-ui'
+import {
+  CharCalcMockCountProvider,
+  DiscSheetDisplay,
+} from '@genshin-optimizer/zzz/formula-ui'
 import { Box, Button, ButtonGroup, Grid, Typography } from '@mui/material'
 import { useMemo } from 'react'
-import { CharCalcMockCountProvider } from '../CharCalcProvider'
 
 export function DiscSetFilter({
   discBySlot,

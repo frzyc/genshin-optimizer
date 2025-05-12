@@ -1,0 +1,185 @@
+{
+  "name": "Iansán",
+  "title": "La Entrenadora Funderrocas",
+  "description": "La entrenadora jefa del Club de Entrenamiento de la Comunidad de la Feracidad, así como una conocida nutricionista de Natlan.",
+  "constellationName": "Carnotaurus",
+  "auto": {
+    "name": "Punzada pesada",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente e infligir daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      },
+      "nightsoul": {
+        "0": "<strong>Noctambulismo: Descenso atronador</strong>",
+        "1": "Mientras está en estado de bendición noctámbula, el Ataque Cargado de Iansán se transforma en un formidable “Descenso atronador”, durante el cual consume una cierta cantidad de Aguante para dar un feroz pisotón hacia delante e infligir <electro>Daño Electro en el AdE</electro> de naturaleza noctámbula."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Daño de Descenso atronador",
+      "5": "Coste de Aguante de ATQ Cargado y Descenso atronador",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Acelerón relámpago",
+    "description": {
+      "0": "Iansán arremete hacia delante una cierta distancia para infligir <electro>Daño Electro</electro> de naturaleza noctámbula a todos los enemigos en el camino.",
+      "1": "Tras usar esta habilidad, Iansán recuperará 54 pts. de noctambulismo, entrará en estado de bendición noctámbula y, en los 5 s siguientes, al realizar un Ataque Normal pulsando una vez, Iansán ejecutará un Descenso atronador veloz sin consumir Aguante.",
+      "2": "<br/>",
+      "3": "<strong>Bendición noctámbula: Iansán</strong>",
+      "4": "Consume continuamente pts. de noctambulismo. Al agotarse todos o al usar de nuevo la habilidad, terminará la duración de la bendición noctámbula de Iansán. Dicha bendición tiene las siguientes propiedades:",
+      "5": [
+        "Aumenta la Vel. Movimiento de Iansán.",
+        "Mantener pulsado al esprintar hará que Iansán entre en modo “superrayo”, el cual aumenta considerablemente su Vel. Movimiento temporalmente. Mientras está en este modo, Iansán puede realizar saltos voladores aprovechando los desniveles del terreno, o consumir pts. de noctambulismo adicionales para moverse sobre el agua y sobre el flogisto líquido, a cuyo daño será inmune."
+      ],
+      "6": "<br/>",
+      "7": "<i>“¡Más rápido! ¡Más fuerte! He trabajado muy duro para este momento”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Límite de pts. de noctambulismo",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Los tres principios de la fuerza",
+    "description": {
+      "0": "Sacude la tierra con la “fuerza” que le otorga su nombre antiguo para infligir <electro>Daño Electro en el AdE</electro> de naturaleza noctámbula y sacar su “indicador de energía cinética de edición limitada”, el cual utiliza en sus entrenamientos.",
+      "1": "Al usar esta habilidad, Iansán obtiene 15 pts. de noctambulismo y entra en estado de bendición noctámbula.",
+      "2": "Cuando el indicador de energía cinética sea retirado del campo de batalla, el estado de bendición noctámbula de Iansán terminará.",
+      "3": "<br/>",
+      "4": "<strong>Indicador de energía cinética</strong>",
+      "5": "Sigue al personaje y aumenta el ATQ del personaje en uso de diferentes formas en función de los pts. de noctambulismo de Iansán:",
+      "6": [
+        "Si tiene menos de 42 pts. de noctambulismo, obtendrá un Bono de ATQ en función de los pts. de noctambulismo y el ATQ de Iansán.",
+        "Si tiene al menos 42 pts. de noctambulismo, el indicador de energía cinética cambiará al modo “apoyo llameante”, de manera que obtendrá un Bono de ATQ aún más alto en función del ATQ de Iansán."
+      ],
+      "7": "Además, mientras el indicador de energía cinética esté activo, registrará la distancia de movimiento recorrida por tu personaje en uso del equipo (a excepción de Iansán), y restaurará pts. de noctambulismo a Iansán cada segundo en función de la distancia recorrida en el segundo anterior.",
+      "8": "El indicador de energía cinética desaparecerá cuando termine el estado de bendición noctámbula de Iansán, y también si transcurre 1 s tras dejar de estar en combate. Mientras el indicador esté activo, el estado de bendición noctámbula de Iansán no terminará aunque ella esté en tu equipo pero no en uso.",
+      "9": "<br/>",
+      "10": "<i>“La fuerza no es un talento innato; proviene del esfuerzo constante y de seguir los métodos correctos”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Índice de conversión de ATQ por pts. de noctambulismo altos",
+      "2": "Índice de conversión de ATQ por pts. de noctambulismo bajos",
+      "3": "Bono de ATQ máx.",
+      "4": "Duración",
+      "5": "Duración fuera de combate",
+      "6": "TdE",
+      "7": "Energía Elemental",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Entrenamiento de resistencia",
+    "description": {
+      "0": "Tras golpear a un enemigo con Descenso atronador, Iansán obtiene el efecto de “movimiento preciso” durante 15 s.",
+      "1": "Mientras este efecto esté activo, el ATQ de Iansán aumentará en un 20% y, cada vez que recupere pts. de noctambulismo por medio del indicador de energía cinética de su Habilidad Definitiva, <strong>Los tres principios de la fuerza</strong>, obtendrá 1 pt. de noctambulismo adicional. Además, cuando tu personaje en uso del equipo consuma o recupere pts. de noctambulismo, los pts. de noctambulismo adicionales que obtenga Iansán la próxima vez que recupere pts. de noctambulismo por medio del indicador de energía cinética aumentarán a 4. Este efecto solo puede ocurrir una vez cada 2.8 s.",
+      "2": "El efecto de movimiento preciso finalizará cuando termine el estado de bendición noctámbula de Iansán."
+    }
+  },
+  "passive2": {
+    "name": "Prueba de gradiente cinético",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo causa una explosión noctámbula, Iansán obtiene el efecto de “calentamiento” durante 10 s.",
+      "1": "Durante este tiempo, cuando Iansán recupere al menos 1 pt. de noctambulismo, también curará a tu personaje en uso en una cantidad equivalente al 60% del ATQ de Iansán. Este efecto solo puede activarse una vez cada 2.8 s."
+    }
+  },
+  "passive3": {
+    "name": "Gracia de la noche: Transmisión de esfuerzo",
+    "description": {
+      "0": "Cuando Iansán no tenga más pts. de noctambulismo y sea el personaje en uso, consumirá flogisto para conservar la bendición noctámbula.",
+      "1": "Al encontrarse en una zona con alguna mecánica de flogisto de Natlan, se podrá utilizar “Transmisión noctambular: Iansán”. Cuando el personaje en uso esprinte, esté en un estado de movimiento derivado de algún talento o esté a cierta altura en el aire, al cambiar a Iansán, esta entrará en estado de bendición noctámbula y obtendrá 25 pts. de noctambulismo. Tu equipo solo puede activar Transmisión noctambular una vez cada 10 s.",
+      "2": "Además, al encontrarse en una zona con alguna mecánica de flogisto de Natlan, cuando Iansán aproveche el desnivel del terreno para saltar, no recibirá daño de caída."
+    }
+  },
+  "passive": {
+    "name": "Plan calórico equilibrado",
+    "description": {
+      "0": "Al encontrarse en una zona con alguna mecánica de flogisto de Natlan, recupera 10 pts. de flogisto si los niveles de este caen por debajo del 50%. Este efecto solo puede ocurrir una vez cada 10 s."
+    }
+  },
+  "constellation1": {
+    "name": "Todos los comienzos son difíciles",
+    "description": {
+      "0": "Cuando Iansán esté en estado de bendición noctámbula y en combate, por cada 6 pts. de noctambulismo que consuma, recuperará 15 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 18 s."
+    }
+  },
+  "constellation2": {
+    "name": "¡Prohibido holgazanear durante el entrenamiento!",
+    "description": {
+      "0": "Al usar su Habilidad Definitiva, <strong>Los tres principios de la fuerza</strong>, Iansán obtiene el efecto de movimiento preciso del talento pasivo “Entrenamiento de resistencia” durante 15 s. Además, mientras dicho efecto esté activo y Iansán se encuentre en tu equipo pero no en uso, el ATQ de tu personaje en uso del equipo aumentará en un 30%. Para activar este efecto, es necesario desbloquear el talento pasivo “Entrenamiento de resistencia”."
+    }
+  },
+  "constellation3": {
+    "name": "Plan de alimentación científico",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Acelerón relámpago</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "La clave es ir paso a paso",
+    "description": {
+      "0": "Mientras el indicador de energía cinética esté activo, después de que tu personaje en uso del equipo (a excepción de Iansán) utilice su Habilidad Definitiva, Iansán obtendrá dos cargas de “potenciación vigorosa” hasta que el indicador de energía cinética sea retirado del campo de batalla. Este efecto solo se puede activar una vez por cada indicador de energía cinética invocado. Cuando Iansán recupera pts. de noctambulismo por medio de dicho indicador, consume una carga de potenciación vigorosa para recuperar 4 pts. de noctambulismo adicionales.",
+      "1": "Además, si el indicador de energía cinética restaura pts. de noctambulismo por encima del límite máximo, la próxima vez que Iansán recupere pts. de noctambulismo por medio de un indicador de energía cinética, conseguirá pts. adicionales en una cantidad equivalente al 50% del exceso de pts. de noctambulismo recuperados."
+    }
+  },
+  "constellation5": {
+    "name": "¡Plus ultra!",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Los tres principios de la fuerza</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Enseñanzas de la Comunidad de la Feracidad",
+    "description": {
+      "0": "La duración del indicador de energía cinética aumenta en 3 s.",
+      "1": "Además, cuando Iansán activa un efecto de recuperación de pts. de noctambulismo, si al hacerlo recupera pts. en exceso, obtiene el efecto de “fuerza máxima”, el cual aumenta el daño que inflige tu personaje en uso del equipo en un 25% durante 3 s."
+    }
+  }
+}

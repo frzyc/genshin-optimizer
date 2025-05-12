@@ -35,6 +35,20 @@ export const allStatKeys = Array.from(
 )
 export type StatKey = (typeof allStatKeys)[number]
 
+export const baseStatKeys = [
+  'atk',
+  'def',
+  'hp',
+  'impact',
+  'crit_',
+  'crit_dmg_',
+  'pen_',
+  'anomProf',
+  'anomMas',
+  'enerRegen',
+] as const
+export type BaseStatKey = (typeof baseStatKeys)[number]
+
 // TODO: consolidate this and StatKey to the same type.
 // Can't do it now because StatKey contains 'charLvl' and other random things that
 // don't index into Pando's own.char.initial

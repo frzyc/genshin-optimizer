@@ -1,0 +1,29 @@
+{
+  "setName": "Giuramento della lunga notte",
+  "setEffects": {
+    "2": "DAN da attacco in picchiata +25%.",
+    "4": "Quando colpisce un avversario con attacchi in picchiata/attacchi caricati/abilità elementali, il personaggio che equipaggia il set ottiene 1/2/2 accumuli di Radiosità perenne. Tutti e tre i tipi di attacco possono innescare l'effetto una volta ogni 1 s. Radiosità perenne: gli attacchi in picchiata infliggono un 15% di DAN aumentati per 6 s. Cumulabile fino a 5 volte. La durata di ogni accumulo è indipendente dalle altre."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Promessa del Guardaluce",
+      "desc": "Un fiore metallico indossato dai Ratnik. Simboleggia il giuramento di eterna vigilanza prestato dal suo proprietario originale."
+    },
+    "plume": {
+      "name": "Penna rettrice dell'usignolo",
+      "desc": "Un accessorio per copricapi di pregevole fattura, ispirato alle piume degli usignoli. Si dice che la sua forma sia stata concepita dal primo Forgialuce."
+    },
+    "sands": {
+      "name": "Campana funebre dell'imperituro",
+      "desc": "Un campanello di bronzo portato da un guerriero che attraversò l'abisso oscuro. I suoi rintocchi riecheggiano nelle notti più buie."
+    },
+    "goblet": {
+      "name": "Corno mai suonato",
+      "desc": "Un corno che veniva usato per convocare coloro che avevano prestato giuramento, ma che ha perduto la sua funzione tanto, tanto tempo fa."
+    },
+    "circlet": {
+      "name": "Nappa colorata",
+      "desc": "Un antico elmo pesante, nonché prezioso cimelio che sfoggia lo stemma di una venerabile stirpe di guerrieri del Nord."
+    }
+  }
+}

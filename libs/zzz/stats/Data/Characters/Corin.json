@@ -1,12 +1,9 @@
 {
   "id": "1061",
-  "icon": "IconRole09",
   "rarity": "A",
   "attribute": "physical",
   "specialty": "attack",
   "faction": "VictoriaHousekeepingCo",
-  "fullname": "Corin Wickes",
-  "name": "Corin",
   "stats": {
     "atk_base": 116,
     "atk_growth": 6.9346,
@@ -14,7 +11,7 @@
     "def_growth": 6.5864,
     "hp_base": 561,
     "hp_growth": 76.1177,
-    "anomMas_base": 93,
+    "anomMas": 93,
     "anomProf": 96,
     "impact": 93,
     "enerRegen": 1.2
@@ -28,1274 +25,286 @@
     { "hp": 1925, "atk": 207, "def": 167 }
   ],
   "coreStats": [
-    { "atk_base": 0, "crit_dmg_": 0.096 },
-    { "atk_base": 25, "crit_dmg_": 0.096 },
-    { "atk_base": 25, "crit_dmg_": 0.192 },
-    { "atk_base": 50, "crit_dmg_": 0.192 },
-    { "atk_base": 50, "crit_dmg_": 0.288 },
-    { "atk_base": 75, "crit_dmg_": 0.288 }
+    { "atk": 0, "crit_dmg_": 0.096 },
+    { "atk": 25, "crit_dmg_": 0.096 },
+    { "atk": 25, "crit_dmg_": 0.192 },
+    { "atk": 50, "crit_dmg_": 0.192 },
+    { "atk": 50, "crit_dmg_": 0.288 },
+    { "atk": 75, "crit_dmg_": 0.288 }
   ],
-  "skills": {
-    "Basic": {
-      "Description": [
+  "skillParams": {
+    "basic": {
+      "BasicAttackWipeout": [
         {
-          "Name": "Basic Attack: Wipeout",
-          "Desc": "Press <IconMap:Icon_Normal> to activate:\nUnleashes up to 5 slashes, dealing <color=#F0D12B>Physical DMG</color>.\nRepeatedly press or hold the button during the 3rd and 5th hits to extend the chainsaw slash attack."
+          "DamagePercentage": 0.82,
+          "DamagePercentageGrowth": 0.075,
+          "StunRatio": 0.41,
+          "StunRatioGrowth": 0.019,
+          "SpRecovery": 147.6,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1127.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 40.99
         },
         {
-          "Name": "Basic Attack: Wipeout",
-          "Param": [
-            {
-              "Name": "1st-Hit DMG Multiplier",
-              "Desc": "{Skill:1061001, Prop:1001}",
-              "Param": {
-                "1061001": {
-                  "Main": 82,
-                  "Growth": 0.075,
-                  "Format": "%",
-                  "DamagePercentage": 0.82,
-                  "DamagePercentageGrowth": 0.075,
-                  "StunRatio": 0.41,
-                  "StunRatioGrowth": 0.019,
-                  "SpRecovery": 147.6,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1127.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 40.99,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "2nd-Hit DMG Multiplier",
-              "Desc": "{Skill:1061002, Prop:1001}",
-              "Param": {
-                "1061002": {
-                  "Main": 76.6,
-                  "Growth": 0.07,
-                  "Format": "%",
-                  "DamagePercentage": 0.766,
-                  "DamagePercentageGrowth": 0.07,
-                  "StunRatio": 0.702,
-                  "StunRatioGrowth": 0.032,
-                  "SpRecovery": 252.6,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1930.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 70.16,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "3rd-Hit DMG Multiplier",
-              "Desc": "{Skill:1061003, Prop:1001}",
-              "Param": {
-                "1061003": {
-                  "Main": 179.2,
-                  "Growth": 0.163,
-                  "Format": "%",
-                  "DamagePercentage": 1.792,
-                  "DamagePercentageGrowth": 0.163,
-                  "StunRatio": 1.238,
-                  "StunRatioGrowth": 0.057,
-                  "SpRecovery": 445.6,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3404.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 123.76,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "4th-Hit DMG Multiplier",
-              "Desc": "{Skill:1061004, Prop:1001}",
-              "Param": {
-                "1061004": {
-                  "Main": 233.4,
-                  "Growth": 0.213,
-                  "Format": "%",
-                  "DamagePercentage": 2.334,
-                  "DamagePercentageGrowth": 0.213,
-                  "StunRatio": 1.864,
-                  "StunRatioGrowth": 0.085,
-                  "SpRecovery": 670.9,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 5126,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 186.33,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "5th-Hit DMG Multiplier",
-              "Desc": "{Skill:1061006, Prop:1001}",
-              "Param": {
-                "1061006": {
-                  "Main": 421.2,
-                  "Growth": 0.383,
-                  "Format": "%",
-                  "DamagePercentage": 4.212,
-                  "DamagePercentageGrowth": 0.383,
-                  "StunRatio": 3.42,
-                  "StunRatioGrowth": 0.156,
-                  "SpRecovery": 1231,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 9405,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 341.94,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "1st-Hit Daze Multiplier",
-              "Desc": "{Skill:1061001, Prop:1002}",
-              "Param": {
-                "1061001": {
-                  "Main": 41,
-                  "Growth": 0.019,
-                  "Format": "%",
-                  "DamagePercentage": 0.82,
-                  "DamagePercentageGrowth": 0.075,
-                  "StunRatio": 0.41,
-                  "StunRatioGrowth": 0.019,
-                  "SpRecovery": 147.6,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1127.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 40.99,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "2nd-Hit Daze Multiplier",
-              "Desc": "{Skill:1061002, Prop:1002}",
-              "Param": {
-                "1061002": {
-                  "Main": 70.2,
-                  "Growth": 0.032,
-                  "Format": "%",
-                  "DamagePercentage": 0.766,
-                  "DamagePercentageGrowth": 0.07,
-                  "StunRatio": 0.702,
-                  "StunRatioGrowth": 0.032,
-                  "SpRecovery": 252.6,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1930.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 70.16,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "3rd-Hit Daze Multiplier",
-              "Desc": "{Skill:1061003, Prop:1002}",
-              "Param": {
-                "1061003": {
-                  "Main": 123.8,
-                  "Growth": 0.057,
-                  "Format": "%",
-                  "DamagePercentage": 1.792,
-                  "DamagePercentageGrowth": 0.163,
-                  "StunRatio": 1.238,
-                  "StunRatioGrowth": 0.057,
-                  "SpRecovery": 445.6,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3404.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 123.76,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "4th-Hit Daze Multiplier",
-              "Desc": "{Skill:1061004, Prop:1002}",
-              "Param": {
-                "1061004": {
-                  "Main": 186.4,
-                  "Growth": 0.085,
-                  "Format": "%",
-                  "DamagePercentage": 2.334,
-                  "DamagePercentageGrowth": 0.213,
-                  "StunRatio": 1.864,
-                  "StunRatioGrowth": 0.085,
-                  "SpRecovery": 670.9,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 5126,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 186.33,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "5th-Hit Daze Multiplier",
-              "Desc": "{Skill:1061006, Prop:1002}",
-              "Param": {
-                "1061006": {
-                  "Main": 342,
-                  "Growth": 0.156,
-                  "Format": "%",
-                  "DamagePercentage": 4.212,
-                  "DamagePercentageGrowth": 0.383,
-                  "StunRatio": 3.42,
-                  "StunRatioGrowth": 0.156,
-                  "SpRecovery": 1231,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 9405,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 341.94,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 0.766,
+          "DamagePercentageGrowth": 0.07,
+          "StunRatio": 0.702,
+          "StunRatioGrowth": 0.032,
+          "SpRecovery": 252.6,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1930.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 70.16
+        },
+        {
+          "DamagePercentage": 1.792,
+          "DamagePercentageGrowth": 0.163,
+          "StunRatio": 1.238,
+          "StunRatioGrowth": 0.057,
+          "SpRecovery": 445.6,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3404.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 123.76
+        },
+        {
+          "DamagePercentage": 2.334,
+          "DamagePercentageGrowth": 0.213,
+          "StunRatio": 1.864,
+          "StunRatioGrowth": 0.085,
+          "SpRecovery": 670.9,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 5126,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 186.33
+        },
+        {
+          "DamagePercentage": 4.212,
+          "DamagePercentageGrowth": 0.383,
+          "StunRatio": 3.42,
+          "StunRatioGrowth": 0.156,
+          "SpRecovery": 1231,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 9405,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 341.94
+        }
+      ]
+    },
+    "dodge": {
+      "DodgeShoo": [],
+      "DashAttackOopsyDaisy": [
+        {
+          "DamagePercentage": 0.967,
+          "DamagePercentageGrowth": 0.088,
+          "StunRatio": 0.484,
+          "StunRatioGrowth": 0.022,
+          "SpRecovery": 174.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1331,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 48.34
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100110": 2 },
-        "2": { "10": 3000, "100110": 3 },
-        "3": { "10": 6000, "100120": 2 },
-        "4": { "10": 9000, "100120": 3 },
-        "5": { "10": 12000, "100120": 4 },
-        "6": { "10": 18000, "100120": 6 },
-        "7": { "10": 45000, "100130": 5 },
-        "8": { "10": 67500, "100130": 8 },
-        "9": { "10": 90000, "100130": 10 },
-        "10": { "10": 112500, "100130": 12 },
-        "11": { "10": 135000, "100130": 15, "100941": 1 },
-        "12": {}
-      }
+      "DodgeCounterNope": [
+        {
+          "DamagePercentage": 1.356,
+          "DamagePercentageGrowth": 0.124,
+          "StunRatio": 0.659,
+          "StunRatioGrowth": 0.03,
+          "SpRecovery": 237,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1812.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 65.81
+        },
+        {
+          "DamagePercentage": 1.356,
+          "DamagePercentageGrowth": 0.124,
+          "StunRatio": 0.659,
+          "StunRatioGrowth": 0.03,
+          "SpRecovery": 237,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1812.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 65.81
+        }
+      ]
     },
-    "Dodge": {
-      "Description": [
+    "special": {
+      "SpecialAttackCleanSweep": [
         {
-          "Name": "Dodge: Shoo!",
-          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill."
+          "DamagePercentage": 0.667,
+          "DamagePercentageGrowth": 0.061,
+          "StunRatio": 0.667,
+          "StunRatioGrowth": 0.031,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1834.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 66.68
         },
         {
-          "Name": "Dash Attack: Oopsy-Daisy!",
-          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nSlashes enemies in front, dealing <color=#F0D12B>Physical DMG</color>.\nRepeatedly press or hold the button to extend the chainsaw attack's duration."
+          "DamagePercentage": 0.375,
+          "DamagePercentageGrowth": 0.035,
+          "StunRatio": 0.375,
+          "StunRatioGrowth": 0.018,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1031.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 37.5
         },
         {
-          "Name": "Dodge Counter: Nope!",
-          "Desc": "Press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nSlashes enemies in front before detonating her chainsaw, dealing <color=#F0D12B>Physical DMG</color>.\nRepeatedly press or hold the button to extend the chainsaw slash attack.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Dash Attack: Oopsy-Daisy!",
-          "Param": [
-            {
-              "Name": "Maximum DMG Multiplier",
-              "Desc": "{Skill:1061014, Prop:1001}",
-              "Param": {
-                "1061014": {
-                  "Main": 96.7,
-                  "Growth": 0.088,
-                  "Format": "%",
-                  "DamagePercentage": 0.967,
-                  "DamagePercentageGrowth": 0.088,
-                  "StunRatio": 0.484,
-                  "StunRatioGrowth": 0.022,
-                  "SpRecovery": 174.1,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1331,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 48.34,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Maximum Daze Multiplier",
-              "Desc": "{Skill:1061014, Prop:1002}",
-              "Param": {
-                "1061014": {
-                  "Main": 48.4,
-                  "Growth": 0.022,
-                  "Format": "%",
-                  "DamagePercentage": 0.967,
-                  "DamagePercentageGrowth": 0.088,
-                  "StunRatio": 0.484,
-                  "StunRatioGrowth": 0.022,
-                  "SpRecovery": 174.1,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1331,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 48.34,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Dodge Counter: Nope!",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{{Skill:1061015, Prop:1001} + {Skill:1061016, Prop:1001}}",
-              "Param": {
-                "1061015": {
-                  "Main": 135.6,
-                  "Growth": 0.124,
-                  "Format": "%",
-                  "DamagePercentage": 1.356,
-                  "DamagePercentageGrowth": 0.124,
-                  "StunRatio": 0.659,
-                  "StunRatioGrowth": 0.03,
-                  "SpRecovery": 237,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1812.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 65.81,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1061016": {
-                  "Main": 135.6,
-                  "Growth": 0.124,
-                  "Format": "%",
-                  "DamagePercentage": 1.356,
-                  "DamagePercentageGrowth": 0.124,
-                  "StunRatio": 0.659,
-                  "StunRatioGrowth": 0.03,
-                  "SpRecovery": 237,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1812.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 65.81,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{{Skill:1061015, Prop:1002} + {Skill:1061016, Prop:1002}}",
-              "Param": {
-                "1061015": {
-                  "Main": 65.9,
-                  "Growth": 0.03,
-                  "Format": "%",
-                  "DamagePercentage": 1.356,
-                  "DamagePercentageGrowth": 0.124,
-                  "StunRatio": 0.659,
-                  "StunRatioGrowth": 0.03,
-                  "SpRecovery": 237,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1812.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 65.81,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1061016": {
-                  "Main": 65.9,
-                  "Growth": 0.03,
-                  "Format": "%",
-                  "DamagePercentage": 1.356,
-                  "DamagePercentageGrowth": 0.124,
-                  "StunRatio": 0.659,
-                  "StunRatioGrowth": 0.03,
-                  "SpRecovery": 237,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1812.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 65.81,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 0.25,
+          "DamagePercentageGrowth": 0.023,
+          "StunRatio": 0.25,
+          "StunRatioGrowth": 0.012,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 687.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 24.99
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100110": 2 },
-        "2": { "10": 3000, "100110": 3 },
-        "3": { "10": 6000, "100120": 2 },
-        "4": { "10": 9000, "100120": 3 },
-        "5": { "10": 12000, "100120": 4 },
-        "6": { "10": 18000, "100120": 6 },
-        "7": { "10": 45000, "100130": 5 },
-        "8": { "10": 67500, "100130": 8 },
-        "9": { "10": 90000, "100130": 10 },
-        "10": { "10": 112500, "100130": 12 },
-        "11": { "10": 135000, "100130": 15, "100941": 1 },
-        "12": {}
-      }
+      "EXSpecialAttackSkirtAlert": [
+        {
+          "DamagePercentage": 3.451,
+          "DamagePercentageGrowth": 0.314,
+          "StunRatio": 2.064,
+          "StunRatioGrowth": 0.094,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 6894.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 203.33
+        },
+        {
+          "DamagePercentage": 10.352,
+          "DamagePercentageGrowth": 0.942,
+          "StunRatio": 6.19,
+          "StunRatioGrowth": 0.282,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 20677.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 610.01
+        },
+        {
+          "DamagePercentage": 3.451,
+          "DamagePercentageGrowth": 0.314,
+          "StunRatio": 2.064,
+          "StunRatioGrowth": 0.094,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 6894.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 203.33
+        }
+      ]
     },
-    "Special": {
-      "Description": [
+    "chain": {
+      "ChainAttackSorry": [
         {
-          "Name": "Special Attack: Clean Sweep",
-          "Desc": "Press <IconMap:Icon_Special> to activate:\nUnleashes a series of slashes upon enemies in front, before detonating the chainsaw, dealing <color=#F0D12B>Physical DMG</color>.\nRepeatedly press or hold the button to extend the chainsaw slash attack.\nAnti-Interrupt level is increased while using this skill, and DMG taken is reduced by 40%."
-        },
-        {
-          "Name": "EX Special Attack: Skirt Alert",
-          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nUnleashes a series of powerful slashes upon enemies in front, before detonating the chainsaw, dealing massive <color=#F0D12B>Physical DMG</color>.\nRepeatedly press or hold the button to extend the chainsaw slash attack at the cost of Energy if the attack connects.\nCharacter is invulnerable during the spinning slash.\nAnti-Interrupt level is increased during the extended slash, and DMG taken is reduced by 40%."
-        },
-        {
-          "Name": "Special Attack: Clean Sweep",
-          "Param": [
-            {
-              "Name": "Spinning Slash DMG Multiplier",
-              "Desc": "{Skill:1061008, Prop:1001}",
-              "Param": {
-                "1061008": {
-                  "Main": 66.7,
-                  "Growth": 0.061,
-                  "Format": "%",
-                  "DamagePercentage": 0.667,
-                  "DamagePercentageGrowth": 0.061,
-                  "StunRatio": 0.667,
-                  "StunRatioGrowth": 0.031,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1834.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 66.68,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Extended Slash Maximum DMG Multiplier",
-              "Desc": "{Skill:1061009, Prop:1001}",
-              "Param": {
-                "1061009": {
-                  "Main": 37.5,
-                  "Growth": 0.035,
-                  "Format": "%",
-                  "DamagePercentage": 0.375,
-                  "DamagePercentageGrowth": 0.035,
-                  "StunRatio": 0.375,
-                  "StunRatioGrowth": 0.018,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1031.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 37.5,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Explosion DMG Multiplier",
-              "Desc": "{Skill:1061010, Prop:1001}",
-              "Param": {
-                "1061010": {
-                  "Main": 25,
-                  "Growth": 0.023,
-                  "Format": "%",
-                  "DamagePercentage": 0.25,
-                  "DamagePercentageGrowth": 0.023,
-                  "StunRatio": 0.25,
-                  "StunRatioGrowth": 0.012,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 687.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 24.99,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Spinning Slash Daze Multiplier",
-              "Desc": "{Skill:1061008, Prop:1002}",
-              "Param": {
-                "1061008": {
-                  "Main": 66.7,
-                  "Growth": 0.031,
-                  "Format": "%",
-                  "DamagePercentage": 0.667,
-                  "DamagePercentageGrowth": 0.061,
-                  "StunRatio": 0.667,
-                  "StunRatioGrowth": 0.031,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1834.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 66.68,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Extended Slash Maximum Daze Multiplier",
-              "Desc": "{Skill:1061009, Prop:1002}",
-              "Param": {
-                "1061009": {
-                  "Main": 37.5,
-                  "Growth": 0.018,
-                  "Format": "%",
-                  "DamagePercentage": 0.375,
-                  "DamagePercentageGrowth": 0.035,
-                  "StunRatio": 0.375,
-                  "StunRatioGrowth": 0.018,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1031.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 37.5,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Explosion Daze Multiplier",
-              "Desc": "{Skill:1061010, Prop:1002}",
-              "Param": {
-                "1061010": {
-                  "Main": 25,
-                  "Growth": 0.012,
-                  "Format": "%",
-                  "DamagePercentage": 0.25,
-                  "DamagePercentageGrowth": 0.023,
-                  "StunRatio": 0.25,
-                  "StunRatioGrowth": 0.012,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 687.5,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 24.99,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "EX Special Attack: Skirt Alert",
-          "Param": [
-            {
-              "Name": "Spinning Slash DMG Multiplier",
-              "Desc": "{Skill:1061011, Prop:1001}",
-              "Param": {
-                "1061011": {
-                  "Main": 345.1,
-                  "Growth": 0.314,
-                  "Format": "%",
-                  "DamagePercentage": 3.451,
-                  "DamagePercentageGrowth": 0.314,
-                  "StunRatio": 2.064,
-                  "StunRatioGrowth": 0.094,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6894.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 203.33,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Extended Slash Maximum DMG Multiplier",
-              "Desc": "{Skill:1061012, Prop:1001}",
-              "Param": {
-                "1061012": {
-                  "Main": 1035.2,
-                  "Growth": 0.942,
-                  "Format": "%",
-                  "DamagePercentage": 10.352,
-                  "DamagePercentageGrowth": 0.942,
-                  "StunRatio": 6.19,
-                  "StunRatioGrowth": 0.282,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 20677.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 610.01,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Explosion DMG Multiplier",
-              "Desc": "{Skill:1061013, Prop:1001}",
-              "Param": {
-                "1061013": {
-                  "Main": 345.1,
-                  "Growth": 0.314,
-                  "Format": "%",
-                  "DamagePercentage": 3.451,
-                  "DamagePercentageGrowth": 0.314,
-                  "StunRatio": 2.064,
-                  "StunRatioGrowth": 0.094,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6894.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 203.33,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Spinning Slash Daze Multiplier",
-              "Desc": "{Skill:1061011, Prop:1002}",
-              "Param": {
-                "1061011": {
-                  "Main": 206.4,
-                  "Growth": 0.094,
-                  "Format": "%",
-                  "DamagePercentage": 3.451,
-                  "DamagePercentageGrowth": 0.314,
-                  "StunRatio": 2.064,
-                  "StunRatioGrowth": 0.094,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6894.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 203.33,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Extended Slash Maximum Daze Multiplier",
-              "Desc": "{Skill:1061012, Prop:1002}",
-              "Param": {
-                "1061012": {
-                  "Main": 619,
-                  "Growth": 0.282,
-                  "Format": "%",
-                  "DamagePercentage": 10.352,
-                  "DamagePercentageGrowth": 0.942,
-                  "StunRatio": 6.19,
-                  "StunRatioGrowth": 0.282,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 20677.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 610.01,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Explosion Daze Multiplier",
-              "Desc": "{Skill:1061013, Prop:1002}",
-              "Param": {
-                "1061013": {
-                  "Main": 206.4,
-                  "Growth": 0.094,
-                  "Format": "%",
-                  "DamagePercentage": 3.451,
-                  "DamagePercentageGrowth": 0.314,
-                  "StunRatio": 2.064,
-                  "StunRatioGrowth": 0.094,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6894.25,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 203.33,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            { "Name": "Spinning Slash Energy Cost", "Desc": "20" },
-            { "Name": "Extended Slash Maximum Energy Cost", "Desc": "40" },
-            { "Name": "Explosion Energy Cost", "Desc": "20" }
-          ]
+          "DamagePercentage": 6.873,
+          "DamagePercentageGrowth": 0.625,
+          "StunRatio": 2.883,
+          "StunRatioGrowth": 0.132,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 26215.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 487.79
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100110": 2 },
-        "2": { "10": 3000, "100110": 3 },
-        "3": { "10": 6000, "100120": 2 },
-        "4": { "10": 9000, "100120": 3 },
-        "5": { "10": 12000, "100120": 4 },
-        "6": { "10": 18000, "100120": 6 },
-        "7": { "10": 45000, "100130": 5 },
-        "8": { "10": 67500, "100130": 8 },
-        "9": { "10": 90000, "100130": 10 },
-        "10": { "10": 112500, "100130": 12 },
-        "11": { "10": 135000, "100130": 15, "100941": 1 },
-        "12": {}
-      }
+      "UltimateVeryVerySorry": [
+        {
+          "DamagePercentage": 20.288,
+          "DamagePercentageGrowth": 1.845,
+          "StunRatio": 4.068,
+          "StunRatioGrowth": 0.185,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 406.7
+        }
+      ]
     },
-    "Chain": {
-      "Description": [
+    "assist": {
+      "QuickAssistEmergencyMeasures": [
         {
-          "Name": "Chain Attack: Sorry...",
-          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nUnleashes a powerful slash at enemies in a small area, dealing massive <color=#F0D12B>Physical DMG</color>.\nRepeatedly press or hold the button to extend the chainsaw slash attack.\nCharacter is invulnerable while using this skill."
+          "DamagePercentage": 1.317,
+          "DamagePercentageGrowth": 0.12,
+          "StunRatio": 1.317,
+          "StunRatioGrowth": 0.06,
+          "SpRecovery": 473.9,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3621.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 131.63
         },
         {
-          "Name": "Ultimate: Very, Very Sorry!",
-          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nUnleashes a powerful slash at enemies in a small area, dealing massive <color=#F0D12B>Physical DMG</color>.\nRepeatedly press or hold the button to extend the chainsaw slash attack.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Chain Attack: Sorry...",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1061017, Prop:1001}",
-              "Param": {
-                "1061017": {
-                  "Main": 687.3,
-                  "Growth": 0.625,
-                  "Format": "%",
-                  "DamagePercentage": 6.873,
-                  "DamagePercentageGrowth": 0.625,
-                  "StunRatio": 2.883,
-                  "StunRatioGrowth": 0.132,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 26215.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 487.79,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1061017, Prop:1002}",
-              "Param": {
-                "1061017": {
-                  "Main": 288.3,
-                  "Growth": 0.132,
-                  "Format": "%",
-                  "DamagePercentage": 6.873,
-                  "DamagePercentageGrowth": 0.625,
-                  "StunRatio": 2.883,
-                  "StunRatioGrowth": 0.132,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 26215.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 487.79,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Ultimate: Very, Very Sorry!",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1061018, Prop:1001}",
-              "Param": {
-                "1061018": {
-                  "Main": 2028.8,
-                  "Growth": 1.845,
-                  "Format": "%",
-                  "DamagePercentage": 20.288,
-                  "DamagePercentageGrowth": 1.845,
-                  "StunRatio": 4.068,
-                  "StunRatioGrowth": 0.185,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 406.7,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1061018, Prop:1002}",
-              "Param": {
-                "1061018": {
-                  "Main": 406.8,
-                  "Growth": 0.185,
-                  "Format": "%",
-                  "DamagePercentage": 20.288,
-                  "DamagePercentageGrowth": 1.845,
-                  "StunRatio": 4.068,
-                  "StunRatioGrowth": 0.185,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 406.7,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 0.833,
+          "DamagePercentageGrowth": 0.076,
+          "StunRatio": 0.833,
+          "StunRatioGrowth": 0.038,
+          "SpRecovery": 299.9,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2290.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 83.29
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100110": 2 },
-        "2": { "10": 3000, "100110": 3 },
-        "3": { "10": 6000, "100120": 2 },
-        "4": { "10": 9000, "100120": 3 },
-        "5": { "10": 12000, "100120": 4 },
-        "6": { "10": 18000, "100120": 6 },
-        "7": { "10": 45000, "100130": 5 },
-        "8": { "10": 67500, "100130": 8 },
-        "9": { "10": 90000, "100130": 10 },
-        "10": { "10": 112500, "100130": 12 },
-        "11": { "10": 135000, "100130": 15, "100941": 1 },
-        "12": {}
-      }
-    },
-    "Assist": {
-      "Description": [
+      "DefensiveAssistPPleaseAllowMe": [
         {
-          "Name": "Quick Assist: Emergency Measures",
-          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nSlashes enemies in front before detonating her chainsaw, dealing <color=#F0D12B>Physical DMG</color>.\nRepeatedly press or hold the button to extend the chainsaw slash attack.\nCharacter is invulnerable while using this skill."
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.467,
+          "StunRatioGrowth": 0.113,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
         },
         {
-          "Name": "Defensive Assist: P—Please Allow Me!",
-          "Desc": "When the character on field is about to be attacked, press <IconMap:Icon_Switch> to activate:\nParries the enemy's attack, dealing massive Daze.\nThis skill excels at parrying enemy attacks and reduces the consumption of <color=#FFFFFF>Assist Points</color> when the character is under intense attacks.\nCharacter is invulnerable while using this skill."
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 3.117,
+          "StunRatioGrowth": 0.142,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
         },
         {
-          "Name": "Assist Follow-Up: Quick Sweep",
-          "Desc": "Press <IconMap:Icon_Normal> after a <color=#FFFFFF>Defensive Assist</color> to activate:\nUnleash a series of slashes against enemies in front followed by an explosive chainsaw, dealing <color=#F0D12B>Physical DMG</color>.\nRepeatedly press or hold to extend the chainsaw slash attack.\nCharacter is invulnerable while using this skill."
-        },
-        {
-          "Name": "Quick Assist: Emergency Measures",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{{Skill:1061019, Prop:1001} + {Skill:1061020, Prop:1001}}",
-              "Param": {
-                "1061019": {
-                  "Main": 131.7,
-                  "Growth": 0.12,
-                  "Format": "%",
-                  "DamagePercentage": 1.317,
-                  "DamagePercentageGrowth": 0.12,
-                  "StunRatio": 1.317,
-                  "StunRatioGrowth": 0.06,
-                  "SpRecovery": 473.9,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3621.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 131.63,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1061020": {
-                  "Main": 83.3,
-                  "Growth": 0.076,
-                  "Format": "%",
-                  "DamagePercentage": 0.833,
-                  "DamagePercentageGrowth": 0.076,
-                  "StunRatio": 0.833,
-                  "StunRatioGrowth": 0.038,
-                  "SpRecovery": 299.9,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2290.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 83.29,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{{Skill:1061019, Prop:1002} + {Skill:1061020, Prop:1002}}",
-              "Param": {
-                "1061019": {
-                  "Main": 131.7,
-                  "Growth": 0.06,
-                  "Format": "%",
-                  "DamagePercentage": 1.317,
-                  "DamagePercentageGrowth": 0.12,
-                  "StunRatio": 1.317,
-                  "StunRatioGrowth": 0.06,
-                  "SpRecovery": 473.9,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3621.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 131.63,
-                  "SpConsume": 0,
-                  "AttackData": []
-                },
-                "1061020": {
-                  "Main": 83.3,
-                  "Growth": 0.038,
-                  "Format": "%",
-                  "DamagePercentage": 0.833,
-                  "DamagePercentageGrowth": 0.076,
-                  "StunRatio": 0.833,
-                  "StunRatioGrowth": 0.038,
-                  "SpRecovery": 299.9,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2290.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 83.29,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Defensive Assist: P—Please Allow Me!",
-          "Param": [
-            {
-              "Name": "Light Defensive Daze Multiplier",
-              "Desc": "{Skill:1061021, Prop:1002}",
-              "Param": {
-                "1061021": {
-                  "Main": 246.7,
-                  "Growth": 0.113,
-                  "Format": "%",
-                  "DamagePercentage": 0,
-                  "DamagePercentageGrowth": 0,
-                  "StunRatio": 2.467,
-                  "StunRatioGrowth": 0.113,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Heavy Defensive Daze Multiplier",
-              "Desc": "{Skill:1061022, Prop:1002}",
-              "Param": {
-                "1061022": {
-                  "Main": 311.7,
-                  "Growth": 0.142,
-                  "Format": "%",
-                  "DamagePercentage": 0,
-                  "DamagePercentageGrowth": 0,
-                  "StunRatio": 3.117,
-                  "StunRatioGrowth": 0.142,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Chain Defensive Daze Multiplier",
-              "Desc": "{Skill:1061023, Prop:1002}",
-              "Param": {
-                "1061023": {
-                  "Main": 151.7,
-                  "Growth": 0.069,
-                  "Format": "%",
-                  "DamagePercentage": 0,
-                  "DamagePercentageGrowth": 0,
-                  "StunRatio": 1.517,
-                  "StunRatioGrowth": 0.069,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "Assist Follow-Up: Quick Sweep",
-          "Param": [
-            {
-              "Name": "DMG Multiplier",
-              "Desc": "{Skill:1061024, Prop:1001}",
-              "Param": {
-                "1061024": {
-                  "Main": 547.5,
-                  "Growth": 0.498,
-                  "Format": "%",
-                  "DamagePercentage": 5.475,
-                  "DamagePercentageGrowth": 0.498,
-                  "StunRatio": 4.886,
-                  "StunRatioGrowth": 0.223,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 16678.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 518.01,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            },
-            {
-              "Name": "Daze Multiplier",
-              "Desc": "{Skill:1061024, Prop:1002}",
-              "Param": {
-                "1061024": {
-                  "Main": 488.6,
-                  "Growth": 0.223,
-                  "Format": "%",
-                  "DamagePercentage": 5.475,
-                  "DamagePercentageGrowth": 0.498,
-                  "StunRatio": 4.886,
-                  "StunRatioGrowth": 0.223,
-                  "SpRecovery": 0,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 16678.75,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 518.01,
-                  "SpConsume": 0,
-                  "AttackData": []
-                }
-              }
-            }
-          ]
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.517,
+          "StunRatioGrowth": 0.069,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
         }
       ],
-      "Material": {
-        "1": { "10": 2000, "100110": 2 },
-        "2": { "10": 3000, "100110": 3 },
-        "3": { "10": 6000, "100120": 2 },
-        "4": { "10": 9000, "100120": 3 },
-        "5": { "10": 12000, "100120": 4 },
-        "6": { "10": 18000, "100120": 6 },
-        "7": { "10": 45000, "100130": 5 },
-        "8": { "10": 67500, "100130": 8 },
-        "9": { "10": 90000, "100130": 10 },
-        "10": { "10": 112500, "100130": 12 },
-        "11": { "10": 135000, "100130": 15, "100941": 1 },
-        "12": {}
-      }
-    }
-  },
-  "skillList": {
-    "1061001": {
-      "Name": "Basic Attack: Wipeout",
-      "Desc": "<IconMap:Icon_Normal>",
-      "ElementType": 200,
-      "HitType": 101
-    },
-    "1061002": {
-      "Name": "Special Attack: Clean Sweep",
-      "Desc": "<IconMap:Icon_Special> (Can Hold Down)",
-      "ElementType": 200,
-      "HitType": 101
-    },
-    "1061003": {
-      "Name": "EX Special Attack: Skirt Alert",
-      "Desc": "<IconMap:Icon_SpecialReady>(Can Hold Down)",
-      "ElementType": 200,
-      "HitType": 101
-    },
-    "1061004": {
-      "Name": "Dash Attack: Oopsy-Daisy!",
-      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
-      "ElementType": 200,
-      "HitType": 101
-    },
-    "1061005": {
-      "Name": "Dodge Counter: Nope!",
-      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
-      "ElementType": 200,
-      "HitType": 101
-    },
-    "1061006": {
-      "Name": "Chain Attack: Sorry...",
-      "Desc": "<IconMap:Icon_QTE>",
-      "ElementType": 200,
-      "HitType": 101
-    },
-    "1061007": {
-      "Name": "Ultimate: Very, Very Sorry!",
-      "Desc": "<IconMap:Icon_UltimateReady>",
-      "ElementType": 200,
-      "HitType": 101
-    },
-    "1061008": {
-      "Name": "Quick Assist: Emergency Measures",
-      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
-      "ElementType": 200,
-      "HitType": 101
-    },
-    "1061009": {
-      "Name": "Defensive Assist: P—Please allow me!",
-      "Desc": "<IconMap:Icon_Switch> (When Triggering Defensive Assist)",
-      "ElementType": 0,
-      "HitType": 0
-    },
-    "1061010": {
-      "Name": "Assist Follow-Up: Quick Sweep",
-      "Desc": "<IconMap:Icon_Normal> (After Defensive Assist)",
-      "ElementType": 200,
-      "HitType": 101
-    }
-  },
-  "cores": {
-    "Level": {
-      "1": {
-        "Level": 1,
-        "Id": 1061501,
-        "Name": [
-          "Core Passive: Hyperfocus",
-          "Additional Ability: Cleanup Assistance"
-        ],
-        "Desc": [
-          "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <color=#2BAD00>18.7%</color>.",
-          "When another character in your squad shares the same Attribute or Faction:\nCorin deals 35% more DMG to Stunned enemies."
-        ]
-      },
-      "2": {
-        "Level": 2,
-        "Id": 1061502,
-        "Name": [
-          "Core Passive: Hyperfocus",
-          "Additional Ability: Cleanup Assistance"
-        ],
-        "Desc": [
-          "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <color=#2BAD00>21.8%</color>.",
-          "When another character in your squad shares the same Attribute or Faction:\nCorin deals 35% more DMG to Stunned enemies."
-        ]
-      },
-      "3": {
-        "Level": 3,
-        "Id": 1061503,
-        "Name": [
-          "Core Passive: Hyperfocus",
-          "Additional Ability: Cleanup Assistance"
-        ],
-        "Desc": [
-          "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <color=#2BAD00>25%</color>.",
-          "When another character in your squad shares the same Attribute or Faction:\nCorin deals 35% more DMG to Stunned enemies."
-        ]
-      },
-      "4": {
-        "Level": 4,
-        "Id": 1061504,
-        "Name": [
-          "Core Passive: Hyperfocus",
-          "Additional Ability: Cleanup Assistance"
-        ],
-        "Desc": [
-          "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <color=#2BAD00>28.1%</color>.",
-          "When another character in your squad shares the same Attribute or Faction:\nCorin deals 35% more DMG to Stunned enemies."
-        ]
-      },
-      "5": {
-        "Level": 5,
-        "Id": 1061505,
-        "Name": [
-          "Core Passive: Hyperfocus",
-          "Additional Ability: Cleanup Assistance"
-        ],
-        "Desc": [
-          "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <color=#2BAD00>31.2%</color>.",
-          "When another character in your squad shares the same Attribute or Faction:\nCorin deals 35% more DMG to Stunned enemies."
-        ]
-      },
-      "6": {
-        "Level": 6,
-        "Id": 1061506,
-        "Name": [
-          "Core Passive: Hyperfocus",
-          "Additional Ability: Cleanup Assistance"
-        ],
-        "Desc": [
-          "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <color=#2BAD00>34.3%</color>.",
-          "When another character in your squad shares the same Attribute or Faction:\nCorin deals 35% more DMG to Stunned enemies."
-        ]
-      },
-      "7": {
-        "Level": 7,
-        "Id": 1061507,
-        "Name": [
-          "Core Passive: Hyperfocus",
-          "Additional Ability: Cleanup Assistance"
-        ],
-        "Desc": [
-          "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <color=#2BAD00>37.5%</color>.",
-          "When another character in your squad shares the same Attribute or Faction:\nCorin deals 35% more DMG to Stunned enemies."
-        ]
-      }
-    },
-    "Materials": {
-      "1": { "10": 5000 },
-      "2": { "10": 12000, "110502": 2 },
-      "3": { "10": 28000, "110502": 4 },
-      "4": { "10": 60000, "110003": 2, "110502": 9 },
-      "5": { "10": 100000, "110003": 3, "110502": 15 },
-      "6": { "10": 200000, "110003": 4, "110502": 30 }
-    }
-  },
-  "mindscapes": {
-    "1": {
-      "Level": 1,
-      "Name": "Open Trauma",
-      "Desc": "When Corin's <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> hits an enemy, her DMG against the target increases by 12% for 15s.",
-      "Desc2": "\"The young mistress always said, if something's worth doing, it's worth focusing on.\"\n\"I've been practicing, and I can do it now!\"\n\"But... are you watching me...?\""
-    },
-    "2": {
-      "Level": 2,
-      "Name": "Atomic Smash",
-      "Desc": "When Corin's <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> hits an enemy, the target's <color=#F0D12B>Physical RES</color> is reduced by 0.5%, stacking up to 20 times and lasting 5s. The duration of each stack is calculated separately.",
-      "Desc2": "\"Sorry, Mr. or Ms. Ethereal!\"\n\"But I've got work to do... I really am sorry!\"\nFeeling guilty, Corin sincerely apologizes to the monster — as she wields her savage chainsaw, slicing through the enemies in her way."
-    },
-    "3": {
-      "Level": 3,
-      "Name": "Amateur Maid",
-      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
-      "Desc2": "\"I—I'll do my best to become a good maid!\" Corin said, walking towards the Ethereals, chainsaw in hand."
-    },
-    "4": {
-      "Level": 4,
-      "Name": "Battlefield Retainer",
-      "Desc": "When Corin uses a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Chain Attack</color>, she recovers 7.2 Energy. This effect can trigger once every 16s.",
-      "Desc2": "A diligent and serious young maid, Corin always puts her heart and soul into everything she does.\nOf course, that includes taking out enemies in combat."
-    },
-    "5": {
-      "Level": 5,
-      "Name": "Special Ops Maid",
-      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
-      "Desc2": "\"Uh... sorry, I'm so clumsy. I don't know how to make sure my cuts are even...\"\n—Said Corin as she looked down at the bits of Ethereal scattered across the ground."
-    },
-    "6": {
-      "Level": 6,
-      "Name": "Accumulated Release",
-      "Desc": "When Corin's extended slash hits an enemy, she obtains a stack of Charge (max 40 stacks).\nDuring a <color=#FFFFFF>Dodge Counter</color>, <color=#FFFFFF>Special Attack</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Quick Assist</color>, or <color=#FFFFFF>Assist Follow-Up</color>, when her chainsaw detonation hits an enemy, consumes all stacks of Charge. Each stack consumed causes the attack to deal an additional 3% of ATK as DMG.",
-      "Desc2": "Corin knows that she isn't the most powerful of maids, nor the smartest. But she hopes to become the hardest working.\nShe puts to good use everything she's ever learned."
+      "AssistFollowUpQuickSweep": [
+        {
+          "DamagePercentage": 5.475,
+          "DamagePercentageGrowth": 0.498,
+          "StunRatio": 4.886,
+          "StunRatioGrowth": 0.223,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 16678.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 518.01
+        }
+      ]
     }
   }
 }

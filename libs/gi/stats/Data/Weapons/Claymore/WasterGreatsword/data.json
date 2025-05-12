@@ -6,11 +6,19 @@
     "base": 23.245,
     "curve": "GROW_CURVE_ATTACK_101"
   },
+  "subStat": {
+    "base": 0,
+    "curve": "GROW_CURVE_CRITICAL_101"
+  },
   "lvlCurves": [
     {
       "key": "atk",
       "base": 23.245,
       "curve": "GROW_CURVE_ATTACK_101"
+    },
+    {
+      "base": 0,
+      "curve": "GROW_CURVE_CRITICAL_101"
     }
   ],
   "refinementBonus": {},

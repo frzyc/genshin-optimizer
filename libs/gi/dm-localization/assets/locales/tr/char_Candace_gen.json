@@ -4,7 +4,7 @@
   "description": "Kral Deshret'in soyundan gelen ve sol gözü kehribar olan, Aaru Köyü'nün koruyucusu.",
   "constellationName": "Ok Kalkanı",
   "auto": {
-    "name": "Işıltılı Mızrak - Muhafız Duruşu",
+    "name": "Muhafız Duruşu",
     "fields": {
       "normal": {
         "0": "<strong>Normal Saldırı</strong>",

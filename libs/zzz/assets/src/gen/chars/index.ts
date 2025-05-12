@@ -11,6 +11,7 @@ import Ellen from './Ellen'
 import Evelyn from './Evelyn'
 import Grace from './Grace'
 import Harumasa from './Harumasa'
+import Hugo from './Hugo'
 import Jane from './Jane'
 import Koleda from './Koleda'
 import Lighter from './Lighter'
@@ -28,6 +29,7 @@ import Soldier0Anby from './Soldier0Anby'
 import Soldier11 from './Soldier11'
 import Soukaku from './Soukaku'
 import Trigger from './Trigger'
+import Vivian from './Vivian'
 import Yanagi from './Yanagi'
 import ZhuYuan from './ZhuYuan'
 
@@ -44,6 +46,7 @@ const data = {
   Evelyn,
   Grace,
   Harumasa,
+  Hugo,
   Jane,
   Koleda,
   Lighter,
@@ -61,6 +64,7 @@ const data = {
   Soldier11,
   Soukaku,
   Trigger,
+  Vivian,
   Yanagi,
   ZhuYuan,
 } as const

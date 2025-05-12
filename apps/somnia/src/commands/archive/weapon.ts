@@ -55,20 +55,20 @@ export async function weaponArchive(id: WeaponKey, args: string, lang: string) {
   const stat = getWeaponStat(id)
   const rarity = stat.rarity
   //mainstat
-  const ascension = stat.ascensionBonus[stat.mainStat.type] ?? [0]
+  const ascension = stat.ascensionBonus[stat.mainStat.type!] ?? [0]
   const mainstat =
     valueString(
       stat.mainStat.base *
         allStats.weapon.expCurve[stat.mainStat.curve][weaponMaxLevel[rarity]] +
         ascension[weaponMaxAscension[rarity]],
-      getUnitStr(stat.mainStat.type),
-      getFixed(stat.mainStat.type)
+      getUnitStr(stat.mainStat.type!),
+      getFixed(stat.mainStat.type!)
     ) +
     ' ' +
     i18nInstance.t(`statKey_gen:${stat.mainStat.type}`)
   text += `## ${mainstat}`
   //substat
-  if (stat.subStat) {
+  if (stat.subStat && stat.subStat.type) {
     const sub =
       stat.subStat.base * allStats.weapon.expCurve[stat.subStat.curve][90]
     let substat = valueString(
