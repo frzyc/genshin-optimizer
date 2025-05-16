@@ -3,7 +3,6 @@
     "nrwl.angular-console",
     "dbaeumer.vscode-eslint",
     "firsttris.vscode-jest-runner",
-    "biomejs.biome",
-    "esbenp.prettier-vscode"
+    "biomejs.biome"
   ]
 }
