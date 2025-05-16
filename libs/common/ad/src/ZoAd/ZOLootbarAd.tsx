@@ -2,14 +2,15 @@ import { NextImage } from '@genshin-optimizer/common/ui'
 import { Link } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
-import { lootbar } from '../../../assets'
-import { LOOTBAR_LINK } from '../util'
+import { zo_lootbar_banner } from '../assets'
+import type { AdDims } from '../type'
+import { ZO_LOOTBAR_LINK } from '../urlUtil'
 
-export function LootbarAd({ children }: { children: ReactNode }) {
+function ZOLootbarAd({ children }: { children: ReactNode }) {
   return (
     <Box
       component={Link}
-      href={LOOTBAR_LINK}
+      href={ZO_LOOTBAR_LINK}
       target="_blank"
       sx={{
         position: 'relative',
@@ -25,7 +26,7 @@ export function LootbarAd({ children }: { children: ReactNode }) {
       {children}
       <Box
         component={NextImage ? NextImage : 'img'}
-        src={lootbar}
+        src={zo_lootbar_banner}
         sx={{
           objectFit: 'contain',
           maxWidth: '100%',
@@ -38,7 +39,7 @@ export function LootbarAd({ children }: { children: ReactNode }) {
     </Box>
   )
 }
-export function canshowLootbarAd(height: number) {
-  if (height > 120) return false
-  return true
+export function getZOLootbarAd(dims: AdDims) {
+  if ((dims.height ?? 120) <= 120) return ZOLootbarAd
+  return
 }

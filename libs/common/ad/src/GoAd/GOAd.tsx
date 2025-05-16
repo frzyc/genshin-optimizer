@@ -1,16 +1,20 @@
 import { NextImage, useRefSize } from '@genshin-optimizer/common/ui'
-import { Typography } from '@mui/material'
+import { Link, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
-import { toMainSite } from '../util'
+import type { AdDims } from '../type'
+import { GO_LINK, isGOURL } from '../urlUtil'
 import go from './go.png'
 
-export function GOAd({ children }: { children: ReactNode }) {
+function GOAd({ children }: { children: ReactNode }) {
   const { height, ref } = useRefSize()
 
   return (
     <Box
       ref={ref}
+      component={Link}
+      href={GO_LINK}
+      target="_blank"
       sx={{
         position: 'relative',
         display: 'flex',
@@ -24,7 +28,6 @@ export function GOAd({ children }: { children: ReactNode }) {
         flexDirection: height > 90 ? 'column' : 'row',
         gap: 1,
       }}
-      onClick={toMainSite}
     >
       {children}
       <Box
@@ -39,4 +42,7 @@ export function GOAd({ children }: { children: ReactNode }) {
       </Typography>
     </Box>
   )
+}
+export function getGOAd(_: AdDims) {
+  return isGOURL() ? undefined : GOAd
 }

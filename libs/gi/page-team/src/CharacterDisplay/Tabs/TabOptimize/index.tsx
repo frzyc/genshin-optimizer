@@ -1,3 +1,4 @@
+import { AdResponsive } from '@genshin-optimizer/common/ad'
 import {
   useBoolState,
   useForceUpdate,
@@ -39,11 +40,11 @@ import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
-  AdResponsive,
   ArtifactLevelSlider,
   BuildDisplayItem,
   CharacterName,
   DataContext,
+  GOAdWrapper,
   GraphContext,
   HitModeToggle,
   NoArtWarning,
@@ -669,7 +670,7 @@ export default function TabBuild() {
 
           {/*Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
-          <AdResponsive dataAdSlot="7724855772" bgt="light" />
+          <AdResponsive dataAdSlot="7724855772" bgt="light" Ad={GOAdWrapper} />
         </Grid>
       </Grid>
       {/* Footer */}
