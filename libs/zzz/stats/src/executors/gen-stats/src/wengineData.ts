@@ -31,7 +31,6 @@ export function getWenginesData(): WenginesData {
       second_statkey,
       second_statvalue,
       phase: phase.map(({ desc }) => ({
-        // Match (number with possible decimal portion)(% or s or word boundary) and not followed by '>' such as for color tags
         params: extractParamsFromString(desc),
       })),
     })
