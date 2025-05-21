@@ -136,7 +136,7 @@ type CharacterRawData = {
       {
         Level: '1' | '2' | '3' | '4' | '5' | '6' | '7'
         Name: [string, string]
-        Description: [string, string]
+        Desc: [string, string]
       }
     >
     Material: Record<

@@ -1,4 +1,4 @@
-import { objMap, parseFloatBetter } from '@genshin-optimizer/common/util'
+import { objMap } from '@genshin-optimizer/common/util'
 import type {
   SpecialityKey,
   WengineKey,
@@ -6,6 +6,7 @@ import type {
   WengineSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
 import { wengineDetailedJSONData } from '@genshin-optimizer/zzz/dm'
+import { extractParamsFromString } from './util'
 
 export type WengineDatum = {
   rarity: WengineRarityKey
@@ -30,14 +31,7 @@ export function getWenginesData(): WenginesData {
       second_statkey,
       second_statvalue,
       phase: phase.map(({ desc }) => ({
-        // Match (number with possible decimal portion)(% or s or word boundary) and not followed by '>' such as for color tags
-        params: [...desc.matchAll(/(\d+\.?\d*)(?:(%)|s?\b)(?!>)/g)].map(
-          (matches) => {
-            const [_match, value, percent] = matches
-            if (percent) return parseFloatBetter(value)
-            return +value
-          }
-        ),
+        params: extractParamsFromString(desc),
       })),
     })
   )
