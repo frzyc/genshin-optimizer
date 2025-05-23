@@ -42,13 +42,15 @@ export function register(
  * @param entries Buff/Buffs to register
  * @param cond Hide this buff behind this check
  * @param team Add to team formula listings if true
+ * @param includeOriginalEntry Set to false for buffs that are applied as additional entries into specific moves, so this buff won't get added to the character's stats
  * @returns Listing components to register the buff + the buff itself so it can be passed to `register`.
  */
 export function registerBuff(
   name: string,
   entries: TagMapNodeEntry | TagMapNodeEntry[],
   cond: string | StrNode = 'infer',
-  team = false
+  team = false,
+  includeOriginalEntry = true
 ): TagMapNodeEntries {
   if (!Array.isArray(entries)) entries = [entries]
   return entries.flatMap((entry) => {
@@ -63,7 +65,7 @@ export function registerBuff(
       // Hook for listing
       namedReader.toEntry(entry.value),
       // Still include the original entry
-      entry,
+      ...(includeOriginalEntry ? [entry] : []),
     ]
   })
 }
