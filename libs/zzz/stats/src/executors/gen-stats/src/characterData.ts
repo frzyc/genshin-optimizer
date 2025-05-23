@@ -2,6 +2,7 @@ import {
   nameToKey,
   notEmpty,
   objMap,
+  transposeArray,
   verifyObjKeys,
 } from '@genshin-optimizer/common/util'
 import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz/consts'
@@ -32,6 +33,7 @@ export function getCharactersData(): CharactersData {
     }) => {
       const skillParams = extractSkillParams(skills)
       const coreParams = extractCoreParams(cores)
+      const abilityParams = extractAbilityParams(cores)
       const mindscapeParams = extraMindscapeParams(mindscapes)
 
       return {
@@ -45,6 +47,7 @@ export function getCharactersData(): CharactersData {
         coreStats,
         skillParams,
         coreParams,
+        abilityParams,
         mindscapeParams,
       }
     }
@@ -109,10 +112,15 @@ function extractSkillParams(skills: CharacterData['skills']) {
 }
 
 function extractCoreParams(cores: CharacterData['cores']) {
-  return Object.values(cores.Level).flatMap(({ Desc }) => ({
-    core: extractParamsFromString(Desc[0]),
-    ability: extractParamsFromString(Desc[1]),
-  }))
+  return transposeArray(
+    Object.values(cores.Level).map(({ Desc }) =>
+      extractParamsFromString(Desc[0])
+    )
+  )
+}
+
+function extractAbilityParams(cores: CharacterData['cores']) {
+  return extractParamsFromString(cores.Level[1].Desc[1])
 }
 
 function extraMindscapeParams(mindscapes: CharacterData['mindscapes']) {
