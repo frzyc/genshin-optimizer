@@ -243,15 +243,8 @@
       ]
     }
   },
-  "coreParams": [
-    { "core": [0.32], "ability": [7.2, 5] },
-    { "core": [0.373], "ability": [7.2, 5] },
-    { "core": [0.426], "ability": [7.2, 5] },
-    { "core": [0.48], "ability": [7.2, 5] },
-    { "core": [0.533], "ability": [7.2, 5] },
-    { "core": [0.586], "ability": [7.2, 5] },
-    { "core": [0.64], "ability": [7.2, 5] }
-  ],
+  "coreParams": [[0.32, 0.373, 0.426, 0.48, 0.533, 0.586, 0.64]],
+  "abilityParams": [7.2, 5],
   "mindscapeParams": [
     [0.12, 30],
     [0.3, 0.1],
