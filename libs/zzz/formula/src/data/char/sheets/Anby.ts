@@ -9,12 +9,15 @@ import {
   register,
   registerBuff,
 } from '../../util'
-import { dmgDazeAndAnom, entriesForChar, getBaseTag } from '../util'
+import {
+  dmgDazeAndAnomOverride,
+  entriesForChar,
+  registerAllDmgDazeAndAnom,
+} from '../util'
 
 const key: CharacterKey = 'Anby'
 const data_gen = allStats.char[key]
 const dm = mappedStats.char[key]
-const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
@@ -39,142 +42,33 @@ const sheet = register(
 
   // Formulas
   // Basic
-  ...dmgDazeAndAnom(
-    dm.basic,
-    'BasicAttackTurboVolt',
-    0,
-    { damageType1: 'basic' },
-    'atk',
-    'basic'
-  ),
-  ...dmgDazeAndAnom(
-    dm.basic,
-    'BasicAttackTurboVolt',
-    1,
-    { damageType1: 'basic' },
-    'atk',
-    'basic'
-  ),
-  ...dmgDazeAndAnom(
-    dm.basic,
-    'BasicAttackTurboVolt',
-    2,
-    { damageType1: 'basic' },
-    'atk',
-    'basic'
-  ),
-  ...dmgDazeAndAnom(
-    dm.basic,
-    'BasicAttackTurboVolt',
-    3,
-    { ...baseTag, damageType1: 'basic' },
-    'atk',
-    'basic'
-  ),
-  ...dmgDazeAndAnom(
-    dm.basic,
-    'BasicAttackThunderbolt',
-    0,
-    { ...baseTag, damageType1: 'basic' },
-    'atk',
-    'basic',
-    undefined,
-    after3rdBasic_dazeInc_,
-    m2_stunned_dmg_
-  ),
-  // Dodge
-  ...dmgDazeAndAnom(
-    dm.dodge,
-    'DashAttackTaserBlast',
-    0,
-    { damageType1: 'dash' },
-    'atk',
-    'dodge'
-  ),
-  ...dmgDazeAndAnom(
-    dm.dodge,
-    'DodgeCounterThunderclap',
-    0,
-    { ...baseTag, damageType1: 'dodgeCounter' },
-    'atk',
-    'dodge'
-  ),
-  // Assist
-  ...dmgDazeAndAnom(
-    dm.assist,
-    'QuickAssistThunderfall',
-    0,
-    { ...baseTag, damageType1: 'quickAssist' },
-    'atk',
-    'assist'
-  ),
-  ...dmgDazeAndAnom(
-    dm.assist,
-    'DefensiveAssistFlash',
-    0,
-    { ...baseTag, damageType1: 'defensiveAssist' },
-    'atk',
-    'assist'
-  ),
-  ...dmgDazeAndAnom(
-    dm.assist,
-    'DefensiveAssistFlash',
-    1,
-    { ...baseTag, damageType1: 'defensiveAssist' },
-    'atk',
-    'assist'
-  ),
-  ...dmgDazeAndAnom(
-    dm.assist,
-    'DefensiveAssistFlash',
-    2,
-    { ...baseTag, damageType1: 'defensiveAssist' },
-    'atk',
-    'assist'
-  ),
-  ...dmgDazeAndAnom(
-    dm.assist,
-    'AssistFollowUpLightningWhirl',
-    0,
-    { ...baseTag, damageType1: 'assistFollowUp' },
-    'atk',
-    'assist'
-  ),
-  // Special
-  ...dmgDazeAndAnom(
-    dm.special,
-    'SpecialAttackForkLightning',
-    0,
-    { ...baseTag, damageType1: 'special' },
-    'atk',
-    'special'
-  ),
-  ...dmgDazeAndAnom(
-    dm.special,
-    'EXSpecialAttackLightningBolt',
-    0,
-    { ...baseTag, damageType1: 'exSpecial' },
-    'atk',
-    'special',
-    undefined,
-    m2_stunned_dazeInc_
-  ),
-  // Chain
-  ...dmgDazeAndAnom(
-    dm.chain,
-    'ChainAttackElectroEngine',
-    0,
-    { ...baseTag, damageType1: 'chain' },
-    'atk',
-    'chain'
-  ),
-  ...dmgDazeAndAnom(
-    dm.chain,
-    'UltimateOverdriveEngine',
-    0,
-    { ...baseTag, damageType1: 'ult' },
-    'atk',
-    'chain'
+  ...registerAllDmgDazeAndAnom(
+    data_gen.attribute,
+    dm,
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackTurboVolt',
+      0,
+      { damageType1: 'basic' },
+      'atk'
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackTurboVolt',
+      1,
+      { damageType1: 'basic' },
+      'atk'
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackTurboVolt',
+      2,
+      { damageType1: 'basic' },
+      'atk'
+    )
   ),
 
   // Buffs

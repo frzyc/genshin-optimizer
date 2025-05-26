@@ -250,6 +250,7 @@ export function customAnomalyDmg(
  */
 export function customDaze(
   name: string,
+  dmgTag: DmgTag,
   base: NumNode,
   { team, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
@@ -258,7 +259,7 @@ export function customDaze(
     name,
     team,
     'dazeBuildup',
-    cond,
+    tag(cond, dmgTag),
     ownBuff.formula.base.add(base),
     ...extra
   )

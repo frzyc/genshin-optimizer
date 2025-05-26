@@ -20,6 +20,7 @@ import {
   customDmg,
   customHeal,
   customShield,
+  damageTypes,
   listingItem,
   own,
   ownBuff,
@@ -44,10 +45,9 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
  * @param extra Buffs that should only apply to this damage instance
  * @returns Array of TagMapNodeEntries representing the damage instance, daze and anomaly buildup
  */
-export function dmgDazeAndAnom<S extends string>(
-  skillParams: Record<S, SkillParam[]>,
-  name: S,
-  hitNumber: number,
+function dmgDazeAndAnom(
+  skillParam: SkillParam,
+  name: string,
   dmgTag: DmgTag,
   stat: Stat,
   abilityScalingType: AbilityScalingType,
@@ -55,7 +55,6 @@ export function dmgDazeAndAnom<S extends string>(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   if (!dmgTag.damageType1) dmgTag.attribute = 'physical'
-  const skillParam = skillParams[name][hitNumber]
   const dmgMulti = sum(
     skillParam.DamagePercentage,
     prod(own.char[abilityScalingType], skillParam.DamagePercentageGrowth)
@@ -67,7 +66,7 @@ export function dmgDazeAndAnom<S extends string>(
   )
   return [
     customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
-    customDaze(`${name}_daze`, dazeBase, arg, ...extra),
+    customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
     // TODO: No clue if this is right
     customAnomalyBuildup(
       `${name}_anomBuildup`,
@@ -77,6 +76,84 @@ export function dmgDazeAndAnom<S extends string>(
       ...extra
     ),
   ]
+}
+
+export function dmgDazeAndAnomOverride<
+  Stats extends MappedStats<string>,
+  SkillName extends SkillKey,
+  AbilityName extends keyof Stats[SkillName],
+>(
+  mappedStats: Stats,
+  skillType: SkillName,
+  name: AbilityName,
+  hitNumber: number,
+  dmgTag: DmgTag,
+  stat: Stat,
+  arg: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+) {
+  return {
+    [skillType]: {
+      [name]: {
+        [hitNumber]: dmgDazeAndAnom(
+          mappedStats[skillType][name][hitNumber],
+          `${name as string}_${hitNumber}`,
+          dmgTag,
+          stat,
+          skillType,
+          arg,
+          ...extra
+        ),
+      },
+    },
+  }
+}
+
+type MappedStats<S extends string> = Record<
+  AbilityScalingType,
+  Record<S, SkillParam[]>
+>
+type SkillOverides<S extends string> = Partial<
+  Record<
+    AbilityScalingType,
+    Partial<Record<S, Record<number, TagMapNodeEntries[]>>>
+  >
+>
+export function registerAllDmgDazeAndAnom(
+  attribute: AttributeKey,
+  mappedStats: MappedStats<string>,
+  ...overrides: SkillOverides<string>[]
+): TagMapNodeEntries[] {
+  const flatOverrides = overrides.reduce(
+    (combined, current) => ({ ...combined, ...current }),
+    {}
+  )
+  return Object.entries(mappedStats)
+    .filter(([key]) => allSkillKeys.includes(key))
+    .flatMap(([sKey, skill]) =>
+      Object.entries(skill).flatMap(([abilityName, params]) =>
+        params.flatMap(
+          (param, index) =>
+            flatOverrides[sKey]?.[abilityName]?.[index] ??
+            dmgDazeAndAnom(
+              param,
+              `${abilityName}_${index}`,
+              { attribute, damageType1: inferDamageType(abilityName) },
+              'atk',
+              sKey
+            )
+        )
+      )
+    )
+}
+
+function inferDamageType(abilityName: string) {
+  const damageType = damageTypes.find((dt) =>
+    abilityName.toLowerCase().startsWith(dt.toLowerCase())
+  )
+  if (!damageType)
+    throw new Error(`Failed to infer damage type for ${abilityName}`)
+  return damageType
 }
 
 /**
@@ -221,7 +298,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       { attribute: data_gen.attribute },
       percent(1)
     ),
-    ...customDaze('dazeInst', percent(1)),
+    ...customDaze('dazeInst', { attribute: data_gen.attribute }, percent(1)),
     // Formula listings for stats
     ownBuff.listing.formulas.add(listingItem(own.final.hp)),
     ownBuff.listing.formulas.add(listingItem(own.final.atk)),
