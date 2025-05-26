@@ -12,12 +12,14 @@ import {
 import {
   dmgDazeAndAnomOverride,
   entriesForChar,
+  getBaseTag,
   registerAllDmgDazeAndAnom,
 } from '../util'
 
 const key: CharacterKey = 'Anby'
 const data_gen = allStats.char[key]
 const dm = mappedStats.char[key]
+const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
@@ -68,6 +70,27 @@ const sheet = register(
       2,
       { damageType1: 'basic' },
       'atk'
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackThunderbolt',
+      0,
+      { ...baseTag, damageType1: 'basic' },
+      'atk',
+      undefined,
+      after3rdBasic_dazeInc_,
+      m2_stunned_dmg_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'special',
+      'EXSpecialAttackLightningBolt',
+      0,
+      { ...baseTag, damageType1: 'exSpecial' },
+      'atk',
+      undefined,
+      m2_stunned_dazeInc_
     )
   ),
 
