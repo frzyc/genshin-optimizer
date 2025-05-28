@@ -12,13 +12,11 @@ import {
   registerBuff,
   teamBuff,
 } from '../../util'
-import { entriesForChar, getBaseTag, registerAllDmgDazeAndAnom } from '../util'
+import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
 
 const key: CharacterKey = 'Nicole'
 const data_gen = allStats.char[key]
 const dm = mappedStats.char[key]
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
