@@ -5,13 +5,18 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   type AttributeKey,
   type SkillKey,
   allSkillKeys,
 } from '@genshin-optimizer/zzz/consts'
-import type { CharacterDatum, SkillParam } from '@genshin-optimizer/zzz/stats'
-import type { DmgTag, FormulaArg, Stat } from '../util'
+import {
+  type CharacterDatum,
+  type SkillParam,
+  allStats,
+} from '@genshin-optimizer/zzz/stats'
+import type { DamageType, DmgTag, FormulaArg, Stat } from '../util'
 import {
   type TagMapNodeEntries,
   customAnomalyBuildup,
@@ -130,13 +135,13 @@ export function dmgDazeAndAnomOverride<
 /**
  * Registers all damage, daze and anomaly buildup instances for a character.
  * If you need to override the element, damage type, add some extra buffs, etc., pass in dmgDazeAndAnomOverride to 3rd+ param.
- * @param attribute Attribute of the character
+ * @param key Character key
  * @param mappedStats Characters entire mappedStats object
  * @param overrides dmgDazeAndAnomOverride(s)
  * @returns Array of TagMapNodeEntries representing all of the damage instance, daze and anomaly buildup
  */
 export function registerAllDmgDazeAndAnom(
-  attribute: AttributeKey,
+  key: CharacterKey,
   mappedStats: MappedStats,
   ...overrides: SkillOverides[]
 ): TagMapNodeEntries[] {
@@ -156,7 +161,10 @@ export function registerAllDmgDazeAndAnom(
               dmgDazeAndAnom(
                 param,
                 `${abilityName}_${index}`,
-                { attribute, damageType1: inferDamageType(abilityName) },
+                {
+                  attribute: allStats.char[key].attribute,
+                  damageType1: inferDamageType(key, abilityName),
+                },
                 'atk',
                 sKey
               )
@@ -166,12 +174,19 @@ export function registerAllDmgDazeAndAnom(
   )
 }
 
-function inferDamageType(abilityName: string) {
+function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
   const damageType = damageTypes.find((dt) =>
     abilityName.toLowerCase().startsWith(dt.toLowerCase())
   )
-  if (!damageType)
+  if (!damageType) {
+    if (key === 'Astra' && abilityName === 'Chord') return 'exSpecial'
+    if (key === 'Lucy' && abilityName === 'GuardBoarsToArms') return 'basic'
+    if (key === 'Lucy' && abilityName === 'GuardBoarsSpinningSwing')
+      return 'basic'
+    if (key === 'Yanagi' && abilityName === 'StanceJougen') return 'basic'
+    if (key === 'Yanagi' && abilityName === 'StanceKagen') return 'basic'
     throw new Error(`Failed to infer damage type for ${abilityName}`)
+  }
   return damageType
 }
 

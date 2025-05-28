@@ -33,7 +33,7 @@ const sheet = register(
   entriesForChar(data_gen),
 
   // Formulas
-  ...registerAllDmgDazeAndAnom(data_gen.attribute, dm),
+  ...registerAllDmgDazeAndAnom(key, dm),
 
   // Buffs
   registerBuff(

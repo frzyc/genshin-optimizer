@@ -27,8 +27,8 @@ const dm = {
       ],
   },
   chain: {
-    ChainAttackFinalJudgement:
-      data_gen.skillParams['chain']['ChainAttackFinalJudgement'],
+    ChainAttackFinalJudgment:
+      data_gen.skillParams['chain']['ChainAttackFinalJudgment'],
     UltimateJusticePrevails:
       data_gen.skillParams['chain']['UltimateJusticePrevails'],
   },
