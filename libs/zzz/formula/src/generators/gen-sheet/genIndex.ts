@@ -26,22 +26,14 @@ export default async function genIndex(_tree: Tree, sheet_type: string) {
 async function writeCharIndex(path: string) {
   const index = `
 // WARNING: Generated file, do not modify
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
-import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
-import { allStats } from '@genshin-optimizer/zzz/stats'
-import { type TagMapNodeEntries, register } from '../util'
+import { type TagMapNodeEntries } from '../util'
 ${allCharacterKeys
   .map((charKey) => `import ${charKey} from './sheets/${charKey}'`)
   .join('\n')}
-import { entriesForChar } from './util'
 
-const data: TagMapNodeEntries[] = shouldShowDevComponents
-  ? allCharacterKeys.map((key) =>
-      register(key, entriesForChar(allStats.char[key]))
-    )
-  : [
+const data: TagMapNodeEntries[] = [
   ${allCharacterKeys.join('\n,  ')}
-    ]
+]
 export default data.flat()
   `
   const formatted = await formatText(path, index)
