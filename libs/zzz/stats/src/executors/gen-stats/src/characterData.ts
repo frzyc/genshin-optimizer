@@ -114,7 +114,13 @@ function extractSkillParams(skills: CharacterData['skills']) {
 function extractCoreParams(cores: CharacterData['cores']) {
   return transposeArray(
     Object.values(cores.Level).map(({ Desc }) =>
-      extractParamsFromString(Desc[0])
+      // Janky override for Qingyi inconsistent text
+      extractParamsFromString(
+        Desc[0].replace(
+          'the Finishing Move will apply 1 extra stack of',
+          'the Finishing Move will apply an extra stack of'
+        )
+      )
     )
   )
 }
