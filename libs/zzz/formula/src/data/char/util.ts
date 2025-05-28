@@ -28,6 +28,13 @@ import {
 } from '../util'
 
 type AbilityScalingType = SkillKey
+type MappedStats = Record<AbilityScalingType, Record<string, SkillParam[]>>
+type SkillOverides = Partial<
+  Record<
+    AbilityScalingType,
+    Partial<Record<string, Record<number, TagMapNodeEntries[]>>>
+  >
+>
 
 export function getBaseTag(data_gen: CharacterDatum): DmgTag {
   return { attribute: data_gen.attribute }
@@ -36,8 +43,7 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
 /**
  * Creates an array of TagMapNodeEntries representing a levelable ability's damage instance, daze and anomaly buildup, and registers their formulas
  * @param skillParam SkillParams object corresponding to the specific ability
- * @param name Named skill to be used from within the specified ability
- * @param hitNumber Hit number to be used from within the specified hit number
+ * @param name Name to register under
  * @param dmgTag Tag object containing damageType1, damageType2 and attribute. If not specified, attribute will be physical.
  * @param stat Stat that the damage scales on
  * @param abilityScalingType Ability level that the scaling depends on.
@@ -78,8 +84,20 @@ function dmgDazeAndAnom(
   ]
 }
 
+/**
+ * Pass in result to registerAllDmgDazeAndAnom 3rd param to override the default dmg daze and anom calculations.
+ * @param mappedStats Characters entire mappedStats object
+ * @param skillType Which skill to override. Also determines the level read.
+ * @param name Which ability from the skill to override
+ * @param hitNumber Which hit from the ability to override
+ * @param dmgTag Tag object containing damageType1, damageType2 and attribute. If not specified, attribute will be physical.
+ * @param stat Stat that the damage scales on
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this damage instance
+ * @returns Keyed object for use in registerAllDmgDazeAndAnom
+ */
 export function dmgDazeAndAnomOverride<
-  Stats extends MappedStats<string>,
+  Stats extends MappedStats,
   SkillName extends SkillKey,
   AbilityName extends keyof Stats[SkillName],
 >(
@@ -109,42 +127,43 @@ export function dmgDazeAndAnomOverride<
   }
 }
 
-type MappedStats<S extends string> = Record<
-  AbilityScalingType,
-  Record<S, SkillParam[]>
->
-type SkillOverides<S extends string> = Partial<
-  Record<
-    AbilityScalingType,
-    Partial<Record<S, Record<number, TagMapNodeEntries[]>>>
-  >
->
+/**
+ * Registers all damage, daze and anomaly buildup instances for a character.
+ * If you need to override the element, damage type, add some extra buffs, etc., pass in dmgDazeAndAnomOverride to 3rd+ param.
+ * @param attribute Attribute of the character
+ * @param mappedStats Characters entire mappedStats object
+ * @param overrides dmgDazeAndAnomOverride(s)
+ * @returns Array of TagMapNodeEntries representing all of the damage instance, daze and anomaly buildup
+ */
 export function registerAllDmgDazeAndAnom(
   attribute: AttributeKey,
-  mappedStats: MappedStats<string>,
-  ...overrides: SkillOverides<string>[]
+  mappedStats: MappedStats,
+  ...overrides: SkillOverides[]
 ): TagMapNodeEntries[] {
   const flatOverrides = overrides.reduce(
     (combined, current) => ({ ...combined, ...current }),
     {}
   )
-  return Object.entries(mappedStats)
-    .filter(([key]) => allSkillKeys.includes(key))
-    .flatMap(([sKey, skill]) =>
-      Object.entries(skill).flatMap(([abilityName, params]) =>
-        params.flatMap(
-          (param, index) =>
-            flatOverrides[sKey]?.[abilityName]?.[index] ??
-            dmgDazeAndAnom(
-              param,
-              `${abilityName}_${index}`,
-              { attribute, damageType1: inferDamageType(abilityName) },
-              'atk',
-              sKey
-            )
+  return (
+    Object.entries(mappedStats)
+      // Remove core, ability, and mindscape mapped stats
+      .filter(([key]) => allSkillKeys.includes(key))
+      .flatMap(([sKey, skill]) =>
+        Object.entries(skill).flatMap(([abilityName, params]) =>
+          params.flatMap(
+            (param, index) =>
+              flatOverrides[sKey]?.[abilityName]?.[index] ??
+              dmgDazeAndAnom(
+                param,
+                `${abilityName}_${index}`,
+                { attribute, damageType1: inferDamageType(abilityName) },
+                'atk',
+                sKey
+              )
+          )
         )
       )
-    )
+  )
 }
 
 function inferDamageType(abilityName: string) {

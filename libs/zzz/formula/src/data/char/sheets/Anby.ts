@@ -43,10 +43,10 @@ const sheet = register(
   entriesForChar(data_gen),
 
   // Formulas
-  // Basic
   ...registerAllDmgDazeAndAnom(
     data_gen.attribute,
     dm,
+    // Basic 1-3 is physical
     dmgDazeAndAnomOverride(
       dm,
       'basic',
@@ -71,6 +71,7 @@ const sheet = register(
       { damageType1: 'basic' },
       'atk'
     ),
+    // Per-hit buffs
     dmgDazeAndAnomOverride(
       dm,
       'basic',
