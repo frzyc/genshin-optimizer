@@ -44,7 +44,7 @@ const sheet = register(
 
   // Formulas
   ...registerAllDmgDazeAndAnom(
-    data_gen.attribute,
+    key,
     dm,
     // Basic 1-3 is physical
     dmgDazeAndAnomOverride(
