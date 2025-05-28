@@ -39,10 +39,7 @@ import ZhuYuan from './sheets/ZhuYuan'
 import { entriesForChar } from './util'
 
 const data: TagMapNodeEntries[] = shouldShowDevComponents
-  ? allCharacterKeys.map((key) =>
-      register(key, entriesForChar(allStats.char[key]))
-    )
-  : [
+  ? [
       Anby,
       Anton,
       Astra,
@@ -77,4 +74,7 @@ const data: TagMapNodeEntries[] = shouldShowDevComponents
       Yanagi,
       ZhuYuan,
     ]
+  : allCharacterKeys.map((key) =>
+      register(key, entriesForChar(allStats.char[key]))
+    )
 export default data.flat()
