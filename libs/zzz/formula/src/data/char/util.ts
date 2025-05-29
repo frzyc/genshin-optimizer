@@ -1,7 +1,22 @@
-import { constant, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
-import type { AttributeKey, SkillKey } from '@genshin-optimizer/zzz/consts'
-import type { CharacterDatum, SkillParam } from '@genshin-optimizer/zzz/stats'
-import type { DmgTag, FormulaArg, Stat } from '../util'
+import {
+  cmpGE,
+  constant,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import {
+  type AttributeKey,
+  type SkillKey,
+  allSkillKeys,
+} from '@genshin-optimizer/zzz/consts'
+import {
+  type CharacterDatum,
+  type SkillParam,
+  allStats,
+} from '@genshin-optimizer/zzz/stats'
+import type { DamageType, DmgTag, FormulaArg, Stat } from '../util'
 import {
   type TagMapNodeEntries,
   customAnomalyBuildup,
@@ -10,48 +25,171 @@ import {
   customDmg,
   customHeal,
   customShield,
+  damageTypes,
   listingItem,
   own,
   ownBuff,
   percent,
 } from '../util'
 
-type AbilityScalingType = Exclude<SkillKey, 'core'>
+type AbilityScalingType = SkillKey
+type MappedStats = Record<AbilityScalingType, Record<string, SkillParam[]>>
+type SkillOverides = Partial<
+  Record<
+    AbilityScalingType,
+    Partial<Record<string, Record<number, TagMapNodeEntries[]>>>
+  >
+>
 
 export function getBaseTag(data_gen: CharacterDatum): DmgTag {
   return { attribute: data_gen.attribute }
 }
 
 /**
- * Creates an array of TagMapNodeEntries representing a levelable ability's damage instance, and registers their formulas
- * @param name Base name to be used as the key
- * @param dmgTag Tag object containing damageType1, damageType2 and attribute
+ * Creates an array of TagMapNodeEntries representing a levelable ability's damage instance, daze and anomaly buildup, and registers their formulas
+ * @param skillParam SkillParams object corresponding to the specific ability
+ * @param name Name to register under
+ * @param dmgTag Tag object containing damageType1, damageType2 and attribute. If not specified, attribute will be physical.
  * @param stat Stat that the damage scales on
- * @param skillParam SkillParam object corresponding to the specific hit
  * @param abilityScalingType Ability level that the scaling depends on.
  * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
- * @returns Array of TagMapNodeEntries representing the damage instance
+ * @returns Array of TagMapNodeEntries representing the damage instance, daze and anomaly buildup
  */
-export function dmg(
+function dmgDazeAndAnom(
+  skillParam: SkillParam,
   name: string,
   dmgTag: DmgTag,
   stat: Stat,
-  skillParam: SkillParam,
   abilityScalingType: AbilityScalingType,
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
-): TagMapNodeEntries {
-  if (!dmgTag.damageType1)
-    throw Error(
-      `No damageType specified on ${name}. Please specify at least one.`
-    )
-  const multi = sum(
+): TagMapNodeEntries[] {
+  if (!dmgTag.damageType1) dmgTag.attribute = 'physical'
+  const dmgMulti = sum(
     skillParam.DamagePercentage,
     prod(own.char[abilityScalingType], skillParam.DamagePercentageGrowth)
   )
-  const base = prod(own.final[stat], multi)
-  return customDmg(name, dmgTag, base, arg, ...extra)
+  const dmgBase = prod(own.final[stat], dmgMulti)
+  const dazeBase = sum(
+    skillParam.StunRatio,
+    prod(own.char[abilityScalingType], skillParam.StunRatioGrowth)
+  )
+  return [
+    customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
+    customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
+    // TODO: No clue if this is right
+    customAnomalyBuildup(
+      `${name}_anomBuildup`,
+      dmgTag,
+      constant(skillParam.AttributeInfliction / 100),
+      arg,
+      ...extra
+    ),
+  ]
+}
+
+/**
+ * Pass in result to registerAllDmgDazeAndAnom 3rd param to override the default dmg daze and anom calculations.
+ * @param mappedStats Characters entire mappedStats object
+ * @param skillType Which skill to override. Also determines the level read.
+ * @param name Which ability from the skill to override
+ * @param hitNumber Which hit from the ability to override
+ * @param dmgTag Tag object containing damageType1, damageType2 and attribute. If not specified, attribute will be physical.
+ * @param stat Stat that the damage scales on
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this damage instance
+ * @returns Keyed object for use in registerAllDmgDazeAndAnom
+ */
+export function dmgDazeAndAnomOverride<
+  Stats extends MappedStats,
+  SkillName extends SkillKey,
+  AbilityName extends keyof Stats[SkillName],
+>(
+  mappedStats: Stats,
+  skillType: SkillName,
+  name: AbilityName,
+  hitNumber: number,
+  dmgTag: DmgTag,
+  stat: Stat,
+  arg: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+) {
+  return {
+    [skillType]: {
+      [name]: {
+        [hitNumber]: dmgDazeAndAnom(
+          mappedStats[skillType][name][hitNumber],
+          `${name as string}_${hitNumber}`,
+          dmgTag,
+          stat,
+          skillType,
+          arg,
+          ...extra
+        ),
+      },
+    },
+  }
+}
+
+/**
+ * Registers all damage, daze and anomaly buildup instances for a character.
+ * If you need to override the element, damage type, add some extra buffs, etc., pass in dmgDazeAndAnomOverride to 3rd+ param.
+ * @param key Character key
+ * @param mappedStats Characters entire mappedStats object
+ * @param overrides dmgDazeAndAnomOverride(s)
+ * @returns Array of TagMapNodeEntries representing all of the damage instance, daze and anomaly buildup
+ */
+export function registerAllDmgDazeAndAnom(
+  key: CharacterKey,
+  mappedStats: MappedStats,
+  ...overrides: SkillOverides[]
+): TagMapNodeEntries[] {
+  const flatOverrides = overrides.reduce(
+    (combined, current) => ({ ...combined, ...current }),
+    {}
+  )
+  return (
+    Object.entries(mappedStats)
+      // Remove core, ability, and mindscape mapped stats
+      .filter(([key]) => allSkillKeys.includes(key))
+      .flatMap(([sKey, skill]) =>
+        Object.entries(skill).flatMap(([abilityName, params]) =>
+          params.flatMap(
+            (param, index) =>
+              flatOverrides[sKey]?.[abilityName]?.[index] ??
+              dmgDazeAndAnom(
+                param,
+                `${abilityName}_${index}`,
+                {
+                  attribute: allStats.char[key].attribute,
+                  damageType1: inferDamageType(key, abilityName),
+                },
+                'atk',
+                sKey
+              )
+          )
+        )
+      )
+  )
+}
+
+function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
+  const damageType = damageTypes.find((dt) =>
+    abilityName.toLowerCase().startsWith(dt.toLowerCase())
+  )
+  if (!damageType) {
+    if (key === 'Astra' && abilityName === 'Chord') return 'exSpecial'
+    if (key === 'Lucy' && abilityName === 'GuardBoarsToArms') return 'basic'
+    if (key === 'Lucy' && abilityName === 'GuardBoarsSpinningSwing')
+      return 'basic'
+    if (key === 'Yanagi' && abilityName === 'StanceJougen') return 'basic'
+    if (key === 'Yanagi' && abilityName === 'StanceKagen') return 'basic'
+    throw new Error(
+      `Failed to infer damage type for key:${key} abilityName:${abilityName}. Please add an overide in zzz/formula/src/data/char/util.ts::inferDamageType`
+    )
+  }
+  return damageType
 }
 
 /**
@@ -167,7 +305,13 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ...Object.entries(coreStats).map(([stat, values]) =>
       ownBuff.base[stat].add(subscript(core, values))
     ),
-    // TODO: Remove this once we have character sheets
+    // Mindscape skill level boost
+    ...allSkillKeys.map((sk) =>
+      ownBuff.char[sk].add(
+        cmpGE(char.mindscape, 5, 2 + 2, cmpGE(char.mindscape, 3, 2))
+      )
+    ),
+    // TODO: Remove this once we have character sheets for everyone
     // Standard DMG
     ...customDmg(
       'standardDmgInst',
@@ -190,9 +334,8 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       { attribute: data_gen.attribute },
       percent(1)
     ),
-    ...customDaze('dazeInst', percent(1)),
+    ...customDaze('dazeInst', { attribute: data_gen.attribute }, percent(1)),
     // Formula listings for stats
-    // TODO: Reorder this
     ownBuff.listing.formulas.add(listingItem(own.final.hp)),
     ownBuff.listing.formulas.add(listingItem(own.final.atk)),
     ownBuff.listing.formulas.add(listingItem(own.final.def)),

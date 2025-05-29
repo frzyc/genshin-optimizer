@@ -26,7 +26,7 @@ export default async function genIndex(_tree: Tree, sheet_type: string) {
 async function writeCharIndex(path: string) {
   const index = `
 // WARNING: Generated file, do not modify
-import type { TagMapNodeEntries } from '../util'
+import { type TagMapNodeEntries } from '../util'
 ${allCharacterKeys
   .map((charKey) => `import ${charKey} from './sheets/${charKey}'`)
   .join('\n')}
@@ -35,7 +35,6 @@ const data: TagMapNodeEntries[] = [
   ${allCharacterKeys.join('\n,  ')}
 ]
 export default data.flat()
-
   `
   const formatted = await formatText(path, index)
   writeFileSync(path, formatted)

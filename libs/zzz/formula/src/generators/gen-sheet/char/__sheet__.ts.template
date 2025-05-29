@@ -1,6 +1,6 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/sr/consts'
-import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
+import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
   allListConditionals,
@@ -12,12 +12,11 @@ import {
   registerBuff,
   teamBuff,
 } from '../../util'
-import { dmg, entriesForChar, getBaseTag } from '../util'
+import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
 
 const key: CharacterKey = '<%= sheet %>'
 const data_gen = allStats.char[key]
 const dm = mappedStats.char[key]
-const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
@@ -31,21 +30,20 @@ const sheet = register(
   // Handles base stats, StatBoosts and Eidolon 3 + 5
   entriesForChar(data_gen),
 
-  // TODO: Add formulas/buffs
   // Formulas
-  ...dmg('basicDmg', baseTag, 'atk', dm.basic.dmg, 'basic'),
+  ...registerAllDmgDazeAndAnom(key, dm),
 
   // Buffs
   registerBuff(
-    'e6_dmg_',
-    ownBuff.premod.common_dmg_.add(
-      cmpGE(char.eidolon, 6, boolConditional.ifOn(1))
+    'm6_dmg_',
+    ownBuff.combat.common_dmg_.add(
+      cmpGE(char.mindscape, 6, boolConditional.ifOn(1))
     )
   ),
   registerBuff(
     'team_dmg_',
-    teamBuff.premod.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
+    teamBuff.combat.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
   ),
-  registerBuff('enemy_defIgn_', enemyDebuff.common.defIgn_.add(numConditional))
+  registerBuff('enemy_defRed_', enemyDebuff.common.defRed_.add(numConditional))
 )
 export default sheet

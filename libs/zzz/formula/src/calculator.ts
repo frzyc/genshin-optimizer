@@ -1,4 +1,8 @@
-import type { CalcMeta as CalcMetaBase } from '@genshin-optimizer/game-opt/engine'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
+import type {
+  CalcMeta as CalcMetaBase,
+  Read as ReadBase,
+} from '@genshin-optimizer/game-opt/engine'
 import { Calculator as Base } from '@genshin-optimizer/game-opt/engine'
 import { createFilterDebug } from '@genshin-optimizer/game-opt/formula'
 import { DebugCalculator } from '@genshin-optimizer/pando/engine'
@@ -31,5 +35,21 @@ export class Calculator extends Base<Tag, never> {
         throw new Error('non-explicit team value accumulator')
     }
     return
+  }
+  // TODO: Remove me once we figure out what to do with character sheet listing explosion
+  override listFormulas(read: ReadBase<Tag>): ReadBase<Tag>[] {
+    return super
+      .listFormulas(read)
+      .filter(
+        (r) =>
+          shouldShowDevComponents ||
+          r.tag.qt !== 'formula' ||
+          [
+            'standardDmgInst',
+            'anomalyDmgInst',
+            'anomalyBuildupInst',
+            'dazeInst',
+          ].includes(r.tag.name ?? '')
+      )
   }
 }
