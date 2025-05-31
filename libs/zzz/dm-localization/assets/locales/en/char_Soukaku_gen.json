@@ -1,3 +1,249 @@
 {
-  "name": "Soukaku"
+  "name": "Soukaku",
+  "fullName": "Soukaku",
+  "basic": {
+    "BasicAttackMakingRiceCakes": {
+      "name": "Basic Attack: Making Rice Cakes",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 3 attacks, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackMakingRiceCakesFrostedBanner": {
+      "name": "Basic Attack: Making Rice Cakes (Frosted Banner)",
+      "desc": {
+        "0": "When <ct color=#FFFFFF>Frosted Banner</ct> is active, press <IconNormal /> to activate:",
+        "1": "Unleashes up to 3 faster attacks in front, dealing <ct color=#98EFF0>Ice DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeGrabABite": {
+      "name": "Dodge: Grab a Bite",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttack5050": {
+      "name": "Dash Attack: 50/50",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DashAttack5050FrostedBanner": {
+      "name": "Dash Attack: 50/50 (Frosted Banner)",
+      "desc": {
+        "0": "When <ct color=#FFFFFF>Frosted Banner</ct> is active, press <IconNormal /> during a Dodge to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterAwayFromMySnacks": {
+      "name": "Dodge Counter: Away From My Snacks",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackCoolingBento": {
+      "name": "Special Attack: Cooling Bento",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Soukaku releases a wind current in front of her and unleashes her finishing move, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.",
+        "3": "Holding <IconSpecial /> while using this skill allows for a quick transition to <ct color=#FFFFFF>Fly the Flag</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "Finishing Move "
+      ]
+    },
+    "EXSpecialAttackFanningMosquitoes": {
+      "name": "EX Special Attack: Fanning Mosquitoes",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Releases wind currents of extended range in front of her, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "This skill can be triggered consecutively by pressing repeatedly. Each use consumes a specified amount of Energy. When Soukaku's Energy is depleted, or you stop pressing the button, she unleashes a powerful finishing move that deals massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "3": "During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.",
+        "4": "Holding <IconSpecial /> while using this skill allows for a quick transition to <ct color=#FFFFFF>Fly the Flag</ct>."
+      },
+      "params": [
+        "Consecutive Attack ",
+        "Wind Current ",
+        "Energy Cost to Use",
+        "Energy Cost of Each Attack"
+      ]
+    },
+    "SpecialAttackRally": {
+      "name": "Special Attack: Rally!",
+      "desc": {
+        "0": "Hold <IconSpecial /> to activate:",
+        "1": "Soukaku plunges her weapon into the ground, morphs it into a flag, and launches <ct color=#FFFFFF>Fly the Flag</ct>, dealing <ct color=#98EFF0>Ice DMG</ct>. Hitting an enemy with <ct color=#FFFFFF>Fly the Flag</ct> triggers a <ct color=#FFFFFF>Quick Assist</ct>.",
+        "2": "Pressing <IconNormal /> or <IconSpecial /> after <ct color=#FFFFFF>Fly the Flag</ct> activates a Special Attack as she retracts the flag, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "3": "If Soukaku owns 3 stacks of <ct color=#FFFFFF>Vortex</ct> on using <ct color=#FFFFFF>Fly the Flag</ct>, she consumes all 3 stacks and enters the <ct color=#FFFFFF>Frosted Banner</ct> state. In the <ct color=#FFFFFF>Frosted Banner</ct> state, she can unleash an enhanced <ct color=#FFFFFF>Basic Attack</ct> or an enhanced <ct color=#FFFFFF>Dash Attack</ct>, dealing massive <ct color=#98EFF0>Ice DMG</ct>. This effect can last up to 45s or stack up to 6 times.",
+        "4": "Soukaku's weapon gains <ct color=#FFFFFF>Vortexes</ct> in the following circumstances:",
+        "5": "Gains 1 stack of <ct color=#FFFFFF>Vortex</ct> when launching an <ct color=#FFFFFF>EX Special Attack</ct>,",
+        "6": "Gains 1 stack of <ct color=#FFFFFF>Vortex</ct> when launching a <ct color=#FFFFFF>Chain Attack</ct>,",
+        "7": "Gains 3 stacks of <ct color=#FFFFFF>Vortex</ct> when launching an <ct color=#FFFFFF>Ultimate</ct>.",
+        "8": "Soukaku can accumulate a maximum of 3 stacks of <ct color=#FFFFFF>Vortex</ct>."
+      },
+      "params": [
+        "Fly the Flag ",
+        "Quick Fly the Flag ",
+        "Lowering the Flag "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackPuddingSlash": {
+      "name": "Chain Attack: Pudding Slash",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Soukaku quickly unleashes a series of strikes at enemies in front of her and follows up with <ct color=#FFFFFF>Fly the Flag</ct>, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateJumboPuddingSlash": {
+      "name": "Ultimate: Jumbo Pudding Slash",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Soukaku quickly unleashes an extended series of strikes at enemies in front of her and follows up with <ct color=#FFFFFF>Fly the Flag</ct>, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Upon activating this skill, Soukaku enters the <ct color=#FFFFFF>Masked</ct> state, increasing her CRIT Rate by 15% for 15s.",
+        "3": "Upon activating this skill, other squad members recover 10 Energy. The next character to switch in gains an additional 20 Energy.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistASetForTwo": {
+      "name": "Quick Assist: A Set for Two",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistGuardingTactics": {
+      "name": "Defensive Assist: Guarding Tactics",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpSweepingStrike": {
+      "name": "Assist Follow-Up: Sweeping Strike",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Charges and strikes enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "Holding <IconNormal /> while using this skill allows for a quick transition to <ct color=#FFFFFF>Fly the Flag</ct>."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Blade Banner",
+    "desc": [
+      "When Soukaku launches <ct color=#FFFFFF>Fly the Flag</ct>, her ATK is increased by <ct color=#2BAD00>10%</ct> of her initial ATK, up to 500, for 22s. When consuming <ct color=#FFFFFF>Vortex</ct> during <ct color=#FFFFFF>Fly the Flag</ct>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <ct color=#FFFFFF>Quick Assists</ct> or <ct color=#FFFFFF>Chain Attacks</ct> triggered by <ct color=#FFFFFF>Fly the Flag</ct>, and it refreshes the duration of the buff.",
+      "When Soukaku launches <ct color=#FFFFFF>Fly the Flag</ct>, her ATK is increased by <ct color=#2BAD00>12.5%</ct> of her initial ATK, up to 500, for 22s. When consuming <ct color=#FFFFFF>Vortex</ct> during <ct color=#FFFFFF>Fly the Flag</ct>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <ct color=#FFFFFF>Quick Assists</ct> or <ct color=#FFFFFF>Chain Attacks</ct> triggered by <ct color=#FFFFFF>Fly the Flag</ct>, and it refreshes the duration of the buff.",
+      "When Soukaku launches <ct color=#FFFFFF>Fly the Flag</ct>, her ATK is increased by <ct color=#2BAD00>15%</ct> of her initial ATK, up to 500, for 22s. When consuming <ct color=#FFFFFF>Vortex</ct> during <ct color=#FFFFFF>Fly the Flag</ct>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <ct color=#FFFFFF>Quick Assists</ct> or <ct color=#FFFFFF>Chain Attacks</ct> triggered by <ct color=#FFFFFF>Fly the Flag</ct>, and it refreshes the duration of the buff.",
+      "When Soukaku launches <ct color=#FFFFFF>Fly the Flag</ct>, her ATK is increased by <ct color=#2BAD00>17%</ct> of her initial ATK, up to 500, for 22s. When consuming <ct color=#FFFFFF>Vortex</ct> during <ct color=#FFFFFF>Fly the Flag</ct>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <ct color=#FFFFFF>Quick Assists</ct> or <ct color=#FFFFFF>Chain Attacks</ct> triggered by <ct color=#FFFFFF>Fly the Flag</ct>, and it refreshes the duration of the buff.",
+      "When Soukaku launches <ct color=#FFFFFF>Fly the Flag</ct>, her ATK is increased by <ct color=#2BAD00>18%</ct> of her initial ATK, up to 500, for 22s. When consuming <ct color=#FFFFFF>Vortex</ct> during <ct color=#FFFFFF>Fly the Flag</ct>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <ct color=#FFFFFF>Quick Assists</ct> or <ct color=#FFFFFF>Chain Attacks</ct> triggered by <ct color=#FFFFFF>Fly the Flag</ct>, and it refreshes the duration of the buff.",
+      "When Soukaku launches <ct color=#FFFFFF>Fly the Flag</ct>, her ATK is increased by <ct color=#2BAD00>19%</ct> of her initial ATK, up to 500, for 22s. When consuming <ct color=#FFFFFF>Vortex</ct> during <ct color=#FFFFFF>Fly the Flag</ct>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <ct color=#FFFFFF>Quick Assists</ct> or <ct color=#FFFFFF>Chain Attacks</ct> triggered by <ct color=#FFFFFF>Fly the Flag</ct>, and it refreshes the duration of the buff.",
+      "When Soukaku launches <ct color=#FFFFFF>Fly the Flag</ct>, her ATK is increased by <ct color=#2BAD00>20%</ct> of her initial ATK, up to 500, for 22s. When consuming <ct color=#FFFFFF>Vortex</ct> during <ct color=#FFFFFF>Fly the Flag</ct>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <ct color=#FFFFFF>Quick Assists</ct> or <ct color=#FFFFFF>Chain Attacks</ct> triggered by <ct color=#FFFFFF>Fly the Flag</ct>, and it refreshes the duration of the buff."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Group Set Meal",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "When Soukaku consumes <ct color=#FFFFFF>Vortex</ct> to activate <ct color=#FFFFFF>Fly the Flag</ct>, the <ct color=#98EFF0>Ice DMG</ct> of all squad members is increased by 20% for 22s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Uplifting Current",
+      "desc": "When Soukaku triggers <ct color=#FFFFFF>Core Passive: Blade Banner</ct> or <ct color=#FFFFFF>Additional Ability: Group Set Meal</ct>, the buff duration is increased by 8s.",
+      "flavor": {
+        "0": "When charged, the special charging module can generate a wind current of Ether energy to charge surrounding Ether devices.",
+        "1": "To Soukaku, it's just like having a buffet with friends.",
+        "2": "\"Guys~ It's all-you-can-eat time!\""
+      }
+    },
+    "2": {
+      "name": "Experimental Charging Module",
+      "desc": {
+        "0": "When Soukaku's <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct>, <ct color=#FFFFFF>Dodge Counter</ct>, or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, there's a 15% chance she gains 1 stack of <ct color=#FFFFFF>Vortex</ct>, triggering up to once per second.",
+        "1": "When <ct color=#FFFFFF>Vortex</ct> reaches max stacks, any additional stacks grant Soukaku 1.2 Energy instead."
+      },
+      "flavor": {
+        "0": "A charging module is able to continuously accumulate energy during battle.",
+        "1": "Therefore, it is regarded as an era-defining conceptual tactical weapon by the R&D department.",
+        "2": "But for Soukaku, fully charging it simply means it's time to eat."
+      }
+    },
+    "3": {
+      "name": "Attendance Meal Allowance",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "The best way to motivate Soukaku to train harder is simple: just increase her attendance meal allowance."
+    },
+    "4": {
+      "name": "Hypothermia",
+      "desc": "If an enemy is hit by <ct color=#FFFFFF>Fly the Flag</ct>, the target's <ct color=#98EFF0>Ice RES</ct> is reduced by 10% for 8s.",
+      "flavor": "The custom-made weapon Oni Banner features a powerful built-in cooling system. Its Ether-infused catalyst generates cold air, dealing significant DMG to enemies it hits."
+    },
+    "5": {
+      "name": "Late-Night Snacks",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "To further incentivize Soukaku to train is simple: just add a late-night snack top of the attendance meal allowance."
+    },
+    "6": {
+      "name": "Northern Wind",
+      "desc": "While in the <ct color=#FFFFFF>Frosted Banner</ct> state, the number of usable enhanced <ct color=#FFFFFF>Basic Attacks</ct> and enhanced <ct color=#FFFFFF>Dash Attacks</ct> is increased to 12, and also deal 45% more DMG.",
+      "flavor": "Unlocking the safety device within the blade banner allows it to operate at full capacity. It's not just for combat... it's also handy for cooling down a meal."
+    }
+  }
 }

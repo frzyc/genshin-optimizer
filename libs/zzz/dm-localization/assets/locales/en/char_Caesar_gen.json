@@ -1,3 +1,297 @@
 {
-  "name": "Caesar"
+  "name": "Caesar",
+  "fullName": "Caesar King",
+  "basic": {
+    "BasicAttackRampagingSlash": {
+      "name": "Basic Attack: Rampaging Slash",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 6 slashes ahead, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "3rd-Hit (ALT) ",
+        "4th-Hit ",
+        "5th-Hit ",
+        "6th-Hit "
+      ]
+    },
+    "BasicAttackDeadEnd": {
+      "name": "Basic Attack: Dead End",
+      "desc": {
+        "0": "When there are sufficient <ct color=#FFFFFF>Assist Points</ct>, hold <IconNormal /> to activate:",
+        "1": "Consume 1 <ct color=#FFFFFF>Assist Point</ct> to toss the shield and attack nearby enemies in all directions, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Assist Point Cost"
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeAdrift": {
+      "name": "Dodge: Adrift",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackHogRush": {
+      "name": "Dash Attack: Hog Rush",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Strikes forward with the shield, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "During skill activation, DMG taken is reduced by 40%, and when attacked by an enemy, Caesar blocks with the shield and gets knocked back. Following that, press <IconSpecial /> or <IconSpecialReady /> to trigger <ct color=#FFFFFF>Retaliation</ct> and activate <ct color=#FFFFFF>Special Attack: Roaring Thrust</ct> or <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterEyeForAnEye": {
+      "name": "Dodge Counter: Eye For an Eye",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Stabs at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackShockwaveShieldBash": {
+      "name": "Special Attack: Shockwave Shield Bash",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Strike forward with the shield, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "If Caesar is hit by an enemy at the beginning of the skill's activation, it will trigger a <ct color=#FFFFFF>Perfect Block</ct>, negating the damage once and automatically following up with a <ct color=#FFFFFF>Special Attack: Roaring Thrust</ct>.",
+        "3": "After using the skill, Caesar enters a guard stance, reducing incoming damage by 40%. When attacked by an enemy, Caesar blocks with the shield and gets slightly knocked back. Press <IconSpecial /> or <IconSpecialReady /> to trigger <ct color=#FFFFFF>Retaliation</ct>, activating <ct color=#FFFFFF>Special Attack: Roaring Thrust</ct> or <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct>",
+        "4": "When <ct color=#FFFFFF>Retaliation</ct> is triggered, Caesar is invulnerable while using the skill."
+      },
+      "params": [
+        "",
+        "[Perfect Block] "
+      ]
+    },
+    "SpecialAttackRoaringThrust": {
+      "name": "Special Attack: Roaring Thrust",
+      "desc": {
+        "0": "After activating <ct color=#FFFFFF>Special Attack: Shockwave Shield Bash</ct>, press <IconSpecial /> to activate:",
+        "1": "Thrusts forward, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "If <ct color=#FFFFFF>Perfect Block</ct> or <ct color=#FFFFFF>Retaliation</ct> is not triggered, the Anti-Interrupt level is increased while using this skill.",
+        "3": "Character is invulnerable while using this skill when <ct color=#FFFFFF>Perfect Block</ct> or <ct color=#FFFFFF>Retaliation</ct> is triggered."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackParryCounter": {
+      "name": "EX Special Attack: Parry Counter",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Strikes forward with the shield, followed by a powerful thrust, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "If Caesar is hit by an enemy at the beginning of the skill activation or an <ct color=#FFFFFF>Interrupt</ct> is triggered with the shield strike, it will trigger <ct color=#FFFFFF>Perfect Block</ct>, negating incoming damage once and countering with a shield attack. After triggering <ct color=#FFFFFF>Perfect Block</ct>, press <IconSpecialReady /> to activate <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> without consuming energy.",
+        "3": "After using the skill, Caesar enters a guard stance, reducing incoming damage by 40%. When attacked by an enemy, Caesar blocks the attack and is knocked back. Press <IconSpecial /> or <IconSpecialReady /> to trigger <ct color=#FFFFFF>Retaliation</ct> and activate <ct color=#FFFFFF>Special Attack: Roaring Thrust</ct> or <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct>",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "[Perfect Block] ",
+        "[Perfect Block] Counter ",
+        "Energy Cost"
+      ]
+    },
+    "EXSpecialAttackOverpoweredShieldBash": {
+      "name": "EX Special Attack: Overpowered Shield Bash",
+      "desc": {
+        "0": "After activating <ct color=#FFFFFF>EX Special Attack: Parry Counter</ct>, with enough energy, press <IconSpecialReady /> to activate:",
+        "1": "Strikes forward with the shield, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "If Caesar is hit by an enemy at the beginning of the skill activation or an <ct color=#FFFFFF>Interrupt</ct> is triggered with the shield strike, it will trigger <ct color=#FFFFFF>Perfect Block</ct>, negating incoming damage once and recovering the Energy used to activate the skill.",
+        "3": "When the skill is activated through <ct color=#FFFFFF>Perfect Block</ct> or <ct color=#FFFFFF>Retaliation</ct>, it cannot trigger <ct color=#FFFFFF>Perfect Block</ct> again.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "[Perfect Block] ",
+        "Press Activation Energy Cost"
+      ]
+    },
+    "StanceSwitch": {
+      "name": "Stance Switch",
+      "desc": "When Caesar triggers a <ct color=#FFFFFF>Perfect Block</ct>, <ct color=#FFFFFF>Retaliation</ct>, or <ct color=#FFFFFF>Defensive Assist</ct>, her impact is increased by <ct color=#2BAD00>{CAL:8+AvatarSkillLevel(1)*1,1,2}</ct>% for 3s.",
+      "params": [
+        "Impact Increase"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackRoadRageSlam": {
+      "name": "Chain Attack: Road Rage Slam",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful downward strike at enemies ahead, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateSavageSmash": {
+      "name": "Ultimate: Savage Smash",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Tosses the shield forward, unleashing a powerful spinning attack on enemies in front, followed by a downward strike, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "When hitting shielded enemies, the Daze dealt is increased by <ct color=#2BAD00>{CAL:40+AvatarSkillLevel(3)*5,1,2}%</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Daze Increase"
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistLaneChange": {
+      "name": "Quick Assist: Lane Change",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Thrust at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistAegisShield": {
+      "name": "Defensive Assist: Aegis Shield",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpAidingBlade": {
+      "name": "Assist Follow-Up: Aiding Blade",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Tosses the shield forward, unleashing a powerful spinning attack on enemies in front, followed by a slash that deals <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "After activating the skill, press <IconSpecial /> or <IconSpecialReady /> to trigger a <ct color=#FFFFFF>Retaliation</ct>, activating <ct color=#FFFFFF>Special Attack: Roaring Thrust</ct> or <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Barrier of Resilience",
+    "desc": [
+      {
+        "0": "When Caesar activates <ct color=#FFFFFF>EX Special Attack: Parry Counter</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, or triggers <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> through <ct color=#FFFFFF>Retaliation</ct>, she buffs all squad members with a <ct color=#FFFFFF>Radiant Aegis</ct> shield equal to <ct color=#2BAD00>300%</ct> of her base Impact + <ct color=#2BAD00>200</ct>. The shield lasts for 60s and is equipped by the active character, with its value shared among all squad members. Any single instance of DMG will not exceed the shield value.",
+        "1": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's Anti-Interrupt level is increased.",
+        "2": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's ATK is increased by <ct color=#2BAD00>40</ct>. After <ct color=#FFFFFF>Radiant Aegis</ct> expires, this buff remains for an additional 5s."
+      },
+      {
+        "0": "When Caesar activates <ct color=#FFFFFF>EX Special Attack: Parry Counter</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, or triggers <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> through <ct color=#FFFFFF>Retaliation</ct>, she buffs all squad members with a <ct color=#FFFFFF>Radiant Aegis</ct> shield equal to <ct color=#2BAD00>500%</ct> of her base Impact + <ct color=#2BAD00>400</ct>. The shield lasts for 60s and is equipped by the active character, with its value shared among all squad members. Any single instance of DMG will not exceed the shield value.",
+        "1": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's Anti-Interrupt level is increased.",
+        "2": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's ATK is increased by <ct color=#2BAD00>135</ct>. After <ct color=#FFFFFF>Radiant Aegis</ct> expires, this buff remains for an additional 5s."
+      },
+      {
+        "0": "When Caesar activates <ct color=#FFFFFF>EX Special Attack: Parry Counter</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, or triggers <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> through <ct color=#FFFFFF>Retaliation</ct>, she buffs all squad members with a <ct color=#FFFFFF>Radiant Aegis</ct> shield equal to <ct color=#2BAD00>700%</ct> of her base Impact + <ct color=#2BAD00>700</ct>. The shield lasts for 60s and is equipped by the active character, with its value shared among all squad members. Any single instance of DMG will not exceed the shield value.",
+        "1": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's Anti-Interrupt level is increased.",
+        "2": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's ATK is increased by <ct color=#2BAD00>240</ct>. After <ct color=#FFFFFF>Radiant Aegis</ct> expires, this buff remains for an additional 5s."
+      },
+      {
+        "0": "When Caesar activates <ct color=#FFFFFF>EX Special Attack: Parry Counter</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, or triggers <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> through <ct color=#FFFFFF>Retaliation</ct>, she buffs all squad members with a <ct color=#FFFFFF>Radiant Aegis</ct> shield equal to <ct color=#2BAD00>900%</ct> of her base Impact + <ct color=#2BAD00>900</ct>. The shield lasts for 60s and is equipped by the active character, with its value shared among all squad members. Any single instance of DMG will not exceed the shield value.",
+        "1": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's Anti-Interrupt level is increased.",
+        "2": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's ATK is increased by <ct color=#2BAD00>400</ct>. After <ct color=#FFFFFF>Radiant Aegis</ct> expires, this buff remains for an additional 5s."
+      },
+      {
+        "0": "When Caesar activates <ct color=#FFFFFF>EX Special Attack: Parry Counter</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, or triggers <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> through <ct color=#FFFFFF>Retaliation</ct>, she buffs all squad members with a <ct color=#FFFFFF>Radiant Aegis</ct> shield equal to <ct color=#2BAD00>1,100%</ct> of her base Impact + <ct color=#2BAD00>1,100</ct>. The shield lasts for 60s and is equipped by the active character, with its value shared among all squad members. Any single instance of DMG will not exceed the shield value.",
+        "1": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's Anti-Interrupt level is increased.",
+        "2": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's ATK is increased by <ct color=#2BAD00>650</ct>. After <ct color=#FFFFFF>Radiant Aegis</ct> expires, this buff remains for an additional 5s."
+      },
+      {
+        "0": "When Caesar activates <ct color=#FFFFFF>EX Special Attack: Parry Counter</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, or triggers <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> through <ct color=#FFFFFF>Retaliation</ct>, she buffs all squad members with a <ct color=#FFFFFF>Radiant Aegis</ct> shield equal to <ct color=#2BAD00>1,300%</ct> of her base Impact + <ct color=#2BAD00>1,300</ct>. The shield lasts for 60s and is equipped by the active character, with its value shared among all squad members. Any single instance of DMG will not exceed the shield value.",
+        "1": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's Anti-Interrupt level is increased.",
+        "2": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's ATK is increased by <ct color=#2BAD00>900</ct>. After <ct color=#FFFFFF>Radiant Aegis</ct> expires, this buff remains for an additional 5s."
+      },
+      {
+        "0": "When Caesar activates <ct color=#FFFFFF>EX Special Attack: Parry Counter</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, or triggers <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> through <ct color=#FFFFFF>Retaliation</ct>, she buffs all squad members with a <ct color=#FFFFFF>Radiant Aegis</ct> shield equal to <ct color=#2BAD00>1,400%</ct> of her base Impact + <ct color=#2BAD00>1,400</ct>. The shield lasts for 60s and is equipped by the active character, with its value shared among all squad members. Any single instance of DMG will not exceed the shield value.",
+        "1": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's Anti-Interrupt level is increased.",
+        "2": "While <ct color=#FFFFFF>Radiant Aegis</ct> is active, the shield bearer's ATK is increased by <ct color=#2BAD00>1,000</ct>. After <ct color=#FFFFFF>Radiant Aegis</ct> expires, this buff remains for an additional 5s."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Battle Spirit",
+    "desc": {
+      "0": "When another character in your squad can activate <ct color=#FFFFFF>Defensive Assist</ct> or shares the same Faction:",
+      "1": "When Caesar activates <ct color=#FFFFFF>Perfect Block</ct>, <ct color=#FFFFFF>Retaliation</ct>, <ct color=#FFFFFF>Defensive Assist</ct>, or <ct color=#FFFFFF>Basic Attack: Dead End</ct>, she applies a Debuff effect to enemies within a 7m radius, increasing the damage they take from all squad members by 25% for 30s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Spearhead Advance",
+      "desc": "When Caesar enters combat or switches in, she instantly buffs all squad members with a <ct color=#FFFFFF>Radiant Aegis</ct> shield. This effect can trigger once every 300s. While <ct color=#FFFFFF>Radiant Aegis</ct> is active, enemies within a 5m radius of the shield bearer suffer a 15% All-Attribute RES reduction.",
+      "flavor": {
+        "0": "\"Big Daddy taught me that this is when you form a spearheaded formation with overwhelming force and strike at the enemy's weakest point—\"",
+        "1": "\"And I'll be leading the charge, of course!\""
+      }
+    },
+    "2": {
+      "name": "Legacy of the Far Lands",
+      "desc": "While <ct color=#FFFFFF>Radiant Aegis</ct> from <ct color=#FFFFFF>Core Passive: Barrier of Resilience</ct> is active, Caesar's Energy Generation Rate increases by 10%, and the shield bearer's ATK boost is increased to 150% of its original value.",
+      "flavor": {
+        "0": "Caesar's combat style stands out from those of New Eridu or the Outer Ring, drawing from the techniques of the most skilled warriors among the wanderers.",
+        "1": "Knowing when to hold back and when to strike decisively — that has always been the wanderer's way of survival. And Caesar has always been a good student of this philosophy."
+      }
+    },
+    "3": {
+      "name": "Absolute Trust",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Once Caesar recognizes someone as one of her own, she fully accepts them as part of her inner circle. She gives them absolute trust, letting her guard down completely...",
+        "1": "Just like she does with you now."
+      }
+    },
+    "4": {
+      "name": "Aries the Battering-Ram",
+      "desc": "When Caesar uses a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, she gains 3 additional <ct color=#FFFFFF>Assist Points</ct>. If her Energy is below 20, she can activate <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> with 1 <ct color=#FFFFFF>Assist Point</ct> instead. This substitution can trigger once every 5s.",
+      "flavor": {
+        "0": "One of the tactics Caesar mastered under the guidance of the wanderers.",
+        "1": "\"No matter what, I'll fight till the last moment!\""
+      }
+    },
+    "5": {
+      "name": "Romantic Conquest",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Behind Caesar's carefree and unpolished appearance lies a romantic at heart.",
+        "1": "She's always curious about love stories.",
+        "2": "But if you dig a little deeper into the subject... you might just catch her blushing."
+      }
+    },
+    "6": {
+      "name": "Overlord's Will",
+      "desc": "<ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> and <ct color=#FFFFFF>Assist Follow-Up</ct> are guaranteed to trigger a critical hit. The skill's DMG is increased by 50% and deals additional 50% DMG to the primary target. When Caesar uses <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct>, her CRIT Rate is increased by 30% and her CRIT DMG is increased by 60% for 15s.",
+      "flavor": {
+        "0": "\"I used to keep my eyes straight ahead, thinking that as long as I was strong enough, I could do anything.\"",
+        "1": "\"But being a great leader takes more than just power.\"",
+        "2": "\"I need to protect my friends behind me — they are the reason I can keep going.\""
+      }
+    }
+  }
 }

@@ -1,6 +1,10 @@
 {
   "name": "Flamemaker Shaker",
-  "desc": "Powered by a specially formulated fuel, this modified W-Engine is optimized to push combustion performance to the extreme. The engine operates by injecting fuel from the tank into the reaction chamber, where a high-pressure reaction device converts the fuel into searing flames, leaving behind a scorched aroma. It's rumored Nitro-Fuel can also be used as a power source, as there was a sighting of Burnice pouring one into the tank, and later scraping the remaining liquid back into a bar glass after the battle.\n\n<ct color=#959595>\"This is definitely slander from a competitor. The special drinks I serve to my customers are always clean and hygienic! The Nitro-Fuel that drains out from the tank is for my own consumption because the high-pressure concentration gives it a special taste!\" — Burnice, in defense of her professional reputation, oblivious to her customers unconsciously taking a step back.</ct>",
+  "desc": {
+    "0": "Powered by a specially formulated fuel, this modified W-Engine is optimized to push combustion performance to the extreme. The engine operates by injecting fuel from the tank into the reaction chamber, where a high-pressure reaction device converts the fuel into searing flames, leaving behind a scorched aroma. It's rumored Nitro-Fuel can also be used as a power source, as there was a sighting of Burnice pouring one into the tank, and later scraping the remaining liquid back into a bar glass after the battle.",
+    "1": "",
+    "2": "<ct color=#959595>\"This is definitely slander from a competitor. The special drinks I serve to my customers are always clean and hygienic! The Nitro-Fuel that drains out from the tank is for my own consumption because the high-pressure concentration gives it a special taste!\" — Burnice, in defense of her professional reputation, oblivious to her customers unconsciously taking a step back.</ct>"
+  },
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
   "desc3": "Modified by Burnice, this W-Engine uses a special fuel as its power source to boost combustion performance to the max.",
   "phase": "Fuel on the Rocks",

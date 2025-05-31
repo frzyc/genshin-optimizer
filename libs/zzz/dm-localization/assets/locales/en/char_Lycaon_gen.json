@@ -1,3 +1,242 @@
 {
-  "name": "Lycaon"
+  "name": "Lycaon",
+  "fullName": "Von Lycaon",
+  "basic": {
+    "BasicAttackMoonHunter": {
+      "name": "Basic Attack: Moon Hunter",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 5 strikes in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Hold down <IconNormal /> to charge up, increasing the power of the attack and dealing <ct color=#98EFF0>Ice DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "1st-Hit Charged Attack ",
+        "2nd-Hit ",
+        "2nd-Hit Charged Attack ",
+        "3rd-Hit ",
+        "3rd-Hit Charged Attack ",
+        "4th-Hit ",
+        "4th-Hit Charged Attack ",
+        "5th-Hit ",
+        "5th-Hit Level-1 Charged Attack ",
+        "5th-Hit Level-2 Charged Attack ",
+        "1st-Hit Charged ",
+        "2nd-Hit Charged ",
+        "3rd-Hit Charged ",
+        "4th-Hit Charged ",
+        "5th-Hit Level-1 Charged ",
+        "5th-Hit Level-2 Charged "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeSuitablePositioning": {
+      "name": "Dodge: Suitable Positioning",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackKeepItClean": {
+      "name": "Dash Attack: Keep it Clean",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slides forward, launching a series of strikes in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterEtiquetteManual": {
+      "name": "Dodge Counter: Etiquette Manual",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Strikes enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackTimeToHunt": {
+      "name": "Special Attack: Time to Hunt",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Unleashes a series of strikes in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Hold down <IconSpecial /> to charge up, increasing its power.",
+        "3": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        "",
+        "Charged Attack ",
+        "Charged "
+      ]
+    },
+    "EXSpecialAttackThrillOfTheHunt": {
+      "name": "EX Special Attack: Thrill of the Hunt",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Unleashes a series of powerful strikes in front, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Hold down <IconSpecialReady /> to charge up, consuming Energy and enhancing the power of the attack.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Charged Attack ",
+        "Charged ",
+        "Activation Energy Cost",
+        "Charged Attack Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackAsYouWish": {
+      "name": "Chain Attack: As You Wish",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a series of powerful strikes at enemies in a small area in front of him, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateMissionComplete": {
+      "name": "Ultimate: Mission Complete",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes multiple powerful strikes at enemies in a large area, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistWolfPack": {
+      "name": "Quick Assist: Wolf Pack",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Strikes enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistDisruptedHunt": {
+      "name": "Defensive Assist: Disrupted Hunt",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpVengefulCounterattack": {
+      "name": "Assist Follow-Up: Vengeful Counterattack",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Creates an icicle in front, which strikes all enemies within range, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Metallic Paws",
+    "desc": [
+      {
+        "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>40%</ct> increased Daze.",
+        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+      },
+      {
+        "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>46.6%</ct> increased Daze.",
+        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+      },
+      {
+        "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>53.3%</ct> increased Daze.",
+        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+      },
+      {
+        "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>60%</ct> increased Daze.",
+        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+      },
+      {
+        "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>66.6%</ct> increased Daze.",
+        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+      },
+      {
+        "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>73.3%</ct> increased Daze.",
+        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+      },
+      {
+        "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>80%</ct> increased Daze.",
+        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Elegant Predator",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "When Lycaon hits a Stunned enemy, the target's Stun DMG Multiplier increases by 35%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Full Moon Momentum",
+      "desc": "When Lycaon's <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, the attack's Daze increases by 12%. This effect can trigger once every 8s. When he charges his <ct color=#FFFFFF>EX Special Attack</ct> to completion, this buff will increase by an additional 10%.",
+      "flavor": {
+        "0": "Records suggest that werewolves exposed to moonlight become significantly more aggressive.",
+        "1": "\"Don't stare directly at the moon.\""
+      }
+    },
+    "2": {
+      "name": "Energy Feedback",
+      "desc": "When Stunning an enemy or triggering a squad member's <ct color=#FFFFFF>Chain Attack</ct>, Lycaon gains 5 Energy. Can trigger once every 1s.",
+      "flavor": {
+        "0": "\"Canines receive a brief dopamine boost in their brains after completing semi-complex tasks. At that moment, if their owner pets them to show encouragement, they will be extremely happy...\"",
+        "1": "—Excerpt from the \"Handbook of Unreliable Canine Research\""
+      }
+    },
+    "3": {
+      "name": "Attendant Training",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "His every gesture exudes poise, and his words and actions are as refreshing as a spring breeze. An attendant's training is about maintaining control over everything."
+    },
+    "4": {
+      "name": "Graceful Demeanor",
+      "desc": {
+        "0": "If Lycaon is attacked while using a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Special Attack</ct>, he will immediately gain a Shield equal to 7.5% of his Max HP, lasting for 15s.",
+        "1": "During the Shield's duration, his Anti-Interrupt level is increased. This effect can trigger once every 15s."
+      },
+      "flavor": "\"An outstanding attendant maintains a graceful demeanor at any and all times.\""
+    },
+    "5": {
+      "name": "Alpha Nature",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "His glance harbors a primal ferocity, and the echoes of his howls rumble within his throat. Regardless of his current gracefulness, underneath the formal wear, he's still untamed."
+    },
+    "6": {
+      "name": "Ruthless Hunter",
+      "desc": "When a charged attack hits an enemy, the target suffers 10% increased DMG from Lycaon, stacking up to 5 times and lasting 12s. Only one stack can be gained per skill use, and repeated triggers reset the duration.",
+      "flavor": {
+        "0": "\"Apologies, but given the circumstances, I will not show any mercy.\"",
+        "1": "\"After all, if a fair fight is what you are after, a Hollow is not the place to look for it.\""
+      }
+    }
+  }
 }

@@ -1,3 +1,207 @@
 {
-  "name": "Billy"
+  "name": "Billy",
+  "fullName": "Billy Kid",
+  "basic": {
+    "BasicAttackFullFirepower": {
+      "name": "Basic Attack: Full Firepower",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes a piercing attack, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Repeatedly press or hold to enter Crouching Shot to extend the attack duration.",
+        "3": "Drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} during Crouching Shot to launch Rolling Shot and adjust the character's position, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "4": "Stop pressing or holding during Crouching Shot to launch Finishing Shot at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "Standing Fire ",
+        "Standing Bullet ",
+        "Crouching Fire ",
+        "Crouching Bullet ",
+        "Rolling Shot ",
+        "Finishing Shot "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeRiskyBusiness": {
+      "name": "Dodge: Risky Business",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackStarlightSanction": {
+      "name": "Dash Attack: Starlight Sanction",
+      "desc": {
+        "0": "When dragging the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} during a dodge, press <IconNormal />:",
+        "1": "Launches a piercing attack at nearby enemies within a large area, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "When not dragging the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} during a dodge, press <IconNormal />:",
+        "3": "Launches a piercing attack at enemies in a line, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "360-degree Shot ",
+        "Straight Shot "
+      ]
+    },
+    "DodgeCounterFairFight": {
+      "name": "Dodge Counter: Fair Fight",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Pierces enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackStandStill": {
+      "name": "Special Attack: Stand Still",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Performs up to 3 piercing attacks in a line, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "EXSpecialAttackClearanceTime": {
+      "name": "EX Special Attack: Clearance Time",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Launches a powerful piercing attack in a line, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackStarlightMirage": {
+      "name": "Chain Attack: Starlight Mirage",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful piercing attack at surrounding enemies in a large area, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateStarlightShineBright": {
+      "name": "Ultimate: Starlight, Shine Bright",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes a powerful piercing attack at surrounding enemies in a large area, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistPowerOfTeamwork": {
+      "name": "Quick Assist: Power of Teamwork",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Launches a piercing attack at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EvasiveAssistFlashSpin": {
+      "name": "Evasive Assist: Flash Spin",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Dodges the enemy's attack and activates <ct color=#FFFFFF>Vital View</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "AssistFollowUpFatalShot": {
+      "name": "Assist Follow-Up: Fatal Shot",
+      "desc": {
+        "0": "Press <IconNormal /> after an <ct color=#FFFFFF>Evasive Assist</ct> to activate:",
+        "1": "Pierces enemies in a large area in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Steady Shot",
+    "desc": [
+      "Billy's DMG increases by <ct color=#2BAD00>25%</ct> when he enters Crouching Shot during his <ct color=#FFFFFF>Basic Attack</ct>. The effect ends if he moves, returns to standby, or is knocked back or launched by an attack.",
+      "Billy's DMG increases by <ct color=#2BAD00>29.1%</ct> when he enters Crouching Shot during his <ct color=#FFFFFF>Basic Attack</ct>. The effect ends if he moves, returns to standby, or is knocked back or launched by an attack.",
+      "Billy's DMG increases by <ct color=#2BAD00>33.3%</ct> when he enters Crouching Shot during his <ct color=#FFFFFF>Basic Attack</ct>. The effect ends if he moves, returns to standby, or is knocked back or launched by an attack.",
+      "Billy's DMG increases by <ct color=#2BAD00>37.5%</ct> when he enters Crouching Shot during his <ct color=#FFFFFF>Basic Attack</ct>. The effect ends if he moves, returns to standby, or is knocked back or launched by an attack.",
+      "Billy's DMG increases by <ct color=#2BAD00>41.6%</ct> when he enters Crouching Shot during his <ct color=#FFFFFF>Basic Attack</ct>. The effect ends if he moves, returns to standby, or is knocked back or launched by an attack.",
+      "Billy's DMG increases by <ct color=#2BAD00>45.8%</ct> when he enters Crouching Shot during his <ct color=#FFFFFF>Basic Attack</ct>. The effect ends if he moves, returns to standby, or is knocked back or launched by an attack.",
+      "Billy's DMG increases by <ct color=#2BAD00>50%</ct> when he enters Crouching Shot during his <ct color=#FFFFFF>Basic Attack</ct>. The effect ends if he moves, returns to standby, or is knocked back or launched by an attack."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Team Starlight",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "After Billy uses a <ct color=#FFFFFF>Chain Attack</ct>, the DMG of his next <ct color=#FFFFFF>Ultimate</ct> is increased by 50%, stacking up to 2 times. This effect resets whenever an <ct color=#FFFFFF>Ultimate</ct> is activated."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Dazzling Entrance",
+      "desc": "When Billy hits an enemy with a <ct color=#FFFFFF>Dash Attack</ct> or <ct color=#FFFFFF>Dodge Counter</ct>, he gains an additional 2.7 Energy. Can trigger once every 5s.",
+      "flavor": {
+        "0": "\"You guys are way too honest to be bad guys!\"",
+        "1": "\"All lined up, like NPCs at the shooting range!\""
+      }
+    },
+    "2": {
+      "name": "Roaming Gunslinger",
+      "desc": "Billy's <ct color=#FFFFFF>Dodge Counter</ct> DMG increases by 25%. Rolling Shots during his <ct color=#FFFFFF>Basic Attacks</ct> count as dodges, making Billy Invulnerable during skill activation and able to trigger <ct color=#FFFFFF>Perfect Dodges</ct>. When a Rolling Shot triggers a <ct color=#FFFFFF>Perfect Dodge</ct>, it will automatically follow up with a <ct color=#FFFFFF>Dodge Counter</ct>.",
+      "flavor": {
+        "0": "\"The Starlight Knights never run from danger. That's what we call tactical repositioning for better aim!\"",
+        "1": "— User \"Dreamgirl Monica\" from the Starlight Radiance messageboards."
+      }
+    },
+    "3": {
+      "name": "Teachings of the Starlight Knights",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Never neglect your training, and never stop improving! This is the philosophy of the Starlight Knights. Billy believes in it wholeheartedly, and practices it sincerely."
+    },
+    "4": {
+      "name": "Starlight Ballistics",
+      "desc": "When Billy hits an enemy with his <ct color=#FFFFFF>EX Special Attack</ct>, the skill's CRIT Rate increases based on the distance from the enemy. The closer he is to the target, the greater the effect, up to a maximum increase of 32%.",
+      "flavor": {
+        "0": "These explosive bullets of Billy's own invention are incredibly lethal at close range.",
+        "1": "Their performance far outstrips Billy's original intention of simply making them cooler."
+      }
+    },
+    "5": {
+      "name": "Lost Technological Construct",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Unknown precision components and unique structural design have given Billy performance far beyond his peers... And maintenance costs far beyond his means."
+    },
+    "6": {
+      "name": "Starlight Hero",
+      "desc": "When Billy accumulates 10 hits on enemies or triggers a <ct color=#FFFFFF>Perfect Dodge</ct>, his DMG increases by 6%, stacking up to 5 times and lasting until he's knocked back or launched by an attack.",
+      "flavor": {
+        "0": "\"Hooboy~ Feelin' great! Move aside, Anby, it's my time to shine!\"",
+        "1": "\"Yo, Anby — can you play the Starlight Knight theme?\"",
+        "2": "—excerpt from Cunning Hares' \"Top 10 Forbidden Sentences,\" selected by Anby"
+      }
+    }
+  }
 }

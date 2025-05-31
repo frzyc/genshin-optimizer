@@ -1,6 +1,10 @@
 {
   "name": "Riot Suppressor Mark VI",
-  "desc": "The latest tactical W-Engine used by Public Security's elite Hollow squads. It uses a powerful Ether energy source to supply all combat equipment with explosive power for a short period of time. Although the W-Engines of many elite squad members often suffer from prolonged combat, Zhu Yuan's is in perfect condition. She treats it with utmost care and carefully maintains it, keeping it looking completely brand new.\n\n<ct color=#959595>\"Non-woven fabric, brush, lubricant, rust remover... alright, ready to go. Timer... starting now!\" — Zhu Yuan, timing herself as she starts maintenance, aiming to beat her previous record</ct>",
+  "desc": {
+    "0": "The latest tactical W-Engine used by Public Security's elite Hollow squads. It uses a powerful Ether energy source to supply all combat equipment with explosive power for a short period of time. Although the W-Engines of many elite squad members often suffer from prolonged combat, Zhu Yuan's is in perfect condition. She treats it with utmost care and carefully maintains it, keeping it looking completely brand new.",
+    "1": "",
+    "2": "<ct color=#959595>\"Non-woven fabric, brush, lubricant, rust remover... alright, ready to go. Timer... starting now!\" — Zhu Yuan, timing herself as she starts maintenance, aiming to beat her previous record</ct>"
+  },
   "desc2": "Equip to increase Attack Agents' combat capabilities",
   "desc3": "The latest tactical W-Engine used by Public Security's elite Hollow squads, possessing a powerful Ether energy source. It's Zhu Yuan's favored model.",
   "phase": "Security Patrol",

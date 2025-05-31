@@ -1,3 +1,241 @@
 {
-  "name": "Ben"
+  "name": "Ben",
+  "fullName": "Ben Bigger",
+  "basic": {
+    "BasicAttackDebtReconciliation": {
+      "name": "Basic Attack: Debt Reconciliation",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 3 strikes, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeMissingInvoice": {
+      "name": "Dodge: Missing Invoice",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackIncomingExpense": {
+      "name": "Dash Attack: Incoming Expense",
+      "desc": {
+        "0": "Press <IconNormal /> during a Dodge to activate:",
+        "1": "Strikes enemies in front of him, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterAccountsSettled": {
+      "name": "Dodge Counter: Accounts Settled",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Strike enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackFiscalFist": {
+      "name": "Special Attack: Fiscal Fist",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Ben lifts his weapon, blocking the enemy's attack before unleashing a forward strike, dealing <ct color=#F0D12B>Physical DMG</ct>. Successfully blocking an attack enhances the power of this skill and triggers Block Counter, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Hold <IconSpecial /> to remain in the Blocking stance.",
+        "3": "While in the Blocking stance, Ben gains a Shield that weakens over time.",
+        "4": "After leaving the blocking stance, the Shield is removed and recovers over time.",
+        "5": "The Shield cannot exceed 16% of Ben's Max HP.",
+        "6": "Ben is invulnerable when activating Block.",
+        "7": "Anti-Interrupt level is increased while launching strikes."
+      },
+      "params": [
+        "Active Attack ",
+        "Block Counter "
+      ]
+    },
+    "EXSpecialAttackCashflowCounter": {
+      "name": "EX Special Attack: Cashflow Counter",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Ben lifts his weapon, blocking the enemy's attacks before unleashing a forward strike, dealing <ct color=#FF5521>Fire DMG</ct>. Successfully blocking an attack enhances the power of this skill and triggers Block Counter, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Hold <IconSpecialReady /> to remain in the Blocking stance.",
+        "3": "While in the Blocking stance, Ben gains a Shield that weakens over time.",
+        "4": "After leaving the blocking stance, the Shield is removed and recovers over time.",
+        "5": "The Shield cannot exceed 16% of Ben's Max HP.",
+        "6": "When this skill is activated, the Shield is restored to its maximum value.",
+        "7": "After activating the skill, press <IconSpecialReady /> again to follow up with a powerful forward strike, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "8": "Ben is invulnerable when activating Block.",
+        "9": "Ben is invulnerable while launching strikes."
+      },
+      "params": [
+        "Active Attack ",
+        "Follow-Up Attack ",
+        "Block Counter ",
+        "Block Follow-Up ",
+        "Block Energy Cost",
+        "Follow-Up Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackSignedAndSealed": {
+      "name": "Chain Attack: Signed and Sealed",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful strike at enemies in front in a large area, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateCompletePayback": {
+      "name": "Ultimate: Complete Payback",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes a powerful strike at enemies in front in a large area, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "When activating the skill, additionally recover 3 Assist Points.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistJointAccount": {
+      "name": "Quick Assist: Joint Account",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Strikes enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable during the attack."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistRiskAllocation": {
+      "name": "Defensive Assist: Risk Allocation",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpDontBreakContract": {
+      "name": "Assist Follow-Up: Don't Break Contract",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Charges and strikes enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Guardian",
+    "desc": [
+      {
+        "0": "Ben's initial ATK increases along with his initial DEF. He gains <ct color=#2BAD00>40%</ct> of his initial DEF as ATK.",
+        "1": "When Ben launches a follow-up attack during his <ct color=#FFFFFF>EX Special Attack</ct>, all squad members gain a Shield of <ct color=#2BAD00>15%</ct> of his DEF +<ct color=#2BAD00>100</ct>, lasting for 30s."
+      },
+      {
+        "0": "Ben's initial ATK increases along with his initial DEF. He gains <ct color=#2BAD00>46%</ct> of his initial DEF as ATK.",
+        "1": "When Ben launches a follow-up attack during his <ct color=#FFFFFF>EX Special Attack</ct>, all squad members gain a Shield of <ct color=#2BAD00>17.5%</ct> of his DEF +<ct color=#2BAD00>220</ct>, lasting for 30s."
+      },
+      {
+        "0": "Ben's initial ATK increases along with his initial DEF. He gains <ct color=#2BAD00>52%</ct> of his initial DEF as ATK.",
+        "1": "When Ben launches a follow-up attack during his <ct color=#FFFFFF>EX Special Attack</ct>, all squad members gain a Shield of <ct color=#2BAD00>20%</ct> of his DEF +<ct color=#2BAD00>330</ct>, lasting for 30s."
+      },
+      {
+        "0": "Ben's initial ATK increases along with his initial DEF. He gains <ct color=#2BAD00>60%</ct> of his initial DEF as ATK.",
+        "1": "When Ben launches a follow-up attack during his <ct color=#FFFFFF>EX Special Attack</ct>, all squad members gain a Shield of <ct color=#2BAD00>22.5%</ct> of his DEF +<ct color=#2BAD00>460</ct>, lasting for 30s."
+      },
+      {
+        "0": "Ben's initial ATK increases along with his initial DEF. He gains <ct color=#2BAD00>66%</ct> of his initial DEF as ATK.",
+        "1": "When Ben launches a follow-up attack during his <ct color=#FFFFFF>EX Special Attack</ct>, all squad members gain a Shield of <ct color=#2BAD00>25%</ct> of his DEF +<ct color=#2BAD00>500</ct>, lasting for 30s."
+      },
+      {
+        "0": "Ben's initial ATK increases along with his initial DEF. He gains <ct color=#2BAD00>72%</ct> of his initial DEF as ATK.",
+        "1": "When Ben launches a follow-up attack during his <ct color=#FFFFFF>EX Special Attack</ct>, all squad members gain a Shield of <ct color=#2BAD00>27.5%</ct> of his DEF +<ct color=#2BAD00>525</ct>, lasting for 30s."
+      },
+      {
+        "0": "Ben's initial ATK increases along with his initial DEF. He gains <ct color=#2BAD00>80%</ct> of his initial DEF as ATK.",
+        "1": "When Ben launches a follow-up attack during his <ct color=#FFFFFF>EX Special Attack</ct>, all squad members gain a Shield of <ct color=#2BAD00>30%</ct> of his DEF +<ct color=#2BAD00>550</ct>, lasting for 30s."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Contractual Agreement",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "While the Shield from <ct color=#FFFFFF>Core Passive: Guardian</ct> is in effect, the character's CRIT Rate is increased by 16%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Reacting Force",
+      "desc": "When successfully Blocking an enemy with Ben's <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the DMG dealt by the blocked enemy is reduced by 30% for 15s.",
+      "flavor": {
+        "0": "\"Every action has an equal and opposite reaction. So why do you have to bash things head-on?\"",
+        "1": "\"Looks like your calculations are off.\""
+      }
+    },
+    "2": {
+      "name": "Offense Through Defense",
+      "desc": "When successfully triggering a Block Counter during Ben's <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, inflict an additional 300% of Ben's DEF as DMG.",
+      "flavor": {
+        "0": "Unlike other bear Thirens, Ben remains patient when fighting.",
+        "1": "He believes if he keeps his defenses up, he can wait until the enemy reveals their weakness."
+      }
+    },
+    "3": {
+      "name": "Careful Accounting",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Financial responsibility demands mastering cost-efficiency and utilizing every available resource to enhance both the team and oneself."
+    },
+    "4": {
+      "name": "Agile Adaptation",
+      "desc": "When successfully blocking enemy DMG with Ben's invulnerable effect during his <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the following counter deals 30% more DMG.",
+      "flavor": {
+        "0": "Ben's professional accounting instincts let him adapt dynamically based on the situation.",
+        "1": "Whether dealing with accounts or enemies, it's important to achieve the best results at the lowest cost."
+      }
+    },
+    "5": {
+      "name": "Meticulous Detail",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Ben's keen eye doesn't miss a single error in statements. The same goes for combat, where he gets progressively stronger as he corrects mistakes."
+    },
+    "6": {
+      "name": "Wild Spirit",
+      "desc": "After launching an attack or follow-up attack during Ben's <ct color=#FFFFFF>EX Special Attack</ct>, Daze inflicted by <ct color=#FFFFFF>Basic Attacks</ct>, <ct color=#FFFFFF>Dash Attack</ct>, and <ct color=#FFFFFF>Dodge Counter</ct> is increased by 20%, lasting 12s.",
+      "flavor": {
+        "0": "Bear Thirens are different from canine Thirens.",
+        "1": "They can't be appeased with food alone.",
+        "2": "When they lose their temper, the only thing you can do is run for your life...",
+        "3": "—The discontinued \"Be a Good Neighbor! 100 Tips for Getting Along With Thirens\""
+      }
+    }
+  }
 }

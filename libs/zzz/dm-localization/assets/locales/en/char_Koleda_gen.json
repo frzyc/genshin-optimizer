@@ -1,3 +1,220 @@
 {
-  "name": "Koleda"
+  "name": "Koleda",
+  "fullName": "Koleda Belobog",
+  "basic": {
+    "BasicAttackSmashNBash": {
+      "name": "Basic Attack: Smash 'n' Bash",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 4 strikes, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "When Koleda has the <ct color=#FFFFFF>Furnace Fire</ct> effect, she can launch an enhanced <ct color=#FFFFFF>Basic Attack</ct> after the 2nd hit, consuming the <ct color=#FFFFFF>Furnace Fire</ct> effect and dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "3": "When Koleda and Ben are deployed together, executing an enhanced <ct color=#FFFFFF>Basic Attack</ct> will trigger a coordinated attack from both, further increasing the move's power;",
+        "4": "Koleda is invulnerable during the <ct color=#FFFFFF>Basic Attack's</ct> 4th hit and enhanced <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "Enhanced Basic Attack 1st-Hit ",
+        "Enhanced Basic Attack 2nd-Hit ",
+        "Enhanced Basic Attack 2nd-Hit Dmg Multiplier (Teamwork)",
+        "Enhanced Basic Attack 2nd-Hit  (Teamwork)"
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeWaitNSee": {
+      "name": "Dodge: Wait 'n' See",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackTremble": {
+      "name": "Dash Attack: Tremble!",
+      "desc": {
+        "0": "Press <IconNormal /> during a Dodge to activate:",
+        "1": "Strikes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterDontLookDownOnMe": {
+      "name": "Dodge Counter: Don't Look Down on Me",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Strikes enemies in front and creates an explosion, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackHammerTime": {
+      "name": "Special Attack: Hammer Time",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Strikes enemies in front and triggers an explosion, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "This skill launches faster and triggers an explosion when used after the 2nd or 4th hit of Koleda's <ct color=#FFFFFF>Basic Attack</ct> or enhanced <ct color=#FFFFFF>Basic Attack</ct>.",
+        "3": "When Koleda and Ben are both in your squad, and this skill is quickly launched after an enhanced <ct color=#FFFFFF>Basic Attack</ct>, they team up to launch a coordinated attack, further increasing the power of the skill.",
+        "4": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        "Strike ",
+        "Explosion ",
+        "Explosion  (Teamwork)"
+      ]
+    },
+    "EXSpecialAttackBoilingFurnace": {
+      "name": "EX Special Attack: Boiling Furnace",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Strikes enemies in front and triggers a powerful explosion, dealing massive <ct color=#FF5521>Fire DMG</ct>. Koleda also gains the <ct color=#FFFFFF>Furnace Fire</ct> effect.",
+        "2": "This skill activates faster and triggers an explosion when used after the 2nd or 4th hit of Koleda's <ct color=#FFFFFF>Basic Attack</ct> or enhanced <ct color=#FFFFFF>Basic Attack</ct>.",
+        "3": "When Koleda and Ben are both in your squad and this skill is quickly launched after an enhanced <ct color=#FFFFFF>Basic Attack</ct>, they team up to launch a coordinated attack, further increasing the power of the skill.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Strike ",
+        "Explosion ",
+        "Explosion  (Teamwork)",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackNaturalDisaster": {
+      "name": "Chain Attack: Natural Disaster",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful explosion on enemies in a large area, dealing massive <ct color=#FF5521>Fire DMG</ct> while also obtaining the <ct color=#FFFFFF>Furnace Fire</ct> effect.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateHammerquake": {
+      "name": "Ultimate: Hammerquake",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes a powerful explosion on enemies in a large area in front, dealing massive <ct color=#FF5521>Fire DMG</ct> while also obtaining the <ct color=#FFFFFF>Furnace Fire</ct> effect.",
+        "2": "Koleda and Ben can team up when fighting together to launch a coordinated attack, further increasing the power of the attack.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        " (Teamwork)"
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistComingThru": {
+      "name": "Quick Assist: Coming Thru!",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Strikes enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistProtectiveHammer": {
+      "name": "Defensive Assist: Protective Hammer",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpHammerBell": {
+      "name": "Assist Follow-Up: Hammer Bell",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Koleda charges and strikes enemies in front, dealing <ct color=#FF5521>Fire DMG</ct> and obtaining <ct color=#FFFFFF>Furnace Fire</ct> effect.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Demolition Hammer",
+    "desc": [
+      "When Koleda uses her <ct color=#FFFFFF>EX Special Attack</ct> or consumes <ct color=#FFFFFF>Furnace Fire</ct> to use an enhanced <ct color=#FFFFFF>Basic Attack</ct>, the Daze she deals increases by <ct color=#2BAD00>30%</ct>.",
+      "When Koleda uses her <ct color=#FFFFFF>EX Special Attack</ct> or consumes <ct color=#FFFFFF>Furnace Fire</ct> to use an enhanced <ct color=#FFFFFF>Basic Attack</ct>, the Daze she deals increases by <ct color=#2BAD00>35%</ct>.",
+      "When Koleda uses her <ct color=#FFFFFF>EX Special Attack</ct> or consumes <ct color=#FFFFFF>Furnace Fire</ct> to use an enhanced <ct color=#FFFFFF>Basic Attack</ct>, the Daze she deals increases by <ct color=#2BAD00>40%</ct>.",
+      "When Koleda uses her <ct color=#FFFFFF>EX Special Attack</ct> or consumes <ct color=#FFFFFF>Furnace Fire</ct> to use an enhanced <ct color=#FFFFFF>Basic Attack</ct>, the Daze she deals increases by <ct color=#2BAD00>45%</ct>.",
+      "When Koleda uses her <ct color=#FFFFFF>EX Special Attack</ct> or consumes <ct color=#FFFFFF>Furnace Fire</ct> to use an enhanced <ct color=#FFFFFF>Basic Attack</ct>, the Daze she deals increases by <ct color=#2BAD00>50%</ct>.",
+      "When Koleda uses her <ct color=#FFFFFF>EX Special Attack</ct> or consumes <ct color=#FFFFFF>Furnace Fire</ct> to use an enhanced <ct color=#FFFFFF>Basic Attack</ct>, the Daze she deals increases by <ct color=#2BAD00>55%</ct>.",
+      "When Koleda uses her <ct color=#FFFFFF>EX Special Attack</ct> or consumes <ct color=#FFFFFF>Furnace Fire</ct> to use an enhanced <ct color=#FFFFFF>Basic Attack</ct>, the Daze she deals increases by <ct color=#2BAD00>60%</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Belobog Management",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "When the explosion from Koleda's <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, it applies a debuff to the target. While the target is Stunned, all squad members' <ct color=#FFFFFF>Chain Attacks</ct> deal 35% more DMG to the target. This effect can stack up to 2 times and resets when the Stunned effect ends."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Beat of the Hammer",
+      "desc": "After the 2nd or 4th hit of Koleda's <ct color=#FFFFFF>Basic Attack</ct> or her enhanced <ct color=#FFFFFF>Basic Attack</ct>, quickly use a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct> to increase the Daze dealt by 15%.",
+      "flavor": "Her fiery temper is just a facade. In reality, Koleda's thoughts are quite intricate. For example, she knows when to swing her hammer for a more painful strike."
+    },
+    "2": {
+      "name": "Kinetic Recovery",
+      "desc": "When Koleda's <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, she recovers 60 Energy. Can trigger once every 45s.",
+      "flavor": {
+        "0": "Koleda believes perfect hammering has its own natural rhythm.",
+        "1": "It's like tapping a tambourine, with each hit building up the tempo of the next beat.",
+        "2": "Of course, it's hard to say how many taps her \"toys\" can endure."
+      }
+    },
+    "3": {
+      "name": "\"Mind Your Own!\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "As a qualified \"toy,\" you better not cause trouble when Koleda starts to get a feel for swinging her hammer. Just take the beating.",
+        "1": "—After all, what's the point of resisting?"
+      }
+    },
+    "4": {
+      "name": "Furnace's Glow",
+      "desc": "Koleda gains one stack of Charge (max 2 stacks) when consuming <ct color=#FFFFFF>Furnace Fire</ct> to use her Enhanced <ct color=#FFFFFF>Basic Attack</ct>. When her <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, she consumes all stacks of Charge to increase the attack's DMG by 18% per stack.",
+      "flavor": {
+        "0": "Koleda feels the flames of war as her hammer swings raise the surrounding temperature.",
+        "1": "She's now even more flammable and explosive than Ether."
+      }
+    },
+    "5": {
+      "name": "\"You Dare Underestimate Me?\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Koleda cares deeply about her role as a young leader potentially causing others to underestimate Belobog Heavy Industries. To compensate, she consistently trains diligently in secret."
+    },
+    "6": {
+      "name": "Saturated Blast",
+      "desc": "When <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct> triggers an explosion that hits an enemy, it deals additional DMG equal to 360% of Koleda's ATK.",
+      "flavor": {
+        "0": "There are two types of people that Koleda really hates:",
+        "1": "Stupid people, and hopelessly stupid people.",
+        "2": "Luckily for her, Belobog always has a good supply of strong Ether explosives — plenty to use on the stupid."
+      }
+    }
+  }
 }

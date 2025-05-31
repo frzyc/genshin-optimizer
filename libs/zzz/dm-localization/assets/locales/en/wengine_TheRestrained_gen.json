@@ -1,6 +1,10 @@
 {
   "name": "The Restrained",
-  "desc": "This special W-Engine has the capability to create extreme low temperatures. Its radiator opening was designed with an eerie animal teeth decoration and often drips condensation. After Lycaon's improvements, its rough appearance has become much more refined and elegant, and the opening is now utilized to store envelopes and other keepsakes.\n\n<ct color=#959595>\"Manners aren't a leash for wildness; it enhances it before it's set free.\" — Lycaon, speaking gently during a tea party</ct>",
+  "desc": {
+    "0": "This special W-Engine has the capability to create extreme low temperatures. Its radiator opening was designed with an eerie animal teeth decoration and often drips condensation. After Lycaon's improvements, its rough appearance has become much more refined and elegant, and the opening is now utilized to store envelopes and other keepsakes.",
+    "1": "",
+    "2": "<ct color=#959595>\"Manners aren't a leash for wildness; it enhances it before it's set free.\" — Lycaon, speaking gently during a tea party</ct>"
+  },
   "desc2": "Equip to increase Stun Agents' combat capabilities",
   "desc3": "A special W-Engine with a powerful temperature control system. Modified by Lycaon, it has the capability to quickly create extremely cold environments.",
   "phase": "Binding Chains",

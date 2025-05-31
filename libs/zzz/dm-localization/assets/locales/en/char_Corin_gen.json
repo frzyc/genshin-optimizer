@@ -1,3 +1,226 @@
 {
-  "name": "Corin"
+  "name": "Corin",
+  "fullName": "Corin Wickes",
+  "basic": {
+    "BasicAttackWipeout": {
+      "name": "Basic Attack: Wipeout",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 5 slashes, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Repeatedly press or hold the button during the 3rd and 5th hits to extend the chainsaw slash attack."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeShoo": {
+      "name": "Dodge: Shoo!",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackOopsyDaisy": {
+      "name": "Dash Attack: Oopsy-Daisy!",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Repeatedly press or hold the button to extend the chainsaw attack's duration."
+      },
+      "params": [
+        "Maximum "
+      ]
+    },
+    "DodgeCounterNope": {
+      "name": "Dodge Counter: Nope!",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Slashes enemies in front before detonating her chainsaw, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Repeatedly press or hold the button to extend the chainsaw slash attack.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackCleanSweep": {
+      "name": "Special Attack: Clean Sweep",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Unleashes a series of slashes upon enemies in front, before detonating the chainsaw, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Repeatedly press or hold the button to extend the chainsaw slash attack.",
+        "3": "Anti-Interrupt level is increased while using this skill, and DMG taken is reduced by 40%."
+      },
+      "params": [
+        "Spinning Slash ",
+        "Extended Slash Maximum ",
+        "Explosion "
+      ]
+    },
+    "EXSpecialAttackSkirtAlert": {
+      "name": "EX Special Attack: Skirt Alert",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Unleashes a series of powerful slashes upon enemies in front, before detonating the chainsaw, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Repeatedly press or hold the button to extend the chainsaw slash attack at the cost of Energy if the attack connects.",
+        "3": "Character is invulnerable during the spinning slash.",
+        "4": "Anti-Interrupt level is increased during the extended slash, and DMG taken is reduced by 40%."
+      },
+      "params": [
+        "Spinning Slash ",
+        "Extended Slash Maximum ",
+        "Explosion ",
+        "Spinning Slash Energy Cost",
+        "Extended Slash Maximum Energy Cost",
+        "Explosion Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackSorry": {
+      "name": "Chain Attack: Sorry...",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful slash at enemies in a small area, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Repeatedly press or hold the button to extend the chainsaw slash attack.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateVeryVerySorry": {
+      "name": "Ultimate: Very, Very Sorry!",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes a powerful slash at enemies in a small area, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Repeatedly press or hold the button to extend the chainsaw slash attack.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistEmergencyMeasures": {
+      "name": "Quick Assist: Emergency Measures",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Slashes enemies in front before detonating her chainsaw, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Repeatedly press or hold the button to extend the chainsaw slash attack.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistPPleaseAllowMe": {
+      "name": "Defensive Assist: P—Please Allow Me!",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpQuickSweep": {
+      "name": "Assist Follow-Up: Quick Sweep",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Unleash a series of slashes against enemies in front followed by an explosive chainsaw, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Repeatedly press or hold to extend the chainsaw slash attack.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Hyperfocus",
+    "desc": [
+      "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <ct color=#2BAD00>18.7%</ct>.",
+      "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <ct color=#2BAD00>21.8%</ct>.",
+      "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <ct color=#2BAD00>25%</ct>.",
+      "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <ct color=#2BAD00>28.1%</ct>.",
+      "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <ct color=#2BAD00>31.2%</ct>.",
+      "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <ct color=#2BAD00>34.3%</ct>.",
+      "After holding or tapping repeatedly, when Corin unleashes a continuous extended slash with her Chainsaw, the skill's DMG increases by <ct color=#2BAD00>37.5%</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Cleanup Assistance",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "Corin deals 35% more DMG to Stunned enemies."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Open Trauma",
+      "desc": "When Corin's <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, her DMG against the target increases by 12% for 15s.",
+      "flavor": {
+        "0": "\"The young mistress always said, if something's worth doing, it's worth focusing on.\"",
+        "1": "\"I've been practicing, and I can do it now!\"",
+        "2": "\"But... are you watching me...?\""
+      }
+    },
+    "2": {
+      "name": "Atomic Smash",
+      "desc": "When Corin's <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, the target's <ct color=#F0D12B>Physical RES</ct> is reduced by 0.5%, stacking up to 20 times and lasting 5s. The duration of each stack is calculated separately.",
+      "flavor": {
+        "0": "\"Sorry, Mr. or Ms. Ethereal!\"",
+        "1": "\"But I've got work to do... I really am sorry!\"",
+        "2": "Feeling guilty, Corin sincerely apologizes to the monster — as she wields her savage chainsaw, slicing through the enemies in her way."
+      }
+    },
+    "3": {
+      "name": "Amateur Maid",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "\"I—I'll do my best to become a good maid!\" Corin said, walking towards the Ethereals, chainsaw in hand."
+    },
+    "4": {
+      "name": "Battlefield Retainer",
+      "desc": "When Corin uses a <ct color=#FFFFFF>Quick Assist</ct>, <ct color=#FFFFFF>Defensive Assist</ct>, or <ct color=#FFFFFF>Chain Attack</ct>, she recovers 7.2 Energy. This effect can trigger once every 16s.",
+      "flavor": {
+        "0": "A diligent and serious young maid, Corin always puts her heart and soul into everything she does.",
+        "1": "Of course, that includes taking out enemies in combat."
+      }
+    },
+    "5": {
+      "name": "Special Ops Maid",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Uh... sorry, I'm so clumsy. I don't know how to make sure my cuts are even...\"",
+        "1": "—Said Corin as she looked down at the bits of Ethereal scattered across the ground."
+      }
+    },
+    "6": {
+      "name": "Accumulated Release",
+      "desc": {
+        "0": "When Corin's extended slash hits an enemy, she obtains a stack of Charge (max 40 stacks).",
+        "1": "During a <ct color=#FFFFFF>Dodge Counter</ct>, <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Quick Assist</ct>, or <ct color=#FFFFFF>Assist Follow-Up</ct>, when her chainsaw detonation hits an enemy, consumes all stacks of Charge. Each stack consumed causes the attack to deal an additional 3% of ATK as DMG."
+      },
+      "flavor": {
+        "0": "Corin knows that she isn't the most powerful of maids, nor the smartest. But she hopes to become the hardest working.",
+        "1": "She puts to good use everything she's ever learned."
+      }
+    }
+  }
 }

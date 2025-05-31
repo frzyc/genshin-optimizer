@@ -1,3 +1,221 @@
 {
-  "name": "Rina"
+  "name": "Rina",
+  "fullName": "Alexandrina Sebastiane",
+  "basic": {
+    "BasicAttackWhackTheDimwit": {
+      "name": "Basic Attack: Whack the Dimwit",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Order Drusilla and Anastella to attack up to 4 times, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Performing other actions with Rina during Drusilla and Anastella's attacks will not interrupt Rina's <ct color=#FFFFFF>Basic Attack</ct> combo count."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackShooTheFool": {
+      "name": "Basic Attack: Shoo the Fool",
+      "desc": {
+        "0": "Hold <IconNormal /> or <IconSpecial /> to activate:",
+        "1": "Calls back Drusilla and Anastella to swing them around for a ranged attack, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeDressAdjustment": {
+      "name": "Dodge: Dress Adjustment",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackSuddenSurprise": {
+      "name": "Dash Attack: Sudden Surprise",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Order Drusilla and Anastella to execute a piercing attack, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterBangbooCallback": {
+      "name": "Dodge Counter: Bangboo Callback",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Order Drusilla and Anastella to spin forward and trigger an explosion, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackBeatTheBlockhead": {
+      "name": "Special Attack: Beat the Blockhead",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Order Anastella to execute a downward smash, dealing <ct color=#2EB6FF>Electric DMG</ct>",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackDimwitDisappearingTrick": {
+      "name": "EX Special Attack: Dimwit Disappearing Trick",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Order Drusilla and Anastella to execute multiple downward smashes, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackCodeOfConduct": {
+      "name": "Chain Attack: Code of Conduct",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Order Drusilla and Anastella to push forward and generate a ball-shaped electrical field that deals massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "During this skill, Drusilla and Anastella are unable to perform <ct color=#FFFFFF>Basic Attacks</ct>, <ct color=#FFFFFF>Dash Attacks</ct>, <ct color=#FFFFFF>Special Attacks</ct>, and <ct color=#FFFFFF>EX Special Attacks</ct>, but can be recalled to Rina's side through <ct color=#FFFFFF>Basic Attack: Shoo the Fool</ct>.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateTheQueensAttendants": {
+      "name": "Ultimate: The Queen's Attendants",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Order Drusilla and Anastella to spin forward, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "During this skill, Drusilla and Anastella are unable to respond to <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct> commands, but can be recalled to Rina's side through <ct color=#FFFFFF>Basic Attack: Shoo the Fool</ct>.",
+        "3": "Upon activating this skill, the other squad members recover 10 Energy. The next character to switch in recovers an additional 20 Energy.",
+        "4": "Character is invulnerable while using this skill.",
+        "5": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistDupleMeterAllemande": {
+      "name": "Quick Assist: Duple Meter Allemande",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Order Drusilla and Anastella to spin forward and trigger an explosion, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EvasiveAssistTripleMeterCourante": {
+      "name": "Evasive Assist: Triple Meter Courante",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Dodges the enemy's attack and activates <ct color=#FFFFFF>Vital View</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "AssistFollowUpQuadrupleMeterGavotte": {
+      "name": "Assist Follow-Up: Quadruple Meter Gavotte",
+      "desc": {
+        "0": "Press <IconNormal /> after an <ct color=#FFFFFF>Evasive Assist</ct> to activate:",
+        "1": "Order Drusilla and Anastella to push forward and generate an electrical vortex, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Mini Destruction Partner",
+    "desc": [
+      "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <ct color=#2BAD00>6%</ct>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+      "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <ct color=#2BAD00>7.5%</ct>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+      "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <ct color=#2BAD00>9%</ct>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+      "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <ct color=#2BAD00>10.2%</ct>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+      "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <ct color=#2BAD00>10.8%</ct>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+      "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <ct color=#2BAD00>11.4%</ct>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+      "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <ct color=#2BAD00>12%</ct>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Banquet of Perfection",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "Increases the duration of <ct color=#2EB6FF>Shock</ct> inflicted on enemies by any character by 3s. When <ct color=#2EB6FF>Shocked</ct> enemies are on the field, all squad members' <ct color=#2EB6FF>Electric DMG</ct> increases by 10%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Dance Duet",
+      "desc": {
+        "0": "After being sent out to launch an attack, Drusilla and Anastella stay in place for an additional 5.5s before returning to Rina.",
+        "1": "The effect gained from <ct color=#FFFFFF>Core Passive: Mini Destruction Partner</ct> by characters within 10m is increased to 130% of the original value."
+      },
+      "flavor": {
+        "0": "\"Get your work done, or you're in for a beating!\" is how Drusilla tries to encourage everyone.",
+        "1": "\"Yeah, a beating!\" Anastella always chimes in."
+      }
+    },
+    "2": {
+      "name": "Master's Paragon",
+      "desc": "Upon entering combat or switching in, Rina's DMG increases by 15% for 12s. This effect can trigger once every 18s.",
+      "flavor": "\"It takes an excellent head maid to lead excellent maids, and an exemplary master to raise exemplary Bangboo.\" — Excerpt from Rina's speech at the \"Victoria Housekeeping Human Resource Management and Bangboo Training Insight Seminar.\""
+    },
+    "3": {
+      "name": "Head Maid's Specialty",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Rina always has the confidence to excel at anything and the ability to annihilate everything.",
+        "1": "However, when it comes to being in the mood to annihilate enemies, both her confidence and capability align."
+      }
+    },
+    "4": {
+      "name": "Needle and Hammer",
+      "desc": "Rina's Energy Regen increases by 0.5/s when both Drusilla and Anastella are deployed. The effect ends when Drusilla or Anastella returns to Rina.",
+      "flavor": {
+        "0": "Drusilla and Anastella can never agree on anything.",
+        "1": "\"Beating up the dummy in front\" is an exception."
+      }
+    },
+    "5": {
+      "name": "Head Maid Perfectionist",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Rina\" means perfection in the Bangboo language.",
+        "1": "Perfectionism is the number one rule in the Victoria Housekeeping handbook.",
+        "2": "And Rina has her own criteria for judging \"perfection.\""
+      }
+    },
+    "6": {
+      "name": "Stormy Night's Fright",
+      "desc": "When an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, the entire squad's <ct color=#2EB6FF>Electric DMG</ct> is increased by 15% for 8s.",
+      "flavor": {
+        "0": "Thunder rumbles in the old castle on a rainy night. The depths of the long corridors are filled with eerie shadows.",
+        "1": "Fear circuits overloaded, the filming of a thriller commences."
+      }
+    }
+  }
 }

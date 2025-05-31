@@ -1,6 +1,10 @@
 {
   "name": "Big Cylinder",
-  "desc": "This super-powerful support W-Engine, into which Ben installed extra heavy oil cylinders to keep it growling along, can even provide sufficient power for heavy-duty machinery. Despite its weight being so massive that ordinary people cannot lift it, for Ben, it's the perfect counterweight ball for his concrete pillar.\n\n<ct color=#959595>\"Don't worry. I've calculated the counterweight position and impact resistance factor down to four decimal places. It won't impact weapon performance.\" — Ben, before taking out his notebook to check over the calculations yet again</ct>",
+  "desc": {
+    "0": "This super-powerful support W-Engine, into which Ben installed extra heavy oil cylinders to keep it growling along, can even provide sufficient power for heavy-duty machinery. Despite its weight being so massive that ordinary people cannot lift it, for Ben, it's the perfect counterweight ball for his concrete pillar.",
+    "1": "",
+    "2": "<ct color=#959595>\"Don't worry. I've calculated the counterweight position and impact resistance factor down to four decimal places. It won't impact weapon performance.\" — Ben, before taking out his notebook to check over the calculations yet again</ct>"
+  },
   "desc2": "Equip to increase Defense Agents' combat capabilities",
   "desc3": "A powerful protection-type W-Engine, characterized by thick oil cylinders that ceaselessly roar inside it. It can provide sufficient power for heavy machinery.",
   "phase": "Ten Ton Top",

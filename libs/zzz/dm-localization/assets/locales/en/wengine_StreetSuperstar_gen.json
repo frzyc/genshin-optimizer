@@ -1,6 +1,9 @@
 {
   "name": "Street Superstar",
-  "desc": "A custom-made W-Engine designed for street music lovers. It sacrifices cooling components to make space for high-end speaker modules, ensuring your fans, both Ethereal and human, hear your every word.\n——From the streets to the Hollows, superstars are never short of flowers and applause. The bars they spit are so flaming hot, they add the perfect heat to any battlefield.",
+  "desc": {
+    "0": "A custom-made W-Engine designed for street music lovers. It sacrifices cooling components to make space for high-end speaker modules, ensuring your fans, both Ethereal and human, hear your every word.",
+    "1": "——From the streets to the Hollows, superstars are never short of flowers and applause. The bars they spit are so flaming hot, they add the perfect heat to any battlefield."
+  },
   "desc2": "Equip to increase Attack Agents' combat capabilities",
   "desc3": "A custom-made W-Engine designed for urban music lovers. It sacrifices heat dissipation components for improved sound quality.",
   "phase": "Flaming Bars",

@@ -1,6 +1,10 @@
 {
   "name": "Housekeeper",
-  "desc": "An enhanced W-Engine with a high rotation speed. Corin has integrated its shaft portion with a chainsaw to provide additional cutting power for her \"cleaning\" work. To ensure that her \"cleaning\" goes smoothly and to minimize the pain inflicted on her target, she has thoughtfully increased the rotation speed to the maximum.\n\n<ct color=#959595>\"Um... Don't worry, it won't hurt! Well... I mean, it will only hurt for a moment, and then it won't hurt anymore!\" — Corin, attempting to comfort her opponent before attacking</ct>",
+  "desc": {
+    "0": "An enhanced W-Engine with a high rotation speed. Corin has integrated its shaft portion with a chainsaw to provide additional cutting power for her \"cleaning\" work. To ensure that her \"cleaning\" goes smoothly and to minimize the pain inflicted on her target, she has thoughtfully increased the rotation speed to the maximum.",
+    "1": "",
+    "2": "<ct color=#959595>\"Um... Don't worry, it won't hurt! Well... I mean, it will only hurt for a moment, and then it won't hurt anymore!\" — Corin, attempting to comfort her opponent before attacking</ct>"
+  },
   "desc2": "Equip to increase Attack Agents' combat capabilities",
   "desc3": "An enhanced W-Engine with a high rotation speed. A chainsaw has been integrated into its shaft. This model is often used by Corin.",
   "phase": "Safe Household Saw",

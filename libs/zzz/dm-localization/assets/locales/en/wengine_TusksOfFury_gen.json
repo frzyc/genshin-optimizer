@@ -1,6 +1,10 @@
 {
   "name": "Tusks of Fury",
-  "desc": "A multi-functional W- Engine specially designed with a motorcycle tire as the foundation. It boasts rapid speed, ferocious tearing power, solid defense, unexpectedly low energy consumption, and a domineering appearance. Apparently, this was initially just a toy that Big Daddy made for Caesar to play with, but every time Caesar played with it, it would end up in tatters. As a result, Big Daddy spent years reinforcing and modifying it over a hundred times, eventually creating this superb piece of equipment that can function as a weapon, shield, wheel, and even a light source.\n\n<ct color=#959595>\"It was originally supposed to also function as a piano, with keys embedded around the edge of the tire! But after a few tries, it didn't work out well. After spinning it a few times, I couldn't tell the correct notes apart, so I had to dismantle it... Fortunately, it can still be used as a fan when it gets hot.\" — Caesar, playfully flicking the W-Engine tire with her finger, whipping up a gust of wind.</ct>",
+  "desc": {
+    "0": "A multi-functional W- Engine specially designed with a motorcycle tire as the foundation. It boasts rapid speed, ferocious tearing power, solid defense, unexpectedly low energy consumption, and a domineering appearance. Apparently, this was initially just a toy that Big Daddy made for Caesar to play with, but every time Caesar played with it, it would end up in tatters. As a result, Big Daddy spent years reinforcing and modifying it over a hundred times, eventually creating this superb piece of equipment that can function as a weapon, shield, wheel, and even a light source.",
+    "1": "",
+    "2": "<ct color=#959595>\"It was originally supposed to also function as a piano, with keys embedded around the edge of the tire! But after a few tries, it didn't work out well. After spinning it a few times, I couldn't tell the correct notes apart, so I had to dismantle it... Fortunately, it can still be used as a fan when it gets hot.\" — Caesar, playfully flicking the W-Engine tire with her finger, whipping up a gust of wind.</ct>"
+  },
   "desc2": "Equip to increase Defense Agents' combat capabilities",
   "desc3": "A versatile W-Engine based on a motorcycle tire that Big Daddy made for Caesar.",
   "phase": "Invincible Rider",

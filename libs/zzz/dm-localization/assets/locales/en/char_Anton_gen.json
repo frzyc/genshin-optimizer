@@ -1,3 +1,252 @@
 {
-  "name": "Anton"
+  "name": "Anton",
+  "fullName": "Anton Ivanov",
+  "basic": {
+    "BasicAttackEnthusiasticDrills": {
+      "name": "Basic Attack: Enthusiastic Drills",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 4 mixed attacks in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "The 4th hit is a <ct color=#FFFFFF>Piledriver Attack</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackEnthusiasticDrillsBurstMode": {
+      "name": "Basic Attack: Enthusiastic Drills (Burst Mode)",
+      "desc": {
+        "0": "Press <IconNormal /> while Anton is in <ct color=#FFFFFF>Burst Mode</ct> to activate:",
+        "1": "Unleashes up to 3 mixed attacks in front, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "During the 2nd <ct color=#FFFFFF>Drill Attack</ct> and 3rd <ct color=#FFFFFF>Piledriver Attack</ct>, press repeatedly or hold <IconNormal /> to extend the skill duration."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeLetsMove": {
+      "name": "Dodge: Let's Move",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackFireWithFire": {
+      "name": "Dash Attack: Fire With Fire",
+      "desc": {
+        "0": "Press <IconNormal /> during a Dodge to activate:",
+        "1": "Rams into enemies in front of him, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterRetaliation": {
+      "name": "Dodge Counter: Retaliation",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Continuously strikes enemies in front with heavy punches, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterOverloadDrillBurstMode": {
+      "name": "Dodge Counter: Overload Drill (Burst Mode)",
+      "desc": {
+        "0": "While in <ct color=#FFFFFF>Burst Mode</ct>, press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Launches a <ct color=#FFFFFF>Drill Attack</ct> at enemies in front of him, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable during the attack."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSpinBro": {
+      "name": "Special Attack: Spin, Bro!",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Unleashes a <ct color=#FFFFFF>Piledriver Attack</ct> against enemies in a line in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackSmashTheHorizonBro": {
+      "name": "EX Special Attack: Smash the Horizon, Bro!",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Launches several <ct color=#FFFFFF>Piledriver Attacks</ct> at enemies in a line in front of him, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "Anton enters <ct color=#FFFFFF>Burst Mode</ct> after using this skill. When in <ct color=#FFFFFF>Burst Mode</ct>, Anton's attacks become more powerful, dealing massive <ct color=#2EB6FF>Electric DMG</ct> while continually consuming Energy upon hitting an enemy. Burst Mode remains active until his Energy is depleted."
+      },
+      "params": [
+        "",
+        "Energy Cost to Use"
+      ]
+    },
+    "SpecialAttackExplosiveDrillBurstMode": {
+      "name": "Special Attack: Explosive Drill (Burst Mode)",
+      "desc": {
+        "0": "Press <IconSpecial /> while in <ct color=#FFFFFF>Burst Mode</ct> to activate:",
+        "1": "Launches a <ct color=#FFFFFF>Piledriver Attack</ct> at enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackGoGoGo": {
+      "name": "Chain Attack: Go Go Go!",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a <ct color=#FFFFFF>Piledriver Attack</ct> onto the ground in front of him over a large area, dealing massive <ct color=#2EB6FF>Electric DMG</ct> to enemies within range.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateGoGoGoGoGo": {
+      "name": "Ultimate: Go Go Go Go Go!",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes a <ct color=#FFFFFF>Piledriver Attack</ct> onto the ground in front of him over a large area, dealing massive <ct color=#2EB6FF>Electric DMG</ct> to enemies within range.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistShoulderToShoulder": {
+      "name": "Quick Assist: Shoulder-To-Shoulder",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Continuously strikes enemies in front of him with heavy punches, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "QuickAssistProtectiveDrillBurstMode": {
+      "name": "Quick Assist: Protective Drill (Burst Mode)",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Attacks enemies in front with a <ct color=#FFFFFF>Drill Attack</ct>, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable during the attack."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistIronWrist": {
+      "name": "Defensive Assist: Iron Wrist",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpLimitBurst": {
+      "name": "Assist Follow-Up: Limit Burst",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Launches a <ct color=#FFFFFF>Drill Attack</ct> that ends in a <ct color=#FFFFFF>Piledriver Attack</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Brothers in Arms!",
+    "desc": [
+      "When Anton uses his <ct color=#FFFFFF>Piledriver Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>12%</ct> and when he uses his <ct color=#FFFFFF>Drill Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>20%</ct>.",
+      "When Anton uses his <ct color=#FFFFFF>Piledriver Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>14%</ct> and when he uses his <ct color=#FFFFFF>Drill Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>23.3%</ct>.",
+      "When Anton uses his <ct color=#FFFFFF>Piledriver Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>16%</ct> and when he uses his <ct color=#FFFFFF>Drill Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>26.6%</ct>.",
+      "When Anton uses his <ct color=#FFFFFF>Piledriver Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>18%</ct> and when he uses his <ct color=#FFFFFF>Drill Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>30%</ct>.",
+      "When Anton uses his <ct color=#FFFFFF>Piledriver Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>20%</ct> and when he uses his <ct color=#FFFFFF>Drill Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>33.3%</ct>.",
+      "When Anton uses his <ct color=#FFFFFF>Piledriver Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>22%</ct> and when he uses his <ct color=#FFFFFF>Drill Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>36.6%</ct>.",
+      "When Anton uses his <ct color=#FFFFFF>Piledriver Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>24%</ct> and when he uses his <ct color=#FFFFFF>Drill Attack</ct>, the skill's DMG is increased by <ct color=#2BAD00>40%</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Teamwork",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "While Anton is in <ct color=#FFFFFF>Burst Mode</ct>, for every 4 critical hits, the next attack hitting <ct color=#2EB6FF>Shocked</ct> enemies triggers an additional bout of <ct color=#2EB6FF>Shock</ct> DMG at 45% of the original DMG. This effect can trigger once every 0.5s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Warm-Up Exercises",
+      "desc": "When <ct color=#FFFFFF>Drill Attack</ct> hits an enemy, Anton gains additional Energy, up to a maximum of 5 Energy per skill use.",
+      "flavor": {
+        "0": "\"Are you awake? Get spinning, bro!\"",
+        "1": "\"Try and keep up. It's time to do our stretches!\""
+      }
+    },
+    "2": {
+      "name": "State of Flow",
+      "desc": "When Anton uses his <ct color=#FFFFFF>EX Special Attack</ct> and enters <ct color=#FFFFFF>Burst Mode</ct>, he gains a Shield that equals to 7.5% of his Max HP. While in <ct color=#FFFFFF>Burst Mode</ct>, entering combat or switching in reapplies the Shield effect. This effect can trigger once every 15s. The Shield dissipates when <ct color=#FFFFFF>Burst Mode</ct> ends.",
+      "flavor": {
+        "0": "After arduous training, a few lucky individuals will display exceptional vigor and perform above their usual level during high-intensity activities, entering a state of flow commonly known as \"being in the zone.\"",
+        "1": "Are you ready to get moving and enter the zone?",
+        "2": "— Nitro-Fuel's exclusive program \"Good Morning, Zealous Office Workers!\""
+      }
+    },
+    "3": {
+      "name": "Rotational Training",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Knowing a bit of everything may seem underwhelming, but in a complex and ever-changing Hollow worksite, having a wide skillset can present an opportunity to overcome difficulties."
+    },
+    "4": {
+      "name": "Everyone Get Fired Up!",
+      "desc": "When Anton uses a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, all squad members' CRIT Rate increases by 10% for 12s.",
+      "flavor": {
+        "0": "\"Find your rhythm, and let's get moving!\"",
+        "1": "When Anton starts to get serious, everyone becomes more nimble.",
+        "2": "They have to keep up or else they will be training alone the next day."
+      }
+    },
+    "5": {
+      "name": "Jack of All Trades",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Knowing a bit of everything may seem underwhelming, but if you are resolute enough to change from \"knowing a bit\" to \"being excellent,\" then you become omnipotent!"
+    },
+    "6": {
+      "name": "Break the Limit",
+      "desc": "When Anton's <ct color=#FFFFFF>Piledriver Attack</ct> triggers a critical hit, his <ct color=#FFFFFF>Basic Attack: Enthusiastic Drills (Burst Mode)</ct> and <ct color=#FFFFFF>Dodge Counter: Overload Drill (Burst Mode)</ct> deal 4% more DMG for 30s, stacking up to 6 times. Repeated triggers reset the duration.",
+      "flavor": {
+        "0": "\"Yeah bro, can you feel the burn?\"",
+        "1": "Whenever Anton wants to exceed his limits,",
+        "2": "his \"bro\" starts spinning at an astonishing pace, its buzzing echoing Anton's resolution."
+      }
+    }
+  }
 }

@@ -1,14 +1,33 @@
 {
   "name": "Roaring Ride",
-  "desc": "This energy W-Engine, modded from spare parts of a truck's engine, converts the original cylinder into an energy storage unit, which is highly advantageous. It placed first in the internal Leaps and Bounds competition, surpassing many heavy-duty motorbikes and even a truck driven by Piper herself.\n\n<ct color=#959595>\"Too bad there's no way to carry cargo... Maybe we can hang it on the tusks?\" — Piper, top-notch logistics driver</ct>",
+  "desc": {
+    "0": "This energy W-Engine, modded from spare parts of a truck's engine, converts the original cylinder into an energy storage unit, which is highly advantageous. It placed first in the internal Leaps and Bounds competition, surpassing many heavy-duty motorbikes and even a truck driven by Piper herself.",
+    "1": "",
+    "2": "<ct color=#959595>\"Too bad there's no way to carry cargo... Maybe we can hang it on the tusks?\" — Piper, top-notch logistics driver</ct>"
+  },
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
   "desc3": "An energy W-Engine modded from spare parts of a truck's engine. It converts the original cylinder into an energy storage unit, which is highly advantageous.",
   "phase": "Collision Potential",
   "phaseDescs": [
-    "When <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <ct color=#2BAD00>8%</ct>, increases the equipper's Anomaly Proficiency by <ct color=#2BAD00>40</ct>, or increases the equipper's Anomaly Buildup Rate by <ct color=#2BAD00>25%</ct>.",
-    "When <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <ct color=#2BAD00>9.2%</ct>, increases the equipper's Anomaly Proficiency by <ct color=#2BAD00>46</ct>, or increases the equipper's Anomaly Buildup Rate by <ct color=#2BAD00>28%</ct>.",
-    "When <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <ct color=#2BAD00>10.4%</ct>, increases the equipper's Anomaly Proficiency by <ct color=#2BAD00>52</ct>, or increases the equipper's Anomaly Buildup Rate by <ct color=#2BAD00>32%</ct>.",
-    "When <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <ct color=#2BAD00>11.6%</ct>, increases the equipper's Anomaly Proficiency by <ct color=#2BAD00>58</ct>, or increases the equipper's Anomaly Buildup Rate by <ct color=#2BAD00>36%</ct>.",
-    "When <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <ct color=#2BAD00>12.8%</ct>, increases the equipper's Anomaly Proficiency by <ct color=#2BAD00>64</ct>, or increases the equipper's Anomaly Buildup Rate by <ct color=#2BAD00>40%</ct>."
+    {
+      "0": "When <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:",
+      "1": "Increases the equipper's ATK by <ct color=#2BAD00>8%</ct>, increases the equipper's Anomaly Proficiency by <ct color=#2BAD00>40</ct>, or increases the equipper's Anomaly Buildup Rate by <ct color=#2BAD00>25%</ct>."
+    },
+    {
+      "0": "When <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:",
+      "1": "Increases the equipper's ATK by <ct color=#2BAD00>9.2%</ct>, increases the equipper's Anomaly Proficiency by <ct color=#2BAD00>46</ct>, or increases the equipper's Anomaly Buildup Rate by <ct color=#2BAD00>28%</ct>."
+    },
+    {
+      "0": "When <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:",
+      "1": "Increases the equipper's ATK by <ct color=#2BAD00>10.4%</ct>, increases the equipper's Anomaly Proficiency by <ct color=#2BAD00>52</ct>, or increases the equipper's Anomaly Buildup Rate by <ct color=#2BAD00>32%</ct>."
+    },
+    {
+      "0": "When <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:",
+      "1": "Increases the equipper's ATK by <ct color=#2BAD00>11.6%</ct>, increases the equipper's Anomaly Proficiency by <ct color=#2BAD00>58</ct>, or increases the equipper's Anomaly Buildup Rate by <ct color=#2BAD00>36%</ct>."
+    },
+    {
+      "0": "When <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:",
+      "1": "Increases the equipper's ATK by <ct color=#2BAD00>12.8%</ct>, increases the equipper's Anomaly Proficiency by <ct color=#2BAD00>64</ct>, or increases the equipper's Anomaly Buildup Rate by <ct color=#2BAD00>40%</ct>."
+    }
   ]
 }
