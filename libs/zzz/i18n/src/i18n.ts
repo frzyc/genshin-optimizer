@@ -60,7 +60,8 @@ i18n
       loadPath: './assets/locales/{{lng}}/{{ns}}.json',
     },
     interpolation: {
-      escapeValue: false, //react does interlopation already
+      escapeValue: false, // react does interlopation already
+      skipOnVariables: false, // Enables passing nested interpolation
     },
   })
 
