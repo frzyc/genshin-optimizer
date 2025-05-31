@@ -1140,24 +1140,23 @@ export const conditionals = {
     },
   },
   ZhuYuan: {
-    boolConditional: {
+    ex_chain_ult_used: {
       sheet: 'ZhuYuan',
-      name: 'boolConditional',
+      name: 'ex_chain_ult_used',
       type: 'bool',
     },
-    listConditional: {
+    shotshells_hit: {
       sheet: 'ZhuYuan',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ZhuYuan',
-      name: 'numConditional',
+      name: 'shotshells_hit',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 5,
+    },
+    suppresive_mode: {
+      sheet: 'ZhuYuan',
+      name: 'suppresive_mode',
+      type: 'bool',
     },
   },
 } as const
@@ -29536,6 +29535,19 @@ export const formulas = {
         name: 'dazeInst',
       },
     },
+    m6_ether_afterglow: {
+      sheet: 'ZhuYuan',
+      name: 'm6_ether_afterglow',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'ZhuYuan',
+        attribute: 'ether',
+        damageType1: 'elemental',
+        name: 'm6_ether_afterglow',
+      },
+    },
     standardDmgInst: {
       sheet: 'ZhuYuan',
       name: 'standardDmgInst',
@@ -32581,37 +32593,60 @@ export const buffs = {
     },
   },
   ZhuYuan: {
-    enemy_defRed_: {
+    ability_crit_: {
       sheet: 'ZhuYuan',
-      name: 'enemy_defRed_',
+      name: 'ability_crit_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'defRed_',
+        qt: 'combat',
+        q: 'crit_',
         sheet: 'ZhuYuan',
-        name: 'enemy_defRed_',
+        name: 'ability_crit_',
       },
     },
-    m6_dmg_: {
+    core_dmg_: {
       sheet: 'ZhuYuan',
-      name: 'm6_dmg_',
+      name: 'core_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'ZhuYuan',
-        name: 'm6_dmg_',
+        name: 'core_dmg_',
       },
     },
-    team_dmg_: {
+    m2_basic_dash_ether_dmg_: {
       sheet: 'ZhuYuan',
-      name: 'team_dmg_',
+      name: 'm2_basic_dash_ether_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'ZhuYuan',
-        name: 'team_dmg_',
+        name: 'm2_basic_dash_ether_dmg_',
+      },
+    },
+    m2_dmg_red_: {
+      sheet: 'ZhuYuan',
+      name: 'm2_dmg_red_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_red_',
+        sheet: 'ZhuYuan',
+        name: 'm2_dmg_red_',
+      },
+    },
+    m4_basic_dash_ether_res_ign_: {
+      sheet: 'ZhuYuan',
+      name: 'm4_basic_dash_ether_res_ign_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'resIgn_',
+        sheet: 'ZhuYuan',
+        attribute: 'ether',
+        name: 'm4_basic_dash_ether_res_ign_',
       },
     },
   },
