@@ -1,0 +1,6 @@
+{
+  "coreCond": "Launch a Basic Attack: Thunderbolt, Special Attack, or EX Special Attack after the 3rd hit of Anby's Basic Attack",
+  "core_dazeInc_": "Basic Attack: Thunderbolt, Special Attack, or EX Special Attack Daze Increase",
+  "m1Cond": "When the 4th hit of Anby's Basic Attack hits an enemy",
+  "m6Cond": "Stack of Charge consumed"
+}
