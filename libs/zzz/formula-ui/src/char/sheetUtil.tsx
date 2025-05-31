@@ -54,7 +54,7 @@ export function createBaseSheet(
 // Creates proper field with automatic title for a given buff
 export function fieldForBuff(buff: IFormulaData<Tag>) {
   return {
-    title: <TagDisplay tag={buff.tag} />,
+    title: <TagDisplay tag={buff.tag} preventRecursion />,
     fieldRef: buff.tag,
   }
 }
