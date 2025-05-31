@@ -29584,8 +29584,9 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'Anby',
+        damageType1: 'basic',
         name: 'm2_stunned_basic_dmg_',
       },
     },
@@ -29597,6 +29598,7 @@ export const buffs = {
         qt: 'combat',
         q: 'dazeInc_',
         sheet: 'Anby',
+        damageType1: 'exSpecial',
         name: 'm2_unstunned_ex_dazeInc_',
       },
     },
