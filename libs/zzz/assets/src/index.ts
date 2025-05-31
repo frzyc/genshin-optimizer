@@ -4,13 +4,13 @@ import type {
   DiscSetKey,
   FactionKey,
   Raritykey,
-  SkillKey,
   SpecialityKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { StaticImageData } from 'next/image'
 import commonImages from './common'
 import faction from './common/faction'
+import mindscape from './common/mindscape'
 import phases from './common/phases'
 import rarity from './common/rarity'
 import skill from './common/skill'
@@ -63,10 +63,14 @@ export function factionDefIcon(factionKey: FactionKey) {
   return factionKey ? faction[factionKey] : ''
 }
 
-export function commonDefIcon(key: SkillKey | 'core') {
+export function commonDefIcon(key: keyof typeof skill) {
   return key ? skill[key] : ''
 }
 
 export function commonDefImages(key: CommonImagesKey) {
   return key ? commonImages[key] : ''
+}
+
+export function mindscapeDefIcon(ms: 1 | 2 | 3 | 4 | 5 | 6) {
+  return ms ? mindscape[`m${ms}`] : ''
 }
