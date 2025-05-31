@@ -32,11 +32,13 @@ const core_after3rdBasic_dazeInc_ = ownBuff.combat.dazeInc_.add(
   )
 )
 
-const m2_stunned_basic_dmg_ = ownBuff.combat.common_dmg_.add(
-  cmpEq(enemy.common.isStunned, 1, dm.m2.dmg_)
+const m2_stunned_basic_dmg_ = ownBuff.combat.dmg_.addWithDmgType(
+  'basic',
+  cmpGE(char.mindscape, 2, cmpEq(enemy.common.isStunned, 1, dm.m2.dmg_))
 )
-const m2_unstunned_ex_dazeInc_ = ownBuff.combat.dazeInc_.add(
-  cmpNE(enemy.common.isStunned, 1, dm.m2.daze_)
+const m2_unstunned_ex_dazeInc_ = ownBuff.combat.dazeInc_.addWithDmgType(
+  'exSpecial',
+  cmpGE(char.mindscape, 2, cmpNE(enemy.common.isStunned, 1, dm.m2.daze_))
 )
 
 const sheet = register(
@@ -83,17 +85,7 @@ const sheet = register(
       'atk',
       undefined,
       core_after3rdBasic_dazeInc_,
-      m2_stunned_basic_dmg_
-    ),
-    dmgDazeAndAnomOverride(
-      dm,
-      'special',
-      'EXSpecialAttackLightningBolt',
-      0,
-      { ...baseTag, damageType1: 'exSpecial' },
-      'atk',
-      undefined,
-      m2_unstunned_ex_dazeInc_
+      ...m2_stunned_basic_dmg_
     )
   ),
 
