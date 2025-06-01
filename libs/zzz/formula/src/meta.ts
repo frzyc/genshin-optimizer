@@ -32621,8 +32621,9 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'ZhuYuan',
+        attribute: 'ether',
         name: 'm2_basic_dash_ether_dmg_',
       },
     },

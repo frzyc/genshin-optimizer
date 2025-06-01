@@ -41,7 +41,7 @@ const core_dmg_ = ownBuff.combat.common_dmg_.add(
   )
 )
 
-const m2_basic_dash_ether_dmg_ = ownBuff.combat.common_dmg_.add(
+const m2_basic_dash_ether_dmg_ = ownBuff.combat.dmg_.ether.add(
   cmpGE(char.mindscape, 2, prod(shotshells_hit, dm.m2.basic_dash_ether_dmg_))
 )
 
@@ -183,6 +183,8 @@ const sheet = register(
       m4_basic_dash_ether_res_ign_
     )
   ),
+
+  // TODO: override the assist followup
 
   // Mindscape 6 custom damage
   ...customDmg(
