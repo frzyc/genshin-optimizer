@@ -1,6 +1,7 @@
 import {
   cmpEq,
   cmpGE,
+  min,
   prod,
   subscript,
   sum,
@@ -16,6 +17,7 @@ import {
   ownBuff,
   register,
   registerBuff,
+  team,
 } from '../../util'
 import {
   dmgDazeAndAnomOverride,
@@ -197,7 +199,20 @@ const sheet = register(
   registerBuff('core_dmg_', core_dmg_, undefined, undefined, false),
   registerBuff(
     'ability_crit_',
-    ownBuff.combat.crit_.add(ex_chain_ult_used.ifOn(dm.ability.crit_))
+    ownBuff.combat.crit_.add(
+      prod(
+        min(
+          sum(
+            team.common.count.withSpecialty('support'),
+            team.common.count.withFaction(
+              'CriminalInvestigationSpecialResponseTeam'
+            )
+          ),
+          1
+        ),
+        ex_chain_ult_used.ifOn(dm.ability.crit_)
+      )
+    )
   ),
   registerBuff(
     'm2_dmg_red_',
