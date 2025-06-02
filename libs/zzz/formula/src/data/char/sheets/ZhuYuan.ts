@@ -51,7 +51,7 @@ const m4_basic_dash_ether_res_ign_ = ownBuff.combat.resIgn_.ether.add(
 
 const sheet = register(
   key,
-  // Handles base stats, StatBoosts and Eidolon 3 + 5
+  // Handles base stats, core stats and Mindscapes 3 + 5
   entriesForChar(data_gen),
 
   // Formulas
@@ -190,7 +190,7 @@ const sheet = register(
   ...customDmg(
     'm6_ether_afterglow',
     { ...baseTag, damageType1: 'elemental' },
-    prod(own.final.atk, cmpGE(char.mindscape, 6, dm.m6.dmg))
+    cmpGE(char.mindscape, 6, prod(own.final.atk, dm.m6.dmg))
   ),
 
   // Buffs
