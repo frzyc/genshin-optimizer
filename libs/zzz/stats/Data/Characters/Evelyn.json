@@ -238,7 +238,19 @@
           "AttributeInfliction": 236.7
         }
       ],
-      "UltimateLunaluxGarroteShadow": []
+      "UltimateLunaluxGarroteShadow": [
+        {
+          "DamagePercentage": 19.885,
+          "DamagePercentageGrowth": 1.808,
+          "StunRatio": 2.604,
+          "StunRatioGrowth": 0.119,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 236.7
+        }
+      ]
     },
     "assist": {
       "QuickAssistFierceBlade": [

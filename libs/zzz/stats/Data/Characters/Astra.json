@@ -93,8 +93,32 @@
           "AttributeInfliction": 17.59
         }
       ],
-      "BasicAttackChorus": [],
-      "BasicAttackFinale": []
+      "BasicAttackChorus": [
+        {
+          "DamagePercentage": 0.55,
+          "DamagePercentageGrowth": 0.05,
+          "StunRatio": 0.484,
+          "StunRatioGrowth": 0.022,
+          "SpRecovery": 63.4,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 484,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 17.59
+        }
+      ],
+      "BasicAttackFinale": [
+        {
+          "DamagePercentage": 0.55,
+          "DamagePercentageGrowth": 0.05,
+          "StunRatio": 0.484,
+          "StunRatioGrowth": 0.022,
+          "SpRecovery": 63.4,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 484,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 17.59
+        }
+      ]
     },
     "dodge": {
       "DodgeMiniWaltz": [],

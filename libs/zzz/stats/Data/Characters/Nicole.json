@@ -104,6 +104,17 @@
       ],
       "BasicAttackDoAsIPlease": [
         {
+          "DamagePercentage": 0.389,
+          "DamagePercentageGrowth": 0.036,
+          "StunRatio": 0.195,
+          "StunRatioGrowth": 0.009,
+          "SpRecovery": 70,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 536.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
           "DamagePercentage": 0.494,
           "DamagePercentageGrowth": 0.045,
           "StunRatio": 0.209,
@@ -115,6 +126,17 @@
           "AttributeInfliction": 0
         },
         {
+          "DamagePercentage": 0.353,
+          "DamagePercentageGrowth": 0.033,
+          "StunRatio": 0.29,
+          "StunRatioGrowth": 0.014,
+          "SpRecovery": 104.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 797.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
           "DamagePercentage": 0.658,
           "DamagePercentageGrowth": 0.06,
           "StunRatio": 0.278,
@@ -122,6 +144,17 @@
           "SpRecovery": 104.1,
           "SpRecoveryGrowth": 0,
           "FeverRecovery": 797.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 1.243,
+          "DamagePercentageGrowth": 0.113,
+          "StunRatio": 1.043,
+          "StunRatioGrowth": 0.048,
+          "SpRecovery": 375.4,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2868.25,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 0
         },
@@ -200,6 +233,17 @@
         }
       ],
       "DashAttackDoAsIPlease": [
+        {
+          "DamagePercentage": 0.412,
+          "DamagePercentageGrowth": 0.038,
+          "StunRatio": 0.29,
+          "StunRatioGrowth": 0.014,
+          "SpRecovery": 102,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 781,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
         {
           "DamagePercentage": 1.173,
           "DamagePercentageGrowth": 0.107,
