@@ -347,6 +347,30 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackRampagingSlash": [], "BasicAttackDeadEnd": [] },
+    "dodge": {
+      "DodgeAdrift": [],
+      "DashAttackHogRush": [],
+      "DodgeCounterEyeForAnEye": []
+    },
+    "special": {
+      "SpecialAttackShockwaveShieldBash": [],
+      "SpecialAttackRoaringThrust": [],
+      "EXSpecialAttackParryCounter": [],
+      "EXSpecialAttackOverpoweredShieldBash": [],
+      "StanceSwitch": [{ "formula": "{CAL:8+specialLevel*1,1,2}%" }]
+    },
+    "chain": {
+      "ChainAttackRoadRageSlam": [],
+      "UltimateSavageSmash": [{ "formula": "{CAL:40+chainLevel*5,1,2}%" }]
+    },
+    "assist": {
+      "QuickAssistLaneChange": [],
+      "DefensiveAssistAegisShield": [],
+      "AssistFollowUpAidingBlade": []
+    }
+  },
   "coreParams": [
     [3, 5, 7, 9, 11, 13, 14],
     [200, 400, 700, 900, 1100, 1300, 1400],

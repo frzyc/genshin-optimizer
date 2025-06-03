@@ -263,6 +263,27 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackDebtReconciliation": [] },
+    "dodge": {
+      "DodgeMissingInvoice": [],
+      "DashAttackIncomingExpense": [],
+      "DodgeCounterAccountsSettled": []
+    },
+    "special": {
+      "SpecialAttackFiscalFist": [],
+      "EXSpecialAttackCashflowCounter": []
+    },
+    "chain": {
+      "ChainAttackSignedAndSealed": [],
+      "UltimateCompletePayback": []
+    },
+    "assist": {
+      "QuickAssistJointAccount": [],
+      "DefensiveAssistRiskAllocation": [],
+      "AssistFollowUpDontBreakContract": []
+    }
+  },
   "coreParams": [
     [0.4, 0.46, 0.52, 0.6, 0.66, 0.72, 0.8],
     [0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3],

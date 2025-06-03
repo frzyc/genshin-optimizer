@@ -338,6 +338,31 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackDancingBlades": [],
+      "Passion": [],
+      "BasicAttackSalchowJump": []
+    },
+    "dodge": {
+      "DodgePhantom": [],
+      "DashAttackEdgeJump": [],
+      "DashAttackPhantomThrust": [],
+      "DodgeCounterSwiftShadow": [],
+      "DodgeCounterSwiftShadowDance": []
+    },
+    "special": {
+      "SpecialAttackAerialSweep": [],
+      "EXSpecialAttackAerialSweepClearout": []
+    },
+    "chain": { "ChainAttackFlowersOfSin": [], "UltimateFinalCurtain": [] },
+    "assist": {
+      "QuickAssistDarkThorn": [],
+      "QuickAssistLutzJump": [],
+      "DefensiveAssistLastDefense": [],
+      "AssistFollowUpGaleSweep": []
+    }
+  },
   "coreParams": [
     [10, 10, 10, 10, 10, 10, 10],
     [5, 5, 5, 5, 5, 5, 5],

@@ -247,6 +247,36 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackCapriccio": [],
+      "BasicAttackInterlude": [],
+      "BasicAttackChorus": [],
+      "BasicAttackFinale": []
+    },
+    "dodge": {
+      "DodgeMiniWaltz": [],
+      "DashAttackLunarEclipseMelody": [],
+      "DodgeCounterUmbrellaWaltz": []
+    },
+    "special": {
+      "SpecialAttackWindchimesOaths": [
+        { "formula": "{CAL:0.08+specialLevel*0.01,100,2}%" },
+        { "formula": "{CAL:0.07+specialLevel*0.015,100,2}%" }
+      ],
+      "IdyllicCadenza": [],
+      "Chord": []
+    },
+    "chain": {
+      "ChainAttackTipsyConcerto": [],
+      "UltimateFantasianSonata": [{ "formula": "{CAL:-50+chainLevel*250,1,2}" }]
+    },
+    "assist": {
+      "QuickAssistOneLuminousSky": [],
+      "EvasiveAssistTwoHearts": [],
+      "AssistFollowUpThreeLifetimesOfFate": []
+    }
+  },
   "coreParams": [
     [0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.35],
     [1200, 1200, 1200, 1200, 1200, 1200, 1200],

@@ -342,6 +342,27 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackDarkAbyssQuartet": [],
+      "BasicAttackDarkAbyssConcerto": []
+    },
+    "dodge": {
+      "DodgePhantasm": [],
+      "DashAttackPhantasmShatter": [],
+      "DodgeCounterPhantasmSlash": []
+    },
+    "special": {
+      "SpecialAttackSoulHunterJudgment": [],
+      "EXSpecialAttackSoulHunterPunishment": []
+    },
+    "chain": { "ChainAttackTrickOfFate": [], "UltimateBlaspheme": [] },
+    "assist": {
+      "QuickAssistElegy": [],
+      "DefensiveAssistTheEndHasNotCome": [],
+      "AssistFollowUpAceReversal": []
+    }
+  },
   "coreParams": [
     [6, 6, 6, 6, 6, 6, 6],
     [0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12],

@@ -316,6 +316,34 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackRazorWire": [],
+      "PassiveBind": [],
+      "BasicAttackGarroteFirstForm": [],
+      "BasicAttackGarroteSecondForm": []
+    },
+    "dodge": {
+      "DodgeArcStep": [],
+      "DashAttackPiercingAmbush": [],
+      "DodgeCounterStranglingReversal": []
+    },
+    "special": {
+      "SpecialAttackLockedPosition": [],
+      "SpecialAttackBindingSunderFirstForm": [],
+      "EXSpecialAttackBindingSunderFinalForm": []
+    },
+    "chain": {
+      "ChainAttackLunaluxSnare": [],
+      "UltimateLunaluxGarroteTimbre": [],
+      "UltimateLunaluxGarroteShadow": []
+    },
+    "assist": {
+      "QuickAssistFierceBlade": [],
+      "DefensiveAssistSilentProtection": [],
+      "AssistFollowUpCourseDisruption": []
+    }
+  },
   "coreParams": [
     [0.125, 0.146, 0.167, 0.188, 0.208, 0.23, 0.25],
     [10, 10, 10, 10, 10, 10, 10]

@@ -270,6 +270,33 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackFeatheredStrike": [],
+      "BasicAttackNoblewomanWaltz": [],
+      "BasicAttackFlutteringFrockSuspension": [],
+      "BasicAttackFeatherbloom": []
+    },
+    "dodge": {
+      "DodgeLightstream": [],
+      "DashAttackSilverThornedMelody": [],
+      "DodgeCounterWingbladeReverb": [],
+      "DodgeDaintySteps": []
+    },
+    "special": {
+      "SpecialAttackSongOfSilverWings": [],
+      "EXSpecialAttackVioletRequiem": []
+    },
+    "chain": {
+      "ChainAttackChorusOfCelestialWings": [],
+      "UltimateSoaringBirdsSong": []
+    },
+    "assist": {
+      "QuickAssistFrostwingGuard": [],
+      "DefensiveAssistSilverUmbrellaFormation": [],
+      "AssistFollowUpFeatherbladeExecution": []
+    }
+  },
   "coreParams": [
     [0.0307, 0.0359, 0.0411, 0.0463, 0.0515, 0.0565, 0.0615],
     [0.016, 0.0186, 0.0212, 0.0238, 0.0264, 0.029, 0.032],

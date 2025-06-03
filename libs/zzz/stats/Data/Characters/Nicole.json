@@ -465,6 +465,25 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackCunningCombo": [], "BasicAttackDoAsIPlease": [] },
+    "dodge": {
+      "DodgeSpeedDemon": [],
+      "DashAttackJackInTheBox": [],
+      "DodgeCounterDivertedBombard": [],
+      "DashAttackDoAsIPlease": []
+    },
+    "special": {
+      "SpecialAttackSugarcoatedBullet": [],
+      "EXSpecialAttackStuffedSugarcoatedBullet": []
+    },
+    "chain": { "ChainAttackEtherShellacking": [], "UltimateEtherGrenade": [] },
+    "assist": {
+      "QuickAssistEmergencyBombard": [],
+      "DefensiveAssistTheHareStrikesBack": [],
+      "AssistFollowUpWindowOfOpportunity": []
+    }
+  },
   "coreParams": [
     [0.2, 0.25, 0.3, 0.34, 0.36, 0.38, 0.4],
     [3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5]
