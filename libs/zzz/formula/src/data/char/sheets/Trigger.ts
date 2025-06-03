@@ -1,10 +1,17 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import {
+  cmpGE,
+  max,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
   allNumConditionals,
+  customDaze,
+  customDmg,
   enemyDebuff,
   own,
   ownBuff,
@@ -12,18 +19,26 @@ import {
   registerBuff,
   teamBuff,
 } from '../../util'
-import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
+import {
+  dmgDazeAndAnomOverride,
+  entriesForChar,
+  getBaseTag,
+  registerAllDmgDazeAndAnom,
+} from '../util'
 
 const key: CharacterKey = 'Trigger'
 const data_gen = allStats.char[key]
 const dm = mappedStats.char[key]
+const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { aftershock_hit } = allBoolConditionals(key)
+const { hunters_gaze } = allNumConditionals(key, true, 0, dm.m2.stacks)
+
+const m6_armor_break_rounds_dmg_ = ownBuff.combat.common_dmg_.add(
+  cmpGE(char.mindscape, 6, dm.m6.round_dmg_)
+)
 
 const sheet = register(
   key,
@@ -31,19 +46,130 @@ const sheet = register(
   entriesForChar(data_gen),
 
   // Formulas
-  ...registerAllDmgDazeAndAnom(key, dm),
+  ...registerAllDmgDazeAndAnom(
+    key,
+    dm,
+    // Basic 1-3 is physical
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackColdBoreShot',
+      0,
+      { damageType1: 'basic' },
+      'atk'
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackColdBoreShot',
+      1,
+      { damageType1: 'basic' },
+      'atk'
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackColdBoreShot',
+      2,
+      { damageType1: 'basic' },
+      'atk'
+    ),
+    // Basic Harmonizing Shot is aftershock
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackHarmonizingShot',
+      0,
+      { ...baseTag, damageType1: 'basic', damageType2: 'aftershock' },
+      'atk'
+    ),
+    // Basic Harmonizing Shot Tartarus is aftershock
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackHarmonizingShotTartarus',
+      0,
+      { ...baseTag, damageType1: 'basic', damageType2: 'aftershock' },
+      'atk'
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackHarmonizingShotTartarus',
+      1,
+      { ...baseTag, damageType1: 'basic', damageType2: 'aftershock' },
+      'atk'
+    ),
+    // Dash Vengeful Specter is physical
+    dmgDazeAndAnomOverride(
+      dm,
+      'dodge',
+      'DashAttackVengefulSpecter',
+      0,
+      { damageType1: 'dash' },
+      'atk'
+    )
+  ),
+
+  ...customDmg(
+    'm4_disconnect_dmg',
+    { ...baseTag },
+    cmpGE(char.mindscape, 4, prod(own.final.atk, dm.m4.dmg))
+  ),
+  ...customDaze(
+    'm4_disconnect_daze',
+    { ...baseTag },
+    cmpGE(char.mindscape, 4, prod(own.final.impact, dm.m4.daze))
+  ),
+  ...customDmg(
+    'm6_armor_break_rounds_dmg',
+    { ...baseTag },
+    cmpGE(char.mindscape, 6, prod(own.final.atk, dm.m6.round_electric_dmg)),
+    undefined,
+    m6_armor_break_rounds_dmg_
+  ),
 
   // Buffs
   registerBuff(
-    'm6_dmg_',
-    ownBuff.combat.common_dmg_.add(
-      cmpGE(char.mindscape, 6, boolConditional.ifOn(1))
+    'core_stun_',
+    enemyDebuff.common.stun_.add(
+      aftershock_hit.ifOn(subscript(char.core, dm.core.stun_))
     )
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
+    'ability_aftershock_dazeInc_',
+    ownBuff.combat.dazeInc_.addWithDmgType(
+      'aftershock',
+      max(
+        prod(
+          sum(own.combat.crit_, -dm.ability.crit_threshold_),
+          dm.ability.aftershock_dazeInc_
+        ),
+        dm.ability.max_dazeInc_
+      )
+    )
   ),
-  registerBuff('enemy_defRed_', enemyDebuff.common.defRed_.add(numConditional))
+  registerBuff(
+    'm1_stun_',
+    enemyDebuff.common.stun_.addWithDmgType(
+      'aftershock',
+      cmpGE(char.mindscape, 1, aftershock_hit.ifOn(dm.m1.stun_))
+    )
+  ),
+  registerBuff(
+    'm2_crit_dmg_',
+    teamBuff.combat.crit_dmg_.add(
+      cmpGE(char.mindscape, 2, prod(hunters_gaze, dm.m2.crit_dmg_))
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
+    'm6_armor_break_rounds_dmg_',
+    m6_armor_break_rounds_dmg_,
+    undefined,
+    undefined,
+    false
+  )
 )
 export default sheet
