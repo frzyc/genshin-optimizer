@@ -10,6 +10,7 @@ import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allNumConditionals,
+  customAnomalyBuildup,
   customAnomalyDmg,
   customDmg,
   own,
@@ -145,11 +146,7 @@ const sheet = register(
 
   ...customDmg(
     'core_afterburn_dmg',
-    {
-      ...baseTag,
-      // Not sure, says "considered Assist Attack DMG"
-      damageType1: 'assistFollowUp',
-    },
+    { ...baseTag, skillType: 'assistSkill' },
     prod(
       own.final.atk,
       sum(
@@ -162,19 +159,28 @@ const sheet = register(
     ability_fire_anomBuildup_,
     m1_afterburn_fire_anomBuildup_
   ),
+  ...customAnomalyBuildup(
+    'core_afterburn_anomBuildup',
+    {
+      ...baseTag,
+      skillType: 'assistSkill',
+    },
+    constant(60),
+    undefined,
+    core_afterburn_dmg_,
+    ability_fire_anomBuildup_,
+    m1_afterburn_fire_anomBuildup_
+  ),
   ...customDmg(
     'm6_additional_afterburn_dmg',
-    { ...baseTag, damageType1: 'assistFollowUp' },
+    { ...baseTag, skillType: 'assistSkill' },
     cmpGE(char.mindscape, 6, prod(own.final.atk, dm.m6.special_afterburn_dmg)),
     undefined,
     m6_fire_resIgn_
   ),
   ...customAnomalyDmg(
     'm6_additional_burn_dmg',
-    {
-      ...baseTag,
-      damageType1: 'anomaly',
-    },
+    { ...baseTag, damageType1: 'anomaly' },
     cmpGE(
       char.mindscape,
       6,
@@ -215,6 +221,12 @@ const sheet = register(
     'm4_exSpecial_crit_',
     ownBuff.combat.crit_.addWithDmgType(
       'exSpecial',
+      cmpGE(char.mindscape, 4, dm.m4.exSpecial_assist_crit_)
+    )
+  ),
+  registerBuff(
+    'm4_assistSkill_crit_',
+    ownBuff.combat.crit_.assistSkill.add(
       cmpGE(char.mindscape, 4, dm.m4.exSpecial_assist_crit_)
     )
   ),

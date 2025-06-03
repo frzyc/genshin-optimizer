@@ -164,6 +164,7 @@ export function registerAllDmgDazeAndAnom(
                 {
                   attribute: allStats.char[key].attribute,
                   damageType1: inferDamageType(key, abilityName),
+                  skillType: `${sKey}Skill`,
                 },
                 'atk',
                 sKey
