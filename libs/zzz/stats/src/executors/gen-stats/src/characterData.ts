@@ -32,6 +32,7 @@ export function getCharactersData(): CharactersData {
       mindscapes,
     }) => {
       const skillParams = extractSkillParams(skills)
+      const calcedParams = extractCalcedParams(skills)
       const coreParams = extractCoreParams(cores)
       const abilityParams = extractAbilityParams(cores)
       const mindscapeParams = extraMindscapeParams(mindscapes)
@@ -46,6 +47,7 @@ export function getCharactersData(): CharactersData {
         promotionStats,
         coreStats,
         skillParams,
+        calcedParams,
         coreParams,
         abilityParams,
         mindscapeParams,
@@ -111,6 +113,45 @@ function extractSkillParams(skills: CharacterData['skills']) {
   )
   verifyObjKeys(skillParams, allSkillKeys)
   return skillParams
+}
+
+const avatarSkillLevelIndexing = [
+  'basicLevel',
+  'specialLevel',
+  'dodgeLevel',
+  'chainLevel',
+  'assistLevel',
+]
+function extractCalcedParams(skills: CharacterData['skills']) {
+  const calcedParams = Object.fromEntries(
+    Object.entries(skills).map(([key, skill]) => {
+      return [
+        hakushinSkillMap[key],
+        Object.fromEntries(
+          skill.Description.map((desc) => {
+            return [
+              nameToKey(desc.Name),
+              (desc.Param ?? [])
+                .map((par) =>
+                  par.Desc.includes('{CAL:')
+                    ? {
+                        formula: par.Desc.replace(
+                          /AvatarSkillLevel\((\d)\)/g,
+                          (_match, index) =>
+                            avatarSkillLevelIndexing[parseInt(index)]
+                        ),
+                      }
+                    : undefined
+                )
+                .filter(notEmpty),
+            ]
+          })
+        ),
+      ]
+    })
+  )
+  verifyObjKeys(calcedParams, allSkillKeys)
+  return calcedParams
 }
 
 function extractCoreParams(cores: CharacterData['cores']) {
