@@ -134,24 +134,13 @@ export const conditionals = {
     },
   },
   Burnice: {
-    boolConditional: {
+    thermal_penetration: {
       sheet: 'Burnice',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Burnice',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Burnice',
-      name: 'numConditional',
+      name: 'thermal_penetration',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 5,
     },
   },
   Caesar: {
@@ -5617,6 +5606,19 @@ export const formulas = {
         name: 'anomalyDmgInst',
       },
     },
+    core_afterburn_dmg: {
+      sheet: 'Burnice',
+      name: 'core_afterburn_dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'Burnice',
+        attribute: 'fire',
+        damageType1: 'assistFollowUp',
+        name: 'core_afterburn_dmg',
+      },
+    },
     dazeInst: {
       sheet: 'Burnice',
       name: 'dazeInst',
@@ -5627,6 +5629,32 @@ export const formulas = {
         sheet: 'Burnice',
         attribute: 'fire',
         name: 'dazeInst',
+      },
+    },
+    m6_additional_afterburn_dmg: {
+      sheet: 'Burnice',
+      name: 'm6_additional_afterburn_dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'Burnice',
+        attribute: 'fire',
+        damageType1: 'assistFollowUp',
+        name: 'm6_additional_afterburn_dmg',
+      },
+    },
+    m6_additional_burn_dmg: {
+      sheet: 'Burnice',
+      name: 'm6_additional_burn_dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomalyDmg',
+        sheet: 'Burnice',
+        attribute: 'fire',
+        damageType1: 'anomaly',
+        name: 'm6_additional_burn_dmg',
       },
     },
     standardDmgInst: {
@@ -29975,37 +30003,87 @@ export const buffs = {
     },
   },
   Burnice: {
-    enemy_defRed_: {
+    ability_fire_anomBuildup_: {
       sheet: 'Burnice',
-      name: 'enemy_defRed_',
+      name: 'ability_fire_anomBuildup_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'defRed_',
+        qt: 'combat',
+        q: 'anomBuildup_',
         sheet: 'Burnice',
-        name: 'enemy_defRed_',
+        attribute: 'fire',
+        name: 'ability_fire_anomBuildup_',
       },
     },
-    m6_dmg_: {
+    core_afterburn_dmg_: {
       sheet: 'Burnice',
-      name: 'm6_dmg_',
+      name: 'core_afterburn_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'Burnice',
-        name: 'm6_dmg_',
+        name: 'core_afterburn_dmg_',
       },
     },
-    team_dmg_: {
+    m1_afterburn_fire_anomBuildup_: {
       sheet: 'Burnice',
-      name: 'team_dmg_',
+      name: 'm1_afterburn_fire_anomBuildup_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'anomBuildup_',
         sheet: 'Burnice',
-        name: 'team_dmg_',
+        attribute: 'fire',
+        name: 'm1_afterburn_fire_anomBuildup_',
+      },
+    },
+    m2_pen_: {
+      sheet: 'Burnice',
+      name: 'm2_pen_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'pen_',
+        sheet: 'Burnice',
+        name: 'm2_pen_',
+      },
+    },
+    m4_exSpecial_crit_: {
+      sheet: 'Burnice',
+      name: 'm4_exSpecial_crit_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_',
+        sheet: 'Burnice',
+        damageType1: 'exSpecial',
+        name: 'm4_exSpecial_crit_',
+      },
+    },
+    m6_burn_fire_resIgn_: {
+      sheet: 'Burnice',
+      name: 'm6_burn_fire_resIgn_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'resIgn_',
+        sheet: 'Burnice',
+        attribute: 'fire',
+        damageType1: 'anomaly',
+        name: 'm6_burn_fire_resIgn_',
+      },
+    },
+    m6_fire_resIgn_: {
+      sheet: 'Burnice',
+      name: 'm6_fire_resIgn_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'resIgn_',
+        sheet: 'Burnice',
+        attribute: 'fire',
+        name: 'm6_fire_resIgn_',
       },
     },
   },
