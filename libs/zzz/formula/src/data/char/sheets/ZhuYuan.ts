@@ -1,7 +1,6 @@
 import {
   cmpEq,
   cmpGE,
-  min,
   prod,
   subscript,
   sum,
@@ -200,16 +199,14 @@ const sheet = register(
   registerBuff(
     'ability_crit_',
     ownBuff.combat.crit_.add(
-      prod(
-        min(
-          sum(
-            team.common.count.withSpecialty('support'),
-            team.common.count.withFaction(
-              'CriminalInvestigationSpecialResponseTeam'
-            )
-          ),
-          1
+      cmpGE(
+        sum(
+          team.common.count.withSpecialty('support'),
+          team.common.count.withFaction(
+            'CriminalInvestigationSpecialResponseTeam'
+          )
         ),
+        2,
         ex_chain_ult_used.ifOn(dm.ability.crit_)
       )
     )

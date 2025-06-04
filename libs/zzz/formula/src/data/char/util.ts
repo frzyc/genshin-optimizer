@@ -70,7 +70,7 @@ function dmgDazeAndAnom(
     skillParam.DamagePercentage,
     prod(own.char[abilityScalingType], skillParam.DamagePercentageGrowth)
   )
-  const dmgBase = prod(own.final[stat], dmgMulti)
+  const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.dmg_mult_)
   const dazeBase = sum(
     skillParam.StunRatio,
     prod(own.char[abilityScalingType], skillParam.StunRatioGrowth)

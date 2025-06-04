@@ -17,6 +17,7 @@ import {
   ownBuff,
   register,
   registerBuff,
+  team,
   teamBuff,
 } from '../../util'
 import {
@@ -140,12 +141,19 @@ const sheet = register(
     'ability_aftershock_dazeInc_',
     ownBuff.combat.dazeInc_.addWithDmgType(
       'aftershock',
-      max(
-        prod(
-          sum(own.combat.crit_, -dm.ability.crit_threshold_),
-          dm.ability.aftershock_dazeInc_
+      cmpGE(
+        sum(
+          team.common.count.withSpecialty('attack'),
+          team.common.count.electric
         ),
-        dm.ability.max_dazeInc_
+        2,
+        max(
+          prod(
+            sum(own.combat.crit_, -dm.ability.crit_threshold_),
+            dm.ability.aftershock_dazeInc_
+          ),
+          dm.ability.max_dazeInc_
+        )
       )
     )
   ),

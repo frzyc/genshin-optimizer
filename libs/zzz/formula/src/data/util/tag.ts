@@ -160,6 +160,7 @@ export const ownTag = {
     res_mult_: fixed,
     dmg_taken_mult_: fixed,
     stunned_mult_: fixed,
+    mv_mult_: fixedProd,
   },
   formula: {
     base: agg,

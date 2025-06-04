@@ -1,10 +1,4 @@
-import {
-  cmpGE,
-  min,
-  prod,
-  subscript,
-  sum,
-} from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
@@ -128,14 +122,12 @@ const sheet = register(
   registerBuff(
     'ability_ether_dmg_',
     teamBuff.combat.common_dmg_.add(
-      prod(
-        min(
-          sum(
-            team.common.count.ether,
-            team.common.count.withFaction('CunningHares')
-          ),
-          1
+      cmpGE(
+        sum(
+          team.common.count.ether,
+          team.common.count.withFaction('CunningHares')
         ),
+        3,
         bulletsOrFieldHit.ifOn(dm.ability.ether_dmg_)
       )
     )
