@@ -1,6 +1,9 @@
 {
   "name": "Slice of Time",
-  "desc": "A special W-Engine equipped with a high-speed camera module. The best choice for in-Hollow photography enthusiasts. It captures every touching moment spent beating up your Ethereal friends, as long as you have a free hand to press the shutter.\nP.S. The internal optical components have not undergone anti-corruption treatment. Please do not lose the warranty form.",
+  "desc": {
+    "0": "A special W-Engine equipped with a high-speed camera module. The best choice for in-Hollow photography enthusiasts. It captures every touching moment spent beating up your Ethereal friends, as long as you have a free hand to press the shutter.",
+    "1": "P.S. The internal optical components have not undergone anti-corruption treatment. Please do not lose the warranty form."
+  },
   "desc2": "Equip to increase Support Agents' combat capabilities",
   "desc3": "A special W-Engine equipped with a high-speed camera module. The best choice for in-Hollow photography enthusiasts.",
   "phase": "Say Cheese",

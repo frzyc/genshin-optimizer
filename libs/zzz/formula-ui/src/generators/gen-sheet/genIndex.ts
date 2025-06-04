@@ -26,17 +26,13 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 async function writeCharIndex(path: string) {
   const index = `
 // WARNING: Generated file, do not modify
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import type { TalentSheetElementKey } from '../consts'
+import type { CharUISheet } from '../consts'
 ${allCharacterKeys
   .map((charKey) => `import ${charKey} from './${charKey}'`)
   .join('\n')}
 
-export const uiSheets: Record<
-  CharacterKey,
-  UISheet<TalentSheetElementKey>
-> = {
+export const charSheets: Record<CharacterKey, CharUISheet> = {
   ${allCharacterKeys.join('\n,  ')}
 } as const
   `

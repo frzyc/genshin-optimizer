@@ -1,3 +1,226 @@
 {
-  "name": "Soldier 11"
+  "name": "Soldier 11",
+  "fullName": "Soldier 11",
+  "basic": {
+    "BasicAttackWarmupSparks": {
+      "name": "Basic Attack: Warmup Sparks",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 4 slashes, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackFireSuppression": {
+      "name": "Basic Attack: Fire Suppression",
+      "desc": {
+        "0": "Press <IconNormal /> at the right moment to activate:",
+        "1": "Unleashes a set of more powerful slashes, dealing <ct color=#FF5521>Fire DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeTemperedFire": {
+      "name": "Dodge: Tempered Fire",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackBlazingFire": {
+      "name": "Dash Attack: Blazing Fire",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DashAttackFireSuppression": {
+      "name": "Dash Attack: Fire Suppression",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterBackdraft": {
+      "name": "Dodge Counter: Backdraft",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Executes a powerful slash against enemies in front, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackRagingFire": {
+      "name": "Special Attack: Raging Fire",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Slashes enemies nearby, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackFerventFire": {
+      "name": "EX Special Attack: Fervent Fire",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Slashes enemies nearby, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> will trigger <ct color=#FFFFFF>Fire Suppression</ct> for up to 15s or 8 times."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackUpliftingFlame": {
+      "name": "Chain Attack: Uplifting Flame",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful upward slash at enemies in a small area, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> trigger <ct color=#FFFFFF>Fire Suppression</ct> for the next 15s, up to 8 times."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateBellowingFlame": {
+      "name": "Ultimate: Bellowing Flame",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes a powerful upward slash at enemies in a small area, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> trigger <ct color=#FFFFFF>Fire Suppression</ct> for the next 15s, up to 8 times."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistCoveringFire": {
+      "name": "Quick Assist: Covering Fire",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistHoldTheLine": {
+      "name": "Defensive Assist: Hold the Line",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpReignition": {
+      "name": "Assist Follow-Up: Reignition",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Charge and cross slash enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Heatwave",
+    "desc": [
+      "When triggering <ct color=#FFFFFF>Fire Suppression</ct> during a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct>, increase that attack's DMG by <ct color=#2BAD00>35%</ct>.",
+      "When triggering <ct color=#FFFFFF>Fire Suppression</ct> during a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct>, increase that attack's DMG by <ct color=#2BAD00>40.8%</ct>.",
+      "When triggering <ct color=#FFFFFF>Fire Suppression</ct> during a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct>, increase that attack's DMG by <ct color=#2BAD00>46.6%</ct>.",
+      "When triggering <ct color=#FFFFFF>Fire Suppression</ct> during a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct>, increase that attack's DMG by <ct color=#2BAD00>52.5%</ct>.",
+      "When triggering <ct color=#FFFFFF>Fire Suppression</ct> during a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct>, increase that attack's DMG by <ct color=#2BAD00>58.3%</ct>.",
+      "When triggering <ct color=#FFFFFF>Fire Suppression</ct> during a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct>, increase that attack's DMG by <ct color=#2BAD00>64.1%</ct>.",
+      "When triggering <ct color=#FFFFFF>Fire Suppression</ct> during a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct>, increase that attack's DMG by <ct color=#2BAD00>70%</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Fields of Fire",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "Soldier 11 deals 10% more <ct color=#FF5521>Fire DMG</ct>. When attacking Stunned enemies, this effect is further enhanced by an additional 22.5%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Rapid Heat",
+      "desc": "When Soldier 11 enters combat or switches in, if her Energy is less than 40, her Energy is recovered to 80. This effect can trigger once every 50s.",
+      "flavor": {
+        "0": "Long-term high-intensity combat training allows Soldier 11 to complete mastery of her regulatory systems.",
+        "1": "She will always strive to ensure that she's in the best shape for each and every battle."
+      }
+    },
+    "2": {
+      "name": "Scorching Convergence",
+      "desc": "When triggering <ct color=#FFFFFF>Fire Suppression</ct>, <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct>, and <ct color=#FFFFFF>Dodge Counter</ct> DMG increases by 3%, up to 12 stacks, lasting 15s, with the duration of each stack calculated separately.",
+      "flavor": {
+        "0": "\"She may look cold and hard, like a big ice cube... But actually, she's scalding hot inside, like a blazing fire.\"",
+        "1": "— From an anonymous soldier of the Obsidian Division"
+      }
+    },
+    "3": {
+      "name": "Elite Soldier",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Soldier 11 always expects the most from herself, no matter if it's in training or physical combat. That is how she maintains her combat prowess."
+    },
+    "4": {
+      "name": "Indulgent Blaze",
+      "desc": {
+        "0": "If <ct color=#FFFFFF>Fire Suppression</ct> is triggered during the 1st, 2nd, or 3rd hit of Soldier 11's <ct color=#FFFFFF>Basic Attack</ct> or a <ct color=#FFFFFF>Dash Attack</ct>, Anti-Interrupt Level increases and DMG received is reduced by 18% during skill activation.",
+        "1": "If <ct color=#FFFFFF>Fire Suppression</ct> is triggered during the 4th hit of her <ct color=#FFFFFF>Basic Attack</ct>, she becomes invulnerable during skill activation."
+      },
+      "flavor": "She envies fire. And these smoldering flames will always help her."
+    },
+    "5": {
+      "name": "Perfect Soldier",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "The road from elite to exemplar is long and difficult, but Soldier 11 grits her teeth and perseveres, as if there's something pushing her towards the goal of becoming a perfect soldier..."
+    },
+    "6": {
+      "name": "Scorching Flow",
+      "desc": {
+        "0": "When Soldier 11 uses her <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she gains 8 stacks of Charge (max 8 stacks).",
+        "1": "When <ct color=#FFFFFF>Fire Suppression</ct> is triggered, 1 stack of Charge is consumed, causing the current move to ignore 25% of the target's <ct color=#FF5521>Fire RES</ct>."
+      },
+      "flavor": "The flames of the sword distorted the air with their heat. Her movements grew ever more impassioned, as if that heat seeped into her spirit with every breath, igniting her thoughts."
+    }
+  }
 }

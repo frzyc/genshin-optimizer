@@ -1,6 +1,10 @@
 {
   "name": "Steel Cushion",
-  "desc": "A supercomputing W-Engine equipped with an enhanced motion monitoring feature, perfectly matching the fast reflexes and combat maneuvers of Cat Thirens. Nekomata has added a foldable knife to its casing. Despite claiming that this design is to facilitate her in battle, the knife has fresh mackerel stains smeared onto it...\n\n<ct color=#959595>\"Lots of people call me a clever clogs for doing this mod, but when you're out on the streets, you gotta put everything you can to good use: Every little trick, every little thought, every little hustle... And look! A little kitty!\" — Nekomata, diverting attention away while secretly trying to fish out the listener's wallet</ct>",
+  "desc": {
+    "0": "A supercomputing W-Engine equipped with an enhanced motion monitoring feature, perfectly matching the fast reflexes and combat maneuvers of Cat Thirens. Nekomata has added a foldable knife to its casing. Despite claiming that this design is to facilitate her in battle, the knife has fresh mackerel stains smeared onto it...",
+    "1": "",
+    "2": "<ct color=#959595>\"Lots of people call me a clever clogs for doing this mod, but when you're out on the streets, you gotta put everything you can to good use: Every little trick, every little thought, every little hustle... And look! A little kitty!\" — Nekomata, diverting attention away while secretly trying to fish out the listener's wallet</ct>"
+  },
   "desc2": "Equip to increase Attack Agents' combat capabilities",
   "desc3": "A supercomputing W-Engine equipped with a motion monitoring feature. Thanks to Nekomata's modifications, it perfectly matches the fast reflexes and combat maneuvers of feline Thirens.",
   "phase": "Metal Cat Claws",

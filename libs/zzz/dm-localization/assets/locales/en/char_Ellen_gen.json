@@ -1,3 +1,287 @@
 {
-  "name": "Ellen"
+  "name": "Ellen",
+  "fullName": "Ellen Joe",
+  "basic": {
+    "BasicAttackSawTeethTrimming": {
+      "name": "Basic Attack: Saw Teeth Trimming",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 3 attacks, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Press repeatedly or hold <IconNormal /> during the 3rd attack to extend the skill duration."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackFlashFreezeTrimming": {
+      "name": "Basic Attack: Flash Freeze Trimming",
+      "desc": {
+        "0": "While <ct color=#FFFFFF>Flash Freeze</ct> is active, press <IconNormal /> to activate:",
+        "1": "Launch up to 3 attacks at enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Each attack consumes 1 <ct color=#FFFFFF>Flash Freeze Charge</ct>.",
+        "3": "Press repeatedly or hold <IconNormal /> during the 3rd attack to extend the skill duration."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeVortex": {
+      "name": "Dodge: Vortex",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A rapid dash dodge.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "When <ct color=#FFFFFF>Perfect Dodge</ct> is triggered, Ellen gains the <ct color=#FFFFFF>Quick Charge</ct> effect, reducing the charge time of <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, lasting up to 5 seconds or until it triggers."
+      },
+      "params": []
+    },
+    "DashRoamingHunt": {
+      "name": "Dash: Roaming Hunt",
+      "desc": {
+        "0": "Hold or double-press <IconEvade /> to activate:",
+        "1": "Enter the <ct color=#FFFFFF>Roaming</ct> state, allowing dashing movement.",
+        "2": "In the <ct color=#FFFFFF>Roaming</ct> state, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to control Ellen's direction, and release to stop.",
+        "3": "Ellen is invulnerable for a brief time after activation."
+      },
+      "params": []
+    },
+    "DashAttackArcticAmbush": {
+      "name": "Dash Attack: Arctic Ambush",
+      "desc": {
+        "0": "While in the <ct color=#FFFFFF>Roaming</ct> state, press <IconNormal /> to activate:",
+        "1": "Delivers a spinning slash to enemies before opening her scissors for a Swift Scissors strike, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Gain 1 point of <ct color=#FFFFFF>Flash Freeze Charge</ct> when the Swift Scissors strike hits.",
+        "3": "",
+        "4": "While in the <ct color=#FFFFFF>Roaming</ct> state, hold <IconNormal /> to activate:",
+        "5": "Perform a spinning slash against the enemy, then pull apart the scissors to unleash a Charged Scissors strike, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "6": "Gain 3 points of <ct color=#FFFFFF>Flash Freeze Charge</ct> when the Charged Scissors strike hits. If the enemy is <ct color=#98EFF0>Frozen</ct>, it always triggers <ct color=#98EFF0>Shatter</ct>.",
+        "7": "Anti-Interrupt level is increased while charging the skill, and DMG taken is reduced by 40%.",
+        "8": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Spinning Slash ",
+        "Swift Scissors ",
+        "Charged Scissors ",
+        "Swift Scissors Flash Freeze Charge Obtained",
+        "Charged Scissors Flash Freeze Charge Obtained"
+      ]
+    },
+    "FlashFreeze": {
+      "name": "Flash Freeze",
+      "desc": "When Ellen has <ct color=#FFFFFF>Flash Freeze Charges</ct>, the <ct color=#FFFFFF>Flash Freeze</ct> effect is activated. Once <ct color=#FFFFFF>Flash Freeze</ct> activates, <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> expend <ct color=#FFFFFF>Flash Freeze Charges</ct>, dealing massive <ct color=#98EFF0>Ice DMG</ct>. Ellen can have up to a maximum of 6 <ct color=#FFFFFF>Flash Freeze Charges</ct>.",
+      "params": []
+    },
+    "DashAttackMonstrousWave": {
+      "name": "Dash Attack: Monstrous Wave",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Launches a dashing slash attack at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DashAttackColdSnap": {
+      "name": "Dash Attack: Cold Snap",
+      "desc": {
+        "0": "While <ct color=#FFFFFF>Flash Freeze</ct> is active, press <IconNormal /> during dodge to activate:",
+        "1": "Launches a dashing slash attack at enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Consumes 1 <ct color=#FFFFFF>Flash Freeze Charge</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterReefRock": {
+      "name": "Dodge Counter: Reef Rock",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Rapidly move through enemies with open scissors for a cutting strike, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackDrift": {
+      "name": "Special Attack: Drift",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Use a quick tail sweep attack in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackTailSwipe": {
+      "name": "EX Special Attack: Tail Swipe",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Perform a forceful tail whip attack that deals massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Gain 1 <ct color=#FFFFFF>Flash Freeze Charge</ct> upon striking an enemy.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "After executing the move, you can immediately follow up with the 3rd hit of a <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    },
+    "EXSpecialAttackSharknami": {
+      "name": "EX Special Attack: Sharknami",
+      "desc": {
+        "0": "With enough Energy and after executing <ct color=#FFFFFF>EX Special Attack: Tail Swipe</ct>, press <IconSpecialReady /> to activate:",
+        "1": "Perform a powerful series of slashes ahead that deal massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Gain 1 <ct color=#FFFFFF>Flash Freeze Charge</ct> upon striking an enemy.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "After executing the move, you can immediately follow up with the 3rd hit of a <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackAvalanche": {
+      "name": "Chain Attack: Avalanche",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Crash down from above and unleash an ice storm, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateEndlessWinter": {
+      "name": "Ultimate: Endless Winter",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Crash down from above and unleash an ice storm before a powerful scissor strike, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistSharkSentinel": {
+      "name": "Quick Assist: Shark Sentinel",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Speedily move through the enemy with open scissors for a cutting strike, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "When the character on the field is launched, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} and press <IconSwitch /> to activate:",
+        "4": "Enter the <ct color=#FFFFFF>Roaming</ct> state, enabling dashing movement.",
+        "5": "While in the <ct color=#FFFFFF>Roaming</ct> state, use the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to change directions and release to stop.",
+        "6": "Character is invulnerable briefly when triggering the skill.",
+        "7": "Upon triggering a <ct color=#FFFFFF>Quick Assist</ct>, Ellen gains the <ct color=#FFFFFF>Quick Charge</ct> effect, shortening the charging time of <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, lasting up to 5s or until it triggers once."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistWavefrontImpact": {
+      "name": "Defensive Assist: Wavefront Impact",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpSharkCruiser": {
+      "name": "Assist Follow-Up: Shark Cruiser",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Charge and slash enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Press repeatedly or hold <IconNormal /> during the attack to extend the skill duration.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Sharp-Toothed",
+    "desc": [
+      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>50%</ct>.",
+      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>58.3%</ct>.",
+      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>66.6%</ct>.",
+      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>75%</ct>.",
+      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>83.3%</ct>.",
+      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>91.6%</ct>.",
+      "When Ellen launches a Charged Scissors Strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>100%</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Rising Storm",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "When Ellen deals <ct color=#98EFF0>Ice DMG</ct>, subsequent <ct color=#98EFF0>Ice DMG</ct> increases by 3% for 10s. This effect can stack up to 10 times, and repeated triggers reset the duration."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Glacial Omen",
+      "desc": "Upon hitting an enemy with a Swift Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, the obtained <ct color=#FFFFFF>Flash Freeze Charges</ct> are increased to 3. Upon hitting an enemy with a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, the obtained <ct color=#FFFFFF>Flash Freeze Charges</ct> are increased to 6. For each <ct color=#FFFFFF>Flash Freeze Charge</ct> consumed, Ellen's CRIT Rate is increased by 2% for 15s, stacking up to 6 times. The duration of each stack is calculated separately.",
+      "flavor": {
+        "0": "Chilling winds are an omen of winter, and a signal that Ellen is about to apply for extended leave to hibernate.",
+        "1": "Speaking of which, do sharks actually need to hibernate?"
+      }
+    },
+    "2": {
+      "name": "Arctic Ocean Predator",
+      "desc": "The 3rd hit of <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct> can be directly followed up with <ct color=#FFFFFF>EX Special Attack: Sharknami</ct>. For each point of <ct color=#FFFFFF>Flash Freeze Charge</ct> when using an <ct color=#FFFFFF>EX Special Attack</ct>, the current attack's CRIT DMG is increased by 20%, up to a max of 60%.",
+      "flavor": {
+        "0": "Despite being freshly stained with red, the massive shears held by Ellen lacked any trace of warmth.",
+        "1": "The icy cold stems from her iron-forged instrument, as well as the fear of facing a predator such as herself."
+      }
+    },
+    "3": {
+      "name": "Overtime-Intolerant",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The whole point of \"efficiency\" is being able to go home early and sleep.",
+        "1": "So strike harder and strike faster."
+      }
+    },
+    "4": {
+      "name": "Endless Hoarfrost",
+      "desc": "Whenever a squad member <ct color=#98EFF0>Freezes</ct> or Stuns an enemy, Ellen gains 6 <ct color=#FFFFFF>Flash Freeze Charges</ct> and the <ct color=#FFFFFF>Quick Charge</ct> effect. She also recovers 4 Energy. The Energy recovery effect can trigger once per 10s.",
+      "flavor": {
+        "0": "A relentless assault of piercing cold. Terrifying monstrosities will learn the beauty and cruelty of winter under Ellen's blade.",
+        "1": "But, actually, the endless work that maids have during holidays is far more cruel... "
+      }
+    },
+    "5": {
+      "name": "Adequate Sleep",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Except for when in the toughest of battles, Ellen always seems to have that \"I can fall asleep at any moment\" look.",
+        "1": "Many an enemy has met their demise after underestimating Ellen because of it."
+      }
+    },
+    "6": {
+      "name": "The Feast Begins",
+      "desc": "When Ellen uses an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or gains <ct color=#FFFFFF>Quick Charge</ct>, her PEN Ratio increases by 20% for 6s. She also gains 1 stack of <ct color=#FFFFFF>The Feast Begins</ct>, up to a maximum of 3 stacks. With 3 stacks of <ct color=#FFFFFF>The Feast Begins</ct>, using a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct> consumes all stacks, increasing the DMG of the current attack by 250%.",
+      "flavor": "An open wound, a drop of blood. A thrilling hunt, a grand feast. A fragile life, a moment of satisfaction."
+    }
+  }
 }

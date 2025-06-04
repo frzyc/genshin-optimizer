@@ -1,6 +1,13 @@
 {
   "name": "Hailstorm Shrine",
-  "desc": "Slaughter is endless. Kill, conquer, the fate of the cursed, a restless forbidden power. Only between battles, when rushing to the next frontline, does the foxfire enjoy a brief reprieve in its shrine.\nHow many more corpses, how many more sacrifices, how many more calamities until we reach the void on the other side?\nShe needs no answer. At the peak of martial power, the stench of blood will freeze in the air before being breathed in. Once all evil is eradicated, the world will be able to enter peaceful slumber with the blade sealed.\nHail falls before the shrine, waking the wielder of this power. The blizzard is coming.\n\n<ct color=#959595>\"Perfect for training... If I could shrink to its size, that is.\" —Miyabi, muttering to herself as she gazes at the interior.</ct>",
+  "desc": {
+    "0": "Slaughter is endless. Kill, conquer, the fate of the cursed, a restless forbidden power. Only between battles, when rushing to the next frontline, does the foxfire enjoy a brief reprieve in its shrine.",
+    "1": "How many more corpses, how many more sacrifices, how many more calamities until we reach the void on the other side?",
+    "2": "She needs no answer. At the peak of martial power, the stench of blood will freeze in the air before being breathed in. Once all evil is eradicated, the world will be able to enter peaceful slumber with the blade sealed.",
+    "3": "Hail falls before the shrine, waking the wielder of this power. The blizzard is coming.",
+    "4": "",
+    "5": "<ct color=#959595>\"Perfect for training... If I could shrink to its size, that is.\" —Miyabi, muttering to herself as she gazes at the interior.</ct>"
+  },
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
   "desc3": "Hail falls before the shrine, waking her. The blizzard is coming.",
   "phase": "Frost-Stained Star",

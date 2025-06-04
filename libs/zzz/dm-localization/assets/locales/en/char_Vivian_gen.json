@@ -1,3 +1,303 @@
 {
-  "name": "Vivian"
+  "name": "Vivian",
+  "fullName": "Vivian Banshee",
+  "basic": {
+    "BasicAttackFeatheredStrike": {
+      "name": "Basic Attack: Feathered Strike",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to four attacks in front, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After triggering the fourth attack, enter the <ct color=#FFFFFF>Noblewoman</ct> state.",
+        "3": "With <ct color=#FFFFFF>Flight Feathers</ct> available, holding <IconNormal /> during the fourth attack will activate the <ct color=#FFFFFF>Fluttering Frock</ct> state."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackNoblewomanWaltz": {
+      "name": "Basic Attack: Noblewoman - Waltz",
+      "desc": {
+        "0": "Press <IconNormal /> while in the <ct color=#FFFFFF>Noblewoman</ct> state to activate:",
+        "1": "Dash forward with an attack that deals <ct color=#FE437E>Ether DMG</ct> and restores 1 <ct color=#FFFFFF>Flight Feather</ct> upon hitting an enemy.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "If a Perfect Dodge is triggered during the dash, gain 1 additional <ct color=#FFFFFF>Flight Feather</ct>.",
+        "4": "If <ct color=#FFFFFF>Flight Feathers</ct> are available after the skill, enter the <ct color=#FFFFFF>Fluttering Frock</ct> state, which can be canceled by holding <IconEvade /> when the skill is used."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "BasicAttackFlutteringFrockSuspension": {
+      "name": "Basic Attack: Fluttering Frock - Suspension",
+      "desc": {
+        "0": "Press <IconNormal /> while in the <ct color=#FFFFFF>Fluttering Frock</ct> state to activate:",
+        "1": "Attack an area ahead, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After activation, this skill consumes all <ct color=#FFFFFF>Flight Feathers</ct>, and each one consumed grants 1 <ct color=#FFFFFF>Guard Feather</ct>.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "When switching characters during the <ct color=#FFFFFF>Fluttering Frock</ct> state, Vivian will automatically perform <ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct>.",
+        "5": "While in the <ct color=#FFFFFF>Fluttering Frock</ct> state, press <IconEvade /> to exit the state."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "BasicAttackFeatherbloom": {
+      "name": "Basic Attack: Featherbloom",
+      "desc": {
+        "0": "After any squad member hits a target with an <ct color=#FFFFFF>EX Special Attack</ct>, Vivian will consume 1 <ct color=#FFFFFF>Guard Feather</ct> to launch <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> against the target, dealing <ct color=#FE437E>Ether DMG</ct>, triggering at most once per use of a skill. This effect can trigger even while Vivian is off-field.",
+        "1": "A maximum of 5 <ct color=#FFFFFF>Guard Feathers</ct> can be stored."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeLightstream": {
+      "name": "Dodge: Lightstream",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackSilverThornedMelody": {
+      "name": "Dash Attack: Silver Thorned Melody",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Launches a forward thrust at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterWingbladeReverb": {
+      "name": "Dodge Counter: Wingblade Reverb",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Launches an attack on enemies ahead, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After activating the skill, enter the <ct color=#FFFFFF>Noblewoman</ct> state.",
+        "4": "When there are <ct color=#FFFFFF>Flight Feathers</ct> available, hold <IconNormal /> during skill activation to enter the <ct color=#FFFFFF>Fluttering Frock</ct> state."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeDaintySteps": {
+      "name": "Dodge: Dainty Steps",
+      "desc": {
+        "0": "When in the <ct color=#FFFFFF>Noblewoman</ct> state and about to be attacked, an automatic dodge will trigger, during which the character will be Invulnerable, but a <ct color=#FFFFFF>Perfect Dodge</ct> will not be triggered.",
+        "1": "This can trigger once each time the <ct color=#FFFFFF>Noblewoman</ct> state is entered."
+      },
+      "params": []
+    }
+  },
+  "special": {
+    "SpecialAttackSongOfSilverWings": {
+      "name": "Special Attack: Song of Silver Wings",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Quickly attack forward, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackVioletRequiem": {
+      "name": "EX Special Attack: Violet Requiem",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Unleash a powerful forward attack that deals massive <ct color=#FE437E>Ether DMG</ct> and grants 3 <ct color=#FFFFFF>Flight Feathers</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "Enter the <ct color=#FFFFFF>Fluttering Frock</ct> state after using the skill. Hold <IconEvade /> during the skill to enter the <ct color=#FFFFFF>Noblewoman</ct> state."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackChorusOfCelestialWings": {
+      "name": "Chain Attack: Chorus of Celestial Wings",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Launch a powerful attack on a large area of enemies ahead, dealing massive <ct color=#FE437E>Ether DMG</ct> and gaining 2 <ct color=#FFFFFF>Flight Feathers</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After the skill activates, enter the <ct color=#FFFFFF>Fluttering Frock</ct> state, which can be canceled by holding <IconEvade /> during the skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateSoaringBirdsSong": {
+      "name": "Ultimate: Soaring Bird's Song",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Launch a powerful attack on a large area of enemies ahead, dealing massive <ct color=#FE437E>Ether DMG</ct> and gaining 5 <ct color=#FFFFFF>Flight Feathers</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After the skill is activated, enter the <ct color=#FFFFFF>Fluttering Frock</ct> state, which can be canceled by holding <IconEvade /> during the skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistFrostwingGuard": {
+      "name": "Quick Assist: Frostwing Guard",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Launches an attack on enemies ahead, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After the skill activates, enter the <ct color=#FFFFFF>Noblewoman</ct> state.",
+        "4": "With <ct color=#FFFFFF>Flight Feathers</ct> available, hold <IconNormal /> during skill activation to enter the <ct color=#FFFFFF>Fluttering Frock</ct> state."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistSilverUmbrellaFormation": {
+      "name": "Defensive Assist: Silver Umbrella Formation",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpFeatherbladeExecution": {
+      "name": "Assist Follow-Up: Featherblade Execution",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Launch an attack at enemies ahead, dealing <ct color=#FE437E>Ether DMG</ct> and gaining 2 <ct color=#FFFFFF>Flight Feathers</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After the skill activates enter the <ct color=#FFFFFF>Fluttering Frock</ct> state, which can be canceled by holding <IconEvade /> during the skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Dirge of Destiny",
+    "desc": [
+      {
+        "0": "When <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target that is suffering from an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, dealing additional Attribute Anomaly DMG. The additional DMG is <ct color=#FE437E>3.07%</ct>/<ct color=#2EB6FF>1.6%</ct>/<ct color=#FF5521>4%</ct>/<ct color=#F0D12B>0.37%</ct>/<ct color=#98EFF0>0.54%</ct> per 10 points of Anomaly Proficiency of the original Anomaly DMG.",
+        "1": "When <ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> or <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target suffering any Attribute Anomaly, it will inflict <ct color=#FFFFFF>Vivian's Prophecy</ct>, causing the target to take <ct color=#FE437E>Ether DMG</ct> equal to 55% of Vivian's ATK every 0.55s. This DMG can trigger additional DMG from Attribute Anomalies. <ct color=#FFFFFF>Vivian's Prophecy</ct> ends when the target is no longer suffering an Attribute Anomaly.",
+        "2": "When entering the battlefield, Vivian gains 2 <ct color=#FFFFFF>Flight Feathers</ct>."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target that is suffering from an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, dealing additional Attribute Anomaly DMG. The additional DMG is <ct color=#FE437E>3.59%</ct>/<ct color=#2EB6FF>1.86%</ct>/<ct color=#FF5521>4.66%</ct>/<ct color=#F0D12B>0.44%</ct>/<ct color=#98EFF0>0.63%</ct> per 10 points of Anomaly Proficiency of the original Anomaly DMG.",
+        "1": "When <ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> or <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target suffering any Attribute Anomaly, it will inflict <ct color=#FFFFFF>Vivian's Prophecy</ct>, causing the target to take <ct color=#FE437E>Ether DMG</ct> equal to 55% of Vivian's ATK every 0.55s. This DMG can trigger additional DMG from Attribute Anomalies. <ct color=#FFFFFF>Vivian's Prophecy</ct> ends when the target is no longer suffering an Attribute Anomaly.",
+        "2": "When entering the battlefield, Vivian gains 2 <ct color=#FFFFFF>Flight Feathers</ct>."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target that is suffering from an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, dealing additional Attribute Anomaly DMG. The additional DMG is <ct color=#FE437E>4.11%</ct>/<ct color=#2EB6FF>2.12%</ct>/<ct color=#FF5521>5.32%</ct>/<ct color=#F0D12B>0.51%</ct>/<ct color=#98EFF0>0.72%</ct> per 10 points of Anomaly Proficiency of the original Anomaly DMG.",
+        "1": "When <ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> or <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target suffering any Attribute Anomaly, it will inflict <ct color=#FFFFFF>Vivian's Prophecy</ct>, causing the target to take <ct color=#FE437E>Ether DMG</ct> equal to 55% of Vivian's ATK every 0.55s. This DMG can trigger additional DMG from Attribute Anomalies. <ct color=#FFFFFF>Vivian's Prophecy</ct> ends when the target is no longer suffering an Attribute Anomaly.",
+        "2": "When entering the battlefield, Vivian gains 2 <ct color=#FFFFFF>Flight Feathers</ct>."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target that is suffering from an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, dealing additional Attribute Anomaly DMG. The additional DMG is <ct color=#FE437E>4.63%</ct>/<ct color=#2EB6FF>2.38%</ct>/<ct color=#FF5521>5.98%</ct>/<ct color=#F0D12B>0.58%</ct>/<ct color=#98EFF0>0.81%</ct> per 10 points of Anomaly Proficiency of the original Anomaly DMG.",
+        "1": "When <ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> or <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target suffering any Attribute Anomaly, it will inflict <ct color=#FFFFFF>Vivian's Prophecy</ct>, causing the target to take <ct color=#FE437E>Ether DMG</ct> equal to 55% of Vivian's ATK every 0.55s. This DMG can trigger additional DMG from Attribute Anomalies. <ct color=#FFFFFF>Vivian's Prophecy</ct> ends when the target is no longer suffering an Attribute Anomaly.",
+        "2": "When entering the battlefield, Vivian gains 2 <ct color=#FFFFFF>Flight Feathers</ct>."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target that is suffering from an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, dealing additional Attribute Anomaly DMG. The additional DMG is <ct color=#FE437E>5.15%</ct>/<ct color=#2EB6FF>2.64%</ct>/<ct color=#FF5521>6.64%</ct>/<ct color=#F0D12B>0.65%</ct>/<ct color=#98EFF0>0.9%</ct> per 10 points of Anomaly Proficiency of the original Anomaly DMG.",
+        "1": "When <ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> or <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target suffering any Attribute Anomaly, it will inflict <ct color=#FFFFFF>Vivian's Prophecy</ct>, causing the target to take <ct color=#FE437E>Ether DMG</ct> equal to 55% of Vivian's ATK every 0.55s. This DMG can trigger additional DMG from Attribute Anomalies. <ct color=#FFFFFF>Vivian's Prophecy</ct> ends when the target is no longer suffering an Attribute Anomaly.",
+        "2": "When entering the battlefield, Vivian gains 2 <ct color=#FFFFFF>Flight Feathers</ct>."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target that is suffering from an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, dealing additional Attribute Anomaly DMG. The additional DMG is <ct color=#FE437E>5.65%</ct>/<ct color=#2EB6FF>2.9%</ct>/<ct color=#FF5521>7.3%</ct>/<ct color=#F0D12B>0.7%</ct>/<ct color=#98EFF0>0.99%</ct> per 10 points of Anomaly Proficiency of the original Anomaly DMG.",
+        "1": "When <ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> or <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target suffering any Attribute Anomaly, it will inflict <ct color=#FFFFFF>Vivian's Prophecy</ct>, causing the target to take <ct color=#FE437E>Ether DMG</ct> equal to 55% of Vivian's ATK every 0.55s. This DMG can trigger additional DMG from Attribute Anomalies. <ct color=#FFFFFF>Vivian's Prophecy</ct> ends when the target is no longer suffering an Attribute Anomaly.",
+        "2": "When entering the battlefield, Vivian gains 2 <ct color=#FFFFFF>Flight Feathers</ct>."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target that is suffering from an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, dealing additional Attribute Anomaly DMG. The additional DMG is <ct color=#FE437E>6.15%</ct>/<ct color=#2EB6FF>3.2%</ct>/<ct color=#FF5521>8%</ct>/<ct color=#F0D12B>0.75%</ct>/<ct color=#98EFF0>1.08%</ct> per 10 points of Anomaly Proficiency of the original Anomaly DMG.",
+        "1": "When <ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> or <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> hits a target suffering any Attribute Anomaly, it will inflict <ct color=#FFFFFF>Vivian's Prophecy</ct>, causing the target to take <ct color=#FE437E>Ether DMG</ct> equal to 55% of Vivian's ATK every 0.55s. This DMG can trigger additional DMG from Attribute Anomalies. <ct color=#FFFFFF>Vivian's Prophecy</ct> ends when the target is no longer suffering an Attribute Anomaly.",
+        "2": "When entering the battlefield, Vivian gains 2 <ct color=#FFFFFF>Flight Feathers</ct>."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Prophetic Tears",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Anomaly</ct> character or shares the same attribute:",
+      "1": "Whenever another squad member applies an Attribute Anomaly to an enemy, Vivian will consume 1 <ct color=#FFFFFF>Guard Feather</ct> to launch <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> on the target. This can trigger once every 0.5s.",
+      "2": "<ct color=#FE437E>Corruption</ct> DMG dealt by all squad members and the <ct color=#FE437E>Corruption</ct> status' <ct color=#FFFFFF>Disorder</ct> DMG increases by <ct color=#2BAD00>12%</ct>."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "\"Walking Into the Orchard in Spring\"",
+      "desc": "When a total of 4 <ct color=#FFFFFF>Guard Feathers</ct> are consumed, gain 1 <ct color=#FFFFFF>Flight Feather</ct>. All Attribute Anomaly DMG and <ct color=#FFFFFF>Disorder</ct> DMG received by targets under <ct color=#FFFFFF>Vivian's Prophecy</ct> increases by 16%.",
+      "flavor": {
+        "0": "\"Every morning is like our first encounter, every night a reunion.\"",
+        "1": "She had once seen fate's fickleness, with the inevitable ending always tainted by tears.",
+        "2": "She no longer wishes to be the prophetic bird of disaster. She's willing to vanish in the fire, sleep in the light, and change your fate with all she has.",
+        "3": "So, please don't close the window; the bird will bring you love and carry away death."
+      }
+    },
+    "2": {
+      "name": "\"Stormy Night, Stormy Night\"",
+      "desc": "Vivian's <ct color=#FE437E>Ether Anomaly Buildup Rate</ct> increases by 25%. The benefits of <ct color=#FFFFFF>Abloom</ct> from Anomaly Proficiency are raised to 130% of the original value, and 15% of the target's All-Attribute RES is ignored.",
+      "flavor": {
+        "0": "\"If I had never seen the sun, I could have endured the darkness.\"",
+        "1": "The word \"savior\" feels too heavy, and \"good person\" seems too light.",
+        "2": "So, perhaps it's better to say, you were once her boatman.",
+        "3": "In that storm called malice and self-regret, you were a ray of light, guiding her through the flood.",
+        "4": "From that moment on, she could no longer bear the curse or the nightmares. She set out on a journey to find you."
+      }
+    },
+    "3": {
+      "name": "\"Another and the Same\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"We measure each other's shadows with the dusk, discovering they completely overlap.\"",
+        "1": "In countless dusks you were unaware of, she watched the same sun set with you, turning the sea into a beautiful warmth.",
+        "2": "Amid countless diverging paths, she resolutely chose the one that led to your side.",
+        "3": "And today, she finally stands with her shadow overlapping yours.",
+        "4": "And today, the sunset remains unchanged."
+      }
+    },
+    "4": {
+      "name": "\"The Wind Between the Reeds\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> and <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> will always CRIT on hit, and they will also increase Vivian's ATK by 12% for 12s. Repeated triggers reset the duration. When entering the battlefield, Vivian immediately gains 5 <ct color=#FFFFFF>Guard Feathers</ct>.",
+      "flavor": {
+        "0": "\"I will lay my true heart, like moonlight, to cover the path beneath your feet.\"",
+        "1": "In chasing after you, she has already formed her own sky.",
+        "2": "She is not one of vast love, nor does she have much.",
+        "3": "But for you, only for you, she can spill moonlight, cover the darkness, and repair the fractures.",
+        "4": "You are her only generosity, her greatest bravery."
+      }
+    },
+    "5": {
+      "name": "\"Sonnet\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Shall I compare thee to a summer's day?\"",
+        "1": "She is like a bird, flying from late autumn with excitement and anticipation, her wings sweeping across the winter snow. In the spring, she picks a flower and flies straight into the scorching sun of summer.",
+        "2": "All because your eyes hide a thousand suns, she loves the fierce sunlight and fears no frost."
+      }
+    },
+    "6": {
+      "name": "\"Vivian\"",
+      "desc": "Vivian's <ct color=#FE437E>Ether DMG</ct> increases by 40%. When triggering a Perfect Dodge during <ct color=#FFFFFF>Basic Attack: Noblewoman - Waltz</ct>'s dash, or using <ct color=#FFFFFF>EX Special Attack: Violet Requiem</ct>, gain 1 additional <ct color=#FFFFFF>Flight Feather</ct>. Launching <ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> consumes all <ct color=#FFFFFF>Guard Feathers</ct>, the downward attack's area of effect increases, and upon hit, triggers a special instance of <ct color=#FFFFFF>Abloom</ct>. Each additional <ct color=#FFFFFF>Guard Feather</ct> consumed will increase the proportion of additional Anomaly DMG dealt by that instance of <ct color=#FFFFFF>Abloom</ct>, consuming a maximum of 5 <ct color=#FFFFFF>Guard Feathers</ct> to increase the DMG up to a maximum of 5 times the original.",
+      "flavor": {
+        "0": "\"Vivian is a love poem written only for you.\"",
+        "1": "\"We have all the time in the world.\"",
+        "2": "\"So, please allow me to write the rest of my life as your footnotes.\""
+      }
+    }
+  }
 }

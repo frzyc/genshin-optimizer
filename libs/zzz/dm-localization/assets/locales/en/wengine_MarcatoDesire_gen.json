@@ -1,6 +1,9 @@
 {
   "name": "Marcato Desire",
-  "desc": "Art can save those drowning in life. Mortals gather together, music of different emotions collide, and the drying graffiti on the wall speaks of a thousand unique forms of agency.\nNow, turn up the music until the soundwaves crash the Hollow. Even if Ethereals don't have ears, let's make them feel the power of humanity!",
+  "desc": {
+    "0": "Art can save those drowning in life. Mortals gather together, music of different emotions collide, and the drying graffiti on the wall speaks of a thousand unique forms of agency.",
+    "1": "Now, turn up the music until the soundwaves crash the Hollow. Even if Ethereals don't have ears, let's make them feel the power of humanity!"
+  },
   "desc2": "Equip to increase Attack Agents' combat capabilities",
   "desc3": "Gather 'round, mortals! Turn up the music!",
   "phase": "Get Everyone Fired Up",

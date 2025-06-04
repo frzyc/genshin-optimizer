@@ -1,6 +1,10 @@
 {
   "name": "Demara Battery Mark II",
-  "desc": "This customized W-Engine Core focuses on power storage and has been modified to enhance power storage functions. It can effectively boost Zap damage output for weapons, and is the gadget store owner's piece de resistance. Not long after, Anby made some tweaks based on user habits, but judging by how serious and careful she is while conducting each maintenance session, these are probably not the safest of modifications.\n\n<ct color=#959595>\"Weapons SHOULD be dangerous. If it can't shock me, then how is it going to shock the enemy?\" — Anby's response while carefully performing maintenance</ct>",
+  "desc": {
+    "0": "This customized W-Engine Core focuses on power storage and has been modified to enhance power storage functions. It can effectively boost Zap damage output for weapons, and is the gadget store owner's piece de resistance. Not long after, Anby made some tweaks based on user habits, but judging by how serious and careful she is while conducting each maintenance session, these are probably not the safest of modifications.",
+    "1": "",
+    "2": "<ct color=#959595>\"Weapons SHOULD be dangerous. If it can't shock me, then how is it going to shock the enemy?\" — Anby's response while carefully performing maintenance</ct>"
+  },
   "desc2": "Equip to increase Stun Agents' combat capabilities",
   "desc3": "A customized W-Engine that focuses on energy storage, modified to improve its energy capacity. This model is often used by Anby.",
   "phase": "In a Flash of Light",

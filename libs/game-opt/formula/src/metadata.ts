@@ -54,7 +54,7 @@ export function extractFormulaMetadata<T, GenericTag extends Tag>(
       console.log(`Duplicated formula definition for ${sheet}:${name}`)
     result[sheet][name] = extracted
   }
-  return sortMeta(result)
+  return result
 }
 
 function sortMeta<T>(

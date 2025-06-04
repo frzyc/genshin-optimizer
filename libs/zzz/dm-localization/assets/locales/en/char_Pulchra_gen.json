@@ -1,3 +1,233 @@
 {
-  "name": "Pulchra"
+  "name": "Pulchra",
+  "fullName": "Pulchra Fellini",
+  "basic": {
+    "BasicAttackSwiftStrike": {
+      "name": "Basic Attack: Swift Strike",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 3 attacks forward, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackLeapingStrike": {
+      "name": "Basic Attack: Leaping Strike",
+      "desc": {
+        "0": "Hold <IconNormal /> to activate:",
+        "1": "Leap forward and unleash a series of slashes, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeReversalShot": {
+      "name": "Dodge: Reversal Shot",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackFirstStrikeAdvantage": {
+      "name": "Dash Attack: First Strike Advantage",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Dash forward and slash, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterRelentlessRetribution": {
+      "name": "Dodge Counter: Relentless Retribution",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Thrust at enemies in front, then follow up with a swift slash, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackRendingClaw": {
+      "name": "Special Attack: Rending Claw",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Perform a rapid back-and-forth piercing attack, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "SpecialAttackRendingClawNightmareShadow": {
+      "name": "Special Attack: Rending Claw - Nightmare Shadow",
+      "desc": {
+        "0": "While Pulchra is in the <ct color=#FFFFFF>Hunter's Gait</ct> state, and when another active character in the squad hits an enemy with a heavy attack from a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>:",
+        "1": "Dash back-and-forth piercing enemies surrounding the target, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "After using this skill, if another active character in the squad hits an enemy, Pulchra will repeat the attack up to 5 additional times, with the final attack being a more powerful Finishing Move.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "<ct color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</ct> is an <ct color=#FFFFFF>Aftershock</ct> attack."
+      },
+      "params": [
+        "",
+        "Finishing Move "
+      ]
+    },
+    "EXSpecialAttackRendingClawFlashstep": {
+      "name": "EX Special Attack: Rending Claw - Flashstep",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Pierce back and forth times, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackHeyDidntExpectThatRight": {
+      "name": "Chain Attack: Hey, Didn't Expect That, Right?",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a charged shot forward, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateOhTimeToPlay": {
+      "name": "Ultimate: Oh, Time to Play?",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleash a powerful shot at enemies in a large area ahead, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistContractBodyguard": {
+      "name": "Quick Assist: Contract - Bodyguard",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Thrust at enemies in front, followed by rapid slashes, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EvasiveAssistContractOutsourcedCombat": {
+      "name": "Evasive Assist: Contract - Outsourced Combat",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Dodges the enemy's attack and activates <ct color=#FFFFFF>Vital View</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "AssistFollowUpIndependentPricing": {
+      "name": "Assist Follow-Up: Independent Pricing",
+      "desc": {
+        "0": "Press <IconNormal /> after an <ct color=#FFFFFF>Evasive Assist</ct> to activate:",
+        "1": "Leap forward into the air and fire, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Upon activating this skill, consume 1 <ct color=#FFFFFF>Assist Point</ct> to enter the <ct color=#FFFFFF>Hunter's Gait</ct> state.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Hunter's Instinct",
+    "desc": [
+      "When Pulchra activates an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she enters the <ct color=#FFFFFF>Hunter's Gait</ct> state, increasing the Daze she deals by <ct color=#2BAD00>15%</ct> for 6s. After switching to another character, if Pulchra is still in the <ct color=#FFFFFF>Hunter's Gait</ct> state, the state will last until Pulchra switches back in. While in the <ct color=#FFFFFF>Hunter's Gait</ct> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <ct color=#FFFFFF>Quick Assist</ct> from the previous character in the squad.",
+      "When Pulchra activates an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she enters the <ct color=#FFFFFF>Hunter's Gait</ct> state, increasing the Daze she deals by <ct color=#2BAD00>17.5%</ct> for 6s. After switching to another character, if Pulchra is still in the <ct color=#FFFFFF>Hunter's Gait</ct> state, the state will last until Pulchra switches back in. While in the <ct color=#FFFFFF>Hunter's Gait</ct> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <ct color=#FFFFFF>Quick Assist</ct> from the previous character in the squad.",
+      "When Pulchra activates an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she enters the <ct color=#FFFFFF>Hunter's Gait</ct> state, increasing the Daze she deals by <ct color=#2BAD00>20%</ct> for 6s. After switching to another character, if Pulchra is still in the <ct color=#FFFFFF>Hunter's Gait</ct> state, the state will last until Pulchra switches back in. While in the <ct color=#FFFFFF>Hunter's Gait</ct> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <ct color=#FFFFFF>Quick Assist</ct> from the previous character in the squad.",
+      "When Pulchra activates an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she enters the <ct color=#FFFFFF>Hunter's Gait</ct> state, increasing the Daze she deals by <ct color=#2BAD00>22.5%</ct> for 6s. After switching to another character, if Pulchra is still in the <ct color=#FFFFFF>Hunter's Gait</ct> state, the state will last until Pulchra switches back in. While in the <ct color=#FFFFFF>Hunter's Gait</ct> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <ct color=#FFFFFF>Quick Assist</ct> from the previous character in the squad.",
+      "When Pulchra activates an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she enters the <ct color=#FFFFFF>Hunter's Gait</ct> state, increasing the Daze she deals by <ct color=#2BAD00>25%</ct> for 6s. After switching to another character, if Pulchra is still in the <ct color=#FFFFFF>Hunter's Gait</ct> state, the state will last until Pulchra switches back in. While in the <ct color=#FFFFFF>Hunter's Gait</ct> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <ct color=#FFFFFF>Quick Assist</ct> from the previous character in the squad.",
+      "When Pulchra activates an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she enters the <ct color=#FFFFFF>Hunter's Gait</ct> state, increasing the Daze she deals by <ct color=#2BAD00>27.5%</ct> for 6s. After switching to another character, if Pulchra is still in the <ct color=#FFFFFF>Hunter's Gait</ct> state, the state will last until Pulchra switches back in. While in the <ct color=#FFFFFF>Hunter's Gait</ct> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <ct color=#FFFFFF>Quick Assist</ct> from the previous character in the squad.",
+      "When Pulchra activates an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she enters the <ct color=#FFFFFF>Hunter's Gait</ct> state, increasing the Daze she deals by <ct color=#2BAD00>30%</ct> for 6s. After switching to another character, if Pulchra is still in the <ct color=#FFFFFF>Hunter's Gait</ct> state, the state will last until Pulchra switches back in. While in the <ct color=#FFFFFF>Hunter's Gait</ct> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <ct color=#FFFFFF>Quick Assist</ct> from the previous character in the squad."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Business Partner",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct> character or shares the same Faction:",
+      "1": "When Pulchra hits enemies with <ct color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</ct>, an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, it applies the <ct color=#FFFFFF>Binding Trap</ct> effect for 15s. After applying <ct color=#FFFFFF>Binding Trap</ct>, all units' <ct color=#FFFFFF>Aftershock</ct> DMG against the target is increased by 30%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Self-Interest",
+      "desc": "When dealing DMG to enemies affected by <ct color=#FFFFFF>Binding Trap</ct>, increase own CRIT Rate by 10%.",
+      "flavor": {
+        "0": "\"Self-interest is an instinct, but it can also be learned over time.\"",
+        "1": "\"How do you learn it?\"",
+        "2": "\"Get burned a few times and you'll figure it out.\""
+      }
+    },
+    "2": {
+      "name": "Opportunistic",
+      "desc": "While in the <ct color=#FFFFFF>Hunter's Gait</ct> state from <ct color=#FFFFFF>Core Passive: Hunter's Instinct</ct>, Pulchra's ATK is increased by an additional 10%.",
+      "flavor": {
+        "0": "\"A mercenary's most valuable trait isn't loyalty - it's knowing when an opportunity appears. Picking the right employer, taking the right commissions, doing what's required, and never signing long-term contracts. Then even if you switch sides to work for the competition, your former employer can't say a thing.\"",
+        "1": "\"Pulchra, someone else came looking for trouble just now. I sent them packing. How did you manage to make so many enemies?\"",
+        "2": "\"Too many people let their emotions get the better of them. See? That's why they're all just losers who don't know their own lack of worth.\""
+      }
+    },
+    "3": {
+      "name": "Territorial",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "There's a large note posted on the door of Pulchra's car. Written in big red letters: THIS IS MY TURF! KNOCK BEFORE ENTERING! KNOCK! KNOCK!",
+        "1": "Below it, there's a slightly smaller note with big black letters that reads: Caesar, you'd better pay for breaking my lock! 100,000 Dennies!",
+        "2": "Under the black letters, there's a crooked line of small text: I asked Proxy, lock's only worth 20,000!"
+      }
+    },
+    "4": {
+      "name": "Joy of the Hunt",
+      "desc": "Reduces Energy Cost of activating <ct color=#FFFFFF>EX Special Attack: Rending Claw - Flashstep</ct> by 5.",
+      "flavor": {
+        "0": "\"What's the point of challenging strong opponents? I'm not a masochist. For me, the real joy of the hunt comes when I know I'm gonna win!\"",
+        "1": "5 minutes later...",
+        "2": "\"Man, this game's AI is way too weak. Boring.\""
+      }
+    },
+    "5": {
+      "name": "Tail Game",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Pulchra's earliest blurry childhood memory was of a warm, big tail. When she first learned to crawl, she loved to chase after it.",
+        "1": "\"And then what?\"",
+        "2": "\"They tell me it was my own tail.\"",
+        "3": "But Pulchra knew it wasn't hers. Aside from the tail game, at night, it would wrap tightly around her, keeping her warm through each cold night. Maybe the Hollow took it, or maybe something else... But it doesn't matter - she stopped playing that game long ago."
+      }
+    },
+    "6": {
+      "name": "Behind the Mask",
+      "desc": "<ct color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow's</ct> DMG is increased by 15%, and the number of times the repeated attack can trigger is increased by 2. <ct color=#FFFFFF>Additional Ability: Business Partner</ct>'s <ct color=#FFFFFF>Binding Trap</ct> effect now also applies to all damage types, not just <ct color=#FFFFFF>Aftershock</ct> DMG.",
+      "flavor": {
+        "0": "The respirator mask blocks out Ether particles and pollen, and shields her from curious, fearful, or malicious gazes — but it makes it impossible to curl up and get a good night's sleep. How she longs to find a warm place and take a carefree afternoon nap...",
+        "1": "The car door suddenly swings open without warning. Startled awake, she instantly grabs her old partner and straps it to her face. \"Would it kill you to knock?!\"",
+        "2": "...Ah, right. She can actually take it off now."
+      }
+    }
+  }
 }

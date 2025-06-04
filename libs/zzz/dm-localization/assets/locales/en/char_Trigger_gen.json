@@ -1,3 +1,262 @@
 {
-  "name": "Trigger"
+  "name": "Trigger",
+  "fullName": "Trigger",
+  "basic": {
+    "BasicAttackColdBoreShot": {
+      "name": "Basic Attack: Cold-Bore Shot",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 4 shots ahead. The first 3 hits deal <ct color=#F0D12B>Physical DMG</ct>, the 4th hit deals <ct color=#2EB6FF>Electric DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackSilencedShot": {
+      "name": "Basic Attack: Silenced Shot",
+      "desc": {
+        "0": "Hold <IconNormal /> to activate:",
+        "1": "Trigger enters the <ct color=#FFFFFF>Sniper Stance</ct> and fires forward continuously, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "While continually firing, when attacked by an enemy, Trigger will automatically evade. This effect can trigger once every 8s.",
+        "3": "While continually firing, you can drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to adjust her position to the left/right/back.",
+        "4": "Automatically evading attacks or adjusting position when about to be hit will trigger a <ct color=#FFFFFF>Perfect Dodge</ct>, followed by an automatic charged counter.",
+        "5": "After releasing <IconNormal />, Trigger will step back, ready her weapon and unleash a Finishing Move, then exit <ct color=#FFFFFF>Sniper Stance</ct>.",
+        "6": "Character is invulnerable during the charged counter and Finishing Move.",
+        "7": "When the continuous firing or the charged counter hits an enemy, Trigger gains 25 <ct color=#FFFFFF>Purge</ct>, up to a maximum of 100 <ct color=#FFFFFF>Purge</ct>.",
+        "8": "When the Finishing Move hits an enemy, it triggers the <ct color=#FFFFFF>Quick Assist</ct> of the previous character in the squad. A <ct color=#FFFFFF>Quick Assist</ct> can only be triggered through this method once every 25s."
+      },
+      "params": [
+        "Shot ",
+        "Counter ",
+        "Finishing Move "
+      ]
+    },
+    "BasicAttackHarmonizingShot": {
+      "name": "Basic Attack: Harmonizing Shot",
+      "desc": {
+        "0": "When Trigger has <ct color=#FFFFFF>Purge</ct>, use another active character in the squad to hit an enemy with a <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge Counter</ct>, <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct> or <ct color=#FFFFFF>Quick Assist</ct> to activate:",
+        "1": "While encircling the enemy, rapidly fire two shots at the enemy, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Upon activating this skill, consume 3 <ct color=#FFFFFF>Purge</ct>.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "<ct color=#FFFFFF>Basic Attack: Harmonizing Shot</ct> is an <ct color=#FFFFFF>Aftershock</ct> attack.",
+        "5": "The squad can trigger <ct color=#FFFFFF>Basic Attack: Harmonizing Shot</ct> once every 3s."
+      },
+      "params": [
+        "Continuous Fire "
+      ]
+    },
+    "BasicAttackHarmonizingShotTartarus": {
+      "name": "Basic Attack: Harmonizing Shot - Tartarus",
+      "desc": {
+        "0": "When Trigger has <ct color=#FFFFFF>Purge</ct>, use another active character in the squad to hit an enemy with a heavy attack from an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, or <ct color=#FFFFFF>Ultimate</ct> to activate:",
+        "1": "While encircling the enemy, rapidly fires three shots at the enemy, followed by a Finishing Move, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Upon activating this skill, consume 5 <ct color=#FFFFFF>Purge</ct>.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "<ct color=#FFFFFF>Basic Attack: Harmonizing Shot - Tartarus</ct> is an <ct color=#FFFFFF>Aftershock</ct> attack.",
+        "5": "The same skill type can trigger <ct color=#FFFFFF>Basic Attack: Harmonizing Shot - Tartarus</ct> up to 2 times within 20s for the entire squad.",
+        "6": "During <ct color=#FFFFFF>Basic Attack: Harmonizing Shot</ct>, <ct color=#FFFFFF>Basic Attack: Harmonizing Shot - Tartarus</ct> will immediately activate instead if triggered."
+      },
+      "params": [
+        "Continuous Fire ",
+        "Finishing Move "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgePhantomConcealment": {
+      "name": "Dodge: Phantom Concealment",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackVengefulSpecter": {
+      "name": "Dash Attack: Vengeful Specter",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Rapidly lift the gun and fire, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterCondemnedSoul": {
+      "name": "Dodge Counter: Condemned Soul",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Rotate and fire a quick shot at enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSpectralFlash": {
+      "name": "Special Attack: Spectral Flash",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Lunge forward with a slash, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackFlashBurial": {
+      "name": "EX Special Attack: Flash Burial",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Lunge forward with a slash, then leap up with a powerful shot to the ground, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "When this skill hits an enemy, it triggers the <ct color=#FFFFFF>Quick Assist</ct> of the previous character in the squad.",
+        "4": "When this skill hits an enemy, Trigger enters <ct color=#FFFFFF>Coordinated Support</ct>. While in this state, when another active character in the squad hits an enemy with any attack, it triggers a <ct color=#FFFFFF>Basic Attack: Harmonizing Shot</ct> without consuming <ct color=#FFFFFF>Purge</ct> and with no cooldown restrictions. This state lasts 8s and the effect can trigger up to 4 times. Repeatedly entering <ct color=#FFFFFF>Coordinated Support</ct> extends the duration and grants additional triggers, lasting a maximum of 20s and triggering up to a maximum of 10 times."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackStygianGuide": {
+      "name": "Chain Attack: Stygian Guide",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes continuous powerful shots forward, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateUnderworldRequiem": {
+      "name": "Ultimate: Underworld Requiem",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Deliver a powerful shot at enemies in a large area ahead, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "When the skill hits an enemy, it triggers the <ct color=#FFFFFF>Quick Assist</ct> of the previous character in the squad.",
+        "4": "When the skill hits an enemy, Trigger enters <ct color=#FFFFFF>Coordinated Support</ct>. While in this state, when another active character in the squad hits an enemy with any attack, it triggers a <ct color=#FFFFFF>Basic Attack: Harmonizing Shot</ct> without consuming <ct color=#FFFFFF>Purge</ct> and with no cooldown restrictions. This state lasts 12s and the effect can trigger up to 6 times. Repeatedly entering <ct color=#FFFFFF>Coordinated Support</ct> extends the duration and grants additional triggers, lasting a maximum of 20s and triggering up to a maximum of 10 times."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistColdBoreCoverFire": {
+      "name": "Quick Assist: Cold-Bore Cover Fire",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Rotate and fire a quick shot at enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistDelayingDemise": {
+      "name": "Defensive Assist: Delaying Demise",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpPiercingThunder": {
+      "name": "Assist Follow-Up: Piercing Thunder",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Unleash a series of slashes at enemies ahead, followed by a powerful charged shot after landing, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Soul-Searching Gaze",
+    "desc": [
+      "When Trigger's <ct color=#FFFFFF>Aftershock</ct> hits an enemy, the target's Stun DMG Multiplier increases by <ct color=#2BAD00>20%</ct> for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+      "When Trigger's <ct color=#FFFFFF>Aftershock</ct> hits an enemy, the target's Stun DMG Multiplier increases by <ct color=#2BAD00>22.5%</ct> for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+      "When Trigger's <ct color=#FFFFFF>Aftershock</ct> hits an enemy, the target's Stun DMG Multiplier increases by <ct color=#2BAD00>25%</ct> for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+      "When Trigger's <ct color=#FFFFFF>Aftershock</ct> hits an enemy, the target's Stun DMG Multiplier increases by <ct color=#2BAD00>27.5%</ct> for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+      "When Trigger's <ct color=#FFFFFF>Aftershock</ct> hits an enemy, the target's Stun DMG Multiplier increases by <ct color=#2BAD00>30%</ct> for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+      "When Trigger's <ct color=#FFFFFF>Aftershock</ct> hits an enemy, the target's Stun DMG Multiplier increases by <ct color=#2BAD00>32.5%</ct> for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+      "When Trigger's <ct color=#FFFFFF>Aftershock</ct> hits an enemy, the target's Stun DMG Multiplier increases by <ct color=#2BAD00>35%</ct> for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Silver Lantern's Gaze",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct> character or shares the same attribute:",
+      "1": "When Trigger's CRIT Rate exceeds 40%, each 1% CRIT Rate above this threshold increases her Daze dealt by <ct color=#FFFFFF>Aftershocks</ct> by 1.5%, up to a maximum increase of 75%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Sharpened Senses",
+      "desc": "The Stun DMG Multiplier applied through <ct color=#FFFFFF>Core Passive: Soul-Searching Gaze</ct> is increased by an additional 20%. When activating <ct color=#FFFFFF>Basic Attack: Harmonizing Shot</ct>, the cooldown is reduced to 2s. <ct color=#FFFFFF>Purge</ct> gained upon hitting an enemy with the continuous fire or charged counter in <ct color=#FFFFFF>Sniper Stance</ct> increases by 25%. Maximum <ct color=#FFFFFF>Purge</ct> increases to 125.",
+      "flavor": {
+        "0": "Hearing that can distinguish every subtle change in the wind, touch that can sense every tremor in the ground. To compensate for her visual limitations, the young lady honed her other senses to perfection.",
+        "1": "\"Being a sniper is the only thing I excel at... At least in this, I refuse to lose to anyone.\""
+      }
+    },
+    "2": {
+      "name": "\"Ether Vision\"",
+      "desc": "Upon using an <ct color=#FFFFFF>Aftershock</ct>, Trigger gains 1 stack of <ct color=#FFFFFF>Hunter's Gaze</ct>. When executing a Finishing Move in <ct color=#FFFFFF>Sniper Stance</ct>, Trigger gains 2 stacks of <ct color=#FFFFFF>Hunter's Gaze</ct>. Each stack of <ct color=#FFFFFF>Hunter's Gaze</ct> increases all squad members' CRIT DMG by 6%, stacking up to 4 times, and lasting 10s. Repeated triggers reset the duration.",
+      "flavor": {
+        "0": "When inside the Hollow, every Ether fluctuation around her becomes an aid to her spatial observation.",
+        "1": "\"I used to think these eyes were cursed, bringing nothing but pain.\"",
+        "2": "\"But now... they're my ticket to reaching my goals, and proof that I haven't forgotten my past.\""
+      }
+    },
+    "3": {
+      "name": "\"Homecoming\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The home she could return to is now sealed away in the past.",
+        "1": "Her cold lips pressed against the harmonica, the lonely melody the only testament to her memories."
+      }
+    },
+    "4": {
+      "name": "Concealment",
+      "desc": "When Trigger enters or extends <ct color=#FFFFFF>Coordinated Support</ct>, while the state is active, the next time other squad members trigger <ct color=#FFFFFF>Basic Attack: Harmonizing Shot</ct> or <ct color=#FFFFFF>Basic Attack: Harmonizing Shot - Tartarus</ct>, it will trigger <ct color=#FFFFFF>Disconnect</ct> upon hitting an enemy, dealing additional DMG equal to 200% of Trigger's ATK and inflict Daze equal to 120% of Trigger's Impact. This skill has a relatively high Interrupt Level.",
+      "flavor": {
+        "0": "Footsteps, breaths, heartbeats. She smothers every trace of her own aura until her entire form blends seamlessly with the environment. She moves through the battlefield like a ghostly reaper.",
+        "1": "Outside of combat though, this silent way of moving has been strictly forbidden after scaring her teammates one too many times.",
+        "2": "Of course, she definitely hasn't been using these stealth tactics to observe the video store when she can't find an opportunity to meet someone there... right?"
+      }
+    },
+    "5": {
+      "name": "Locked In",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Once a target is locked, even with a broken, decaying body or through excruciating pain, never let your crosshair waver. From the targets of her revenge to those she must protect, from enemies to allies — this is the will of a sniper.",
+        "1": "But with the Proxy, the one who gave her light in her darkest hour, it's not about locking in but being drawn in. Even if there's no reason to keep watching, she will never divert her aim — this is the will of a young lady."
+      }
+    },
+    "6": {
+      "name": "Beyond the River of the Dead",
+      "desc": "Upon entering the battlefield, Trigger gains 5 <ct color=#FFFFFF>Armor Break Rounds</ct>. For every 25 <ct color=#FFFFFF>Purge</ct> consumed, Trigger gains 1 additional <ct color=#FFFFFF>Armor Break Round</ct>, up to a maximum of 5 rounds. While possessing <ct color=#FFFFFF>Armor Break Rounds</ct>, when Trigger hits a target in <ct color=#FFFFFF>Sniper Stance</ct>, 1 <ct color=#FFFFFF>Armor Break Round</ct> is consumed to deal additional <ct color=#2EB6FF>Electric DMG</ct> equal to 1,200% of Trigger's ATK. <ct color=#FFFFFF>Armor Break Round</ct> DMG is additionally increased by 50%. This effect can trigger once every 0.2s.",
+      "flavor": {
+        "0": "\"You know what? Those who are stained with blood in battle can only go to the underworld after death.\"",
+        "1": "\"Beyond the river of the dead lies a sight of unparalleled beauty. Flowers bloom all around me, while familiar faces from my past accompany me to my final, peaceful place of rest.\"",
+        "2": "\"But... because of you, because I have something to protect, perhaps I don't want that day to come so soon.\""
+      }
+    }
+  }
 }
