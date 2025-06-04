@@ -1,3 +1,237 @@
 {
-  "name": "Yanagi"
+  "name": "Yanagi",
+  "fullName": "Tsukishiro Yanagi",
+  "basic": {
+    "BasicAttackTsukuyomiKagura": {
+      "name": "Basic Attack: Tsukuyomi Kagura",
+      "desc": {
+        "0": "Yanagi has two stances: <ct color=#FFFFFF>Jougen</ct> and <ct color=#FFFFFF>Kagen</ct>.",
+        "1": "Press <IconNormal /> to activate:",
+        "2": "Execute up to five forward slashes based on the current stance, causing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#2EB6FF>Electric DMG</ct>.",
+        "3": "During combat, Yanagi gains the corresponding stance buff based on her current stance:",
+        "4": "<ct color=#FFFFFF>Jougen</ct> stance buff: <ct color=#2EB6FF>Electric DMG</ct> increases by 10%. Anti-Interrupt Level increases during <ct color=#FFFFFF>Basic Attacks</ct>.",
+        "5": "<ct color=#FFFFFF>Kagen</ct> stance buff: PEN Ratio increases by 10%. Interrupt Level increases for <ct color=#FFFFFF>Basic Attacks</ct>.",
+        "6": "For 8s after switching stances, Yanagi retains the bonus from the previous stance."
+      },
+      "params": []
+    }
+  },
+  "dodge": {
+    "DodgeWanderingBreeze": {
+      "name": "Dodge: Wandering Breeze",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackFleetingFlight": {
+      "name": "Dash Attack: Fleeting Flight",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterRapidRetaliation": {
+      "name": "Dodge Counter: Rapid Retaliation",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using this skill, you can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackRuten": {
+      "name": "Special Attack: Ruten",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Perform a forward slash, dealing <ct color=#2EB6FF>Electric DMG</ct>, and switch the current stance.",
+        "2": "Anti-Interrupt level is increased while using this skill.",
+        "3": "If activated after the 3rd, 4th, or 5th hit of a <ct color=#FFFFFF>Basic Attack</ct>, it activates <ct color=#FFFFFF>Swift Ruten</ct>, speeding up the slashes while switching her current stance.",
+        "4": "Block enemy attacks while <ct color=#FFFFFF>Swift Ruten</ct> is active.",
+        "5": "Upon activating <ct color=#FFFFFF>Swift Ruten</ct>, Yanagi can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackGekkaRuten": {
+      "name": "EX Special Attack: Gekka Ruten",
+      "desc": {
+        "0": "With enough Energy, hold <IconSpecialReady /> to activate:",
+        "1": "Charge up power for a quick forward thrust, followed by a downward attack, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Upon executing the thrust, Yanagi switches stances and enters the <ct color=#FFFFFF>Shinrabanshou</ct> state, lasting 15s. For the duration of this state, when following up with a subsequent <ct color=#FFFFFF>Basic Attack</ct> from the 5th hit of a <ct color=#FFFFFF>Basic Attack</ct> or other skills, the combo will begin directly from the 3rd hit of the <ct color=#FFFFFF>Basic Attack</ct>.",
+        "3": "If the downward attack hits an enemy suffering an Anomaly, it triggers a special <ct color=#FFFFFF>Disorder</ct> effect, <ct color=#FFFFFF>Polarity Disorder</ct>, dealing 15% of the original <ct color=#FFFFFF>Disorder</ct> effect's DMG to the target, plus an additional <ct color=#2BAD00>{CAL:5+AvatarSkillLevel(1)*2.25,100,2}%</ct> of Yanagi's Anomaly Proficiency. <ct color=#FFFFFF>Polarity Disorder</ct> will not remove the target's Anomaly.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Energy Cost",
+        "Thrust Attack ",
+        "Downward Attack ",
+        "Additional "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackCelestialHarmony": {
+      "name": "Chain Attack: Celestial Harmony",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Switch stances and unleash a powerful slash on enemies in front, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using this skill, you can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateRaieiTenge": {
+      "name": "Ultimate: Raiei Tenge",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Yanagi unleashes her potential and delivers a powerful slash to a large area of enemies in front in a very short time, followed by an additional lightning strike, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "When the lightning strike hits an enemy affected by an Attribute Anomaly, it triggers a special <ct color=#FFFFFF>Disorder</ct> effect called <ct color=#FFFFFF>Polarity Disorder</ct>. This deals DMG equal to 15% of the original <ct color=#FFFFFF>Disorder</ct> effect plus an additional <ct color=#2BAD00>{CAL:5+AvatarSkillLevel(3)*2.25,100,2}%</ct> of Yanagi's Anomaly Proficiency. <ct color=#FFFFFF>Polarity Disorder</ct> will not remove the target's Anomaly.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "After using this skill, Yanagi can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        "",
+        "Additional "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistBladeOfElegance": {
+      "name": "Quick Assist: Blade of Elegance",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using this skill, you can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistRadiantReversal": {
+      "name": "Defensive Assist: Radiant Reversal",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpWeepingWillowStab": {
+      "name": "Assist Follow-Up: Weeping Willow Stab",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Switch stances, and quickly deliver multiple slashes to enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using this skill, you can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Lunar Eclipse",
+    "desc": [
+      {
+        "0": "After Yanagi activates her <ct color=#FFFFFF>EX Special Attack</ct>, the DMG multiplier of <ct color=#FFFFFF>Disorder</ct> is increased by <ct color=#2BAD00>125%</ct> when any squad member applies the <ct color=#FFFFFF>Disorder</ct> effect to an enemy, lasting 15s.",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>10%</ct> for 15s."
+      },
+      {
+        "0": "After Yanagi activates her <ct color=#FFFFFF>EX Special Attack</ct>, the DMG multiplier of <ct color=#FFFFFF>Disorder</ct> is increased by <ct color=#2BAD00>145%</ct> when any squad member applies the <ct color=#FFFFFF>Disorder</ct> effect to an enemy, lasting 15s.",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>11.6%</ct> for 15s."
+      },
+      {
+        "0": "After Yanagi activates her <ct color=#FFFFFF>EX Special Attack</ct>, the DMG multiplier of <ct color=#FFFFFF>Disorder</ct> is increased by <ct color=#2BAD00>166%</ct> when any squad member applies the <ct color=#FFFFFF>Disorder</ct> effect to an enemy, lasting 15s.",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>13.3%</ct> for 15s."
+      },
+      {
+        "0": "After Yanagi activates her <ct color=#FFFFFF>EX Special Attack</ct>, the DMG multiplier of <ct color=#FFFFFF>Disorder</ct> is increased by <ct color=#2BAD00>188%</ct> when any squad member applies the <ct color=#FFFFFF>Disorder</ct> effect to an enemy, lasting 15s.",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>15%</ct> for 15s."
+      },
+      {
+        "0": "After Yanagi activates her <ct color=#FFFFFF>EX Special Attack</ct>, the DMG multiplier of <ct color=#FFFFFF>Disorder</ct> is increased by <ct color=#2BAD00>208%</ct> when any squad member applies the <ct color=#FFFFFF>Disorder</ct> effect to an enemy, lasting 15s.",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>16.6%</ct> for 15s."
+      },
+      {
+        "0": "After Yanagi activates her <ct color=#FFFFFF>EX Special Attack</ct>, the DMG multiplier of <ct color=#FFFFFF>Disorder</ct> is increased by <ct color=#2BAD00>230%</ct> when any squad member applies the <ct color=#FFFFFF>Disorder</ct> effect to an enemy, lasting 15s.",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>18.3%</ct> for 15s."
+      },
+      {
+        "0": "After Yanagi activates her <ct color=#FFFFFF>EX Special Attack</ct>, the DMG multiplier of <ct color=#FFFFFF>Disorder</ct> is increased by <ct color=#2BAD00>250%</ct> when any squad member applies the <ct color=#FFFFFF>Disorder</ct> effect to an enemy, lasting 15s.",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>20%</ct> for 15s."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Gessou",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Anomaly</ct> character or shares the same attribute:",
+      "1": "After switching stances, when Yanagi hits an enemy with <ct color=#FFFFFF>Basic Attack: Tsukuyomi Kagura</ct>, <ct color=#2EB6FF>Electric Anomaly Buildup</ct> increases by 45% for 8s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Know Thy Self, Know Thy Enemy",
+      "desc": "When any squad member inflicts an Anomaly on an enemy, Yanagi gains 1 stack of <ct color=#FFFFFF>Clarity</ct>, lasting 15s, stacking up to 3 times. Repeated triggers reset the duration. Upon being hit by an enemy attack, Yanagi consumes 1 stack of <ct color=#FFFFFF>Clarity</ct> to gain invulnerability for 1s. When Yanagi has 1 or more stacks of <ct color=#FFFFFF>Clarity</ct>, her Anomaly Proficiency increases by 80.",
+      "flavor": {
+        "0": "\"Having the clarity to see your enemy's weakness is like an extra safety net... and it increases your chances at victory.\"",
+        "1": "Yanagi adjusts her glasses, remaining as composed as ever, even when victory is already assured."
+      }
+    },
+    "2": {
+      "name": "Outstanding Adaptability",
+      "desc": "During her <ct color=#FFFFFF>EX Special Attack</ct>, the rapid thrust's <ct color=#2EB6FF>Electric Anomaly Buildup</ct> increases by 20%. Holding down the Special Attack button after a rapid thrust hits an enemy will consume 10 additional Energy to launch another thrust. If Energy is insufficient or the button is released, the attack automatically follows up with the downward attack. When the downward attack hits an enemy suffering an Anomaly and triggers <ct color=#FFFFFF>Polarity Disorder</ct>, the DMG multiplier increases to 20% of the original <ct color=#FFFFFF>Disorder</ct> effect. Each additional thrust increases this multiplier by 15%, up to a maximum of 2 extra thrusts.",
+      "flavor": {
+        "0": "\"Yanagi can handle any unfamiliar environment thrown her way.\"",
+        "1": "\"I believe in her more than I believe in myself.\"",
+        "2": "— From a martial artist practicing \"the cutting of fallen leaves.\""
+      }
+    },
+    "3": {
+      "name": "Tsukishiro Style Management",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Everyone says Section 6 is gathering oddballs and geniuses, with Tsukishiro Yanagi being the only \"normal\" one. But it's precisely her presence that holds the oddballs and geniuses together."
+    },
+    "4": {
+      "name": "Chessmaster",
+      "desc": "When Yanagi inflicts Attribute Anomaly DMG on an enemy, they suffer the <ct color=#FFFFFF>Exposed</ct> effect, lasting 15s. Attacks on enemies under the <ct color=#FFFFFF>Expose</ct> effect will have 16% increased PEN Ratio.",
+      "flavor": "No matter the situation, Tsukishiro Yanagi can rapidly grasp all the information at hand and make the most appropriate decision."
+    },
+    "5": {
+      "name": "\"Other Mother\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "At present, Tsukishiro Yanagi is the sole designated guardian of Soukaku.",
+        "1": "\"Soukaku, this is the Chief's riceball, you mustn't eat it... forget it, come here, I'll heat it up for you.\"",
+        "2": "\"We'll just buy a similar one for the Chief later.\""
+      }
+    },
+    "6": {
+      "name": "Inhuman Blood",
+      "desc": "After a thrust attack during her <ct color=#FFFFFF>EX Special Attack</ct>, the duration of the <ct color=#FFFFFF>Shinrabanshou</ct> state increases to 30s. While the state is active, <ct color=#FFFFFF>EX Special Attack</ct> DMG increases by 20%. The maximum number of times the additional DMG multiplier increase effect for <ct color=#FFFFFF>Polarity Disorder</ct> in <ct color=#FFFFFF>Outstanding Adaptability</ct> can be triggered increases to 4, and the Energy cost for the first 4 additional thrust attacks is halved.",
+      "flavor": {
+        "0": "Flowing through Tsukishiro Yanagi's veins is blood that isn't entirely her own. This blood once granted her new life in the face of despair, and with it, she gained certain special powers.",
+        "1": "\"But as you know, something that isn't mine... comes with a price.\""
+      }
+    }
+  }
 }

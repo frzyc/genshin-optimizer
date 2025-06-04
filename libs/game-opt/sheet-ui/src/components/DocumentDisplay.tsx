@@ -82,6 +82,7 @@ function TextSectionDisplay({
   if (!calculator) return null
   return (
     <Typography variant={typoVariant}>
+      {textDocument.header && <HeaderDisplay header={textDocument.header} />}
       {evalIfFunc(textDocument.text, calculator.withTag(tag))}
     </Typography>
   )

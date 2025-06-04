@@ -1,6 +1,11 @@
 {
   "name": "Heartstring Nocturne",
-  "desc": "The soft hum of hidden strings and faint light blooming in the deep night, where sharpness and calm intertwine, transforming into a silent melody. Thread by thread, it captures everything held dear within.\n\n<ct color=#959595>\"This? It's just a device for storing instrument strings.\"\n—Evelyn, gently strumming the strings. A low hum fills the air, and as the final note echoes, the enemy falls silent.</ct>",
+  "desc": {
+    "0": "The soft hum of hidden strings and faint light blooming in the deep night, where sharpness and calm intertwine, transforming into a silent melody. Thread by thread, it captures everything held dear within.",
+    "1": "",
+    "2": "<ct color=#959595>\"This? It's just a device for storing instrument strings.\"",
+    "3": "—Evelyn, gently strumming the strings. A low hum fills the air, and as the final note echoes, the enemy falls silent.</ct>"
+  },
   "desc2": "Equip to increase Attack Agents' combat capabilities",
   "desc3": "The sound of the strings, sharp as blades, cut through the night, protecting the one.",
   "phase": "String & Melody",

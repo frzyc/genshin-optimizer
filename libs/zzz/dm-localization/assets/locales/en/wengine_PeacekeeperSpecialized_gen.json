@@ -1,6 +1,10 @@
 {
   "name": "Peacekeeper - Specialized",
-  "desc": "A defensive W-Engine independently researched and created by Public Security with special emphasis on enhancing the energy conversion ability in its shield. Rumor has it that this model of W-Engine became the standard for all supporting units in Hollow operations due to an unknown member of the top brass pushing for mass production.\n\n<ct color=#959595>\"Even if you took it apart and rebuilt it into an actual physical shield, it would still be extremely sturdy... but it really is super heavy!\" —Seth, musing aloud as he studies the extremely expensive material of the W-Engine</ct>",
+  "desc": {
+    "0": "A defensive W-Engine independently researched and created by Public Security with special emphasis on enhancing the energy conversion ability in its shield. Rumor has it that this model of W-Engine became the standard for all supporting units in Hollow operations due to an unknown member of the top brass pushing for mass production.",
+    "1": "",
+    "2": "<ct color=#959595>\"Even if you took it apart and rebuilt it into an actual physical shield, it would still be extremely sturdy... but it really is super heavy!\" —Seth, musing aloud as he studies the extremely expensive material of the W-Engine</ct>"
+  },
   "desc2": "Equip to increase Defense Agents' combat capabilities",
   "desc3": "A defensive W-Engine independently researched and created by Public Security which simplifies the offensive components to enhance the energy conversion ability in its shield. ",
   "phase": "Standard Blocking Technique",

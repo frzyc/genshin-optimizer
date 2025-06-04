@@ -1,3 +1,276 @@
 {
-  "name": "Evelyn"
+  "name": "Evelyn",
+  "fullName": "Evelyn Chevalier",
+  "basic": {
+    "BasicAttackRazorWire": {
+      "name": "Basic Attack: Razor Wire",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Launch up to five attacks ahead, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "When the 5th hit lands against an enemy, Evelyn will use her <ct color=#FFFFFF>Lunalux Garrote</ct> to bind the primary target and enter <ct color=#FFFFFF>Binding Seal</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "PassiveBind": {
+      "name": "Passive: Bind",
+      "desc": {
+        "0": "When Evelyn uses her skills to deal DMG to enemies, she will accumulate <ct color=#FFFFFF>Burning Embers</ct>.",
+        "1": "When Evelyn consumes <ct color=#FFFFFF>Burning Embers</ct> to activate <ct color=#FFFFFF>Garrote</ct> or consumes <ct color=#FFFFFF>Decibels</ct> to perform an <ct color=#FFFFFF>Ultimate</ct>, she gains 1 <ct color=#FFFFFF>Burning Tether Point</ct>.",
+        "2": "Once Evelyn has 3 <ct color=#FFFFFF>Burning Tether Points</ct>, her next use of <ct color=#FFFFFF>Garrote</ct> will consume all <ct color=#FFFFFF>Burning Tether Points</ct> to instead use a lower Interrupt Level version of <ct color=#FFFFFF>Chain Attack: Lunalux - Snare</ct>."
+      },
+      "params": []
+    },
+    "BasicAttackGarroteFirstForm": {
+      "name": "Basic Attack: Garrote - First Form",
+      "desc": {
+        "0": "When <ct color=#FFFFFF>Burning Embers</ct> is at 50% or higher, hold <IconNormal /> or <IconSpecial /> to activate:",
+        "1": "Consume 50% <ct color=#FFFFFF>Burning Embers</ct> to use <ct color=#FFFFFF>Lunalux Garrote</ct> to perform a slashing attack, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.",
+        "3": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "BasicAttackGarroteSecondForm": {
+      "name": "Basic Attack: Garrote - Second Form",
+      "desc": {
+        "0": "When <ct color=#FFFFFF>Burning Embers</ct> is 50% or higher, after using <ct color=#FFFFFF>Basic Attack: Garrote - First Form</ct>, continue to hold <IconNormal /> or <IconSpecial /> to activate:",
+        "1": "Consume 50% <ct color=#FFFFFF>Burning Embers</ct> to use <ct color=#FFFFFF>Lunalux Garrote</ct> to perform a follow-up attack, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.",
+        "3": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeArcStep": {
+      "name": "Dodge: Arc Step",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackPiercingAmbush": {
+      "name": "Dash Attack: Piercing Ambush",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Deliver a kick to the enemy in front, causing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterStranglingReversal": {
+      "name": "Dodge Counter: Strangling Reversal",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Use <ct color=#FFFFFF>Lunalux Garrote</ct> to slash surrounding enemies, dealing <ct color=#FF5521>Fire DMG</ct>;",
+        "2": "When the attack hits an enemy, Evelyn will use <ct color=#FFFFFF>Lunalux Garrote</ct> to bind the primary target and enter <ct color=#FFFFFF>Binding Seal</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackLockedPosition": {
+      "name": "Special Attack: Locked Position",
+      "desc": {
+        "0": "Before entering <ct color=#FFFFFF>Binding Seal</ct>, press <IconSpecial /> or <IconSpecialReady /> to activate:",
+        "1": "Use <ct color=#FFFFFF>Lunalux Garrote</ct> to pull the enemy and charge forward with a kick, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "When the attack hits the enemy, Evelyn will use <ct color=#FFFFFF>Lunalux Garrote</ct> to bind the primary target and enter <ct color=#FFFFFF>Binding Seal</ct>.",
+        "3": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        "1st-Hit "
+      ]
+    },
+    "SpecialAttackBindingSunderFirstForm": {
+      "name": "Special Attack: Binding Sunder - First Form",
+      "desc": {
+        "0": "After entering <ct color=#FFFFFF>Binding Seal</ct>, press or hold <IconSpecial /> to activate:",
+        "1": "Centered on the target affected by <ct color=#FFFFFF>Binding Seal</ct>, tether surrounding enemies and detonate an explosion, dealing <ct color=#FF5521>Fire DMG</ct>. <ct color=#FFFFFF>Binding Seal</ct> will end after detonation.",
+        "2": "Dodge enemy attacks upon activating the skill, and if a <ct color=#FFFFFF>Perfect Dodge</ct> is triggered, gain an additional 25% <ct color=#FFFFFF>Burning Embers</ct>.",
+        "3": "After tethering surrounding enemies, press <IconNormal /> to cancel detonation and immediately follow up with the <ct color=#FFFFFF>Basic Attack's</ct> 3rd hit.",
+        "4": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        "Bind ",
+        "Explosion "
+      ]
+    },
+    "EXSpecialAttackBindingSunderFinalForm": {
+      "name": "EX Special Attack: Binding Sunder - Final Form",
+      "desc": {
+        "0": "After entering <ct color=#FFFFFF>Binding Seal</ct> and with enough Energy, press or hold <IconSpecialReady /> to activate:",
+        "1": "Centered on the target affected by <ct color=#FFFFFF>Binding Seal</ct>, tether surrounding enemies and detonate an explosion, dealing massive <ct color=#FF5521>Fire DMG</ct>. <ct color=#FFFFFF>Binding Seal</ct> will end after detonation.",
+        "2": "Dodge enemy attacks upon activating the skill, and if a <ct color=#FFFFFF>Perfect Dodge</ct> is triggered, gain an additional 25% <ct color=#FFFFFF>Burning Embers</ct>.",
+        "3": "After pulling in surrounding enemies, press <IconNormal /> to cancel detonation and immediately follow up with the <ct color=#FFFFFF>Basic Attack's</ct> 3rd hit.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Bind ",
+        "Explosion ",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackLunaluxSnare": {
+      "name": "Chain Attack: Lunalux - Snare",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Evelyn slashes in front with multiple <ct color=#FFFFFF>Lunalux Garrotes</ct> and detonates an explosion, dealing massive <ct color=#FF5521>Fire DMG</ct> to enemies in the area.",
+        "2": "When the attack hits an enemy, Evelyn uses <ct color=#FFFFFF>Lunalux Garrote</ct> to bind the primary target and enters <ct color=#FFFFFF>Binding Seal</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateLunaluxGarroteTimbre": {
+      "name": "Ultimate: Lunalux Garrote - Timbre",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Evelyn slashes in front with multiple <ct color=#FFFFFF>Lunalux Garrotes</ct> and detonates an explosion, dealing massive <ct color=#FF5521>Fire DMG</ct> to enemies in the area.",
+        "2": "Upon activating this skill, Evelyn removes her jacket and enters the <ct color=#FFFFFF>Dance of Awakened Fire</ct> state, which lasts for the entire battle. While in the <ct color=#FFFFFF>Dance of Awakened Fire</ct> state, when Evelyn consumes <ct color=#FFFFFF>Burning Tether Points</ct> to activate <ct color=#FFFFFF>Chain Attack: Lunalux - Snare</ct>, she will retain 1 point of <ct color=#FFFFFF>Burning Tether Point</ct>. When the attack hits an enemy, Evelyn uses <ct color=#FFFFFF>Lunalux Garrote</ct> to bind the primary target, entering <ct color=#FFFFFF>Binding Seal</ct>.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateLunaluxGarroteShadow": {
+      "name": "Ultimate: Lunalux Garrote - Shadow",
+      "desc": {
+        "0": "While under the <ct color=#FFFFFF>Dance of Awakened Fire</ct> state, and when Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Evelyn slashes in front with multiple <ct color=#FFFFFF>Lunalux Garrotes</ct> and detonates an explosion, dealing massive <ct color=#FF5521>Fire DMG</ct> to enemies in the area.",
+        "2": "When the attack hits an enemy, Evelyn uses <ct color=#FFFFFF>Lunalux Garrote</ct> to bind the primary target and enters <ct color=#FFFFFF>Binding Seal</ct>.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistFierceBlade": {
+      "name": "Quick Assist: Fierce Blade",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Use <ct color=#FFFFFF>Lunalux Garrote</ct> to slash surrounding enemies, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "When the attack hits an enemy, Evelyn will use <ct color=#FFFFFF>Lunalux Garrote</ct> to bind the primary target and enter <ct color=#FFFFFF>Binding Seal</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistSilentProtection": {
+      "name": "Defensive Assist: Silent Protection",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpCourseDisruption": {
+      "name": "Assist Follow-Up: Course Disruption",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Evelyn slashes with <ct color=#FFFFFF>Lunalux Garrote</ct>, then triggers an explosion ahead, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "When the attack hits an enemy, Evelyn will use <ct color=#FFFFFF>Lunalux Garrote</ct> to bind the primary target and enter <ct color=#FFFFFF>Binding Seal</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Entangle",
+    "desc": [
+      "Upon entering <ct color=#FFFFFF>Binding Seal</ct>, Evelyn's CRIT Rate increases by <ct color=#2BAD00>12.5%</ct>. After leaving <ct color=#FFFFFF>Binding Seal</ct>, she retains the buff for 10s. If Evelyn switches to another character while in <ct color=#FFFFFF>Binding Seal</ct>, she will automatically follow up with <ct color=#FFFFFF>Special Attack: Binding Sunder - First Form</ct>.",
+      "Upon entering <ct color=#FFFFFF>Binding Seal</ct>, Evelyn's CRIT Rate increases by <ct color=#2BAD00>14.6%</ct>. After leaving <ct color=#FFFFFF>Binding Seal</ct>, she retains the buff for 10s. If Evelyn switches to another character while in <ct color=#FFFFFF>Binding Seal</ct>, she will automatically follow up with <ct color=#FFFFFF>Special Attack: Binding Sunder - First Form</ct>.",
+      "Upon entering <ct color=#FFFFFF>Binding Seal</ct>, Evelyn's CRIT Rate increases by <ct color=#2BAD00>16.7%</ct>. After leaving <ct color=#FFFFFF>Binding Seal</ct>, she retains the buff for 10s. If Evelyn switches to another character while in <ct color=#FFFFFF>Binding Seal</ct>, she will automatically follow up with <ct color=#FFFFFF>Special Attack: Binding Sunder - First Form</ct>.",
+      "Upon entering <ct color=#FFFFFF>Binding Seal</ct>, Evelyn's CRIT Rate increases by <ct color=#2BAD00>18.8%</ct>. After leaving <ct color=#FFFFFF>Binding Seal</ct>, she retains the buff for 10s. If Evelyn switches to another character while in <ct color=#FFFFFF>Binding Seal</ct>, she will automatically follow up with <ct color=#FFFFFF>Special Attack: Binding Sunder - First Form</ct>.",
+      "Upon entering <ct color=#FFFFFF>Binding Seal</ct>, Evelyn's CRIT Rate increases by <ct color=#2BAD00>20.8%</ct>. After leaving <ct color=#FFFFFF>Binding Seal</ct>, she retains the buff for 10s. If Evelyn switches to another character while in <ct color=#FFFFFF>Binding Seal</ct>, she will automatically follow up with <ct color=#FFFFFF>Special Attack: Binding Sunder - First Form</ct>.",
+      "Upon entering <ct color=#FFFFFF>Binding Seal</ct>, Evelyn's CRIT Rate increases by <ct color=#2BAD00>23%</ct>. After leaving <ct color=#FFFFFF>Binding Seal</ct>, she retains the buff for 10s. If Evelyn switches to another character while in <ct color=#FFFFFF>Binding Seal</ct>, she will automatically follow up with <ct color=#FFFFFF>Special Attack: Binding Sunder - First Form</ct>.",
+      "Upon entering <ct color=#FFFFFF>Binding Seal</ct>, Evelyn's CRIT Rate increases by <ct color=#2BAD00>25%</ct>. After leaving <ct color=#FFFFFF>Binding Seal</ct>, she retains the buff for 10s. If Evelyn switches to another character while in <ct color=#FFFFFF>Binding Seal</ct>, she will automatically follow up with <ct color=#FFFFFF>Special Attack: Binding Sunder - First Form</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Ambush Point",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> or <ct color=#FFFFFF>Support</ct> character:",
+      "1": "Evelyn's <ct color=#FFFFFF>Chain Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG increases by 30%. When Evelyn's CRIT Rate is at or over 80%, the DMG multiplier for her <ct color=#FFFFFF>Chain Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> increases to 125% of the original value."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Dreamweave",
+      "desc": "Upon entering the battlefield, Evelyn immediately gains 1,500 Decibels. Enemies affected by <ct color=#FFFFFF>Binding Seal</ct> will be <ct color=#FFFFFF>Bound</ct>. When Evelyn attacks <ct color=#FFFFFF>Bound</ct> enemies, she ignores 12% of their DEF. When Evelyn uses <ct color=#FFFFFF>Special Attack: Binding Sunder - First Form</ct> or <ct color=#FFFFFF>EX Special Attack: Binding Sunder - Final Form</ct>, the <ct color=#FFFFFF>Bound</ct> effect spreads to all enemies hit by the skill. This spread <ct color=#FFFFFF>Bound</ct> effect lasts for 10s.",
+      "flavor": {
+        "0": "The distant, blurred light seemed to be a dream she had crafted, an unreachable future. It wasn't about atonement, but a yearning for freedom.",
+        "1": "\"You want it too, don't you? A real life.\" An anonymous former coworker once asked Evelyn."
+      }
+    },
+    "2": {
+      "name": "Dance of Fire",
+      "desc": "Evelyn's ATK increases by 15%. When Evelyn uses <ct color=#FFFFFF>Basic Attack: Garrote - First Form</ct> or <ct color=#FFFFFF>Basic Attack: Garrote - Second Form</ct>, the <ct color=#FFFFFF>Burning Embers</ct> consumed will be returned. This effect can trigger once every 25s. When Evelyn consumes <ct color=#FFFFFF>Burning Tether Point</ct> to trigger <ct color=#FFFFFF>Chain Attack: Lunalux - Snare</ct>, the skill's Interrupt Level increases.",
+      "flavor": {
+        "0": "\"To me, that light was unfamiliar, something I should have steered clear of, but it broke through every barrier, as though it was trying to remind me that beyond the darkness, there was something worth chasing.\"",
+        "1": "When Evelyn recalls the first time she met Astra Yao, there's a rare softness in her tone."
+      }
+    },
+    "3": {
+      "name": "Metamorphosis",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "At that moment, she frees herself from her restraints and becomes her truest self. The tightened ropes snap, and the chains turn into a broken cocoon. Evelyn stands at the boundary of rebirth, and in her cold, sharp gaze, there is the flicker of a faint, soft glow."
+    },
+    "4": {
+      "name": "Fate's Melody",
+      "desc": "Upon activating a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, Evelyn immediately gains a shield equal to 10% of her Max HP. While this shield exists, Evelyn's CRIT DMG increases by 40%.",
+      "flavor": {
+        "0": "\"You know, Eve? Every time I meet someone important to me, my heart goes 'thump-thump!'\"",
+        "1": "Evelyn sighs, signaling that it was getting late. Astra quickly fastens the back of her gown and rushed out the door.",
+        "2": "\"Thump thump,\" Evelyn mutters to herself, left alone in the dressing room."
+      }
+    },
+    "5": {
+      "name": "Crimson Threads Like the Dawn",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Her threads, dyed crimson like the clouds at dawn.",
+        "1": "After each attack, she spins elegantly, blazing flames scattering like the morning light. No words are needed — Evelyn's protection has turned into a radiant flame."
+      }
+    },
+    "6": {
+      "name": "Bond of Light and Shadow",
+      "desc": "Upon launching a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, Evelyn gains <ct color=#FFFFFF>Shadowstring Edge</ct> for 20s. During <ct color=#FFFFFF>Shadowstring Edge</ct>, when Evelyn hits her primary target with a <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct>, she additionally executes a <ct color=#FFFFFF>Lunalux Garrote</ct> follow-up attack, dealing <ct color=#FF5521>Fire DMG</ct> equal to 375% of her ATK to enemies in the area. This DMG is considered <ct color=#FFFFFF>Chain Attack</ct> DMG and can trigger up to 16 times. Gaining another <ct color=#FFFFFF>Shadowstring Edge</ct> will refresh the trigger count.",
+      "flavor": {
+        "0": "Where there is light, there will always be shadow.",
+        "1": "It silently hides, tracing the light's path, guarding each bright burst. The shadow never tries to steal the light's brilliance, but at every turn, it quietly fills those corners the light cannot reach. The two have never been separated, nor can they be — light is whole because of shadow, and shadow exists because of light. It's an eternal pursuit, an unspeakable connection."
+      }
+    }
+  }
 }

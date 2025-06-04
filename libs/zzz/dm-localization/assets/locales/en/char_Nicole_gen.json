@@ -1,3 +1,229 @@
 {
-  "name": "Nicole"
+  "name": "Nicole",
+  "fullName": "Nicole Demara",
+  "basic": {
+    "BasicAttackCunningCombo": {
+      "name": "Basic Attack: Cunning Combo",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 3 strikes, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackDoAsIPlease": {
+      "name": "Basic Attack: Do As I Please",
+      "desc": "After using a <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, Nicole can reload, and her <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct> are enhanced, increasing the power of her bullets.",
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeSpeedDemon": {
+      "name": "Dodge: Speed Demon",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "Drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to dodge, then hold <IconEvade /> to reload while dodging, enhancing <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> up to 8 times."
+      },
+      "params": []
+    },
+    "DashAttackJackInTheBox": {
+      "name": "Dash Attack: Jack in the Box",
+      "desc": {
+        "0": "When dragging the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} during a dodge, press <IconNormal />:",
+        "1": "Dashes in the target direction and strikes nearby enemies, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "When not dragging the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} during a dodge, press <IconNormal />:",
+        "3": "Vaults backward and launches a ranged strike against enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "4": "Automatically reloads after the attack to enhance her <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct>, up to 8 times."
+      },
+      "params": [
+        "Forward Dash ",
+        "Backward Vault "
+      ]
+    },
+    "DodgeCounterDivertedBombard": {
+      "name": "Dodge Counter: Diverted Bombard",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Dodge backwards and send a ranged strike at enemies in front, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "Automatically reloads after the attack to enhance <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct> up to 8 times."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSugarcoatedBullet": {
+      "name": "Special Attack: Sugarcoated Bullet",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Unleashes a ranged strike against enemies in front, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill.",
+        "3": "Automatically reloads after the attack to enhance <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct> up to 8 times."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackStuffedSugarcoatedBullet": {
+      "name": "EX Special Attack: Stuffed Sugarcoated Bullet",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "A powerful ranged strike, generating an energy field that pulls enemies towards its center to deal <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Hold <IconSpecialReady /> down to charge up this attack, during which a small energy field is generated at the muzzle as Energy is consumed, dealing bonus DMG to enemies nearby.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy.",
+        "5": "Automatically reloads after the attack to enhance <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct> up to 8 times."
+      },
+      "params": [
+        "Charged Attack ",
+        "Bombard ",
+        "Energy Field ",
+        "Charged ",
+        "Charged Attack Energy Cost",
+        "Bombard Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackEtherShellacking": {
+      "name": "Chain Attack: Ether Shellacking",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful ranged strike at enemies in a small area, generating an energy field that pulls enemies towards its center to deal <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy.",
+        "4": "Automatically reloads after the attack to enhance <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct> up to 8 times."
+      },
+      "params": [
+        "Bombard ",
+        "Energy Field "
+      ]
+    },
+    "UltimateEtherGrenade": {
+      "name": "Ultimate: Ether Grenade",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes a powerful ranged strike at enemies in a small area, generating an energy field that pulls enemies towards its center to deal <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "When using this skill, other squad members recover 10 Energy. The next character to switch in gains an additional 20 Energy.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy.",
+        "5": "Automatically reloads after the attack to enhance <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct> up to 8 times."
+      },
+      "params": [
+        "Bombard ",
+        "Energy Field "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistEmergencyBombard": {
+      "name": "Quick Assist: Emergency Bombard",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Dodge backwards and send a ranged strike at enemies in front, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "Automatically reloads after the attack to enhance <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct> up to 8 times."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistTheHareStrikesBack": {
+      "name": "Defensive Assist: The Hare Strikes Back!",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpWindowOfOpportunity": {
+      "name": "Assist Follow-Up: Window of Opportunity",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Charge forward and bombard enemies, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Mechanical Case",
+    "desc": [
+      "After hitting an enemy with a <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, Nicole can reload, enhancing her <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct>. When her enhanced bullets or Energy Field hits an enemy, the target's DEF is reduced by <ct color=#2BAD00>20%</ct> for 3.5s.",
+      "After hitting an enemy with a <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, Nicole can reload, enhancing her <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct>. When her enhanced bullets or Energy Field hits an enemy, the target's DEF is reduced by <ct color=#2BAD00>25%</ct> for 3.5s.",
+      "After hitting an enemy with a <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, Nicole can reload, enhancing her <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct>. When her enhanced bullets or Energy Field hits an enemy, the target's DEF is reduced by <ct color=#2BAD00>30%</ct> for 3.5s.",
+      "After hitting an enemy with a <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, Nicole can reload, enhancing her <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct>. When her enhanced bullets or Energy Field hits an enemy, the target's DEF is reduced by <ct color=#2BAD00>34%</ct> for 3.5s.",
+      "After hitting an enemy with a <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, Nicole can reload, enhancing her <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct>. When her enhanced bullets or Energy Field hits an enemy, the target's DEF is reduced by <ct color=#2BAD00>36%</ct> for 3.5s.",
+      "After hitting an enemy with a <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, Nicole can reload, enhancing her <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct>. When her enhanced bullets or Energy Field hits an enemy, the target's DEF is reduced by <ct color=#2BAD00>38%</ct> for 3.5s.",
+      "After hitting an enemy with a <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, Nicole can reload, enhancing her <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct>. When her enhanced bullets or Energy Field hits an enemy, the target's DEF is reduced by <ct color=#2BAD00>40%</ct> for 3.5s."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Hare of Many Burrows",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "When Nicole's <ct color=#FFFFFF>Core Passive: Mechanical Case</ct> applies a debuff to an enemy, all squad members deal 25% more <ct color=#FE437E>Ether DMG</ct> to the target for 3.5s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Supercharged Bomb",
+      "desc": "The DMG and the Anomaly Buildup inflicted by Nicole's <ct color=#FFFFFF>EX Special Attack</ct> increases by 16%. For each additional 0.1s of charging when Nicole activates her <ct color=#FFFFFF>EX Special Attack</ct>, the duration of the energy field created at the target location increases by 0.15s ",
+      "flavor": {
+        "0": "\"I've juiced you all up! Go get 'em!\"",
+        "1": "\"Huh? I-I wasn't slacking off, I swear — I just needed a break!\""
+      }
+    },
+    "2": {
+      "name": "Charging Device",
+      "desc": "Nicole recovers 5 Energy when <ct color=#FFFFFF>Core Passive: Mechanical Case's</ct> debuff is triggered. This effect can trigger once every 15s.",
+      "flavor": {
+        "0": "\"Never underestimate the value of a single second!\"",
+        "1": "\"Do you have any idea how much extra I can squeeze out of just one second? It's unfathomable!\"",
+        "2": "\"So, can I get a productivity bonus? How about 10%, huh?\""
+      }
+    },
+    "3": {
+      "name": "A Hare's Cunning",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Without overpowering might or abundant resources, Nicole depended on her own sharp mind to bring the Cunning Hares to where they are today."
+    },
+    "4": {
+      "name": "Field Expansion",
+      "desc": "When Nicole uses her <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, the diameter of the energy field generated at the target location is increased by 3m.",
+      "flavor": {
+        "0": "\"This, and this too — all of this will soon become the Cunning Hares' territory. Do you hear me!\"",
+        "1": "\"W—What? How soon?\"",
+        "2": "\"Uh... in about ten thousand years, based on current revenue projections.\""
+      }
+    },
+    "5": {
+      "name": "Industry Star",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Though they have plenty of enemies in the industry, Nicole has led her team out of many impossible situations, and so their reputation and experience steadily grew."
+    },
+    "6": {
+      "name": "Corrupting Energy Field",
+      "desc": "When Nicole's energy fields deal DMG to an enemy, all squad member's CRIT Rate against that enemy increases by 1.5%, stacking up to 10 times, and lasting 12s. The duration of each stack is calculated separately.",
+      "flavor": "A switch to higher quality ammo with better firepower and increased compressed Etheric Matter leads to higher damage, longer use duration... and higher costs."
+    }
+  }
 }

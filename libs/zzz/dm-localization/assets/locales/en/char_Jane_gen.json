@@ -1,3 +1,273 @@
 {
-  "name": "Jane"
+  "name": "Jane",
+  "fullName": "Jane Doe",
+  "basic": {
+    "BasicAttackDancingBlades": {
+      "name": "Basic Attack: Dancing Blades",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 6 attacks in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit ",
+        "6th-Hit "
+      ]
+    },
+    "Passion": {
+      "name": "Passion",
+      "desc": {
+        "0": "When Jane triggers <ct color=#FFFFFF>Perfect Dodge</ct>, <ct color=#FFFFFF>Defensive Assist</ct>, or performs a move that deals DMG to the enemy, she accumulates <ct color=#FFFFFF>Passion Stream</ct>. Upon reaching the maximum <ct color=#FFFFFF>Passion Stream</ct>, Jane enters the <ct color=#FFFFFF>Passion</ct> state.",
+        "1": "While in the <ct color=#FFFFFF>Passion</ct> state, Jane's <ct color=#F0D12B>Physical Anomaly Buildup Rate</ct> is increased by 25%. Additionally, if Jane's Anomaly Proficiency exceeds 120, each extra point raises her ATK by 2, up to a maximum of 600.",
+        "2": "In the <ct color=#FFFFFF>Passion</ct> state, Jane's skills that deal damage consume <ct color=#FFFFFF>Passion Stream</ct>. Activating a <ct color=#FFFFFF>Perfect Dodge</ct> or <ct color=#FFFFFF>Defensive Assist</ct> regenerates <ct color=#FFFFFF>Passion Stream</ct>. Jane exits the <ct color=#FFFFFF>Passion</ct> state when all of her <ct color=#FFFFFF>Passion Stream</ct> is consumed."
+      },
+      "params": []
+    },
+    "BasicAttackSalchowJump": {
+      "name": "Basic Attack: Salchow Jump",
+      "desc": {
+        "0": "Entering the <ct color=#FFFFFF>Passion</ct> state grants Jane one use of <ct color=#FFFFFF>Basic Attack: Salchow Jump</ct>.",
+        "1": "When available, hold <IconNormal /> to activate:",
+        "2": "Launch rapid consecutive attacks forward, followed by a Finishing Move, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "3": "Hold the button during the consecutive attacks to extend the skill duration. Release <IconNormal /> to trigger the Finishing Move early.",
+        "4": "Anti-Interrupt level is increased during the consecutive attacks, and Jane takes 40% reduced DMG. Jane is invulnerable during the Finishing Move.",
+        "5": "Using and damaging an enemy with <ct color=#FFFFFF>Basic Attack: Salchow Jump</ct> while in the <ct color=#FFFFFF>Passion</ct> state generates <ct color=#FFFFFF>Passion Stream</ct>."
+      },
+      "params": [
+        "Consecutive Attack ",
+        "Finishing Move "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgePhantom": {
+      "name": "Dodge: Phantom",
+      "desc": {
+        "0": "Press <IconEvade /> to trigger.",
+        "1": "A quick slide dodge.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "Jane has an extra dodge. Before she enters the <ct color=#FFFFFF>Passion</ct> state, she alternates between the two dodges. After entering the <ct color=#FFFFFF>Passion</ct> state, Jane can pass through enemies in front when dodging."
+      },
+      "params": []
+    },
+    "DashAttackEdgeJump": {
+      "name": "Dash Attack: Edge Jump",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "If after the first dodge, launch an upward slash in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "If after the second dodge, perform a consecutive slashes in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Dodge ",
+        "2nd-Dodge "
+      ]
+    },
+    "DashAttackPhantomThrust": {
+      "name": "Dash Attack: Phantom Thrust",
+      "desc": {
+        "0": "While in the <ct color=#FFFFFF>Passion</ct> state, press <IconNormal /> during a dodge to activate:",
+        "1": "Launch three quick rushing slashes in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterSwiftShadow": {
+      "name": "Dodge Counter: Swift Shadow",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "If after the first dodge, unleash multiple slashes at enemies in front, followed by a downward thrust, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "If after the second dodge, leap up and deliver three consecutive attacks to enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "1st-Dodge ",
+        "2nd-Dodge "
+      ]
+    },
+    "DodgeCounterSwiftShadowDance": {
+      "name": "Dodge Counter: Swift Shadow Dance",
+      "desc": {
+        "0": "While in the <ct color=#FFFFFF>Passion</ct> state, press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Slash enemies in front quickly multiple times, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackAerialSweep": {
+      "name": "Special Attack: Aerial Sweep",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Leaps into the air to launch consecutive kicks forward, then sweeps across, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackAerialSweepClearout": {
+      "name": "EX Special Attack: Aerial Sweep - Clearout",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Leaps into the air to launch multiple consecutive kicks forward, then sweeps across, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackFlowersOfSin": {
+      "name": "Chain Attack: Flowers of Sin",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Weaves between and slashes enemies in a large area in front, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Jane directly enters the <ct color=#FFFFFF>Passion</ct> state upon activating the skill, and gains max <ct color=#FFFFFF>Passion Stream</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateFinalCurtain": {
+      "name": "Ultimate: Final Curtain",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Weaves between and slashes enemies with a powerful attack in a large area in front, followed by a Finishing Move, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Jane directly enters the <ct color=#FFFFFF>Passion</ct> state upon activating the skill, and gains max <ct color=#FFFFFF>Passion Stream</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistDarkThorn": {
+      "name": "Quick Assist: Dark Thorn",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Unleash multiple slashes at enemies in front, followed by a downward thrust, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "QuickAssistLutzJump": {
+      "name": "Quick Assist: Lutz Jump",
+      "desc": {
+        "0": "While in the <ct color=#FFFFFF>Passion</ct> state, when the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Slash enemies in front quickly multiple times, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistLastDefense": {
+      "name": "Defensive Assist: Last Defense",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpGaleSweep": {
+      "name": "Assist Follow-Up: Gale Sweep",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Leap up and swiftly slash the enemy, then execute a wide sweeping slash across a large area in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Insight",
+    "desc": [
+      "When Jane's attacks hit an enemy, it causes them to enter the <ct color=#FFFFFF>Gnawed</ct> state, lasting for 10s. If any squad member triggers <ct color=#F0D12B>Assault</ct> on an enemy in the <ct color=#FFFFFF>Gnawed</ct> state and causes the <ct color=#F0D12B>Flinch</ct> effect, the <ct color=#F0D12B>Flinch</ct> effect duration is extended by 5s. <ct color=#F0D12B>Assault</ct> DMG has a chance to trigger a critical hit against enemies in the <ct color=#FFFFFF>Gnawed</ct> state, with a base CRIT Rate of <ct color=#2BAD00>20%</ct> and CRIT DMG of 50%. Each point of Jane's Anomaly Proficiency further increases this CRIT Rate by <ct color=#2BAD00>0.1%</ct>.",
+      "When Jane's attacks hit an enemy, it causes them to enter the <ct color=#FFFFFF>Gnawed</ct> state, lasting for 10s. If any squad member triggers <ct color=#F0D12B>Assault</ct> on an enemy in the <ct color=#FFFFFF>Gnawed</ct> state and causes the <ct color=#F0D12B>Flinch</ct> effect, the <ct color=#F0D12B>Flinch</ct> effect duration is extended by 5s. <ct color=#F0D12B>Assault</ct> DMG has a chance to trigger a critical hit against enemies in the <ct color=#FFFFFF>Gnawed</ct> state, with a base CRIT Rate of <ct color=#2BAD00>25%</ct> and CRIT DMG of 50%. Each point of Jane's Anomaly Proficiency further increases this CRIT Rate by <ct color=#2BAD00>0.11%</ct>.",
+      "When Jane's attacks hit an enemy, it causes them to enter the <ct color=#FFFFFF>Gnawed</ct> state, lasting for 10s. If any squad member triggers <ct color=#F0D12B>Assault</ct> on an enemy in the <ct color=#FFFFFF>Gnawed</ct> state and causes the <ct color=#F0D12B>Flinch</ct> effect, the <ct color=#F0D12B>Flinch</ct> effect duration is extended by 5s. <ct color=#F0D12B>Assault</ct> DMG has a chance to trigger a critical hit against enemies in the <ct color=#FFFFFF>Gnawed</ct> state, with a base CRIT Rate of <ct color=#2BAD00>28%</ct> and CRIT DMG of 50%. Each point of Jane's Anomaly Proficiency further increases this CRIT Rate by <ct color=#2BAD00>0.12%</ct>.",
+      "When Jane's attacks hit an enemy, it causes them to enter the <ct color=#FFFFFF>Gnawed</ct> state, lasting for 10s. If any squad member triggers <ct color=#F0D12B>Assault</ct> on an enemy in the <ct color=#FFFFFF>Gnawed</ct> state and causes the <ct color=#F0D12B>Flinch</ct> effect, the <ct color=#F0D12B>Flinch</ct> effect duration is extended by 5s. <ct color=#F0D12B>Assault</ct> DMG has a chance to trigger a critical hit against enemies in the <ct color=#FFFFFF>Gnawed</ct> state, with a base CRIT Rate of <ct color=#2BAD00>31%</ct> and CRIT DMG of 50%. Each point of Jane's Anomaly Proficiency further increases this CRIT Rate by <ct color=#2BAD00>0.13%</ct>.",
+      "When Jane's attacks hit an enemy, it causes them to enter the <ct color=#FFFFFF>Gnawed</ct> state, lasting for 10s. If any squad member triggers <ct color=#F0D12B>Assault</ct> on an enemy in the <ct color=#FFFFFF>Gnawed</ct> state and causes the <ct color=#F0D12B>Flinch</ct> effect, the <ct color=#F0D12B>Flinch</ct> effect duration is extended by 5s. <ct color=#F0D12B>Assault</ct> DMG has a chance to trigger a critical hit against enemies in the <ct color=#FFFFFF>Gnawed</ct> state, with a base CRIT Rate of <ct color=#2BAD00>34%</ct> and CRIT DMG of 50%. Each point of Jane's Anomaly Proficiency further increases this CRIT Rate by <ct color=#2BAD00>0.14%</ct>.",
+      "When Jane's attacks hit an enemy, it causes them to enter the <ct color=#FFFFFF>Gnawed</ct> state, lasting for 10s. If any squad member triggers <ct color=#F0D12B>Assault</ct> on an enemy in the <ct color=#FFFFFF>Gnawed</ct> state and causes the <ct color=#F0D12B>Flinch</ct> effect, the <ct color=#F0D12B>Flinch</ct> effect duration is extended by 5s. <ct color=#F0D12B>Assault</ct> DMG has a chance to trigger a critical hit against enemies in the <ct color=#FFFFFF>Gnawed</ct> state, with a base CRIT Rate of <ct color=#2BAD00>37%</ct> and CRIT DMG of 50%. Each point of Jane's Anomaly Proficiency further increases this CRIT Rate by <ct color=#2BAD00>0.15%</ct>.",
+      "When Jane's attacks hit an enemy, it causes them to enter the <ct color=#FFFFFF>Gnawed</ct> state, lasting for 10s. If any squad member triggers <ct color=#F0D12B>Assault</ct> on an enemy in the <ct color=#FFFFFF>Gnawed</ct> state and causes the <ct color=#F0D12B>Flinch</ct> effect, the <ct color=#F0D12B>Flinch</ct> effect duration is extended by 5s. <ct color=#F0D12B>Assault</ct> DMG has a chance to trigger a critical hit against enemies in the <ct color=#FFFFFF>Gnawed</ct> state, with a base CRIT Rate of <ct color=#2BAD00>40%</ct> and CRIT DMG of 50%. Each point of Jane's Anomaly Proficiency further increases this CRIT Rate by <ct color=#2BAD00>0.16%</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Sore Spot",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Anomaly</ct> character or shares the same Faction:",
+      "1": "Jane's <ct color=#F0D12B>Physical Anomaly Buildup Rate</ct> is increased by 20%. When the enemy is already suffering from an Attribute Anomaly, Jane's <ct color=#F0D12B>Physical Anomaly Buildup</ct> towards the target is increased by an additional 15%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Crime Counsel",
+      "desc": "The maximum uses of <ct color=#FFFFFF>Basic Attack: Salchow Jump</ct> are increased by one. While in the <ct color=#FFFFFF>Passion</ct> state, Jane's <ct color=#F0D12B>Physical Anomaly Buildup Rate</ct> increases by an extra 15% and each point of Jane's Anomaly Proficiency increases her DMG by 0.1%, up to a maximum increase of 30%.",
+      "flavor": {
+        "0": "\"A criminal consultant advises on criminology, not on how to actually commit crimes.\"",
+        "1": "Jane suddenly leaned closer and blinked.",
+        "2": "\"Of course, if you see it as the latter... I won't mind.\""
+      }
+    },
+    "2": {
+      "name": "Adapt to the Environment",
+      "desc": "When Jane's attack hits an enemy in the <ct color=#FFFFFF>Gnawed</ct> state, or when any squad member triggers <ct color=#F0D12B>Assault</ct> on an enemy in the <ct color=#FFFFFF>Gnawed</ct> state, 15% of the enemy's DEF is ignored. Additionally, when <ct color=#F0D12B>Assault</ct> DMG triggers a critical hit, the CRIT DMG dealt is increased by an additional 50%.",
+      "flavor": {
+        "0": "Gaze into the abyss, and it gazes back. That's only the first step.",
+        "1": "\"Then you must approach, enter, and understand it. This is the second step.\"",
+        "2": "\"The final step... is to resist becoming it.\""
+      }
+    },
+    "3": {
+      "name": "Anonymity",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Anonymity — that means to become anyone. Your favorite person, perhaps~\"",
+        "1": "\"Or maybe, your worst fear?\""
+      }
+    },
+    "4": {
+      "name": "Adapt and Thrive",
+      "desc": "When any squad member triggers the <ct color=#F0D12B>Assault</ct> or <ct color=#FFFFFF>Disorder</ct> effects, all squad members' Attribute Anomaly DMG is increased by 18%, lasting 15s.",
+      "flavor": {
+        "0": "\"Whether you're a hunter or the hunted usually depends on your perspective. However, I favor a more straightforward assessment—\"",
+        "1": "\"The Loser is the prey.\""
+      }
+    },
+    "5": {
+      "name": "Compulsive Hoarder",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Jane's room is filled with all sorts of things, especially fast food.",
+        "1": "\"Isn't it nice here? There's food within reach everywhere~\""
+      }
+    },
+    "6": {
+      "name": "\"Shady\" Technique",
+      "desc": "While in the <ct color=#FFFFFF>Passion</ct> state, Jane's CRIT Rate increases by 20%, and CRIT DMG by 40%. After any squad member inflicts <ct color=#F0D12B>Assault</ct>, Jane instantly enters the <ct color=#FFFFFF>Passion</ct> state, and gains max <ct color=#FFFFFF>Passion Stream</ct>. When that instance of <ct color=#F0D12B>Assault</ct> triggers a critical hit, Jane performs an additional attack on the target, dealing <ct color=#F0D12B>Physical DMG</ct> equal to 1,600% of her Anomaly Proficiency.",
+      "flavor": {
+        "0": "On the streets, the means don't matter, only the outcome.",
+        "1": "\"Seeing the darkest desires reveals the most crucial weaknesses.\""
+      }
+    }
+  }
 }

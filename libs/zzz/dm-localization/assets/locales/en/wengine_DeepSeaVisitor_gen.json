@@ -1,6 +1,10 @@
 {
   "name": "Deep Sea Visitor",
-  "desc": "This high-power W-Engine has the capability to rapidly lower the temperature of the environment, allowing it to instantly freeze nearby objects. Although it is an excellent tactical W-Engine due to its efficient freezing and high damage output, Ellen primarily uses it to make frappes.\n\n<ct color=#959595>\"I want to bring it to school, especially in the summer. But Lycaon and Rina won't let me... So annoying.\" — Ellen, shaking her head while eating ice</ct>",
+  "desc": {
+    "0": "This high-power W-Engine has the capability to rapidly lower the temperature of the environment, allowing it to instantly freeze nearby objects. Although it is an excellent tactical W-Engine due to its efficient freezing and high damage output, Ellen primarily uses it to make frappes.",
+    "1": "",
+    "2": "<ct color=#959595>\"I want to bring it to school, especially in the summer. But Lycaon and Rina won't let me... So annoying.\" — Ellen, shaking her head while eating ice</ct>"
+  },
   "desc2": "Equip to increase Attack Agents' combat capabilities",
   "desc3": "A high-power W-Engine that possesses efficient freezing capabilities and high damage output. This model is often used by Ellen.",
   "phase": "Lord of Seas",

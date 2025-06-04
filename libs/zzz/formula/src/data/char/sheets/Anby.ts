@@ -23,18 +23,22 @@ const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
-const { after3rdBasic, m1After4thBasicHit, m6ChargeConsumed } =
+const { core_after3rdBasic, m1After4thBasicHit, m6ChargeConsumed } =
   allBoolConditionals(key)
 
-const after3rdBasic_dazeInc_ = ownBuff.combat.dazeInc_.add(
-  after3rdBasic.ifOn(subscript(own.char.core, dm.core.basic_ex_3rdHit_daze_))
+const core_after3rdBasic_dazeInc_ = ownBuff.combat.dazeInc_.add(
+  core_after3rdBasic.ifOn(
+    subscript(own.char.core, dm.core.basic_ex_3rdHit_daze_)
+  )
 )
 
-const m2_stunned_dmg_ = ownBuff.combat.common_dmg_.add(
-  cmpEq(enemy.common.isStunned, 1, dm.m2.dmg_)
+const m2_stunned_basic_dmg_ = ownBuff.combat.dmg_.addWithDmgType(
+  'basic',
+  cmpGE(char.mindscape, 2, cmpEq(enemy.common.isStunned, 1, dm.m2.dmg_))
 )
-const m2_stunned_dazeInc_ = ownBuff.combat.dazeInc_.add(
-  cmpNE(enemy.common.isStunned, 1, dm.m2.daze_)
+const m2_unstunned_ex_dazeInc_ = ownBuff.combat.dazeInc_.addWithDmgType(
+  'exSpecial',
+  cmpGE(char.mindscape, 2, cmpNE(enemy.common.isStunned, 1, dm.m2.daze_))
 )
 
 const sheet = register(
@@ -80,25 +84,15 @@ const sheet = register(
       { ...baseTag, damageType1: 'basic' },
       'atk',
       undefined,
-      after3rdBasic_dazeInc_,
-      m2_stunned_dmg_
-    ),
-    dmgDazeAndAnomOverride(
-      dm,
-      'special',
-      'EXSpecialAttackLightningBolt',
-      0,
-      { ...baseTag, damageType1: 'exSpecial' },
-      'atk',
-      undefined,
-      m2_stunned_dazeInc_
+      core_after3rdBasic_dazeInc_,
+      ...m2_stunned_basic_dmg_
     )
   ),
 
   // Buffs
   registerBuff(
-    'core_basic_ex_after3rd_daze_',
-    after3rdBasic_dazeInc_,
+    'core_after3rdBasic_dazeInc_',
+    core_after3rdBasic_dazeInc_,
     undefined,
     undefined,
     false
@@ -111,14 +105,14 @@ const sheet = register(
   ),
   registerBuff(
     'm2_stunned_basic_dmg_',
-    m2_stunned_dmg_,
+    m2_stunned_basic_dmg_,
     undefined,
     undefined,
     false
   ),
   registerBuff(
-    'm2_unstunned_ex_daze_',
-    m2_stunned_dazeInc_,
+    'm2_unstunned_ex_dazeInc_',
+    m2_unstunned_ex_dazeInc_,
     undefined,
     undefined,
     false

@@ -1,6 +1,10 @@
 {
   "name": "Severed Innocence",
-  "desc": "If a storm subdued still has the power to save a certain person... The ringing of the old sword in its crate speaks of the \"good\" old days that one doesn't want to remember.\n\n<ct color=#959595>\"Nekomata, put it down. No, there's no secret... Nicole, please let me explain, she was the one who started it...\" — Anby, just a typical day with the Cunning Hares.</ct>",
+  "desc": {
+    "0": "If a storm subdued still has the power to save a certain person... The ringing of the old sword in its crate speaks of the \"good\" old days that one doesn't want to remember.",
+    "1": "",
+    "2": "<ct color=#959595>\"Nekomata, put it down. No, there's no secret... Nicole, please let me explain, she was the one who started it...\" — Anby, just a typical day with the Cunning Hares.</ct>"
+  },
   "desc2": "Equip to increase Attack Agents' combat capabilities",
   "desc3": "The sheen of silver is not innocence. Can the blades of the past cut through fate's connections?",
   "phase": "Tranquil Blossom",

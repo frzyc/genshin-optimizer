@@ -1,6 +1,10 @@
 {
   "name": "Blazing Laurel",
-  "desc": "A violent W-Engine that can ignite flames with a siphon. It deals simple and crude burn damage, encouraging relentless, bone-crushing follow-up attacks. Rumor has it that the liquid fluid within was once a secret weapon from an old civilization's empire that dominated naval warfare! The formula has long since been lost and recreating it is extremely difficult!\n\n<ct color=#959595>\"...Actually, all I said was that I wanted a backup lighter.\" —Lighter says as the user of this valuable fuel</ct>",
+  "desc": {
+    "0": "A violent W-Engine that can ignite flames with a siphon. It deals simple and crude burn damage, encouraging relentless, bone-crushing follow-up attacks. Rumor has it that the liquid fluid within was once a secret weapon from an old civilization's empire that dominated naval warfare! The formula has long since been lost and recreating it is extremely difficult!",
+    "1": "",
+    "2": "<ct color=#959595>\"...Actually, all I said was that I wanted a backup lighter.\" —Lighter says as the user of this valuable fuel</ct>"
+  },
   "desc2": "Equip to increase Stun Agents' combat capabilities",
   "desc3": "A violent W-Engine that can ignite flames with a siphon. It deals simple and crude burn damage, encouraging relentless, bone-crushing follow-up attacks.",
   "phase": "Flowing Flame",

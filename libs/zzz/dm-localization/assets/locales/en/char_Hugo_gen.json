@@ -1,3 +1,300 @@
 {
-  "name": "Hugo"
+  "name": "Hugo",
+  "fullName": "Hugo Vlad",
+  "basic": {
+    "BasicAttackDarkAbyssQuartet": {
+      "name": "Basic Attack: Dark Abyss Quartet",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Perform up to four attacks forward, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "The fourth attack is a shot. During this attack, hold <IconNormal /> to charge and perform a charged shot.",
+        "3": "Anti-Interrupt level is increased during the fourth attack, and received damage reduced by 40%."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "Slash ",
+        "Shot ",
+        "Charged Shot "
+      ]
+    },
+    "BasicAttackDarkAbyssConcerto": {
+      "name": "Basic Attack: Dark Abyss Concerto",
+      "desc": {
+        "0": "After the 4th hit of <ct color=#FFFFFF>Basic Attack: Dark Abyss Quartet</ct>, the shot of <ct color=#FFFFFF>Dodge Counter: Phantasm - Slash</ct>, or the shot of <ct color=#FFFFFF>Quick Assist: Elegy</ct>, press or hold <IconNormal /> to activate:",
+        "1": "Throw the scythe forward to perform a slash, followed by a shot, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "During the shot, hold <IconNormal /> to charge and perform a charged shot.",
+        "3": "Anti-Interrupt level is increased while using this skill, and received damage reduced by 40%."
+      },
+      "params": [
+        "Slash ",
+        "Shot ",
+        "Charged Shot "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgePhantasm": {
+      "name": "Dodge: Phantasm",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackPhantasmShatter": {
+      "name": "Dash Attack: Phantasm - Shatter",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Launch a dashing attack at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterPhantasmSlash": {
+      "name": "Dodge Counter: Phantasm - Slash",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Performs a series of attacks on enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "During the skill, hold <IconNormal /> to launch a shot. During the shot, hold <IconNormal /> to charge and perform a charged shot.",
+        "3": "The shot is considered a Basic Attack, with its DMG treated as Basic Attack DMG.",
+        "4": "After the skill is used, it can be directly followed up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Dark Abyss Quartet</ct>.",
+        "5": "During the skill's ranged phase, Anti-Interrupt Level is increased, and received damage is reduced by 40%.",
+        "6": "Invulnerable during the slashes and ranged retreat of the skill."
+      },
+      "params": [
+        "",
+        "ALT Shot ",
+        "ALT Charged Shot "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSoulHunterJudgment": {
+      "name": "Special Attack: Soul Hunter - Judgment",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Spins the scythe and then unleashes a forward slash, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackSoulHunterPunishment": {
+      "name": "EX Special Attack: Soul Hunter - Punishment",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Spins the scythe to attack and then executes a powerful Finishing Move, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "This skill is not counted as a heavy attack.",
+        "3": "After the skill is used, it can be directly followed up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Dark Abyss Quartet</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackTrickOfFate": {
+      "name": "Chain Attack: Trick of Fate",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Dash forward to perform a slash across a large area, then launch a shot, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "The shot activated by this skill is considered a charged shot.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Slash "
+      ]
+    },
+    "UltimateBlaspheme": {
+      "name": "Ultimate: Blaspheme",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Throws the scythe in a powerful spinning attack, then launches a Finishing Move, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "This skill is not counted as a heavy attack.",
+        "3": "After the skill is used, it can be directly followed up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Dark Abyss Quartet</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistElegy": {
+      "name": "Quick Assist: Elegy",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Performs a series of attacks on enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "During the skill, hold <IconNormal /> to launch a shot. During the shot, hold <IconNormal /> to charge and perform a charged shot.",
+        "3": "The shot is considered a Basic Attack, with its DMG treated as Basic Attack DMG.",
+        "4": "After the skill is used, it can be directly followed up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Dark Abyss Quartet</ct>.",
+        "5": "During the skill's ranged phase, Anti-Interrupt Level is increased, and received damage is reduced by 40%.",
+        "6": "Invulnerable during the slashes and ranged retreat of the skill."
+      },
+      "params": [
+        "",
+        "ALT Shot ",
+        "ALT Charged Shot "
+      ]
+    },
+    "DefensiveAssistTheEndHasNotCome": {
+      "name": "Defensive Assist: The End Has Not Come",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpAceReversal": {
+      "name": "Assist Follow-Up: Ace Reversal",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Dash forward and perform two slashes, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "After the skill is used, it can be directly followed up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Dark Abyss Quartet</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Terminating Verdict",
+    "desc": [
+      {
+        "0": "When <ct color=#FFFFFF>Chain Attack: Trick of Fate</ct> hits an enemy or Hugo's attacks Stun an enemy, Hugo gains the <ct color=#FFFFFF>Dark Abyss Reverb</ct> state for 6s, and repeated triggers reset the duration. During this state, Hugo's CRIT Rate increases by 12% and CRIT DMG increases by 25%.",
+        "1": "When there are 1/2 <ct color=#FFFFFF>Stun</ct> characters in your squad, Hugo's ATK increases by <ct color=#2BAD00>25</ct>/<ct color=#2BAD00>75</ct>.",
+        "2": "When the Finishing Move of <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> or <ct color=#FFFFFF>Ultimate: Blaspheme</ct> hits an enemy while they are Stunned, it triggers the <ct color=#FFFFFF>Totalize</ct> effect, increasing the DMG Multiplier of the skill's Finishing Move by <ct color=#2BAD00>500%</ct>. Additionally, the <ct color=#FFFFFF>Totalize</ct> effect further increases the skill's DMG multiplier based on the remaining Stun time of the enemy when triggered: for each remaining second of Stun time from the portion that is less than or equal to 5s, the skill's DMG multiplier increases by <ct color=#2BAD00>140%</ct>; for each remaining second of Stun time from the portion between 5 and 15s, the skill's DMG multiplier increases by <ct color=#2BAD00>50%</ct>. The total increase can raise the skill's DMG multiplier by a maximum of <ct color=#2BAD00>1,700%</ct>.",
+        "3": "After Hugo triggers the <ct color=#FFFFFF>Totalize</ct> effect, the enemy's Stunned state will immediately end. Based on the remaining Stun time at the moment <ct color=#FFFFFF>Totalize</ct> is triggered, a certain amount of Daze will be accumulated. For every second of Stun time remaining, 5% Daze is accumulated, up to a maximum Daze equivalent to 25% of the enemy's maximum Daze.",
+        "4": "When <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> hits an enemy, if the enemy is not Stunned, the Daze accumulated by the skill increases by 20%."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Chain Attack: Trick of Fate</ct> hits an enemy or Hugo's attacks Stun an enemy, Hugo gains the <ct color=#FFFFFF>Dark Abyss Reverb</ct> state for 6s, and repeated triggers reset the duration. During this state, Hugo's CRIT Rate increases by 12% and CRIT DMG increases by 25%.",
+        "1": "When there are 1/2 <ct color=#FFFFFF>Stun</ct> characters in your squad, Hugo's ATK increases by <ct color=#2BAD00>50</ct>/<ct color=#2BAD00>150</ct>.",
+        "2": "When the Finishing Move of <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> or <ct color=#FFFFFF>Ultimate: Blaspheme</ct> hits an enemy while they are Stunned, it triggers the <ct color=#FFFFFF>Totalize</ct> effect, increasing the DMG Multiplier of the skill's Finishing Move by <ct color=#2BAD00>583%</ct>. Additionally, the <ct color=#FFFFFF>Totalize</ct> effect further increases the skill's DMG multiplier based on the remaining Stun time of the enemy when triggered: for each remaining second of Stun time from the portion that is less than or equal to 5s, the skill's DMG multiplier increases by <ct color=#2BAD00>163%</ct>; for each remaining second of Stun time from the portion between 5 and 15s, the skill's DMG multiplier increases by <ct color=#2BAD00>58%</ct>. The total increase can raise the skill's DMG multiplier by a maximum of <ct color=#2BAD00>1,978%</ct>.",
+        "3": "After Hugo triggers the <ct color=#FFFFFF>Totalize</ct> effect, the enemy's Stunned state will immediately end. Based on the remaining Stun time at the moment <ct color=#FFFFFF>Totalize</ct> is triggered, a certain amount of Daze will be accumulated. For every second of Stun time remaining, 5% Daze is accumulated, up to a maximum Daze equivalent to 25% of the enemy's maximum Daze.",
+        "4": "When <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> hits an enemy, if the enemy is not Stunned, the Daze accumulated by the skill increases by 20%."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Chain Attack: Trick of Fate</ct> hits an enemy or Hugo's attacks Stun an enemy, Hugo gains the <ct color=#FFFFFF>Dark Abyss Reverb</ct> state for 6s, and repeated triggers reset the duration. During this state, Hugo's CRIT Rate increases by 12% and CRIT DMG increases by 25%.",
+        "1": "When there are 1/2 <ct color=#FFFFFF>Stun</ct> characters in your squad, Hugo's ATK increases by <ct color=#2BAD00>80</ct>/<ct color=#2BAD00>240</ct>.",
+        "2": "When the Finishing Move of <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> or <ct color=#FFFFFF>Ultimate: Blaspheme</ct> hits an enemy while they are Stunned, it triggers the <ct color=#FFFFFF>Totalize</ct> effect, increasing the DMG Multiplier of the skill's Finishing Move by <ct color=#2BAD00>667%</ct>. Additionally, the <ct color=#FFFFFF>Totalize</ct> effect further increases the skill's DMG multiplier based on the remaining Stun time of the enemy when triggered: for each remaining second of Stun time from the portion that is less than or equal to 5s, the skill's DMG multiplier increases by <ct color=#2BAD00>187%</ct>; for each remaining second of Stun time from the portion between 5 and 15s, the skill's DMG multiplier increases by <ct color=#2BAD00>67%</ct>. The total increase can raise the skill's DMG multiplier by a maximum of <ct color=#2BAD00>2,272%</ct>.",
+        "3": "After Hugo triggers the <ct color=#FFFFFF>Totalize</ct> effect, the enemy's Stunned state will immediately end. Based on the remaining Stun time at the moment <ct color=#FFFFFF>Totalize</ct> is triggered, a certain amount of Daze will be accumulated. For every second of Stun time remaining, 5% Daze is accumulated, up to a maximum Daze equivalent to 25% of the enemy's maximum Daze.",
+        "4": "When <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> hits an enemy, if the enemy is not Stunned, the Daze accumulated by the skill increases by 20%."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Chain Attack: Trick of Fate</ct> hits an enemy or Hugo's attacks Stun an enemy, Hugo gains the <ct color=#FFFFFF>Dark Abyss Reverb</ct> state for 6s, and repeated triggers reset the duration. During this state, Hugo's CRIT Rate increases by 12% and CRIT DMG increases by 25%.",
+        "1": "When there are 1/2 <ct color=#FFFFFF>Stun</ct> characters in your squad, Hugo's ATK increases by <ct color=#2BAD00>120</ct>/<ct color=#2BAD00>360</ct>.",
+        "2": "When the Finishing Move of <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> or <ct color=#FFFFFF>Ultimate: Blaspheme</ct> hits an enemy while they are Stunned, it triggers the <ct color=#FFFFFF>Totalize</ct> effect, increasing the DMG Multiplier of the skill's Finishing Move by <ct color=#2BAD00>750%</ct>. Additionally, the <ct color=#FFFFFF>Totalize</ct> effect further increases the skill's DMG multiplier based on the remaining Stun time of the enemy when triggered: for each remaining second of Stun time from the portion that is less than or equal to 5s, the skill's DMG multiplier increases by <ct color=#2BAD00>210%</ct>; for each remaining second of Stun time from the portion between 5 and 15s, the skill's DMG multiplier increases by <ct color=#2BAD00>75%</ct>. The total increase can raise the skill's DMG multiplier by a maximum of <ct color=#2BAD00>2,550%</ct>.",
+        "3": "After Hugo triggers the <ct color=#FFFFFF>Totalize</ct> effect, the enemy's Stunned state will immediately end. Based on the remaining Stun time at the moment <ct color=#FFFFFF>Totalize</ct> is triggered, a certain amount of Daze will be accumulated. For every second of Stun time remaining, 5% Daze is accumulated, up to a maximum Daze equivalent to 25% of the enemy's maximum Daze.",
+        "4": "When <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> hits an enemy, if the enemy is not Stunned, the Daze accumulated by the skill increases by 20%."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Chain Attack: Trick of Fate</ct> hits an enemy or Hugo's attacks Stun an enemy, Hugo gains the <ct color=#FFFFFF>Dark Abyss Reverb</ct> state for 6s, and repeated triggers reset the duration. During this state, Hugo's CRIT Rate increases by 12% and CRIT DMG increases by 25%.",
+        "1": "When there are 1/2 <ct color=#FFFFFF>Stun</ct> characters in your squad, Hugo's ATK increases by <ct color=#2BAD00>180</ct>/<ct color=#2BAD00>540</ct>.",
+        "2": "When the Finishing Move of <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> or <ct color=#FFFFFF>Ultimate: Blaspheme</ct> hits an enemy while they are Stunned, it triggers the <ct color=#FFFFFF>Totalize</ct> effect, increasing the DMG Multiplier of the skill's Finishing Move by <ct color=#2BAD00>833%</ct>. Additionally, the <ct color=#FFFFFF>Totalize</ct> effect further increases the skill's DMG multiplier based on the remaining Stun time of the enemy when triggered: for each remaining second of Stun time from the portion that is less than or equal to 5s, the skill's DMG multiplier increases by <ct color=#2BAD00>233%</ct>; for each remaining second of Stun time from the portion between 5 and 15s, the skill's DMG multiplier increases by <ct color=#2BAD00>83%</ct>. The total increase can raise the skill's DMG multiplier by a maximum of <ct color=#2BAD00>2,828%</ct>.",
+        "3": "After Hugo triggers the <ct color=#FFFFFF>Totalize</ct> effect, the enemy's Stunned state will immediately end. Based on the remaining Stun time at the moment <ct color=#FFFFFF>Totalize</ct> is triggered, a certain amount of Daze will be accumulated. For every second of Stun time remaining, 5% Daze is accumulated, up to a maximum Daze equivalent to 25% of the enemy's maximum Daze.",
+        "4": "When <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> hits an enemy, if the enemy is not Stunned, the Daze accumulated by the skill increases by 20%."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Chain Attack: Trick of Fate</ct> hits an enemy or Hugo's attacks Stun an enemy, Hugo gains the <ct color=#FFFFFF>Dark Abyss Reverb</ct> state for 6s, and repeated triggers reset the duration. During this state, Hugo's CRIT Rate increases by 12% and CRIT DMG increases by 25%.",
+        "1": "When there are 1/2 <ct color=#FFFFFF>Stun</ct> characters in your squad, Hugo's ATK increases by <ct color=#2BAD00>270</ct>/<ct color=#2BAD00>810</ct>.",
+        "2": "When the Finishing Move of <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> or <ct color=#FFFFFF>Ultimate: Blaspheme</ct> hits an enemy while they are Stunned, it triggers the <ct color=#FFFFFF>Totalize</ct> effect, increasing the DMG Multiplier of the skill's Finishing Move by <ct color=#2BAD00>917%</ct>. Additionally, the <ct color=#FFFFFF>Totalize</ct> effect further increases the skill's DMG multiplier based on the remaining Stun time of the enemy when triggered: for each remaining second of Stun time from the portion that is less than or equal to 5s, the skill's DMG multiplier increases by <ct color=#2BAD00>257%</ct>; for each remaining second of Stun time from the portion between 5 and 15s, the skill's DMG multiplier increases by <ct color=#2BAD00>92%</ct>. The total increase can raise the skill's DMG multiplier by a maximum of <ct color=#2BAD00>3,122%</ct>.",
+        "3": "After Hugo triggers the <ct color=#FFFFFF>Totalize</ct> effect, the enemy's Stunned state will immediately end. Based on the remaining Stun time at the moment <ct color=#FFFFFF>Totalize</ct> is triggered, a certain amount of Daze will be accumulated. For every second of Stun time remaining, 5% Daze is accumulated, up to a maximum Daze equivalent to 25% of the enemy's maximum Daze.",
+        "4": "When <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> hits an enemy, if the enemy is not Stunned, the Daze accumulated by the skill increases by 20%."
+      },
+      {
+        "0": "When <ct color=#FFFFFF>Chain Attack: Trick of Fate</ct> hits an enemy or Hugo's attacks Stun an enemy, Hugo gains the <ct color=#FFFFFF>Dark Abyss Reverb</ct> state for 6s, and repeated triggers reset the duration. During this state, Hugo's CRIT Rate increases by 12% and CRIT DMG increases by 25%.",
+        "1": "When there are 1/2 <ct color=#FFFFFF>Stun</ct> characters in your squad, Hugo's ATK increases by <ct color=#2BAD00>300</ct>/<ct color=#2BAD00>900</ct>.",
+        "2": "When the Finishing Move of <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> or <ct color=#FFFFFF>Ultimate: Blaspheme</ct> hits an enemy while they are Stunned, it triggers the <ct color=#FFFFFF>Totalize</ct> effect, increasing the DMG Multiplier of the skill's Finishing Move by <ct color=#2BAD00>1,000%</ct>. Additionally, the <ct color=#FFFFFF>Totalize</ct> effect further increases the skill's DMG multiplier based on the remaining Stun time of the enemy when triggered: for each remaining second of Stun time from the portion that is less than or equal to 5s, the skill's DMG multiplier increases by <ct color=#2BAD00>280%</ct>; for each remaining second of Stun time from the portion between 5 and 15s, the skill's DMG multiplier increases by <ct color=#2BAD00>100%</ct>. The total increase can raise the skill's DMG multiplier by a maximum of <ct color=#2BAD00>3,400%</ct>.",
+        "3": "After Hugo triggers the <ct color=#FFFFFF>Totalize</ct> effect, the enemy's Stunned state will immediately end. Based on the remaining Stun time at the moment <ct color=#FFFFFF>Totalize</ct> is triggered, a certain amount of Daze will be accumulated. For every second of Stun time remaining, 5% Daze is accumulated, up to a maximum Daze equivalent to 25% of the enemy's maximum Daze.",
+        "4": "When <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> hits an enemy, if the enemy is not Stunned, the Daze accumulated by the skill increases by 20%."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Prelude to Finality",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> character or shares the same attribute:",
+      "1": "<ct color=#FFFFFF>Chain Attack: Trick of Fate</ct>'s DMG increases by 15%, with a further increase of 35% against normal enemies. When <ct color=#FFFFFF>Totalize</ct> is triggered, the DMG dealt by the skill increases by 40%. <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> generates an additional 20 Energy when triggering <ct color=#FFFFFF>Totalize</ct> on normal enemies. The Energy generation effect can trigger once every 30s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Child of Hatred",
+      "desc": "When triggering the <ct color=#FFFFFF>Totalize</ct> effect in the <ct color=#FFFFFF>Dark Abyss Reverb</ct> state, the skill's CRIT Rate is increased by an additional 12%, and CRIT DMG by 30%.",
+      "flavor": {
+        "0": "\"So, do not deny your own desires, do not resist your own ambition. This is the talent you were born with, the best gift fate has ever given you!\"",
+        "1": "\"Admit it, deep within your heart lies a spark, yearning to ignite a raging inferno that will burn everything down—\"",
+        "2": "\"And I, am that spark.\"",
+        "3": "",
+        "4": "\"Yeah, I know. I've always known.\""
+      }
+    },
+    "2": {
+      "name": "The Child Within",
+      "desc": "When <ct color=#FFFFFF>Ultimate: Blaspheme</ct> triggers <ct color=#FFFFFF>Totalize</ct>, it will not end the enemy's Stunned state. Additionally, when <ct color=#FFFFFF>Totalize</ct> is triggered, the skill will ignore 15% of the enemy's DEF.",
+      "flavor": {
+        "0": "\"Family is an everlasting, unavoidable curse placed upon a person.\"",
+        "1": "\"No matter how much you grow, no matter where you go, that curse will forever follow you like a shadow.\"",
+        "2": "\"When you fall to rock bottom or climb to your peak, it will appear, turning you back into that helpless, powerless child who can do nothing but hide in the closet and weep.\"",
+        "3": "",
+        "4": "\"Unless you truly see him, embrace him.\"",
+        "5": "Some pain can only be healed when it is seen and accepted."
+      }
+    },
+    "3": {
+      "name": "Fruit of the Poisonous Tree",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "They say that the flowers that bloom in the abyss are always soaked in malice, just like how a poisonous tree can't bear safe fruit.",
+        "1": "But all fruit falls.",
+        "2": "So, he broke himself into a rain of shattered pieces.",
+        "3": "The rain covered the earth, and each dewdrop reflected a fresh new dawn."
+      }
+    },
+    "4": {
+      "name": "Dramatic Theory",
+      "desc": "After a Charged Shot hits an enemy, Hugo's attacks against that target will ignore 12% of that target's <ct color=#98EFF0>Ice RES</ct> for 15s, repeated triggers reset the duration.",
+      "flavor": {
+        "0": "Justice, evil, madness, reason, charm, stubbornness.",
+        "1": "He's composed of countless faces.",
+        "2": "\"So, which is the real you?\"",
+        "3": "\"That's not important. How about, instead, you tell me, Lycaon—\"",
+        "4": "\"What kind of person do you see in me?\""
+      }
+    },
+    "5": {
+      "name": "Nirvana",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The world doesn't need to be destroyed and rebuilt, and no one has the right to do such.",
+        "1": "But a person can.",
+        "2": "So, he shattered himself and was reborn.",
+        "3": "\"If I must fall, let me fall. The person I am meant to become will surely catch me.\""
+      }
+    },
+    "6": {
+      "name": "Crown of Thorns",
+      "desc": "All shooting attacks that hit enemies trigger the <ct color=#FFFFFF>Dark Abyss Reverb</ct> state, lasting up to 6s, and repeated triggers reset the duration. Additionally, whenever any skill triggers the <ct color=#FFFFFF>Totalize</ct> effect, that DMG is further increased by 60%. The Finishing Move of <ct color=#FFFFFF>EX Special Attack: Soul Hunter - Punishment</ct> also triggers the <ct color=#FFFFFF>Totalize</ct> effect when hitting an enemy that isn't Stunned, boosting the DMG multiplier of the Finishing Move by a fixed 1,000 %.",
+      "flavor": {
+        "0": "He walked willingly toward the endless abyss, letting the thorns on the ground tear at his wounds.",
+        "1": "Where the blood spread, broken dignity and stubbornness began to sprout from the wounds.",
+        "2": "He picked up the blood-soaked thorns to crown himself.",
+        "3": "\"There's only ever been one person who can kill me or save me... And that is me.\""
+      }
+    }
+  }
 }

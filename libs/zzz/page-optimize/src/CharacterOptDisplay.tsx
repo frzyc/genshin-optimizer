@@ -1,4 +1,5 @@
 import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
@@ -37,6 +38,7 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BonusStatsSection } from './BonusStats'
+import { CharSheetSection } from './CharSheetsDisplay'
 import { EnemyStatsSection } from './EnemyStats'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
@@ -138,6 +140,14 @@ function CharacterSection() {
         ['Conditionals', <EquippedConditionals key={'conditionals'} />],
         ['bonusStats', <BonusStatsSection key={'bonusStats'} />],
         ['enemyStats', <EnemyStatsSection key={'enemyStats'} />],
+        ...(shouldShowDevComponents
+          ? [
+              ['charSheet', <CharSheetSection key={'charSheet'} />] as [
+                key: string,
+                content: ReactNode,
+              ],
+            ]
+          : []),
       ] as const
     }, [onClick])
   const theme = useTheme()

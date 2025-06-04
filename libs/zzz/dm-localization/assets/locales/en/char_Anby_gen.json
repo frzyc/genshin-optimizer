@@ -1,3 +1,215 @@
 {
-  "name": "Anby"
+  "name": "Anby",
+  "fullName": "Anby Demara",
+  "basic": {
+    "BasicAttackTurboVolt": {
+      "name": "Basic Attack: Turbo Volt",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 4 slashes. The first 3 hits deal <ct color=#F0D12B>Physical DMG</ct>, the 4th hit deals <ct color=#2EB6FF>Electric DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackThunderbolt": {
+      "name": "Basic Attack: Thunderbolt",
+      "desc": {
+        "0": "After unleashing the 3rd hit of the <ct color=#FFFFFF>Basic Attack</ct>, hold down or pause for a short while, and then press <IconNormal /> to activate:",
+        "1": "Unleashes a downward strike that deals <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeSlide": {
+      "name": "Dodge: Slide",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackTaserBlast": {
+      "name": "Dash Attack: Taser Blast",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slashes all nearby enemies, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterThunderclap": {
+      "name": "Dodge Counter: Thunderclap",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackForkLightning": {
+      "name": "Special Attack: Fork Lightning",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Unleashes an upward slash that deals <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "This attack launches faster when used after the 3rd hit of the <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Basic Attack: Thunderbolt</ct>.",
+        "3": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackLightningBolt": {
+      "name": "EX Special Attack: Lightning Bolt",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Unleashes a powerful upward slash that deals massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "This attack launches faster when used after the 3rd hit of her <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Basic Attack: Thunderbolt</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackElectroEngine": {
+      "name": "Chain Attack: Electro Engine",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful upwards slash at enemies in a small area, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateOverdriveEngine": {
+      "name": "Ultimate: Overdrive Engine",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes a powerful upward slash at enemies in a small area followed by several downward strikes, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistThunderfall": {
+      "name": "Quick Assist: Thunderfall",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistFlash": {
+      "name": "Defensive Assist: Flash",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpLightningWhirl": {
+      "name": "Assist Follow-Up: Lightning Whirl",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Perform a spinning slash against enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Fluctuating Voltage",
+    "desc": [
+      "Launch a <ct color=#FFFFFF>Basic Attack: Thunderbolt</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct> after the 3rd hit of Anby's <ct color=#FFFFFF>Basic Attack</ct> for an extra <ct color=#2BAD00>32%</ct> Daze.",
+      "Launch a <ct color=#FFFFFF>Basic Attack: Thunderbolt</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct> after the 3rd hit of Anby's <ct color=#FFFFFF>Basic Attack</ct> for an extra <ct color=#2BAD00>37.3%</ct> Daze.",
+      "Launch a <ct color=#FFFFFF>Basic Attack: Thunderbolt</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct> after the 3rd hit of Anby's <ct color=#FFFFFF>Basic Attack</ct> for an extra <ct color=#2BAD00>42.6%</ct> Daze.",
+      "Launch a <ct color=#FFFFFF>Basic Attack: Thunderbolt</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct> after the 3rd hit of Anby's <ct color=#FFFFFF>Basic Attack</ct> for an extra <ct color=#2BAD00>48%</ct> Daze.",
+      "Launch a <ct color=#FFFFFF>Basic Attack: Thunderbolt</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct> after the 3rd hit of Anby's <ct color=#FFFFFF>Basic Attack</ct> for an extra <ct color=#2BAD00>53.3%</ct> Daze.",
+      "Launch a <ct color=#FFFFFF>Basic Attack: Thunderbolt</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct> after the 3rd hit of Anby's <ct color=#FFFFFF>Basic Attack</ct> for an extra <ct color=#2BAD00>58.6%</ct> Daze.",
+      "Launch a <ct color=#FFFFFF>Basic Attack: Thunderbolt</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct> after the 3rd hit of Anby's <ct color=#FFFFFF>Basic Attack</ct> for an extra <ct color=#2BAD00>64%</ct> Daze."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Parallel Connection",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "When Anby's <ct color=#FFFFFF>Dodge Counter</ct> hits an enemy, she gains an extra 7.2 Energy. This effect can trigger once every 5s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Rapid Charge Mode",
+      "desc": "When the 4th hit of Anby's <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, her Energy Generation Rate is increased by 12% for 30s.",
+      "flavor": {
+        "0": "\"Charge up for just a minute, and you're set to fight for an hour!\" That's the sales pitch for these weapon expansion modules.",
+        "1": "And they deliver exactly that."
+      }
+    },
+    "2": {
+      "name": "Precision Discharge",
+      "desc": "When <ct color=#FFFFFF>Basic Attack: Thunderbolt</ct> hits a Stunned enemy, its DMG is increased by 30%. When Anby's <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy that is not Stunned, the Daze inflicted is increased by 10%.",
+      "flavor": {
+        "0": "\"Electric shocks will knock you out cold.\"",
+        "1": "Looking at the enemy out cold at her feet, she added:",
+        "2": "\"At least, that's what happens in the movies.\""
+      }
+    },
+    "3": {
+      "name": "Well-Disciplined",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Run, slash, move like lightning. She is no amateur when it comes to Hollows—she's an expert."
+    },
+    "4": {
+      "name": "Conducting Charge",
+      "desc": {
+        "0": "When Anby launches a <ct color=#FFFFFF>Chain Attack</ct> or uses her <ct color=#FFFFFF>Ultimate</ct>, off-field Electric Agents recover 3 Energy.",
+        "1": "For every 12% Energy Generation Rate Anby has, recover an additional 2 Energy, up to a maximum of 6."
+      },
+      "flavor": "You won't last long fighting solo. An experienced Hollow Raider knows how to create opportunities for their teammates."
+    },
+    "5": {
+      "name": "Street Experience",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Working for the Cunning Hares not only builds your mental toughness but also helps (or rather, forces) you to get in shape."
+    },
+    "6": {
+      "name": "Charging Field",
+      "desc": "When Anby uses her <ct color=#FFFFFF>EX Special Attack</ct>, she gains 8 stacks of Charge (max 8 stacks). When she hits an enemy with her <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct>, 1 stack of Charge is consumed, increasing that attack's DMG by 45%.",
+      "flavor": {
+        "0": "Coils of electricity flickered over her fingertips.",
+        "1": "Anby raised her head, eyes brimming with determination beyond her years.",
+        "2": "Perhaps, one day, she will be the one with total mastery over electricity."
+      }
+    }
+  }
 }

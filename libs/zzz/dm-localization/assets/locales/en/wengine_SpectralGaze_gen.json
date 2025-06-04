@@ -1,6 +1,10 @@
 {
   "name": "Spectral Gaze",
-  "desc": "Her life was one of seeking. Seeking companions, enemies, the truth, warmth. She reached out time and again, only to have it slip through her fingers. If one day she finds the missing fragments of her incomplete soul, will she be able to hear the melody in the wind once more?\n\n<ct color=#959595>\"Target has returned to the second floor of the video store. It sounds like they're preparing to sleep. Update on their location has been filed.\" — Trigger, apparently tracking and documenting a particular target.</ct>",
+  "desc": {
+    "0": "Her life was one of seeking. Seeking companions, enemies, the truth, warmth. She reached out time and again, only to have it slip through her fingers. If one day she finds the missing fragments of her incomplete soul, will she be able to hear the melody in the wind once more?",
+    "1": "",
+    "2": "<ct color=#959595>\"Target has returned to the second floor of the video store. It sounds like they're preparing to sleep. Update on their location has been filed.\" — Trigger, apparently tracking and documenting a particular target.</ct>"
+  },
   "desc2": "Equip to increase Stun Agents' combat capabilities",
   "desc3": "Broken eyes hold both resilience and vulnerability.",
   "phase": "Wind Seeker",

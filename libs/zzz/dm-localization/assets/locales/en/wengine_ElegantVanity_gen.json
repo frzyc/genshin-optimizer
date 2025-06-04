@@ -1,6 +1,11 @@
 {
   "name": "Elegant Vanity",
-  "desc": "Light gradually begins to appear, and dazzling colors leak from the box, blurring the boundary between reality and fantasy. They reveal untold secrets behind the stage, where wealth and peril silently mingle, drawing in the observer and holding their gaze.\n\n<ct color=#959595>\"This is my secret weapon~ All the gentleness, allure, strength, pride, and radiance of a girl are hidden inside!\"\n—Astra, blending her lip color with her ring finger, then closing the vanity case with a playful smile.</ct>",
+  "desc": {
+    "0": "Light gradually begins to appear, and dazzling colors leak from the box, blurring the boundary between reality and fantasy. They reveal untold secrets behind the stage, where wealth and peril silently mingle, drawing in the observer and holding their gaze.",
+    "1": "",
+    "2": "<ct color=#959595>\"This is my secret weapon~ All the gentleness, allure, strength, pride, and radiance of a girl are hidden inside!\"",
+    "3": "—Astra, blending her lip color with her ring finger, then closing the vanity case with a playful smile.</ct>"
+  },
   "desc2": "Equip to increase Support Agents' combat capabilities",
   "desc3": "Underneath the radiant splendor, her genuine self has never been hidden.",
   "phase": "Untold Beauty",

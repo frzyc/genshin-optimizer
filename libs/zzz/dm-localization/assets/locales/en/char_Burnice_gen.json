@@ -1,3 +1,276 @@
 {
-  "name": "Burnice"
+  "name": "Burnice",
+  "fullName": "Burnice White",
+  "basic": {
+    "BasicAttackDirectFlameBlend": {
+      "name": "Basic Attack: Direct Flame Blend",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 5 attacks in front, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackMixedFlameBlend": {
+      "name": "Basic Attack: Mixed Flame Blend",
+      "desc": {
+        "0": "In the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state, hold <IconNormal /> to activate:",
+        "1": "Spin continuously while spraying flames around, followed by a Finishing Move that inflicts <ct color=#FF5521>Fire DMG</ct>. Continuing to hold extends the flame-spraying duration.",
+        "2": "When the move is activated, it consumes 20 <ct color=#FFFFFF>Heat</ct>;",
+        "3": "Anti-Interrupt level is increased while using this skill.",
+        "4": "After executing the Finishing Move, press <IconSpecialReady /> to immediately follow up with <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>."
+      },
+      "params": [
+        "Continuous Spray ",
+        "Finishing Move "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeFieryPhantomDash": {
+      "name": "Dodge: Fiery Phantom Dash",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackDangerousFermentation": {
+      "name": "Dash Attack: Dangerous Fermentation",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Perform a forward rush attack with the flamethrower, dealing <ct color=#FF5521>Fire DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterFlutteringSteps": {
+      "name": "Dodge Counter: Fluttering Steps",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Launch a series of attacks on enemies in front while spraying flames, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackIntenseHeatAgingMethod": {
+      "name": "Special Attack: Intense Heat Aging Method",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Unleash a fire blast forward, inflicting <ct color=#FF5521>Fire DMG</ct>;",
+        "2": "Press and hold <IconSpecial /> to charge, boosting the move's power.",
+        "3": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        "",
+        "Charged Attack ",
+        "Charged "
+      ]
+    },
+    "EXSpecialAttackIntenseHeatStirringMethod": {
+      "name": "EX Special Attack: Intense Heat Stirring Method",
+      "desc": {
+        "0": "With enough energy, press <IconSpecialReady /> to activate:",
+        "1": "Continuously spray flames with a one-handed flamethrower, then release a fire blast in a straight line ahead, dealing massive <ct color=#FF5521>Fire DMG</ct>. Continue holding to steadily consume energy and extend the spray's duration.",
+        "2": "While continuously spraying, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to execute a sidestep dodge, adjusting your position in the corresponding direction.",
+        "3": "Anti-Interrupt Level is increased while continuously spraying, and DMG taken is reduced by 40%.",
+        "4": "Character is invulnerable during sidestep dodge and fire blast."
+      },
+      "params": [
+        "Continuous Spray ",
+        "Fire Blast ",
+        "Energy Cost to Use",
+        "Continuous Spray Energy Cost",
+        "Fire Blast Energy Cost"
+      ]
+    },
+    "EXSpecialAttackIntenseHeatStirringMethodDoubleShot": {
+      "name": "EX Special Attack: Intense Heat Stirring Method - Double Shot",
+      "desc": {
+        "0": "While using <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method</ct>, with enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Use both flamethrowers to continuously spray flames, followed by a fire blast in a front line, dealing massive <ct color=#FF5521>Fire DMG</ct>. Keep holding to continue consuming Energy and extend the spray's duration.",
+        "2": "Character is invulnerable during the moment the spray is activated and during the activation of the fire blast.",
+        "3": "Anti-Interrupt Level is increased while spraying, and DMG received is reduced by 40%."
+      },
+      "params": [
+        "Continuous Spray ",
+        "Fire Blast ",
+        "Energy Cost to Use",
+        "Continuous Spray Energy Cost",
+        "Fire Blast Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackFuelFedFlame": {
+      "name": "Chain Attack: Fuel-Fed Flame",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Quickly dash forward while spraying flames in all directions, then launch a fire blast in a fan-shaped area ahead, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using the skill, press <IconSpecialReady /> to immediately follow up with <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateGloriousInferno": {
+      "name": "Ultimate: Glorious Inferno",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Dash forward quickly, then leap into the air and continuously spray flames over a wide area ahead, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "When leaping into the air, a <ct color=#FFFFFF>Quick Assist</ct> will be triggered. If the <ct color=#FFFFFF>Quick Assist</ct> is activated, Burnice will extend the duration of her flame spray.",
+        "3": "Upon activation, recover 50 <ct color=#FFFFFF>Heat</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Maximum "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistEnergizingSpecialtyDrink": {
+      "name": "Quick Assist: Energizing Specialty Drink",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Unleash a flurry of attacks on enemies in front while spraying flames, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistSmokyCauldron": {
+      "name": "Defensive Assist: Smoky Cauldron",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpScorchingDew": {
+      "name": "Assist Follow-Up: Scorching Dew",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Leap into the air and quickly spin forward while spraying flames in all directions, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using the skill, press <IconSpecialReady /> to immediately follow up with <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Nitro-Fuel Cocktail",
+    "desc": [
+      {
+        "0": "When Burnice expends Energy, she accumulates <ct color=#FFFFFF>Heat</ct>, up to a max of 100. She gains 1.4 <ct color=#FFFFFF>Heat</ct> for each 1 point of Energy consumed. At 50 <ct color=#FFFFFF>Heat</ct>, she enters the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state until all <ct color=#FFFFFF>Heat</ct> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <ct color=#FFFFFF>Heat</ct>.",
+        "1": "While in the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state, when Burnice hits an enemy with a <ct color=#FFFFFF>Basic Attack: Mixed Flame Blend</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she applies the <ct color=#FFFFFF>Scorched</ct> effect to the target until she exits the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state. When other squad members hit enemies under the <ct color=#FFFFFF>Scorched</ct> status, it triggers the <ct color=#FFFFFF>Afterburn</ct> effect, expending 8 <ct color=#FFFFFF>Heat</ct> to deal <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>175%</ct> of Burnice's ATK and accumulate <ct color=#FF5521>Fire Anomaly Buildup</ct>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <ct color=#FFFFFF>Afterburn</ct> DMG increases by 1%, up to a max of 30%. DMG from the <ct color=#FFFFFF>Afterburn</ct> effect is considered <ct color=#FFFFFF>Assist Attack</ct> DMG."
+      },
+      {
+        "0": "When Burnice expends Energy, she accumulates <ct color=#FFFFFF>Heat</ct>, up to a max of 100. She gains 1.4 <ct color=#FFFFFF>Heat</ct> for each 1 point of Energy consumed. At 50 <ct color=#FFFFFF>Heat</ct>, she enters the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state until all <ct color=#FFFFFF>Heat</ct> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <ct color=#FFFFFF>Heat</ct>.",
+        "1": "While in the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state, when Burnice hits an enemy with a <ct color=#FFFFFF>Basic Attack: Mixed Flame Blend</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she applies the <ct color=#FFFFFF>Scorched</ct> effect to the target until she exits the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state. When other squad members hit enemies under the <ct color=#FFFFFF>Scorched</ct> status, it triggers the <ct color=#FFFFFF>Afterburn</ct> effect, expending 8 <ct color=#FFFFFF>Heat</ct> to deal <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>205%</ct> of Burnice's ATK and accumulate <ct color=#FF5521>Fire Anomaly Buildup</ct>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <ct color=#FFFFFF>Afterburn</ct> DMG increases by 1%, up to a max of 30%. DMG from the <ct color=#FFFFFF>Afterburn</ct> effect is considered <ct color=#FFFFFF>Assist Attack</ct> DMG."
+      },
+      {
+        "0": "When Burnice expends Energy, she accumulates <ct color=#FFFFFF>Heat</ct>, up to a max of 100. She gains 1.4 <ct color=#FFFFFF>Heat</ct> for each 1 point of Energy consumed. At 50 <ct color=#FFFFFF>Heat</ct>, she enters the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state until all <ct color=#FFFFFF>Heat</ct> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <ct color=#FFFFFF>Heat</ct>.",
+        "1": "While in the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state, when Burnice hits an enemy with a <ct color=#FFFFFF>Basic Attack: Mixed Flame Blend</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she applies the <ct color=#FFFFFF>Scorched</ct> effect to the target until she exits the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state. When other squad members hit enemies under the <ct color=#FFFFFF>Scorched</ct> status, it triggers the <ct color=#FFFFFF>Afterburn</ct> effect, expending 8 <ct color=#FFFFFF>Heat</ct> to deal <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>235%</ct> of Burnice's ATK and accumulate <ct color=#FF5521>Fire Anomaly Buildup</ct>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <ct color=#FFFFFF>Afterburn</ct> DMG increases by 1%, up to a max of 30%. DMG from the <ct color=#FFFFFF>Afterburn</ct> effect is considered <ct color=#FFFFFF>Assist Attack</ct> DMG."
+      },
+      {
+        "0": "When Burnice expends Energy, she accumulates <ct color=#FFFFFF>Heat</ct>, up to a max of 100. She gains 1.4 <ct color=#FFFFFF>Heat</ct> for each 1 point of Energy consumed. At 50 <ct color=#FFFFFF>Heat</ct>, she enters the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state until all <ct color=#FFFFFF>Heat</ct> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <ct color=#FFFFFF>Heat</ct>.",
+        "1": "While in the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state, when Burnice hits an enemy with a <ct color=#FFFFFF>Basic Attack: Mixed Flame Blend</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she applies the <ct color=#FFFFFF>Scorched</ct> effect to the target until she exits the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state. When other squad members hit enemies under the <ct color=#FFFFFF>Scorched</ct> status, it triggers the <ct color=#FFFFFF>Afterburn</ct> effect, expending 8 <ct color=#FFFFFF>Heat</ct> to deal <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>262%</ct> of Burnice's ATK and accumulate <ct color=#FF5521>Fire Anomaly Buildup</ct>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <ct color=#FFFFFF>Afterburn</ct> DMG increases by 1%, up to a max of 30%. DMG from the <ct color=#FFFFFF>Afterburn</ct> effect is considered <ct color=#FFFFFF>Assist Attack</ct> DMG."
+      },
+      {
+        "0": "When Burnice expends Energy, she accumulates <ct color=#FFFFFF>Heat</ct>, up to a max of 100. She gains 1.4 <ct color=#FFFFFF>Heat</ct> for each 1 point of Energy consumed. At 50 <ct color=#FFFFFF>Heat</ct>, she enters the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state until all <ct color=#FFFFFF>Heat</ct> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <ct color=#FFFFFF>Heat</ct>.",
+        "1": "While in the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state, when Burnice hits an enemy with a <ct color=#FFFFFF>Basic Attack: Mixed Flame Blend</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she applies the <ct color=#FFFFFF>Scorched</ct> effect to the target until she exits the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state. When other squad members hit enemies under the <ct color=#FFFFFF>Scorched</ct> status, it triggers the <ct color=#FFFFFF>Afterburn</ct> effect, expending 8 <ct color=#FFFFFF>Heat</ct> to deal <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>290%</ct> of Burnice's ATK and accumulate <ct color=#FF5521>Fire Anomaly Buildup</ct>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <ct color=#FFFFFF>Afterburn</ct> DMG increases by 1%, up to a max of 30%. DMG from the <ct color=#FFFFFF>Afterburn</ct> effect is considered <ct color=#FFFFFF>Assist Attack</ct> DMG."
+      },
+      {
+        "0": "When Burnice expends Energy, she accumulates <ct color=#FFFFFF>Heat</ct>, up to a max of 100. She gains 1.4 <ct color=#FFFFFF>Heat</ct> for each 1 point of Energy consumed. At 50 <ct color=#FFFFFF>Heat</ct>, she enters the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state until all <ct color=#FFFFFF>Heat</ct> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <ct color=#FFFFFF>Heat</ct>.",
+        "1": "While in the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state, when Burnice hits an enemy with a <ct color=#FFFFFF>Basic Attack: Mixed Flame Blend</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she applies the <ct color=#FFFFFF>Scorched</ct> effect to the target until she exits the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state. When other squad members hit enemies under the <ct color=#FFFFFF>Scorched</ct> status, it triggers the <ct color=#FFFFFF>Afterburn</ct> effect, expending 8 <ct color=#FFFFFF>Heat</ct> to deal <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>320%</ct> of Burnice's ATK and accumulate <ct color=#FF5521>Fire Anomaly Buildup</ct>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <ct color=#FFFFFF>Afterburn</ct> DMG increases by 1%, up to a max of 30%. DMG from the <ct color=#FFFFFF>Afterburn</ct> effect is considered <ct color=#FFFFFF>Assist Attack</ct> DMG."
+      },
+      {
+        "0": "When Burnice expends Energy, she accumulates <ct color=#FFFFFF>Heat</ct>, up to a max of 100. She gains 1.4 <ct color=#FFFFFF>Heat</ct> for each 1 point of Energy consumed. At 50 <ct color=#FFFFFF>Heat</ct>, she enters the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state until all <ct color=#FFFFFF>Heat</ct> is expended. Upon entering the battlefield, Burnice instantly accumulates 100 <ct color=#FFFFFF>Heat</ct>.",
+        "1": "While in the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state, when Burnice hits an enemy with a <ct color=#FFFFFF>Basic Attack: Mixed Flame Blend</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she applies the <ct color=#FFFFFF>Scorched</ct> effect to the target until she exits the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state. When other squad members hit enemies under the <ct color=#FFFFFF>Scorched</ct> status, it triggers the <ct color=#FFFFFF>Afterburn</ct> effect, expending 8 <ct color=#FFFFFF>Heat</ct> to deal <ct color=#FF5521>Fire DMG</ct> equal to <ct color=#2BAD00>350%</ct> of Burnice's ATK and accumulate <ct color=#FF5521>Fire Anomaly Buildup</ct>. This effect can trigger once every 1.5s. For every 10 Anomaly Proficiency, <ct color=#FFFFFF>Afterburn</ct> DMG increases by 1%, up to a max of 30%. DMG from the <ct color=#FFFFFF>Afterburn</ct> effect is considered <ct color=#FFFFFF>Assist Attack</ct> DMG."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Fire Kindling",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Anomaly</ct> character or shares the same Faction:",
+      "1": "When Burnice's <ct color=#FFFFFF>Basic Attack: Mixed Flame Blend</ct>, <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method</ct> or <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct> hits an enemy, or when the <ct color=#FFFFFF>Afterburn</ct> effect is triggered, the move's accumulated <ct color=#FF5521>Fire Anomaly Buildup</ct> increases by 65%. When any squad member applies the <ct color=#FF5521>Burn</ct> effect to an enemy, the duration of that effect is extended by 3s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Kindred Flames",
+      "desc": "Increases the limit of <ct color=#FFFFFF>Heat</ct> from 100 to 140. Upon entering the battlefield, Burnice accumulates an additional 40 <ct color=#FFFFFF>Heat</ct>. Increases the DMG Multiplier of the <ct color=#FFFFFF>Afterburn</ct> effect by 100% of Burnice's ATK. Additionally, the accumulated <ct color=#FF5521>Fire Anomaly Buildup</ct> from the <ct color=#FFFFFF>Afterburn</ct> effect is increased by 25%.",
+      "flavor": {
+        "0": "\"Everyone has rough times; it's perfectly normal!\"",
+        "1": "\"Cheer up, Caesar! How about a Nitro-Fuel special? I added a ton of sugar!\""
+      }
+    },
+    "2": {
+      "name": "Extra at No Additional Charge",
+      "desc": "When triggering the <ct color=#FFFFFF>Afterburn</ct> effect, <ct color=#FFFFFF>Thermal Penetration</ct> is applied to the enemy, stacking up to 5 times and lasting 6s. Repeated triggers reset the duration. When any allied unit in the squad hits the enemy, the attack's PEN Ratio is increased by 4% for each stack of <ct color=#FFFFFF>Thermal Penetration</ct>, up to a max of 20%.",
+      "flavor": {
+        "0": "As the mixologist for the Sons of Calydon, Burnice takes great pleasure in crafting the best Nitro-Fuel drinks in New Eridu for her friends.",
+        "1": "Of course, if you happen to be her enemy... you might have the opportunity to try a new and unique flavor too.",
+        "2": "\"It's a once-in-a-lifetime, absolutely exquisite taste!\""
+      }
+    },
+    "3": {
+      "name": "Optimistic by Nature",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"That Burnice, she's always so full of energy! Even right after waking up! I have no idea where she gets all that energy...\"",
+        "1": "\"What's even scarier is that she can get everyone around her to be just as enthusiastic! It's almost like she's some kind of monster!\"",
+        "2": "\"But... I don't really dislike it, to be honest...\"",
+        "3": "— From a boar manager who wishes to remain unnamed"
+      }
+    },
+    "4": {
+      "name": "Ultimate Fuel Supply",
+      "desc": "When an <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Attack</ct> hits an enemy, the move's CRIT Rate increases by 30%. The max flame spray duration of <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct> is increased by 1s.",
+      "flavor": {
+        "0": "\"You like the drink I mixed? Thanks! Steeltusk likes them too~ That guy can drink 200 liters in one go!\"",
+        "1": "\"Oh, Steeltusk is our big truck!\"",
+        "2": "\"Wanna try some of its special fuel? It's pretty fiery~\""
+      }
+    },
+    "5": {
+      "name": "Dance of Fire and Ice",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "When mixing drinks, ice is a crucial element.",
+        "1": "Without an intense chill, the intense heat just doesn't stand out.",
+        "2": "\"That fusion of fire and ice~ It's truly captivating!\""
+      }
+    },
+    "6": {
+      "name": "Burning Invitation",
+      "desc": "When Burnice hits an enemy with <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>, it triggers an additional special <ct color=#FFFFFF>Afterburn</ct> effect, dealing 60% of Burnice's ATK as <ct color=#FF5521>Fire DMG</ct> to the target. This effect can trigger once every 0.5s and does not consume <ct color=#FFFFFF>Heat</ct>. After hitting an enemy with <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>, while the move is active, <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>, special <ct color=#FFFFFF>Afterburn</ct> effects, and <ct color=#FF5521>Burn</ct> effects will ignore 25% of the target's <ct color=#FF5521>Fire RES</ct>. When <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>'s fire blast hits an enemy, if that enemy is <ct color=#FF5521>Burned</ct>, trigger an additional instance of <ct color=#FF5521>Burn</ct> DMG equal to 1,800% of the original DMG. This effect can trigger once every 20s for each target.",
+      "flavor": {
+        "0": "It seems like no one has ever seen Burnice truly angry.",
+        "1": "\"Trust me, you don't want to see it.\"",
+        "2": "— From a driver getting ready to sleep atop Steeltusk"
+      }
+    }
+  }
 }

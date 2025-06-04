@@ -1,3 +1,229 @@
 {
-  "name": "Zhu Yuan"
+  "name": "Zhu Yuan",
+  "fullName": "Zhu Yuan",
+  "basic": {
+    "BasicAttackDontMove": {
+      "name": "Basic Attack: Don't Move!",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[Assault Mode]</ct>",
+        "1": "Press <IconNormal /> to activate.",
+        "2": "Unleash a flurry of martial arts, bullets, and Ether Buckshots in a series of up to 5 attacks, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FE437E>Ether DMG</ct>.",
+        "3": "When the 4th or 5th hit strikes an enemy, obtain 1 <ct color=#FFFFFF>Enhanced Shotshell</ct> per hit. A max of 1 can be obtained per activation of this Basic Attack.",
+        "4": "While using this skill, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} and press <IconNormal /> to activate <ct color=#FFFFFF>Dash Attack: Firepower Offensive</ct> and readjust to face the selected direction.",
+        "5": "While under <ct color=#FFFFFF>Assault Mode</ct>, hold <IconNormal /> to switch to <ct color=#FFFFFF>Suppressive Mode</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackPleaseDoNotResist": {
+      "name": "Basic Attack: Please Do Not Resist",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[Suppressive Mode]</ct>",
+        "1": "Hold <IconNormal /> to activate:",
+        "2": "Unleash up to 3 Shotshell piercing attacks, dealing <ct color=#F0D12B>Physical DMG</ct>. If Zhu Yuan has <ct color=#FFFFFF>Enhanced Shotshells</ct> upon firing, 1 <ct color=#FFFFFF>Enhanced Shotshell</ct> will be consumed, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "3": "While using this skill, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to activate her <ct color=#FFFFFF>Dash Attack: Overwhelming Firepower</ct> and readjust to face the selected direction.",
+        "4": "While in <ct color=#FFFFFF>Suppressive Mode</ct>, release <IconNormal /> to return to <ct color=#FFFFFF>Assault Mode</ct>."
+      },
+      "params": [
+        "1st-Hit  (Physical)",
+        "2nd-Hit  (Physical)",
+        "3rd-Hit  (Physical)",
+        "1st-Hit  (Ether)",
+        "2nd-Hit  (Ether)",
+        "3rd-Hit  (Ether)"
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeTacticalDetour": {
+      "name": "Dodge: Tactical Detour",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackFirepowerOffensive": {
+      "name": "Dash Attack: Firepower Offensive",
+      "desc": {
+        "0": "<ct color=#FFFFFF>Assault Mode</ct>",
+        "1": "Press <IconNormal /> during a dodge to activate:",
+        "2": "Uses handgun to attack, dealing <ct color=#FE437E>Ether DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DashAttackOverwhelmingFirepower": {
+      "name": "Dash Attack: Overwhelming Firepower",
+      "desc": {
+        "0": "<ct color=#FFFFFF>Suppressive Mode</ct>",
+        "1": "Drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} during <ct color=#FFFFFF>Basic Attack: Please Do Not Resist</ct> to activate:",
+        "2": "Unleashes a Shotshell piercing attack, dealing <ct color=#F0D12B>Physical DMG</ct>. If Zhu Yuan has <ct color=#FFFFFF>Enhanced Shotshells</ct> when firing, 1 <ct color=#FFFFFF>Enhanced Shotshell</ct> will be consumed, dealing massive <ct color=#FE437E>Ether DMG</ct>."
+      },
+      "params": [
+        " (Physical)",
+        " (Ether)"
+      ]
+    },
+    "DodgeCounterFireBlast": {
+      "name": "Dodge Counter: Fire Blast",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate.",
+        "1": "Shoots enemies in front with an Ether Buckshot, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Gain 1 <ct color=#FFFFFF>Enhanced Shotshell</ct> on skill use.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackBuckshotBlast": {
+      "name": "Special Attack: Buckshot Blast",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Shoots Ether Buckshots that deal <ct color=#FE437E>Ether DMG</ct>. This can be repeated 3 times by repeatedly pressing <IconSpecial />.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackFullBarrage": {
+      "name": "EX Special Attack: Full Barrage",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Shoots a series of Ether Buckshots, that explode and deal massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Upon activation, gain 3 <ct color=#FFFFFF>Enhanced Shotshells</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackEradicationMode": {
+      "name": "Chain Attack: Eradication Mode",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Uses Modified Master Firearm to execute a saturated attack, firing lasers and seeking missiles to deal massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Upon activation, gain 3 <ct color=#FFFFFF>Enhanced Shotshells</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateMaxEradicationMode": {
+      "name": "Ultimate: Max Eradication Mode",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Uses Modified Master Firearm to execute a saturated attack, firing lasers and seeking missiles to deal massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Upon activation, gain 3 <ct color=#FFFFFF>Enhanced Shotshells</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistCoveringShot": {
+      "name": "Quick Assist: Covering Shot",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Shoots enemies in front with an Ether Buckshot, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Gain 1 <ct color=#FFFFFF>Enhanced Shotshell</ct> on skill use.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EvasiveAssistGuardedBackup": {
+      "name": "Evasive Assist: Guarded Backup",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Dodges the enemy's attack and activates <ct color=#FFFFFF>Vital View</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "AssistFollowUpDefensiveCounter": {
+      "name": "Assist Follow-Up: Defensive Counter",
+      "desc": {
+        "0": "Press <IconNormal /> after an <ct color=#FFFFFF>Evasive Assist</ct> to activate:",
+        "1": "Attack with a combination of martial arts and shotshells, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Upon activation, gain 3 <ct color=#FFFFFF>Enhanced Shotshells</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Special Ops Ammunition",
+    "desc": [
+      "When Zhu Yuan is under <ct color=#FFFFFF>Suppressive Mode</ct>, using <ct color=#FFFFFF>Enhanced Shotshells</ct> increases her DMG by <ct color=#2BAD00>20%</ct>. When attacking Stunned enemies, this DMG buff is increased by an additional <ct color=#2BAD00>20%</ct>. When Zhu Yuan enters the battlefield, she immediately gains 6 <ct color=#FFFFFF>Enhanced Shotshells</ct>.",
+      "When Zhu Yuan is under <ct color=#FFFFFF>Suppressive Mode</ct>, using <ct color=#FFFFFF>Enhanced Shotshells</ct> increases her DMG by <ct color=#2BAD00>23.3%</ct>. When attacking Stunned enemies, this DMG buff is increased by an additional <ct color=#2BAD00>23.3%</ct>. When Zhu Yuan enters the battlefield, she immediately gains 6 <ct color=#FFFFFF>Enhanced Shotshells</ct>.",
+      "When Zhu Yuan is under <ct color=#FFFFFF>Suppressive Mode</ct>, using <ct color=#FFFFFF>Enhanced Shotshells</ct> increases her DMG by <ct color=#2BAD00>26.6%</ct>. When attacking Stunned enemies, this DMG buff is increased by an additional <ct color=#2BAD00>26.6%</ct>. When Zhu Yuan enters the battlefield, she immediately gains 6 <ct color=#FFFFFF>Enhanced Shotshells</ct>.",
+      "When Zhu Yuan is under <ct color=#FFFFFF>Suppressive Mode</ct>, using <ct color=#FFFFFF>Enhanced Shotshells</ct> increases her DMG by <ct color=#2BAD00>30%</ct>. When attacking Stunned enemies, this DMG buff is increased by an additional <ct color=#2BAD00>30%</ct>. When Zhu Yuan enters the battlefield, she immediately gains 6 <ct color=#FFFFFF>Enhanced Shotshells</ct>.",
+      "When Zhu Yuan is under <ct color=#FFFFFF>Suppressive Mode</ct>, using <ct color=#FFFFFF>Enhanced Shotshells</ct> increases her DMG by <ct color=#2BAD00>33.3%</ct>. When attacking Stunned enemies, this DMG buff is increased by an additional <ct color=#2BAD00>33.3%</ct>. When Zhu Yuan enters the battlefield, she immediately gains 6 <ct color=#FFFFFF>Enhanced Shotshells</ct>.",
+      "When Zhu Yuan is under <ct color=#FFFFFF>Suppressive Mode</ct>, using <ct color=#FFFFFF>Enhanced Shotshells</ct> increases her DMG by <ct color=#2BAD00>36.6%</ct>. When attacking Stunned enemies, this DMG buff is increased by an additional <ct color=#2BAD00>36.6%</ct>. When Zhu Yuan enters the battlefield, she immediately gains 6 <ct color=#FFFFFF>Enhanced Shotshells</ct>.",
+      "When Zhu Yuan is under <ct color=#FFFFFF>Suppressive Mode</ct>, using <ct color=#FFFFFF>Enhanced Shotshells</ct> increases her DMG by <ct color=#2BAD00>40%</ct>. When attacking Stunned enemies, this DMG buff is increased by an additional <ct color=#2BAD00>40%</ct>. When Zhu Yuan enters the battlefield, she immediately gains 6 <ct color=#FFFFFF>Enhanced Shotshells</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Tactical Coordination",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Support</ct> character or shares the same Faction:",
+      "1": "Zhu Yuan's CRIT Rate is increased by 30% for 10s after using an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Quick Reload",
+      "desc": "When Zhu Yuan activates <ct color=#FFFFFF>Chain Attacks</ct>/<ct color=#FFFFFF>Ultimates</ct>, gain the <ct color=#FFFFFF>Quick Reload</ct> effect. When Zhu Yuan has the <ct color=#FFFFFF>Quick Reload</ct> effect and uses up all <ct color=#FFFFFF>Enhanced Shotshells</ct>, the <ct color=#FFFFFF>Quick Reload</ct> effect will be consumed to instantly gain 6/9 <ct color=#FFFFFF>Enhanced Shotshells</ct>.",
+      "flavor": "Zhu Yuan once competed in the Janus Quarter's Public Security Officer Contest, clinching first place with her extraordinary reloading techniques. Her colleague commented: \"It's nothing but sheer practice.\""
+    },
+    "2": {
+      "name": "Ether Ember",
+      "desc": "In <ct color=#FFFFFF>Suppressive Mode</ct>, Zhu Yuan's Anti-Interrupt level is increased and DMG taken reduced by 10%. When Zhu Yuan hits an enemy with <ct color=#FFFFFF>Enhanced Shotshells</ct>, deal 10% more <ct color=#FFFFFF>Basic Attack: Please Do Not Resist</ct> and <ct color=#FFFFFF>Dash Attack: Overwhelming Firepower</ct> <ct color=#FE437E>Ether DMG</ct>, stacking up to 5 times and lasting for 5s. Each shot adds one stack of this effect, and repeated triggers reset the duration.",
+      "flavor": {
+        "0": "Zhu Yuan is equipped with Ether bullets specially designed by Public Security, which cause irreversible corruption upon hitting the enemy.",
+        "1": "This is why Zhu Yuan always warns her enemies to surrender and stop resisting before she fires. It really is for their own health and safety..."
+      }
+    },
+    "3": {
+      "name": "Public Security Special Training",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "As an elite Public Security Officer, Zhu Yuan's training focused on a single objective: to enhance all aspects of her combat abilities within the Hollow, ensuring she could outmatch any criminal."
+    },
+    "4": {
+      "name": "Ether Perforation",
+      "desc": "When Zhu Yuan hits an enemy with <ct color=#FFFFFF>Enhanced Shotshells</ct>, her <ct color=#FFFFFF>Basic Attack: Please Do Not Resist</ct> and <ct color=#FFFFFF>Dash Attack: Overwhelming Firepower</ct> ignore 25% of the target's <ct color=#FE437E>Ether RES</ct>.",
+      "flavor": "When in battle, the gangs in the Hollows often try to quietly calculate how many bullets their enemies have left. What they don't know is that Zhu Yuan's custom magazine can recharge itself with the Ether in the air..."
+    },
+    "5": {
+      "name": "Special Ops Experience",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "A seasoned Public Security Officer excels at reading the battlefield, striking precisely and maximizing combat efficiency. Sometimes, one stern look is enough to make her enemies think twice about putting up a fight."
+    },
+    "6": {
+      "name": "Expanded Energy Pack III",
+      "desc": "When Zhu Yuan consumes a total of 12 <ct color=#FFFFFF>Enhanced Shotshells</ct>, she receives the <ct color=#FFFFFF>Ether Afterglow</ct> effect, and the Energy cost of the next <ct color=#FFFFFF>EX Special Attack</ct> is reduced by 30. Launching an <ct color=#FFFFFF>EX Special Attack</ct> will consume <ct color=#FFFFFF>Ether Afterglow</ct> and shoot an additional 4-bullet Ether Buckshot. Each extra bullet deals DMG equal to 220% of Zhu Yuan's ATK.",
+      "flavor": "Zhu Yuan often worries about her gear's remaining battery, getting nervous when the power dips into the red zone and consciously saving power. Public Security finally equipped her with an energy pack that offered both high capacity and long-lasting endurance."
+    }
+  }
 }
