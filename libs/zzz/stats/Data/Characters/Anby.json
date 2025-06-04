@@ -243,6 +243,24 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackTurboVolt": [], "BasicAttackThunderbolt": [] },
+    "dodge": {
+      "DodgeSlide": [],
+      "DashAttackTaserBlast": [],
+      "DodgeCounterThunderclap": []
+    },
+    "special": {
+      "SpecialAttackForkLightning": [],
+      "EXSpecialAttackLightningBolt": []
+    },
+    "chain": { "ChainAttackElectroEngine": [], "UltimateOverdriveEngine": [] },
+    "assist": {
+      "QuickAssistThunderfall": [],
+      "DefensiveAssistFlash": [],
+      "AssistFollowUpLightningWhirl": []
+    }
+  },
   "coreParams": [[0.32, 0.373, 0.426, 0.48, 0.533, 0.586, 0.64]],
   "abilityParams": [7.2, 5],
   "mindscapeParams": [

@@ -30,6 +30,7 @@ export type CharacterDatum = {
   promotionStats: Array<{ hp: number; atk: number; def: number }>
   coreStats: Array<Partial<Record<BaseStatKey, number>>>
   skillParams: Record<SkillKey, Record<string, SkillParam[]>>
+  calcedParams: Record<SkillKey, Record<string, CalcedParam[]>>
   coreParams: number[][]
   abilityParams: number[]
   mindscapeParams: number[][]
@@ -44,6 +45,9 @@ export type SkillParam = {
   FeverRecovery: number
   FeverRecoveryGrowth: number
   AttributeInfliction: number
+}
+export type CalcedParam = {
+  formula: string
 }
 
 export function getCharStat(ck: CharacterKey) {

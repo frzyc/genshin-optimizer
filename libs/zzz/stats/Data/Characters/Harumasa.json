@@ -315,6 +315,30 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackCloudPiercer": [],
+      "BasicAttackCloudPiercerDrift": [],
+      "BasicAttackFallingFeather": [],
+      "BasicAttackHaOtoNoYa": []
+    },
+    "dodge": {
+      "DodgeQuickFlash": [],
+      "DashAttackHitenNoTsuru": [],
+      "DodgeCounterHiddenEdge": [],
+      "DashAttackHitenNoTsuruSlash": []
+    },
+    "special": {
+      "SpecialAttackNowhereToHide": [],
+      "EXSpecialAttackNowhereToRun": []
+    },
+    "chain": { "ChainAttackKaiHanare": [], "UltimateZanshin": [] },
+    "assist": {
+      "QuickAssistBracedBow": [],
+      "DefensiveAssistYugamae": [],
+      "AssistFollowUpYugamaeSlash": []
+    }
+  },
   "coreParams": [
     [0.106, 0.13, 0.154, 0.178, 0.202, 0.226, 0.25],
     [1, 1, 1, 1, 1, 1, 1],

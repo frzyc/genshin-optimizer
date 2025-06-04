@@ -351,6 +351,24 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackMoonHunter": [] },
+    "dodge": {
+      "DodgeSuitablePositioning": [],
+      "DashAttackKeepItClean": [],
+      "DodgeCounterEtiquetteManual": []
+    },
+    "special": {
+      "SpecialAttackTimeToHunt": [],
+      "EXSpecialAttackThrillOfTheHunt": []
+    },
+    "chain": { "ChainAttackAsYouWish": [], "UltimateMissionComplete": [] },
+    "assist": {
+      "QuickAssistWolfPack": [],
+      "DefensiveAssistDisruptedHunt": [],
+      "AssistFollowUpVengefulCounterattack": []
+    }
+  },
   "coreParams": [
     [0.4, 0.466, 0.533, 0.6, 0.666, 0.733, 0.8],
     [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],

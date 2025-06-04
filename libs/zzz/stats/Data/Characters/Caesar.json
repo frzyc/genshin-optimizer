@@ -240,6 +240,17 @@
           "FeverRecovery": 9493,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 282.87
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.54,
+          "StunRatioGrowth": 0.07,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2750,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 100
         }
       ],
       "StanceSwitch": []
@@ -334,6 +345,30 @@
           "AttributeInfliction": 346.97
         }
       ]
+    }
+  },
+  "calcedParams": {
+    "basic": { "BasicAttackRampagingSlash": [], "BasicAttackDeadEnd": [] },
+    "dodge": {
+      "DodgeAdrift": [],
+      "DashAttackHogRush": [],
+      "DodgeCounterEyeForAnEye": []
+    },
+    "special": {
+      "SpecialAttackShockwaveShieldBash": [],
+      "SpecialAttackRoaringThrust": [],
+      "EXSpecialAttackParryCounter": [],
+      "EXSpecialAttackOverpoweredShieldBash": [],
+      "StanceSwitch": [{ "formula": "{CAL:8+specialLevel*1,1,2}%" }]
+    },
+    "chain": {
+      "ChainAttackRoadRageSlam": [],
+      "UltimateSavageSmash": [{ "formula": "{CAL:40+chainLevel*5,1,2}%" }]
+    },
+    "assist": {
+      "QuickAssistLaneChange": [],
+      "DefensiveAssistAegisShield": [],
+      "AssistFollowUpAidingBlade": []
     }
   },
   "coreParams": [

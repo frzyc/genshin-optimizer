@@ -307,6 +307,24 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackWipeout": [] },
+    "dodge": {
+      "DodgeShoo": [],
+      "DashAttackOopsyDaisy": [],
+      "DodgeCounterNope": []
+    },
+    "special": {
+      "SpecialAttackCleanSweep": [],
+      "EXSpecialAttackSkirtAlert": []
+    },
+    "chain": { "ChainAttackSorry": [], "UltimateVeryVerySorry": [] },
+    "assist": {
+      "QuickAssistEmergencyMeasures": [],
+      "DefensiveAssistPPleaseAllowMe": [],
+      "AssistFollowUpQuickSweep": []
+    }
+  },
   "coreParams": [[0.187, 0.218, 0.25, 0.281, 0.312, 0.343, 0.375]],
   "abilityParams": [0.35],
   "mindscapeParams": [

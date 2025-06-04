@@ -289,6 +289,29 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackPenetratingShock": [] },
+    "dodge": {
+      "DodgeStrobe": [],
+      "DashAttackTorrent": [],
+      "DodgeCounterGroundFlashCounter": []
+    },
+    "special": {
+      "SpecialAttackCelestialThunder": [],
+      "SpecialAttackAzureFlash": [],
+      "SpecialAttackThunderSmite": [],
+      "EXSpecialAttackSunderingBolt": []
+    },
+    "chain": {
+      "ChainAttackLeapingThunderstrike": [],
+      "UltimateVoidstrike": []
+    },
+    "assist": {
+      "QuickAssistCloudFlash": [],
+      "DefensiveAssistCounterSurge": [],
+      "AssistFollowUpConductingBlow": []
+    }
+  },
   "coreParams": [
     [0, 0, 0, 0, 0, 0, 0],
     [0.125, 0.145, 0.165, 0.188, 0.208, 0.23, 0.25],

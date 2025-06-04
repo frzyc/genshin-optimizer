@@ -278,6 +278,26 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackLoadUpAndRollOut": [] },
+    "dodge": {
+      "DodgeHandbrakeDrift": [],
+      "DashAttackPedalToTheMetal": [],
+      "DodgeCounterPowerDrift": []
+    },
+    "special": {
+      "SpecialAttackTireSpin": [],
+      "SpecialAttackOneTrillionTons": [],
+      "EXSpecialAttackEngineSpin": [],
+      "EXSpecialAttackReallyHeavy": []
+    },
+    "chain": { "ChainAttackBuckleUp": [], "UltimateHoldOnTight": [] },
+    "assist": {
+      "QuickAssistBrakeTap": [],
+      "DefensiveAssistEmergencyBrake": [],
+      "AssistFollowUpOvertakingManeuver": []
+    }
+  },
   "coreParams": [
     [1, 1, 1, 1, 1, 1, 1],
     [20, 20, 20, 20, 20, 20, 20],
