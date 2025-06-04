@@ -207,6 +207,27 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackHighPressureSpike": [] },
+    "dodge": {
+      "DodgeSafetyRegulation": [],
+      "DashAttackQuickInspection": [],
+      "DodgeCounterViolationPenalty": []
+    },
+    "special": {
+      "SpecialAttackObstructionRemoval": [],
+      "EXSpecialAttackSuperchargedObstructionRemoval": []
+    },
+    "chain": {
+      "ChainAttackCollaborativeConstruction": [],
+      "UltimateDemolitionBlastBeware": []
+    },
+    "assist": {
+      "QuickAssistIncidentManagement": [],
+      "EvasiveAssistRapidRiskResponse": [],
+      "AssistFollowUpCounterVoltNeedle": []
+    }
+  },
   "coreParams": [
     [1, 1, 1, 1, 1, 1, 1],
     [8, 8, 8, 8, 8, 8, 8],

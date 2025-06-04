@@ -1,3 +1,247 @@
 {
-  "name": "Qingyi"
+  "name": "Qingyi",
+  "fullName": "Qingyi",
+  "basic": {
+    "BasicAttackPenultimate": {
+      "name": "Basic Attack: Penultimate",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Launch up to four strikes forward, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "During the 3rd hit, repeatedly press <IconNormal /> to continue the attack, continuously striking the enemy. Using <ct color=#FFFFFF>Dodge</ct> during this period will not interrupt Qingyi's <ct color=#FFFFFF>Basic Attack</ct> combo count.",
+        "3": "During the 3rd hit, stop pressing <IconNormal /> to interrupt the continuous attack, transitioning automatically to the 4th hit. If the continuous attack lasts for a certain time, the 4th hit will be enhanced.",
+        "4": "Anti-Interrupt Level is increased and DMG received is reduced by 40% during the 3rd and 4th hit."
+      },
+      "params": [
+        "1st-Hit ",
+        "1st-Hit  (ALT)",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "4th-Hit  (Enhanced)"
+      ]
+    },
+    "BasicAttackEnchantedBlossoms": {
+      "name": "Basic Attack: Enchanted Blossoms",
+      "desc": {
+        "0": "Hold <IconNormal /> to activate:",
+        "1": "Launches a forward rush attack, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "FlashConnect": {
+      "name": "Flash Connect",
+      "desc": "When Qingyi deals <ct color=#2EB6FF>Electric DMG</ct> with a skill, she accumulates <ct color=#FFFFFF>Flash Connect Voltage</ct>. When <ct color=#FFFFFF>Flash Connect Voltage</ct> reaches 75%, she will enter the <ct color=#FFFFFF>Flash Connect</ct> state. When using her <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, Qingyi will consume all <ct color=#FFFFFF>Flash Connect Voltage</ct> and exit the <ct color=#FFFFFF>Flash Connect</ct> state. For every 1% of <ct color=#FFFFFF>Flash Connect Voltage</ct> consumed over 75%, her Damage and Daze inflicted by this skill will be increased by 1%/0.5%. <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct> itself does not accumulate <ct color=#FFFFFF>Flash Connect Voltage</ct>.",
+      "params": []
+    },
+    "BasicAttackEnchantedMoonlitBlossoms": {
+      "name": "Basic Attack: Enchanted Moonlit Blossoms",
+      "desc": {
+        "0": "During the <ct color=#FFFFFF>Flash Connect</ct> state, hold <IconNormal /> to activate:",
+        "1": "Launch five consecutive forward rush attacks, then execute a Finishing Move that inflicts massive <ct color=#2EB6FF>Electric DMG</ct>. Release <IconNormal /> during the move to trigger the Finishing Move early.",
+        "2": "Activate the Finishing Move just before the character is attacked to trigger <ct color=#FFFFFF>Perfect Dodge</ct>.",
+        "3": "Anti-Interrupt level is increased and DMG received is reduced by 40% during the rush attack. Qingyi is invulnerable during the Finishing Move."
+      },
+      "params": [
+        "Rush Attack ",
+        "Finishing Move "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeSwanSong": {
+      "name": "Dodge: Swan Song",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackBreach": {
+      "name": "Dash Attack: Breach",
+      "desc": {
+        "0": "Press <IconNormal /> during a Dodge to activate:",
+        "1": "Rush forward and then launch an upward attack, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterLingeringSentiments": {
+      "name": "Dodge Counter: Lingering Sentiments",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Leap into the air and then perform a downward attack, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSunlitGlory": {
+      "name": "Special Attack: Sunlit Glory",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Quickly swings upward, followed by a downward smash, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackMoonlitBegonia": {
+      "name": "EX Special Attack: Moonlit Begonia",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Quickly swings upward and leaps into the air, turning around to launch a series of attacks, then follows up with a powerful downward smash, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Hold <IconSpecialReady /> to consume additional energy to increase the number of hits of the series of attacks.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "After executing the move, you can immediately follow up with the 3rd hit of a <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        "",
+        "Energy Cost",
+        "Additional Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackTranquilSerenade": {
+      "name": "Chain Attack: Tranquil Serenade",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Launch a series of powerful strikes over a large area in front, dealing massive <ct color=#2EB6FF>Electric DMG</ct>",
+        "2": "When this attack hits an enemy, the skill's DMG increases by 3% for every stack of <ct color=#FFFFFF>Subjugation</ct> in <ct color=#FFFFFF>Core Passive: Eternal Seasons</ct> the target has.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateEightSoundsOfGanzhou": {
+      "name": "Ultimate: Eight Sounds of Ganzhou",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Launch a series of powerful strikes over a large area in front, followed by a Finishing Move, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistWindThroughThePines": {
+      "name": "Quick Assist: Wind Through the Pines",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Leap into the air and perform a downward attack, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistGracefulEmbellishment": {
+      "name": "Defensive Assist: Graceful Embellishment",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpSongOfTheClearRiver": {
+      "name": "Assist Follow-Up: Song of the Clear River",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Rush forward with an attack and inject electrical energy into the ground, then pull back to trigger an explosion, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Eternal Seasons",
+    "desc": [
+      "When Qingyi lands a Finishing Move on an enemy with her <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, it applies 5 stacks of <ct color=#FFFFFF>Subjugation</ct> to the enemy, stacking up to 20 times. Each stack of <ct color=#FFFFFF>Subjugation</ct> increases the target's Stun DMG Multiplier by <ct color=#2BAD00>2</ct>%. For each rush attack performed during <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, the Finishing Move will apply 1 extra stack of <ct color=#FFFFFF>Subjugation</ct>. If <ct color=#FFFFFF>Perfect Dodge</ct> is triggered when using the Finishing Move, it directly applies {CAL:5+5,1,2} stacks of <ct color=#FFFFFF>Subjugation</ct>. When applying Subjugation to normal and elite enemies, the target receives double the stacks. When the target recovers from being Stunned, the corresponding stacks of <ct color=#FFFFFF>Subjugation</ct> are reset.",
+      "When Qingyi lands a Finishing Move on an enemy with her <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, it applies 5 stacks of <ct color=#FFFFFF>Subjugation</ct> to the enemy, stacking up to 20 times. Each stack of <ct color=#FFFFFF>Subjugation</ct> increases the target's Stun DMG Multiplier by <ct color=#2BAD00>2.4</ct>%. For each rush attack performed during <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, the Finishing Move will apply an extra stack of <ct color=#FFFFFF>Subjugation</ct>. If <ct color=#FFFFFF>Perfect Dodge</ct> is triggered when using the Finishing Move, it directly applies {CAL:5+5,1,2} stacks of <ct color=#FFFFFF>Subjugation</ct>. When applying Subjugation to normal and elite enemies, the target receives double the stacks. When the target recovers from being Stunned, the corresponding stacks of <ct color=#FFFFFF>Subjugation</ct> are reset.",
+      "When Qingyi lands a Finishing Move on an enemy with her <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, it applies 5 stacks of <ct color=#FFFFFF>Subjugation</ct> to the enemy, stacking up to 20 times. Each stack of <ct color=#FFFFFF>Subjugation</ct> increases the target's Stun DMG Multiplier by <ct color=#2BAD00>2.7</ct>%. For each rush attack performed during <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, the Finishing Move will apply an extra stack of <ct color=#FFFFFF>Subjugation</ct>. If <ct color=#FFFFFF>Perfect Dodge</ct> is triggered when using the Finishing Move, it directly applies {CAL:5+5,1,2} stacks of <ct color=#FFFFFF>Subjugation</ct>. When applying Subjugation to normal and elite enemies, the target receives double the stacks. When the target recovers from being Stunned, the corresponding stacks of <ct color=#FFFFFF>Subjugation</ct> are reset.",
+      "When Qingyi lands a Finishing Move on an enemy with her <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, it applies 5 stacks of <ct color=#FFFFFF>Subjugation</ct> to the enemy, stacking up to 20 times. Each stack of <ct color=#FFFFFF>Subjugation</ct> increases the target's Stun DMG Multiplier by <ct color=#2BAD00>3</ct>%. For each rush attack performed during <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, the Finishing Move will apply an extra stack of <ct color=#FFFFFF>Subjugation</ct>. If <ct color=#FFFFFF>Perfect Dodge</ct> is triggered when using the Finishing Move, it directly applies {CAL:5+5,1,2} stacks of <ct color=#FFFFFF>Subjugation</ct>. When applying Subjugation to normal and elite enemies, the target receives double the stacks. When the target recovers from being Stunned, the corresponding stacks of <ct color=#FFFFFF>Subjugation</ct> are reset.",
+      "When Qingyi lands a Finishing Move on an enemy with her <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, it applies 5 stacks of <ct color=#FFFFFF>Subjugation</ct> to the enemy, stacking up to 20 times. Each stack of <ct color=#FFFFFF>Subjugation</ct> increases the target's Stun DMG Multiplier by <ct color=#2BAD00>3.4</ct>%. For each rush attack performed during <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, the Finishing Move will apply an extra stack of <ct color=#FFFFFF>Subjugation</ct>. If <ct color=#FFFFFF>Perfect Dodge</ct> is triggered when using the Finishing Move, it directly applies {CAL:5+5,1,2} stacks of <ct color=#FFFFFF>Subjugation</ct>. When applying Subjugation to normal and elite enemies, the target receives double the stacks. When the target recovers from being Stunned, the corresponding stacks of <ct color=#FFFFFF>Subjugation</ct> are reset.",
+      "When Qingyi lands a Finishing Move on an enemy with her <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, it applies 5 stacks of <ct color=#FFFFFF>Subjugation</ct> to the enemy, stacking up to 20 times. Each stack of <ct color=#FFFFFF>Subjugation</ct> increases the target's Stun DMG Multiplier by <ct color=#2BAD00>3.7</ct>%. For each rush attack performed during <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, the Finishing Move will apply an extra stack of <ct color=#FFFFFF>Subjugation</ct>. If <ct color=#FFFFFF>Perfect Dodge</ct> is triggered when using the Finishing Move, it directly applies {CAL:5+5,1,2} stacks of <ct color=#FFFFFF>Subjugation</ct>. When applying Subjugation to normal and elite enemies, the target receives double the stacks. When the target recovers from being Stunned, the corresponding stacks of <ct color=#FFFFFF>Subjugation</ct> are reset.",
+      "When Qingyi lands a Finishing Move on an enemy with her <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, it applies 5 stacks of <ct color=#FFFFFF>Subjugation</ct> to the enemy, stacking up to 20 times. Each stack of <ct color=#FFFFFF>Subjugation</ct> increases the target's Stun DMG Multiplier by <ct color=#2BAD00>4</ct>%. For each rush attack performed during <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, the Finishing Move will apply an extra stack of <ct color=#FFFFFF>Subjugation</ct>. If <ct color=#FFFFFF>Perfect Dodge</ct> is triggered when using the Finishing Move, it directly applies {CAL:5+5,1,2} stacks of <ct color=#FFFFFF>Subjugation</ct>. When applying Subjugation to normal and elite enemies, the target receives double the stacks. When the target recovers from being Stunned, the corresponding stacks of <ct color=#FFFFFF>Subjugation</ct> are reset."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Three Verses of Farewell at Yang Pass",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct> character or shares the same Faction:",
+      "1": "<ct color=#FFFFFF>Basic Attacks</ct> deal 20% increased Daze. If Qingyi's Impact is greater than 120, each point over increases her ATK by 6, up to a maximum of 600."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Insulation Breakdown",
+      "desc": "When Qingyi enters combat, <ct color=#FFFFFF>Flash Connect Voltage</ct> is instantly restored to its maximum, and the accumulation rate is increased by 30%. When using her <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, if <ct color=#FFFFFF>Flash Connect Voltage</ct> is at its maximum, the attack will reduce the DEF of the enemy it hits by 15%, and Qingyi's CRIT Rate against that enemy will increase by 20% for 15s.",
+      "flavor": {
+        "0": "\"While there will be no threat to your life, we kindly request you do not resist arrest...\"",
+        "1": "The direction and intensity of the current have been precisely calculated to ensure that every suspect receives a safe electric shock experience."
+      }
+    },
+    "2": {
+      "name": "Minimal Effort, Maximum Impact",
+      "desc": "The Stun DMG Multiplier increase provided by each stack of <ct color=#FFFFFF>Subjugation</ct> in <ct color=#FFFFFF>Core Passive: Eternal Seasons</ct> increases to 135% of its original value. When Qingyi's attack hits an enemy and the stacks of <ct color=#FFFFFF>Subjugation</ct> she applies reaches its maximum stacks, her Daze dealt to the target increases by 15%.",
+      "flavor": {
+        "0": "An ancient combat technique mentioned in old civillization texts. It seems to have started as a martial arts technique, rather than a staff technique.",
+        "1": "\"Don't be so constrained, the arm itself can be used like a three-section staff, mhm.\""
+      }
+    },
+    "3": {
+      "name": "Drink Hot Water",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Young people should be mindful their health, and drinking more hot water is a good start.\"",
+        "1": "Qingyi always appears comforted when she drinks from her flask. But be careful if she offers you a drink—",
+        "2": "\"Even 100-degree Celsius boiling water doesn't faze her...\" One Public Security Officer who encountered this left such a note."
+      }
+    },
+    "4": {
+      "name": "Stable Arc Barrier",
+      "desc": "Upon entering or exiting <ct color=#FFFFFF>Flash Connect</ct> state, gain a shield equal to 10% of Qingyi's Max HP. If a previous shield is still active when the shield effect refreshes, Qingyi generates 5 Energy. This Energy Generation effect can be triggered once every 10s.",
+      "flavor": {
+        "0": "By reverse-engineering Automatons from the old civilization, the White Star Institute developed the Arc Barrier, a technology that combines defense, attack, and electrical energy conversion.",
+        "1": "\"As the saying goes: Water can float a boat or sink it. Physics has a saying: Electric current flows like water. Therefore: Electric current can be used both offensively and defensively. It's a fantastic combination.\""
+      }
+    },
+    "5": {
+      "name": "Youthful Spirit",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Great, young people should be courageous and try new things. Keep it up!\"",
+        "1": "It sometimes feels like Qingyi's encouragement is lazy and teasing, but if you really get into trouble, just rely on her.",
+        "2": "After all, she's been around for centuries and can handle anything."
+      }
+    },
+    "6": {
+      "name": "Eight Meridians",
+      "desc": "The Interrupt Level of <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct> is greatly increased, and the CRIT DMG is increased by an additional 100%. When Qingyi hits an enemy with her <ct color=#FFFFFF>Basic Attack: Enchanted Moonlit Blossoms</ct>, the target's Attribute DMG RES is reduced by 20% for 15s.",
+      "flavor": {
+        "0": "A theory about the human circulatory system documented in ancient texts from the old civilization. It's said those who fully master this theory can instantly disable an opponent in a fight.",
+        "1": "\"How about trying the pressure points that cause itching next time? Who should be the guinea pig? Manager? Or Zhu Yuan?\""
+      }
+    }
+  }
 }

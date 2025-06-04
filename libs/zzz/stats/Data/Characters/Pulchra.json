@@ -222,6 +222,28 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackSwiftStrike": [], "BasicAttackLeapingStrike": [] },
+    "dodge": {
+      "DodgeReversalShot": [],
+      "DashAttackFirstStrikeAdvantage": [],
+      "DodgeCounterRelentlessRetribution": []
+    },
+    "special": {
+      "SpecialAttackRendingClaw": [],
+      "SpecialAttackRendingClawNightmareShadow": [],
+      "EXSpecialAttackRendingClawFlashstep": []
+    },
+    "chain": {
+      "ChainAttackHeyDidntExpectThatRight": [],
+      "UltimateOhTimeToPlay": []
+    },
+    "assist": {
+      "QuickAssistContractBodyguard": [],
+      "EvasiveAssistContractOutsourcedCombat": [],
+      "AssistFollowUpIndependentPricing": []
+    }
+  },
   "coreParams": [
     [0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3],
     [6, 6, 6, 6, 6, 6, 6]

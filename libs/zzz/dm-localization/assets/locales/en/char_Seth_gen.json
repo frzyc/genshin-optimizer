@@ -1,3 +1,235 @@
 {
-  "name": "Seth"
+  "name": "Seth",
+  "fullName": "Seth Lowell",
+  "basic": {
+    "BasicAttackLightningStrike": {
+      "name": "Basic Attack: Lightning Strike",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 4 attacks in front, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#2EB6FF>Electric DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackLightningStrikeElectrified": {
+      "name": "Basic Attack: Lightning Strike - Electrified",
+      "desc": {
+        "0": "When <ct color=#FFFFFF>Resolve</ct> is above or equal to 75%, hold <IconNormal /> to activate.",
+        "1": "Consume 75% <ct color=#FFFFFF>Resolve</ct> to launch consecutive attacks in front, followed by a Finishing Move, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "When the Finishing Move hits an enemy, it triggers the <ct color=#FFFFFF>Quick Assist</ct> of the squad member positioned before Seth.",
+        "3": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        "Consecutive Attack ",
+        "Finishing Move "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeEvasionManeuver": {
+      "name": "Dodge: Evasion Maneuver",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackThunderAssault": {
+      "name": "Dash Attack: Thunder Assault",
+      "desc": {
+        "0": "Press <IconNormal /> during a Dodge to activate:",
+        "1": "Charge forward with a shield attack, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Damage received during the move is decreased by 40%."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterRetreatToAdvance": {
+      "name": "Dodge Counter: Retreat to Advance",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Unleash a quick downward slash on enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "After the move, hold <IconSpecialReady /> to chain into <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct>, enabling faster charging.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackThunderShieldRush": {
+      "name": "Special Attack: Thunder Shield Rush",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Launch two shield attacks forward, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackThunderShieldRushHighVoltage": {
+      "name": "EX Special Attack: Thunder Shield Rush - High Voltage",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Unleash a series of slashes in front, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Hold <IconSpecialReady />to charge the move, and Seth will dash forward, unleashing a series of powerful slashes, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "3": "Activating the move accumulates 75% <ct color=#FFFFFF>Resolve</ct>.",
+        "4": "Anti-Interrupt level is increased while charging this skill, and damage taken is reduced by 40%.",
+        "5": "Seth is invulnerable during the consecutive slashes."
+      },
+      "params": [
+        "",
+        " (Charged)",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackFinalJudgment": {
+      "name": "Chain Attack: Final Judgment",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Launch a series of slashes in front, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Activating the move accumulates 75% <ct color=#FFFFFF>Resolve</ct>.",
+        "3": "After the move, hold <IconSpecialReady /> to chain into <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct>, enabling faster charging.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateJusticePrevails": {
+      "name": "Ultimate: Justice Prevails",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Launch a series of upward attacks in front, followed by a Finishing Move, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Activating the move accumulates 75% <ct color=#FFFFFF>Resolve</ct>, and grants 3 additional Assist Points.",
+        "3": "After the move, hold <IconSpecialReady /> to chain into <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct>, enabling faster charging.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistArmedSupport": {
+      "name": "Quick Assist: Armed Support",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Unleash a quick downward slash on enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "After the move, hold <IconSpecialReady /> to chain into <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct>, enabling faster charging.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistThundershield": {
+      "name": "Defensive Assist: Thundershield",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Upon activation, gain 25% <ct color=#FFFFFF>Resolve</ct>.",
+        "3": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpPublicSecurityRuling": {
+      "name": "Assist Follow-Up: Public Security Ruling",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Launch a forward thrust attack, followed by two horizontal slashes, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "When the skill hits an enemy, it triggers the <ct color=#FFFFFF>Quick Assist</ct> of the squad member positioned before Seth.",
+        "3": "After activating the move, hold <IconSpecialReady /> to transition to <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct> and charge faster.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Protector",
+    "desc": [
+      "When Seth uses <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct>, he gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>40%</ct> of his initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. When <ct color=#FFFFFF>Basic Attack: Lightning Strike - Electrified</ct> or <ct color=#FFFFFF>Assist Follow-Up: Public Security Ruling</ct> triggers a <ct color=#FFFFFF>Quick Assist</ct> or <ct color=#FFFFFF>Chain Attack</ct>, causing another squad member to enter the field, that squad member gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>40</ct>% of Seth's initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. Having a <ct color=#FFFFFF>Shield of Firm Resolve</ct> increases Anomaly Proficiency by <ct color=#2BAD00>50</ct>.",
+      "When Seth uses <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct>, he gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>50%</ct> of his initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. When <ct color=#FFFFFF>Basic Attack: Lightning Strike - Electrified</ct> or <ct color=#FFFFFF>Assist Follow-Up: Public Security Ruling</ct> triggers a <ct color=#FFFFFF>Quick Assist</ct> or <ct color=#FFFFFF>Chain Attack</ct>, causing another squad member to enter the field, that squad member gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>50</ct>% of Seth's initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. Having a <ct color=#FFFFFF>Shield of Firm Resolve</ct> increases Anomaly Proficiency by <ct color=#2BAD00>62</ct>.",
+      "When Seth uses <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct>, he gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>60%</ct> of his initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. When <ct color=#FFFFFF>Basic Attack: Lightning Strike - Electrified</ct> or <ct color=#FFFFFF>Assist Follow-Up: Public Security Ruling</ct> triggers a <ct color=#FFFFFF>Quick Assist</ct> or <ct color=#FFFFFF>Chain Attack</ct>, causing another squad member to enter the field, that squad member gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>60</ct>% of Seth's initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. Having a <ct color=#FFFFFF>Shield of Firm Resolve</ct> increases Anomaly Proficiency by <ct color=#2BAD00>75</ct>.",
+      "When Seth uses <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct>, he gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>68%</ct> of his initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. When <ct color=#FFFFFF>Basic Attack: Lightning Strike - Electrified</ct> or <ct color=#FFFFFF>Assist Follow-Up: Public Security Ruling</ct> triggers a <ct color=#FFFFFF>Quick Assist</ct> or <ct color=#FFFFFF>Chain Attack</ct>, causing another squad member to enter the field, that squad member gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>68</ct>% of Seth's initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. Having a <ct color=#FFFFFF>Shield of Firm Resolve</ct> increases Anomaly Proficiency by <ct color=#2BAD00>85</ct>.",
+      "When Seth uses <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct>, he gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>72%</ct> of his initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. When <ct color=#FFFFFF>Basic Attack: Lightning Strike - Electrified</ct> or <ct color=#FFFFFF>Assist Follow-Up: Public Security Ruling</ct> triggers a <ct color=#FFFFFF>Quick Assist</ct> or <ct color=#FFFFFF>Chain Attack</ct>, causing another squad member to enter the field, that squad member gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>72</ct>% of Seth's initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. Having a <ct color=#FFFFFF>Shield of Firm Resolve</ct> increases Anomaly Proficiency by <ct color=#2BAD00>90</ct>.",
+      "When Seth uses <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct>, he gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>76%</ct> of his initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. When <ct color=#FFFFFF>Basic Attack: Lightning Strike - Electrified</ct> or <ct color=#FFFFFF>Assist Follow-Up: Public Security Ruling</ct> triggers a <ct color=#FFFFFF>Quick Assist</ct> or <ct color=#FFFFFF>Chain Attack</ct>, causing another squad member to enter the field, that squad member gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>76</ct>% of Seth's initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. Having a <ct color=#FFFFFF>Shield of Firm Resolve</ct> increases Anomaly Proficiency by <ct color=#2BAD00>95</ct>.",
+      "When Seth uses <ct color=#FFFFFF>EX Special Attack: Thunder Shield Rush - High Voltage</ct>, he gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>80%</ct> of his initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. When <ct color=#FFFFFF>Basic Attack: Lightning Strike - Electrified</ct> or <ct color=#FFFFFF>Assist Follow-Up: Public Security Ruling</ct> triggers a <ct color=#FFFFFF>Quick Assist</ct> or <ct color=#FFFFFF>Chain Attack</ct>, causing another squad member to enter the field, that squad member gains a <ct color=#FFFFFF>Shield of Firm Resolve</ct> equal to <ct color=#2BAD00>80</ct>% of Seth's initial ATK, up to a max of 3,000 points, and lasting 25s. This effect can trigger once every 10s. Having a <ct color=#FFFFFF>Shield of Firm Resolve</ct> increases Anomaly Proficiency by <ct color=#2BAD00>100</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: High Spirit",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "When Seth's <ct color=#FFFFFF>Chain Attack: Final Judgment</ct> or Finishing Move during <ct color=#FFFFFF>Basic Attack: Lightning Strike - Electrified</ct> hits an enemy, the target's Anomaly Buildup RES to all Attributes is reduced by 20%, lasting 20s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Heroism",
+      "desc": "The shield value provided by <ct color=#FFFFFF>Shield of Firm Resolve</ct> and its maximum limit is increased by 30%. When <ct color=#FFFFFF>Shield of Firm Resolve</ct> ends, the Anomaly Proficiency increase provided by <ct color=#FFFFFF>Core Passive: Protector</ct> lasts an additional 10s.",
+      "flavor": {
+        "0": "When it comes to team missions, Seth is always leading the charge.",
+        "1": "\"Let me handle the arrests! I scored a 99 in close-quarters arrests, and the only point deducted was because I accidentally sprained the instructor's wrist.\""
+      }
+    },
+    "2": {
+      "name": "Recklessness of Youth",
+      "desc": "Upon entering battle, Seth immediately gains 75% <ct color=#FFFFFF>Resolve</ct>. Hitting an enemy with <ct color=#FFFFFF>Basic Attack: Lightning Strike - Electrified</ct> increases the move's accumulated <ct color=#2EB6FF>Electric Anomaly Buildup</ct> by 35%.",
+      "flavor": {
+        "0": "Many criminals make the mistake of underestimating Seth.",
+        "1": "It might be his pure, clear eyes or those innocent-looking furry ears and tail. Whatever the reason, everyone who underestimates him eventually pays the price."
+      }
+    },
+    "3": {
+      "name": "Slow Reflexes",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"A skilled officer like you must handle everything on your own, right? No help from others, surely?\"",
+        "1": "Even after hearing this, Seth remained composed and didn't say a word.",
+        "2": "It wasn't until midnight that he suddenly woke up: \"Could that guy's comment earlier... have been a dig at me?\""
+      }
+    },
+    "4": {
+      "name": "Core Aspiration",
+      "desc": "The Daze caused by <ct color=#FFFFFF>Defensive Assist: Thundershield</ct> is increased by 25%.",
+      "flavor": {
+        "0": "\"Put aside your foolish notions of good and evil. You can't protect everyone. Sometimes, you have to make a choice.\"",
+        "1": "\"This is my choice, and it's the core responsibility of an officer — you're the one who has changed, Brother.\""
+      }
+    },
+    "5": {
+      "name": "Distant Admiration",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Seth used to deeply admire and respect his older brother. But as you know, \"admiration\" is the furthest thing from \"understanding.\"",
+        "1": "\"Someday, I'll become the finest officer... and make him eat his words!\""
+      }
+    },
+    "6": {
+      "name": "Idealist",
+      "desc": "When Seth lands a Finishing Move on an enemy with <ct color=#FFFFFF>Basic Attack: Lightning Strike - Electrified</ct>, it deals additional damage equal to 500% of his ATK. The attack is guaranteed to trigger a critical hit, and CRIT DMG is increased by 60%.",
+      "flavor": {
+        "0": "To a young person, everything is clear-cut, with a stark contrast between black and white, right and wrong.",
+        "1": "There will always be someone who tries to tell him that the world is a murky gray. But is a world where everything is clear-cut and distinct really not worth striving for?"
+      }
+    }
+  }
 }

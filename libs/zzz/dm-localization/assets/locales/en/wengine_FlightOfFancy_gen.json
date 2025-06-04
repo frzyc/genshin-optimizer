@@ -1,6 +1,10 @@
 {
   "name": "Flight of Fancy",
-  "desc": "Birds in flight, stars in the sky, blossoms, parasols, and swirling skirts — unspoken feelings, yet emotions laid bare. Only when the moon begins to sigh does the flower bud dare to bloom, releasing a joyous bird. It weaves through the stars, gathering glimmers of starlight, and before dawn breaks, it lands beneath your eaves... shaking off a night full of whispered love.\n\n<ct color=#959595>\"Lord Phaethon needs only Vivian. Lord Phaethon loves only Vivian. Lord Phaethon sees only Vivian... Chant that to it for 178 days, and you can give it to Lord Phaethon.\" — Vivian, fortune telling and voodoo are not scientific and offer no real value. Do not attempt them lightly</ct>",
+  "desc": {
+    "0": "Birds in flight, stars in the sky, blossoms, parasols, and swirling skirts — unspoken feelings, yet emotions laid bare. Only when the moon begins to sigh does the flower bud dare to bloom, releasing a joyous bird. It weaves through the stars, gathering glimmers of starlight, and before dawn breaks, it lands beneath your eaves... shaking off a night full of whispered love.",
+    "1": "",
+    "2": "<ct color=#959595>\"Lord Phaethon needs only Vivian. Lord Phaethon loves only Vivian. Lord Phaethon sees only Vivian... Chant that to it for 178 days, and you can give it to Lord Phaethon.\" — Vivian, fortune telling and voodoo are not scientific and offer no real value. Do not attempt them lightly</ct>"
+  },
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
   "desc3": "A bird landed on the windowsill, scattering starlight from its tail feathers.",
   "phase": "Silver Spiked Feathers",

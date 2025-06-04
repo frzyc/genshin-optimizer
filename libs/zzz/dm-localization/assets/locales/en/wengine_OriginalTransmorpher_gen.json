@@ -1,6 +1,9 @@
 {
   "name": "Original Transmorpher",
-  "desc": "A dream W-Engine adored by Starlight Knights fans. Its copyright owner claims that counterfeit transformers can transform you into a bad guy NPC. Watch out for a flying kick that'll scare the bejesus out of the bad guys — that's the power of genuine copyrighted merch!\n\"Starlight Knights, transform— Transform! Transform! Why can't I transform? Unless... the stars haven't chosen me?!\" — from an unboxing vlog recorded by an anonymous member of the Cunning Hares.",
+  "desc": {
+    "0": "A dream W-Engine adored by Starlight Knights fans. Its copyright owner claims that counterfeit transformers can transform you into a bad guy NPC. Watch out for a flying kick that'll scare the bejesus out of the bad guys — that's the power of genuine copyrighted merch!",
+    "1": "\"Starlight Knights, transform— Transform! Transform! Why can't I transform? Unless... the stars haven't chosen me?!\" — from an unboxing vlog recorded by an anonymous member of the Cunning Hares."
+  },
   "desc2": "Equip to increase Defense Agents' combat capabilities",
   "desc3": "An epic W-Engine favored by Starlight Knight fans. Its high popularity and scarcity marketing strategy have caused an influx of knock-offs.",
   "phase": "Starlight Knight Flying Kick",

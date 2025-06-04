@@ -318,6 +318,24 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackSmashNBash": [] },
+    "dodge": {
+      "DodgeWaitNSee": [],
+      "DashAttackTremble": [],
+      "DodgeCounterDontLookDownOnMe": []
+    },
+    "special": {
+      "SpecialAttackHammerTime": [],
+      "EXSpecialAttackBoilingFurnace": []
+    },
+    "chain": { "ChainAttackNaturalDisaster": [], "UltimateHammerquake": [] },
+    "assist": {
+      "QuickAssistComingThru": [],
+      "DefensiveAssistProtectiveHammer": [],
+      "AssistFollowUpHammerBell": []
+    }
+  },
   "coreParams": [[0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6]],
   "abilityParams": [0.35, 2],
   "mindscapeParams": [[0.15], [60, 45], [2], [2, 0.18], [2], [3.6]]

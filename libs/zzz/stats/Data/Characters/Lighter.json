@@ -373,6 +373,27 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackLFormThunderingFist": [] },
+    "dodge": {
+      "DodgeShadowedSlide": [],
+      "DashAttackChargingSlam": [],
+      "DodgeCounterBlazingFlash": []
+    },
+    "special": {
+      "SpecialAttackVFormSunriseUppercut": [],
+      "EXSpecialAttackVFormSunriseUppercutFullDistance": []
+    },
+    "chain": {
+      "ChainAttackVFormScorchingSun": [],
+      "UltimateWFormCrownedInferno": []
+    },
+    "assist": {
+      "QuickAssistBlazingFlashGuard": [],
+      "DefensiveAssistSwiftBreak": [],
+      "AssistFollowUpChargingSlamStab": []
+    }
+  },
   "coreParams": [
     [2.9, 2.9, 2.9, 2.9, 2.9, 2.9, 2.9],
     [0.26, 0.26, 0.26, 0.26, 0.26, 0.26, 0.26],

@@ -1,3 +1,259 @@
 {
-  "name": "Miyabi"
+  "name": "Miyabi",
+  "fullName": "Hoshimi Miyabi",
+  "basic": {
+    "BasicAttackKazahana": {
+      "name": "Basic Attack: Kazahana",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to five slashes ahead, the first two deal <ct color=#F0D12B>Physical DMG</ct>, and the last three deal <ct color=#98EFF0>Frost DMG</ct>.",
+        "2": "Block enemy attacks during the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackShimotsuki": {
+      "name": "Basic Attack: Shimotsuki",
+      "desc": {
+        "0": "With at least 2 points of <ct color=#FFFFFF>Fallen Frost</ct>, hold <IconNormal /> to activate:",
+        "1": "Hoshimi Miyabi sheaths her blade, enters <ct color=#FFFFFF>Shimotsuki Stance</ct> and starts to charge up. Every level of charge will consume 2 points of <ct color=#FFFFFF>Fallen Frost</ct>, up to a maximum of three levels of charge.",
+        "2": "When releasing <IconNormal />, or when <ct color=#FFFFFF>Fallen Frost</ct> is completely depleted, Hoshimi Miyabi will draw her blade and unleash a powerful slash ahead based on the current charge level, dealing massive <ct color=#98EFF0>Frost DMG</ct>. She then exits <ct color=#FFFFFF>Shimotsuki Stance</ct>.",
+        "3": "Character is invulnerable during <ct color=#FFFFFF>Shimotsuki Stance</ct>.",
+        "4": "Hoshimi Miyabi can have up to 6 points of <ct color=#FFFFFF>Fallen Frost</ct>. Upon entering the battlefield, Hoshimi Miyabi immediately obtains 3 points of <ct color=#FFFFFF>Fallen Frost</ct>."
+      },
+      "params": [
+        "Charge Level One Slash ",
+        "Charge Level Two Slash ",
+        "Charge Level Three Slash "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeMizutori": {
+      "name": "Dodge: Mizutori",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "While dodging, repeatedly press or hold <IconEvade /> to activate:",
+        "4": "A dash dodge that covers a lot of ground.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackFuyubachi": {
+      "name": "Dash Attack: Fuyubachi",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterKanSuzume": {
+      "name": "Dodge Counter: Kan Suzume",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#98EFF0>Frost DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackMiyuki": {
+      "name": "Special Attack: Miyuki",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Quickly draws her blade and slashes ahead, dealing <ct color=#98EFF0>Frost DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackHisetsu": {
+      "name": "EX Special Attack: Hisetsu",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Rush forward, unleashing powerful slashes against enemies along the way, dealing massive <ct color=#98EFF0>Frost DMG</ct>.",
+        "2": "Upon activating this skill, gain 2 points of <ct color=#FFFFFF>Fallen Frost</ct>.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "After using this skill, with enough Energy, press <IconSpecialReady /> again to activate:",
+        "5": "Consume extra Energy and unleash a powerful follow-up attack against enemies in front, dealing massive <ct color=#98EFF0>Frost DMG</ct>.",
+        "6": "Upon activating this skill, gain 2 points of <ct color=#FFFFFF>Fallen Frost</ct>.",
+        "7": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Slash ",
+        "Follow-Up ",
+        "Slash Energy Cost",
+        "Follow-Up Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackSpringsCall": {
+      "name": "Chain Attack: Spring's Call",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful slash at enemies in front in a large area, dealing massive <ct color=#98EFF0>Frost DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateLingeringSnow": {
+      "name": "Ultimate: Lingering Snow",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes powerful slashes at enemies ahead in a large area then pauses, before unleashing a Finishing Move, dealing massive <ct color=#98EFF0>Frost DMG</ct>.",
+        "2": "Upon activating this skill, gain 3 points of <ct color=#FFFFFF>Fallen Frost</ct> and increase <ct color=#98EFF0>Ice DMG</ct> by 30% for 12s.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistDancingPetals": {
+      "name": "Quick Assist: Dancing Petals",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#98EFF0>Frost DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistDriftingPetals": {
+      "name": "Defensive Assist: Drifting Petals",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpFallingPetals": {
+      "name": "Assist Follow-Up: Falling Petals",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Charges and slashes enemies in front, dealing <ct color=#98EFF0>Frost DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Searing Cold",
+    "desc": [
+      {
+        "0": "When Hoshimi Miyabi deals <ct color=#98EFF0>Frost DMG</ct>, she applies <ct color=#FFFFFF>Icefire</ct> to the target, lasting 30s. When accumulating <ct color=#98EFF0>Frost Anomaly Buildup</ct> against targets with <ct color=#FFFFFF>Icefire</ct>, increases <ct color=#98EFF0>Frost Anomaly Buildup Rate</ct> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <ct color=#98EFF0>Frost Anomaly Buildup</ct>, it has its own independent Attribute Anomaly Buildup gauge and triggers <ct color=#98EFF0>Freeze</ct>, <ct color=#98EFF0>Shatter</ct>, and <ct color=#98EFF0>Frostbite</ct> that can react with other Attribute Anomalies, including <ct color=#98EFF0>Ice Attribute Anomaly</ct>, to trigger <ct color=#FFFFFF>Disorder</ct>.",
+        "1": "When Hoshimi Miyabi applies <ct color=#98EFF0>Frostbite</ct> to enemies with <ct color=#FFFFFF>Icefire</ct>, it will consume the <ct color=#FFFFFF>Icefire</ct> to trigger <ct color=#FFFFFF>Frostburn - Break</ct>, dealing <ct color=#98EFF0>Frost DMG</ct> equal to <ct color=#2BAD00>750%</ct> of Hoshimi Miyabi's ATK and causing the target to enter the <ct color=#FFFFFF>Frostburn</ct> state. All squad members accumulate <ct color=#2BAD00>14%</ct> more Anomaly Buildup against enemies under the <ct color=#FFFFFF>Frostburn</ct> state, but Hoshimi Miyabi cannot reapply <ct color=#FFFFFF>Icefire</ct> to these enemies. The <ct color=#FFFFFF>Frostburn</ct> state ends when <ct color=#98EFF0>Frostbite</ct> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <ct color=#98EFF0>Frostbite</ct> and remove <ct color=#FFFFFF>Frostburn</ct>.",
+        "2": "Upon triggering <ct color=#FFFFFF>Frostburn - Break</ct>, Hoshimi Miyabi obtains 1 point of <ct color=#FFFFFF>Fallen Frost</ct>. This effect can trigger once every 10s."
+      },
+      {
+        "0": "When Hoshimi Miyabi deals <ct color=#98EFF0>Frost DMG</ct>, she applies <ct color=#FFFFFF>Icefire</ct> to the target, lasting 30s. When accumulating <ct color=#98EFF0>Frost Anomaly Buildup</ct> against targets with <ct color=#FFFFFF>Icefire</ct>, increases <ct color=#98EFF0>Frost Anomaly Buildup Rate</ct> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <ct color=#98EFF0>Frost Anomaly Buildup</ct>, it has its own independent Attribute Anomaly Buildup gauge and triggers <ct color=#98EFF0>Freeze</ct>, <ct color=#98EFF0>Shatter</ct>, and <ct color=#98EFF0>Frostbite</ct> that can react with other Attribute Anomalies, including <ct color=#98EFF0>Ice Attribute Anomaly</ct>, to trigger <ct color=#FFFFFF>Disorder</ct>.",
+        "1": "When Hoshimi Miyabi applies <ct color=#98EFF0>Frostbite</ct> to enemies with <ct color=#FFFFFF>Icefire</ct>, it will consume the <ct color=#FFFFFF>Icefire</ct> to trigger <ct color=#FFFFFF>Frostburn - Break</ct>, dealing <ct color=#98EFF0>Frost DMG</ct> equal to <ct color=#2BAD00>875%</ct> of Hoshimi Miyabi's ATK and causing the target to enter the <ct color=#FFFFFF>Frostburn</ct> state. All squad members accumulate <ct color=#2BAD00>15%</ct> more Anomaly Buildup against enemies under the <ct color=#FFFFFF>Frostburn</ct> state, but Hoshimi Miyabi cannot reapply <ct color=#FFFFFF>Icefire</ct> to these enemies. The <ct color=#FFFFFF>Frostburn</ct> state ends when <ct color=#98EFF0>Frostbite</ct> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <ct color=#98EFF0>Frostbite</ct> and remove <ct color=#FFFFFF>Frostburn</ct>.",
+        "2": "Upon triggering <ct color=#FFFFFF>Frostburn - Break</ct>, Hoshimi Miyabi obtains 1 point of <ct color=#FFFFFF>Fallen Frost</ct>. This effect can trigger once every 10s."
+      },
+      {
+        "0": "When Hoshimi Miyabi deals <ct color=#98EFF0>Frost DMG</ct>, she applies <ct color=#FFFFFF>Icefire</ct> to the target, lasting 30s. When accumulating <ct color=#98EFF0>Frost Anomaly Buildup</ct> against targets with <ct color=#FFFFFF>Icefire</ct>, increases <ct color=#98EFF0>Frost Anomaly Buildup Rate</ct> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <ct color=#98EFF0>Frost Anomaly Buildup</ct>, it has its own independent Attribute Anomaly Buildup gauge and triggers <ct color=#98EFF0>Freeze</ct>, <ct color=#98EFF0>Shatter</ct>, and <ct color=#98EFF0>Frostbite</ct> that can react with other Attribute Anomalies, including <ct color=#98EFF0>Ice Attribute Anomaly</ct>, to trigger <ct color=#FFFFFF>Disorder</ct>.",
+        "1": "When Hoshimi Miyabi applies <ct color=#98EFF0>Frostbite</ct> to enemies with <ct color=#FFFFFF>Icefire</ct>, it will consume the <ct color=#FFFFFF>Icefire</ct> to trigger <ct color=#FFFFFF>Frostburn - Break</ct>, dealing <ct color=#98EFF0>Frost DMG</ct> equal to <ct color=#2BAD00>1,000%</ct> of Hoshimi Miyabi's ATK and causing the target to enter the <ct color=#FFFFFF>Frostburn</ct> state. All squad members accumulate <ct color=#2BAD00>16%</ct> more Anomaly Buildup against enemies under the <ct color=#FFFFFF>Frostburn</ct> state, but Hoshimi Miyabi cannot reapply <ct color=#FFFFFF>Icefire</ct> to these enemies. The <ct color=#FFFFFF>Frostburn</ct> state ends when <ct color=#98EFF0>Frostbite</ct> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <ct color=#98EFF0>Frostbite</ct> and remove <ct color=#FFFFFF>Frostburn</ct>.",
+        "2": "Upon triggering <ct color=#FFFFFF>Frostburn - Break</ct>, Hoshimi Miyabi obtains 1 point of <ct color=#FFFFFF>Fallen Frost</ct>. This effect can trigger once every 10s."
+      },
+      {
+        "0": "When Hoshimi Miyabi deals <ct color=#98EFF0>Frost DMG</ct>, she applies <ct color=#FFFFFF>Icefire</ct> to the target, lasting 30s. When accumulating <ct color=#98EFF0>Frost Anomaly Buildup</ct> against targets with <ct color=#FFFFFF>Icefire</ct>, increases <ct color=#98EFF0>Frost Anomaly Buildup Rate</ct> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <ct color=#98EFF0>Frost Anomaly Buildup</ct>, it has its own independent Attribute Anomaly Buildup gauge and triggers <ct color=#98EFF0>Freeze</ct>, <ct color=#98EFF0>Shatter</ct>, and <ct color=#98EFF0>Frostbite</ct> that can react with other Attribute Anomalies, including <ct color=#98EFF0>Ice Attribute Anomaly</ct>, to trigger <ct color=#FFFFFF>Disorder</ct>.",
+        "1": "When Hoshimi Miyabi applies <ct color=#98EFF0>Frostbite</ct> to enemies with <ct color=#FFFFFF>Icefire</ct>, it will consume the <ct color=#FFFFFF>Icefire</ct> to trigger <ct color=#FFFFFF>Frostburn - Break</ct>, dealing <ct color=#98EFF0>Frost DMG</ct> equal to <ct color=#2BAD00>1,125%</ct> of Hoshimi Miyabi's ATK and causing the target to enter the <ct color=#FFFFFF>Frostburn</ct> state. All squad members accumulate <ct color=#2BAD00>17%</ct> more Anomaly Buildup against enemies under the <ct color=#FFFFFF>Frostburn</ct> state, but Hoshimi Miyabi cannot reapply <ct color=#FFFFFF>Icefire</ct> to these enemies. The <ct color=#FFFFFF>Frostburn</ct> state ends when <ct color=#98EFF0>Frostbite</ct> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <ct color=#98EFF0>Frostbite</ct> and remove <ct color=#FFFFFF>Frostburn</ct>.",
+        "2": "Upon triggering <ct color=#FFFFFF>Frostburn - Break</ct>, Hoshimi Miyabi obtains 1 point of <ct color=#FFFFFF>Fallen Frost</ct>. This effect can trigger once every 10s."
+      },
+      {
+        "0": "When Hoshimi Miyabi deals <ct color=#98EFF0>Frost DMG</ct>, she applies <ct color=#FFFFFF>Icefire</ct> to the target, lasting 30s. When accumulating <ct color=#98EFF0>Frost Anomaly Buildup</ct> against targets with <ct color=#FFFFFF>Icefire</ct>, increases <ct color=#98EFF0>Frost Anomaly Buildup Rate</ct> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <ct color=#98EFF0>Frost Anomaly Buildup</ct>, it has its own independent Attribute Anomaly Buildup gauge and triggers <ct color=#98EFF0>Freeze</ct>, <ct color=#98EFF0>Shatter</ct>, and <ct color=#98EFF0>Frostbite</ct> that can react with other Attribute Anomalies, including <ct color=#98EFF0>Ice Attribute Anomaly</ct>, to trigger <ct color=#FFFFFF>Disorder</ct>.",
+        "1": "When Hoshimi Miyabi applies <ct color=#98EFF0>Frostbite</ct> to enemies with <ct color=#FFFFFF>Icefire</ct>, it will consume the <ct color=#FFFFFF>Icefire</ct> to trigger <ct color=#FFFFFF>Frostburn - Break</ct>, dealing <ct color=#98EFF0>Frost DMG</ct> equal to <ct color=#2BAD00>1,250%</ct> of Hoshimi Miyabi's ATK and causing the target to enter the <ct color=#FFFFFF>Frostburn</ct> state. All squad members accumulate <ct color=#2BAD00>18%</ct> more Anomaly Buildup against enemies under the <ct color=#FFFFFF>Frostburn</ct> state, but Hoshimi Miyabi cannot reapply <ct color=#FFFFFF>Icefire</ct> to these enemies. The <ct color=#FFFFFF>Frostburn</ct> state ends when <ct color=#98EFF0>Frostbite</ct> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <ct color=#98EFF0>Frostbite</ct> and remove <ct color=#FFFFFF>Frostburn</ct>.",
+        "2": "Upon triggering <ct color=#FFFFFF>Frostburn - Break</ct>, Hoshimi Miyabi obtains 1 point of <ct color=#FFFFFF>Fallen Frost</ct>. This effect can trigger once every 10s."
+      },
+      {
+        "0": "When Hoshimi Miyabi deals <ct color=#98EFF0>Frost DMG</ct>, she applies <ct color=#FFFFFF>Icefire</ct> to the target, lasting 30s. When accumulating <ct color=#98EFF0>Frost Anomaly Buildup</ct> against targets with <ct color=#FFFFFF>Icefire</ct>, increases <ct color=#98EFF0>Frost Anomaly Buildup Rate</ct> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <ct color=#98EFF0>Frost Anomaly Buildup</ct>, it has its own independent Attribute Anomaly Buildup gauge and triggers <ct color=#98EFF0>Freeze</ct>, <ct color=#98EFF0>Shatter</ct>, and <ct color=#98EFF0>Frostbite</ct> that can react with other Attribute Anomalies, including <ct color=#98EFF0>Ice Attribute Anomaly</ct>, to trigger <ct color=#FFFFFF>Disorder</ct>.",
+        "1": "When Hoshimi Miyabi applies <ct color=#98EFF0>Frostbite</ct> to enemies with <ct color=#FFFFFF>Icefire</ct>, it will consume the <ct color=#FFFFFF>Icefire</ct> to trigger <ct color=#FFFFFF>Frostburn - Break</ct>, dealing <ct color=#98EFF0>Frost DMG</ct> equal to <ct color=#2BAD00>1,375%</ct> of Hoshimi Miyabi's ATK and causing the target to enter the <ct color=#FFFFFF>Frostburn</ct> state. All squad members accumulate <ct color=#2BAD00>19%</ct> more Anomaly Buildup against enemies under the <ct color=#FFFFFF>Frostburn</ct> state, but Hoshimi Miyabi cannot reapply <ct color=#FFFFFF>Icefire</ct> to these enemies. The <ct color=#FFFFFF>Frostburn</ct> state ends when <ct color=#98EFF0>Frostbite</ct> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <ct color=#98EFF0>Frostbite</ct> and remove <ct color=#FFFFFF>Frostburn</ct>.",
+        "2": "Upon triggering <ct color=#FFFFFF>Frostburn - Break</ct>, Hoshimi Miyabi obtains 1 point of <ct color=#FFFFFF>Fallen Frost</ct>. This effect can trigger once every 10s."
+      },
+      {
+        "0": "When Hoshimi Miyabi deals <ct color=#98EFF0>Frost DMG</ct>, she applies <ct color=#FFFFFF>Icefire</ct> to the target, lasting 30s. When accumulating <ct color=#98EFF0>Frost Anomaly Buildup</ct> against targets with <ct color=#FFFFFF>Icefire</ct>, increases <ct color=#98EFF0>Frost Anomaly Buildup Rate</ct> by 100% of Hoshimi Miyabi's CRIT Rate, up to a maximum increase of 80%. As Hoshimi Miyabi accumulates <ct color=#98EFF0>Frost Anomaly Buildup</ct>, it has its own independent Attribute Anomaly Buildup gauge and triggers <ct color=#98EFF0>Freeze</ct>, <ct color=#98EFF0>Shatter</ct>, and <ct color=#98EFF0>Frostbite</ct> that can react with other Attribute Anomalies, including <ct color=#98EFF0>Ice Attribute Anomaly</ct>, to trigger <ct color=#FFFFFF>Disorder</ct>.",
+        "1": "When Hoshimi Miyabi applies <ct color=#98EFF0>Frostbite</ct> to enemies with <ct color=#FFFFFF>Icefire</ct>, it will consume the <ct color=#FFFFFF>Icefire</ct> to trigger <ct color=#FFFFFF>Frostburn - Break</ct>, dealing <ct color=#98EFF0>Frost DMG</ct> equal to <ct color=#2BAD00>1,500%</ct> of Hoshimi Miyabi's ATK and causing the target to enter the <ct color=#FFFFFF>Frostburn</ct> state. All squad members accumulate <ct color=#2BAD00>20%</ct> more Anomaly Buildup against enemies under the <ct color=#FFFFFF>Frostburn</ct> state, but Hoshimi Miyabi cannot reapply <ct color=#FFFFFF>Icefire</ct> to these enemies. The <ct color=#FFFFFF>Frostburn</ct> state ends when <ct color=#98EFF0>Frostbite</ct> expires. While this state remains active, triggering another Attribute Anomaly will overwrite <ct color=#98EFF0>Frostbite</ct> and remove <ct color=#FFFFFF>Frostburn</ct>.",
+        "2": "Upon triggering <ct color=#FFFFFF>Frostburn - Break</ct>, Hoshimi Miyabi obtains 1 point of <ct color=#FFFFFF>Fallen Frost</ct>. This effect can trigger once every 10s."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Bask in Frost",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Support</ct> character or shares the same Faction:",
+      "1": "<ct color=#FFFFFF>Basic Attack: Shimotsuki</ct> DMG increases by 60%. When any squad member triggers <ct color=#FFFFFF>Disorder</ct>, Hoshimi Miyabi obtains 2 points of <ct color=#FFFFFF>Fallen Frost</ct> and <ct color=#FFFFFF>Basic Attack: Shimotsuki</ct> during the next <ct color=#FFFFFF>Shimotsuki Stance</ct> will ignore 30% of the target's <ct color=#98EFF0>Ice RES</ct>."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Frost Atop the Snow",
+      "desc": "While in <ct color=#FFFFFF>Shimotsuki Stance</ct>, every 1 point of <ct color=#FFFFFF>Fallen Frost</ct> consumed will allow <ct color=#FFFFFF>Basic Attack: Shimotsuki</ct> to ignore 6% of DEF, stacking up to 6 times and lasting until <ct color=#FFFFFF>Shimotsuki Stance</ct> ends. When the slash for charge level three of <ct color=#FFFFFF>Basic Attack: Shimotsuki</ct> hits an enemy under <ct color=#FFFFFF>Frostburn</ct>, it will immediately remove the <ct color=#FFFFFF>Frostburn</ct> state and increase all squad members' Anomaly Buildup Rate by 20% for 10s.",
+      "flavor": {
+        "0": "Miyabi has loved reciting poems about the cold since she was a child. She might not understand them completely, but she still does it every day.",
+        "1": "Before long, she came to realize their true meaning.",
+        "2": "She found clarity not on a still and snowy night, but rather upon the battlefield."
+      }
+    },
+    "2": {
+      "name": "Breath Technique",
+      "desc": "<ct color=#FFFFFF>Basic Attack: Kazahana</ct> and <ct color=#FFFFFF>Dodge Counter</ct> DMG increases by 30%. Hoshimi Miyabi gains 1 point of <ct color=#FFFFFF>Fallen Frost</ct> when the final move of the 5th hit of <ct color=#FFFFFF>Basic Attack: Kazahana</ct> hits an enemy. Upon entering the battlefield, Hoshimi Miyabi immediately obtains 6 points of <ct color=#FFFFFF>Fallen Frost</ct> and her CRIT Rate increases by 15%.",
+      "flavor": {
+        "0": "\"As goes the sword, so goes the heart.\" This is a key disciplinary concept of the Hoshimi school of swordsmanship.",
+        "1": "Defeating the enemy is but the first step on the path to victory. ",
+        "2": "Maintaining constant vigilance at all times is the true way of a warrior."
+      }
+    },
+    "3": {
+      "name": "Martial Discipline",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Miyabi, whose family has a tradition of martial arts, has excellent training habits. Her commitment to swordsmanship practice is unwavering. What? A meeting? She won't be going."
+    },
+    "4": {
+      "name": "Rupture",
+      "desc": "<ct color=#FFFFFF>Frostburn - Break</ct> DMG increases by 30%. Upon triggering <ct color=#FFFFFF>Frostburn - Break</ct>, Hoshimi Miyabi generates 250 more Decibels.",
+      "flavor": {
+        "0": "Reciting poems during the heat of battle can regulate one's respiratory rhythm.",
+        "1": "Whether it's her mindset or breathing, Miyabi always keeps calm."
+      }
+    },
+    "5": {
+      "name": "Anniversary",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The girl arrives at that all too familiar place with flowers, her breath misting and then vanishing into the cold air.",
+        "1": "Her fingers ghost over that name on the monument.",
+        "2": "Everything is quiet, like that most silence observer."
+      }
+    },
+    "6": {
+      "name": "Prodigious Talent",
+      "desc": "During <ct color=#FFFFFF>Shimotsuki Stance</ct>, Hoshimi Miyabi obtains <ct color=#FFFFFF>Polar</ct>, which increases <ct color=#FFFFFF>Basic Attack: Shimotsuki</ct> DMG by 30%. After obtaining <ct color=#FFFFFF>Polar</ct>, Hoshimi Miyabi will automatically draw her blade and unleash powerful slashes based on the current charge level upon consuming <ct color=#FFFFFF>Fallen Frost</ct>. Before <ct color=#FFFFFF>Fallen Frost</ct> is completely depleted, the draw and slashes will not interrupt charging under <ct color=#FFFFFF>Shimotsuki Stance</ct>. Each occurrence of <ct color=#FFFFFF>Shimotsuki Stance</ct> can perform up to 3 draws and slashes.",
+      "flavor": "The more she battles, the more it becomes evident to outsiders: If there is a god of swordsmanship, it must greatly favor Hoshimi Miyabi."
+    }
+  }
 }

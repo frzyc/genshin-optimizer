@@ -1,3 +1,241 @@
 {
-  "name": "Lucy"
+  "name": "Lucy",
+  "fullName": "Luciana de Montefio",
+  "basic": {
+    "BasicAttackLadysBat": {
+      "name": "Basic Attack: Lady's Bat",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Strike forward up to 4 times, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "When Lucy uses her fourth <ct color=#FFFFFF>Basic Attack</ct>, the currently on-field guard boars will launch <ct color=#FFFFFF>Guard Boars: Spinning Swing!</ct> together."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "3rd-Hit (ALT) ",
+        "4th-Hit "
+      ]
+    },
+    "GuardBoarsToArms": {
+      "name": "Guard Boars: To Arms!",
+      "desc": "In combat, the guard boars will randomly use a baseball bat, boxing gloves, or a slingshot to automatically attack enemies, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+      "params": [
+        "Baseball Bat ",
+        "Boxing Gloves ",
+        "Slingshot "
+      ]
+    },
+    "GuardBoarsSpinningSwing": {
+      "name": "Guard Boars: Spinning Swing!",
+      "desc": "When Lucy uses the fourth <ct color=#FFFFFF>Basic Attack</ct>, or when she gains the <ct color=#FFFFFF>Cheer On!</ct> status, the guard boars will whirl their baseball bats in a continuous motion, dealing <ct color=#F0D12B>Physical DMG</ct> to nearby enemies. If the attack cannot be executed immediately, the guard boars will remember the required number of times to execute it.",
+      "params": [
+        "Spinning Swing "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeFoulBall": {
+      "name": "Dodge: Foul Ball!",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackFearlessBoar": {
+      "name": "Dash Attack: Fearless Boar!",
+      "desc": {
+        "0": "Press <IconNormal /> during dodge to activate:",
+        "1": "Rapidly strikes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterReturningTusk": {
+      "name": "Dodge Counter: Returning Tusk!",
+      "desc": {
+        "0": "Press <IconNormal /> during a Perfect Dodge to activate:",
+        "1": "Strike enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSolidHit": {
+      "name": "Special Attack: Solid Hit!",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Recall a guard boar and launch it as a <ct color=#FFFFFF>Line Drive</ct>. The guard boar will cause an explosion upon hitting enemies or walls, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Hold <IconSpecial /> to activate:",
+        "3": "Recall a guard boar and launch it as a <ct color=#FFFFFF>Fly Ball</ct>. The guard boar will cause an explosion upon landing, dealing <ct color=#FF5521>Fire DMG</ct>."
+      },
+      "params": [
+        "Line Drive ",
+        "Fly Ball "
+      ]
+    },
+    "EXSpecialAttackHomeRun": {
+      "name": "EX Special Attack: Home Run!",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Recall a guard boar and launch it as a <ct color=#FFFFFF>Line Drive</ct>. The guard boar will cause an explosion upon hitting enemies or walls, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "When the skill hits an enemy, it triggers a <ct color=#FFFFFF>Quick Assist</ct>.",
+        "4": "With enough Energy, hold <IconSpecialReady /> to activate:",
+        "5": "Recall a guard boar and launch it as a <ct color=#FFFFFF>Fly Ball</ct>. The guard boar will cause an explosion upon landing, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "6": "Character is invulnerable while using this skill.",
+        "7": "When the skill hits an enemy, it triggers a <ct color=#FFFFFF>Quick Assist</ct>."
+      },
+      "params": [
+        "Line Drive ",
+        "Fly Ball ",
+        "Energy Cost"
+      ]
+    },
+    "CheerOn": {
+      "name": "Cheer On!",
+      "desc": "After using <ct color=#FFFFFF>EX Special Attack</ct>, when a guard boar triggers an explosion, it will apply the <ct color=#FFFFFF>Cheer On!</ct> status to all allies, Bangboo, and the guard boars themselves. While under the <ct color=#FFFFFF>Cheer On!</ct> status, allies' ATK increases by <ct color=#2BAD00>{CAL:13+AvatarSkillLevel(1)*0.8,1,2}%</ct> of Lucy's initial ATK + <ct color=#2BAD00>{CAL:40+AvatarSkillLevel(1)*4,1,2}</ct>, up to a maximum of 600. The <ct color=#FFFFFF>Cheer On!</ct> status lasts for 10s when a <ct color=#FFFFFF>Line Drive</ct> is hit, and 15s when a <ct color=#FFFFFF>Fly Ball</ct> is hit. Repeated triggers reset the duration.",
+      "params": [
+        "ATK Increase"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackGrandSlam": {
+      "name": "Chain Attack: Grand Slam!",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Lucy jumps up and sends a guard boar at enemies in front in a large area, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "When the skill hits an enemy, it triggers a <ct color=#FFFFFF>Quick Assist</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateWalkOffHomeRun": {
+      "name": "Ultimate: Walk-Off Home Run!",
+      "desc": {
+        "0": "When Decibel Rating is at Maximum, press <IconUltimateReady /> to activate:",
+        "1": "Launch all guard boars sequentially, dealing massive <ct color=#FF5521>Fire DMG</ct> in a large area to enemies ahead.",
+        "2": "While using this skill, other squad members recover 10 energy, and the next character to switch in gains an additional 20 energy.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "When the skill hits an enemy, it triggers a <ct color=#FFFFFF>Quick Assist</ct>."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistHitByPitch": {
+      "name": "Quick Assist: Hit By Pitch!",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Strikes enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable during the attack."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistSafeOnBase": {
+      "name": "Defensive Assist: Safe on Base!",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpScoredARun": {
+      "name": "Assist Follow-Up: Scored a Run!",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Strikes enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Crimson Mane Guard",
+    "desc": [
+      "When Lucy uses her <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <ct color=#FFFFFF>Cheer On!</ct> buff for the guard boars is increased to <ct color=#2BAD00>140%</ct> of the original effect, and their attack frequency is increased.",
+      "When Lucy uses her <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <ct color=#FFFFFF>Cheer On!</ct> buff for the guard boars is increased to <ct color=#2BAD00>150%</ct> of the original effect, and their attack frequency is increased.",
+      "When Lucy uses her <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <ct color=#FFFFFF>Cheer On!</ct> buff for the guard boars is increased to <ct color=#2BAD00>160%</ct> of the original effect, and their attack frequency is increased.",
+      "When Lucy uses her <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <ct color=#FFFFFF>Cheer On!</ct> buff for the guard boars is increased to <ct color=#2BAD00>170%</ct> of the original effect, and their attack frequency is increased.",
+      "When Lucy uses her <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <ct color=#FFFFFF>Cheer On!</ct> buff for the guard boars is increased to <ct color=#2BAD00>180%</ct> of the original effect, and their attack frequency is increased.",
+      "When Lucy uses her <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <ct color=#FFFFFF>Cheer On!</ct> buff for the guard boars is increased to <ct color=#2BAD00>190%</ct> of the original effect, and their attack frequency is increased.",
+      "When Lucy uses her <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <ct color=#FFFFFF>Cheer On!</ct> buff for the guard boars is increased to <ct color=#2BAD00>200%</ct> of the original effect, and their attack frequency is increased."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Batter Up!",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "The guard boars inherit Lucy's CRIT Rate and CRIT DMG."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Drill Formations",
+      "desc": "When the guard boars launch <ct color=#FFFFFF>Guard Boars: Spinning Swing!</ct>, Lucy recovers 2 Energy. This effect can trigger once every 15s, with each guard boar having its own separate cooldown.",
+      "flavor": {
+        "0": "\"Grassy, eyes right! ...That's left, you idiot!!!\"",
+        "1": "One command, two directions, three cries of pain, and wails all around."
+      }
+    },
+    "2": {
+      "name": "Little Boar Captain",
+      "desc": "When Lucy uses a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, it grants all squad members, Bangboo, and the guard boars the <ct color=#FFFFFF>Cheer On!</ct> status for 10s.",
+      "flavor": {
+        "0": "\"Without a doubt, Captain Lucy is the best leader of the Calydon Boar Thirens!\"",
+        "1": "This was Woody's conclusion in the \"Sons of Calydon Annual Report.\""
+      }
+    },
+    "3": {
+      "name": "Ironfist Overseer",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"I just wish Captain Lucy would be more gentle when she's smacking us around.\"",
+        "1": "Woody thought, but didn't dare say it out loud."
+      }
+    },
+    "4": {
+      "name": "Chaos Ball Game",
+      "desc": "While in the <ct color=#FFFFFF>Cheer On!</ct> state, allies' CRIT DMG is increased by an additional 10%.",
+      "flavor": "Rules and ribs are made to be broken."
+    },
+    "5": {
+      "name": "Wildland Princess",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "She speaks politely to opponents screaming under her bat.",
+        "1": "She apologizes to enemies groveling at her feet.",
+        "2": "This is the perfect etiquette of a noble lady."
+      }
+    },
+    "6": {
+      "name": "Fierce Fangs of Fire",
+      "desc": "When another squad member in the <ct color=#FFFFFF>Cheer On!</ct> state hits an enemy with an <ct color=#FFFFFF>EX Special Attack</ct>, a guard boar will drop from the sky and cause an explosion, dealing <ct color=#FF5521>Fire DMG</ct> equal to 300% of the guard boar's ATK. This will extend the duration of the <ct color=#FFFFFF>Cheer On!</ct> buff for all squad members by 5s. The duration can increase up to 3 times, with a maximum duration of 30s. Refreshing the <ct color=#FFFFFF>Cheer On!</ct> state resets the stack count. After the guard boar's explosion, it will launch <ct color=#FFFFFF>Guard Boars: Spinning Swing!</ct>.",
+      "flavor": {
+        "0": "The little boar Thirens known as the Crimson Mane Guard are always at the forefront of battle!",
+        "1": "Though it's hard to tell if, at the moment they're launched by the bat, they feel total despair or just accept their fate.",
+        "2": "Brave little boars, leading the charge!"
+      }
+    }
+  }
 }

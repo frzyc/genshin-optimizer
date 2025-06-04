@@ -1,3 +1,204 @@
 {
-  "name": "Grace"
+  "name": "Grace",
+  "fullName": "Grace Howard",
+  "basic": {
+    "BasicAttackHighPressureSpike": {
+      "name": "Basic Attack: High-Pressure Spike",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 4 attacks, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "While launching <ct color=#FFFFFF>Basic Attacks</ct>, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to attack while moving. This allows Grace to reposition herself and deal <ct color=#F0D12B>Physical DMG</ct>.",
+        "3": "While Grace is launching <ct color=#FFFFFF>Basic Attacks</ct>, her <ct color=#FFFFFF>Basic Attack</ct> combo will not be interrupted by her <ct color=#FFFFFF>Special Attacks</ct>, <ct color=#FFFFFF>EX Special Attacks</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Dash Attacks</ct>, or <ct color=#FFFFFF>Dodge Counter</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "Moving Shot "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeSafetyRegulation": {
+      "name": "Dodge: Safety Regulation",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackQuickInspection": {
+      "name": "Dash Attack: Quick Inspection",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slide forward while shooting, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterViolationPenalty": {
+      "name": "Dodge Counter: Violation Penalty",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Throws a grenade at enemies, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackObstructionRemoval": {
+      "name": "Special Attack: Obstruction Removal",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Throws a grenade to the front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Upon use, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to change directions.",
+        "3": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackSuperchargedObstructionRemoval": {
+      "name": "EX Special Attack: Supercharged Obstruction Removal",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Leap in the air and throw two grenades to the front, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Upon use, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to change directions.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackCollaborativeConstruction": {
+      "name": "Chain Attack: Collaborative Construction",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Throws three grenades into the air then strafes to detonate them, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateDemolitionBlastBeware": {
+      "name": "Ultimate: Demolition Blast - Beware",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Throws a custom grenade which explodes in the air and splits into four smaller grenades, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistIncidentManagement": {
+      "name": "Quick Assist: Incident Management",
+      "desc": {
+        "0": "When the active character is launched in the air, press <IconSwitch /> to activate:",
+        "1": "Throws a grenade at the enemy, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EvasiveAssistRapidRiskResponse": {
+      "name": "Evasive Assist: Rapid Risk Response",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Dodges the enemy's attack and activates <ct color=#FFFFFF>Vital View</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "AssistFollowUpCounterVoltNeedle": {
+      "name": "Assist Follow-Up: Counter Volt Needle",
+      "desc": {
+        "0": "Press <IconNormal /> after an <ct color=#FFFFFF>Evasive Assist</ct> to activate:",
+        "1": "Unleashes a spinning hail of bullets against enemies in front and throws a grenade, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Pre-Driven Needle",
+    "desc": [
+      "When Grace's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct> hits an enemy and deals <ct color=#F0D12B>Physical DMG</ct>, she gains 1 stack of <ct color=#FFFFFF>Zap</ct> (up to 8 stacks). Upon reaching maximum stacks, using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct> will consume all stacks of <ct color=#FFFFFF>Zap</ct>, increasing the accumulated <ct color=#2EB6FF>Electric Anomaly Buildup</ct> by <ct color=#2BAD00>65%</ct>.",
+      "When Grace's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct> hits an enemy and deals <ct color=#F0D12B>Physical DMG</ct>, she gains 1 stack of <ct color=#FFFFFF>Zap</ct> (up to 8 stacks). Upon reaching maximum stacks, using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct> will consume all stacks of <ct color=#FFFFFF>Zap</ct>, increasing the accumulated <ct color=#2EB6FF>Electric Anomaly Buildup</ct> by <ct color=#2BAD00>75.8%</ct>.",
+      "When Grace's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct> hits an enemy and deals <ct color=#F0D12B>Physical DMG</ct>, she gains 1 stack of <ct color=#FFFFFF>Zap</ct> (up to 8 stacks). Upon reaching maximum stacks, using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct> will consume all stacks of <ct color=#FFFFFF>Zap</ct>, increasing the accumulated <ct color=#2EB6FF>Electric Anomaly Buildup</ct> by <ct color=#2BAD00>86.6%</ct>.",
+      "When Grace's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct> hits an enemy and deals <ct color=#F0D12B>Physical DMG</ct>, she gains 1 stack of <ct color=#FFFFFF>Zap</ct> (up to 8 stacks). Upon reaching maximum stacks, using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct> will consume all stacks of <ct color=#FFFFFF>Zap</ct>, increasing the accumulated <ct color=#2EB6FF>Electric Anomaly Buildup</ct> by <ct color=#2BAD00>97.5%</ct>.",
+      "When Grace's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct> hits an enemy and deals <ct color=#F0D12B>Physical DMG</ct>, she gains 1 stack of <ct color=#FFFFFF>Zap</ct> (up to 8 stacks). Upon reaching maximum stacks, using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct> will consume all stacks of <ct color=#FFFFFF>Zap</ct>, increasing the accumulated <ct color=#2EB6FF>Electric Anomaly Buildup</ct> by <ct color=#2BAD00>108.3%</ct>.",
+      "When Grace's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct> hits an enemy and deals <ct color=#F0D12B>Physical DMG</ct>, she gains 1 stack of <ct color=#FFFFFF>Zap</ct> (up to 8 stacks). Upon reaching maximum stacks, using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct> will consume all stacks of <ct color=#FFFFFF>Zap</ct>, increasing the accumulated <ct color=#2EB6FF>Electric Anomaly Buildup</ct> by <ct color=#2BAD00>119.1%</ct>.",
+      "When Grace's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct> hits an enemy and deals <ct color=#F0D12B>Physical DMG</ct>, she gains 1 stack of <ct color=#FFFFFF>Zap</ct> (up to 8 stacks). Upon reaching maximum stacks, using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct> will consume all stacks of <ct color=#FFFFFF>Zap</ct>, increasing the accumulated <ct color=#2EB6FF>Electric Anomaly Buildup</ct> by <ct color=#2BAD00>130%</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Tech Support Dept.",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "Upon hitting an enemy with an <ct color=#FFFFFF>EX Special Attack</ct>, the next <ct color=#2EB6FF>Shock</ct> effect inflicted on the target increases <ct color=#2EB6FF>Shock</ct> DMG by 18%. This effect can stack up to 2 times, and each enemy can trigger it once per skill use. Resets when the <ct color=#2EB6FF>Shock</ct> effect ends."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Recharge Chamber",
+      "desc": {
+        "0": "When the 4th hit of Grace's <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, all squad members gain 0.25 Energy.",
+        "1": "Within the same move, this effect can grant a max of 2 Energy to all squad members."
+      },
+      "flavor": "Efficiency is the lifeblood of engineering, and within Grace's gun barrel resonates its heartbeat."
+    },
+    "2": {
+      "name": "Lightning Piercer",
+      "desc": "When Grace's thrown grenade hits an enemy during a <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct>, the target's <ct color=#2EB6FF>Electric RES</ct> is reduced by 8.5%, and <ct color=#2EB6FF>Electric Anomaly Buildup RES</ct> is reduced by 8.5%, lasting for 8s.",
+      "flavor": {
+        "0": "\"Dissecting\" complex mechanical structures is Grace's greatest hobby, even in the midst of battle.",
+        "1": "How does it feel to get taken apart, with every vulnerability laid bare?"
+      }
+    },
+    "3": {
+      "name": "Chief Mechanic",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Grace was personally involved in writing the \"Belobog Industries' Construction Safety Guidelines.\"",
+        "1": "She's also the employee who violated the \"no dangerous explosives at construction sites\" policy the most times."
+      }
+    },
+    "4": {
+      "name": "Burst Capacitor",
+      "desc": "When Grace uses her <ct color=#FFFFFF>EX Special Attack</ct>, she gains 6 stacks of Charge (max 6 stacks). When her <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct> hits an enemy, 1 stack of Charge is consumed, increasing her Energy Generation Rate of the attack by 20%.",
+      "flavor": {
+        "0": "Anton suspected within the component Grace referred to as the \"Electropulse Recycling Module,\" there was, in fact, an Ether hamster tirelessly generating energy around the clock.",
+        "1": "\"Can you equip my bro with one too?\""
+      }
+    },
+    "5": {
+      "name": "\"Frosty Cold Iron Witch\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "The \"Frosty Cold Iron Witch\" is capable of taming any mechanical beast, or at least that's what the anonymous fan who came up with the name thinks."
+    },
+    "6": {
+      "name": "Detonation Trigger",
+      "desc": "When all <ct color=#FFFFFF>Zap</ct> stacks are consumed to activate a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, Grace's skill is enhanced, tossing an extra grenade and increasing each grenade's DMG to 200%.",
+      "flavor": {
+        "0": "The average blood temperature of Belobog Heavy Industries' employees is ninety-eight degrees Celsius. Grace is often viewed as the safety valve keeping them all from boiling.",
+        "1": "When even Grace gives up control, it's a sign for everyone to cover their ears."
+      }
+    }
+  }
 }

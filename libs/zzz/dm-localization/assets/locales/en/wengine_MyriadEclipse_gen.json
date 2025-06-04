@@ -1,6 +1,12 @@
 {
   "name": "Myriad Eclipse",
-  "desc": "A refined collector, a cunning phantom thief, a loathsome swindler, an arrogant, self-important bastard...\nThe world has a thousand identities for him. The elite despise his very presence, while the common folk hail him as a symbol of justice. In the alleys, they talk of him as a criminal legend walking the razor's edge. Among nobles, speaking of him is like lifting the lid of a cursed tomb.\nHe wears a thousand masks — yet none reveal who he truly is.\n\n<ct color=#959595>\"I'll live on in a thousand different tales.\" — Hugo</ct>",
+  "desc": {
+    "0": "A refined collector, a cunning phantom thief, a loathsome swindler, an arrogant, self-important bastard...",
+    "1": "The world has a thousand identities for him. The elite despise his very presence, while the common folk hail him as a symbol of justice. In the alleys, they talk of him as a criminal legend walking the razor's edge. Among nobles, speaking of him is like lifting the lid of a cursed tomb.",
+    "2": "He wears a thousand masks — yet none reveal who he truly is.",
+    "3": "",
+    "4": "<ct color=#959595>\"I'll live on in a thousand different tales.\" — Hugo</ct>"
+  },
   "desc2": "Equip to increase Attack Agents' combat capabilities",
   "desc3": "Shadowed by darkness at every step, he laid bare his heart to kindle a single, flickering flame.",
   "phase": "False Personas",

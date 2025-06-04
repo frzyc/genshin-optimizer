@@ -1,3 +1,215 @@
 {
-  "name": "Nekomata"
+  "name": "Nekomata",
+  "fullName": "Nekomiya Mana",
+  "basic": {
+    "BasicAttackKittySlash": {
+      "name": "Basic Attack: Kitty Slash",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 5 slashes, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "On the last hit, there is a 33.33% chance to repeat this hit 3 times."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackCrimsonBlade": {
+      "name": "Basic Attack: Crimson Blade",
+      "desc": {
+        "0": "Hold <IconNormal /> during the first 3 hits of Nekomata's <ct color=#FFFFFF>Basic Attack</ct> to activate:",
+        "1": "Slashes enemies in front and passes through them, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Upon activation, there is a 33.33% chance to repeat this attack 3 times."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeCantTouchMeow": {
+      "name": "Dodge: Can't Touch Me-ow~",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackOverHere": {
+      "name": "Dash Attack: Over Here!",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterPhantomClaws": {
+      "name": "Dodge Counter: Phantom Claws",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSurpriseAttack": {
+      "name": "Special Attack: Surprise Attack",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Unleashes a downward strike, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackSuperSurpriseAttack": {
+      "name": "EX Special Attack: Super Surprise Attack!",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Unleashes a powerful falling slash that deals massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackClawSwipe": {
+      "name": "Chain Attack: Claw Swipe",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful slash at enemies ahead in a large area, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateClawSmash": {
+      "name": "Ultimate: Claw Smash",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes powerful slashes at enemies ahead in a large area, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistCatsPaw": {
+      "name": "Quick Assist: Cat's Paw",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistDesperateDefense": {
+      "name": "Defensive Assist: Desperate Defense",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpShadowStrike": {
+      "name": "Assist Follow-Up: Shadow Strike",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Charge and slash enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Stealthy Paws",
+    "desc": [
+      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>30%</ct> for 6s.",
+      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>35%</ct> for 6s.",
+      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>40%</ct> for 6s.",
+      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>45%</ct> for 6s.",
+      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>50%</ct> for 6s.",
+      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>55%</ct> for 6s.",
+      "When Nekomata's <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> hits an enemy, her DMG increases by <ct color=#2BAD00>60%</ct> for 6s."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Catwalk",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "After any character inflicts <ct color=#F0D12B>Assault</ct>, increases the DMG of Nekomata's next <ct color=#FFFFFF>EX Special Attack</ct> by 35%, stacking up to 2 times."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Bird Hunter",
+      "desc": "When Nekomata hits an enemy from behind, she ignores 16% of her target's <ct color=#F0D12B>Physical RES</ct>. If the enemy is Stunned, all Nekomata's attacks are considered back attacks.",
+      "flavor": "While Nekomata lacks strength due to her small size, she has the perceptiveness and agility required to locate her enemies' weaknesses and strike right where it hurts most."
+    },
+    "2": {
+      "name": "Cat & Mouse",
+      "desc": "When there's only one enemy on the field and Nekomata is in combat, her Energy Generation Rate is increased by 25%.",
+      "flavor": {
+        "0": "Cats always prefer to toy with their prey.",
+        "1": "If there's only one mouse left in combat — that's Nekomata's play time."
+      }
+    },
+    "3": {
+      "name": "Curious Left Tail",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "According to the legends of the old civilization, each tail represents one of a cat's many lives, with years of wisdom and experience stored within...",
+        "1": "Even if that's not true, the experience Nekomata has gained on the streets certainly is."
+      }
+    },
+    "4": {
+      "name": "Sharpen Claws",
+      "desc": "When Nekomata uses her <ct color=#FFFFFF>EX Special Attack</ct>, her CRIT Rate increases by 7% for 15s, stacking up to 2 times, with each stack's duration being calculated separately.",
+      "flavor": {
+        "0": "\"Gimme more, gimme MORE! I can eat 'em all~\"",
+        "1": "Her eyes sparkle as she licks the back of her paws."
+      }
+    },
+    "5": {
+      "name": "Lucky Right Tail",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "According to the legends of the old civilization, each tail represents one of a cat's many lives, with years of wisdom and experience stored within... Sometimes Nekomata wonders to herself: If she is lucky enough to keep surviving, will she eventually grow another tail?"
+    },
+    "6": {
+      "name": "Predator Lineage",
+      "desc": "When Nekomata launches a <ct color=#FFFFFF>Chain Attack</ct> or uses her <ct color=#FFFFFF>Ultimate</ct>, her CRIT DMG increases by 18%, stacking up to 3 times. The effect expires when she's no longer in-combat. This effect gains maximum stacks immediately on defeating an enemy.",
+      "flavor": {
+        "0": "\"When a feline Thiren gets positive reinforcement from aggressive behavior,",
+        "1": "their latent animalistic tendencies emerge.",
+        "2": "Fortunately, these tendencies aren't permanent...\"",
+        "3": "—Excerpt from the Handbook of Incomplete Research on Feline Thirens"
+      }
+    }
+  }
 }

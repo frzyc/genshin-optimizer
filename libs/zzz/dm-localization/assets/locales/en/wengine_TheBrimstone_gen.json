@@ -1,6 +1,10 @@
 {
   "name": "The Brimstone",
-  "desc": "A violent Obsidian Division W-Engine forged with fire and filled with a forbidden fuel that has been reprocessed using Ether-technology. Its intense heat can be used to clear the entire battlefield. Rumor has it that its designer was exchanging W-Engine design ideas with Soldier 11 over dinner. After an hour spent enjoying extra spicy noodles, she decided to bring extra spicy revenge to her enemies.\n\n<ct color=#959595>\"I really like it. It's stable, efficient, and practical. The high temperature can clean the battle residue off my blade and even disinfect wounds when needed... Why are you sitting so far away?\" — Soldier 11, introducing her W-Engine to her teammates</ct>",
+  "desc": {
+    "0": "A violent Obsidian Division W-Engine forged with fire and filled with a forbidden fuel that has been reprocessed using Ether-technology. Its intense heat can be used to clear the entire battlefield. Rumor has it that its designer was exchanging W-Engine design ideas with Soldier 11 over dinner. After an hour spent enjoying extra spicy noodles, she decided to bring extra spicy revenge to her enemies.",
+    "1": "",
+    "2": "<ct color=#959595>\"I really like it. It's stable, efficient, and practical. The high temperature can clean the battle residue off my blade and even disinfect wounds when needed... Why are you sitting so far away?\" — Soldier 11, introducing her W-Engine to her teammates</ct>"
+  },
   "desc2": "Equip to increase Attack Agents' combat capabilities",
   "desc3": "A W-Engine made for Soldier 11 by Obsidian Division. Its intense heat can be used to clear the entire battlefield.",
   "phase": "Scorching Breath",

@@ -1,3 +1,283 @@
 {
-  "name": "Lighter"
+  "name": "Lighter",
+  "fullName": "Lighter",
+  "basic": {
+    "BasicAttackLFormThunderingFist": {
+      "name": "Basic Attack: L-Form Thundering Fist",
+      "desc": {
+        "0": "Press or hold <IconNormal /> to activate:",
+        "1": "Perform up to five forward strikes, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "During the 3rd hit of the <ct color=#FFFFFF>Basic Attack</ct>, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick}, and repeatedly press or hold <IconNormal /> to unleash a series of melee follow-up attacks. Release the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to follow up with the 4th hit of the <ct color=#FFFFFF>Basic Attack</ct>.",
+        "3": "While performing the startup light punch in the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} and repeatedly press or hold <IconNormal /> to keep alternating between the light punch and 4th hit of the <ct color=#FFFFFF>Basic Attack</ct>. Release the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to follow up with the subsequent jab combo.",
+        "4": "Continue repeatedly pressing or holding <IconNormal /> to extend the duration of the jab combo.",
+        "5": "When you stop pressing or holding <IconNormal />, or when the combo reaches its maximum duration, launches a Finishing Move forward. Lighter is invulnerable during the Finishing Move.",
+        "6": "During the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>, Lighter takes 40% less DMG.",
+        "7": "While in the <ct color=#FFFFFF>Morale Burst</ct> state, Anti-Interrupt Level is increased during the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct>, and the DMG reduction effect is increased to 80%."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "Follow-Up 1st-Hit ",
+        "Follow-Up 2nd-Hit ",
+        "Follow-Up 3rd-Hit ",
+        "Follow-Up 4th-Hit ",
+        "Follow-Up 5th-Hit ",
+        "4th-Hit ",
+        "5th-Hit Startup ",
+        "5th-Hit Combo ",
+        "5th-Hit Finisher ",
+        "5th-Hit Startup  (Morale Burst)",
+        "5th-Hit Combo  (Morale Burst)",
+        "5th-Hit Finisher  (Morale Burst)",
+        "5th-Hit Powerful Finisher  (Morale Burst)"
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeShadowedSlide": {
+      "name": "Dodge: Shadowed Slide",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "Press <IconEvade /> while the character is attacking to activate:",
+        "4": "Perform a quick shuffle dodge in the direction of the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#Joystick}.",
+        "5": "This skill will not interrupt the combo count for <ct color=#FFFFFF>Basic Attacks</ct>.",
+        "6": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackChargingSlam": {
+      "name": "Dash Attack: Charging Slam",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Rapidly strikes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterBlazingFlash": {
+      "name": "Dodge Counter: Blazing Flash",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Strike enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using the skill, press or hold <IconNormal /> to immediately follow up with the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackVFormSunriseUppercut": {
+      "name": "Special Attack: V-Form Sunrise Uppercut",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Strikes enemies in front with an uppercut, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill.",
+        "3": "Press <IconSpecial /> during a shuffle dodge to activate:",
+        "4": "Strike forward with a series of punches, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "5": "This skill will not interrupt the combo count for <ct color=#FFFFFF>Basic Attacks</ct>.",
+        "6": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackVFormSunriseUppercutFullDistance": {
+      "name": "EX Special Attack: V-Form Sunrise Uppercut - Full Distance",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Leaps into the air with a powerful uppercut, striking enemies in front and dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Press <IconSpecialReady /> again during this skill to spend additional Energy to perform a powerful follow-up attack, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "After using this skill, press or hold <IconNormal /> to follow up with the 4th hit of the <ct color=#FFFFFF>Basic Attack</ct>.",
+        "5": "With enough Energy, press <IconSpecialReady /> during the shuffle dodge to activate:",
+        "6": "Strike forward with a powerful punch combo, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "7": "This skill will not interrupt the combo count for <ct color=#FFFFFF>Basic Attacks</ct>.",
+        "8": "Character is invulnerable while using this skill.",
+        "9": "After using this skill, press or hold <IconNormal /> to immediately follow up with the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        "",
+        "Follow-Up ",
+        "Activation Energy Cost",
+        "Follow-Up Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackVFormScorchingSun": {
+      "name": "Chain Attack: V-Form Scorching Sun",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful strike at enemies in front in a small area, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateWFormCrownedInferno": {
+      "name": "Ultimate: W-Form Crowned Inferno",
+      "desc": {
+        "0": "When Decibel Rating is at Maximum, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes a powerful strike in a large area around, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistBlazingFlashGuard": {
+      "name": "Quick Assist: Blazing Flash - Guard",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Strike enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using the skill, press or hold <IconNormal /> to immediately follow up with the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistSwiftBreak": {
+      "name": "Defensive Assist: Swift Break",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpChargingSlamStab": {
+      "name": "Assist Follow-Up: Charging Slam - Stab",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Strike enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using this skill, press or hold <IconNormal /> to immediately follow up with the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Accelerant",
+    "desc": [
+      {
+        "0": "Lighter automatically gains <ct color=#FFFFFF>Morale</ct> over time, at a rate of 2.9 points per second. For each point of Energy consumed by any squad member, Lighter recovers an additional 0.26 <ct color=#FFFFFF>Morale</ct>, up to a maximum of 100. When <ct color=#FFFFFF>Morale</ct> reaches 80, the next time Lighter switches into battle he immediately launches a <ct color=#FFFFFF>Quick Assist</ct>. Once <ct color=#FFFFFF>Morale</ct> is 80 or higher, executing the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> puts Lighter in the <ct color=#FFFFFF>Morale Burst</ct> state, enhancing the power of the startup light punch, jab combo, and the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct>. When a skill hits an enemy with its power increased, it will continuously consume <ct color=#FFFFFF>Morale</ct>. With every 10 points of <ct color=#FFFFFF>Morale</ct> consumed, Lighter's Impact increases by <ct color=#2BAD00>1%</ct>, up to a maximum increase of <ct color=#2BAD00>10%</ct>, and lasting 6s.",
+        "1": "In the <ct color=#FFFFFF>Morale Burst</ct> state, Lighter will no longer automatically gain <ct color=#FFFFFF>Morale</ct> over time. If his <ct color=#FFFFFF>Morale</ct> is exhausted during a startup light punch or jab combo, he will automatically follow up with a more powerful Finishing Move.",
+        "2": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when startup light punches or jab combos hit enemies, the target's <ct color=#98EFF0>Ice RES</ct> and <ct color=#FF5521>Fire RES</ct> are reduced by 15%, lasting 30s.",
+        "3": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when the Finishing Move hits an enemy, it applies the <ct color=#FFFFFF>Collapse</ct> effect on the target, extending its Stunned duration by 3s. The <ct color=#FFFFFF>Collapse</ct> effect can trigger only once on the same target before they recover from Stun.",
+        "4": "When the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, when he switches off field, or when his <ct color=#FFFFFF>Morale</ct> runs out, Lighter will leave the <ct color=#FFFFFF>Morale Burst</ct> state, keeping any unspent <ct color=#FFFFFF>Morale</ct>."
+      },
+      {
+        "0": "Lighter automatically gains <ct color=#FFFFFF>Morale</ct> over time, at a rate of 2.9 points per second. For each point of Energy consumed by any squad member, Lighter recovers an additional 0.26 <ct color=#FFFFFF>Morale</ct>, up to a maximum of 100. When <ct color=#FFFFFF>Morale</ct> reaches 80, the next time Lighter switches into battle he immediately launches a <ct color=#FFFFFF>Quick Assist</ct>. Once <ct color=#FFFFFF>Morale</ct> is 80 or higher, executing the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> puts Lighter in the <ct color=#FFFFFF>Morale Burst</ct> state, enhancing the power of the startup light punch, jab combo, and the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct>. When a skill hits an enemy with its power increased, it will continuously consume <ct color=#FFFFFF>Morale</ct>. With every 10 points of <ct color=#FFFFFF>Morale</ct> consumed, Lighter's Impact increases by <ct color=#2BAD00>1.17%</ct>, up to a maximum increase of <ct color=#2BAD00>11.7%</ct>, and lasting 6s.",
+        "1": "In the <ct color=#FFFFFF>Morale Burst</ct> state, Lighter will no longer automatically gain <ct color=#FFFFFF>Morale</ct> over time. If his <ct color=#FFFFFF>Morale</ct> is exhausted during a startup light punch or jab combo, he will automatically follow up with a more powerful Finishing Move.",
+        "2": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when startup light punches or jab combos hit enemies, the target's <ct color=#98EFF0>Ice RES</ct> and <ct color=#FF5521>Fire RES</ct> are reduced by 15%, lasting 30s.",
+        "3": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when the Finishing Move hits an enemy, it applies the <ct color=#FFFFFF>Collapse</ct> effect on the target, extending its Stunned duration by 3s. The <ct color=#FFFFFF>Collapse</ct> effect can trigger only once on the same target before they recover from Stun.",
+        "4": "When the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, when he switches off field, or when his <ct color=#FFFFFF>Morale</ct> runs out, Lighter will leave the <ct color=#FFFFFF>Morale Burst</ct> state, keeping any unspent <ct color=#FFFFFF>Morale</ct>."
+      },
+      {
+        "0": "Lighter automatically gains <ct color=#FFFFFF>Morale</ct> over time, at a rate of 2.9 points per second. For each point of Energy consumed by any squad member, Lighter recovers an additional 0.26 <ct color=#FFFFFF>Morale</ct>, up to a maximum of 100. When <ct color=#FFFFFF>Morale</ct> reaches 80, the next time Lighter switches into battle he immediately launches a <ct color=#FFFFFF>Quick Assist</ct>. Once <ct color=#FFFFFF>Morale</ct> is 80 or higher, executing the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> puts Lighter in the <ct color=#FFFFFF>Morale Burst</ct> state, enhancing the power of the startup light punch, jab combo, and the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct>. When a skill hits an enemy with its power increased, it will continuously consume <ct color=#FFFFFF>Morale</ct>. With every 10 points of <ct color=#FFFFFF>Morale</ct> consumed, Lighter's Impact increases by <ct color=#2BAD00>1.33%</ct>, up to a maximum increase of <ct color=#2BAD00>13.3%</ct>, and lasting 6s.",
+        "1": "In the <ct color=#FFFFFF>Morale Burst</ct> state, Lighter will no longer automatically gain <ct color=#FFFFFF>Morale</ct> over time. If his <ct color=#FFFFFF>Morale</ct> is exhausted during a startup light punch or jab combo, he will automatically follow up with a more powerful Finishing Move.",
+        "2": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when startup light punches or jab combos hit enemies, the target's <ct color=#98EFF0>Ice RES</ct> and <ct color=#FF5521>Fire RES</ct> are reduced by 15%, lasting 30s.",
+        "3": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when the Finishing Move hits an enemy, it applies the <ct color=#FFFFFF>Collapse</ct> effect on the target, extending its Stunned duration by 3s. The <ct color=#FFFFFF>Collapse</ct> effect can trigger only once on the same target before they recover from Stun.",
+        "4": "When the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, when he switches off field, or when his <ct color=#FFFFFF>Morale</ct> runs out, Lighter will leave the <ct color=#FFFFFF>Morale Burst</ct> state, keeping any unspent <ct color=#FFFFFF>Morale</ct>."
+      },
+      {
+        "0": "Lighter automatically gains <ct color=#FFFFFF>Morale</ct> over time, at a rate of 2.9 points per second. For each point of Energy consumed by any squad member, Lighter recovers an additional 0.26 <ct color=#FFFFFF>Morale</ct>, up to a maximum of 100. When <ct color=#FFFFFF>Morale</ct> reaches 80, the next time Lighter switches into battle he immediately launches a <ct color=#FFFFFF>Quick Assist</ct>. Once <ct color=#FFFFFF>Morale</ct> is 80 or higher, executing the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> puts Lighter in the <ct color=#FFFFFF>Morale Burst</ct> state, enhancing the power of the startup light punch, jab combo, and the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct>. When a skill hits an enemy with its power increased, it will continuously consume <ct color=#FFFFFF>Morale</ct>. With every 10 points of <ct color=#FFFFFF>Morale</ct> consumed, Lighter's Impact increases by <ct color=#2BAD00>1.5%</ct>, up to a maximum increase of <ct color=#2BAD00>15%</ct>, and lasting 6s.",
+        "1": "In the <ct color=#FFFFFF>Morale Burst</ct> state, Lighter will no longer automatically gain <ct color=#FFFFFF>Morale</ct> over time. If his <ct color=#FFFFFF>Morale</ct> is exhausted during a startup light punch or jab combo, he will automatically follow up with a more powerful Finishing Move.",
+        "2": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when startup light punches or jab combos hit enemies, the target's <ct color=#98EFF0>Ice RES</ct> and <ct color=#FF5521>Fire RES</ct> are reduced by 15%, lasting 30s.",
+        "3": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when the Finishing Move hits an enemy, it applies the <ct color=#FFFFFF>Collapse</ct> effect on the target, extending its Stunned duration by 3s. The <ct color=#FFFFFF>Collapse</ct> effect can trigger only once on the same target before they recover from Stun.",
+        "4": "When the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, when he switches off field, or when his <ct color=#FFFFFF>Morale</ct> runs out, Lighter will leave the <ct color=#FFFFFF>Morale Burst</ct> state, keeping any unspent <ct color=#FFFFFF>Morale</ct>."
+      },
+      {
+        "0": "Lighter automatically gains <ct color=#FFFFFF>Morale</ct> over time, at a rate of 2.9 points per second. For each point of Energy consumed by any squad member, Lighter recovers an additional 0.26 <ct color=#FFFFFF>Morale</ct>, up to a maximum of 100. When <ct color=#FFFFFF>Morale</ct> reaches 80, the next time Lighter switches into battle he immediately launches a <ct color=#FFFFFF>Quick Assist</ct>. Once <ct color=#FFFFFF>Morale</ct> is 80 or higher, executing the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> puts Lighter in the <ct color=#FFFFFF>Morale Burst</ct> state, enhancing the power of the startup light punch, jab combo, and the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct>. When a skill hits an enemy with its power increased, it will continuously consume <ct color=#FFFFFF>Morale</ct>. With every 10 points of <ct color=#FFFFFF>Morale</ct> consumed, Lighter's Impact increases by <ct color=#2BAD00>1.67%</ct>, up to a maximum increase of <ct color=#2BAD00>16.7%</ct>, and lasting 6s.",
+        "1": "In the <ct color=#FFFFFF>Morale Burst</ct> state, Lighter will no longer automatically gain <ct color=#FFFFFF>Morale</ct> over time. If his <ct color=#FFFFFF>Morale</ct> is exhausted during a startup light punch or jab combo, he will automatically follow up with a more powerful Finishing Move.",
+        "2": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when startup light punches or jab combos hit enemies, the target's <ct color=#98EFF0>Ice RES</ct> and <ct color=#FF5521>Fire RES</ct> are reduced by 15%, lasting 30s.",
+        "3": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when the Finishing Move hits an enemy, it applies the <ct color=#FFFFFF>Collapse</ct> effect on the target, extending its Stunned duration by 3s. The <ct color=#FFFFFF>Collapse</ct> effect can trigger only once on the same target before they recover from Stun.",
+        "4": "When the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, when he switches off field, or when his <ct color=#FFFFFF>Morale</ct> runs out, Lighter will leave the <ct color=#FFFFFF>Morale Burst</ct> state, keeping any unspent <ct color=#FFFFFF>Morale</ct>."
+      },
+      {
+        "0": "Lighter automatically gains <ct color=#FFFFFF>Morale</ct> over time, at a rate of 2.9 points per second. For each point of Energy consumed by any squad member, Lighter recovers an additional 0.26 <ct color=#FFFFFF>Morale</ct>, up to a maximum of 100. When <ct color=#FFFFFF>Morale</ct> reaches 80, the next time Lighter switches into battle he immediately launches a <ct color=#FFFFFF>Quick Assist</ct>. Once <ct color=#FFFFFF>Morale</ct> is 80 or higher, executing the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> puts Lighter in the <ct color=#FFFFFF>Morale Burst</ct> state, enhancing the power of the startup light punch, jab combo, and the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct>. When a skill hits an enemy with its power increased, it will continuously consume <ct color=#FFFFFF>Morale</ct>. With every 10 points of <ct color=#FFFFFF>Morale</ct> consumed, Lighter's Impact increases by <ct color=#2BAD00>1.83%</ct>, up to a maximum increase of <ct color=#2BAD00>18.3%</ct>, and lasting 6s.",
+        "1": "In the <ct color=#FFFFFF>Morale Burst</ct> state, Lighter will no longer automatically gain <ct color=#FFFFFF>Morale</ct> over time. If his <ct color=#FFFFFF>Morale</ct> is exhausted during a startup light punch or jab combo, he will automatically follow up with a more powerful Finishing Move.",
+        "2": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when startup light punches or jab combos hit enemies, the target's <ct color=#98EFF0>Ice RES</ct> and <ct color=#FF5521>Fire RES</ct> are reduced by 15%, lasting 30s.",
+        "3": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when the Finishing Move hits an enemy, it applies the <ct color=#FFFFFF>Collapse</ct> effect on the target, extending its Stunned duration by 3s. The <ct color=#FFFFFF>Collapse</ct> effect can trigger only once on the same target before they recover from Stun.",
+        "4": "When the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, when he switches off field, or when his <ct color=#FFFFFF>Morale</ct> runs out, Lighter will leave the <ct color=#FFFFFF>Morale Burst</ct> state, keeping any unspent <ct color=#FFFFFF>Morale</ct>."
+      },
+      {
+        "0": "Lighter automatically gains <ct color=#FFFFFF>Morale</ct> over time, at a rate of 2.9 points per second. For each point of Energy consumed by any squad member, Lighter recovers an additional 0.26 <ct color=#FFFFFF>Morale</ct>, up to a maximum of 100. When <ct color=#FFFFFF>Morale</ct> reaches 80, the next time Lighter switches into battle he immediately launches a <ct color=#FFFFFF>Quick Assist</ct>. Once <ct color=#FFFFFF>Morale</ct> is 80 or higher, executing the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> puts Lighter in the <ct color=#FFFFFF>Morale Burst</ct> state, enhancing the power of the startup light punch, jab combo, and the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct>. When a skill hits an enemy with its power increased, it will continuously consume <ct color=#FFFFFF>Morale</ct>. With every 10 points of <ct color=#FFFFFF>Morale</ct> consumed, Lighter's Impact increases by <ct color=#2BAD00>2%</ct>, up to a maximum increase of <ct color=#2BAD00>20%</ct>, and lasting 6s.",
+        "1": "In the <ct color=#FFFFFF>Morale Burst</ct> state, Lighter will no longer automatically gain <ct color=#FFFFFF>Morale</ct> over time. If his <ct color=#FFFFFF>Morale</ct> is exhausted during a startup light punch or jab combo, he will automatically follow up with a more powerful Finishing Move.",
+        "2": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when startup light punches or jab combos hit enemies, the target's <ct color=#98EFF0>Ice RES</ct> and <ct color=#FF5521>Fire RES</ct> are reduced by 15%, lasting 30s.",
+        "3": "In the <ct color=#FFFFFF>Morale Burst</ct> state, when the Finishing Move hits an enemy, it applies the <ct color=#FFFFFF>Collapse</ct> effect on the target, extending its Stunned duration by 3s. The <ct color=#FFFFFF>Collapse</ct> effect can trigger only once on the same target before they recover from Stun.",
+        "4": "When the Finishing Move of the 5th hit of his <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, when he switches off field, or when his <ct color=#FFFFFF>Morale</ct> runs out, Lighter will leave the <ct color=#FFFFFF>Morale Burst</ct> state, keeping any unspent <ct color=#FFFFFF>Morale</ct>."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Fighting Spirit",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct> character or shares the same Faction:",
+      "1": "While under the <ct color=#FFFFFF>Morale Burst</ct> state, when the 5th hit of Lighter's <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, all squad members gain a stack of <ct color=#FFFFFF>Elation</ct>, stacking up to 20 times and lasting 30s. Repeated triggers reset the duration. For each stack of <ct color=#FFFFFF>Elation</ct>, an Agent's <ct color=#98EFF0>Ice DMG</ct> and <ct color=#FF5521>Fire DMG</ct> increase by 1.25%.",
+      "2": "When obtaining <ct color=#FFFFFF>Elation</ct>, if Lighter's Impact exceeds 170, every additional 10 points of Impact will increase the buff effect provided by each stack of <ct color=#FFFFFF>Elation</ct> by an extra 0.25%. When any squad member launches a <ct color=#FFFFFF>Chain Attack</ct>, it will refresh the duration of all squad members' <ct color=#FFFFFF>Elation</ct>. <ct color=#FFFFFF>Elation</ct> can increase the <ct color=#98EFF0>Ice DMG</ct> and <ct color=#FF5521>Fire DMG</ct> of Agents by a maximum of 75%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "The Champion",
+      "desc": "Among the debuffs imposed by <ct color=#FFFFFF>Core Passive: Accelerant</ct>, the <ct color=#FFFFFF>Collapse</ct> effect increases Stun duration by 5s, while further reducing <ct color=#98EFF0>Ice RES</ct> and <ct color=#FF5521>Fire RES</ct> by 10%. The more powerful Finishing Move that follows when Lighter's <ct color=#FFFFFF>Morale</ct> is completely exhausted during a startup light punch or jab combo deals 30% increased DMG.",
+      "flavor": {
+        "0": "Victory for the champion is crucial. By facing off against the strongest fighter from the opposing side, he eliminates the threat to his leader — bringing an immense morale uplift to the team.",
+        "1": "For him, only victory deserves recognition.",
+        "2": "\"The Champion cannot be defeated.\""
+      }
+    },
+    "2": {
+      "name": "Red Scarf",
+      "desc": "When applying <ct color=#FFFFFF>Collapse</ct> via <ct color=#FFFFFF>Core Passive: Accelerant</ct> to enemies, the target's Stun DMG Multiplier increases by 25%. The increase to <ct color=#98EFF0>Ice DMG</ct> and <ct color=#FF5521>Fire DMG</ct> provided by <ct color=#FFFFFF>Elation</ct> from <ct color=#FFFFFF>Additional Ability: Fighting Spirit</ct> increases to 120% of the original.",
+      "flavor": {
+        "0": "As the \"Red Scarf\" of the Sons of Calydon, Lighter is quite famous in the Outer Ring, and not just because of his fists, but also due to... his unique way of speaking.",
+        "1": "\"I enjoy taking it easy... but you wouldn't manage without me, would you?\""
+      }
+    },
+    "3": {
+      "name": "Mercenary Leader",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "\"I'm probably the last person anyone should pick as their leader.\""
+    },
+    "4": {
+      "name": "Sunglasses",
+      "desc": "When Lighter is off-field, the Energy Regen for the on-field character is increased by 10%. Upon entering the <ct color=#FFFFFF>Morale Burst</ct> state, Lighter restores 4 Energy for off-field characters. This effect can trigger once every 18s.",
+      "flavor": "\"You're asking why I wear sunglasses? Uh... it's because I get queasy at the sight of blood, I guess.\""
+    },
+    "5": {
+      "name": "Decision Maker",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Give me an order, and I'll carry it out. It's that simple.\"",
+        "1": "Lighter adjusted his sunglasses with a carefree smile.",
+        "2": "\"Just don't put me in charge of making decisions.\""
+      }
+    },
+    "6": {
+      "name": "Survivor",
+      "desc": "Lighter's <ct color=#FFFFFF>Morale</ct> recovery efficiency is increased to 200% of its original value. When Lighter lands a heavy strike on enemies during a <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge Counter</ct>, <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Quick Assist</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, it will trigger the <ct color=#FFFFFF>Blazing Impact</ct> effect, dealing 250% of ATK as <ct color=#FF5521>Fire DMG</ct>. This effect can trigger once every 8s on each enemy. If Lighter's Impact exceeds 170 points, each additional point will further increase the multiplier of <ct color=#FFFFFF>Blazing Impact</ct> by 5%, up to a maximum increase of 500%. The more powerful Finishing Move that follows when Lighter's <ct color=#FFFFFF>Morale</ct> is completely exhausted during a light punch or jab combo will trigger an additional activation of <ct color=#FFFFFF>Blazing Impact</ct> when hitting an enemy, ignoring the effect's cooldown.",
+      "flavor": {
+        "0": "If given the chance to do it all over again, he would never opt to be the only survivor.",
+        "1": "Unfortunately, fate is rarely a choice."
+      }
+    }
+  }
 }

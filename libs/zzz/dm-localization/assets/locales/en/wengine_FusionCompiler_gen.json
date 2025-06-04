@@ -1,14 +1,33 @@
 {
   "name": "Fusion Compiler",
-  "desc": "Embedded with a supercomputer core, this latest-model W-Engine can compile operating code for machines at an astonishing speed, or quickly collect battlefield data to provide support for the whole squad. Of course, for Grace, this W-Engine is just a little toy for her to communicate with her \"silicon-based children.\"\n\n<ct color=#959595>\"Looking carefully... you're handsome in your own way! Oh, it says in the manual that once it's sealed, it shouldn't be opened... Hmmm... Well, how would we know if we don't give it a try?!\" — Grace, suddenly enthusiastic while holding the engine in her hand</ct>",
+  "desc": {
+    "0": "Embedded with a supercomputer core, this latest-model W-Engine can compile operating code for machines at an astonishing speed, or quickly collect battlefield data to provide support for the whole squad. Of course, for Grace, this W-Engine is just a little toy for her to communicate with her \"silicon-based children.\"",
+    "1": "",
+    "2": "<ct color=#959595>\"Looking carefully... you're handsome in your own way! Oh, it says in the manual that once it's sealed, it shouldn't be opened... Hmmm... Well, how would we know if we don't give it a try?!\" — Grace, suddenly enthusiastic while holding the engine in her hand</ct>"
+  },
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
   "desc3": "The latest W-Engine that possesses a hypercalculation core. It can compile operational codes for machines at top speed. This model is favored by Grace.",
   "phase": "Data Flood",
   "phaseDescs": [
-    "Increases ATK by <ct color=#2BAD00>12%</ct>.\nWhen using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>25</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
-    "Increases ATK by <ct color=#2BAD00>15%</ct>.\nWhen using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>31</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
-    "Increases ATK by <ct color=#2BAD00>18%</ct>.\nWhen using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>37</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
-    "Increases ATK by <ct color=#2BAD00>21%</ct>.\nWhen using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>43</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
-    "Increases ATK by <ct color=#2BAD00>24%</ct>.\nWhen using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>50</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+    {
+      "0": "Increases ATK by <ct color=#2BAD00>12%</ct>.",
+      "1": "When using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>25</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "Increases ATK by <ct color=#2BAD00>15%</ct>.",
+      "1": "When using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>31</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "Increases ATK by <ct color=#2BAD00>18%</ct>.",
+      "1": "When using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>37</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "Increases ATK by <ct color=#2BAD00>21%</ct>.",
+      "1": "When using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>43</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "Increases ATK by <ct color=#2BAD00>24%</ct>.",
+      "1": "When using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>50</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+    }
   ]
 }

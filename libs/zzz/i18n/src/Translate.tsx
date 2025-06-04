@@ -1,6 +1,12 @@
 'use client'
-import { ColorText, SqBadge, TranslateBase } from '@genshin-optimizer/common/ui'
+import {
+  ColorText,
+  ImgIcon,
+  SqBadge,
+  TranslateBase,
+} from '@genshin-optimizer/common/ui'
 import '@genshin-optimizer/zzz/theme' // import to validate typing for color variants
+import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { ReactNode } from 'react'
 
 const textComponents = {
@@ -11,6 +17,16 @@ const textComponents = {
   physical: <ColorText color="physical" />,
   ether: <ColorText color="ether" />,
   ct: <ColorText />,
+  IconNormal: <ImgIcon src={commonDefIcon('basicFlat')} size={1.5} />,
+  IconEvade: <ImgIcon src={commonDefIcon('dodgeFlat')} size={1.5} />,
+  IconSpecial: <ImgIcon src={commonDefIcon('specialFlat')} size={1.5} />,
+  IconSpecialReady: (
+    <ImgIcon src={commonDefIcon('specialReadyFlat')} size={1.5} />
+  ),
+  IconUltimateReady: (
+    <ImgIcon src={commonDefIcon('chainReadyFlat')} size={1.5} />
+  ),
+  IconSwitch: <ImgIcon src={commonDefIcon('assistFlat')} size={1.5} />,
 }
 
 const badgeComponents = {

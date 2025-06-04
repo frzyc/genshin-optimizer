@@ -289,6 +289,28 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackWarmupSparks": [],
+      "BasicAttackFireSuppression": []
+    },
+    "dodge": {
+      "DodgeTemperedFire": [],
+      "DashAttackBlazingFire": [],
+      "DashAttackFireSuppression": [],
+      "DodgeCounterBackdraft": []
+    },
+    "special": {
+      "SpecialAttackRagingFire": [],
+      "EXSpecialAttackFerventFire": []
+    },
+    "chain": { "ChainAttackUpliftingFlame": [], "UltimateBellowingFlame": [] },
+    "assist": {
+      "QuickAssistCoveringFire": [],
+      "DefensiveAssistHoldTheLine": [],
+      "AssistFollowUpReignition": []
+    }
+  },
   "coreParams": [[0.35, 0.408, 0.466, 0.525, 0.583, 0.641, 0.7]],
   "abilityParams": [11, 0.1, 0.225],
   "mindscapeParams": [

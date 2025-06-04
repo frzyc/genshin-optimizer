@@ -1,3 +1,242 @@
 {
-  "name": "Piper"
+  "name": "Piper",
+  "fullName": "Piper",
+  "basic": {
+    "BasicAttackLoadUpAndRollOut": {
+      "name": "Basic Attack: Load Up and Roll Out",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 4 slashes, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeHandbrakeDrift": {
+      "name": "Dodge: Handbrake Drift",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackPedalToTheMetal": {
+      "name": "Dash Attack: Pedal to the Metal",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterPowerDrift": {
+      "name": "Dodge Counter: Power Drift",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Unleash a downward smash attack in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackTireSpin": {
+      "name": "Special Attack: Tire Spin",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Piper spins and launches a sweeping slash around her, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Hold <IconSpecial /> to extend the skill duration, unleashing increasingly powerful spinning slashes and increasing the charge level of the skill up to 2 times.",
+        "3": "If the skill is used after the first 3 hits of a <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct>, or <ct color=#FFFFFF>Dodge Counter</ct>, you can quickly activate <ct color=#FFFFFF>Special Attack: Tire Spin</ct> of an increased charge level.",
+        "4": "During the skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "SpecialAttackOneTrillionTons": {
+      "name": "Special Attack: One Trillion Tons",
+      "desc": {
+        "0": "While <ct color=#FFFFFF>Special Attack: Tire Spin</ct> is active, release <IconSpecial /> to trigger a downward smash attack based on the charge level of <ct color=#FFFFFF>Special Attack: Tire Spin</ct>, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "1": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Level-1 Charged Attack ",
+        "Level-2 Charged Attack ",
+        "Level-3 Charged Attack ",
+        "Level-1 Charged ",
+        "Level-2 Charged "
+      ]
+    },
+    "EXSpecialAttackEngineSpin": {
+      "name": "EX Special Attack: Engine Spin",
+      "desc": {
+        "0": "With enough Energy, continue holding <IconSpecialReady /> after <ct color=#FFFFFF>Special Attack: Tire Spin</ct> reaches maximum charge level to activate:",
+        "1": "Rapidly spins, unleashing powerful spinning slashes around her and dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "This skill consumes Energy continuously for up to 3s.",
+        "3": "During the skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%."
+      },
+      "params": [
+        " Every Spin",
+        "Energy Cost"
+      ]
+    },
+    "EXSpecialAttackReallyHeavy": {
+      "name": "EX Special Attack: Really Heavy",
+      "desc": {
+        "0": "During <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct>, release <IconSpecialReady /> to activate:",
+        "1": "Piper unleashes a downward smash attack, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "If the duration of <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct> reaches its limit or Energy drops to 20, <ct color=#FFFFFF>EX Special Attack: Really Heavy</ct> will automatically activate.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackBuckleUp": {
+      "name": "Chain Attack: Buckle Up",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful downward smash at enemies ahead in a large area, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateHoldOnTight": {
+      "name": "Ultimate: Hold~ On~ Tight~",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Rapidly spins, unleashing powerful spinning slashes at enemies in a large area ahead, followed by a downward smash, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistBrakeTap": {
+      "name": "Quick Assist: Brake Tap",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Launches a downward smash attack at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistEmergencyBrake": {
+      "name": "Defensive Assist: Emergency Brake",
+      "desc": {
+        "0": "When the character on field is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpOvertakingManeuver": {
+      "name": "Assist Follow-Up: Overtaking Maneuver",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Charge and slash enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Power Charge",
+    "desc": [
+      "When Piper's <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, she gains 1 stack of <ct color=#FFFFFF>Power</ct>, up to a maximum of 20 stacks, lasting for 12s. Repeated triggers reset the duration. For every stack of <ct color=#FFFFFF>Power</ct>, Piper's <ct color=#F0D12B>Physical Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>2%</ct>.",
+      "When Piper's <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, she gains 1 stack of <ct color=#FFFFFF>Power</ct>, up to a maximum of 20 stacks, lasting for 12s. Repeated triggers reset the duration. For every stack of <ct color=#FFFFFF>Power</ct>, Piper's <ct color=#F0D12B>Physical Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>2.3%</ct>.",
+      "When Piper's <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, she gains 1 stack of <ct color=#FFFFFF>Power</ct>, up to a maximum of 20 stacks, lasting for 12s. Repeated triggers reset the duration. For every stack of <ct color=#FFFFFF>Power</ct>, Piper's <ct color=#F0D12B>Physical Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>2.6%</ct>.",
+      "When Piper's <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, she gains 1 stack of <ct color=#FFFFFF>Power</ct>, up to a maximum of 20 stacks, lasting for 12s. Repeated triggers reset the duration. For every stack of <ct color=#FFFFFF>Power</ct>, Piper's <ct color=#F0D12B>Physical Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>3%</ct>.",
+      "When Piper's <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, she gains 1 stack of <ct color=#FFFFFF>Power</ct>, up to a maximum of 20 stacks, lasting for 12s. Repeated triggers reset the duration. For every stack of <ct color=#FFFFFF>Power</ct>, Piper's <ct color=#F0D12B>Physical Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>3.3%</ct>.",
+      "When Piper's <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, she gains 1 stack of <ct color=#FFFFFF>Power</ct>, up to a maximum of 20 stacks, lasting for 12s. Repeated triggers reset the duration. For every stack of <ct color=#FFFFFF>Power</ct>, Piper's <ct color=#F0D12B>Physical Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>3.6%</ct>.",
+      "When Piper's <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, she gains 1 stack of <ct color=#FFFFFF>Power</ct>, up to a maximum of 20 stacks, lasting for 12s. Repeated triggers reset the duration. For every stack of <ct color=#FFFFFF>Power</ct>, Piper's <ct color=#F0D12B>Physical Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>4%</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Synced Acceleration",
+    "desc": {
+      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "1": "When Piper has 20 or more stacks of <ct color=#FFFFFF>Power</ct>, all squad members' DMG is increased by 18%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Leisure Moment",
+      "desc": "When Piper's <ct color=#FFFFFF>Special Attack: Tire Spin</ct>, <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct>, or <ct color=#FFFFFF>Ultimate</ct> hits an enemy with a spinning slash, there is a 50% chance to gain an additional stack of <ct color=#FFFFFF>Power</ct>. The maximum stack limit of <ct color=#FFFFFF>Power</ct> is increased to 30.",
+      "flavor": {
+        "0": "One ordinary morning at Sons of Calydon, Piper lets out a lazy yawn.",
+        "1": "\"Good morning—\"",
+        "2": "\"Can we have another relaxing day today? It's important to take it easy, or else lil ol' me might end up working meself to death—\""
+      }
+    },
+    "2": {
+      "name": "Motivation",
+      "desc": "During <ct color=#FFFFFF>Special Attack: Tire Spin</ct> and <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct>, Piper's movement speed increases. When using <ct color=#FFFFFF>Special Attack: One Trillion Tons</ct>, <ct color=#FFFFFF>EX Special Attack: Really Heavy</ct>, or <ct color=#FFFFFF>Ultimate</ct> to launch a downward smash that hits an enemy, the <ct color=#F0D12B>Physical DMG</ct> dealt by the move is increased by 10%. For each stack of <ct color=#FFFFFF>Power</ct>, this buff is further increased by 1%.",
+      "flavor": {
+        "0": "A bit of effort now means more rest later.",
+        "1": "Though, it'd be even better if I didn't have to put in any effort at all — Piper stretches, pats the soft bed in her truck, and lies down."
+      }
+    },
+    "3": {
+      "name": "Truck Expert",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Piper is always all about trucks.",
+        "1": "Even when she's fast asleep, the rumble of an engine snaps her awake in an instant:",
+        "2": "\"100 horsepower, 5-ton capacity... must be the new light truck from Three Gates Industries!\""
+      }
+    },
+    "4": {
+      "name": "Refined Techniques",
+      "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, Piper recovers 20 Energy. This effect can trigger once every 30s.",
+      "flavor": {
+        "0": "Riding with Piper is a heart-pounding experience.",
+        "1": "By the time she drawls out, \"Hold~ on~ tight~,\" the truck is already barreling down the road.",
+        "2": "She always gets you to your destination fast—though your nerves might take a hit."
+      }
+    },
+    "5": {
+      "name": "Personal Hobbies",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Piper seems to have some hobbies that are not what you'd expect from her.",
+        "1": "\"This horse looks like a real runner... Hmm, but not many people are betting on it. Guess the one with the higher win rate is the safer bet...\"",
+        "2": "\"Burp— Nitro-Fuel... I can drink more... Gimme another one!\""
+      }
+    },
+    "6": {
+      "name": "Mild Excitement",
+      "desc": "Increases the duration limit of <ct color=#FFFFFF>EX Special Attack: Engine Spin</ct> by 2s and extends the duration of <ct color=#FFFFFF>Power</ct> by 4s.",
+      "flavor": {
+        "0": "As you may already know, Piper's biggest dream is to live a life of perpetual relaxation.",
+        "1": "But right now, her usually half-closed eyes are surprisingly bright and alert.",
+        "2": "\"If it's for you... I suppose lil ol' me can try a little harder~\""
+      }
+    }
+  }
 }

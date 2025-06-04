@@ -1,6 +1,10 @@
 {
   "name": "Weeping Cradle",
-  "desc": "A special W-Engine with multiple layers embedded inside. It contains a special Ether charging layer that can quickly recharge special-model Bangboo and custom-made combat equipment. Even though this W-Engine looks like a cruel confinement chamber, Rina's Bangboo seem to enjoy sneaking in there to recharge their batteries. They even treat resting inside as a cozy reward.\n\n<ct color=#959595>\"Shhh... The two little ones are resting; if they're woken suddenly they'll be sure to cause a ruckus. Let's avoid making any noise while we enjoy our tea.\" — Rina, giving a gentle reminder as she serves tea to friends</ct>",
+  "desc": {
+    "0": "A special W-Engine with multiple layers embedded inside. It contains a special Ether charging layer that can quickly recharge special-model Bangboo and custom-made combat equipment. Even though this W-Engine looks like a cruel confinement chamber, Rina's Bangboo seem to enjoy sneaking in there to recharge their batteries. They even treat resting inside as a cozy reward.",
+    "1": "",
+    "2": "<ct color=#959595>\"Shhh... The two little ones are resting; if they're woken suddenly they'll be sure to cause a ruckus. Let's avoid making any noise while we enjoy our tea.\" — Rina, giving a gentle reminder as she serves tea to friends</ct>"
+  },
   "desc2": "Equip to increase Support Agents' combat capabilities",
   "desc3": "A special W-Engine with multiple layers embedded inside. It can quickly recharge \tspecial-model Bangboo and custom-made combat equipment. This model is favored by Rina.",
   "phase": "Punishment",

@@ -601,54 +601,6 @@ export const formulas = {
     },
   },
   Candace: {
-    burst_skill: {
-      sheet: 'Candace',
-      name: 'burst_skill',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Candace',
-        move: 'burst',
-        name: 'burst_skill',
-      },
-    },
-    burst_wave: {
-      sheet: 'Candace',
-      name: 'burst_wave',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Candace',
-        move: 'burst',
-        name: 'burst_wave',
-      },
-    },
-    c6: {
-      sheet: 'Candace',
-      name: 'c6',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Candace',
-        move: 'burst',
-        name: 'c6',
-      },
-    },
-    charged: {
-      sheet: 'Candace',
-      name: 'charged',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Candace',
-        move: 'charged',
-        name: 'charged',
-      },
-    },
     normal_0: {
       sheet: 'Candace',
       name: 'normal_0',
@@ -709,6 +661,18 @@ export const formulas = {
         name: 'normal_4',
       },
     },
+    charged: {
+      sheet: 'Candace',
+      name: 'charged',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Candace',
+        move: 'charged',
+        name: 'charged',
+      },
+    },
     plunging_dmg: {
       sheet: 'Candace',
       name: 'plunging_dmg',
@@ -721,18 +685,6 @@ export const formulas = {
         name: 'plunging_dmg',
       },
     },
-    plunging_high: {
-      sheet: 'Candace',
-      name: 'plunging_high',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Candace',
-        move: 'plunging',
-        name: 'plunging_high',
-      },
-    },
     plunging_low: {
       sheet: 'Candace',
       name: 'plunging_low',
@@ -743,6 +695,18 @@ export const formulas = {
         sheet: 'Candace',
         move: 'plunging',
         name: 'plunging_low',
+      },
+    },
+    plunging_high: {
+      sheet: 'Candace',
+      name: 'plunging_high',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Candace',
+        move: 'plunging',
+        name: 'plunging_high',
       },
     },
     skill_basic: {
@@ -769,6 +733,41 @@ export const formulas = {
         name: 'skill_charged',
       },
     },
+    burst_skill: {
+      sheet: 'Candace',
+      name: 'burst_skill',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Candace',
+        move: 'burst',
+        name: 'burst_skill',
+      },
+    },
+    burst_wave: {
+      sheet: 'Candace',
+      name: 'burst_wave',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Candace',
+        move: 'burst',
+        name: 'burst_wave',
+      },
+    },
+    skill_shield: {
+      sheet: 'Candace',
+      name: 'skill_shield',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'shield',
+        sheet: 'Candace',
+        name: 'skill_shield',
+      },
+    },
     skill_hydroShield: {
       sheet: 'Candace',
       name: 'skill_hydroShield',
@@ -781,15 +780,16 @@ export const formulas = {
         name: 'skill_hydroShield',
       },
     },
-    skill_shield: {
+    c6: {
       sheet: 'Candace',
-      name: 'skill_shield',
+      name: 'c6',
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'shield',
+        q: 'dmg',
         sheet: 'Candace',
-        name: 'skill_shield',
+        move: 'burst',
+        name: 'c6',
       },
     },
   },
@@ -1438,30 +1438,6 @@ export const formulas = {
     },
   },
   Nahida: {
-    charged: {
-      sheet: 'Nahida',
-      name: 'charged',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Nahida',
-        move: 'charged',
-        name: 'charged',
-      },
-    },
-    karma_dmg: {
-      sheet: 'Nahida',
-      name: 'karma_dmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Nahida',
-        move: 'skill',
-        name: 'karma_dmg',
-      },
-    },
     normal_0: {
       sheet: 'Nahida',
       name: 'normal_0',
@@ -1510,6 +1486,18 @@ export const formulas = {
         name: 'normal_3',
       },
     },
+    charged: {
+      sheet: 'Nahida',
+      name: 'charged',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nahida',
+        move: 'charged',
+        name: 'charged',
+      },
+    },
     plunging_dmg: {
       sheet: 'Nahida',
       name: 'plunging_dmg',
@@ -1520,18 +1508,6 @@ export const formulas = {
         sheet: 'Nahida',
         move: 'plunging',
         name: 'plunging_dmg',
-      },
-    },
-    plunging_high: {
-      sheet: 'Nahida',
-      name: 'plunging_high',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Nahida',
-        move: 'plunging',
-        name: 'plunging_high',
       },
     },
     plunging_low: {
@@ -1546,16 +1522,16 @@ export const formulas = {
         name: 'plunging_low',
       },
     },
-    skill_hold: {
+    plunging_high: {
       sheet: 'Nahida',
-      name: 'skill_hold',
+      name: 'plunging_high',
       tag: {
         et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
-        move: 'skill',
-        name: 'skill_hold',
+        move: 'plunging',
+        name: 'plunging_high',
       },
     },
     skill_press: {
@@ -1568,6 +1544,30 @@ export const formulas = {
         sheet: 'Nahida',
         move: 'skill',
         name: 'skill_press',
+      },
+    },
+    skill_hold: {
+      sheet: 'Nahida',
+      name: 'skill_hold',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nahida',
+        move: 'skill',
+        name: 'skill_hold',
+      },
+    },
+    karma_dmg: {
+      sheet: 'Nahida',
+      name: 'karma_dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nahida',
+        move: 'skill',
+        name: 'karma_dmg',
       },
     },
   },
@@ -1600,54 +1600,6 @@ export const formulas = {
     },
   },
   Nilou: {
-    burst_aeon: {
-      sheet: 'Nilou',
-      name: 'burst_aeon',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Nilou',
-        move: 'burst',
-        name: 'burst_aeon',
-      },
-    },
-    burst_skill: {
-      sheet: 'Nilou',
-      name: 'burst_skill',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Nilou',
-        move: 'burst',
-        name: 'burst_skill',
-      },
-    },
-    charged_1: {
-      sheet: 'Nilou',
-      name: 'charged_1',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Nilou',
-        move: 'charged',
-        name: 'charged_1',
-      },
-    },
-    charged_2: {
-      sheet: 'Nilou',
-      name: 'charged_2',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Nilou',
-        move: 'charged',
-        name: 'charged_2',
-      },
-    },
     normal_0: {
       sheet: 'Nilou',
       name: 'normal_0',
@@ -1684,6 +1636,30 @@ export const formulas = {
         name: 'normal_2',
       },
     },
+    charged_1: {
+      sheet: 'Nilou',
+      name: 'charged_1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nilou',
+        move: 'charged',
+        name: 'charged_1',
+      },
+    },
+    charged_2: {
+      sheet: 'Nilou',
+      name: 'charged_2',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nilou',
+        move: 'charged',
+        name: 'charged_2',
+      },
+    },
     plunging_dmg: {
       sheet: 'Nilou',
       name: 'plunging_dmg',
@@ -1694,6 +1670,18 @@ export const formulas = {
         sheet: 'Nilou',
         move: 'plunging',
         name: 'plunging_dmg',
+      },
+    },
+    plunging_low: {
+      sheet: 'Nilou',
+      name: 'plunging_low',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nilou',
+        move: 'plunging',
+        name: 'plunging_low',
       },
     },
     plunging_high: {
@@ -1708,16 +1696,16 @@ export const formulas = {
         name: 'plunging_high',
       },
     },
-    plunging_low: {
+    skill_skill: {
       sheet: 'Nilou',
-      name: 'plunging_low',
+      name: 'skill_skill',
       tag: {
         et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
-        move: 'plunging',
-        name: 'plunging_low',
+        move: 'skill',
+        name: 'skill_skill',
       },
     },
     skill_dance1: {
@@ -1744,42 +1732,6 @@ export const formulas = {
         name: 'skill_dance2',
       },
     },
-    skill_moon: {
-      sheet: 'Nilou',
-      name: 'skill_moon',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Nilou',
-        move: 'skill',
-        name: 'skill_moon',
-      },
-    },
-    skill_skill: {
-      sheet: 'Nilou',
-      name: 'skill_skill',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Nilou',
-        move: 'skill',
-        name: 'skill_skill',
-      },
-    },
-    skill_wheel: {
-      sheet: 'Nilou',
-      name: 'skill_wheel',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Nilou',
-        move: 'skill',
-        name: 'skill_wheel',
-      },
-    },
     skill_whirl1: {
       sheet: 'Nilou',
       name: 'skill_whirl1',
@@ -1802,6 +1754,54 @@ export const formulas = {
         sheet: 'Nilou',
         move: 'skill',
         name: 'skill_whirl2',
+      },
+    },
+    skill_wheel: {
+      sheet: 'Nilou',
+      name: 'skill_wheel',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nilou',
+        move: 'skill',
+        name: 'skill_wheel',
+      },
+    },
+    skill_moon: {
+      sheet: 'Nilou',
+      name: 'skill_moon',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nilou',
+        move: 'skill',
+        name: 'skill_moon',
+      },
+    },
+    burst_skill: {
+      sheet: 'Nilou',
+      name: 'burst_skill',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nilou',
+        move: 'burst',
+        name: 'burst_skill',
+      },
+    },
+    burst_aeon: {
+      sheet: 'Nilou',
+      name: 'burst_aeon',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nilou',
+        move: 'burst',
+        name: 'burst_aeon',
       },
     },
   },
@@ -1844,19 +1844,6 @@ export const formulas = {
         sheet: 'Ororon',
         move: 'normal',
         name: 'normal1',
-      },
-    },
-  },
-  PrototypeAmber: {
-    heal: {
-      sheet: 'PrototypeAmber',
-      name: 'heal',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'heal',
-        sheet: 'PrototypeAmber',
-        name: 'heal',
       },
     },
   },
@@ -2065,76 +2052,6 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Tighnari',
-        move: 'normal',
-        name: 'normal1',
-      },
-    },
-  },
-  TravelerAnemo: {
-    normal1: {
-      sheet: 'TravelerAnemo',
-      name: 'normal1',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'TravelerAnemo',
-        move: 'normal',
-        name: 'normal1',
-      },
-    },
-  },
-  TravelerDendro: {
-    normal1: {
-      sheet: 'TravelerDendro',
-      name: 'normal1',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'TravelerDendro',
-        move: 'normal',
-        name: 'normal1',
-      },
-    },
-  },
-  TravelerElectro: {
-    normal1: {
-      sheet: 'TravelerElectro',
-      name: 'normal1',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'TravelerElectro',
-        move: 'normal',
-        name: 'normal1',
-      },
-    },
-  },
-  TravelerGeo: {
-    normal1: {
-      sheet: 'TravelerGeo',
-      name: 'normal1',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'TravelerGeo',
-        move: 'normal',
-        name: 'normal1',
-      },
-    },
-  },
-  TravelerHydro: {
-    normal1: {
-      sheet: 'TravelerHydro',
-      name: 'normal1',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'TravelerHydro',
         move: 'normal',
         name: 'normal1',
       },
@@ -2389,6 +2306,89 @@ export const formulas = {
         sheet: 'Zhongli',
         move: 'normal',
         name: 'normal1',
+      },
+    },
+  },
+  TravelerAnemo: {
+    normal1: {
+      sheet: 'TravelerAnemo',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TravelerAnemo',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  TravelerGeo: {
+    normal1: {
+      sheet: 'TravelerGeo',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TravelerGeo',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  TravelerElectro: {
+    normal1: {
+      sheet: 'TravelerElectro',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TravelerElectro',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  TravelerDendro: {
+    normal1: {
+      sheet: 'TravelerDendro',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TravelerDendro',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  TravelerHydro: {
+    normal1: {
+      sheet: 'TravelerHydro',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TravelerHydro',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  PrototypeAmber: {
+    heal: {
+      sheet: 'PrototypeAmber',
+      name: 'heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'PrototypeAmber',
+        name: 'heal',
       },
     },
   },

@@ -20,10 +20,15 @@ import { qtMap } from './qtMap'
 export function TagDisplay({
   tag,
   showPercent,
-}: { tag: Tag; showPercent?: boolean }) {
+  preventRecursion,
+}: { tag: Tag; showPercent?: boolean; preventRecursion?: boolean }) {
   return (
     <ColorText color={getVariant(tag)}>
-      <TagStrDisplay tag={tag} showPercent={showPercent} />
+      <TagStrDisplay
+        tag={tag}
+        showPercent={showPercent}
+        preventRecursion={preventRecursion}
+      />
     </ColorText>
   )
 }
@@ -64,10 +69,11 @@ const labelMap = {
 function TagStrDisplay({
   tag,
   showPercent,
-}: { tag: Tag; showPercent?: boolean }) {
+  preventRecursion,
+}: { tag: Tag; showPercent?: boolean; preventRecursion?: boolean }) {
   const calc = useZzzCalcContext()
   const title = tagFieldMap.subset(tag)[0]?.title
-  if (title) return title
+  if (title && !preventRecursion) return title
   // Conditional label handling
   if (tag.qt === 'cond' && tag.q && tag.sheet && calc) {
     const cond = condMap.get(`${tag.sheet}:${tag.q}`)

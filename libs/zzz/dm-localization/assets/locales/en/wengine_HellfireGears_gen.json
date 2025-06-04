@@ -1,14 +1,33 @@
 {
   "name": "Hellfire Gears",
-  "desc": "This W-Engine is renowned for its ultra power. Modified by Koleda, its energy level has almost exceeded the safety limit. Although this W-Engine is entirely designed for damage output, and the Speedup and Blaze functions have been merged into one, this is precisely what Koleda wanted.\n\n<ct color=#959595>\"I've got a clear shot at your shins, you know? So you'd better think twice before saying I'm short, got it?\" — Koleda, warning a rude business partner</ct>",
+  "desc": {
+    "0": "This W-Engine is renowned for its ultra power. Modified by Koleda, its energy level has almost exceeded the safety limit. Although this W-Engine is entirely designed for damage output, and the Speedup and Blaze functions have been merged into one, this is precisely what Koleda wanted.",
+    "1": "",
+    "2": "<ct color=#959595>\"I've got a clear shot at your shins, you know? So you'd better think twice before saying I'm short, got it?\" — Koleda, warning a rude business partner</ct>"
+  },
   "desc2": "Equip to increase Stun Agents' combat capabilities",
   "desc3": "A functional W-Engine with ultra-high power capacity. Modified by Koleda, its energy level has almost exceeded the safety limit.",
   "phase": "Passionate Construction",
   "phaseDescs": [
-    "While off-field, the equipper's Energy Regen increases by <ct color=#2BAD00>0.6</ct>/s.\nWhen using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Impact is increased by <ct color=#2BAD00>10%</ct> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
-    "While off-field, the equipper's Energy Regen increases by <ct color=#2BAD00>0.75</ct>/s.\nWhen using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Impact is increased by <ct color=#2BAD00>12.5%</ct> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
-    "While off-field, the equipper's Energy Regen increases by <ct color=#2BAD00>0.9</ct>/s.\nWhen using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Impact is increased by <ct color=#2BAD00>15%</ct> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
-    "While off-field, the equipper's Energy Regen increases by <ct color=#2BAD00>1.05</ct>/s.\nWhen using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Impact is increased by <ct color=#2BAD00>17.5%</ct> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
-    "While off-field, the equipper's Energy Regen increases by <ct color=#2BAD00>1.2</ct>/s.\nWhen using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Impact is increased by <ct color=#2BAD00>20%</ct> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
+    {
+      "0": "While off-field, the equipper's Energy Regen increases by <ct color=#2BAD00>0.6</ct>/s.",
+      "1": "When using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Impact is increased by <ct color=#2BAD00>10%</ct> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "While off-field, the equipper's Energy Regen increases by <ct color=#2BAD00>0.75</ct>/s.",
+      "1": "When using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Impact is increased by <ct color=#2BAD00>12.5%</ct> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "While off-field, the equipper's Energy Regen increases by <ct color=#2BAD00>0.9</ct>/s.",
+      "1": "When using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Impact is increased by <ct color=#2BAD00>15%</ct> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "While off-field, the equipper's Energy Regen increases by <ct color=#2BAD00>1.05</ct>/s.",
+      "1": "When using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Impact is increased by <ct color=#2BAD00>17.5%</ct> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "While off-field, the equipper's Energy Regen increases by <ct color=#2BAD00>1.2</ct>/s.",
+      "1": "When using an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Impact is increased by <ct color=#2BAD00>20%</ct> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
+    }
   ]
 }

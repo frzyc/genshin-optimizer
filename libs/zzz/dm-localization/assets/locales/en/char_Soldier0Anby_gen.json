@@ -1,3 +1,250 @@
 {
-  "name": "Soldier 0 - Anby"
+  "name": "Soldier 0 - Anby",
+  "fullName": "Soldier 0 - Anby",
+  "basic": {
+    "BasicAttackPenetratingShock": {
+      "name": "Basic Attack: Penetrating Shock",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Perform up to five slashes ahead, dealing <ct color=#2EB6FF>Electric DMG</ct>. After the 4th attack hits the enemy, repeatedly press or hold <IconNormal /> to quickly pass through enemies in front up to 5 times."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "3rd-Hit Finisher ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeStrobe": {
+      "name": "Dodge: Strobe",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackTorrent": {
+      "name": "Dash Attack: Torrent",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Perform a horizontal slash forward, then follow up with a thrust attack, dealing <ct color=#2EB6FF>Electric DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterGroundFlashCounter": {
+      "name": "Dodge Counter: Ground Flash Counter",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Repeatedly slash enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackCelestialThunder": {
+      "name": "Special Attack: Celestial Thunder",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Dash diagonally forward, then unleash a cross slash, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "SpecialAttackAzureFlash": {
+      "name": "Special Attack: Azure Flash",
+      "desc": {
+        "0": "When Soldier 0 - Anby's attacks hit an enemy, they apply the <ct color=#FFFFFF>Silver Star</ct> mark and charges the target ",
+        "1": "For every one-third of charge, the enemy receives 1 stack of <ct color=#FFFFFF>White Thunder</ct>, stacking up to 3 times.",
+        "2": "When the enemy has <ct color=#FFFFFF>White Thunder</ct>, press <IconSpecial /> to activate:",
+        "3": "Quickly dash forward, slashing through enemies and dealing multiple hits of <ct color=#2EB6FF>Electric DMG</ct>.",
+        "4": "When the skill hits an enemy, it will consume 1 stack of <ct color=#FFFFFF>White Thunder</ct> to trigger an <ct color=#FFFFFF>Aftershock</ct> that deals 1 extra instance of <ct color=#2EB6FF>Electric DMG</ct>.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "White Thunder ",
+        ""
+      ]
+    },
+    "SpecialAttackThunderSmite": {
+      "name": "Special Attack: Thunder Smite",
+      "desc": {
+        "0": "When the additional damage from <ct color=#FFFFFF>White Thunder</ct> triggers 3 times on the same enemy:",
+        "1": "A lightning strike will fall at the enemy's location, dealing <ct color=#2EB6FF>Electric DMG</ct> to enemies within range.",
+        "2": "This DMG is considered <ct color=#FFFFFF>Aftershock</ct> DMG."
+      },
+      "params": [
+        "Thunder Smite "
+      ]
+    },
+    "EXSpecialAttackSunderingBolt": {
+      "name": "EX Special Attack: Sundering Bolt",
+      "desc": {
+        "0": "With enough energy, hold <IconSpecialReady /> to activate:",
+        "1": "Combines her twin swords and throws them forward for a high-speed slash, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "When the skill hits an enemy, it will fully charge <ct color=#FFFFFF>Silver Star</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackLeapingThunderstrike": {
+      "name": "Chain Attack: Leaping Thunderstrike",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Leap forward, then quickly dive and perform a cross slash, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateVoidstrike": {
+      "name": "Ultimate: Voidstrike",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Perform a powerful series of slashes at a large area in front, followed by a lightning strike, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "When the skill hits an enemy, it will fully charge <ct color=#FFFFFF>Silver Star</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistCloudFlash": {
+      "name": "Quick Assist: Cloud Flash",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Repeatedly slash enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistCounterSurge": {
+      "name": "Defensive Assist: Counter Surge",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpConductingBlow": {
+      "name": "Assist Follow-Up: Conducting Blow",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Dash forward and unleash a series of slashes at enemies ahead, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Voltage Gap",
+    "desc": [
+      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>12.5%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>15%</ct> of Soldier 0 - Anby's CRIT DMG.",
+      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>14.5%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>17.5%</ct> of Soldier 0 - Anby's CRIT DMG.",
+      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>16.5%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>20%</ct> of Soldier 0 - Anby's CRIT DMG.",
+      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>18.8%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>22.5%</ct> of Soldier 0 - Anby's CRIT DMG.",
+      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>20.8%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>25%</ct> of Soldier 0 - Anby's CRIT DMG.",
+      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>23%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>27.5%</ct> of Soldier 0 - Anby's CRIT DMG.",
+      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>25%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>30%</ct> of Soldier 0 - Anby's CRIT DMG."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Voltage Surge",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> or <ct color=#FFFFFF>Support</ct> character:",
+      "1": "Soldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' <ct color=#FFFFFF>Aftershock</ct> DMG to enemies with a <ct color=#FFFFFF>Silver Star</ct> mark increases by 25%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Static Charge",
+      "desc": "When Soldier 0 - Anby uses an <ct color=#FFFFFF>EX Special Attack</ct> to hit an enemy, it triggers the additional DMG from <ct color=#FFFFFF>White Thunder</ct> 3 times. This effect does not consume any <ct color=#FFFFFF>White Thunder</ct> stacks.",
+      "flavor": {
+        "0": "\"Please keep my business here a secret from Nicole and the others.\"",
+        "1": "\"Alright. Are you sleeping on the couch downstairs or upstairs?\"",
+        "2": "\"...Proxy... Thank you.\""
+      }
+    },
+    "2": {
+      "name": "Fail-Safe Protocol",
+      "desc": "Soldier 0 - Anby's CRIT Rate increases by 12%. When she uses her <ct color=#FFFFFF>Ultimate</ct>, she gains 6 stacks of <ct color=#FFFFFF>Thunder's Cry</ct> (max 6 stacks). With <ct color=#FFFFFF>Thunder's Cry</ct>, when using <ct color=#FFFFFF>Special Attack: Azure Flash</ct> to hit an enemy with <ct color=#FFFFFF>White Thunder</ct>, it will consume 1 stack of <ct color=#FFFFFF>Thunder's Cry</ct> instead. Only 1 stack of <ct color=#FFFFFF>Thunder's Cry</ct> will be consumed when a single use of a skill hits multiple enemies, and consuming <ct color=#FFFFFF>Thunder's Cry</ct> will still activate the additional DMG from <ct color=#FFFFFF>White Thunder</ct>.",
+      "flavor": {
+        "0": "\"What's wrong? You look really tired.\"",
+        "1": "\"I'm... fine.\"",
+        "2": "\"If you need help, just say the word.\""
+      }
+    },
+    "3": {
+      "name": "Past Glory",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Anby, we were just talking about you. Are you really okay?\"",
+        "1": "\"I... I'm...\"",
+        "2": "\"If you try to brush it off with 'I'm fine' again, I might not be so kind.\"",
+        "3": "\"What does 'not being kind' from you look like, Proxy?\""
+      }
+    },
+    "4": {
+      "name": "Silver Reverb",
+      "desc": "When hitting an enemy marked with <ct color=#FFFFFF>Silver Star</ct>, Soldier 0 - Anby ignores 12% of the target's <ct color=#2EB6FF>Electric RES</ct>.",
+      "flavor": {
+        "0": "\"Anby, you just came back from the Hollow. Do you want to take a shower?\"",
+        "1": "\"You go ahead, Proxy. I still need to organize some information...\"",
+        "2": "\"Ha.\"",
+        "3": "\"Hmm?\"",
+        "4": "\"Why do I feel like Anby has been living in this house for a long time...\""
+      }
+    },
+    "5": {
+      "name": "Director's Cut",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"I get it now. About Anby and Silver Squad...\"",
+        "1": "\"Sorry. I never meant for all of this to become your burden, Proxy.\"",
+        "2": "\"So — what movie do you feel like watching tonight?\"",
+        "3": "\"Huh...?\"",
+        "4": "\"Your troubles will never be a burden. See? Normal life can go on as usual.\""
+      }
+    },
+    "6": {
+      "name": "Prequel Protagonist",
+      "desc": "Upon triggering 6 instances of <ct color=#FFFFFF>White Thunder</ct>'s additional DMG, an electromagnetic vortex will be generated, dealing 1,000% of Soldier 0 - Anby's ATK as <ct color=#2EB6FF>Electric DMG</ct> against the target and surrounding enemies. This DMG is considered <ct color=#FFFFFF>Aftershock</ct> DMG.",
+      "flavor": {
+        "0": "\"Well... I should be heading back, Proxy. Thanks for everything you've done for me.\"",
+        "1": "\"I know you promised Nicole you wouldn't run away from home again, but isn't this a little unfair to me?",
+        "2": "—I miss those days when you and I would watch movies together until dawn.\"",
+        "3": "\"Unfair... to you? Well, I'll just have to come up with a way to make up for it.\"",
+        "4": "\"Hurry up and think of something.\"",
+        "5": "\"Soldier 0, at your service... Huh, huh...?\""
+      }
+    }
+  }
 }

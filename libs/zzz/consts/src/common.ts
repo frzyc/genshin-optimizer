@@ -109,7 +109,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   base_enerRegen: 'Base Energy Regen',
   impact_: 'Impact',
   impact: 'Impact',
-  dazeInc_: 'Daze',
+  dazeInc_: 'Daze Increase',
   shield_: 'Shield Effect',
   anomMas: 'Anomaly Mastery',
   anomMas_: 'Anomaly Mastery',

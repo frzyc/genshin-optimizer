@@ -1,3 +1,264 @@
 {
-  "name": "Harumasa"
+  "name": "Harumasa",
+  "fullName": "Asaba Harumasa",
+  "basic": {
+    "BasicAttackCloudPiercer": {
+      "name": "Basic Attack: Cloud Piercer",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Launch up to five piercing attacks ahead, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "When the 5th hit of the Basic Attack hits an enemy, it generates 2 <ct color=#FFFFFF>Electro Quivers</ct>.",
+        "3": "After activating a <ct color=#FFFFFF>Chain Attack</ct>, the next time Harumasa activates the 5th hit of <ct color=#FFFFFF>Basic Attack: Cloud Piercer</ct> and hits an enemy with it, it generates 6 <ct color=#FFFFFF>Electro Quivers</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackCloudPiercerDrift": {
+      "name": "Basic Attack: Cloud Piercer - Drift",
+      "desc": {
+        "0": "During <ct color=#FFFFFF>Basic Attack: Cloud Piercer</ct>, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} and press <IconNormal /> to activate:",
+        "1": "Shoot a ranged piercing attack and reposition towards the corresponding drag direction, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "BasicAttackFallingFeather": {
+      "name": "Basic Attack: Falling Feather",
+      "desc": {
+        "0": "After the 5th hit of <ct color=#FFFFFF>Basic Attack: Cloud Piercer</ct>, a <ct color=#FFFFFF>Special Attack</ct>, an <ct color=#FFFFFF>EX Special Attack</ct>, or a <ct color=#FFFFFF>Chain Attack</ct>, hold <IconSpecial /> to activate:",
+        "1": "Immediately shoot <ct color=#FFFFFF>Falling Feather</ct> at enemies ahead, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Hold <IconNormal /> to aim at a target and release <IconNormal /> to activate:",
+        "3": "After drawing the bowstring and aiming, shoot <ct color=#FFFFFF>Falling Feather</ct> at the target, dealing <ct color=#2EB6FF>Electric DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "BasicAttackHaOtoNoYa": {
+      "name": "Basic Attack: Ha-Oto no Ya",
+      "desc": {
+        "0": "When the 5th hit of <ct color=#FFFFFF>Basic Attack: Cloud Piercer</ct>/<ct color=#FFFFFF>EX Special Attack</ct>/<ct color=#FFFFFF>Chain Attack</ct> hits an enemy or the ground, it can generate 2/6/6 <ct color=#FFFFFF>Electro Quivers</ct>. If there are no <ct color=#FFFFFF>Electro Quivers</ct> on the field when any squad member applies an Attribute Anomaly to an enemy, generate 6 <ct color=#FFFFFF>Electro Quivers</ct>. This effect can trigger once every 12s.",
+        "1": "There can be up to 6 <ct color=#FFFFFF>Electro Quivers</ct> present at a time. If there are any <ct color=#FFFFFF>Electro Quivers</ct> present when Harumasa fires and hits enemies with <ct color=#FFFFFF>Falling Feather</ct>, the <ct color=#FFFFFF>Electro Quivers</ct> will activate and fire <ct color=#FFFFFF>Ha-Oto no Ya</ct> at the enemies hit by <ct color=#FFFFFF>Falling Feather</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "<ct color=#FFFFFF>Ha-Oto no Ya</ct> will apply <ct color=#FFFFFF>Electro Prison</ct> to enemies hit, stacking up to 8 times and lasting 10s, repeated triggers reset the duration. While a target has at least 2 stacks of <ct color=#FFFFFF>Electro Prison</ct>, they will be <ct color=#FFFFFF>X-Marked</ct>."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeQuickFlash": {
+      "name": "Dodge: Quick Flash",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackHitenNoTsuru": {
+      "name": "Dash Attack: Hiten no Tsuru",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Launch multiple piercing attacks ahead, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeCounterHiddenEdge": {
+      "name": "Dodge Counter: Hidden Edge",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Pierces enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DashAttackHitenNoTsuruSlash": {
+      "name": "Dash Attack: Hiten no Tsuru - Slash",
+      "desc": {
+        "0": "While there are <ct color=#FFFFFF>X-Marked</ct> enemies on the field, Harumasa will enter the <ct color=#FFFFFF>Awakened</ct> state, switching <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru</ct> for <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>.",
+        "1": "",
+        "2": "While in the <ct color=#FFFFFF>Awakened</ct> state, press <IconNormal /> during a dodge to activate:",
+        "3": "Rush forwards to the closest <ct color=#FFFFFF>X-Marked</ct> enemy and execute a powerful slash, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "4": "When the slash hits the target, it consumes 2 stacks of <ct color=#FFFFFF>Electro Prison</ct>. With less than 2 stacks of <ct color=#FFFFFF>Electro Prison</ct>, <ct color=#FFFFFF>X-Marked</ct> will be removed from the enemy. Before <ct color=#FFFFFF>X-Marked</ct> is removed, repeatedly press <IconNormal /> to repeatedly use <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>. While no <ct color=#FFFFFF>X-Marked</ct> enemies exist on the field, Harumasa leaves the <ct color=#FFFFFF>Awakened</ct> state.",
+        "5": "While in the <ct color=#FFFFFF>Awakened</ct> state, press <IconNormal /> after <ct color=#FFFFFF>Basic Attack: Falling Feather</ct> to quickly follow up with <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>.",
+        "6": "During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackNowhereToHide": {
+      "name": "Special Attack: Nowhere to Hide",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Launch an arrow forward, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackNowhereToRun": {
+      "name": "EX Special Attack: Nowhere to Run",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Launch daggers and an enhanced arrow ahead, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "When the enhanced arrow hits an enemy or the ground, it generates 6 <ct color=#FFFFFF>Electro Quivers</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "",
+        "Energy Cost"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackKaiHanare": {
+      "name": "Chain Attack: Kai - Hanare",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleash a piercing attack on enemies in a large area ahead then fire an enhanced arrow, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "When the arrow hits the ground, it generates 6 <ct color=#FFFFFF>Electro Quivers</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateZanshin": {
+      "name": "Ultimate: Zanshin",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleash a piercing attack on enemies in a large area ahead, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistBracedBow": {
+      "name": "Quick Assist: Braced Bow",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Unleash a piercing attack at enemies ahead, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistYugamae": {
+      "name": "Defensive Assist: Yugamae",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpYugamaeSlash": {
+      "name": "Assist Follow-Up: Yugamae - Slash",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Unleash a series of slashes at enemies ahead, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Day Break",
+    "desc": [
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>10.6%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>6%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>13%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>7%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>15.4%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>8%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>17.8%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>9%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>20.2%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>10%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>22.6%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>11%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>25%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>12%</ct>."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Overclock",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> or <ct color=#FFFFFF>Anomaly</ct> character:",
+      "1": "When Harumasa's attacks hit Stunned enemies or enemies under Attribute Anomaly, his DMG increases by 40%. When Harumasa's <ct color=#FFFFFF>Falling Feather</ct> hits Stunned enemies or enemies under Attribute Anomaly, it will apply 2 stacks of <ct color=#FFFFFF>Electro Prison</ct> to the target."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "\"High Spirit\"",
+      "desc": "The maximum stack limit of <ct color=#FFFFFF>Electro Prison</ct> from <ct color=#FFFFFF>Basic Attack: Ha-Oto no Ya</ct> increases to 14 stacks. When an <ct color=#FFFFFF>Electro Quiver</ct> is triggered, 2 consecutive <ct color=#FFFFFF>Ha-Oto no Ya</ct> will be fired at the target.",
+      "flavor": {
+        "0": "\"I'm not like some stubborn idiots who insist on facing the enemy head-on.\"",
+        "1": "\"Be it a straightforward assault or an underhanded attack from the shadows, anything that gets me off work earlier is good in my eyes~\""
+      }
+    },
+    "2": {
+      "name": "Languish",
+      "desc": "When using an <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, Harumasa gains 7 stacks of <ct color=#FFFFFF>Electro Blitz</ct>, up to a max of 7 stacks. While possessing <ct color=#FFFFFF>Electro Blitz</ct>, the DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by 50%. Consume 1 stack of <ct color=#FFFFFF>Electro Blitz</ct> once <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> ends.",
+      "flavor": {
+        "0": "\"Don't look at me like that, I'm actually real frail, y'know~\"",
+        "1": "Harumasa lazily sprawls across his office desk.",
+        "2": "\"So... how 'bout picking someone else for this mission?\""
+      }
+    },
+    "3": {
+      "name": "White Lies",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"...Don't worry, this isn't enough to kill me.\"",
+        "1": "He wipes the blood from the corner of his mouth with a smile and readies his bow once more.",
+        "2": "\"After all, I'm going to live to make it everyone's problem.\""
+      }
+    },
+    "4": {
+      "name": "Occasionally Motivated",
+      "desc": "<ct color=#FFFFFF>Electro Prison</ct> now lasts for 20s. When <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> hits enemies, Harumasa gains 30 Decibels once per use of this skill. Upon activating <ct color=#FFFFFF>Ultimate</ct>, apply the maximum stacks of <ct color=#FFFFFF>Electro Prison</ct> to all on-field enemies.",
+      "flavor": {
+        "0": "Harumasa is occasionally full of energy and motivation...",
+        "1": "When there's only five minutes left until he can get off work."
+      }
+    },
+    "5": {
+      "name": "No One Knows",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"I want vacations, freedom, to be happy every day!\"",
+        "1": "\"Just kidding. I want to live.\""
+      }
+    },
+    "6": {
+      "name": "Tacit Understanding",
+      "desc": "After <ct color=#FFFFFF>Ha-Oto no Ya</ct> hits Stunned enemies or enemies under Attribute Anomalies, Harumasa will ignore 15% of the target's <ct color=#2EB6FF>Electric RES</ct> for 12s. Every 12 times an enemy is hit by <ct color=#FFFFFF>Ha-Oto no Ya</ct>, trigger an extra electromagnetic explosion, dealing 1,500% of Harumasa's ATK to the target as <ct color=#2EB6FF>Electric DMG</ct>.",
+      "flavor": {
+        "0": "\"My master taught me a lot of things, like how to draw a bow, how to wield a blade, and how to survive in this world with this body of mine.\"",
+        "1": "\"...What happened after that?\"",
+        "2": "\"Well, after that... he left me.\""
+      }
+    }
+  }
 }

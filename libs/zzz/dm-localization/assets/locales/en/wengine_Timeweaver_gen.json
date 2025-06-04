@@ -1,14 +1,33 @@
 {
   "name": "Timeweaver",
-  "desc": "A new model of supercomputing W-Engine custom-made by HSO Section 6, equipped with the most elite calculation and analysis functions, precisely records the user's time active and physical state to calculate the best plan of action. Embedded within is Yanagi's prized watch, but each time the W-Engine is turned on, the hands of the clock face go whirling around from the Ether energy, and it can no longer be used to accurately tell time. So, when she uses the time on here to tell you that you should hurry and be more efficient if you don't want to be late completing your mission, don't believe her.\n\n<ct color=#959595>\"So you're saying this is the ultimate weapon against time? I see, as the watch in the W-Engine moves so fast, the time it goes past is 'killed' so to speak, therefore it's a weapon against time... However, time in the real world does not actually change from this. No matter how fast the watch goes, it cannot kill time faster. Though the concept is decent, this punchline is only a six out of ten in my eyes.\" —Tsukishiro Yanagi, replying to her colleague's off-hand joke with complete seriousness</ct>",
+  "desc": {
+    "0": "A new model of supercomputing W-Engine custom-made by HSO Section 6, equipped with the most elite calculation and analysis functions, precisely records the user's time active and physical state to calculate the best plan of action. Embedded within is Yanagi's prized watch, but each time the W-Engine is turned on, the hands of the clock face go whirling around from the Ether energy, and it can no longer be used to accurately tell time. So, when she uses the time on here to tell you that you should hurry and be more efficient if you don't want to be late completing your mission, don't believe her.",
+    "1": "",
+    "2": "<ct color=#959595>\"So you're saying this is the ultimate weapon against time? I see, as the watch in the W-Engine moves so fast, the time it goes past is 'killed' so to speak, therefore it's a weapon against time... However, time in the real world does not actually change from this. No matter how fast the watch goes, it cannot kill time faster. Though the concept is decent, this punchline is only a six out of ten in my eyes.\" —Tsukishiro Yanagi, replying to her colleague's off-hand joke with complete seriousness</ct>"
+  },
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
   "desc3": "A new model of supercomputing W-Engine custom-made by HSO Section 6, equipped with the most elite calculation and analysis functions.",
   "phase": "Time-Devouring Stratagem",
   "phaseDescs": [
-    "The equipper's <ct color=#2EB6FF>Electric Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>30%</ct>. When <ct color=#FFFFFF>Special Attacks</ct> or <ct color=#FFFFFF>EX Special Attacks</ct> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <ct color=#2BAD00>75</ct> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <ct color=#FFFFFF>Disorder</ct> DMG inflicted by the equipper increases by <ct color=#2BAD00>25%</ct>.",
-    "The equipper's <ct color=#2EB6FF>Electric Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>35%</ct>. When <ct color=#FFFFFF>Special Attacks</ct> or <ct color=#FFFFFF>EX Special Attacks</ct> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <ct color=#2BAD00>85</ct> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <ct color=#FFFFFF>Disorder</ct> DMG inflicted by the equipper increases by <ct color=#2BAD00>27.5%</ct>.",
-    "The equipper's <ct color=#2EB6FF>Electric Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>40%</ct>. When <ct color=#FFFFFF>Special Attacks</ct> or <ct color=#FFFFFF>EX Special Attacks</ct> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <ct color=#2BAD00>95</ct> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <ct color=#FFFFFF>Disorder</ct> DMG inflicted by the equipper increases by <ct color=#2BAD00>30%</ct>.",
-    "The equipper's <ct color=#2EB6FF>Electric Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>45%</ct>. When <ct color=#FFFFFF>Special Attacks</ct> or <ct color=#FFFFFF>EX Special Attacks</ct> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <ct color=#2BAD00>105</ct> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <ct color=#FFFFFF>Disorder</ct> DMG inflicted by the equipper increases by <ct color=#2BAD00>32.5%</ct>.",
-    "The equipper's <ct color=#2EB6FF>Electric Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>50%</ct>. When <ct color=#FFFFFF>Special Attacks</ct> or <ct color=#FFFFFF>EX Special Attacks</ct> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <ct color=#2BAD00>115</ct> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <ct color=#FFFFFF>Disorder</ct> DMG inflicted by the equipper increases by <ct color=#2BAD00>35%</ct>."
+    {
+      "0": "The equipper's <ct color=#2EB6FF>Electric Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>30%</ct>. When <ct color=#FFFFFF>Special Attacks</ct> or <ct color=#FFFFFF>EX Special Attacks</ct> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <ct color=#2BAD00>75</ct> for 15s.",
+      "1": "When the equipper's Anomaly Proficiency is greater than or equal to 375, <ct color=#FFFFFF>Disorder</ct> DMG inflicted by the equipper increases by <ct color=#2BAD00>25%</ct>."
+    },
+    {
+      "0": "The equipper's <ct color=#2EB6FF>Electric Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>35%</ct>. When <ct color=#FFFFFF>Special Attacks</ct> or <ct color=#FFFFFF>EX Special Attacks</ct> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <ct color=#2BAD00>85</ct> for 15s.",
+      "1": "When the equipper's Anomaly Proficiency is greater than or equal to 375, <ct color=#FFFFFF>Disorder</ct> DMG inflicted by the equipper increases by <ct color=#2BAD00>27.5%</ct>."
+    },
+    {
+      "0": "The equipper's <ct color=#2EB6FF>Electric Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>40%</ct>. When <ct color=#FFFFFF>Special Attacks</ct> or <ct color=#FFFFFF>EX Special Attacks</ct> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <ct color=#2BAD00>95</ct> for 15s.",
+      "1": "When the equipper's Anomaly Proficiency is greater than or equal to 375, <ct color=#FFFFFF>Disorder</ct> DMG inflicted by the equipper increases by <ct color=#2BAD00>30%</ct>."
+    },
+    {
+      "0": "The equipper's <ct color=#2EB6FF>Electric Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>45%</ct>. When <ct color=#FFFFFF>Special Attacks</ct> or <ct color=#FFFFFF>EX Special Attacks</ct> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <ct color=#2BAD00>105</ct> for 15s.",
+      "1": "When the equipper's Anomaly Proficiency is greater than or equal to 375, <ct color=#FFFFFF>Disorder</ct> DMG inflicted by the equipper increases by <ct color=#2BAD00>32.5%</ct>."
+    },
+    {
+      "0": "The equipper's <ct color=#2EB6FF>Electric Anomaly Buildup Rate</ct> increases by <ct color=#2BAD00>50%</ct>. When <ct color=#FFFFFF>Special Attacks</ct> or <ct color=#FFFFFF>EX Special Attacks</ct> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <ct color=#2BAD00>115</ct> for 15s.",
+      "1": "When the equipper's Anomaly Proficiency is greater than or equal to 375, <ct color=#FFFFFF>Disorder</ct> DMG inflicted by the equipper increases by <ct color=#2BAD00>35%</ct>."
+    }
   ]
 }

@@ -1,6 +1,10 @@
 {
   "name": "The Vault",
-  "desc": "A cost-effective W-Engine that focuses on energy storage. After Nicole modified its internal space, it can now be used as a storage box. While the gold coins stored inside are fake, they may catch greedy Hollow Raiders off guard. Or rather, the operator can simply toss the heavy coins at them and knock them out.\n\n<ct color=#959595>\"Hurts, doesn't it? Impressive, right? Hmph, that's just what money can do!\" — Nicole, gloating after defeating an enemy</ct>",
+  "desc": {
+    "0": "A cost-effective W-Engine that focuses on energy storage. After Nicole modified its internal space, it can now be used as a storage box. While the gold coins stored inside are fake, they may catch greedy Hollow Raiders off guard. Or rather, the operator can simply toss the heavy coins at them and knock them out.",
+    "1": "",
+    "2": "<ct color=#959595>\"Hurts, doesn't it? Impressive, right? Hmph, that's just what money can do!\" — Nicole, gloating after defeating an enemy</ct>"
+  },
   "desc2": "Equip to increase Support Agents' combat capabilities",
   "desc3": "A cost-effective W-Engine that can store energy, with improvements made to its internal space. This model is often used by Nicole.",
   "phase": "Money-Lover",
