@@ -9,6 +9,7 @@ import {
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
+  allBoolConditionals,
   allNumConditionals,
   customAnomalyBuildup,
   customAnomalyDmg,
@@ -35,6 +36,7 @@ const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
+const { exSpecial_active } = allBoolConditionals(key)
 const { thermal_penetration } = allNumConditionals(key, true, 0, dm.m2.stacks)
 
 const core_afterburn_dmg_ = ownBuff.combat.common_dmg_.add(
@@ -57,7 +59,11 @@ const m1_afterburn_fire_anomBuildup_ = ownBuff.combat.anomBuildup_.fire.add(
   cmpGE(char.mindscape, 1, dm.m1.afterburn_fire_anomBuildup_)
 )
 const m6_fire_resIgn_ = ownBuff.combat.resIgn_.fire.add(
-  cmpGE(char.mindscape, 6, dm.m6.exSpecial_specialAfterburn_burn_fire_resIgn_)
+  cmpGE(
+    char.mindscape,
+    6,
+    exSpecial_active.ifOn(dm.m6.exSpecial_specialAfterburn_burn_fire_resIgn_)
+  )
 )
 
 const sheet = register(
@@ -237,7 +243,9 @@ const sheet = register(
       cmpGE(
         char.mindscape,
         6,
-        dm.m6.exSpecial_specialAfterburn_burn_fire_resIgn_
+        exSpecial_active.ifOn(
+          dm.m6.exSpecial_specialAfterburn_burn_fire_resIgn_
+        )
       )
     )
   ),

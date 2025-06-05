@@ -80,12 +80,14 @@ const sheet = register(
 
   ...customShield(
     'm4_shield',
-    cmpGE(char.mindscape, 4, prod(own.final.hp, dm.m4.shield))
+    cmpGE(char.mindscape, 4, prod(own.final.hp, dm.m4.shield)),
+    { cond: cmpGE(char.mindscape, 4, 'infer', '') }
   ),
   ...customDmg(
     'm6_follow_up_dmg_',
     { ...baseTag, skillType: 'chainSkill' },
-    cmpGE(char.mindscape, 6, prod(own.final.atk, dm.m6.dmg))
+    cmpGE(char.mindscape, 6, prod(own.final.atk, dm.m6.dmg)),
+    { cond: cmpGE(char.mindscape, 6, 'infer', '') }
   ),
 
   // Buffs
@@ -125,17 +127,20 @@ const sheet = register(
     'm1_defIgn_',
     ownBuff.combat.defIgn_.add(
       cmpGE(char.mindscape, 1, enemy_bound.ifOn(dm.m1.defIgn_))
-    )
+    ),
+    cmpGE(char.mindscape, 1, 'infer', '')
   ),
   registerBuff(
     'm2_atk_',
-    ownBuff.combat.atk_.add(cmpGE(char.mindscape, 2, dm.m2.atk_))
+    ownBuff.combat.atk_.add(cmpGE(char.mindscape, 2, dm.m2.atk_)),
+    cmpGE(char.mindscape, 2, 'infer', '')
   ),
   registerBuff(
     'm4_crit_dmg_',
     ownBuff.combat.crit_dmg_.add(
       cmpGE(char.mindscape, 4, m4_shield_exists.ifOn(dm.m4.crit_dmg_))
-    )
+    ),
+    cmpGE(char.mindscape, 4, 'infer', '')
   )
 )
 export default sheet

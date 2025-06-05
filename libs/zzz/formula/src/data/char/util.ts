@@ -1,3 +1,4 @@
+import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
 import {
   cmpGE,
   constant,
@@ -65,12 +66,12 @@ function dmgDazeAndAnom(
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
-  if (!dmgTag.damageType1) dmgTag.attribute = 'physical'
+  if (!dmgTag.attribute) dmgTag.attribute = 'physical'
   const dmgMulti = sum(
     skillParam.DamagePercentage,
     prod(own.char[abilityScalingType], skillParam.DamagePercentageGrowth)
   )
-  const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.dmg_mult_)
+  const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.mv_mult_)
   const dazeBase = sum(
     skillParam.StunRatio,
     prod(own.char[abilityScalingType], skillParam.StunRatioGrowth)
@@ -83,6 +84,58 @@ function dmgDazeAndAnom(
       `${name}_anomBuildup`,
       dmgTag,
       constant(skillParam.AttributeInfliction / 100),
+      arg,
+      ...extra
+    ),
+  ]
+}
+
+/**
+ * Creates an array of TagMapNodeEntries representing a levelable ability's damage instance, daze and anomaly buildup, and registers their formulas
+ * @param skillParam SkillParams array corresponding to the specific ability's hits to merge
+ * @param name Name to register under
+ * @param dmgTag Tag object containing damageType1, damageType2 and attribute. If not specified, attribute will be physical.
+ * @param stat Stat that the damage scales on
+ * @param abilityScalingType Ability level that the scaling depends on.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this damage instance
+ * @returns Array of TagMapNodeEntries representing the damage instance, daze and anomaly buildup
+ */
+export function dmgDazeAndAnomMerge(
+  skillParam: SkillParam[],
+  name: string,
+  dmgTag: DmgTag,
+  stat: Stat,
+  abilityScalingType: AbilityScalingType,
+  arg: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries[] {
+  if (!dmgTag.attribute) dmgTag.attribute = 'physical'
+  const dmgMulti = sum(
+    ...skillParam.map((sp) => sp.DamagePercentage),
+    prod(
+      own.char[abilityScalingType],
+      sum(...skillParam.map((sp) => sp.DamagePercentageGrowth))
+    )
+  )
+  const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.mv_mult_)
+  const dazeBase = sum(
+    ...skillParam.map((sp) => sp.StunRatio),
+    prod(
+      own.char[abilityScalingType],
+      sum(...skillParam.map((sp) => sp.StunRatioGrowth))
+    )
+  )
+  return [
+    customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
+    customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
+    // TODO: No clue if this is right
+    customAnomalyBuildup(
+      `${name}_anomBuildup`,
+      dmgTag,
+      constant(
+        skillParam.reduce((acc, sp) => acc + sp.AttributeInfliction, 0) / 100
+      ),
       arg,
       ...extra
     ),
@@ -145,10 +198,15 @@ export function registerAllDmgDazeAndAnom(
   mappedStats: MappedStats,
   ...overrides: SkillOverides[]
 ): TagMapNodeEntries[] {
-  const flatOverrides = overrides.reduce(
-    (combined, current) => ({ ...combined, ...current }),
-    {}
-  )
+  const flatOverrides = overrides.reduce((combined, current) => {
+    crawlObject(
+      current,
+      undefined,
+      (o) => Array.isArray(o),
+      (o, keys) => (combined = layeredAssignment(combined, keys, o))
+    )
+    return combined
+  }, {})
   return (
     Object.entries(mappedStats)
       // Remove core, ability, and mindscape mapped stats

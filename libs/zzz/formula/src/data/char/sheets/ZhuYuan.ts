@@ -38,7 +38,7 @@ const { shotshells_hit } = allNumConditionals(key, true, 0, dm.m2.stacks)
 const core_dmg_ = ownBuff.combat.common_dmg_.add(
   sum(
     subscript(char.core, dm.core.dmg_),
-    cmpEq(enemy.common.isStunned, 1, subscript(char.core, dm.core.dmg_))
+    cmpEq(enemy.common.isStunned, 1, subscript(char.core, dm.core.add_dmg_))
   )
 )
 
@@ -213,7 +213,9 @@ const sheet = register(
   ),
   registerBuff(
     'm2_dmg_red_',
-    ownBuff.combat.dmg_red_.add(suppresive_mode.ifOn(dm.m2.dmg_red_))
+    ownBuff.combat.dmg_red_.add(
+      cmpGE(char.mindscape, 2, suppresive_mode.ifOn(dm.m2.dmg_red_))
+    )
   ),
   registerBuff(
     'm2_basic_dash_ether_dmg_',

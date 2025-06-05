@@ -1,6 +1,6 @@
 import {
   cmpGE,
-  max,
+  min,
   prod,
   subscript,
   sum,
@@ -15,6 +15,7 @@ import {
   enemyDebuff,
   own,
   ownBuff,
+  percent,
   register,
   registerBuff,
   team,
@@ -120,7 +121,7 @@ const sheet = register(
   ...customDaze(
     'm4_disconnect_daze',
     { ...baseTag },
-    cmpGE(char.mindscape, 4, prod(own.final.impact, dm.m4.daze))
+    cmpGE(char.mindscape, 4, dm.m4.daze)
   ),
   ...customDmg(
     'm6_armor_break_rounds_dmg',
@@ -147,10 +148,11 @@ const sheet = register(
           team.common.count.electric
         ),
         2,
-        max(
+        min(
           prod(
-            sum(own.combat.crit_, -dm.ability.crit_threshold_),
-            dm.ability.aftershock_dazeInc_
+            sum(own.final.crit_, percent(-dm.ability.crit_threshold_)),
+            dm.ability.aftershock_dazeInc_,
+            100
           ),
           dm.ability.max_dazeInc_
         )
