@@ -53,7 +53,7 @@
         "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterKanSuzume": {
@@ -64,7 +64,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -77,7 +77,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackHisetsu": {
@@ -95,8 +95,8 @@
       "params": [
         "Slash ",
         "Follow-Up ",
-        "Slash Energy Cost",
-        "Follow-Up Energy Cost"
+        "Slash Energy Cost ",
+        "Follow-Up Energy Cost "
       ]
     }
   },
@@ -109,7 +109,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateLingeringSnow": {
@@ -121,7 +121,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -134,7 +134,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistDriftingPetals": {
@@ -158,7 +158,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

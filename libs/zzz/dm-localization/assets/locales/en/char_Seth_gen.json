@@ -47,7 +47,7 @@
         "2": "Damage received during the move is decreased by 40%."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterRetreatToAdvance": {
@@ -59,7 +59,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -72,7 +72,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackThunderShieldRushHighVoltage": {
@@ -86,9 +86,9 @@
         "5": "Seth is invulnerable during the consecutive slashes."
       },
       "params": [
-        "",
-        " (Charged)",
-        "Energy Cost"
+        " ",
+        "(Charged) ",
+        "Energy Cost "
       ]
     }
   },
@@ -103,7 +103,7 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateJusticePrevails": {
@@ -116,7 +116,7 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -130,7 +130,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistThundershield": {
@@ -158,7 +158,7 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

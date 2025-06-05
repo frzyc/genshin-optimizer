@@ -44,7 +44,7 @@
         "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DashAttack5050FrostedBanner": {
@@ -54,7 +54,7 @@
         "1": "Slashes enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterAwayFromMySnacks": {
@@ -65,7 +65,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -95,8 +95,8 @@
       "params": [
         "Consecutive Attack ",
         "Wind Current ",
-        "Energy Cost to Use",
-        "Energy Cost of Each Attack"
+        "Energy Cost to Use ",
+        "Energy Cost of Each Attack "
       ]
     },
     "SpecialAttackRally": {
@@ -128,7 +128,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateJumboPuddingSlash": {
@@ -141,7 +141,7 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -154,7 +154,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistGuardingTactics": {
@@ -180,7 +180,7 @@
         "3": "Holding <IconNormal /> while using this skill allows for a quick transition to <ct color=#FFFFFF>Fly the Flag</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

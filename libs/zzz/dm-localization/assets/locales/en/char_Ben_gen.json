@@ -32,7 +32,7 @@
         "1": "Strikes enemies in front of him, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterAccountsSettled": {
@@ -43,7 +43,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -84,8 +84,8 @@
         "Follow-Up Attack ",
         "Block Counter ",
         "Block Follow-Up ",
-        "Block Energy Cost",
-        "Follow-Up Energy Cost"
+        "Block Energy Cost ",
+        "Follow-Up Energy Cost "
       ]
     }
   },
@@ -98,7 +98,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateCompletePayback": {
@@ -110,7 +110,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -123,7 +123,7 @@
         "2": "Character is invulnerable during the attack."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistRiskAllocation": {
@@ -148,7 +148,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

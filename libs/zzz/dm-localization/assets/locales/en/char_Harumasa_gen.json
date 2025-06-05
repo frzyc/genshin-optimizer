@@ -25,7 +25,7 @@
         "1": "Shoot a ranged piercing attack and reposition towards the corresponding drag direction, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "BasicAttackFallingFeather": {
@@ -37,7 +37,7 @@
         "3": "After drawing the bowstring and aiming, shoot <ct color=#FFFFFF>Falling Feather</ct> at the target, dealing <ct color=#2EB6FF>Electric DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "BasicAttackHaOtoNoYa": {
@@ -48,7 +48,7 @@
         "2": "<ct color=#FFFFFF>Ha-Oto no Ya</ct> will apply <ct color=#FFFFFF>Electro Prison</ct> to enemies hit, stacking up to 8 times and lasting 10s, repeated triggers reset the duration. While a target has at least 2 stacks of <ct color=#FFFFFF>Electro Prison</ct>, they will be <ct color=#FFFFFF>X-Marked</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -69,7 +69,7 @@
         "1": "Launch multiple piercing attacks ahead, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterHiddenEdge": {
@@ -80,7 +80,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DashAttackHitenNoTsuruSlash": {
@@ -110,7 +110,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackNowhereToRun": {
@@ -122,8 +122,8 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -137,7 +137,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateZanshin": {
@@ -148,7 +148,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -161,7 +161,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistYugamae": {
@@ -185,7 +185,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

@@ -48,7 +48,7 @@
         "1": "Perform a forward rush attack with the flamethrower, dealing <ct color=#FF5521>Fire DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterFlutteringSteps": {
@@ -59,7 +59,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -73,7 +73,7 @@
         "3": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        "",
+        " ",
         "Charged Attack ",
         "Charged "
       ]
@@ -90,9 +90,9 @@
       "params": [
         "Continuous Spray ",
         "Fire Blast ",
-        "Energy Cost to Use",
-        "Continuous Spray Energy Cost",
-        "Fire Blast Energy Cost"
+        "Energy Cost to Use ",
+        "Continuous Spray Energy Cost ",
+        "Fire Blast Energy Cost "
       ]
     },
     "EXSpecialAttackIntenseHeatStirringMethodDoubleShot": {
@@ -106,9 +106,9 @@
       "params": [
         "Continuous Spray ",
         "Fire Blast ",
-        "Energy Cost to Use",
-        "Continuous Spray Energy Cost",
-        "Fire Blast Energy Cost"
+        "Energy Cost to Use ",
+        "Continuous Spray Energy Cost ",
+        "Fire Blast Energy Cost "
       ]
     }
   },
@@ -122,7 +122,7 @@
         "3": "After using the skill, press <IconSpecialReady /> to immediately follow up with <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateGloriousInferno": {
@@ -148,7 +148,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistSmokyCauldron": {
@@ -173,7 +173,7 @@
         "3": "After using the skill, press <IconSpecialReady /> to immediately follow up with <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

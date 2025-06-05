@@ -44,6 +44,33 @@ const dm = {
     AssistFollowUpCourseDisruption:
       data_gen.skillParams['assist']['AssistFollowUpCourseDisruption'],
   },
+  core: {
+    crit_: data_gen.coreParams[0],
+    duration: data_gen.coreParams[1][0],
+  },
+  ability: {
+    chain_ult_dmg_: data_gen.abilityParams[0],
+    crit_threshold: data_gen.abilityParams[1],
+    dmg_mult_: data_gen.abilityParams[2],
+  },
+  m1: {
+    decibels: data_gen.mindscapeParams[0][0],
+    defIgn_: data_gen.mindscapeParams[0][1],
+    duration: data_gen.mindscapeParams[0][2],
+  },
+  m2: {
+    atk_: data_gen.mindscapeParams[1][0],
+    cooldown: data_gen.mindscapeParams[1][1],
+  },
+  m4: {
+    shield: data_gen.mindscapeParams[3][0],
+    crit_dmg_: data_gen.mindscapeParams[3][1],
+  },
+  m6: {
+    duration: data_gen.mindscapeParams[5][0],
+    dmg: data_gen.mindscapeParams[5][1],
+    trigger_count: data_gen.mindscapeParams[5][2],
+  },
 } as const
 
 export default dm

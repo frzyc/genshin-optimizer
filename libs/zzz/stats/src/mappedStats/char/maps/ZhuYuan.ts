@@ -39,6 +39,34 @@ const dm = {
     AssistFollowUpDefensiveCounter:
       data_gen.skillParams['assist']['AssistFollowUpDefensiveCounter'],
   },
+  core: {
+    dmg_: data_gen.coreParams[0],
+    add_dmg_: data_gen.coreParams[1],
+    shells: data_gen.coreParams[2],
+  },
+  ability: {
+    crit_: data_gen.abilityParams[0],
+    duration: data_gen.abilityParams[1],
+  },
+  m1: {
+    reload_chain: data_gen.mindscapeParams[0][0],
+    reload_ult: data_gen.mindscapeParams[0][1],
+  },
+  m2: {
+    dmg_red_: data_gen.mindscapeParams[1][0],
+    basic_dash_ether_dmg_: data_gen.mindscapeParams[1][1],
+    stacks: data_gen.mindscapeParams[1][2],
+    duration: data_gen.mindscapeParams[1][3],
+  },
+  m4: {
+    basic_dash_ether_res_ign_: data_gen.mindscapeParams[3][0],
+  },
+  m6: {
+    shots_consumed: data_gen.mindscapeParams[5][0],
+    ex_special_ener_red_: data_gen.mindscapeParams[5][1],
+    bullets: data_gen.mindscapeParams[5][2],
+    dmg: data_gen.mindscapeParams[5][3],
+  },
 } as const
 
 export default dm

@@ -47,7 +47,7 @@
         "1": "Slides forward, launching a series of strikes in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterEtiquetteManual": {
@@ -58,7 +58,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -72,7 +72,7 @@
         "3": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        "",
+        " ",
         "Charged Attack ",
         "Charged "
       ]
@@ -86,11 +86,11 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
+        " ",
         "Charged Attack ",
         "Charged ",
-        "Activation Energy Cost",
-        "Charged Attack Energy Cost"
+        "Activation Energy Cost ",
+        "Charged Attack Energy Cost "
       ]
     }
   },
@@ -103,7 +103,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateMissionComplete": {
@@ -114,7 +114,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -127,7 +127,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistDisruptedHunt": {
@@ -151,7 +151,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

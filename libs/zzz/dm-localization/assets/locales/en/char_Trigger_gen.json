@@ -82,7 +82,7 @@
         "1": "Rapidly lift the gun and fire, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterCondemnedSoul": {
@@ -93,7 +93,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -106,7 +106,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackFlashBurial": {
@@ -119,8 +119,8 @@
         "4": "When this skill hits an enemy, Trigger enters <ct color=#FFFFFF>Coordinated Support</ct>. While in this state, when another active character in the squad hits an enemy with any attack, it triggers a <ct color=#FFFFFF>Basic Attack: Harmonizing Shot</ct> without consuming <ct color=#FFFFFF>Purge</ct> and with no cooldown restrictions. This state lasts 8s and the effect can trigger up to 4 times. Repeatedly entering <ct color=#FFFFFF>Coordinated Support</ct> extends the duration and grants additional triggers, lasting a maximum of 20s and triggering up to a maximum of 10 times."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -133,7 +133,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateUnderworldRequiem": {
@@ -146,7 +146,7 @@
         "4": "When the skill hits an enemy, Trigger enters <ct color=#FFFFFF>Coordinated Support</ct>. While in this state, when another active character in the squad hits an enemy with any attack, it triggers a <ct color=#FFFFFF>Basic Attack: Harmonizing Shot</ct> without consuming <ct color=#FFFFFF>Purge</ct> and with no cooldown restrictions. This state lasts 12s and the effect can trigger up to 6 times. Repeatedly entering <ct color=#FFFFFF>Coordinated Support</ct> extends the duration and grants additional triggers, lasting a maximum of 20s and triggering up to a maximum of 10 times."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -159,7 +159,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistDelayingDemise": {
@@ -183,7 +183,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

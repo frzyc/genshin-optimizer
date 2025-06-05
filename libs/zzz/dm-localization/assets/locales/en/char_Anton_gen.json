@@ -47,7 +47,7 @@
         "1": "Rams into enemies in front of him, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterRetaliation": {
@@ -58,7 +58,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterOverloadDrillBurstMode": {
@@ -69,7 +69,7 @@
         "2": "Character is invulnerable during the attack."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -82,7 +82,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackSmashTheHorizonBro": {
@@ -94,8 +94,8 @@
         "3": "Anton enters <ct color=#FFFFFF>Burst Mode</ct> after using this skill. When in <ct color=#FFFFFF>Burst Mode</ct>, Anton's attacks become more powerful, dealing massive <ct color=#2EB6FF>Electric DMG</ct> while continually consuming Energy upon hitting an enemy. Burst Mode remains active until his Energy is depleted."
       },
       "params": [
-        "",
-        "Energy Cost to Use"
+        " ",
+        "Energy Cost to Use "
       ]
     },
     "SpecialAttackExplosiveDrillBurstMode": {
@@ -106,7 +106,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -119,7 +119,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateGoGoGoGoGo": {
@@ -130,7 +130,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -143,7 +143,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "QuickAssistProtectiveDrillBurstMode": {
@@ -154,7 +154,7 @@
         "2": "Character is invulnerable during the attack."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistIronWrist": {
@@ -179,7 +179,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
