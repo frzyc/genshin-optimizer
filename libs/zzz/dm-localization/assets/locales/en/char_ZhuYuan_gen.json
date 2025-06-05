@@ -30,12 +30,12 @@
         "4": "While in <ct color=#FFFFFF>Suppressive Mode</ct>, release <IconNormal /> to return to <ct color=#FFFFFF>Assault Mode</ct>."
       },
       "params": [
-        "1st-Hit  (Physical)",
-        "2nd-Hit  (Physical)",
-        "3rd-Hit  (Physical)",
-        "1st-Hit  (Ether)",
-        "2nd-Hit  (Ether)",
-        "3rd-Hit  (Ether)"
+        "1st-Hit (Physical) ",
+        "2nd-Hit (Physical) ",
+        "3rd-Hit (Physical) ",
+        "1st-Hit (Ether) ",
+        "2nd-Hit (Ether) ",
+        "3rd-Hit (Ether) "
       ]
     }
   },
@@ -57,7 +57,7 @@
         "2": "Uses handgun to attack, dealing <ct color=#FE437E>Ether DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DashAttackOverwhelmingFirepower": {
@@ -68,8 +68,8 @@
         "2": "Unleashes a Shotshell piercing attack, dealing <ct color=#F0D12B>Physical DMG</ct>. If Zhu Yuan has <ct color=#FFFFFF>Enhanced Shotshells</ct> when firing, 1 <ct color=#FFFFFF>Enhanced Shotshell</ct> will be consumed, dealing massive <ct color=#FE437E>Ether DMG</ct>."
       },
       "params": [
-        " (Physical)",
-        " (Ether)"
+        "(Physical) ",
+        "(Ether) "
       ]
     },
     "DodgeCounterFireBlast": {
@@ -81,7 +81,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -94,7 +94,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackFullBarrage": {
@@ -106,8 +106,8 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -121,7 +121,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateMaxEradicationMode": {
@@ -133,7 +133,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -147,7 +147,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EvasiveAssistGuardedBackup": {
@@ -168,7 +168,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

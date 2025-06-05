@@ -33,7 +33,7 @@
         "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterRapidRetaliation": {
@@ -45,7 +45,7 @@
         "3": "After using this skill, you can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -61,7 +61,7 @@
         "5": "Upon activating <ct color=#FFFFFF>Swift Ruten</ct>, Yanagi can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackGekkaRuten": {
@@ -74,7 +74,7 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        "Energy Cost",
+        "Energy Cost ",
         "Thrust Attack ",
         "Downward Attack ",
         "Additional "
@@ -91,7 +91,7 @@
         "3": "After using this skill, you can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateRaieiTenge": {
@@ -104,7 +104,7 @@
         "4": "After using this skill, Yanagi can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        "",
+        " ",
         "Additional "
       ]
     }
@@ -119,7 +119,7 @@
         "3": "After using this skill, you can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistRadiantReversal": {
@@ -144,7 +144,7 @@
         "3": "After using this skill, you can immediately follow up with the 3rd hit of the current stance's <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

@@ -18,8 +18,8 @@
         "4th-Hit ",
         "Enhanced Basic Attack 1st-Hit ",
         "Enhanced Basic Attack 2nd-Hit ",
-        "Enhanced Basic Attack 2nd-Hit Dmg Multiplier (Teamwork)",
-        "Enhanced Basic Attack 2nd-Hit  (Teamwork)"
+        "Enhanced Basic Attack 2nd-Hit Dmg Multiplier (Teamwork) ",
+        "Enhanced Basic Attack 2nd-Hit (Teamwork) "
       ]
     }
   },
@@ -40,7 +40,7 @@
         "1": "Strikes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterDontLookDownOnMe": {
@@ -51,7 +51,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -68,7 +68,7 @@
       "params": [
         "Strike ",
         "Explosion ",
-        "Explosion  (Teamwork)"
+        "Explosion (Teamwork) "
       ]
     },
     "EXSpecialAttackBoilingFurnace": {
@@ -83,8 +83,8 @@
       "params": [
         "Strike ",
         "Explosion ",
-        "Explosion  (Teamwork)",
-        "Energy Cost"
+        "Explosion (Teamwork) ",
+        "Energy Cost "
       ]
     }
   },
@@ -97,7 +97,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateHammerquake": {
@@ -109,8 +109,8 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
-        " (Teamwork)"
+        " ",
+        "(Teamwork) "
       ]
     }
   },
@@ -123,7 +123,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistProtectiveHammer": {
@@ -148,7 +148,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

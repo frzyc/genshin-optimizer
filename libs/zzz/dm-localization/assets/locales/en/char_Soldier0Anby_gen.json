@@ -35,7 +35,7 @@
         "1": "Perform a horizontal slash forward, then follow up with a thrust attack, dealing <ct color=#2EB6FF>Electric DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterGroundFlashCounter": {
@@ -46,7 +46,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -59,7 +59,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "SpecialAttackAzureFlash": {
@@ -74,7 +74,7 @@
       },
       "params": [
         "White Thunder ",
-        ""
+        " "
       ]
     },
     "SpecialAttackThunderSmite": {
@@ -97,8 +97,8 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -111,7 +111,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateVoidstrike": {
@@ -123,7 +123,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -136,7 +136,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistCounterSurge": {
@@ -160,7 +160,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

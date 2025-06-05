@@ -51,7 +51,7 @@
         "1": "Launch a dashing attack at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterPhantasmSlash": {
@@ -66,7 +66,7 @@
         "6": "Invulnerable during the slashes and ranged retreat of the skill."
       },
       "params": [
-        "",
+        " ",
         "ALT Shot ",
         "ALT Charged Shot "
       ]
@@ -81,7 +81,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackSoulHunterPunishment": {
@@ -94,8 +94,8 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -122,7 +122,7 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -139,7 +139,7 @@
         "6": "Invulnerable during the slashes and ranged retreat of the skill."
       },
       "params": [
-        "",
+        " ",
         "ALT Shot ",
         "ALT Charged Shot "
       ]
@@ -166,7 +166,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

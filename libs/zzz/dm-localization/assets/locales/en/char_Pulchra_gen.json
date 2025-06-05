@@ -21,7 +21,7 @@
         "1": "Leap forward and unleash a series of slashes, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -42,7 +42,7 @@
         "1": "Dash forward and slash, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterRelentlessRetribution": {
@@ -53,7 +53,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -66,7 +66,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "SpecialAttackRendingClawNightmareShadow": {
@@ -79,7 +79,7 @@
         "4": "<ct color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</ct> is an <ct color=#FFFFFF>Aftershock</ct> attack."
       },
       "params": [
-        "",
+        " ",
         "Finishing Move "
       ]
     },
@@ -91,8 +91,8 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -105,7 +105,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateOhTimeToPlay": {
@@ -116,7 +116,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -129,7 +129,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EvasiveAssistContractOutsourcedCombat": {
@@ -150,7 +150,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

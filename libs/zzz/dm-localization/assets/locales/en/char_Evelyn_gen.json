@@ -35,7 +35,7 @@
         "3": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "BasicAttackGarroteSecondForm": {
@@ -47,7 +47,7 @@
         "3": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -68,7 +68,7 @@
         "1": "Deliver a kick to the enemy in front, causing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterStranglingReversal": {
@@ -80,7 +80,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -123,7 +123,7 @@
       "params": [
         "Bind ",
         "Explosion ",
-        "Energy Cost"
+        "Energy Cost "
       ]
     }
   },
@@ -137,7 +137,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateLunaluxGarroteTimbre": {
@@ -150,7 +150,7 @@
         "4": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateLunaluxGarroteShadow": {
@@ -163,7 +163,7 @@
         "4": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -177,7 +177,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistSilentProtection": {
@@ -202,7 +202,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
