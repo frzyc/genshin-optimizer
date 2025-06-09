@@ -3,26 +3,14 @@ import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { trans } from '../../util'
+import { st, tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
-const key: WengineKey = '<%= sheet %>'
-const [chg, _ch] = trans('wengine', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const key: WengineKey = 'QingmingBirdcage'
+const [chg, ch] = trans('wengine', key)
 const dm = mappedStats.wengine[key]
 const icon = wengineAsset(key, 'icon')
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = conditionals[key]
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = buffs[key]
 
 const sheet: UISheetElement = {
@@ -36,6 +24,28 @@ const sheet: UISheetElement = {
           {(phase) => chg(`phaseDescs.${phase - 1}`)}
         </PhaseWrapper>
       ),
+    },
+    {
+      type: 'fields',
+      fields: [tagToTagField(buff.crit_.tag)],
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        metadata: cond.qingmingCompanionStacks,
+        label: ch('cond'),
+        fields: [
+          tagToTagField(buff.qingmingCompanionStacks_ether_dmg_.tag),
+          tagToTagField(buff.qingmingCompanionStacks_ult_ether_sheer_dmg_.tag),
+          tagToTagField(
+            buff.qingmingCompanionStacks_exSpecial_ether_sheer_dmg_.tag
+          ),
+          {
+            title: st('cd'),
+            fieldValue: dm.duration,
+          },
+        ],
+      },
     },
   ],
 }
