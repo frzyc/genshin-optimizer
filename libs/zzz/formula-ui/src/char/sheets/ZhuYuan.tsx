@@ -45,14 +45,24 @@ const sheet = createBaseSheet(key, {
       conditional: {
         label: ch('m2BasicDashEtherCond'),
         metadata: cond.shotshells_hit,
-        fields: [fieldForBuff(buff.m2_basic_dash_ether_dmg_)],
+        fields: [
+          {
+            title: ch('m2_basic_dash_ether_dmg_'),
+            fieldRef: buff.m2_basic_dash_ether_dmg_.tag,
+          },
+        ],
       },
     },
   ],
   m4: [
     {
       type: 'fields',
-      fields: [fieldForBuff(buff.m4_basic_dash_ether_res_ign_)],
+      fields: [
+        {
+          title: ch('m4_ether_resIgn_'),
+          fieldRef: buff.m4_basic_dash_ether_res_ign_.tag,
+        },
+      ],
     },
   ],
   m6: [

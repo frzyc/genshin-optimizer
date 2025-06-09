@@ -30,7 +30,10 @@ const sheet = createBaseSheet(key, {
       type: 'fields',
       fields: [
         fieldForBuff(buff.m1_exSpecial_dmg_),
-        fieldForBuff(buff.m1_exSpecial_anomBuildup_),
+        {
+          title: ch('m1_exSpecial_anomBuildup'),
+          fieldRef: buff.m1_exSpecial_anomBuildup_.tag,
+        },
       ],
     },
   ],

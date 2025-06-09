@@ -1,0 +1,14 @@
+{
+  "core_afterburn_dmg": "Afterburn Damage",
+  "core_afterburn_anomBuildup": "Afterburn Anomaly Buildup",
+  "core_afterburn_dmg_": "Afterburn Damage Increase",
+  "m1_afterburn_mv_mult": "Afterburn Damage Multiplier Increase",
+  "m1_afterburn_anomBuildup": "Afterburn Fire Anomaly Buildup Increase",
+  "m2Cond": "When triggering the Afterburn effect",
+  "m4_exSpecial_crit_": "EX Special Attack CRIT Rate",
+  "m4_assistSkill_crit_": "Assist Attack CRIT Rate",
+  "m6_additional_afterburn_dmg": "Additional Afterburn Damage",
+  "m6Cond": "After hitting an enemy with EX Special Attack: Intense Heat Stirring Method - Double Shot",
+  "m6_fire_resIgn": "EX Special Attack: Intense Heat Stirring Method - Double Shot and special Afterburn effects Fire Res Ignore",
+  "m6_additional_burn_dmg": "Additional Burn Damage"
+}

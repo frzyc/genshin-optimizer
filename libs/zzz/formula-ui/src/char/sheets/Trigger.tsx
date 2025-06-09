@@ -23,7 +23,12 @@ const sheet = createBaseSheet(key, {
   ability: [
     {
       type: 'fields',
-      fields: [fieldForBuff(buff.ability_aftershock_dazeInc_)],
+      fields: [
+        {
+          title: ch('ability_dazeInc_'),
+          fieldRef: buff.ability_aftershock_dazeInc_.tag,
+        },
+      ],
     },
   ],
   m1: [
@@ -65,7 +70,10 @@ const sheet = createBaseSheet(key, {
           title: ch('m6_armor_break_rounds_dmg'),
           fieldRef: formula.m6_armor_break_rounds_dmg.tag,
         },
-        fieldForBuff(buff.m6_armor_break_rounds_dmg_),
+        {
+          title: ch('m6_armor_break_rounds_dmg_'),
+          fieldRef: buff.m6_armor_break_rounds_dmg_.tag,
+        },
       ],
     },
   ],

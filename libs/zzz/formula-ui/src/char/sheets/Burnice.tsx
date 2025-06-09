@@ -48,7 +48,10 @@ const sheet = createBaseSheet(key, {
           fieldValue: dm.m1.afterburn_dmg * 100,
           unit: '%',
         },
-        fieldForBuff(buff.m1_afterburn_fire_anomBuildup_),
+        {
+          title: ch('m1_afterburn_anomBuildup'),
+          fieldRef: buff.m1_afterburn_fire_anomBuildup_.tag,
+        },
       ],
     },
   ],
@@ -66,8 +69,14 @@ const sheet = createBaseSheet(key, {
     {
       type: 'fields',
       fields: [
-        fieldForBuff(buff.m4_exSpecial_crit_),
-        fieldForBuff(buff.m4_assistSkill_crit_),
+        {
+          title: ch('m4_exSpecial_crit_'),
+          fieldRef: buff.m4_exSpecial_crit_.tag,
+        },
+        {
+          title: ch('m4_assistSkill_crit_'),
+          fieldRef: buff.m4_assistSkill_crit_.tag,
+        },
       ],
     },
   ],
@@ -88,6 +97,10 @@ const sheet = createBaseSheet(key, {
         metadata: cond.exSpecial_active,
         fields: [
           fieldForBuff(buff.m6_burn_fire_resIgn_),
+          {
+            title: ch('m6_fire_resIgn'),
+            fieldRef: buff.m6_fire_resIgn_.tag,
+          },
           {
             title: ch('m6_additional_burn_dmg'),
             fieldRef: formula.m6_additional_burn_dmg.tag,

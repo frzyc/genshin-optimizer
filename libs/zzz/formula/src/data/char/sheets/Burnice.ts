@@ -190,7 +190,7 @@ const sheet = register(
     cmpGE(
       char.mindscape,
       6,
-      // Random number in place of actual original dmg value
+      // TODO: change from random number in place to an actual original dmg value
       prod(percent(0.5), dm.m6.additional_burn_dmg, constant(1000))
     )
   ),

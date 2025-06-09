@@ -17,8 +17,6 @@ const dm = {
       data_gen.skillParams['dodge']['DashAttackJackInTheBox'],
     DodgeCounterDivertedBombard:
       data_gen.skillParams['dodge']['DodgeCounterDivertedBombard'],
-    DashAttackDoAsIPlease:
-      data_gen.skillParams['dodge']['DashAttackDoAsIPlease'],
   },
   special: {
     SpecialAttackSugarcoatedBullet:

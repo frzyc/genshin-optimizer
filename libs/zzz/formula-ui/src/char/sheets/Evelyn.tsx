@@ -24,8 +24,14 @@ const sheet = createBaseSheet(key, {
     {
       type: 'fields',
       fields: [
-        fieldForBuff(buff.ability_chain_ult_dmg_),
-        fieldForBuff(buff.ability_chainSkill_mv_mult),
+        {
+          title: ch('ability_dmg_'),
+          fieldRef: buff.ability_chain_ult_dmg_.tag,
+        },
+        {
+          title: ch('ability_mv_mult'),
+          fieldRef: buff.ability_chainSkill_mv_mult.tag,
+        },
       ],
     },
   ],
@@ -69,7 +75,7 @@ const sheet = createBaseSheet(key, {
       type: 'fields',
       fields: [
         {
-          title: ch('m6_follow_up_dmg_'),
+          title: ch('m6_follow_up_dmg'),
           fieldRef: formula.m6_follow_up_dmg_.tag,
         },
       ],
