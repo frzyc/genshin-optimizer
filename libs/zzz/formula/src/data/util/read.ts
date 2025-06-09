@@ -209,6 +209,12 @@ export class Read extends BaseRead<Tag> {
       super.with('damageType2', 'elemental'),
     ]
   }
+  get sheer(): Read[] {
+    return [
+      super.with('damageType1', 'sheer'),
+      super.with('damageType2', 'sheer'),
+    ]
+  }
 
   // For `count` usage, use lighter footprint so it doesn't pollute autocomplete
   // Specialty

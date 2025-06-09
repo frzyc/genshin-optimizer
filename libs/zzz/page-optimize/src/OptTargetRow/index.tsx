@@ -55,7 +55,8 @@ function AfterShockToggle() {
       }),
     [database, character.key]
   )
-  if (target?.name !== 'standardDmgInst') return null
+  if (target?.name !== 'standardDmgInst' && target?.name !== 'sheerDmgInst')
+    return null
   return (
     <AfterShockToggleButton
       isAftershock={target?.damageType2 === 'aftershock'}

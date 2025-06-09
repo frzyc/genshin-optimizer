@@ -9,6 +9,7 @@ import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import type { CharacterData } from '@genshin-optimizer/zzz/dm'
 import {
   charactersDetailedJSONData,
+  filterUnbuffedKits,
   hakushinSkillMap,
 } from '@genshin-optimizer/zzz/dm'
 import { type CharacterDatum } from '../../../char'
@@ -64,9 +65,9 @@ function extractSkillParams(skills: CharacterData['skills']) {
       return [
         hakushinSkillMap[key],
         Object.fromEntries(
-          skill.Description.map((desc) => [
+          skill.Description.filter(filterUnbuffedKits).map((desc) => [
             nameToKey(desc.Name),
-            (desc.Param ?? []).flatMap((par) =>
+            (desc.Param ?? []).filter(filterUnbuffedKits).flatMap((par) =>
               Object.entries(par.Param ?? {})
                 .map(
                   ([
@@ -113,20 +114,24 @@ function extractSkillParams(skills: CharacterData['skills']) {
 
 function extractCoreParams(cores: CharacterData['cores']) {
   return transposeArray(
-    Object.values(cores.Level).map(({ Desc }) =>
-      // Janky override for Qingyi inconsistent text
-      extractParamsFromString(
-        Desc[0].replace(
-          'the Finishing Move will apply 1 extra stack of',
-          'the Finishing Move will apply an extra stack of'
+    Object.values(cores.Level)
+      .filter(filterUnbuffedKits)
+      .map(({ Desc }) =>
+        // Janky override for Qingyi inconsistent text
+        extractParamsFromString(
+          Desc[0].replace(
+            'the Finishing Move will apply 1 extra stack of',
+            'the Finishing Move will apply an extra stack of'
+          )
         )
       )
-    )
   )
 }
 
 function extractAbilityParams(cores: CharacterData['cores']) {
-  return extractParamsFromString(cores.Level[1].Desc[1])
+  return extractParamsFromString(
+    Object.values(cores.Level).filter(filterUnbuffedKits)[1].Desc[1]
+  )
 }
 
 function extraMindscapeParams(mindscapes: CharacterData['mindscapes']) {

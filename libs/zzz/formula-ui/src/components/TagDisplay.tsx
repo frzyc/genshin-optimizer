@@ -65,6 +65,7 @@ const labelMap = {
   common_dmg_: 'DMG',
   defIgn_: 'DEF Ignore',
   resIgn_: 'Res Ignore',
+  dazeInc_: 'Daze Increase',
 } as const
 function TagStrDisplay({
   tag,

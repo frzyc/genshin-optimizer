@@ -52,7 +52,13 @@ export type BaseStatKey = (typeof baseStatKeys)[number]
 // TODO: consolidate this and StatKey to the same type.
 // Can't do it now because StatKey contains 'charLvl' and other random things that
 // don't index into Pando's own.char.initial
-const extraPandoStatKeys = ['impact', 'anomMas', 'dmg_', 'shield_'] as const
+const extraPandoStatKeys = [
+  'impact',
+  'anomMas',
+  'dmg_',
+  'shield_',
+  'dazeInc_',
+] as const
 export const allPandoStatKeys = Array.from(
   new Set([
     ...allDiscMainStatKeys,
@@ -98,12 +104,14 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   hp_: 'HP',
   atk: 'ATK',
   atk_: 'ATK',
+  sheerForce: 'Sheer Force',
   def: 'DEF',
   def_: 'DEF',
   pen: 'PEN',
   pen_: 'PEN Ratio',
   crit_: 'CRIT Rate',
   crit_dmg_: 'CRIT DMG',
+  sheer_dmg_: 'Sheer DMG',
   enerRegen_: 'Energy Regen',
   enerRegen: 'Energy Regen',
   base_enerRegen: 'Base Energy Regen',
@@ -161,6 +169,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   unstun_: 'Unstun DMG Multiplier',
   res_: 'Resistance',
   resRed_: 'Resistance Reduction',
+  sheer_mult_: 'Sheer DMG Multiplier',
 }
 
 export const elementalData: Record<AttributeKey, string> = {

@@ -38,4 +38,5 @@ export const damageTypeKeysMap: Record<DamageType, string> = {
   disorder: 'Disorder',
   aftershock: 'Aftershock',
   elemental: 'Elemental',
+  sheer: 'Sheer',
 }
