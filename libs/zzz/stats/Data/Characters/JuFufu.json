@@ -1,0 +1,306 @@
+{
+  "id": "1391",
+  "rarity": "S",
+  "attribute": "fire",
+  "specialty": "stun",
+  "faction": "YunkuiSummit",
+  "stats": {
+    "atk_base": 110,
+    "atk_growth": 6.5027,
+    "def_base": 48,
+    "def_growth": 6.5185,
+    "hp_base": 663,
+    "hp_growth": 90.0269,
+    "anomMas": 93,
+    "anomProf": 96,
+    "impact": 118,
+    "enerRegen": 1.2
+  },
+  "promotionStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 455, "atk": 39, "def": 33 },
+    { "hp": 911, "atk": 79, "def": 66 },
+    { "hp": 1366, "atk": 118, "def": 99 },
+    { "hp": 1821, "atk": 157, "def": 132 },
+    { "hp": 2276, "atk": 197, "def": 165 }
+  ],
+  "coreStats": [
+    { "atk": 0, "crit_": 0.048 },
+    { "atk": 25, "crit_": 0.048 },
+    { "atk": 25, "crit_": 0.096 },
+    { "atk": 50, "crit_": 0.096 },
+    { "atk": 50, "crit_": 0.144 },
+    { "atk": 75, "crit_": 0.144 }
+  ],
+  "skillParams": {
+    "basic": {
+      "BasicAttackTigerSevenFormsFlamingClaw": [
+        {
+          "DamagePercentage": 0.425,
+          "DamagePercentageGrowth": 0.039,
+          "StunRatio": 0.485,
+          "StunRatioGrowth": 0.023,
+          "SpRecovery": 158.7,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1212.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0.452,
+          "DamagePercentageGrowth": 0.042,
+          "StunRatio": 0.391,
+          "StunRatioGrowth": 0.018,
+          "SpRecovery": 127.9,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 979,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0.315,
+          "DamagePercentageGrowth": 0.029,
+          "StunRatio": 0.485,
+          "StunRatioGrowth": 0.023,
+          "SpRecovery": 158.6,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1212.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 44.04
+        },
+        {
+          "DamagePercentage": 2.184,
+          "DamagePercentageGrowth": 0.199,
+          "StunRatio": 1.339,
+          "StunRatioGrowth": 0.061,
+          "SpRecovery": 438.2,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3349.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 121.71
+        }
+      ],
+      "BasicAttackHuWei": [
+        {
+          "DamagePercentage": 0.924,
+          "DamagePercentageGrowth": 0.084,
+          "StunRatio": 0.693,
+          "StunRatioGrowth": 0.032,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ]
+    },
+    "dodge": {
+      "DodgeTigerSevenFormsTigerwind": [],
+      "DashAttackTigerSevenFormsTigerCharge": [
+        {
+          "DamagePercentage": 0.368,
+          "DamagePercentageGrowth": 0.034,
+          "StunRatio": 0.184,
+          "StunRatioGrowth": 0.009,
+          "SpRecovery": 60.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 459.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "DashAttackTigerSevenFormsMountainKingsGame": [
+        {
+          "DamagePercentage": 0.184,
+          "DamagePercentageGrowth": 0.017,
+          "StunRatio": 0.184,
+          "StunRatioGrowth": 0.009,
+          "SpRecovery": 60.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 459.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "DodgeCounterTigerSevenFormsReignitedMountain": [
+        {
+          "DamagePercentage": 2.078,
+          "DamagePercentageGrowth": 0.189,
+          "StunRatio": 1.853,
+          "StunRatioGrowth": 0.085,
+          "SpRecovery": 246.2,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1881,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 68.36
+        }
+      ],
+      "DashAttackTigerSevenFormsMountainKingsGameMomentum": [
+        {
+          "DamagePercentage": 0.192,
+          "DamagePercentageGrowth": 0.018,
+          "StunRatio": 0.087,
+          "StunRatioGrowth": 0.004,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ]
+    },
+    "special": {
+      "SpecialAttackTigerSevenFormsMountainDescendingTiger": [
+        {
+          "DamagePercentage": 0.661,
+          "DamagePercentageGrowth": 0.061,
+          "StunRatio": 0.661,
+          "StunRatioGrowth": 0.031,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1652.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 60.01
+        }
+      ],
+      "EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger": [
+        {
+          "DamagePercentage": 5.265,
+          "DamagePercentageGrowth": 0.479,
+          "StunRatio": 3.441,
+          "StunRatioGrowth": 0.157,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 18196.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 512.12
+        }
+      ]
+    },
+    "chain": {
+      "ChainAttackTigerCauldronCollapse": [
+        {
+          "DamagePercentage": 6.681,
+          "DamagePercentageGrowth": 0.608,
+          "StunRatio": 1.605,
+          "StunRatioGrowth": 0.073,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 14874.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 308.08
+        }
+      ],
+      "ChainAttackSuppressingTigerCauldron": [
+        {
+          "DamagePercentage": 3.545,
+          "DamagePercentageGrowth": 0.323,
+          "StunRatio": 2.216,
+          "StunRatioGrowth": 0.101,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 4540.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 60.41
+        }
+      ],
+      "UltimateTigerSevenFormsRagingTigerExplosion": [
+        {
+          "DamagePercentage": 16.638,
+          "DamagePercentageGrowth": 1.513,
+          "StunRatio": 10.907,
+          "StunRatioGrowth": 0.496,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 210.03
+        }
+      ]
+    },
+    "assist": {
+      "QuickAssistDecisiveStomp": [
+        {
+          "DamagePercentage": 0.753,
+          "DamagePercentageGrowth": 0.069,
+          "StunRatio": 0.377,
+          "StunRatioGrowth": 0.018,
+          "SpRecovery": 123.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 940.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 34.18
+        }
+      ],
+      "DefensiveAssistSteadfastCrouchingTiger": [
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.013,
+          "StunRatioGrowth": 0.092,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.728,
+          "StunRatioGrowth": 0.124,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.368,
+          "StunRatioGrowth": 0.063,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "AssistFollowUpFeralBlazingMaw": [
+        {
+          "DamagePercentage": 4.072,
+          "DamagePercentageGrowth": 0.371,
+          "StunRatio": 2.563,
+          "StunRatioGrowth": 0.117,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 11451,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 346.97
+        }
+      ]
+    }
+  },
+  "coreParams": [
+    [100, 100, 100, 100, 100, 100, 100],
+    [0.1, 0.117, 0.133, 0.15, 0.167, 0.183, 0.2],
+    [2800, 2800, 2800, 2800, 2800, 2800, 2800],
+    [100, 100, 100, 100, 100, 100, 100],
+    [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05],
+    [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
+    [0.1, 0.117, 0.133, 0.15, 0.167, 0.183, 0.2],
+    [0.2, 0.233, 0.267, 0.3, 0.333, 0.367, 0.4],
+    [30, 30, 30, 30, 30, 30, 30],
+    [25, 29.2, 33.3, 37.5, 41.7, 45.8, 50]
+  ],
+  "abilityParams": [1000, 300],
+  "mindscapeParams": [
+    [0.12, 100, 0.35, 30],
+    [0.22, 3],
+    [2],
+    [0.35],
+    [2],
+    [0.3, 3, 1.6]
+  ]
+}

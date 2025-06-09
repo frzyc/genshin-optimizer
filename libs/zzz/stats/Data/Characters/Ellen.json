@@ -103,6 +103,54 @@
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 223.17
         }
+      ],
+      "BasicAttackGlacialBladeWave": [
+        {
+          "DamagePercentage": 2.302,
+          "DamagePercentageGrowth": 0.21,
+          "StunRatio": 0.67,
+          "StunRatioGrowth": 0.031,
+          "SpRecovery": 186.2,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1674.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 121.66
+        },
+        {
+          "DamagePercentage": 1.468,
+          "DamagePercentageGrowth": 0.134,
+          "StunRatio": 0.842,
+          "StunRatioGrowth": 0.039,
+          "SpRecovery": 234.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2103.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 49.96
+        }
+      ],
+      "BasicAttackIcyBlade": [
+        {
+          "DamagePercentage": 0.604,
+          "DamagePercentageGrowth": 0.055,
+          "StunRatio": 0.258,
+          "StunRatioGrowth": 0.012,
+          "SpRecovery": 84.2,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 643.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 23.38
+        },
+        {
+          "DamagePercentage": 0.13,
+          "DamagePercentageGrowth": 0.012,
+          "StunRatio": 0.056,
+          "StunRatioGrowth": 0.003,
+          "SpRecovery": 18.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 140.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 5.01
+        }
       ]
     },
     "dodge": {

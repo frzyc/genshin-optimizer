@@ -167,8 +167,8 @@
   "ability": {
     "name": "Additional Ability: Belobog Management",
     "desc": {
-      "0": "When another character in your squad shares the same Attribute or Faction:",
-      "1": "When the explosion from Koleda's <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, it applies a debuff to the target. While the target is Stunned, all squad members' <ct color=#FFFFFF>Chain Attacks</ct> deal 35% more DMG to the target. This effect can stack up to 2 times and resets when the Stunned effect ends."
+      "0": "When another character in your squad shares the same Attribute or Faction or is a <ct color=#FFFFFF>Rupture</ct> character:",
+      "1": "When the explosion from Koleda's <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, it applies a debuff to the target. While the target is Stunned, <ct color=#FFFFFF>Chain Attacks</ct> deal 35% more DMG to the target. This effect can stack up to 2 times and resets when the Stunned effect ends."
     }
   },
   "mindscapes": {
@@ -196,7 +196,7 @@
     },
     "4": {
       "name": "Furnace's Glow",
-      "desc": "Koleda gains one stack of Charge (max 2 stacks) when consuming <ct color=#FFFFFF>Furnace Fire</ct> to use her Enhanced <ct color=#FFFFFF>Basic Attack</ct>. When her <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> hits an enemy, she consumes all stacks of Charge to increase the attack's DMG by 18% per stack.",
+      "desc": "Koleda gains one stack of Charge (max 2 stacks) when consuming <ct color=#FFFFFF>Furnace Fire</ct> to use her Enhanced <ct color=#FFFFFF>Basic Attack</ct>. When her <ct color=#FFFFFF>Chain Attack: Natural Disaster</ct> or <ct color=#FFFFFF>Ultimate: Hammerquake</ct> hits an enemy, she consumes all stacks of Charge to increase the attack's DMG by 18% per stack.",
       "flavor": {
         "0": "Koleda feels the flames of war as her hammer swings raise the surrounding temperature.",
         "1": "She's now even more flammable and explosive than Ether."

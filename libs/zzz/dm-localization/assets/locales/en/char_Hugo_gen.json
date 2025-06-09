@@ -8,7 +8,7 @@
         "0": "Press <IconNormal /> to activate:",
         "1": "Perform up to four attacks forward, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#98EFF0>Ice DMG</ct>.",
         "2": "The fourth attack is a shot. During this attack, hold <IconNormal /> to charge and perform a charged shot.",
-        "3": "Anti-Interrupt level is increased during the fourth attack, and received damage reduced by 40%."
+        "3": "Anti-Interrupt level is increased during the fourth attack, and DMG received is reduced by 40%."
       },
       "params": [
         "1st-Hit ",
@@ -25,7 +25,7 @@
         "0": "After the 4th hit of <ct color=#FFFFFF>Basic Attack: Dark Abyss Quartet</ct>, the shot of <ct color=#FFFFFF>Dodge Counter: Phantasm - Slash</ct>, or the shot of <ct color=#FFFFFF>Quick Assist: Elegy</ct>, press or hold <IconNormal /> to activate:",
         "1": "Throw the scythe forward to perform a slash, followed by a shot, dealing <ct color=#98EFF0>Ice DMG</ct>.",
         "2": "During the shot, hold <IconNormal /> to charge and perform a charged shot.",
-        "3": "Anti-Interrupt level is increased while using this skill, and received damage reduced by 40%."
+        "3": "During this skill, Anti-Interrupt level is increased, and DMG received is reduced by 40%."
       },
       "params": [
         "Slash ",
@@ -62,7 +62,7 @@
         "2": "During the skill, hold <IconNormal /> to launch a shot. During the shot, hold <IconNormal /> to charge and perform a charged shot.",
         "3": "The shot is considered a Basic Attack, with its DMG treated as Basic Attack DMG.",
         "4": "After the skill is used, it can be directly followed up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Dark Abyss Quartet</ct>.",
-        "5": "During the skill's ranged phase, Anti-Interrupt Level is increased, and received damage is reduced by 40%.",
+        "5": "During the skill's ranged phase, Anti-Interrupt level is increased, and DMG received is reduced by 40%.",
         "6": "Invulnerable during the slashes and ranged retreat of the skill."
       },
       "params": [
@@ -135,7 +135,7 @@
         "2": "During the skill, hold <IconNormal /> to launch a shot. During the shot, hold <IconNormal /> to charge and perform a charged shot.",
         "3": "The shot is considered a Basic Attack, with its DMG treated as Basic Attack DMG.",
         "4": "After the skill is used, it can be directly followed up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Dark Abyss Quartet</ct>.",
-        "5": "During the skill's ranged phase, Anti-Interrupt Level is increased, and received damage is reduced by 40%.",
+        "5": "During the skill's ranged phase, Anti-Interrupt Level is increased, and DMG received is reduced by 40%.",
         "6": "Invulnerable during the slashes and ranged retreat of the skill."
       },
       "params": [

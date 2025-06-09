@@ -107,6 +107,18 @@
       "cd_s": "ItemSuitSavior_S.png",
       "cd_a": "ItemSuitSavior_A.png",
       "cd_b": "ItemSuitSavior_B.png"
+    },
+    "YunkuiTales": {
+      "circle": "SuitYunkuiTales.png",
+      "cd_s": "ItemSuitYunkuiTales_S.png",
+      "cd_a": "ItemSuitYunkuiTales_A.png",
+      "cd_b": "ItemSuitYunkuiTales_B.png"
+    },
+    "KingOfTheSummit": {
+      "circle": "SuitKingoftheSummit.png",
+      "cd_s": "ItemSuitKingoftheSummit_S.png",
+      "cd_a": "ItemSuitKingoftheSummit_A.png",
+      "cd_b": "ItemSuitKingoftheSummit_B.png"
     }
   },
   "chars": {
@@ -334,12 +346,33 @@
       "select": "IconRoleSelect39.png",
       "interknot": "IconInterKnotRole0039.png"
     },
+    "YiXuan": {
+      "full": "IconRole44.png",
+      "circle": "IconRoleCircle44.png",
+      "trap": "IconRoleGeneral44.png",
+      "select": "IconRoleSelect44.png",
+      "interknot": "IconInterKnotRole0044.png"
+    },
     "Soldier0Anby": {
       "full": "IconRole40.png",
       "circle": "IconRoleCircle40.png",
       "trap": "IconRoleGeneral40.png",
       "select": "IconRoleSelect40.png",
       "interknot": "IconInterKnotRole0040.png"
+    },
+    "JuFufu": {
+      "full": "IconRole43.png",
+      "circle": "IconRoleCircle43.png",
+      "trap": "IconRoleGeneral43.png",
+      "select": "IconRoleSelect43.png",
+      "interknot": "IconInterKnotRole0043.png"
+    },
+    "Yinhu": {
+      "full": "IconRole45.png",
+      "circle": "IconRoleCircle45.png",
+      "trap": "IconRoleGeneral45.png",
+      "select": "IconRoleSelect45.png",
+      "interknot": "IconInterKnotRole0045.png"
     }
   },
   "wengines": {
@@ -399,6 +432,10 @@
       "icon": "Weapon_B_Common_14.png",
       "big": "Weapon_B_Common_14Big.png"
     },
+    "CinderCobalt": {
+      "icon": "Weapon_B_Common_15.png",
+      "big": "Weapon_B_Common_15Big.png"
+    },
     "StreetSuperstar": {
       "icon": "Weapon_A_Common_01.png",
       "big": "Weapon_A_Common_01Big.png"
@@ -443,13 +480,25 @@
       "icon": "Weapon_A_Common_11.png",
       "big": "Weapon_A_Common_11Big.png"
     },
+    "PuzzleSphere": {
+      "icon": "Weapon_A_Common_12.png",
+      "big": "Weapon_A_Common_12Big.png"
+    },
     "GildedBlossom": {
       "icon": "Weapon_A_Common_13.png",
       "big": "Weapon_A_Common_13Big.png"
     },
+    "RadiowaveJourney": {
+      "icon": "Weapon_A_Common_14.png",
+      "big": "Weapon_A_Common_14Big.png"
+    },
     "MarcatoDesire": {
       "icon": "Weapon_A_Common_15.png",
       "big": "Weapon_A_Common_15Big.png"
+    },
+    "ReelProjector": {
+      "icon": "Weapon_A_Common_16.png",
+      "big": "Weapon_A_Common_16Big.png"
     },
     "DemaraBatteryMarkII": {
       "icon": "Weapon_A_1011.png",
@@ -494,6 +543,10 @@
     "BoxCutter": {
       "icon": "Weapon_A_1351.png",
       "big": "Weapon_A_1351Big.png"
+    },
+    "TremorTrigramVessel": {
+      "icon": "Weapon_A_1421.png",
+      "big": "Weapon_A_1421Big.png"
     },
     "CannonRotor": {
       "icon": "Weapon_S_Common_01.png",
@@ -591,9 +644,17 @@
       "icon": "Weapon_S_1361.png",
       "big": "Weapon_S_1361Big.png"
     },
+    "QingmingBirdcage": {
+      "icon": "Weapon_S_1371.png",
+      "big": "Weapon_S_1371Big.png"
+    },
     "SeveredInnocence": {
       "icon": "Weapon_S_1381.png",
       "big": "Weapon_S_1381Big.png"
+    },
+    "RoaringFurnace": {
+      "icon": "Weapon_S_1391.png",
+      "big": "Weapon_S_1391Big.png"
     }
   }
 }

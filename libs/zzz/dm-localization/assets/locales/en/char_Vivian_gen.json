@@ -1,6 +1,6 @@
 {
   "name": "Vivian",
-  "fullName": "Vivian Banshee",
+  "fullName": "Vivian",
   "basic": {
     "BasicAttackFeatheredStrike": {
       "name": "Basic Attack: Feathered Strike",
@@ -272,7 +272,10 @@
     },
     "4": {
       "name": "\"The Wind Between the Reeds\"",
-      "desc": "<ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> and <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> will always CRIT on hit, and they will also increase Vivian's ATK by 12% for 12s. Repeated triggers reset the duration. When entering the battlefield, Vivian immediately gains 5 <ct color=#FFFFFF>Guard Feathers</ct>.",
+      "desc": {
+        "0": "<ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> and <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> will always CRIT on hit, and they will also increase Vivian's ATK by 12% for 12s. Repeated triggers reset the duration.",
+        "1": "When entering the battlefield, Vivian immediately gains 5 <ct color=#FFFFFF>Guard Feathers</ct>."
+      },
       "flavor": {
         "0": "\"I will lay my true heart, like moonlight, to cover the path beneath your feet.\"",
         "1": "In chasing after you, she has already formed her own sky.",

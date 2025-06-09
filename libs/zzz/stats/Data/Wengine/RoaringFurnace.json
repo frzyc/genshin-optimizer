@@ -1,0 +1,14 @@
+{
+  "rarity": "S",
+  "type": "stun",
+  "atk_base": 48,
+  "second_statkey": "atk_",
+  "second_statvalue": 0.12,
+  "phase": [
+    { "params": [0.28, 0.1, 2, 30] },
+    { "params": [0.322, 0.115, 2, 30] },
+    { "params": [0.364, 0.13, 2, 30] },
+    { "params": [0.406, 0.145, 2, 30] },
+    { "params": [0.448, 0.16, 2, 30] }
+  ]
+}

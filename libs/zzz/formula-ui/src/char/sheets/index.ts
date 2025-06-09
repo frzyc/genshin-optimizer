@@ -15,6 +15,7 @@ import Grace from './Grace'
 import Harumasa from './Harumasa'
 import Hugo from './Hugo'
 import Jane from './Jane'
+import JuFufu from './JuFufu'
 import Koleda from './Koleda'
 import Lighter from './Lighter'
 import Lucy from './Lucy'
@@ -33,6 +34,8 @@ import Soukaku from './Soukaku'
 import Trigger from './Trigger'
 import Vivian from './Vivian'
 import Yanagi from './Yanagi'
+import YiXuan from './YiXuan'
+import Yinhu from './Yinhu'
 import ZhuYuan from './ZhuYuan'
 
 export const charSheets: Record<CharacterKey, CharUISheet> = {
@@ -50,6 +53,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Harumasa,
   Hugo,
   Jane,
+  JuFufu,
   Koleda,
   Lighter,
   Lucy,
@@ -68,5 +72,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Trigger,
   Vivian,
   Yanagi,
+  Yinhu,
+  YiXuan,
   ZhuYuan,
 } as const

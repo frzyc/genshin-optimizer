@@ -1,0 +1,18 @@
+{
+  "name": "Tremor Trigram Vessel",
+  "desc": {
+    "0": "The art of acupoint is much like a chef in the kitchen. First, you explore the meridians, which is like rinsing the ingredients; then, you warm your palms, akin to heating the pan; and with two fingers pressing on the laughter point, the sound of laughter is like stir-frying. Practitioners must never recklessly strike a person's fatal point — it's like pouring hot oil into a stove, causing a disaster.",
+    "1": "",
+    "2": "<ct color=#959595>\"This little ball is darting between the acupoints, just like the fish balls I fling when making stir-fried noodles on the hot iron plate.\" —Pan Yinhu, distracted by random thoughts while doing acupoint memory training with a wooden panda sculpture.</ct>"
+  },
+  "desc2": "Equip to increase Defense Agents' combat capabilities",
+  "desc3": "Pressing acupoints is like cooking. Striking the fatal acupoint is like setting the stove on fire, bringing disaster.",
+  "phase": "Meridian Mapping",
+  "phaseDescs": [
+    "The equipper's <ct color=#FFFFFF>EX Special Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>25%</ct>. Whenever any squad member takes DMG or recovers HP, the equipper gains <ct color=#2BAD00>2</ct> Energy. This effect can trigger once every 5s.",
+    "The equipper's <ct color=#FFFFFF>EX Special Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>28.7%</ct>. Whenever any squad member takes DMG or recovers HP, the equipper gains <ct color=#2BAD00>2.3</ct> Energy. This effect can trigger once every 5s.",
+    "The equipper's <ct color=#FFFFFF>EX Special Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>32.5%</ct>. Whenever any squad member takes DMG or recovers HP, the equipper gains <ct color=#2BAD00>2.6</ct> Energy. This effect can trigger once every 5s.",
+    "The equipper's <ct color=#FFFFFF>EX Special Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>36.2%</ct>. Whenever any squad member takes DMG or recovers HP, the equipper gains <ct color=#2BAD00>2.9</ct> Energy. This effect can trigger once every 5s.",
+    "The equipper's <ct color=#FFFFFF>EX Special Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>40%</ct>. Whenever any squad member takes DMG or recovers HP, the equipper gains <ct color=#2BAD00>3.2</ct> Energy. This effect can trigger once every 5s."
+  ]
+}

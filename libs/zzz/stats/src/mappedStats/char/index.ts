@@ -13,6 +13,7 @@ import Grace from './maps/Grace'
 import Harumasa from './maps/Harumasa'
 import Hugo from './maps/Hugo'
 import Jane from './maps/Jane'
+import JuFufu from './maps/JuFufu'
 import Koleda from './maps/Koleda'
 import Lighter from './maps/Lighter'
 import Lucy from './maps/Lucy'
@@ -31,6 +32,8 @@ import Soukaku from './maps/Soukaku'
 import Trigger from './maps/Trigger'
 import Vivian from './maps/Vivian'
 import Yanagi from './maps/Yanagi'
+import YiXuan from './maps/YiXuan'
+import Yinhu from './maps/Yinhu'
 import ZhuYuan from './maps/ZhuYuan'
 
 const maps = {
@@ -48,6 +51,7 @@ const maps = {
   Harumasa,
   Hugo,
   Jane,
+  JuFufu,
   Koleda,
   Lighter,
   Lucy,
@@ -66,6 +70,8 @@ const maps = {
   Trigger,
   Vivian,
   Yanagi,
+  Yinhu,
+  YiXuan,
   ZhuYuan,
 }
 export default maps

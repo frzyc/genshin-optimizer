@@ -13,6 +13,7 @@
   "MagneticStormCharlie": "[Magnetic Storm] Charlie",
   "IdentityBase": "[Identity] Base",
   "IdentityInflection": "[Identity] Inflection",
+  "CinderCobalt": "[Cinder] Cobalt",
   "StreetSuperstar": "Street Superstar",
   "SliceOfTime": "Slice of Time",
   "RainforestGourmet": "Rainforest Gourmet",
@@ -24,8 +25,11 @@
   "ElectroLipGloss": "Electro-Lip Gloss",
   "BunnyBand": "Bunny Band",
   "SpringEmbrace": "Spring Embrace",
+  "PuzzleSphere": "Puzzle Sphere",
   "GildedBlossom": "Gilded Blossom",
+  "RadiowaveJourney": "Radiowave Journey",
   "MarcatoDesire": "Marcato Desire",
+  "ReelProjector": "Reel Projector",
   "DemaraBatteryMarkII": "Demara Battery Mark II",
   "TheVault": "The Vault",
   "Housekeeper": "Housekeeper",
@@ -37,6 +41,7 @@
   "PeacekeeperSpecialized": "Peacekeeper - Specialized",
   "RoaringRide": "Roaring Ride",
   "BoxCutter": "Box Cutter",
+  "TremorTrigramVessel": "Tremor Trigram Vessel",
   "CannonRotor": "Cannon Rotor",
   "UnfetteredGameBall": "Unfettered Game Ball",
   "SixShooter": "Six Shooter",
@@ -61,5 +66,7 @@
   "HeartstringNocturne": "Heartstring Nocturne",
   "FlightOfFancy": "Flight of Fancy",
   "SpectralGaze": "Spectral Gaze",
-  "SeveredInnocence": "Severed Innocence"
+  "QingmingBirdcage": "Qingming Birdcage",
+  "SeveredInnocence": "Severed Innocence",
+  "RoaringFurnace": "Roaring Fur-nace"
 }

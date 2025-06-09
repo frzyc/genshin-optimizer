@@ -102,8 +102,8 @@
         "5": "Character is invulnerable when quickly moving away."
       },
       "params": [
-        "Squad DMG Increase",
-        "Squad CRIT DMG Increase",
+        "Squad Members DMG Increase",
+        "Squad Members CRIT DMG Increase",
         "Minimum ",
         "Maximum "
       ]
@@ -214,7 +214,7 @@
   "ability": {
     "name": "Additional Ability: \"Moonlit Frenzy\"",
     "desc": {
-      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Anomaly</ct> character:",
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct>, <ct color=#FFFFFF>Anomaly</ct>, or <ct color=#FFFFFF>Rupture</ct> character:",
       "1": "When Energy is consumed to trigger a <ct color=#FFFFFF>Precise Assist</ct> or <ct color=#FFFFFF>Basic Attack: Finale</ct>, Astra Yao will additionally follow up with 1 <ct color=#FFFFFF>Tremolo</ct> and 3 <ct color=#FFFFFF>Tone Clusters</ct>."
     }
   },
