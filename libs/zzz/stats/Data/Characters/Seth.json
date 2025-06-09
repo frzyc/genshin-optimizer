@@ -25,12 +25,12 @@
     { "hp": 2401, "atk": 165, "def": 206 }
   ],
   "coreStats": [
-    { "atk": 0, "enerRegen": 12 },
-    { "atk": 25, "enerRegen": 12 },
-    { "atk": 25, "enerRegen": 24 },
-    { "atk": 50, "enerRegen": 24 },
-    { "atk": 50, "enerRegen": 36 },
-    { "atk": 75, "enerRegen": 36 }
+    { "atk": 0, "enerRegen": 0.12 },
+    { "atk": 25, "enerRegen": 0.12 },
+    { "atk": 25, "enerRegen": 0.24 },
+    { "atk": 50, "enerRegen": 0.24 },
+    { "atk": 50, "enerRegen": 0.36 },
+    { "atk": 75, "enerRegen": 0.36 }
   ],
   "skillParams": {
     "basic": {
