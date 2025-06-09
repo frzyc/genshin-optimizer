@@ -8,21 +8,20 @@ import {
   enemyDebuff,
   own,
   ownBuff,
-  percent,
   register,
   registerBuff,
   teamBuff,
 } from '../../util'
 import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
 
-const key: CharacterKey = 'Soldier0Anby'
+const key: CharacterKey = 'YiXuan'
 const data_gen = allStats.char[key]
 const dm = mappedStats.char[key]
 
 const { char } = own
 
 // TODO: Add conditionals
-const { boolConditional, core_markedWithSilverStar } = allBoolConditionals(key)
+const { boolConditional } = allBoolConditionals(key)
 const { listConditional } = allListConditionals(key, ['val1', 'val2'])
 const { numConditional } = allNumConditionals(key, true, 0, 2)
 
@@ -31,11 +30,8 @@ const sheet = register(
   // Handles base stats, StatBoosts and Eidolon 3 + 5
   entriesForChar(data_gen),
   registerBuff(
-    'core_markedWithSilverStar_crit_dmg_',
-    ownBuff.final.crit_dmg_.addWithDmgType(
-      'aftershock',
-      core_markedWithSilverStar.ifOn(prod(own.initial.crit_dmg_, percent(0.3))) // TODO: Replace this with proper core indexing once sheets are added
-    )
+    'core_hpSheerForce',
+    ownBuff.initial.sheerForce.add(prod(own.final.hp, 0.1))
   ),
 
   // Formulas
