@@ -353,6 +353,36 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackCirrusStrike": [],
+      "BasicAttackInkVeilCloudCoalescence": [],
+      "BasicAttackAuricArray": [],
+      "BasicAttackQingmingEruption": []
+    },
+    "dodge": {
+      "DodgeHiddenCloudTechnique": [],
+      "DashAttackSkybreaker": [],
+      "DodgeNimbusStep": [],
+      "DodgeCounterBanishingBlow": []
+    },
+    "special": {
+      "SpecialAttackShadowIgnition": [],
+      "EXSpecialAttackInkManifestation": [],
+      "EXSpecialAttackCloudShaper": [],
+      "EXSpecialAttackAshenInkBecomesShadows": []
+    },
+    "chain": {
+      "ChainAttackAuricInkRush": [],
+      "UltimateQingmingSkyshade": [],
+      "UltimateEndlessTalismanSuppression": []
+    },
+    "assist": {
+      "QuickAssistCloudstreamShadow": [],
+      "DefensiveAssistClearSkySurge": [],
+      "AssistFollowUpCelestialCloudBlitz": []
+    }
+  },
   "coreParams": [
     [1, 1, 1, 1, 1, 1, 1],
     [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],

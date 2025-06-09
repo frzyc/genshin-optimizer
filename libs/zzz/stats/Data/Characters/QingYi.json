@@ -312,6 +312,32 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackPenultimate": [],
+      "BasicAttackEnchantedBlossoms": [],
+      "FlashConnect": [],
+      "BasicAttackEnchantedMoonlitBlossoms": []
+    },
+    "dodge": {
+      "DodgeSwanSong": [],
+      "DashAttackBreach": [],
+      "DodgeCounterLingeringSentiments": []
+    },
+    "special": {
+      "SpecialAttackSunlitGlory": [],
+      "EXSpecialAttackMoonlitBegonia": []
+    },
+    "chain": {
+      "ChainAttackTranquilSerenade": [],
+      "UltimateEightSoundsOfGanzhou": []
+    },
+    "assist": {
+      "QuickAssistWindThroughThePines": [],
+      "DefensiveAssistGracefulEmbellishment": [],
+      "AssistFollowUpSongOfTheClearRiver": []
+    }
+  },
   "coreParams": [
     [5, 5, 5, 5, 5, 5, 5],
     [20, 20, 20, 20, 20, 20, 20],

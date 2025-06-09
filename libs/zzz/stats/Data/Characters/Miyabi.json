@@ -331,6 +331,21 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackKazahana": [], "BasicAttackShimotsuki": [] },
+    "dodge": {
+      "DodgeMizutori": [],
+      "DashAttackFuyubachi": [],
+      "DodgeCounterKanSuzume": []
+    },
+    "special": { "SpecialAttackMiyuki": [], "EXSpecialAttackHisetsu": [] },
+    "chain": { "ChainAttackSpringsCall": [], "UltimateLingeringSnow": [] },
+    "assist": {
+      "QuickAssistDancingPetals": [],
+      "DefensiveAssistDriftingPetals": [],
+      "AssistFollowUpFallingPetals": []
+    }
+  },
   "coreParams": [
     [30, 30, 30, 30, 30, 30, 30],
     [1, 1, 1, 1, 1, 1, 1],

@@ -302,6 +302,29 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackColdBoreShot": [],
+      "BasicAttackSilencedShot": [],
+      "BasicAttackHarmonizingShot": [],
+      "BasicAttackHarmonizingShotTartarus": []
+    },
+    "dodge": {
+      "DodgePhantomConcealment": [],
+      "DashAttackVengefulSpecter": [],
+      "DodgeCounterCondemnedSoul": []
+    },
+    "special": {
+      "SpecialAttackSpectralFlash": [],
+      "EXSpecialAttackFlashBurial": []
+    },
+    "chain": { "ChainAttackStygianGuide": [], "UltimateUnderworldRequiem": [] },
+    "assist": {
+      "QuickAssistColdBoreCoverFire": [],
+      "DefensiveAssistDelayingDemise": [],
+      "AssistFollowUpPiercingThunder": []
+    }
+  },
   "coreParams": [
     [0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35],
     [5, 5, 5, 5, 5, 5, 5]

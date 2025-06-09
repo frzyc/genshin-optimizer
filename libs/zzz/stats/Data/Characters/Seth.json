@@ -265,6 +265,27 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackLightningStrike": [],
+      "BasicAttackLightningStrikeElectrified": []
+    },
+    "dodge": {
+      "DodgeEvasionManeuver": [],
+      "DashAttackThunderAssault": [],
+      "DodgeCounterRetreatToAdvance": []
+    },
+    "special": {
+      "SpecialAttackThunderShieldRush": [],
+      "EXSpecialAttackThunderShieldRushHighVoltage": []
+    },
+    "chain": { "ChainAttackFinalJudgment": [], "UltimateJusticePrevails": [] },
+    "assist": {
+      "QuickAssistArmedSupport": [],
+      "DefensiveAssistThundershield": [],
+      "AssistFollowUpPublicSecurityRuling": []
+    }
+  },
   "coreParams": [
     [0.4, 0.5, 0.6, 0.68, 0.72, 0.76, 0.8],
     [3000, 3000, 3000, 3000, 3000, 3000, 3000],

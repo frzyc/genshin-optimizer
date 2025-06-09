@@ -311,6 +311,28 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackDirectFlameBlend": [],
+      "BasicAttackMixedFlameBlend": []
+    },
+    "dodge": {
+      "DodgeFieryPhantomDash": [],
+      "DashAttackDangerousFermentation": [],
+      "DodgeCounterFlutteringSteps": []
+    },
+    "special": {
+      "SpecialAttackIntenseHeatAgingMethod": [],
+      "EXSpecialAttackIntenseHeatStirringMethod": [],
+      "EXSpecialAttackIntenseHeatStirringMethodDoubleShot": []
+    },
+    "chain": { "ChainAttackFuelFedFlame": [], "UltimateGloriousInferno": [] },
+    "assist": {
+      "QuickAssistEnergizingSpecialtyDrink": [],
+      "DefensiveAssistSmokyCauldron": [],
+      "AssistFollowUpScorchingDew": []
+    }
+  },
   "coreParams": [
     [100, 100, 100, 100, 100, 100, 100],
     [1.4, 1.4, 1.4, 1.4, 1.4, 1.4, 1.4],

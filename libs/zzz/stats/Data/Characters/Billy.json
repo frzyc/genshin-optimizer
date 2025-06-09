@@ -240,6 +240,27 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackFullFirepower": [] },
+    "dodge": {
+      "DodgeRiskyBusiness": [],
+      "DashAttackStarlightSanction": [],
+      "DodgeCounterFairFight": []
+    },
+    "special": {
+      "SpecialAttackStandStill": [],
+      "EXSpecialAttackClearanceTime": []
+    },
+    "chain": {
+      "ChainAttackStarlightMirage": [],
+      "UltimateStarlightShineBright": []
+    },
+    "assist": {
+      "QuickAssistPowerOfTeamwork": [],
+      "EvasiveAssistFlashSpin": [],
+      "AssistFollowUpFatalShot": []
+    }
+  },
   "coreParams": [[0.25, 0.291, 0.333, 0.375, 0.416, 0.458, 0.5]],
   "abilityParams": [0.5, 2],
   "mindscapeParams": [[2.7, 5], [0.25], [2], [0.32], [2], [10, 0.06, 5]]

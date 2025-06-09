@@ -33,6 +33,7 @@ export function getCharactersData(): CharactersData {
       mindscapes,
     }) => {
       const skillParams = extractSkillParams(skills)
+      const calcedParams = extractCalcedParams(skills)
       const coreParams = extractCoreParams(cores)
       const abilityParams = extractAbilityParams(cores)
       const mindscapeParams = extraMindscapeParams(mindscapes)
@@ -47,6 +48,7 @@ export function getCharactersData(): CharactersData {
         promotionStats,
         coreStats,
         skillParams,
+        calcedParams,
         coreParams,
         abilityParams,
         mindscapeParams,
@@ -58,35 +60,22 @@ export function getCharactersData(): CharactersData {
 function extractSkillParams(skills: CharacterData['skills']) {
   const skillParams = Object.fromEntries(
     Object.entries(skills).map(([key, skill]) => {
-      // Only record each skill once.
-      // Many skills show up twice, e.g. once for dmg, once for daze
-      // But we have all the dmg, daze, anom info in the params
-      const ids: Record<string, boolean> = {}
       return [
         hakushinSkillMap[key],
         Object.fromEntries(
-          skill.Description.filter(filterUnbuffedKits).map((desc) => [
-            nameToKey(desc.Name),
-            (desc.Param ?? []).filter(filterUnbuffedKits).flatMap((par) =>
-              Object.entries(par.Param ?? {})
-                .map(
-                  ([
-                    id,
-                    {
-                      DamagePercentage,
-                      DamagePercentageGrowth,
-                      StunRatio,
-                      StunRatioGrowth,
-                      SpRecovery,
-                      SpRecoveryGrowth,
-                      FeverRecovery,
-                      FeverRecoveryGrowth,
-                      AttributeInfliction,
-                    },
-                  ]) => {
-                    if (!ids[id]) {
-                      ids[id] = true
-                      return {
+          skill.Description.filter(filterUnbuffedKits).map((desc) => {
+            // Only record each skill once.
+            // Many skills show up twice, e.g. once for dmg, once for daze
+            // But we have all the dmg, daze, anom info in the params
+            const ids: Record<string, boolean> = {}
+            return [
+              nameToKey(desc.Name),
+              (desc.Param ?? []).filter(filterUnbuffedKits).flatMap((par) =>
+                Object.entries(par.Param ?? {})
+                  .map(
+                    ([
+                      id,
+                      {
                         DamagePercentage,
                         DamagePercentageGrowth,
                         StunRatio,
@@ -96,20 +85,74 @@ function extractSkillParams(skills: CharacterData['skills']) {
                         FeverRecovery,
                         FeverRecoveryGrowth,
                         AttributeInfliction,
+                      },
+                    ]) => {
+                      if (!ids[id]) {
+                        ids[id] = true
+                        return {
+                          DamagePercentage,
+                          DamagePercentageGrowth,
+                          StunRatio,
+                          StunRatioGrowth,
+                          SpRecovery,
+                          SpRecoveryGrowth,
+                          FeverRecovery,
+                          FeverRecoveryGrowth,
+                          AttributeInfliction,
+                        }
                       }
+                      return undefined
                     }
-                    return undefined
-                  }
-                )
-                .filter(notEmpty)
-            ),
-          ])
+                  )
+                  .filter(notEmpty)
+              ),
+            ]
+          })
         ),
       ]
     })
   )
   verifyObjKeys(skillParams, allSkillKeys)
   return skillParams
+}
+
+const avatarSkillLevelIndexing = [
+  'basicLevel',
+  'specialLevel',
+  'dodgeLevel',
+  'chainLevel',
+  'assistLevel',
+]
+function extractCalcedParams(skills: CharacterData['skills']) {
+  const calcedParams = Object.fromEntries(
+    Object.entries(skills).map(([key, skill]) => {
+      return [
+        hakushinSkillMap[key],
+        Object.fromEntries(
+          skill.Description.map((desc) => {
+            return [
+              nameToKey(desc.Name),
+              (desc.Param ?? [])
+                .map((par) =>
+                  par.Desc.includes('{CAL:')
+                    ? {
+                        formula: par.Desc.replace(
+                          /AvatarSkillLevel\((\d)\)/g,
+                          (_match, index) =>
+                            avatarSkillLevelIndexing[parseInt(index)]
+                        ),
+                      }
+                    : undefined
+                )
+                .filter(notEmpty),
+            ]
+          })
+        ),
+      ]
+    })
+  )
+  verifyObjKeys(calcedParams, allSkillKeys)
+  return calcedParams
 }
 
 function extractCoreParams(cores: CharacterData['cores']) {

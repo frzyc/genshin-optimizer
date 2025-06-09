@@ -209,6 +209,27 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackWhackTheDimwit": [], "BasicAttackShooTheFool": [] },
+    "dodge": {
+      "DodgeDressAdjustment": [],
+      "DashAttackSuddenSurprise": [],
+      "DodgeCounterBangbooCallback": []
+    },
+    "special": {
+      "SpecialAttackBeatTheBlockhead": [],
+      "EXSpecialAttackDimwitDisappearingTrick": []
+    },
+    "chain": {
+      "ChainAttackCodeOfConduct": [],
+      "UltimateTheQueensAttendants": []
+    },
+    "assist": {
+      "QuickAssistDupleMeterAllemande": [],
+      "EvasiveAssistTripleMeterCourante": [],
+      "AssistFollowUpQuadrupleMeterGavotte": []
+    }
+  },
   "coreParams": [
     [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
     [0.06, 0.075, 0.09, 0.102, 0.108, 0.114, 0.12],

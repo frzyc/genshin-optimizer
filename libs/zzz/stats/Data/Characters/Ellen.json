@@ -365,6 +365,34 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackSawTeethTrimming": [],
+      "BasicAttackFlashFreezeTrimming": [],
+      "BasicAttackGlacialBladeWave": [],
+      "BasicAttackIcyBlade": []
+    },
+    "dodge": {
+      "DodgeVortex": [],
+      "DashRoamingHunt": [],
+      "DashAttackArcticAmbush": [],
+      "FlashFreeze": [],
+      "DashAttackMonstrousWave": [],
+      "DashAttackColdSnap": [],
+      "DodgeCounterReefRock": []
+    },
+    "special": {
+      "SpecialAttackDrift": [],
+      "EXSpecialAttackTailSwipe": [],
+      "EXSpecialAttackSharknami": []
+    },
+    "chain": { "ChainAttackAvalanche": [], "UltimateEndlessWinter": [] },
+    "assist": {
+      "QuickAssistSharkSentinel": [],
+      "DefensiveAssistWavefrontImpact": [],
+      "AssistFollowUpSharkCruiser": []
+    }
+  },
   "coreParams": [[0.5, 0.583, 0.666, 0.75, 0.833, 0.916, 1]],
   "abilityParams": [0.03, 10, 10],
   "mindscapeParams": [

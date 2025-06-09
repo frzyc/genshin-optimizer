@@ -265,6 +265,28 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": { "BasicAttackUnyieldingStrikes": [] },
+    "dodge": {
+      "DodgeLightAsASwallow": [],
+      "DashAttackSizzlingOilSupreme": [],
+      "DodgeCounterMovingMountainsAndSeas": []
+    },
+    "special": {
+      "SpecialAttackSonicPressurePointStrike": [],
+      "SpecialAttackTouchOfDeath": [],
+      "EXSpecialAttackMountainousPulseStrike": []
+    },
+    "chain": {
+      "ChainAttackAnointedWithWokSteam": [],
+      "UltimateAFeastFitForAnEmperor": []
+    },
+    "assist": {
+      "QuickAssistLiftYourGazeToGoodFortune": [],
+      "DefensiveAssistIntimidatingPresence": [],
+      "AssistFollowUpRideTheMomentum": []
+    }
+  },
   "coreParams": [
     [0.09, 0.105, 0.12, 0.135, 0.15, 0.165, 0.18],
     [25, 25, 25, 25, 25, 25, 25],

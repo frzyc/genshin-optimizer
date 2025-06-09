@@ -309,6 +309,30 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackTurboVolt": [],
+          "BasicAttackThunderbolt": []
+        },
+        "dodge": {
+          "DodgeSlide": [],
+          "DashAttackTaserBlast": [],
+          "DodgeCounterThunderclap": []
+        },
+        "special": {
+          "SpecialAttackForkLightning": [],
+          "EXSpecialAttackLightningBolt": []
+        },
+        "chain": {
+          "ChainAttackElectroEngine": [],
+          "UltimateOverdriveEngine": []
+        },
+        "assist": {
+          "QuickAssistThunderfall": [],
+          "DefensiveAssistFlash": [],
+          "AssistFollowUpLightningWhirl": []
+        }
+      },
       "coreParams": [
         [
           0.32,
@@ -651,6 +675,30 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackKittySlash": [],
+          "BasicAttackCrimsonBlade": []
+        },
+        "dodge": {
+          "DodgeCantTouchMeow": [],
+          "DashAttackOverHere": [],
+          "DodgeCounterPhantomClaws": []
+        },
+        "special": {
+          "SpecialAttackSurpriseAttack": [],
+          "EXSpecialAttackSuperSurpriseAttack": []
+        },
+        "chain": {
+          "ChainAttackClawSwipe": [],
+          "UltimateClawSmash": []
+        },
+        "assist": {
+          "QuickAssistCatsPaw": [],
+          "DefensiveAssistDesperateDefense": [],
+          "AssistFollowUpShadowStrike": []
+        }
+      },
       "coreParams": [
         [
           0.3,
@@ -847,6 +895,17 @@
           ],
           "BasicAttackDoAsIPlease": [
             {
+              "DamagePercentage": 0.389,
+              "DamagePercentageGrowth": 0.036,
+              "StunRatio": 0.195,
+              "StunRatioGrowth": 0.009,
+              "SpRecovery": 70,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 536.25,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
               "DamagePercentage": 0.494,
               "DamagePercentageGrowth": 0.045,
               "StunRatio": 0.209,
@@ -858,6 +917,17 @@
               "AttributeInfliction": 0
             },
             {
+              "DamagePercentage": 0.353,
+              "DamagePercentageGrowth": 0.033,
+              "StunRatio": 0.29,
+              "StunRatioGrowth": 0.014,
+              "SpRecovery": 104.1,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 797.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
               "DamagePercentage": 0.658,
               "DamagePercentageGrowth": 0.06,
               "StunRatio": 0.278,
@@ -865,6 +935,17 @@
               "SpRecovery": 104.1,
               "SpRecoveryGrowth": 0,
               "FeverRecovery": 797.5,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
+            {
+              "DamagePercentage": 1.243,
+              "DamagePercentageGrowth": 0.113,
+              "StunRatio": 1.043,
+              "StunRatioGrowth": 0.048,
+              "SpRecovery": 375.4,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2868.25,
               "FeverRecoveryGrowth": 0,
               "AttributeInfliction": 0
             },
@@ -943,6 +1024,17 @@
             }
           ],
           "DashAttackDoAsIPlease": [
+            {
+              "DamagePercentage": 0.412,
+              "DamagePercentageGrowth": 0.038,
+              "StunRatio": 0.29,
+              "StunRatioGrowth": 0.014,
+              "SpRecovery": 102,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 781,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 0
+            },
             {
               "DamagePercentage": 1.173,
               "DamagePercentageGrowth": 0.107,
@@ -1162,6 +1254,31 @@
               "AttributeInfliction": 353.67
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackCunningCombo": [],
+          "BasicAttackDoAsIPlease": []
+        },
+        "dodge": {
+          "DodgeSpeedDemon": [],
+          "DashAttackJackInTheBox": [],
+          "DodgeCounterDivertedBombard": [],
+          "DashAttackDoAsIPlease": []
+        },
+        "special": {
+          "SpecialAttackSugarcoatedBullet": [],
+          "EXSpecialAttackStuffedSugarcoatedBullet": []
+        },
+        "chain": {
+          "ChainAttackEtherShellacking": [],
+          "UltimateEtherGrenade": []
+        },
+        "assist": {
+          "QuickAssistEmergencyBombard": [],
+          "DefensiveAssistTheHareStrikesBack": [],
+          "AssistFollowUpWindowOfOpportunity": []
         }
       },
       "coreParams": [
@@ -1543,6 +1660,31 @@
               "AttributeInfliction": 342.42
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackWarmupSparks": [],
+          "BasicAttackFireSuppression": []
+        },
+        "dodge": {
+          "DodgeTemperedFire": [],
+          "DashAttackBlazingFire": [],
+          "DashAttackFireSuppression": [],
+          "DodgeCounterBackdraft": []
+        },
+        "special": {
+          "SpecialAttackRagingFire": [],
+          "EXSpecialAttackFerventFire": []
+        },
+        "chain": {
+          "ChainAttackUpliftingFlame": [],
+          "UltimateBellowingFlame": []
+        },
+        "assist": {
+          "QuickAssistCoveringFire": [],
+          "DefensiveAssistHoldTheLine": [],
+          "AssistFollowUpReignition": []
         }
       },
       "coreParams": [
@@ -1943,6 +2085,29 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackWipeout": []
+        },
+        "dodge": {
+          "DodgeShoo": [],
+          "DashAttackOopsyDaisy": [],
+          "DodgeCounterNope": []
+        },
+        "special": {
+          "SpecialAttackCleanSweep": [],
+          "EXSpecialAttackSkirtAlert": []
+        },
+        "chain": {
+          "ChainAttackSorry": [],
+          "UltimateVeryVerySorry": []
+        },
+        "assist": {
+          "QuickAssistEmergencyMeasures": [],
+          "DefensiveAssistPPleaseAllowMe": [],
+          "AssistFollowUpQuickSweep": []
+        }
+      },
       "coreParams": [
         [
           0.187,
@@ -2267,6 +2432,17 @@
               "FeverRecovery": 9493,
               "FeverRecoveryGrowth": 0,
               "AttributeInfliction": 282.87
+            },
+            {
+              "DamagePercentage": 0,
+              "DamagePercentageGrowth": 0,
+              "StunRatio": 1.54,
+              "StunRatioGrowth": 0.07,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 2750,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 100
             }
           ],
           "StanceSwitch": []
@@ -2361,6 +2537,41 @@
               "AttributeInfliction": 346.97
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackRampagingSlash": [],
+          "BasicAttackDeadEnd": []
+        },
+        "dodge": {
+          "DodgeAdrift": [],
+          "DashAttackHogRush": [],
+          "DodgeCounterEyeForAnEye": []
+        },
+        "special": {
+          "SpecialAttackShockwaveShieldBash": [],
+          "SpecialAttackRoaringThrust": [],
+          "EXSpecialAttackParryCounter": [],
+          "EXSpecialAttackOverpoweredShieldBash": [],
+          "StanceSwitch": [
+            {
+              "formula": "{CAL:8+specialLevel*1,1,2}%"
+            }
+          ]
+        },
+        "chain": {
+          "ChainAttackRoadRageSlam": [],
+          "UltimateSavageSmash": [
+            {
+              "formula": "{CAL:40+chainLevel*5,1,2}%"
+            }
+          ]
+        },
+        "assist": {
+          "QuickAssistLaneChange": [],
+          "DefensiveAssistAegisShield": [],
+          "AssistFollowUpAidingBlade": []
         }
       },
       "coreParams": [
@@ -2726,6 +2937,29 @@
               "AttributeInfliction": 364.97
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackFullFirepower": []
+        },
+        "dodge": {
+          "DodgeRiskyBusiness": [],
+          "DashAttackStarlightSanction": [],
+          "DodgeCounterFairFight": []
+        },
+        "special": {
+          "SpecialAttackStandStill": [],
+          "EXSpecialAttackClearanceTime": []
+        },
+        "chain": {
+          "ChainAttackStarlightMirage": [],
+          "UltimateStarlightShineBright": []
+        },
+        "assist": {
+          "QuickAssistPowerOfTeamwork": [],
+          "EvasiveAssistFlashSpin": [],
+          "AssistFollowUpFatalShot": []
         }
       },
       "coreParams": [
@@ -3140,6 +3374,30 @@
               "AttributeInfliction": 286.17
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackKazahana": [],
+          "BasicAttackShimotsuki": []
+        },
+        "dodge": {
+          "DodgeMizutori": [],
+          "DashAttackFuyubachi": [],
+          "DodgeCounterKanSuzume": []
+        },
+        "special": {
+          "SpecialAttackMiyuki": [],
+          "EXSpecialAttackHisetsu": []
+        },
+        "chain": {
+          "ChainAttackSpringsCall": [],
+          "UltimateLingeringSnow": []
+        },
+        "assist": {
+          "QuickAssistDancingPetals": [],
+          "DefensiveAssistDriftingPetals": [],
+          "AssistFollowUpFallingPetals": []
         }
       },
       "coreParams": [
@@ -3604,6 +3862,29 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackSmashNBash": []
+        },
+        "dodge": {
+          "DodgeWaitNSee": [],
+          "DashAttackTremble": [],
+          "DodgeCounterDontLookDownOnMe": []
+        },
+        "special": {
+          "SpecialAttackHammerTime": [],
+          "EXSpecialAttackBoilingFurnace": []
+        },
+        "chain": {
+          "ChainAttackNaturalDisaster": [],
+          "UltimateHammerquake": []
+        },
+        "assist": {
+          "QuickAssistComingThru": [],
+          "DefensiveAssistProtectiveHammer": [],
+          "AssistFollowUpHammerBell": []
+        }
+      },
       "coreParams": [
         [
           0.3,
@@ -3990,6 +4271,33 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackEnthusiasticDrills": [],
+          "BasicAttackEnthusiasticDrillsBurstMode": []
+        },
+        "dodge": {
+          "DodgeLetsMove": [],
+          "DashAttackFireWithFire": [],
+          "DodgeCounterRetaliation": [],
+          "DodgeCounterOverloadDrillBurstMode": []
+        },
+        "special": {
+          "SpecialAttackSpinBro": [],
+          "EXSpecialAttackSmashTheHorizonBro": [],
+          "SpecialAttackExplosiveDrillBurstMode": []
+        },
+        "chain": {
+          "ChainAttackGoGoGo": [],
+          "UltimateGoGoGoGoGo": []
+        },
+        "assist": {
+          "QuickAssistShoulderToShoulder": [],
+          "QuickAssistProtectiveDrillBurstMode": [],
+          "DefensiveAssistIronWrist": [],
+          "AssistFollowUpLimitBurst": []
+        }
+      },
       "coreParams": [
         [
           0.12,
@@ -4345,6 +4653,29 @@
               "AttributeInfliction": 304.26
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackDebtReconciliation": []
+        },
+        "dodge": {
+          "DodgeMissingInvoice": [],
+          "DashAttackIncomingExpense": [],
+          "DodgeCounterAccountsSettled": []
+        },
+        "special": {
+          "SpecialAttackFiscalFist": [],
+          "EXSpecialAttackCashflowCounter": []
+        },
+        "chain": {
+          "ChainAttackSignedAndSealed": [],
+          "UltimateCompletePayback": []
+        },
+        "assist": {
+          "QuickAssistJointAccount": [],
+          "DefensiveAssistRiskAllocation": [],
+          "AssistFollowUpDontBreakContract": []
         }
       },
       "coreParams": [
@@ -4788,6 +5119,32 @@
               "AttributeInfliction": 106.1
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackMakingRiceCakes": [],
+          "BasicAttackMakingRiceCakesFrostedBanner": []
+        },
+        "dodge": {
+          "DodgeGrabABite": [],
+          "DashAttack5050": [],
+          "DashAttack5050FrostedBanner": [],
+          "DodgeCounterAwayFromMySnacks": []
+        },
+        "special": {
+          "SpecialAttackCoolingBento": [],
+          "EXSpecialAttackFanningMosquitoes": [],
+          "SpecialAttackRally": []
+        },
+        "chain": {
+          "ChainAttackPuddingSlash": [],
+          "UltimateJumboPuddingSlash": []
+        },
+        "assist": {
+          "QuickAssistASetForTwo": [],
+          "DefensiveAssistGuardingTactics": [],
+          "AssistFollowUpSweepingStrike": []
         }
       },
       "coreParams": [
@@ -5252,6 +5609,29 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackMoonHunter": []
+        },
+        "dodge": {
+          "DodgeSuitablePositioning": [],
+          "DashAttackKeepItClean": [],
+          "DodgeCounterEtiquetteManual": []
+        },
+        "special": {
+          "SpecialAttackTimeToHunt": [],
+          "EXSpecialAttackThrillOfTheHunt": []
+        },
+        "chain": {
+          "ChainAttackAsYouWish": [],
+          "UltimateMissionComplete": []
+        },
+        "assist": {
+          "QuickAssistWolfPack": [],
+          "DefensiveAssistDisruptedHunt": [],
+          "AssistFollowUpVengefulCounterattack": []
+        }
+      },
       "coreParams": [
         [
           0.4,
@@ -5666,6 +6046,36 @@
               "AttributeInfliction": 326.67
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackLadysBat": [],
+          "GuardBoarsToArms": [],
+          "GuardBoarsSpinningSwing": []
+        },
+        "dodge": {
+          "DodgeFoulBall": [],
+          "DashAttackFearlessBoar": [],
+          "DodgeCounterReturningTusk": []
+        },
+        "special": {
+          "SpecialAttackSolidHit": [],
+          "EXSpecialAttackHomeRun": [],
+          "CheerOn": [
+            {
+              "formula": "{CAL:13+specialLevel*0.8,1,2}% of Lucy's ATK + {CAL:40+specialLevel*4,1,2}"
+            }
+          ]
+        },
+        "chain": {
+          "ChainAttackGrandSlam": [],
+          "UltimateWalkOffHomeRun": []
+        },
+        "assist": {
+          "QuickAssistHitByPitch": [],
+          "DefensiveAssistSafeOnBase": [],
+          "AssistFollowUpScoredARun": []
         }
       },
       "coreParams": [
@@ -6120,6 +6530,29 @@
               "AttributeInfliction": 182.72
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackLFormThunderingFist": []
+        },
+        "dodge": {
+          "DodgeShadowedSlide": [],
+          "DashAttackChargingSlam": [],
+          "DodgeCounterBlazingFlash": []
+        },
+        "special": {
+          "SpecialAttackVFormSunriseUppercut": [],
+          "EXSpecialAttackVFormSunriseUppercutFullDistance": []
+        },
+        "chain": {
+          "ChainAttackVFormScorchingSun": [],
+          "UltimateWFormCrownedInferno": []
+        },
+        "assist": {
+          "QuickAssistBlazingFlashGuard": [],
+          "DefensiveAssistSwiftBreak": [],
+          "AssistFollowUpChargingSlamStab": []
         }
       },
       "coreParams": [
@@ -6627,6 +7060,31 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackDirectFlameBlend": [],
+          "BasicAttackMixedFlameBlend": []
+        },
+        "dodge": {
+          "DodgeFieryPhantomDash": [],
+          "DashAttackDangerousFermentation": [],
+          "DodgeCounterFlutteringSteps": []
+        },
+        "special": {
+          "SpecialAttackIntenseHeatAgingMethod": [],
+          "EXSpecialAttackIntenseHeatStirringMethod": [],
+          "EXSpecialAttackIntenseHeatStirringMethodDoubleShot": []
+        },
+        "chain": {
+          "ChainAttackFuelFedFlame": [],
+          "UltimateGloriousInferno": []
+        },
+        "assist": {
+          "QuickAssistEnergizingSpecialtyDrink": [],
+          "DefensiveAssistSmokyCauldron": [],
+          "AssistFollowUpScorchingDew": []
+        }
+      },
       "coreParams": [
         [
           100,
@@ -7014,6 +7472,29 @@
               "AttributeInfliction": 320.01
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackHighPressureSpike": []
+        },
+        "dodge": {
+          "DodgeSafetyRegulation": [],
+          "DashAttackQuickInspection": [],
+          "DodgeCounterViolationPenalty": []
+        },
+        "special": {
+          "SpecialAttackObstructionRemoval": [],
+          "EXSpecialAttackSuperchargedObstructionRemoval": []
+        },
+        "chain": {
+          "ChainAttackCollaborativeConstruction": [],
+          "UltimateDemolitionBlastBeware": []
+        },
+        "assist": {
+          "QuickAssistIncidentManagement": [],
+          "EvasiveAssistRapidRiskResponse": [],
+          "AssistFollowUpCounterVoltNeedle": []
         }
       },
       "coreParams": [
@@ -7485,6 +7966,37 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackSawTeethTrimming": [],
+          "BasicAttackFlashFreezeTrimming": [],
+          "BasicAttackGlacialBladeWave": [],
+          "BasicAttackIcyBlade": []
+        },
+        "dodge": {
+          "DodgeVortex": [],
+          "DashRoamingHunt": [],
+          "DashAttackArcticAmbush": [],
+          "FlashFreeze": [],
+          "DashAttackMonstrousWave": [],
+          "DashAttackColdSnap": [],
+          "DodgeCounterReefRock": []
+        },
+        "special": {
+          "SpecialAttackDrift": [],
+          "EXSpecialAttackTailSwipe": [],
+          "EXSpecialAttackSharknami": []
+        },
+        "chain": {
+          "ChainAttackAvalanche": [],
+          "UltimateEndlessWinter": []
+        },
+        "assist": {
+          "QuickAssistSharkSentinel": [],
+          "DefensiveAssistWavefrontImpact": [],
+          "AssistFollowUpSharkCruiser": []
+        }
+      },
       "coreParams": [
         [
           0.5,
@@ -7893,6 +8405,33 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackCloudPiercer": [],
+          "BasicAttackCloudPiercerDrift": [],
+          "BasicAttackFallingFeather": [],
+          "BasicAttackHaOtoNoYa": []
+        },
+        "dodge": {
+          "DodgeQuickFlash": [],
+          "DashAttackHitenNoTsuru": [],
+          "DodgeCounterHiddenEdge": [],
+          "DashAttackHitenNoTsuruSlash": []
+        },
+        "special": {
+          "SpecialAttackNowhereToHide": [],
+          "EXSpecialAttackNowhereToRun": []
+        },
+        "chain": {
+          "ChainAttackKaiHanare": [],
+          "UltimateZanshin": []
+        },
+        "assist": {
+          "QuickAssistBracedBow": [],
+          "DefensiveAssistYugamae": [],
+          "AssistFollowUpYugamaeSlash": []
+        }
+      },
       "coreParams": [
         [
           0.106,
@@ -8233,6 +8772,30 @@
               "AttributeInfliction": 310.92
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackWhackTheDimwit": [],
+          "BasicAttackShooTheFool": []
+        },
+        "dodge": {
+          "DodgeDressAdjustment": [],
+          "DashAttackSuddenSurprise": [],
+          "DodgeCounterBangbooCallback": []
+        },
+        "special": {
+          "SpecialAttackBeatTheBlockhead": [],
+          "EXSpecialAttackDimwitDisappearingTrick": []
+        },
+        "chain": {
+          "ChainAttackCodeOfConduct": [],
+          "UltimateTheQueensAttendants": []
+        },
+        "assist": {
+          "QuickAssistDupleMeterAllemande": [],
+          "EvasiveAssistTripleMeterCourante": [],
+          "AssistFollowUpQuadrupleMeterGavotte": []
         }
       },
       "coreParams": [
@@ -8645,6 +9208,39 @@
               "AttributeInfliction": 312.23
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackTsukuyomiKagura": [],
+          "StanceJougen": [],
+          "StanceKagen": []
+        },
+        "dodge": {
+          "DodgeWanderingBreeze": [],
+          "DashAttackFleetingFlight": [],
+          "DodgeCounterRapidRetaliation": []
+        },
+        "special": {
+          "SpecialAttackRuten": [],
+          "EXSpecialAttackGekkaRuten": [
+            {
+              "formula": "{CAL:5+specialLevel*2.25,100,2}%"
+            }
+          ]
+        },
+        "chain": {
+          "ChainAttackCelestialHarmony": [],
+          "UltimateRaieiTenge": [
+            {
+              "formula": "{CAL:5+chainLevel*2.25,100,2}%"
+            }
+          ]
+        },
+        "assist": {
+          "QuickAssistBladeOfElegance": [],
+          "DefensiveAssistRadiantReversal": [],
+          "AssistFollowUpWeepingWillowStab": []
         }
       },
       "coreParams": [
@@ -9067,6 +9663,31 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackDontMove": [],
+          "BasicAttackPleaseDoNotResist": []
+        },
+        "dodge": {
+          "DodgeTacticalDetour": [],
+          "DashAttackFirepowerOffensive": [],
+          "DashAttackOverwhelmingFirepower": [],
+          "DodgeCounterFireBlast": []
+        },
+        "special": {
+          "SpecialAttackBuckshotBlast": [],
+          "EXSpecialAttackFullBarrage": []
+        },
+        "chain": {
+          "ChainAttackEradicationMode": [],
+          "UltimateMaxEradicationMode": []
+        },
+        "assist": {
+          "QuickAssistCoveringShot": [],
+          "EvasiveAssistGuardedBackup": [],
+          "AssistFollowUpDefensiveCounter": []
+        }
+      },
       "coreParams": [
         [
           0.2,
@@ -9482,6 +10103,32 @@
               "AttributeInfliction": 320.01
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackPenultimate": [],
+          "BasicAttackEnchantedBlossoms": [],
+          "FlashConnect": [],
+          "BasicAttackEnchantedMoonlitBlossoms": []
+        },
+        "dodge": {
+          "DodgeSwanSong": [],
+          "DashAttackBreach": [],
+          "DodgeCounterLingeringSentiments": []
+        },
+        "special": {
+          "SpecialAttackSunlitGlory": [],
+          "EXSpecialAttackMoonlitBegonia": []
+        },
+        "chain": {
+          "ChainAttackTranquilSerenade": [],
+          "UltimateEightSoundsOfGanzhou": []
+        },
+        "assist": {
+          "QuickAssistWindThroughThePines": [],
+          "DefensiveAssistGracefulEmbellishment": [],
+          "AssistFollowUpSongOfTheClearRiver": []
         }
       },
       "coreParams": [
@@ -9948,6 +10595,34 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackDancingBlades": [],
+          "Passion": [],
+          "BasicAttackSalchowJump": []
+        },
+        "dodge": {
+          "DodgePhantom": [],
+          "DashAttackEdgeJump": [],
+          "DashAttackPhantomThrust": [],
+          "DodgeCounterSwiftShadow": [],
+          "DodgeCounterSwiftShadowDance": []
+        },
+        "special": {
+          "SpecialAttackAerialSweep": [],
+          "EXSpecialAttackAerialSweepClearout": []
+        },
+        "chain": {
+          "ChainAttackFlowersOfSin": [],
+          "UltimateFinalCurtain": []
+        },
+        "assist": {
+          "QuickAssistDarkThorn": [],
+          "QuickAssistLutzJump": [],
+          "DefensiveAssistLastDefense": [],
+          "AssistFollowUpGaleSweep": []
+        }
+      },
       "coreParams": [
         [
           10,
@@ -10333,6 +11008,30 @@
               "AttributeInfliction": 403.22
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackLightningStrike": [],
+          "BasicAttackLightningStrikeElectrified": []
+        },
+        "dodge": {
+          "DodgeEvasionManeuver": [],
+          "DashAttackThunderAssault": [],
+          "DodgeCounterRetreatToAdvance": []
+        },
+        "special": {
+          "SpecialAttackThunderShieldRush": [],
+          "EXSpecialAttackThunderShieldRushHighVoltage": []
+        },
+        "chain": {
+          "ChainAttackFinalJudgment": [],
+          "UltimateJusticePrevails": []
+        },
+        "assist": {
+          "QuickAssistArmedSupport": [],
+          "DefensiveAssistThundershield": [],
+          "AssistFollowUpPublicSecurityRuling": []
         }
       },
       "coreParams": [
@@ -10766,6 +11465,31 @@
               "AttributeInfliction": 376.22
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackLoadUpAndRollOut": []
+        },
+        "dodge": {
+          "DodgeHandbrakeDrift": [],
+          "DashAttackPedalToTheMetal": [],
+          "DodgeCounterPowerDrift": []
+        },
+        "special": {
+          "SpecialAttackTireSpin": [],
+          "SpecialAttackOneTrillionTons": [],
+          "EXSpecialAttackEngineSpin": [],
+          "EXSpecialAttackReallyHeavy": []
+        },
+        "chain": {
+          "ChainAttackBuckleUp": [],
+          "UltimateHoldOnTight": []
+        },
+        "assist": {
+          "QuickAssistBrakeTap": [],
+          "DefensiveAssistEmergencyBrake": [],
+          "AssistFollowUpOvertakingManeuver": []
         }
       },
       "coreParams": [
@@ -11221,6 +11945,30 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackDarkAbyssQuartet": [],
+          "BasicAttackDarkAbyssConcerto": []
+        },
+        "dodge": {
+          "DodgePhantasm": [],
+          "DashAttackPhantasmShatter": [],
+          "DodgeCounterPhantasmSlash": []
+        },
+        "special": {
+          "SpecialAttackSoulHunterJudgment": [],
+          "EXSpecialAttackSoulHunterPunishment": []
+        },
+        "chain": {
+          "ChainAttackTrickOfFate": [],
+          "UltimateBlaspheme": []
+        },
+        "assist": {
+          "QuickAssistElegy": [],
+          "DefensiveAssistTheEndHasNotCome": [],
+          "AssistFollowUpAceReversal": []
+        }
+      },
       "coreParams": [
         [
           6,
@@ -11545,8 +12293,32 @@
               "AttributeInfliction": 17.59
             }
           ],
-          "BasicAttackChorus": [],
-          "BasicAttackFinale": []
+          "BasicAttackChorus": [
+            {
+              "DamagePercentage": 0.55,
+              "DamagePercentageGrowth": 0.05,
+              "StunRatio": 0.484,
+              "StunRatioGrowth": 0.022,
+              "SpRecovery": 63.4,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 484,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 17.59
+            }
+          ],
+          "BasicAttackFinale": [
+            {
+              "DamagePercentage": 0.55,
+              "DamagePercentageGrowth": 0.05,
+              "StunRatio": 0.484,
+              "StunRatioGrowth": 0.022,
+              "SpRecovery": 63.4,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 484,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 17.59
+            }
+          ]
         },
         "dodge": {
           "DodgeMiniWaltz": [],
@@ -11673,6 +12445,44 @@
               "AttributeInfliction": 257.01
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackCapriccio": [],
+          "BasicAttackInterlude": [],
+          "BasicAttackChorus": [],
+          "BasicAttackFinale": []
+        },
+        "dodge": {
+          "DodgeMiniWaltz": [],
+          "DashAttackLunarEclipseMelody": [],
+          "DodgeCounterUmbrellaWaltz": []
+        },
+        "special": {
+          "SpecialAttackWindchimesOaths": [
+            {
+              "formula": "{CAL:0.08+specialLevel*0.01,100,2}%"
+            },
+            {
+              "formula": "{CAL:0.07+specialLevel*0.015,100,2}%"
+            }
+          ],
+          "IdyllicCadenza": [],
+          "Chord": []
+        },
+        "chain": {
+          "ChainAttackTipsyConcerto": [],
+          "UltimateFantasianSonata": [
+            {
+              "formula": "{CAL:-50+chainLevel*250,1,2}"
+            }
+          ]
+        },
+        "assist": {
+          "QuickAssistOneLuminousSky": [],
+          "EvasiveAssistTwoHearts": [],
+          "AssistFollowUpThreeLifetimesOfFate": []
         }
       },
       "coreParams": [
@@ -12038,7 +12848,19 @@
               "AttributeInfliction": 236.7
             }
           ],
-          "UltimateLunaluxGarroteShadow": []
+          "UltimateLunaluxGarroteShadow": [
+            {
+              "DamagePercentage": 19.885,
+              "DamagePercentageGrowth": 1.808,
+              "StunRatio": 2.604,
+              "StunRatioGrowth": 0.119,
+              "SpRecovery": 0,
+              "SpRecoveryGrowth": 0,
+              "FeverRecovery": 0,
+              "FeverRecoveryGrowth": 0,
+              "AttributeInfliction": 236.7
+            }
+          ]
         },
         "assist": {
           "QuickAssistFierceBlade": [
@@ -12102,6 +12924,34 @@
               "AttributeInfliction": 245.67
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackRazorWire": [],
+          "PassiveBind": [],
+          "BasicAttackGarroteFirstForm": [],
+          "BasicAttackGarroteSecondForm": []
+        },
+        "dodge": {
+          "DodgeArcStep": [],
+          "DashAttackPiercingAmbush": [],
+          "DodgeCounterStranglingReversal": []
+        },
+        "special": {
+          "SpecialAttackLockedPosition": [],
+          "SpecialAttackBindingSunderFirstForm": [],
+          "EXSpecialAttackBindingSunderFinalForm": []
+        },
+        "chain": {
+          "ChainAttackLunaluxSnare": [],
+          "UltimateLunaluxGarroteTimbre": [],
+          "UltimateLunaluxGarroteShadow": []
+        },
+        "assist": {
+          "QuickAssistFierceBlade": [],
+          "DefensiveAssistSilentProtection": [],
+          "AssistFollowUpCourseDisruption": []
         }
       },
       "coreParams": [
@@ -12468,6 +13318,33 @@
               "AttributeInfliction": 236.56
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackFeatheredStrike": [],
+          "BasicAttackNoblewomanWaltz": [],
+          "BasicAttackFlutteringFrockSuspension": [],
+          "BasicAttackFeatherbloom": []
+        },
+        "dodge": {
+          "DodgeLightstream": [],
+          "DashAttackSilverThornedMelody": [],
+          "DodgeCounterWingbladeReverb": [],
+          "DodgeDaintySteps": []
+        },
+        "special": {
+          "SpecialAttackSongOfSilverWings": [],
+          "EXSpecialAttackVioletRequiem": []
+        },
+        "chain": {
+          "ChainAttackChorusOfCelestialWings": [],
+          "UltimateSoaringBirdsSong": []
+        },
+        "assist": {
+          "QuickAssistFrostwingGuard": [],
+          "DefensiveAssistSilverUmbrellaFormation": [],
+          "AssistFollowUpFeatherbladeExecution": []
         }
       },
       "coreParams": [
@@ -12852,6 +13729,31 @@
               "AttributeInfliction": 286.17
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackSwiftStrike": [],
+          "BasicAttackLeapingStrike": []
+        },
+        "dodge": {
+          "DodgeReversalShot": [],
+          "DashAttackFirstStrikeAdvantage": [],
+          "DodgeCounterRelentlessRetribution": []
+        },
+        "special": {
+          "SpecialAttackRendingClaw": [],
+          "SpecialAttackRendingClawNightmareShadow": [],
+          "EXSpecialAttackRendingClawFlashstep": []
+        },
+        "chain": {
+          "ChainAttackHeyDidntExpectThatRight": [],
+          "UltimateOhTimeToPlay": []
+        },
+        "assist": {
+          "QuickAssistContractBodyguard": [],
+          "EvasiveAssistContractOutsourcedCombat": [],
+          "AssistFollowUpIndependentPricing": []
         }
       },
       "coreParams": [
@@ -13244,6 +14146,32 @@
               "AttributeInfliction": 369.51
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackColdBoreShot": [],
+          "BasicAttackSilencedShot": [],
+          "BasicAttackHarmonizingShot": [],
+          "BasicAttackHarmonizingShotTartarus": []
+        },
+        "dodge": {
+          "DodgePhantomConcealment": [],
+          "DashAttackVengefulSpecter": [],
+          "DodgeCounterCondemnedSoul": []
+        },
+        "special": {
+          "SpecialAttackSpectralFlash": [],
+          "EXSpecialAttackFlashBurial": []
+        },
+        "chain": {
+          "ChainAttackStygianGuide": [],
+          "UltimateUnderworldRequiem": []
+        },
+        "assist": {
+          "QuickAssistColdBoreCoverFire": [],
+          "DefensiveAssistDelayingDemise": [],
+          "AssistFollowUpPiercingThunder": []
         }
       },
       "coreParams": [
@@ -13705,6 +14633,36 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackCirrusStrike": [],
+          "BasicAttackInkVeilCloudCoalescence": [],
+          "BasicAttackAuricArray": [],
+          "BasicAttackQingmingEruption": []
+        },
+        "dodge": {
+          "DodgeHiddenCloudTechnique": [],
+          "DashAttackSkybreaker": [],
+          "DodgeNimbusStep": [],
+          "DodgeCounterBanishingBlow": []
+        },
+        "special": {
+          "SpecialAttackShadowIgnition": [],
+          "EXSpecialAttackInkManifestation": [],
+          "EXSpecialAttackCloudShaper": [],
+          "EXSpecialAttackAshenInkBecomesShadows": []
+        },
+        "chain": {
+          "ChainAttackAuricInkRush": [],
+          "UltimateQingmingSkyshade": [],
+          "UltimateEndlessTalismanSuppression": []
+        },
+        "assist": {
+          "QuickAssistCloudstreamShadow": [],
+          "DefensiveAssistClearSkySurge": [],
+          "AssistFollowUpCelestialCloudBlitz": []
+        }
+      },
       "coreParams": [
         [
           1,
@@ -14160,6 +15118,31 @@
           ]
         }
       },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackPenetratingShock": []
+        },
+        "dodge": {
+          "DodgeStrobe": [],
+          "DashAttackTorrent": [],
+          "DodgeCounterGroundFlashCounter": []
+        },
+        "special": {
+          "SpecialAttackCelestialThunder": [],
+          "SpecialAttackAzureFlash": [],
+          "SpecialAttackThunderSmite": [],
+          "EXSpecialAttackSunderingBolt": []
+        },
+        "chain": {
+          "ChainAttackLeapingThunderstrike": [],
+          "UltimateVoidstrike": []
+        },
+        "assist": {
+          "QuickAssistCloudFlash": [],
+          "DefensiveAssistCounterSurge": [],
+          "AssistFollowUpConductingBlow": []
+        }
+      },
       "coreParams": [
         [
           0,
@@ -14558,6 +15541,33 @@
               "AttributeInfliction": 346.97
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackTigerSevenFormsFlamingClaw": [],
+          "BasicAttackHuWei": []
+        },
+        "dodge": {
+          "DodgeTigerSevenFormsTigerwind": [],
+          "DashAttackTigerSevenFormsTigerCharge": [],
+          "DashAttackTigerSevenFormsMountainKingsGame": [],
+          "DodgeCounterTigerSevenFormsReignitedMountain": [],
+          "DashAttackTigerSevenFormsMountainKingsGameMomentum": []
+        },
+        "special": {
+          "SpecialAttackTigerSevenFormsMountainDescendingTiger": [],
+          "EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger": []
+        },
+        "chain": {
+          "ChainAttackTigerCauldronCollapse": [],
+          "ChainAttackSuppressingTigerCauldron": [],
+          "UltimateTigerSevenFormsRagingTigerExplosion": []
+        },
+        "assist": {
+          "QuickAssistDecisiveStomp": [],
+          "DefensiveAssistSteadfastCrouchingTiger": [],
+          "AssistFollowUpFeralBlazingMaw": []
         }
       },
       "coreParams": [
@@ -14990,6 +16000,30 @@
               "AttributeInfliction": 315.42
             }
           ]
+        }
+      },
+      "calcedParams": {
+        "basic": {
+          "BasicAttackUnyieldingStrikes": []
+        },
+        "dodge": {
+          "DodgeLightAsASwallow": [],
+          "DashAttackSizzlingOilSupreme": [],
+          "DodgeCounterMovingMountainsAndSeas": []
+        },
+        "special": {
+          "SpecialAttackSonicPressurePointStrike": [],
+          "SpecialAttackTouchOfDeath": [],
+          "EXSpecialAttackMountainousPulseStrike": []
+        },
+        "chain": {
+          "ChainAttackAnointedWithWokSteam": [],
+          "UltimateAFeastFitForAnEmperor": []
+        },
+        "assist": {
+          "QuickAssistLiftYourGazeToGoodFortune": [],
+          "DefensiveAssistIntimidatingPresence": [],
+          "AssistFollowUpRideTheMomentum": []
         }
       },
       "coreParams": [

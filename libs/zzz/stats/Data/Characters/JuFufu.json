@@ -282,6 +282,33 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackTigerSevenFormsFlamingClaw": [],
+      "BasicAttackHuWei": []
+    },
+    "dodge": {
+      "DodgeTigerSevenFormsTigerwind": [],
+      "DashAttackTigerSevenFormsTigerCharge": [],
+      "DashAttackTigerSevenFormsMountainKingsGame": [],
+      "DodgeCounterTigerSevenFormsReignitedMountain": [],
+      "DashAttackTigerSevenFormsMountainKingsGameMomentum": []
+    },
+    "special": {
+      "SpecialAttackTigerSevenFormsMountainDescendingTiger": [],
+      "EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger": []
+    },
+    "chain": {
+      "ChainAttackTigerCauldronCollapse": [],
+      "ChainAttackSuppressingTigerCauldron": [],
+      "UltimateTigerSevenFormsRagingTigerExplosion": []
+    },
+    "assist": {
+      "QuickAssistDecisiveStomp": [],
+      "DefensiveAssistSteadfastCrouchingTiger": [],
+      "AssistFollowUpFeralBlazingMaw": []
+    }
+  },
   "coreParams": [
     [100, 100, 100, 100, 100, 100, 100],
     [0.1, 0.117, 0.133, 0.15, 0.167, 0.183, 0.2],

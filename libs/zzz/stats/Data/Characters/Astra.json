@@ -93,8 +93,32 @@
           "AttributeInfliction": 17.59
         }
       ],
-      "BasicAttackChorus": [],
-      "BasicAttackFinale": []
+      "BasicAttackChorus": [
+        {
+          "DamagePercentage": 0.55,
+          "DamagePercentageGrowth": 0.05,
+          "StunRatio": 0.484,
+          "StunRatioGrowth": 0.022,
+          "SpRecovery": 63.4,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 484,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 17.59
+        }
+      ],
+      "BasicAttackFinale": [
+        {
+          "DamagePercentage": 0.55,
+          "DamagePercentageGrowth": 0.05,
+          "StunRatio": 0.484,
+          "StunRatioGrowth": 0.022,
+          "SpRecovery": 63.4,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 484,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 17.59
+        }
+      ]
     },
     "dodge": {
       "DodgeMiniWaltz": [],
@@ -221,6 +245,36 @@
           "AttributeInfliction": 257.01
         }
       ]
+    }
+  },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackCapriccio": [],
+      "BasicAttackInterlude": [],
+      "BasicAttackChorus": [],
+      "BasicAttackFinale": []
+    },
+    "dodge": {
+      "DodgeMiniWaltz": [],
+      "DashAttackLunarEclipseMelody": [],
+      "DodgeCounterUmbrellaWaltz": []
+    },
+    "special": {
+      "SpecialAttackWindchimesOaths": [
+        { "formula": "{CAL:0.08+specialLevel*0.01,100,2}%" },
+        { "formula": "{CAL:0.07+specialLevel*0.015,100,2}%" }
+      ],
+      "IdyllicCadenza": [],
+      "Chord": []
+    },
+    "chain": {
+      "ChainAttackTipsyConcerto": [],
+      "UltimateFantasianSonata": [{ "formula": "{CAL:-50+chainLevel*250,1,2}" }]
+    },
+    "assist": {
+      "QuickAssistOneLuminousSky": [],
+      "EvasiveAssistTwoHearts": [],
+      "AssistFollowUpThreeLifetimesOfFate": []
     }
   },
   "coreParams": [

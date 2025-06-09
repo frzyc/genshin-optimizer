@@ -310,6 +310,33 @@
       ]
     }
   },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackTsukuyomiKagura": [],
+      "StanceJougen": [],
+      "StanceKagen": []
+    },
+    "dodge": {
+      "DodgeWanderingBreeze": [],
+      "DashAttackFleetingFlight": [],
+      "DodgeCounterRapidRetaliation": []
+    },
+    "special": {
+      "SpecialAttackRuten": [],
+      "EXSpecialAttackGekkaRuten": [
+        { "formula": "{CAL:5+specialLevel*2.25,100,2}%" }
+      ]
+    },
+    "chain": {
+      "ChainAttackCelestialHarmony": [],
+      "UltimateRaieiTenge": [{ "formula": "{CAL:5+chainLevel*2.25,100,2}%" }]
+    },
+    "assist": {
+      "QuickAssistBladeOfElegance": [],
+      "DefensiveAssistRadiantReversal": [],
+      "AssistFollowUpWeepingWillowStab": []
+    }
+  },
   "coreParams": [
     [1.25, 1.45, 1.66, 1.88, 2.08, 2.3, 2.5],
     [15, 15, 15, 15, 15, 15, 15],
