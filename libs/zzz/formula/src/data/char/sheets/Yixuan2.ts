@@ -1,4 +1,4 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
@@ -14,7 +14,7 @@ import {
 } from '../../util'
 import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
 
-const key: CharacterKey = 'Astra'
+const key: CharacterKey = 'Yixuan'
 const data_gen = allStats.char[key]
 const dm = mappedStats.char[key]
 
@@ -29,6 +29,10 @@ const sheet = register(
   key,
   // Handles base stats, StatBoosts and Eidolon 3 + 5
   entriesForChar(data_gen),
+  registerBuff(
+    'core_hpSheerForce',
+    ownBuff.initial.sheerForce.add(prod(own.final.hp, 0.1))
+  ),
 
   // Formulas
   ...registerAllDmgDazeAndAnom(key, dm),

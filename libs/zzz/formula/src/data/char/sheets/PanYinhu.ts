@@ -14,7 +14,7 @@ import {
 } from '../../util'
 import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
 
-const key: CharacterKey = 'QingYi'
+const key: CharacterKey = 'PanYinhu'
 const data_gen = allStats.char[key]
 const dm = mappedStats.char[key]
 

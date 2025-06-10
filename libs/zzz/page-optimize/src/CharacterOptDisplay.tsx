@@ -140,7 +140,7 @@ function CharacterSection() {
         ['Conditionals', <EquippedConditionals key={'conditionals'} />],
         ['bonusStats', <BonusStatsSection key={'bonusStats'} />],
         ['enemyStats', <EnemyStatsSection key={'enemyStats'} />],
-        ...(characterKey === 'YiXuan' ||
+        ...(characterKey === 'Yixuan' ||
         characterKey === 'Soldier0Anby' ||
         shouldShowDevComponents
           ? [

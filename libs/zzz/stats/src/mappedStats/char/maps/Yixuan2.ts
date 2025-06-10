@@ -1,7 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { getCharStat } from '../../../char'
 
-const key: CharacterKey = 'YiXuan'
+const key: CharacterKey = 'Yixuan'
 const data_gen = getCharStat(key)
 
 const dm = {

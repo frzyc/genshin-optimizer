@@ -8,15 +8,16 @@ const charctersJsonData = JSON.parse(
 ) as Record<
   string,
   {
-    code: string
+    code: string // Internal code name probably
     rank: number // => CharacterRarityKey
     type: number // => SpecialityKey
     hit: number // =>AttackTypeKey
+    EN: string // Actual EN name
   }
 >
 
 const characterIdMap = objFilter(
-  objMap(charctersJsonData, ({ code }) => nameToKey(code)),
+  objMap(charctersJsonData, ({ EN }) => nameToKey(EN)),
   (key) => !!key && !['Belle', 'Wise'].includes(key)
 )
 

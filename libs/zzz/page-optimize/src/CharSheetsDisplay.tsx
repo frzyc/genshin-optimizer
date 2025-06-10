@@ -10,7 +10,7 @@ export function CharSheetSection() {
   const { key: characterKey } = useCharacterContext()!
   return (
     <Box>
-      {characterKey === 'YiXuan' && <MinimalYixuanSheet />}
+      {characterKey === 'Yixuan' && <MinimalYixuanSheet />}
       {characterKey === 'Soldier0Anby' && <MinimalS0AnbySheet />}
       {shouldShowDevComponents &&
         Object.values(charSheets[characterKey]).flatMap((sheet, index1) =>
@@ -35,8 +35,8 @@ const yixuanDocs: Document[] = [
     type: 'fields',
     fields: [
       {
-        title: <TagDisplay tag={buffs.YiXuan.core_hpSheerForce.tag} />,
-        fieldRef: buffs.YiXuan.core_hpSheerForce.tag,
+        title: <TagDisplay tag={buffs.Yixuan.core_hpSheerForce.tag} />,
+        fieldRef: buffs.Yixuan.core_hpSheerForce.tag,
       },
     ],
   },

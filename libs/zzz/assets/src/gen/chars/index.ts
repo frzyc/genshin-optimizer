@@ -1,7 +1,7 @@
 // This is a generated index file.
 import Anby from './Anby'
 import Anton from './Anton'
-import Astra from './Astra'
+import AstraYao from './AstraYao'
 import Ben from './Ben'
 import Billy from './Billy'
 import Burnice from './Burnice'
@@ -21,9 +21,10 @@ import Lycaon from './Lycaon'
 import Miyabi from './Miyabi'
 import Nekomata from './Nekomata'
 import Nicole from './Nicole'
+import PanYinhu from './PanYinhu'
 import Piper from './Piper'
 import Pulchra from './Pulchra'
-import QingYi from './QingYi'
+import Qingyi from './Qingyi'
 import Rina from './Rina'
 import Seth from './Seth'
 import Soldier0Anby from './Soldier0Anby'
@@ -32,14 +33,13 @@ import Soukaku from './Soukaku'
 import Trigger from './Trigger'
 import Vivian from './Vivian'
 import Yanagi from './Yanagi'
-import YiXuan from './YiXuan'
-import Yinhu from './Yinhu'
+import Yixuan from './Yixuan'
 import ZhuYuan from './ZhuYuan'
 
 const data = {
   Anby,
   Anton,
-  Astra,
+  AstraYao,
   Ben,
   Billy,
   Burnice,
@@ -61,7 +61,7 @@ const data = {
   Nicole,
   Piper,
   Pulchra,
-  QingYi,
+  Qingyi,
   Rina,
   Seth,
   Soldier0Anby,
@@ -70,7 +70,7 @@ const data = {
   Trigger,
   Vivian,
   Yanagi,
-  YiXuan,
+  Yixuan,
   Yinhu,
   ZhuYuan,
 } as const

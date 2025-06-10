@@ -236,7 +236,9 @@ export const charactersDetailedJSONData = Object.fromEntries(
                 coreStatMap[Name],
                 isPercentStat(coreStatMap[Name])
                   ? Value / PERCENT_SCALING
-                  : Value,
+                  : coreStatMap[Name] === 'enerRegen'
+                    ? Value / FLAT_SCALING
+                    : Value,
               ])
             ) as Partial<
               Record<(typeof coreStatMap)[keyof typeof coreStatMap], number>
