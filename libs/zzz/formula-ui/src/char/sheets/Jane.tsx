@@ -1,25 +1,98 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
-import { createBaseSheet } from '../sheetUtil'
+import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Jane'
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [, ch] = trans('char', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = conditionals[key]
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = buffs[key]
+const formula = formulas[key]
 
-const sheet = createBaseSheet(key)
+const sheet = createBaseSheet(key, {
+  perSkillAbility: {
+    basic: {
+      Passion: [
+        {
+          type: 'conditional',
+          conditional: {
+            label: ch('passionCond'),
+            metadata: cond.passion,
+            fields: [
+              fieldForBuff(buff.passion_physical_anomBuildup_),
+              fieldForBuff(buff.passion_atk),
+            ],
+          },
+        },
+      ],
+    },
+  },
+  core: [],
+  ability: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('abilityCond'),
+        metadata: cond.enemy_suffering_anomaly,
+        fields: [fieldForBuff(buff.ability_physical_anomBuildup_)],
+      },
+    },
+  ],
+  m1: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('passionCond'),
+        metadata: cond.passion,
+        fields: [
+          fieldForBuff(buff.m1_physical_anomBuildup_),
+          fieldForBuff(buff.m1_common_dmg_),
+        ],
+      },
+    },
+  ],
+  m2: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('m2Cond'),
+        metadata: cond.gnawed,
+        fields: [
+          fieldForBuff(buff.m2_defIgn_),
+          // TODO: add m2 team assault defIgn_ and assault crit stuff
+        ],
+      },
+    },
+  ],
+  m4: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('m4Cond'),
+        metadata: cond.assault_or_disorder_triggered,
+        fields: [fieldForBuff(buff.m4_anomaly_dmg_)],
+      },
+    },
+  ],
+  m6: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('passionCond'),
+        metadata: cond.passion,
+        fields: [fieldForBuff(buff.m6_crit_), fieldForBuff(buff.m6_crit_dmg_)],
+      },
+    },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ch('m6_additional_dmg'),
+          fieldRef: formula.m6_additional_dmg.tag,
+        },
+      ],
+    },
+  ],
+})
 
 export default sheet

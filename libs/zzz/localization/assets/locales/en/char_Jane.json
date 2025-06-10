@@ -1,0 +1,7 @@
+{
+  "passionCond": "While in the Passion state",
+  "abilityCond": "When the enemy is already suffering from an Attribute Anomaly",
+  "m2Cond": "When Jane's attack hits an enemy in the Gnawed state, or when any squad member triggers Assault on an enemy in the Gnawed state",
+  "m4Cond": "When any squad member triggers the Assault or Disorder effects",
+  "m6_additional_dmg": "Additional DMG"
+}

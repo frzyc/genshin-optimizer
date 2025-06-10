@@ -452,21 +452,18 @@ export const conditionals = {
     },
   },
   Jane: {
-    boolConditional: { sheet: 'Jane', name: 'boolConditional', type: 'bool' },
-    listConditional: {
+    assault_or_disorder_triggered: {
       sheet: 'Jane',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
+      name: 'assault_or_disorder_triggered',
+      type: 'bool',
     },
-    numConditional: {
+    enemy_suffering_anomaly: {
       sheet: 'Jane',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      name: 'enemy_suffering_anomaly',
+      type: 'bool',
     },
+    gnawed: { sheet: 'Jane', name: 'gnawed', type: 'bool' },
+    passion: { sheet: 'Jane', name: 'passion', type: 'bool' },
   },
   KaboomTheCannon: {
     allyHitsEnemy: {
@@ -12953,6 +12950,19 @@ export const formulas = {
         attribute: 'physical',
         damageType1: 'assistFollowUp',
         name: 'AssistFollowUpGaleSweep_0_anomBuildup',
+      },
+    },
+    m6_additional_dmg: {
+      sheet: 'Jane',
+      name: 'm6_additional_dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'Jane',
+        attribute: 'physical',
+        damageType1: 'elemental',
+        name: 'm6_additional_dmg',
       },
     },
   },
@@ -30360,37 +30370,107 @@ export const buffs = {
     },
   },
   Jane: {
-    m6_dmg_: {
+    passion_physical_anomBuildup_: {
       sheet: 'Jane',
-      name: 'm6_dmg_',
+      name: 'passion_physical_anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'Jane',
+        attribute: 'physical',
+        name: 'passion_physical_anomBuildup_',
+      },
+    },
+    passion_atk: {
+      sheet: 'Jane',
+      name: 'passion_atk',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'atk',
+        sheet: 'Jane',
+        name: 'passion_atk',
+      },
+    },
+    ability_physical_anomBuildup_: {
+      sheet: 'Jane',
+      name: 'ability_physical_anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'Jane',
+        attribute: 'physical',
+        name: 'ability_physical_anomBuildup_',
+      },
+    },
+    m1_physical_anomBuildup_: {
+      sheet: 'Jane',
+      name: 'm1_physical_anomBuildup_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anomBuildup_',
+        sheet: 'Jane',
+        attribute: 'physical',
+        name: 'm1_physical_anomBuildup_',
+      },
+    },
+    m1_common_dmg_: {
+      sheet: 'Jane',
+      name: 'm1_common_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'Jane',
-        name: 'm6_dmg_',
+        name: 'm1_common_dmg_',
       },
     },
-    team_dmg_: {
+    m2_defIgn_: {
       sheet: 'Jane',
-      name: 'team_dmg_',
+      name: 'm2_defIgn_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'defIgn_',
         sheet: 'Jane',
-        name: 'team_dmg_',
+        name: 'm2_defIgn_',
       },
     },
-    enemy_defRed_: {
+    m4_anomaly_dmg_: {
       sheet: 'Jane',
-      name: 'enemy_defRed_',
+      name: 'm4_anomaly_dmg_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'defRed_',
+        qt: 'combat',
+        q: 'dmg_',
         sheet: 'Jane',
-        name: 'enemy_defRed_',
+        damageType1: 'anomaly',
+        name: 'm4_anomaly_dmg_',
+      },
+    },
+    m6_crit_: {
+      sheet: 'Jane',
+      name: 'm6_crit_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_',
+        sheet: 'Jane',
+        name: 'm6_crit_',
+      },
+    },
+    m6_crit_dmg_: {
+      sheet: 'Jane',
+      name: 'm6_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'Jane',
+        name: 'm6_crit_dmg_',
       },
     },
   },
