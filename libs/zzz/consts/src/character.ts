@@ -22,6 +22,7 @@ export const allCharacterKeys = [
   'Miyabi',
   'Nekomata',
   'Nicole',
+  'PanYinhu',
   'Piper',
   'Pulchra',
   'Qingyi',
@@ -33,7 +34,6 @@ export const allCharacterKeys = [
   'Trigger',
   'Vivian',
   'Yanagi',
-  'PanYinhu',
   'Yixuan',
   'ZhuYuan',
 ] as const
