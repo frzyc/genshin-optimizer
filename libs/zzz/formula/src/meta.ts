@@ -30393,6 +30393,30 @@ export const buffs = {
         name: 'passion_atk',
       },
     },
+    core_assault_crit_: {
+      sheet: 'Jane',
+      name: 'core_assault_crit_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anom_crit_',
+        sheet: 'Jane',
+        attribute: 'physical',
+        name: 'core_assault_crit_',
+      },
+    },
+    core_assault_crit_dmg_: {
+      sheet: 'Jane',
+      name: 'core_assault_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anom_crit_dmg_',
+        sheet: 'Jane',
+        attribute: 'physical',
+        name: 'core_assault_crit_dmg_',
+      },
+    },
     ability_physical_anomBuildup_: {
       sheet: 'Jane',
       name: 'ability_physical_anomBuildup_',
@@ -30437,6 +30461,31 @@ export const buffs = {
         q: 'defIgn_',
         sheet: 'Jane',
         name: 'm2_defIgn_',
+      },
+    },
+    m2_assault_defIgn_: {
+      sheet: 'Jane',
+      name: 'm2_assault_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'defIgn_',
+        sheet: 'Jane',
+        attribute: 'physical',
+        damageType1: 'anomaly',
+        name: 'm2_assault_defIgn_',
+      },
+    },
+    m2_assault_crit_dmg_: {
+      sheet: 'Jane',
+      name: 'm2_assault_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'anom_crit_dmg_',
+        sheet: 'Jane',
+        attribute: 'physical',
+        name: 'm2_assault_crit_dmg_',
       },
     },
     m4_anomaly_dmg_: {

@@ -81,5 +81,15 @@ const data: TagMapNodeEntries = [
       avg: sum(percent(1), prod(own.common.cappedCrit_, own.final.crit_dmg_)),
     })
   ),
+  ownBuff.dmg.anomaly_crit_mult_.add(
+    lookup(own.common.critMode, {
+      crit: sum(percent(1), own.final.anom_crit_dmg_),
+      nonCrit: percent(1),
+      avg: sum(
+        percent(1),
+        prod(own.common.anom_cappedCrit_, own.final.anom_crit_dmg_)
+      ),
+    })
+  ),
 ]
 export default data

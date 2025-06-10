@@ -10,6 +10,7 @@ const data: TagMapNodeEntries = [
   ownBuff.formula.standardDmg.reread(ownBuff.dmg.shared),
 
   ownBuff.formula.anomalyDmg.add(own.formula.base),
+  ownBuff.formula.anomalyDmg.add(own.dmg.anomaly_crit_mult_),
   // Reread to flatten the formula
   ownBuff.formula.anomalyDmg.reread(own.dmg.shared),
   // AP Multiplier

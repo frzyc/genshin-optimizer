@@ -27,7 +27,19 @@ const sheet = createBaseSheet(key, {
       ],
     },
   },
-  core: [],
+  core: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('gnawedCond'),
+        metadata: cond.gnawed,
+        fields: [
+          fieldForBuff(buff.core_assault_crit_),
+          fieldForBuff(buff.core_assault_crit_dmg_),
+        ],
+      },
+    },
+  ],
   ability: [
     {
       type: 'conditional',
@@ -55,11 +67,12 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m2Cond'),
+        label: ch('gnawedCond'),
         metadata: cond.gnawed,
         fields: [
           fieldForBuff(buff.m2_defIgn_),
-          // TODO: add m2 team assault defIgn_ and assault crit stuff
+          fieldForBuff(buff.m2_assault_defIgn_),
+          fieldForBuff(buff.m2_assault_crit_dmg_),
         ],
       },
     },

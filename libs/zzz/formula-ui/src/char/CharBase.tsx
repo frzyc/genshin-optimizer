@@ -21,6 +21,8 @@ export const charBaseUiSheet: TagField[] = (
     'enerRegen',
     'anomProf',
     'anomMas',
+    'anom_crit_',
+    'anom_crit_dmg_',
   ] as const
 ).map((statKey) => {
   if (
@@ -40,6 +42,11 @@ export const charBaseUiSheet: TagField[] = (
   if (statKey === 'crit_')
     return {
       fieldRef: own.common.cappedCrit_.tag,
+      title: <StatDisplay statKey={statKey} />,
+    }
+  if (statKey === 'anom_crit_')
+    return {
+      fieldRef: own.common.anom_cappedCrit_.tag,
       title: <StatDisplay statKey={statKey} />,
     }
   return {

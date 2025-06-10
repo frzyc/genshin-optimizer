@@ -45,10 +45,9 @@ const dm = {
   core: {
     gnawed_duration: data_gen.coreParams[0][0],
     flinch_extend_duration: data_gen.coreParams[1][0],
-    basic_ex_3rdHit_daze_: data_gen.coreParams[2][0],
-    assault_crit_: data_gen.coreParams[3],
-    assault_crit_dmg_: data_gen.coreParams[4],
-    assault_crit_step: data_gen.coreParams[5],
+    assault_crit_: data_gen.coreParams[2],
+    assault_crit_dmg_: data_gen.coreParams[3],
+    assault_crit_step: data_gen.coreParams[4],
   },
   ability: {
     physical_anomBuildup_: data_gen.abilityParams[0],

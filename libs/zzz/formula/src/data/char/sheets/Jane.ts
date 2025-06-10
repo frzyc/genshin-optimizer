@@ -1,4 +1,12 @@
-import { cmpGE, max, min, prod, sum } from '@genshin-optimizer/pando/engine'
+import {
+  cmpGE,
+  constant,
+  max,
+  min,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
@@ -6,6 +14,7 @@ import {
   customDmg,
   own,
   ownBuff,
+  percent,
   register,
   registerBuff,
   team,
@@ -44,15 +53,43 @@ const sheet = register(
   // Buffs
   registerBuff(
     'passion_physical_anomBuildup_',
-    ownBuff.combat.anomBuildup_.physical.add(passion.ifOn(0.25)) // No data in dm
+    ownBuff.combat.anomBuildup_.physical.add(passion.ifOn(percent(0.25))) // No data in dm
   ),
   registerBuff(
     'passion_atk',
     ownBuff.combat.atk.add(
-      passion.ifOn(min(prod(max(0, sum(own.final.anomProf, -120)), 2), 600)) // No data in dm
+      passion.ifOn(
+        min(
+          prod(max(0, sum(own.final.anomProf, constant(-120))), constant(2)),
+          constant(600)
+        )
+      ) // No data in dm
     )
   ),
-  // TODO: core assault crit
+  registerBuff(
+    'core_assault_crit_',
+    teamBuff.combat.anom_crit_.physical.add(
+      gnawed.ifOn(
+        sum(
+          subscript(char.core, dm.core.assault_crit_),
+          prod(
+            own.final.anomProf,
+            subscript(char.core, dm.core.assault_crit_step)
+          )
+        )
+      )
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
+    'core_assault_crit_dmg_',
+    teamBuff.combat.anom_crit_dmg_.physical.add(
+      gnawed.ifOn(subscript(char.core, dm.core.assault_crit_dmg_))
+    ),
+    undefined,
+    true
+  ),
   registerBuff(
     'ability_physical_anomBuildup_',
     ownBuff.combat.anomBuildup_.physical.add(
@@ -97,7 +134,23 @@ const sheet = register(
       cmpGE(char.mindscape, 2, gnawed.ifOn(dm.m2.defIgn_))
     )
   ),
-  // TODO: m2 team assault defIgn_ and assault crit_dmg_
+  registerBuff(
+    'm2_assault_defIgn_',
+    teamBuff.combat.defIgn_.physical.addWithDmgType(
+      'anomaly',
+      cmpGE(char.mindscape, 2, gnawed.ifOn(dm.m2.defIgn_))
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
+    'm2_assault_crit_dmg_',
+    teamBuff.combat.anom_crit_dmg_.physical.add(
+      cmpGE(char.mindscape, 2, gnawed.ifOn(dm.m2.assault_crit_dmg_))
+    ),
+    undefined,
+    true
+  ),
   registerBuff(
     'm4_anomaly_dmg_',
     teamBuff.combat.dmg_.addWithDmgType(
