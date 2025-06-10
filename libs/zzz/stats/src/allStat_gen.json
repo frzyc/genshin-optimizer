@@ -798,27 +798,27 @@
       "coreStats": [
         {
           "atk": 0,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 36
+          "enerRegen": 0.36
         },
         {
           "atk": 75,
-          "enerRegen": 36
+          "enerRegen": 0.36
         }
       ],
       "skillParams": {
@@ -4399,27 +4399,27 @@
       "coreStats": [
         {
           "atk": 0,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 36
+          "enerRegen": 0.36
         },
         {
           "atk": 75,
-          "enerRegen": 36
+          "enerRegen": 0.36
         }
       ],
       "skillParams": {
@@ -4793,27 +4793,27 @@
       "coreStats": [
         {
           "atk": 0,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 36
+          "enerRegen": 0.36
         },
         {
           "atk": 75,
-          "enerRegen": 36
+          "enerRegen": 0.36
         }
       ],
       "skillParams": {
@@ -5743,27 +5743,27 @@
       "coreStats": [
         {
           "atk": 0,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 36
+          "enerRegen": 0.36
         },
         {
           "atk": 75,
-          "enerRegen": 36
+          "enerRegen": 0.36
         }
       ],
       "skillParams": {
@@ -6756,27 +6756,27 @@
       "coreStats": [
         {
           "atk": 0,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 36
+          "enerRegen": 0.36
         },
         {
           "atk": 75,
-          "enerRegen": 36
+          "enerRegen": 0.36
         }
       ],
       "skillParams": {
@@ -10702,27 +10702,27 @@
       "coreStats": [
         {
           "atk": 0,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 36
+          "enerRegen": 0.36
         },
         {
           "atk": 75,
-          "enerRegen": 36
+          "enerRegen": 0.36
         }
       ],
       "skillParams": {
@@ -11146,27 +11146,27 @@
       "coreStats": [
         {
           "atk": 0,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 36
+          "enerRegen": 0.36
         },
         {
           "atk": 75,
-          "enerRegen": 36
+          "enerRegen": 0.36
         }
       ],
       "skillParams": {
@@ -12157,27 +12157,27 @@
       "coreStats": [
         {
           "atk": 0,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 12
+          "enerRegen": 0.12
         },
         {
           "atk": 25,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 24
+          "enerRegen": 0.24
         },
         {
           "atk": 50,
-          "enerRegen": 36
+          "enerRegen": 0.36
         },
         {
           "atk": 75,
-          "enerRegen": 36
+          "enerRegen": 0.36
         }
       ],
       "skillParams": {
