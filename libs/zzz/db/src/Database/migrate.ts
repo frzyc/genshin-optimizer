@@ -6,6 +6,7 @@
 // 4. Test on import, and also on version update
 
 import type { DBStorage } from '@genshin-optimizer/common/database'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { ICharacter, IWengine } from '@genshin-optimizer/zzz/zood'
 import type {
   ICharMeta,
@@ -30,59 +31,64 @@ export function migrateZOD(
     }
   }
 
+  // Change code name keys to char name keys
   migrateVersion(2, () => {
-    const chars = zo['characters'] as ICharacter[]
-    if (chars) {
-      const astra = chars.find((c) => (c.key as string) === 'Astra')
-      if (astra) {
-        astra.key = 'AstraYao'
-        ;(astra as any).id = 'AstraYao'
-      }
-    }
-
-    const charOpts = zo['charOpts'] as CharOpt[]
-    if (charOpts) {
-      const astraOpt = charOpts.find(
-        (c) => ((c as any)['id'] as string) === 'Astra'
-      )
-      if (astraOpt) {
-        // eslint-disable-next-line @typescript-eslint/no-extra-semi
-        ;(astraOpt as any)['id'] = 'AstraYao'
-        if (astraOpt.target?.sheet === 'Astra') {
-          astraOpt.target.sheet = 'AstraYao'
-        }
-        if (astraOpt.conditionals) {
-          astraOpt.conditionals
-            .filter((cond) => (cond.src as string) === 'Astra')
-            .forEach((cond) => (cond.src = 'AstraYao'))
+    function migrateData(oldKey: string, newKey: CharacterKey) {
+      const chars = zo['characters'] as ICharacter[]
+      if (chars) {
+        const char = chars.find((c) => (c.key as string) === oldKey)
+        if (char) {
+          char.key = newKey
+          ;(char as any).id = newKey
         }
       }
-    }
 
-    const charMetas = zo['charMetas'] as ICharMeta[]
-    if (charMetas) {
-      const astraMeta = charMetas.find(
-        (c) => ((c as any)['id'] as string) === 'Astra'
-      )
-      if (astraMeta) {
-        // eslint-disable-next-line @typescript-eslint/no-extra-semi
-        ;(astraMeta as any)['id'] = 'AstraYao'
+      const charOpts = zo['charOpts'] as CharOpt[]
+      if (charOpts) {
+        const charOpt = charOpts.find(
+          (c) => ((c as any)['id'] as string) === oldKey
+        )
+        if (charOpt) {
+          // eslint-disable-next-line @typescript-eslint/no-extra-semi
+          ;(charOpt as any)['id'] = newKey
+          if (charOpt.target?.sheet === oldKey) {
+            charOpt.target.sheet = newKey
+          }
+          if (charOpt.conditionals) {
+            charOpt.conditionals
+              .filter((cond) => (cond.src as string) === oldKey)
+              .forEach((cond) => (cond.src = newKey))
+          }
+        }
+      }
+
+      const charMetas = zo['charMetas'] as ICharMeta[]
+      if (charMetas) {
+        const charMeta = charMetas.find(
+          (c) => ((c as any)['id'] as string) === oldKey
+        )
+        if (charMeta) {
+          // eslint-disable-next-line @typescript-eslint/no-extra-semi
+          ;(charMeta as any)['id'] = newKey
+        }
+      }
+
+      const discs = zo.discs
+      if (discs) {
+        discs
+          .filter((disc) => (disc.location as string) === oldKey)
+          .forEach((disc) => (disc.location = newKey))
+      }
+
+      const weng = zo['wengines'] as IWengine[]
+      if (weng) {
+        weng
+          .filter((weng) => (weng.location as string) === oldKey)
+          .forEach((weng) => (weng.location = newKey))
       }
     }
-
-    const discs = zo.discs
-    if (discs) {
-      discs
-        .filter((disc) => (disc.location as string) === 'Astra')
-        .forEach((disc) => (disc.location = 'AstraYao'))
-    }
-
-    const weng = zo['wengines'] as IWengine[]
-    if (weng) {
-      weng
-        .filter((weng) => (weng.location as string) === 'Astra')
-        .forEach((weng) => (weng.location = 'AstraYao'))
-    }
+    migrateData('Astra', 'AstraYao')
+    migrateData('QingYi', 'Qingyi')
   })
 
   zo.dbVersion = currentDBVersion
@@ -111,51 +117,56 @@ export function migrateStorage(storage: DBStorage) {
   }
 
   migrateVersion(2, () => {
-    const keys = storage.keys
-    for (const key of keys) {
-      if (key === 'zzz_character_Astra') {
-        const astra = storage.get(key)
-        astra.key = 'AstraYao'
-        storage.set('zzz_character_AstraYao', astra)
-        storage.remove('zzz_character_Astra')
-      }
-      if (key === 'zzz_charOpt_Astra') {
-        const astra = storage.get(key)
-        astra.id = 'AstraYao'
-
-        if (astra.target?.sheet === 'Astra') {
-          astra.target.sheet = 'AstraYao'
+    function migrateData(oldKey: string, newKey: CharacterKey) {
+      const keys = storage.keys
+      for (const key of keys) {
+        if (key === `zzz_character_${oldKey}`) {
+          const astra = storage.get(key)
+          astra.key = newKey
+          storage.set(`zzz_character_${newKey}`, astra)
+          storage.remove(`zzz_character_${oldKey}`)
         }
+        if (key === `zzz_charOpt_${oldKey}`) {
+          const astra = storage.get(key)
+          astra.id = newKey
 
-        if (astra.conditionals) {
-          astra.conditionals
-            .filter((c: any) => c.src === 'Astra')
-            .forEach((c: any) => (c.src = 'AstraYao'))
-        }
+          if (astra.target?.sheet === oldKey) {
+            astra.target.sheet = newKey
+          }
 
-        storage.set('zzz_charOpt_AstraYao', astra)
-        storage.remove('zzz_charOpt_Astra')
-      }
-      if (key === 'zzz_charMeta_Astra') {
-        const astra = storage.get(key)
-        astra.id = 'AstraYao'
-        storage.set('zzz_charMeta_AstraYao', astra)
-      }
-      if (key.startsWith('zzz_disc_')) {
-        const disc = storage.get(key)
-        if (disc.location === 'Astra') {
-          disc.location = 'AstraYao'
-          storage.set(key, disc)
+          if (astra.conditionals) {
+            astra.conditionals
+              .filter((c: any) => c.src === oldKey)
+              .forEach((c: any) => (c.src = newKey))
+          }
+
+          storage.set(`zzz_charOpt_${newKey}`, astra)
+          storage.remove(`zzz_charOpt_${oldKey}`)
         }
-      }
-      if (key.startsWith('zzz_wengine_')) {
-        const weng = storage.get(key)
-        if (weng.location === 'Astra') {
-          weng.location = 'AstraYao'
-          storage.set(key, weng)
+        if (key === `zzz_charMeta_${oldKey}`) {
+          const astra = storage.get(key)
+          astra.id = newKey
+          storage.set(`zzz_charMeta_${newKey}`, astra)
+          storage.remove(`zzz_charMeta_${oldKey}`)
+        }
+        if (key.startsWith('zzz_disc_')) {
+          const disc = storage.get(key)
+          if (disc.location === oldKey) {
+            disc.location = newKey
+            storage.set(key, disc)
+          }
+        }
+        if (key.startsWith('zzz_wengine_')) {
+          const weng = storage.get(key)
+          if (weng.location === oldKey) {
+            weng.location = newKey
+            storage.set(key, weng)
+          }
         }
       }
     }
+    migrateData('Astra', 'AstraYao')
+    migrateData('QingYi', 'Qingyi')
   })
 
   storage.setDBVersion(currentDBVersion)
