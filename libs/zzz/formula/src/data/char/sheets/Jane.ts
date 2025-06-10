@@ -12,6 +12,7 @@ import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
   customDmg,
+  notOwnBuff,
   own,
   ownBuff,
   percent,
@@ -136,7 +137,7 @@ const sheet = register(
   ),
   registerBuff(
     'm2_assault_defIgn_',
-    teamBuff.combat.defIgn_.physical.addWithDmgType(
+    notOwnBuff.combat.defIgn_.physical.addWithDmgType(
       'anomaly',
       cmpGE(char.mindscape, 2, gnawed.ifOn(dm.m2.defIgn_))
     ),
