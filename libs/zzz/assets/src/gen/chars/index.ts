@@ -59,6 +59,7 @@ const data = {
   Miyabi,
   Nekomata,
   Nicole,
+  PanYinhu,
   Piper,
   Pulchra,
   Qingyi,
@@ -71,7 +72,6 @@ const data = {
   Vivian,
   Yanagi,
   Yixuan,
-  Yinhu,
   ZhuYuan,
 } as const
 export default data
