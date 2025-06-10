@@ -23,7 +23,7 @@ import Nekomata from './sheets/Nekomata'
 import Nicole from './sheets/Nicole'
 import Piper from './sheets/Piper'
 import Pulchra from './sheets/Pulchra'
-import QingYi from './sheets/QingYi'
+import Qingyi from './sheets/Qingyi'
 import Rina from './sheets/Rina'
 import Seth from './sheets/Seth'
 import Soldier0Anby from './sheets/Soldier0Anby'
@@ -58,7 +58,7 @@ const data: TagMapNodeEntries[] = [
   Nicole,
   Piper,
   Pulchra,
-  QingYi,
+  Qingyi,
   Rina,
   Seth,
   Soldier0Anby,

@@ -23,7 +23,7 @@ export const allCharacterKeys = [
   'Nicole',
   'Piper',
   'Pulchra',
-  'QingYi',
+  'Qingyi',
   'Rina',
   'Seth',
   'Soldier0Anby',

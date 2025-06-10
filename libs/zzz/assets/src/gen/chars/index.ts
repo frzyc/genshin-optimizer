@@ -22,7 +22,7 @@ import Nekomata from './Nekomata'
 import Nicole from './Nicole'
 import Piper from './Piper'
 import Pulchra from './Pulchra'
-import QingYi from './QingYi'
+import Qingyi from './Qingyi'
 import Rina from './Rina'
 import Seth from './Seth'
 import Soldier0Anby from './Soldier0Anby'
@@ -57,7 +57,7 @@ const data = {
   Nicole,
   Piper,
   Pulchra,
-  QingYi,
+  Qingyi,
   Rina,
   Seth,
   Soldier0Anby,

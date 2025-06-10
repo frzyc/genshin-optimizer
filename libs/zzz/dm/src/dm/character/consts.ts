@@ -31,7 +31,7 @@ export const characterIdMap = {
   '1211': 'Rina',
   '1221': 'Yanagi',
   '1241': 'ZhuYuan',
-  '1251': 'QingYi',
+  '1251': 'Qingyi',
   '1261': 'Jane',
   '1271': 'Seth',
   '1281': 'Piper',

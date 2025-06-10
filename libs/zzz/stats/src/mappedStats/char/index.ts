@@ -22,7 +22,7 @@ import Nekomata from './maps/Nekomata'
 import Nicole from './maps/Nicole'
 import Piper from './maps/Piper'
 import Pulchra from './maps/Pulchra'
-import QingYi from './maps/QingYi'
+import Qingyi from './maps/Qingyi'
 import Rina from './maps/Rina'
 import Seth from './maps/Seth'
 import Soldier0Anby from './maps/Soldier0Anby'
@@ -57,7 +57,7 @@ const maps = {
   Nicole,
   Piper,
   Pulchra,
-  QingYi,
+  Qingyi,
   Rina,
   Seth,
   Soldier0Anby,
