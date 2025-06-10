@@ -3,7 +3,7 @@ import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { CharUISheet } from '../consts'
 import Anby from './Anby'
 import Anton from './Anton'
-import Astra from './Astra'
+import AstraYao from './AstraYao'
 import Ben from './Ben'
 import Billy from './Billy'
 import Burnice from './Burnice'
@@ -38,7 +38,7 @@ import ZhuYuan from './ZhuYuan'
 export const charSheets: Record<CharacterKey, CharUISheet> = {
   Anby,
   Anton,
-  Astra,
+  AstraYao,
   Ben,
   Billy,
   Burnice,

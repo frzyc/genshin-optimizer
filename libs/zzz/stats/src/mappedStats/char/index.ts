@@ -1,7 +1,7 @@
 // WARNING: Generated file, do not modify
 import Anby from './maps/Anby'
 import Anton from './maps/Anton'
-import Astra from './maps/Astra'
+import AstraYao from './maps/AstraYao'
 import Ben from './maps/Ben'
 import Billy from './maps/Billy'
 import Burnice from './maps/Burnice'
@@ -36,7 +36,7 @@ import ZhuYuan from './maps/ZhuYuan'
 const maps = {
   Anby,
   Anton,
-  Astra,
+  AstraYao,
   Ben,
   Billy,
   Burnice,

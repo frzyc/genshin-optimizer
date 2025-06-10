@@ -36,7 +36,7 @@ export const characterIdMap = {
   '1271': 'Seth',
   '1281': 'Piper',
   '1291': 'Hugo',
-  '1311': 'Astra',
+  '1311': 'AstraYao',
   '1321': 'Evelyn',
   '1331': 'Vivian',
   '1351': 'Pulchra',

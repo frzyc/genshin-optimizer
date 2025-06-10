@@ -1,7 +1,7 @@
 // This is a generated index file.
 import Anby from './Anby'
 import Anton from './Anton'
-import Astra from './Astra'
+import AstraYao from './AstraYao'
 import Ben from './Ben'
 import Billy from './Billy'
 import Burnice from './Burnice'
@@ -36,7 +36,7 @@ import ZhuYuan from './ZhuYuan'
 const data = {
   Anby,
   Anton,
-  Astra,
+  AstraYao,
   Ben,
   Billy,
   Burnice,

@@ -179,7 +179,7 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
     abilityName.toLowerCase().startsWith(dt.toLowerCase())
   )
   if (!damageType) {
-    if (key === 'Astra' && abilityName === 'Chord') return 'exSpecial'
+    if (key === 'AstraYao' && abilityName === 'Chord') return 'exSpecial'
     if (key === 'Lucy' && abilityName === 'GuardBoarsToArms') return 'basic'
     if (key === 'Lucy' && abilityName === 'GuardBoarsSpinningSwing')
       return 'basic'

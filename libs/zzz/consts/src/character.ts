@@ -2,7 +2,7 @@
 export const allCharacterKeys = [
   'Anby',
   'Anton',
-  'Astra',
+  'AstraYao',
   'Ben',
   'Billy',
   'Burnice',
