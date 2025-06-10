@@ -2,7 +2,7 @@
 import { type TagMapNodeEntries } from '../util'
 import Anby from './sheets/Anby'
 import Anton from './sheets/Anton'
-import Astra from './sheets/Astra'
+import AstraYao from './sheets/AstraYao'
 import Ben from './sheets/Ben'
 import Billy from './sheets/Billy'
 import Burnice from './sheets/Burnice'
@@ -23,7 +23,7 @@ import Nekomata from './sheets/Nekomata'
 import Nicole from './sheets/Nicole'
 import Piper from './sheets/Piper'
 import Pulchra from './sheets/Pulchra'
-import QingYi from './sheets/QingYi'
+import Qingyi from './sheets/Qingyi'
 import Rina from './sheets/Rina'
 import Seth from './sheets/Seth'
 import Soldier0Anby from './sheets/Soldier0Anby'
@@ -37,7 +37,7 @@ import ZhuYuan from './sheets/ZhuYuan'
 const data: TagMapNodeEntries[] = [
   Anby,
   Anton,
-  Astra,
+  AstraYao,
   Ben,
   Billy,
   Burnice,
@@ -58,7 +58,7 @@ const data: TagMapNodeEntries[] = [
   Nicole,
   Piper,
   Pulchra,
-  QingYi,
+  Qingyi,
   Rina,
   Seth,
   Soldier0Anby,

@@ -3,7 +3,7 @@ import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
 import { createBaseSheet } from '../sheetUtil'
 
-const key: CharacterKey = 'QingYi'
+const key: CharacterKey = 'AstraYao'
 // TODO: Cleanup
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
