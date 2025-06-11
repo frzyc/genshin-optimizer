@@ -1,4 +1,4 @@
-import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
@@ -34,7 +34,9 @@ const sheet = register(
     'core_markedWithSilverStar_crit_dmg_',
     ownBuff.final.crit_dmg_.addWithDmgType(
       'aftershock',
-      core_markedWithSilverStar.ifOn(prod(own.initial.crit_dmg_, percent(0.3))) // TODO: Replace this with proper core indexing once sheets are added
+      core_markedWithSilverStar.ifOn(
+        prod(sum(own.initial.crit_dmg_, own.combat.crit_dmg_), percent(0.3))
+      ) // TODO: Replace this with proper core indexing once sheets are added
     )
   ),
 
