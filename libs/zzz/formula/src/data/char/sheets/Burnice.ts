@@ -41,8 +41,12 @@ const { thermal_penetration } = allNumConditionals(key, true, 0, dm.m2.stacks)
 
 const core_afterburn_dmg_ = ownBuff.combat.common_dmg_.add(
   min(
-    dm.core.max_afterburn_dmg_,
-    prod(1 / dm.core.anomProf_step, dm.core.afterburn_dmg_, own.final.anomProf)
+    percent(dm.core.max_afterburn_dmg_),
+    prod(
+      percent(1 / dm.core.anomProf_step),
+      percent(dm.core.afterburn_dmg_),
+      own.final.anomProf
+    )
   )
 )
 const ability_fire_anomBuildup_ = ownBuff.combat.anomBuildup_.fire.add(
@@ -156,8 +160,8 @@ const sheet = register(
     prod(
       own.final.atk,
       sum(
-        subscript(char.core, dm.core.afterburn_dmg),
-        cmpGE(char.mindscape, 1, dm.m1.afterburn_dmg)
+        percent(subscript(char.core, dm.core.afterburn_dmg)),
+        cmpGE(char.mindscape, 1, percent(dm.m1.afterburn_dmg))
       )
     ),
     undefined,
@@ -180,7 +184,11 @@ const sheet = register(
   ...customDmg(
     'm6_additional_afterburn_dmg',
     { ...baseTag, skillType: 'assistSkill' },
-    cmpGE(char.mindscape, 6, prod(own.final.atk, dm.m6.special_afterburn_dmg)),
+    cmpGE(
+      char.mindscape,
+      6,
+      prod(own.final.atk, percent(dm.m6.special_afterburn_dmg))
+    ),
     undefined,
     m6_fire_resIgn_
   ),
@@ -191,7 +199,7 @@ const sheet = register(
       char.mindscape,
       6,
       // TODO: change from random number in place to an actual original dmg value
-      prod(percent(0.5), dm.m6.additional_burn_dmg, constant(1000))
+      prod(percent(0.5), percent(dm.m6.additional_burn_dmg), constant(1000))
     )
   ),
 
@@ -220,7 +228,7 @@ const sheet = register(
   registerBuff(
     'm2_pen_',
     teamBuff.combat.pen_.add(
-      cmpGE(char.mindscape, 2, prod(thermal_penetration, dm.m2.pen_))
+      cmpGE(char.mindscape, 2, prod(thermal_penetration, percent(dm.m2.pen_)))
     )
   ),
   registerBuff(

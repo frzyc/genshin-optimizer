@@ -7,6 +7,7 @@ import {
   customShield,
   own,
   ownBuff,
+  percent,
   register,
   registerBuff,
   team,
@@ -80,13 +81,13 @@ const sheet = register(
 
   ...customShield(
     'm4_shield',
-    cmpGE(char.mindscape, 4, prod(own.final.hp, dm.m4.shield)),
+    cmpGE(char.mindscape, 4, prod(own.final.hp, percent(dm.m4.shield))),
     { cond: cmpGE(char.mindscape, 4, 'infer', '') }
   ),
   ...customDmg(
     'm6_follow_up_dmg_',
     { ...baseTag, skillType: 'chainSkill' },
-    cmpGE(char.mindscape, 6, prod(own.final.atk, dm.m6.dmg)),
+    cmpGE(char.mindscape, 6, prod(own.final.atk, percent(dm.m6.dmg))),
     { cond: cmpGE(char.mindscape, 6, 'infer', '') }
   ),
 

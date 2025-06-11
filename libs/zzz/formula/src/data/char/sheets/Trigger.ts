@@ -116,17 +116,21 @@ const sheet = register(
   ...customDmg(
     'm4_disconnect_dmg',
     { ...baseTag },
-    cmpGE(char.mindscape, 4, prod(own.final.atk, dm.m4.dmg))
+    cmpGE(char.mindscape, 4, prod(own.final.atk, percent(dm.m4.dmg)))
   ),
   ...customDaze(
     'm4_disconnect_daze',
     { ...baseTag },
-    cmpGE(char.mindscape, 4, dm.m4.daze)
+    cmpGE(char.mindscape, 4, percent(dm.m4.daze))
   ),
   ...customDmg(
     'm6_armor_break_rounds_dmg',
     { ...baseTag },
-    cmpGE(char.mindscape, 6, prod(own.final.atk, dm.m6.round_electric_dmg)),
+    cmpGE(
+      char.mindscape,
+      6,
+      prod(own.final.atk, percent(dm.m6.round_electric_dmg))
+    ),
     undefined,
     m6_armor_break_rounds_dmg_
   ),
@@ -151,10 +155,10 @@ const sheet = register(
         min(
           prod(
             sum(own.final.crit_, percent(-dm.ability.crit_threshold_)),
-            dm.ability.aftershock_dazeInc_,
+            percent(dm.ability.aftershock_dazeInc_),
             100
           ),
-          dm.ability.max_dazeInc_
+          percent(dm.ability.max_dazeInc_)
         )
       )
     )
@@ -169,7 +173,7 @@ const sheet = register(
   registerBuff(
     'm2_crit_dmg_',
     teamBuff.combat.crit_dmg_.add(
-      cmpGE(char.mindscape, 2, prod(hunters_gaze, dm.m2.crit_dmg_))
+      cmpGE(char.mindscape, 2, prod(hunters_gaze, percent(dm.m2.crit_dmg_)))
     ),
     undefined,
     true

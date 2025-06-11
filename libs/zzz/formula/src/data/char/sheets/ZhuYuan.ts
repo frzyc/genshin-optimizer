@@ -14,6 +14,7 @@ import {
   enemy,
   own,
   ownBuff,
+  percent,
   register,
   registerBuff,
   team,
@@ -37,13 +38,21 @@ const { shotshells_hit } = allNumConditionals(key, true, 0, dm.m2.stacks)
 
 const core_dmg_ = ownBuff.combat.common_dmg_.add(
   sum(
-    subscript(char.core, dm.core.dmg_),
-    cmpEq(enemy.common.isStunned, 1, subscript(char.core, dm.core.add_dmg_))
+    percent(subscript(char.core, dm.core.dmg_)),
+    cmpEq(
+      enemy.common.isStunned,
+      1,
+      percent(subscript(char.core, dm.core.add_dmg_))
+    )
   )
 )
 
 const m2_basic_dash_ether_dmg_ = ownBuff.combat.dmg_.ether.add(
-  cmpGE(char.mindscape, 2, prod(shotshells_hit, dm.m2.basic_dash_ether_dmg_))
+  cmpGE(
+    char.mindscape,
+    2,
+    prod(shotshells_hit, percent(dm.m2.basic_dash_ether_dmg_))
+  )
 )
 
 const m4_basic_dash_ether_res_ign_ = ownBuff.combat.resIgn_.ether.add(
@@ -191,7 +200,7 @@ const sheet = register(
   ...customDmg(
     'm6_ether_afterglow',
     { ...baseTag, damageType1: 'elemental' },
-    cmpGE(char.mindscape, 6, prod(own.final.atk, dm.m6.dmg))
+    cmpGE(char.mindscape, 6, prod(own.final.atk, percent(dm.m6.dmg)))
   ),
 
   // Buffs

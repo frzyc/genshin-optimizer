@@ -346,6 +346,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.common.count.withSpecialty(data_gen.specialty).add(1),
     ownBuff.char.faction.add(data_gen.faction),
     ownBuff.common.count.withFaction(data_gen.faction).add(1),
+    ownBuff.common.count[data_gen.attribute].add(1),
     // Base + promotion stats
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
       const addPerPromo = data_gen.promotionStats.map((p) => p[sk])

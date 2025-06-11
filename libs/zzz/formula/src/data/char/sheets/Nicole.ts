@@ -7,6 +7,7 @@ import {
   enemyDebuff,
   own,
   ownBuff,
+  percent,
   register,
   registerBuff,
   team,
@@ -268,7 +269,7 @@ const sheet = register(
   registerBuff(
     'm6_crit_',
     teamBuff.combat.crit_.add(
-      cmpGE(char.mindscape, 6, prod(fieldHitsEnemy, dm.m6.crit_))
+      cmpGE(char.mindscape, 6, prod(fieldHitsEnemy, percent(dm.m6.crit_)))
     ),
     cmpGE(char.mindscape, 6, 'infer', ''),
     true
