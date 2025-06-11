@@ -91,9 +91,11 @@ type CharacterRawData = {
       Description: Array<{
         Name: string
         Desc?: string
+        Potential: number[] // Empty indicates always available. 0 is base kit only. other numbers are enhanced kit only.
         Param?: Array<{
           Name: string
           Desc: string
+          Potential: number[] // Empty indicates always available. 0 is base kit only. other numbers are enhanced kit only.
           Param?: Record<
             string,
             {
@@ -128,15 +130,17 @@ type CharacterRawData = {
       Desc: '<IconMap:Icon_Special>'
       ElementType: 203
       HitType: 101
+      Potential: number[] // Empty indicates always available. 0 is base kit only. other numbers are enhanced kit only.
     }
   >
   Passive: {
     Level: Record<
-      '1' | '2' | '3' | '4' | '5' | '6' | '7',
+      string,
       {
         Level: '1' | '2' | '3' | '4' | '5' | '6' | '7'
         Name: [string, string]
         Desc: [string, string]
+        Potential: number[] // Empty indicates always available. 0 is base kit only. other numbers are enhanced kit only.
       }
     >
     Material: Record<
@@ -287,3 +291,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
       return [name, data] as const
     })
 ) as Record<CharacterKey, CharacterData>
+
+export function filterUnbuffedKits({ Potential }: { Potential: number[] }) {
+  return Potential.length === 0 || !Potential.includes(0)
+}

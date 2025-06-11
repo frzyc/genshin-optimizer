@@ -28,6 +28,33 @@
         "2nd-Hit ",
         "3rd-Hit "
       ]
+    },
+    "BasicAttackGlacialBladeWave": {
+      "name": "Basic Attack: Glacial Blade Wave",
+      "desc": {
+        "0": "After the 3rd hit of <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>'s charged scissor strike, <ct color=#FFFFFF>Dodge Counter: Reef Rock</ct>, and <ct color=#FFFFFF>Quick Assist</ct>, if Ellen has <ct color=#FFFFFF>Flash Freeze Charges</ct>, pressing <IconNormal /> will launch <ct color=#FFFFFF>Basic Attack: Glacial Blade Wave</ct>, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "1": "This skill consumes 2 points of <ct color=#FFFFFF>Flash Freeze Charge</ct>.",
+        "2": "After use, it can be directly followed up with the 3rd hit of her <ct color=#FFFFFF>Basic Attack</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit "
+      ]
+    },
+    "BasicAttackIcyBlade": {
+      "name": "Basic Attack: Icy Blade",
+      "desc": {
+        "0": "After the 3rd hit of <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, <ct color=#FFFFFF>EX Special Attack: Sharknami</ct>, <ct color=#FFFFFF>Dodge Counter: Reef Rock</ct>, and <ct color=#FFFFFF>Assist Follow-Up</ct>, automatically launch <ct color=#FFFFFF>Basic Attack: Icy Blade</ct>, dealing multiple instances of <ct color=#98EFF0>Ice DMG</ct> to all enemies in a large area ahead. It inflicts additional instances of <ct color=#98EFF0>Ice DMG</ct> against Medium and Large foes.",
+        "1": "After the skill, Ellen gains the <ct color=#FFFFFF>Quick Charge</ct> effect.",
+        "2": "<ct color=#FFFFFF>Basic Attack: Icy Blade</ct> does not affect the branch or form of the original skill.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " to Small Enemies",
+        " to Medium Enemies",
+        " to Large Enemies"
+      ]
     }
   },
   "dodge": {
@@ -59,10 +86,11 @@
         "2": "Gain 1 point of <ct color=#FFFFFF>Flash Freeze Charge</ct> when the Swift Scissors strike hits.",
         "3": "",
         "4": "While in the <ct color=#FFFFFF>Roaming</ct> state, hold <IconNormal /> to activate:",
-        "5": "Perform a spinning slash against the enemy, then pull apart the scissors to unleash a Charged Scissors strike, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
-        "6": "Gain 3 points of <ct color=#FFFFFF>Flash Freeze Charge</ct> when the Charged Scissors strike hits. If the enemy is <ct color=#98EFF0>Frozen</ct>, it always triggers <ct color=#98EFF0>Shatter</ct>.",
+        "5": "Perform a spinning slash against the enemy, then pull apart the scissors to unleash a Charged Scissor strike, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "6": "Gain 3 points of <ct color=#FFFFFF>Flash Freeze Charge</ct> when the Charged Scissor strike hits. If the enemy is <ct color=#98EFF0>Frozen</ct>, it always triggers <ct color=#98EFF0>Shatter</ct>.",
         "7": "Anti-Interrupt level is increased while charging the skill, and DMG taken is reduced by 40%.",
-        "8": "Character is invulnerable while using this skill."
+        "8": "When taking DMG from enemies while the skill is charging, that instance of DMG is nullified, and charging instantly completes.",
+        "9": "Character is invulnerable while using this skill."
       },
       "params": [
         "Spinning Slash ",
@@ -221,13 +249,34 @@
   "core": {
     "name": "Core Passive: Sharp-Toothed",
     "desc": [
-      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>50%</ct>.",
-      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>58.3%</ct>.",
-      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>66.6%</ct>.",
-      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>75%</ct>.",
-      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>83.3%</ct>.",
-      "When Ellen launches a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>91.6%</ct>.",
-      "When Ellen launches a Charged Scissors Strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes a <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG is increased by <ct color=#2BAD00>100%</ct>."
+      {
+        "0": "When Ellen launches a Charged Scissor strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG increases by <ct color=#2BAD00>50%</ct>.",
+        "1": "The above effect also applies to <ct color=#FFFFFF>Chain Attacks</ct>, <ct color=#FFFFFF>Ultimates</ct>, <ct color=#FFFFFF>Basic Attack: Icy Blade</ct>, and <ct color=#FFFFFF>Basic Attack: Glacial Blade Wave</ct>."
+      },
+      {
+        "0": "When Ellen launches a Charged Scissor strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG increases by <ct color=#2BAD00>58.3%</ct>.",
+        "1": "The above effect also applies to <ct color=#FFFFFF>Chain Attacks</ct>, <ct color=#FFFFFF>Ultimates</ct>, <ct color=#FFFFFF>Basic Attack: Icy Blade</ct>, and <ct color=#FFFFFF>Basic Attack: Glacial Blade Wave</ct>."
+      },
+      {
+        "0": "When Ellen launches a Charged Scissor strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG increases by <ct color=#2BAD00>66.6%</ct>.",
+        "1": "The above effect also applies to <ct color=#FFFFFF>Chain Attacks</ct>, <ct color=#FFFFFF>Ultimates</ct>, <ct color=#FFFFFF>Basic Attack: Icy Blade</ct>, and <ct color=#FFFFFF>Basic Attack: Glacial Blade Wave</ct>."
+      },
+      {
+        "0": "When Ellen launches a Charged Scissor strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG increases by <ct color=#2BAD00>75%</ct>.",
+        "1": "The above effect also applies to <ct color=#FFFFFF>Chain Attacks</ct>, <ct color=#FFFFFF>Ultimates</ct>, <ct color=#FFFFFF>Basic Attack: Icy Blade</ct>, and <ct color=#FFFFFF>Basic Attack: Glacial Blade Wave</ct>."
+      },
+      {
+        "0": "When Ellen launches a Charged Scissor strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG increases by <ct color=#2BAD00>83.3%</ct>.",
+        "1": "The above effect also applies to <ct color=#FFFFFF>Chain Attacks</ct>, <ct color=#FFFFFF>Ultimates</ct>, <ct color=#FFFFFF>Basic Attack: Icy Blade</ct>, and <ct color=#FFFFFF>Basic Attack: Glacial Blade Wave</ct>."
+      },
+      {
+        "0": "When Ellen launches a Charged Scissor strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG increases by <ct color=#2BAD00>91.6%</ct>.",
+        "1": "The above effect also applies to <ct color=#FFFFFF>Chain Attacks</ct>, <ct color=#FFFFFF>Ultimates</ct>, <ct color=#FFFFFF>Basic Attack: Icy Blade</ct>, and <ct color=#FFFFFF>Basic Attack: Glacial Blade Wave</ct>."
+      },
+      {
+        "0": "When Ellen launches a Charged Scissor strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, or consumes <ct color=#FFFFFF>Flash Freeze Charge</ct> to activate <ct color=#FFFFFF>Basic Attack: Flash Freeze Trimming</ct>, the skill's CRIT DMG increases by <ct color=#2BAD00>100%</ct>.",
+        "1": "The above effect also applies to <ct color=#FFFFFF>Chain Attacks</ct>, <ct color=#FFFFFF>Ultimates</ct>, <ct color=#FFFFFF>Basic Attack: Icy Blade</ct>, and <ct color=#FFFFFF>Basic Attack: Glacial Blade Wave</ct>."
+      }
     ]
   },
   "ability": {

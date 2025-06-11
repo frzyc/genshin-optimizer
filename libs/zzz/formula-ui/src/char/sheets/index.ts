@@ -15,6 +15,7 @@ import Grace from './Grace'
 import Harumasa from './Harumasa'
 import Hugo from './Hugo'
 import Jane from './Jane'
+import JuFufu from './JuFufu'
 import Koleda from './Koleda'
 import Lighter from './Lighter'
 import Lucy from './Lucy'
@@ -22,6 +23,7 @@ import Lycaon from './Lycaon'
 import Miyabi from './Miyabi'
 import Nekomata from './Nekomata'
 import Nicole from './Nicole'
+import PanYinhu from './PanYinhu'
 import Piper from './Piper'
 import Pulchra from './Pulchra'
 import Qingyi from './Qingyi'
@@ -33,6 +35,7 @@ import Soukaku from './Soukaku'
 import Trigger from './Trigger'
 import Vivian from './Vivian'
 import Yanagi from './Yanagi'
+import Yixuan from './Yixuan'
 import ZhuYuan from './ZhuYuan'
 
 export const charSheets: Record<CharacterKey, CharUISheet> = {
@@ -50,6 +53,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Harumasa,
   Hugo,
   Jane,
+  JuFufu,
   Koleda,
   Lighter,
   Lucy,
@@ -68,5 +72,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Trigger,
   Vivian,
   Yanagi,
+  PanYinhu,
+  Yixuan,
   ZhuYuan,
 } as const

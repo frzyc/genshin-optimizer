@@ -140,7 +140,9 @@ function CharacterSection() {
         ['Conditionals', <EquippedConditionals key={'conditionals'} />],
         ['bonusStats', <BonusStatsSection key={'bonusStats'} />],
         ['enemyStats', <EnemyStatsSection key={'enemyStats'} />],
-        ...(shouldShowDevComponents
+        ...(characterKey === 'Yixuan' ||
+        characterKey === 'Soldier0Anby' ||
+        shouldShowDevComponents
           ? [
               ['charSheet', <CharSheetSection key={'charSheet'} />] as [
                 key: string,
@@ -149,7 +151,7 @@ function CharacterSection() {
             ]
           : []),
       ] as const
-    }, [onClick])
+    }, [characterKey, onClick])
   const theme = useTheme()
   const isNotXs = useMediaQuery(theme.breakpoints.up('sm'))
 

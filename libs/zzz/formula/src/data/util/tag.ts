@@ -86,6 +86,7 @@ const stats: Record<Stat, Desc> = {
   hp_: agg,
   atk: agg,
   atk_: agg,
+  sheerForce: agg,
   def: agg,
   def_: agg,
   impact: agg,
@@ -110,6 +111,7 @@ const stats: Record<Stat, Desc> = {
   dazeInc_: agg,
   dazeRed_: agg,
   dmg_red_: agg,
+  sheer_dmg_: agg,
 } as const
 const finalStats = objFilterKeys(stats, [
   ...flatAndPercentStats,
@@ -160,11 +162,13 @@ export const ownTag = {
     res_mult_: fixed,
     dmg_taken_mult_: fixed,
     stunned_mult_: fixed,
+    sheer_mult_: fixed,
   },
   formula: {
     base: agg,
     listing: aggStr,
     standardDmg: prepProd,
+    sheerDmg: prepProd,
     anomalyDmg: prepProd,
     shield: prep,
     anomMas_mult_: prep,

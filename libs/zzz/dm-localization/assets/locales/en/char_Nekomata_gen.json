@@ -169,7 +169,7 @@
   "mindscapes": {
     "1": {
       "name": "Bird Hunter",
-      "desc": "When Nekomata hits an enemy from behind, she ignores 16% of her target's <ct color=#F0D12B>Physical RES</ct>. If the enemy is Stunned, all Nekomata's attacks are considered back attacks.",
+      "desc": "When Nekomata hits an enemy from behind, she ignores 16% of her target's <ct color=#F0D12B>Physical RES</ct>. If the enemy is Stunned, all Nekomata's attacks against them are considered back attacks.",
       "flavor": "While Nekomata lacks strength due to her small size, she has the perceptiveness and agility required to locate her enemies' weaknesses and strike right where it hurts most."
     },
     "2": {

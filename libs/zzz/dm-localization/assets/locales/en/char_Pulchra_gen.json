@@ -73,7 +73,7 @@
       "name": "Special Attack: Rending Claw - Nightmare Shadow",
       "desc": {
         "0": "While Pulchra is in the <ct color=#FFFFFF>Hunter's Gait</ct> state, and when another active character in the squad hits an enemy with a heavy attack from a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>:",
-        "1": "Dash back-and-forth piercing enemies surrounding the target, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "1": "Dash back-and-forth piercing enemies centered on the target, dealing <ct color=#F0D12B>Physical DMG</ct>.",
         "2": "After using this skill, if another active character in the squad hits an enemy, Pulchra will repeat the attack up to 5 additional times, with the final attack being a more powerful Finishing Move.",
         "3": "Character is invulnerable while using this skill.",
         "4": "<ct color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</ct> is an <ct color=#FFFFFF>Aftershock</ct> attack."
@@ -169,8 +169,8 @@
   "ability": {
     "name": "Additional Ability: Business Partner",
     "desc": {
-      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct> character or shares the same Faction:",
-      "1": "When Pulchra hits enemies with <ct color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</ct>, an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, it applies the <ct color=#FFFFFF>Binding Trap</ct> effect for 15s. After applying <ct color=#FFFFFF>Binding Trap</ct>, all units' <ct color=#FFFFFF>Aftershock</ct> DMG against the target is increased by 30%."
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Rupture</ct> character or shares the same Faction:",
+      "1": "When Pulchra hits enemies with <ct color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</ct>, <ct color=#FFFFFF>EX Special Attack: Rending Claw - Flashstep</ct>, <ct color=#FFFFFF>Assist Follow-Up: Independent Pricing</ct>, <ct color=#FFFFFF>Chain Attack: Hey, Didn't Expect That, Right?</ct>, or <ct color=#FFFFFF>Ultimate: Oh, Time to Play?</ct>, it applies the <ct color=#FFFFFF>Binding Trap</ct> effect for 15s. After applying <ct color=#FFFFFF>Binding Trap</ct>, all units' <ct color=#FFFFFF>Aftershock</ct> DMG against the target is increased by 30%."
     }
   },
   "mindscapes": {

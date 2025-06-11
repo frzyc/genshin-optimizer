@@ -1,0 +1,14 @@
+{
+  "name": "Reel Projector",
+  "desc": "It's not surprising when a film student does something outrageous, but this fan of Hollow-themed films from the renowned New Eridu film school still drew a rebuke from W-engine craftsmen: \"You DO know that W-Engines are for sound right, and not visuals?\"",
+  "desc2": "Equip to increase Defense Agents' combat capabilities",
+  "desc3": "Clearly a W-Engine is for sound, and not images. What kind of lunatic genius would insist on stuffing a 16mm film camera into a W-Engine?",
+  "phase": "Flash Engraving",
+  "phaseDescs": [
+    "When a squad member's HP is greater than or equal to 50%, they take <ct color=#2BAD00>7.5%</ct> less DMG, and <ct color=#2BAD00>10%</ct> less Miasma Contamination. Only one instance of this effect can exist in the same squad.",
+    "When a squad member's HP is greater than or equal to 50%, they take <ct color=#2BAD00>8.6%</ct> less DMG, and <ct color=#2BAD00>11.5%</ct> less Miasma Contamination. Only one instance of this effect can exist in the same squad.",
+    "When a squad member's HP is greater than or equal to 50%, they take <ct color=#2BAD00>9.7%</ct> less DMG, and <ct color=#2BAD00>13%</ct> less Miasma Contamination. Only one instance of this effect can exist in the same squad.",
+    "When a squad member's HP is greater than or equal to 50%, they take <ct color=#2BAD00>10.8%</ct> less DMG, and <ct color=#2BAD00>14.5%</ct> less Miasma Contamination. Only one instance of this effect can exist in the same squad.",
+    "When a squad member's HP is greater than or equal to 50%, they take <ct color=#2BAD00>12%</ct> less DMG, and <ct color=#2BAD00>16%</ct> less Miasma Contamination. Only one instance of this effect can exist in the same squad."
+  ]
+}

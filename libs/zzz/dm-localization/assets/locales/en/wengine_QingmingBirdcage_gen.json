@@ -1,0 +1,21 @@
+{
+  "name": "Qingming Birdcage",
+  "desc": {
+    "0": "Once a disciple of Yunkui, and now the sect leader.",
+    "1": "Yunkui Summit has always upheld the duty of saving the world and helping others. Whenever Eridu faces disaster, a Yunkui disciple always steps up... until the day the old capital fell.",
+    "2": "Time can allow new cities to rise and turn the old capital into ruins, but it cannot erase the past.",
+    "3": "Though she traveled far and wide, trying to put the past behind her. Yet wherever she went, looking back, it always seemed as though everything was still right there in front of her.",
+    "4": "",
+    "5": "<ct color=#959595>\"Rivers may shift, but old dreams are hard to forget.\" —Yixuan</ct>"
+  },
+  "desc2": "Equip to increase Rupture Agents' combat capabilities",
+  "desc3": "The world is vast and full of change, and fate is unpredictable. But regardless of hardship or lack thereof, one must stay true to one's heart.",
+  "phase": "Cloud Flow",
+  "phaseDescs": [
+    "CRIT Rate increases by <ct color=#2BAD00>20%</ct>. When the equipper launches an <ct color=#FFFFFF>EX Special Attack</ct>, the character gains 1 stack of <ct color=#FFFFFF>Qingming Companion</ct> effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the <ct color=#FFFFFF>Qingming Companion</ct> effect increases the equipper's <ct color=#FE437E>Ether DMG</ct> by <ct color=#2BAD00>8%</ct>, and increases Ultimate and EX Special Attack <ct color=#FE437E>Ether Sheer DMG</ct> by <ct color=#2BAD00>10%</ct>.",
+    "CRIT Rate increases by <ct color=#2BAD00>23%</ct>. When the equipper launches an <ct color=#FFFFFF>EX Special Attack</ct>, the character gains 1 stack of <ct color=#FFFFFF>Qingming Companion</ct> effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the <ct color=#FFFFFF>Qingming Companion</ct> effect increases the equipper's <ct color=#FE437E>Ether DMG</ct> by <ct color=#2BAD00>9.2%</ct>, and increases Ultimate and EX Special Attack <ct color=#FE437E>Ether Sheer DMG</ct> by <ct color=#2BAD00>11.5%</ct>.",
+    "CRIT Rate increases by <ct color=#2BAD00>26%</ct>. When the equipper launches an <ct color=#FFFFFF>EX Special Attack</ct>, the character gains 1 stack of <ct color=#FFFFFF>Qingming Companion</ct> effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the <ct color=#FFFFFF>Qingming Companion</ct> effect increases the equipper's <ct color=#FE437E>Ether DMG</ct> by <ct color=#2BAD00>10.4%</ct>, and increases Ultimate and EX Special Attack <ct color=#FE437E>Ether Sheer DMG</ct> by <ct color=#2BAD00>13%</ct>.",
+    "CRIT Rate increases by <ct color=#2BAD00>29%</ct>. When the equipper launches an <ct color=#FFFFFF>EX Special Attack</ct>, the character gains 1 stack of <ct color=#FFFFFF>Qingming Companion</ct> effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the <ct color=#FFFFFF>Qingming Companion</ct> effect increases the equipper's <ct color=#FE437E>Ether DMG</ct> by <ct color=#2BAD00>11.6%</ct>, and increases Ultimate and EX Special Attack <ct color=#FE437E>Ether Sheer DMG</ct> by <ct color=#2BAD00>14.5%</ct>.",
+    "CRIT Rate increases by <ct color=#2BAD00>32%</ct>. When the equipper launches an <ct color=#FFFFFF>EX Special Attack</ct>, the character gains 1 stack of <ct color=#FFFFFF>Qingming Companion</ct> effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the <ct color=#FFFFFF>Qingming Companion</ct> effect increases the equipper's <ct color=#FE437E>Ether DMG</ct> by <ct color=#2BAD00>12.8%</ct>, and increases Ultimate and EX Special Attack <ct color=#FE437E>Ether Sheer DMG</ct> by <ct color=#2BAD00>16%</ct>."
+  ]
+}

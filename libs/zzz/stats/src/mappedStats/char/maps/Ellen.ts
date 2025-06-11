@@ -10,6 +10,9 @@ const dm = {
       data_gen.skillParams['basic']['BasicAttackSawTeethTrimming'],
     BasicAttackFlashFreezeTrimming:
       data_gen.skillParams['basic']['BasicAttackFlashFreezeTrimming'],
+    BasicAttackGlacialBladeWave:
+      data_gen.skillParams['basic']['BasicAttackGlacialBladeWave'],
+    BasicAttackIcyBlade: data_gen.skillParams['basic']['BasicAttackIcyBlade'],
   },
   dodge: {
     DodgeVortex: data_gen.skillParams['dodge']['DodgeVortex'],

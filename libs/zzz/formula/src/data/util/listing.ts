@@ -36,6 +36,8 @@ export const stats = [
   'dazeInc_',
   'dazeRed_',
   'dmg_red_',
+  'sheerForce',
+  'sheer_dmg_',
 ] as const
 
 export const flatAndPercentStats = [
@@ -70,6 +72,7 @@ export const damageTypes = [
   'disorder',
   'aftershock',
   'elemental',
+  'sheer',
 ] as const
 
 export const skillTypes = [

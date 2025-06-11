@@ -160,31 +160,31 @@
     "desc": [
       {
         "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>40%</ct> increased Daze.",
-        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+        "1": "When <ct color=#FFFFFF>EX Special Attack: Thrill of the Hunt</ct> or <ct color=#FFFFFF>Assist Follow-Up: Vengeful Counterattack</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
       },
       {
         "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>46.6%</ct> increased Daze.",
-        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+        "1": "When <ct color=#FFFFFF>EX Special Attack: Thrill of the Hunt</ct> or <ct color=#FFFFFF>Assist Follow-Up: Vengeful Counterattack</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
       },
       {
         "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>53.3%</ct> increased Daze.",
-        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+        "1": "When <ct color=#FFFFFF>EX Special Attack: Thrill of the Hunt</ct> or <ct color=#FFFFFF>Assist Follow-Up: Vengeful Counterattack</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
       },
       {
         "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>60%</ct> increased Daze.",
-        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+        "1": "When <ct color=#FFFFFF>EX Special Attack: Thrill of the Hunt</ct> or <ct color=#FFFFFF>Assist Follow-Up: Vengeful Counterattack</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
       },
       {
         "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>66.6%</ct> increased Daze.",
-        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+        "1": "When <ct color=#FFFFFF>EX Special Attack: Thrill of the Hunt</ct> or <ct color=#FFFFFF>Assist Follow-Up: Vengeful Counterattack</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
       },
       {
         "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>73.3%</ct> increased Daze.",
-        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+        "1": "When <ct color=#FFFFFF>EX Special Attack: Thrill of the Hunt</ct> or <ct color=#FFFFFF>Assist Follow-Up: Vengeful Counterattack</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
       },
       {
         "0": "When Lycaon charges his <ct color=#FFFFFF>Basic Attack</ct> to completion, the attack deals <ct color=#2BAD00>80%</ct> increased Daze.",
-        "1": "When <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
+        "1": "When <ct color=#FFFFFF>EX Special Attack: Thrill of the Hunt</ct> or <ct color=#FFFFFF>Assist Follow-Up: Vengeful Counterattack</ct> hits an enemy, the target's <ct color=#98EFF0>Ice DMG RES</ct> decreases by 25% for 30s."
       }
     ]
   },
@@ -198,7 +198,7 @@
   "mindscapes": {
     "1": {
       "name": "Full Moon Momentum",
-      "desc": "When Lycaon's <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, the attack's Daze increases by 12%. This effect can trigger once every 8s. When he charges his <ct color=#FFFFFF>EX Special Attack</ct> to completion, this buff will increase by an additional 10%.",
+      "desc": "When Lycaon's <ct color=#FFFFFF>EX Special Attack: Thrill of the Hunt</ct> hits an enemy, the attack's Daze increases by 12%. This effect can trigger once every 8s. When he charges his <ct color=#FFFFFF>EX Special Attack: Thrill of the Hunt</ct> to completion, this buff will increase by an additional 10%.",
       "flavor": {
         "0": "Records suggest that werewolves exposed to moonlight become significantly more aggressive.",
         "1": "\"Don't stare directly at the moon.\""

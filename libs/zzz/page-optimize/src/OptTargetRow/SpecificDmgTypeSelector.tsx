@@ -24,7 +24,8 @@ export function SpecificDmgTypeSelector() {
       }),
     [database, character.key]
   )
-  if (target?.name !== 'standardDmgInst') return null
+  if (target?.name !== 'standardDmgInst' && target?.name !== 'sheerDmgInst')
+    return null
   return (
     <DmgTypeDropdown
       dmgType={target?.damageType1 as SpecificDmgTypeKey}

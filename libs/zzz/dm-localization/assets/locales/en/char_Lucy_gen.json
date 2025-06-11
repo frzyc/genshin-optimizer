@@ -100,7 +100,7 @@
     },
     "CheerOn": {
       "name": "Cheer On!",
-      "desc": "After using <ct color=#FFFFFF>EX Special Attack</ct>, when a guard boar triggers an explosion, it will apply the <ct color=#FFFFFF>Cheer On!</ct> status to all allies, Bangboo, and the guard boars themselves. While under the <ct color=#FFFFFF>Cheer On!</ct> status, allies' ATK increases by <ct color=#2BAD00>{CAL:13+AvatarSkillLevel(1)*0.8,1,2}%</ct> of Lucy's initial ATK + <ct color=#2BAD00>{CAL:40+AvatarSkillLevel(1)*4,1,2}</ct>, up to a maximum of 600. The <ct color=#FFFFFF>Cheer On!</ct> status lasts for 10s when a <ct color=#FFFFFF>Line Drive</ct> is hit, and 15s when a <ct color=#FFFFFF>Fly Ball</ct> is hit. Repeated triggers reset the duration.",
+      "desc": "After using <ct color=#FFFFFF>EX Special Attack</ct>, when a guard boar triggers an explosion, it will apply the <ct color=#FFFFFF>Cheer On!</ct> status to all squad members and Bangboo, and the guard boars themselves. While under the <ct color=#FFFFFF>Cheer On!</ct> status, allies' ATK increases by <ct color=#2BAD00>{CAL:13+AvatarSkillLevel(1)*0.8,1,2}%</ct> of Lucy's initial ATK + <ct color=#2BAD00>{CAL:40+AvatarSkillLevel(1)*4,1,2}</ct>, up to a maximum of 600. The <ct color=#FFFFFF>Cheer On!</ct> status lasts for 10s when a <ct color=#FFFFFF>Line Drive</ct> is hit, and 15s when a <ct color=#FFFFFF>Fly Ball</ct> is hit. Repeated triggers reset the duration.",
       "params": [
         "ATK Increase"
       ]
@@ -185,7 +185,7 @@
   "ability": {
     "name": "Additional Ability: Batter Up!",
     "desc": {
-      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "0": "When another character in your squad shares the same Attribute or Faction or is a <ct color=#FFFFFF>Rupture</ct> character:",
       "1": "The guard boars inherit Lucy's CRIT Rate and CRIT DMG."
     }
   },
@@ -200,7 +200,7 @@
     },
     "2": {
       "name": "Little Boar Captain",
-      "desc": "When Lucy uses a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, it grants all squad members, Bangboo, and the guard boars the <ct color=#FFFFFF>Cheer On!</ct> status for 10s.",
+      "desc": "When Lucy uses a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, it grants all squad members and Bangboo, and the guard boars themselves the <ct color=#FFFFFF>Cheer On!</ct> status for 10s.",
       "flavor": {
         "0": "\"Without a doubt, Captain Lucy is the best leader of the Calydon Boar Thirens!\"",
         "1": "This was Woody's conclusion in the \"Sons of Calydon Annual Report.\""
@@ -230,7 +230,7 @@
     },
     "6": {
       "name": "Fierce Fangs of Fire",
-      "desc": "When another squad member in the <ct color=#FFFFFF>Cheer On!</ct> state hits an enemy with an <ct color=#FFFFFF>EX Special Attack</ct>, a guard boar will drop from the sky and cause an explosion, dealing <ct color=#FF5521>Fire DMG</ct> equal to 300% of the guard boar's ATK. This will extend the duration of the <ct color=#FFFFFF>Cheer On!</ct> buff for all squad members by 5s. The duration can increase up to 3 times, with a maximum duration of 30s. Refreshing the <ct color=#FFFFFF>Cheer On!</ct> state resets the stack count. After the guard boar's explosion, it will launch <ct color=#FFFFFF>Guard Boars: Spinning Swing!</ct>.",
+      "desc": "When another squad member in the <ct color=#FFFFFF>Cheer On!</ct> state hits an enemy with an <ct color=#FFFFFF>EX Special Attack</ct>, a guard boar will drop from the sky and cause an explosion, dealing <ct color=#FF5521>Fire DMG</ct> equal to 300% of the guard boar's ATK. This will extend the duration of the <ct color=#FFFFFF>Cheer On!</ct> buff for all squad members and Bangboo, and for the guard boars themselves by 5s. The duration can increase up to 3 times, with a maximum duration of 30s. Refreshing the <ct color=#FFFFFF>Cheer On!</ct> state resets the stack count. After the guard boar's explosion, it will launch <ct color=#FFFFFF>Guard Boars: Spinning Swing!</ct>.",
       "flavor": {
         "0": "The little boar Thirens known as the Crimson Mane Guard are always at the forefront of battle!",
         "1": "Though it's hard to tell if, at the moment they're launched by the bat, they feel total despair or just accept their fate.",

@@ -14,6 +14,7 @@ export const allCharacterKeys = [
   'Harumasa',
   'Hugo',
   'Jane',
+  'JuFufu',
   'Koleda',
   'Lighter',
   'Lucy',
@@ -21,6 +22,7 @@ export const allCharacterKeys = [
   'Miyabi',
   'Nekomata',
   'Nicole',
+  'PanYinhu',
   'Piper',
   'Pulchra',
   'Qingyi',
@@ -32,6 +34,7 @@ export const allCharacterKeys = [
   'Trigger',
   'Vivian',
   'Yanagi',
+  'Yixuan',
   'ZhuYuan',
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
@@ -45,6 +48,7 @@ export const allSpecialityKeys = [
   'anomaly',
   'support',
   'defense',
+  'rupture',
 ] as const
 export type SpecialityKey = (typeof allSpecialityKeys)[number]
 
@@ -59,6 +63,7 @@ export const allFactionKeys = [
   'HollowSpecialOoperationsSection6',
   'StarsOfLyra',
   'Mockingbird',
+  'YunkuiSummit',
 ] as const
 export type FactionKey = (typeof allFactionKeys)[number]
 

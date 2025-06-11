@@ -93,6 +93,7 @@ export const bonusStatKeys: Array<keyof typeof own.final> = [
   'anomMas',
   'pen_',
   'pen',
+  'sheerForce',
 ] as const
 export type BonusStatKey = (typeof bonusStatKeys)[number]
 
@@ -212,7 +213,10 @@ export class CharacterOptManager extends DataManager<
       const formula = getFormula(target)
       if (formula) {
         let { damageType1, damageType2 } = target
-        if (formula.name !== 'standardDmgInst') {
+        if (
+          formula.name !== 'standardDmgInst' &&
+          formula.name !== 'sheerDmgInst'
+        ) {
           damageType1 = undefined
           damageType2 = undefined
         }

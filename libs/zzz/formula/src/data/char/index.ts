@@ -14,6 +14,7 @@ import Grace from './sheets/Grace'
 import Harumasa from './sheets/Harumasa'
 import Hugo from './sheets/Hugo'
 import Jane from './sheets/Jane'
+import JuFufu from './sheets/JuFufu'
 import Koleda from './sheets/Koleda'
 import Lighter from './sheets/Lighter'
 import Lucy from './sheets/Lucy'
@@ -21,6 +22,7 @@ import Lycaon from './sheets/Lycaon'
 import Miyabi from './sheets/Miyabi'
 import Nekomata from './sheets/Nekomata'
 import Nicole from './sheets/Nicole'
+import PanYinhu from './sheets/PanYinhu'
 import Piper from './sheets/Piper'
 import Pulchra from './sheets/Pulchra'
 import Qingyi from './sheets/Qingyi'
@@ -32,6 +34,7 @@ import Soukaku from './sheets/Soukaku'
 import Trigger from './sheets/Trigger'
 import Vivian from './sheets/Vivian'
 import Yanagi from './sheets/Yanagi'
+import Yixuan from './sheets/Yixuan'
 import ZhuYuan from './sheets/ZhuYuan'
 
 const data: TagMapNodeEntries[] = [
@@ -49,6 +52,7 @@ const data: TagMapNodeEntries[] = [
   Harumasa,
   Hugo,
   Jane,
+  JuFufu,
   Koleda,
   Lighter,
   Lucy,
@@ -67,6 +71,8 @@ const data: TagMapNodeEntries[] = [
   Trigger,
   Vivian,
   Yanagi,
+  PanYinhu,
+  Yixuan,
   ZhuYuan,
 ]
 export default data.flat()
