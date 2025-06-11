@@ -5,6 +5,7 @@ import BlazingLaurel from './maps/BlazingLaurel'
 import BoxCutter from './maps/BoxCutter'
 import BunnyBand from './maps/BunnyBand'
 import CannonRotor from './maps/CannonRotor'
+import CinderCobalt from './maps/CinderCobalt'
 import DeepSeaVisitor from './maps/DeepSeaVisitor'
 import DemaraBatteryMarkII from './maps/DemaraBatteryMarkII'
 import DrillRigRedAxis from './maps/DrillRigRedAxis'
@@ -33,11 +34,16 @@ import MyriadEclipse from './maps/MyriadEclipse'
 import OriginalTransmorpher from './maps/OriginalTransmorpher'
 import PeacekeeperSpecialized from './maps/PeacekeeperSpecialized'
 import PreciousFossilizedCore from './maps/PreciousFossilizedCore'
+import PuzzleSphere from './maps/PuzzleSphere'
+import QingmingBirdcage from './maps/QingmingBirdcage'
+import RadiowaveJourney from './maps/RadiowaveJourney'
 import RainforestGourmet from './maps/RainforestGourmet'
+import ReelProjector from './maps/ReelProjector'
 import ReverbMarkI from './maps/ReverbMarkI'
 import ReverbMarkII from './maps/ReverbMarkII'
 import ReverbMarkIII from './maps/ReverbMarkIII'
 import RiotSuppressorMarkVI from './maps/RiotSuppressorMarkVI'
+import RoaringFurnace from './maps/RoaringFurnace'
 import RoaringRide from './maps/RoaringRide'
 import SeveredInnocence from './maps/SeveredInnocence'
 import SharpenedStinger from './maps/SharpenedStinger'
@@ -54,6 +60,7 @@ import TheBrimstone from './maps/TheBrimstone'
 import TheRestrained from './maps/TheRestrained'
 import TheVault from './maps/TheVault'
 import Timeweaver from './maps/Timeweaver'
+import TremorTrigramVessel from './maps/TremorTrigramVessel'
 import TusksOfFury from './maps/TusksOfFury'
 import UnfetteredGameBall from './maps/UnfetteredGameBall'
 import VortexArrow from './maps/VortexArrow'
@@ -70,6 +77,7 @@ const maps = {
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CinderCobalt,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
   DrillRigRedAxis,
@@ -98,11 +106,16 @@ const maps = {
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PreciousFossilizedCore,
+  PuzzleSphere,
+  QingmingBirdcage,
+  RadiowaveJourney,
   RainforestGourmet,
+  ReelProjector,
   ReverbMarkI,
   ReverbMarkII,
   ReverbMarkIII,
   RiotSuppressorMarkVI,
+  RoaringFurnace,
   RoaringRide,
   SeveredInnocence,
   SharpenedStinger,
@@ -119,6 +132,7 @@ const maps = {
   TheRestrained,
   TheVault,
   Timeweaver,
+  TremorTrigramVessel,
   TusksOfFury,
   UnfetteredGameBall,
   VortexArrow,

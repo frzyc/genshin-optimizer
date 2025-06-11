@@ -13,6 +13,7 @@ import {
   ImpactIcon,
   PenIcon,
   PenRatioIcon,
+  SheerForceIcon,
 } from '../icons'
 import { ElementIcon } from './ElementIcon'
 
@@ -70,6 +71,8 @@ export function StatIcon({
       return <PenIcon {...iconProps} />
     case 'pen_':
       return <PenRatioIcon {...iconProps} />
+    case 'sheerForce':
+      return <SheerForceIcon {...iconProps} />
   }
 
   const ele = statKey.split('_')[0]

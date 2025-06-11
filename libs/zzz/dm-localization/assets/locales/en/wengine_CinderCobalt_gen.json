@@ -1,0 +1,14 @@
+{
+  "name": "[Cinder] Cobalt",
+  "desc": "This W-Engine with an integrated heating element offers a significant combat boost by reaching extreme temperatures, allowing the user to effortlessly break through the enemy's defenses. This cobalt blue flame, burning quietly, is darkly beautiful, but be sure to keep your distance and avoid touching it.",
+  "desc2": "Equip to increase Rupture Agents' combat capabilities",
+  "desc3": "A W-Engine with a built-in heating component. When operating at high speeds, it resembles a blazing blue flame.",
+  "phase": "Dim Flame",
+  "phaseDescs": [
+    "Upon entering combat or switching in, the equipper's ATK increases by <ct color=#2BAD00>7.2%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon entering combat or switching in, the equipper's ATK increases by <ct color=#2BAD00>8.2%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon entering combat or switching in, the equipper's ATK increases by <ct color=#2BAD00>9.3%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon entering combat or switching in, the equipper's ATK increases by <ct color=#2BAD00>10.4%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon entering combat or switching in, the equipper's ATK increases by <ct color=#2BAD00>11.5%</ct> for 10s. This effect can trigger once every 20s."
+  ]
+}

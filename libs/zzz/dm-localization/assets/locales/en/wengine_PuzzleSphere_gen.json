@@ -1,0 +1,14 @@
+{
+  "name": "Puzzle Sphere",
+  "desc": "While it can be seen as an item to boost combat performance, it is also a uniquely shaped puzzle. The inspiration behind this W-Engine is said to have come from the designer's childhood, when a similar puzzle his mother made by hand helped him get through tired mornings and dreary afternoons. He poured his deep longing for his mother into the W-Engine and this longing brings the user a sense of comfort: holding the sphere is like returning to a childhood where, after a nightmare, you'd run to your mother's side for protection.",
+  "desc2": "Equip to increase Rupture Agents' combat capabilities",
+  "desc3": "The W-Engine, with its bright colors and great performance, saw poor sales at first because it resembled a toy. But with its reasonable price, it slowly gained a positive reputation.",
+  "phase": "Ingenious Craft",
+  "phaseDescs": [
+    "Upon launching an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's CRIT DMG increases by <ct color=#2BAD00>16%</ct> for 12s. Additionally, if the target's current HP is below 50% of their Max HP, <ct color=#FFFFFF>EX Special Attack</ct> DMG increases by <ct color=#2BAD00>20%</ct>.",
+    "Upon launching an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's CRIT DMG increases by <ct color=#2BAD00>18.4%</ct> for 12s. Additionally, if the target's current HP is below 50% of their Max HP, <ct color=#FFFFFF>EX Special Attack</ct> DMG increases by <ct color=#2BAD00>23%</ct>.",
+    "Upon launching an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's CRIT DMG increases by <ct color=#2BAD00>20.8%</ct> for 12s. Additionally, if the target's current HP is below 50% of their Max HP, <ct color=#FFFFFF>EX Special Attack</ct> DMG increases by <ct color=#2BAD00>26%</ct>.",
+    "Upon launching an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's CRIT DMG increases by <ct color=#2BAD00>23.2%</ct> for 12s. Additionally, if the target's current HP is below 50% of their Max HP, <ct color=#FFFFFF>EX Special Attack</ct> DMG increases by <ct color=#2BAD00>29%</ct>.",
+    "Upon launching an <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's CRIT DMG increases by <ct color=#2BAD00>25.6%</ct> for 12s. Additionally, if the target's current HP is below 50% of their Max HP, <ct color=#FFFFFF>EX Special Attack</ct> DMG increases by <ct color=#2BAD00>32%</ct>."
+  ]
+}

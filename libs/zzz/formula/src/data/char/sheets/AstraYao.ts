@@ -14,7 +14,7 @@ import {
 } from '../../util'
 import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
 
-const key: CharacterKey = 'QingYi'
+const key: CharacterKey = 'AstraYao'
 const data_gen = allStats.char[key]
 const dm = mappedStats.char[key]
 
@@ -27,7 +27,7 @@ const { numConditional } = allNumConditionals(key, true, 0, 2)
 
 const sheet = register(
   key,
-  // Handles base stats, core stats and Mindscapes 3 + 5
+  // Handles base stats, StatBoosts and Eidolon 3 + 5
   entriesForChar(data_gen),
 
   // Formulas

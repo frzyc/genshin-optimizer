@@ -22,7 +22,6 @@ const data: TagMapNodeEntries = [
   ...[
     ownBuff.dmg.dmg_mult_,
     ownBuff.dmg.buff_mult_,
-    ownBuff.dmg.def_mult_,
     ownBuff.dmg.res_mult_,
     ownBuff.dmg.dmg_taken_mult_,
     ownBuff.dmg.stunned_mult_,
@@ -74,6 +73,7 @@ const data: TagMapNodeEntries = [
     cmpEq(enemy.common.isStunned, 1, enemy.common.stun_, enemy.common.unstun_)
   ),
 
+  // Standard dmg Crit Multiplier
   ownBuff.dmg.crit_mult_.add(
     lookup(own.common.critMode, {
       crit: sum(percent(1), own.final.crit_dmg_),
@@ -81,5 +81,8 @@ const data: TagMapNodeEntries = [
       avg: sum(percent(1), prod(own.common.cappedCrit_, own.final.crit_dmg_)),
     })
   ),
+
+  // Sheer dmg Sheer Multiplier
+  ownBuff.dmg.sheer_mult_.add(sum(percent(1), own.final.sheer_dmg_)),
 ]
 export default data

@@ -1,0 +1,371 @@
+{
+  "name": "Yixuan",
+  "fullName": "Yixuan",
+  "basic": {
+    "BasicAttackCirrusStrike": {
+      "name": "Basic Attack: Cirrus Strike",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Perform up to five attacks forward, dealing <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "This skill's Anti-Interrupt Level increases during the 3rd and 4th hit."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackInkVeilCloudCoalescence": {
+      "name": "Basic Attack: Ink‐Veil Cloud Coalescence",
+      "desc": {
+        "0": "Hold <IconEvade /> to activate:",
+        "1": "Deploy a Grand Tai Chi Formation, dealing <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "When the skill ends, automatically launch the 5th hit of Basic Attack: Cirrus Strike.",
+        "3": "Anti-Interrupt level is increased while using this skill, and DMG received is reduced by 40%."
+      },
+      "params": [
+        "Ink‐Veil Cloud Coalescence Total "
+      ]
+    },
+    "BasicAttackAuricArray": {
+      "name": "Basic Attack: Auric Array",
+      "desc": {
+        "0": "While possessing Auric Ink Point, tap <IconNormal /> while Dodge: Nimbus Step is active or hold <IconEvade /> to activate:",
+        "1": "Deploy an array, continuously dealing <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "When the skill ends, it automatically triggers Basic Attack: Qingming Eruption.",
+        "3": "While channeling, continuously recover Adrenaline, recovering 7/s, for up to 3s.",
+        "4": "Character is invulnerable while using this skill, and enters the Vital View state."
+      },
+      "params": [
+        "Auric Array Total "
+      ]
+    },
+    "BasicAttackQingmingEruption": {
+      "name": "Basic Attack: Qingming Eruption",
+      "desc": {
+        "0": "Automatically activates when Basic Attack: Auric Array reaches the max duration:",
+        "1": "Spreads her wings to launch an explosive attack, dealing massive <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeHiddenCloudTechnique": {
+      "name": "Dodge: Hidden Cloud Technique",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackSkybreaker": {
+      "name": "Dash Attack: Skybreaker",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Launch a forward rush attack, dealing <ct color=#FE437E>Auric Ink DMG</ct>."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DodgeNimbusStep": {
+      "name": "Dodge: Nimbus Step",
+      "desc": {
+        "0": "When dragging the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick}, hold <IconEvade /> to activate:",
+        "1": "Enter a high‐speed <ct color=#FFFFFF>Light as Air</ct> state. While in the <ct color=#FFFFFF>Light as Air</ct> state in Investigation Zone Mode, automatically collect from all resource pickup points within range.",
+        "2": "While in the <ct color=#FFFFFF>Light as Air</ct> state, use the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to steer. Release the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to stop.",
+        "3": "Character is invulnerable at the moment this skill activates."
+      },
+      "params": []
+    },
+    "DodgeCounterBanishingBlow": {
+      "name": "Dodge Counter: Banishing Blow",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Launch a series of attacks on enemies ahead, dealing <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackShadowIgnition": {
+      "name": "Special Attack: Shadow-Ignition",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Swiftly retreat, then attack forward, dealing <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "While retreating, a Perfect Dodge can be triggered, but cannot be followed up with a Dodge Counter.",
+        "3": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "EXSpecialAttackInkManifestation": {
+      "name": "EX Special Attack: Ink Manifestation",
+      "desc": {
+        "0": "With enough Adrenaline, press or hold <IconSpecialReadyRp /> to activate:",
+        "1": "Charge continuously, and release <IconSpecialReadyRp /> to launch an upward wing attack, dealing massive <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "While charging, incoming attacks are automatically blocked and will activate the upward wing attack.",
+        "3": "If hit at the exact moment charging begins, it triggers a Perfect Block effect, negating the DMG and increasing the skill's Interrupt Level to match a Heavy Defensive Assist, and recovering 10 Adrenaline.",
+        "4": "When an upward wing strike hits an enemy with a red flash or yellow flash, a Perfect Block can be triggered, negating the hit and increasing the skill's Interrupt Level to match a Defensive Assist and recovering 10 Adrenaline.",
+        "5": "The Perfect Block effect can occur at most once every 0.5s.",
+        "6": "If charged until flashing or when triggering the Perfect Block effect, the upward wing attack can be followed by an additional Talisman Attack.",
+        "7": "After the skill, press <IconSpecial /> to launch EX Special Attack: Celestial Cloud Blitz - Break.",
+        "8": "After EX Special Attack: Celestial Cloud Blitz - Break, and with enough Adrenaline, press <IconSpecialReadyRp /> to consume another 20 Adrenaline to launch EX Special Attack: Qingming Eruption - Break.",
+        "9": "After using EX Special Attack: Qingming Eruption - Break and with enough Auric Ink Points, hold <IconEvade /> to quickly follow up with <ct color=#FFFFFF>Basic Attack: Auric Array</ct>.",
+        "10": "Character is invulnerable during the upward wing attack, and Anti-Interrupt Level is increased while charging."
+      },
+      "params": [
+        "",
+        "Additional  on Full Charge",
+        "Energy Cost",
+        "EX Special Attack: Celestial Cloud Blitz - Break Total ",
+        "EX Special Attack: Qingming Eruption - Break Total "
+      ]
+    },
+    "EXSpecialAttackCloudShaper": {
+      "name": "EX Special Attack: Cloud-Shaper",
+      "desc": {
+        "0": "With enough Adrenaline, hold <IconNormal /> to activate:",
+        "1": "Continuously charge up, channeling energy around enemies to deal DMG over time, up to a max of 2s, dealing massive <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "Once fully charged or if interrupted, automatically trigger EX Special Attack: Ashen Ink Becomes Shadows.",
+        "3": "At the moment the skill is activated, a Perfect Dodge can be triggered. After the Perfect Dodge, enter the Vital View state.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Total  During Charge",
+        "Initial Consumption",
+        "Consumption Per Second"
+      ]
+    },
+    "EXSpecialAttackAshenInkBecomesShadows": {
+      "name": "EX Special Attack: Ashen Ink Becomes Shadows",
+      "desc": {
+        "0": "Triggers automatically during EX Special Attack: Cloud-Shaper:",
+        "1": "When the energy orb appears and contracts, it deals <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Total  When Energy Orb Appears/Contracts"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackAuricInkRush": {
+      "name": "Chain Attack: Auric Ink Rush",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Rapidly dash forward and attack, followed by an explosive wing burst, dealing massive <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateQingmingSkyshade": {
+      "name": "Ultimate: Qingming Skyshade",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Launch a barrage of wing attacks, then guide countless talismans to attack, dealing massive <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "Upon activating this skill, Yixuan evenly redistributes the squad's HP.",
+        "3": "After using this skill and with enough Auric Ink Points, hold <IconEvade /> to quickly follow up with <ct color=#FFFFFF>Basic Attack: Auric Array</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "UltimateEndlessTalismanSuppression": {
+      "name": "Ultimate: Endless Talisman Suppression",
+      "desc": {
+        "0": "With enough Technique Points, press <IconUltimateReady /> to activate:",
+        "1": "Consumes 120 Technique Points to spread her wings, then guide countless talismans to attack, dealing massive <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "With both enough Technique Points and Decibels, this skill triggers with priority.",
+        "3": "After using this skill and with enough Auric Ink Points, hold <IconEvade /> to quickly follow up with <ct color=#FFFFFF>Basic Attack: Auric Array</ct>.",
+        "4": "Upon activating this skill, Yixuan evenly redistributes the squad's HP.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistCloudstreamShadow": {
+      "name": "Quick Assist: Cloudstream Shadow",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Launch a series of attacks on enemies ahead, dealing <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    },
+    "DefensiveAssistClearSkySurge": {
+      "name": "Defensive Assist: Clear Sky Surge",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpCelestialCloudBlitz": {
+      "name": "Assist Follow-Up: Celestial Cloud Blitz",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Quickly dash forward and attack, dealing <ct color=#FE437E>Auric Ink DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        ""
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Grandmaster of Mysticism",
+    "desc": [
+      {
+        "0": "Yixuan gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#FE437E>Auric Ink DMG</ct> Yixuan deals via her skills is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier.",
+        "2": "When Yixuan accumulates <ct color=#FE437E>Auric Ink Anomaly Buildup</ct>, it uses an independent Anomaly Buildup gauge, and when triggering an Anomaly, she restores an additional 10 Adrenaline. This can trigger once every 10s.",
+        "3": "Upon entering combat, Yixuan immediately restores all Adrenaline. In Investigation Zone Mode, this effect can only trigger once every 180s. Triggering a Perfect Dodge grants an additional 5 Adrenaline and can occur at most once per second.",
+        "4": "When she consumes Adrenaline, Yixuan accumulates Technique Points, gaining 0.667 points for each point of Adrenaline consumed. With enough Technique Points, she can trigger an additional Ultimate: Endless Talisman Suppression. The maximum for Technique Points is 120.",
+        "5": "The DMG dealt by Yixuan's Basic Attack: Auric Array, Basic Attack: Qingming Eruption, EX Special Attack, Assist Follow-Up, Chain Attack, and Ultimate increases by <ct color=#2BAD00>30%</ct>.",
+        "6": "After launching Ultimate: Endless Talisman Suppression, Yixuan gains one Auric Ink Point. She can spend an Auric Ink Point to launch Basic Attack: Auric Array."
+      },
+      {
+        "0": "Yixuan gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#FE437E>Auric Ink DMG</ct> Yixuan deals via her skills is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier.",
+        "2": "When Yixuan accumulates <ct color=#FE437E>Auric Ink Anomaly Buildup</ct>, it uses an independent Anomaly Buildup gauge, and when triggering an Anomaly, she restores an additional 10 Adrenaline. This can trigger once every 10s.",
+        "3": "Upon entering combat, Yixuan immediately restores all Adrenaline. In Investigation Zone Mode, this effect can only trigger once every 180s. Triggering a Perfect Dodge grants an additional 5 Adrenaline and can occur at most once per second.",
+        "4": "When she consumes Adrenaline, Yixuan accumulates Technique Points, gaining 0.667 points for each point of Adrenaline consumed. With enough Technique Points, she can trigger an additional Ultimate: Endless Talisman Suppression. The maximum for Technique Points is 120.",
+        "5": "The DMG dealt by Yixuan's Basic Attack: Auric Array, Basic Attack: Qingming Eruption, EX Special Attack, Assist Follow-Up, Chain Attack, and Ultimate increases by <ct color=#2BAD00>35%</ct>.",
+        "6": "After launching Ultimate: Endless Talisman Suppression, Yixuan gains one Auric Ink Point. She can spend an Auric Ink Point to launch Basic Attack: Auric Array."
+      },
+      {
+        "0": "Yixuan gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#FE437E>Auric Ink DMG</ct> Yixuan deals via her skills is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier.",
+        "2": "When Yixuan accumulates <ct color=#FE437E>Auric Ink Anomaly Buildup</ct>, it uses an independent Anomaly Buildup gauge, and when triggering an Anomaly, she restores an additional 10 Adrenaline. This can trigger once every 10s.",
+        "3": "Upon entering combat, Yixuan immediately restores all Adrenaline. In Investigation Zone Mode, this effect can only trigger once every 180s. Triggering a Perfect Dodge grants an additional 5 Adrenaline and can occur at most once per second.",
+        "4": "When she consumes Adrenaline, Yixuan accumulates Technique Points, gaining 0.667 points for each point of Adrenaline consumed. With enough Technique Points, she can trigger an additional Ultimate: Endless Talisman Suppression. The maximum for Technique Points is 120.",
+        "5": "The DMG dealt by Yixuan's Basic Attack: Auric Array, Basic Attack: Qingming Eruption, EX Special Attack, Assist Follow-Up, Chain Attack, and Ultimate increases by <ct color=#2BAD00>40%</ct>.",
+        "6": "After launching Ultimate: Endless Talisman Suppression, Yixuan gains one Auric Ink Point. She can spend an Auric Ink Point to launch Basic Attack: Auric Array."
+      },
+      {
+        "0": "Yixuan gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#FE437E>Auric Ink DMG</ct> Yixuan deals via her skills is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier.",
+        "2": "When Yixuan accumulates <ct color=#FE437E>Auric Ink Anomaly Buildup</ct>, it uses an independent Anomaly Buildup gauge, and when triggering an Anomaly, she restores an additional 10 Adrenaline. This can trigger once every 10s.",
+        "3": "Upon entering combat, Yixuan immediately restores all Adrenaline. In Investigation Zone Mode, this effect can only trigger once every 180s. Triggering a Perfect Dodge grants an additional 5 Adrenaline and can occur at most once per second.",
+        "4": "When she consumes Adrenaline, Yixuan accumulates Technique Points, gaining 0.667 points for each point of Adrenaline consumed. With enough Technique Points, she can trigger an additional Ultimate: Endless Talisman Suppression. The maximum for Technique Points is 120.",
+        "5": "The DMG dealt by Yixuan's Basic Attack: Auric Array, Basic Attack: Qingming Eruption, EX Special Attack, Assist Follow-Up, Chain Attack, and Ultimate increases by <ct color=#2BAD00>45%</ct>.",
+        "6": "After launching Ultimate: Endless Talisman Suppression, Yixuan gains one Auric Ink Point. She can spend an Auric Ink Point to launch Basic Attack: Auric Array."
+      },
+      {
+        "0": "Yixuan gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#FE437E>Auric Ink DMG</ct> Yixuan deals via her skills is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier.",
+        "2": "When Yixuan accumulates <ct color=#FE437E>Auric Ink Anomaly Buildup</ct>, it uses an independent Anomaly Buildup gauge, and when triggering an Anomaly, she restores an additional 10 Adrenaline. This can trigger once every 10s.",
+        "3": "Upon entering combat, Yixuan immediately restores all Adrenaline. In Investigation Zone Mode, this effect can only trigger once every 180s. Triggering a Perfect Dodge grants an additional 5 Adrenaline and can occur at most once per second.",
+        "4": "When she consumes Adrenaline, Yixuan accumulates Technique Points, gaining 0.667 points for each point of Adrenaline consumed. With enough Technique Points, she can trigger an additional Ultimate: Endless Talisman Suppression. The maximum for Technique Points is 120.",
+        "5": "The DMG dealt by Yixuan's Basic Attack: Auric Array, Basic Attack: Qingming Eruption, EX Special Attack, Assist Follow-Up, Chain Attack, and Ultimate increases by <ct color=#2BAD00>50%</ct>.",
+        "6": "After launching Ultimate: Endless Talisman Suppression, Yixuan gains one Auric Ink Point. She can spend an Auric Ink Point to launch Basic Attack: Auric Array."
+      },
+      {
+        "0": "Yixuan gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#FE437E>Auric Ink DMG</ct> Yixuan deals via her skills is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier.",
+        "2": "When Yixuan accumulates <ct color=#FE437E>Auric Ink Anomaly Buildup</ct>, it uses an independent Anomaly Buildup gauge, and when triggering an Anomaly, she restores an additional 10 Adrenaline. This can trigger once every 10s.",
+        "3": "Upon entering combat, Yixuan immediately restores all Adrenaline. In Investigation Zone Mode, this effect can only trigger once every 180s. Triggering a Perfect Dodge grants an additional 5 Adrenaline and can occur at most once per second.",
+        "4": "When she consumes Adrenaline, Yixuan accumulates Technique Points, gaining 0.667 points for each point of Adrenaline consumed. With enough Technique Points, she can trigger an additional Ultimate: Endless Talisman Suppression. The maximum for Technique Points is 120.",
+        "5": "The DMG dealt by Yixuan's Basic Attack: Auric Array, Basic Attack: Qingming Eruption, EX Special Attack, Assist Follow-Up, Chain Attack, and Ultimate increases by <ct color=#2BAD00>55%</ct>.",
+        "6": "After launching Ultimate: Endless Talisman Suppression, Yixuan gains one Auric Ink Point. She can spend an Auric Ink Point to launch Basic Attack: Auric Array."
+      },
+      {
+        "0": "Yixuan gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#FE437E>Auric Ink DMG</ct> Yixuan deals via her skills is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier.",
+        "2": "When Yixuan accumulates <ct color=#FE437E>Auric Ink Anomaly Buildup</ct>, it uses an independent Anomaly Buildup gauge, and when triggering an Anomaly, she restores an additional 10 Adrenaline. This can trigger once every 10s.",
+        "3": "Upon entering combat, Yixuan immediately restores all Adrenaline. In Investigation Zone Mode, this effect can only trigger once every 180s. Triggering a Perfect Dodge grants an additional 5 Adrenaline and can occur at most once per second.",
+        "4": "When she consumes Adrenaline, Yixuan accumulates Technique Points, gaining 0.667 points for each point of Adrenaline consumed. With enough Technique Points, she can trigger an additional Ultimate: Endless Talisman Suppression. The maximum for Technique Points is 120.",
+        "5": "The DMG dealt by Yixuan's Basic Attack: Auric Array, Basic Attack: Qingming Eruption, EX Special Attack, Assist Follow-Up, Chain Attack, and Ultimate increases by <ct color=#2BAD00>60%</ct>.",
+        "6": "After launching Ultimate: Endless Talisman Suppression, Yixuan gains one Auric Ink Point. She can spend an Auric Ink Point to launch Basic Attack: Auric Array."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Auric Ink Undercurrent",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct>, <ct color=#FFFFFF>Support</ct>, or <ct color=#FFFFFF>Defense</ct> character:",
+      "1": "When a fellow squad member uses an Ultimate, Yixuan continuously recovers 2 Adrenaline over 10s. If Yixuan is switched out by a Perfect Assist, she automatically follows up with a lightning strike attack, dealing DMG equal to 225% of her Sheer Force and restoring an additional 5 Adrenaline.",
+      "2": "EX Special Attack: Cloud-Shaper and EX Special Attack: Ashen Ink Becomes Shadows deal 30% increased DMG to Stunned enemies.",
+      "3": "After activating her Ultimate, Yixuan enters the Meditation state, increasing her CRIT DMG by 40% for 15s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Spiritual Path",
+      "desc": "Upon entering combat, CRIT Rate increases by 10% and immediately gain 120 <ct color=#FFFFFF>Technique Points</ct>. In Investigation Zone Mode, this effect can only trigger once every 180s. When any squad member lands a hit on an enemy, Yixuan automatically summons an extra lightning strike, dealing DMG equal to 50% of her Sheer Force and restoring 5 additional Adrenaline. This can trigger once every 6s.",
+      "flavor": {
+        "0": "\"Fate is ever-changing and the path ahead uncertain. Only a pure, peaceful spirit holds firm. Even through the tides of time, I harbor no regrets.\"",
+        "1": "\"The mystic arts take a thousand forms, yet its core stays the same; the road may fork and falter, but the spirit stays steadfast.\"",
+        "2": "\"No matter the peril you face or the foe you meet, improvise as needed and face them with composure.\""
+      }
+    },
+    "2": {
+      "name": "Ward Off Misfortune",
+      "desc": "When an <ct color=#FFFFFF>Ultimate</ct> or <ct color=#FFFFFF>EX Special Attack</ct> deals DMG, it ignores 15% of the target's <ct color=#FE437E>Ether RES</ct>. Triggering <ct color=#FFFFFF>Ultimate: Qingming Skyshade</ct> extends all enemies' Stunned state by 3s. In a single Stun state duration, enemies can only have this effect applied once, and it does not stack with similar effects. Additionally, when using <ct color=#FFFFFF>Ultimate: Endless Talisman Suppression</ct>, gain one stack of the <ct color=#FFFFFF>Condensed Ink</ct> effect. After <ct color=#FFFFFF>Basic Attack: Qingming Eruption</ct> or <ct color=#FFFFFF>EX Special Attack: Ashen Ink Becomes Shadows</ct>, press the Basic Attack button, or after <ct color=#FFFFFF>EX Special Attack: Qingming Eruption - Break</ct>, press the Special Attack button to consume one stack of <ct color=#FFFFFF>Condensed Ink</ct> and launch <ct color=#FFFFFF>EX Special Attack: Endless Talisman Suppression - Break</ct>, dealing DMG up to 1,200% of Sheer Force. Only one stack of <ct color=#FFFFFF>Condensed Ink</ct> can be held at a time.",
+      "flavor": {
+        "0": "\"Life's twists are unpredictable — at best, the diviner discerns but a fraction.\"",
+        "1": "\"Dispelling misfortune and blessing rituals are merely reading the signs to pursue gain and avoid peril.\"",
+        "2": "\"Once you understand how to sidestep misfortune, you can just as easily cast it upon your foe... just call forth the calamity they've yet to face.\""
+      }
+    },
+    "3": {
+      "name": "Cycle of Yin and Yang",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Everything in the world follows laws of mutual generation and restraint; by understanding that principle, you can balance yin and yang to overpower your foes.\"",
+        "1": "\"Achieving optimal results with simple techniques isn't cutting corners, but a natural result of following the flow.\""
+      }
+    },
+    "4": {
+      "name": "The One Path of Mysticism",
+      "desc": "Activating an <ct color=#FFFFFF> Ultimate</ct> grants one stack of <ct color=#FFFFFF>Tranquility</ct>, up to a max of 2 stacks. For each stack of <ct color=#FFFFFF>Tranquility</ct>, the next <ct color=#FFFFFF>EX Special Attack: Cloud-Shaper</ct> DMG and <ct color=#FFFFFF>EX Special Attack: Ashen Ink Becomes Shadows</ct> DMG increase by 30%.",
+      "flavor": {
+        "0": "\"It's said that countless transformations arise from a single principle. In studying the mystic arts, one must not be bound by forms but must grasp their underlying meaning.\"",
+        "1": "\"If you can perceive the core principles, each technique flows into another. Such is the path of the mystic: infinite forms converge into unity.\""
+      }
+    },
+    "5": {
+      "name": "Calm Sky Vigil",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"To master the mystic arts, diligent study and reflection are but the start — you must learn to maintain a pure mind, listening to the wind and watching the clouds.\"",
+        "1": "\"When you transcend self and world, your command of Ether grows ever stronger, almost without effort.\"",
+        "2": "\"As you persist, you'll be able to maintain inner poise through any trial, meeting any change with unshakable calm.\""
+      }
+    },
+    "6": {
+      "name": "Swift Yet Still",
+      "desc": "After using <ct color=#FFFFFF>Ultimate: Qingming Skyshade</ct>, gain a stack of the <ct color=#FFFFFF>Regulated Breathing</ct> effect. While under this effect, you can ignore the <ct color=#FFFFFF>Technique Point</ct> cost to launch <ct color=#FFFFFF>Ultimate: Endless Talisman Suppression</ct> once. The <ct color=#FFFFFF>Regulated Breathing</ct> effect ends after <ct color=#FFFFFF>Ultimate: Endless Talisman Suppression</ct> is used. This effect can only be gained once every 30s. Only one stack of <ct color=#FFFFFF>Regulated Breathing</ct> can be held. Additionally, while in the <ct color=#FFFFFF>Meditation</ct> state, Yixuan's Sheer DMG is increased by 20%.",
+      "flavor": {
+        "0": "\"Tranquility to govern force, motion and calm coexist. In every movement there lies a pause, and in every pause a potential for energy.\"",
+        "1": "\"At any moment, if your mind remains clear, you can meet endless change with unchanging focus — and strike for victory at just the right moment.\"",
+        "2": "\"Do you understand?\"",
+        "3": "\"If not, that's okay... after silent contemplation, there comes that instant of awakening. This is yet another expression of 'swift yet still.'\""
+      }
+    }
+  }
+}

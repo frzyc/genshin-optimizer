@@ -5,10 +5,10 @@
   "desc3": "A new supercomputing W-Engine, featuring cutting-edge integrated chips that dynamically monitor the battlefield and provide tactical analysis for the user.",
   "phase": "Game Start!",
   "phaseDescs": [
-    "Whenever the equipper's attack triggers an Attribute Counter effect, all squad members' CRIT Rate against the struck enemy increases by <ct color=#2BAD00>12%</ct> for 12s. Passive effects of the same name do not stack.",
-    "Whenever the equipper's attack triggers an Attribute Counter effect, all squad members' CRIT Rate against the struck enemy increases by <ct color=#2BAD00>13.5%</ct> for 12s. Passive effects of the same name do not stack.",
-    "Whenever the equipper's attack triggers an Attribute Counter effect, all squad members' CRIT Rate against the struck enemy increases by <ct color=#2BAD00>15.5%</ct> for 12s. Passive effects of the same name do not stack.",
-    "Whenever the equipper's attack triggers an Attribute Counter effect, all squad members' CRIT Rate against the struck enemy increases by <ct color=#2BAD00>17.5%</ct> for 12s. Passive effects of the same name do not stack.",
-    "Whenever the equipper's attack triggers an Attribute Counter effect, all squad members' CRIT Rate against the struck enemy increases by <ct color=#2BAD00>20%</ct> for 12s. Passive effects of the same name do not stack."
+    "Whenever the equipper's attack triggers an Attribute Counter effect, all units' CRIT Rate against the struck enemy increases by <ct color=#2BAD00>12%</ct> for 12s. Passive effects of the same name do not stack.",
+    "Whenever the equipper's attack triggers an Attribute Counter effect, all units' CRIT Rate against the struck enemy increases by <ct color=#2BAD00>13.5%</ct> for 12s. Passive effects of the same name do not stack.",
+    "Whenever the equipper's attack triggers an Attribute Counter effect, all units' CRIT Rate against the struck enemy increases by <ct color=#2BAD00>15.5%</ct> for 12s. Passive effects of the same name do not stack.",
+    "Whenever the equipper's attack triggers an Attribute Counter effect, all units' CRIT Rate against the struck enemy increases by <ct color=#2BAD00>17.5%</ct> for 12s. Passive effects of the same name do not stack.",
+    "Whenever the equipper's attack triggers an Attribute Counter effect, all units' CRIT Rate against the struck enemy increases by <ct color=#2BAD00>20%</ct> for 12s. Passive effects of the same name do not stack."
   ]
 }

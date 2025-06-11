@@ -1,0 +1,34 @@
+{
+  "name": "Roaring Fur-nace",
+  "desc": {
+    "0": "Goodbye to the fate of the past, goodbye to the childhood that slipped away so quickly, goodbye to my father's embrace and my mother's smile, goodbye to the claws and the stripes, goodbye to the unmoving mountains and the clouds that never linger, goodbye to my mentor and old friends, goodbye to me, goodbye to me.",
+    "1": "As long as the world remembers, I once roared with courage.",
+    "2": "",
+    "3": "<ct color=#959595>\"Never fear! Your senior is here!\" —  Fufu's line when coming to the rescue.</ct>"
+  },
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "The warm fire blazes through the long night, casting light on the tiger's roar in my heart.",
+  "phase": "Tiger Spirit Rising",
+  "phaseDescs": [
+    {
+      "0": "The Daze dealt by the equipper's <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> increases by <ct color=#2BAD00>28%</ct>.",
+      "1": "When using a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> to deal <ct color=#FF5521>Fire DMG</ct>, the DMG dealt by all squad members increases by <ct color=#2BAD00>10%</ct>, stacking up to 2 times and lasting 30s. The duration of each stack is calculated separately. Triggers once per use of a skill. Only one instance of this effect can exist in the same squad."
+    },
+    {
+      "0": "The Daze dealt by the equipper's <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> increases by <ct color=#2BAD00>32.2%</ct>.",
+      "1": "When using a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> to deal <ct color=#FF5521>Fire DMG</ct>, the DMG dealt by all squad members increases by <ct color=#2BAD00>11.5%</ct>, stacking up to 2 times and lasting 30s. The duration of each stack is calculated separately. Triggers once per use of a skill. Only one instance of this effect can exist in the same squad."
+    },
+    {
+      "0": "The Daze dealt by the equipper's <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> increases by <ct color=#2BAD00>36.4%</ct>.",
+      "1": "When using a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> to deal <ct color=#FF5521>Fire DMG</ct>, the DMG dealt by all squad members increases by <ct color=#2BAD00>13%</ct>, stacking up to 2 times and lasting 30s. The duration of each stack is calculated separately. Triggers once per use of a skill. Only one instance of this effect can exist in the same squad."
+    },
+    {
+      "0": "The Daze dealt by the equipper's <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> increases by <ct color=#2BAD00>40.6%</ct>.",
+      "1": "When using a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> to deal <ct color=#FF5521>Fire DMG</ct>, the DMG dealt by all squad members increases by <ct color=#2BAD00>14.5%</ct>, stacking up to 2 times and lasting 30s. The duration of each stack is calculated separately. Triggers once per use of a skill. Only one instance of this effect can exist in the same squad."
+    },
+    {
+      "0": "The Daze dealt by the equipper's <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> increases by <ct color=#2BAD00>44.8%</ct>.",
+      "1": "When using a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> to deal <ct color=#FF5521>Fire DMG</ct>, the DMG dealt by all squad members increases by <ct color=#2BAD00>16%</ct>, stacking up to 2 times and lasting 30s. The duration of each stack is calculated separately. Triggers once per use of a skill. Only one instance of this effect can exist in the same squad."
+    }
+  ]
+}

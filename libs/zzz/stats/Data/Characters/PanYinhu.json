@@ -1,0 +1,304 @@
+{
+  "id": "1421",
+  "rarity": "A",
+  "attribute": "physical",
+  "specialty": "defense",
+  "faction": "YunkuiSummit",
+  "stats": {
+    "atk_base": 95,
+    "atk_growth": 5.4562,
+    "def_base": 57,
+    "def_growth": 7.7787,
+    "hp_base": 680,
+    "hp_growth": 92.2338,
+    "anomMas": 91,
+    "anomProf": 90,
+    "impact": 94,
+    "enerRegen": 1.2
+  },
+  "promotionStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 466, "atk": 34, "def": 39 },
+    { "hp": 933, "atk": 68, "def": 79 },
+    { "hp": 1399, "atk": 102, "def": 118 },
+    { "hp": 1866, "atk": 136, "def": 157 },
+    { "hp": 2332, "atk": 170, "def": 197 }
+  ],
+  "coreStats": [
+    { "atk": 0, "enerRegen": 0.12 },
+    { "atk": 25, "enerRegen": 0.12 },
+    { "atk": 25, "enerRegen": 0.24 },
+    { "atk": 50, "enerRegen": 0.24 },
+    { "atk": 50, "enerRegen": 0.36 },
+    { "atk": 75, "enerRegen": 0.36 }
+  ],
+  "skillParams": {
+    "basic": {
+      "BasicAttackUnyieldingStrikes": [
+        {
+          "DamagePercentage": 0.497,
+          "DamagePercentageGrowth": 0.046,
+          "StunRatio": 0.249,
+          "StunRatioGrowth": 0.012,
+          "SpRecovery": 89.4,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 684.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 24.8
+        },
+        {
+          "DamagePercentage": 0.498,
+          "DamagePercentageGrowth": 0.046,
+          "StunRatio": 0.475,
+          "StunRatioGrowth": 0.022,
+          "SpRecovery": 170.8,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1306.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 47.44
+        },
+        {
+          "DamagePercentage": 1.094,
+          "DamagePercentageGrowth": 0.1,
+          "StunRatio": 0.843,
+          "StunRatioGrowth": 0.039,
+          "SpRecovery": 303.5,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2318.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 84.29
+        },
+        {
+          "DamagePercentage": 2.113,
+          "DamagePercentageGrowth": 0.193,
+          "StunRatio": 1.665,
+          "StunRatioGrowth": 0.076,
+          "SpRecovery": 599.4,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 4578.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 166.48
+        }
+      ]
+    },
+    "dodge": {
+      "DodgeLightAsASwallow": [],
+      "DashAttackSizzlingOilSupreme": [
+        {
+          "DamagePercentage": 0.834,
+          "DamagePercentageGrowth": 0.076,
+          "StunRatio": 0.417,
+          "StunRatioGrowth": 0.019,
+          "SpRecovery": 150.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1146.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 41.66
+        }
+      ],
+      "DodgeCounterMovingMountainsAndSeas": [
+        {
+          "DamagePercentage": 2.192,
+          "DamagePercentageGrowth": 0.2,
+          "StunRatio": 1.917,
+          "StunRatioGrowth": 0.088,
+          "SpRecovery": 330,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2521.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 91.66
+        }
+      ]
+    },
+    "special": {
+      "SpecialAttackSonicPressurePointStrike": [
+        {
+          "DamagePercentage": 0.625,
+          "DamagePercentageGrowth": 0.057,
+          "StunRatio": 0.625,
+          "StunRatioGrowth": 0.029,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1718.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 62.48
+        }
+      ],
+      "SpecialAttackTouchOfDeath": [
+        {
+          "DamagePercentage": 3.841,
+          "DamagePercentageGrowth": 0.35,
+          "StunRatio": 2.573,
+          "StunRatioGrowth": 0.117,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 9924.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 283.12
+        }
+      ],
+      "EXSpecialAttackMountainousPulseStrike": [
+        {
+          "DamagePercentage": 0.973,
+          "DamagePercentageGrowth": 0.089,
+          "StunRatio": 0.417,
+          "StunRatioGrowth": 0.019,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1911.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 48.61
+        },
+        {
+          "DamagePercentage": 0.973,
+          "DamagePercentageGrowth": 0.089,
+          "StunRatio": 0.417,
+          "StunRatioGrowth": 0.019,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1911.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 48.61
+        },
+        {
+          "DamagePercentage": 0.973,
+          "DamagePercentageGrowth": 0.089,
+          "StunRatio": 0.417,
+          "StunRatioGrowth": 0.019,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1911.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 48.61
+        }
+      ]
+    },
+    "chain": {
+      "ChainAttackAnointedWithWokSteam": [
+        {
+          "DamagePercentage": 6.323,
+          "DamagePercentageGrowth": 0.575,
+          "StunRatio": 2.333,
+          "StunRatioGrowth": 0.107,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 24703.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 432.79
+        }
+      ],
+      "UltimateAFeastFitForAnEmperor": [
+        {
+          "DamagePercentage": 16.279,
+          "DamagePercentageGrowth": 1.48,
+          "StunRatio": 0.984,
+          "StunRatioGrowth": 0.045,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 98.33
+        }
+      ]
+    },
+    "assist": {
+      "QuickAssistLiftYourGazeToGoodFortune": [
+        {
+          "DamagePercentage": 0.917,
+          "DamagePercentageGrowth": 0.084,
+          "StunRatio": 0.459,
+          "StunRatioGrowth": 0.021,
+          "SpRecovery": 165,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1262.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 45.83
+        }
+      ],
+      "DefensiveAssistIntimidatingPresence": [
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.251,
+          "StunRatioGrowth": 0.103,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.684,
+          "StunRatioGrowth": 0.122,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.084,
+          "StunRatioGrowth": 0.05,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "AssistFollowUpRideTheMomentum": [
+        {
+          "DamagePercentage": 3.374,
+          "DamagePercentageGrowth": 0.307,
+          "StunRatio": 2.935,
+          "StunRatioGrowth": 0.134,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 10488.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 315.42
+        }
+      ]
+    }
+  },
+  "calcedParams": {
+    "basic": { "BasicAttackUnyieldingStrikes": [] },
+    "dodge": {
+      "DodgeLightAsASwallow": [],
+      "DashAttackSizzlingOilSupreme": [],
+      "DodgeCounterMovingMountainsAndSeas": []
+    },
+    "special": {
+      "SpecialAttackSonicPressurePointStrike": [],
+      "SpecialAttackTouchOfDeath": [],
+      "EXSpecialAttackMountainousPulseStrike": []
+    },
+    "chain": {
+      "ChainAttackAnointedWithWokSteam": [],
+      "UltimateAFeastFitForAnEmperor": []
+    },
+    "assist": {
+      "QuickAssistLiftYourGazeToGoodFortune": [],
+      "DefensiveAssistIntimidatingPresence": [],
+      "AssistFollowUpRideTheMomentum": []
+    }
+  },
+  "coreParams": [
+    [0.09, 0.105, 0.12, 0.135, 0.15, 0.165, 0.18],
+    [25, 25, 25, 25, 25, 25, 25],
+    [540, 540, 540, 540, 540, 540, 540]
+  ],
+  "abilityParams": [0.2, 10],
+  "mindscapeParams": [
+    [0.1],
+    [6, 4, 12],
+    [2],
+    [0.25, 0.25, 0.5],
+    [2],
+    [0.06, 720]
+  ]
+}

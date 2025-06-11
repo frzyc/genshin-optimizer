@@ -1,0 +1,14 @@
+{
+  "name": "Radiowave Journey",
+  "desc": "Not content with repeatedly listening to the same albums' melodies, and unwilling to stay stuck in the same Hollow scenery. Even among the travelers who wander the Hollows, there are those romantic adventurers, poets of sorts, who go too far. \"Radiowave Journey\" is designed specifically for these romantic fools. Its additional radio module can convert Etheric frequencies into musical melodies, playing different styles of music depending on the type of Hollow you're in.",
+  "desc2": "Equip to increase Rupture Agents' combat capabilities",
+  "desc3": "Designed for those Hollow-dwelling bards who refuse to listen to the same albums repeatedly, this W-Engine comes equipped with a radio module that can transform Etheric frequencies into melodies.",
+  "phase": "Easy Strides",
+  "phaseDescs": [
+    "When launching a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, the equipper gains 1 stack of a buff effect. Each stack increases the equipper's Sheer Force by <ct color=#2BAD00>80</ct>, stacking up to 3 times, and lasting 12s. The duration of each stack is calculated separately.",
+    "When launching a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, the equipper gains 1 stack of a buff effect. Each stack increases the equipper's Sheer Force by <ct color=#2BAD00>92</ct>, stacking up to 3 times, and lasting 12s. The duration of each stack is calculated separately.",
+    "When launching a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, the equipper gains 1 stack of a buff effect. Each stack increases the equipper's Sheer Force by <ct color=#2BAD00>104</ct>, stacking up to 3 times, and lasting 12s. The duration of each stack is calculated separately.",
+    "When launching a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, the equipper gains 1 stack of a buff effect. Each stack increases the equipper's Sheer Force by <ct color=#2BAD00>116</ct>, stacking up to 3 times, and lasting 12s. The duration of each stack is calculated separately.",
+    "When launching a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>, the equipper gains 1 stack of a buff effect. Each stack increases the equipper's Sheer Force by <ct color=#2BAD00>128</ct>, stacking up to 3 times, and lasting 12s. The duration of each stack is calculated separately."
+  ]
+}

@@ -286,7 +286,7 @@
     },
     "6": {
       "name": "Overlord's Will",
-      "desc": "<ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> and <ct color=#FFFFFF>Assist Follow-Up</ct> are guaranteed to trigger a critical hit. The skill's DMG is increased by 50% and deals additional 50% DMG to the primary target. When Caesar uses <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> or <ct color=#FFFFFF>Assist Follow-Up</ct>, her CRIT Rate is increased by 30% and her CRIT DMG is increased by 60% for 15s.",
+      "desc": "<ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> and <ct color=#FFFFFF>Assist Follow-Up: Aiding Blade</ct> are guaranteed to trigger a critical hit. The skill's DMG is increased by 50% and deals additional 50% DMG to the primary target. When Caesar uses <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct> or <ct color=#FFFFFF>Assist Follow-Up: Aiding Blade</ct>, her CRIT Rate is increased by 30% and her CRIT DMG is increased by 60% for 15s.",
       "flavor": {
         "0": "\"I used to keep my eyes straight ahead, thinking that as long as I was strong enough, I could do anything.\"",
         "1": "\"But being a great leader takes more than just power.\"",

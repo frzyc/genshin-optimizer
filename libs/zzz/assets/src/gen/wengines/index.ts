@@ -5,6 +5,7 @@ import BlazingLaurel from './BlazingLaurel'
 import BoxCutter from './BoxCutter'
 import BunnyBand from './BunnyBand'
 import CannonRotor from './CannonRotor'
+import CinderCobalt from './CinderCobalt'
 import DeepSeaVisitor from './DeepSeaVisitor'
 import DemaraBatteryMarkII from './DemaraBatteryMarkII'
 import DrillRigRedAxis from './DrillRigRedAxis'
@@ -33,11 +34,16 @@ import MyriadEclipse from './MyriadEclipse'
 import OriginalTransmorpher from './OriginalTransmorpher'
 import PeacekeeperSpecialized from './PeacekeeperSpecialized'
 import PreciousFossilizedCore from './PreciousFossilizedCore'
+import PuzzleSphere from './PuzzleSphere'
+import QingmingBirdcage from './QingmingBirdcage'
+import RadiowaveJourney from './RadiowaveJourney'
 import RainforestGourmet from './RainforestGourmet'
+import ReelProjector from './ReelProjector'
 import ReverbMarkI from './ReverbMarkI'
 import ReverbMarkII from './ReverbMarkII'
 import ReverbMarkIII from './ReverbMarkIII'
 import RiotSuppressorMarkVI from './RiotSuppressorMarkVI'
+import RoaringFurnace from './RoaringFurnace'
 import RoaringRide from './RoaringRide'
 import SeveredInnocence from './SeveredInnocence'
 import SharpenedStinger from './SharpenedStinger'
@@ -54,6 +60,7 @@ import TheBrimstone from './TheBrimstone'
 import TheRestrained from './TheRestrained'
 import TheVault from './TheVault'
 import Timeweaver from './Timeweaver'
+import TremorTrigramVessel from './TremorTrigramVessel'
 import TusksOfFury from './TusksOfFury'
 import UnfetteredGameBall from './UnfetteredGameBall'
 import VortexArrow from './VortexArrow'
@@ -70,6 +77,7 @@ const data = {
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CinderCobalt,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
   DrillRigRedAxis,
@@ -98,11 +106,16 @@ const data = {
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PreciousFossilizedCore,
+  PuzzleSphere,
+  QingmingBirdcage,
+  RadiowaveJourney,
   RainforestGourmet,
+  ReelProjector,
   ReverbMarkI,
   ReverbMarkII,
   ReverbMarkIII,
   RiotSuppressorMarkVI,
+  RoaringFurnace,
   RoaringRide,
   SeveredInnocence,
   SharpenedStinger,
@@ -119,6 +132,7 @@ const data = {
   TheRestrained,
   TheVault,
   Timeweaver,
+  TremorTrigramVessel,
   TusksOfFury,
   UnfetteredGameBall,
   VortexArrow,

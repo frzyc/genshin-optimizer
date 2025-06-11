@@ -9,6 +9,7 @@ import FangedMetal from './FangedMetal'
 import FreedomBlues from './FreedomBlues'
 import HormonePunk from './HormonePunk'
 import InfernoMetal from './InfernoMetal'
+import KingOfTheSummit from './KingOfTheSummit'
 import PhaethonsMelody from './PhaethonsMelody'
 import PolarMetal from './PolarMetal'
 import ProtoPunk from './ProtoPunk'
@@ -19,6 +20,7 @@ import SoulRock from './SoulRock'
 import SwingJazz from './SwingJazz'
 import ThunderMetal from './ThunderMetal'
 import WoodpeckerElectro from './WoodpeckerElectro'
+import YunkuiTales from './YunkuiTales'
 
 export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
   AstralVoice,
@@ -29,6 +31,7 @@ export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
   FreedomBlues,
   HormonePunk,
   InfernoMetal,
+  KingOfTheSummit,
   PhaethonsMelody,
   PolarMetal,
   ProtoPunk,
@@ -39,4 +42,5 @@ export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
   SwingJazz,
   ThunderMetal,
   WoodpeckerElectro,
+  YunkuiTales,
 }

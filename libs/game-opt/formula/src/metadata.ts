@@ -1,3 +1,4 @@
+import { prettify } from '@genshin-optimizer/common/util'
 import type {
   IBaseConditionalData,
   IConditionalData,
@@ -41,17 +42,20 @@ export function extractFormulaMetadata<T, GenericTag extends Tag>(
   data: TagMapNodeEntries<GenericTag>,
   extractFormula: (
     tag: GenericTag,
-    value: AnyNode | ReRead
+    value: AnyNode | ReRead,
+    result: Formulas<T>
   ) => IFormulaData<T> | undefined
 ) {
   const result: Formulas<T> = {}
   for (const { tag, value } of data) {
-    const extracted = extractFormula(tag, value)
+    const extracted = extractFormula(tag, value, result)
     if (!extracted) continue
     const { sheet, name } = extracted
     result[sheet] ??= {}
     if (result[sheet][name])
-      console.log(`Duplicated formula definition for ${sheet}:${name}`)
+      console.log(
+        `Duplicated formula definition for ${sheet}:${name}. Existing:${prettify(result[sheet][name])} New:${prettify(extracted)}`
+      )
     result[sheet][name] = extracted
   }
   return result

@@ -25,6 +25,7 @@ import {
   customDaze,
   customDmg,
   customHeal,
+  customSheerDmg,
   customShield,
   damageTypes,
   listingItem,
@@ -238,7 +239,7 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
     abilityName.toLowerCase().startsWith(dt.toLowerCase())
   )
   if (!damageType) {
-    if (key === 'Astra' && abilityName === 'Chord') return 'exSpecial'
+    if (key === 'AstraYao' && abilityName === 'Chord') return 'exSpecial'
     if (key === 'Lucy' && abilityName === 'GuardBoarsToArms') return 'basic'
     if (key === 'Lucy' && abilityName === 'GuardBoarsSpinningSwing')
       return 'basic'
@@ -371,14 +372,23 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     ),
     // TODO: Remove this once we have character sheets for everyone
-    // Standard DMG
-    ...customDmg(
-      'standardDmgInst',
-      {
-        attribute: data_gen.attribute,
-      },
-      prod(percent(1.5), own.final.atk)
-    ),
+    // Standard/Sheer DMG
+    ...(data_gen.specialty === 'rupture'
+      ? customSheerDmg(
+          'sheerDmgInst',
+          {
+            attribute: data_gen.attribute,
+            damageType1: 'sheer',
+          },
+          prod(percent(1.5), own.final.sheerForce)
+        )
+      : customDmg(
+          'standardDmgInst',
+          {
+            attribute: data_gen.attribute,
+          },
+          prod(percent(1.5), own.final.atk)
+        )),
     // Anomaly DMG
     ...customAnomalyDmg(
       'anomalyDmgInst',
@@ -399,6 +409,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(listingItem(own.final.atk)),
     ownBuff.listing.formulas.add(listingItem(own.final.def)),
     ownBuff.listing.formulas.add(listingItem(own.final.impact)),
+    ownBuff.listing.formulas.add(listingItem(own.final.sheerForce)),
     ownBuff.listing.formulas.add(listingItem(own.common.cappedCrit_)),
     ownBuff.listing.formulas.add(listingItem(own.final.crit_dmg_)),
     ownBuff.listing.formulas.add(listingItem(own.final.pen_)),
