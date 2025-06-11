@@ -51,9 +51,9 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        " to Small Enemies",
-        " to Medium Enemies",
-        " to Large Enemies"
+        "to Small Enemies ",
+        "to Medium Enemies ",
+        "to Large Enemies "
       ]
     }
   },
@@ -96,8 +96,8 @@
         "Spinning Slash ",
         "Swift Scissors ",
         "Charged Scissors ",
-        "Swift Scissors Flash Freeze Charge Obtained",
-        "Charged Scissors Flash Freeze Charge Obtained"
+        "Swift Scissors Flash Freeze Charge Obtained ",
+        "Charged Scissors Flash Freeze Charge Obtained "
       ]
     },
     "FlashFreeze": {
@@ -112,7 +112,7 @@
         "1": "Launches a dashing slash attack at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DashAttackColdSnap": {
@@ -123,7 +123,7 @@
         "2": "Consumes 1 <ct color=#FFFFFF>Flash Freeze Charge</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterReefRock": {
@@ -134,7 +134,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -147,7 +147,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackTailSwipe": {
@@ -160,8 +160,8 @@
         "4": "After executing the move, you can immediately follow up with the 3rd hit of a <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     },
     "EXSpecialAttackSharknami": {
@@ -174,8 +174,8 @@
         "4": "After executing the move, you can immediately follow up with the 3rd hit of a <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -188,7 +188,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateEndlessWinter": {
@@ -199,7 +199,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -217,7 +217,7 @@
         "7": "Upon triggering a <ct color=#FFFFFF>Quick Assist</ct>, Ellen gains the <ct color=#FFFFFF>Quick Charge</ct> effect, shortening the charging time of <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct>, lasting up to 5s or until it triggers once."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistWavefrontImpact": {
@@ -242,7 +242,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

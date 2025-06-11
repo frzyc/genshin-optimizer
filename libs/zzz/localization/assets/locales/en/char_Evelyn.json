@@ -1,0 +1,9 @@
+{
+  "coreCond": "Upon entering Binding Seal",
+  "ability_dmg_": "Chain Attack and Ultimate DMG Increase",
+  "ability_mv_mult": "Chain Attack and Ultimate Damage Multiplier Increase",
+  "m1Cond": "When Evelyn attacks Bound enemies",
+  "m4_shield": "Shield Strength",
+  "m4Cond": "While shield exists",
+  "m6_follow_up_dmg": "Lunalux Garrote follow-up attack DMG"
+}

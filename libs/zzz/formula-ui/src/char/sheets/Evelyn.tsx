@@ -1,25 +1,86 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
-import { createBaseSheet } from '../sheetUtil'
+import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Evelyn'
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [, ch] = trans('char', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = conditionals[key]
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = buffs[key]
+const formula = formulas[key]
 
-const sheet = createBaseSheet(key)
+const sheet = createBaseSheet(key, {
+  core: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('coreCond'),
+        metadata: cond.binding_seal,
+        fields: [fieldForBuff(buff.core_crit_)],
+      },
+    },
+  ],
+  ability: [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ch('ability_dmg_'),
+          fieldRef: buff.ability_chain_ult_dmg_.tag,
+        },
+        {
+          title: ch('ability_mv_mult'),
+          fieldRef: buff.ability_chainSkill_mv_mult.tag,
+        },
+      ],
+    },
+  ],
+  m1: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('m1Cond'),
+        metadata: cond.enemy_bound,
+        fields: [fieldForBuff(buff.m1_defIgn_)],
+      },
+    },
+  ],
+  m2: [
+    {
+      type: 'fields',
+      fields: [fieldForBuff(buff.m2_atk_)],
+    },
+  ],
+  m4: [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ch('m4_shield'),
+          fieldRef: formula.m4_shield.tag,
+        },
+      ],
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('m4Cond'),
+        metadata: cond.m4_shield_exists,
+        fields: [fieldForBuff(buff.m4_crit_dmg_)],
+      },
+    },
+  ],
+  m6: [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ch('m6_follow_up_dmg'),
+          fieldRef: formula.m6_follow_up_dmg_.tag,
+        },
+      ],
+    },
+  ],
+})
 
 export default sheet

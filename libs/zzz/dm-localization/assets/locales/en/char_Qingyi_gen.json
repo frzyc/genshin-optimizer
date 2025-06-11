@@ -13,11 +13,11 @@
       },
       "params": [
         "1st-Hit ",
-        "1st-Hit  (ALT)",
+        "1st-Hit (ALT) ",
         "2nd-Hit ",
         "3rd-Hit ",
         "4th-Hit ",
-        "4th-Hit  (Enhanced)"
+        "4th-Hit (Enhanced) "
       ]
     },
     "BasicAttackEnchantedBlossoms": {
@@ -28,7 +28,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "FlashConnect": {
@@ -67,7 +67,7 @@
         "1": "Rush forward and then launch an upward attack, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterLingeringSentiments": {
@@ -78,7 +78,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -91,7 +91,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackMoonlitBegonia": {
@@ -104,9 +104,9 @@
         "4": "After executing the move, you can immediately follow up with the 3rd hit of a <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        "",
-        "Energy Cost",
-        "Additional Energy Cost"
+        " ",
+        "Energy Cost ",
+        "Additional Energy Cost "
       ]
     }
   },
@@ -120,7 +120,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateEightSoundsOfGanzhou": {
@@ -131,7 +131,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -144,7 +144,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistGracefulEmbellishment": {
@@ -169,7 +169,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

@@ -1,25 +1,81 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
-import { createBaseSheet } from '../sheetUtil'
+import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'ZhuYuan'
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [, ch] = trans('char', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = conditionals[key]
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = buffs[key]
+const formula = formulas[key]
 
-const sheet = createBaseSheet(key)
+const sheet = createBaseSheet(key, {
+  core: [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ch('core_dmg_'),
+          fieldRef: buff.core_dmg_.tag,
+        },
+      ],
+    },
+  ],
+  ability: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('abilityCond'),
+        metadata: cond.ex_chain_ult_used,
+        fields: [fieldForBuff(buff.ability_crit_)],
+      },
+    },
+  ],
+  m2: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('m2SuppresiveModeCond'),
+        metadata: cond.suppresive_mode,
+        fields: [fieldForBuff(buff.m2_dmg_red_)],
+      },
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('m2BasicDashEtherCond'),
+        metadata: cond.shotshells_hit,
+        fields: [
+          {
+            title: ch('m2_basic_dash_ether_dmg_'),
+            fieldRef: buff.m2_basic_dash_ether_dmg_.tag,
+          },
+        ],
+      },
+    },
+  ],
+  m4: [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ch('m4_ether_resIgn_'),
+          fieldRef: buff.m4_basic_dash_ether_res_ign_.tag,
+        },
+      ],
+    },
+  ],
+  m6: [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ch('m6_ether_afterglow'),
+          fieldRef: formula.m6_ether_afterglow.tag,
+        },
+      ],
+    },
+  ],
+})
 
 export default sheet

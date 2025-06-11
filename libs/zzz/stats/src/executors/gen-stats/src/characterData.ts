@@ -17,7 +17,7 @@ import { extractParamsFromString } from './util'
 
 export type CharactersData = Record<CharacterKey, CharacterDatum>
 export function getCharactersData(): CharactersData {
-  return objMap(
+  const data = objMap(
     charactersDetailedJSONData,
     ({
       id,
@@ -55,6 +55,9 @@ export function getCharactersData(): CharactersData {
       }
     }
   )
+
+  delete data.Nicole.skillParams.dodge['DashAttackDoAsIPlease']
+  return data
 }
 
 function extractSkillParams(skills: CharacterData['skills']) {

@@ -24,7 +24,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -45,7 +45,7 @@
         "1": "Order Drusilla and Anastella to execute a piercing attack, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterBangbooCallback": {
@@ -56,7 +56,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -69,7 +69,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackDimwitDisappearingTrick": {
@@ -81,8 +81,8 @@
         "3": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -97,7 +97,7 @@
         "4": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateTheQueensAttendants": {
@@ -111,7 +111,7 @@
         "5": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -124,7 +124,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EvasiveAssistTripleMeterCourante": {
@@ -144,7 +144,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

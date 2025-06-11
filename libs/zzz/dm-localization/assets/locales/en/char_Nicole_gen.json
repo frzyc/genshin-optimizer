@@ -58,7 +58,7 @@
         "3": "Automatically reloads after the attack to enhance <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct> up to 8 times."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -72,7 +72,7 @@
         "3": "Automatically reloads after the attack to enhance <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct> up to 8 times."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackStuffedSugarcoatedBullet": {
@@ -90,8 +90,8 @@
         "Bombard ",
         "Energy Field ",
         "Charged ",
-        "Charged Attack Energy Cost",
-        "Bombard Energy Cost"
+        "Charged Attack Energy Cost ",
+        "Bombard Energy Cost "
       ]
     }
   },
@@ -136,7 +136,7 @@
         "3": "Automatically reloads after the attack to enhance <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct> up to 8 times."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistTheHareStrikesBack": {
@@ -160,7 +160,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

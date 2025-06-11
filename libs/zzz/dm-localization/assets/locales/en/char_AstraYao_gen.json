@@ -41,7 +41,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "BasicAttackFinale": {
@@ -53,7 +53,7 @@
         "3": "With enough Energy, consumes Energy to follow up with 1 <ct color=#FFFFFF>Tremolo</ct> and 3 <ct color=#FFFFFF>Tone Clusters</ct>. This <ct color=#FFFFFF>Tremolo</ct> attack released is considered an <ct color=#FFFFFF>EX Special Attack</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -75,7 +75,7 @@
         "2": "When triggered, dragging the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} allows movement in the corresponding direction."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterUmbrellaWaltz": {
@@ -86,7 +86,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -102,8 +102,8 @@
         "5": "Character is invulnerable when quickly moving away."
       },
       "params": [
-        "Squad Members DMG Increase",
-        "Squad Members CRIT DMG Increase",
+        "Squad Members DMG Increase ",
+        "Squad Members CRIT DMG Increase ",
         "Minimum ",
         "Maximum "
       ]
@@ -131,7 +131,7 @@
       "params": [
         "Follow-Up Tremolo ",
         "Follow-Up Tone Cluster ",
-        "Energy Cost"
+        "Energy Cost "
       ]
     }
   },
@@ -146,7 +146,7 @@
         "4": "After the skill, Astra Yao enters the <ct color=#FFFFFF>Idyllic Cadenza</ct> state."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateFantasianSonata": {
@@ -161,8 +161,8 @@
         "6": "Before all replacement chances are used up, a <ct color=#FFFFFF>Quick Assist</ct> is triggered whenever any squad member hits an enemy with a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct>."
       },
       "params": [
-        "",
-        "HP Recovery"
+        " ",
+        "HP Recovery "
       ]
     }
   },
@@ -175,7 +175,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EvasiveAssistTwoHearts": {
@@ -195,7 +195,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

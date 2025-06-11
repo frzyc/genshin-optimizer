@@ -26,8 +26,8 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
-        "Assist Point Cost"
+        " ",
+        "Assist Point Cost "
       ]
     }
   },
@@ -49,7 +49,7 @@
         "2": "During skill activation, DMG taken is reduced by 40%, and when attacked by an enemy, Caesar blocks with the shield and gets knocked back. Following that, press <IconSpecial /> or <IconSpecialReady /> to trigger <ct color=#FFFFFF>Retaliation</ct> and activate <ct color=#FFFFFF>Special Attack: Roaring Thrust</ct> or <ct color=#FFFFFF>EX Special Attack: Overpowered Shield Bash</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterEyeForAnEye": {
@@ -60,7 +60,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -75,7 +75,7 @@
         "4": "When <ct color=#FFFFFF>Retaliation</ct> is triggered, Caesar is invulnerable while using the skill."
       },
       "params": [
-        "",
+        " ",
         "[Perfect Block] "
       ]
     },
@@ -88,7 +88,7 @@
         "3": "Character is invulnerable while using this skill when <ct color=#FFFFFF>Perfect Block</ct> or <ct color=#FFFFFF>Retaliation</ct> is triggered."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackParryCounter": {
@@ -101,10 +101,10 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
+        " ",
         "[Perfect Block] ",
         "[Perfect Block] Counter ",
-        "Energy Cost"
+        "Energy Cost "
       ]
     },
     "EXSpecialAttackOverpoweredShieldBash": {
@@ -117,16 +117,16 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
+        " ",
         "[Perfect Block] ",
-        "Press Activation Energy Cost"
+        "Press Activation Energy Cost "
       ]
     },
     "StanceSwitch": {
       "name": "Stance Switch",
       "desc": "When Caesar triggers a <ct color=#FFFFFF>Perfect Block</ct>, <ct color=#FFFFFF>Retaliation</ct>, or <ct color=#FFFFFF>Defensive Assist</ct>, her impact is increased by <ct color=#2BAD00>{CAL:8+AvatarSkillLevel(1)*1,1,2}</ct>% for 3s.",
       "params": [
-        "Impact Increase"
+        "Impact Increase "
       ]
     }
   },
@@ -139,7 +139,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateSavageSmash": {
@@ -151,8 +151,8 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
-        "Daze Increase"
+        " ",
+        "Daze Increase "
       ]
     }
   },
@@ -165,7 +165,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistAegisShield": {
@@ -191,7 +191,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

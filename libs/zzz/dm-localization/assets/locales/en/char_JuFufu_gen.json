@@ -25,7 +25,7 @@
         "1": "Upon hitting an enemy, gain 20 points of <ct color=#FFFFFF>Might</ct>, triggering up to once per use of a skill. The maximum for <ct color=#FFFFFF>Might</ct> is 200."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -46,7 +46,7 @@
         "1": "Perform a quick slash forward, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DashAttackTigerSevenFormsMountainKingsGame": {
@@ -60,7 +60,7 @@
         "5": "While Ju Fufu is the currently active character, DMG taken during the skill is reduced by 40%, and Anti-Interrupt Level is increased. If not the active character, she becomes Invulnerable."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterTigerSevenFormsReignitedMountain": {
@@ -71,7 +71,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -84,7 +84,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger": {
@@ -96,8 +96,8 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -110,7 +110,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "ChainAttackSuppressingTigerCauldron": {
@@ -122,7 +122,7 @@
         "3": "This is an <ct color=#FFFFFF>Aftershock</ct>. Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateTigerSevenFormsRagingTigerExplosion": {
@@ -134,7 +134,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -147,7 +147,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistSteadfastCrouchingTiger": {
@@ -172,7 +172,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

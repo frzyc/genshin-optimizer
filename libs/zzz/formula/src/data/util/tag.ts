@@ -72,6 +72,7 @@ export function priorityTable(
 type Desc = BaseDesc<Sheet>
 const aggStr: Desc = { sheet: 'agg' }
 const agg: Desc = { sheet: 'agg', accu: 'sum' }
+const aggProd: Desc = { sheet: 'agg', accu: 'prod' }
 const iso: Desc = { sheet: 'iso' }
 const isoSum: Desc = { sheet: 'iso', accu: 'sum' }
 /** `sheet:`-agnostic calculation */
@@ -162,6 +163,7 @@ export const ownTag = {
     res_mult_: fixed,
     dmg_taken_mult_: fixed,
     stunned_mult_: fixed,
+    mv_mult_: aggProd,
     sheer_mult_: fixed,
   },
   formula: {

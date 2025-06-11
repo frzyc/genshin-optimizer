@@ -1,0 +1,9 @@
+{
+  "coreCond": "When Trigger's Aftershock hits an enemy",
+  "ability_dazeInc_": "Aftershock Daze Increase",
+  "m2Cond": "Hunter's Gaze",
+  "m4_disconnect_dmg": "Disconnect DMG",
+  "m4_disconnect_daze": "Disconnect Daze",
+  "m6_armor_break_rounds_dmg": "Armor Break Round DMG",
+  "m6_armor_break_rounds_dmg_": "Armor Break Round DMG Increase"
+}

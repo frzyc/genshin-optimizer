@@ -51,7 +51,7 @@
         "1": "Rapidly strikes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterReturningTusk": {
@@ -62,7 +62,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -95,14 +95,14 @@
       "params": [
         "Line Drive ",
         "Fly Ball ",
-        "Energy Cost"
+        "Energy Cost "
       ]
     },
     "CheerOn": {
       "name": "Cheer On!",
       "desc": "After using <ct color=#FFFFFF>EX Special Attack</ct>, when a guard boar triggers an explosion, it will apply the <ct color=#FFFFFF>Cheer On!</ct> status to all squad members and Bangboo, and the guard boars themselves. While under the <ct color=#FFFFFF>Cheer On!</ct> status, allies' ATK increases by <ct color=#2BAD00>{CAL:13+AvatarSkillLevel(1)*0.8,1,2}%</ct> of Lucy's initial ATK + <ct color=#2BAD00>{CAL:40+AvatarSkillLevel(1)*4,1,2}</ct>, up to a maximum of 600. The <ct color=#FFFFFF>Cheer On!</ct> status lasts for 10s when a <ct color=#FFFFFF>Line Drive</ct> is hit, and 15s when a <ct color=#FFFFFF>Fly Ball</ct> is hit. Repeated triggers reset the duration.",
       "params": [
-        "ATK Increase"
+        "ATK Increase "
       ]
     }
   },
@@ -116,7 +116,7 @@
         "3": "When the skill hits an enemy, it triggers a <ct color=#FFFFFF>Quick Assist</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateWalkOffHomeRun": {
@@ -129,7 +129,7 @@
         "4": "When the skill hits an enemy, it triggers a <ct color=#FFFFFF>Quick Assist</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -142,7 +142,7 @@
         "2": "Character is invulnerable during the attack."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistSafeOnBase": {
@@ -166,7 +166,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
