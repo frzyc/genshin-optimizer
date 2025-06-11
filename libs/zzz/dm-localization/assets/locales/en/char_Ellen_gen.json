@@ -51,9 +51,9 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        " to Small Enemies",
-        " to Medium Enemies",
-        " to Large Enemies"
+        "to Small Enemies ",
+        "to Medium Enemies ",
+        "to Large Enemies "
       ]
     }
   },

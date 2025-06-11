@@ -50,7 +50,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -71,7 +71,7 @@
         "1": "Launch a forward rush attack, dealing <ct color=#FE437E>Auric Ink DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeNimbusStep": {
@@ -92,7 +92,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -106,7 +106,7 @@
         "3": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackInkManifestation": {
@@ -125,9 +125,9 @@
         "10": "Character is invulnerable during the upward wing attack, and Anti-Interrupt Level is increased while charging."
       },
       "params": [
-        "",
-        "Additional  on Full Charge",
-        "Energy Cost",
+        " ",
+        "Additional on Full Charge ",
+        "Energy Cost ",
         "EX Special Attack: Celestial Cloud Blitz - Break Total ",
         "EX Special Attack: Qingming Eruption - Break Total "
       ]
@@ -142,9 +142,9 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        "Total  During Charge",
-        "Initial Consumption",
-        "Consumption Per Second"
+        "Total During Charge ",
+        "Initial Consumption ",
+        "Consumption Per Second "
       ]
     },
     "EXSpecialAttackAshenInkBecomesShadows": {
@@ -155,7 +155,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        "Total  When Energy Orb Appears/Contracts"
+        "Total When Energy Orb Appears/Contracts "
       ]
     }
   },
@@ -168,7 +168,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateQingmingSkyshade": {
@@ -181,7 +181,7 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateEndlessTalismanSuppression": {
@@ -195,7 +195,7 @@
         "5": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -208,7 +208,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistClearSkySurge": {
@@ -232,7 +232,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

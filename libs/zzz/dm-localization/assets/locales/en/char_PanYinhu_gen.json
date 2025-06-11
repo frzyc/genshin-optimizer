@@ -33,7 +33,7 @@
         "1": "Perform a quick forward melee attack, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterMovingMountainsAndSeas": {
@@ -44,7 +44,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -57,7 +57,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "SpecialAttackTouchOfDeath": {
@@ -69,7 +69,7 @@
         "3": "When Pan Yinhu is the active character, DMG received during the skill is reduced by 40% and Anti-Interrupt Level is increased. If he isn't the active character, he becomes Invulnerable."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackMountainousPulseStrike": {
@@ -85,7 +85,7 @@
         "1st-Hit ",
         "2nd-Hit ",
         "3rd-Hit ",
-        "Energy Cost"
+        "Energy Cost "
       ]
     }
   },
@@ -98,7 +98,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateAFeastFitForAnEmperor": {
@@ -109,7 +109,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -122,7 +122,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistIntimidatingPresence": {
@@ -147,7 +147,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
