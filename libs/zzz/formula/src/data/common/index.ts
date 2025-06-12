@@ -1,4 +1,4 @@
-import { max, min, prod, sum } from '@genshin-optimizer/pando/engine'
+import { cmpEq, max, min, prod, sum } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
 import {
   flatAndPercentStats,
@@ -50,18 +50,34 @@ const data: TagMapNodeEntries = [
 
   // For stats with only 1 variant
   // initial x += base X; assuming base exists for that stat
+  // Except sheer force because we gotta calculate that all funky
   ...nonFlatAndPercentStats
-    .filter((s) => s in ownBuff.base)
-    .map(
-      (s) =>
-        ownBuff.initial[s].add(
-          ownBuff.base[s as keyof typeof ownBuff.base],
-          true
-        ) // Validated with filter
-    ),
+    .filter(
+      (s): s is keyof typeof ownBuff.base =>
+        s in ownBuff.base && s !== 'sheerForce'
+    )
+    .map((s) => ownBuff.initial[s].add(ownBuff.base[s], true)),
   // final x += initial X + combat X
-  ...nonFlatAndPercentStats.map((s) =>
-    ownBuff.final[s].add(sum(own.initial[s], own.combat[s]), true)
+  ...nonFlatAndPercentStats
+    .filter((s) => s !== 'sheerForce')
+    .map((s) => ownBuff.final[s].add(sum(own.initial[s], own.combat[s]), true)),
+
+  // Do proper initial/combat/final sheer force calcs
+  // initial sheerForce = initial atk * 0.3
+  ownBuff.initial.sheerForce.add(
+    cmpEq(own.char.specialty, 'rupture', prod(own.initial.atk, percent(0.3)))
+  ),
+  // combat sheerForce = (final atk - initial atk) * 0.3
+  ownBuff.combat.sheerForce.add(
+    cmpEq(
+      own.char.specialty,
+      'rupture',
+      prod(sum(own.final.atk, prod(-1, own.initial.atk)), percent(0.3))
+    )
+  ),
+  // final sheerForce = initial + combat
+  ownBuff.final.sheerForce.add(
+    sum(own.initial.sheerForce, own.combat.sheerForce)
   ),
 
   // Capped CR = Max(Min(Final CR, 1), 0)

@@ -2,7 +2,7 @@
 import { type TagMapNodeEntries } from '../util'
 import Anby from './sheets/Anby'
 import Anton from './sheets/Anton'
-import Astra from './sheets/Astra'
+import AstraYao from './sheets/AstraYao'
 import Ben from './sheets/Ben'
 import Billy from './sheets/Billy'
 import Burnice from './sheets/Burnice'
@@ -14,6 +14,7 @@ import Grace from './sheets/Grace'
 import Harumasa from './sheets/Harumasa'
 import Hugo from './sheets/Hugo'
 import Jane from './sheets/Jane'
+import JuFufu from './sheets/JuFufu'
 import Koleda from './sheets/Koleda'
 import Lighter from './sheets/Lighter'
 import Lucy from './sheets/Lucy'
@@ -21,9 +22,10 @@ import Lycaon from './sheets/Lycaon'
 import Miyabi from './sheets/Miyabi'
 import Nekomata from './sheets/Nekomata'
 import Nicole from './sheets/Nicole'
+import PanYinhu from './sheets/PanYinhu'
 import Piper from './sheets/Piper'
 import Pulchra from './sheets/Pulchra'
-import QingYi from './sheets/QingYi'
+import Qingyi from './sheets/Qingyi'
 import Rina from './sheets/Rina'
 import Seth from './sheets/Seth'
 import Soldier0Anby from './sheets/Soldier0Anby'
@@ -32,12 +34,13 @@ import Soukaku from './sheets/Soukaku'
 import Trigger from './sheets/Trigger'
 import Vivian from './sheets/Vivian'
 import Yanagi from './sheets/Yanagi'
+import Yixuan from './sheets/Yixuan'
 import ZhuYuan from './sheets/ZhuYuan'
 
 const data: TagMapNodeEntries[] = [
   Anby,
   Anton,
-  Astra,
+  AstraYao,
   Ben,
   Billy,
   Burnice,
@@ -49,6 +52,7 @@ const data: TagMapNodeEntries[] = [
   Harumasa,
   Hugo,
   Jane,
+  JuFufu,
   Koleda,
   Lighter,
   Lucy,
@@ -58,7 +62,7 @@ const data: TagMapNodeEntries[] = [
   Nicole,
   Piper,
   Pulchra,
-  QingYi,
+  Qingyi,
   Rina,
   Seth,
   Soldier0Anby,
@@ -67,6 +71,8 @@ const data: TagMapNodeEntries[] = [
   Trigger,
   Vivian,
   Yanagi,
+  PanYinhu,
+  Yixuan,
   ZhuYuan,
 ]
 export default data.flat()

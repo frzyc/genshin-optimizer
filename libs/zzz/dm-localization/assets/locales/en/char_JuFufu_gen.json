@@ -1,0 +1,285 @@
+{
+  "name": "Ju Fufu",
+  "fullName": "Ju Fufu",
+  "basic": {
+    "BasicAttackTigerSevenFormsFlamingClaw": {
+      "name": "Basic Attack: Tiger Seven Forms - Flaming Claw",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Slash forward up to four times, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "During the 3rd hit, repeatedly press <IconNormal /> to maintain the combo and keep striking the enemy.",
+        "3": "During the 3rd hit, hold or pause before pressing <IconNormal /> to chain into the 4th hit.",
+        "4": "During the 3rd hit, Anti-Interrupt Level is increased, and DMG received is reduced by 40%."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackHuWei": {
+      "name": "Basic Attack: Hu Wei",
+      "desc": {
+        "0": "During combat, Hu Wei will automatically attack enemies, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "1": "Upon hitting an enemy, gain 20 points of <ct color=#FFFFFF>Might</ct>, triggering up to once per use of a skill. The maximum for <ct color=#FFFFFF>Might</ct> is 200."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeTigerSevenFormsTigerwind": {
+      "name": "Dodge: Tiger Seven Forms - Tigerwind",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackTigerSevenFormsTigerCharge": {
+      "name": "Dash Attack: Tiger Seven Forms - Tiger Charge",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Perform a quick slash forward, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DashAttackTigerSevenFormsMountainKingsGame": {
+      "name": "Dash Attack: Tiger Seven Forms - Mountain King's Game",
+      "desc": {
+        "0": "After using <ct color=#FFFFFF>Dash Attack: Tiger Seven Forms - Tiger Charge</ct>, hold <IconNormal /> to activate:",
+        "1": "Enter a high-speed spinning state. While in this state, use the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to move and deal <ct color=#F0D12B>Physical DMG</ct> upon contact with enemies.",
+        "2": "After Ju Fufu gains <ct color=#FFFFFF>Momentum</ct> from other skills, she will be surrounded by flames in the high-speed spinning state. Upon contact with enemies, 1 point of <ct color=#FFFFFF>Momentum</ct> is consumed, changing the DMG to <ct color=#FF5521>Fire DMG</ct> and granting 25 points of <ct color=#FFFFFF>Might</ct>. The maximum for <ct color=#FFFFFF>Momentum</ct> is 15.",
+        "3": "When dealing <ct color=#FF5521>Fire DMG</ct>, if <ct color=#FFFFFF>Might</ct> is above 100 points, 100 points of <ct color=#FFFFFF>Might</ct> will be automatically consumed to trigger <ct color=#FFFFFF>Chain Attack: Suppressing Tiger Cauldron</ct>.",
+        "4": "Releasing <IconNormal /> will have Ju Fufu exit the spinning state and throw <ct color=#FFFFFF>Hu Wei</ct> to attack enemies. When switching to another character, Ju Fufu will remain in the spinning state and attempt to collide with the nearest enemy.",
+        "5": "While Ju Fufu is the currently active character, DMG taken during the skill is reduced by 40%, and Anti-Interrupt Level is increased. If not the active character, she becomes Invulnerable."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterTigerSevenFormsReignitedMountain": {
+      "name": "Dodge Counter: Tiger Seven Forms - Reignited Mountain",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Perform multiple slashes on enemies ahead, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackTigerSevenFormsMountainDescendingTiger": {
+      "name": "Special Attack: Tiger Seven Forms - Mountain-Descending Tiger",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Perform a spinning slash forward, followed by a falling slash, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger": {
+      "name": "EX Special Attack: Tiger Seven Forms Alt - Mountain-Descending Savage Tiger",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Swing <ct color=#FFFFFF>Hu Wei</ct> forward for a powerful strike, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Upon activation, gain 3 points of <ct color=#FFFFFF>Momentum</ct> and 80 points of <ct color=#FFFFFF>Might</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackTigerCauldronCollapse": {
+      "name": "Chain Attack: Tiger Cauldron Collapse",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Swing Hu Wei to deliver a powerful strike to enemies in a small area ahead, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "ChainAttackSuppressingTigerCauldron": {
+      "name": "Chain Attack: Suppressing Tiger Cauldron",
+      "desc": {
+        "0": "With at least 100 points of <ct color=#FFFFFF>Might</ct>, after triggering a <ct color=#FFFFFF>Chain Attack</ct>, automatically activate:",
+        "1": "Consume 100 <ct color=#FFFFFF>Might</ct> to open Hu Wei and fire flames and popcorn at enemies, striking them in a small area ahead, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "If <ct color=#FFFFFF>Momentum</ct> is available, and while not the active character, <ct color=#FFFFFF>Fiery Spin</ct> will activate after the skill ends.",
+        "3": "This is an <ct color=#FFFFFF>Aftershock</ct>. Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateTigerSevenFormsRagingTigerExplosion": {
+      "name": "Ultimate: Tiger Seven Forms - Raging Tiger Explosion",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Perform two downward attacks with Hu Wei, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Upon activation, gain 6 points of <ct color=#FFFFFF>Momentum</ct> and 100 points of <ct color=#FFFFFF>Might</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistDecisiveStomp": {
+      "name": "Quick Assist: Decisive Stomp",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistSteadfastCrouchingTiger": {
+      "name": "Defensive Assist: Steadfast Crouching Tiger",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpFeralBlazingMaw": {
+      "name": "Assist Follow-Up: Feral Blazing Maw",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Slash forward at enemies, then use <ct color=#FFFFFF>Hu Wei</ct> to follow up with a downward attack, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Gain 1 point of <ct color=#FFFFFF>Momentum</ct> upon activation at most once every 10s.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Fu-rocious Might",
+    "desc": [
+      {
+        "0": "When Ju Fufu isn't using Hu Wei, it will automatically attack enemies and gain <ct color=#FFFFFF>Might</ct> upon hitting them.",
+        "1": "When Hu Wei hits an enemy and has at least 100 <ct color=#FFFFFF>Might</ct>, and Ju Fufu is not the currently active character, Ju Fufu will launch <ct color=#FFFFFF>Chain Attack: Suppressing Tiger Cauldron</ct> centered around the target enemy. Upon activation, all squad members gain the <ct color=#FFFFFF>Tiger's Roar</ct> effect: CRIT DMG increases by <ct color=#2BAD00>10%</ct>, and when Ju Fufu's initial ATK is greater than or equal to 2,800, every additional 100 ATK further increases CRIT DMG by 5%, up to a maximum additional increase of 30%.",
+        "2": "While in the <ct color=#FFFFFF>Tiger's Roar</ct> state, character <ct color=#FFFFFF>Chain Attack</ct>/<ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>10%/20%</ct>.",
+        "3": "The <ct color=#FFFFFF>Tiger's Roar</ct> state lasts for 30s. Repeated triggers reset the duration. While Ju Fufu is in the <ct color=#FFFFFF>Tiger's Roar</ct> state, Impact increases by <ct color=#2BAD00>25</ct>."
+      },
+      {
+        "0": "When Ju Fufu has yet to use Hu Wei, it will automatically attack enemies and gain <ct color=#FFFFFF>Might</ct> upon hitting them.",
+        "1": "When Hu Wei hits an enemy and has at least 100 <ct color=#FFFFFF>Might</ct>, and Ju Fufu is not the currently active character, Ju Fufu will launch <ct color=#FFFFFF>Chain Attack: Suppressing Tiger Cauldron</ct> centered around the target enemy. Upon activation, all squad members gain the <ct color=#FFFFFF>Tiger's Roar</ct> effect: CRIT DMG increases by <ct color=#2BAD00>11.7%</ct>, and when Ju Fufu's initial ATK is greater than or equal to 2,800, every additional 100 ATK further increases CRIT DMG by 5%, up to a maximum additional increase of 30%.",
+        "2": "While in the <ct color=#FFFFFF>Tiger's Roar</ct> state, character <ct color=#FFFFFF>Chain Attack</ct>/<ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>11.7%/23.3%</ct>.",
+        "3": "The <ct color=#FFFFFF>Tiger's Roar</ct> state lasts for 30s. Repeated triggers reset the duration. While Ju Fufu is in the <ct color=#FFFFFF>Tiger's Roar</ct> state, Impact increases by <ct color=#2BAD00>29.2</ct>."
+      },
+      {
+        "0": "When Ju Fufu has yet to use Hu Wei, it will automatically attack enemies and gain <ct color=#FFFFFF>Might</ct> upon hitting them.",
+        "1": "When Hu Wei hits an enemy and has at least 100 <ct color=#FFFFFF>Might</ct>, and Ju Fufu is not the currently active character, Ju Fufu will launch <ct color=#FFFFFF>Chain Attack: Suppressing Tiger Cauldron</ct> centered around the target enemy. Upon activation, all squad members gain the <ct color=#FFFFFF>Tiger's Roar</ct> effect: CRIT DMG increases by <ct color=#2BAD00>13.3%</ct>, and when Ju Fufu's initial ATK is greater than or equal to 2,800, every additional 100 ATK further increases CRIT DMG by 5%, up to a maximum additional increase of 30%.",
+        "2": "While in the <ct color=#FFFFFF>Tiger's Roar</ct> state, character <ct color=#FFFFFF>Chain Attack</ct>/<ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>13.3%/26.7%</ct>.",
+        "3": "The <ct color=#FFFFFF>Tiger's Roar</ct> state lasts for 30s. Repeated triggers reset the duration. While Ju Fufu is in the <ct color=#FFFFFF>Tiger's Roar</ct> state, Impact increases by <ct color=#2BAD00>33.3</ct>."
+      },
+      {
+        "0": "When Ju Fufu has yet to use Hu Wei, it will automatically attack enemies and gain <ct color=#FFFFFF>Might</ct> upon hitting them.",
+        "1": "When Hu Wei hits an enemy and has at least 100 <ct color=#FFFFFF>Might</ct>, and Ju Fufu is not the currently active character, Ju Fufu will launch <ct color=#FFFFFF>Chain Attack: Suppressing Tiger Cauldron</ct> centered around the target enemy. Upon activation, all squad members gain the <ct color=#FFFFFF>Tiger's Roar</ct> effect: CRIT DMG increases by <ct color=#2BAD00>15%</ct>, and when Ju Fufu's initial ATK is greater than or equal to 2,800, every additional 100 ATK further increases CRIT DMG by 5%, up to a maximum additional increase of 30%.",
+        "2": "While in the <ct color=#FFFFFF>Tiger's Roar</ct> state, character <ct color=#FFFFFF>Chain Attack</ct>/<ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>15%/30%</ct>.",
+        "3": "The <ct color=#FFFFFF>Tiger's Roar</ct> state lasts for 30s. Repeated triggers reset the duration. While Ju Fufu is in the <ct color=#FFFFFF>Tiger's Roar</ct> state, Impact increases by <ct color=#2BAD00>37.5</ct>."
+      },
+      {
+        "0": "When Ju Fufu has yet to use Hu Wei, it will automatically attack enemies and gain <ct color=#FFFFFF>Might</ct> upon hitting them.",
+        "1": "When Hu Wei hits an enemy and has at least 100 <ct color=#FFFFFF>Might</ct>, and Ju Fufu is not the currently active character, Ju Fufu will launch <ct color=#FFFFFF>Chain Attack: Suppressing Tiger Cauldron</ct> centered around the target enemy. Upon activation, all squad members gain the <ct color=#FFFFFF>Tiger's Roar</ct> effect: CRIT DMG increases by <ct color=#2BAD00>16.7%</ct>, and when Ju Fufu's initial ATK is greater than or equal to 2,800, every additional 100 ATK further increases CRIT DMG by 5%, up to a maximum additional increase of 30%.",
+        "2": "While in the <ct color=#FFFFFF>Tiger's Roar</ct> state, character <ct color=#FFFFFF>Chain Attack</ct>/<ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>16.7%/33.3%</ct>.",
+        "3": "The <ct color=#FFFFFF>Tiger's Roar</ct> state lasts for 30s. Repeated triggers reset the duration. While Ju Fufu is in the <ct color=#FFFFFF>Tiger's Roar</ct> state, Impact increases by <ct color=#2BAD00>41.7</ct>."
+      },
+      {
+        "0": "When Ju Fufu has yet to use Hu Wei, it will automatically attack enemies and gain <ct color=#FFFFFF>Might</ct> upon hitting them.",
+        "1": "When Hu Wei hits an enemy and has at least 100 <ct color=#FFFFFF>Might</ct>, and Ju Fufu is not the currently active character, Ju Fufu will launch <ct color=#FFFFFF>Chain Attack: Suppressing Tiger Cauldron</ct> centered around the target enemy. Upon activation, all squad members gain the <ct color=#FFFFFF>Tiger's Roar</ct> effect: CRIT DMG increases by <ct color=#2BAD00>18.3%</ct>, and when Ju Fufu's initial ATK is greater than or equal to 2,800, every additional 100 ATK further increases CRIT DMG by 5%, up to a maximum additional increase of 30%.",
+        "2": "While in the <ct color=#FFFFFF>Tiger's Roar</ct> state, character <ct color=#FFFFFF>Chain Attack</ct>/<ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>18.3%/36.7%</ct>.",
+        "3": "The <ct color=#FFFFFF>Tiger's Roar</ct> state lasts for 30s. Repeated triggers reset the duration. While Ju Fufu is in the <ct color=#FFFFFF>Tiger's Roar</ct> state, Impact increases by <ct color=#2BAD00>45.8</ct>."
+      },
+      {
+        "0": "When Ju Fufu has yet to use Hu Wei, it will automatically attack enemies and gain <ct color=#FFFFFF>Might</ct> upon hitting them.",
+        "1": "When Hu Wei hits an enemy and has at least 100 <ct color=#FFFFFF>Might</ct>, and Ju Fufu is not the currently active character, Ju Fufu will launch <ct color=#FFFFFF>Chain Attack: Suppressing Tiger Cauldron</ct> centered around the target enemy. Upon activation, all squad members gain the <ct color=#FFFFFF>Tiger's Roar</ct> effect: CRIT DMG increases by <ct color=#2BAD00>20%</ct>, and when Ju Fufu's initial ATK is greater than or equal to 2,800, every additional 100 ATK further increases CRIT DMG by 5%, up to a maximum additional increase of 30%.",
+        "2": "While in the <ct color=#FFFFFF>Tiger's Roar</ct> state, character <ct color=#FFFFFF>Chain Attack</ct>/<ct color=#FFFFFF>Ultimate</ct> DMG increases by <ct color=#2BAD00>20%/40%</ct>.",
+        "3": "The <ct color=#FFFFFF>Tiger's Roar</ct> state lasts for 30s. Repeated triggers reset the duration. While Ju Fufu is in the <ct color=#FFFFFF>Tiger's Roar</ct> state, Impact increases by <ct color=#2BAD00>50</ct>."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Aura of Authority",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Rupture</ct> character:",
+      "1": "The maximum Decibels for all characters in the squad increases by 1,000. When an <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Rupture</ct> character uses an <ct color=#FFFFFF>Ultimate</ct>, that character gains 300 Decibels."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Super Scary Little Tiger",
+      "desc": "Upon entering combat, Ju Fufu's CRIT Rate increases by 12%, and she immediately gains 100 <ct color=#FFFFFF>Might</ct>. When Ju Fufu's <ct color=#FFFFFF>Chain Attack</ct> hits an enemy, when the target is Stunned, the target's Stun DMG Multiplier increases by 35%, lasting for 30s.",
+      "flavor": {
+        "0": "\"The topic of farewells and life and death is too difficult for children to understand, too heavy for adults to bear, and too cruel for the elderly.\"",
+        "1": "\"But I'm not afraid — I'm the fearless Tiger Thiren who learned this lesson early.\"",
+        "2": "\"I'm a super scary big tiger, little critters, so please don't look directly into my eyes!\""
+      }
+    },
+    "2": {
+      "name": "Almighty Qingming Warrior",
+      "desc": "While in the <ct color=#FFFFFF>Tiger's Roar</ct> state, character CRIT DMG increases by an additional 22%. Whenever any character activates an <ct color=#FFFFFF>Ultimate</ct>, Ju Fufu gains 3 points of <ct color=#FFFFFF>Momentum</ct>.",
+      "flavor": ""
+    },
+    "3": {
+      "name": "Righteous Young Hero",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Good or evil, in that moment, perhaps it's all just a matter of a single thought. A single thought leaves behind so many regrets, so many 'what ifs' — and so much sacrifice and love.\"",
+        "1": "\"I'm not smart, I don't understand many of those grand principles, so I just do what I think is right.\"",
+        "2": "\"Wherever the great hero Fufu goes, there's justice!\""
+      }
+    },
+    "4": {
+      "name": "Monster-Slaying Tiger Mystic",
+      "desc": "While Ju Fufu is in the <ct color=#FFFFFF>Tiger's Roar</ct> state, her CRIT DMG increases by 35%.",
+      "flavor": {
+        "0": "\"Ethereals are terrifying, bandits are terrifying, Hollow Raiders are terrifying, the dark night without stars is terrifying — and yet, I'm the most powerful mystic of Yunkui Summit. I cannot retreat, I cannot let my story repeat.\"",
+        "1": "\"The dark and gloom is a blanketing shroud, unbearable for mountain, moon, and cloud.\"",
+        "2": "\"I am the strongest mystic of Yunkui Summit, evil spirits and demons, meet your end!\""
+      }
+    },
+    "5": {
+      "name": "Unrivaled Almighty Senior",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"No need to fear — your senior is here!\"",
+        "1": "\"The hero I longed for when I was a child never came, but I won't make you wait — I will be your hero.\"",
+        "2": "\"You can bully me, but not my juniors! I'll take you on! Rwaar!\""
+      }
+    },
+    "6": {
+      "name": "Roar of My Inner Tiger",
+      "desc": "Ju Fufu's <ct color=#FFFFFF>Chain Attack</ct> DMG increases by 30%. Upon consuming <ct color=#FFFFFF>Momentum</ct> and hitting an enemy in the high-speed spinning state, fire 3 popcorns, each dealing 160% of Fufu's ATK as DMG. This DMG is treated as <ct color=#FFFFFF>Chain Attack</ct> DMG.",
+      "flavor": {
+        "0": "\"My might shakes the moon down from the mountain, my aura levels caves — how's this line? Does it capture the grandeur of my imposing presence?\"",
+        "1": "\"The name of a hero doesn't matter, their regrets don't matter, their tears don't matter, and even the inevitable farewell doesn't matter.\"",
+        "2": "\"As long as you remember, I once roared with bravery.\""
+      }
+    }
+  }
+}

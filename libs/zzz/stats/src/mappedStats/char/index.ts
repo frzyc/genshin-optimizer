@@ -1,7 +1,7 @@
 // WARNING: Generated file, do not modify
 import Anby from './maps/Anby'
 import Anton from './maps/Anton'
-import Astra from './maps/Astra'
+import AstraYao from './maps/AstraYao'
 import Ben from './maps/Ben'
 import Billy from './maps/Billy'
 import Burnice from './maps/Burnice'
@@ -13,6 +13,7 @@ import Grace from './maps/Grace'
 import Harumasa from './maps/Harumasa'
 import Hugo from './maps/Hugo'
 import Jane from './maps/Jane'
+import JuFufu from './maps/JuFufu'
 import Koleda from './maps/Koleda'
 import Lighter from './maps/Lighter'
 import Lucy from './maps/Lucy'
@@ -20,9 +21,10 @@ import Lycaon from './maps/Lycaon'
 import Miyabi from './maps/Miyabi'
 import Nekomata from './maps/Nekomata'
 import Nicole from './maps/Nicole'
+import PanYinhu from './maps/PanYinhu'
 import Piper from './maps/Piper'
 import Pulchra from './maps/Pulchra'
-import QingYi from './maps/QingYi'
+import Qingyi from './maps/Qingyi'
 import Rina from './maps/Rina'
 import Seth from './maps/Seth'
 import Soldier0Anby from './maps/Soldier0Anby'
@@ -31,12 +33,13 @@ import Soukaku from './maps/Soukaku'
 import Trigger from './maps/Trigger'
 import Vivian from './maps/Vivian'
 import Yanagi from './maps/Yanagi'
+import Yixuan from './maps/Yixuan'
 import ZhuYuan from './maps/ZhuYuan'
 
 const maps = {
   Anby,
   Anton,
-  Astra,
+  AstraYao,
   Ben,
   Billy,
   Burnice,
@@ -48,6 +51,7 @@ const maps = {
   Harumasa,
   Hugo,
   Jane,
+  JuFufu,
   Koleda,
   Lighter,
   Lucy,
@@ -57,7 +61,7 @@ const maps = {
   Nicole,
   Piper,
   Pulchra,
-  QingYi,
+  Qingyi,
   Rina,
   Seth,
   Soldier0Anby,
@@ -66,6 +70,8 @@ const maps = {
   Trigger,
   Vivian,
   Yanagi,
+  PanYinhu,
+  Yixuan,
   ZhuYuan,
 }
 export default maps

@@ -36,7 +36,7 @@
         "1": "Slide forward while shooting, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterViolationPenalty": {
@@ -47,7 +47,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -61,7 +61,7 @@
         "3": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackSuperchargedObstructionRemoval": {
@@ -73,8 +73,8 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -87,7 +87,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateDemolitionBlastBeware": {
@@ -98,7 +98,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -111,7 +111,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EvasiveAssistRapidRiskResponse": {
@@ -131,7 +131,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -181,7 +181,7 @@
     },
     "4": {
       "name": "Burst Capacitor",
-      "desc": "When Grace uses her <ct color=#FFFFFF>EX Special Attack</ct>, she gains 6 stacks of Charge (max 6 stacks). When her <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>Dash Attack</ct> hits an enemy, 1 stack of Charge is consumed, increasing her Energy Generation Rate of the attack by 20%.",
+      "desc": "When Grace uses her <ct color=#FFFFFF>EX Special Attack</ct>, she gains 6 stacks of Charge (max 6 stacks). When her <ct color=#FFFFFF>Basic Attack: High-Pressure Spike</ct> or <ct color=#FFFFFF>Dash Attack: Quick Inspection</ct> hits an enemy, 1 stack of Charge is consumed, increasing her Energy Generation Rate of the attack by 20%.",
       "flavor": {
         "0": "Anton suspected within the component Grace referred to as the \"Electropulse Recycling Module,\" there was, in fact, an Ether hamster tirelessly generating energy around the clock.",
         "1": "\"Can you equip my bro with one too?\""

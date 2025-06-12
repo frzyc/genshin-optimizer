@@ -31,17 +31,20 @@ export const characterIdMap = {
   '1211': 'Rina',
   '1221': 'Yanagi',
   '1241': 'ZhuYuan',
-  '1251': 'QingYi',
+  '1251': 'Qingyi',
   '1261': 'Jane',
   '1271': 'Seth',
   '1281': 'Piper',
   '1291': 'Hugo',
-  '1311': 'Astra',
+  '1311': 'AstraYao',
   '1321': 'Evelyn',
   '1331': 'Vivian',
   '1351': 'Pulchra',
   '1361': 'Trigger',
+  '1371': 'Yixuan',
   '1381': 'Soldier0Anby',
+  '1391': 'JuFufu',
+  '1421': 'PanYinhu',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {
@@ -57,6 +60,7 @@ export const specialityMap: Record<number, SpecialityKey> = {
   3: 'anomaly',
   4: 'support',
   5: 'defense',
+  6: 'rupture',
 } as const
 export const factionMap: Record<number, FactionKey> = {
   0: 'RandomPlay',
@@ -69,6 +73,7 @@ export const factionMap: Record<number, FactionKey> = {
   7: 'CriminalInvestigationSpecialResponseTeam',
   8: 'StarsOfLyra',
   9: 'Mockingbird',
+  10: 'YunkuiSummit',
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {
@@ -85,6 +90,7 @@ export const coreStatMap: Record<string, StatKey> = {
   'Anomaly Proficiency': 'anomProf',
   'Anomaly Mastery': 'anomMas',
   'PEN Ratio': 'pen_',
+  HP: 'hp',
 } as const
 
 export type HakushinSkillKey =

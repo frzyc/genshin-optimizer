@@ -19,6 +19,7 @@ export const WengineIdMap = {
   '12012': 'MagneticStormCharlie',
   '12013': 'IdentityBase',
   '12014': 'IdentityInflection',
+  '12015': 'CinderCobalt',
   '13001': 'StreetSuperstar',
   '13002': 'SliceOfTime',
   '13003': 'RainforestGourmet',
@@ -30,8 +31,11 @@ export const WengineIdMap = {
   '13009': 'ElectroLipGloss',
   '13010': 'BunnyBand',
   '13011': 'SpringEmbrace',
+  '13012': 'PuzzleSphere',
   '13013': 'GildedBlossom',
+  '13014': 'RadiowaveJourney',
   '13015': 'MarcatoDesire',
+  '13016': 'ReelProjector',
   '13101': 'DemaraBatteryMarkII',
   '13103': 'TheVault',
   '13106': 'Housekeeper',
@@ -43,6 +47,7 @@ export const WengineIdMap = {
   '13127': 'PeacekeeperSpecialized',
   '13128': 'RoaringRide',
   '13135': 'BoxCutter',
+  '13142': 'TremorTrigramVessel',
   '14001': 'CannonRotor',
   '14002': 'UnfetteredGameBall',
   '14003': 'SixShooter',
@@ -67,7 +72,9 @@ export const WengineIdMap = {
   '14132': 'HeartstringNocturne',
   '14133': 'FlightOfFancy',
   '14136': 'SpectralGaze',
+  '14137': 'QingmingBirdcage',
   '14138': 'SeveredInnocence',
+  '14139': 'RoaringFurnace',
 } as const
 
 export const specialityMap: Record<number, SpecialityKey> = {
@@ -76,6 +83,7 @@ export const specialityMap: Record<number, SpecialityKey> = {
   3: 'anomaly',
   4: 'support',
   5: 'defense',
+  6: 'rupture',
 } as const
 
 export const wengineRarityMap: Record<number, WengineRarityKey> = {

@@ -46,7 +46,7 @@
         "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DashAttackFireSuppression": {
@@ -56,7 +56,7 @@
         "1": "Slashes enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterBackdraft": {
@@ -67,7 +67,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -80,7 +80,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackFerventFire": {
@@ -92,8 +92,8 @@
         "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> will trigger <ct color=#FFFFFF>Fire Suppression</ct> for up to 15s or 8 times."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -107,7 +107,7 @@
         "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> trigger <ct color=#FFFFFF>Fire Suppression</ct> for the next 15s, up to 8 times."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateBellowingFlame": {
@@ -119,7 +119,7 @@
         "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> trigger <ct color=#FFFFFF>Fire Suppression</ct> for the next 15s, up to 8 times."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -132,7 +132,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistHoldTheLine": {
@@ -156,7 +156,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

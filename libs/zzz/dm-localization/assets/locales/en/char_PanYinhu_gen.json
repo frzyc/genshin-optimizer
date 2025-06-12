@@ -1,0 +1,230 @@
+{
+  "name": "Pan Yinhu",
+  "fullName": "Pan Yinhu",
+  "basic": {
+    "BasicAttackUnyieldingStrikes": {
+      "name": "Basic Attack: Unyielding Strikes",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Launches up to four consecutive melee attacks, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeLightAsASwallow": {
+      "name": "Dodge: Light as a Swallow",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackSizzlingOilSupreme": {
+      "name": "Dash Attack: Sizzling Oil Supreme",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Perform a quick forward melee attack, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterMovingMountainsAndSeas": {
+      "name": "Dodge Counter: Moving Mountains and Seas",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Perform a melee attack on enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSonicPressurePointStrike": {
+      "name": "Special Attack: Sonic Pressure-Point Strike",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Delivers a forward melee technique while tossing firecrackers, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SpecialAttackTouchOfDeath": {
+      "name": "Special Attack: Touch of Death",
+      "desc": {
+        "0": "With <ct color=#FFFFFF>Break Force</ct>, press <IconSpecial />to activate:",
+        "1": "<ct color=#FFFFFF>Special Attack: Touch of Death</ct> attacks centered on the enemy, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "The skill can be chained up to three times. Each use of <ct color=#FFFFFF>Special Attack: Touch of Death</ct> consumes 1 point of Break Force.",
+        "3": "When Pan Yinhu is the active character, DMG received during the skill is reduced by 40% and Anti-Interrupt Level is increased. If he isn't the active character, he becomes Invulnerable."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackMountainousPulseStrike": {
+      "name": "EX Special Attack: Mountainous Pulse Strike",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "<ct color=#FFFFFF>EX Special Attack: Mountainous Pulse Strike</ct> unleashes a powerful strike forward, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Gain 3 points of <ct color=#FFFFFF>Break Force</ct> on activation. Upon hitting an enemy, it triggers the <ct color=#FFFFFF>Quick Assist</ct> of the previous character in the squad.",
+        "3": "Agents who enter the field via this Quick Assist will gain the Sheer Force bonus from the Core Passive. After switching out, Pan Yinhu will stay on the field and automatically launch <ct color=#FFFFFF>Special Attack: Touch of Death</ct> until his Break Force runs out, where he then leaves the field.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "Energy Cost "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackAnointedWithWokSteam": {
+      "name": "Chain Attack: Anointed with Wok Steam",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Hop onto the Iron Wok and spin rapidly to ram into enemies, dealing massive <ct color=#F0D12B>Physical DMG</ct> to all enemies on the way.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateAFeastFitForAnEmperor": {
+      "name": "Ultimate: A Feast Fit for an Emperor!",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Perform a technique that compresses qi into fried rice and catapults it at foes, dealing massive <ct color=#F0D12B>Physical DMG</ct> and healing all squad members for <ct color=#2BAD00>{CAL:100+AvatarSkillLevel(3)*60,1,2}</ct> HP, while also applying a 8s heal over time on all squad members, recovering <ct color=#2BAD00>{CAL:0.8+AvatarSkillLevel(3)*0.05,1,2}</ct>% HP/s.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistLiftYourGazeToGoodFortune": {
+      "name": "Quick Assist: Lift Your Gaze to Good Fortune",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Perform a melee attack on enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistIntimidatingPresence": {
+      "name": "Defensive Assist: Intimidating Presence",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpRideTheMomentum": {
+      "name": "Assist Follow-Up: Ride the Momentum",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Perform a melee attack on enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Meridian Enlightenment",
+    "desc": [
+      "For a brief period when Pan Yinhu's <ct color=#FFFFFF>EX Special Attack: Mountainous Pulse Strike</ct> hits an enemy and triggers Quick Assist, the next Agent entering through a Quick Assist or Chain Attack will gain the <ct color=#FFFFFF>Meridian Flow</ct> effect. This effect provides a Sheer Force boost equal to <ct color=#2BAD00>9%</ct> of Pan Yinhu's initial ATK and lasts for 25s. The Sheer Force provided by this effect cannot exceed 540 points.",
+      "For a brief period when Pan Yinhu's <ct color=#FFFFFF>EX Special Attack: Mountainous Pulse Strike</ct> hits an enemy and triggers Quick Assist, the next Agent entering through a Quick Assist or Chain Attack will gain the <ct color=#FFFFFF>Meridian Flow</ct> effect. This effect provides a Sheer Force boost equal to <ct color=#2BAD00>10.5%</ct> of Pan Yinhu's initial ATK and lasts for 25s. The Sheer Force provided by this effect cannot exceed 540 points.",
+      "For a brief period when Pan Yinhu's <ct color=#FFFFFF>EX Special Attack: Mountainous Pulse Strike</ct> hits an enemy and triggers Quick Assist, the next Agent entering through a Quick Assist or Chain Attack will gain the <ct color=#FFFFFF>Meridian Flow</ct> effect. This effect provides a Sheer Force boost equal to <ct color=#2BAD00>12%</ct> of Pan Yinhu's initial ATK and lasts for 25s. The Sheer Force provided by this effect cannot exceed 540 points.",
+      "For a brief period when Pan Yinhu's <ct color=#FFFFFF>EX Special Attack: Mountainous Pulse Strike</ct> hits an enemy and triggers Quick Assist, the next Agent entering through a Quick Assist or Chain Attack will gain the <ct color=#FFFFFF>Meridian Flow</ct> effect. This effect provides a Sheer Force boost equal to <ct color=#2BAD00>13.5%</ct> of Pan Yinhu's initial ATK and lasts for 25s. The Sheer Force provided by this effect cannot exceed 540 points.",
+      "For a brief period when Pan Yinhu's <ct color=#FFFFFF>EX Special Attack: Mountainous Pulse Strike</ct> hits an enemy and triggers Quick Assist, the next Agent entering through a Quick Assist or Chain Attack will gain the <ct color=#FFFFFF>Meridian Flow</ct> effect. This effect provides a Sheer Force boost equal to <ct color=#2BAD00>15%</ct> of Pan Yinhu's initial ATK and lasts for 25s. The Sheer Force provided by this effect cannot exceed 540 points.",
+      "For a brief period when Pan Yinhu's <ct color=#FFFFFF>EX Special Attack: Mountainous Pulse Strike</ct> hits an enemy and triggers Quick Assist, the next Agent entering through a Quick Assist or Chain Attack will gain the <ct color=#FFFFFF>Meridian Flow</ct> effect. This effect provides a Sheer Force boost equal to <ct color=#2BAD00>16.5%</ct> of Pan Yinhu's initial ATK and lasts for 25s. The Sheer Force provided by this effect cannot exceed 540 points.",
+      "For a brief period when Pan Yinhu's <ct color=#FFFFFF>EX Special Attack: Mountainous Pulse Strike</ct> hits an enemy and triggers Quick Assist, the next Agent entering through a Quick Assist or Chain Attack will gain the <ct color=#FFFFFF>Meridian Flow</ct> effect. This effect provides a Sheer Force boost equal to <ct color=#2BAD00>18%</ct> of Pan Yinhu's initial ATK and lasts for 25s. The Sheer Force provided by this effect cannot exceed 540 points."
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Iron Stomach",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Rupture</ct> character or shares the same Faction:",
+      "1": "When Pan Yinhu hits an enemy with <ct color=#FFFFFF>Special Attack: Touch of Death</ct>, the enemy suffers the Depleted Qi effect, increasing all DMG against the target by 20%. Each hit of <ct color=#FFFFFF>Special Attack: Touch of Death</ct> inflicts a 10s <ct color=#FFFFFF>Depleted Qi</ct> effect. This effect can't stack, but repeated hits on the same enemy will extend the duration."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Qi Shield",
+      "desc": "All units deal 10% increased DMG to enemies affected by <ct color=#FFFFFF>Depleted Qi</ct>.",
+      "flavor": {
+        "0": "This Yunkui technique wards off the external flow of Ether while reinforcing your inner meridians and muscles. With qi acting as a shield, no blade or spear can pierce it — this is Pan Yinhu's secret to enduring every blow.",
+        "1": "Side note: this trick comes in extra handy when you're elbow-to-elbow with aunties and uncles fighting over supermarket sale items."
+      }
+    },
+    "2": {
+      "name": "Yunkui Pressure-Point Strike",
+      "desc": "For every 6 points of <ct color=#FFFFFF>Break Force</ct> consumed, Pan Yinhu will recover 4 Energy, and the <ct color=#FFFFFF>Depleted Qi</ct> effect applied when <ct color=#FFFFFF>Special Attack: Touch of Death</ct> hits an enemy will have its duration increased to 12s.",
+      "flavor": {
+        "0": "\"Heh, can't move an inch now, can you, thief?\"",
+        "1": "\"This technique is called Yunkui Pressure-Point Strike — it both paralyzes the body and clears the meridians — it's our sect's ultimate technique for punishing evil and upholding justice!\"",
+        "2": "\"...Eh? You mean my grip was so strong that you just went numb? ...Alright then — can you move or not?\""
+      }
+    },
+    "3": {
+      "name": "Non-Meridian Pressure Point",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"These pressure points are a lot like us Panda Thirens.\"",
+        "1": "\"They're few and scattered, don't fit into any one system, and hardly anyone's ever studied them. It's a shame.\"",
+        "2": "\"But they really catch people off guard as a surprise weapon. Pretty great, right?\""
+      }
+    },
+    "4": {
+      "name": "First-Class Head Chef",
+      "desc": "When <ct color=#FFFFFF>Ultimate: A Feast Fit for an Emperor!</ct> heals all squad members, the HP recovery is increased by 25%, and the healing over time effect is increased by 25%. On activating <ct color=#FFFFFF>Ultimate: A Feast Fit for an Emperor!</ct>, gain the <ct color=#FFFFFF>Backup Provisions</ct> effect. Whenever any character in the squad loses HP, consume the <ct color=#FFFFFF>Backup Provisions</ct> effect to instantly restore 50% of the HP recovered with Ultimate: A Feast Fit for an Emperor!'s instant HP recovery effect. This effect cannot stack.",
+      "flavor": {
+        "0": "The first time he cooked, he nearly set the stove on fire. Among those who rushed to help was a chef who, looking at the pile of burnt food, used the unused eggs to make him a plate of fried rice.",
+        "1": "He wolfed it down with tears in his eyes. When he finally looked up, the cook was holding out a slip of paper with \"100\" written on it.",
+        "2": "\"I understand, Master! You're teaching me in cooking, you have to give it 100%, right?\" \"No, I'm saying it's 100 Dennies per bite, and you've had over a hundred bites. Time to pay up.\"",
+        "3": "From that day on, Pan Yinhu insisted on cooking for himself and never messed up again. And that's how a first-class chef was born."
+      }
+    },
+    "5": {
+      "name": "\"Thiren\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "In the sprawling city of New Eridu, Panda Thirens are extremely rare. He's always bristled at curious stares and long ago gotten used to living a lonely life with nobody to support him.",
+        "1": "It wasn't until he became an apprentice on Yunkui Summit that he stopped feeling so isolated.",
+        "2": "And once he realized that many citizens would even pay to take a photo with a Panda Thiren... he no longer minded the stares."
+      }
+    },
+    "6": {
+      "name": "Meridian Theory",
+      "desc": "The <ct color=#FFFFFF>Meridian Flow</ct> effect provided by <ct color=#FFFFFF>Core Passive: Meridian Enlightenment</ct> increases by an extra 6% of Pan Yinhu's initial ATK. The maximum Sheer Force provided by this effect increases to 720.",
+      "flavor": {
+        "0": "\"There's an old saying that there are 365 pressure points in the feet. Funny — it's the same with how we live our lives.\"",
+        "1": "\"Here — pick whichever point you like from this chart.\"",
+        "2": "\"That point represents your current way of life — where it is or what it does doesn't matter. As long as you like it, that's enough.\"",
+        "3": "\"And what good is choosing it, you ask? Let me think... Ah, of course. Next time I deal with some thieves, that's the point I'll target!\""
+      }
+    }
+  }
+}

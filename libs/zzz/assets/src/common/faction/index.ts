@@ -7,6 +7,7 @@ import NewEriduDefenseForce from './IconCampObols.png'
 import RandomPlay from './IconCampRandomPlay.png'
 import SonsOfCalydon from './IconCampSonsOfCalydon.png'
 import StarsOfLyra from './IconCampStarsOfLyra.png'
+import YunkuiSummit from './IconCampSuibian.png'
 import VictoriaHousekeepingCo from './IconCampVictoriaHousekeepingCo.png'
 
 const data = {
@@ -20,5 +21,6 @@ const data = {
   SonsOfCalydon,
   StarsOfLyra,
   VictoriaHousekeepingCo,
+  YunkuiSummit,
 } as const
 export default data

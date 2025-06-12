@@ -231,30 +231,6 @@
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 31.64
         }
-      ],
-      "DashAttackDoAsIPlease": [
-        {
-          "DamagePercentage": 0.412,
-          "DamagePercentageGrowth": 0.038,
-          "StunRatio": 0.29,
-          "StunRatioGrowth": 0.014,
-          "SpRecovery": 102,
-          "SpRecoveryGrowth": 0,
-          "FeverRecovery": 781,
-          "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 0
-        },
-        {
-          "DamagePercentage": 1.173,
-          "DamagePercentageGrowth": 0.107,
-          "StunRatio": 0.451,
-          "StunRatioGrowth": 0.021,
-          "SpRecovery": 102,
-          "SpRecoveryGrowth": 0,
-          "FeverRecovery": 781,
-          "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 121.29
-        }
       ]
     },
     "special": {

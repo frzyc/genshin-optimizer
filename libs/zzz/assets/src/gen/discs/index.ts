@@ -7,6 +7,7 @@ import FangedMetal from './FangedMetal'
 import FreedomBlues from './FreedomBlues'
 import HormonePunk from './HormonePunk'
 import InfernoMetal from './InfernoMetal'
+import KingOfTheSummit from './KingOfTheSummit'
 import PhaethonsMelody from './PhaethonsMelody'
 import PolarMetal from './PolarMetal'
 import ProtoPunk from './ProtoPunk'
@@ -17,6 +18,7 @@ import SoulRock from './SoulRock'
 import SwingJazz from './SwingJazz'
 import ThunderMetal from './ThunderMetal'
 import WoodpeckerElectro from './WoodpeckerElectro'
+import YunkuiTales from './YunkuiTales'
 
 const data = {
   AstralVoice,
@@ -27,6 +29,7 @@ const data = {
   FreedomBlues,
   HormonePunk,
   InfernoMetal,
+  KingOfTheSummit,
   PhaethonsMelody,
   PolarMetal,
   ProtoPunk,
@@ -37,5 +40,6 @@ const data = {
   SwingJazz,
   ThunderMetal,
   WoodpeckerElectro,
+  YunkuiTales,
 } as const
 export default data

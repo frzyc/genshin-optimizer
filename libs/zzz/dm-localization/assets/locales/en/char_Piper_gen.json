@@ -33,7 +33,7 @@
         "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterPowerDrift": {
@@ -44,7 +44,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -59,7 +59,7 @@
         "4": "During the skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "SpecialAttackOneTrillionTons": {
@@ -85,8 +85,8 @@
         "3": "During the skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%."
       },
       "params": [
-        " Every Spin",
-        "Energy Cost"
+        "Every Spin ",
+        "Energy Cost "
       ]
     },
     "EXSpecialAttackReallyHeavy": {
@@ -98,8 +98,8 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -112,7 +112,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateHoldOnTight": {
@@ -123,7 +123,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -136,7 +136,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistEmergencyBrake": {
@@ -161,7 +161,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

@@ -27,10 +27,10 @@
         "5th-Hit Startup ",
         "5th-Hit Combo ",
         "5th-Hit Finisher ",
-        "5th-Hit Startup  (Morale Burst)",
-        "5th-Hit Combo  (Morale Burst)",
-        "5th-Hit Finisher  (Morale Burst)",
-        "5th-Hit Powerful Finisher  (Morale Burst)"
+        "5th-Hit Startup (Morale Burst) ",
+        "5th-Hit Combo (Morale Burst) ",
+        "5th-Hit Finisher (Morale Burst) ",
+        "5th-Hit Powerful Finisher (Morale Burst) "
       ]
     }
   },
@@ -55,7 +55,7 @@
         "1": "Rapidly strikes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterBlazingFlash": {
@@ -67,7 +67,7 @@
         "3": "After using the skill, press or hold <IconNormal /> to immediately follow up with the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -84,7 +84,7 @@
         "6": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackVFormSunriseUppercutFullDistance": {
@@ -102,10 +102,10 @@
         "9": "After using this skill, press or hold <IconNormal /> to immediately follow up with the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        "",
+        " ",
         "Follow-Up ",
-        "Activation Energy Cost",
-        "Follow-Up Energy Cost"
+        "Activation Energy Cost ",
+        "Follow-Up Energy Cost "
       ]
     }
   },
@@ -118,7 +118,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateWFormCrownedInferno": {
@@ -129,7 +129,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -143,7 +143,7 @@
         "3": "After using the skill, press or hold <IconNormal /> to immediately follow up with the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistSwiftBreak": {
@@ -168,7 +168,7 @@
         "3": "After using this skill, press or hold <IconNormal /> to immediately follow up with the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

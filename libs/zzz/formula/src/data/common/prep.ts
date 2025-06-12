@@ -8,11 +8,19 @@ const data: TagMapNodeEntries = [
   ownBuff.formula.standardDmg.add(own.dmg.crit_mult_),
   // Reread to flatten the formula
   ownBuff.formula.standardDmg.reread(ownBuff.dmg.shared),
+  ownBuff.formula.standardDmg.add(own.dmg.def_mult_),
+
+  ownBuff.formula.sheerDmg.add(own.formula.base),
+  ownBuff.formula.sheerDmg.add(own.dmg.crit_mult_),
+  // Reread to flatten the formula
+  ownBuff.formula.sheerDmg.reread(ownBuff.dmg.shared),
+  ownBuff.formula.sheerDmg.add(own.dmg.sheer_mult_),
 
   ownBuff.formula.anomalyDmg.add(own.formula.base),
   ownBuff.formula.anomalyDmg.add(own.dmg.anomaly_crit_mult_),
   // Reread to flatten the formula
   ownBuff.formula.anomalyDmg.reread(own.dmg.shared),
+  ownBuff.formula.anomalyDmg.add(own.dmg.def_mult_),
   // AP Multiplier
   ownBuff.formula.anomalyDmg.add(prod(own.final.anomProf, 0.01)),
   // Anomaly Level Multiplier

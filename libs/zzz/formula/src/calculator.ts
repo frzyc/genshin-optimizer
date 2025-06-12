@@ -46,6 +46,7 @@ export class Calculator extends Base<Tag, never> {
           r.tag.qt !== 'formula' ||
           [
             'standardDmgInst',
+            'sheerDmgInst',
             'anomalyDmgInst',
             'anomalyBuildupInst',
             'dazeInst',

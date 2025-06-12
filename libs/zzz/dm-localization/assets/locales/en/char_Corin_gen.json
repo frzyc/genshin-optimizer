@@ -48,7 +48,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -80,9 +80,9 @@
         "Spinning Slash ",
         "Extended Slash Maximum ",
         "Explosion ",
-        "Spinning Slash Energy Cost",
-        "Extended Slash Maximum Energy Cost",
-        "Explosion Energy Cost"
+        "Spinning Slash Energy Cost ",
+        "Extended Slash Maximum Energy Cost ",
+        "Explosion Energy Cost "
       ]
     }
   },
@@ -96,7 +96,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateVeryVerySorry": {
@@ -108,7 +108,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -122,7 +122,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistPPleaseAllowMe": {
@@ -148,7 +148,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },

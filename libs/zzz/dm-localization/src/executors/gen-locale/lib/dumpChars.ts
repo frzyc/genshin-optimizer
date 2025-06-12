@@ -2,7 +2,10 @@ import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { nameToKey } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { CharacterData } from '@genshin-optimizer/zzz/dm'
-import { charactersDetailedJSONData } from '@genshin-optimizer/zzz/dm'
+import {
+  charactersDetailedJSONData,
+  filterUnbuffedKits,
+} from '@genshin-optimizer/zzz/dm'
 import { processText } from './util'
 
 export function dumpChars(fileDir: string) {
@@ -28,41 +31,47 @@ function getSkillStrings(data: CharacterData['skills']) {
     Object.entries(data).map(([key, skill]) => [
       `${key.charAt(0).toLowerCase()}${key.slice(1)}`,
       Object.fromEntries(
-        skill.Description.filter((ability) => !!ability.Desc).map((ability) => [
-          nameToKey(ability.Name),
-          {
-            name: ability.Name,
-            desc: processText(ability.Desc!),
-            // Copy param text by iterating again and finding the param details
-            params: skill.Description.filter(
-              (ability2) => ability2.Name === ability.Name && !!ability2.Param
-            ).flatMap((ability2) => [
-              ...new Set(
-                ability2.Param!.map((param) => processParamText(param.Name))
-              ),
-            ]),
-          },
-        ])
+        skill.Description.filter((ability) => !!ability.Desc)
+          .filter(filterUnbuffedKits)
+          .map((ability) => [
+            nameToKey(ability.Name),
+            {
+              name: ability.Name,
+              desc: processText(ability.Desc!),
+              // Copy param text by iterating again and finding the param details
+              params: skill.Description.filter(
+                (ability2) => ability2.Name === ability.Name && !!ability2.Param
+              )
+                .filter(filterUnbuffedKits)
+                .flatMap((ability2) => [
+                  ...new Set(
+                    ability2.Param!.map((param) => processParamText(param.Name))
+                  ),
+                ]),
+            },
+          ])
       ),
     ])
   )
 }
 
 function processParamText(text: string) {
-  return text.replace(/(DMG Multiplier|Daze Multiplier)/, '')
+  return text.replace(/\s*(DMG Multiplier|Daze Multiplier)/, '').trim() + ' '
 }
 
 function getCoreStrings(data: CharacterData['cores']) {
   return {
-    name: data.Level[1].Name[0],
-    desc: Object.values(data.Level).map((level) => processText(level.Desc[0])),
+    name: Object.values(data.Level).filter(filterUnbuffedKits)[1].Name[0],
+    desc: Object.values(data.Level)
+      .filter(filterUnbuffedKits)
+      .map((level) => processText(level.Desc[0])),
   }
 }
 
 function getAbilityStrings(data: CharacterData['cores']) {
   return {
-    name: data.Level[1].Name[1],
-    desc: processText(data.Level[1].Desc[1]),
+    name: Object.values(data.Level)[1].Name[1],
+    desc: processText(Object.values(data.Level)[1].Desc[1]),
   }
 }
 

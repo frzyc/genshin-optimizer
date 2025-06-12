@@ -1,6 +1,6 @@
 {
   "name": "Vivian",
-  "fullName": "Vivian Banshee",
+  "fullName": "Vivian",
   "basic": {
     "BasicAttackFeatheredStrike": {
       "name": "Basic Attack: Feathered Strike",
@@ -27,7 +27,7 @@
         "4": "If <ct color=#FFFFFF>Flight Feathers</ct> are available after the skill, enter the <ct color=#FFFFFF>Fluttering Frock</ct> state, which can be canceled by holding <IconEvade /> when the skill is used."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "BasicAttackFlutteringFrockSuspension": {
@@ -41,7 +41,7 @@
         "5": "While in the <ct color=#FFFFFF>Fluttering Frock</ct> state, press <IconEvade /> to exit the state."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "BasicAttackFeatherbloom": {
@@ -51,7 +51,7 @@
         "1": "A maximum of 5 <ct color=#FFFFFF>Guard Feathers</ct> can be stored."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -72,7 +72,7 @@
         "1": "Launches a forward thrust at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterWingbladeReverb": {
@@ -85,7 +85,7 @@
         "4": "When there are <ct color=#FFFFFF>Flight Feathers</ct> available, hold <IconNormal /> during skill activation to enter the <ct color=#FFFFFF>Fluttering Frock</ct> state."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeDaintySteps": {
@@ -106,7 +106,7 @@
         "2": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "EXSpecialAttackVioletRequiem": {
@@ -118,8 +118,8 @@
         "3": "Enter the <ct color=#FFFFFF>Fluttering Frock</ct> state after using the skill. Hold <IconEvade /> during the skill to enter the <ct color=#FFFFFF>Noblewoman</ct> state."
       },
       "params": [
-        "",
-        "Energy Cost"
+        " ",
+        "Energy Cost "
       ]
     }
   },
@@ -133,7 +133,7 @@
         "3": "After the skill activates, enter the <ct color=#FFFFFF>Fluttering Frock</ct> state, which can be canceled by holding <IconEvade /> during the skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateSoaringBirdsSong": {
@@ -145,7 +145,7 @@
         "3": "After the skill is activated, enter the <ct color=#FFFFFF>Fluttering Frock</ct> state, which can be canceled by holding <IconEvade /> during the skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -160,7 +160,7 @@
         "4": "With <ct color=#FFFFFF>Flight Feathers</ct> available, hold <IconNormal /> during skill activation to enter the <ct color=#FFFFFF>Fluttering Frock</ct> state."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistSilverUmbrellaFormation": {
@@ -185,7 +185,7 @@
         "3": "After the skill activates enter the <ct color=#FFFFFF>Fluttering Frock</ct> state, which can be canceled by holding <IconEvade /> during the skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -272,7 +272,10 @@
     },
     "4": {
       "name": "\"The Wind Between the Reeds\"",
-      "desc": "<ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> and <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> will always CRIT on hit, and they will also increase Vivian's ATK by 12% for 12s. Repeated triggers reset the duration. When entering the battlefield, Vivian immediately gains 5 <ct color=#FFFFFF>Guard Feathers</ct>.",
+      "desc": {
+        "0": "<ct color=#FFFFFF>Basic Attack: Fluttering Frock - Suspension</ct> and <ct color=#FFFFFF>Basic Attack: Featherbloom</ct> will always CRIT on hit, and they will also increase Vivian's ATK by 12% for 12s. Repeated triggers reset the duration.",
+        "1": "When entering the battlefield, Vivian immediately gains 5 <ct color=#FFFFFF>Guard Feathers</ct>."
+      },
       "flavor": {
         "0": "\"I will lay my true heart, like moonlight, to cover the path beneath your feet.\"",
         "1": "In chasing after you, she has already formed her own sky.",

@@ -3,6 +3,7 @@
   "opt": "Optimize",
   "builds": "Builds",
   "eq": "Equip",
+  "charSheet": "Character Mechanics",
   "wengineCond": "Wengine Conditionals",
   "discCond": "Disc Conditionals",
   "bonusStats": "Bonus Stats",

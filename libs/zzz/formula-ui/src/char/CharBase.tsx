@@ -69,6 +69,18 @@ charBaseUiSheet.push(
       title: <ColorText color={attr}>{elementalData[attr]} Damage</ColorText>,
     })
   ),
+  ...allAttributeKeys.map(
+    (attr): TagField => ({
+      fieldRef: {
+        et: 'own',
+        qt: 'formula',
+        q: 'sheerDmg',
+        attribute: attr,
+        name: 'sheerDmgInst',
+      },
+      title: <ColorText color={attr}>{elementalData[attr]} Damage</ColorText>,
+    })
+  ),
   // elemental dmg with dmg types
   ...allAttributeKeys.flatMap((attr) =>
     specificDmgTypeKeys.map(

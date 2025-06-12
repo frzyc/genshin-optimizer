@@ -35,7 +35,7 @@
         "3": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "BasicAttackGarroteSecondForm": {
@@ -47,7 +47,7 @@
         "3": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -68,7 +68,7 @@
         "1": "Deliver a kick to the enemy in front, causing <ct color=#F0D12B>Physical DMG</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DodgeCounterStranglingReversal": {
@@ -80,7 +80,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -123,7 +123,7 @@
       "params": [
         "Bind ",
         "Explosion ",
-        "Energy Cost"
+        "Energy Cost "
       ]
     }
   },
@@ -137,7 +137,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateLunaluxGarroteTimbre": {
@@ -150,7 +150,7 @@
         "4": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "UltimateLunaluxGarroteShadow": {
@@ -163,7 +163,7 @@
         "4": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -177,7 +177,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     },
     "DefensiveAssistSilentProtection": {
@@ -202,7 +202,7 @@
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
-        ""
+        " "
       ]
     }
   },
@@ -222,7 +222,7 @@
     "name": "Additional Ability: Ambush Point",
     "desc": {
       "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> or <ct color=#FFFFFF>Support</ct> character:",
-      "1": "Evelyn's <ct color=#FFFFFF>Chain Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG increases by 30%. When Evelyn's CRIT Rate is at or over 80%, the DMG multiplier for her <ct color=#FFFFFF>Chain Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> increases to 125% of the original value."
+      "1": "Evelyn's <ct color=#FFFFFF>Chain Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG increases by 30%. When Evelyn's CRIT Rate is at or over 80%, the DMG multiplier for her <ct color=#FFFFFF>Chain Attack: Lunalux - Snare</ct>, <ct color=#FFFFFF>Ultimate: Lunalux Garrote - Timbre</ct> and <ct color=#FFFFFF>Ultimate: Lunalux Garrote - Shadow</ct> increases to 125% of the original value."
     }
   },
   "mindscapes": {

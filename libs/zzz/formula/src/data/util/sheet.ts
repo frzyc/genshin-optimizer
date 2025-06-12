@@ -17,7 +17,7 @@ export type FormulaArg = {
 }
 
 export type DmgTag = Partial<
-  Pick<Tag, 'damageType1' | 'damageType2' | 'attribute'>
+  Pick<Tag, 'damageType1' | 'damageType2' | 'attribute' | 'skillType'>
 >
 
 export function register(
@@ -108,6 +108,7 @@ function registerFormula(
   team: boolean | undefined,
   q:
     | 'standardDmg'
+    | 'sheerDmg'
     | 'heal'
     | 'shield'
     | 'anomalyDmg'
@@ -152,6 +153,34 @@ export function customDmg(
     name,
     team,
     'standardDmg',
+    tag(cond, dmgTag),
+    ownBuff.formula.base.add(base),
+    ...extra
+  )
+}
+
+/**
+ * Creates an array of TagMapNodeEntries representing a sheer damage instance split by their multipliers, and registers their formulas
+ * @param name Base name to be used as the key
+ * @param dmgTag Tag object containing damageType1, damageType2 and attribute
+ * @param base Node representing the full sheer damage value
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`, and also show the formula in teammates' listing.
+ *
+ * `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this sheer damage instance
+ * @returns Array of TagMapNodeEntries representing the sheer damage instance
+ */
+export function customSheerDmg(
+  name: string,
+  dmgTag: DmgTag,
+  base: NumNode,
+  { team, cond = 'infer' }: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  return registerFormula(
+    name,
+    team,
+    'sheerDmg',
     tag(cond, dmgTag),
     ownBuff.formula.base.add(base),
     ...extra

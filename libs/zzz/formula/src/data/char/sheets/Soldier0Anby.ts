@@ -1,4 +1,4 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
@@ -8,6 +8,7 @@ import {
   enemyDebuff,
   own,
   ownBuff,
+  percent,
   register,
   registerBuff,
   teamBuff,
@@ -21,14 +22,23 @@ const dm = mappedStats.char[key]
 const { char } = own
 
 // TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
+const { boolConditional, core_markedWithSilverStar } = allBoolConditionals(key)
 const { listConditional } = allListConditionals(key, ['val1', 'val2'])
 const { numConditional } = allNumConditionals(key, true, 0, 2)
 
 const sheet = register(
   key,
-  // Handles base stats, StatBoosts and Eidolon 3 + 5
+  // Handles base stats, core stats and Mindscapes 3 + 5
   entriesForChar(data_gen),
+  registerBuff(
+    'core_markedWithSilverStar_crit_dmg_',
+    ownBuff.final.crit_dmg_.addWithDmgType(
+      'aftershock',
+      core_markedWithSilverStar.ifOn(
+        prod(sum(own.initial.crit_dmg_, own.combat.crit_dmg_), percent(0.3))
+      ) // TODO: Replace this with proper core indexing once sheets are added
+    )
+  ),
 
   // Formulas
   ...registerAllDmgDazeAndAnom(key, dm),

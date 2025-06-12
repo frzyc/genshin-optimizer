@@ -18,4 +18,6 @@ export const DiscIdMap = {
   '32800': 'AstralVoice',
   '32900': 'ShadowHarmony',
   '33000': 'PhaethonsMelody',
+  '33100': 'YunkuiTales',
+  '33200': 'KingOfTheSummit',
 } as const

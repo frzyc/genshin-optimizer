@@ -1,6 +1,6 @@
 {
   "name": "Astral Voice",
   "desc2": "ATK +10%",
-  "desc4": "Whenever any squad member enters the field using a <ct color=#FFFFFF>Quick Assist</ct>, all squad members gain 1 stack of <ct color=#FFFFFF>Astral</ct>, up to a maximum of 3 stacks, and lasting 15s. Repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Astral</ct> increases the DMG dealt by the character entering the field using a <ct color=#FFFFFF>Quick Assist</ct> by 8%. Only one instance of this effect can exist in the same squad.",
+  "desc4": "Whenever any squad member enters the field using a <ct color=#FFFFFF>Quick Assist</ct>, all squad members gain 1 stack of <ct color=#FFFFFF>Astral</ct>, up to a maximum of 3 stacks, and lasting 15s. Repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Astral</ct> increases the DMG dealt by the character entering the field using a <ct color=#FFFFFF>Quick Assist</ct> by 8%. Passive effects of the same name do not stack.",
   "story": "Drive Discs made by a Hollow Raider and Astra Yao fan that record a signature motif in Astra's works. Meanwhile, on the back, the Hollow Raider's own story is printed there."
 }

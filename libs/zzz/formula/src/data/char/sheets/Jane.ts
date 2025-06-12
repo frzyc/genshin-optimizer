@@ -39,7 +39,7 @@ const {
 
 const sheet = register(
   key,
-  // Handles base stats, StatBoosts and Eidolon 3 + 5
+  // Handles base stats, core stats and Mindscapes 3 + 5
   entriesForChar(data_gen),
 
   // Formulas

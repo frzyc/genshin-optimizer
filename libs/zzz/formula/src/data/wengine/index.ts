@@ -6,6 +6,7 @@ import BlazingLaurel from './sheets/BlazingLaurel'
 import BoxCutter from './sheets/BoxCutter'
 import BunnyBand from './sheets/BunnyBand'
 import CannonRotor from './sheets/CannonRotor'
+import CinderCobalt from './sheets/CinderCobalt'
 import DeepSeaVisitor from './sheets/DeepSeaVisitor'
 import DemaraBatteryMarkII from './sheets/DemaraBatteryMarkII'
 import DrillRigRedAxis from './sheets/DrillRigRedAxis'
@@ -34,11 +35,16 @@ import MyriadEclipse from './sheets/MyriadEclipse'
 import OriginalTransmorpher from './sheets/OriginalTransmorpher'
 import PeacekeeperSpecialized from './sheets/PeacekeeperSpecialized'
 import PreciousFossilizedCore from './sheets/PreciousFossilizedCore'
+import PuzzleSphere from './sheets/PuzzleSphere'
+import QingmingBirdcage from './sheets/QingmingBirdcage'
+import RadiowaveJourney from './sheets/RadiowaveJourney'
 import RainforestGourmet from './sheets/RainforestGourmet'
+import ReelProjector from './sheets/ReelProjector'
 import ReverbMarkI from './sheets/ReverbMarkI'
 import ReverbMarkII from './sheets/ReverbMarkII'
 import ReverbMarkIII from './sheets/ReverbMarkIII'
 import RiotSuppressorMarkVI from './sheets/RiotSuppressorMarkVI'
+import RoaringFurnace from './sheets/RoaringFurnace'
 import RoaringRide from './sheets/RoaringRide'
 import SeveredInnocence from './sheets/SeveredInnocence'
 import SharpenedStinger from './sheets/SharpenedStinger'
@@ -55,6 +61,7 @@ import TheBrimstone from './sheets/TheBrimstone'
 import TheRestrained from './sheets/TheRestrained'
 import TheVault from './sheets/TheVault'
 import Timeweaver from './sheets/Timeweaver'
+import TremorTrigramVessel from './sheets/TremorTrigramVessel'
 import TusksOfFury from './sheets/TusksOfFury'
 import UnfetteredGameBall from './sheets/UnfetteredGameBall'
 import VortexArrow from './sheets/VortexArrow'
@@ -71,6 +78,7 @@ const data: TagMapNodeEntries[] = [
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CinderCobalt,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
   DrillRigRedAxis,
@@ -99,11 +107,16 @@ const data: TagMapNodeEntries[] = [
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PreciousFossilizedCore,
+  PuzzleSphere,
+  QingmingBirdcage,
+  RadiowaveJourney,
   RainforestGourmet,
+  ReelProjector,
   ReverbMarkI,
   ReverbMarkII,
   ReverbMarkIII,
   RiotSuppressorMarkVI,
+  RoaringFurnace,
   RoaringRide,
   SeveredInnocence,
   SharpenedStinger,
@@ -120,6 +133,7 @@ const data: TagMapNodeEntries[] = [
   TheRestrained,
   TheVault,
   Timeweaver,
+  TremorTrigramVessel,
   TusksOfFury,
   UnfetteredGameBall,
   VortexArrow,

@@ -1,3 +1,4 @@
+import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
 import {
   cmpGE,
   constant,
@@ -24,6 +25,7 @@ import {
   customDaze,
   customDmg,
   customHeal,
+  customSheerDmg,
   customShield,
   damageTypes,
   listingItem,
@@ -65,12 +67,12 @@ function dmgDazeAndAnom(
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
-  if (!dmgTag.damageType1) dmgTag.attribute = 'physical'
+  if (!dmgTag.attribute) dmgTag.attribute = 'physical'
   const dmgMulti = sum(
     skillParam.DamagePercentage,
     prod(own.char[abilityScalingType], skillParam.DamagePercentageGrowth)
   )
-  const dmgBase = prod(own.final[stat], dmgMulti)
+  const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.mv_mult_)
   const dazeBase = sum(
     skillParam.StunRatio,
     prod(own.char[abilityScalingType], skillParam.StunRatioGrowth)
@@ -83,6 +85,58 @@ function dmgDazeAndAnom(
       `${name}_anomBuildup`,
       dmgTag,
       constant(skillParam.AttributeInfliction / 100),
+      arg,
+      ...extra
+    ),
+  ]
+}
+
+/**
+ * Creates an array of TagMapNodeEntries representing a levelable ability's damage instance, daze and anomaly buildup, and registers their formulas
+ * @param skillParam SkillParams array corresponding to the specific ability's hits to merge
+ * @param name Name to register under
+ * @param dmgTag Tag object containing damageType1, damageType2 and attribute. If not specified, attribute will be physical.
+ * @param stat Stat that the damage scales on
+ * @param abilityScalingType Ability level that the scaling depends on.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this damage instance
+ * @returns Array of TagMapNodeEntries representing the damage instance, daze and anomaly buildup
+ */
+export function dmgDazeAndAnomMerge(
+  skillParam: SkillParam[],
+  name: string,
+  dmgTag: DmgTag,
+  stat: Stat,
+  abilityScalingType: AbilityScalingType,
+  arg: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries[] {
+  if (!dmgTag.attribute) dmgTag.attribute = 'physical'
+  const dmgMulti = sum(
+    ...skillParam.map((sp) => sp.DamagePercentage),
+    prod(
+      own.char[abilityScalingType],
+      sum(...skillParam.map((sp) => sp.DamagePercentageGrowth))
+    )
+  )
+  const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.mv_mult_)
+  const dazeBase = sum(
+    ...skillParam.map((sp) => sp.StunRatio),
+    prod(
+      own.char[abilityScalingType],
+      sum(...skillParam.map((sp) => sp.StunRatioGrowth))
+    )
+  )
+  return [
+    customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
+    customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
+    // TODO: No clue if this is right
+    customAnomalyBuildup(
+      `${name}_anomBuildup`,
+      dmgTag,
+      constant(
+        skillParam.reduce((acc, sp) => acc + sp.AttributeInfliction, 0) / 100
+      ),
       arg,
       ...extra
     ),
@@ -145,10 +199,15 @@ export function registerAllDmgDazeAndAnom(
   mappedStats: MappedStats,
   ...overrides: SkillOverides[]
 ): TagMapNodeEntries[] {
-  const flatOverrides = overrides.reduce(
-    (combined, current) => ({ ...combined, ...current }),
-    {}
-  )
+  const flatOverrides = overrides.reduce((combined, current) => {
+    crawlObject(
+      current,
+      undefined,
+      (o) => Array.isArray(o),
+      (o, keys) => (combined = layeredAssignment(combined, keys, o))
+    )
+    return combined
+  }, {})
   return (
     Object.entries(mappedStats)
       // Remove core, ability, and mindscape mapped stats
@@ -164,6 +223,7 @@ export function registerAllDmgDazeAndAnom(
                 {
                   attribute: allStats.char[key].attribute,
                   damageType1: inferDamageType(key, abilityName),
+                  skillType: `${sKey}Skill`,
                 },
                 'atk',
                 sKey
@@ -179,7 +239,7 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
     abilityName.toLowerCase().startsWith(dt.toLowerCase())
   )
   if (!damageType) {
-    if (key === 'Astra' && abilityName === 'Chord') return 'exSpecial'
+    if (key === 'AstraYao' && abilityName === 'Chord') return 'exSpecial'
     if (key === 'Lucy' && abilityName === 'GuardBoarsToArms') return 'basic'
     if (key === 'Lucy' && abilityName === 'GuardBoarsSpinningSwing')
       return 'basic'
@@ -286,6 +346,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.common.count.withSpecialty(data_gen.specialty).add(1),
     ownBuff.char.faction.add(data_gen.faction),
     ownBuff.common.count.withFaction(data_gen.faction).add(1),
+    ownBuff.common.count[data_gen.attribute].add(1),
     // Base + promotion stats
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
       const addPerPromo = data_gen.promotionStats.map((p) => p[sk])
@@ -312,14 +373,23 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     ),
     // TODO: Remove this once we have character sheets for everyone
-    // Standard DMG
-    ...customDmg(
-      'standardDmgInst',
-      {
-        attribute: data_gen.attribute,
-      },
-      prod(percent(1.5), own.final.atk)
-    ),
+    // Standard/Sheer DMG
+    ...(data_gen.specialty === 'rupture'
+      ? customSheerDmg(
+          'sheerDmgInst',
+          {
+            attribute: data_gen.attribute,
+            damageType1: 'sheer',
+          },
+          prod(percent(1.5), own.final.sheerForce)
+        )
+      : customDmg(
+          'standardDmgInst',
+          {
+            attribute: data_gen.attribute,
+          },
+          prod(percent(1.5), own.final.atk)
+        )),
     // Anomaly DMG
     ...customAnomalyDmg(
       'anomalyDmgInst',
@@ -340,6 +410,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(listingItem(own.final.atk)),
     ownBuff.listing.formulas.add(listingItem(own.final.def)),
     ownBuff.listing.formulas.add(listingItem(own.final.impact)),
+    ownBuff.listing.formulas.add(listingItem(own.final.sheerForce)),
     ownBuff.listing.formulas.add(listingItem(own.common.cappedCrit_)),
     ownBuff.listing.formulas.add(listingItem(own.final.crit_dmg_)),
     ownBuff.listing.formulas.add(listingItem(own.final.pen_)),

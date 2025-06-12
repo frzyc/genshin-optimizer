@@ -13,6 +13,7 @@ export const allDiscSetKeys = [
   'FreedomBlues',
   'HormonePunk',
   'InfernoMetal',
+  'KingOfTheSummit',
   'PhaethonsMelody',
   'PolarMetal',
   'ProtoPunk',
@@ -23,6 +24,7 @@ export const allDiscSetKeys = [
   'SwingJazz',
   'ThunderMetal',
   'WoodpeckerElectro',
+  'YunkuiTales',
 ] as const
 export type DiscSetKey = (typeof allDiscSetKeys)[number]
 
@@ -177,6 +179,7 @@ export const disc2pEffect: Record<
   FreedomBlues: { anomProf: 30 },
   HormonePunk: { atk_: 0.1 },
   InfernoMetal: { fire_dmg_: 0.1 },
+  KingOfTheSummit: { dazeInc_: 0.06 },
   PhaethonsMelody: { anomMas_: 0.08 },
   PolarMetal: { ice_dmg_: 0.1 },
   ProtoPunk: { shield_: 0.15 },
@@ -187,6 +190,7 @@ export const disc2pEffect: Record<
   SwingJazz: { enerRegen_: 0.2 },
   ThunderMetal: { electric_dmg_: 0.1 },
   WoodpeckerElectro: { crit_: 0.08 },
+  YunkuiTales: { hp_: 0.1 },
 }
 
 // Copied from libs\zzz\dm\src\dm\disc\discNames.json, mainly used for scanner.
@@ -209,4 +213,6 @@ export const discSetNames: Record<DiscSetKey, string> = {
   AstralVoice: 'Astral Voice',
   ShadowHarmony: 'Shadow Harmony',
   PhaethonsMelody: "Phaethon's Melody",
+  YunkuiTales: 'Yunkui Tales',
+  KingOfTheSummit: 'King of the Summit',
 }
