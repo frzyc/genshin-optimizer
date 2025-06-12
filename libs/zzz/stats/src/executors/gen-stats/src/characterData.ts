@@ -165,10 +165,12 @@ function extractCoreParams(cores: CharacterData['cores']) {
       .map(({ Desc }) =>
         // Janky override for Qingyi inconsistent text
         extractParamsFromString(
-          Desc[0].replace(
-            'the Finishing Move will apply 1 extra stack of',
-            'the Finishing Move will apply an extra stack of'
-          )
+          Desc[0]
+            .replace(
+              'the Finishing Move will apply 1 extra stack of',
+              'the Finishing Move will apply an extra stack of'
+            )
+            .replaceAll('Soldier 0 - Anby', 'Anby')
         )
       )
   )
@@ -176,12 +178,14 @@ function extractCoreParams(cores: CharacterData['cores']) {
 
 function extractAbilityParams(cores: CharacterData['cores']) {
   return extractParamsFromString(
-    Object.values(cores.Level).filter(filterUnbuffedKits)[1].Desc[1]
+    Object.values(cores.Level)
+      .filter(filterUnbuffedKits)[1]
+      .Desc[1].replaceAll('Soldier 0 - Anby', 'Anby')
   )
 }
 
 function extraMindscapeParams(mindscapes: CharacterData['mindscapes']) {
   return Object.values(mindscapes).map(({ Desc }) =>
-    extractParamsFromString(Desc)
+    extractParamsFromString(Desc.replaceAll('Soldier 0 - Anby', 'Anby'))
   )
 }

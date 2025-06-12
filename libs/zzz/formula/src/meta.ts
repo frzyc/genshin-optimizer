@@ -952,29 +952,10 @@ export const conditionals = {
     },
   },
   Soldier0Anby: {
-    boolConditional: {
+    markedWithSilverStar: {
       sheet: 'Soldier0Anby',
-      name: 'boolConditional',
+      name: 'markedWithSilverStar',
       type: 'bool',
-    },
-    core_markedWithSilverStar: {
-      sheet: 'Soldier0Anby',
-      name: 'core_markedWithSilverStar',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Soldier0Anby',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Soldier0Anby',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Soldier11: {
@@ -26891,6 +26872,19 @@ export const formulas = {
         name: 'AssistFollowUpConductingBlow_0_anomBuildup',
       },
     },
+    m6_additional_dmg: {
+      sheet: 'Soldier0Anby',
+      name: 'm6_additional_dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'Soldier0Anby',
+        attribute: 'electric',
+        damageType1: 'aftershock',
+        name: 'm6_additional_dmg',
+      },
+    },
   },
   Soldier11: {
     standardDmgInst: {
@@ -35650,6 +35644,17 @@ export const buffs = {
     },
   },
   Soldier0Anby: {
+    core_common_dmg_: {
+      sheet: 'Soldier0Anby',
+      name: 'core_common_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'common_dmg_',
+        sheet: 'Soldier0Anby',
+        name: 'core_common_dmg_',
+      },
+    },
     core_markedWithSilverStar_crit_dmg_: {
       sheet: 'Soldier0Anby',
       name: 'core_markedWithSilverStar_crit_dmg_',
@@ -35662,37 +35667,50 @@ export const buffs = {
         name: 'core_markedWithSilverStar_crit_dmg_',
       },
     },
-    m6_dmg_: {
+    ability_crit_: {
       sheet: 'Soldier0Anby',
-      name: 'm6_dmg_',
+      name: 'ability_crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'Soldier0Anby',
-        name: 'm6_dmg_',
+        name: 'ability_crit_',
       },
     },
-    team_dmg_: {
+    ability_aftershock_dmg_: {
       sheet: 'Soldier0Anby',
-      name: 'team_dmg_',
+      name: 'ability_aftershock_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'Soldier0Anby',
-        name: 'team_dmg_',
+        damageType1: 'aftershock',
+        name: 'ability_aftershock_dmg_',
       },
     },
-    enemy_defRed_: {
+    m2_crit_: {
       sheet: 'Soldier0Anby',
-      name: 'enemy_defRed_',
+      name: 'm2_crit_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'defRed_',
+        qt: 'combat',
+        q: 'crit_',
         sheet: 'Soldier0Anby',
-        name: 'enemy_defRed_',
+        name: 'm2_crit_',
+      },
+    },
+    m4_electric_resIgn_: {
+      sheet: 'Soldier0Anby',
+      name: 'm4_electric_resIgn_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'resIgn_',
+        sheet: 'Soldier0Anby',
+        attribute: 'electric',
+        name: 'm4_electric_resIgn_',
       },
     },
   },
