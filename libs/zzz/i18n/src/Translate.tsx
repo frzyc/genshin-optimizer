@@ -23,6 +23,9 @@ const textComponents = {
   IconSpecialReady: (
     <ImgIcon src={commonDefIcon('specialReadyFlat')} size={1.5} />
   ),
+  IconSpecialReadyRp: (
+    <ImgIcon src={commonDefIcon('specialRpReadyFlat')} size={1.5} />
+  ),
   IconUltimateReady: (
     <ImgIcon src={commonDefIcon('chainReadyFlat')} size={1.5} />
   ),
