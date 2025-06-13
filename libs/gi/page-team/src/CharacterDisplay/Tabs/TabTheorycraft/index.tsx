@@ -127,8 +127,12 @@ export default function TabTheorycraft() {
       gender,
       teamCharId,
       0,
-      getBuildTcArtifactData(buildTc),
-      getBuildTcWeaponData(buildTc)
+      {
+        [teamCharId]: {
+          art: getBuildTcArtifactData(buildTc),
+          weapon: getBuildTcWeaponData(buildTc),
+        },
+      }
     )
     if (!tempTeamData) return
     const { nodes, valueFilter } = optimizeNodesForScaling(

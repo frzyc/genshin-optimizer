@@ -4,23 +4,11 @@ import {
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
-import type {
-  AdditiveReactionKey,
-  AmpReactionKey,
-  InfusionAuraElementKey,
-} from '@genshin-optimizer/gi/consts'
-import {
-  allAmpReactionKeys,
-  allMultiOptHitModeKeys,
-  allowedAdditiveReactions,
-  allowedAmpReactions,
-} from '@genshin-optimizer/gi/consts'
+import { allMultiOptHitModeKeys } from '@genshin-optimizer/gi/consts'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
 import { CharacterContext } from '@genshin-optimizer/gi/db-ui'
 import { isCharMelee } from '@genshin-optimizer/gi/stats'
 import {
-  AdditiveReactionModeText,
-  AmpReactionModeText,
   DataContext,
   StatEditorList,
   infusionVals,
@@ -47,6 +35,7 @@ import {
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import OptimizationTargetSelector from '../Tabs/TabOptimize/Components/OptimizationTargetSelector'
+import ReactionDropdown from './ReactionDropdown'
 
 const keys = [...allInputPremodKeys]
 const wrapperFunc = (e: JSX.Element, key?: string) => (
@@ -305,63 +294,5 @@ export default function MTargetEditor({
         </Box>
       </Collapse>
     </CardThemed>
-  )
-}
-function ReactionDropdown({
-  node,
-  reaction,
-  setReactionMode,
-  infusionAura,
-}: {
-  node: CalcResult
-  reaction?: AmpReactionKey | AdditiveReactionKey
-  setReactionMode: (r?: AmpReactionKey | AdditiveReactionKey) => void
-  infusionAura?: InfusionAuraElementKey
-}) {
-  const ele = node.info.variant ?? 'physical'
-  const { t } = useTranslation(['page_character', 'loadout'])
-
-  if (
-    !['pyro', 'hydro', 'cryo', 'electro', 'dendro'].some(
-      (e) => e === ele || e === infusionAura
-    )
-  )
-    return null
-  const reactions = [
-    ...new Set([
-      ...(allowedAmpReactions[ele] ?? []),
-      ...(allowedAmpReactions[infusionAura ?? ''] ?? []),
-      ...(allowedAdditiveReactions[ele] ?? []),
-      ...(allowedAdditiveReactions[infusionAura ?? ''] ?? []),
-    ]),
-  ]
-  const title = reaction ? (
-    ([...allAmpReactionKeys] as string[]).includes(reaction) ? (
-      <AmpReactionModeText reaction={reaction as AmpReactionKey} />
-    ) : (
-      <AdditiveReactionModeText reaction={reaction as AdditiveReactionKey} />
-    )
-  ) : (
-    t('noReaction')
-  )
-  return (
-    <DropdownButton title={title} sx={{ ml: 'auto' }}>
-      <MenuItem value="" disabled={!reaction} onClick={() => setReactionMode()}>
-        {t('loadout:mTargetEditor.noReaction')}
-      </MenuItem>
-      {reactions.map((rm) => (
-        <MenuItem
-          key={rm}
-          disabled={reaction === rm}
-          onClick={() => setReactionMode(rm)}
-        >
-          {([...allAmpReactionKeys] as string[]).includes(rm) ? (
-            <AmpReactionModeText reaction={rm} />
-          ) : (
-            <AdditiveReactionModeText reaction={rm} />
-          )}
-        </MenuItem>
-      ))}
-    </DropdownButton>
   )
 }
