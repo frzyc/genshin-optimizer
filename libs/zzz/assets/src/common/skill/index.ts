@@ -3,6 +3,7 @@ import dodgeFlat from './IconRoleSkillKeyEvade.png'
 import basicFlat from './IconRoleSkillKeyNormal.png'
 import specialFlat from './IconRoleSkillKeySpecial.png'
 import specialReadyFlat from './IconRoleSkillKeySpecialV2.png'
+import specialRpReadyFlat from './IconRoleSkillKeySpecialV3_02.png'
 import assistFlat from './IconRoleSkillKeySwitch.png'
 import chainFlat from './IconRoleSkillKeyUltimate.png'
 import chainReadyFlat from './IconRoleSkillKeyUltimateV2.png'
@@ -28,5 +29,6 @@ const data = {
   specialReadyFlat,
   chainFlat,
   chainReadyFlat,
+  specialRpReadyFlat,
 } as const
 export default data

@@ -33,7 +33,7 @@ const sheet = registerDisc(
   registerBuff(
     'set4_sheer_dmg_',
     teamBuff.combat.sheer_dmg_.add(
-      cmpEq(uponLaunchExSpecialChainOrUlt, 3, percent(0.1))
+      cmpGE(discCount, 4, cmpEq(uponLaunchExSpecialChainOrUlt, 3, percent(0.1)))
     ),
     showCond4Set
   )
