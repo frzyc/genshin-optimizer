@@ -77,6 +77,31 @@ const sheet = register(
   ...registerAllDmgDazeAndAnom(
     key,
     dm,
+    // Basic 1-3 hits are physical
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackLFormThunderingFist',
+      0,
+      { damageType1: 'basic' },
+      'atk'
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackLFormThunderingFist',
+      1,
+      { damageType1: 'basic' },
+      'atk'
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackLFormThunderingFist',
+      2,
+      { damageType1: 'basic' },
+      'atk'
+    ),
     // Dash Attack Charging Slam is physical
     dmgDazeAndAnomOverride(
       dm,
