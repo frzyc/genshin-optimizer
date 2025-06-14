@@ -84,6 +84,9 @@ const data: TagMapNodeEntries = [
   ownBuff.common.cappedCrit_.add(
     max(min(own.final.crit_, percent(1)), percent(0))
   ),
+  ownBuff.common.anom_cappedCrit_.add(
+    max(min(own.final.anom_crit_, percent(1)), percent(0))
+  ),
 
   // Default conditionals to 0
   reader
