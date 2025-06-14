@@ -213,7 +213,7 @@ const sheet = register(
     m6_finishing_move_dmg_,
     undefined,
     undefined,
-    true
+    false
   )
 )
 export default sheet
