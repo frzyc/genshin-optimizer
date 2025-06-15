@@ -1,6 +1,6 @@
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import {
   useBoolState,
-  useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import {
@@ -44,14 +44,7 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import {
-  Suspense,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useReducer,
-} from 'react'
+import { Suspense, useCallback, useContext, useMemo, useReducer } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
 export default function ExcludeArt({
@@ -315,23 +308,17 @@ function ArtifactSelectModal({
     initialArtifactFilterOption()
   )
 
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(() => {
-    return database.arts.followAny(forceUpdate)
-  }, [database, forceUpdate])
-
   const brPt = useMediaQueryUp()
 
   const filterConfigs = useMemo(
     () => artifactFilterConfigs({ excludedIds: artExclusion }),
     [artExclusion]
   )
+  const allArts = useDataManagerValues(database.arts)
   const artifactIds = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
-    return (
-      dbDirty && database.arts.values.filter(filterFunc).map((art) => art.id)
-    )
-  }, [dbDirty, database, filterConfigs, filterOption])
+    return allArts.filter(filterFunc).map((art) => art.id)
+  }, [filterOption, filterConfigs, allArts])
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],

@@ -1,11 +1,11 @@
-import { ModalWrapper } from '@genshin-optimizer/common/ui'
+import { ModalWrapper, usePrev } from '@genshin-optimizer/common/ui'
 import { validateLightCone } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext, useLightCone } from '@genshin-optimizer/sr/db-ui'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 import { Add, DeleteForever, Update } from '@mui/icons-material'
 import { Box, Button } from '@mui/material'
 import type { MouseEvent } from 'react'
-import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
+import { Suspense, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LightConeEditorCard } from './LightConeEditorCard'
 
@@ -20,22 +20,25 @@ export function LightConeEditor({
 }: LightConeEditorProps) {
   const { t } = useTranslation(['lightCone', 'common'])
   const { database } = useDatabaseContext()
-  const dbLightCone = useLightCone(lightConeIdToEdit)
+  const dbLightCone = useLightCone(
+    lightConeIdToEdit === 'new' ? undefined : lightConeIdToEdit
+  )
   const [lightConeState, setLightConeState] = useState<
     Partial<ILightCone> | undefined
   >(undefined)
 
-  useEffect(() => {
-    if (dbLightCone) setLightConeState(structuredClone(dbLightCone))
-  }, [dbLightCone])
-  useEffect(() => {
-    if (lightConeIdToEdit === 'new')
-      setLightConeState({
-        level: 1,
-        ascension: 0,
-        superimpose: 1,
-      })
-  }, [lightConeIdToEdit])
+  if (usePrev(dbLightCone) !== dbLightCone && dbLightCone)
+    setLightConeState(structuredClone(dbLightCone))
+
+  if (
+    usePrev(lightConeIdToEdit) !== lightConeIdToEdit &&
+    lightConeIdToEdit === 'new'
+  )
+    setLightConeState({
+      level: 1,
+      ascension: 0,
+      superimpose: 1,
+    })
 
   const update = useCallback((newValue: Partial<ILightCone>) => {
     setLightConeState((lc) => ({ ...lc, ...newValue }))

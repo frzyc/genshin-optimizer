@@ -1,4 +1,4 @@
-import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
 import { Tally } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
@@ -93,22 +93,22 @@ function SettingsChip() {
 
 function RelicsTab() {
   const { database } = useDatabaseContext()
-  return <Tally>{useDatabaseTally(database.relics)}</Tally>
+  return <Tally>{useDataManagerKeys(database.relics).length}</Tally>
 }
 
 function LightConesTab() {
   const { database } = useDatabaseContext()
-  return <Tally>{useDatabaseTally(database.lightCones)}</Tally>
+  return <Tally>{useDataManagerKeys(database.lightCones).length}</Tally>
 }
 
 function CharactersTab() {
   const { database } = useDatabaseContext()
-  return <Tally>{useDatabaseTally(database.chars)}</Tally>
+  return <Tally>{useDataManagerKeys(database.chars).length}</Tally>
 }
 
 function TeamsTab() {
   const { database } = useDatabaseContext()
-  return <Tally>{useDatabaseTally(database.teams)}</Tally>
+  return <Tally>{useDataManagerKeys(database.teams).length}</Tally>
 }
 
 export default function Header({ anchor }: { anchor: string }) {

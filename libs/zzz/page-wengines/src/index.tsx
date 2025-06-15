@@ -1,8 +1,8 @@
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+  useDataEntryBase,
+  useDataManagerValues,
+} from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
@@ -34,7 +34,6 @@ import {
   Suspense,
   useCallback,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -49,16 +48,10 @@ export default function PageWengine() {
   const { t } = useTranslation(['page_wengine', 'ui'])
   const { database } = useDatabaseContext()
   const [newWengineModalShow, setnewWengineModalShow] = useState(false)
-  const state = useDataEntryBase(database.displayWengine)
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  //set follow, should run only once
-  useEffect(() => {
-    //ReactGA.send({ hitType: 'pageview', page: '/wengine' }) Needs Google Analytics
-    return database.wengines.followAny(
-      (_, r) =>
-        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
-    )
-  }, [forceUpdate, database])
+  const displayWengine = useDataEntryBase(database.displayWengine)
+  // useEffect(() => {
+  //   ReactGA.send({ hitType: 'pageview', page: '/wengine' }) Needs Google Analytics
+  // }, [])
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
@@ -85,48 +78,48 @@ export default function PageWengine() {
     showEquipped,
     showInventory,
     locations,
-  } = state
+  } = displayWengine
 
-  const { wengineIds, totalWengineNum } = useMemo(() => {
-    const wengines = database.wengines.values
-    const totalWengineNum = wengines.length
-    const wengineIds = wengines
-      .filter(
-        filterFunction(
-          {
-            speciality,
-            rarity,
-            name: deferredSearchTerm,
-            locked,
-            showInventory,
-            showEquipped,
-            locations,
-          },
-          wengineFilterConfigs()
+  const allWegines = useDataManagerValues(database.wengines)
+  const totalWengineNum = allWegines.length
+  const wengineIds = useMemo(
+    () =>
+      allWegines
+        .filter(
+          filterFunction(
+            {
+              speciality,
+              rarity,
+              name: deferredSearchTerm,
+              locked,
+              showInventory,
+              showEquipped,
+              locations,
+            },
+            wengineFilterConfigs()
+          )
         )
-      )
-      .sort(
-        sortFunction(
-          wengineSortMap[sortType as WengineSortKey] ?? [],
-          ascending,
-          wengineSortConfigs()
+        .sort(
+          sortFunction(
+            wengineSortMap[sortType as WengineSortKey] ?? [],
+            ascending,
+            wengineSortConfigs()
+          )
         )
-      )
-      .map((key) => key.id)
-    return dbDirty && { wengineIds, totalWengineNum }
-  }, [
-    database.wengines.values,
-    speciality,
-    rarity,
-    deferredSearchTerm,
-    locked,
-    showInventory,
-    showEquipped,
-    locations,
-    sortType,
-    ascending,
-    dbDirty,
-  ])
+        .map((key) => key.id),
+    [
+      allWegines,
+      speciality,
+      rarity,
+      deferredSearchTerm,
+      locked,
+      showInventory,
+      showEquipped,
+      locations,
+      sortType,
+      ascending,
+    ]
+  )
 
   const brPt = useMediaQueryUp()
 
@@ -144,13 +137,10 @@ export default function PageWengine() {
     [database]
   )
 
-  const { editWengineId } = state
+  const { editWengineId } = displayWengine
 
   // Validate wengineId to be an actual wengine
-  useEffect(() => {
-    if (!editWengineId) return
-    if (!database.wengines.get(editWengineId)) resetEditWengine()
-  }, [database, editWengineId, resetEditWengine])
+  if (!database.wengines.get(editWengineId)) resetEditWengine()
 
   // Pagination
   const totalShowing =

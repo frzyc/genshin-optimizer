@@ -3,6 +3,7 @@ import {
   CardThemed,
   ModalWrapper,
   NextImage,
+  usePrev,
 } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
@@ -133,7 +134,7 @@ function useDiscValidation(discFromProp: Partial<ICachedDisc>) {
     validatedDisc: undefined,
     errors: [],
   })
-  useEffect(() => setDisc(discFromProp), [discFromProp])
+  if (usePrev(discFromProp) !== discFromProp) setDisc(discFromProp)
 
   return { disc, validatedDisc, errors, setDisc }
 }

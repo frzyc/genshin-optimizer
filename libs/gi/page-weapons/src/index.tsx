@@ -1,7 +1,8 @@
 import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+  useDataEntryBase,
+  useDataManagerValues,
+} from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
@@ -48,22 +49,12 @@ const sortKeys = Object.keys(weaponSortMap)
 export default function PageWeapon() {
   const { t } = useTranslation(['page_weapon', 'ui', 'weaponNames_gen'])
   const database = useDatabase()
-  const [state, setState] = useState(database.displayWeapon.get())
-  useEffect(
-    () => database.displayWeapon.follow((r, dbMeta) => setState(dbMeta)),
-    [database]
-  )
+  const displayWeapon = useDataEntryBase(database.displayWeapon)
 
   const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  //set follow, should run only once
   useEffect(() => {
     ReactGA.send({ hitType: 'pageview', page: '/weapon' })
-    return database.weapons.followAny(
-      (k, r) =>
-        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
-    )
-  }, [forceUpdate, database])
+  }, [])
 
   const brPt = useMediaQueryUp()
 
@@ -75,10 +66,10 @@ export default function PageWeapon() {
 
       if (!window.confirm(t('removeWeapon', { value: name }))) return
       database.weapons.remove(key)
-      if (state.editWeaponId === key)
+      if (displayWeapon.editWeaponId === key)
         database.displayWeapon.set({ editWeaponId: '' })
     },
-    [state.editWeaponId, database, t]
+    [displayWeapon.editWeaponId, database, t]
   )
 
   const editWeapon = useCallback(
@@ -107,48 +98,48 @@ export default function PageWeapon() {
     showEquipped,
     showInventory,
     locations,
-  } = state
+  } = displayWeapon
 
-  const { weaponIds, totalWeaponNum } = useMemo(() => {
-    const weapons = database.weapons.values
-    const totalWeaponNum = weapons.length
-    const weaponIds = weapons
-      .filter(
-        filterFunction(
-          {
-            weaponType,
-            rarity,
-            name: deferredSearchTerm,
-            locked,
-            showInventory,
-            showEquipped,
-            locations,
-          },
-          weaponFilterConfigs()
+  const weapons = useDataManagerValues(database.weapons)
+  const totalWeaponNum = weapons.length
+  const weaponIds = useMemo(
+    () =>
+      weapons
+        .filter(
+          filterFunction(
+            {
+              weaponType,
+              rarity,
+              name: deferredSearchTerm,
+              locked,
+              showInventory,
+              showEquipped,
+              locations,
+            },
+            weaponFilterConfigs()
+          )
         )
-      )
-      .sort(
-        sortFunction(
-          weaponSortMap[sortType] ?? [],
-          ascending,
-          weaponSortConfigs()
+        .sort(
+          sortFunction(
+            weaponSortMap[sortType] ?? [],
+            ascending,
+            weaponSortConfigs()
+          )
         )
-      )
-      .map((weapon) => weapon.id)
-    return dbDirty && { weaponIds, totalWeaponNum }
-  }, [
-    dbDirty,
-    database,
-    sortType,
-    ascending,
-    rarity,
-    weaponType,
-    locked,
-    showInventory,
-    showEquipped,
-    locations,
-    deferredSearchTerm,
-  ])
+        .map((weapon) => weapon.id),
+    [
+      weapons,
+      weaponType,
+      rarity,
+      deferredSearchTerm,
+      locked,
+      showInventory,
+      showEquipped,
+      locations,
+      sortType,
+      ascending,
+    ]
+  )
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
@@ -170,13 +161,9 @@ export default function PageWeapon() {
     [database]
   )
 
-  const { editWeaponId } = state
-
+  const { editWeaponId } = displayWeapon
   // Validate weaponId to be an actual weapon
-  useEffect(() => {
-    if (!editWeaponId) return
-    if (!database.weapons.get(editWeaponId)) resetEditWeapon()
-  }, [database, editWeaponId, resetEditWeapon])
+  if (!database.weapons.get(editWeaponId)) resetEditWeapon()
 
   const showingTextProps = {
     numShowing: weaponIdsToShow.length,

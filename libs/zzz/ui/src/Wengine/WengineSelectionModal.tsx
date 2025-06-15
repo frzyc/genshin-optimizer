@@ -1,4 +1,5 @@
 'use client'
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   ImgIcon,
@@ -56,11 +57,7 @@ export function WengineSelectionModal({
   )
 
   const { database } = useDatabaseContext()
-  const [state, setState] = useState(database.displayWengine.get())
-  useEffect(
-    () => database.displayWengine.follow((_, dbMeta) => setState(dbMeta)),
-    [database]
-  )
+  const displayWengine = useDataEntryBase(database.displayWengine)
 
   useEffect(() => {
     wengineTypeFilter && setWenginefilter([wengineTypeFilter])
@@ -69,7 +66,7 @@ export function WengineSelectionModal({
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
-  const { rarity } = state
+  const { rarity } = displayWengine
   const wengineIdList = useMemo(
     () =>
       allWengineKeys

@@ -1,4 +1,4 @@
-import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { Tally } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
@@ -82,17 +82,17 @@ function SettingsChip() {
 
 function DiscsTab() {
   const { database } = useDatabaseContext()
-  return <Tally>{useDatabaseTally(database.discs)}</Tally>
+  return <Tally>{useDataManagerKeys(database.discs).length}</Tally>
 }
 
 function WengineTab() {
   const { database } = useDatabaseContext()
-  return <Tally>{useDatabaseTally(database.wengines)}</Tally>
+  return <Tally>{useDataManagerKeys(database.wengines).length}</Tally>
 }
 
 function CharactersTab() {
   const { database } = useDatabaseContext()
-  return <Tally>{useDatabaseTally(database.chars)}</Tally>
+  return <Tally>{useDataManagerKeys(database.chars).length}</Tally>
 }
 
 export default function Header({ anchor }: { anchor: string }) {
