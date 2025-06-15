@@ -82,7 +82,9 @@ function StatLine({ read }: { read: Read<Tag> }) {
       ? `${tag.attribute}_${tag.q}`
       : tag.q === 'cappedCrit_'
         ? 'crit_'
-        : tag.q
+        : tag.q === 'anom_cappedCrit_'
+          ? 'anom_crit_'
+          : tag.q
   const isHL = tagQStatKqy
     ? isHighlight(statHighlight, tagQStatKqy as StatKey)
     : false

@@ -17,6 +17,7 @@ const data: TagMapNodeEntries = [
   ownBuff.formula.sheerDmg.add(own.dmg.sheer_mult_),
 
   ownBuff.formula.anomalyDmg.add(own.formula.base),
+  ownBuff.formula.anomalyDmg.add(own.dmg.anomaly_crit_mult_),
   // Reread to flatten the formula
   ownBuff.formula.anomalyDmg.reread(own.dmg.shared),
   ownBuff.formula.anomalyDmg.add(own.dmg.def_mult_),
