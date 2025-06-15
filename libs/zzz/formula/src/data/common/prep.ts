@@ -4,7 +4,7 @@ import { own, ownBuff, percent } from '../util'
 
 const data: TagMapNodeEntries = [
   // Formula calculations
-  ownBuff.formula.standardDmg.add(own.formula.base),
+  ownBuff.formula.standardDmg.add(sum(own.formula.base, own.final.flat_dmg)),
   ownBuff.formula.standardDmg.add(own.dmg.crit_mult_),
   // Reread to flatten the formula
   ownBuff.formula.standardDmg.reread(ownBuff.dmg.shared),
@@ -28,8 +28,6 @@ const data: TagMapNodeEntries = [
   ownBuff.formula.shield.add(
     prod(own.formula.base, sum(percent(1), own.final.shield_))
   ),
-  // ownBuff.formula.heal.add(
-  //   prod(own.formula.base, sum(percent(1), own.final.heal_))
-  // ),
+  ownBuff.formula.heal.add(own.formula.base),
 ]
 export default data
