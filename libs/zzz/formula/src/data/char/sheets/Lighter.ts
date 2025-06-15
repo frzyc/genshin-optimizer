@@ -64,7 +64,7 @@ const ability_ice_fire_dmg_check = cmpGE(
     )
   )
 )
-const m6_finishing_move_dmg_ = ownBuff.combat.common_dmg_.add(
+const m1_finishing_move_dmg_ = ownBuff.combat.common_dmg_.add(
   cmpGE(char.mindscape, 1, percent(dm.m1.final_hit_dmg_))
 )
 
@@ -122,7 +122,7 @@ const sheet = register(
       { ...baseTag, damageType1: 'basic' },
       'atk',
       undefined,
-      m6_finishing_move_dmg_
+      m1_finishing_move_dmg_
     )
   ),
 
@@ -195,6 +195,13 @@ const sheet = register(
     )
   ),
   registerBuff(
+    'm1_finishing_move_dmg_',
+    m1_finishing_move_dmg_,
+    undefined,
+    undefined,
+    false
+  ),
+  registerBuff(
     'm2_stun_',
     enemyDebuff.common.stun_.add(
       cmpGE(char.mindscape, 2, collapse.ifOn(percent(dm.m2.stun_)))
@@ -207,13 +214,6 @@ const sheet = register(
     ),
     undefined,
     true
-  ),
-  registerBuff(
-    'm6_finishing_move_dmg_',
-    m6_finishing_move_dmg_,
-    undefined,
-    undefined,
-    false
   )
 )
 export default sheet

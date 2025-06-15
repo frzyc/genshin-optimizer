@@ -35315,6 +35315,17 @@ export const buffs = {
         name: 'm1_fire_resRed_',
       },
     },
+    m1_finishing_move_dmg_: {
+      sheet: 'Lighter',
+      name: 'm1_finishing_move_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'common_dmg_',
+        sheet: 'Lighter',
+        name: 'm1_finishing_move_dmg_',
+      },
+    },
     m2_stun_: {
       sheet: 'Lighter',
       name: 'm2_stun_',
@@ -35335,17 +35346,6 @@ export const buffs = {
         q: 'enerRegen_',
         sheet: 'Lighter',
         name: 'm4_enerRegen_',
-      },
-    },
-    m6_finishing_move_dmg_: {
-      sheet: 'Lighter',
-      name: 'm6_finishing_move_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'Lighter',
-        name: 'm6_finishing_move_dmg_',
       },
     },
   },

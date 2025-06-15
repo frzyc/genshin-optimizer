@@ -58,6 +58,15 @@ const sheet = createBaseSheet(key, {
         ],
       },
     },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ch('m1_finishing_move_dmg_'),
+          fieldRef: buff.m1_finishing_move_dmg_.tag,
+        },
+      ],
+    },
   ],
   m2: [
     {
