@@ -1,14 +1,14 @@
 import {
   CardThemed,
   NumberInputLazy,
-  useIsMount,
+  usePrev,
 } from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { Box, Slider } from '@mui/material'
-import { useContext, useDeferredValue, useEffect, useState } from 'react'
+import { useContext, useDeferredValue, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BuildTcContext } from '../../../../BuildTcContext'
 
@@ -44,9 +44,7 @@ export function ArtifactAllSubstatEditor({
   const [rolls] = rollsData
   const [maxSubstat] = maxSubstatData
   const rollsDeferred = useDeferredValue(rollsData)
-  const isMount = useIsMount()
-  useEffect(() => {
-    if (isMount) return
+  if (usePrev(rollsDeferred) !== rollsDeferred) {
     setBuildTc((buildTc) => {
       const {
         artifact: {
@@ -67,22 +65,17 @@ export function ArtifactAllSubstatEditor({
         return newVal
       })
     })
-    // disable triggering for isMount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rollsDeferred])
+  }
 
   const maxSubstatDeferred = useDeferredValue(maxSubstatData)
-  useEffect(() => {
-    if (isMount) return
+  if (usePrev(maxSubstatDeferred) !== maxSubstatDeferred) {
     setBuildTc((charTC) => {
       charTC.optimization.maxSubstats = objMap(
         charTC.optimization.maxSubstats,
         (_val, _statKey) => maxSubstatDeferred[0]
       )
     })
-    // disable triggering for isMount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [maxSubstatDeferred])
+  }
 
   const maxRollsPerSub =
     (artSubstatRollData[buildTc.artifact.substats.rarity].numUpgrades + 1) * 5

@@ -95,9 +95,7 @@ export function EquippedGrid({
           )}
         </Suspense>
         <Box>
-          {wengine &&
-          wengine.id &&
-          database.wengines.keys.includes(wengine.id) ? (
+          {wengine?.id ? (
             <WengineCard
               wengineId={wengine.id}
               onEdit={() => onEditWengine(wengine.id)}
@@ -122,7 +120,7 @@ export function EquippedGrid({
             {!!discs &&
               Object.entries(discs).map(([slotKey, disc]) => (
                 <Grid item xs={1} key={disc?.id || slotKey}>
-                  {disc?.id && database.discs.keys.includes(disc.id) ? (
+                  {disc?.id ? (
                     <DiscCard
                       disc={disc}
                       extraButtons={

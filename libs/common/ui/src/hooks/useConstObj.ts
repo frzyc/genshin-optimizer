@@ -1,5 +1,6 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useRef } from 'react'
+import { usePrev } from './usePrev'
 
 /**
  * Will "retain" the reference to the same object,
@@ -10,10 +11,11 @@ import { useEffect, useState } from 'react'
  * remains the same(even if the reference is different).
  */
 export function useConstObj<T extends object | undefined>(objInput: T) {
-  const [obj, setobj] = useState(objInput)
-  const objStr = JSON.stringify(obj)
-  useEffect(() => {
-    if (JSON.stringify(objInput) !== objStr) setobj(objInput)
-  }, [objInput, objStr])
-  return obj
+  const ref = useRef(objInput)
+  if (
+    usePrev(objInput) !== objInput &&
+    JSON.stringify(ref.current) !== JSON.stringify(objInput)
+  )
+    ref.current = objInput
+  return ref.current
 }

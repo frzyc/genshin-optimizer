@@ -4,6 +4,7 @@ import {
   InfoTooltip,
   ModalWrapper,
   TextFieldLazy,
+  usePrev,
 } from '@genshin-optimizer/common/ui'
 import { arrayMove, clamp, deepClone } from '@genshin-optimizer/common/util'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
@@ -27,7 +28,7 @@ import {
   IconButton,
   Typography,
 } from '@mui/material'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelectorModal'
 import CustomTargetDisplay from './CustomTargetDisplay'
@@ -46,11 +47,11 @@ export default function CustomMultiTargetCard({
 }) {
   const { t } = useTranslation('page_character')
   const [target, setTarget] = useState(structuredClone(targetProp))
-  useEffect(() => {
-    if (JSON.stringify(targetProp) !== JSON.stringify(target))
-      setTarget(structuredClone(targetProp))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [targetProp])
+  if (
+    usePrev(targetProp) !== targetProp &&
+    JSON.stringify(targetProp) !== JSON.stringify(target)
+  )
+    setTarget(structuredClone(targetProp))
 
   const { name, description } = target
   const [show, onShow, onHide] = useBoolState()

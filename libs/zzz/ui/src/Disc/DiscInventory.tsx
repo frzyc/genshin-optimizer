@@ -1,7 +1,5 @@
-import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import {
@@ -19,7 +17,7 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import { Suspense, useDeferredValue, useEffect, useMemo } from 'react'
+import { Suspense, useDeferredValue, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DiscCard } from './DiscCard'
 import DiscFilter from './DiscFilter'
@@ -40,34 +38,19 @@ export function DiscInventory({
 }: DiscInventoryProps) {
   const { t } = useTranslation('disc')
   const { database } = useDatabaseContext()
-  const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
-  const dbDirtyDeferred = useDeferredValue(dirtyDatabase)
   const discDisplayState = useDisplayDisc()
   const filterConfigs = useMemo(() => discFilterConfigs(), [])
   const deferredDiscDisplayState = useDeferredValue(discDisplayState)
-
-  useEffect(
-    () => database.discs.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
+  const allDiscs = useDataManagerValues(database.discs)
+  const totalDiscsNum = allDiscs.length
+  const { filterOption } = deferredDiscDisplayState
+  const discIds = useMemo(
+    () =>
+      allDiscs
+        .filter(filterFunction(filterOption, filterConfigs))
+        .map((disc) => disc.id),
+    [allDiscs, filterOption, filterConfigs]
   )
-
-  const { discIds, totalDiscsNum } = useMemo(() => {
-    const { filterOption } = deferredDiscDisplayState
-    const allDiscs = database.discs.values
-    const allDiscids = allDiscs
-      .filter(filterFunction(filterOption, filterConfigs))
-      .map((disc) => disc.id)
-    return {
-      discIds: allDiscids,
-      totalDiscsNum: allDiscs.length,
-      ...dbDirtyDeferred,
-    } //use dbDirty to shoo away warnings!
-  }, [
-    database.discs.values,
-    dbDirtyDeferred,
-    deferredDiscDisplayState,
-    filterConfigs,
-  ])
 
   const brPt = useMediaQueryUp()
   const totalShowing =

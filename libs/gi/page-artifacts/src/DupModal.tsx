@@ -1,4 +1,4 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { ArtifactCard } from '@genshin-optimizer/gi/ui'
@@ -14,7 +14,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 export default function DupModal({
   setArtifactIdToEdit,
@@ -62,12 +62,10 @@ function DupContent({
 }) {
   const { t } = useTranslation('artifact')
   const database = useDatabase()
-  const [dbDirty, setDBDirty] = useForceUpdate()
-  useEffect(() => database.arts.followAny(setDBDirty), [setDBDirty, database])
-
+  const artValuesDirty = useDataManagerValues(database.arts)
   const dupList = useMemo(() => {
-    const dups = dbDirty && ([] as Array<Array<string>>)
-    let artKeys = database.arts.keys
+    const dups = [] as Array<Array<string>>
+    let artKeys = artValuesDirty && [...database.arts.keys]
 
     while (artKeys.length !== 0) {
       const artKey = artKeys.shift()
@@ -86,7 +84,7 @@ function DupContent({
       artKeys = artKeys.filter((id) => !dupKeys.includes(id))
     }
     return dups
-  }, [database, dbDirty])
+  }, [database.arts, artValuesDirty])
   return (
     <Stack spacing={2}>
       {dupList.map((dups) => (

@@ -1,5 +1,5 @@
 'use client'
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
 import type {
   GeneralAutocompleteMultiProps,
   GeneralAutocompleteOption,
@@ -11,7 +11,7 @@ import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import { Chip, Skeleton } from '@mui/material'
-import { Suspense, useCallback, useContext, useEffect, useMemo } from 'react'
+import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SillyContext } from '../../context'
 import { CharIconSide } from './CharIconSideElement'
@@ -58,19 +58,7 @@ export function CharacterMultiAutocomplete({
 
   const toVariant = getCharEle
 
-  const [dbDirty, setDirty] = useForceUpdate()
-  useEffect(
-    () =>
-      database.chars.followAny(
-        (_, r) => ['new', 'remove'].includes(r) && setDirty()
-      ),
-    [database.chars, setDirty]
-  )
-
-  const allCharKeys = useMemo(
-    () => dbDirty && database.chars.keys,
-    [database, dbDirty]
-  )
+  const allCharKeys = useDataManagerKeys(database.chars)
 
   const { characterTeamTotal } = useMemo(() => {
     const catKeys = {

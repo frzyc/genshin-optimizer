@@ -1,7 +1,5 @@
-import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ImgIcon,
@@ -45,7 +43,6 @@ import {
   Suspense,
   useCallback,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -93,18 +90,13 @@ export function WeaponSwapModal({
   )
   const resetEditWeapon = useCallback(() => setEditWeaponId(''), [])
 
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(
-    () => database.weapons.followAny(forceUpdate),
-    [forceUpdate, database]
-  )
-
   const brPt = useMediaQueryUp()
 
   const [rarity, setRarity] = useState<RarityKey[]>([5, 4, 3])
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
+  const allWeapons = useDataManagerValues(database.weapons)
   const weaponIds = useMemo(() => {
     const filterFunc = filterFunction(
       { weaponType: weaponTypeKey, rarity, name: deferredSearchTerm },
@@ -115,7 +107,7 @@ export function WeaponSwapModal({
       false,
       weaponSortConfigs()
     )
-    let weaponIds = database.weapons.values
+    let weaponIds = allWeapons
       .filter(filterFunc)
       .sort(sortFunc)
       .map((weapon) => weapon.id)
@@ -124,14 +116,14 @@ export function WeaponSwapModal({
       weaponIds = weaponIds.filter((id) => id !== weaponId) // remove
       weaponIds.unshift(weaponId) // add to beginnig
     }
-    return dbDirty && weaponIds
+    return weaponIds
   }, [
     weaponTypeKey,
     rarity,
     deferredSearchTerm,
-    database.weapons,
+    allWeapons,
     weaponId,
-    dbDirty,
+    database.weapons,
   ])
 
   const { numShow, setTriggerElement } = useInfScroll(

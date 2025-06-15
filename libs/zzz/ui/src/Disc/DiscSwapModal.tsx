@@ -1,7 +1,5 @@
-import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
@@ -74,11 +72,6 @@ export function DiscSwapModal({
     slotKeys: [slotKey],
   })
 
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(() => {
-    return database.discs.followAny(forceUpdate)
-  }, [database, forceUpdate])
-
   const brPt = useMediaQueryUp()
 
   const filterConfigs = useMemo(() => discFilterConfigs(), [])
@@ -86,18 +79,17 @@ export function DiscSwapModal({
     (s) => s.slotKey === filterOption.slotKeys[0]
   ).length
 
+  const allDiscs = useDataManagerValues(database.discs)
   const discsIds = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
-    let discsIds = database.discs.values
-      .filter(filterFunc)
-      .map((disc) => disc.id)
+    let discsIds = allDiscs.filter(filterFunc).map((disc) => disc.id)
     if (discId && database.discs.get(discId)) {
       // always show discId first if it exists
       discsIds = discsIds.filter((id) => id !== discId) // remove
       discsIds.unshift(discId) // add to beginnig
     }
-    return dbDirty && discsIds
-  }, [filterOption, filterConfigs, database.discs, discId, dbDirty])
+    return discsIds
+  }, [filterOption, filterConfigs, allDiscs, discId, database.discs])
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],

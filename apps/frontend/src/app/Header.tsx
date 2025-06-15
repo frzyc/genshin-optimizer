@@ -1,4 +1,4 @@
-import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { Tally } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
@@ -110,19 +110,19 @@ function DBChip() {
 
 function ArtifactChip() {
   const database = useDatabase()
-  return <Tally>{useDatabaseTally(database.arts)}</Tally>
+  return <Tally>{useDataManagerKeys(database.arts).length}</Tally>
 }
 function CharacterChip() {
   const database = useDatabase()
-  return <Tally>{useDatabaseTally(database.chars)}</Tally>
+  return <Tally>{useDataManagerKeys(database.chars).length}</Tally>
 }
 function TeamChip() {
   const database = useDatabase()
-  return <Tally>{useDatabaseTally(database.teams)}</Tally>
+  return <Tally>{useDataManagerKeys(database.teams).length}</Tally>
 }
 function WeaponChip() {
   const database = useDatabase()
-  return <Tally>{useDatabaseTally(database.weapons)}</Tally>
+  return <Tally>{useDataManagerKeys(database.weapons).length}</Tally>
 }
 
 export default function Header({ anchor }: { anchor: string }) {

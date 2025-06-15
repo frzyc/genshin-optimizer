@@ -1,5 +1,4 @@
 'use client'
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { notEmpty, objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import type {
@@ -9,7 +8,11 @@ import type {
   ICachedWeapon,
 } from '@genshin-optimizer/gi/db'
 import { defaultInitialWeapon } from '@genshin-optimizer/gi/db'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  useCharacter,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
   allArtifactData,
@@ -28,7 +31,7 @@ import {
   dataObjForWeapon,
   mergeData,
 } from '@genshin-optimizer/gi/wr'
-import { useDeferredValue, useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import type { TeamData } from '../type/TeamData'
 
 type TeamDataBundle = {
@@ -46,12 +49,11 @@ export function useCharData(
   overrideWeapon?: ICachedWeapon
 ): TeamData | undefined {
   const database = useDatabase()
-  const [dbDirty, setDbDirty] = useForceUpdate()
-  const dbDirtyDeferred = useDeferredValue(dbDirty)
   const { gender } = useDBMeta()
+  const charDirty = useCharacter(characterKey as CharacterKey)
   const data = useMemo(
     () =>
-      dbDirtyDeferred &&
+      charDirty &&
       getTeamDataCalc(
         database,
         characterKey,
@@ -61,7 +63,7 @@ export function useCharData(
         overrideWeapon
       ),
     [
-      dbDirtyDeferred,
+      charDirty,
       gender,
       characterKey,
       database,
@@ -70,15 +72,6 @@ export function useCharData(
       overrideWeapon,
     ]
   )
-
-  useEffect(
-    () =>
-      characterKey
-        ? database.chars.follow(characterKey, setDbDirty)
-        : undefined,
-    [characterKey, setDbDirty, database]
-  )
-
   return data
 }
 class CharCalcCache {
@@ -124,7 +117,7 @@ function getTeamDataCalc(
     if (cache) return cache as TeamData
   }
   const { teamData, teamBundle } =
-    TeamDataBundle(
+    getTeamDataBundle(
       database,
       characterKey,
       mainStatAssumptionLevel,
@@ -146,7 +139,7 @@ function getTeamDataCalc(
 /**
  * This is now used more for getting basic stat for a single char with some basic assumptions
  */
-function TeamDataBundle(
+function getTeamDataBundle(
   database: ArtCharDatabase,
   characterKey: CharacterKey | '',
   mainStatAssumptionLevel = 0,
@@ -158,7 +151,7 @@ function TeamDataBundle(
   if (!character) return undefined
 
   const char1DataBundle = getCharDataBundle(
-    database,
+    database.gender,
     true,
     mainStatAssumptionLevel,
     character,
@@ -188,14 +181,14 @@ type CharBundle = {
 }
 
 function getCharDataBundle(
-  database: ArtCharDatabase,
+  gender: GenderKey,
   useCustom = false,
   mainStatAssumptionLevel: number,
   character: ICachedCharacter,
   weapon: ICachedWeapon,
   artifacts: (ICachedArtifact | undefined)[] | Data
 ): CharBundle | undefined {
-  const characterSheet = getCharSheet(character.key, database.gender)
+  const characterSheet = getCharSheet(character.key, gender)
   if (!characterSheet) return undefined
   const weaponSheet = getWeaponSheet(weapon.key)
   if (!weaponSheet) return undefined

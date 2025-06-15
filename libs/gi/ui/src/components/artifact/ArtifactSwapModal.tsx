@@ -1,6 +1,6 @@
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import {
   useBoolState,
-  useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import {
@@ -36,14 +36,7 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import {
-  Suspense,
-  useCallback,
-  useEffect,
-  useMemo,
-  useReducer,
-  useState,
-} from 'react'
+import { Suspense, useCallback, useMemo, useReducer, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CompareBuildWrapper } from '../build/CompareBuildWrapper'
 import { ArtifactCard } from './ArtifactCard'
@@ -86,11 +79,6 @@ export function ArtifactSwapModal({
     slotKeys: [slotKey],
   })
 
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(() => {
-    return database.arts.followAny(forceUpdate)
-  }, [database, forceUpdate])
-
   const brPt = useMediaQueryUp()
 
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
@@ -98,18 +86,17 @@ export function ArtifactSwapModal({
     (s) => s.slotKey === filterOption.slotKeys[0]
   ).length
 
+  const allArts = useDataManagerValues(database.arts)
   const artifactIds = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
-    let artifactIds = database.arts.values
-      .filter(filterFunc)
-      .map((art) => art.id)
-    if (artId && database.arts.get(artId)) {
+    let artifactIds = allArts.filter(filterFunc).map((art) => art.id)
+    if (database.arts.get(artId)) {
       // always show artId first if it exists
       artifactIds = artifactIds.filter((id) => id !== artId) // remove
-      artifactIds.unshift(artId) // add to beginnig
+      artifactIds.unshift(artId) // add to beginning
     }
-    return dbDirty && artifactIds
-  }, [filterOption, filterConfigs, database, artId, dbDirty])
+    return artifactIds
+  }, [filterOption, filterConfigs, allArts, artId, database.arts])
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],

@@ -62,10 +62,6 @@ export class DataEntryBase<
       | ((v: StorageValue) => Partial<StorageValue> | void)
   ): boolean {
     const old = this.getStorage()
-    if (typeof valueOrFunc === 'function' && !old) {
-      this.trigger('invalid', valueOrFunc)
-      return false
-    }
     const value =
       typeof valueOrFunc === 'function'
         ? (valueOrFunc(old) ?? old)
@@ -80,7 +76,6 @@ export class DataEntryBase<
       this.trigger('invalid', value)
       return false
     }
-    if (!old) this.trigger('new', cached)
     this.setCached(cached)
     return true
   }

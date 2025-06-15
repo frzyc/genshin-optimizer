@@ -50,7 +50,7 @@ import {
   CharacterSingleSelectionModal,
 } from '@genshin-optimizer/zzz/ui'
 import { Box, Button } from '@mui/material'
-import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
+import { Suspense, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { OptTargetRow } from './OptTargetRow'
@@ -68,13 +68,9 @@ export default function PageOptimize() {
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
   const character = useCharacter(characterKey)
-  useEffect(() => {
-    if (characterKey && !character) database.chars.getOrCreate(characterKey)
-  }, [characterKey, character, database.chars])
+  if (characterKey && !character) database.chars.getOrCreate(characterKey)
   const charOpt = useCharOpt(characterKey)
-  useEffect(() => {
-    if (characterKey && !charOpt) database.charOpts.getOrCreate(characterKey)
-  }, [characterKey, charOpt, database.charOpts])
+  if (characterKey && !charOpt) database.charOpts.getOrCreate(characterKey)
   useTitle(
     useMemo(() => {
       const charName = characterKey && t(`charNames_gen:${characterKey}`)

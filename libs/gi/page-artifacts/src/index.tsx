@@ -1,6 +1,6 @@
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import {
   useBoolState,
-  useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import {
@@ -17,6 +17,7 @@ import {
   ArtifactEditor,
   InfoComponent,
 } from '@genshin-optimizer/gi/ui'
+import type { ArtifactSortKey } from '@genshin-optimizer/gi/util'
 import {
   artifactFilterConfigs,
   artifactSortConfigs,
@@ -49,8 +50,6 @@ export default function PageArtifact() {
 
   const { sortType, effFilter, ascending } = artifactDisplayState
 
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  const dbDirtyDeferred = useDeferredValue(dbDirty)
   const effFilterSet = useMemo(
     () => new Set(effFilter),
     [effFilter]
@@ -58,8 +57,7 @@ export default function PageArtifact() {
 
   useEffect(() => {
     ReactGA.send({ hitType: 'pageview', page: '/artifact' })
-    return database.arts.followAny(() => forceUpdate())
-  }, [database, forceUpdate])
+  }, [])
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
   const sortConfigs = useMemo(
@@ -71,41 +69,35 @@ export default function PageArtifact() {
     [effFilterSet]
   )
   const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState)
+  const allArts = useDataManagerValues(database.arts)
+  const totalArtNum = allArts.length
 
-  const { artifactIds, totalArtNum } = useMemo(() => {
+  const filteredArtIds = useMemo(() => {
     const {
       sortType = artifactSortKeys[0],
       ascending = false,
       filterOption,
     } = deferredArtifactDisplayState
-    const allArtifacts = database.arts.values
-    const artifactIds = allArtifacts
+    return allArts
       .filter(filterFunction(filterOption, filterConfigs))
       .sort(
         sortFunction(artifactSortMap[sortType] ?? [], ascending, sortConfigs)
       )
       .map((art) => art.id)
-    return { artifactIds, totalArtNum: allArtifacts.length, ...dbDirtyDeferred } //use dbDirty to shoo away warnings!
-  }, [
-    deferredArtifactDisplayState,
-    dbDirtyDeferred,
-    database,
-    sortConfigs,
-    filterConfigs,
-  ])
+  }, [deferredArtifactDisplayState, allArts, filterConfigs, sortConfigs])
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    artifactIds.length
+    filteredArtIds.length
   )
   const artifactIdsToShow = useMemo(
-    () => artifactIds.slice(0, numShow),
-    [artifactIds, numShow]
+    () => filteredArtIds.slice(0, numShow),
+    [filteredArtIds, numShow]
   )
   //for pagination
   const totalShowing =
-    artifactIds.length !== totalArtNum
-      ? `${artifactIds.length}/${totalArtNum}`
+    filteredArtIds.length !== totalArtNum
+      ? `${filteredArtIds.length}/${totalArtNum}`
       : `${totalArtNum}`
   const showingTextProps = {
     numShowing: artifactIdsToShow.length,
@@ -116,9 +108,11 @@ export default function PageArtifact() {
   const sortByButtonProps = {
     sortKeys: [...artifactSortKeys],
     value: sortType,
-    onChange: (sortType) => database.displayArtifact.set({ sortType }),
+    onChange: (sortType: ArtifactSortKey) =>
+      database.displayArtifact.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayArtifact.set({ ascending }),
+    onChangeAsc: (ascending: boolean) =>
+      database.displayArtifact.set({ ascending }),
   }
   return (
     <Box display="flex" flexDirection="column" gap={1}>
@@ -148,9 +142,9 @@ export default function PageArtifact() {
       {noArtifact && <AddArtInfo />}
 
       <ArtifactFilter
-        numShowing={artifactIds.length}
+        numShowing={filteredArtIds.length}
         total={totalArtNum}
-        artifactIds={artifactIds}
+        artifactIds={filteredArtIds}
       />
       <CardThemed>
         <CardContent>
@@ -166,7 +160,7 @@ export default function PageArtifact() {
               sortByButtonProps={sortByButtonProps}
             />
           </Box>
-          <ArtifactRedButtons artifactIds={artifactIds} />
+          <ArtifactRedButtons artifactIds={filteredArtIds} />
         </CardContent>
       </CardThemed>
       <Grid container columns={columns} spacing={1}>
@@ -217,7 +211,7 @@ export default function PageArtifact() {
             </Grid>
           ))}
         </Grid>
-        {artifactIds.length !== artifactIdsToShow.length && (
+        {filteredArtIds.length !== artifactIdsToShow.length && (
           <Skeleton
             ref={(node) => {
               if (!node) return

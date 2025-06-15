@@ -3,8 +3,7 @@ import type {
   DataManagerBase,
   Database,
 } from '@genshin-optimizer/common/database'
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { useEffect, useMemo } from 'react'
+import { useCallback, useSyncExternalStore } from 'react'
 
 /**
  * Ensures data will change when key changes(without needing to wait another render)
@@ -17,11 +16,11 @@ export function useDataManagerBase<
   D,
   E extends Database,
 >(manager: DataManagerBase<A, B, C, D, E>, key: A) {
-  const [dbDirty, setDBDirty] = useForceUpdate()
-  const data = useMemo(
-    () => dbDirty && manager.get(key),
-    [dbDirty, manager, key]
+  return useSyncExternalStore(
+    useCallback(
+      (callback: () => void) => manager.follow(key, callback),
+      [manager, key]
+    ),
+    () => manager.get(key)
   )
-  useEffect(() => manager.follow(key, setDBDirty), [manager, key, setDBDirty])
-  return data
 }

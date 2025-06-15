@@ -1,4 +1,4 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useDataManagerEntries } from '@genshin-optimizer/common/database-ui'
 import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
@@ -20,7 +20,7 @@ import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo } from 'react'
+import { useCallback, useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { BuildEditContext, DataContext, SillyContext } from '../../../context'
@@ -224,10 +224,12 @@ function InTeam() {
   } = useContext(CharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
-  const [dbDirty, setDbDirty] = useForceUpdate()
+  const teamCharEntries = useDataManagerEntries(database.teamChars)
+  const teamEntries = useDataManagerEntries(database.teams)
   const loadoutTeamMap = useMemo(() => {
     const loadoutTeamMap: Record<string, string[]> = {}
-    database.teamChars.entries
+    const tempTeamCharEntries = [...teamCharEntries]
+    tempTeamCharEntries
       .sort((a, b) => {
         const [, ateam] = a
         const [, bteam] = b
@@ -237,7 +239,8 @@ function InTeam() {
         if (teamChar.key !== characterKey) return
         if (!loadoutTeamMap[teamCharId]) loadoutTeamMap[teamCharId] = []
       })
-    database.teams.entries
+    const tempTeamEntries = [...teamEntries]
+    tempTeamEntries
       .sort((a, b) => {
         const [, ateam] = a
         const [, bteam] = b
@@ -253,16 +256,9 @@ function InTeam() {
         if (teamCharIdWithCKey)
           loadoutTeamMap[teamCharIdWithCKey?.teamCharId].push(teamId)
       })
-    return dbDirty && loadoutTeamMap
-  }, [dbDirty, characterKey, database])
-  useEffect(
-    () => database.teams.followAny(() => setDbDirty()),
-    [database, setDbDirty]
-  )
-  useEffect(
-    () => database.teamChars.followAny(() => setDbDirty()),
-    [database, setDbDirty]
-  )
+    return loadoutTeamMap
+  }, [teamCharEntries, teamEntries, characterKey, database.teamChars])
+
   const onAddNewTeam = () => {
     const teamId = database.teams.new()
     const teamCharId = database.teamChars.new(characterKey)

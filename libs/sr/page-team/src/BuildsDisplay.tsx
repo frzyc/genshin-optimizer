@@ -1,7 +1,5 @@
-import {
-  useBoolState,
-  useForceUpdate,
-} from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
@@ -69,28 +67,20 @@ import {
   Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { useTeamContext, useTeammateContext } from './context'
 export function BuildsDisplay({ onClose }: { onClose?: () => void }) {
   const { database } = useDatabaseContext()
   const { characterKey } = useTeammateContext()
-  const [dbDirty, setDbDirty] = useForceUpdate()
-  const [dbTCDirty, setDbTCDirty] = useForceUpdate()
+  const buildsDirty = useDataManagerValues(database.builds)
   const buildIds = useMemo(
-    () => dbDirty && database.builds.getBuildIds(characterKey),
-    [dbDirty, database, characterKey]
+    () => buildsDirty && database.builds.getBuildIds(characterKey),
+    [buildsDirty, database, characterKey]
   )
+  const dbTCDirty = useDataManagerValues(database.buildTcs)
   const buildTcIds = useMemo(
     () => dbTCDirty && database.buildTcs.getBuildTcIds(characterKey),
     [dbTCDirty, database, characterKey]
-  )
-  useEffect(
-    () => database.builds.followAny(setDbDirty),
-    [database.builds, setDbDirty]
-  )
-  useEffect(
-    () => database.buildTcs.followAny(setDbTCDirty),
-    [database.buildTcs, setDbTCDirty]
   )
 
   return (

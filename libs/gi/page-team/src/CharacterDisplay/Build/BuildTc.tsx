@@ -4,6 +4,7 @@ import {
   ImgIcon,
   ModalWrapper,
   SqBadge,
+  TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
@@ -31,16 +32,9 @@ import {
   Divider,
   Grid,
   IconButton,
-  TextField,
   Typography,
 } from '@mui/material'
-import {
-  useContext,
-  useDeferredValue,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function BuildTc({
@@ -80,7 +74,11 @@ export default function BuildTc({
   return (
     <>
       <ModalWrapper open={open} onClose={onClose}>
-        <BuildTcEditor buildTcId={buildTcId} onClose={onClose} />
+        <BuildTcEditor
+          key={buildTcId}
+          buildTcId={buildTcId}
+          onClose={onClose}
+        />
       </ModalWrapper>
       <BuildCard
         name={name}
@@ -245,6 +243,7 @@ function BuildTcEditor({
   buildTcId,
   onClose,
 }: {
+  key: string // remount when id changes
   buildTcId: string
   onClose: () => void
 }) {
@@ -252,35 +251,6 @@ function BuildTcEditor({
   const database = useDatabase()
   const build = useBuildTc(buildTcId)!
 
-  const [name, setName] = useState(build.name)
-  const nameDeferred = useDeferredValue(name)
-  const [desc, setDesc] = useState(build.description)
-  const descDeferred = useDeferredValue(desc)
-
-  // trigger on buildId change, to use the new team's name/desc
-  useEffect(() => {
-    const newBuild = database.buildTcs.get(buildTcId)
-    if (!newBuild) return
-    const { name, description } = newBuild
-    setName(name)
-    setDesc(description)
-  }, [database, buildTcId])
-
-  useEffect(() => {
-    database.buildTcs.set(buildTcId, (build) => {
-      build.name = nameDeferred
-    })
-    // Don't need to trigger when buildId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [database, nameDeferred])
-
-  useEffect(() => {
-    database.buildTcs.set(buildTcId, (build) => {
-      build.description = descDeferred
-    })
-    // Don't need to trigger when buildId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [database, descDeferred])
   return (
     <CardThemed>
       <CardHeader
@@ -293,18 +263,20 @@ function BuildTcEditor({
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        <TextField
+        <TextFieldLazy
           fullWidth
           label={t('buildTcCard.edit.label')}
           placeholder={t('buildTcCard.edit.placeholder')}
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={build.name}
+          onChange={(name) => database.buildTcs.set(buildTcId, { name })}
         />
-        <TextField
+        <TextFieldLazy
           fullWidth
           label={t('buildTcCard.edit.desc')}
-          value={desc}
-          onChange={(e) => setDesc(e.target.value)}
+          value={build.description}
+          onChange={(desc) =>
+            database.buildTcs.set(buildTcId, { description: desc })
+          }
           multiline
           minRows={2}
         />

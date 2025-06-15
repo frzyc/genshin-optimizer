@@ -19,7 +19,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
-import { Suspense, useCallback, useEffect, useState } from 'react'
+import { Suspense, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArtifactCard, ArtifactEditor } from '../artifact'
 import { ArtifactSwapModal } from '../artifact/ArtifactSwapModal'
@@ -53,10 +53,8 @@ export function EquippedGrid({
   const [artifactIdToEdit, setArtifactIdToEdit] = useState<string | undefined>()
 
   //triggers when character swap weapons
-  useEffect(() => {
-    if (weaponId && editorWeaponId && editorWeaponId !== weaponId)
-      setEditorWeaponId(weaponId)
-  }, [editorWeaponId, weaponId])
+  if (weaponId && editorWeaponId && editorWeaponId !== weaponId)
+    setEditorWeaponId(weaponId)
 
   const showWeapon = useCallback(
     () => weaponId && setEditorWeaponId(weaponId),
@@ -88,7 +86,7 @@ export function EquippedGrid({
       </Suspense>
       <Grid item columns={columns} container spacing={1}>
         <Grid item xs={1} display="flex" flexDirection="column">
-          {weaponId && database.weapons.keys.includes(weaponId) ? (
+          {weaponId ? (
             <WeaponCard
               weaponId={weaponId}
               onEdit={showWeapon}
@@ -111,7 +109,7 @@ export function EquippedGrid({
         {!!artifactIds &&
           Object.entries(artifactIds).map(([slotKey, id]) => (
             <Grid item xs={1} key={id || slotKey}>
-              {id && database.arts.keys.includes(id) ? (
+              {id ? (
                 <ArtifactCard
                   artifactId={id}
                   extraButtons={

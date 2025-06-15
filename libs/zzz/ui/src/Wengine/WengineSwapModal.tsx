@@ -1,7 +1,5 @@
-import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ImgIcon,
@@ -90,12 +88,6 @@ export function WengineSwapModal({
   )
   const resetEditWengine = useCallback(() => setEditWengineId(''), [])
 
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(
-    () => database.wengines.followAny(forceUpdate),
-    [forceUpdate, database]
-  )
-
   const brPt = useMediaQueryUp()
 
   const [rarity, setRarity] = useState<Raritykey[]>(['S', 'A', 'B'])
@@ -105,6 +97,7 @@ export function WengineSwapModal({
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
+  const allWengines = useDataManagerValues(database.wengines)
   const wengineIds = useMemo(() => {
     const filterFunc = filterFunction(
       { speciality, rarity, name: deferredSearchTerm },
@@ -115,7 +108,7 @@ export function WengineSwapModal({
       false,
       wengineSortConfigs()
     )
-    let wengineIds = database.wengines.values
+    let wengineIds = allWengines
       .filter(filterFunc)
       .sort(sortFunc)
       .map((wengine) => wengine.id)
@@ -124,14 +117,14 @@ export function WengineSwapModal({
       wengineIds = wengineIds.filter((id) => id !== wengineId) // remove
       wengineIds.unshift(wengineId) // add to beginnig
     }
-    return dbDirty && wengineIds
+    return wengineIds
   }, [
     speciality,
     rarity,
     deferredSearchTerm,
-    database.wengines,
+    allWengines,
     wengineId,
-    dbDirty,
+    database.wengines,
   ])
 
   const { numShow, setTriggerElement } = useInfScroll(

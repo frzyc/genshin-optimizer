@@ -1,4 +1,4 @@
-import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
@@ -141,11 +141,11 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
   const { database } = useDatabaseContext()
   const { optConfigId, optConfig } = useContext(OptConfigContext)
   const { lightConePaths: lcPaths } = optConfig
-  const lightconeDirty = useDataManagerBaseDirty(database.lightCones)
+  const lightCones = useDataManagerValues(database.lightCones)
   const { key: characterKey } = useCharacterContext()!
   const totals = useMemo(() => {
-    return lightconeDirty && optConfig.optLightCone
-      ? database.lightCones.values.reduce(
+    return optConfig.optLightCone
+      ? lightCones.reduce(
           (totals, { key, level, location }) => {
             if (level < optConfig.lcLevelLow || level > optConfig.lcLevelHigh)
               return totals
@@ -165,8 +165,7 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
       : objKeyMap(allPathKeys, () => 0)
   }, [
     characterKey,
-    lightconeDirty,
-    database.lightCones,
+    lightCones,
     optConfig.lcLevelLow,
     optConfig.lcLevelHigh,
     optConfig.optLightCone,

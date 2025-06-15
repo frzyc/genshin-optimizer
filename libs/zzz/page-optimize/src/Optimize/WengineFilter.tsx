@@ -1,4 +1,4 @@
-import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
@@ -161,11 +161,11 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
   const { database } = useDatabaseContext()
   const { optConfigId, optConfig } = useContext(OptConfigContext)
   const { wEngineTypes } = optConfig
-  const wengineDirty = useDataManagerBaseDirty(database.wengines)
+  const wengines = useDataManagerValues(database.wengines)
   const { key: characterKey } = useCharacterContext()!
   const totals = useMemo(() => {
-    return wengineDirty && optConfig.optWengine
-      ? database.wengines.values.reduce(
+    return optConfig.optWengine
+      ? wengines.reduce(
           (totals, { key, level, location }) => {
             if (level < optConfig.wlevelLow || level > optConfig.wlevelHigh)
               return totals
@@ -185,8 +185,7 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
       : objKeyMap(allSpecialityKeys, () => 0)
   }, [
     characterKey,
-    wengineDirty,
-    database.wengines,
+    wengines,
     optConfig.wlevelLow,
     optConfig.wlevelHigh,
     optConfig.optWengine,

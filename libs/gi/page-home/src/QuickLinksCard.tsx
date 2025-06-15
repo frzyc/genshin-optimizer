@@ -126,8 +126,10 @@ export default function QuickLinksCard() {
             >
               {genshin_optimizer_links.map((link) => {
                 const { title, icon, url } = link
+                const titleText = title(t)
                 return (
                   <CardActionArea
+                    key={titleText}
                     component={Link}
                     href={url}
                     target="_blank"
@@ -139,7 +141,7 @@ export default function QuickLinksCard() {
                     }}
                   >
                     {icon}
-                    {title(t)}
+                    {titleText}
                   </CardActionArea>
                 )
               })}

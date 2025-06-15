@@ -22,7 +22,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatDisplay } from '../../Character'
 
@@ -118,6 +118,7 @@ export default function SubstatInput({
         }}
       >
         <SliderWrapper
+          key={upgrades}
           value={upgrades}
           marks={marks}
           setValue={(v) => {
@@ -165,6 +166,7 @@ function SliderWrapper({
   disabled = false,
   valueLabelFormat,
 }: {
+  key: number // remount when value changes
   value: number
   setValue: (v: number) => void
   marks: Array<{ value: number }>
@@ -172,7 +174,6 @@ function SliderWrapper({
   valueLabelFormat: SliderProps['valueLabelFormat']
 }) {
   const [innerValue, setinnerValue] = useState(value)
-  useEffect(() => setinnerValue(value), [value])
   return (
     <Slider
       value={innerValue}

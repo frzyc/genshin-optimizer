@@ -1,4 +1,4 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
@@ -15,7 +15,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 export default function DupModal({
   setDiscToEdit,
@@ -63,12 +63,10 @@ function DupContent({
 }) {
   const { t } = useTranslation('disc')
   const { database } = useDatabaseContext()
-  const [dbDirty, setDBDirty] = useForceUpdate()
-  useEffect(() => database.discs.followAny(setDBDirty), [setDBDirty, database])
-
+  const discValuesDirty = useDataManagerValues(database.discs)
   const dupList = useMemo(() => {
-    const dups = dbDirty && ([] as ICachedDisc[][])
-    const discKeys = database.discs.keys
+    const dups = [] as ICachedDisc[][]
+    const discKeys = discValuesDirty && [...database.discs.keys]
 
     while (discKeys.length !== 0) {
       const discKey = discKeys.shift()
@@ -86,7 +84,7 @@ function DupContent({
       )
     }
     return dups
-  }, [database, dbDirty])
+  }, [database.discs, discValuesDirty])
   return (
     <Stack spacing={2}>
       {dupList.map((dups) => (
