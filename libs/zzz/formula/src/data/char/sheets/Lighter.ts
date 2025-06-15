@@ -47,17 +47,18 @@ const ability_ice_fire_dmg_check = cmpGE(
   ),
   2,
   min(
-    percent(dm.ability.max_ice_fire_dmg_),
     prod(
-      prod(
-        elation,
-        sum(
-          percent(dm.ability.ice_fire_dmg_),
-          prod(
-            max(0, sum(own.final.impact, -dm.ability.impact_threshold)),
-            percent(1 / dm.ability.impact_step),
-            percent(dm.ability.extra_ice_fire_dmg_)
-          )
+      percent(dm.ability.max_ice_fire_dmg_),
+      cmpGE(char.mindscape, 2, percent(dm.m2.ability_buff_inc_), percent(1))
+    ),
+    prod(
+      elation,
+      sum(
+        percent(dm.ability.ice_fire_dmg_),
+        prod(
+          max(0, sum(own.final.impact, -dm.ability.impact_threshold)),
+          percent(1 / dm.ability.impact_step),
+          percent(dm.ability.extra_ice_fire_dmg_)
         )
       ),
       cmpGE(char.mindscape, 2, percent(dm.m2.ability_buff_inc_), percent(1))
@@ -185,13 +186,13 @@ const sheet = register(
   registerBuff(
     'm1_ice_resRed_',
     enemyDebuff.common.resRed_.ice.add(
-      cmpGE(char.mindscape, 1, morale_burst_hit.ifOn(dm.m1.ice_fire_resRed_))
+      cmpGE(char.mindscape, 1, collapse.ifOn(dm.m1.ice_fire_resRed_))
     )
   ),
   registerBuff(
     'm1_fire_resRed_',
     enemyDebuff.common.resRed_.fire.add(
-      cmpGE(char.mindscape, 1, morale_burst_hit.ifOn(dm.m1.ice_fire_resRed_))
+      cmpGE(char.mindscape, 1, collapse.ifOn(dm.m1.ice_fire_resRed_))
     )
   ),
   registerBuff(
