@@ -671,25 +671,8 @@ export const conditionals = {
     },
   },
   PanYinhu: {
-    boolConditional: {
-      sheet: 'PanYinhu',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PanYinhu',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PanYinhu',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    depleted_qi: { sheet: 'PanYinhu', name: 'depleted_qi', type: 'bool' },
+    meridian_flow: { sheet: 'PanYinhu', name: 'meridian_flow', type: 'bool' },
   },
   PeacekeeperSpecialized: {
     shielded: {
@@ -32366,6 +32349,39 @@ export const formulas = {
         name: 'AssistFollowUpRideTheMomentum_0_anomBuildup',
       },
     },
+    ultimate_heal: {
+      sheet: 'PanYinhu',
+      name: 'ultimate_heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'PanYinhu',
+        name: 'ultimate_heal',
+      },
+    },
+    ultimate_healOverTime: {
+      sheet: 'PanYinhu',
+      name: 'ultimate_healOverTime',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'PanYinhu',
+        name: 'ultimate_healOverTime',
+      },
+    },
+    m4_heal: {
+      sheet: 'PanYinhu',
+      name: 'm4_heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'PanYinhu',
+        name: 'm4_heal',
+      },
+    },
   },
   Yixuan: {
     sheerDmgInst: {
@@ -35839,37 +35855,37 @@ export const buffs = {
     },
   },
   PanYinhu: {
-    m6_dmg_: {
+    core_sheerForce: {
       sheet: 'PanYinhu',
-      name: 'm6_dmg_',
+      name: 'core_sheerForce',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'sheerForce',
         sheet: 'PanYinhu',
-        name: 'm6_dmg_',
+        name: 'core_sheerForce',
       },
     },
-    team_dmg_: {
+    ability_dmgInc_: {
       sheet: 'PanYinhu',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'common_dmg_',
-        sheet: 'PanYinhu',
-        name: 'team_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'PanYinhu',
-      name: 'enemy_defRed_',
+      name: 'ability_dmgInc_',
       tag: {
         et: 'display',
         qt: 'common',
-        q: 'defRed_',
+        q: 'dmgInc_',
         sheet: 'PanYinhu',
-        name: 'enemy_defRed_',
+        name: 'ability_dmgInc_',
+      },
+    },
+    m1_dmgInc_: {
+      sheet: 'PanYinhu',
+      name: 'm1_dmgInc_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgInc_',
+        sheet: 'PanYinhu',
+        name: 'm1_dmgInc_',
       },
     },
   },

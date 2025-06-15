@@ -137,6 +137,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   anomBuildupRes_: 'Enemy Anomaly Buildup RES',
   dazeRes_: 'Enemy Daze RES',
   dazeRed_: 'Enemy Daze Taken Reduction',
+  dmgInc_: 'Enemy DMG Taken Increase',
 
   initial_hp: 'Initial HP',
   initial_def: 'Initial DEF',
@@ -159,6 +160,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   dmg_mult_: 'DMG Multiplier',
   def_mult_: 'DEF Multiplier',
   res_mult_: 'Resistance Multiplier',
+  dmg_taken_mult_: 'Enemy DMG Taken Multiplier',
   base: 'Base Damage',
   enemyAnomBuildupRes_mult_: 'Enemy Anomaly Buildup RES Multiplier',
   anomBuildup_mult_: 'Anomaly Buildup Bonus Multiplier',
