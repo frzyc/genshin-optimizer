@@ -10,7 +10,6 @@ export function CharSheetSection() {
   const { key: characterKey } = useCharacterContext()!
   return (
     <Box>
-      {characterKey === 'Yixuan' && <MinimalYixuanSheet />}
       {characterKey === 'Soldier0Anby' && <MinimalS0AnbySheet />}
       {shouldShowDevComponents &&
         Object.values(charSheets[characterKey]).flatMap((sheet, index1) =>
@@ -23,31 +22,6 @@ export function CharSheetSection() {
           ))
         )}
     </Box>
-  )
-}
-
-const yixuanDocs: Document[] = [
-  {
-    type: 'text',
-    text: "We automatically convert Yixuan's HP to Sheer Force at a ratio of 1:0.1. Everything else in her kit is not factored, such as the DMG Bonus % added in her Core skill",
-  },
-  {
-    type: 'fields',
-    fields: [
-      {
-        title: <TagDisplay tag={buffs.Yixuan.core_hpSheerForce.tag} />,
-        fieldRef: buffs.Yixuan.core_hpSheerForce.tag,
-      },
-    ],
-  },
-]
-function MinimalYixuanSheet() {
-  return (
-    <>
-      {yixuanDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
-      ))}
-    </>
   )
 }
 
