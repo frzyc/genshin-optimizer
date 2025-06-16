@@ -44,7 +44,6 @@ import {
   Suspense,
   useCallback,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -145,16 +144,13 @@ export function WengineSwapModal({
     t: t,
     namespace: 'page_wengine',
   }
-  const [swapWengineId, setSwapWengineId] = useState('')
-
-  //TODO: This should be replaced with CompareBuildWrapper
-  useEffect(() => {
-    if (swapWengineId) {
-      onChangeId(swapWengineId === 'unequip' ? '' : swapWengineId)
-      setSwapWengineId('')
+  const setSwapWengineId = useCallback(
+    (swapWengineId: string | '') => {
+      onChangeId(swapWengineId)
       onClose()
-    }
-  }, [onChangeId, onClose, swapWengineId])
+    },
+    [onChangeId, onClose]
+  )
 
   return (
     <>
@@ -293,7 +289,7 @@ export function WengineSwapModal({
                             justifyContent: 'center',
                             alignItems: 'center',
                           }}
-                          onClick={() => setSwapWengineId('unequip')}
+                          onClick={() => setSwapWengineId('')}
                         >
                           <Box
                             sx={{
@@ -330,6 +326,7 @@ export function WengineSwapModal({
                       })}
                     >
                       <WengineCard
+                        key={id}
                         wengineId={id}
                         onClick={
                           wengineId === id

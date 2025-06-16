@@ -14,8 +14,9 @@ import {
 } from '@genshin-optimizer/zzz/assets'
 import type { PhaseKey } from '@genshin-optimizer/zzz/consts'
 import { type LocationKey, rarityColor } from '@genshin-optimizer/zzz/consts'
-import { useWengine } from '@genshin-optimizer/zzz/db-ui'
+import { useDatabaseContext, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
+import type { IWengine } from '@genshin-optimizer/zzz/zood'
 import { Edit } from '@mui/icons-material'
 import {
   Box,
@@ -28,7 +29,7 @@ import {
   Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { Suspense, useCallback } from 'react'
+import { Suspense, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatDisplay } from '../Character'
 import { LocationAutocomplete } from '../Character/LocationAutocomplete'
@@ -44,17 +45,46 @@ const wenginePhaseIconsMap: Record<PhaseKey, WenginePhaseKey> = {
   4: 'p4',
   5: 'p5',
 }
-
-export function WengineCard({
+export const WengineCard = memo(function WengineCard({
   wengineId,
+  onEdit,
+  onClick,
+}: {
+  key: string
+  wengineId: string
+  onEdit?: (id: string) => void
+  onClick?: () => void
+}) {
+  const { database } = useDatabaseContext()
+  const wengine = useWengine(wengineId)
+  const onEditCB = useCallback(
+    () => onEdit && onEdit(wengineId),
+    [wengineId, onEdit]
+  )
+  const setLocation = useCallback(
+    (location: LocationKey) => database.wengines.set(wengineId, { location }),
+    [database.wengines, wengineId]
+  )
+  if (!wengine) return null
+  return (
+    <WengineCardObj
+      wengine={wengine}
+      onEdit={onEditCB}
+      setLocation={setLocation}
+      onClick={onClick}
+    />
+  )
+})
+export function WengineCardObj({
+  wengine,
   onClick,
   onEdit,
   setLocation,
   extraButtons,
 }: {
-  wengineId: string
+  wengine: IWengine
   onClick?: () => void
-  onEdit?: (wengineId: string) => void
+  onEdit?: () => void
   setLocation?: (lk: LocationKey) => void
   extraButtons?: JSX.Element
 }) {
@@ -70,14 +100,7 @@ export function WengineCard({
     (children: ReactNode) => <Box>{children}</Box>,
     []
   )
-  const {
-    id = '',
-    key,
-    level = 0,
-    phase = 1,
-    location = '',
-    modification = 0,
-  } = useWengine(wengineId) ?? {}
+  const { key, level = 0, phase = 1, location = '', modification = 0 } = wengine
   if (!key)
     return (
       <CardThemed>
@@ -258,7 +281,7 @@ export function WengineCard({
                 placement="top"
                 arrow
               >
-                <Button color="info" size="small" onClick={() => onEdit(id)}>
+                <Button color="info" size="small" onClick={() => onEdit()}>
                   <Edit />
                 </Button>
               </BootstrapTooltip>

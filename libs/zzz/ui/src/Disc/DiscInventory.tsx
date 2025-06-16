@@ -128,17 +128,7 @@ export function DiscInventory({
           <Grid container columns={columns} spacing={1}>
             {discsIdsToShow.map((discId) => (
               <Grid item key={discId} xs={1}>
-                <DiscCard
-                  disc={database.discs.get(discId)!}
-                  onEdit={() => onEdit?.(discId)}
-                  onDelete={() => database.discs.remove(discId)}
-                  setLocation={(location) =>
-                    database.discs.set(discId, { location })
-                  }
-                  onLockToggle={() =>
-                    database.discs.set(discId, ({ lock }) => ({ lock: !lock }))
-                  }
-                />
+                <DiscCard key={discId} discId={discId} />
               </Grid>
             ))}
           </Grid>

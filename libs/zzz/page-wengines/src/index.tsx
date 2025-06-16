@@ -2,7 +2,10 @@ import {
   useDataEntryBase,
   useDataManagerValues,
 } from '@genshin-optimizer/common/database-ui'
-import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
+import {
+  useBoolState,
+  useMediaQueryUp,
+} from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
@@ -47,7 +50,8 @@ const sortKeys = Object.keys(wengineSortMap)
 export default function PageWengine() {
   const { t } = useTranslation(['page_wengine', 'ui'])
   const { database } = useDatabaseContext()
-  const [newWengineModalShow, setnewWengineModalShow] = useState(false)
+  const [newWengineModalShow, onNewWengineModalShow, onNewWengineModalHide] =
+    useBoolState(false)
   const displayWengine = useDataEntryBase(database.displayWengine)
   // useEffect(() => {
   //   ReactGA.send({ hitType: 'pageview', page: '/wengine' }) Needs Google Analytics
@@ -140,7 +144,7 @@ export default function PageWengine() {
   const { editWengineId } = displayWengine
 
   // Validate wengineId to be an actual wengine
-  if (!database.wengines.get(editWengineId)) resetEditWengine()
+  if (editWengineId && !database.wengines.get(editWengineId)) resetEditWengine()
 
   // Pagination
   const totalShowing =
@@ -169,7 +173,7 @@ export default function PageWengine() {
       <Suspense fallback={false}>
         <WengineSelectionModal
           show={newWengineModalShow}
-          onHide={() => setnewWengineModalShow(false)}
+          onHide={onNewWengineModalHide}
           onSelect={newWengine}
         />
       </Suspense>
@@ -211,11 +215,7 @@ export default function PageWengine() {
           </Box>
         </CardContent>
       </CardThemed>
-      <Button
-        fullWidth
-        onClick={() => setnewWengineModalShow(true)}
-        color="info"
-      >
+      <Button fullWidth onClick={onNewWengineModalShow} color="info">
         {t('page_wengine:addWengine')}
       </Button>
       <Box>
@@ -223,11 +223,9 @@ export default function PageWengine() {
           {wenginesIdsToShow.map((wengineId) => (
             <Grid item key={wengineId} xs={1}>
               <WengineCard
+                key={wengineId}
                 wengineId={wengineId}
                 onEdit={editWegine}
-                setLocation={(location) =>
-                  database.wengines.set(wengineId, { location })
-                }
               />
             </Grid>
           ))}

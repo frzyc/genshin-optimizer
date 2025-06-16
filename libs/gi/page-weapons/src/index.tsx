@@ -2,7 +2,10 @@ import {
   useDataEntryBase,
   useDataManagerValues,
 } from '@genshin-optimizer/common/database-ui'
-import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
+import {
+  useBoolState,
+  useMediaQueryUp,
+} from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
@@ -51,7 +54,8 @@ export default function PageWeapon() {
   const database = useDatabase()
   const displayWeapon = useDataEntryBase(database.displayWeapon)
 
-  const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
+  const [newWeaponModalShow, onNewWeaponModalShow, onNewWeaponModalHide] =
+    useBoolState(false)
   useEffect(() => {
     ReactGA.send({ hitType: 'pageview', page: '/weapon' })
   }, [])
@@ -163,7 +167,7 @@ export default function PageWeapon() {
 
   const { editWeaponId } = displayWeapon
   // Validate weaponId to be an actual weapon
-  if (!database.weapons.get(editWeaponId)) resetEditWeapon()
+  if (editWeaponId && !database.weapons.get(editWeaponId)) resetEditWeapon()
 
   const showingTextProps = {
     numShowing: weaponIdsToShow.length,
@@ -185,7 +189,7 @@ export default function PageWeapon() {
       <Suspense fallback={false}>
         <WeaponSelectionModal
           show={newWeaponModalShow}
-          onHide={() => setnewWeaponModalShow(false)}
+          onHide={onNewWeaponModalHide}
           onSelect={newWeapon}
         />
       </Suspense>
@@ -240,7 +244,7 @@ export default function PageWeapon() {
       >
         <Button
           fullWidth
-          onClick={() => setnewWeaponModalShow(true)}
+          onClick={onNewWeaponModalShow}
           color="info"
           startIcon={<AddIcon />}
         >
