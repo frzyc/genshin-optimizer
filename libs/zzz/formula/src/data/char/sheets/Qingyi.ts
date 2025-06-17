@@ -55,7 +55,7 @@ const ability_check = (node: NumNode) =>
       team.common.count.withSpecialty('attack'),
       team.common.count.withFaction('CriminalInvestigationSpecialResponseTeam')
     ),
-    1,
+    2,
     node
   )
 const m6_crit_dmg_ = ownBuff.combat.crit_dmg_.add(
