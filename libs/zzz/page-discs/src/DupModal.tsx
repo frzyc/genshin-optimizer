@@ -2,7 +2,7 @@ import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { DiscCard } from '@genshin-optimizer/zzz/ui'
+import { DiscCardObj } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import {
@@ -92,7 +92,7 @@ function DupContent({
           <CardContent sx={{ display: 'flex', gap: 1 }}>
             {dups.map((dupDisc) => (
               <Box key={dupDisc.id} sx={{ minWidth: 300 }}>
-                <DiscCard
+                <DiscCardObj
                   disc={dupDisc}
                   setLocation={(location) =>
                     database.discs.set(dupDisc.id, { location })

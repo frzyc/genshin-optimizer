@@ -128,7 +128,7 @@ export function DiscInventory({
           <Grid container columns={columns} spacing={1}>
             {discsIdsToShow.map((discId) => (
               <Grid item key={discId} xs={1}>
-                <DiscCard key={discId} discId={discId} />
+                <DiscCard key={discId} discId={discId} onEdit={onEdit} />
               </Grid>
             ))}
           </Grid>
