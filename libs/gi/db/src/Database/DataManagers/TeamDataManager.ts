@@ -373,7 +373,7 @@ export class TeamDataManager extends DataManager<
     buildId,
     teamCharId,
   }: LoadoutDatum): Record<ArtifactSlotKey, string | undefined> {
-    return this.getArtifactIds(teamCharId, buildType, buildId)
+    return this.#getArtifactIds(teamCharId, buildType, buildId)
   }
 
   getEditArtifactIds(
@@ -381,10 +381,10 @@ export class TeamDataManager extends DataManager<
     teamCharId: string
   ): Record<ArtifactSlotKey, string | undefined> {
     const editType = buildToEdit === 'equipped' ? 'equipped' : 'real'
-    return this.getArtifactIds(teamCharId, editType, buildToEdit)
+    return this.#getArtifactIds(teamCharId, editType, buildToEdit)
   }
 
-  getArtifactIds(
+  #getArtifactIds(
     teamCharId: string,
     buildType: BuildTypeKey,
     buildId: string
