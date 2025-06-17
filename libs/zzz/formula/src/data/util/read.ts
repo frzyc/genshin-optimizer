@@ -50,8 +50,8 @@ export interface Tag extends BaseTag<Sheet, Src, Dst> {
   damageType1?: DamageType | null
   damageType2?: DamageType | null
 
-  specialty?: Specialty
-  faction?: Faction
+  specialty?: Specialty | null
+  faction?: Faction | null
 }
 
 export class Read extends BaseRead<Tag> {

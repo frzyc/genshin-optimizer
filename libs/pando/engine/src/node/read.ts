@@ -55,6 +55,7 @@ export class TypedRead<T extends Tag> implements BaseRead {
       ownKeys: (_) => keys,
       get: (old, p: T[C] & string) =>
         old[p] ?? (old[p] = transform(this.with(cat, p), p)),
+      set: (old, p: T[C] & string, v) => (old[p] = v),
       getOwnPropertyDescriptor: (old, p: T[C] & string) => ({
         enumerable: true,
         configurable: true,
