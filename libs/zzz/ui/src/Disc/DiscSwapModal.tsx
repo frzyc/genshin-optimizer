@@ -68,11 +68,11 @@ export function DiscSwapModal({
   const brPt = useMediaQueryUp()
 
   const filterConfigs = useMemo(() => discFilterConfigs(), [])
-  const totalDiscNum = database.discs.values.filter(
-    (s) => s.slotKey === filterOption.slotKeys[0]
-  ).length
 
   const allDiscs = useDataManagerValues(database.discs)
+  const totalDiscNum = allDiscs.filter(
+    (s) => s.slotKey === filterOption.slotKeys[0]
+  ).length
   const discsIds = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
     let discsIds = allDiscs.filter(filterFunc).map((disc) => disc.id)

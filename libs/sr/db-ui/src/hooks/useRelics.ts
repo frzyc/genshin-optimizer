@@ -15,7 +15,7 @@ export function useRelics(relicIds: RelicIds | undefined = emptyRelicIds) {
   const hands = useRelic(relicIds.hands)
   const feet = useRelic(relicIds.feet)
   const sphere = useRelic(relicIds.sphere)
-  const propelume = useRelic(relicIds.rope)
+  const rope = useRelic(relicIds.rope)
 
   return useMemo(
     () => ({
@@ -24,8 +24,8 @@ export function useRelics(relicIds: RelicIds | undefined = emptyRelicIds) {
       hands,
       feet,
       sphere,
-      propelume,
+      rope,
     }),
-    [head, body, hands, feet, sphere, propelume]
+    [head, body, hands, feet, sphere, rope]
   )
 }

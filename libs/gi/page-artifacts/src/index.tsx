@@ -59,7 +59,7 @@ export default function PageArtifact() {
     ReactGA.send({ hitType: 'pageview', page: '/artifact' })
   }, [])
 
-  const noArtifact = useMemo(() => !database.arts.values.length, [database])
+  const noArtifact = !database.arts.values.length
   const sortConfigs = useMemo(
     () => artifactSortConfigs(effFilterSet),
     [effFilterSet]
