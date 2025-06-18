@@ -1,9 +1,11 @@
 'use client'
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
   NextImage,
+  usePrev,
 } from '@genshin-optimizer/common/ui'
 import { catTotal } from '@genshin-optimizer/common/util'
 import {
@@ -32,7 +34,7 @@ import {
   Typography,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
-import { useDeferredValue, useEffect, useMemo, useState } from 'react'
+import { useDeferredValue, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { WengineRarityToggle, WengineToggle } from '../toggles'
 import { WengineName } from './WengineTrans'
@@ -54,22 +56,16 @@ export function WengineSelectionModal({
   const [wengineFilter, setWenginefilter] = useState<SpecialityKey[]>(
     wengineTypeFilter ? [wengineTypeFilter] : [...allSpecialityKeys]
   )
+  if (usePrev(wengineTypeFilter) !== wengineTypeFilter && wengineTypeFilter)
+    setWenginefilter([wengineTypeFilter])
 
   const { database } = useDatabaseContext()
-  const [state, setState] = useState(database.displayWengine.get())
-  useEffect(
-    () => database.displayWengine.follow((_, dbMeta) => setState(dbMeta)),
-    [database]
-  )
-
-  useEffect(() => {
-    wengineTypeFilter && setWenginefilter([wengineTypeFilter])
-  }, [wengineTypeFilter])
+  const displayWengine = useDataEntryBase(database.displayWengine)
 
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
-  const { rarity } = state
+  const { rarity } = displayWengine
   const wengineIdList = useMemo(
     () =>
       allWengineKeys

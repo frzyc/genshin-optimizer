@@ -1,9 +1,9 @@
 'use client'
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
-  useBoolState,
-  useForceUpdate,
-} from '@genshin-optimizer/common/react-util'
+  useDataEntryBase,
+  useDataManagerValues,
+} from '@genshin-optimizer/common/database-ui'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
@@ -100,18 +100,10 @@ export function CharacterSingleSelectionModal({
       database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
   )
 
-  const [dbDirty, forceUpdate] = useForceUpdate()
-
-  // character favorite updater
-  useEffect(
-    () => database.charMeta.followAny(() => forceUpdate()),
-    [forceUpdate, database]
-  )
-
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
   const deferredState = useDeferredValue(state)
-  const deferredDbDirty = useDeferredValue(dbDirty)
+  const charMetaDirty = useDataManagerValues(database.charMeta)
   const characterKeyList = useMemo(() => {
     const { element, weaponType, sortType, ascending } = deferredState
     const sortByKeys = [
@@ -119,7 +111,7 @@ export function CharacterSingleSelectionModal({
       ...(characterSortMap[sortType] ?? []),
     ] as CharacterSortKey[]
     const filteredKeys =
-      deferredDbDirty &&
+      charMetaDirty &&
       allCharacterKeys
         .filter((key) => teamCharKeys.indexOf(key) === -1)
         .filter(
@@ -140,7 +132,7 @@ export function CharacterSingleSelectionModal({
   }, [
     deferredState,
     newFirst,
-    deferredDbDirty,
+    charMetaDirty,
     deferredSearchTerm,
     database,
     teamCharKeys,
@@ -234,7 +226,7 @@ export function CharacterMultiSelectionModal({
             database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
         )
       ),
-    [database, loadoutData, setTeamCharKeys]
+    [database, loadoutData]
   )
 
   // used for generating characterKeyList below, only updated when filter/sort/search is applied to prevent characters
@@ -253,21 +245,13 @@ export function CharacterMultiSelectionModal({
             database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
         )
       ),
-    [database, loadoutData, setCachedTeamCharKeys]
-  )
-
-  const [dbDirty, forceUpdate] = useForceUpdate()
-
-  // character favorite updater
-  useEffect(
-    () => database.charMeta.followAny(() => forceUpdate()),
-    [forceUpdate, database]
+    [database, loadoutData]
   )
 
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
   const deferredState = useDeferredValue(state)
-  const deferredDbDirty = useDeferredValue(dbDirty)
+  const charMetaDirty = useDataManagerValues(database.charMeta)
   const characterKeyList = useMemo(() => {
     const { element, weaponType, sortType, ascending } = deferredState
     const sortByKeys = [
@@ -275,7 +259,7 @@ export function CharacterMultiSelectionModal({
       ...(characterSortMap[sortType] ?? []),
     ] as CharacterSortKey[]
     const filteredKeys =
-      deferredDbDirty &&
+      charMetaDirty &&
       allCharacterKeys
         .filter((key) => cachedTeamCharKeys.indexOf(key) === -1)
         .filter(
@@ -296,7 +280,7 @@ export function CharacterMultiSelectionModal({
   }, [
     deferredState,
     newFirst,
-    deferredDbDirty,
+    charMetaDirty,
     deferredSearchTerm,
     database,
     cachedTeamCharKeys,

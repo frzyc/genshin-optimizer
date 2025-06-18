@@ -1,11 +1,14 @@
 import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+  useDataEntryBase,
+  useDataManagerKeys,
+  useDataManagerValues,
+} from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
   useInfScroll,
+  useIsMount,
 } from '@genshin-optimizer/common/ui'
 import {
   catTotal,
@@ -25,6 +28,7 @@ import {
   getCharStat,
   getWeaponStat,
 } from '@genshin-optimizer/gi/stats'
+import type { CharacterSortKey } from '@genshin-optimizer/gi/ui'
 import {
   CharacterCard,
   CharacterEditor,
@@ -52,7 +56,6 @@ import {
   Suspense,
   useContext,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -90,59 +93,52 @@ export default function PageCharacter() {
   ])
   const { silly } = useContext(SillyContext)
 
-  const [displayCharacter, setDisplayCharacter] = useState(() =>
-    database.displayCharacter.get()
-  )
-  useEffect(
-    () => database.displayCharacter.follow((r, s) => setDisplayCharacter(s)),
-    [database, setDisplayCharacter]
-  )
+  const displayCharacter = useDataEntryBase(database.displayCharacter)
+
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
   const brPt = useMediaQueryUp()
 
   const [newCharacter, setnewCharacter] = useState(false)
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  // Set follow, should run only once
-  useEffect(() => {
-    ReactGA.send({ hitType: 'pageview', page: '/characters' })
-    return database.chars.followAny(
-      (k, r) => (r === 'new' || r === 'remove') && forceUpdate()
-    )
-  }, [forceUpdate, database])
+  if (useIsMount()) ReactGA.send({ hitType: 'pageview', page: '/characters' })
 
   // character favorite updater
-  useEffect(
-    () => database.charMeta.followAny((_s) => forceUpdate()),
-    [forceUpdate, database]
-  )
+  const characterMetaDirty = useDataManagerValues(database.charMeta)
 
   const editCharacter = useCharSelectionCallback()
+  const charKeys = useDataManagerKeys(database.chars)
+  const totalCharNum = charKeys.length
 
-  const deferredState = useDeferredValue(displayCharacter)
-  const deferredDbDirty = useDeferredValue(dbDirty)
-  const { charKeys, totalCharNum } = useMemo(() => {
-    const chars = database.chars.keys
-    const totalCharNum = chars.length
-    const { element, weaponType, rarity, sortType, ascending } = deferredState
-    const charKeys = database.chars.keys
-      .filter(
-        filterFunction(
-          { element, weaponType, rarity, name: deferredSearchTerm },
-          characterFilterConfigs(database, silly)
+  const filteredCharKeys = useMemo(() => {
+    const { element, weaponType, rarity, sortType, ascending } =
+      displayCharacter
+    return (
+      characterMetaDirty &&
+      charKeys
+        .filter(
+          filterFunction(
+            { element, weaponType, rarity, name: deferredSearchTerm },
+            characterFilterConfigs(database, silly)
+          )
         )
-      )
-      .sort(
-        sortFunction(
-          characterSortMap[sortType] ?? [],
-          ascending,
-          characterSortConfigs(database, silly),
-          ['new', 'favorite']
+        .sort(
+          sortFunction(
+            characterSortMap[sortType] ?? [],
+            ascending,
+            characterSortConfigs(database, silly),
+            ['new', 'favorite']
+          )
         )
-      )
-    return deferredDbDirty && { charKeys, totalCharNum }
-  }, [database, deferredState, deferredSearchTerm, silly, deferredDbDirty])
+    )
+  }, [
+    displayCharacter,
+    characterMetaDirty,
+    charKeys,
+    deferredSearchTerm,
+    database,
+    silly,
+  ])
 
   const { weaponType, element, rarity, sortType, ascending } = displayCharacter
 
@@ -154,10 +150,10 @@ export default function PageCharacter() {
           if (!weapon) return
           const wtk = getWeaponStat(weapon.key).weaponType
           ct[wtk].total++
-          if (charKeys.includes(ck)) ct[wtk].current++
+          if (filteredCharKeys.includes(ck)) ct[wtk].current++
         })
       ),
-    [database, charKeys]
+    [database, filteredCharKeys]
   )
 
   const elementTotals = useMemo(
@@ -166,36 +162,36 @@ export default function PageCharacter() {
         Object.entries(database.chars.data).forEach(([ck, char]) => {
           const eleKey = getCharEle(char.key)
           ct[eleKey].total++
-          if (charKeys.includes(ck)) ct[eleKey].current++
+          if (filteredCharKeys.includes(ck)) ct[eleKey].current++
         })
       ),
-    [database, charKeys]
+    [database, filteredCharKeys]
   )
 
   const rarityTotals = useMemo(
     () =>
       catTotal(allCharacterRarityKeys, (ct) =>
         Object.entries(database.chars.data).forEach(([ck, char]) => {
-          const key = getCharStat(char.key).rarity
+          const key = getCharStat(char.key).rarity as 5 | 4
           ct[key].total++
-          if (charKeys.includes(ck)) ct[key].current++
+          if (filteredCharKeys.includes(ck)) ct[key].current++
         })
       ),
-    [database, charKeys]
+    [database, filteredCharKeys]
   )
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    charKeys.length
+    filteredCharKeys.length
   )
   const charKeysToShow = useMemo(
-    () => charKeys.slice(0, numShow),
-    [charKeys, numShow]
+    () => filteredCharKeys.slice(0, numShow),
+    [filteredCharKeys, numShow]
   )
 
   const totalShowing =
-    charKeys.length !== totalCharNum
-      ? `${charKeys.length}/${totalCharNum}`
+    filteredCharKeys.length !== totalCharNum
+      ? `${filteredCharKeys.length}/${totalCharNum}`
       : `${totalCharNum}`
 
   const showingTextProps = {
@@ -208,9 +204,11 @@ export default function PageCharacter() {
   const sortByButtonProps = {
     sortKeys: [...sortKeys],
     value: sortType,
-    onChange: (sortType) => database.displayCharacter.set({ sortType }),
+    onChange: (sortType: CharacterSortKey) =>
+      database.displayCharacter.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayCharacter.set({ ascending }),
+    onChangeAsc: (ascending: boolean) =>
+      database.displayCharacter.set({ ascending }),
   }
 
   return (
@@ -321,7 +319,7 @@ export default function PageCharacter() {
           ))}
         </Grid>
       </Suspense>
-      {charKeys.length !== charKeysToShow.length && (
+      {filteredCharKeys.length !== charKeysToShow.length && (
         <Skeleton
           ref={(node) => {
             if (!node) return

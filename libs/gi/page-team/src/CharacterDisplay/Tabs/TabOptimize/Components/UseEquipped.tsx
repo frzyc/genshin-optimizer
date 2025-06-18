@@ -1,7 +1,8 @@
 import {
-  useBoolState,
-  useForceUpdate,
-} from '@genshin-optimizer/common/react-util'
+  useDataManagerEntries,
+  useDataManagerKeys,
+} from '@genshin-optimizer/common/database-ui'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { bulkCatTotal, filterFunction } from '@genshin-optimizer/common/util'
@@ -84,9 +85,6 @@ export default function UseEquipped({
   const { excludedLocations } = useOptConfig(optConfigId)!
   const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState(false)
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  const deferredDbDirty = useDeferredValue(dbDirty)
-
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
   const [elementKeys, setElementKeys] = useState([...allElementKeys])
@@ -98,13 +96,13 @@ export default function UseEquipped({
   ])
   const deferredCharacterRarityKeys = useDeferredValue(characterRarityKeys)
 
+  const charEntries = useDataManagerEntries(database.chars)
   const charKeyMap: Partial<Record<CharacterKey, ICachedCharacter>> = useMemo(
     () =>
-      deferredDbDirty &&
       Object.fromEntries(
         Array.from(
           new Set(
-            Object.entries(database.chars.data)
+            charEntries
               .filter(
                 ([ck]) =>
                   charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
@@ -124,29 +122,29 @@ export default function UseEquipped({
         )
       ),
     [
-      deferredDbDirty,
-      database,
+      charEntries,
       characterKey,
       deferredElementKeys,
       deferredWeaponTypeKeys,
       deferredCharacterRarityKeys,
       deferredSearchTerm,
+      database,
       silly,
     ]
   )
 
+  const charKeys = useDataManagerKeys(database.chars)
   const locListLength = useMemo(
     () =>
-      deferredDbDirty &&
       new Set(
-        Object.keys(database.chars.data)
+        charKeys
           .filter(
             (ck) =>
               charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
           )
           .map(charKeyToLocCharKey)
       ).size,
-    [characterKey, database.chars.data, deferredDbDirty]
+    [charKeys, characterKey]
   )
 
   const locList = Array.from(
@@ -189,7 +187,7 @@ export default function UseEquipped({
     let travelerProcessed = false
 
     return bulkCatTotal(catKeys, (ctMap) =>
-      Object.entries(database.chars.data)
+      charEntries
         .filter(
           ([ck]) =>
             charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
@@ -238,16 +236,7 @@ export default function UseEquipped({
           }
         })
     )
-  }, [charKeyMap, characterKey, database, excludedLocations, locList])
-
-  useEffect(
-    () => database.charMeta.followAny((_) => forceUpdate()),
-    [forceUpdate, database]
-  )
-  useEffect(
-    () => database.chars.followAny((_) => forceUpdate()),
-    [forceUpdate, database]
-  )
+  }, [charEntries, charKeyMap, characterKey, excludedLocations, locList])
 
   const [mouseUpDetected, setMouseUpDetected] = useState(false)
 

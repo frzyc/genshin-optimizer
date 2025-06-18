@@ -2,6 +2,7 @@ import {
   CardThemed,
   InfoTooltip,
   ModalWrapper,
+  usePrev,
 } from '@genshin-optimizer/common/ui'
 import { deepClone } from '@genshin-optimizer/common/util'
 import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
@@ -23,14 +24,7 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import {
-  Suspense,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CustomMultiTargetCard from './CustomMultiTargetCard'
 import CustomMultiTargetImportBtn from './CustomMultiTargetImportBtn'
@@ -49,10 +43,8 @@ export function CustomMultiTargetModal({
     () => teamChar.customMultiTargets
   )
 
-  useEffect(
-    () => setCustomTargets(teamChar.customMultiTargets),
-    [setCustomTargets, teamChar.customMultiTargets]
-  )
+  if (usePrev(teamChar.customMultiTargets) !== teamChar.customMultiTargets)
+    setCustomTargets(teamChar.customMultiTargets)
 
   const addNewCustomMultiTarget = useCallback(() => {
     setCustomTargets([initCustomMultiTarget(), ...customMultiTargets])

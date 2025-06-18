@@ -150,6 +150,7 @@ export function TeamCard({
               teamCharId && database.teamChars.get(teamCharId)?.key
             return (
               <Box
+                key={`${i}_${teamCharId}`}
                 className="team-teammate"
                 sx={{
                   border: '1px rgba(200,200,200,0.3) solid',

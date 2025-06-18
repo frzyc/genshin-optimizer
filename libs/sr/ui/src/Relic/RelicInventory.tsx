@@ -1,7 +1,5 @@
-import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import AddIcon from '@mui/icons-material/Add'
@@ -13,7 +11,7 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import { Suspense, useEffect, useMemo } from 'react'
+import { Suspense, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { RelicCard } from './RelicCard'
 
@@ -28,19 +26,8 @@ export type RelicInventoryProps = {
 export function RelicInventory({ onAdd, onEdit }: RelicInventoryProps) {
   const { t } = useTranslation('relic')
   const { database } = useDatabaseContext()
-  const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
-
-  useEffect(
-    () => database.relics.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
-  )
-
-  const { relicIds, totalRelicsNum } = useMemo(() => {
-    const relics = database.relics.values
-    const totalRelicsNum = relics.length
-    const relicIds = relics.map((r) => r.id)
-    return dirtyDatabase && { relicIds, totalRelicsNum }
-  }, [database, dirtyDatabase])
+  const relicIds = useDataManagerKeys(database.relics)
+  const totalRelicsNum = relicIds.length
 
   const brPt = useMediaQueryUp()
   const totalShowing =

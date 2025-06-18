@@ -1,8 +1,8 @@
 import {
   getRandomElementFromArray,
   getRandomIntInclusive,
-  getUnitStr,
   range,
+  roundStat,
   statKeyToFixed,
   toPercent,
 } from '@genshin-optimizer/common/util'
@@ -142,18 +142,6 @@ export function randomizeRelic(base: Partial<IRelic> = {}): IRelic {
     location: base.location ?? '',
     lock: false,
   }
-}
-
-/**
- * @deprecated use common-util/roundStat
- */
-export function roundStat(
-  value: number,
-  statKey: RelicMainStatKey | RelicSubStatKey
-) {
-  return getUnitStr(statKey) === '%'
-    ? Math.round(value * 10000) / 10000
-    : Math.round(value * 100) / 100
 }
 
 // TODO: implement when roll table is added

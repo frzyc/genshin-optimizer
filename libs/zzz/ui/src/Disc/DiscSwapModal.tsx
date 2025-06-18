@@ -1,7 +1,5 @@
-import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
@@ -31,16 +29,9 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import {
-  Suspense,
-  useCallback,
-  useEffect,
-  useMemo,
-  useReducer,
-  useState,
-} from 'react'
+import { Suspense, useCallback, useMemo, useReducer } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DiscCard } from './DiscCard'
+import { DiscCardObj } from './DiscCard'
 import { DiscFilterDisplay } from './DiscFilterDisplay'
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 
@@ -74,30 +65,24 @@ export function DiscSwapModal({
     slotKeys: [slotKey],
   })
 
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(() => {
-    return database.discs.followAny(forceUpdate)
-  }, [database, forceUpdate])
-
   const brPt = useMediaQueryUp()
 
   const filterConfigs = useMemo(() => discFilterConfigs(), [])
-  const totalDiscNum = database.discs.values.filter(
+
+  const allDiscs = useDataManagerValues(database.discs)
+  const totalDiscNum = allDiscs.filter(
     (s) => s.slotKey === filterOption.slotKeys[0]
   ).length
-
   const discsIds = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
-    let discsIds = database.discs.values
-      .filter(filterFunc)
-      .map((disc) => disc.id)
+    let discsIds = allDiscs.filter(filterFunc).map((disc) => disc.id)
     if (discId && database.discs.get(discId)) {
       // always show discId first if it exists
       discsIds = discsIds.filter((id) => id !== discId) // remove
       discsIds.unshift(discId) // add to beginnig
     }
-    return dbDirty && discsIds
-  }, [filterOption, filterConfigs, database.discs, discId, dbDirty])
+    return discsIds
+  }, [filterOption, filterConfigs, allDiscs, discId, database.discs])
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
@@ -120,20 +105,17 @@ export function DiscSwapModal({
     t: t,
     namespace: 'disc',
   }
-  const [swapDiscId, setSwapDiscId] = useState<string | DiscSlotKey>('')
-
-  //TODO: This should be replaced with CompareBuildWrapper
-  useEffect(() => {
-    if (allDiscSlotKeys.includes(swapDiscId as DiscSlotKey)) {
-      onChangeId(null)
-      setSwapDiscId('')
+  const setSwapDiscId = useCallback(
+    (swapDiscId: string | DiscSlotKey) => {
+      if (allDiscSlotKeys.includes(swapDiscId as DiscSlotKey)) {
+        onChangeId(null)
+      } else if (swapDiscId) {
+        onChangeId(swapDiscId)
+      }
       onClose()
-    } else if (swapDiscId) {
-      onChangeId(swapDiscId)
-      setSwapDiscId('')
-      onClose()
-    }
-  }, [onChangeId, onClose, swapDiscId])
+    },
+    [onChangeId, onClose]
+  )
 
   return (
     <ModalWrapper
@@ -235,7 +217,7 @@ export function DiscSwapModal({
                       }),
                     })}
                   >
-                    <DiscCard
+                    <DiscCardObj
                       disc={database.discs.get(id) as IDisc}
                       onClick={
                         discId === id ? undefined : () => setSwapDiscId(id)

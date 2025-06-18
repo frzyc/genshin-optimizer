@@ -1,7 +1,5 @@
-import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import {
@@ -12,7 +10,7 @@ import {
   Grid,
   Skeleton,
 } from '@mui/material'
-import { Suspense, useEffect, useMemo } from 'react'
+import { Suspense, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { TeamCard } from './TeamCard'
 
@@ -21,18 +19,9 @@ const amtPerSize = { xs: 5, sm: 5, md: 10, lg: 10, xl: 10 }
 
 export function TeamInventory() {
   const { database } = useDatabaseContext()
-  const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
-  useEffect(
-    () => database.teams.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
-  )
-
   const navigate = useNavigate()
 
-  const { teamIds } = useMemo(() => {
-    const teamIds = database.teams.keys
-    return dirtyDatabase && { teamIds }
-  }, [database, dirtyDatabase])
+  const teamIds = useDataManagerKeys(database.teams)
 
   const size = useMediaQueryUp()
 
