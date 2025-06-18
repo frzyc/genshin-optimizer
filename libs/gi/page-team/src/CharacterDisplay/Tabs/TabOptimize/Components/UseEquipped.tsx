@@ -4,7 +4,12 @@ import {
 } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ModalWrapper,
+  SqBadge,
+  usePrev,
+} from '@genshin-optimizer/common/ui'
 import { bulkCatTotal, filterFunction } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
@@ -55,7 +60,6 @@ import {
   useCallback,
   useContext,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -425,16 +429,15 @@ function SelectItemGrid({
 }) {
   const [charList, setCharList] = useState(new Set<LocationCharacterKey>())
   const [charListMode, setCharListMode] = useState<CharListMode>()
-  useEffect(() => {
-    if (mouseUpDetected) {
-      setMouseUpDetected(false)
-      if (charList.size > 0) {
-        toggleList(charList)
-        setCharList(new Set<LocationCharacterKey>())
-        setCharListMode(undefined)
-      }
+
+  if (usePrev(mouseUpDetected) !== mouseUpDetected && mouseUpDetected) {
+    setMouseUpDetected(false)
+    if (charList.size > 0) {
+      toggleList(charList)
+      setCharList(new Set<LocationCharacterKey>())
+      setCharListMode(undefined)
     }
-  }, [charList, setCharList, setMouseUpDetected, mouseUpDetected, toggleList])
+  }
   return (
     <Grid
       container
