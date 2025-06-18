@@ -2,6 +2,7 @@ import {
   CardThemed,
   DropdownButton,
   TextFieldLazy,
+  usePrev,
 } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type {
@@ -44,7 +45,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import OptimizationTargetSelector from '../Tabs/TabOptimize/Components/OptimizationTargetSelector'
 
@@ -100,9 +101,7 @@ export default function MTargetEditor({
     [customTarget, setCustomTarget]
   )
   // Expand editor on change of custom target
-  useEffect(() => {
-    setcollapse(false)
-  }, [customTarget])
+  if (usePrev(customTarget) !== customTarget && collapse) setcollapse(false)
 
   const statEditorList = useMemo(
     () => (

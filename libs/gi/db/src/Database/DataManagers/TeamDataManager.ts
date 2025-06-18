@@ -377,7 +377,7 @@ export class TeamDataManager extends DataManager<
   }
 
   getEditArtifactIds(
-    buildToEdit: string,
+    buildToEdit: string | 'equipped',
     teamCharId: string
   ): Record<ArtifactSlotKey, string | undefined> {
     const editType = buildToEdit === 'equipped' ? 'equipped' : 'real'

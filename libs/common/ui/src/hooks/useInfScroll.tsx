@@ -1,7 +1,7 @@
 'use client'
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { useEffect, useState } from 'react'
 import { useOnScreen } from './useOnScreen'
+import { usePrev } from './usePrev'
 
 /**
  * A utility function to help implementation of an infinite scroll.
@@ -11,25 +11,19 @@ import { useOnScreen } from './useOnScreen'
  */
 export function useInfScroll(increment: number, max: number) {
   const [numShow, setNumShow] = useState(increment)
+  // reset the numShow when max or increment changes, usually an indication that the UI has drastically updated or resized.
+  const maxChanged = usePrev(max) !== max
+  const incrementChanged = usePrev(increment) !== increment
+  if (maxChanged || incrementChanged) setNumShow(increment)
   const [triggerElement, setTriggerElement] = useState<
     HTMLElement | undefined
   >()
   const trigger = useOnScreen(triggerElement)
-  const [retryScroll, setRetryScroll] = useForceUpdate()
-  const shouldIncrease = trigger && numShow < max
-  // reset the numShow when max or increment changes, usually an indication that the UI has drastically updated or resized.
-  useEffect(() => {
-    max && setNumShow(increment)
-  }, [max, increment])
 
   useEffect(() => {
-    if (!shouldIncrease) return
-    retryScroll && setNumShow((num) => num + increment)
-
-    // Use a timeout for cases where the the infinite scrolling didn't add enough items to push the trigger out of view.
-    const timeout = setTimeout(() => setRetryScroll(), 1000)
-    return () => clearTimeout(timeout)
-  }, [retryScroll, shouldIncrease, increment, setRetryScroll])
+    const shouldIncrease = trigger && numShow < max
+    if (shouldIncrease) setNumShow((num) => num + increment)
+  }, [increment, numShow, trigger, max])
 
   return { numShow, setTriggerElement }
 }

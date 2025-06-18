@@ -11,6 +11,7 @@ import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
 import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
 import AstralVulturesCrimsonPlumage from './AstralVulturesCrimsonPlumage'
+import Azurelight from './Azurelight'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BalladOfTheFjords from './BalladOfTheFjords'
 import BeaconOfTheReedSea from './BeaconOfTheReedSea'
@@ -143,6 +144,7 @@ import SacrificialSword from './SacrificialSword'
 import SapwoodBlade from './SapwoodBlade'
 import ScionOfTheBlazingSun from './ScionOfTheBlazingSun'
 import SeasonedHuntersBow from './SeasonedHuntersBow'
+import SequenceOfSolitude from './SequenceOfSolitude'
 import SerpentSpine from './SerpentSpine'
 import SharpshootersOath from './SharpshootersOath'
 import SilverSword from './SilverSword'
@@ -169,6 +171,7 @@ import SunnyMorningSleepIn from './SunnyMorningSleepIn'
 import SurfsUp from './SurfsUp'
 import SwordOfDescension from './SwordOfDescension'
 import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
+import SymphonistOfScents from './SymphonistOfScents'
 import TalkingStick from './TalkingStick'
 import TamayurateiNoOhanashi from './TamayurateiNoOhanashi'
 import TheAlleyFlash from './TheAlleyFlash'
@@ -212,6 +215,7 @@ const data: TagMapNodeEntries[] = [
   Absolution,
   AmenomaKageuchi,
   AquilaFavonia,
+  Azurelight,
   BlackcliffLongsword,
   CalamityOfEshu,
   CinnabarSpindle,
@@ -325,6 +329,7 @@ const data: TagMapNodeEntries[] = [
   SkywardSpine,
   StaffOfHoma,
   StaffOfTheScarletSands,
+  SymphonistOfScents,
   TamayurateiNoOhanashi,
   TheCatch,
   VortexVanquisher,
@@ -362,6 +367,7 @@ const data: TagMapNodeEntries[] = [
   SacrificialBow,
   ScionOfTheBlazingSun,
   SeasonedHuntersBow,
+  SequenceOfSolitude,
   SharpshootersOath,
   SilvershowerHeartstrings,
   SkywardHarp,

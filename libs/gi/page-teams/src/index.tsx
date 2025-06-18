@@ -1,7 +1,9 @@
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
+import {
+  useDataEntryBase,
+  useDataManagerValues,
+} from '@genshin-optimizer/common/database-ui'
 import {
   useBoolState,
-  useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import {
@@ -12,6 +14,7 @@ import {
   useTitle,
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import type { TeamSortKey } from '@genshin-optimizer/gi/db'
 import { teamSortKeys } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterMultiAutocomplete, TeamCard } from '@genshin-optimizer/gi/ui'
@@ -46,16 +49,8 @@ export default function PageTeams() {
     'charNames_gen',
   ])
   const database = useDatabase()
-  const [dbDirty, forceUpdate] = useForceUpdate()
   const navigate = useNavigate()
   const location = useLocation()
-  // Set follow, should run only once
-  useEffect(() => {
-    return database.teams.followAny(
-      (k, r) =>
-        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
-    )
-  }, [forceUpdate, database])
 
   // Account for the case of switching from a team -> teams page, since they have the same base /teams url
   useTitle()
@@ -94,40 +89,42 @@ export default function PageTeams() {
     database.displayTeam.set({ searchTerm: deferredSearchTerm })
   }, [database, deferredSearchTerm])
 
-  // Currently using the BD key as an ID maybe later will need to add an ID entry to Team
-  const { teamIds, totalTeamNum } = useMemo(() => {
-    const totalTeamNum = database.teams.keys.length
-    const teamIds = database.teams.keys
-      .filter(
-        filterFunction(
-          { charKeys, name: deferredSearchTerm },
-          teamFilterConfigs(database)
+  const teamsDirty = useDataManagerValues(database.teams)
+  const totalTeamNum = teamsDirty.length
+  const filteredTeamIds = useMemo(
+    () =>
+      teamsDirty &&
+      database.teams.keys
+        .filter(
+          filterFunction(
+            { charKeys, name: deferredSearchTerm },
+            teamFilterConfigs(database)
+          )
         )
-      )
-      .sort((k1, k2) => {
-        return sortFunction(
-          teamSortMap[sortType],
-          ascending,
-          teamSortConfigs()
-        )(database.teams.get(k1)!, database.teams.get(k2)!)
-      })
-    return dbDirty && { teamIds, totalTeamNum }
-  }, [dbDirty, database, charKeys, deferredSearchTerm, sortType, ascending])
+        .sort((k1, k2) => {
+          return sortFunction(
+            teamSortMap[sortType],
+            ascending,
+            teamSortConfigs()
+          )(database.teams.get(k1)!, database.teams.get(k2)!)
+        }),
+    [teamsDirty, database, charKeys, deferredSearchTerm, sortType, ascending]
+  )
   const brPt = useMediaQueryUp()
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    teamIds.length
+    filteredTeamIds.length
   )
 
   const TeamIdsToShow = useMemo(
-    () => teamIds.slice(0, numShow),
-    [teamIds, numShow]
+    () => filteredTeamIds.slice(0, numShow),
+    [filteredTeamIds, numShow]
   )
 
   const totalShowing =
-    teamIds.length !== totalTeamNum
-      ? `${teamIds.length}/${totalTeamNum}`
+    filteredTeamIds.length !== totalTeamNum
+      ? `${filteredTeamIds.length}/${totalTeamNum}`
       : `${totalTeamNum}`
 
   const showingTextProps = {
@@ -140,9 +137,10 @@ export default function PageTeams() {
   const sortByButtonProps = {
     sortKeys: [...teamSortKeys],
     value: sortType,
-    onChange: (sortType) => database.displayTeam.set({ sortType }),
+    onChange: (sortType: TeamSortKey) => database.displayTeam.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayTeam.set({ ascending }),
+    onChangeAsc: (ascending: boolean) =>
+      database.displayTeam.set({ ascending }),
   }
 
   return (
@@ -151,7 +149,7 @@ export default function PageTeams() {
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box display="flex" gap={1} alignItems="stretch">
             <CharacterMultiAutocomplete
-              teamIds={teamIds}
+              teamIds={filteredTeamIds}
               charKeys={charKeys}
               setCharKey={(charKeys) => database.displayTeam.set({ charKeys })}
               acProps={{ sx: { flexGrow: 1 } }}
@@ -250,7 +248,7 @@ export default function PageTeams() {
           ))}
         </Grid>
       </Suspense>
-      {teamIds.length !== TeamIdsToShow.length && (
+      {filteredTeamIds.length !== TeamIdsToShow.length && (
         <Skeleton
           ref={(node) => {
             if (!node) return

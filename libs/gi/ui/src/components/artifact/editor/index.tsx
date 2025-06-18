@@ -1,5 +1,5 @@
 'use client'
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   DropdownButton,
@@ -177,12 +177,6 @@ export function ArtifactEditor({
 
   const [show, setShow] = useState(false)
 
-  const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
-  useEffect(
-    () => database.arts.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
-  )
-
   const [artifact, artifactDispatch] = useReducer(artifactReducer, undefined)
 
   const [modalShow, setModalShow] = useState(false)
@@ -223,7 +217,7 @@ export function ArtifactEditor({
     },
     [uploadFiles]
   )
-
+  const artValuesDirty = useDataManagerValues(database.arts)
   const {
     old,
     oldType,
@@ -232,16 +226,16 @@ export function ArtifactEditor({
     oldType: 'edit' | 'duplicate' | 'upgrade' | ''
   } = useMemo(() => {
     const databaseArtifact =
-      dirtyDatabase && artifactIdToEdit && database.arts.get(artifactIdToEdit)
+      artValuesDirty && artifactIdToEdit && database.arts.get(artifactIdToEdit)
     if (databaseArtifact) return { old: databaseArtifact, oldType: 'edit' }
     if (artifact === undefined) return { old: undefined, oldType: '' }
     const { duplicated, upgraded } =
-      dirtyDatabase && database.arts.findDups(artifact)
+      artValuesDirty && database.arts.findDups(artifact)
     return {
       old: duplicated[0] ?? upgraded[0],
       oldType: duplicated.length !== 0 ? 'duplicate' : 'upgrade',
     }
-  }, [artifact, artifactIdToEdit, database, dirtyDatabase])
+  }, [artifact, artifactIdToEdit, database, artValuesDirty])
 
   const { artifact: cArtifact, errors } = useMemo(() => {
     if (!artifact) return { artifact: undefined, errors: [] as ReactNode[] }
@@ -380,7 +374,7 @@ export function ArtifactEditor({
       artifactDispatch({ type: 'reset' })
     }
     const databaseArtifact =
-      artifactIdToEdit && dirtyDatabase && database.arts.get(artifactIdToEdit)
+      artifactIdToEdit && artValuesDirty && database.arts.get(artifactIdToEdit)
     if (databaseArtifact) {
       setShow(true)
       artifactDispatch({
@@ -388,7 +382,7 @@ export function ArtifactEditor({
         artifact: deepClone(databaseArtifact),
       })
     }
-  }, [artifactIdToEdit, database, dirtyDatabase])
+  }, [artifactIdToEdit, database, artValuesDirty])
 
   // When there is scanned artifacts and no artifact in editor, put latest scanned artifact in editor
   useEffect(() => {

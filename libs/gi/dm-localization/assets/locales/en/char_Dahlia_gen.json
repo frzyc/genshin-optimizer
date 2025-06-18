@@ -1,0 +1,230 @@
+{
+  "name": "Dahlia",
+  "title": "Ode and Oblation",
+  "description": "Deacon of the Church of Favonius and the Anemo Archon's representative in the church.",
+  "constellationName": "Cantus Choralis",
+  "auto": {
+    "name": "Ritual",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 4 rapid strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%+{{3, percent(fixed: 1)}}%",
+      "3": "{{4, percent(fixed: 1)}}%",
+      "4": "{{5, percent(fixed: 1)}}%+{{6, percent(fixed: 1)}}%",
+      "5": "{{7, fixed(fixed: 1)}}",
+      "6": "{{8, percent(fixed: 1)}}%",
+      "7": "{{9, percent}}%/{{10, percent}}%",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Immersive Ordinance",
+    "description": {
+      "0": "Time for a fun little trick! Summons the Sacramental Shower in different ways depending on whether you Tap or Hold it.",
+      "1": "<br/>",
+      "2": "<strong>Tap</strong>",
+      "3": "After a short prayer, summons the Sacramental Shower in front.",
+      "4": "<br/>",
+      "5": "<strong>Hold</strong>",
+      "6": "Engages in continuous prayer, and when done, summons forth a Sacramental Shower in the designated position.",
+      "7": "<br/>",
+      "8": "<strong>Sacramental Shower</strong>",
+      "9": "When opponents or nearby party members touch the Sacramental Shower, different effects will occur depending on the one who touches it:",
+      "10": "If an opponent touches the Shower, it will explode and deal <hydro>AoE Hydro DMG</hydro> to nearby opponents.",
+      "11": "If a nearby party member touches it, it will bounce the one who touches it high in the air.",
+      "12": "<br/>",
+      "13": "Only 1 Sacramental Shower summoned by Dahlia himself can be on the field at once."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Skill CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, fixed(fixed: 1)}}s",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Radiant Psalter",
+    "description": {
+      "0": "Appeals to the divine with earnestness and song, dealing <hydro>AoE Hydro DMG</hydro> to nearby opponents and granting his party members Favonian Favor, summoning a Shield of Sacred Favor.",
+      "1": "The Shield of Sacred Favor's DMG absorption is based on Dahlia's Max HP, and it will absorb <hydro>Hydro DMG</hydro> with 250% effectiveness.",
+      "2": "<br/>",
+      "3": "<strong>Favonian Favor</strong>",
+      "4": "While this effect is active, 1 Benison stack may be consumed to summon a new Shield of Sacred Favor when an existing Shield is broken via DMG.",
+      "5": "<br/>",
+      "6": "Dahlia can obtain Benison via the following methods:",
+      "7": [
+        " He will gain 1 Benison stack when his own active party member hits opponents 4 times with Normal Attacks while affected by Favonian Favor.",
+        " After triggering the effect of his Passive Talent, \"The Wind's Gentle Grace\" (You must first unlock this Passive Talent.)"
+      ],
+      "8": "Dahlia can gain a maximum of 4 Benison stacks per Favonian Favor duration."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Shield of Sacred Favor DMG Absorption",
+      "2": "Favonian Favor Duration",
+      "3": "Energy Cost",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{2, percent(fixed: 1)}}% Max HP+{{1}}",
+      "2": "{{3, fixed(fixed: 1)}}s",
+      "3": "{{4}}",
+      "4": "{{5, fixed(fixed: 1)}}s",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "The Wind's Gentle Grace",
+    "description": {
+      "0": "When characters affected by the Favonian Favor effect of the Elemental Burst <strong>Radiant Psalter</strong> trigger Frozen reactions on opponents, they will grant Dahlia 2 Benison stacks. This effect can trigger once every 8s."
+    }
+  },
+  "passive2": {
+    "name": "Prayer of Well-Wrought Joy",
+    "description": {
+      "0": "When your active party member is affected by the Favonian Favor effect of the Elemental Burst <strong>\"Radiant Psalter,\"</strong> their ATK SPD will increase based on Dahlia's Max HP: Every 1,000 Max HP will cause an increase of 0.5%, up to a maximum of 20%."
+    }
+  },
+  "passive3": {
+    "name": "Pilgrimage Upon Returning Winds",
+    "description": {
+      "0": "During the day (06:00 – 18:00), your party members gain the Swift Stride effect: Movement SPD increased by 10%.",
+      "1": "Does not take effect in Domains, Trounce Domains, or the Spiral Abyss. Swift Stride does not stack."
+    }
+  },
+  "constellation1": {
+    "name": "Infallible Procession",
+    "description": {
+      "0": "Each time Dahlia gains 1 of his Elemental Burst <strong>Radiant Psalter</strong>'s Benison stacks, he will regain 2.5 Elemental Energy."
+    }
+  },
+  "constellation2": {
+    "name": "Revelation of Mercy",
+    "description": {
+      "0": "After Dahlia consumes his Elemental Burst <strong>Radiant Psalter</strong>'s Benison stacks to summon a Shield of Sacred Favor, the character protected by said Shield will gain 25% increased Shield Strength for 12s."
+    }
+  },
+  "constellation3": {
+    "name": "Windblume Offertory",
+    "description": {
+      "0": "Increases the Level of <strong>Radiant Psalter</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Collect of the Assembly",
+    "description": {
+      "0": "The Favonian Favor from Dahlia's Elemental Burst <strong>Radiant Psalter</strong> lasts 3 more seconds."
+    }
+  },
+  "constellation5": {
+    "name": "Let It Be Subtly So",
+    "description": {
+      "0": "Increases the Level of <strong>Immersive Ordinance</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "You Shall Go Out With Joy",
+    "description": {
+      "0": "The current active character affected by the Elemental Burst <strong>Radiant Psalter</strong>'s Favonian Favor has their ATK SPD increased by 10%.",
+      "1": "Additionally, when an active character affected by Favonian Favor falls, immediately:",
+      "2": [
+        " Revive them.",
+        " Restore their HP to 100%."
+      ],
+      "3": "This effect can trigger once every 15 minutes."
+    }
+  }
+}

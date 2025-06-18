@@ -1,7 +1,5 @@
-import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ImgIcon,
@@ -46,7 +44,6 @@ import {
   Suspense,
   useCallback,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -90,12 +87,6 @@ export function WengineSwapModal({
   )
   const resetEditWengine = useCallback(() => setEditWengineId(''), [])
 
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(
-    () => database.wengines.followAny(forceUpdate),
-    [forceUpdate, database]
-  )
-
   const brPt = useMediaQueryUp()
 
   const [rarity, setRarity] = useState<Raritykey[]>(['S', 'A', 'B'])
@@ -105,6 +96,7 @@ export function WengineSwapModal({
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
+  const allWengines = useDataManagerValues(database.wengines)
   const wengineIds = useMemo(() => {
     const filterFunc = filterFunction(
       { speciality, rarity, name: deferredSearchTerm },
@@ -115,7 +107,7 @@ export function WengineSwapModal({
       false,
       wengineSortConfigs()
     )
-    let wengineIds = database.wengines.values
+    let wengineIds = allWengines
       .filter(filterFunc)
       .sort(sortFunc)
       .map((wengine) => wengine.id)
@@ -124,14 +116,14 @@ export function WengineSwapModal({
       wengineIds = wengineIds.filter((id) => id !== wengineId) // remove
       wengineIds.unshift(wengineId) // add to beginnig
     }
-    return dbDirty && wengineIds
+    return wengineIds
   }, [
     speciality,
     rarity,
     deferredSearchTerm,
-    database.wengines,
+    allWengines,
     wengineId,
-    dbDirty,
+    database.wengines,
   ])
 
   const { numShow, setTriggerElement } = useInfScroll(
@@ -152,16 +144,13 @@ export function WengineSwapModal({
     t: t,
     namespace: 'page_wengine',
   }
-  const [swapWengineId, setSwapWengineId] = useState('')
-
-  //TODO: This should be replaced with CompareBuildWrapper
-  useEffect(() => {
-    if (swapWengineId) {
-      onChangeId(swapWengineId === 'unequip' ? '' : swapWengineId)
-      setSwapWengineId('')
+  const setSwapWengineId = useCallback(
+    (swapWengineId: string | '') => {
+      onChangeId(swapWengineId)
       onClose()
-    }
-  }, [onChangeId, onClose, swapWengineId])
+    },
+    [onChangeId, onClose]
+  )
 
   return (
     <>
@@ -300,7 +289,7 @@ export function WengineSwapModal({
                             justifyContent: 'center',
                             alignItems: 'center',
                           }}
-                          onClick={() => setSwapWengineId('unequip')}
+                          onClick={() => setSwapWengineId('')}
                         >
                           <Box
                             sx={{
@@ -337,6 +326,7 @@ export function WengineSwapModal({
                       })}
                     >
                       <WengineCard
+                        key={id}
                         wengineId={id}
                         onClick={
                           wengineId === id

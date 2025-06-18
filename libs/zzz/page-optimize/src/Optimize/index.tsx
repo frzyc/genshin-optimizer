@@ -1,4 +1,4 @@
-import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
@@ -48,16 +48,16 @@ export default function Optimize() {
   const { key: characterKey } = useCharacterContext()!
   const { optConfigId } = useCharOpt(characterKey)!
   const { database } = useDatabaseContext()
-  useEffect(() => {
-    if (optConfigId) return
+
+  if (!optConfigId) {
     const newOptConfigId = database.optConfigs.new({
       wEngineTypes: [getCharStat(characterKey).specialty],
     })
     database.charOpts.set(characterKey, {
       optConfigId: newOptConfigId,
     })
-  }, [database, optConfigId, characterKey])
-  if (!optConfigId) return null
+    return null
+  }
   return (
     <OptConfigProvider optConfigId={optConfigId}>
       <OptimizeWrapper />
@@ -74,7 +74,7 @@ function OptimizeWrapper() {
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
-  const discDirty = useDataManagerBaseDirty(database.discs)
+  const discs = useDataManagerValues(database.discs)
   const discsBySlot = useMemo(() => {
     const slotKeyMap = {
       4: optConfig.slot4,
@@ -84,81 +84,73 @@ function OptimizeWrapper() {
     const isFilteredSlot = (slotKey: DiscSlotKey): slotKey is '4' | '5' | '6' =>
       ['4', '5', '6'].includes(slotKey)
 
-    return (
-      discDirty &&
-      database.discs.values.reduce(
-        (discsBySlot, disc) => {
-          const { slotKey, mainStatKey, level, location } = disc
-          if (level < optConfig.levelLow || level > optConfig.levelHigh)
-            return discsBySlot
-          if (location && !optConfig.useEquipped && location !== characterKey)
-            return discsBySlot
-          if (
-            isFilteredSlot(slotKey) &&
-            !slotKeyMap[slotKey].includes(mainStatKey)
-          )
-            return discsBySlot
-          discsBySlot[disc.slotKey].push(disc)
+    return discs.reduce(
+      (discsBySlot, disc) => {
+        const { slotKey, mainStatKey, level, location } = disc
+        if (level < optConfig.levelLow || level > optConfig.levelHigh)
           return discsBySlot
-        },
-        {
-          1: [],
-          2: [],
-          3: [],
-          4: [],
-          5: [],
-          6: [],
-        } as Record<DiscSlotKey, ICachedDisc[]>
-      )
+        if (location && !optConfig.useEquipped && location !== characterKey)
+          return discsBySlot
+        if (
+          isFilteredSlot(slotKey) &&
+          !slotKeyMap[slotKey].includes(mainStatKey)
+        )
+          return discsBySlot
+        discsBySlot[disc.slotKey].push(disc)
+        return discsBySlot
+      },
+      {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+      } as Record<DiscSlotKey, ICachedDisc[]>
     )
   }, [
-    characterKey,
-    discDirty,
-    database.discs,
-    optConfig.levelHigh,
-    optConfig.levelLow,
     optConfig.slot4,
     optConfig.slot5,
     optConfig.slot6,
+    optConfig.levelLow,
+    optConfig.levelHigh,
     optConfig.useEquipped,
+    discs,
+    characterKey,
   ])
-  const wengineDirty = useDataManagerBaseDirty(database.wengines)
-  const wengines = useMemo(() => {
-    return (
-      wengineDirty &&
-      database.wengines.values.filter(({ key, level, location }) => {
-        // only return equipped wengine if not opting for wengine
-        if (!optConfig.optWengine) return location === characterKey
+  const wengines = useDataManagerValues(database.wengines)
+  const filteredWengines = useMemo(() => {
+    return wengines.filter(({ key, level, location }) => {
+      // only return equipped wengine if not opting for wengine
+      if (!optConfig.optWengine) return location === characterKey
 
-        if (level < optConfig.wlevelLow || level > optConfig.wlevelHigh)
-          return false
-        if (
-          location &&
-          !optConfig.useEquippedWengine &&
-          location !== characterKey
-        )
-          return false
+      if (level < optConfig.wlevelLow || level > optConfig.wlevelHigh)
+        return false
+      if (
+        location &&
+        !optConfig.useEquippedWengine &&
+        location !== characterKey
+      )
+        return false
 
-        const { type } = getWengineStat(key)
-        // filter by path
-        if (!optConfig.wEngineTypes.includes(type)) return false
-        return true
-      })
-    )
+      const { type } = getWengineStat(key)
+      // filter by path
+      if (!optConfig.wEngineTypes.includes(type)) return false
+      return true
+    })
   }, [
     characterKey,
-    database.wengines,
+    wengines,
     optConfig.wlevelLow,
     optConfig.wlevelHigh,
     optConfig.optWengine,
     optConfig.wEngineTypes,
     optConfig.useEquippedWengine,
-    wengineDirty,
   ])
 
   const totalPermutations = useMemo(
-    () => buildCount(Object.values(discsBySlot)) * wengines.length,
-    [wengines.length, discsBySlot]
+    () => buildCount(Object.values(discsBySlot)) * filteredWengines.length,
+    [filteredWengines.length, discsBySlot]
   )
 
   const [optimizing, setOptimizing] = useState(false)
@@ -191,7 +183,7 @@ function OptimizeWrapper() {
         statFilters,
         optConfig.setFilter2,
         optConfig.setFilter4,
-        wengines,
+        filteredWengines,
         discsBySlot,
         numWorkers,
         optConfig.maxBuildsToShow,
@@ -234,7 +226,7 @@ function OptimizeWrapper() {
       optConfig.setFilter4,
       optConfig.maxBuildsToShow,
       characterKey,
-      wengines,
+      filteredWengines,
       discsBySlot,
       numWorkers,
       database.optConfigs,
@@ -260,7 +252,7 @@ function OptimizeWrapper() {
             }}
           >
             <StatFilterCard />
-            <WengineFilter wengines={wengines} />
+            <WengineFilter wengines={filteredWengines} />
             <DiscFilter discsBySlot={discsBySlot} />
           </Box>
 
