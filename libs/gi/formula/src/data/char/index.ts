@@ -19,11 +19,13 @@ import Citlali from './Citlali'
 import Clorinde from './Clorinde'
 import Collei from './Collei'
 import Cyno from './Cyno'
+import Dahlia from './Dahlia'
 import Dehya from './Dehya'
 import Diluc from './Diluc'
 import Diona from './Diona'
 import Dori from './Dori'
 import Emilie from './Emilie'
+import Escoffier from './Escoffier'
 import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
@@ -34,6 +36,7 @@ import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
 import Iansan from './Iansan'
+import Ifa from './Ifa'
 import Jean from './Jean'
 import Kachina from './Kachina'
 import KaedeharaKazuha from './KaedeharaKazuha'
@@ -73,6 +76,7 @@ import Sethos from './Sethos'
 import Shenhe from './Shenhe'
 import ShikanoinHeizou from './ShikanoinHeizou'
 import Sigewinne from './Sigewinne'
+import Skirk from './Skirk'
 import Somnia from './Somnia'
 import Sucrose from './Sucrose'
 import Tartaglia from './Tartaglia'
@@ -124,11 +128,13 @@ const data: TagMapNodeEntries[] = [
   Clorinde,
   Collei,
   Cyno,
+  Dahlia,
   Dehya,
   Diluc,
   Diona,
   Dori,
   Emilie,
+  Escoffier,
   Eula,
   Faruzan,
   Fischl,
@@ -139,6 +145,7 @@ const data: TagMapNodeEntries[] = [
   Gorou,
   HuTao,
   Iansan,
+  Ifa,
   Jean,
   Kachina,
   KaedeharaKazuha,
@@ -178,6 +185,7 @@ const data: TagMapNodeEntries[] = [
   Shenhe,
   ShikanoinHeizou,
   Sigewinne,
+  Skirk,
   Somnia,
   Sucrose,
   Tartaglia,

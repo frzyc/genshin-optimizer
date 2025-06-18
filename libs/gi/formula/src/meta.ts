@@ -919,6 +919,20 @@ export const formulas = {
       },
     },
   },
+  Dahlia: {
+    normal1: {
+      sheet: 'Dahlia',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Dahlia',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Dehya: {
     normal1: {
       sheet: 'Dehya',
@@ -984,6 +998,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Emilie',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Escoffier: {
+    normal1: {
+      sheet: 'Escoffier',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Escoffier',
         move: 'normal',
         name: 'normal1',
       },
@@ -1124,6 +1152,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Iansan',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Ifa: {
+    normal1: {
+      sheet: 'Ifa',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Ifa',
         move: 'normal',
         name: 'normal1',
       },
@@ -1982,6 +2024,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Sigewinne',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Skirk: {
+    normal1: {
+      sheet: 'Skirk',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Skirk',
         move: 'normal',
         name: 'normal1',
       },
