@@ -3,6 +3,7 @@ import type { WeaponSheet } from '../WeaponSheet'
 import Absolution from './Absolution'
 import AmenomaKageuchi from './AmenomaKageuchi'
 import AquilaFavonia from './AquilaFavonia'
+import Azurelight from './Azurelight'
 import BlackcliffLongsword from './BlackcliffLongsword'
 import CalamityOfEshu from './CalamityOfEshu'
 import CinnabarSpindle from './CinnabarSpindle'
@@ -51,6 +52,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   Absolution,
   AmenomaKageuchi,
   AquilaFavonia,
+  Azurelight,
   BlackcliffLongsword,
   CalamityOfEshu,
   CinnabarSpindle,

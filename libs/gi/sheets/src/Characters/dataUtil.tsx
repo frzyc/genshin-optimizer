@@ -203,7 +203,8 @@ export function plungingDmgNodes(
   base: MainStatKey | SubstatKey,
   lvlMultipliers: Record<PlungingDmgKey, number[]>,
   additional: Data = {},
-  specialMultiplier?: NumNode
+  specialMultiplier?: NumNode,
+  overrideTalentType?: 'skill' | 'burst' | 'auto'
 ): Record<PlungingDmgKey, NumNode> {
   const nodes = Object.fromEntries(
     Object.entries(lvlMultipliers).map(([key, multi]) => [
@@ -213,7 +214,8 @@ export function plungingDmgNodes(
         multi,
         key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
         additional,
-        specialMultiplier
+        specialMultiplier,
+        overrideTalentType
       ),
     ])
   )
