@@ -282,6 +282,6 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(specialty, 'spec')
   optional(faction, 'fac')
   if (ex) result += `[${ex}] `
-  if (Object.keys(remaining).length) result += JSON.stringify(remaining)
+  if (Object.keys(remaining).length) result += `${JSON.stringify(remaining)} `
   return result + '}'
 }
