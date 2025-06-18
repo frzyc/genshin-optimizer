@@ -1,6 +1,6 @@
-import type { CharacterKey } from "@genshin-optimizer/gi/consts";
-import { allStats } from "@genshin-optimizer/gi/stats";
-import { cmpGE } from "@genshin-optimizer/pando/engine";
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
+import { cmpGE } from '@genshin-optimizer/pando/engine'
 import {
   allBoolConditionals,
   allListConditionals,
@@ -11,12 +11,12 @@ import {
   teamBuff,
   enemyDebuff,
   register,
-} from "../util";
-import { dataGenToCharInfo, dmg, entriesForChar } from "./util";
+} from '../util'
+import { dataGenToCharInfo, dmg, entriesForChar } from './util'
 
-const key: CharacterKey = "Dahlia";
-const data_gen = allStats.char.data[key];
-const skillParam_gen = allStats.char.skillParam[key];
+const key: CharacterKey = 'Dahlia'
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
 
 // TODO: Fill data-mine values here
 const _dm = {
@@ -27,19 +27,19 @@ const _dm = {
   plunging: {},
   skill: {},
   burst: {},
-} as const;
+} as const
 
-const info = dataGenToCharInfo(data_gen);
+const info = dataGenToCharInfo(data_gen)
 const {
   final: _final,
   char: { ascension: _ascension, constellation },
-} = own;
+} = own
 // TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(info.key);
-const { _someListConditional } = allListConditionals(info.key, []);
-const { _someNumConditional } = allNumConditionals(info.key);
+const { _someBoolConditional } = allBoolConditionals(info.key)
+const { _someListConditional } = allListConditionals(info.key, [])
+const { _someNumConditional } = allNumConditionals(info.key)
 
-const _count = team.common.count;
+const _count = team.common.count
 
 export default register(
   info.key,
@@ -60,5 +60,5 @@ export default register(
 
   // Formulas
   // TODO: Add dmg/heal/shield formulas using `dmg`, `customDmg`, `shield`, `customShield`, `fixedShield`, or `customHeal`
-  dmg("normal1", info, "atk", _dm.normal.dmg1, "normal"),
-);
+  dmg('normal1', info, 'atk', _dm.normal.dmg1, 'normal')
+)
