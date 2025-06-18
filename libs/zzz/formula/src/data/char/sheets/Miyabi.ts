@@ -52,7 +52,7 @@ const ability_check = (node: NumNode | number) =>
       team.common.count.withSpecialty('support'),
       team.common.count.withFaction('HollowSpecialOoperationsSection6')
     ),
-    0,
+    2,
     node
   )
 const ability_dmg_ = ownBuff.combat.common_dmg_.add(

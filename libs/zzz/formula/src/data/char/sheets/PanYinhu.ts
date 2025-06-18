@@ -16,6 +16,7 @@ import {
   percent,
   register,
   registerBuff,
+  team,
 } from '../../util'
 import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
 
@@ -89,7 +90,16 @@ const sheet = register(
   ),
   registerBuff(
     'ability_dmgInc_',
-    enemyDebuff.common.dmgInc_.add(depleted_qi.ifOn(dm.ability.dmgInc_))
+    enemyDebuff.common.dmgInc_.add(
+      cmpGE(
+        sum(
+          team.common.count.withSpecialty('rupture'),
+          team.common.count.withFaction('YunkuiSummit')
+        ),
+        2,
+        depleted_qi.ifOn(dm.ability.dmgInc_)
+      )
+    )
   ),
   registerBuff(
     'm1_dmgInc_',
