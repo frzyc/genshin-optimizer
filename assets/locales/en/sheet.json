@@ -201,7 +201,8 @@
   "dmgMult": {
     "normal": "Normal Att. DMG Mult.",
     "charged": "Charged Att. DMG Mult.",
-    "skill": "Skill DMG Mult."
+    "skill": "Skill DMG Mult.",
+    "burst": "Burst DMG Mult."
   },
   "energy": "Energy",
   "triggerQuota": "Trigger Quota",
