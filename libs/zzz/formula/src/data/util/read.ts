@@ -250,11 +250,6 @@ export function tagStr(tag: Tag, ex?: any): string {
     ...remaining
   } = tag
 
-  if (Object.keys(remaining).length)
-    console.error(
-      `Extraneous tags not included in tagStr: ${JSON.stringify(remaining)}`
-    )
-
   let result = '{ ',
     includedRequired = false,
     includedBar = false
