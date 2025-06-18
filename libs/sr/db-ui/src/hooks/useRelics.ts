@@ -1,11 +1,8 @@
-import { objKeyMap, objMap } from '@genshin-optimizer/common/util'
-import {
-  type RelicSlotKey,
-  allRelicSlotKeys,
-} from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic, RelicIds } from '@genshin-optimizer/sr/db'
-import { useEffect, useState } from 'react'
-import { useDatabaseContext } from '../context'
+import { objKeyMap } from '@genshin-optimizer/common/util'
+import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
+import type { RelicIds } from '@genshin-optimizer/sr/db'
+import { useMemo } from 'react'
+import { useRelic } from './useRelic'
 
 const emptyRelicIds = objKeyMap(allRelicSlotKeys, () => undefined)
 
@@ -13,26 +10,22 @@ const emptyRelicIds = objKeyMap(allRelicSlotKeys, () => undefined)
  * A hook to keep a "build" of relics in sync with the database
  */
 export function useRelics(relicIds: RelicIds | undefined = emptyRelicIds) {
-  const { database } = useDatabaseContext()
-  const [relics, setRelics] = useState<
-    Record<RelicSlotKey, ICachedRelic | undefined>
-  >(() => objMap(relicIds, (id) => database.relics.get(id)))
+  const head = useRelic(relicIds.head)
+  const body = useRelic(relicIds.body)
+  const hands = useRelic(relicIds.hands)
+  const feet = useRelic(relicIds.feet)
+  const sphere = useRelic(relicIds.sphere)
+  const rope = useRelic(relicIds.rope)
 
-  useEffect(() => {
-    setRelics(objMap(relicIds, (id) => database.relics.get(id)))
-    const unfollows = Object.values(relicIds).map((relicId) =>
-      relicId
-        ? database.relics.follow(relicId, (_k, r, v: ICachedRelic) => {
-            if (r === 'update')
-              setRelics((relics) => ({ ...relics, [v.slotKey]: v }))
-            // remove event returns the deleted obj
-            if (r === 'remove')
-              setRelics((relics) => ({ ...relics, [v.slotKey]: undefined }))
-          })
-        : () => {}
-    )
-    return () => unfollows.forEach((unfollow) => unfollow())
-  }, [database, relicIds])
-
-  return relics
+  return useMemo(
+    () => ({
+      head,
+      body,
+      hands,
+      feet,
+      sphere,
+      rope,
+    }),
+    [head, body, hands, feet, sphere, rope]
+  )
 }

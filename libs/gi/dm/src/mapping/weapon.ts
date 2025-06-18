@@ -55,6 +55,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11514: 'UrakuMisugiri',
   11515: 'Absolution',
   11516: 'PeakPatrolSong',
+  11517: 'Azurelight',
 
   //claymore
   12101: 'WasterGreatsword',

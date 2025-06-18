@@ -27,8 +27,8 @@ import {
 import { Suspense, useCallback, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ZCard } from '../Components'
-import { DiscCard, DiscEditor, DiscSwapModal } from '../Disc'
-import { WengineCard, WengineEditor, WengineSwapModal } from '../Wengine'
+import { DiscCardObj, DiscEditor, DiscSwapModal } from '../Disc'
+import { WengineCardObj, WengineEditor, WengineSwapModal } from '../Wengine'
 
 const columns = {
   xs: 1,
@@ -95,11 +95,9 @@ export function EquippedGrid({
           )}
         </Suspense>
         <Box>
-          {wengine &&
-          wengine.id &&
-          database.wengines.keys.includes(wengine.id) ? (
-            <WengineCard
-              wengineId={wengine.id}
+          {wengine?.id ? (
+            <WengineCardObj
+              wengine={wengine}
               onEdit={() => onEditWengine(wengine.id)}
               extraButtons={
                 <WengineSwapButton
@@ -122,8 +120,8 @@ export function EquippedGrid({
             {!!discs &&
               Object.entries(discs).map(([slotKey, disc]) => (
                 <Grid item xs={1} key={disc?.id || slotKey}>
-                  {disc?.id && database.discs.keys.includes(disc.id) ? (
-                    <DiscCard
+                  {disc?.id ? (
+                    <DiscCardObj
                       disc={disc}
                       extraButtons={
                         <DiscSwapButtonButton

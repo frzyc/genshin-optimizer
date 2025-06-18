@@ -19,6 +19,7 @@ import Citlali from './Character_Citlali_Card.jpg'
 import Clorinde from './Character_Clorinde_Card.jpg'
 import Collei from './Character_Collei_Card.jpg'
 import Cyno from './Character_Cyno_Card.jpg'
+import Dahlia from './Character_Dahlia_Card.jpg'
 import Dehya from './Character_Dehya_Card.jpg'
 import Diluc from './Character_Diluc_Card.jpg'
 import Diona from './Character_Diona_Card.png'
@@ -75,6 +76,7 @@ import Sethos from './Character_Sethos_Card.jpg'
 import Shenhe from './Character_Shenhe_Card.jpg'
 import ShikanoinHeizou from './Character_Shikanoin_Heizou_Card.png'
 import Sigewinne from './Character_Sigewinne_Card.jpg'
+import Skirk from './Character_Skirk_Card.jpg'
 import Somnia from './Character_Somnia_Card.png'
 import Sucrose from './Character_Sucrose_Card.jpg'
 import Tartaglia from './Character_Tartaglia_Card.png'
@@ -122,6 +124,7 @@ const charCards = {
   Clorinde,
   Collei,
   Cyno,
+  Dahlia,
   Dehya,
   Diluc,
   Diona,
@@ -178,6 +181,7 @@ const charCards = {
   Shenhe,
   ShikanoinHeizou,
   Sigewinne,
+  Skirk,
   Somnia,
   Sucrose,
   Tartaglia,

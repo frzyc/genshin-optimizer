@@ -1,4 +1,4 @@
-import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
@@ -50,14 +50,13 @@ export default function Optimize() {
   const { key: characterKey } = useCharacterContext()!
   const { optConfigId } = useCharOpt(characterKey)!
   const { database } = useDatabaseContext()
-  useEffect(() => {
-    if (optConfigId) return
+  if (!optConfigId) {
     const newOptConfigId = database.optConfigs.new()
     database.charOpts.set(characterKey, {
       optConfigId: newOptConfigId,
     })
-  }, [database, optConfigId, characterKey])
-  if (!optConfigId) return null
+    return null
+  }
   return (
     <OptConfigProvider optConfigId={optConfigId}>
       <OptimizeWrapper />
@@ -75,7 +74,7 @@ function OptimizeWrapper() {
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
-  const relicDirty = useDataManagerBaseDirty(database.relics)
+  const relics = useDataManagerValues(database.relics)
   const relicsBySlot = useMemo(() => {
     const slotKeyMap = {
       body: optConfig.slotBodyKeys,
@@ -87,36 +86,32 @@ function OptimizeWrapper() {
       slotKey: RelicSlotKey
     ): slotKey is 'body' | 'feet' | 'sphere' | 'rope' =>
       ['body', 'feet', 'sphere', 'rope'].includes(slotKey)
-    return (
-      relicDirty &&
-      database.relics.values.reduce(
-        (relicsBySlot, relic) => {
-          const { slotKey, mainStatKey, level, location } = relic
-          if (level < optConfig.levelLow || level > optConfig.levelHigh)
-            return relicsBySlot
-          if (location && !optConfig.useEquipped && location !== characterKey)
-            return relicsBySlot
-          if (
-            isFilteredSlot(slotKey) &&
-            !slotKeyMap[slotKey].includes(mainStatKey)
-          )
-            return relicsBySlot
-          relicsBySlot[relic.slotKey].push(relic)
+    return relics.reduce(
+      (relicsBySlot, relic) => {
+        const { slotKey, mainStatKey, level, location } = relic
+        if (level < optConfig.levelLow || level > optConfig.levelHigh)
           return relicsBySlot
-        },
-        {
-          head: [],
-          hands: [],
-          feet: [],
-          body: [],
-          sphere: [],
-          rope: [],
-        } as Record<RelicSlotKey, ICachedRelic[]>
-      )
+        if (location && !optConfig.useEquipped && location !== characterKey)
+          return relicsBySlot
+        if (
+          isFilteredSlot(slotKey) &&
+          !slotKeyMap[slotKey].includes(mainStatKey)
+        )
+          return relicsBySlot
+        relicsBySlot[relic.slotKey].push(relic)
+        return relicsBySlot
+      },
+      {
+        head: [],
+        hands: [],
+        feet: [],
+        body: [],
+        sphere: [],
+        rope: [],
+      } as Record<RelicSlotKey, ICachedRelic[]>
     )
   }, [
     characterKey,
-    database.relics,
     optConfig.levelHigh,
     optConfig.levelLow,
     optConfig.slotBodyKeys,
@@ -124,44 +119,40 @@ function OptimizeWrapper() {
     optConfig.slotRopeKeys,
     optConfig.slotSphereKeys,
     optConfig.useEquipped,
-    relicDirty,
+    relics,
   ])
-  const lightConeDirty = useDataManagerBaseDirty(database.lightCones)
-  const lightCones = useMemo(() => {
-    return (
-      lightConeDirty &&
-      database.lightCones.values.filter(({ key, level, location }) => {
-        // only return equipped lightcone if not opting for lightcone
-        if (!optConfig.optLightCone) return location === characterKey
+  const lightCones = useDataManagerValues(database.lightCones)
+  const filteredLightCones = useMemo(() => {
+    return lightCones.filter(({ key, level, location }) => {
+      // only return equipped lightcone if not opting for lightcone
+      if (!optConfig.optLightCone) return location === characterKey
 
-        if (level < optConfig.lcLevelLow || level > optConfig.lcLevelHigh)
-          return false
-        if (
-          location &&
-          !optConfig.useEquippedLightCone &&
-          location !== characterKey
-        )
-          return false
+      if (level < optConfig.lcLevelLow || level > optConfig.lcLevelHigh)
+        return false
+      if (
+        location &&
+        !optConfig.useEquippedLightCone &&
+        location !== characterKey
+      )
+        return false
 
-        const { path } = getLightConeStat(key)
-        // filter by path
-        if (!optConfig.lightConePaths.includes(path)) return false
-        return true
-      })
-    )
+      const { path } = getLightConeStat(key)
+      // filter by path
+      if (!optConfig.lightConePaths.includes(path)) return false
+      return true
+    })
   }, [
-    characterKey,
-    database.lightCones,
+    lightCones,
+    optConfig.optLightCone,
     optConfig.lcLevelLow,
     optConfig.lcLevelHigh,
-    optConfig.optLightCone,
-    optConfig.lightConePaths,
     optConfig.useEquippedLightCone,
-    lightConeDirty,
+    optConfig.lightConePaths,
+    characterKey,
   ])
   const totalPermutations = useMemo(
-    () => buildCount(Object.values(relicsBySlot)) * lightCones.length,
-    [lightCones.length, relicsBySlot]
+    () => buildCount(Object.values(relicsBySlot)) * filteredLightCones.length,
+    [filteredLightCones.length, relicsBySlot]
   )
 
   const [optimizing, setOptimizing] = useState(false)
@@ -188,7 +179,7 @@ function OptimizeWrapper() {
       optConfig.setFilter2Cavern,
       optConfig.setFilter4Cavern,
       optConfig.setFilter2Planar,
-      lightCones,
+      filteredLightCones,
       relicsBySlot,
       numWorkers,
       setProgress
@@ -226,7 +217,7 @@ function OptimizeWrapper() {
     optConfig.setFilter2Planar,
     characterKey,
     target,
-    lightCones,
+    filteredLightCones,
     relicsBySlot,
     numWorkers,
     database.optConfigs,
@@ -243,7 +234,7 @@ function OptimizeWrapper() {
       <CardContent>
         <Stack spacing={1}>
           <StatFilterCard />
-          <LightConeFilter numLightCone={lightCones.length} />
+          <LightConeFilter numLightCone={filteredLightCones.length} />
           <RelicFilter relicsBySlot={relicsBySlot} />
           {progress && (
             <ProgressIndicator progress={progress} total={totalPermutations} />

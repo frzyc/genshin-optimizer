@@ -1,8 +1,9 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   DropdownButton,
   ModalWrapper,
+  usePrev,
 } from '@genshin-optimizer/common/ui'
 import { clamp, deepClone } from '@genshin-optimizer/common/util'
 import type {
@@ -16,7 +17,7 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import { cachedRelic } from '@genshin-optimizer/sr/db'
-import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+import { useDatabaseContext, useRelic } from '@genshin-optimizer/sr/db-ui'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { SlotIcon } from '@genshin-optimizer/sr/svgicons'
 import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
@@ -46,14 +47,7 @@ import {
   useTheme,
 } from '@mui/material'
 import type { MouseEvent } from 'react'
-import {
-  Suspense,
-  useCallback,
-  useEffect,
-  useMemo,
-  useReducer,
-  useState,
-} from 'react'
+import { Suspense, useCallback, useMemo, useReducer, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character'
 import { RelicCard } from '../RelicCard'
@@ -76,7 +70,7 @@ const tempRelicSheet: IRelicSheet = {
 
 // TODO: relic sheets, errors, autocomplete, display text, i18n, ...
 export type RelicEditorProps = {
-  relicIdToEdit?: string
+  relicIdToEdit?: string | 'new'
   cancelEdit: () => void
   allowEmpty?: boolean
   disableSet?: boolean
@@ -93,37 +87,32 @@ export function RelicEditor({
   const { t: tk } = useTranslation(['relics_gen', 'statKey_gen'])
 
   const { database } = useDatabaseContext()
-  const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
-  useEffect(
-    () => database.relics.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
-  )
 
   const [showEditor, setShowEditor] = useState(false)
 
-  useEffect(() => {
-    if (relicIdToEdit === 'new') {
-      setShowEditor(true)
-      dispatchRelic({ type: 'reset' })
-    }
-    const dbRelic =
-      relicIdToEdit && dirtyDatabase && database.relics.get(relicIdToEdit)
-    if (dbRelic) {
-      setShowEditor(true)
-      dispatchRelic({
-        type: 'overwrite',
-        relic: deepClone(dbRelic),
-      })
-    }
-  }, [relicIdToEdit, database, dirtyDatabase])
-
   const [relic, dispatchRelic] = useReducer(relicReducer, undefined)
+
+  const dbRelic = useRelic(relicIdToEdit === 'new' ? undefined : relicIdToEdit)
+  if (usePrev(relicIdToEdit) !== relicIdToEdit && relicIdToEdit === 'new') {
+    setShowEditor(true)
+    dispatchRelic({ type: 'reset' })
+  }
+
+  if (usePrev(dbRelic) !== dbRelic && dbRelic) {
+    setShowEditor(true)
+    dispatchRelic({
+      type: 'overwrite',
+      relic: deepClone(dbRelic),
+    })
+  }
+
   const { relic: cRelic, errors } = useMemo(() => {
     if (!relic) return { relic: undefined, errors: [] }
     const validated = cachedRelic(relic, relicIdToEdit)
     return validated
   }, [relic, relicIdToEdit])
 
+  const relicDBDirty = useDataManagerValues(database.relics)
   const {
     prev,
     prevEditType,
@@ -131,17 +120,15 @@ export function RelicEditor({
     prev: ICachedRelic | undefined
     prevEditType: 'edit' | 'duplicate' | 'upgrade' | ''
   } = useMemo(() => {
-    const dbRelic =
-      dirtyDatabase && relicIdToEdit && database.relics.get(relicIdToEdit)
     if (dbRelic) return { prev: dbRelic, prevEditType: 'edit' }
     if (relic === undefined) return { prev: undefined, prevEditType: '' }
     const { duplicated, upgraded } =
-      dirtyDatabase && database.relics.findDups(relic)
+      relicDBDirty && database.relics.findDups(relic)
     return {
       prev: duplicated[0] ?? upgraded[0],
       prevEditType: duplicated.length !== 0 ? 'duplicate' : 'upgrade',
     }
-  }, [relic, relicIdToEdit, database, dirtyDatabase])
+  }, [dbRelic, relic, relicDBDirty, database.relics])
 
   const disableEditSlot =
     (!['new', ''].includes(relicIdToEdit) && !!relic?.location) || // Disable slot for equipped relic

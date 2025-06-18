@@ -1,4 +1,4 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   CardThemed,
@@ -64,14 +64,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import {
-  Suspense,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
 export default function ArtifactSetConfig({
@@ -90,10 +83,6 @@ export default function ArtifactSetConfig({
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => setOpen(true), [setOpen])
   const onClose = useCallback(() => setOpen(false), [setOpen])
-
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(() => database.arts.followAny(forceUpdate), [database, forceUpdate])
-
   const artKeysByRarity = useMemo(
     () =>
       Object.entries(setKeysByRarities)
@@ -102,11 +91,12 @@ export default function ArtifactSetConfig({
         .filter((key) => !key.includes('Prayers')),
     []
   )
+  const allArts = useDataManagerValues(database.arts)
   const { artKeys, artSlotCount } = useMemo(() => {
     const artSlotCount = objKeyMap(artKeysByRarity, (_) =>
       objKeyMap(allArtifactSlotKeys, (_) => 0)
     )
-    database.arts.values.forEach(
+    allArts.forEach(
       (art) =>
         artSlotCount[art.setKey] && artSlotCount[art.setKey][art.slotKey]++
     )
@@ -115,8 +105,8 @@ export default function ArtifactSetConfig({
         +(getNumSlots(artSlotCount[a]) < 2) -
         +(getNumSlots(artSlotCount[b]) < 2)
     )
-    return dbDirty && { artKeys, artSlotCount }
-  }, [dbDirty, database, artKeysByRarity])
+    return { artKeys, artSlotCount }
+  }, [artKeysByRarity, allArts])
 
   const allowRainbow2 = !artSetExclusion.rainbow?.includes(2)
   const allowRainbow4 = !artSetExclusion.rainbow?.includes(4)

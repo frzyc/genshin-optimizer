@@ -1,8 +1,12 @@
+import {
+  useDataEntryBase,
+  useDataManagerKeys,
+} from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
-  StyledInputBase,
+  TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
@@ -17,7 +21,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { UploadCard } from './UploadCard'
 
@@ -46,22 +50,16 @@ export function DatabaseCard() {
 function DataCard({ index }: { index: number }) {
   const { databases, database: mainDB, setDatabase } = useDatabaseContext()
   const database = databases[index]
-  const [{ name, lastEdit }, setDBMeta] = useState(database.dbMeta.get())
-  useEffect(
-    () => database.dbMeta.follow((_, dbMeta) => setDBMeta(dbMeta)),
-    [database]
-  )
-  // Need to update the dbMeta when database changes
-  useEffect(() => setDBMeta(database.dbMeta.get()), [database])
+  const { name, lastEdit } = useDataEntryBase(database.dbMeta)
 
   const current = mainDB === database
   const [uploadOpen, onOpen, onClose] = useBoolState()
   const { t } = useTranslation('page_settings')
-  const numChar = database.chars.keys.length
-  const numRelics = database.relics.keys.length
-  const numLightCones = database.lightCones.keys.length
-  const numTeams = database.teams.keys.length
-  const numBuilds = database.builds.keys.length
+  const numChar = useDataManagerKeys(database.chars).length
+  const numRelics = useDataManagerKeys(database.relics).length
+  const numLightCones = useDataManagerKeys(database.lightCones).length
+  const numTeams = useDataManagerKeys(database.teams).length
+  const numBuilds = useDataManagerKeys(database.builds).length
   const hasData = Boolean(
     numChar || numRelics || numLightCones || numTeams || numBuilds
   )
@@ -106,18 +104,6 @@ function DataCard({ index }: { index: number }) {
     setDatabase(index, database)
   }, [index, setDatabase, mainDB, current, database])
 
-  const [tempName, setTempName] = useState(name)
-  useEffect(() => setTempName(name), [name])
-
-  const onBlur = useCallback(() => {
-    database.dbMeta.set({ name: tempName })
-    database.toExtraLocalDB()
-  }, [tempName, database])
-  const onKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && onBlur(),
-    [onBlur]
-  )
-
   return (
     <CardThemed
       sx={{
@@ -130,14 +116,18 @@ function DataCard({ index }: { index: number }) {
           display: 'flex',
           gap: 1,
           justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
-        <StyledInputBase
-          value={tempName}
+        <TextFieldLazy
+          size="small"
+          fullWidth
+          value={name}
           sx={{ borderRadius: 1, px: 1, flexGrow: 1 }}
-          onChange={(e) => setTempName(e.target.value)}
-          onBlur={onBlur}
-          onKeyDown={onKeyDown}
+          onChange={(name) => {
+            database.dbMeta.set({ name })
+            database.toExtraLocalDB()
+          }}
         />
         {!current && (
           <Button startIcon={<ImportExport />} onClick={onSwap} color="warning">

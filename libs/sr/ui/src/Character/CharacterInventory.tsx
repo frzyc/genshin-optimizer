@@ -1,12 +1,10 @@
-import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Box, CardHeader, Grid, Skeleton } from '@mui/material'
-import { Suspense, useEffect, useMemo, useState } from 'react'
+import { Suspense, useMemo, useState } from 'react'
 import { CharacterCard } from './CharacterCard'
 import { CharacterEditor } from './CharacterEditor'
 
@@ -15,16 +13,7 @@ const amtPerSize = { xs: 5, sm: 5, md: 10, lg: 10, xl: 10 }
 
 export function CharacterInventory() {
   const { database } = useDatabaseContext()
-  const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
-
-  useEffect(
-    () => database.chars.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
-  )
-  const { characters } = useMemo(() => {
-    const characters = database.chars.values
-    return dirtyDatabase && { characters }
-  }, [database.chars.values, dirtyDatabase])
+  const characters = useDataManagerValues(database.chars)
 
   const size = useMediaQueryUp()
 

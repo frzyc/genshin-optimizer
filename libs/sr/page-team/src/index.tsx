@@ -114,10 +114,8 @@ function Page({ teamId }: { teamId: string }) {
     [teamMetadata, teamMetadatumIndex]
   )
   const characterKey = teammateDatum?.characterKey
-  useEffect(() => {
-    if (characterKey && characterKey !== characterKeyRaw)
-      navigate(`${characterKey}`, { replace: true })
-  }, [characterKey, characterKeyRaw, teammateDatum, navigate])
+  if (characterKey && characterKey !== characterKeyRaw)
+    navigate(`${characterKey}`, { replace: true })
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
 

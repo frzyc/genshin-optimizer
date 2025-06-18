@@ -76,8 +76,7 @@ export default function InventoryCard() {
   const numBuilds = database.builds.keys.length + database.buildTcs.keys.length
   const theme = useTheme()
   const smaller = !useMediaQuery(theme.breakpoints.up('md'))
-
-  const latestBuilds = database.teams.entries
+  const latestBuilds = [...database.teams.entries]
     .sort((a, b) => {
       const [, ateam] = a
       const [, bteam] = b

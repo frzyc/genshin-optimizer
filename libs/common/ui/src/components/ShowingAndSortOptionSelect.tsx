@@ -10,20 +10,20 @@ type ShowingItemProps = {
   namespace: string
 }
 
-type SortByButtonProps = {
-  sortKeys: string[]
-  value: string
-  onChange: (value: string) => void
+type SortByButtonProps<T extends string> = {
+  sortKeys: T[]
+  value: T
+  onChange: (value: T) => void
   ascending: boolean
   onChangeAsc: (value: boolean) => void
 }
 
-export function ShowingAndSortOptionSelect({
+export function ShowingAndSortOptionSelect<T extends string>({
   showingTextProps,
   sortByButtonProps = undefined,
 }: {
   showingTextProps: ShowingItemProps
-  sortByButtonProps?: SortByButtonProps
+  sortByButtonProps?: SortByButtonProps<T>
 }) {
   return (
     <>
@@ -37,7 +37,7 @@ export function ShowingAndSortOptionSelect({
         <SortByButton
           sortKeys={sortByButtonProps.sortKeys}
           value={sortByButtonProps.value}
-          onChange={(value) => sortByButtonProps.onChange(value as string)}
+          onChange={(value) => sortByButtonProps.onChange(value)}
           ascending={sortByButtonProps.ascending}
           onChangeAsc={sortByButtonProps.onChangeAsc}
         />

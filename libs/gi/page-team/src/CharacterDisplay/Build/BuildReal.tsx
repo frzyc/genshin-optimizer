@@ -1,5 +1,9 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ModalWrapper,
+  TextFieldLazy,
+} from '@genshin-optimizer/common/ui'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
@@ -26,15 +30,8 @@ import {
   Divider,
   Grid,
   IconButton,
-  TextField,
 } from '@mui/material'
-import {
-  useContext,
-  useDeferredValue,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function BuildReal({
@@ -122,7 +119,7 @@ export default function BuildReal({
   return (
     <>
       <ModalWrapper open={open} onClose={onClose}>
-        <BuildEditor buildId={buildId} onClose={onClose} />
+        <BuildEditor key={buildId} buildId={buildId} onClose={onClose} />
       </ModalWrapper>
       <EquipBuildModal
         currentName={t('buildRealCard.copy.equipped')}
@@ -204,6 +201,7 @@ function BuildEditor({
   buildId,
   onClose,
 }: {
+  key: string // remount when id changes
   buildId: string
   onClose: () => void
 }) {
@@ -214,36 +212,6 @@ function BuildEditor({
   const weaponTypeKey = getCharStat(characterKey).weaponType
   const database = useDatabase()
   const build = useBuild(buildId)!
-
-  const [name, setName] = useState(build.name)
-  const nameDeferred = useDeferredValue(name)
-  const [desc, setDesc] = useState(build.description)
-  const descDeferred = useDeferredValue(desc)
-
-  // trigger on buildId change, to use the new team's name/desc
-  useEffect(() => {
-    const newBuild = database.builds.get(buildId)
-    if (!newBuild) return
-    const { name, description } = newBuild
-    setName(name)
-    setDesc(description)
-  }, [database, buildId])
-
-  useEffect(() => {
-    database.builds.set(buildId, (build) => {
-      build.name = nameDeferred
-    })
-    // Don't need to trigger when buildId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [database, nameDeferred])
-
-  useEffect(() => {
-    database.builds.set(buildId, (build) => {
-      build.description = descDeferred
-    })
-    // Don't need to trigger when buildId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [database, descDeferred])
 
   return (
     <CardThemed>
@@ -257,18 +225,20 @@ function BuildEditor({
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        <TextField
+        <TextFieldLazy
           fullWidth
           label={t('buildRealCard.edit.label')}
           placeholder={t('buildRealCard.edit.placeholder')}
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={build.name}
+          onChange={(name) => database.builds.set(buildId, { name })}
         />
-        <TextField
+        <TextFieldLazy
           fullWidth
           label={t('buildRealCard.edit.desc')}
-          value={desc}
-          onChange={(e) => setDesc(e.target.value)}
+          value={build.description}
+          onChange={(desc) =>
+            database.builds.set(buildId, { description: desc })
+          }
           multiline
           minRows={2}
         />

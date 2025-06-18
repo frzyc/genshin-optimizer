@@ -245,10 +245,10 @@ export function tagStr(tag: Tag, ex?: any): string {
     attribute,
     damageType1,
     damageType2,
+    faction,
+    specialty,
     ...remaining
   } = tag
-
-  if (Object.keys(remaining).length) console.error(remaining)
 
   let result = '{ ',
     includedRequired = false,
@@ -279,6 +279,9 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(attribute, 'attr')
   optional(damageType1 && `1:${damageType1}`, 'dmg1')
   optional(damageType2 && `2:${damageType2}`, 'dmg2')
+  optional(specialty, 'spec')
+  optional(faction, 'fac')
   if (ex) result += `[${ex}] `
+  if (Object.keys(remaining).length) result += `${JSON.stringify(remaining)} `
   return result + '}'
 }

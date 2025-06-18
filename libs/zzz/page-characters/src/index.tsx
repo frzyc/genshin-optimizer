@@ -1,7 +1,8 @@
 import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+  useDataEntryBase,
+  useDataManagerKeys,
+} from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
@@ -57,7 +58,6 @@ import {
   Suspense,
   useCallback,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -77,13 +77,7 @@ export default function PageCharacter() {
   } = useMatch({ path: '/characters/:characterKey', end: false }) ?? {
     params: {},
   }
-  const [displayCharacter, setDisplayCharacter] = useState(() =>
-    database.displayCharacter.get()
-  )
-  useEffect(
-    () => database.displayCharacter.follow((_, s) => setDisplayCharacter(s)),
-    [database, setDisplayCharacter]
-  )
+  const displayCharacter = useDataEntryBase(database.displayCharacter)
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
@@ -115,14 +109,6 @@ export default function PageCharacter() {
   )
 
   const [newCharacter, setnewCharacter] = useState(false)
-  const [dbDirty, forceUpdate] = useForceUpdate()
-
-  // Set follow, should run only once
-  useEffect(() => {
-    return database.chars.followAny(
-      (_, r) => (r === 'new' || r === 'remove') && forceUpdate()
-    )
-  }, [forceUpdate, database])
 
   const editCharacter = useCallback(
     (characterKey: CharacterKey) => {
@@ -134,15 +120,12 @@ export default function PageCharacter() {
     },
     [database.chars, navigate]
   )
-
-  const deferredState = useDeferredValue(displayCharacter)
-  const deferredDbDirty = useDeferredValue(dbDirty)
-  const { charKeys, totalCharNum } = useMemo(() => {
-    const chars = database.chars.keys
-    const totalCharNum = chars.length
+  const charKeys = useDataManagerKeys(database.chars)
+  const totalCharNum = charKeys.length
+  const filteredCharKeys = useMemo(() => {
     const { attribute, specialtyType, rarity, sortType, ascending } =
-      deferredState
-    const charKeys = database.chars.keys
+      displayCharacter
+    return charKeys
       .filter(
         filterFunction(
           { attribute, specialtyType, rarity, name: deferredSearchTerm },
@@ -157,8 +140,7 @@ export default function PageCharacter() {
           ['new']
         )
       )
-    return deferredDbDirty && { charKeys, totalCharNum }
-  }, [database, deferredState, deferredSearchTerm, deferredDbDirty])
+  }, [displayCharacter, charKeys, deferredSearchTerm, database])
 
   const { specialtyType, attribute, rarity, sortType, ascending } =
     displayCharacter
@@ -201,16 +183,16 @@ export default function PageCharacter() {
   const brPt = useMediaQueryUp()
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    charKeys.length
+    filteredCharKeys.length
   )
   const charKeysToShow = useMemo(
-    () => charKeys.slice(0, numShow),
-    [charKeys, numShow]
+    () => filteredCharKeys.slice(0, numShow),
+    [filteredCharKeys, numShow]
   )
 
   const totalShowing =
-    charKeys.length !== totalCharNum
-      ? `${charKeys.length}/${totalCharNum}`
+    filteredCharKeys.length !== totalCharNum
+      ? `${filteredCharKeys.length}/${totalCharNum}`
       : `${totalCharNum}`
 
   const showingTextProps = {
@@ -347,7 +329,7 @@ export default function PageCharacter() {
           ))}
         </Grid>
       </Suspense>
-      {charKeys.length !== charKeysToShow.length && (
+      {filteredCharKeys.length !== charKeysToShow.length && (
         <Skeleton
           ref={(node) => {
             if (!node) return

@@ -3,6 +3,7 @@ import {
   CardThemed,
   ModalWrapper,
   NextImage,
+  usePrev,
 } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
@@ -64,7 +65,7 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character/LocationAutocomplete'
-import { DiscCard } from '../DiscCard'
+import { DiscCardObj } from '../DiscCard'
 import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
 import { DiscSetAutocomplete } from '../DiscSetAutocomplete'
@@ -133,7 +134,7 @@ function useDiscValidation(discFromProp: Partial<ICachedDisc>) {
     validatedDisc: undefined,
     errors: [],
   })
-  useEffect(() => setDisc(discFromProp), [discFromProp])
+  if (usePrev(discFromProp) !== discFromProp) setDisc(discFromProp)
 
   return { disc, validatedDisc, errors, setDisc }
 }
@@ -583,7 +584,7 @@ export function DiscEditor({
                         : t('editor.beforeEdit')}
                     </Typography>
                   </CardThemed>
-                  <DiscCard disc={prev} />
+                  <DiscCardObj disc={prev} />
                 </Grid>
                 {grmd && (
                   <Grid
@@ -615,7 +616,7 @@ export function DiscEditor({
                       {t('editor.preview')}
                     </Typography>
                   </CardThemed>
-                  {validatedDisc && <DiscCard disc={validatedDisc} />}
+                  {validatedDisc && <DiscCardObj disc={validatedDisc} />}
                 </Grid>
               </Grid>
             )}
