@@ -50,7 +50,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('coreCond.morale_burst_hit'),
+        label: ch('collapseCond'),
         metadata: cond.collapse,
         fields: [
           fieldForBuff(buff.m1_ice_resRed_),
@@ -72,7 +72,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m2Cond'),
+        label: ch('collapseCond'),
         metadata: cond.collapse,
         fields: [fieldForBuff(buff.m2_stun_)],
       },

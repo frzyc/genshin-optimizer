@@ -34,8 +34,12 @@ const sheet = createBaseSheet(key, {
   ],
   m2: [
     {
-      type: 'fields',
-      fields: [fieldForBuff(buff.m2_crit_)],
+      type: 'conditional',
+      conditional: {
+        label: ch('coreCond'),
+        metadata: cond.markedWithSilverStar,
+        fields: [fieldForBuff(buff.m2_crit_)],
+      },
     },
   ],
   m4: [

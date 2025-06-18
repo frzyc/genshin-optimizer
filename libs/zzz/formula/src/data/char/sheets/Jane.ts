@@ -48,7 +48,7 @@ const sheet = register(
   ...customDmg(
     'm6_additional_dmg',
     { ...baseTag, damageType1: 'elemental' },
-    prod(own.final.anomProf, dm.m6.dmg)
+    prod(own.final.anomProf, percent(dm.m6.dmg))
   ),
 
   // Buffs
@@ -72,10 +72,10 @@ const sheet = register(
     teamBuff.combat.anom_crit_.physical.add(
       gnawed.ifOn(
         sum(
-          subscript(char.core, dm.core.assault_crit_),
+          percent(subscript(char.core, dm.core.assault_crit_)),
           prod(
             own.final.anomProf,
-            subscript(char.core, dm.core.assault_crit_step)
+            percent(subscript(char.core, dm.core.assault_crit_step))
           )
         )
       )
@@ -103,9 +103,9 @@ const sheet = register(
         ),
         3,
         sum(
-          dm.ability.physical_anomBuildup_,
+          percent(dm.ability.physical_anomBuildup_),
           enemy_suffering_anomaly.ifOn(
-            dm.ability.additional_physical_anomBuildup_
+            percent(dm.ability.additional_physical_anomBuildup_)
           )
         )
       )
@@ -124,7 +124,10 @@ const sheet = register(
         char.mindscape,
         1,
         passion.ifOn(
-          min(dm.m1.max_dmg_, prod(own.final.anomProf, dm.m1.anomProf_step))
+          min(
+            percent(dm.m1.max_dmg_),
+            prod(own.final.anomProf, percent(dm.m1.anomProf_step))
+          )
         )
       )
     )

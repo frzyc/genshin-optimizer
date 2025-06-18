@@ -89,7 +89,9 @@ const sheet = register(
   ),
   registerBuff(
     'm2_crit_',
-    ownBuff.combat.crit_.add(cmpGE(char.mindscape, 2, dm.m2.crit_))
+    ownBuff.combat.crit_.add(
+      cmpGE(char.mindscape, 2, markedWithSilverStar.ifOn(dm.m2.crit_))
+    )
   ),
   registerBuff(
     'm4_electric_resIgn_',
