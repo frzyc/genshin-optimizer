@@ -5,12 +5,12 @@ import {
   allBoolConditionals,
   allListConditionals,
   allNumConditionals,
+  enemyDebuff,
   own,
   ownBuff,
+  register,
   team,
   teamBuff,
-  enemyDebuff,
-  register,
 } from '../util'
 import { dataGenToCharInfo, dmg, entriesForChar } from './util'
 
