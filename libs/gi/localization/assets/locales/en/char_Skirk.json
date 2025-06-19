@@ -4,6 +4,7 @@
   "a4Cond": "Death's Crossing stacks",
   "c2AddlSerpentFactor": "Maximum Serpent's Subtlety factored",
   "c2Cond": "After using <strong>Havoc: Extinction</strong> while in <strong>Seven-Phase Flash</strong> mode",
+  "c2Atk_blurb": "The above ATK buff will not be applied to Skirk's Normal Attack, Elemental Burst, nor her C6 Burst DMG",
   "c6BurstDmg": "Burst DMG",
   "c6NormalDmg": "Normal Attack DMG",
   "c6ChargedDmg": "Charged Attack DMG"

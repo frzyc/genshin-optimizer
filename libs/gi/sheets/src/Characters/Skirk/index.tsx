@@ -213,11 +213,20 @@ const a0SkillBoost = greaterEq(
 )
 
 const [condC2AfterBurstPath, condC2AfterBurst] = cond(key, 'c2AfterBurst')
-const c2_skillAtk_ = greaterEq(
+const c2_atk_ = greaterEq(
   input.constellation,
   2,
   equal(condC2AfterBurst, 'on', dm.constellation2.atk_),
   { path: 'atk_' }
+)
+const c2_inverted_atk_ = infoMut(prod(c2_atk_, -1), { path: 'atk_' })
+const c2_inverted_atk_data = { premod: { atk_: c2_inverted_atk_ } }
+
+const burstSerpentOver_burst_dmgIncDisp = prod(
+  burstSerpentOver,
+  subscript(input.total.burstIndex, dm.burst.serpentBonus, { unit: '%' }),
+  a4DeathStacks_burst_mult_,
+  sum(input.total.atk, prod(input.base.atk, c2_inverted_atk_))
 )
 
 const c4DeathStacks_atk_ = greaterEq(
@@ -233,17 +242,21 @@ const c4DeathStacks_atk_ = greaterEq(
       ),
       naught
     )
-  )
+  ),
+  { path: 'atk_' }
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [
+      i,
+      dmgNode('atk', arr, 'normal', c2_inverted_atk_data),
+    ])
   ),
   charged: {
-    dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
+    dmg: dmgNode('atk', dm.charged.dmg, 'charged', c2_inverted_atk_data),
   },
-  plunging: plungingDmgNodes('atk', dm.plunging),
+  plunging: plungingDmgNodes('atk', dm.plunging, c2_inverted_atk_data),
   skill: {
     ...(Object.fromEntries(
       dm.skill.hitArr.map((arr, i) => [
@@ -252,12 +265,7 @@ const dmgFormulas = {
           'atk',
           arr,
           'normal',
-          {
-            ...hitEle.cryo,
-            premod: {
-              atk_: c2_skillAtk_,
-            },
-          },
+          hitEle.cryo,
           a4DeathStacks_skillNormal_mult_,
           'skill'
         ),
@@ -284,14 +292,14 @@ const dmgFormulas = {
       'atk',
       dm.burst.skillDmg,
       'burst',
-      undefined,
+      c2_inverted_atk_data,
       a4DeathStacks_burst_mult_
     ),
     finalDmg: dmgNode(
       'atk',
       dm.burst.finalDmg,
       'burst',
-      undefined,
+      c2_inverted_atk_data,
       a4DeathStacks_burst_mult_
     ),
   },
@@ -325,7 +333,10 @@ const dmgFormulas = {
             a4DeathStacks_burst_mult_
           ),
           'burst',
-          hitEle.cryo
+          {
+            ...hitEle.cryo,
+            ...c2_inverted_atk_data,
+          }
         )
       )
     ),
@@ -370,7 +381,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     burstBoost: burstC3,
     burst_dmgInc: burstSerpentOver_burst_dmgInc,
     normal_dmg_: burstVoidAbsorb_normal_dmg_,
-    atk_: c4DeathStacks_atk_,
+    atk_: sum(c2_atk_, c4DeathStacks_atk_),
   },
   teamBuff: {
     premod: {
@@ -533,7 +544,9 @@ const sheet: TalentSheet = {
             name: st('points', { count: stack }),
             fields: [
               {
-                node: burstSerpentOver_burst_dmgInc,
+                node: infoMut(burstSerpentOver_burst_dmgIncDisp, {
+                  path: 'burst_dmgInc',
+                }),
               },
             ],
           })
@@ -622,8 +635,9 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: c2_skillAtk_,
+              node: c2_atk_,
             },
+            { text: ct.ch('c2Atk_blurb') },
             {
               text: stg('duration'),
               value: dm.constellation2.duration,
