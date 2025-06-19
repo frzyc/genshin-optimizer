@@ -54,7 +54,7 @@ function MinimalYixuanSheet() {
 const s0AnbyDocs: Document[] = [
   {
     type: 'text',
-    text: "Enabling this checkbox will add additional CRIT DMG to Aftershock attacks, based on Soldier 0 - Anby's CRIT DMG, at a ratio of 30% (matching her Core Skill at level F). Everything else in her kit is not factored, such as the DMG Bonus % added in her Core skill for enemies marked with Silver Star.",
+    text: "Enabling this checkbox will add additional CRIT DMG to Aftershock attacks, based on Soldier 0 - Anby's CRIT DMG, at a ratio matching her Core Skill level scaling. Everything else in her kit is not factored, such as the DMG Bonus % added in her Core skill for enemies marked with Silver Star.",
   },
   {
     type: 'conditional',
