@@ -191,11 +191,14 @@ const a4DeathStacks_burst_mult_ = threshold(
   one
 )
 
-const burstSerpentOver_burst_dmgInc = prod(
-  burstSerpentOver,
-  subscript(input.total.burstIndex, dm.burst.serpentBonus, { unit: '%' }),
-  a4DeathStacks_burst_mult_,
-  input.total.atk
+const burstSerpentOver_burst_dmgInc = infoMut(
+  prod(
+    burstSerpentOver,
+    subscript(input.total.burstIndex, dm.burst.serpentBonus, { unit: '%' }),
+    a4DeathStacks_burst_mult_,
+    input.total.atk
+  ),
+  { path: 'burst_dmgInc' }
 )
 
 const a0SkillBoost = greaterEq(
@@ -221,6 +224,12 @@ const c2_atk_ = greaterEq(
 )
 const c2_inverted_atk_ = infoMut(prod(c2_atk_, -1), { path: 'atk_' })
 const c2_inverted_atk_data = { premod: { atk_: c2_inverted_atk_ } }
+const burstData = {
+  premod: {
+    atk_: c2_inverted_atk_,
+    burst_dmgInc: burstSerpentOver_burst_dmgInc,
+  },
+}
 
 const burstSerpentOver_burst_dmgIncDisp = prod(
   burstSerpentOver,
@@ -292,14 +301,14 @@ const dmgFormulas = {
       'atk',
       dm.burst.skillDmg,
       'burst',
-      c2_inverted_atk_data,
+      burstData,
       a4DeathStacks_burst_mult_
     ),
     finalDmg: dmgNode(
       'atk',
       dm.burst.finalDmg,
       'burst',
-      c2_inverted_atk_data,
+      burstData,
       a4DeathStacks_burst_mult_
     ),
   },
@@ -319,7 +328,6 @@ const dmgFormulas = {
     ),
   },
   constellation6: {
-    // TODO: Check if this is affected by a4 stacks
     burstDmg: greaterEq(
       input.constellation,
       6,
@@ -379,7 +387,6 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
     skillBoost: skillC5,
     burstBoost: burstC3,
-    burst_dmgInc: burstSerpentOver_burst_dmgInc,
     normal_dmg_: burstVoidAbsorb_normal_dmg_,
     atk_: sum(c2_atk_, c4DeathStacks_atk_),
   },
