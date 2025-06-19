@@ -3,6 +3,7 @@ import {
   BootstrapTooltip,
   CardThemed,
   InfoTooltip,
+  usePrev,
 } from '@genshin-optimizer/common/ui'
 import {
   notEmpty,
@@ -40,7 +41,7 @@ import {
   Typography,
 } from '@mui/material'
 import type { TFunction } from 'i18next'
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { LegendType } from 'recharts'
 import {
@@ -106,10 +107,11 @@ export default function ChartCard({
     },
     [setSliderLow, setSliderHigh]
   )
-  useEffect(() => {
+  // Reset the slider when chartData changes
+  if (usePrev(chartData) !== chartData) {
     setSliderLow(-Infinity)
     setSliderHigh(Infinity)
-  }, [chartData])
+  }
 
   const { displayData, downloadData, sliderMin, sliderMax } = useMemo(() => {
     if (!chartData) return { displayData: null, downloadData: null }

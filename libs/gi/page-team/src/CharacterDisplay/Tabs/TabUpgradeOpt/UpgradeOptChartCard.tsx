@@ -2,13 +2,17 @@ import {
   useBoolState,
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge, usePrev } from '@genshin-optimizer/common/ui'
 import { linspace, objMap } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSlotKey,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  TeamCharacterContext,
+  useArtifact,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import {
   ArtifactCard,
   ArtifactCardPico,
@@ -149,25 +153,11 @@ function UpgradeOptChartCardGraph({
 }: Props) {
   const { t } = useTranslation('page_character_optimize')
   const upArt = upOptCalc.artifacts[ix]
-  const database = useDatabase()
   const [, forceUpdate] = useForceUpdate()
-  const equippedArt = database.arts.get(upArt.id)
+  const equippedArt = useArtifact(upArt.id)
 
-  const updateUpOpt = useCallback(() => {
-    const art = database.arts.get(upArt.id)
-    if (!art) return
-    upOptCalc.reCalc(ix, art)
-    forceUpdate()
-  }, [database, forceUpdate, ix, upOptCalc, upArt.id])
-
-  useEffect(
-    () =>
-      database.arts.follow(
-        upArt.id,
-        (_, reason) => reason === 'update' && updateUpOpt()
-      ),
-    [database, updateUpOpt, upArt.id]
-  )
+  if (usePrev(equippedArt) !== equippedArt && equippedArt)
+    upOptCalc.reCalc(ix, equippedArt)
 
   const constrained = thresholds.length > 1
 

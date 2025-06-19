@@ -1,6 +1,9 @@
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
-  useForceUpdate,
+  useDataEntryBase,
+  useDataManagerValues,
+} from '@genshin-optimizer/common/database-ui'
+import {
+  useBoolState,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import {
@@ -34,7 +37,6 @@ import {
   Suspense,
   useCallback,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -48,17 +50,12 @@ const sortKeys = Object.keys(wengineSortMap)
 export default function PageWengine() {
   const { t } = useTranslation(['page_wengine', 'ui'])
   const { database } = useDatabaseContext()
-  const [newWengineModalShow, setnewWengineModalShow] = useState(false)
-  const state = useDataEntryBase(database.displayWengine)
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  //set follow, should run only once
-  useEffect(() => {
-    //ReactGA.send({ hitType: 'pageview', page: '/wengine' }) Needs Google Analytics
-    return database.wengines.followAny(
-      (_, r) =>
-        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
-    )
-  }, [forceUpdate, database])
+  const [newWengineModalShow, onNewWengineModalShow, onNewWengineModalHide] =
+    useBoolState(false)
+  const displayWengine = useDataEntryBase(database.displayWengine)
+  // useEffect(() => {
+  //   ReactGA.send({ hitType: 'pageview', page: '/wengine' }) Needs Google Analytics
+  // }, [])
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
@@ -85,48 +82,48 @@ export default function PageWengine() {
     showEquipped,
     showInventory,
     locations,
-  } = state
+  } = displayWengine
 
-  const { wengineIds, totalWengineNum } = useMemo(() => {
-    const wengines = database.wengines.values
-    const totalWengineNum = wengines.length
-    const wengineIds = wengines
-      .filter(
-        filterFunction(
-          {
-            speciality,
-            rarity,
-            name: deferredSearchTerm,
-            locked,
-            showInventory,
-            showEquipped,
-            locations,
-          },
-          wengineFilterConfigs()
+  const allWegines = useDataManagerValues(database.wengines)
+  const totalWengineNum = allWegines.length
+  const wengineIds = useMemo(
+    () =>
+      allWegines
+        .filter(
+          filterFunction(
+            {
+              speciality,
+              rarity,
+              name: deferredSearchTerm,
+              locked,
+              showInventory,
+              showEquipped,
+              locations,
+            },
+            wengineFilterConfigs()
+          )
         )
-      )
-      .sort(
-        sortFunction(
-          wengineSortMap[sortType as WengineSortKey] ?? [],
-          ascending,
-          wengineSortConfigs()
+        .sort(
+          sortFunction(
+            wengineSortMap[sortType as WengineSortKey] ?? [],
+            ascending,
+            wengineSortConfigs()
+          )
         )
-      )
-      .map((key) => key.id)
-    return dbDirty && { wengineIds, totalWengineNum }
-  }, [
-    database.wengines.values,
-    speciality,
-    rarity,
-    deferredSearchTerm,
-    locked,
-    showInventory,
-    showEquipped,
-    locations,
-    sortType,
-    ascending,
-    dbDirty,
-  ])
+        .map((key) => key.id),
+    [
+      allWegines,
+      speciality,
+      rarity,
+      deferredSearchTerm,
+      locked,
+      showInventory,
+      showEquipped,
+      locations,
+      sortType,
+      ascending,
+    ]
+  )
 
   const brPt = useMediaQueryUp()
 
@@ -144,13 +141,10 @@ export default function PageWengine() {
     [database]
   )
 
-  const { editWengineId } = state
+  const { editWengineId } = displayWengine
 
   // Validate wengineId to be an actual wengine
-  useEffect(() => {
-    if (!editWengineId) return
-    if (!database.wengines.get(editWengineId)) resetEditWengine()
-  }, [database, editWengineId, resetEditWengine])
+  if (editWengineId && !database.wengines.get(editWengineId)) resetEditWengine()
 
   // Pagination
   const totalShowing =
@@ -179,7 +173,7 @@ export default function PageWengine() {
       <Suspense fallback={false}>
         <WengineSelectionModal
           show={newWengineModalShow}
-          onHide={() => setnewWengineModalShow(false)}
+          onHide={onNewWengineModalHide}
           onSelect={newWengine}
         />
       </Suspense>
@@ -221,11 +215,7 @@ export default function PageWengine() {
           </Box>
         </CardContent>
       </CardThemed>
-      <Button
-        fullWidth
-        onClick={() => setnewWengineModalShow(true)}
-        color="info"
-      >
+      <Button fullWidth onClick={onNewWengineModalShow} color="info">
         {t('page_wengine:addWengine')}
       </Button>
       <Box>
@@ -233,11 +223,9 @@ export default function PageWengine() {
           {wenginesIdsToShow.map((wengineId) => (
             <Grid item key={wengineId} xs={1}>
               <WengineCard
+                key={wengineId}
                 wengineId={wengineId}
                 onEdit={editWegine}
-                setLocation={(location) =>
-                  database.wengines.set(wengineId, { location })
-                }
               />
             </Grid>
           ))}

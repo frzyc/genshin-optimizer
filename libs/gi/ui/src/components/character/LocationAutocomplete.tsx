@@ -1,5 +1,5 @@
 'use client'
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'
 import type {
@@ -18,7 +18,7 @@ import type { Variant } from '@genshin-optimizer/gi/wr'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { AutocompleteProps } from '@mui/material'
 import { Box, Skeleton } from '@mui/material'
-import { Suspense, useCallback, useContext, useEffect, useMemo } from 'react'
+import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SillyContext } from '../../context'
 import { CharIconSide } from './CharIconSideElement'
@@ -65,19 +65,10 @@ export function LocationAutocomplete({
     [database, gender, t]
   )
 
-  const [charListDirty, setCharListDirty] = useForceUpdate()
-  useEffect(
-    () =>
-      database.arts.followAny(
-        (_, r) => ['new', 'remove'].includes(r) && setCharListDirty()
-      ),
-    [database, setCharListDirty]
-  )
-
+  const charKeys = useDataManagerKeys(database.chars)
   const charInDb = useMemo(
-    () =>
-      charListDirty && database.chars.keys.map((c) => charKeyToLocCharKey(c)),
-    [charListDirty, database]
+    () => charKeys.map((c) => charKeyToLocCharKey(c)),
+    [charKeys]
   )
 
   const toImg = useCallback(

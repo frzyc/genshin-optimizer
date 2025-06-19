@@ -1,7 +1,4 @@
-import {
-  useBoolState,
-  useForceUpdate,
-} from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
@@ -35,7 +32,14 @@ import {
   Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+  useSyncExternalStore,
+} from 'react'
 import { BonusStatsSection } from './BonusStats'
 import { BuildsDisplay, EquipRowTC } from './BuildsDisplay'
 import { LightConeSheetsDisplay } from './LightConeSheetsDisplay'
@@ -225,19 +229,21 @@ function CurrentBuildDisplay() {
   const teammateDatum = useTeammateContext()
   const { database } = useDatabaseContext()
   const { buildType, buildId, buildTcId } = teammateDatum
-  const [dbDirty, setDbDirty] = useForceUpdate()
-  const buildName = useMemo(
-    () => dbDirty && database.teams.getActiveBuildName(teammateDatum),
-    [database.teams, dbDirty, teammateDatum]
+  const buildName = useSyncExternalStore(
+    useCallback(
+      (callback: () => void) => {
+        let unFollow = () => {}
+        if (buildType === 'real')
+          unFollow = database.builds.follow(buildId, callback)
+        if (buildType === 'tc')
+          unFollow = database.buildTcs.follow(buildTcId, callback)
+        return () => unFollow()
+      },
+      [buildId, buildTcId, buildType, database]
+    ),
+    () => database.teams.getActiveBuildName(teammateDatum)
   )
-  useEffect(() => {
-    let unFollow = () => {}
-    if (buildType === 'real')
-      unFollow = database.builds.follow(buildId, setDbDirty)
-    if (buildType === 'tc')
-      unFollow = database.buildTcs.follow(buildTcId, setDbDirty)
-    return () => unFollow()
-  }, [buildId, buildTcId, buildType, database, setDbDirty])
+
   const [show, onShow, onHide] = useBoolState()
   return (
     <CardThemed sx={{ width: '100%' }}>

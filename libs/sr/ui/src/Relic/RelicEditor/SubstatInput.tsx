@@ -6,7 +6,12 @@ import {
   SqBadge,
   TextButton,
 } from '@genshin-optimizer/common/ui'
-import { clamp, getUnitStr, toPercent } from '@genshin-optimizer/common/util'
+import {
+  clamp,
+  getUnitStr,
+  roundStat,
+  toPercent,
+} from '@genshin-optimizer/common/util'
 import type { RelicSubStatKey } from '@genshin-optimizer/sr/consts'
 import {
   allRelicSubStatKeys,
@@ -18,7 +23,6 @@ import { StatIcon } from '@genshin-optimizer/sr/svgicons'
 import {
   getSubstatSummedRolls,
   getSubstatValuesPercent,
-  roundStat,
 } from '@genshin-optimizer/sr/util'
 import {
   Box,

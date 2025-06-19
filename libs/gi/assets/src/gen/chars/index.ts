@@ -19,6 +19,7 @@ import Citlali from './Citlali'
 import Clorinde from './Clorinde'
 import Collei from './Collei'
 import Cyno from './Cyno'
+import Dahlia from './Dahlia'
 import Dehya from './Dehya'
 import Diluc from './Diluc'
 import Diona from './Diona'
@@ -75,6 +76,7 @@ import Sethos from './Sethos'
 import Shenhe from './Shenhe'
 import ShikanoinHeizou from './ShikanoinHeizou'
 import Sigewinne from './Sigewinne'
+import Skirk from './Skirk'
 import Somnia from './Somnia'
 import Sucrose from './Sucrose'
 import Tartaglia from './Tartaglia'
@@ -128,6 +130,7 @@ const data = {
   Clorinde,
   Collei,
   Cyno,
+  Dahlia,
   Dehya,
   Diluc,
   Diona,
@@ -184,6 +187,7 @@ const data = {
   Shenhe,
   ShikanoinHeizou,
   Sigewinne,
+  Skirk,
   Somnia,
   Sucrose,
   Tartaglia,

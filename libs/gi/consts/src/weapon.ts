@@ -14,6 +14,7 @@ export const allWeaponSwordKeys = [
   'Absolution',
   'AmenomaKageuchi',
   'AquilaFavonia',
+  'Azurelight',
   'BlackcliffLongsword',
   'CalamityOfEshu',
   'CinnabarSpindle',

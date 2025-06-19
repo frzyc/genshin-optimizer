@@ -18,6 +18,7 @@ import {
   getDiscSubStatBaseVal,
   rarityColor,
 } from '@genshin-optimizer/zzz/consts'
+import { useDatabaseContext, useDisc } from '@genshin-optimizer/zzz/db-ui'
 import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import { Edit } from '@mui/icons-material'
 import {
@@ -32,7 +33,7 @@ import {
 } from '@mui/material'
 import type { Theme } from '@mui/system'
 import type { ReactNode } from 'react'
-import { Suspense, useCallback } from 'react'
+import { Suspense, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatDisplay } from '../Character'
 import { LocationAutocomplete } from '../Character/LocationAutocomplete'
@@ -41,7 +42,40 @@ import { ZCard } from '../Components'
 import { DiscSet2p, DiscSet4p, DiscSetName } from './DiscTrans'
 import { useSpinner } from './util'
 
-export function DiscCard({
+export const DiscCard = memo(function DiscCard({
+  discId,
+  onEdit,
+}: {
+  key: string //remount when id changes
+  discId: string
+  onEdit?: (id: string) => void
+}) {
+  const { database } = useDatabaseContext()
+  const disc = useDisc(discId)
+  const onEditCB = useCallback(() => onEdit && onEdit(discId), [discId, onEdit])
+  const onDelete = useCallback(() => {
+    database.discs.remove(discId)
+  }, [database.discs, discId])
+  const setLocation = useCallback(
+    (location: LocationKey) => database.discs.set(discId, { location }),
+    [database.discs, discId]
+  )
+  const onLockToggle = useCallback(
+    () => database.discs.set(discId, ({ lock }) => ({ lock: !lock })),
+    [database.discs, discId]
+  )
+  if (!disc) return null
+  return (
+    <DiscCardObj
+      disc={disc}
+      onEdit={onEditCB}
+      onDelete={onDelete}
+      setLocation={setLocation}
+      onLockToggle={onLockToggle}
+    />
+  )
+})
+export function DiscCardObj({
   disc,
   onClick,
   onEdit,

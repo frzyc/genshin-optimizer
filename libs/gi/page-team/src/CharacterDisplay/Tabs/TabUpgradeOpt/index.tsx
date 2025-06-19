@@ -20,9 +20,9 @@ import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
-  useBuildArtifacts,
   useDBMeta,
   useDatabase,
+  useLoadoutArtifacts,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
@@ -211,7 +211,7 @@ export default function TabUpopt() {
     )
   }, [database, optConfig, filteredArtIdMap])
 
-  const equippedArts = useBuildArtifacts(loadoutDatum)
+  const equippedArts = useLoadoutArtifacts(loadoutDatum)
 
   const upOptCalc = useMemo(() => {
     const {

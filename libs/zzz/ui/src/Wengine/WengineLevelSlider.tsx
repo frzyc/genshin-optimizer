@@ -1,9 +1,9 @@
 'use client'
-import { CustomNumberInput } from '@genshin-optimizer/common/ui'
+import { CustomNumberInput, usePrev } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import { wengineMaxLevel } from '@genshin-optimizer/zzz/consts'
 import { Box, Divider, Slider } from '@mui/material'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export function WengineLevelSlider({
@@ -27,7 +27,9 @@ export function WengineLevelSlider({
 }) {
   const { t } = useTranslation('wengine')
   const [sliderLow, setsliderLow] = useState(levelLow)
+  if (usePrev(levelLow) !== levelLow) setsliderLow(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
+  if (usePrev(levelHigh) !== levelHigh) setsliderHigh(levelHigh)
   const setSlider = useCallback(
     (_: unknown, value: number | number[]) => {
       if (typeof value == 'number') throw new TypeError()
@@ -37,9 +39,7 @@ export function WengineLevelSlider({
     },
     [setsliderLow, setsliderHigh]
   )
-  useEffect(() => setsliderLow(levelLow), [setsliderLow, levelLow])
 
-  useEffect(() => setsliderHigh(levelHigh), [setsliderHigh, levelHigh])
   return (
     <Box
       sx={{

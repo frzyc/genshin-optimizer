@@ -1,7 +1,5 @@
-import {
-  useForceUpdate,
-  useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { sortFunction } from '@genshin-optimizer/common/util'
 import { allPathKeys, allRarityKeys } from '@genshin-optimizer/sr/consts'
@@ -20,7 +18,7 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import { Suspense, useEffect, useMemo } from 'react'
+import { Suspense, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LightConeCard } from './LightConeCard'
 
@@ -35,7 +33,6 @@ export type LightConeInventoryProps = {
 export function LightConeInventory({ onAdd, onEdit }: LightConeInventoryProps) {
   const { t } = useTranslation('lightCone')
   const { database } = useDatabaseContext()
-  const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
 
   // lives here until DB storage for UI sort/filter options is created
   const initialSort = () => ({
@@ -50,25 +47,21 @@ export function LightConeInventory({ onAdd, onEdit }: LightConeInventoryProps) {
   // until then, initialize a default sort
   const { sortType, ascending } = initialSort()
 
-  useEffect(
-    () => database.lightCones.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
-  )
-
-  const { lightConeIds, totalLightConeNum } = useMemo(() => {
-    const lightCones = database.lightCones.values
-    const totalLightConeNum = lightCones.length
-    const lightConeIds = lightCones
-      .sort(
-        sortFunction(
-          lightConeSortMap[sortType] ?? [],
-          ascending,
-          lightConeSortConfigs()
+  const allLightCones = useDataManagerValues(database.lightCones)
+  const totalLightConeNum = allLightCones.length
+  const lightConeIds = useMemo(
+    () =>
+      [...allLightCones]
+        .sort(
+          sortFunction(
+            lightConeSortMap[sortType] ?? [],
+            ascending,
+            lightConeSortConfigs()
+          )
         )
-      )
-      .map((lc) => lc.id)
-    return dirtyDatabase && { lightConeIds, totalLightConeNum }
-  }, [database, dirtyDatabase, sortType, ascending])
+        .map((lc) => lc.id),
+    [allLightCones, sortType, ascending]
+  )
 
   const brPt = useMediaQueryUp()
 
