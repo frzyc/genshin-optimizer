@@ -69,13 +69,19 @@ function dmgDazeAndAnom(
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
   const dmgMulti = sum(
-    skillParam.DamagePercentage,
-    prod(own.char[abilityScalingType], skillParam.DamagePercentageGrowth)
+    percent(skillParam.DamagePercentage),
+    prod(
+      sum(own.char[abilityScalingType], -1),
+      percent(skillParam.DamagePercentageGrowth)
+    )
   )
   const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.mv_mult_)
   const dazeBase = sum(
-    skillParam.StunRatio,
-    prod(own.char[abilityScalingType], skillParam.StunRatioGrowth)
+    percent(skillParam.StunRatio),
+    prod(
+      sum(own.char[abilityScalingType], -1),
+      percent(skillParam.StunRatioGrowth)
+    )
   )
   return [
     customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
@@ -113,18 +119,18 @@ export function dmgDazeAndAnomMerge(
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
   const dmgMulti = sum(
-    ...skillParam.map((sp) => sp.DamagePercentage),
+    ...skillParam.map((sp) => percent(sp.DamagePercentage)),
     prod(
       own.char[abilityScalingType],
-      sum(...skillParam.map((sp) => sp.DamagePercentageGrowth))
+      sum(...skillParam.map((sp) => percent(sp.DamagePercentageGrowth)))
     )
   )
   const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.mv_mult_)
   const dazeBase = sum(
-    ...skillParam.map((sp) => sp.StunRatio),
+    ...skillParam.map((sp) => percent(sp.StunRatio)),
     prod(
       own.char[abilityScalingType],
-      sum(...skillParam.map((sp) => sp.StunRatioGrowth))
+      sum(...skillParam.map((sp) => percent(sp.StunRatioGrowth)))
     )
   )
   return [

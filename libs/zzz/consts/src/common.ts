@@ -136,6 +136,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   anomBuildupRes_: 'Enemy Anomaly Buildup RES',
   dazeRes_: 'Enemy Daze RES',
   dazeRed_: 'Enemy Daze Taken Reduction',
+  dmgInc_: 'Enemy DMG Taken Increase',
 
   initial_hp: 'Initial HP',
   initial_def: 'Initial DEF',
