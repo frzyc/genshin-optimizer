@@ -103,6 +103,8 @@ const stats: Record<Stat, Desc> = {
   anomMas: agg,
   anomMas_: agg,
   anomBuildup_: agg,
+  anom_crit_: agg,
+  anom_crit_dmg_: agg,
   dmg_: agg,
   common_dmg_: agg,
   buff_: agg,
@@ -153,6 +155,7 @@ export const ownTag = {
     count: isoSum,
     critMode: fixed,
     cappedCrit_: iso,
+    anom_cappedCrit_: iso,
   },
   dmg: {
     shared: fixedProd,
@@ -165,6 +168,7 @@ export const ownTag = {
     stunned_mult_: fixed,
     mv_mult_: aggProd,
     sheer_mult_: fixed,
+    anomaly_crit_mult_: fixed,
   },
   formula: {
     base: agg,
