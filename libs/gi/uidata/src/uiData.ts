@@ -339,10 +339,11 @@ export class UIData {
   private _data(
     node: DataNode<NumNode | StrNode>
   ): CalcResult<number | string | undefined> {
-    let child = this.children.get(node.data)
+    const parent = node.reset ? this.origin : this
+    let child = parent.children.get(node.data)
     if (!child) {
-      child = new UIData(node.data, node.reset ? this.origin : this)
-      this.children.set(node.data, child)
+      child = new UIData(node.data, parent)
+      parent.children.set(node.data, child)
     }
     return child.computeNode(node.operands[0])
   }
