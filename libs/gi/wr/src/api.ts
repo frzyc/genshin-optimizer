@@ -37,9 +37,7 @@ export function inferInfoMut(data: Data, source?: Info['source']): Data {
         if (!x.info) x.info = {}
         x.info.isTeamBuff = true
       }
-      const reference = objPathValue(input, path) as
-        | ReadNode<number>
-        | undefined
+      const reference: ReadNode<number> | undefined = objPathValue(input, path)
       if (reference)
         x.info = { ...x.info, ...reference.info, prefix: undefined, source }
       else if (path[0] !== 'tally' && path[0] !== 'nonStacking')
