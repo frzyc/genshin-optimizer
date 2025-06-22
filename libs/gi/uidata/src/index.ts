@@ -25,14 +25,11 @@ import type {
 import {
   allOperations,
   constant,
-  customRead,
   deepNodeClone,
   input,
   mergeData,
-  nonStacking,
   resetData,
   setReadNodeKeys,
-  tally,
   uiInput,
 } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
@@ -527,22 +524,13 @@ export function uiDataForTeam(
     ])
   )
 
-  const customReadNodes = {}
   function getReadNode(path: readonly string[]): ReadNode<number> {
     const base =
       path[0] === 'teamBuff'
         ? objPathValue(teamBuff, path.slice(1))
         : objPathValue(input, path)
     if (base) return base
-    const custom = objPathValue(customReadNodes, path)
-    if (custom) return custom
-    const newNode = customRead(path)
-    if (path[0] === 'teamBuff' && path[1] === 'tally')
-      newNode.accu = objPathValue(tally, path.slice(2))?.accu
-    if (path[0] === 'teamBuff' && path[1] === 'nonStacking')
-      newNode.accu = objPathValue(nonStacking, path.slice(2))?.accu
-    layeredAssignment(customReadNodes, path, newNode)
-    return newNode
+    throw new Error('unknown read path')
   }
 
   Object.values(result).forEach(({ targetRef, buffs, calcs }) =>
