@@ -238,9 +238,6 @@ export class UIData {
         if (!result.info.variant) result.info.variant = KeyMap.getVariant(path)
         if (!result.info.unit) result.info.unit = getUnitStr(path)
       }
-
-      // Pivot all keyed nodes for debugging
-      // if (info.key) result.info.pivot = true
     }
 
     this.nodes.set(node, result)
@@ -504,70 +501,65 @@ export function uiDataForTeam(
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.
 
-  const buffable = {} // all entries in `Data.teamBuff.*`
-  const targetable = { target: {} } // all usages of `target.*`
-  for (const d of Object.values(teamData)) {
-    for (const data of d) {
-      crawlObject(
-        data,
-        [],
-        (o: any) => o?.operation === 'read' && o.path[0] === 'target',
-        ({ path }: ReadNode<any>) => layeredAssignment(targetable, path, true)
-      )
-
-      if (data.teamBuff)
-        crawlObject(
-          data.teamBuff,
-          [],
-          (o: any) => o.operation,
-          (_, path: string[]) => layeredAssignment(buffable, path, true)
-        )
-    }
-  }
+  const found = (x: any) => x === true
+  const isNode = (x: any) => x?.operation
+  const asConst = true
 
   const keys = Object.keys(teamData)
-  const ownData = keys.map((_): Data => ({}))
-  const targetData = keys.map((_) => ({ target: {} }) as Data)
-  const buffData = keys.map((_): Data[] => keys.map((_) => ({})))
-  // ownData[i]:[X: input] = <unbuffed X calc for member i>
-  // ownData[i]:[teamBuff][X: input] = <X buff calc from member i>
-  // targetData[to]:[target][X: input] = <X calc under root/ownData[to]>
-  // buffData[to][from]:[X: input] = <teamBuff.X buff calc under root/ownData[from]/targetData[to]>
+  const sources = keys.map((key): any =>
+    key.includes('Traveler') ? key + gender : key
+  )
+  const own = keys.map((_): Data => ({}))
+  const target = keys.map((_) => ({ target: {} }) as Data)
+  const buff = keys.map((_) => keys.map((_): Data => ({})))
+  // own[i]:[X: input] = <pre-buffed X calc for member i>
+  // own[i]:[teamBuff][X: input] = <X buff calc from member i>
+  // target[to]:[target][X: input] = <X calc under root/own[to]>
+  // buff[to][from]:[X: input] = <teamBuff.X buff calc under root/own[from]/target[to]>
 
-  // merged(ownData[i], ...buffData[i])[X: input] = <total calc of X for member i>
+  // totalBuff[i]:[X: input] = mergeData(...buff[i]) = <total buff to member i>
+  // mergedData(...own[i], totalBuff[i])[X: input] = <total calc of X for member i>
 
-  const found = (x: any) => x === true
-  crawlObject(targetable.target, [], found, (_, path: string[]) => {
-    const node = objPathValue(input, path) as ReadNode<number> | undefined
-    targetData.forEach((d, i) => {
-      const read = customRead(path)
-      read.accu = node?.accu
-      const target = resetData(read, ownData[i])
-      layeredAssignment((d as any).target, path, target)
+  crawlObject(input, [], isNode, (r: ReadNode<number>, path) =>
+    target.forEach(({ target }: any, to) => {
+      const info: Info = { ...r.info, source: sources[to], asConst }
+      layeredAssignment(target, path, resetData(r, own[to], info))
     })
-  })
-  crawlObject(buffable, [], found, (_, path: string[]) => {
-    const node = objPathValue(input, path) as ReadNode<number> | undefined
-    keys.forEach((src, from) => {
+  )
+  Object.values(teamData).forEach((srcData, from) => {
+    const buffed = {} // all entries in `srcData[i].teamBuff.*`
+    for (const data of srcData)
+      crawlObject(data.teamBuff, [], isNode, (_, path) =>
+        layeredAssignment(buffed, path, true)
+      )
+
+    crawlObject(buffed, [], found, (_, path) => {
+      let { info }: ReadNode<number> = objPathValue(input, path)
+      info = { ...info, source: sources[from], asConst }
+      const read = customRead(['teamBuff', ...path], info)
       keys.forEach((_, to) => {
-        const d = buffData[to][from]
-        const source: any = src.includes('Traveler') ? src + gender : src
-        const info: Info = { source, prefix: 'teamBuff', asConst: true }
-        const read = customRead(['teamBuff', ...path], info)
-        read.accu = node?.accu
-        const buff = data(read, targetData[to])
-        layeredAssignment(d, path, resetData(buff, ownData[from]))
+        const node = resetData(data(read, target[to]), own[from])
+        layeredAssignment(buff[to][from], path, node)
       })
     })
   })
+
   const commonData = { activeCharKey: constant(activeCharKey) }
-  Object.values(teamData).forEach((own, i) =>
-    Object.assign(ownData[i], mergeData([...own, ...buffData[i]]), commonData)
+  const totalBuff = buff.map((buff) => mergeData(buff))
+  totalBuff.forEach((buffData) =>
+    crawlObject(buffData, [], isNode, (node: NumNode, path) => {
+      const { info }: ReadNode<number> = objPathValue(input, path)
+      // This is ok since `node` comes from either `mergeData` or `resetData` (for `buff`) above
+      node.info = { ...info, prefix: 'teamBuff', pivot: true }
+    })
+  )
+  Object.values(teamData).forEach((data, i) =>
+    Object.assign(own[i], mergeData([...data, totalBuff[i], commonData]))
   )
 
   const origin = new UIData(undefined as any, undefined)
   return Object.fromEntries(
-    keys.map((key, i) => [key, { target: origin.childUIData(ownData[i]) }])
+    keys.map((key, i) => [key, { target: origin.childUIData(own[i]) }])
   )
 }
 
