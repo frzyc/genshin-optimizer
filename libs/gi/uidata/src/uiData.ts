@@ -25,7 +25,6 @@ import type {
 import {
   allOperations,
   constant,
-  customRead,
   data,
   input,
   mergeData,
@@ -496,7 +495,8 @@ function makeEmpty(
 export function uiDataForTeam(
   teamData: Partial<Record<CharacterKey, Data[]>>,
   gender: GenderKey,
-  activeCharKey?: CharacterKey
+  activeCharKey: CharacterKey,
+  selection: Record<string, CharacterKey> = {}
 ): Partial<Record<CharacterKey, { target: UIData }>> {
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.
@@ -516,7 +516,7 @@ export function uiDataForTeam(
   // own[i]:[teamBuff][X: input] = <X buff calc from member i>
   // target[to]:[target][X: input] = <X calc under root/own[to]>
   // buff[to][from]:[X: input] = <teamBuff.X buff calc under root/own[from]/target[to]>
-
+  //
   // totalBuff[i]:[X: input] = mergeData(...buff[i]) = <total buff to member i>
   // mergedData(...own[i], totalBuff[i])[X: input] = <total calc of X for member i>
 
@@ -534,9 +534,9 @@ export function uiDataForTeam(
       )
 
     crawlObject(buffed, [], found, (_, path) => {
-      let { info }: ReadNode<number> = objPathValue(input, path)
-      info = { ...info, source: sources[from], asConst }
-      const read = customRead(['teamBuff', ...path], info)
+      const r: ReadNode<number> = objPathValue(input, path)
+      const info: Info = { ...r.info, source: sources[from], asConst }
+      const read = { ...r, path: ['teamBuff', ...path], info }
       keys.forEach((_, to) => {
         const node = resetData(data(read, target[to]), own[from])
         layeredAssignment(buff[to][from], path, node)
@@ -545,6 +545,8 @@ export function uiDataForTeam(
   })
 
   const commonData = { activeCharKey: constant(activeCharKey) }
+  for (const [name, charKey] of Object.entries(selection))
+    (commonData as any)[name] = (target[keys.indexOf(charKey)] as any).target
   const totalBuff = buff.map((buff) => mergeData(buff))
   totalBuff.forEach((buffData) =>
     crawlObject(buffData, [], isNode, (node: NumNode, path) => {

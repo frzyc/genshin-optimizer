@@ -861,7 +861,7 @@ export function ArtifactEditor({
                 onClick={() =>
                   artifactDispatch({
                     type: 'overwrite',
-                    artifact: randomizeArtifact(),
+                    artifact: randomizeArtifact(artifact),
                   })
                 }
               >

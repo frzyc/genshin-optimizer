@@ -267,7 +267,7 @@ const inputBase = {
 
   base: objKeyMap(['atk', 'hp', 'def'], (key) => read('add', info(key))),
   customBonus: withDefaultInfo(
-    { prefix: 'custom', pivot },
+    { prefix: 'custom', pivot, asConst: true },
     {
       ...allModStatNodes,
       ...allNonModStatNodes,
@@ -646,4 +646,10 @@ export const infusionNode = stringPrio(
   input.infusion.overridableSelf
 )
 
+const selected0 = setReadNodeKeys(deepNodeClone(inputBase), ['selected0'])
+const selected1 = setReadNodeKeys(deepNodeClone(inputBase), ['selected1'])
+const selected2 = setReadNodeKeys(deepNodeClone(inputBase), ['selected2'])
+const selected3 = setReadNodeKeys(deepNodeClone(inputBase), ['selected3'])
+
 export { common, customBonus, input, tally, target, uiInput }
+export { selected0, selected1, selected2, selected3 }
