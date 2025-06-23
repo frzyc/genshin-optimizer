@@ -7,7 +7,6 @@ export type TeamData = Partial<
     CharacterKey,
     {
       target: UIData
-      buffs: Partial<Record<CharacterKey, UIData>>
       character: ICachedCharacter
       weapon: ICachedWeapon
       characterSheet: CharacterSheet

@@ -25,11 +25,11 @@ import type {
 import {
   allOperations,
   constant,
-  deepNodeClone,
+  customRead,
+  data,
   input,
   mergeData,
   resetData,
-  setReadNodeKeys,
   uiInput,
 } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
@@ -88,6 +88,15 @@ export class UIData {
       this.data = [data, ...parent.data]
       this.origin = parent.origin
     }
+  }
+
+  childUIData(data: Data): UIData {
+    let child = this.children.get(data)
+    if (!child) {
+      child = new UIData(data, this)
+      this.children.set(data, child)
+    }
+    return child
   }
 
   getDisplay(): {
@@ -337,12 +346,7 @@ export class UIData {
     node: DataNode<NumNode | StrNode>
   ): CalcResult<number | string | undefined> {
     const parent = node.reset ? this.origin : this
-    let child = parent.children.get(node.data)
-    if (!child) {
-      child = new UIData(node.data, parent)
-      parent.children.set(node.data, child)
-    }
-    return child.computeNode(node.operands[0])
+    return parent.childUIData(node.data).computeNode(node.operands[0])
   }
   private _compute(node: ComputeNode): CalcResult<number> {
     const { operation, operands } = node
@@ -492,154 +496,78 @@ function makeEmpty(
   }
 }
 
-const asConst = true as const,
-  pivot = true as const
-
-/** These read nodes are very context-specific, and cannot be used anywhere else outside of `uiDataForTeam` */
-const teamBuff = setReadNodeKeys(deepNodeClone(input), ['teamBuff']) // Use ONLY by dataObjForTeam
 export function uiDataForTeam(
   teamData: Partial<Record<CharacterKey, Data[]>>,
   gender: GenderKey,
   activeCharKey?: CharacterKey
-): Partial<
-  Record<
-    CharacterKey,
-    { target: UIData; buffs: Partial<Record<CharacterKey, UIData>> }
-  >
-> {
+): Partial<Record<CharacterKey, { target: UIData }>> {
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.
 
-  const mergedData = Object.entries(teamData).map(
-    ([key, data]) => [key, { ...mergeData(data) }] as [CharacterKey, Data]
-  )
-  const result = Object.fromEntries(
-    mergedData.map(([key]) => [
-      key,
-      {
-        targetRef: {} as Data,
-        buffs: [] as Data[],
-        calcs: {} as Partial<Record<CharacterKey, Data>>,
-      },
-    ])
-  )
+  const buffable = {} // all entries in `Data.teamBuff.*`
+  const targetable = { target: {} } // all usages of `target.*`
+  for (const d of Object.values(teamData)) {
+    for (const data of d) {
+      crawlObject(
+        data,
+        [],
+        (o: any) => o?.operation === 'read' && o.path[0] === 'target',
+        ({ path }: ReadNode<any>) => layeredAssignment(targetable, path, true)
+      )
 
-  function getReadNode(path: readonly string[]): ReadNode<number> {
-    const base =
-      path[0] === 'teamBuff'
-        ? objPathValue(teamBuff, path.slice(1))
-        : objPathValue(input, path)
-    if (base) return base
-    throw new Error('unknown read path')
+      if (data.teamBuff)
+        crawlObject(
+          data.teamBuff,
+          [],
+          (o: any) => o.operation,
+          (_, path: string[]) => layeredAssignment(buffable, path, true)
+        )
+    }
   }
 
-  Object.values(result).forEach(({ targetRef, buffs, calcs }) =>
-    mergedData.forEach(([sourceKey, source]) => {
-      const sourceKeyWithGender = sourceKey.includes('Traveler')
-        ? `${sourceKey}${gender}`
-        : sourceKey
-      const sourceBuff = source.teamBuff
-      // Create new copy of `calc` as we're mutating it later
-      const buff: Data = {},
-        calc: Data = deepNodeClone({ teamBuff: sourceBuff })
-      buffs.push(buff)
-      calcs[sourceKey] = calc
+  const keys = Object.keys(teamData)
+  const ownData = keys.map((_): Data => ({}))
+  const targetData = keys.map((_) => ({ target: {} }) as Data)
+  const buffData = keys.map((_): Data[] => keys.map((_) => ({})))
+  // ownData[i]:[X: input] = <unbuffed X calc for member i>
+  // ownData[i]:[teamBuff][X: input] = <X buff calc from member i>
+  // targetData[to]:[target][X: input] = <X calc under root/ownData[to]>
+  // buffData[to][from]:[X: input] = <teamBuff.X buff calc under root/ownData[from]/targetData[to]>
 
-      // This construction creates a `Data` representing buff
-      // from `source` applying to `target`. It has 3 data:
-      // - `target` contains the reference for the final
-      //   data. It is not populated at this stage,
-      // - `calc` contains the calculation of the buffs,
-      // - `buff` contains read nodes that point to the
-      //   calculation in `calc`.
+  // merged(ownData[i], ...buffData[i])[X: input] = <total calc of X for member i>
 
-      crawlObject(
-        sourceBuff,
-        [],
-        (x: any) => x.operation,
-        (x: NumNode | StrNode, path: string[]) => {
-          const info: Info = {
-            ...objPathValue(input, path)?.info,
-            source: sourceKeyWithGender,
-            prefix: undefined,
-            asConst,
-          }
-          layeredAssignment(
-            buff,
-            path,
-            resetData(getReadNode(['teamBuff', ...path]), calc, info)
-          )
-
-          crawlObject(
-            x,
-            [],
-            (x: any) => x?.operation === 'read',
-            (x: ReadNode<number | string>) => {
-              if (x.path[0] === 'targetBuff') return // Ignore teamBuff access
-
-              let readNode: ReadNode<number> | ReadNode<string> | undefined,
-                data: Data
-              if (x.path[0] === 'target') {
-                // Link the node to target data
-                readNode = getReadNode(x.path.slice(1))
-                data = targetRef
-              } else {
-                // Link the node to source data
-                readNode = x
-                data = result[sourceKey].targetRef
-              }
-              layeredAssignment(calc, x.path, resetData(readNode, data))
-            }
-          )
-        }
-      )
+  const found = (x: any) => x === true
+  crawlObject(targetable.target, [], found, (_, path: string[]) => {
+    const node = objPathValue(input, path) as ReadNode<number> | undefined
+    targetData.forEach((d, i) => {
+      const read = customRead(path)
+      read.accu = node?.accu
+      const target = resetData(read, ownData[i])
+      layeredAssignment((d as any).target, path, target)
     })
-  )
-  mergedData.forEach(([targetKey, data]) => {
-    delete data.teamBuff
-    const { targetRef, buffs } = result[targetKey]
-    const buff = mergeData(buffs)
-    crawlObject(
-      buff ?? {},
-      [],
-      (x) => (x as any).operation,
-      (x: NumNode, path: string[]) => {
-        // CAUTION
-        // This is safe only because `buff` is created using only `resetData`
-        // and `mergeData`. So every node here is created from either of the
-        // two functions, so the mutation wont't affect existing nodes.
-        x.info = {
-          ...(objPathValue(teamBuff, path) as ReadNode<number> | undefined)
-            ?.info,
-          prefix: 'teamBuff',
-          pivot,
-        }
-      }
-    )
-    Object.assign(
-      targetRef,
-      mergeData([
-        data,
-        buff,
-        { teamBuff: buff, activeCharKey: constant(activeCharKey) },
-      ])
-    )
-    ;(targetRef as any)['target'] = targetRef
   })
+  crawlObject(buffable, [], found, (_, path: string[]) => {
+    const node = objPathValue(input, path) as ReadNode<number> | undefined
+    keys.forEach((src, from) => {
+      keys.forEach((_, to) => {
+        const d = buffData[to][from]
+        const source: any = src.includes('Traveler') ? src + gender : src
+        const info: Info = { source, prefix: 'teamBuff', asConst: true }
+        const read = customRead(['teamBuff', ...path], info)
+        read.accu = node?.accu
+        const buff = data(read, targetData[to])
+        layeredAssignment(d, path, resetData(buff, ownData[from]))
+      })
+    })
+  })
+  const commonData = { activeCharKey: constant(activeCharKey) }
+  Object.values(teamData).forEach((own, i) =>
+    Object.assign(ownData[i], mergeData([...own, ...buffData[i]]), commonData)
+  )
+
   const origin = new UIData(undefined as any, undefined)
   return Object.fromEntries(
-    Object.entries(result).map(([key, value]) => [
-      key,
-      {
-        target: new UIData(value.targetRef, origin),
-        buffs: Object.fromEntries(
-          Object.entries(value.calcs).map(([key, value]) => [
-            key,
-            new UIData(value, origin),
-          ])
-        ),
-      },
-    ])
+    keys.map((key, i) => [key, { target: origin.childUIData(ownData[i]) }])
   )
 }
 
