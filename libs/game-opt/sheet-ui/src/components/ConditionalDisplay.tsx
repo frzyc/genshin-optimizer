@@ -5,6 +5,7 @@ import {
   DropdownButton,
   NumberInputLazy,
   SqBadge,
+  usePrev,
 } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
 import type {
@@ -317,10 +318,22 @@ function NumConditional({
 }
 function CondSlider(props: Omit<SliderProps, 'onChange'>) {
   const [innerValue, setInnerValue] = useState(props.value)
+  const [isDragging, setIsDragging] = useState(false)
+
+  if (usePrev(props.value) !== innerValue && !isDragging) {
+    setInnerValue(props.value)
+  }
+
   return (
     <Slider
       {...props}
       onChange={(_e, v) => setInnerValue(v as number)}
+      onChangeCommitted={(e, v) => {
+        setIsDragging(false)
+        props.onChangeCommitted?.(e, v)
+      }}
+      onMouseDown={() => setIsDragging(true)}
+      onTouchStart={() => setIsDragging(true)}
       value={innerValue}
     />
   )

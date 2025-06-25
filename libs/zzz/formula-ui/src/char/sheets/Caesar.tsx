@@ -74,6 +74,16 @@ const sheet = createBaseSheet(key, {
       },
     },
   ],
+  m1: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('coreCond'),
+        metadata: cond.radiant_aegis,
+        fields: [fieldForBuff(buff.m1_resRed_)],
+      },
+    },
+  ],
   m2: [
     {
       type: 'conditional',

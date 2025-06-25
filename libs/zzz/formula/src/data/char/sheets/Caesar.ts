@@ -34,9 +34,6 @@ const {
   exSpecial_assistFollowup_used,
 } = allBoolConditionals(key)
 
-const ult_dazeInc_ = ownBuff.combat.dazeInc_.add(
-  enemy_shielded.ifOn(sum(percent(0.4), prod(char.chain, percent(0.05))))
-)
 const m6_exSpecial_assistFollowup_crit_ = ownBuff.combat.crit_.add(
   cmpGE(char.mindscape, 6, percent(1))
 )
@@ -67,16 +64,6 @@ const sheet = register(
     ),
     dmgDazeAndAnomOverride(
       dm,
-      'chain',
-      'UltimateSavageSmash',
-      0,
-      { damageType1: 'ult' },
-      'atk',
-      undefined,
-      ult_dazeInc_
-    ),
-    dmgDazeAndAnomOverride(
-      dm,
       'assist',
       'AssistFollowUpAidingBlade',
       0,
@@ -103,7 +90,13 @@ const sheet = register(
       stance_switch.ifOn(sum(percent(0.08), prod(char.special, percent(0.01))))
     )
   ),
-  registerBuff('ult_dazeInc_', ult_dazeInc_, undefined, undefined, false),
+  registerBuff(
+    'ult_dazeInc_',
+    ownBuff.combat.dazeInc_.addWithDmgType(
+      'ult',
+      enemy_shielded.ifOn(sum(percent(0.4), prod(char.chain, percent(0.05))))
+    )
+  ),
   registerBuff(
     'core_atk',
     teamBuff.combat.atk.add(
