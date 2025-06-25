@@ -4,12 +4,7 @@ import {
 } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import {
-  CardThemed,
-  ModalWrapper,
-  SqBadge,
-  usePrev,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { bulkCatTotal, filterFunction } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
@@ -26,6 +21,7 @@ import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
 import {
   CharacterContext,
   TeamCharacterContext,
+  useCharacter,
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
@@ -55,20 +51,23 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import type { ChangeEvent, MouseEvent } from 'react'
+import type {
+  ChangeEvent,
+  Dispatch,
+  MouseEvent,
+  MutableRefObject,
+  SetStateAction,
+} from 'react'
 import {
+  memo,
   useCallback,
   useContext,
   useDeferredValue,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-
-enum CharListMode {
-  ToggleToAllow,
-  ToggleToExclude,
-}
 
 export default function UseEquipped({
   disabled = false,
@@ -151,29 +150,33 @@ export default function UseEquipped({
     [charKeys, characterKey]
   )
 
-  const locList = Array.from(
-    new Set(
-      Object.entries(charKeyMap)
-        .sort(([ck1, c1], [ck2, c2]) => {
-          // sort characters by: star => more artifacts equipped
-          const [choosec1, choosec2] = [-1, 1]
-          const c1f = database.charMeta.get(ck1).favorite
-          const c2f = database.charMeta.get(ck2).favorite
-          if (c1f && !c2f) return choosec1
-          else if (c2f && !c1f) return choosec2
+  const locList = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          Object.entries(charKeyMap)
+            .sort(([ck1, c1], [ck2, c2]) => {
+              // sort characters by: star => more artifacts equipped
+              const [choosec1, choosec2] = [-1, 1]
+              const c1f = database.charMeta.get(ck1).favorite
+              const c2f = database.charMeta.get(ck2).favorite
+              if (c1f && !c2f) return choosec1
+              else if (c2f && !c1f) return choosec2
 
-          const art1 = Object.values(c1.equippedArtifacts).filter(
-            (id) => id
-          ).length
-          const art2 = Object.values(c2.equippedArtifacts).filter(
-            (id) => id
-          ).length
-          if (art1 > art2) return choosec1
-          else if (art2 > art1) return choosec2
-          return ck1.localeCompare(ck2)
-        })
-        .map(([ck]) => charKeyToLocCharKey(ck))
-    )
+              const art1 = Object.values(c1.equippedArtifacts).filter(
+                (id) => id
+              ).length
+              const art2 = Object.values(c2.equippedArtifacts).filter(
+                (id) => id
+              ).length
+              if (art1 > art2) return choosec1
+              else if (art2 > art1) return choosec2
+              return ck1.localeCompare(ck2)
+            })
+            .map(([ck]) => charKeyToLocCharKey(ck))
+        )
+      ),
+    [charKeyMap, database.charMeta]
   )
 
   const {
@@ -242,8 +245,6 @@ export default function UseEquipped({
     )
   }, [charEntries, charKeyMap, characterKey, excludedLocations, locList])
 
-  const [mouseUpDetected, setMouseUpDetected] = useState(false)
-
   const allowAll = useCallback(
     () =>
       database.optConfigs.set(optConfigId, {
@@ -263,20 +264,22 @@ export default function UseEquipped({
     [database, optConfigId, excludedLocations, locList]
   )
 
-  const toggleList = useCallback(
-    (lkList: Set<LocationCharacterKey>) => {
-      const lkArray = [...lkList]
+  // Local state to track dragged characters
+  const [charList, setCharList] = useState(new Set<LocationCharacterKey>())
+  const toggleAllow = useRef(false)
+  const onMouseUp = useCallback(() => {
+    if (!charList.size) return
+    database.optConfigs.set(optConfigId, ({ excludedLocations }) => {
+      const lkArray = [...charList]
       const newExcludedLocations = lkArray
         .filter((lk) => !excludedLocations.includes(lk))
         .concat(excludedLocations.filter((lk) => !lkArray.includes(lk)))
-      database.optConfigs.set(optConfigId, {
+      return {
         excludedLocations: newExcludedLocations,
-      })
-    },
-    [database, optConfigId, excludedLocations]
-  )
-
-  const onMouseUp = useCallback(() => setMouseUpDetected(true), [])
+      }
+    })
+    setCharList(() => new Set())
+  }, [charList, database.optConfigs, optConfigId])
 
   // `total` shouldn't rely on `locList.length` because it gets filtered
   const total = locListLength
@@ -367,13 +370,32 @@ export default function UseEquipped({
                 </Button>
               </Grid>
             </Grid>
-            <SelectItemGrid
-              locList={locList}
-              excludedLocations={excludedLocations}
-              mouseUpDetected={mouseUpDetected}
-              setMouseUpDetected={setMouseUpDetected}
-              toggleList={toggleList}
-            />
+            <Grid
+              container
+              spacing={1}
+              columns={{ xs: 6, sm: 7, md: 10, lg: 12, xl: 16 }}
+            >
+              {locList.map((lk) => {
+                const selected = !excludedLocations.includes(lk)
+                const isInList = charList.has(lk)
+                const isBeingExcluded = isInList && toggleAllow.current
+                const isBeingAllowed = isInList && !toggleAllow.current
+
+                const allowed = (selected && !isBeingExcluded) || isBeingAllowed
+                return (
+                  <Grid item key={lk} xs={1}>
+                    <SelectItem
+                      key={lk}
+                      allowed={allowed}
+                      locKey={lk}
+                      setCharList={setCharList}
+                      toggleAllow={toggleAllow}
+                      selected={selected}
+                    />
+                  </Grid>
+                )
+              })}
+            </Grid>
           </CardContent>
         </CardThemed>
       </ModalWrapper>
@@ -414,94 +436,38 @@ export default function UseEquipped({
   )
 }
 
-function SelectItemGrid({
-  locList,
-  excludedLocations,
-  mouseUpDetected,
-  setMouseUpDetected,
-  toggleList,
-}: {
-  locList: LocationCharacterKey[]
-  excludedLocations: LocationCharacterKey[]
-  mouseUpDetected: boolean
-  setMouseUpDetected: (v: boolean) => void
-  toggleList: (charList: Set<LocationCharacterKey>) => void
-}) {
-  const [charList, setCharList] = useState(new Set<LocationCharacterKey>())
-  const [charListMode, setCharListMode] = useState<CharListMode>()
-
-  if (usePrev(mouseUpDetected) !== mouseUpDetected && mouseUpDetected) {
-    setMouseUpDetected(false)
-    if (charList.size > 0) {
-      toggleList(charList)
-      setCharList(new Set<LocationCharacterKey>())
-      setCharListMode(undefined)
-    }
-  }
-  return (
-    <Grid
-      container
-      spacing={1}
-      columns={{ xs: 6, sm: 7, md: 10, lg: 12, xl: 16 }}
-    >
-      {locList.map((lk) => (
-        <Grid item key={lk} xs={1}>
-          <SelectItem
-            locKey={lk}
-            charList={charList}
-            charListMode={charListMode}
-            setCharList={setCharList}
-            setCharListMode={setCharListMode}
-            selected={!excludedLocations.includes(lk)}
-          />
-        </Grid>
-      ))}
-    </Grid>
-  )
-}
-
-function SelectItem({
+const SelectItem = memo(function SelectItem({
   locKey,
+  allowed,
   selected,
-  charList,
-  charListMode,
   setCharList,
-  setCharListMode,
+  toggleAllow,
 }: {
+  key: LocationCharacterKey
   locKey: LocationCharacterKey
+  allowed: boolean
   selected: boolean
-  charList: Set<LocationCharacterKey>
-  charListMode?: CharListMode
-  setCharList: (list: Set<LocationCharacterKey>) => void
-  setCharListMode: (mode?: CharListMode) => void
+  setCharList: Dispatch<SetStateAction<Set<LocationCharacterKey>>>
+  toggleAllow: MutableRefObject<boolean>
 }) {
   const database = useDatabase()
-  const char = database.chars.get(database.chars.LocationToCharacterKey(locKey))
+  const characterKey = database.chars.LocationToCharacterKey(locKey)
+  const char = useCharacter(characterKey)
   const onMouseEnter = useCallback(
     (e: MouseEvent) =>
       // Mouse 1 being held down
       e.buttons === 1 &&
       // Only select characters with the same exclusion state as the rest of the list
-      ((charListMode === CharListMode.ToggleToAllow && !selected) ||
-        (charListMode === CharListMode.ToggleToExclude && selected)) &&
-      setCharList(new Set([...charList]).add(locKey)),
-    [charListMode, selected, setCharList, charList, locKey]
+      ((!toggleAllow.current && !selected) ||
+        (toggleAllow.current && selected)) &&
+      setCharList((c) => (c.has(locKey) ? c : new Set([...c, locKey]))),
+    [toggleAllow, selected, setCharList, locKey]
   )
   const onMouseDown = useCallback(() => {
-    const mode = selected
-      ? CharListMode.ToggleToExclude
-      : CharListMode.ToggleToAllow
-    setCharListMode(mode)
-    setCharList(new Set([...charList]).add(locKey))
-  }, [selected, setCharListMode, setCharList, charList, locKey])
-  const allowed =
-    // Character is already allowed, and not selected to be excluded
-    (selected &&
-      !(
-        charListMode === CharListMode.ToggleToExclude && charList.has(locKey)
-      )) ||
-    // Or character is selected to be allowed
-    (charListMode === CharListMode.ToggleToAllow && charList.has(locKey))
+    toggleAllow.current = selected
+    setCharList(() => new Set([locKey]))
+  }, [toggleAllow, selected, setCharList, locKey])
+
   const sx = {
     opacity: allowed ? undefined : 0.6,
     borderColor: allowed ? 'rgb(100,200,100)' : 'rgb(200,100,100)',
@@ -531,7 +497,7 @@ function SelectItem({
     ),
     [char?.equippedArtifacts]
   )
-  const characterKey = database.chars.LocationToCharacterKey(locKey)
+
   return (
     <CardThemed bgt="light" sx={sx}>
       <CharacterCardPico
@@ -547,4 +513,4 @@ function SelectItem({
       {content}
     </CardThemed>
   )
-}
+})
