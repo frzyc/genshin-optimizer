@@ -38,6 +38,31 @@ const dm = {
     AssistFollowUpConductingBlow:
       data_gen.skillParams['assist']['AssistFollowUpConductingBlow'],
   },
+  core: {
+    common_dmg_: data_gen.coreParams[0],
+    aftershock_crit_dmg_scaling_: data_gen.coreParams[1],
+  },
+  ability: {
+    crit_: data_gen.abilityParams[0],
+    aftershock_dmg_: data_gen.abilityParams[1],
+  },
+  m1: {
+    additional_dmg_triggers: data_gen.mindscapeParams[0][0],
+  },
+  m2: {
+    crit_: data_gen.mindscapeParams[1][0],
+    stacks_gained_: data_gen.mindscapeParams[1][1],
+    stacks: data_gen.mindscapeParams[1][2],
+    stacks_consumed: data_gen.mindscapeParams[1][3],
+    stacks_consumed_per_hit: data_gen.mindscapeParams[1][4],
+  },
+  m4: {
+    electric_resIgn_: data_gen.mindscapeParams[3][0],
+  },
+  m6: {
+    instances_triggered: data_gen.mindscapeParams[5][0],
+    dmg: data_gen.mindscapeParams[5][1],
+  },
 } as const
 
 export default dm
