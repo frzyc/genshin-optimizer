@@ -314,12 +314,7 @@ const sheet = register(
       cmpGE(
         char.mindscape,
         6,
-        cmpEq(
-          enemy.common.isStunned,
-          0,
-          dm.m6.mv_mult_ / 100, // dm has incorrect value
-          percent(1)
-        ),
+        cmpEq(enemy.common.isStunned, 0, dm.m6.mv_mult_, percent(1)),
         percent(1)
       )
     )
