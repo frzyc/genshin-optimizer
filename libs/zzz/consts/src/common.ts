@@ -17,6 +17,8 @@ export const otherStatKeys = [
   'anomMas', // flat Anomally Mastery on character
   'shield_', // Shield Effect
   'enerRegen',
+  'anom_crit_', // Anomaly CRIT Rate
+  'anom_crit_dmg_', // Anomaly CRIT DMG
 ] as const
 
 export const unCondKeys = [
@@ -123,6 +125,8 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   anomMas_: 'Anomaly Mastery',
   anomProf: 'Anomaly Proficiency',
   anomBuildup_: 'Anomaly Buildup',
+  anom_crit_: 'Anomaly CRIT Rate',
+  anom_crit_dmg_: 'Anomaly CRIT DMG',
   ...objKeyMap(allAnomalyDmgKeys, (dmg_) => `${dmg_} DMG Bonus`),
   common_dmg_: 'DMG Bonus',
   dmg_: 'DMG Bonus',
@@ -157,6 +161,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
 
   // Formula display stuff
   crit_mult_: 'CRIT Multiplier',
+  anomaly_crit_mult_: 'Anomaly CRIT Multiplier',
   dmg_mult_: 'DMG Multiplier',
   def_mult_: 'DEF Multiplier',
   res_mult_: 'Resistance Multiplier',

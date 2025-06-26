@@ -1,0 +1,12 @@
+{
+  "coreCond": {
+    "morale_consumed": "Morale Points Consumed",
+    "morale_burst_hit": "In the Morale Burst state, when startup light punches or jab combos hit enemies"
+  },
+  "abilityCond": "Elation Stacks",
+  "collapseCond": "Enemy has Collapse effect",
+  "m1_finishing_move_dmg_": "5th-Hit Powerful Finisher (Morale Burst) DMG Bonus",
+  "m2Cond": "In the Morale Burst state, when the Finishing Move hits an enemy",
+  "m2_elation_inc_": "Elation Buff Increase",
+  "m6_blazing_impact_dmg": "Blazing Impact"
+}
