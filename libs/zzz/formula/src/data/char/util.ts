@@ -1,5 +1,6 @@
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
 import {
+  cmpEq,
   cmpGE,
   constant,
   prod,
@@ -72,7 +73,11 @@ function dmgDazeAndAnom(
     skillParam.DamagePercentage,
     prod(own.char[abilityScalingType], skillParam.DamagePercentageGrowth)
   )
-  const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.mv_mult_)
+  const dmgBase = prod(
+    own.final[stat],
+    dmgMulti,
+    cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
+  )
   const dazeBase = sum(
     skillParam.StunRatio,
     prod(own.char[abilityScalingType], skillParam.StunRatioGrowth)
@@ -119,7 +124,11 @@ export function dmgDazeAndAnomMerge(
       sum(...skillParam.map((sp) => sp.DamagePercentageGrowth))
     )
   )
-  const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.mv_mult_)
+  const dmgBase = prod(
+    own.final[stat],
+    dmgMulti,
+    cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
+  )
   const dazeBase = sum(
     ...skillParam.map((sp) => sp.StunRatio),
     prod(
