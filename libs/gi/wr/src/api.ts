@@ -22,7 +22,7 @@ import type {
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
-import { input, nonStacking, tally } from './formula'
+import { input } from './formula'
 import type { Data, Info, NumNode, ReadNode, StrNode } from './type'
 import { constant, data, infoMut, none, percent, prod, sum } from './utils'
 
@@ -37,9 +37,7 @@ export function inferInfoMut(data: Data, source?: Info['source']): Data {
         if (!x.info) x.info = {}
         x.info.isTeamBuff = true
       }
-      const reference = objPathValue(input, path) as
-        | ReadNode<number>
-        | undefined
+      const reference: ReadNode<number> | undefined = objPathValue(input, path)
       if (reference)
         x.info = { ...x.info, ...reference.info, prefix: undefined, source }
       else if (path[0] !== 'tally' && path[0] !== 'nonStacking')
@@ -250,16 +248,9 @@ export function mergeData(data: Data[]): Data {
     if (data.length <= 1) return data[0]
     if (data[0].operation) {
       if (path[0] === 'teamBuff') path = path.slice(1)
-      const base =
-        path[0] === 'tally'
-          ? tally
-          : path[0] === 'nonStacking'
-            ? nonStacking
-            : input
-      if (path[0] === 'tally' || path[0] === 'nonStacking') path = path.slice(1)
       /*eslint prefer-const: ["error", {"destructuring": "all"}]*/
       let { accu, type } =
-        (objPathValue(base, path) as ReadNode<number | string> | undefined) ??
+        (objPathValue(input, path) as ReadNode<number | string> | undefined) ??
         {}
       if (accu === undefined) {
         const errMsg = `Multiple entries when merging \`unique\` for key ${path}`

@@ -1,8 +1,4 @@
-import {
-  layeredAssignment,
-  objKeyMap,
-  verifyObjKeys,
-} from '@genshin-optimizer/common/util'
+import { objKeyMap, verifyObjKeys } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
@@ -327,6 +323,7 @@ export function dataObjForCharacterSheet(
     weaponType: constant(weaponType),
     premod: {},
     display,
+    teamBuff: { tally: { maxEleMas: input.premod.eleMas } },
   }
   if (element) {
     data.charEle = constant(element)
@@ -334,13 +331,7 @@ export function dataObjForCharacterSheet(
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
   }
-  if (region)
-    layeredAssignment(data, ['teamBuff', 'tally', region], constant(1))
-  layeredAssignment(
-    data,
-    ['teamBuff', 'tally', 'maxEleMas'],
-    input.premod.eleMas
-  )
+  if (region) data.teamBuff!.tally![region] = constant(1)
   if (weaponType !== 'catalyst') {
     if (!data.display!['basic']) data.display!['basic'] = {}
     data.display!['basic']!['physical_dmg_'] = input.total.physical_dmg_
@@ -366,7 +357,7 @@ export function dataObjForCharacterSheet(
     if (stat === 'atk' || stat === 'def' || stat === 'hp')
       data.base![stat] = result
     else {
-      if (foundSpecial) throw new Error('Duplicated Char Special')
+      if (foundSpecial) throw new Error('Multiple Char Special')
       foundSpecial = true
       data.special = result
       data.premod![stat] = input.special
