@@ -267,7 +267,7 @@ const inputBase = {
 
   base: objKeyMap(['atk', 'hp', 'def'], (key) => read('add', info(key))),
   customBonus: withDefaultInfo(
-    { prefix: 'custom', pivot },
+    { prefix: 'custom', pivot, asConst: true },
     {
       ...allModStatNodes,
       ...allNonModStatNodes,
@@ -343,6 +343,12 @@ const inputBase = {
     dmgBonus: read('add', { ...info('dmg_'), pivot }),
     dmgInc: read('add', info('dmgInc')),
     dmg: read(),
+  },
+
+  nonStacking: objKeyMap(allNonstackBuffs, () => stringRead('small')),
+  tally: {
+    ...objKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
+    maxEleMas: read('max'),
   },
 }
 const input = setReadNodeKeys(deepNodeClone(inputBase))
@@ -618,23 +624,10 @@ const common: Data = {
 }
 
 const target = setReadNodeKeys(deepNodeClone(input), ['target'])
-const _tally = setReadNodeKeys(
-  {
-    ...objKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
-    maxEleMas: read('max'),
-  },
-  ['tally']
-)
 const tally = {
-  ..._tally,
-  // Special handling since it's not a `ReadNode`
-  ele: sum(...allElements.map((ele) => min(_tally[ele], 1))),
+  ...input.tally,
+  ele: sum(...allElements.map((ele) => min(input.tally[ele], 1))),
 }
-
-const nonStacking = setReadNodeKeys(
-  objKeyMap(allNonstackBuffs, () => stringRead('small')),
-  ['nonStacking']
-)
 
 /**
  * List of `input` nodes, rearranged to conform to the needs of the
@@ -653,4 +646,10 @@ export const infusionNode = stringPrio(
   input.infusion.overridableSelf
 )
 
-export { common, customBonus, input, nonStacking, tally, target, uiInput }
+const selected0 = setReadNodeKeys(deepNodeClone(inputBase), ['selected0'])
+const selected1 = setReadNodeKeys(deepNodeClone(inputBase), ['selected1'])
+const selected2 = setReadNodeKeys(deepNodeClone(inputBase), ['selected2'])
+const selected3 = setReadNodeKeys(deepNodeClone(inputBase), ['selected3'])
+
+export { common, customBonus, input, tally, target, uiInput }
+export { selected0, selected1, selected2, selected3 }

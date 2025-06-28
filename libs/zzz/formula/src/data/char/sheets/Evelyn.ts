@@ -120,7 +120,13 @@ const sheet = register(
           team.common.count.withSpecialty('support')
         ),
         1,
-        dm.ability.dmg_mult_
+        cmpGE(
+          own.final.crit_,
+          percent(dm.ability.crit_threshold),
+          dm.ability.dmg_mult_,
+          percent(1)
+        ),
+        percent(1)
       )
     )
   ),
