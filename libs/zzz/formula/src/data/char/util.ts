@@ -76,7 +76,11 @@ function dmgDazeAndAnom(
       percent(skillParam.DamagePercentageGrowth)
     )
   )
-  const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.mv_mult_)
+  const dmgBase = prod(
+    own.final[stat],
+    dmgMulti,
+    cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
+  )
   const dazeBase = sum(
     percent(skillParam.StunRatio),
     prod(
@@ -126,7 +130,11 @@ export function dmgDazeAndAnomMerge(
       sum(...skillParam.map((sp) => percent(sp.DamagePercentageGrowth)))
     )
   )
-  const dmgBase = prod(own.final[stat], dmgMulti, own.dmg.mv_mult_)
+  const dmgBase = prod(
+    own.final[stat],
+    dmgMulti,
+    cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
+  )
   const dazeBase = sum(
     ...skillParam.map((sp) => percent(sp.StunRatio)),
     prod(

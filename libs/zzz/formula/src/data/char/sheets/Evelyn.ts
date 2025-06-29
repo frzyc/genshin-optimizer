@@ -123,10 +123,8 @@ const sheet = register(
         cmpGE(
           own.final.crit_,
           percent(dm.ability.crit_threshold),
-          dm.ability.dmg_mult_,
-          percent(1)
-        ),
-        percent(1)
+          percent(dm.ability.dmg_mult_)
+        )
       )
     )
   ),
