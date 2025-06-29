@@ -1,0 +1,17 @@
+{
+  "ultCond": "Ultimate Used",
+  "frostbiteCond": "Enemy affected by Frostbite",
+  "coreIcefireCond": "Enemy affected by Icefire",
+  "core_frostburnBreak_dmg": "Frostburn - Break DMG",
+  "coreFrostburnCond": "Enemy under the Frostburn state",
+  "ability_dmg_": "Basic Attack: Shimotsuki DMG",
+  "abilityCond": "When any squad member triggers Disorder",
+  "ability_ice_resIgn_": "Basic Attack: Shimotsuki Ice Res Ignore",
+  "m1Cond": "While in Shimotsuki Stance, every 1 point of Fallen Frost consumed",
+  "m1_defIgn_": "Basic Attack: Shimotsuki DEF Ignore",
+  "m1Cond2": "When the slash for charge level three of Basic Attack: Shimotsuki hits an enemy under Frostburn",
+  "m2_dmg_": "Basic Attack: Kazahana DMG",
+  "m4_frostburnBreak_dmg_": "Frostburn - Break DMG",
+  "m6Cond": "Polar",
+  "m6_dmg_": "Basic Attack: Shimotsuki DMG"
+}
