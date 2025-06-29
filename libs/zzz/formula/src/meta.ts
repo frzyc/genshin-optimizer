@@ -629,24 +629,40 @@ export const conditionals = {
     },
   },
   Nekomata: {
-    boolConditional: {
+    assaults_inflicted: {
       sheet: 'Nekomata',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Nekomata',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Nekomata',
-      name: 'numConditional',
+      name: 'assaults_inflicted',
       type: 'num',
       int_only: true,
       min: 0,
       max: 2,
+    },
+    chain_ult_used: {
+      sheet: 'Nekomata',
+      name: 'chain_ult_used',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+    dodgeCounter_quickAssist_hit: {
+      sheet: 'Nekomata',
+      name: 'dodgeCounter_quickAssist_hit',
+      type: 'bool',
+    },
+    exSpecials_used: {
+      sheet: 'Nekomata',
+      name: 'exSpecials_used',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+    from_behind: { sheet: 'Nekomata', name: 'from_behind', type: 'bool' },
+    one_enemy_onField: {
+      sheet: 'Nekomata',
+      name: 'one_enemy_onField',
+      type: 'bool',
     },
   },
   Nicole: {
@@ -35455,37 +35471,72 @@ export const buffs = {
     },
   },
   Nekomata: {
-    m6_dmg_: {
+    core_common_dmg_: {
       sheet: 'Nekomata',
-      name: 'm6_dmg_',
+      name: 'core_common_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'Nekomata',
-        name: 'm6_dmg_',
+        name: 'core_common_dmg_',
       },
     },
-    team_dmg_: {
+    ability_exSpecial_dmg_: {
       sheet: 'Nekomata',
-      name: 'team_dmg_',
+      name: 'ability_exSpecial_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'Nekomata',
-        name: 'team_dmg_',
+        damageType1: 'exSpecial',
+        name: 'ability_exSpecial_dmg_',
       },
     },
-    enemy_defRed_: {
+    m1_physical_resIgn_: {
       sheet: 'Nekomata',
-      name: 'enemy_defRed_',
+      name: 'm1_physical_resIgn_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'defRed_',
+        qt: 'combat',
+        q: 'resIgn_',
         sheet: 'Nekomata',
-        name: 'enemy_defRed_',
+        attribute: 'physical',
+        name: 'm1_physical_resIgn_',
+      },
+    },
+    m2_enerRegen_: {
+      sheet: 'Nekomata',
+      name: 'm2_enerRegen_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'enerRegen_',
+        sheet: 'Nekomata',
+        name: 'm2_enerRegen_',
+      },
+    },
+    m4_crit_: {
+      sheet: 'Nekomata',
+      name: 'm4_crit_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_',
+        sheet: 'Nekomata',
+        name: 'm4_crit_',
+      },
+    },
+    m6_crit_dmg_: {
+      sheet: 'Nekomata',
+      name: 'm6_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'Nekomata',
+        name: 'm6_crit_dmg_',
       },
     },
   },
