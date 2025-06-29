@@ -167,6 +167,7 @@ export const ownTag = {
     dmg_taken_mult_: fixed,
     stunned_mult_: fixed,
     mv_mult_: aggProd,
+    anom_mv_mult_: aggProd,
     sheer_mult_: fixed,
     anomaly_crit_mult_: fixed,
   },

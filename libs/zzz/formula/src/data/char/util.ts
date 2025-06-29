@@ -1,5 +1,6 @@
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
 import {
+  cmpEq,
   cmpGE,
   constant,
   prod,
@@ -403,7 +404,11 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         attribute: data_gen.attribute,
         damageType1: 'anomaly',
       },
-      prod(percent(anomalyMultipliers[data_gen.attribute]), own.final.atk)
+      prod(
+        percent(anomalyMultipliers[data_gen.attribute]),
+        own.final.atk,
+        cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
+      )
     ),
     ...customAnomalyBuildup(
       'anomalyBuildupInst',
