@@ -149,8 +149,7 @@ const sheet = register(
               percent(subscript(char.core, dm.core.mv_mult_3))
             )
           )
-        ),
-        percent(1)
+        )
       )
     )
   ),
@@ -175,8 +174,7 @@ const sheet = register(
               percent(subscript(char.core, dm.core.mv_mult_3))
             )
           )
-        ),
-        percent(1)
+        )
       )
     )
   ),
@@ -311,12 +309,7 @@ const sheet = register(
     'm6_exSpecial_mv_mult_',
     ownBuff.dmg.mv_mult_.addWithDmgType(
       'exSpecial',
-      cmpGE(
-        char.mindscape,
-        6,
-        cmpEq(enemy.common.isStunned, 0, dm.m6.mv_mult_, percent(1)),
-        percent(1)
-      )
+      cmpGE(char.mindscape, 6, cmpEq(enemy.common.isStunned, 0, dm.m6.mv_mult_))
     )
   )
 )
