@@ -1,0 +1,9 @@
+{
+  "special_shield": "Shield",
+  "core_shield": "Shield",
+  "abilityCond": "While the Shield from Core Passive: Guardian is in effect",
+  "m1Cond": "When successfully Blocking an enemy with Ben's Special Attack or EX Special Attack",
+  "m2_dmg": "DMG",
+  "m4_dmg_": "Counter DMG",
+  "m6Cond": "After launching an attack or follow-up attack during Ben's EX Special Attack"
+}
