@@ -158,7 +158,9 @@ const sheet = register(
           prod(exSpecial_debuff, percent(dm.ability.chain_dmg_))
         )
       )
-    )
+    ),
+    undefined,
+    true
   ),
   registerBuff(
     'm1_special_dazeInc_',
