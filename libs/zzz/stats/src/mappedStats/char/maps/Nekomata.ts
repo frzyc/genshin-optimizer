@@ -34,6 +34,29 @@ const dm = {
     AssistFollowUpShadowStrike:
       data_gen.skillParams['assist']['AssistFollowUpShadowStrike'],
   },
+  core: {
+    common_dmg_: data_gen.coreParams[0],
+    duration: data_gen.coreParams[1][0],
+  },
+  ability: {
+    exSpecial_dmg_: data_gen.abilityParams[0],
+    stacks: data_gen.abilityParams[1],
+  },
+  m1: {
+    physical_resIgn_: data_gen.mindscapeParams[0][0],
+  },
+  m2: {
+    enerRegen_: data_gen.mindscapeParams[1][0],
+  },
+  m4: {
+    crit_: data_gen.mindscapeParams[3][0],
+    duration: data_gen.mindscapeParams[3][1],
+    stacks: data_gen.mindscapeParams[3][2],
+  },
+  m6: {
+    crit_dmg_: data_gen.mindscapeParams[5][0],
+    stacks: data_gen.mindscapeParams[5][1],
+  },
 } as const
 
 export default dm

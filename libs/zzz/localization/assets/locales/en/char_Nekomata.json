@@ -1,0 +1,8 @@
+{
+  "coreCond": "When Nekomata's Dodge Counter or Quick Assist hits an enemy",
+  "abilityCond": "After any character inflicts Assault",
+  "m1Cond": "When Nekomata hits an enemy from behind",
+  "m2Cond": "When there's only one enemy on the field",
+  "m4Cond": "When Nekomata uses her EX Special Attack",
+  "m6Cond": "When Nekomata launches a Chain Attack or uses her Ultimate"
+}
