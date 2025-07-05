@@ -115,6 +115,7 @@ const stats: Record<Stat, Desc> = {
   dazeRed_: agg,
   dmg_red_: agg,
   sheer_dmg_: agg,
+  flat_dmg: agg,
 } as const
 const finalStats = objFilterKeys(stats, [
   ...flatAndPercentStats,
@@ -185,6 +186,7 @@ export const ownTag = {
     enemyDazeRes_mult_: prep,
     enemyDazeTaken_mult_: prep,
     dazeBuildup: prep,
+    heal: prep,
   },
   listing: {
     // Anything that is intended to be allowed as an optimization target.

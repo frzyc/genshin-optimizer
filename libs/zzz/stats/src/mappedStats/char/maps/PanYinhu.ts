@@ -38,6 +38,32 @@ const dm = {
     AssistFollowUpRideTheMomentum:
       data_gen.skillParams['assist']['AssistFollowUpRideTheMomentum'],
   },
+  core: {
+    sheerForce: data_gen.coreParams[0],
+    duration: data_gen.coreParams[1][0],
+    max_sheerForce: data_gen.coreParams[2][0],
+  },
+  ability: {
+    dmgInc_: data_gen.abilityParams[0],
+    duration: data_gen.abilityParams[1],
+  },
+  m1: {
+    dmgInc_: data_gen.mindscapeParams[0][0],
+  },
+  m2: {
+    break_force_step: data_gen.mindscapeParams[1][0],
+    energy: data_gen.mindscapeParams[1][1],
+    durationInc_: data_gen.mindscapeParams[1][2],
+  },
+  m4: {
+    heal_: data_gen.mindscapeParams[3][0],
+    heal_dot_: data_gen.mindscapeParams[3][1],
+    heal: data_gen.mindscapeParams[3][2],
+  },
+  m6: {
+    sheerForce: data_gen.mindscapeParams[5][0],
+    max_sheerForce: data_gen.mindscapeParams[5][1],
+  },
 } as const
 
 export default dm
