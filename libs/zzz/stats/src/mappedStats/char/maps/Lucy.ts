@@ -38,6 +38,25 @@ const dm = {
     AssistFollowUpScoredARun:
       data_gen.skillParams['assist']['AssistFollowUpScoredARun'],
   },
+  core: {
+    cheer_on: data_gen.coreParams[0],
+  },
+  m1: {
+    energy: data_gen.mindscapeParams[0][0],
+    cooldown: data_gen.mindscapeParams[0][1],
+  },
+  m2: {
+    duration: data_gen.mindscapeParams[1][0],
+  },
+  m4: {
+    crit_dmg_: data_gen.mindscapeParams[3][0],
+  },
+  m6: {
+    dmg: data_gen.mindscapeParams[5][0],
+    duration: data_gen.mindscapeParams[5][1],
+    duration_stacks: data_gen.mindscapeParams[5][2],
+    max_duration: data_gen.mindscapeParams[5][3],
+  },
 } as const
 
 export default dm

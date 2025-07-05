@@ -83,7 +83,7 @@ function createSkillsSheets(
         {
           type: 'fields',
           fields: Object.values(form)
-            .filter((f) => f.name.includes(ability))
+            .filter((f) => f.name.split('_')[0] === ability)
             .map((f) => ({
               title: abilityFormulaNameToTranslated(charKey, skill, f.name), // TODO: Translate
               fieldRef: f.tag,
