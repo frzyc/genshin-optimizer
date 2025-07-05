@@ -131,6 +131,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   ...objKeyMap(allAnomalyDmgKeys, (dmg_) => `${dmg_} DMG Bonus`),
   common_dmg_: 'DMG Bonus',
   dmg_: 'DMG Bonus',
+  flat_dmg: 'Flat DMG Bonus',
   dmg_red_: 'DMG Taken Reduction',
   charLvl: 'Character Level',
   enemyDef: 'Enemy DEF',
@@ -165,6 +166,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   dmg_mult_: 'DMG Multiplier',
   def_mult_: 'DEF Multiplier',
   res_mult_: 'Resistance Multiplier',
+  dmg_taken_mult_: 'Enemy DMG Taken Multiplier',
   base: 'Base Damage',
   enemyAnomBuildupRes_mult_: 'Enemy Anomaly Buildup RES Multiplier',
   anomBuildup_mult_: 'Anomaly Buildup Bonus Multiplier',
@@ -177,6 +179,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   res_: 'Resistance',
   resRed_: 'Resistance Reduction',
   sheer_mult_: 'Sheer DMG Multiplier',
+  mv_mult_: 'DMG Multiplier Increase',
 }
 
 export const elementalData: Record<AttributeKey, string> = {

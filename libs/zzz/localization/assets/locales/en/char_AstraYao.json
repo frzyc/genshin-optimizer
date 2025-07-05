@@ -1,0 +1,11 @@
+{
+  "idyllic_cadenzaCond": "In Idyllic Cadenza State",
+  "ult_heal": "Healing",
+  "m1Cond": "When Astra Yao's attack hits an enemy",
+  "m2_atkBuffInc_": "ATK Buff Increase",
+  "m2_maxIncrease": "ATK Buff Max Increase",
+  "m6_mv_mult_": "Tremolo and Tone Clusters DMG Multiplier Increase",
+  "m6_crit_": "Tremolo and Tone Clusters CRIT Rate Increase",
+  "m6Cond": "When triggering a Precise Assist",
+  "m6_capriccio_crit_": "Charged 3rd-hit of Basic Attack: Capriccio CRIT Rate Increase"
+}
