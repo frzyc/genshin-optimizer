@@ -6,7 +6,7 @@ export function extractParamsFromString(str: string) {
       // Remove commas from numbers
       .replaceAll(',', '')
       // Match (number with possible decimal portion)(% or s or word boundary) and not followed by '>' such as for color tags
-      .matchAll(/(\d+\.?\d*)(?:(%)|s?\b)(?!>)/g),
+      .matchAll(/(\d+\.?\d*)(?:\s*(%)|s?\b)(?!>)/g),
   ].map((matches) => {
     const [_match, value, percent] = matches
     if (percent) return parseFloatBetter(value)
