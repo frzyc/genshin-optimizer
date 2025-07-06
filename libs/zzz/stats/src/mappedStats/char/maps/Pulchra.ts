@@ -41,6 +41,27 @@ const dm = {
     AssistFollowUpIndependentPricing:
       data_gen.skillParams['assist']['AssistFollowUpIndependentPricing'],
   },
+  core: {
+    dazeInc_: data_gen.coreParams[0],
+    duration: data_gen.coreParams[1][0],
+  },
+  ability: {
+    duration: data_gen.abilityParams[0],
+    aftershock_dmg_: data_gen.abilityParams[1],
+  },
+  m1: {
+    crit_: data_gen.mindscapeParams[0][0],
+  },
+  m2: {
+    atk_: data_gen.mindscapeParams[1][0],
+  },
+  m4: {
+    energyCost_red_: data_gen.mindscapeParams[3][0],
+  },
+  m6: {
+    dmg_: data_gen.mindscapeParams[5][0],
+    triggers: data_gen.mindscapeParams[5][1],
+  },
 } as const
 
 export default dm
