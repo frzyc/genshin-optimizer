@@ -160,8 +160,8 @@ const dmgFormulas = {
     a4BurstActive_atkSPD_,
   },
 }
-const skillC3 = greaterEq(input.constellation, 3, 3)
-const burstC5 = greaterEq(input.constellation, 5, 3)
+const skillC3 = greaterEq(input.constellation, 5, 3)
+const burstC5 = greaterEq(input.constellation, 3, 3)
 
 export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
@@ -332,7 +332,7 @@ const sheet: TalentSheet = {
     }),
   ]),
   constellation3: ct.talentTem('constellation3', [
-    { fields: [{ node: skillC3 }] },
+    { fields: [{ node: burstC5 }] },
   ]),
   constellation4: ct.talentTem('constellation4', [
     ct.headerTem('constellation4', {
@@ -345,7 +345,7 @@ const sheet: TalentSheet = {
     }),
   ]),
   constellation5: ct.talentTem('constellation5', [
-    { fields: [{ node: burstC5 }] },
+    { fields: [{ node: skillC3 }] },
   ]),
   constellation6: ct.talentTem('constellation6', [
     ct.condTem('constellation6', {
