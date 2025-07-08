@@ -43,6 +43,43 @@ const dm = {
     AssistFollowUpFeatherbladeExecution:
       data_gen.skillParams['assist']['AssistFollowUpFeatherbladeExecution'],
   },
+  core: {
+    dmg_ether: data_gen.coreParams[0],
+    dmg_electric: data_gen.coreParams[1],
+    dmg_fire: data_gen.coreParams[2],
+    dmg_physical: data_gen.coreParams[3],
+    dmg_ice: data_gen.coreParams[4],
+    anomProf_step: data_gen.coreParams[5][0],
+    dmg: data_gen.coreParams[6][0],
+    cooldown: data_gen.coreParams[7][0],
+    flight_feathers: data_gen.coreParams[8][0],
+  },
+  ability: {
+    guard_feathers_consumed: data_gen.abilityParams[0],
+    cooldown: data_gen.abilityParams[1],
+    ether_anom_dmg_: data_gen.abilityParams[2],
+  },
+  m1: {
+    guard_feathers_consumed: data_gen.mindscapeParams[0][0],
+    flight_feathers_gained: data_gen.mindscapeParams[0][1],
+    anomaly_disorder_dmg_: data_gen.mindscapeParams[0][2],
+  },
+  m2: {
+    ether_anomBuildup_: data_gen.mindscapeParams[1][0],
+    abloom_bonus: data_gen.mindscapeParams[1][1],
+    resIgn_: data_gen.mindscapeParams[1][2],
+  },
+  m4: {
+    atk_: data_gen.mindscapeParams[3][0],
+    duration: data_gen.mindscapeParams[3][1],
+    guard_feathers_gained: data_gen.mindscapeParams[3][2],
+  },
+  m6: {
+    ether_dmg_: data_gen.mindscapeParams[5][0],
+    flight_feathers_gained: data_gen.mindscapeParams[5][1],
+    max_guard_feathers_consumed: data_gen.mindscapeParams[5][2],
+    max_bonus: data_gen.mindscapeParams[5][3],
+  },
 } as const
 
 export default dm
