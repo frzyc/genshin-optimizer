@@ -40,6 +40,32 @@ const dm = {
     AssistFollowUpReignition:
       data_gen.skillParams['assist']['AssistFollowUpReignition'],
   },
+  core: {
+    common_dmg_: data_gen.coreParams[0],
+  },
+  ability: {
+    fire_dmg_: data_gen.abilityParams[1],
+    fire_dmg_additional: data_gen.abilityParams[2],
+  },
+  m1: {
+    energy_threshold: data_gen.mindscapeParams[0][1],
+    energy: data_gen.mindscapeParams[0][2],
+    cooldown: data_gen.mindscapeParams[0][3],
+  },
+  m2: {
+    common_dmg_: data_gen.mindscapeParams[1][0],
+    stacks: data_gen.mindscapeParams[1][1],
+    duration: data_gen.mindscapeParams[1][2],
+  },
+  m4: {
+    dmg_red_: data_gen.mindscapeParams[3][1],
+  },
+  m6: {
+    stacks: data_gen.mindscapeParams[5][1],
+    max_stacks: data_gen.mindscapeParams[5][2],
+    stacks_consumed: data_gen.mindscapeParams[5][3],
+    fire_resIgn_: data_gen.mindscapeParams[5][4],
+  },
 } as const
 
 export default dm

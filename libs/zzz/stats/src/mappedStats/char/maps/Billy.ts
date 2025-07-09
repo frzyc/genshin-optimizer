@@ -36,6 +36,28 @@ const dm = {
     AssistFollowUpFatalShot:
       data_gen.skillParams['assist']['AssistFollowUpFatalShot'],
   },
+  core: {
+    common_dmg_: data_gen.coreParams[0],
+  },
+  ability: {
+    ult_dmg_: data_gen.abilityParams[0],
+    stacks: data_gen.abilityParams[1],
+  },
+  m1: {
+    energy: data_gen.mindscapeParams[0][0],
+    cooldown: data_gen.mindscapeParams[0][1],
+  },
+  m2: {
+    dodgeCounter_dmg_: data_gen.mindscapeParams[1][0],
+  },
+  m4: {
+    exSpecial_crit_: data_gen.mindscapeParams[3][0],
+  },
+  m6: {
+    hits: data_gen.mindscapeParams[5][0],
+    dmg_: data_gen.mindscapeParams[5][1],
+    stacks: data_gen.mindscapeParams[5][2],
+  },
 } as const
 
 export default dm
