@@ -327,7 +327,7 @@ export function dataObjForCharacterSheet(
   }
   if (element) {
     data.charEle = constant(element)
-    data.teamBuff = { tally: { [element]: constant(1) } }
+    data.teamBuff!.tally![element] = constant(1)
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
   }
