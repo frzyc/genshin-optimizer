@@ -3013,10 +3013,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/cache@npm:^11.13.5":
+  version: 11.14.0
+  resolution: "@emotion/cache@npm:11.14.0"
+  dependencies:
+    "@emotion/memoize": ^0.9.0
+    "@emotion/sheet": ^1.4.0
+    "@emotion/utils": ^1.4.2
+    "@emotion/weak-memoize": ^0.4.0
+    stylis: 4.2.0
+  checksum: 0a81591541ea43bc7851742e6444b7800d72e98006f94e775ae6ea0806662d14e0a86ff940f5f19d33b4bb2c427c882aa65d417e7322a6e0d5f20fe65ed920c9
+  languageName: node
+  linkType: hard
+
 "@emotion/hash@npm:^0.9.1":
   version: 0.9.1
   resolution: "@emotion/hash@npm:0.9.1"
   checksum: 716e17e48bf9047bf9383982c071de49f2615310fb4e986738931776f5a823bc1f29c84501abe0d3df91a3803c80122d24e28b57351bca9e01356ebb33d89876
+  languageName: node
+  linkType: hard
+
+"@emotion/hash@npm:^0.9.2":
+  version: 0.9.2
+  resolution: "@emotion/hash@npm:0.9.2"
+  checksum: 379bde2830ccb0328c2617ec009642321c0e009a46aa383dfbe75b679c6aea977ca698c832d225a893901f29d7b3eef0e38cf341f560f6b2b56f1ff23c172387
   languageName: node
   linkType: hard
 
@@ -3033,6 +3053,13 @@ __metadata:
   version: 0.8.1
   resolution: "@emotion/memoize@npm:0.8.1"
   checksum: a19cc01a29fcc97514948eaab4dc34d8272e934466ed87c07f157887406bc318000c69ae6f813a9001c6a225364df04249842a50e692ef7a9873335fbcc141b0
+  languageName: node
+  linkType: hard
+
+"@emotion/memoize@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "@emotion/memoize@npm:0.9.0"
+  checksum: 038132359397348e378c593a773b1148cd0cf0a2285ffd067a0f63447b945f5278860d9de718f906a74c7c940ba1783ac2ca18f1c06a307b01cc0e3944e783b1
   languageName: node
   linkType: hard
 
@@ -3083,10 +3110,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/serialize@npm:^1.3.3":
+  version: 1.3.3
+  resolution: "@emotion/serialize@npm:1.3.3"
+  dependencies:
+    "@emotion/hash": ^0.9.2
+    "@emotion/memoize": ^0.9.0
+    "@emotion/unitless": ^0.10.0
+    "@emotion/utils": ^1.4.2
+    csstype: ^3.0.2
+  checksum: 510331233767ae4e09e925287ca2c7269b320fa1d737ea86db5b3c861a734483ea832394c0c1fe5b21468fe335624a75e72818831d303ba38125f54f44ba02e7
+  languageName: node
+  linkType: hard
+
 "@emotion/sheet@npm:^1.2.2":
   version: 1.2.2
   resolution: "@emotion/sheet@npm:1.2.2"
   checksum: d973273c9c15f1c291ca2269728bf044bd3e92a67bca87943fa9ec6c3cd2b034f9a6bfe95ef1b5d983351d128c75b547b43ff196a00a3875f7e1d269793cecfe
+  languageName: node
+  linkType: hard
+
+"@emotion/sheet@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@emotion/sheet@npm:1.4.0"
+  checksum: eeb1212e3289db8e083e72e7e401cd6d1a84deece87e9ce184f7b96b9b5dbd6f070a89057255a6ff14d9865c3ce31f27c39248a053e4cdd875540359042586b4
   languageName: node
   linkType: hard
 
@@ -3107,6 +3154,13 @@ __metadata:
     "@types/react":
       optional: true
   checksum: ad5fc42d00e8aa9597f6d9665986036d5ebe0e8f8155af6d95831c5e8fb2319fb837724e6c5cd59e5346f14c3263711b7ce7271d34688e974d1f32ffeecb37ba
+  languageName: node
+  linkType: hard
+
+"@emotion/unitless@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "@emotion/unitless@npm:0.10.0"
+  checksum: d79346df31a933e6d33518e92636afeb603ce043f3857d0a39a2ac78a09ef0be8bedff40130930cb25df1beeee12d96ee38613963886fa377c681a89970b787c
   languageName: node
   linkType: hard
 
@@ -3133,10 +3187,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/utils@npm:^1.4.2":
+  version: 1.4.2
+  resolution: "@emotion/utils@npm:1.4.2"
+  checksum: 04cf76849c6401205c058b82689fd0ec5bf501aed6974880fe9681a1d61543efb97e848f4c38664ac4a9068c7ad2d1cb84f73bde6cf95f1208aa3c28e0190321
+  languageName: node
+  linkType: hard
+
 "@emotion/weak-memoize@npm:^0.3.1":
   version: 0.3.1
   resolution: "@emotion/weak-memoize@npm:0.3.1"
   checksum: b2be47caa24a8122622ea18cd2d650dbb4f8ad37b636dc41ed420c2e082f7f1e564ecdea68122b546df7f305b159bf5ab9ffee872abd0f052e687428459af594
+  languageName: node
+  linkType: hard
+
+"@emotion/weak-memoize@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@emotion/weak-memoize@npm:0.4.0"
+  checksum: db5da0e89bd752c78b6bd65a1e56231f0abebe2f71c0bd8fc47dff96408f7065b02e214080f99924f6a3bfe7ee15afc48dad999d76df86b39b16e513f7a94f52
   languageName: node
   linkType: hard
 
@@ -4881,10 +4949,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/core-downloads-tracker@npm:^5.16.6":
-  version: 5.16.6
-  resolution: "@mui/core-downloads-tracker@npm:5.16.6"
-  checksum: b8a4fda2130d3e4326a5c901f0b6e867f2e99395805e67bf577810f24f43624aa45f9ad00f7c1b2a3ec3f9b54f16cfbe56e2795ceba5fb79bacf00096f2a0ddc
+"@mui/core-downloads-tracker@npm:^5.18.0":
+  version: 5.18.0
+  resolution: "@mui/core-downloads-tracker@npm:5.18.0"
+  checksum: 065b46739d2bd84b880ad2f6a0a2062d60e3a296ce18ff380cad22ab5b2cb3de396755f322f4bea3a422ffffe1a9244536fc3c9623056ff3873c996e6664b1b9
   languageName: node
   linkType: hard
 
@@ -4933,18 +5001,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material-nextjs@npm:^5.16.6":
-  version: 5.16.6
-  resolution: "@mui/material-nextjs@npm:5.16.6"
+"@mui/material-nextjs@npm:^5.16.12":
+  version: 5.18.0
+  resolution: "@mui/material-nextjs@npm:5.18.0"
   dependencies:
     "@babel/runtime": ^7.23.9
   peerDependencies:
     "@emotion/cache": ^11.11.0
     "@emotion/server": ^11.11.0
     "@mui/material": ^5.0.0
-    "@types/react": ^17.0.0 || ^18.0.0
-    next: ^13.0.0 || ^14.0.0
-    react: ^17.0.0 || ^18.0.0
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
+    next: ^13.0.0 || ^14.0.0 || ^15.0.0
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@emotion/cache":
       optional: true
@@ -4952,32 +5020,32 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: e1bd6544fc7b3825a3f22f7761c1e3093cde76f8cfe72d9dc2ea8e99874c916ae97489f593396a0da5385994f986a764403ec977d527778533879211bd367f94
+  checksum: fadfcc1e7912e9dfcbe6c418e4049425cf685eaffc609b81e1286d611f59fd308fd4d3fc73493c30ec2537799c38769260437deab1cbb29e7c36d5fa99abc751
   languageName: node
   linkType: hard
 
-"@mui/material@npm:^5.16.6":
-  version: 5.16.6
-  resolution: "@mui/material@npm:5.16.6"
+"@mui/material@npm:^5.16.12":
+  version: 5.18.0
+  resolution: "@mui/material@npm:5.18.0"
   dependencies:
     "@babel/runtime": ^7.23.9
-    "@mui/core-downloads-tracker": ^5.16.6
-    "@mui/system": ^5.16.6
-    "@mui/types": ^7.2.15
-    "@mui/utils": ^5.16.6
+    "@mui/core-downloads-tracker": ^5.18.0
+    "@mui/system": ^5.18.0
+    "@mui/types": ~7.2.15
+    "@mui/utils": ^5.17.1
     "@popperjs/core": ^2.11.8
     "@types/react-transition-group": ^4.4.10
     clsx: ^2.1.0
     csstype: ^3.1.3
     prop-types: ^15.8.1
-    react-is: ^18.3.1
+    react-is: ^19.0.0
     react-transition-group: ^4.4.5
   peerDependencies:
     "@emotion/react": ^11.5.0
     "@emotion/styled": ^11.3.0
-    "@types/react": ^17.0.0 || ^18.0.0
-    react: ^17.0.0 || ^18.0.0
-    react-dom: ^17.0.0 || ^18.0.0
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
+    react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@emotion/react":
       optional: true
@@ -4985,7 +5053,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 3bbc0141069dd7efff1d83294903788e482a6834dc3b442c29e19145aa8ad01190a00ce55c777a5560b1740559c606adf09eb2c5d133a4bdefb2e6e89a2382cb
+  checksum: b9d6cf638774e65924adf6f58ad50639c55050b33dc6223aa74686f733e137d173b4594b28be70e8ea3baf413a7fcd3bee40d35e3af12a42b7ba03def71ea217
   languageName: node
   linkType: hard
 
@@ -5006,20 +5074,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/private-theming@npm:^5.16.6":
-  version: 5.16.6
-  resolution: "@mui/private-theming@npm:5.16.6"
+"@mui/private-theming@npm:^5.17.1":
+  version: 5.17.1
+  resolution: "@mui/private-theming@npm:5.17.1"
   dependencies:
     "@babel/runtime": ^7.23.9
-    "@mui/utils": ^5.16.6
+    "@mui/utils": ^5.17.1
     prop-types: ^15.8.1
   peerDependencies:
-    "@types/react": ^17.0.0 || ^18.0.0
-    react: ^17.0.0 || ^18.0.0
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 314ba598ab17cd425a36e4cab677ed26fe0939b23e53120da77cfbc3be6dada5428fa8e2a55cb697417599a4e3abfee6d4711de0a7318b9fb2c3a822b2d5b5a8
+  checksum: ab755e96c8adb6c12f2c7e567154a8d873d56f1e35d0fb897b568123dfc0e9d1d770ca0992410433c728f9f4403f556f3c1e1b5b57b001ef1948ddfc8c1717bd
   languageName: node
   linkType: hard
 
@@ -5044,24 +5112,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/styled-engine@npm:^5.16.6":
-  version: 5.16.6
-  resolution: "@mui/styled-engine@npm:5.16.6"
+"@mui/styled-engine@npm:^5.18.0":
+  version: 5.18.0
+  resolution: "@mui/styled-engine@npm:5.18.0"
   dependencies:
     "@babel/runtime": ^7.23.9
-    "@emotion/cache": ^11.11.0
+    "@emotion/cache": ^11.13.5
+    "@emotion/serialize": ^1.3.3
     csstype: ^3.1.3
     prop-types: ^15.8.1
   peerDependencies:
     "@emotion/react": ^11.4.1
     "@emotion/styled": ^11.3.0
-    react: ^17.0.0 || ^18.0.0
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@emotion/react":
       optional: true
     "@emotion/styled":
       optional: true
-  checksum: 604f83b91801945336db211a8273061132668d01e9f456c30bb811a3b49cc5786b8b7dd8e0b5b89de15f6209abc900d9e679d3ae7a4651a6df45e323b6ed95c5
+  checksum: ab2d260ad5eea94993bc7706b164ae4ec11bd37dd7be36b93755d18da5b7859d39ad44173adced0e111e8b1b7ef65c0e369df3f2908144237c5e78f793eebb5a
   languageName: node
   linkType: hard
 
@@ -5093,23 +5162,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/system@npm:^5.16.6":
-  version: 5.16.6
-  resolution: "@mui/system@npm:5.16.6"
+"@mui/system@npm:^5.16.12, @mui/system@npm:^5.18.0":
+  version: 5.18.0
+  resolution: "@mui/system@npm:5.18.0"
   dependencies:
     "@babel/runtime": ^7.23.9
-    "@mui/private-theming": ^5.16.6
-    "@mui/styled-engine": ^5.16.6
-    "@mui/types": ^7.2.15
-    "@mui/utils": ^5.16.6
+    "@mui/private-theming": ^5.17.1
+    "@mui/styled-engine": ^5.18.0
+    "@mui/types": ~7.2.15
+    "@mui/utils": ^5.17.1
     clsx: ^2.1.0
     csstype: ^3.1.3
     prop-types: ^15.8.1
   peerDependencies:
     "@emotion/react": ^11.5.0
     "@emotion/styled": ^11.3.0
-    "@types/react": ^17.0.0 || ^18.0.0
-    react: ^17.0.0 || ^18.0.0
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@emotion/react":
       optional: true
@@ -5117,7 +5186,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 4babc4596ade3ca2408ea5ed833599d00b55605fe043cbeb8f85b92a3683beef429686ff864ee535080dff3d2dbe419f4467e50f4af9d6e6cae3dee6a357f157
+  checksum: 451f43889c2638da7c52b898e6174eafcdbcbcaaf3a79f954fdd58d9a043786d76fa4fca902cfdd6ab1aa250f5b1f932ef93d789c5a15987d893c0741bf7a1ad
   languageName: node
   linkType: hard
 
@@ -5133,15 +5202,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/types@npm:^7.2.15":
-  version: 7.2.15
-  resolution: "@mui/types@npm:7.2.15"
+"@mui/types@npm:~7.2.15":
+  version: 7.2.24
+  resolution: "@mui/types@npm:7.2.24"
   peerDependencies:
-    "@types/react": ^17.0.0 || ^18.0.0
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 86c7e58a4ead970204b746e3ead71d4b9b3ea1eebe237be88ae0d6b3fda958fb5aa73c238960c8c2b2cdb1cf424a961299a2292e8d7364ddb41bd20059b70993
+  checksum: 3a7367f9503e90fc3cce78885b57b54a00f7a04108be8af957fdc882c1bc0af68390920ea3d6aef855e704651ffd4a530e36ccbec4d0f421a176a2c3c432bb95
   languageName: node
   linkType: hard
 
@@ -5163,23 +5232,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/utils@npm:^5.16.6":
-  version: 5.16.6
-  resolution: "@mui/utils@npm:5.16.6"
+"@mui/utils@npm:^5.17.1":
+  version: 5.17.1
+  resolution: "@mui/utils@npm:5.17.1"
   dependencies:
     "@babel/runtime": ^7.23.9
-    "@mui/types": ^7.2.15
+    "@mui/types": ~7.2.15
     "@types/prop-types": ^15.7.12
     clsx: ^2.1.1
     prop-types: ^15.8.1
-    react-is: ^18.3.1
+    react-is: ^19.0.0
   peerDependencies:
-    "@types/react": ^17.0.0 || ^18.0.0
-    react: ^17.0.0 || ^18.0.0
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 6f8068f07f60a842fcb2e2540eecbd9c5f04df695bcc427184720e8ae138ae689fefd3c20147ab7c76e809ede6e10f5e08d1c34cd3a8b09bd22d2020a666a96f
+  checksum: 06f9da7025b9291f1052c0af012fd0f00ff1539bc99880e15f483a85c27bff0e9c3d047511dc5c3177d546c21978227ece2e6f7a7bd91903c72b48b89c45a677
   languageName: node
   linkType: hard
 
@@ -14014,9 +14083,9 @@ __metadata:
     "@fontsource/roboto": ^5.0.13
     "@mui/icons-material": ^5.14.12
     "@mui/lab": ^5.0.0-alpha.170
-    "@mui/material": ^5.16.6
-    "@mui/material-nextjs": ^5.16.6
-    "@mui/system": ^5.16.6
+    "@mui/material": ^5.16.12
+    "@mui/material-nextjs": ^5.16.12
+    "@mui/system": ^5.16.12
     "@mui/types": ^7.2.14
     "@nx/cypress": 20.5.0
     "@nx/devkit": 20.5.0
@@ -20760,10 +20829,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^18.3.1":
-  version: 18.3.1
-  resolution: "react-is@npm:18.3.1"
-  checksum: e20fe84c86ff172fc8d898251b7cc2c43645d108bf96d0b8edf39b98f9a2cae97b40520ee7ed8ee0085ccc94736c4886294456033304151c3f94978cec03df21
+"react-is@npm:^19.0.0":
+  version: 19.1.0
+  resolution: "react-is@npm:19.1.0"
+  checksum: 3eb4eac7f09bf178bdc6fa98d384f5f243b85de7c99679a88b0154ead4d818ad94386ccb00ea31ec52409ffd13299057f5ec6ca2eaec06f9f7eddc1ad4832332
   languageName: node
   linkType: hard
 
