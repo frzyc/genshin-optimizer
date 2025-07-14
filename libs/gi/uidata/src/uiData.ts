@@ -106,7 +106,7 @@ export class UIData {
   }
   getTeamBuff(): UIInput<CalcResult, CalcResult<string>> {
     if (!this.teamBuff) {
-      const calculated = this.getAll(['teamBuff']),
+      const calculated = this.getAll(['teamBuffDisplay']),
         result = {} as any
       // Convert `input` to `uiInput`
       crawlObject(
@@ -353,7 +353,7 @@ export class UIData {
   }
   private _subscript(node: SubscriptNode<number>): CalcResult<number> {
     const operand = this.computeNode(node.operands[0])
-    const value = node.list[operand.value] ?? NaN
+    const value = node.list[operand.value] ?? Number.NaN
     return this._constant(value)
   }
   private _constant<V>(value: V): CalcResult<V> {
@@ -449,7 +449,7 @@ function mergeInfo(base: Info, override: Info): Info {
 }
 
 const illformed: CalcResult<number> = {
-  value: NaN,
+  value: Number.NaN,
   meta: {
     op: 'const',
     ops: [],
@@ -556,7 +556,9 @@ export function uiDataForTeam(
     })
   )
   Object.values(teamData).forEach((data, i) =>
-    Object.assign(own[i], mergeData([...data, totalBuff[i], commonData]))
+    Object.assign(own[i], mergeData([...data, totalBuff[i], commonData]), {
+      teamBuffDisplay: totalBuff[i],
+    })
   )
 
   const origin = new UIData(undefined as any, undefined)
