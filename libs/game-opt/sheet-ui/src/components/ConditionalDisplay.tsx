@@ -318,9 +318,9 @@ function NumConditional({
 }
 function CondSlider(props: Omit<SliderProps, 'onChange'>) {
   const [innerValue, setInnerValue] = useState(props.value)
-  const [isDragging, setIsDragging] = useState(false)
 
-  if (usePrev(props.value) !== innerValue && !isDragging) {
+  // Handle multiple sliders, currently only works in non strict mode
+  if (usePrev(props.value) !== props.value) {
     setInnerValue(props.value)
   }
 
@@ -328,12 +328,6 @@ function CondSlider(props: Omit<SliderProps, 'onChange'>) {
     <Slider
       {...props}
       onChange={(_e, v) => setInnerValue(v as number)}
-      onChangeCommitted={(e, v) => {
-        setIsDragging(false)
-        props.onChangeCommitted?.(e, v)
-      }}
-      onMouseDown={() => setIsDragging(true)}
-      onTouchStart={() => setIsDragging(true)}
       value={innerValue}
     />
   )
