@@ -83,7 +83,9 @@ function dmgDazeAndAnom(
     prod(own.char[abilityScalingType], skillParam.StunRatioGrowth)
   )
   return [
-    customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
+    stat === 'sheerForce'
+      ? customSheerDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra)
+      : customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
     customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
     // TODO: No clue if this is right
     customAnomalyBuildup(
@@ -137,7 +139,9 @@ export function dmgDazeAndAnomMerge(
     )
   )
   return [
-    customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
+    stat === 'sheerForce'
+      ? customSheerDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra)
+      : customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
     customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
     // TODO: No clue if this is right
     customAnomalyBuildup(
@@ -234,7 +238,9 @@ export function registerAllDmgDazeAndAnom(
                   damageType1: inferDamageType(key, abilityName),
                   skillType: `${sKey}Skill`,
                 },
-                'atk',
+                allStats.char[key].specialty === 'rupture'
+                  ? 'sheerForce'
+                  : 'atk',
                 sKey
               )
           )
