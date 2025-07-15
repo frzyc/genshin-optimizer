@@ -1,4 +1,10 @@
-import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
+import {
+  cmpGE,
+  min,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
@@ -23,9 +29,7 @@ const dm = mappedStats.char[key]
 
 const { char } = own
 
-const { power } = allNumConditionals(key, true, 0, dm.core.stacks)
-const { extraPower } = allNumConditionals(key, true, 0, 10)
-const totalPower = sum(power, cmpGE(char.mindscape, 1, extraPower))
+const { power } = allNumConditionals(key, true, 0, dm.core.stacks + 10) // extra stacks from M1
 
 const m2_physical_dmg_ = ownBuff.combat.dmg_.physical.add(
   cmpGE(
@@ -33,7 +37,13 @@ const m2_physical_dmg_ = ownBuff.combat.dmg_.physical.add(
     2,
     sum(
       percent(dm.m2.physical_dmg_),
-      prod(totalPower, percent(dm.m2.extra_physical_dmg_))
+      prod(
+        min(
+          power,
+          cmpGE(char.mindscape, 1, dm.core.stacks + 10, dm.core.stacks)
+        ),
+        percent(dm.m2.extra_physical_dmg_)
+      )
     )
   )
 )
@@ -105,7 +115,10 @@ const sheet = register(
     'core_physical_anomBuildup_',
     ownBuff.combat.anomBuildup_.physical.add(
       prod(
-        totalPower,
+        min(
+          power,
+          cmpGE(char.mindscape, 1, dm.core.stacks + 10, dm.core.stacks)
+        ),
         percent(subscript(char.core, dm.core.physical_anomBuildup_))
       )
     )
@@ -119,7 +132,14 @@ const sheet = register(
           team.common.count.withFaction('SonsOfCalydon')
         ),
         2,
-        cmpGE(totalPower, dm.ability.stack_threshold, dm.ability.common_dmg_)
+        cmpGE(
+          min(
+            power,
+            cmpGE(char.mindscape, 1, dm.core.stacks + 10, dm.core.stacks)
+          ),
+          dm.ability.stack_threshold,
+          dm.ability.common_dmg_
+        )
       )
     ),
     undefined,

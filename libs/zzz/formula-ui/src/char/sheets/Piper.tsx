@@ -29,28 +29,12 @@ const sheet = createBaseSheet(key, {
       },
     },
   ],
-  m1: [
-    {
-      type: 'conditional',
-      conditional: {
-        label: ch('m1Cond'),
-        metadata: cond.extraPower,
-      },
-    },
-  ],
   m2: [
     {
       type: 'conditional',
       conditional: {
         label: ch('coreCond'),
         metadata: cond.power,
-      },
-    },
-    {
-      type: 'conditional',
-      conditional: {
-        label: ch('m1Cond'),
-        metadata: cond.extraPower,
         fields: [
           {
             title: ch('m2_physical_dmg_'),

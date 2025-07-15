@@ -702,21 +702,13 @@ export const conditionals = {
     },
   },
   Piper: {
-    extraPower: {
-      sheet: 'Piper',
-      name: 'extraPower',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 10,
-    },
     power: {
       sheet: 'Piper',
       name: 'power',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 20,
+      max: 30,
     },
   },
   PolarMetal: {
