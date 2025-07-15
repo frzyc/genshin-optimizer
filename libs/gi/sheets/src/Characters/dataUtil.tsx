@@ -327,17 +327,14 @@ export function dataObjForCharacterSheet(
   }
   if (element) {
     data.charEle = constant(element)
-    data.teamBuff = { tally: { [element]: constant(1) } }
+    data.teamBuff!.tally![element] = constant(1)
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
   }
   if (region) data.teamBuff!.tally![region] = constant(1)
-  if (weaponType !== 'catalyst') {
-    if (!data.display!['basic']) data.display!['basic'] = {}
+  if (weaponType !== 'catalyst')
     data.display!['basic']!['physical_dmg_'] = input.total.physical_dmg_
-  }
 
-  let foundSpecial: boolean | undefined
   for (const stat of [...allMainStatKeys, 'def' as const]) {
     const list: NumNode[] = []
     const lvlCurveBase = lvlCurves.find((lc) => lc.key === stat)
@@ -357,8 +354,7 @@ export function dataObjForCharacterSheet(
     if (stat === 'atk' || stat === 'def' || stat === 'hp')
       data.base![stat] = result
     else {
-      if (foundSpecial) throw new Error('Multiple Char Special')
-      foundSpecial = true
+      if (data.special) throw new Error('Multiple Char Special')
       data.special = result
       data.premod![stat] = input.special
     }
