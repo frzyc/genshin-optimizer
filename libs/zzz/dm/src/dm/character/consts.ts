@@ -44,6 +44,8 @@ export const characterIdMap = {
   '1371': 'Yixuan',
   '1381': 'Soldier0Anby',
   '1391': 'JuFufu',
+  '1401': 'Alice',
+  '1411': 'Yuzuha',
   '1421': 'PanYinhu',
 } as const
 
