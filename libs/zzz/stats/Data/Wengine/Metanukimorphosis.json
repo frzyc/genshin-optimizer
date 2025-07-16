@@ -1,0 +1,14 @@
+{
+  "rarity": "S",
+  "type": "support",
+  "atk_base": 48,
+  "second_statkey": "enerRegen_",
+  "second_statvalue": 0.24,
+  "phase": [
+    { "params": [30, 40, 60, 40] },
+    { "params": [34, 40, 69, 40] },
+    { "params": [39, 40, 78, 40] },
+    { "params": [43, 40, 87, 40] },
+    { "params": [48, 40, 96, 40] }
+  ]
+}

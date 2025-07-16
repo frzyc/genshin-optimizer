@@ -30,9 +30,11 @@ import MagneticStormAlpha from './MagneticStormAlpha'
 import MagneticStormBravo from './MagneticStormBravo'
 import MagneticStormCharlie from './MagneticStormCharlie'
 import MarcatoDesire from './MarcatoDesire'
+import Metanukimorphosis from './Metanukimorphosis'
 import MyriadEclipse from './MyriadEclipse'
 import OriginalTransmorpher from './OriginalTransmorpher'
 import PeacekeeperSpecialized from './PeacekeeperSpecialized'
+import PracticedPerfection from './PracticedPerfection'
 import PreciousFossilizedCore from './PreciousFossilizedCore'
 import PuzzleSphere from './PuzzleSphere'
 import QingmingBirdcage from './QingmingBirdcage'
@@ -102,9 +104,11 @@ const data = {
   MagneticStormBravo,
   MagneticStormCharlie,
   MarcatoDesire,
+  Metanukimorphosis,
   MyriadEclipse,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
+  PracticedPerfection,
   PreciousFossilizedCore,
   PuzzleSphere,
   QingmingBirdcage,
