@@ -1,5 +1,6 @@
 // WARNING: Generated file, do not modify
 import { type TagMapNodeEntries } from '../util'
+import Alice from './sheets/Alice'
 import Anby from './sheets/Anby'
 import Anton from './sheets/Anton'
 import AstraYao from './sheets/AstraYao'
@@ -35,9 +36,11 @@ import Trigger from './sheets/Trigger'
 import Vivian from './sheets/Vivian'
 import Yanagi from './sheets/Yanagi'
 import Yixuan from './sheets/Yixuan'
+import Yuzuha from './sheets/Yuzuha'
 import ZhuYuan from './sheets/ZhuYuan'
 
 const data: TagMapNodeEntries[] = [
+  Alice,
   Anby,
   Anton,
   AstraYao,
@@ -60,6 +63,7 @@ const data: TagMapNodeEntries[] = [
   Miyabi,
   Nekomata,
   Nicole,
+  PanYinhu,
   Piper,
   Pulchra,
   Qingyi,
@@ -71,8 +75,8 @@ const data: TagMapNodeEntries[] = [
   Trigger,
   Vivian,
   Yanagi,
-  PanYinhu,
   Yixuan,
+  Yuzuha,
   ZhuYuan,
 ]
 export default data.flat()

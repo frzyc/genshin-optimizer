@@ -31,9 +31,11 @@ import MagneticStormAlpha from './sheets/MagneticStormAlpha'
 import MagneticStormBravo from './sheets/MagneticStormBravo'
 import MagneticStormCharlie from './sheets/MagneticStormCharlie'
 import MarcatoDesire from './sheets/MarcatoDesire'
+import Metanukimorphosis from './sheets/Metanukimorphosis'
 import MyriadEclipse from './sheets/MyriadEclipse'
 import OriginalTransmorpher from './sheets/OriginalTransmorpher'
 import PeacekeeperSpecialized from './sheets/PeacekeeperSpecialized'
+import PracticedPerfection from './sheets/PracticedPerfection'
 import PreciousFossilizedCore from './sheets/PreciousFossilizedCore'
 import PuzzleSphere from './sheets/PuzzleSphere'
 import QingmingBirdcage from './sheets/QingmingBirdcage'
@@ -103,9 +105,11 @@ const data: TagMapNodeEntries[] = [
   MagneticStormBravo,
   MagneticStormCharlie,
   MarcatoDesire,
+  Metanukimorphosis,
   MyriadEclipse,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
+  PracticedPerfection,
   PreciousFossilizedCore,
   PuzzleSphere,
   QingmingBirdcage,

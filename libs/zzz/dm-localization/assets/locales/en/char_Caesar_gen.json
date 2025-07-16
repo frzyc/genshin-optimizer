@@ -245,7 +245,7 @@
   "mindscapes": {
     "1": {
       "name": "Spearhead Advance",
-      "desc": "When Caesar enters combat or switches in, she instantly buffs all squad members with a <ct color=#FFFFFF>Radiant Aegis</ct> shield. This effect can trigger once every 300s. While <ct color=#FFFFFF>Radiant Aegis</ct> is active, enemies within a 5m radius of the shield bearer suffer a 15% All-Attribute RES reduction.",
+      "desc": "When Caesar becomes the active character in combat, she instantly buffs all squad members with a <ct color=#FFFFFF>Radiant Aegis</ct> shield. This effect can trigger once every 300s. While <ct color=#FFFFFF>Radiant Aegis</ct> is active, enemies within a 5m radius of the shield bearer suffer a 15% All-Attribute RES reduction.",
       "flavor": {
         "0": "\"Big Daddy taught me that this is when you form a spearheaded formation with overwhelming force and strike at the enemy's weakest point—\"",
         "1": "\"And I'll be leading the charge, of course!\""
