@@ -66,6 +66,7 @@ const labelMap = {
   defIgn_: 'DEF Ignore',
   resIgn_: 'Res Ignore',
   dazeInc_: 'Daze Increase',
+  buff_: 'Buff Bonus',
 } as const
 function TagStrDisplay({
   tag,

@@ -101,11 +101,15 @@ const sheet = createBaseSheet(key, {
             title: ch('m6_fire_resIgn'),
             fieldRef: buff.m6_fire_resIgn_.tag,
           },
-          {
-            title: ch('m6_additional_burn_dmg'),
-            fieldRef: formula.m6_additional_burn_dmg.tag,
-          },
         ],
+      },
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('m6CondBurn'),
+        metadata: cond.additional_burn,
+        fields: [fieldForBuff(buff.m6_fire_anom_mv_mult_)],
       },
     },
   ],
