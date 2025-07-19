@@ -12,7 +12,6 @@ import {
   allBoolConditionals,
   allNumConditionals,
   customAnomalyBuildup,
-  customAnomalyDmg,
   customDmg,
   own,
   ownBuff,
@@ -36,7 +35,7 @@ const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
-const { exSpecial_active } = allBoolConditionals(key)
+const { exSpecial_active, additional_burn } = allBoolConditionals(key)
 const { thermal_penetration } = allNumConditionals(key, true, 0, dm.m2.stacks)
 
 const core_afterburn_dmg_ = ownBuff.combat.common_dmg_.add(
@@ -192,16 +191,6 @@ const sheet = register(
     undefined,
     m6_fire_resIgn_
   ),
-  ...customAnomalyDmg(
-    'm6_additional_burn_dmg',
-    { ...baseTag, damageType1: 'anomaly' },
-    cmpGE(
-      char.mindscape,
-      6,
-      // TODO: change from random number in place to an actual original dmg value
-      prod(percent(0.5), percent(dm.m6.additional_burn_dmg), constant(1000))
-    )
-  ),
 
   // Buffs
   registerBuff(
@@ -229,7 +218,9 @@ const sheet = register(
     'm2_pen_',
     teamBuff.combat.pen_.add(
       cmpGE(char.mindscape, 2, prod(thermal_penetration, percent(dm.m2.pen_)))
-    )
+    ),
+    undefined,
+    true
   ),
   registerBuff(
     'm4_exSpecial_crit_',
@@ -257,6 +248,16 @@ const sheet = register(
       )
     )
   ),
-  registerBuff('m6_fire_resIgn_', m6_fire_resIgn_, undefined, undefined, false)
+  registerBuff('m6_fire_resIgn_', m6_fire_resIgn_, undefined, undefined, false),
+  registerBuff(
+    'm6_fire_anom_mv_mult_',
+    ownBuff.dmg.anom_mv_mult_.fire.add(
+      cmpGE(
+        char.mindscape,
+        6,
+        additional_burn.ifOn(percent(dm.m6.additional_burn_dmg))
+      )
+    )
+  )
 )
 export default sheet
