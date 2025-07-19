@@ -132,6 +132,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   common_dmg_: 'DMG Bonus',
   dmg_: 'DMG Bonus',
   flat_dmg: 'Flat DMG Bonus',
+  buff_: 'Buff Bonus',
   dmg_red_: 'DMG Taken Reduction',
   charLvl: 'Character Level',
   enemyDef: 'Enemy DEF',
@@ -180,6 +181,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   resRed_: 'Resistance Reduction',
   sheer_mult_: 'Sheer DMG Multiplier',
   mv_mult_: 'DMG Multiplier Increase',
+  buff_mult_: 'Buff Multiplier',
 }
 
 export const elementalData: Record<AttributeKey, string> = {

@@ -10,5 +10,5 @@
   "m6_additional_afterburn_dmg": "Additional Afterburn Damage",
   "m6Cond": "After hitting an enemy with EX Special Attack: Intense Heat Stirring Method - Double Shot",
   "m6_fire_resIgn": "EX Special Attack: Intense Heat Stirring Method - Double Shot and special Afterburn effects Fire Res Ignore",
-  "m6_additional_burn_dmg": "Additional Burn Damage"
+  "m6CondBurn": "Additional Burn Damage"
 }

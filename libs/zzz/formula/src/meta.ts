@@ -141,6 +141,11 @@ export const conditionals = {
     },
   },
   Burnice: {
+    additional_burn: {
+      sheet: 'Burnice',
+      name: 'additional_burn',
+      type: 'bool',
+    },
     exSpecial_active: {
       sheet: 'Burnice',
       name: 'exSpecial_active',
@@ -6111,19 +6116,6 @@ export const formulas = {
         attribute: 'fire',
         skillType: 'assistSkill',
         name: 'm6_additional_afterburn_dmg',
-      },
-    },
-    m6_additional_burn_dmg: {
-      sheet: 'Burnice',
-      name: 'm6_additional_burn_dmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'anomalyDmg',
-        sheet: 'Burnice',
-        attribute: 'fire',
-        damageType1: 'anomaly',
-        name: 'm6_additional_burn_dmg',
       },
     },
   },
@@ -34651,6 +34643,18 @@ export const buffs = {
         name: 'm6_fire_resIgn_',
       },
     },
+    m6_fire_anom_mv_mult_: {
+      sheet: 'Burnice',
+      name: 'm6_fire_anom_mv_mult_',
+      tag: {
+        et: 'display',
+        qt: 'dmg',
+        q: 'anom_mv_mult_',
+        sheet: 'Burnice',
+        attribute: 'fire',
+        name: 'm6_fire_anom_mv_mult_',
+      },
+    },
   },
   Caesar: {
     stance_switch_impact_: {
@@ -35327,7 +35331,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'buff_',
         sheet: 'Jane',
         damageType1: 'anomaly',
         name: 'm4_anomaly_dmg_',
@@ -36422,7 +36426,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'buff_',
         sheet: 'Vivian',
         attribute: 'ether',
         damageType1: 'anomaly',
@@ -36435,7 +36439,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'buff_',
         sheet: 'Vivian',
         attribute: 'ether',
         damageType1: 'disorder',
@@ -36448,7 +36452,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'buff_',
         sheet: 'Vivian',
         damageType1: 'anomaly',
         name: 'm1_anomaly_dmg_',
@@ -36460,7 +36464,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'buff_',
         sheet: 'Vivian',
         damageType1: 'disorder',
         name: 'm1_disorder_dmg_',
@@ -38747,7 +38751,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'buff_',
         sheet: 'Timeweaver',
         damageType1: 'disorder',
         name: 'passive_disorder_dmg_',
