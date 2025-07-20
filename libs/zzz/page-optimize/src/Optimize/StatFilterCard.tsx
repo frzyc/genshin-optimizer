@@ -293,7 +293,6 @@ function QtDropdown({
   qt: Tag['qt']
   setQt: (qt: (typeof statFilterStatQtKeys)[number]) => void
 }) {
-  console.log('QtDropdown', qt)
   return (
     <DropdownButton title={qt && qtMap[qt as keyof typeof qtMap]}>
       {statFilterStatQtKeys.map((q) => (
