@@ -8,6 +8,7 @@ import { type UnArray, isPercentStat } from '@genshin-optimizer/common/util'
 import type { AttributeKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import type { StatFilterTag } from '@genshin-optimizer/zzz/db'
+import { statFilterStatQtKeys } from '@genshin-optimizer/zzz/db'
 import {
   type StatFilterStatKey,
   type StatFilters,
@@ -19,7 +20,7 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
+import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import {
   CheckBox,
@@ -168,7 +169,7 @@ function InitialStatDropdown({
 }) {
   return (
     <DropdownButton
-      title={(tag && <TagDisplay tag={tag} />) ?? 'Add Final Stat Filter'}
+      title={(tag && <TagDisplay tag={tag} />) ?? 'Add Stat Filter'}
     >
       {statFilterStatKeys.map((statKey) => (
         <MenuItem key={statKey} onClick={() => onSelect(statKey)}>
@@ -213,6 +214,7 @@ function StatFilterItem({
         <Typography>
           <TagDisplay tag={tag} />
         </Typography>
+        <QtDropdown qt={tag.qt} setQt={(qt) => setTarget({ ...tag, qt })} />
         {tag.q === 'dmg_' && (
           <AttributeDropdown
             tag={tag}
@@ -278,6 +280,30 @@ function AttributeDropdown({
           <ColorText color={attr}>
             <AttributeName attribute={attr} />
           </ColorText>
+        </MenuItem>
+      ))}
+    </DropdownButton>
+  )
+}
+
+function QtDropdown({
+  qt,
+  setQt,
+}: {
+  qt: Tag['qt']
+  setQt: (qt: (typeof statFilterStatQtKeys)[number]) => void
+}) {
+  console.log('QtDropdown', qt)
+  return (
+    <DropdownButton title={qt && qtMap[qt as keyof typeof qtMap]}>
+      {statFilterStatQtKeys.map((q) => (
+        <MenuItem
+          key={q}
+          onClick={() => setQt(q)}
+          selected={qt === q}
+          disabled={qt === q}
+        >
+          {qtMap[q]}
         </MenuItem>
       ))}
     </DropdownButton>
