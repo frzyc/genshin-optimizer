@@ -1,0 +1,9 @@
+{
+  "core_common_dmg_": "Basic Attack: Fire Suppression and Dash Attack: Fire Suppression DMG",
+  "m2Cond": "When triggering Fire Suppression",
+  "m2_common_dmg_": "Basic Attack: Fire Suppression and Dash Attack: Fire Suppression DMG",
+  "m4Cond": "If Fire Suppression is triggered during the 1st, 2nd, or 3rd hit of Soldier 11's Basic Attack or a Dash Attack",
+  "m4Cond2": "If Fire Suppression is triggered during the 4th hit of her Basic Attack",
+  "m6Cond": "When Soldier 11 uses her EX Special Attack, Chain Attack, or Ultimate",
+  "m6_fire_resIgn_": "Basic Attack: Fire Suppression and Dash Attack: Fire Suppression Fire Res Ignore"
+}

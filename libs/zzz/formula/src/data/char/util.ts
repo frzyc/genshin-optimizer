@@ -70,8 +70,11 @@ function dmgDazeAndAnom(
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
   const dmgMulti = sum(
-    skillParam.DamagePercentage,
-    prod(own.char[abilityScalingType], skillParam.DamagePercentageGrowth)
+    percent(skillParam.DamagePercentage),
+    prod(
+      sum(own.char[abilityScalingType], -1),
+      percent(skillParam.DamagePercentageGrowth)
+    )
   )
   const dmgBase = prod(
     own.final[stat],
@@ -79,8 +82,11 @@ function dmgDazeAndAnom(
     cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
   )
   const dazeBase = sum(
-    skillParam.StunRatio,
-    prod(own.char[abilityScalingType], skillParam.StunRatioGrowth)
+    percent(skillParam.StunRatio),
+    prod(
+      sum(own.char[abilityScalingType], -1),
+      percent(skillParam.StunRatioGrowth)
+    )
   )
   return [
     stat === 'sheerForce'
@@ -120,10 +126,10 @@ export function dmgDazeAndAnomMerge(
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
   const dmgMulti = sum(
-    ...skillParam.map((sp) => sp.DamagePercentage),
+    ...skillParam.map((sp) => percent(sp.DamagePercentage)),
     prod(
       own.char[abilityScalingType],
-      sum(...skillParam.map((sp) => sp.DamagePercentageGrowth))
+      sum(...skillParam.map((sp) => percent(sp.DamagePercentageGrowth)))
     )
   )
   const dmgBase = prod(
@@ -132,10 +138,10 @@ export function dmgDazeAndAnomMerge(
     cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
   )
   const dazeBase = sum(
-    ...skillParam.map((sp) => sp.StunRatio),
+    ...skillParam.map((sp) => percent(sp.StunRatio)),
     prod(
       own.char[abilityScalingType],
-      sum(...skillParam.map((sp) => sp.StunRatioGrowth))
+      sum(...skillParam.map((sp) => percent(sp.StunRatioGrowth)))
     )
   )
   return [
@@ -412,7 +418,11 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         attribute: data_gen.attribute,
         damageType1: 'anomaly',
       },
-      prod(percent(anomalyMultipliers[data_gen.attribute]), own.final.atk)
+      prod(
+        percent(anomalyMultipliers[data_gen.attribute]),
+        own.final.atk,
+        cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
+      )
     ),
     ...customAnomalyBuildup(
       'anomalyBuildupInst',

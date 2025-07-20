@@ -41,7 +41,7 @@ const sheet = registerWengine(
   ),
   registerBuff(
     'passive_disorder_dmg_',
-    ownBuff.combat.common_dmg_.addWithDmgType(
+    ownBuff.combat.buff_.addWithDmgType(
       'disorder',
       cmpSpecialtyAndEquipped(
         key,
