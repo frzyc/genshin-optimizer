@@ -249,7 +249,7 @@ const sheet = register(
           team.common.count.electric,
           team.common.count.withFaction('BelebogHeavyIndustries')
         ),
-        2,
+        3,
         burst_mode.ifOn(percent(dm.ability.dmg))
       )
     )
