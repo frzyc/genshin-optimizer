@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Ben'
@@ -17,7 +17,7 @@ const sheet = createBaseSheet(key, {
           type: 'fields',
           fields: [
             {
-              title: ch('special_shield'),
+              title: st('shield'),
               fieldRef: formula.special_shield.tag,
             },
           ],
@@ -28,7 +28,7 @@ const sheet = createBaseSheet(key, {
           type: 'fields',
           fields: [
             {
-              title: ch('special_shield'),
+              title: st('shield'),
               fieldRef: formula.special_shield.tag,
             },
           ],
@@ -42,7 +42,7 @@ const sheet = createBaseSheet(key, {
       fields: [
         fieldForBuff(buff.core_atk),
         {
-          title: ch('core_shield'),
+          title: st('shield'),
           fieldRef: formula.core_shield.tag,
         },
       ],
@@ -73,7 +73,7 @@ const sheet = createBaseSheet(key, {
       type: 'fields',
       fields: [
         {
-          title: ch('m2_dmg'),
+          title: st('dmg'),
           fieldRef: formula.m2_dmg.tag,
         },
       ],

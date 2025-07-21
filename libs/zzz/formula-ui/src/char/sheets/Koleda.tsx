@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Koleda'
@@ -26,7 +26,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('abilityCond'),
+        label: st('uponLaunch.1', { val1: '$t(skills.exSpecial)' }),
         metadata: cond.exSpecial_debuff,
         fields: [fieldForBuff(buff.ability_chain_dmg_)],
       },
@@ -63,7 +63,7 @@ const sheet = createBaseSheet(key, {
       type: 'fields',
       fields: [
         {
-          title: ch('m6_dmg'),
+          title: st('dmg'),
           fieldRef: formula.m6_dmg.tag,
         },
       ],

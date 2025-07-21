@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Grace'
@@ -26,7 +26,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('abilityCond'),
+        label: st('uponLaunch.1', { val1: '$t(skills.exSpecial)' }),
         metadata: cond.exSpecialHit,
         fields: [fieldForBuff(buff.ability_shock_dmg_)],
       },
@@ -49,7 +49,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m4Cond'),
+        label: st('uponLaunch.1', { val1: '$t(skills.exSpecial)' }),
         metadata: cond.chargeConsumed,
         fields: [fieldForBuff(buff.m4_enerRegen_)],
       },
