@@ -39,6 +39,33 @@ const dm = {
     AssistFollowUpCounterVoltNeedle:
       data_gen.skillParams['assist']['AssistFollowUpCounterVoltNeedle'],
   },
+  core: {
+    stacks_gained: data_gen.coreParams[0][0],
+    max_stacks: data_gen.coreParams[1][0],
+    electric_anomBuildup_: data_gen.coreParams[2],
+  },
+  ability: {
+    shock_dmg_: data_gen.abilityParams[0],
+    stacks: data_gen.abilityParams[1],
+  },
+  m1: {
+    energy: data_gen.mindscapeParams[0][0],
+    max_energy: data_gen.mindscapeParams[0][1],
+  },
+  m2: {
+    electric_resRed_: data_gen.mindscapeParams[1][0],
+    electric_anomBuildupResRed_: data_gen.mindscapeParams[1][1],
+    duration: data_gen.mindscapeParams[1][2],
+  },
+  m4: {
+    stacks_gained: data_gen.mindscapeParams[3][0],
+    max_stacks: data_gen.mindscapeParams[3][1],
+    stacks_consumed: data_gen.mindscapeParams[3][2],
+    enerRegen_: data_gen.mindscapeParams[3][3],
+  },
+  m6: {
+    mv_mult_: data_gen.mindscapeParams[5][0],
+  },
 } as const
 
 export default dm
