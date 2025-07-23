@@ -72,7 +72,6 @@ export function priorityTable(
 type Desc = BaseDesc<Sheet>
 const aggStr: Desc = { sheet: 'agg' }
 const agg: Desc = { sheet: 'agg', accu: 'sum' }
-const aggProd: Desc = { sheet: 'agg', accu: 'prod' }
 const iso: Desc = { sheet: 'iso' }
 const isoSum: Desc = { sheet: 'iso', accu: 'sum' }
 /** `sheet:`-agnostic calculation */
@@ -115,6 +114,7 @@ const stats: Record<Stat, Desc> = {
   dazeRed_: agg,
   dmg_red_: agg,
   sheer_dmg_: agg,
+  flat_dmg: agg,
 } as const
 const finalStats = objFilterKeys(stats, [
   ...flatAndPercentStats,
@@ -166,7 +166,8 @@ export const ownTag = {
     res_mult_: fixed,
     dmg_taken_mult_: fixed,
     stunned_mult_: fixed,
-    mv_mult_: aggProd,
+    mv_mult_: agg,
+    anom_mv_mult_: agg,
     sheer_mult_: fixed,
     anomaly_crit_mult_: fixed,
   },
@@ -185,6 +186,7 @@ export const ownTag = {
     enemyDazeRes_mult_: prep,
     enemyDazeTaken_mult_: prep,
     dazeBuildup: prep,
+    heal: prep,
   },
   listing: {
     // Anything that is intended to be allowed as an optimization target.

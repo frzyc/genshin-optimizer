@@ -70,8 +70,11 @@ function dmgDazeAndAnom(
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
   const dmgMulti = sum(
-    skillParam.DamagePercentage,
-    prod(own.char[abilityScalingType], skillParam.DamagePercentageGrowth)
+    percent(skillParam.DamagePercentage),
+    prod(
+      sum(own.char[abilityScalingType], -1),
+      percent(skillParam.DamagePercentageGrowth)
+    )
   )
   const dmgBase = prod(
     own.final[stat],
@@ -79,11 +82,16 @@ function dmgDazeAndAnom(
     cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
   )
   const dazeBase = sum(
-    skillParam.StunRatio,
-    prod(own.char[abilityScalingType], skillParam.StunRatioGrowth)
+    percent(skillParam.StunRatio),
+    prod(
+      sum(own.char[abilityScalingType], -1),
+      percent(skillParam.StunRatioGrowth)
+    )
   )
   return [
-    customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
+    stat === 'sheerForce'
+      ? customSheerDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra)
+      : customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
     customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
     // TODO: No clue if this is right
     customAnomalyBuildup(
@@ -118,10 +126,10 @@ export function dmgDazeAndAnomMerge(
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
   const dmgMulti = sum(
-    ...skillParam.map((sp) => sp.DamagePercentage),
+    ...skillParam.map((sp) => percent(sp.DamagePercentage)),
     prod(
       own.char[abilityScalingType],
-      sum(...skillParam.map((sp) => sp.DamagePercentageGrowth))
+      sum(...skillParam.map((sp) => percent(sp.DamagePercentageGrowth)))
     )
   )
   const dmgBase = prod(
@@ -130,14 +138,16 @@ export function dmgDazeAndAnomMerge(
     cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
   )
   const dazeBase = sum(
-    ...skillParam.map((sp) => sp.StunRatio),
+    ...skillParam.map((sp) => percent(sp.StunRatio)),
     prod(
       own.char[abilityScalingType],
-      sum(...skillParam.map((sp) => sp.StunRatioGrowth))
+      sum(...skillParam.map((sp) => percent(sp.StunRatioGrowth)))
     )
   )
   return [
-    customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
+    stat === 'sheerForce'
+      ? customSheerDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra)
+      : customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
     customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
     // TODO: No clue if this is right
     customAnomalyBuildup(
@@ -234,7 +244,9 @@ export function registerAllDmgDazeAndAnom(
                   damageType1: inferDamageType(key, abilityName),
                   skillType: `${sKey}Skill`,
                 },
-                'atk',
+                allStats.char[key].specialty === 'rupture'
+                  ? 'sheerForce'
+                  : 'atk',
                 sKey
               )
           )
@@ -406,7 +418,11 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         attribute: data_gen.attribute,
         damageType1: 'anomaly',
       },
-      prod(percent(anomalyMultipliers[data_gen.attribute]), own.final.atk)
+      prod(
+        percent(anomalyMultipliers[data_gen.attribute]),
+        own.final.atk,
+        cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
+      )
     ),
     ...customAnomalyBuildup(
       'anomalyBuildupInst',

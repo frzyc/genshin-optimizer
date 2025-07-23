@@ -40,6 +40,38 @@ const dm = {
     AssistFollowUpAidingBlade:
       data_gen.skillParams['assist']['AssistFollowUpAidingBlade'],
   },
+  core: {
+    shield_: data_gen.coreParams[0],
+    shield: data_gen.coreParams[1],
+    shield_duration: data_gen.coreParams[2][0],
+    atk: data_gen.coreParams[3],
+    duration: data_gen.coreParams[4][0],
+  },
+  ability: {
+    dmg_: data_gen.abilityParams[0],
+    duration: data_gen.abilityParams[1],
+  },
+  m1: {
+    cooldown: data_gen.mindscapeParams[0][0],
+    attrRes_: data_gen.mindscapeParams[0][1],
+  },
+  m2: {
+    enerRegen_: data_gen.mindscapeParams[1][0],
+    atk_increase_: data_gen.mindscapeParams[1][1],
+  },
+  m4: {
+    assist_points: data_gen.mindscapeParams[3][0],
+    energy_threshold: data_gen.mindscapeParams[3][1],
+    assist_point_cost: data_gen.mindscapeParams[3][2],
+    cooldown: data_gen.mindscapeParams[3][3],
+  },
+  m6: {
+    dmg_: data_gen.mindscapeParams[5][0],
+    dmg: data_gen.mindscapeParams[5][1],
+    crit_: data_gen.mindscapeParams[5][2],
+    crit_dmg_: data_gen.mindscapeParams[5][3],
+    duration: data_gen.mindscapeParams[5][4],
+  },
 } as const
 
 export default dm

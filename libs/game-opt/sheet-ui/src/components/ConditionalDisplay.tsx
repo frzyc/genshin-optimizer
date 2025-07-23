@@ -5,6 +5,7 @@ import {
   DropdownButton,
   NumberInputLazy,
   SqBadge,
+  usePrev,
 } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
 import type {
@@ -317,6 +318,12 @@ function NumConditional({
 }
 function CondSlider(props: Omit<SliderProps, 'onChange'>) {
   const [innerValue, setInnerValue] = useState(props.value)
+
+  // Handle multiple sliders, currently only works in non strict mode
+  if (usePrev(props.value) !== props.value) {
+    setInnerValue(props.value)
+  }
+
   return (
     <Slider
       {...props}
