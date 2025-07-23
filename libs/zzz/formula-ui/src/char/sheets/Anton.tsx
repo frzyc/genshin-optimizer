@@ -1,25 +1,76 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
-import { createBaseSheet } from '../sheetUtil'
+import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Anton'
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [, ch] = trans('char', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = conditionals[key]
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = buffs[key]
+const formula = formulas[key]
 
-const sheet = createBaseSheet(key)
+const sheet = createBaseSheet(key, {
+  core: [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ch('core_piledriver_dmg_'),
+          fieldRef: buff.core_piledriver_dmg_.tag,
+        },
+        {
+          title: ch('core_drill_dmg_'),
+          fieldRef: buff.core_drill_dmg_.tag,
+        },
+      ],
+    },
+  ],
+  ability: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('abilityCond'),
+        metadata: cond.burst_mode,
+        fields: [fieldForBuff(buff.ability_electric_anom_mv_mult_)],
+      },
+    },
+  ],
+  m2: [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ch('m2_shield'),
+          fieldRef: formula.m2_shield.tag,
+        },
+      ],
+    },
+  ],
+  m4: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('m4Cond'),
+        metadata: cond.chain_ult_used,
+        fields: [fieldForBuff(buff.m4_crit_)],
+      },
+    },
+  ],
+  m6: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('m6Cond'),
+        metadata: cond.piledriver_crits,
+        fields: [
+          {
+            title: ch('m6_dmg_'),
+            fieldRef: buff.m6_dmg_.tag,
+          },
+        ],
+      },
+    },
+  ],
+})
 
 export default sheet

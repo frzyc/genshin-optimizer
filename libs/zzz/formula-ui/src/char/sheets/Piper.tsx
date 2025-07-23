@@ -1,25 +1,49 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
-import { createBaseSheet } from '../sheetUtil'
+import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Piper'
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [, ch] = trans('char', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = conditionals[key]
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = buffs[key]
 
-const sheet = createBaseSheet(key)
+const sheet = createBaseSheet(key, {
+  core: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('coreCond'),
+        metadata: cond.power,
+        fields: [fieldForBuff(buff.core_physical_anomBuildup_)],
+      },
+    },
+  ],
+  ability: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('coreCond'),
+        metadata: cond.power,
+        fields: [fieldForBuff(buff.ability_common_dmg_)],
+      },
+    },
+  ],
+  m2: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('coreCond'),
+        metadata: cond.power,
+        fields: [
+          {
+            title: ch('m2_physical_dmg_'),
+            fieldRef: buff.m2_physical_dmg_.tag,
+          },
+        ],
+      },
+    },
+  ],
+})
 
 export default sheet

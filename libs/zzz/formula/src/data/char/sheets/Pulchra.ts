@@ -1,18 +1,22 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
+import { cmpGE, cmpLT, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
   own,
   ownBuff,
+  percent,
   register,
   registerBuff,
+  team,
   teamBuff,
 } from '../../util'
-import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
+import {
+  dmgDazeAndAnomOverride,
+  entriesForChar,
+  registerAllDmgDazeAndAnom,
+} from '../util'
 
 const key: CharacterKey = 'Pulchra'
 const data_gen = allStats.char[key]
@@ -20,10 +24,23 @@ const dm = mappedStats.char[key]
 
 const { char } = own
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { hunters_gait, binding_trap } = allBoolConditionals(key)
+
+const abilityCheck = (node: NumNode | number) =>
+  cmpGE(
+    sum(
+      team.common.count.withSpecialty('attack'),
+      team.common.count.withSpecialty('rupture'),
+      team.common.count.withFaction('SonsOfCalydon')
+    ),
+    1,
+    node
+  )
+
+const m6_special_dmg_ = ownBuff.combat.dmg_.addWithDmgType(
+  'special',
+  cmpGE(char.mindscape, 6, percent(dm.m6.dmg_))
+)
 
 const sheet = register(
   key,
@@ -31,19 +48,80 @@ const sheet = register(
   entriesForChar(data_gen),
 
   // Formulas
-  ...registerAllDmgDazeAndAnom(key, dm),
+  ...registerAllDmgDazeAndAnom(
+    key,
+    dm,
+    // Special Rending Claw - Nightmare Shadow is aftershock
+    dmgDazeAndAnomOverride(
+      dm,
+      'special',
+      'SpecialAttackRendingClawNightmareShadow',
+      0,
+      { damageType1: 'special', damageType2: 'aftershock' },
+      'atk',
+      undefined,
+      ...m6_special_dmg_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'special',
+      'SpecialAttackRendingClawNightmareShadow',
+      1,
+      { damageType1: 'special', damageType2: 'aftershock' },
+      'atk',
+      undefined,
+      ...m6_special_dmg_
+    )
+  ),
 
   // Buffs
   registerBuff(
-    'm6_dmg_',
-    ownBuff.combat.common_dmg_.add(
-      cmpGE(char.mindscape, 6, boolConditional.ifOn(1))
+    'core_dazeInc_',
+    ownBuff.combat.dazeInc_.add(
+      hunters_gait.ifOn(percent(subscript(char.core, dm.core.dazeInc_)))
     )
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
+    'ability_aftershock_dmg_',
+    teamBuff.combat.dmg_.addWithDmgType(
+      'aftershock',
+      cmpLT(
+        char.mindscape,
+        6,
+        abilityCheck(binding_trap.ifOn(percent(dm.ability.aftershock_dmg_)))
+      )
+    ),
+    undefined,
+    true
   ),
-  registerBuff('enemy_defRed_', enemyDebuff.common.defRed_.add(numConditional))
+  registerBuff(
+    'm1_crit_',
+    ownBuff.combat.crit_.add(
+      cmpGE(
+        char.mindscape,
+        1,
+        abilityCheck(binding_trap.ifOn(percent(dm.m1.crit_)))
+      )
+    )
+  ),
+  registerBuff(
+    'm2_atk_',
+    ownBuff.combat.atk_.add(
+      cmpGE(char.mindscape, 2, hunters_gait.ifOn(percent(dm.m2.atk_)))
+    )
+  ),
+  registerBuff('m6_special_dmg_', m6_special_dmg_, undefined, undefined, false),
+  registerBuff(
+    'm6_common_dmg_',
+    teamBuff.combat.common_dmg_.add(
+      cmpGE(
+        char.mindscape,
+        6,
+        abilityCheck(percent(dm.ability.aftershock_dmg_))
+      )
+    ),
+    undefined,
+    true
+  )
 )
 export default sheet
