@@ -55,8 +55,8 @@
         "0": "After using <ct color=#FFFFFF>Dash Attack: Tiger Seven Forms - Tiger Charge</ct>, hold <IconNormal /> to activate:",
         "1": "Enter a high-speed spinning state. While in this state, use the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to move and deal <ct color=#F0D12B>Physical DMG</ct> upon contact with enemies.",
         "2": "After Ju Fufu gains <ct color=#FFFFFF>Momentum</ct> from other skills, she will be surrounded by flames in the high-speed spinning state. Upon contact with enemies, 1 point of <ct color=#FFFFFF>Momentum</ct> is consumed, changing the DMG to <ct color=#FF5521>Fire DMG</ct> and granting 25 points of <ct color=#FFFFFF>Might</ct>. The maximum for <ct color=#FFFFFF>Momentum</ct> is 15.",
-        "3": "When dealing <ct color=#FF5521>Fire DMG</ct>, if <ct color=#FFFFFF>Might</ct> is above 100 points, 100 points of <ct color=#FFFFFF>Might</ct> will be automatically consumed to trigger <ct color=#FFFFFF>Chain Attack: Suppressing Tiger Cauldron</ct>.",
-        "4": "Releasing <IconNormal /> will have Ju Fufu exit the spinning state and throw <ct color=#FFFFFF>Hu Wei</ct> to attack enemies. When switching to another character, Ju Fufu will remain in the spinning state and attempt to collide with the nearest enemy.",
+        "3": "When consuming <ct color=#FFFFFF>Momentum</ct> to deal <ct color=#FF5521>Fire DMG</ct>, if <ct color=#FFFFFF>Might</ct> is above 100 points, 100 points of <ct color=#FFFFFF>Might</ct> will be automatically consumed to trigger <ct color=#FFFFFF>Chain Attack: Suppressing Tiger Cauldron</ct>.",
+        "4": "Releasing <IconNormal /> will have Ju Fufu exit the spinning state and throw <ct color=#FFFFFF>Hu Wei</ct> to attack enemies, dealing <ct color=#FF5521>Fire DMG</ct>. When switching to another character, Ju Fufu will remain in the spinning state and attempt to collide with the nearest enemy.",
         "5": "While Ju Fufu is the currently active character, DMG taken during the skill is reduced by 40%, and Anti-Interrupt Level is increased. If not the active character, she becomes Invulnerable."
       },
       "params": [
@@ -118,7 +118,7 @@
       "desc": {
         "0": "With at least 100 points of <ct color=#FFFFFF>Might</ct>, after triggering a <ct color=#FFFFFF>Chain Attack</ct>, automatically activate:",
         "1": "Consume 100 <ct color=#FFFFFF>Might</ct> to open Hu Wei and fire flames and popcorn at enemies, striking them in a small area ahead, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
-        "2": "If <ct color=#FFFFFF>Momentum</ct> is available, and while not the active character, <ct color=#FFFFFF>Fiery Spin</ct> will activate after the skill ends.",
+        "2": "If <ct color=#FFFFFF>Momentum</ct> is available, and while not the active character, the high-speed spinning state will activate after the skill ends.",
         "3": "This is an <ct color=#FFFFFF>Aftershock</ct>. Character is invulnerable while using this skill."
       },
       "params": [
@@ -243,7 +243,11 @@
     "2": {
       "name": "Almighty Qingming Warrior",
       "desc": "While in the <ct color=#FFFFFF>Tiger's Roar</ct> state, character CRIT DMG increases by an additional 22%. Whenever any character activates an <ct color=#FFFFFF>Ultimate</ct>, Ju Fufu gains 3 points of <ct color=#FFFFFF>Momentum</ct>.",
-      "flavor": ""
+      "flavor": {
+        "0": "\"The techniques Shifu taught me are truly amazing, though it can't compare to those of fairy tales and legend.\"",
+        "1": "\"If I were a little stronger — just a little stronger — could I rewrite those fated pasts, like in the stories and legends?",
+        "2": "\"At first, I was just as puzzled, but once you grasp the trick, it's actually quite simple! Let me teach you, Junior!\""
+      }
     },
     "3": {
       "name": "Righteous Young Hero",

@@ -1,5 +1,6 @@
 // copy from libs\zzz\dm\src\dm\character\characterKeys.json with sussy chars removed
 export const allCharacterKeys = [
+  'Alice',
   'Anby',
   'Anton',
   'AstraYao',
@@ -35,6 +36,7 @@ export const allCharacterKeys = [
   'Vivian',
   'Yanagi',
   'Yixuan',
+  'Yuzuha',
   'ZhuYuan',
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]

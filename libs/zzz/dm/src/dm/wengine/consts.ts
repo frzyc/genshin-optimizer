@@ -75,6 +75,8 @@ export const WengineIdMap = {
   '14137': 'QingmingBirdcage',
   '14138': 'SeveredInnocence',
   '14139': 'RoaringFurnace',
+  '14140': 'PracticedPerfection',
+  '14141': 'Metanukimorphosis',
 } as const
 
 export const specialityMap: Record<number, SpecialityKey> = {

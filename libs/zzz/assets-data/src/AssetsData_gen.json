@@ -367,6 +367,20 @@
       "select": "IconRoleSelect43.png",
       "interknot": "IconInterKnotRole0043.png"
     },
+    "Alice": {
+      "full": "IconRole46.png",
+      "circle": "IconRoleCircle46.png",
+      "trap": "IconRoleGeneral46.png",
+      "select": "IconRoleSelect46.png",
+      "interknot": "IconInterKnotRole0046.png"
+    },
+    "Yuzuha": {
+      "full": "IconRole47.png",
+      "circle": "IconRoleCircle47.png",
+      "trap": "IconRoleGeneral47.png",
+      "select": "IconRoleSelect47.png",
+      "interknot": "IconInterKnotRole0047.png"
+    },
     "PanYinhu": {
       "full": "IconRole45.png",
       "circle": "IconRoleCircle45.png",
@@ -655,6 +669,14 @@
     "RoaringFurnace": {
       "icon": "Weapon_S_1391.png",
       "big": "Weapon_S_1391Big.png"
+    },
+    "PracticedPerfection": {
+      "icon": "Weapon_S_1401.png",
+      "big": "Weapon_S_1401Big.png"
+    },
+    "Metanukimorphosis": {
+      "icon": "Weapon_S_1411.png",
+      "big": "Weapon_S_1411Big.png"
     }
   }
 }

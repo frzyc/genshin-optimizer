@@ -126,6 +126,41 @@
       ],
       "SpecialAttackTouchOfDeath": [
         {
+          "DamagePercentage": 0.973,
+          "DamagePercentageGrowth": 0.089,
+          "StunRatio": 0.417,
+          "StunRatioGrowth": 0.019,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1911.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 48.61
+        },
+        {
+          "DamagePercentage": 0.973,
+          "DamagePercentageGrowth": 0.089,
+          "StunRatio": 0.417,
+          "StunRatioGrowth": 0.019,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1911.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 48.61
+        },
+        {
+          "DamagePercentage": 0.973,
+          "DamagePercentageGrowth": 0.089,
+          "StunRatio": 0.417,
+          "StunRatioGrowth": 0.019,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1911.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 48.61
+        }
+      ],
+      "EXSpecialAttackMountainousPulseStrike": [
+        {
           "DamagePercentage": 3.841,
           "DamagePercentageGrowth": 0.35,
           "StunRatio": 2.573,
@@ -135,41 +170,6 @@
           "FeverRecovery": 9924.75,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 283.12
-        }
-      ],
-      "EXSpecialAttackMountainousPulseStrike": [
-        {
-          "DamagePercentage": 0.973,
-          "DamagePercentageGrowth": 0.089,
-          "StunRatio": 0.417,
-          "StunRatioGrowth": 0.019,
-          "SpRecovery": 0,
-          "SpRecoveryGrowth": 0,
-          "FeverRecovery": 1911.25,
-          "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 48.61
-        },
-        {
-          "DamagePercentage": 0.973,
-          "DamagePercentageGrowth": 0.089,
-          "StunRatio": 0.417,
-          "StunRatioGrowth": 0.019,
-          "SpRecovery": 0,
-          "SpRecoveryGrowth": 0,
-          "FeverRecovery": 1911.25,
-          "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 48.61
-        },
-        {
-          "DamagePercentage": 0.973,
-          "DamagePercentageGrowth": 0.089,
-          "StunRatio": 0.417,
-          "StunRatioGrowth": 0.019,
-          "SpRecovery": 0,
-          "SpRecoveryGrowth": 0,
-          "FeverRecovery": 1911.25,
-          "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 48.61
         }
       ]
     },
@@ -279,7 +279,10 @@
     },
     "chain": {
       "ChainAttackAnointedWithWokSteam": [],
-      "UltimateAFeastFitForAnEmperor": []
+      "UltimateAFeastFitForAnEmperor": [
+        { "formula": "{CAL:100+chainLevel*60,1,2}" },
+        { "formula": "{CAL:0.8+chainLevel*0.05,1,2}%" }
+      ]
     },
     "assist": {
       "QuickAssistLiftYourGazeToGoodFortune": [],

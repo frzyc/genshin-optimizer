@@ -1,4 +1,5 @@
 // This is a generated index file.
+import Alice from './Alice'
 import Anby from './Anby'
 import Anton from './Anton'
 import AstraYao from './AstraYao'
@@ -34,9 +35,11 @@ import Trigger from './Trigger'
 import Vivian from './Vivian'
 import Yanagi from './Yanagi'
 import Yixuan from './Yixuan'
+import Yuzuha from './Yuzuha'
 import ZhuYuan from './ZhuYuan'
 
 const data = {
+  Alice,
   Anby,
   Anton,
   AstraYao,
@@ -72,6 +75,7 @@ const data = {
   Vivian,
   Yanagi,
   Yixuan,
+  Yuzuha,
   ZhuYuan,
 } as const
 export default data
