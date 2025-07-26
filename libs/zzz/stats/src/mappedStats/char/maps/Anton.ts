@@ -42,6 +42,31 @@ const dm = {
     AssistFollowUpLimitBurst:
       data_gen.skillParams['assist']['AssistFollowUpLimitBurst'],
   },
+  core: {
+    piledriver_dmg_: data_gen.coreParams[0],
+    drill_dmg_: data_gen.coreParams[1],
+  },
+  ability: {
+    crit_hits: data_gen.abilityParams[0],
+    dmg: data_gen.abilityParams[1],
+    cooldown: data_gen.abilityParams[2],
+  },
+  m1: {
+    energy: data_gen.mindscapeParams[0][0],
+  },
+  m2: {
+    shield: data_gen.mindscapeParams[1][0],
+    cooldown: data_gen.mindscapeParams[1][1],
+  },
+  m4: {
+    crit_: data_gen.mindscapeParams[3][0],
+    duration: data_gen.mindscapeParams[3][1],
+  },
+  m6: {
+    dmg_: data_gen.mindscapeParams[5][0],
+    duration: data_gen.mindscapeParams[5][1],
+    stacks: data_gen.mindscapeParams[5][2],
+  },
 } as const
 
 export default dm
