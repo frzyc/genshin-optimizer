@@ -34,6 +34,27 @@ const dm = {
     AssistFollowUpHammerBell:
       data_gen.skillParams['assist']['AssistFollowUpHammerBell'],
   },
+  core: {
+    dazeInc_: data_gen.coreParams[0],
+  },
+  ability: {
+    chain_dmg_: data_gen.abilityParams[0],
+    stacks: data_gen.abilityParams[1],
+  },
+  m1: {
+    dazeInc_: data_gen.mindscapeParams[0][0],
+  },
+  m2: {
+    energy: data_gen.mindscapeParams[1][0],
+    cooldown: data_gen.mindscapeParams[1][1],
+  },
+  m4: {
+    stacks: data_gen.mindscapeParams[3][0],
+    chain_ult_dmg_: data_gen.mindscapeParams[3][1],
+  },
+  m6: {
+    dmg: data_gen.mindscapeParams[5][0],
+  },
 } as const
 
 export default dm
