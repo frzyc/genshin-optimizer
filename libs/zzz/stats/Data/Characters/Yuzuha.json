@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "physical",
   "specialty": "support",
+  "faction": "SpookShack",
   "stats": {
     "atk_base": 109,
     "atk_growth": 6.4272,

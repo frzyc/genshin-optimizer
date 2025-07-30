@@ -15664,6 +15664,7 @@
       "rarity": "S",
       "attribute": "physical",
       "specialty": "anomaly",
+      "faction": "SpookShack",
       "stats": {
         "atk_base": 127,
         "atk_growth": 7.6728,
@@ -16197,6 +16198,7 @@
       "rarity": "S",
       "attribute": "physical",
       "specialty": "support",
+      "faction": "SpookShack",
       "stats": {
         "atk_base": 109,
         "atk_growth": 6.4272,
