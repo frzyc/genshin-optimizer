@@ -6,19 +6,19 @@
   "passiveName": "Sobrecarga",
   "passiveDescription": {
     "0": {
-      "0": "Após causar uma reação elemental de Sobrecarga, Supercondutor, Eletricamente Carregado, Aceleração, Intensificação, Superflorescimento ou Redemoinho de Electro, o ATQ é aumentado em <cryo>20%</cryo> por 12s."
+      "0": "Após causar uma reação elemental de Sobrecarga, Supercondutor, Eletricamente Carregado, Aceleração, Intensificação, Superflorescimento, Carga Lunar ou Redemoinho de Electro, o ATQ é aumentado em <cryo>20%</cryo> por 12s."
     },
     "1": {
-      "0": "Após causar uma reação elemental de Sobrecarga, Supercondutor, Eletricamente Carregado, Aceleração, Intensificação, Superflorescimento ou Redemoinho de Electro, o ATQ é aumentado em <cryo>25%</cryo> por 12s."
+      "0": "Após causar uma reação elemental de Sobrecarga, Supercondutor, Eletricamente Carregado, Aceleração, Intensificação, Superflorescimento, Carga Lunar ou Redemoinho de Electro, o ATQ é aumentado em <cryo>25%</cryo> por 12s."
     },
     "2": {
-      "0": "Após causar uma reação elemental de Sobrecarga, Supercondutor, Eletricamente Carregado, Aceleração, Intensificação, Superflorescimento ou Redemoinho de Electro, o ATQ é aumentado em <cryo>30%</cryo> por 12s."
+      "0": "Após causar uma reação elemental de Sobrecarga, Supercondutor, Eletricamente Carregado, Aceleração, Intensificação, Superflorescimento, Carga Lunar ou Redemoinho de Electro, o ATQ é aumentado em <cryo>30%</cryo> por 12s."
     },
     "3": {
-      "0": "Após causar uma reação elemental de Sobrecarga, Supercondutor, Eletricamente Carregado, Aceleração, Intensificação, Superflorescimento ou Redemoinho de Electro, o ATQ é aumentado em <cryo>35%</cryo> por 12s."
+      "0": "Após causar uma reação elemental de Sobrecarga, Supercondutor, Eletricamente Carregado, Aceleração, Intensificação, Superflorescimento, Carga Lunar ou Redemoinho de Electro, o ATQ é aumentado em <cryo>35%</cryo> por 12s."
     },
     "4": {
-      "0": "Após causar uma reação elemental de Sobrecarga, Supercondutor, Eletricamente Carregado, Aceleração, Intensificação, Superflorescimento ou Redemoinho com Electro, o ATQ é aumentado em <cryo>40%</cryo> por 12s."
+      "0": "Após causar uma reação elemental de Sobrecarga, Supercondutor, Eletricamente Carregado, Aceleração, Intensificação, Superflorescimento, Carga Lunar ou Redemoinho de Electro, o ATQ é aumentado em <cryo>40%</cryo> por 12s."
     }
   }
 }

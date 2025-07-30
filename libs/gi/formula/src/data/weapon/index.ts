@@ -60,12 +60,14 @@ import FerrousShadow from './FerrousShadow'
 import FesteringDesire from './FesteringDesire'
 import FilletBlade from './FilletBlade'
 import FinaleOfTheDeep from './FinaleOfTheDeep'
+import FlameForgedInsight from './FlameForgedInsight'
 import FleuveCendreFerryman from './FleuveCendreFerryman'
 import FlowerWreathedFeathers from './FlowerWreathedFeathers'
 import FlowingPurity from './FlowingPurity'
 import FluteOfEzpitzal from './FluteOfEzpitzal'
 import FootprintOfTheRainbow from './FootprintOfTheRainbow'
 import ForestRegalia from './ForestRegalia'
+import FracturedHalo from './FracturedHalo'
 import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
 import FruitOfFulfillment from './FruitOfFulfillment'
@@ -270,6 +272,7 @@ const data: TagMapNodeEntries[] = [
   FangOfTheMountainKing,
   FavoniusGreatsword,
   FerrousShadow,
+  FlameForgedInsight,
   ForestRegalia,
   FruitfulHook,
   KatsuragikiriNagamasa,
@@ -313,6 +316,7 @@ const data: TagMapNodeEntries[] = [
   EngulfingLightning,
   FavoniusLance,
   FootprintOfTheRainbow,
+  FracturedHalo,
   Halberd,
   IronPoint,
   KitainCrossSpear,

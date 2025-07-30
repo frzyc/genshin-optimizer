@@ -77,7 +77,7 @@
   "burst": {
     "name": "Scoring Cuts",
     "description": {
-      "0": "Escoffier menunjukkan keahlian pisaunya, mengakibatkan <cryo>Cryo DMG Area</cryo> dan memulihkan HP seluruh karakter party di sekitar berdasarkan ATK Escoffier."
+      "0": "Escoffier menunjukkan keahlian pisaunya, mengakibatkan <cryo>Cryo DMG Area</cryo> dan memulihkan HP seluruh Karakter party di sekitar berdasarkan ATK Escoffier."
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -118,7 +118,7 @@
       "2": "<strong>Cooking Mek: Off-the-Cuff Cookery Mode</strong>",
       "3": [
         "Meletakkan Cooking Mek di medan pertempuran. Cooking Mek bisa menyerap serangan elemental. Saat energi elemental yang diserap mencapai batas tertentu, Escoffier akan mengonversi Bahan Masak yang sudah diletakkan sebelumnya menjadi makanan yang lezat.",
-        "Escoffier membutuhkan waktu untuk membeli Bahan Masak yang baru. Setiap minggunya, dia hanya dapat menggunakan cara ini untuk menghasilkan Makanan dalam jumlah tertentu, jumlah ini akan direset setiap hari Senin pukul 04:00."
+        "Escoffier membutuhkan waktu untuk membeli Bahan Masak yang baru. Setiap minggunya, dia hanya dapat menggunakan cara ini untuk menghasilkan Makanan dalam jumlah tertentu, jumlah ini akan di-reset setiap hari Senin pukul 04:00 ({TIMEZONE})."
       ]
     }
   },

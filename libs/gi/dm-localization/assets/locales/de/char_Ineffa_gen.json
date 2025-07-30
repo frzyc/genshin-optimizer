@@ -1,0 +1,159 @@
+{
+  "name": "Ineffa",
+  "title": "Krachend donnernde Welle",
+  "description": "Ein vielseitiger Roboter, der Komponenten aus verschiedenen Reichen in sich vereint. Sein Quellkern im Brustkorb ist bereits unzählige Jahre alt.",
+  "constellationName": "Vanilla Planifolia",
+  "auto": {
+    "name": "Staubentfernende Klinge",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Wirbelschlag aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Reinigungsmodus – Stabile Rate",
+    "description": {
+      "0": "Ineffa aktiviert das fortgeschrittene Reinigungsmodul, verursacht bei Gegnern in der Umgebung einmal <electro>Elektro-Flächenschaden</electro>, erschafft den Lichtstrom-Barriereschild und ruft die intelligente Mehrzweck-Assistenzeinheit <strong>Birgitta</strong> herbei.",
+      "1": "Die Schildstärke des Lichtstrom-Barriereschilds basiert auf Ineffas ANG und hält bei <electro>Elektro-Schaden</electro> 250 % ab."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Schildstärke",
+      "2": "Schilddauer",
+      "3": "SCH von Birgittas Elektro-Entladung",
+      "4": "Dauer von Birgitta",
+      "5": "Abklingzeit",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Höchstes Gesetz – Vollständige Beseitigung",
+    "description": {
+      "0": "Beseitigt Gegner mithilfe der Raketenschläge der intelligenten Mehrzweck-Assistenzeinheit <strong>Birgitta</strong>! Schießt Birgitta ab und verursacht damit <electro>Elektro-Flächenschaden</electro>. Birgitta bleibt danach auf dem Feld.",
+      "1": "<br/>",
+      "2": "Wenn Birgitta zum Zeitpunkt von Ineffas Beschwörung bereits auf dem Feld ist, wird Birgitta erneut an dem Zielort beschworen und die Dauer wird zurückgesetzt."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "Elementarenergie",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Frequenzüberschreitender Schaltkreis",
+    "description": {
+      "0": "Lässt <strong>Birgitta</strong>, wenn sich die durch die Reaktion „Mond unter Strom“ hervorgerufenen Gewitterwolken in der Nähe befinden und Birgitta eine Elektro-Entladung auslöst, einen zusätzlichen Angriff starten, der <electro>Elektro-Flächenschaden</electro> in Höhe von 65 % von Ineffas ANG verursacht. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion „Mond unter Strom“."
+    }
+  },
+  "passive2": {
+    "name": "Vollbild-Rekonstruktionsprotokoll",
+    "description": {
+      "0": "Verleiht beim Anwenden der Spezialfähigkeit <strong>Höchstes Gesetz – Vollständige Beseitigung</strong> allen eigenen Truppenmitgliedern den Effekt „Parameter-Rekonstruktion“: Erhöht die Elementarkunde von Ineffa und die der eigenen aktuellen Figur 20 s lang um 6 % von Ineffas ANG."
+    }
+  },
+  "passive3": {
+    "name": "Mondomen-Segen – Bildähnliches Relais",
+    "description": {
+      "0": "Wenn eine Figur in der Truppe die Reaktion „Unter Strom“ auslöst, wird diese in die Reaktion „Mond unter Strom“ umgewandelt, wobei der Basis-SCH der Reaktion „Mond unter Strom“ auf der Grundlage von Ineffas ANG erhöht wird: Für je 100 Punkte ANG wird der Basis-SCH um 0,7 % erhöht. Auf diese Weise kann der Schaden um bis zu 14 % erhöht werden.",
+      "1": "<br/>",
+      "2": "Wenn der Neumond aufgeht, erhält man möglicherweise noch weiteren Segen ..."
+    }
+  },
+  "passive": {
+    "name": "Aromen-Synthesemodul",
+    "description": {
+      "0": "Gewährt, wenn Ineffa Nahrung zu sich nimmt, mit einer Wahrscheinlichkeit von 30 % eine Gewürzzutat.",
+      "1": "<br/>",
+      "2": "In Nod-Krai scheint es außerdem auf irgendeine Weise möglich zu sein, Birgittas Aussehen zu verändern ..."
+    }
+  },
+  "constellation1": {
+    "name": "Motor mit Gleichrichter",
+    "description": {
+      "0": "Verleiht, wenn Ineffa ihren Lichtstrom-Barriereschild aktiviert, allen Truppenmitgliedern in der Nähe 20 s lang den Effekt „Stromführende Resonanz“, der den durch die Reaktion „Mond unter Strom“ verursachten Schaden um einen Wert erhöht, der auf Ineffas ANG basiert: Pro 100 Punkte ANG wird der Schaden um 2,5 % erhöht. Auf diese Weise kann der Schaden um bis zu 50 % erhöht werden."
+    }
+  },
+  "constellation2": {
+    "name": "Unterstützendes Reinigungsmodul",
+    "description": {
+      "0": "Verleiht, nachdem Gegner von der Spezialfähigkeit <strong>Höchstes Gesetz – Vollständige Beseitigung</strong> getroffen worden sind, einem von ihnen den Effekt „Strafanordnung“: Fügt nach kurzer Verzögerung oder beim Besiegen des Gegners den Gegnern in seiner Nähe <electro>Elektro-Flächenschaden</electro> in Höhe von 300 % von Ineffas ANG zu. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion „Mond unter Strom“.",
+      "1": "Verleiht beim Auslösen der Spezialfähigkeit <strong>Höchstes Gesetz – Vollständige Beseitigung</strong> den aktuellen Truppenmitgliedern in der Nähe den Lichtstrom-Barriereschild."
+    }
+  },
+  "constellation3": {
+    "name": "Fortgeschrittenes Emotionsmodul",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Reinigungsmodus – Stabile Rate</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ein Weg ohne Befehle",
+    "description": {
+      "0": "Stellt der eigenen Figur in der Truppe beim Auslösen der Reaktion „Mond unter Strom“ 5 Punkte Elementarenergie wieder her, 4 s Abklingzeit."
+    }
+  },
+  "constellation5": {
+    "name": "Ein Traum jenseits des Spiegels",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Höchstes Gesetz – Vollständige Beseitigung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Ein Morgen für dich",
+    "description": {
+      "0": "Fügt, wenn Ineffa unter dem Effekt „Stromführende Resonanz“ steht und die Blitze der Gewitterwolke in der Nähe Gegner getroffen haben, den Gegnern um die eigene aktive Figur herum <electro>Elektro-Flächenschaden</electro> in Höhe von 135 % von Ineffas ANG zu. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion „Mond unter Strom“, 3,5 s Abklingzeit."
+    }
+  }
+}

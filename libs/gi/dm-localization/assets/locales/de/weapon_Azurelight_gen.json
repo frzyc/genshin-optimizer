@@ -1,0 +1,24 @@
+{
+  "name": "Azurglanz",
+  "description": {
+    "0": "Die einst makellose Klinge, rein wie der weiße Morgenstern, ist nun von einem tiefen Blau verfärbt."
+  },
+  "passiveName": "Belohnung des weißen Berges",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht nach dem Anwenden von Elementarfähigkeiten den ANG 12 s lang um <cryo>24 %</cryo>. Wenn die Elementarenergie des Trägers während der Wirkungsdauer 0 Punkte beträgt, werden der ANG nochmal um <cryo>24 %</cryo> erhöht und der KSCH wird um <cryo>40 %</cryo> erhöht."
+    },
+    "1": {
+      "0": "Erhöht nach dem Anwenden von Elementarfähigkeiten den ANG 12 s lang um <cryo>30 %</cryo>. Wenn die Elementarenergie des Trägers während der Wirkungsdauer 0 Punkte beträgt, werden der ANG nochmal um <cryo>30 %</cryo> erhöht und der KSCH wird um <cryo>50 %</cryo> erhöht."
+    },
+    "2": {
+      "0": "Erhöht nach dem Anwenden von Elementarfähigkeiten den ANG 12 s lang um <cryo>36 %</cryo>. Wenn die Elementarenergie des Trägers während der Wirkungsdauer 0 Punkte beträgt, werden der ANG nochmal um <cryo>36 %</cryo> erhöht und der KSCH wird um <cryo>60 %</cryo> erhöht."
+    },
+    "3": {
+      "0": "Erhöht nach dem Anwenden von Elementarfähigkeiten den ANG 12 s lang um <cryo>42 %</cryo>. Wenn die Elementarenergie des Trägers während der Wirkungsdauer 0 Punkte beträgt, werden der ANG nochmal um <cryo>42 %</cryo> erhöht und der KSCH wird um <cryo>70 %</cryo> erhöht."
+    },
+    "4": {
+      "0": "Erhöht nach dem Anwenden von Elementarfähigkeiten den ANG 12 s lang um <cryo>48 %</cryo>. Wenn die Elementarenergie des Trägers während der Wirkungsdauer 0 Punkte beträgt, werden der ANG nochmal um <cryo>48 %</cryo> erhöht und der KSCH wird um <cryo>80 %</cryo> erhöht."
+    }
+  }
+}

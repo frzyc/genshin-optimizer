@@ -92,7 +92,7 @@
     },
     "skillParams": {
       "0": "Daño de habilidad",
-      "1": "Daño básico de espada luminosa",
+      "1": "Daño base de espada luminosa",
       "2": "Daño por cada carga",
       "3": "Límite de cargas de energía",
       "4": "TdE",
@@ -112,7 +112,7 @@
   "passive1": {
     "name": "Escarcha turbulenta",
     "description": {
-      "0": "Si, al mantener pulsado <strong>Vórtice helado</strong>, se consumen de una vez las 2 cargas de corazón impasible, se creará un fragmento de espada luminosa que estallará inmediatamente, infligiendo Daño Físico en una cantidad equivalente al 50% del daño básico de la espada luminosa de <strong>Fulgor glacial</strong>."
+      "0": "Si, al mantener pulsado <strong>Vórtice helado</strong>, se consumen de una vez las 2 cargas de corazón impasible, se creará un fragmento de espada luminosa que estallará inmediatamente, infligiendo Daño Físico en una cantidad equivalente al 50% del daño base de la espada luminosa de <strong>Fulgor glacial</strong>."
     }
   },
   "passive2": {

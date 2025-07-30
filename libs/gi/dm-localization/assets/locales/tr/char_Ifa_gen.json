@@ -93,7 +93,7 @@
   "passive1": {
     "name": "Saha Doktorunun Gayreti",
     "description": {
-      "0": "Ifa Gece Ruhunun Lütfu durumundayken gruptaki tüm karakterlerin sahip olduğu toplam Gece Ruhu puanı kadar <strong>Kurtarma Kiti</strong> puanı kazanır. Kurtarma Kiti, yakındaki tüm grup üyelerinin verdiği Elektrik Yüklü ve Girdap Hasarını artırır."
+      "0": "Ifa Gece Ruhunun Lütfu durumundayken tüm grubun sahip olduğu her 1 Gece Ruhu puanı başına 1 <strong>Kurtarma Kiti</strong> puanı kazanır. Kurtarma Kiti, yakındaki grup üyelerinin verdiği Girdap, Elektrik Yüklü ve Ay Yüklü Hasarını artırır."
     }
   },
   "passive2": {

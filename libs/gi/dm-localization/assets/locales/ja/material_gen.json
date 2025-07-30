@@ -224,6 +224,12 @@
   "ActionPoints": {
     "name": "行動ポイント"
   },
+  "SpeculativeRecords": {
+    "name": "知略記録"
+  },
+  "SunspraySpirit": {
+    "name": "賑わい度"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -1034,6 +1040,15 @@
   "Ifa": {
     "name": "イファ"
   },
+  "Skirk": {
+    "name": "スカーク"
+  },
+  "Dahlia": {
+    "name": "ダリア"
+  },
+  "Ineffa": {
+    "name": "イネファ"
+  },
   "KachinasStellaFortuna": {
     "name": "カチーナの星屑"
   },
@@ -1075,6 +1090,15 @@
   },
   "IfasStellaFortuna": {
     "name": "イファの星屑"
+  },
+  "SkirksStellaFortuna": {
+    "name": "スカークの星屑"
+  },
+  "DahliasStellaFortuna": {
+    "name": "ダリアの星屑"
+  },
+  "IneffasStellaFortuna": {
+    "name": "イネファの星屑"
   },
   "Apple": {
     "name": "リンゴ"
@@ -5129,6 +5153,9 @@
   "SanctifyingElixir": {
     "name": "祈聖のエリクシル"
   },
+  "DustOfEnlightenment": {
+    "name": "聖啓の塵"
+  },
   "TestStaminaGrowthItem": {
     "name": "テスト用スタミナ成長アイテム"
   },
@@ -7676,6 +7703,84 @@
   "AutumnFrost": {
     "name": "初霜のモン・オトンヌキ"
   },
+  "SuspiciousDrink455": {
+    "name": "微妙な特製ドリンク「455」"
+  },
+  "Drink455": {
+    "name": "特製ドリンク「455」"
+  },
+  "DeliciousDrink455": {
+    "name": "美味しそうな特製ドリンク「455」"
+  },
+  "SuspiciousMeatLoversFeast": {
+    "name": "微妙なミートラバーフェスタ"
+  },
+  "MeatLoversFeast": {
+    "name": "ミートラバーフェスタ"
+  },
+  "DeliciousMeatLoversFeast": {
+    "name": "美味しそうなミートラバーフェスタ"
+  },
+  "SuspiciousNineFruitNectar": {
+    "name": "微妙なフルーツネクター"
+  },
+  "NineFruitNectar": {
+    "name": "フルーツネクター"
+  },
+  "DeliciousNineFruitNectar": {
+    "name": "美味しそうなフルーツネクター"
+  },
+  "SuspiciousBubblemilkPie": {
+    "name": "微妙なつぶつぶミルクパイ"
+  },
+  "BubblemilkPie": {
+    "name": "つぶつぶミルクパイ"
+  },
+  "DeliciousBubblemilkPie": {
+    "name": "美味しそうなつぶつぶミルクパイ"
+  },
+  "AbyssalBounty": {
+    "name": "「暗き淵の獲物」"
+  },
+  "ChatterOfJoyfulNights": {
+    "name": "「夜の歓談」"
+  },
+  "SuspiciousMiniAshaPockets": {
+    "name": "微妙なアシャパン"
+  },
+  "MiniAshaPockets": {
+    "name": "アシャパン"
+  },
+  "DeliciousMiniAshaPockets": {
+    "name": "美味しそうなアシャパン"
+  },
+  "SuspiciousNanasCake": {
+    "name": "微妙なナナズパインケーキ"
+  },
+  "NanasCake": {
+    "name": "ナナズパインケーキ"
+  },
+  "DeliciousNanasCake": {
+    "name": "美味しそうなナナズパインケーキ"
+  },
+  "SuspiciousGentleSeaBreeze": {
+    "name": "微妙なジェントル・シーブリーズ"
+  },
+  "GentleSeaBreeze": {
+    "name": "ジェントル・シーブリーズ"
+  },
+  "DeliciousGentleSeaBreeze": {
+    "name": "美味しそうなジェントル・シーブリーズ"
+  },
+  "SuspiciousShrimpBisque": {
+    "name": "微妙なチュペ・デ・カマロネス"
+  },
+  "ShrimpBisque": {
+    "name": "チュペ・デ・カマロネス"
+  },
+  "DeliciousShrimpBisque": {
+    "name": "美味しそうなチュペ・デ・カマロネス"
+  },
   "RecipeItem": {
     "name": "レシピアイテム"
   },
@@ -8380,6 +8485,30 @@
   },
   "RecipeCandyShells": {
     "name": "レシピ：シェルキャンディ"
+  },
+  "RecipeDrink455": {
+    "name": "レシピ：特製ドリンク「455」"
+  },
+  "RecipeMeatLoversFeast": {
+    "name": "レシピ：ミートラバーフェスタ"
+  },
+  "RecipeNineFruitNectar": {
+    "name": "レシピ：フルーツネクター"
+  },
+  "RecipeBubblemilkPie": {
+    "name": "レシピ：つぶつぶミルクパイ"
+  },
+  "RecipeMiniAshaPockets": {
+    "name": "レシピ：アシャパン"
+  },
+  "RecipeNanasCake": {
+    "name": "レシピ：ナナズパインケーキ"
+  },
+  "RecipeGentleSeaBreeze": {
+    "name": "レシピ：ジェントル・シーブリーズ"
+  },
+  "RecipeShrimpBisque": {
+    "name": "レシピ：チュペ・デ・カマロネス"
   },
   "CraftedItems": {
     "name": "合成産物"
@@ -9418,6 +9547,9 @@
   },
   "OutfitOptionBundlePhaseII": {
     "name": "コスチューム引き換えチケット・2"
+  },
+  "MaskedBallInvitationLetter": {
+    "name": "仮面舞踏会の招待状"
   },
   "BEP": {
     "name": "紀行経験"
@@ -12140,6 +12272,9 @@
   "ChevalmarinAmusementParkCommemorativeMap": {
     "name": "シュヴァルマラン映影ランドの記念マップ"
   },
+  "EasybreezeAlbum": {
+    "name": "のびのびアルバム"
+  },
   "HandDrawnMap": {
     "name": "メモに描かれた地図"
   },
@@ -12151,6 +12286,159 @@
   },
   "LetterOfUnknownOrigin": {
     "name": "出所不明の手紙"
+  },
+  "RantiysHat": {
+    "name": "ルエンティの帽子"
+  },
+  "KeyToTheHibernationChamber": {
+    "name": "「スリープポッド」の鍵"
+  },
+  "AyarHeroesCupInvitation": {
+    "name": "「アヤール英雄杯」の招待状"
+  },
+  "UltraAmazingMiracleTonicGuaranteedToMakeYouTallerWithZeroEffort": {
+    "name": "「絶対ラクラク背が伸びる超すごい霊薬」"
+  },
+  "KeyImportantItem": {
+    "name": "鍵（重要アイテム）"
+  },
+  "SomeonesOrders": {
+    "name": "誰かの指令"
+  },
+  "RekissOrders": {
+    "name": "レキスの指令"
+  },
+  "InvitationLetterForABallNowPast": {
+    "name": "終幕の晩餐の招待状"
+  },
+  "DreamMirrorRemnant": {
+    "name": "夢魂の残影"
+  },
+  "TrainingReview": {
+    "name": "特訓記録"
+  },
+  "GiftEggGiftedByCapybaraKing": {
+    "name": "カピバラキングから貰ったキラキラエッグ"
+  },
+  "GiftEggGiftedByCacasha": {
+    "name": "「カクーシャ」から貰ったキラキラエッグ"
+  },
+  "GiftEggBloodOfThisLand": {
+    "name": "キラキラエッグ・山の血"
+  },
+  "GiftEggLetsShredSharky": {
+    "name": "キラキラエッグ・ざぶざぶサメくんアターック！"
+  },
+  "GiftEggBowBeforeYourKing": {
+    "name": "キラキラエッグ・聖龍君臨"
+  },
+  "GiftEggLightOfTheBlazingSun": {
+    "name": "キラキラエッグ・太陽の咆哮"
+  },
+  "GiftEggWhereTheDrinksKeepFlowing": {
+    "name": "キラキラエッグ・捧ぐは酒杯"
+  },
+  "GiftEggFietena": {
+    "name": "キラキラエッグ・フィエテナ"
+  },
+  "EasybreezeHolidayResortInvitation": {
+    "name": "のびのびリゾートの招待状"
+  },
+  "Sun": {
+    "name": "「太陽」"
+  },
+  "MiniatureSun": {
+    "name": "ミニ「太陽」"
+  },
+  "TeyvatCommemorativeAlbum": {
+    "name": "テイワットの記念アルバム"
+  },
+  "KeepsakePhotoWithYelan": {
+    "name": "夜蘭との記念写真"
+  },
+  "TrainingReviewRead": {
+    "name": "特訓履歴（既読）"
+  },
+  "DecipheredMessage": {
+    "name": "解読後のメッセージ"
+  },
+  "MysteriousBolt": {
+    "name": "奇妙なボルト"
+  },
+  "InvestigativeReportBakunawa": {
+    "name": "調査報告——バクナワ"
+  },
+  "InvestigativeReportMareJivari": {
+    "name": "調査報告——燼寂海"
+  },
+  "InvestigativeReportSecretCave": {
+    "name": "調査報告——秘密の洞窟"
+  },
+  "CryptexLetter": {
+    "name": "暗号筒の手紙"
+  },
+  "PipilpanIdolCompetitionBrochure": {
+    "name": "『ピピルパン・アイドルコンテスト』"
+  },
+  "DarkFinanciersCipher": {
+    "name": "「ブラックマネー・ロード」の暗号表"
+  },
+  "InvitationToAnAuction": {
+    "name": "競売の招待状"
+  },
+  "EasybreezeHolidayResortMap": {
+    "name": "のびのびリゾートマップ"
+  },
+  "ScribbledNotes": {
+    "name": "乱雑に書かれたノート"
+  },
+  "BeautifullyWrittenNotes": {
+    "name": "綺麗な筆跡のノート"
+  },
+  "PictureGiftedByCapybaraKing": {
+    "name": "カピバラキングから貰った写真"
+  },
+  "PictureGiftedByCacasha": {
+    "name": "「カクーシャ」から貰った写真"
+  },
+  "SomeonesTatteredNotesI": {
+    "name": "誰かのボロボロなノート・1"
+  },
+  "SomeonesTatteredNotesII": {
+    "name": "誰かのボロボロなノート・2"
+  },
+  "CorrodedTatteredNotesIII": {
+    "name": "腐蝕したボロボロのノート・3"
+  },
+  "LavawalkersResolution": {
+    "name": "火渡りの堅実"
+  },
+  "YellowedNotes": {
+    "name": "黄ばんだ手記"
+  },
+  "EasybreezeBadge": {
+    "name": "のびのびバッジ"
+  },
+  "SundjattasPhlogistonForgeNotes": {
+    "name": "スンジャタの燃素鍛造に関する記事"
+  },
+  "PriestesssRecordsI": {
+    "name": "祭司の記録・1"
+  },
+  "PriestesssRecordsII": {
+    "name": "祭司の記録・2"
+  },
+  "PriestesssRecordsIII": {
+    "name": "祭司の記録・3"
+  },
+  "LetterAddressedToTheCaptain": {
+    "name": "船長への手紙"
+  },
+  "TecuhtlisLetter": {
+    "name": "テクトリの手紙"
+  },
+  "SomeonesLostPassword": {
+    "name": "誰かが落とした合言葉のメモ"
   },
   "TearsAmongTheStars": {
     "name": "星間の涙"
@@ -12959,6 +13247,18 @@
   "RadiantSpincrystal152": {
     "name": "旋曜玉帛・152"
   },
+  "RadiantSpincrystal153": {
+    "name": "旋曜玉帛・153"
+  },
+  "RadiantSpincrystal154": {
+    "name": "旋曜玉帛・154"
+  },
+  "RadiantSpincrystal155": {
+    "name": "旋曜玉帛・155"
+  },
+  "RadiantSpincrystal156": {
+    "name": "旋曜玉帛・156"
+  },
   "LanternFiber": {
     "name": "紙の繊維"
   },
@@ -13045,6 +13345,9 @@
   },
   "CompositeBowTuningKit": {
     "name": "強弓のチューニングキット"
+  },
+  "DriftersCrystalMarrow": {
+    "name": "漫遊者の晶髄"
   },
   "FalconsDance": {
     "name": "鷹の舞"
@@ -13913,6 +14216,33 @@
   "TravelNotesBalletica": {
     "name": "紀行・円舞"
   },
+  "SkirkLoneShadow": {
+    "name": "スカーク・孤影"
+  },
+  "DahliaSacredDuty": {
+    "name": "ダリア・天職"
+  },
+  "CelebrationLavishGala": {
+    "name": "祭典・饗宴"
+  },
+  "TravelNotesSpeculation": {
+    "name": "紀行・知略"
+  },
+  "IneffaCommand": {
+    "name": "イネファ・指示"
+  },
+  "NatlanWheelOfFlame": {
+    "name": "ナタ・灼輪"
+  },
+  "NatlanChasingTheWind": {
+    "name": "ナタ・風乗り"
+  },
+  "TravelNotesEasyBreezy": {
+    "name": "紀行・のびのび"
+  },
+  "CelebrationTunaOnRice": {
+    "name": "祭典・マグロとシャリ"
+  },
   "EchoDandelionKnight": {
     "name": "軌跡·蒲公英騎士"
   },
@@ -13945,6 +14275,12 @@
   },
   "EchoFlameMane": {
     "name": "軌跡・熾鬣の獅子"
+  },
+  "EchoPlaneOfEuthymia": {
+    "name": "軌跡・一心浄土"
+  },
+  "EchoLonesomeTranscendence": {
+    "name": "軌跡・孤辰悲哀"
   },
   "AnemoculusResonanceStone": {
     "name": "風神の瞳の共鳴石"
@@ -14230,6 +14566,18 @@
   },
   "Ukulele": {
     "name": "ウクレレ"
+  },
+  "ForensicImagingDevice": {
+    "name": "総合映像記録器"
+  },
+  "NeoTerminalFloatingLeafModel": {
+    "name": "新型アーカーシャ端末「浮き葉」"
+  },
+  "LingeringEuphonia": {
+    "name": "「余韻」"
+  },
+  "LeapingSpiritPiano": {
+    "name": "ホッピングピアノ"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "説明：風神の瞳の共鳴石"
@@ -14615,6 +14963,42 @@
   "ACloudyMoment": {
     "name": "気まずい時間"
   },
+  "PuffyPolka": {
+    "name": "プクフグダンス"
+  },
+  "CheerfulGreeting": {
+    "name": "元気な挨拶"
+  },
+  "PhotographicMuse": {
+    "name": "撮影のヒラメキ"
+  },
+  "SharkySurfing": {
+    "name": "ざぶざぶサメくん"
+  },
+  "MagicalPreparation": {
+    "name": "マジック準備"
+  },
+  "HugtasticYuegui": {
+    "name": "月桂ぎゅーっ！"
+  },
+  "KeenConsideration": {
+    "name": "鋭い思考"
+  },
+  "TidyingUp": {
+    "name": "身だしなみ"
+  },
+  "WatchingAndWaiting": {
+    "name": "集中して待機"
+  },
+  "MastersPoise": {
+    "name": "達人の風格"
+  },
+  "ConfidentCountenance": {
+    "name": "自信満々な表情"
+  },
+  "HandEyeBodyCoordination": {
+    "name": "手練れの動き"
+  },
   "FantasticalMarvel": {
     "name": "素晴らしきトリック"
   },
@@ -14656,6 +15040,15 @@
   },
   "OdeToAzureSkies": {
     "name": "青空の詩"
+  },
+  "BlazingSunfireScoursTheGloom": {
+    "name": "闇を焼き尽くす炎"
+  },
+  "EternalDreamsOfSerenity": {
+    "name": "敢えなき夢"
+  },
+  "VigorousYapping": {
+    "name": "元気いっぱいのお話し！"
   },
   "RhodeiaOfLoch": {
     "name": "純水精霊・ローデシア"
@@ -14740,6 +15133,9 @@
   },
   "GoldenWolflord": {
     "name": "黄金王獣"
+  },
+  "GluttonousYumkasaurMountainKing": {
+    "name": "山の王・貪食のユムカ竜"
   },
   "UndividedHeart": {
     "name": "唯一の心"
@@ -15077,6 +15473,24 @@
   "TourOfTepeilhuitl": {
     "name": "山を駆け巡る鐵火"
   },
+  "MamaloacosFrigidRain": {
+    "name": "五重天の寒雨"
+  },
+  "HumanitysNameUnfettered": {
+    "name": "「人の名」解放"
+  },
+  "BulletTrick": {
+    "name": "弾丸トリック"
+  },
+  "DanceVestmentsBillowLikeRainbowJade": {
+    "name": "舞う袂軽く美玉光る"
+  },
+  "CuriousCasefiles": {
+    "name": "奇想天外捕物帳"
+  },
+  "TheAllDevourer": {
+    "name": "万物を喰らう者"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -15368,6 +15782,24 @@
   "Tatankasaurus": {
     "name": "ライノ竜"
   },
+  "TheDockhandsAssistant": {
+    "name": "船渠剣"
+  },
+  "CrownOfTheSaints": {
+    "name": "諸聖の栄冠"
+  },
+  "ScrollOfTheHeroOfCinderCity": {
+    "name": "灰燼の都に立つ英雄の絵巻"
+  },
+  "RawrRawr": {
+    "name": "キュイッ！キュイッ！"
+  },
+  "CrownlessCrown": {
+    "name": "主なき冠"
+  },
+  "WhimsicalDanceOfTheWithered": {
+    "name": "異想が枯れ落ちる円舞"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -15538,6 +15970,18 @@
   },
   "CollectiveOfPlenty": {
     "name": "「豊穣の邦」"
+  },
+  "CalligraphyTavern": {
+    "name": "インク酒場"
+  },
+  "ConstellationMetropole": {
+    "name": "オルビット城"
+  },
+  "ForestBlessing": {
+    "name": "森の祝福"
+  },
+  "GiftOfTheGoddessOfProphecy": {
+    "name": "預言の女神の贈り物"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
@@ -15734,6 +16178,21 @@
   "ArtOfSleepyMeditation": {
     "name": "むにゃむにゃ瞑想術"
   },
+  "FightForDeath": {
+    "name": "「死」のための戦い"
+  },
+  "FlyingSquadAttack": {
+    "name": "飛行隊出撃！"
+  },
+  "FruitsOfTraining": {
+    "name": "トレーニングの成果"
+  },
+  "HarvestTime": {
+    "name": "収穫期"
+  },
+  "AwesomeBro": {
+    "name": "いいぞ、きょうだい。"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -15793,6 +16252,15 @@
   },
   "GreatRedSandLongNight": {
     "name": "大赤砂海・長夜"
+  },
+  "GreatRedSandBronze": {
+    "name": "大赤砂海・赤銅"
+  },
+  "GreatRedSandCrown": {
+    "name": "大赤砂海・冠"
+  },
+  "FontaPassionateRed": {
+    "name": "フォンタ・真摯な赤念"
   },
   "BeginnerPlayerBadge": {
     "name": "初心者プレイヤーメダル"
@@ -15871,6 +16339,48 @@
   },
   "NewYearsCheer": {
     "name": "大つごもりの歓声"
+  },
+  "TranquilBanquet": {
+    "name": "静謐の饗宴"
+  },
+  "AdventuresInBlazingHue": {
+    "name": "燃えろ！ラクガキ大冒険"
+  },
+  "RadiantPhantasm": {
+    "name": "幻形の煌めき"
+  },
+  "RadiantPhantasmSublimation": {
+    "name": "幻形の煌めき・真化"
+  },
+  "SerpentDevourer": {
+    "name": "呑蛇"
+  },
+  "SerpentDevourerSublimation": {
+    "name": "呑蛇・真化"
+  },
+  "ArdentStorm": {
+    "name": "煌烈"
+  },
+  "ArdentStormSublimation": {
+    "name": "煌烈・真化"
+  },
+  "ShatteredMoon": {
+    "name": "砕月"
+  },
+  "ShatteredMoonSublimation": {
+    "name": "砕月・真化"
+  },
+  "HallowedFetters": {
+    "name": "聖縛"
+  },
+  "HallowedFettersSublimation": {
+    "name": "聖縛・真化"
+  },
+  "Starpiercer": {
+    "name": "貫星"
+  },
+  "StarpiercerSublimation": {
+    "name": "貫星・真化"
   },
   "AdventurerCamp": {
     "name": "冒険者の臨時拠点"
@@ -16378,6 +16888,15 @@
   },
   "PhlogistonFloorLampHomecoming": {
     "name": "燃素フロアランプ-「帰途」"
+  },
+  "AglowThroughTheLingeringDay": {
+    "name": "「導きの明かり」"
+  },
+  "GentleNightSky": {
+    "name": "「フワフワナイトスター」"
+  },
+  "StandingFlammabombWoodStreetLamp": {
+    "name": "スタンド式フレイムボム材街灯"
   },
   "EfflorescentIllumination": {
     "name": "「花葉百相の光」"
@@ -17048,6 +17567,9 @@
   "PhlogistonLampRainCover": {
     "name": "燃素ランプ-「傘型カバー」"
   },
+  "MiniatureCandlestandMiniatureSun": {
+    "name": "小さな燭台-「小さな太陽」"
+  },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "花瓶-「水色の落着き」"
   },
@@ -17209,6 +17731,9 @@
   },
   "SweetDreams": {
     "name": "「良い夢を」"
+  },
+  "FlowerShapedMachineComponent": {
+    "name": "「花型のパーツ」"
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "茶房の道具-「毫厘の重さ」"
@@ -18077,6 +18602,27 @@
   "LandOfPlentysSentinel": {
     "name": "「豊穣の地の見張り」"
   },
+  "EasyBreezyWilderness": {
+    "name": "「のびのびホリデーの野原」"
+  },
+  "EasyBreezyNest": {
+    "name": "「のびのびホリデーの休憩」"
+  },
+  "EasyBreezyGuestHouse": {
+    "name": "「のびのびホリデーの仮住まい」"
+  },
+  "EasyBreezyComfort": {
+    "name": "「のびのびホリデーのくつろぎ」"
+  },
+  "EasyBreezyFlutterby": {
+    "name": "「のびのびホリデーの漂泊」"
+  },
+  "EasyBreezyNights": {
+    "name": "「ホリデーナイトフィーバー」"
+  },
+  "ReimaginedColors": {
+    "name": "「色彩の再構築」"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "花鳥の噴水"
   },
@@ -18196,6 +18742,15 @@
   },
   "FlowerFeatherClanWarningBalloon": {
     "name": "花翼の集「警告」気球"
+  },
+  "LordOfTheOceanTides": {
+    "name": "「海流の王」"
+  },
+  "MarketStatueVibrantVacation": {
+    "name": "マーケットの像-「七色のびのび像」"
+  },
+  "CoffeeTime": {
+    "name": "「コーヒーブレイク」"
   },
   "AdeptusGate": {
     "name": "三眼の仙牌"
@@ -18637,6 +19192,15 @@
   },
   "ExquisiteCarving": {
     "name": "「精緻なる氷像」"
+  },
+  "PlatedTargetRhythmOfWar": {
+    "name": "金属の標的-「射撃のリズム」"
+  },
+  "PeacefulForestDream": {
+    "name": "「安らかな森の夢」"
+  },
+  "HighFlyersTrampoline": {
+    "name": "「ハイジャンプトランポリン」"
   },
   "PottedPlantVerdantVastness": {
     "name": "盆栽-「翠色の縮図」"
@@ -19082,6 +19646,15 @@
   "FilmStandSurintendanteChevalmarin": {
     "name": "映影スタンド-「シュヴァルマラン婦人」"
   },
+  "FightingChords": {
+    "name": "「ファイターズエコー」"
+  },
+  "JourneyThroughWindAndWaves": {
+    "name": "「波風と駆ける旅」"
+  },
+  "ParasolSandAndTheSeaBreeze": {
+    "name": "ビーチパラソル-「砂粒と海風」"
+  },
   "BookshelfFreeReading": {
     "name": "ブックラック-「ご自由にお読みください」"
   },
@@ -19108,6 +19681,21 @@
   },
   "MoltenLavaPool": {
     "name": "「溶岩池」"
+  },
+  "WoodenModelSun": {
+    "name": "木製模型-「太陽」"
+  },
+  "WaveyShark": {
+    "name": "「ざぶざぶシャーク」"
+  },
+  "AshasPaintDrumRampage": {
+    "name": "アシャのコロコロ-「猪突猛進」"
+  },
+  "FluffyAlpacaSheriff": {
+    "name": "「モコモコ保安官」"
+  },
+  "SpeedyWanderer": {
+    "name": "「スピードランナー」"
   },
   "TeaHarvestsStockpilingAndTransport": {
     "name": "「茶穫の貯蔵と運搬」"
@@ -19310,6 +19898,12 @@
   "AlignedVolcanicStoneStool": {
     "name": "火山岩製の「ピンポイント」修行椅子"
   },
+  "NightWindStoneStoolHarmoniousUnity": {
+    "name": "謎煙の石製椅子-「完全なる調和」"
+  },
+  "DeckchairHealthyGlow": {
+    "name": "ビーチチェア-「ヘルシーサンシャイン」"
+  },
   "TwoStoryHilichurlSentryTower": {
     "name": "ヒルチャールの二階建て監視塔"
   },
@@ -19498,5 +20092,17 @@
   },
   "GrainfruitPuffer": {
     "name": "「グレインポンポンマシーン」"
+  },
+  "FizzyFireworks": {
+    "name": "「ヒンヤリハナビ」"
+  },
+  "FlyHigherTogether": {
+    "name": "「ハッピースウィング」"
+  },
+  "SirCapyOfTheLongIncisors": {
+    "name": "「ねむねむゲッシナイト」"
+  },
+  "DanceOffStageRevelrousRhythm": {
+    "name": "熱狂ターンテーブル-「フェスティバル・ビート」"
   }
 }

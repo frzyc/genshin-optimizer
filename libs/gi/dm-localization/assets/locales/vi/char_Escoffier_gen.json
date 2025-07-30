@@ -118,7 +118,7 @@
       "2": "<strong>Máy Nấu Nướng Đa Chức Năng: Chế Độ Nấu Nướng Ngẫu Hứng</strong>",
       "3": [
         "Đặt Máy Nấu Nướng trên sân. Máy Nấu Nướng có thể hấp thụ đòn tấn công nguyên tố. Khi Năng Lượng Nguyên Tố hấp thụ đến mức giới hạn sẽ chuyển hóa nguyên liệu mà Escoffier đặt trong đó thành món ăn ngon.",
-        "Escoffier cần thời gian để mua nguyên liệu mới. Mỗi tuần chỉ có thể thông qua cách thức này để chế biến một lượng món ăn nhất định, số lần sẽ làm mới lúc 4:00 sáng mỗi thứ hai."
+        "Escoffier cần thời gian để mua nguyên liệu mới. Mỗi tuần chỉ có thể thông qua cách thức này để chế biến một lượng món ăn nhất định, số lần sẽ làm mới lúc 4:00 sáng mỗi thứ hai. {TIMEZONE}"
       ]
     }
   },

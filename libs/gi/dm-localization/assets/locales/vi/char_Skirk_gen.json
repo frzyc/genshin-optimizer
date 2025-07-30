@@ -1,0 +1,184 @@
+{
+  "name": "Skirk",
+  "title": "Ánh Sao Hư Không",
+  "description": "Người từng xuất hiện trong Khe Nứt Vực Sâu và Biển Khởi Nguyên, là sư phụ dạy võ cho Tartaglia. Nữ võ sĩ cô độc một mình.",
+  "constellationName": "Cung Lân Tinh",
+  "auto": {
+    "name": "Đoạn",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần tấn công liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để xoay và ném ngọn thương pha lê, gây sát thương cho kẻ địch phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cực Ác Kỹ - Tránh",
+    "description": {
+      "0": "Mô phỏng phong cách chiến đấu của Kỵ Sĩ Cực Ác, sản sinh hiệu quả khác nhau bằng cách Nhấn và Nhấn Giữ.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Skirk nhận 45 điểm <strong>Rắn Xảo Quyệt</strong>, đồng thời đổi sang chế độ <strong>Thất Tướng Nhất Thiểm</strong>.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn Giữ</strong>",
+      "6": "Skirk nhận 45 điểm Rắn Xảo Quyệt và di chuyển nhanh liên tục, trong trạng thái này sẽ tăng Kháng Gián Đoạn của Skirk.",
+      "7": "Trong thời gian này, Skirk có thể điều khiển hướng di chuyển nhanh, có thể di chuyển trên mặt nước, đồng thời thi triển lại kỹ năng sẽ kết thúc sớm trạng thái di chuyển nhanh."
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Trọng Kích tiêu hao thể lực",
+      "7": "Sát Thương Khi Đáp",
+      "8": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "9": "Thời Gian Duy Trì Thất Tướng Nhất Thiểm",
+      "10": "Giới Hạn Rắn Xảo Quyệt",
+      "11": "CD",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Cực Ác Kỹ - Diệt",
+    "description": {
+      "0": "Kỹ Năng Nộ của Skirk không phụ thuộc vào Năng Lượng Nguyên Tố, mà sẽ phụ thuộc vào <strong>Rắn Xảo Quyệt</strong>.",
+      "1": "Khi Skirk có ít nhất 50 điểm Rắn Xảo Quyệt, sẽ có thể tiêu hao toàn bộ Rắn Xảo Quyệt để thi triển Kỹ Năng Nộ, xé tan không gian phía trước và thực hiện đòn chém liên tiếp với tốc độ cao, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>. Đồng thời, dựa vào lượng điểm Rắn Xảo Quyệt mà Skirk sở hữu vượt mức 50 điểm khi thi triển, mỗi 1 điểm Rắn Xảo Quyệt đều sẽ tăng sát thương Kỹ Năng Nộ lần này, cách thức này tối đa ghi nhận 12 điểm Rắn Xảo Quyệt.",
+      "2": "<br/>",
+      "3": "Khi Skirk ở trong chế độ <strong>Thất Tướng Nhất Thiểm</strong>, Kỹ Năng Nộ \"Cực Ác Kỹ - Diệt\" sẽ được thay thế bằng \"Cực Ác Kỹ - Tận\".",
+      "4": "<br/>",
+      "5": "<strong>Cực Ác Kỹ - Tận</strong>",
+      "6": "Kỹ Năng Nộ đặc biệt có thể thi triển mà không cần tiêu hao Rắn Xảo Quyệt.",
+      "7": "Sau khi thi triển, Skirk sẽ nhận được hiệu quả Điêu Tàn, hiệu quả này duy trì cho đến khi kết thúc chế độ Thất Tướng Nhất Thiểm. Sau khi mở khóa Thiên Phú Cố Định <strong>Lý Luận Vượt Nguyên Lý</strong>, Skirk sẽ còn hấp thụ Vết Nứt Hư Không trong một phạm vi nhất định gần đó.",
+      "8": "Trong thời gian duy trì hiệu quả Điêu Tàn, mỗi 0.1s, sau khi Skirk Tấn Công Thường trúng kẻ địch sẽ tăng sát thương của lần Tấn Công Thường này. Nếu khi thi triển <strong>Cực Ác Kỹ - Tận</strong> có hấp thụ Vết Nứt Hư Không, sẽ căn cứ vào số lượng Vết Nứt Hư Không đã hấp thụ để tăng mạnh hơn sát thương do lần Tấn Công Thường này gây ra.",
+      "9": "Hiệu quả này sẽ xóa khi kích hoạt đủ 10 lần."
+    },
+    "skillParams": {
+      "0": "Sát Thương Chém",
+      "1": "Sát Thương Đòn Chém Cuối Cùng",
+      "2": "Buff Rắn Xảo Quyệt",
+      "3": "Sát Thương Tăng Khi Hấp Thụ 0/1/2/3 Vết Nứt Hư Không",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Lý Luận Vượt Nguyên Lý",
+    "description": {
+      "0": "Khi nhân vật trong đội gần đó kích hoạt phản ứng Đóng Băng, Siêu Dẫn, Khuếch Tán Nguyên Tố Băng hoặc Kết Tinh Nguyên Tố Băng lên kẻ địch, sẽ tạo ra một Vết Nứt Hư Không gần kẻ địch. Hiệu quả này mỗi 2.5s tối đa kích hoạt một lần, trong trận chỉ tồn tại tối đa 3 Vết Nứt Hư Không do bản thân Skirk tạo ra.",
+      "1": "<br/>",
+      "2": "Skirk có thể thông qua những cách sau để hấp thụ Vết Nứt Hư Không trong phạm vi nhất định gần đó:",
+      "3": [
+        "Khi đòn Trọng Kích trong chế độ <strong>Thất Tướng Nhất Thiểm</strong> đánh trúng kẻ địch.",
+        "Khi thi triển Kỹ Năng Nộ đặc biệt <strong>Cực Ác Kỹ - Tận</strong> trong chế độ Thất Tướng Nhất Thiểm.",
+        "Khi Nhấn Giữ thi triển Kỹ Năng Nguyên Tố <strong>Cực Ác Kỹ - Tránh</strong> để tiến hành di chuyển nhanh."
+      ],
+      "4": "<br/>",
+      "5": "Mỗi hút được một Vết Nứt Hư Không, Skirk sẽ nhận 8 điểm <strong>Rắn Xảo Quyệt</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Về Với Quên Lãng",
+    "description": {
+      "0": "Khi nhân vật <hydro>Nguyên Tố Thủy</hydro> trong đội ở gần tấn công <hydro>Nguyên Tố Thủy</hydro> trúng kẻ địch, hoặc nhân vật <cryo>Nguyên Tố Băng</cryo> khác Skirk trong đội ở gần tấn công <cryo>Nguyên Tố Băng</cryo> trúng kẻ địch, Skirk sẽ nhận được một tầng hiệu quả Vượt Qua Chết Chóc trong 20s, tối đa cộng dồn 3 tầng, mỗi tầng tính giờ riêng.",
+      "1": "Mỗi nhân vật tối đa khiến Skirk nhận được 1 tầng Vượt Qua Chết Chóc thông qua cách thức này.",
+      "2": "Mỗi tầng Vượt Qua Chết Chóc sẽ khiến Skirk khi thi triển Tấn Công Thường trong chế độ <strong>Thất Tướng Nhất Thiểm</strong> sẽ gây lượng sát thương bằng 110%/120%/170% sát thương gốc, đồng thời thi triển Kỹ Năng Nộ <strong>Cực Ác Kỹ - Diệt</strong> sẽ gây lượng sát thương bằng 105%/115%/160% sát thương gốc."
+    }
+  },
+  "passive3": {
+    "name": "Truyền Thụ Võ Thuật",
+    "description": {
+      "0": "Khi loại nguyên tố của tất cả nhân vật trong đội là <hydro>Thủy</hydro> hoặc <cryo>Băng</cryo>, đồng thời có ít nhất một nhân vật Nguyên Tố Thủy và một nhân vật Nguyên Tố Băng, thì cấp <strong>Kỹ Năng Nguyên Tố</strong> của nhân vật trong đội bản thân tăng 1 cấp."
+    }
+  },
+  "constellation1": {
+    "name": "Yên Viễn",
+    "description": {
+      "0": "Hiệu quả của thiên phú cố định <strong>Lý Luận Vượt Nguyên Lý</strong> được cường hóa: Mỗi hấp thụ một Vết Nứt Hư Không, sẽ triệu hồi một Đao Tinh Thể tấn công kẻ địch ở gần, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> tương đương 500% Tấn Công của Skirk, sát thương này được tính là sát thương Trọng Kích.",
+      "1": "Cần mở khóa thiên phú cố định \"Lý Luận Vượt Nguyên Lý\"."
+    }
+  },
+  "constellation2": {
+    "name": "Trụy Uyên",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Cực Ác Kỹ - Tránh</strong>, Skirk sẽ nhận thêm 10 điểm <strong>Rắn Xảo Quyệt</strong>.",
+      "1": "Khi thi triển Kỹ Năng Nộ <strong>Cực Ác Kỹ - Diệt</strong>, sẽ tăng hiệu quả sát thương Kỹ Năng Nộ lần này, tối đa tính thêm 10 điểm Rắn Xảo Quyệt.",
+      "2": "Ngoài ra, trong 12.5s sau khi Skirk thi triển Kỹ Năng Nộ đặc biệt <strong>Cực Ác Kỹ - Tận</strong> trong chế độ <strong>Thất Tướng Nhất Thiểm</strong>, sẽ tăng 70% Tấn Công. Hiệu quả này sẽ xóa khi Skirk thoát chế độ Thất Tướng Nhất Thiểm."
+    }
+  },
+  "constellation3": {
+    "name": "Tội Duyên",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Cực Ác Kỹ - Diệt</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lưu Đoạn",
+    "description": {
+      "0": "Hiệu quả của thiên phú cố định <strong>Về Với Quên Lãng</strong> được cường hóa: Mỗi tầng hiệu quả Vượt Qua Chết Chóc sẽ còn khiến Tấn Công của Skirk tăng 10%/20%/40%.",
+      "1": "Cần mở khóa thiên phú cố định \"Về Với Quên Lãng\"."
+    }
+  },
+  "constellation5": {
+    "name": "Kết Nguyện",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Cực Ác Kỹ - Tránh</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15"
+    }
+  },
+  "constellation6": {
+    "name": "Chí Nguyên",
+    "description": {
+      "0": "Skirk mỗi hấp thụ một Vết Nứt Hư Không từ hiệu quả của thiên phú cố định <strong>Lý Luận Vượt Nguyên Lý</strong>, sẽ nhận được 1 tầng hiệu quả Cực Ác Kỹ - Trảm. Skirk có thể tiêu hao hiệu quả này để hỗ trợ tấn công và giảm sát thương phải chịu trong chế độ <strong>Thất Tướng Nhất Thiểm</strong>. Hiệu quả này duy trì 15s, tối đa cộng dồn 3 tầng, mỗi tầng tính giờ riêng.",
+      "1": "Cần mở khóa thiên phú cố định \"Lý Luận Vượt Nguyên Lý\".",
+      "2": "<br/>",
+      "3": "<strong>Cực Ác Kỹ - Trảm</strong>",
+      "4": [
+        "Khi thi triển Kỹ Năng Nộ <strong>Cực Ác Kỹ - Diệt</strong>, sẽ tiêu hao toàn bộ số tầng <strong>Cực Ác Kỹ - Trảm</strong> để hỗ trợ tấn công, mỗi tầng <strong>Cực Ác Kỹ - Trảm</strong> sẽ gây <cryo>Sát Thương Nguyên Tố Băng</cryo> tương đương 750% Tấn Công của Skirk, sát thương này được tính là sát thương Kỹ Năng Nộ.",
+        "Khi Skirk thực hiện Tấn Công Thường đòn thứ 3 hoặc 5 trong chế độ Thất Tướng Nhất Thiểm trúng kẻ địch, sẽ tiêu hao 1 tầng <strong>Cực Ác Kỹ - Trảm</strong> để tiến hành 3 lần hỗ trợ tấn công, mỗi lần hỗ trợ tấn công gây <cryo>Sát Thương Nguyên Tố Băng</cryo> tương đương 180% Tấn Công của Skirk, sát thương này được tính là sát thương Tấn Công Thường.",
+        "Khi Skirk chịu sát thương trong chế độ Thất Tướng Nhất Thiểm, sẽ tiêu hao 1 tầng <strong>Cực Ác Kỹ - Trảm</strong>, khiến sát thương phải chịu lần này giảm 80%, đồng thời tấn công kẻ địch ở gần 3 lần, mỗi lần gây <cryo>Sát Thương Nguyên Tố Băng</cryo> tương đương 180% Tấn Công của Skirk. Sát thương này được tính là sát thương Trọng Kích."
+      ]
+    }
+  }
+}

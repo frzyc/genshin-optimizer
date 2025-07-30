@@ -147,7 +147,7 @@
   "constellation4": {
     "name": "Inspección: Defensa intimidante",
     "description": {
-      "0": "Cuando Cyno está en el estado de “abrecaminos del juramento” de <strong>Rito sagrado: Celeridad lupina</strong> y causa una reacción de Electrocargado, Superconductor, Sobrecarga, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, todos los miembros del equipo cercanos (a excepción de Cyno) recuperan 3 pts. de Energía Elemental.",
+      "0": "Cuando Cyno está en el estado de “abrecaminos del juramento” de <strong>Rito sagrado: Celeridad lupina</strong> y causa una reacción de Electrocargado, Electrocargado Lunar, Superconductor, Sobrecarga, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, todos los miembros del equipo cercanos (a excepción de Cyno) recuperan 3 pts. de Energía Elemental.",
       "1": "Este efecto solo puede ocurrir 5 veces por cada uso de <strong>Rito sagrado: Celeridad lupina</strong>."
     }
   },
