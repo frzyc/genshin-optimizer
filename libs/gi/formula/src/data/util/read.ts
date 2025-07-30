@@ -96,6 +96,9 @@ export class Read extends BaseRead<Tag> {
   get electrocharged(): Read {
     return super.with('trans', 'electrocharged')
   }
+  get lunarcharged(): Read {
+    return super.with('trans', 'lunarcharged')
+  }
   get superconduct(): Read {
     return super.with('trans', 'superconduct')
   }

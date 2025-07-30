@@ -20,6 +20,7 @@ declare module '@mui/material/styles' {
     overloaded: Palette['primary']
     superconduct: Palette['primary']
     electrocharged: Palette['primary']
+    lunarcharged: Palette['primary']
     shattered: Palette['primary']
     swirl: Palette['primary']
     burning: Palette['primary']
@@ -47,6 +48,7 @@ declare module '@mui/material/styles' {
     overloaded?: PaletteOptions['primary']
     superconduct?: PaletteOptions['primary']
     electrocharged?: PaletteOptions['primary']
+    lunarcharged?: PaletteOptions['primary']
     shattered?: PaletteOptions['primary']
     swirl?: PaletteOptions['primary']
     burning?: PaletteOptions['primary']
@@ -76,6 +78,7 @@ declare module '@mui/material/Button' {
     overloaded: true
     superconduct: true
     electrocharged: true
+    lunarcharged: true
     shattered: true
     swirl: true
     burning: true
@@ -105,6 +108,7 @@ declare module '@mui/material/Chip' {
     overloaded: true
     superconduct: true
     electrocharged: true
+    lunarcharged: true
     shattered: true
     swirl: true
     burning: true
@@ -150,6 +154,7 @@ declare module '@mui/material/SvgIcon' {
     overloaded: true
     superconduct: true
     electrocharged: true
+    lunarcharged: true
     shattered: true
     swirl: true
     burning: true
@@ -224,6 +229,10 @@ export const theme = createTheme({
     electrocharged: commonTheme.palette.augmentColor({
       color: { main: '#e299fd' },
       name: 'electrocharged',
+    }),
+    lunarcharged: commonTheme.palette.augmentColor({
+      color: { main: '#ecb8ff' },
+      name: 'lunarcharged',
     }),
     shattered: commonTheme.palette.augmentColor({
       color: { main: '#98fffd' },

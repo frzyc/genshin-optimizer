@@ -277,6 +277,7 @@ function getCharAssetsFromHakushin(key: NonTravelerCharacterKey) {
     passive2: data.Passives[1].Icon,
     // Natlan passive might be [2]
     // TODO: passive might be last, add some handling if needed
+    passive: key === 'Ineffa' ? data.Passives[2].Icon : undefined,
     passive3: data.Passives[data.Passives.length - 1].Icon,
     // passive: '' // TODO: add handling if needed
     constellation1: data.Constellations[0].Icon,

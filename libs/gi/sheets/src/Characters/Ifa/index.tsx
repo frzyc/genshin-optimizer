@@ -112,6 +112,7 @@ const a1Essentials_swirl_dmg_ = greaterEq(
   prod(percent(dm.passive1.reaction_dmg_perEssential), a1Essentials)
 )
 const a1Essentials_electrocharged_dmg_ = { ...a1Essentials_swirl_dmg_ }
+const a1Essentials_lunarcharged_dmg_ = { ...a1Essentials_swirl_dmg_ }
 
 const [condA4NsBurstPath, condA4NsBurst] = cond(key, 'a4NsBurst')
 const a4NsBurst_eleMas = greaterEq(
@@ -184,6 +185,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     premod: {
       swirl_dmg_: a1Essentials_swirl_dmg_,
       electrocharged_dmg_: a1Essentials_electrocharged_dmg_,
+      lunarcharged_dmg_: a1Essentials_lunarcharged_dmg_,
     },
   },
 })
@@ -312,6 +314,9 @@ const sheet: TalentSheet = {
             },
             {
               node: a1Essentials_electrocharged_dmg_,
+            },
+            {
+              node: a1Essentials_lunarcharged_dmg_,
             },
           ],
         }))
