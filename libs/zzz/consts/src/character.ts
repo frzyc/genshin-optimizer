@@ -66,6 +66,7 @@ export const allFactionKeys = [
   'StarsOfLyra',
   'Mockingbird',
   'YunkuiSummit',
+  'SpookShack',
 ] as const
 export type FactionKey = (typeof allFactionKeys)[number]
 
