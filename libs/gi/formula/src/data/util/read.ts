@@ -155,6 +155,9 @@ export class Read extends BaseRead<Tag> {
   get khaenriah(): Read {
     return super.with('region', 'khaenriah')
   }
+  get nodKrai(): Read {
+    return super.with('region', 'nodKrai')
+  }
 }
 
 // Need to instantiate with gi-specific reader
