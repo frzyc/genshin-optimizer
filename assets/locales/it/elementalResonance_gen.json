@@ -17,7 +17,7 @@
   },
   "HighVoltage": {
     "name": "Alta tensione",
-    "desc": "Riduce la durata dell'effetto di Hydro di un 40%. Superconduzione, Sovraccarico, Electrocarica, Vivificazione, Accentuazione o Iperfioritura hanno un 100% di probabilità di generare una particella elementale di Electro (TdR: 5 s)."
+    "desc": "Riduce la durata dell'effetto di Hydro di un 40%. Superconduzione, Sovraccarico, Electrocarica, Carica lunare, Vivificazione, Accentuazione o Iperfioritura hanno un 100% di probabilità di generare una particella elementale di Electro (TdR: 5 s)."
   },
   "ImpetuousWinds": {
     "name": "Venti impetuosi",

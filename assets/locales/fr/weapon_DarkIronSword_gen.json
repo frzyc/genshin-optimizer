@@ -6,19 +6,19 @@
   "passiveName": "Surcapacité",
   "passiveDescription": {
     "0": {
-      "0": "Augmente l'ATQ de <cryo>20 %</cryo> pendant 12 s après avoir déclenché Surcharge, Supraconduction, Électrocution, Stimulation, Suractivation, Exubérance ou Dispersion Électro."
+      "0": "Augmente l'ATQ de <cryo>20 %</cryo> pendant 12 s après avoir déclenché une réaction de Surcharge, de Supraconduction, d'Électrocution, de Sélénocution, de Stimulation, de Suractivation, d'Exubérance ou de Dispersion Électro."
     },
     "1": {
-      "0": "Augmente l'ATQ de <cryo>25 %</cryo> pendant 12 s après avoir déclenché Surcharge, Supraconduction, Électrocution, Stimulation, Suractivation, Exubérance ou Dispersion Électro."
+      "0": "Augmente l'ATQ de <cryo>25 %</cryo> pendant 12 s après avoir déclenché une réaction de Surcharge, de Supraconduction, d'Électrocution, de Sélénocution, de Stimulation, de Suractivation, d'Exubérance ou de Dispersion Électro."
     },
     "2": {
-      "0": "Augmente l'ATQ de <cryo>30 %</cryo> pendant 12 s après avoir déclenché Surcharge, Supraconduction, Électrocution, Stimulation, Suractivation, Exubérance ou Dispersion Électro."
+      "0": "Augmente l'ATQ de <cryo>30 %</cryo> pendant 12 s après avoir déclenché une réaction de Surcharge, de Supraconduction, d'Électrocution, de Sélénocution, de Stimulation, de Suractivation, d'Exubérance ou de Dispersion Électro."
     },
     "3": {
-      "0": "Augmente l'ATQ de <cryo>35 %</cryo> pendant 12 s après avoir déclenché Surcharge, Supraconduction, Électrocution, Stimulation, Suractivation, Exubérance ou Dispersion Électro."
+      "0": "Augmente l'ATQ de <cryo>35 %</cryo> pendant 12 s après avoir déclenché une réaction de Surcharge, de Supraconduction, d'Électrocution, de Sélénocution, de Stimulation, de Suractivation, d'Exubérance ou de Dispersion Électro."
     },
     "4": {
-      "0": "Augmente l'ATQ de <cryo>40 %</cryo> pendant 12 s après avoir déclenché Surcharge, Supraconduction, Électrocution, Stimulation, Suractivation, Exubérance ou Dispersion Électro."
+      "0": "Augmente l'ATQ de <cryo>40 %</cryo> pendant 12 s après avoir déclenché une réaction de Surcharge, de Supraconduction, d'Électrocution, de Sélénocution, de Stimulation, de Suractivation, d'Exubérance ou de Dispersion Électro."
     }
   }
 }

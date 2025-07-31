@@ -1,0 +1,159 @@
+{
+  "name": "Ineffa",
+  "title": "Onde foudroyante",
+  "description": "Un robot multifonction intégrant des composants mécaniques de différentes nations. Le noyau source de sa poitrine a résisté au passage d'innombrables années.",
+  "constellationName": "Vanilla Planifolia",
+  "auto": {
+    "name": "Dépoussiéreur cyclonique",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher une attaque tournoyante."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Mode purificateur : Fréquence porteuse",
+    "description": {
+      "0": "Ineffa active son module de nettoyage avancé, infligeant une fois des <electro>DGT Électro de zone</electro> aux ennemis à proximité, déployant sa barrière de protection à flux optique et invoquant son unité d'assistance intelligente polyvalente, <strong>Birgitta</strong>.",
+      "1": "L'absorption de DGT de la barrière de protection à flux optique est basée sur l'ATQ d'Ineffa et cette dernière absorbe les <electro>DGT Électro</electro> 250 % plus efficacement."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "PV du bouclier",
+      "2": "Durée de bouclier",
+      "3": "DGT décharge de Birgitta",
+      "4": "Durée de Birgitta",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Commande suprême : Exterminateur cyclonique",
+    "description": {
+      "0": "<strong>Birgitta</strong>, l'unité d'assistance intelligente polyvalente, utilise un poing-fusée pour éradiquer rapidement les ennemis ! Ineffa éjecte Birgitta, infligeant des <electro>DGT Électro de zone</electro> et lui permettant de rester sur le terrain.",
+      "1": "<br/>",
+      "2": "Si Birgitta est déjà sur le terrain, ayant été invoquée par Ineffa, elle est à la place invoquée à nouveau à l'emplacement cible et sa durée est réinitialisée."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Circuit de surcadençage",
+    "description": {
+      "0": "Si des nuages orageux créés par une réaction de Sélénocution sont à proximité de <strong>Birgitta</strong> lorsqu'elle déclenche une décharge électrique, elle lance une attaque supplémentaire infligeant des <electro>DGT Électro de zone</electro> d'une valeur équivalant à 65 % de l'ATQ d'Ineffa, ces DGT étant considérés comme des DGT de réaction de Sélénocution."
+    }
+  },
+  "passive2": {
+    "name": "Protocole de permutation panoramique",
+    "description": {
+      "0": "Utiliser le déchaînement élémentaire <strong>Commande suprême : Exterminateur cyclonique</strong> accorde l'effet Refactorisation des paramètres à tous vos personnages de l'équipe : augmente la maîtrise élémentaire de votre personnage déployé et d'Ineffa d'une valeur équivalant à 6 % de l'ATQ d'Ineffa pendant 20 s."
+    }
+  },
+  "passive3": {
+    "name": "Bénédiction de signelune : Ensemble de moyeu",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction d'Électrocution, elle est convertie en réaction de Sélénocution, dont les DGT de base augmentent selon l'ATQ d'Ineffa : chaque tranche de 100 pts d'ATQ augmente les DGT de base de 0,7 %, les DGT pouvant être augmentés d'un maximum de 14 % de cette manière.",
+      "1": "<br/>",
+      "2": "D'autres bénédictions pourraient suivre le lever de la nouvelle lune..."
+    }
+  },
+  "passive": {
+    "name": "Unité de synthèse aromatique",
+    "description": {
+      "0": "En utilisant de la nourriture, Ineffa a 30 % de chances d'obtenir un ingrédient d'assaisonnement.",
+      "1": "<br/>",
+      "2": "De plus, il semble que vous pourrez changer l'apparence de Birgitta par certains moyens dans Nod-Krai..."
+    }
+  },
+  "constellation1": {
+    "name": "Processeur de rectification",
+    "description": {
+      "0": "Lorsque Ineffa déploie sa barrière de protection à flux optique, tous les personnages de l'équipe à proximité obtiennent l'effet Composite de flux porteur pendant 20 s : augmente les DGT des réactions de Sélénocution de 2,5 % pour chaque tranche de 100 pts d'ATQ qu'Ineffa possède, les DGT pouvant être augmentés d'un maximum de 50 % de cette manière."
+    }
+  },
+  "constellation2": {
+    "name": "Module nettoyeur de soutien",
+    "description": {
+      "0": "Lorsque le déchaînement élémentaire <strong>Commande suprême : Exterminateur cyclonique</strong> a touché des ennemis, l'effet Édit punitif est appliqué à l'un d'eux : les ennemis proches subissent des <electro>DGT Électro de zone</electro> d'une valeur équivalant à 300 % de l'ATQ d'Ineffa après une courte période ou lorsque l'ennemi affecté est éliminé, ces DGT étant considérés comme des DGT de réaction de Sélénocution.",
+      "1": "De plus, utiliser le déchaînement élémentaire <strong>Commande suprême : Exterminateur cyclonique</strong> accorde des barrières de protection à flux optique aux membres de l'équipe déployés à proximité."
+    }
+  },
+  "constellation3": {
+    "name": "Émulateur avancé d'émotions",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Mode purificateur : Fréquence porteuse</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Chemin sans édit",
+    "description": {
+      "0": "Lorsqu'un de vos personnages dans l'équipe déclenche une réaction de Sélénocution, il récupère 5 pts d'énergie élémentaire, cet effet pouvant être déclenché une fois toutes les 4 s."
+    }
+  },
+  "constellation5": {
+    "name": "Transcendance du rêve du miroir",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Commande suprême : Exterminateur cyclonique</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Matin naissant pour vous",
+    "description": {
+      "0": "Lorsqu'elle bénéficie de l'effet Composite de flux porteur, Ineffa inflige des <electro>DGT Électro de zone</electro> d'une valeur équivalant à 135 % de son ATQ aux ennemis proches de votre personnage déployé lorsqu'un nuage orageux à proximité a déclenché un éclair sur un ennemi, ces DGT étant considérés comme des DGT de réaction de Sélénocution. Cet effet peut être déclenché une fois toutes les 3,5 s."
+    }
+  }
+}

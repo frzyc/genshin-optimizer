@@ -107,8 +107,8 @@
   "passive1": {
     "name": "Eine Antenne für Gold",
     "description": {
-      "0": "Verringert die Abklingzeit der Fähigkeit <strong>Lampe des Dschinns – Sorgenbefreiende Kanone</strong> um 1 s, wenn die mit dem <strong>Flaschengeist</strong> verbundene Figur Reaktionen wie „Unter Strom“, „Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“, „Elektro-Verwirbelung“ und „Kristallisation mit Elektro-Kraft“ ausgelöst hat.",
-      "1": "3 s Abklingzeit."
+      "0": "Verringert die Abklingzeit der Fähigkeit <strong>Lampe des Dschinns – Sorgenbefreiende Kanone</strong> um 1 s, wenn die mit dem <strong>Flaschengeist</strong> verbundene Figur Reaktionen wie „Unter Strom“, „Mond unter Strom“, „Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“, „Elektro-Verwirbelung“ und „Elektro-Kristallisation“ ausgelöst hat.",
+      "1": "3 s Abklingzeit."
     }
   },
   "passive2": {

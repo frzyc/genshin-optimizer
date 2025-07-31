@@ -93,7 +93,7 @@
   "passive1": {
     "name": "Visione del medico di campo",
     "description": {
-      "0": "Quando Ifa è nello stato di Grazia dell'Anima della Notte, ogni punto Anima della Notte posseduto dall'intero gruppo gli conferisce 1 punto di <strong>Fondamentali di soccorso</strong>. Ogni punto aumenta i DAN da Turbinio ed Electrocarica inflitti dai membri vicini del gruppo."
+      "0": "Quando Ifa è nello stato di Grazia dell'Anima della Notte, ogni punto Anima della Notte posseduto dall'intero gruppo gli conferisce 1 punto di <strong>Fondamentali di soccorso</strong>. Ogni punto aumenta i DAN da Turbinio, Electrocarica e Carica lunare inflitti dai membri vicini del gruppo."
     }
   },
   "passive2": {

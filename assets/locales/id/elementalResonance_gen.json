@@ -17,7 +17,7 @@
   },
   "HighVoltage": {
     "name": "High Voltage",
-    "desc": "Waktu terpengaruh Hydro berkurang 40%. Superconduct, Overloaded, Electro-Charged, Quicken, Aggravate, atau Hyperbloom memiliki 100% kemungkinan menciptakan 1 Electro Elemental Particle (CD: 5 detik)."
+    "desc": "Waktu terpengaruh efek Hydro berkurang 40%. Superconduct, Overloaded, Electro-Charged, Lunar-Charged, Quicken, Aggravate, atau Hyperbloom memiliki 100% kemungkinan menciptakan 1 Electro Elemental Particle (CD: 5 detik)."
   },
   "ImpetuousWinds": {
     "name": "Impetuous Winds",

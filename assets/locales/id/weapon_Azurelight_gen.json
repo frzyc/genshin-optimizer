@@ -1,0 +1,24 @@
+{
+  "name": "Azurelight",
+  "description": {
+    "0": "Pedang yang awalnya murni dan jernih bagaikan bintang fajar yang putih, tapi kini telah berubah menjadi warna biru gelap."
+  },
+  "passiveName": "Whitehill's Bestowal",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah melancarkan Elemental Skill, ATK meningkat <cryo>24%</cryo> selama 12 detik. Selama durasi ini, saat Energy Karakter yang mengenakan adalah 0, maka ATK meningkat lagi sebesar <cryo>24%</cryo> dan CRIT DMG meningkat <cryo>40%</cryo>."
+    },
+    "1": {
+      "0": "Setelah melancarkan Elemental Skill, ATK meningkat <cryo>30%</cryo> selama 12 detik. Selama durasi ini, saat Energy Karakter yang mengenakan adalah 0, maka ATK meningkat lagi sebesar <cryo>30%</cryo> dan CRIT DMG meningkat <cryo>50%</cryo>."
+    },
+    "2": {
+      "0": "Setelah melancarkan Elemental Skill, ATK meningkat <cryo>36%</cryo> selama 12 detik. Selama durasi ini, saat Energy Karakter yang mengenakan adalah 0, maka ATK meningkat lagi sebesar <cryo>36%</cryo> dan CRIT DMG meningkat <cryo>60%</cryo>."
+    },
+    "3": {
+      "0": "Setelah melancarkan Elemental Skill, ATK meningkat <cryo>42%</cryo> selama 12 detik. Selama durasi ini, saat Energy Karakter yang mengenakan adalah 0, maka ATK meningkat lagi sebesar <cryo>42%</cryo> dan CRIT DMG meningkat <cryo>70%</cryo>."
+    },
+    "4": {
+      "0": "Setelah melancarkan Elemental Skill, ATK meningkat <cryo>48%</cryo> selama 12 detik. Selama durasi ini, saat Energy Karakter yang mengenakan adalah 0, maka ATK meningkat lagi sebesar <cryo>48%</cryo> dan CRIT DMG meningkat <cryo>80%</cryo>."
+    }
+  }
+}

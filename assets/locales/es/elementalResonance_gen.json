@@ -17,7 +17,7 @@
   },
   "HighVoltage": {
     "name": "Alto voltaje",
-    "desc": "Reduce en un 40% la duración de los efectos Hydro sobre ti. Superconductor, Sobrecarga, Electrocargado, Aceleración, Intensificación y Sobreflorecimiento tienen un 100% de probabilidad de generar una partícula elemental Electro (TdE: 5 s)."
+    "desc": "Reduce en un 40% la duración de las aplicaciones Hydro. Superconductor, Sobrecarga, Electrocargado, Electrocargado Lunar, Aceleración, Intensificación y Sobreflorecimiento tienen un 100% de probabilidad de generar una partícula elemental Electro (TdE: 5 s)."
   },
   "ImpetuousWinds": {
     "name": "Vientos impetuosos",

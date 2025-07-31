@@ -105,7 +105,7 @@
       "0": "Sau khi nhân vật trong đội ở gần kích hoạt Dạ Hồn Bùng Nổ, Ororon sẽ nhận 40 điểm Dạ Hồn. Trong 15s sau khi thi triển Kỹ Năng Nguyên Tố, khi đòn đánh mang loại nguyên tố <hydro>Thủy</hydro> hoặc <electro>Lôi</electro> của nhân vật khác trong đội đánh trúng kẻ địch, Ororon sẽ nhận 5 điểm Dạ Hồn. Hiệu quả này mỗi 0.3s tối đa kích hoạt một lần, trong thời gian duy trì tối đa kích hoạt 10 lần.",
       "1": "Giới hạn Điểm Dạ Hồn của Ororon là 80 điểm.",
       "2": "<br/>",
-      "3": "Ngoài ra, khi kẻ địch gần đó chịu sát thương phản ứng <electro>Điện Cảm</electro> hoặc sát thương thuộc tính Dạ Hồn do nhân vật khác trong đội gần đó gây ra, nếu Ororon có ít nhất 10 điểm Dạ Hồn, thì anh ấy sẽ tiêu hao 10 điểm Dạ Hồn để tiến vào trạng thái Dạ Hồn Chúc Phúc và kích hoạt hiệu quả \"Siêu Giác Quan\": Gây <electro>Sát Thương Nguyên Tố Lôi</electro> mang thuộc tính Dạ Hồn cho tối đa 4 kẻ địch xung quanh tương đương 160% Tấn Công của Ororon. Hiệu quả nêu trên mỗi 1.8s tối đa kích hoạt một lần.",
+      "3": "Ngoài ra, khi kẻ địch gần đó chịu sát thương phản ứng <electro>Điện Cảm hoặc Nguyệt-Điện Cảm</electro> hoặc sát thương thuộc tính Dạ Hồn do nhân vật khác trong đội gần đó gây ra, nếu Ororon có ít nhất 10 điểm Dạ Hồn, thì anh ấy sẽ tiêu hao 10 điểm Dạ Hồn để tiến vào trạng thái Dạ Hồn Chúc Phúc và kích hoạt hiệu quả \"Siêu Giác Quan\": Gây <electro>Sát Thương Nguyên Tố Lôi</electro> mang thuộc tính Dạ Hồn cho tối đa 4 kẻ địch xung quanh tương đương 160% Tấn Công của Ororon. Hiệu quả nêu trên mỗi 1.8s tối đa kích hoạt một lần.",
       "4": "<br/>",
       "5": "<strong>Dạ Hồn Chúc Phúc - Ororon</strong>",
       "6": "Trạng thái Dạ Hồn Chúc Phúc của Ororon tối đa duy trì 6s."

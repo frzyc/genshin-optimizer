@@ -148,10 +148,10 @@
   "constellation1": {
     "name": "Prophezeiung des Untergangs",
     "description": {
-      "0": "Verstärkt den Effekt von <hydro>Hydro-Elementarreaktionen</hydro>, wenn eine eigene Figur in der Truppe Gegner im Zustand Omen trifft, 8 s lang:",
+      "0": "Verstärkt den Effekt von <hydro>Hydro-Reaktionen</hydro>, nachdem eine eigene Figur in der Truppe Gegner im Zustand Omen getroffen hat, 8 s lang:",
       "1": [
-        " Erhöht den mit der Reaktion Unter Strom verursachten Schaden um 15 %, den mit der Reaktion Verdampfen verursachten Schaden um 15 % und den mit der Reaktion Hydro-Verwirbelung verursachten Schaden um 15 %.",
-        " Verlängert die Wirkungsdauer von Gefroren um 15 %."
+        " Erhöht den mit der Reaktion „Unter Strom“ verursachten Schaden um 15 %, den mit der Reaktion „Mond unter Strom“ verursachten Schaden um 15 %, den mit der Reaktion „Verdampfen“ verursachten Schaden um 15 % und den mit der Reaktion „Hydro-Verwirbelung“ verursachten Schaden um 15 %.",
+        " Verlängert die Wirkungsdauer von „Gefroren“ um 15 %."
       ]
     }
   },

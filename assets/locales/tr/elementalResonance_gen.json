@@ -17,7 +17,7 @@
   },
   "HighVoltage": {
     "name": "Yüksek Gerilim",
-    "desc": "Su etkisinde kalma süresini %40 azaltır. Süper İletim, Yüksek Voltaj, Elektrik Yüklü, Hızlanma, Şiddetlenme veya Aşırı Çiçeklenme tepkimeleri %100 ihtimalle bir Elektrik Element Parçacığı oluşturur (BS: 5sn)."
+    "desc": "Su etkisinde kalma süresini %40 azaltır. Süper İletim, Yüksek Voltaj, Elektrik Yüklü, Ay Yüklü, Hızlanma, Şiddetlenme veya Aşırı Çiçeklenme tepkimeleri %100 ihtimalle bir Elektrik Element Parçacığı oluşturur (BS: 5sn)."
   },
   "ImpetuousWinds": {
     "name": "Coşkun Rüzgarlar",

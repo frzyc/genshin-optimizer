@@ -147,7 +147,7 @@
   "constellation4": {
     "name": "Austeritätsritus – Beschützender Verbotswächter",
     "description": {
-      "0": "Befindet sich Cyno im Modus „Paktverschworener Pfadklärer“ der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong>, stellt er nach Auslösen der Reaktionen wie „Unter Strom“, „Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“ oder „Elektro-Verwirbelung“ allen Truppenmitgliedern in der Nähe (außer Cyno) 3 Punkte Elementarenergie wieder her.",
+      "0": "Befindet sich Cyno im Modus „Paktverschworener Pfadklärer“ der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong>, stellt er nach Auslösen der Reaktionen wie „Unter Strom“, „Mond unter Strom“, „Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“ oder „Elektro-Verwirbelung“ allen Truppenmitgliedern in der Nähe (außer Cyno) 3 Punkte Elementarenergie wieder her.",
       "1": "5-mal während der Wirkungsdauer der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> auslösbar."
     }
   },

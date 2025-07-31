@@ -1,0 +1,24 @@
+{
+  "name": "Fractured Halo",
+  "description": {
+    "0": "A spinning mechanical blade produced by the Clink-Clank Krumkake Craftshop that seems to hide secrets from a bygone era..."
+  },
+  "passiveName": "Purifying Crown",
+  "passiveDescription": {
+    "0": {
+      "0": "After an Elemental Skill or Elemental Burst is used, ATK is increased by <cryo>24%</cryo> for 20s. If the equipping character creates a Shield while this effect is active, they will gain the Electrifying Edict effect for 20s: All nearby party members deal <cryo>40%</cryo> more Lunar-Charged DMG."
+    },
+    "1": {
+      "0": "After an Elemental Skill or Elemental Burst is used, ATK is increased by <cryo>30%</cryo> for 20s. If the equipping character creates a Shield while this effect is active, they will gain the Electrifying Edict effect for 20s: All nearby party members deal <cryo>50%</cryo> more Lunar-Charged DMG."
+    },
+    "2": {
+      "0": "After an Elemental Skill or Elemental Burst is used, ATK is increased by <cryo>36%</cryo> for 20s. If the equipping character creates a Shield while this effect is active, they will gain the Electrifying Edict effect for 20s: All nearby party members deal <cryo>60%</cryo> more Lunar-Charged DMG."
+    },
+    "3": {
+      "0": "After an Elemental Skill or Elemental Burst is used, ATK is increased by <cryo>42%</cryo> for 20s. If the equipping character creates a Shield while this effect is active, they will gain the Electrifying Edict effect for 20s: All nearby party members deal <cryo>70%</cryo> more Lunar-Charged DMG."
+    },
+    "4": {
+      "0": "After an Elemental Skill or Elemental Burst is used, ATK is increased by <cryo>48%</cryo> for 20s. If the equipping character creates a Shield while this effect is active, they will gain the Electrifying Edict effect for 20s: All nearby party members deal <cryo>80%</cryo> more Lunar-Charged DMG."
+    }
+  }
+}

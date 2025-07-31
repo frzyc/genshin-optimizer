@@ -149,7 +149,7 @@
     "description": {
       "0": "Les effets des <hydro>réactions liées à l'élément Hydro</hydro> sont renforcés pendant 8 s lorsqu'une attaque de vos personnages dans l'équipe touche un ennemi marqué par un présage :",
       "1": [
-        " Les DGT d'Électrocution, d'Évaporation, de Dispersion Hydro augmentent de 15 %.",
+        " Les DGT d'Électrocution, de Sélénocution, d'Évaporation, de Dispersion Hydro augmentent de 15 %.",
         " La durée de Gel augmente de 15 %."
       ]
     }

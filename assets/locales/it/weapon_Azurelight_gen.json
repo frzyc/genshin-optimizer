@@ -1,0 +1,24 @@
+{
+  "name": "Luce azzurra",
+  "description": {
+    "0": "Inizialmente, questa lama era pura e incontaminata come una bianca stella del mattino. Tuttavia, da allora, si è tinta d'un intenso colore blu."
+  },
+  "passiveName": "Concessione del Biancocolle",
+  "passiveDescription": {
+    "0": {
+      "0": "Per 12 s dall'utilizzo di un'abilità elementale, l'ATT aumenta di un <cryo>24%</cryo>. In questo lasso di tempo, quando il personaggio che equipaggia l'arma ha 0 punti di energia, il suo ATT aumenta di un ulteriore <cryo>24%</cryo> e i suoi DAN da CRIT di un <cryo>40%</cryo>."
+    },
+    "1": {
+      "0": "Per 12 s dall'utilizzo di un'abilità elementale, l'ATT aumenta di un <cryo>30%</cryo>. In questo lasso di tempo, quando il personaggio che equipaggia l'arma ha 0 punti di energia, il suo ATT aumenta di un ulteriore <cryo>30%</cryo> e i suoi DAN da CRIT di un <cryo>50%</cryo>."
+    },
+    "2": {
+      "0": "Per 12 s dall'utilizzo di un'abilità elementale, l'ATT aumenta di un <cryo>36%</cryo>. In questo lasso di tempo, quando il personaggio che equipaggia l'arma ha 0 punti di energia, il suo ATT aumenta di un ulteriore <cryo>36%</cryo> e i suoi DAN da CRIT di un <cryo>60%</cryo>."
+    },
+    "3": {
+      "0": "Per 12 s dall'utilizzo di un'abilità elementale, l'ATT aumenta di un <cryo>42%</cryo>. In questo lasso di tempo, quando il personaggio che equipaggia l'arma ha 0 punti di energia, il suo ATT aumenta di un ulteriore <cryo>42%</cryo> e i suoi DAN da CRIT di un <cryo>70%</cryo>."
+    },
+    "4": {
+      "0": "Per 12 s dall'utilizzo di un'abilità elementale, l'ATT aumenta di un <cryo>48%</cryo>. In questo lasso di tempo, quando il personaggio che equipaggia l'arma ha 0 punti di energia, il suo ATT aumenta di un ulteriore <cryo>48%</cryo> e i suoi DAN da CRIT di un <cryo>80%</cryo>."
+    }
+  }
+}

@@ -17,7 +17,7 @@
   },
   "HighVoltage": {
     "name": "Tonnerre puissant",
-    "desc": "Diminue la durée des effets Hydro de 40 %. De plus, il y a 100 % de chances de générer 1 particule élémentaire lorsque Supraconduction, Surcharge, Électrocution, Stimulation, Suractivation ou Exubérance est déclenchée (TdR : 5 s)."
+    "desc": "Diminue la durée des effets Hydro de 40 %. De plus, il y a 100 % de chances de générer 1 particule élémentaire lorsqu'une réaction de Supraconduction, de Surcharge, d'Électrocution, de Sélénocution, de Stimulation, de Suractivation ou d'Exubérance est déclenchée (TdR : 5 s)."
   },
   "ImpetuousWinds": {
     "name": "Vents de la célérité",

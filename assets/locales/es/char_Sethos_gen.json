@@ -44,7 +44,7 @@
   "skill": {
     "name": "Rito ancestral: Rugido atronarena",
     "description": {
-      "0": "Concentra el poder del trueno para infligir <electro>Daño Electro en el AdE</electro> y realizar una retirada con presteza. Si este ataque causa una reacción de Electrocargado, Superconductor, Sobrecarga, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, Sethos recupera cierta cantidad de Energía Elemental.",
+      "0": "Concentra el poder del trueno para infligir <electro>Daño Electro en el AdE</electro> y realizar una retirada con presteza. Si este ataque causa una reacción de Electrocargado, Electrocargado Lunar, Superconductor, Sobrecarga, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, Sethos recupera cierta cantidad de Energía Elemental.",
       "1": "<br/>",
       "2": "<i>“El sacerdote de los dioses, el mago zahorí, los cantores del mar de arena que predicaban sus historias... Sé que no son leyendas, pues se trata de nuestros ancestros”.</i>"
     },

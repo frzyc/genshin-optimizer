@@ -102,10 +102,10 @@
   "passive1": {
     "name": "Nachtschatten-Synästhesie",
     "description": {
-      "0": "Verleiht Ororon, wenn ein Truppenmitglied in der Nähe „Nachtseelenaufbruch“ auslöst, 40 Nachtseelenpunkte. Verleiht Ororon 5 Nachtseelenpunkte, wenn sein Truppenmitglied innerhalb von 15 s, nachdem Ororon Elementarfähigkeit angewendet hat, Gegner mit Angriffen der Elemente <hydro>Hydro</hydro> oder <electro>Elektro</electro> getroffen hat; 0,3 s Abklingzeit, während der Wirkungsdauer bis zu 10-mal auszulösen.",
+      "0": "Verleiht Ororon, wenn ein Truppenmitglied in der Nähe „Nachtseelenaufbruch“ auslöst, 40 Nachtseelenpunkte. Verleiht Ororon 5 Nachtseelenpunkte, wenn sein Truppenmitglied innerhalb von 15 s, nachdem Ororon Elementarfähigkeit angewendet hat, Gegner mit Angriffen der Elemente <hydro>Hydro</hydro> oder <electro>Elektro</electro> getroffen hat; 0,3 s Abklingzeit; während der Wirkungsdauer bis zu 10-mal auslösbar.",
       "1": "Max. Nachtseelenpunkte für Ororon liegen bei 80 Pkt.",
       "2": "<br/>",
-      "3": "Verbraucht außerdem, wenn Ororon mindestens 10 Nachtseelenpunkte hat und ein Gegner in der Nähe Schaden von der Reaktion <electro>Unter Strom</electro> oder mit Nachtseelen versehenen Schaden durch sein Truppenmitglied in der Nähe erleidet, 10 Nachtseelenpunkte und geht in den Zustand des Nachtseelensegens über. Löst dabei den Effekt „Feinfühligkeit“ aus: Fügt bis zu 4 Gegnern in der Umgebung mit Nachtseelen versehenen <electro>Elektro-Schaden</electro> in Höhe von 160 % von Ororons ANG zu, 1,8 s Abklingzeit.",
+      "3": "Verbraucht außerdem, wenn Ororon mindestens 10 Nachtseelenpunkte hat und ein Gegner in der Nähe Schaden von der Reaktion <electro>„Unter Strom“ oder „Mond unter Strom“</electro> oder mit Nachtseelen versehenen Schaden durch sein Truppenmitglied in der Nähe erleidet, 10 Nachtseelenpunkte und geht in den Zustand des Nachtseelensegens über. Löst dabei den Effekt „Feinfühligkeit“ aus: Fügt bis zu 4 Gegnern in der Umgebung mit Nachtseelen versehenen <electro>Elektro-Schaden</electro> in Höhe von 160 % von Ororons ANG zu, 1,8 s Abklingzeit.",
       "4": "<br/>",
       "5": "<strong>Nachtseelensegen – Ororon</strong>",
       "6": "Ororons Nachtseelensegen hält bis zu 6 s."

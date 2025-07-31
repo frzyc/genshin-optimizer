@@ -46,7 +46,7 @@
   "skill": {
     "name": "Ritual Antigo: Rugido Trovejante da Areia",
     "description": {
-      "0": "Reúne o poder do trovão, causando <electro>Dano Electro em AdE</electro> contra os inimigos e recuando rapidamente. Se esse ataque desencadear Eletricamente Carregado, Supercondutor, Sobrecarga, Aceleração, Intensificação, Superflorescimento ou Redemoinho Electro, Sethos recupera uma certa quantidade de Energia Elemental.",
+      "0": "Reúne o poder do trovão, causando <electro>Dano Electro em AdE</electro> contra os inimigos e recuando rapidamente. Se esse ataque desencadear Eletricamente Carregado, Carga Lunar, Supercondutor, Sobrecarga, Aceleração, Intensificação, Superflorescimento ou Redemoinho Electro, Sethos recupera uma certa quantidade de Energia Elemental.",
       "1": "<br/>",
       "2": "<i>\"O Deus que reside no Sacerdote, os magos que se viraram para as nascentes, os cantores do mar de areia ainda falavam suas histórias... Mas agora sei que isso não eram lendas, pois eles são nossos ancestrais.\"</i>"
     },

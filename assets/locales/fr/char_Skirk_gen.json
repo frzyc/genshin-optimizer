@@ -1,0 +1,184 @@
+{
+  "name": "Skirk",
+  "title": "Étoile du néant",
+  "description": "Cette visiteuse, précédemment apparue dans une brèche abyssale et dans la mer primordiale, est une guerrière solitaire qui a encadré Tartaglia pendant sa maîtrise des arts martiaux.",
+  "constellationName": "Crystallina",
+  "auto": {
+    "name": "Scission",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 attaques consécutives."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour lancer une lance cristalline tournoyante et infliger des DGT aux ennemis en face."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ravage : Distorsion",
+    "description": {
+      "0": "Skirk imite le style de combat du Cavalier abominable : différents effets se produisent selon la méthode de déclenchement :",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Skirk obtient 45 pts de <strong>finesse serpentine</strong> et passe en mode <strong>Flash à sept phases</strong>.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Skirk obtient 45 pts de finesse serpentine et se déplace continuellement à grande vitesse, cet état augmentant sa RÉS à l'interruption.",
+      "7": "Pendant cet état, Skirk peut contrôler la direction de ses déplacements, se déplacer sur l'eau et utiliser à nouveau la compétence pour interrompre prématurément son déplacement rapide."
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "Durée flash à sept phases",
+      "10": "Limite de finesse serpentine",
+      "11": "Temps de recharge",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ravage : Ruine",
+    "description": {
+      "0": "Le déchaînement élémentaire de Skirk ne se repose pas sur l'énergie élémentaire, mais sur la <strong>finesse serpentine</strong>.",
+      "1": "Lorsque Skirk a au moins 50 pts de finesse serpentine, elle peut la consommer entièrement pour déclencher son déchaînement élémentaire : elle déchire l'espace devant elle et effectue de rapides entailles consécutives pour infliger des <cryo>DGT Cryo de zone</cryo>, DGT qui augmentent selon la quantité de finesse serpentine dépassant ce seuil de 50 pts, un maximum de 12 pts pouvant être pris en compte.",
+      "2": "<br/>",
+      "3": "Lorsque Skirk est en mode <strong>Flash à sept phases</strong>, son déchaînement élémentaire « Ravage : Ruine » est remplacé par « Ravage : Extinction ».",
+      "4": "<br/>",
+      "5": "<strong>Ravage : Extinction</strong>",
+      "6": "Ce déchaînement élémentaire spécial peut être utilisé sans consommer de finesse serpentine.",
+      "7": "Après utilisation, Skirk obtient l'effet Dépérissement jusqu'à la fin du mode Flash à sept phases. Après avoir débloqué l'aptitude passive « <strong>Raisonnement outre-raison</strong> », Skirk peut également absorber les failles du néant à proximité.",
+      "8": "Toutes les 0,1 s pendant la durée de l'effet Dépérissement, les DGT des attaques normales de Skirk augmentent en touchant un ennemi. Si elle a absorbé des failles du néant en utilisant <strong>Ravage : Extinction</strong>, les DGT de l'attaque normale de Skirk augmentent davantage.",
+      "9": "Cet effet prend fin après 10 déclenchements."
+    },
+    "skillParams": {
+      "0": "DGT entaille",
+      "1": "DGT entaille finale",
+      "2": "Bonus de finesse serpentine",
+      "3": "Bonus de DGT (absorption de 0/1/2/3 failles)",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Raisonnement outre-raison",
+    "description": {
+      "0": "Lorsqu'un membre de l'équipe à proximité déclenche une réaction de Gel, de Supraconduction, de Dispersion Cryo ou de Cristallisation Cryo sur un ennemi, une faille du néant apparaît à proximité de ce dernier. Cet effet peut être déclenché une fois toutes les 2,5 s et un maximum de 3 failles du néant créées par Skirk peut exister en même temps sur le terrain.",
+      "1": "<br/>",
+      "2": "Skirk peut absorber les failles du néant à proximité des manières suivantes :",
+      "3": [
+        " En touchant un ennemi avec une attaque chargée pendant son mode <strong>Flash à sept phases</strong>.",
+        " En utilisant son déchaînement élémentaire spécial <strong>Ravage : Extinction</strong> pendant son mode Flash à sept phases.",
+        " En se déplaçant rapidement grâce à un appui long de sa compétence élémentaire <strong>Ravage : Distorsion</strong>."
+      ],
+      "4": "<br/>",
+      "5": "Chaque faille du néant absorbée permet à Skirk d'obtenir 8 pts de <strong>finesse serpentine</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Retour à la désolation",
+    "description": {
+      "0": "Lorsqu'un personnage proche de type <hydro>Hydro</hydro> dans l'équipe touche un ennemi avec une attaque <hydro>Hydro</hydro> ou qu'un personnage proche de type <cryo>Cryo</cryo> autre que Skirk dans l'équipe touche un ennemi avec une attaque <cryo>Cryo</cryo>, Skirk obtient un cumul de l'effet Traversée de la mort pendant 20 s. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
+      "1": "De plus, chaque personnage permet à Skirk d'obtenir 1 cumul de traversée de la mort maximum de cette manière.",
+      "2": "Chaque cumul de traversée de la mort permet à l'attaque normale de Skirk d'infliger des DGT d'une valeur équivalant à 110 %/120 %/170 % des DGT d'origine en mode <strong>Flash à sept phases</strong> et permet à son déchaînement élémentaire <strong>Ravage : Ruine</strong> d'infliger des DGT d'une valeur équivalant à 105 %/115 %/160 % des DGT d'origine."
+    }
+  },
+  "passive3": {
+    "name": "Mentorat mutuel d'armement",
+    "description": {
+      "0": "Lorsque les personnages de l'équipe sont de l'élément <hydro>Hydro</hydro> ou <cryo>Cryo</cryo> et qu'il y a au moins un personnage Hydro et un personnage Cryo, le niveau des <strong>compétences élémentaires</strong> de vos personnages dans l'équipe augmente de 1."
+    }
+  },
+  "constellation1": {
+    "name": "Chute longue",
+    "description": {
+      "0": "L'aptitude passive « <strong>Raisonnement outre-raison</strong> » est renforcée : absorber une faille du néant invoque une lame cristalline qui attaque les ennemis proches, infligeant des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 500 % de l'ATQ de Skirk. Ces DGT sont considérés comme des DGT d'attaque chargée.",
+      "1": "L'aptitude passive « Raisonnement outre-raison » doit être déjà débloquée."
+    }
+  },
+  "constellation2": {
+    "name": "Abîme profond",
+    "description": {
+      "0": "Après avoir utilisé sa compétence élémentaire <strong>Ravage : Distorsion</strong>, Skirk obtient 10 pts de <strong>finesse serpentine</strong> supplémentaires.",
+      "1": "En utilisant le déchaînement élémentaire <strong>Ravage : Ruine</strong>, les DGT augmentent en prenant en compte 10 pts de finesse serpentine supplémentaires.",
+      "2": "De plus, lorsque Skirk a utilisé son déchaînement élémentaire spécial <strong>Ravage : Extinction</strong> pendant son mode <strong>Flash à sept phases</strong>, son ATQ augmente de 70 % pendant 12,5 s, cet effet prenant fin lorsqu'elle quitte le mode Flash à sept phases."
+    }
+  },
+  "constellation3": {
+    "name": "Vice fortuit",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Ravage : Ruine</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Flux scindé",
+    "description": {
+      "0": "L'aptitude passive « <strong>Retour à la désolation</strong> » est renforcée : chaque cumul de traversée de la mort augmente également l'ATQ de Skirk de 10 %/20 %/40 %.",
+      "1": "L'aptitude passive « Retour à la désolation » doit être déjà débloquée."
+    }
+  },
+  "constellation5": {
+    "name": "Fin des souhaits",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Ravage : Distorsion</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Source revenue",
+    "description": {
+      "0": "Skirk obtient un cumul de « Ravage : Section » pendant 15 s chaque fois qu'elle absorbe une faille du néant grâce à l'aptitude passive « <strong>Raisonnement outre-raison</strong> ». Skirk peut consommer ces cumuls pour déclencher une attaque coordonnée et diminuer les DGT qu'elle subit en mode <strong>Flash à sept phases</strong>. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
+      "1": "L'aptitude passive « Raisonnement outre-raison » doit être déjà débloquée.",
+      "2": "<br/>",
+      "3": "<strong>Ravage : Section</strong>",
+      "4": [
+        " Lorsqu'elle utilise son déchaînement élémentaire <strong>Ravage : Ruine</strong>, Skirk consomme tous les cumuls de <strong>Ravage : Section</strong> pour déclencher une attaque coordonnée : chaque cumul<strong></strong> inflige des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 750 % de l'ATQ de Skirk, ces dégâts étant considérés comme des DGT de déchaînement élémentaire.",
+        " Lorsqu'elle est en mode Flash à sept phases et que le 3e ou 5e coup de son attaque normale touche un ennemi, Skirk consomme un cumul de <strong>Ravage : Section</strong> pour déclencher 3 attaques coordonnées : chaque attaque coordonnée inflige des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 180 % de l'ATQ de Skirk, ces dégâts étant considérés comme des DGT d'attaque normale.",
+        " Lorsqu'elle subit des DGT pendant son mode Flash à sept phases, Skirk consomme un cumul de <strong>Ravage : Section</strong> pour diminuer ces derniers de 80 % et déclencher 3 attaques coordonnées sur les ennemis proches : chaque attaque coordonnée inflige des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 180 % de l'ATQ de Skirk, ces dégâts étant considérés comme des DGT d'attaque chargée."
+      ]
+    }
+  }
+}

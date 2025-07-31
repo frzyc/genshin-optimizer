@@ -1,0 +1,24 @@
+{
+  "name": "Fractured Halo",
+  "description": {
+    "0": "Sejenis gergaji putar yang diproduksi oleh Clink-Clank Krumkake Craftshop, sepertinya mengandung rahasia dari zaman kuno ...."
+  },
+  "passiveName": "Purifying Crown",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah melancarkan Elemental Skill atau Elemental Burst, ATK +<cryo>24%</cryo> selama 20 detik. Jika Karakter yang mengenakan menciptakan Perisai saat efek di atas aktif, maka Karakter akan mendapatkan efek \"Electrifying Edict\" selama 20 detik berikutnya. Electrifying Edict: DMG reaksi Lunar-Charged yang dipicu oleh seluruh anggota party di sekitar +<cryo>40%</cryo>."
+    },
+    "1": {
+      "0": "Setelah melancarkan Elemental Skill atau Elemental Burst, ATK +<cryo>30%</cryo> selama 20 detik. Jika Karakter yang mengenakan menciptakan Perisai saat efek di atas aktif, maka Karakter akan mendapatkan efek \"Electrifying Edict\" selama 20 detik berikutnya. Electrifying Edict: DMG reaksi Lunar-Charged yang dipicu oleh seluruh anggota party di sekitar +<cryo>50%</cryo>."
+    },
+    "2": {
+      "0": "Setelah melancarkan Elemental Skill atau Elemental Burst, ATK +<cryo>36%</cryo> selama 20 detik. Jika Karakter yang mengenakan menciptakan Perisai saat efek di atas aktif, maka Karakter akan mendapatkan efek \"Electrifying Edict\" selama 20 detik berikutnya. Electrifying Edict: DMG reaksi Lunar-Charged yang dipicu oleh seluruh anggota party di sekitar +<cryo>60%</cryo>."
+    },
+    "3": {
+      "0": "Setelah melancarkan Elemental Skill atau Elemental Burst, ATK +<cryo>42%</cryo> selama 20 detik. Jika Karakter yang mengenakan menciptakan Perisai saat efek di atas aktif, maka Karakter akan mendapatkan efek \"Electrifying Edict\" selama 20 detik berikutnya. Electrifying Edict: DMG reaksi Lunar-Charged yang dipicu oleh seluruh anggota party di sekitar +<cryo>70%</cryo>."
+    },
+    "4": {
+      "0": "Setelah melancarkan Elemental Skill atau Elemental Burst, ATK +<cryo>48%</cryo> selama 20 detik. Jika Karakter yang mengenakan menciptakan Perisai saat efek di atas aktif, maka Karakter akan mendapatkan efek \"Electrifying Edict\" selama 20 detik berikutnya. Electrifying Edict: DMG reaksi Lunar-Charged yang dipicu oleh seluruh anggota party di sekitar +<cryo>80%</cryo>."
+    }
+  }
+}
