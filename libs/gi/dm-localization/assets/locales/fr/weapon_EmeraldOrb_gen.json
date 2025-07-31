@@ -6,19 +6,19 @@
   "passiveName": "Torrent",
   "passiveDescription": {
     "0": {
-      "0": "Augmente l'ATQ de <cryo>20 %</cryo> pendant 12 s après avoir déclenché Évaporation, Électrocution, Gel, Fleurissement ou Dispersion Hydro."
+      "0": "Augmente l'ATQ de <cryo>20 %</cryo> pendant 12 s après avoir déclenché une réaction d'Évaporation, d'Électrocution, de Sélénocution, de Gel, de Fleurissement ou de Dispersion Hydro."
     },
     "1": {
-      "0": "Augmente l'ATQ de <cryo>25 %</cryo> pendant 12 s après avoir déclenché Évaporation, Électrocution, Gel, Fleurissement ou Dispersion Hydro."
+      "0": "Augmente l'ATQ de <cryo>25 %</cryo> pendant 12 s après avoir déclenché une réaction d'Évaporation, d'Électrocution, de Sélénocution, de Gel, de Fleurissement ou de Dispersion Hydro."
     },
     "2": {
-      "0": "Augmente l'ATQ de <cryo>30 %</cryo> pendant 12 s après avoir déclenché Évaporation, Électrocution, Gel, Fleurissement ou Dispersion Hydro."
+      "0": "Augmente l'ATQ de <cryo>30 %</cryo> pendant 12 s après avoir déclenché une réaction d'Évaporation, d'Électrocution, de Sélénocution, de Gel, de Fleurissement ou de Dispersion Hydro."
     },
     "3": {
-      "0": "Augmente l'ATQ de <cryo>35 %</cryo> pendant 12 s après avoir déclenché Évaporation, Électrocution, Gel, Fleurissement ou Dispersion Hydro."
+      "0": "Augmente l'ATQ de <cryo>35 %</cryo> pendant 12 s après avoir déclenché une réaction d'Évaporation, d'Électrocution, de Sélénocution, de Gel, de Fleurissement ou de Dispersion Hydro."
     },
     "4": {
-      "0": "Augmente l'ATQ de <cryo>40 %</cryo> pendant 12 s après avoir déclenché Évaporation, Électrocution, Gel, Fleurissement ou Dispersion Hydro."
+      "0": "Augmente l'ATQ de <cryo>40 %</cryo> pendant 12 s après avoir déclenché une réaction d'Évaporation, d'Électrocution, de Sélénocution, de Gel, de Fleurissement ou de Dispersion Hydro."
     }
   }
 }

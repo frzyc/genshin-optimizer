@@ -93,7 +93,7 @@
   "passive1": {
     "name": "Vision de médecin de terrain",
     "description": {
-      "0": "Pendant sa bénédiction noctâme, Ifa obtient 1 pt d'<strong>Essentiels de sauvetage</strong> pour chaque point de noctâme que tous les personnages de l'équipe possèdent actuellement. Les points d'Essentiels de sauvetage augmentent les DGT des réactions de Dispersion et d'Électrocution déclenchées par les membres de l'équipe à proximité."
+      "0": "Pendant sa bénédiction noctâme, Ifa obtient 1 pt d'<strong>Essentiels de sauvetage</strong> pour chaque point de noctâme que tous les personnages de l'équipe possèdent actuellement. Les points d'Essentiels de sauvetage augmentent les DGT des réactions de Dispersion, d'Électrocution et de Sélénocution déclenchées par les membres de l'équipe à proximité."
     }
   },
   "passive2": {

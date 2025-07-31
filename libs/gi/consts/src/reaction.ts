@@ -2,6 +2,7 @@ export const allTransformativeReactionKeys = [
   'overloaded',
   'shattered',
   'electrocharged',
+  'lunarcharged',
   'superconduct',
   'swirl',
   'burning',

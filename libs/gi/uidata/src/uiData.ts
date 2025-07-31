@@ -400,6 +400,7 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
       case 'overloaded':
       case 'shattered':
       case 'electrocharged':
+      case 'lunarcharged':
       case 'superconduct':
       case 'burning':
       case 'bloom':

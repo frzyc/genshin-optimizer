@@ -107,7 +107,7 @@
   "passive1": {
     "name": "Đãi Cát Tìm Vàng",
     "description": {
-      "0": "Nhân vật kết nối với <strong>Linh Hồn Đèn</strong> khi kích hoạt phản ứng Điện Cảm, Siêu Dẫn, Quá Tải, Sinh Trưởng, Tăng Cường, Nở Rộ, Khuếch Tán nguyên tố Lôi hoặc Kết Tinh nguyên tố Lôi, CD của <strong>Đèn Trấn Linh - Pháo Giải Trừ Phiền Não</strong> sẽ rút ngắn 1s.",
+      "0": "Nhân vật kết nối với <strong>Linh Hồn Đèn</strong> khi kích hoạt phản ứng Điện Cảm, Nguyệt-Điện Cảm, Siêu Dẫn, Quá Tải, Sinh Trưởng, Tăng Cường, Nở Rộ, Khuếch Tán nguyên tố Lôi hoặc Kết Tinh nguyên tố Lôi, CD của <strong>Đèn Trấn Linh - Pháo Giải Trừ Phiền Não</strong> sẽ rút ngắn 1s.",
       "1": "Hiệu quả này mỗi 3s tối đa kích hoạt một lần."
     }
   },

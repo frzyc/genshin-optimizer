@@ -1,0 +1,176 @@
+{
+  "name": "Dahlia",
+  "title": "Hoan Ca Tế Lễ",
+  "description": "Phó tế của Giáo Hội Tây Phong, người đại diện của Phong Thần trong giáo hội.",
+  "constellationName": "Cung Lễ Tán Ca",
+  "auto": {
+    "name": "Nghi Lễ",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát Thương Khi Đáp",
+      "7": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nghi Thức Rửa Tội",
+    "description": {
+      "0": "Đến lúc diễn vài trò hay ho rồi! Dựa vào Nhấn hoặc Nhấn Giữ để triệu hồi Bí Ẩn Mưa Sương theo cách thức khác nhau.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Sau khi cầu nguyện ngắn, sẽ triệu hồi Bí Ẩn Mưa Sương ở phía trước.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn Giữ</strong>",
+      "6": "Cầu nguyện liên tục, khi cầu nguyện kết thúc sẽ triệu hồi Bí Ẩn Mưa Sương ở vị trí chỉ định.",
+      "7": "<br/>",
+      "8": "<strong>Bí Ẩn Mưa Sương</strong>",
+      "9": "Sau khi kẻ địch hoặc nhân vật trong đội ở gần tiếp xúc với Bí Ẩn Mưa Sương, sẽ tạo ra hiệu quả khác nhau tùy thuộc vào đối tượng tiếp xúc:",
+      "10": "Nếu kẻ địch tiếp xúc, Bí Ẩn Mưa Sương sẽ phát nổ và gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> cho kẻ địch xung quanh.",
+      "11": "Nếu nhân vật trong đội ở gần tiếp xúc, Bí Ẩn Mưa Sương sẽ đẩy người tiếp xúc lên cao.",
+      "12": "<br/>",
+      "13": "Cùng lúc chỉ tồn tại một Bí Ẩn Mưa Sương do chính Dahlia tạo ra."
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD Kỹ Năng",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Thánh Ca Thuần Khiết",
+    "description": {
+      "0": "Cầu nguyện với thần linh bằng cả tấm lòng và giọng hát chân thành, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> lên kẻ địch xung quanh, ban hiệu quả \"Tây Phong Thân Quyến\" cho nhân vật trong đội bản thân, đồng thời triệu hồi Khiên Thánh.",
+      "1": "Lượng hấp thụ sát thương của Khiên Thánh ảnh hưởng bởi Giới Hạn HP của Dahlia, có 250% hiệu quả hấp thụ <hydro>Sát Thương Nguyên Tố Thủy</hydro>.",
+      "2": "<br/>",
+      "3": "<strong>Tây Phong Thân Quyến</strong>",
+      "4": "Trong thời gian duy trì, khi Khiên Thánh bị phá bởi sát thương, Dahlia có thể tiêu hao một tầng hiệu quả Chúc Tụng để triệu hồi lại Khiên Thánh.",
+      "5": "<br/>",
+      "6": "Dahlia có thể nhận hiệu quả Chúc Tụng bằng những cách thức sau:",
+      "7": [
+        "Khi nhân vật ra trận trong đội bản thân đang chịu ảnh hưởng bởi hiệu quả Tây Phong Thân Quyến, mỗi khi Tấn Công Thường trúng kẻ địch 4 lần, Dahlia sẽ nhận 1 tầng Chúc Tụng.",
+        "Sau khi kích hoạt hiệu quả của Thiên Phú Cố Định \"Sự Dịu Dàng Của Gió\" (Cần mở khóa thiên phú \"Sự Dịu Dàng Của Gió\")."
+      ],
+      "8": "Trong mỗi lần hiệu quả Tây Phong Thân Quyến, Dahlia tối đa nhận 4 tầng Chúc Tụng."
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Khiên Thánh Hấp Thụ",
+      "2": "Thời Gian Duy Trì Tây Phong Thân Quyến",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sự Dịu Dàng Của Gió",
+    "description": {
+      "0": "Nhân vật nhận hiệu quả \"Tây Phong Thân Quyến\" từ Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong> khi kích hoạt phản ứng Đóng Băng lên kẻ địch sẽ cung cấp 2 tầng Chúc Tụng cho Dahlia. Hiệu quả này trong 8s tối đa kích hoạt một lần."
+    }
+  },
+  "passive2": {
+    "name": "Hạnh Phúc Của Nguyện Cầu",
+    "description": {
+      "0": "Khi nhân vật ra trận hiện tại trong đội bản thân nhận hiệu quả \"Tây Phong Thân Quyến\" từ Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong> sẽ được gia tăng Tốc Độ Tấn Công, mức tăng dựa trên Giới Hạn HP của Dahlia: Mỗi 1000 điểm Giới Hạn HP sẽ tăng 0.5% Tốc Độ Tấn Công, tối đa tăng 20% Tốc Độ Tấn Công theo cách thức này."
+    }
+  },
+  "passive3": {
+    "name": "Chuyến Hành Trình Theo Gió",
+    "description": {
+      "0": "Ban ngày (6h đến 18h), nhân vật trong đội của bản thân nhận hiệu ứng Tốc Hành: Tốc độ di chuyển tăng 10%.",
+      "1": "Hiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh. Hiệu quả Tốc Hành không thể cộng dồn."
+    }
+  },
+  "constellation1": {
+    "name": "Dẫn Dắt Hoàn Hảo",
+    "description": {
+      "0": "Mỗi khi Dahlia nhận một tầng hiệu quả \"Chúc Tụng\" của Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong>, sẽ được hồi phục 2.5 điểm Năng Lượng Nguyên Tố."
+    }
+  },
+  "constellation2": {
+    "name": "Mặc Khải Thương Xót",
+    "description": {
+      "0": "Sau khi Dahlia tiêu hao hiệu quả \"Chúc Tụng\" của Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong> để triệu hồi Khiên Thánh, nhân vật được Khiên Thánh bảo vệ sẽ tăng 25% Hiệu Quả Khiên trong 12s."
+    }
+  },
+  "constellation3": {
+    "name": "Tín Ngưỡng Hoa Gió",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thánh Ca Thuần Khiết</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Hội Tụ Ước Nguyện",
+    "description": {
+      "0": "Thời gian duy trì hiệu quả Tây Phong Thân Quyến từ Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong> tăng thêm 3s."
+    }
+  },
+  "constellation5": {
+    "name": "Nền Tảng Tinh Tế",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Nghi Thức Rửa Tội</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Hạnh Phúc Đồng Hành",
+    "description": {
+      "0": "Nhân vật trong trận hiện tại nhận hiệu quả Tây Phong Thân Quyến từ Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong> sẽ tăng 10% Tốc Độ Tấn Công.",
+      "1": "Ngoài ra, khi nhân vật trong trận hiện tại mang hiệu quả Tây Phong Thân Quyến bị hạ gục, sẽ lập tức:",
+      "2": [
+        "Hồi sinh nhân vật này.",
+        "Hồi phục 100% HP cho nhân vật."
+      ],
+      "3": "Hiệu quả này mỗi 15 phút chỉ kích hoạt một lần."
+    }
+  }
+}

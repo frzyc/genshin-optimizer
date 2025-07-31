@@ -1,0 +1,213 @@
+{
+  "name": "Ineffa",
+  "title": "Boom Boom Thunderwave",
+  "description": "A multifunctional robot containing integrated mechanical components from various nations. The Source Core in her chest has endured the passage of countless years.",
+  "constellationName": "Vanilla Planifolia",
+  "auto": {
+    "name": "Cyclonic Duster",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 4 consecutive spear strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to perform a spinning attack."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%+{{3, percent(fixed: 1)}}%",
+      "3": "{{4, percent(fixed: 1)}}%",
+      "4": "{{5, percent(fixed: 1)}}%",
+      "5": "{{6, fixed(fixed: 1)}}",
+      "6": "{{7, percent(fixed: 1)}}%",
+      "7": "{{8, percent}}%/{{9, percent}}%",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cleaning Mode: Carrier Frequency",
+    "description": {
+      "0": "Ineffa engages her Enhanced Cleaning Module, dealing a single instance of <electro>AoE Electro DMG</electro> to nearby opponents, activating her Optical Flow Shield Barrier, and summoning the Multipurpose Smart Assistance Unit, <strong>Birgitta</strong>.",
+      "1": "The Optical Flow Shield Barrier absorbs DMG based on Ineffa's ATK, and it will absorb <electro>Electro DMG</electro> with 250% effectiveness."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Shield DMG Absorption",
+      "2": "Shield Duration",
+      "3": "Birgitta Discharge DMG",
+      "4": "Birgitta Duration",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}% ATK+{{2}}",
+      "2": "{{5, fixed(fixed: 1)}}s",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, fixed(fixed: 1)}}s",
+      "5": "{{6, fixed(fixed: 1)}}s",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Supreme Instruction: Cyclonic Exterminator",
+    "description": {
+      "0": "Through Multipurpose Smart Assistance Unit, <strong>Birgitta</strong>, Ineffa can use Rocket Punches to quickly clean up opponents! Shoots Birgitta into the fray, dealing <electro>AoE Electro DMG</electro> and allowing Birgitta to remain on the field.",
+      "1": "<br/>",
+      "2": "If Birgitta is already on the field, having been summoned by Ineffa, this Skill will re-summon Birgitta at the target's location and reset her duration."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "Energy Cost",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, fixed(fixed: 1)}}s",
+      "2": "{{2}}",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Overclocking Circuit",
+    "description": {
+      "0": "If there are thunderclouds created by Lunar-Charged reactions nearby when <strong>Birgitta</strong> unleashes Discharge attacks, she will initiate an additional attack, dealing <electro>AoE Electro DMG</electro> equal to 65% of Ineffa's ATK. This DMG is considered Lunar-Charged DMG."
+    }
+  },
+  "passive2": {
+    "name": "Panoramic Permutation Protocol",
+    "description": {
+      "0": "When using the Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong>, all your party members will gain the Parameter Permutation effect: Increases Ineffa and your own active party member's Elemental Mastery by 6% of Ineffa's ATK for 20s."
+    }
+  },
+  "passive": {
+    "name": "Moonsign Benediction: Assemblage Hub",
+    "description": {
+      "0": "When a party member triggers an Electro-Charged reaction, it will be converted into the Lunar-Charged reaction, with every 100 ATK that Ineffa has increasing Lunar-Charged's Base DMG by 0.7%, up to a maximum of 14%.",
+      "1": "<br/>",
+      "2": "Further blessings may follow the new moon's rise..."
+    }
+  },
+  "passive3": {
+    "name": "Flavor Synthesis Unit",
+    "description": {
+      "0": "When Ineffa uses food, there is a 30% chance of gaining a seasoning ingredient.",
+      "1": "<br/>",
+      "2": "Additionally, in Nod-Krai, it seems you'll be able to change Birgitta's appearance through certain means..."
+    }
+  },
+  "constellation1": {
+    "name": "Rectifying Processor",
+    "description": {
+      "0": "When Ineffa activates her Optical Flow Shield Barrier, all nearby party members will gain the Carrier Flow Composite effect for 20s: Increases Lunar-Charged DMG by 2.5% for every 100 ATK that Ineffa has, up to a maximum of 50%."
+    }
+  },
+  "constellation2": {
+    "name": "Support Cleaning Module",
+    "description": {
+      "0": "After the Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong> hits opponents, it will inflict the Punishment Edict status on one of those hit opponents: After a brief delay, or when this opponent is defeated, nearby opponents will take <electro>AoE Electro DMG</electro> equal to 300% of Ineffa's ATK. This DMG is considered Lunar-Charged DMG.",
+      "1": "Additionally, when the Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong> is unleashed, nearby party members will gain Optical Flow Shield Barriers."
+    }
+  },
+  "constellation3": {
+    "name": "Enhanced Emotion Emulator",
+    "description": {
+      "0": "Increases the Level of <strong>Cleaning Mode: Carrier Frequency</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Edictless Path",
+    "description": {
+      "0": "When your own party members trigger Lunar-Charged reactions, recover 5 Elemental Energy. This effect can occur once every 4s."
+    }
+  },
+  "constellation5": {
+    "name": "Mirror's Dream Transcension",
+    "description": {
+      "0": "Increases the Level of <strong>Supreme Instruction: Cyclonic Exterminator</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "A Dawning Morn for You",
+    "description": {
+      "0": "When Ineffa is affected by the Carrier Flow Composite effect, she will deal <electro>AoE Electro DMG</electro> equal to 135% of her ATK to opponents in the current active character's vicinity after nearby thunderclouds release bursts of lightning at opponents. This DMG is considered Lunar-Charged DMG. The aforementioned effect can trigger once every 3.5s."
+    }
+  }
+}

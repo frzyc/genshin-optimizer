@@ -2,6 +2,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "esModuleInterop": false,
+    "exactOptionalPropertyTypes": false,
     "types": ["vite/client"]
   },
   "files": [],

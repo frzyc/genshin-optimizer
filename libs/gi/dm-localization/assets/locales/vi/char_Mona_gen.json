@@ -150,8 +150,8 @@
     "description": {
       "0": "Trong vòng 8s sau khi nhân vật của bản thân trong đội tấn công địch ở trạng thái Tinh Dị, sẽ tăng hiệu quả <hydro>phản ứng với Nguyên Tố Thủy</hydro>:",
       "1": [
-        "Tăng 15% sát thương phản ứng Điện Cảm gây ra, tăng 15% sát thương phản ứng Bốc Hơi gây ra, tăng 15% sát thương phản ứng khuếch tán Nguyên Tố Thủy gây ra.",
-        "Thời gian duy trì phản ứng đóng băng kéo dài 15%."
+        "Tăng 15% sát thương phản ứng Điện Cảm gây ra, tăng 15% sát thương phản ứng Nguyệt-Điện Cảm gây ra, tăng 15% sát thương phản ứng Bốc Hơi gây ra, tăng 15% sát thương phản ứng Khuếch Tán Nguyên Tố Thủy gây ra.",
+        "Thời gian duy trì phản ứng Đóng Băng kéo dài 15%."
       ]
     }
   },

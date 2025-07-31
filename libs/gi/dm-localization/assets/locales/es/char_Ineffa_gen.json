@@ -1,0 +1,159 @@
+{
+  "name": "Ineffa",
+  "title": "La Onda Atronadora",
+  "description": "Una robot multifuncional formada por componentes mecánicos de distintas naciones. Su núcleo fuentenigma, situado en el pecho, tiene muchos años de antigüedad.",
+  "constellationName": "Vanilla Planifolia",
+  "auto": {
+    "name": "Giro antipolvo",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para realizar un ataque giratorio."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Modo depuración: Frecuencia de onda estable",
+    "description": {
+      "0": "Ineffa activa su módulo avanzado de limpieza para infligir una vez <electro>Daño Electro en el AdE</electro> a los enemigos cercanos, crear un escudo lumibarrera e invocar una unidad multiusos de asistencia inteligente llamada <strong>Birgitta</strong>.",
+      "1": "La absorción de daño del escudo lumibarrera aumenta en función del ATQ de Ineffa y tiene un 250% de efectividad de absorción de <electro>Daño Electro</electro>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Absorción de escudo",
+      "2": "Duración del escudo",
+      "3": "Daño electrizador de Birgitta",
+      "4": "Duración de Birgitta",
+      "5": "TdE",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Orden suprema: Exterminación zonal",
+    "description": {
+      "0": "Con la ayuda de <strong>Birgitta</strong>, la unidad multiusos de asistencia inteligente, ¡limpia a los enemigos con un puñetazo cohete! Ineffa lanza a Birgitta para infligir <electro>Daño Electro en el AdE</electro> y hacer que esta se quede en el campo de batalla.",
+      "1": "<br/>",
+      "2": "Si, al hacer esto, en el campo ya había una Birgitta invocada por Ineffa, en su lugar, invocará una nueva Birgitta en la ubicación del objetivo y su duración se reiniciará."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "Energía Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Circuito sobreacelerado",
+    "description": {
+      "0": "Si hay alguna nube de tormenta creada con la reacción de Electrocargado Lunar cerca de <strong>Birgitta</strong>, cuando esta realice un ataque electrizador, ejecutará un ataque adicional que inflige <electro>Daño Electro en el AdE</electro> en una cantidad equivalente al 65% del ATQ de Ineffa. Este daño se considera daño de Electrocargado Lunar."
+    }
+  },
+  "passive2": {
+    "name": "Protocolo de refactorización holística",
+    "description": {
+      "0": "Al usar la Habilidad Definitiva, <strong>Orden suprema: Exterminación zonal</strong>, todos tus personajes del equipo obtienen el efecto de “refactorización paramétrica”, el cual aumenta durante 20 s la Maestría Elemental de Ineffa y de tu personaje en uso del equipo en una cantidad equivalente al 6% del ATQ de Ineffa."
+    }
+  },
+  "passive3": {
+    "name": "Bendición presagiolunar: Repetidor simulado",
+    "description": {
+      "0": "Cuando un personaje del equipo cause una reacción de Electrocargado, esta se transformará en una reacción de Electrocargado Lunar cuyo daño base aumentará en un 0.7% por cada 100 pts. de ATQ que tenga Ineffa. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
+      "1": "<br/>",
+      "2": "Es posible que haya bendiciones adicionales cuando salga la luna nueva..."
+    }
+  },
+  "passive": {
+    "name": "Unidad de sabores sintéticos",
+    "description": {
+      "0": "Cuando Ineffa consume alguna comida, hay una probabilidad del 30% de obtener un condimento culinario.",
+      "1": "<br/>",
+      "2": "Además, en Nod Krai, parece que será posible cambiar el aspecto de Birgitta de cierta manera..."
+    }
+  },
+  "constellation1": {
+    "name": "Procesador de rectificación",
+    "description": {
+      "0": "Cuando Ineffa crea un escudo lumibarrera, otorga a todos los personajes cercanos del equipo el efecto de “recombinación del portador” durante 20 s, el cual aumenta el daño de la reacción de Electrocargado Lunar en un 2.5% por cada 100 pts. de ATQ que tenga Ineffa. Como máximo, dicho daño puede aumentar en un 50% de esta manera."
+    }
+  },
+  "constellation2": {
+    "name": "Módulo de limpieza auxiliar",
+    "description": {
+      "0": "Tras golpear a los enemigos con la Habilidad Definitiva, <strong>Orden suprema: Exterminación zonal</strong>, aplica el estado de “edicto punitivo” a uno de los enemigos golpeados. Después de un breve lapso de tiempo o cuando dicho enemigo sea derrotado, se infligirá <electro>Daño Electro en el AdE</electro> a los demás enemigos cercanos en una cantidad equivalente al 300% del ATQ de Ineffa. Este daño se considera daño de Electrocargado Lunar.",
+      "1": "Además, al usar la Habilidad Definitiva, <strong>Orden suprema: Exterminación zonal</strong>, también se crea un escudo lumibarrera para los personajes en uso cercanos."
+    }
+  },
+  "constellation3": {
+    "name": "Emulador de emociones mejorado",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Modo depuración: Frecuencia de onda estable</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Camino sin edictos",
+    "description": {
+      "0": "Cuando tus personajes del equipo causan una reacción de Electrocargado Lunar, recuperan 5 pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 4 s."
+    }
+  },
+  "constellation5": {
+    "name": "Sueño trasciendespejos",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Orden suprema: Exterminación zonal</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Una nueva alba para ti",
+    "description": {
+      "0": "Cuando Ineffa está bajo los efectos de recombinación del portador y una nube de tormenta descarga un rayo contra un enemigo, Ineffa inflige <electro>Daño Electro en el AdE</electro> a los enemigos cercanos a tu personaje en uso en una cantidad equivalente al 135% de su ATQ. Este daño es considerado daño de Electrocargado Lunar, y este efecto solo puede ocurrir una vez cada 3.5 s."
+    }
+  }
+}

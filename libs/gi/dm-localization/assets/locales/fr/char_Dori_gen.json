@@ -107,7 +107,7 @@
   "passive1": {
     "name": "Un œil d'or",
     "description": {
-      "0": "Si le personnage relié au <strong>djinn</strong> a déclenché une réaction d'Électrocution, de Supraconduction, de Surcharge, de Stimulation, de Suractivation, d'Exubérance, de Dispersion Électro ou de Cristallisation Électro, le TdR de <strong>Lampe de protection : Canon pacificateur</strong> diminue de 1 s.",
+      "0": "Si le personnage relié au <strong>djinn</strong> a déclenché une réaction d'Électrocution, de Sélénocution, de Supraconduction, de Surcharge, de Stimulation, de Suractivation, d'Exubérance, de Dispersion Électro ou de Cristallisation Électro, le TdR de <strong>Lampe de protection : Canon pacificateur</strong> diminue de 1 s.",
       "1": "Cet effet peut être déclenché une fois toutes les 3 s."
     }
   },

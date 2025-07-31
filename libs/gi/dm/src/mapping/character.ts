@@ -37,6 +37,7 @@ export type AvatarAssocType =
   | 'ASSOC_TYPE_KHAENRIAH'
   | 'ASSOC_TYPE_MAINACTOR'
   | 'ASSOC_TYPE_RANGER'
+  | 'ASSOC_TYPE_NODKRAI'
 type Regionkey =
   | 'mondstadt'
   | 'liyue'
@@ -46,6 +47,7 @@ type Regionkey =
   | 'natlan'
   | 'snezhnaya'
   | 'khaenriah'
+  | 'nodKrai'
 export const regionMap: Record<AvatarAssocType, Regionkey | undefined> = {
   ASSOC_TYPE_MONDSTADT: 'mondstadt',
   ASSOC_TYPE_LIYUE: 'liyue',
@@ -57,6 +59,7 @@ export const regionMap: Record<AvatarAssocType, Regionkey | undefined> = {
   ASSOC_TYPE_KHAENRIAH: 'khaenriah',
   ASSOC_TYPE_MAINACTOR: undefined, // Traveler
   ASSOC_TYPE_RANGER: undefined, // Aloy
+  ASSOC_TYPE_NODKRAI: 'nodKrai',
 }
 
 export const characterIdMap: Record<
@@ -167,6 +170,7 @@ export const characterIdMap: Record<
   10000113: 'Ifa',
   10000114: 'Skirk',
   10000115: 'Dahlia',
+  10000116: 'Ineffa',
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",

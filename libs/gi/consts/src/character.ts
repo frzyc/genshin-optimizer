@@ -27,6 +27,7 @@ export const allRegionKeys = [
   'natlan',
   'snezhnaya',
   'khaenriah',
+  'nodKrai',
 ] as const
 export type RegionKey = (typeof allRegionKeys)[number]
 
@@ -104,6 +105,7 @@ export const nonTravelerCharacterKeys = [
   'Gorou',
   'HuTao',
   'Iansan',
+  'Ineffa',
   'Ifa',
   'Jean',
   'Kachina',

@@ -46,7 +46,7 @@
   "skill": {
     "name": "Kadim Ayin: Gürleyen Kumlar",
     "description": {
-      "0": "Yıldırımın gücünü toplar ve <electro>Elektrik Alan Hasarı</electro> vererek hızla geriye kaçar. Eğer bu saldırı bir Elektrik Yüklü, Süper İletim, Yüksek Voltaj, Hızlanma, Şiddetlenme, Aşırı Çiçeklenme veya Elektrik Girdabı tepkimesi tetiklerse Sethos belirli bir miktar Element Enerjisi yeniler.",
+      "0": "Yıldırımın gücünü toplar ve <electro>Elektrik Alan Hasarı</electro> vererek hızla geriye kaçar. Eğer bu saldırı bir Elektrik Yüklü, Ay Yüklü, Süper İletim, Yüksek Voltaj, Hızlanma, Şiddetlenme, Aşırı Çiçeklenme veya Elektrik Girdabı tepkimesi tetiklerse Sethos belirli bir miktar Element Enerjisi yeniler.",
       "1": "<br/>",
       "2": "<i>\"İçinde Tanrıyı barındıran Rahip ile çukurları vahaya dönüştüren Büyücü. Kum denizi şarkıcıları onların hikayelerini anlatmaya devam ediyor... Ancak ben bilirim onların efsane olmadığını, çünkü onlar benim atalarım.\"</i>"
     },

@@ -1157,6 +1157,20 @@ export const formulas = {
       },
     },
   },
+  Ineffa: {
+    normal1: {
+      sheet: 'Ineffa',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Ineffa',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Ifa: {
     normal1: {
       sheet: 'Ifa',

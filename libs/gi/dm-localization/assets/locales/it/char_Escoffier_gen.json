@@ -118,7 +118,7 @@
       "2": "<strong>Meka da cucina: modalità Cucina estemporanea</strong>",
       "3": [
         " Il Meka da cucina viene posizionato in campo e assorbe gli attacchi elementali. Quando l'energia elementale assorbita raggiunge un certo limite, Escoffier converte gli ingredienti contenuti nel Meka in dei piatti deliziosi.",
-        " Escoffier ha bisogno di tempo per comprare nuovi ingredienti, quindi può creare in questo modo solo un certo numero di piatti alla settimana. Il numero di piatti che Escoffier può preparare si ripristina ogni lunedì alle 04:00."
+        " Escoffier ha bisogno di tempo per comprare nuovi ingredienti, quindi può creare in questo modo solo un certo numero di piatti alla settimana. Il numero di piatti che Escoffier può preparare si ripristina ogni lunedì alle 04:00 {TIMEZONE}."
       ]
     }
   },

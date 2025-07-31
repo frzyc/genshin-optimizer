@@ -1,0 +1,176 @@
+{
+  "name": "Dahlia",
+  "title": "Ode und Oblation",
+  "description": "Diakon der Favonius-Kathedrale und Vertreter des Anemo-Archons in der Kirche.",
+  "constellationName": "Cantus Choralis",
+  "auto": {
+    "name": "Favonius-Schwertkunst – Ritual",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sakrament der Immersion",
+    "description": {
+      "0": "Zeit für ein paar interessante Tricks! Je nachdem, ob gedrückt oder gedrückt gehalten wird, wird das Nieselregen-Mysterium auf unterschiedliche Weise herbeigerufen.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Lässt nach einem kurzen Gebet das Nieselregen-Mysterium vor sich erscheinen.",
+      "4": "<br/>",
+      "5": "<strong>Gedrückthalten</strong>",
+      "6": "Führt ein anhaltendes Gebet aus und lässt danach ein Nieselregen-Mysterium an der gewünschten Stelle erscheinen.",
+      "7": "<br/>",
+      "8": "<strong>Nieselregen-Mysterium</strong>",
+      "9": "Nachdem Gegner oder Truppenmitglieder in der Nähe das Nieselregen-Mysterium berühren, treten unterschiedliche Effekte auf, je nachdem, wer es berührt:",
+      "10": "Wenn ein Gegner das Mysterium berührt, explodiert es und verursacht <hydro>Hydro-Flächenschaden</hydro> an Gegnern in der Nähe.",
+      "11": "Wenn ein Truppenmitglied in der Nähe es berührt, wird es denjenigen, der es berührt, hoch in die Luft schicken.",
+      "12": "<br/>",
+      "13": "Es kann gleichzeitig nur ein von Dahlia selbst erschaffenes Nieselregen-Mysterium existieren."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Fähigkeits-Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Glänzend reines Gebet",
+    "description": {
+      "0": "Betet mit Ernsthaftigkeit und Gesang zum Gott, fügt Gegnern in der Nähe <hydro>Hydro-Flächenschaden</hydro> zu, gewährt den eigenen Truppenmitgliedern den Effekt „Favonius-Gunst“ und lässt den „Schild der heiligen Gunst“ erscheinen.",
+      "1": "Die Schildstärke vom „Schild der heiligen Gunst“ hängt von Dahlias max. LP ab und hält bei <hydro>Hydro-Schaden</hydro> 250 % ab.",
+      "2": "<br/>",
+      "3": "<strong>Favonius-Gunst</strong>",
+      "4": "Während der Wirkungsdauer kann Dahlia bei der durch Schaden verursachten Zerstörung vom „Schild der heiligen Gunst“ eine Stapelung des Effekts „Segen“ verbrauchen, um den „Schild der heiligen Gunst“ erneut zu beschwören.",
+      "5": "<br/>",
+      "6": "Dahlia kann den Effekt „Segen“ auf folgende Weisen erhalten:",
+      "7": [
+        " Dahlia erhält 1 Stapelung des Effekts „Segen“ jedes Mal, wenn die eigene aktive Figur in der Truppe Gegner 4 Male mit Standardangriffen trifft, während ihr die „Favonius-Gunst“ verliehen wird.",
+        " Nach dem Auslösen des Effekts des passiven Talents „Sanfte Anmut des Windes“. (Das passive Talent „Sanfte Anmut des Windes“ muss zuerst freigeschaltet werden.)"
+      ],
+      "8": "Dahlia kann höchstens 4 Stapelungen des Effekts „Segen“ pro Wirkungsdauer der „Favonius-Gunst“ erlangen."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Schildstärke des „Schilds der heiligen Gunst“",
+      "2": "Dauer der Favonius-Gunst",
+      "3": "Elementarenergie",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sanfte Anmut des Windes",
+    "description": {
+      "0": "Verleiht Dahlia beim Auslösen der Reaktion Gefroren an Gegnern durch Figuren unter dem Effekt „Favonius-Gunst“ der Spezialfähigkeit <strong>„Glänzend reines Gebet“</strong> 2 Stapelungen des Effekts „Segen“. 8 s Abklingzeit."
+    }
+  },
+  "passive2": {
+    "name": "Gebet der wohlverdienten Freude",
+    "description": {
+      "0": "Erhöht die Angriffs-GSW der eigenen aktuellen Figur in der Truppe, wenn sie unter dem Effekt „Favonius-Gunst“ der Spezialfähigkeit <strong>„Glänzend reines Gebet“</strong> steht, um 0,5 % für je 1.000 Punkte von Dahlias max. LP. Max. 20 % Angriffs-GSW-Bonus auf diese Weise möglich."
+    }
+  },
+  "passive3": {
+    "name": "Pilgerreise mit heimkehrendem Wind",
+    "description": {
+      "0": "Verleiht den eigenen Figuren in der Truppe tagsüber (6 bis 18 Uhr) den Effekt „Schneller Schritt“: Erhöht die Bewegungs-GSW um 10 %.",
+      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund und ist nicht stapelbar."
+    }
+  },
+  "constellation1": {
+    "name": "Makellose Führung",
+    "description": {
+      "0": "Stellt Dahlia für jede erhaltene Stapelung des Effekts „Segen“ der Spezialfähigkeit <strong>„Glänzend reines Gebet“</strong> 2,5 Punkte Elementarenergie wieder her."
+    }
+  },
+  "constellation2": {
+    "name": "Offenbarung der Barmherzigkeit",
+    "description": {
+      "0": "Erhöht die Schildeffizienz der Figuren im Schutz vom Schild der heiligen Gunst für 12 s um 25 %, nachdem Dahlia den Effekt „Segen“ der Spezialfähigkeit <strong>„Glänzend reines Gebet“</strong> verbraucht und dadurch den Schild der heiligen Gunst erschaffen hat."
+    }
+  },
+  "constellation3": {
+    "name": "Windblumenopfer",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Glänzend reines Gebet</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Oration aller Wünsche",
+    "description": {
+      "0": "Verlängert die Dauer des Effekts „Favonius-Gunst“ der Spezialfähigkeit <strong>Glänzend reines Gebet</strong> um 3 s."
+    }
+  },
+  "constellation5": {
+    "name": "Wachsende Intrigen",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Sakrament der Immersion</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Möge dich die Freude begleiten",
+    "description": {
+      "0": "Erhöht die Angriffs-GSW der vom Effekt „Favonius-Gunst“ der Spezialfähigkeit <strong>„Glänzend reines Gebet“</strong> betroffenen aktiven Figuren um 10 %.",
+      "1": "Außerdem, wenn die vom Effekt „Favonius-Gunst“ betroffenen aktiven Figuren besiegt werden:",
+      "2": [
+        " Belebt diese Figur wieder.",
+        " Stellt dieser Figur 100 % LP wieder her."
+      ],
+      "3": "15 min Abklingzeit."
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "setName": "Yıldırım Öfkesi",
   "setEffects": {
     "2": "+%15 Elektrik Hasarı Bonusu.",
-    "4": "Yüksek Voltaj, Elektrik Yüklü, Süper İletim ve Aşırı Çiçeklenme ile verilen Hasarı %40 artırır ve Şiddetlenme ile verilen Hasar Bonusu %20 artar. Hızlanma veya yukarıda belirtilen Element Tepkimeleri tetiklendiğinde Element Becerisi Bekleme Süresi 1 saniye azalır. 0,8 saniyede bir tetiklenebilir."
+    "4": "Yüksek Voltaj, Elektrik Yüklü, Süper İletim ve Aşırı Çiçeklenme ile verilen Hasarı %40 artırır. Ayrıca Şiddetlenme ile verilen Hasar Bonusu %20, Ay Yüklü ile verilen Hasar %20 artar. Hızlanma veya yukarıda belirtilen Element Tepkimeleri tetiklendiğinde Element Becerisinin Bekleme Süresi 1 saniye azalır. Bu etki 0,8 saniyede bir tetiklenebilir."
   },
   "pieces": {
     "flower": {

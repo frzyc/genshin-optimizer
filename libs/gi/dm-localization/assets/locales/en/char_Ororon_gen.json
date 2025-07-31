@@ -159,7 +159,7 @@
       "0": "After a nearby party member triggers Nightsoul Burst, Ororon will gain 40 Nightsoul points. Within 15s after using his Elemental Skill, when other party members' <hydro>Hydro</hydro> or <electro>Electro</electro> attacks hit opponents, Ororon will gain 5 Nightsoul points, an effect that can occur every 0.3s for a maximum of 10 times during this 15s duration.",
       "1": "Ororon can have a maximum of 80 Nightsoul points.",
       "2": "<br/>",
-      "3": "Also, when nearby opponents take <electro>Electro-Charged</electro> reaction DMG or Nightsoul-aligned DMG dealt by other nearby characters, Ororon will consume 10 Nightsoul points (provided he has at least that amount), entering the Nightsoul's Blessing state and triggering the Hypersense effect: Deal Nightsoul-aligned <electro>Electro DMG</electro> based on 160% of Ororon's ATK to at most 4 nearby opponents. The aforementioned effect can trigger once every 1.8s.",
+      "3": "Also, when nearby opponents take <electro>Electro-Charged or Lunar-Charged</electro> reaction DMG or Nightsoul-aligned DMG dealt by other nearby characters, Ororon will consume 10 Nightsoul points (provided he has at least that amount), entering the Nightsoul's Blessing state and triggering the Hypersense effect: Deal Nightsoul-aligned <electro>Electro DMG</electro> based on 160% of Ororon's ATK to at most 4 nearby opponents. The aforementioned effect can trigger once every 1.8s.",
       "4": "<br/>",
       "5": "<strong>Nightsoul's Blessing: Ororon</strong>",
       "6": "Ororon's Nightsoul's Blessing state lasts 6s."

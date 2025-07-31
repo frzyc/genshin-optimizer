@@ -142,11 +142,11 @@
   "constellation1": {
     "name": "Profecia da Submersão",
     "description": {
-      "0": "Os efeitos de <hydro>Reações Elementais relacionadas a Hydro</hydro> agora são aprimorados por 8 segundos depois que o seu próprio personagem de equipe atingir um inimigo afetado por um Presságio:",
-      "1": " Dano Eletricamente Carregado é aumentado em 15%.",
-      "2": " Dano de Vaporizar é aumentado em 15%.",
-      "3": " Dano de Redemoinho é aumentado em 15%.",
-      "4": "A duração em que os inimigos ficam Congelados é aumentada em 15%."
+      "0": "Nos 8s após o personagem da equipe atingir um inimigo afetado por Presságio, aumenta os efeitos <hydro>relacionados ao Hydro</hydro>:",
+      "1": [
+        " Dano Eletricamente Carregado é aumentado em 15%. Dano Carga Lunar é aumentado em 15%. Dano de Vaporizar é aumentado em 15%. Dano de Redemoinho é aumentado em 15%.",
+        " A duração em que os inimigos ficam Congelados é aumentada em 15%."
+      ]
     }
   },
   "constellation2": {
