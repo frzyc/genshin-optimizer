@@ -1,0 +1,370 @@
+{
+  "name": "Yuzuha",
+  "fullName": "Ukinami Yuzuha",
+  "basic": {
+    "BasicAttackTanukiClaws": {
+      "name": "Basic Attack: Tanuki Claws",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 5 strikes ahead, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackTanukiCloak": {
+      "name": "Basic Attack: Tanuki Cloak",
+      "desc": {
+        "0": "Hold <IconNormal /> to activate:",
+        "1": "Enter a defensive stance for up to 1.5 seconds. If hit during this time, parry the attack and inflict massive Daze against the attacking enemy.",
+        "2": "Successfully parrying an attack gains 1 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "3": "Character is invulnerable when successfully parrying."
+      },
+      "params": [
+        "Parry "
+      ]
+    },
+    "BasicAttackHardCandyShot": {
+      "name": "Basic Attack: Hard Candy Shot",
+      "desc": {
+        "0": "When Yuzuha has <ct color=#FFFFFF>Sugar Points</ct>, landing a hit with other active characters' attacks will have Yuzuha continuously twirl her umbrella and attack centered around the target before launching a powerful shell, dealing <ct color=#F0D12B>Physical DMG</ct>. When this attack lands a heavy attack, Yuzuha consumes 1 <ct color=#FFFFFF>Sugar Point</ct>.",
+        "1": "<ct color=#FFFFFF>Basic Attack: Hard Candy Shot</ct> is considered an <ct color=#FFFFFF>Aftershock</ct>.",
+        "2": "<ct color=#FFFFFF>Basic Attack: Hard Candy Shot</ct> can be triggered once every 8s.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackSugarburstSparkles": {
+      "name": "Basic Attack: Sugarburst Sparkles",
+      "desc": {
+        "0": "Enemies under the effect of <ct color=#FFFFFF>Sweet Scare</ct> will be attacked by a <ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles</ct> once every 1s.",
+        "1": "<ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles</ct> initially deals <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "<ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles</ct> does not contribute its accumulated Attribute Anomaly Buildup toward Anomaly DMG calculation.",
+        "3": "<ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles</ct> Anomaly Buildup Rate increases by <ct color=#2BAD00>{CAL:0.07+AvatarSkillLevel(0)*0.015,100,4}%</ct>."
+      },
+      "params": [
+        " ",
+        "Anomaly Buildup Rate Increase "
+      ]
+    },
+    "BasicAttackSugarburstSparklesMax": {
+      "name": "Basic Attack: Sugarburst Sparkles - Max",
+      "desc": {
+        "0": "Enemies affected by <ct color=#FFFFFF>Sweet Scare</ct> will be attacked by a <ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles - Max</ct> when hit with a heavy attack from <ct color=#FFFFFF>Basic Attack: Hard Candy Shot</ct> or <ct color=#FFFFFF>Assist Follow-Up: Stuffed Hard Candy Shot</ct>.",
+        "1": "<ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles - Max</ct> initially deals <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "<ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles - Max</ct> does not contribute its accumulated Attribute Anomaly Buildup toward Anomaly DMG calculation.",
+        "3": "<ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles - Max</ct> Anomaly Buildup Rate increases by <ct color=#2BAD00>{CAL:0.07+AvatarSkillLevel(0)*0.015,100,4}%</ct>."
+      },
+      "params": [
+        " ",
+        "Anomaly Buildup Rate Increase "
+      ]
+    },
+    "BasicAttackTanukiHelper": {
+      "name": "Basic Attack: Tanuki Helper",
+      "desc": {
+        "0": "When Yuzuha is off-field, tanuki Kama assists the active character in attacking enemies, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "1": "When Yuzuha performs <ct color=#FFFFFF>Basic Attack: Tanuki Cloak</ct>, tanuki Kama joins her in attacking the enemy, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Tanuki Kama inherits Yuzuha's initial ATK."
+      },
+      "params": [
+        "Tanuki Kama & Yuzuha Coordinated Attack ",
+        "Tanuki Kama Auto-Attack "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeDidIScareYou": {
+      "name": "Dodge: Did I Scare You?",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackYoureOuttaLuck": {
+      "name": "Dash Attack: You're Outta Luck!",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Rapidly strikes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterTimeForPayback": {
+      "name": "Dodge Counter: Time for Payback~",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Deliver a quick strike forward, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackGummyBombardment": {
+      "name": "Special Attack: Gummy Bombardment",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Fire a cannon shot forward, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackCavityAlert": {
+      "name": "EX Special Attack: Cavity Alert",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Throw a bomb at the enemy, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Upon hitting an enemy with a heavy attack, it inflicts the <ct color=#FFFFFF>Sweet Scare</ct> state.",
+        "3": "Gains 2 <ct color=#FFFFFF>Sugar Points</ct> upon activation.",
+        "4": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackCavityAlertRightNow": {
+      "name": "EX Special Attack: Cavity Alert, Right Now!",
+      "desc": {
+        "0": "After using <ct color=#FFFFFF>Dodge Counter: Time for Payback~</ct>, <ct color=#FFFFFF>Quick Assist: Dessert Time</ct>, <ct color=#FFFFFF>Assist Follow-Up: We Have Cookies</ct>, or <ct color=#FFFFFF>Assist Follow-Up: Stuffed Hard Candy Shot</ct>, or when a <ct color=#FFFFFF>Perfect Dodge</ct> is triggered, press <IconSpecialReady /> to activate:",
+        "1": "Quickly throw a bomb at the enemy, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "On hitting an enemy with a heavy attack, it inflicts the <ct color=#FFFFFF>Sweet Scare</ct> state.",
+        "3": "Gains 2 <ct color=#FFFFFF>Sugar Points</ct> upon activation.",
+        "4": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "SweetScare": {
+      "name": "Sweet Scare",
+      "desc": {
+        "0": "The <ct color=#FFFFFF>Sweet Scare</ct> state lasts for <ct color=#2BAD00>{CAL:16+AvatarSkillLevel(1)*2,1,2}</ct>s, repeated triggers reset the duration.",
+        "1": "When an enemy affected by <ct color=#FFFFFF>Sweet Scare</ct> is first hit by an active character using an attack of their attribute, <ct color=#FFFFFF>Flavor Match</ct> is triggered against that enemy, changing the attribute of <ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles</ct> and <ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles - Max</ct> against that enemy to match that of the character who triggered Flavor Match.",
+        "2": "When <ct color=#FFFFFF>Sweet Scare</ct> is triggered again on an enemy, their existing <ct color=#FFFFFF>Flavor Match</ct> state is removed. The process can be repeated to change the attribute of <ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles</ct> and <ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles - Max</ct> again."
+      },
+      "params": [
+        "Sweet Scare Duration "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackPrankAssault": {
+      "name": "Chain Attack: Prank Assault",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleash a powerful strike on enemies in a small area ahead, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Gains 1 <ct color=#FFFFFF>Sugar Points</ct> when used.",
+        "3": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateSurrenderOrSufferTheMischief": {
+      "name": "Ultimate: Surrender or Suffer the Mischief",
+      "desc": {
+        "0": "When Decibel Rating reaches Maximum, press <IconUltimateReady /> to trigger:",
+        "1": "Unleash a powerful strike on enemies in a large area around the character, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Enemies hit with a heavy attack are inflicted with the <ct color=#FFFFFF>Sweet Scare</ct> state.",
+        "3": "Upon activating this skill, other squad members gain <ct color=#2BAD00>{CAL:7+AvatarSkillLevel(3)*1.5,1,2}</ct> Energy.",
+        "4": "Upon activating this skill, gain 2 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "5": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy.",
+        "6": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Other Squad Members' Energy Gain "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistDessertTime": {
+      "name": "Quick Assist: Dessert Time",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Strike enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistReplenishYourFun": {
+      "name": "Defensive Assist: Replenish Your Fun",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Upon a successful parry, gain 1 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpWeHaveCookies": {
+      "name": "Assist Follow-Up: We Have Cookies",
+      "desc": {
+        "0": "After triggering a <ct color=#FFFFFF>Defensive Assist</ct> or successfully parrying an enemy attack with <ct color=#FFFFFF>Basic Attack: Tanuki Cloak</ct>, press <IconNormal /> to activate:",
+        "1": "Strike enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "AssistFollowUpStuffedHardCandyShot": {
+      "name": "Assist Follow-Up: Stuffed Hard Candy Shot",
+      "desc": {
+        "0": "After triggering a <ct color=#FFFFFF>Defensive Assist</ct> or successfully parrying an enemy attack with <ct color=#FFFFFF>Basic Attack: Tanuki Cloak</ct>, press <IconNormal /> at the right moment to activate:",
+        "1": "Following a continuous spinning umbrella attack, fire a powerful projectile that deals <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Whimsical Wonder",
+    "desc": [
+      {
+        "0": "Upon entering the battlefield, Yuzuha immediately gains 3 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "1": "Yuzuha can have up to 6 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "2": "When Yuzuha's <ct color=#FFFFFF>EX Special Attack: Cavity Alert</ct>, <ct color=#FFFFFF>EX Special Attack: Cavity Alert, Right Now!</ct>, or <ct color=#FFFFFF>Ultimate: Surrender or Suffer the Mischief</ct> hits an enemy, all squad members receive the <ct color=#FFFFFF>Tanuki Wish</ct> effect.",
+        "3": "<ct color=#FFFFFF>Tanuki Wish</ct> grants an ATK increase equal to 40% of Yuzuha's initial ATK, up to a maximum increase of <ct color=#2BAD00>600</ct>, and increases the DMG dealt by those with the effect by 15%, lasting 40s. Repeated triggers reset the duration.",
+        "4": "If Yuzuha's initial ATK reaches 1,500, she grants the full ATK bonus to all squad members."
+      },
+      {
+        "0": "Upon entering the battlefield, Yuzuha immediately gains 3 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "1": "Yuzuha can have up to 6 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "2": "When Yuzuha's <ct color=#FFFFFF>EX Special Attack: Cavity Alert</ct>, <ct color=#FFFFFF>EX Special Attack: Cavity Alert, Right Now!</ct>, or <ct color=#FFFFFF>Ultimate: Surrender or Suffer the Mischief</ct> hits an enemy, all squad members receive the <ct color=#FFFFFF>Tanuki Wish</ct> effect.",
+        "3": "<ct color=#FFFFFF>Tanuki Wish</ct> grants an ATK increase equal to 40% of Yuzuha's initial ATK, up to a maximum increase of <ct color=#2BAD00>700</ct>, and increases the DMG dealt by those with the effect by 15%, lasting 40s. Repeated triggers reset the duration.",
+        "4": "If Yuzuha's initial ATK reaches 1,750, she grants the full ATK bonus to all squad members."
+      },
+      {
+        "0": "Upon entering the battlefield, Yuzuha immediately gains 3 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "1": "Yuzuha can have up to 6 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "2": "When Yuzuha's <ct color=#FFFFFF>EX Special Attack: Cavity Alert</ct>, <ct color=#FFFFFF>EX Special Attack: Cavity Alert, Right Now!</ct>, or <ct color=#FFFFFF>Ultimate: Surrender or Suffer the Mischief</ct> hits an enemy, all squad members receive the <ct color=#FFFFFF>Tanuki Wish</ct> effect.",
+        "3": "<ct color=#FFFFFF>Tanuki Wish</ct> grants an ATK increase equal to 40% of Yuzuha's initial ATK, up to a maximum increase of <ct color=#2BAD00>800</ct>, and increases the DMG dealt by those with the effect by 15%, lasting 40s. Repeated triggers reset the duration.",
+        "4": "If Yuzuha's initial ATK reaches 2,000, she grants the full ATK bonus to all squad members."
+      },
+      {
+        "0": "Upon entering the battlefield, Yuzuha immediately gains 3 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "1": "Yuzuha can have up to 6 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "2": "When Yuzuha's <ct color=#FFFFFF>EX Special Attack: Cavity Alert</ct>, <ct color=#FFFFFF>EX Special Attack: Cavity Alert, Right Now!</ct>, or <ct color=#FFFFFF>Ultimate: Surrender or Suffer the Mischief</ct> hits an enemy, all squad members receive the <ct color=#FFFFFF>Tanuki Wish</ct> effect.",
+        "3": "<ct color=#FFFFFF>Tanuki Wish</ct> grants an ATK increase equal to 40% of Yuzuha's initial ATK, up to a maximum increase of <ct color=#2BAD00>900</ct>, and increases the DMG dealt by those with the effect by 15%, lasting 40s. Repeated triggers reset the duration.",
+        "4": "If Yuzuha's initial ATK reaches 2,250, she grants the full ATK bonus to all squad members."
+      },
+      {
+        "0": "Upon entering the battlefield, Yuzuha immediately gains 3 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "1": "Yuzuha can have up to 6 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "2": "When Yuzuha's <ct color=#FFFFFF>EX Special Attack: Cavity Alert</ct>, <ct color=#FFFFFF>EX Special Attack: Cavity Alert, Right Now!</ct>, or <ct color=#FFFFFF>Ultimate: Surrender or Suffer the Mischief</ct> hits an enemy, all squad members receive the <ct color=#FFFFFF>Tanuki Wish</ct> effect.",
+        "3": "<ct color=#FFFFFF>Tanuki Wish</ct> grants an ATK increase equal to 40% of Yuzuha's initial ATK, up to a maximum increase of <ct color=#2BAD00>1,000</ct>, and increases the DMG dealt by those with the effect by 15%, lasting 40s. Repeated triggers reset the duration.",
+        "4": "If Yuzuha's initial ATK reaches 2,500, she grants the full ATK bonus to all squad members."
+      },
+      {
+        "0": "Upon entering the battlefield, Yuzuha immediately gains 3 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "1": "Yuzuha can have up to 6 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "2": "When Yuzuha's <ct color=#FFFFFF>EX Special Attack: Cavity Alert</ct>, <ct color=#FFFFFF>EX Special Attack: Cavity Alert, Right Now!</ct>, or <ct color=#FFFFFF>Ultimate: Surrender or Suffer the Mischief</ct> hits an enemy, all squad members receive the <ct color=#FFFFFF>Tanuki Wish</ct> effect.",
+        "3": "<ct color=#FFFFFF>Tanuki Wish</ct> grants an ATK increase equal to 40% of Yuzuha's initial ATK, up to a maximum increase of <ct color=#2BAD00>1,100</ct>, and increases the DMG dealt by those with the effect by 15%, lasting 40s. Repeated triggers reset the duration.",
+        "4": "If Yuzuha's initial ATK reaches 2,750, she grants the full ATK bonus to all squad members."
+      },
+      {
+        "0": "Upon entering the battlefield, Yuzuha immediately gains 3 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "1": "Yuzuha can have up to 6 <ct color=#FFFFFF>Sugar Points</ct>.",
+        "2": "When Yuzuha's <ct color=#FFFFFF>EX Special Attack: Cavity Alert</ct>, <ct color=#FFFFFF>EX Special Attack: Cavity Alert, Right Now!</ct>, or <ct color=#FFFFFF>Ultimate: Surrender or Suffer the Mischief</ct> hits an enemy, all squad members receive the <ct color=#FFFFFF>Tanuki Wish</ct> effect.",
+        "3": "<ct color=#FFFFFF>Tanuki Wish</ct> grants an ATK increase equal to 40% of Yuzuha's initial ATK, up to a maximum increase of <ct color=#2BAD00>1,200</ct>, and increases the DMG dealt by those with the effect by 15%, lasting 40s. Repeated triggers reset the duration.",
+        "4": "If Yuzuha's initial ATK reaches 3,000, she grants the full ATK bonus to all squad members."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: The More the Merrier",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Anomaly</ct> character or shares the same Faction:",
+      "1": "If Yuzuha's Anomaly Mastery exceeds 100, every point over increases the Anomaly Buildup Rate of characters with <ct color=#FFFFFF>Tanuki Wish</ct> by <ct color=#2BAD00>0.2%</ct>, up to a maximum of <ct color=#2BAD00>20%</ct>, and all Attribute Anomaly DMG and <ct color=#FFFFFF>Disorder</ct> DMG by <ct color=#2BAD00>0.2%</ct>, up to a maximum of <ct color=#2BAD00>20%</ct>. When Yuzuha's Anomaly Mastery is at 200, she grants the full buff effect."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Lucky Constitution",
+      "desc": "Yuzuha regains 30 Energy when she enters the battlefield. In Investigation Zone Mode, this effect can trigger at most once every 180s. Enemies in the <ct color=#FFFFFF>Sweet Scare</ct> state have their All-Attribute RES reduced by 10%. The Attribute Anomaly DMG and <ct color=#FFFFFF>Disorder</ct> DMG buff from her <ct color=#FFFFFF>Additional Ability</ct> is increased to 130% of its original value.",
+      "flavor": {
+        "0": "\"Ugh, I'm done for!\"",
+        "1": "\"Yuzuha, you failed too? ...Hold up, a 92?! Are you seriously telling me you guessed your way to that score? You're just showing off!\"",
+        "2": "\"No, seriously! Luck only works if you don't overdo it. I had no reason to get such a high score on this one... I can feel it — there's no way the next test will have multiple choice!\""
+      }
+    },
+    "2": {
+      "name": "Full of Colorful Company",
+      "desc": "When Yuzuha's <ct color=#FFFFFF>EX Special Attack: Cavity Alert</ct>, <ct color=#FFFFFF>EX Special Attack: Cavity Alert, Right Now!</ct>, or <ct color=#FFFFFF>Ultimate: Surrender or Suffer the Mischief</ct> hits an enemy, all squad members' DMG increases by 15% and Anomaly Buildup Rate by 15%, lasting 40s and repeated triggers reset the duration. When a heavy attack hits an enemy that is not Stunned, it will trigger a forced <ct color=#FFFFFF>Chain Attack</ct>. <ct color=#FFFFFF>Chain Attacks</ct> triggered this way have reduced Interrupt Level and forced <ct color=#FFFFFF>Chain Attacks</ct> can only occur once every 20s. Whenever another character enters through a <ct color=#FFFFFF>Chain Attack</ct>, Yuzuha gains 1 <ct color=#FFFFFF>Sugar Points</ct>. Yuzuha's <ct color=#FFFFFF>Basic Attack: Hard Candy Shot</ct> cooldown is reduced by 25%.",
+      "flavor": {
+        "0": "\"Kama, you've never left my sight, but how did you swap so many things like just like that?\"",
+        "1": "\"Heh heh~ Kama's got a lot of friends too! Come on out, everyone! Let me introduce them — left to right: Takenosuke, Inosuke, Hyakunosuke...\"",
+        "2": "\"Wait, you're going too fast!\"",
+        "3": "\"Okay, one more time: Shinnosuke, Kinosuke, Harunosuke...\"",
+        "4": "\"Those names are completely different!\""
+      }
+    },
+    "3": {
+      "name": "Fairytale of the Haunted City",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"...The princess led a busy life. At sunrise, her silent and stoic maids would adorn her with lavish garments, a weighty magical crown, and layers of jewelry before guiding her to the throne where she used her powers to turn mundane stones into priceless gems.\"",
+        "1": "\"Does the princess really have to turn stones into gems every single day? That sounds even more boring than doing homework while minding the shop.\"",
+        "2": "\"Well... if she doesn't, the poor kingdom will collapse.\"",
+        "3": "\"If a kingdom can only survive by overworking the princess, then let it collapse!\"",
+        "4": "She bursts into laughter. Yes — let such a useless kingdom fall."
+      }
+    },
+    "4": {
+      "name": "Falling Magic",
+      "desc": "The DMG of Yuzuha's <ct color=#FFFFFF>Assist Follow-Up: Stuffed Hard Candy Shot</ct> and <ct color=#FFFFFF>Assist Follow-Up: We Have Cookies</ct> increases by 30%, Anomaly Buildup Rate by 20%, and triggers a <ct color=#FFFFFF>Quick Assist</ct> when it hits an enemy.",
+      "flavor": {
+        "0": "The girl I saw through the narrow vent shone like she'd stepped right out of a fairytale.",
+        "1": "She was the real princess — and I was just a prisoner.",
+        "2": "Lord, she has so much already... would it be so wrong if I had just a tiny bit of it too?",
+        "3": "That's when the hairpin silently fell."
+      }
+    },
+    "5": {
+      "name": "Dreams of a Fading Winter",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The day the TOPS executives and the Inspection Team arrived, she and Manato had just returned from school. Their airship had to circle overhead for ages, waiting for a place to land because the guests' vehicles took priority. Sweating as they hurried across the skybridge, they passed just above a throng of reporters surrounding the guests. That's when she spotted the girl. That night, she had a dream: it was her being swarmed by reporters, walking that same path under the bridge. And at the end of it... stood a throne, waiting just for her.",
+        "1": "It had been a long time since she'd had a dream like that. She got up for a drink of water, replaying the words she'd overheard during the day: \"A so-called expert Inspection Team, and they've got some rich girl tagging along just for show!\"",
+        "2": "\"Kama, Kama!\" She cracked open the window and whispered. A fuzzy little face popped up instantly from outside. \"I've got a great idea. Tomorrow night... let's go do something fun.\""
+      }
+    },
+    "6": {
+      "name": "Put Down Roots",
+      "desc": "Gain 1 additional <ct color=#FFFFFF>Sugar Points</ct> when successfully parrying an enemy attack using a <ct color=#FFFFFF>Defensive Assist</ct> or <ct color=#FFFFFF>Basic Attack: Tanuki Cloak</ct>. When using <ct color=#FFFFFF>Assist Follow-Up: Stuffed Hard Candy Shot</ct>, hold <IconNormal /> to charge for up to 0.8 seconds. Releasing <IconNormal /> or reaching full charge fires an extra powerful shell at the enemy. For every 0.4s charged, Yuzuha consumes 1 <ct color=#FFFFFF>Sugar Point</ct> to fire an additional powerful shell, each dealing 300% of her ATK as <ct color=#F0D12B>Physical DMG</ct>. If any powerful shell from <ct color=#FFFFFF>Assist Follow-Up: Stuffed Hard Candy Shot</ct> hits an enemy, all squad members' <ct color=#FFFFFF>Disorder</ct> DMG Multiplier increases by 105% for 40s, and stacking up to 3 times, with each stack duration being calculated separately. In addition, if the powerful shell hits an enemy under <ct color=#FFFFFF>Sweet Scare</ct>, it'll trigger 1 <ct color=#FFFFFF>Basic Attack: Sugarburst Sparkles - Max</ct> attack. If Yuzuha is attacked while charging, she will automatically dodge the attack and immediately unleash the max-charged attack.",
+      "flavor": {
+        "0": "The night the hearing ended, Baorong said they should celebrate Kaede getting a scholarship, so Mystic Wares closed early and the whole family went to Yum Cha Sin.",
+        "1": "During the meal, her brother called from the far-off Faunus Quarter to offer his congratulations. While Sumire and A-Wen animatedly recounted the day's events: a calico cat at school had lost her kitten, and no one could find it — until, miraculously, it came back on its own at noon.",
+        "2": "On the phone, her brother sighed, \"A-Wen, every time I ask about your grades, you change the subject. If Dad and Yuzuha won't say anything, then I will!\"",
+        "3": "Everyone laughed — except Baorong, who just kept murmuring, \"It came back, that's what matters... that it came back...\""
+      }
+    }
+  }
+}

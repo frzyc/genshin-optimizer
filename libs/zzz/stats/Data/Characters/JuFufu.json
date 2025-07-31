@@ -147,6 +147,19 @@
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 0
         }
+      ],
+      "DashAttackTigerSevenFormsMountainKingsGameHuWei": [
+        {
+          "DamagePercentage": 0.924,
+          "DamagePercentageGrowth": 0.084,
+          "StunRatio": 0.693,
+          "StunRatioGrowth": 0.032,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
       ]
     },
     "special": {
@@ -292,7 +305,8 @@
       "DashAttackTigerSevenFormsTigerCharge": [],
       "DashAttackTigerSevenFormsMountainKingsGame": [],
       "DodgeCounterTigerSevenFormsReignitedMountain": [],
-      "DashAttackTigerSevenFormsMountainKingsGameMomentum": []
+      "DashAttackTigerSevenFormsMountainKingsGameMomentum": [],
+      "DashAttackTigerSevenFormsMountainKingsGameHuWei": []
     },
     "special": {
       "SpecialAttackTigerSevenFormsMountainDescendingTiger": [],

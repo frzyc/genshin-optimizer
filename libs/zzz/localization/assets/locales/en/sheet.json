@@ -14,11 +14,15 @@
       "2": "Upon launching <strong>{{val1}}</strong> or <strong>{{val2}}</strong>",
       "3": "Upon launching <strong>{{val1}}</strong>, <strong>{{val2}}</strong> or <strong>{{val3}}</strong>"
     },
+    "uponHit": {
+      "1": "Upon a(n) <strong>{{val1}}</strong> hitting an enemy"
+    },
     "skills": {
       "basic": "Basic Attack",
       "special": "Special Attack",
       "exSpecial": "EX Special Attack",
       "chain": "Chain Attack",
-      "ult": "Ultimate"
+      "ult": "Ultimate",
+      "aftershock": "Aftershock"
     }
 }

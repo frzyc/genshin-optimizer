@@ -1,4 +1,5 @@
 // WARNING: Generated file, do not modify
+import Alice from './maps/Alice'
 import Anby from './maps/Anby'
 import Anton from './maps/Anton'
 import AstraYao from './maps/AstraYao'
@@ -34,9 +35,11 @@ import Trigger from './maps/Trigger'
 import Vivian from './maps/Vivian'
 import Yanagi from './maps/Yanagi'
 import Yixuan from './maps/Yixuan'
+import Yuzuha from './maps/Yuzuha'
 import ZhuYuan from './maps/ZhuYuan'
 
 const maps = {
+  Alice,
   Anby,
   Anton,
   AstraYao,
@@ -59,6 +62,7 @@ const maps = {
   Miyabi,
   Nekomata,
   Nicole,
+  PanYinhu,
   Piper,
   Pulchra,
   Qingyi,
@@ -70,8 +74,8 @@ const maps = {
   Trigger,
   Vivian,
   Yanagi,
-  PanYinhu,
   Yixuan,
+  Yuzuha,
   ZhuYuan,
 }
 export default maps

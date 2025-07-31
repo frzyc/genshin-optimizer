@@ -1,6 +1,7 @@
 // WARNING: Generated file, do not modify
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { CharUISheet } from '../consts'
+import Alice from './Alice'
 import Anby from './Anby'
 import Anton from './Anton'
 import AstraYao from './AstraYao'
@@ -36,9 +37,11 @@ import Trigger from './Trigger'
 import Vivian from './Vivian'
 import Yanagi from './Yanagi'
 import Yixuan from './Yixuan'
+import Yuzuha from './Yuzuha'
 import ZhuYuan from './ZhuYuan'
 
 export const charSheets: Record<CharacterKey, CharUISheet> = {
+  Alice,
   Anby,
   Anton,
   AstraYao,
@@ -61,6 +64,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Miyabi,
   Nekomata,
   Nicole,
+  PanYinhu,
   Piper,
   Pulchra,
   Qingyi,
@@ -72,7 +76,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Trigger,
   Vivian,
   Yanagi,
-  PanYinhu,
   Yixuan,
+  Yuzuha,
   ZhuYuan,
 } as const
