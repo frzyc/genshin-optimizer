@@ -147,10 +147,10 @@
   "constellation1": {
     "name": "Profecía de sumersión",
     "description": {
-      "0": "Cuando un personaje de tu equipo ataca a un enemigo afectado por un presagio, los efectos de las <hydro>Reacciones Elementales con Hydro</hydro> se potencian durante 8 s:",
+      "0": "Cuando tus personajes del equipo atacan a un enemigo afectado por un presagio, los efectos de las <hydro>Reacciones Elementales Hydro</hydro> se potencian durante 8 s:",
       "1": [
-        "Aumenta en un 15% el daño de Electrocargado, Vaporización y Torbellino Hydro.",
-        "Aumenta en un 15% la duración de Congelado en enemigos."
+        "Aumenta en un 15% el daño de las reacciones de Electrocargado, Electrocargado Lunar, Vaporización y Torbellino Hydro.",
+        "Aumenta en un 15% la duración de la reacción de Congelado."
       ]
     }
   },

@@ -1,0 +1,159 @@
+{
+  "name": "Ineffa",
+  "title": "Boom Boom Thunderwave",
+  "description": "Robot serba bisa yang dibuat dengan kombinasi komponen mekanisme dari berbagai bangsa. Inti Sumber yang terletak di dadanya telah ada sejak waktu yang lama sekali.",
+  "constellationName": "Vanilla Planifolia",
+  "auto": {
+    "name": "Cyclonic Duster",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melakukan serangan berputar."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cleaning Mode: Carrier Frequency",
+    "description": {
+      "0": "Ineffa mengaktifkan Modul Pembersihan Tingkat Lanjut miliknya untuk mengakibatkan <electro>Electro DMG Area</electro> satu kali ke musuh di sekitar, menciptakan Optical Flow Shield Barrier, dan memanggil Asisten Pintar Serbabisa bernama <strong>Birgitta</strong>.",
+      "1": "Ketahanan Optical Flow Shield Barrier didasarkan pada ATK Ineffa dan memiliki 250% pertahanan terhadap <electro>Electro DMG</electro>."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pertahanan Perisai",
+      "2": "Durasi Perisai",
+      "3": "DMG Setruman Birgitta",
+      "4": "Durasi Birgitta",
+      "5": "Cooldown",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Supreme Instruction: Cyclonic Exterminator",
+    "description": {
+      "0": "Ineffa dapat melancarkan Rocket Punch berupa <strong>Birgitta</strong> si Asisten Pintar Serbabisa untuk membersihkan musuhnya! Ineffa akan menembakkan Birgitta ke medan pertempuran dan mengakibatkan <electro>Electro DMG Area</electro>, kemudian Birgitta akan terus berada di medan pertempuran.",
+      "1": "<br/>",
+      "2": "Jika Birgitta yang dipanggil oleh Ineffa sudah ada di medan pertempuran, maka Skill ini akan memanggil ulang Birgitta di lokasi yang ditentukan dan mengulang durasinya."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "Konsumsi Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Overclocking Circuit",
+    "description": {
+      "0": "Jika ada awan petir yang dihasilkan oleh reaksi Lunar-Charged di sekitar saat <strong>Birgitta</strong> melancarkan serangan setrumannya, maka ia akan melancarkan serangan tambahan yang mengakibatkan <electro>Electro DMG Area</electro> sebesar 65% ATK Ineffa. DMG ini dianggap sebagai DMG Lunar-Charged."
+    }
+  },
+  "passive2": {
+    "name": "Panoramic Permutation Protocol",
+    "description": {
+      "0": "Saat melancarkan Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong>, semua Karakter sendiri di dalam party akan mendapatkan efek Parameter Permutation. Parameter Permutation: Elemental Mastery Ineffa dan Karakter aktif sendiri meningkat sebesar 6% dari ATK Ineffa selama 20 detik."
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Assemblage Hub",
+    "description": {
+      "0": "Saat Karakter di dalam party memicu reaksi Electro-Charged, reaksi ini akan diubah menjadi reaksi Lunar-Charged. DMG dasar reaksi Lunar-Charged meningkat: DMG dasarnya meningkat 0,7% untuk setiap 100 poin ATK Ineffa, dan dapat meningkat hingga maksimum 14% dengan cara ini.",
+      "1": "<br/>",
+      "2": "Berkat tambahan mungkin akan mengiringi terbitnya bulan baru ...."
+    }
+  },
+  "passive": {
+    "name": "Flavor Synthesis Unit",
+    "description": {
+      "0": "Saat Ineffa mengonsumsi makanan, ada 30% kemungkinan untuk mendapatkan Bahan Masak.",
+      "1": "<br/>",
+      "2": "Selain itu, sepertinya ada cara tertentu untuk mengubah penampilan Birgitta di Nod-Krai ...."
+    }
+  },
+  "constellation1": {
+    "name": "Rectifying Processor",
+    "description": {
+      "0": "Saat Ineffa mengaktifkan Optical Flow Shield Barrier miliknya, semua anggota party di sekitar akan mendapatkan efek Carrier Flow Composite yang berlangsung 20 detik. Carrier Flow Composite: Meningkatkan DMG Lunar-Charged sebesar 2,5% untuk setiap 100 ATK Ineffa, hingga maksimum 50%."
+    }
+  },
+  "constellation2": {
+    "name": "Support Cleaning Module",
+    "description": {
+      "0": "Setelah Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong> mengenai musuh, akan memberikan status Punishment Edict pada salah satu musuh yang terkena serangan. Setelah jeda singkat atau saat musuh ini diserang, musuh di sekitarnya akan terkena <electro>Electro DMG Area</electro> sebesar 300% ATK Ineffa. DMG ini dianggap sebagai DMG Lunar-Charged.",
+      "1": "Selain itu, saat Ineffa melancarkan Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong>, Karakter aktif di sekitar akan mendapatkan Optical Flow Shield Barrier."
+    }
+  },
+  "constellation3": {
+    "name": "Enhanced Emotion Emulator",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong>Cleaning Mode: Carrier Frequency</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Edictless Path",
+    "description": {
+      "0": "Saat anggota party sendiri memicu reaksi Lunar-Charged, akan memulihkan 5 poin Energy. Efek ini dapat dipicu sekali setiap 4 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Mirror's Dream Transcension",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Supreme Instruction: Cyclonic Exterminator</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "A Dawning Morn for You",
+    "description": {
+      "0": "Saat Ineffa dalam pengaruh efek Carrier Flow Composite, ia akan mengakibatkan <electro>Electro DMG Area</electro> sebesar 135% ATK-nya terhadap musuh di sekitar Karakter aktif setelah awan petir di dekatnya melepaskan sambaran petir ke arah musuh. DMG ini dianggap sebagai DMG Lunar-Charged. Efek yang disebutkan di atas dapat terpicu sekali setiap 3,5 detik."
+    }
+  }
+}

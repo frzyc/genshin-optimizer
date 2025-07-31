@@ -17,7 +17,7 @@
   },
   "HighVoltage": {
     "name": "Energia de Electro",
-    "desc": "A duração dos efeitos Hydro é reduzida em 40%. Desencadear as reações de Supercondutor, Sobrecarga, Eletricamente Carregado, Aceleração, Intensificação e Superflorescimento possui 100% de chance de dropar 1 Partícula Elemental Electro, com tempo de recarga de 5s."
+    "desc": "A duração dos efeitos Hydro é reduzida em 40%. Desencadear as reações de Supercondutor, Sobrecarga, Eletricamente Carregado, Carga Lunar, Aceleração, Intensificação ou Superflorescimento possui 100% de chance de gerar 1 Partícula Elemental Electro (Tempo de Recarga: 5s)."
   },
   "ImpetuousWinds": {
     "name": "Agilidade de Anemo",

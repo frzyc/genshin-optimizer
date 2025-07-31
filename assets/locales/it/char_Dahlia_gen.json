@@ -1,0 +1,178 @@
+{
+  "name": "Dahlia",
+  "title": "Ode e oblazione",
+  "description": "Il diacono della Chiesa di Favonius e rappresentante dell'Archon di Anemo.",
+  "constellationName": "Cantus Choralis",
+  "auto": {
+    "name": "Rituale",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo il percorso e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ordinazione immersiva",
+    "description": {
+      "0": "È ora di un trucchetto divertente! Evoca la Pioggia sacramentale in modi diversi in base al tipo di pressione dell'abilità.",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Dopo una breve preghiera, Dahlia evoca la Pioggia sacramentale davanti a sé.",
+      "4": "<br/>",
+      "5": "<strong>Pressione prolungata</strong>",
+      "6": "Dahlia inizia a pregare e, una volta finito, evoca una Pioggia sacramentale nella posizione designata.",
+      "7": "<br/>",
+      "8": "<strong>Pioggia sacramentale</strong>",
+      "9": "Si innescano degli effetti diversi a seconda di chi ci entra in contatto:",
+      "10": [
+        " se a toccare la Pioggia è un avversario, la Pioggia esplode e infligge <hydro>DAN da Hydro ad area</hydro> agli avversari vicini;",
+        " se a toccare la Pioggia è un membro del gruppo, quest'ultimo rimbalza in aria verso l'alto."
+      ],
+      "11": "<br/>",
+      "12": "In campo può esistere solo 1 Pioggia sacramentale evocata da Dahlia alla volta."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR abilità",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Salterio radioso",
+    "description": {
+      "0": "Appellandosi al divino con sincerità e lodi, Dahlia infligge <hydro>DAN da Hydro ad area</hydro> agli avversari vicini, e conferisce ai membri del gruppo una Grazia di Favonius evocando uno Scudo di Grazia sacra.",
+      "1": "L'assorbimento DAN dello Scudo di Grazia sacra si basa sui PS max di Dahlia e possiede un 250% di efficienza di assorbimento DAN contro i <hydro>DAN da Hydro</hydro>.",
+      "2": "<br/>",
+      "3": "<strong>Grazia di Favonius</strong>",
+      "4": "Mentre l'effetto è attivo, Dahlia può consumare 1 accumulo di Benedizione per generare un nuovo Scudo di Grazia sacra quando questo viene infranto a causa dei DAN subiti.",
+      "5": "<br/>",
+      "6": "Dahlia può ottenere Benedizione nei modi seguenti:",
+      "7": [
+        " quando il membro attivo del suo gruppo colpisce 4 volte gli avversari con attacchi normali mentre è sotto l'effetto di Grazia di Favonius (conferendo a Dahlia 1 accumulo di Benedizione);",
+        " dopo aver innescato l'effetto del suo talento passivo Grazia gentile del vento (se sbloccato)."
+      ],
+      "8": "Dahlia può ottenere fino a un massimo di 4 accumuli di Benedizione nel corso della durata di Grazia di Favonius."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Assorbimento DAN Scudo di Grazia sacra",
+      "2": "Durata Grazia di Favonius",
+      "3": "Costo energia",
+      "4": "TdR",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Grazia gentile del vento",
+    "description": {
+      "0": "Quando i personaggi sotto l'effetto di Grazia di Favonius del Tripudio elementale <strong>Salterio radioso</strong> innescano reazioni di Congelamento sugli avversari, conferiscono a Dahlia 2 accumuli di Benedizione. Quest'effetto può attivarsi una volta ogni 8 s."
+    }
+  },
+  "passive2": {
+    "name": "Preghiera di gioia benedetta",
+    "description": {
+      "0": "Quando il membro attivo del gruppo è sotto l'effetto di Grazia di Favonius del Tripudio elementale <strong>Salterio radioso</strong>, la sua VEL d'ATT aumenta in base ai PS max di Dahlia. Per ogni 1.000 di PS max, la VEL d'ATT aumenta di uno 0,5%, fino a un 20% massimo."
+    }
+  },
+  "passive3": {
+    "name": "Venti pellegrini",
+    "description": {
+      "0": "Durante il giorno (06:00-18:00), i membri del tuo gruppo ottengono l'effetto Piè veloce: la VEL di movimento aumenta di un 10%.",
+      "1": "Non ha effetto nei domini, nei Domini della conquista o nell'Abisso a spirale. Piè veloce non è cumulabile."
+    }
+  },
+  "constellation1": {
+    "name": "Processione infallibile",
+    "description": {
+      "0": "Ogni volta che Dahlia ottiene 1 accumulo di Benedizione del suo Tripudio elementale <strong>Salterio radioso</strong>, recupera 2,5 di energia elementale."
+    }
+  },
+  "constellation2": {
+    "name": "Rivelazione della misericordia",
+    "description": {
+      "0": "Dopo che Dahlia ha consumato gli accumuli di Benedizione del suo Tripudio elementale <strong>Salterio radioso</strong> per evocare uno Scudo di Grazia sacra, il personaggio protetto dallo Scudo sopracitato ottiene un 25% di aumento dell'efficacia dello scudo per 12 s."
+    }
+  },
+  "constellation3": {
+    "name": "Offertorio del Florvento",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Salterio radioso</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Colletta dell'assemblea",
+    "description": {
+      "0": "La Grazia di Favonius ottenuta dal Tripudio elementale di Dahlia, <strong>Salterio radioso</strong>, dura 3 s in più."
+    }
+  },
+  "constellation5": {
+    "name": "Che sobriamente sia così",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Ordinazione immersiva</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Partirete con gioia",
+    "description": {
+      "0": "La VEL d'ATT del personaggio attivo sotto l'effetto di Grazia di Favonius del Tripudio elementale <strong>Salterio radioso</strong> aumenta di un 10%.",
+      "1": "Inoltre, quando il personaggio sotto l'effetto di Grazia di Favonius finisce fuori combattimento:",
+      "2": [
+        " viene rianimato immediatamente;",
+        " tutti i suoi PS vengono ripristinati."
+      ],
+      "3": "Quest'effetto può attivarsi una volta ogni 15 minuti."
+    }
+  }
+}

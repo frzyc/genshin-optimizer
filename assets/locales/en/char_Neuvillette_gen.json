@@ -162,7 +162,7 @@
   "passive1": {
     "name": "Heir to the Ancient Sea's Authority",
     "description": {
-      "0": "When a party member triggers a Vaporize, Frozen, Electro-Charged, Bloom, Hydro Swirl, or a Hydro Crystallize reaction on opponents, 1 stack of Past Draconic Glories will be granted to Neuvillette for 30s. Max 3 stacks. Past Draconic Glories causes Charged Attack: Equitable Judgment to deal 110%/125%/160% of its original DMG.",
+      "0": "When a party member triggers a Vaporize, Frozen, Electro-Charged, Lunar-Charged, Bloom, Hydro Swirl, or a Hydro Crystallize reaction on opponents, 1 stack of Past Draconic Glories will be granted to Neuvillette for 30s. Max 3 stacks. Past Draconic Glories causes Charged Attack: Equitable Judgment to deal 110%/125%/160% of its original DMG.",
       "1": "The stacks of Past Draconic Glories created by each kind of Elemental Reaction exist independently."
     }
   },

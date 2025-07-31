@@ -118,7 +118,7 @@
       "2": "<strong>Robô Culinário: Modo Culinária Improvisada</strong>",
       "3": [
         " Coloca o Robô Culinário no campo. O Robô Culinário pode absorver os ataques Elementais. Quando a Energia Elemental absorvida alcançar o limite, Escoffier poderá converter os ingredientes colocados dentro em comidas fantásticas.",
-        " Escoffier precisa de tempo para coletar ingredientes novos. É possível fazer uma certa quantidade de Pratos por semana dessa maneira. A contagem de Prato é redefinida toda segunda-feira às 04:00 da manhã."
+        " Escoffier precisa de tempo para coletar ingredientes novos. É possível fazer uma certa quantidade de Pratos por semana dessa maneira. A contagem de Prato é redefinida toda segunda-feira às 04:00 da manhã {TIMEZONE}."
       ]
     }
   },

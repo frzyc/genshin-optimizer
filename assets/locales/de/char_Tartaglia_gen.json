@@ -88,7 +88,7 @@
     }
   },
   "burst": {
-    "name": "Spezialangriff – Totale Vernichtung",
+    "name": "Verdorbene Kunst – Totale Vernichtung",
     "description": {
       "0": "Führt je nachdem, ob Fern- oder Nahkampf aktiv ist, verschiedene Angriffe aus:",
       "1": "<br/>",
@@ -169,16 +169,16 @@
     }
   },
   "constellation5": {
-    "name": "Spezialangriff – Regenschlächter",
+    "name": "Verdorbene Kunst – Regenschlächter",
     "description": {
-      "0": "Erhöht die Stufe der Fähigkeit <strong>Spezialangriff – Totale Vernichtung</strong> um 3.",
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Verdorbene Kunst – Totale Vernichtung</strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation6": {
-    "name": "Spezialangriff – Komplette Auslöschung",
+    "name": "Verdorbene Kunst – Komplette Auslöschung",
     "description": {
-      "0": "Überspringt die Abklingzeit von <strong>Dämonengewand – Stürmische Gezeiten</strong> bei Anwendung von <strong>Spezialangriff – Totale Vernichtung</strong> im Nahkampf.",
+      "0": "Überspringt die Abklingzeit von <strong>Dämonengewand – Stürmische Gezeiten</strong> bei Anwendung von <strong>Verdorbene Kunst – Totale Vernichtung</strong> im Nahkampf.",
       "1": "Dieser Effekt wird nach dem Wechsel in den Fernkampf aktiv."
     }
   }

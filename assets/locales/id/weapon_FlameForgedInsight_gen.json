@@ -1,0 +1,24 @@
+{
+  "name": "Flame-Forged Insight",
+  "description": {
+    "0": "Dalam cerita suku, pedang ini ditempa oleh pengrajin Warga Mata Air untuk melindungi seorang anak yang sedang berkelana jauh. Sepertinya, ini adalah replika dari pedang legendaris raksasa tertentu yang ada dalam legenda."
+  },
+  "passiveName": "Mind in Bloom",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat memicu reaksi Electro-Charged, Lunar-Charged, atau Bloom, akan memulihkan <cryo>12</cryo> poin Energy dan meningkatkan Elemental Mastery sebesar <cryo>60</cryo> poin selama 15 detik. Efek ini dapat terpicu sekali setiap 15 detik. Efek tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Saat memicu reaksi Electro-Charged, Lunar-Charged, atau Bloom, akan memulihkan <cryo>15</cryo> poin Energy dan meningkatkan Elemental Mastery sebesar <cryo>75</cryo> poin selama 15 detik. Efek ini dapat terpicu sekali setiap 15 detik. Efek tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Saat memicu reaksi Electro-Charged, Lunar-Charged, atau Bloom, akan memulihkan <cryo>18</cryo> poin Energy dan meningkatkan Elemental Mastery sebesar <cryo>90</cryo> poin selama 15 detik. Efek ini dapat terpicu sekali setiap 15 detik. Efek tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Saat memicu reaksi Electro-Charged, Lunar-Charged, atau Bloom, akan memulihkan <cryo>21</cryo> poin Energy dan meningkatkan Elemental Mastery sebesar <cryo>105</cryo> poin selama 15 detik. Efek ini dapat terpicu sekali setiap 15 detik. Efek tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Saat memicu reaksi Electro-Charged, Lunar-Charged, atau Bloom, akan memulihkan <cryo>24</cryo> poin Energy dan meningkatkan Elemental Mastery sebesar <cryo>120</cryo> poin selama 15 detik. Efek ini dapat terpicu sekali setiap 15 detik. Efek tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

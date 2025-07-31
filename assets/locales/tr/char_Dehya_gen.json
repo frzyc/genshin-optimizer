@@ -129,7 +129,7 @@
   "passive3": {
     "name": "Güneşli Yol",
     "description": {
-      "0": "Gündüzleri (06:00 – 18:00) grup üyelerin Hızlı Adım etkisi kazanır: Hareket Hızı %10 artar.",
+      "0": "Gündüzleri (06:00 - 18:00) grup üyelerin Hızlı Adım etkisi kazanır: Hareket Hızı %10 artar.",
       "1": "Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında etkili değildir. Hızlı Adım etkileri birikmez."
     }
   },

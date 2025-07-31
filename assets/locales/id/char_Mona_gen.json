@@ -149,11 +149,9 @@
   "constellation1": {
     "name": "Prophecy of Submersion",
     "description": {
-      "0": "Efek <hydro>Reaksi Elemental yang berhubungan dengan elemen Hydro</hydro> akan ditingkatkan selama 8 detik setelah karakter dalam party sendiri menyerang musuh yang terkena efek Omen:",
+      "0": "Efek <hydro>Reaksi Elemental yang berhubungan dengan elemen Hydro</hydro> akan ditingkatkan selama 8 detik setelah serangan Karakter dalam party sendiri mengenai musuh yang berada dalam status Omen:",
       "1": [
-        "DMG Electro Charged meningkat 15%.",
-        "DMG Vaporize meningkat 15%.",
-        "DMG Hydro Swirl meningkat 15%.",
+        "DMG Electro Charged meningkat 15%. ·DMG Lunar-Charged meningkat 15%. DMG Vaporize meningkat 15%. DMG Hydro Swirl meningkat 15%.",
         "Durasi musuh yang terkena Frozen meningkat 15%."
       ]
     }

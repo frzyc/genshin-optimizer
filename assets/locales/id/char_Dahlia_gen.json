@@ -1,0 +1,176 @@
+{
+  "name": "Dahlia",
+  "title": "Ode and Oblation",
+  "description": "Diakon Church of Favonius dan perwakilan Archon Anemo di Gereja.",
+  "constellationName": "Cantus Choralis",
+  "auto": {
+    "name": "Ritual",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Immersive Ordinance",
+    "description": {
+      "0": "Saatnya memainkan sebuah trik! Dahlia akan memanggil Sacramental Shower dengan cara berbeda berdasarkan Mode Tekan atau Mode Tahan.",
+      "1": "<br/>",
+      "2": "<strong>Mode Tekan</strong>",
+      "3": "Setelah doa singkat, Dahlia akan memanggil Sacramental Shower di hadapannya.",
+      "4": "<br/>",
+      "5": "<strong>Mode Tahan</strong>",
+      "6": "Dahlia akan terus berdoa, dan saat berakhir, ia akan memanggil Sacramental Shower di posisi yang ditentukan.",
+      "7": "<br/>",
+      "8": "<strong>Sacramental Shower</strong>",
+      "9": "Setelah musuh atau Karakter di dalam party menyentuh Sacramental Shower, akan muncul efek yang berbeda berdasarkan subjek yang menyentuhnya:",
+      "10": "Jika musuh yang menyentuh, maka Sacramental Shower akan meledak dan mengakibatkan <hydro>Hydro DMG Area</hydro> pada musuh di sekitar.",
+      "11": "Jika Karakter di dalam party yang menyentuh, maka Sacramental Shower akan mementalkan Karakter tersebut ke udara.",
+      "12": "<br/>",
+      "13": "Hanya bisa ada satu Sacramental Shower yang bisa dipanggil oleh Dahlia dalam satu waktu."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown Skill",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Radiant Psalter",
+    "description": {
+      "0": "Berdoa kepada yang suci dengan niat dan suara yang tulus, mengakibatkan <hydro>Hydro DMG Area</hydro> ke musuh di sekitar, memberikan Favonian Favor terhadap Karakter di dalam party, dan menciptakan Shield of Sacred Favor.",
+      "1": "DMG yang dapat ditahan Shield of Sacred Favor didasarkan pada Max HP Dahlia, dan memiliki <hydro>250% pertahanan</hydro> terhadap Hydro DMG.",
+      "2": "<br/>",
+      "3": "<strong>Favonian Favor</strong>",
+      "4": "Selama aktif, jika Perisai Shield of Sacred Favor hancur terkena DMG, Dahlia akan mengonsumsi satu lapis efek Benison untuk menciptakan Shield of Sacred Favor baru.",
+      "5": "<br/>",
+      "6": "Dahlia bisa mendapatkan efek Benison dengan cara berikut:",
+      "7": [
+        "Dahlia akan mendapatkan 1 lapis efek Benison saat Karakter aktif di dalam party yang terpengaruh efek Favonian Favor menyerang musuh dengan Normal Attack sebanyak 4 kali.",
+        "Setelah efek Talenta Pasif \"The Wind's Gentle Grace\" terpicu (Harus membuka Talenta Pasif \"The Wind's Gentle Grace\" terlebih dahulu)."
+      ],
+      "8": "Dahlia bisa mendapatkan maksimum 4 lapis Benison untuk setiap durasi Favonian Favor."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pertahanan Shield of Sacred Favor",
+      "2": "Durasi Favonian Favor",
+      "3": "Konsumsi Energy",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "The Wind's Gentle Grace",
+    "description": {
+      "0": "Saat Karakter yang berada dalam pengaruh Favonian Favor dari Elemental Burst <strong>Radiant Psalter</strong> memicu reaksi Frozen pada musuh, akan memberikan 2 lapis efek Benison kepada Dahlia. Efek ini dapat terpicu sekali setiap 8 detik."
+    }
+  },
+  "passive2": {
+    "name": "Prayer of Well-Wrought Joy",
+    "description": {
+      "0": "Saat Karakter aktif di dalam party sendiri berada dalam pengaruh Favonian Favor dari Elemental Burst <strong>Radiant Psalter</strong>, ATK SPD-nya akan meningkat berdasarkan Max HP Dahlia: Setiap 1.000 poin Max HP Dahlia akan meningkatkan 0,5% ATK SPD. ATK SPD Karakter dapat meningkat hingga 20% dengan cara ini."
+    }
+  },
+  "passive3": {
+    "name": "Pilgrimage Upon Returning Winds",
+    "description": {
+      "0": "Saat siang hari (06:00 — 18:00), anggota party sendiri mendapatkan efek Swift Stride: meningkatkan 10% Movement SPD.",
+      "1": "Efek ini tidak aktif dalam Domain, Domain Trounce, atau Spiral Abyss. Efek Swift Stride tidak dapat ditumpuk."
+    }
+  },
+  "constellation1": {
+    "name": "Infallible Procession",
+    "description": {
+      "0": "Setiap kali Dahlia mendapatkan satu lapis efek Benison dari Elemental Burst <strong>Radiant Psalter</strong>, ia akan memulihkan 2,5 poin Energy."
+    }
+  },
+  "constellation2": {
+    "name": "Revelation of Mercy",
+    "description": {
+      "0": "Setelah Dahlia mengonsumsi efek Benison dari Elemental Burst <strong>Radiant Psalter</strong> untuk memanggil Shield of Sacred Favor, Karakter yang dilindungi oleh Shield of Sacred Favor akan mendapatkan 25% peningkatan Kekuatan Perisai selama 12 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Windblume Offertory",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Radiant Psalter</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Collect of the Assembly",
+    "description": {
+      "0": "Durasi efek Favonian Favor dari Elemental Burst <strong>Radiant Psalter</strong> diperpanjang 3 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Let It Be Subtly So",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Immersive Ordinance</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "You Shall Go Out With Joy",
+    "description": {
+      "0": "ATK SPD Karakter aktif yang berada dalam pengaruh Favonian Favor dari Elemental Burst <strong>Radiant Psalter</strong> akan meningkat 10%.",
+      "1": "Selain itu, saat Karakter aktif yang berada dalam pengaruh Favonian Favor gugur, maka akan langsung:",
+      "2": [
+        "Dihidupkan kembali.",
+        "HP-nya dipulihkan hingga 100%."
+      ],
+      "3": "Efek ini dapat terpicu sekali setiap 15 menit."
+    }
+  }
+}

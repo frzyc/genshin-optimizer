@@ -17,7 +17,7 @@
   },
   "HighVoltage": {
     "name": "Lôi Mạnh Mẽ",
-    "desc": "Thời gian duy trì ấn nguyên tố Thủy giảm 40%. Khi kích hoạt phản ứng Siêu Dẫn, Quá Tải, Điện Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ sẽ có 100% tỉ lệ rơi 1 Nguyên Tố Hạt Nhân Lôi, CD 5s."
+    "desc": "Thời gian duy trì ấn nguyên tố Thủy giảm 40%. Khi kích hoạt phản ứng Siêu Dẫn, Quá Tải, Điện Cảm, Nguyệt-Điện Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ sẽ có 100% tỉ lệ rơi 1 Hạt Nhân Nguyên Tố Lôi, CD 5s."
   },
   "ImpetuousWinds": {
     "name": "Phong Nhạy Bén",
