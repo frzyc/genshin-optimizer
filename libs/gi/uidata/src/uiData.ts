@@ -89,7 +89,7 @@ export class UIData {
     }
   }
 
-  childUIData(data: Data): UIData {
+  child(data: Data): UIData {
     let child = this.children.get(data)
     if (!child) {
       child = new UIData(data, this)
@@ -342,7 +342,7 @@ export class UIData {
     node: DataNode<NumNode | StrNode>
   ): CalcResult<number | string | undefined> {
     const parent = node.reset ? this.origin : this
-    return parent.childUIData(node.data).computeNode(node.operands[0])
+    return parent.child(node.data).computeNode(node.operands[0])
   }
   private _compute(node: ComputeNode): CalcResult<number> {
     const { operation, operands } = node
@@ -564,7 +564,7 @@ export function uiDataForTeam(
 
   const origin = new UIData(undefined as any, undefined)
   return Object.fromEntries(
-    keys.map((key, i) => [key, { target: origin.childUIData(own[i]) }])
+    keys.map((k, i) => [k, { target: origin.child(target[i]).child(own[i]) }])
   )
 }
 
