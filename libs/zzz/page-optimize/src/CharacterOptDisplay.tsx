@@ -43,6 +43,7 @@ import { EnemyStatsSection } from './EnemyStats'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
 import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
+import { TeammatesSection } from './Teammates'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 const BOT_PX = 0
@@ -139,6 +140,7 @@ function CharacterSection() {
         ['eq', <EquippedGrid key={'eq'} onClick={onClick} />],
         ['Conditionals', <EquippedConditionals key={'conditionals'} />],
         ['bonusStats', <BonusStatsSection key={'bonusStats'} />],
+        ['teammates', <TeammatesSection key={'teammates'} />],
         ['enemyStats', <EnemyStatsSection key={'enemyStats'} />],
         ...(characterKey === 'Yixuan' ||
         characterKey === 'Soldier0Anby' ||
