@@ -9,6 +9,7 @@ import {
   min,
   percent,
   prod,
+  target,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -109,14 +110,20 @@ const a0_base_lc_dmg_ = min(
 )
 
 const [condA4AfterBurstPath, condA4AfterBurst] = cond(key, 'a4AfterBurst')
-const a4AfterBurst_eleMas = greaterEq(
+const a4AfterBurst_eleMasDisp = greaterEq(
   input.asc,
   4,
   equal(
     condA4AfterBurst,
     'on',
     prod(input.premod.atk, percent(dm.passive2.eleMasFromAtk))
-  )
+  ),
+  { path: 'eleMas', isTeamBuff: true }
+)
+const a4AfterBurst_eleMas = equal(
+  input.activeCharKey,
+  target.charKey,
+  a4AfterBurst_eleMasDisp
 )
 
 const [condC1AfterShieldPath, condC1AfterShield] = cond(key, 'c1AfterShield')
@@ -341,7 +348,7 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: a4AfterBurst_eleMas,
+              node: a4AfterBurst_eleMasDisp,
             },
             {
               text: stg('duration'),
