@@ -1,28 +1,29 @@
 {
-    "dmg": "{{val}}DMG",
-    "anomBuildup": "{{val}}Anomaly Buildup",
-    "daze": "{{val}}Daze",
-    "targetHpLe": "Target HP less than {{val}}%",
-    "stack_one": "{{count}} stack",
-    "stack_other": "{{count}} stacks",
-    "stacks": "Stacks",
-    "cd": "Cooldown",
-    "duration": "Duration",
-    "enterCombatOrSwitchIn": "Entering combat or switching in",
-    "uponLaunch": {
-      "1": "Upon launching <strong>{{val1}}</strong>",
-      "2": "Upon launching <strong>{{val1}}</strong> or <strong>{{val2}}</strong>",
-      "3": "Upon launching <strong>{{val1}}</strong>, <strong>{{val2}}</strong> or <strong>{{val3}}</strong>"
-    },
-    "uponHit": {
-      "1": "Upon a(n) <strong>{{val1}}</strong> hitting an enemy"
-    },
-    "skills": {
-      "basic": "Basic Attack",
-      "special": "Special Attack",
-      "exSpecial": "EX Special Attack",
-      "chain": "Chain Attack",
-      "ult": "Ultimate",
-      "aftershock": "Aftershock"
-    }
+  "dmg": "{{val}}DMG",
+  "anomBuildup": "{{val}}Anomaly Buildup",
+  "daze": "{{val}}Daze",
+  "targetHpLe": "Target HP less than {{val}}%",
+  "stack_one": "{{count}} stack",
+  "stack_other": "{{count}} stacks",
+  "stacks": "Stacks",
+  "cd": "Cooldown",
+  "duration": "Duration",
+  "shield": "Shield",
+  "enterCombatOrSwitchIn": "Entering combat or switching in",
+  "uponLaunch": {
+    "1": "Upon launching <strong>{{val1}}</strong>",
+    "2": "Upon launching <strong>{{val1}}</strong> or <strong>{{val2}}</strong>",
+    "3": "Upon launching <strong>{{val1}}</strong>, <strong>{{val2}}</strong> or <strong>{{val3}}</strong>"
+  },
+  "uponHit": {
+    "1": "Upon a(n) <strong>{{val1}}</strong> hitting an enemy"
+  },
+  "skills": {
+    "basic": "Basic Attack",
+    "special": "Special Attack",
+    "exSpecial": "EX Special Attack",
+    "chain": "Chain Attack",
+    "ult": "Ultimate",
+    "aftershock": "Aftershock"
+  }
 }
