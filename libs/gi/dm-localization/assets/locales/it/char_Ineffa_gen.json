@@ -1,0 +1,159 @@
+{
+  "name": "Ineffa",
+  "title": "Fulmine roboante",
+  "description": "Un robot multifunzione dotato di componenti meccanici integrati prodotti in varie nazioni. Il Nucleo della Fonte nel suo petto ha resistito al passaggio di moltissimi anni.",
+  "constellationName": "Vanilla planifolia",
+  "auto": {
+    "name": "Antipolvere ciclonico",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi di lancia consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per eseguire un attacco rotante."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Modalità Pulizia: Frequenza stabile",
+    "description": {
+      "0": "Ineffa attiva il suo Modulo di pulizia potenziato per infliggere una singola iterazione di <electro>DAN da Electro ad area</electro> agli avversari vicini, crea uno Scudo flussottico ed evoca <strong>Birgitta</strong>, la sua unità d'assistenza intelligente multifunzione.",
+      "1": "Lo Scudo flussottico assorbe i DAN in base all'ATT di Ineffa, e possiede un'efficienza di assorbimento dei <electro>DAN da Electro</electro> pari a un 250%."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Assorbimento DAN scudo",
+      "2": "Durata scudo",
+      "3": "DAN da Scarica Birgitta",
+      "4": "Durata Birgitta",
+      "5": "TdR",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ordine supremo: Disinfestazione ciclonica",
+    "description": {
+      "0": "<strong>Birgitta</strong>, l'unità d'assistenza intelligente multifunzione, permette a Ineffa di sbarazzarsi facilmente degli avversari con i suoi Pugni a razzo! Ineffa lancia Birgitta per infliggere <electro>DAN da Electro ad area</electro> e permetterle di restare in campo.",
+      "1": "<br/>",
+      "2": "Se Birgitta è già stata evocata in campo da Ineffa, utilizzare quest'abilità rievoca Birgitta nella posizione del bersaglio e ripristina la sua durata."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "Costo energia",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Circuito overcloccato",
+    "description": {
+      "0": "Se nelle vicinanze sono presenti delle nubi temporalesche create da reazioni di Carica lunare quando <strong>Birgitta</strong> rilascia delle Scariche, quest'ultima sferra un attacco aggiuntivo che infligge <electro>DAN da Electro ad area</electro> pari a un 65% dell'ATT di Ineffa. Tali DAN sono considerati DAN da Carica lunare."
+    }
+  },
+  "passive2": {
+    "name": "Protocollo di permutazione panoramica",
+    "description": {
+      "0": "Quando usa il Tripudio elementale <strong>Ordine supremo: Disinfestazione ciclonica</strong>, tutti i membri del tuo gruppo ottengono l'effetto Permutazione parametrica, che aumenta la maestria elementale di Ineffa e del membro attivo del gruppo di un 6% dell'ATT di Ineffa per 20 s."
+    }
+  },
+  "passive3": {
+    "name": "Benedizione del presagio lunare: Centro di assemblaggio",
+    "description": {
+      "0": "Quando un membro del gruppo innesca una reazione di Electrocarica, questa si converte in una reazione di Carica lunare, i cui DAN base aumentano di uno 0,7% per ogni 100 di ATT di Ineffa, fino a un 14% massimo.",
+      "1": "<br/>",
+      "2": "Altre benedizioni potrebbero comparire con l'avvento della luna nuova..."
+    }
+  },
+  "passive": {
+    "name": "Unità di sintesi aromatica",
+    "description": {
+      "0": "Quando Ineffa consuma del cibo, c'è un 30% di probabilità di ottenere un condimento.",
+      "1": "<br/>",
+      "2": "Inoltre, sembra che a Nod-Krai esistano dei metodi per modificare l'aspetto esteriore di Birgitta..."
+    }
+  },
+  "constellation1": {
+    "name": "Processore di rettifica",
+    "description": {
+      "0": "Quando Ineffa attiva il suo Scudo flussottico, tutti i membri vicini del gruppo ottengono l'effetto Flusso trasportatore composito per 20 s, che aumenta i DAN da Carica lunare di un 2,5% per ogni 100 di ATT di Ineffa, fino a un 50% massimo."
+    }
+  },
+  "constellation2": {
+    "name": "Modulo di pulizia ausiliario",
+    "description": {
+      "0": "Dopo che il Tripudio elementale <strong>Ordine supremo: Disinfestazione ciclonica</strong> ha colpito gli avversari, uno di loro subisce lo stato Editto punitivo: dopo un breve periodo di tempo, o quando il suddetto avversario viene sconfitto, gli avversari vicini subiscono <electro>DAN da Electro ad area</electro> pari a un 300% dell'ATT di Ineffa. Tali DAN sono considerati DAN da Carica lunare.",
+      "1": "Inoltre, quando viene scatenato il Tripudio elementale <strong>Ordine supremo: Disinfestazione ciclonica</strong>, i membri vicini del gruppo ottengono uno Scudo flussottico."
+    }
+  },
+  "constellation3": {
+    "name": "Emulatore di emozioni potenziato",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Modalità Pulizia: Frequenza stabile</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Percorso privo d'editti",
+    "description": {
+      "0": "Quando i membri del tuo gruppo innescano reazioni di Carica lunare, l'energia elementale si ripristina di 5. Quest'effetto può verificarsi una volta ogni 4 s."
+    }
+  },
+  "constellation5": {
+    "name": "Trascendenza onirica dello specchio",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Ordine supremo: Disinfestazione ciclonica</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Una nuova alba per te",
+    "description": {
+      "0": "Quando Ineffa è sotto l'effetto di Flusso trasportatore composito, infligge <electro>DAN da Electro ad area</electro> pari a un 135% del suo ATT agli avversari nelle vicinanze del personaggio attivo dopo che le nubi temporalesche vicine hanno scagliato scariche fulminanti contro gli avversari. Tali DAN sono considerati DAN da Carica lunare. Il suddetto effetto può attivarsi una volta ogni 3,5 s."
+    }
+  }
+}

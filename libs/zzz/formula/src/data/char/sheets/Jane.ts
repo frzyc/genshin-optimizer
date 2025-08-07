@@ -157,7 +157,7 @@ const sheet = register(
   ),
   registerBuff(
     'm4_anomaly_dmg_',
-    teamBuff.combat.dmg_.addWithDmgType(
+    teamBuff.combat.buff_.addWithDmgType(
       'anomaly',
       cmpGE(
         char.mindscape,

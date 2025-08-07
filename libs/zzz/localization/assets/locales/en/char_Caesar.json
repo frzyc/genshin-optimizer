@@ -1,0 +1,12 @@
+{
+  "stanceSwitchCond": "When Caesar triggers a Perfect Block, Retaliation, or Defensive Assist",
+  "ultCond": "When hitting shielded enemies",
+  "core_shield": "Shield",
+  "coreCond": "While Radiant Aegis is active",
+  "abilityTeamCond": "Teammate can activate Defensive Assist",
+  "abilityCond": "When Caesar activates Perfect Block, Retaliation, Defensive Assist, or Basic Attack: Dead End",
+  "m2_atkInc_": "ATK Boost Increase",
+  "m6_exSpecial_assistFollowup_crit_": "EX Special Attack: Overpowered Shield Bash and Assist Follow-Up: Aiding Blade CRIT Rate",
+  "m6_dmg_": "EX Special Attack: Overpowered Shield Bash and Assist Follow-Up: Aiding Blade DMG",
+  "m6Cond": "When Caesar uses EX Special Attack: Overpowered Shield Bash or Assist Follow-Up: Aiding Blade"
+}

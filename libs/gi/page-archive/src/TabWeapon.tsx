@@ -162,7 +162,7 @@ export default function TabWeapon() {
       catTotal(allWeaponSubstatKeys, (ct) =>
         allWeaponKeys.forEach((wKey) => {
           const { subStat } = getWeaponStat(wKey)
-          if (!subStat) return
+          if (!subStat || !subStat.type) return
           const { type } = subStat as { type: WeaponSubstatKey }
           ct[type].total++
           if (weaponKeys.includes(wKey)) ct[type].current++

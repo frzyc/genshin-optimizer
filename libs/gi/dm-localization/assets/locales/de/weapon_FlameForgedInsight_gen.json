@@ -1,0 +1,24 @@
+{
+  "name": "Geschmiedete Weisheit",
+  "description": {
+    "0": "In den innerhalb des Stammes überlieferten Geschichten ist von einer Selbstverteidigungswaffe die Rede, die von den Handwerkern der Menschen der Quellen für ein weit reisendes Kind angefertigt wurde. Diese Waffe scheint eine Nachbildung des Riesenschwerts aus der Geschichte zu sein."
+  },
+  "passiveName": "Blühende Gedanken",
+  "passiveDescription": {
+    "0": {
+      "0": "Stellt nach Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“ oder „Sprießen“ <cryo>12</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>60</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "1": {
+      "0": "Stellt nach Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“ oder „Sprießen“ <cryo>15</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>75</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "2": {
+      "0": "Stellt nach Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“ oder „Sprießen“ <cryo>18</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>90</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "3": {
+      "0": "Stellt nach Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“ oder „Sprießen“ <cryo>21</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>105</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "4": {
+      "0": "Stellt nach Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“ oder „Sprießen“ <cryo>24</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>120</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    }
+  }
+}

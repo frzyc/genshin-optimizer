@@ -224,6 +224,12 @@
   "ActionPoints": {
     "name": "Điểm Hành Động"
   },
+  "SpeculativeRecords": {
+    "name": "Ghi Chép Suy Luận"
+  },
+  "SunspraySpirit": {
+    "name": "Độ Náo Nhiệt Ngày Hè"
+  },
   "Primogem": {
     "name": "Nguyên Thạch"
   },
@@ -1034,6 +1040,15 @@
   "Ifa": {
     "name": "Ifa"
   },
+  "Skirk": {
+    "name": "Skirk"
+  },
+  "Dahlia": {
+    "name": "Dahlia"
+  },
+  "Ineffa": {
+    "name": "Ineffa"
+  },
   "KachinasStellaFortuna": {
     "name": "Chòm Sao Của Kachina"
   },
@@ -1075,6 +1090,15 @@
   },
   "IfasStellaFortuna": {
     "name": "Chòm Sao Của Ifa"
+  },
+  "SkirksStellaFortuna": {
+    "name": "Chòm Sao Của Skirk"
+  },
+  "DahliasStellaFortuna": {
+    "name": "Chòm Sao Của Dahlia"
+  },
+  "IneffasStellaFortuna": {
+    "name": "Chòm Sao Của Ineffa"
   },
   "Apple": {
     "name": "Táo"
@@ -5129,6 +5153,9 @@
   "SanctifyingElixir": {
     "name": "Bột Thánh Hóa"
   },
+  "DustOfEnlightenment": {
+    "name": "Bụi Khai Sáng"
+  },
   "TestStaminaGrowthItem": {
     "name": "Test dùng đạo cụ tăng thể lực"
   },
@@ -7676,6 +7703,84 @@
   "AutumnFrost": {
     "name": "Sương Mù Mùa Thu"
   },
+  "SuspiciousDrink455": {
+    "name": "Thức Uống Đặc Biệt 455 Kỳ Lạ"
+  },
+  "Drink455": {
+    "name": "Thức Uống Đặc Biệt 455"
+  },
+  "DeliciousDrink455": {
+    "name": "Thức Uống Đặc Biệt 455 Ngon"
+  },
+  "SuspiciousMeatLoversFeast": {
+    "name": "Tiệc Thịt Thịnh Soạn Kỳ Lạ"
+  },
+  "MeatLoversFeast": {
+    "name": "Tiệc Thịt Thịnh Soạn"
+  },
+  "DeliciousMeatLoversFeast": {
+    "name": "Tiệc Thịt Thịnh Soạn Ngon"
+  },
+  "SuspiciousNineFruitNectar": {
+    "name": "Cửu Quả Cam Lộ Kỳ Lạ"
+  },
+  "NineFruitNectar": {
+    "name": "Cửu Quả Cam Lộ"
+  },
+  "DeliciousNineFruitNectar": {
+    "name": "Cửu Quả Cam Lộ Ngon"
+  },
+  "SuspiciousBubblemilkPie": {
+    "name": "Bánh Bọt Sữa Kỳ Lạ"
+  },
+  "BubblemilkPie": {
+    "name": "Bánh Bọt Sữa"
+  },
+  "DeliciousBubblemilkPie": {
+    "name": "Bánh Bọt Sữa Ngon"
+  },
+  "AbyssalBounty": {
+    "name": "\"Quà Từ Vực Tối\""
+  },
+  "ChatterOfJoyfulNights": {
+    "name": "\"Tán Gẫu Vui Vẻ\""
+  },
+  "SuspiciousMiniAshaPockets": {
+    "name": "Túi Asha Nhỏ Kỳ Lạ"
+  },
+  "MiniAshaPockets": {
+    "name": "Túi Asha Nhỏ"
+  },
+  "DeliciousMiniAshaPockets": {
+    "name": "Túi Asha Nhỏ Ngon"
+  },
+  "SuspiciousNanasCake": {
+    "name": "Bánh Nanas Kỳ Lạ"
+  },
+  "NanasCake": {
+    "name": "Bánh Nanas"
+  },
+  "DeliciousNanasCake": {
+    "name": "Bánh Nanas Ngon"
+  },
+  "SuspiciousGentleSeaBreeze": {
+    "name": "Gió Biển Nhẹ Nhàng Kỳ Lạ"
+  },
+  "GentleSeaBreeze": {
+    "name": "Gió Biển Nhẹ Nhàng"
+  },
+  "DeliciousGentleSeaBreeze": {
+    "name": "Gió Biển Nhẹ Nhàng Ngon"
+  },
+  "SuspiciousShrimpBisque": {
+    "name": "Súp Tôm Kỳ Lạ"
+  },
+  "ShrimpBisque": {
+    "name": "Súp Tôm"
+  },
+  "DeliciousShrimpBisque": {
+    "name": "Súp Tôm Ngon"
+  },
   "RecipeItem": {
     "name": "Đạo Cụ Công Thức"
   },
@@ -8380,6 +8485,30 @@
   },
   "RecipeCandyShells": {
     "name": "Công Thức: Kẹo Vỏ Sò"
+  },
+  "RecipeDrink455": {
+    "name": "Công Thức: Thức Uống Đặc Biệt 455"
+  },
+  "RecipeMeatLoversFeast": {
+    "name": "Công Thức: Tiệc Thịt Thịnh Soạn"
+  },
+  "RecipeNineFruitNectar": {
+    "name": "Công Thức: Cửu Quả Cam Lộ"
+  },
+  "RecipeBubblemilkPie": {
+    "name": "Công Thức: Bánh Bọt Sữa"
+  },
+  "RecipeMiniAshaPockets": {
+    "name": "Công Thức: Túi Asha Nhỏ"
+  },
+  "RecipeNanasCake": {
+    "name": "Công Thức: Bánh Nanas"
+  },
+  "RecipeGentleSeaBreeze": {
+    "name": "Công Thức: Gió Biển Nhẹ Nhàng"
+  },
+  "RecipeShrimpBisque": {
+    "name": "Công Thức: Súp Tôm"
   },
   "CraftedItems": {
     "name": "Sản Phẩm Ghép"
@@ -9418,6 +9547,9 @@
   },
   "OutfitOptionBundlePhaseII": {
     "name": "Hộp Quà Trang Phục: Kỳ 2"
+  },
+  "MaskedBallInvitationLetter": {
+    "name": "Thiệp Mời Dạ Tiệc Hóa Trang"
   },
   "BEP": {
     "name": "Kinh Nghiệm Nhật Ký Hành Trình"
@@ -12140,6 +12272,9 @@
   "ChevalmarinAmusementParkCommemorativeMap": {
     "name": "Bản Đồ Kỷ Niệm Công Viên Giải Trí Chevalmarin"
   },
+  "EasybreezeAlbum": {
+    "name": "Album Nhàn Nhã"
+  },
   "HandDrawnMap": {
     "name": "Bản Đồ Trong Ghi Chép"
   },
@@ -12151,6 +12286,159 @@
   },
   "LetterOfUnknownOrigin": {
     "name": "Thư Không Rõ Nguồn Gốc"
+  },
+  "RantiysHat": {
+    "name": "Mũ Của Rantiy"
+  },
+  "KeyToTheHibernationChamber": {
+    "name": "Chìa Khóa \"Khoang Ngủ Đông\""
+  },
+  "AyarHeroesCupInvitation": {
+    "name": "Thư Mời \"Cúp Anh Hùng Ayar\""
+  },
+  "UltraAmazingMiracleTonicGuaranteedToMakeYouTallerWithZeroEffort": {
+    "name": "\"Linh Dược Tăng Chiều Cao Siêu Cấp Dễ Dàng\""
+  },
+  "KeyImportantItem": {
+    "name": "Chìa Khóa (Đạo Cụ Quan Trọng)"
+  },
+  "SomeonesOrders": {
+    "name": "Mệnh Lệnh Của Ai Đó"
+  },
+  "RekissOrders": {
+    "name": "Mệnh Lệnh Của Rekis"
+  },
+  "InvitationLetterForABallNowPast": {
+    "name": "Thiệp Mời Bữa Tiệc Hạ Màn"
+  },
+  "DreamMirrorRemnant": {
+    "name": "Tàn Ảnh Hồn Mộng"
+  },
+  "TrainingReview": {
+    "name": "Đánh Giá Huấn Luyện"
+  },
+  "GiftEggGiftedByCapybaraKing": {
+    "name": "Trứng Lấp Lánh Vua Capybara Tặng"
+  },
+  "GiftEggGiftedByCacasha": {
+    "name": "Trứng Lấp Lánh Cacasha Tặng"
+  },
+  "GiftEggBloodOfThisLand": {
+    "name": "Trứng Lấp Lánh: Máu Của Núi"
+  },
+  "GiftEggLetsShredSharky": {
+    "name": "Trứng Lấp Lánh: Cá Mập Vượt Sóng"
+  },
+  "GiftEggBowBeforeYourKing": {
+    "name": "Trứng Lấp Lánh: Thánh Long Giáng Lâm"
+  },
+  "GiftEggLightOfTheBlazingSun": {
+    "name": "Trứng Lấp Lánh: Ánh Sáng Mặt Trời"
+  },
+  "GiftEggWhereTheDrinksKeepFlowing": {
+    "name": "Trứng Lấp Lánh: Dâng Hiến Cho Ly Rượu"
+  },
+  "GiftEggFietena": {
+    "name": "Trứng Lấp Lánh: Fietena"
+  },
+  "EasybreezeHolidayResortInvitation": {
+    "name": "Thư Mời Khu Nghỉ Dưỡng Nhàn Nhã"
+  },
+  "Sun": {
+    "name": "\"Mặt Trời\""
+  },
+  "MiniatureSun": {
+    "name": "\"Mặt Trời\" Nhỏ"
+  },
+  "TeyvatCommemorativeAlbum": {
+    "name": "Tập Ảnh Teyvat"
+  },
+  "KeepsakePhotoWithYelan": {
+    "name": "Ảnh Kỷ Niệm Chụp Cùng Yelan"
+  },
+  "TrainingReviewRead": {
+    "name": "Đánh Giá Huấn Luyện (Đã Đọc)"
+  },
+  "DecipheredMessage": {
+    "name": "Thông Tin Sau Khi Giải Mã"
+  },
+  "MysteriousBolt": {
+    "name": "Ốc Vít Kỳ Lạ"
+  },
+  "InvestigativeReportBakunawa": {
+    "name": "Báo Cáo Điều Tra: Bakunawa"
+  },
+  "InvestigativeReportMareJivari": {
+    "name": "Báo Cáo Điều Tra: Vùng Biển Lặng"
+  },
+  "InvestigativeReportSecretCave": {
+    "name": "Báo Cáo Điều Tra: Hang Động Bí Mật"
+  },
+  "CryptexLetter": {
+    "name": "Thư Trong Ổ Khóa Mã"
+  },
+  "PipilpanIdolCompetitionBrochure": {
+    "name": "\"Tờ Rơi Quảng Cáo Cuộc Thi Thần Tượng Pipilpan\""
+  },
+  "DarkFinanciersCipher": {
+    "name": "Bảng Đối Chiếu \"Nhà Tài Phiệt Hắc Ám\""
+  },
+  "InvitationToAnAuction": {
+    "name": "Thư Mời Đấu Giá"
+  },
+  "EasybreezeHolidayResortMap": {
+    "name": "Bản Đồ Khu Nghỉ Dưỡng Nhàn Nhã"
+  },
+  "ScribbledNotes": {
+    "name": "Bút Ký Nguệch Ngoạc"
+  },
+  "BeautifullyWrittenNotes": {
+    "name": "Bút Ký Chữ Đẹp"
+  },
+  "PictureGiftedByCapybaraKing": {
+    "name": "Tấm Ảnh Vua Capybara Tặng"
+  },
+  "PictureGiftedByCacasha": {
+    "name": "Tấm Ảnh Cacasha Tặng"
+  },
+  "SomeonesTatteredNotesI": {
+    "name": "Ghi Chép Rách Nát Của Ai Đó I"
+  },
+  "SomeonesTatteredNotesII": {
+    "name": "Ghi Chép Rách Nát Của Ai Đó II"
+  },
+  "CorrodedTatteredNotesIII": {
+    "name": "Ghi Chép Rách Nát Bị Ăn Mòn III"
+  },
+  "LavawalkersResolution": {
+    "name": "Sự Từ Chối Của Người Vượt Lửa"
+  },
+  "YellowedNotes": {
+    "name": "Ghi Chú Ố Vàng"
+  },
+  "EasybreezeBadge": {
+    "name": "Huy Hiệu Nhàn Nhã"
+  },
+  "SundjattasPhlogistonForgeNotes": {
+    "name": "Ghi Chép Rèn Phlogiston Của Sundjatta"
+  },
+  "PriestesssRecordsI": {
+    "name": "Ghi Chép Của Tư Tế I"
+  },
+  "PriestesssRecordsII": {
+    "name": "Ghi Chép Của Tư Tế II"
+  },
+  "PriestesssRecordsIII": {
+    "name": "Ghi Chép Của Tư Tế III"
+  },
+  "LetterAddressedToTheCaptain": {
+    "name": "Thư Gửi Thuyền Trưởng"
+  },
+  "TecuhtlisLetter": {
+    "name": "Thư Của Tecuhtli"
+  },
+  "SomeonesLostPassword": {
+    "name": "Mật Khẩu Ai Đó Đánh Mất"
   },
   "TearsAmongTheStars": {
     "name": "Giọt Lệ Giữa Những Vì Sao"
@@ -12959,6 +13247,18 @@
   "RadiantSpincrystal152": {
     "name": "Ngọc Thạch Âm Vang 152"
   },
+  "RadiantSpincrystal153": {
+    "name": "Ngọc Thạch Âm Vang 153"
+  },
+  "RadiantSpincrystal154": {
+    "name": "Ngọc Thạch Âm Vang 154"
+  },
+  "RadiantSpincrystal155": {
+    "name": "Ngọc Thạch Âm Vang 155"
+  },
+  "RadiantSpincrystal156": {
+    "name": "Ngọc Thạch Âm Vang 156"
+  },
   "LanternFiber": {
     "name": "Giấy Đèn"
   },
@@ -13045,6 +13345,9 @@
   },
   "CompositeBowTuningKit": {
     "name": "Bộ Hiệu Chỉnh Cung Tên"
+  },
+  "DriftersCrystalMarrow": {
+    "name": "Tủy Tinh Thể Của Lữ Khách"
   },
   "FalconsDance": {
     "name": "Vũ Điệu Chim Ưng"
@@ -13913,6 +14216,33 @@
   "TravelNotesBalletica": {
     "name": "Nhật Ký Hành Trình - Kịch Múa"
   },
+  "SkirkLoneShadow": {
+    "name": "Skirk - Bóng Dáng Cô Độc"
+  },
+  "DahliaSacredDuty": {
+    "name": "Dahlia - Thiên Chức"
+  },
+  "CelebrationLavishGala": {
+    "name": "Lễ Hội - Tiệc Tùng"
+  },
+  "TravelNotesSpeculation": {
+    "name": "Nhật Ký Hành Trình - Suy Tưởng"
+  },
+  "IneffaCommand": {
+    "name": "Ineffa - Chỉ Lệnh"
+  },
+  "NatlanWheelOfFlame": {
+    "name": "Natlan - Bánh Xe Lửa"
+  },
+  "NatlanChasingTheWind": {
+    "name": "Natlan - Đuổi Theo Gió"
+  },
+  "TravelNotesEasyBreezy": {
+    "name": "Nhật Ký Hành Trình - Nhàn Nhã"
+  },
+  "CelebrationTunaOnRice": {
+    "name": "Lễ Hội - Cơm Cá Ngừ"
+  },
   "EchoDandelionKnight": {
     "name": "Vết Tích - Kỵ Sĩ Bồ Công Anh"
   },
@@ -13945,6 +14275,12 @@
   },
   "EchoFlameMane": {
     "name": "Vết Tích - Sư Tử Lửa"
+  },
+  "EchoPlaneOfEuthymia": {
+    "name": "Vết Tích - Nhất Tâm Tịnh Thổ"
+  },
+  "EchoLonesomeTranscendence": {
+    "name": "Vết Tích - Thiên Thể Cô Độc"
   },
   "AnemoculusResonanceStone": {
     "name": "Đá Cộng Hưởng Phong Thần Đồng"
@@ -14230,6 +14566,18 @@
   },
   "Ukulele": {
     "name": "Ukulele"
+  },
+  "ForensicImagingDevice": {
+    "name": "Máy Ghi Hình Tổng Hợp"
+  },
+  "NeoTerminalFloatingLeafModel": {
+    "name": "Trạm Cuối Lá Nổi Kiểu Mới"
+  },
+  "LingeringEuphonia": {
+    "name": "\"Dư Âm\""
+  },
+  "LeapingSpiritPiano": {
+    "name": "Đàn Giai Điệu Nhảy Vọt"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Giải Thích: Đá Cộng Hưởng Phong Thần Đồng"
@@ -14615,6 +14963,42 @@
   "ACloudyMoment": {
     "name": "Thời Khắc Không Vui"
   },
+  "PuffyPolka": {
+    "name": "Vũ Điệu Bóng Nước"
+  },
+  "CheerfulGreeting": {
+    "name": "Hỏi Thăm Vui Vẻ"
+  },
+  "PhotographicMuse": {
+    "name": "Cảm Hứng Chụp Ảnh"
+  },
+  "SharkySurfing": {
+    "name": "Cá Mập Lướt Sóng"
+  },
+  "MagicalPreparation": {
+    "name": "Chuẩn Bị Ảo Thuật"
+  },
+  "HugtasticYuegui": {
+    "name": "Ôm Lấy Nguyệt Quế"
+  },
+  "KeenConsideration": {
+    "name": "Suy Nghĩ Nhạy Bén"
+  },
+  "TidyingUp": {
+    "name": "Chỉnh Đốn"
+  },
+  "WatchingAndWaiting": {
+    "name": "Tập Trung Đợi"
+  },
+  "MastersPoise": {
+    "name": "Dáng Vẻ Bậc Thầy"
+  },
+  "ConfidentCountenance": {
+    "name": "Dáng Vẻ Tự Tin"
+  },
+  "HandEyeBodyCoordination": {
+    "name": "Phối Hợp Tay Mắt"
+  },
   "FantasticalMarvel": {
     "name": "Ảo Kịch Tuyệt Ý"
   },
@@ -14656,6 +15040,15 @@
   },
   "OdeToAzureSkies": {
     "name": "Áng Thơ Trời Xanh"
+  },
+  "BlazingSunfireScoursTheGloom": {
+    "name": "Ánh Lửa Quét Màn Đêm"
+  },
+  "EternalDreamsOfSerenity": {
+    "name": "Giấc Mộng Vô Niệm"
+  },
+  "VigorousYapping": {
+    "name": "Trò Chuyện Sôi Nổi"
   },
   "RhodeiaOfLoch": {
     "name": "Tinh Linh Nước Trong - Rhodeia"
@@ -14740,6 +15133,9 @@
   },
   "GoldenWolflord": {
     "name": "Vua Thú Hoàng Kim"
+  },
+  "GluttonousYumkasaurMountainKing": {
+    "name": "Sơn Vương Yumkasaur Tham Ăn"
   },
   "UndividedHeart": {
     "name": "Duy Thử Nhất Tâm"
@@ -15077,6 +15473,24 @@
   "TourOfTepeilhuitl": {
     "name": "Chuyến Du Hành Của Tepeilhuitl"
   },
+  "MamaloacosFrigidRain": {
+    "name": "Cơn Mưa Lạnh Của Mamaloaco"
+  },
+  "HumanitysNameUnfettered": {
+    "name": "Giải Phóng \"Tên Của Nhân Loại\""
+  },
+  "BulletTrick": {
+    "name": "Ảo Thuật Với Đạn"
+  },
+  "DanceVestmentsBillowLikeRainbowJade": {
+    "name": "Vũ Duệ Phiên Hề Dương Ngọc Nghê"
+  },
+  "CuriousCasefiles": {
+    "name": "Hồ Sơ Hão Huyền"
+  },
+  "TheAllDevourer": {
+    "name": "Tham Lam Nuốt Chửng"
+  },
   "MagicGuide": {
     "name": "Tóm Tắt Ma Pháp"
   },
@@ -15368,6 +15782,24 @@
   "Tatankasaurus": {
     "name": "Tatankasaurus"
   },
+  "TheDockhandsAssistant": {
+    "name": "Kiếm Bến Tàu"
+  },
+  "CrownOfTheSaints": {
+    "name": "Vương Miện Của Thánh Giả"
+  },
+  "ScrollOfTheHeroOfCinderCity": {
+    "name": "Bức Tranh Dũng Sĩ Thành Tro Tàn"
+  },
+  "RawrRawr": {
+    "name": "Rawr! Rawr!"
+  },
+  "CrownlessCrown": {
+    "name": "Vương Miện Quý Không Ngai"
+  },
+  "WhimsicalDanceOfTheWithered": {
+    "name": "Vũ Điệu Của Tàn Phai"
+  },
   "LiyueHarborWharf": {
     "name": "Bến Cảng Liyue"
   },
@@ -15538,6 +15970,18 @@
   },
   "CollectiveOfPlenty": {
     "name": "\"Cộng Đồng Trù Phú\""
+  },
+  "CalligraphyTavern": {
+    "name": "Quán Rượu Sắc Mực"
+  },
+  "ConstellationMetropole": {
+    "name": "Vương Thành Tinh Cầu"
+  },
+  "ForestBlessing": {
+    "name": "Chúc Phúc Của Rừng Sâu"
+  },
+  "GiftOfTheGoddessOfProphecy": {
+    "name": "Món Quà Của Nữ Thần Tiên Tri"
   },
   "ElementalResonanceWovenIce": {
     "name": "Cộng Hưởng Nguyên Tố: Băng Giao Thoa"
@@ -15734,6 +16178,21 @@
   "ArtOfSleepyMeditation": {
     "name": "Nghệ Thuật Thiền Ngủ"
   },
+  "FightForDeath": {
+    "name": "Chiến Đấu Vì \"Cái Chết\""
+  },
+  "FlyingSquadAttack": {
+    "name": "Đội Bay Xuất Kích!"
+  },
+  "FruitsOfTraining": {
+    "name": "Thành Quả Rèn Luyện"
+  },
+  "HarvestTime": {
+    "name": "Thời Gian Thu Hoạch"
+  },
+  "AwesomeBro": {
+    "name": "Rất Tuyệt, Người Anh Em"
+  },
   "Origin": {
     "name": "Nguyên Sơ"
   },
@@ -15793,6 +16252,15 @@
   },
   "GreatRedSandLongNight": {
     "name": "Biển Cát Đỏ: Đêm Dài"
+  },
+  "GreatRedSandBronze": {
+    "name": "Biển Cát Đỏ: Đồng Cổ"
+  },
+  "GreatRedSandCrown": {
+    "name": "Biển Cát Đỏ - Vương Miện"
+  },
+  "FontaPassionateRed": {
+    "name": "Fonta - Màu Đỏ Nồng Nàn"
   },
   "BeginnerPlayerBadge": {
     "name": "Huy Hiệu Bài Thủ Tập Sự"
@@ -15871,6 +16339,48 @@
   },
   "NewYearsCheer": {
     "name": "Niềm Vui Xuân Về"
+  },
+  "TranquilBanquet": {
+    "name": "Yến Tiệc Tĩnh Lặng"
+  },
+  "AdventuresInBlazingHue": {
+    "name": "Hành Trình Sắc Lửa"
+  },
+  "RadiantPhantasm": {
+    "name": "Hóa Hình Rực Rỡ"
+  },
+  "RadiantPhantasmSublimation": {
+    "name": "Hóa Hình Rực Rỡ - Thăng Hoa"
+  },
+  "SerpentDevourer": {
+    "name": "Diệt Xà"
+  },
+  "SerpentDevourerSublimation": {
+    "name": "Diệt Xà - Thăng Hoa"
+  },
+  "ArdentStorm": {
+    "name": "Cuồng Phong"
+  },
+  "ArdentStormSublimation": {
+    "name": "Cuồng Phong - Thăng Hoa"
+  },
+  "ShatteredMoon": {
+    "name": "Tàn Nguyệt"
+  },
+  "ShatteredMoonSublimation": {
+    "name": "Tàn Nguyệt - Thăng Hoa"
+  },
+  "HallowedFetters": {
+    "name": "Xích Thánh"
+  },
+  "HallowedFettersSublimation": {
+    "name": "Xích Thánh - Thăng Hoa"
+  },
+  "Starpiercer": {
+    "name": "Quán Tinh"
+  },
+  "StarpiercerSublimation": {
+    "name": "Quán Tinh - Thăng Hoa"
   },
   "AdventurerCamp": {
     "name": "Doanh trại tạm thời của Nhà Mạo Hiểm"
@@ -16378,6 +16888,15 @@
   },
   "PhlogistonFloorLampHomecoming": {
     "name": "Đèn Sàn Phlogiston - Đường Về"
+  },
+  "AglowThroughTheLingeringDay": {
+    "name": "Tỏa Sáng Cả Ban Ngày"
+  },
+  "GentleNightSky": {
+    "name": "Sao Đêm Nhẹ Nhàng"
+  },
+  "StandingFlammabombWoodStreetLamp": {
+    "name": "Đèn Đường Gỗ Bùng Nổ"
   },
   "EfflorescentIllumination": {
     "name": "Ánh Sáng Trăm Hoa"
@@ -17048,6 +17567,9 @@
   "PhlogistonLampRainCover": {
     "name": "Đèn Phlogiston - Che Mưa"
   },
+  "MiniatureCandlestandMiniatureSun": {
+    "name": "Giá Nến Mini - Mặt Trời Nhỏ"
+  },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Bình Hoa - Ung Dung Nhạt Nhòa"
   },
@@ -17209,6 +17731,9 @@
   },
   "SweetDreams": {
     "name": "\"Chúc Ngủ Ngon\""
+  },
+  "FlowerShapedMachineComponent": {
+    "name": "Linh Kiện Hình Bông Hoa"
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Dụng Cụ Phòng Trà - Nặng Hơn Một Xíu"
@@ -18077,6 +18602,27 @@
   "LandOfPlentysSentinel": {
     "name": "Trạm Gác Của Mảnh Đất Trù Phú"
   },
+  "EasyBreezyWilderness": {
+    "name": "Đồng Bằng Nhàn Nhã"
+  },
+  "EasyBreezyNest": {
+    "name": "Nghỉ Ngơi Nhàn Nhã"
+  },
+  "EasyBreezyGuestHouse": {
+    "name": "Nhà Trọ Nhàn Nhã"
+  },
+  "EasyBreezyComfort": {
+    "name": "Ngày Nghỉ Nhàn Nhã"
+  },
+  "EasyBreezyFlutterby": {
+    "name": "Phiêu Du Nhàn Nhã"
+  },
+  "EasyBreezyNights": {
+    "name": "Đêm Vui Nhàn Nhã"
+  },
+  "ReimaginedColors": {
+    "name": "Tái Tạo Màu Sắc"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Đài Phun Nước Hoa Và Chim"
   },
@@ -18196,6 +18742,15 @@
   },
   "FlowerFeatherClanWarningBalloon": {
     "name": "Khí Cầu Hội Hoa Vũ - Cảnh Báo"
+  },
+  "LordOfTheOceanTides": {
+    "name": "Vua Của Dòng Chảy"
+  },
+  "MarketStatueVibrantVacation": {
+    "name": "Tượng Khu Chợ - Bảy Màu Nhàn Nhã"
+  },
+  "CoffeeTime": {
+    "name": "Thời Gian Cho Cà Phê"
   },
   "AdeptusGate": {
     "name": "Tam Nhãn Thủ Tiên Bài"
@@ -18637,6 +19192,15 @@
   },
   "ExquisiteCarving": {
     "name": "Điêu Khắc Tinh Xảo"
+  },
+  "PlatedTargetRhythmOfWar": {
+    "name": "Bia Bắn Kim Loại - Nhịp Bắn"
+  },
+  "PeacefulForestDream": {
+    "name": "Giấc Mộng An Nhiên Giữa Rừng"
+  },
+  "HighFlyersTrampoline": {
+    "name": "Giàn Nhún Nhảy Cao"
   },
   "PottedPlantVerdantVastness": {
     "name": "Chậu Cây Xanh - Xanh Ngắt Mát Mẻ"
@@ -19082,6 +19646,15 @@
   "FilmStandSurintendanteChevalmarin": {
     "name": "Bảng Hiệu - Phu Nhân Chevalmarin"
   },
+  "FightingChords": {
+    "name": "Âm Điệu Đấu Sĩ"
+  },
+  "JourneyThroughWindAndWaves": {
+    "name": "Hành Trình Của Gió Và Bọt Biển"
+  },
+  "ParasolSandAndTheSeaBreeze": {
+    "name": "Ô Bãi Biển - Cát Và Gió Biển"
+  },
   "BookshelfFreeReading": {
     "name": "Kệ Sách Báo - \"Tự Do Lấy Đọc\""
   },
@@ -19108,6 +19681,21 @@
   },
   "MoltenLavaPool": {
     "name": "Hồ Dung Nham"
+  },
+  "WoodenModelSun": {
+    "name": "Mô Hình Gỗ - \"Mặt Trời\""
+  },
+  "WaveyShark": {
+    "name": "Cá Mập Thủy Triều"
+  },
+  "AshasPaintDrumRampage": {
+    "name": "Ống Lăn Asha- Hoành Hành"
+  },
+  "FluffyAlpacaSheriff": {
+    "name": "Cảnh Sát Mềm Mại"
+  },
+  "SpeedyWanderer": {
+    "name": "Kẻ Siêu Tốc"
   },
   "TeaHarvestsStockpilingAndTransport": {
     "name": "Thu Hoạch Trà Và Vận Chuyển"
@@ -19310,6 +19898,12 @@
   "AlignedVolcanicStoneStool": {
     "name": "Ghế Đá - Đá Núi Lửa \"Định Hướng\""
   },
+  "NightWindStoneStoolHarmoniousUnity": {
+    "name": "Ghế Đá Gió Đêm - Hợp Nhất Thành Một"
+  },
+  "DeckchairHealthyGlow": {
+    "name": "Ghế Bãi Biển - Tắm Nắng Khỏe Mạnh"
+  },
   "TwoStoryHilichurlSentryTower": {
     "name": "Tháp Canh Hilichurl Hai Tầng"
   },
@@ -19498,5 +20092,17 @@
   },
   "GrainfruitPuffer": {
     "name": "Máy Ngũ Cốc Bồng Bềnh"
+  },
+  "FizzyFireworks": {
+    "name": "Ngọn Lửa Mát Lạnh"
+  },
+  "FlyHigherTogether": {
+    "name": "Sôi Động Vui Vẻ"
+  },
+  "SirCapyOfTheLongIncisors": {
+    "name": "Kỵ Sĩ Im Lặng"
+  },
+  "DanceOffStageRevelrousRhythm": {
+    "name": "Đài Nhạc Rực Cháy - Cuồng Nhiệt"
   }
 }

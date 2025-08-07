@@ -5,10 +5,10 @@
   "desc3": "A frequency-converting W-Engine that can quickly generate excessive power and effectively increase its user's battle prowess.",
   "phase": "Riptide",
   "phaseDescs": [
-    "Upon entering combat or switching in, the equipper's Impact increases by <ct color=#2BAD00>9%</ct> for 10s. This effect can trigger once every 20s.",
-    "Upon entering combat or switching in, the equipper's Impact increases by <ct color=#2BAD00>10%</ct> for 10s. This effect can trigger once every 20s.",
-    "Upon entering combat or switching in, the equipper's Impact increases by <ct color=#2BAD00>11%</ct> for 10s. This effect can trigger once every 20s.",
-    "Upon entering combat or switching in, the equipper's Impact increases by <ct color=#2BAD00>12%</ct> for 10s. This effect can trigger once every 20s.",
-    "Upon entering combat or switching in, the equipper's Impact increases by <ct color=#2BAD00>13%</ct> for 10s. This effect can trigger once every 20s."
+    "Upon becoming the active character in combat, the equipper's Impact increases by <ct color=#2BAD00>9%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon becoming the active character in combat, the equipper's Impact increases by <ct color=#2BAD00>10%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon becoming the active character in combat, the equipper's Impact increases by <ct color=#2BAD00>11%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon becoming the active character in combat, the equipper's Impact increases by <ct color=#2BAD00>12%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon becoming the active character in combat, the equipper's Impact increases by <ct color=#2BAD00>13%</ct> for 10s. This effect can trigger once every 20s."
   ]
 }

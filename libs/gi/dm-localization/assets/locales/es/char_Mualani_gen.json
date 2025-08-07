@@ -59,7 +59,7 @@
       "11": "<i>En primer lugar, este tiburón no es solo una tabla de surf, sino también un tiburón de agua dulce. Y en segundo lugar, no come humanos, pero sí los muerde.</i>"
     },
     "skillParams": {
-      "0": "Daño básico de escualomordisco",
+      "0": "Daño base de escualomordisco",
       "1": "Aumento de daño de energía mareal",
       "2": "Aumento de daño adicional de escualomordisco tsunámico",
       "3": "TdE de escualomordisco",

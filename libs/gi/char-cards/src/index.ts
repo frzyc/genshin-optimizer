@@ -37,6 +37,7 @@ import Gorou from './Character_Gorou_Card.png'
 import HuTao from './Character_Hu_Tao_Card.png'
 import Iansan from './Character_Iansan_Card.jpg'
 import Ifa from './Character_Ifa_Card.jpg'
+import Ineffa from './Character_Ineffa_Card.png'
 import Jean from './Character_Jean_Card.jpg'
 import Kachina from './Character_Kachina_Card.jpg'
 import Kaeya from './Character_Kaeya_Card.jpg'
@@ -142,6 +143,7 @@ const charCards = {
   HuTao,
   Iansan,
   Ifa,
+  Ineffa,
   Jean,
   Kachina,
   KaedeharaKazuha,

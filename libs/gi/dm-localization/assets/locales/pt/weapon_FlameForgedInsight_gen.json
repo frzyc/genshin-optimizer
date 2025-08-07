@@ -1,0 +1,24 @@
+{
+  "name": "Forja da Sabedoria",
+  "description": {
+    "0": "Histórias da tribo contam sobre uma grande lâmina forjada pelo Povo das Termas para proteger uma criança que embarcaria numa jornada para uma terra distante. Essa arma parece ser uma réplica da espada lendária."
+  },
+  "passiveName": "Pensamentos de Florescimento",
+  "passiveDescription": {
+    "0": {
+      "0": "Ao desencadear Eletricamente Carregado, Carga Lunar ou Florescimento, regenera <cryo>12</cryo> de Energia Elemental, e aumenta a Proficiência Elemental em <cryo>60</cryo> pontos por 15s. Esse efeito pode ser desencadeado uma vez a cada 15s, e pode ser desencadeado mesmo que o personagem que esteja com essa arma equipada não esteja ativo no campo de batalha."
+    },
+    "1": {
+      "0": "Ao desencadear Eletricamente Carregado, Carga Lunar ou Florescimento, regenera <cryo>15</cryo> de Energia Elemental, e aumenta a Proficiência Elemental em <cryo>75</cryo> pontos por 15s. Esse efeito pode ser desencadeado uma vez a cada 15s, e pode ser desencadeado mesmo que o personagem que esteja com essa arma equipada não esteja ativo no campo de batalha."
+    },
+    "2": {
+      "0": "Ao desencadear Eletricamente Carregado, Carga Lunar ou Florescimento, regenera <cryo>18</cryo> de Energia Elemental, e aumenta a Proficiência Elemental em <cryo>90</cryo> pontos por 15s. Esse efeito pode ser desencadeado uma vez a cada 15s, e pode ser desencadeado mesmo que o personagem que esteja com essa arma equipada não esteja ativo no campo de batalha."
+    },
+    "3": {
+      "0": "Ao desencadear Eletricamente Carregado, Carga Lunar ou Florescimento, regenera <cryo>21</cryo> de Energia Elemental, e aumenta a Proficiência Elemental em <cryo>105</cryo> pontos por 15s. Esse efeito pode ser desencadeado uma vez a cada 15s, e pode ser desencadeado mesmo que o personagem que esteja com essa arma equipada não esteja ativo no campo de batalha."
+    },
+    "4": {
+      "0": "Ao desencadear Eletricamente Carregado, Carga Lunar ou Florescimento, regenera <cryo>24</cryo> de Energia Elemental, e aumenta a Proficiência Elemental em <cryo>120</cryo> pontos por 15s. Esse efeito pode ser desencadeado uma vez a cada 15s, e pode ser desencadeado mesmo que o personagem que esteja com essa arma equipada não esteja ativo no campo de batalha."
+    }
+  }
+}

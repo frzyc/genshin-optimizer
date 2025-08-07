@@ -67,6 +67,7 @@ const dm = {
     essentialsGained: skillParam_gen.passive1[1][0],
     maxEssentials: skillParam_gen.passive1[2][0],
     reaction_dmg_perEssential: skillParam_gen.passive1[3][0],
+    lunarcharged_dmg_perEssential: 0.002,
   },
   passive2: {
     eleMas: skillParam_gen.passive2[0][0],
@@ -112,6 +113,11 @@ const a1Essentials_swirl_dmg_ = greaterEq(
   prod(percent(dm.passive1.reaction_dmg_perEssential), a1Essentials)
 )
 const a1Essentials_electrocharged_dmg_ = { ...a1Essentials_swirl_dmg_ }
+const a1Essentials_lunarcharged_dmg_ = greaterEq(
+  input.asc,
+  1,
+  prod(percent(dm.passive1.lunarcharged_dmg_perEssential), a1Essentials)
+)
 
 const [condA4NsBurstPath, condA4NsBurst] = cond(key, 'a4NsBurst')
 const a4NsBurst_eleMas = greaterEq(
@@ -184,6 +190,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     premod: {
       swirl_dmg_: a1Essentials_swirl_dmg_,
       electrocharged_dmg_: a1Essentials_electrocharged_dmg_,
+      lunarcharged_dmg_: a1Essentials_lunarcharged_dmg_,
     },
   },
 })
@@ -312,6 +319,9 @@ const sheet: TalentSheet = {
             },
             {
               node: a1Essentials_electrocharged_dmg_,
+            },
+            {
+              node: a1Essentials_lunarcharged_dmg_,
             },
           ],
         }))

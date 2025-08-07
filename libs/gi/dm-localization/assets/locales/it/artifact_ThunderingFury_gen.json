@@ -2,7 +2,7 @@
   "setName": "Furia tonante",
   "setEffects": {
     "2": "Bonus DAN da Electro +15%.",
-    "4": "Aumenta di un 40% i DAN da Sovraccarico, Electrocarica, Superconduzione e Iperfioritura. Il bonus DAN conferito da Accentuazione aumenta di un 20%. Innescare una Vivificazione o una delle reazioni elementali di cui sopra riduce il TdR dell'abilità elementale di 1 s. Si può verificare una sola volta ogni 0,8 s."
+    "4": "Aumenta di un 40% i DAN da Sovraccarico, Electrocarica, Superconduzione e Iperfioritura, di un 20% il bonus DAN conferito da Accentuazione, e di un 20% i DAN causati da Carica lunare. Innescare Vivificazione o una delle suddette reazioni elementali riduce il TdR dell'abilità elementale di 1 s. Si può verificare una sola volta ogni 0,8 s."
   },
   "pieces": {
     "flower": {

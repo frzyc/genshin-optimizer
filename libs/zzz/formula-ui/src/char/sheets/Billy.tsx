@@ -1,25 +1,61 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
-import { createBaseSheet } from '../sheetUtil'
+import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Billy'
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [, ch] = trans('char', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = conditionals[key]
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = buffs[key]
 
-const sheet = createBaseSheet(key)
+const sheet = createBaseSheet(key, {
+  core: [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ch('core_common_dmg_'),
+          fieldRef: buff.core_common_dmg_.tag,
+        },
+      ],
+    },
+  ],
+  ability: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('abilityCond'),
+        metadata: cond.ult_dmg_stacks,
+        fields: [fieldForBuff(buff.ability_ult_dmg_)],
+      },
+    },
+  ],
+  m2: [
+    {
+      type: 'fields',
+      fields: [fieldForBuff(buff.m2_dodgeCounter_dmg_)],
+    },
+  ],
+  m4: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('m4Cond'),
+        metadata: cond.distance,
+        fields: [fieldForBuff(buff.m4_exSpecial_crit_)],
+      },
+    },
+  ],
+  m6: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('m6Cond'),
+        metadata: cond.m6_stacks,
+        fields: [fieldForBuff(buff.m6_common_dmg_)],
+      },
+    },
+  ],
+})
 
 export default sheet

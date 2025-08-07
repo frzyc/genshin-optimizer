@@ -181,7 +181,7 @@
     },
     "2": {
       "name": "Master's Paragon",
-      "desc": "Upon entering combat or switching in, Rina's DMG increases by 15% for 12s. This effect can trigger once every 18s.",
+      "desc": "Upon becoming the active character in combat, Rina's DMG increases by 15% for 12s. This effect can trigger once every 18s.",
       "flavor": "\"It takes an excellent head maid to lead excellent maids, and an exemplary master to raise exemplary Bangboo.\" — Excerpt from Rina's speech at the \"Victoria Housekeeping Human Resource Management and Bangboo Training Insight Seminar.\""
     },
     "3": {

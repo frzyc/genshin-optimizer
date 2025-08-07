@@ -1,0 +1,24 @@
+{
+  "name": "Hào Quang Tách Rời",
+  "description": {
+    "0": "Đao xoay cơ học chế tác bởi Xưởng Krumkake Clink-Clank, dường như ẩn chứa bí mật từ thời đại xa xưa..."
+  },
+  "passiveName": "Vương Miện Sương Trong",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, Tấn Công tăng <cryo>24%</cryo> trong vòng 20s. Trong thời gian duy trì, nếu người trang bị tạo ra khiên thì trong 20s tiếp theo sẽ nhận hiệu ứng \"Sắc Lệnh Tia Chớp\": Tăng <cryo>40%</cryo> sát thương phản ứng Nguyệt-Điện Cảm của tất cả nhân vật trong đội ở gần."
+    },
+    "1": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, Tấn Công tăng <cryo>30%</cryo> trong vòng 20s. Trong thời gian duy trì, nếu người trang bị tạo ra khiên thì trong 20s tiếp theo sẽ nhận hiệu ứng \"Sắc Lệnh Tia Chớp\": Tăng <cryo>50%</cryo> sát thương phản ứng Nguyệt-Điện Cảm của tất cả nhân vật trong đội ở gần."
+    },
+    "2": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, Tấn Công tăng <cryo>36%</cryo> trong vòng 20s. Trong thời gian duy trì, nếu người trang bị tạo ra khiên thì trong 20s tiếp theo sẽ nhận hiệu ứng \"Sắc Lệnh Tia Chớp\": Tăng <cryo>60%</cryo> sát thương phản ứng Nguyệt-Điện Cảm của tất cả nhân vật trong đội ở gần."
+    },
+    "3": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, Tấn Công tăng <cryo>42%</cryo> trong vòng 20s. Trong thời gian duy trì, nếu người trang bị tạo ra khiên thì trong 20s tiếp theo sẽ nhận hiệu ứng \"Sắc Lệnh Tia Chớp\": Tăng <cryo>70%</cryo> sát thương phản ứng Nguyệt-Điện Cảm của tất cả nhân vật trong đội ở gần."
+    },
+    "4": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, Tấn Công tăng <cryo>48%</cryo> trong vòng 20s. Trong thời gian duy trì, nếu người trang bị tạo ra khiên thì trong 20s tiếp theo sẽ nhận hiệu ứng \"Sắc Lệnh Tia Chớp\": Tăng <cryo>80%</cryo> sát thương phản ứng Nguyệt-Điện Cảm của tất cả nhân vật trong đội ở gần."
+    }
+  }
+}

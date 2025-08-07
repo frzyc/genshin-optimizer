@@ -147,7 +147,7 @@
   "passive1": {
     "name": "Field Medic's Vision",
     "description": {
-      "0": "When Ifa is in the Nightsoul's Blessing state, every 1 Nightsoul point out of the total in his entire party will grant him 1 <strong>Rescue Essentials</strong> point. Rescue Essentials will increase the Swirl and Electro-Charged DMG dealt by all nearby party members."
+      "0": "When Ifa is in the Nightsoul's Blessing state, every 1 Nightsoul point out of the total in his entire party will grant him 1 <strong>Rescue Essentials</strong> point. Rescue Essentials will increase the Swirl, Electro-Charged, and Lunar-Charged DMG dealt by nearby party members."
     }
   },
   "passive2": {

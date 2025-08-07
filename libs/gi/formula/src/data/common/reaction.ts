@@ -248,6 +248,12 @@ const transInfo: Record<TransformativeReactionKey, TransInfo> = {
     triggeredBy: ['electro'],
     variants: ['electro'],
   },
+  lunarcharged: {
+    multi: 1.8,
+    canCrit: true,
+    triggeredBy: ['electro'],
+    variants: ['electro'],
+  },
   superconduct: {
     multi: 0.5,
     canCrit: false,

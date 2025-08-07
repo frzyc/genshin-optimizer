@@ -36,6 +36,7 @@ export const statFilterStatKeys = [
   'anomMas',
 ] as const
 export type StatFilterStatKey = (typeof statFilterStatKeys)[number]
+export const statFilterStatQtKeys = ['final', 'combat', 'initial'] as const
 
 export const allAllowLocationsState = [
   'unequippedOnly',
@@ -45,6 +46,7 @@ export const allAllowLocationsState = [
 export type AllowLocationsState = (typeof allAllowLocationsState)[number]
 export type StatFilterTag = {
   q: StatFilterStatKey
+  qt?: (typeof statFilterStatQtKeys)[number]
   attribute?: AttributeKey
 }
 export type StatFilter = {
@@ -120,12 +122,13 @@ export class OptConfigDataManager extends DataManager<
     if (!Array.isArray(statFilters)) statFilters = []
     statFilters = statFilters.map((statFilter) => {
       let {
-        tag: { q, attribute },
+        tag: { q, qt, attribute },
         value,
         isMax,
         disabled,
       } = statFilter as UnArray<StatFilters>
       q = validateValue(q, statFilterStatKeys) ?? statFilterStatKeys[0]
+      qt = validateValue(qt, statFilterStatQtKeys) ?? statFilterStatQtKeys[0]
       if (q !== 'dmg_') attribute = undefined
       if (attribute) attribute = validateValue(attribute, allAttributeKeys)
 
@@ -133,7 +136,7 @@ export class OptConfigDataManager extends DataManager<
       isMax = !!isMax
       disabled = !!disabled
       return {
-        tag: removeUndefinedFields({ q, attribute }) as StatFilterTag,
+        tag: removeUndefinedFields({ q, qt, attribute }) as StatFilterTag,
         value,
         isMax,
         disabled,
@@ -286,6 +289,7 @@ function initialOptConfig(): OptConfig {
 export function newStatFilterTag(q: StatFilterStatKey): StatFilterTag {
   return {
     q,
+    qt: 'final',
   }
 }
 
@@ -293,7 +297,6 @@ export function StatFilterTagToTag(tag: StatFilterTag): Tag {
   return {
     ...tag,
     et: 'own',
-    qt: 'final',
     sheet: 'agg',
   }
 }

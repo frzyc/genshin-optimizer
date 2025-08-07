@@ -1,0 +1,159 @@
+{
+  "name": "Ineffa",
+  "title": "Güm Güm Yıldırım Dalgası",
+  "description": "Farklı uluslara ait mekanik parçalar birleştirilerek yapılmış çok amaçlı bir robot. Göğsündeki Kaynak Çekirdeği adeta yıllara meydan okuyor.",
+  "constellationName": "Vanilya Orkidesi",
+  "auto": {
+    "name": "Kasırga Süpürgesi",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcar ve dönerek saldırır."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Temizlik Modu: Taşıyıcı Frekans",
+    "description": {
+      "0": "Ineffa Gelişmiş Temizleme Modülünü devreye alır, yakındaki düşmanlara tek seferlik <electro>Elektrik Alan Hasarı</electro> vererek Optik Akış Bariyer Kalkanını etkinleştirir ve Çok Amaçlı Akıllı Destek Ünitesi <strong>Birgitta'yı</strong> çağırır.",
+      "1": "Optik Akış Bariyer Kalkanı, Ineffa'nın Saldırısına göre alınan Hasarı emer ve <electro>Elektrik Hasarını</electro> %250 verimlilikle emer."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Kalkanın Hasar Emilimi",
+      "2": "Kalkan Süresi",
+      "3": "Birgitta Elektrik Akımı Hasarı",
+      "4": "Birgitta Süresi",
+      "5": "BS",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Üstün Talimat: İmha Edici Kasırga",
+    "description": {
+      "0": "Ineffa, Çok Amaçlı Akıllı Destek Ünitesi <strong>Birgitta</strong> aracılığıyla Roket Yumrukları kullanarak düşmanları hızlıca temizler! Ineffa, Birgitta'yı çağırarak <electro>Elektrik Alan Hasarı</electro> verir ve savaş alanında kalmasını sağlar.",
+      "1": "<br/>",
+      "2": "Eğer Ineffa, Birgitta'yı zaten çağırmışsa ve Birgitta savaş alanındaysa bu Beceri onu hedeflenen yerde tekrar çağırır ve süresini yeniden başlatır."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "Enerji Maliyeti",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Hız Aşırtma Modülü",
+    "description": {
+      "0": "<strong>Birgitta</strong> Elektrik Akımı saldırıları yaptığında yakında Ay Yüklü tepkimeleri ile oluşan şimşek bulutları varsa ek bir saldırı daha yapar ve Ineffa'nın Saldırısının %65'i kadar <electro>Elektrik Alan Hasarı</electro> verir. Bu Hasar, Ay Yüklü Hasarı sayılır."
+    }
+  },
+  "passive2": {
+    "name": "Panoramik Permütasyon Protokolü",
+    "description": {
+      "0": "Ineffa <strong>Üstün Talimat: İmha Edici Kasırga</strong> Element Patlamasını kullandığında tüm grup üyeleri Parametre Permütasyonu etkisi kazanır: 20sn boyunca Ineffa ve aktif grup üyelerinin Element Ustalığı, Ineffa'nın Saldırısının %6'sı kadar artar."
+    }
+  },
+  "passive3": {
+    "name": "Ay Sembolü Kutsaması: Montaj Ünitesi",
+    "description": {
+      "0": "Bir grup üyesi Elektrik Yüklü tepkimesi tetiklediğinde bu Ay Yüklü tepkimesine dönüşür. Ineffa'nın sahip olduğu her 100 Saldırı, Ay Yüklü tepkimesinin Temel Hasarını %0,7 artırır; bu Temel Hasar en fazla %14 artabilir.",
+      "1": "<br/>",
+      "2": "Yeni ayın yükselişiyle daha fazla lütuf gelebilir..."
+    }
+  },
+  "passive": {
+    "name": "Tat Sentezleme Ünitesi",
+    "description": {
+      "0": "Ineffa yiyecek kullandığında %30 ihtimalle bir baharat malzemesi elde eder.",
+      "1": "<br/>",
+      "2": "Ayrıca Nod-Krai'da iken çeşitli yöntemlerle Birgitta'nın görünüşünü değiştirmek mümkün olacak gibi görünüyor..."
+    }
+  },
+  "constellation1": {
+    "name": "Düzeltme İşlemcisi",
+    "description": {
+      "0": "Ineffa, Optik Akış Bariyer Kalkanını etkinleştirdiğinde yakındaki tüm grup üyeleri 20sn boyunca Taşıyıcı Akış Kompoziti etkisi kazanır: Ay Yüklü Hasarı, Ineffa'nın sahip olduğu her 100 Saldırı başına %2,5 artar, en fazla %50 artabilir."
+    }
+  },
+  "constellation2": {
+    "name": "Temizlik Destek Modülü",
+    "description": {
+      "0": "<strong>Üstün Talimat: İmha Edici Kasırga</strong> Element Patlaması düşmanlara isabet ettikten sonra düşmanlardan birine Ceza Hükmü durumu uygular: Kısa bir beklemenin ardından veya düşman yenildiğinde yakındaki düşmanlar, Ineffa'nın Saldırısının %300'ü kadar <electro>Elektrik Alan Hasarı</electro> alır. Bu Hasar, Ay Yüklü Hasarı sayılır.",
+      "1": "Ayrıca <strong>Üstün Talimat: Kasırga İmha Edici</strong> Element Patlaması kullanıldığında yakındaki grup üyeleri Optik Akış Bariyer Kalkanı kazanır."
+    }
+  },
+  "constellation3": {
+    "name": "Gelişmiş Duygu Emülasyonu",
+    "description": {
+      "0": "<strong>Temizlik Modu: Taşıyıcı Frekans</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Hükümsüz Yol",
+    "description": {
+      "0": "Kendi grup üyeleri Ay Yüklü tepkimeleri tetiklediğinde 5 Element Enerjisi yeniler. Bu etki her 4 saniyede bir oluşabilir."
+    }
+  },
+  "constellation5": {
+    "name": "Aynanın Ötesindeki Rüya",
+    "description": {
+      "0": "<strong>Üstün Talimat: İmha Edici Kasırga</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Sana Doğan Gün",
+    "description": {
+      "0": "Ineffa, Taşıyıcı Akış Kompoziti etkisi altındayken yakındaki şimşek bulutları yıldırımlar attığında, aktif karakterin çevresindeki düşmanlara Saldırısının %135'i kadar <electro>Elektrik Alan Hasarı</electro> verir. Bu Hasar, Ay Yüklü Hasarı sayılır. Bu etki her 3,5 saniyede bir tetiklenebilir."
+    }
+  }
+}

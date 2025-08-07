@@ -217,6 +217,10 @@ function getDataFromHakushin(key: NonTravelerCharacterKey) {
     passive3: data.Passives[data.Passives.length - 1].ParamList.map((val) => [
       val,
     ]),
+    passive:
+      key === 'Ineffa'
+        ? data.Passives[2].ParamList.map((val) => [val])
+        : undefined,
     constellation1: data.Constellations[0].ParamList,
     constellation2: data.Constellations[1].ParamList,
     constellation3: data.Constellations[2].ParamList,

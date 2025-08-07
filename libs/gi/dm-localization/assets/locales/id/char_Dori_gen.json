@@ -107,7 +107,7 @@
   "passive1": {
     "name": "An Eye for Gold",
     "description": {
-      "0": "Setelah Karakter yang terhubung dengan <strong>Jinni</strong> memicu Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl atau Crystallize dari Electro, maka CD <strong>Spirit-Warding Lamp: Troubleshooter Cannon</strong> berkurang 1 detik.",
+      "0": "Setelah Karakter yang terhubung dengan <strong>Jinni</strong> memicu Electro-Charged, Lunar-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl atau Crystallize dari Electro, maka CD <strong>Spirit-Warding Lamp: Troubleshooter Cannon</strong> berkurang 1 detik.",
       "1": " Efek ini dapat terpicu setiap 3 detik."
     }
   },

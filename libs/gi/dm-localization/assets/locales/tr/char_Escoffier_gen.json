@@ -118,7 +118,7 @@
       "2": "<strong>Yemek Mekası: Doğaçlama Pişirme Modu</strong>",
       "3": [
         "Yemek Mekasını alana yerleştirir. Yemek Mekası element saldırılarını emebilir. Emilen element enerjisi belirli bir sınıra ulaştığında Escoffier, mekasındaki malzemeleri muhteşem lezzetli yemeklere dönüştürür.",
-        "Escoffier'nin yeni malzemeler almak için zamana ihtiyacı vardır, bu yüzden her hafta bu yemeklerden sadece belirli bir sayıda pişirebilir. Escoffier'nin yemek pişirme hakkı her Pazartesi saat 04:00'da yenilenir."
+        "Escoffier'nin yeni malzemeler almak için zamana ihtiyacı vardır, bu yüzden her hafta bu yemeklerden sadece belirli bir sayıda pişirebilir. Escoffier'nin yemek pişirme hakkı her Pazartesi saat 04:00'da ({TIMEZONE}) yenilenir."
       ]
     }
   },
