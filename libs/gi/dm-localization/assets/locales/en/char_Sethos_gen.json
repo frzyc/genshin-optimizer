@@ -64,7 +64,7 @@
   "skill": {
     "name": "Ancient Rite: The Thundering Sands",
     "description": {
-      "0": "Gathers the might of thunder, dealing <electro>AoE Electro DMG</electro> and quickly retreating. If this attack triggers Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, or Electro Swirl reactions, Sethos recovers a certain amount of Elemental Energy.",
+      "0": "Gathers the might of thunder, dealing <electro>AoE Electro DMG</electro> and quickly retreating. If this attack triggers Electro-Charged, Lunar-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, or Electro Swirl reactions, Sethos recovers a certain amount of Elemental Energy.",
       "1": "<br/>",
       "2": "<i>\"The God indwelt Priest, the Magi who turned pits to springs, the singers of the sea of sand still spread their stories... But I know those are not legends, for they are our ancestors.\"</i>"
     },

@@ -32,7 +32,7 @@
     "BasicAttackAuricArray": {
       "name": "Basic Attack: Auric Array",
       "desc": {
-        "0": "While possessing Auric Ink Point, tap <IconNormal /> while Dodge: Nimbus Step is active or hold <IconEvade /> to activate:",
+        "0": "While possessing an Auric Ink Point: tap <IconNormal /> during Dodge: Nimbus Step, or hold <IconEvade /> to activate:",
         "1": "Deploy an array, continuously dealing <ct color=#FE437E>Auric Ink DMG</ct>.",
         "2": "When the skill ends, it automatically triggers Basic Attack: Qingming Eruption.",
         "3": "While channeling, continuously recover Adrenaline, recovering 7/s, for up to 3s.",
@@ -143,6 +143,7 @@
       },
       "params": [
         "Total During Charge ",
+        "Energy Cost ",
         "Initial Consumption ",
         "Consumption Per Second "
       ]
@@ -155,7 +156,7 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        "Total When Energy Orb Appears/Contracts "
+        " "
       ]
     }
   },

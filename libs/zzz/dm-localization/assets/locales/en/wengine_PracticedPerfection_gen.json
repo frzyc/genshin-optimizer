@@ -1,0 +1,18 @@
+{
+  "name": "Practiced Perfection",
+  "desc": {
+    "0": "The stars fell into the web of absolute order, just as it had years ago, reflected in the girl's clear gaze. Confidence, grace, resolve, courage, and love — now shaped into a sword of pride, held firmly in her grasp.",
+    "1": "",
+    "2": "\"I want to 3D print a model that's perfectly symmetrical from every angle. I just need to input the command, right?\" —Alice, one minute before her W-Engine started billowing black smoke and shut down."
+  },
+  "desc2": "Equip to increase Anomaly Agents' combat capabilities",
+  "desc3": "Starlight became her blade, and she held courage and love firmly in her hands.",
+  "phase": "Gift of Stardust",
+  "phaseDescs": [
+    "The equipper's <ct color=#FFFFFF>Anomaly Mastery</ct> increases by <ct color=#2BAD00>60</ct>. When inflicting <ct color=#F0D12B>Assault</ct>, the equipper's <ct color=#F0D12B>Physical DMG</ct> increases by <ct color=#2BAD00>20%</ct> for 20s, stacking up to 2 times. Repeated triggers reset the duration. When the equipper enters combat, immediately gain 2 stacks.",
+    "The equipper's <ct color=#FFFFFF>Anomaly Mastery</ct> increases by <ct color=#2BAD00>69</ct>. When inflicting <ct color=#F0D12B>Assault</ct>, the equipper's <ct color=#F0D12B>Physical DMG</ct> increases by <ct color=#2BAD00>23%</ct> for 20s, stacking up to 2 times. Repeated triggers reset the duration. When the equipper enters combat, immediately gain 2 stacks.",
+    "The equipper's <ct color=#FFFFFF>Anomaly Mastery</ct> increases by <ct color=#2BAD00>78</ct>. When inflicting <ct color=#F0D12B>Assault</ct>, the equipper's <ct color=#F0D12B>Physical DMG</ct> increases by <ct color=#2BAD00>26%</ct> for 20s, stacking up to 2 times. Repeated triggers reset the duration. When the equipper enters combat, immediately gain 2 stacks.",
+    "The equipper's <ct color=#FFFFFF>Anomaly Mastery</ct> increases by <ct color=#2BAD00>87</ct>. When inflicting <ct color=#F0D12B>Assault</ct>, the equipper's <ct color=#F0D12B>Physical DMG</ct> increases by <ct color=#2BAD00>29%</ct> for 20s, stacking up to 2 times. Repeated triggers reset the duration. When the equipper enters combat, immediately gain 2 stacks.",
+    "The equipper's <ct color=#FFFFFF>Anomaly Mastery</ct> increases by <ct color=#2BAD00>96</ct>. When inflicting <ct color=#F0D12B>Assault</ct>, the equipper's <ct color=#F0D12B>Physical DMG</ct> increases by <ct color=#2BAD00>32%</ct> for 20s, stacking up to 2 times. Repeated triggers reset the duration. When the equipper enters combat, immediately gain 2 stacks."
+  ]
+}

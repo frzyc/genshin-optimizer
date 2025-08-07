@@ -1,0 +1,24 @@
+{
+  "name": "Aureola frammentata",
+  "description": {
+    "0": "Una lancia meccanica rotante creata dal Laboratorio di krumkake Tin-Tin. Sembra nascondere segreti di un'epoca passata..."
+  },
+  "passiveName": "Corona purificatrice",
+  "passiveDescription": {
+    "0": {
+      "0": "Dopo l'utilizzo di un'abilità o di un Tripudio elementale, l'ATT aumenta di un <cryo>24%</cryo> per 20 s. Se il personaggio che equipaggia l'arma crea uno scudo mentre quest'effetto è attivo, ottiene Editto galvanizzante per 20 s, che aumenta di un <cryo>40%</cryo> i DAN da Carica lunare inflitti dai membri vicini del gruppo."
+    },
+    "1": {
+      "0": "Dopo l'utilizzo di un'abilità o di un Tripudio elementale, l'ATT aumenta di un <cryo>30%</cryo> per 20 s. Se il personaggio che equipaggia l'arma crea uno scudo mentre quest'effetto è attivo, ottiene Editto galvanizzante per 20 s, che aumenta di un <cryo>50%</cryo> i DAN da Carica lunare inflitti dai membri vicini del gruppo."
+    },
+    "2": {
+      "0": "Dopo l'utilizzo di un'abilità o di un Tripudio elementale, l'ATT aumenta di un <cryo>36%</cryo> per 20 s. Se il personaggio che equipaggia l'arma crea uno scudo mentre quest'effetto è attivo, ottiene Editto galvanizzante per 20 s, che aumenta di un <cryo>60%</cryo> i DAN da Carica lunare inflitti dai membri vicini del gruppo."
+    },
+    "3": {
+      "0": "Dopo l'utilizzo di un'abilità o di un Tripudio elementale, l'ATT aumenta di un <cryo>42%</cryo> per 20 s. Se il personaggio che equipaggia l'arma crea uno scudo mentre quest'effetto è attivo, ottiene Editto galvanizzante per 20 s, che aumenta di un <cryo>70%</cryo> i DAN da Carica lunare inflitti dai membri vicini del gruppo."
+    },
+    "4": {
+      "0": "Dopo l'utilizzo di un'abilità o di un Tripudio elementale, l'ATT aumenta di un <cryo>48%</cryo> per 20 s. Se il personaggio che equipaggia l'arma crea uno scudo mentre quest'effetto è attivo, ottiene Editto galvanizzante per 20 s, che aumenta di un <cryo>80%</cryo> i DAN da Carica lunare inflitti dai membri vicini del gruppo."
+    }
+  }
+}

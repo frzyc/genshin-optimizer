@@ -107,7 +107,7 @@
   "passive2": {
     "name": "Condimentación inspirada",
     "description": {
-      "0": "Si en el equipo hay 1/2/3/4 personajes <hydro>Hydro</hydro> o <cryo>Cryo</cryo>, al golpear a un enemigo con la Habilidad Elemental, <strong>Cocina a baja temperatura</strong>, o la Habilidad Definitiva, <strong>Técnica de corte</strong>, de Escoffier, la RES <hydro>Hydro</hydro> y la RES <cryo>Cryo</cryo> de dicho enemigo se reducen en un 5%/10%/15%/55% durante 12 s."
+      "0": "Si en el equipo hay 1/2/3/4 personajes <hydro>Hydro</hydro> o <cryo>Cryo</cryo>, al golpear a un enemigo con la Habilidad Elemental, <strong>Cocina a baja temperatura</strong>, o la Habilidad Definitiva, <strong>Técnica de corte</strong>, de Escoffier, la RES <hydro>Hydro</hydro> y la RES <cryo>Cryo</cryo> de dicho enemigo se reducen en un 5/10/15/55% durante 12 s."
     }
   },
   "passive3": {
@@ -118,7 +118,7 @@
       "2": "<strong>Mecachef: modo cocina improvisada</strong>",
       "3": [
         "Coloca al mecachef en el campo de batalla. El mecachef puede absorber ataques elementales. Cuando la Energía Elemental absorbida alcance el límite, Escoffier podrá convertir los ingredientes que ha colocado en él en platos de comida.",
-        "Escoffier necesita tiempo para comprar nuevos ingredientes y solo puede cocinar cierta cantidad de comida de esta manera semanalmente. Los intentos para cocinar se reinician todos los lunes a las 4:00 a.m."
+        "Escoffier necesita tiempo para comprar nuevos ingredientes y solo puede cocinar cierta cantidad de comida de esta manera semanalmente. Los intentos para cocinar se reinician todos los lunes a las 4:00 a.m. ({TIMEZONE})."
       ]
     }
   },

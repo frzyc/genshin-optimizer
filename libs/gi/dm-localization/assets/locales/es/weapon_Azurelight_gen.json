@@ -1,0 +1,24 @@
+{
+  "name": "Fulgor Cerúleo",
+  "description": {
+    "0": "Una hoja de un filo puro e impoluto que solía brillar como una blanca estrella del alba. Ahora, sin embargo, posee un oscuro color azulado."
+  },
+  "passiveName": "Gracia de la montaña blanca",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras usar la Habilidad Elemental, el ATQ aumenta en un <cryo>24%</cryo> durante 12 s. Mientras este efecto está activo, si el portador de esta arma tiene 0 pts. de Energía Elemental, su ATQ aumentará en un <cryo>24%</cryo> adicional y su Daño CRIT aumentará en un <cryo>40%</cryo>."
+    },
+    "1": {
+      "0": "Tras usar la Habilidad Elemental, el ATQ aumenta en un <cryo>30%</cryo> durante 12 s. Mientras este efecto está activo, si el portador de esta arma tiene 0 pts. de Energía Elemental, su ATQ aumentará en un <cryo>30%</cryo> adicional y su Daño CRIT aumentará en un <cryo>50%</cryo>."
+    },
+    "2": {
+      "0": "Tras usar la Habilidad Elemental, el ATQ aumenta en un <cryo>36%</cryo> durante 12 s. Mientras este efecto está activo, si el portador de esta arma tiene 0 pts. de Energía Elemental, su ATQ aumentará en un <cryo>36%</cryo> adicional y su Daño CRIT aumentará en un <cryo>60%</cryo>."
+    },
+    "3": {
+      "0": "Tras usar la Habilidad Elemental, el ATQ aumenta en un <cryo>42%</cryo> durante 12 s. Mientras este efecto está activo, si el portador de esta arma tiene 0 pts. de Energía Elemental, su ATQ aumentará en un <cryo>42%</cryo> adicional y su Daño CRIT aumentará en un <cryo>70%</cryo>."
+    },
+    "4": {
+      "0": "Tras usar la Habilidad Elemental, el ATQ aumenta en un <cryo>48%</cryo> durante 12 s. Mientras este efecto está activo, si el portador de esta arma tiene 0 pts. de Energía Elemental, su ATQ aumentará en un <cryo>48%</cryo> adicional y su Daño CRIT aumentará en un <cryo>80%</cryo>."
+    }
+  }
+}

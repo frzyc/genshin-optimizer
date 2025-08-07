@@ -147,7 +147,7 @@
   "constellation4": {
     "name": "Austerità: Guardia arcigna",
     "description": {
-      "0": "Quando Cyno è nello stato di Precorritore giurato attivato da <strong>Rito sacro: Destrezza del lupo</strong>, dopo aver innescato una reazione di Electrocarica, Superconduzione, Sovraccarico, Vivificazione, Accentuazione, Iperfioritura o Turbinio di Electro, ripristina di 3 l'energia elementale di tutti i membri del gruppo vicini (tranne sé stesso).",
+      "0": "Quando Cyno è nello stato di Precorritore giurato attivato da <strong>Rito sacro: Destrezza del lupo</strong>, dopo aver innescato una reazione di Electrocarica, Carica lunare, Superconduzione, Sovraccarico, Vivificazione, Accentuazione, Iperfioritura o Turbinio di Electro, ripristina di 3 l'energia elementale di tutti i membri del gruppo vicini (tranne sé stesso).",
       "1": "Quest'effetto può verificarsi 5 volte con un unico uso di <strong>Rito sacro: Destrezza del lupo</strong>."
     }
   },

@@ -5,10 +5,10 @@
   "desc3": "A W-Engine with a built-in heating component. When operating at high speeds, it resembles a blazing blue flame.",
   "phase": "Dim Flame",
   "phaseDescs": [
-    "Upon entering combat or switching in, the equipper's ATK increases by <ct color=#2BAD00>7.2%</ct> for 10s. This effect can trigger once every 20s.",
-    "Upon entering combat or switching in, the equipper's ATK increases by <ct color=#2BAD00>8.2%</ct> for 10s. This effect can trigger once every 20s.",
-    "Upon entering combat or switching in, the equipper's ATK increases by <ct color=#2BAD00>9.3%</ct> for 10s. This effect can trigger once every 20s.",
-    "Upon entering combat or switching in, the equipper's ATK increases by <ct color=#2BAD00>10.4%</ct> for 10s. This effect can trigger once every 20s.",
-    "Upon entering combat or switching in, the equipper's ATK increases by <ct color=#2BAD00>11.5%</ct> for 10s. This effect can trigger once every 20s."
+    "Upon becoming the active character in combat, the equipper's ATK increases by <ct color=#2BAD00>7.2%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon becoming the active character in combat, the equipper's ATK increases by <ct color=#2BAD00>8.2%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon becoming the active character in combat, the equipper's ATK increases by <ct color=#2BAD00>9.3%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon becoming the active character in combat, the equipper's ATK increases by <ct color=#2BAD00>10.4%</ct> for 10s. This effect can trigger once every 20s.",
+    "Upon becoming the active character in combat, the equipper's ATK increases by <ct color=#2BAD00>11.5%</ct> for 10s. This effect can trigger once every 20s."
   ]
 }

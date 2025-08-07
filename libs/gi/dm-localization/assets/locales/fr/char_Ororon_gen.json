@@ -105,7 +105,7 @@
       "0": "Lorsqu'un membre de l'équipe à proximité a déclenché une éruption noctâme, Ororon obtient 40 pts de noctâme. Pendant 15 s après l'utilisation d'une compétence élémentaire, Ororon obtient 5 pts de noctâme lorsqu'un autre personnage <hydro>Hydro</hydro> ou <electro>Électro</electro> de l'équipe touche un ennemi, cet effet pouvant être déclenché une fois toutes les 0,3 s et un maximum de 10 fois pendant cette durée de 15 s.",
       "1": "Ororon peut avoir un maximum de 80 pts de noctâme.",
       "2": "<br/>",
-      "3": "De plus, lorsqu'un ennemi proche subit des DGT d'une réaction d'<electro>Électrocution</electro> ou des DGT infusés de noctâme d'un autre personnage de l'équipe à proximité, Ororon consomme, si possible, 10 pts de noctâme pour entrer dans l'état Bénédiction noctâme et déclencher l'effet Hyper-sens : inflige des <electro>DGT Électro</electro> infusés de noctâme d'une valeur équivalant à 160 % de l'ATQ d'Ororon à un maximum de 4 ennemis à proximité. Cet effet peut être déclenché une fois toutes les 1,8 s.",
+      "3": "De plus, lorsqu'un ennemi proche subit des DGT d'une <electro>réaction d'Électrocution ou de Sélénocution</electro> ou des DGT infusés de noctâme d'un autre personnage de l'équipe à proximité, Ororon consomme, si possible, 10 pts de noctâme pour entrer dans l'état Bénédiction noctâme et déclencher l'effet Hyper-sens : inflige des <electro>DGT Électro</electro> infusés de noctâme d'une valeur équivalant à 160 % de l'ATQ d'Ororon à un maximum de 4 ennemis à proximité. Cet effet peut être déclenché une fois toutes les 1,8 s.",
       "4": "<br/>",
       "5": "<strong>Bénédiction noctâme : Ororon</strong>",
       "6": "La bénédiction noctâme d'Ororon dure un maximum de 6 s."

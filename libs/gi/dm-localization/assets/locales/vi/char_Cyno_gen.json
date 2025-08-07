@@ -147,7 +147,7 @@
   "constellation4": {
     "name": "Tuần Nghi - Siển Hộ Cấm Võng",
     "description": {
-      "0": "Khi Cyno trong trạng thái Sứ Giả Dẫn Lối của <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong>, sau khi kích hoạt phản ứng Điện Cảm, Siêu Dẫn, Quá Tải, Sinh Trưởng, Tăng Cường, Nở Rộ, Khuếch Tán Nguyên Tố Lôi, sẽ khiến tất cả nhân vật trong đội gần đó (trừ bản thân Cyno) hồi phục 3 điểm Năng Lượng Nguyên Tố.",
+      "0": "Khi Cyno trong trạng thái Sứ Giả Dẫn Lối của <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong>, sau khi kích hoạt phản ứng Điện Cảm, Nguyệt-Điện Cảm, Siêu Dẫn, Quá Tải, Sinh Trưởng, Tăng Cường, Nở Rộ, Khuếch Tán Nguyên Tố Lôi, sẽ khiến tất cả nhân vật trong đội gần đó (trừ bản thân Cyno) hồi phục 3 điểm Năng Lượng Nguyên Tố.",
       "1": "Hiệu quả này trong một lần <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong> tối đa kích hoạt 5 lần."
     }
   },

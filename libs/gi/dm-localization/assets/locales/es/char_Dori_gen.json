@@ -107,7 +107,7 @@
   "passive1": {
     "name": "Buscando oro",
     "description": {
-      "0": "Cuando el personaje conectado con el <strong>genio de la lámpara</strong> causa una reacción de Electrocargado, Superconductor, Sobrecarga, Aceleración, Intensificación, Sobreflorecimiento, Torbellino Electro o Cristalización Electro, el TdE de <strong>Lámpara mágica: Cañonazo apaciguador</strong> se reduce en 1 s.",
+      "0": "Cuando el personaje conectado con el <strong>genio de la lámpara</strong> causa una reacción de Electrocargado, Electrocargado Lunar, Superconductor, Sobrecarga, Aceleración, Intensificación, Sobreflorecimiento, Torbellino Electro o Cristalización Electro, el TdE de <strong>Lámpara mágica: Cañonazo apaciguador</strong> se reduce en 1 s.",
       "1": "Este efecto solo puede ocurrir una vez cada 3 s."
     }
   },

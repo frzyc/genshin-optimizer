@@ -172,6 +172,7 @@ type NonSwirlReactionHitKey = `${
   | 'overloaded'
   | 'shattered'
   | 'electrocharged'
+  | 'lunarcharged'
   | 'superconduct'
   | 'burning'
   | 'bloom'
@@ -190,6 +191,7 @@ Object.entries(transformativeReactions).forEach(([reaction, { name }]) => {
   else statMap[`${reaction}_hit`] = `${name} DMG`
   statMap[`${reaction}_multi_`] = `${name} Multiplier`
 })
+statMap.lunarcharged_baseDmg_ = 'Lunar-Charged Base DMG Multiplier'
 
 type TransformativeReactionsCritRateKey =
   `${CrittableTransformativeReactionsKey}_critRate_`
@@ -235,6 +237,7 @@ export type StatKey =
   | TransformativeReactionsDmgKey
   | TransformativeReactionsCritRateKey
   | TransformativeReactionsCritDMGKey
+  | 'lunarcharged_baseDmg_'
   | CrystallizeKey
   | AmplifyingReactionsDmgKey
   | AmplifyingReactionsMultiKey

@@ -17,7 +17,7 @@
   },
   "HighVoltage": {
     "name": "High Voltage",
-    "desc": "Affected by Hydro for 40% less time. Superconduct, Overloaded, Electro-Charged, Quicken, Aggravate, or Hyperbloom have a 100% chance to generate an Electro Elemental Particle (CD: 5s)."
+    "desc": "Affected by Hydro for 40% less time. Superconduct, Overloaded, Electro-Charged, Lunar-Charged, Quicken, Aggravate, or Hyperbloom have a 100% chance to generate an Electro Elemental Particle (CD: 5s)."
   },
   "ImpetuousWinds": {
     "name": "Impetuous Winds",

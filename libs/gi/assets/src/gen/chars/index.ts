@@ -37,6 +37,7 @@ import Gorou from './Gorou'
 import HuTao from './HuTao'
 import Iansan from './Iansan'
 import Ifa from './Ifa'
+import Ineffa from './Ineffa'
 import Jean from './Jean'
 import Kachina from './Kachina'
 import KaedeharaKazuha from './KaedeharaKazuha'
@@ -148,6 +149,7 @@ const data = {
   HuTao,
   Iansan,
   Ifa,
+  Ineffa,
   Jean,
   Kachina,
   KaedeharaKazuha,

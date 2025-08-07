@@ -6,6 +6,7 @@ import CriminalInvestigationSpecialResponseTeam from './IconCampN.E.P.S..png'
 import NewEriduDefenseForce from './IconCampObols.png'
 import RandomPlay from './IconCampRandomPlay.png'
 import SonsOfCalydon from './IconCampSonsOfCalydon.png'
+import SpookShack from './IconCampSpookShack.png'
 import StarsOfLyra from './IconCampStarsOfLyra.png'
 import YunkuiSummit from './IconCampSuibian.png'
 import VictoriaHousekeepingCo from './IconCampVictoriaHousekeepingCo.png'
@@ -19,6 +20,7 @@ const data = {
   NewEriduDefenseForce,
   RandomPlay,
   SonsOfCalydon,
+  SpookShack,
   StarsOfLyra,
   VictoriaHousekeepingCo,
   YunkuiSummit,

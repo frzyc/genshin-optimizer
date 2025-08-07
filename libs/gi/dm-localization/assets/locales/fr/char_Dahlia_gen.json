@@ -1,0 +1,176 @@
+{
+  "name": "Dahlia",
+  "title": "Ode et oblation",
+  "description": "Ce diacre de l'Église de Favonius est le représentant de l'Archon Anémo au sein de l'Église.",
+  "constellationName": "Cantus Choralis",
+  "auto": {
+    "name": "Rituel",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ordonnance immersive",
+    "description": {
+      "0": "Il est temps de faire un petit truc amusant ! Différents effets se produisent selon la méthode de déclenchement, chacun invoquant un mystère bruineux.",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Après une courte prière, invoque un mystère bruineux en face.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Effectue une prière continue qui, une fois terminée, invoque un mystère bruineux à l'emplacement désigné.",
+      "7": "<br/>",
+      "8": "<strong>Mystère bruineux</strong>",
+      "9": "Lorsqu'un ennemi ou un membre de l'équipe à proximité touche un mystère bruineux, différents effets se produisent selon la personne concernée :",
+      "10": "Si un ennemi touche un mystère bruineux, ce dernier explose et inflige des <hydro>DGT Hydro de zone</hydro> aux ennemis à proximité.",
+      "11": "Si un membre de l'équipe à proximité touche un mystère bruineux, il se fait projeter dans les airs.",
+      "12": "<br/>",
+      "13": "Il ne peut exister qu'un seul mystère bruineux invoqué par Dahlia à la fois."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Psautier radieux",
+    "description": {
+      "0": "Invoque le divin avec ferveur et chant, infligeant des <hydro>DGT Hydro de zone</hydro> aux ennemis proches, accordant à vos personnages dans l'équipe l'effet Faveur favonienne et invoquant un bouclier de faveur sacrée.",
+      "1": "L'absorption de DGT du bouclier de faveur sacrée est basée sur les PV max de Dahlia et ce dernier absorbe les <hydro>DGT Hydro</hydro> 250 % plus efficacement.",
+      "2": "<br/>",
+      "3": "<strong>Faveur favonienne</strong>",
+      "4": "Pendant cet effet, Dahlia peut consommer un cumul de sacrement pour invoquer à nouveau un bouclier de faveur sacrée lorsqu'un précédent bouclier a été détruit en subissant des DGT.",
+      "5": "<br/>",
+      "6": "Dahlia peut obtenir du sacrement des manières suivantes :",
+      "7": [
+        " Il obtient 1 cumul de sacrement à chaque fois que votre personnage déployé touche des ennemis 4 fois avec des attaques normales tout en étant sous l'effet d'une faveur favonienne.",
+        " En déclenchant l'effet de l'aptitude passive « La douce grâce du vent », l'aptitude en question devant être déjà débloquée."
+      ],
+      "8": "Dahlia peut obtenir un maximum de 4 cumuls de sacrement pendant la durée une faveur favonienne."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "PV du bouclier de faveur sacrée",
+      "2": "Durée faveur favonienne",
+      "3": "Énergie élémentaire",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "La douce grâce du vent",
+    "description": {
+      "0": "Lorsqu'un personnage affecté par une faveur favonienne du déchaînement élémentaire <strong>Psautier radieux</strong> déclenche une réaction de Gel sur un ennemi, Dahlia obtient 2 cumuls de sacrement. Cet effet peut être déclenché une fois toutes les 8 s."
+    }
+  },
+  "passive2": {
+    "name": "Prière de joie ingénieuse",
+    "description": {
+      "0": "Lorsque votre personnage déployé est affecté par une faveur favonienne du déchaînement élémentaire <strong>Psautier radieux</strong>, sa VIT d'attaque augmente selon les PV max de Dahlia : chaque tranche de 1 000 PV max augmente la VIT d'attaque de 0,5 %, la VIT d'attaque pouvant être augmentée d'un maximum de 20 % de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Pèlerinage sur le vent de retour",
+    "description": {
+      "0": "La journée (06 h 00 - 18 h 00), vos personnages dans l'équipe obtiennent l'effet Foulée célère : augmente la VIT de déplacement de 10 %.",
+      "1": "Cet effet ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées, et ne peut pas être cumulé."
+    }
+  },
+  "constellation1": {
+    "name": "Procession infaillible",
+    "description": {
+      "0": "Chaque fois que Dahlia obtient 1 cumul de sacrement de son déchaînement élémentaire <strong>Psautier radieux</strong>, il récupère 2,5 pts d'énergie élémentaire."
+    }
+  },
+  "constellation2": {
+    "name": "Révélation de miséricorde",
+    "description": {
+      "0": "Lorsque Dahlia a consommé un cumul de sacrement du déchaînement élémentaire <strong>Psautier radieux</strong> pour invoquer un bouclier de faveur sacrée, la force du bouclier augmente de 25 % pendant 12 s pour le personnage protégé par le bouclier en question."
+    }
+  },
+  "constellation3": {
+    "name": "Offertoire des alizées",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Psautier radieux</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Collecte de l'assemblée",
+    "description": {
+      "0": "La durée de l'effet Faveur favonienne du déchaînement élémentaire <strong>Psautier radieux</strong> augmente de 3 s."
+    }
+  },
+  "constellation5": {
+    "name": "Qu'il en soit subtilement ainsi",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Ordonnance immersive</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Que la joie suive",
+    "description": {
+      "0": "La VIT d'attaque du personnage déployé augmente de 10 % lorsqu'il est affecté par l'effet Faveur favonienne du déchaînement élémentaire <strong>Psautier radieux</strong>.",
+      "1": "De plus, lorsqu'un personnage déployé affecté par une faveur favonienne est vaincu :",
+      "2": [
+        " Dahlia le réanime immédiatement.",
+        " Les PV de ce personnage sont restaurés à 100 %."
+      ],
+      "3": "Cet effet peut être déclenché une fois toutes les 15 min."
+    }
+  }
+}

@@ -149,11 +149,12 @@
     "description": {
       "0": "Kendi grup üyelerinden biri Alamet etkisi altındayken <hydro>Su içeren Element Tepkimelerinin</hydro> etkileri 8 saniyeliğine artar:",
       "1": [
-        "Elektrik Yüklü Hasar %15 artar.",
-        "Buharlaşma Hasarı %15 artar."
-      ],
-      "2": " Su Girdabı Hasarı %15 artar.",
-      "3": " Donma süresi %15 uzar."
+        "Elektrik Yüklü Hasarı %15 artar.",
+        "Ay Yüklü Hasarı %15 artar.",
+        "Buharlaşma Hasarı %15 artar.",
+        "Su Girdabı Hasarı %15 artar.",
+        "Donma süresi %15 uzar."
+      ]
     }
   },
   "constellation2": {
