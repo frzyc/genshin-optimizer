@@ -16,7 +16,9 @@
     "3": "Upon launching <strong>{{val1}}</strong>, <strong>{{val2}}</strong> or <strong>{{val3}}</strong>"
   },
   "uponHit": {
-    "1": "Upon a(n) <strong>{{val1}}</strong> hitting an enemy"
+    "1": "Upon a(n) <strong>{{val1}}</strong> hitting an enemy",
+    "2": "Upon a(n) <strong>{{val1}}</strong> or <strong>{{val2}}</strong> hitting an enemy",
+    "3": "Upon a(n) <strong>{{val1}}</strong>, <strong>{{val2}}</strong> or <strong>{{val3}}</strong> hitting an enemy"
   },
   "dealsDamage": {
     "1": "Deals <strong>{{val1}}</strong> DMG"
