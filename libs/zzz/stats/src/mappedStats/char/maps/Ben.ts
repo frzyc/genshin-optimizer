@@ -36,6 +36,29 @@ const dm = {
     AssistFollowUpDontBreakContract:
       data_gen.skillParams['assist']['AssistFollowUpDontBreakContract'],
   },
+  core: {
+    atk: data_gen.coreParams[0],
+    shield_: data_gen.coreParams[1],
+    shield: data_gen.coreParams[2],
+    duration: data_gen.coreParams[3][0],
+  },
+  ability: {
+    crit_: data_gen.abilityParams[0],
+  },
+  m1: {
+    dmg_red_: data_gen.mindscapeParams[0][0],
+    duration: data_gen.mindscapeParams[0][1],
+  },
+  m2: {
+    dmg: data_gen.mindscapeParams[1][0],
+  },
+  m4: {
+    dmg_: data_gen.mindscapeParams[3][0],
+  },
+  m6: {
+    dazeInc_: data_gen.mindscapeParams[5][0],
+    duration: data_gen.mindscapeParams[5][1],
+  },
 } as const
 
 export default dm
