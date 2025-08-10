@@ -8,6 +8,7 @@
   "stacks": "Stacks",
   "cd": "Cooldown",
   "duration": "Duration",
+  "shield": "Shield",
   "enterCombatOrSwitchIn": "Entering combat or switching in",
   "uponLaunch": {
     "1": "Upon launching <strong>{{val1}}</strong>",
