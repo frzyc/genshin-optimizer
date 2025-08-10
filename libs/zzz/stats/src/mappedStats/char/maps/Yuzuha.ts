@@ -93,8 +93,9 @@ const dm = {
     sugar_points_consumed: data_gen.mindscapeParams[5][3],
     dmg: data_gen.mindscapeParams[5][4],
     add_disorder_: data_gen.mindscapeParams[5][5],
-    max_stacks: data_gen.mindscapeParams[5][6],
-    basic_triggered: data_gen.mindscapeParams[5][7],
+    duration: data_gen.mindscapeParams[5][6],
+    max_stacks: data_gen.mindscapeParams[5][7],
+    basic_triggered: data_gen.mindscapeParams[5][8],
   },
 } as const
 

@@ -46,10 +46,9 @@ const ability_check = (node: NumNode) =>
   cmpGE(
     sum(
       team.common.count.withSpecialty('anomaly'),
-      // TODO: use actual faction
-      team.common.count.withFaction('BelebogHeavyIndustries')
+      team.common.count.withFaction('SpookShack')
     ),
-    3,
+    1,
     node
   )
 
@@ -142,7 +141,7 @@ const sheet = register(
         tanuki_wish.ifOn(
           min(
             prod(
-              max(0, sum(own.final.anomMas), -dm.ability.anomMas_threshold),
+              max(0, sum(own.final.anomMas, -dm.ability.anomMas_threshold)),
               percent(dm.ability.anomBuildup_)
             ),
             percent(dm.ability.max_anomBuildup_)
@@ -161,7 +160,7 @@ const sheet = register(
         tanuki_wish.ifOn(
           min(
             prod(
-              max(0, sum(own.final.anomMas), -dm.ability.anomMas_threshold),
+              max(0, sum(own.final.anomMas, -dm.ability.anomMas_threshold)),
               percent(dm.ability.anomaly_disorder_dmg_),
               cmpGE(char.mindscape, 1, percent(dm.m1.buffInc_), percent(1))
             ),
@@ -184,7 +183,7 @@ const sheet = register(
         tanuki_wish.ifOn(
           min(
             prod(
-              max(0, sum(own.final.anomMas), -dm.ability.anomMas_threshold),
+              max(0, sum(own.final.anomMas, -dm.ability.anomMas_threshold)),
               percent(dm.ability.anomaly_disorder_dmg_),
               cmpGE(char.mindscape, 1, percent(dm.m1.buffInc_), percent(1))
             ),
@@ -244,7 +243,18 @@ const sheet = register(
       'assistFollowUp',
       cmpGE(char.mindscape, 4, percent(dm.m4.assistFollowUp_anomBuildup_))
     )
+  ),
+  registerBuff(
+    'm6_addl_disorder_',
+    teamBuff.combat.addl_disorder_.add(
+      cmpGE(
+        char.mindscape,
+        6,
+        prod(powerful_shell_hits, percent(dm.m6.add_disorder_))
+      )
+    ),
+    undefined,
+    true
   )
-  // TODO: add additional disorder buffs for m6
 )
 export default sheet
