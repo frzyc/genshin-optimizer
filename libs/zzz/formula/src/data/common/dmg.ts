@@ -86,7 +86,7 @@ const data: TagMapNodeEntries = [
   ownBuff.dmg.sheer_mult_.add(sum(percent(1), own.final.sheer_dmg_)),
 
   // Anomaly Base DMG Multiplier
-  ownBuff.dmg.anomaly_base_mult_.add(sum(percent(1), own.final.anom_base_)),
+  ownBuff.dmg.anom_base_mult_.add(sum(percent(1), own.final.anom_base_)),
 
   // Anomaly Crit Multiplier
   ownBuff.dmg.anomaly_crit_mult_.add(

@@ -39490,15 +39490,15 @@ export const buffs = {
         name: 'chain_anom_flat_dmg',
       },
     },
-    core_add_disorder_: {
+    core_addl_disorder_: {
       sheet: 'Yanagi',
-      name: 'core_add_disorder_',
+      name: 'core_addl_disorder_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'add_disorder_',
+        q: 'addl_disorder_',
         sheet: 'Yanagi',
-        name: 'core_add_disorder_',
+        name: 'core_addl_disorder_',
       },
     },
     core_electric_dmg_: {

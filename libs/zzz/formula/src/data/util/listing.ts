@@ -43,7 +43,7 @@ export const stats = [
   'sheer_dmg_',
   'flat_dmg',
   'anom_flat_dmg',
-  'add_disorder_',
+  'addl_disorder_',
 ] as const
 
 export const flatAndPercentStats = [

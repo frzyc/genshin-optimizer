@@ -183,9 +183,9 @@ const sheet = register(
     true
   ),
   registerBuff(
-    'core_add_disorder_',
-    teamBuff.combat.add_disorder_.add(
-      exSpecial_used.ifOn(percent(subscript(char.core, dm.core.add_disorder_)))
+    'core_addl_disorder_',
+    teamBuff.combat.addl_disorder_.add(
+      exSpecial_used.ifOn(percent(subscript(char.core, dm.core.addl_disorder_)))
     ),
     undefined,
     true

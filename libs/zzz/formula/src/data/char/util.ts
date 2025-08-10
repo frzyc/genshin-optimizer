@@ -443,7 +443,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       prod(
         sum(
           percent(miyabiCheck ? 6 : 4.5),
-          own.final.add_disorder_,
+          own.final.addl_disorder_,
           prod(
             sum(
               constant(miyabiCheck ? 20 : 10),

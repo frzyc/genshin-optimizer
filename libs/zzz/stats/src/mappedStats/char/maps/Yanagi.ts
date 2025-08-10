@@ -37,7 +37,7 @@ const dm = {
       data_gen.skillParams['assist']['AssistFollowUpWeepingWillowStab'],
   },
   core: {
-    add_disorder_: data_gen.coreParams[0],
+    addl_disorder_: data_gen.coreParams[0],
     duration: data_gen.coreParams[1][0],
     electric_dmg_: data_gen.coreParams[2],
     duration1: data_gen.coreParams[3][0],

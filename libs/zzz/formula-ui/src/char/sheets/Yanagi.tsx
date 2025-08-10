@@ -84,7 +84,7 @@ const sheet = createBaseSheet(key, {
         label: st('uponLaunch.1', { val1: '$t(skills.exSpecial)' }),
         metadata: cond.exSpecial_used,
         fields: [
-          fieldForBuff(buff.core_add_disorder_),
+          fieldForBuff(buff.core_addl_disorder_),
           fieldForBuff(buff.core_electric_dmg_),
         ],
       },
