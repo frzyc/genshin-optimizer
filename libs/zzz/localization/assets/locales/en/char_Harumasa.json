@@ -1,0 +1,6 @@
+{
+  "coreCond": "When Harumasa's Dash Attack: Hiten no Tsuru - Slash triggers a critical hit against an enemy",
+  "abilityCond": "Enemy under Attribute Anomaly",
+  "m2Cond": "While possessing Electro Blitz",
+  "m6Cond": "After Ha-Oto no Ya hits Stunned enemies or enemies under Attribute Anomalies"
+}

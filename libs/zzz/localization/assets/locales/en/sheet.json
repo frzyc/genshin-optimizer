@@ -18,6 +18,9 @@
   "uponHit": {
     "1": "Upon a(n) <strong>{{val1}}</strong> hitting an enemy"
   },
+  "dealsDamage": {
+    "1": "Deals <strong>{{val1}}</strong> DMG"
+  },
   "skills": {
     "basic": "Basic Attack",
     "special": "Special Attack",
@@ -25,5 +28,13 @@
     "chain": "Chain Attack",
     "ult": "Ultimate",
     "aftershock": "Aftershock"
+  },
+  "attributes": {
+    "electric": "Electric",
+    "fire": "Fire",
+    "ice": "Ice",
+    "physical": "Physical",
+    "ether": "Ether",
+    "frost": "Frost"
   }
 }

@@ -41,6 +41,38 @@ const dm = {
     AssistFollowUpYugamaeSlash:
       data_gen.skillParams['assist']['AssistFollowUpYugamaeSlash'],
   },
+  core: {
+    crit_: data_gen.coreParams[0],
+    stacks_gained: data_gen.coreParams[1][0],
+    stacks_per_skill: data_gen.coreParams[2][0],
+    max_stacks: data_gen.coreParams[3][0],
+    duration: data_gen.coreParams[4][0],
+    crit_dmg_: data_gen.coreParams[5],
+  },
+  ability: {
+    common_dmg_: data_gen.abilityParams[0],
+    stacks: data_gen.abilityParams[1],
+  },
+  m1: {
+    max_stacks: data_gen.mindscapeParams[0][0],
+    shots_fired: data_gen.mindscapeParams[0][1],
+  },
+  m2: {
+    stacks_gained: data_gen.mindscapeParams[1][0],
+    max_stacks: data_gen.mindscapeParams[1][1],
+    dmg_: data_gen.mindscapeParams[1][2],
+    stacks_consumed: data_gen.mindscapeParams[1][3],
+  },
+  m4: {
+    duration: data_gen.mindscapeParams[3][0],
+    decibels: data_gen.mindscapeParams[3][1],
+  },
+  m6: {
+    electric_resIgn_: data_gen.mindscapeParams[5][0],
+    duration: data_gen.mindscapeParams[5][1],
+    hits: data_gen.mindscapeParams[5][2],
+    dmg: data_gen.mindscapeParams[5][3],
+  },
 } as const
 
 export default dm
