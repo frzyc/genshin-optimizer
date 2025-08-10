@@ -118,7 +118,7 @@
       "2": "<strong>Mek cuistot : mode « Cuisson impromptue »</strong>",
       "3": [
         " Place le mek cuistot sur le terrain, ce dernier pouvant absorber les attaques élémentaires. Lorsque l'énergie élémentaire absorbée atteint une certaine limite, Escoffier peut convertir les ingrédients placés à l'intérieur de son mek en délicieuse nourriture.",
-        " Escoffier a besoin de temps pour acheter de nouveaux ingrédients et ne peut donc préparer qu'un certain nombre de plats chaque semaine de cette manière. La quantité de plats qu'Escoffier peut préparer chaque semaine est réinitialisée tous les lundis à 04 h 00."
+        " Escoffier a besoin de temps pour acheter de nouveaux ingrédients et ne peut donc préparer qu'un certain nombre de plats chaque semaine de cette manière. La quantité de plats qu'Escoffier peut préparer chaque semaine est réinitialisée tous les lundis à 04 h 00 ({TIMEZONE})."
       ]
     }
   },

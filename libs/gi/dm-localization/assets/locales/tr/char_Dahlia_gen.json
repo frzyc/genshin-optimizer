@@ -1,0 +1,176 @@
+{
+  "name": "Dahlia",
+  "title": "Ağıt ve Adak",
+  "description": "Favonius Kilisesinin rahibi ve Rüzgar Hükümdarı'nın kilisedeki temsilcisi.",
+  "constellationName": "İlahi Armoni",
+  "auto": {
+    "name": "Ayin",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "En fazla 4 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kutsal Emir",
+    "description": {
+      "0": "Eğlenceli küçük bir numara zamanı! Dokunarak veya Basılı Tutarak farklı şekillerde Mukaddes Yağmur çağırır.",
+      "1": "<br/>",
+      "2": "<strong>Dokun</strong>",
+      "3": "Dahlia kısa bir dua sonrasında önünde Mukaddes Yağmur çağırır.",
+      "4": "<br/>",
+      "5": "<strong>Basılı Tut</strong>",
+      "6": "Sürekli olarak dua eder ve sona erdiğinde belirtilen konuma Mukaddes Yağmur çağırır.",
+      "7": "<br/>",
+      "8": "<strong>Mukaddes Yağmur</strong>",
+      "9": "Düşmanlar ya da yakındaki grup üyeleri Mukaddes Yağmura dokunduğunda kimin dokunduğuna göre farklı etkiler oluşur:",
+      "10": "Mukaddes Yağmura bir düşman dokunduğunda yakındaki düşmanlara <hydro>Su Alan Hasarı</hydro> veren bir patlama meydana gelir.",
+      "11": "Yakındaki bir grup üyesi dokunduğunda dokunan kişiyi havaya fırlatır.",
+      "12": "<br/>",
+      "13": "Savaş alanında aynı anda Dahlia'nın çağırdığı sadece 1 Mukaddes Yağmur bulunabilir."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Beceri BS",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Işıltılı İlahi",
+    "description": {
+      "0": "Dahlia tüm kalbiyle dua ederek tanrıya sığınır. Yakındaki düşmanlara <hydro>Su Alan Hasarı</hydro> verir ve grup üyelerine Favonius Lütfu bahşederek Kutsal Lütuf Kalkanını çağırır.",
+      "1": "Kutsal Lütuf Kalkanının Hasar Emilimi, Dahlia'nın Maks. Canına göre belirlenir ve <hydro>Su Hasarını</hydro> %250 verimlilikle emer.",
+      "2": "<br/>",
+      "3": "<strong>Favonius Lütfu</strong>",
+      "4": "Bu etki aktifken mevcut Kutsal Lütuf Kalkanı Hasar alıp kırıldığında 1 Takdis tüketilerek yeni bir Kalkan çağrılabilir.",
+      "5": "<br/>",
+      "6": "Dahlia, aşağıdaki yöntemlerle Takdis elde edebilir:",
+      "7": [
+        "Dahlia'nın bulunduğu gruptaki aktif grup üyesi Favonius Lütfu etkisindeyken düşmana 4 defa Normal Saldırı ile vurduğunda Dahlia 1 Takdis kademesi kazanır.",
+        "\"Rüzgarın Zarafeti\" Pasif Yeteneğinin etkisi tetiklendikten sonra Dahlia Takdis kademesi kazanır. (Bu Pasif Yeteneğin açılmış olması gerekir.)"
+      ],
+      "8": "Dahlia, Favonius Lütfu süresince en fazla 4 Takdis kademesi elde edebilir."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Kutsal Lütuf Kalkanı Hasar Emilimi",
+      "2": "Favonius Lütfu Süresi",
+      "3": "Enerji Maliyeti",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Rüzgarın Zarafeti",
+    "description": {
+      "0": "<strong>Işıltılı İlahi</strong> Element Patlamasının sağladığı Favonius Lütfu etkisindeki karakterler düşman üzerinde Donma tepkimesi tetiklediğinde Dahlia 2 Takdis kademesi kazanır. Bu etki her 8 saniyede bir tetiklenebilir."
+    }
+  },
+  "passive2": {
+    "name": "Sevinç Duası",
+    "description": {
+      "0": "Aktif grup üyesi <strong>\"Işıltılı İlahi\"</strong> Element Patlamasının sağladığı Favonius Lütfu etkisindeyken, Dahlia'nın Maks. Canına göre Saldırı Hızı artar: Her 1.000 Maks. Can için %0,5'lik artış kazanılır, bu artış en fazla %20 olabilir."
+    }
+  },
+  "passive3": {
+    "name": "Dönüş Rüzgarıyla Kutsal Yolculuk",
+    "description": {
+      "0": "Gündüzleri (06:00 - 18:00) grup üyeleri Hızlı Adım etkisi kazanır: Hareket Hızı %10 artar.",
+      "1": "Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında etkili değildir. Hızlı Adım etkileri birikmez."
+    }
+  },
+  "constellation1": {
+    "name": "Kusursuz Tören",
+    "description": {
+      "0": "Dahlia, <strong>Işıltılı İlahi</strong> Element Patlamasını kullanarak 1 Takdis kademesi elde ettiği her seferde 2,5 Element Enerjisi yeniler."
+    }
+  },
+  "constellation2": {
+    "name": "Merhamet Buyruğu",
+    "description": {
+      "0": "Dahlia, <strong>Işıltılı İlahi</strong> Element Patlamasının Takdis kademelerini tüketerek bir Kutsal Lütuf Kalkanı çağırdığında bu Kalkanla korunan karakterin 12 saniyeliğine Kalkan Gücü %25 artar."
+    }
+  },
+  "constellation3": {
+    "name": "Rüzgarçiçeği Adağı",
+    "description": {
+      "0": "<strong>Işıltılı İlahi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Meclis Toplantısı",
+    "description": {
+      "0": "Dahlia'nın <strong>Işıltılı İlahi</strong> Element Patlaması ile oluşturulan Favonius Lütfu 3 saniye daha uzun sürer."
+    }
+  },
+  "constellation5": {
+    "name": "Böyle Buyruldu",
+    "description": {
+      "0": "<strong>Kutsal Emir</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Neşeyle Çık Yola",
+    "description": {
+      "0": "<strong>Işıltılı İlahi</strong> Element Patlaması etkisindeki mevcut aktif karakterin Saldırı Hızı %10 artar.",
+      "1": "Ayrıca Favonius Lütfu etkisindeki aktif karakter saf dışı kaldığında şu etkiler anında tetiklenir:",
+      "2": [
+        "Karakter dirilir.",
+        "Canı %100 yenilenir."
+      ],
+      "3": "Bu etki 15 dakikada bir tetiklenebilir."
+    }
+  }
+}

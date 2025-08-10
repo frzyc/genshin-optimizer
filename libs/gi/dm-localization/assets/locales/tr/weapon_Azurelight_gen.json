@@ -1,0 +1,24 @@
+{
+  "name": "Turkuaz Işık",
+  "description": {
+    "0": "Bir zamanlar bembeyaz parlayan şafak yıldızı kadar saf ve temiz olan bu kılıç artık koyu mavi bir renge bürünmüş."
+  },
+  "passiveName": "Ak Tepenin Bereketi",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi kullandıktan sonraki 12sn boyunca Saldırı <cryo>%24</cryo> artar. Bu süre boyunca kuşanan karakterin Enerjisi 0 olduğunda ek olarak Saldırı <cryo>%24</cryo>, Kritik Hasar <cryo>%40</cryo> artar."
+    },
+    "1": {
+      "0": "Bir Element Becerisi kullandıktan sonraki 12sn boyunca Saldırı <cryo>%30</cryo> artar. Bu süre boyunca kuşanan karakterin Enerjisi 0 olduğunda ek olarak Saldırı <cryo>%30</cryo>, Kritik Hasar <cryo>%50</cryo> artar."
+    },
+    "2": {
+      "0": "Bir Element Becerisi kullandıktan sonraki 12sn boyunca Saldırı <cryo>%36</cryo> artar. Bu süre boyunca kuşanan karakterin Enerjisi 0 olduğunda ek olarak Saldırı <cryo>%36</cryo>, Kritik Hasar <cryo>%60</cryo> artar."
+    },
+    "3": {
+      "0": "Bir Element Becerisi kullandıktan sonraki 12sn boyunca Saldırı <cryo>%42</cryo> artar. Bu süre boyunca kuşanan karakterin Enerjisi 0 olduğunda ek olarak Saldırı <cryo>%42</cryo>, Kritik Hasar <cryo>%70</cryo> artar."
+    },
+    "4": {
+      "0": "Bir Element Becerisi kullandıktan sonraki 12sn boyunca Saldırı <cryo>%48</cryo> artar. Bu süre boyunca kuşanan karakterin Enerjisi 0 olduğunda ek olarak Saldırı <cryo>%48</cryo>, Kritik Hasar <cryo>%80</cryo> artar."
+    }
+  }
+}

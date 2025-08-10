@@ -69,7 +69,9 @@
         "3": "When Pan Yinhu is the active character, DMG received during the skill is reduced by 40% and Anti-Interrupt Level is increased. If he isn't the active character, he becomes Invulnerable."
       },
       "params": [
-        " "
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
       ]
     },
     "EXSpecialAttackMountainousPulseStrike": {
@@ -82,9 +84,7 @@
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
-        "1st-Hit ",
-        "2nd-Hit ",
-        "3rd-Hit ",
+        " ",
         "Energy Cost "
       ]
     }
@@ -109,7 +109,9 @@
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
-        " "
+        " ",
+        "HP Recovery ",
+        "Percent HP Recovered Per Second "
       ]
     }
   },
@@ -167,7 +169,7 @@
     "name": "Additional Ability: Iron Stomach",
     "desc": {
       "0": "When another character in your squad is a <ct color=#FFFFFF>Rupture</ct> character or shares the same Faction:",
-      "1": "When Pan Yinhu hits an enemy with <ct color=#FFFFFF>Special Attack: Touch of Death</ct>, the enemy suffers the Depleted Qi effect, increasing all DMG against the target by 20%. Each hit of <ct color=#FFFFFF>Special Attack: Touch of Death</ct> inflicts a 10s <ct color=#FFFFFF>Depleted Qi</ct> effect. This effect can't stack, but repeated hits on the same enemy will extend the duration."
+      "1": "When Pan Yinhu hits an enemy with <ct color=#FFFFFF>Special Attack: Touch of Death</ct>, the enemy suffers the <ct color=#FFFFFF>Depleted Qi</ct> effect, increasing DMG from all units against the target by 20%. Each hit of <ct color=#FFFFFF>Special Attack: Touch of Death</ct> inflicts a 10s <ct color=#FFFFFF>Depleted Qi</ct> effect. This effect does not stack, but repeated hits on the same enemy will extend the duration."
     }
   },
   "mindscapes": {
@@ -199,7 +201,7 @@
     },
     "4": {
       "name": "First-Class Head Chef",
-      "desc": "When <ct color=#FFFFFF>Ultimate: A Feast Fit for an Emperor!</ct> heals all squad members, the HP recovery is increased by 25%, and the healing over time effect is increased by 25%. On activating <ct color=#FFFFFF>Ultimate: A Feast Fit for an Emperor!</ct>, gain the <ct color=#FFFFFF>Backup Provisions</ct> effect. Whenever any character in the squad loses HP, consume the <ct color=#FFFFFF>Backup Provisions</ct> effect to instantly restore 50% of the HP recovered with Ultimate: A Feast Fit for an Emperor!'s instant HP recovery effect. This effect cannot stack.",
+      "desc": "When <ct color=#FFFFFF>Ultimate: A Feast Fit for an Emperor!</ct> heals all squad members, the HP recovery is increased by 25%, and the healing over time effect is increased by 25%. On activating <ct color=#FFFFFF>Ultimate: A Feast Fit for an Emperor!</ct>, gain the <ct color=#FFFFFF>Backup Provisions</ct> effect. Whenever any character in the squad loses HP, consume the <ct color=#FFFFFF>Backup Provisions</ct> effect to instantly restore 50% of the HP recovered with <ct color=#FFFFFF>Ultimate: A Feast Fit for an Emperor!</ct>'s instant HP recovery effect. This effect does not stack.",
       "flavor": {
         "0": "The first time he cooked, he nearly set the stove on fire. Among those who rushed to help was a chef who, looking at the pile of burnt food, used the unused eggs to make him a plate of fried rice.",
         "1": "He wolfed it down with tears in his eyes. When he finally looked up, the cook was holding out a slip of paper with \"100\" written on it.",

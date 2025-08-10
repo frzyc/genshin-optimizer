@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG Area</anemo> saat mendarat."
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG Area</anemo> saat mendarat."
       }
     },
     "skillParams": {
@@ -93,7 +93,7 @@
   "passive1": {
     "name": "Field Medic's Vision",
     "description": {
-      "0": "Saat Ifa berada dalam status Nightsoul's Blessing, setiap poin Nightsoul dari jumlah total yang dimiliki oleh seluruh anggota party akan memberikan Ifa 1 poin <strong>Rescue Essentials</strong>, meningkatkan DMG reaksi Swirl dan Electro-Charged yang diakibatkan seluruh anggota party di sekitar."
+      "0": "Saat Ifa berada dalam status Nightsoul's Blessing, setiap poin Nightsoul dari jumlah total yang dimiliki oleh seluruh anggota party akan memberikan Ifa 1 poin <strong>Rescue Essentials</strong>, meningkatkan DMG reaksi Swirl, Electro-Charged, dan Lunar-Charged yang diakibatkan seluruh anggota party di sekitar."
     }
   },
   "passive2": {
@@ -139,7 +139,7 @@
   "constellation4": {
     "name": "Decayed Vessel's Permutation",
     "description": {
-      "0": "Durasi pusaran angin pengikat yang dihasilkan Elemental Burst <strong>Compound Sedation Field</strong> diperpanjang 3 detik.",
+      "0": "Durasi pusaran angin pengikat yang dihasilkan Elemental Burst <strong>Compound Sedation Field</strong> diperpanjang menjadi 3 detik.",
       "1": "Selain itu, setelah melancarkan Elemental Burst <strong>Compound Sedation Field</strong>, Elemental Mastery Ifa meningkat 100 poin selama 15 detik."
     }
   },

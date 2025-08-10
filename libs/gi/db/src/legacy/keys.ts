@@ -42,6 +42,7 @@ const allTransformative = [
   'overloaded',
   'shattered',
   'electrocharged',
+  'lunarcharged',
   'superconduct',
   'swirl',
   'burning',

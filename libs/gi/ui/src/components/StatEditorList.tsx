@@ -318,6 +318,8 @@ const inputPremodKeyToGroupMap: Record<InputPremodKey, GroupKey> = {
   overloaded_dmg_: 'reaction_dmg_bonus',
   shattered_dmg_: 'reaction_dmg_bonus',
   electrocharged_dmg_: 'reaction_dmg_bonus',
+  lunarcharged_baseDmg_: 'reaction_dmg_bonus',
+  lunarcharged_dmg_: 'reaction_dmg_bonus',
   superconduct_dmg_: 'reaction_dmg_bonus',
   swirl_dmg_: 'reaction_dmg_bonus',
   burning_dmg_: 'reaction_dmg_bonus',

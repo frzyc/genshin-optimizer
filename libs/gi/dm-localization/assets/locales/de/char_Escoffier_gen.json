@@ -118,7 +118,7 @@
       "2": "<strong>Gastro-Mecha – Modus „Improvisationskochen“</strong>",
       "3": [
         " Lässt den Gastro-Mecha erscheinen, der Elementarangriffe absorbieren kann und die Zutaten, die Escoffier zuvor in den Mecha gegeben hat, in ein leckeres Gericht umwandelt, sobald die absorbierte Elementarenergie die benötigte Menge erreicht.",
-        " Escoffier braucht Zeit, um neue Zutaten zu besorgen. Nur eine bestimmte Menge Gerichte kann pro Woche auf diese Weise zubereitet werden. Die Anzahl der Gerichte, die auf diese Weise zubereitet werden können, wird jeden Montag um 4 Uhr morgens zurückgesetzt."
+        " Escoffier braucht Zeit, um neue Zutaten zu besorgen. Nur eine bestimmte Menge Gerichte kann pro Woche auf diese Weise zubereitet werden. Die Anzahl der Gerichte, die auf diese Weise zubereitet werden können, wird jeden Montag um 4 Uhr morgens ({TIMEZONE}) zurückgesetzt."
       ]
     }
   },

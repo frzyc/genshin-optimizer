@@ -147,7 +147,7 @@
   "constellation4": {
     "name": "İdare: Kısıtlayıcı Muhafız",
     "description": {
-      "0": "Cyno, <strong>Kutsal Ayin: Kurt Çevikliği</strong> tarafından tetiklenen Sadık Öncü durumundayken Elektrik Yüklü, Süper İletim, Yüksek Voltaj, Hızlanma, Şiddetlenme, Aşırı Çiçeklenme veya Elektrik Girdap tepkimelerini tetiklerse kendisi hariç tüm grup üyeleri için 3 Element Enerjisi yeniler.",
+      "0": "Cyno, <strong>Kutsal Ayin: Kurt Çevikliği</strong> tarafından tetiklenen Sadık Öncü durumundayken Elektrik Yüklü, Ay Yüklü, Süper İletim, Yüksek Voltaj, Hızlanma, Şiddetlenme, Aşırı Çiçeklenme veya Elektrik Girdabı tepkimelerini tetiklerse kendisi hariç tüm grup üyeleri için 3 Element Enerjisi yeniler.",
       "1": "Bu etki her <strong>Kutsal Ayin: Kurt Çevikliği</strong> sırasında 5 kere tetiklenebilir."
     }
   },

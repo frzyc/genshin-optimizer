@@ -53,7 +53,12 @@ export default function characterMatData(): CharacterMatDatas {
           {
             items: skill.costItems
               ?.filter((item) => {
-                if ('id' in item && 'count' in item) {
+                if (
+                  'id' in item &&
+                  'count' in item &&
+                  item.id !== 0 &&
+                  item.count !== 0
+                ) {
                   return true
                 }
                 return false
@@ -97,7 +102,12 @@ export default function characterMatData(): CharacterMatDatas {
           cost: asc.scoinCost,
           items: asc.costItems
             ?.filter((item) => {
-              if ('id' in item && 'count' in item) {
+              if (
+                'id' in item &&
+                'count' in item &&
+                item.id !== 0 &&
+                item.count !== 0
+              ) {
                 return true
               }
               return false

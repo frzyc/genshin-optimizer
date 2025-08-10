@@ -89,7 +89,7 @@ export class UIData {
     }
   }
 
-  childUIData(data: Data): UIData {
+  child(data: Data): UIData {
     let child = this.children.get(data)
     if (!child) {
       child = new UIData(data, this)
@@ -106,7 +106,7 @@ export class UIData {
   }
   getTeamBuff(): UIInput<CalcResult, CalcResult<string>> {
     if (!this.teamBuff) {
-      const calculated = this.getAll(['teamBuff']),
+      const calculated = this.getAll(['teamBuffDisplay']),
         result = {} as any
       // Convert `input` to `uiInput`
       crawlObject(
@@ -342,7 +342,7 @@ export class UIData {
     node: DataNode<NumNode | StrNode>
   ): CalcResult<number | string | undefined> {
     const parent = node.reset ? this.origin : this
-    return parent.childUIData(node.data).computeNode(node.operands[0])
+    return parent.child(node.data).computeNode(node.operands[0])
   }
   private _compute(node: ComputeNode): CalcResult<number> {
     const { operation, operands } = node
@@ -353,7 +353,7 @@ export class UIData {
   }
   private _subscript(node: SubscriptNode<number>): CalcResult<number> {
     const operand = this.computeNode(node.operands[0])
-    const value = node.list[operand.value] ?? NaN
+    const value = node.list[operand.value] ?? Number.NaN
     return this._constant(value)
   }
   private _constant<V>(value: V): CalcResult<V> {
@@ -400,6 +400,7 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
       case 'overloaded':
       case 'shattered':
       case 'electrocharged':
+      case 'lunarcharged':
       case 'superconduct':
       case 'burning':
       case 'bloom':
@@ -449,7 +450,7 @@ function mergeInfo(base: Info, override: Info): Info {
 }
 
 const illformed: CalcResult<number> = {
-  value: NaN,
+  value: Number.NaN,
   meta: {
     op: 'const',
     ops: [],
@@ -556,12 +557,14 @@ export function uiDataForTeam(
     })
   )
   Object.values(teamData).forEach((data, i) =>
-    Object.assign(own[i], mergeData([...data, totalBuff[i], commonData]))
+    Object.assign(own[i], mergeData([...data, totalBuff[i], commonData]), {
+      teamBuffDisplay: totalBuff[i],
+    })
   )
 
   const origin = new UIData(undefined as any, undefined)
   return Object.fromEntries(
-    keys.map((key, i) => [key, { target: origin.childUIData(own[i]) }])
+    keys.map((k, i) => [k, { target: origin.child(target[i]).child(own[i]) }])
   )
 }
 

@@ -1,0 +1,24 @@
+{
+  "name": "Kırık Hale",
+  "description": {
+    "0": "Çın Çın Krumkake Atölyesi tarafından yapılmış, kendi etrafında dönen mekanik bir kılıç. Geçmiş çağların sırlarını içinde barındırıyor..."
+  },
+  "passiveName": "Arındıran Taç",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi veya Element Patlaması kullanıldığında 20sn boyunca Saldırı <cryo>%24</cryo> artar. Bu etki aktifken kuşanan karakter bir Kalkan oluşturduğunda 20sn boyunca Elektrik Fermanı etkisi kazanır: Yakındaki tüm grup üyelerinin verdiği Ay Yüklü Hasarı <cryo>%40</cryo> artar."
+    },
+    "1": {
+      "0": "Bir Element Becerisi veya Element Patlaması kullanıldığında 20sn boyunca Saldırı <cryo>%30</cryo> artar. Bu etki aktifken kuşanan karakter bir Kalkan oluşturduğunda 20sn boyunca Elektrik Fermanı etkisi kazanır: Yakındaki tüm grup üyelerinin verdiği Ay Yüklü Hasarı <cryo>%50</cryo> artar."
+    },
+    "2": {
+      "0": "Bir Element Becerisi veya Element Patlaması kullanıldığında 20sn boyunca Saldırı <cryo>%36</cryo> artar. Bu etki aktifken kuşanan karakter bir Kalkan oluşturduğunda 20sn boyunca Elektrik Fermanı etkisi kazanır: Yakındaki tüm grup üyelerinin verdiği Ay Yüklü Hasarı <cryo>%60</cryo> artar."
+    },
+    "3": {
+      "0": "Bir Element Becerisi veya Element Patlaması kullanıldığında 20sn boyunca Saldırı <cryo>%42</cryo> artar. Bu etki aktifken kuşanan karakter bir Kalkan oluşturduğunda 20sn boyunca Elektrik Fermanı etkisi kazanır: Yakındaki tüm grup üyelerinin verdiği Ay Yüklü Hasarı <cryo>%70</cryo> artar."
+    },
+    "4": {
+      "0": "Bir Element Becerisi veya Element Patlaması kullanıldığında 20sn boyunca Saldırı <cryo>%48</cryo> artar. Bu etki aktifken kuşanan karakter bir Kalkan oluşturduğunda 20sn boyunca Elektrik Fermanı etkisi kazanır: Yakındaki tüm grup üyelerinin verdiği Ay Yüklü Hasarı <cryo>%80</cryo> artar."
+    }
+  }
+}

@@ -145,7 +145,7 @@
   "constellation4": {
     "name": "Austerity: Forbidding Guard",
     "description": {
-      "0": "Saat Cyno berada dalam status Pactsworn Pathclearer yang terpicu oleh <strong>Sacred Rite: Wolf's Swiftness</strong>, setelah dia memicu Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, atau reaksi Electro Swirl, Cyno akan memulihkan 3 Elemental Energy untuk semua anggota party di sekitar (kecuali Cyno sendiri.)",
+      "0": "Saat Cyno berada dalam status Pactsworn Pathclearer yang terpicu oleh <strong>Sacred Rite: Wolf's Swiftness</strong>, setelah dia memicu Electro-Charged, Lunar-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, atau reaksi Electro Swirl, Cyno akan memulihkan 3 Elemental Energy untuk semua anggota party di sekitar (kecuali Cyno sendiri.)",
       "1": "Efek ini dapat muncul 5 kali dalam satu kali penggunaan <strong>Sacred Rite: Wolf's Swiftness</strong>."
     }
   },

@@ -44,6 +44,8 @@ export const characterIdMap = {
   '1371': 'Yixuan',
   '1381': 'Soldier0Anby',
   '1391': 'JuFufu',
+  '1401': 'Alice',
+  '1411': 'Yuzuha',
   '1421': 'PanYinhu',
 } as const
 
@@ -74,6 +76,7 @@ export const factionMap: Record<number, FactionKey> = {
   8: 'StarsOfLyra',
   9: 'Mockingbird',
   10: 'YunkuiSummit',
+  11: 'SpookShack',
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {

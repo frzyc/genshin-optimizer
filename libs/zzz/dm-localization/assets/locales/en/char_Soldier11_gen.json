@@ -182,7 +182,7 @@
   "mindscapes": {
     "1": {
       "name": "Rapid Heat",
-      "desc": "When Soldier 11 enters combat or switches in, if her Energy is less than 40, her Energy is recovered to 80. This effect can trigger once every 50s.",
+      "desc": "When Soldier 11 becomes the active character in combat, if her Energy is less than 40, her Energy is recovered to 80. This effect can trigger once every 50s.",
       "flavor": {
         "0": "Long-term high-intensity combat training allows Soldier 11 to complete mastery of her regulatory systems.",
         "1": "She will always strive to ensure that she's in the best shape for each and every battle."

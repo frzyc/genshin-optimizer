@@ -570,6 +570,13 @@ function getLocalizationForHakushinChar(key: NonTravelerCharacterKey) {
     },
     // Natlan passive might be [2]
     // TODO: passive might be last, add some handling if needed
+    passive:
+      key === 'Ineffa'
+        ? {
+            name: data.Passives[2].Name,
+            description: parseString('paragraph', data.Passives[2].Desc),
+          }
+        : undefined,
     passive3: {
       name: data.Passives[data.Passives.length - 1].Name,
       description: parseString(

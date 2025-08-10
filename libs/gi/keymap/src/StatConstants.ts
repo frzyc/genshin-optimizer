@@ -51,6 +51,13 @@ export const transformativeReactions: Record<
     resist: 'electro',
     canCrit: false,
   },
+  lunarcharged: {
+    name: 'Lunar-Charged',
+    multi: 1.8,
+    variants: ['electro'],
+    resist: 'electro',
+    canCrit: false, // It's a different kind of crit
+  },
   superconduct: {
     name: 'Superconduct',
     multi: 1.5,

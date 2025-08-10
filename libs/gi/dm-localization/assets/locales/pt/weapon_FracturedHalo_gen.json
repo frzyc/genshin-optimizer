@@ -1,0 +1,24 @@
+{
+  "name": "Resplendor Fragmentado",
+  "description": {
+    "0": "Uma lâmina mecânica giratória produzida pela Oficina de Rolinho de Ovo Trilimlim que parece esconder os segredos de uma era passada..."
+  },
+  "passiveName": "Coroa de Jade Gelado",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 20s depois de lançar a Habilidade Elemental ou o Supremo, aumenta o ATQ em <cryo>24%</cryo>. Nesse período, se o personagem que está com essa arma equipada criar um escudo, obterá o efeito Corrente das Ordens Sagradas nos 20s seguintes: aumenta o Dano de Carga Lunar de todos os membros próximos da equipe <cryo>40%</cryo>."
+    },
+    "1": {
+      "0": "Nos 20s depois de lançar a Habilidade Elemental ou o Supremo, aumenta o ATQ em <cryo>30%</cryo>. Nesse período, se o personagem que está com essa arma equipada criar um escudo, obterá o efeito Corrente das Ordens Sagradas nos 20s seguintes: aumenta o Dano de Carga Lunar de todos os membros próximos da equipe <cryo>50%</cryo>."
+    },
+    "2": {
+      "0": "Nos 20s depois de lançar a Habilidade Elemental ou o Supremo, aumenta o ATQ em <cryo>36%</cryo>. Nesse período, se o personagem que está com essa arma equipada criar um escudo, obterá o efeito Corrente das Ordens Sagradas nos 20s seguintes: aumenta o Dano de Carga Lunar de todos os membros próximos da equipe <cryo>60%</cryo>."
+    },
+    "3": {
+      "0": "Nos 20s depois de lançar a Habilidade Elemental ou o Supremo, aumenta o ATQ em <cryo>42%</cryo>. Nesse período, se o personagem que está com essa arma equipada criar um escudo, obterá o efeito Corrente das Ordens Sagradas nos 20s seguintes: aumenta o Dano de Carga Lunar de todos os membros próximos da equipe <cryo>70%</cryo>."
+    },
+    "4": {
+      "0": "Nos 20s depois de lançar a Habilidade Elemental ou o Supremo, aumenta o ATQ em <cryo>48%</cryo>. Nesse período, se o personagem que está com essa arma equipada criar um escudo, obterá o efeito Corrente das Ordens Sagradas nos 20s seguintes: aumenta o Dano de Carga Lunar de todos os membros próximos da equipe <cryo>80%</cryo>."
+    }
+  }
+}

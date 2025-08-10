@@ -1,0 +1,7 @@
+{
+  "coreCond": "When ordering Drusilla or Anastella to attack",
+  "abilityCond": "When Shocked enemies are on the field",
+  "m1Cond": "Character within 10m",
+  "m1_buff_": "Core PEN Ratio Buff Increase",
+  "m2Cond": "Upon becoming the active character in combat"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Halo Fracturado",
+  "description": {
+    "0": "Una lanza mecánica giratoria fabricada por el Taller de Krumkake Cling-clang. En ella parece esconderse un secreto de tiempos inmemoriales."
+  },
+  "passiveName": "Corona purificahielo",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras usar la Habilidad Elemental o Definitiva, el ATQ aumenta en un <cryo>24%</cryo> durante 20 s. Si el portador de esta arma crea un escudo mientras dicho efecto está activo, también obtendrá el efecto de “edicto voltaico” durante 20 s, el cual aumenta en un <cryo>40%</cryo> el daño de la reacción de Electrocargado Lunar de todos los personajes cercanos del equipo."
+    },
+    "1": {
+      "0": "Tras usar la Habilidad Elemental o Definitiva, el ATQ aumenta en un <cryo>30%</cryo> durante 20 s. Si el portador de esta arma crea un escudo mientras dicho efecto está activo, también obtendrá el efecto de “edicto voltaico” durante 20 s, el cual aumenta en un <cryo>50%</cryo> el daño de la reacción de Electrocargado Lunar de todos los personajes cercanos del equipo."
+    },
+    "2": {
+      "0": "Tras usar la Habilidad Elemental o Definitiva, el ATQ aumenta en un <cryo>36%</cryo> durante 20 s. Si el portador de esta arma crea un escudo mientras dicho efecto está activo, también obtendrá el efecto de “edicto voltaico” durante 20 s, el cual aumenta en un <cryo>60%</cryo> el daño de la reacción de Electrocargado Lunar de todos los personajes cercanos del equipo."
+    },
+    "3": {
+      "0": "Tras usar la Habilidad Elemental o Definitiva, el ATQ aumenta en un <cryo>42%</cryo> durante 20 s. Si el portador de esta arma crea un escudo mientras dicho efecto está activo, también obtendrá el efecto de “edicto voltaico” durante 20 s, el cual aumenta en un <cryo>70%</cryo> el daño de la reacción de Electrocargado Lunar de todos los personajes cercanos del equipo."
+    },
+    "4": {
+      "0": "Tras usar la Habilidad Elemental o Definitiva, el ATQ aumenta en un <cryo>48%</cryo> durante 20 s. Si el portador de esta arma crea un escudo mientras dicho efecto está activo, también obtendrá el efecto de “edicto voltaico” durante 20 s, el cual aumenta en un <cryo>80%</cryo> el daño de la reacción de Electrocargado Lunar de todos los personajes cercanos del equipo."
+    }
+  }
+}

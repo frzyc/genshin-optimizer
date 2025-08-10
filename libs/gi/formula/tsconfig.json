@@ -3,7 +3,8 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "exactOptionalPropertyTypes": false
   },
   "files": [],
   "include": [],

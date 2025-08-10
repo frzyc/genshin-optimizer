@@ -1,4 +1,5 @@
 import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
 import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import type { CrittableTransformativeReactionsKey } from '@genshin-optimizer/gi/keymap'
 import {
@@ -8,6 +9,7 @@ import {
 } from '@genshin-optimizer/gi/keymap'
 import { infusionNode, input } from './formula'
 import { info } from './info'
+import type { NumNode } from './type'
 import {
   constant,
   data,
@@ -176,7 +178,17 @@ const trans = {
       info(`${ele}_swirl_hit`)
     )
   }),
-} as any
+  lunarcharged: infoMut(
+    lunarchargedDmg(
+      constant(
+        transformativeReactions.lunarcharged.multi,
+        info('lunarcharged_multi_')
+      ),
+      'reaction'
+    ),
+    { path: 'lunarcharged_hit' }
+  ),
+}
 const infusionReactions = {
   overloaded: infoMut(
     greaterEq(
@@ -193,6 +205,14 @@ const infusionReactions = {
       trans.electrocharged
     ),
     info('electrocharged_hit')
+  ),
+  lunarcharged: infoMut(
+    greaterEq(
+      sum(equal(infusionNode, 'hydro', 1), equal(infusionNode, 'electro', 1)),
+      1,
+      trans.lunarcharged
+    ),
+    info('lunarcharged_hit')
   ),
   superconduct: infoMut(
     equal(infusionNode, 'cryo', trans.superconduct),
@@ -220,6 +240,7 @@ export const reactions = {
     hydroSwirl: trans.swirl.hydro,
     overloaded: trans.overloaded,
     electrocharged: trans.electrocharged,
+    lunarcharged: trans.lunarcharged,
     superconduct: trans.superconduct,
     shattered: trans.shattered,
     burning: trans.burning,
@@ -236,6 +257,7 @@ export const reactions = {
     shattered: trans.shattered,
     overloaded: infusionReactions.overloaded,
     electrocharged: infusionReactions.electrocharged,
+    lunarcharged: infusionReactions.lunarcharged,
     superconduct: infusionReactions.superconduct,
     burning: infusionReactions.burning,
     bloom: infusionReactions.bloom,
@@ -245,6 +267,7 @@ export const reactions = {
   electro: {
     overloaded: trans.overloaded,
     electrocharged: trans.electrocharged,
+    lunarcharged: trans.lunarcharged,
     superconduct: trans.superconduct,
     shattered: trans.shattered,
     hyperbloom: trans.hyperbloom,
@@ -254,6 +277,7 @@ export const reactions = {
   },
   hydro: {
     electrocharged: trans.electrocharged,
+    lunarcharged: trans.lunarcharged,
     shattered: trans.shattered,
     bloom: trans.bloom,
     overloaded: infusionReactions.overloaded,
@@ -268,6 +292,7 @@ export const reactions = {
     burning: trans.burning,
     burgeon: trans.burgeon,
     electrocharged: infusionReactions.electrocharged,
+    lunarcharged: infusionReactions.lunarcharged,
     superconduct: infusionReactions.superconduct,
     bloom: infusionReactions.bloom,
     hyperbloom: infusionReactions.hyperbloom,
@@ -277,6 +302,7 @@ export const reactions = {
     shattered: trans.shattered,
     overloaded: infusionReactions.overloaded,
     electrocharged: infusionReactions.electrocharged,
+    lunarcharged: infusionReactions.lunarcharged,
     burning: infusionReactions.burning,
     bloom: infusionReactions.bloom,
     burgeon: infusionReactions.burgeon,
@@ -288,8 +314,42 @@ export const reactions = {
     bloom: trans.bloom,
     overloaded: infusionReactions.overloaded,
     electrocharged: infusionReactions.electrocharged,
+    lunarcharged: infusionReactions.lunarcharged,
     superconduct: infusionReactions.superconduct,
     burgeon: infusionReactions.burgeon,
     hyperbloom: infusionReactions.hyperbloom,
   },
+}
+
+export function lunarchargedDmg(
+  multiplier: NumNode,
+  base: 'reaction' | MainStatKey | SubstatKey
+) {
+  return prod(
+    multiplier,
+    ...(base === 'reaction' ? [transMulti1] : [3, input.total[base]]),
+    infoMut(sum(percent(1), input.total.lunarcharged_baseDmg_), {
+      path: 'lunarcharged_baseDmg_',
+    }),
+    sum(
+      infoMut(sum(percent(1), prod(6, frac(input.total.eleMas, 2000))), {
+        pivot: true,
+        path: 'base_transformative_multi_',
+      }),
+      input.total.lunarcharged_dmg_
+    ),
+    lookup(
+      input.hit.hitMode,
+      {
+        hit: one,
+        critHit: sum(one, input.total.critDMG_),
+        avgHit: sum(
+          one,
+          prod(input.total.cappedCritRate, input.total.critDMG_)
+        ),
+      },
+      NaN
+    ),
+    input.enemy.electro_resMulti_
+  )
 }

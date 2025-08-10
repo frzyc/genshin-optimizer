@@ -1,0 +1,24 @@
+{
+  "name": "Intuizione pirogenita",
+  "description": {
+    "0": "Nei racconti tribali si narra di una spada forgiata dal Popolo delle Sorgenti per proteggere un bambino nel lungo viaggio che stava per intraprendere. Quest'arma in particolare sembra una replica di quella leggendaria lama."
+  },
+  "passiveName": "Pensiero in fiore",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando si innesca una reazione di Electrocarica, Carica lunare o Fioritura, l'energia elementale si ripristina di <cryo>12</cryo> e la maestria elementale aumenta di <cryo>60</cryo> per 15 s. Quest'effetto può attivarsi una volta ogni 15 s, anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "Quando si innesca una reazione di Electrocarica, Carica lunare o Fioritura, l'energia elementale si ripristina di <cryo>15</cryo> e la maestria elementale aumenta di <cryo>75</cryo> per 15 s. Quest'effetto può attivarsi una volta ogni 15 s, anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "Quando si innesca una reazione di Electrocarica, Carica lunare o Fioritura, l'energia elementale si ripristina di <cryo>18</cryo> e la maestria elementale aumenta di <cryo>90</cryo> per 15 s. Quest'effetto può attivarsi una volta ogni 15 s, anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "Quando si innesca una reazione di Electrocarica, Carica lunare o Fioritura, l'energia elementale si ripristina di <cryo>21</cryo> e la maestria elementale aumenta di <cryo>105</cryo> per 15 s. Quest'effetto può attivarsi una volta ogni 15 s, anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "Quando si innesca una reazione di Electrocarica, Carica lunare o Fioritura, l'energia elementale si ripristina di <cryo>24</cryo> e la maestria elementale aumenta di <cryo>120</cryo> per 15 s. Quest'effetto può attivarsi una volta ogni 15 s, anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}
