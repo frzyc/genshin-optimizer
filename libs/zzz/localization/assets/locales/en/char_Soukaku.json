@@ -1,0 +1,8 @@
+{
+  "ultCond": "In Masked state",
+  "coreCond": "When Soukaku launches Fly the Flag",
+  "coreCond2": "When consuming Vortex during Fly the Flag",
+  "m4Cond": "If an enemy is hit by Fly the Flag",
+  "m6Cond": "While in the Frosted Banner state",
+  "m6_dmg_": "Enhanced Basic and Dash Attack DMG"
+}

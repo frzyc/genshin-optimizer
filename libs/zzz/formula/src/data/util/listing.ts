@@ -29,6 +29,7 @@ export const stats = [
   'anomBuildup_',
   'anom_crit_',
   'anom_crit_dmg_',
+  'anom_base_',
   'dmg_',
   'common_dmg_',
   'buff_',
@@ -41,6 +42,8 @@ export const stats = [
   'sheerForce',
   'sheer_dmg_',
   'flat_dmg',
+  'anom_flat_dmg',
+  'addl_disorder_',
 ] as const
 
 export const flatAndPercentStats = [
