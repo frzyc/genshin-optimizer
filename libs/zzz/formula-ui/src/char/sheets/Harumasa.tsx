@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Harumasa'
@@ -53,7 +53,7 @@ const sheet = createBaseSheet(key, {
         fields: [
           fieldForBuff(buff.m6_electric_resIgn_),
           {
-            title: ch('m6_dmg'),
+            title: st('dmg'),
             fieldRef: formula.m6_dmg.tag,
           },
         ],

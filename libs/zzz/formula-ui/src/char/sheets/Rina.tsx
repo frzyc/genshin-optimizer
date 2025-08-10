@@ -1,7 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { trans } from '../../util'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Rina'
@@ -71,7 +71,11 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m6Cond'),
+        label: st('uponLaunch.3', {
+          val1: '$t(skills.exSpecial)',
+          val2: '$t(skills.chain)',
+          val3: '$t(skills.ult)',
+        }),
         metadata: cond.exSpecial_chain_ult_hit,
         fields: [fieldForBuff(buff.m6_electric_dmg_)],
       },

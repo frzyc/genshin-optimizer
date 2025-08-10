@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Ellen'
@@ -24,7 +24,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('abilityCond'),
+        label: st('dealsDamage', { val1: '$t(attributes.ice)' }),
         metadata: cond.ice_attacks,
         fields: [fieldForBuff(buff.ability_ice_dmg_)],
       },
