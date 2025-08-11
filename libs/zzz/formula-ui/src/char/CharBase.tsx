@@ -116,6 +116,25 @@ charBaseUiSheet.push(
       ),
     })
   ),
+  ...[...allAttributeKeys, 'frost' as const].map((attr): TagField => {
+    const attr_withoutFrost = attr === 'frost' ? 'ice' : attr
+    return {
+      fieldRef: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomalyDmg',
+        attribute: attr_withoutFrost,
+        damageType1: 'disorder',
+        name: `disorderDmgInst_${attr}`,
+      },
+      title: (
+        <ColorText color={attr_withoutFrost}>
+          {attr === 'frost' ? 'Frost' : elementalData[attr_withoutFrost]}{' '}
+          Disorder Damage
+        </ColorText>
+      ),
+    }
+  }),
   ...allAttributeKeys.map(
     (attr): TagField => ({
       fieldRef: {

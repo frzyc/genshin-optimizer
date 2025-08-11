@@ -590,6 +590,7 @@ const sheet: TalentSheet = {
     ct.condTem('burst', {
       path: condBurstSpiritPath,
       value: condBurstSpirit,
+      teamBuff: true,
       name: ct.ch('burstCond'),
       states: objKeyMap(burstSpiritArr, (spirit) => ({
         name: st('stack', { count: spirit }),
@@ -621,6 +622,8 @@ const sheet: TalentSheet = {
       })),
     }),
     ct.headerTem('constellation4', {
+      teamBuff: true,
+      canShow: unequal(condA4TimeSinceBurst, undefined, 1),
       fields: [
         {
           node: c4AfterBurst_dmg_disp,
