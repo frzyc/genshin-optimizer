@@ -3,11 +3,13 @@ import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
-import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
+import type {
+  CharacterContextObj,
+  TeamCharacterContextObj,
+} from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterContext,
   TeamCharacterContext,
-  type TeamCharacterContextObj,
   useBuildTc,
   useCharacter,
   useDBMeta,
@@ -16,15 +18,17 @@ import {
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
+import type {
+  ChartData,
+  GraphContextObj,
+  dataContextObj,
+} from '@genshin-optimizer/gi/ui'
 import {
-  type ChartData,
   DataContext,
   FormulaDataWrapper,
   GraphContext,
-  type GraphContextObj,
   OptTargetWrapper,
   SillyContext,
-  type dataContextObj,
   useTeamDataNoContext,
 } from '@genshin-optimizer/gi/ui'
 import { Box, Skeleton } from '@mui/material'
@@ -49,6 +53,7 @@ import type { BuildTcContexObj, SetBuildTcAction } from './BuildTcContext'
 import { BuildTcContext } from './BuildTcContext'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
+import TeamOptimize from './TeamOptimize'
 import TeamSetting from './TeamSetting'
 
 export default function PageTeam() {
@@ -88,35 +93,31 @@ function Page({ teamId }: { teamId: string }) {
 
   const team = useTeam(teamId)!
   const { loadoutData } = team
-  // use the current URL as the "source of truth" for characterKey and tab.
-  const {
-    params: { characterKey: characterKeyRaw },
-  } = useMatch({ path: '/teams/:teamId/:characterKey', end: false }) ?? {
-    params: {},
-  }
-  const {
-    params: { tab },
-  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab' }) ?? {
-    params: {},
-  }
+  // use the current URL as the "source of truth" for tab, characterKey, and characterTab.
+  const tab =
+    useMatch({ path: '/teams/:teamId/:tab', end: false })?.params.tab ?? ''
+  const characterTab = useMatch({
+    path: '/teams/:teamId/:characterKey/:characterTab',
+  })?.params.characterTab
 
   // validate characterKey
   const loadoutDatum = useMemo(() => {
     const loadoutDatum = loadoutData.find(
       (loadoutDatum) =>
         loadoutDatum?.teamCharId &&
-        database.teamChars.get(loadoutDatum.teamCharId)?.key === characterKeyRaw
+        database.teamChars.get(loadoutDatum.teamCharId)?.key === tab
     )
 
     return loadoutDatum
-  }, [loadoutData, database.teamChars, characterKeyRaw])
+  }, [loadoutData, database.teamChars, tab])
 
   useEffect(() => {
     window.scrollTo({ top: 0 })
   }, [])
   useEffect(() => {
-    if (!loadoutDatum) navigate('', { replace: true })
-  }, [loadoutDatum, navigate])
+    if (!loadoutDatum && !['optimize', ''].includes(tab))
+      navigate('', { replace: true })
+  }, [loadoutDatum, navigate, tab])
 
   const teamCharId = loadoutDatum?.teamCharId
   const characterKey = database.teamChars.get(teamCharId)?.key
@@ -139,15 +140,15 @@ function Page({ teamId }: { teamId: string }) {
             }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
           )
         : t('page_team:teamSettings.tab.team')
-      const tabName = tab
-        ? t(`page_character:tabs.${tab}`)
+      const tabName = characterTab
+        ? t(`page_character:tabs.${characterTab}`)
         : characterKey
           ? t('page_character:tabs.setting')
-          : tab
+          : characterTab
       return tabName
         ? `${team.name} - ${charName} - ${tabName}`
         : `${team.name} - ${charName}`
-    }, [t, team.name, silly, characterKey, gender, tab])
+    }, [t, team.name, silly, characterKey, gender, characterTab])
   )
 
   const teamCharacterContextValue: TeamCharacterContextObj | undefined =
@@ -180,8 +181,9 @@ function Page({ teamId }: { teamId: string }) {
       <CardThemed>
         <TeamCharacterSelector
           teamId={teamId}
-          characterKey={characterKey}
           tab={tab}
+          characterKey={characterKey}
+          characterTab={characterTab}
         />
         <Box
           sx={(theme) => {
@@ -196,34 +198,45 @@ function Page({ teamId }: { teamId: string }) {
             }
           }}
         >
-          {teamCharacterContextValue ? (
-            dataContextValue ? (
-              <TeamCharacterContext.Provider value={teamCharacterContextValue}>
-                <DataContext.Provider value={dataContextValue}>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: 1,
-                      p: 1,
-                    }}
+          <Routes>
+            <Route
+              path=""
+              element={<TeamSetting teamId={teamId} teamData={teamData} />}
+            />
+            <Route path="optimize" element={<TeamOptimize teamId={teamId} />} />
+            <Route
+              path="*"
+              element={
+                teamCharacterContextValue && dataContextValue ? (
+                  <TeamCharacterContext.Provider
+                    value={teamCharacterContextValue}
                   >
-                    <InnerContent tab={tab} />
-                  </Box>
-                </DataContext.Provider>
-              </TeamCharacterContext.Provider>
-            ) : (
-              fallback
-            )
-          ) : (
-            <TeamSetting teamId={teamId} teamData={teamData} />
-          )}
+                    <DataContext.Provider value={dataContextValue}>
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: 1,
+                          p: 1,
+                        }}
+                      >
+                        <InnerContent characterTab={characterTab} />
+                      </Box>
+                    </DataContext.Provider>
+                  </TeamCharacterContext.Provider>
+                ) : (
+                  fallback
+                )
+              }
+            />
+          </Routes>
         </Box>
       </CardThemed>
     </Box>
   )
 }
-function InnerContent({ tab }: { tab?: string }) {
+
+function InnerContent({ characterTab }: { characterTab?: string }) {
   const database = useDatabase()
   const {
     teamCharId,
@@ -294,7 +307,11 @@ function InnerContent({ tab }: { tab?: string }) {
             <OptTargetWrapper>
               <Routes>
                 <Route path=":characterKey">
-                  <Route path="*" index element={<Content tab={tab} />} />
+                  <Route
+                    path="*"
+                    index
+                    element={<Content tab={characterTab} />}
+                  />
                 </Route>
               </Routes>
             </OptTargetWrapper>
