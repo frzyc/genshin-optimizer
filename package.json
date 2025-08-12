@@ -7,6 +7,7 @@
     "frontend": "nx serve frontend",
     "somnia": "nx serve somnia",
     "build-all": "nx run-many -t build",
+    "silent-release": "nx build frontend; gh-pages -d dist/apps/frontend --silent",
     "mini-ci": "biome format --write --changed && nx affected -t typecheck && nx affected -t eslint:lint --max-warnings=0 && CI=true nx affected -t test",
     "reload-dm": "git submodule update --init",
     "update-dm": "git submodule update --remote",
