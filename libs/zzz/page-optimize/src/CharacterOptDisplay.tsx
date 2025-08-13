@@ -140,7 +140,14 @@ function CharacterSection() {
         ['eq', <EquippedGrid key={'eq'} onClick={onClick} />],
         ['Conditionals', <EquippedConditionals key={'conditionals'} />],
         ['bonusStats', <BonusStatsSection key={'bonusStats'} />],
-        ['teammates', <TeammatesSection key={'teammates'} />],
+        ...(shouldShowDevComponents
+          ? [
+              ['teammates', <TeammatesSection key={'teammates'} />] as [
+                key: string,
+                content: ReactNode,
+              ],
+            ]
+          : []),
         ['enemyStats', <EnemyStatsSection key={'enemyStats'} />],
         ...(characterKey === 'Yixuan' ||
         characterKey === 'Soldier0Anby' ||
