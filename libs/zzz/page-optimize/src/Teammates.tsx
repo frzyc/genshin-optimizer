@@ -55,115 +55,60 @@ export function TeammatesSection() {
 
   return (
     <Grid container spacing={1} columns={{ xs: 1, sm: 1, md: 2 }}>
-      <Grid item xs={1}>
-        <Stack gap={1}>
-          <DropdownButton
-            fullWidth
-            color={
-              (!!teammates[0] && getCharStat(teammates[0]).attribute) ||
-              undefined
-            }
-            title={
-              (!!teammates[0] && (
-                <CharacterName characterKey={teammates[0]} />
-              )) ||
-              'Add First Teammate'
-            }
-          >
-            <MenuItem onClick={() => setTeammate(null, 0)}>
-              {t('removeTeammate')}
-            </MenuItem>
-            {allChars.map((charKey) => (
-              <MenuItem onClick={() => setTeammate(charKey, 0)}>
-                {<CharacterName characterKey={charKey} />}
-              </MenuItem>
-            ))}
-          </DropdownButton>
-          {!!teammates[0] && (
-            <ZCard bgt="dark">
-              <Grid
-                container
-                sx={{ height: '100px', padding: 0.5 }}
-                columns={4}
-                spacing={0.5}
-              >
-                {range(0, 2).map((icon) => (
-                  <Grid item xs={1} key={icon}>
-                    <TeammateIconCard>
-                      <ImgIcon size={5} src={icons(teammates[0])?.[icon]} />
-                    </TeammateIconCard>
-                  </Grid>
-                ))}
-                <Grid item xs={1}>
-                  <TeammateIconCard>
-                    <ElementIcon
-                      ele={getCharStat(teammates[0])?.attribute}
-                      iconProps={{ sx: { width: '2.5em', height: '2.5em' } }}
-                    />
-                  </TeammateIconCard>
-                </Grid>
-              </Grid>
-            </ZCard>
-          )}
-        </Stack>
-      </Grid>
-      <Grid item xs={1}>
-        <Stack gap={1}>
-          <DropdownButton
-            fullWidth
-            color={
-              (!!teammates[1] && getCharStat(teammates[1]).attribute) ||
-              undefined
-            }
-            title={
-              (!!teammates[1] && (
-                <CharacterName characterKey={teammates[1]} />
-              )) ||
-              'Add Second Teammate'
-            }
-          >
-            <MenuItem onClick={() => setTeammate(null, 1)}>
-              {t('removeTeammate')}
-            </MenuItem>
-            {allChars.map((charKey) => (
-              <MenuItem onClick={() => setTeammate(charKey, 1)}>
-                {<CharacterName characterKey={charKey} />}
-              </MenuItem>
-            ))}
-          </DropdownButton>
-          {!!teammates[1] && (
-            <ZCard
-              bgt="dark"
-              sx={{
-                border: `3px solid ${getCharStat(teammates[1])?.attribute}`,
-              }}
+      {range(0, 1).map((i) => (
+        <Grid item xs={1} key={i}>
+          <Stack gap={1}>
+            <DropdownButton
+              fullWidth
+              color={
+                (!!teammates[i] && getCharStat(teammates[i]).attribute) ||
+                undefined
+              }
+              title={
+                (!!teammates[i] && (
+                  <CharacterName characterKey={teammates[i]} />
+                )) ||
+                `Add ${i === 0 ? 'First' : 'Second'} Teammate`
+              }
             >
-              <Grid
-                container
-                sx={{ height: '100px', padding: 0.5 }}
-                columns={4}
-                spacing={0.5}
-              >
-                {range(0, 2).map((icon) => (
-                  <Grid item xs={1} key={icon}>
+              <MenuItem onClick={() => setTeammate(null, i)}>
+                {t('removeTeammate')}
+              </MenuItem>
+              {allChars.map((charKey) => (
+                <MenuItem onClick={() => setTeammate(charKey, i)} key={charKey}>
+                  {<CharacterName characterKey={charKey} />}
+                </MenuItem>
+              ))}
+            </DropdownButton>
+            {!!teammates[i] && (
+              <ZCard bgt="dark">
+                <Grid
+                  container
+                  sx={{ display: 'flex', padding: 0.5 }}
+                  columns={{ xs: 2, lg: 4 }}
+                  spacing={0.5}
+                >
+                  {range(0, 2).map((icon) => (
+                    <Grid item xs={1} key={icon} height="90px">
+                      <TeammateIconCard>
+                        <ImgIcon size={5} src={icons(teammates[i])?.[icon]} />
+                      </TeammateIconCard>
+                    </Grid>
+                  ))}
+                  <Grid item xs={1}>
                     <TeammateIconCard>
-                      <ImgIcon size={5} src={icons(teammates[1])?.[icon]} />
+                      <ElementIcon
+                        ele={getCharStat(teammates[i])?.attribute}
+                        iconProps={{ sx: { width: '2.5em', height: '2.5em' } }}
+                      />
                     </TeammateIconCard>
                   </Grid>
-                ))}
-                <Grid item xs={1}>
-                  <TeammateIconCard>
-                    <ElementIcon
-                      ele={getCharStat(teammates[1])?.attribute}
-                      iconProps={{ sx: { width: '2.5em', height: '2.5em' } }}
-                    />
-                  </TeammateIconCard>
                 </Grid>
-              </Grid>
-            </ZCard>
-          )}
-        </Stack>
-      </Grid>
+              </ZCard>
+            )}
+          </Stack>
+        </Grid>
+      ))}
     </Grid>
   )
 }
