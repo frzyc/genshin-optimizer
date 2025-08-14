@@ -9,6 +9,7 @@ import {
   min,
   percent,
   prod,
+  sum,
   target,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
@@ -120,9 +121,12 @@ const a4AfterBurst_eleMasDisp = greaterEq(
   ),
   { path: 'eleMas', isTeamBuff: true }
 )
-const a4AfterBurst_eleMas = equal(
-  input.activeCharKey,
-  target.charKey,
+const a4AfterBurst_eleMas = greaterEq(
+  sum(
+    equal(input.activeCharKey, target.charKey, 1),
+    equal(key, target.charKey, 1)
+  ),
+  1,
   a4AfterBurst_eleMasDisp
 )
 
@@ -175,6 +179,7 @@ const dmgFormulas = {
   },
   passive2: {
     a4AfterBurst_eleMas,
+    a4AfterBurst_eleMasDisp,
   },
   constellation1: {
     c1AfterShield_lc_dmg_,
