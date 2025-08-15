@@ -178,7 +178,6 @@ const dmgFormulas = {
     ),
   },
   passive2: {
-    a4AfterBurst_eleMas,
     a4AfterBurst_eleMasDisp,
   },
   constellation1: {
