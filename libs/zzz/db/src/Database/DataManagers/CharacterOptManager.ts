@@ -9,6 +9,7 @@ import {
   type AttributeKey,
   type CharacterKey,
   allAttributeKeys,
+  allCharacterKeys,
 } from '@genshin-optimizer/zzz/consts'
 import type {
   DamageType,
@@ -167,6 +168,7 @@ export type CharOpt = {
     value: number
     disabled: boolean
   }>
+  teammates: Array<CharacterKey>
   critMode: critModeKey
 
   // Enemy stuff
@@ -197,6 +199,7 @@ export class CharacterOptManager extends DataManager<
       target,
       conditionals,
       bonusStats,
+      teammates,
       critMode,
 
       enemyLvl,
@@ -350,6 +353,16 @@ export class CharacterOptManager extends DataManager<
       })
       .filter(notEmpty)
 
+    if (!Array.isArray(teammates)) teammates = []
+    teammates = teammates.reduce((acc: CharacterKey[], charKey) => {
+      const charKey_ = validateValue(charKey, allCharacterKeys)
+
+      if (!charKey_) return acc
+
+      acc.push(charKey_)
+      return acc
+    }, [])
+
     if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = undefined
 
@@ -357,6 +370,7 @@ export class CharacterOptManager extends DataManager<
       target,
       conditionals,
       bonusStats,
+      teammates,
       critMode,
 
       enemyLvl,
@@ -472,12 +486,33 @@ export class CharacterOptManager extends DataManager<
       return { enemyStats }
     })
   }
+  setTeammate(
+    charKey: CharacterKey,
+    teammate: CharacterKey | null,
+    index?: number
+  ) {
+    this.set(charKey, (charOpt) => {
+      const teammateIndex =
+        index ?? charOpt.teammates.findIndex((t) => t === teammate)
+      const teammates = [...charOpt.teammates]
+      if (teammateIndex === -1 && teammate !== null) {
+        teammates.push(teammate)
+      } else if (teammate === null && teammateIndex > -1) {
+        teammates.splice(teammateIndex, 1)
+      } else if (teammate !== null && teammateIndex > -1) {
+        teammates[teammateIndex] = teammate
+      }
+
+      return { teammates }
+    })
+  }
 }
 
 export function initialCharOpt(): CharOpt {
   return {
     conditionals: [],
     bonusStats: [],
+    teammates: [],
     critMode: 'avg',
 
     enemyLvl: 80,

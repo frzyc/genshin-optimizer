@@ -25,6 +25,7 @@ import {
   withPreset,
   zzzCalculatorWithEntries,
 } from '@genshin-optimizer/zzz/formula'
+import { allStats } from '@genshin-optimizer/zzz/stats'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 
@@ -80,6 +81,17 @@ export function CharCalcProvider({
             value: constant(toDecimal(value, tag.q ?? '')),
           })
         ),
+        ...charOpt.teammates.flatMap((charKey) => [
+          ownBuff.common.count
+            .withSpecialty(allStats.char[charKey].specialty)
+            .add(1),
+          ownBuff.common.count
+            .withFaction(allStats.char[charKey].faction)
+            .add(1),
+          ownBuff.common.count
+            .withTag({ attribute: allStats.char[charKey].attribute })
+            .add(1),
+        ]),
       ]),
     [member0, charOpt, character.key]
   )
