@@ -964,8 +964,12 @@
     "characterName": "Имя Персонажа",
     "noReaction": "Без реакций",
     "multiTarget": {
-      "addNewTarget": "Добавить одну ",
-      "addNewMTarget": "Доб. Новый Кастом Мультитаргет"
+      "addNewTarget": "Добавить таргет",
+      "addNewMTarget": "Доб. Новый Мультитаргет",
+      "convertToExpression": "Преобразовать в Выражение",
+      "addNewFunction": "Новая ƒ",
+      "addNewArgument": "Добавить аргумент",
+      "add": "Добавить"
     },
     "addStats": {
       "title": "Параметры Врага + Бонусы"
