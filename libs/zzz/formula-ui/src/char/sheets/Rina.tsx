@@ -51,7 +51,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m2Cond'),
+        label: st('enterCombatOrSwitchIn'),
         metadata: cond.active_char,
         fields: [fieldForBuff(buff.m2_common_dmg_)],
       },

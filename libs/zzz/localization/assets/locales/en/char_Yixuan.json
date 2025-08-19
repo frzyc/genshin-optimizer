@@ -1,9 +1,7 @@
 {
   "core_dmg_": "Basic Attack: Auric Array, Basic Attack: Qingming Eruption DMG",
-  "ability_dmg": "DMG",
   "ability_dmg_": "EX Special Attack: Cloud-Shaper and EX Special Attack: Ashen Ink Becomes Shadows DMG",
   "meditationCond": "Meditation State",
-  "m1_dmg": "DMG",
   "m2_dmg": "EX Special Attack: Endless Talisman Suppression - Break DMG",
   "m4Cond": "Tranquility Stacks",
   "m4_dmg_": "EX Special Attack: Cloud-Shaper DMG and EX Special Attack: Ashen Ink Becomes Shadows DMG"

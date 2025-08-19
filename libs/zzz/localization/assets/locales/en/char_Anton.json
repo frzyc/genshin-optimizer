@@ -2,8 +2,6 @@
   "core_piledriver_dmg_": "Piledriver DMG",
   "core_drill_dmg_": "Drill DMG",
   "abilityCond": "While in Burst Mode, for every 4 critical hits",
-  "m2_shield": "Shield",
-  "m4Cond": "Chain Attack or Ultimate used",
   "m6Cond": "When Piledriver Attack triggers a critical hit",
   "m6_dmg_": "Basic Attack: Enthusiastic Drills (Burst Mode) and Dodge Counter: Overload Drill (Burst Mode) DMG"
 }

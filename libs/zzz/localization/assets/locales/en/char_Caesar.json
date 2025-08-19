@@ -1,7 +1,6 @@
 {
   "stanceSwitchCond": "When Caesar triggers a Perfect Block, Retaliation, or Defensive Assist",
   "ultCond": "When hitting shielded enemies",
-  "core_shield": "Shield",
   "coreCond": "While Radiant Aegis is active",
   "abilityTeamCond": "Teammate can activate Defensive Assist",
   "abilityCond": "When Caesar activates Perfect Block, Retaliation, Defensive Assist, or Basic Attack: Dead End",

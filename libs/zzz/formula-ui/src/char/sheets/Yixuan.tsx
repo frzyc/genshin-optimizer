@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Yixuan'
@@ -31,7 +31,7 @@ const sheet = createBaseSheet(key, {
       type: 'fields',
       fields: [
         {
-          title: ch('ability_dmg'),
+          title: st('dmg'),
           fieldRef: formula.ability_dmg.tag,
         },
         {
@@ -55,7 +55,7 @@ const sheet = createBaseSheet(key, {
       fields: [
         fieldForBuff(buff.m1_crit_),
         {
-          title: ch('m1_dmg'),
+          title: st('dmg'),
           fieldRef: formula.m1_dmg.tag,
         },
       ],
