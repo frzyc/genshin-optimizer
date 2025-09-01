@@ -4,11 +4,13 @@ import AstralVoice from './sheets/AstralVoice'
 import BranchBladeSong from './sheets/BranchBladeSong'
 import ChaosJazz from './sheets/ChaosJazz'
 import ChaoticMetal from './sheets/ChaoticMetal'
+import DawnsBloom from './sheets/DawnsBloom'
 import FangedMetal from './sheets/FangedMetal'
 import FreedomBlues from './sheets/FreedomBlues'
 import HormonePunk from './sheets/HormonePunk'
 import InfernoMetal from './sheets/InfernoMetal'
 import KingOfTheSummit from './sheets/KingOfTheSummit'
+import MoonlightLullaby from './sheets/MoonlightLullaby'
 import PhaethonsMelody from './sheets/PhaethonsMelody'
 import PolarMetal from './sheets/PolarMetal'
 import ProtoPunk from './sheets/ProtoPunk'
@@ -26,11 +28,13 @@ const data: TagMapNodeEntries[] = [
   BranchBladeSong,
   ChaosJazz,
   ChaoticMetal,
+  DawnsBloom,
   FangedMetal,
   FreedomBlues,
   HormonePunk,
   InfernoMetal,
   KingOfTheSummit,
+  MoonlightLullaby,
   PhaethonsMelody,
   PolarMetal,
   ProtoPunk,

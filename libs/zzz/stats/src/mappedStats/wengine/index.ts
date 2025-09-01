@@ -1,11 +1,13 @@
 // WARNING: Generated file, do not modify
 import BashfulDemon from './maps/BashfulDemon'
+import BellicoseBlaze from './maps/BellicoseBlaze'
 import BigCylinder from './maps/BigCylinder'
 import BlazingLaurel from './maps/BlazingLaurel'
 import BoxCutter from './maps/BoxCutter'
 import BunnyBand from './maps/BunnyBand'
 import CannonRotor from './maps/CannonRotor'
 import CinderCobalt from './maps/CinderCobalt'
+import CordisGermina from './maps/CordisGermina'
 import DeepSeaVisitor from './maps/DeepSeaVisitor'
 import DemaraBatteryMarkII from './maps/DemaraBatteryMarkII'
 import DrillRigRedAxis from './maps/DrillRigRedAxis'
@@ -74,12 +76,14 @@ import ZanshinHerbCase from './maps/ZanshinHerbCase'
 
 const maps = {
   BashfulDemon,
+  BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
   BoxCutter,
   BunnyBand,
   CannonRotor,
   CinderCobalt,
+  CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
   DrillRigRedAxis,

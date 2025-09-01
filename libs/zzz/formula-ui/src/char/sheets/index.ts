@@ -24,11 +24,13 @@ import Lycaon from './Lycaon'
 import Miyabi from './Miyabi'
 import Nekomata from './Nekomata'
 import Nicole from './Nicole'
+import OrphieMagus from './OrphieMagus'
 import PanYinhu from './PanYinhu'
 import Piper from './Piper'
 import Pulchra from './Pulchra'
 import Qingyi from './Qingyi'
 import Rina from './Rina'
+import Seed from './Seed'
 import Seth from './Seth'
 import Soldier0Anby from './Soldier0Anby'
 import Soldier11 from './Soldier11'
@@ -64,11 +66,13 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Miyabi,
   Nekomata,
   Nicole,
+  OrphieMagus,
   PanYinhu,
   Piper,
   Pulchra,
   Qingyi,
   Rina,
+  Seed,
   Seth,
   Soldier0Anby,
   Soldier11,

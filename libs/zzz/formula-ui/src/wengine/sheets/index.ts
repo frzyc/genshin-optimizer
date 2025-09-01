@@ -3,12 +3,14 @@ import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 
 import BashfulDemon from './BashfulDemon'
+import BellicoseBlaze from './BellicoseBlaze'
 import BigCylinder from './BigCylinder'
 import BlazingLaurel from './BlazingLaurel'
 import BoxCutter from './BoxCutter'
 import BunnyBand from './BunnyBand'
 import CannonRotor from './CannonRotor'
 import CinderCobalt from './CinderCobalt'
+import CordisGermina from './CordisGermina'
 import DeepSeaVisitor from './DeepSeaVisitor'
 import DemaraBatteryMarkII from './DemaraBatteryMarkII'
 import DrillRigRedAxis from './DrillRigRedAxis'
@@ -77,12 +79,14 @@ import ZanshinHerbCase from './ZanshinHerbCase'
 
 export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   BashfulDemon,
+  BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
   BoxCutter,
   BunnyBand,
   CannonRotor,
   CinderCobalt,
+  CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
   DrillRigRedAxis,
