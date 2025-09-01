@@ -3,12 +3,14 @@ export type WengineRarityKey = (typeof allWengineRarityKeys)[number]
 
 export const allWengineKeys = [
   'BashfulDemon',
+  'BellicoseBlaze',
   'BigCylinder',
   'BlazingLaurel',
   'BoxCutter',
   'BunnyBand',
   'CannonRotor',
   'CinderCobalt',
+  'CordisGermina',
   'DeepSeaVisitor',
   'DemaraBatteryMarkII',
   'DrillRigRedAxis',

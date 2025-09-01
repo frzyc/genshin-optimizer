@@ -309,7 +309,7 @@
     "name": "Additional Ability: Auric Ink Undercurrent",
     "desc": {
       "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct>, <ct color=#FFFFFF>Support</ct>, or <ct color=#FFFFFF>Defense</ct> character:",
-      "1": "When a fellow squad member uses an Ultimate, Yixuan continuously recovers 2 Adrenaline over 10s. If Yixuan is switched out by a Perfect Assist, she automatically follows up with a lightning strike attack, dealing DMG equal to 225% of her Sheer Force and restoring an additional 5 Adrenaline.",
+      "1": "When a fellow squad member uses an Ultimate, Yixuan continuously recovers 2 Adrenaline for 10s. If Yixuan is switched out by a Perfect Assist, she automatically follows up with a lightning strike attack, dealing DMG equal to 225% of her Sheer Force and restoring an additional 5 Adrenaline.",
       "2": "EX Special Attack: Cloud-Shaper and EX Special Attack: Ashen Ink Becomes Shadows deal 30% increased DMG to Stunned enemies.",
       "3": "After activating her Ultimate, Yixuan enters the Meditation state, increasing her CRIT DMG by 40% for 15s."
     }
