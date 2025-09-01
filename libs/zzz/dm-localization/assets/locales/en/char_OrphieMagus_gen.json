@@ -1,0 +1,322 @@
+{
+  "name": "Orphie & Magus",
+  "fullName": "Orphie & Magus",
+  "basic": {
+    "BasicAttackHighPressureFlamethrower": {
+      "name": "Basic Attack: High-Pressure Flamethrower",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 5 attacks in front, followed by a powerful flame blade strike, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit ",
+        "Fire Blade "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeFlickeringFlames": {
+      "name": "Dodge: Flickering Flames",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackRushCommand": {
+      "name": "Dash Attack: Rush Command",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Perform a quick forward attack, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterCounterStrikeOpportunity": {
+      "name": "Dodge Counter: Counter Strike Opportunity",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Launch a series of attacks on enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackBlazingChamber": {
+      "name": "Special Attack: Blazing Chamber",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Thrust forward and perform a tail attack, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SpecialAttackCorrosiveFlash": {
+      "name": "Special Attack: Corrosive Flash",
+      "desc": {
+        "0": "Automatically triggers during ally attacks:",
+        "1": "Unleashes 4 laser Aftershock attacks, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Triggers once per 5s.",
+        "3": "Upon activating this skill, restore 20 Bottled Heat.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackWatchYourStep": {
+      "name": "EX Special Attack: Watch Your Step",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Perform a sweeping laser attack forward, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "After using this skill, immediately follow up with the powerful fire blade from the Basic Attack.",
+        "3": "Upon activating this skill, restore 20 Bottled Heat.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackCrimsonVortex": {
+      "name": "EX Special Attack: Crimson Vortex",
+      "desc": {
+        "0": "When off-field with 60 or more Energy, automatically triggers during ally attacks:",
+        "1": "Performs a sweeping laser attack in an area around, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Upon activating this skill, restore 20 Bottled Heat.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackHeatCharge": {
+      "name": "EX Special Attack: Heat Charge",
+      "desc": {
+        "0": "When Bottled Heat is greater than or equal to 100, hold <IconSpecial /> to activate:",
+        "1": "Consume 100 Bottled Heat to continuously fire a laser forward, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "When firing begins, triggers <ct color=#FFFFFF>Quick Assist</ct>.",
+        "3": "After continuous firing for a period, firepower increases, greatly boosting the skill's Interrupt Level.",
+        "4": "When attacked during firing, will parry enemy attacks and immediately increase firepower.",
+        "5": "When maximum firing duration is reached, automatically activates EX Special Attack: Fiery Eruption.",
+        "6": "During the low firepower phase, Anti-Interrupt Level increases and DMG taken is reduced by 40%, while character is invulnerable during the high firepower phase."
+      },
+      "params": [
+        "Laser Maximum "
+      ]
+    },
+    "EXSpecialAttackFieryEruption": {
+      "name": "EX Special Attack: Fiery Eruption",
+      "desc": {
+        "0": "Automatically activates after EX Special Attack: Heat Charge reaches maximum firing time:",
+        "1": "Performs a spinning attack forward, then fires a laser ahead dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackOverheatedBarrel": {
+      "name": "Chain Attack: Overheated Barrel",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Perform a spinning attack forward, then fire a laser ahead, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Upon activating this skill, restore 20 points of Bottled Heat.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateDanceWithFire": {
+      "name": "Ultimate: Dance With Fire",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Perform a spinning attack forward, then fire a laser ahead, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "When leaping into the air, a <ct color=#FFFFFF>Quick Assist</ct> will be triggered. If the <ct color=#FFFFFF>Quick Assist</ct> is activated, Orphie & Magus will extend the laser firing duration.",
+        "3": "Upon activating this skill, recover 20 Bottled Heat.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Extended Duration Total "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistSearingSlash": {
+      "name": "Quick Assist: Searing Slash",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Unleash a series of attacks on enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistBlazingGunblade": {
+      "name": "Defensive Assist: Blazing Gunblade",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpBoilingPierce": {
+      "name": "Assist Follow-Up: Boiling Pierce",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Unleash multiple attacks against enemies in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Taming Wind and Fire",
+    "desc": [
+      {
+        "0": "Orphie & Magus's CRIT Rate increases by <ct color=#2BAD00>12.5%</ct>, and Aftershock DMG increases by <ct color=#2BAD00>42.5%</ct>.",
+        "1": "Orphie & Magus initially gain 100 Bottled Heat, up to a maximum of 125.",
+        "2": "When Orphie & Magus are off-field, if Special Attack: Corrosive Flash is available and Energy is greater than or equal to 60, consume 30 Energy to automatically trigger EX Special Attack: Crimson Vortex instead.",
+        "3": "When the laser from EX Special Attack: Heat Charge hits enemies, all squad members gain Zeroed In for 12s. Repeated triggers reset the duration. Zeroed In increases Agent ATK by <ct color=#2BAD00>130</ct>. When Orphie & Magus's initial Energy Regen is greater than or equal to 1.6, for every 0.1 initial Energy Regen above this threshold, ATK increases by an additional 20. The total increase from both initial and additional ATK increases cannot exceed <ct color=#2BAD00>340</ct>. When an Agent with Zeroed In triggers Aftershock, their Zeroed In duration extends by 4s, up to a maximum extension of 20s.",
+        "4": "The fire blade attack from Basic Attack: High-Pressure Flamethrower, EX Special Attack: Watch Your Step, EX Special Attack: Crimson Vortex, EX Special Attack: Heat Charge, EX Special Attack: Fiery Eruption, Chain Attack: Overheated Barrel, and Ultimate: Dance With Fire all count as Aftershock DMG, and using these skills counts as triggering Aftershock."
+      },
+      {
+        "0": "Orphie & Magus's CRIT Rate increases by <ct color=#2BAD00>14.6%</ct>, and Aftershock DMG increases by <ct color=#2BAD00>49.6%</ct>.",
+        "1": "Orphie & Magus initially gain 100 Bottled Heat, up to a maximum of 125.",
+        "2": "When Orphie & Magus are off-field, if Special Attack: Corrosive Flash is available and Energy is greater than or equal to 60, consume 30 Energy to automatically trigger EX Special Attack: Crimson Vortex instead.",
+        "3": "When the laser from EX Special Attack: Heat Charge hits enemies, all squad members gain Zeroed In for 12s. Repeated triggers reset the duration. Zeroed In increases Agent ATK by <ct color=#2BAD00>155</ct>. When Orphie & Magus's initial Energy Regen is greater than or equal to 1.6, for every 0.1 initial Energy Regen above this threshold, ATK increases by an additional 20. The total increase from both initial and additional ATK increases cannot exceed <ct color=#2BAD00>400</ct>. When an Agent with Zeroed In triggers Aftershock, their Zeroed In duration extends by 4s, up to a maximum extension of 20s.",
+        "4": "The fire blade attack from Basic Attack: High-Pressure Flamethrower, EX Special Attack: Watch Your Step, EX Special Attack: Crimson Vortex, EX Special Attack: Heat Charge, EX Special Attack: Fiery Eruption, Chain Attack: Overheated Barrel, and Ultimate: Dance With Fire all count as Aftershock DMG, and using these skills counts as triggering Aftershock."
+      },
+      {
+        "0": "Orphie & Magus's CRIT Rate increases by <ct color=#2BAD00>16.7%</ct>, and Aftershock DMG increases by <ct color=#2BAD00>56.7%</ct>.",
+        "1": "Orphie & Magus initially gain 100 Bottled Heat, up to a maximum of 125.",
+        "2": "When Orphie & Magus are off-field, if Special Attack: Corrosive Flash is available and Energy is greater than or equal to 60, consume 30 Energy to automatically trigger EX Special Attack: Crimson Vortex instead.",
+        "3": "When the laser from EX Special Attack: Heat Charge hits enemies, all squad members gain Zeroed In for 12s. Repeated triggers reset the duration. Zeroed In increases Agent ATK by <ct color=#2BAD00>180</ct>. When Orphie & Magus's initial Energy Regen is greater than or equal to 1.6, for every 0.1 initial Energy Regen above this threshold, ATK increases by an additional 20. The total increase from both initial and additional ATK increases cannot exceed <ct color=#2BAD00>460</ct>. When an Agent with Zeroed In triggers Aftershock, their Zeroed In duration extends by 4s, up to a maximum extension of 20s.",
+        "4": "The fire blade attack from Basic Attack: High-Pressure Flamethrower, EX Special Attack: Watch Your Step, EX Special Attack: Crimson Vortex, EX Special Attack: Heat Charge, EX Special Attack: Fiery Eruption, Chain Attack: Overheated Barrel, and Ultimate: Dance With Fire all count as Aftershock DMG, and using these skills counts as triggering Aftershock."
+      },
+      {
+        "0": "Orphie & Magus's CRIT Rate increases by <ct color=#2BAD00>18.8%</ct>, and Aftershock DMG increases by <ct color=#2BAD00>63.7%</ct>.",
+        "1": "Orphie & Magus initially gain 100 Bottled Heat, up to a maximum of 125.",
+        "2": "When Orphie & Magus are off-field, if Special Attack: Corrosive Flash is available and Energy is greater than or equal to 60, consume 30 Energy to automatically trigger EX Special Attack: Crimson Vortex instead.",
+        "3": "When the laser from EX Special Attack: Heat Charge hits enemies, all squad members gain Zeroed In for 12s. Repeated triggers reset the duration. Zeroed In increases Agent ATK by <ct color=#2BAD00>205</ct>. When Orphie & Magus's initial Energy Regen is greater than or equal to 1.6, for every 0.1 initial Energy Regen above this threshold, ATK increases by an additional 20. The total increase from both initial and additional ATK increases cannot exceed <ct color=#2BAD00>520</ct>. When an Agent with Zeroed In triggers Aftershock, their Zeroed In duration extends by 4s, up to a maximum extension of 20s.",
+        "4": "The fire blade attack from Basic Attack: High-Pressure Flamethrower, EX Special Attack: Watch Your Step, EX Special Attack: Crimson Vortex, EX Special Attack: Heat Charge, EX Special Attack: Fiery Eruption, Chain Attack: Overheated Barrel, and Ultimate: Dance With Fire all count as Aftershock DMG, and using these skills counts as triggering Aftershock."
+      },
+      {
+        "0": "Orphie & Magus's CRIT Rate increases by <ct color=#2BAD00>20.8%</ct>, and Aftershock DMG increases by <ct color=#2BAD00>70.8%</ct>.",
+        "1": "Orphie & Magus initially gain 100 Bottled Heat, up to a maximum of 125.",
+        "2": "When Orphie & Magus are off-field, if Special Attack: Corrosive Flash is available and Energy is greater than or equal to 60, consume 30 Energy to automatically trigger EX Special Attack: Crimson Vortex instead.",
+        "3": "When the laser from EX Special Attack: Heat Charge hits enemies, all squad members gain Zeroed In for 12s. Repeated triggers reset the duration. Zeroed In increases Agent ATK by <ct color=#2BAD00>230</ct>. When Orphie & Magus's initial Energy Regen is greater than or equal to 1.6, for every 0.1 initial Energy Regen above this threshold, ATK increases by an additional 20. The total increase from both initial and additional ATK increases cannot exceed <ct color=#2BAD00>580</ct>. When an Agent with Zeroed In triggers Aftershock, their Zeroed In duration extends by 4s, up to a maximum extension of 20s.",
+        "4": "The fire blade attack from Basic Attack: High-Pressure Flamethrower, EX Special Attack: Watch Your Step, EX Special Attack: Crimson Vortex, EX Special Attack: Heat Charge, EX Special Attack: Fiery Eruption, Chain Attack: Overheated Barrel, and Ultimate: Dance With Fire all count as Aftershock DMG, and using these skills counts as triggering Aftershock."
+      },
+      {
+        "0": "Orphie & Magus's CRIT Rate increases by <ct color=#2BAD00>22.9%</ct>, and Aftershock DMG increases by <ct color=#2BAD00>77.9%</ct>.",
+        "1": "Orphie & Magus initially gain 100 Bottled Heat, up to a maximum of 125.",
+        "2": "When Orphie & Magus are off-field, if Special Attack: Corrosive Flash is available and Energy is greater than or equal to 60, consume 30 Energy to automatically trigger EX Special Attack: Crimson Vortex instead.",
+        "3": "When the laser from EX Special Attack: Heat Charge hits enemies, all squad members gain Zeroed In for 12s. Repeated triggers reset the duration. Zeroed In increases Agent ATK by <ct color=#2BAD00>255</ct>. When Orphie & Magus's initial Energy Regen is greater than or equal to 1.6, for every 0.1 initial Energy Regen above this threshold, ATK increases by an additional 20. The total increase from both initial and additional ATK increases cannot exceed <ct color=#2BAD00>640</ct>. When an Agent with Zeroed In triggers Aftershock, their Zeroed In duration extends by 4s, up to a maximum extension of 20s.",
+        "4": "The fire blade attack from Basic Attack: High-Pressure Flamethrower, EX Special Attack: Watch Your Step, EX Special Attack: Crimson Vortex, EX Special Attack: Heat Charge, EX Special Attack: Fiery Eruption, Chain Attack: Overheated Barrel, and Ultimate: Dance With Fire all count as Aftershock DMG, and using these skills counts as triggering Aftershock."
+      },
+      {
+        "0": "Orphie & Magus's CRIT Rate increases by <ct color=#2BAD00>25%</ct>, and Aftershock DMG increases by <ct color=#2BAD00>85%</ct>.",
+        "1": "Orphie & Magus initially gain 100 Bottled Heat, up to a maximum of 125.",
+        "2": "When Orphie & Magus are off-field, if Special Attack: Corrosive Flash is available and Energy is greater than or equal to 60, consume 30 Energy to automatically trigger EX Special Attack: Crimson Vortex instead.",
+        "3": "When the laser from EX Special Attack: Heat Charge hits enemies, all squad members gain Zeroed In for 12s. Repeated triggers reset the duration. Zeroed In increases Agent ATK by <ct color=#2BAD00>280</ct>. When Orphie & Magus's initial Energy Regen is greater than or equal to 1.6, for every 0.1 initial Energy Regen above this threshold, ATK increases by an additional 20. The total increase from both initial and additional ATK increases cannot exceed <ct color=#2BAD00>700</ct>. When an Agent with Zeroed In triggers Aftershock, their Zeroed In duration extends by 4s, up to a maximum extension of 20s.",
+        "4": "The fire blade attack from Basic Attack: High-Pressure Flamethrower, EX Special Attack: Watch Your Step, EX Special Attack: Crimson Vortex, EX Special Attack: Heat Charge, EX Special Attack: Fiery Eruption, Chain Attack: Overheated Barrel, and Ultimate: Dance With Fire all count as Aftershock DMG, and using these skills counts as triggering Aftershock."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Forged in Flames",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> or <ct color=#FFFFFF>Support</ct> character:",
+      "1": "Aftershock DMG dealt by Agents with Zeroed In ignores 25% DEF."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Luxurious Cat House",
+      "desc": "Orphie & Magus' Special Attack: Corrosive Flash, EX Special Attack: Crimson Vortex, EX Special Attack: Heat Charge, and EX Special Attack: Fiery Eruption ignore 15% of target's <ct color=#FF5521>Fire RES</ct>, and Agents with Zeroed In deal 20% increased DMG.",
+      "flavor": {
+        "0": "The corners of Orphie's room are filled with all sorts of cat supplies: a cat tree for climbing, a soft cushion, a scratching post that won't break, and carefully selected toys...",
+        "1": "\"I'm always worried about finding a sick, homeless cat near the outpost... If I have these things ready in advance, it'll be easier for them to stay here...\"",
+        "2": "\"Though we can't keep cats in the camp... I'll definitely find a kind owner for them within the captain's deadline!\"",
+        "3": "\"But Orphie, those things have been in the dorm for three years, and you still haven't found such a cat!\""
+      }
+    },
+    "2": {
+      "name": "Weird Food List",
+      "desc": "When Orphie & Magus launch an Aftershock, restore 65 Decibels. This effect can trigger once every 4s. After Orphie & Magus use their Ultimate, their ATK increases by 20% for up to 45s.",
+      "flavor": {
+        "0": "Sea grape popcorn, sakura peach seafood porridge, spicy strawberry braised tofu... Orphie sometimes tries foods with bizarre flavors, all chaotically listed on the list at the corner of her desk.",
+        "1": "\"While tasty food is tempting, interesting flavors are worth trying too! ...Just as long as they're not bitter!\"",
+        "2": "\"Hey Proxy, wanna try my favorite ultra-spicy strawberry coconut candy? I've already unwrapped it for you—\"",
+        "3": "\"Soldier Orphie, your weird tastes are gonna scare away all your friends one day!\""
+      }
+    },
+    "3": {
+      "name": "\"Tactics Manual\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "No one knows what's written in the \"Tactics Manual: Orphie's Special Extension\" sitting on the young lady's bedside table, not even Captain Magus...",
+        "1": "\"'Annihilation-1', 'Retreat-3', 'Patrol-2'... Oh, and 'Social Rendezvous-5'!\"",
+        "2": "\"Hold up, Orphie, since when did the tactical strategies for social rendezvous expand to five entries?!\"",
+        "3": "\"I was just testing if you were familiar enough with the Tactics Manual, hehe! You passed, Captain!\""
+      }
+    },
+    "4": {
+      "name": "Pink Holster",
+      "desc": "Initial duration of Zeroed In increases to 16s, and Orphie & Magus's EX Special Attack: Heat Charge and Ultimate: Dance With Fire DMG increases by 40%.",
+      "flavor": {
+        "0": "Magus never responds to empty threats, which is exactly why Orphie actually bought a pink holster.",
+        "1": "It sits in the bottom drawer of the storage locker, serving as a constant reminder for Magus to watch her words — though with limited success.",
+        "2": "\"Captain, I've told you before, think thrice before speaking, or you'll end up hurting others!\"",
+        "3": "\"Those punks deserved those bullets! Wait, Orphie... Squad Member Orphie, I order you to put that horrendously pink thing down!\""
+      }
+    },
+    "5": {
+      "name": "Ferry Toll",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "It was Orphie who placed the silver, gleaming commemorative coin right at the entrance where anyone could see it.",
+        "1": "\"Where could that silver coin for crossing the River of the underworld be~\"",
+        "2": "\"How about... making a set of commemorative coins like this? Using the squad emblem as the design, as a symbol of our squad spirit.\"",
+        "3": "\"So a badge of moonlight can be born from black flames...?\"",
+        "4": "\"Stop saying things nobody understands, Soldier 11! But Trigger's idea is great! We could even put all the squad members' names on the back! What do you think, Captain?\"",
+        "5": "\"Approved.\""
+      }
+    },
+    "6": {
+      "name": "Magic Seed",
+      "desc": "With enough energy, after the fire blade attack of Basic Attack: High-Pressure Flamethrower, press <IconSpecialReady /> to immediately follow up with EX Special Attack: Crimson Vortex. When the fire blade attack of Basic Attack: High-Pressure Flamethrower is activated, recover 10 Bottled Heat, and the Interrupt Level during the low firepower phase of EX Special Attack: Heat Charge will also increase. When the laser from EX Special Attack: Heat Charge or Ultimate hits enemies, it deals additional <ct color=#FF5521>Fire DMG</ct> equal to 250% of Orphie & Magus's ATK. This effect can trigger once every 0.5s and is counted as EX Special Attack and Aftershock DMG.",
+      "flavor": {
+        "0": "\"Captain, this kind of seed won't grow into a flower. Just like me... no matter how hard I try, nothing ever comes of it...\"",
+        "1": "\"Orphie, this is a magic seed. Though it can't bloom or sprout on its own, it helps other seeds grow into mighty trees... Just keep it with you, and it will bring you good fortune.\"",
+        "2": "\"Like me, it will always stay by your side, Orphie, watching as you gradually become the finest soldier.\"",
+        "3": "—Facing that tiny figure who clumsily wipes away tears with her palms, her face twisted with hurt and sadness, Magus's voice flowed from her muzzle with a gentleness never heard before."
+      }
+    }
+  }
+}

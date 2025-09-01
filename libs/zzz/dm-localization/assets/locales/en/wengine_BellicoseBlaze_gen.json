@@ -1,0 +1,14 @@
+{
+  "name": "Bellicose Blaze",
+  "desc": "...",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "...",
+  "phase": "Flame-Devouring Choir",
+  "phaseDescs": [
+    "Increases CRIT Rate by <ct color=#2BAD00>20%</ct>. When the equipper triggers an <ct color=#FFFFFF>Aftershock</ct> that deals <ct color=#FF5521>Fire DMG</ct>, their attacks ignore <ct color=#2BAD00>15%</ct> of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration.",
+    "Increases CRIT Rate by <ct color=#2BAD00>23%</ct>. When the equipper triggers an <ct color=#FFFFFF>Aftershock</ct> that deals <ct color=#FF5521>Fire DMG</ct>, their attacks ignore <ct color=#2BAD00>17.2%</ct> of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration.",
+    "Increases CRIT Rate by <ct color=#2BAD00>26%</ct>. When the equipper triggers an <ct color=#FFFFFF>Aftershock</ct> that deals <ct color=#FF5521>Fire DMG</ct>, their attacks ignore <ct color=#2BAD00>19.5%</ct> of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration.",
+    "Increases CRIT Rate by <ct color=#2BAD00>29%</ct>. When the equipper triggers an <ct color=#FFFFFF>Aftershock</ct> that deals <ct color=#FF5521>Fire DMG</ct>, their attacks ignore <ct color=#2BAD00>21.7%</ct> of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration.",
+    "Increases CRIT Rate by <ct color=#2BAD00>32%</ct>. When the equipper triggers an <ct color=#FFFFFF>Aftershock</ct> that deals <ct color=#FF5521>Fire DMG</ct>, their attacks ignore <ct color=#2BAD00>24%</ct> of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration."
+  ]
+}
