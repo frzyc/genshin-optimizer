@@ -48,7 +48,7 @@ const ability_check = (node: NumNode) =>
       team.common.count.withSpecialty('anomaly'),
       team.common.count.withFaction('SpookShack')
     ),
-    1,
+    2,
     node
   )
 

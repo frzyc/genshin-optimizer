@@ -37,8 +37,9 @@ const sheet = createBaseSheet(key, {
         {
           type: 'conditional',
           conditional: {
-            label: ch('polarityDisorderCond'),
-            metadata: cond.exSpecial_polarity_disorder,
+            label: (_, value) => ch(`polarityDisorderCond.${value}`),
+            metadata: cond.polarityDisorder,
+            badge: (_, value) => (value === 0 ? null : value),
             fields: [
               fieldForBuff(buff.exSpecial_anom_base_),
               fieldForBuff(buff.exSpecial_anom_flat_dmg),
@@ -55,15 +56,16 @@ const sheet = createBaseSheet(key, {
       ],
     },
     chain: {
-      ChainAttackCelestialHarmony: [
+      UltimateRaieiTenge: [
         {
           type: 'conditional',
           conditional: {
-            label: ch('polarityDisorderCond'),
-            metadata: cond.chain_polarity_disorder,
+            label: (_, value) => ch(`polarityDisorderCond.${value}`),
+            badge: (_, value) => (value === 0 ? null : value),
+            metadata: cond.polarityDisorder,
             fields: [
-              fieldForBuff(buff.chain_anom_base_),
-              fieldForBuff(buff.chain_anom_flat_dmg),
+              fieldForBuff(buff.ult_anom_base_),
+              fieldForBuff(buff.ult_anom_flat_dmg),
             ],
           },
         },

@@ -1,7 +1,4 @@
 {
   "core_common_dmg_": "Extended Slash DMG",
-  "m1Cond": "When Corin's Chain Attack or Ultimate hits an enemy",
-  "m2Cond": "When Corin's EX Special Attack, Chain Attack or Ultimate hits an enemy",
-  "m6Cond": "When Corin's extended slash hits an enemy",
-  "m6_dmg": "DMG"
+  "m6Cond": "When Corin's extended slash hits an enemy"
 }

@@ -48,7 +48,7 @@ const sheet = register(
   ...customDmg(
     'm6_additional_dmg',
     { ...baseTag, damageType1: 'elemental' },
-    prod(own.final.anomProf, percent(dm.m6.dmg))
+    cmpGE(char.mindscape, 6, prod(own.final.anomProf, percent(dm.m6.dmg)))
   ),
 
   // Buffs

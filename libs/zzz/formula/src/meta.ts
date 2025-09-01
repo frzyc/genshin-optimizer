@@ -1141,21 +1141,17 @@ export const conditionals = {
   },
   Yanagi: {
     basic_hit: { sheet: 'Yanagi', name: 'basic_hit', type: 'bool' },
-    chain_polarity_disorder: {
-      sheet: 'Yanagi',
-      name: 'chain_polarity_disorder',
-      type: 'bool',
-    },
     clarity: { sheet: 'Yanagi', name: 'clarity', type: 'bool' },
-    exSpecial_polarity_disorder: {
-      sheet: 'Yanagi',
-      name: 'exSpecial_polarity_disorder',
-      type: 'bool',
-    },
     exSpecial_used: { sheet: 'Yanagi', name: 'exSpecial_used', type: 'bool' },
     exposed: { sheet: 'Yanagi', name: 'exposed', type: 'bool' },
     jougen: { sheet: 'Yanagi', name: 'jougen', type: 'bool' },
     kagen: { sheet: 'Yanagi', name: 'kagen', type: 'bool' },
+    polarityDisorder: {
+      sheet: 'Yanagi',
+      name: 'polarityDisorder',
+      type: 'list',
+      list: ['exSpecial', 'ult'],
+    },
     shinrabanshou: { sheet: 'Yanagi', name: 'shinrabanshou', type: 'bool' },
     thrusts: {
       sheet: 'Yanagi',
@@ -39537,16 +39533,16 @@ export const buffs = {
         name: 'exSpecial_anom_base_',
       },
     },
-    chain_anom_base_: {
+    ult_anom_base_: {
       sheet: 'Yanagi',
-      name: 'chain_anom_base_',
+      name: 'ult_anom_base_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'anom_base_',
         sheet: 'Yanagi',
         damageType1: 'disorder',
-        name: 'chain_anom_base_',
+        name: 'ult_anom_base_',
       },
     },
     exSpecial_anom_flat_dmg: {
@@ -39561,16 +39557,16 @@ export const buffs = {
         name: 'exSpecial_anom_flat_dmg',
       },
     },
-    chain_anom_flat_dmg: {
+    ult_anom_flat_dmg: {
       sheet: 'Yanagi',
-      name: 'chain_anom_flat_dmg',
+      name: 'ult_anom_flat_dmg',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'anom_flat_dmg',
         sheet: 'Yanagi',
         damageType1: 'disorder',
-        name: 'chain_anom_flat_dmg',
+        name: 'ult_anom_flat_dmg',
       },
     },
     core_addl_disorder_: {

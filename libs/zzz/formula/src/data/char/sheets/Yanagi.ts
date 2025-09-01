@@ -1,8 +1,15 @@
-import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
+import {
+  cmpEq,
+  cmpGE,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
+  allListConditionals,
   allNumConditionals,
   own,
   ownBuff,
@@ -27,8 +34,6 @@ const baseTag = getBaseTag(data_gen)
 const { char } = own
 
 const {
-  exSpecial_polarity_disorder,
-  chain_polarity_disorder,
   exSpecial_used,
   basic_hit,
   jougen,
@@ -38,6 +43,7 @@ const {
   shinrabanshou,
 } = allBoolConditionals(key)
 const { thrusts } = allNumConditionals(key, true, 0, dm.m6.max_stacks)
+const { polarityDisorder } = allListConditionals(key, ['exSpecial', 'ult'])
 
 const m2_exSpecial_electric_anomBuildup_ =
   ownBuff.combat.anomBuildup_.electric.addWithDmgType(
@@ -120,7 +126,9 @@ const sheet = register(
     'exSpecial_anom_base_',
     ownBuff.combat.anom_base_.addWithDmgType(
       'disorder',
-      exSpecial_polarity_disorder.ifOn(
+      cmpEq(
+        polarityDisorder.value,
+        1,
         cmpGE(
           char.mindscape,
           2,
@@ -136,10 +144,12 @@ const sheet = register(
     true
   ),
   registerBuff(
-    'chain_anom_base_',
+    'ult_anom_base_',
     teamBuff.combat.anom_base_.addWithDmgType(
       'disorder',
-      chain_polarity_disorder.ifOn(
+      cmpEq(
+        polarityDisorder.value,
+        2,
         cmpGE(
           char.mindscape,
           2,
@@ -158,7 +168,9 @@ const sheet = register(
     'exSpecial_anom_flat_dmg',
     teamBuff.combat.anom_flat_dmg.addWithDmgType(
       'disorder',
-      exSpecial_polarity_disorder.ifOn(
+      cmpEq(
+        polarityDisorder.value,
+        1,
         prod(
           sum(percent(5), prod(char.special, percent(2.25))),
           own.final.anomProf
@@ -169,10 +181,12 @@ const sheet = register(
     true
   ),
   registerBuff(
-    'chain_anom_flat_dmg',
+    'ult_anom_flat_dmg',
     teamBuff.combat.anom_flat_dmg.addWithDmgType(
       'disorder',
-      chain_polarity_disorder.ifOn(
+      cmpEq(
+        polarityDisorder.value,
+        2,
         prod(
           sum(percent(5), prod(char.chain, percent(2.25))),
           own.final.anomProf
