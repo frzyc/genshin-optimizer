@@ -41,7 +41,7 @@ export default function PageDocumentation() {
         </Grid>
         <Grid item>
           <Typography variant="h6">
-            <SqBadge color="info">Version. 3</SqBadge>
+            <SqBadge color="info">Version 3</SqBadge>
           </Typography>
         </Grid>
       </Grid>
