@@ -428,11 +428,11 @@ function VersionHistoryPane() {
           <Typography>
             Adds new fields to <code>IArtifact</code> to represent new in-game
             properties, and help differentiate between 3 and 4-line starts for
-            5* artfiacts. All other fields remain the same. V3 is backwards
+            5* artifacts. All other fields remain the same. V3 is backwards
             compatible with V2.
             <br />
             New fields:{' '}
-            <code>totalRolls, startingRolls, astralMark, elixirCrafted</code>
+            <code>totalRolls, startingRolls, astralMark, discard, elixirCrafted</code>
           </Typography>
         </CardContent>
       </CardThemed>
