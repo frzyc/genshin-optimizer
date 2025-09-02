@@ -6,7 +6,7 @@ import { st, tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'CordisGermina'
-const [chg, ch] = trans('wengine', key)
+const [chg, _ch] = trans('wengine', key)
 const icon = wengineAsset(key, 'icon')
 const cond = conditionals[key]
 const buff = buffs[key]
