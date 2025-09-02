@@ -87,6 +87,17 @@ const sheet = register(
       { damageType1: 'dash' },
       'atk'
     ),
+    // SpecialAttackCorrosiveFlash is an aftershock
+    dmgDazeAndAnomOverride(
+      dm,
+      'special',
+      'SpecialAttackCorrosiveFlash',
+      0,
+      { ...baseTag, damageType1: 'special', damageType2: 'aftershock' },
+      'atk',
+      undefined,
+      m1_fire_resIgn_
+    ),
     // EXSpecialAttackWatchYourStep is an aftershock
     dmgDazeAndAnomOverride(
       dm,
