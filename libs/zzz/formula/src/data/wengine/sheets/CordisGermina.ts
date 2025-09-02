@@ -1,16 +1,12 @@
-import { subscript } from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
-  allBoolConditionals,
-  allListConditionals,
   allNumConditionals,
-  enemyDebuff,
   own,
   ownBuff,
   percent,
   registerBuff,
-  teamBuff,
 } from '../../util'
 import {
   cmpSpecialtyAndEquipped,
@@ -23,39 +19,63 @@ const key: WengineKey = 'CordisGermina'
 const dm = mappedStats.wengine[key]
 const { phase } = own.wengine
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { basic_exSpecial_used } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerWengine(
   key,
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
-  // TODO: Add formulas/buffs
+  // Passive buffs
+  registerBuff(
+    'passive_crit_',
+    ownBuff.combat.crit_.add(
+      cmpSpecialtyAndEquipped(key, percent(subscript(phase, dm.passive_crit_)))
+    ),
+    showSpecialtyAndEquipped(key)
+  ),
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.combat.common_dmg_.add(
+    'cond_electric_dmg_',
+    ownBuff.combat.dmg_.electric.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(percent(subscript(phase, dm.cond_dmg_)))
+        percent(prod(basic_exSpecial_used, subscript(phase, dm.electric_dmg_)))
       )
     ),
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(
-      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
+    'cond_basic_defIgn_',
+    ownBuff.combat.defIgn_.addWithDmgType(
+      'basic',
+      cmpSpecialtyAndEquipped(
+        key,
+        percent(
+          cmpGE(
+            basic_exSpecial_used,
+            dm.stack_threshold,
+            subscript(phase, dm.basic_ult_defIgn_)
+          )
+        )
+      )
     ),
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(
-      cmpSpecialtyAndEquipped(key, numConditional)
+    'cond_ult_defIgn_',
+    ownBuff.combat.defIgn_.addWithDmgType(
+      'ult',
+      cmpSpecialtyAndEquipped(
+        key,
+        percent(
+          cmpGE(
+            basic_exSpecial_used,
+            dm.stack_threshold,
+            subscript(phase, dm.basic_ult_defIgn_)
+          )
+        )
+      )
     ),
     showSpecialtyAndEquipped(key)
   )

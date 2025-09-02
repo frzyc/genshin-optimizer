@@ -78,20 +78,9 @@ export const conditionals = {
     },
   },
   BellicoseBlaze: {
-    boolConditional: {
+    fire_aftershocks: {
       sheet: 'BellicoseBlaze',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BellicoseBlaze',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BellicoseBlaze',
-      name: 'numConditional',
+      name: 'fire_aftershocks',
       type: 'num',
       int_only: true,
       min: 0,
@@ -226,20 +215,9 @@ export const conditionals = {
     },
   },
   CordisGermina: {
-    boolConditional: {
+    basic_exSpecial_used: {
       sheet: 'CordisGermina',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'CordisGermina',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'CordisGermina',
-      name: 'numConditional',
+      name: 'basic_exSpecial_used',
       type: 'num',
       int_only: true,
       min: 0,
@@ -42696,37 +42674,28 @@ export const buffs = {
     },
   },
   BellicoseBlaze: {
-    cond_dmg_: {
+    passive_crit_: {
       sheet: 'BellicoseBlaze',
-      name: 'cond_dmg_',
+      name: 'passive_crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'BellicoseBlaze',
-        name: 'cond_dmg_',
+        name: 'passive_crit_',
       },
     },
-    team_dmg_: {
+    cond_fire_aftershock_defIgn_: {
       sheet: 'BellicoseBlaze',
-      name: 'team_dmg_',
+      name: 'cond_fire_aftershock_defIgn_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'defIgn_',
         sheet: 'BellicoseBlaze',
-        name: 'team_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'BellicoseBlaze',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'BellicoseBlaze',
-        name: 'enemy_defIgn_',
+        attribute: 'fire',
+        damageType1: 'aftershock',
+        name: 'cond_fire_aftershock_defIgn_',
       },
     },
   },
@@ -42856,37 +42825,51 @@ export const buffs = {
     },
   },
   CordisGermina: {
-    cond_dmg_: {
+    passive_crit_: {
       sheet: 'CordisGermina',
-      name: 'cond_dmg_',
+      name: 'passive_crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'CordisGermina',
-        name: 'cond_dmg_',
+        name: 'passive_crit_',
       },
     },
-    team_dmg_: {
+    cond_electric_dmg_: {
       sheet: 'CordisGermina',
-      name: 'team_dmg_',
+      name: 'cond_electric_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'CordisGermina',
-        name: 'team_dmg_',
+        attribute: 'electric',
+        name: 'cond_electric_dmg_',
       },
     },
-    enemy_defIgn_: {
+    cond_basic_defIgn_: {
       sheet: 'CordisGermina',
-      name: 'enemy_defIgn_',
+      name: 'cond_basic_defIgn_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
+        qt: 'combat',
+        q: 'defIgn_',
         sheet: 'CordisGermina',
-        name: 'enemy_defIgn_',
+        damageType1: 'basic',
+        name: 'cond_basic_defIgn_',
+      },
+    },
+    cond_ult_defIgn_: {
+      sheet: 'CordisGermina',
+      name: 'cond_ult_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'defIgn_',
+        sheet: 'CordisGermina',
+        damageType1: 'ult',
+        name: 'cond_ult_defIgn_',
       },
     },
   },
