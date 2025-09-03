@@ -432,7 +432,9 @@ function VersionHistoryPane() {
             compatible with V2.
             <br />
             New fields:{' '}
-            <code>totalRolls, startingRolls, astralMark, discard, elixirCrafted</code>
+            <code>
+              totalRolls, startingRolls, astralMark, discard, elixirCrafted
+            </code>
           </Typography>
         </CardContent>
       </CardThemed>
