@@ -41,7 +41,7 @@ export default function PageDocumentation() {
         </Grid>
         <Grid item>
           <Typography variant="h6">
-            <SqBadge color="info">Version. 2</SqBadge>
+            <SqBadge color="info">Version 3</SqBadge>
           </Typography>
         </Grid>
       </Grid>
@@ -160,6 +160,12 @@ const artifactCode = `interface IArtifact {
   location: CharacterKey|"" //where "" means not equipped.
   lock: boolean //Whether the artifact is locked in game.
   substats: ISubstat[]
+  // Below are new to GOOD 3
+  totalRolls?: number // 3-9 for valid 5* artifacts; includes starting rolls
+  startingRolls?: number // 3-4 for valid 5* artifacts; If a 4th substat is in substats array, and this value is 3, the 4th substat is a revealed stat, but should not be factored into calculation
+  astralMark?: boolean // Favorite star in-game
+  discard?: boolean // Trash icon in-game
+  elixirCrafted?: boolean // Flag for if the artifact was created using Sanctifying Elixir. This guarantees the main stat + 2 additional rolls on the first 2 substats
 }
 
 interface ISubstat {
@@ -410,6 +416,25 @@ function VersionHistoryPane() {
           <Typography>
             Adds <code>materials</code> field to <code>IGOOD</code>. All other
             fields remain the same. V2 is backwards compatible with V1.
+          </Typography>
+        </CardContent>
+      </CardThemed>
+      <CardThemed>
+        <CardContent>
+          <Typography>Version 3</Typography>
+        </CardContent>
+        <Divider />
+        <CardContent>
+          <Typography>
+            Adds new fields to <code>IArtifact</code> to represent new in-game
+            properties, and help differentiate between 3 and 4-line starts for
+            5* artifacts. All other fields remain the same. V3 is backwards
+            compatible with V2.
+            <br />
+            New fields:{' '}
+            <code>
+              totalRolls, startingRolls, astralMark, discard, elixirCrafted
+            </code>
           </Typography>
         </CardContent>
       </CardThemed>
