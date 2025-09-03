@@ -150,7 +150,7 @@ export class ArtCharDatabase extends Database {
       format: 'GOOD',
       dbVersion: currentDBVersion,
       source: GOSource,
-      version: 1,
+      version: 3,
     }
     this.dataManagers.map((dm) => dm.exportGOOD(good))
     this.dataEntries.map((de) => de.exportGOOD(good))
