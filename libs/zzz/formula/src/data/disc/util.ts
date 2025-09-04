@@ -32,6 +32,15 @@ export function entriesForDisc(key: DiscSetKey): TagMapNodeEntries {
         showCond2Set
       ),
     ]
+  if (key === 'DawnsBloom') {
+    return [
+      ...registerBuff(
+        'set2_basic_dmg_',
+        ownBuff.initial.dmg_.addWithDmgType('basic', cmpGE(discCount, 2, 0.15)),
+        showCond2Set
+      ),
+    ]
+  }
 
   const dataGen = disc2pEffect[key]
 
