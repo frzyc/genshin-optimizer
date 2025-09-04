@@ -20,6 +20,10 @@ const sheet: UISheet<'2' | '4'> = {
         type: 'text',
         text: chg('desc2'),
       },
+      {
+        type: 'fields',
+        fields: [tagToTagField(buff.set2_basic_dmg_.tag)],
+      },
     ],
   },
   4: {

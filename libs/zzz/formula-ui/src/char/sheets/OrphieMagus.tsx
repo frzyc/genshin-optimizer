@@ -55,7 +55,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m2Cond'),
+        label: st('uponLaunch.1', { val1: '$t(skills.ult)' }),
         metadata: cond.ultUsed,
         fields: [fieldForBuff(buff.m2_atk_)],
       },

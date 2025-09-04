@@ -12,6 +12,7 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'DawnsBloom'
 
 const discCount = own.common.count.sheet(key)
+const showCond2Set = cmpGE(discCount, 2, 'infer', '')
 const showCond4Set = cmpGE(discCount, 4, 'infer', '')
 
 const { exSpecial_ult_used } = allBoolConditionals(key)
@@ -23,11 +24,20 @@ const sheet = registerDisc(
 
   // Passive
   registerBuff(
+    'set2_basic_dmg_',
+    ownBuff.initial.dmg_.addWithDmgType(
+      'basic',
+      cmpGE(discCount, 2, percent(0.15))
+    ),
+    showCond2Set
+  ),
+  registerBuff(
     'set4_basic_dmg_',
     ownBuff.combat.dmg_.addWithDmgType(
       'basic',
       cmpGE(discCount, 4, percent(0.2))
-    )
+    ),
+    showCond4Set
   ),
   // Conditional buffs
   registerBuff(
