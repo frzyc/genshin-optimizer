@@ -36,70 +36,70 @@
     "basic": {
       "BasicAttackCelestialOverture": [
         {
-          "DamagePercentage": 0.606,
-          "DamagePercentageGrowth": 0.056,
-          "StunRatio": 0.436,
-          "StunRatioGrowth": 0.02,
-          "SpRecovery": 158.5,
+          "DamagePercentage": 0.551,
+          "DamagePercentageGrowth": 0.051,
+          "StunRatio": 0.397,
+          "StunRatioGrowth": 0.019,
+          "SpRecovery": 144.1,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 849.75,
+          "FeverRecovery": 772.75,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 32.72
+          "AttributeInfliction": 29.76
         },
         {
-          "DamagePercentage": 0.825,
-          "DamagePercentageGrowth": 0.075,
-          "StunRatio": 0.659,
-          "StunRatioGrowth": 0.03,
-          "SpRecovery": 239.3,
+          "DamagePercentage": 0.88,
+          "DamagePercentageGrowth": 0.08,
+          "StunRatio": 0.698,
+          "StunRatioGrowth": 0.032,
+          "SpRecovery": 253.8,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 1281.5,
+          "FeverRecovery": 1358.5,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 49.15
+          "AttributeInfliction": 52.13
         },
         {
-          "DamagePercentage": 0.587,
-          "DamagePercentageGrowth": 0.054,
-          "StunRatio": 0.54,
-          "StunRatioGrowth": 0.025,
-          "SpRecovery": 196.2,
+          "DamagePercentage": 0.661,
+          "DamagePercentageGrowth": 0.061,
+          "StunRatio": 0.599,
+          "StunRatioGrowth": 0.028,
+          "SpRecovery": 217.9,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 1050.5,
+          "FeverRecovery": 1166,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 40.01
+          "AttributeInfliction": 44.45
         },
         {
-          "DamagePercentage": 1.284,
-          "DamagePercentageGrowth": 0.117,
-          "StunRatio": 1.188,
-          "StunRatioGrowth": 0.054,
-          "SpRecovery": 432,
+          "DamagePercentage": 1.119,
+          "DamagePercentageGrowth": 0.102,
+          "StunRatio": 1.051,
+          "StunRatioGrowth": 0.048,
+          "SpRecovery": 382,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 2310,
+          "FeverRecovery": 2043.25,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 88.08
+          "AttributeInfliction": 77.81
         },
         {
           "DamagePercentage": 1.303,
           "DamagePercentageGrowth": 0.119,
-          "StunRatio": 1.321,
-          "StunRatioGrowth": 0.061,
-          "SpRecovery": 480.2,
+          "StunRatio": 1.317,
+          "StunRatioGrowth": 0.06,
+          "SpRecovery": 478.7,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 2568.5,
+          "FeverRecovery": 2560.25,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 97.49
+          "AttributeInfliction": 97.2
         },
         {
-          "DamagePercentage": 2.164,
-          "DamagePercentageGrowth": 0.197,
-          "StunRatio": 2.096,
+          "DamagePercentage": 2.183,
+          "DamagePercentageGrowth": 0.199,
+          "StunRatio": 2.109,
           "StunRatioGrowth": 0.096,
-          "SpRecovery": 762.2,
+          "SpRecovery": 766.7,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 4075.5,
+          "FeverRecovery": 4100.25,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 155.07
+          "AttributeInfliction": 156
         }
       ],
       "BasicAttackStarshineWaltz": [
@@ -142,15 +142,15 @@
       "DodgeJumpyBunny": [],
       "DashAttackBladeDancersGale": [
         {
-          "DamagePercentage": 0.734,
-          "DamagePercentageGrowth": 0.067,
-          "StunRatio": 0.331,
+          "DamagePercentage": 0.753,
+          "DamagePercentageGrowth": 0.069,
+          "StunRatio": 0.339,
           "StunRatioGrowth": 0.016,
-          "SpRecovery": 120.1,
+          "SpRecovery": 123.1,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 643.5,
+          "FeverRecovery": 660,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 23.34
+          "AttributeInfliction": 23.92
         }
       ],
       "DodgeCounterCeremonyOfSwordlight": [

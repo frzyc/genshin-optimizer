@@ -1,0 +1,265 @@
+{
+  "name": "Seed",
+  "fullName": "Seed",
+  "basic": {
+    "BasicAttackChrysanthemumWheelDance": {
+      "name": "Basic Attack: Chrysanthemum Wheel Dance",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Perform up to 4 attacks forward, dealing <ct color=#F0D12B>Physical DMG</ct> for the first two hits and <ct color=#2EB6FF>Electric DMG</ct> for the third and fourth hits.",
+        "2": "When attacked between the retreat of the 3rd hit to before the 4th hit, triggers an automatic dodge."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackFallingPetalsSlaughter": {
+      "name": "Basic Attack: Falling Petals - Slaughter",
+      "desc": {
+        "0": "After the 4th hit of a <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge Counter</ct>, <ct color=#FFFFFF>Quick Assist</ct>, or <ct color=#FFFFFF>Assist Follow-Up</ct>, hold or press <IconNormal /> to activate:",
+        "1": "Summon the mech to perform a charged punch attack, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "When <ct color=#FFFFFF>Steel Charge</ct> reaches 120, gain one chance to quickly activate <ct color=#FFFFFF>Basic Attack: Falling Petals - Slaughter</ct> by holding <IconNormal />. This effect expires when <ct color=#FFFFFF>Steel Charge</ct> is less than 120 or after using the method above to activate <ct color=#FFFFFF>Basic Attack: Falling Petals - Slaughter</ct> once.",
+        "3": "Does not accumulate <ct color=#FFFFFF>Steel Charge</ct> on hit.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackFallingPetalsDownfall": {
+      "name": "Basic Attack: Falling Petals - Downfall",
+      "desc": {
+        "0": "Seed has <ct color=#FFFFFF>Steel Charge</ct>, which she can accumulate by hitting enemies with her skills.",
+        "1": "<ct color=#FFFFFF>Steel Charge</ct> has a maximum value of 150, and an initial value of 60. Upon reaching 120 <ct color=#FFFFFF>Steel Charge</ct> and triggering <ct color=#FFFFFF>Basic Attack: Falling Petals - Slaughter</ct> or <ct color=#FFFFFF>Ultimate: Clockwork Garden - Bloom!</ct>, press or hold <IconNormal /> to consume 60 <ct color=#FFFFFF>Steel Charge</ct> and unleash <ct color=#FFFFFF>Basic Attack: Falling Petals - Downfall First Form</ct>, then automatically consume 60 <ct color=#FFFFFF>Steel Charge</ct> to follow up with <ct color=#FFFFFF>Basic Attack: Falling Petals - Downfall Second Form</ct>.",
+        "2": "Pilots the mech to fire sweeping shots and perform a jumping smash, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "3": "Does not accumulate <ct color=#FFFFFF>Steel Charge</ct> on hit.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    }
+  },
+  "dodge": {
+    "DodgeRunningOnPetals": {
+      "name": "Dodge: Running on Petals",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackMagneticWheelDance": {
+      "name": "Dash Attack: Magnetic Wheel Dance",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Throw steel wheels forward, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterBlossomBurst": {
+      "name": "Dodge Counter: Blossom Burst",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Unleash a barrage of lasers at enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackWitheredInFrost": {
+      "name": "Special Attack: Withered in Frost",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Throw a steel wheel that traces a curved path, dealing <ct color=#2EB6FF>Electric DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackRainingIronPetals": {
+      "name": "EX Special Attack: Raining Iron Petals",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Enter flight mode, where Seed can move in four directions, and unleash a continuous barrage of missiles, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Hold <IconSpecialReady /> to extend the barrage duration while continuously consuming Energy.",
+        "3": "During flight, release <IconSpecialReady /> to trigger <ct color=#FFFFFF>EX Special Attack: Raining Iron Petals - Away</ct>.",
+        "4": "Upon consuming 60 Energy points in one flight, automatically trigger <ct color=#FFFFFF>Basic Attack: Falling Petals - Slaughter</ct>.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Initial Cost ",
+        "Barrage Cost ",
+        " "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackTempestOfFrostyPetals": {
+      "name": "Chain Attack: Tempest of Frosty Petals",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Summons her mech for protection, then launches cannon shots and a barrage of missiles, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateClockworkGardenBloom": {
+      "name": "Ultimate: Clockwork Garden - Bloom!",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Seed will pilot the mech personally, raining down missiles and a meteor shower of rockets, then performing a jumping smash, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "After using this skill, accumulate 60 <ct color=#FFFFFF>Steel Charge</ct>.",
+        "3": "Does not accumulate <ct color=#FFFFFF>Steel Charge</ct> on hit.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistBarrageOfRainingFlowers": {
+      "name": "Quick Assist: Barrage of Raining Flowers",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Unleash a barrage of lasers at enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistSproutingBarrier": {
+      "name": "Defensive Assist: Sprouting Barrier",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpCrimsonCoreBurst": {
+      "name": "Assist Follow-Up: Crimson Core Burst",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Unleash continuous floating turret attacks at enemies ahead, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Flower Chain Protocol",
+    "desc": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Surprise Strike",
+    "desc": {
+      "0": "When another <ct color=#FFFFFF>Attack</ct> Character is in your squad:",
+      "1": "When Seed deals DMG as the active character, restore 2 Energy to the <ct color=#FFFFFF>Vanguard</ct>. This effect can trigger once every 1s.",
+      "2": "Seed's <ct color=#FFFFFF>Basic Attack: Falling Petals - Slaughter</ct>, <ct color=#FFFFFF>Basic Attack: Falling Petals - Downfall</ct>, and <ct color=#FFFFFF>Ultimate: Clockwork Garden - Bloom!</ct> deal 30% increased DMG and ignore 25% of enemy <ct color=#2EB6FF>Electric RES</ct>."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "\"Hibernation Period\"",
+      "desc": "When Seed's <ct color=#FFFFFF>Steel Charge</ct> reaches 100, <ct color=#FFFFFF>Basic Attack: Falling Petals - Downfall</ct> can be triggered, and the total <ct color=#FFFFFF>Steel Charge</ct> consumed is reduced to 100. Gain an additional 40/20 <ct color=#FFFFFF>Steel Charge</ct> when entering the battlefield/using <ct color=#FFFFFF>Ultimate</ct>. Increases <ct color=#FFFFFF>Basic Attack: Falling Petals - Downfall</ct> CRIT DMG by 30%.",
+      "flavor": {
+        "0": "This is a solemn and mysterious building, isolated from the outside world.",
+        "1": "The pure white one belongs here. She shrinks back, carefully peering out through the wire fence. What's the world outside like?",
+        "2": "Her curiosity flows beyond the sterile room, past the crumbling towers, dodging the pink giant flowers in the sky.",
+        "3": "Flowing further and further...",
+        "4": "\"Looks just like a cracked, stinky egg~\"",
+        "5": "\"But I want to experience it for a while...\""
+      }
+    },
+    "2": {
+      "name": "\"Light Absorption Technique\"",
+      "desc": "When <ct color=#FFFFFF>Besiege</ct> is active for an Agent, that Agent's DMG ignores 20% of DEF. When activating <ct color=#FFFFFF>EX Special Attack: Raining Iron Petals</ct>, after consuming a total of 60 Energy, Seed can continue consuming Energy to extend the duration of the skill until the button is released or a total of 120 Energy is consumed. For every 5 Energy consumed by <ct color=#FFFFFF>EX Special Attack: Raining Iron Petals</ct>, the following <ct color=#FFFFFF>Basic Attack: Falling Petals - Slaughter</ct>'s DMG increases by 5%.",
+      "flavor": {
+        "0": "This is a sprawling ruin of twisted steel.",
+        "1": "An inexplicable, indescribable emotion chokes her throat, yet her tongue remains silent...",
+        "2": "Her vision blurs as some alien liquid trickles down her cheeks.",
+        "3": "Rubbing her eyes, blinking...",
+        "4": "What is this blinding thing clumsily drawing closer?",
+        "5": "\"Don't be afraid... I'm here... to save you...\"",
+        "6": "\"Do you have... a name? My codename is... 'Seed.'\""
+      }
+    },
+    "3": {
+      "name": "\"A Story of Sprouting\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "This is just another break room in a military camp.",
+        "1": "They greeted her, trying to open her heart.",
+        "2": "A shy redheaded young lady, a strange chatty gun barrel, a golden retriever with an eye cover...",
+        "3": "The big robot told her that they were all her friends.",
+        "4": "\"What are friends?\"",
+        "5": "\"Friends... they're the ones you see when you look behind you.\""
+      }
+    },
+    "4": {
+      "name": "\"Fragrant Tune\"",
+      "desc": "When Seed's <ct color=#FFFFFF>Besiege</ct> status buff is active, her Decibel Generation Rate increases by 10%, and <ct color=#FFFFFF>Ultimate</ct> DMG increases by 20%.",
+      "flavor": {
+        "0": "This is a grand, bustling plaza.",
+        "1": "On a stage towering above everyone else, someone is muttering something.",
+        "2": "A voice calls out her name, and many people crowd around. The dazed flower is transplanted onto the stage, gunpowder still fresh in her hair.",
+        "3": "The black box flickers with light brighter than stars, and small metal patches are pinned onto both the older and the younger one, both equally at a loss for what to do.",
+        "4": "This recognition also means that from this moment on, she is \"Seed,\" and the robot that has always been by her side is now \"Seed Sr.\"",
+        "5": "\"Did I do well?\"",
+        "6": "\"Of course, you're our pride... this codename is proof of that, Seed.\""
+      }
+    },
+    "5": {
+      "name": "\"Time to Bloom\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "This is a tiny safe house that almost no one knows about.",
+        "1": "The entire space is filled with scattered, miscellaneous items. Boxes, sofas, picture frames, and pots upon pots of flowers — red ones, yellow ones, pink ones, some standing straight, some fluffy, some drooping.",
+        "2": "Close your eyes, cover your mouth, you'll hold it in for sure — she promised.",
+        "3": "\"Give them a little more time, okay?\"",
+        "4": "\"They'll grow up beautifully... just like you.\""
+      }
+    },
+    "6": {
+      "name": "\"Theory of the Heart\"",
+      "desc": {
+        "0": "Seed's CRIT DMG increases by 50%.",
+        "1": "When using <ct color=#FFFFFF>Basic Attack: Falling Petals - Slaughter</ct>, fires 3 additional laser beams, each dealing 165% of ATK as DMG. This effect can trigger once every 3s."
+      },
+      "flavor": {
+        "0": "Here lies a vast sea of flowers, blooming wild and brilliant.",
+        "1": "She remembers how this place once looked — barren, without even a single blade of grass.",
+        "2": "Who could have done such mischief? Who transformed this desolate, gloomy Hollow Zero into this? Who planted such a strong heart in this pale soil?",
+        "3": "\"So you've come such a long way on this circle...\"",
+        "4": "\"Until we meet again, Seed Sr.\""
+      }
+    }
+  }
+}

@@ -23,11 +23,13 @@ import Lycaon from './sheets/Lycaon'
 import Miyabi from './sheets/Miyabi'
 import Nekomata from './sheets/Nekomata'
 import Nicole from './sheets/Nicole'
+import OrphieMagus from './sheets/OrphieMagus'
 import PanYinhu from './sheets/PanYinhu'
 import Piper from './sheets/Piper'
 import Pulchra from './sheets/Pulchra'
 import Qingyi from './sheets/Qingyi'
 import Rina from './sheets/Rina'
+import Seed from './sheets/Seed'
 import Seth from './sheets/Seth'
 import Soldier0Anby from './sheets/Soldier0Anby'
 import Soldier11 from './sheets/Soldier11'
@@ -63,11 +65,13 @@ const data: TagMapNodeEntries[] = [
   Miyabi,
   Nekomata,
   Nicole,
+  OrphieMagus,
   PanYinhu,
   Piper,
   Pulchra,
   Qingyi,
   Rina,
+  Seed,
   Seth,
   Soldier0Anby,
   Soldier11,

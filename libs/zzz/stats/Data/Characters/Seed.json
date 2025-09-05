@@ -1,0 +1,312 @@
+{
+  "id": "1461",
+  "rarity": "S",
+  "attribute": "electric",
+  "specialty": "attack",
+  "faction": "NewEriduDefenseForce",
+  "stats": {
+    "atk_base": 134,
+    "atk_growth": 8.1654,
+    "def_base": 49,
+    "def_growth": 6.6882,
+    "hp_base": 617,
+    "hp_growth": 83.7238,
+    "anomMas": 94,
+    "anomProf": 93,
+    "impact": 93,
+    "enerRegen": 1.2
+  },
+  "promotionStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 423, "atk": 48, "def": 34 },
+    { "hp": 847, "atk": 95, "def": 68 },
+    { "hp": 1270, "atk": 143, "def": 101 },
+    { "hp": 1694, "atk": 191, "def": 135 },
+    { "hp": 2117, "atk": 239, "def": 169 }
+  ],
+  "coreStats": [
+    { "atk": 0, "crit_dmg_": 0.096 },
+    { "atk": 25, "crit_dmg_": 0.096 },
+    { "atk": 25, "crit_dmg_": 0.192 },
+    { "atk": 50, "crit_dmg_": 0.192 },
+    { "atk": 50, "crit_dmg_": 0.288 },
+    { "atk": 75, "crit_dmg_": 0.288 }
+  ],
+  "skillParams": {
+    "basic": {
+      "BasicAttackChrysanthemumWheelDance": [
+        {
+          "DamagePercentage": 0.465,
+          "DamagePercentageGrowth": 0.043,
+          "StunRatio": 0.294,
+          "StunRatioGrowth": 0.014,
+          "SpRecovery": 66.7,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 734.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 1.241,
+          "DamagePercentageGrowth": 0.113,
+          "StunRatio": 0.829,
+          "StunRatioGrowth": 0.038,
+          "SpRecovery": 188.4,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2073.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0.718,
+          "DamagePercentageGrowth": 0.066,
+          "StunRatio": 0.446,
+          "StunRatioGrowth": 0.021,
+          "SpRecovery": 101.4,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1116.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 40.53
+        },
+        {
+          "DamagePercentage": 3.586,
+          "DamagePercentageGrowth": 0.326,
+          "StunRatio": 2.265,
+          "StunRatioGrowth": 0.103,
+          "SpRecovery": 514.6,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 5662.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 205.83
+        }
+      ],
+      "BasicAttackFallingPetalsSlaughter": [
+        {
+          "DamagePercentage": 1.666,
+          "DamagePercentageGrowth": 0.152,
+          "StunRatio": 1.448,
+          "StunRatioGrowth": 0.066,
+          "SpRecovery": 329.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3621.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 131.63
+        }
+      ],
+      "BasicAttackFallingPetalsDownfall": [],
+      "BasicAttackFallingPetalsDownfallFirstForm": [
+        {
+          "DamagePercentage": 5.283,
+          "DamagePercentageGrowth": 0.481,
+          "StunRatio": 0.679,
+          "StunRatioGrowth": 0.031,
+          "SpRecovery": 154.3,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1696.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 61.69
+        }
+      ],
+      "BasicAttackFallingPetalsDownfallSecondForm": [
+        {
+          "DamagePercentage": 9.894,
+          "DamagePercentageGrowth": 0.9,
+          "StunRatio": 1.688,
+          "StunRatioGrowth": 0.077,
+          "SpRecovery": 383.5,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 4218.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 153.36
+        }
+      ]
+    },
+    "dodge": {
+      "DodgeRunningOnPetals": [],
+      "DashAttackMagneticWheelDance": [
+        {
+          "DamagePercentage": 0.642,
+          "DamagePercentageGrowth": 0.059,
+          "StunRatio": 0.321,
+          "StunRatioGrowth": 0.015,
+          "SpRecovery": 73,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 803,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "DodgeCounterBlossomBurst": [
+        {
+          "DamagePercentage": 3.201,
+          "DamagePercentageGrowth": 0.291,
+          "StunRatio": 2.549,
+          "StunRatioGrowth": 0.116,
+          "SpRecovery": 329.3,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3621.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 131.69
+        }
+      ]
+    },
+    "special": {
+      "SpecialAttackWitheredInFrost": [
+        {
+          "DamagePercentage": 0.477,
+          "DamagePercentageGrowth": 0.044,
+          "StunRatio": 0.477,
+          "StunRatioGrowth": 0.022,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1193.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 43.34
+        }
+      ],
+      "EXSpecialAttackRainingIronPetals": [
+        {
+          "DamagePercentage": 0.184,
+          "DamagePercentageGrowth": 0.017,
+          "StunRatio": 0.092,
+          "StunRatioGrowth": 0.005,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 231,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 8.33
+        }
+      ],
+      "EXSpecialAttackRainingIronPetalsAway": []
+    },
+    "chain": {
+      "ChainAttackTempestOfFrostyPetals": [
+        {
+          "DamagePercentage": 7.342,
+          "DamagePercentageGrowth": 0.668,
+          "StunRatio": 2.953,
+          "StunRatioGrowth": 0.135,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 25668.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 467.86
+        }
+      ],
+      "UltimateClockworkGardenBloom": [
+        {
+          "DamagePercentage": 32.497,
+          "DamagePercentageGrowth": 2.955,
+          "StunRatio": 5.959,
+          "StunRatioGrowth": 0.271,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 541.7
+        }
+      ]
+    },
+    "assist": {
+      "QuickAssistBarrageOfRainingFlowers": [
+        {
+          "DamagePercentage": 1.54,
+          "DamagePercentageGrowth": 0.14,
+          "StunRatio": 0.77,
+          "StunRatioGrowth": 0.035,
+          "SpRecovery": 175,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1925,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 70
+        }
+      ],
+      "DefensiveAssistSproutingBarrier": [
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.713,
+          "StunRatioGrowth": 0.124,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 3.428,
+          "StunRatioGrowth": 0.156,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.668,
+          "StunRatioGrowth": 0.076,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "AssistFollowUpCrimsonCoreBurst": [
+        {
+          "DamagePercentage": 4.56,
+          "DamagePercentageGrowth": 0.415,
+          "StunRatio": 4.016,
+          "StunRatioGrowth": 0.183,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 12760,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 389.76
+        }
+      ]
+    }
+  },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackChrysanthemumWheelDance": [],
+      "BasicAttackFallingPetalsSlaughter": [],
+      "BasicAttackFallingPetalsDownfall": [],
+      "BasicAttackFallingPetalsDownfallFirstForm": [],
+      "BasicAttackFallingPetalsDownfallSecondForm": []
+    },
+    "dodge": {
+      "DodgeRunningOnPetals": [],
+      "DashAttackMagneticWheelDance": [],
+      "DodgeCounterBlossomBurst": []
+    },
+    "special": {
+      "SpecialAttackWitheredInFrost": [],
+      "EXSpecialAttackRainingIronPetals": [],
+      "EXSpecialAttackRainingIronPetalsAway": []
+    },
+    "chain": {
+      "ChainAttackTempestOfFrostyPetals": [],
+      "UltimateClockworkGardenBloom": []
+    },
+    "assist": {
+      "QuickAssistBarrageOfRainingFlowers": [],
+      "DefensiveAssistSproutingBarrier": [],
+      "AssistFollowUpCrimsonCoreBurst": []
+    }
+  },
+  "coreParams": [],
+  "abilityParams": [2, 1, 0.3, 0.25],
+  "mindscapeParams": [
+    [100, 100, 40, 20, 0.3],
+    [0.2, 60, 120, 5, 0.05],
+    [2],
+    [0.1, 0.2],
+    [2],
+    [0.5, 3, 1.65, 3]
+  ]
+}

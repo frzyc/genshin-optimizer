@@ -1,12 +1,14 @@
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
 import BashfulDemon from './sheets/BashfulDemon'
+import BellicoseBlaze from './sheets/BellicoseBlaze'
 import BigCylinder from './sheets/BigCylinder'
 import BlazingLaurel from './sheets/BlazingLaurel'
 import BoxCutter from './sheets/BoxCutter'
 import BunnyBand from './sheets/BunnyBand'
 import CannonRotor from './sheets/CannonRotor'
 import CinderCobalt from './sheets/CinderCobalt'
+import CordisGermina from './sheets/CordisGermina'
 import DeepSeaVisitor from './sheets/DeepSeaVisitor'
 import DemaraBatteryMarkII from './sheets/DemaraBatteryMarkII'
 import DrillRigRedAxis from './sheets/DrillRigRedAxis'
@@ -75,12 +77,14 @@ import ZanshinHerbCase from './sheets/ZanshinHerbCase'
 
 const data: TagMapNodeEntries[] = [
   BashfulDemon,
+  BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
   BoxCutter,
   BunnyBand,
   CannonRotor,
   CinderCobalt,
+  CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
   DrillRigRedAxis,

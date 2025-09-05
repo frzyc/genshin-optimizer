@@ -1,0 +1,14 @@
+{
+  "rarity": "S",
+  "type": "attack",
+  "atk_base": 48,
+  "second_statkey": "enerRegen_",
+  "second_statvalue": 0.24,
+  "phase": [
+    { "params": [0.2, 0.15, 8, 3, 2] },
+    { "params": [0.23, 0.172, 8, 3, 2] },
+    { "params": [0.26, 0.195, 8, 3, 2] },
+    { "params": [0.29, 0.217, 8, 3, 2] },
+    { "params": [0.32, 0.24, 8, 3, 2] }
+  ]
+}

@@ -119,6 +119,18 @@
       "cd_s": "ItemSuitKingoftheSummit_S.png",
       "cd_a": "ItemSuitKingoftheSummit_A.png",
       "cd_b": "ItemSuitKingoftheSummit_B.png"
+    },
+    "DawnsBloom": {
+      "circle": "SuitDawnsBloom.png",
+      "cd_s": "ItemSuitDawnsBloom_S.png",
+      "cd_a": "ItemSuitDawnsBloom_A.png",
+      "cd_b": "ItemSuitDawnsBloom_B.png"
+    },
+    "MoonlightLullaby": {
+      "circle": "SuitMoonlightLullaby.png",
+      "cd_s": "ItemSuitMoonlightLullaby_S.png",
+      "cd_a": "ItemSuitMoonlightLullaby_A.png",
+      "cd_b": "ItemSuitMoonlightLullaby_B.png"
     }
   },
   "chars": {
@@ -311,6 +323,13 @@
       "select": "IconRoleSelect42.png",
       "interknot": "IconInterKnotRole0042.png"
     },
+    "OrphieMagus": {
+      "full": "IconRole49.png",
+      "circle": "IconRoleCircle49.png",
+      "trap": "IconRoleGeneral49.png",
+      "select": "IconRoleSelect49.png",
+      "interknot": "IconInterKnotRole0049.png"
+    },
     "AstraYao": {
       "full": "IconRole36.png",
       "circle": "IconRoleCircle36.png",
@@ -387,6 +406,13 @@
       "trap": "IconRoleGeneral45.png",
       "select": "IconRoleSelect45.png",
       "interknot": "IconInterKnotRole0045.png"
+    },
+    "Seed": {
+      "full": "IconRole48.png",
+      "circle": "IconRoleCircle48.png",
+      "trap": "IconRoleGeneral48.png",
+      "select": "IconRoleSelect48.png",
+      "interknot": "IconInterKnotRole0048.png"
     }
   },
   "wengines": {
@@ -642,6 +668,10 @@
       "icon": "Weapon_S_1291.png",
       "big": "Weapon_S_1291Big.png"
     },
+    "BellicoseBlaze": {
+      "icon": "Weapon_S_1301.png",
+      "big": "Weapon_S_1301Big.png"
+    },
     "ElegantVanity": {
       "icon": "Weapon_S_1311.png",
       "big": "Weapon_S_1311Big.png"
@@ -677,6 +707,10 @@
     "Metanukimorphosis": {
       "icon": "Weapon_S_1411.png",
       "big": "Weapon_S_1411Big.png"
+    },
+    "CordisGermina": {
+      "icon": "Weapon_S_1461.png",
+      "big": "Weapon_S_1461Big.png"
     }
   }
 }

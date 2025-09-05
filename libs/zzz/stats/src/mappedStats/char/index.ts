@@ -22,11 +22,13 @@ import Lycaon from './maps/Lycaon'
 import Miyabi from './maps/Miyabi'
 import Nekomata from './maps/Nekomata'
 import Nicole from './maps/Nicole'
+import OrphieMagus from './maps/OrphieMagus'
 import PanYinhu from './maps/PanYinhu'
 import Piper from './maps/Piper'
 import Pulchra from './maps/Pulchra'
 import Qingyi from './maps/Qingyi'
 import Rina from './maps/Rina'
+import Seed from './maps/Seed'
 import Seth from './maps/Seth'
 import Soldier0Anby from './maps/Soldier0Anby'
 import Soldier11 from './maps/Soldier11'
@@ -62,11 +64,13 @@ const maps = {
   Miyabi,
   Nekomata,
   Nicole,
+  OrphieMagus,
   PanYinhu,
   Piper,
   Pulchra,
   Qingyi,
   Rina,
+  Seed,
   Seth,
   Soldier0Anby,
   Soldier11,
