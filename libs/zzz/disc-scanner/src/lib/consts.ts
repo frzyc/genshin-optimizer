@@ -12,3 +12,9 @@ export const blackColor: Color = {
   g: 0,
   b: 0,
 }
+
+export const greyBorderColor: Color = {
+  r: 55,
+  g: 55,
+  b: 55,
+}
