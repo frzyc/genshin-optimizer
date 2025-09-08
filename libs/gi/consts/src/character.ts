@@ -68,6 +68,7 @@ export type CharacterSpecializedStatKey =
   (typeof characterSpecializedStatKeys)[number]
 
 export const nonTravelerCharacterKeys = [
+  'Aino',
   'Albedo',
   'Alhaitham',
   'Aloy',
@@ -98,6 +99,7 @@ export const nonTravelerCharacterKeys = [
   'Eula',
   'Faruzan',
   'Fischl',
+  'Flins',
   'Freminet',
   'Furina',
   'Gaming',
@@ -121,6 +123,7 @@ export const nonTravelerCharacterKeys = [
   'KujouSara',
   'KukiShinobu',
   'LanYan',
+  'Lauma',
   'Layla',
   'Lisa',
   'Lynette',
