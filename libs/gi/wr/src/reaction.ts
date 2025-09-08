@@ -142,7 +142,7 @@ const trans = {
     const avgCrit = sum(
       one,
       prod(
-        infoMut(max(min(input.total.swirl_critRate_, sum(one, one)), naught), {
+        infoMut(max(min(input.total.swirl_critRate_, one), naught), {
           ...input.total.swirl_critRate_.info,
           pivot: true,
         }),
@@ -179,12 +179,13 @@ const trans = {
     )
   }),
   lunarcharged: infoMut(
-    lunarchargedDmg(
+    lunarDmg(
       constant(
         transformativeReactions.lunarcharged.multi,
         info('lunarcharged_multi_')
       ),
-      'reaction'
+      'reaction',
+      'lunarcharged'
     ),
     { path: 'lunarcharged_hit' }
   ),
@@ -321,23 +322,25 @@ export const reactions = {
   },
 }
 
-export function lunarchargedDmg(
+export function lunarDmg(
   multiplier: NumNode,
-  base: 'reaction' | MainStatKey | SubstatKey
+  base: 'reaction' | MainStatKey | SubstatKey,
+  variant: 'lunarcharged' | 'lunarbloom'
 ) {
   return prod(
     multiplier,
     ...(base === 'reaction' ? [transMulti1] : [3, input.total[base]]),
-    infoMut(sum(percent(1), input.total.lunarcharged_baseDmg_), {
-      path: 'lunarcharged_baseDmg_',
+    infoMut(sum(percent(1), input.total[`${variant}_baseDmg_`]), {
+      path: `${variant}_baseDmg_`,
     }),
     sum(
       infoMut(sum(percent(1), prod(6, frac(input.total.eleMas, 2000))), {
         pivot: true,
         path: 'base_transformative_multi_',
       }),
-      input.total.lunarcharged_dmg_
+      input.total[`${variant}_dmg_`]
     ),
+    // TODO: reaction-specific crit rate/crit damage
     lookup(
       input.hit.hitMode,
       {
@@ -350,6 +353,6 @@ export function lunarchargedDmg(
       },
       NaN
     ),
-    input.enemy.electro_resMulti_
+    input.enemy[`${transformativeReactions[variant].resist}_res_`]
   )
 }

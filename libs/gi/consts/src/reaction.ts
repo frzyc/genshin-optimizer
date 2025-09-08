@@ -9,6 +9,7 @@ export const allTransformativeReactionKeys = [
   'bloom',
   'burgeon',
   'hyperbloom',
+  'lunarbloom',
 ] as const
 export type TransformativeReactionKey =
   (typeof allTransformativeReactionKeys)[number]

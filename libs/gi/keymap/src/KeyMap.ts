@@ -176,6 +176,7 @@ type NonSwirlReactionHitKey = `${
   | 'superconduct'
   | 'burning'
   | 'bloom'
+  | 'lunarbloom'
   | 'burgeon'
   | 'hyperbloom'}_hit`
 type NonSwirlReactionMultiKey = `${keyof typeof transformativeReactions}_multi_`
@@ -192,6 +193,7 @@ Object.entries(transformativeReactions).forEach(([reaction, { name }]) => {
   statMap[`${reaction}_multi_`] = `${name} Multiplier`
 })
 statMap.lunarcharged_baseDmg_ = 'Lunar-Charged Base DMG Multiplier'
+statMap.lunarbloom_baseDmg_ = 'Lunar-Bloom Base DMG Multiplier'
 
 type TransformativeReactionsCritRateKey =
   `${CrittableTransformativeReactionsKey}_critRate_`
@@ -238,6 +240,7 @@ export type StatKey =
   | TransformativeReactionsCritRateKey
   | TransformativeReactionsCritDMGKey
   | 'lunarcharged_baseDmg_'
+  | 'lunarbloom_baseDmg_'
   | CrystallizeKey
   | AmplifyingReactionsDmgKey
   | AmplifyingReactionsMultiKey

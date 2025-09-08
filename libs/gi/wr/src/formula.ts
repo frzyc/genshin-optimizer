@@ -130,6 +130,7 @@ const allTransformative = [
   'bloom',
   'burgeon',
   'hyperbloom',
+  'lunarbloom',
 ] as const
 const allAmplifying = ['vaporize', 'melt'] as const
 const allAdditive = ['spread', 'aggravate'] as const
@@ -183,6 +184,7 @@ const allNonModStats = [
   'swirl_dmgInc' as const,
   'all_dmgInc' as const,
   'lunarcharged_baseDmg_' as const,
+  'lunarbloom_baseDmg_' as const,
   ...allEleEnemyResKeys,
   'enemyDefRed_' as const,
   'enemyDefIgn_' as const,
@@ -351,6 +353,7 @@ const inputBase = {
   tally: {
     ...objKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
     maxEleMas: read('max'),
+    moonsign: read('add'),
   },
 }
 const input = setReadNodeKeys(deepNodeClone(inputBase))
