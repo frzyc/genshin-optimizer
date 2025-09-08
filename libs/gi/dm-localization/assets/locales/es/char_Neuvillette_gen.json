@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Legatario de toda agua",
     "description": {
-      "0": "Cuando un personaje del equipo causa una reacción de Vaporización, Congelado, Electrocargado, Electrocargado Lunar, Florecimiento, Torbellino Hydro o Cristalización Hydro, Neuvillette obtiene una carga de “gloria del legado draconiano” durante 30 s. Este efecto puede acumularse hasta 3 veces y hace que el Ataque Cargado: Sentencia ecuánime inflija, respectivamente, un 110/125/160% de su daño original.",
+      "0": "Cuando un personaje del equipo causa una reacción de Vaporización, Congelado, Electrocargado, Electrocargado Lunar, Florecimiento, Florecimiento Lunar, Torbellino Hydro o Cristalización Hydro, Neuvillette obtiene una carga de “gloria del legado draconiano” durante 30 s. Este efecto puede acumularse hasta 3 veces y hace que el Ataque Cargado: Sentencia ecuánime inflija, respectivamente, un 110/125/160% de su daño original.",
       "1": "Los efectos de gloria del legado draconiano obtenidos con cada Reacción Elemental son independientes unos de otros."
     }
   },

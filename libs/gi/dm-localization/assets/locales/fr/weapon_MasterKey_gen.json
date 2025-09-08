@@ -1,0 +1,24 @@
+{
+  "name": "Clé universelle",
+  "description": {
+    "0": "Une grosse épée lourde, dotée d'une lame tranchante comme un rasoir. La puissance est une clé qui ouvre presque toutes les serrures."
+  },
+  "passiveName": "Tout s'imbrique",
+  "passiveDescription": {
+    "0": {
+      "0": "Déclencher une réaction élémentaire augmente la maîtrise élémentaire de <cryo>60</cryo> pts pendant 12 s. Signelune « Lueur ascendante » : la maîtrise élémentaire de cet effet augmente de <cryo>60</cryo> pts supplémentaires. Cet effet peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Déclencher une réaction élémentaire augmente la maîtrise élémentaire de <cryo>75</cryo> pts pendant 12 s. Signelune « Lueur ascendante » : la maîtrise élémentaire de cet effet augmente de <cryo>75</cryo> pts supplémentaires. Cet effet peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Déclencher une réaction élémentaire augmente la maîtrise élémentaire de <cryo>90</cryo> pts pendant 12 s. Signelune « Lueur ascendante » : la maîtrise élémentaire de cet effet augmente de <cryo>90</cryo> pts supplémentaires. Cet effet peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Déclencher une réaction élémentaire augmente la maîtrise élémentaire de <cryo>105</cryo> pts pendant 12 s. Signelune « Lueur ascendante » : la maîtrise élémentaire de cet effet augmente de <cryo>105</cryo> pts supplémentaires. Cet effet peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Déclencher une réaction élémentaire augmente la maîtrise élémentaire de <cryo>120</cryo> pts pendant 12 s. Signelune « Lueur ascendante » : la maîtrise élémentaire de cet effet augmente de <cryo>120</cryo> pts supplémentaires. Cet effet peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

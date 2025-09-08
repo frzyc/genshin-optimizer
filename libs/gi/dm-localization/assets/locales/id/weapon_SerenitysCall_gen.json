@@ -1,0 +1,24 @@
+{
+  "name": "Serenity's Call",
+  "description": {
+    "0": "Pedang panjang yang terbuat dari logam. Mengeluarkan suara tajam saat diayunkan."
+  },
+  "passiveName": "Solemn Silence",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah memicu Reaksi Elemental, Max HP +<cryo>16%</cryo> selama 12 detik. Moonsign: Ascendant Gleam: Peningkatan Max HP dari efek ini bertambah <cryo>16%</cryo> lagi. Efek di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Setelah memicu Reaksi Elemental, Max HP +<cryo>20%</cryo> selama 12 detik. Moonsign: Ascendant Gleam: Peningkatan Max HP dari efek ini bertambah <cryo>20%</cryo> lagi. Efek di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Setelah memicu Reaksi Elemental, Max HP +<cryo>24%</cryo> selama 12 detik. Moonsign: Ascendant Gleam: Peningkatan Max HP dari efek ini bertambah <cryo>24%</cryo> lagi. Efek di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Setelah memicu Reaksi Elemental, Max HP +<cryo>28%</cryo> selama 12 detik. Moonsign: Ascendant Gleam: Peningkatan Max HP dari efek ini bertambah <cryo>28%</cryo> lagi. Efek di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Setelah memicu Reaksi Elemental, Max HP +<cryo>32%</cryo> selama 12 detik. Moonsign: Ascendant Gleam: Peningkatan Max HP dari efek ini bertambah <cryo>32%</cryo> lagi. Efek di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

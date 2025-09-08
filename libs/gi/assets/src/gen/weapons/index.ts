@@ -22,6 +22,8 @@ import BlackcliffLongsword from './BlackcliffLongsword'
 import BlackcliffPole from './BlackcliffPole'
 import BlackcliffSlasher from './BlackcliffSlasher'
 import BlackcliffWarbow from './BlackcliffWarbow'
+import BlackmarrowLantern from './BlackmarrowLantern'
+import BloodsoakedRuins from './BloodsoakedRuins'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import CalamityOfEshu from './CalamityOfEshu'
 import CalamityQueller from './CalamityQueller'
@@ -47,6 +49,7 @@ import ElegyForTheEnd from './ElegyForTheEnd'
 import EmeraldOrb from './EmeraldOrb'
 import EndOfTheLine from './EndOfTheLine'
 import EngulfingLightning from './EngulfingLightning'
+import EtherlightSpindlelute from './EtherlightSpindlelute'
 import EverlastingMoonglow from './EverlastingMoonglow'
 import EyeOfPerception from './EyeOfPerception'
 import FadingTwilight from './FadingTwilight'
@@ -100,14 +103,17 @@ import MagicGuide from './MagicGuide'
 import MailedFlower from './MailedFlower'
 import MakhairaAquamarine from './MakhairaAquamarine'
 import MappaMare from './MappaMare'
+import MasterKey from './MasterKey'
 import MemoryOfDust from './MemoryOfDust'
 import Messenger from './Messenger'
 import MissiveWindspear from './MissiveWindspear'
 import MistsplitterReforged from './MistsplitterReforged'
 import MitternachtsWaltz from './MitternachtsWaltz'
 import Moonpiercer from './Moonpiercer'
+import MoonweaversDawn from './MoonweaversDawn'
 import MountainBracingBolt from './MountainBracingBolt'
 import MouunsMoon from './MouunsMoon'
+import NightweaversLookingGlass from './NightweaversLookingGlass'
 import OathswornEye from './OathswornEye'
 import OldMercsPal from './OldMercsPal'
 import OtherworldlyStory from './OtherworldlyStory'
@@ -119,6 +125,7 @@ import Predator from './Predator'
 import PrimordialJadeCutter from './PrimordialJadeCutter'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
 import ProspectorsDrill from './ProspectorsDrill'
+import ProspectorsShovel from './ProspectorsShovel'
 import PrototypeAmber from './PrototypeAmber'
 import PrototypeArchaic from './PrototypeArchaic'
 import PrototypeCrescent from './PrototypeCrescent'
@@ -147,6 +154,7 @@ import SapwoodBlade from './SapwoodBlade'
 import ScionOfTheBlazingSun from './ScionOfTheBlazingSun'
 import SeasonedHuntersBow from './SeasonedHuntersBow'
 import SequenceOfSolitude from './SequenceOfSolitude'
+import SerenitysCall from './SerenitysCall'
 import SerpentSpine from './SerpentSpine'
 import SharpshootersOath from './SharpshootersOath'
 import SilverSword from './SilverSword'
@@ -159,6 +167,7 @@ import SkywardHarp from './SkywardHarp'
 import SkywardPride from './SkywardPride'
 import SkywardSpine from './SkywardSpine'
 import Slingshot from './Slingshot'
+import SnareHook from './SnareHook'
 import SnowTombedStarsilver from './SnowTombedStarsilver'
 import SolarPearl from './SolarPearl'
 import SongOfBrokenPines from './SongOfBrokenPines'
@@ -237,6 +246,8 @@ const data = {
   BlackcliffPole,
   BlackcliffSlasher,
   BlackcliffWarbow,
+  BlackmarrowLantern,
+  BloodsoakedRuins,
   BloodtaintedGreatsword,
   CalamityOfEshu,
   CalamityQueller,
@@ -262,6 +273,7 @@ const data = {
   EmeraldOrb,
   EndOfTheLine,
   EngulfingLightning,
+  EtherlightSpindlelute,
   EverlastingMoonglow,
   EyeOfPerception,
   FadingTwilight,
@@ -315,14 +327,17 @@ const data = {
   MailedFlower,
   MakhairaAquamarine,
   MappaMare,
+  MasterKey,
   MemoryOfDust,
   Messenger,
   MissiveWindspear,
   MistsplitterReforged,
   MitternachtsWaltz,
   Moonpiercer,
+  MoonweaversDawn,
   MountainBracingBolt,
   MouunsMoon,
+  NightweaversLookingGlass,
   OathswornEye,
   OldMercsPal,
   OtherworldlyStory,
@@ -334,6 +349,7 @@ const data = {
   PrimordialJadeCutter,
   PrimordialJadeWingedSpear,
   ProspectorsDrill,
+  ProspectorsShovel,
   PrototypeAmber,
   PrototypeArchaic,
   PrototypeCrescent,
@@ -362,6 +378,7 @@ const data = {
   ScionOfTheBlazingSun,
   SeasonedHuntersBow,
   SequenceOfSolitude,
+  SerenitysCall,
   SerpentSpine,
   SharpshootersOath,
   SilverSword,
@@ -374,6 +391,7 @@ const data = {
   SkywardPride,
   SkywardSpine,
   Slingshot,
+  SnareHook,
   SnowTombedStarsilver,
   SolarPearl,
   SongOfBrokenPines,

@@ -29,6 +29,6 @@
   },
   "SprawlingGreenery": {
     "name": "Planta trepadora",
-    "desc": "La Maestría Elemental aumenta en 50 pts. Tras causar una reacción de Quemadura, Aceleración o Florecimiento, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 30 pts. durante 6 s. Tras causar una reacción de Intensificación, Propagación, Sobreflorecimiento o Crepitar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 20 pts. durante 6 s. La duración de estos efectos se calcula de manera independiente."
+    "desc": "La Maestría Elemental aumenta en 50 pts. Tras causar una reacción de Quemadura, Aceleración, Florecimiento o Florecimiento Lunar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 30 pts. durante 6 s. Tras causar una reacción de Intensificación, Propagación, Sobreflorecimiento o Crepitar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 20 pts. durante 6 s. La duración de estos efectos se calcula de manera independiente."
   }
 }

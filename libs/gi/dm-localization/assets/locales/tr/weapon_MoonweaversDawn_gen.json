@@ -1,0 +1,24 @@
+{
+  "name": "Ay Dokuyanın Şafağı",
+  "description": {
+    "0": "Düşman zırhını adeta sessiz geceyi yaran ay ışığı gibi delip geçebilen pürüzsüz ve keskin bir gümüş kılıç. Efsanelerde ilk Ay İlahicisinin kutsadığı yüce bir kılıç olduğu anlatılır."
+  },
+  "passiveName": "Saklı Gümüşün Ahdi",
+  "passiveDescription": {
+    "0": {
+      "0": "Element Patlaması Hasarını <cryo>%20</cryo> artırır. Kuşanan karakterin Enerji Kapasitesi 60/40 üzerinde olmadığında Element Patlaması Hasarı ek olarak <cryo>%16/%28</cryo> daha artar."
+    },
+    "1": {
+      "0": "Element Patlaması Hasarını <cryo>%25</cryo> artırır. Kuşanan karakterin Enerji Kapasitesi 60/40 üzerinde olmadığında Element Patlaması Hasarı ek olarak <cryo>%20/%35</cryo> daha artar."
+    },
+    "2": {
+      "0": "Element Patlaması Hasarını <cryo>%30</cryo> artırır. Kuşanan karakterin Enerji Kapasitesi 60/40 üzerinde olmadığında Element Patlaması Hasarı ek olarak <cryo>%24/%42</cryo> daha artar."
+    },
+    "3": {
+      "0": "Element Patlaması Hasarını <cryo>%35</cryo> artırır. Kuşanan karakterin Enerji Kapasitesi 60/40 üzerinde olmadığında Element Patlaması Hasarı ek olarak <cryo>%28/%49</cryo> daha artar."
+    },
+    "4": {
+      "0": "Element Patlaması Hasarını <cryo>%40</cryo> artırır. Kuşanan karakterin Enerji Kapasitesi 60/40 üzerinde olmadığında Element Patlaması Hasarı ek olarak <cryo>%32/%56</cryo> daha artar."
+    }
+  }
+}

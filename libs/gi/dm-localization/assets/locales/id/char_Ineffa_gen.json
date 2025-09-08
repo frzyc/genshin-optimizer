@@ -104,9 +104,9 @@
   "passive3": {
     "name": "Moonsign Benediction: Assemblage Hub",
     "description": {
-      "0": "Saat Karakter di dalam party memicu reaksi Electro-Charged, reaksi ini akan diubah menjadi reaksi Lunar-Charged. DMG dasar reaksi Lunar-Charged meningkat: DMG dasarnya meningkat 0,7% untuk setiap 100 poin ATK Ineffa, dan dapat meningkat hingga maksimum 14% dengan cara ini.",
+      "0": "Saat Karakter di dalam party memicu reaksi Electro-Charged, reaksi ini akan diubah menjadi reaksi Lunar-Charged. DMG dasar reaksi Lunar-Charged meningkat: Untuk setiap 100 poin ATK Ineffa, DMG dasar meningkat 0,7%, hingga maksimum 14%.",
       "1": "<br/>",
-      "2": "Berkat tambahan mungkin akan mengiringi terbitnya bulan baru ...."
+      "2": "Selain itu, saat Ineffa berada di dalam party, <strong>Moonsign</strong> party bertambah 1 level."
     }
   },
   "passive": {

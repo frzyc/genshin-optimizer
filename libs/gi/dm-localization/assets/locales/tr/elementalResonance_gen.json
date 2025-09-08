@@ -29,6 +29,6 @@
   },
   "SprawlingGreenery": {
     "name": "Büyüyen Yeşillikler",
-    "desc": "Element Ustalığı 50 artar. Yanma, Hızlanma veya Çiçeklenme tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 30 Element Ustalığı kazanır. Şiddetlenme, Yayılma, Aşırı Çiçeklenme veya Filizlenme tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 20 Element Ustalığı kazanır. Yukarıdaki etkilerin süreleri bağımsız olarak hesaplanır."
+    "desc": "Element Ustalığı 50 artar. Yanma, Hızlanma, Çiçeklenme veya Ay Çiçeklenmesi tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 30 Element Ustalığı kazanır. Şiddetlenme, Yayılma, Aşırı Çiçeklenme veya Filizlenme tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 20 Element Ustalığı kazanır. Yukarıdaki etkilerin süreleri bağımsız olarak hesaplanır."
   }
 }

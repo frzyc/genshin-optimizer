@@ -1,0 +1,24 @@
+{
+  "name": "Lanterna do Tutano Preto",
+  "description": {
+    "0": "Uma lanterna que emite um brilho sutil fantasmagórico, contida por uma liga metálica que lembra ossos interligados. Dizem ter sido venerada como um tesouro precioso por uma certa organização secreta."
+  },
+  "passiveName": "Prova do Contrato",
+  "passiveDescription": {
+    "0": {
+      "0": "Dano de Florescimento é aumentado em <cryo>48%</cryo>. Dano de Florescimento Lunar é aumentado em <cryo>12%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta o Dano de Florescimento Lunar em mais <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Dano de Florescimento é aumentado em <cryo>60%</cryo>. Dano de Florescimento Lunar é aumentado em <cryo>15%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta o Dano de Florescimento Lunar em mais <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Dano de Florescimento é aumentado em <cryo>72%</cryo>. Dano de Florescimento Lunar é aumentado em <cryo>18%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta o Dano de Florescimento Lunar em mais <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Dano de Florescimento é aumentado em <cryo>84%</cryo>. Dano de Florescimento Lunar é aumentado em <cryo>21%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta o Dano de Florescimento Lunar em mais <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Dano de Florescimento é aumentado em <cryo>96%</cryo>. Dano de Florescimento Lunar é aumentado em <cryo>24%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta o Dano de Florescimento Lunar em mais <cryo>24%</cryo>."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Nuit de la révélation céleste",
+  "setEffects": {
+    "2": "Augmente la maîtrise élémentaire de 80 pts.",
+    "4": "Lorsqu'un personnage de l'équipe à proximité déclenche une réaction sélène alors que le personnage équipé de l'artéfact est sur le terrain, ce dernier obtient l'effet Lune étincelante « Intention » pendant 4 s : augmente le taux CRIT de 15 % ou de 30 % lorsque la signelune de l'équipe est respectivement de type Lueur naissante ou ascendante. De plus, les DGT infligés par les réactions sélènes déclenchées par tous les personnages de l'équipe augmentent de 10 % pour chaque lune étincelante de type différent des personnages de l'équipe. Les bonus accordés par l'effet Lune étincelante ne se cumulent pas."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fleur du désir sincère",
+      "desc": "Une relique sacrée sculptée en forme de fleur. Elle semble représenter une présence terrifiante qui s'épanouit telle une fleur."
+    },
+    "plume": {
+      "name": "Plume du péché inexpiable",
+      "desc": "Un accessoire à plumes autrefois porté sur un chapeau de feutre. Il semble déplacé parmi les nobles de Snezhnaya et leur goût pour le faste."
+    },
+    "sands": {
+      "name": "Cloche de révélation",
+      "desc": "Une horloge à la sonnerie exquise, mue par une force mystérieuse. Son but ne semble pas être d'indiquer l'heure."
+    },
+    "goblet": {
+      "name": "Urne d'abondance",
+      "desc": "Un gobelet spécialement conçu pour les banquets du palais. Il était autrefois utilisé pour accomplir des actes de magie."
+    },
+    "circlet": {
+      "name": "Couronne de perdition",
+      "desc": "Une couronne inspirée de celle portée par un pécheur. Peut-être que dans le cœur de quelqu'un, l'amour et le péché proviennent de la même source."
+    }
+  }
+}

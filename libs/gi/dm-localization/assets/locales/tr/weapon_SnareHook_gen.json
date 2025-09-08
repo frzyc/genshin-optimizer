@@ -1,0 +1,24 @@
+{
+  "name": "Kapan Kancası",
+  "description": {
+    "0": "Metal bir alaşımdan yapılmış olmasına rağmen gövdesi şaşırtıcı derecede hafif bir yay. Fırlattığı oklar, kalın ve ağır ağların bile rahatlıkla içinden geçebilir."
+  },
+  "passiveName": "Çevik Gölge",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca Element Ustalığı <cryo>60</cryo> artar. Ay Sembolü: Yükselen Parıltı: Bu etkinin sağladığı Element Ustalığı artışı <cryo>60</cryo> daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca Element Ustalığı <cryo>75</cryo> artar. Ay Sembolü: Yükselen Parıltı: Bu etkinin sağladığı Element Ustalığı artışı <cryo>75</cryo> daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca Element Ustalığı <cryo>90</cryo> artar. Ay Sembolü: Yükselen Parıltı: Bu etkinin sağladığı Element Ustalığı artışı <cryo>90</cryo> daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca Element Ustalığı <cryo>105</cryo> artar. Ay Sembolü: Yükselen Parıltı: Bu etkinin sağladığı Element Ustalığı artışı <cryo>105</cryo> daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca Element Ustalığı <cryo>120</cryo> artar. Ay Sembolü: Yükselen Parıltı: Bu etkinin sağladığı Element Ustalığı artışı <cryo>120</cryo> daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    }
+  }
+}

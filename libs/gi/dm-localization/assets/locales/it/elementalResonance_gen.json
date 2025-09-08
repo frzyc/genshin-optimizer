@@ -29,6 +29,6 @@
   },
   "SprawlingGreenery": {
     "name": "Vegetazione proliferante",
-    "desc": "La maestria elementale aumenta di 50. Dopo aver attivato reazioni di Ustione, Vivificazione o Fioritura, la maestria elementale di tutti i membri del gruppo vicini aumenta di 30 per 6 s. Dopo aver attivato le reazioni di Accentuazione, Propagazione, Iperfioritura o Germinazione, la maestria elementale di tutti i membri del gruppo aumenta di 20 per 6 sec. La durata di ciascun effetto è contata in modo indipendente."
+    "desc": "La maestria elementale aumenta di 50. Dopo aver attivato reazioni di Ustione, Vivificazione, Fioritura o Fioritura lunare, la maestria elementale di tutti i membri del gruppo vicini aumenta di 30 per 6 s. Dopo aver attivato le reazioni di Accentuazione, Propagazione, Iperfioritura o Germinazione, la maestria elementale di tutti i membri del gruppo aumenta di 20 per 6 s. La durata di ciascun effetto è contata in modo indipendente."
   }
 }

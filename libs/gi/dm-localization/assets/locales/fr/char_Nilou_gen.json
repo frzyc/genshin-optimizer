@@ -104,8 +104,8 @@
     "name": "Cour des pétales dansants",
     "description": {
       "0": "Lorsque les personnages de l'équipe sont de l'élément <dendro>Dendro</dendro> ou <hydro>Hydro</hydro> et qu'il y a au moins un personnage Dendro et un personnage Hydro :",
-      "1": "La complétion du troisième pas de la <strong>Danse des haftkarsvars</strong> de Nilou accorde à tous les personnages à proximité l'effet Prime du calice d'or pendant 30 s.",
-      "2": "Lorsqu'un personnage sous l'effet Prime du calice d'or subit une <dendro>attaque Dendro</dendro>, la maîtrise élémentaire de tous les personnages à proximité augmente de 100 pts pendant 10 s. De plus, déclencher une réaction de Fleurissement permet de créer des noyaux d'abondance au lieu de noyaux Dendro.",
+      "1": "La complétion du troisième pas de <strong>Danse des haftkarsvars</strong> de Nilou accorde à tous les personnages à proximité l'effet Prime du calice d'or pendant 30 s.",
+      "2": "Lorsqu'un personnage sous l'effet Prime du calice d'or subit une <dendro>attaque Dendro</dendro>, la maîtrise élémentaire de tous les personnages à proximité augmente de 100 pts pendant 10 s. De plus, déclencher une réaction de Fleurissement ou de Sélénofleurissement permet de créer des noyaux d'abondance au lieu de noyaux Dendro.",
       "3": "Comparés aux noyaux Dendro, ces noyaux d'abondance éclatent très rapidement après avoir été créés et possèdent une zone d'effet plus grande.",
       "4": "Les noyaux d'abondance ne peuvent pas déclencher de réactions d'Exubérance ou de Bourgeonnement et partagent une limite avec les noyaux Dendro. Les attaques des noyaux d'abondance sont considérées comme des attaques infligées par les noyaux Dendro générés par la réaction de Fleurissement.",
       "5": "Quand le type élémentaire des personnages de l'équipe ne remplit pas les conditions de cette aptitude passive, tous les effets Prime du calice d'or existants sont annulés."
@@ -137,7 +137,7 @@
   "constellation2": {
     "name": "Pluie de fleurs du ciel étoilé",
     "description": {
-      "0": "Lorsqu'un personnage sous l'effet Prime du calice d'or a infligé des <hydro>DGT Hydro</hydro> à un ennemi, la <hydro>RÉS Hydro</hydro> de ce dernier diminue de 35 % pendant 10 s. Lorsqu'une réaction de Fleurissement a infligé des DGT à un ennemi, la <dendro>RÉS Dendro</dendro> de ce dernier diminue de 35 % pendant 10 s.",
+      "0": "Lorsqu'un personnage sous l'effet Prime du calice d'or a infligé des <hydro>DGT Hydro</hydro> à un ennemi, la <hydro>RÉS Hydro</hydro> de ce dernier diminue de 35 % pendant 10 s. Lorsqu'une réaction de Fleurissement ou de Sélénofleurissement a infligé des DGT à un ennemi, la <dendro>RÉS Dendro</dendro> de ce dernier diminue de 35 % pendant 10 s.",
       "1": "L'aptitude passive « Cour des pétales dansants » doit être déjà débloquée."
     }
   },

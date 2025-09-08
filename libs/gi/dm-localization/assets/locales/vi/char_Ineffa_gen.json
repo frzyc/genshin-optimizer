@@ -102,11 +102,11 @@
     }
   },
   "passive3": {
-    "name": "Chúc Phúc Ấn Nguyệt - Mô Phỏng Trung Chuyển",
+    "name": "Chúc Phúc Nguyệt Triệu - Mô Phỏng Trung Chuyển",
     "description": {
       "0": "Khi nhân vật trong đội kích hoạt phản ứng Điện Cảm, sẽ chuyển thành phản ứng Nguyệt-Điện Cảm, đồng thời tăng sát thương cơ bản của phản ứng Nguyệt-Điện Cảm dựa trên Tấn Công của Ineffa: Mỗi 100 Tấn Công sẽ tăng 0.7% sát thương cơ bản, tối đa tăng 14% sát thương theo cách này.",
       "1": "<br/>",
-      "2": "Khi trăng non mọc lên, biết đâu sẽ nhận được thêm những lời chúc phúc..."
+      "2": "Ngoài ra, khi Ineffa trong đội, <strong>Nguyệt Triệu</strong> của đội sẽ tăng 1 cấp."
     }
   },
   "passive": {
