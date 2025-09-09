@@ -87,6 +87,8 @@ const allNonstackBuffs = [
   'ttds',
   'wolf',
   'symphonist',
+  'gleamingmoonintent',
+  'gleamingmoondevotion',
 ] as const
 export type NonStackBuff = (typeof allNonstackBuffs)[number]
 const allMoves = [
@@ -354,6 +356,7 @@ const inputBase = {
     ...objKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
     maxEleMas: read('max'),
     moonsign: read('add'),
+    maxMoonsignBuff: read('max'),
   },
 }
 const input = setReadNodeKeys(deepNodeClone(inputBase))

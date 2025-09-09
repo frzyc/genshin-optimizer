@@ -454,6 +454,42 @@ const sprawlingGreenery: IResonance = {
   ],
 }
 
+const moonsign: IResonance = {
+  name: tr('Moonsign.name'),
+  desc: tr('Moonsign.desc'),
+  icon: 'todoicon',
+  canShow: (data) => data.get(tally.moonsign).value >= 1,
+  sections: [
+    {
+      teamBuff: true,
+      header: {
+        title: tr('Moonsign.nascentGleam.name'),
+        icon: 'todoicon2',
+      },
+      fields: [
+        {
+          text: tr('Moonsign.nascentGleam.desc'),
+        },
+      ],
+    },
+    {
+      teamBuff: true,
+      header: {
+        title: tr('Moonsign.ascendantGleam.name'),
+        icon: 'todoicon3',
+      },
+      fields: [
+        {
+          text: tr('Moonsign.ascendantGleam.desc'),
+        },
+        {
+          node: tally.maxMoonsignBuff,
+        },
+      ],
+    },
+  ],
+}
+
 export const resonanceSheets: IResonance[] = [
   protectiveCanopy,
   ferventFlames,
@@ -463,6 +499,7 @@ export const resonanceSheets: IResonance[] = [
   impetuousWinds,
   enduringRock,
   sprawlingGreenery,
+  moonsign,
 ]
 
 export const resonanceData = inferInfoMut({

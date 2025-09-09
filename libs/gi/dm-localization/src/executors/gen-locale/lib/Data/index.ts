@@ -69,6 +69,21 @@ export const mapHashData = {
       name: 1292621586,
       desc: 2900013027,
     },
+    Moonsign: {
+      name: [47522259, 'paragraph'],
+      desc: [1400535123, 'paragraph'],
+      nascentGleam: {
+        name: [3355827977, 'paragraph'],
+        desc: [2507050873, 'paragraph'],
+      },
+      ascendantGleam: {
+        name: [815173912, 'paragraph'],
+        desc: [
+          [856180336, 'paragraph'],
+          [604954065, 'paragraph'],
+        ],
+      },
+    },
   },
   statKey: {
     hp: 2404061249,
