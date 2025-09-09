@@ -25,7 +25,7 @@ import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { BuildEditContext, DataContext, SillyContext } from '../../../context'
 import { AddTeamInfo } from '../../AddTeamInfo'
-import { LevelSelect } from '../../LevelSelect'
+import { CharacterLevelSelect } from '../CharacterLevelSelect'
 import {
   CharacterCompactConstSelector,
   CharacterCoverArea,
@@ -97,7 +97,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
             >
               <CharacterCoverArea />
               <Box sx={{ px: 1 }}>
-                <LevelSelect
+                <CharacterLevelSelect
                   level={character.level}
                   ascension={character.ascension}
                   setBoth={(data) => {

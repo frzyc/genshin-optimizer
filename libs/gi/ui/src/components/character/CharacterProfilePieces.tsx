@@ -21,7 +21,7 @@ import {
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
-import { getLevelString } from '@genshin-optimizer/gi/util'
+import { getCharLevelString } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
@@ -308,7 +308,7 @@ function LevelBadge({
     <Typography
       sx={{ p: 1, position: 'absolute', right: 0, top: 0, opacity: 0.8 }}
     >
-      <SqBadge>{getLevelString(level, ascension)}</SqBadge>
+      <SqBadge>{getCharLevelString(level, ascension)}</SqBadge>
     </Typography>
   )
 }

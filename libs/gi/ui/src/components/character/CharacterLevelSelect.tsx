@@ -2,20 +2,20 @@ import { DropdownButton, NumberInputLazy } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import type { AscensionKey } from '@genshin-optimizer/gi/consts'
 import {
-  ambiguousLevel,
-  ambiguousLevelLow,
-  ascensionMaxLevel,
-  ascensionMaxLevelLow,
-  maxLevel,
-  maxLevelLow,
-  milestoneLevels,
-  milestoneLevelsLow,
+  charAmbiguousLevel,
+  charAmbiguousLevelLow,
+  charAscensionMaxLevel,
+  charAscensionMaxLevelLow,
+  charMaxLevel,
+  charMaxLevelLow,
+  charMilestoneLevels,
+  charMilestoneLevelsLow,
 } from '@genshin-optimizer/gi/util'
 import { Box, Button, InputAdornment, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
-export function LevelSelect({
+export function CharacterLevelSelect({
   level,
   ascension,
   setBoth,
@@ -31,10 +31,12 @@ export function LevelSelect({
   warning?: boolean
 }) {
   const { t } = useTranslation('ui')
-  const ascensionMaxLevels = useLow ? ascensionMaxLevelLow : ascensionMaxLevel
+  const ascensionMaxLevels = useLow
+    ? charAscensionMaxLevelLow
+    : charAscensionMaxLevel
   const setLevel = useCallback(
     (level = 1) => {
-      level = clamp(level, 1, useLow ? maxLevelLow : maxLevel)
+      level = clamp(level, 1, useLow ? charMaxLevelLow : charMaxLevel)
       const ascension = ascensionMaxLevels.findIndex(
         (ascenML) => level <= ascenML
       ) as AscensionKey
@@ -63,7 +65,7 @@ export function LevelSelect({
         InputProps={{
           inputProps: {
             min: 0,
-            max: 90,
+            max: 100,
             sx: { width: '4em' },
           },
           endAdornment: (
@@ -71,13 +73,14 @@ export function LevelSelect({
               <Button
                 sx={{ ml: 'auto' }}
                 disabled={
-                  !(useLow ? ambiguousLevelLow : ambiguousLevel)(level) ||
-                  disabled
+                  !(useLow ? charAmbiguousLevelLow : charAmbiguousLevel)(
+                    level
+                  ) || disabled
                 }
                 onClick={setAscension}
                 color={warning ? 'warning' : undefined}
               >
-                <strong>/ {ascensionMaxLevel[ascension]}</strong>
+                <strong>/ {charAscensionMaxLevel[ascension]}</strong>
               </Button>
             </InputAdornment>
           ),
@@ -93,7 +96,7 @@ export function LevelSelect({
         disabled={disabled}
         color={warning ? 'warning' : undefined}
       >
-        {[...(useLow ? milestoneLevelsLow : milestoneLevels)].map(
+        {[...(useLow ? charMilestoneLevelsLow : charMilestoneLevels)].map(
           ([lv, as]) => {
             const selected = lv === level && as === ascension
             return (
