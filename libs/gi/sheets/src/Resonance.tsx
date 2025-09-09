@@ -1,5 +1,6 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allElementKeys,
   allElementWithPhyKeys,
@@ -27,9 +28,10 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
+import type { CharacterSheet } from './Characters/CharacterSheet'
 import ElementCycle from './ElementCycle'
-import { activeCharBuff, condReadNode, st, stg } from './SheetUtil'
-import type { DocumentSection } from './sheet'
+import { activeCharBuff, cond, condReadNode, st, stg } from './SheetUtil'
+import type { DocumentSection, IDocumentConditionalExclusive } from './sheet'
 const tr = (strKey: string) => (
   <Translate ns="elementalResonance_gen" key18={strKey} />
 )
@@ -454,11 +456,17 @@ const sprawlingGreenery: IResonance = {
   ],
 }
 
+const [moonsignBuffDisp, moonsignBuff] = activeCharBuff(
+  input.charKey,
+  greaterEq(teamSize, 4, greaterEq(tally.moonsign, 2, tally.maxMoonsignBuff)),
+  { isTeamBuff: true }
+)
 const moonsign: IResonance = {
   name: tr('Moonsign.name'),
   desc: tr('Moonsign.desc'),
   icon: 'todoicon',
-  canShow: (data) => data.get(tally.moonsign).value >= 1,
+  canShow: (data) =>
+    data.get(teamSize).value >= 4 && data.get(tally.moonsign).value >= 1,
   sections: [
     {
       teamBuff: true,
@@ -474,20 +482,79 @@ const moonsign: IResonance = {
     },
     {
       teamBuff: true,
+      canShow: greaterEq(tally.moonsign, 2, 1),
       header: {
         title: tr('Moonsign.ascendantGleam.name'),
+        description: tr('Moonsign.ascendantGleam.desc'),
         icon: 'todoicon3',
       },
+      // We handle the moonsign conditionals per-character in TeamComponents.tsx,
+      // using MoonsignConditionalSection below
       fields: [
         {
-          text: tr('Moonsign.ascendantGleam.desc'),
+          node: infoMut(
+            { ...moonsignBuffDisp },
+            { path: 'lunarcharged_dmg_', isTeamBuff: true }
+          ),
         },
         {
-          node: tally.maxMoonsignBuff,
+          node: infoMut(
+            { ...moonsignBuffDisp },
+            { path: 'lunarbloom_dmg_', isTeamBuff: true }
+          ),
         },
       ],
     },
   ],
+}
+
+// Conditional section to be inserted into each character sheet display
+export function MoonsignConditionalSection(
+  key: CharacterKey,
+  sheet: CharacterSheet
+): IDocumentConditionalExclusive {
+  const [condMoonsignAfterSkillBurstPath, condMoonsignAfterSkillBurst] = cond(
+    key,
+    'moonsignAfterSkillBurst'
+  )
+  return {
+    canShow: greaterEq(teamSize, 4, greaterEq(tally.moonsign, 2, 1)),
+    path: condMoonsignAfterSkillBurstPath,
+    value: condMoonsignAfterSkillBurst,
+    header: {
+      title: tr('Moonsign.ascendantGleam.name'),
+      description: tr('Moonsign.ascendantGleam.desc'),
+      icon: 'todoicon3',
+    },
+    teamBuff: true,
+    name: st('afterUse.skillOrBurst'),
+    states: {
+      on: {
+        fields: [
+          {
+            node: infoMut(
+              sheet.data.display!['moonsign']!['lunarcharged_dmg_'],
+              {
+                isTeamBuff: true,
+                path: 'lunarcharged_dmg_',
+              }
+            ),
+          },
+          {
+            node: infoMut(sheet.data.display!['moonsign']!['lunarbloom_dmg_'], {
+              isTeamBuff: true,
+              path: 'lunarbloom_dmg_',
+            }),
+          },
+          {
+            text: stg('duration'),
+            value: 20,
+            unit: 's',
+          },
+        ],
+      },
+    },
+  }
 }
 
 export const resonanceSheets: IResonance[] = [
@@ -517,6 +584,8 @@ export const resonanceData = inferInfoMut({
         pivot: true,
       }),
       all_dmg_: erNodeDMG_,
+      lunarcharged_dmg_: { ...moonsignBuff },
+      lunarbloom_dmg_: { ...moonsignBuff },
     },
     total: {
       // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.

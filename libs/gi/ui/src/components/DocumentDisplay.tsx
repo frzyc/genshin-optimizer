@@ -201,14 +201,15 @@ export function HeaderDisplay({
   const { icon: preicon, title, action } = header ?? {}
   const icon = evalIfFunc(preicon, data)
   const description = !hideDesc && evalIfFunc(header?.description, data)
-  const displayTitle = hideDesc ? (
-    title
-  ) : (
-    <span>
-      {title}
-      <InfoTooltipInline title={<Typography>{description}</Typography>} />
-    </span>
-  )
+  const displayTitle =
+    hideDesc || !description ? (
+      title
+    ) : (
+      <span>
+        {title}
+        <InfoTooltipInline title={<Typography>{description}</Typography>} />
+      </span>
+    )
   return (
     <>
       <CardHeaderCustom avatar={icon} title={displayTitle} action={action} />

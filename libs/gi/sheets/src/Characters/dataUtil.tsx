@@ -13,6 +13,7 @@ import {
   constant,
   data,
   equal,
+  greaterEq,
   inferInfoMut,
   infoMut,
   infusionNode,
@@ -27,6 +28,7 @@ import {
   stringPrio,
   subscript,
   sum,
+  tally,
 } from '@genshin-optimizer/gi/wr'
 import { cond } from '../SheetUtil'
 
@@ -322,7 +324,16 @@ export function dataObjForCharacterSheet(
     'moonsignAfterSkillBurst'
   )
   function moonsignBuff(value: NumNode): NumNode {
-    return equal(condMoonsignAfterSkillBurst, 'on', min(value, percent(0.36)))
+    const teamSize = sum(...allElementKeys.map((ele) => tally[ele]))
+    return greaterEq(
+      teamSize,
+      4,
+      greaterEq(
+        tally.moonsign,
+        2,
+        equal(condMoonsignAfterSkillBurst, 'on', min(value, percent(0.36)))
+      )
+    )
   }
   const element = getCharEle(key)
   const { region, weaponType, lvlCurves, ascensionBonus } = getCharStat(key)
@@ -340,33 +351,37 @@ export function dataObjForCharacterSheet(
     data.teamBuff!.tally![element] = constant(1)
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
-    // TODO: Add moonsign buff in display somewhere
-    switch (element) {
-      case 'pyro':
-      case 'electro':
-      case 'cryo':
-        data.teamBuff!.tally!.maxMoonsignBuff = moonsignBuff(
-          prod(input.total.atk, 1 / 100, percent(0.009))
-        )
-        break
-      case 'hydro':
-        data.teamBuff!.tally!.maxMoonsignBuff = moonsignBuff(
-          prod(input.total.hp, 1 / 1000, percent(0.006))
-        )
-        break
-      case 'geo':
-        data.teamBuff!.tally!.maxMoonsignBuff = moonsignBuff(
-          prod(input.total.def, 1 / 100, percent(0.01))
-        )
-        break
-      case 'anemo':
-      case 'dendro':
-        data.teamBuff!.tally!.maxMoonsignBuff = moonsignBuff(
-          prod(input.total.eleMas, 1 / 100, percent(0.0225))
-        )
-        break
+    if (region !== 'nodKrai') {
+      let moonsign: NumNode
+      switch (element) {
+        case 'pyro':
+        case 'electro':
+        case 'cryo':
+          moonsign = moonsignBuff(
+            prod(input.total.atk, 1 / 100, percent(0.009))
+          )
+          break
+        case 'hydro':
+          moonsign = moonsignBuff(
+            prod(input.total.hp, 1 / 1000, percent(0.006))
+          )
+          break
+        case 'geo':
+          moonsign = moonsignBuff(prod(input.total.def, 1 / 100, percent(0.01)))
+          break
+        case 'anemo':
+        case 'dendro':
+          moonsign = moonsignBuff(
+            prod(input.total.eleMas, 1 / 100, percent(0.0225))
+          )
+          break
+      }
+      data.teamBuff!.tally!.maxMoonsignBuff = moonsign
+      data.display!['moonsign'] = {
+        lunarbloom_dmg_: { ...moonsign },
+        lunarcharged_dmg_: { ...moonsign },
+      }
     }
-    data.display!['moonsign'] = { buff: data.teamBuff!.tally!.maxMoonsignBuff }
   }
   if (region) data.teamBuff!.tally![region] = constant(1)
   if (weaponType !== 'catalyst')
