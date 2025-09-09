@@ -368,9 +368,9 @@ const sheet: TalentSheet = {
       },
     }),
   ]),
-  passive3: ct.talentTem('passive3'),
-  passive: ct.talentTem('passive', [
-    ct.fieldsTem('passive', {
+  passive3: ct.talentTem('passive3', [
+    ct.headerTem('passive3', {
+      teamBuff: true,
       fields: [
         {
           node: a0_base_lc_dmg_,
@@ -378,11 +378,13 @@ const sheet: TalentSheet = {
       ],
     }),
   ]),
+  passive: ct.talentTem('passive'),
   constellation1: ct.talentTem('constellation1', [
     ct.condTem('constellation1', {
       path: condC1AfterShieldPath,
       value: condC1AfterShield,
       name: ct.ch('c1Cond'),
+      teamBuff: true,
       states: {
         on: {
           fields: [
