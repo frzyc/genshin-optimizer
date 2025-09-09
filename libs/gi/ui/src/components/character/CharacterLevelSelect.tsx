@@ -80,7 +80,9 @@ export function CharacterLevelSelect({
                 onClick={setAscension}
                 color={warning ? 'warning' : undefined}
               >
-                <strong>/ {charAscensionMaxLevel[ascension]}</strong>
+                <strong>
+                  / {level > 90 ? level : charAscensionMaxLevel[ascension]}
+                </strong>
               </Button>
             </InputAdornment>
           ),
@@ -96,6 +98,22 @@ export function CharacterLevelSelect({
         disabled={disabled}
         color={warning ? 'warning' : undefined}
       >
+        <MenuItem
+          key="100"
+          selected={100 === level && 6 === ascension}
+          disabled={100 === level && 6 === ascension}
+          onClick={() => setBoth({ level: 100, ascension: 6 })}
+        >
+          Lv. 100
+        </MenuItem>
+        <MenuItem
+          key="95"
+          selected={95 === level && 6 === ascension}
+          disabled={95 === level && 6 === ascension}
+          onClick={() => setBoth({ level: 95, ascension: 6 })}
+        >
+          Lv. 95
+        </MenuItem>
         {[...(useLow ? charMilestoneLevelsLow : charMilestoneLevels)].map(
           ([lv, as]) => {
             const selected = lv === level && as === ascension
