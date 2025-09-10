@@ -27,17 +27,25 @@ export function dumpChars(fileDir: string) {
 }
 
 function getSkillStrings(data: CharacterData['skills']) {
+  const skillExceptions = new Set([
+    'StanceJougen',
+    'StanceKagen',
+    'DashAttackTigerSevenFormsMountainKingsGameMomentum',
+  ])
   return Object.fromEntries(
     Object.entries(data).map(([key, skill]) => [
       `${key.charAt(0).toLowerCase()}${key.slice(1)}`,
       Object.fromEntries(
-        skill.Description.filter((ability) => !!ability.Desc)
+        skill.Description.filter(
+          (ability) =>
+            !!ability.Desc || skillExceptions.has(nameToKey(ability.Name))
+        )
           .filter(filterUnbuffedKits)
           .map((ability) => [
             nameToKey(ability.Name),
             {
               name: ability.Name,
-              desc: processText(ability.Desc!),
+              desc: processText(ability.Desc || ''),
               // Copy param text by iterating again and finding the param details
               params: skill.Description.filter(
                 (ability2) => ability2.Name === ability.Name && !!ability2.Param
