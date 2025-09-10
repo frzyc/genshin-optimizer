@@ -30,7 +30,6 @@ import Escoffier from './Escoffier'
 import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
-import Flins from './Flins'
 import Freminet from './Freminet'
 import Furina from './Furina'
 import Gaming from './Gaming'
@@ -145,7 +144,6 @@ const data = {
   Eula,
   Faruzan,
   Fischl,
-  Flins,
   Freminet,
   Furina,
   Gaming,

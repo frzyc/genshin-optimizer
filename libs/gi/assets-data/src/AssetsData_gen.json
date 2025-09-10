@@ -3028,24 +3028,6 @@
       "constellation5": "UI_Talent_U_Lauma_02",
       "constellation6": "UI_Talent_S_Lauma_04"
     },
-    "Flins": {
-      "icon": "UI_AvatarIcon_Flins",
-      "iconSide": "UI_AvatarIcon_Side_Flins",
-      "banner": "UI_NameCardPic_Flins_P",
-      "bar": "UI_NameCardPic_Flins_Alpha",
-      "skill": "Skill_S_Flins_01",
-      "burst": "Skill_E_Flins_01_HD",
-      "passive1": "UI_Talent_S_Flins_05",
-      "passive2": "UI_Talent_S_Flins_06",
-      "passive3": "UI_Talent_S_Flins_07",
-      "passive": "UI_Talent_S_Flins_08",
-      "constellation1": "UI_Talent_S_Flins_01",
-      "constellation2": "UI_Talent_S_Flins_02",
-      "constellation3": "UI_Talent_U_Flins_02",
-      "constellation4": "UI_Talent_S_Flins_03",
-      "constellation5": "UI_Talent_U_Flins_01",
-      "constellation6": "UI_Talent_S_Flins_04"
-    },
     "Aino": {
       "icon": "UI_AvatarIcon_Aino",
       "iconSide": "UI_AvatarIcon_Side_Aino",
