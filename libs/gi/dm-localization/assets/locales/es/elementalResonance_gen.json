@@ -32,20 +32,14 @@
     "desc": "La Maestría Elemental aumenta en 50 pts. Tras causar una reacción de Quemadura, Aceleración, Florecimiento o Florecimiento Lunar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 30 pts. durante 6 s. Tras causar una reacción de Intensificación, Propagación, Sobreflorecimiento o Crepitar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 20 pts. durante 6 s. La duración de estos efectos se calcula de manera independiente."
   },
   "Moonsign": {
-    "name": {
-      "0": "Presagio lunar"
-    },
+    "name": "Presagio lunar",
     "desc": {
       "0": "El nivel de presagio lunar variará según el número de personajes con presagio lunar que haya en el equipo.",
       "1": "Cuando el nivel de presagio lunar sea de resplandor ascendente, los personajes con presagio lunar se fortalecerán, y los personajes sin presagio lunar también podrán otorgar bonificaciones al equipo."
     },
     "nascentGleam": {
-      "name": {
-        "0": "Resplandor naciente"
-      },
-      "desc": {
-        "0": "Todos los personajes del equipo obtendrán el efecto de “presagio lunar: resplandor naciente”."
-      }
+      "name": "Resplandor naciente",
+      "desc": "Todos los personajes del equipo obtendrán el efecto de “presagio lunar: resplandor naciente”."
     },
     "ascendantGleam": {
       "name": {

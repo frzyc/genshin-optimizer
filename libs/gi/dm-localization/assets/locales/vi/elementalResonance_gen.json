@@ -32,20 +32,14 @@
     "desc": "Tinh Thông Nguyên Tố tăng 50 điểm. Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Sum Suê, Nguyệt-Sum Suê, tất cả nhân vật trong đội gần đó tăng 30 Tinh Thông Nguyên Tố, duy trì 6s. Sau khi kích hoạt phản ứng Tăng Cường, Lan Tràn, Nở Rộ, Bung Tỏa, tất cả nhân vật trong đội gần đó tăng 20 Tinh Thông Nguyên Tố, duy trì 6s. Thời gian của các hiệu ứng trên sẽ tính độc lập với nhau."
   },
   "Moonsign": {
-    "name": {
-      "0": "Nguyệt Triệu"
-    },
+    "name": "Nguyệt Triệu",
     "desc": {
       "0": "Khi trong đội có nhân vật Nguyệt Triệu, sẽ căn cứ số lượng nhân vật Nguyệt Triệu trong đội để nhận cấp độ Nguyệt Triệu tương ứng.",
       "1": "Khi cấp Nguyệt Triệu đạt tới \"Nguyệt Triệu - Rực Sáng\", nhân vật Nguyệt Triệu sẽ được cường hóa, nhân vật không phải Nguyệt Triệu cũng sẽ cung cấp hiệu quả buff cho đội ngũ."
     },
     "nascentGleam": {
-      "name": {
-        "0": "Hé Sáng"
-      },
-      "desc": {
-        "0": "Tất cả nhân vật trong đội sẽ nhận hiệu quả \"Nguyệt Triệu - Hé Sáng\""
-      }
+      "name": "Hé Sáng",
+      "desc": "Tất cả nhân vật trong đội sẽ nhận hiệu quả \"Nguyệt Triệu - Hé Sáng\""
     },
     "ascendantGleam": {
       "name": {

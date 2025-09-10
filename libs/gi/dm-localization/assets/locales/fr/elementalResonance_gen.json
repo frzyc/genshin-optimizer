@@ -32,20 +32,14 @@
     "desc": "Augmente la maîtrise élémentaire de 50 pts. Après avoir déclenché une réaction de Brûlure, de Stimulation, de Fleurissement ou de Sélénofleurissement, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 30 pts pendant 6 s. Après avoir déclenché une réaction de Suractivation, de Propagation, d'Exubérance ou de Bourgeonnement, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 20 pts pendant 6 s. La durée de ces effets est calculée indépendamment."
   },
   "Moonsign": {
-    "name": {
-      "0": "Signelune"
-    },
+    "name": "Signelune",
     "desc": {
       "0": "Lorsqu'elle contient des personnages signelunaires, l'équipe atteint un cycle signelunaire selon le nombre de ces personnages.",
       "1": "Lorsque le cycle signelunaire atteint la signelune « Lueur ascendante », les personnages signelunaires sont renforcés. Les personnages non signelunaires peuvent également apporter des effets bonus à l'équipe."
     },
     "nascentGleam": {
-      "name": {
-        "0": "Lueur naissante"
-      },
-      "desc": {
-        "0": "Tous les personnages de l'équipe obtiendront l'effet Signelune « Lueur naissante »."
-      }
+      "name": "Lueur naissante",
+      "desc": "Tous les personnages de l'équipe obtiendront l'effet Signelune « Lueur naissante »."
     },
     "ascendantGleam": {
       "name": {

@@ -206,7 +206,7 @@ export function HeaderDisplay({
       title
     ) : (
       <span>
-        {title}
+        {title}{' '}
         <InfoTooltipInline title={<Typography>{description}</Typography>} />
       </span>
     )

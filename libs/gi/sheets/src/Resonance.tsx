@@ -27,11 +27,13 @@ import {
   tally,
   target,
 } from '@genshin-optimizer/gi/wr'
+import { DarkMode } from '@mui/icons-material'
 import type { ReactNode } from 'react'
 import type { CharacterSheet } from './Characters/CharacterSheet'
 import ElementCycle from './ElementCycle'
 import { activeCharBuff, cond, condReadNode, st, stg } from './SheetUtil'
 import type { DocumentSection, IDocumentConditionalExclusive } from './sheet'
+
 const tr = (strKey: string) => (
   <Translate ns="elementalResonance_gen" key18={strKey} />
 )
@@ -464,7 +466,7 @@ const [moonsignBuffDisp, moonsignBuff] = activeCharBuff(
 const moonsign: IResonance = {
   name: tr('Moonsign.name'),
   desc: tr('Moonsign.desc'),
-  icon: 'todoicon',
+  icon: <DarkMode sx={{ transform: 'scaleX(-1)' }} />,
   canShow: (data) =>
     data.get(teamSize).value >= 4 && data.get(tally.moonsign).value >= 1,
   sections: [
@@ -472,7 +474,7 @@ const moonsign: IResonance = {
       teamBuff: true,
       header: {
         title: tr('Moonsign.nascentGleam.name'),
-        icon: 'todoicon2',
+        icon: <DarkMode sx={{ transform: 'scaleX(-1)' }} />,
       },
       fields: [
         {
@@ -486,7 +488,12 @@ const moonsign: IResonance = {
       header: {
         title: tr('Moonsign.ascendantGleam.name'),
         description: tr('Moonsign.ascendantGleam.desc'),
-        icon: 'todoicon3',
+        icon: (
+          <span>
+            <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+            <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+          </span>
+        ),
       },
       // We handle the moonsign conditionals per-character in TeamComponents.tsx,
       // using MoonsignConditionalSection below
@@ -524,7 +531,12 @@ export function MoonsignConditionalSection(
     header: {
       title: tr('Moonsign.ascendantGleam.name'),
       description: tr('Moonsign.ascendantGleam.desc'),
-      icon: 'todoicon3',
+      icon: (
+        <span>
+          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+        </span>
+      ),
     },
     teamBuff: true,
     name: st('afterUse.skillOrBurst'),

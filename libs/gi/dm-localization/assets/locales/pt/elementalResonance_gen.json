@@ -32,20 +32,14 @@
     "desc": "Aumenta a Proficiência Elemental em 50 pontos. Ao desencadear as reações de Queimadura, Aceleração ou Florescimento, aumenta a Proficiência Elemental de todos os personagens próximos da equipe em 30 pontos por 6s. Ao desencadear as reações de Intensificação, Propagação, Superflorescimento ou Germinação, aumenta a Proficiência Elemental de todos os personagens próximos da equipe em 20 pontos por 6s. A duração desses efeitos é contada individualmente."
   },
   "Moonsign": {
-    "name": {
-      "0": "Presságio Lunar"
-    },
+    "name": "Presságio Lunar",
     "desc": {
       "0": "Quando personagens de Presságio Lunar estão na equipe, ela obterá uma Fase de Presságio Lunar correspondente a quantidade de tais personagens.",
       "1": "Quando a equipe alcança \"Presságio Lunar: Reluzir Cheio\", personagens de Presságio Lunar serão aprimorados. Personagens que não são de Presságio Lunar também poderão fornecer bônus à equipe."
     },
     "nascentGleam": {
-      "name": {
-        "0": "Reluzir Inicial"
-      },
-      "desc": {
-        "0": "Todos os membros da equipe ganharão o efeito \"Presságio Lunar: Reluzir Inicial\"."
-      }
+      "name": "Reluzir Inicial",
+      "desc": "Todos os membros da equipe ganharão o efeito \"Presságio Lunar: Reluzir Inicial\"."
     },
     "ascendantGleam": {
       "name": {

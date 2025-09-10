@@ -70,14 +70,14 @@ export const mapHashData = {
       desc: 2900013027,
     },
     Moonsign: {
-      name: [47522259, 'paragraph'],
+      name: 47522259,
       desc: [1400535123, 'paragraph'],
       nascentGleam: {
-        name: [3355827977, 'paragraph'],
-        desc: [2507050873, 'paragraph'],
+        name: 3355827977,
+        desc: 2507050873,
       },
       ascendantGleam: {
-        name: [815173912, 'paragraph'],
+        name: 815173912,
         desc: [
           [856180336, 'paragraph'],
           [604954065, 'paragraph'],

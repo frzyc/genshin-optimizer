@@ -32,20 +32,14 @@
     "desc": "Elemental Mastery meningkat 50. Setelah memicu reaksi Burning, Quicken, Bloom, atau Lunar-Bloom seluruh anggota party di sekitar akan mendapatkan 30 Elemental Mastery selama 6 detik. Setelah memicu reaksi Aggravate, Spread, Hyperbloom, atau Burgeon, seluruh anggota party di sekitar akan mendapatkan 20 Elemental Mastery selama 6 detik. Durasi dari efek yang disebutkan di atas akan dihitung secara terpisah."
   },
   "Moonsign": {
-    "name": {
-      "0": "Moonsign"
-    },
+    "name": "Moonsign",
     "desc": {
       "0": "Saat ada Karakter Moonsign dalam party, level Moonsign akan meningkat berdasarkan jumlah Karakter Moonsign yang dimasukkan dalam party.",
       "1": "Saat level Moonsign mencapai \"Moonsign: Ascendant Gleam\", maka Karakter Moonsign akan menjadi lebih kuat. Karakter yang bukan Karakter Moonsign juga dapat memberikan efek buff kepada party."
     },
     "nascentGleam": {
-      "name": {
-        "0": "Nascent Gleam"
-      },
-      "desc": {
-        "0": "Seluruh Karakter yang ada di dalam party akan mendapatkan efek Moonsign: Nascent Gleam."
-      }
+      "name": "Nascent Gleam",
+      "desc": "Seluruh Karakter yang ada di dalam party akan mendapatkan efek Moonsign: Nascent Gleam."
     },
     "ascendantGleam": {
       "name": {

@@ -32,20 +32,14 @@
     "desc": "Element Ustalığı 50 artar. Yanma, Hızlanma, Çiçeklenme veya Ay Çiçeklenmesi tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 30 Element Ustalığı kazanır. Şiddetlenme, Yayılma, Aşırı Çiçeklenme veya Filizlenme tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 20 Element Ustalığı kazanır. Yukarıdaki etkilerin süreleri bağımsız olarak hesaplanır."
   },
   "Moonsign": {
-    "name": {
-      "0": "Ay Sembolü"
-    },
+    "name": "Ay Sembolü",
     "desc": {
       "0": "Grupta Ay Sembolü karakterleri olduğunda grup, bu karakterlerin sayısına göre Ay Sembolü Seviyesi kazanır.",
       "1": "Grup, \"Ay Sembolü: Yükselen Parıltı\" aşamasına ulaştığında Ay Sembolü karakterleri güçlenir. Ay Sembolü olmayan karakterler de gruba güçlendirme sağlayabilir."
     },
     "nascentGleam": {
-      "name": {
-        "0": "İlk Parıltı"
-      },
-      "desc": {
-        "0": "Gruptaki tüm karakterler \"Ay Sembolü: İlk Parıltı\" etkisi kazanır."
-      }
+      "name": "İlk Parıltı",
+      "desc": "Gruptaki tüm karakterler \"Ay Sembolü: İlk Parıltı\" etkisi kazanır."
     },
     "ascendantGleam": {
       "name": {

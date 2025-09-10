@@ -32,25 +32,17 @@
     "desc": "Elemental Mastery increased by 50. After triggering Burning, Quicken, Bloom, or Lunar-Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently."
   },
   "Moonsign": {
-    "name": {
-      "0": "Moonsign"
-    },
+    "name": "Moonsign",
     "desc": {
       "0": "When Moonsign characters are in the party, the party will attain a Moonsign Level corresponding to the number of such characters.",
       "1": "When the party reaches \"Moonsign: Ascendant Gleam,\" Moonsign characters will be enhanced. Non-Moonsign characters can also provide buffs to the party."
     },
     "nascentGleam": {
-      "name": {
-        "0": "Nascent Gleam"
-      },
-      "desc": {
-        "0": "All characters in the party will gain the \"Moonsign: Nascent Gleam\" effect."
-      }
+      "name": "Nascent Gleam",
+      "desc": "All characters in the party will gain the \"Moonsign: Nascent Gleam\" effect."
     },
     "ascendantGleam": {
-      "name": {
-        "0": "Ascendant Gleam"
-      },
+      "name": "Ascendant Gleam",
       "desc": {
         "0": {
           "0": "All characters in the party will gain the \"Moonsign: Ascendant Gleam\" effect, enhancing certain Talents and Skills of Moonsign characters. Unless otherwise stated, when Moonsign Level reaches Ascendant Gleam, the effects of Nascent Gleam will also apply."

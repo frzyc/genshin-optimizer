@@ -32,20 +32,14 @@
     "desc": "La maestria elementale aumenta di 50. Dopo aver attivato reazioni di Ustione, Vivificazione, Fioritura o Fioritura lunare, la maestria elementale di tutti i membri del gruppo vicini aumenta di 30 per 6 s. Dopo aver attivato le reazioni di Accentuazione, Propagazione, Iperfioritura o Germinazione, la maestria elementale di tutti i membri del gruppo aumenta di 20 per 6 s. La durata di ciascun effetto è contata in modo indipendente."
   },
   "Moonsign": {
-    "name": {
-      "0": "Presagio lunare"
-    },
+    "name": "Presagio lunare",
     "desc": {
       "0": "Quando nel gruppo sono presenti personaggi con Presagio lunare, il gruppo raggiunge un livello di Presagio lunare corrispondente al numero di tali personaggi.",
       "1": "Quando il gruppo raggiunge Presagio lunare: Barlume ascendente, i personaggi con Presagio lunare vengono potenziati. Anche i personaggi senza Presagio lunare possono conferire effetti positivi al gruppo."
     },
     "nascentGleam": {
-      "name": {
-        "0": "Barlume nascente"
-      },
-      "desc": {
-        "0": "Tutti i personaggi del gruppo ottengono l'effetto Presagio lunare: Barlume nascente."
-      }
+      "name": "Barlume nascente",
+      "desc": "Tutti i personaggi del gruppo ottengono l'effetto Presagio lunare: Barlume nascente."
     },
     "ascendantGleam": {
       "name": {
