@@ -42,9 +42,7 @@
       "desc": "Seluruh Karakter yang ada di dalam party akan mendapatkan efek Moonsign: Nascent Gleam."
     },
     "ascendantGleam": {
-      "name": {
-        "0": "Ascendant Gleam"
-      },
+      "name": "Ascendant Gleam",
       "desc": {
         "0": {
           "0": "Seluruh Karakter dalam party akan mendapatkan efek Moonsign: Ascendant Gleam, sebagian Skill dan Talenta Karakter Moonsign akan diperkuat. Kecuali dinyatakan secara spesifik, efek Nascent Gleam juga akan terpicu saat level Moonsign mencapai Ascendant Gleam."

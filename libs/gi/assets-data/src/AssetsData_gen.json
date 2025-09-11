@@ -516,10 +516,6 @@
       "icon": "UI_EquipIcon_Pole_Perdix",
       "awakenIcon": "UI_EquipIcon_Pole_Perdix_Awaken"
     },
-    "BloodsoakedRuins": {
-      "icon": "UI_EquipIcon_Pole_TummaLyhty",
-      "awakenIcon": "UI_EquipIcon_Pole_TummaLyhty_Awaken"
-    },
     "ApprenticesNotes": {
       "icon": "UI_EquipIcon_Catalyst_Apprentice",
       "awakenIcon": "UI_EquipIcon_Catalyst_Apprentice_Awaken"

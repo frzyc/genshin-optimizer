@@ -42,9 +42,7 @@
       "desc": "Tutti i personaggi del gruppo ottengono l'effetto Presagio lunare: Barlume nascente."
     },
     "ascendantGleam": {
-      "name": {
-        "0": "Barlume ascendente"
-      },
+      "name": "Barlume ascendente",
       "desc": {
         "0": {
           "0": "Tutti i personaggi del gruppo ottengono l'effetto Presagio lunare: Barlume ascendente, che potenzia alcuni talenti e abilità dei personaggi con Presagio lunare.",

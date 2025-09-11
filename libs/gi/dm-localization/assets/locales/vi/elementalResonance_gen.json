@@ -42,9 +42,7 @@
       "desc": "Tất cả nhân vật trong đội sẽ nhận hiệu quả \"Nguyệt Triệu - Hé Sáng\""
     },
     "ascendantGleam": {
-      "name": {
-        "0": "Rực Sáng"
-      },
+      "name": "Rực Sáng",
       "desc": {
         "0": {
           "0": "Tất cả nhân vật trong đội sẽ nhận hiệu quả \"Nguyệt Triệu - Rực Sáng\", cường hóa một số hiệu quả kỹ năng và Thiên Phú của nhân vật Nguyệt Triệu. Nếu không có những giải thích khác, thì khi cấp độ Nguyệt Triệu đạt Rực Sáng, cũng sẽ kích hoạt hiệu quả tương ứng của \"Nguyệt Triệu - Hé Sáng\"."

@@ -42,9 +42,7 @@
       "desc": "Gruptaki tüm karakterler \"Ay Sembolü: İlk Parıltı\" etkisi kazanır."
     },
     "ascendantGleam": {
-      "name": {
-        "0": "Yükselen Parıltı"
-      },
+      "name": "Yükselen Parıltı",
       "desc": {
         "0": {
           "0": "Gruptaki tüm karakterler \"Ay Sembolü: Yükselen Parıltı\" etkisi kazanır ve Ay Sembolü karakterlerinin bazı Yetenek ile Becerileri gelişir. Aksi belirtilmedikçe, Ay Sembolü Seviyesi Yükselen Parıltıya ulaştığı zaman İlk Parıltı etkileri de uygulanır."

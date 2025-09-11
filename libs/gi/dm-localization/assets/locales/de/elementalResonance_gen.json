@@ -42,9 +42,7 @@
       "desc": "Verleiht allen Truppenmitgliedern den Effekt „Mondomen – Anfänglicher Glanz“."
     },
     "ascendantGleam": {
-      "name": {
-        "0": "Reifer Glanz"
-      },
+      "name": "Reifer Glanz",
       "desc": {
         "0": {
           "0": "Verleiht allen Truppenmitgliedern den Effekt „Mondomen – Reifer Glanz“, der einige Talente und Fähigkeiten von Mondomen-Figuren verstärkt. Löst zudem, wenn nicht anders beschrieben und die Mondomenstufe „Reifer Glanz“ ist, die entsprechenden Effekte von „Mondomen – Anfänglicher Glanz“ aus."

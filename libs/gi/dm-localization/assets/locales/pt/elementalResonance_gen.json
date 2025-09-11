@@ -42,9 +42,7 @@
       "desc": "Todos os membros da equipe ganharão o efeito \"Presságio Lunar: Reluzir Inicial\"."
     },
     "ascendantGleam": {
-      "name": {
-        "0": "Reluzir Cheio"
-      },
+      "name": "Reluzir Cheio",
       "desc": {
         "0": {
           "0": "Todos os personagens da equipe ganharão o efeito de \"Presságio Lunar: Reluzir Cheio\", aprimorando certas habilidades e talentos dos personagens de Presságio Lunar. A menos que dito do contrário, quando o Nível de Presságio Lunar chegar em Reluzir Cheio, os efeitos de Reluzir Inicial também serão aplicados."

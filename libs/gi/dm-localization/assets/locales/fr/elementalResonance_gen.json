@@ -42,9 +42,7 @@
       "desc": "Tous les personnages de l'équipe obtiendront l'effet Signelune « Lueur naissante »."
     },
     "ascendantGleam": {
-      "name": {
-        "0": "Lueur ascendante"
-      },
+      "name": "Lueur ascendante",
       "desc": {
         "0": {
           "0": "Tous les personnages de l'équipe obtiendront l'effet Signelune « Lueur ascendante », améliorant certaines compétences et aptitudes des personnages signelunaires. Sauf indication contraire, les bonus de l'effet Signelune « Lueur naissante » s'appliquent également lorsque le cycle signelunaire atteint « Lueur ascendante »."

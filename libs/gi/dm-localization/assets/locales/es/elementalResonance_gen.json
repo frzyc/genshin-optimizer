@@ -42,9 +42,7 @@
       "desc": "Todos los personajes del equipo obtendrán el efecto de “presagio lunar: resplandor naciente”."
     },
     "ascendantGleam": {
-      "name": {
-        "0": "Resplandor ascendente"
-      },
+      "name": "Resplandor ascendente",
       "desc": {
         "0": {
           "0": "Todos los personajes del equipo obtendrán el efecto de “presagio lunar: resplandor ascendente”, y algunos talentos y habilidades de los personajes con presagio lunar se fortalecerán. A no ser que se indique lo contrario, cuando el nivel de presagio lunar sea de resplandor ascendente, también se activarán los efectos correspondientes de presagio lunar: resplandor naciente."
