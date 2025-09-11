@@ -60,6 +60,7 @@ import Klee from './Klee'
 import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
 import LanYan from './LanYan'
+import Lauma from './Lauma'
 import Layla from './Layla'
 import Lisa from './Lisa'
 import Lynette from './Lynette'
@@ -176,6 +177,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   KujouSara,
   KukiShinobu,
   LanYan,
+  Lauma,
   Layla,
   Lisa,
   Lynette,
