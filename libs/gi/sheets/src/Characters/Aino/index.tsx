@@ -141,6 +141,22 @@ const c6AfterBurst_gleam_lunarcharged_dmg_ = {
 const c6AfterBurst_gleam_lunarbloom_dmg_ = {
   ...c6AfterBurst_gleam_electrocharged_dmg_,
 }
+const c6AfterBurst_total_electrocharged_dmg_ = sum(
+  c6AfterBurst_electrocharged_dmg_,
+  c6AfterBurst_gleam_electrocharged_dmg_
+)
+const c6AfterBurst_total_bloom_dmg_ = sum(
+  c6AfterBurst_bloom_dmg_,
+  c6AfterBurst_gleam_bloom_dmg_
+)
+const c6AfterBurst_total_lunarcharged_dmg_ = sum(
+  c6AfterBurst_lunarcharged_dmg_,
+  c6AfterBurst_gleam_lunarcharged_dmg_
+)
+const c6AfterBurst_total_lunarbloom_dmg_ = sum(
+  c6AfterBurst_lunarbloom_dmg_,
+  c6AfterBurst_gleam_lunarbloom_dmg_
+)
 
 const dmgFormulas = {
   normal: {
@@ -186,6 +202,10 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   teamBuff: {
     premod: {
       eleMas: c1AfterSkill_active_eleMas,
+      electrocharged_dmg_: c6AfterBurst_total_electrocharged_dmg_,
+      bloom_dmg_: c6AfterBurst_total_bloom_dmg_,
+      lunarcharged_dmg_: c6AfterBurst_total_lunarcharged_dmg_,
+      lunarbloom_dmg_: c6AfterBurst_total_lunarbloom_dmg_,
     },
     tally: {
       moonsign: constant(1),
@@ -374,52 +394,21 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: infoMut(c6AfterBurst_electrocharged_dmg_, {
-                path: 'electrocharged_dmg_',
-                isTeamBuff: true,
-              }),
+              node: c6AfterBurst_total_electrocharged_dmg_,
             },
             {
-              node: infoMut(c6AfterBurst_bloom_dmg_, {
-                path: 'bloom_dmg_',
-                isTeamBuff: true,
-              }),
+              node: c6AfterBurst_total_bloom_dmg_,
             },
             {
-              node: infoMut(c6AfterBurst_lunarcharged_dmg_, {
-                path: 'lunarcharged_dmg_',
-                isTeamBuff: true,
-              }),
+              node: c6AfterBurst_total_lunarcharged_dmg_,
             },
             {
-              node: infoMut(c6AfterBurst_lunarbloom_dmg_, {
-                path: 'lunarbloom_dmg_',
-                isTeamBuff: true,
-              }),
+              node: c6AfterBurst_total_lunarbloom_dmg_,
             },
             {
-              node: infoMut(c6AfterBurst_gleam_electrocharged_dmg_, {
-                path: 'electrocharged_dmg_',
-                isTeamBuff: true,
-              }),
-            },
-            {
-              node: infoMut(c6AfterBurst_gleam_bloom_dmg_, {
-                path: 'bloom_dmg_',
-                isTeamBuff: true,
-              }),
-            },
-            {
-              node: infoMut(c6AfterBurst_gleam_lunarcharged_dmg_, {
-                path: 'lunarcharged_dmg_',
-                isTeamBuff: true,
-              }),
-            },
-            {
-              node: infoMut(c6AfterBurst_gleam_lunarbloom_dmg_, {
-                path: 'lunarbloom_dmg_',
-                isTeamBuff: true,
-              }),
+              text: stg('duration'),
+              value: dm.constellation6.duration,
+              unit: 's',
             },
           ],
         },

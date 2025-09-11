@@ -90,6 +90,7 @@ const allNonstackBuffs = [
   'symphonist',
   'gleamingmoonintent',
   'gleamingmoondevotion',
+  'nightweaver',
 ] as const
 export type NonStackBuff = (typeof allNonstackBuffs)[number]
 const allMoves = [
