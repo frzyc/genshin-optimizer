@@ -190,7 +190,7 @@ const dmgFormulas = {
     burgeon_dmg_: { ...a4BurningBloom_dmg_ },
     aggravate_dmg_: a4AggSpread_dmg_,
     spread_dmg_: { ...a4AggSpread_dmg_ },
-    a4lunarBloom_dmg_,
+    lunarbloom_dmg_: a4lunarBloom_dmg_,
   },
   passive3: {
     heal: customHealNode(prod(percent(dm.passive3.heal), input.total.hp)),
