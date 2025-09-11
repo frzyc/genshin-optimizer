@@ -1,11 +1,19 @@
-import { objKeyMap, verifyObjKeys } from '@genshin-optimizer/common/util'
+import {
+  objKeyMap,
+  objKeyValMap,
+  verifyObjKeys,
+} from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   MainStatKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
-import { allElementKeys, allMainStatKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allElementKeys,
+  allLunarReactionKeys,
+  allMainStatKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi/dm'
 import { allStats, getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
@@ -377,10 +385,10 @@ export function dataObjForCharacterSheet(
           break
       }
       data.teamBuff!.tally!.maxMoonsignBuff = moonsign
-      data.display!['moonsign'] = {
-        lunarbloom_dmg_: { ...moonsign },
-        lunarcharged_dmg_: { ...moonsign },
-      }
+      data.display!['moonsign'] = objKeyValMap(allLunarReactionKeys, (lr) => [
+        `${lr}_dmg_`,
+        { ...moonsign },
+      ])
     }
   }
   if (region) data.teamBuff!.tally![region] = constant(1)

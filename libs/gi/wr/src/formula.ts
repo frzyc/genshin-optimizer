@@ -7,6 +7,7 @@ import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allElementWithPhyKeys,
+  allLunarReactionKeys,
   allRegionKeys,
 } from '@genshin-optimizer/gi/consts'
 import {
@@ -183,10 +184,12 @@ const allNonModStats = [
     `${x}_critRate_` as const,
     `${x}_critDMG_` as const,
   ]),
-  'swirl_dmgInc' as const,
+  ...allTransformative.map((x) => `${x}_dmgInc` as const),
   'all_dmgInc' as const,
-  'lunarcharged_baseDmg_' as const,
-  'lunarbloom_baseDmg_' as const,
+  ...allLunarReactionKeys.flatMap((lr) => [
+    `${lr}_baseDmg_` as const,
+    `${lr}_specialDmg_` as const,
+  ]),
   ...allEleEnemyResKeys,
   'enemyDefRed_' as const,
   'enemyDefIgn_' as const,
@@ -221,6 +224,13 @@ for (const reaction of [
   ...allAdditive,
 ]) {
   allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
+}
+for (const reaction of allTransformative) {
+  allNonModStatNodes[`${reaction}_dmgInc`].info!.variant = reaction
+}
+for (const reaction of allLunarReactionKeys) {
+  allNonModStatNodes[`${reaction}_baseDmg_`].info!.variant = reaction
+  allNonModStatNodes[`${reaction}_specialDmg_`].info!.variant = reaction
 }
 crittableTransformativeReactions.forEach((reaction) => {
   allNonModStatNodes[`${reaction}_critRate_`].info!.variant = reaction

@@ -4,6 +4,7 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allElementKeys,
   allElementWithPhyKeys,
+  allLunarReactionKeys,
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import {
@@ -497,20 +498,12 @@ const moonsign: IResonance = {
       },
       // We handle the moonsign conditionals per-character in TeamComponents.tsx,
       // using MoonsignConditionalSection below
-      fields: [
-        {
-          node: infoMut(
-            { ...moonsignBuffDisp },
-            { path: 'lunarcharged_dmg_', isTeamBuff: true }
-          ),
-        },
-        {
-          node: infoMut(
-            { ...moonsignBuffDisp },
-            { path: 'lunarbloom_dmg_', isTeamBuff: true }
-          ),
-        },
-      ],
+      fields: allLunarReactionKeys.map((lr) => ({
+        node: infoMut(
+          { ...moonsignBuffDisp },
+          { path: `${lr}_dmg_`, isTeamBuff: true }
+        ),
+      })),
     },
   ],
 }
@@ -543,21 +536,12 @@ export function MoonsignConditionalSection(
     states: {
       on: {
         fields: [
-          {
-            node: infoMut(
-              sheet.data.display!['moonsign']!['lunarcharged_dmg_'],
-              {
-                isTeamBuff: true,
-                path: 'lunarcharged_dmg_',
-              }
-            ),
-          },
-          {
-            node: infoMut(sheet.data.display!['moonsign']!['lunarbloom_dmg_'], {
+          ...allLunarReactionKeys.map((lr) => ({
+            node: infoMut(sheet.data.display!['moonsign']![`${lr}_dmg_`], {
               isTeamBuff: true,
-              path: 'lunarbloom_dmg_',
+              path: `${lr}_dmg_`,
             }),
-          },
+          })),
           {
             text: stg('duration'),
             value: 20,
@@ -596,8 +580,10 @@ export const resonanceData = inferInfoMut({
         pivot: true,
       }),
       all_dmg_: erNodeDMG_,
-      lunarcharged_dmg_: { ...moonsignBuff },
-      lunarbloom_dmg_: { ...moonsignBuff },
+      ...objKeyValMap(allLunarReactionKeys, (lr) => [
+        `${lr}_dmg_`,
+        { ...moonsignBuff },
+      ]),
     },
     total: {
       // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
