@@ -81,6 +81,7 @@ const dm = {
     burningBloom_dmg_: skillParam_gen.passive2[1][0],
     aggSpread_dmg_: skillParam_gen.passive2[2][0],
     maxHp: skillParam_gen.passive2[3][0],
+    lunarbloom_dmg_: skillParam_gen.passive2[4][0],
   },
   passive3: {
     heal: skillParam_gen?.passive3?.[0]?.[0] ?? 0,
@@ -138,6 +139,18 @@ const a4AggSpread_dmg_ = greaterEq(
     )
   )
 )
+const a4lunarBloom_dmg_ = greaterEq(
+  input.asc,
+  4,
+  equal(
+    condA4AfterHeal,
+    'on',
+    min(
+      (dm.passive2.maxHp / 1000) * dm.passive2.lunarbloom_dmg_,
+      prod(percent(dm.passive2.lunarbloom_dmg_), input.total.hp, 1 / 1000)
+    )
+  )
+)
 
 const [condC4AfterBurstPath, condC4AfterBurst] = cond(key, 'c4AfterBurst')
 const c4AfterBurst_eleMas = greaterEq(
@@ -177,6 +190,7 @@ const dmgFormulas = {
     burgeon_dmg_: { ...a4BurningBloom_dmg_ },
     aggravate_dmg_: a4AggSpread_dmg_,
     spread_dmg_: { ...a4AggSpread_dmg_ },
+    a4lunarBloom_dmg_,
   },
   passive3: {
     heal: customHealNode(prod(percent(dm.passive3.heal), input.total.hp)),
