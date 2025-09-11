@@ -344,7 +344,8 @@ export function dataObjForCharacterSheet(
     )
   }
   const element = getCharEle(key)
-  const { region, weaponType, lvlCurves, ascensionBonus } = getCharStat(key)
+  const { region, weaponType, lvlCurves, ascensionBonus, baseStats } =
+    getCharStat(key)
   display['basic'] = { ...commonBasic }
   const data: Data = {
     charKey: constant(key),
@@ -402,6 +403,8 @@ export function dataObjForCharacterSheet(
 
     const asc = ascensionBonus[stat]
     if (asc) list.push(subscript(input.asc, asc))
+    const otherBase = stat === 'def' ? undefined : baseStats?.[stat]
+    if (otherBase) list.push(constant(otherBase))
 
     if (!list.length) continue
 
@@ -414,9 +417,16 @@ export function dataObjForCharacterSheet(
     if (stat === 'atk' || stat === 'def' || stat === 'hp')
       data.base![stat] = result
     else {
-      if (data.special) throw new Error('Multiple Char Special')
-      data.special = result
-      data.premod![stat] = input.special
+      // Special ascension stat
+      if (asc) {
+        if (data.special) throw new Error('Multiple Char Special')
+        data.special = result
+        data.premod![stat] = input.special
+      }
+      // Other base stat
+      else {
+        data.premod![stat] = result
+      }
     }
   }
 
