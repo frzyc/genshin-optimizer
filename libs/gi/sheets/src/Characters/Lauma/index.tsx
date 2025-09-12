@@ -200,14 +200,6 @@ const a4_skill_dmg_ = greaterEq(
     percent(dm.passive2.max_skill_dmg_)
   )
 )
-const a4_skillLunarbloom_dmg_ = greaterEq(
-  input.asc,
-  4,
-  min(
-    prod(percent(dm.passive2.skill_dmg_), input.total.eleMas),
-    percent(dm.passive2.max_skill_dmg_)
-  )
-)
 const a4_charged_cdRed_ = greaterEq(
   input.asc,
   4,
@@ -277,8 +269,7 @@ const dmgFormulas = {
         subscript(input.total.skillIndex, dm.skill.hold2Dmg, { unit: '%' })
       ),
       'eleMas',
-      'lunarbloom',
-      { premod: { lunarbloom_dmg_: a4_skillLunarbloom_dmg_ } }
+      'lunarbloom'
     ),
     frostgroveDmg: splitScaleDmgNode(
       ['atk', 'eleMas'],
@@ -294,7 +285,6 @@ const dmgFormulas = {
   },
   passive2: {
     a4_skill_dmg_,
-    a4_skillLunarbloom_dmg_,
   },
   constellation1: {
     heal: greaterEq(
@@ -614,9 +604,6 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: a4_skill_dmg_,
-        },
-        {
-          node: infoMut(a4_skillLunarbloom_dmg_, { path: 'lunarbloom_dmg_' }),
         },
         {
           node: infoMut(a4_charged_cdRed_, {
