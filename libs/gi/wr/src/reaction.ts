@@ -116,7 +116,7 @@ const trans = {
                       `${
                         reaction as CrittableTransformativeReactionsKey
                       }_critDMG_`
-                    ],
+                    ]
                   )
                 )
               : one,
