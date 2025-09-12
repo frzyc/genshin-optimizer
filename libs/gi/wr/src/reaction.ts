@@ -99,7 +99,7 @@ const trans = {
                               reaction as CrittableTransformativeReactionsKey
                             }_critRate_`
                           ],
-                          sum(one, one)
+                          one
                         ),
                         naught
                       ),
@@ -112,24 +112,11 @@ const trans = {
                         pivot: true,
                       }
                     ),
-                    infoMut(
-                      sum(
-                        input.total[
-                          `${
-                            reaction as CrittableTransformativeReactionsKey
-                          }_critDMG_`
-                        ],
-                        one
-                      ),
-                      {
-                        ...input.total[
-                          `${
-                            reaction as CrittableTransformativeReactionsKey
-                          }_critDMG_`
-                        ].info,
-                        pivot: true,
-                      }
-                    )
+                    input.total[
+                      `${
+                        reaction as CrittableTransformativeReactionsKey
+                      }_critDMG_`
+                    ],
                   )
                 )
               : one,

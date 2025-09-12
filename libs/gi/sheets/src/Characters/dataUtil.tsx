@@ -428,6 +428,10 @@ export function dataObjForCharacterSheet(
         data.premod![stat] = result
       }
     }
+    // Workaround for bloom-related crit DMG
+    data.premod!.bloom_critDMG_ = one
+    data.premod!.hyperbloom_critDMG_ = one
+    data.premod!.burgeon_critDMG_ = one
   }
 
   return mergeData([data, inferInfoMut(additional)])
