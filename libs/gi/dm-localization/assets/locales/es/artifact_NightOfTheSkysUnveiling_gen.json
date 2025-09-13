@@ -1,0 +1,29 @@
+{
+  "setName": "Noche de la Revelación del Cielo",
+  "setEffects": {
+    "2": "Maestría Elemental +80 pts.",
+    "4": "Cuando un personaje cercano del equipo causa una Reacción Lunar, si el portador de este conjunto está en uso, obtiene durante 4 s el efecto de “luna refulgente: cavilación”, de manera que, cuando el presagio lunar del equipo es resplandor naciente/resplandor ascendente, la Prob. CRIT aumenta en un 15/30% respectivamente. Por cada efecto de luna refulgente diferente que tengan los personajes, el daño de las Reacciones Lunares de todos los miembros del equipo aumentará en un 10%. Los efectos producidos por luna refulgente no se pueden acumular."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor Anhelaverdad",
+      "desc": "Una reliquia tallada en forma de flor. Parece simbolizar una existencia aterradora que se despliega como si de pétalos se tratase."
+    },
+    "plume": {
+      "name": "Pluma del Pecado",
+      "desc": "Una pluma de color oscuro que servía para decorar sombreros de fieltro. Desentona bastante con los gustos estéticos de la aristocracia de Snezhnaya."
+    },
+    "sands": {
+      "name": "Reloj del Mandato",
+      "desc": "Un sofisticado reloj de sonería que funciona gracias a un poder misterioso, pero que no parece servir para indicar la hora."
+    },
+    "goblet": {
+      "name": "Cáliz Rebosante",
+      "desc": "Un cáliz especial que se utilizaba en los banquetes de la corte. En el pasado se empleaba para realizar cierta clase de magia."
+    },
+    "circlet": {
+      "name": "Corona Aciaga",
+      "desc": "Una corona hecha a semejanza de la diadema que solía llevar un pecador. Quizá, para algunas personas, el amor y el pecado comparten el mismo origen."
+    }
+  }
+}

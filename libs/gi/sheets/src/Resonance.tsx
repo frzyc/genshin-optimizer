@@ -1,8 +1,10 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allElementKeys,
   allElementWithPhyKeys,
+  allLunarReactionKeys,
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import {
@@ -26,10 +28,13 @@ import {
   tally,
   target,
 } from '@genshin-optimizer/gi/wr'
+import { DarkMode } from '@mui/icons-material'
 import type { ReactNode } from 'react'
+import type { CharacterSheet } from './Characters/CharacterSheet'
 import ElementCycle from './ElementCycle'
-import { activeCharBuff, condReadNode, st, stg } from './SheetUtil'
-import type { DocumentSection } from './sheet'
+import { activeCharBuff, cond, condReadNode, st, stg } from './SheetUtil'
+import type { DocumentSection, IDocumentConditionalExclusive } from './sheet'
+
 const tr = (strKey: string) => (
   <Translate ns="elementalResonance_gen" key18={strKey} />
 )
@@ -454,6 +459,100 @@ const sprawlingGreenery: IResonance = {
   ],
 }
 
+const [moonsignBuffDisp, moonsignBuff] = activeCharBuff(
+  input.charKey,
+  greaterEq(teamSize, 4, greaterEq(tally.moonsign, 2, tally.maxMoonsignBuff)),
+  { isTeamBuff: true }
+)
+const moonsign: IResonance = {
+  name: tr('Moonsign.name'),
+  desc: tr('Moonsign.desc'),
+  icon: <DarkMode sx={{ transform: 'scaleX(-1)' }} />,
+  canShow: (data) =>
+    data.get(teamSize).value >= 4 && data.get(tally.moonsign).value >= 1,
+  sections: [
+    {
+      teamBuff: true,
+      header: {
+        title: tr('Moonsign.nascentGleam.name'),
+        icon: <DarkMode sx={{ transform: 'scaleX(-1)' }} />,
+      },
+      fields: [
+        {
+          text: tr('Moonsign.nascentGleam.desc'),
+        },
+      ],
+    },
+    {
+      teamBuff: true,
+      canShow: greaterEq(tally.moonsign, 2, 1),
+      header: {
+        title: tr('Moonsign.ascendantGleam.name'),
+        description: tr('Moonsign.ascendantGleam.desc'),
+        icon: (
+          <span>
+            <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+            <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+          </span>
+        ),
+      },
+      // We handle the moonsign conditionals per-character in TeamComponents.tsx,
+      // using MoonsignConditionalSection below
+      fields: allLunarReactionKeys.map((lr) => ({
+        node: infoMut(
+          { ...moonsignBuffDisp },
+          { path: `${lr}_dmg_`, isTeamBuff: true }
+        ),
+      })),
+    },
+  ],
+}
+
+// Conditional section to be inserted into each character sheet display
+export function MoonsignConditionalSection(
+  key: CharacterKey,
+  sheet: CharacterSheet
+): IDocumentConditionalExclusive {
+  const [condMoonsignAfterSkillBurstPath, condMoonsignAfterSkillBurst] = cond(
+    key,
+    'moonsignAfterSkillBurst'
+  )
+  return {
+    canShow: greaterEq(teamSize, 4, greaterEq(tally.moonsign, 2, 1)),
+    path: condMoonsignAfterSkillBurstPath,
+    value: condMoonsignAfterSkillBurst,
+    header: {
+      title: tr('Moonsign.ascendantGleam.name'),
+      description: tr('Moonsign.ascendantGleam.desc'),
+      icon: (
+        <span>
+          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+        </span>
+      ),
+    },
+    teamBuff: true,
+    name: st('afterUse.skillOrBurst'),
+    states: {
+      on: {
+        fields: [
+          ...allLunarReactionKeys.map((lr) => ({
+            node: infoMut(sheet.data.display!['moonsign']![`${lr}_dmg_`], {
+              isTeamBuff: true,
+              path: `${lr}_dmg_`,
+            }),
+          })),
+          {
+            text: stg('duration'),
+            value: 20,
+            unit: 's',
+          },
+        ],
+      },
+    },
+  }
+}
+
 export const resonanceSheets: IResonance[] = [
   protectiveCanopy,
   ferventFlames,
@@ -463,6 +562,7 @@ export const resonanceSheets: IResonance[] = [
   impetuousWinds,
   enduringRock,
   sprawlingGreenery,
+  moonsign,
 ]
 
 export const resonanceData = inferInfoMut({
@@ -480,6 +580,10 @@ export const resonanceData = inferInfoMut({
         pivot: true,
       }),
       all_dmg_: erNodeDMG_,
+      ...objKeyValMap(allLunarReactionKeys, (lr) => [
+        `${lr}_dmg_`,
+        { ...moonsignBuff },
+      ]),
     },
     total: {
       // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.

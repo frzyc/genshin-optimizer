@@ -29,6 +29,36 @@
   },
   "SprawlingGreenery": {
     "name": "Überwucherndes Gras",
-    "desc": "Erhöht die Elementarkunde um 50 Punkte. Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe beim Auslösen der Reaktionen „In Flammen“ „Urwuchs“ und „Sprießen“ 6 s lang um 30 Punkte. Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe beim Auslösen der Reaktionen „Suprawuchs“, „Rankenwuchs“, „Supraspross“ und „Flammenspross“ 6 s lang um 20 Punkte. Die Wirkungsdauer der oben genannten Wirkungen wird unabhängig voneinander berechnet."
+    "desc": "Erhöht die Elementarkunde um 50 Punkte. Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe nach Auslösen der Reaktionen „In Flammen“, „Urwuchs“, „Sprießen“ und „Mondspross“ 6 s lang um 30 Punkte. Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe nach Auslösen der Reaktionen „Suprawuchs“, „Rankenwuchs“, „Supraspross“ und „Flammenspross“ 6 s lang um 20 Punkte. Die Wirkungsdauer der oben genannten Wirkungen wird unabhängig voneinander berechnet."
+  },
+  "Moonsign": {
+    "name": "Mondomen",
+    "desc": {
+      "0": "Wenn du Figuren mit Mondomen in deine Truppe aufnimmst, erhältst du abhängig von der Anzahl an Mondomen-Figuren die entsprechende Mondomenstufe.",
+      "1": "Wird die Mondomenstufe „Mondomen – Reifer Glanz“ erreicht, werden die Mondomen-Figuren verstärkt. Figuren ohne Mondomen können die Truppe ebenfalls mit Boni verstärken."
+    },
+    "nascentGleam": {
+      "name": "Anfänglicher Glanz",
+      "desc": "Verleiht allen Truppenmitgliedern den Effekt „Mondomen – Anfänglicher Glanz“."
+    },
+    "ascendantGleam": {
+      "name": "Reifer Glanz",
+      "desc": {
+        "0": {
+          "0": "Verleiht allen Truppenmitgliedern den Effekt „Mondomen – Reifer Glanz“, der einige Talente und Fähigkeiten von Mondomen-Figuren verstärkt. Löst zudem, wenn nicht anders beschrieben und die Mondomenstufe „Reifer Glanz“ ist, die entsprechenden Effekte von „Mondomen – Anfänglicher Glanz“ aus."
+        },
+        "1": {
+          "0": "<br/>",
+          "1": "Erhöht außerdem innerhalb von 20 s nach dem Auslösen einer Elementarfähigkeit oder Spezialfähigkeit durch eine Nicht-Mondomen-Figur basierend auf ihrem eigenen Elementartyp den von Figuren in der Nähe durch die Mondleuchten-Reaktion verursachten Schaden um bis zu 36 %. Dieser Effekt ist nicht stapelbar.",
+          "2": "Elementartyp der Figur:",
+          "3": [
+            " <pyro>Pyro</pyro>, <electro>Elektro</electro>, <cryo>Kryo</cryo>: Erhöht den entsprechenden Schaden pro 100 Pkt. ANG um 0,9 %.",
+            " <hydro>Hydro</hydro>: Erhöht den Schaden pro 1.000 Pkt. der max. LP um 0,6 %.",
+            " <geo>Geo</geo>: Erhöht den Schaden pro 100 Pkt. VTD um 1 %.",
+            " <anemo>Anemo</anemo>, <dendro>Dendro</dendro>: Erhöht den Schaden pro 100 Pkt. Elementarkunde um 2,25 %."
+          ]
+        }
+      }
+    }
   }
 }

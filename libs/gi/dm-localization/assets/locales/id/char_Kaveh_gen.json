@@ -70,8 +70,8 @@
     "description": {
       "0": "Melepaskan seluruh energi Mehrak untuk menciptakan sebuah ruang pemetaan berbentuk kubus dan mengakibatkan <dendro>Dendro DMG Area</dendro> pada semua musuh di dalamnya, juga akan membuat seluruh Dendro Core dalam area jangkauan serangan ini langsung meledak. Selain itu, kemampuan bertarung Kaveh juga akan meningkat untuk jangka waktu tertentu:",
       "1": [
-        "Meningkatkan area serangan Normal Attack, Charged Attack, dan Plunging Attack milik Kaveh, serta mengonversi DMG serangan Kaveh menjadi <dendro>Dendro DMG</dendro> yang tidak bisa ditimpa Elemental Infusion lainnya.",
-        "Dendro Core dari reaksi Bloom yang dipicu oleh Karakter sendiri di dalam party akan mengakibatkan DMG lebih besar saat meledak.",
+        "Area serangan Normal Attack, Charged Attack, dan Plunging Attack milik Kaveh meningkat, dan DMG serangan Kaveh dikonversi menjadi <dendro>Dendro DMG</dendro> yang tidak bisa ditimpa Elemental Infusion lainnya.",
+        "Dendro Core dari reaksi Bloom atau Lunar-Bloom yang dipicu oleh Karakter sendiri di dalam party akan mengakibatkan DMG lebih besar saat meledak.",
         "Ketahanan Kaveh terhadap interupsi meningkat."
       ],
       "2": "Efek-efek ini akan hilang saat Kaveh meninggalkan medan pertempuran.",
@@ -138,7 +138,7 @@
   "constellation4": {
     "name": "Feast of Apadana",
     "description": {
-      "0": "DMG ledakan Dendro Core dari reaksi Bloom yang dipicu oleh Kaveh meningkat 60%."
+      "0": "DMG ledakan Dendro Core dari reaksi Bloom atau Lunar-Bloom yang dipicu oleh Kaveh meningkat 60%."
     }
   },
   "constellation5": {

@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Aus der Erde geboren",
     "description": {
-      "0": "Figuren, die Heilung durch den <strong>makellosen Schild</strong> erhalten, wird der Effekt „Jahr der Gunst des Grüns“ gewährt: Erhöht den Schaden, den die geheilten Figuren durch das Auslösen der Reaktionen „in Flammen“, „Sprießen“, „Supraspross“ sowie „Flammenspross“ verursachen, für je 1.000 LP (bis max. 50.000 LP) von Baizhu um 2 % und den Bonus für den Schaden, der durch die Reaktionen „Suprawuchs“ und „Rankenwuchs“ gewährt wird, für je 1.000 LP (bis max. 50.000 LP) von Baizhu um 0,8 %. Hält 6 s."
+      "0": "Figuren, die Heilung durch den <strong>makellosen Schild</strong> erhalten, wird der Effekt „Jahr der Gunst des Grüns“ gewährt: Erhöht den Schaden, den die geheilten Figuren durch das Auslösen der Reaktionen „In Flammen“, „Sprießen“, „Supraspross“ sowie „Flammenspross“ verursachen, für je 1.000 LP (bis max. 50.000 LP) von Baizhu um 2 % und den Bonus für den Schaden, der durch die Reaktionen „Suprawuchs“ und „Rankenwuchs“ gewährt wird, für je 1.000 LP (bis max. 50.000 LP) von Baizhu um 0,8 %, und erhöht den Schaden durch die Reaktion „Mondspross“ für je 1.000 LP (bis max. 50.000 LP) von Baizhu um 0,7 %. Hält 6 s."
     }
   },
   "passive3": {

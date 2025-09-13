@@ -1,0 +1,24 @@
+{
+  "name": "Luneta do Tecedor da Noite",
+  "description": {
+    "0": "Um espelho feito de prata perfeita, dizem que testemunhou o nascimento da Dama da Lua. É visto como uma relíquia única e elevada dos Filhos da Lua Gelada."
+  },
+  "passiveName": "Oração Milenar",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando a Habilidade Elemental causa Dano Hydro ou Dendro, o personagem que está com essa arma equipada obtém o efeito Palavras Sagradas do Norte: aumenta a Proficiência Elemental em <cryo>60</cryo> por 4.5s. Quando os personagens próximos da equipe desencadeiam Florescimento Lunar, o personagem que está com essa arma equipada obtém o efeito Poema da Lua Nova: aumenta a Proficiência Elemental em <cryo>60</cryo> por 10s. Quando os efeitos Palavras Sagradas do Norte e Poema da Lua Nova existirem simultaneamente, aumenta o Dano de Florescimento causado por todos os membros próximos da equipe em <cryo>120%</cryo>, o Dano causado por Superflorescimento e Germinação em <cryo>80%</cryo> e o Dano de Florescimento Lunar em <cryo>40%</cryo>. Esse efeito não acumula. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "1": {
+      "0": "Quando a Habilidade Elemental causa Dano Hydro ou Dendro, o personagem que está com essa arma equipada obtém o efeito Palavras Sagradas do Norte: aumenta a Proficiência Elemental em <cryo>75</cryo> por 4.5s. Quando os personagens próximos da equipe desencadeiam Florescimento Lunar, o personagem que está com essa arma equipada obtém o efeito Poema da Lua Nova: aumenta a Proficiência Elemental em <cryo>75</cryo> por 10s. Quando os efeitos Palavras Sagradas do Norte e Poema da Lua Nova existirem simultaneamente, aumenta o Dano de Florescimento causado por todos os membros próximos da equipe em <cryo>150%</cryo>, o Dano causado por Superflorescimento e Germinação em <cryo>100%</cryo> e o Dano de Florescimento Lunar em <cryo>50%</cryo>. Esse efeito não acumula. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "2": {
+      "0": "Quando a Habilidade Elemental causa Dano Hydro ou Dendro, o personagem que está com essa arma equipada obtém o efeito Palavras Sagradas do Norte: aumenta a Proficiência Elemental em <cryo>90</cryo> por 4.5s. Quando os personagens próximos da equipe desencadeiam Florescimento Lunar, o personagem que está com essa arma equipada obtém o efeito Poema da Lua Nova: aumenta a Proficiência Elemental em <cryo>90</cryo> por 10s. Quando os efeitos Palavras Sagradas do Norte e Poema da Lua Nova existirem simultaneamente, aumenta o Dano de Florescimento causado por todos os membros próximos da equipe em <cryo>180%</cryo>, o Dano causado por Superflorescimento e Germinação em <cryo>120%</cryo> e o Dano de Florescimento Lunar em <cryo>60%</cryo>. Esse efeito não acumula. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "3": {
+      "0": "Quando a Habilidade Elemental causa Dano Hydro ou Dendro, o personagem que está com essa arma equipada obtém o efeito Palavras Sagradas do Norte: aumenta a Proficiência Elemental em <cryo>105</cryo> por 4.5s. Quando os personagens próximos da equipe desencadeiam Florescimento Lunar, o personagem que está com essa arma equipada obtém o efeito Poema da Lua Nova: aumenta a Proficiência Elemental em <cryo>105</cryo> por 10s. Quando os efeitos Palavras Sagradas do Norte e Poema da Lua Nova existirem simultaneamente, aumenta o Dano de Florescimento causado por todos os membros próximos da equipe em <cryo>210%</cryo>, o Dano causado por Superflorescimento e Germinação em <cryo>140%</cryo> e o Dano de Florescimento Lunar em <cryo>70%</cryo>. Esse efeito não acumula. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "4": {
+      "0": "Quando a Habilidade Elemental causa Dano Hydro ou Dendro, o personagem que está com essa arma equipada obtém o efeito Palavras Sagradas do Norte: aumenta a Proficiência Elemental em <cryo>120</cryo> por 4.5s. Quando os personagens próximos da equipe desencadeiam Florescimento Lunar, o personagem que está com essa arma equipada obtém o efeito Poema da Lua Nova: aumenta a Proficiência Elemental em <cryo>120</cryo> por 10s. Quando os efeitos Palavras Sagradas do Norte e Poema da Lua Nova existirem simultaneamente, aumenta o Dano de Florescimento causado por todos os membros próximos da equipe em <cryo>240%</cryo>, o Dano causado por Superflorescimento e Germinação em <cryo>160%</cryo> e o Dano de Florescimento Lunar em <cryo>80%</cryo>. Esse efeito não acumula. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    }
+  }
+}

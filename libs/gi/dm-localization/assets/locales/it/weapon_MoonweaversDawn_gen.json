@@ -1,0 +1,24 @@
+{
+  "name": "Alba della Tessiluna",
+  "description": {
+    "0": "Una spada d'argento immacolata e affilata, in grado di fendere le armature come il chiaro di luna che attraversa la notte. Secondo la leggenda, è una lama divina benedetta dalla prima Cantaluna."
+  },
+  "passiveName": "Testamento dell'argento segreto",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta i DAN da Tripudio elementale di un <cryo>20%</cryo>. Quando il costo di energia del Tripudio elementale del personaggio che equipaggia l'arma non supera i 60/40 punti, i DAN da Tripudio elementale aumentano di un ulteriore <cryo>16%/28%</cryo>."
+    },
+    "1": {
+      "0": "Aumenta i DAN da Tripudio elementale di un <cryo>25%</cryo>. Quando il costo di energia del Tripudio elementale del personaggio che equipaggia l'arma non supera i 60/40 punti, i DAN da Tripudio elementale aumentano di un ulteriore <cryo>20%/35%</cryo>."
+    },
+    "2": {
+      "0": "Aumenta i DAN da Tripudio elementale di un <cryo>30%</cryo>. Quando il costo di energia del Tripudio elementale del personaggio che equipaggia l'arma non supera i 60/40 punti, i DAN da Tripudio elementale aumentano di un ulteriore <cryo>24%/42%</cryo>."
+    },
+    "3": {
+      "0": "Aumenta i DAN da Tripudio elementale di un <cryo>35%</cryo>. Quando il costo di energia del Tripudio elementale del personaggio che equipaggia l'arma non supera i 60/40 punti, i DAN da Tripudio elementale aumentano di un ulteriore <cryo>28%/49%</cryo>."
+    },
+    "4": {
+      "0": "Aumenta i DAN da Tripudio elementale di un <cryo>40%</cryo>. Quando il costo di energia del Tripudio elementale del personaggio che equipaggia l'arma non supera i 60/40 punti, i DAN da Tripudio elementale aumentano di un ulteriore <cryo>32%/56%</cryo>."
+    }
+  }
+}

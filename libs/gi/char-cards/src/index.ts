@@ -1,4 +1,5 @@
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
+import Aino from './Character_Aino_Card.webp'
 import Albedo from './Character_Albedo_Card.png'
 import Alhaitham from './Character_Alhaitham_Card.jpg'
 import Aloy from './Character_Aloy_Card.png'
@@ -52,6 +53,7 @@ import Klee from './Character_Klee_Card.jpg'
 import KujouSara from './Character_Kujou_Sara_Card.jpg'
 import KukiShinobu from './Character_Kuki_Shinobu_Card.jpg'
 import LanYan from './Character_LanYan_Card.jpg'
+import Lauma from './Character_Lauma_Card.webp'
 import Layla from './Character_Layla_Card.jpeg'
 import Lisa from './Character_Lisa_Card.jpg'
 import Lynette from './Character_Lynette_Card.jpg'
@@ -105,6 +107,7 @@ import TravelerF from './Traveler_Female_Card.jpg'
 import TravelerM from './Traveler_Male_Card.jpg'
 
 const charCards = {
+  Aino,
   Albedo,
   Alhaitham,
   Aloy,
@@ -158,6 +161,7 @@ const charCards = {
   KujouSara,
   KukiShinobu,
   LanYan,
+  Lauma,
   Layla,
   Lisa,
   Lyney,

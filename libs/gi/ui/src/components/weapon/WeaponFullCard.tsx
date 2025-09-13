@@ -8,7 +8,7 @@ import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
-import { getLevelString } from '@genshin-optimizer/gi/util'
+import { getWeaponLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
@@ -69,7 +69,7 @@ export function WeaponFullCardObj({
             gutterBottom
           >
             <SqBadge color="primary">
-              Lv. {getLevelString(weapon.level, weapon.ascension)}
+              Lv. {getWeaponLevelString(weapon.level, weapon.ascension)}
             </SqBadge>
             {weaponHasRefinement(weapon.key) && (
               <SqBadge color="info">R{weapon.refinement}</SqBadge>

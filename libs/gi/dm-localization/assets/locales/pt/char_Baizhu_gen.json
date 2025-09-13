@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Mãe Terra",
     "description": {
-      "0": "Personagens curados pelo <strong>Escudo Impenetrável</strong> ganharão o efeito \"Era da Proteção Verdejante\": Cada 1.000 pontos de Vida Máxima de Baizhu abaixo de 50.000 aumenta o Dano das reações de Queimaduras, Florescimento, Superflorescimento e Germinação em 2%. O Dano das reações Intensificação e Propagação aumenta em 0.8%. A duração é de 6s."
+      "0": "Personagens curados pelo <strong>Escudo Impenetrável</strong> ganharão o efeito \"Era da Proteção Verdejante\": Cada 1.000 pontos de Vida Máxima de Baizhu abaixo de 50.000 aumenta o Dano das reações de Queimaduras, Florescimento, Superflorescimento e Germinação em 2%. O Dano das reações Intensificação e Propagação aumenta em 0.8%, o de Florescimento Lunar em 0.7%. A duração é de 6s."
     }
   },
   "passive3": {

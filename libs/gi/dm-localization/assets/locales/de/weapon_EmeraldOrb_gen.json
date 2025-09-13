@@ -6,19 +6,19 @@
   "passiveName": "Stromschnelle",
   "passiveDescription": {
     "0": {
-      "0": "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“, „Sprießen“, „Mond unter Strom“ und „Hydro-Verwirbelung“ 12 s lang um <cryo>20 %</cryo>."
+      "0": "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“, „Sprießen“, „Mond unter Strom“, „Mondspross“ und „Hydro-Verwirbelung“ 12 s lang um <cryo>20 %</cryo>."
     },
     "1": {
-      "0": "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“, „Sprießen“, „Mond unter Strom“ und „Hydro-Verwirbelung“ 12 s lang um <cryo>25 %</cryo>."
+      "0": "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“, „Sprießen“, „Mond unter Strom“, „Mondspross“ und „Hydro-Verwirbelung“ 12 s lang um <cryo>25 %</cryo>."
     },
     "2": {
-      "0": "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“, „Sprießen“, „Mond unter Strom“ und „Hydro-Verwirbelung“ 12 s lang um <cryo>30 %</cryo>."
+      "0": "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“, „Sprießen“, „Mond unter Strom“, „Mondspross“ und „Hydro-Verwirbelung“ 12 s lang um <cryo>30 %</cryo>."
     },
     "3": {
-      "0": "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“, „Sprießen“, „Mond unter Strom“ und „Hydro-Verwirbelung“ 12 s lang um <cryo>35 %</cryo>."
+      "0": "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“, „Sprießen“, „Mond unter Strom“, „Mondspross“ und „Hydro-Verwirbelung“ 12 s lang um <cryo>35 %</cryo>."
     },
     "4": {
-      "0": "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“, „Sprießen“, „Mond unter Strom“ und „Hydro-Verwirbelung“ 12 s lang um <cryo>40 %</cryo>."
+      "0": "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“, „Sprießen“, „Mond unter Strom“, „Mondspross“ und „Hydro-Verwirbelung“ 12 s lang um <cryo>40 %</cryo>."
     }
   }
 }

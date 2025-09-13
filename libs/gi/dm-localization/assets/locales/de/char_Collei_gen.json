@@ -96,15 +96,15 @@
   "passive1": {
     "name": "Wiederkehr des fliegenden Laubs",
     "description": {
-      "0": "Verleiht der Figur bei der Rückkehr des <strong>fliegenden Laubrads</strong> den Effekt „Jungtrieb“, der 3 s lang den Gegnern in der Nähe fortlaufend <dendro>Dendro-Schaden</dendro> in Höhe von 40 % von Colleis ANG zufügt, wenn eine eigene Figur in der Truppe vor der Rückkehr des <strong>fliegenden Laubrads</strong> Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ ausgelöst hat.",
+      "0": "Verleiht der Figur bei der Rückkehr des <strong>fliegenden Laubrads</strong> den Effekt „Jungtrieb“, der 3 s lang den Gegnern in der Nähe fortlaufend <dendro>Dendro-Schaden</dendro> in Höhe von 40 % von Colleis ANG zufügt, wenn eine eigene Figur in der Truppe vor der Rückkehr des <strong>fliegenden Laubrads</strong> Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“, „Flammenspross“ oder „Mondspross“ ausgelöst hat.",
       "1": "Wenn während der Dauer des Effekts ein weiterer „Jungtrieb“ erzeugt wird, wird er den bestehenden ersetzen. Der vom Jungtrieb-Effekt verursachte Schaden gilt als Elementarfähigkeitsschaden."
     }
   },
   "passive2": {
     "name": "Gemächliche Stille im Wald",
     "description": {
-      "0": "Verlängert die Dauer des Felds um 1 s, wenn eine Figur im <strong>Cuilein-Anbar-Feld</strong> Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ auslöst.",
-      "1": "Die Dauer pro Auslösung von <strong>Geheimer Katzenschatz</strong> kann auf diese Weise um bis zu 3 s verlängert werden."
+      "0": "Verlängert die Dauer des Felds um 1 s, wenn eine Figur im <strong>Cuilein-Anbar-Feld</strong> Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“, „Flammenspross“ oder „Mondspross“ auslöst.",
+      "1": "Die Dauer pro Auslösung von <strong>Geheimer Katzenschatz</strong> kann auf diese Weise um bis zu 3 s verlängert werden."
     }
   },
   "passive3": {
@@ -124,8 +124,8 @@
     "name": "Wanderin zwischen Bergen und Seen",
     "description": {
       "0": "Ändert das passive Talent „Wiederkehr des fliegenden Laubs“ wie folgt:",
-      "1": "Das <strong>fliegende Laubrad</strong> verleiht bei seiner Rückkehr der Figur den Effekt „Jungtrieb“ des passiven Talents „Wiederkehr des fliegenden Laubs“, der 3 s lang fortlaufend den Gegnern in der Nähe <dendro>Dendro-Schaden</dendro> in Höhe von 40 % von Colleis ANG zufügt.",
-      "2": "Wenn eines der eigenen Truppenmitglieder nach Anwenden der Fähigkeit <strong>Der Kämpferin Laub</strong> und, bevor der aktuelle Effekt „Jungtrieb“ endet, Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ auslöst, wird dieser „Jungtrieb“ um 3 s verlängert.",
+      "1": "Das <strong>fliegende Laubrad</strong> verleiht bei seiner Rückkehr der Figur den Effekt „Jungtrieb“ des passiven Talents „Wiederkehr des fliegenden Laubs“, der 3 s lang fortlaufend den Gegnern in der Nähe <dendro>Dendro-Schaden</dendro> in Höhe von 40 % von Colleis ANG zufügt.",
+      "2": "Wenn eines der eigenen Truppenmitglieder nach Anwenden der Fähigkeit <strong>Der Kämpferin Laub</strong> und, bevor der aktuelle Effekt „Jungtrieb“ endet, Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“, „Flammenspross“ oder „Mondspross“ auslöst, wird dieser „Jungtrieb“ um 3 s verlängert.",
       "3": "Die Dauer des Effekts „Jungtrieb“ kann nur einmal auf diese Weise verlängert werden. Wird während der Dauer ein weiterer „Jungtrieb“ erzeugt, ersetzt er den bestehenden. Der vom Jungtrieb-Effekt verursachte Schaden gilt als Elementarfähigkeitsschaden.",
       "4": "Das passive Talent „Wiederkehr des fliegenden Laubs“ muss zuerst freigeschaltet werden."
     }

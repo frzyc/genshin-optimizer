@@ -145,9 +145,10 @@
     "description": {
       "0": "Gegner, die Nahida selbst mit <strong>Samen von Skandha</strong> markiert hat, werden von den folgenden Effekten betroffen:",
       "1": [
-        " Beim Erleiden von In Flammen, Sprießen, Supraspross und Flammenspross können KT ausgelöst werden, wobei die KT auf 20 % und der KSCH auf 100 % festgelegt sind.",
-        " Urwuchs, Suprawuchs und Rankenwuchs verringern die VTD 8 s lang um 30 %."
-      ]
+        " Beim Erleiden von „In Flammen“, „Sprießen“, „Supraspross“ und „Flammenspross“ können KT ausgelöst werden, wobei die KT auf 20 % und der KSCH auf 100 % festgelegt sind. Die KT-Rate dieses Effekts ist mit der KT-Rate ähnlicher Effekte stapelbar, die den entsprechenden Elementarreaktionen kritische Treffer ermöglichen.",
+        " „Urwuchs“, „Suprawuchs“ und „Rankenwuchs“ verringern die VTD 8 s lang um 30 %."
+      ],
+      "2": "Die KT von Schaden durch die Reaktion „Mondspross“ wird um 10 % erhöht und der KSCH wird um 20 % erhöht."
     }
   },
   "constellation3": {

@@ -1,0 +1,29 @@
+{
+  "setName": "Silken Moon's Serenade",
+  "setEffects": {
+    "2": "Energy Recharge +20%.",
+    "4": "Saat mengakibatkan Elemental DMG, akan mendapatkan efek Gleaming Moon: Devotion selama 8 detik. Gleaming Moon: Devotion: Saat Moonsign milik party adalah Nascent Gleam/Ascendant Gleam, maka Elemental Mastery seluruh Karakter dalam party +60/120 poin. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan berada di dalam party namun tidak berada di medan pertempuran. Untuk setiap efek Gleaming Moon berbeda yang dimiliki Karakter di dalam party, DMG reaksi Lunar yang diakibatkan seluruh Karakter dalam party +10%. Efek yang dihasilkan oleh Gleaming Moon tidak dapat ditumpuk."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Crystal Tear of the Wanderer",
+      "desc": "Bunga yang murni tanpa noda, konon katanya dapat mempertahankan keindahan abadinya karena angin dingin."
+    },
+    "plume": {
+      "name": "Pristine Plume of the Blessed",
+      "desc": "Ornamen bulu yang murni tanpa noda, konon katanya ditempa langsung oleh Pelantun Rembulan pertama."
+    },
+    "sands": {
+      "name": "Frost Devotee's Delirium",
+      "desc": "Penunjuk waktu yang murni tanpa noda. Kini telah berhenti berdetak bersama dengan ilusi pemilik sebelumnya."
+    },
+    "goblet": {
+      "name": "Joyous Glory of the Pure",
+      "desc": "Cawan perak murni dan bersih, konon katanya pernah digunakan sebagai wadah suci dalam ritual Bani Bulan Embun. Upacara saat ini sudah tidak menggunakan cawan perak seperti ini lagi."
+    },
+    "circlet": {
+      "name": "Holy Crown of the Believer",
+      "desc": "Hiasan kepala yang murni tanpa noda. Bentuknya sepertinya dibuat menyerupai tanduk utusan hutan."
+    }
+  }
+}

@@ -52,6 +52,7 @@ type AvatarExcelConfigData = {
   hpBase: number //1012.0880126953125,
   attackBase: number //16.02720069885254,
   defenseBase: number //66.9532470703125,
+  elementMastery: number // 200,
   critical: number //0.05000000074505806,
   criticalHurt: number //0.5,
   propGrowCurves: [

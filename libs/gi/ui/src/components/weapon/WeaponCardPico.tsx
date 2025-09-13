@@ -6,7 +6,7 @@ import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
-import { getLevelString } from '@genshin-optimizer/gi/util'
+import { getWeaponLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
@@ -73,7 +73,7 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
           p: 0.25,
         }}
       >
-        <strong>{getLevelString(weapon.level, weapon.ascension)}</strong>
+        <strong>{getWeaponLevelString(weapon.level, weapon.ascension)}</strong>
       </Typography>
       {weaponHasRefinement(weapon.key) && (
         <Typography
