@@ -96,14 +96,14 @@
   "passive1": {
     "name": "Retour folié",
     "description": {
-      "0": "Si un de vos personnages dans l'équipe déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d'Exubérance ou de Bourgeonnement avant le retour de l'<strong>anneau floral </strong>, le personnage obtient l'effet Germe au retour de l'anneau, ce qui inflige de façon continue aux ennemis proches des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 40 % de l'ATQ de Collei pendant 3 s.",
+      "0": "Si un de vos personnages dans l'équipe déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, de Sélénofleurissement, d'Exubérance ou de Bourgeonnement avant le retour de l'<strong>anneau floral </strong>, le personnage obtient l'effet Germe au retour de l'anneau, ce qui inflige de façon continue aux ennemis proches des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 40 % de l'ATQ de Collei pendant 3 s.",
       "1": "Si un nouvel effet Germe est déclenché pendant la durée d'un effet Germe existant, l'effet d'origine est supprimé. Les DGT infligés par l'effet Germe sont considérés comme des DGT de compétence élémentaire."
     }
   },
   "passive2": {
     "name": "Bois de langueur",
     "description": {
-      "0": "Si un personnage dans le <strong>territoire de Cuilein-Anbar</strong> déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d'Exubérance ou de Bourgeonnement, la durée du territoire est prolongée de 1 s.",
+      "0": "Si un personnage dans le <strong>territoire de Cuilein-Anbar</strong> déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, de Sélénofleurissement, d'Exubérance ou de Bourgeonnement, la durée du territoire est prolongée de 1 s.",
       "1": "Lors d'une même utilisation d'<strong>Atout félin</strong>, cette durée peut être prolongée un maximum de 3 fois de cette manière."
     }
   },
@@ -125,7 +125,7 @@
     "description": {
       "0": "L'aptitude passive « Retour folié » est modifiée :",
       "1": "Au retour de l'<strong>anneau floral</strong>, le personnage obtient l'effet Germe de l'aptitude passive « Retour folié », infligeant de façon continue aux ennemis proches des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 40 % de l'ATQ de Collei pendant 3 s.",
-      "2": "Si un de vos personnages dans l'équipe déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d'Exubérance ou de Bourgeonnement entre l'utilisation de <strong>Brosse florale</strong> et l'arrêt de cet effet Germe, la durée de l'effet est prolongée de 3 s.",
+      "2": "Si un de vos personnages dans l'équipe déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, de Sélénofleurissement, d'Exubérance ou de Bourgeonnement entre l'utilisation de <strong>Brosse florale</strong> et l'arrêt de cet effet Germe, la durée de l'effet est prolongée de 3 s.",
       "3": "L'effet peut être prolongé une fois maximum de cette manière. Si un nouvel effet Germe est déclenché pendant la durée d'un effet Germe existant, l'effet d'origine est supprimé. Les DGT infligés par l'effet Germe sont considérés comme des DGT de compétence élémentaire.",
       "4": "L'aptitude passive « Retour folié » doit être déjà débloquée."
     }

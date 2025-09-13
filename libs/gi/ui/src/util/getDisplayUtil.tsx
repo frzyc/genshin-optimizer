@@ -55,6 +55,8 @@ export function getDisplayHeader(
     return { title: 'Received Team Buffs', icon: <GroupsIcon /> }
   else if (sectionKey === 'reaction')
     return { title: 'Transformative Reactions' }
+  else if (sectionKey === 'moonsign')
+    return { title: 'Moonsign: Ascendant Gleam', icon: 'todo' }
   else if (sectionKey.includes(':')) {
     const [namespace, key] = sectionKey.split(':')
     if (namespace === 'artifact') {
@@ -103,6 +105,7 @@ export function getDisplaySections(data: UIData): DisplaySections {
   const basic = sections.filter(([k]) => k === 'basic')
   const reaction = sections.filter(([k]) => k === 'reaction')
   const custom = sections.filter(([k]) => k === 'custom')
+  const moonsign = sections.filter(([k]) => k === 'moonsign')
   const weapon = sections.filter(([k]) => k.startsWith('weapon'))
   const artifact = sections.filter(([k]) => k.startsWith('artifact'))
   const rest = sections.filter(
@@ -117,6 +120,7 @@ export function getDisplaySections(data: UIData): DisplaySections {
     ...basic,
     ['character', data.getCharacterStats()],
     ['bonusStats', data.getBonusStats()],
+    ...moonsign,
     ...reaction,
     ...custom,
     ...rest,

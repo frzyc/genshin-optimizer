@@ -183,6 +183,14 @@
     }
   },
   "passive3": {
+    "name": "Night Realm's Gift: Hard Work and Drive",
+    "description": {
+      "0": "After Nightsoul points have been fully depleted and Iansan is on the field, she will switch to using Phlogiston to maintain her Nightsoul's Blessing.",
+      "1": "While in an area with Phlogiston Mechanics within Natlan, Nightsoul Transmission: Iansan can be used. When the current active character is sprinting or in movement modes caused by certain Talents, or at a certain height in the air, switching to Iansan will trigger the following: Iansan enters the Nightsoul's Blessing state and obtains 25 Nightsoul points. Nightsoul Transmission can be triggered once every 10s by your own party.",
+      "2": "While in an area with Phlogiston Mechanics within Natlan, Iansan will not take fall DMG when using terrain differences to make leaps."
+    }
+  },
+  "passive": {
     "name": "Caloric Balancing Plan",
     "description": {
       "0": "While in an area with Phlogiston Mechanics within Natlan, regain 10 Phlogiston when Phlogiston levels drop below 50%. This can occur once every 10s."

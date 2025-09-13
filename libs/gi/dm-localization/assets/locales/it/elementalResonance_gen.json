@@ -29,6 +29,37 @@
   },
   "SprawlingGreenery": {
     "name": "Vegetazione proliferante",
-    "desc": "La maestria elementale aumenta di 50. Dopo aver attivato reazioni di Ustione, Vivificazione o Fioritura, la maestria elementale di tutti i membri del gruppo vicini aumenta di 30 per 6 s. Dopo aver attivato le reazioni di Accentuazione, Propagazione, Iperfioritura o Germinazione, la maestria elementale di tutti i membri del gruppo aumenta di 20 per 6 sec. La durata di ciascun effetto è contata in modo indipendente."
+    "desc": "La maestria elementale aumenta di 50. Dopo aver attivato reazioni di Ustione, Vivificazione, Fioritura o Fioritura lunare, la maestria elementale di tutti i membri del gruppo vicini aumenta di 30 per 6 s. Dopo aver attivato le reazioni di Accentuazione, Propagazione, Iperfioritura o Germinazione, la maestria elementale di tutti i membri del gruppo aumenta di 20 per 6 s. La durata di ciascun effetto è contata in modo indipendente."
+  },
+  "Moonsign": {
+    "name": "Presagio lunare",
+    "desc": {
+      "0": "Quando nel gruppo sono presenti personaggi con Presagio lunare, il gruppo raggiunge un livello di Presagio lunare corrispondente al numero di tali personaggi.",
+      "1": "Quando il gruppo raggiunge Presagio lunare: Barlume ascendente, i personaggi con Presagio lunare vengono potenziati. Anche i personaggi senza Presagio lunare possono conferire effetti positivi al gruppo."
+    },
+    "nascentGleam": {
+      "name": "Barlume nascente",
+      "desc": "Tutti i personaggi del gruppo ottengono l'effetto Presagio lunare: Barlume nascente."
+    },
+    "ascendantGleam": {
+      "name": "Barlume ascendente",
+      "desc": {
+        "0": {
+          "0": "Tutti i personaggi del gruppo ottengono l'effetto Presagio lunare: Barlume ascendente, che potenzia alcuni talenti e abilità dei personaggi con Presagio lunare.",
+          "1": "Se non diversamente specificato, dopo che il Presagio lunare ha raggiunto il livello di Barlume ascendente il gruppo riceve anche gli effetti di Barlume nascente."
+        },
+        "1": {
+          "0": "<br/>",
+          "1": "Inoltre, dopo che un personaggio che non possiede Presagio lunare usa un'abilità o un Tripudio elementale, i DAN da reazioni lunari di tutti i personaggi vicini aumentano per 20 s in base al tipo elementale del suddetto personaggio, fino a un 36% massimo. L'effetto non è cumulabile.",
+          "2": "Se il tipo elementale del personaggio è:",
+          "3": [
+            " <pyro>Pyro</pyro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, i DAN aumentano di uno 0,9% per ogni 100 di ATT;",
+            " <hydro>Hydro</hydro>, i DAN aumentano di uno 0,6% per ogni 1.000 di PS max;",
+            " <geo>Geo</geo>, i DAN aumentano di un 1% per ogni 100 di DIF;",
+            " <anemo>Anemo</anemo> o <dendro>Dendro</dendro>, i DAN aumentano di un 2,25% per ogni 100 di maestria elementale."
+          ]
+        }
+      }
+    }
   }
 }

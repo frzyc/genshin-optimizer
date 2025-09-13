@@ -13,7 +13,10 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
-import { validateLevelAsc, validateTalent } from '@genshin-optimizer/gi/util'
+import {
+  validateCharLevelAsc,
+  validateTalent,
+} from '@genshin-optimizer/gi/util'
 import type { ICachedCharacter } from '../../Interfaces/ICachedCharacter'
 
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -56,7 +59,7 @@ export class CharacterDataManager extends DataManager<
     )
       constellation = 0
 
-    const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
+    const { level, ascension } = validateCharLevelAsc(rawLevel, rawAscension)
     talent = validateTalent(ascension, talent)
 
     const char: ICharacter = {

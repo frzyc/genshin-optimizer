@@ -1,0 +1,24 @@
+{
+  "name": "Gancho Trampero",
+  "description": {
+    "0": "Un arco hecho de una aleación de metales, pero que no resulta nada pesado. Las flechas que dispara pueden atravesar cualquier obstáculo, incluso aunque se topen con trampas gruesas."
+  },
+  "passiveName": "Ágil y sin sombra",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental aumenta en <cryo>60</cryo> pts. durante 12 s. Con “presagio lunar: resplandor ascendente”, la Maestría Elemental otorgada por este efecto aumenta en <cryo>60</cryo> pts. adicionales. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental aumenta en <cryo>75</cryo> pts. durante 12 s. Con “presagio lunar: resplandor ascendente”, la Maestría Elemental otorgada por este efecto aumenta en <cryo>75</cryo> pts. adicionales. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental aumenta en <cryo>90</cryo> pts. durante 12 s. Con “presagio lunar: resplandor ascendente”, la Maestría Elemental otorgada por este efecto aumenta en <cryo>90</cryo> pts. adicionales. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental aumenta en <cryo>105</cryo> pts. durante 12 s. Con “presagio lunar: resplandor ascendente”, la Maestría Elemental otorgada por este efecto aumenta en <cryo>105</cryo> pts. adicionales. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental aumenta en <cryo>120</cryo> pts. durante 12 s. Con “presagio lunar: resplandor ascendente”, la Maestría Elemental otorgada por este efecto aumenta en <cryo>120</cryo> pts. adicionales. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

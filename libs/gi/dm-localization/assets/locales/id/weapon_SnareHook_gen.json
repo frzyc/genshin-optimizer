@@ -1,0 +1,24 @@
+{
+  "name": "Snare Hook",
+  "description": {
+    "0": "Busur yang terbuat dari komponen logam paduan, namun ternyata sangat ringan. Bahkan saat menghadapi jaring yang berat, anak panah yang ditembakkan darinya tetap dapat bergerak dengan lincah dan bebas."
+  },
+  "passiveName": "Phantom Flash",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah memicu Reaksi Elemental, Elemental Mastery +<cryo>60</cryo> poin selama 12 detik. Moonsign: Ascendant Gleam: Peningkatan Elemental Mastery dari efek ini bertambah <cryo>60</cryo> poin lagi. Efek di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Setelah memicu Reaksi Elemental, Elemental Mastery +<cryo>75</cryo> poin selama 12 detik. Moonsign: Ascendant Gleam: Peningkatan Elemental Mastery dari efek ini bertambah <cryo>75</cryo> poin lagi. Efek di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Setelah memicu Reaksi Elemental, Elemental Mastery +<cryo>90</cryo> poin selama 12 detik. Moonsign: Ascendant Gleam: Peningkatan Elemental Mastery dari efek ini bertambah <cryo>90</cryo> poin lagi. Efek di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Setelah memicu Reaksi Elemental, Elemental Mastery +<cryo>105</cryo> poin selama 12 detik. Moonsign: Ascendant Gleam: Peningkatan Elemental Mastery dari efek ini bertambah <cryo>105</cryo> poin lagi. Efek di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Setelah memicu Reaksi Elemental, Elemental Mastery +<cryo>120</cryo> poin selama 12 detik. Moonsign: Ascendant Gleam: Peningkatan Elemental Mastery dari efek ini bertambah <cryo>120</cryo> poin lagi. Efek di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

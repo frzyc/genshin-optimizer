@@ -1,0 +1,29 @@
+{
+  "setName": "Serenata della luna di seta",
+  "setEffects": {
+    "2": "Ricarica d'energia +20%.",
+    "4": "Quando vengono inflitti DAN elementali, si ottiene l'effetto Luna splendente: Devozione per 8 s, che aumenta la maestria elementale di tutti i membri del gruppo di 60/120 quando il Presagio lunare del gruppo è Barlume nascente/Barlume ascendente. L'effetto si può innescare anche quando il personaggio che equipaggia il set non è in campo. I DAN delle reazioni lunari di tutti i membri del gruppo aumentano di un 10% per ciascun tipo di effetto Luna splendente presente nel gruppo. Gli effetti di Luna splendente non sono cumulabili."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Lacrima cristallina dell'errante",
+      "desc": "Un fiore immacolato, la cui bellezza si dice essere stata preservata per l'eternità grazie al vento gelido."
+    },
+    "plume": {
+      "name": "Piuma immacolata della benedetta",
+      "desc": "Un accessorio piumato immacolato, che si dice sia stato forgiato dalla prima Cantaluna."
+    },
+    "sands": {
+      "name": "Delirio della Veneragelo",
+      "desc": "Un orologio immacolato arrestatosi tanto tempo fa, insieme alle illusioni della persona a cui apparteneva."
+    },
+    "goblet": {
+      "name": "Gloria gioiosa della pura",
+      "desc": "Una coppa d'argento immacolata, che si dice sia stata usata negli antichi rituali degli Eredi della Luna gelata. I loro riti odierni non necessitano più di un oggetto del genere."
+    },
+    "circlet": {
+      "name": "Corona sacra della devota",
+      "desc": "Una decorazione immacolata, creata per imitare le corna dell'emissaria della foresta."
+    }
+  }
+}

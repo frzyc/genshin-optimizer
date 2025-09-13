@@ -1,0 +1,24 @@
+{
+  "name": "Netzhaken",
+  "description": {
+    "0": "Der Bogen besteht aus einer Metalllegierung und ist dennoch überraschend leicht. Selbst bei dicken, schweren Fallen können die abgeschossenen Pfeile ungehindert hindurchfliegen."
+  },
+  "passiveName": "Wendig und ohne Schatten",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht nach Auslösen der Elementarreaktion 12 s lang die Elementarkunde um <cryo>60</cryo> Punkte. Mondomen – Reifer Glanz: Erhöht die Elementarkunde während des Effekts zusätzlich um <cryo>60</cryo> Punkte. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "1": {
+      "0": "Erhöht nach Auslösen der Elementarreaktion 12 s lang die Elementarkunde um <cryo>75</cryo> Punkte. Mondomen – Reifer Glanz: Erhöht die Elementarkunde während des Effekts zusätzlich um <cryo>75</cryo> Punkte. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "2": {
+      "0": "Erhöht nach Auslösen der Elementarreaktion 12 s lang die Elementarkunde um <cryo>90</cryo> Punkte. Mondomen – Reifer Glanz: Erhöht die Elementarkunde während des Effekts zusätzlich um <cryo>90</cryo> Punkte. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "3": {
+      "0": "Erhöht nach Auslösen der Elementarreaktion 12 s lang die Elementarkunde um <cryo>105</cryo> Punkte. Mondomen – Reifer Glanz: Erhöht die Elementarkunde während des Effekts zusätzlich um <cryo>105</cryo> Punkte. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "4": {
+      "0": "Erhöht nach Auslösen der Elementarreaktion 12 s lang die Elementarkunde um <cryo>120</cryo> Punkte. Mondomen – Reifer Glanz: Erhöht die Elementarkunde während des Effekts zusätzlich um <cryo>120</cryo> Punkte. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    }
+  }
+}

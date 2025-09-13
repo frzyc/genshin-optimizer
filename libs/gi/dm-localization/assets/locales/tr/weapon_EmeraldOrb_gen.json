@@ -6,19 +6,19 @@
   "passiveName": "Akıntılar",
   "passiveDescription": {
     "0": {
-      "0": "Bir Buharlaşma, Elektrik Yüklü, Donma, Çiçeklenme, Ay Yüklü veya Su Tesirli Girdap tepkimesi tetikledikten sonra 12 saniyeliğine Saldırı <cryo>%20</cryo> artar."
+      "0": "Bir Buharlaşma, Elektrik Yüklü, Donma, Çiçeklenme, Ay Yüklü, Ay Çiçeklenmesi veya Su Tesirli Girdap tepkimesi tetikledikten sonra 12 saniyeliğine Saldırı <cryo>%20</cryo> artar."
     },
     "1": {
-      "0": "Bir Buharlaşma, Elektrik Yüklü, Donma, Çiçeklenme, Ay Yüklü veya Su Tesirli Girdap tepkimesi tetikledikten sonra 12 saniyeliğine Saldırı <cryo>%25</cryo> artar."
+      "0": "Bir Buharlaşma, Elektrik Yüklü, Donma, Çiçeklenme, Ay Yüklü, Ay Çiçeklenmesi veya Su Tesirli Girdap tepkimesi tetikledikten sonra 12 saniyeliğine Saldırı <cryo>%25</cryo> artar."
     },
     "2": {
-      "0": "Bir Buharlaşma, Elektrik Yüklü, Donma, Çiçeklenme, Ay Yüklü veya Su Tesirli Girdap tepkimesi tetikledikten sonra 12 saniyeliğine Saldırı <cryo>%30</cryo> artar."
+      "0": "Bir Buharlaşma, Elektrik Yüklü, Donma, Çiçeklenme, Ay Yüklü, Ay Çiçeklenmesi veya Su Tesirli Girdap tepkimesi tetikledikten sonra 12 saniyeliğine Saldırı <cryo>%30</cryo> artar."
     },
     "3": {
-      "0": "Bir Buharlaşma, Elektrik Yüklü, Donma, Çiçeklenme, Ay Yüklü veya Su Tesirli Girdap tepkimesi tetikledikten sonra 12 saniyeliğine Saldırı <cryo>%35</cryo> artar."
+      "0": "Bir Buharlaşma, Elektrik Yüklü, Donma, Çiçeklenme, Ay Yüklü, Ay Çiçeklenmesi veya Su Tesirli Girdap tepkimesi tetikledikten sonra 12 saniyeliğine Saldırı <cryo>%35</cryo> artar."
     },
     "4": {
-      "0": "Bir Buharlaşma, Elektrik Yüklü, Donma, Çiçeklenme, Ay Yüklü veya Su Tesirli Girdap tepkimesi tetikledikten sonra 12 saniyeliğine Saldırı <cryo>%40</cryo> artar."
+      "0": "Bir Buharlaşma, Elektrik Yüklü, Donma, Çiçeklenme, Ay Yüklü, Ay Çiçeklenmesi veya Su Tesirli Girdap tepkimesi tetikledikten sonra 12 saniyeliğine Saldırı <cryo>%40</cryo> artar."
     }
   }
 }

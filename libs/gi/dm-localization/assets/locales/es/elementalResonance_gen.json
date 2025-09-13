@@ -29,6 +29,36 @@
   },
   "SprawlingGreenery": {
     "name": "Planta trepadora",
-    "desc": "La Maestría Elemental aumenta en 50 pts. Tras causar una reacción de Quemadura, Aceleración o Florecimiento, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 30 pts. durante 6 s. Tras causar una reacción de Intensificación, Propagación, Sobreflorecimiento o Crepitar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 20 pts. durante 6 s. La duración de estos efectos se calcula de manera independiente."
+    "desc": "La Maestría Elemental aumenta en 50 pts. Tras causar una reacción de Quemadura, Aceleración, Florecimiento o Florecimiento Lunar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 30 pts. durante 6 s. Tras causar una reacción de Intensificación, Propagación, Sobreflorecimiento o Crepitar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 20 pts. durante 6 s. La duración de estos efectos se calcula de manera independiente."
+  },
+  "Moonsign": {
+    "name": "Presagio lunar",
+    "desc": {
+      "0": "El nivel de presagio lunar variará según el número de personajes con presagio lunar que haya en el equipo.",
+      "1": "Cuando el nivel de presagio lunar sea de resplandor ascendente, los personajes con presagio lunar se fortalecerán, y los personajes sin presagio lunar también podrán otorgar bonificaciones al equipo."
+    },
+    "nascentGleam": {
+      "name": "Resplandor naciente",
+      "desc": "Todos los personajes del equipo obtendrán el efecto de “presagio lunar: resplandor naciente”."
+    },
+    "ascendantGleam": {
+      "name": "Resplandor ascendente",
+      "desc": {
+        "0": {
+          "0": "Todos los personajes del equipo obtendrán el efecto de “presagio lunar: resplandor ascendente”, y algunos talentos y habilidades de los personajes con presagio lunar se fortalecerán. A no ser que se indique lo contrario, cuando el nivel de presagio lunar sea de resplandor ascendente, también se activarán los efectos correspondientes de presagio lunar: resplandor naciente."
+        },
+        "1": {
+          "0": "<br/>",
+          "1": "Además, cuando un personaje sin presagio lunar use la Habilidad Elemental o Definitiva, los personajes cercanos del equipo pueden obtener como máximo un aumento de daño del 36% en Reacciones Lunares durante 20 s en función del tipo elemental del personaje. Este efecto no se puede acumular.",
+          "2": "Si el tipo elemental del personaje es:",
+          "3": [
+            "<pyro>Pyro</pyro>, <electro>Electro</electro> o <cryo>Cryo</cryo>: dicho daño aumenta en un 0.9% por cada 100 pts. de ATQ.",
+            "<hydro>Hydro</hydro>: dicho daño aumenta en un 0.6% por cada 1000 pts. de Vida Máx.",
+            "<geo>Geo</geo>: dicho daño aumenta en un 1% por cada 100 pts. de DEF.",
+            "<anemo>Anemo</anemo> o <dendro>Dendro</dendro>: dicho daño aumenta en un 2.25% por cada 100 pts. de Maestría Elemental."
+          ]
+        }
+      }
+    }
   }
 }

@@ -29,6 +29,34 @@
   },
   "SprawlingGreenery": {
     "name": "Sprawling Greenery",
-    "desc": "Elemental Mastery meningkat 50. Setelah memicu reaksi Burning, Quicken, atau Bloom, seluruh anggota party di sekitar akan mendapatkan 30 Elemental Mastery selama 6 detik. Setelah memicu reaksi Aggravate, Spread, Hyperbloom, atau Burgeon, seluruh anggota party di sekitar akan mendapatkan 20 Elemental Mastery selama 6 detik. Durasi dari efek yang disebutkan di atas akan dihitung secara terpisah."
+    "desc": "Elemental Mastery meningkat 50. Setelah memicu reaksi Burning, Quicken, Bloom, atau Lunar-Bloom seluruh anggota party di sekitar akan mendapatkan 30 Elemental Mastery selama 6 detik. Setelah memicu reaksi Aggravate, Spread, Hyperbloom, atau Burgeon, seluruh anggota party di sekitar akan mendapatkan 20 Elemental Mastery selama 6 detik. Durasi dari efek yang disebutkan di atas akan dihitung secara terpisah."
+  },
+  "Moonsign": {
+    "name": "Moonsign",
+    "desc": {
+      "0": "Saat ada Karakter Moonsign dalam party, level Moonsign akan meningkat berdasarkan jumlah Karakter Moonsign yang dimasukkan dalam party.",
+      "1": "Saat level Moonsign mencapai \"Moonsign: Ascendant Gleam\", maka Karakter Moonsign akan menjadi lebih kuat. Karakter yang bukan Karakter Moonsign juga dapat memberikan efek buff kepada party."
+    },
+    "nascentGleam": {
+      "name": "Nascent Gleam",
+      "desc": "Seluruh Karakter yang ada di dalam party akan mendapatkan efek Moonsign: Nascent Gleam."
+    },
+    "ascendantGleam": {
+      "name": "Ascendant Gleam",
+      "desc": {
+        "0": {
+          "0": "Seluruh Karakter dalam party akan mendapatkan efek Moonsign: Ascendant Gleam, sebagian Skill dan Talenta Karakter Moonsign akan diperkuat. Kecuali dinyatakan secara spesifik, efek Nascent Gleam juga akan terpicu saat level Moonsign mencapai Ascendant Gleam."
+        },
+        "1": {
+          "0": "<br/>",
+          "1": "Selain itu, dalam 20 detik setelah Karakter yang bukan Moonsign melancarkan Elemental Skill atau Elemental Burst, akan meningkatkan DMG yang diakibatkan Reaksi Lunar seluruh Karakter di sekitar berdasarkan jenis elemen Karakter itu sendiri, hingga maksimum 36%. Efek ini tidak dapat ditumpuk.",
+          "2": "Jika jenis elemen Karakter adalah:",
+          "3": "<pyro>Pyro</pyro>, <electro>Electro</electro>, atau <cryo>Cryo</cryo>: DMG reaksi ini +0,9% untuk setiap 100 poin ATK.",
+          "4": "<hydro>Hydro</hydro>: DMG reaksi ini +0,6% untuk setiap 1.000 poin Max HP.",
+          "5": "<geo>Geo</geo>: DMG reaksi ini +1% untuk setiap 100 poin DEF.",
+          "6": "<anemo>Anemo</anemo>, <dendro>Dendro</dendro>: DMG reaksi ini +2,25% untuk setiap 100 poin Elemental Mastery."
+        }
+      }
+    }
   }
 }

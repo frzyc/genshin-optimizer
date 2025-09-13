@@ -29,6 +29,36 @@
   },
   "SprawlingGreenery": {
     "name": "Sprawling Greenery",
-    "desc": "Elemental Mastery increased by 50. After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently."
+    "desc": "Elemental Mastery increased by 50. After triggering Burning, Quicken, Bloom, or Lunar-Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently."
+  },
+  "Moonsign": {
+    "name": "Moonsign",
+    "desc": {
+      "0": "When Moonsign characters are in the party, the party will attain a Moonsign Level corresponding to the number of such characters.",
+      "1": "When the party reaches \"Moonsign: Ascendant Gleam,\" Moonsign characters will be enhanced. Non-Moonsign characters can also provide buffs to the party."
+    },
+    "nascentGleam": {
+      "name": "Nascent Gleam",
+      "desc": "All characters in the party will gain the \"Moonsign: Nascent Gleam\" effect."
+    },
+    "ascendantGleam": {
+      "name": "Ascendant Gleam",
+      "desc": {
+        "0": {
+          "0": "All characters in the party will gain the \"Moonsign: Ascendant Gleam\" effect, enhancing certain Talents and Skills of Moonsign characters. Unless otherwise stated, when Moonsign Level reaches Ascendant Gleam, the effects of Nascent Gleam will also apply."
+        },
+        "1": {
+          "0": "<br/>",
+          "1": "In addition, for 20s after a non-Moonsign character casts an Elemental Skill or Elemental Burst, they will increase the Lunar Reaction DMG dealt by all nearby characters based on their own Elemental Type, up to a maximum of 36%. This effect cannot stack.",
+          "2": "If the character's Elemental Type is:",
+          "3": [
+            " <pyro>Pyro</pyro>, <electro>Electro</electro>, or <cryo>Cryo</cryo>: Increases this DMG by 0.9% for every 100 ATK.",
+            " <hydro>Hydro</hydro>: Increases this DMG by 0.6% for every 1,000 Max HP.",
+            " <geo>Geo</geo>: Increases this DMG by 1% for every 100 DEF.",
+            " <anemo>Anemo</anemo> or <dendro>Dendro</dendro>: Increases this DMG by 2.25% for every 100 Elemental Mastery."
+          ]
+        }
+      }
+    }
   }
 }

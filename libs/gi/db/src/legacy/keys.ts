@@ -49,6 +49,7 @@ const allTransformative = [
   'bloom',
   'burgeon',
   'hyperbloom',
+  'lunarbloom',
 ] as const
 const allAmplifying = ['vaporize', 'melt'] as const
 const allAdditive = ['spread', 'aggravate'] as const

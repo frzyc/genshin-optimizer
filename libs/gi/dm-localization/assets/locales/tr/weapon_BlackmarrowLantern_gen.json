@@ -1,0 +1,24 @@
+{
+  "name": "Kara İlik Feneri",
+  "description": {
+    "0": "Gece gibi karanlık bir alaşımdan yapılma, birbirine geçmiş kemikleri andıran çerçevesi içinde hayalet misali soğuk bir ışık parıldayan bir fener. Bir zamanlar gizli bir örgüte ait olduğu ve değerli bir hazine olarak görüldüğü söylenir."
+  },
+  "passiveName": "Antlaşma Nişanesi",
+  "passiveDescription": {
+    "0": {
+      "0": "Çiçeklenme Hasarı <cryo>%48</cryo> artar, Ay Çiçeklenmesi Hasarı ise <cryo>%12</cryo> artar. Ay Sembolü: Yükselen Parıltı: Ay Çiçeklenmesi Hasarı <cryo>%12</cryo> daha artar."
+    },
+    "1": {
+      "0": "Çiçeklenme Hasarı <cryo>%60</cryo> artar, Ay Çiçeklenmesi Hasarı ise <cryo>%15</cryo> artar. Ay Sembolü: Yükselen Parıltı: Ay Çiçeklenmesi Hasarı <cryo>%15</cryo> daha artar."
+    },
+    "2": {
+      "0": "Çiçeklenme Hasarı <cryo>%72</cryo> artar, Ay Çiçeklenmesi Hasarı ise <cryo>%18</cryo> artar. Ay Sembolü: Yükselen Parıltı: Ay Çiçeklenmesi Hasarı <cryo>%18</cryo> daha artar."
+    },
+    "3": {
+      "0": "Çiçeklenme Hasarı <cryo>%84</cryo> artar, Ay Çiçeklenmesi Hasarı ise <cryo>%21</cryo> artar. Ay Sembolü: Yükselen Parıltı: Ay Çiçeklenmesi Hasarı <cryo>%21</cryo> daha artar."
+    },
+    "4": {
+      "0": "Çiçeklenme Hasarı <cryo>%96</cryo> artar, Ay Çiçeklenmesi Hasarı ise <cryo>%24</cryo> artar. Ay Sembolü: Yükselen Parıltı: Ay Çiçeklenmesi Hasarı <cryo>%24</cryo> daha artar."
+    }
+  }
+}

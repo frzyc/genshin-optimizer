@@ -106,7 +106,7 @@
     "description": {
       "0": "Quando un membro del gruppo innesca una reazione di Electrocarica, questa si converte in una reazione di Carica lunare, i cui DAN base aumentano di uno 0,7% per ogni 100 di ATT di Ineffa, fino a un 14% massimo.",
       "1": "<br/>",
-      "2": "Altre benedizioni potrebbero comparire con l'avvento della luna nuova..."
+      "2": "Inoltre, quando Ineffa è nel gruppo, il <strong>Presagio lunare</strong> del gruppo aumenta di 1 livello."
     }
   },
   "passive": {

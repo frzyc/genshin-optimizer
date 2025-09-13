@@ -39,9 +39,9 @@ import { useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../../context'
 import { DocumentDisplay } from '../DocumentDisplay'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
-import { LevelSelect } from '../LevelSelect'
 import { RefinementDropdown } from '../RefinementDropdown'
 import { LocationAutocomplete } from '../character'
+import { WeaponLevelSelect } from './WeaponLevelSelect'
 import { WeaponSelectionModal } from './WeaponSelectionModal'
 import {
   WeaponDesc,
@@ -192,7 +192,7 @@ export function WeaponEditor({
                 </Box>
                 <Box display="flex" gap={1} flexWrap="wrap">
                   {key && (
-                    <LevelSelect
+                    <WeaponLevelSelect
                       level={level}
                       ascension={ascension}
                       setBoth={weaponDispatch}

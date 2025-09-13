@@ -12,7 +12,7 @@ import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
-import { getLevelString } from '@genshin-optimizer/gi/util'
+import { getWeaponLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, input } from '@genshin-optimizer/gi/wr'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
@@ -132,7 +132,7 @@ export function WeaponCardNanoObj({
               size="small"
               label={
                 <strong>
-                  {getLevelString(weapon.level, weapon.ascension)}
+                  {getWeaponLevelString(weapon.level, weapon.ascension)}
                 </strong>
               }
               color="primary"

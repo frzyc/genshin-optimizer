@@ -103,9 +103,8 @@
   "passive3": {
     "name": "Bênção do Presságio Lunar: Repetidor de Simulações",
     "description": {
-      "0": "Quando um membro da equipe desencadeia uma Reação Eletricamente Carregada, ela será convertida na reação de Carga Lunar. A cada 100 de ATQ que Ineffa possuir, o Dano Básico de Carga Lunar será aumentado em 0,7%, até um máximo de 14%.",
-      "1": "<br/>",
-      "2": "Novas bênçãos poderão surgir com a ascensão da lua nova..."
+      "0": "Quando um membro da equipe desencadeia uma Reação Eletricamente Carregada, ela será convertida em Carga Lunar. A cada 100 de ATQ que Ineffa possuir, o Dano Base de Carga Lunar será aumentado em 0,7%, até um máximo de 14%.",
+      "1": "Além disso, quando Ineffa está na equipe, aumenta o <strong>Presságio Lunar</strong> da equipe em 1 nível."
     }
   },
   "passive": {

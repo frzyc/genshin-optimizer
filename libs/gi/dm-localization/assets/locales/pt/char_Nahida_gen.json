@@ -145,8 +145,9 @@
     "description": {
       "0": "Oponentes marcados pelas <strong>Sementes Skandha</strong> aplicadas pela própria Nahida serão afetados pelos seguintes efeitos:",
       "1": [
-        " Dano de Queimadura, Florescimento, Superflorescimento e Germinação pode causar CRIT. Taxa CRIT e Dano CRIT estão fixados em 20% e 100% respectivamente.",
-        " Dentro de 8s após terem sido afetados por Aceleração, Intensificação e Propagação, a DEF diminui em 30%."
+        " Dano de Queimadura, Florescimento, Superflorescimento e Germinação pode causar CRIT. Taxa CRIT e Dano CRIT estão fixados em 20% e 100% respectivamente. Esse efeito de aumento de Taxa CRIT pode acumular com efeitos similares de Acerto CRIT de reações elementais correspondentes.",
+        " Dentro de 8s após terem sido afetados por Aceleração, Intensificação e Propagação, a DEF diminui em 30%.",
+        " Aumenta o Dano sofrido por Taxa CRIT de Florescimento Lunar em 10%, aumenta o Dano CRIT em 20%."
       ]
     }
   },

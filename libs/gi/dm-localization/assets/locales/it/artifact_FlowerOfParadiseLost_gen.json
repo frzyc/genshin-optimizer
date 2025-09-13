@@ -2,7 +2,7 @@
   "setName": "Fiore del paradiso perduto",
   "setEffects": {
     "2": "Maestria elementale +80.",
-    "4": "I DAN da reazioni di Fioritura, Iperfioritura e Germinazione del personaggio equipaggiato aumentano di un 40%. In più, se il personaggio innesca Fioritura, Iperfioritura o Germinazione, ottiene un ulteriore 25% di bonus per il suddetto effetto. Ogni accumulo del bonus dura 10 s. Massimo 4 accumuli contemporaneamente. Quest'effetto può attivarsi solo una volta al secondo. Il personaggio equipaggiato può attivare l'effetto anche se non è presente sul campo."
+    "4": "I DAN da reazioni di Fioritura, Iperfioritura e Germinazione del personaggio equipaggiato aumentano di un 40%, inoltre i DAN della reazione di Fioritura lunare aumentano di un 10%. In più, se il personaggio innesca Fioritura, Iperfioritura o Germinazione, ottiene un ulteriore 25% di bonus per gli effetti sopracitati. Ogni accumulo dura 10 s. Massimo 4 accumuli contemporaneamente. Quest'effetto può attivarsi solo una volta al secondo. Il personaggio equipaggiato può attivare l'effetto anche se non è presente sul campo."
   },
   "pieces": {
     "flower": {

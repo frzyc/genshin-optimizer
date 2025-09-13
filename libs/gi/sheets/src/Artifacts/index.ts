@@ -32,6 +32,7 @@ import LuckyDog from './LuckyDog'
 import MaidenBeloved from './MaidenBeloved'
 import MarechausseeHunter from './MarechausseeHunter'
 import MartialArtist from './MartialArtist'
+import NightOfTheSkysUnveiling from './NightOfTheSkysUnveiling'
 import NighttimeWhispersInTheEchoingWoods from './NighttimeWhispersInTheEchoingWoods'
 import NoblesseOblige from './NoblesseOblige'
 import NymphsDream from './NymphsDream'
@@ -47,6 +48,7 @@ import RetracingBolide from './RetracingBolide'
 import Scholar from './Scholar'
 import ScrollOfTheHeroOfCinderCity from './ScrollOfTheHeroOfCinderCity'
 import ShimenawasReminiscence from './ShimenawasReminiscence'
+import SilkenMoonsSerenade from './SilkenMoonsSerenade'
 import SongOfDaysPast from './SongOfDaysPast'
 import TenacityOfTheMillelith from './TenacityOfTheMillelith'
 import TheExile from './TheExile'
@@ -89,6 +91,7 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   MaidenBeloved,
   MarechausseeHunter,
   MartialArtist,
+  NightOfTheSkysUnveiling,
   NighttimeWhispersInTheEchoingWoods,
   NoblesseOblige,
   NymphsDream,
@@ -104,6 +107,7 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   Scholar,
   ScrollOfTheHeroOfCinderCity,
   ShimenawasReminiscence,
+  SilkenMoonsSerenade,
   SongOfDaysPast,
   TenacityOfTheMillelith,
   TheExile,

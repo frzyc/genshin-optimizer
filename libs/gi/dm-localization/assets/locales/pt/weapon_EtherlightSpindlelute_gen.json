@@ -1,0 +1,24 @@
+{
+  "name": "Lira do Tecedor da Luz",
+  "description": {
+    "0": "Um alaúde de cordas douradas e radiantes como o sol. Parece ser uma relíquia antiga dos Seelie."
+  },
+  "passiveName": "O Último Cantor",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 20s após lançar a Habilidade Elemental, aumenta a Proficiência Elemental do personagem que está com essa arma equipada em <cryo>100</cryo>."
+    },
+    "1": {
+      "0": "Nos 20s após lançar a Habilidade Elemental, aumenta a Proficiência Elemental do personagem que está com essa arma equipada em <cryo>125</cryo>."
+    },
+    "2": {
+      "0": "Nos 20s após lançar a Habilidade Elemental, aumenta a Proficiência Elemental do personagem que está com essa arma equipada em <cryo>150</cryo>."
+    },
+    "3": {
+      "0": "Nos 20s após lançar a Habilidade Elemental, aumenta a Proficiência Elemental do personagem que está com essa arma equipada em <cryo>175</cryo>."
+    },
+    "4": {
+      "0": "Nos 20s após lançar a Habilidade Elemental, aumenta a Proficiência Elemental do personagem que está com essa arma equipada em <cryo>200</cryo>."
+    }
+  }
+}

@@ -96,14 +96,14 @@
   "passive1": {
     "name": "Floral Sidewinder",
     "description": {
-      "0": "Sebelum <strong>Floral Ring</strong> kembali, jika ada Karakter di dalam party yang memicu reaksi Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, akan memberikan status \"Sprout\" untuk Karakter, yang akan mengakibatkan <dendro>Dendro DMG</dendro> secara terus-menerus kepada musuh di sekitar sebesar 40% dari ATK Collei selama 3 detik.",
-      "1": "Jika efek Sprout terpicu lagi selama durasinya masih berlangsung, maka efek yang awal akan dihapus. DMG yang diakibatkan oleh efek Sprout akan dianggap sebagai DMG Elemental Skill."
+      "0": "Sebelum <strong>Floral Ring</strong> kembali, jika ada Karakter di dalam party yang memicu reaksi Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, Lunar-Bloom, atau Burgeon, maka Karakter akan mendapatkan efek Sprout saat Floral Ring kembali. Efek ini akan mengakibatkan <dendro>Dendro DMG</dendro> sebesar 40% dari ATK Collei secara terus-menerus kepada musuh di sekitar selama 3 detik.",
+      "1": "Jika efek Sprout terpicu lagi selama durasinya masih berlangsung, maka efek yang awal akan dihapus. DMG yang diakibatkan oleh efek Sprout dianggap sebagai DMG Elemental Skill."
     }
   },
   "passive2": {
     "name": "The Languid Wood",
     "description": {
-      "0": "Saat Karakter yang berada di dalam <strong>Zona Cuilein-Anbar</strong> memicu efek Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, maka durasi area akan diperpanjang 1 detik.",
+      "0": "Saat Karakter yang berada di dalam <strong>Zona Cuilein-Anbar</strong> memicu efek Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, Lunar-Bloom, atau Burgeon, maka durasi area akan diperpanjang 1 detik.",
       "1": "Dalam 1 kali <strong>Trump-Card Kitty</strong>, perpanjangan durasi yang bisa didapatkan dengan cara ini maksimum sebanyak 3 kali."
     }
   },
@@ -124,10 +124,10 @@
     "name": "Through Hill and Copse",
     "description": {
       "0": "Talenta Pasif \"Floral Sidewinder\" akan berubah menjadi:",
-      "1": "Saat <strong>Floral Ring</strong> kembali, Talenta Pasif \"Floral Sidewinder\" akan memberikan status \"Sprout\" untuk Karakter, yang akan mengakibatkan <dendro>Dendro DMG</dendro> secara terus-menerus kepada musuh di sekitar sebesar 40% dari ATK Collei selama 3 detik.",
-      "2": "Sejak melancarkan <strong>Floral Brush</strong> dan sebelum status Sprout kali ini hilang, jika ada Karakter di dalam party yang memicu reaksi Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, maka durasi efek Sprout kali ini diperpanjang 3 detik.",
+      "1": "Saat <strong>Floral Ring</strong> kembali, Talenta Pasif \"Floral Sidewinder\" akan memberikan status \"Sprout\" untuk Karakter, yang akan mengakibatkan <dendro>Dendro DMG</dendro> sebesar 40% dari ATK Collei secara terus-menerus kepada musuh di sekitar selama 3 detik.",
+      "2": "Sejak melancarkan <strong>Floral Brush</strong> dan sebelum status Sprout kali ini hilang, jika ada Karakter di dalam party yang memicu reaksi Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, Lunar-Bloom, atau Burgeon, maka durasi efek Sprout kali ini diperpanjang 3 detik.",
       "3": "Perpanjangan durasi efek Sprout yang bisa didapatkan dengan cara ini adalah 1 kali. Jika efek Sprout terpicu lagi selama durasinya berlangsung, maka efek yang awal akan dihapus. DMG yang diakibatkan oleh efek Sprout dianggap sebagai DMG Elemental Skill.",
-      "4": "Harus sudah membuka Talenta Pasif Floral Sidewinder lebih dulu."
+      "4": "Harus membuka Talenta Pasif Floral Sidewinder terlebih dahulu."
     }
   },
   "constellation3": {

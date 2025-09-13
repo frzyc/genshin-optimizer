@@ -1,0 +1,24 @@
+{
+  "name": "Pelle du prospecteur",
+  "description": {
+    "0": "Une arme qui semble avoir été fabriquée à partir d'un outil agricole. À première vue, elle paraît on ne peut plus ordinaire, mais sa conception discrète cache des particularités à la fois somptueuses et indéniablement raffinées."
+  },
+  "passiveName": "Tranchant de la décision",
+  "passiveDescription": {
+    "0": {
+      "0": "Les DGT infligés par les réactions d'Électrocution augmentent de <cryo>48 %</cryo> et ceux des réactions de Sélénocution de <cryo>12 %</cryo>. Signelune « Lueur ascendante » : les DGT des réactions de Sélénocution augmentent de <cryo>12 %</cryo> supplémentaires."
+    },
+    "1": {
+      "0": "Les DGT infligés par les réactions d'Électrocution augmentent de <cryo>60 %</cryo> et ceux des réactions de Sélénocution de <cryo>15 %</cryo>. Signelune « Lueur ascendante » : les DGT des réactions de Sélénocution augmentent de <cryo>15 %</cryo> supplémentaires."
+    },
+    "2": {
+      "0": "Les DGT infligés par les réactions d'Électrocution augmentent de <cryo>72 %</cryo> et ceux des réactions de Sélénocution de <cryo>18 %</cryo>. Signelune « Lueur ascendante » : les DGT des réactions de Sélénocution augmentent de <cryo>18 %</cryo> supplémentaires."
+    },
+    "3": {
+      "0": "Les DGT infligés par les réactions d'Électrocution augmentent de <cryo>84 %</cryo> et ceux des réactions de Sélénocution de <cryo>21 %</cryo>. Signelune « Lueur ascendante » : les DGT des réactions de Sélénocution augmentent de <cryo>21 %</cryo> supplémentaires."
+    },
+    "4": {
+      "0": "Les DGT infligés par les réactions d'Électrocution augmentent de <cryo>96 %</cryo> et ceux des réactions de Sélénocution de <cryo>24 %</cryo>. Signelune « Lueur ascendante » : les DGT des réactions de Sélénocution augmentent de <cryo>24 %</cryo> supplémentaires."
+    }
+  }
+}

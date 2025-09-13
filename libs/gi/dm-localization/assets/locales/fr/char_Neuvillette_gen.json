@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Héritier de l'autorité de l'ancienne mer",
     "description": {
-      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction d'Évaporation, de Gel, d'Électrocution, de Sélénocution, de Fleurissement, de Dispersion Hydro ou de Cristallisation Hydro sur un ennemi, Neuvillette obtient un cumul de gloire draconique passée pendant 30 s : peut être cumulé 3 fois maximum, ce qui augmente les DGT de l'attaque chargée « Jugement équitable » à une valeur équivalant à 110 %, 125 % ou 160 % des DGT d'origine, selon le nombre de cumuls.",
+      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction d'Évaporation, de Gel, d'Électrocution, de Sélénocution, de Fleurissement, de Sélénofleurissement, de Dispersion Hydro ou de Cristallisation Hydro sur un ennemi, Neuvillette obtient un cumul de gloire draconique passée pendant 30 s : peut être cumulé 3 fois maximum, ce qui augmente les DGT de l'attaque chargée « Jugement équitable » à une valeur équivalant à 110 %, 125 % ou 160 % des DGT d'origine, selon le nombre de cumuls.",
       "1": "Les cumuls de gloire draconique passée de chaque réaction élémentaire existent indépendamment les uns des autres."
     }
   },

@@ -208,6 +208,14 @@
     }
   },
   "passive3": {
+    "name": "Night Realm's Gift: A Torch That Incinerates Evil",
+    "description": {
+      "0": "After Nightsoul points have been fully depleted, Varesa will switch to using Phlogiston to maintain the Sudden Onrush mode from her Nightsoul's Blessing.",
+      "1": "While in an area with Phlogiston Mechanics within Natlan, Nightsoul Transmission: Varesa can be used. When the current active character is sprinting or in movement modes caused by certain Talents, or at a certain height in the air, switching to Varesa will trigger the following: Varesa enters the Nightsoul's Blessing state, switches to Sudden Onrush mode, and obtains 20 Nightsoul points. Nightsoul Transmission can be triggered once every 10s by your own party.",
+      "2": "While in an area with Phlogiston Mechanics within Natlan, Varesa will not take fall DMG when using terrain differences to make leaps."
+    }
+  },
+  "passive": {
     "name": "Blazing Heart, Singular Advance!",
     "description": {
       "0": "Varesa's Sprint speed is increased. When she is not in combat, her Sprint Stamina consumption will also increase.",

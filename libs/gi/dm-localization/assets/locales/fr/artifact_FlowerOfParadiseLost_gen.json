@@ -2,7 +2,7 @@
   "setName": "Fleur du paradis perdu",
   "setEffects": {
     "2": "Augmente la maîtrise élémentaire de 80 pts.",
-    "4": "Augmente les DGT infligés par les réactions de Fleurissement, d'Exubérance et de Bourgeonnement du personnage équipé de l'artéfact de 40 %. De plus, lorsque le personnage équipé de l'artéfact a déclenché une réaction de Fleurissement, d'Exubérance ou de Bourgeonnement, le bonus mentionné précédemment augmente de 25 % pendant 10 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les secondes. Cet effet peut être déclenché même si le personnage équipé de l'artéfact fait partie de l'équipe mais n'est pas déployé."
+    "4": "Augmente les DGT infligés par les réactions de Fleurissement, d'Exubérance et de Bourgeonnement du personnage équipé de l'artéfact de 40 % et les DGT de ses réactions de Sélénofleurissement de 10 %. De plus, lorsque le personnage équipé de l'artéfact a déclenché une réaction de Fleurissement, de Sélénofleurissement, d'Exubérance ou de Bourgeonnement, le bonus mentionné précédemment augmente de 25 % pendant 10 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les secondes. Cet effet peut être déclenché même si le personnage équipé de l'artéfact fait partie de l'équipe mais n'est pas déployé."
   },
   "pieces": {
     "flower": {

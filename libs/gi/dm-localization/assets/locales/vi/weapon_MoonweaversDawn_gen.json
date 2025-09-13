@@ -1,0 +1,24 @@
+{
+  "name": "Bình Minh Của Người Dệt Trăng",
+  "description": {
+    "0": "Thanh kiếm bạc sắc bén và thuần khiết, tựa như dòng chảy ánh trăng đủ sắc bén để xuyên qua lớp giáp kiên cố. Tương truyền, đây là thánh khí từng được Vịnh Nguyệt Sứ đầu tiên chúc phúc."
+  },
+  "passiveName": "Di Chúc Bạc Huyền Bí",
+  "passiveDescription": {
+    "0": {
+      "0": "Tăng <cryo>20%</cryo> sát thương Kỹ Năng Nộ. Khi giới hạn Năng Lượng Nguyên Tố của người trang bị không vượt quá 60/40, sát thương Kỹ Năng Nộ tăng thêm <cryo>16%/28%</cryo>."
+    },
+    "1": {
+      "0": "Tăng <cryo>25%</cryo> sát thương Kỹ Năng Nộ. Khi giới hạn Năng Lượng Nguyên Tố của người trang bị không vượt quá 60/40, sát thương Kỹ Năng Nộ tăng thêm <cryo>20%/35%</cryo>."
+    },
+    "2": {
+      "0": "Tăng <cryo>30%</cryo> sát thương Kỹ Năng Nộ. Khi giới hạn Năng Lượng Nguyên Tố của người trang bị không vượt quá 60/40, sát thương Kỹ Năng Nộ tăng thêm <cryo>24%/42%</cryo>."
+    },
+    "3": {
+      "0": "Tăng <cryo>35%</cryo> sát thương Kỹ Năng Nộ. Khi giới hạn Năng Lượng Nguyên Tố của người trang bị không vượt quá 60/40, sát thương Kỹ Năng Nộ tăng thêm <cryo>28%/49%</cryo>."
+    },
+    "4": {
+      "0": "Tăng <cryo>40%</cryo> sát thương Kỹ Năng Nộ. Khi giới hạn Năng Lượng Nguyên Tố của người trang bị không vượt quá 60/40, sát thương Kỹ Năng Nộ tăng thêm <cryo>32%/56%</cryo>."
+    }
+  }
+}

@@ -12,7 +12,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { validateLevelAsc } from '@genshin-optimizer/gi/util'
+import { validateWeaponLevelAsc } from '@genshin-optimizer/gi/util'
 import type { ICachedCharacter } from '../../Interfaces/ICachedCharacter'
 import type { ICachedWeapon } from '../../Interfaces/ICachedWeapon'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -64,7 +64,7 @@ export class WeaponDataManager extends DataManager<
     if (!allWeaponKeys.includes(key)) return undefined
     const { rarity, weaponType } = allStats.weapon.data[key]
     if (rawLevel > weaponMaxLevel[rarity]) return undefined
-    const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
+    const { level, ascension } = validateWeaponLevelAsc(rawLevel, rawAscension)
     if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
       refinement = 1
     if (location && !allLocationCharacterKeys.includes(location)) location = ''

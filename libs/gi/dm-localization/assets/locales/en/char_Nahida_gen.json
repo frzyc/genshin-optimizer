@@ -199,8 +199,9 @@
     "description": {
       "0": "Opponents that are marked by <strong>Seeds of Skandha</strong> applied by Nahida herself will be affected by the following effects:",
       "1": [
-        "Burning, Bloom, Hyperbloom, and Burgeon Reaction DMG they receive can score CRIT Hits. CRIT Rate and CRIT DMG are fixed at 20% and 100% respectively.",
-        "Within 8s of being affected by Quicken, Aggravate, Spread, DEF is decreased by 30%."
+        " Burning, Bloom, Hyperbloom, and Burgeon Reaction DMG they receive can score CRIT Hits. CRIT Rate and CRIT DMG are fixed at 20% and 100% respectively. CRIT Rate from this effect stacks with CRIT Rate from similar effects that allow these Elemental Reactions to CRIT.",
+        " Within 8s of being affected by Quicken, Aggravate, or Spread, DEF is decreased by 30%.",
+        " The CRIT Rate and CRIT DMG of Lunar-Bloom DMG received are increased by 10% and 20% respectively."
       ]
     }
   },

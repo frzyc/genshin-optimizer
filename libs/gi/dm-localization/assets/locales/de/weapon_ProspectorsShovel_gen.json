@@ -1,0 +1,24 @@
+{
+  "name": "Schaufel des Goldgräbers",
+  "description": {
+    "0": "Eine Stangenwaffe, die offenbar aus einem landwirtschaftlichen Gerät hergestellt wurde. Auf den ersten Blick sieht sie ganz gewöhnlich aus, doch hinter ihrem unscheinbaren Aussehen verbirgt sich eine kaum übersehbare Raffinesse."
+  },
+  "passiveName": "Entschlossenes Handeln",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den durch die Reaktion „Unter Strom“ verursachten Schaden um <cryo>48 %</cryo> und den durch die Reaktion „Mond unter Strom“ verursachten Schaden um <cryo>12 %</cryo>. Mondomen – Reifer Glanz: Erhöht den durch die Reaktion „Mond unter Strom“ verursachten Schaden zusätzlich um <cryo>12 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den durch die Reaktion „Unter Strom“ verursachten Schaden um <cryo>60 %</cryo> und den durch die Reaktion „Mond unter Strom“ verursachten Schaden um <cryo>15 %</cryo>. Mondomen – Reifer Glanz: Erhöht den durch die Reaktion „Mond unter Strom“ verursachten Schaden zusätzlich um <cryo>15 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den durch die Reaktion „Unter Strom“ verursachten Schaden um <cryo>72 %</cryo> und den durch die Reaktion „Mond unter Strom“ verursachten Schaden um <cryo>18 %</cryo>. Mondomen – Reifer Glanz: Erhöht den durch die Reaktion „Mond unter Strom“ verursachten Schaden zusätzlich um <cryo>18 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den durch die Reaktion „Unter Strom“ verursachten Schaden um <cryo>84 %</cryo> und den durch die Reaktion „Mond unter Strom“ verursachten Schaden um <cryo>21 %</cryo>. Mondomen – Reifer Glanz: Erhöht den durch die Reaktion „Mond unter Strom“ verursachten Schaden zusätzlich um <cryo>21 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den durch die Reaktion „Unter Strom“ verursachten Schaden um <cryo>96 %</cryo> und den durch die Reaktion „Mond unter Strom“ verursachten Schaden um <cryo>24 %</cryo>. Mondomen – Reifer Glanz: Erhöht den durch die Reaktion „Mond unter Strom“ verursachten Schaden zusätzlich um <cryo>24 %</cryo>."
+    }
+  }
+}

@@ -29,6 +29,36 @@
   },
   "SprawlingGreenery": {
     "name": "Thảo Sinh Sôi",
-    "desc": "Tinh Thông Nguyên Tố tăng 50 điểm. Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Sum Suê, tất cả nhân vật trong đội gần đó tăng 30 Tinh Thông Nguyên Tố, duy trì 6s. Sau khi kích hoạt phản ứng Tăng Cường, Lan Tràn, Nở Rộ, Bung Tỏa, tất cả nhân vật trong đội gần đó tăng 20 Tinh Thông Nguyên Tố, duy trì 6s. Thời gian của các hiệu ứng trên sẽ tính độc lập với nhau."
+    "desc": "Tinh Thông Nguyên Tố tăng 50 điểm. Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Sum Suê, Nguyệt-Sum Suê, tất cả nhân vật trong đội gần đó tăng 30 Tinh Thông Nguyên Tố, duy trì 6s. Sau khi kích hoạt phản ứng Tăng Cường, Lan Tràn, Nở Rộ, Bung Tỏa, tất cả nhân vật trong đội gần đó tăng 20 Tinh Thông Nguyên Tố, duy trì 6s. Thời gian của các hiệu ứng trên sẽ tính độc lập với nhau."
+  },
+  "Moonsign": {
+    "name": "Nguyệt Triệu",
+    "desc": {
+      "0": "Khi trong đội có nhân vật Nguyệt Triệu, sẽ căn cứ số lượng nhân vật Nguyệt Triệu trong đội để nhận cấp độ Nguyệt Triệu tương ứng.",
+      "1": "Khi cấp Nguyệt Triệu đạt tới \"Nguyệt Triệu - Rực Sáng\", nhân vật Nguyệt Triệu sẽ được cường hóa, nhân vật không phải Nguyệt Triệu cũng sẽ cung cấp hiệu quả buff cho đội ngũ."
+    },
+    "nascentGleam": {
+      "name": "Hé Sáng",
+      "desc": "Tất cả nhân vật trong đội sẽ nhận hiệu quả \"Nguyệt Triệu - Hé Sáng\""
+    },
+    "ascendantGleam": {
+      "name": "Rực Sáng",
+      "desc": {
+        "0": {
+          "0": "Tất cả nhân vật trong đội sẽ nhận hiệu quả \"Nguyệt Triệu - Rực Sáng\", cường hóa một số hiệu quả kỹ năng và Thiên Phú của nhân vật Nguyệt Triệu. Nếu không có những giải thích khác, thì khi cấp độ Nguyệt Triệu đạt Rực Sáng, cũng sẽ kích hoạt hiệu quả tương ứng của \"Nguyệt Triệu - Hé Sáng\"."
+        },
+        "1": {
+          "0": "<br/>",
+          "1": "Ngoài ra, trong vòng 20s sau khi nhân vật ngoài nhân vật Nguyệt Triệu thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, sẽ dựa trên loại nguyên tố của bản thân để khiến sát thương phản ứng Nguyệt của tất cả nhân vật gần đó tăng tối đa 36%, hiệu quả này không thể cộng dồn.",
+          "2": "Nếu loại nguyên tố của nhân vật là:",
+          "3": [
+            "<pyro>Nguyên Tố Hỏa</pyro>, <electro>Nguyên Tố Lôi</electro>, <cryo>Nguyên Tố Băng</cryo>: Mỗi 100 điểm Tấn Công sẽ tăng 0.9% sát thương nói trên;",
+            "<hydro>Nguyên Tố Thủy</hydro>: Mỗi 1000 điểm Giới Hạn HP sẽ tăng 0.6% sát thương nói trên;",
+            "<geo>Nguyên Tố Nham</geo>: Mỗi 100 điểm Phòng Ngự sẽ tăng 1% sát thương nói trên;",
+            "<anemo>Nguyên Tố Phong</anemo>, <dendro>Nguyên Tố Thảo</dendro>: Mỗi 100 điểm Tinh Thông Nguyên Tố sẽ tăng 2.25% sát thương nói trên."
+          ]
+        }
+      }
+    }
   }
 }

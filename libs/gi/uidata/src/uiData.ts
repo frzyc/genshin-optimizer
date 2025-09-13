@@ -406,6 +406,7 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
       case 'bloom':
       case 'burgeon':
       case 'hyperbloom':
+      case 'lunarbloom':
       case 'vaporize':
       case 'melt':
       case 'spread':

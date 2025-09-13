@@ -104,7 +104,7 @@
     "name": "Corte dei petali danzanti",
     "description": {
       "0": "Quando tutti i membri del gruppo sono personaggi di <dendro>Dendro</dendro> o <hydro>Hydro</hydro>, e ci sono almeno un personaggio di Dendro e uno di Hydro, il completamento del terzo passo della <strong>Danza di Haftkarsvar</strong> di Nilou concede il Dorato calice dell'abbondanza a tutti i personaggi per 30 s.",
-      "1": "I personaggi sotto l'effetto del Dorato calice dell'abbondanza aumentano la maestria elementale dei personaggi vicini di 100 per 10 s ogni volta che vengono colpiti da <dendro>attacchi di Dendro</dendro>. Inoltre, l'innesco di una reazione di Fioritura materializza dei Nuclei munifici al posto dei nuclei di Dendro.",
+      "1": "I personaggi sotto l'effetto del Dorato calice dell'abbondanza aumentano la maestria elementale dei personaggi vicini di 100 per 10 s ogni volta che vengono colpiti da <dendro>attacchi di Dendro</dendro>. Inoltre, l'innesco di una reazione di Fioritura o di Fioritura lunare materializza dei Nuclei munifici al posto dei nuclei di Dendro.",
       "2": "Questi Nuclei esplodono poco dopo la loro creazione e hanno un'area d'effetto molto ampia.",
       "3": "I Nuclei munifici non possono innescare reazioni di Iperfioritura o Germinazione, e condividono lo stesso limite numerico dei nuclei di Dendro. I DAN da Nucleo munifico sono considerati DAN da nuclei di Dendro prodotti tramite Fioritura.",
       "4": "Se il gruppo non soddisfa le condizioni di questo talento passivo, ogni effetto esistente del Dorato calice dell'abbondanza viene annullato."
@@ -136,7 +136,7 @@
   "constellation2": {
     "name": "Cieli stellati e piogge di fiori",
     "description": {
-      "0": "Quando un personaggio sotto l'effetto del Dorato calice dell'abbondanza infligge <hydro>DAN da Hydro</hydro> agli avversari, la <hydro>RES a Hydro</hydro> di questi ultimi si riduce di un 35% per 10 s. Quando una reazione di Fioritura infligge DAN agli avversari, la <dendro>RES a Dendro</dendro> di questi ultimi si riduce di un 35% per 10 s.",
+      "0": "Quando un personaggio sotto l'effetto del Dorato calice dell'abbondanza infligge <hydro>DAN da Hydro</hydro> agli avversari, la <hydro>RES a Hydro</hydro> di questi ultimi si riduce di un 35% per 10 s. Dopo aver inflitto DAN da Fioritura o da Fioritura lunare agli avversari, la <dendro>RES a Dendro</dendro> di questi ultimi si riduce di un 35% per 10 s.",
       "1": "Devi prima sbloccare il talento Corte dei petali danzanti."
     }
   },

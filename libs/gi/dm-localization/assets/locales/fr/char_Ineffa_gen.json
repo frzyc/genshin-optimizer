@@ -106,7 +106,7 @@
     "description": {
       "0": "Lorsqu'un personnage de l'équipe déclenche une réaction d'Électrocution, elle est convertie en réaction de Sélénocution, dont les DGT de base augmentent selon l'ATQ d'Ineffa : chaque tranche de 100 pts d'ATQ augmente les DGT de base de 0,7 %, les DGT pouvant être augmentés d'un maximum de 14 % de cette manière.",
       "1": "<br/>",
-      "2": "D'autres bénédictions pourraient suivre le lever de la nouvelle lune..."
+      "2": "De plus, la <strong>signelune</strong> de l'équipe augmente d'un niveau lorsque Ineffa fait partie de l'équipe."
     }
   },
   "passive": {

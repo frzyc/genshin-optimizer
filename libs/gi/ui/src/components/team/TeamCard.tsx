@@ -33,7 +33,10 @@ import {
   weaponHasRefinement,
 } from '@genshin-optimizer/gi/stats'
 import { ElementIcon, SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { getLevelString } from '@genshin-optimizer/gi/util'
+import {
+  getCharLevelString,
+  getWeaponLevelString,
+} from '@genshin-optimizer/gi/util'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'
@@ -359,7 +362,7 @@ function CharacterArea({
                     textShadow: '0 0 5px black',
                   }}
                 >
-                  {getLevelString(character.level, character.ascension)}
+                  {getCharLevelString(character.level, character.ascension)}
                 </Typography>
               )}
               {character && (
@@ -482,7 +485,7 @@ function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
         }}
       >
         <Typography sx={{}}>
-          {getLevelString(weapon.level, weapon.ascension)}
+          {getWeaponLevelString(weapon.level, weapon.ascension)}
         </Typography>
 
         {weaponHasRefinement(weapon.key) && (

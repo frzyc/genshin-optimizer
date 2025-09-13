@@ -1,0 +1,29 @@
+{
+  "setName": "Nacht der himmlischen Enthüllung",
+  "setEffects": {
+    "2": "Erhöht Elementarkunde um 80 Punkte.",
+    "4": "Verleiht beim Auslösen der Mondleuchten-Reaktionen durch ein Truppenmitglied in der Nähe, wenn sich der Träger auf dem Feld befindet, 4 s lang den Effekt „Helles Mondlicht – Gedankensammelsurium“: Erhöht, wenn das Mondomen der Truppe „Anfänglicher Glanz“ / „Reifer Glanz“ ist, die KT um 15 % / 30 %. Erhöht für jeden unterschiedlichen Effekt des „Hellen Mondlichts“ der Truppenmitglieder den Schaden der von allen Truppenmitgliedern ausgelösten Mondleuchten-Reaktionen um 10 %. Der durch „Helles Mondlicht“ ausgelöste Effekt ist nicht stapelbar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Blume der Wahrheit",
+      "desc": "Ein Heiligtum in Form einer Blume, das anscheinend ein schreckliches Wesen symbolisiert, das so prächtig wie eine Blume erblüht."
+    },
+    "plume": {
+      "name": "Feder der tiefen Sünde",
+      "desc": "Eine Federverzierung auf einem Filzhut. Sie steht etwas im Widerspruch zu dem üblichen edlen Kleidungsstil der Aristokraten von Snezhnaya."
+    },
+    "sands": {
+      "name": "Glocke des Erlasses",
+      "desc": "Eine exquisite, selbstklingende Glocke, die von einer geheimnisvollen Macht angetrieben wird. Sie scheint jedoch nicht dazu gedacht, auf die Zeit hinzuweisen."
+    },
+    "goblet": {
+      "name": "Krug des Überflusses",
+      "desc": "Ein spezieller Kelch, der früher bei den Banketten im Palast verwendet wurde. Einst wurde er für Zauberkunststücke verwendet."
+    },
+    "circlet": {
+      "name": "Krone des ewigen Unheils",
+      "desc": "Eine Krone, die dem Kopfband eines Sünders nachempfunden ist. Vielleicht sind Liebe und Sünde in den Herzen von jemandem ein und dasselbe."
+    }
+  }
+}

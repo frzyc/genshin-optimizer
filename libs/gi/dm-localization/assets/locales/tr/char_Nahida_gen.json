@@ -145,8 +145,9 @@
     "description": {
       "0": "Nahida'nın <strong>Skandha Tohumuyla</strong> bizzat işaretlediği düşmanlar şu etkilere maruz kalırlar:",
       "1": [
-        "Aldıkları Yanma, Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme Tepkimelerinin Hasarı Kritik Vuruşa yol açabilir. Kritik Oranı ve Kritik Hasar sırasıyla %20 ve %100 olarak sabitlenmiştir.",
-        "Hızlanma, Şiddetlenme, Yayılma tepkimelerinden etkilendikten sonraki 8 saniye içinde Savunmaları %30 azalır."
+        "Aldıkları Yanma, Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme Tepkimelerinin Hasarı Kritik Vuruşa yol açabilir. Kritik Oranı ve Kritik Hasar sırasıyla %20 ve %100 olarak sabitlenmiştir. Bu etkinin Kritik Oranı, bu Element Tepkimelerinin Kritik Vuruş yapmasını sağlayan benzer etkilerin Kritik Oranlarıyla birikebilir.",
+        "Hızlanma, Şiddetlenme, Yayılma tepkimelerinden etkilendikten sonraki 8 saniye içinde Savunmaları %30 azalır.",
+        "Aldıkları Ay Çiçeklenmesi Hasarının Kritik Oranı %10, Kritik Hasarı %20 artar."
       ]
     }
   },

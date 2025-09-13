@@ -139,7 +139,7 @@
   "constellation4": {
     "name": "Vislumbre das Folhas Murchas",
     "description": {
-      "0": "Quando <strong>Flecha Enraizadora Artificial</strong> é lançada, todos os membros da equipe ao redor ganham 60 de Proficiência Elemental por 8s. Se a Flecha Enraizadora Artificial causar uma reação Elemental de Queimaduras, Florescimento, Aceleração ou Propagação, sua Proficiência Elemental aumentará em mais 60 adicionais e também redefinirá a duração do bônus desse estado."
+      "0": "Quando <strong>Flecha Enraizadora Artificial</strong> é lançada, todos os membros da equipe ao redor ganham 60 de Proficiência Elemental por 8s. Se a Flecha Enraizadora Artificial causar uma reação Elemental de Queimaduras, Florescimento, Florescimento Lunar, Aceleração ou Propagação, sua Proficiência Elemental aumentará em mais 60 adicionais e também redefinirá a duração do bônus desse estado."
     }
   },
   "constellation5": {

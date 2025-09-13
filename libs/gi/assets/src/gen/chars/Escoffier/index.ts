@@ -1,9 +1,9 @@
 // This is a generated index file.
-import burst from './Skill_E_Escoffier_01.png'
-import bar from './Skill_S_Escoffier_01.png'
+import burst from './Skill_E_Escoffier_01_HD.png'
 import skill from './Skill_S_Escoffier_01.png'
 import icon from './UI_AvatarIcon_Escoffier.png'
 import iconSide from './UI_AvatarIcon_Side_Escoffier.png'
+import bar from './UI_NameCardPic_Escoffier_Alpha.png'
 import banner from './UI_NameCardPic_Escoffier_P.png'
 import constellation1 from './UI_Talent_S_Escoffier_01.png'
 import constellation2 from './UI_Talent_S_Escoffier_02.png'

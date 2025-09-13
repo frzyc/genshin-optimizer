@@ -1,0 +1,24 @@
+{
+  "name": "Chamado da Serenidade",
+  "description": {
+    "0": "Uma espada longa forjada de metal que emite um som de luto ao ser brandida."
+  },
+  "passiveName": "Silêncio dos Murmúrios",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 12s depois de desencadear uma reação Elemental, aumenta a Vida Máxima em <cryo>16%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta a Vida Máxima nesse efeito em mais <cryo>16%</cryo>. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não esteja ativo."
+    },
+    "1": {
+      "0": "Nos 12s depois de desencadear uma reação Elemental, aumenta a Vida Máxima em <cryo>20%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta a Vida Máxima nesse efeito em mais <cryo>20%</cryo>. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não esteja ativo."
+    },
+    "2": {
+      "0": "Nos 12s depois de desencadear uma reação Elemental, aumenta a Vida Máxima em <cryo>24%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta a Vida Máxima nesse efeito em mais <cryo>24%</cryo>. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não esteja ativo."
+    },
+    "3": {
+      "0": "Nos 12s depois de desencadear uma reação Elemental, aumenta a Vida Máxima em <cryo>28%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta a Vida Máxima nesse efeito em mais <cryo>28%</cryo>. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não esteja ativo."
+    },
+    "4": {
+      "0": "Nos 12s depois de desencadear uma reação Elemental, aumenta a Vida Máxima em <cryo>32%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta a Vida Máxima nesse efeito em mais <cryo>32%</cryo>. Esse efeito pode ser desencadeado mesmo quando o personagem que está com essa arma equipada não esteja ativo."
+    }
+  }
+}

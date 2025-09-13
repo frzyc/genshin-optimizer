@@ -29,6 +29,36 @@
   },
   "SprawlingGreenery": {
     "name": "Plante grimpante",
-    "desc": "Augmente la maîtrise élémentaire de 50 pts. Après avoir déclenché une réaction de Brûlure, de Stimulation ou de Fleurissement, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 30 pts pendant 6 s. Après avoir déclenché une réaction de Suractivation, de Propagation, d'Exubérance ou de Bourgeonnement, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 20 pts pendant 6 s. La durée de ces effets est calculée indépendamment."
+    "desc": "Augmente la maîtrise élémentaire de 50 pts. Après avoir déclenché une réaction de Brûlure, de Stimulation, de Fleurissement ou de Sélénofleurissement, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 30 pts pendant 6 s. Après avoir déclenché une réaction de Suractivation, de Propagation, d'Exubérance ou de Bourgeonnement, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 20 pts pendant 6 s. La durée de ces effets est calculée indépendamment."
+  },
+  "Moonsign": {
+    "name": "Signelune",
+    "desc": {
+      "0": "Lorsqu'elle contient des personnages signelunaires, l'équipe atteint un cycle signelunaire selon le nombre de ces personnages.",
+      "1": "Lorsque le cycle signelunaire atteint la signelune « Lueur ascendante », les personnages signelunaires sont renforcés. Les personnages non signelunaires peuvent également apporter des effets bonus à l'équipe."
+    },
+    "nascentGleam": {
+      "name": "Lueur naissante",
+      "desc": "Tous les personnages de l'équipe obtiendront l'effet Signelune « Lueur naissante »."
+    },
+    "ascendantGleam": {
+      "name": "Lueur ascendante",
+      "desc": {
+        "0": {
+          "0": "Tous les personnages de l'équipe obtiendront l'effet Signelune « Lueur ascendante », améliorant certaines compétences et aptitudes des personnages signelunaires. Sauf indication contraire, les bonus de l'effet Signelune « Lueur naissante » s'appliquent également lorsque le cycle signelunaire atteint « Lueur ascendante »."
+        },
+        "1": {
+          "0": "<br/>",
+          "1": "De plus, les personnages non signelunaires utilisant une compétence élémentaire ou un déchaînement élémentaire peuvent augmenter les DGT des réactions sélènes de tous les personnages à proximité d'un maximum de 36 % pendant 20 s. Cet effet dépend du type élémentaire du personnage concerné et ne se cumule pas.",
+          "2": "Lorsque le type élémentaire du personnage est :",
+          "3": [
+            " <pyro>Pyro</pyro>, <electro>Électro</electro> ou <cryo>Cryo</cryo> : les DGT augmentent de 0,9 % par tranche de 100 pts d'ATQ.",
+            " <hydro>Hydro</hydro> : les DGT augmentent de 0,6 % par tranche de 1 000 PV max.",
+            " <geo>Géo</geo> : les DGT augmentent de 1 % par tranche de 100 pts de DÉF.",
+            " <anemo>Anémo</anemo> ou <dendro>Dendro</dendro> : les DGT augmentent de 2,25 % par tranche de 100 pts de maîtrise élémentaire."
+          ]
+        }
+      }
+    }
   }
 }

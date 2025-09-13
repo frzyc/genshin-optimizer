@@ -1,0 +1,24 @@
+{
+  "name": "Nightweaver's Looking Glass",
+  "description": {
+    "0": "A mirror crafted from flawless silver that is said to have witnessed the birth of the Moon Maiden. It is seen as a relic of unrivalled provenance by the Frostmoon Scions."
+  },
+  "passiveName": "Millennial Hymn",
+  "passiveDescription": {
+    "0": {
+      "0": "When the equipping character's Elemental Skill deals Hydro or Dendro DMG, they will gain Prayer of the Far North: Elemental Mastery is increased by <cryo>60</cryo> for 4.5s. When nearby party members trigger Lunar-Bloom reactions, the equipping character gains New Moon Verse: Elemental Mastery is increased by <cryo>60</cryo> for 10s. When both Prayer of the Far North and New Moon Verse are in effect, all nearby party members' Bloom DMG is increased by <cryo>120%</cryo>, their Hyperbloom and Burgeon DMG is increased by <cryo>80%</cryo>, and their Lunar-Bloom DMG is increased by <cryo>40%</cryo>. This effect cannot stack. The aforementioned effects can be triggered even if the equipping character is off-field."
+    },
+    "1": {
+      "0": "When the equipping character's Elemental Skill deals Hydro or Dendro DMG, they will gain Prayer of the Far North: Elemental Mastery is increased by <cryo>75</cryo> for 4.5s. When nearby party members trigger Lunar-Bloom reactions, the equipping character gains New Moon Verse: Elemental Mastery is increased by <cryo>75</cryo> for 10s. When both Prayer of the Far North and New Moon Verse are in effect, all nearby party members' Bloom DMG is increased by <cryo>150%</cryo>, their Hyperbloom and Burgeon DMG is increased by <cryo>100%</cryo>, and their Lunar-Bloom DMG is increased by <cryo>50%</cryo>. This effect cannot stack. The aforementioned effects can be triggered even if the equipping character is off-field."
+    },
+    "2": {
+      "0": "When the equipping character's Elemental Skill deals Hydro or Dendro DMG, they will gain Prayer of the Far North: Elemental Mastery is increased by <cryo>90</cryo> for 4.5s. When nearby party members trigger Lunar-Bloom reactions, the equipping character gains New Moon Verse: Elemental Mastery is increased by <cryo>90</cryo> for 10s. When both Prayer of the Far North and New Moon Verse are in effect, all nearby party members' Bloom DMG is increased by <cryo>180%</cryo>, their Hyperbloom and Burgeon DMG is increased by <cryo>120%</cryo>, and their Lunar-Bloom DMG is increased by <cryo>60%</cryo>. This effect cannot stack. The aforementioned effects can be triggered even if the equipping character is off-field."
+    },
+    "3": {
+      "0": "When the equipping character's Elemental Skill deals Hydro or Dendro DMG, they will gain Prayer of the Far North: Elemental Mastery is increased by <cryo>105</cryo> for 4.5s. When nearby party members trigger Lunar-Bloom reactions, the equipping character gains New Moon Verse: Elemental Mastery is increased by <cryo>105</cryo> for 10s. When both Prayer of the Far North and New Moon Verse are in effect, all nearby party members' Bloom DMG is increased by <cryo>210%</cryo>, their Hyperbloom and Burgeon DMG is increased by <cryo>140%</cryo>, and their Lunar-Bloom DMG is increased by <cryo>70%</cryo>. This effect cannot stack. The aforementioned effects can be triggered even if the equipping character is off-field."
+    },
+    "4": {
+      "0": "When the equipping character's Elemental Skill deals Hydro or Dendro DMG, they will gain Prayer of the Far North: Elemental Mastery is increased by <cryo>120</cryo> for 4.5s. When nearby party members trigger Lunar-Bloom reactions, the equipping character gains New Moon Verse: Elemental Mastery is increased by <cryo>120</cryo> for 10s. When both Prayer of the Far North and New Moon Verse are in effect, all nearby party members' Bloom DMG is increased by <cryo>240%</cryo>, their Hyperbloom and Burgeon DMG is increased by <cryo>160%</cryo>, and their Lunar-Bloom DMG is increased by <cryo>80%</cryo>. This effect cannot stack. The aforementioned effects can be triggered even if the equipping character is off-field."
+    }
+  }
+}

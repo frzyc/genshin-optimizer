@@ -6,19 +6,19 @@
   "passiveName": "Mind in Bloom",
   "passiveDescription": {
     "0": {
-      "0": "When Electro-Charged, Lunar-Charged, or Bloom is triggered, restore <cryo>12</cryo> Elemental Energy and increase Elemental Mastery by <cryo>60</cryo> for 15 seconds. This effect can be triggered once every 15s and can be triggered even when the equipping character is off-field."
+      "0": "When Electro-Charged, Lunar-Charged, Bloom, or Lunar-Bloom is triggered, restore <cryo>12</cryo> Elemental Energy and increase Elemental Mastery by <cryo>60</cryo> for 15 seconds. This effect can be triggered once every 15s and can be triggered even when the equipping character is off-field."
     },
     "1": {
-      "0": "When Electro-Charged, Lunar-Charged, or Bloom is triggered, restore <cryo>15</cryo> Elemental Energy and increase Elemental Mastery by <cryo>75</cryo> for 15 seconds. This effect can be triggered once every 15s and can be triggered even when the equipping character is off-field."
+      "0": "When Electro-Charged, Lunar-Charged, Bloom, or Lunar-Bloom is triggered, restore <cryo>15</cryo> Elemental Energy and increase Elemental Mastery by <cryo>75</cryo> for 15 seconds. This effect can be triggered once every 15s and can be triggered even when the equipping character is off-field."
     },
     "2": {
-      "0": "When Electro-Charged, Lunar-Charged, or Bloom is triggered, restore <cryo>18</cryo> Elemental Energy and increase Elemental Mastery by <cryo>90</cryo> for 15 seconds. This effect can be triggered once every 15s and can be triggered even when the equipping character is off-field."
+      "0": "When Electro-Charged, Lunar-Charged, Bloom, or Lunar-Bloom is triggered, restore <cryo>18</cryo> Elemental Energy and increase Elemental Mastery by <cryo>90</cryo> for 15 seconds. This effect can be triggered once every 15s and can be triggered even when the equipping character is off-field."
     },
     "3": {
-      "0": "When Electro-Charged, Lunar-Charged, or Bloom is triggered, restore <cryo>21</cryo> Elemental Energy and increase Elemental Mastery by <cryo>105</cryo> for 15 seconds. This effect can be triggered once every 15s and can be triggered even when the equipping character is off-field."
+      "0": "When Electro-Charged, Lunar-Charged, Bloom, or Lunar-Bloom is triggered, restore <cryo>21</cryo> Elemental Energy and increase Elemental Mastery by <cryo>105</cryo> for 15 seconds. This effect can be triggered once every 15s and can be triggered even when the equipping character is off-field."
     },
     "4": {
-      "0": "When Electro-Charged, Lunar-Charged, or Bloom is triggered, restore <cryo>24</cryo> Elemental Energy and increase Elemental Mastery by <cryo>120</cryo> for 15 seconds. This effect can be triggered once every 15s and can be triggered even when the equipping character is off-field."
+      "0": "When Electro-Charged, Lunar-Charged, Bloom, or Lunar-Bloom is triggered, restore <cryo>24</cryo> Elemental Energy and increase Elemental Mastery by <cryo>120</cryo> for 15 seconds. This effect can be triggered once every 15s and can be triggered even when the equipping character is off-field."
     }
   }
 }

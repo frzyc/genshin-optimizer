@@ -1,0 +1,24 @@
+{
+  "name": "Đèn Tủy Đen",
+  "description": {
+    "0": "Một chiếc đèn lồng tỏa ra ánh sáng lấp lánh, được bao bọc bởi hợp kim đen kịt như màn đêm, trông giống như những khúc xương đan xen vào nhau. Tương truyền, nó từng được tổ chức bí mật nào đó coi là báu vật."
+  },
+  "passiveName": "Chứng Nhận Giao Ước",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát thương phản ứng Sum Suê tăng <cryo>48%</cryo>, sát thương phản ứng Nguyệt-Sum Suê tăng <cryo>12%</cryo>. Nguyệt Triệu - Rực Sáng: Sát thương phản ứng Nguyệt-Sum Suê tăng thêm <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Sát thương phản ứng Sum Suê tăng <cryo>60%</cryo>, sát thương phản ứng Nguyệt-Sum Suê tăng <cryo>15%</cryo>. Nguyệt Triệu - Rực Sáng: Sát thương phản ứng Nguyệt-Sum Suê tăng thêm <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Sát thương phản ứng Sum Suê tăng <cryo>72%</cryo>, sát thương phản ứng Nguyệt-Sum Suê tăng <cryo>18%</cryo>. Nguyệt Triệu - Rực Sáng: Sát thương phản ứng Nguyệt-Sum Suê tăng thêm <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Sát thương phản ứng Sum Suê tăng <cryo>84%</cryo>, sát thương phản ứng Nguyệt-Sum Suê tăng <cryo>21%</cryo>. Nguyệt Triệu - Rực Sáng: Sát thương phản ứng Nguyệt-Sum Suê tăng thêm <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Sát thương phản ứng Sum Suê tăng <cryo>96%</cryo>, sát thương phản ứng Nguyệt-Sum Suê tăng <cryo>24%</cryo>. Nguyệt Triệu - Rực Sáng: Sát thương phản ứng Nguyệt-Sum Suê tăng thêm <cryo>24%</cryo>."
+    }
+  }
+}

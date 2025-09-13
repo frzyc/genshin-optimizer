@@ -1,0 +1,29 @@
+{
+  "setName": "Night of the Sky's Unveiling",
+  "setEffects": {
+    "2": "Increases Elemental Mastery by 80.",
+    "4": "When nearby party members trigger Lunar Reactions, if the equipping character is on the field, gain the Gleaming Moon: Intent effect for 4s: Increases CRIT Rate by 15%/30% when the party's Moonsign is Nascent Gleam/Ascendant Gleam. All party members' Lunar Reaction DMG is increased by 10% for each different Gleaming Moon effect that party members have. Effects from Gleaming Moon cannot stack."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Bloom of the Mind's Desire",
+      "desc": "A sacred relic carved in the shape of a flower. It seems to represent a terrifying presence that unfurls like a bloom."
+    },
+    "plume": {
+      "name": "Feather of Indelible Sin",
+      "desc": "A feathered accessory once worn on a felt hat. It feels out of place among the nobles of Snezhnaya and their taste for splendor."
+    },
+    "sands": {
+      "name": "Revelation's Toll",
+      "desc": "An exquisite chiming clock driven by a mysterious power. It does not seem that timekeeping is its purpose."
+    },
+    "goblet": {
+      "name": "Vessel of Plenty",
+      "desc": "A specially crafted goblet used for palace banquets. It was once employed to perform some kind of magic."
+    },
+    "circlet": {
+      "name": "Crown of the Befallen",
+      "desc": "A crown modeled on the circlet worn by a sinner. Perhaps in someone's heart, love and sin flow from the same source."
+    }
+  }
+}

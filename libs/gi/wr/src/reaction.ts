@@ -1,5 +1,9 @@
 import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
+import type {
+  LunarReactionKey,
+  MainStatKey,
+  SubstatKey,
+} from '@genshin-optimizer/gi/consts'
 import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import type { CrittableTransformativeReactionsKey } from '@genshin-optimizer/gi/keymap'
 import {
@@ -9,7 +13,7 @@ import {
 } from '@genshin-optimizer/gi/keymap'
 import { infusionNode, input } from './formula'
 import { info } from './info'
-import type { NumNode } from './type'
+import type { Data, NumNode } from './type'
 import {
   constant,
   data,
@@ -56,13 +60,18 @@ const trans = {
     const { multi, resist, canCrit } = transformativeReactions[reaction]
     return infoMut(
       prod(
-        prod(constant(multi, info(`${reaction}_multi_`)), transMulti1),
         sum(
-          infoMut(sum(one, transMulti2), {
-            pivot: true,
-            ...info('base_transformative_multi_'),
-          }),
-          input.total[`${reaction}_dmg_`]
+          prod(
+            prod(constant(multi, info(`${reaction}_multi_`)), transMulti1),
+            sum(
+              infoMut(sum(one, transMulti2), {
+                pivot: true,
+                ...info('base_transformative_multi_'),
+              }),
+              input.total[`${reaction}_dmg_`]
+            )
+          ),
+          input.total[`${reaction}_dmgInc`]
         ),
         lookup(
           input.hit.hitMode,
@@ -90,7 +99,7 @@ const trans = {
                               reaction as CrittableTransformativeReactionsKey
                             }_critRate_`
                           ],
-                          sum(one, one)
+                          one
                         ),
                         naught
                       ),
@@ -142,7 +151,7 @@ const trans = {
     const avgCrit = sum(
       one,
       prod(
-        infoMut(max(min(input.total.swirl_critRate_, sum(one, one)), naught), {
+        infoMut(max(min(input.total.swirl_critRate_, one), naught), {
           ...input.total.swirl_critRate_.info,
           pivot: true,
         }),
@@ -179,12 +188,13 @@ const trans = {
     )
   }),
   lunarcharged: infoMut(
-    lunarchargedDmg(
+    lunarDmg(
       constant(
         transformativeReactions.lunarcharged.multi,
         info('lunarcharged_multi_')
       ),
-      'reaction'
+      'reaction',
+      'lunarcharged'
     ),
     { path: 'lunarcharged_hit' }
   ),
@@ -321,35 +331,85 @@ export const reactions = {
   },
 }
 
-export function lunarchargedDmg(
+export function lunarDmg(
   multiplier: NumNode,
-  base: 'reaction' | MainStatKey | SubstatKey
+  base: 'reaction' | MainStatKey | SubstatKey,
+  variant: LunarReactionKey,
+  additional: Data = {}
 ) {
-  return prod(
-    multiplier,
-    ...(base === 'reaction' ? [transMulti1] : [3, input.total[base]]),
-    infoMut(sum(percent(1), input.total.lunarcharged_baseDmg_), {
-      path: 'lunarcharged_baseDmg_',
+  const transformative_dmg_ = sum(
+    infoMut(sum(percent(1), prod(6, frac(input.total.eleMas, 2000))), {
+      pivot: true,
+      path: 'base_transformative_multi_',
     }),
-    sum(
-      infoMut(sum(percent(1), prod(6, frac(input.total.eleMas, 2000))), {
-        pivot: true,
-        path: 'base_transformative_multi_',
-      }),
-      input.total.lunarcharged_dmg_
-    ),
-    lookup(
-      input.hit.hitMode,
-      {
-        hit: one,
-        critHit: sum(one, input.total.critDMG_),
-        avgHit: sum(
-          one,
-          prod(input.total.cappedCritRate, input.total.critDMG_)
-        ),
-      },
-      NaN
-    ),
-    input.enemy.electro_resMulti_
+    input.total[`${variant}_dmg_`]
   )
+  const cappedCritRate_ = infoMut(
+    max(
+      min(
+        sum(
+          input.total.critRate_,
+          ...(variant === 'lunarbloom'
+            ? [input.total.lunarbloom_critRate_]
+            : [])
+        ),
+        one
+      ),
+      naught
+    ),
+    {
+      ...info('critRate_'),
+      prefix: 'total',
+      pivot: true,
+    }
+  )
+
+  const critDMG_ =
+    variant === 'lunarcharged'
+      ? input.total.critDMG_
+      : infoMut(sum(input.total.critDMG_, input.total.lunarbloom_critDMG_), {
+          ...input.total.critDMG_.info,
+          pivot: true,
+        })
+
+  return data(
+    prod(
+      sum(
+        prod(
+          multiplier,
+          ...lunarDmgMultiplier(base, variant),
+          transformative_dmg_,
+          infoMut(sum(percent(1), input.total[`${variant}_baseDmg_`]), {
+            path: `${variant}_baseDmg_`,
+          }),
+          sum(percent(1), input.total[`${variant}_specialDmg_`])
+        ),
+        input.total[`${variant}_dmgInc`]
+      ),
+      lookup(
+        input.hit.hitMode,
+        {
+          hit: one,
+          critHit: sum(one, critDMG_),
+          avgHit: sum(one, prod(cappedCritRate_, critDMG_)),
+        },
+        NaN
+      ),
+      input.enemy[`${transformativeReactions[variant].resist}_resMulti_`]
+    ),
+    additional
+  )
+}
+
+function lunarDmgMultiplier(
+  base: 'reaction' | MainStatKey | SubstatKey,
+  variant: LunarReactionKey
+) {
+  if (base === 'reaction') return [transMulti1]
+  switch (variant) {
+    case 'lunarcharged':
+      return [3, input.total[base]]
+    case 'lunarbloom':
+      return [input.total[base]]
+  }
 }

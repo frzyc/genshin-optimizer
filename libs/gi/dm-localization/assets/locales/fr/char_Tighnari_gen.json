@@ -139,7 +139,7 @@
   "constellation4": {
     "name": "Flétrissement entrevu grâce aux feuilles",
     "description": {
-      "0": "Lorsque <strong>Flèche de liane artificielle</strong> est utilisée, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 60 pts pendant 8 s. Si Flèche de liane artificielle déclenche une réaction de Brûlure, de Fleurissement, de Stimulation ou de Propagation, la maîtrise élémentaire augmente de 60 pts supplémentaires et la durée de l'effet est réinitialisée."
+      "0": "Lorsque <strong>Flèche de liane artificielle</strong> est utilisée, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 60 pts pendant 8 s. Si Flèche de liane artificielle déclenche une réaction de Brûlure, de Fleurissement, de Sélénofleurissement, de Stimulation ou de Propagation, la maîtrise élémentaire augmente de 60 pts supplémentaires et la durée de l'effet est réinitialisée."
     }
   },
   "constellation5": {

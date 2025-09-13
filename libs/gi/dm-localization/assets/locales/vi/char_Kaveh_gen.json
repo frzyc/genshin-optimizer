@@ -71,7 +71,7 @@
       "0": "Phóng thích hoàn toàn năng lượng của \"Mehrak\", vạch ra không gian phác họa lập thể, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> cho kẻ địch trong đó và kích nổ toàn bộ Hạt Nhân Thảo trong phạm vi, đồng thời cường hóa năng lực tác chiến của Kaveh trong một thời gian nhất định:",
       "1": [
         "Tăng phạm vi đánh của Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp của Kaveh, chuyển hóa sát thương tấn công thành <dendro>Sát Thương Nguyên Tố Thảo</dendro> không thể bị thay thế;",
-        "Hạt Nhân Thảo được sinh ra khi nhân vật của bản thân trong đội kích hoạt phản ứng Sum Suê, sẽ tăng sát thương gây ra khi phát nổ;",
+        "Hạt Nhân Thảo được sinh ra khi nhân vật của bản thân trong đội kích hoạt phản ứng Sum Suê hoặc Nguyệt-Sum Suê, sẽ tăng sát thương gây ra khi phát nổ;",
         "Tăng khả năng kháng gián đoạn của Kaveh."
       ],
       "2": "Hiệu quả này sẽ bị hủy khi Kaveh rời trận.",
@@ -138,7 +138,7 @@
   "constellation4": {
     "name": "Bữa Tiệc Apadana",
     "description": {
-      "0": "Hạt Nhân Thảo sinh ra khi Kaveh kích hoạt phản ứng Sum Suê sẽ tăng 60% sát thương gây ra khi phát nổ."
+      "0": "Hạt Nhân Thảo sinh ra khi Kaveh kích hoạt phản ứng Sum Suê hoặc Nguyệt-Sum Suê sẽ tăng 60% sát thương gây ra khi phát nổ."
     }
   },
   "constellation5": {

@@ -3,7 +3,11 @@ import { CardThemed, CodeBlock, ImgIcon } from '@genshin-optimizer/common/ui'
 import { toDecimal } from '@genshin-optimizer/common/util'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
 import { CharacterContext } from '@genshin-optimizer/gi/db-ui'
-import { ascensionMaxLevel, getMainStatValue } from '@genshin-optimizer/gi/util'
+import {
+  charAscensionMaxLevel,
+  getMainStatValue,
+  weaponAscensionMaxLevel,
+} from '@genshin-optimizer/gi/util'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import {
   Button,
@@ -101,12 +105,12 @@ export default function GcsimButton({ disabled }: { disabled: boolean }) {
 
 # Character
 ${charKeyLow} char lvl=${level}/${
-    ascensionMaxLevel[ascension]
+    charAscensionMaxLevel[ascension]
   } cons=${constellation} talent=${auto},${skill},${burst};
 
 # Weapon
 ${charKeyLow} add weapon="${weaponKey.toLowerCase()}" refine=${wRefinement} lvl=${wLevel}/${
-    ascensionMaxLevel[wAscension]
+    weaponAscensionMaxLevel[wAscension]
   };
 
 # Artifact Set

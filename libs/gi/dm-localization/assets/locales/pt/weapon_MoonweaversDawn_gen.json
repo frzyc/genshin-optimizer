@@ -1,0 +1,24 @@
+{
+  "name": "Alvorada do Tecedor do Luar",
+  "description": {
+    "0": "Uma espada prateada imaculada e afiada que pode cortar armadura como o luar rompendo a noite. As lendas dizem que é uma lâmina divina abençoada pela primeira Emissária da Canção Lunar."
+  },
+  "passiveName": "Testemunho da Prata Sagrada",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano causado pelo Supremo em <cryo>20%</cryo>. Quando a Energia Elemental do personagem que está com essa arma equipada não é maior que 60/40, aumenta o Dano do Supremo em mais <cryo>16%/28%</cryo>."
+    },
+    "1": {
+      "0": "Aumenta o Dano causado pelo Supremo em <cryo>25%</cryo>. Quando a Energia Elemental do personagem que está com essa arma equipada não é maior que 60/40, aumenta o Dano do Supremo em mais <cryo>20%/35%</cryo>."
+    },
+    "2": {
+      "0": "Aumenta o Dano causado pelo Supremo em <cryo>30%</cryo>. Quando a Energia Elemental do personagem que está com essa arma equipada não é maior que 60/40, aumenta o Dano do Supremo em mais <cryo>24%/42%</cryo>."
+    },
+    "3": {
+      "0": "Aumenta o Dano causado pelo Supremo em <cryo>35%</cryo>. Quando a Energia Elemental do personagem que está com essa arma equipada não é maior que 60/40, aumenta o Dano do Supremo em mais <cryo>28%/49%</cryo>."
+    },
+    "4": {
+      "0": "Aumenta o Dano causado pelo Supremo em <cryo>40%</cryo>. Quando a Energia Elemental do personagem que está com essa arma equipada não é maior que 60/40, aumenta o Dano do Supremo em mais <cryo>32%/56%</cryo>."
+    }
+  }
+}

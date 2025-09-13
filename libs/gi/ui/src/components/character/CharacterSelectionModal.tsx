@@ -36,7 +36,7 @@ import {
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
+import { charAscensionMaxLevel } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
@@ -754,7 +754,7 @@ function SelectionCard({
                   component="span"
                   color="text.secondary"
                 >
-                  /{ascensionMaxLevel[ascension]}
+                  /{charAscensionMaxLevel[ascension]}
                 </Typography>
               </Box>
               <Typography variant="body2">C{constellation}</Typography>

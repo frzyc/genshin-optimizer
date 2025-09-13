@@ -71,7 +71,7 @@
       "0": "Mehrak'ın enerjisini tamamen açığa çıkarır ve küp şeklinde bir tarama alanı oluşturur. Bu alan içindeki tüm düşmanlara <dendro>Doğa Alan Hasarı</dendro> verir, Etki Alanındaki tüm Doğa Çekirdeklerini anında patlatır ve Kaveh'ye belirli süreliğine aşağıdaki savaş güçlendirmelerini sağlar:",
       "1": [
         "Kaveh'nin Normal, Yüklü ve Havadan Saldırılarının Etki Alanı artar ve bu saldırıların Hasarı <dendro>Doğa Hasarına</dendro> dönüşür. Bu sonradan değiştirilemez.",
-        "Kendi grup üyelerinin Çiçeklenme tepkimesi ile oluşturduğu tüm Doğa Çekirdekleri, patladıklarında ek Hasar verir.",
+        "Kendi grup üyelerinin Çiçeklenme ve Ay Çiçeklenmesi tepkimeleri ile oluşturduğu tüm Doğa Çekirdekleri, patladıklarında ek Hasar verir.",
         "Kaveh'nin müdahaleye karşı direnci artar."
       ],
       "2": "Bu etkiler, Kaveh savaş alanından çıktıktan sonra sona erer.",
@@ -138,7 +138,7 @@
   "constellation4": {
     "name": "Apadana Ziyafeti",
     "description": {
-      "0": "Kaveh'nin tetiklediği Çiçeklenme tepkimeleriyle oluşan Doğa Çekirdekleri, patladıklarında %60 daha fazla Hasar verir."
+      "0": "Kaveh'nin tetiklediği Çiçeklenme ve Ay Çiçeklenmesi tepkimeleriyle oluşan Doğa Çekirdekleri, patladıklarında %60 daha fazla Hasar verir."
     }
   },
   "constellation5": {

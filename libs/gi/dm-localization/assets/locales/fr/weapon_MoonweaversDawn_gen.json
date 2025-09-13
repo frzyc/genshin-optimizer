@@ -1,0 +1,24 @@
+{
+  "name": "Aube du tisse-lune",
+  "description": {
+    "0": "Une épée d'argent immaculée et tranchante, capable de transpercer une armure comme la lumière de la lune traversant la nuit. Selon la légende, il s'agit d'une lame divine, bénie par la première Émissaire de chantelune en personne."
+  },
+  "passiveName": "Testament d'argent secret",
+  "passiveDescription": {
+    "0": {
+      "0": "Les DGT infligés par les déchaînements élémentaires augmentent de <cryo>20 %</cryo>. Lorsque l'énergie élémentaire du personnage équipé de l'arme ne dépasse pas 60 ou 40 pts, les DGT infligés par ses déchaînements élémentaires augmentent respectivement de <cryo>16 % ou 28 %</cryo> supplémentaires."
+    },
+    "1": {
+      "0": "Les DGT infligés par les déchaînements élémentaires augmentent de <cryo>25 %</cryo>. Lorsque l'énergie élémentaire du personnage équipé de l'arme ne dépasse pas 60 ou 40 pts, les DGT infligés par ses déchaînements élémentaires augmentent respectivement de <cryo>20 % ou 35 %</cryo> supplémentaires."
+    },
+    "2": {
+      "0": "Les DGT infligés par les déchaînements élémentaires augmentent de <cryo>30 %</cryo>. Lorsque l'énergie élémentaire du personnage équipé de l'arme ne dépasse pas 60 ou 40 pts, les DGT infligés par ses déchaînements élémentaires augmentent respectivement de <cryo>24 % ou 42 %</cryo> supplémentaires."
+    },
+    "3": {
+      "0": "Les DGT infligés par les déchaînements élémentaires augmentent de <cryo>35 %</cryo>. Lorsque l'énergie élémentaire du personnage équipé de l'arme ne dépasse pas 60 ou 40 pts, les DGT infligés par ses déchaînements élémentaires augmentent respectivement de <cryo>28 % ou 49 %</cryo> supplémentaires."
+    },
+    "4": {
+      "0": "Les DGT infligés par les déchaînements élémentaires augmentent de <cryo>40 %</cryo>. Lorsque l'énergie élémentaire du personnage équipé de l'arme ne dépasse pas 60 ou 40 pts, les DGT infligés par ses déchaînements élémentaires augmentent respectivement de <cryo>32 % ou 56 %</cryo> supplémentaires."
+    }
+  }
+}

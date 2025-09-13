@@ -6,19 +6,19 @@
   "passiveName": "Zihinde Açan Çiçekler",
   "passiveDescription": {
     "0": {
-      "0": "Elektrik Yüklü, Ay Yüklü veya Çiçeklenme tepkimeleri tetiklendiğinde <cryo>12</cryo> Element Enerjisi kazanılır ve 15sn boyunca Element Ustalığı <cryo>60</cryo> artar. Bu etki 15 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+      "0": "Elektrik Yüklü, Ay Yüklü, Çiçeklenme veya Ay Çiçeklenmesi tepkimeleri tetiklendiğinde <cryo>12</cryo> Element Enerjisi yenilenir ve 15sn boyunca Element Ustalığı <cryo>60</cryo> artar. Bu etki 15 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir."
     },
     "1": {
-      "0": "Elektrik Yüklü, Ay Yüklü veya Çiçeklenme tepkimeleri tetiklendiğinde <cryo>15</cryo> Element Enerjisi kazanılır ve 15sn boyunca Element Ustalığı <cryo>75</cryo> artar. Bu etki 15 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+      "0": "Elektrik Yüklü, Ay Yüklü, Çiçeklenme veya Ay Çiçeklenmesi tepkimeleri tetiklendiğinde <cryo>15</cryo> Element Enerjisi yenilenir ve 15sn boyunca Element Ustalığı <cryo>75</cryo> artar. Bu etki 15 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir."
     },
     "2": {
-      "0": "Elektrik Yüklü, Ay Yüklü veya Çiçeklenme tepkimeleri tetiklendiğinde <cryo>18</cryo> Element Enerjisi kazanılır ve 15sn boyunca Element Ustalığı <cryo>90</cryo> artar. Bu etki 15 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+      "0": "Elektrik Yüklü, Ay Yüklü, Çiçeklenme veya Ay Çiçeklenmesi tepkimeleri tetiklendiğinde <cryo>18</cryo> Element Enerjisi yenilenir ve 15sn boyunca Element Ustalığı <cryo>90</cryo> artar. Bu etki 15 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir."
     },
     "3": {
-      "0": "Elektrik Yüklü, Ay Yüklü veya Çiçeklenme tepkimeleri tetiklendiğinde <cryo>21</cryo> Element Enerjisi kazanılır ve 15sn boyunca Element Ustalığı <cryo>105</cryo> artar. Bu etki 15 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+      "0": "Elektrik Yüklü, Ay Yüklü, Çiçeklenme veya Ay Çiçeklenmesi tepkimeleri tetiklendiğinde <cryo>21</cryo> Element Enerjisi yenilenir ve 15sn boyunca Element Ustalığı <cryo>105</cryo> artar. Bu etki 15 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir."
     },
     "4": {
-      "0": "Elektrik Yüklü, Ay Yüklü veya Çiçeklenme tepkimeleri tetiklendiğinde <cryo>24</cryo> Element Enerjisi kazanılır ve 15sn boyunca Element Ustalığı <cryo>120</cryo> artar. Bu etki 15 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+      "0": "Elektrik Yüklü, Ay Yüklü, Çiçeklenme veya Ay Çiçeklenmesi tepkimeleri tetiklendiğinde <cryo>24</cryo> Element Enerjisi yenilenir ve 15sn boyunca Element Ustalığı <cryo>120</cryo> artar. Bu etki 15 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir."
     }
   }
 }

@@ -71,7 +71,7 @@
       "0": "Libère complètement l'énergie de Mehrak et crée un carroyage de topographie, infligeant des <dendro>DGT Dendro de zone</dendro> aux ennemis à l'intérieur, faisant éclater immédiatement tous les noyaux Dendro dans la zone d'effet et renforçant les capacités de combat de Kaveh pendant un certain temps :",
       "1": [
         " Augmente la portée des attaques normales, chargées et plongeantes de Kaveh et convertit ses DGT d'attaque en <dendro>DGT Dendro</dendro> ne pouvant pas être enchantés.",
-        " Augmente les DGT infligés lors de l'éclatement des noyaux Dendro créés par vos personnages dans l'équipe grâce aux réactions de Fleurissement.",
+        " Augmente les DGT infligés lors de l'éclatement des noyaux Dendro créés par vos personnages dans l'équipe grâce aux réactions de Fleurissement et de Sélénofleurissement.",
         " Augmente la RÉS à l'interruption de Kaveh."
       ],
       "2": "Ces effets cessent lorsque Kaveh quitte le champ de bataille.",
@@ -138,7 +138,7 @@
   "constellation4": {
     "name": "Banquet des cent piliers",
     "description": {
-      "0": "Les DGT infligés par l'éclatement des noyaux Dendro générés lorsque Kaveh déclenche une réaction de Fleurissement augmentent de 60 %."
+      "0": "Les DGT infligés par l'éclatement des noyaux Dendro générés lorsque Kaveh déclenche une réaction de Fleurissement ou de Sélénofleurissement augmentent de 60 %."
     }
   },
   "constellation5": {

@@ -111,7 +111,7 @@
   "passive2": {
     "name": "All Things Are of the Earth",
     "description": {
-      "0": "Karakter yang menerima pemulihan dari <strong>Seamless Shield</strong> akan mendapatkan efek Year of Verdant Favor: Untuk setiap 1.000 poin Max HP Baizhu (maksimum 50.000 poin), Karakter tersebut akan mendapatkan peningkatan DMG dari reaksi Burning, Bloom, Hyperbloom, dan Burgeon sebesar 2%, serta peningkatan Bonus DMG dari reaksi Aggravate dan Spread sebesar 0,8%. Efek ini berlangsung selama 6 detik."
+      "0": "Karakter yang menerima pemulihan HP dari <strong>Seamless Shield</strong> akan mendapatkan efek Year of Verdant Favor: Untuk setiap 1.000 poin Max HP Baizhu (maksimum 50.000 poin), Karakter tersebut akan mendapatkan peningkatan DMG untuk reaksi Burning, Bloom, Hyperbloom, dan Burgeon sebesar 2%, peningkatan Bonus DMG dari reaksi Aggravate dan Spread sebesar 0,8%, dan peningkatan Bonus DMG dari reaksi Lunar-Bloom sebesar 0,7%. Efek ini berlangsung selama 6 detik."
     }
   },
   "passive3": {

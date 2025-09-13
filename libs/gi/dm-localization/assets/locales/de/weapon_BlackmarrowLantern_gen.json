@@ -1,0 +1,24 @@
+{
+  "name": "Laterne des schwarzen Marks",
+  "description": {
+    "0": "Eine Laterne, die ein schwaches, gespenstisches Leuchten ausstrahlt und von einer mitternachtsschwarzen Legierung umhüllt ist, die an ineinandergreifende Knochen erinnert. Es heißt, dass sie einst von einer bestimmten Geheimorganisation als kostbarer Schatz verehrt wurde."
+  },
+  "passiveName": "Beweis der Bindung",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den durch die Reaktion „Sprießen“ verursachten Schaden um <cryo>48 %</cryo> und den Schaden durch die Reaktion „Mondspross“ um <cryo>12 %</cryo>. Mondomen – Reifer Glanz: Erhöht den Schaden durch die Reaktion „Mondspross“ zusätzlich um <cryo>12 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den durch die Reaktion „Sprießen“ verursachten Schaden um <cryo>60 %</cryo> und den Schaden durch die Reaktion „Mondspross“ um <cryo>15 %</cryo>. Mondomen – Reifer Glanz: Erhöht den Schaden durch die Reaktion „Mondspross“ zusätzlich um <cryo>15 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den durch die Reaktion „Sprießen“ verursachten Schaden um <cryo>72 %</cryo> und den Schaden durch die Reaktion „Mondspross“ um <cryo>18 %</cryo>. Mondomen – Reifer Glanz: Erhöht den Schaden durch die Reaktion „Mondspross“ zusätzlich um <cryo>18 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den durch die Reaktion „Sprießen“ verursachten Schaden um <cryo>84 %</cryo> und den Schaden durch die Reaktion „Mondspross“ um <cryo>21 %</cryo>. Mondomen – Reifer Glanz: Erhöht den Schaden durch die Reaktion „Mondspross“ zusätzlich um <cryo>21 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den durch die Reaktion „Sprießen“ verursachten Schaden um <cryo>96 %</cryo> und den Schaden durch die Reaktion „Mondspross“ um <cryo>24 %</cryo>. Mondomen – Reifer Glanz: Erhöht den Schaden durch die Reaktion „Mondspross“ zusätzlich um <cryo>24 %</cryo>."
+    }
+  }
+}

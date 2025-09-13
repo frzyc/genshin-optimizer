@@ -1,0 +1,24 @@
+{
+  "name": "Nightweaver's Looking Glass",
+  "description": {
+    "0": "Cermin yang ditempa dari perak putih tanpa cacat. Konon katanya cermin ini telah menyaksikan kelahiran Gadis Bulan, sehingga dianggap sebagai relik oleh Bani Bulan Embun."
+  },
+  "passiveName": "Millennial Hymn",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat Elemental Skill Karakter yang mengenakan mengakibatkan Hydro atau Dendro DMG, Karakter akan mendapatkan efek Prayer of the Far North: Elemental Mastery +<cryo>60</cryo> poin selama 4,5 detik. Saat Karakter sekitar di dalam party memicu reaksi Lunar-Bloom, maka Karakter yang mengenakan mendapatkan efek New Moon Verse: Elemental Mastery +<cryo>60</cryo> poin selama 10 detik. Saat efek Prayer of the Far North dan New Moon Verse aktif dalam waktu yang sama, seluruh Karakter party di sekitar memperoleh efek: DMG reaksi Bloom +<cryo>120%</cryo>, DMG reaksi Hyperbloom dan Burgeon +<cryo>80%</cryo>, dan DMG reaksi Lunar-Bloom +<cryo>40%</cryo>. Efek ini tidak dapat ditumpuk. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Saat Elemental Skill Karakter yang mengenakan mengakibatkan Hydro atau Dendro DMG, Karakter akan mendapatkan efek Prayer of the Far North: Elemental Mastery +<cryo>75</cryo> poin selama 4,5 detik. Saat Karakter sekitar di dalam party memicu reaksi Lunar-Bloom, maka Karakter yang mengenakan mendapatkan efek New Moon Verse: Elemental Mastery +<cryo>75</cryo> poin selama 10 detik. Saat efek Prayer of the Far North dan New Moon Verse aktif dalam waktu yang sama, seluruh Karakter party di sekitar memperoleh efek: DMG reaksi Bloom +<cryo>150%</cryo>, DMG reaksi Hyperbloom dan Burgeon +<cryo>100%</cryo>, dan DMG reaksi Lunar-Bloom +<cryo>50%</cryo>. Efek ini tidak dapat ditumpuk. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Saat Elemental Skill Karakter yang mengenakan mengakibatkan Hydro atau Dendro DMG, Karakter akan mendapatkan efek Prayer of the Far North: Elemental Mastery +<cryo>90</cryo> poin selama 4,5 detik. Saat Karakter sekitar di dalam party memicu reaksi Lunar-Bloom, maka Karakter yang mengenakan mendapatkan efek New Moon Verse: Elemental Mastery +<cryo>90</cryo> poin selama 10 detik. Saat efek Prayer of the Far North dan New Moon Verse aktif dalam waktu yang sama, seluruh Karakter party di sekitar memperoleh efek: DMG reaksi Bloom +<cryo>180%</cryo>, DMG reaksi Hyperbloom dan Burgeon +<cryo>120%</cryo>, dan DMG reaksi Lunar-Bloom +<cryo>60%</cryo>. Efek ini tidak dapat ditumpuk. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Saat Elemental Skill Karakter yang mengenakan mengakibatkan Hydro atau Dendro DMG, Karakter akan mendapatkan efek Prayer of the Far North: Elemental Mastery +<cryo>105</cryo> poin selama 4,5 detik. Saat Karakter sekitar di dalam party memicu reaksi Lunar-Bloom, maka Karakter yang mengenakan mendapatkan efek New Moon Verse: Elemental Mastery +<cryo>105</cryo> poin selama 10 detik. Saat efek Prayer of the Far North dan New Moon Verse aktif dalam waktu yang sama, seluruh Karakter party di sekitar memperoleh efek: DMG reaksi Bloom +<cryo>210%</cryo>, DMG reaksi Hyperbloom dan Burgeon +<cryo>140%</cryo>, dan DMG reaksi Lunar-Bloom +<cryo>70%</cryo>. Efek ini tidak dapat ditumpuk. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Saat Elemental Skill Karakter yang mengenakan mengakibatkan Hydro atau Dendro DMG, Karakter akan mendapatkan efek Prayer of the Far North: Elemental Mastery +<cryo>120</cryo> poin selama 4,5 detik. Saat Karakter sekitar di dalam party memicu reaksi Lunar-Bloom, maka Karakter yang mengenakan mendapatkan efek New Moon Verse: Elemental Mastery +<cryo>120</cryo> poin selama 10 detik. Saat efek Prayer of the Far North dan New Moon Verse aktif dalam waktu yang sama, seluruh Karakter party di sekitar memperoleh efek: DMG reaksi Bloom +<cryo>240%</cryo>, DMG reaksi Hyperbloom dan Burgeon +<cryo>160%</cryo>, dan DMG reaksi Lunar-Bloom +<cryo>80%</cryo>. Efek ini tidak dapat ditumpuk. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

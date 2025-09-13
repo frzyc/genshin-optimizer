@@ -15,9 +15,9 @@ import {
   CharacterCompactConstSelector,
   CharacterConstellationName,
   CharacterCoverArea,
+  CharacterLevelSelect,
   CheckIcon,
   CloseIcon,
-  LevelSelect,
   TalentDropdown,
   UnCheckIcon,
 } from '@genshin-optimizer/gi/ui'
@@ -168,7 +168,7 @@ function Content({ onClose }: { onClose?: () => void }) {
                 ))}
               </Grid>
               <CardThemed bgt="light" sx={{ p: 1 }}>
-                <LevelSelect
+                <CharacterLevelSelect
                   warning={!!buildTc?.character}
                   level={level}
                   ascension={ascension}

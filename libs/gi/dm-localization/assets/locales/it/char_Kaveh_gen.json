@@ -71,12 +71,12 @@
       "0": "Scatena tutta l'energia di Mehrak e crea uno spazio cubico scansionato, infliggendo <dendro>DAN da Dendro ad area</dendro> a tutti gli avversari al suo interno, causando l'esplosione di tutti i nuclei di Dendro all'interno dell'area d'effetto e fornendo a Kaveh i seguenti potenziamenti per uno specifico lasso di tempo.",
       "1": [
         " L'area d'effetto degli attacchi normali, caricati e in picchiata di Kaveh aumenta, e i DAN dei suoi attacchi vengono convertiti in <dendro>DAN da Dendro</dendro> non influenzabili da altre infusioni elementali.",
-        " Tutti i nuclei di Dendro creati dai membri del tuo gruppo tramite reazioni di Fioritura infliggono DAN aggiuntivi quando esplodono.",
+        " Tutti i nuclei di Dendro creati dai membri del tuo gruppo tramite reazioni di Fioritura e Fioritura lunare infliggono DAN aggiuntivi quando esplodono.",
         " La resistenza all'interruzione di Kaveh aumenta."
       ],
       "2": "Questi effetti si annullano quando Kaveh lascia il campo.",
       "3": "<br/>",
-      "4": "<i>\"Lo stile di ogni edificio incorpora la visione del mondo dell'architetto. Da questo punto di vista, possiamo dire che gli edifici stessi sono un agglomerato di ricordi dell'umanità.\"</i>"
+      "4": "<i>\"Lo stile di ogni edificio incorpora la visione del mondo dell'architetto. Da questo punto di vista, possiamo dire che gli edifici stessi siano un agglomerato di ricordi dell'umanità.\"</i>"
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -138,7 +138,7 @@
   "constellation4": {
     "name": "Banchetto dell'Apadana",
     "description": {
-      "0": "I nuclei di Dendro creati dalle reazioni di Fioritura innescate da Kaveh infliggono un 60% di DAN in più quando esplodono."
+      "0": "I nuclei di Dendro creati dalle reazioni di Fioritura e di Fioritura lunare innescate da Kaveh infliggono un 60% di DAN in più quando esplodono."
     }
   },
   "constellation5": {
