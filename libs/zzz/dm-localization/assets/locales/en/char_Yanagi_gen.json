@@ -14,6 +14,28 @@
         "6": "For 8s after switching stances, Yanagi retains the bonus from the previous stance."
       },
       "params": []
+    },
+    "StanceJougen": {
+      "name": "Stance: Jougen",
+      "desc": "",
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "StanceKagen": {
+      "name": "Stance: Kagen",
+      "desc": "",
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
     }
   },
   "dodge": {
