@@ -2,7 +2,7 @@
   "setName": "Flor Olvidada del Paraíso",
   "setEffects": {
     "2": "Maestría Elemental +80 pts.",
-    "4": "Aumenta en un 40% el daño que inflige el portador de este conjunto con las reacciones de Florecimiento, Sobreflorecimiento y Crepitar. Además, cuando el portador de este conjunto causa alguna de estas reacciones, el bono anterior aumenta en un 25%. Este efecto dura 10 s, puede acumularse hasta 4 veces y ocurrir una vez por segundo. Puede activarse incluso cuando el portador del conjunto está en tu equipo pero no en uso."
+    "4": "Aumenta en un 40% el daño que inflige el portador de este conjunto con las reacciones de Florecimiento, Sobreflorecimiento y Crepitar, y en un 10% el daño que inflige con la reacción de Florecimiento Lunar. Además, cuando el portador de este conjunto causa alguna de estas reacciones, el bono anterior aumenta en un 25%. Este efecto dura 10 s, puede acumularse hasta 4 veces y ocurrir una vez por segundo. Puede activarse incluso cuando el portador del conjunto está en tu equipo pero no en uso."
   },
   "pieces": {
     "flower": {

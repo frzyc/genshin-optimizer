@@ -1,0 +1,29 @@
+{
+  "setName": "Silken Moon's Serenade",
+  "setEffects": {
+    "2": "Energy Recharge +20%.",
+    "4": "When dealing Elemental DMG, gain the Gleaming Moon: Devotion effect for 8s: Increases all party members' Elemental Mastery by 60/120 when the party's Moonsign is Nascent Gleam/Ascendant Gleam. The equipping character can trigger this effect while off-field. All party members' Lunar Reaction DMG is increased by 10% for each different Gleaming Moon effect that party members have. Effects from Gleaming Moon cannot stack."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Crystal Tear of the Wanderer",
+      "desc": "An immaculate flower whose beauty is said to have been preserved for eternity by the icy wind."
+    },
+    "plume": {
+      "name": "Pristine Plume of the Blessed",
+      "desc": "An immaculate feathered accessory said to have been forged by the first Moonchanter herself."
+    },
+    "sands": {
+      "name": "Frost Devotee's Delirium",
+      "desc": "An immaculate timepiece that long ago ceased turning, along with the delusions of its former owner."
+    },
+    "goblet": {
+      "name": "Joyous Glory of the Pure",
+      "desc": "An immaculate silver cup said to have been used in the bygone rituals of the Frostmoon Scions. Their modern rites have no need for such a vessel."
+    },
+    "circlet": {
+      "name": "Holy Crown of the Believer",
+      "desc": "An immaculate adornment created in imitation of the envoy of the grove's antlers."
+    }
+  }
+}

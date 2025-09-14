@@ -1,0 +1,29 @@
+{
+  "setName": "Serenata da Lua de Seda",
+  "setEffects": {
+    "2": "Recarga de Energia +20%",
+    "4": "Ao causar Dano Elemental, obtém por 8s o efeito Resplandecer Lunar: Missiva Sublime: quando o Presságio Lunar da equipe estiver no Reluzir Inicial/Cheio, aumenta a Proficiência Elemental de todos os personagens em 60/120. Esse efeito pode ser desencadeado, mesmo se o personagem que está com esse conjunto equipado não estiver ativo. Quando um personagem possuir efeitos de Resplandecer Lunar diferentes, aumenta o Dano causado pelas Reações Lunares em 10% para todos os personagens. O efeito gerado por Resplandecer Lunar não é acumulável."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Lágrima Cristalizada do Errante",
+      "desc": "Uma flor imaculada, dizem que sua beleza foi preservada eternamente pelo vento gelado."
+    },
+    "plume": {
+      "name": "Pena Pristina dos Abençoados",
+      "desc": "Uma pena imaculada que servia de acessório. Dizem que foi forjada pela Emissária da Canção Lunar."
+    },
+    "sands": {
+      "name": "Delírio do Portador do Gelo",
+      "desc": "Um relógio imaculado que há muito parou de girar, junto com as ilusões de seu antigo dono."
+    },
+    "goblet": {
+      "name": "Alegria Gloriosa da Pureza",
+      "desc": "Um cálice de prata imaculado, dizem que foi utilizado em rituais antigos dos Filhos da Lua Gelada. Seus rituais modernos não precisam de tal recipiente."
+    },
+    "circlet": {
+      "name": "Coroa Sagrada do Crente",
+      "desc": "Um adorno de cabeça imaculado criado como uma mímese dos chifres da Emissária da floresta."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Sükunetin Çağrısı",
+  "description": {
+    "0": "Savrulduğu zaman hüzünlü bir ses çıkaran, çelikten dövülmüş bir uzun kılıç."
+  },
+  "passiveName": "Vakur Sessizlik",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca Maks. Can <cryo>%16</cryo> artar. Ay Sembolü: Yükselen Parıltı: Bu etkinin sağladığı Maks. Can artışı <cryo>%16</cryo> daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca Maks. Can <cryo>%20</cryo> artar. Ay Sembolü: Yükselen Parıltı: Bu etkinin sağladığı Maks. Can artışı <cryo>%20</cryo> daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca Maks. Can <cryo>%24</cryo> artar. Ay Sembolü: Yükselen Parıltı: Bu etkinin sağladığı Maks. Can artışı <cryo>%24</cryo> daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca Maks. Can <cryo>%28</cryo> artar. Ay Sembolü: Yükselen Parıltı: Bu etkinin sağladığı Maks. Can artışı <cryo>%28</cryo> daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca Maks. Can <cryo>%32</cryo> artar. Ay Sembolü: Yükselen Parıltı: Bu etkinin sağladığı Maks. Can artışı <cryo>%32</cryo> daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    }
+  }
+}

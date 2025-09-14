@@ -1,0 +1,29 @@
+{
+  "setName": "Serenade des seidenen Mondes",
+  "setEffects": {
+    "2": "Erhöht die Aufladerate um 20 %.",
+    "4": "Verleiht beim Verursachen von Elementar-Schaden 8 s lang den Effekt „Helles Mondlicht – Hohe Überzeugung“: Erhöht, wenn das Mondomen der Truppe „Anfänglicher Glanz“ / „Reifer Glanz“ ist, die Elementarkunde aller Figuren in der Truppe um 60/120 Punkte. Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet. Erhöht für jeden unterschiedlichen Effekt des „Hellen Mondlichts“ der Truppenmitglieder den Schaden der von allen Truppenmitgliedern ausgelösten Mondleuchten-Reaktionen um 10 %. Der durch „Helles Mondlicht“ ausgelöste Effekt ist nicht stapelbar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Kristallträne der Landstreicherin",
+      "desc": "Eine reine, makellose Blume. Sie soll ihre ewige Schönheit den eisigen Winden zu verdanken haben."
+    },
+    "plume": {
+      "name": "Federchen der Gesegneten",
+      "desc": "Eine reine, makellose Federverzierung. Es heißt, sie sei von der ersten Mondkantorin persönlich geschmiedet worden."
+    },
+    "sands": {
+      "name": "Delirium des Frostopfers",
+      "desc": "Eine reine, makellose Uhr, die längst zusammen mit der Besessenheit ihres ehemaligen Besitzers stehen geblieben ist."
+    },
+    "goblet": {
+      "name": "Freude der Reinen",
+      "desc": "Ein reiner, makelloser Silberbecher, der angeblich einst bei den Ritualen der Nachkommen des Frostmonds als heiliges Gefäß verwendet wurde. Heute werden solche Becher bei Ritualen nicht mehr verwendet."
+    },
+    "circlet": {
+      "name": "Heilige Krone der Prophetin",
+      "desc": "Ein reiner, makelloser Kopfschmuck, dessen Form anscheinend dem Geweih der Geistergesandten des Waldes nachempfunden ist."
+    }
+  }
+}

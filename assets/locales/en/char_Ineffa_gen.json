@@ -155,15 +155,15 @@
       "0": "When using the Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong>, all your party members will gain the Parameter Permutation effect: Increases Ineffa and your own active party member's Elemental Mastery by 6% of Ineffa's ATK for 20s."
     }
   },
-  "passive": {
+  "passive3": {
     "name": "Moonsign Benediction: Assemblage Hub",
     "description": {
       "0": "When a party member triggers an Electro-Charged reaction, it will be converted into the Lunar-Charged reaction, with every 100 ATK that Ineffa has increasing Lunar-Charged's Base DMG by 0.7%, up to a maximum of 14%.",
       "1": "<br/>",
-      "2": "Further blessings may follow the new moon's rise..."
+      "2": "Additionally, when Ineffa is in the party, the party's <strong>Moonsign</strong> will increase by 1 level."
     }
   },
-  "passive3": {
+  "passive": {
     "name": "Flavor Synthesis Unit",
     "description": {
       "0": "When Ineffa uses food, there is a 30% chance of gaining a seasoning ingredient.",

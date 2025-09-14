@@ -29,6 +29,36 @@
   },
   "SprawlingGreenery": {
     "name": "Videira Verdejante",
-    "desc": "Aumenta a Proficiência Elemental em 50 pontos. Ao desencadear as reações de Queimadura, Aceleração e Florescimento, aumenta a Proficiência Elemental de todos os personagens próximos da equipe em 30 pontos por 6s. Ao desencadear as reações de Intensificação, Propagação, Superflorescimento e Germinação, aumenta a Proficiência Elemental de todos os personagens próximos da equipe em 20 pontos por 6s. A duração desses efeitos é contada individualmente."
+    "desc": "Aumenta a Proficiência Elemental em 50 pontos. Ao desencadear as reações de Queimadura, Aceleração ou Florescimento, aumenta a Proficiência Elemental de todos os personagens próximos da equipe em 30 pontos por 6s. Ao desencadear as reações de Intensificação, Propagação, Superflorescimento ou Germinação, aumenta a Proficiência Elemental de todos os personagens próximos da equipe em 20 pontos por 6s. A duração desses efeitos é contada individualmente."
+  },
+  "Moonsign": {
+    "name": "Presságio Lunar",
+    "desc": {
+      "0": "Quando personagens de Presságio Lunar estão na equipe, ela obterá uma Fase de Presságio Lunar correspondente a quantidade de tais personagens.",
+      "1": "Quando a equipe alcança \"Presságio Lunar: Reluzir Cheio\", personagens de Presságio Lunar serão aprimorados. Personagens que não são de Presságio Lunar também poderão fornecer bônus à equipe."
+    },
+    "nascentGleam": {
+      "name": "Reluzir Inicial",
+      "desc": "Todos os membros da equipe ganharão o efeito \"Presságio Lunar: Reluzir Inicial\"."
+    },
+    "ascendantGleam": {
+      "name": "Reluzir Cheio",
+      "desc": {
+        "0": {
+          "0": "Todos os personagens da equipe ganharão o efeito de \"Presságio Lunar: Reluzir Cheio\", aprimorando certas habilidades e talentos dos personagens de Presságio Lunar. A menos que dito do contrário, quando o Nível de Presságio Lunar chegar em Reluzir Cheio, os efeitos de Reluzir Inicial também serão aplicados."
+        },
+        "1": {
+          "0": "<br/>",
+          "1": "Adicionalmente, por 20s após um personagem sem Presságio Lunar lançar uma Habilidade Elemental ou Supremo, ele aumentará o Dano de Reações Lunares causado por todos os personagens próximos baseado em seu próprio Tipo Elemental, até um máximo de 36%. Esse efeito não pode ser acumulado.",
+          "2": "Se o Tipo Elemental do personagem desencadeando a reação for:",
+          "3": [
+            "<pyro>Pyro</pyro>, ou <electro>Cryo</electro>: Aumenta esse Dano em 0.9% para cada 100 pontos de ATQ.",
+            " <hydro>Hydro</hydro>: Aumenta esse Dano em 0.6% para cada 1.000 pontos de Vida Máxima.",
+            " <geo>Geo</geo>: Aumenta esse Dano em 1% para cada 100 pontos de DEF.",
+            " <anemo>Anemo</anemo> ou <dendro>Dendro</dendro>: Aumenta esse Dano em 2.25% para cada 100 pontos de Proficiência Elemental."
+          ]
+        }
+      }
+    }
   }
 }

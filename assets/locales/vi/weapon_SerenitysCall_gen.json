@@ -1,0 +1,24 @@
+{
+  "name": "Còi Yên Tĩnh",
+  "description": {
+    "0": "Thanh kiếm được làm bằng kim loại, khi vung lên sẽ phát ra tiếng còi trầm đục."
+  },
+  "passiveName": "Tĩnh Lặng Trang Nghiêm",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 12s sau khi kích hoạt phản ứng nguyên tố, Giới Hạn HP tăng <cryo>16%</cryo>. Nguyệt Triệu - Rực Sáng: Giới Hạn HP của hiệu quả này tăng thêm <cryo>16%</cryo>. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Trong 12s sau khi kích hoạt phản ứng nguyên tố, Giới Hạn HP tăng <cryo>20%</cryo>. Nguyệt Triệu - Rực Sáng: Giới Hạn HP của hiệu quả này tăng thêm <cryo>20%</cryo>. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Trong 12s sau khi kích hoạt phản ứng nguyên tố, Giới Hạn HP tăng <cryo>24%</cryo>. Nguyệt Triệu - Rực Sáng: Giới Hạn HP của hiệu quả này tăng thêm <cryo>24%</cryo>. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Trong 12s sau khi kích hoạt phản ứng nguyên tố, Giới Hạn HP tăng <cryo>28%</cryo>. Nguyệt Triệu - Rực Sáng: Giới Hạn HP của hiệu quả này tăng thêm <cryo>28%</cryo>. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Trong 12s sau khi kích hoạt phản ứng nguyên tố, Giới Hạn HP tăng <cryo>32%</cryo>. Nguyệt Triệu - Rực Sáng: Giới Hạn HP của hiệu quả này tăng thêm <cryo>32%</cryo>. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

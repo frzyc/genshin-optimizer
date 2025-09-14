@@ -71,7 +71,7 @@
       "0": "Libera toda la energía de Mehrak para crear un espacio cúbico de escaneo que inflige <dendro>Daño Dendro en el AdE</dendro> contra los enemigos situados en él, provoca la explosión inmediata de todos los núcleos Dendro dentro de dicha área y fortalece las habilidades de combate de Kaveh durante un tiempo determinado:",
       "1": [
         "Aumenta el alcance de los Ataques Normales, Cargados y Descendentes de Kaveh y transforma el daño de dichos ataques en <dendro>Daño Dendro</dendro>, el cual no puede sustituirse imbuyéndose de otro elemento.",
-        "Aumenta el daño de explosión de los núcleos Dendro creados por tus personajes del equipo con la reacción de Florecimiento.",
+        "Aumenta el daño de explosión de los núcleos Dendro creados por tus personajes del equipo con la reacción de Florecimiento o Florecimiento Lunar.",
         "Aumenta la RES a interrupción de Kaveh."
       ],
       "2": "Estos efectos se eliminarán cuando Kaveh abandone el combate.",
@@ -138,7 +138,7 @@
   "constellation4": {
     "name": "Festín hipóstilo",
     "description": {
-      "0": "Aumenta en un 60% el daño de explosión de los núcleos Dendro creados por Kaveh con la reacción de Florecimiento."
+      "0": "Aumenta en un 60% el daño de explosión de los núcleos Dendro creados por Kaveh con la reacción de Florecimiento o Florecimiento Lunar."
     }
   },
   "constellation5": {

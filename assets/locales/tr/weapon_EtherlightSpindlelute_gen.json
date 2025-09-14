@@ -1,0 +1,24 @@
+{
+  "name": "Uhrevi Işığın Lavtası",
+  "description": {
+    "0": "Güneş ışınları kadar parlak, altın rengi telleri olan bir lavta. Geçmişteki Perilerden kalan bir yadigar olduğu söyleniyor."
+  },
+  "passiveName": "Son Şarkıcı",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi kullandıktan sonra 20sn boyunca kuşanan karakterin Element Ustalığı <cryo>100</cryo> artar."
+    },
+    "1": {
+      "0": "Bir Element Becerisi kullandıktan sonra 20sn boyunca kuşanan karakterin Element Ustalığı <cryo>125</cryo> artar."
+    },
+    "2": {
+      "0": "Bir Element Becerisi kullandıktan sonra 20sn boyunca kuşanan karakterin Element Ustalığı <cryo>150</cryo> artar."
+    },
+    "3": {
+      "0": "Bir Element Becerisi kullandıktan sonra 20sn boyunca kuşanan karakterin Element Ustalığı <cryo>175</cryo> artar."
+    },
+    "4": {
+      "0": "Bir Element Becerisi kullandıktan sonra 20sn boyunca kuşanan karakterin Element Ustalığı <cryo>200</cryo> artar."
+    }
+  }
+}
