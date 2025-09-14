@@ -2,7 +2,7 @@
   "setName": "Kayıp Cennet Çiçeği",
   "setEffects": {
     "2": "Element Ustalığını 80 artırır.",
-    "4": "Kuşanan karakterin Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme tepkimelerinin Hasarı %40 artar. Ayrıca kuşanan karakter Çiçeklenme, Aşırı Çiçeklenme veya Filizlenme tetiklerse yukarıdaki etkiye ek olarak %25 bonus daha kazanır. Bu etkinin her bir kademesi 10 saniye sürer. Aynı anda 4 kademeye kadar birikebilir. Bu etki her bir saniyede bir defa tetiklenebilir. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    "4": "Kuşanan karakterin Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme tepkimelerinin Hasarı %40 artar, ayrıca Ay Çiçeklenmesi tepkimesi Hasarı %10 artar. Buna ek olarak kuşanan karakter Çiçeklenme, Aşırı Çiçeklenme, Ay Çiçeklenmesi veya Filizlenme tepkimelerini tetiklerse yukarıdaki etkilere ek olarak %25 artış daha kazanır. Bu etkinin her bir kademesi 10 saniye sürer. Aynı anda 4 kademeye kadar birikebilir. Bu etki her bir saniyede bir defa tetiklenebilir. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
   },
   "pieces": {
     "flower": {

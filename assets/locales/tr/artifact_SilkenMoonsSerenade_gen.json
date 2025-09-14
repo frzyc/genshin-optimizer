@@ -1,0 +1,29 @@
+{
+  "setName": "İpeksi Ayın Serenadı",
+  "setEffects": {
+    "2": "+%20 Enerji Yüklemesi.",
+    "4": "Element Hasarı verildiğinde 8sn boyunca Ay Parıltısı: Adanmışlık etkisi kazanılır: Ay Sembolü İlk Parıltı/Yükselen Parıltı olduğunda tüm grup üyelerinin Element Ustalığı 60/120 artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir. Tüm grup üyelerinin Ay Tepkimesi Hasarı, üyelerin sahip olduğu farklı her Ay Parıltısı etkisi için %10 artar. Ay Parıltısı etkileri birikmez."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Seyyahın Kristal Gözyaşı",
+      "desc": "Soğuk rüzgarların güzelliğini ebediyen muhafaza ettiği söylenen saf bir çiçek."
+    },
+    "plume": {
+      "name": "Kutsanmışların Ari Tüyü",
+      "desc": "İlk Ay İlahicisinin bizzat dövdüğü söylenilen eşsiz bir tüylü aksesuar."
+    },
+    "sands": {
+      "name": "Ayaz Müridinin Çılgınlığı",
+      "desc": "Önceki sahibinin sanrılarıyla birlikte uzun zaman önce durmuş saf bir saat."
+    },
+    "goblet": {
+      "name": "Saflığın Görkemi",
+      "desc": "Donuk Ayın Çocukları tarafından eski ayinlerde kullanıldığı söylenen saf bir gümüş kadeh. Günümüzde yaptıkları ayinlerde bu tür kaplar kullanılmıyor."
+    },
+    "circlet": {
+      "name": "İnançlının Kutsal Tacı",
+      "desc": "Ormanın elçisinin boynuzları model alınarak yapılmış saf bir aksesuar."
+    }
+  }
+}

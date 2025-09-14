@@ -2,7 +2,7 @@
   "setName": "Flower of Paradise Lost",
   "setEffects": {
     "2": "Elemental Mastery +80.",
-    "4": "DMG dari reaksi Bloom, Hyperbloom, dan Burgeon Karakter yang mengenakan meningkat 40%. Selain itu, setelah Karakter yang mengenakan memicu reaksi Bloom, Hyperbloom, atau Burgeon, efek yang disebutkan di atas akan mendapatkan tambahan peningkatan sebesar 25% selama 10 detik, dan dapat ditumpuk sampai 4 lapis. Efek hanya dapat terpicu setiap 1 detik sekali. Efek tetap aktif saat Karakter yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran."
+    "4": "DMG reaksi Bloom, Hyperbloom, dan Burgeon dari Karakter yang mengenakan +40%, DMG reaksi Karakter yang mengenakan Lunar-Bloom +10%. Selain itu, setelah Karakter yang mengenakan memicu reaksi Bloom, Hyperbloom, Burgeon, atau Lunar-Bloom, ia akan mendapatkan bonus 25% untuk peningkatan yang disebutkan di atas selama 10 detik. Efek ini dapat ditumpuk sampai 4 lapis dan hanya dapat terpicu sekali setiap 1 detik. Efek tetap aktif saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
   },
   "pieces": {
     "flower": {

@@ -1,0 +1,24 @@
+{
+  "name": "Lanterna del midollo nero",
+  "description": {
+    "0": "Una lanterna che emette un tenue bagliore spettrale, racchiuso in una lega nera come la notte simile a ossa intrecciate. Si dice che un tempo fosse venerata come un tesoro prezioso da una certa organizzazione segreta."
+  },
+  "passiveName": "Pegno del patto",
+  "passiveDescription": {
+    "0": {
+      "0": "I DAN da Fioritura aumentano di un <cryo>48%</cryo> e i DAN da Fioritura lunare di un <cryo>12%</cryo>. Quando Presagio lunare: Barlume ascendente è attivo, i DAN da Fioritura lunare aumentano di un ulteriore <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "I DAN da Fioritura aumentano di un <cryo>60%</cryo> e i DAN da Fioritura lunare di un <cryo>15%</cryo>. Quando Presagio lunare: Barlume ascendente è attivo, i DAN da Fioritura lunare aumentano di un ulteriore <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "I DAN da Fioritura aumentano di un <cryo>72%</cryo> e i DAN da Fioritura lunare di un <cryo>18%</cryo>. Quando Presagio lunare: Barlume ascendente è attivo, i DAN da Fioritura lunare aumentano di un ulteriore <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "I DAN da Fioritura aumentano di un <cryo>84%</cryo> e i DAN da Fioritura lunare di un <cryo>21%</cryo>. Quando Presagio lunare: Barlume ascendente è attivo, i DAN da Fioritura lunare aumentano di un ulteriore <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "I DAN da Fioritura aumentano di un <cryo>96%</cryo> e i DAN da Fioritura lunare di un <cryo>24%</cryo>. Quando Presagio lunare: Barlume ascendente è attivo, i DAN da Fioritura lunare aumentano di un ulteriore <cryo>24%</cryo>."
+    }
+  }
+}

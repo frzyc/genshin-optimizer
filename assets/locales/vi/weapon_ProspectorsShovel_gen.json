@@ -1,0 +1,24 @@
+{
+  "name": "Xẻng Đào Vàng",
+  "description": {
+    "0": "Cán thương dường như đến từ một cái cuốc nông nghiệp. Thoạt nhìn không có gì nổi bật, nhưng trang sức lại vô cùng quý giá, trong sự giản dị ẩn chứa sự xa hoa vô cùng."
+  },
+  "passiveName": "Thời Cơ Quyết Đoán",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát thương phản ứng Điện Cảm tăng <cryo>48%</cryo>, sát thương phản ứng Nguyệt-Điện Cảm tăng <cryo>12%</cryo>. Nguyệt Triệu - Rực Sáng: Sát thương phản ứng Nguyệt-Điện Cảm tăng thêm <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Sát thương phản ứng Điện Cảm tăng <cryo>60%</cryo>, sát thương phản ứng Nguyệt-Điện Cảm tăng <cryo>15%</cryo>. Nguyệt Triệu - Rực Sáng: Sát thương phản ứng Nguyệt-Điện Cảm tăng thêm <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Sát thương phản ứng Điện Cảm tăng <cryo>72%</cryo>, sát thương phản ứng Nguyệt-Điện Cảm tăng <cryo>18%</cryo>. Nguyệt Triệu - Rực Sáng: Sát thương phản ứng Nguyệt-Điện Cảm tăng thêm <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Sát thương phản ứng Điện Cảm tăng <cryo>84%</cryo>, sát thương phản ứng Nguyệt-Điện Cảm tăng <cryo>21%</cryo>. Nguyệt Triệu - Rực Sáng: Sát thương phản ứng Nguyệt-Điện Cảm tăng thêm <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Sát thương phản ứng Điện Cảm tăng <cryo>96%</cryo>, sát thương phản ứng Nguyệt-Điện Cảm tăng <cryo>24%</cryo>. Nguyệt Triệu - Rực Sáng: Sát thương phản ứng Nguyệt-Điện Cảm tăng thêm <cryo>24%</cryo>."
+    }
+  }
+}

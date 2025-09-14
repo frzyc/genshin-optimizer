@@ -96,14 +96,14 @@
   "passive1": {
     "name": "Yandan Uçan Yapraklar",
     "description": {
-      "0": "Grup üyelerinden biri, <strong>Yaprak Tacı</strong> dönmeden önce Yanma, Hızlanma, Şiddetlenme, Yayılma, Çiçeklenme, Aşırı Çiçeklenme veya Filizlenme tepkimelerini tetiklerse geri döndüğünde karaktere Filiz etkisi sağlar ve yakındaki düşmanlara 3sn boyunca Collei'in Saldırısının %40'ı değerinde <dendro>Doğa Hasarı</dendro> verir.",
+      "0": "Grup üyelerinden biri, <strong>Yaprak Tacı</strong> dönmeden önce Yanma, Hızlanma, Şiddetlenme, Yayılma, Çiçeklenme, Aşırı Çiçeklenme, Filizlenme veya Ay Çiçeklenmesi tepkimelerini tetiklerse Yaprak Tacı geri döndüğünde karaktere Filiz etkisi sağlar ve yakındaki düşmanlara 3sn boyunca devamlı olarak Collei'in Saldırısının %40'ı değerinde <dendro>Doğa Hasarı</dendro> verir.",
       "1": "Mevcut Filiz etkisi devam ederken başka bir Filiz etkisi tetiklenirse, ilk etki kaldırılır. Filizin verdiği Hasar, Element Becerisi Hasarı sayılır."
     }
   },
   "passive2": {
     "name": "Cansız Ağaç",
     "description": {
-      "0": "<strong>Cuilein-Anbar Alanı</strong> içindeki bir karakter Yanma, Hızlanma, Şiddetlenme, Yayılma, Çiçeklenme, Aşırı Çiçeklenme veya Filizlenme tepkimelerini tetiklediğinde, Alanın süresi 1sn artar.",
+      "0": "<strong>Cuilein-Anbar Alanı</strong> içindeki bir karakter Yanma, Hızlanma, Şiddetlenme, Yayılma, Çiçeklenme, Aşırı Çiçeklenme, Filizlenme veya Ay Çiçeklenmesi tepkimelerini tetiklediğinde, Alanın süresi 1sn artar.",
       "1": "Tek bir <strong>Kedicik Kozu</strong> 3 saniyeye kadar uzatılabilir."
     }
   },
@@ -125,7 +125,7 @@
     "description": {
       "0": "\"Yandan Uçan Yapraklar\" Pasif Yeteneği şu şekilde değiştirilir:",
       "1": "<strong>Yaprak Tacı</strong>, geri döndüğünde karaktere Yandan Uçan Yapraklar yeteneğinden gelen Filiz etkisini verir ve 3 saniyeliğine yakındaki düşmanlara Collei'in Saldırısının %40'ı değerinde <dendro>Doğa Hasarı</dendro> verir.",
-      "2": "<strong>Doğa Temizliği</strong> kullanıldıktan sonra mevcut Filiz etkisi sona erinceye kadar eğer grup üyelerinden biri Yanma, Hızlanma, Şiddetlenme, Yayılma, Çiçeklenme, Aşırı Çiçeklenme veya Filizlenme tepkimelerini tetiklerse Filiz etkisi 3sn uzar.",
+      "2": "<strong>Doğa Temizliği</strong> kullanıldıktan sonra mevcut Filiz etkisi sona erinceye kadar eğer grup üyelerinden biri Yanma, Hızlanma, Şiddetlenme, Yayılma, Çiçeklenme, Aşırı Çiçeklenme, Ay Çiçeklenmesi veya Filizlenme tepkimelerini tetiklerse Filiz etkisi 3sn uzar.",
       "3": "Filiz etkisi bu şekilde sadece bir kez uzatılabilir. Mevcut Filiz etkisi devam ederken başka bir Filiz etkisi tetiklenirse, ilk etki kaldırılır. Filizin verdiği Hasar, Element Becerisi Hasarı sayılır.",
       "4": "\"Yandan Uçan Yapraklar\" Pasif Yeteneğinin açılmış olması gerekir."
     }

@@ -6,19 +6,19 @@
   "passiveName": "Pensamiento floreciente",
   "passiveDescription": {
     "0": {
-      "0": "Al causar una reacción de Electrocargado, Electrocargado Lunar o Florecimiento, restaura <cryo>12</cryo> pts. de Energía Elemental y la Maestría Elemental aumenta en <cryo>60</cryo> pts. durante 15 s. Este efecto puede ocurrir una vez cada 15 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+      "0": "Al causar una reacción de Electrocargado, Electrocargado Lunar, Florecimiento o Florecimiento Lunar, restaura <cryo>12</cryo> pts. de Energía Elemental y la Maestría Elemental aumenta en <cryo>60</cryo> pts. durante 15 s. Este efecto puede ocurrir una vez cada 15 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
     },
     "1": {
-      "0": "Al causar una reacción de Electrocargado, Electrocargado Lunar o Florecimiento, restaura <cryo>15</cryo> pts. de Energía Elemental y la Maestría Elemental aumenta en <cryo>75</cryo> pts. durante 15 s. Este efecto puede ocurrir una vez cada 15 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+      "0": "Al causar una reacción de Electrocargado, Electrocargado Lunar, Florecimiento o Florecimiento Lunar, restaura <cryo>15</cryo> pts. de Energía Elemental y la Maestría Elemental aumenta en <cryo>75</cryo> pts. durante 15 s. Este efecto puede ocurrir una vez cada 15 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
     },
     "2": {
-      "0": "Al causar una reacción de Electrocargado, Electrocargado Lunar o Florecimiento, restaura <cryo>18</cryo> pts. de Energía Elemental y la Maestría Elemental aumenta en <cryo>90</cryo> pts. durante 15 s. Este efecto puede ocurrir una vez cada 15 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+      "0": "Al causar una reacción de Electrocargado, Electrocargado Lunar, Florecimiento o Florecimiento Lunar, restaura <cryo>18</cryo> pts. de Energía Elemental y la Maestría Elemental aumenta en <cryo>90</cryo> pts. durante 15 s. Este efecto puede ocurrir una vez cada 15 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
     },
     "3": {
-      "0": "Al causar una reacción de Electrocargado, Electrocargado Lunar o Florecimiento, restaura <cryo>21</cryo> pts. de Energía Elemental y la Maestría Elemental aumenta en <cryo>105</cryo> pts. durante 15 s. Este efecto puede ocurrir una vez cada 15 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+      "0": "Al causar una reacción de Electrocargado, Electrocargado Lunar, Florecimiento o Florecimiento Lunar, restaura <cryo>21</cryo> pts. de Energía Elemental y la Maestría Elemental aumenta en <cryo>105</cryo> pts. durante 15 s. Este efecto puede ocurrir una vez cada 15 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
     },
     "4": {
-      "0": "Al causar una reacción de Electrocargado, Electrocargado Lunar o Florecimiento, restaura <cryo>24</cryo> pts. de Energía Elemental y la Maestría Elemental aumenta en <cryo>120</cryo> pts. durante 15 s. Este efecto puede ocurrir una vez cada 15 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+      "0": "Al causar una reacción de Electrocargado, Electrocargado Lunar, Florecimiento o Florecimiento Lunar, restaura <cryo>24</cryo> pts. de Energía Elemental y la Maestría Elemental aumenta en <cryo>120</cryo> pts. durante 15 s. Este efecto puede ocurrir una vez cada 15 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
     }
   }
 }
