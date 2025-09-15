@@ -380,13 +380,15 @@ export class UpOptCalculator {
   /**
    * Fast evaluation of a 3-line artifact, considering all possiblilties for its 4th stats.
    * Passing a 4-line artifact will result in inaccurate results.
+   *
+   * Pass `sub4th` to restrict the 4th substat to a specific value.
    */
-  _calcFast4th(ix: number) {
+  _calcFast4th(ix: number, sub4th: SubstatKey | undefined = undefined) {
     const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
     const N = rollsLeft - 1 // Minus 1 because 4th slot takes 1.
 
     const subsToConsider = allSubstatKeys.filter(
-      (s) => !subs.includes(s) && s !== mainStat
+      (s) => (!subs.includes(s)) && (s !== mainStat) && (sub4th ? s === sub4th : true)
     )
 
     const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
@@ -500,12 +502,12 @@ export class UpOptCalculator {
    * Slow evaluation of a 3-line artifact, considering all possiblilties for its 4th stats.
    * Passing a 4-line artifact will result in inaccurate results.
    */
-  _calcSlow4th(ix: number) {
+  _calcSlow4th(ix: number, sub4th: SubstatKey | undefined = undefined) {
     const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
     const N = rollsLeft - 1 // only for 5*
 
     const subsToConsider = allSubstatKeys.filter(
-      (s) => !subs.includes(s) && s !== mainStat
+      (s) => !subs.includes(s) && s !== mainStat && (sub4th ? s === sub4th : true)
     )
 
     const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
