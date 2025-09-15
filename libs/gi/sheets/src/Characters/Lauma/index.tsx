@@ -4,7 +4,9 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
+  equalStr,
   greaterEq,
+  greaterEqStr,
   infoMut,
   input,
   lookup,
@@ -17,7 +19,7 @@ import {
   sum,
   tally,
 } from '@genshin-optimizer/gi/wr'
-import { cond, st, stg } from '../../SheetUtil'
+import { cond, nonStackBuff, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -172,6 +174,28 @@ const a1AfterSkill_bloom_critRate_ = greaterEq(
 )
 const a1AfterSkill_hyperbloom_critRate_ = { ...a1AfterSkill_bloom_critRate_ }
 const a1AfterSkill_burgeon_critRate_ = { ...a1AfterSkill_bloom_critRate_ }
+
+const bloomRelatedCdNonstackWrite = greaterEqStr(
+  input.asc,
+  1,
+  equalStr(tally.moonsign, 1, equalStr(condA1AfterSkill, 'on', key))
+)
+const [a1AfterSkill_bloom_critDMG_, a1AfterSkill_bloom_critDMG_inactive] =
+  nonStackBuff('bloomcd', 'bloom_critDMG_', percent(dm.passive1.bloom_critDMG_))
+const [
+  a1AfterSkill_hyperbloom_critDMG_,
+  a1AfterSkill_hyperbloom_critDMG_inactive,
+] = nonStackBuff(
+  'bloomcd',
+  'hyperbloom_critDMG_',
+  percent(dm.passive1.bloom_critDMG_)
+)
+const [a1AfterSkill_burgeon_critDMG_, a1AfterSkill_burgeon_critDMG_inactive] =
+  nonStackBuff(
+    'bloomcd',
+    'burgeon_critDMG_',
+    percent(dm.passive1.bloom_critDMG_)
+  )
 
 const a1AfterSkill_lunarBloom_critRate_ = greaterEq(
   input.asc,
@@ -340,8 +364,11 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
         c2PaleHymn_lunarbloom_dmgInc
       ),
       bloom_critRate_: a1AfterSkill_bloom_critRate_,
+      bloom_critDMG_: a1AfterSkill_bloom_critDMG_,
       hyperbloom_critRate_: a1AfterSkill_hyperbloom_critRate_,
+      hyperbloom_critDMG_: a1AfterSkill_hyperbloom_critDMG_,
       burgeon_critRate_: a1AfterSkill_burgeon_critRate_,
+      burgeon_critDMG_: a1AfterSkill_burgeon_critDMG_,
       lunarbloom_critRate_: a1AfterSkill_lunarBloom_critRate_,
       lunarbloom_critDMG_: a1AfterSkill_lunarBloom_critDMG_,
       lunarbloom_baseDmg_: a0_lunarbloom_baseDmg_,
@@ -350,6 +377,9 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     },
     tally: {
       moonsign: constant(1),
+    },
+    nonStacking: {
+      bloomcd: bloomRelatedCdNonstackWrite,
     },
   },
 })
@@ -578,10 +608,28 @@ const sheet: TalentSheet = {
               node: a1AfterSkill_bloom_critRate_,
             },
             {
+              node: a1AfterSkill_bloom_critDMG_,
+            },
+            {
+              node: a1AfterSkill_bloom_critDMG_inactive,
+            },
+            {
               node: a1AfterSkill_hyperbloom_critRate_,
             },
             {
+              node: a1AfterSkill_hyperbloom_critDMG_,
+            },
+            {
+              node: a1AfterSkill_hyperbloom_critDMG_inactive,
+            },
+            {
               node: a1AfterSkill_burgeon_critRate_,
+            },
+            {
+              node: a1AfterSkill_burgeon_critDMG_,
+            },
+            {
+              node: a1AfterSkill_burgeon_critDMG_inactive,
             },
             {
               node: a1AfterSkill_lunarBloom_critRate_,

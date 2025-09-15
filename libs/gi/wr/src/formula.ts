@@ -91,6 +91,7 @@ const allNonstackBuffs = [
   'gleamingmoonintent',
   'gleamingmoondevotion',
   'nightweaver',
+  'bloomcd',
 ] as const
 export type NonStackBuff = (typeof allNonstackBuffs)[number]
 const allMoves = [
