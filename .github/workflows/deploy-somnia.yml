@@ -1,6 +1,9 @@
 name: Deploy Somnia from artifact
 run-name: Deploy Somnia from artifact created by "${{ github.event.workflow_run.display_title }}"
 
+permissions:
+  id-token: write
+  
 on:
   workflow_run:
     workflows:
