@@ -6,7 +6,7 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import react from '@vitejs/plugin-react'
 import { defineConfig, normalizePath } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
-import pkg from '../../package.json' assert { type: 'json' }
+import pkg from './package.json' assert { type: 'json' }
 
 export default defineConfig(() => ({
   base: '',
