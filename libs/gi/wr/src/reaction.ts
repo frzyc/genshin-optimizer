@@ -381,8 +381,7 @@ export function lunarDmg(
           transformative_dmg_,
           infoMut(sum(percent(1), input.total[`${variant}_baseDmg_`]), {
             path: `${variant}_baseDmg_`,
-          }),
-          sum(percent(1), input.total[`${variant}_specialDmg_`])
+          })
         ),
         input.total[`${variant}_dmgInc`]
       ),
@@ -395,6 +394,8 @@ export function lunarDmg(
         },
         NaN
       ),
+      sum(percent(1), input.total[`${variant}_specialDmg_`]),
+      input.enemy.transDef,
       input.enemy[`${transformativeReactions[variant].resist}_resMulti_`]
     ),
     additional
