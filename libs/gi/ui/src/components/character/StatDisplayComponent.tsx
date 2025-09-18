@@ -115,7 +115,7 @@ function Section({
   }, [compareDisplayNs, displayNs])
 
   if (!header) return null
-  if (!keys.length) return null
+  if (!keys.length && sectionKey !== 'custom') return null
   // Don't show character section unless there is a comparasion, a bandaid fix for the FIXME below.
   if (sectionKey === 'character' && !compareData) return null
 
