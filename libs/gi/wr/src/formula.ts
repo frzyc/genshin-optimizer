@@ -47,7 +47,7 @@ const asConst = true as const,
 
 const allElements = allElementWithPhyKeys
 const allTalents = ['auto', 'skill', 'burst'] as const
-const allNonstackBuffs = [
+export const allNonstackBuffs = [
   'no4',
   'totm4',
   'ap4',
