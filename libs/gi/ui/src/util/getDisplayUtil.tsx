@@ -105,6 +105,8 @@ export function getDisplaySections(data: UIData): DisplaySections {
   const basic = sections.filter(([k]) => k === 'basic')
   const reaction = sections.filter(([k]) => k === 'reaction')
   const custom = sections.filter(([k]) => k === 'custom')
+  // Show multi-target always
+  if (custom.length === 0) custom.push(['custom', {}])
   const moonsign = sections.filter(([k]) => k === 'moonsign')
   const weapon = sections.filter(([k]) => k.startsWith('weapon'))
   const artifact = sections.filter(([k]) => k.startsWith('artifact'))
