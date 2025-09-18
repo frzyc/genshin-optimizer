@@ -325,6 +325,7 @@ export function cachedArtifact(
   id: string
 ): { artifact: ICachedArtifact; errors: string[] } {
   const { location, lock, setKey, slotKey, rarity, mainStatKey } = flex
+  let { totalRolls } = flex
   const level = Math.round(
     Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 4 : 4)
   )
@@ -445,10 +446,9 @@ export function cachedArtifact(
 
   tryAllSubstats([], Infinity, totalUnambiguousRolls)
 
-  const totalRolls = substats.reduce(
-    (accu, { rolls }) => accu + rolls.length,
-    0
-  )
+  totalRolls = substats.reduce((accu, { rolls }) => accu + rolls.length, 0)
+
+  validated.totalRolls = totalRolls
 
   if (totalRolls > upperBound)
     errors.push(
@@ -478,7 +478,8 @@ export function validateArtifact(
 ): IArtifact | undefined {
   if (!obj || typeof obj !== 'object') return undefined
   const { setKey, rarity, slotKey } = obj as IArtifact
-  let { level, mainStatKey, substats, location, lock } = obj as IArtifact
+  let { level, mainStatKey, substats, location, lock, totalRolls } =
+    obj as IArtifact
 
   if (
     !allArtifactSetKeys.includes(setKey) ||
@@ -505,6 +506,7 @@ export function validateArtifact(
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return undefined // ambiguous mainstat
   if (!location || !allLocationCharacterKeys.includes(location)) location = ''
+  if (!totalRolls) totalRolls = 0
   return {
     setKey,
     rarity,
@@ -514,6 +516,7 @@ export function validateArtifact(
     substats,
     location,
     lock,
+    totalRolls,
   }
 }
 function defSub(): ISubstat {

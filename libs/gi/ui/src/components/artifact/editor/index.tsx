@@ -611,7 +611,13 @@ export function ArtifactEditor({
                 setLocation={(location) => update({ location })}
                 autoCompleteProps={{ disabled: !artifact }}
               />
-
+              <CardThemed bgt="light" sx={{ py: 1, px: 2 }}>
+                <Grid container spacing={1}>
+                  <Grid item flexGrow={1}>
+                    Total Rolls: {cArtifact?.totalRolls}
+                  </Grid>
+                </Grid>
+              </CardThemed>
               {/* Current/Max Substats Efficiency */}
               <SubstatEfficiencyDisplayCard
                 valid={isValid}

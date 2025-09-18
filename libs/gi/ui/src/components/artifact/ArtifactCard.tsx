@@ -157,6 +157,7 @@ export function ArtifactCardObj({
     mainStatKey,
     substats,
     location = '',
+    totalRolls,
   } = artifact
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),
@@ -347,6 +348,17 @@ export function ArtifactCardObj({
                   />
                 )
             )}
+            <Typography
+              variant="caption"
+              sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+            >
+              <ColorText color="secondary" sx={{ flexGrow: 1 }}>
+                Total Rolls
+              </ColorText>
+              <SqBadge color={totalRolls !== 0 ? 'success' : 'secondary'}>
+                {totalRolls}
+              </SqBadge>
+            </Typography>
             <Typography
               variant="caption"
               sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
