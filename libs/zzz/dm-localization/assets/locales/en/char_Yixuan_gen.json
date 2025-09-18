@@ -127,7 +127,7 @@
       "params": [
         " ",
         "Additional on Full Charge ",
-        "Energy Cost ",
+        "Adrenaline Cost ",
         "EX Special Attack: Celestial Cloud Blitz - Break Total ",
         "EX Special Attack: Qingming Eruption - Break Total "
       ]
@@ -143,7 +143,7 @@
       },
       "params": [
         "Total During Charge ",
-        "Energy Cost ",
+        "Adrenaline Cost to Use ",
         "Initial Consumption ",
         "Consumption Per Second "
       ]
