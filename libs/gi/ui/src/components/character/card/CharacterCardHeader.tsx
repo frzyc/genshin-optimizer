@@ -5,10 +5,14 @@ import {
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type {
+  AscensionKey,
+  CharacterKey,
+  ElementKey,
+} from '@genshin-optimizer/gi/consts'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { charAscensionMaxLevel } from '@genshin-optimizer/gi/util'
+import { getCharMaxLevel } from '@genshin-optimizer/gi/util'
 import { input } from '@genshin-optimizer/gi/wr'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
@@ -104,7 +108,7 @@ export function CharacterCardHeaderContent({
   const characterEle = data.get(input.charEle).value as ElementKey
   const characterLevel = data.get(input.lvl).value
   const constellation = data.get(input.constellation).value
-  const ascension = data.get(input.asc).value
+  const ascension = data.get(input.asc).value as AscensionKey
   const autoBoost = data.get(input.total.autoBoost).value
   const skillBoost = data.get(input.total.skillBoost).value
   const burstBoost = data.get(input.total.burstBoost).value
@@ -146,7 +150,7 @@ export function CharacterCardHeaderContent({
             variant="h6"
             color={tcOverride ? 'yellow ' : 'text.secondary'}
           >
-            /{charAscensionMaxLevel[ascension]}
+            /{getCharMaxLevel(characterLevel, ascension)}
           </Typography>
         </Box>
         <Typography

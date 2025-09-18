@@ -10,6 +10,7 @@ import {
   charMaxLevelLow,
   charMilestoneLevels,
   charMilestoneLevelsLow,
+  getCharMaxLevel,
 } from '@genshin-optimizer/gi/util'
 import { Box, Button, InputAdornment, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
@@ -80,9 +81,7 @@ export function CharacterLevelSelect({
                 onClick={setAscension}
                 color={warning ? 'warning' : undefined}
               >
-                <strong>
-                  / {level > 90 ? level : charAscensionMaxLevel[ascension]}
-                </strong>
+                <strong>/ {getCharMaxLevel(level, ascension)}</strong>
               </Button>
             </InputAdornment>
           ),
