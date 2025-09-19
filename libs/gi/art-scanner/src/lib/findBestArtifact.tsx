@@ -69,6 +69,7 @@ export function findBestArtifact(
         substats: [],
         location: location ?? '',
         lock,
+        unactivatedSubstats: [],
       },
     ]
 
@@ -152,6 +153,7 @@ export function findBestArtifact(
                 substats: [],
                 location: location ?? '',
                 lock,
+                unactivatedSubstats: [],
               })
             }
           }
@@ -172,6 +174,7 @@ export function findBestArtifact(
               substats: [],
               location: location ?? '',
               lock,
+              unactivatedSubstats: [],
             })
           }
         }

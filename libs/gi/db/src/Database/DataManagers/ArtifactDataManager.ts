@@ -133,7 +133,7 @@ export class ArtifactDataManager extends DataManager<
       })),
       location,
       lock,
-      unactivatedSubstats: unactivatedSubstats.map((substat) => ({
+      unactivatedSubstats: unactivatedSubstats?.map((substat) => ({
         key: substat.key,
         value: substat.value,
       })),
@@ -459,7 +459,7 @@ export function cachedArtifact(
 
   tryAllSubstats([], Infinity, totalUnambiguousRolls)
 
-  if (substats[3].rolls.length && unactivatedSubstats.length) {
+  if (substats[3].rolls.length && unactivatedSubstats?.length) {
     validated.unactivatedSubstats = []
     unactivatedSubstats = []
   }
@@ -517,6 +517,7 @@ export function validateArtifact(
   if (level > artMaxLevel[rarity]) return undefined
 
   substats = parseSubstats(substats, rarity, allowZeroSub)
+  unactivatedSubstats = parseSubstats(unactivatedSubstats, rarity, allowZeroSub)
 
   // substat cannot have same key as mainstat
   if (

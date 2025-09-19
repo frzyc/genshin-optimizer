@@ -348,7 +348,7 @@ export function ArtifactCardObj({
                   />
                 )
             )}
-            {unactivatedSubstats.map(
+            {unactivatedSubstats?.map(
               (stat: ICachedSubstat) =>
                 !!stat.value && (
                   <SubstatDisplay
