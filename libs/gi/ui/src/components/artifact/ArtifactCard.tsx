@@ -157,6 +157,7 @@ export function ArtifactCardObj({
     mainStatKey,
     substats,
     location = '',
+    unactivatedSubstats,
   } = artifact
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),
@@ -347,6 +348,18 @@ export function ArtifactCardObj({
                   />
                 )
             )}
+            {unactivatedSubstats.map(
+              (stat: ICachedSubstat) =>
+                !!stat.value && (
+                  <SubstatDisplay
+                    key={stat.key}
+                    stat={stat}
+                    effFilter={effFilter}
+                    rarity={rarity}
+                    isActiveStat={false}
+                  />
+                )
+            )}
             <Typography
               variant="caption"
               sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
@@ -483,10 +496,12 @@ function SubstatDisplay({
   stat,
   effFilter,
   rarity,
+  isActiveStat = true,
 }: {
   stat: ICachedSubstat
   effFilter: Set<SubstatKey>
   rarity: ArtifactRarity
+  isActiveStat?: boolean
 }) {
   const { t: tk } = useTranslation('statKey_gen')
   const numRolls = stat.rolls?.length ?? 0
@@ -529,12 +544,21 @@ function SubstatDisplay({
     <Box display="flex" gap={1} alignContent="center">
       <Typography
         sx={{ flexGrow: 1 }}
-        color={numRolls ? `${rollColor}.main` : 'error.main'}
+        color={
+          numRolls
+            ? `${rollColor}.main`
+            : !isActiveStat
+              ? 'secondary'
+              : 'error.main'
+        }
         component="span"
       >
         <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
         {tk(stat.key)}
         {`+${artDisplayValue(stat.value, getUnitStr(stat.key))}${unit}`}
+        <Typography sx={{ ml: 0.5 }} component="span">
+          {!isActiveStat && '(Not Active)'}
+        </Typography>
       </Typography>
       {progresses}
       <Typography
