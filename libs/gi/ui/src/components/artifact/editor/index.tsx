@@ -344,6 +344,10 @@ export function ArtifactEditor({
     ? allElementWithPhyKeys.find((ele) => artifact.mainStatKey.includes(ele))
     : undefined
   const color = artifact ? (element ?? 'success') : 'primary'
+  const guessedRolls = cArtifact?.substats.reduce(
+    (accu, { rolls }) => accu + rolls.length,
+    0
+  )
 
   const updateSetKey = useCallback(
     (setKey: ArtifactSetKey | '') =>
@@ -611,7 +615,15 @@ export function ArtifactEditor({
                 setLocation={(location) => update({ location })}
                 autoCompleteProps={{ disabled: !artifact }}
               />
-
+              <CardThemed bgt="light" sx={{ py: 1, px: 2 }}>
+                <Grid container spacing={1}>
+                  <Grid item flexGrow={1}>
+                    {cArtifact?.totalRolls
+                      ? 'Total Rolls: ' + cArtifact.totalRolls
+                      : 'Total Guessed Rolls: ' + guessedRolls}
+                  </Grid>
+                </Grid>
+              </CardThemed>
               {/* Current/Max Substats Efficiency */}
               <SubstatEfficiencyDisplayCard
                 valid={isValid}

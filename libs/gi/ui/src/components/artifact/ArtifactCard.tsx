@@ -157,6 +157,7 @@ export function ArtifactCardObj({
     mainStatKey,
     substats,
     location = '',
+    totalRolls,
   } = artifact
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),
@@ -199,6 +200,10 @@ export function ArtifactCardObj({
     />
   )
   const ele = allElementWithPhyKeys.find((e) => mainStatKey.startsWith(e))
+  const guessedRolls = substats.reduce(
+    (accu, { rolls }) => accu + rolls.length,
+    0
+  )
 
   return (
     <Suspense
@@ -347,6 +352,17 @@ export function ArtifactCardObj({
                   />
                 )
             )}
+            <Typography
+              variant="caption"
+              sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+            >
+              <ColorText color="secondary" sx={{ flexGrow: 1 }}>
+                {totalRolls ? 'Total Rolls' : 'Total Guessed Rolls'}
+              </ColorText>
+              <SqBadge color={totalRolls ? 'success' : 'secondary'}>
+                {totalRolls ? totalRolls : guessedRolls}
+              </SqBadge>
+            </Typography>
             <Typography
               variant="caption"
               sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
