@@ -334,14 +334,13 @@ export function cachedArtifact(
     Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 4 : 4)
   )
   const mainStatVal = getMainStatDisplayValue(mainStatKey, rarity, level)
-  let unactivatedSubstats: ICachedSubstat[] = flex.unactivatedSubstats?.map(
-    (substat) => ({
+  let unactivatedSubstats: ICachedSubstat[] | undefined =
+    flex.unactivatedSubstats?.map((substat) => ({
       ...substat,
       rolls: [],
       efficiency: 0,
       accurateValue: substat.value,
-    })
-  )
+    }))
 
   const errors: string[] = []
   const substats: ICachedSubstat[] = flex.substats.map((substat) => ({
@@ -522,8 +521,7 @@ export function validateArtifact(
   // substat cannot have same key as mainstat
   if (
     substats.find((sub) => sub.key === mainStatKey) ||
-    (unactivatedSubstats?.length &&
-      unactivatedSubstats.find((sub) => sub.key === mainStatKey))
+    unactivatedSubstats.find((sub) => sub.key === mainStatKey)
   )
     return undefined
   lock = !!lock
@@ -556,7 +554,8 @@ function parseSubstats(
   rarity: ArtifactRarity,
   allowZeroSub = false
 ): ISubstat[] {
-  if (!Array.isArray(obj)) return new Array(4).map((_) => defSub())
+  if (!obj || !Array.isArray(obj))
+    return Array.from({ length: 4 }, () => defSub())
   const substats = (obj as ISubstat[])
     .slice(0, 4)
     .map(({ key = '', value = 0 }) => {

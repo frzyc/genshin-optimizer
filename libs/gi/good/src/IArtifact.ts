@@ -12,7 +12,7 @@ export interface IArtifact extends IBaseArtifact {
   totalRolls?: number // 3-9 for valid 5* artifacts; includes starting rolls
   astralMark?: boolean // Favorite star in-game
   elixirCrafted?: boolean // Flag for if the artifact was created using Sanctifying Elixir. This guarantees the main stat + at least 2 rolls on the first 2 substats
-  unactivatedSubstats: ISubstat[] // Unactivated substat(s). Once a substat is activated, it should be moved to `substats` instead
+  unactivatedSubstats?: ISubstat[] // Unactivated substat(s). Once a substat is activated, it should be moved to `substats` instead
 }
 
 export interface ISubstat extends IBaseSubstat {

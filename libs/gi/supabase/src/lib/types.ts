@@ -278,6 +278,38 @@ export type Database = {
         }
         Relationships: [
           {
+            foreignKeyName: 'public_unactivatedSubstats_artifact_id_fkey'
+            columns: ['artifact_id']
+            isOneToOne: false
+            referencedRelation: 'artifacts'
+            referencedColumns: ['id']
+          },
+        ]
+      }
+      unactivatedSubstats: {
+        Row: {
+          artifact_id: string
+          id: number
+          index: number
+          key: Database['public']['Enums']['artifactSubstatKey']
+          value: number
+        }
+        Insert: {
+          artifact_id: string
+          id?: number
+          index: number
+          key: Database['public']['Enums']['artifactSubstatKey']
+          value: number
+        }
+        Update: {
+          artifact_id?: string
+          id?: number
+          index?: number
+          key?: Database['public']['Enums']['artifactSubstatKey']
+          value?: number
+        }
+        Relationships: [
+          {
             foreignKeyName: 'public_substats_artifact_id_fkey'
             columns: ['artifact_id']
             isOneToOne: false

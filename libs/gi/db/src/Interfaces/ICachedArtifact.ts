@@ -3,7 +3,7 @@ export interface ICachedArtifact extends IArtifact {
   id: string
   mainStatVal: number
   substats: ICachedSubstat[]
-  unactivatedSubstats: ICachedSubstat[]
+  unactivatedSubstats: ICachedSubstat[] | undefined
 }
 
 export interface ICachedSubstat extends ISubstat {
