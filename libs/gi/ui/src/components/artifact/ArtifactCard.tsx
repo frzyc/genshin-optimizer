@@ -200,6 +200,10 @@ export function ArtifactCardObj({
     />
   )
   const ele = allElementWithPhyKeys.find((e) => mainStatKey.startsWith(e))
+  const guessedRolls = substats.reduce(
+    (accu, { rolls }) => accu + rolls.length,
+    0
+  )
 
   return (
     <Suspense
@@ -353,10 +357,10 @@ export function ArtifactCardObj({
               sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
             >
               <ColorText color="secondary" sx={{ flexGrow: 1 }}>
-                Total Rolls
+                {totalRolls ? 'Total Rolls' : 'Total Guessed Rolls'}
               </ColorText>
-              <SqBadge color={totalRolls !== 0 ? 'success' : 'secondary'}>
-                {totalRolls}
+              <SqBadge color={totalRolls ? 'success' : 'secondary'}>
+                {totalRolls ? totalRolls : guessedRolls}
               </SqBadge>
             </Typography>
             <Typography
