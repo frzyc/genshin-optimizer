@@ -14,7 +14,7 @@ import {
   useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import { charAscensionMaxLevel } from '@genshin-optimizer/gi/util'
+import { getCharLevelString } from '@genshin-optimizer/gi/util'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Box, CardActionArea, Typography } from '@mui/material'
@@ -107,7 +107,7 @@ export function CharacterCardPico({
             >
               <strong>
                 <SqBadge color="primary">
-                  {character.level}/{charAscensionMaxLevel[character.ascension]}
+                  {getCharLevelString(character.level, character.ascension)}
                 </SqBadge>
               </strong>
             </Typography>

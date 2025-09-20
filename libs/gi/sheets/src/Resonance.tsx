@@ -23,6 +23,7 @@ import {
   inferInfoMut,
   infoMut,
   input,
+  lessThan,
   percent,
   sum,
   tally,
@@ -461,7 +462,15 @@ const sprawlingGreenery: IResonance = {
 
 const [moonsignBuffDisp, moonsignBuff] = activeCharBuff(
   input.charKey,
-  greaterEq(teamSize, 4, greaterEq(tally.moonsign, 2, tally.maxMoonsignBuff)),
+  greaterEq(
+    teamSize,
+    4,
+    greaterEq(
+      tally.moonsign,
+      2,
+      lessThan(tally.moonsign, 4, tally.maxMoonsignBuff)
+    )
+  ),
   { isTeamBuff: true }
 )
 const moonsign: IResonance = {

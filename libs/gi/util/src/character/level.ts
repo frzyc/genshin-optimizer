@@ -41,7 +41,11 @@ export const charMilestoneLevels = [
 export const getCharLevelString = (
   level: number,
   ascension: AscensionKey
-): string => `${level}/${level > 90 ? level : charAscensionMaxLevel[ascension]}`
+): string => `${level}/${getCharMaxLevel(level, ascension)}`
+export const getCharMaxLevel = (
+  level: number,
+  ascension: AscensionKey
+): number => (level > 90 ? level : charAscensionMaxLevel[ascension])
 
 export function validateCharLevelAsc(
   level: number,
