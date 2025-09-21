@@ -90,7 +90,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
             )
         )}
         {unactivatedSubstats?.map(
-          ({ value, key, rolls }) =>
+          ({ value, key }) =>
             !!(value && key) && (
               <IconStatDisplay
                 key={key}
