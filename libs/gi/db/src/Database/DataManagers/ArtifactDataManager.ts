@@ -370,49 +370,56 @@ export function cachedArtifact(
     return value / getSubstatValue(key)
   }
 
-  substats.forEach((substat, index): void => {
-    const { key, value } = substat
-    if (!key) {
-      substat.value = 0
-      return
-    }
-    substat.efficiency = efficiency(value, key)
-
-    const possibleRolls = getSubstatRolls(key, value, rarity)
-
-    if (possibleRolls.length) {
-      // Valid Substat
-      const possibleLengths = new Set(possibleRolls.map((roll) => roll.length))
-
-      if (possibleLengths.size !== 1) {
-        // Ambiguous Rolls
-        allPossibleRolls.push({ index, substatRolls: possibleRolls })
-      } else {
-        // Unambiguous Rolls
-        totalUnambiguousRolls += possibleRolls[0].length
+  const getSubstatEffRoll = (substats: ICachedSubstat[] | undefined) => {
+    substats?.forEach((substat, index): void => {
+      const { key, value } = substat
+      if (!key) {
+        substat.value = 0
+        return
       }
+      substat.efficiency = efficiency(value, key)
 
-      substat.rolls = possibleRolls.reduce((best, current) =>
-        best.length < current.length ? best : current
-      )
-      substat.efficiency = efficiency(
-        substat.rolls.reduce((a: number, b: number) => a + b, 0),
-        key
-      )
-      substat.accurateValue = substat.rolls.reduce(
-        (a: number, b: number) => a + b,
-        0
-      )
-    } else {
-      // Invalid Substat
-      substat.rolls = []
-      errors.push(
-        `Invalid substat ${
-          statMap[substat.key as keyof typeof statMap] ?? substat.key
-        }`
-      )
-    }
-  })
+      const possibleRolls = getSubstatRolls(key, value, rarity)
+
+      if (possibleRolls.length) {
+        // Valid Substat
+        const possibleLengths = new Set(
+          possibleRolls.map((roll) => roll.length)
+        )
+
+        if (possibleLengths.size !== 1) {
+          // Ambiguous Rolls
+          allPossibleRolls.push({ index, substatRolls: possibleRolls })
+        } else {
+          // Unambiguous Rolls
+          totalUnambiguousRolls += possibleRolls[0].length
+        }
+
+        substat.rolls = possibleRolls.reduce((best, current) =>
+          best.length < current.length ? best : current
+        )
+        substat.efficiency = efficiency(
+          substat.rolls.reduce((a: number, b: number) => a + b, 0),
+          key
+        )
+        substat.accurateValue = substat.rolls.reduce(
+          (a: number, b: number) => a + b,
+          0
+        )
+      } else {
+        // Invalid Substat
+        substat.rolls = []
+        errors.push(
+          `Invalid substat ${
+            statMap[substat.key as keyof typeof statMap] ?? substat.key
+          }`
+        )
+      }
+    })
+  }
+
+  getSubstatEffRoll(substats)
+  getSubstatEffRoll(unactivatedSubstats)
 
   if (errors.length) return { artifact: validated, errors }
 

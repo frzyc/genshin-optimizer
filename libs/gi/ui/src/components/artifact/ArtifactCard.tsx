@@ -540,17 +540,20 @@ function SubstatDisplay({
       ),
     [inFilter, stat.rolls, maxRoll, rollData, rollOffset]
   )
+  const getSubstatColor = (
+    numRolls: number,
+    isActiveStat: boolean,
+    rollColor: string
+  ) => {
+    if (numRolls && isActiveStat) return `${rollColor}.main`
+    if (!isActiveStat) return 'secondary'
+    return 'error.main'
+  }
   return (
     <Box display="flex" gap={1} alignContent="center">
       <Typography
         sx={{ flexGrow: 1 }}
-        color={
-          numRolls
-            ? `${rollColor}.main`
-            : !isActiveStat
-              ? 'secondary'
-              : 'error.main'
-        }
+        color={getSubstatColor(numRolls, isActiveStat, rollColor)}
         component="span"
       >
         <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
