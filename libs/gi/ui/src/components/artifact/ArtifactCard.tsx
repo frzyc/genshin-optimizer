@@ -503,7 +503,7 @@ function SubstatDisplay({
   rarity: ArtifactRarity
   isActiveStat?: boolean
 }) {
-  const { t: tk } = useTranslation('statKey_gen')
+  const { t: tk } = useTranslation(['statKey_gen', 'ui'])
   const numRolls = stat.rolls?.length ?? 0
   const maxRoll = stat.key ? getSubstatValue(stat.key) : 0
   const rollData = useMemo(
@@ -557,10 +557,10 @@ function SubstatDisplay({
         component="span"
       >
         <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
-        {tk(stat.key)}
+        {tk(`statKey_gen:${stat.key}`)}
         {`+${artDisplayValue(stat.value, getUnitStr(stat.key))}${unit}`}
         <Typography sx={{ ml: 0.5 }} component="span">
-          {!isActiveStat && '(Not Active)'}
+          {!isActiveStat && tk(`ui:${'notActive'}`)}
         </Typography>
       </Typography>
       {progresses}
