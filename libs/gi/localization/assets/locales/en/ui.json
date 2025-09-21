@@ -73,5 +73,5 @@
     "stamina_buffs": "Stamina Buffs",
     "misc": "Misc. Stats"
   },
-  "notActive": "(Not Active)"
+  "notActive": "(Unactivated)"
 }
