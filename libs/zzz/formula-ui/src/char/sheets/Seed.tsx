@@ -31,6 +31,7 @@ const sheet = createBaseSheet(key, {
           fieldForBuff(buff.core_vanguard_atk),
           fieldForBuff(buff.core_vanguard_crit_dmg_),
         ],
+        targeted: true,
       },
     },
     {
@@ -57,11 +58,21 @@ const sheet = createBaseSheet(key, {
   ],
   m2: [
     {
-      type: 'fields',
-      fields: [
-        fieldForBuff(buff.m2_defIgn_),
-        fieldForBuff(buff.m2_vanguard_defIgn_),
-      ],
+      type: 'conditional',
+      conditional: {
+        label: ch('coreCond.onslaught'),
+        metadata: cond.onslaught,
+        fields: [fieldForBuff(buff.m2_defIgn_)],
+      },
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('coreCond.directStrike'),
+        metadata: cond.directStrike,
+        fields: [fieldForBuff(buff.m2_vanguard_defIgn_)],
+        targeted: true,
+      },
     },
     {
       type: 'conditional',
@@ -85,6 +96,7 @@ const sheet = createBaseSheet(key, {
       conditional: {
         label: ch('coreCond.directStrike'),
         metadata: cond.directStrike,
+        targeted: true,
       },
     },
     {

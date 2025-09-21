@@ -154,7 +154,7 @@ const sheet = register(
   registerBuff(
     'core_atk',
     ownBuff.combat.atk.add(
-      onslaught.ifOn(percent(subscript(char.core, dm.core.onslaught_atk)))
+      onslaught.ifOn(subscript(char.core, dm.core.onslaught_atk))
     )
   ),
   registerBuff(
@@ -167,9 +167,7 @@ const sheet = register(
     'core_vanguard_atk',
     notOwnBuff.combat.atk.add(
       directStrike.ifOn(
-        directStrikeCheck(
-          percent(subscript(char.core, dm.core.direct_strike_atk))
-        )
+        directStrikeCheck(subscript(char.core, dm.core.direct_strike_atk))
       )
     ),
     undefined,

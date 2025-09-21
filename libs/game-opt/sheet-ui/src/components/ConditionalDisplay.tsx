@@ -46,7 +46,7 @@ export function ConditionalsDisplay({
   bgt?: CardBackgroundColor
   conditional: Conditional
 }) {
-  const { srcDisplay } = useContext(SrcDstDisplayContext)
+  const { srcDisplay, dstDisplay } = useContext(SrcDstDisplayContext)
   const setConditional = useContext(SetConditionalContext)
   const {
     metadata: { sheet, name },
@@ -71,14 +71,15 @@ export function ConditionalsDisplay({
   )
 
   const [src, setSrc] = useState<string>(Object.keys(srcDisplay)[0])
-  // Default null (aka All) as dst.
-  // Most convenient for users
-  const [dst, setDst] = useState<string | null>(null)
+  // Set to first dst if targeted, else null
+  const [dst, setDst] = useState<string | null>(
+    targeted ? Object.keys(dstDisplay)[0] : null
+  )
   return (
     <Stack spacing={1}>
       {filteredConditionals.map(({ src, dst, condKey, condValue }) => (
         <ConditionalDisplay
-          key={src ?? 'all' + dst ?? 'all' + condKey}
+          key={(src ?? 'all') + (dst ?? 'all') + condKey}
           conditional={conditional}
           src={src}
           dst={dst}
