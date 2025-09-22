@@ -43,7 +43,6 @@ describe("upOptv2", () => {
       obj,
       gnode,
     );
-    console.log("constr_prob", constr_prob);
     expect(f_mu[0]).toBeCloseTo(100 + 1500 * 1.5);
     expect(f_mu[1]).toBeCloseTo((100 + 1500 * 1.5) * 1.0);
     expect(f_cov).toStrictEqual([
@@ -132,25 +131,46 @@ describe("upOptv2", () => {
   test("expandrolls", () => {
     const rollsNode = {
       type: "rolls" as const,
-      base: { atk: 100, atk_: 1.5, critRate_: 1.0 },
+      base: { atk: 100, atk_: 0, critRate_: 0.0 },
       subs: [
         { key: "atk" as const, rolls: 2 },
         { key: "atk_" as const, rolls: 1 },
         { key: "critRate_" as const, rolls: 1 },
       ],
       subDistr: {
-        base: { atk: 100, atk_: 1.5, critRate_: 1.0 },
+        base: { atk: 100, atk_: 0, critRate_: 0.0 },
         subs: ["atk", "atk_", "critRate_"],
-        mu: [10, 0.5, 0.1],
+        mu: [33.065, 0.049555, 0.033065],
         cov: [
-          [4, 0, 0],
-          [0, 0.25, 0],
-          [0, 0, 0.01],
+          [9.4575625, 0, 0],
+          [0, 0.0000424861, 0],
+          [0, 0, 0.0000189151],
         ],
       } as GaussianNode,
     } as RollsLevelNode;
 
     const obj1 = makeObjective([nodeLinear], [4000]);
-    expandRollsLevel(obj1, rollsNode);
+    const values1 = expandRollsLevel(obj1, rollsNode);
+
+    // Check probabilities sum to 1
+    expect(values1.reduce((a, { p }) => a + p, 0)).toBeCloseTo(1);
+    const mus1 = values1.map(({ p, n }) => ({ p, v: n.evaluation!.f_mu[0] }));
+
+    const eval1 = evaluateGaussian(obj1, rollsNode.subDistr); // Linear f_mu and f_cov should match
+    const mean = mus1.reduce((a, { p, v }) => a + p * v, 0);
+    const variance = mus1.reduce((a, { p, v }) => a + p * (v - mean) ** 2, 0);
+    expect(mean).toBeCloseTo(eval1.f_mu[0]);
+    expect(variance).toBeCloseTo(eval1.f_cov[0][0]);
+
+    const obj2 = makeObjective([nodeNonlinear], [4000]);
+    const values2 = expandRollsLevel(obj2, rollsNode);
+    expect(values2.reduce((a, { p }) => a + p, 0)).toBeCloseTo(1);
+    const mus2 = values2.map(({ p, n }) => ({ p, v: n.evaluation!.f_mu[0] }));
+
+    const eval2 = evaluateGaussian(obj2, rollsNode.subDistr); // Nonlinear f_mu should match
+    const mean2 = mus2.reduce((a, { p, v }) => a + p * v, 0);
+    const variance2 = mus2.reduce((a, { p, v }) => a + p * (v - mean2) ** 2, 0);
+    expect(mean2).toBeCloseTo(eval2.f_mu[0]);
+    expect(variance2).toBeCloseTo(eval2.f_cov[0][0]);  // This shouldn't be true
   });
 });

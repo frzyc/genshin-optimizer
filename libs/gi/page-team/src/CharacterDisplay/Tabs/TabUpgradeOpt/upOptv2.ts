@@ -18,7 +18,10 @@ import {
   zero_deriv,
   type OptNode,
 } from "@genshin-optimizer/gi/wr";
+import type { ArtifactRarity, SubstatKey } from "@genshin-optimizer/gi/consts";
 import { allSubstatKeys } from "@genshin-optimizer/gi/consts";
+import { allStats } from "@genshin-optimizer/gi/stats";
+import { getSubstatValue } from "@genshin-optimizer/gi/util";
 
 export function makeObjective(
   nodes: OptNode[],
@@ -108,7 +111,7 @@ export function expandRollsLevel(
     const rollValue = range(7 * rolls, 10 * rolls + 1);
     return rollValue.map((v) => ({
       p: 4 ** -rolls * quadrinomial(rolls, v - 7 * rolls),
-      stat: { [key]: v } as DynStat,
+      stat: { [key]: v * getSubstatValue(key, 5, "max", false) / 10 } as DynStat,
     }));
   });
   return cartesian(...rollValues).map((rvs) => {
@@ -144,6 +147,50 @@ function makeValuesNode(obj: Objective, base: DynStat): ValuesLevelNode {
   };
   return {
     type: "values",
+    subDistr,
+    evaluation: evaluateGaussian(obj, subDistr),
+  };
+}
+
+// Memoized substat value variance lookup
+const substatValueVarCache: Record<
+  string,
+  { mean: number; variance: number; values: number[] }
+> = {};
+function getSubstatValueVariance(key: SubstatKey, rarity: ArtifactRarity) {
+  const cacheKey = JSON.stringify({ key, rarity });
+  if (substatValueVarCache[cacheKey]) return substatValueVarCache[cacheKey];
+
+  const values = allStats.art.sub[rarity][key];
+  const mean = values.reduce((a, b) => a + b, 0) / values.length;
+  const variance =
+    values.reduce((a, b) => a + (b - mean) ** 2, 0) / values.length;
+  substatValueVarCache[cacheKey] = { mean, variance, values };
+  return { mean, variance, values };
+}
+
+function makeRollsNode(
+  obj: Objective,
+  base: DynStat,
+  rolls: { key: SubstatKey; rolls: number }[],
+): RollsLevelNode {
+  const subDistr = {
+    base,
+    subs: rolls.map(({ key }) => key),
+    mu: rolls.map(
+      ({ key, rolls }) => rolls * getSubstatValueVariance(key, 5).mean,
+    ),
+    cov: rolls.map(({ key, rolls: r }, i) =>
+      rolls.map((_, j) =>
+        i === j ? r * getSubstatValueVariance(key, 5).variance : 0,
+      ),
+    ),
+  };
+
+  return {
+    type: "rolls",
+    base,
+    subs: rolls,
     subDistr,
     evaluation: evaluateGaussian(obj, subDistr),
   };
