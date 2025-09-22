@@ -1,7 +1,9 @@
-import { evaluateGaussian, expandRollsLevel, makeObjective } from "./upOptv2";
+import { expandRollsLevel } from "./upOptv2";
+import { evalMarkovNode, evaluateGaussian } from "./upOptEval";
+import { makeObjective, makeRollsNode } from "./upOptMakeNode";
 
 import { dynRead, sum, prod } from "@genshin-optimizer/gi/wr";
-import type { GaussianNode, RollsLevelNode } from "./upOptv2.types";
+import type { GaussianNode, SubstatLevelNode } from "./upOptv2.types";
 
 describe("upOptv2", () => {
   const nodeLinear = sum(dynRead("atk"), prod(1500, dynRead("atk_")));
@@ -129,28 +131,20 @@ describe("upOptv2", () => {
   });
 
   test("expandrolls", () => {
-    const rollsNode = {
-      type: "rolls" as const,
-      base: { atk: 100, atk_: 0, critRate_: 0.0 },
-      subs: [
+    const rollsNode = makeRollsNode(
+      { base: { atk: 100, atk_: 0, critRate_: 0 } } as any as SubstatLevelNode,
+      [
         { key: "atk" as const, rolls: 2 },
         { key: "atk_" as const, rolls: 1 },
         { key: "critRate_" as const, rolls: 1 },
       ],
-      subDistr: {
-        base: { atk: 100, atk_: 0, critRate_: 0.0 },
-        subs: ["atk", "atk_", "critRate_"],
-        mu: [33.065, 0.049555, 0.033065],
-        cov: [
-          [9.4575625, 0, 0],
-          [0, 0.0000424861, 0],
-          [0, 0, 0.0000189151],
-        ],
-      } as GaussianNode,
-    } as RollsLevelNode;
+    );
 
     const obj1 = makeObjective([nodeLinear], [4000]);
-    const values1 = expandRollsLevel(obj1, rollsNode);
+    const values1 = expandRollsLevel(obj1, rollsNode).map(({ p, n }) => ({
+      p,
+      n: evalMarkovNode(obj1, n),
+    }));
 
     // Check probabilities sum to 1
     expect(values1.reduce((a, { p }) => a + p, 0)).toBeCloseTo(1);
@@ -163,7 +157,10 @@ describe("upOptv2", () => {
     expect(variance).toBeCloseTo(eval1.f_cov[0][0]);
 
     const obj2 = makeObjective([nodeNonlinear], [4000]);
-    const values2 = expandRollsLevel(obj2, rollsNode);
+    const values2 = expandRollsLevel(obj2, rollsNode).map(({ p, n }) => ({
+      p,
+      n: evalMarkovNode(obj2, n),
+    }));
     expect(values2.reduce((a, { p }) => a + p, 0)).toBeCloseTo(1);
     const mus2 = values2.map(({ p, n }) => ({ p, v: n.evaluation!.f_mu[0] }));
 

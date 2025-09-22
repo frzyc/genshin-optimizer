@@ -71,7 +71,6 @@ export type EvaluatedRollsNode = RollsLevelNode & {
 export type ValuesLevelNode = {
   type: "values";
   subDistr: GaussianNode;
-  evaluation?: EvaluatedGaussian;
 };
 export type EvaluatedValuesNode = ValuesLevelNode & {
   evaluation: EvaluatedGaussian;
