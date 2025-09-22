@@ -167,10 +167,11 @@ describe("upOptv2", () => {
     expect(values2.reduce((a, { p }) => a + p, 0)).toBeCloseTo(1);
     const mus2 = values2.map(({ p, n }) => ({ p, v: n.evaluation!.f_mu[0] }));
 
-    const eval2 = evaluateGaussian(obj2, rollsNode.subDistr); // Nonlinear f_mu should match
+    // Nonlinear f_mu need not match, but should still be close enough.
+    const eval2 = evaluateGaussian(obj2, rollsNode.subDistr);
     const mean2 = mus2.reduce((a, { p, v }) => a + p * v, 0);
     const variance2 = mus2.reduce((a, { p, v }) => a + p * (v - mean2) ** 2, 0);
     expect(mean2).toBeCloseTo(eval2.f_mu[0]);
-    expect(variance2).toBeCloseTo(eval2.f_cov[0][0]);  // This shouldn't be true
+    expect(variance2).toBeCloseTo(eval2.f_cov[0][0]);
   });
 });

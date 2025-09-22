@@ -4,6 +4,8 @@ import type { ArtifactBuildData, DynStat } from "@genshin-optimizer/gi/solver";
 import { mvnPE_bad } from "./mvncdf";
 import type {
   EvaluatedGaussian,
+  EvaluatedRollsNode,
+  EvaluatedValuesNode,
   GaussianNode,
   Objective,
   RollsLevelNode,
@@ -111,7 +113,9 @@ export function expandRollsLevel(
     const rollValue = range(7 * rolls, 10 * rolls + 1);
     return rollValue.map((v) => ({
       p: 4 ** -rolls * quadrinomial(rolls, v - 7 * rolls),
-      stat: { [key]: v * getSubstatValue(key, 5, "max", false) / 10 } as DynStat,
+      stat: {
+        [key]: (v * getSubstatValue(key, 5, "max", false)) / 10,
+      },
     }));
   });
   return cartesian(...rollValues).map((rvs) => {
@@ -138,7 +142,7 @@ function expandSubstatsLevel(
   return [];
 }
 
-function makeValuesNode(obj: Objective, base: DynStat): ValuesLevelNode {
+function makeValuesNode(obj: Objective, base: DynStat): EvaluatedValuesNode {
   const subDistr = {
     base,
     subs: [],
@@ -171,11 +175,11 @@ function getSubstatValueVariance(key: SubstatKey, rarity: ArtifactRarity) {
 
 function makeRollsNode(
   obj: Objective,
-  base: DynStat,
+  parent: SubstatLevelNode,
   rolls: { key: SubstatKey; rolls: number }[],
-): RollsLevelNode {
+): EvaluatedRollsNode {
   const subDistr = {
-    base,
+    base: parent.base,
     subs: rolls.map(({ key }) => key),
     mu: rolls.map(
       ({ key, rolls }) => rolls * getSubstatValueVariance(key, 5).mean,
@@ -189,7 +193,7 @@ function makeRollsNode(
 
   return {
     type: "rolls",
-    base,
+    base: parent.base,
     subs: rolls,
     subDistr,
     evaluation: evaluateGaussian(obj, subDistr),

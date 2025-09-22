@@ -1,7 +1,7 @@
 import type { SubstatKey } from "@genshin-optimizer/gi/consts";
 import type { DynStat } from "@genshin-optimizer/gi/solver";
 
-export type GaussianMixture = {
+export type GaussianMixtureResult = {
   gmm: {
     weight: number;      // Item weight; must sum to 1.
     constr_prob: number; // Constraint probability
@@ -38,10 +38,13 @@ export type EvaluatedGaussian = {
 };
 
 export type MarkovNode = SubstatLevelNode | RollsLevelNode | ValuesLevelNode;
+export type EvaluatedMarkovNode =
+  | EvaluatedSubstatNode
+  | EvaluatedRollsNode
+  | EvaluatedValuesNode;
 export type SubstatLevelNode = {
   type: "substat";
   subDistr: GaussianNode;
-  evaluation?: EvaluatedGaussian;
 
   // Information for constructing children (Rolls level)
   base: DynStat;
@@ -49,19 +52,27 @@ export type SubstatLevelNode = {
   rollsLeft: number;
   // reshape: boolean;  // Dust of enlightenment reshaping - warps rolls distributions. IDK how it works.
 };
+export type EvaluatedSubstatNode = SubstatLevelNode & {
+  evaluation: EvaluatedGaussian;
+};
 
 export type RollsLevelNode = {
   type: "rolls";
   subDistr: GaussianNode;
-  evaluation?: EvaluatedGaussian;
 
   // Information for constructing children (Values level)
   base: DynStat;
   subs: { key: SubstatKey; rolls: number }[];
+};
+export type EvaluatedRollsNode = RollsLevelNode & {
+  evaluation: EvaluatedGaussian;
 };
 
 export type ValuesLevelNode = {
   type: "values";
   subDistr: GaussianNode;
   evaluation?: EvaluatedGaussian;
+};
+export type EvaluatedValuesNode = ValuesLevelNode & {
+  evaluation: EvaluatedGaussian;
 };
