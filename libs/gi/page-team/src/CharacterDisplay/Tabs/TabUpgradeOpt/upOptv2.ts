@@ -20,7 +20,10 @@ import {
 } from "@genshin-optimizer/gi/wr";
 import { allSubstatKeys } from "@genshin-optimizer/gi/consts";
 
-export function makeObjective(nodes: OptNode[], threshold: number[]): Objective {
+export function makeObjective(
+  nodes: OptNode[],
+  threshold: number[],
+): Objective {
   const nonzeroDerivs = nodes.map((n) =>
     allSubstatKeys.filter((s) => !zero_deriv(n, (f) => f.path[1], s)),
   );
@@ -96,20 +99,32 @@ export function evaluateGaussian(
   };
 }
 
-function expandRollsLevel(
+export function expandRollsLevel(
   obj: Objective,
   rolls: RollsLevelNode,
-): ValuesLevelNode[] {
+): { p: number; n: ValuesLevelNode }[] {
   // TODO: Given a rolls node, return a list of Values nodes and evaluate them.
   const rollValues = rolls.subs.map(({ key, rolls }) => {
     const rollValue = range(7 * rolls, 10 * rolls + 1);
     return rollValue.map((v) => ({
-      p: 4 ** -v * quadrinomial(rolls, v - 7 * rolls),
+      p: 4 ** -rolls * quadrinomial(rolls, v - 7 * rolls),
       stat: { [key]: v } as DynStat,
     }));
   });
-  const wut = cartesian(...rollValues);
-  return [];
+  return cartesian(...rollValues).map((rvs) => {
+    const { p, stat } = rvs.reduce((acc, rv) => ({
+      p: acc.p * rv.p,
+      stat: { ...acc.stat, ...rv.stat },
+    }));
+
+    const stats = { ...rolls.base };
+    Object.entries(stat).forEach(([k, v]) => (stats[k] = (stats[k] ?? 0) + v));
+
+    return {
+      p,
+      n: makeValuesNode(obj, stats),
+    };
+  });
 }
 
 function expandSubstatsLevel(
@@ -118,4 +133,18 @@ function expandSubstatsLevel(
 ): RollsLevelNode[] {
   // TODO: Given a substat node, create a list of Rolls nodes and evaluate them.
   return [];
+}
+
+function makeValuesNode(obj: Objective, base: DynStat): ValuesLevelNode {
+  const subDistr = {
+    base,
+    subs: [],
+    mu: [],
+    cov: [[]],
+  };
+  return {
+    type: "values",
+    subDistr,
+    evaluation: evaluateGaussian(obj, subDistr),
+  };
 }

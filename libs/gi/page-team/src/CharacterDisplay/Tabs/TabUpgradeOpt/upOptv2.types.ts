@@ -3,7 +3,7 @@ import type { DynStat } from "@genshin-optimizer/gi/solver";
 
 export type GaussianMixture = {
   gmm: {
-    weight: number; // Item weight; must sum to 1.
+    weight: number;      // Item weight; must sum to 1.
     constr_prob: number; // Constraint probability
     mu: number;
     sig2: number;
@@ -16,7 +16,7 @@ export type GaussianMixture = {
 export type Objective = {
   computeWithDerivs: (x: DynStat) => [number[], DynStat[]];
   threshold: number[];
-}
+};
 
 export type GaussianNode = {
   base: DynStat;
@@ -64,6 +64,4 @@ export type ValuesLevelNode = {
   type: "values";
   subDistr: GaussianNode;
   evaluation?: EvaluatedGaussian;
-
-  base: DynStat;
 };

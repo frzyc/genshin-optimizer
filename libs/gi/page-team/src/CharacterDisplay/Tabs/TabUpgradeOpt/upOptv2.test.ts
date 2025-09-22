@@ -1,7 +1,7 @@
-import { evaluateGaussian, makeObjective } from "./upOptv2";
+import { evaluateGaussian, expandRollsLevel, makeObjective } from "./upOptv2";
 
 import { dynRead, sum, prod } from "@genshin-optimizer/gi/wr";
-import type { GaussianNode } from "./upOptv2.types";
+import type { GaussianNode, RollsLevelNode } from "./upOptv2.types";
 
 describe("upOptv2", () => {
   const nodeLinear = sum(dynRead("atk"), prod(1500, dynRead("atk_")));
@@ -30,6 +30,52 @@ describe("upOptv2", () => {
     expect(df[1]["atk"]).toBeCloseTo(0.7);
     expect(df[1]["atk_"]).toBeCloseTo(1500 * 0.7);
     expect(df[1]["critRate_"]).toBeCloseTo(100 + 1500 * 0.5);
+  });
+
+  test("evaluateGaussianDegen", () => {
+    const gnode: GaussianNode = {
+      base: { atk: 100, atk_: 1.5, critRate_: 1.0 },
+      subs: [],
+      mu: [],
+      cov: [[]],
+    };
+    const { f_mu, f_cov, prob, constr_prob, upAvg } = evaluateGaussian(
+      obj,
+      gnode,
+    );
+    console.log("constr_prob", constr_prob);
+    expect(f_mu[0]).toBeCloseTo(100 + 1500 * 1.5);
+    expect(f_mu[1]).toBeCloseTo((100 + 1500 * 1.5) * 1.0);
+    expect(f_cov).toStrictEqual([
+      [0, 0],
+      [0, 0],
+    ]);
+    expect(prob).toBeCloseTo(0);
+    expect(constr_prob).toBeCloseTo(1);
+    expect(upAvg).toBeCloseTo(0);
+  });
+
+  test("evaluateGaussianDegen2", () => {
+    const obj2 = makeObjective([nodeLinear, nodeNonlinear], [2000, 100]);
+    const gnode: GaussianNode = {
+      base: { atk: 100, atk_: 1.5, critRate_: 1.0 },
+      subs: [],
+      mu: [],
+      cov: [[]],
+    };
+    const { f_mu, f_cov, prob, constr_prob, upAvg } = evaluateGaussian(
+      obj2,
+      gnode,
+    );
+    expect(f_mu[0]).toBeCloseTo(100 + 1500 * 1.5);
+    expect(f_mu[1]).toBeCloseTo((100 + 1500 * 1.5) * 1.0);
+    expect(f_cov).toStrictEqual([
+      [0, 0],
+      [0, 0],
+    ]);
+    expect(prob).toBeCloseTo(1);
+    expect(constr_prob).toBeCloseTo(1);
+    expect(upAvg).toBeCloseTo(100 + 1500 * 1.5 - 2000);
   });
 
   // TEST evaluateGaussian:
@@ -81,5 +127,30 @@ describe("upOptv2", () => {
 
     // upAvg = E[X0 - 4000 | X0 > 4000] ~ 367.45 (number from Mathematica)
     expect(upAvg).toBeCloseTo(367.4450206921483);
+  });
+
+  test("expandrolls", () => {
+    const rollsNode = {
+      type: "rolls" as const,
+      base: { atk: 100, atk_: 1.5, critRate_: 1.0 },
+      subs: [
+        { key: "atk" as const, rolls: 2 },
+        { key: "atk_" as const, rolls: 1 },
+        { key: "critRate_" as const, rolls: 1 },
+      ],
+      subDistr: {
+        base: { atk: 100, atk_: 1.5, critRate_: 1.0 },
+        subs: ["atk", "atk_", "critRate_"],
+        mu: [10, 0.5, 0.1],
+        cov: [
+          [4, 0, 0],
+          [0, 0.25, 0],
+          [0, 0, 0.01],
+        ],
+      } as GaussianNode,
+    } as RollsLevelNode;
+
+    const obj1 = makeObjective([nodeLinear], [4000]);
+    expandRollsLevel(obj1, rollsNode);
   });
 });
