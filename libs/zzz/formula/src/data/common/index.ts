@@ -8,6 +8,7 @@ import {
   percent,
   reader,
 } from '../util'
+import anomaly from './anomaly'
 import anomalyBuildup from './anomalyBuildup'
 import daze from './daze'
 import dmg from './dmg'
@@ -17,10 +18,16 @@ const data: TagMapNodeEntries = [
   ...dmg,
   ...prep,
   ...anomalyBuildup,
+  ...anomaly,
   ...daze,
 
   reader.withTag({ sheet: 'iso', et: 'own' }).reread(reader.sheet('custom')),
   reader.withTag({ sheet: 'agg', et: 'own' }).reread(reader.sheet('custom')),
+
+  // Anomaly buffs
+  reader
+    .withTag({ sheet: 'agg', et: 'teamBuff' })
+    .reread(reader.sheet('anomaly')),
 
   // convert sheet:<char> to sheet:agg for accumulation
   // sheet:<wengine> is reread in src/util.ts:wengineTagMapNodeEntries()
