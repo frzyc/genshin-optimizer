@@ -119,6 +119,7 @@ export class ArtifactDataManager extends DataManager<
       substats,
       location,
       lock,
+      totalRolls,
     } = artifact
     return {
       setKey,
@@ -132,6 +133,7 @@ export class ArtifactDataManager extends DataManager<
       })),
       location,
       lock,
+      totalRolls,
     }
   }
 
@@ -324,12 +326,12 @@ export function cachedArtifact(
   flex: IArtifact,
   id: string
 ): { artifact: ICachedArtifact; errors: string[] } {
-  const { location, lock, setKey, slotKey, rarity, mainStatKey } = flex
+  const { location, lock, setKey, slotKey, rarity, mainStatKey, totalRolls } =
+    flex
   const level = Math.round(
     Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 4 : 4)
   )
   const mainStatVal = getMainStatDisplayValue(mainStatKey, rarity, level)
-
   const errors: string[] = []
   const substats: ICachedSubstat[] = flex.substats.map((substat) => ({
     ...substat,
@@ -348,10 +350,9 @@ export function cachedArtifact(
     level,
     substats,
     mainStatVal,
+    totalRolls,
   }
-
   const allPossibleRolls: { index: number; substatRolls: number[][] }[] = []
-  let totalUnambiguousRolls = 0
 
   function efficiency(value: number, key: SubstatKey): number {
     return value / getSubstatValue(key)
@@ -374,9 +375,6 @@ export function cachedArtifact(
       if (possibleLengths.size !== 1) {
         // Ambiguous Rolls
         allPossibleRolls.push({ index, substatRolls: possibleRolls })
-      } else {
-        // Unambiguous Rolls
-        totalUnambiguousRolls += possibleRolls[0].length
       }
 
       substat.rolls = possibleRolls.reduce((best, current) =>
@@ -411,14 +409,10 @@ export function cachedArtifact(
   const tryAllSubstats = (
     rolls: { index: number; roll: number[] }[],
     currentScore: number,
-    total: number
+    totalRolls: number | undefined
   ) => {
     if (rolls.length === allPossibleRolls.length) {
-      if (
-        total <= upperBound &&
-        total >= lowerBound &&
-        highestScore < currentScore
-      ) {
+      if (totalRolls && highestScore < currentScore) {
         highestScore = currentScore
         for (const { index, roll } of rolls) {
           const key = substats[index].key as SubstatKey
@@ -436,27 +430,28 @@ export function cachedArtifact(
     for (const roll of substatRolls) {
       rolls.push({ index, roll })
       const newScore = Math.min(currentScore, -roll.length)
-      if (newScore >= highestScore)
+      if (totalRolls && newScore >= highestScore)
         // Scores won't get better, so we can skip.
-        tryAllSubstats(rolls, newScore, total + roll.length)
+        tryAllSubstats(rolls, newScore, totalRolls + roll.length)
       rolls.pop()
     }
   }
 
-  tryAllSubstats([], Infinity, totalUnambiguousRolls)
+  tryAllSubstats([], Infinity, totalRolls)
 
-  const totalRolls = substats.reduce(
-    (accu, { rolls }) => accu + rolls.length,
-    0
-  )
+  validated.totalRolls = totalRolls
 
-  if (totalRolls > upperBound)
+  const artifactRolls = totalRolls
+    ? totalRolls
+    : substats.reduce((accu, { rolls }) => accu + rolls.length, 0)
+
+  if (artifactRolls > upperBound)
     errors.push(
-      `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`
+      `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${artifactRolls} rolls.`
     )
-  else if (totalRolls < lowerBound)
+  else if (artifactRolls < lowerBound)
     errors.push(
-      `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`
+      `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${artifactRolls} rolls.`
     )
 
   if (substats.some((substat) => !substat.key)) {
@@ -478,7 +473,8 @@ export function validateArtifact(
 ): IArtifact | undefined {
   if (!obj || typeof obj !== 'object') return undefined
   const { setKey, rarity, slotKey } = obj as IArtifact
-  let { level, mainStatKey, substats, location, lock } = obj as IArtifact
+  let { level, mainStatKey, substats, location, lock, totalRolls } =
+    obj as IArtifact
 
   if (
     !allArtifactSetKeys.includes(setKey) ||
@@ -505,6 +501,8 @@ export function validateArtifact(
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return undefined // ambiguous mainstat
   if (!location || !allLocationCharacterKeys.includes(location)) location = ''
+  if (!totalRolls) totalRolls = undefined
+
   return {
     setKey,
     rarity,
@@ -514,6 +512,7 @@ export function validateArtifact(
     substats,
     location,
     lock,
+    totalRolls,
   }
 }
 function defSub(): ISubstat {
