@@ -35,7 +35,8 @@ const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
-const { directStrike, onslaught } = allBoolConditionals(key)
+const { directStrike, onslaught, directStrikeDisplay } =
+  allBoolConditionals(key)
 const { energy_consumed } = allNumConditionals(
   key,
   true,
@@ -53,7 +54,9 @@ const directStrikeCheck = (node: NumNode | number) =>
     node
   )
 const besiege = (node: NumNode | number) =>
-  cmpEq(sum(directStrike.ifOn(1), onslaught.ifOn(1)), 2, node)
+  directStrike.ifOn(onslaught.ifOn(node))
+const besiegeDisplay = (node: NumNode | number) =>
+  directStrikeDisplay.ifOn(onslaught.ifOn(node))
 const abilityCheck = (node: NumNode | number) =>
   cmpGE(team.common.count.withSpecialty('attack'), 2, node)
 
@@ -231,17 +234,13 @@ const sheet = register(
   registerBuff(
     'm2_defIgn_',
     ownBuff.combat.defIgn_.add(
-      cmpGE(char.mindscape, 2, besiege(percent(dm.m2.besiege_defIgn_)))
+      cmpGE(char.mindscape, 2, besiegeDisplay(percent(dm.m2.besiege_defIgn_)))
     )
   ),
   registerBuff(
     'm2_vanguard_defIgn_',
     notOwnBuff.combat.defIgn_.add(
-      cmpGE(
-        char.mindscape,
-        2,
-        directStrikeCheck(besiege(percent(dm.m2.besiege_defIgn_)))
-      )
+      cmpGE(char.mindscape, 2, besiegeDisplay(percent(dm.m2.besiege_defIgn_)))
     ),
     undefined,
     true

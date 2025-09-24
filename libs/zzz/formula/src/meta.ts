@@ -930,6 +930,11 @@ export const conditionals = {
   },
   Seed: {
     directStrike: { sheet: 'Seed', name: 'directStrike', type: 'bool' },
+    directStrikeDisplay: {
+      sheet: 'Seed',
+      name: 'directStrikeDisplay',
+      type: 'bool',
+    },
     energy_consumed: {
       sheet: 'Seed',
       name: 'energy_consumed',
