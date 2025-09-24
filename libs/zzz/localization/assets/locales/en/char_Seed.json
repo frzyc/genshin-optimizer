@@ -1,0 +1,7 @@
+{
+  "coreCond": {
+    "onslaught": "When the Vanguard unleashes an EX Special Attack",
+    "directStrike": "When Seed unleashes an EX Special Attack"
+  },
+  "m2Cond": "Every 5 Energy consumed by EX Special Attack: Raining Iron Petals"
+}
