@@ -29,6 +29,7 @@ declare module '@mui/material/styles' {
     bloom: Palette['primary']
     burgeon: Palette['primary']
     hyperbloom: Palette['primary']
+    lunarbloom: Palette['primary']
   }
 
   interface PaletteOptions {
@@ -57,6 +58,7 @@ declare module '@mui/material/styles' {
     bloom?: PaletteOptions['primary']
     burgeon?: PaletteOptions['primary']
     hyperbloom?: PaletteOptions['primary']
+    lunarbloom?: PaletteOptions['primary']
   }
 }
 
@@ -87,6 +89,7 @@ declare module '@mui/material/Button' {
     bloom: true
     burgeon: true
     hyperbloom: true
+    lunarbloom: true
   }
 }
 
@@ -117,6 +120,7 @@ declare module '@mui/material/Chip' {
     bloom: true
     burgeon: true
     hyperbloom: true
+    lunarbloom: true
   }
 }
 
@@ -163,6 +167,7 @@ declare module '@mui/material/SvgIcon' {
     bloom: true
     burgeon: true
     hyperbloom: true
+    lunarbloom: true
   }
 }
 
@@ -265,6 +270,10 @@ export const theme = createTheme({
     hyperbloom: commonTheme.palette.augmentColor({
       color: { main: '#3b8dc8', contrastText: '#fff' },
       name: 'hyperbloom',
+    }),
+    lunarbloom: commonTheme.palette.augmentColor({
+      color: { main: '#c8efc4', contrastText: '#fff' },
+      name: 'lunarbloom',
     }),
   },
 })

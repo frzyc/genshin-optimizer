@@ -105,7 +105,7 @@
     "description": {
       "0": "Khi loại nguyên tố của toàn bộ nhân vật trong đội là <dendro>Thảo</dendro> và <hydro>Thủy</hydro>, đồng thời có ít nhất một nhân vật nguyên tố Thảo, một nhân vật nguyên tố Thủy:",
       "1": "Nilou hoàn thành Vũ Điệu thứ ba từ <strong>Vũ Điệu Haftkarsvar</strong> sẽ cung cấp trạng thái Phước Lành Ly Vàng cho tất cả nhân vật gần đó trong 30s.",
-      "2": "Nhân vật trong trạng thái Phước Lành Ly Vàng khi chịu phải <dendro>tấn công Nguyên Tố Thảo</dendro> sẽ khiến tất cả nhân vật gần đó tăng 100 Tinh Thông Nguyên Tố trong 10s; Ngoài ra, khi kích hoạt phản ứng Sum Suê, Hạt Nhân Thảo sẽ được thay thế bằng \"Hạt Nhân Căng Tràn\".",
+      "2": "Nhân vật trong trạng thái Phước Lành Ly Vàng khi chịu phải <dendro>tấn công Nguyên Tố Thảo</dendro> sẽ khiến tất cả nhân vật gần đó tăng 100 Tinh Thông Nguyên Tố trong 10s; Ngoài ra, khi kích hoạt phản ứng Sum Suê hoặc Nguyệt-Sum Suê, Hạt Nhân Thảo sẽ được thay thế bằng \"Hạt Nhân Căng Tràn\".",
       "3": "So với Hạt Nhân Thảo thì Hạt Nhân Căng Tràn sẽ phát nổ nhanh hơn và phạm vi ảnh hưởng cũng rộng hơn.",
       "4": "Hạt Nhân Căng Tràn sẽ không thể kích hoạt được phản ứng Nở Rộ và Bung Tỏa, số lượng tồn tại giới hạn sẽ dùng chung với Hạt Nhân Thảo. Sát thương của Hạt Nhân Căng Tràn sẽ được tính là sát thương phản ứng Sum Suê của Hạt Nhân Thảo.",
       "5": "Khi loại nguyên tố của nhân vật trong đội không đáp ứng yêu cầu của thiên phú, sẽ giải trừ hiệu quả Phước Lành Ly Vàng đã có."
@@ -137,7 +137,7 @@
   "constellation2": {
     "name": "Mưa Hoa Trời Sao",
     "description": {
-      "0": "Nhân vật trong trạng thái \"Phước Lành Ly Vàng\" sau khi gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> lên kẻ địch sẽ khiến kẻ địch đó giảm 35% <hydro>Kháng Nguyên Tố Thủy</hydro>, duy trì 10s. Sau khi kích hoạt phản ứng Sum Suê gây sát thương cho kẻ địch sẽ khiến kẻ địch đó giảm 35% <dendro>Kháng Nguyên Tố Thảo</dendro>, duy trì 10s.",
+      "0": "Nhân vật trong trạng thái \"Phước Lành Ly Vàng\" sau khi gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> lên kẻ địch sẽ khiến kẻ địch đó giảm 35% <hydro>Kháng Nguyên Tố Thủy</hydro>, duy trì 10s. Sau khi gây sát thương phản ứng Sum Suê hoặc Nguyệt-Sum Suê cho kẻ địch sẽ khiến kẻ địch đó giảm 35% <dendro>Kháng Nguyên Tố Thảo</dendro>, duy trì 10s.",
       "1": "Cần phải mở khóa thiên phú cố định \"Sảnh Đường Ngân Nga\"."
     }
   },

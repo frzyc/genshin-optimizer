@@ -104,9 +104,9 @@
   "passive3": {
     "name": "Bendición presagiolunar: Repetidor simulado",
     "description": {
-      "0": "Cuando un personaje del equipo cause una reacción de Electrocargado, esta se transformará en una reacción de Electrocargado Lunar cuyo daño base aumentará en un 0.7% por cada 100 pts. de ATQ que tenga Ineffa. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
+      "0": "Cuando un personaje del equipo cause una reacción de Electrocargado, esta se transformará en una reacción de Electrocargado Lunar cuyo daño base aumentará en un 0.7% por cada 100 pts. de ATQ que tenga Ineffa. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
       "1": "<br/>",
-      "2": "Es posible que haya bendiciones adicionales cuando salga la luna nueva..."
+      "2": "Además, cuando Ineffa esté en el equipo, el nivel de <strong>presagio lunar</strong> de los personajes aumentará en 1."
     }
   },
   "passive": {

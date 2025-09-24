@@ -1,4 +1,5 @@
 import type { TagMapNodeEntries } from '../util'
+import Aino from './Aino'
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
 import Aloy from './Aloy'
@@ -52,6 +53,7 @@ import Klee from './Klee'
 import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
 import LanYan from './LanYan'
+import Lauma from './Lauma'
 import Layla from './Layla'
 import Lisa from './Lisa'
 import Lynette from './Lynette'
@@ -109,6 +111,7 @@ import YunJin from './YunJin'
 import Zhongli from './Zhongli'
 
 const data: TagMapNodeEntries[] = [
+  Aino,
   Albedo,
   Alhaitham,
   Aloy,
@@ -162,6 +165,7 @@ const data: TagMapNodeEntries[] = [
   KujouSara,
   KukiShinobu,
   LanYan,
+  Lauma,
   Layla,
   Lisa,
   Lynette,

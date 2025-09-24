@@ -1,0 +1,24 @@
+{
+  "name": "Leises Pfeifen der Stille",
+  "description": {
+    "0": "Ein Langschwert aus Metall, das beim Schwingen ein dumpfes Pfeifen von sich gibt."
+  },
+  "passiveName": "Gedämpftes Schweigen",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht nach Auslösen der Elementarreaktion 12 s lang die max. LP um <cryo>16 %</cryo>. Mondomen – Reifer Glanz: Erhöht die max. LP während des Effekts zusätzlich um <cryo>16 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "1": {
+      "0": "Erhöht nach Auslösen der Elementarreaktion 12 s lang die max. LP um <cryo>20 %</cryo>. Mondomen – Reifer Glanz: Erhöht die max. LP während des Effekts zusätzlich um <cryo>20 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "2": {
+      "0": "Erhöht nach Auslösen der Elementarreaktion 12 s lang die max. LP um <cryo>24 %</cryo>. Mondomen – Reifer Glanz: Erhöht die max. LP während des Effekts zusätzlich um <cryo>24 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "3": {
+      "0": "Erhöht nach Auslösen der Elementarreaktion 12 s lang die max. LP um <cryo>28 %</cryo>. Mondomen – Reifer Glanz: Erhöht die max. LP während des Effekts zusätzlich um <cryo>28 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "4": {
+      "0": "Erhöht nach Auslösen der Elementarreaktion 12 s lang die max. LP um <cryo>32 %</cryo>. Mondomen – Reifer Glanz: Erhöht die max. LP während des Effekts zusätzlich um <cryo>32 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    }
+  }
+}

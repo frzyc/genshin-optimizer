@@ -1,23 +1,34 @@
-import { objKeyMap, verifyObjKeys } from '@genshin-optimizer/common/util'
+import {
+  objKeyMap,
+  objKeyValMap,
+  verifyObjKeys,
+} from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   MainStatKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
-import { allElementKeys, allMainStatKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allElementKeys,
+  allLunarReactionKeys,
+  allMainStatKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi/dm'
 import { allStats, getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   data,
+  equal,
+  greaterEq,
   inferInfoMut,
   infoMut,
   infusionNode,
   input,
   lookup,
   mergeData,
+  min,
   one,
   percent,
   prod,
@@ -25,7 +36,9 @@ import {
   stringPrio,
   subscript,
   sum,
+  tally,
 } from '@genshin-optimizer/gi/wr'
+import { cond } from '../SheetUtil'
 
 const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
@@ -314,8 +327,25 @@ export function dataObjForCharacterSheet(
       subscript<number>(input.lvl, allStats.char.expCurve[lvlCurve])
     )
   }
+  const [_condMoonsignAfterSkillBurstPath, condMoonsignAfterSkillBurst] = cond(
+    key,
+    'moonsignAfterSkillBurst'
+  )
+  function moonsignBuff(value: NumNode): NumNode {
+    const teamSize = sum(...allElementKeys.map((ele) => tally[ele]))
+    return greaterEq(
+      teamSize,
+      4,
+      greaterEq(
+        tally.moonsign,
+        2,
+        equal(condMoonsignAfterSkillBurst, 'on', min(value, percent(0.36)))
+      )
+    )
+  }
   const element = getCharEle(key)
-  const { region, weaponType, lvlCurves, ascensionBonus } = getCharStat(key)
+  const { region, weaponType, lvlCurves, ascensionBonus, baseStats } =
+    getCharStat(key)
   display['basic'] = { ...commonBasic }
   const data: Data = {
     charKey: constant(key),
@@ -330,6 +360,37 @@ export function dataObjForCharacterSheet(
     data.teamBuff!.tally![element] = constant(1)
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
+    if (region !== 'nodKrai') {
+      let moonsign: NumNode
+      switch (element) {
+        case 'pyro':
+        case 'electro':
+        case 'cryo':
+          moonsign = moonsignBuff(
+            prod(input.total.atk, 1 / 100, percent(0.009))
+          )
+          break
+        case 'hydro':
+          moonsign = moonsignBuff(
+            prod(input.total.hp, 1 / 1000, percent(0.006))
+          )
+          break
+        case 'geo':
+          moonsign = moonsignBuff(prod(input.total.def, 1 / 100, percent(0.01)))
+          break
+        case 'anemo':
+        case 'dendro':
+          moonsign = moonsignBuff(
+            prod(input.total.eleMas, 1 / 100, percent(0.0225))
+          )
+          break
+      }
+      data.teamBuff!.tally!.maxMoonsignBuff = moonsign
+      data.display!['moonsign'] = objKeyValMap(allLunarReactionKeys, (lr) => [
+        `${lr}_dmg_`,
+        { ...moonsign },
+      ])
+    }
   }
   if (region) data.teamBuff!.tally![region] = constant(1)
   if (weaponType !== 'catalyst')
@@ -342,6 +403,8 @@ export function dataObjForCharacterSheet(
 
     const asc = ascensionBonus[stat]
     if (asc) list.push(subscript(input.asc, asc))
+    const otherBase = stat === 'def' ? undefined : baseStats?.[stat]
+    if (otherBase) list.push(constant(otherBase))
 
     if (!list.length) continue
 
@@ -354,9 +417,16 @@ export function dataObjForCharacterSheet(
     if (stat === 'atk' || stat === 'def' || stat === 'hp')
       data.base![stat] = result
     else {
-      if (data.special) throw new Error('Multiple Char Special')
-      data.special = result
-      data.premod![stat] = input.special
+      // Special ascension stat
+      if (asc) {
+        if (data.special) throw new Error('Multiple Char Special')
+        data.special = result
+        data.premod![stat] = input.special
+      }
+      // Other base stat
+      else {
+        data.premod![stat] = result
+      }
     }
   }
 

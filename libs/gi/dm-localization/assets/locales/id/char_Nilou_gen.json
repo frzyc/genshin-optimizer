@@ -105,7 +105,7 @@
     "description": {
       "0": "Saat seluruh anggota party adalah Karakter <dendro>Dendro</dendro> dan <hydro>Hydro</hydro>, serta memiliki minimal 1 Karakter Dendro dan 1 Karakter Hydro:",
       "1": "Saat Nilou menyelesaikan langkah tarian ketiga <strong>Dance of Haftkarsvar</strong>, Nilou akan memberikan status Golden Chalice's Bounty yang bertahan 30 detik kepada seluruh Karakter di sekitar.",
-      "2": "Setelah Karakter yang berada dalam status Golden Chalice's Bounty menerima <dendro>serangan Dendro</dendro>, Elemental Mastery seluruh Karakter di sekitar meningkat 100 poin selama 10 detik; Selain itu, saat memicu reaksi Bloom, akan menghasilkan Bountiful Core yang akan menggantikan Dendro Core.",
+      "2": "Setelah Karakter yang berada dalam status Golden Chalice's Bounty terkena<dendro>serangan Dendro</dendro>, Elemental Mastery seluruh Karakter di sekitar meningkat 100 poin selama 10 detik. Selain itu, saat memicu reaksi Bloom atau Lunar-Bloom, akan menghasilkan Bountiful Core yang akan menggantikan Dendro Core.",
       "3": "Jika dibandingkan dengan Dendro Core, Bountiful Core akan meledak dengan sangat cepat setelah diciptakan dan memiliki cakupan area yang lebih luas.",
       "4": "Bountiful Core tidak akan bisa memicu reaksi Hyperbloom atau Burgeon, dan memiliki batas jumlah yang sama dengan Dendro Core. Serangan Bountiful Core akan dianggap sebagai serangan Dendro Core dari reaksi Bloom.",
       "5": "Saat jenis elemen Karakter di dalam party tidak cukup untuk memicu Talenta Pasif, maka efek Golden Chalice's Bounty yang sudah dimiliki akan dihapus."
@@ -137,8 +137,8 @@
   "constellation2": {
     "name": "The Starry Skies Their Flowers Rain",
     "description": {
-      "0": "Setelah Karakter yang berada dalam status \"Golden Chalice's Bounty\" mengakibatkan <hydro>Hydro DMG</hydro> kepada musuh, mengurangi 35% <hydro>Hydro RES</hydro> musuh tersebut selama 10 detik. Setelah memicu reaksi Bloom yang mengakibatkan DMG kepada musuh, mengurangi 35% <dendro>Dendro RES</dendro> musuh selama 10 detik.",
-      "1": "Kamu harus membuka Talenta Pasif \"Court of Dancing Petals\" terlebih dahulu."
+      "0": "Setelah Karakter yang berada dalam status \"Golden Chalice's Bounty\" mengakibatkan <hydro>Hydro DMG</hydro> kepada musuh, <hydro>Hydro RES</hydro> musuh tersebut akan berkurang 35% selama 10 detik. Setelah mengakibatkan DMG reaksi Bloom atau Lunar-Bloom terhadap musuh,<dendro>Dendro RES</dendro> musuh tersebut akan berkurang 35% selama 10 detik.",
+      "1": "Harus membuka Talenta Pasif \"Court of Dancing Petals\" terlebih dahulu."
     }
   },
   "constellation3": {

@@ -5,10 +5,12 @@ import ApprenticesNotes from './ApprenticesNotes'
 import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BlackcliffAgate from './BlackcliffAgate'
+import BlackmarrowLantern from './BlackmarrowLantern'
 import CashflowSupervision from './CashflowSupervision'
 import CranesEchoingCall from './CranesEchoingCall'
 import DodocoTales from './DodocoTales'
 import EmeraldOrb from './EmeraldOrb'
+import EtherlightSpindlelute from './EtherlightSpindlelute'
 import EverlastingMoonglow from './EverlastingMoonglow'
 import EyeOfPerception from './EyeOfPerception'
 import FavoniusCodex from './FavoniusCodex'
@@ -22,6 +24,7 @@ import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
 import MagicGuide from './MagicGuide'
 import MappaMare from './MappaMare'
 import MemoryOfDust from './MemoryOfDust'
+import NightweaversLookingGlass from './NightweaversLookingGlass'
 import OathswornEye from './OathswornEye'
 import OtherworldlyStory from './OtherworldlyStory'
 import PocketGrimoire from './PocketGrimoire'
@@ -51,10 +54,12 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   AThousandFloatingDreams,
   BalladOfTheBoundlessBlue,
   BlackcliffAgate,
+  BlackmarrowLantern,
   CashflowSupervision,
   CranesEchoingCall,
   DodocoTales,
   EmeraldOrb,
+  EtherlightSpindlelute,
   EverlastingMoonglow,
   EyeOfPerception,
   FavoniusCodex,
@@ -68,6 +73,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   MagicGuide,
   MappaMare,
   MemoryOfDust,
+  NightweaversLookingGlass,
   OathswornEye,
   OtherworldlyStory,
   PocketGrimoire,

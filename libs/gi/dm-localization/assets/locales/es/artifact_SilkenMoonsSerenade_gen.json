@@ -1,0 +1,29 @@
+{
+  "setName": "Serenata de la Luna Tejida",
+  "setEffects": {
+    "2": "Recarga de Energía +20%.",
+    "4": "Infligir Daño Elemental otorga durante 8 s el efecto de “luna refulgente: veneración”, de manera que, cuando el presagio lunar del equipo es resplandor naciente/resplandor ascendente, la Maestría Elemental de todos los personajes del equipo aumenta en 60/120 pts. respectivamente. Este efecto se puede activar incluso cuando el portador de este conjunto está en tu equipo pero no en uso. Por cada efecto de luna refulgente diferente que tengan los personajes, el daño de las Reacciones Lunares de todos los miembros del equipo aumentará en un 10%. Los efectos producidos por luna refulgente no se pueden acumular."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Lágrima Cristalina de la Errante",
+      "desc": "Una flor pura e impoluta. Cuenta la leyenda que su belleza se ha mantenido eterna gracias al viento gélido."
+    },
+    "plume": {
+      "name": "Pluma Blanca de la Bendecida",
+      "desc": "Una pluma pura e impoluta. Dicen que la creó la primera Cantalunas con sus propias manos."
+    },
+    "sands": {
+      "name": "Locura Delirante de la Veneraescarcha",
+      "desc": "Un reloj puro e impoluto que se detuvo junto a los delirios de su antigua dueña."
+    },
+    "goblet": {
+      "name": "Gloria Exultante de la Impoluta",
+      "desc": "Una taza de plata pura e impoluta. Se dice que era un antiguo objeto sagrado que se empleaba en los rituales de los Descendientes Lunaescarcha. Sin embargo, en las ceremonias de la actualidad ya no se usan recipientes como este."
+    },
+    "circlet": {
+      "name": "Corona Sagrada de la Devota",
+      "desc": "Una corona pura e impoluta cuya forma parece emular las astas de la emisaria espiritual de la arboleda."
+    }
+  }
+}

@@ -6,19 +6,19 @@
   "passiveName": "Pensée florissante",
   "passiveDescription": {
     "0": {
-      "0": "Déclencher une réaction d'Électrocution, de Sélénocution ou de Fleurissement restaure <cryo>12</cryo> pts d'énergie élémentaire et augmente la maîtrise élémentaire de <cryo>60</cryo> pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 15 s et même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+      "0": "Déclencher une réaction d'Électrocution, de Sélénocution, de Fleurissement ou de Sélénofleurissement restaure <cryo>12</cryo> pts d'énergie élémentaire et augmente la maîtrise élémentaire de <cryo>60</cryo> pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 15 s et même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
     },
     "1": {
-      "0": "Déclencher une réaction d'Électrocution, de Sélénocution ou de Fleurissement restaure <cryo>15</cryo> pts d'énergie élémentaire et augmente la maîtrise élémentaire de <cryo>75</cryo> pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 15 s et même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+      "0": "Déclencher une réaction d'Électrocution, de Sélénocution, de Fleurissement ou de Sélénofleurissement restaure <cryo>15</cryo> pts d'énergie élémentaire et augmente la maîtrise élémentaire de <cryo>75</cryo> pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 15 s et même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
     },
     "2": {
-      "0": "Déclencher une réaction d'Électrocution, de Sélénocution ou de Fleurissement restaure <cryo>18</cryo> pts d'énergie élémentaire et augmente la maîtrise élémentaire de <cryo>90</cryo> pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 15 s et même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+      "0": "Déclencher une réaction d'Électrocution, de Sélénocution, de Fleurissement ou de Sélénofleurissement restaure <cryo>18</cryo> pts d'énergie élémentaire et augmente la maîtrise élémentaire de <cryo>90</cryo> pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 15 s et même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
     },
     "3": {
-      "0": "Déclencher une réaction d'Électrocution, de Sélénocution ou de Fleurissement restaure <cryo>21</cryo> pts d'énergie élémentaire et augmente la maîtrise élémentaire de <cryo>105</cryo> pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 15 s et même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+      "0": "Déclencher une réaction d'Électrocution, de Sélénocution, de Fleurissement ou de Sélénofleurissement restaure <cryo>21</cryo> pts d'énergie élémentaire et augmente la maîtrise élémentaire de <cryo>105</cryo> pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 15 s et même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
     },
     "4": {
-      "0": "Déclencher une réaction d'Électrocution, de Sélénocution ou de Fleurissement restaure <cryo>24</cryo> pts d'énergie élémentaire et augmente la maîtrise élémentaire de <cryo>120</cryo> pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 15 s et même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+      "0": "Déclencher une réaction d'Électrocution, de Sélénocution, de Fleurissement ou de Sélénofleurissement restaure <cryo>24</cryo> pts d'énergie élémentaire et augmente la maîtrise élémentaire de <cryo>120</cryo> pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 15 s et même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
     }
   }
 }

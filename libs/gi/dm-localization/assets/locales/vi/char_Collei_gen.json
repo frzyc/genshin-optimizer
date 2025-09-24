@@ -96,14 +96,14 @@
   "passive1": {
     "name": "Lá Khẽ Bay Nghiêng",
     "description": {
-      "0": "Trước khi <strong>Phi Diệp Luân</strong> quay về, nếu nhân vật của bản thân trong đội kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa thì sẽ cung cấp cho nhân vật trạng thái \"Lá Mới\" khi Phi Diệp Luân quay về, liên tục gây cho kẻ địch xung quanh một lượng <dendro>Sát Thương Nguyên Tố Thảo</dendro> bằng 40% tấn công của Collei, duy trì 3s.",
+      "0": "Trước khi <strong>Phi Diệp Luân</strong> quay về, nếu nhân vật của bản thân trong đội kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ, Bung Tỏa hoặc Nguyệt-Sum Suê thì sẽ cung cấp cho nhân vật trạng thái \"Lá Mới\" khi Phi Diệp Luân quay về, liên tục gây cho kẻ địch xung quanh một lượng <dendro>Sát Thương Nguyên Tố Thảo</dendro> bằng 40% tấn công của Collei, duy trì 3s.",
       "1": "Trong thời gian duy trì hiệu ứng Lá Mới nếu như nhận lại hiệu ứng trùng lặp sẽ hủy hiệu ứng trước đó. Sát thương hiệu ứng Lá Mới gây ra được tính là sát thương Kỹ Năng Nguyên Tố."
     }
   },
   "passive2": {
     "name": "Rừng Rộng Gió Thoảng",
     "description": {
-      "0": "Nhân vật trong <strong>Khu Vực Cuilein-Anbar</strong> khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ khiến cho khu vực này duy trì thêm 1s.",
+      "0": "Nhân vật trong <strong>Khu Vực Cuilein-Anbar</strong> khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ, Bung Tỏa hoặc Nguyệt-Sum Suê sẽ khiến cho khu vực này duy trì thêm 1s.",
       "1": "Trong một lần <strong>Báu Vật Meo Meo</strong>, tối đa có thể kéo dài thời gian duy trì 3 lần thông qua cách này."
     }
   },
@@ -125,7 +125,7 @@
     "description": {
       "0": "Thiên phú cố định \"Lá Khẽ Bay Nghiêng\" sẽ chuyển thành:",
       "1": "Khi <strong>Phi Diệp Luân</strong> quay về sẽ cung cấp cho nhân vật trạng thái \"Lá Mới\" của thiên phú cố định \"Lá Khẽ Bay Nghiêng\", liên tục gây cho kẻ địch xung quanh một lượng <dendro>Sát Thương Nguyên Tố Thảo</dendro> bằng 40% tấn công của Collei, duy trì 3s.",
-      "2": "Từ khi thi triển <strong>Xua Hoa Quét Lá</strong> đến trước khi trạng thái \"Lá Mới\" lần này kết thúc, nếu nhân vật của bản thân trong đội kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ khiến trạng thái \"Lá Mới\" lần này kéo dài thêm 3s.",
+      "2": "Từ khi thi triển <strong>Xua Hoa Quét Lá</strong> đến trước khi trạng thái \"Lá Mới\" lần này kết thúc, nếu nhân vật của bản thân trong đội kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ, Bung Tỏa hoặc Nguyệt-Sum Suê sẽ khiến trạng thái \"Lá Mới\" lần này kéo dài thêm 3s.",
       "3": "Trạng thái Lá Mới tối đa kéo dài thời gian duy trì một lần thông qua cách này; khi trong thời gian duy trì nếu kích hoạt hiệu ứng Lá Mới lần nữa sẽ xóa hiệu ứng ban đầu. Sát thương gây ra của hiệu ứng Lá Mới được tính là sát thương Kỹ Năng Nguyên Tố.",
       "4": "Cần mở khóa thiên phú cố định \"Lá Khẽ Bay Nghiêng\"."
     }

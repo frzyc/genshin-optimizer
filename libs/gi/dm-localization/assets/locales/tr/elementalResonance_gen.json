@@ -29,6 +29,36 @@
   },
   "SprawlingGreenery": {
     "name": "Büyüyen Yeşillikler",
-    "desc": "Element Ustalığı 50 artar. Yanma, Hızlanma veya Çiçeklenme tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 30 Element Ustalığı kazanır. Şiddetlenme, Yayılma, Aşırı Çiçeklenme veya Filizlenme tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 20 Element Ustalığı kazanır. Yukarıdaki etkilerin süreleri bağımsız olarak hesaplanır."
+    "desc": "Element Ustalığı 50 artar. Yanma, Hızlanma, Çiçeklenme veya Ay Çiçeklenmesi tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 30 Element Ustalığı kazanır. Şiddetlenme, Yayılma, Aşırı Çiçeklenme veya Filizlenme tepkimeleri tetiklendiğinde 6 saniyeliğine yakındaki tüm grup üyeleri 20 Element Ustalığı kazanır. Yukarıdaki etkilerin süreleri bağımsız olarak hesaplanır."
+  },
+  "Moonsign": {
+    "name": "Ay Sembolü",
+    "desc": {
+      "0": "Grupta Ay Sembolü karakterleri olduğunda grup, bu karakterlerin sayısına göre Ay Sembolü Seviyesi kazanır.",
+      "1": "Grup, \"Ay Sembolü: Yükselen Parıltı\" aşamasına ulaştığında Ay Sembolü karakterleri güçlenir. Ay Sembolü olmayan karakterler de gruba güçlendirme sağlayabilir."
+    },
+    "nascentGleam": {
+      "name": "İlk Parıltı",
+      "desc": "Gruptaki tüm karakterler \"Ay Sembolü: İlk Parıltı\" etkisi kazanır."
+    },
+    "ascendantGleam": {
+      "name": "Yükselen Parıltı",
+      "desc": {
+        "0": {
+          "0": "Gruptaki tüm karakterler \"Ay Sembolü: Yükselen Parıltı\" etkisi kazanır ve Ay Sembolü karakterlerinin bazı Yetenek ile Becerileri gelişir. Aksi belirtilmedikçe, Ay Sembolü Seviyesi Yükselen Parıltıya ulaştığı zaman İlk Parıltı etkileri de uygulanır."
+        },
+        "1": {
+          "0": "<br/>",
+          "1": "Ayrıca, Ay Sembolü olmayan bir karakter Element Becerisi veya Element Patlaması kullandığında, Element Türüne göre 20 saniyeliğine yakındaki tüm karakterlerin Ay Tepkimesi Hasarını artırır. Bu Hasar en fazla %36 artabilir. Bu etki birikmez.",
+          "2": "Karakterin Element Türü:",
+          "3": [
+            "<pyro>Ateş</pyro>, <electro>Elektrik</electro> veya <cryo>Buz</cryo> ise: Her 100 Saldırı için Hasar %0,9 artar.",
+            "<hydro>Su</hydro> ise: Her 1.000 Maks. Can için Hasar %0,6 artar.",
+            "<geo>Toprak</geo> ise: Her 100 Savunma için Hasar %1 artar.",
+            "<anemo>Rüzgar</anemo> veya <dendro>Doğa</dendro> ise: Her 100 Element Ustalığı için Hasar %2,25 artar."
+          ]
+        }
+      }
+    }
   }
 }

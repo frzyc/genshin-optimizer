@@ -230,6 +230,9 @@
   "SunspraySpirit": {
     "name": "Fiebre estival"
   },
+  "LegionMorale": {
+    "name": "Moral de la legión"
+  },
   "Primogem": {
     "name": "Protogema"
   },
@@ -286,6 +289,9 @@
   },
   "GeoSigil": {
     "name": "Insignia Geo"
+  },
+  "LunaSigil": {
+    "name": "Insignia Lunar"
   },
   "InazumaReputationEXP": {
     "name": "EXP de reputación - Inazuma"
@@ -938,6 +944,12 @@
   "PhlogistonEnergyOrbCloseRange": {
     "name": "Orbe de energía de flogisto (cerca)"
   },
+  "MagneticEnergyOrb": {
+    "name": "Orbe de energía magnética"
+  },
+  "LargeMagneticEnergyOrb": {
+    "name": "Gran orbe de energía magnética"
+  },
   "TestRandomTreasureChest": {
     "name": ""
   },
@@ -1049,6 +1061,15 @@
   "Ineffa": {
     "name": "Ineffa"
   },
+  "Lauma": {
+    "name": "Lauma"
+  },
+  "Flins": {
+    "name": "Flins"
+  },
+  "Aino": {
+    "name": "Aino"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
   },
@@ -1099,6 +1120,15 @@
   },
   "IneffasStellaFortuna": {
     "name": "Stella Fortuna de Ineffa"
+  },
+  "LaumasStellaFortuna": {
+    "name": "Stella Fortuna de Lauma"
+  },
+  "FlinssStellaFortuna": {
+    "name": "Stella Fortuna de Flins"
+  },
+  "AinosStellaFortuna": {
+    "name": "Stella Fortuna de Aino"
   },
   "Apple": {
     "name": "Manzana"
@@ -1315,6 +1345,9 @@
   },
   "FermentedJuice": {
     "name": "Jugo fermentado"
+  },
+  "Rye": {
+    "name": "Centeno"
   },
   "JeansDocumentPackage": {
     "name": "Paquete de documentos de Jean"
@@ -3302,6 +3335,9 @@
   "CondessenceCrystal": {
     "name": "Esencialita"
   },
+  "RainbowdropCrystal": {
+    "name": "Iriscita"
+  },
   "NorthlanderSwordBillet": {
     "name": "Prototipo de espada del Norte"
   },
@@ -3530,6 +3566,27 @@
   "RedBerryshroom": {
     "name": "Frutiseta roja"
   },
+  "PortableBearing": {
+    "name": "Rodamiento portátil"
+  },
+  "IcyPebble": {
+    "name": "Guijarro glacial"
+  },
+  "FrostlampFlower": {
+    "name": "Flor velaescarcha"
+  },
+  "NocturnalBlossom": {
+    "name": "Flor sombranocturna"
+  },
+  "MoonfallSilver": {
+    "name": "Plata lunacaída"
+  },
+  "Lakkaberry": {
+    "name": "Lakka"
+  },
+  "MidsommarBerry": {
+    "name": "Bellota veraniega"
+  },
   "BirchWood": {
     "name": "Madera de abedul"
   },
@@ -3604,6 +3661,18 @@
   },
   "PeachPalmWood": {
     "name": "Madera de duraznococotero"
+  },
+  "SilverFirWood": {
+    "name": "Madera de abeto frioargénteo"
+  },
+  "HazelnutWood": {
+    "name": "Madera de avellano"
+  },
+  "PedunculateOakWood": {
+    "name": "Madera de roble estival"
+  },
+  "AlderWood": {
+    "name": "Madera de aliso"
   },
   "Fabric": {
     "name": "Tela"
@@ -4079,8 +4148,8 @@
   "BloodiedSergeantsInsignia": {
     "name": "Insignia de Oficial con restos de sangre"
   },
-  "CorporalNikolaysDiary": {
-    "name": "Nota del cabo Nikolay"
+  "KapralNikolaysDiary": {
+    "name": "Nota del kapral Nikolay"
   },
   "MoraPurse": {
     "name": "Bolsa de Mora"
@@ -4976,6 +5045,9 @@
   "DustOfAzoth": {
     "name": "Polvo de azoth"
   },
+  "MasterlessStellaFortuna": {
+    "name": "Stella Fortuna sin dueño"
+  },
   "TeachingsOfFreedom": {
     "name": "Enseñanzas de la libertad"
   },
@@ -5141,6 +5213,33 @@
   "PhilosophiesOfConflict": {
     "name": "Filosofía del conflicto"
   },
+  "TeachingsOfMoonlight": {
+    "name": "Enseñanzas de la luz lunar"
+  },
+  "GuideToMoonlight": {
+    "name": "Guía de la luz lunar"
+  },
+  "PhilosophiesOfMoonlight": {
+    "name": "Filosofía de la luz lunar"
+  },
+  "TeachingsOfElysium": {
+    "name": "Enseñanzas del paraíso"
+  },
+  "GuideToElysium": {
+    "name": "Guía del paraíso"
+  },
+  "PhilosophiesOfElysium": {
+    "name": "Filosofía del paraíso"
+  },
+  "TeachingsOfVagrancy": {
+    "name": "Enseñanzas de la errancia"
+  },
+  "GuideToVagrancy": {
+    "name": "Guía de la errancia"
+  },
+  "PhilosophiesOfVagrancy": {
+    "name": "Filosofía de la errancia"
+  },
   "SanctifyingDroplet": {
     "name": "Gota Bendita"
   },
@@ -5248,6 +5347,12 @@
   },
   "JubilantFeather": {
     "name": "Pluma jocosa"
+  },
+  "Lunoculus": {
+    "name": "Selenóculus perdido"
+  },
+  "BorderlandShrineOfDepthsKey": {
+    "name": "Llave de Santuario de las Profundidades de la frontera"
   },
   "Dish": {
     "name": "Plato"
@@ -7781,6 +7886,153 @@
   "DeliciousShrimpBisque": {
     "name": "Bisqué de camarones delicioso"
   },
+  "SuspiciousThickCutDuelistsBurger": {
+    "name": "Hamburguesa del duelista de corte grueso extraña"
+  },
+  "ThickCutDuelistsBurger": {
+    "name": "Hamburguesa del duelista de corte grueso"
+  },
+  "DeliciousThickCutDuelistsBurger": {
+    "name": "Hamburguesa del duelista de corte grueso deliciosa"
+  },
+  "SuspiciousLakkaberryKrumkakes": {
+    "name": "Krumkakes con lakka extraños"
+  },
+  "LakkaberryKrumkakes": {
+    "name": "Krumkakes con lakka"
+  },
+  "DeliciousLakkaberryKrumkakes": {
+    "name": "Krumkakes con lakka deliciosos"
+  },
+  "SuspiciousTodaysBoon": {
+    "name": "Bendición del día extraña"
+  },
+  "TodaysBoon": {
+    "name": "Bendición del día"
+  },
+  "DeliciousTodaysBoon": {
+    "name": "Bendición del día deliciosa"
+  },
+  "SuspiciousSmokedFishSteak": {
+    "name": "Filete de pescado ahumado extraño"
+  },
+  "SmokedFishSteak": {
+    "name": "Filete de pescado ahumado"
+  },
+  "DeliciousSmokedFishSteak": {
+    "name": "Filete de pescado ahumado delicioso"
+  },
+  "SuspiciousBorderlandCrispbread": {
+    "name": "Galletas fronterizas extrañas"
+  },
+  "BorderlandCrispbread": {
+    "name": "Galletas fronterizas"
+  },
+  "DeliciousBorderlandCrispbread": {
+    "name": "Galletas fronterizas deliciosas"
+  },
+  "SuspiciousMidsommarTorte": {
+    "name": "Pastelillo de bellotas veraniegas extraño"
+  },
+  "MidsommarTorte": {
+    "name": "Pastelillo de bellotas veraniegas"
+  },
+  "DeliciousMidsommarTorte": {
+    "name": "Pastelillo de bellotas veraniegas delicioso"
+  },
+  "SuspiciousFruitTandemTurnovers": {
+    "name": "Empanadillas bifrutas extrañas"
+  },
+  "FruitTandemTurnovers": {
+    "name": "Empanadillas bifrutas"
+  },
+  "DeliciousFruitTandemTurnovers": {
+    "name": "Empanadillas bifrutas deliciosas"
+  },
+  "SuspiciousBerriesAndFriedMeat": {
+    "name": "Carne frita con bayas extraña"
+  },
+  "BerriesAndFriedMeat": {
+    "name": "Carne frita con bayas"
+  },
+  "DeliciousBerriesAndFriedMeat": {
+    "name": "Carne frita con bayas deliciosa"
+  },
+  "SuspiciousRouletteSpecial": {
+    "name": "Ruleta de bebidas extraña"
+  },
+  "RouletteSpecial": {
+    "name": "Ruleta de bebidas"
+  },
+  "DeliciousRouletteSpecial": {
+    "name": "Ruleta de bebidas deliciosa"
+  },
+  "SuspiciousNodKraiHotDog": {
+    "name": "Perrito caliente de Nod Krai extraño"
+  },
+  "NodKraiHotDog": {
+    "name": "Perrito caliente de Nod Krai"
+  },
+  "DeliciousNodKraiHotDog": {
+    "name": "Perrito caliente de Nod Krai delicioso"
+  },
+  "SuspiciousCrispyRoast": {
+    "name": "Asado crujiente extraño"
+  },
+  "CrispyRoast": {
+    "name": "Asado crujiente"
+  },
+  "DeliciousCrispyRoast": {
+    "name": "Asado crujiente delicioso"
+  },
+  "SuspiciousLakkaberryMadame": {
+    "name": "Pollo asado con lakkas extraño"
+  },
+  "LakkaberryMadame": {
+    "name": "Pollo asado con lakkas"
+  },
+  "DeliciousLakkaberryMadame": {
+    "name": "Pollo asado con lakkas delicioso"
+  },
+  "ThunderclapSlash": {
+    "name": "¡Corte atronador!"
+  },
+  "WhisperInTheWoods": {
+    "name": "Susurro en el bosque"
+  },
+  "LongNightAlight": {
+    "name": "Fuego de una larga noche"
+  },
+  "ClinkClankConfectioneryCup": {
+    "name": "Taza de dulces crac-crac"
+  },
+  "SugarSculptureRimehornDeer": {
+    "name": "Figura de caramelo: ciervo astaglacial"
+  },
+  "SugarSculptureChicBadger": {
+    "name": "Figura de caramelo: tejón mantomelena"
+  },
+  "SugarSculptureDualblazeLongplumeIbis": {
+    "name": "Figura de caramelo: ibis plumalarga brillodoble"
+  },
+  "SugarSculpturePuffin": {
+    "name": "Figura de caramelo: frailecillo riscomarino"
+  },
+  "SugarSculptureFrostfinWhale": {
+    "name": "Figura de caramelo: orca aletaescarcha"
+  },
+  "SugarSculptureIneffa": {
+    "name": "Figura de caramelo: Ineffa"
+  },
+  "SugarSculptureLauma": {
+    "name": "Figura de caramelo: Lauma"
+  },
+  "SugarSculptureAino": {
+    "name": "Figura de caramelo: Aino"
+  },
+  "SugarSculptureFlins": {
+    "name": "Figura de caramelo: Flins"
+  },
   "RecipeItem": {
     "name": "Ingredientes"
   },
@@ -8510,6 +8762,42 @@
   "RecipeShrimpBisque": {
     "name": "Receta: bisqué de camarones"
   },
+  "RecipeThickCutDuelistsBurger": {
+    "name": "Receta: hamburguesa del duelista de corte grueso"
+  },
+  "RecipeLakkaberryKrumkakes": {
+    "name": "Receta: krumkakes con lakka"
+  },
+  "RecipeTodaysBoon": {
+    "name": "Receta: bendición del día"
+  },
+  "RecipeSmokedFishSteak": {
+    "name": "Receta: filete de pescado ahumado"
+  },
+  "RecipeBorderlandCrispbread": {
+    "name": "Receta: galletas fronterizas"
+  },
+  "RecipeMidsommarTorte": {
+    "name": "Receta: pastelillo de bellotas veraniegas"
+  },
+  "RecipeFruitTandemTurnovers": {
+    "name": "Receta: empanadillas bifrutas"
+  },
+  "RecipeBerriesAndFriedMeat": {
+    "name": "Receta: carne frita con bayas"
+  },
+  "RecipeRouletteSpecial": {
+    "name": "Receta: ruleta de bebidas"
+  },
+  "RecipeNodKraiHotDog": {
+    "name": "Receta: perrito caliente de Nod Krai"
+  },
+  "RecipeCrispyRoast": {
+    "name": "Receta: asado crujiente"
+  },
+  "RecipeLakkaberryMadame": {
+    "name": "Receta: pollo asado con lakkas"
+  },
   "CraftedItems": {
     "name": "Objeto sintetizado"
   },
@@ -8551,6 +8839,12 @@
   },
   "Spice": {
     "name": "Especias"
+  },
+  "Smetana": {
+    "name": "Smetana"
+  },
+  "RyeFlour": {
+    "name": "Harina de centeno"
   },
   "HeatshieldPotion": {
     "name": "Poción de resistencia térmica"
@@ -8638,6 +8932,12 @@
   },
   "EmberglowBait": {
     "name": "Cebo cálido"
+  },
+  "BerryBait": {
+    "name": "Cebo de bellota"
+  },
+  "RefreshingLakkaBait": {
+    "name": "Cebo inmaculado"
   },
   "PrimordialEssence": {
     "name": "Esencial primordial"
@@ -9002,6 +9302,51 @@
   "BlazingPrismshell": {
     "name": "Fragmento de caparazón prismaflamígero"
   },
+  "BrokenDriveShaft": {
+    "name": "Eje dañado"
+  },
+  "ReinforcedDriveShaft": {
+    "name": "Eje reforzado"
+  },
+  "PrecisionDriveShaft": {
+    "name": "Eje refinado"
+  },
+  "TatteredWarrant": {
+    "name": "Distintivo desgastado"
+  },
+  "ImmaculateWarrant": {
+    "name": "Distintivo sofisticado"
+  },
+  "FrostEtchedWarrant": {
+    "name": "Distintivo escarchado"
+  },
+  "FrostnightsGlimmer": {
+    "name": "Destello de la noche escarchada"
+  },
+  "FrostnightsGlow": {
+    "name": "Resplandor de la noche escarchada"
+  },
+  "FrostnightsGlory": {
+    "name": "Fulgor de la noche escarchada"
+  },
+  "LightlessBone": {
+    "name": "Trozo de hueso apagado"
+  },
+  "GlowingRemains": {
+    "name": "Restos centelleantes"
+  },
+  "RadiantExoskeleton": {
+    "name": "Hueso externo reluciente"
+  },
+  "MistshroudManifestation": {
+    "name": "Condensado brumoso"
+  },
+  "MistshroudPlate": {
+    "name": "Fragmento de armadura brumoso"
+  },
+  "MistshroudHelmet": {
+    "name": "Casco brumoso"
+  },
   "HurricaneSeed": {
     "name": "Semilla de huracán"
   },
@@ -9230,6 +9575,12 @@
   "SecretSourceAirflowAccumulator": {
     "name": "Acumulador de aire fuentenigma"
   },
+  "PrecisionKuuvahkiStampingDie": {
+    "name": "Troquel de “estam-pato” de kuuvahki preciso"
+  },
+  "LightbearingScaleFeather": {
+    "name": "Ala rutilante"
+  },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de azulejo de Decarabian"
   },
@@ -9446,6 +9797,42 @@
   "NightWindsMysticRevelation": {
     "name": "Revelación espiritista vientonocturna"
   },
+  "ArtfulDeviceFragment": {
+    "name": "Fragmento del instrumento misterioso"
+  },
+  "ArtfulDeviceReplica": {
+    "name": "Réplica del instrumento misterioso"
+  },
+  "ArtfulDeviceInheritance": {
+    "name": "Legado del instrumento misterioso"
+  },
+  "ArtfulDeviceWish": {
+    "name": "Aspiración del instrumento misterioso"
+  },
+  "EmberOfLongNightFlint": {
+    "name": "Ascuas del fuego de la larga noche"
+  },
+  "AfterglowOfLongNightFlint": {
+    "name": "Destello del fuego de la larga noche"
+  },
+  "FlareOfLongNightFlint": {
+    "name": "Llama del fuego de la larga noche"
+  },
+  "BlazeOfLongNightFlint": {
+    "name": "Ardor del fuego de la larga noche"
+  },
+  "SunderedGloryOfTheFarNorthScions": {
+    "name": "Gloria póstuma de los Hijos del Lejano Norte"
+  },
+  "UnyieldingDelusionOfTheFarNorthScions": {
+    "name": "Obstinación de los Hijos del Lejano Norte"
+  },
+  "OblationOfTheFarNorthScions": {
+    "name": "Oblación de los Hijos del Lejano Norte"
+  },
+  "AureateRadianceOfTheFarNorthScions": {
+    "name": "Refulgencia de los Hijos del Lejano Norte"
+  },
   "StarterSupplyBundle": {
     "name": "Paquete de suministros de principiante"
   },
@@ -9595,6 +9982,9 @@
   },
   "PhilosophiesOfAJourney": {
     "name": "Filosofía del periplo"
+  },
+  "TravelingBounties": {
+    "name": "Botín de viaje"
   },
   "DomainReliquaryTierIII": {
     "name": "Cofre de artefactos de los dominios - Categoría 3"
@@ -10097,14 +10487,14 @@
   "FlyingSerpentsHorn": {
     "name": "Cuerno de aerofidio"
   },
-  "CaptainZoyaSnezhevnasReportI": {
-    "name": "Informe de operación de la capitana Zoya Snezhevna (I)"
+  "KapitanPoruchikZoyaSnezhevnasReportI": {
+    "name": "Informe de operación de la capitana porúchik Zoya Snezhevna (I)"
   },
-  "CaptainZoyaSnezhevnasReportII": {
-    "name": "Informe de operación de la capitana Zoya Snezhevna (II)"
+  "KapitanPoruchikZoyaSnezhevnasReportII": {
+    "name": "Informe de operación de la capitana porúchik Zoya Snezhevna (II)"
   },
-  "CaptainZoyaSnezhevnasReportIII": {
-    "name": "Informe de operación de la capitana Zoya Snezhevna (III)"
+  "KapitanPoruchikZoyaSnezhevnasReportIII": {
+    "name": "Informe de operación de la capitana porúchik Zoya Snezhevna (III)"
   },
   "DamagedRecordsI": {
     "name": "Registros dañados (I)"
@@ -12188,8 +12578,8 @@
   "FusionProfusionDJRemixSelections": {
     "name": "Fusión definitiva: selección de mezclas"
   },
-  "Kamera": {
-    "name": "Daguerrotipo"
+  "PhotographyRecords": {
+    "name": "Registro de imágenes"
   },
   "CafLuteceHouseGrounds": {
     "name": "Café exclusivo del Café Lutecia"
@@ -12287,8 +12677,14 @@
   "LetterOfUnknownOrigin": {
     "name": "Cartas de origen desconocido"
   },
+  "PortableKuuvahkiChargingComponent": {
+    "name": "Componente portátil de recarga de kuuvahki"
+  },
   "RantiysHat": {
     "name": "Sombrero de Rantiy"
+  },
+  "WelcomeToNashaTown": {
+    "name": "¡Bienvenidos a la Villa Nasha!"
   },
   "KeyToTheHibernationChamber": {
     "name": "Llave de la cámara de hibernación"
@@ -12307,6 +12703,18 @@
   },
   "RekissOrders": {
     "name": "Órdenes de Rekis"
+  },
+  "AinosToolbox": {
+    "name": "Caja de herramientas de Aino"
+  },
+  "AinosToolboxEmpty": {
+    "name": "Caja de herramientas de Aino (vacía)"
+  },
+  "IneffasToolbox": {
+    "name": "Caja de herramientas de Ineffa"
+  },
+  "IneffasToolboxEmpty": {
+    "name": "Caja de herramientas de Ineffa (vacía)"
   },
   "InvitationLetterForABallNowPast": {
     "name": "Invitación para el pasado baile de máscaras"
@@ -12350,6 +12758,9 @@
   "MiniatureSun": {
     "name": "“Sol” en miniatura"
   },
+  "MaitesIOU": {
+    "name": "Pagaré de Maite"
+  },
   "TeyvatCommemorativeAlbum": {
     "name": "Álbum de Teyvat"
   },
@@ -12362,8 +12773,8 @@
   "DecipheredMessage": {
     "name": "Mensaje descodificado"
   },
-  "MysteriousBolt": {
-    "name": "Tornillo misterioso"
+  "KrumkakeBolt": {
+    "name": "Tornillo krumkake"
   },
   "InvestigativeReportBakunawa": {
     "name": "Informe de investigación: Bakunawa"
@@ -12373,6 +12784,9 @@
   },
   "InvestigativeReportSecretCave": {
     "name": "Informe de investigación: Cueva secreta"
+  },
+  "EvermoonSeal": {
+    "name": "Sellorroca de la Luna Eterna"
   },
   "CryptexLetter": {
     "name": "Carta del criptex"
@@ -12419,6 +12833,9 @@
   "EasybreezeBadge": {
     "name": "Insignia Brisapacible"
   },
+  "SugarSculptureBox": {
+    "name": "Cajita con figuras de caramelo"
+  },
   "SundjattasPhlogistonForgeNotes": {
     "name": "Sundiata y el forjado de flogisto"
   },
@@ -12431,6 +12848,21 @@
   "PriestesssRecordsIII": {
     "name": "Registros de la Sacerdotisa (III)"
   },
+  "UndyingOnesMourningBell": {
+    "name": "Campana Fúnebre del Inmortal"
+  },
+  "AHornUnwinded": {
+    "name": "Cuerno Insonoro"
+  },
+  "DyedTassel": {
+    "name": "Morrión Contaminado"
+  },
+  "MedicineFromTheCuratoriumOfSecrets": {
+    "name": "Poción de la Cámara de Secretos"
+  },
+  "WildHuntPhenomenaLocationMap": {
+    "name": "Mapa de ubicaciones del fenómeno de la Cacería salvaje"
+  },
   "LetterAddressedToTheCaptain": {
     "name": "Carta para el capitán"
   },
@@ -12439,6 +12871,162 @@
   },
   "SomeonesLostPassword": {
     "name": "Contraseña perdida de alguien"
+  },
+  "InscriptaCognoscentisFeather": {
+    "name": "Pluma de cuervo del grabaconocimientos"
+  },
+  "WeavenexaCognoscentisIntoxication": {
+    "name": "Embriaguez del tejeconocimientos"
+  },
+  "StratagemaCognoscentisMask": {
+    "name": "Máscara del buscaconocimientos"
+  },
+  "SpecialSugarSculptureBox": {
+    "name": "Cajita especial con figuras de caramelo"
+  },
+  "SomeonesRequestForHelp": {
+    "name": "Carta de socorro de alguien"
+  },
+  "BountyTokenTrickstersRedSatin": {
+    "name": "Recompensa: Satén rojo de la estafadora"
+  },
+  "BountyTokenLadysBrooch": {
+    "name": "Recompensa: Broche de la dama"
+  },
+  "BountyTokenMudStainedHandguard": {
+    "name": "Recompensa: Guardamano manchado de barro"
+  },
+  "MessilyScribbledNotesI": {
+    "name": "Notas con caligrafía descuidada (I)"
+  },
+  "MessilyScribbledNotesII": {
+    "name": "Notas con caligrafía descuidada (II)"
+  },
+  "MessilyScribbledNotesIII": {
+    "name": "Notas con caligrafía descuidada (III)"
+  },
+  "MessilyScribbledNotesIV": {
+    "name": "Notas con caligrafía descuidada (IV)"
+  },
+  "DataStorageCassette": {
+    "name": "Casete con datos"
+  },
+  "PatrolRecords": {
+    "name": "Registro de patrulla"
+  },
+  "DimasReflection": {
+    "name": "Carta de reflexión de Dima"
+  },
+  "AMerchantsLetter": {
+    "name": "Carta de una comerciante"
+  },
+  "ConchPatternedPages": {
+    "name": "Páginas con patrón de caracola"
+  },
+  "ConchPatternedNotebook": {
+    "name": "Cuaderno con patrón de caracola"
+  },
+  "SemyonsNotes": {
+    "name": "Notas de Semión"
+  },
+  "WellPreservedPunchedTape": {
+    "name": "Cinta perforada bien preservada"
+  },
+  "AirspaceDataCollector20": {
+    "name": "Recolector de datos espaciales 2.0"
+  },
+  "PrivatesNotesIII": {
+    "name": "Notas de un soldado (III)"
+  },
+  "PrivatesNotesI": {
+    "name": "Notas de un soldado (I)"
+  },
+  "PrivatesNotesII": {
+    "name": "Notas de un soldado (II)"
+  },
+  "SomeonesResearchNotes": {
+    "name": "Apuntes de investigación de alguien"
+  },
+  "Toolkit": {
+    "name": "Kit de herramientas"
+  },
+  "KuuvahkiExperimentalDesignBureauFloorPlan": {
+    "name": "Plano de la Oficina de Diseño Experimental Kuuvahki"
+  },
+  "SparePart": {
+    "name": "Pieza de repuesto"
+  },
+  "Lever": {
+    "name": "Palanca"
+  },
+  "PhotoWithColonelIronWhale": {
+    "name": "Imagen con el Coronel Ballenaférrea"
+  },
+  "OldPortableBearing": {
+    "name": "Rodamiento portátil antiguo"
+  },
+  "Stellafruit": {
+    "name": "Fruta estelar"
+  },
+  "TrainingGroundTarget": {
+    "name": "Objetivo de entrenamiento"
+  },
+  "AunisNotes": {
+    "name": "Notas de Auni"
+  },
+  "BackupProgramModule": {
+    "name": "Copia del módulo"
+  },
+  "DamagedPhoto": {
+    "name": "Imagen dañada"
+  },
+  "OpenedSecretLetter": {
+    "name": "Carta secreta abierta"
+  },
+  "ConchNotebook": {
+    "name": "Cuaderno caracola"
+  },
+  "ResearchLog": {
+    "name": "Diario de investigación"
+  },
+  "ResearchRecords": {
+    "name": "Registro de investigación"
+  },
+  "TheLegendsOfReedMillerThiefExtraordinaireI": {
+    "name": "La leyenda del gran ladrón Reed Miller (I)"
+  },
+  "TheLegendsOfReedMillerThiefExtraordinaireII": {
+    "name": "La leyenda del gran ladrón Reed Miller (II)"
+  },
+  "TheLegendsOfReedMillerThiefExtraordinaireIII": {
+    "name": "La leyenda del gran ladrón Reed Miller (III)"
+  },
+  "HymnsOfTheFarNorthI": {
+    "name": "Letanías del Lejano Norte (I)"
+  },
+  "HymnsOfTheFarNorthII": {
+    "name": "Letanías del Lejano Norte (II)"
+  },
+  "HymnsOfTheFarNorthIII": {
+    "name": "Letanías del Lejano Norte (III)"
+  },
+  "ConchEchoesI": {
+    "name": "El eco de la caracola (I)"
+  },
+  "ConchEchoesII": {
+    "name": "El eco de la caracola (II)"
+  },
+  "MaitesNotes": {
+    "name": "Notas de Maite"
+  },
+  "LetterForLovia": {
+    "name": "Carta para Lovia"
+  },
+  "LetterForAila": {
+    "name": "Carta para Aila"
+  },
+  "AilasNotes": {
+    "name": "Notas de Aila"
   },
   "TearsAmongTheStars": {
     "name": "Lágrima estelar"
@@ -12559,6 +13147,15 @@
   },
   "SkysplitGembloomSeed": {
     "name": "Semilla de flor rocanubosa"
+  },
+  "FrostlampFlowerSeed": {
+    "name": "Semilla de flor velaescarcha"
+  },
+  "MidsommarBerrySeed": {
+    "name": "Semilla de bellota veraniega"
+  },
+  "LakkaberrySeed": {
+    "name": "Semilla de lakka"
   },
   "Medaka": {
     "name": "Medaka"
@@ -12695,6 +13292,27 @@
   "SecretSourceScoutSweeper": {
     "name": "Mecanismo Fuentenigma - Patrullero"
   },
+  "CommonAxeheadFish": {
+    "name": "Pez hacha corriente"
+  },
+  "FrostedAxeheadFish": {
+    "name": "Pez hacha glacial"
+  },
+  "BlazingAxeheadFish": {
+    "name": "Pez hacha ferrocandente"
+  },
+  "VeggieMaulerShark": {
+    "name": "Tibuferoz vegetariano"
+  },
+  "NeonMaulerShark": {
+    "name": "Tibuferoz iridiscente"
+  },
+  "AzuregazeCrystalEye": {
+    "name": "Pez ojobrillante cieloazul"
+  },
+  "NightgazeCrystalEye": {
+    "name": "Pez ojobrillante nocturno"
+  },
   "WingsOfFirstFlight": {
     "name": "Alas de principiante"
   },
@@ -12742,6 +13360,12 @@
   },
   "WingsOfFatesCourseIntertwined": {
     "name": "Alas del Entrelazamiento Predestinado"
+  },
+  "WingsOfTheSilentMoon": {
+    "name": "Alas de la Luna Silente"
+  },
+  "WingsOfLeisurelyMoments": {
+    "name": "Alas del Encuentro Ocioso"
   },
   "RadiantSpincrystal1": {
     "name": "Girocristal radiante (1)"
@@ -13259,6 +13883,48 @@
   "RadiantSpincrystal156": {
     "name": "Girocristal radiante (156)"
   },
+  "RadiantSpincrystalTheLongWayHomePartI": {
+    "name": "Girocristal radiante: «The Long Way Home» (I)"
+  },
+  "RadiantSpincrystalTheLongWayHomePartII": {
+    "name": "Girocristal radiante: «The Long Way Home» (II)"
+  },
+  "RadiantSpincrystal157": {
+    "name": "Girocristal radiante (157)"
+  },
+  "RadiantSpincrystal158": {
+    "name": "Girocristal radiante (158)"
+  },
+  "RadiantSpincrystal159": {
+    "name": "Girocristal radiante (159)"
+  },
+  "RadiantSpincrystal160": {
+    "name": "Girocristal radiante (160)"
+  },
+  "RadiantSpincrystal161": {
+    "name": "Girocristal radiante (161)"
+  },
+  "RadiantSpincrystal162": {
+    "name": "Girocristal radiante (162)"
+  },
+  "RadiantSpincrystal163": {
+    "name": "Girocristal radiante (163)"
+  },
+  "RadiantSpincrystal164": {
+    "name": "Girocristal radiante (164)"
+  },
+  "RadiantSpincrystal165": {
+    "name": "Girocristal radiante (165)"
+  },
+  "RadiantSpincrystal166": {
+    "name": "Girocristal radiante (166)"
+  },
+  "RadiantSpincrystal167": {
+    "name": "Girocristal radiante (167)"
+  },
+  "RadiantSpincrystal168": {
+    "name": "Girocristal radiante (168)"
+  },
   "LanternFiber": {
     "name": "Celulosa para linterna"
   },
@@ -13348,6 +14014,9 @@
   },
   "DriftersCrystalMarrow": {
     "name": "Médula cristalina del errante"
+  },
+  "GoldenStrings": {
+    "name": "Cuerda dorada"
   },
   "FalconsDance": {
     "name": "Danza del halcón"
@@ -13498,6 +14167,9 @@
   },
   "FlowhornFlounderfinder": {
     "name": "Capturapeces fluyeceronte"
+  },
+  "MoongleamSapling": {
+    "name": "Rama blanca brillosereno"
   },
   "GenshinImpactANewWorld": {
     "name": "Genshin Impact - Un nuevo mundo"
@@ -14243,6 +14915,30 @@
   "CelebrationTunaOnRice": {
     "name": "Celebración - Atún con arroz"
   },
+  "LaumaBranchedAntlers": {
+    "name": "Lauma - Astas enramadas"
+  },
+  "FlinsOathkeepersLantern": {
+    "name": "Flins - Lámpara del juramento"
+  },
+  "AinoWhoopsieDucksie": {
+    "name": "Aino - Metiendo “el pato”"
+  },
+  "NodKraiMoonlight": {
+    "name": "Nod Krai - Luz lunar"
+  },
+  "NodKraiSacredRealm": {
+    "name": "Nod Krai - Reino sagrado"
+  },
+  "AchievementTimeApart": {
+    "name": "Logro - Una larga separación"
+  },
+  "TravelNotesGlacialMoon": {
+    "name": "PB - Luna helada"
+  },
+  "CelebrationSublimeFlavors": {
+    "name": "Celebración - Sabores sublimes"
+  },
   "EchoDandelionKnight": {
     "name": "Estela: Caballera de Dandelion"
   },
@@ -14281,6 +14977,24 @@
   },
   "EchoLonesomeTranscendence": {
     "name": "Estela: La Ermitaña Sobrehumana"
+  },
+  "EchoValleyOrchid": {
+    "name": "Estela: La Orquídea del Valle"
+  },
+  "EchoPhysicOfPurity": {
+    "name": "Estela: La Purificadora de las Plantas"
+  },
+  "FaintGlow": {
+    "name": "Destello tenue"
+  },
+  "FirstLight": {
+    "name": "Fulgor naciente"
+  },
+  "GlimmeringGlory": {
+    "name": "Gloria resplandeciente"
+  },
+  "BrimmingSpiritflow": {
+    "name": "Alma pletórica"
   },
   "AnemoculusResonanceStone": {
     "name": "Roca de resonancia de anemóculus"
@@ -14323,6 +15037,9 @@
   },
   "WarmingBottle": {
     "name": "Vial exotérmico"
+  },
+  "Kamera": {
+    "name": "Daguerrotipo"
   },
   "KuriousKamera": {
     "name": "Daguerrotipo extraño"
@@ -14579,6 +15296,24 @@
   "LeapingSpiritPiano": {
     "name": "Piano animaespíritu"
   },
+  "UjolaCat": {
+    "name": "Gato Ujola"
+  },
+  "RotorHoveringDaybed": {
+    "name": "Sofá flotante con rotor"
+  },
+  "MementoKamera": {
+    "name": "Daguerrotipo capturarrecuerdos"
+  },
+  "LunaTreasureCompass": {
+    "name": "Brújula buscatesoros lunar"
+  },
+  "TravelAccounts": {
+    "name": "Cuaderno de anécdotas"
+  },
+  "LunarArcanaCase": {
+    "name": "Portabarajas de Arcanos lunares"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instrucciones: Roca de resonancia de anemóculus"
   },
@@ -14702,6 +15437,21 @@
   "DiagramChainBreaker": {
     "name": "Plano: Rompecadenas"
   },
+  "DiagramSerenitysCall": {
+    "name": "Plano: Silbido Melifluo"
+  },
+  "DiagramSnareHook": {
+    "name": "Plano: Gancho Trampero"
+  },
+  "DiagramMasterKey": {
+    "name": "Plano: Llave Maestra"
+  },
+  "DiagramBlackmarrowLantern": {
+    "name": "Plano: Lámpara Medulaoscura"
+  },
+  "DiagramProspectorsShovel": {
+    "name": "Plano: Azada Excavatesoros"
+  },
   "InstructionsDendroculusResonanceStone": {
     "name": "Instrucciones: Roca de resonancia de dendróculus"
   },
@@ -14731,6 +15481,12 @@
   },
   "FormulaEmberglowBait": {
     "name": "Receta: cebo cálido"
+  },
+  "FormulaBerryBait": {
+    "name": "Receta: cebo de bellota"
+  },
+  "FormulaRefreshingLakkaBait": {
+    "name": "Receta: cebo inmaculado"
   },
   "SilkenPrint": {
     "name": "Impresión de seda"
@@ -14999,6 +15755,30 @@
   "HandEyeBodyCoordination": {
     "name": "Gestualidad coordinada"
   },
+  "IntimidatingStance": {
+    "name": "Postura intimidante"
+  },
+  "LeisurelyMoment": {
+    "name": "Tiempo de ocio"
+  },
+  "SeriousContemplation": {
+    "name": "Reflexión meditada"
+  },
+  "BurstOfInspiration": {
+    "name": "Chispas de inspiración"
+  },
+  "ReadyAndRaringToGo": {
+    "name": "A la ofensiva"
+  },
+  "DignifiedCountenance": {
+    "name": "Presencia formal"
+  },
+  "ScaryStance": {
+    "name": "Susto"
+  },
+  "CarefulCommunication": {
+    "name": "Comunicación ponderada"
+  },
   "FantasticalMarvel": {
     "name": "Maravilla festiva"
   },
@@ -15046,6 +15826,15 @@
   },
   "EternalDreamsOfSerenity": {
     "name": "Sueños eternos de serenidad"
+  },
+  "FalconWingsAblaze": {
+    "name": "Alas de halcón ardientes"
+  },
+  "WisdomOfCherriedFrost": {
+    "name": "Sabiduría del cerezo helado"
+  },
+  "RedHotMeter": {
+    "name": "Ritmo al rojo vivo"
   },
   "VigorousYapping": {
     "name": "Conversación animada"
@@ -15136,6 +15925,9 @@
   },
   "GluttonousYumkasaurMountainKing": {
     "name": "Rey Yumkasaurio Glotón"
+  },
+  "LordOfErodedPrimalFire": {
+    "name": "Señor del Fuego Primigenio Corroído"
   },
   "UndividedHeart": {
     "name": "Corazón indiviso"
@@ -15491,6 +16283,15 @@
   "TheAllDevourer": {
     "name": "Devoración famélica"
   },
+  "TeachingsOfTheCollectiveOfPlenty": {
+    "name": "Enseñanzas de la Comunidad de la Feracidad"
+  },
+  "YourEchoIMeetInDreams": {
+    "name": "Un eco onírico"
+  },
+  "UndyingFury": {
+    "name": "Furor desbordado"
+  },
   "MagicGuide": {
     "name": "Guía Mágica"
   },
@@ -15799,6 +16600,18 @@
   },
   "WhimsicalDanceOfTheWithered": {
     "name": "Vals Fantasioso de la Ruina"
+  },
+  "RoyalMasque": {
+    "name": "Máscara Real"
+  },
+  "UnfinishedReverie": {
+    "name": "Ensoñación Inacabada"
+  },
+  "FragmentOfHarmonicWhimsy": {
+    "name": "Fragmento de la Armonía Fantasiosa"
+  },
+  "AquaSimulacra": {
+    "name": "Aqua Simulacra"
   },
   "LiyueHarborWharf": {
     "name": "Puerto de Liyue"
@@ -16192,6 +17005,18 @@
   },
   "AwesomeBro": {
     "name": "¡Muy bien, colega!"
+  },
+  "FellDragonsAwakening": {
+    "name": "Despertar del dragón malvado"
+  },
+  "NarrationFootnotes": {
+    "name": "Notas a pie de página"
+  },
+  "ABlessingFromM": {
+    "name": "El deseo de la bruja M"
+  },
+  "RevelrousBeats": {
+    "name": "Ritmo festivo"
   },
   "Origin": {
     "name": "Origen"
@@ -16898,6 +17723,18 @@
   "StandingFlammabombWoodStreetLamp": {
     "name": "Farola vertical de madera de árbol ígneo"
   },
+  "CityStreetLampClearPathAhead": {
+    "name": "Farola urbana: Camino despejado"
+  },
+  "SimpleLuminescentLamp": {
+    "name": "Lámpara portátil autosuficiente"
+  },
+  "PaleMoonlightGuidesTheWayHome": {
+    "name": "Luz tenue del regreso"
+  },
+  "CloudWrappedMoon": {
+    "name": "Luna envuelta en nubes"
+  },
   "EfflorescentIllumination": {
     "name": "Luminiscencia floral"
   },
@@ -17263,6 +18100,9 @@
   },
   "StadiumSpeedySnackRoundStool": {
     "name": "Taburete redondo de la Arena: Comida rápida"
+  },
+  "GlugInOneGo": {
+    "name": "¡Glup!"
   },
   "NorthernStoneHearth": {
     "name": "Chimenea de piedra del norte"
@@ -18125,6 +18965,12 @@
   "AlluringFlavorsOfTheSacredFlame": {
     "name": "Mezcla especial del Fuego Sagrado"
   },
+  "NashaStallEmergencyProvisions": {
+    "name": "Puesto callejero de Nasha: Provisiones rápidas"
+  },
+  "NashaStallUnendingSearch": {
+    "name": "Puesto callejero de Nasha: Búsqueda de tráfico"
+  },
   "HilichurlOutpostHut": {
     "name": "Cabaña de avanzadilla Hilichurl"
   },
@@ -18622,6 +19468,36 @@
   },
   "ReimaginedColors": {
     "name": "Remodelación de color"
+  },
+  "WorkshopCabinSteadyShroom": {
+    "name": "Pequeño taller: Hongo firme"
+  },
+  "WorkshopCabinShipAshore": {
+    "name": "Pequeño taller: Barco en tierra"
+  },
+  "NashaMarketSeeingIsBelieving": {
+    "name": "Mercado de Nasha: Ver para creer"
+  },
+  "NashaMarketWaresWorthStayingFor": {
+    "name": "Mercado de Nasha: Tentación a la vista"
+  },
+  "NashaMarketImpenetrableVault": {
+    "name": "Mercado de Nasha: Seguridad blindada"
+  },
+  "NashaMarketLureOfLingeringFragrance": {
+    "name": "Mercado de Nasha: Perfume en el aire"
+  },
+  "NashaMarketForgeOfAThousandTrials": {
+    "name": "Mercado de Nasha: Forja incansable"
+  },
+  "NashaMarketSeizeTheDawn": {
+    "name": "Mercado de Nasha: Antes que el alba"
+  },
+  "ColossalAssistedMovementPivot": {
+    "name": "Terminal gigante de transportación"
+  },
+  "SteelboundSecrecy": {
+    "name": "Fortaleza férrea"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Fuente con flores y pájaros"
@@ -19235,6 +20111,12 @@
   "SolidRoots": {
     "name": "Base sólida"
   },
+  "TwilightThreadedLeaves": {
+    "name": "Jardín del crepúsculo"
+  },
+  "SoftHuedHydrangeas": {
+    "name": "Hortensias de tono suave"
+  },
   "FirShelves": {
     "name": "Estantería de abeto"
   },
@@ -19655,6 +20537,21 @@
   "ParasolSandAndTheSeaBreeze": {
     "name": "Sombrilla de playa: Arena fina y brisa marina"
   },
+  "HeavyHooffall": {
+    "name": "Pisadas del ciervo"
+  },
+  "ShadowOfTheFrostmoon": {
+    "name": "Sombra Lunaescarcha"
+  },
+  "TwinHandledHangingPotHotSoup": {
+    "name": "Caldero de doble asa: Sopa caliente"
+  },
+  "PaintedPedunculateOakWoodBarrel": {
+    "name": "Barril de madera de roble estival pintado"
+  },
+  "LittleCover": {
+    "name": "Pequeño refugio"
+  },
   "BookshelfFreeReading": {
     "name": "Estante para periódicos: Libertad de lectura"
   },
@@ -19672,6 +20569,9 @@
   },
   "CouriersSystemOfSortAndDispatch": {
     "name": "Estante de los mensajeros"
+  },
+  "MoonlitQuietude": {
+    "name": "Lectura bajo la luna"
   },
   "PoolOfSapphireGrace": {
     "name": "Estanque nubespiritual"
@@ -19769,6 +20669,18 @@
   "FixedTorchExtremity": {
     "name": "Antorcha fija: Campeón"
   },
+  "MechanicalOrnamentBeepBop": {
+    "name": "Adorno mecánico: Bip-bip"
+  },
+  "MechanicalOrnamentWaaaaah": {
+    "name": "Adorno mecánico: ¡Waaaa!"
+  },
+  "IceCreamCutie": {
+    "name": "Heladín dulce"
+  },
+  "SmallCargoContainerSafeStowage": {
+    "name": "Contenedor pequeño: Resguardo seguro"
+  },
   "WeatheredBambooFence": {
     "name": "Valla de bambú desgastada"
   },
@@ -19850,6 +20762,9 @@
   "LandOfPlentysBounds": {
     "name": "Lindes de la tierra del apaciguamiento"
   },
+  "UncertainBoundaries": {
+    "name": "Límite tácito"
+  },
   "SmoothWoodenBench": {
     "name": "Banco liso de madera"
   },
@@ -19903,6 +20818,15 @@
   },
   "DeckchairHealthyGlow": {
     "name": "Tumbona de playa: Bronceado saludable"
+  },
+  "WarmthSharedWithFriends": {
+    "name": "Calor compartido"
+  },
+  "PedunculateOakWoodMoonwardBackedChair": {
+    "name": "Silla de madera de roble estival “Hacia la luna”"
+  },
+  "DiningBenchSteadfast": {
+    "name": "Banco de comedor: Firme y estable"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "Plataforma centinela Hilichurl"
@@ -19985,6 +20909,15 @@
   "FairTableUncutOriginal": {
     "name": "Mesa de madera del mercado: Al natural"
   },
+  "RustySheetMetalWorkbench": {
+    "name": "Mesa de trabajo oxidada"
+  },
+  "SilverFirWoodRoundLowTable": {
+    "name": "Mesita redonda de madera de abeto frioargénteo"
+  },
+  "LeisurelyFeast": {
+    "name": "Banquete de descanso"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Mostrador de tienda de vinos: Mil copas"
   },
@@ -20014,6 +20947,9 @@
   },
   "TearstoneTilePerspectiveTheory": {
     "name": "Losa de lacripórfido: Teoría de la perspectiva"
+  },
+  "BlanketOfStars": {
+    "name": "Estrellas en el agua"
   },
   "SwordBearingStatueEternalWatch": {
     "name": "Estatua de piedra: Guardián eterno"
@@ -20099,10 +21035,22 @@
   "FlyHigherTogether": {
     "name": "Jolgorio entre balanceos"
   },
+  "MechanicalFigurineFlashOfInspiration": {
+    "name": "Figura mecánica: Chispa de idea"
+  },
+  "LittleRoundBelly": {
+    "name": "Pancita"
+  },
+  "MediumCargoHoldSwiftTransport": {
+    "name": "Contenedor mediano: Transporte eficiente"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "Caballero Dentudo"
   },
   "DanceOffStageRevelrousRhythm": {
     "name": "Escenario de baile ferviente: Ritmo festivo"
+  },
+  "PorkyWorkyChef": {
+    "name": "Chef cerdito"
   }
 }

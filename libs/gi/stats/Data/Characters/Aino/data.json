@@ -1,0 +1,66 @@
+{
+  "key": "Aino",
+  "ele": "hydro",
+  "region": "nodKrai",
+  "weaponType": "claymore",
+  "birthday": {
+    "month": 9,
+    "day": 21
+  },
+  "rarity": 4,
+  "lvlCurves": [
+    {
+      "key": "hp",
+      "base": 939.1447,
+      "curve": "GROW_CURVE_HP_S4"
+    },
+    {
+      "key": "atk",
+      "base": 20.30112,
+      "curve": "GROW_CURVE_ATTACK_S4"
+    },
+    {
+      "key": "def",
+      "base": 50.93025,
+      "curve": "GROW_CURVE_HP_S4"
+    }
+  ],
+  "ascensionBonus": {
+    "hp": [
+      0,
+      701.5892,
+      1200.0868,
+      1864.7502,
+      2363.2478,
+      2861.7454,
+      3360.243
+    ],
+    "def": [
+      0,
+      38.0475,
+      65.08125,
+      101.12625,
+      128.16,
+      155.19376,
+      182.2275
+    ],
+    "atk": [
+      0,
+      15.166332,
+      25.94241,
+      40.310513,
+      51.086594,
+      61.86267,
+      72.63875
+    ],
+    "eleMas": [
+      0,
+      0,
+      24,
+      48,
+      48,
+      72,
+      96
+    ]
+  }
+}
