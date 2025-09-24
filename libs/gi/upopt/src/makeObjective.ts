@@ -1,0 +1,48 @@
+import {
+  ddx,
+  optimize,
+  precompute,
+  zero_deriv,
+  type OptNode,
+} from "@genshin-optimizer/gi/wr";
+import { allSubstatKeys } from "@genshin-optimizer/gi/consts";
+import type { ArtifactBuildData, DynStat } from "@genshin-optimizer/gi/solver";
+
+import type { Objective } from "./upOpt.types";
+
+export function makeObjective(
+  nodes: OptNode[],
+  threshold: number[],
+): Objective {
+  const nonzeroDerivs = nodes.map((n) =>
+    allSubstatKeys.filter((s) => !zero_deriv(n, (f) => f.path[1], s)),
+  );
+
+  // Jacobian of nodes w.r.t. all substats; rows: nodes, cols: substats
+  const jac = nodes.map((n, i) =>
+    nonzeroDerivs[i].map((sub) => ddx(n, (f) => f.path[1], sub)),
+  );
+  const allNodes = optimize(
+    [...nodes, ...jac.flat()],
+    {},
+    ({ path: [p] }) => p !== "dyn",
+  );
+  const evalFn = precompute(allNodes, {}, (f) => f.path[1], 1);
+
+  return {
+    threshold,
+    computeWithDerivs: (x: DynStat) => {
+      const values = evalFn([{ id: "", values: x }] as ArtifactBuildData[] & {
+        length: 1;
+      });
+      const f = values.splice(0, nodes.length);
+      const df = nonzeroDerivs.map((subs) =>
+        Object.fromEntries(subs.map((s) => [s, values.shift()!])),
+      ) as DynStat[];
+      return [f, df];
+    },
+    zeroDeriv: allSubstatKeys.filter((s) =>
+      nodes.every((n) => zero_deriv(n, (f) => f.path[1], s)),
+    ),
+  };
+}
