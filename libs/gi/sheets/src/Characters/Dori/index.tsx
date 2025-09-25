@@ -161,7 +161,6 @@ const dmgFormulas = {
       2,
       customDmgNode(
         prod(
-          subscript(input.total.skillIndex, dm.skill.shotDmg, { unit: '%' }),
           infoMut(percent(dm.constellation2.toopDmg), {
             name: ct.ch('c2MultiplierKey_'),
           }),

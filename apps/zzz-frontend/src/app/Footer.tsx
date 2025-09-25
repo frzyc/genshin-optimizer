@@ -1,6 +1,8 @@
 import { AppBar, Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 
+declare const __VERSION__: string
 export default function Footer() {
   return (
     <Suspense fallback={<Skeleton variant="rectangular" height={64} />}>
@@ -9,6 +11,7 @@ export default function Footer() {
   )
 }
 function FooterContent() {
+  const { t } = useTranslation('ui')
   return (
     <AppBar
       component="footer"
@@ -23,21 +26,32 @@ function FooterContent() {
         gap={2}
       >
         <Typography variant="caption" sx={{ color: 'neutral400.main' }}>
-          Build:
-          <a
-            href={
-              process.env.NX_URL_GITHUB_GO_CURRENT_VERSION ||
-              `${process.env.NX_URL_GITHUB_GO}/releases`
-            }
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: 'inherit' }}
+          <Trans t={t} i18nKey="ui:rightsDisclaimer">
+            Zenless Optimizer is not affiliated with or endorsed by HoYoverse.
+          </Trans>
+        </Typography>
+        <Typography
+          variant="caption"
+          sx={{ color: 'neutral400.main', textAlign: 'right' }}
+        >
+          <Trans
+            t={t}
+            i18nKey="ui:appVersion"
+            values={{ version: __VERSION__ }}
           >
-            {process.env.NX_URL_GITHUB_GO_CURRENT_VERSION?.replace(
-              /.*commit\//,
-              ''
-            ).substring(0, 7)}
-          </a>
+            Zenless Optimizer Version:
+            <a
+              href={
+                process.env.NX_URL_GITHUB_GO_CURRENT_VERSION ||
+                `${process.env.NX_URL_GITHUB_GO}/releases`
+              }
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: 'inherit', marginLeft: 2 }}
+            >
+              {{ version: __VERSION__ } as any}
+            </a>
+          </Trans>
         </Typography>
       </Box>
     </AppBar>

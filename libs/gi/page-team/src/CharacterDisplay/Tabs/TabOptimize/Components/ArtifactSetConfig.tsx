@@ -46,7 +46,7 @@ import {
 } from '@genshin-optimizer/gi/ui'
 import { UIData } from '@genshin-optimizer/gi/uidata'
 import { setKeysByRarities } from '@genshin-optimizer/gi/util'
-import { constant } from '@genshin-optimizer/gi/wr'
+import { allNonstackBuffs, constant } from '@genshin-optimizer/gi/wr'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import CloseIcon from '@mui/icons-material/Close'
@@ -76,7 +76,7 @@ export default function ArtifactSetConfig({
   const dataContext = useContext(DataContext)
   const database = useDatabase()
   const {
-    teamChar: { conditional, optConfigId },
+    teamChar: { key: charKey, conditional, optConfigId },
     teamCharId,
   } = useContext(TeamCharacterContext)
   const { artSetExclusion } = useOptConfig(optConfigId)!
@@ -142,11 +142,12 @@ export default function ArtifactSetConfig({
         {
           ...dataContext.data.data[0],
           artSet: objKeyMap(allArtifactSetKeys, (_) => constant(4)),
+          nonStacking: objKeyMap(allNonstackBuffs, () => constant(charKey)),
         },
         undefined
       ),
     }),
-    [dataContext]
+    [charKey, dataContext]
   )
   const resetArtConds = useCallback(() => {
     const tconditional = Object.fromEntries(

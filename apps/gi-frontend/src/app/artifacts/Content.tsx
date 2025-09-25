@@ -130,6 +130,7 @@ function artifactToCached(artifact: Artifact): ICachedArtifact {
     rarity,
     lock,
     character,
+    unactivatedSubstats,
   } = artifact
   const { artifact: ret } = cachedArtifact(
     {
@@ -141,6 +142,7 @@ function artifactToCached(artifact: Artifact): ICachedArtifact {
       rarity: rarity as ArtifactRarity,
       lock,
       location: character ? charKeyToLocCharKey(character.key) : '',
+      unactivatedSubstats,
     },
     artifact.id
   )

@@ -1,8 +1,14 @@
 {
   "name": "Bellicose Blaze",
-  "desc": "...",
+  "desc": {
+    "0": "While developing this W-Engine, Captain Magus stood nearby repeating, \"Not hot enough, not intense enough,\" pushing the maker to keep raising the temperature — right up to the brink of the material's melting point. The poor craftsman had to endure Magus's grumbling, Orphie's apologies, and suffocating steam to get the job done. Finally, with a sharp whine from the pressure, the special W-Engine emerged from its hellish forge — refined through fire and hammering, and cooled with a roar rivaling its master.",
+    "1": "",
+    "2": "<ct color=#959595>\"Captain, why are you always so angry?\"",
+    "3": "\"I'm a gun, Orphie. All that flows through my chamber is metal and gunpowder.\"",
+    "4": "—For the first time, Orphie saw a trace of sorrow in the weapon she called \"Captain.\"</ct>"
+  },
   "desc2": "Equip to increase Attack Agents' combat capabilities",
-  "desc3": "...",
+  "desc3": "She lingers by the banks of the Styx, waiting for the tide to extinguish the fury burning in her chamber.",
   "phase": "Flame-Devouring Choir",
   "phaseDescs": [
     "Increases CRIT Rate by <ct color=#2BAD00>20%</ct>. When the equipper triggers an <ct color=#FFFFFF>Aftershock</ct> that deals <ct color=#FF5521>Fire DMG</ct>, their attacks ignore <ct color=#2BAD00>15%</ct> of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration.",
