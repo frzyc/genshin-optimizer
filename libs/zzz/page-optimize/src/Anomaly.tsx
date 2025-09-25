@@ -30,4 +30,11 @@ const anomalyDocs: Document[] = [
       ],
     },
   },
+  {
+    type: 'conditional',
+    conditional: {
+      label: 'Anomaly Time Passed',
+      metadata: conditionals.anomaly.anomTimePassed,
+    },
+  },
 ]

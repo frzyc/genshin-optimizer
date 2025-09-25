@@ -1282,7 +1282,17 @@ export const conditionals = {
       type: 'bool',
     },
   },
-  anomaly: { frostbite: { sheet: 'anomaly', name: 'frostbite', type: 'bool' } },
+  anomaly: {
+    anomTimePassed: {
+      sheet: 'anomaly',
+      name: 'anomTimePassed',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 20,
+    },
+    frostbite: { sheet: 'anomaly', name: 'frostbite', type: 'bool' },
+  },
 } as const
 export const formulas = {
   Alice: {

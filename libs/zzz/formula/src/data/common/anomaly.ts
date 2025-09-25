@@ -1,6 +1,7 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import {
   allBoolConditionals,
+  allNumConditionals,
   percent,
   register,
   registerBuff,
@@ -9,6 +10,7 @@ import {
 } from '../util'
 
 const { frostbite } = allBoolConditionals('anomaly')
+export const { anomTimePassed } = allNumConditionals('anomaly', true, 0, 20)
 
 export default register(
   'anomaly',
