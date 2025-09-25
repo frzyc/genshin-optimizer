@@ -9,6 +9,7 @@
   "bonusStats": "Bonus Stats",
   "teammates": "Teammates",
   "enemyStats": "Enemy Editor",
+  "anomaly": "Anomaly Conditionals",
   "buildDropdownDesc": "Reducing generated builds shortens calculation time.",
   "bonusStatsNotes": "Write some notes about how you play your character",
   "build_one": "{{count}} Build",

@@ -9,7 +9,7 @@ export function getVariant(tag: Tag) {
 }
 export function isDmg(tag: Tag) {
   const { q } = tag
-  return ['standardDmg', 'anomalyDmg'].includes(q as string)
+  return ['standardDmg', 'anomalyDmg', 'sheerDmg'].includes(q as string)
 }
 
 export function getDmgType(tag: Tag) {

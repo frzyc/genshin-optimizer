@@ -37,6 +37,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { AnomalySection } from './Anomaly'
 import { BonusStatsSection } from './BonusStats'
 import { CharSheetSection } from './CharSheetsDisplay'
 import { EnemyStatsSection } from './EnemyStats'
@@ -149,6 +150,7 @@ function CharacterSection() {
             ]
           : []),
         ['enemyStats', <EnemyStatsSection key={'enemyStats'} />],
+        ['anomaly', <AnomalySection key={'anomaly'} />],
         ...(characterKey === 'Yixuan' ||
         characterKey === 'Soldier0Anby' ||
         shouldShowDevComponents

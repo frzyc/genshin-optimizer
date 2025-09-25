@@ -102,6 +102,7 @@ export const sheets = [
   'dyn',
   'enemy',
   'custom',
+  'anomaly',
 ] as const
 
 export const members = [...allCharacterKeys] as const
