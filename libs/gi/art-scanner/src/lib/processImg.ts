@@ -42,6 +42,7 @@ import {
   parseSetKeys,
   parseSlotKeys,
   parseSubstats,
+  parseUnactivatedSubstats,
 } from './parse'
 
 export type Processed = {
@@ -283,6 +284,7 @@ export async function processEntry(
     parseSetKeys(artifactSetTexts),
     parseSlotKeys(whiteTexts),
     parseSubstats(substatTexts),
+    parseUnactivatedSubstats(substatTexts),
     parseMainStatKeys(whiteTexts),
     parseMainStatValues(whiteTexts),
     equippedTexts ? parseLocation(equippedTexts) : '',

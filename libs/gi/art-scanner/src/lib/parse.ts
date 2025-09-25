@@ -124,6 +124,48 @@ export function parseSubstats(texts: string[]): ISubstat[] {
   return matches.slice(0, 4)
 }
 
+export function parseUnactivatedSubstats(texts: string[]): ISubstat[] {
+  const matches: ISubstat[] = []
+  // eslint-disable-next-line prefer-const
+  for (let [index, text] of texts.entries()) {
+    if (index === 4 && texts[5]?.includes('(unactivated)')) {
+      text = text + ' (unactivated)'
+    }
+    text = text.replace(/^[\W]+/, '').replace(/\n/, '')
+    // Apply OCR character corrections (e.g., '#' → '+') before parsing substats
+    for (const { pattern, replacement } of misreadCharactersInSubstatMap) {
+      text = text.replace(pattern, replacement)
+    }
+    //parse substats
+    allSubstatKeys.forEach((key) => {
+      const name = statMap[key]
+      const regex =
+        getUnitStr(key) === '%'
+          ? new RegExp(
+              name + '\\s*\\+\\s*(\\d+[\\.|,]+\\d)%\\s*(\\(unactivated\\))',
+              'im'
+            )
+          : new RegExp(
+              name +
+                '\\s*\\+\\s*(\\d+,\\d+|\\d+)($|\\s)\\s*(\\(unactivated\\))',
+              'im'
+            )
+      const match = regex.exec(text)
+      if (match)
+        matches.push({
+          key,
+          value: parseFloat(
+            match[1]
+              .replace(/(,|\.)(\d{3}(?!\d))/g, '$2')
+              .replace(/,/g, '.')
+              .replace(/\.{2,}/g, '.')
+          ),
+        })
+    })
+  }
+  return matches
+}
+
 export function parseLocation(texts: string[]): LocationCharacterKey {
   const kdist: Array<KeyDist<LocationCharacterKey>> = []
   for (let text of texts) {
