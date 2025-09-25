@@ -1,3 +1,4 @@
+import type { ICachedArtifact, ICachedSubstat } from "@genshin-optimizer/gi/db";
 import { dynRead, sum, prod } from "@genshin-optimizer/gi/wr";
 
 import { expandRollsLevel } from "./expandRolls";
@@ -14,6 +15,7 @@ import type {
   Objective,
   SubstatLevelNode,
 } from "./upOpt.types";
+import { levelUpArtifact } from "./upOpt";
 
 describe("upOptv2", () => {
   const nodeLinear = sum(dynRead("atk"), prod(1500, dynRead("atk_")));
@@ -260,9 +262,9 @@ describe("upOptv2", () => {
     checkExpandedEvalCorrectness(obj, expanded, n.subDistr);
   });
 
-    test("expandSubstatFancy", () => {
+  test("expandSubstatFancy", () => {
     const n = makeSubstatNode({
-      base: { atk: 100, atk_: .5, critRate_: 0 },
+      base: { atk: 100, atk_: 0.5, critRate_: 0 },
       rarity: 5,
       subkeys: [
         { key: "atk", baseRolls: 0 },
@@ -279,20 +281,48 @@ describe("upOptv2", () => {
     checkExpandedEvalCorrectness(obj, expanded, n.subDistr);
   });
 
-  // test("debug", () => {
-  //   const n = makeSubstatNode({
-  //     base: { atk: 0, atk_: 0, critRate_: 0 },
-  //     rarity: 5,
-  //     subkeys: [
-  //       { key: "atk", baseRolls: 0 },
-  //       { key: "atk_", baseRolls: 0 },
-  //       // { key: "critRate_", baseRolls: 0 },
-  //       // { key: "def", baseRolls: 0 },
-  //     ],
-  //     rollsLeft: 5,
-  //     reshape: { affixes: ["def", "critRate_"], mintotal: 3 },
-  //   })
-  //   // console.log('DEBUG', n);
-  //   // console.log('DEBUG', n.subDistr.cov);
-  // });
+  test("debug", () => {
+    const art: ICachedArtifact = {
+      id: "test_artifact",
+      level: 0,
+      rarity: 4,
+      mainStatKey: "atk",
+      mainStatVal: 429,
+      slotKey: "flower",
+      setKey: "GladiatorsFinale",
+      location: "",
+      lock: false,
+      substats: [
+        {
+          key: "atk_",
+          value: 0.5,
+        } as ICachedSubstat,
+        {
+          key: "critRate_",
+          value: 0.1,
+        } as ICachedSubstat,
+        // {
+        //   key: "def_",
+        //   value: 0.1,
+        // } as ICachedSubstat,
+      ],
+    };
+
+    const hmm = levelUpArtifact(art, {
+      flower: undefined,
+      plume: undefined,
+      sands: undefined,
+      goblet: undefined,
+      circlet: undefined,
+    });
+    console.log(
+      hmm.map(({ p, n }) => ({
+        p,
+        subs: n.subkeys.map((s) => s.key),
+        rollsLeft: n.rollsLeft,
+      })),
+    );
+    console.log(hmm.reduce((a, { p }) => a + p, 0));
+    console.log(hmm[0].n.subDistr.mu);
+  });
 });
