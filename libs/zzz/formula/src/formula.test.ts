@@ -417,6 +417,7 @@ describe('sheet', () => {
       ...allWengineKeys,
       'disc',
       ...allDiscSetKeys,
+      'anomaly',
     ])
     for (const { tag } of data) {
       if (tag.et && tag.qt && tag.q) {
