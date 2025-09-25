@@ -247,11 +247,11 @@ export class UpOptCalculator {
       },
     }
     if (art.unactivatedSubstats) {
-      out.rollsLeft -= 1
       art.unactivatedSubstats.forEach(({ key, value }) => {
         if (key === '') return
         out.subs.push(key)
         out.values[key] = toDecimal(key, value)
+        out.rollsLeft -= 1
       })
     }
     return out
