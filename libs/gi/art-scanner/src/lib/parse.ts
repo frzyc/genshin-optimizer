@@ -126,7 +126,11 @@ export function parseSubstats(texts: string[]): ISubstat[] {
 
 export function parseUnactivatedSubstats(texts: string[]): ISubstat[] {
   const matches: ISubstat[] = []
-  for (let text of texts) {
+  // eslint-disable-next-line prefer-const
+  for (let [index, text] of texts.entries()) {
+    if (index === 4 && texts[5]?.includes('(unactivated)')) {
+      text = text + ' (unactivated)'
+    }
     text = text.replace(/^[\W]+/, '').replace(/\n/, '')
     // Apply OCR character corrections (e.g., '#' → '+') before parsing substats
     for (const { pattern, replacement } of misreadCharactersInSubstatMap) {
