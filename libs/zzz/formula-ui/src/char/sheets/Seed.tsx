@@ -68,7 +68,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('coreCond.directStrike2Display'),
+        label: ch('coreCond.directStrikeDisplay'),
         metadata: cond.directStrikeDisplay,
         fields: [fieldForBuff(buff.m2_vanguard_defIgn_)],
       },
