@@ -1,7 +1,7 @@
 import { type SubstatKey } from "@genshin-optimizer/gi/consts";
 import { substatWeights } from "./consts";
 
-function combinations<T>(arr: T[], k: number, prefix: T[] = []): T[][] {
+function combinations<T>(arr: readonly T[], k: number, prefix: T[] = []): T[][] {
   if (k === 0) return [prefix];
   return arr.flatMap((v, i) =>
     combinations(arr.slice(i + 1), k - 1, [...prefix, v]),
@@ -23,8 +23,8 @@ function combinations<T>(arr: T[], k: number, prefix: T[] = []): T[][] {
  */
 const substatProbCache: Record<string, number> = {};
 function substatProb(
-  chosen: number[],
-  options: number[],
+  chosen: readonly number[],
+  options: readonly number[],
   remaining = 0,
 ): number {
   if (chosen.length === 0) return 1;
@@ -53,8 +53,8 @@ function substatProb(
 }
 
 export function crawlSubstats(
-  prefix: SubstatKey[],
-  options: SubstatKey[],
+  prefix: readonly SubstatKey[],
+  options: readonly SubstatKey[],
   insertPrefix = true,
 ): { p: number; subs: SubstatKey[] }[] {
   const optW = options.map((k) => substatWeights[k]).sort((a, b) => a - b);

@@ -27,8 +27,8 @@ export type GaussianNode = {
 };
 
 export type EvaluatedGaussian = {
-  f_mu: number[]; // f(mu)
-  f_cov: number[][]; // Covariance of f(X)
+  f_mu: readonly number[]; // f(mu)
+  f_cov: readonly number[][]; // Covariance of f(X)
   prob: number; // P[X >= x]
   constr_prob: number; // P[X[1:] >= x[1:]]
   upAvg: number; // E[X[0] | X >= x]
