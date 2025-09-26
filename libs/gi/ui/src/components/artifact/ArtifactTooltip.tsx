@@ -45,7 +45,15 @@ export function ArtifactTooltip({
 }
 function ArtifactData({ art }: { art: ICachedArtifact }) {
   const { t: tk } = useTranslation('statKey_gen')
-  const { setKey, slotKey, level, rarity, mainStatKey, substats } = art
+  const {
+    setKey,
+    slotKey,
+    level,
+    rarity,
+    mainStatKey,
+    substats,
+    unactivatedSubstats,
+  } = art
   const mainVariant = KeyMap.getVariant(mainStatKey)
   return (
     <Box p={1}>
@@ -77,6 +85,18 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
                 statKey={key}
                 value={value}
                 color={`roll${clamp(rolls.length, 1, 6)}` as RollColorKey} //TODO: stat.rolls.length instead of 1
+                prefix="+"
+              />
+            )
+        )}
+        {unactivatedSubstats?.map(
+          ({ value, key }) =>
+            !!(value && key) && (
+              <IconStatDisplay
+                key={key}
+                statKey={key}
+                value={value}
+                color={'secondary'}
                 prefix="+"
               />
             )
