@@ -1,9 +1,9 @@
-import type { ICachedArtifact, ICachedSubstat } from "@genshin-optimizer/gi/db";
 import { dynRead, sum, prod } from "@genshin-optimizer/gi/wr";
 
-import { expandRollsLevel } from "./expandRolls";
 import { evalMarkovNode, evaluateGaussian } from "./evaluation";
+import { expandRollsLevel } from "./expandRolls";
 import { makeObjective } from "./makeObjective";
+import { crawlSubstats } from "./substatProbs";
 import {
   expandSubstatLevel,
   makeRollsNode,
@@ -15,15 +15,53 @@ import type {
   Objective,
   SubstatLevelNode,
 } from "./upOpt.types";
-import { levelUpArtifact } from "./upOpt";
+import type { SubstatKey } from "@genshin-optimizer/gi/consts";
+import { allSubstatKeys } from "@genshin-optimizer/gi/consts";
+import { substatWeights } from "./consts";
 
-describe("upOptv2", () => {
+/**
+ * Checks whether the expanded nodes' evaluations match the base Gaussian node's evaluation.
+ * Should only work for linear objectives.
+ *
+ * This function essentially checks that the Gaussian Mixture Model (GMM) formed by the expanded nodes
+ * has the same mean and variance as the original Gaussian node.
+ *
+ * @param obj Linear(!) objective function
+ * @param expanded Weighted list of expanded nodes (GMM distribution)
+ * @param g Base Gaussian node
+ */
+function checkExpandedEvalCorrectness(
+  obj: Objective,
+  expanded: { p: number; n: MarkovNode }[],
+  g: GaussianNode,
+) {
+  // Check probabilities sum to 1
+  expect(expanded.reduce((_, { p }) => _ + p, 0)).toBeCloseTo(1);
+  const expanded2 = expanded.map(({ p, n }) => {
+    const emn = evalMarkovNode(obj, n);
+    return {
+      p,
+      mu: emn.evaluation.f_mu[0],
+      sig2: emn.evaluation.f_cov[0][0],
+    };
+  });
+  const mean = expanded2.reduce((a, { p, mu }) => a + p * mu, 0);
+  const sig2 = expanded2.reduce(
+    (a, { p, mu, sig2 }) => a + p * (sig2 + mu ** 2),
+    -(mean ** 2),
+  );
+
+  // Check means and variances match
+  const baseEval = evaluateGaussian(obj, g);
+  expect(mean).toBeCloseTo(baseEval.f_mu[0]);
+  expect(sig2).toBeCloseTo(baseEval.f_cov[0][0]);
+}
+
+describe("upOpt components", () => {
   const nodeLinear = sum(dynRead("atk"), prod(1500, dynRead("atk_")));
   const nodeNonlinear = prod(nodeLinear, dynRead("critRate_"));
   const obj = makeObjective([nodeLinear, nodeNonlinear], [4000, 100]);
 
-  // TEST makeObjective:
-  // Checks whether the objective function and its derivatives are computed correctly.
   test("makeObjective", () => {
     expect(obj.threshold).toEqual([4000, 100]);
 
@@ -180,43 +218,6 @@ describe("upOptv2", () => {
     });
   });
 
-  /**
-   * Checks whether the expanded nodes' evaluations match the base Gaussian node's evaluation.
-   * Should only work for linear objectives.
-   *
-   * This function essentially checks that the Gaussian Mixture Model (GMM) formed by the expanded nodes
-   * has the same mean and variance as the original Gaussian node.
-   *
-   * @param obj Linear(!) objective function
-   * @param expanded Weighted list of expanded nodes (GMM distribution)
-   * @param g Base Gaussian node
-   */
-  function checkExpandedEvalCorrectness(
-    obj: Objective,
-    expanded: { p: number; n: MarkovNode }[],
-    g: GaussianNode,
-  ) {
-    // Check probabilities sum to 1
-    expect(expanded.reduce((_, { p }) => _ + p, 0)).toBeCloseTo(1);
-    const expanded2 = expanded.map(({ p, n }) => {
-      const emn = evalMarkovNode(obj, n);
-      return {
-        p,
-        mu: emn.evaluation.f_mu[0],
-        sig2: emn.evaluation.f_cov[0][0],
-      };
-    });
-    const mean = expanded2.reduce((a, { p, mu }) => a + p * mu, 0);
-    const sig2 = expanded2.reduce(
-      (a, { p, mu, sig2 }) => a + p * (sig2 + mu ** 2),
-      -(mean ** 2),
-    );
-
-    // Check means and variances match
-    const baseEval = evaluateGaussian(obj, g);
-    expect(mean).toBeCloseTo(baseEval.f_mu[0]);
-    expect(sig2).toBeCloseTo(baseEval.f_cov[0][0]);
-  }
   test("expandrolls", () => {
     const rollsNode = makeRollsNode(
       {
@@ -267,8 +268,8 @@ describe("upOptv2", () => {
       base: { atk: 100, atk_: 0.5, critRate_: 0 },
       rarity: 5,
       subkeys: [
-        { key: "atk", baseRolls: 0 },
-        { key: "atk_", baseRolls: 2 },
+        { key: "atk", baseRolls: 2 },
+        { key: "atk_", baseRolls: 0 },
         { key: "critRate_", baseRolls: 3 },
         { key: "def", baseRolls: 0 },
       ],
@@ -281,48 +282,59 @@ describe("upOptv2", () => {
     checkExpandedEvalCorrectness(obj, expanded, n.subDistr);
   });
 
-  test("debug", () => {
-    const art: ICachedArtifact = {
-      id: "test_artifact",
-      level: 0,
-      rarity: 4,
-      mainStatKey: "atk",
-      mainStatVal: 429,
-      slotKey: "flower",
-      setKey: "GladiatorsFinale",
-      location: "",
-      lock: false,
-      substats: [
-        {
-          key: "atk_",
-          value: 0.5,
-        } as ICachedSubstat,
-        {
-          key: "critRate_",
-          value: 0.1,
-        } as ICachedSubstat,
-        // {
-        //   key: "def_",
-        //   value: 0.1,
-        // } as ICachedSubstat,
-      ],
-    };
-
-    const hmm = levelUpArtifact(art, {
-      flower: undefined,
-      plume: undefined,
-      sands: undefined,
-      goblet: undefined,
-      circlet: undefined,
+  test("substatProbs 4th sub", () => {
+    const prefix = ["atk", "def", "eleMas"] as SubstatKey[];
+    const filtered = allSubstatKeys.filter((k) => !prefix.includes(k));
+    const denom = filtered
+      .map((k) => substatWeights[k])
+      .reduce((a, b) => a + b, 0);
+    const prob4th = crawlSubstats(prefix, filtered, false);
+    expect(prob4th.reduce((a, { p }) => a + p, 0)).toBeCloseTo(1);
+    prob4th.forEach(({ p, subs }) => {
+      const w = subs.reduce((a, k) => a + substatWeights[k], 0);
+      expect(p).toBeCloseTo(w / denom);
     });
-    console.log(
-      hmm.map(({ p, n }) => ({
-        p,
-        subs: n.subkeys.map((s) => s.key),
-        rollsLeft: n.rollsLeft,
-      })),
-    );
-    console.log(hmm.reduce((a, { p }) => a + p, 0));
-    console.log(hmm[0].n.subDistr.mu);
   });
+
+  test("substatProbs all 4", () => {
+    const filtered = allSubstatKeys.filter((k) => k !== "hp");
+    const res = crawlSubstats([], filtered);
+    const expected = [
+      { p: 1724981913 / 140744203600, subs: ["critDMG_", "def", "atk", "hp_"] },
+      { p: 15233623 / 2090714400, subs: ["critDMG_", "eleMas", "atk", "def_"] },
+      { p: 3427272 / 660607675, subs: ["critRate_", "critDMG_", "atk", "hp_"] },
+      { p: 222877 / 12932920, subs: ["def", "enerRech_", "atk", "eleMas"] },
+      { p: 80433 / 9225944, subs: ["critRate_", "def", "critDMG_", "atk"] },
+      { p: 2407 / 235144, subs: ["def", "hp_", "eleMas", "enerRech_"] },
+      { p: 128 / 20995, subs: ["hp_", "eleMas", "atk_", "enerRech_"] },
+    ];
+
+    expected.forEach(({ p, subs }) => {
+      const p2 = res.filter((r) => r.subs.every((s) => subs.includes(s)))[0].p;
+      expect(p2).toBeCloseTo(p);
+    });
+  });
+
+  test("substatProbs manual", () => {
+    const keys = ["atk", "def", "atk_", "hp_", "critDMG_"] as const;
+    const res = crawlSubstats(["enerRech_", "critRate_"], keys, false);
+    // denom = 6 + 6 + 4 + 4 + 3 = 23
+    const expected = [
+      { p: 6 * 6 * (1 / 23 / 17 + 1 / 23 / 17), subs: ["atk", "def"] },
+      { p: 6 * 4 * (1 / 23 / 17 + 1 / 23 / 19), subs: ["atk", "atk_"] },
+      { p: 4 * 4 * (1 / 23 / 19 + 1 / 23 / 19), subs: ["hp_", "atk_"] },
+      { p: 4 * 3 * (1 / 23 / 19 + 1 / 23 / 20), subs: ["hp_", "critDMG_"] },
+    ];
+    expected.forEach(({ p, subs }) => {
+      const p2 = res.filter((r) => r.subs.every((s) => subs.includes(s)))[0].p;
+      expect(p2).toBeCloseTo(p);
+    });
+  });
+});
+
+describe("upOpt makeSubstatNode(s)", () => {
+  test("levelArtifact", () => {});
+  test("fresh/domain/strongbox", () => {});
+  test("reshape/dust", () => {});
+  test("define/elixir", () => {});
 });
