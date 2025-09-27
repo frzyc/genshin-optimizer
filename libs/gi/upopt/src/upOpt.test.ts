@@ -360,7 +360,11 @@ describe('upOpt components', () => {
       }))
     )
     checkExpandedEvalCorrectness(obj, valuesLevel, substatNode.subDistr)
-    checkExpandedEvalCorrectness(obj, deduplicate(obj, valuesLevel), substatNode.subDistr)
+    checkExpandedEvalCorrectness(
+      obj,
+      deduplicate(obj, valuesLevel),
+      substatNode.subDistr
+    )
   })
 
   test('substatProbs 4th sub', () => {
