@@ -21,10 +21,13 @@ export function expandRollsLevel({
     }))
   })
   return cartesian(...rollValues).map((rvs) => {
-    const { p, stat } = rvs.reduce((acc, rv) => ({
-      p: acc.p * rv.p,
-      stat: { ...acc.stat, ...rv.stat },
-    }))
+    const { p, stat } = rvs.reduce(
+      (acc, rv) => ({
+        p: acc.p * rv.p,
+        stat: { ...acc.stat, ...rv.stat },
+      }),
+      { p: 1, stat: {} as DynStat }
+    )
 
     const stats = { ...base }
     Object.entries(stat).forEach(([k, v]) => (stats[k] = (stats[k] ?? 0) + v))
