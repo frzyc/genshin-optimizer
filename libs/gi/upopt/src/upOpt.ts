@@ -89,24 +89,29 @@ export function freshArtifact(
   const { rarity, p3sub } = info
   const out: weightedNode[] = []
   allArtifactSlotKeys.forEach((slotKey) => {
+    const pSlot = 1 / 5
     artSlotMainKeys[slotKey].forEach((mainStatKey) => {
-      const pMain = allMainStatProbs[slotKey][mainStatKey] ?? 0
-      const base = toStats(currentBuild, {
-        slotKey,
-        rarity,
-        mainStatKey,
-      })
-
-      const subsToConsider = allSubstatKeys.filter((s) => s !== mainStatKey)
-      crawlSubstats([], subsToConsider).forEach(({ p, subs }) => {
-        const nodeInfo = {
-          base,
+      info.sets.forEach((setKey) => {
+        const pSet = 1 / info.sets.length
+        const pMain = allMainStatProbs[slotKey][mainStatKey] ?? 0
+        const base = toStats(currentBuild, {
+          slotKey,
           rarity,
-          subkeys: subs.map((key) => ({ key, baseRolls: 1 })),
-          rollsLeft: getRollsRemaining(0, rarity),
-        }
-        const n = makeSubstatNode(nodeInfo)
-        out.push({ p: ((p * pMain) / 5) * (1 - p3sub), n })
+          mainStatKey,
+          setKey,
+        })
+
+        const subsToConsider = allSubstatKeys.filter((s) => s !== mainStatKey)
+        crawlSubstats([], subsToConsider).forEach(({ p, subs }) => {
+          const nodeInfo = {
+            base,
+            rarity,
+            subkeys: subs.map((key) => ({ key, baseRolls: 1 })),
+            rollsLeft: getRollsRemaining(0, rarity),
+          }
+          const n = makeSubstatNode(nodeInfo)
+          out.push({ p: p * pMain * pSet * pSlot * (1 - p3sub), n })
+        })
       })
     })
   })
@@ -208,10 +213,12 @@ function toStats(
     slotKey,
     mainStatKey,
     rarity,
+    setKey,
   }: {
     slotKey: ArtifactSlotKey
     mainStatKey: MainStatKey
     rarity: ArtifactRarity
+    setKey: ArtifactSetKey
   }
 ) {
   const baseStats = allArtifactSlotKeys.reduce((acc, slot) => {
@@ -224,11 +231,10 @@ function toStats(
     })
     return acc
   }, {} as DynStat)
-  baseStats[mainStatKey] = getMainStatValue(
-    mainStatKey,
-    rarity,
-    artMaxLevel[rarity]
-  )
+  baseStats[setKey] = (baseStats[setKey] ?? 0) + 1
+  baseStats[mainStatKey] =
+    (baseStats[mainStatKey] ?? 0) +
+    getMainStatValue(mainStatKey, rarity, artMaxLevel[rarity])
   return baseStats
 }
 
