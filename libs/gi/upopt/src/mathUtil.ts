@@ -9,10 +9,6 @@ const quadrinomials = [
   [1, 3, 6, 10, 12, 12, 10, 6, 3, 1],
   [1, 4, 10, 20, 31, 40, 44, 40, 31, 20, 10, 4, 1],
   [1, 5, 15, 35, 65, 101, 135, 155, 155, 135, 101, 65, 35, 15, 5, 1],
-  [
-    1, 6, 21, 56, 120, 216, 336, 456, 546, 580, 546, 456, 336, 216, 120, 56, 21,
-    6, 1,
-  ],
 ]
 
 // step 2: a function that builds out the lookup-table if it needs to.
@@ -21,8 +17,19 @@ const quadrinomials = [
  * Returns the coefficient of x^k in (1 + x + x^2 + x^3)^n.
  */
 export function quadrinomial(n: number, k: number) {
-  if (n >= quadrinomials.length)
-    throw Error('Input to `quadrinomial` leaves expected range 0 <= n <= 5')
+  while (n >= quadrinomials.length) {
+    const i = quadrinomials.length - 1
+    quadrinomials.push(
+      Array.from({ length: quadrinomials.length * 4 - 1 }, (_, j) => {
+        return (
+          (quadrinomials[i][j - 3] ?? 0) +
+          (quadrinomials[i][j - 2] ?? 0) +
+          (quadrinomials[i][j - 1] ?? 0) +
+          (quadrinomials[i][j] ?? 0)
+        )
+      })
+    )
+  }
   return quadrinomials[n][k] ?? 0
 }
 

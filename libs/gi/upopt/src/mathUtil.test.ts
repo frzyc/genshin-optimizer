@@ -12,6 +12,7 @@ test('quadranomial', () => {
   expect(quadrinomial(0, 1)).toEqual(0)
   expect(quadrinomial(5, 0)).toEqual(1)
   expect(quadrinomial(5, 12)).toEqual(35)
+  expect(quadrinomial(8, 20)).toEqual(322)
 })
 
 test('factorial', () => {
