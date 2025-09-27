@@ -1,3 +1,5 @@
+import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi/solver'
 import {
   ddx,
   optimize,
@@ -5,8 +7,6 @@ import {
   zero_deriv,
   type OptNode,
 } from '@genshin-optimizer/gi/wr'
-import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
-import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi/solver'
 
 import type { Objective } from './upOpt.types'
 

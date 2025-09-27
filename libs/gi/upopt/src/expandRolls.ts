@@ -1,9 +1,9 @@
 import { cartesian, range } from '@genshin-optimizer/common/util'
-import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
+import { getSubstatValue } from '@genshin-optimizer/gi/util'
 
-import type { RollsLevelNode, ValuesLevelNode } from './upOpt.types'
 import { quadrinomial } from './mathUtil'
+import type { RollsLevelNode, ValuesLevelNode } from './upOpt.types'
 
 export function expandRollsLevel({
   base,

@@ -1,19 +1,19 @@
-import { dynRead, sum, prod } from '@genshin-optimizer/gi/wr'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import { dynRead, sum, prod } from '@genshin-optimizer/gi/wr'
 
+import { substatWeights } from './consts'
+import { deduplicate } from './deduplicate'
 import { evalMarkovNode, evaluateGaussian } from './evaluation'
 import { expandRollsLevel } from './expandRolls'
-import { makeObjective } from './makeObjective'
-import { crawlSubstats } from './substatProbs'
-import { deduplicate } from './deduplicate'
-import { substatWeights } from './consts'
-import { expandNode } from './upOpt'
 import {
   expandSubstatLevel,
   makeRollsNode,
   makeSubstatNode,
 } from './expandSubstat'
+import { makeObjective } from './makeObjective'
+import { crawlSubstats } from './substatProbs'
+import { expandNode } from './upOpt'
 import type {
   GaussianNode,
   MarkovNode,

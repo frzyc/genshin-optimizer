@@ -1,7 +1,7 @@
 import type {
-  ArtifactSlotKey,
-  ArtifactSetKey,
   ArtifactRarity,
+  ArtifactSetKey,
+  ArtifactSlotKey,
   MainStatKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
@@ -11,16 +11,16 @@ import {
   artMaxLevel,
   artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
-import { getMainStatValue, getRollsRemaining } from '@genshin-optimizer/gi/util'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import type { DynStat } from '@genshin-optimizer/gi/solver'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
+import type { DynStat } from '@genshin-optimizer/gi/solver'
+import { getMainStatValue, getRollsRemaining } from '@genshin-optimizer/gi/util'
 
-import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
+import { allMainStatProbs } from './consts'
+import { expandRollsLevel } from './expandRolls'
 import { expandSubstatLevel, makeSubstatNode } from './expandSubstat'
 import { crawlSubstats } from './substatProbs'
-import { expandRollsLevel } from './expandRolls'
-import { allMainStatProbs } from './consts'
+import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
 
 export function expandNode(node: MarkovNode): { p: number; n: MarkovNode }[] {
   if (node.type === 'substat') return expandSubstatLevel(node)
