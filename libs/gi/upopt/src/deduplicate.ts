@@ -72,10 +72,13 @@ function cmpNodes(a: MarkovNode, b: MarkovNode): number {
 }
 
 function cmpBase(a: DynStat, b: DynStat): number {
-  if (Object.keys(a).length !== Object.keys(b).length)
-    return Object.keys(a).length - Object.keys(b).length
-  const keys = Object.keys(a).sort()
-  for (const k of keys) if (a[k] !== b[k]) return a[k] - b[k]
+  const keysA = Object.keys(a).sort()
+  const keysB = Object.keys(b).sort()
+  if (keysA.length !== keysB.length) return keysA.length - keysB.length
+  for (let i = 0; i < keysA.length; i++) {
+    if (keysA[i] !== keysB[i]) return keysA[i].localeCompare(keysB[i])
+    if (a[keysA[i]] !== b[keysB[i]]) return a[keysA[i]] - b[keysB[i]]
+  }
   return 0
 }
 
