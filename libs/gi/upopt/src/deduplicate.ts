@@ -87,11 +87,15 @@ function cmpValuesNode(a: ValuesLevelNode, b: ValuesLevelNode): number {
 }
 
 function cmpSubstatNode(a: SubstatLevelNode, b: SubstatLevelNode): number {
+  if (a.rarity !== b.rarity) return a.rarity - b.rarity
+  if (a.rollsLeft !== b.rollsLeft) return a.rollsLeft - b.rollsLeft
   if (a.reshape && !b.reshape) return -1
   if (!a.reshape && b.reshape) return 1
   if (a.reshape && b.reshape) {
     if (a.reshape.mintotal !== b.reshape.mintotal)
       return a.reshape.mintotal - b.reshape.mintotal
+    if (a.reshape.affixes.length !== b.reshape.affixes.length)
+      return a.reshape.affixes.length - b.reshape.affixes.length
     for (let i = 0; i < a.reshape.affixes.length; i++) {
       if (a.reshape.affixes[i] !== b.reshape.affixes[i])
         return a.reshape.affixes[i].localeCompare(b.reshape.affixes[i])
@@ -109,6 +113,7 @@ function cmpSubstatNode(a: SubstatLevelNode, b: SubstatLevelNode): number {
 }
 
 function cmpRollsNode(a: RollsLevelNode, b: RollsLevelNode): number {
+  if (a.rarity !== b.rarity) return a.rarity - b.rarity
   if (a.subs.length !== b.subs.length) return a.subs.length - b.subs.length
   for (let i = 0; i < a.subs.length; i++) {
     if (a.subs[i].key !== b.subs[i].key)
