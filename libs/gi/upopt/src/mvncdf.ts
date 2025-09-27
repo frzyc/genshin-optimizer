@@ -1,4 +1,4 @@
-import { erf, gaussPDF } from "./mathUtil";
+import { erf, gaussPDF } from './mathUtil'
 
 /**
  * mvncdf stands for Multivariate Normal Cumulative Distributive Function. File
@@ -9,25 +9,25 @@ import { erf, gaussPDF } from "./mathUtil";
 export function gaussianPE(
   mu: number,
   variance: number,
-  x: number,
+  x: number
 ): { p: number; upAvg: number } {
   if (variance < 1e-5) {
-    if (mu > x) return { p: 1, upAvg: mu - x };
-    return { p: 0, upAvg: 0 };
+    if (mu > x) return { p: 1, upAvg: mu - x }
+    return { p: 0, upAvg: 0 }
   }
 
-  const z = (x - mu) / Math.sqrt(variance);
-  const p = (1 - erf(z / Math.sqrt(2))) / 2;
-  const phi = gaussPDF(z);
+  const z = (x - mu) / Math.sqrt(variance)
+  const p = (1 - erf(z / Math.sqrt(2))) / 2
+  const phi = gaussPDF(z)
 
-  const y2 = 1 / (z * z);
+  const y2 = 1 / (z * z)
 
   // When z is small, p and phi are both nonzero so (phi/p - z) is ok.
   // When p and phi are both small, we can take the Taylor expansion
   //  of (phi/p - z) at z=inf (or if y=1/z, at y=0).
   // Using 7th order expansion to ensure upAvg is continuous at z=5.
-  const ppz = z < 5 ? phi / p - z : (1 - 2 * y2 * (1 - y2 * (5 + 37 * y2))) / z;
-  return { p, upAvg: Math.sqrt(variance) * ppz };
+  const ppz = z < 5 ? phi / p - z : (1 - 2 * y2 * (1 - y2 * (5 + 37 * y2))) / z
+  return { p, upAvg: Math.sqrt(variance) * ppz }
 }
 
 /**
@@ -35,23 +35,23 @@ export function gaussianPE(
  * Note: this implementation ignores the cov off-diagonals (assumes all components are independent).
  */
 export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
-  let ptot = 1;
+  let ptot = 1
   for (let i = 1; i < mu.length; ++i) {
     if (cov[i][i] < 1e-5) {
-      if (mu[i] < x[i]) return { p: 0, upAvg: 0, cp: 0 };
-      continue;
+      if (mu[i] < x[i]) return { p: 0, upAvg: 0, cp: 0 }
+      continue
     }
 
-    const z = (x[i] - mu[i]) / Math.sqrt(cov[i][i]);
-    const p = (1 - erf(z / Math.sqrt(2))) / 2;
-    ptot *= p;
+    const z = (x[i] - mu[i]) / Math.sqrt(cov[i][i])
+    const p = (1 - erf(z / Math.sqrt(2))) / 2
+    ptot *= p
   }
 
-  let p0 = mu[0] < x[0] ? 0 : 1; // Default if variance too small
+  let p0 = mu[0] < x[0] ? 0 : 1 // Default if variance too small
   if (cov[0][0] > 1e-5) {
-    const z0 = (x[0] - mu[0]) / Math.sqrt(cov[0][0]);
-    p0 = (1 - erf(z0 / Math.sqrt(2))) / 2;
+    const z0 = (x[0] - mu[0]) / Math.sqrt(cov[0][0])
+    p0 = (1 - erf(z0 / Math.sqrt(2))) / 2
   }
-  const { upAvg } = gaussianPE(mu[0], cov[0][0], x[0]);
-  return { p: p0 * ptot, upAvg: upAvg, cp: ptot };
+  const { upAvg } = gaussianPE(mu[0], cov[0][0], x[0])
+  return { p: p0 * ptot, upAvg: upAvg, cp: ptot }
 }

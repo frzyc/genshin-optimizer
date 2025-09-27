@@ -1,7 +1,6 @@
 // Weight data from genshin-impact wiki:
 
-import type { MainStatKey } from "@genshin-optimizer/gi/consts";
-
+import type { MainStatKey } from '@genshin-optimizer/gi/consts'
 
 // https://genshin-impact.fandom.com/wiki/Artifact/Distribution
 export const substatWeights = {
@@ -15,15 +14,15 @@ export const substatWeights = {
   enerRech_: 4,
   critRate_: 3,
   critDMG_: 3,
-};
+}
 
 export const FlowerMainStatProbs = {
   hp: 1,
-} as Record<MainStatKey, number>;
+} as Record<MainStatKey, number>
 
 export const PlumeMainStatProbs = {
   atk: 1,
-} as Record<MainStatKey, number>;
+} as Record<MainStatKey, number>
 
 export const SandsMainStatProbs = {
   hp_: 80 / 300,
@@ -31,7 +30,7 @@ export const SandsMainStatProbs = {
   def_: 80 / 300,
   eleMas: 30 / 300,
   enerRech_: 30 / 300,
-} as Record<MainStatKey, number>;
+} as Record<MainStatKey, number>
 
 export const GobletMainStatProbs = {
   hp_: 77 / 400,
@@ -46,7 +45,7 @@ export const GobletMainStatProbs = {
   pyro_dmg_: 20 / 400,
   cryo_dmg_: 20 / 400,
   dendro_dmg_: 20 / 400,
-} as Record<MainStatKey, number>;
+} as Record<MainStatKey, number>
 
 export const CircletMainStatProbs = {
   hp_: 22 / 100,
@@ -56,7 +55,7 @@ export const CircletMainStatProbs = {
   critRate_: 10 / 100,
   critDMG_: 10 / 100,
   heal_: 10 / 100,
-} as Record<MainStatKey, number>;
+} as Record<MainStatKey, number>
 
 export const allMainStatProbs = {
   flower: FlowerMainStatProbs,
@@ -64,4 +63,4 @@ export const allMainStatProbs = {
   sands: SandsMainStatProbs,
   goblet: GobletMainStatProbs,
   circlet: CircletMainStatProbs,
-};
+}

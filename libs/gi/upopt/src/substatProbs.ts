@@ -1,11 +1,15 @@
-import { type SubstatKey } from "@genshin-optimizer/gi/consts";
-import { substatWeights } from "./consts";
+import { type SubstatKey } from '@genshin-optimizer/gi/consts'
+import { substatWeights } from './consts'
 
-function combinations<T>(arr: readonly T[], k: number, prefix: T[] = []): T[][] {
-  if (k === 0) return [prefix];
+function combinations<T>(
+  arr: readonly T[],
+  k: number,
+  prefix: T[] = []
+): T[][] {
+  if (k === 0) return [prefix]
   return arr.flatMap((v, i) =>
-    combinations(arr.slice(i + 1), k - 1, [...prefix, v]),
-  );
+    combinations(arr.slice(i + 1), k - 1, [...prefix, v])
+  )
 }
 
 /**
@@ -21,21 +25,21 @@ function combinations<T>(arr: readonly T[], k: number, prefix: T[] = []): T[][] 
  * @param remaining How many more substats can be chosen.
  * @returns
  */
-const substatProbCache: Record<string, number> = {};
+const substatProbCache: Record<string, number> = {}
 function substatProb(
   chosen: readonly number[],
   options: readonly number[],
-  remaining = 0,
+  remaining = 0
 ): number {
-  if (chosen.length === 0) return 1;
-  if (chosen.length > remaining) return 0;
+  if (chosen.length === 0) return 1
+  if (chosen.length > remaining) return 0
 
-  const key = JSON.stringify({ chosen, options, remaining });
-  if (substatProbCache[key] !== undefined) return substatProbCache[key];
+  const key = JSON.stringify({ chosen, options, remaining })
+  if (substatProbCache[key] !== undefined) return substatProbCache[key]
 
-  const denom = options.reduce((a, subW) => a + subW, 0);
-  let _c = -1;
-  const chosenIxs = chosen.map((c) => (_c = options.indexOf(c, _c + 1)));
+  const denom = options.reduce((a, subW) => a + subW, 0)
+  let _c = -1
+  const chosenIxs = chosen.map((c) => (_c = options.indexOf(c, _c + 1)))
 
   const p = options
     .map(
@@ -44,26 +48,26 @@ function substatProb(
         substatProb(
           chosen.filter((_, j) => i !== chosenIxs[j]),
           options.filter((_, j) => i !== j),
-          remaining - 1,
-        ),
+          remaining - 1
+        )
     )
-    .reduce((a, b) => a + b, 0);
-  substatProbCache[key] = p;
-  return p;
+    .reduce((a, b) => a + b, 0)
+  substatProbCache[key] = p
+  return p
 }
 
 export function crawlSubstats(
   prefix: readonly SubstatKey[],
   options: readonly SubstatKey[],
-  insertPrefix = true,
+  insertPrefix = true
 ): { p: number; subs: SubstatKey[] }[] {
-  const optW = options.map((k) => substatWeights[k]).sort((a, b) => a - b);
+  const optW = options.map((k) => substatWeights[k]).sort((a, b) => a - b)
   return combinations(options, 4 - prefix.length)
     .map((combo) => {
-      const comboW = combo.map((k) => substatWeights[k]).sort((a, b) => a - b);
-      const p = substatProb(comboW, optW, 4 - prefix.length);
-      if (insertPrefix) return { p, subs: [...prefix, ...combo] };
-      return { p, subs: combo };
+      const comboW = combo.map((k) => substatWeights[k]).sort((a, b) => a - b)
+      const p = substatProb(comboW, optW, 4 - prefix.length)
+      if (insertPrefix) return { p, subs: [...prefix, ...combo] }
+      return { p, subs: combo }
     })
-    .filter(({ p }) => p > 0);
+    .filter(({ p }) => p > 0)
 }
