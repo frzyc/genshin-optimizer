@@ -6,7 +6,9 @@ import { evalMarkovNode, evaluateGaussian } from './evaluation'
 import { expandRollsLevel } from './expandRolls'
 import { makeObjective } from './makeObjective'
 import { crawlSubstats } from './substatProbs'
+import { deduplicate } from './deduplicate'
 import { substatWeights } from './consts'
+import { expandNode } from './upOpt'
 import {
   expandSubstatLevel,
   makeRollsNode,
@@ -18,7 +20,6 @@ import type {
   Objective,
   SubstatLevelNode,
 } from './upOpt.types'
-import { deduplicate } from './deduplicate'
 
 /**
  * Checks whether the expanded nodes' evaluations match the base Gaussian node's evaluation.
@@ -61,9 +62,9 @@ function checkExpandedEvalCorrectness(
 describe('upOpt components', () => {
   const nodeLinear = sum(dynRead('atk'), prod(1500, dynRead('atk_')))
   const nodeNonlinear = prod(nodeLinear, dynRead('critRate_'))
-  const obj = makeObjective([nodeLinear, nodeNonlinear], [4000, 100])
 
   test('makeObjective', () => {
+    const obj = makeObjective([nodeLinear, nodeNonlinear], [4000, 100])
     expect(obj.threshold).toEqual([4000, 100])
 
     const [f, df] = obj.computeWithDerivs({
@@ -86,6 +87,7 @@ describe('upOpt components', () => {
   })
 
   test('evaluateGaussianDegen', () => {
+    const obj = makeObjective([nodeLinear, nodeNonlinear], [4000, 100])
     const gnode: GaussianNode = {
       base: { atk: 100, atk_: 1.5, critRate_: 1.0 },
       subs: [],
@@ -135,6 +137,7 @@ describe('upOpt components', () => {
   // and probability calculations are correct.
   // The expected values are precomputed using Mathematica for accuracy.
   test('evaluateGaussian', () => {
+    const obj = makeObjective([nodeLinear, nodeNonlinear], [4000, 100])
     const gnode: GaussianNode = {
       base: { atk: 100, atk_: 1.5, critRate_: 1.0 },
       subs: ['atk', 'atk_', 'critRate_'],
@@ -308,6 +311,56 @@ describe('upOpt components', () => {
     const obj = makeObjective([dynRead('def')], [4000])
     checkExpandedEvalCorrectness(obj, expanded, n.subDistr)
     checkExpandedEvalCorrectness(obj, deduplicate(obj, expanded), n.subDistr)
+  })
+
+  test('deduplicate substatNode', () => {
+    const info = {
+      base: { atk: 100, atk_: 0.5, critRate_: 0 },
+      rarity: 5 as const,
+      rollsLeft: 5,
+    }
+    const subkeys1 = ['atk', 'atk_', 'critRate_', 'critDMG_'].map((k) => ({
+      key: k as SubstatKey,
+      baseRolls: 0,
+    }))
+    const subkeys2 = ['atk', 'atk_', 'critRate_', 'def'].map((k) => ({
+      key: k as SubstatKey,
+      baseRolls: 0,
+    }))
+    const expanded = [
+      { p: 0.5, n: makeSubstatNode({ ...info, subkeys: subkeys1 }) },
+      { p: 0.5, n: makeSubstatNode({ ...info, subkeys: subkeys2 }) },
+    ]
+
+    const obj = makeObjective([nodeLinear], [4000])
+    const dedup = deduplicate(obj, expanded)
+    expect(dedup.length).toBe(1)
+  })
+
+  test('expand post dedup', () => {
+    const substatNode = makeSubstatNode({
+      base: { atk: 100, atk_: 0.5, critRate_: 0 },
+      rarity: 5,
+      subkeys: [
+        { key: 'atk', baseRolls: 0 },
+        { key: 'atk_', baseRolls: 0 },
+        { key: 'critRate_', baseRolls: 0 },
+        { key: 'def', baseRolls: 0 },
+      ],
+      rollsLeft: 5,
+    })
+
+    const obj = makeObjective([nodeLinear], [4000])
+    const rollsLevel = deduplicate(obj, expandSubstatLevel(substatNode))
+    checkExpandedEvalCorrectness(obj, rollsLevel, substatNode.subDistr)
+    const valuesLevel = rollsLevel.flatMap(({ p, n: ni }) =>
+      deduplicate(obj, expandNode(ni)).map(({ p: p2, n }) => ({
+        p: p * p2,
+        n,
+      }))
+    )
+    checkExpandedEvalCorrectness(obj, valuesLevel, substatNode.subDistr)
+    checkExpandedEvalCorrectness(obj, deduplicate(obj, valuesLevel), substatNode.subDistr)
   })
 
   test('substatProbs 4th sub', () => {

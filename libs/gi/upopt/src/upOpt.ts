@@ -11,15 +11,22 @@ import {
   artMaxLevel,
   artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
-import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { getMainStatValue, getRollsRemaining } from '@genshin-optimizer/gi/util'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
 
-import type { SubstatLevelNode } from './upOpt.types'
-import { makeSubstatNode } from './expandSubstat'
+import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
+import { expandSubstatLevel, makeSubstatNode } from './expandSubstat'
 import { crawlSubstats } from './substatProbs'
+import { expandRollsLevel } from './expandRolls'
 import { allMainStatProbs } from './consts'
+
+export function expandNode(node: MarkovNode): { p: number; n: MarkovNode }[] {
+  if (node.type === 'substat') return expandSubstatLevel(node)
+  if (node.type === 'rolls') return expandRollsLevel(node)
+  return [{ p: 1, n: node }]
+}
 
 /**
  * Simulates leveling up an existing artifact to its max level.
