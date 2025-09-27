@@ -111,6 +111,11 @@ export function freshArtifact(
           }
           const n = makeSubstatNode(nodeInfo)
           out.push({ p: p * pMain * pSet * pSlot * (1 - p3sub), n })
+
+          // 3-substat start just means we have one fewer total roll.
+          nodeInfo.rollsLeft -= 1
+          const n2 = makeSubstatNode(nodeInfo)
+          out.push({ p: p * pMain * pSet * pSlot * p3sub, n: n2 })
         })
       })
     })
