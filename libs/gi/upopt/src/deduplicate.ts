@@ -35,12 +35,12 @@ export function deduplicate(
 
 function simplifySubstatNode(obj: Objective, node: SubstatLevelNode) {
   const toRemove = node.subkeys.map(({ key }) => obj.zeroDeriv.includes(key))
-  node.subkeys = node.subkeys.filter((_, i) => toRemove[i])
-  node.subDistr.subs = node.subDistr.subs.filter((_, i) => toRemove[i])
-  node.subDistr.mu = node.subDistr.mu.filter((_, i) => toRemove[i])
-  node.subDistr.cov = node.subDistr.cov.filter((_, i) => toRemove[i])
+  node.subkeys = node.subkeys.filter((_, i) => !toRemove[i])
+  node.subDistr.subs = node.subDistr.subs.filter((_, i) => !toRemove[i])
+  node.subDistr.mu = node.subDistr.mu.filter((_, i) => !toRemove[i])
+  node.subDistr.cov = node.subDistr.cov.filter((_, i) => !toRemove[i])
   node.subDistr.cov = node.subDistr.cov.map((row) =>
-    row.filter((_, i) => toRemove[i])
+    row.filter((_, i) => !toRemove[i])
   )
 }
 
