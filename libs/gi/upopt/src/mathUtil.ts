@@ -116,7 +116,6 @@ export function rollCountProb(n1234: number[], reshape?: ReshapeInfo) {
     (1 / reshape.n) ** reshape.total *
     (1 / (4 - reshape.n)) ** (N - reshape.total)
   rollCountPCache[key] = p_total_equal_min * p_rolls
-
   return p_total_equal_min * p_rolls
 }
 

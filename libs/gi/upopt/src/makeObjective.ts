@@ -42,7 +42,7 @@ export function makeObjective(
       return [f, df]
     },
     zeroDeriv: allSubstatKeys.filter((s) =>
-      nodes.every((n) => zero_deriv(n, (f) => f.path[1], s))
+      nonzeroDerivs.every((subs) => !subs.includes(s))
     ),
   }
 }
