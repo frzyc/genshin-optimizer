@@ -1,11 +1,11 @@
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi/solver'
 import {
+  type OptNode,
   ddx,
   optimize,
   precompute,
   zero_deriv,
-  type OptNode,
 } from '@genshin-optimizer/gi/wr'
 
 import type { Objective } from './upOpt.types'

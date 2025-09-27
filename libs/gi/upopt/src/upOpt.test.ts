@@ -1,6 +1,6 @@
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
-import { dynRead, sum, prod } from '@genshin-optimizer/gi/wr'
+import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
 
 import { substatWeights } from './consts'
 import { deduplicate } from './deduplicate'
