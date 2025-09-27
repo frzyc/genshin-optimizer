@@ -293,6 +293,24 @@ describe('upOpt components', () => {
     checkExpandedEvalCorrectness(obj, deduplicate(obj, expanded), n.subDistr)
   })
 
+  test('expandSubstatFancy MissingSubs', () => {
+    const n = makeSubstatNode({
+      base: { atk: 100, atk_: 0.5, critRate_: 0 },
+      rarity: 5,
+      subkeys: [
+        { key: 'atk', baseRolls: 2 },
+        { key: 'atk_', baseRolls: 0 },
+      ],
+      rollsLeft: 5,
+      reshape: { affixes: ['atk_', 'critRate_'], mintotal: 2 },
+    })
+    const expanded = expandSubstatLevel(n)
+
+    const obj = makeObjective([nodeLinear], [4000])
+    checkExpandedEvalCorrectness(obj, expanded, n.subDistr)
+    checkExpandedEvalCorrectness(obj, deduplicate(obj, expanded), n.subDistr)
+  })
+
   test('deduplicate simplify', () => {
     const n = makeSubstatNode({
       base: { atk: 100, atk_: 0.5, critRate_: 0 },
