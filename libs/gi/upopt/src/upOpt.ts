@@ -9,6 +9,7 @@ import {
   allArtifactSlotKeys,
   allSubstatKeys,
   artMaxLevel,
+  artSlotMainKeys,
 } from "@genshin-optimizer/gi/consts";
 import type { ICachedArtifact } from "@genshin-optimizer/gi/db";
 import {
@@ -21,6 +22,7 @@ import type { IArtifact } from "@genshin-optimizer/gi/good";
 import type { SubstatLevelNode } from "./upOpt.types";
 import { makeSubstatNode } from "./expandSubstat";
 import { crawlSubstats } from "./substatProbs";
+import { allMainStatProbs } from "./consts";
 
 /**
  * Simulates leveling up an existing artifact to its max level.
@@ -77,29 +79,77 @@ export function levelUpArtifact(
  * leveling it to max level.
  */
 export function freshArtifact(
-  info: { sets: ArtifactSetKey[]; p3sub: number },
+  info: { sets: ArtifactSetKey[]; p3sub: number; rarity: ArtifactRarity },
   currentBuild: Build,
 ): weightedNode[] {
-  return [];
+  const { rarity, p3sub } = info;
+  const out: weightedNode[] = [];
+  allArtifactSlotKeys.forEach((slotKey) => {
+    artSlotMainKeys[slotKey].forEach((mainStatKey) => {
+      const pMain = allMainStatProbs[slotKey][mainStatKey] ?? 0;
+      const base = toStats(currentBuild, {
+        slotKey,
+        rarity,
+        mainStatKey,
+      });
+
+      const subsToConsider = allSubstatKeys.filter((s) => s !== mainStatKey);
+      crawlSubstats([], subsToConsider).forEach(({ p, subs }) => {
+        const nodeInfo = {
+          base,
+          rarity,
+          subkeys: subs.map((key) => ({ key, baseRolls: 1 })),
+          rollsLeft: getRollsRemaining(0, rarity),
+        };
+        const n = makeSubstatNode(nodeInfo);
+        out.push({ p: (p * pMain) / 5 * (1 - p3sub), n });
+      });
+    });
+  });
+  return out;
 }
 
 /**
  * Artifact reshaping / rerolling using Dust of Enlightenment. We select two affixes and reroll from
  * Level 0 (or 4) and guarantee that at least `mintotal` rolls go into those affixes.
+ *
+ * TODO: Check that initial value is handled correctly
  */
 export function dustReshape(
-  base: IArtifact,
+  art: IArtifact,
+  currentBuild: Build,
   affixes: SubstatKey[],
   mintotal: number,
-  currentBuild: Build,
 ): weightedNode[] {
-  base.substats[0].initialValue
-  return [];
+  const base = toStats(currentBuild, art);
+  const { rarity } = art;
+  const rollsLeft = getRollsRemaining(0, art.rarity);
+  const subkeys = art.substats.flatMap(({ key, initialValue }) => {
+    if (key === "") return [];
+    if (initialValue === undefined)
+      throw new Error("initialValue must be defined for reshaping");
+    base[key] = (base[key] ?? 0) + initialValue;
+    return [{ key, baseRolls: 0 }];
+  });
+  return [
+    {
+      p: 1,
+      n: makeSubstatNode({
+        base,
+        rarity,
+        subkeys,
+        rollsLeft,
+        reshape: { affixes, mintotal },
+      }),
+    },
+  ];
 }
 
 /**
  * Artifact definition using Sanctifying Elixir. Two affixes are guaranteed w/ two
  * reshape-style roll guarantees.
+ *
+ * TODO: Can defined arts have 3-line starts? Currently assumes 4-line only.
  */
 export function elixirDefinition(
   info: {
