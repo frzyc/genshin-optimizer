@@ -99,6 +99,7 @@ export function makeRollsNode(
   { base, rarity }: SubstatLevelNode,
   rolls: { key: SubstatKey; rolls: number }[]
 ): RollsLevelNode {
+  rolls.sort((a, b) => a.key.localeCompare(b.key)) // Ensure consistent ordering
   return {
     type: 'rolls',
     base,
