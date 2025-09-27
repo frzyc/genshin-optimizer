@@ -71,6 +71,23 @@ function getReshapeIxs(
     return ix;
   });
 }
+
+/**
+ * Given a list of indices, [i0, i2, ..., ik], return a list of swaps (i, j) that will
+ * place a[0] at i0, a[1] at i1, ..., a[k] at ik.
+ */
+function ixsToSwaps(ixs: number[], nmax: number): number[][] {
+  const tracker = Array.from({ length: nmax }, (_, i) => i);
+
+  const out: number[][] = [];
+  ixs.forEach((i, j) => {
+    if (i === tracker[j]) return;
+    out.push([i, tracker[j]]);
+    swap(tracker, i, j);
+  });
+  return out;
+}
+
 function swap(arr: any[], i: number, j: number) {
   if (i === j) return;
   const tmp = arr[i];
@@ -107,6 +124,8 @@ type SubstatLevelInfo = {
 };
 export function makeSubstatNode(info: SubstatLevelInfo): SubstatLevelNode {
   const { rollsLeft, subkeys, reshape } = info;
+  subkeys.sort((a, b) => a.key.localeCompare(b.key)); // Ensure consistent ordering
+  reshape?.affixes.sort((a, b) => a.localeCompare(b)); // Ensure consistent ordering
   const { mu: muRoll, cov: covRoll } = rollCountMuVar(
     rollsLeft,
     reshape
@@ -115,7 +134,7 @@ export function makeSubstatNode(info: SubstatLevelInfo): SubstatLevelNode {
   );
   // Reorder mu, cov so that reshaped affixes are where they should be.
   const reshapeIxs: number[] = getReshapeIxs(subkeys, reshape);
-  reshapeIxs.forEach((i, j) => {
+  ixsToSwaps(reshapeIxs, 4).forEach(([i, j]) => {
     swap(muRoll, i, j);
     swap(covRoll, i, j);
     covRoll.forEach((row) => swap(row, i, j));
@@ -123,7 +142,7 @@ export function makeSubstatNode(info: SubstatLevelInfo): SubstatLevelNode {
 
   // Increment muRoll by base rolls
   subkeys.forEach(({ baseRolls }, i) => {
-    muRoll[i] += baseRolls;
+    muRoll[i] = muRoll[i] + baseRolls;
   });
 
   // Trim to only the subkeys present & scale by substat value mu, var

@@ -18,6 +18,7 @@ import type {
   Objective,
   SubstatLevelNode,
 } from "./upOpt.types";
+import { deduplicate } from "./deduplicate";
 
 /**
  * Checks whether the expanded nodes' evaluations match the base Gaussian node's evaluation.
@@ -243,6 +244,7 @@ describe("upOpt components", () => {
 
     const obj4 = makeObjective([dynRead("critRate_")], [0.1]);
     checkExpandedEvalCorrectness(obj4, expanded, rollsNode.subDistr);
+    checkExpandedEvalCorrectness(obj4, deduplicate(obj4, expanded), rollsNode.subDistr);
   });
 
   test("expandSubstat", () => {
@@ -261,6 +263,7 @@ describe("upOpt components", () => {
 
     const obj = makeObjective([nodeLinear], [4000]);
     checkExpandedEvalCorrectness(obj, expanded, n.subDistr);
+    checkExpandedEvalCorrectness(obj, deduplicate(obj, expanded), n.subDistr);
   });
 
   test("expandSubstatFancy", () => {
@@ -274,12 +277,33 @@ describe("upOpt components", () => {
         { key: "def", baseRolls: 0 },
       ],
       rollsLeft: 5,
-      reshape: { affixes: ["atk", "critRate_"], mintotal: 2 },
+      reshape: { affixes: ["atk_", "critRate_"], mintotal: 2 },
     });
     const expanded = expandSubstatLevel(n);
 
     const obj = makeObjective([nodeLinear], [4000]);
     checkExpandedEvalCorrectness(obj, expanded, n.subDistr);
+    checkExpandedEvalCorrectness(obj, deduplicate(obj, expanded), n.subDistr);
+  });
+
+  test("deduplicate simplify", () => {
+    const n = makeSubstatNode({
+      base: { atk: 100, atk_: 0.5, critRate_: 0 },
+      rarity: 5,
+      subkeys: [
+        { key: "atk_", baseRolls: 0 },
+        { key: "atk", baseRolls: 2 },
+        { key: "def", baseRolls: 0 },
+        { key: "critRate_", baseRolls: 3 },
+      ],
+      rollsLeft: 5,
+      reshape: { affixes: ["atk", "critRate_"], mintotal: 2 },
+    });
+    const expanded = expandSubstatLevel(n);
+
+    const obj = makeObjective([dynRead("def")], [4000]);
+    checkExpandedEvalCorrectness(obj, expanded, n.subDistr);
+    checkExpandedEvalCorrectness(obj, deduplicate(obj, expanded), n.subDistr);
   });
 
   test("substatProbs 4th sub", () => {

@@ -126,7 +126,13 @@ export function rollCountMuVar(
   reshape: { n: number; min: number },
 ): { mu: number[]; cov: number[][] } {
   const cacheKey = JSON.stringify({ rollsLeft, reshape });
-  if (rollMuVarCache[cacheKey]) return rollMuVarCache[cacheKey];
+  if (rollMuVarCache[cacheKey]) {
+    const { mu, cov } = rollMuVarCache[cacheKey];
+    return {
+      mu: [...mu],
+      cov: cov.map((row) => [...row]),
+    };
+  }
 
   const distr = crawlUpgrades(rollsLeft).map((counts) => {
     const total = counts.slice(0, reshape.n).reduce((a, b) => a + b, 0);
@@ -146,11 +152,19 @@ export function rollCountMuVar(
       });
       return a;
     },
-    [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+    [
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+    ],
   );
 
   rollMuVarCache[cacheKey] = { mu, cov };
-  return { mu, cov };
+  return {
+    mu: [...mu],
+    cov: cov.map((row) => [...row]),
+  };
 }
 
 /** Crawl the upgrade distribution for `n` upgrades, with a callback function that accepts fn([n1, n2, n3, n4], prob) */
