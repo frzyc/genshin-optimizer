@@ -12,7 +12,7 @@ export function expandSubstatLevel(
   const reshapeIxs: number[] = getReshapeIxs(subkeys, reshape)
 
   const out: { p: number; n: RollsLevelNode }[] = []
-  crawlUpgrades(rollsLeft).map((counts) => {
+  crawlUpgrades(rollsLeft).forEach((counts) => {
     const rollsObj = subkeys.map(({ key, baseRolls }, i) => ({
       key,
       rolls: counts[i] + baseRolls,

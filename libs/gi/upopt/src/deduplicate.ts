@@ -13,6 +13,10 @@ import type {
 } from './upOpt.types'
 
 type weightedNode = { p: number; n: MarkovNode }
+/**
+ * Deduplicate nodes by merging identical nodes and summing their probabilities.
+ * Note: modifies input nodes in place.
+ */
 export function deduplicate(
   obj: Objective,
   nodes: weightedNode[]
