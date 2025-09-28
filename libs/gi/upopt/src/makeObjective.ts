@@ -35,9 +35,10 @@ export function makeObjective(
       const values = evalFn([{ id: '', values: x }] as ArtifactBuildData[] & {
         length: 1
       })
-      const f = values.splice(0, nodes.length)
+      const f = values.slice(0, nodes.length)
+      let k = nodes.length
       const df = nonzeroDerivs.map((subs) =>
-        Object.fromEntries(subs.map((s) => [s, values.shift()!]))
+        Object.fromEntries(subs.map((s) => [s, values[k++]]))
       ) as DynStat[]
       return [f, df]
     },
