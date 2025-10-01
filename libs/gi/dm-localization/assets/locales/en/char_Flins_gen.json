@@ -1,0 +1,230 @@
+{
+  "name": "Flins",
+  "title": "Shadowy Lights, Stranger Wights",
+  "description": "A Lightkeeper of Nod-Krai, guardian of a lighthouse and graveyard on a northern isle. An enigmatic gentleman, cultured and courtly.",
+  "constellationName": "Laterna Vigilis",
+  "auto": {
+    "name": "Pocztowy Demonspear",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 5 consecutive spear strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to perform a forward spear throw."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%×2",
+      "4": "{{4, percent(fixed: 1)}}%",
+      "5": "{{5, percent(fixed: 1)}}%",
+      "6": "{{6, fixed(fixed: 1)}}",
+      "7": "{{7, percent(fixed: 1)}}%",
+      "8": "{{8, percent}}%/{{9, percent}}%",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ancient Rite: Arcane Light",
+    "description": {
+      "0": "Flins summons forth the ancient power concealed within his lamp and switches to his <strong>Manifest Flame</strong> form. This form has the following characteristics:",
+      "1": [
+        " Flins's Normal and Charged Attacks deal <electro>Electro DMG</electro> that cannot be overridden by other Elemental infusions, and he is unable to perform Plunging Attacks.",
+        " His interruption resistance is increased.",
+        " His Elemental Skill <strong>Ancient Rite: Arcane Light</strong> is replaced with the special Elemental Skill <strong>Northland Spearstorm</strong>."
+      ],
+      "2": "<br/>",
+      "3": "<strong>Northland Spearstorm</strong>",
+      "4": "Flins summons a flurry of spears in front, dealing <electro>AoE Electro DMG</electro> and causing his Elemental Burst <strong>Ancient Ritual: Cometh the Night</strong> to be replaced with the special Elemental Burst <strong>Thunderous Symphony</strong> for the next 6s.",
+      "5": "The base CD of <strong>Northland Spearstorm</strong> is 6s and will not be affected by other effects."
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Northland Spearstorm DMG",
+      "7": "Northland Spearstorm CD",
+      "8": "Manifest Flame Duration",
+      "9": "Skill CD",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%×2",
+      "4": "{{4, percent(fixed: 1)}}%",
+      "5": "{{5, percent(fixed: 1)}}%",
+      "6": "{{6, percent(fixed: 1)}}%",
+      "7": "{{7, fixed(fixed: 1)}}s",
+      "8": "{{8, fixed(fixed: 1)}}s",
+      "9": "{{9, fixed(fixed: 1)}}s",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ancient Ritual: Cometh the Night",
+    "description": {
+      "0": "Flins unleashes the true power of his lamp, dealing <electro>AoE Electro DMG</electro> and, after a short delay, dealing 2 instances of middle-phase and 1 instance of final-phase <electro>AoE Electro DMG</electro>, all of which are considered Lunar-Charged DMG.",
+      "1": "<strong>Moonsign: Ascendant Gleam</strong>: Flins's Skill is enhanced: If there are thunderclouds nearby, Flins will deal an additional 2 instances of middle-phase Lunar-Charged <electro>AoE Electro DMG</electro>.",
+      "2": "<br/>",
+      "3": "After using the special Elemental Skill <strong>Northland Spearstorm</strong>, Flins's Elemental Burst <strong>Ancient Ritual: Cometh the Night</strong> will be replaced with the special Elemental Burst <strong>Thunderous Symphony</strong> for the next 6s.",
+      "4": "<br/>",
+      "5": "<strong>Thunderous Symphony</strong>",
+      "6": "Consume less Elemental Energy to unleash a special Elemental Burst. Flins deals a single instance of <electro>AoE Electro DMG</electro> that is considered Lunar-Charged DMG.",
+      "7": "<strong>Moonsign: Ascendant Gleam</strong>: Flins's Skill is enhanced: If there are thunderclouds nearby, Flins will deal an additional instance of Lunar-Charged <electro>AoE Electro DMG</electro>."
+    },
+    "skillParams": {
+      "0": "Initial Skill DMG",
+      "1": "Middle Phase Lunar-Charged DMG",
+      "2": "Final Phase Lunar-Charged DMG",
+      "3": "Energy Cost",
+      "4": "CD",
+      "5": "Thunderous Symphony DMG",
+      "6": "Thunderous Symphony Additional DMG",
+      "7": "Thunderous Symphony Energy Cost",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3}}",
+      "4": "{{4, fixed(fixed: 1)}}s",
+      "5": "{{5, percent(fixed: 1)}}%",
+      "6": "{{6, percent(fixed: 1)}}%",
+      "7": "{{7}}",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Symphony of Winter",
+    "description": {
+      "0": "Flins will gain a corresponding buff effect based on the party's <strong>Moonsign</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: Lunar-Charged reactions triggered by Flins will deal an additional 20% DMG."
+    }
+  },
+  "passive2": {
+    "name": "Whispering Flame",
+    "description": {
+      "0": "Flins's Elemental Mastery is increased by 8% of his ATK. The maximum increase obtainable this way is 160."
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Old World Secrets",
+    "description": {
+      "0": "When a party member triggers an Electro-Charged reaction, it will be converted into the Lunar-Charged reaction, with every 100 ATK that Flins has increasing Lunar-Charged's Base DMG by 0.7%, up to a maximum of 14%.",
+      "1": "<br/>",
+      "2": "Additionally, when Flins is in the party, the party's <strong>Moonsign</strong> will increase by 1 level."
+    }
+  },
+  "passive": {
+    "name": "A Light in the Dark",
+    "description": {
+      "0": "Displays the location of nearby <strong>resources unique to Nod-Krai</strong> on the mini-map.",
+      "1": "Additionally, Flins appears to be able to decipher the whispers of the Wild Hunt..."
+    }
+  },
+  "constellation1": {
+    "name": "Part the Veil of Snow",
+    "description": {
+      "0": "The basic cooldown of the special Elemental Skill <strong>Northland Spearstorm</strong> is reduced to 4s.",
+      "1": "Additionally, when party members trigger Lunar-Charged reactions, Flins will recover 8 Elemental Energy. This effect can occur once every 5.5s."
+    }
+  },
+  "constellation2": {
+    "name": "The Devil's Wall",
+    "description": {
+      "0": "For the next 6s after using the special Elemental Skill <strong>Northland Spearstorm</strong>, when Flins's next Normal Attack hits an opponent, it will deal an additional 50% of Flins's ATK as <electro>AoE Electro DMG</electro>. This DMG is considered Lunar-Charged DMG.",
+      "1": "<strong>Moonsign: Ascendant Gleam</strong>: While Flins is on the field, after his <electro>Electro</electro> attacks hit an opponent, that opponent's <electro>Electro RES</electro> will be decreased by 25% for 7s."
+    }
+  },
+  "constellation3": {
+    "name": "Stranger in the Night",
+    "description": {
+      "0": "Increases the Level of <strong>Ancient Ritual: Cometh the Night</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Night on Bald Mountain",
+    "description": {
+      "0": "Flins's ATK is increased by 20%.",
+      "1": "Additionally, his Ascension Talent <strong>\"Whispering Flame\"</strong> is enhanced: Flins's Elemental Mastery is increased by 10% of his ATK. The maximum increase obtainable this way is 220."
+    }
+  },
+  "constellation5": {
+    "name": "Exile's Shadow",
+    "description": {
+      "0": "Increases the Level of <strong>Ancient Rite: Arcane Light</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Songs and Dances of Death",
+    "description": {
+      "0": "The DMG dealt to opponents by Flins's Lunar-Charged reactions is <strong>elevated</strong> by 35%.",
+      "1": "<strong>Moonsign: Ascendant Gleam</strong>: All nearby party members' Lunar-Charged DMG is <strong>elevated</strong> by 10%."
+    }
+  }
+}

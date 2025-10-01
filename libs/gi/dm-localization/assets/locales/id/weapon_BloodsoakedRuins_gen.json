@@ -1,0 +1,24 @@
+{
+  "name": "Bloodsoaked Ruins",
+  "description": {
+    "0": "Tombak panjang yang warnanya menghitam karena pertempuran panjang, kini memancarkan cahaya unik di bawah cahaya api biru yang redup."
+  },
+  "passiveName": "Mournful Tribute",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah melancarkan Elemental Burst, DMG reaksi Lunar-Charged yang diakibatkan Karakter yang mengenakan terhadap musuh +<cryo>36%</cryo> selama 3,5 detik. Selain itu, setelah memicu reaksi Lunar-Charged, Karakter yang mengenakan mendapatkan efek Requiem of Ruin: CRIT DMG +<cryo>28%</cryo> selama 6 detik, dan memulihkan <cryo>12</cryo> poin Energy. Pemulihan Energy dengan cara ini dapat terpicu sekali setiap 14 detik."
+    },
+    "1": {
+      "0": "Setelah melancarkan Elemental Burst, DMG reaksi Lunar-Charged yang diakibatkan Karakter yang mengenakan terhadap musuh +<cryo>48%</cryo> selama 3,5 detik. Selain itu, setelah memicu reaksi Lunar-Charged, Karakter yang mengenakan mendapatkan efek Requiem of Ruin: CRIT DMG +<cryo>35%</cryo> selama 6 detik, dan memulihkan <cryo>13</cryo> poin Energy. Pemulihan Energy dengan cara ini dapat terpicu sekali setiap 14 detik."
+    },
+    "2": {
+      "0": "Setelah melancarkan Elemental Burst, DMG reaksi Lunar-Charged yang diakibatkan Karakter yang mengenakan terhadap musuh +<cryo>60%</cryo> selama 3,5 detik. Selain itu, setelah memicu reaksi Lunar-Charged, Karakter yang mengenakan mendapatkan efek Requiem of Ruin: CRIT DMG +<cryo>42%</cryo> selama 6 detik, dan memulihkan <cryo>14</cryo> poin Energy. Pemulihan Energy dengan cara ini dapat terpicu sekali setiap 14 detik."
+    },
+    "3": {
+      "0": "Setelah melancarkan Elemental Burst, DMG reaksi Lunar-Charged yang diakibatkan Karakter yang mengenakan terhadap musuh +<cryo>72%</cryo> selama 3,5 detik. Selain itu, setelah memicu reaksi Lunar-Charged, Karakter yang mengenakan mendapatkan efek Requiem of Ruin: CRIT DMG +<cryo>49%</cryo> selama 6 detik, dan memulihkan <cryo>15</cryo> poin Energy. Pemulihan Energy dengan cara ini dapat terpicu sekali setiap 14 detik."
+    },
+    "4": {
+      "0": "Setelah melancarkan Elemental Burst, DMG reaksi Lunar-Charged yang diakibatkan Karakter yang mengenakan terhadap musuh +<cryo>84%</cryo> selama 3,5 detik. Selain itu, setelah memicu reaksi Lunar-Charged, Karakter yang mengenakan mendapatkan efek Requiem of Ruin: CRIT DMG +<cryo>56%</cryo> selama 6 detik, dan memulihkan <cryo>16</cryo> poin Energy. Pemulihan Energy dengan cara ini dapat terpicu sekali setiap 14 detik."
+    }
+  }
+}

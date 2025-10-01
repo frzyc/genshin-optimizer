@@ -1,0 +1,24 @@
+{
+  "name": "Rovine insanguinate",
+  "description": {
+    "0": "Una lunga lancia macchiatasi di nero nel corso di un'accanita battaglia. Quando illuminata dalla spettrale luce blu della lanterna, brilla di un bagliore etereo."
+  },
+  "passiveName": "Tributo funebre",
+  "passiveDescription": {
+    "0": {
+      "0": "Nei 3,5 s successivi all'utilizzo del Tripudio elementale, i DAN da Carica lunare inflitti agli avversari dal personaggio che equipaggia l'arma aumentano di un <cryo>36%</cryo>. Inoltre, dopo aver innescato una reazione di Carica lunare, il personaggio che equipaggia l'arma ottiene l'effetto Requiem della rovina, che aumenta i DAN da CRIT di un <cryo>28%</cryo> per 6 s e ripristina <cryo>12</cryo> punti di energia elementale. Il ripristino dell'energia può verificarsi una volta ogni 14 s."
+    },
+    "1": {
+      "0": "Nei 3,5 s successivi all'utilizzo del Tripudio elementale, i DAN da Carica lunare inflitti agli avversari dal personaggio che equipaggia l'arma aumentano di un <cryo>48%</cryo>. Inoltre, dopo aver innescato una reazione di Carica lunare, il personaggio che equipaggia l'arma ottiene l'effetto Requiem della rovina, che aumenta i DAN da CRIT di un <cryo>35%</cryo> per 6 s e ripristina <cryo>13</cryo> punti di energia elementale. Il ripristino dell'energia può verificarsi una volta ogni 14 s."
+    },
+    "2": {
+      "0": "Nei 3,5 s successivi all'utilizzo del Tripudio elementale, i DAN da Carica lunare inflitti agli avversari dal personaggio che equipaggia l'arma aumentano di un <cryo>60%</cryo>. Inoltre, dopo aver innescato una reazione di Carica lunare, il personaggio che equipaggia l'arma ottiene l'effetto Requiem della rovina, che aumenta i DAN da CRIT di un <cryo>42%</cryo> per 6 s e ripristina <cryo>14</cryo> punti di energia elementale. Il ripristino dell'energia può verificarsi una volta ogni 14 s."
+    },
+    "3": {
+      "0": "Nei 3,5 s successivi all'utilizzo del Tripudio elementale, i DAN da Carica lunare inflitti agli avversari dal personaggio che equipaggia l'arma aumentano di un <cryo>72%</cryo>. Inoltre, dopo aver innescato una reazione di Carica lunare, il personaggio che equipaggia l'arma ottiene l'effetto Requiem della rovina, che aumenta i DAN da CRIT di un <cryo>49%</cryo> per 6 s e ripristina <cryo>15</cryo> punti di energia elementale. Il ripristino dell'energia può verificarsi una volta ogni 14 s."
+    },
+    "4": {
+      "0": "Nei 3,5 s successivi all'utilizzo del Tripudio elementale, i DAN da Carica lunare inflitti agli avversari dal personaggio che equipaggia l'arma aumentano di un <cryo>84%</cryo>. Inoltre, dopo aver innescato una reazione di Carica lunare, il personaggio che equipaggia l'arma ottiene l'effetto Requiem della rovina, che aumenta i DAN da CRIT di un <cryo>56%</cryo> per 6 s e ripristina <cryo>16</cryo> punti di energia elementale. Il ripristino dell'energia può verificarsi una volta ogni 14 s."
+    }
+  }
+}
