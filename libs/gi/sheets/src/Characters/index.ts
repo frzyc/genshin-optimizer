@@ -38,7 +38,7 @@ import Escoffier from './Escoffier'
 import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
-// import Flins from './Flins'
+import Flins from './Flins'
 import Freminet from './Freminet'
 import Furina from './Furina'
 import Gaming from './Gaming'
@@ -157,7 +157,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Eula,
   Faruzan,
   Fischl,
-  // Flins,
+  Flins,
   Freminet,
   Furina,
   Gaming,

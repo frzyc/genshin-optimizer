@@ -23,6 +23,7 @@ import BlackcliffPole from './BlackcliffPole'
 import BlackcliffSlasher from './BlackcliffSlasher'
 import BlackcliffWarbow from './BlackcliffWarbow'
 import BlackmarrowLantern from './BlackmarrowLantern'
+import BloodsoakedRuins from './BloodsoakedRuins'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import CalamityOfEshu from './CalamityOfEshu'
 import CalamityQueller from './CalamityQueller'
@@ -246,6 +247,7 @@ const data = {
   BlackcliffSlasher,
   BlackcliffWarbow,
   BlackmarrowLantern,
+  BloodsoakedRuins,
   BloodtaintedGreatsword,
   CalamityOfEshu,
   CalamityQueller,

@@ -114,7 +114,7 @@ export const allWeaponPolearmKeys = [
   'BeginnersProtector',
   'BlackcliffPole',
   'BlackTassel',
-  // 'BloodsoakedRuins',
+  'BloodsoakedRuins',
   'CalamityQueller',
   'CrescentPike',
   'CrimsonMoonsSemblance',
