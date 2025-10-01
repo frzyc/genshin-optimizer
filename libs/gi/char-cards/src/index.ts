@@ -30,6 +30,7 @@ import Escoffier from './Character_Escoffier_Card.jpg'
 import Eula from './Character_Eula_Card.png'
 import Faruzan from './Character_Faruzan_Card.jpg'
 import Fischl from './Character_Fischl_Card.jpg'
+import Flins from './Character_Flins_Card.webp'
 import Freminet from './Character_Freminet_Card.jpg'
 import Furina from './Character_Furina_Card.jpg'
 import Gaming from './Character_Gaming_Card.jpg'
@@ -138,6 +139,7 @@ const charCards = {
   Eula,
   Faruzan,
   Fischl,
+  Flins,
   Freminet,
   Furina,
   Gaming,

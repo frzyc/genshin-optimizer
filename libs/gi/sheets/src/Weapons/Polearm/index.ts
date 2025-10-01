@@ -4,6 +4,7 @@ import BalladOfTheFjords from './BalladOfTheFjords'
 import BeginnersProtector from './BeginnersProtector'
 import BlackTassel from './BlackTassel'
 import BlackcliffPole from './BlackcliffPole'
+import BloodsoakedRuins from './BloodsoakedRuins'
 import CalamityQueller from './CalamityQueller'
 import CrescentPike from './CrescentPike'
 import CrimsonMoonsSemblance from './CrimsonMoonsSemblance'
@@ -43,6 +44,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   BeginnersProtector,
   BlackcliffPole,
   BlackTassel,
+  BloodsoakedRuins,
   CalamityQueller,
   CrescentPike,
   CrimsonMoonsSemblance,
