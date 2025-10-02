@@ -1,0 +1,24 @@
+{
+  "name": "Blutbefleckte Stadt",
+  "description": {
+    "0": "Ein Speer, der im Laufe des Kampfes schwarz gefärbt wurde. Im blauen Licht des Feuers strahlt er einen ganz besonderen Glanz aus."
+  },
+  "passiveName": "Traurige Würdigung",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht nach der Anwendung der Spezialfähigkeit den Schaden, den der Träger Gegnern mit der Reaktion „Mond unter Strom“ zufügt, 3,5 s lang um <cryo>36 %</cryo>. Verleiht dem Träger nach dem Auslösen der Reaktion „Mond unter Strom“ zudem „Trostloses Klagelied“: Erhöht den kritischen Schaden 6 s lang um <cryo>28 %</cryo>; stellt dem Träger <cryo>12</cryo> Punkte Elementarenergie wieder her, 14 s Abklingzeit."
+    },
+    "1": {
+      "0": "Erhöht nach der Anwendung der Spezialfähigkeit den Schaden, den der Träger Gegnern mit der Reaktion „Mond unter Strom“ zufügt, 3,5 s lang um <cryo>48 %</cryo>. Verleiht dem Träger nach dem Auslösen der Reaktion „Mond unter Strom“ zudem „Trostloses Klagelied“: Erhöht den kritischen Schaden 6 s lang um <cryo>35 %</cryo>; stellt dem Träger <cryo>13</cryo> Punkte Elementarenergie wieder her, 14 s Abklingzeit."
+    },
+    "2": {
+      "0": "Erhöht nach der Anwendung der Spezialfähigkeit den Schaden, den der Träger Gegnern mit der Reaktion „Mond unter Strom“ zufügt, 3,5 s lang um <cryo>60 %</cryo>. Verleiht dem Träger nach dem Auslösen der Reaktion „Mond unter Strom“ zudem „Trostloses Klagelied“: Erhöht den kritischen Schaden 6 s lang um <cryo>42 %</cryo>; stellt dem Träger <cryo>14</cryo> Punkte Elementarenergie wieder her, 14 s Abklingzeit."
+    },
+    "3": {
+      "0": "Erhöht nach der Anwendung der Spezialfähigkeit den Schaden, den der Träger Gegnern mit der Reaktion „Mond unter Strom“ zufügt, 3,5 s lang um <cryo>72 %</cryo>. Verleiht dem Träger nach dem Auslösen der Reaktion „Mond unter Strom“ zudem „Trostloses Klagelied“: Erhöht den kritischen Schaden 6 s lang um <cryo>49 %</cryo>; stellt dem Träger <cryo>15</cryo> Punkte Elementarenergie wieder her, 14 s Abklingzeit."
+    },
+    "4": {
+      "0": "Erhöht nach der Anwendung der Spezialfähigkeit den Schaden, den der Träger Gegnern mit der Reaktion „Mond unter Strom“ zufügt, 3,5 s lang um <cryo>84 %</cryo>. Verleiht dem Träger nach dem Auslösen der Reaktion „Mond unter Strom“ zudem „Trostloses Klagelied“: Erhöht den kritischen Schaden 6 s lang um <cryo>56 %</cryo>; stellt dem Träger <cryo>16</cryo> Punkte Elementarenergie wieder her, 14 s Abklingzeit."
+    }
+  }
+}

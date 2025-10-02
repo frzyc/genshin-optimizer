@@ -1087,6 +1087,20 @@ export const formulas = {
       },
     },
   },
+  Flins: {
+    normal1: {
+      sheet: 'Flins',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Flins',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Freminet: {
     normal1: {
       sheet: 'Freminet',

@@ -99,6 +99,7 @@ export const nonTravelerCharacterKeys = [
   'Eula',
   'Faruzan',
   'Fischl',
+  'Flins',
   'Freminet',
   'Furina',
   'Gaming',
