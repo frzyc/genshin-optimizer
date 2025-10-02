@@ -2997,6 +2997,8 @@
     "Ineffa": {
       "icon": "UI_AvatarIcon_Ineffa",
       "iconSide": "UI_AvatarIcon_Side_Ineffa",
+      "banner": "UI_NameCardPic_Ineffa_P",
+      "bar": "UI_NameCardPic_Ineffa_Alpha",
       "skill": "Skill_S_Ineffa_01",
       "burst": "Skill_E_Ineffa_01_HD",
       "passive1": "UI_Talent_S_Ineffa_05",
@@ -3049,6 +3051,8 @@
     "Aino": {
       "icon": "UI_AvatarIcon_Aino",
       "iconSide": "UI_AvatarIcon_Side_Aino",
+      "banner": "UI_NameCardPic_Aino_P",
+      "bar": "UI_NameCardPic_Aino_Alpha",
       "skill": "Skill_S_Aino_01",
       "burst": "Skill_E_Aino_01_HD",
       "passive1": "UI_Talent_S_Aino_05",

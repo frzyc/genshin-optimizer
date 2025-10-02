@@ -3,6 +3,8 @@ import burst from './Skill_E_Ineffa_01_HD.png'
 import skill from './Skill_S_Ineffa_01.png'
 import icon from './UI_AvatarIcon_Ineffa.png'
 import iconSide from './UI_AvatarIcon_Side_Ineffa.png'
+import bar from './UI_NameCardPic_Ineffa_Alpha.png'
+import banner from './UI_NameCardPic_Ineffa_P.png'
 import constellation1 from './UI_Talent_S_Ineffa_01.png'
 import constellation2 from './UI_Talent_S_Ineffa_02.png'
 import constellation4 from './UI_Talent_S_Ineffa_03.png'
@@ -15,6 +17,8 @@ import constellation3 from './UI_Talent_U_Ineffa_01.png'
 import constellation5 from './UI_Talent_U_Ineffa_02.png'
 
 const data = {
+  banner,
+  bar,
   burst,
   constellation1,
   constellation2,
