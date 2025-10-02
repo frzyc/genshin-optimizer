@@ -180,6 +180,7 @@
     "anemo": "After triggering an <anemo>Anemo-related</anemo> Elemental Reaction",
     "geo": "After triggering a <geo>Geo-related</geo> Elemental Reaction",
     "shatter": "After triggering a <shattered>Shatter</shattered> Elemental Reaction",
+    "lunarcharged": "After triggering a <lunarcharged>Lunar-Charged</lunarcharged> Reaction",
     "team": {
       "pyro": "After a party member triggers a <pyro>Pyro-related</pyro> Elemental Reaction",
       "lunar": "After a party member triggers a Lunar Reaction",
