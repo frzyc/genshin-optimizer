@@ -286,9 +286,11 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     burstBoost: burstC3,
     skillBoost: skillC5,
     lunarcharged_dmg_: a1_lunarcharged_dmg_,
-    eleMas: sum(a4_eleMas, c4_eleMas),
     atk_: c4_atk_,
     lunarcharged_specialDmg_: c6_lunarcharged_specialDmg_,
+  },
+  total: {
+    eleMas: sum(a4_eleMas, c4_eleMas),
   },
   teamBuff: {
     tally: {
