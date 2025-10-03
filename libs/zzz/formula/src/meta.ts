@@ -1282,6 +1282,17 @@ export const conditionals = {
       type: 'bool',
     },
   },
+  anomaly: {
+    anomTimePassed: {
+      sheet: 'anomaly',
+      name: 'anomTimePassed',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 20,
+    },
+    frostbite: { sheet: 'anomaly', name: 'frostbite', type: 'bool' },
+  },
 } as const
 export const formulas = {
   Alice: {
@@ -44430,6 +44441,19 @@ export const buffs = {
         q: 'crit_',
         sheet: 'ZanshinHerbCase',
         name: 'cond_crit_',
+      },
+    },
+  },
+  anomaly: {
+    frostbite_crit_dmg_: {
+      sheet: 'anomaly',
+      name: 'frostbite_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'anomaly',
+        name: 'frostbite_crit_dmg_',
       },
     },
   },

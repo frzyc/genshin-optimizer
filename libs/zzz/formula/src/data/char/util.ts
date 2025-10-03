@@ -3,6 +3,7 @@ import {
   cmpEq,
   cmpGE,
   constant,
+  max,
   prod,
   subscript,
   sum,
@@ -18,6 +19,7 @@ import {
   type SkillParam,
   allStats,
 } from '@genshin-optimizer/zzz/stats'
+import { anomTimePassed } from '../common/anomaly'
 import type { DamageType, DmgTag, FormulaArg, Stat } from '../util'
 import {
   type TagMapNodeEntries,
@@ -29,7 +31,6 @@ import {
   customSheerDmg,
   customShield,
   damageTypes,
-  enemy,
   listingItem,
   own,
   ownBuff,
@@ -445,12 +446,17 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
           percent(miyabiCheck ? 6 : 4.5),
           own.final.addl_disorder_,
           prod(
-            sum(
-              constant(miyabiCheck ? 20 : 10),
-              prod(constant(-1), enemy.common.anomTimePassed)
+            max(
+              0,
+              sum(
+                constant(miyabiCheck ? 20 : 10),
+                prod(constant(-1), anomTimePassed)
+              )
             ),
             percent(
-              disorderTimeMultipliers[miyabiCheck ? 'ice' : data_gen.attribute]
+              disorderTimeMultipliers[
+                miyabiCheck ? 'frost' : data_gen.attribute
+              ]
             )
           )
         ),
