@@ -56,7 +56,7 @@ export function findBestArtifact(
   if (location)
     texts.location = detectedText(location, 'Location', (value) => value)
   if (unactivatedSubstats.length) {
-    substats.splice(3, 1)
+    substats.splice(3, unactivatedSubstats.length)
   }
 
   const relevantSetKey: ArtifactSetKey[] = textSetKeys.size
