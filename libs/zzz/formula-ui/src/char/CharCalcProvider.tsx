@@ -55,7 +55,6 @@ export function CharCalcProvider({
         ownBuff.common.critMode.add(charOpt.critMode),
         enemy.common.lvl.add(charOpt.enemyLvl),
         enemy.common.def.add(charOpt.enemyDef),
-        enemy.common.isStunned.add(charOpt.enemyisStunned ? 1 : 0),
         enemy.common.stun_.add(charOpt.enemyStunMultiplier / 100),
         enemy.common.unstun_.add(1),
         ...charOpt.conditionals.flatMap(
@@ -172,7 +171,6 @@ export function CharCalcMockCountProvider({
         ownBuff.common.critMode.add('avg'),
         enemy.common.lvl.add(100),
         enemy.common.def.add(900),
-        enemy.common.isStunned.add(0),
         enemy.common.stun_.add(1.5),
         enemy.common.unstun_.add(1),
         ...conditionals.flatMap(({ sheet, src, dst, condKey, condValue }) =>

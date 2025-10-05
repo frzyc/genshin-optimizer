@@ -1293,6 +1293,7 @@ export const conditionals = {
     },
     frostbite: { sheet: 'anomaly', name: 'frostbite', type: 'bool' },
   },
+  enemy: { isStunned: { sheet: 'enemy', name: 'isStunned', type: 'bool' } },
 } as const
 export const formulas = {
   Alice: {

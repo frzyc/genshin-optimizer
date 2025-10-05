@@ -1,6 +1,5 @@
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
-  cmpEq,
   cmpGE,
   cmpGT,
   min,
@@ -10,10 +9,10 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
+import { isStunned } from '../../common/enemy'
 import {
   allBoolConditionals,
   allNumConditionals,
-  enemy,
   own,
   ownBuff,
   percent,
@@ -132,9 +131,7 @@ const sheet = register(
     'core_exSpecial_mv_mult_',
     ownBuff.dmg.mv_mult_.addWithDmgType(
       'exSpecial',
-      cmpEq(
-        enemy.common.isStunned,
-        1,
+      isStunned.ifOn(
         sum(
           percent(subscript(char.core, dm.core.mv_mult_1)),
           prod(
@@ -157,9 +154,7 @@ const sheet = register(
     'core_ult_mv_mult_',
     ownBuff.dmg.mv_mult_.addWithDmgType(
       'ult',
-      cmpEq(
-        enemy.common.isStunned,
-        1,
+      isStunned.ifOn(
         sum(
           percent(subscript(char.core, dm.core.mv_mult_1)),
           prod(
@@ -182,7 +177,7 @@ const sheet = register(
     'core_exSpecial_dazeInc_',
     ownBuff.combat.dazeInc_.addWithDmgType(
       'exSpecial',
-      cmpEq(enemy.common.isStunned, 0, dm.core.dazeInc_)
+      isStunned.ifOff(dm.core.dazeInc_)
     )
   ),
   registerBuff(
@@ -201,14 +196,14 @@ const sheet = register(
     'ability_exSpecial_dmg_',
     ownBuff.combat.dmg_.addWithDmgType(
       'exSpecial',
-      ability_check(cmpEq(enemy.common.isStunned, 1, dm.ability.totalize_dmg_))
+      ability_check(isStunned.ifOn(dm.ability.totalize_dmg_))
     )
   ),
   registerBuff(
     'ability_ult_dmg_',
     ownBuff.combat.dmg_.addWithDmgType(
       'ult',
-      ability_check(cmpEq(enemy.common.isStunned, 1, dm.ability.totalize_dmg_))
+      ability_check(isStunned.ifOn(dm.ability.totalize_dmg_))
     )
   ),
   registerBuff(
@@ -218,7 +213,7 @@ const sheet = register(
       cmpGE(
         char.mindscape,
         1,
-        cmpEq(enemy.common.isStunned, 1, dark_abyss_reverb.ifOn(dm.m1.crit_))
+        isStunned.ifOn(dark_abyss_reverb.ifOn(dm.m1.crit_))
       )
     )
   ),
@@ -229,11 +224,7 @@ const sheet = register(
       cmpGE(
         char.mindscape,
         1,
-        cmpEq(
-          enemy.common.isStunned,
-          1,
-          dark_abyss_reverb.ifOn(dm.m1.crit_dmg_)
-        )
+        isStunned.ifOn(dark_abyss_reverb.ifOn(dm.m1.crit_dmg_))
       )
     )
   ),
@@ -244,7 +235,7 @@ const sheet = register(
       cmpGE(
         char.mindscape,
         1,
-        cmpEq(enemy.common.isStunned, 1, dark_abyss_reverb.ifOn(dm.m1.crit_))
+        isStunned.ifOn(dark_abyss_reverb.ifOn(dm.m1.crit_))
       )
     )
   ),
@@ -255,11 +246,7 @@ const sheet = register(
       cmpGE(
         char.mindscape,
         1,
-        cmpEq(
-          enemy.common.isStunned,
-          1,
-          dark_abyss_reverb.ifOn(dm.m1.crit_dmg_)
-        )
+        isStunned.ifOn(dark_abyss_reverb.ifOn(dm.m1.crit_dmg_))
       )
     )
   ),
@@ -267,14 +254,14 @@ const sheet = register(
     'm2_exSpecial_defIgn_',
     ownBuff.combat.defIgn_.addWithDmgType(
       'exSpecial',
-      cmpGE(char.mindscape, 2, cmpEq(enemy.common.isStunned, 1, dm.m2.defIgn_))
+      cmpGE(char.mindscape, 2, isStunned.ifOn(dm.m2.defIgn_))
     )
   ),
   registerBuff(
     'm2_ult_defIgn_',
     ownBuff.combat.defIgn_.addWithDmgType(
       'ult',
-      cmpGE(char.mindscape, 2, cmpEq(enemy.common.isStunned, 1, dm.m2.defIgn_))
+      cmpGE(char.mindscape, 2, isStunned.ifOn(dm.m2.defIgn_))
     )
   ),
   registerBuff(
@@ -287,29 +274,21 @@ const sheet = register(
     'm6_exSpecial_dmg_',
     ownBuff.combat.dmg_.addWithDmgType(
       'exSpecial',
-      cmpGE(
-        char.mindscape,
-        6,
-        cmpEq(enemy.common.isStunned, 1, dm.m6.totalize_dmg_)
-      )
+      cmpGE(char.mindscape, 6, isStunned.ifOn(dm.m6.totalize_dmg_))
     )
   ),
   registerBuff(
     'm6_ult_dmg_',
     ownBuff.combat.dmg_.addWithDmgType(
       'ult',
-      cmpGE(
-        char.mindscape,
-        6,
-        cmpEq(enemy.common.isStunned, 1, dm.m6.totalize_dmg_)
-      )
+      cmpGE(char.mindscape, 6, isStunned.ifOn(dm.m6.totalize_dmg_))
     )
   ),
   registerBuff(
     'm6_exSpecial_mv_mult_',
     ownBuff.dmg.mv_mult_.addWithDmgType(
       'exSpecial',
-      cmpGE(char.mindscape, 6, cmpEq(enemy.common.isStunned, 0, dm.m6.mv_mult_))
+      cmpGE(char.mindscape, 6, isStunned.ifOff(dm.m6.mv_mult_))
     )
   )
 )
