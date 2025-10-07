@@ -1,9 +1,11 @@
 import { AnvilIcon, DiscordIcon } from '@genshin-optimizer/common/svgicons'
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   Backpack,
   Computer,
   Download,
+  EmojiEvents,
   InsertLink,
   PersonSearch,
   SendToMobile,
@@ -27,6 +29,7 @@ import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
 import AdScanner from './AdeptiScanner.png'
 import GIScanner from './GIScanner.png'
+import Irminsul from './Irminsul.webp'
 import Artiscan from './artiscan.png'
 
 export default function PageScanner() {
@@ -106,13 +109,21 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>{t('nb.p1') as string}</Typography>
               <Typography gutterBottom>{t('nb.p2') as string}</Typography>
+              <Typography gutterBottom>{t('nb.p3') as string}</Typography>
+              <Typography gutterBottom>
+                <Trans t={t} i18nKey="goodeng">
+                  This app only scans in English and exports to
+                  <code>GOOD</code>
+                  format.
+                </Trans>
+              </Typography>
             </CardContent>
           </CardThemed>
         </Grid>
         <Grid item xs={1}>
           <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
-              href="https://github.com/Andrewthe13th/Inventory_Kamera"
+              href="https://github.com/taiwenlee/Inventory_Kamera/blob/master/README.md"
               target="_blank"
             >
               <CardMedia component="img" image={GIScanner} />
@@ -131,7 +142,7 @@ export default function PageScanner() {
                   <DiscordIcon />
                 </IconButton>
                 <IconButton
-                  href="https://github.com/Andrewthe13th/Inventory_Kamera"
+                  href="https://github.com/taiwenlee/Inventory_Kamera/blob/master/README.md"
                   target="_blank"
                 >
                   <Download />
@@ -160,6 +171,15 @@ export default function PageScanner() {
                   <Backpack sx={{ pr: 0.5 }} />
                   {t('tags.materials') as string}
                 </SqBadge>
+                <Tooltip
+                  placement="top"
+                  title={<Typography>{t('addlArtiText')}</Typography>}
+                >
+                  <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
+                    <FlowerIcon sx={{ pr: 0.5 }} />
+                    {t('tags.addlArti') as string}
+                  </SqBadge>
+                </Tooltip>
                 <WarningWrapper>
                   <SqBadge
                     color="warning"
@@ -198,7 +218,7 @@ export default function PageScanner() {
         <Grid item xs={1}>
           <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
-              href="https://github.com/D1firehail/AdeptiScanner-GI"
+              href="https://github.com/D1firehail/AdeptiScanner-GI/blob/master/README.md"
               target="_blank"
             >
               <CardMedia component="img" image={AdScanner} />
@@ -211,7 +231,7 @@ export default function PageScanner() {
                   </Trans>
                 </Typography>
                 <IconButton
-                  href="https://github.com/D1firehail/AdeptiScanner-GI"
+                  href="https://github.com/D1firehail/AdeptiScanner-GI/blob/master/README.md"
                   target="_blank"
                 >
                   <Download />
@@ -226,12 +246,25 @@ export default function PageScanner() {
                   <Computer sx={{ pr: 0.5 }} />
                   {t('tags.pc') as string}
                 </SqBadge>
+                <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
+                  <PersonSearch sx={{ pr: 0.5 }} />
+                  {t('tags.characters') as string}
+                </SqBadge>
                 <SqBadge
                   sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}
                 >
                   <AnvilIcon />
                   {t('tags.weapons') as string}
                 </SqBadge>
+                <Tooltip
+                  placement="top"
+                  title={<Typography>{t('addlArtiText')}</Typography>}
+                >
+                  <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
+                    <FlowerIcon sx={{ pr: 0.5 }} />
+                    {t('tags.addlArti') as string}
+                  </SqBadge>
+                </Tooltip>
                 <WarningWrapper>
                   <SqBadge
                     color="warning"
@@ -257,12 +290,6 @@ export default function PageScanner() {
                 </Trans>
               </Typography>
               <Typography gutterBottom>
-                <Trans t={t} i18nKey="as.p2">
-                  This scanner can also be configured for new artifacts in new
-                  game versions without needing an update.
-                </Trans>
-              </Typography>
-              <Typography gutterBottom>
                 <Trans t={t} i18nKey="goodeng">
                   This app only scans in English and exports to
                   <code>GOOD</code>
@@ -272,23 +299,29 @@ export default function PageScanner() {
             </CardContent>
           </CardThemed>
         </Grid>
-        {/* <Grid item xs={1}>
+        <Grid item xs={1}>
           <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
-              href="https://github.com/xenesty/AkashaScanner"
+              href="https://github.com/konkers/irminsul/blob/main/README.md"
               target="_blank"
             >
-              <CardMedia component="img" image={AkashaScanner} />
+              <CardMedia component="img" image={Irminsul} />
             </CardActionArea>
             <CardContent>
               <Box display="flex" gap={1} alignItems="center">
                 <Typography variant="h5" flexGrow={1}>
-                  <Trans t={t} i18nKey="ak.title">
-                    Akasha Scanner
+                  <Trans t={t} i18nKey="is.title">
+                    Irminsul
                   </Trans>
                 </Typography>
                 <IconButton
-                  href="https://github.com/xenesty/AkashaScanner"
+                  href="https://discord.gg/aQqdZPHEpP"
+                  target="_blank"
+                >
+                  <DiscordIcon />
+                </IconButton>
+                <IconButton
+                  href="https://github.com/konkers/irminsul/blob/main/README.md"
                   target="_blank"
                 >
                   <Download />
@@ -299,13 +332,6 @@ export default function PageScanner() {
                 variant="subtitle2"
                 sx={{ display: 'flex', gap: 1, py: 1, flexWrap: 'wrap' }}
               >
-                <SqBadge
-                  color="warning"
-                  sx={{ display: 'flex', alignItems: 'center' }}
-                >
-                  <Gamepad sx={{ pr: 0.5 }} />
-                  4.2
-                </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
                   {t('tags.pc') as string}
@@ -321,10 +347,23 @@ export default function PageScanner() {
                   {t('tags.weapons') as string}
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
+                  <Backpack sx={{ pr: 0.5 }} />
+                  {t('tags.materials') as string}
+                </SqBadge>
+                <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <EmojiEvents sx={{ pr: 0.5 }} />
                   {t('tags.achievements') as string}
                 </SqBadge>
-                <WarningWrapper>
+                <Tooltip
+                  placement="top"
+                  title={<Typography>{t('addlArtiText')}</Typography>}
+                >
+                  <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
+                    <FlowerIcon sx={{ pr: 0.5 }} />
+                    {t('tags.addlArti') as string}
+                  </SqBadge>
+                </Tooltip>
+                <WarningWrapper strong>
                   <SqBadge
                     color="warning"
                     sx={{ display: 'flex', alignItems: 'center' }}
@@ -335,7 +374,19 @@ export default function PageScanner() {
                 </WarningWrapper>
               </Typography>
               <Typography gutterBottom>
-                <Trans t={t} i18nKey="ak.p1"></Trans>
+                <Trans t={t} i18nKey="is.p1"></Trans>
+              </Typography>
+              <Typography gutterBottom>
+                <Trans t={t} i18nKey="seelieme">
+                  This app can also scan materials for
+                  <Link
+                    href="https://seelie.me/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Seelie.me
+                  </Link>
+                </Trans>
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="ak.p2">
@@ -358,22 +409,32 @@ export default function PageScanner() {
                   .
                 </Trans>
               </Typography>
+              <Typography gutterBottom>
+                <Trans t={t} i18nKey="good">
+                  This app exports to
+                  <code>GOOD</code>
+                  format.
+                </Trans>
+              </Typography>
             </CardContent>
           </CardThemed>
-        </Grid> */}
+        </Grid>
       </Grid>
     </Box>
   )
 }
 
-function WarningWrapper({ children }: { children: JSX.Element }) {
+function WarningWrapper({
+  children,
+  strong = false,
+}: { children: JSX.Element; strong?: boolean }) {
   const { t } = useTranslation('page_scanner')
   return (
     <Tooltip
       placement="top"
       title={
         <Typography>
-          <Trans t={t} i18nKey="tosWarn">
+          <Trans t={t} i18nKey={strong ? 'tosStrongWarn' : 'tosWarn'}>
             As any tools that indirectly interact with the game, although their
             usage is virtually undetectable,
             <Link
