@@ -27,7 +27,8 @@
   },
   "is": {
     "title": "Irminsul",
-    "p1": "Sniffs network packets to scan all characters, weapons, artifacts and materials in your inventory."
+    "p1": "Sniffs network packets to scan all characters, weapons, artifacts and materials in your inventory.",
+    "p2": "This app is also able to scan achievements for <1>Paimon.moe</1> and <1>Seelie.me</1>."
   },
   "as": {
     "title": "AdeptiScanner",

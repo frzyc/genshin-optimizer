@@ -302,7 +302,7 @@ export default function PageScanner() {
         <Grid item xs={1}>
           <CardThemed sx={{ height: '100%' }}>
             <CardActionArea
-              href="https://github.com/konkers/irminsul/blob/main/README.md"
+              href="https://konkers.github.io/irminsul/02-quickstart.html"
               target="_blank"
             >
               <CardMedia component="img" image={Irminsul} />
@@ -321,7 +321,7 @@ export default function PageScanner() {
                   <DiscordIcon />
                 </IconButton>
                 <IconButton
-                  href="https://github.com/konkers/irminsul/blob/main/README.md"
+                  href="https://konkers.github.io/irminsul/02-quickstart.html"
                   target="_blank"
                 >
                   <Download />
@@ -389,7 +389,7 @@ export default function PageScanner() {
                 </Trans>
               </Typography>
               <Typography gutterBottom>
-                <Trans t={t} i18nKey="ak.p2">
+                <Trans t={t} i18nKey="is.p2">
                   This app is also able to scan achievements for
                   <Link
                     href="https://paimon.moe"
