@@ -1,6 +1,6 @@
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
-import type { IArtifact } from '@genshin-optimizer/gi/good'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
 import {
   getMainStatDisplayValue,
   getSubstatRolls,
@@ -10,6 +10,7 @@ import {
 export interface ArtifactMeta {
   mainStatVal: number
   substats: SubstatMeta[]
+  unactivatedSubstats: SubstatMeta[]
 }
 
 export interface SubstatMeta {
@@ -41,46 +42,54 @@ export function getArtifactMeta(flex: IArtifact): {
   const allPossibleRolls: { index: number; substatRolls: number[][] }[] = []
   let totalUnambiguousRolls = 0
 
-  const substats = flex.substats.map((substat, index): SubstatMeta => {
-    const { key, value } = substat
-    if (!key || !value) return defSubMeta()
-    const max5Value = getSubstatValue(key)
-    let efficiency = value / max5Value
+  const getSubstatEffRoll = (substats: ISubstat[] | undefined) => {
+    return substats?.map((substat, index): SubstatMeta => {
+      const { key, value } = substat
+      if (!key || !value) return defSubMeta()
+      const max5Value = getSubstatValue(key)
+      let efficiency = value / max5Value
 
-    const possibleRolls = getSubstatRolls(key, value, rarity)
+      const possibleRolls = getSubstatRolls(key, value, rarity)
 
-    if (possibleRolls.length) {
-      // Valid Substat
-      const possibleLengths = new Set(possibleRolls.map((roll) => roll.length))
+      if (possibleRolls.length) {
+        // Valid Substat
+        const possibleLengths = new Set(
+          possibleRolls.map((roll) => roll.length)
+        )
 
-      if (possibleLengths.size !== 1) {
-        // Ambiguous Rolls
-        allPossibleRolls.push({ index, substatRolls: possibleRolls })
+        if (possibleLengths.size !== 1) {
+          // Ambiguous Rolls
+          allPossibleRolls.push({ index, substatRolls: possibleRolls })
+        } else {
+          // Unambiguous Rolls
+          totalUnambiguousRolls += possibleRolls[0].length
+        }
+
+        const rolls = possibleRolls.reduce((best, current) =>
+          best.length < current.length ? best : current
+        )
+        const accurateValue = rolls.reduce((a, b) => a + b, 0)
+        efficiency = accurateValue / max5Value
+        return {
+          rolls,
+          efficiency,
+          accurateValue,
+        }
       } else {
-        // Unambiguous Rolls
-        totalUnambiguousRolls += possibleRolls[0].length
+        // Invalid Substat
+        errors.push(`Invalid substat ${substat.key}`)
+        return defSubMeta()
       }
+    })
+  }
 
-      const rolls = possibleRolls.reduce((best, current) =>
-        best.length < current.length ? best : current
-      )
-      const accurateValue = rolls.reduce((a, b) => a + b, 0)
-      efficiency = accurateValue / max5Value
-      return {
-        rolls,
-        efficiency,
-        accurateValue,
-      }
-    } else {
-      // Invalid Substat
-      errors.push(`Invalid substat ${substat.key}`)
-      return defSubMeta()
-    }
-  })
+  const substats = getSubstatEffRoll(flex.substats) ?? []
+  const unactivatedSubstats = getSubstatEffRoll(flex.unactivatedSubstats) ?? []
 
   const validated = {
     mainStatVal,
     substats,
+    unactivatedSubstats,
   }
 
   if (errors.length) return { artifactMeta: validated, errors }

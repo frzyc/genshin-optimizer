@@ -176,7 +176,7 @@ export function getArtifactEfficiency(
   artifact: IArtifact,
   filter: Set<SubstatKey> = new Set(allSubstatKeys)
 ): { currentEfficiency: number; maxEfficiency: number } {
-  const { substats, rarity, level } = artifact
+  const { substats, rarity, level, unactivatedSubstats } = artifact
   const { artifactMeta } = getArtifactMeta(artifact)
   // Relative to max star, so comparison between different * makes sense.
   const currentEfficiency = artifact.substats.reduce(
@@ -189,6 +189,7 @@ export function getArtifactEfficiency(
 
   const rollsRemaining = getRollsRemaining(level, rarity)
   const emptySlotCount = substats.filter((s) => !s.key).length
+
   const matchedSlotCount = substats.filter(
     (s) => s.key && filter.has(s.key)
   ).length
@@ -196,14 +197,18 @@ export function getArtifactEfficiency(
     filter.size -
     matchedSlotCount -
     (filter.has(artifact.mainStatKey as any) ? 1 : 0)
+  const unactivatedSubstatRoll =
+    unactivatedSubstats?.filter((s) => s.key).length ?? 0
 
-  let maxEfficiency = currentEfficiency
+  let maxEfficiency =
+    currentEfficiency + (artifactMeta.unactivatedSubstats[0]?.efficiency ?? 0)
   const maxRollEff = maxSubstatRollEfficiency[rarity]
   // Rolls into good empty slots, assuming max-level artifacts have no empty slots
   maxEfficiency += maxRollEff * Math.min(emptySlotCount, unusedFilterCount)
   // Rolls into an existing good slot
   if (matchedSlotCount || (emptySlotCount && unusedFilterCount))
-    maxEfficiency += maxRollEff * (rollsRemaining - emptySlotCount)
+    maxEfficiency +=
+      maxRollEff * (rollsRemaining - emptySlotCount - unactivatedSubstatRoll)
 
   return { currentEfficiency, maxEfficiency }
 }
