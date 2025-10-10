@@ -364,13 +364,17 @@ export function lunarDmg(
     }
   )
 
-  const critDMG_ =
-    variant === 'lunarcharged'
-      ? input.total.critDMG_
-      : infoMut(sum(input.total.critDMG_, input.total.lunarbloom_critDMG_), {
-          ...input.total.critDMG_.info,
-          pivot: true,
-        })
+  const critDMG_ = infoMut(
+    sum(
+      input.total.critDMG_,
+      ...(variant === 'lunarbloom' ? [input.total.lunarbloom_critDMG_] : []),
+      input.total[`${transformativeReactions[variant].resist}_critDMG_`]
+    ),
+    {
+      ...input.total.critDMG_.info,
+      pivot: true,
+    }
+  )
 
   return data(
     prod(
@@ -383,7 +387,8 @@ export function lunarDmg(
             path: `${variant}_baseDmg_`,
           })
         ),
-        input.total[`${variant}_dmgInc`]
+        input.total[`${variant}_dmgInc`],
+        input.total[`${transformativeReactions[variant].resist}_dmgInc`]
       ),
       lookup(
         input.hit.hitMode,
