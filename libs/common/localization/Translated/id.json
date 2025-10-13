@@ -839,13 +839,7 @@
     "c4": "Musuh terkena petir <strong>Sesshou Sakura</strong>"
   },
   "char_Yanfei": {
-    "seals": [
-      "0 seals",
-      "1 seal",
-      "2 seals",
-      "3 seals",
-      "4 seals"
-    ],
+    "seals": ["0 seals", "1 seal", "2 seals", "3 seals", "4 seals"],
     "perSeal": "(per seal)",
     "maxSeals": "Jumlah maksimum Scarlet Seals",
     "charged": {

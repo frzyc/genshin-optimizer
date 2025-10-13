@@ -930,13 +930,7 @@
     "c6": "Sesshou Sakura Ennemi DEF Ignorer"
   },
   "char_Yanfei": {
-    "seals": [
-      "0 sceau",
-      "1 joint",
-      "2 joints",
-      "3 joints",
-      "4 joints"
-    ],
+    "seals": ["0 sceau", "1 joint", "2 joints", "3 joints", "4 joints"],
     "perSeal": "(par scellé)",
     "maxSeals": "Nombre maximal de phoques écarlates",
     "charged": {

@@ -933,13 +933,7 @@
     "c6": "Lượng phòng ngự Sesshou Sakura bỏ qua"
   },
   "char_Yanfei": {
-    "seals": [
-      "0 ấn",
-      "1 ấn",
-      "2 ấn",
-      "3 ấn",
-      "4 ấn"
-    ],
+    "seals": ["0 ấn", "1 ấn", "2 ấn", "3 ấn", "4 ấn"],
     "perSeal": "(với mỗi ấn)",
     "maxSeals": "Giới hạn Đan Ấn Hỏa tăng thêm",
     "charged": {
