@@ -40,9 +40,9 @@
           "DamagePercentageGrowth": 0.043,
           "StunRatio": 0.294,
           "StunRatioGrowth": 0.014,
-          "SpRecovery": 66.7,
+          "SpRecovery": 0,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 734.25,
+          "FeverRecovery": 0,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 0
         },
@@ -51,9 +51,9 @@
           "DamagePercentageGrowth": 0.113,
           "StunRatio": 0.829,
           "StunRatioGrowth": 0.038,
-          "SpRecovery": 188.4,
+          "SpRecovery": 0,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 2073.5,
+          "FeverRecovery": 0,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 0
         },
@@ -129,9 +129,9 @@
           "DamagePercentageGrowth": 0.059,
           "StunRatio": 0.321,
           "StunRatioGrowth": 0.015,
-          "SpRecovery": 73,
+          "SpRecovery": 0,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 803,
+          "FeverRecovery": 0,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 0
         }
@@ -142,9 +142,9 @@
           "DamagePercentageGrowth": 0.291,
           "StunRatio": 2.549,
           "StunRatioGrowth": 0.116,
-          "SpRecovery": 329.3,
+          "SpRecovery": 0,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 3621.75,
+          "FeverRecovery": 0,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 131.69
         }
@@ -159,12 +159,25 @@
           "StunRatioGrowth": 0.022,
           "SpRecovery": 0,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 1193.5,
+          "FeverRecovery": 0,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 43.34
         }
       ],
       "EXSpecialAttackRainingIronPetals": [
+        {
+          "DamagePercentage": 6.834,
+          "DamagePercentageGrowth": 0.622,
+          "StunRatio": 5.868,
+          "StunRatioGrowth": 0.267,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 19500.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 577.35
+        }
+      ],
+      "EXSpecialAttackRainingIronPetalsAway": [
         {
           "DamagePercentage": 0.184,
           "DamagePercentageGrowth": 0.017,
@@ -176,8 +189,7 @@
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 8.33
         }
-      ],
-      "EXSpecialAttackRainingIronPetalsAway": []
+      ]
     },
     "chain": {
       "ChainAttackTempestOfFrostyPetals": [
@@ -214,9 +226,9 @@
           "DamagePercentageGrowth": 0.14,
           "StunRatio": 0.77,
           "StunRatioGrowth": 0.035,
-          "SpRecovery": 175,
+          "SpRecovery": 0,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 1925,
+          "FeverRecovery": 0,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 70
         }
@@ -264,7 +276,7 @@
           "StunRatioGrowth": 0.183,
           "SpRecovery": 0,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 12760,
+          "FeverRecovery": 0,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 389.76
         }

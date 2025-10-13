@@ -268,6 +268,8 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
       return 'basic'
     if (key === 'Yanagi' && abilityName === 'StanceJougen') return 'basic'
     if (key === 'Yanagi' && abilityName === 'StanceKagen') return 'basic'
+    if (key === 'Yidhari' && abilityName === 'FrostsCrushingWeight')
+      return 'basic'
     throw new Error(
       `Failed to infer damage type for key:${key} abilityName:${abilityName}. Please add an overide in zzz/formula/src/data/char/util.ts::inferDamageType`
     )
