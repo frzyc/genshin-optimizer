@@ -1,1 +1,83 @@
-{}
+{
+  "artifact": {
+    "artifactFilter": "Filtro Artefatti",
+    "filterLocation": {
+      "inventory": "Inventario",
+      "currentlyEquipped": "Equipaggiato"
+    },
+    "button": {
+      "unequipArtifacts": "Disequipaggia Artefatti",
+      "deleteArtifacts": "Elimina Artefatti"
+    },
+    "buttonHint": "Nota: I pulsanti rossi precedenti si applicano solo a <1>filtered artifacts</1>",
+    "mainStat": "Stat Principale",
+    "slot": "Slot",
+    "editor": {
+      "substat": {
+        "noSubstat": "Vuoto",
+        "selectSub": "Seleziona Valore",
+        "noStat": "Nessun Valore"
+      },
+      "rarity": "Rarità",
+      "level": "Livello",
+      "unknownPieceName": "Nome Sconosciuto",
+      "preview": "Anteprima Artefatto",
+      "dupArt": "Artefatto Duplicato Trovato",
+      "upArt": "Artefatto Aggiornato Trovato",
+      "btnSave": "Salva Artefatto",
+      "btnAdd": "Aggiungi Artefatto"
+    }
+  },
+  "languages": {
+    "chs": "Cinese (Semplificato)",
+    "cht": "Cinese (Tradizionale)",
+    "de": "Tedesco",
+    "en": "Inglese",
+    "es": "Spagnolo",
+    "fr": "Francese",
+    "id": "Indonesiano",
+    "ja": "Giapponese",
+    "pt": "Portoghese",
+    "ru": "Russo"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "languageCard": {
+      "languageFormat": "Lingua: {{language}}"
+    },
+    "uploadCard": {
+      "title": "Carica Database",
+      "replaceDatabase": "Aggiorna Database",
+      "hint": "Carica qui il tuo file JSON...",
+      "hintPaste": "...o incolla qui i dati."
+    }
+  },
+  "ui": {
+    "pageTitle": "Genshin Optimizer",
+    "tabs": {
+      "artifacts": "Artefatti",
+      "characters": "Personaggi",
+      "tools": "Strumenti"
+    },
+    "social": {
+      "paypal": "PayPal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "unselect": "Deseleziona",
+    "ascending": "Crescente",
+    "descending": "Decrescente",
+    "loading": "Caricamento...",
+    "appVersion": "$t(pageTitle) Versione: <1>{{version}}</1>"
+  },
+  "char_Eula": {
+    "c1C": {
+      "name": "Dopo aver consumato cariche di <strong>Grimheart</strong>",
+      "durationStack": "6s + 6s per carica, fino a 18s"
+    }
+  },
+  "char_Noelle": {
+    "p4cd": "24s - 1s ogni 4 colpi",
+    "c6duration": "15s + 1s ogni uccisione (massimo 25s)"
+  }
+}
