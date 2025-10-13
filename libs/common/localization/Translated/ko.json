@@ -13,7 +13,8 @@
         "noRoll": "추가옵션 없음",
         "noStat": "값 없음",
         "eff": "효율: <1></1>",
-        "nextRolls": "다음 강화:"
+        "nextRolls": "다음 강화:",
+        "RollCount_other": "{{count}} 회"
       },
       "rarity": "등급",
       "level": "레벨",
@@ -32,7 +33,9 @@
       "btnRandom": "무작위",
       "btnUpdate": "성유물 업데이트",
       "clearPrompt": "편집 중인 성유물이 있습니다. 정말 편집기의 내용을 비우시겠습니까?",
-      "unknownSetName": "성유물 세트 미지정"
+      "unknownSetName": "성유물 세트 미지정",
+      "delete": "삭제",
+      "confirmDelete": "정말 이 성유물을 삭제하시겠습니까?"
     },
     "artifactFilter": "성유물 필터",
     "filterLocation": {
@@ -44,7 +47,8 @@
       "unequipArtifacts": "미착용 성유물",
       "deleteArtifacts": "성유물 삭제",
       "lockArtifacts": "성유물 잠금",
-      "unlockrtifacts": "성유물 잠금 해제"
+      "unlockrtifacts": "성유물 잠금 해제",
+      "unequipArtifact": "성유물 착용 해제"
     },
     "buttonHint": "주의: 위 빨간 버튼들은 <1>필터링된 성유물</1>에만 적용됩니다",
     "tipsOfTheDay": [
@@ -93,7 +97,16 @@
     "artInInv": "보관함의 성유물",
     "locationsTooltip": "특정 캐릭터로 필터링 하기 위해선 \"착용 중인 성유물\"을 비활성화 하세요",
     "showDup": "중복 표시",
-    "noDupAlert": "보관함에 중복된 성유물이 없습니다."
+    "noDupAlert": "보관함에 중복된 성유물이 없습니다.",
+    "showingNum_other": "총 {{value}} 성유물 중 <1>{{count}}</1> 개 표시 중",
+    "substat_other": "{{count}} 부옵션",
+    "sub_other": "부옵 {{count}}개",
+    "noArtifacts": "아직 성유물이 하나도 없습니다. 원하시면 <1>automatic scanners</1>을 사용해서 빨리 추가할 수 있습니다!",
+    "subheadings": {
+      "general": "일반",
+      "inventory": "보관함",
+      "rollvalue": "부옵션 효율"
+    }
   },
   "languages": {
     "chs": "중국어 (간체)",
@@ -156,7 +169,11 @@
       "invalid": "비정상:",
       "upgraded": "강화됨:",
       "dbTotal": "총 개수:",
-      "notInImport": "가져오기에 미포함:"
+      "notInImport": "가져오기에 미포함:",
+      "teams": "팀:",
+      "loadouts": "구성:",
+      "builds": "빌드: ",
+      "buildTcs": "연구용 빌드: "
     },
     "DatabaseCard": {
       "title": "데이터베이스",
@@ -187,7 +204,11 @@
       "weapons": "무기",
       "doc": "문서",
       "setting": "설정",
-      "scanner": "스캐너"
+      "scanner": "스캐너",
+      "teams": "팀",
+      "archive": "도감",
+      "loadouts": "구성",
+      "builds": "빌드"
     },
     "social": {
       "paypal": "페이팔",
@@ -212,7 +233,8 @@
       "rarity": "희귀도",
       "efficiency": "현재 효율",
       "mefficiency": "최대 효율",
-      "artsetkey": "성유물 세트"
+      "artsetkey": "성유물 세트",
+      "lastEdit": "최근 수정됨"
     },
     "link": {
       "download": "다운로드 링크",
@@ -245,7 +267,9 @@
       "stamina_buffs": "스태미나 효과",
       "misc": "기타 속성"
     },
-    "sillyPageTitle": "Silly Optimizer"
+    "sillyPageTitle": "Silly Optimizer",
+    "excluded": "제외",
+    "included": "포함"
   },
   "char_Eula": {
     "burstC": {
@@ -418,8 +442,10 @@
     },
     "bonusScaling": {
       "skill_": "원소 전투 스킬 피해 증가량",
-      "atkInc": "공격력 증가량"
+      "atkInc": "공격력 증가량",
+      "value": "{{value}}% "
     },
+    "energy": "에너지",
     "teamBuff": "파티 버프",
     "dmgMult": {
       "normal": "일반 공격 피해량 계수",
@@ -451,12 +477,32 @@
     "timeOnField": "필드 위에 나온 시간",
     "hpChange": "HP가 증가 혹은 감소 후",
     "afterHeal": "치유를 받은 후",
+    "hits_other": "{{count}} 회 타격",
+    "percentMaxHP": "% 최대 HP",
+    "stack_other": "{{count}} 스택",
+    "seconds_other": "{{count}} 초",
+    "uses_other": "{{count}} 사용",
+    "opponents_other": "{{count}} 개 대상",
+    "members_other": "{{count}} 명 멤버",
+    "times_other": "{{count}} 회",
     "activeChar": "필드 위 캐릭터",
     "otherHpChange": "파티원의 HP가 변화한 후",
     "reactionOp": {
       "overload": "<overloaded>과부하</overloaded> 반응 발동 후"
     },
-    "afterOverflow": "치유 회복량이 초과"
+    "afterOverflow": "치유 회복량이 초과",
+    "level": "레벨 {{count}}",
+    "teamHitOp": {
+      "geo": "근처의 파티 내 캐릭터가 <geo>바위 원소 피해</geo>를 준 후",
+      "electroReaction": "근처의 파티 내 캐릭터가 <electro>번개 원소 피해</electro>를 준 후"
+    },
+    "afterPerformHeal": "치유 발동 후",
+    "bond": {
+      "current": "현재 생명의 계약 비율",
+      "changes": "생명의 계약이 증가하거나 감소 시",
+      "increases": "생명의 계약이 증가 시",
+      "percentOf": "생명의 계약 퍼센트"
+    }
   },
   "weapon_SongOfBrokenPines": {
     "name": "천년의 대악장: 깃발의 노래"
@@ -591,8 +637,7 @@
     },
     "as": {
       "title": "AdeptiScanner",
-      "p1": "보관함의 모든 성유물을 스캔 할 수 있습니다. 수동 스캔 모드도 지원합니다.",
-      "p2": "이 스캐너는 업데이트 없이도 새 성유물을 인식할 수 있게 설정 가능합니다."
+      "p1": "보관함의 모든 성유물을 스캔 할 수 있습니다. 수동 스캔 모드도 지원하며 <1>Enka.Network</1>에서 데이터를 가져올 수 있습니다."
     },
     "goodeng": "이 스캐너는 영어만 인식하고, <1>GOOD</1> 형식으로 데이터를 내보냅니다.",
     "tosWarn": "게임과 간접적으로 상호 작용하는 모든 도구와 마찬가지로, 이것들의 실제 동작을 사실상 감지할 수 없습니다. <1>따라서 이것들을 사용하는 것은 여전히 위험합니다.</1> 사용상의 주의를 요합니다.",
@@ -610,11 +655,6 @@
       "title": "Artiscan",
       "p1": "이 웹 기반의 스캐너는 게임 화면, 게임 스크린샷, 게임 비디오를 캡춰 할 수 있습니다. 스크린샷/비디오 캡춰는 전체화면도 가능하며 해당 부분만 잘라낼 필요가 없습니다.",
       "p2": "모바일/플레이스테이션은 스크립샷이나 비디오로만 스캔 할 수 있습니다."
-    },
-    "ak": {
-      "title": "Akasha Scanner",
-      "p1": "자동으로 성유물은 물론 캐릭터와 무기들을 스캔합니다. 앱 안에서 히스토리로 남아있는 과거의 스캔들도 내보낼 수 있습니다. 영어만 지원합니다.",
-      "p2": "이 앱은 또한 <1>Paimon.moe</1>과 <1>Seelie.me</1>에서 사용할 수 있는 업적 또한 스캔 할 수 있습니다."
     },
     "seelieme": "이 스캐너의 결과물은 <1>seelie.me</1>에서도 사용가능합니다."
   },
@@ -895,7 +935,13 @@
     "c6": "살생앵 공격의 적의 방어력 무시"
   },
   "char_Yanfei": {
-    "seals": ["0스택", "1스택", "2스택", "3스택", "4스택"],
+    "seals": [
+      "0스택",
+      "1스택",
+      "2스택",
+      "3스택",
+      "4스택"
+    ],
     "perSeal": "(스택당)",
     "maxSeals": "단화인 최대 수량",
     "charged": {
@@ -1054,12 +1100,13 @@
       "overview": "기본정보",
       "talent": "특성 및 돌파",
       "optimize": "최적화",
-      "theorycraft": "이론 연구실"
+      "theorycraft": "이론 연구실",
+      "upopt": "성유물 업그레이드"
     },
     "formulas": "식",
     "calculations": "계산",
     "selectCharacter": "캐릭터 선택",
-    "removeCharacter": "{{value}}을/를 정말 제거하시겠습니까?",
+    "removeCharacter": "{{value}}을/를 정말 제거하시겠습니까? 현재 구성이나 다중 목표 등이 모두 지워지며 모든 팀에서 이 캐릭터가 제거됩니다.",
     "delete": "캐릭터 삭제",
     "teammates": "파티원",
     "hitmode": {
@@ -1084,7 +1131,9 @@
       "info1": "참고: <1>GO 디스코드</1> 혹은 <3>KQM Multi-Opt Guide</3>에서 사용자들이 만든 다중 최적화 목표들을 찾을 수 있습니다. 다만 그 설정들이 올바른지는 보장하지 않습니다.",
       "info2": "자신의 상황에 부합하는지 확인 하는 것은 사용자의 몫입니다.",
       "description": "설명",
-      "duplicate": "복제"
+      "duplicate": "복제",
+      "target_other": "<0>{{count}}</0> 타겟",
+      "jsonDescWarning": "다중 목표 설정을 넣은 것 같습니다. 여기는 설정을 입력하는 곳이 아닙니다. 돌아가서 <strong>import Multi-Opt</strong>을 사용하세요."
     },
     "addStats": {
       "title": "적 설정 및 스탯 조정",
@@ -1136,15 +1185,17 @@
         "scalesWith": "선택된 최적화 대상과 제한 조건은 다음과 같습니다: ",
         "distribute": ". 계산은 해당 부옵션에만 분배합니다.",
         "feasibilty": "가능한 조합을 위해 퍼센트가 아닌 깡 옵션에 분배 될 수 있습니다."
-      },
-      "constraint": {
-        "title": "부옵션 제한",
-        "add": "부옴션 제한 추가"
       }
     },
     "tabTeambuff": {
       "team_reso": "파티 원소 공명",
       "resonance_tip": "원소 공명을 받기 위해선 파티가 4명으로 가득 차야 합니다."
+    },
+    "showingNum_other": "총 {{value}} 캐릭터 중 <1>{{count}}</1> 명 표시 중",
+    "noLoadout": "이 캐릭터는 어떤 구성이나 팀에 추가되지 않았습니다. <strong>빌드 생성</strong>, <strong>연구실</strong> 혹은 최적화를 하기 위해선 새로운 구성과 팀을 만들어야 합니다.",
+    "teammateUsing": {
+      "weapon": "팀원 <strong><1></1></strong>이/가 이 무기를 사용중입니다.",
+      "artifact": "팀원 <strong><1></1></strong>이/가 이것을 사용중입니다."
     }
   },
   "page_weapon": {
@@ -1152,7 +1203,21 @@
     "weaponName": "무기 이름",
     "removeWeapon": "{{value}}을/를 정말 제거하시겠습니까?",
     "addWeapon": "새 무기 추가",
-    "cantDeleteLock": "잠금 설정된 무기는 삭제할 수 없습니다."
+    "showingNum_other": "총 {{value}} 개의 무기 중 <1>{{count}}</1> 개를 표시 중",
+    "cantDeleteLock": "잠금 설정된 무기는 삭제할 수 없습니다.",
+    "button": {
+      "deleteWeapons": "무기 삭제",
+      "lockWeapons": "무기 잠금",
+      "unlockWeapons": "무기 잠금 해제"
+    },
+    "buttonHint": "주의: 상단의 빨간 버튼들은 <1>현재 검색된 무기들<1>에만 적용됩니다.",
+    "equippedWeapon": "착용 중인 무기",
+    "weaponInInv": "착용 중이지 않은 무기",
+    "locationsTooltip": "캐릭터들이 사용 중인 무기를 필터 하려면 \"모든 착용 중인 무기\"를 사용 중지 하세요.",
+    "subheadings": {
+      "general": "일반",
+      "inventory": "보관함"
+    }
   },
   "weapon_AquaSimulacra": {
     "condName": "주변에 적 존재"
@@ -1282,7 +1347,10 @@
       "selExc": "이 캐릭터의 제외 리스트에 추가할 성유물 선택",
       "deSelectExc": "제외 리스트에서 제거하기 위해선 해당 성유물을 클릭하세요",
       "usingNum": "<1>{{totalStr}}</1>개의 제외된 성유물 사용중",
-      "button_txt": "성유물 제외"
+      "button_txt": "성유물 제외",
+      "excNum_other": "<0>{{count}}</0> 개의 성유물이 제외됨",
+      "includeArtifactTip": "성유물을 포함 시키면 현재 캐릭터의 빌드 생성에 사용됩니다.",
+      "includeArtifactButton": "이 성유물을 최적화에 포함."
     },
     "excludeChar": {
       "title": "착용 중인 성유물 설정",
@@ -1291,7 +1359,6 @@
         "disallow_All": "모든 캐릭터를 허용 리스트에서 제거"
       },
       "allowEquip": "이 캐릭터의 성유물을 사용:",
-      "tooltip": "캐릭터들을 허용 리스트에 추가합니다. 이 허용 리스트의 캐릭터들은 조합 생성에 사용됩니다. 또한 미착용 성유물만 사용하거나 사용자 정의 리스트, 그리고 모든 착용 및 미착용 성유물을 사용하도록 선택할 수 있습니다.",
       "chars": "캐릭터",
       "artis": "성유물",
       "states": {
@@ -1299,10 +1366,27 @@
         "customList": "사용자 정의 리스트",
         "all": "모든 성유물"
       },
-      "usingState": "선택된 방식"
+      "usingState": "선택된 방식",
+      "usingNumTot_other": "<3>{{count}}</3> 캐릭터의 <1>{{arts}}</1>개 성유물 사용 중"
     },
     "buildCompleted": "생성 완료",
-    "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다."
+    "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다.",
+    "bonusStats": {
+      "title": "보너스 스탯"
+    },
+    "build_other": "<0>{{count}}</0> 빌드",
+    "thread_other": "<0>{{count}}</0> 쓰레드",
+    "upOptLevelFilter": "성유물 업그레이드 레벨 필터",
+    "upOptLevelFilterTooltip": "레벨 필터는 최적화 설정과 동기화 되지 않습니다.",
+    "upOptNoResults": "강화 할 수 있는 성유물이 없습니다. 성유물 조건에 만족하는 경우가 없습니다. 좀 더 나은 빌드를 위해서는 기본 성유물 최적화를 시도할 수 있습니다.",
+    "upOptInfo": "성유물 업그레이드는 강화시 최적화 목표를 최대화 할 수 있는 가능성이 있는 성유물을 찾습니다.<br/>소유중인 모든 성유물에서만 교체하길 원한다면 기본 성유물 최적화를 사용하세요.",
+    "upOptEmptyBuild": "현재 일부가 빠진 빌드를 사용중입니다. 성유물 업그레이드는 각 성유물을 교체만 합니다. 기본 최적화를 통해 생성된 기본 빌드에서 시작하는 것을 추천드립니다.",
+    "targetSelectorTitle": "대상 선택",
+    "compareArtModal": {
+      "newArt": "새 성유물",
+      "oldArt": "기존 성유물",
+      "tcArt": "실험실 성유물"
+    }
   },
   "weapon_ForestRegalia": {
     "condName": "유식의 잎사귀를 습득"
@@ -1799,5 +1883,139 @@
     "wave_critDMG_": "한운 충격파의 치명타 피해",
     "a1Cond": "바람깃",
     "c6Cond": "하늘다리 발동"
+  },
+  "common_common": {
+    "link": {
+      "download": "다운로드 링크",
+      "discord": "디스코드 초대 링크"
+    },
+    "unselect": "선택해제",
+    "inventory": "보관함",
+    "ascending": "오름차순",
+    "descending": "내림차순",
+    "sortBy": "정렬 기준: ",
+    "loading": "로딩중...",
+    "error": "에러",
+    "reset": "리셋",
+    "info": "정보",
+    "close": "닫기",
+    "delete": "삭제",
+    "locked": "잠금",
+    "unlocked": "잠금 해제",
+    "excluded": "제외됨",
+    "included": "포함됨",
+    "selectlevel": "레벨 선택",
+    "gender": {
+      "F": "여성",
+      "M": "남성"
+    }
+  },
+  "char_Arlecchino": {
+    "bloodfireDmg": "달의 핏빛화염 피해",
+    "c2Cond": "<strong>핏값·결산</strong> 회수 시"
+  },
+  "char_Chiori": {
+    "a1Cond": "재단 효과 발동 시",
+    "a4Cond": "주변에 있는 파티 내 케릭터가 <geo>바위 원소 창조물</geo> 창조 시"
+  },
+  "char_Sethos": {
+    "shadow_dmgInc": "그림자 관통 화살 피해량 증가",
+    "shadow_critRate_": "그림자 관통 화살 치명타 확률",
+    "a4Cond": "모래 그림자 효과 획득 시",
+    "c4Cond": "<strong>그림자 관통 화살</strong> 또는 <strong>황혼 화살</strong>이 2기 이상의 적에게 명중 시"
+  },
+  "char_Sigewinne": {
+    "skillTierCond": "치료 방울 크기 단계",
+    "bubbleHeal_": "치료 방울 치유 보너스",
+    "convaCond": "진정 카운트 소모",
+    "a4Cond": "파티 내 생명의 계약 총합"
+  },
+  "page_team": {
+    "buildInfo": {
+      "equipped": "현재 캐릭터가 착용 중인 빌드입니다. 이는 인게임에서 착용중이고 구성과 상관 없이 유지됩니다.",
+      "build": "<strong>빌드</strong>는 무기와 성유물 5개로 구성됩니다.",
+      "tcbuild": "<strong>연구용 빌드</strong>는 스탯을 직접 설정 할 수 있습니다."
+    },
+    "buildTcCharOverride": {
+      "btn": "캐릭터 데이터를 이 연구용 빌드로 교체"
+    },
+    "team": {
+      "editNameDesc": "팀 이름 및 설명 수정",
+      "name": "팀 이름",
+      "desc": "팀 설명"
+    },
+    "loadout": {
+      "name": "구성 이름",
+      "desc": "구성 설명"
+    }
+  },
+  "page_teams": {
+    "showingNum_other": "총 {{value}} 팀 중 <1>{{count}}</1> 표시 중"
+  },
+  "weapon_Cloudforged": {
+    "cond": "원소 에너지 감소 후"
+  },
+  "weapon_SilvershowerHeartstrings": {
+    "cond": "간호 효과 스택"
+  },
+  "sr_header": {
+    "tabs": {
+      "relics": "유물",
+      "characters": "캐릭터",
+      "teams": "팀",
+      "settings": "설정"
+    }
+  },
+  "sr_page_settings": {
+    "DatabaseCard": {
+      "title": "데이터베이스",
+      "button": {
+        "swap": "교체",
+        "copy": "클립보드",
+        "upload": "업로드",
+        "download": "다운로드",
+        "delete": "삭제"
+      },
+      "currentDB": "현재 데이터베이스"
+    },
+    "count": {
+      "chars": "캐릭터:",
+      "relics": "유물: ",
+      "teams": "팀:",
+      "builds": "빌드: ",
+      "new": "신규:",
+      "unchanged": "유지:",
+      "upgraded": "업그레이드:",
+      "removed": "제거:",
+      "notInImport": "가져오기에 미포함:",
+      "dbTotal": "총 병합:",
+      "invalid": "유효하지 않음:"
+    },
+    "uploadCard": {
+      "error": {
+        "jsonParse": "데이터베이스 JSON을 제대로 읽을 수 없습니다.",
+        "sroInvalid": "잘못된 SRO 데이터 베이스 파일",
+        "unknown": "알 수 없는 오류가 발생하였습니다."
+      },
+      "title": "데이터베이스 업로드",
+      "buttons": {
+        "open": "열기",
+        "detectDups": "변경/중복 항목 찾기",
+        "delNotInImport": "가져오기에 포함되지 않은 아이템 삭제"
+      },
+      "hint": "JSON 파일을 여기에서 로드...",
+      "tooltip": {
+        "ignoreDup": "업그레이드와 중복을 확인하지 않습니다. 현재 존재하는 SRO 인벤토리의 최상단에 추가됩니다.",
+        "detectDup": "업그레이드 혹은 중복을 확인후 SRO 인벤토리에 병합합니다.",
+        "keepNotInImport": "가져오기 내용이 일부라고 가정합니다. 아무것도 지우지 않습니다.",
+        "delNotInImport": "가져오기 내용이 전부라고 가정합니다. 가져오기에 포함되어 있지 않은 SRO 인벤토리 내 아이템은 삭제됩니다."
+      },
+      "hintPaste": "...혹은 아래에 데이터를 붙여넣기 하세요.",
+      "dbSource": "데이터 소스:",
+      "replaceDatabase": "데이터베이스 업데이트"
+    }
+  },
+  "sr_ui": {
+    "pageTitle": "스타 레일 옵티마이저"
   }
 }
