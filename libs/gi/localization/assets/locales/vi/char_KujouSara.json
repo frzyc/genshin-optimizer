@@ -1,5 +1,8 @@
 {
   "skill": {
-    "ambush": "Tengu Juurai: Phục kích"
+    "ambush": "Tengu Juurai - Phục Kích có hiệu lực"
+  },
+  "c6": {
+    "electroCritDmg": "Nhân vật ở trạng thái tăng tấn công nhờ Tengu Juurai"
   }
 }

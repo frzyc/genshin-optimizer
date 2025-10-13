@@ -1,0 +1,18 @@
+{
+  "edit": "Waffe bearbeiten",
+  "weaponName": "Waffenname",
+  "addWeapon": "Neue Waffe Hinzufügen",
+  "cantDeleteLock": "Waffe nicht löschbar, da sie gesperrt ist",
+  "button": {
+    "deleteWeapons": "Waffen löschen",
+    "lockWeapons": "Waffen sperren",
+    "unlockWeapons": "Waffen entsperren"
+  },
+  "equippedWeapon": "Alle Ausgerüsteten Waffen",
+  "weaponInInv": "Alle unausgerüsteten Waffen",
+  "locationsTooltip": "Schalte \"Alle Ausgerüsteten Waffen\" aus um nach spezifischen Charakteren zu filtern",
+  "subheadings": {
+    "general": "Generell",
+    "inventory": "Inventar"
+  }
+}

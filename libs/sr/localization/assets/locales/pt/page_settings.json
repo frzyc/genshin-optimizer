@@ -1,0 +1,50 @@
+{
+  "DatabaseCard": {
+    "title": "Base de Dados",
+    "button": {
+      "swap": "Trocar",
+      "copy": "Área de Transferência",
+      "upload": "Upload",
+      "download": "Download",
+      "delete": "Excluir"
+    },
+    "currentDB": "Base de Dados Atual"
+  },
+  "count": {
+    "chars": "Personagens:",
+    "relics": "Relíquias: ",
+    "lightCones": "Cones de Luz:",
+    "teams": "Times:",
+    "builds": "Builds:",
+    "new": "Novo:",
+    "unchanged": "Inalterado:",
+    "upgraded": "Atualizado:",
+    "removed": "Removido:",
+    "notInImport": "Não Importado:",
+    "dbTotal": "Total Mesclado:",
+    "invalid": "Inválido:"
+  },
+  "uploadCard": {
+    "error": {
+      "jsonParse": "Impossível analizar Base de Dados JSON.",
+      "sroInvalid": "Arquivo de Base de Dados SRO inválido.",
+      "unknown": "Ocorreu um erro desconhecido."
+    },
+    "title": "Fazer Upload de Base de Dados",
+    "buttons": {
+      "open": "Abrir",
+      "detectDups": "Detectar Atualizações/Duplicados",
+      "delNotInImport": "Excluir itens não importados"
+    },
+    "hint": "Carregue seu arquivo JSON aqui...",
+    "tooltip": {
+      "ignoreDup": "Não detectar atualizações/duplicados. Os itens importados serão adicionados além do seu inventário SRO existente.",
+      "detectDup": "Encontrar atualizações/duplicados no inventário SRO e mesclar os itens importados no SRO.",
+      "keepNotInImport": "Assumir que o arquivo importado é um inventário parcial. Nada será excluído.",
+      "delNotInImport": "Assumir que o arquivo importado é o seu inventário completo. Os itens do Inventário SRO que não existem no arquivo importado serão excluídos."
+    },
+    "hintPaste": "...ou cole seus dados abaixo.",
+    "dbSource": "Fonte dos dados:",
+    "replaceDatabase": "Atualizar Base de Dados"
+  }
+}

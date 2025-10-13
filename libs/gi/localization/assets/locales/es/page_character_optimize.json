@@ -1,11 +1,53 @@
 {
+  "mainStat": {
+    "levelAssTooltip": {
+      "title": "Suposición del Nivel de Estadística Principal",
+      "desc": "Establece el valor de la estadística principal al menos al nivel especificado. No cambia las subestadísticas."
+    },
+    "assumptionLvl": {
+      "no": "Sin Suposición de Nivel de Estadística Principal",
+      "lvl": "Asume que la Estadística Principal es al menos de Nivel {{lvl}}"
+    }
+  },
+  "tcGraph": {
+    "vs": "Objetivo de Optimización del Gráfico frente a",
+    "notSel": "No Seleccionado",
+    "downloadData": "Descargar Datos"
+  },
   "levelFilter": "Filtro de nivel de artefactos",
+  "allowPartial": "Permitir Construcciones Parciales (<5 artefactos)",
+  "constraintFilter": {
+    "title": "Restricciones Mínimas de Construcción",
+    "tooltip": "Establece ciertos requisitos mínimos a los que deben ajustarse las construcciones generadas; por ejemplo, tener al menos un 140% de Recarga de Energía."
+  },
   "artSetConfig": {
-    "title": "Ajustes de sets de artefactos",
+    "title": "Ajustes de conjuntos de artefactos",
+    "setEffCond": "Establecer Condiciones de Efecto",
+    "enabled": "Habilitado",
     "allowed": "Permitido(s)",
     "excluded": "Excluido(s)",
     "selected": "Seleccionado(s)",
-    "allowAll2set": "Permitir todos los 2-sets",
-    "excludeAll2set": "Excluir todos los 2-sets"
+    "2rainbow": "3-Arcoíris",
+    "4rainbow": "5-Arcoíris",
+    "allowAll2set": "Permitir todos los 2-conjutos",
+    "excludeAll2set": "Excluir todos los 2-conjutos",
+    "allowAll4set": "Permitir todos los 4-conjutos",
+    "excludeAll4set": "Excluir todos los 4-conjutos",
+    "alExRainbow": "<0>Permitir <1></1></0> / <2>Excluir <1></1></2> Construcciones Arcoíris",
+    "modal": {
+      "setCond": {
+        "title": "Efectos Condicionales del Conjunto de Artefactos",
+        "reset": "Restablecer Condiciones",
+        "text": "Algunos efectos de conjuntos de artefactos proporcionan estadísticas condicionales. Esta ventana te permite seleccionar esos efectos, de modo que puedan contribuir con estadísticas cuando se calcule una construcción que cumpla con un efecto del conjunto durante la optimización."
+      },
+      "ArtSetFilter": {
+        "title": "Conjuntos de Artefactos <1>Permitidos<1></1></1> / <3>Excluidos<1></1></3>",
+        "intro": "Puedes permitir/excluir qué conjuntos deseas que el constructor considere. En los siguientes ejemplos, <strong>A</strong> está en el conjunto, y <strong>R</strong> es arcoíris (fuera del conjunto)",
+        "2set": "\n<0><0>Excluir<1></1> Conjunto de 2-Piezas</0></0> excluiría construcciones de 2-Piezas: <2><0>AA</0>RRR</2> y <4><0>AAA</0>RR</4>.",
+        "4set": "<0><0>Excluir<1></1> Conjunto de 4-Piezas</0></0> excluiría construcciones de 4-Piezas: <2><0>AAAA</0>R</2> y <4><0>AAAAA</0></4>.",
+        "2rain": "<0><0>Excluir<1></1> 3-Arcoíris</0></0> excluiría construcciones de 2-Piezas + 3-Arcoíris: <2>AA<1>RRR</1></2> y <4>AAA<1>RR</1></4>.",
+        "4rain": "<0><0>Excluir<1></1> 5-Arcoíris</0></0> excluiría construcciones completas de 5-Arcoíris: <2><0>RRRRR</0></2>."
+      }
+    }
   }
 }

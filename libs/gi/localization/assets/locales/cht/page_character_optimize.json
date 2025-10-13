@@ -93,7 +93,6 @@
       "disallow_All": "Remove all shown characters from the allow list"
     },
     "allowEquip": "Allow using artifacts from",
-    "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all equipped and unequipped artifacts.",
     "chars": "Characters",
     "artis": "Artifacts",
     "states": {

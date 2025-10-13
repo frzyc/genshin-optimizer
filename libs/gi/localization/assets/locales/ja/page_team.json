@@ -1,0 +1,19 @@
+{
+  "buildInfo": {
+    "equipped": "これが現在ゲーム内でキャラクターに装備されている武器と聖遺物を表します。 戦闘設定の装備によって上書きされることはありません。",
+    "build": "<strong>装備</strong>は1つの武器と5つの聖遺物から構成されます。",
+    "tcbuild": "<strong>セオリークラフト</strong> (Theorycraft = TC) とは英語圏において、数学的な分析を用いてゲームの最適な戦略を探究する試みを指します。<br><strong>TC装備</strong>では、ユーザーが装備やステータスの数値を自由に割り振ることができます。"
+  },
+  "buildTcCharOverride": {
+    "btn": "Override Character Data for This TC build"
+  },
+  "team": {
+    "editNameDesc": "チームの名前と説明を編集",
+    "name": "チームの名前",
+    "desc": "チームの説明"
+  },
+  "loadout": {
+    "name": "戦闘設定の名前",
+    "desc": "戦闘設定の説明"
+  }
+}

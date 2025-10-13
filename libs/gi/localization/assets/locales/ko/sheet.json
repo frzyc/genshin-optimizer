@@ -134,8 +134,10 @@
   },
   "bonusScaling": {
     "skill_": "원소 전투 스킬 피해 증가량",
-    "atkInc": "공격력 증가량"
+    "atkInc": "공격력 증가량",
+    "value": "{{value}}% "
   },
+  "energy": "에너지",
   "teamBuff": "파티 버프",
   "dmgMult": {
     "normal": "일반 공격 피해량 계수",
@@ -167,10 +169,30 @@
   "timeOnField": "필드 위에 나온 시간",
   "hpChange": "HP가 증가 혹은 감소 후",
   "afterHeal": "치유를 받은 후",
+  "hits_other": "{{count}} 회 타격",
+  "percentMaxHP": "% 최대 HP",
+  "stack_other": "{{count}} 스택",
+  "seconds_other": "{{count}} 초",
+  "uses_other": "{{count}} 사용",
+  "opponents_other": "{{count}} 개 대상",
+  "members_other": "{{count}} 명 멤버",
+  "times_other": "{{count}} 회",
   "activeChar": "필드 위 캐릭터",
   "otherHpChange": "파티원의 HP가 변화한 후",
   "reactionOp": {
     "overload": "<overloaded>과부하</overloaded> 반응 발동 후"
   },
-  "afterOverflow": "치유 회복량이 초과"
+  "afterOverflow": "치유 회복량이 초과",
+  "level": "레벨 {{count}}",
+  "teamHitOp": {
+    "geo": "근처의 파티 내 캐릭터가 <geo>바위 원소 피해</geo>를 준 후",
+    "electroReaction": "근처의 파티 내 캐릭터가 <electro>번개 원소 피해</electro>를 준 후"
+  },
+  "afterPerformHeal": "치유 발동 후",
+  "bond": {
+    "current": "현재 생명의 계약 비율",
+    "changes": "생명의 계약이 증가하거나 감소 시",
+    "increases": "생명의 계약이 증가 시",
+    "percentOf": "생명의 계약 퍼센트"
+  }
 }
