@@ -3,9 +3,6 @@ import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
   own,
   ownBuff,
   percent,
@@ -23,41 +20,44 @@ const key: WengineKey = 'DreamlitHearth'
 const dm = mappedStats.wengine[key]
 const { phase } = own.wengine
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { etherVeilActive } = allBoolConditionals(key)
 
 const sheet = registerWengine(
   key,
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
-  // TODO: Add formulas/buffs
+  // Passive buffs
+  registerBuff(
+    'enerRegen',
+    ownBuff.combat.enerRegen.add(
+      cmpSpecialtyAndEquipped(key, percent(subscript(phase, dm.enerRegen)))
+    ),
+    showSpecialtyAndEquipped(key)
+  ),
+
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.combat.common_dmg_.add(
+    'common_dmg_',
+    teamBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(percent(subscript(phase, dm.cond_dmg_)))
+        etherVeilActive.ifOn(percent(subscript(phase, dm.common_dmg_)))
       )
     ),
-    showSpecialtyAndEquipped(key)
+    showSpecialtyAndEquipped(key),
+    true
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(
-      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
+    'hp_',
+    teamBuff.combat.hp_.add(
+      cmpSpecialtyAndEquipped(
+        key,
+        etherVeilActive.ifOn(percent(subscript(phase, dm.hp_)))
+      )
     ),
-    showSpecialtyAndEquipped(key)
-  ),
-  registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(
-      cmpSpecialtyAndEquipped(key, numConditional)
-    ),
-    showSpecialtyAndEquipped(key)
+    showSpecialtyAndEquipped(key),
+    true
   )
 )
 export default sheet

@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Soldier0Anby'
@@ -57,7 +57,7 @@ const sheet = createBaseSheet(key, {
       type: 'fields',
       fields: [
         {
-          title: ch('m6_additional_dmg'),
+          title: st('dmg'),
           fieldRef: formula.m6_additional_dmg.tag,
         },
       ],

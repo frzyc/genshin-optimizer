@@ -216,7 +216,8 @@
     "name": "Additional Ability: Voltage Surge",
     "desc": {
       "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> or <ct color=#FFFFFF>Support</ct> character:",
-      "1": "Soldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' <ct color=#FFFFFF>Aftershock</ct> DMG to enemies with a <ct color=#FFFFFF>Silver Star</ct> mark increases by 25%."
+      "1": "Soldier 0 - Anby's CRIT Rate increases by 10%. When the current active character is Soldier 0 - Anby, all squad members' <ct color=#FFFFFF>Aftershocks</ct> deal 25% more DMG to enemies marked with <ct color=#FFFFFF>Silver Star</ct>.",
+      "2": "Soldier 0 - Anby's <ct color=#FFFFFF>Chain Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> are treated as <ct color=#FFFFFF>Aftershock</ct> DMG."
     }
   },
   "mindscapes": {

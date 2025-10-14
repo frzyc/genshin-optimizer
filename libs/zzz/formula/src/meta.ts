@@ -266,24 +266,10 @@ export const conditionals = {
     },
   },
   DreamlitHearth: {
-    boolConditional: {
+    etherVeilActive: {
       sheet: 'DreamlitHearth',
-      name: 'boolConditional',
+      name: 'etherVeilActive',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DreamlitHearth',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DreamlitHearth',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   DrillRigRedAxis: {
@@ -406,25 +392,7 @@ export const conditionals = {
     grenadeHit: { sheet: 'Grace', name: 'grenadeHit', type: 'bool' },
   },
   GrillOWisp: {
-    boolConditional: {
-      sheet: 'GrillOWisp',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'GrillOWisp',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'GrillOWisp',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    hpDecreased: { sheet: 'GrillOWisp', name: 'hpDecreased', type: 'bool' },
   },
   HailstormShrine: {
     exSpecialOrAnomaly: {
@@ -584,24 +552,14 @@ export const conditionals = {
     quick_use: { sheet: 'Koleda', name: 'quick_use', type: 'bool' },
   },
   KrakensCradle: {
-    boolConditional: {
+    hpBelow50: { sheet: 'KrakensCradle', name: 'hpBelow50', type: 'bool' },
+    hpDecreased: {
       sheet: 'KrakensCradle',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'KrakensCradle',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'KrakensCradle',
-      name: 'numConditional',
+      name: 'hpDecreased',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   Lighter: {
@@ -46707,37 +46665,37 @@ export const buffs = {
     },
   },
   DreamlitHearth: {
-    cond_dmg_: {
+    enerRegen: {
       sheet: 'DreamlitHearth',
-      name: 'cond_dmg_',
+      name: 'enerRegen',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'enerRegen',
+        sheet: 'DreamlitHearth',
+        name: 'enerRegen',
+      },
+    },
+    common_dmg_: {
+      sheet: 'DreamlitHearth',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'common_dmg_',
         sheet: 'DreamlitHearth',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
-    team_dmg_: {
+    hp_: {
       sheet: 'DreamlitHearth',
-      name: 'team_dmg_',
+      name: 'hp_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'hp_',
         sheet: 'DreamlitHearth',
-        name: 'team_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'DreamlitHearth',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'DreamlitHearth',
-        name: 'enemy_defIgn_',
+        name: 'hp_',
       },
     },
   },
@@ -46915,37 +46873,27 @@ export const buffs = {
     },
   },
   GrillOWisp: {
-    cond_dmg_: {
+    fire_dmg_: {
       sheet: 'GrillOWisp',
-      name: 'cond_dmg_',
+      name: 'fire_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'GrillOWisp',
-        name: 'cond_dmg_',
+        attribute: 'fire',
+        name: 'fire_dmg_',
       },
     },
-    team_dmg_: {
+    crit_: {
       sheet: 'GrillOWisp',
-      name: 'team_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'GrillOWisp',
-        name: 'team_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'GrillOWisp',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'GrillOWisp',
-        name: 'enemy_defIgn_',
+        name: 'crit_',
       },
     },
   },
@@ -47113,37 +47061,27 @@ export const buffs = {
     },
   },
   KrakensCradle: {
-    cond_dmg_: {
+    ice_sheer_dmg_: {
       sheet: 'KrakensCradle',
-      name: 'cond_dmg_',
+      name: 'ice_sheer_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'sheer_dmg_',
         sheet: 'KrakensCradle',
-        name: 'cond_dmg_',
+        attribute: 'ice',
+        name: 'ice_sheer_dmg_',
       },
     },
-    team_dmg_: {
+    crit_: {
       sheet: 'KrakensCradle',
-      name: 'team_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'KrakensCradle',
-        name: 'team_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'KrakensCradle',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'KrakensCradle',
-        name: 'enemy_defIgn_',
+        name: 'crit_',
       },
     },
   },
