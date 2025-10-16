@@ -9,12 +9,14 @@
     "gen-file": {
       "executor": "@genshin-optimizer/zzz/formula:gen-desc",
       "options": {
-        "outputPath": "libs/zzz/formula/src/meta.ts"
+        "outputPath": "libs/zzz/formula/src/meta"
       }
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
         "reportsDirectory": "../../../coverage/libs/test"
       }

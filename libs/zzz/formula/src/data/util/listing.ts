@@ -89,6 +89,8 @@ export const skillTypes = [
   'assistSkill',
 ] as const
 
+export const commonSheets = ['enemy', 'anomaly'] as const
+
 export const sheets = [
   'agg',
   'iso',
@@ -100,9 +102,8 @@ export const sheets = [
   'wengine',
   'disc',
   'dyn',
-  'enemy',
   'custom',
-  'anomaly',
+  ...commonSheets,
 ] as const
 
 export const members = [...allCharacterKeys] as const

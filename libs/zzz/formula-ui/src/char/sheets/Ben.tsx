@@ -1,13 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
+import { Ben } from '@genshin-optimizer/zzz/formula'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Ben'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
-const formula = formulas[key]
+const cond = Ben.conditionals
+const buff = Ben.buffs
+const formula = Ben.formulas
 
 const sheet = createBaseSheet(key, {
   perSkillAbility: {

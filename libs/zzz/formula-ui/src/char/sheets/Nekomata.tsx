@@ -1,12 +1,12 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { Nekomata } from '@genshin-optimizer/zzz/formula'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Nekomata'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
+const cond = Nekomata.conditionals
+const buff = Nekomata.buffs
 
 const sheet = createBaseSheet(key, {
   core: [

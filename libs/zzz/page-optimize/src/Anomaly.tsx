@@ -2,7 +2,7 @@ import {
   type Document,
   DocumentDisplay,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { anomalyMeta } from '@genshin-optimizer/zzz/formula'
 import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { Box } from '@mui/system'
 
@@ -21,11 +21,11 @@ const anomalyDocs: Document[] = [
     type: 'conditional',
     conditional: {
       label: 'Frostbite',
-      metadata: conditionals.anomaly.frostbite,
+      metadata: anomalyMeta.conditionals.frostbite,
       fields: [
         {
-          title: <TagDisplay tag={buffs.anomaly.frostbite_crit_dmg_.tag} />,
-          fieldRef: buffs.anomaly.frostbite_crit_dmg_.tag,
+          title: <TagDisplay tag={anomalyMeta.buffs.frostbite_crit_dmg_.tag} />,
+          fieldRef: anomalyMeta.buffs.frostbite_crit_dmg_.tag,
         },
       ],
     },
@@ -34,7 +34,7 @@ const anomalyDocs: Document[] = [
     type: 'conditional',
     conditional: {
       label: 'Anomaly Time Passed',
-      metadata: conditionals.anomaly.anomTimePassed,
+      metadata: anomalyMeta.conditionals.anomTimePassed,
     },
   },
 ]
