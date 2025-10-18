@@ -10,7 +10,7 @@ export default async function genMeta(
   verbose = false
 ) {
   console.log(options)
-  const { sheet_type } = options
+  const { sheet_type, sheet } = options
   const file_location = `libs/zzz/formula/src/meta`
   const types = ['formulas', 'conditionals', 'buffs']
   for (const type of types) {
@@ -18,7 +18,7 @@ export default async function genMeta(
       tree.root,
       file_location,
       sheet_type,
-      options.sheet,
+      sheet,
       `${type}.ts`
     )
     if (existsSync(dest)) {
@@ -27,7 +27,7 @@ export default async function genMeta(
           `Meta at ${path.join(
             file_location,
             sheet_type,
-            options.sheet,
+            sheet,
             `${type}.ts`
           )} already exists.`
         )
