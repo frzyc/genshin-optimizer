@@ -4,18 +4,18 @@ import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
 
 import { substatWeights } from './consts'
 import { deduplicate } from './deduplicate'
-import { evalMarkovNode, evaluateGaussian } from './markov-tree/evaluation'
 import { expandRollsLevel } from './expandRolls'
 import {
   expandSubstatLevel,
   makeRollsNode,
   makeSubstatNode,
 } from './expandSubstat'
+import { evalMarkovNode, evaluateGaussian } from './markov-tree/evaluation'
 import { makeObjective } from './markov-tree/makeObjective'
+import type { GaussianNode, Objective } from './markov-tree/markov.types'
 import { crawlSubstats } from './substatProbs'
 import { expandNode } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
-import type { GaussianNode, Objective } from './markov-tree/markov.types'
 
 /**
  * Checks whether the expanded nodes' evaluations match the base Gaussian node's evaluation.

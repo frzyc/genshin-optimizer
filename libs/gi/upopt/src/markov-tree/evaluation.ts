@@ -1,4 +1,3 @@
-import { mvnPE_bad } from './mvncdf'
 import type {
   EvaluatedMarkovNode,
   EvaluatedRollsNode,
@@ -9,7 +8,8 @@ import type {
   SubstatLevelNode,
   ValuesLevelNode,
 } from '../upOpt.types'
-import type { GaussianNode, EvaluatedGaussian, Objective } from './markov.types'
+import type { EvaluatedGaussian, GaussianNode, Objective } from './markov.types'
+import { mvnPE_bad } from './mvncdf'
 
 export function evaluateGaussian(
   obj: Objective,
