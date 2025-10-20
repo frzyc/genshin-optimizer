@@ -8,7 +8,7 @@ import {
   zero_deriv,
 } from '@genshin-optimizer/gi/wr'
 
-import type { Objective } from './upOpt.types'
+import type { Objective } from './markov.types'
 
 export function makeObjective(
   nodes: OptNode[],

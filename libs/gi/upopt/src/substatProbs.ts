@@ -1,4 +1,4 @@
-import { type SubstatKey } from '@genshin-optimizer/gi/consts'
+import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { substatWeights } from './consts'
 
 function combinations<T>(

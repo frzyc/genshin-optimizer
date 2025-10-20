@@ -2,7 +2,7 @@ import { cartesian, range } from '@genshin-optimizer/common/util'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 
-import { quadrinomial } from './mathUtil'
+import { quadrinomial } from './markov-tree/mathUtil'
 import type { RollsLevelNode, ValuesLevelNode } from './upOpt.types'
 
 export function expandRollsLevel({

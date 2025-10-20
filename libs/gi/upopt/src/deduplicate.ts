@@ -1,11 +1,11 @@
 import type { DynStat } from '@genshin-optimizer/gi/solver'
 import type {
   MarkovNode,
-  Objective,
   RollsLevelNode,
   SubstatLevelNode,
   ValuesLevelNode,
 } from './upOpt.types'
+import type { Objective } from './markov-tree/markov.types'
 
 type weightedNode = { p: number; n: MarkovNode }
 /**

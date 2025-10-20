@@ -2,7 +2,12 @@ import type { ArtifactRarity, SubstatKey } from '@genshin-optimizer/gi/consts'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 
-import { crawlUpgrades, diag, rollCountMuVar, rollCountProb } from './mathUtil'
+import {
+  crawlUpgrades,
+  diag,
+  rollCountMuVar,
+  rollCountProb,
+} from './markov-tree/mathUtil'
 import type { RollsLevelNode, SubstatLevelNode } from './upOpt.types'
 
 export function expandSubstatLevel(
