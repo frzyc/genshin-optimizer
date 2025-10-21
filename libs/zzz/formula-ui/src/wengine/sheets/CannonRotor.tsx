@@ -1,7 +1,7 @@
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, formulas } from '@genshin-optimizer/zzz/formula'
+import { CannonRotor } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
@@ -10,8 +10,8 @@ const key: WengineKey = 'CannonRotor'
 const [chg, _ch] = trans('wengine', key)
 const dm = mappedStats.wengine[key]
 const icon = wengineAsset(key, 'icon')
-const formula = formulas[key]
-const buff = buffs[key]
+const formula = CannonRotor.formulas
+const buff = CannonRotor.buffs
 
 const sheet: UISheetElement = {
   title: chg('phase'),

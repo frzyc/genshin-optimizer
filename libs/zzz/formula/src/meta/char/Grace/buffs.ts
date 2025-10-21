@@ -1,0 +1,101 @@
+// WARNING: Generated file, do not modify
+export const buffs = {
+  core_special_electric_anomBuildup_: {
+    sheet: 'Grace',
+    name: 'core_special_electric_anomBuildup_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomBuildup_',
+      sheet: 'Grace',
+      attribute: 'electric',
+      damageType1: 'special',
+      name: 'core_special_electric_anomBuildup_',
+    },
+  },
+  core_exSpecial_electric_anomBuildup_: {
+    sheet: 'Grace',
+    name: 'core_exSpecial_electric_anomBuildup_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomBuildup_',
+      sheet: 'Grace',
+      attribute: 'electric',
+      damageType1: 'exSpecial',
+      name: 'core_exSpecial_electric_anomBuildup_',
+    },
+  },
+  ability_shock_dmg_: {
+    sheet: 'Grace',
+    name: 'ability_shock_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Grace',
+      attribute: 'electric',
+      damageType1: 'anomaly',
+      name: 'ability_shock_dmg_',
+    },
+  },
+  m2_electric_resRed_: {
+    sheet: 'Grace',
+    name: 'm2_electric_resRed_',
+    tag: {
+      et: 'display',
+      qt: 'common',
+      q: 'resRed_',
+      sheet: 'Grace',
+      attribute: 'electric',
+      name: 'm2_electric_resRed_',
+    },
+  },
+  m2_electric_anomBuildupResRed_: {
+    sheet: 'Grace',
+    name: 'm2_electric_anomBuildupResRed_',
+    tag: {
+      et: 'display',
+      qt: 'common',
+      q: 'anomBuildupRes_',
+      sheet: 'Grace',
+      attribute: 'electric',
+      name: 'm2_electric_anomBuildupResRed_',
+    },
+  },
+  m4_enerRegen_: {
+    sheet: 'Grace',
+    name: 'm4_enerRegen_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'enerRegen_',
+      sheet: 'Grace',
+      name: 'm4_enerRegen_',
+    },
+  },
+  m6_special_mv_mult_: {
+    sheet: 'Grace',
+    name: 'm6_special_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'mv_mult_',
+      sheet: 'Grace',
+      damageType1: 'special',
+      name: 'm6_special_mv_mult_',
+    },
+  },
+  m6_exSpecial_mv_mult_: {
+    sheet: 'Grace',
+    name: 'm6_exSpecial_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'mv_mult_',
+      sheet: 'Grace',
+      damageType1: 'exSpecial',
+      name: 'm6_exSpecial_mv_mult_',
+    },
+  },
+} as const

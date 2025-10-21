@@ -18,7 +18,7 @@ import {
 import {
   type Attribute,
   type Tag,
-  conditionals,
+  enemyMeta,
 } from '@genshin-optimizer/zzz/formula'
 import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName } from '@genshin-optimizer/zzz/ui'
@@ -220,6 +220,6 @@ const enemyDoc: Document = {
   type: 'conditional',
   conditional: {
     label: 'Enemy is Stunned',
-    metadata: conditionals.enemy.isStunned,
+    metadata: enemyMeta.conditionals.isStunned,
   },
 }

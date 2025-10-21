@@ -89,6 +89,9 @@ export const skillTypes = [
   'assistSkill',
 ] as const
 
+// Add any entries that have conditionals or shared formulas here, otherwise move them to 'sheets'
+export const commonSheets = ['enemy', 'anomaly'] as const
+
 export const sheets = [
   'agg',
   'iso',
@@ -100,9 +103,8 @@ export const sheets = [
   'wengine',
   'disc',
   'dyn',
-  'enemy',
   'custom',
-  'anomaly',
+  ...commonSheets,
 ] as const
 
 export const members = [...allCharacterKeys] as const
