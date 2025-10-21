@@ -98,9 +98,19 @@ import { UploadExplainationModal } from './UploadExplainationModal'
 const allSubstatFilter = new Set(allSubstatKeys)
 type ResetMessage = { type: 'reset' }
 type SubstatMessage = { type: 'substat'; index: number; substat: ISubstat }
+type UnactivatedSubstatMessage = {
+  type: 'unactivatedSubstat'
+  index: number
+  substat: ISubstat
+}
 type OverwriteMessage = { type: 'overwrite'; artifact: IArtifact }
 type UpdateMessage = { type: 'update'; artifact: Partial<IArtifact> }
-type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
+type Message =
+  | ResetMessage
+  | SubstatMessage
+  | OverwriteMessage
+  | UpdateMessage
+  | UnactivatedSubstatMessage
 function artifactReducer(
   state: IArtifact | undefined,
   action: Message
@@ -122,6 +132,29 @@ function artifactReducer(
             state!.substats[oldIndex],
             state!.substats[index],
           ]
+        return { ...state! }
+      }
+      case 'unactivatedSubstat': {
+        if (state?.unactivatedSubstats) {
+          const { substat } = action
+          const oldIndex = substat.key
+            ? state!.unactivatedSubstats.findIndex(
+                (current) => current.key === substat.key
+              )
+            : -1
+          if (oldIndex === -1 || oldIndex === 0)
+            state!.unactivatedSubstats[0] = substat
+          // Already in used, swap the items instead
+          else
+            [
+              state!.unactivatedSubstats[0],
+              state!.unactivatedSubstats[oldIndex],
+            ] = [
+              state!.unactivatedSubstats[oldIndex],
+              state!.unactivatedSubstats[0],
+            ]
+        }
+
         return { ...state! }
       }
       case 'overwrite':
@@ -304,8 +337,9 @@ export function ArtifactEditor({
     [artifact, artStat, artifactDispatch, fixedSlotKey]
   )
   const setSubstat = useCallback(
-    (index: number, substat: ISubstat) => {
-      artifactDispatch({ type: 'substat', index, substat })
+    (index: number, substat: ISubstat, isUnactivatedSubstat: boolean) => {
+      const type = isUnactivatedSubstat ? 'unactivatedSubstat' : 'substat'
+      artifactDispatch({ type: type, index, substat })
     },
     [artifactDispatch]
   )
