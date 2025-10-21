@@ -124,6 +124,14 @@ function artifactReducer(
         const oldIndex = substat.key
           ? state!.substats.findIndex((current) => current.key === substat.key)
           : -1
+
+        if (
+          state!.unactivatedSubstats?.length &&
+          state!.unactivatedSubstats[0].key
+        ) {
+          state!.unactivatedSubstats = []
+        }
+
         if (oldIndex === -1 || oldIndex === index)
           state!.substats[index] = substat
         // Already in used, swap the items instead
@@ -137,13 +145,23 @@ function artifactReducer(
       case 'unactivatedSubstat': {
         if (state?.unactivatedSubstats) {
           const { substat } = action
+
+          let activeSubstat = null
+
+          if (state!.substats[3].key) {
+            activeSubstat = state!.substats[3]
+            state!.substats[3] = { key: '', value: 0 }
+          } else {
+            activeSubstat = substat
+          }
+
           const oldIndex = substat.key
             ? state!.unactivatedSubstats.findIndex(
                 (current) => current.key === substat.key
               )
             : -1
           if (oldIndex === -1 || oldIndex === 0)
-            state!.unactivatedSubstats[0] = substat
+            state!.unactivatedSubstats[0] = activeSubstat
           // Already in used, swap the items instead
           else
             [
@@ -154,7 +172,7 @@ function artifactReducer(
               state!.unactivatedSubstats[0],
             ]
         }
-
+        console.log(state!.substats, 'subers')
         return { ...state! }
       }
       case 'overwrite':

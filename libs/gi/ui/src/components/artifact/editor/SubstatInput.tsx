@@ -114,8 +114,8 @@ export function SubstatInput({
   )
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSubstat(index, { key: '', value: 0 }, isUnactivatedSubstat)
     setIsUnactivatedSubstat(event.target.checked)
+    setSubstat(index, { key: key, value: 0 }, event.target.checked)
   }
 
   useEffect(() => {
