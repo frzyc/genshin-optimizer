@@ -146,7 +146,7 @@ function artifactReducer(
         if (state?.unactivatedSubstats) {
           const { substat } = action
 
-          let activeSubstat = null
+          let activeSubstat: ISubstat = { key: '', value: 0 }
 
           if (state!.substats[3].key) {
             activeSubstat = state!.substats[3]
@@ -172,7 +172,6 @@ function artifactReducer(
               state!.unactivatedSubstats[0],
             ]
         }
-        console.log(state!.substats, 'subers')
         return { ...state! }
       }
       case 'overwrite':
