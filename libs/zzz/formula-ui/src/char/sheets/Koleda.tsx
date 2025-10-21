@@ -1,13 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
+import { Koleda } from '@genshin-optimizer/zzz/formula'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Koleda'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
-const formula = formulas[key]
+const cond = Koleda.conditionals
+const buff = Koleda.buffs
+const formula = Koleda.formulas
 
 const sheet = createBaseSheet(key, {
   core: [

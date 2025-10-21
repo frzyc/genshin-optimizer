@@ -1,15 +1,15 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { PufferElectro } from '@genshin-optimizer/zzz/formula'
 import { tagToTagField, trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 
 const key: DiscSetKey = 'PufferElectro'
 const [chg, ch] = trans('disc', key)
 const icon = discDefIcon(key)
-const cond = conditionals[key]
-const buff = buffs[key]
+const cond = PufferElectro.conditionals
+const buff = PufferElectro.buffs
 
 const sheet: UISheet<'2' | '4'> = {
   2: {

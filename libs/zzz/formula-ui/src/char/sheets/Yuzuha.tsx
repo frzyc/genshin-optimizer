@@ -1,14 +1,14 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
+import { Yuzuha } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Yuzuha'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
-const formula = formulas[key]
+const cond = Yuzuha.conditionals
+const buff = Yuzuha.buffs
+const formula = Yuzuha.formulas
 const dm = mappedStats.char[key]
 
 const sheet = createBaseSheet(key, {
