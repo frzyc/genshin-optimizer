@@ -1,5 +1,16 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
+  core_hpSheerForce: {
+    sheet: 'Manato',
+    name: 'core_hpSheerForce',
+    tag: {
+      et: 'display',
+      qt: 'initial',
+      q: 'sheerForce',
+      sheet: 'Manato',
+      name: 'core_hpSheerForce',
+    },
+  },
   m6_dmg_: {
     sheet: 'Manato',
     name: 'm6_dmg_',
