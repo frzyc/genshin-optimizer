@@ -1,4 +1,4 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import { cmpGE, constant, prod } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
@@ -34,6 +34,11 @@ const sheet = register(
   ...registerAllDmgDazeAndAnom(key, dm),
 
   // Buffs
+  registerBuff(
+    'core_hpSheerForce',
+    // TODO: use dm
+    ownBuff.initial.sheerForce.add(prod(own.final.hp, constant(0.1)))
+  ),
   registerBuff(
     'm6_dmg_',
     ownBuff.combat.common_dmg_.add(
