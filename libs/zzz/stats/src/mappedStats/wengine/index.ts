@@ -10,6 +10,7 @@ import CinderCobalt from './maps/CinderCobalt'
 import CordisGermina from './maps/CordisGermina'
 import DeepSeaVisitor from './maps/DeepSeaVisitor'
 import DemaraBatteryMarkII from './maps/DemaraBatteryMarkII'
+import DreamlitHearth from './maps/DreamlitHearth'
 import DrillRigRedAxis from './maps/DrillRigRedAxis'
 import ElectroLipGloss from './maps/ElectroLipGloss'
 import ElegantVanity from './maps/ElegantVanity'
@@ -17,6 +18,7 @@ import FlamemakerShaker from './maps/FlamemakerShaker'
 import FlightOfFancy from './maps/FlightOfFancy'
 import FusionCompiler from './maps/FusionCompiler'
 import GildedBlossom from './maps/GildedBlossom'
+import GrillOWisp from './maps/GrillOWisp'
 import HailstormShrine from './maps/HailstormShrine'
 import HeartstringNocturne from './maps/HeartstringNocturne'
 import HellfireGears from './maps/HellfireGears'
@@ -25,6 +27,7 @@ import IceJadeTeapot from './maps/IceJadeTeapot'
 import IdentityBase from './maps/IdentityBase'
 import IdentityInflection from './maps/IdentityInflection'
 import KaboomTheCannon from './maps/KaboomTheCannon'
+import KrakensCradle from './maps/KrakensCradle'
 import LunarDecrescent from './maps/LunarDecrescent'
 import LunarNoviluna from './maps/LunarNoviluna'
 import LunarPleniluna from './maps/LunarPleniluna'
@@ -86,6 +89,7 @@ const maps = {
   CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
+  DreamlitHearth,
   DrillRigRedAxis,
   ElectroLipGloss,
   ElegantVanity,
@@ -93,6 +97,7 @@ const maps = {
   FlightOfFancy,
   FusionCompiler,
   GildedBlossom,
+  GrillOWisp,
   HailstormShrine,
   HeartstringNocturne,
   HellfireGears,
@@ -101,6 +106,7 @@ const maps = {
   IdentityBase,
   IdentityInflection,
   KaboomTheCannon,
+  KrakensCradle,
   LunarDecrescent,
   LunarNoviluna,
   LunarPleniluna,

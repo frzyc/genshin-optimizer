@@ -1,0 +1,14 @@
+{
+  "rarity": "A",
+  "type": "rupture",
+  "atk_base": 42,
+  "second_statkey": "hp_",
+  "second_statvalue": 0.1,
+  "phase": [
+    { "params": [0.15, 0.15, 5] },
+    { "params": [0.1725, 0.1725, 5] },
+    { "params": [0.195, 0.195, 5] },
+    { "params": [0.2175, 0.2175, 5] },
+    { "params": [0.24, 0.24, 5] }
+  ]
+}

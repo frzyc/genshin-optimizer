@@ -1,0 +1,4 @@
+{
+  "cond1": "Equipper's HP decreases",
+  "cond2": "Equipper's HP falls to 50% or below"
+}

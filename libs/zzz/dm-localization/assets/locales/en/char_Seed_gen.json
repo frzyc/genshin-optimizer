@@ -111,8 +111,7 @@
       "params": [
         " ",
         "Initial Cost ",
-        "Barrage Cost ",
-        " "
+        "Barrage Cost "
       ]
     },
     "EXSpecialAttackRainingIronPetalsAway": {
@@ -123,7 +122,9 @@
         "2": "Does not accumulate <ct color=#FFFFFF>Steel Charge</ct> on hit.",
         "3": "Character is invulnerable while using this skill."
       },
-      "params": []
+      "params": [
+        " "
+      ]
     }
   },
   "chain": {
@@ -193,7 +194,7 @@
     "name": "Core Passive: Flower Chain Protocol",
     "desc": [
       {
-        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest Base ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
+        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest initial ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
         "1": "When the <ct color=#FFFFFF>Vanguard</ct> unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, Seed gains <ct color=#FFFFFF>Onslaught</ct> status, increasing Seed's ATK by <ct color=#2BAD00>100</ct> and CRIT DMG by <ct color=#2BAD00>15%</ct>. When Seed unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, the <ct color=#FFFFFF>Vanguard</ct> gains <ct color=#FFFFFF>Direct Strike</ct> status, increasing the <ct color=#FFFFFF>Vanguard</ct>'s ATK by <ct color=#2BAD00>100</ct> and CRIT DMG by <ct color=#2BAD00>15%</ct>.",
         "2": "When <ct color=#FFFFFF>Direct Strike</ct> and <ct color=#FFFFFF>Onslaught</ct> are both active, Seed and the <ct color=#FFFFFF>Vanguard</ct> simultaneously gain <ct color=#FFFFFF>Besiege</ct> status, increasing DMG dealt by <ct color=#2BAD00>12.5%</ct>.",
         "3": "<ct color=#FFFFFF>Onslaught</ct>, <ct color=#FFFFFF>Direct Strike</ct>, and <ct color=#FFFFFF>Besiege</ct> buffs can all take effect when the character is the current active character. When switching to inactive, the buffs remain until the character goes off-field or 3s after the switch. When the character returns to being the active character, the buffs re-activate.",
@@ -202,7 +203,7 @@
         "6": "When the <ct color=#FFFFFF>Vanguard</ct> consumes Energy as the active character or when Seed consumes Energy, for every 1 point of Energy consumed, Seed recovers 0.5 points of <ct color=#FFFFFF>Steel Charge</ct>."
       },
       {
-        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest Base ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
+        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest initial ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
         "1": "When the <ct color=#FFFFFF>Vanguard</ct> unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, Seed gains <ct color=#FFFFFF>Onslaught</ct> status, increasing Seed's ATK by <ct color=#2BAD00>225</ct> and CRIT DMG by <ct color=#2BAD00>17.5%</ct>. When Seed unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, the <ct color=#FFFFFF>Vanguard</ct> gains <ct color=#FFFFFF>Direct Strike</ct> status, increasing the <ct color=#FFFFFF>Vanguard</ct>'s ATK by <ct color=#2BAD00>225</ct> and CRIT DMG by <ct color=#2BAD00>17.5%</ct>.",
         "2": "When <ct color=#FFFFFF>Direct Strike</ct> and <ct color=#FFFFFF>Onslaught</ct> are both active, Seed and the <ct color=#FFFFFF>Vanguard</ct> simultaneously gain <ct color=#FFFFFF>Besiege</ct> status, increasing DMG dealt by <ct color=#2BAD00>14.5%</ct>.",
         "3": "<ct color=#FFFFFF>Onslaught</ct>, <ct color=#FFFFFF>Direct Strike</ct>, and <ct color=#FFFFFF>Besiege</ct> buffs can all take effect when the character is the current active character. When switching to inactive, the buffs remain until the character goes off-field or 3s after the switch. When the character returns to being the active character, the buffs re-activate.",
@@ -211,7 +212,7 @@
         "6": "When the <ct color=#FFFFFF>Vanguard</ct> consumes Energy as the active character or when Seed consumes Energy, for every 1 point of Energy consumed, Seed recovers 0.5 points of <ct color=#FFFFFF>Steel Charge</ct>."
       },
       {
-        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest Base ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
+        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest initial ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
         "1": "When the <ct color=#FFFFFF>Vanguard</ct> unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, Seed gains <ct color=#FFFFFF>Onslaught</ct> status, increasing Seed's ATK by <ct color=#2BAD00>350</ct> and CRIT DMG by <ct color=#2BAD00>20%</ct>. When Seed unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, the <ct color=#FFFFFF>Vanguard</ct> gains <ct color=#FFFFFF>Direct Strike</ct> status, increasing the <ct color=#FFFFFF>Vanguard</ct>'s ATK by <ct color=#2BAD00>350</ct> and CRIT DMG by <ct color=#2BAD00>20%</ct>.",
         "2": "When <ct color=#FFFFFF>Direct Strike</ct> and <ct color=#FFFFFF>Onslaught</ct> are both active, Seed and the <ct color=#FFFFFF>Vanguard</ct> simultaneously gain <ct color=#FFFFFF>Besiege</ct> status, increasing DMG dealt by <ct color=#2BAD00>16.5%</ct>.",
         "3": "<ct color=#FFFFFF>Onslaught</ct>, <ct color=#FFFFFF>Direct Strike</ct>, and <ct color=#FFFFFF>Besiege</ct> buffs can all take effect when the character is the current active character. When switching to inactive, the buffs remain until the character goes off-field or 3s after the switch. When the character returns to being the active character, the buffs re-activate.",
@@ -220,7 +221,7 @@
         "6": "When the <ct color=#FFFFFF>Vanguard</ct> consumes Energy as the active character or when Seed consumes Energy, for every 1 point of Energy consumed, Seed recovers 0.5 points of <ct color=#FFFFFF>Steel Charge</ct>."
       },
       {
-        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest Base ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
+        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest initial ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
         "1": "When the <ct color=#FFFFFF>Vanguard</ct> unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, Seed gains <ct color=#FFFFFF>Onslaught</ct> status, increasing Seed's ATK by <ct color=#2BAD00>475</ct> and CRIT DMG by <ct color=#2BAD00>22.5%</ct>. When Seed unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, the <ct color=#FFFFFF>Vanguard</ct> gains <ct color=#FFFFFF>Direct Strike</ct> status, increasing the <ct color=#FFFFFF>Vanguard</ct>'s ATK by <ct color=#2BAD00>475</ct> and CRIT DMG by <ct color=#2BAD00>22.5%</ct>.",
         "2": "When <ct color=#FFFFFF>Direct Strike</ct> and <ct color=#FFFFFF>Onslaught</ct> are both active, Seed and the <ct color=#FFFFFF>Vanguard</ct> simultaneously gain <ct color=#FFFFFF>Besiege</ct> status, increasing DMG dealt by <ct color=#2BAD00>18.5%</ct>.",
         "3": "<ct color=#FFFFFF>Onslaught</ct>, <ct color=#FFFFFF>Direct Strike</ct>, and <ct color=#FFFFFF>Besiege</ct> buffs can all take effect when the character is the current active character. When switching to inactive, the buffs remain until the character goes off-field or 3s after the switch. When the character returns to being the active character, the buffs re-activate.",
@@ -229,7 +230,7 @@
         "6": "When the <ct color=#FFFFFF>Vanguard</ct> consumes Energy as the active character or when Seed consumes Energy, for every 1 point of Energy consumed, Seed recovers 0.5 points of <ct color=#FFFFFF>Steel Charge</ct>."
       },
       {
-        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest Base ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
+        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest initial ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
         "1": "When the <ct color=#FFFFFF>Vanguard</ct> unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, Seed gains <ct color=#FFFFFF>Onslaught</ct> status, increasing Seed's ATK by <ct color=#2BAD00>600</ct> and CRIT DMG by <ct color=#2BAD00>25%</ct>. When Seed unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, the <ct color=#FFFFFF>Vanguard</ct> gains <ct color=#FFFFFF>Direct Strike</ct> status, increasing the <ct color=#FFFFFF>Vanguard</ct>'s ATK by <ct color=#2BAD00>600</ct> and CRIT DMG by <ct color=#2BAD00>25%</ct>.",
         "2": "When <ct color=#FFFFFF>Direct Strike</ct> and <ct color=#FFFFFF>Onslaught</ct> are both active, Seed and the <ct color=#FFFFFF>Vanguard</ct> simultaneously gain <ct color=#FFFFFF>Besiege</ct> status, increasing DMG dealt by <ct color=#2BAD00>20.5%</ct>.",
         "3": "<ct color=#FFFFFF>Onslaught</ct>, <ct color=#FFFFFF>Direct Strike</ct>, and <ct color=#FFFFFF>Besiege</ct> buffs can all take effect when the character is the current active character. When switching to inactive, the buffs remain until the character goes off-field or 3s after the switch. When the character returns to being the active character, the buffs re-activate.",
@@ -238,7 +239,7 @@
         "6": "When the <ct color=#FFFFFF>Vanguard</ct> consumes Energy as the active character or when Seed consumes Energy, for every 1 point of Energy consumed, Seed recovers 0.5 points of <ct color=#FFFFFF>Steel Charge</ct>."
       },
       {
-        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest Base ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
+        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest initial ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
         "1": "When the <ct color=#FFFFFF>Vanguard</ct> unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, Seed gains <ct color=#FFFFFF>Onslaught</ct> status, increasing Seed's ATK by <ct color=#2BAD00>725</ct> and CRIT DMG by <ct color=#2BAD00>27.5%</ct>. When Seed unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, the <ct color=#FFFFFF>Vanguard</ct> gains <ct color=#FFFFFF>Direct Strike</ct> status, increasing the <ct color=#FFFFFF>Vanguard</ct>'s ATK by <ct color=#2BAD00>725</ct> and CRIT DMG by <ct color=#2BAD00>27.5%</ct>.",
         "2": "When <ct color=#FFFFFF>Direct Strike</ct> and <ct color=#FFFFFF>Onslaught</ct> are both active, Seed and the <ct color=#FFFFFF>Vanguard</ct> simultaneously gain <ct color=#FFFFFF>Besiege</ct> status, increasing DMG dealt by <ct color=#2BAD00>22.5%</ct>.",
         "3": "<ct color=#FFFFFF>Onslaught</ct>, <ct color=#FFFFFF>Direct Strike</ct>, and <ct color=#FFFFFF>Besiege</ct> buffs can all take effect when the character is the current active character. When switching to inactive, the buffs remain until the character goes off-field or 3s after the switch. When the character returns to being the active character, the buffs re-activate.",
@@ -247,7 +248,7 @@
         "6": "When the <ct color=#FFFFFF>Vanguard</ct> consumes Energy as the active character or when Seed consumes Energy, for every 1 point of Energy consumed, Seed recovers 0.5 points of <ct color=#FFFFFF>Steel Charge</ct>."
       },
       {
-        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest Base ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
+        "0": "The <ct color=#FFFFFF>Attack</ct> teammate with the highest initial ATK is considered Seed's <ct color=#FFFFFF>Vanguard</ct>.",
         "1": "When the <ct color=#FFFFFF>Vanguard</ct> unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, Seed gains <ct color=#FFFFFF>Onslaught</ct> status, increasing Seed's ATK by <ct color=#2BAD00>1,000</ct> and CRIT DMG by <ct color=#2BAD00>30%</ct>. When Seed unleashes an <ct color=#FFFFFF>EX Special Attack</ct>, the <ct color=#FFFFFF>Vanguard</ct> gains <ct color=#FFFFFF>Direct Strike</ct> status, increasing the <ct color=#FFFFFF>Vanguard</ct>'s ATK by <ct color=#2BAD00>1,000</ct> and CRIT DMG by <ct color=#2BAD00>30%</ct>.",
         "2": "When <ct color=#FFFFFF>Direct Strike</ct> and <ct color=#FFFFFF>Onslaught</ct> are both active, Seed and the <ct color=#FFFFFF>Vanguard</ct> simultaneously gain <ct color=#FFFFFF>Besiege</ct> status, increasing DMG dealt by <ct color=#2BAD00>25%</ct>.",
         "3": "<ct color=#FFFFFF>Onslaught</ct>, <ct color=#FFFFFF>Direct Strike</ct>, and <ct color=#FFFFFF>Besiege</ct> buffs can all take effect when the character is the current active character. When switching to inactive, the buffs remain until the character goes off-field or 3s after the switch. When the character returns to being the active character, the buffs re-activate.",
@@ -268,7 +269,7 @@
   "mindscapes": {
     "1": {
       "name": "\"Hibernation Period\"",
-      "desc": "When Seed's <ct color=#FFFFFF>Steel Charge</ct> reaches 100, <ct color=#FFFFFF>Basic Attack: Falling Petals - Downfall</ct> can be triggered, and the total <ct color=#FFFFFF>Steel Charge</ct> consumed is reduced to 100. The amount of <ct color=#FFFFFF>Steel Charge</ct> required to gain one chance to quickly release <ct color=#FFFFFF>Basic Attack: Falling Petals - Slaughter</ct> is reduced to 100. Gain an additional 40/20 <ct color=#FFFFFF>Steel Charge</ct> when entering the battlefield/using <ct color=#FFFFFF>Ultimate</ct>. Increases <ct color=#FFFFFF>Basic Attack: Falling Petals - Downfall</ct> CRIT DMG by 30%.",
+      "desc": "When Seed's <ct color=#FFFFFF>Steel Charge</ct> reaches 100, <ct color=#FFFFFF>Basic Attack: Falling Petals - Downfall</ct> can be triggered, and the total <ct color=#FFFFFF>Steel Charge</ct> consumed is reduced to 100. The amount of <ct color=#FFFFFF>Steel Charge</ct> required to gain one chance to quickly release <ct color=#FFFFFF>Basic Attack: Falling Petals - Slaughter</ct> is reduced to 100. Accumulate an additional 40/20 <ct color=#FFFFFF>Steel Charge</ct> when entering the battlefield/using <ct color=#FFFFFF>Ultimate</ct>. Increases <ct color=#FFFFFF>Basic Attack: Falling Petals - Downfall</ct> CRIT DMG by 30%.",
       "flavor": {
         "0": "This is a solemn and mysterious building, isolated from the outside world.",
         "1": "The pure white one belongs here. She shrinks back, carefully peering out through the wire fence. What's the world outside like?",

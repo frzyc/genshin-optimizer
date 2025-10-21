@@ -58,15 +58,15 @@
           "AttributeInfliction": 49.54
         },
         {
-          "DamagePercentage": 0.801,
-          "DamagePercentageGrowth": 0.073,
-          "StunRatio": 0.719,
-          "StunRatioGrowth": 0.033,
-          "SpRecovery": 235,
+          "DamagePercentage": 1.001,
+          "DamagePercentageGrowth": 0.091,
+          "StunRatio": 0.77,
+          "StunRatioGrowth": 0.035,
+          "SpRecovery": 252,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 1795.75,
+          "FeverRecovery": 1925,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 65.27
+          "AttributeInfliction": 69.99
         },
         {
           "DamagePercentage": 0.399,
@@ -181,6 +181,19 @@
           "FeverRecovery": 0,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 0
+        }
+      ],
+      "SpecialAttackAzureFlashBoundary": [
+        {
+          "DamagePercentage": 2.494,
+          "DamagePercentageGrowth": 0.227,
+          "StunRatio": 0.954,
+          "StunRatioGrowth": 0.044,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2384.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 86.66
         }
       ],
       "EXSpecialAttackSunderingBolt": [
@@ -300,6 +313,7 @@
       "SpecialAttackCelestialThunder": [],
       "SpecialAttackAzureFlash": [],
       "SpecialAttackThunderSmite": [],
+      "SpecialAttackAzureFlashBoundary": [],
       "EXSpecialAttackSunderingBolt": []
     },
     "chain": {
@@ -314,8 +328,10 @@
   },
   "coreParams": [
     [0.125, 0.145, 0.165, 0.188, 0.208, 0.23, 0.25],
-    [0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3]
+    [0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3],
+    [5, 5, 5, 5, 5, 5, 5],
+    [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05]
   ],
   "abilityParams": [0.1, 0.25],
-  "mindscapeParams": [[3], [0.12, 6, 6, 1, 1], [2], [0.12], [2], [6, 10]]
+  "mindscapeParams": [[3], [0.12, 6, 6, 1, 1, 3], [2], [0.12], [2], [6, 10]]
 }

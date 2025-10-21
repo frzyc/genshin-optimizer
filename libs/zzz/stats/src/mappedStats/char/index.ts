@@ -17,8 +17,10 @@ import Jane from './maps/Jane'
 import JuFufu from './maps/JuFufu'
 import Koleda from './maps/Koleda'
 import Lighter from './maps/Lighter'
+import Lucia from './maps/Lucia'
 import Lucy from './maps/Lucy'
 import Lycaon from './maps/Lycaon'
+import Manato from './maps/Manato'
 import Miyabi from './maps/Miyabi'
 import Nekomata from './maps/Nekomata'
 import Nicole from './maps/Nicole'
@@ -36,6 +38,7 @@ import Soukaku from './maps/Soukaku'
 import Trigger from './maps/Trigger'
 import Vivian from './maps/Vivian'
 import Yanagi from './maps/Yanagi'
+import Yidhari from './maps/Yidhari'
 import Yixuan from './maps/Yixuan'
 import Yuzuha from './maps/Yuzuha'
 import ZhuYuan from './maps/ZhuYuan'
@@ -59,8 +62,10 @@ const maps = {
   JuFufu,
   Koleda,
   Lighter,
+  Lucia,
   Lucy,
   Lycaon,
+  Manato,
   Miyabi,
   Nekomata,
   Nicole,
@@ -78,6 +83,7 @@ const maps = {
   Trigger,
   Vivian,
   Yanagi,
+  Yidhari,
   Yixuan,
   Yuzuha,
   ZhuYuan,
