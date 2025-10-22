@@ -4,12 +4,13 @@
     "overview": "Visão Geral",
     "talent": "Talentos",
     "optimize": "Otimizar",
-    "theorycraft": "Theorycraft"
+    "theorycraft": "Theorycraft",
+    "upopt": "Aprimorador de Artefato"
   },
   "formulas": "Fórmulas",
   "calculations": "Cálculos",
   "selectCharacter": "Selecione um Personagem",
-  "removeCharacter": "Tem certeza de que quer excluir {{value}}?",
+  "removeCharacter": "Tem certeza de que quer excluir {{value}}? Isso excluirá todos os dados como loadouts e multi-objetivos, além de remover este personagem de qualquer time que esteja atribuído.",
   "delete": "Excluir o personagem",
   "teammates": "Companheiros",
   "hitmode": {
@@ -36,20 +37,21 @@
     "description": "Descrição",
     "duplicate": "Duplicar",
     "target_one": "<0>{{count}}</0> Objetivo",
-    "target_other": "<0>{{count}}</0> Objetivos"
+    "target_other": "<0>{{count}}</0> Objetivos",
+    "jsonDescWarning": "Parece que você está tentando importar uma configuração multi-obetivo. Esse não é o lugar certo para isso! Por favor retorne um menu e selecione <strong>Importar Multi-Objetivo.</strong>"
   },
   "addStats": {
-    "title": "Ajustes do Inimigo + Atributos Bônus",
+    "title": "Atributos Bônus",
     "info": "Você pode usar esses campos para adicionar buffs/debuffs que o GO não suporta diretamente, tais como efeitos de comida, cartas do Abismo ou Supercondutor. Veja a <1>Genshin Impact wiki</1> para encontrar valores exatos",
     "label": "Novo Atributo Bônus"
   },
   "tabTheorycraft": {
     "substatType": {
-      "min": "Usar rolls mínimos de atributos",
-      "max": "Usar rolls máximos de atributos",
-      "mid": "Usar rolls medianos de atributos"
+      "min": "Roll mínimo de atributo",
+      "max": "Roll máximo de atributo",
+      "mid": "Roll mediano de atributo"
     },
-    "maxTotalRolls": "Uma build \"válida\" pode ter no máximo 45 rolls.",
+    "maxTotalRolls": "A build atual pode ter um máximo de apenas <strong>{{value}}</strong> rolls.",
     "maxRolls": "Esse atributo pode ter no máximo 30 rolls.",
     "maxRollsMain": "Já que este também é pelo menos um dos atributos principais, esse atributo pode ter no máximo {{value}} rolls.",
     "distribute": "Distribuir",
@@ -69,7 +71,7 @@
     "kqmsDialog": {
       "kqmsBtn": "Usar KQMS",
       "title": "Usar KQMS?",
-      "content": "Isto trocará a sua <strong>configuração de atributos secundários</strong> atual por uma que siga os <4>Padrões da KQM</4>."
+      "content": "Isto trocará a sua <strong>configuração de atributos secundários</strong> atual por uma que siga os <5>Padrões da KQM</5>."
     },
     "gcsimDialog": {
       "title": "Exportar p/ gcsim",
@@ -88,10 +90,6 @@
       "scalesWith": "O Objetivo de Otimização atual aumenta com: ",
       "distribute": ". O programa distribuirá apenas entre esses atributos.",
       "feasibilty": "Podem sobrar secundários que devem ser distribuídos manualmente em atributos irrelevantes para que a configuração seja possível."
-    },
-    "constraint": {
-      "title": "Restrições de Atributos",
-      "add": "Adicione um requisito de atributo"
     }
   },
   "tabTeambuff": {
@@ -99,5 +97,10 @@
     "resonance_tip": "A equipe deve possuir 4 personagens para que a Ressonância Elemental tenha efeito."
   },
   "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Personagem",
-  "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Personagens"
+  "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Personagens",
+  "noLoadout": "Parece que você não adicionou nenhum loadout/Equipes com esse personagem ainda. Você precisa criar um loadout+equipe com esse personagem para <strong>criar builds</strong>, <strong>teorizar</strong>, ou <strong>otimizar</strong>.",
+  "teammateUsing": {
+    "weapon": "Companheiro de equipe <strong><1></1></strong> está usando esta arma.",
+    "artifact": "Companheiro de equipe <strong><1></1></strong> está usando isso <3></3>"
+  }
 }

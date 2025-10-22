@@ -1,0 +1,20 @@
+{
+  "skill": {
+    "unableToAuto": "Không thể sử dụng trọng kích hoặc tấn công khi đáp",
+    "namisenStacks": "Namisen",
+    "shun_dmgInc": "<hydro>Lượng sát thương tăng cho Shunsuiken</hydro>"
+  },
+  "passive1": {
+    "afterUse": "Số tầng Namisen nhận sau khi dùng kỹ năng",
+    "afterExplode": "Số tầng Namisen nhận sau khi Thủy Ảnh phát nổ"
+  },
+  "c1": {
+    "shun_dmg_": "<hydro>Tăng sát thương Shunsuiken</hydro>"
+  },
+  "c2": {
+    "addlStacks": "Tăng giới hạn số tầng Namisen"
+  },
+  "c6": {
+    "dmg": "Sát thương Ngọn Nguồn Bất Tận"
+  }
+}

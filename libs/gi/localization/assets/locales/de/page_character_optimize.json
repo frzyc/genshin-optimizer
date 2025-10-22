@@ -1,24 +1,79 @@
 {
+  "tcGraph": {
+    "notSel": "Nicht Ausgewählt",
+    "downloadData": "Daten Herunterladen",
+    "generatedBuilds": "Generierte Builds",
+    "currentBuild": "Aktueller Build"
+  },
   "allowPartial": "Erlaube Teil-Builds (<5 Artefakte)",
   "constraintFilter": {
     "title": "Build-Beschränkungen",
     "tooltip": "Lege bestimmte Anforderungen fest, die generierte Builds erfüllen müssen. z.B. generierte Builds müssen mindestens 140% Aufladerate haben."
   },
   "artSetConfig": {
+    "title": "Artefaktset-Einstellungen",
+    "setEffCond": "Seteffekt Bedingungen",
+    "enabled": "Aktiv",
+    "allowed": "Erlaubt",
+    "excluded": "Ausgeschlossen",
+    "selected": "Aktiv",
     "2rainbow": "3-Regenbogen",
     "4rainbow": "5-Regenbogen",
-    "alExRainbow": "<0>Erlaube <1></1></0> / <2>Sperre <1></1></2> Regenbogen-Builds",
+    "allowAll2set": "Alle 2er-Sets erlauben",
+    "excludeAll2set": "Alle 2er-Sets Ausschließen",
+    "allowAll4set": "Alle 4er-Sets erlauben",
+    "excludeAll4set": "Alle 4er-Sets Ausschließen",
+    "alExRainbow": "<0>Erlauben <1></1></0> / <2>Ausschließen <1></1></2> Regenbogen-Builds",
     "modal": {
       "setCond": {
+        "title": "Effekte durch Erfüllen von Artefaktsetbedingungen",
+        "reset": "Bedingungen zurücksetzen",
         "text": "Einige Artefakt-Set-Effekte bieten bedingte Stats. In diesem Fenster kannst du diese Effekte auswählen, so dass sie bei der Berechnung eines Builds, der einen Set-Effekt erfüllt, während der Optimierung Werte beitragen können."
       },
       "ArtSetFilter": {
-        "intro": "Du kannst erlauben/sperren, welche Sets der Builder berücksichtigen soll. In den folgenden Beispielen ist <strong>A</strong> on-set und <strong>R</strong> Regenbogen(off-set)",
-        "2set": "<0><0>Sperre<1></1> 2-Set</0></0> würde 2-Set-Builds ausschließen: <2><0>AA</0>RRR</2> und <4><0>AAA</0>RR</4>.",
-        "4set": "<0><0>Sperre<1></1> 4-Set</0></0> würde 4-Set-Builds ausschließen: <2><0>AAAA</0>R</2> und <4><0>AAAAA</0></4>.",
-        "2rain": "<0><0>Sperre<1></1> 3-Regenbogen</0></0> würde 2-Set + 3-Regenbogen-Builds ausschließen: <2>AA<1>RRR</1></2> und <4>AAA<1>RR</1></4>.",
-        "4rain": "<0><0>Sperre<1></1> 5-Regenbogen</0></0> würde vollständige 5-Regenbogen-Builds ausschließen: <2><0>RRRRR</0></2>."
+        "title": "Artefaktsets <1>Erlaubt<1></1></1> / <3>Ausgeschlossen<1></1></3>",
+        "intro": "Du kannst erlauben/ausschließen, welche Sets der Builder berücksichtigen soll. In den folgenden Beispielen ist <strong>A</strong> on-set und <strong>R</strong> Regenbogen(off-set)",
+        "2set": "<0><0>Ausschließen<1></1> 2er-Sets</0></0> würde 2er-Set-Builds ausschließen: <2><0>AA</0>RRR</2> und <4><0>AAA</0>RR</4>.",
+        "4set": "<0><0>Ausschließen<1></1> 4er-Set</0></0> würde 4er-Set-Builds ausschließen: <2><0>AAAA</0>R</2> und <4><0>AAAAA</0></4>.",
+        "2rain": "<0><0>Ausschließen<1></1> 3er-Regenbogen</0></0> würde 2er-Set + 3-Regenbogen-Builds ausschließen: <2>AA<1>RRR</1></2> und <4>AAA<1>RR</1></4>.",
+        "4rain": "<0><0>Ausschließen<1></1> 5-Regenbogen</0></0> würde vollständige 5-Regenbogen-Builds ausschließen: <2><0>RRRRR</0></2>."
       }
     }
+  },
+  "targetSelector": {
+    "selectOptTarget": "Optimierungsziel auswählen",
+    "selectGraphTarget": "Graphisches Optimierungsziel auswählen"
+  },
+  "selectTargetFirst": "Wähle zuerst ein Optimierungsziel",
+  "generateButton": {
+    "cancel": "Abbrechen",
+    "generateBuilds": "Builds Generieren"
+  },
+  "removeBuildButton": "Build Löschen",
+  "theorycraftButton": "Theorycraften",
+  "currentlyEquippedBuild": "Aktuell Ausgerüstet",
+  "excludeChar": {
+    "title": "Ausgerüstete Artefakte Nutzen",
+    "modal": {
+      "allow_all": "Alle angezeigten Charaktere erlauben",
+      "disallow_All": "Alle angezeigten Charaktere nicht erlauben"
+    },
+    "allowEquip": "Erlaube die Nutzung der Artefakte von",
+    "artis": "Ausgerüstete Artefakte",
+    "states": {
+      "unequippedOnly": "Nur Unausgerüstete"
+    }
+  },
+  "excludeArt": {
+    "button_txt": "Artefakte ausschließen",
+    "includeArtifactButton": "Dieses Artefakt beim Optimieren einbeziehen"
+  },
+  "upOptNoResults": "Scheinbar sind keine Artefakte vorhanden die deinen aktuellen Build verbessern könnten. Deine Artefaktfilter sind möglicherweise zu restriktiv eingestellt. Ansonsten kannst du auch versuchen mit den normalen Artefaktoptimierungstool deinen Build zu verbessern.",
+  "upOptInfo": "Der Artefaktverbesserer hilft dir beim Finden von Artefakten die eine hohe Chance haben, den Wert deines Optimierungsziels zu erhöhen. <br/>Da der Verbesserer nur jeweils ein Artefakt tauscht nutze das normale Optimierungstool für das Zusammenstellen von Gesamtbuilds.",
+  "targetSelectorTitle": "Zielauswahl",
+  "compareArtModal": {
+    "newArt": "Neues Artefakt",
+    "oldArt": "Altes Artefakt",
+    "tcArt": "TC Artefakt"
   }
 }

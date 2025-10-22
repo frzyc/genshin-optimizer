@@ -1,0 +1,12 @@
+{
+  "a1": {
+    "condName": "Sau khi bắn Cung Sương Hoa",
+    "critRateInc": "Tỷ lệ bạo kích cộng thêm cho Cung Sương Hoa"
+  },
+  "c1": {
+    "condName": "Kẻ địch đã bị Cung Sương Hoa hoặc Sương Giá Tung Bay đánh trúng"
+  },
+  "c4": {
+    "lingerDuration": "Thời gian hiệu quả duy trì sau khi rời khu vực"
+  }
+}

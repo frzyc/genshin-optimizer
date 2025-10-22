@@ -1,0 +1,10 @@
+{
+  "skill": {
+    "stele": "Sát thương Vách Đá",
+    "resonance": "Sát thương Cộng Hưởng",
+    "maxStele": "Giới hạn Vách Đá tồn tại",
+    "nearShield": "Địch đang đứng gần <strong>Khiên Ngọc</strong>"
+  },
+  "p1cond": "Sau khi <strong>Khiên Ngọc</strong> chịu sát thương",
+  "c6heal": "Lượng hồi phục tối đa"
+}

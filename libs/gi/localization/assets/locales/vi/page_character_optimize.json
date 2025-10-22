@@ -1,0 +1,120 @@
+{
+  "mainStat": {
+    "levelAssTooltip": {
+      "title": "Giả sử cấp chỉ số chính",
+      "desc": "Giả sử chỉ số chính, coi nó có giá trị tối thiểu là giá trị ở cấp đã cho. Không ảnh hưởng đến chỉ số phụ."
+    },
+    "assumptionLvl": {
+      "no": "Không có giả sử cấp chỉ số chính",
+      "lvl": "Giả sử chỉ số chính từ Lv. {{lvl}} trở lên"
+    },
+    "title": "Lọc/Thiết Lập Dòng Chính"
+  },
+  "tcGraph": {
+    "vs": "Biểu đồ so sánh mục tiêu Tối Ưu với",
+    "notSel": "Không chọn",
+    "downloadData": "Tải dữ liệu",
+    "generatedBuilds": "Build Được Tạo",
+    "currentBuild": "Build Hiện Tại",
+    "highlightedBuilds": "Build Nổi Bật (là các build ở phía dưới)",
+    "buildAlreadyInList": "Build đã ở trong danh sách rồi"
+  },
+  "levelFilter": "Lọc cấp Thánh Di Vật",
+  "allowPartial": "Cho phép build dở (không đủ 5 món)",
+  "constraintFilter": {
+    "title": "Đặt yêu cầu tối thiểu",
+    "tooltip": "Điều chỉnh yêu cầu tối thiểu mà các build tạo ra phải thỏa mãn; ví dụ như: ít nhất 140% hiệu quả nạp."
+  },
+  "artSetConfig": {
+    "title": "Thiết lập Bộ Thánh Di Vật",
+    "setEffCond": "Hiệu quả bộ trùng nhau",
+    "enabled": "Đã bật",
+    "allowed": "Cho phép",
+    "excluded": "Loại trừ",
+    "selected": "Đã chọn",
+    "2rainbow": "Hỗn hợp 3",
+    "4rainbow": "Hỗn hợp 5",
+    "allowAll2set": "Cho phép tất cả bộ 2",
+    "excludeAll2set": "Loại trừ tất cả bộ 2",
+    "allowAll4set": "Cho phép tất cả bộ 4",
+    "excludeAll4set": "Loại trừ tất cả bộ 4",
+    "alExRainbow": "<0>Cho phép <1></1></0> / <2>Loại trừ <1></1></2> build hỗn hợp",
+    "modal": {
+      "setCond": {
+        "title": "Bộ thánh di vật trùng hiệu quả",
+        "reset": "Đặt lại điều kiện",
+        "text": "Một số bộ thánh di vật có hiệu quả kích hoạt khi thỏa điều kiện. Cửa sổ này cho phép bạn chọn các hiệu quả đó, từ đó chúng có thể đóng góp vào chỉ số khi có build thỏa mãn hiệu quả bộ được tính trong quá trình tối ưu."
+      },
+      "ArtSetFilter": {
+        "title": "Bộ Thánh Di Vật <1>Cho phép<1></1></1> / <3>Loại trừ<1></1></3>",
+        "intro": "Bạn có thể cho phép/loại trừ các bộ mà bạn muốn được cân nhắc trong quá trình tối ưu. Ở các ví dụ dưới đây, <strong>A</strong> là món đúng bộ và <strong>R</strong> là món hỗn hợp (của bộ khác)",
+        "2set": "<0><0>Loại trừ<1></1> Bộ 2</0></0> sẽ loại trừ các build dùng bộ 2: <2><0>AA</0>RRR</2> và <4><0>AAA</0>RR</4>.",
+        "4set": "<0><0>Loại trừ<1></1> Bộ 4</0></0> sẽ loại trừ các build dùng bộ 4: <2><0>AAAA</0>R</2> và <4><0>AAAAA</0></4>.",
+        "2rain": "<0><0>Loại trừ<1></1> Hỗn hợp 3</0></0> sẽ loại trừ các build dùng bộ 2 + 3 hỗn hợp: <2>AA<1>RRR</1></2> và <4>AAA<1>RR</1></4>.",
+        "4rain": "<0><0>Loại trừ<1></1> Hỗn hợp 5</0></0> sẽ loại trừ các build dùng cả 5 hỗn hợp: <2><0>RRRRR</0></2>."
+      }
+    }
+  },
+  "buildDropdownDesc": "Giảm số lượng build muốn tạo sẽ giảm thời gian tinh toán cho số lượng lớn build.",
+  "threadDropdownDesc": "Tăng số luồng sử dụng sẽ giảm thời gian tính toán nhưng sẽ dùng CPU nhiều hơn.",
+  "noArtis": "Úi! Có vẻ bạn chưa thêm món Thánh Di Vật nào cho GO! Hãy đi tới mục <1>Thánh Di Vật</1> và thêm vài món đi!",
+  "targetSelector": {
+    "selectOptTarget": "Chọn Mục Tiêu Tối Ưu",
+    "selectGraphTarget": "Chọn Mục Tiêu Biểu Đồ",
+    "invalidTarget": "MỤC TIÊU KHÔNG HỢP LỆ"
+  },
+  "selectTargetFirst": "Hãy chọn Mục Tiêu Tối Ưu trước",
+  "generateButton": {
+    "cancel": "Hủy",
+    "generateBuilds": "Tạo Build"
+  },
+  "removeBuildButton": "Xóa build",
+  "theorycraftButton": "Theorycraft",
+  "currentlyEquippedBuild": "Đang trang bị",
+  "addBuildToList": "Thêm build vào danh sách",
+  "graphBuildLabel": "Biểu đồ #<1>{{count}}</1>",
+  "excludeArt": {
+    "title_exclude": "Thánh Di Vật loại trừ",
+    "title_tooltip": "Thêm Thánh Di Vật vào danh sách loại trừ của nhân vật này. Các Thánh Di Vật trong danh sách loại trừ sẽ bị bỏ qua trong quá trình tính toán.",
+    "addExc": "Thêm Thánh Di Vật vào danh sách loại trừ của nhân vật này",
+    "selExc": "Chọn Thánh Di Vật để thêm vào danh sách loại trừ của nhân vật này",
+    "deSelectExc": "Nhấn vào Thánh Di Vật để xóa nó khỏi danh sách loại trừ",
+    "usingNum": "Đang dùng <1>{{totalStr}}</1> thánh di vật bị loại trừ",
+    "button_txt": "Loại Trừ Thánh Di Vật",
+    "excNum_other": "<0>{{count}}</0> thánh di vật loại trừ",
+    "includeArtifactButton": "Đẩy thánh di vật này vào tối ưu"
+  },
+  "excludeChar": {
+    "title": "Dùng Thánh Di Vật Đã Trang Bị",
+    "modal": {
+      "allow_all": "Cho phép lấy ở tất cả nhân vật phía dưới",
+      "disallow_All": "Không cho phép lấy ở tất cả nhân vật phía dưới"
+    },
+    "allowEquip": "Cho phép lấy Thánh Di Vật từ",
+    "chars": "Lấy của nhân vật",
+    "artis": "Thánh Di Vật đã trang bị",
+    "states": {
+      "unequippedOnly": "Chỉ dùng món chưa trang bị",
+      "customList": "Danh Sách Tùy Chọn",
+      "all": "Tất cả thánh di vật"
+    },
+    "usingState": "Dùng",
+    "usingNumTot_other": "Đang dùng <1>{{arts}}</1> thánh di vật của <3>{{count}}</3> nhân vật"
+  },
+  "buildCompleted": "Build Đã Hoàn Thành",
+  "notifyTooltip": "Phát âm thanh thông báo khi tính xong. Nếu đang không ở tab hiện tại thì sẽ hiện nhắc nhở.",
+  "bonusStats": {
+    "title": "Thuộc tính thêm"
+  },
+  "build_other": "<0>{{count}}</0> Build",
+  "thread_other": "<0>{{count}}</0> Luồng",
+  "upOptLevelFilter": "Bộ Lọc Nâng Cấp Thánh Di Vật",
+  "upOptLevelFilterTooltip": "Bọ lọc cấp độ này không liên quan với cấu hình Tối Ưu.",
+  "upOptEmptyBuild": "Bạn đang sử dụng một build không hoàn thiện. Do trình Nâng Cấp Thánh Di Vật chỉ lần lượt tráo thánh di vật nên việc hoàn thành một bộ là việc khó mà thực hiện. Đề xuất bạn nên bắt đầu từ một build nền tảng trước, có thể được tạo từ trình Tối Ưu chính.",
+  "targetSelectorTitle": "Chọn Mục Tiêu",
+  "compareArtModal": {
+    "newArt": "Thánh Di Vật Mới",
+    "oldArt": "Thánh Di Vật Cũ",
+    "tcArt": "Thánh Di Vật TC"
+  }
+}

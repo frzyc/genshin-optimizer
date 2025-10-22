@@ -33,7 +33,9 @@
     "btnRandom": "Randomiser",
     "btnUpdate": "Mettre à jour l'artéfact",
     "clearPrompt": "Il y a un artéfact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?",
-    "unknownSetName": "Nom de l'ensemble inconnu"
+    "unknownSetName": "Nom de l'ensemble inconnu",
+    "delete": "Supprimer",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet artéfact ?"
   },
   "artifactFilter": "Filtre d'artéfacts",
   "filterLocation": {
@@ -45,11 +47,12 @@
     "unequipArtifacts": "Déséquiper les artéfacts",
     "deleteArtifacts": "Supprimer les artéfacts",
     "lockArtifacts": "Verrouiller les artéfacts",
-    "unlockrtifacts": "Déverrouiller les artéfacts"
+    "unlockrtifacts": "Déverrouiller les artéfacts",
+    "unequipArtifact": "Déséquiper l'artéfact"
   },
   "buttonHint": "Note: les boutons rouges ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
   "tipsOfTheDay": [
-    "L'efficacité maximum d'un artéfact 4 étoiles est environ de 60%.",
+    "L'efficacité maximum d'un artéfact 4 étoiles est environ de 540%.",
     "L'efficacité maximum d'un artéfact diminuera généralement au fur et à mesure de l'amélioration. C'est parfaitement normal !",
     "Les substats avec des \"1\" sont les plus difficiles à analyser sur les captures d'écran.",
     "Si tous vos rolls (6) sont allés dans une seule substat, elle sera violette !",
@@ -101,5 +104,9 @@
   "substat_other": "{{count}} substats",
   "sub_one": "{{count}} sub",
   "sub_other": "{{count}} subs",
-  "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!"
+  "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!",
+  "subheadings": {
+    "general": "Général",
+    "inventory": "Inventaire"
+  }
 }

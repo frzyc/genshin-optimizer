@@ -1,0 +1,32 @@
+{
+  "name": "Somnia",
+  "constellationName": "Mathematica Felina",
+  "burst": {
+    "name": "Parallaxenpfötchen"
+  },
+  "passive2": {
+    "name": "Mathegenie"
+  },
+  "constellation2": {
+    "name": "Primzahl"
+  },
+  "constellation3": {
+    "name": "Unendliche Zahlenreihe",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Parallaxen Pfötchen</strong> um 3."
+    }
+  },
+  "constellation4": {
+    "name": "Perfekte Quadratzahl"
+  },
+  "constellation5": {
+    "name": "Katzenminze-Koeffizient"
+  },
+  "constellation6": {
+    "name": "Goldener Schnitt"
+  },
+  "multCond": "Im Multiplikationsmodus",
+  "subCond": "Im Subtraktionsmodus",
+  "average": "Durchschnitt",
+  "always": "Immer"
+}

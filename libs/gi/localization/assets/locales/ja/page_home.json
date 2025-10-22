@@ -1,10 +1,10 @@
 {
-  "intro": "<strong>究極</strong>の<3><i>原神</i></3>ビルド改良ツール。Genshin Optimizer（GO）は聖遺物・武器・キャラクターのインベントリーを管理し、好みに基づいて最適なビルドを計算するのに役立ちます。",
+  "intro": "Genshin Optimizer (GO) は<strong>究極</strong>の<3><i>原神</i></3>装備最適化ツールです。あなたが所持している聖遺物/武器/キャラクターを管理し、プレイスタイルに基づいて装備を最適化するのに役立ちます。",
   "quickLinksCard": {
     "title": "クイックリンク",
     "buttons": {
       "tyGuide": {
-        "title": "YouTubeガイド再生リスト",
+        "title": "YouTubeのガイド プレイリスト",
         "tooltip": "Genshin Optimizerの使用方法を学ぶ"
       },
       "scanners": {
@@ -12,7 +12,7 @@
         "tooltip": "ゲーム内から聖遺物を自動的にスキャンするサードパーティーソフト"
       },
       "kqm": {
-        "title": "Keqing Mains（KQM刻晴メインズ）",
+        "title": "Keqing Mains",
         "tooltip": "セオリークラフティング＆ガイドのコミュニティ"
       },
       "devDiscord": {
@@ -20,11 +20,11 @@
         "tooltip": "原神ツール開発者コミュニティ"
       },
       "good": {
-        "title": "GOODドキュメンテーション",
+        "title": "GOOD 形式について",
         "tooltip": "Genshin Open Object Descriptorドキュメンテーション"
       },
       "patchNotes": {
-        "title": "原神オプティマイザーパッチノート",
+        "title": "パッチノート",
         "tooltip": "GOパッチノート一覧"
       }
     }
