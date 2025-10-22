@@ -1,0 +1,24 @@
+{
+  "name": "Reliquary of Truth",
+  "description": {
+    "0": "An angular box carved from gold and jade. Legend has it that it was once enshrined in a temple deep within Tulaytullah, the Sapphire City."
+  },
+  "passiveName": "Essence of Falsity",
+  "passiveDescription": {
+    "0": {
+      "0": "CRIT Rate is increased by <cryo>8%</cryo>. When the equipping character unleashes an Elemental Skill, they gain the Secret of Lies effect: Elemental Mastery is increased by <cryo>80</cryo> for 12s. When the equipping character deals Lunar-Bloom DMG to an opponent, they gain the Moon of Truth effect: CRIT DMG is increased by <cryo>24%</cryo> for 4s. When both the Secret of Lies and Moon of Truth effects are active at the same time, the results of both effects will be increased by 50%."
+    },
+    "1": {
+      "0": "CRIT Rate is increased by <cryo>10%</cryo>. When the equipping character unleashes an Elemental Skill, they gain the Secret of Lies effect: Elemental Mastery is increased by <cryo>100</cryo> for 12s. When the equipping character deals Lunar-Bloom DMG to an opponent, they gain the Moon of Truth effect: CRIT DMG is increased by <cryo>30%</cryo> for 4s. When both the Secret of Lies and Moon of Truth effects are active at the same time, the results of both effects will be increased by 50%."
+    },
+    "2": {
+      "0": "CRIT Rate is increased by <cryo>12%</cryo>. When the equipping character unleashes an Elemental Skill, they gain the Secret of Lies effect: Elemental Mastery is increased by <cryo>120</cryo> for 12s. When the equipping character deals Lunar-Bloom DMG to an opponent, they gain the Moon of Truth effect: CRIT DMG is increased by <cryo>36%</cryo> for 4s. When both the Secret of Lies and Moon of Truth effects are active at the same time, the results of both effects will be increased by 50%."
+    },
+    "3": {
+      "0": "CRIT Rate is increased by <cryo>14%</cryo>. When the equipping character unleashes an Elemental Skill, they gain the Secret of Lies effect: Elemental Mastery is increased by <cryo>140</cryo> for 12s. When the equipping character deals Lunar-Bloom DMG to an opponent, they gain the Moon of Truth effect: CRIT DMG is increased by <cryo>42%</cryo> for 4s. When both the Secret of Lies and Moon of Truth effects are active at the same time, the results of both effects will be increased by 50%."
+    },
+    "4": {
+      "0": "CRIT Rate is increased by <cryo>16%</cryo>. When the equipping character unleashes an Elemental Skill, they gain the Secret of Lies effect: Elemental Mastery is increased by <cryo>160</cryo> for 12s. When the equipping character deals Lunar-Bloom DMG to an opponent, they gain the Moon of Truth effect: CRIT DMG is increased by <cryo>48%</cryo> for 4s. When both the Secret of Lies and Moon of Truth effects are active at the same time, the results of both effects will be increased by 50%."
+    }
+  }
+}

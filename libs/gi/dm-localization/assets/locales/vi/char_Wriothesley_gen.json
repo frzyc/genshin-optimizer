@@ -133,14 +133,14 @@
         "Khi trúng đích, nếu đang ở trong trạng thái Hàn Băng Phán Quyết, thời gian duy trì của trạng thái này kéo dài thêm 4s. Trong một lần duy trì Hàn Băng Phán Quyết tối đa chỉ kéo dài thêm một lần thông qua phương thức này."
       ],
       "5": "<br/>",
-      "6": "Cần mở khóa thiên phú cố định \"Ngày Biện Hộ Cho Công Lý\"."
+      "6": "Cần mở khóa thiên phú đột phá \"Ngày Biện Hộ Cho Công Lý\"."
     }
   },
   "constellation2": {
     "name": "Bắt Trói Kẻ Hung Bạo",
     "description": {
-      "0": "Khi thi triển <strong>Hắc Kim Lang Cắn Xé</strong>, mỗi tầng \"Sắc Lệnh Truy Tố\" của thiên phú cố định \"Giờ Đền Đáp Cho Tội Lỗi\" sẽ khiến sát thương gây ra tăng 40%.",
-      "1": "Cần mở khóa thiên phú cố định \"Giờ Đền Đáp Cho Tội Lỗi\"."
+      "0": "Khi thi triển <strong>Hắc Kim Lang Cắn Xé</strong>, mỗi tầng \"Sắc Lệnh Truy Tố\" của thiên phú đột phá \"Giờ Đền Đáp Cho Tội Lỗi\" sẽ khiến sát thương gây ra tăng 40%.",
+      "1": "Cần mở khóa thiên phú đột phá \"Giờ Đền Đáp Cho Tội Lỗi\"."
     }
   },
   "constellation3": {
@@ -153,7 +153,7 @@
   "constellation4": {
     "name": "Cứu Rỗi Người Khốn Khổ",
     "description": {
-      "0": "Lượng HP hồi phục của Cú Đấm Trừng Phạt sẽ tăng thành 50% giới hạn HP, cần mở khóa thiên phú cố định \"Ngày Biện Hộ Cho Công Lý\".",
+      "0": "Lượng HP hồi phục của Cú Đấm Trừng Phạt sẽ tăng thành 50% giới hạn HP, cần mở khóa thiên phú đột phá \"Ngày Biện Hộ Cho Công Lý\".",
       "1": "Ngoài ra, khi Wriothesley nhận được trị liệu, nếu lượng trị liệu hồi phục lần đó bị dư ra, thì sẽ căn cứ vào trạng thái của Wriothesley để sản sinh hiệu ứng khác nhau: Nếu Wriothesley ở trong trận, tốc độ tấn công của anh ấy tăng 20% trong 4s; Nếu Wriothesley không ở trong trận, tốc độ tấn công của tất cả nhân vật trong đội bản thân tăng 10% trong 6s. Hai loại hiệu quả tăng tốc độ tấn công kể trên sẽ không thể cộng dồn."
     }
   },
@@ -168,7 +168,7 @@
     "name": "Trân Trọng Người Vô Tội",
     "description": {
       "0": "Tỉ lệ bạo kích của Cú Đấm Trừng Phạt tăng 10%, sát thương bạo kích tăng 80%, đồng thời sản sinh thêm nhũ băng, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> bằng 100% sát thương vốn có của Cú Đấm Trừng Phạt. Sát thương gây ra bằng phương thức này sẽ được tính là sát thương trọng kích.",
-      "1": "Cần mở khóa thiên phú cố định \"Ngày Biện Hộ Cho Công Lý\"."
+      "1": "Cần mở khóa thiên phú đột phá \"Ngày Biện Hộ Cho Công Lý\"."
     }
   }
 }

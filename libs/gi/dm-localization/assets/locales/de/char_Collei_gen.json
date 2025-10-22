@@ -123,11 +123,11 @@
   "constellation2": {
     "name": "Wanderin zwischen Bergen und Seen",
     "description": {
-      "0": "Ändert das passive Talent „Wiederkehr des fliegenden Laubs“ wie folgt:",
-      "1": "Das <strong>fliegende Laubrad</strong> verleiht bei seiner Rückkehr der Figur den Effekt „Jungtrieb“ des passiven Talents „Wiederkehr des fliegenden Laubs“, der 3 s lang fortlaufend den Gegnern in der Nähe <dendro>Dendro-Schaden</dendro> in Höhe von 40 % von Colleis ANG zufügt.",
+      "0": "Ändert das Aufstiegstalent „Wiederkehr des fliegenden Laubs“ wie folgt:",
+      "1": "Das <strong>fliegende Laubrad</strong> verleiht bei seiner Rückkehr der Figur den Effekt „Jungtrieb“ des Aufstiegstalents „Wiederkehr des fliegenden Laubs“, der 3 s lang fortlaufend den Gegnern in der Nähe <dendro>Dendro-Schaden</dendro> in Höhe von 40 % von Colleis ANG zufügt.",
       "2": "Wenn eines der eigenen Truppenmitglieder nach Anwenden der Fähigkeit <strong>Der Kämpferin Laub</strong> und, bevor der aktuelle Effekt „Jungtrieb“ endet, Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“, „Flammenspross“ oder „Mondspross“ auslöst, wird dieser „Jungtrieb“ um 3 s verlängert.",
       "3": "Die Dauer des Effekts „Jungtrieb“ kann nur einmal auf diese Weise verlängert werden. Wird während der Dauer ein weiterer „Jungtrieb“ erzeugt, ersetzt er den bestehenden. Der vom Jungtrieb-Effekt verursachte Schaden gilt als Elementarfähigkeitsschaden.",
-      "4": "Das passive Talent „Wiederkehr des fliegenden Laubs“ muss zuerst freigeschaltet werden."
+      "4": "Das Aufstiegstalent „Wiederkehr des fliegenden Laubs“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation3": {

@@ -128,15 +128,15 @@
   "constellation1": {
     "name": "Eminente ordenanza",
     "description": {
-      "0": "Cuando Neuvillette entra en el campo de batalla, obtiene 1 carga del efecto “gloria del legado draconiano” del talento pasivo “Legatario de toda agua” (es necesario desbloquear el talento pasivo Legatario de toda agua).",
+      "0": "Cuando Neuvillette entra en el campo de batalla, obtiene 1 carga del efecto “gloria del legado draconiano” del talento de ascensión “Legatario de toda agua” (es necesario desbloquear el talento de ascensión Legatario de toda agua).",
       "1": "Además, al ejecutar el Ataque Potenciado: Apercibimiento procesal y el Ataque Cargado: Sentencia ecuánime, su RES a interrupción aumenta."
     }
   },
   "constellation2": {
     "name": "Mandato legal",
     "description": {
-      "0": "Fortalece el talento pasivo “Legatario de toda agua”, de modo que por cada carga de gloria del legado draconiano, el Daño CRIT del Ataque Cargado: Sentencia ecuánime aumenta en un 14%, hasta un máximo del 42%.",
-      "1": "Es necesario desbloquear el talento pasivo “Legatario de toda agua”."
+      "0": "Fortalece el talento de ascensión “Legatario de toda agua”, de modo que por cada carga de gloria del legado draconiano, el Daño CRIT del Ataque Cargado: Sentencia ecuánime aumenta en un 14%, hasta un máximo del 42%.",
+      "1": "Es necesario desbloquear el talento de ascensión “Legatario de toda agua”."
     }
   },
   "constellation3": {

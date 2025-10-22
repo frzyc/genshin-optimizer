@@ -233,6 +233,9 @@
   "LegionMorale": {
     "name": "Legion Morale"
   },
+  "PrepProgress": {
+    "name": "Kemajuan Persiapan"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -268,6 +271,33 @@
   },
   "AcquaintFate": {
     "name": "Acquaint Fate"
+  },
+  "ChronalNexus": {
+    "name": "Chronal Nexus"
+  },
+  "ArcaneKeystone": {
+    "name": "Arcane Keystone"
+  },
+  "GeodeOfReplication": {
+    "name": "Geode of Replication"
+  },
+  "EngravedShard": {
+    "name": "Engraved Shard"
+  },
+  "FestiveKey": {
+    "name": "Festive Key"
+  },
+  "LuminousKeystone": {
+    "name": "Luminous Keystone"
+  },
+  "WonderlandEXP": {
+    "name": "Wonderland EXP"
+  },
+  "ChronicleEXP": {
+    "name": "Chronicle EXP"
+  },
+  "ChroniclesOfTheRealms": {
+    "name": "Chronicles of the Realms"
   },
   "PyroSigil": {
     "name": "Pyro Sigil"
@@ -878,6 +908,12 @@
   "ReaffirmedAccordOfAppellation": {
     "name": "Reaffirmed Accord of Appellation"
   },
+  "OverwriteKeyLeft": {
+    "name": "Overwrite Key: Left"
+  },
+  "OverwriteKeyRight": {
+    "name": "Overwrite Key: Right"
+  },
   "EnergyOrbPyro": {
     "name": "Small Energy Orb (Pyro)"
   },
@@ -1070,6 +1106,9 @@
   "Aino": {
     "name": "Aino"
   },
+  "Nefer": {
+    "name": "Nefer"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina's Stella Fortuna"
   },
@@ -1129,6 +1168,9 @@
   },
   "AinosStellaFortuna": {
     "name": "Aino's Stella Fortuna"
+  },
+  "NefersStellaFortuna": {
+    "name": "Nefer's Stella Fortuna"
   },
   "Apple": {
     "name": "Apple"
@@ -8033,6 +8075,39 @@
   "SugarSculptureFlins": {
     "name": "Sugar Sculpture: Flins"
   },
+  "SuspiciousLakkaberryPie": {
+    "name": "Suspicious Lakkaberry Pie"
+  },
+  "LakkaberryPie": {
+    "name": "Lakkaberry Pie"
+  },
+  "DeliciousLakkaberryPie": {
+    "name": "Delicious Lakkaberry Pie"
+  },
+  "SuspiciousLohikeitto": {
+    "name": "Suspicious Lohikeitto"
+  },
+  "Lohikeitto": {
+    "name": "Lohikeitto"
+  },
+  "DeliciousLohikeitto": {
+    "name": "Delicious Lohikeitto"
+  },
+  "PiramidaNightingale": {
+    "name": "Piramida Nightingale"
+  },
+  "FrontierLand": {
+    "name": "Frontier Land"
+  },
+  "WildberryTrail": {
+    "name": "Wildberry Trail"
+  },
+  "SecretsExchanged": {
+    "name": "Secrets Exchanged"
+  },
+  "SugarSculptureNefer": {
+    "name": "Sugar Sculpture: Nefer"
+  },
   "RecipeItem": {
     "name": "Bahan Resep"
   },
@@ -8797,6 +8872,12 @@
   },
   "RecipeLakkaberryMadame": {
     "name": "Resep: Lakkaberry Madame"
+  },
+  "RecipeLakkaberryPie": {
+    "name": "Resep: Lakkaberry Pie"
+  },
+  "RecipeLohikeitto": {
+    "name": "Resep: Lohikeitto"
   },
   "CraftedItems": {
     "name": "Hasil Craft"
@@ -9580,6 +9661,9 @@
   },
   "LightbearingScaleFeather": {
     "name": "Lightbearing Scale-Feather"
+  },
+  "RadiantAntler": {
+    "name": "Radiant Antler"
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
@@ -12671,8 +12755,8 @@
   "MysteriousMap": {
     "name": "Peta Misterius"
   },
-  "DazzlingMysteriousGift": {
-    "name": "Hadiah Misterius yang Berkilauan"
+  "WonderlandCosmosphere": {
+    "name": "Bola Portal Wonderland"
   },
   "LetterOfUnknownOrigin": {
     "name": "Surat yang Tak Jelas Asal Usulnya"
@@ -12830,8 +12914,14 @@
   "YellowedNotes": {
     "name": "Catatan yang Menguning"
   },
+  "InvestmentCoupon": {
+    "name": "Kupon Investasi"
+  },
   "EasybreezeBadge": {
     "name": "Pin Sepoi-Sepoi"
+  },
+  "InvestmentReturns": {
+    "name": "Investment Returns"
   },
   "SugarSculptureBox": {
     "name": "Sugar Sculpture Box"
@@ -12895,6 +12985,9 @@
   },
   "BountyTokenMudStainedHandguard": {
     "name": "Token Hadiah: Pelindung Tangan Bernoda Lumpur"
+  },
+  "RecordedIntel": {
+    "name": "Laporan Tercatat"
   },
   "MessilyScribbledNotesI": {
     "name": "Catatan yang Tertulis Berantakan (I)"
@@ -12974,6 +13067,9 @@
   "AunisNotes": {
     "name": "Catatan Auni"
   },
+  "CollatedIntel": {
+    "name": "Kumpulan Laporan"
+  },
   "BackupProgramModule": {
     "name": "Modul Program Cadangan"
   },
@@ -12982,6 +13078,15 @@
   },
   "OpenedSecretLetter": {
     "name": "Surat Rahasia yang Terbuka"
+  },
+  "WayOpeningKey": {
+    "name": "Kunci Pembuka Jalan"
+  },
+  "RaggedNotes": {
+    "name": "Catatan yang Terkoyak"
+  },
+  "OrderedNotes": {
+    "name": "Catatan yang Telah Dirapikan"
   },
   "ConchNotebook": {
     "name": "Catatan Keong"
@@ -13027,6 +13132,15 @@
   },
   "AilasNotes": {
     "name": "Catatan Aila"
+  },
+  "TheManWhoBecameAMule": {
+    "name": "Pria yang Menjadi Keledai"
+  },
+  "HalfBurnedPage": {
+    "name": "Halaman Setengah Terbakar"
+  },
+  "CuratoriumFunds": {
+    "name": "Curatorium Funds"
   },
   "TearsAmongTheStars": {
     "name": "Air Mata di Lautan Bintang"
@@ -14939,6 +15053,12 @@
   "CelebrationSublimeFlavors": {
     "name": "Perayaan: Rasa Sempurna"
   },
+  "NeferSecrets": {
+    "name": "Nefer: Rahasia"
+  },
+  "TravelNotesBygoneRuins": {
+    "name": "Catatan Perjalanan: Reruntuhan Kuno"
+  },
   "EchoDandelionKnight": {
     "name": "Echo: Dandelion Knight"
   },
@@ -15779,6 +15899,24 @@
   "CarefulCommunication": {
     "name": "Hati-Hati Berbicara"
   },
+  "BattlePreparation": {
+    "name": "Persiapan Bertempur"
+  },
+  "GatheredOverDrinks": {
+    "name": "Undangan Kebersamaan"
+  },
+  "BrandishingWeapons": {
+    "name": "Pamer Senjata"
+  },
+  "TeachingAjawALesson": {
+    "name": "Kasih Pelajaran ke Ajaw"
+  },
+  "ALittleScare": {
+    "name": "Sedikit Terkejut"
+  },
+  "EagerAndReady": {
+    "name": "Semangat dan Siap"
+  },
   "FantasticalMarvel": {
     "name": "Fantastical Marvel"
   },
@@ -15928,6 +16066,9 @@
   },
   "LordOfErodedPrimalFire": {
     "name": "Lord of Eroded Primal Fire"
+  },
+  "HydroTulpa": {
+    "name": "Hydro Tulpa"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -16292,6 +16433,15 @@
   "UndyingFury": {
     "name": "Undying Fury"
   },
+  "AHeroOfJusticesTriumph": {
+    "name": "A Hero of Justice's Triumph"
+  },
+  "TacticalWarmCompressBandaging": {
+    "name": "Tactical Warm Compress Bandaging"
+  },
+  "FlowConvergence": {
+    "name": "Flow Convergence"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -16613,6 +16763,15 @@
   "AquaSimulacra": {
     "name": "Aqua Simulacra"
   },
+  "EverlastingMoonglow": {
+    "name": "Everlasting Moonglow"
+  },
+  "FellDragonsMonocle": {
+    "name": "Fell Dragon's Monocle"
+  },
+  "NoblesseOblige": {
+    "name": "Noblesse Oblige"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -16795,6 +16954,9 @@
   },
   "GiftOfTheGoddessOfProphecy": {
     "name": "Gift of the Goddess of Prophecy"
+  },
+  "AdventurersGuild": {
+    "name": "Adventurers' Guild"
   },
   "ElementalResonanceWovenIce": {
     "name": "Resonansi Elemental: Woven Ice"
@@ -17018,6 +17180,9 @@
   "RevelrousBeats": {
     "name": "\"Revelrous Beats\""
   },
+  "AnAncientSacrificeOfSacredBrocade": {
+    "name": "An Ancient Sacrifice of Sacred Brocade"
+  },
   "Origin": {
     "name": "Origin"
   },
@@ -17086,6 +17251,9 @@
   },
   "FontaPassionateRed": {
     "name": "Fonta: Passionate Red"
+  },
+  "SeaOfBygoneErasSlumber": {
+    "name": "Sea of Bygone Eras: Slumber"
   },
   "BeginnerPlayerBadge": {
     "name": "Lencana Pemain Pemula"
@@ -17798,6 +17966,12 @@
   "XochicuicatlMarketingMethod": {
     "name": "Teknik Marketing Xochicuicatl"
   },
+  "DeductionAndInduction": {
+    "name": "Deduksi dan Induksi"
+  },
+  "FactoryCabinetSlapdashStorage": {
+    "name": "Lemari Pabrik: Sembarang Tumpuk"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "Rak Buku Perpustakaan 2 Lapis"
   },
@@ -17969,6 +18143,15 @@
   "FairsSimpleSalesStrategy": {
     "name": "Strategi Penjualan di Pasar"
   },
+  "FactoryLongTableNoTimeToWaste": {
+    "name": "Meja Panjang Pabrik: Waktu Mendesak"
+  },
+  "TavernSquareTableSelfDefense": {
+    "name": "Meja Kotak Tavern: Pertahanan Diri"
+  },
+  "IndoorLongTableMarksOfLove": {
+    "name": "Meja Panjang Dalam Ruangan: Tanda Cinta"
+  },
   "BreezeBlessedBed": {
     "name": "Ranjang Sesejuk Angin"
   },
@@ -17996,6 +18179,12 @@
   "StoneBedPeacefulSleep": {
     "name": "Ranjang Batu: Tidur Nyenyak"
   },
+  "FriendsThroughFriction": {
+    "name": "Persahabatan Lolos Ujian"
+  },
+  "TavernBedNotGreatNotTerrible": {
+    "name": "Tempat Tidur Tavern: Bagus Tidak, Jelek Tidak"
+  },
   "PineReceptionCounter": {
     "name": "Konter Penerima Tamu dari Kayu Pinus"
   },
@@ -18022,6 +18211,9 @@
   },
   "TeahouseStoveSlowSteaming": {
     "name": "Tungku Kedai Teh: Mengukus Santai"
+  },
+  "QuestionWithAPriceTag": {
+    "name": "Pertanyaan dengan Label Harga"
   },
   "SoftLoungeSofa": {
     "name": "Sofa Ruang Tamu yang Empuk"
@@ -18103,6 +18295,15 @@
   },
   "GlugInOneGo": {
     "name": "Gluk-Gluk Langsung Habis"
+  },
+  "QuietAndCozy": {
+    "name": "Keheningan dan Kehangatan"
+  },
+  "HazelwoodJadeBackedChair": {
+    "name": "Kursi Sandar Giok Hazelnut"
+  },
+  "FactoryStoolMultiroleSeatingDevice": {
+    "name": "Bangku Pabrik: Multitasking"
   },
   "NorthernStoneHearth": {
     "name": "Perapian Batu Northland"
@@ -18290,6 +18491,18 @@
   "PortableAllPurposeGrill": {
     "name": "Oven Serbaguna Portabel"
   },
+  "BoatOfClouds": {
+    "name": "Perahu Awan"
+  },
+  "TipsyPlaylist": {
+    "name": "Daftar Lagu yang Mabuk"
+  },
+  "MultifunctionalPedunculateOakWoodCatTree": {
+    "name": "Pohon Kucing Pedunculate Oak Wood Multifungsi"
+  },
+  "HiddenSecrets": {
+    "name": "Rahasia Tersembunyi"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Karpet Mondstadt: Semangat Membara"
   },
@@ -18343,6 +18556,12 @@
   },
   "FairCarpetWarmthAndPassion": {
     "name": "Karpet Pasar: Semangat dan Kehangatan"
+  },
+  "IndoorRugSoftPlush": {
+    "name": "Karpet dalam Ruangan: Lembut dan Mewah"
+  },
+  "IndoorRugStarlitNight": {
+    "name": "Karpet dalam Ruangan: Malam Berbintang"
   },
   "VibrantPotBornInFlames": {
     "name": "Pot Berwarna-Warni: \"Lahir dari Api\""
@@ -18724,6 +18943,12 @@
   },
   "SaveyWaveyLifeRing": {
     "name": "Ban Penyelamat Darurat"
+  },
+  "FactoryBroadcastInvigoration": {
+    "name": "Pengumuman Pabrik: Penyegaran"
+  },
+  "TavernDartboardValidThrow": {
+    "name": "Papan Dart Tavern: Lemparan yang Sah"
   },
   "LingeringMoment": {
     "name": "Momen tak Terlupakan"
@@ -21044,6 +21269,9 @@
   "MediumCargoHoldSwiftTransport": {
     "name": "Kabin Kargo Sedang: \"Pengiriman Efisien\""
   },
+  "PuzzlepalKeepCalmAndCarryOn": {
+    "name": "Puzzlepal: Tetap Tenang dan Terus Maju"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "\"Kesatria Kapi Bertaring Panjang\""
   },
@@ -21052,5 +21280,8 @@
   },
   "PorkyWorkyChef": {
     "name": "\"Si Koki Bulat\""
+  },
+  "LoafingKitty": {
+    "name": "Kucing Malas Gerak"
   }
 }

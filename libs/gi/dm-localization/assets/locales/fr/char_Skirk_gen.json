@@ -79,7 +79,7 @@
       "4": "<br/>",
       "5": "<strong>Ravage : Extinction</strong>",
       "6": "Ce déchaînement élémentaire spécial peut être utilisé sans consommer de finesse serpentine.",
-      "7": "Après utilisation, Skirk obtient l'effet Dépérissement jusqu'à la fin du mode Flash à sept phases. Après avoir débloqué l'aptitude passive « <strong>Raisonnement outre-raison</strong> », Skirk peut également absorber les failles du néant à proximité.",
+      "7": "Après utilisation, Skirk obtient l'effet Dépérissement jusqu'à la fin du mode Flash à sept phases. Après avoir débloqué l'aptitude d'élévation « <strong>Raisonnement outre-raison</strong> », Skirk peut également absorber les failles du néant à proximité.",
       "8": "Toutes les 0,1 s pendant la durée de l'effet Dépérissement, les DGT des attaques normales de Skirk augmentent en touchant un ennemi. Si elle a absorbé des failles du néant en utilisant <strong>Ravage : Extinction</strong>, les DGT de l'attaque normale de Skirk augmentent davantage.",
       "9": "Cet effet prend fin après 10 déclenchements."
     },
@@ -134,8 +134,8 @@
   "constellation1": {
     "name": "Chute longue",
     "description": {
-      "0": "L'aptitude passive « <strong>Raisonnement outre-raison</strong> » est renforcée : absorber une faille du néant invoque une lame cristalline qui attaque les ennemis proches, infligeant des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 500 % de l'ATQ de Skirk. Ces DGT sont considérés comme des DGT d'attaque chargée.",
-      "1": "L'aptitude passive « Raisonnement outre-raison » doit être déjà débloquée."
+      "0": "L'aptitude d'élévation « <strong>Raisonnement outre-raison</strong> » est renforcée : absorber une faille du néant invoque une lame cristalline qui attaque les ennemis proches, infligeant des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 500 % de l'ATQ de Skirk. Ces DGT sont considérés comme des DGT d'attaque chargée.",
+      "1": "L'aptitude d'élévation « Raisonnement outre-raison » doit être déjà débloquée."
     }
   },
   "constellation2": {
@@ -156,8 +156,8 @@
   "constellation4": {
     "name": "Flux scindé",
     "description": {
-      "0": "L'aptitude passive « <strong>Retour à la désolation</strong> » est renforcée : chaque cumul de traversée de la mort augmente également l'ATQ de Skirk de 10 %/20 %/40 %.",
-      "1": "L'aptitude passive « Retour à la désolation » doit être déjà débloquée."
+      "0": "L'aptitude d'élévation « <strong>Retour à la désolation</strong> » est renforcée : chaque cumul de traversée de la mort augmente également l'ATQ de Skirk de 10 %/20 %/40 %.",
+      "1": "L'aptitude d'élévation « Retour à la désolation » doit être déjà débloquée."
     }
   },
   "constellation5": {
@@ -170,8 +170,8 @@
   "constellation6": {
     "name": "Source revenue",
     "description": {
-      "0": "Skirk obtient un cumul de « Ravage : Section » pendant 15 s chaque fois qu'elle absorbe une faille du néant grâce à l'aptitude passive « <strong>Raisonnement outre-raison</strong> ». Skirk peut consommer ces cumuls pour déclencher une attaque coordonnée et diminuer les DGT qu'elle subit en mode <strong>Flash à sept phases</strong>. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
-      "1": "L'aptitude passive « Raisonnement outre-raison » doit être déjà débloquée.",
+      "0": "Skirk obtient un cumul de « Ravage : Section » pendant 15 s chaque fois qu'elle absorbe une faille du néant grâce à l'aptitude d'élévation « <strong>Raisonnement outre-raison</strong> ». Skirk peut consommer ces cumuls pour déclencher une attaque coordonnée et diminuer les DGT qu'elle subit en mode <strong>Flash à sept phases</strong>. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
+      "1": "L'aptitude d'élévation « Raisonnement outre-raison » doit être déjà débloquée.",
       "2": "<br/>",
       "3": "<strong>Ravage : Section</strong>",
       "4": [

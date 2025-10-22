@@ -142,8 +142,8 @@
   "constellation2": {
     "name": "\"Até Aqui, Enquanto Enfrentamos os Perigos da Longa Noite\"",
     "description": {
-      "0": "Aprimora o Talento Passivo \"Chama Dispersadora da Escuridão\": Após um membro próximo da equipe desencadear <electro>reações relacionadas a Electro</electro> contra um oponente, <electro>Dano Electro</electro> causado por Ataques Normais e <strong>Queda da Luz</strong> serão aumentados em 30% do ATQ de Clorinde por 15s. Máximo de 3 acúmulos. Cada acúmulo tem sua duração contada independentemente. Quando você possui 3 acúmulos, a Resistência contra Interrupção de Clorinde será aumentada. O Dano Máximo alcançável desta forma para os ataques acima é de 2.700.",
-      "1": "É necessário primeiro desbloquear o Talento Passivo \"Chama Dispersadora da Escuridão\"."
+      "0": "Aprimora o Talento de Ascensão \"Chama Dispersadora da Escuridão\": Após um membro próximo da equipe desencadear <electro>reações relacionadas a Electro</electro> contra um oponente, <electro>Dano Electro</electro> causado por Ataques Normais e <strong>Queda da Luz</strong> serão aumentados em 30% do ATQ de Clorinde por 15s. Máximo de 3 acúmulos. Cada acúmulo tem sua duração contada independentemente. Quando você possui 3 acúmulos, a Resistência contra Interrupção de Clorinde será aumentada. O Dano Máximo alcançável desta forma para os ataques acima é de 2.700.",
+      "1": "É necessário primeiro desbloquear o Talento de Ascensão \"Chama Dispersadora da Escuridão\"."
     }
   },
   "constellation3": {

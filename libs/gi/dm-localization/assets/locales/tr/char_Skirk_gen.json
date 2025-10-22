@@ -79,7 +79,7 @@
       "4": "<br/>",
       "5": "<strong>Yıkım: Tükeniş</strong>",
       "6": "Yılan Kurnazlığı tüketmeden de kullanılabilen özel bir Element Patlamasıdır.",
-      "7": "Skirk, bunu kullandıktan sonra Yedi Aşamalı Parıltı modu sona erene kadar \"Her Şey Solup Gidecek\" etkisi kazanır. <strong>Akıl Almaz Mantık</strong> Pasif Yeteneği açıldıktan sonra Skirk yakındaki Boşluk Yarıklarını soğurabilir.",
+      "7": "Skirk, bunu kullandıktan sonra Yedi Aşamalı Parıltı modu sona erene kadar \"Her Şey Solup Gidecek\" etkisi kazanır. <strong>Akıl Almaz Mantık</strong> Yükseltme Yeteneği açıldıktan sonra Skirk yakındaki Boşluk Yarıklarını soğurabilir.",
       "8": "\"Her Şey Solup Gidecek\" etkinken her 0,1 saniyede bir, Skirk'ün Normal Saldırısı düşmana isabet ettiğinde bu saldırı daha fazla Hasar verir. Skirk <strong>Yıkım: Tükeniş</strong> kullanırken Boşluk Yarığı soğurduysa soğurulan Yarık sayısına göre bu Normal Saldırı Hasarı daha da artar.",
       "9": "Bu etki 10 defa tetiklendikten sonra iptal olur."
     },
@@ -134,8 +134,8 @@
   "constellation1": {
     "name": "Derinlere Düşüş",
     "description": {
-      "0": "<strong>Akıl Almaz Mantık</strong> Pasif Yeteneğinin etkilerini geliştirir: Skirk'ün soğurduğu her Boşluk Yarığı, yakındaki düşmanlara saldıran ve Skirk'ün Saldırısının %500'ü kadar <cryo>Buz Hasarı</cryo> veren kristal bir kılıç çağırır. Bu Hasar, Yüklü Saldırı Hasarı sayılır.",
-      "1": "Akıl Almaz Mantık Pasif Yeteneğinin açılmış olması gerekir."
+      "0": "<strong>Akıl Almaz Mantık</strong> Yükseltme Yeteneğinin etkilerini geliştirir: Skirk'ün soğurduğu her Boşluk Yarığı, yakındaki düşmanlara saldıran ve Skirk'ün Saldırısının %500'ü kadar <cryo>Buz Hasarı</cryo> veren kristal bir kılıç çağırır. Bu Hasar, Yüklü Saldırı Hasarı sayılır.",
+      "1": "Akıl Almaz Mantık Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation2": {
@@ -156,8 +156,8 @@
   "constellation4": {
     "name": "Bölünen Akış",
     "description": {
-      "0": "<strong>Unutulmaya Dönüş</strong> Pasif Yeteneğinin etkilerini geliştirir. Her Ölümün Kıyısı kademesi Skirk'ün Saldırısını %10/%20/%40 artırır.",
-      "1": "Unutulmaya Dönüş Pasif Yeteneğinin açılmış olması gerekir."
+      "0": "<strong>Unutulmaya Dönüş</strong> Yükseltme Yeteneğinin etkilerini geliştirir. Her Ölümün Kıyısı kademesi Skirk'ün Saldırısını %10/%20/%40 artırır.",
+      "1": "Unutulmaya Dönüş Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation5": {
@@ -170,8 +170,8 @@
   "constellation6": {
     "name": "Kaynağa Dönüş",
     "description": {
-      "0": "Skirk, <strong>Akıl Almaz Mantık</strong> Pasif Yeteneği ile soğurduğu her Boşluk Yarığı için 15sn boyunca 1 Yıkım: Koparma kademesi kazanır. Skirk bu kademeleri tüketerek ortak saldırılar yapabilir ve <strong>Yedi Aşamalı Parıltı</strong> modundayken daha az Hasar alır. Bu kademeler 15sn sürer ve her kademenin süresi birbirinden bağımsızdır. (3 kademeye kadar birikebilir)",
-      "1": "\"Akıl Almaz Mantık\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "0": "Skirk, <strong>Akıl Almaz Mantık</strong> Yükseltme Yeteneği ile soğurduğu her Boşluk Yarığı için 15sn boyunca 1 Yıkım: Koparma kademesi kazanır. Skirk bu kademeleri tüketerek ortak saldırılar yapabilir ve <strong>Yedi Aşamalı Parıltı</strong> modundayken daha az Hasar alır. Bu kademeler 15sn sürer ve her kademenin süresi birbirinden bağımsızdır. (3 kademeye kadar birikebilir)",
+      "1": "\"Akıl Almaz Mantık\" Yükseltme Yeteneğinin açılmış olması gerekir.",
       "2": "<br/>",
       "3": "<strong>Yıkım: Koparma</strong>",
       "4": [

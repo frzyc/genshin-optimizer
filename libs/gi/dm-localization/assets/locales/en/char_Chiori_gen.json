@@ -194,7 +194,7 @@
       "1": "Additionally, if there is a <geo>Geo</geo> party member other than Chiori, Fluttering Hasode will trigger the following after the dash is completed:",
       "2": [
         " Summon an additional Tamoto. Only one additional Tamoto can exist at the same time, whether summoned by Chiori this way or through the presence of a Geo Construct.",
-        " Triggers the Passive Talent \"The Finishing Touch.\" This effect requires you to first unlock the Passive Talent \"The Finishing Touch.\""
+        " Triggers the Ascension Talent \"The Finishing Touch.\" You must first unlock the Ascension Talent \"The Finishing Touch.\""
       ]
     }
   },
@@ -215,8 +215,8 @@
   "constellation4": {
     "name": "A Tailor's Three Courtesies",
     "description": {
-      "0": "For 8s after triggering either follow-up effect of the Passive Talent \"Tailor-Made,\" when your current active character's Normal, Charged, or Plunging Attacks hit a nearby opponent, a simplified automaton doll, \"Kinu,\" will be summoned near this opponent. You can summon 1 Kinu every 1s in this way, and up to 3 Kinu may be summoned this way during each instance of \"Tailor-Made\"'s Seize the Moment or Tailoring effect. The above effect can be triggered up to once every 15s.",
-      "1": "Must unlock the Passive Talent \"Tailor-Made\" first."
+      "0": "For 8s after triggering either follow-up effect of the Ascension Talent \"Tailor-Made,\" when your current active character's Normal, Charged, or Plunging Attacks hit a nearby opponent, a simplified automaton doll, \"Kinu,\" will be summoned near this opponent. You can summon 1 Kinu every 1s in this way, and up to 3 Kinu may be summoned this way during each instance of \"Tailor-Made\"'s Seize the Moment or Tailoring effect. The above effect can be triggered up to once every 15s.",
+      "1": "You must first unlock the Ascension Talent \"Tailor-Made.\""
     }
   },
   "constellation5": {
@@ -229,7 +229,7 @@
   "constellation6": {
     "name": "Sole Principle Pursuit",
     "description": {
-      "0": "After triggering a follow-up effect of the Passive Talent \"Tailor-Made,\" Chiori's own <strong>Fluttering Hasode</strong>'s CD is decreased by 12s. Must unlock the Passive \"Tailor-Made\" first.",
+      "0": "After triggering a follow-up effect of the Ascension Talent \"Tailor-Made,\" Chiori's own <strong>Fluttering Hasode</strong>'s CD is decreased by 12s. You must first unlock the Ascension Talent \"Tailor-Made.\".",
       "1": "In addition, the DMG dealt by Chiori's own Normal Attacks is increased by an amount equal to 235% of her own DEF."
     }
   }

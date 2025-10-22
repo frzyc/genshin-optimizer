@@ -46,13 +46,13 @@
   "skill": {
     "name": "Yohual's Scratch",
     "description": {
-      "0": "Biarlah ritme antusiasme menggema ke seluruh daratan! Xilonen berganti ke perlengkapan pertempuran kecepatan tinggi, menerjang ke depan dalam jarak tertentu, dan mengakibatkan <geo>Nightsoul-aligned Geo DMG</geo> berdasarkan DEF Xilonen.",
+      "0": "Biarlah ritme antusiasme menggema ke seluruh daratan! Xilonen berganti ke perlengkapan tempur kecepatan tinggi, menerjang ke depan dalam jarak tertentu, dan mengakibatkan Nightsoul-aligned <geo>Geo DMG</geo> berdasarkan DEF Xilonen.",
       "1": "Setelah dilancarkan, Xilonen akan mendapatkan 45 poin Nightsoul dan memasuki status Nightsoul's Blessing. Dalam kondisi ini, Xilonen akan berganti ke Mode Blade Roller.",
       "2": "<br/>",
       "3": "<strong>Source Sample</strong>",
-      "4": "Xilonen memiliki 3 buah Sampler, akan memunculkan Soundscape yang berbeda berdasarkan jenis elemen Karakter lain yang ada di dalam party, dan saat diaktifkan, akan mengurangi Elemental RES elemen yang sesuai milik musuh di sekitar;",
-      "5": "Source Sample yang tercatat oleh Sampler pada awalnya akan berelemen <geo>Geo</geo>. Untuk setiap satu Karakter berelemen <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, atau <electro>Electro</electro>, satu Sampler <geo>Geo</geo> akan dikonversi menjadi jenis elemen yang sesuai;",
-      "6": "Saat berada dalam status Nightsoul's Blessing, Source Sample <geo>Geo</geo> yang dimiliki oleh Xilonen akan terus berada dalam status aktif; Setelah membuka Talenta Pasif \"Netotiliztli's Echoes\", Xilonen akan bisa memicu efek Talenta Pasif tersebut untuk memulihkan poin Nightsoul diri sendiri; Saat poin Nightsoul mencapai batas tertinggi, Xilonen akan mengonsumsi seluruh poin Nightsoul yang ada untuk akan mengaktifkan tiga Source Sample yang dimiliki Xilonen sendiri selama 15 detik.",
+      "4": "Xilonen memiliki 3 buah Sampler yang bisa memunculkan Soundscape yang berbeda berdasarkan jenis elemen Karakter lain yang ada di dalam party, dan saat diaktifkan, akan mengurangi Elemental RES dari elemen yang sesuai milik musuh di sekitar.",
+      "5": "Source Sample yang tercatat oleh Sampler pada awalnya akan berelemen <geo>Geo</geo>. Untuk setiap satu Karakter berelemen <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, atau <electro>Electro</electro>, satu Sampler <geo>Geo</geo> akan dikonversi menjadi jenis elemen yang sesuai.",
+      "6": "Saat berada dalam status Nightsoul's Blessing, Source Sample <geo>Geo</geo> yang dimiliki oleh Xilonen akan terus berada dalam status aktif; Setelah membuka Talenta Ascension \"Netotiliztli's Echoes\", Xilonen akan bisa memicu efek Talenta Ascension tersebut untuk memulihkan poin Nightsoul diri sendiri. Saat poin Nightsoul mencapai batas tertinggi, Xilonen akan mengonsumsi seluruh poin Nightsoul yang ada untuk akan mengaktifkan tiga Source Sample yang dimiliki Xilonen sendiri selama 15 detik.",
       "7": "Saat Source Sample aktif, Elemental RES elemen yang sesuai milik musuh di sekitar akan berkurang, efek Source Sample dengan elemen yang sama tidak dapat ditumpuk; Saat Xilonen ada di dalam party namun sedang tidak berada di medan pertempuran, efek ini tetap dapat terpicu.",
       "8": "<br/>",
       "9": "<strong>Nightsoul's Blessing: Xilonen</strong>",
@@ -62,7 +62,7 @@
         "Nightsoul's Blessing Xilonen memiliki batasan sebagai berikut: Saat berada dalam status Nightsoul's Blessing, poin Nightsoul Xilonen dibatasi selama 9 detik. Setelah melewati batasan ini, poin Nightsoul Xilonen akan langsung habis terpakai."
       ],
       "12": "<br/>",
-      "13": "Saat berada dalam status Nightsoul's Blessing, Setelah poin Nightsoul mencapai batas maksimum, Xilonen tidak akan bisa menghasilkan poin Nightsoul melalui Talenta Pasif \"Netotiliztli's Echoes\".",
+      "13": "Saat berada dalam status Nightsoul's Blessing, Setelah poin Nightsoul mencapai batas maksimum, Xilonen tidak akan bisa menghasilkan poin Nightsoul melalui Talenta Ascension \"Netotiliztli's Echoes\".",
       "14": "<br/>",
       "15": "<i>Dalam beberapa hal, kerajinan permata dan pencampuran musik memiliki prinsip yang sama: Menyaring kotoran dan menyisakan bagian yang paling bercahaya untuk disimpan.",
       "16": "Namun, Xilonen tidak pilih-pilih soal keduanya. Lagi pula, dia menikmati keduanya kok!</i>"

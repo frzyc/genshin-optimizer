@@ -114,8 +114,8 @@
   "constellation1": {
     "name": "Swelling Lake",
     "description": {
-      "0": "Setelah mengambil Sourcewater Droplet, akan memulihkan 2 poin Energy.",
-      "1": "Harus membuka Talenta Pasif \"Spotless Waters\" terlebih dahulu."
+      "0": "Mengambil Sourcewater Droplet akan memulihkan 2 poin Energy untuk Pengembara.",
+      "1": "Harus membuka Talenta Ascension \"Spotless Waters\" terlebih dahulu."
     }
   },
   "constellation2": {

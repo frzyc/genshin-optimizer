@@ -139,7 +139,7 @@
     "description": {
       "0": "Al aplicar un <strong>decreto deudosangriento</strong>, este se convierte en un decreto deudosangriento vinculante.",
       "1": "Cuando Arlecchino absorbe dicho decreto, libera unas llamas lunaciagas que infligen una cantidad de <pyro>Daño Pyro en el AdE</pyro> equivalente al 900% de su ATQ y que aumentan en un 20% todas sus RES Elementales y su RES Física durante 15 s. Este efecto solo se puede activar una vez cada 10 s.",
-      "2": "Es necesario desbloquear el talento pasivo “Solo el sufrimiento podrá redimir”."
+      "2": "Es necesario desbloquear el talento de ascensión “Solo el sufrimiento podrá redimir”."
     }
   },
   "constellation3": {

@@ -105,7 +105,7 @@
     "description": {
       "0": "Wenn die Truppe nur aus <pyro>Pyro</pyro>- und <electro>Elektro</electro>-Figuren besteht und sich mindestens 1 Pyro- und 1 Elektro-Figur darin befinden:",
       "1": "Chevreuse gewährt Truppenmitgliedern in der Nähe den Effekt „Koordinierte Taktik“, wodurch der <pyro>Pyro</pyro>- und <electro>Elektro</electro>-WDS der von der diesmaligen Reaktion „Überladen“ betroffenen Gegner 6 s lang um 40 % verringert wird, wenn diese Reaktion von den oben genannten Truppenmitgliedern ausgelöst wird.",
-      "2": "Wenn die Elementartypen der Figuren in der Truppe die Bedingungen dieses passiven Talents nicht erfüllen, wird der vorhandene Effekt „Koordinierte Taktik“ entfernt."
+      "2": "Wenn die Elementartypen der Figuren in der Truppe die Bedingungen dieses Aufstiegstalents nicht erfüllen, wird der vorhandene Effekt „Koordinierte Taktik“ entfernt."
     }
   },
   "passive2": {
@@ -125,7 +125,7 @@
     "name": "Die Frontlinie stabilisierende Entschlossenheit",
     "description": {
       "0": "Gibt den aktuellen Figuren mit dem Effekt „Koordinierte Taktik“ (außer Chevreuse selbst), die die Reaktion „Überladen“ auslösen, 6 Punkte Elementarenergie, 10 s Abklingzeit.",
-      "1": "Das passive Talent „Koordinierte Taktik der Vorhut“ muss zuerst freigeschaltet werden."
+      "1": "Das Aufstiegstalent „Koordinierte Taktik der Vorhut“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation2": {

@@ -128,15 +128,15 @@
   "constellation1": {
     "name": "Venerable Institution",
     "description": {
-      "0": "Saat Neuvillette memasuki medan pertempuran, mendapatkan satu lapis Past Draconic Glories dari Talenta Pasif \"Heir to the Ancient Sea's Authority\". Harus membuka Talenta Pasif \"Heir to the Ancient Sea's Authority\" terlebih dahulu.",
+      "0": "Saat Neuvillette memasuki medan pertempuran, mendapatkan satu lapis Past Draconic Glories dari Talenta Ascension \"Heir to the Ancient Sea's Authority\". Harus membuka Talenta Ascension \"Heir to the Ancient Sea's Authority\" terlebih dahulu.",
       "1": "Selain itu, saat melancarkan Charged Attack Empowerment: Legal Evaluation dan Charged Attack: Equitable Judgment, ketahanan Neuvillette terhadap interupsi akan meningkat."
     }
   },
   "constellation2": {
     "name": "Juridical Exhortation",
     "description": {
-      "0": "Talenta Pasif \"Heir to the Ancient Sea's Authority\" mendapatkan penguatan: Untuk setiap lapis Past Draconic Glories yang dimiliki, akan meningkatkan CRIT DMG Charged Attack: Equitable Judgment sebesar 14%, peningkatan maksimum yang bisa diperoleh dengan cara ini adalah 42%.",
-      "1": "Harus membuka Talenta Pasif \"Heir to the Ancient Sea's Authority\" terlebih dahulu."
+      "0": "Talenta Ascension \"Heir to the Ancient Sea's Authority\" mendapatkan penguatan: Untuk setiap lapis Past Draconic Glories yang dimiliki, akan meningkatkan CRIT DMG Charged Attack: Equitable Judgment sebesar 14%, peningkatan maksimum yang bisa diperoleh dengan cara ini adalah 42%.",
+      "1": "Harus membuka Talenta Ascension \"Heir to the Ancient Sea's Authority\" terlebih dahulu."
     }
   },
   "constellation3": {

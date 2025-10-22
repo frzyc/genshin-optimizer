@@ -108,7 +108,7 @@
       "2": "Personagens que estão sob o estado Recompensa do Cálice Dourado, ao sofrerem um <dendro>Ataque Dendro</dendro>, aumentarão a Proficiência Elemental de todos os personagens próximos em 100 por 10s; além disso, ao desencadearem a reação de Florescimento ou Florescimento Lunar, substituirão a criação de um Núcleo Dendro por um \"Núcleo da Riqueza\".",
       "3": "Diferente do Núcleo Dendro, o Núcleo da Riqueza explode rapidamente e tem uma AdE maior.",
       "4": "O Núcleo da Riqueza não pode desencadear as reações de Germinação e Superflorescimento, e compartilha o limite de quantidade com os Núcleos Dendro. O Dano do Núcleo da Riqueza é considerado como Dano de Núcleo Dendro criado pela reação de Florescimento.",
-      "5": "Quando os requisitos de Talento Passivo do tipo de elementos dos personagens da equipe não forem atendidos, os efeitos da Recompensa do Cálice Dourado existentes serão removidos."
+      "5": "Quando os requisitos de Talento de Ascensão do tipo de elementos dos personagens da equipe não forem atendidos, os efeitos da Recompensa do Cálice Dourado existentes serão removidos."
     }
   },
   "passive2": {
@@ -136,7 +136,7 @@
     "name": "Chuva Florestelar",
     "description": {
       "0": "Quando um personagem que foi afetado pelo efeito de \"Recompensa do Cálice Dourado\" inflige <hydro>Dano Hydro</hydro> contra um inimigo, a <hydro>RES Hydro</hydro> desse inimigo será reduzida em 35% por 10s. Quando um inimigo sofre Dano de uma reação de Florescimento ou Florescimento Lunar, a <dendro>RES Dendro</dendro> dele é reduzida em 35% por 10s.",
-      "1": "É necessário ter desbloqueado o Talento \"Corte das Pétalas Dançantes\"."
+      "1": "É necessário ter desbloqueado o Talento de Ascensão \"Corte das Pétalas Dançantes\"."
     }
   },
   "constellation3": {

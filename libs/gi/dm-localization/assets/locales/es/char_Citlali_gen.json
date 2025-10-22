@@ -150,8 +150,8 @@
       "0": "La Maestría Elemental de Citlalí aumenta en 125 pts., y la de los demás personajes que estén bajo la protección del escudo de obsidiana blanca o que esté siguiendo Itzpapa aumenta en 250 pts.",
       "1": "Además, al usar la Habilidad Elemental, <strong>Estrella negra albaescarcha</strong>, también otorga un escudo de obsidiana blanca a los personajes en uso cercanos.",
       "2": "<br/>",
-      "3": "Por otro lado, mejora el efecto del talento pasivo “Lluvia helada de Mamaloaco”:",
-      "4": "Mientras Itzpapa esté activa, después de que un personaje cercano del equipo cause una reacción de Congelado o Derretido, la RES <pyro>Pyro</pyro> e <hydro>Hydro</hydro> de los enemigos afectados por dichas reacciones se reduce en un 20% adicional. Este efecto dura 12 s y, para poder activarlo, es necesario desbloquear el talento pasivo “Lluvia helada de Mamaloaco”."
+      "3": "Por otro lado, mejora el efecto del talento de ascensión “Lluvia helada de Mamaloaco”:",
+      "4": "Mientras Itzpapa esté activa, después de que un personaje cercano del equipo cause una reacción de Congelado o Derretido, la RES <pyro>Pyro</pyro> e <hydro>Hydro</hydro> de los enemigos afectados por dichas reacciones se reduce en un 20% adicional. Este efecto dura 12 s y, para poder activarlo, es necesario desbloquear el talento de ascensión “Lluvia helada de Mamaloaco”."
     }
   },
   "constellation3": {

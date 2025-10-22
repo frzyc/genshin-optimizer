@@ -141,7 +141,7 @@
     "name": "Mualani darà il meglio di sé!",
     "description": {
       "0": "Mualani ottiene 2 accumuli di Slancio ondoso di <strong>Squalo spaccaonde</strong> quando entra in stato di Grazia dell'Anima della Notte. Ciascun Gonfiotto raccolto le conferisce 1 accumulo.",
-      "1": "In più, quando raccoglie 2 Gonfiotti nella medesima iterazione di Grazia dell'Anima della Notte, Mualani riceve 12 punti Anima della Notte aggiuntivi nell'arco di 2 s. Quest'effetto richiede il talento passivo Gonfiotto d'acqua dolce termoresistente."
+      "1": "In più, quando raccoglie 2 Gonfiotti nella medesima iterazione di Grazia dell'Anima della Notte, Mualani riceve 12 punti Anima della Notte aggiuntivi nell'arco di 2 s. Richiede il talento d'ascensione Gonfiotto d'acqua dolce termoresistente."
     }
   },
   "constellation3": {
@@ -154,7 +154,7 @@
   "constellation4": {
     "name": "Gonfiotti per Sharky",
     "description": {
-      "0": "L'energia di Mualani si ripristina di 8 quando raccoglie un Gonfiotto. Richiede il talento passivo Gonfiotto d'acqua dolce termoresistente.",
+      "0": "L'energia di Mualani si ripristina di 8 quando raccoglie un Gonfiotto. Richiede il talento d'ascensione Gonfiotto d'acqua dolce termoresistente.",
       "1": "In più, i DAN inflitti da <strong>Squaloscoppio ondapazza</strong> aumentano di un 75%."
     }
   },

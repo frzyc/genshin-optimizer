@@ -171,9 +171,9 @@
   "constellation1": {
     "name": "Sönmeyen Tutku",
     "description": {
-      "0": "\"Güreş Takımının Üçlü Sıçrayışı!\" Pasif Yeteneğinin etkileri geliştirilir:",
+      "0": "\"Güreş Takımının Üçlü Sıçrayışı!\" Yükseltme Yeteneğinin etkileri geliştirilir:",
       "1": "Varesa, \"Gürleyen Kasırga Patlaması\" Özel Havadan Saldırısını kullanırken 5 saniyeliğine \"Gökkuşağı Çarpışması\" etkisini kazanır.",
-      "2": "\"Gökkuşağı Çarpışması\" etkinken Varesa'nın Havadan Saldırısının yere vuruş Hasarı, Varesa'nın Ateşli Tutku durumunda olup olmaması fark etmeksizin Saldırısının %180'i kadar artar. Bu etkiyi kullanmak için \"Güreş Takımının Üçlü Sıçrayışı!\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "2": "\"Gökkuşağı Çarpışması\" etkinken Varesa'nın Havadan Saldırısının yere vuruş Hasarı, Varesa'nın Ateşli Tutku durumunda olup olmaması fark etmeksizin Saldırısının %180'i kadar artar. Bu etkiyi kullanmak için \"Güreş Takımının Üçlü Sıçrayışı!\" Yükseltme Yeteneğinin açılmış olması gerekir.",
       "3": "<br/>",
       "4": "Ayrıca Varesa Gece Ruhunun Lütfu durumundaki Ani Taarruz modundayken %30 daha az Gece Ruhu puanı veya Filojiston tüketir."
     }

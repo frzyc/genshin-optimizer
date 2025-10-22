@@ -134,7 +134,7 @@
     "description": {
       "0": "Aşağıdaki koşullar karşılandığında Sethos 10sn boyunca %15 <electro>Elektrik Hasarı Bonusu</electro> kazanır (2 kademeye kadar birikebilir, kademelerin süresi bağımsızdır):",
       "1": [
-        "Hedefli Atışlar aracılığıyla Element Enerjisi tüketmek; bu koşulun tetiklenmesi için önce \"Kara Çaylağın Sırrı\" Pasif Yeteneğinin açılmış olması gerekir.",
+        "Hedefli Atışlar aracılığıyla Element Enerjisi tüketmek; bu koşulun tetiklenmesi için \"Kara Çaylağın Sırrı\" Yükseltme Yeteneğinin açılmış olması gerekir.",
         "<strong>Kadim Ayin: Gürleyen Kumlar</strong> aracılığıyla Element Tepkimeleri tetikleyerek Element Enerjisi yenilemek.",
         "<strong>Saklı Ayin: Gölgedelen Alacakaranlık</strong> kullanmak."
       ]
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Sürgün Güneş Tapınağının Büyük Kitabı",
     "description": {
-      "0": "<strong>Gölgedelen Atışı</strong> bir düşmana isabet ettiğinde, \"Kara Çaylağın Sırrı\" Pasif Yeteneği tarafından tüketilen Element Enerjisi iade edilir. Bu etki her 15 saniyede bir tetiklenebilir. \"Kara Çaylağın Sırrı\" Pasif Yeteneğinin açılmış olması gerekir."
+      "0": "<strong>Gölgedelen Atışı</strong> bir düşmana isabet ettiğinde, \"Kara Çaylağın Sırrı\" Yükseltme Yeteneği tarafından tüketilen Element Enerjisi iade edilir. Bu etki her 15 saniyede bir tetiklenebilir. \"Kara Çaylağın Sırrı\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   }
 }

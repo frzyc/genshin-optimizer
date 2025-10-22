@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Angst den Übeltätern",
     "description": {
-      "0": "Ändert den Effekt „Gebot der Gnade“ von dem passiven Talent „Tag des Plädoyers der Gerechtigkeit“ wie folgt:",
+      "0": "Ändert den Effekt „Gebot der Gnade“ von dem Aufstiegstalent „Tag des Plädoyers der Gerechtigkeit“ wie folgt:",
       "1": "Wriothesley erhält „Gebot der Gnade“, sobald der fünfte Angriff einer Kombo seiner Sturmfäuste trifft, während seine LP unter 60 % liegen oder er sich im Zustand „Eiskalte Bestrafung“ von <strong>Eiszahn-Ansturm</strong> befindet. 2,5 s Abklingzeit.",
       "2": "<br/>",
       "3": "Außerdem wird Rüge – Gefrierende Sprungfaust wie folgt verstärkt:",
@@ -133,14 +133,14 @@
         " Verlängert die Dauer von „Eiskalter Bestrafung“ um 4 s, wenn in diesem Zustand ein Treffer gelandet wird. Die Dauer von „Eiskalter Bestrafung“ kann während der Dauer eines Zustands nur einmal auf diese Weise verlängert werden."
       ],
       "5": "<br/>",
-      "6": "Das passive Talent „Tag des Plädoyers der Gerechtigkeit“ muss zuerst freigeschaltet werden."
+      "6": "Das Aufstiegstalent „Tag des Plädoyers der Gerechtigkeit“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation2": {
     "name": "Fesseln den Hochmütigen",
     "description": {
-      "0": "Erhöht beim Auslösen von <strong>Schwarzgoldener Wolfsbiss</strong> den verursachten Schaden für jede Stapelung von „Erlass der Anklage“ des passiven Talents „Stunde der Vergeltung der Sünde“ um 40 %.",
-      "1": "Das passive Talent „Stunde der Vergeltung der Sünde“ muss zuerst freigeschaltet werden."
+      "0": "Erhöht beim Auslösen von <strong>Schwarzgoldener Wolfsbiss</strong> den verursachten Schaden für jede Stapelung von „Erlass der Anklage“ des Aufstiegstalents „Stunde der Vergeltung der Sünde“ um 40 %.",
+      "1": "Das Aufstiegstalent „Stunde der Vergeltung der Sünde“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation3": {
@@ -153,7 +153,7 @@
   "constellation4": {
     "name": "Erlösung den Leidenden",
     "description": {
-      "0": "Erhöht die Menge an LP, die Wriothesley durch Rüge – Gefrierende Sprungfaust wiederherstellt, auf 50 % seiner max. LP. Das passive Talent „Tag des Plädoyers der Gerechtigkeit“ muss zuerst freigeschaltet werden.",
+      "0": "Erhöht die Menge an LP, die Wriothesley durch Rüge – Gefrierende Sprungfaust wiederherstellt, auf 50 % seiner max. LP. Das Aufstiegstalent „Tag des Plädoyers der Gerechtigkeit“ muss zuerst freigeschaltet werden.",
       "1": "Außerdem treten unterschiedliche Effekte in Kraft, wenn die so wiederhergestellten LP einen Überschuss aufweisen, abhängig davon, ob Wriothesley die aktuelle Figur ist oder nicht: Ist Wriothesley die aktuelle Figur, erhöht sich seine Angriffs-GSW 4 s lang um 20 %; befindet er sich inaktiv in der Truppe, erhöht sich die Angriffs-GSW aller eigenen Truppenmitglieder 6 s lang um 10 %. Die beiden Boni der Angriffs-GSW können nicht gestapelt werden."
     }
   },
@@ -168,7 +168,7 @@
     "name": "Trost den Unschuldigen",
     "description": {
       "0": "Erhöht die KT von Rüge – Gefrierende Sprungfaust um 10 %, den kritischen Schaden davon um 80 % und kann zusätzlich Eiszapfen erschaffen, die 100 % des ursprünglichen Schadens als <cryo>Kryo-Schaden</cryo> verursachen. Der auf diese Weise verursachte Schaden wird als Schaden des heftigen Schlags betrachtet.",
-      "1": "Das passive Talent „Tag des Plädoyers der Gerechtigkeit“ muss zuerst freigeschaltet werden."
+      "1": "Das Aufstiegstalent „Tag des Plädoyers der Gerechtigkeit“ muss zuerst freigeschaltet werden."
     }
   }
 }

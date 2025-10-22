@@ -133,7 +133,7 @@
     "name": "Primer acto: Plumaje ostentoso",
     "description": {
       "0": "En el estado de <strong>gracia del viento</strong>, la Vel. de Ataque de Obliteración celeste y Ráfaga celeste del Trotamundos aumenta en un 10%.",
-      "1": "Además, los proyectiles ventosos del talento pasivo “Céfiro de la ensoñación” infligen un daño adicional equivalente al 25% del ATQ. Para activar este efecto, es necesario desbloquear el talento pasivo “Céfiro de la ensoñación”."
+      "1": "Además, los proyectiles ventosos del talento de ascensión “Céfiro de la ensoñación” infligen un daño adicional equivalente al 25% del ATQ. Para activar este efecto, es necesario desbloquear el talento de ascensión “Céfiro de la ensoñación”."
     }
   },
   "constellation2": {
@@ -153,8 +153,8 @@
   "constellation4": {
     "name": "Cuarto acto: Barco a la deriva",
     "description": {
-      "0": "Si al usar <strong>Ilustración emplumada: Balada del viento</strong> se activa el fortalecimiento de un tipo elemental mediante el talento pasivo “Flor de jade”, se obtiene aleatoriamente un fortalecimiento más que no se haya activado al usar dicha habilidad. Solo se pueden obtener 3 fortalecimientos elementales al mismo tiempo.",
-      "1": "Se necesita desbloquear el talento pasivo “Flor de jade”."
+      "0": "Si al usar <strong>Ilustración emplumada: Balada del viento</strong> se activa el fortalecimiento de un tipo elemental mediante el talento de ascensión “Flor de jade”, se obtiene aleatoriamente un fortalecimiento más que no se haya activado al usar dicha habilidad. Solo se pueden obtener 3 fortalecimientos elementales al mismo tiempo.",
+      "1": "Se necesita desbloquear el talento de ascensión “Flor de jade”."
     }
   },
   "constellation5": {

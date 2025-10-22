@@ -171,9 +171,9 @@
   "constellation1": {
     "name": "Passion éternelle",
     "description": {
-      "0": "L'aptitude passive « Le triple saut en tag team ! » est renforcée :",
+      "0": "L'aptitude d'élévation « Le triple saut en tag team ! » est renforcée :",
       "1": "Lorsqu'elle effectue son attaque plongeante spéciale « Éruption-tornade tonitruante », Varesa obtient également l'effet Effondrement d'arc-en-ciel pendant 5 s.",
-      "2": "Pendant la durée de l'effet Effondrement d'arc-en-ciel, l'impact des attaques plongeantes de Varesa inflige des DGT supplémentaires d'une valeur équivalant à 180 % de son ATQ que sa passion ardente soit activée ou non, l'aptitude passive « Le triple saut en tag team ! » devant être déjà débloquée.",
+      "2": "Pendant la durée de l'effet Effondrement d'arc-en-ciel, l'impact des attaques plongeantes de Varesa inflige des DGT supplémentaires d'une valeur équivalant à 180 % de son ATQ que sa passion ardente soit activée ou non, l'aptitude d'élévation « Le triple saut en tag team ! » devant être déjà débloquée.",
       "3": "<br/>",
       "4": "De plus, lorsque Varesa est dans le mode Avancée soudaine de sa bénédiction noctâme, les points de noctâme ou le phlogistique qu'elle consomme diminuent de 30 %."
     }

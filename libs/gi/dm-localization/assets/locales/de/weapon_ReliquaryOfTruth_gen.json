@@ -1,0 +1,24 @@
+{
+  "name": "Kästchen der Wahrheit",
+  "description": {
+    "0": "Ein pyramidenförmiges Kästchen aus Gold und Jade, das der Legende nach einst im Tempel tief in Tulaytullah, der Stadt der Saphire, als Opfer dargebracht wurde."
+  },
+  "passiveName": "Wahrheit hinter Lügen",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die KT um <cryo>8 %</cryo>. Verleiht dem Träger beim Anwenden der Elementarfähigkeit den Effekt „Geheimnis der Lüge“: Erhöht die Elementarkunde 12 s lang um <cryo>80</cryo> Punkte. Verleiht dem Träger, wenn er Gegnern durch die Reaktion Mondspross Schaden zufügt, den Effekt „Mond der wahren Erkenntnis“: Erhöht den kritischen Schaden 4 s lang um <cryo>24 %</cryo>. Erhöht, wenn die Effekte „Geheimnis der Lüge“ und „Mond der wahren Erkenntnis“ gleichzeitig existieren, die Wirkung beider Effekte jeweils um 50 %."
+    },
+    "1": {
+      "0": "Erhöht die KT um <cryo>10 %</cryo>. Verleiht dem Träger beim Anwenden der Elementarfähigkeit den Effekt „Geheimnis der Lüge“: Erhöht die Elementarkunde 12 s lang um <cryo>100</cryo> Punkte. Verleiht dem Träger, wenn er Gegnern durch die Reaktion Mondspross Schaden zufügt, den Effekt „Mond der wahren Erkenntnis“: Erhöht den kritischen Schaden 4 s lang um <cryo>30 %</cryo>. Erhöht, wenn die Effekte „Geheimnis der Lüge“ und „Mond der wahren Erkenntnis“ gleichzeitig existieren, die Wirkung beider Effekte jeweils um 50 %."
+    },
+    "2": {
+      "0": "Erhöht die KT um <cryo>12 %</cryo>. Verleiht dem Träger beim Anwenden der Elementarfähigkeit den Effekt „Geheimnis der Lüge“: Erhöht die Elementarkunde 12 s lang um <cryo>120</cryo> Punkte. Verleiht dem Träger, wenn er Gegnern durch die Reaktion Mondspross Schaden zufügt, den Effekt „Mond der wahren Erkenntnis“: Erhöht den kritischen Schaden 4 s lang um <cryo>36 %</cryo>. Erhöht, wenn die Effekte „Geheimnis der Lüge“ und „Mond der wahren Erkenntnis“ gleichzeitig existieren, die Wirkung beider Effekte jeweils um 50 %."
+    },
+    "3": {
+      "0": "Erhöht die KT um <cryo>14 %</cryo>. Verleiht dem Träger beim Anwenden der Elementarfähigkeit den Effekt „Geheimnis der Lüge“: Erhöht die Elementarkunde 12 s lang um <cryo>140</cryo> Punkte. Verleiht dem Träger, wenn er Gegnern durch die Reaktion Mondspross Schaden zufügt, den Effekt „Mond der wahren Erkenntnis“: Erhöht den kritischen Schaden 4 s lang um <cryo>42 %</cryo>. Erhöht, wenn die Effekte „Geheimnis der Lüge“ und „Mond der wahren Erkenntnis“ gleichzeitig existieren, die Wirkung beider Effekte jeweils um 50 %."
+    },
+    "4": {
+      "0": "Erhöht die KT um <cryo>16 %</cryo>. Verleiht dem Träger beim Anwenden der Elementarfähigkeit den Effekt „Geheimnis der Lüge“: Erhöht die Elementarkunde 12 s lang um <cryo>160</cryo> Punkte. Verleiht dem Träger, wenn er Gegnern durch die Reaktion Mondspross Schaden zufügt, den Effekt „Mond der wahren Erkenntnis“: Erhöht den kritischen Schaden 4 s lang um <cryo>48 %</cryo>. Erhöht, wenn die Effekte „Geheimnis der Lüge“ und „Mond der wahren Erkenntnis“ gleichzeitig existieren, die Wirkung beider Effekte jeweils um 50 %."
+    }
+  }
+}

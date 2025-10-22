@@ -116,9 +116,9 @@
   "passive2": {
     "name": "Mappatura topografica",
     "description": {
-      "0": "Quando un personaggio attivo che si trova sotto l'effetto di Piumaquila di <strong>Canzone Piumaceleste</strong> e Ventanimo di <strong>Turbine Gelastrale</strong> mette a segno un colpo CRIT con i suoi attacchi, Ventanimo gli conferisce 1 accumulo di Rilevatore da Ostruzione oppressiva. Una singola iterazione di Ventanimo permette di ottenere in questo modo 1 accumulo di Rilevatore.",
+      "0": "Quando un personaggio attivo che si trova sotto l'effetto di Piumaquila di <strong>Canzone Piumaceleste</strong> e Ventanimo di <strong>Turbine Gelastrale</strong> mette a segno un colpo CRIT con i suoi attacchi, Ventanimo gli conferisce 1 accumulo del talento d'ascensione Rilevatore da Ostruzione oppressiva. Una singola iterazione di Ventanimo permette di ottenere in questo modo 1 accumulo di Rilevatore.",
       "1": "Inoltre, il numero massimo di accumuli che è possibile ottenere da Ventanimo aumenta di 1.",
-      "2": "Richiede lo sblocco di Ostruzione oppressiva."
+      "2": "Richiede il talento d'ascensione Ostruzione oppressiva."
     }
   },
   "passive3": {
@@ -136,8 +136,8 @@
   "constellation2": {
     "name": "Chi trova un amico",
     "description": {
-      "0": "Quando la Freccia Geloflusso di <strong>Turbine Gelastrale</strong> colpisce un avversario, o se il suo Razzo Gelostella colpisce gli avversari, viene generato 1 accumulo di Rilevatore del talento passivo Ostruzione oppressiva.",
-      "1": "Devi prima sbloccare il talento passivo Ostruzione oppressiva."
+      "0": "Quando la Freccia Geloflusso di <strong>Turbine Gelastrale</strong> colpisce un avversario, o se il suo Razzo Gelostella colpisce gli avversari, viene generato 1 accumulo di Rilevatore del talento d'ascensione Ostruzione oppressiva.",
+      "1": "Richiede il talento d'ascensione Ostruzione oppressiva."
     }
   },
   "constellation3": {
@@ -163,7 +163,8 @@
   "constellation6": {
     "name": "Consiglio del compagno",
     "description": {
-      "0": "Il numero massimo di accumuli di Rilevatore che lo stato di Ventanimo generato da <strong>Turbine Gelastrale</strong> può ottenere aumenta di 1. Devi prima sbloccare il talento passivo Ostruzione oppressiva. Inoltre, i personaggi attivi sotto l'effetto di Ventanimo infliggono un 60% di DAN da CRIT fisici in più."
+      "0": "Il numero massimo di accumuli di Rilevatore che lo stato di Ventanimo generato da <strong>Turbine Gelastrale</strong> può ottenere aumenta di 1. Richiede il talento d'ascensione Ostruzione oppressiva.",
+      "1": "Inoltre, i personaggi attivi sotto l'effetto di Ventanimo infliggono un 60% di DAN da CRIT fisici in più."
     }
   }
 }

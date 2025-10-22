@@ -472,6 +472,10 @@
       "icon": "UI_EquipIcon_Pole_Ilmarinen",
       "awakenIcon": "UI_EquipIcon_Pole_Ilmarinen_Awaken"
     },
+    "SacrificersStaff": {
+      "icon": "UI_EquipIcon_Pole_Krivule",
+      "awakenIcon": "UI_EquipIcon_Pole_Krivule_Awaken"
+    },
     "StaffOfHoma": {
       "icon": "UI_EquipIcon_Pole_Homa",
       "awakenIcon": "UI_EquipIcon_Pole_Homa_Awaken"
@@ -644,6 +648,10 @@
       "icon": "UI_EquipIcon_Catalyst_Ilmarinen",
       "awakenIcon": "UI_EquipIcon_Catalyst_Ilmarinen_Awaken"
     },
+    "DawningFrost": {
+      "icon": "UI_EquipIcon_Catalyst_Ziedas",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Ziedas_Awaken"
+    },
     "SkywardAtlas": {
       "icon": "UI_EquipIcon_Catalyst_Dvalin",
       "awakenIcon": "UI_EquipIcon_Catalyst_Dvalin_Awaken"
@@ -707,6 +715,10 @@
     "NightweaversLookingGlass": {
       "icon": "UI_EquipIcon_Catalyst_MenulisRing",
       "awakenIcon": "UI_EquipIcon_Catalyst_MenulisRing_Awaken"
+    },
+    "ReliquaryOfTruth": {
+      "icon": "UI_EquipIcon_Catalyst_Sistrum",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Sistrum_Awaken"
     },
     "HuntersBow": {
       "icon": "UI_EquipIcon_Bow_Hunters",
@@ -3065,6 +3077,24 @@
       "constellation4": "UI_Talent_S_Aino_01",
       "constellation5": "UI_Talent_U_Aino_02",
       "constellation6": "UI_Talent_S_Aino_04"
+    },
+    "Nefer": {
+      "icon": "UI_AvatarIcon_Nefer",
+      "iconSide": "UI_AvatarIcon_Side_Nefer",
+      "banner": "UI_NameCardPic_Nefer_P",
+      "bar": "UI_NameCardPic_Nefer_Alpha",
+      "skill": "Skill_S_Nefer_01",
+      "burst": "Skill_E_Nefer_01_HD",
+      "passive1": "UI_Talent_S_Nefer_05",
+      "passive2": "UI_Talent_S_Nefer_06",
+      "passive3": "UI_Talent_S_Nefer_07",
+      "passive": "UI_Talent_S_Nefer_08",
+      "constellation1": "UI_Talent_S_Nefer_01",
+      "constellation2": "UI_Talent_S_Nefer_02",
+      "constellation3": "UI_Talent_U_Nefer_01",
+      "constellation4": "UI_Talent_S_Nefer_03",
+      "constellation5": "UI_Talent_U_Nefer_02",
+      "constellation6": "UI_Talent_S_Nefer_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

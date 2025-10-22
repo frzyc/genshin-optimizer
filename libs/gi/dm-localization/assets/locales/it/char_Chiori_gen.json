@@ -140,7 +140,7 @@
       "1": "In più, se nel gruppo è presente un altro personaggio di <geo>Geo</geo> oltre a Chiori, Hasode svolazzante innesca i seguenti effetti alla fine dello scatto.",
       "2": [
         " Evoca 1 ulteriore Tamoto. È possibile avere soltanto 1 Tamoto aggiuntiva, evocata con questo metodo o tramite i costrutti di Geo.",
-        " Se già sbloccato, attiva il talento passivo Tocco finale."
+        " Se già sbloccato, attiva il talento d'ascensione Tocco finale. Richiede il talento d'ascensione Tocco finale."
       ]
     }
   },
@@ -161,8 +161,8 @@
   "constellation4": {
     "name": "Tre cortesie sartoriali",
     "description": {
-      "0": "Per 8 s dopo aver attivato uno degli effetti del talento passivo Su misura, quando l'attacco normale, caricato o in picchiata del tuo personaggio attivo colpisce un avversario vicino, viene evocata una Robobambola semplificata, Kinu, vicino al suddetto avversario. È possibile evocare in questo modo 1 Kinu al secondo, fino a 3 volte per ogni iterazione degli effetti Carpe diem o Sartoria generati da Su misura. L'effetto sopracitato può attivarsi una volta ogni 15 s.",
-      "1": "Richiede il talento passivo Su misura."
+      "0": "Per 8 s dopo aver attivato uno degli effetti del talento d'ascensione Su misura, quando l'attacco normale, caricato o in picchiata del tuo personaggio attivo colpisce un avversario vicino, viene evocata una Robobambola semplificata, Kinu, vicino al suddetto avversario. È possibile evocare in questo modo 1 Kinu al secondo, fino a 3 volte per ogni iterazione degli effetti Carpe diem o Sartoria generati da Su misura. L'effetto sopracitato può attivarsi una volta ogni 15 s.",
+      "1": "Richiede il talento d'ascensione Su misura."
     }
   },
   "constellation5": {
@@ -175,7 +175,7 @@
   "constellation6": {
     "name": "Un unico principio",
     "description": {
-      "0": "Dopo aver attivato uno degli effetti del talento passivo Su misura, il TdR di <strong>Hasode svolazzante</strong> di Chiori si riduce di 12 s. Richiede il talento passivo Su misura.",
+      "0": "Dopo aver attivato uno degli effetti del talento d'ascensione Su misura, il TdR di <strong>Hasode svolazzante</strong> di Chiori si riduce di 12 s. Richiede il talento d'ascensione Su misura.",
       "1": "In più, i DAN inflitti dagli attacchi normali di Chiori aumentano di un 235% della sua DIF."
     }
   }

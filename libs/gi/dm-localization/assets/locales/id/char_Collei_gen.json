@@ -123,11 +123,11 @@
   "constellation2": {
     "name": "Through Hill and Copse",
     "description": {
-      "0": "Talenta Pasif \"Floral Sidewinder\" akan berubah menjadi:",
-      "1": "Saat <strong>Floral Ring</strong> kembali, Talenta Pasif \"Floral Sidewinder\" akan memberikan status \"Sprout\" untuk Karakter, yang akan mengakibatkan <dendro>Dendro DMG</dendro> sebesar 40% dari ATK Collei secara terus-menerus kepada musuh di sekitar selama 3 detik.",
+      "0": "Talenta Ascension \"Floral Sidewinder\" akan berubah menjadi:",
+      "1": "Saat <strong>Floral Ring</strong> kembali, Talenta Ascension \"Floral Sidewinder\" akan memberikan status \"Sprout\" untuk Karakter, yang akan mengakibatkan <dendro>Dendro DMG</dendro> sebesar 40% dari ATK Collei secara terus-menerus kepada musuh di sekitar selama 3 detik.",
       "2": "Sejak melancarkan <strong>Floral Brush</strong> dan sebelum status Sprout kali ini hilang, jika ada Karakter di dalam party yang memicu reaksi Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, Lunar-Bloom, atau Burgeon, maka durasi efek Sprout kali ini diperpanjang 3 detik.",
       "3": "Perpanjangan durasi efek Sprout yang bisa didapatkan dengan cara ini adalah 1 kali. Jika efek Sprout terpicu lagi selama durasinya berlangsung, maka efek yang awal akan dihapus. DMG yang diakibatkan oleh efek Sprout dianggap sebagai DMG Elemental Skill.",
-      "4": "Harus membuka Talenta Pasif Floral Sidewinder terlebih dahulu."
+      "4": "Harus membuka Talenta Ascension Floral Sidewinder terlebih dahulu."
     }
   },
   "constellation3": {

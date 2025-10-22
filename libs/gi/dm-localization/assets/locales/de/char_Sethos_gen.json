@@ -134,7 +134,7 @@
     "description": {
       "0": "Erhöht Sethos’ <electro>Elektro-SCH-Bonus</electro> beim Erfüllen einer der folgenden Bedingungen 10 s lang um 15 %, 2-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
       "1": [
-        " Es wird Elementarenergie durch einen gezielten Schuss verbraucht. Hierfür muss das passive Talent „Metapher des Dunkelmilans“ zuerst freigeschaltet werden.",
+        " Es wird Elementarenergie durch einen gezielten Schuss verbraucht. Hierfür muss das Aufstiegstalent „Metapher des Dunkelmilans“ zuerst freigeschaltet werden.",
         " Es wird durch <strong>Uraltes Ritual – Donnergebrüll des Sandes</strong> eine Elementarreaktion ausgelöst, wobei Elementarenergie wiederhergestellt wird.",
         " Anwenden von <strong>Geheimes Ritual – Zwielicht-Schattenbohrer</strong>."
       ]
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Foliant des Tempels der wandernden Sonne",
     "description": {
-      "0": "Erstattet, sobald ein Gegner vom <strong>Schattenbohrerpfeil</strong> getroffen wird, die Elementarenergie, die mit „Metapher des Dunkelmilans“ verbraucht wurde, zurück, 15 s Abklingzeit. Das passive Talent „Metapher des Dunkelmilans“ muss zuerst freigeschaltet werden."
+      "0": "Erstattet, sobald ein Gegner vom <strong>Schattenbohrerpfeil</strong> getroffen wird, die Elementarenergie, die mit „Metapher des Dunkelmilans“ verbraucht wurde, zurück, 15 s Abklingzeit. Das Aufstiegstalent „Metapher des Dunkelmilans“ muss zuerst freigeschaltet werden."
     }
   }
 }

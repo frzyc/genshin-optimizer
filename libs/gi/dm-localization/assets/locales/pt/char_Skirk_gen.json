@@ -79,7 +79,7 @@
       "4": "<br/>",
       "5": "<strong>Devastação: Obliteração</strong>",
       "6": "Um Supremo especial que pode ser usado mesmo sem consumir Sutileza da Serpente.",
-      "7": "Após usá-lo, Skirk obterá o efeito \"Tudo Há de Murchar\", que durará até o término do Lampejo de Sete Fases. Após desbloquear o Talento Passivo <strong>Razão Além da Razão</strong>, ela também poderá absorver Fendas do Vazio próximas.",
+      "7": "Após usá-lo, Skirk obterá o efeito \"Tudo Há de Murchar\", que durará até o término do Lampejo de Sete Fases. Após desbloquear o Talento de Ascensão <strong>Razão Além da Razão</strong>, ela também poderá absorver Fendas do Vazio próximas.",
       "8": "Enquanto \"Tudo Há de Murchar\" estiver ativo, a cada 0.1s, após o Ataque Normal de Skirk acertar um inimigo, esse Ataque Normal causará Dano aumentado. Se ela tiver absorvido alguma Fenda do Vazio ao usar o <strong>Devastação: Obliteração</strong>, o Dano desse Ataque Normal será ainda mais aumentado com base no número de Fendas absorvidas.",
       "9": "Esse efeito será cancelado após ser acionado 10 vezes."
     },
@@ -134,8 +134,8 @@
   "constellation1": {
     "name": "Queda Longínqua",
     "description": {
-      "0": "Aprimora os efeitos do Talento Passivo <strong>Razão Além da Razão</strong>: Skirk invocará uma lâmina de cristal por cada Fenda do Vazio absorvida para atacar inimigos próximos, causando 500% de seu ATQ como <cryo>Dano Cryo</cryo>. Esse Dano é considerado como Dano de Ataque Carregado.",
-      "1": "É necessário primeiro desbloquear o Talento Passivo <strong>Razão Além da Razão</strong>."
+      "0": "Aprimora os efeitos do Talento de Ascensão <strong>Razão Além da Razão</strong>: Skirk invocará uma lâmina de cristal por cada Fenda do Vazio absorvida para atacar inimigos próximos, causando 500% de seu ATQ como <cryo>Dano Cryo</cryo>. Esse Dano é considerado como Dano de Ataque Carregado.",
+      "1": "É necessário primeiro desbloquear o Talento de Ascensão <strong>Razão Além da Razão</strong>."
     }
   },
   "constellation2": {
@@ -156,8 +156,8 @@
   "constellation4": {
     "name": "Fluxo Fraturado",
     "description": {
-      "0": "Aprimora os efeitos do Talento Passivo <strong>Retorno à Desolação</strong>: Cada acúmulo de Encruzilhada da Morte também aumenta o ATQ da Skirk em 10%/20%/40%.",
-      "1": "É necessário desbloquear o Talento Passivo <strong>Retorno à Desolação</strong> primeiro."
+      "0": "Aprimora os efeitos do Talento de Ascensão <strong>Retorno à Desolação</strong>: Cada acúmulo de Encruzilhada da Morte também aumenta o ATQ da Skirk em 10%/20%/40%.",
+      "1": "É necessário desbloquear o Talento de Ascensão <strong>Retorno à Desolação</strong> primeiro."
     }
   },
   "constellation5": {
@@ -170,8 +170,8 @@
   "constellation6": {
     "name": "Para a Fonte",
     "description": {
-      "0": "Cada Fenda do Vazio absorvida por Skirk através dos efeitos do Talento Passivo <strong>Razão Além da Razão</strong> concederá a ela 1 acúmulo de Devastação: Corte. Ela pode consumir esses acúmulos para iniciar ataques coordenados e reduzir o Dano recebido enquanto estiver no modo <strong>Lampejo de Sete Fases</strong>. Esse efeito dura 15s, pode acumular até 3 vezes, e a duração de cada acúmulo é contada separadamente.",
-      "1": "É necessário desbloquear o Talento Passivo \"Razão Além da Razão\" primeiro.",
+      "0": "Cada Fenda do Vazio absorvida por Skirk através dos efeitos do Talento de Ascensão <strong>Razão Além da Razão</strong> concederá a ela 1 acúmulo de Devastação: Corte. Ela pode consumir esses acúmulos para iniciar ataques coordenados e reduzir o Dano recebido enquanto estiver no modo <strong>Lampejo de Sete Fases</strong>. Esse efeito dura 15s, pode acumular até 3 vezes, e a duração de cada acúmulo é contada separadamente.",
+      "1": "É necessário desbloquear o Talento de Ascensão \"Razão Além da Razão\" primeiro.",
       "2": "<br/>",
       "3": "<strong>Devastação: Corte</strong>",
       "4": [

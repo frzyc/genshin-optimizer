@@ -65,6 +65,7 @@ import Mona from './Mona'
 import Mualani from './Mualani'
 import Nahida from './Nahida'
 import Navia from './Navia'
+import Nefer from './Nefer'
 import Neuvillette from './Neuvillette'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
@@ -178,6 +179,7 @@ const data: TagMapNodeEntries[] = [
   Mualani,
   Nahida,
   Navia,
+  Nefer,
   Neuvillette,
   Nilou,
   Ningguang,

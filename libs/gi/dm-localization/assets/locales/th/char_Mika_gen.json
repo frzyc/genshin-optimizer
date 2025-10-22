@@ -116,9 +116,9 @@
   "passive2": {
     "name": "Topographical Mapping",
     "description": {
-      "0": "หากตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น อยู่ภายใต้สถานะ Eagleplume ของ <strong>Skyfeather Song</strong> และสถานะ Soulwind ของ <strong>Starfrost Swirl</strong> พร้อมกัน เมื่อทำการโจมตีติดคริติคอล สถานะ Soulwind จะทำให้เกิดเอฟเฟกต์ Detector ของพรสวรรค์ติดตัว \"Suppressive Barrage\" 1 ชั้น และภายในช่วงเวลาต่อเนื่องของสถานะ Soulwind หนึ่งครั้ง จะเกิดเอฟเฟกต์ Detector ด้วยวิธีนี้ได้มากสุด 1 ชั้น",
+      "0": "หากตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น อยู่ภายใต้สถานะ Eagleplume ของ <strong>Skyfeather Song</strong> และสถานะ Soulwind ของ <strong>Starfrost Swirl</strong> พร้อมกัน เมื่อทำการโจมตีติดคริติคอล สถานะ Soulwind จะทำให้เกิดเอฟเฟกต์ Detector ของพรสวรรค์เพิ่มเติม \"Suppressive Barrage\" 1 ชั้น และภายในช่วงเวลาต่อเนื่องของสถานะ Soulwind หนึ่งครั้ง จะเกิดเอฟเฟกต์ Detector ด้วยวิธีนี้ได้มากสุด 1 ชั้น",
       "1": "นอกจากนี้ขีดจำกัดจำนวนการซ้อนทับของเอฟเฟกต์ Detector ภายใต้สถานะ Soulwind จะเพิ่มขึ้น 1 ชั้น",
-      "2": "ต้องปลดล็อกพรสวรรค์ติดตัว \"Suppressive Barrage\" ก่อน"
+      "2": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Suppressive Barrage\" ก่อน"
     }
   },
   "passive3": {
@@ -136,8 +136,8 @@
   "constellation2": {
     "name": "Chaperone's Ingress",
     "description": {
-      "0": "เมื่อ Flowfrost Arrow ของ <strong>Starfrost Swirl</strong> ถูกศัตรูเป็นครั้งแรก หรือเมื่อ Rimestar Flare ถูกศัตรู จะทำให้เกิดเอฟเฟกต์ Detector ของพรสวรรค์ติดตัว \"Suppressive Barrage\" 1 ชั้น",
-      "1": "ต้องปลดล็อกพรสวรรค์ติดตัว \"Suppressive Barrage\" ก่อน"
+      "0": "เมื่อ Flowfrost Arrow ของ <strong>Starfrost Swirl</strong> ถูกศัตรูเป็นครั้งแรก หรือเมื่อ Rimestar Flare ถูกศัตรู จะทำให้เกิดเอฟเฟกต์ Detector ของพรสวรรค์เพิ่มเติม \"Suppressive Barrage\" 1 ชั้น",
+      "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Suppressive Barrage\" ก่อน"
     }
   },
   "constellation3": {
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Companion's Counsel",
     "description": {
-      "0": "เอฟเฟกต์ Detector จากสถานะ Soulwind ของ <strong>Starfrost Swirl</strong> มีขีดจำกัดจำนวนการซ้อนทับเพิ่มขึ้น 1 ชั้น (ต้องปลดล็อกพรสวรรค์ติดตัว \"Suppressive Barrage\" ก่อน)",
+      "0": "เอฟเฟกต์ Detector จากสถานะ Soulwind ของ <strong>Starfrost Swirl</strong> มีขีดจำกัดจำนวนการซ้อนทับเพิ่มขึ้น 1 ชั้น (ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Suppressive Barrage\" ก่อน)",
       "1": "นอกจากนี้ ความแรงคริของความเสียหายกายภาพ ที่ตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นสร้างภายใต้สถานะ Soulwind จะเพิ่มขึ้น 60%"
     }
   }
