@@ -225,9 +225,9 @@
   "constellation1": {
     "name": "Undying Passion",
     "description": {
-      "0": "The effects of the Passive Talent \"Tag-Team Triple Jump!\" are enhanced:",
+      "0": "The effects of the Ascension Talent \"Tag-Team Triple Jump!\" are enhanced:",
       "1": "When performing the Special Plunging Attack \"Thunderous Tornado Eruption,\" Varesa will also gain \"Rainbow Crash\" for 5s.",
-      "2": "When \"Rainbow Crash\" is in effect, Varesa's Plunging Attack ground impact DMG is increased by 180% of her ATK, whether she is in the Fiery Passion state or not. You must first unlock the Passive Talent \"Tag-Team Triple Jump!\" to access the above effect.",
+      "2": "When \"Rainbow Crash\" is in effect, Varesa's Plunging Attack ground impact DMG is increased by 180% of her ATK, whether she is in the Fiery Passion state or not. You must first unlock the Ascension Talent \"Tag-Team Triple Jump!\" to access the above effect.",
       "3": "<br/>",
       "4": "Additionally, when Varesa is in the Sudden Onrush mode of her Nightsoul's Blessing, she consumes 30% less Nightsoul points or Phlogiston."
     }

@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Aterrorizando Criminosos",
     "description": {
-      "0": "Muda a \"Ordem da Graça\" do Talento Passivo \"Haverá Arguição Pela Justiça\":",
+      "0": "Muda a \"Ordem da Graça\" do Talento de Ascensão \"Haverá Arguição Pela Justiça\":",
       "1": "Quando a Vida de Wriothesley for inferior a 60%, ou quando estiver no estado Julgamento do Gelo Feroz de <strong>Corrida da Presa Gelada</strong> e o quinto golpe de Soco Repulsor atingir um inimigo, obtém \"Ordem da Graça\". É possível obter uma \"Ordem da Graça\" a cada 2.5s.",
       "2": "Além disso, Disciplina: Soco do Salto Gelado recebe os seguintes bônus:",
       "3": [
@@ -132,14 +132,14 @@
         " Ao atingir um inimigo, se estiver no estado Julgamento do Gelo Feroz, a duração desse estado é prolongada em 4s. É possível prolongar a duração de uma instância do estado Julgamento do Gelo Feroz uma vez dessa forma."
       ],
       "4": "<br/>",
-      "5": "É necessário ter desbloqueado o Talento Passivo \"Haverá Arguição Pela Justiça\"."
+      "5": "É necessário ter desbloqueado o Talento de Ascensão \"Haverá Arguição Pela Justiça\"."
     }
   },
   "constellation2": {
     "name": "Prendendo os Arrogantes",
     "description": {
-      "0": "Ao lançar <strong>Mordida do Lobo de Ouro Escuro</strong>, cada acúmulo do efeito \"Édito do Processo\" do Talento Passivo \"Retribuição do Pecado\" aumentará o Dano causado em 40%.",
-      "1": "É preciso ter desbloqueado o Talento Passivo \"Retribuição do Pecado\"."
+      "0": "Ao lançar <strong>Mordida do Lobo de Ouro Escuro</strong>, cada acúmulo do efeito \"Édito do Processo\" do Talento de Ascensão \"Retribuição do Pecado\" aumentará o Dano causado em 40%.",
+      "1": "É preciso ter desbloqueado o Talento de Ascensão \"Retribuição do Pecado\"."
     }
   },
   "constellation3": {
@@ -152,7 +152,7 @@
   "constellation4": {
     "name": "Redimindo Aqueles Que Sofrem",
     "description": {
-      "0": "Aumenta a Vida que Wriothesley regenera com Disciplina: Soco do Salto Gelado para 50% de sua Vida Máxima. É necessário ter desbloqueado o Talento Passivo \"Haverá Arguição Pela Justiça\".",
+      "0": "Aumenta a Vida que Wriothesley regenera com Disciplina: Soco do Salto Gelado para 50% de sua Vida Máxima. É necessário ter desbloqueado o Talento de Ascensão \"Haverá Arguição Pela Justiça\".",
       "1": "Além disso, quando Wriothesley é curado, caso haja sobrecura, gerará efeitos diferentes dependendo de Wriothesley estar ou não no campo de batalha. Quando ele está no campo de batalha, aumenta sua Vel. de ATQ em 20% por 4s. Quando ele não está no campo de batalha, aumenta a Vel. de ATQ de todos os membros da própria equipe em 10% por 6s. Os dois efeitos de Vel. de ATQ não acumulam."
     }
   },
@@ -167,7 +167,7 @@
     "name": "Valorizando os Inocentes",
     "description": {
       "0": "Aumenta a Taxa CRIT de Disciplina: Soco do Salto Gelado em 10%, o Dano CRIT em 80% e dispara uma Estalactite Cryo adicional que causa 100% do Dano Base de Disciplina: Soco do Salto Gelado como <cryo>Dano Cryo</cryo>. O Dano causado dessa forma é considerado Dano de Ataque Carregado.",
-      "1": "É necessário ter desbloqueado o Talento Passivo \"Haverá Arguição Pela Justiça\"."
+      "1": "É necessário ter desbloqueado o Talento de Ascensão \"Haverá Arguição Pela Justiça\"."
     }
   }
 }

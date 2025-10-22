@@ -50,6 +50,7 @@
     "pyro": "After dealing <pyro>Pyro DMG</pyro>",
     "electro": "After dealing <electro>Electro DMG</electro>",
     "dendro": "After dealing <hydro>Hydro DMG</hydro> or <dendro>Dendro DMG</dendro>",
+    "lunarbloom": "After dealing <lunarbloom>Lunar-Bloom DMG</lunarbloom>",
     "crit": "After dealing a CRIT Hit",
     "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot",
     "self": "After being hit by an opponent"

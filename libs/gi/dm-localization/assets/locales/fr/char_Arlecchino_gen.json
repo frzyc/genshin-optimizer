@@ -139,7 +139,7 @@
     "description": {
       "0": "Les <strong>dettes sanguinaires</strong> commencent désormais comme des dettes sanguinaires à échéance.",
       "1": "Lorsque Arlecchino absorbe une dette à échéance, elle envoie un feu lunatique vers l'avant, infligeant des <pyro>DGT Pyro de zone</pyro> d'une valeur équivalant à 900 % de son ATQ et augmentant ses RÉS élémentaires et physique de 20 % pendant 15 s. Cet effet peut être déclenché une fois toutes les 10 s.",
-      "2": "L'aptitude passive « Seule la douleur peut rembourser » doit être déjà débloquée."
+      "2": "L'aptitude d'élévation « Seule la douleur peut rembourser » doit être déjà débloquée."
     }
   },
   "constellation3": {

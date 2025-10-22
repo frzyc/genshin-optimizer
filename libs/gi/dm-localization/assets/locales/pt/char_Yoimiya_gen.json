@@ -113,7 +113,7 @@
   "passive2": {
     "name": "Queimadura de Verão",
     "description": {
-      "0": "Todos os personagens da equipe (com exceção da própria Yoimiya) ganharão um aumento de 10% no ATQ por 15s após usar a <strong>Saxifraga Ryuukin</strong>. Além disso, um bônus adicional de ATQ será adicionado com base no número de cargas do \"Truque da Encrenqueira\" que Yoimiya possui ao usar a <strong>Saxifraga Ryuukin</strong>. Cada carga aumenta 1% de ATQ."
+      "0": "Todos os personagens da equipe (com exceção da própria Yoimiya) ganharão um aumento de 10% no ATQ por 15s após usar a <strong>Saxifraga Ryuukin</strong>. Além disso, um bônus adicional de ATQ será adicionado com base no número de cargas do Talento de Ascensão \"Truque da Encrenqueira\" que Yoimiya possui ao usar a <strong>Saxifraga Ryuukin</strong>. Cada carga aumenta 1% de ATQ."
     }
   },
   "passive3": {

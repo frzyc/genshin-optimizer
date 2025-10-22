@@ -176,7 +176,7 @@
     "name": "Verkörperung der glückverheißenden Bestie",
     "description": {
       "0": "Nach dem Treffen von Gegnern durch die Schuppendurchschlagskanone hüpft diese einmal zwischen den Gegnern hin und her und verursacht <dendro>Dendro-Schaden</dendro> in Höhe von 700 % von Kinichs ANG.",
-      "1": "Wenn die diesmalige Schuppendurchschlagskanone den Verstärkungseffekt für die Schuppendurchschlagskanone des passiven Talents Flammengeist-Pakt oder des Sternbildes Klaue des Tigers ausgelöst hat, wird der von ihr ausgelöste hüpfende Angriff ebenfalls verstärkt."
+      "1": "Wenn die diesmalige Schuppendurchschlagskanone den Verstärkungseffekt für die Schuppendurchschlagskanone des Aufstiegstalents Flammengeist-Pakt oder des Sternbildes Klaue des Tigers ausgelöst hat, wird der von ihr ausgelöste hüpfende Angriff ebenfalls verstärkt."
     }
   }
 }

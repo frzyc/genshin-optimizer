@@ -128,14 +128,14 @@
   "constellation1": {
     "name": "Khởi Đầu Của Tôn Quý",
     "description": {
-      "0": "Khi Neuvillette ra trận sẽ nhận được một tầng \"Vinh Dự Của Rồng\" từ thiên phú cố định \"Di Sản Hậu Duệ Biển Xưa\". Cần mở khóa thiên phú \"Di Sản Hậu Duệ Biển Xưa\" trước.",
+      "0": "Khi Neuvillette ra trận sẽ nhận được một tầng \"Vinh Dự Của Rồng\" từ thiên phú đột phá \"Di Sản Hậu Duệ Biển Xưa\". Cần mở khóa thiên phú \"Di Sản Hậu Duệ Biển Xưa\" trước.",
       "1": "Ngoài ra, khi thi triển Tụ Lực Trọng Kích - Đánh Giá Hợp Pháp và Trọng Kích - Phán Quyết Công Bằng sẽ tăng khả năng kháng gián đoạn của Neuvillette."
     }
   },
   "constellation2": {
     "name": "Mệnh Lệnh Của Pháp Luật",
     "description": {
-      "0": "Cường hóa thiên phú cố định \"Di Sản Hậu Duệ Biển Xưa\": Mỗi tồn tại một tầng \"Vinh Dự Của Rồng\" sẽ khiến sát thương bạo kích của Trọng Kích - Phán Quyết Công Bằng tăng 14%. Tối đa tăng 42% thông qua phương thức này.",
+      "0": "Cường hóa thiên phú đột phá \"Di Sản Hậu Duệ Biển Xưa\": Mỗi tồn tại một tầng \"Vinh Dự Của Rồng\" sẽ khiến sát thương bạo kích của Trọng Kích - Phán Quyết Công Bằng tăng 14%. Tối đa tăng 42% thông qua phương thức này.",
       "1": "Cần mở khóa thiên phú \"Di Sản Hậu Duệ Biển Xưa\" trước."
     }
   },

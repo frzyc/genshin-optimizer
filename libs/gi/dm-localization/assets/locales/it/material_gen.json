@@ -233,6 +233,9 @@
   "LegionMorale": {
     "name": "Morale della Legione"
   },
+  "PrepProgress": {
+    "name": "Progressi preparazione"
+  },
   "Primogem": {
     "name": "Primogemma"
   },
@@ -268,6 +271,33 @@
   },
   "AcquaintFate": {
     "name": "Incontro predestinato"
+  },
+  "ChronalNexus": {
+    "name": "Crononucleo"
+  },
+  "ArcaneKeystone": {
+    "name": "Fulcro arcano"
+  },
+  "GeodeOfReplication": {
+    "name": "Geode della replicazione"
+  },
+  "EngravedShard": {
+    "name": "Frammento inciso"
+  },
+  "FestiveKey": {
+    "name": "Chiave festiva"
+  },
+  "LuminousKeystone": {
+    "name": "Fulcro lucente"
+  },
+  "WonderlandEXP": {
+    "name": "ESP Mirabilia"
+  },
+  "ChronicleEXP": {
+    "name": "ESP Cronache"
+  },
+  "ChroniclesOfTheRealms": {
+    "name": "Cronache dei Regni"
   },
   "PyroSigil": {
     "name": "Sigillo di Pyro"
@@ -878,6 +908,12 @@
   "ReaffirmedAccordOfAppellation": {
     "name": "Accordo di appellazione riconfermato"
   },
+  "OverwriteKeyLeft": {
+    "name": "Chiave di sovrascrittura: Sinistra"
+  },
+  "OverwriteKeyRight": {
+    "name": "Chiave di sovrascrittura: Destra"
+  },
   "EnergyOrbPyro": {
     "name": "Sfera d'energia (Pyro)"
   },
@@ -1070,6 +1106,9 @@
   "Aino": {
     "name": "Aino"
   },
+  "Nefer": {
+    "name": "Nefer"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna di Kachina"
   },
@@ -1129,6 +1168,9 @@
   },
   "AinosStellaFortuna": {
     "name": "Stella Fortuna di Aino"
+  },
+  "NefersStellaFortuna": {
+    "name": "Stella Fortuna di Nefer"
   },
   "Apple": {
     "name": "Mela"
@@ -8033,6 +8075,39 @@
   "SugarSculptureFlins": {
     "name": "Scultura di zucchero: Flins"
   },
+  "SuspiciousLakkaberryPie": {
+    "name": "Torta Baccalakka sospetta"
+  },
+  "LakkaberryPie": {
+    "name": "Torta Baccalakka"
+  },
+  "DeliciousLakkaberryPie": {
+    "name": "Torta Baccalakka deliziosa"
+  },
+  "SuspiciousLohikeitto": {
+    "name": "Lohikeitto sospetto"
+  },
+  "Lohikeitto": {
+    "name": "Lohikeitto"
+  },
+  "DeliciousLohikeitto": {
+    "name": "Lohikeitto delizioso"
+  },
+  "PiramidaNightingale": {
+    "name": "Usignolo di Piramida"
+  },
+  "FrontierLand": {
+    "name": "Terra di frontiera"
+  },
+  "WildberryTrail": {
+    "name": "Sentiero baccoso"
+  },
+  "SecretsExchanged": {
+    "name": "Segreti scambiati"
+  },
+  "SugarSculptureNefer": {
+    "name": "Scultura di zucchero: Nefer"
+  },
   "RecipeItem": {
     "name": "Ingrediente"
   },
@@ -8797,6 +8872,12 @@
   },
   "RecipeLakkaberryMadame": {
     "name": "Ricetta: pollo alle Baccalakka"
+  },
+  "RecipeLakkaberryPie": {
+    "name": "Ricetta: torta Baccalakka"
+  },
+  "RecipeLohikeitto": {
+    "name": "Ricetta: lohikeitto"
   },
   "CraftedItems": {
     "name": "Oggetti creati"
@@ -9580,6 +9661,9 @@
   },
   "LightbearingScaleFeather": {
     "name": "Alasquama portaluce"
+  },
+  "RadiantAntler": {
+    "name": "Corno splendente"
   },
   "TileOfDecarabiansTower": {
     "name": "Tegola della Torre di Decarabian"
@@ -12671,8 +12755,8 @@
   "MysteriousMap": {
     "name": "Mappa misteriosa"
   },
-  "DazzlingMysteriousGift": {
-    "name": "Regalo abbagliante e misterioso"
+  "WonderlandCosmosphere": {
+    "name": "Cosmosfera del Mirabilia"
   },
   "LetterOfUnknownOrigin": {
     "name": "Lettera di origine sconosciuta"
@@ -12830,8 +12914,14 @@
   "YellowedNotes": {
     "name": "Appunti ingialliti"
   },
+  "InvestmentCoupon": {
+    "name": "Coupon d'investimento"
+  },
   "EasybreezeBadge": {
     "name": "Medaglia Dolcebrezza"
+  },
+  "InvestmentReturns": {
+    "name": "Profitti degli investimenti"
   },
   "SugarSculptureBox": {
     "name": "Scatola con sculture di zucchero"
@@ -12895,6 +12985,9 @@
   },
   "BountyTokenMudStainedHandguard": {
     "name": "Prova della taglia: elsa sporca"
+  },
+  "RecordedIntel": {
+    "name": "Informazioni documentate"
   },
   "MessilyScribbledNotesI": {
     "name": "Appunti scarabocchiati (I)"
@@ -12974,6 +13067,9 @@
   "AunisNotes": {
     "name": "Appunti di Auni"
   },
+  "CollatedIntel": {
+    "name": "Informazioni fascicolate"
+  },
   "BackupProgramModule": {
     "name": "Modulo di programma di riserva"
   },
@@ -12982,6 +13078,15 @@
   },
   "OpenedSecretLetter": {
     "name": "Lettera segreta aperta"
+  },
+  "WayOpeningKey": {
+    "name": "Chiave di apertura del passaggio"
+  },
+  "RaggedNotes": {
+    "name": "Appunti stracciati"
+  },
+  "OrderedNotes": {
+    "name": "Appunti ordinati"
   },
   "ConchNotebook": {
     "name": "Taccuino conchiglia"
@@ -13027,6 +13132,15 @@
   },
   "AilasNotes": {
     "name": "Note di Aila"
+  },
+  "TheManWhoBecameAMule": {
+    "name": "L'uomo che diventò un mulo"
+  },
+  "HalfBurnedPage": {
+    "name": "Pagina mezza bruciata"
+  },
+  "CuratoriumFunds": {
+    "name": "Fondi del Consiglio"
   },
   "TearsAmongTheStars": {
     "name": "Lacrime tra le stelle"
@@ -14939,6 +15053,12 @@
   "CelebrationSublimeFlavors": {
     "name": "Celebrazione: Sapori sublimi"
   },
+  "NeferSecrets": {
+    "name": "Nefer: Segreti"
+  },
+  "TravelNotesBygoneRuins": {
+    "name": "Appunti di viaggio: Rovine del passato"
+  },
   "EchoDandelionKnight": {
     "name": "Eco: Cavaliere del Dente di leone"
   },
@@ -15759,7 +15879,7 @@
     "name": "Postura intimidatoria"
   },
   "LeisurelyMoment": {
-    "name": "Momento di ozio"
+    "name": "Attimo di relax"
   },
   "SeriousContemplation": {
     "name": "Contemplazione seria"
@@ -15778,6 +15898,24 @@
   },
   "CarefulCommunication": {
     "name": "Comunicazione prudente"
+  },
+  "BattlePreparation": {
+    "name": "Pronto alla battaglia"
+  },
+  "GatheredOverDrinks": {
+    "name": "Davanti a una bevanda"
+  },
+  "BrandishingWeapons": {
+    "name": "Armi alle mani"
+  },
+  "TeachingAjawALesson": {
+    "name": "Lezione ad Ajaw"
+  },
+  "ALittleScare": {
+    "name": "Piccolo spavento"
+  },
+  "EagerAndReady": {
+    "name": "Passione ed energia"
   },
   "FantasticalMarvel": {
     "name": "Prodigio fantastico"
@@ -15928,6 +16066,9 @@
   },
   "LordOfErodedPrimalFire": {
     "name": "Signore della Fiamma primordiale erosa"
+  },
+  "HydroTulpa": {
+    "name": "Tulpa di Hydro"
   },
   "UndividedHeart": {
     "name": "Cuore indivisibile"
@@ -16292,6 +16433,15 @@
   "UndyingFury": {
     "name": "Furia imperitura"
   },
+  "AHeroOfJusticesTriumph": {
+    "name": "Trionfo dell'Eroina della Giustizia"
+  },
+  "TacticalWarmCompressBandaging": {
+    "name": "Impacco caldo tattico"
+  },
+  "FlowConvergence": {
+    "name": "Flussi convergenti"
+  },
   "MagicGuide": {
     "name": "Manuale di magia"
   },
@@ -16613,6 +16763,15 @@
   "AquaSimulacra": {
     "name": "Aqua simulacra"
   },
+  "EverlastingMoonglow": {
+    "name": "Luna perenne"
+  },
+  "FellDragonsMonocle": {
+    "name": "Monocolo del drago caduto"
+  },
+  "NoblesseOblige": {
+    "name": "Noblesse oblige"
+  },
   "LiyueHarborWharf": {
     "name": "Molo del Porto di Liyue"
   },
@@ -16795,6 +16954,9 @@
   },
   "GiftOfTheGoddessOfProphecy": {
     "name": "Dono della Dea della Profezia"
+  },
+  "AdventurersGuild": {
+    "name": "Gilda degli avventurieri"
   },
   "ElementalResonanceWovenIce": {
     "name": "Risonanza elementale: Ghiaccio intrecciato"
@@ -17018,6 +17180,9 @@
   "RevelrousBeats": {
     "name": "\"Ritmi gioiosi\""
   },
+  "AnAncientSacrificeOfSacredBrocade": {
+    "name": "Antichi sacrifici e sacri broccati"
+  },
   "Origin": {
     "name": "Origine"
   },
@@ -17086,6 +17251,9 @@
   },
   "FontaPassionateRed": {
     "name": "Fonta: Rosso passione"
+  },
+  "SeaOfBygoneErasSlumber": {
+    "name": "Mare dei Tempi Remoti: Sopore"
   },
   "BeginnerPlayerBadge": {
     "name": "Distintivo del giocatore principiante"
@@ -17798,6 +17966,12 @@
   "XochicuicatlMarketingMethod": {
     "name": "Strategia di vendita del Xochicuicatl"
   },
+  "DeductionAndInduction": {
+    "name": "Deduzione e induzione"
+  },
+  "FactoryCabinetSlapdashStorage": {
+    "name": "Armadietto per fabbrica Mucchio di scartoffie"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "Libreria a due piani"
   },
@@ -17969,6 +18143,15 @@
   "FairsSimpleSalesStrategy": {
     "name": "Semplice strategia di vendita del Mercato"
   },
+  "FactoryLongTableNoTimeToWaste": {
+    "name": "Tavolo lungo per fabbrica Non c'è tempo da perdere"
+  },
+  "TavernSquareTableSelfDefense": {
+    "name": "Tavolo quadrato da taverna Autodifesa"
+  },
+  "IndoorLongTableMarksOfLove": {
+    "name": "Tavolo lungo da interno Segni d'amore"
+  },
   "BreezeBlessedBed": {
     "name": "Letto Dolce brezza"
   },
@@ -17996,6 +18179,12 @@
   "StoneBedPeacefulSleep": {
     "name": "Letto di pietra Sonni pacifici"
   },
+  "FriendsThroughFriction": {
+    "name": "Attriti tra amici"
+  },
+  "TavernBedNotGreatNotTerrible": {
+    "name": "Letto da taverna Senza infamia e senza lode"
+  },
   "PineReceptionCounter": {
     "name": "Banco da reception in pino"
   },
@@ -18022,6 +18211,9 @@
   },
   "TeahouseStoveSlowSteaming": {
     "name": "Fornello della sala da tè Cottura lenta a vapore"
+  },
+  "QuestionWithAPriceTag": {
+    "name": "Il prezzo giusto"
   },
   "SoftLoungeSofa": {
     "name": "Divano comodo"
@@ -18103,6 +18295,15 @@
   },
   "GlugInOneGo": {
     "name": "In un sol boccone"
+  },
+  "QuietAndCozy": {
+    "name": "Silenzio e conforto"
+  },
+  "HazelwoodJadeBackedChair": {
+    "name": "Sedia in legno di nocciolo con schienale color giada"
+  },
+  "FactoryStoolMultiroleSeatingDevice": {
+    "name": "Sgabello da fabbrica Dispositivo da seduta multiruolo"
   },
   "NorthernStoneHearth": {
     "name": "Camino in pietra del Nord"
@@ -18290,6 +18491,18 @@
   "PortableAllPurposeGrill": {
     "name": "Griglia portatile multiuso"
   },
+  "BoatOfClouds": {
+    "name": "Barca di nuvole"
+  },
+  "TipsyPlaylist": {
+    "name": "Jukebox Allegro andante"
+  },
+  "MultifunctionalPedunculateOakWoodCatTree": {
+    "name": "Albero tiragraffi in legno di farnia multifunzione"
+  },
+  "HiddenSecrets": {
+    "name": "Segreti nascosti"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tappeto di Mondstadt Ardore cremisi"
   },
@@ -18343,6 +18556,12 @@
   },
   "FairCarpetWarmthAndPassion": {
     "name": "Tappeto del Mercato Calore e passione"
+  },
+  "IndoorRugSoftPlush": {
+    "name": "Tappeto per interno Dolce e soffice"
+  },
+  "IndoorRugStarlitNight": {
+    "name": "Tappeto da interno Notte stellata"
   },
   "VibrantPotBornInFlames": {
     "name": "Vaso dalle tinte vivaci Nato dalle fiamme"
@@ -18724,6 +18943,12 @@
   },
   "SaveyWaveyLifeRing": {
     "name": "Ciambella salvavita"
+  },
+  "FactoryBroadcastInvigoration": {
+    "name": "Altoparlante per fabbrica Rinvigorimento"
+  },
+  "TavernDartboardValidThrow": {
+    "name": "Bersaglio per freccette da taverna Bel lancio"
   },
   "LingeringMoment": {
     "name": "Momento indimenticabile"
@@ -21044,6 +21269,9 @@
   "MediumCargoHoldSwiftTransport": {
     "name": "Container medio Trasporto rapido"
   },
+  "PuzzlepalKeepCalmAndCarryOn": {
+    "name": "Indovinella \"Ci vuole calma e sangue freddo\""
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "Messer Capibara l'Incisivo"
   },
@@ -21052,5 +21280,8 @@
   },
   "PorkyWorkyChef": {
     "name": "Chef Maialotto"
+  },
+  "LoafingKitty": {
+    "name": "Gattino ozioso"
   }
 }

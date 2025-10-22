@@ -115,7 +115,7 @@
       "4": "<br/>",
       "5": "<strong>Havoc: Extinction</strong>",
       "6": "A special Elemental Burst that can be used even without consuming Serpent's Subtlety.",
-      "7": "After using it, Skirk will gain the \"All Shall Wither\" effect, which will last until Seven-Phase Flash ends. After unlocking the Passive Talent <strong>Reason Beyond Reason</strong>, she can also absorb nearby Void Rifts.",
+      "7": "After using it, Skirk will gain the \"All Shall Wither\" effect, which will last until Seven-Phase Flash ends. After unlocking the Ascension Talent <strong>Reason Beyond Reason</strong>, she can also absorb nearby Void Rifts.",
       "8": "While \"All Shall Wither\" is active, every 0.1s, after Skirk's Normal Attack hits an opponent, that Normal Attack will deal increased DMG. If she absorbed any Void Rifts while using <strong>Havoc: Extinction</strong>, this Normal Attack's DMG will be further increased based on the number of Rifts absorbed.",
       "9": "This effect will be canceled when it has triggered 10 times."
     },
@@ -188,8 +188,8 @@
   "constellation1": {
     "name": "Far to Fall",
     "description": {
-      "0": "Enhances the effects of the Passive Talent <strong>Reason Beyond Reason</strong>: Every Void Rift absorbed will summon a crystal blade to attack nearby opponents, dealing 500% of Skirk's ATK as <cryo>Cryo DMG</cryo>. This DMG is considered Charged Attack DMG.",
-      "1": "You must first unlock the Passive Talent Reason Beyond Reason."
+      "0": "Enhances the effects of the Ascension Talent <strong>Reason Beyond Reason</strong>: Every Void Rift absorbed will summon a crystal blade to attack nearby opponents, dealing 500% of Skirk's ATK as <cryo>Cryo DMG</cryo>. This DMG is considered Charged Attack DMG.",
+      "1": "You must first unlock the Ascension Talent Reason Beyond Reason."
     }
   },
   "constellation2": {
@@ -210,8 +210,8 @@
   "constellation4": {
     "name": "Fractured Flow",
     "description": {
-      "0": "Enhances the effects of the Passive Talent <strong>Return to Oblivion</strong>: Each Death's Crossing stack also increases Skirk's ATK by 10%/20%/40%.",
-      "1": "You must first unlock the Passive Talent Return to Oblivion."
+      "0": "Enhances the effects of the Ascension Talent <strong>Return to Oblivion</strong>: Each Death's Crossing stack also increases Skirk's ATK by 10%/20%/40%.",
+      "1": "You must first unlock the Ascension Talent Return to Oblivion."
     }
   },
   "constellation5": {
@@ -224,8 +224,8 @@
   "constellation6": {
     "name": "To the Source",
     "description": {
-      "0": "Each Void Rift Skirk absorbs via the effects of the Passive Talent <strong>Reason Beyond Reason</strong> will grant her 1 Havoc: Sever stack. She can consume such stacks to initiate coordinated attacks and decrease the DMG she takes while in <strong>Seven-Phase Flash</strong> mode. These stacks last for 15s, and each stack's duration is counted independently (max 3 stacks).",
-      "1": "You must first unlock the Passive Talent \"Reason Beyond Reason.\"",
+      "0": "Each Void Rift Skirk absorbs via the effects of the Ascension Talent <strong>Reason Beyond Reason</strong> will grant her 1 Havoc: Sever stack. She can consume such stacks to initiate coordinated attacks and decrease the DMG she takes while in <strong>Seven-Phase Flash</strong> mode. These stacks last for 15s, and each stack's duration is counted independently (max 3 stacks).",
+      "1": "You must first unlock the Ascension Talent \"Reason Beyond Reason.\"",
       "2": "<br/>",
       "3": "<strong>Havoc: Sever</strong>",
       "4": [

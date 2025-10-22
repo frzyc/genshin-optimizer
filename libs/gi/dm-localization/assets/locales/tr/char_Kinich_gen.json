@@ -176,7 +176,7 @@
     "name": "Uğurlu Canavar Sureti",
     "description": {
       "0": "Puldelen Topu bir düşmana isabet ettiğinde düşmanlar arasında bir defa seker ve Kinich'in Saldırısının %700'ü kadar <dendro>Doğa Hasarı</dendro> verir.",
-      "1": "Eğer bu Puldelen Topu, \"Alev Ruhu Sözleşmesi\" Pasif Yeteneğinin veya \"Kaplan Böceği Avucu\" Takımyıldızının Topa verdiği güçlendirmeleri tetiklerse söz konusu güçlendirmeler seken saldırıya da uygulanır."
+      "1": "Eğer bu Puldelen Topu, \"Alev Ruhu Sözleşmesi\" Yükseltme Yeteneğinin veya \"Kaplan Böceği Avucu\" Takımyıldızının Topa verdiği güçlendirmeleri tetiklerse söz konusu güçlendirmeler seken saldırıya da uygulanır."
     }
   }
 }

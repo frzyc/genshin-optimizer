@@ -79,7 +79,7 @@
       "4": "<br/>",
       "5": "<strong>Cực Ác Kỹ - Tận</strong>",
       "6": "Kỹ Năng Nộ đặc biệt có thể thi triển mà không cần tiêu hao Rắn Xảo Quyệt.",
-      "7": "Sau khi thi triển, Skirk sẽ nhận được hiệu quả Điêu Tàn, hiệu quả này duy trì cho đến khi kết thúc chế độ Thất Tướng Nhất Thiểm. Sau khi mở khóa Thiên Phú Cố Định <strong>Lý Luận Vượt Nguyên Lý</strong>, Skirk sẽ còn hấp thụ Vết Nứt Hư Không trong một phạm vi nhất định gần đó.",
+      "7": "Sau khi thi triển, Skirk sẽ nhận được hiệu quả Điêu Tàn, hiệu quả này duy trì cho đến khi kết thúc chế độ Thất Tướng Nhất Thiểm. Sau khi mở khóa Thiên Phú Đột Phá <strong>Lý Luận Vượt Nguyên Lý</strong>, Skirk sẽ còn hấp thụ Vết Nứt Hư Không trong một phạm vi nhất định gần đó.",
       "8": "Trong thời gian duy trì hiệu quả Điêu Tàn, mỗi 0.1s, sau khi Skirk Tấn Công Thường trúng kẻ địch sẽ tăng sát thương của lần Tấn Công Thường này. Nếu khi thi triển <strong>Cực Ác Kỹ - Tận</strong> có hấp thụ Vết Nứt Hư Không, sẽ căn cứ vào số lượng Vết Nứt Hư Không đã hấp thụ để tăng mạnh hơn sát thương do lần Tấn Công Thường này gây ra.",
       "9": "Hiệu quả này sẽ xóa khi kích hoạt đủ 10 lần."
     },
@@ -134,8 +134,8 @@
   "constellation1": {
     "name": "Yên Viễn",
     "description": {
-      "0": "Hiệu quả của thiên phú cố định <strong>Lý Luận Vượt Nguyên Lý</strong> được cường hóa: Mỗi hấp thụ một Vết Nứt Hư Không, sẽ triệu hồi một Đao Tinh Thể tấn công kẻ địch ở gần, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> tương đương 500% Tấn Công của Skirk, sát thương này được tính là sát thương Trọng Kích.",
-      "1": "Cần mở khóa thiên phú cố định \"Lý Luận Vượt Nguyên Lý\"."
+      "0": "Hiệu quả của thiên phú đột phá <strong>Lý Luận Vượt Nguyên Lý</strong> được cường hóa: Mỗi hấp thụ một Vết Nứt Hư Không, sẽ triệu hồi một Đao Tinh Thể tấn công kẻ địch ở gần, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> tương đương 500% Tấn Công của Skirk, sát thương này được tính là sát thương Trọng Kích.",
+      "1": "Cần mở khóa thiên phú đột phá \"Lý Luận Vượt Nguyên Lý\"."
     }
   },
   "constellation2": {
@@ -156,8 +156,8 @@
   "constellation4": {
     "name": "Lưu Đoạn",
     "description": {
-      "0": "Hiệu quả của thiên phú cố định <strong>Về Với Quên Lãng</strong> được cường hóa: Mỗi tầng hiệu quả Vượt Qua Chết Chóc sẽ còn khiến Tấn Công của Skirk tăng 10%/20%/40%.",
-      "1": "Cần mở khóa thiên phú cố định \"Về Với Quên Lãng\"."
+      "0": "Hiệu quả của thiên phú đột phá <strong>Về Với Quên Lãng</strong> được cường hóa: Mỗi tầng hiệu quả Vượt Qua Chết Chóc sẽ còn khiến Tấn Công của Skirk tăng 10%/20%/40%.",
+      "1": "Cần mở khóa thiên phú đột phá \"Về Với Quên Lãng\"."
     }
   },
   "constellation5": {
@@ -170,8 +170,8 @@
   "constellation6": {
     "name": "Chí Nguyên",
     "description": {
-      "0": "Skirk mỗi hấp thụ một Vết Nứt Hư Không từ hiệu quả của thiên phú cố định <strong>Lý Luận Vượt Nguyên Lý</strong>, sẽ nhận được 1 tầng hiệu quả Cực Ác Kỹ - Trảm. Skirk có thể tiêu hao hiệu quả này để hỗ trợ tấn công và giảm sát thương phải chịu trong chế độ <strong>Thất Tướng Nhất Thiểm</strong>. Hiệu quả này duy trì 15s, tối đa cộng dồn 3 tầng, mỗi tầng tính giờ riêng.",
-      "1": "Cần mở khóa thiên phú cố định \"Lý Luận Vượt Nguyên Lý\".",
+      "0": "Skirk mỗi hấp thụ một Vết Nứt Hư Không từ hiệu quả của thiên phú đột phá <strong>Lý Luận Vượt Nguyên Lý</strong>, sẽ nhận được 1 tầng hiệu quả Cực Ác Kỹ - Trảm. Skirk có thể tiêu hao hiệu quả này để hỗ trợ tấn công và giảm sát thương phải chịu trong chế độ <strong>Thất Tướng Nhất Thiểm</strong>. Hiệu quả này duy trì 15s, tối đa cộng dồn 3 tầng, mỗi tầng tính giờ riêng.",
+      "1": "Cần mở khóa thiên phú đột phá \"Lý Luận Vượt Nguyên Lý\".",
       "2": "<br/>",
       "3": "<strong>Cực Ác Kỹ - Trảm</strong>",
       "4": [

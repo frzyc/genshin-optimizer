@@ -37,6 +37,7 @@ import CranesEchoingCall from './CranesEchoingCall'
 import CrescentPike from './CrescentPike'
 import CrimsonMoonsSemblance from './CrimsonMoonsSemblance'
 import DarkIronSword from './DarkIronSword'
+import DawningFrost from './DawningFrost'
 import Deathmatch from './Deathmatch'
 import DebateClub from './DebateClub'
 import DialoguesOfTheDesertSages from './DialoguesOfTheDesertSages'
@@ -137,6 +138,7 @@ import RangeGauge from './RangeGauge'
 import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
 import RedhornStonethresher from './RedhornStonethresher'
+import ReliquaryOfTruth from './ReliquaryOfTruth'
 import RightfulReward from './RightfulReward'
 import RingOfYaxche from './RingOfYaxche'
 import RoyalBow from './RoyalBow'
@@ -145,6 +147,7 @@ import RoyalGrimoire from './RoyalGrimoire'
 import RoyalLongsword from './RoyalLongsword'
 import RoyalSpear from './RoyalSpear'
 import Rust from './Rust'
+import SacrificersStaff from './SacrificersStaff'
 import SacrificialBow from './SacrificialBow'
 import SacrificialFragments from './SacrificialFragments'
 import SacrificialGreatsword from './SacrificialGreatsword'
@@ -344,6 +347,7 @@ const data: TagMapNodeEntries[] = [
   PrototypeStarglitter,
   RightfulReward,
   RoyalSpear,
+  SacrificersStaff,
   SkywardSpine,
   StaffOfHoma,
   StaffOfTheScarletSands,
@@ -405,6 +409,7 @@ const data: TagMapNodeEntries[] = [
   BlackmarrowLantern,
   CashflowSupervision,
   CranesEchoingCall,
+  DawningFrost,
   DodocoTales,
   EmeraldOrb,
   EtherlightSpindlelute,
@@ -427,6 +432,7 @@ const data: TagMapNodeEntries[] = [
   PocketGrimoire,
   PrototypeAmber,
   QuantumCatalyst,
+  ReliquaryOfTruth,
   RingOfYaxche,
   RoyalGrimoire,
   SacrificialFragments,

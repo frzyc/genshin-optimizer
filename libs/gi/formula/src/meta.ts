@@ -1697,6 +1697,20 @@ export const formulas = {
       },
     },
   },
+  Nefer: {
+    normal1: {
+      sheet: 'Nefer',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nefer',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Neuvillette: {
     normal1: {
       sheet: 'Neuvillette',

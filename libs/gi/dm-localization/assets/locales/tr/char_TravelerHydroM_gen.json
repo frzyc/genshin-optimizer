@@ -115,7 +115,7 @@
     "name": "Yükselen Göl",
     "description": {
       "0": "Gezgin, bir Kaynak Suyu Damlacığı aldığında 2 Enerji yeniler.",
-      "1": "\"Saf Sular\" Pasif Yeteneğini gerektirir."
+      "1": "\"Saf Sular\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation2": {

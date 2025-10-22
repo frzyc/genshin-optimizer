@@ -133,8 +133,8 @@
   "constellation1": {
     "name": "Shoban: Ostentatious Plumage",
     "description": {
-      "0": "Saat dalam status <strong>Windfavored</strong>, ATK SPD Kuugo: Fushoudan dan Kuugo: Toufukai Wanderer meningkat 10%.",
-      "1": "Selain itu, panah angin yang diciptakan oleh Talenta Pasif \"Gales of Reverie\" milik Wanderer mengakibatkan tambahan DMG sebesar 25% ATK. Kamu harus membuka Talenta Pasif \"Gales of Reverie\" terlebih dahulu."
+      "0": "Saat dalam status <strong>Windfavored</strong>, ATK SPD Kuugo: Fushoudan dan Kuugo: Toufukai milik Wanderer meningkat 10%.",
+      "1": "Selain itu, panah angin yang diciptakan oleh Talenta Ascension \"Gales of Reverie\" milik Wanderer mengakibatkan tambahan DMG sebesar 25% ATK. Kamu harus membuka Talenta Ascension \"Gales of Reverie\" terlebih dahulu."
     }
   },
   "constellation2": {
@@ -154,8 +154,8 @@
   "constellation4": {
     "name": "Yonban: Set Adrift into Spring",
     "description": {
-      "0": "Saat melancarkan <strong>Hanega: Song of the Wind</strong>, jika memicu Talenta Pasif \"Jade-Claimed Flower\", Karakter akan mendapatkan efek peningkatan berdasarkan jenis Elemennya, dan akan mendapatkan 1 jenis efek peningkatan acak yang belum terpicu kali ini. Maksimum efek peningkatan elemen yang bisa diperoleh bersamaan adalah 3 jenis elemen.",
-      "1": "Harus sudah membuka Talenta Pasif \"Jade-Claimed Flower\" lebih dulu."
+      "0": "Saat melancarkan <strong>Hanega: Song of the Wind</strong>, jika memicu Talenta Ascension \"Jade-Claimed Flower\", Karakter akan mendapatkan efek peningkatan berdasarkan jenis elemennya, dan akan mendapatkan 1 jenis efek peningkatan acak yang belum terpicu kali ini. Maksimum efek peningkatan elemen yang bisa diperoleh bersamaan adalah 3 jenis elemen.",
+      "1": "Harus sudah membuka Talenta Ascension \"Jade-Claimed Flower\" lebih dulu."
     }
   },
   "constellation5": {

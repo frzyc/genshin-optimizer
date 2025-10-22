@@ -142,8 +142,8 @@
   "constellation2": {
     "name": "„Von nun an stelle ich mich den Gefahren der langen Nacht“",
     "description": {
-      "0": "Verstärkt den Effekt des passiven Talents „Finsternis zersetzende Flamme“: Erhöht den von Clorinde verursachten <electro>Elektro-Schaden</electro> mit ihrem Standardangriff und den von <strong>Sterbende Lichtstrahlen</strong> um 30 % von Clorindes ANG, nachdem Truppenmitglieder in der Nähe bei Gegnern <electro>Elektro-Reaktionen</electro> ausgelöst haben. Dieser Effekt hält 15 s, 3-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet. Erhöht bei 3 Stapelungen Clorindes Unterbrechungs-WDS. Der max. Schaden-Bonus, der auf diese Weise für die oben genannten Angriffe erreicht werden kann, beträgt 2.700 Punkte.",
-      "1": "Das passive Talent „Finsternis zersetzende Flamme“ muss zuerst freigeschaltet werden."
+      "0": "Verstärkt den Effekt des Aufstiegstalents „Finsternis zersetzende Flamme“: Erhöht den von Clorinde verursachten <electro>Elektro-Schaden</electro> mit ihrem Standardangriff und den von <strong>Sterbende Lichtstrahlen</strong> um 30 % von Clorindes ANG, nachdem Truppenmitglieder in der Nähe bei Gegnern <electro>Elektro-Reaktionen</electro> ausgelöst haben. Dieser Effekt hält 15 s, 3-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet. Erhöht bei 3 Stapelungen Clorindes Unterbrechungs-WDS. Der max. Schaden-Bonus, der auf diese Weise für die oben genannten Angriffe erreicht werden kann, beträgt 2.700 Punkte.",
+      "1": "Das Aufstiegstalent „Finsternis zersetzende Flamme“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation3": {

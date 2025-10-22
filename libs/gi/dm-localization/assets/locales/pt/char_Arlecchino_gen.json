@@ -139,7 +139,7 @@
     "description": {
       "0": "<strong>Comando da Dívida de Sangue</strong> lança agora Comando da Dívida de Sangue: Pagamento",
       "1": "Quando Arlecchino absorve um Comando da Dívida de Sangue: Pagamento, ela lança uma Lua de Sangue que causa 900% de seu ATQ como <pyro>Dano Pyro em AdE</pyro> e aumenta todas as suas resistências elementais e físicas em 20% por 15s. Esse efeito pode ser desencadeado uma vez a cada 10s.",
-      "2": "Primeiro é necessário desbloquear o Talento Passivo \"Somente a Dor pode ser Compensada\"."
+      "2": "Primeiro é necessário desbloquear o Talento de Ascensão \"Somente a Dor pode ser Compensada\"."
     }
   },
   "constellation3": {

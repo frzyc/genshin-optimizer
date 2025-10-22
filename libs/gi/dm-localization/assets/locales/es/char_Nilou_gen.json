@@ -107,7 +107,7 @@
       "1": "Cuando un personaje bajo el estado de cáliz de la abundancia recibe un <dendro>ataque Dendro</dendro>, la Maestría Elemental de todos los personajes cercanos aumenta en 100 pts. durante 10 s. Además, al causar una reacción de Florecimiento o Florecimiento Lunar, se crearán núcleos feraces en lugar de núcleos Dendro.",
       "2": "A diferencia de estos últimos, los núcleos feraces explotan rápidamente tras ser creados y tienen una mayor AdE.",
       "3": "Sin embargo, estos núcleos no pueden activar las reacciones de Sobreflorecimiento y Crepitar y comparten la misma limitación de cantidad que los núcleos Dendro. Los ataques de los núcleos feraces se consideran ataques de núcleos Dendro causados por la reacción de Florecimiento.",
-      "4": "Cuando el equipo no cumple con los requisitos de los tipos elementales necesarios para este talento pasivo, se eliminarán los efectos de cáliz de la abundancia existentes."
+      "4": "Cuando el equipo no cumple con los requisitos de los tipos elementales necesarios para este talento de ascensión, se eliminarán los efectos de cáliz de la abundancia existentes."
     }
   },
   "passive2": {
@@ -137,7 +137,7 @@
     "name": "Lluvia florestelar",
     "description": {
       "0": "Cuando un personaje en el estado de cáliz de la abundancia inflige <hydro>Daño Hydro</hydro> contra un enemigo, la <hydro>RES Hydro</hydro> de dicho enemigo se reduce en un 35% durante 10 s. Además, tras infligir daño a un enemigo con la reacción de Florecimiento o Florecimiento Lunar, la <dendro>RES Dendro</dendro> de dicho enemigo también se reduce en un 35% durante 10 s.",
-      "1": "Es necesario desbloquear el talento pasivo “Corte de los pétalos danzantes”."
+      "1": "Es necesario desbloquear el talento de ascensión “Corte de los pétalos danzantes”."
     }
   },
   "constellation3": {

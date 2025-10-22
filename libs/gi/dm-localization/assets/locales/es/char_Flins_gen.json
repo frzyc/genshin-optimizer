@@ -75,13 +75,15 @@
     "name": "Rito arcaico: Visita noctívaga",
     "description": {
       "0": "Flins libera el verdadero poder de la lámpara para infligir <electro>Daño Electro en el AdE</electro> y, tras un breve lapso de tiempo, realiza 2 golpes intermedios y 1 golpe final que infligen <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar.",
-      "1": "<strong>Presagio lunar: resplandor ascendente</strong> - Fortalece esta habilidad, de manera que, si hay alguna nube de tormenta en las cercanías, inflige 2 golpes intermedios más de <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar.",
-      "2": "<br/>",
-      "3": "Durante 6 s después de usar la Habilidad Elemental especial, <strong>Electrolanza del Reino del Norte</strong>, la Habilidad Definitiva de Flins, <strong>Rito arcaico: Visita noctívaga</strong>, se sustituye por la Habilidad Definitiva especial <strong>Sinfonía del trueno</strong>.",
-      "4": "<br/>",
-      "5": "<strong>Sinfonía del trueno</strong>",
-      "6": "Gasta menos Energía Elemental para usar la Habilidad Definitiva especial. Flins inflige un golpe de <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar.",
-      "7": "<strong>Presagio lunar: resplandor ascendente</strong> - Fortalece esta habilidad, de manera que, si hay alguna nube de tormenta en las cercanías, inflige 1 golpe más de <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar."
+      "1": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "2": "Fortalece esta habilidad, de manera que, si hay alguna nube de tormenta en las cercanías, inflige 2 golpes intermedios más de <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar.",
+      "3": "<br/>",
+      "4": "Durante 6 s después de usar la Habilidad Elemental especial, <strong>Electrolanza del Reino del Norte</strong>, la Habilidad Definitiva de Flins, <strong>Rito arcaico: Visita noctívaga</strong>, se sustituye por la Habilidad Definitiva especial <strong>Sinfonía del trueno</strong>.",
+      "5": "<br/>",
+      "6": "<strong>Sinfonía del trueno</strong>",
+      "7": "Gasta menos Energía Elemental para usar la Habilidad Definitiva especial. Flins inflige un golpe de <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar.",
+      "8": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "9": "Fortalece esta habilidad, de manera que, si hay alguna nube de tormenta en las cercanías, inflige 1 golpe más de <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar."
     },
     "skillParams": {
       "0": "Daño inicial de habilidad",
@@ -120,7 +122,7 @@
   "passive3": {
     "name": "Bendición presagiolunar: Secretos del viejo mundo",
     "description": {
-      "0": "Cuando un personaje del equipo cause una reacción de Electrocargado, esta se transformará en una reacción de Electrocargado Lunar. El daño base de las reacciones de Electrocargado Lunar aumentará en un 0.7% por cada 100 pts. de ATQ que tenga Flins. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
+      "0": "Cuando un personaje del equipo cause una reacción de Electrocargado, esta se transformará en una reacción de Electrocargado Lunar cuyo daño base aumentará en un 0.7% por cada 100 pts. de ATQ que tenga Flins. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
       "1": "<br/>",
       "2": "Además, cuando Flins esté en el equipo, el nivel de <strong>presagio lunar</strong> de los personajes aumentará en 1."
     }
@@ -143,7 +145,8 @@
     "name": "El muro del diablo",
     "description": {
       "0": "Durante 6 s después de usar la Habilidad Elemental especial, <strong>Electrolanza del Reino del Norte</strong>, el siguiente Ataque Normal de Flins que golpee a un enemigo infligirá <electro>Daño Electro en el AdE</electro> adicional en una cantidad equivalente al 50% del ATQ de Flins. Este daño se considera daño de Electrocargado Lunar.",
-      "1": "<strong>Presagio lunar: resplandor ascendente</strong> - Cuando Flins está en uso y golpea a un enemigo con un ataque <electro>Electro</electro>, la <electro>RES Electro</electro> de dicho enemigo se reduce en un 25% durante 7 s."
+      "1": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "2": "Cuando Flins está en uso y golpea a un enemigo con un ataque <electro>Electro</electro>, la <electro>RES Electro</electro> de dicho enemigo se reduce en un 25% durante 7 s."
     }
   },
   "constellation3": {
@@ -171,7 +174,8 @@
     "name": "Cantos y danzas de la muerte",
     "description": {
       "0": "El daño que inflige Flins a los enemigos con la reacción de Electrocargado Lunar <strong>asciende</strong> en un 35%.",
-      "1": "<strong>Presagio lunar: resplandor ascendente</strong> - El daño que infligen todos los personajes cercanos del equipo a los enemigos con la reacción de Electrocargado Lunar <strong>asciende</strong> en un 10%."
+      "1": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "2": "El daño que infligen todos los personajes cercanos del equipo a los enemigos con la reacción de Electrocargado Lunar <strong>asciende</strong> en un 10%."
     }
   }
 }

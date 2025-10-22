@@ -123,11 +123,11 @@
   "constellation2": {
     "name": "Tepe ve Çalılık Boyunca",
     "description": {
-      "0": "\"Yandan Uçan Yapraklar\" Pasif Yeteneği şu şekilde değiştirilir:",
+      "0": "\"Yandan Uçan Yapraklar\" Yükseltme Yeteneği şu şekilde değiştirilir:",
       "1": "<strong>Yaprak Tacı</strong>, geri döndüğünde karaktere Yandan Uçan Yapraklar yeteneğinden gelen Filiz etkisini verir ve 3 saniyeliğine yakındaki düşmanlara Collei'in Saldırısının %40'ı değerinde <dendro>Doğa Hasarı</dendro> verir.",
       "2": "<strong>Doğa Temizliği</strong> kullanıldıktan sonra mevcut Filiz etkisi sona erinceye kadar eğer grup üyelerinden biri Yanma, Hızlanma, Şiddetlenme, Yayılma, Çiçeklenme, Aşırı Çiçeklenme, Ay Çiçeklenmesi veya Filizlenme tepkimelerini tetiklerse Filiz etkisi 3sn uzar.",
       "3": "Filiz etkisi bu şekilde sadece bir kez uzatılabilir. Mevcut Filiz etkisi devam ederken başka bir Filiz etkisi tetiklenirse, ilk etki kaldırılır. Filizin verdiği Hasar, Element Becerisi Hasarı sayılır.",
-      "4": "\"Yandan Uçan Yapraklar\" Pasif Yeteneğinin açılmış olması gerekir."
+      "4": "\"Yandan Uçan Yapraklar\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {

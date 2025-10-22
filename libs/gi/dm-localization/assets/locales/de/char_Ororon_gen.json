@@ -142,7 +142,7 @@
     "name": "Pfad im Waldnebel",
     "description": {
       "0": "Lässt die <strong>Seelenkugel</strong> der Elementarfähigkeit <strong>Kette des Zwielichts</strong> 2-mal zusätzlich hüpfen.",
-      "1": "Verleiht außerdem den von der <strong>Seelenkugel</strong> getroffenen Gegnern den 12 s anhaltenden Effekt „Dunkelheit der Nacht“: Erhöht den den von diesem Effekt betroffenen Gegnern mit „Feinfühligkeit“ des passiven Talents „Nachtschatten-Synästhesie“ zugefügten Schaden um 50 %. Das passive Talent „Nachtschatten-Synästhesie“ muss für diesen Effekt zuerst freigeschaltet werden."
+      "1": "Verleiht außerdem den von der <strong>Seelenkugel</strong> getroffenen Gegnern den 12 s anhaltenden Effekt „Dunkelheit der Nacht“: Erhöht den den von diesem Effekt betroffenen Gegnern mit „Feinfühligkeit“ des Aufstiegstalents „Nachtschatten-Synästhesie“ zugefügten Schaden um 50 %. Das Aufstiegstalent „Nachtschatten-Synästhesie“ muss für diesen Effekt zuerst freigeschaltet werden."
     }
   },
   "constellation2": {
@@ -179,9 +179,9 @@
   "constellation6": {
     "name": "Ode an die Quellen der Tiefe",
     "description": {
-      "0": "Erhöht beim Auslösen von „Feinfühligkeit“ des passiven Talents „Nachtschatten-Synästhesie“ den ANG der eigenen aktuellen Figur in der Truppe 9 s lang um 10 %, 3-fach stapelbar, Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
+      "0": "Erhöht beim Auslösen von „Feinfühligkeit“ des Aufstiegstalents „Nachtschatten-Synästhesie“ den ANG der eigenen aktuellen Figur in der Truppe 9 s lang um 10 %, 3-fach stapelbar, Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
       "1": "Löst außerdem beim Anwenden der Spezialfähigkeit <strong>Gedämpftes Echo der Finsternis</strong> einen Effekt aus, der „Feinfühligkeit“ gleicht, und verursacht Schaden in Höhe von 200 % des ursprünglichen Schadens.",
-      "2": "Das passive Talent „Nachtschatten-Synästhesie“ muss für diesen Effekt zuerst freigeschaltet werden."
+      "2": "Das Aufstiegstalent „Nachtschatten-Synästhesie“ muss für diesen Effekt zuerst freigeschaltet werden."
     }
   }
 }

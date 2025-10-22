@@ -123,11 +123,11 @@
   "constellation2": {
     "name": "À travers collines et bosquets",
     "description": {
-      "0": "L'aptitude passive « Retour folié » est modifiée :",
-      "1": "Au retour de l'<strong>anneau floral</strong>, le personnage obtient l'effet Germe de l'aptitude passive « Retour folié », infligeant de façon continue aux ennemis proches des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 40 % de l'ATQ de Collei pendant 3 s.",
+      "0": "L'aptitude d'élévation « Retour folié » est modifiée :",
+      "1": "Au retour de l'<strong>anneau floral</strong>, le personnage obtient l'effet Germe de l'aptitude d'élévation « Retour folié », infligeant de façon continue aux ennemis proches des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 40 % de l'ATQ de Collei pendant 3 s.",
       "2": "Si un de vos personnages dans l'équipe déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, de Sélénofleurissement, d'Exubérance ou de Bourgeonnement entre l'utilisation de <strong>Brosse florale</strong> et l'arrêt de cet effet Germe, la durée de l'effet est prolongée de 3 s.",
       "3": "L'effet peut être prolongé une fois maximum de cette manière. Si un nouvel effet Germe est déclenché pendant la durée d'un effet Germe existant, l'effet d'origine est supprimé. Les DGT infligés par l'effet Germe sont considérés comme des DGT de compétence élémentaire.",
-      "4": "L'aptitude passive « Retour folié » doit être déjà débloquée."
+      "4": "L'aptitude d'élévation « Retour folié » doit être déjà débloquée."
     }
   },
   "constellation3": {

@@ -1,0 +1,24 @@
+{
+  "name": "Sương Mai",
+  "description": {
+    "0": "Vật nghi lễ bằng bạc thuần khiết, nghe nói từng là thánh vật được các thánh nữ phương bắc kế thừa nhiều đời."
+  },
+  "passiveName": "Giấc Mộng Đêm Khuya",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 10s sau khi Trọng Kích đánh trúng kẻ địch，Tinh Thông Nguyên Tố tăng <cryo>72</cryo>. Trong 10s sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch，Tinh Thông Nguyên Tố tăng <cryo>48</cryo>."
+    },
+    "1": {
+      "0": "Trong 10s sau khi Trọng Kích đánh trúng kẻ địch，Tinh Thông Nguyên Tố tăng <cryo>90</cryo>. Trong 10s sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch，Tinh Thông Nguyên Tố tăng <cryo>60</cryo>."
+    },
+    "2": {
+      "0": "Trong 10s sau khi Trọng Kích đánh trúng kẻ địch，Tinh Thông Nguyên Tố tăng <cryo>108</cryo>. Trong 10s sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch，Tinh Thông Nguyên Tố tăng <cryo>72</cryo>."
+    },
+    "3": {
+      "0": "Trong 10s sau khi Trọng Kích đánh trúng kẻ địch，Tinh Thông Nguyên Tố tăng <cryo>126</cryo>. Trong 10s sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch，Tinh Thông Nguyên Tố tăng <cryo>84</cryo>."
+    },
+    "4": {
+      "0": "Trong 10s sau khi Trọng Kích đánh trúng kẻ địch，Tinh Thông Nguyên Tố tăng <cryo>144</cryo>. Trong 10s sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch，Tinh Thông Nguyên Tố tăng <cryo>96</cryo>."
+    }
+  }
+}

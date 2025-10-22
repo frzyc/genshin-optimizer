@@ -177,11 +177,11 @@
   "constellation2": {
     "name": "Through Hill and Copse",
     "description": {
-      "0": "The Passive Talent Floral Sidewinder is changed to this:",
+      "0": "The Ascension Talent Floral Sidewinder is changed to this:",
       "1": "The <strong>Floral Ring</strong> will grant the character the Sprout effect from Floral Sidewinder upon return, dealing 40% of Collei's ATK as <dendro>Dendro DMG</dendro> to nearby opponents for 3s.",
       "2": "From the moment of using <strong>Floral Brush</strong> to the moment when this instance of Sprout effect ends, if any of your party members triggers Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, Lunar-Bloom, or Burgeon reactions, the Sprout effect will be extended by 3s.",
       "3": "The Sprout effect can only be extended this way once. If another Sprout effect is triggered during its initial duration, the initial effect will be removed. DMG dealt by Sprout is considered Elemental Skill DMG.",
-      "4": "Requires you to have unlocked the Floral Sidewinder Passive Talent."
+      "4": "You must first unlock the Ascension Talent \"Floral Sidewinder.\""
     }
   },
   "constellation3": {

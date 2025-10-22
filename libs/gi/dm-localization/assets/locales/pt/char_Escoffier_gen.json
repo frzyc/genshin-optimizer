@@ -126,7 +126,7 @@
     "name": "Dança de Sabores para o Paladar",
     "description": {
       "0": "Quando o Tipo Elemental de 4 membros da equipe é <hydro>Hydro</hydro> ou <cryo>Cryo</cryo>, aumenta o Dano CRIT de todos os membros da equipe ao causarem <cryo>Dano Cryo</cryo> em 60% nos 15s após Escoffier lançar sua Habilidade Elemental <strong>Culinária ao Fogo Baixo</strong> ou seu Supremo <strong>Técnica de Corte Refinado</strong>.",
-      "1": "É necessário ter desbloqueado o Talento Passivo \"Inspiração Temperada\"."
+      "1": "É necessário ter desbloqueado o Talento de Ascensão \"Inspiração Temperada\"."
     }
   },
   "constellation2": {
@@ -147,7 +147,7 @@
     "name": "Receita Secreta de Alecrim",
     "description": {
       "0": "Prolonga a duração de <strong>Terapia Alimentar</strong> em 6s. Nessa duração, ao curar com <strong>Terapia Alimentar</strong>, possui uma chance de aumentar a Cura em 100%, e regenerar 2 de Energia Elemental para Escoffier. Essa chance é equivalente a Taxa CRIT de Escoffier. Esse efeito pode ser desencadeado até 7 vezes em uma duração de <strong>Terapia Alimentar</strong>.",
-      "1": "É necessário ter desbloqueado o Talento Passivo \"A Comida é o Melhor Remédio\"."
+      "1": "É necessário ter desbloqueado o Talento de Ascensão \"A Comida é o Melhor Remédio\"."
     }
   },
   "constellation5": {

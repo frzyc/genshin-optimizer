@@ -1,0 +1,24 @@
+{
+  "name": "Báculo Rutilante de la Sacerdotisa",
+  "description": {
+    "0": "Una lanza plateada, pura e impoluta. Cuenta la leyenda que, antiguamente, fue un báculo que usaban los sumos sacerdotes de Hiperbórea para guiar a los Descendientes Lunaescarcha."
+  },
+  "passiveName": "Resentimiento inmaculado",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras golpear a un enemigo con una Habilidad Elemental, el ATQ aumenta en un <cryo>8%</cryo> y la Recarga de Energía aumenta en un <cryo>6%</cryo> durante 6 s. Este efecto puede acumularse hasta 3 veces y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Tras golpear a un enemigo con una Habilidad Elemental, el ATQ aumenta en un <cryo>10%</cryo> y la Recarga de Energía aumenta en un <cryo>7.5%</cryo> durante 6 s. Este efecto puede acumularse hasta 3 veces y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Tras golpear a un enemigo con una Habilidad Elemental, el ATQ aumenta en un <cryo>12%</cryo> y la Recarga de Energía aumenta en un <cryo>9%</cryo> durante 6 s. Este efecto puede acumularse hasta 3 veces y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Tras golpear a un enemigo con una Habilidad Elemental, el ATQ aumenta en un <cryo>14%</cryo> y la Recarga de Energía aumenta en un <cryo>10.5%</cryo> durante 6 s. Este efecto puede acumularse hasta 3 veces y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Tras golpear a un enemigo con una Habilidad Elemental, el ATQ aumenta en un <cryo>16%</cryo> y la Recarga de Energía aumenta en un <cryo>12%</cryo> durante 6 s. Este efecto puede acumularse hasta 3 veces y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

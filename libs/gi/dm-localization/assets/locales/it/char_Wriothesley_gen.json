@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Terrore per i malfattori",
     "description": {
-      "0": "Il Rimprovero magnanimo del talento passivo Supplica di giustizia riceve le seguenti modifiche.",
+      "0": "Il Rimprovero magnanimo del talento d'ascensione Supplica di giustizia riceve le seguenti modifiche.",
       "1": "Quando i PS di Wriothesley sono inferiori a un 60%, o se il personaggio è nello stato di Punizione rigente scatenato da <strong>Assalto della zanna di ghiaccio</strong>, quando il quinto Pugno espulsore va a segno, il personaggio ottiene 1 effetto di Rimprovero magnanimo. È possibile ottenere tale effetto una volta ogni 2,5 s.",
       "2": "<br/>",
       "3": "Inoltre, Rimprovero: Pugno guizzante ottiene i seguenti potenziamenti:",
@@ -133,14 +133,14 @@
         " quando lo si usa per colpire un nemico mentre Wriothesley è in stato di Punizione rigente, la durata dello stato viene estesa di 4 s. È possibile ottenere solo una di tali estensioni in tutta la durata di Punizione rigente."
       ],
       "5": "<br/>",
-      "6": "Richiede il talento passivo Supplica di giustizia."
+      "6": "Richiede il talento d'ascensione Supplica di giustizia."
     }
   },
   "constellation2": {
     "name": "Catene per gli arroganti",
     "description": {
-      "0": "Durante l'uso di <strong>Morso del lupo brunauro</strong>, ogni accumulo di Editto d'accusa derivante dal talento passivo Ascrizione del peccato aumenta di un 40% i DAN inflitti dalla suddetta abilità.",
-      "1": "Richiede il talento passivo Ascrizione del peccato."
+      "0": "Durante l'uso di <strong>Morso del lupo brunauro</strong>, ogni accumulo di Editto d'accusa derivante dal talento d'ascensione Ascrizione del peccato aumenta di un 40% i DAN inflitti dalla suddetta abilità.",
+      "1": "Richiede il talento d'ascensione Ascrizione del peccato."
     }
   },
   "constellation3": {
@@ -153,7 +153,7 @@
   "constellation4": {
     "name": "Redenzione per i sofferenti",
     "description": {
-      "0": "I PS ripristinati tramite Rimprovero: Pugno guizzante aumentano di un 50% dei PS max di Wriothesley. Richiede il talento passivo Supplica di giustizia.",
+      "0": "I PS ripristinati tramite Rimprovero: Pugno guizzante aumentano di un 50% dei PS max di Wriothesley. Richiede il talento d'ascensione Supplica di giustizia.",
       "1": "Inoltre, quando i PS di Wriothesley si ripristinano, se la quantità di PS ripristinati supera il limite massimo, si verificano i seguenti effetti in base a se il personaggio è in campo o meno. Se Wriothesley è in campo, la sua VEL d'ATT aumenta di un 20% per 4 s. Se non è in campo, la VEL d'ATT di tutti i personaggi del tuo gruppo aumenta di un 10% per 6 s. Questi due metodi di aumento della VEL d'ATT non possono accumularsi."
     }
   },
@@ -167,8 +167,8 @@
   "constellation6": {
     "name": "Salvaguardia per gli innocenti",
     "description": {
-      "0": "Il tasso di CRIT e i DAN da CRIT di Rimprovero: Pugno guizzante aumentano rispettivamente di un 10% e di un 80%. Quando viene sprigionato, si materializza un ulteriore spuntone di ghiaccio che infligge un 100% dei DAN di base di Rimprovero: Pugno guizzante come <cryo>DAN da Cryo</cryo>. I DAN inflitti in questo modo sono considerati DAN da attacco caricato.",
-      "1": "Richiede il talento passivo Supplica di giustizia."
+      "0": "Il tasso di CRIT e i DAN da CRIT di Rimprovero: Pugno guizzante aumentano rispettivamente di un 10% e di un 80%. Quando viene sprigionato, si materializza un ulteriore spuntone di ghiaccio che infligge un 100% dei DAN base di Rimprovero: Pugno guizzante come <cryo>DAN da Cryo</cryo>. I DAN inflitti in questo modo sono considerati DAN da attacco caricato.",
+      "1": "Richiede il talento d'ascensione Supplica di giustizia."
     }
   }
 }

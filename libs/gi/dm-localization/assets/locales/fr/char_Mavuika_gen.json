@@ -173,9 +173,9 @@
   "constellation4": {
     "name": "Détermination de la meneuse",
     "description": {
-      "0": "L'effet de l'aptitude passive « Kiongozi » est amélioré :",
+      "0": "L'effet de l'aptitude d'élévation « Kiongozi » est amélioré :",
       "1": "L'augmentation de DGT obtenue après avoir utilisé le déchaînement élémentaire <strong>Heure des cieux brûlants</strong> ne diminue plus avec le temps, et un bonus supplémentaire de DGT de 10 % est obtenu.",
-      "2": "L'aptitude passive « Kiongozi » doit être déjà débloquée."
+      "2": "L'aptitude d'élévation « Kiongozi » doit être déjà débloquée."
     }
   },
   "constellation5": {

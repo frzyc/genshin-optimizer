@@ -139,7 +139,7 @@
     "description": {
       "0": "<strong>Kan Borcu Fermanları</strong> ilk uygulandığında Kan Borcu Vadesi olur.",
       "1": "Arlecchino bir Vade geri aldığında önünde Saldırısının %900'ü kadar <pyro>Ateş Alan Hasarı</pyro> veren ve 15 saniyeliğine Arlecchino'nun Tüm Element Direnci ve Fiziksel Direncini %20 artıran bir Uğursuz Ayın Kanlı Ateşi çıkarır. Bu etki her 10 saniyede bir tetiklenebilir.",
-      "2": "\"Yalnızca Acı Telafi Edebilir\" Pasif Yeteneğinin açılmış olması gerekir."
+      "2": "\"Yalnızca Acı Telafi Edebilir\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {

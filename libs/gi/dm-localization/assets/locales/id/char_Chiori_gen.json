@@ -140,7 +140,7 @@
       "1": "Selain itu, jika ada Karakter <geo>Geo</geo> selain Chiori di dalam party, setelah terjangan Fluttering Hasode berakhir, akan memicu efek sebagai berikut:",
       "2": [
         "Memanggil satu Tamoto tambahan. Hanya boleh ada satu Tamoto tambahan milik Chiori yang dipanggil dengan cara ini dan melalui Geo Construct yang bisa dipanggil secara bersamaan.",
-        "Memicu Talenta Pasif \"The Finishing Touch\". Harus membuka Talenta Pasif \"The Finishing Touch\" terlebih dahulu."
+        "Memicu Talenta Ascension \"The Finishing Touch\". Harus membuka Talenta Ascension \"The Finishing Touch\" terlebih dahulu."
       ]
     }
   },
@@ -161,8 +161,8 @@
   "constellation4": {
     "name": "A Tailor's Three Courtesies",
     "description": {
-      "0": "Dalam 8 detik setelah memicu efek lanjutan dari Talenta Pasif Tailor-Made, saat Normal Attack, Charged Attack, atau Plunging Attack Karakter aktif sendiri di dalam party mengenai musuh di sekitar, akan memanggil satu \"Kinu\" si boneka automaton sederhana di sekitar musuh. Jumlah Kinu yang bisa dipanggil melalui cara di atas adalah maksimum satu setiap 1 detik. Maksimum bisa memanggil hingga 3 Kinu dalam satu durasi \"Seize the Moment\" atau selama efek \"Tailoring\" dari Talenta Pasif \"Tailor-Made\" berlangsung. Efek di atas dapat terpicu sekali setiap 15 detik.",
-      "1": "Harus membuka Talenta Pasif \"Tailor-Made\" terlebih dahulu."
+      "0": "Dalam 8 detik setelah memicu efek lanjutan dari Talenta Ascension Tailor-Made, saat Normal Attack, Charged Attack, atau Plunging Attack Karakter aktif sendiri di dalam party mengenai musuh di sekitar, akan memanggil satu \"Kinu\" si boneka automaton sederhana di sekitar musuh. Jumlah Kinu yang bisa dipanggil melalui cara di atas adalah maksimum satu setiap 1 detik. Maksimum bisa memanggil hingga 3 Kinu dalam satu durasi \"Seize the Moment\" atau selama efek \"Tailoring\" dari Talenta Ascension \"Tailor-Made\" berlangsung. Efek di atas dapat terpicu sekali setiap 15 detik.",
+      "1": "Harus membuka Talenta Ascension \"Tailor-Made\" terlebih dahulu."
     }
   },
   "constellation5": {
@@ -175,7 +175,7 @@
   "constellation6": {
     "name": "Sole Principle Pursuit",
     "description": {
-      "0": "Setelah memicu efek lanjutan Talenta Pasif \"Tailor-Made\", CD <strong>Fluttering Hasode</strong> Chiori sendiri berkurang 12 detik. Harus membuka Talenta Pasif \"Tailor-Made\" terlebih dahulu.",
+      "0": "Setelah memicu efek lanjutan Talenta Ascension \"Tailor-Made\", CD <strong>Fluttering Hasode</strong> Chiori sendiri berkurang 12 detik. Harus membuka Talenta Ascension \"Tailor-Made\" terlebih dahulu.",
       "1": "Selain itu, DMG yang diakibatkan Normal Attack Chiori meningkat setara dengan 235% DEF Chiori sendiri."
     }
   }
