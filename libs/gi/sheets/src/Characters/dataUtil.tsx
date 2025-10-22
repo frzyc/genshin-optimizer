@@ -185,9 +185,10 @@ export function splitScaleDmgNode(
     | 'skill'
     | 'burst',
   additional: Data = {},
-  specialMultiplier?: NumNode
+  specialMultiplier?: NumNode,
+  overrideTalentType?: 'skill' | 'burst' | 'auto'
 ): NumNode {
-  const talentType = getTalentType(move)
+  const talentType = overrideTalentType ?? getTalentType(move)
   return customDmgNode(
     sum(
       ...bases.map((base, i) =>

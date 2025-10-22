@@ -335,7 +335,8 @@ export function lunarDmg(
   multiplier: NumNode,
   base: 'reaction' | MainStatKey | SubstatKey,
   variant: LunarReactionKey,
-  additional: Data = {}
+  additional: Data = {},
+  specialMultiplier?: NumNode
 ) {
   const transformative_dmg_ = sum(
     infoMut(sum(percent(1), prod(6, frac(input.total.eleMas, 2000))), {
@@ -378,6 +379,7 @@ export function lunarDmg(
 
   return data(
     prod(
+      ...(specialMultiplier ? [specialMultiplier] : []),
       sum(
         prod(
           multiplier,
