@@ -125,13 +125,6 @@ function artifactReducer(
           ? state!.substats.findIndex((current) => current.key === substat.key)
           : -1
 
-        if (
-          state!.unactivatedSubstats?.length &&
-          state!.unactivatedSubstats[0].key
-        ) {
-          state!.unactivatedSubstats = []
-        }
-
         if (oldIndex === -1 || oldIndex === index)
           state!.substats[index] = substat
         // Already in used, swap the items instead
@@ -140,38 +133,76 @@ function artifactReducer(
             state!.substats[oldIndex],
             state!.substats[index],
           ]
+
+        // Reset unactivated substat data if it exists
+        if (
+          state!.unactivatedSubstats?.length &&
+          state!.unactivatedSubstats[0].key
+        ) {
+          state!.unactivatedSubstats = []
+        }
         return { ...state! }
       }
       case 'unactivatedSubstat': {
-        if (state?.unactivatedSubstats) {
-          const { substat } = action
-
-          let activeSubstat: ISubstat = { key: '', value: 0 }
-
-          if (state!.substats[3].key) {
-            activeSubstat = state!.substats[3]
-            state!.substats[3] = { key: '', value: 0 }
-          } else {
-            activeSubstat = substat
-          }
-
-          const oldIndex = substat.key
-            ? state!.unactivatedSubstats.findIndex(
-                (current) => current.key === substat.key
-              )
-            : -1
-          if (oldIndex === -1 || oldIndex === 0)
-            state!.unactivatedSubstats[0] = activeSubstat
-          // Already in used, swap the items instead
-          else
-            [
-              state!.unactivatedSubstats[0],
-              state!.unactivatedSubstats[oldIndex],
-            ] = [
-              state!.unactivatedSubstats[oldIndex],
-              state!.unactivatedSubstats[0],
-            ]
+        if (!state?.unactivatedSubstats) {
+          return { ...state! }
         }
+
+        const { index, substat } = action
+        const findSubstatIndex = (
+          substats: typeof state.substats,
+          key: string
+        ) => substats.findIndex((current) => current.key === key)
+        const oldActivatedIndex = substat.key
+          ? findSubstatIndex(state.substats, substat.key)
+          : -1
+        const unactivatedIndex = substat.key
+          ? findSubstatIndex(state.unactivatedSubstats, substat.key)
+          : -1
+        const oldUnactivatedIndex =
+          unactivatedIndex !== -1 ? unactivatedIndex + 3 : -1
+        const activeSubstat = state.substats[3].key
+          ? state.substats[3]
+          : substat
+
+        // Allow swapping of substats between unactivated and activated
+        if (index === 3) {
+          if (oldUnactivatedIndex === -1 || oldUnactivatedIndex === index) {
+            if (
+              oldActivatedIndex !== -1 &&
+              oldUnactivatedIndex !== oldActivatedIndex
+            ) {
+              const tempStat = state!.unactivatedSubstats[0]
+              state!.unactivatedSubstats[0] = state!.substats[oldActivatedIndex]
+              state!.substats[oldActivatedIndex] = tempStat
+            } else {
+              state!.unactivatedSubstats[0] = activeSubstat
+            }
+          }
+        } else {
+          if (oldActivatedIndex === -1 || oldActivatedIndex === index) {
+            if (
+              oldUnactivatedIndex !== -1 &&
+              oldUnactivatedIndex !== oldActivatedIndex
+            ) {
+              const tempStat = state!.substats[index]
+              state!.substats[index] = state!.unactivatedSubstats[0]
+              state!.unactivatedSubstats[0] = tempStat
+            } else {
+              state!.substats[index] = activeSubstat
+            }
+          } else {
+            const tempStat = state!.substats[index]
+            state!.substats[index] = state!.substats[oldActivatedIndex]
+            state!.substats[oldActivatedIndex] = tempStat
+          }
+        }
+
+        // Reset activated substat
+        if (state.substats[3].key) {
+          state.substats[3] = { key: '', value: 0 }
+        }
+
         return { ...state! }
       }
       case 'overwrite':
