@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Kötülere Eziyet",
     "description": {
-      "0": "\"Adalet Yerini Bulacak\" Pasif Yeteneği ile tetiklenen Şefkatli Azar aşağıdaki şekilde değişir:",
+      "0": "\"Adalet Yerini Bulacak\" Yükseltme Yeteneği ile tetiklenen Şefkatli Azar aşağıdaki şekilde değişir:",
       "1": "Wriothesley'nin Canı %60'ın altına düştüğünde veya <strong>Buzdiş Saldırısı</strong> becerisinin neden olduğu Ürperten Ceza durumundayken beşinci Püskürtücü Yumruk saldırısı isabet ettiğinde bir Şefkatli Azar oluşturur. Her 2,5 saniyede bir Şefkatli Azar etkisi kazanılabilir.",
       "2": "<br/>",
       "3": "Ayrıca Azar: Sıçrayan Yumruk şu etkileri kazanır:",
@@ -133,14 +133,14 @@
         "Wriothesley Ürperten Ceza durumundayken isabet ettiğinde bu durumun süresi 4 saniye uzar. Bu uzatma her bir Ürperten Ceza durumu için bir defa meydana gelebilir."
       ],
       "5": "<br/>",
-      "6": "\"Adalet Yerini Bulacak\" Pasif Yeteneğinin açılmış olması gerekir."
+      "6": "\"Adalet Yerini Bulacak\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation2": {
     "name": "Küstahlara Esaret",
     "description": {
-      "0": "<strong>Kara Altın Kurt Isırığı</strong> kullanıldığında, \"Her Günahın Bir Bedeli Var\" Pasif Yeteneği ile kazanılan Kovuşturma Emri kademeleri, bu yeteneğin Hasarını %40 artırır.",
-      "1": "\"Her Günahın Bir Bedeli Var\" Pasif Yeteneğinin açılmış olması gerekir."
+      "0": "<strong>Kara Altın Kurt Isırığı</strong> kullanıldığında, \"Her Günahın Bir Bedeli Var\" Yükseltme Yeteneği ile kazanılan Kovuşturma Emri kademeleri, bu yeteneğin Hasarını %40 artırır.",
+      "1": "\"Her Günahın Bir Bedeli Var\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {
@@ -153,7 +153,7 @@
   "constellation4": {
     "name": "Mazlumlara Kefaret",
     "description": {
-      "0": "Wriothesley'nin Azar: Sıçrayan Yumruk ile yenilediği Can, Maks. Canının %50'sine kadar yükselir. \"Adalet Yerini Bulacak\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "0": "Wriothesley'nin Azar: Sıçrayan Yumruk ile yenilediği Can, Maks. Canının %50'sine kadar yükselir. \"Adalet Yerini Bulacak\" Yükseltme Yeteneğinin açılmış olması gerekir.",
       "1": "Ayrıca Wriothesley'nin Maks. Canından daha fazla iyileşmesi halinde, savaş alanında olup olmamasına göre şu etkiler meydana gelir. Wriothesley eğer savaş alanındaysa 4 saniyeliğine Saldırı Hızı %20 artar, savaş alanında değilse 6 saniyeliğine tüm grup üyelerinin Saldırı Hızı %10 artar. Bu iki Saldırı Hızı artırma yöntemi birbirine eklenmez."
     }
   },
@@ -168,7 +168,7 @@
     "name": "Masumlara Hürmet",
     "description": {
       "0": "Azar: Sıçrayan Yumruk Kritik Oranı %10, Kritik Hasarı %80 artar. Ayrıca Azar: Sıçrayan Yumruğun Temel Hasarının %100'ü kadar <cryo>Buz Hasarı</cryo> veren ek bir sarkıt ortaya çıkarır. Bu şekilde verilen Hasar, Yüklü Saldırı Hasarı sayılır.",
-      "1": "\"Adalet Yerini Bulacak\" Pasif Yeteneğinin açılmış olması gerekir."
+      "1": "\"Adalet Yerini Bulacak\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   }
 }

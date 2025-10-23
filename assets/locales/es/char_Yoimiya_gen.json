@@ -115,7 +115,7 @@
   "passive2": {
     "name": "Sofoco estival",
     "description": {
-      "0": "Tras usar <strong>Saxifraga de oro</strong>, el ATQ de todos los miembros del equipo (a excepción de Yoimiya) aumenta en un 10% durante 15 s. Además, en función del número de acumulaciones de Truco ígneo que tenga Yoimiya en el momento de usar <strong>Saxifraga de oro</strong>, dicho aumento de ATQ incrementará en un 1% adicional por cada acumulación."
+      "0": "Tras usar <strong>Saxifraga de oro</strong>, el ATQ de todos los miembros del equipo (a excepción de Yoimiya) aumenta en un 10% durante 15 s. Además, en función del número de acumulaciones del talento de ascensión “Truco ígneo” que tenga Yoimiya en el momento de usar <strong>Saxifraga de oro</strong>, dicho aumento de ATQ incrementará en un 1% adicional por cada acumulación."
     }
   },
   "passive3": {

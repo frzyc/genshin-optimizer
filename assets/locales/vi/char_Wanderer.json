@@ -1,0 +1,11 @@
+{
+  "windfavoredState": "Trong trạng thái <strong>Tựa Gió Bay Cao</strong>",
+  "p1": {
+    "pyroCondName": "<strong>Hanega - Hùng Ca Gió Thoảng</strong> tiếp xúc với <pyro>nguyên tố Hỏa</pyro>",
+    "cryoCondName": "<strong>Hanega - Hùng Ca Gió Thoảng</strong> tiếp xúc với <cryo>nguyên tố Băng</cryo>"
+  },
+  "p2Dmg": "Sát thương mũi tên gió",
+  "c1BonusKey": "Lượng tăng bội số sát thương của mũi tên gió",
+  "c2CondName": "Cách biệt giữa Ngự Không Lực tối đa và hiện tại",
+  "c6Key": "Bội số Lời Chúc - Màn Sương Nghiêng Gió Rừng"
+}

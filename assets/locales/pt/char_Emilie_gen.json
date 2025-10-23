@@ -124,14 +124,14 @@
   "constellation1": {
     "name": "Análise de Fragrância Leve",
     "description": {
-      "0": "Aumenta o Dano causado por <strong>Extração de Fragrância</strong> e por Colônia do Orvalho do Talento Passivo \"Fragrância Residual\" em 20%. Para o segundo, é necessário primeiro desbloquear o Talento Passivo.",
+      "0": "Aumenta o Dano causado por <strong>Extração de Fragrância</strong> e por Colônia do Orvalho do Talento de Ascensão \"Fragrância Residual\" em 20%. Para o segundo, é necessário primeiro desbloquear o Talento de Ascensão.",
       "1": "Além disso, quando um personagem próximo da equipe desencadeia Queimadura no inimigo, ou quando causa <dendro>Dano Dendro</dendro> contra um inimigo que está Queimando, gera um <strong>Aroma</strong> adicional. Esse efeito pode ser desencadeado uma vez a cada 2.9s."
     }
   },
   "constellation2": {
     "name": "Harmonia de Luzes",
     "description": {
-      "0": "Quando <strong>Extração de Fragrância</strong>, <strong>Apresentação Aromática</strong> ou Colônia do Orvalho produzidos pelo Talento Passivo \"Fragrância Residual\" (é necessário ter desbloqueado esse Talento Passivo) atingir um inimigo, a <dendro>RES Dendro</dendro> desse inimigo é reduzida em 30% por 10s."
+      "0": "Quando <strong>Extração de Fragrância</strong>, <strong>Apresentação Aromática</strong> ou Colônia do Orvalho produzidos pelo Talento de Ascensão \"Fragrância Residual\" (é necessário ter desbloqueado esse Talento de Ascensão) atingir um inimigo, a <dendro>RES Dendro</dendro> desse inimigo é reduzida em 30% por 10s."
     }
   },
   "constellation3": {

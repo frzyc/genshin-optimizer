@@ -1,0 +1,31 @@
+{
+  "social": {
+    "paypal": "PayPal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "link": {
+    "download": "Link para Download",
+    "discord": "Convite para Discord"
+  },
+  "unselect": "Remover Seleção",
+  "inventory": "Inventário",
+  "ascending": "Ascendente",
+  "descending": "Descendente",
+  "sortBy": "Classificar por: ",
+  "loading": "Carregando...",
+  "error": "Erro",
+  "reset": "Resetar",
+  "info": "Informações",
+  "close": "Fechar",
+  "delete": "Excluir",
+  "locked": "Bloqueado",
+  "unlocked": "Desbloqueado",
+  "excluded": "Excluído",
+  "included": "Incluído",
+  "selectlevel": "Selecionar Nível",
+  "gender": {
+    "F": "Feminino",
+    "M": "Masculino"
+  }
+}

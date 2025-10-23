@@ -128,7 +128,7 @@
     "name": "Lập Nghi - Phủ Lãm Trú Minh",
     "description": {
       "0": "Sau khi thi triển <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong>, tốc độ đánh thường của Cyno tăng 20%, duy trì 10s. Nếu kích hoạt hiệu quả \"Phán Quyết\" của thiên phú Lạc Vũ Phán Quyết khi thi triển <strong>Nghi Thức Bí Ẩn - Dẫn Hồn Đáy Vực</strong>, sẽ làm mới thời gian duy trì hiệu quả này.",
-      "1": "Cần mở khóa thiên phú cố định \"Lạc Vũ Phán Quyết\"."
+      "1": "Cần mở khóa thiên phú đột phá \"Lạc Vũ Phán Quyết\"."
     }
   },
   "constellation2": {
@@ -161,10 +161,10 @@
   "constellation6": {
     "name": "Vũ Nghi - Tài Lạc Quân Hành",
     "description": {
-      "0": "Sau khi thi triển <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong> hoặc kích hoạt hiệu quả \"Phán Quyết\" của thiên phú cố định \"Lạc Vũ Phán Quyết\", Cyno sẽ nhận được 4 tầng hiệu quả \"Nghi Thức Sói\". Khi tấn công thường của Cyno đánh trúng kẻ địch, sẽ tiêu hao một tầng \"Nghi Thức Sói\", và bắn ra một Tia Sét Xuyên Thấu.",
+      "0": "Sau khi thi triển <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong> hoặc kích hoạt hiệu quả \"Phán Quyết\" của thiên phú đột phá \"Lạc Vũ Phán Quyết\", Cyno sẽ nhận được 4 tầng hiệu quả \"Nghi Thức Sói\". Khi tấn công thường của Cyno đánh trúng kẻ địch, sẽ tiêu hao một tầng \"Nghi Thức Sói\", và bắn ra một Tia Sét Xuyên Thấu.",
       "1": "Hiệu quả \"Nghi Thức Sói\" duy trì 8s, tối đa cộng dồn 8 tầng, đồng thời sẽ xóa bỏ sau khi trạng thái Sứ Giả Dẫn Lối của Nghi Thức Thần Thánh - Nhanh Như Sói kết thúc.",
       "2": "Mỗi 0.4s tối đa bắn ra một Tia Sét Xuyên Thấu bằng cách này.",
-      "3": "Cần mở khóa thiên phú cố định \"Lạc Vũ Phán Quyết\"."
+      "3": "Cần mở khóa thiên phú đột phá \"Lạc Vũ Phán Quyết\"."
     }
   }
 }

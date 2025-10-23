@@ -79,7 +79,7 @@
       "4": "<br/>",
       "5": "<strong>Verdorbene Kunst – Vernichtung</strong>",
       "6": "Eine besondere Spezialfähigkeit, die ohne den Verbrauch von „List der Schlange“ ausgelöst werden kann.",
-      "7": "Nach dem Auslösen erhält Skirk den Effekt „Verwelkt“, der bis zum Ende des „Sieben-Phasen-Blitzmodus“ andauert. Nach dem Freischalten des passiven Talents <strong>„Vernunft jenseits der Vernunft“</strong> kann Skirk auch Leere-Risse in einem bestimmten Umkreis absorbieren.",
+      "7": "Nach dem Auslösen erhält Skirk den Effekt „Verwelkt“, der bis zum Ende des „Sieben-Phasen-Blitzmodus“ andauert. Nach dem Freischalten des Aufstiegstalents <strong>„Vernunft jenseits der Vernunft“</strong> kann Skirk auch Leere-Risse in einem bestimmten Umkreis absorbieren.",
       "8": "Während der Wirkungsdauer des Effekts „Verwelkt“ verursachen die Standardangriffe von Skirk, die Gegner treffen, alle 0,1 s erhöhten Schaden. Wenn Skirk bei der Verwendung von <strong>„Verdorbene Kunst – Vernichtung“</strong> Leere-Risse absorbiert hat, dann erhöht sich der Schaden des diesmaligen Standardangriffs basierend auf der Anzahl der absorbierten Leere-Risse.",
       "9": "Dieser Effekt wird entfernt, sobald er 10-mal ausgelöst wurde."
     },
@@ -134,8 +134,8 @@
   "constellation1": {
     "name": "Tiefer Fall",
     "description": {
-      "0": "Verstärkt den Effekt des passiven Talents <strong>Vernunft jenseits der Vernunft</strong>: Für jeden absorbierten Leere-Riss wird eine Kristallklinge beschworen, die Gegner in der Nähe angreift und <cryo>Kryo-Schaden</cryo> in Höhe von 500 % von Skirks ANG verursacht. Hierdurch verursachter Schaden gilt als Schaden des heftigen Schlags.",
-      "1": "Das passive Talent „Vernunft jenseits der Vernunft“ muss zuerst freigeschaltet werden."
+      "0": "Verstärkt den Effekt des Aufstiegstalents <strong>Vernunft jenseits der Vernunft</strong>: Für jeden absorbierten Leere-Riss wird eine Kristallklinge beschworen, die Gegner in der Nähe angreift und <cryo>Kryo-Schaden</cryo> in Höhe von 500 % von Skirks ANG verursacht. Hierdurch verursachter Schaden gilt als Schaden des heftigen Schlags.",
+      "1": "Das Aufstiegstalent „Vernunft jenseits der Vernunft“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation2": {
@@ -156,8 +156,8 @@
   "constellation4": {
     "name": "Unterbrochener Fluss",
     "description": {
-      "0": "Verstärkt den Effekt des passiven Talents <strong>Rückkehr ins Vergessen</strong>: Erhöht für jede Stapelung „Kreuzung des Todes“ den ANG von Skirk zusätzlich um 10/20/40 %.",
-      "1": "Das passive Talent „Rückkehr ins Vergessen“ muss zuerst freigeschaltet werden."
+      "0": "Verstärkt den Effekt des Aufstiegstalents <strong>Rückkehr ins Vergessen</strong>: Erhöht für jede Stapelung „Kreuzung des Todes“ den ANG von Skirk zusätzlich um 10/20/40 %.",
+      "1": "Das Aufstiegstalent „Rückkehr ins Vergessen“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation5": {
@@ -170,8 +170,8 @@
   "constellation6": {
     "name": "Zur Quelle",
     "description": {
-      "0": "Verleiht Skirk für jeden „Leere-Riss“, den sie durch das passive Talent <strong>„Vernunft jenseits der Vernunft“</strong> absorbiert hat, eine Stapelung des Effekts „Verdorbene Kunst – Enthauptung“. Indem sie „Verdorbene Kunst – Enthauptung“ verbraucht, kann Skirk abgestimmte Angriffe durchführen. Außerdem wird der Schaden, den sie im Modus <strong>Sieben-Phasen-Blitz</strong> erleidet, verringert. Die Stapelung des Effekts hält 15 s, 3-fach stapelbar, Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
-      "1": "Das passive Talent „Vernunft jenseits der Vernunft“ muss zuerst freigeschaltet werden.",
+      "0": "Verleiht Skirk für jeden „Leere-Riss“, den sie durch das Aufstiegstalent <strong>„Vernunft jenseits der Vernunft“</strong> absorbiert hat, eine Stapelung des Effekts „Verdorbene Kunst – Enthauptung“. Indem sie „Verdorbene Kunst – Enthauptung“ verbraucht, kann Skirk abgestimmte Angriffe durchführen. Außerdem wird der Schaden, den sie im Modus <strong>Sieben-Phasen-Blitz</strong> erleidet, verringert. Die Stapelung des Effekts hält 15 s, 3-fach stapelbar, Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
+      "1": "Das Aufstiegstalent „Vernunft jenseits der Vernunft“ muss zuerst freigeschaltet werden.",
       "2": "<br/>",
       "3": "<strong>Verdorbene Kunst – Enthauptung</strong>",
       "4": [

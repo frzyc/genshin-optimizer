@@ -112,7 +112,7 @@
       "0": "DMG yang diakibatkan Cyno akan meningkat berdasarkan jumlah Elemental Mastery diri sendiri, dengan peningkatan sebagai berikut:",
       "1": [
         "DMG Normal Attack Pactsworn Pathclearer akan meningkat sebanyak 150% jumlah Elemental Mastery.",
-        "DMG Duststalker Bolt dari Talenta Pasif Featherfall Judgment akan meningkat sebanyak 250% Elemental Mastery."
+        "DMG Duststalker Bolt dari Talenta Ascension Featherfall Judgment akan meningkat sebanyak 250% Elemental Mastery."
       ]
     }
   },
@@ -125,8 +125,8 @@
   "constellation1": {
     "name": "Ordinance: Unceasing Vigil",
     "description": {
-      "0": "Setelah menggunakan <strong>Sacred Rite: Wolf's Swiftness</strong>, akan meningkatkan 20% Normal Attack SPD Cyno selama 10 detik. Jika efek Judication dari Talenta Pasif Featherfall Judgment terpicu selama <strong>Secret Rite: Chasmic Soulfarer</strong>, maka durasi kenaikan ini akan diperbarui.",
-      "1": "Harus membuka Talenta Pasif \"Featherfall Judgment\" terlebih dahulu."
+      "0": "Setelah menggunakan <strong>Sacred Rite: Wolf's Swiftness</strong>, akan meningkatkan 20% Normal Attack SPD Cyno selama 10 detik. Jika efek Judication dari Talenta Ascension Featherfall Judgment terpicu selama <strong>Secret Rite: Chasmic Soulfarer</strong>, maka durasi kenaikan ini akan diperbarui.",
+      "1": "Harus membuka Talenta Ascension \"Featherfall Judgment\" terlebih dahulu."
     }
   },
   "constellation2": {
@@ -159,10 +159,10 @@
   "constellation6": {
     "name": "Raiment: Just Scales",
     "description": {
-      "0": "Setelah melancarkan <strong>Sacred Rite: Wolf's Swiftness</strong> atau memicu Judication dari Talenta Pasif Featherfall Judgment, Cyno akan mendapatkan 4 lapis efek \"Day of the Jackal\". Saat Normal Attack Cyno mengenai musuh, akan mengonsumsi 1 lapis \"Day of the Jackal\" dan menembakkan 1 Duststalker Bolt.",
+      "0": "Setelah melancarkan <strong>Sacred Rite: Wolf's Swiftness</strong> atau memicu Judication dari Talenta Ascension Featherfall Judgment, Cyno akan mendapatkan 4 lapis efek \"Day of the Jackal\". Saat Normal Attack Cyno mengenai musuh, akan mengonsumsi 1 lapis \"Day of the Jackal\" dan menembakkan 1 Duststalker Bolt.",
       "1": "Day of the Jackal berlangsung selama 8 detik, dapat ditumpuk sampai 8 lapis, dan akan hilang pada saat status Pactsworn Pathclearer dari Sacred Rite: Wolf's Swiftness berakhir.",
       "2": "Duststalker Bolt yang dapat ditembakkan dengan cara ini adalah maksimal satu setiap 0,4 detik.",
-      "3": "Harus membuka Talenta Pasif \"Featherfall Judgment\" terlebih dahulu."
+      "3": "Harus membuka Talenta Ascension \"Featherfall Judgment\" terlebih dahulu."
     }
   }
 }

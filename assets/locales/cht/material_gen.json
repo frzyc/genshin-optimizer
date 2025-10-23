@@ -233,6 +233,9 @@
   "LegionMorale": {
     "name": "軍團士氣"
   },
+  "PrepProgress": {
+    "name": "完備進度"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -268,6 +271,33 @@
   },
   "AcquaintFate": {
     "name": "相遇之緣"
+  },
+  "ChronalNexus": {
+    "name": "事象凝核"
+  },
+  "ArcaneKeystone": {
+    "name": "綺刻之楔"
+  },
+  "GeodeOfReplication": {
+    "name": "重現晶簇"
+  },
+  "EngravedShard": {
+    "name": "刻印片形"
+  },
+  "FestiveKey": {
+    "name": "盛會之匙"
+  },
+  "LuminousKeystone": {
+    "name": "明刻之楔"
+  },
+  "WonderlandEXP": {
+    "name": "奇域經驗"
+  },
+  "ChronicleEXP": {
+    "name": "紀遊經驗"
+  },
+  "ChroniclesOfTheRealms": {
+    "name": "諸界紀遊"
   },
   "PyroSigil": {
     "name": "火之印"
@@ -878,6 +908,12 @@
   "ReaffirmedAccordOfAppellation": {
     "name": "重立名約之契"
   },
+  "OverwriteKeyLeft": {
+    "name": "覆寫秘鑰·其左"
+  },
+  "OverwriteKeyRight": {
+    "name": "覆寫秘鑰·其右"
+  },
   "EnergyOrbPyro": {
     "name": "元素能量球(火)"
   },
@@ -1070,6 +1106,9 @@
   "Aino": {
     "name": "愛諾"
   },
+  "Nefer": {
+    "name": "奈芙爾"
+  },
   "KachinasStellaFortuna": {
     "name": "卡齊娜的命星"
   },
@@ -1129,6 +1168,9 @@
   },
   "AinosStellaFortuna": {
     "name": "愛諾的命星"
+  },
+  "NefersStellaFortuna": {
+    "name": "奈芙爾的命星"
   },
   "Apple": {
     "name": "蘋果"
@@ -8033,6 +8075,39 @@
   "SugarSculptureFlins": {
     "name": "糖雕・菲林斯"
   },
+  "SuspiciousLakkaberryPie": {
+    "name": "奇怪的白靈果派"
+  },
+  "LakkaberryPie": {
+    "name": "白靈果派"
+  },
+  "DeliciousLakkaberryPie": {
+    "name": "美味的白靈果派"
+  },
+  "SuspiciousLohikeitto": {
+    "name": "奇怪的鮮奶油鮭魚湯"
+  },
+  "Lohikeitto": {
+    "name": "鮮奶油鮭魚湯"
+  },
+  "DeliciousLohikeitto": {
+    "name": "美味的鮮奶油鮭魚湯"
+  },
+  "PiramidaNightingale": {
+    "name": "「皮拉米達的夜鶯」"
+  },
+  "FrontierLand": {
+    "name": "邊陲之地"
+  },
+  "WildberryTrail": {
+    "name": "野漿果之路"
+  },
+  "SecretsExchanged": {
+    "name": "「秘聞交易」"
+  },
+  "SugarSculptureNefer": {
+    "name": "糖雕・奈芙爾"
+  },
   "RecipeItem": {
     "name": "食譜道具"
   },
@@ -8797,6 +8872,12 @@
   },
   "RecipeLakkaberryMadame": {
     "name": "食譜：白靈果釀雞"
+  },
+  "RecipeLakkaberryPie": {
+    "name": "食譜：白靈果派"
+  },
+  "RecipeLohikeitto": {
+    "name": "食譜：鮮奶油鮭魚湯"
   },
   "CraftedItems": {
     "name": "合成產物"
@@ -9580,6 +9661,9 @@
   },
   "LightbearingScaleFeather": {
     "name": "承光的鱗羽"
+  },
+  "RadiantAntler": {
+    "name": "漫光的輝角"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
@@ -12671,8 +12755,8 @@
   "MysteriousMap": {
     "name": "神秘的地圖"
   },
-  "DazzlingMysteriousGift": {
-    "name": "綺燦而神秘的贈禮"
+  "WonderlandCosmosphere": {
+    "name": "奇域樞景球"
   },
   "LetterOfUnknownOrigin": {
     "name": "來源不明的信件"
@@ -12830,8 +12914,14 @@
   "YellowedNotes": {
     "name": "發黃的手記"
   },
+  "InvestmentCoupon": {
+    "name": "投資券"
+  },
   "EasybreezeBadge": {
     "name": "悠悠徽章"
+  },
+  "InvestmentReturns": {
+    "name": "投資回報"
   },
   "SugarSculptureBox": {
     "name": "糖雕匣"
@@ -12895,6 +12985,9 @@
   },
   "BountyTokenMudStainedHandguard": {
     "name": "懸賞證物：泥染的刀鐔"
+  },
+  "RecordedIntel": {
+    "name": "已記載的情報"
   },
   "MessilyScribbledNotesI": {
     "name": "字跡潦草的手記·其一"
@@ -12974,6 +13067,9 @@
   "AunisNotes": {
     "name": "奧妮的筆記"
   },
+  "CollatedIntel": {
+    "name": "情報整合冊"
+  },
   "BackupProgramModule": {
     "name": "備份程式模組"
   },
@@ -12982,6 +13078,15 @@
   },
   "OpenedSecretLetter": {
     "name": "已開啟的密信"
+  },
+  "WayOpeningKey": {
+    "name": "開啟通路的鑰匙"
+  },
+  "RaggedNotes": {
+    "name": "殘舊的筆記"
+  },
+  "OrderedNotes": {
+    "name": "整理後的筆記"
   },
   "ConchNotebook": {
     "name": "海螺筆記本"
@@ -13027,6 +13132,15 @@
   },
   "AilasNotes": {
     "name": "愛依菈的筆記"
+  },
+  "TheManWhoBecameAMule": {
+    "name": "變成騾子的人"
+  },
+  "HalfBurnedPage": {
+    "name": "半燒毀的紙頁"
+  },
+  "CuratoriumFunds": {
+    "name": "「秘聞館」資金"
   },
   "TearsAmongTheStars": {
     "name": "星間之淚"
@@ -14939,6 +15053,12 @@
   "CelebrationSublimeFlavors": {
     "name": "慶典·至味"
   },
+  "NeferSecrets": {
+    "name": "奈芙爾·秘聞"
+  },
+  "TravelNotesBygoneRuins": {
+    "name": "紀行·故墟"
+  },
   "EchoDandelionKnight": {
     "name": "遊跡·蒲公英騎士"
   },
@@ -15779,6 +15899,24 @@
   "CarefulCommunication": {
     "name": "斟酌措辭"
   },
+  "BattlePreparation": {
+    "name": "戰鬥準備"
+  },
+  "GatheredOverDrinks": {
+    "name": "共飲之邀"
+  },
+  "BrandishingWeapons": {
+    "name": "揮動武器"
+  },
+  "TeachingAjawALesson": {
+    "name": "教訓阿喬"
+  },
+  "ALittleScare": {
+    "name": "小小驚嚇"
+  },
+  "EagerAndReady": {
+    "name": "摩拳擦掌"
+  },
   "FantasticalMarvel": {
     "name": "幻戲瑰意"
   },
@@ -15928,6 +16066,9 @@
   },
   "LordOfErodedPrimalFire": {
     "name": "蝕滅的源焰之主"
+  },
+  "HydroTulpa": {
+    "name": "水形幻人"
   },
   "UndividedHeart": {
     "name": "唯此一心"
@@ -16292,6 +16433,15 @@
   "UndyingFury": {
     "name": "罔極盛怒"
   },
+  "AHeroOfJusticesTriumph": {
+    "name": "正義英雄的凱旋"
+  },
+  "TacticalWarmCompressBandaging": {
+    "name": "溫敷戰術包紮"
+  },
+  "FlowConvergence": {
+    "name": "匯流"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -16613,6 +16763,15 @@
   "AquaSimulacra": {
     "name": "若水"
   },
+  "EverlastingMoonglow": {
+    "name": "不滅月華"
+  },
+  "FellDragonsMonocle": {
+    "name": "惡龍的單片鏡"
+  },
+  "NoblesseOblige": {
+    "name": "昔日宗室之儀"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -16795,6 +16954,9 @@
   },
   "GiftOfTheGoddessOfProphecy": {
     "name": "預言女神的禮物"
+  },
+  "AdventurersGuild": {
+    "name": "冒險家協會"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交織之冰"
@@ -17018,6 +17180,9 @@
   "RevelrousBeats": {
     "name": "「狂歡節奏」"
   },
+  "AnAncientSacrificeOfSacredBrocade": {
+    "name": "祀瓏在昔，靈錦歆誠"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -17086,6 +17251,9 @@
   },
   "FontaPassionateRed": {
     "name": "楓達·誠摯赤念"
+  },
+  "SeaOfBygoneErasSlumber": {
+    "name": "舊日之海·沉眠"
   },
   "BeginnerPlayerBadge": {
     "name": "初級牌手徽章"
@@ -17798,6 +17966,12 @@
   "XochicuicatlMarketingMethod": {
     "name": "「花歌的主推方式」"
   },
+  "DeductionAndInduction": {
+    "name": "「推演與歸納」"
+  },
+  "FactoryCabinetSlapdashStorage": {
+    "name": "工廠儲櫃-「隨意堆疊」"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "圖書館雙層書架"
   },
@@ -17969,6 +18143,15 @@
   "FairsSimpleSalesStrategy": {
     "name": "「市集的推銷策略」"
   },
+  "FactoryLongTableNoTimeToWaste": {
+    "name": "工廠長桌-「時間緊迫」"
+  },
+  "TavernSquareTableSelfDefense": {
+    "name": "酒館方桌-「自我防護」"
+  },
+  "IndoorLongTableMarksOfLove": {
+    "name": "室內長桌-「悉心養護」"
+  },
   "BreezeBlessedBed": {
     "name": "柔風加護的床榻"
   },
@@ -17996,6 +18179,12 @@
   "StoneBedPeacefulSleep": {
     "name": "石製床鋪-「安眠」"
   },
+  "FriendsThroughFriction": {
+    "name": "「跌跌撞撞之誼」"
+  },
+  "TavernBedNotGreatNotTerrible": {
+    "name": "酒館床鋪-「躺感適中」"
+  },
   "PineReceptionCounter": {
     "name": "松木客棧櫃檯"
   },
@@ -18022,6 +18211,9 @@
   },
   "TeahouseStoveSlowSteaming": {
     "name": "茶坊爐灶-「細蒸緩焙」"
+  },
+  "QuestionWithAPriceTag": {
+    "name": "「代價內的詢問」"
   },
   "SoftLoungeSofa": {
     "name": "柔軟的會客廳沙發"
@@ -18103,6 +18295,15 @@
   },
   "GlugInOneGo": {
     "name": "「咕嚕一口」"
+  },
+  "QuietAndCozy": {
+    "name": "「靜謐與溫馨」"
+  },
+  "HazelwoodJadeBackedChair": {
+    "name": "榛木碧玉靠背椅"
+  },
+  "FactoryStoolMultiroleSeatingDevice": {
+    "name": "工廠矮凳-「多面工作」"
   },
   "NorthernStoneHearth": {
     "name": "北地石製壁爐"
@@ -18290,6 +18491,18 @@
   "PortableAllPurposeGrill": {
     "name": "攜帶式通用烤爐"
   },
+  "BoatOfClouds": {
+    "name": "「如雲朵小船般」"
+  },
+  "TipsyPlaylist": {
+    "name": "「微醺配樂」"
+  },
+  "MultifunctionalPedunculateOakWoodCatTree": {
+    "name": "夏櫟木多功能貓爬架"
+  },
+  "HiddenSecrets": {
+    "name": "「隱藏的秘密」"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "蒙德地毯-「明紅的熱忱」"
   },
@@ -18343,6 +18556,12 @@
   },
   "FairCarpetWarmthAndPassion": {
     "name": "市集地毯-「熱情與溫暖」"
+  },
+  "IndoorRugSoftPlush": {
+    "name": "室內地毯-「厚密柔順」"
+  },
+  "IndoorRugStarlitNight": {
+    "name": "室內地毯-「晦夜星章」"
   },
   "VibrantPotBornInFlames": {
     "name": "炫彩陶罐-「生於烈焰」"
@@ -18724,6 +18943,12 @@
   },
   "SaveyWaveyLifeRing": {
     "name": "「急急救生圈」"
+  },
+  "FactoryBroadcastInvigoration": {
+    "name": "工廠廣播-「提神醒腦」"
+  },
+  "TavernDartboardValidThrow": {
+    "name": "酒館鏢靶-「有效得分」"
   },
   "LingeringMoment": {
     "name": "「縈絆之刻」"
@@ -21044,6 +21269,9 @@
   "MediumCargoHoldSwiftTransport": {
     "name": "中型貨艙-「高效運輸」"
   },
+  "PuzzlepalKeepCalmAndCarryOn": {
+    "name": "解謎夥伴-「緊張走開」"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "「睏睏門牙騎士」"
   },
@@ -21052,5 +21280,8 @@
   },
   "PorkyWorkyChef": {
     "name": "「圓圓帽大廚」"
+  },
+  "LoafingKitty": {
+    "name": "「趴趴小貓」"
   }
 }

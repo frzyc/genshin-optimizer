@@ -1,0 +1,25 @@
+{
+  "skill": {
+    "pyroShield": {
+      "1": "Lượng sát thương Hỏa khiên Cấp 1 hấp thụ",
+      "2": "Lượng sát thương Hỏa khiên Cấp 2 hấp thụ",
+      "3": "Lượng sát thương Hỏa khiên Cấp 3 hấp thụ"
+    }
+  },
+  "p1": {
+    "desc": "Giảm yêu cầu đánh trúng của <strong>Khuấy Động Nhiệt Huyết</strong> đi 1"
+  },
+  "p2": {
+    "activeShield": "Nhân vật mang khiên của <strong>Khuấy Động Nhiệt Huyết</strong>"
+  },
+  "c2": {
+    "key_": "Tăng tỷ lệ bạo của sát thương vật lý do <strong>Cung Đàn Ngỗ Ngược</strong> gây ra",
+    "shield": "Hình thành lớp Khiên Cấp 3 - Vũ Điệu Tiết Tấu khi thi triển"
+  },
+  "c4": {
+    "swingHit": "Địch đã chịu <pyro>Sát Thương Chém</pyro>"
+  },
+  "c6": {
+    "duringCharge": "Trong khi thi triển Trọng Kích"
+  }
+}

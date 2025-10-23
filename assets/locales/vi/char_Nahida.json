@@ -1,0 +1,14 @@
+{
+  "karmaDmg_": "Tăng sát thương Diệt Tịnh Tam Nghiệp",
+  "karmaCritRate_": "Tăng Tỷ Lệ Bạo Kích cho Diệt Tịnh Tam Nghiệp",
+  "karmaIntervalDec": "Giãn cách kích hoạt Diệt Tịnh Tam Nghiệp giảm",
+  "noBurstEffect": "Nhắc nhở: Không có hiệu quả nào của Kỹ Năng Nộ có hiệu lực. Hãy bật C1 và/hoặc thêm nhân vật nguyên tố <pyro>Hỏa</pyro>, <electro>Lôi</electro> và/hoặc <hydro>Thủy</hydro> vào đội.",
+  "partyInBurst": "Đội đang đứng trong phạm vi kỹ năng",
+  "c1Key": "Số nhân vật nguyên tố <pyro>Hỏa</pyro>, <electro>Lôi</electro> và <hydro>Thủy</hydro> được tính thêm cho hiệu quả của <strong>Cung Điện Maya</strong>",
+  "c2": {
+    "bloomCondName": "Địch bị đánh dấu bởi <strong>Hạt Giống Skandha</strong>",
+    "qasCondName": "Sau khi kích hoạt phản ứng <spread>Sinh Trưởng</spread>, <aggravate>Tăng Cường</aggravate> hoặc <spread>Lan Tràn</spread> lên kẻ địch bị đánh dấu bởi Hạt Giống Skandha"
+  },
+  "c4CondName": "Số kẻ địch bị ảnh hưởng bởi <strong>Hạt Giống Skandha</strong>",
+  "c6KarmicDmg": "Sát thương Giải Nghiệp"
+}

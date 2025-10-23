@@ -126,7 +126,7 @@
     "name": "Danse pour les papilles gustatives",
     "description": {
       "0": "Lorsque 4 personnages de l'équipe sont de type <hydro>Hydro</hydro> ou <cryo>Cryo</cryo>, tous les personnages de l'équipe à proximité infligeant des <cryo>DGT Cryo</cryo> voient les DGT CRIT augmenter de 60 % pendant 15 s après qu'Escoffier utilise sa compétence élémentaire <strong>Cuisson à basse température</strong> ou son déchaînement élémentaire <strong>Art de la découpe</strong>.",
-      "1": "L'aptitude passive « Assaisonnement plein d'inspiration » doit être déjà débloquée."
+      "1": "L'aptitude d'élévation « Assaisonnement plein d'inspiration » doit être déjà débloquée."
     }
   },
   "constellation2": {
@@ -147,7 +147,7 @@
     "name": "Recette secrète de romarin",
     "description": {
       "0": "La durée du <strong>régime rééducateur</strong> augmente de 6 s. De plus, déclencher des soins avec un <strong>régime rééducateur</strong> pendant sa durée a une chance d'augmenter les soins de 100 % et de restaurer 2 pts d'énergie élémentaire à Escoffier, cette chance équivalant au taux CRIT d'Escoffier. Cet effet peut être déclenché 7 fois maximum pendant la durée d'un <strong>régime rééducateur</strong>.",
-      "1": "L'aptitude passive « Mieux vaut saliver que soigner » doit être déjà débloquée."
+      "1": "L'aptitude d'élévation « Mieux vaut saliver que soigner » doit être déjà débloquée."
     }
   },
   "constellation5": {

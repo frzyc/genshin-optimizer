@@ -141,7 +141,7 @@
     "name": "Mualani gibt alles!",
     "description": {
       "0": "Verleiht Mualani 2 Stapelungen Wellenschwung von <strong>Haifischreitende Wellenspalterin</strong>, wenn sie in den Zustand Nachtseelensegen tritt. Verleiht ihr 1 Stapelung Wellenschwung, wenn sie einen Kugelfisch-Ball erhält.",
-      "1": "Stellt Mualani pro Nachtseelensegen innerhalb von 2 s nach dem Erhalten von 2 Kugelfisch-Bällen zusätzlich 12 Nachtseelenpunkte wieder her. Für diesen Effekt muss das passive Talent „Hitzebeständiger Süßwasserkugelfisch“ zuerst freigeschaltet werden."
+      "1": "Stellt Mualani pro Nachtseelensegen innerhalb von 2 s nach dem Erhalten von 2 Kugelfisch-Bällen zusätzlich 12 Nachtseelenpunkte wieder her. Für diesen Effekt muss das Aufstiegstalent „Hitzebeständiger Süßwasserkugelfisch“ zuerst freigeschaltet werden."
     }
   },
   "constellation3": {
@@ -154,7 +154,7 @@
   "constellation4": {
     "name": "Haifisch frisst Kugelfische",
     "description": {
-      "0": "Stellt Mualani beim Erhalten eines Kugelfisch-Balls 8 Punkte Elementarenergie wieder her. Das passive Talent „Hitzebeständiger Süßwasserkugelfisch“ muss zuerst freigeschaltet werden.",
+      "0": "Stellt Mualani beim Erhalten eines Kugelfisch-Balls 8 Punkte Elementarenergie wieder her. Das Aufstiegstalent „Hitzebeständiger Süßwasserkugelfisch“ muss zuerst freigeschaltet werden.",
       "1": "Erhöht außerdem den durch <strong>Haibitzen-Geschoss</strong> verursachten Schaden um 75 %."
     }
   },

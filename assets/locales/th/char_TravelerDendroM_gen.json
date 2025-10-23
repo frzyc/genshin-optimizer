@@ -132,8 +132,8 @@
   "constellation4": {
     "name": "Treacle Grass",
     "description": {
-      "0": "หลังจาก <strong>Lea Lotus Lamp</strong> เกิด Lotuslight Transfiguration จะได้รับเอฟเฟกต์ Overflowing Lotuslight 5 ชั้น จากพรสวรรค์ติดตัว \"Verdant Overgrowth\"",
-      "1": "ต้องปลดล็อกพรสวรรค์ติดตัว \"Verdant Overgrowth\" ก่อน"
+      "0": "หลังจาก <strong>Lea Lotus Lamp</strong> เกิด Lotuslight Transfiguration จะได้รับเอฟเฟกต์ Overflowing Lotuslight 5 ชั้น จากพรสวรรค์เพิ่มเติม \"Verdant Overgrowth\"",
+      "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Verdant Overgrowth\" ก่อน"
     }
   },
   "constellation5": {

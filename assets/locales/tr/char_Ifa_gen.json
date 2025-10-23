@@ -126,7 +126,7 @@
     "description": {
       "0": "Ifa Gece Ruhunun Lütfu durumundayken grubun sahip olduğu toplam Gece Ruhu puanı 60'ın üzerindeyse, 60'ın üzerindeki her 1 puan başına Ifa fazladan 4 <strong>Kurtarma Kiti</strong> puanı kazanır.",
       "1": "Ek olarak, Ifa'nın Kurtarma Kiti sınırı 50 artar.",
-      "2": "<strong>Saha Doktorunun Gayreti</strong> Pasif Yeteneğinin açılmış olması gerekir."
+      "2": "<strong>Saha Doktorunun Gayreti</strong> Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {

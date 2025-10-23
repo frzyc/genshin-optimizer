@@ -123,11 +123,11 @@
   "constellation2": {
     "name": "Dạo Bước Đồi Cỏ",
     "description": {
-      "0": "Thiên phú cố định \"Lá Khẽ Bay Nghiêng\" sẽ chuyển thành:",
-      "1": "Khi <strong>Phi Diệp Luân</strong> quay về sẽ cung cấp cho nhân vật trạng thái \"Lá Mới\" của thiên phú cố định \"Lá Khẽ Bay Nghiêng\", liên tục gây cho kẻ địch xung quanh một lượng <dendro>Sát Thương Nguyên Tố Thảo</dendro> bằng 40% tấn công của Collei, duy trì 3s.",
+      "0": "Thiên phú đột phá \"Lá Khẽ Bay Nghiêng\" sẽ chuyển thành:",
+      "1": "Khi <strong>Phi Diệp Luân</strong> quay về sẽ cung cấp cho nhân vật trạng thái \"Lá Mới\" của thiên phú đột phá \"Lá Khẽ Bay Nghiêng\", liên tục gây cho kẻ địch xung quanh một lượng <dendro>Sát Thương Nguyên Tố Thảo</dendro> bằng 40% tấn công của Collei, duy trì 3s.",
       "2": "Từ khi thi triển <strong>Xua Hoa Quét Lá</strong> đến trước khi trạng thái \"Lá Mới\" lần này kết thúc, nếu nhân vật của bản thân trong đội kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ, Bung Tỏa hoặc Nguyệt-Sum Suê sẽ khiến trạng thái \"Lá Mới\" lần này kéo dài thêm 3s.",
       "3": "Trạng thái Lá Mới tối đa kéo dài thời gian duy trì một lần thông qua cách này; khi trong thời gian duy trì nếu kích hoạt hiệu ứng Lá Mới lần nữa sẽ xóa hiệu ứng ban đầu. Sát thương gây ra của hiệu ứng Lá Mới được tính là sát thương Kỹ Năng Nguyên Tố.",
-      "4": "Cần mở khóa thiên phú cố định \"Lá Khẽ Bay Nghiêng\"."
+      "4": "Cần mở khóa thiên phú đột phá \"Lá Khẽ Bay Nghiêng\"."
     }
   },
   "constellation3": {

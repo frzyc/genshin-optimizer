@@ -233,6 +233,9 @@
   "LegionMorale": {
     "name": "軍団の士気"
   },
+  "PrepProgress": {
+    "name": "完璧な進捗"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -268,6 +271,33 @@
   },
   "AcquaintFate": {
     "name": "出会いの縁"
+  },
+  "ChronalNexus": {
+    "name": "クロニクルの核"
+  },
+  "ArcaneKeystone": {
+    "name": "アーケインの楔"
+  },
+  "GeodeOfReplication": {
+    "name": "再現群晶"
+  },
+  "EngravedShard": {
+    "name": "刻印の欠片"
+  },
+  "FestiveKey": {
+    "name": "盛会の鍵"
+  },
+  "LuminousKeystone": {
+    "name": "ルミナスの楔"
+  },
+  "WonderlandEXP": {
+    "name": "幻境経験値"
+  },
+  "ChronicleEXP": {
+    "name": "遊記経験値"
+  },
+  "ChroniclesOfTheRealms": {
+    "name": "千界遊記"
   },
   "PyroSigil": {
     "name": "炎の印"
@@ -878,6 +908,12 @@
   "ReaffirmedAccordOfAppellation": {
     "name": "再命名の契約"
   },
+  "OverwriteKeyLeft": {
+    "name": "書き換えの鍵・左"
+  },
+  "OverwriteKeyRight": {
+    "name": "書き換えの鍵・右"
+  },
   "EnergyOrbPyro": {
     "name": "元素エネルギーボール(炎)"
   },
@@ -1070,6 +1106,9 @@
   "Aino": {
     "name": "アイノ"
   },
+  "Nefer": {
+    "name": "ネフェル"
+  },
   "KachinasStellaFortuna": {
     "name": "カチーナの星屑"
   },
@@ -1129,6 +1168,9 @@
   },
   "AinosStellaFortuna": {
     "name": "アイノの星屑"
+  },
+  "NefersStellaFortuna": {
+    "name": "ネフェルの星屑"
   },
   "Apple": {
     "name": "リンゴ"
@@ -8033,6 +8075,39 @@
   "SugarSculptureFlins": {
     "name": "飴細工・フリンズ"
   },
+  "SuspiciousLakkaberryPie": {
+    "name": "微妙なホワイトベリークッコ"
+  },
+  "LakkaberryPie": {
+    "name": "ホワイトベリークッコ"
+  },
+  "DeliciousLakkaberryPie": {
+    "name": "美味しそうなホワイトベリークッコ"
+  },
+  "SuspiciousLohikeitto": {
+    "name": "微妙なロヒケイット"
+  },
+  "Lohikeitto": {
+    "name": "ロヒケイット"
+  },
+  "DeliciousLohikeitto": {
+    "name": "美味しそうなロヒケイット"
+  },
+  "PiramidaNightingale": {
+    "name": "「ピラミダの夜鳴鶯」"
+  },
+  "FrontierLand": {
+    "name": "辺境の地"
+  },
+  "WildberryTrail": {
+    "name": "ベリーの小径"
+  },
+  "SecretsExchanged": {
+    "name": "「秘話の駆け引き」"
+  },
+  "SugarSculptureNefer": {
+    "name": "飴細工・ネフェル"
+  },
   "RecipeItem": {
     "name": "レシピアイテム"
   },
@@ -8797,6 +8872,12 @@
   },
   "RecipeLakkaberryMadame": {
     "name": "レシピ：鳥肉のホワイトベリー漬け焼き"
+  },
+  "RecipeLakkaberryPie": {
+    "name": "レシピ：ホワイトベリークッコ"
+  },
+  "RecipeLohikeitto": {
+    "name": "レシピ：ロヒケイット"
   },
   "CraftedItems": {
     "name": "合成産物"
@@ -9581,6 +9662,9 @@
   "LightbearingScaleFeather": {
     "name": "採光の鱗羽"
   },
+  "RadiantAntler": {
+    "name": "万照の輝角"
+  },
   "TileOfDecarabiansTower": {
     "name": "高塔の王の瓦"
   },
@@ -9801,13 +9885,13 @@
     "name": "奇妙な装置の欠片"
   },
   "ArtfulDeviceReplica": {
-    "name": "珍奇な秘器の複製"
+    "name": "奇妙な装置の複製"
   },
   "ArtfulDeviceInheritance": {
-    "name": "珍奇な秘器の継承"
+    "name": "奇妙な装置の継承"
   },
   "ArtfulDeviceWish": {
-    "name": "珍奇な秘器の本願"
+    "name": "奇妙な装置の宿願"
   },
   "EmberOfLongNightFlint": {
     "name": "長夜の灯火の余燼"
@@ -9816,10 +9900,10 @@
     "name": "長夜の灯火の残照"
   },
   "FlareOfLongNightFlint": {
-    "name": "長夜の灯火の紫焔"
+    "name": "長夜の灯火の紫炎"
   },
   "BlazeOfLongNightFlint": {
-    "name": "長夜の灯火の輝き"
+    "name": "長夜の灯火の輝光"
   },
   "SunderedGloryOfTheFarNorthScions": {
     "name": "極北の末裔の零落"
@@ -12671,8 +12755,8 @@
   "MysteriousMap": {
     "name": "謎多き地図"
   },
-  "DazzlingMysteriousGift": {
-    "name": "煌めく神秘的なギフト"
+  "WonderlandCosmosphere": {
+    "name": "幻境を拓くオーブ"
   },
   "LetterOfUnknownOrigin": {
     "name": "出所不明の手紙"
@@ -12830,8 +12914,14 @@
   "YellowedNotes": {
     "name": "黄ばんだ手記"
   },
+  "InvestmentCoupon": {
+    "name": "投資証券"
+  },
   "EasybreezeBadge": {
     "name": "のびのびバッジ"
+  },
+  "InvestmentReturns": {
+    "name": "投資収益"
   },
   "SugarSculptureBox": {
     "name": "飴細工の箱"
@@ -12888,13 +12978,16 @@
     "name": "誰かの救援要請"
   },
   "BountyTokenTrickstersRedSatin": {
-    "name": "懸賞物証：詐欺師の赤い絹"
+    "name": "賞金稼ぎの証：詐欺師の赤い絹"
   },
   "BountyTokenLadysBrooch": {
-    "name": "懸賞物証：淑女のブローチ"
+    "name": "賞金稼ぎの証：淑女のブローチ"
   },
   "BountyTokenMudStainedHandguard": {
-    "name": "懸賞物証：泥染めの鍔"
+    "name": "賞金稼ぎの証：泥染めの鍔"
+  },
+  "RecordedIntel": {
+    "name": "記録された情報"
   },
   "MessilyScribbledNotesI": {
     "name": "乱雑に書かれた手記・1"
@@ -12974,6 +13067,9 @@
   "AunisNotes": {
     "name": "アウニのノート"
   },
+  "CollatedIntel": {
+    "name": "情報冊子"
+  },
   "BackupProgramModule": {
     "name": "バックアッププログラムモジュール"
   },
@@ -12982,6 +13078,15 @@
   },
   "OpenedSecretLetter": {
     "name": "開封済みの密書"
+  },
+  "WayOpeningKey": {
+    "name": "通路を開く鍵"
+  },
+  "RaggedNotes": {
+    "name": "古びたノート"
+  },
+  "OrderedNotes": {
+    "name": "整理されたノート"
   },
   "ConchNotebook": {
     "name": "ホラガイノート"
@@ -12993,13 +13098,13 @@
     "name": "研究記録"
   },
   "TheLegendsOfReedMillerThiefExtraordinaireI": {
-    "name": "大盗賊レッド・ミラーの伝説 （I）"
+    "name": "怪盗レッド・ミラーの伝説 （I）"
   },
   "TheLegendsOfReedMillerThiefExtraordinaireII": {
-    "name": "大盗賊レッド・ミラーの伝説 （II）"
+    "name": "怪盗レッド・ミラーの伝説 （II）"
   },
   "TheLegendsOfReedMillerThiefExtraordinaireIII": {
-    "name": "大盗賊レッド・ミラーの伝説 （III）"
+    "name": "怪盗レッド・ミラーの伝説 （III）"
   },
   "HymnsOfTheFarNorthI": {
     "name": "北の果て、祈りの歌（上）"
@@ -13027,6 +13132,15 @@
   },
   "AilasNotes": {
     "name": "アイラのノート"
+  },
+  "TheManWhoBecameAMule": {
+    "name": "ラバになった人"
+  },
+  "HalfBurnedPage": {
+    "name": "半分焦げたページ"
+  },
+  "CuratoriumFunds": {
+    "name": "「秘聞の館」の資金"
   },
   "TearsAmongTheStars": {
     "name": "星間の涙"
@@ -14939,6 +15053,12 @@
   "CelebrationSublimeFlavors": {
     "name": "祭典・至高の味"
   },
+  "NeferSecrets": {
+    "name": "ネフェル・秘話"
+  },
+  "TravelNotesBygoneRuins": {
+    "name": "紀行・遺跡"
+  },
   "EchoDandelionKnight": {
     "name": "軌跡·蒲公英騎士"
   },
@@ -15779,6 +15899,24 @@
   "CarefulCommunication": {
     "name": "言葉を選ぶ"
   },
+  "BattlePreparation": {
+    "name": "戦闘準備"
+  },
+  "GatheredOverDrinks": {
+    "name": "呑みの誘い"
+  },
+  "BrandishingWeapons": {
+    "name": "武器いじり"
+  },
+  "TeachingAjawALesson": {
+    "name": "アハウのしつけ"
+  },
+  "ALittleScare": {
+    "name": "ビックリ"
+  },
+  "EagerAndReady": {
+    "name": "意気込み"
+  },
   "FantasticalMarvel": {
     "name": "素晴らしきトリック"
   },
@@ -15928,6 +16066,9 @@
   },
   "LordOfErodedPrimalFire": {
     "name": "蝕まれし源焔の主"
+  },
+  "HydroTulpa": {
+    "name": "水形タルパ"
   },
   "UndividedHeart": {
     "name": "唯一の心"
@@ -16292,6 +16433,15 @@
   "UndyingFury": {
     "name": "燃える憤怒"
   },
+  "AHeroOfJusticesTriumph": {
+    "name": "正義のヒーローの凱旋"
+  },
+  "TacticalWarmCompressBandaging": {
+    "name": "戦略的温罨法"
+  },
+  "FlowConvergence": {
+    "name": "合流"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -16613,6 +16763,15 @@
   "AquaSimulacra": {
     "name": "若水"
   },
+  "EverlastingMoonglow": {
+    "name": "不滅の月華"
+  },
+  "FellDragonsMonocle": {
+    "name": "悪龍の片眼鏡"
+  },
+  "NoblesseOblige": {
+    "name": "旧貴族のしつけ"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -16795,6 +16954,9 @@
   },
   "GiftOfTheGoddessOfProphecy": {
     "name": "預言の女神の贈り物"
+  },
+  "AdventurersGuild": {
+    "name": "冒険者協会"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
@@ -17018,6 +17180,9 @@
   "RevelrousBeats": {
     "name": "「フェスのリズム」"
   },
+  "AnAncientSacrificeOfSacredBrocade": {
+    "name": "往昔に祀瓏有り、霊錦の誠を歆ける"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -17086,6 +17251,9 @@
   },
   "FontaPassionateRed": {
     "name": "フォンタ・真摯な赤念"
+  },
+  "SeaOfBygoneErasSlumber": {
+    "name": "往日の海・深い眠り"
   },
   "BeginnerPlayerBadge": {
     "name": "初心者プレイヤーメダル"
@@ -17798,6 +17966,12 @@
   "XochicuicatlMarketingMethod": {
     "name": "「花歌特選レコードラック」"
   },
+  "DeductionAndInduction": {
+    "name": "「演繹と帰納」"
+  },
+  "FactoryCabinetSlapdashStorage": {
+    "name": "工場の収納‐「気ままな積み重ね」"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "図書館の二段本棚"
   },
@@ -17969,6 +18143,15 @@
   "FairsSimpleSalesStrategy": {
     "name": "「市場の販売戦略」"
   },
+  "FactoryLongTableNoTimeToWaste": {
+    "name": "工場の長テーブル-「迫りくる時間」"
+  },
+  "TavernSquareTableSelfDefense": {
+    "name": "酒場の四角いテーブル-「自己防衛」"
+  },
+  "IndoorLongTableMarksOfLove": {
+    "name": "室内長テーブル-「丹精のお手入れ」"
+  },
   "BreezeBlessedBed": {
     "name": "そよ風に守られたベッド"
   },
@@ -17996,6 +18179,12 @@
   "StoneBedPeacefulSleep": {
     "name": "石造りのベッド-「安眠」"
   },
+  "FriendsThroughFriction": {
+    "name": "「ぶつかり合う友情」"
+  },
+  "TavernBedNotGreatNotTerrible": {
+    "name": "酒場ベッド-「ちょうどいい寝心地」"
+  },
   "PineReceptionCounter": {
     "name": "松の旅館受付"
   },
@@ -18022,6 +18211,9 @@
   },
   "TeahouseStoveSlowSteaming": {
     "name": "茶房の竈-「細やかな焙煎」"
+  },
+  "QuestionWithAPriceTag": {
+    "name": "「代償内の質問」"
   },
   "SoftLoungeSofa": {
     "name": "柔らかいラウンジソファ"
@@ -18103,6 +18295,15 @@
   },
   "GlugInOneGo": {
     "name": "「ゴクリと一口」"
+  },
+  "QuietAndCozy": {
+    "name": "「静寂と温もり」"
+  },
+  "HazelwoodJadeBackedChair": {
+    "name": "ヘーゼルナッツ材とジャスパーの背もたれ椅子"
+  },
+  "FactoryStoolMultiroleSeatingDevice": {
+    "name": "工場の椅子-「オールラウンダー」"
   },
   "NorthernStoneHearth": {
     "name": "北地の石造暖炉"
@@ -18290,6 +18491,18 @@
   "PortableAllPurposeGrill": {
     "name": "携帯型汎用グリル"
   },
+  "BoatOfClouds": {
+    "name": "「雲で作られた船のように」"
+  },
+  "TipsyPlaylist": {
+    "name": "「淡酔の旋律」"
+  },
+  "MultifunctionalPedunculateOakWoodCatTree": {
+    "name": "サマーオーク製多機能キャットタワー"
+  },
+  "HiddenSecrets": {
+    "name": "「隠された秘密」"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "モンドカーペット-「赤い熱意」"
   },
@@ -18343,6 +18556,12 @@
   },
   "FairCarpetWarmthAndPassion": {
     "name": "市場カーペット-「情熱と温もり」"
+  },
+  "IndoorRugSoftPlush": {
+    "name": "室内絨毯-「密で柔らかな風合い」"
+  },
+  "IndoorRugStarlitNight": {
+    "name": "室内絨毯-「闇夜の星章」"
   },
   "VibrantPotBornInFlames": {
     "name": "絢爛の陶磁器-「烈焔より生まれしもの」"
@@ -18724,6 +18943,12 @@
   },
   "SaveyWaveyLifeRing": {
     "name": "「緊急救命浮き輪」"
+  },
+  "FactoryBroadcastInvigoration": {
+    "name": "工房のスピーカー―「眠気覚まし」"
+  },
+  "TavernDartboardValidThrow": {
+    "name": "酒場のターゲット-「有効得点」"
   },
   "LingeringMoment": {
     "name": "「絆の時」"
@@ -21044,6 +21269,9 @@
   "MediumCargoHoldSwiftTransport": {
     "name": "中型貨物ボックス-「効率的輸送」"
   },
+  "PuzzlepalKeepCalmAndCarryOn": {
+    "name": "謎解きのパートナー‐「さよなら、緊張」"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "「ねむねむゲッシナイト」"
   },
@@ -21052,5 +21280,8 @@
   },
   "PorkyWorkyChef": {
     "name": "「コロコロシェフ」"
+  },
+  "LoafingKitty": {
+    "name": "「もちころりんぬこ」"
   }
 }

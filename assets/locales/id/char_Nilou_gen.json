@@ -108,7 +108,7 @@
       "2": "Setelah Karakter yang berada dalam status Golden Chalice's Bounty terkena<dendro>serangan Dendro</dendro>, Elemental Mastery seluruh Karakter di sekitar meningkat 100 poin selama 10 detik. Selain itu, saat memicu reaksi Bloom atau Lunar-Bloom, akan menghasilkan Bountiful Core yang akan menggantikan Dendro Core.",
       "3": "Jika dibandingkan dengan Dendro Core, Bountiful Core akan meledak dengan sangat cepat setelah diciptakan dan memiliki cakupan area yang lebih luas.",
       "4": "Bountiful Core tidak akan bisa memicu reaksi Hyperbloom atau Burgeon, dan memiliki batas jumlah yang sama dengan Dendro Core. Serangan Bountiful Core akan dianggap sebagai serangan Dendro Core dari reaksi Bloom.",
-      "5": "Saat jenis elemen Karakter di dalam party tidak cukup untuk memicu Talenta Pasif, maka efek Golden Chalice's Bounty yang sudah dimiliki akan dihapus."
+      "5": "Saat jenis elemen Karakter di dalam party tidak cukup untuk memicu Talenta Ascension, maka efek Golden Chalice's Bounty yang sudah dimiliki akan dihapus."
     }
   },
   "passive2": {
@@ -138,7 +138,7 @@
     "name": "The Starry Skies Their Flowers Rain",
     "description": {
       "0": "Setelah Karakter yang berada dalam status \"Golden Chalice's Bounty\" mengakibatkan <hydro>Hydro DMG</hydro> kepada musuh, <hydro>Hydro RES</hydro> musuh tersebut akan berkurang 35% selama 10 detik. Setelah mengakibatkan DMG reaksi Bloom atau Lunar-Bloom terhadap musuh,<dendro>Dendro RES</dendro> musuh tersebut akan berkurang 35% selama 10 detik.",
-      "1": "Harus membuka Talenta Pasif \"Court of Dancing Petals\" terlebih dahulu."
+      "1": "Harus membuka Talenta Ascension \"Court of Dancing Petals\" terlebih dahulu."
     }
   },
   "constellation3": {

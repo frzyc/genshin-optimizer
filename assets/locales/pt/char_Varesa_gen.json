@@ -170,9 +170,9 @@
   "constellation1": {
     "name": "Fervor Inextinguível",
     "description": {
-      "0": "O efeito do Talento Passivo \"Poder e Salto Triplo!\" é fortalecido.",
+      "0": "O efeito do Talento de Ascensão \"Poder e Salto Triplo!\" é fortalecido.",
       "1": "Quando fizer um Ataque Imersivo: Fúria do Redemoinho Vulcânico especial, Varesa obtém Imersão Colorida por 5s.",
-      "2": "Enquanto Imersão Colorida durar, independentemente de Varesa estar ou não no estado Calor Escaldante, quando realizar um Ataque Imersivo, o Dano causado pela Onda Mergulhadora será convertido em um adicional de 180% do ATQ. Esse efeito requer que o Talento Passivo \"Poder e Salto Triplo!\" esteja desbloqueado.",
+      "2": "Enquanto Imersão Colorida durar, independentemente de Varesa estar ou não no estado Calor Escaldante, quando realizar um Ataque Imersivo, o Dano causado pela Onda Mergulhadora será convertido em um adicional de 180% do ATQ. Esse efeito requer que o Talento de Ascensão \"Poder e Salto Triplo!\" esteja desbloqueado.",
       "3": "<br/>",
       "4": "Quando Varesa estiver no modo Investida Frenética do estado Bênção do Espírito da Noite, reduz o consumo de pontos de Espírito da Noite ou de Flogisto em 30%."
     }

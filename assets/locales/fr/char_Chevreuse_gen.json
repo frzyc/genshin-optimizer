@@ -105,7 +105,7 @@
     "description": {
       "0": "Lorsque les personnages de l'équipe sont de l'élément <pyro>Pyro</pyro> ou <electro>Électro</electro> et qu'il y a au moins un personnage Pyro et un personnage Électro :",
       "1": "Chevreuse accorde une coordination aux personnages de l'équipe à proximité : lorsqu'un personnage a déclenché une réaction de Surcharge, les RÉS <pyro>Pyro</pyro> et <electro>Électro</electro> des ennemis touchés par cette réaction de Surcharge diminuent de 40 % pendant 6 s.",
-      "2": "La coordination est annulée lorsque les types élémentaires des personnages de l'équipe ne répondent pas aux conditions de base de l'aptitude passive."
+      "2": "La coordination est annulée lorsque les types élémentaires des personnages de l'équipe ne répondent pas aux conditions de base de l'aptitude d'élévation."
     }
   },
   "passive2": {
@@ -125,7 +125,7 @@
     "name": "Vaillance du front stable",
     "description": {
       "0": "Lorsqu'un personnage déployé avec une coordination (hormis Chevreuse) déclenche une réaction de Surcharge, il récupère 6 pts d'énergie élémentaire. Cet effet peut être déclenché une fois toutes les 10 s.",
-      "1": "L'aptitude passive « Tactique coordonnée » doit être déjà débloquée."
+      "1": "L'aptitude d'élévation « Tactique coordonnée » doit être déjà débloquée."
     }
   },
   "constellation2": {

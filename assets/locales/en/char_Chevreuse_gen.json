@@ -159,7 +159,7 @@
     "description": {
       "0": "When all party members are <pyro>Pyro</pyro> and <electro>Electro</electro> characters and there is at least one Pyro and one Electro character each in the party:",
       "1": "Chevreuse grants \"Coordinated Tactics\" to nearby party members: After a character triggers the Overloaded reaction, the <pyro>Pyro</pyro> and <electro>Electro</electro> RES of the opponent(s) affected by this Overloaded reaction will be decreased by 40% for 6s.",
-      "2": "The \"Coordinated Tactics\" effect will be removed when the Elemental Types of the characters in the party do not meet the basic requirements for the Passive Talent."
+      "2": "The \"Coordinated Tactics\" effect will be removed when the Elemental Types of the characters in the party do not meet the basic requirements for the Ascension Talent."
     }
   },
   "passive2": {
@@ -179,7 +179,7 @@
     "name": "Stable Front Line's Resolve",
     "description": {
       "0": "When the active character with the \"Coordinated Tactics\" status (not including Chevreuse herself) triggers the Overloaded reaction, they will recover 6 Energy. This effect can be triggered once every 10s.",
-      "1": "You must first unlock the Passive Talent \"Vanguard's Coordinated Tactics.\""
+      "1": "You must first unlock the Ascension Talent \"Vanguard's Coordinated Tactics.\""
     }
   },
   "constellation2": {

@@ -114,7 +114,7 @@
       "0": "Les DGT de certaines attaques de Cyno augmentent selon sa maîtrise élémentaire :",
       "1": [
         " Les DGT de ses attaques normales sous l'effet d'éclaireur sermenté augmentent d'une valeur équivalant à 150 % de sa maîtrise élémentaire.",
-        " Les DGT des éclairs de sable de son aptitude passive « Jugement des plumes » augmentent d'une valeur équivalant à 250 % de sa maîtrise élémentaire."
+        " Les DGT des éclairs de sable de son aptitude d'élévation « Jugement des plumes » augmentent d'une valeur équivalant à 250 % de sa maîtrise élémentaire."
       ]
     }
   },
@@ -127,8 +127,8 @@
   "constellation1": {
     "name": "Sacrement : Vigile incessante",
     "description": {
-      "0": "Après avoir utilisé <strong>Liturgie : Rapidité lupine</strong>, la VIT d'attaque des attaques normales de Cyno augmente de 20 % pendant 10 s. Si l'effet Ordalie de l'aptitude passive « Jugement des plumes » est déclenché pendant <strong>Rite : Traversée abyssale</strong>, la durée de cette augmentation est actualisée.",
-      "1": "L'aptitude passive « Jugement des plumes » doit être déjà débloquée."
+      "0": "Après avoir utilisé <strong>Liturgie : Rapidité lupine</strong>, la VIT d'attaque des attaques normales de Cyno augmente de 20 % pendant 10 s. Si l'effet Ordalie de l'aptitude d'élévation « Jugement des plumes » est déclenché pendant <strong>Rite : Traversée abyssale</strong>, la durée de cette augmentation est actualisée.",
+      "1": "L'aptitude d'élévation « Jugement des plumes » doit être déjà débloquée."
     }
   },
   "constellation2": {
@@ -161,10 +161,10 @@
   "constellation6": {
     "name": "Ascension : Balance de justice",
     "description": {
-      "0": "Après avoir utilisé <strong>Liturgie : Rapidité lupine</strong> ou déclenché l'effet Ordalie de l'aptitude passive « Jugement des plumes », Cyno obtient 4 cumuls de rite charognard. En touchant un ennemi avec une attaque normale, Cyno consomme 1 cumul pour tirer un éclair de sable.",
+      "0": "Après avoir utilisé <strong>Liturgie : Rapidité lupine</strong> ou déclenché l'effet Ordalie de l'aptitude d'élévation « Jugement des plumes », Cyno obtient 4 cumuls de rite charognard. En touchant un ennemi avec une attaque normale, Cyno consomme 1 cumul pour tirer un éclair de sable.",
       "1": "L'effet Rite charognard dure 8 s, peut être cumulé 8 fois maximum, et est annulé à la fin de l'effet d'éclaireur sermenté de « Liturgie : Rapidité lupine ».",
       "2": "L'éclair de sable peut être déclenché une fois toutes les 0,4 s de cette manière.",
-      "3": "L'aptitude passive « Jugement des plumes » doit être déjà débloquée."
+      "3": "L'aptitude d'élévation « Jugement des plumes » doit être déjà débloquée."
     }
   }
 }

@@ -104,8 +104,8 @@
     "name": "Öncülerin Eş Güdümlü Taktikleri",
     "description": {
       "0": "Tüm grup üyeleri <pyro>Ateş</pyro> veya <electro>Elektrik</electro> karakteri olduğunda ve grupta en az bir Ateş ve bir Elektrik karakteri bulunduğunda:",
-      "1": "Chevreuse, yakındaki grup üyelerine \"Eş Güdümlü Taktikler\" verir. Bir karakter Yüksek Voltaj tepkimesi tetikledikten sonra bu tepkimeden etkilenen rakibin 6sn boyunca <pyro>Ateş</pyro> ve <electro>Elektrik</electro> Direnci %40 azalır.",
-      "2": "Gruptaki karakterlerin Element Türleri Pasif Yetenek için gereken temel şartları karşılamazsa \"Eş Güdümlü Taktikler\" etkisi kaldırılır."
+      "1": "Chevreuse, yakındaki grup üyelerine \"Eş Güdümlü Taktikler\" verir. Bir karakter Yüksek Voltaj tepkimesi tetikledikten sonra bu tepkimeden etkilenen düşmanın 6sn boyunca <pyro>Ateş</pyro> ve <electro>Elektrik</electro> Direnci %40 azalır.",
+      "2": "Gruptaki karakterlerin Element Türleri Yükseltme Yeteneği için gereken temel şartları karşılamazsa \"Eş Güdümlü Taktikler\" etkisi kaldırılır."
     }
   },
   "passive2": {
@@ -125,7 +125,7 @@
     "name": "Ön Cephenin Kararlılığı",
     "description": {
       "0": "\"Eş Güdümlü Taktikler\" durumuna sahip olan aktif karakter (Chevreuse hariç) Yüksek Voltaj tepkimesini tetiklediğinde 6 Enerji yeniler. Bu etki her 10 saniyede bir tetiklenebilir.",
-      "1": "\"Öncülerin Eş Güdümlü Taktikleri\" Pasif Yeteneğinin açılmış olması gerekir."
+      "1": "\"Öncülerin Eş Güdümlü Taktikleri\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation2": {

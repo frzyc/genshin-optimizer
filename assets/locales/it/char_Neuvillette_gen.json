@@ -128,15 +128,15 @@
   "constellation1": {
     "name": "Istituzione onorabile",
     "description": {
-      "0": "Quando Neuvillette entra in campo, ottiene 1 accumulo di Antiche glorie draconiche del talento passivo Eredità del Mare Antico. Richiede il talento passivo Eredità del Mare Antico.",
+      "0": "Quando Neuvillette entra in campo, ottiene 1 accumulo di Antiche glorie draconiche del talento d'ascensione Eredità del Mare Antico. Richiede il talento d'ascensione Eredità del Mare Antico.",
       "1": "Inoltre, la resistenza all'interruzione del personaggio aumenta quando usa Rafforzamento attacco caricato: Valutazione legale e Attacco caricato: Equo giudizio."
     }
   },
   "constellation2": {
     "name": "Come legge comanda",
     "description": {
-      "0": "Il talento passivo Eredità del Mare Antico riceve un potenziamento: ciascun accumulo di Antiche glorie draconiche aumenta i DAN da CRIT di Attacco caricato: Equo giudizio di un 14%. L'incremento massimo che è possibile ottenere è pari a un 42%.",
-      "1": "Richiede il talento passivo Eredità del Mare Antico."
+      "0": "Il talento d'ascensione Eredità del Mare Antico riceve un potenziamento: ciascun accumulo di Antiche glorie draconiche aumenta i DAN da CRIT di Attacco caricato: Equo giudizio di un 14%. L'incremento massimo che è possibile ottenere è pari a un 42%.",
+      "1": "Richiede il talento d'ascensione Eredità del Mare Antico."
     }
   },
   "constellation3": {

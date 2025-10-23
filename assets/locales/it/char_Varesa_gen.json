@@ -170,9 +170,9 @@
   "constellation1": {
     "name": "Passione eterna",
     "description": {
-      "0": "Gli effetti positivi del talento passivo Triplice salto di squadra! sono potenziati.",
+      "0": "Gli effetti positivi del talento d'ascensione Triplice salto di squadra! sono potenziati.",
       "1": "Se esegue l'attacco in picchiata speciale Tornado lavico, Varesa riceve l'effetto Schianto iridato per 5 s.",
-      "2": "Quando Schianto iridato è attivo, l'impatto col terreno dell'attacco in picchiata di Varesa infligge DAN aumentati di un 180% del suo ATT, indipendentemente dal fatto che lo stato di Passione ardente sia attivo o meno. Richiede il talento passivo Triplice salto di squadra!",
+      "2": "Quando Schianto iridato è attivo, l'impatto col terreno dell'attacco in picchiata di Varesa infligge DAN aumentati di un 180% del suo ATT, indipendentemente dal fatto che lo stato di Passione ardente sia attivo o meno. Richiede il talento d'ascensione Triplice salto di squadra!",
       "3": "<br/>",
       "4": "Inoltre, quando è in modalità Assalto improvviso della sua Grazia dell'Anima della Notte, Varesa consuma un 30% di punti Anima della Notte o Flogisto in meno."
     }

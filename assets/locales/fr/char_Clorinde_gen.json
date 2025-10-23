@@ -142,8 +142,8 @@
   "constellation2": {
     "name": "« Dorénavant, j'affronterai les périls de la longue nuit »",
     "description": {
-      "0": "L'aptitude passive « Flamme brisant la nuit » est renforcée : lorsqu'un personnage de l'équipe à proximité a déclenché une <electro>réaction liée à l'élément Électro</electro> sur un ennemi, les <electro>DGT Électro</electro> infligés par les attaques normales de Clorinde et par <strong>Fin de la clarté</strong> augmentent d'une valeur équivalant à 30 % de son ATQ pendant 15 s. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante. Avec 3 cumuls, la RÉS à l'interruption de Clorinde augmente. Les DGT infligés par les attaques susmentionnées de Clorinde peuvent augmenter d'un maximum de 2 700 pts de cette manière.",
-      "1": "L'aptitude passive « Flamme brisant la nuit » doit être déjà débloquée."
+      "0": "L'aptitude d'élévation « Flamme brisant la nuit » est renforcée : lorsqu'un personnage de l'équipe à proximité a déclenché une <electro>réaction liée à l'élément Électro</electro> sur un ennemi, les <electro>DGT Électro</electro> infligés par les attaques normales de Clorinde et par <strong>Fin de la clarté</strong> augmentent d'une valeur équivalant à 30 % de son ATQ pendant 15 s. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante. Avec 3 cumuls, la RÉS à l'interruption de Clorinde augmente. Les DGT infligés par les attaques susmentionnées de Clorinde peuvent augmenter d'un maximum de 2 700 pts de cette manière.",
+      "1": "L'aptitude d'élévation « Flamme brisant la nuit » doit être déjà débloquée."
     }
   },
   "constellation3": {

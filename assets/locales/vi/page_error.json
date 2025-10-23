@@ -1,0 +1,22 @@
+{
+  "title": "🛑 Đã xảy ra lỗi bất ngờ 🛑",
+  "p1.1": "Một lỗi bất ngờ đã xảy ra. Việc này thường là lỗi do phía chúng tôi, vậy nên hãy giúp chúng tôi giúp bạn!",
+  "p1.2": "Bạn có thể thử một số việc dưới đây:",
+  "fixes": {
+    "1": "Tải lại trang",
+    "2": "Tắt phần mở rộng trên trình duyệt và tải lại trang lần nữa",
+    "3": "Tải CSDL của bạn ở phía dưới về. Sau đó chọn 'Xóa TẤT CẢ dữ liệu trên GO' và tải lên lại tập tin CSDL của bạn"
+  },
+  "p2": "Nếu các việc trên đều không có tác dụng, hãy gửi báo cáo cho chúng tôi qua trang Issues của GitHub hoặc kênh Bug Reports trong máy chủ Discord",
+  "report": {
+    "1": "Tải về CSDL của bạn ở dưới đây",
+    "2": "Sao chép văn bản báo cáo ở hộp phía dưới",
+    "3": "Nhấn <1>vào đây</1> để mở trang báo lỗi GitHub. Dán văn bản vào phần mô tả (description), ghi lại những việc bạn làm trước khi xảy ra lỗi và đính kèm tập tin JSON của bạn (bạn có thể sẽ phải đổi tên lại tập tin để nó có đuôi '.txt')",
+    "4": "Hoặc nhấn <1>vào đây</1> để gửi báo cáo trong Discord. Mở kênh #🐛bug-reports, tạo một chủ đề mới và dán văn bản vào phần tín nhắn. ghi lại những việc bạn làm trước khi xảy ra lỗi và đính kèm tập tin JSON."
+  },
+  "refresh": "Tải lại trang",
+  "caption": "Trực tiếp tại hiện trường: đội ngũ kỹ sư đang điều tra vấn đề",
+  "confirmNuke": "Chắc chắn xóa TẤT CẢ dữ liệu trên GO? Hành động này không thể được hoàn tác!",
+  "finishNuke": "Đã tẩy sạch dữ liệu trên GO. Chuẩn bị tải lại trang.",
+  "nuke": "Xóa TẤT CẢ dữ liệu trên GO"
+}

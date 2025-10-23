@@ -1,0 +1,19 @@
+{
+  "buildInfo": {
+    "equipped": "현재 캐릭터가 착용 중인 빌드입니다. 이는 인게임에서 착용중이고 구성과 상관 없이 유지됩니다.",
+    "build": "<strong>빌드</strong>는 무기와 성유물 5개로 구성됩니다.",
+    "tcbuild": "<strong>연구용 빌드</strong>는 스탯을 직접 설정 할 수 있습니다."
+  },
+  "buildTcCharOverride": {
+    "btn": "캐릭터 데이터를 이 연구용 빌드로 교체"
+  },
+  "team": {
+    "editNameDesc": "팀 이름 및 설명 수정",
+    "name": "팀 이름",
+    "desc": "팀 설명"
+  },
+  "loadout": {
+    "name": "구성 이름",
+    "desc": "구성 설명"
+  }
+}

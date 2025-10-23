@@ -142,8 +142,8 @@
   "constellation2": {
     "name": "\"Now, As We Face the Perils of the Long Night\"",
     "description": {
-      "0": "Efek Talenta Pasif \"Dark-Shattering Flame\" diperkuat: Saat anggota party di sekitar memicu <electro>reaksi terkait Electro</electro> terhadap musuh, akan meningkatkan <electro>Electro DMG</electro> yang diakibatkan Normal Attack dan <strong>Last Lightfall</strong> Clorinde sebesar 30% ATK Clorinde. Efek ini berlangsung 15 detik, dapat ditumpuk sampai 3 lapis, dan durasi setiap lapisnya dihitung terpisah. Saat memiliki 3 lapis, ketahanan Clorinde terhadap interupsi juga akan meningkat. Peningkatan DMG Clorinde yang bisa diperoleh dengan cara di atas adalah maksimum 2.700.",
-      "1": "Harus membuka Talenta Pasif \"Dark-Shattering Flame\" terlebih dahulu."
+      "0": "Efek Talenta Ascension \"Dark-Shattering Flame\" diperkuat: Saat anggota party di sekitar memicu <electro>reaksi terkait Electro</electro> terhadap musuh, akan meningkatkan <electro>Electro DMG</electro> yang diakibatkan Normal Attack dan <strong>Last Lightfall</strong> Clorinde sebesar 30% ATK Clorinde. Efek ini berlangsung 15 detik, dapat ditumpuk sampai 3 lapis, dan durasi setiap lapisnya dihitung terpisah. Saat memiliki 3 lapis, ketahanan Clorinde terhadap interupsi juga akan meningkat. Peningkatan DMG Clorinde yang bisa diperoleh dengan cara di atas adalah maksimum 2.700.",
+      "1": "Harus membuka Talenta Ascension \"Dark-Shattering Flame\" terlebih dahulu."
     }
   },
   "constellation3": {

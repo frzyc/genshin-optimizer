@@ -1,5 +1,5 @@
 {
-  "condName": "敵は",
+  "condName": "敵が",
   "condCryo": "氷元素の影響を受けている",
-  "condFrozen": "凍結されている"
+  "condFrozen": "凍結している"
 }

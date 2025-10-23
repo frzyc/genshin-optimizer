@@ -1,0 +1,18 @@
+{
+  "skill": {
+    "dance1": "Daño de 1-Golpe de Danza de Espadas",
+    "dance2": "Daño de 2-Golpe de Danza de Espadas",
+    "whirl1": "Daño de 1-Golpe de Danza Espiral",
+    "whirl2": "Daño de 2-Golpe de Danza Espiral",
+    "wheel": "Daño de Rueda de Agua Purificadora"
+  },
+  "passive1": {
+    "underChaliceEffect": "Bajo el Estado del Cáliz de la Abundancia",
+    "notDendroHydroTeam": "sugerencia: Configura tu equipo solo con personajes Dendro e Hydro para ver condiciones y efectos adicionales",
+    "condName": "Después de recibir <dendro>Daño Dendro</dendro> mientras estás afectado por el Estado del Cáliz de la Abundancia",
+    "bountifulCores": "La reacción de florecimiento creará Núcleos Feraces"
+  },
+  "c4": {
+    "condName": "Después de que el tercer paso de la Pirueta golpee a los oponentes"
+  }
+}

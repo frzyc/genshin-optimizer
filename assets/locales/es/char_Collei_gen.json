@@ -123,11 +123,11 @@
   "constellation2": {
     "name": "A través de los árboles",
     "description": {
-      "0": "Transforma el talento pasivo “Retorno foliáceo”:",
-      "1": "Cuando el <strong>bumerán foliáceo</strong> regresa, otorga al personaje el estado de “germinación” de dicho talento pasivo para que inflija continuamente <dendro>Daño Dendro</dendro> contra los enemigos cercanos en una cantidad equivalente al 40% del ATQ de Collei durante 3 s.",
+      "0": "Transforma el talento de ascensión “Retorno foliáceo”:",
+      "1": "Cuando el <strong>bumerán foliáceo</strong> regresa, otorga al personaje el estado de “germinación” de dicho talento de ascensión para que inflija continuamente <dendro>Daño Dendro</dendro> contra los enemigos cercanos en una cantidad equivalente al 40% del ATQ de Collei durante 3 s.",
       "2": "Desde que Collei usa <strong>Caricia de las flores</strong> hasta que desaparece el estado de germinación, si algún personaje de tu equipo causa una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento, Crepitar o Florecimiento Lunar, la duración de germinación aumenta en 3 s.",
       "3": "La duración de germinación solo se puede aumentar una vez de esta manera como máximo. Si otro efecto de germinación se activa antes de que concluya, se eliminará el efecto anterior. El daño infligido por germinación se considera daño de Habilidad Elemental.",
-      "4": "Es necesario desbloquear el talento pasivo “Retorno foliáceo”."
+      "4": "Es necesario desbloquear el talento de ascensión “Retorno foliáceo”."
     }
   },
   "constellation3": {

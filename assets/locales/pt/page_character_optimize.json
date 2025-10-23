@@ -86,18 +86,19 @@
     "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)",
     "button_txt": "Bloquear Artefatos",
     "excNum_one": "<0>{{count}}</0> Artefato está bloqueado",
-    "excNum_other": "<0>{{count}}</0> Artefatos estão bloqueados"
+    "excNum_other": "<0>{{count}}</0> Artefatos estão bloqueados",
+    "includeArtifactTip": "Incluir um artefato permitirá o gerador de build usá-lo para este personagem.",
+    "includeArtifactButton": "Incluir este artefato nessa otimização"
   },
   "excludeChar": {
-    "title": "Configuração de Artefatos Equipados",
+    "title": "Usar Artefatos Equipados",
     "modal": {
       "allow_all": "Adicionar personagens visíveis à lista de permissão",
       "disallow_All": "Tirar personagens visíveis da lista de permissão"
     },
     "allowEquip": "Permitir o uso de artefatos de",
-    "tooltip": "Adicione personagens à lista de permissão deste personagem. Personagens na lista de permissão terão seus artefatos considerados na geração de builds. Também é possível alterar entre usar apenas artefatos desequipados, usar os de sua lista personalizada ou usar todos os artefatos equipados e desequipados.",
     "chars": "Personagens",
-    "artis": "Artefatos",
+    "artis": "Artefatos Equipados",
     "states": {
       "unequippedOnly": "Somente Não-Equipados",
       "customList": "Lista Personalizada",
@@ -115,5 +116,16 @@
   "build_one": "<0>{{count}}</0> Build",
   "build_other": "<0>{{count}}</0> Builds",
   "thread_one": "<0>{{count}}</0> Thread",
-  "thread_other": "<0>{{count}}</0> Threads"
+  "thread_other": "<0>{{count}}</0> Threads",
+  "upOptLevelFilter": "Filtro de Nível do Aprimorador de Artefato",
+  "upOptLevelFilterTooltip": "Esse filtro de Nível não está sincronizado com a configuração de Otimizar.",
+  "upOptNoResults": "Parece que não existem artefatos para aprimoramento que podem melhorar sua configuração. Seus filtros de artefato podem estar muitos restritivos. Alternativamente, use o otimizador de artefatos principal para encontrar uma build melhor.",
+  "upOptInfo": "O Aprimorador de Artefato identifica artefatos com alto potencial de melhorar o valor do Objetivo de Otimização, guiando-o a artefatos que merecem ser fortalecidos.<br/>Como apenas troca um artefato por vez, para a melhor build dentre todos os artefatos, utilize o otimizador de artefatos principal.",
+  "upOptEmptyBuild": "Você está usando uma build parcialmente vazia. Uma vez que o Aprimorador de Artefato apenas troca artefatos individualmente, completar um conjunto é pouco provável. É recomendável iniciar com uma build base, preferencialmente gerada pelo otimizador de artefatos principal.",
+  "targetSelectorTitle": "Selecionar Objetivo",
+  "compareArtModal": {
+    "newArt": "Novo Artefato",
+    "oldArt": "Artefato Anterior",
+    "tcArt": "Artefato Teorizado"
+  }
 }

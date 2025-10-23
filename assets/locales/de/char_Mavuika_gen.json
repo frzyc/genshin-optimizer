@@ -173,9 +173,9 @@
   "constellation4": {
     "name": "Entschlossenheit der Anführerin",
     "description": {
-      "0": "Verstärkt den Effekt des passiven Talents „Kiongozi“:",
+      "0": "Verstärkt den Effekt des Aufstiegstalents „Kiongozi“:",
       "1": "Der Schadenbonus, der nach dem Einsetzen der Spezialfähigkeit <strong>Stunde brennender Himmel</strong> erhalten wird, wird nicht mit der Zeit abnehmen, sondern zusätzlich um 10 % erhöht.",
-      "2": "Das passive Talent „Kiongozi“ muss zuerst freigeschaltet werden."
+      "2": "Das Aufstiegstalent „Kiongozi“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation5": {

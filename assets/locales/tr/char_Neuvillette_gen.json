@@ -128,15 +128,15 @@
   "constellation1": {
     "name": "Saygıdeğer Kurum",
     "description": {
-      "0": "Neuvillette savaş alanına geldikten sonra \"Kadim Deniz İktidarının Varisi\" Pasif Yeteneğinden 1 Kadim Ejder İhtişamı kademesi kazanır. \"Kadim Deniz İktidarının Varisi\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "0": "Neuvillette savaş alanına geldikten sonra \"Kadim Deniz İktidarının Varisi\" Yükseltme Yeteneğinden 1 Kadim Ejder İhtişamı kademesi kazanır. \"Kadim Deniz İktidarının Varisi\" Yükseltme Yeteneğinin açılmış olması gerekir.",
       "1": "Ayrıca, Yüklü Saldırı Güçlendirmesi: Hukuki Değerlendirme ve Yüklü Saldırı: Adil Yargı kullanırken müdahaleye karşı direnci artar."
     }
   },
   "constellation2": {
     "name": "Adli Uyarı",
     "description": {
-      "0": "\"Kadim Deniz İktidarının Varisi\" Pasif Yeteneği gelişir: Her Kadim Ejder İhtişamı kademesi, Yüklü Saldırı: Adil Yargının Kritik Hasarını %14 artırır. Bu şekilde en fazla %42 artış elde edilebilir.",
-      "1": "\"Kadim Deniz İktidarının Varisi\" Pasif Yeteneğinin açılmış olması gerekir."
+      "0": "\"Kadim Deniz İktidarının Varisi\" Yükseltme Yeteneği gelişir: Her Kadim Ejder İhtişamı kademesi, Yüklü Saldırı: Adil Yargının Kritik Hasarını %14 artırır. Bu şekilde en fazla %42 artış elde edilebilir.",
+      "1": "\"Kadim Deniz İktidarının Varisi\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {

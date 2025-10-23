@@ -189,5 +189,6 @@
   "reactionOp": {
     "overload": "Après avoir déclenché une réaction de <overloaded>Surcharge</overloaded>"
   },
-  "afterOverflow": "Le soin a débordé"
+  "afterOverflow": "Le soin a débordé",
+  "level": "Niveau {{count}}"
 }

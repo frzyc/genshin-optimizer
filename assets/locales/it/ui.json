@@ -1,0 +1,18 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Artefatti",
+    "characters": "Personaggi",
+    "tools": "Strumenti"
+  },
+  "social": {
+    "paypal": "PayPal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "unselect": "Deseleziona",
+  "ascending": "Crescente",
+  "descending": "Decrescente",
+  "loading": "Caricamento...",
+  "appVersion": "$t(pageTitle) Versione: <1>{{version}}</1>"
+}
