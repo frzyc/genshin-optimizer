@@ -29,7 +29,8 @@
     "exSpecial": "EX Special Attack",
     "chain": "Chain Attack",
     "ult": "Ultimate",
-    "aftershock": "Aftershock"
+    "aftershock": "Aftershock",
+    "assistFollowUp": "Assist Follow-Up"
   },
   "attributes": {
     "electric": "Electric",

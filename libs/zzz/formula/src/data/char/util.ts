@@ -130,7 +130,7 @@ export function dmgDazeAndAnomMerge(
   const dmgMulti = sum(
     ...skillParam.map((sp) => percent(sp.DamagePercentage)),
     prod(
-      own.char[abilityScalingType],
+      sum(own.char[abilityScalingType], -1),
       sum(...skillParam.map((sp) => percent(sp.DamagePercentageGrowth)))
     )
   )
@@ -142,7 +142,7 @@ export function dmgDazeAndAnomMerge(
   const dazeBase = sum(
     ...skillParam.map((sp) => percent(sp.StunRatio)),
     prod(
-      own.char[abilityScalingType],
+      sum(own.char[abilityScalingType], -1),
       sum(...skillParam.map((sp) => percent(sp.StunRatioGrowth)))
     )
   )
