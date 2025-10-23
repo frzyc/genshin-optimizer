@@ -398,7 +398,9 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ),
     // Core skill stat boost
     ...Object.entries(coreStats).map(([stat, values]) =>
-      ownBuff.base[stat].add(subscript(core, values))
+      stat === 'hp_'
+        ? ownBuff.initial[stat].add(subscript(core, values))
+        : ownBuff.base[stat].add(subscript(core, values))
     ),
     // Mindscape skill level boost
     ...allSkillKeys.map((sk) =>
