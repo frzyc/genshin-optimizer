@@ -162,7 +162,7 @@
       "2": "Characters under the effect of Golden Chalice's Bounty will increase the Elemental Mastery of all nearby characters by 100 for 10s whenever they are hit by <dendro>Dendro attacks</dendro>. Also, triggering the Bloom or Lunar-Bloom reaction will create Bountiful Cores instead of Dendro Cores.",
       "3": "Such Cores will burst very quickly after being created, and they have larger AoEs.",
       "4": "Bountiful Cores cannot trigger Hyperbloom or Burgeon, and they share an upper numerical limit with Dendro Cores. Bountiful Core DMG is considered DMG dealt by Dendro Cores produced by Bloom.",
-      "5": "Should the party not meet the conditions for this Passive Talent, any existing Golden Chalice's Bounty effects will be canceled."
+      "5": "Should the party not meet the conditions for this Ascension Talent, any existing Golden Chalice's Bounty effects will be canceled."
     }
   },
   "passive2": {
@@ -192,7 +192,7 @@
     "name": "The Starry Skies Their Flowers Rain",
     "description": {
       "0": "After characters affected by the Golden Chalice's Bounty deal <hydro>Hydro DMG</hydro> to an opponent, that opponent's <hydro>Hydro RES</hydro> will be decreased by 35% for 10s. After dealing Bloom or Lunar-Bloom DMG to opponents, their <dendro>Dendro RES</dendro> will be decreased by 35% for 10s.",
-      "1": "You need to have unlocked the \"Court of Dancing Petals\" Talent."
+      "1": "You must first unlock the Ascension Talent \"Court of Dancing Petals.\""
     }
   },
   "constellation3": {

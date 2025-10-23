@@ -123,11 +123,11 @@
   "constellation2": {
     "name": "Attraverso foreste e montagne",
     "description": {
-      "0": "Il talento passivo Brezza di ritorno floreale cambia come segue: l'<strong>Anello floreale</strong> fornisce al personaggio l'effetto Germoglio di Brezza di ritorno floreale al ritorno dell'Anello, infliggendo un 40% dell'ATT di Collei come <dendro>DAN da Dendro</dendro> ai nemici vicini per 3 s.",
+      "0": "Il talento d'ascensione Brezza di ritorno floreale cambia come segue: l'<strong>Anello floreale</strong> fornisce al personaggio l'effetto Germoglio di Brezza di ritorno floreale al ritorno dell'Anello, infliggendo un 40% dell'ATT di Collei come <dendro>DAN da Dendro</dendro> ai nemici vicini per 3 s.",
       "1": "Dal momento in cui viene utilizzato <strong>Pennello floreale</strong>, fino al termine dell'effetto Germoglio, se uno dei membri del gruppo innesca una reazione di Ustione, Vivificazione, Accentuazione, Propagazione, Fioritura, Iperfioritura, Fioritura lunare o Germinazione l'effetto Germoglio verrà esteso di 3 s.",
       "2": "La durata dell'effetto Germoglio può essere estesa in questo modo una sola volta. Se un altro effetto Germoglio viene innescato durante la sua durata iniziale, l'effetto iniziale viene rimosso.",
       "3": "I DAN inflitti dal Germoglio vengono considerati come DAN da abilità elementale.",
-      "4": "Devi prima sbloccare il talento passivo Brezza di ritorno floreale."
+      "4": "Richiede il talento d'ascensione Brezza di ritorno floreale."
     }
   },
   "constellation3": {

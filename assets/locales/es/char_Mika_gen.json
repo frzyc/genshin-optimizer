@@ -116,9 +116,9 @@
   "passive2": {
     "name": "Levantamiento topográfico",
     "description": {
-      "0": "Cuando un personaje en uso afectado a la vez por los estados pluma aquilae de <strong>Himno plumiceleste</strong> y aeroánima de <strong>Vórtice hieloastral</strong> inflige un crítico al atacar, el estado de aeroánima generará 1 carga de detección del talento pasivo “Supresión fuegorrápido”. Solo se puede generar 1 carga de detección de esta manera durante un estado de aeroánima.",
+      "0": "Cuando un personaje en uso afectado a la vez por los estados pluma aquilae de <strong>Himno plumiceleste</strong> y aeroánima de <strong>Vórtice hieloastral</strong> inflige un crítico al atacar, el estado de aeroánima generará 1 carga de detección del talento de ascensión “Supresión fuegorrápido”. Solo se puede generar 1 carga de detección de esta manera durante un estado de aeroánima.",
       "1": "Además, aumenta en 1 el máximo de acumulaciones de detección durante ese estado.",
-      "2": "Es necesario desbloquear el talento pasivo “Supresión fuegorrápido”."
+      "2": "Es necesario desbloquear el talento de ascensión “Supresión fuegorrápido”."
     }
   },
   "passive3": {
@@ -136,8 +136,8 @@
   "constellation2": {
     "name": "El camino que nos une",
     "description": {
-      "0": "Cuando la saeta de escarcha de <strong>Vórtice hieloastral</strong> golpea por primera vez a un enemigo o cuando la señal astrogélida golpea a los enemigos, se genera 1 carga de detección del talento pasivo “Supresión fuegorrápido”.",
-      "1": "Es necesario desbloquear el talento pasivo “Supresión fuegorrápido”."
+      "0": "Cuando la saeta de escarcha de <strong>Vórtice hieloastral</strong> golpea por primera vez a un enemigo o cuando la señal astrogélida golpea a los enemigos, se genera 1 carga de detección del talento de ascensión “Supresión fuegorrápido”.",
+      "1": "Es necesario desbloquear el talento de ascensión “Supresión fuegorrápido”."
     }
   },
   "constellation3": {
@@ -164,7 +164,7 @@
     "name": "Asistencia táctica",
     "description": {
       "0": "Aumenta en 1 el máximo de cargas de detección acumulables en el estado de aeroánima de <strong>Vórtice hieloastral</strong>.",
-      "1": "Es necesario desbloquear el talento pasivo “Supresión fuegorrápido”.",
+      "1": "Es necesario desbloquear el talento de ascensión “Supresión fuegorrápido”.",
       "2": "Además, cuando un personaje en uso está bajo los efectos de aeroánima, el Daño CRIT de sus ataques que infligen Daño Físico aumenta en un 60%."
     }
   }

@@ -151,7 +151,7 @@
   "constellation2": {
     "name": "Proibido Preguiça no Treino!",
     "description": {
-      "0": "Quando lança o Supremo <strong>Os Três Princípios do Poder</strong>, Iansan obtém o efeito \"Objetivo do Treino\" do Talento Passivo \"Treinamento de Resistência Fortalecida\" por 15s. Além disso, enquanto o efeito \"Objetivo do Treino\" durar, se Iansan não for a personagem ativa, aumenta o ATQ do personagem ativo da equipe em 30%. Esse efeito requer que o Talento Passivo \"Treinamento de Resistência Fortalecida\" esteja desbloqueado."
+      "0": "Quando lança o Supremo <strong>Os Três Princípios do Poder</strong>, Iansan obtém o efeito \"Objetivo do Treino\" do Talento de Ascensão \"Treinamento de Resistência Fortalecida\" por 15s. Além disso, enquanto o efeito \"Objetivo do Treino\" durar, se Iansan não for a personagem ativa, aumenta o ATQ do personagem ativo da equipe em 30%. Esse efeito requer que o Talento de Ascensão \"Treinamento de Resistência Fortalecida\" esteja desbloqueado."
     }
   },
   "constellation3": {

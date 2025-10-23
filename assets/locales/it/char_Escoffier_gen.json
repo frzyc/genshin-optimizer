@@ -126,7 +126,7 @@
     "name": "Danza per il palato",
     "description": {
       "0": "Quando 4 membri del gruppo sono di <hydro>Hydro</hydro> o di <cryo>Cryo</cryo>, i loro DAN da CRIT di <cryo>Cryo</cryo> aumentano di un 60% per 15 s dall'uso dell'abilità elementale <strong>Cottura a bassa temperatura</strong> o del Tripudio elementale <strong>Tecnica di taglio</strong> di Escoffier.",
-      "1": "Richiede il talento passivo Condimento ispiratore."
+      "1": "Richiede il talento d'ascensione Condimento ispiratore."
     }
   },
   "constellation2": {
@@ -146,7 +146,7 @@
   "constellation4": {
     "name": "Ricetta segreta con rosmarino",
     "description": {
-      "0": "La durata di <strong>Dieta riabilitativa</strong> aumenta di 6 s. Mentre l'effetto è attivo, c'è una probabilità di ripristinare un 100% di PS aggiuntivi e 2 punti di energia di Escoffier quando si ripristinano PS tramite <strong>Dieta riabilitativa</strong>. Tale probabilità corrisponde al tasso di CRIT di Escoffier. È possibile innescare quest'effetto 7 volte entro la durata di ciascuna iterazione di <strong>Dieta riabilitativa</strong>. Richiede il talento passivo Mangiare bene è la cura migliore."
+      "0": "La durata di <strong>Dieta riabilitativa</strong> aumenta di 6 s. Mentre l'effetto è attivo, c'è una probabilità di ripristinare un 100% di PS aggiuntivi e 2 punti di energia di Escoffier quando si ripristinano PS tramite <strong>Dieta riabilitativa</strong>. Tale probabilità corrisponde al tasso di CRIT di Escoffier. È possibile innescare quest'effetto 7 volte entro la durata di ciascuna iterazione di <strong>Dieta riabilitativa</strong>. Richiede il talento d'ascensione Mangiare bene è la cura migliore."
     }
   },
   "constellation5": {

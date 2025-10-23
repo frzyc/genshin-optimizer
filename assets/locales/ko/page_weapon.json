@@ -3,5 +3,19 @@
   "weaponName": "무기 이름",
   "removeWeapon": "{{value}}을/를 정말 제거하시겠습니까?",
   "addWeapon": "새 무기 추가",
-  "cantDeleteLock": "잠금 설정된 무기는 삭제할 수 없습니다."
+  "showingNum_other": "총 {{value}} 개의 무기 중 <1>{{count}}</1> 개를 표시 중",
+  "cantDeleteLock": "잠금 설정된 무기는 삭제할 수 없습니다.",
+  "button": {
+    "deleteWeapons": "무기 삭제",
+    "lockWeapons": "무기 잠금",
+    "unlockWeapons": "무기 잠금 해제"
+  },
+  "buttonHint": "주의: 상단의 빨간 버튼들은 <1>현재 검색된 무기들<1>에만 적용됩니다.",
+  "equippedWeapon": "착용 중인 무기",
+  "weaponInInv": "착용 중이지 않은 무기",
+  "locationsTooltip": "캐릭터들이 사용 중인 무기를 필터 하려면 \"모든 착용 중인 무기\"를 사용 중지 하세요.",
+  "subheadings": {
+    "general": "일반",
+    "inventory": "보관함"
+  }
 }

@@ -79,7 +79,7 @@
       "4": "<br/>",
       "5": "<strong>Havoc: Extinction</strong>",
       "6": "Elemental Burst spesial yang bisa dilancarkan tanpa mengonsumsi Serpent's Subtlety.",
-      "7": "Setelah dilancarkan, Skirk akan mendapatkan efek \"All Shall Wither\" yang berlangsung hingga mode Seven-Phase Flash berakhir. Setelah membuka Talenta Pasif <strong>Reason Beyond Reason</strong>, dia juga bisa menyerap Void Rift yang ada di sekitarnya dalam radius tertentu.",
+      "7": "Setelah dilancarkan, Skirk akan mendapatkan efek \"All Shall Wither\" yang berlangsung hingga mode Seven-Phase Flash berakhir. Setelah membuka Talenta Ascension <strong>Reason Beyond Reason</strong>, dia juga bisa menyerap Void Rift yang ada di sekitarnya dalam radius tertentu.",
       "8": "Selama efek \"All Shall Wither\" berlangsung, setiap 0,1 detik, Normal Attack Skirk yang mengenai musuh akan mendapatkan peningkatan DMG. Jika Skirk menyerap Void Rift saat melancarkan <strong>Havoc: Extinction</strong>, maka DMG Normal Attack kali ini akan meningkat lebih lanjut berdasarkan jumlah Void Rift yang diserap.",
       "9": "Efek ini akan hilang setelah terpicu 10 kali."
     },
@@ -134,8 +134,8 @@
   "constellation1": {
     "name": "Far to Fall",
     "description": {
-      "0": "Efek Talenta Pasif <strong>Reason Beyond Reason</strong> diperkuat: Untuk setiap Void Rift yang diserap, Skirk akan memanggil pedang kristal untuk menyerang musuh di sekitarnya, mengakibatkan <cryo>Cryo DMG</cryo> sebesar 500% ATK Skirk. DMG ini dianggap sebagai DMG Charged Attack.",
-      "1": "Harus membuka Talenta Pasif \"Reason Beyond Reason\" terlebih dahulu."
+      "0": "Efek Talenta Ascension <strong>Reason Beyond Reason</strong> diperkuat: Untuk setiap Void Rift yang diserap, Skirk akan memanggil pedang kristal untuk menyerang musuh di sekitarnya, mengakibatkan <cryo>Cryo DMG</cryo> sebesar 500% ATK Skirk. DMG ini dianggap sebagai DMG Charged Attack.",
+      "1": "Harus membuka Talenta Ascension \"Reason Beyond Reason\" terlebih dahulu."
     }
   },
   "constellation2": {
@@ -156,8 +156,8 @@
   "constellation4": {
     "name": "Fractured Flow",
     "description": {
-      "0": "Efek Talenta Pasif <strong>Return to Oblivion</strong> mendapatkan peningkatan: Setiap lapis efek Death's Crossing juga akan meningkatkan 10%/20%/40% ATK Skirk.",
-      "1": "Harus membuka Talenta Pasif \"Return to Oblivion\" terlebih dahulu."
+      "0": "Efek Talenta Ascension <strong>Return to Oblivion</strong> mendapatkan peningkatan: Setiap lapis efek Death's Crossing juga akan meningkatkan 10%/20%/40% ATK Skirk.",
+      "1": "Harus membuka Talenta Ascension \"Return to Oblivion\" terlebih dahulu."
     }
   },
   "constellation5": {
@@ -170,8 +170,8 @@
   "constellation6": {
     "name": "To the Source",
     "description": {
-      "0": "Skirk akan mendapatkan satu lapis efek \"Havoc: Sever\" setiap kali ia menyerap satu Void Rift yang tercipta dari efek Talenta Pasif <strong>Reason Beyond Reason</strong>. Skirk dapat mengonsumsi efek ini untuk melancarkan serangan terkoordinasi dan mengurangi DMG yang diterima saat sedang berada dalam mode <strong>Seven-Phase Flash</strong>. Efek ini berlangsung 15 detik dan dapat ditumpuk hingga 3 lapis, durasi setiap lapisnya dihitung terpisah.",
-      "1": "Harus membuka Talenta Pasif Reason Beyond Reason terlebih dahulu.",
+      "0": "Skirk akan mendapatkan satu lapis efek \"Havoc: Sever\" setiap kali ia menyerap satu Void Rift yang tercipta dari efek Talenta Ascension <strong>Reason Beyond Reason</strong>. Skirk dapat mengonsumsi efek ini untuk melancarkan serangan terkoordinasi dan mengurangi DMG yang diterima saat sedang berada dalam mode <strong>Seven-Phase Flash</strong>. Efek ini berlangsung 15 detik dan dapat ditumpuk hingga 3 lapis, durasi setiap lapisnya dihitung terpisah.",
+      "1": "Harus membuka Talenta Ascension Reason Beyond Reason terlebih dahulu.",
       "2": "<br/>",
       "3": "<strong>Havoc: Sever</strong>",
       "4": [

@@ -149,7 +149,7 @@
   "constellation6": {
     "name": "Thuyết Hỗn Loạn",
     "description": {
-      "0": "Nếu <strong>Cấm-Gió Thần Sáng Tạo-75 Loại 2</strong> xảy ra chuyển hóa nguyên tố thì tất cả đội sẽ nhận buff sát thương nguyên tố 20% trong khoảng thời gian kĩ năng duy trì."
+      "0": "Nếu <strong>Cấm-Gió Thần Sáng Tạo-75 Loại 2</strong> xảy ra chuyển hóa nguyên tố thì tất cả đội sẽ nhận 20% buff sát thương nguyên tố tương ứng trong khoảng thời gian kĩ năng duy trì."
     }
   }
 }

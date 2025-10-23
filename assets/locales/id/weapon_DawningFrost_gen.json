@@ -1,0 +1,24 @@
+{
+  "name": "Dawning Frost",
+  "description": {
+    "0": "Wadah upacara yang ditempa dari perak, sempurna tanpa cela. Konon di masa lalu, benda ini adalah pusaka suci yang diwariskan dari generasi ke generasi oleh para penghulu ujung utara."
+  },
+  "passiveName": "Nocturnal Dreams",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Charged Attack mengenai musuh, Elemental Mastery +<cryo>72</cryo> poin selama 10 detik. Setelah Elemental Skill mengenai musuh, Elemental Mastery +<cryo>48</cryo> poin selama 10 detik."
+    },
+    "1": {
+      "0": "Setelah Charged Attack mengenai musuh, Elemental Mastery +<cryo>90</cryo> poin selama 10 detik. Setelah Elemental Skill mengenai musuh, Elemental Mastery +<cryo>60</cryo> poin selama 10 detik."
+    },
+    "2": {
+      "0": "Setelah Charged Attack mengenai musuh, Elemental Mastery +<cryo>108</cryo> poin selama 10 detik. Setelah Elemental Skill mengenai musuh, Elemental Mastery +<cryo>72</cryo> poin selama 10 detik."
+    },
+    "3": {
+      "0": "Setelah Charged Attack mengenai musuh, Elemental Mastery +<cryo>126</cryo> poin selama 10 detik. Setelah Elemental Skill mengenai musuh, Elemental Mastery +<cryo>84</cryo> poin selama 10 detik."
+    },
+    "4": {
+      "0": "Setelah Charged Attack mengenai musuh, Elemental Mastery +<cryo>144</cryo> poin selama 10 detik. Setelah Elemental Skill mengenai musuh, Elemental Mastery +<cryo>96</cryo> poin selama 10 detik."
+    }
+  }
+}

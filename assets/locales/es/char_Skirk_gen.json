@@ -79,7 +79,7 @@
       "4": "<br/>",
       "5": "<strong>Caos: Exterminio</strong>",
       "6": "Esta Habilidad Definitiva especial puede utilizarse sin consumir astucia serpentina.",
-      "7": "Tras usarla, Skirk obtiene el efecto de “marchitamiento total”, el cual durará hasta que salga del modo distorsión heptafásica. Tras desbloquear el talento pasivo <strong>La razón más allá de la razón</strong>, Skirk también podrá absorber las fisuras del vacío que haya en un área cercana.",
+      "7": "Tras usarla, Skirk obtiene el efecto de “marchitamiento total”, el cual durará hasta que salga del modo distorsión heptafásica. Tras desbloquear el talento de ascensión <strong>La razón más allá de la razón</strong>, Skirk también podrá absorber las fisuras del vacío que haya en un área cercana.",
       "8": "Mientras el efecto de marchitamiento total esté activo, cada 0.1 s, cuando Skirk golpee a un enemigo con un Ataque Normal, este infligirá más daño. Si Skirk absorbe alguna fisura del vacío al usar <strong>Caos: Exterminio</strong>, el daño de dicho Ataque Normal aumentará aún más en función del número de fisuras absorbidas.",
       "9": "Este efecto se cancelará cuando se haya activado 10 veces."
     },
@@ -134,8 +134,8 @@
   "constellation1": {
     "name": "Caída sin fin",
     "description": {
-      "0": "Fortalece el efecto del talento pasivo <strong>La razón más allá de la razón</strong>, de manera que, por cada fisura del vacío que absorba, invoca un filo cristalino que ataca a los enemigos cercanos y les inflige <cryo>Daño Cryo</cryo> en una cantidad equivalente al 500% del ATQ de Skirk. Este daño se considera daño de Ataque Cargado.",
-      "1": "Es necesario desbloquear el talento pasivo “La razón más allá de la razón”."
+      "0": "Fortalece el efecto del talento de ascensión <strong>La razón más allá de la razón</strong>, de manera que, por cada fisura del vacío que absorba, invoca un filo cristalino que ataca a los enemigos cercanos y les inflige <cryo>Daño Cryo</cryo> en una cantidad equivalente al 500% del ATQ de Skirk. Este daño se considera daño de Ataque Cargado.",
+      "1": "Es necesario desbloquear el talento de ascensión “La razón más allá de la razón”."
     }
   },
   "constellation2": {
@@ -156,8 +156,8 @@
   "constellation4": {
     "name": "Flujo de la obstrucción",
     "description": {
-      "0": "Fortalece el efecto del talento pasivo <strong>Retorno al olvido</strong>, de manera que cada acumulación de vado de la muerte también aumenta el ATQ de Skirk en un 10/20/40%.",
-      "1": "Es necesario desbloquear el talento pasivo “Retorno al olvido”."
+      "0": "Fortalece el efecto del talento de ascensión <strong>Retorno al olvido</strong>, de manera que cada acumulación de vado de la muerte también aumenta el ATQ de Skirk en un 10/20/40%.",
+      "1": "Es necesario desbloquear el talento de ascensión “Retorno al olvido”."
     }
   },
   "constellation5": {
@@ -170,8 +170,8 @@
   "constellation6": {
     "name": "Hacia el origen",
     "description": {
-      "0": "Cada vez que Skirk absorba una fisura del vacío por medio del efecto del talento pasivo <strong>La razón más allá de la razón</strong>, obtendrá una acumulación de “caos: corte”. Skirk puede consumir este efecto para ejecutar ataques coordinados y reducir el daño que recibe en el modo <strong>distorsión heptafásica</strong>. Este efecto dura 15 s, puede acumularse hasta 3 veces y cada acumulación tiene su propia duración individual.",
-      "1": "Es necesario desbloquear el talento pasivo “La razón más allá de la razón”.",
+      "0": "Cada vez que Skirk absorba una fisura del vacío por medio del efecto del talento de ascensión <strong>La razón más allá de la razón</strong>, obtendrá una acumulación de “caos: corte”. Skirk puede consumir este efecto para ejecutar ataques coordinados y reducir el daño que recibe en el modo <strong>distorsión heptafásica</strong>. Este efecto dura 15 s, puede acumularse hasta 3 veces y cada acumulación tiene su propia duración individual.",
+      "1": "Es necesario desbloquear el talento de ascensión “La razón más allá de la razón”.",
       "2": "<br/>",
       "3": "<strong>Caos: corte</strong>",
       "4": [

@@ -1,0 +1,24 @@
+{
+  "name": "Hakikat Kutusu",
+  "description": {
+    "0": "Altın ve yeşim taşları oyularak yapılmış sivri bir kutu. Efsaneye göre bir zamanlar Safir Şehir Tulaytullah'ın derinlerindeki bir tapınakta saklanırmış."
+  },
+  "passiveName": "Sahteliğin Özü",
+  "passiveDescription": {
+    "0": {
+      "0": "Kritik Oranı <cryo>%8</cryo> artar. Kuşanan karakter bir Element Becerisi kullandığında Yalanların Sırrı etkisini kazanır: 12 saniyeliğine Element Ustalığı <cryo>80</cryo> artar. Kuşanan karakter bir düşmana Ay Çiçeklenmesi Hasarı verdiğinde Hakikat Ayı etkisini kazanır: 4 saniyeliğine Kritik Hasarı <cryo>%24</cryo> artar. Yalanların Sırrı ve Hakikat Ayı etkileri aynı anda aktif olduğunda iki etki de %50 güçlenir."
+    },
+    "1": {
+      "0": "Kritik Oranı <cryo>%10</cryo> artar. Kuşanan karakter bir Element Becerisi kullandığında Yalanların Sırrı etkisini kazanır: 12 saniyeliğine Element Ustalığı <cryo>100</cryo> artar. Kuşanan karakter bir düşmana Ay Çiçeklenmesi Hasarı verdiğinde Hakikat Ayı etkisini kazanır: 4 saniyeliğine Kritik Hasarı <cryo>%30</cryo> artar. Yalanların Sırrı ve Hakikat Ayı etkileri aynı anda aktif olduğunda iki etki de %50 güçlenir."
+    },
+    "2": {
+      "0": "Kritik Oranı <cryo>%12</cryo> artar. Kuşanan karakter bir Element Becerisi kullandığında Yalanların Sırrı etkisini kazanır: 12 saniyeliğine Element Ustalığı <cryo>120</cryo> artar. Kuşanan karakter bir düşmana Ay Çiçeklenmesi Hasarı verdiğinde Hakikat Ayı etkisini kazanır: 4 saniyeliğine Kritik Hasarı <cryo>%36</cryo> artar. Yalanların Sırrı ve Hakikat Ayı etkileri aynı anda aktif olduğunda iki etki de %50 güçlenir."
+    },
+    "3": {
+      "0": "Kritik Oranı <cryo>%14</cryo> artar. Kuşanan karakter bir Element Becerisi kullandığında Yalanların Sırrı etkisini kazanır: 12 saniyeliğine Element Ustalığı <cryo>140</cryo> artar. Kuşanan karakter bir düşmana Ay Çiçeklenmesi Hasarı verdiğinde Hakikat Ayı etkisini kazanır: 4 saniyeliğine Kritik Hasarı <cryo>%42</cryo> artar. Yalanların Sırrı ve Hakikat Ayı etkileri aynı anda aktif olduğunda iki etki de %50 güçlenir."
+    },
+    "4": {
+      "0": "Kritik Oranı <cryo>%16</cryo> artar. Kuşanan karakter bir Element Becerisi kullandığında Yalanların Sırrı etkisini kazanır: 12 saniyeliğine Element Ustalığı <cryo>160</cryo> artar. Kuşanan karakter bir düşmana Ay Çiçeklenmesi Hasarı verdiğinde Hakikat Ayı etkisini kazanır: 4 saniyeliğine Kritik Hasarı <cryo>%48</cryo> artar. Yalanların Sırrı ve Hakikat Ayı etkileri aynı anda aktif olduğunda iki etki de %50 güçlenir."
+    }
+  }
+}

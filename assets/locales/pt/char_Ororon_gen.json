@@ -141,7 +141,7 @@
     "name": "Rastros Entre a Floresta Enevoada",
     "description": {
       "0": "O <strong>Orbe Espiritual Noturno</strong> da Habilidade Elemental <strong>Rastreamento da Escuridão</strong> pode ricochetear mais duas vezes.",
-      "1": "Além disso, quando o <strong>Orbe Espiritual Noturno</strong> atinge um inimigo, aplica o efeito \"Noite Escura\" nesse inimigo por 12s. Aumenta em 50% o Dano causado por Super Exibição do Talento Passivo \"Sensações da Cortina Noturna\" contra o inimigo que está afetado pelo efeito Noite Escura. Esse efeito requer que o Talento Passivo \"Sensações da Cortina Noturna\" seja desbloqueado."
+      "1": "Além disso, quando o <strong>Orbe Espiritual Noturno</strong> atinge um inimigo, aplica o efeito \"Noite Escura\" nesse inimigo por 12s. Aumenta em 50% o Dano causado por Super Exibição do Talento de Ascensão \"Sensações da Cortina Noturna\" contra o inimigo que está afetado pelo efeito Noite Escura. Esse efeito requer que o Talento de Ascensão \"Sensações da Cortina Noturna\" seja desbloqueado."
     }
   },
   "constellation2": {
@@ -178,9 +178,9 @@
   "constellation6": {
     "name": "Oferenda para a Nascente Profunda",
     "description": {
-      "0": "Depois de desencadear \"Super Exibição\" do Talento Passivo \"Sensações da Cortina Noturna\", aumenta o ATQ do personagem ativo da equipe em 10% por 9s. Esse efeito pode ser acumulado até 3 vezes e cada acúmulo possui sua duração contada de forma independente.",
+      "0": "Depois de desencadear \"Super Exibição\" do Talento de Ascensão \"Sensações da Cortina Noturna\", aumenta o ATQ do personagem ativo da equipe em 10% por 9s. Esse efeito pode ser acumulado até 3 vezes e cada acúmulo possui sua duração contada de forma independente.",
       "1": "Além disso, ao lançar o Supremo <strong>Ecos Sombrios</strong>, desencadeará um efeito igual a Super Exibição, causando 200% do Dano original.",
-      "2": "Esse efeito precisa que o Talento Passivo \"Sensações da Cortina Noturna\" seja desbloqueado."
+      "2": "Esse efeito precisa que o Talento de Ascensão \"Sensações da Cortina Noturna\" seja desbloqueado."
     }
   }
 }

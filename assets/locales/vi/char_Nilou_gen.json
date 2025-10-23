@@ -138,7 +138,7 @@
     "name": "Mưa Hoa Trời Sao",
     "description": {
       "0": "Nhân vật trong trạng thái \"Phước Lành Ly Vàng\" sau khi gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> lên kẻ địch sẽ khiến kẻ địch đó giảm 35% <hydro>Kháng Nguyên Tố Thủy</hydro>, duy trì 10s. Sau khi gây sát thương phản ứng Sum Suê hoặc Nguyệt-Sum Suê cho kẻ địch sẽ khiến kẻ địch đó giảm 35% <dendro>Kháng Nguyên Tố Thảo</dendro>, duy trì 10s.",
-      "1": "Cần phải mở khóa thiên phú cố định \"Sảnh Đường Ngân Nga\"."
+      "1": "Cần phải mở khóa thiên phú đột phá \"Sảnh Đường Ngân Nga\"."
     }
   },
   "constellation3": {

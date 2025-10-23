@@ -134,7 +134,7 @@
     "description": {
       "0": "Sethos ottiene un 15% di <electro>bonus DAN da Electro</electro> per 10 s, cumulabile 2 volte e con la durata di ciascun accumulo calcolata in maniera indipendente, quando si verifica una qualunque delle seguenti condizioni:",
       "1": [
-        " gli attacchi mirati consumano energia elementale (richiede il talento passivo Enigma del nibbio bruno);",
+        " gli attacchi mirati consumano energia elementale (richiede il talento d'ascensione Enigma del nibbio bruno);",
         " l'energia elementale viene ripristinata innescando reazioni elementali tramite <strong>Rito antico: Sabbie del tuono</strong>;",
         " viene usato <strong>Rito arcano: Squarciaombre del tramonto</strong>."
       ]
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Tomo del Tempio del Sole ramingo",
     "description": {
-      "0": "Dopo aver colpito un nemico con una <strong>Freccia squarciaombre</strong>, l'energia elementale consumata dal talento passivo Enigma del nibbio bruno viene restituita. Questo effetto può attivarsi una volta ogni 15 s. Richiede il talento passivo Enigma del nibbio bruno."
+      "0": "Dopo aver colpito un nemico con una <strong>Freccia squarciaombre</strong>, l'energia elementale consumata dal talento d'ascensione Enigma del nibbio bruno viene restituita. Questo effetto può attivarsi una volta ogni 15 s. Richiede il talento d'ascensione Enigma del nibbio bruno."
     }
   }
 }

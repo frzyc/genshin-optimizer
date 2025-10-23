@@ -125,14 +125,14 @@
   "constellation1": {
     "name": "Light Fragrance Leaching",
     "description": {
-      "0": "DMG yang diakibatkan <strong>Fragrance Extraction</strong> dan Cleardew Cologne dari Talenta Pasif \"Lingering Fragrance\" meningkat 20%. Peningkatan DMG untuk Talenta Pasif hanya berlaku setelah Talenta Pasif \"Lingering Fragrance\" dibuka.",
+      "0": "DMG yang diakibatkan <strong>Fragrance Extraction</strong> dan Cleardew Cologne dari Talenta Ascension \"Lingering Fragrance\" meningkat 20%. Peningkatan DMG untuk Talenta Ascension hanya berlaku setelah Talenta Ascension \"Lingering Fragrance\" dibuka.",
       "1": "Selain itu, saat anggota party di sekitar memicu reaksi Burning terhadap musuh atau mengakibatkan <dendro>Dendro DMG</dendro> terhadap musuh yang berada dalam status Burning, akan menghasilkan 1 <strong>Scent</strong> tambahan. Efek ini dapat terpicu sekali setiap 2,9 detik."
     }
   },
   "constellation2": {
     "name": "Lakelight Top Note",
     "description": {
-      "0": "Saat <strong>Fragrance Extraction</strong>, <strong>Aromatic Explication</strong>, atau Cleardew Cologne dari Talenta Pasif \"Lingering Fragrance\" (harus membuka Talenta Pasif yang bersangkutan lebih dulu) mengenai musuh, <dendro>Dendro RES</dendro> musuh tersebut berkurang 30% selama 10 detik."
+      "0": "Saat <strong>Fragrance Extraction</strong>, <strong>Aromatic Explication</strong>, atau Cleardew Cologne dari Talenta Ascension \"Lingering Fragrance\" (harus membuka Talenta Ascension yang bersangkutan lebih dulu) mengenai musuh, <dendro>Dendro RES</dendro> musuh tersebut berkurang 30% selama 10 detik."
     }
   },
   "constellation3": {

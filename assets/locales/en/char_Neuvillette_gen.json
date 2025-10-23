@@ -182,15 +182,15 @@
   "constellation1": {
     "name": "Venerable Institution",
     "description": {
-      "0": "When Neuvillette takes the field, he will obtain 1 stack of Past Draconic Glories from the Passive Talent \"Heir to the Ancient Sea's Authority.\" You must first unlock the Passive Talent \"Heir to the Ancient Sea's Authority.\"",
+      "0": "When Neuvillette takes the field, he will obtain 1 stack of Past Draconic Glories from the Ascension Talent \"Heir to the Ancient Sea's Authority.\" You must first unlock the Ascension Talent \"Heir to the Ancient Sea's Authority.\"",
       "1": "Additionally, his interruption resistance will be increased while using the Charged Attack Empowerment: Legal Evaluation and the Charged Attack: Equitable Judgment."
     }
   },
   "constellation2": {
     "name": "Juridical Exhortation",
     "description": {
-      "0": "The Passive Talent \"Heir to the Ancient Sea's Authority\" will be enhanced: Each stack of Past Draconic Glories will increase the CRIT DMG of Charged Attack: Equitable Judgment by 14%. The maximum increase that can be achieved this way is 42%.",
-      "1": "You must first unlock the Passive Talent \"Heir to the Ancient Sea's Authority.\""
+      "0": "The Ascension Talent \"Heir to the Ancient Sea's Authority\" will be enhanced: Each stack of Past Draconic Glories will increase the CRIT DMG of Charged Attack: Equitable Judgment by 14%. The maximum increase that can be achieved this way is 42%.",
+      "1": "You must first unlock the Ascension Talent \"Heir to the Ancient Sea's Authority.\""
     }
   },
   "constellation3": {

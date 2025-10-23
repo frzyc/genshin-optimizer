@@ -37,7 +37,7 @@
   "filterLocation": {
     "inventory": "Inventario",
     "currentlyEquipped": "Actualmente Equipados",
-    "location": "Ubicación"
+    "location": "Personajes"
   },
   "button": {
     "unequipArtifacts": "Desequipar Artefactos",
@@ -45,7 +45,7 @@
     "lockArtifacts": "Bloquear Artefactos",
     "unlockrtifacts": "Desbloquear Artefactos"
   },
-  "buttonHint": "Nota: los botones anteriores sólo se aplican a los <1>artefactos filtrados</1>",
+  "buttonHint": "Nota: los botones rojos de arriba solo aplican a <1>artefactos filtrados</1>",
   "tipsOfTheDay": [
     "El VdT máximo de un artefacto de 4 estrellas es en torno al 540%.",
     "El VdT máximo de un artefacto suele disminuir a medida que sube de nivel. ¡Es completamente normal!",
@@ -81,6 +81,8 @@
   "setEffectNum": "{{setNum}} Piezas",
   "edit": "Editar artefacto",
   "autocompleteLabels": {
+    "sets": "Set de Artefactos",
+    "mainStats": "Estadística Principal",
     "substats": "Sub-atributos",
     "set": "Set de artefacto"
   }

@@ -142,8 +142,8 @@
   "constellation2": {
     "name": "\"Ora, nel fronteggiare i pericoli della lunga notte\"",
     "description": {
-      "0": "Il talento passivo Fiamma frangitenebre riceve un potenziamento: quando un membro vicino del gruppo innesca una <electro>reazione di Electro</electro> su un avversario, i <electro>DAN da Electro</electro> inflitti dagli attacchi normali di Clorinde e da <strong>Fulgore finale</strong> aumentano di un 30% del suo ATT per 15 s. L'effetto può accumularsi fino a 3 volte, e ciascun accumulo viene conteggiato in modo indipendente. Raggiunti 3 accumuli, la resistenza all'interruzione di Clorinde aumenta. L'aumento di DAN massimo che è possibile raggiungere con i suddetti attacchi è pari a 2.700.",
-      "1": "Richiede il talento passivo Fiamma frangitenebre."
+      "0": "Il talento d'ascensione Fiamma frangitenebre riceve un potenziamento: quando un membro vicino del gruppo innesca una <electro>reazione di Electro</electro> su un avversario, i <electro>DAN da Electro</electro> inflitti dagli attacchi normali di Clorinde e da <strong>Fulgore finale</strong> aumentano di un 30% del suo ATT per 15 s. L'effetto può accumularsi fino a 3 volte, e ciascun accumulo viene conteggiato in modo indipendente. Raggiunti 3 accumuli, la resistenza all'interruzione di Clorinde aumenta. L'aumento di DAN massimo che è possibile raggiungere con i suddetti attacchi è pari a 2.700.",
+      "1": "Richiede il talento d'ascensione Fiamma frangitenebre."
     }
   },
   "constellation3": {

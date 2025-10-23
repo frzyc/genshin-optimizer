@@ -126,7 +126,7 @@
     "name": "Pre-Dinner Dance for Your Taste Buds",
     "description": {
       "0": "Saat 4 Karakter di dalam party berelemen <hydro>Hydro</hydro> atau <cryo>Cryo</cryo>, maka CRIT DMG <cryo>Cryo DMG</cryo> seluruh anggota party akan meningkat 60% selama 15 detik setelah Escoffier melancarkan Elemental Skill <strong>Low-Temperature Cooking</strong> atau Elemental Burst <strong>Scoring Cuts</strong>.",
-      "1": "Harus membuka Talenta Pasif \"Inspiration-Immersed Seasoning\" terlebih dahulu."
+      "1": "Harus membuka Talenta Ascension \"Inspiration-Immersed Seasoning\" terlebih dahulu."
     }
   },
   "constellation2": {
@@ -147,7 +147,7 @@
     "name": "Secret Rosemary Recipe",
     "description": {
       "0": "Durasi efek <strong>Rehab Diet</strong> diperpanjang 6 detik. Saat aktif, jika pemulihan HP <strong>Rehab Diet</strong> terpicu, ada kemungkinan untuk meningkatkan pemulihan sebesar 100% dan memulihkan 2 poin Energy Escoffier. Persentase kemungkinan ini didasarkan pada CRIT Rate Escoffier. Efek ini dapat terpicu maksimum 7 kali dalam satu kali durasi <strong>Rehab Diet</strong>.",
-      "1": "Harus membuka Talenta Pasif \"Better to Salivate Than Medicate\" terlebih dahulu."
+      "1": "Harus membuka Talenta Ascension \"Better to Salivate Than Medicate\" terlebih dahulu."
     }
   },
   "constellation5": {

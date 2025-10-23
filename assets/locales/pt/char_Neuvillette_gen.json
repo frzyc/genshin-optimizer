@@ -127,15 +127,15 @@
   "constellation1": {
     "name": "Instituição Venerável",
     "description": {
-      "0": "Quando Neuvillette entra no campo de batalha, ele obtém um acúmulo de \"Glória do Dragão\" do Talento Passivo \"Herdeiro do Antigo Legado do Mar\". É necessário ter desbloqueado o Talento Passivo \"Herdeiro do Antigo Legado do Mar\".",
+      "0": "Quando Neuvillette entra no campo de batalha, ele obtém um acúmulo de \"Glória do Dragão\" do Talento de Ascensão \"Herdeiro do Antigo Legado do Mar\". É necessário ter desbloqueado o Talento de Ascensão \"Herdeiro do Antigo Legado do Mar\".",
       "1": "Além disso, ao lançar seu Fortalecimento de Ataque Carregado: Reprimenda Judicial e Ataque Carregado: Justiça Igual, sua Resistência contra Interrupção aumenta."
     }
   },
   "constellation2": {
     "name": "A Lei Ordena",
     "description": {
-      "0": "O Talento Passivo \"Herdeiro do Antigo Legado do Mar\" é fortalecido: para cada acúmulo de \"Glória do Dragão\", aumenta o Dano CRIT de Ataque Carregado: Justiça Igual em 14%, com um máximo de aumento de 42%.",
-      "1": "É necessário ter desbloqueado o Talento Passivo \"Herdeiro do Antigo Legado do Mar\"."
+      "0": "O Talento de Ascensão \"Herdeiro do Antigo Legado do Mar\" é fortalecido: para cada acúmulo de \"Glória do Dragão\", aumenta o Dano CRIT de Ataque Carregado: Justiça Igual em 14%, com um máximo de aumento de 42%.",
+      "1": "É necessário ter desbloqueado o Talento de Ascensão \"Herdeiro do Antigo Legado do Mar\"."
     }
   },
   "constellation3": {

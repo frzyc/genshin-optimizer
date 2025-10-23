@@ -52,7 +52,7 @@
       "3": "<strong>Örnek Kaydı</strong>",
       "4": "Xilonen'in, diğer grup üyelerinin Element Türlerine göre Ses Manzaraları oluşturabildiği 3 Örnekleyicisi vardır. Bunlar etkin olduğu sürece yakındaki düşmanların bu Element Türlerine karşılık gelen Element Dirençlerini azaltır.",
       "5": "Her Örnekleyicideki ilk Örnek Kaydı <geo>Toprak</geo> elementidir ve <pyro>Ateş</pyro>/<hydro>Su</hydro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> elementlerinden olan her bir grup üyesi için 1 <geo>Toprak</geo> Örnek Kaydı bu elementlerden birine dönüşür.",
-      "6": "Xilonen Gece Ruhunun Lütfu durumundayken taşıdığı <geo>Toprak</geo> Örnek Kayıtları devamlı olarak etkin kalır. \"Netotiliztli Yankıları\" Pasif Yeteneğinin kilidi açıldığında Xilonen bu Yeteneğin etkilerini tetikleyerek kendisi için Gece Ruhu puanı yenileyebilir. Gece Ruhu puanları maksimum seviyeye ulaştığında tüm Gece Ruhu puanlarını tüketir ve 15 saniyeliğine elindeki 3 Örnek Kaydını etkinleştirir.",
+      "6": "Xilonen Gece Ruhunun Lütfu durumundayken taşıdığı <geo>Toprak</geo> Örnek Kayıtları devamlı olarak etkin kalır. \"Netotiliztli Yankıları\" Yükseltme Yeteneğinin kilidi açıldığında Xilonen bu Yeteneğin etkilerini tetikleyerek kendisi için Gece Ruhu puanı yenileyebilir. Gece Ruhu puanları maksimum seviyeye ulaştığında tüm Gece Ruhu puanlarını tüketir ve 15 saniyeliğine elindeki 3 Örnek Kaydını etkinleştirir.",
       "7": "Örnek Kayıtları etkinken yakındaki düşmanların karşılık gelen Element Dirençleri azalır. Aynı Element Türüne ait Örnek Kayıtları birikmez. Xilonen, bu etkileri alanda değilken de tetikleyebilir.",
       "8": "<br/>",
       "9": "<strong>Gece Ruhunun Lütfu: Xilonen</strong>",
@@ -62,7 +62,7 @@
         "Xilonen'in Gece Ruhunun Lütfu şu kısıtlamalara sahiptir: Bu durumdayken Xilonen'in Gece Ruhu puanlarının 9 saniyelik bir süre sınırı vardır. Bu süre dolduğunda Gece Ruhu puanları derhal tükenir."
       ],
       "12": "<br/>",
-      "13": "Xilonen, Gece Ruhunun Lütfu durumundayken Gece Ruhu puanları tükendiğinde artık \"Netotiliztli Yankıları\" Pasif Yeteneği ile Gece Ruhu puanı üretemez.",
+      "13": "Xilonen, Gece Ruhunun Lütfu durumundayken Gece Ruhu puanları tükendiğinde artık \"Netotiliztli Yankıları\" Yükseltme Yeteneği ile Gece Ruhu puanı üretemez.",
       "14": "<br/>",
       "15": "<i>Cevher işlemek ile müzik yapmak arasında benzer prensipler vardır, ikisinde de saf olmayan kısımları ayrıştırır ve yalnızca en parlak olanları tutarsın.",
       "16": "Fakat Xilonen ikisini de çok sever, ikisinden de son derece keyif alır!</i>"

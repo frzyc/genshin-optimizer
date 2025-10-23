@@ -125,14 +125,14 @@
   "constellation1": {
     "name": "Hafif Koku Özütleme",
     "description": {
-      "0": "<strong>Koku Damıtma</strong> becerisi ve \"Artakalan Koku\" Pasif Yeteneğinin Berrak Çiy Kolonyası etkisi ile verilen Hasar %20 artar. Berrak Çiy Kolonyası Hasar artışını alabilmek için önce \"Artakalan Koku\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "0": "<strong>Koku Damıtma</strong> becerisi ve \"Artakalan Koku\" Yükseltme Yeteneğinin Berrak Çiy Kolonyası etkisi ile verilen Hasar %20 artar. Berrak Çiy Kolonyası Hasar artışını alabilmek için önce \"Artakalan Koku\" Yükseltme Yeteneğinin açılmış olması gerekir.",
       "1": "Ayrıca yakındaki grup üyeleri düşman üzerinde Yanma tepkimesi tetiklediğinde veya Yanma etkisindeki düşmanlara <dendro>Doğa Hasarı</dendro> verdiğinde fazladan bir <strong>Koku</strong> daha oluşur. Bu etki her 2,9 saniyede bir tetiklenebilir."
     }
   },
   "constellation2": {
     "name": "Göldeki Işık Üst Notası",
     "description": {
-      "0": "\"Artakalan Koku\" Pasif Yeteneğinin oluşturduğu <strong>Koku Damıtma</strong>, <strong>Aroma Yorumlama</strong> veya Berrak Çiy Kolonyası etkileri düşmana isabet ettiğinde 10sn boyunca düşmanın <dendro>Doğa Direnci</dendro> %30 azalır. \"Artakalan Koku\" Pasif Yeteneğinin açılmış olması gerekir."
+      "0": "\"Artakalan Koku\" Yükseltme Yeteneğinin oluşturduğu <strong>Koku Damıtma</strong>, <strong>Aroma Yorumlama</strong> veya Berrak Çiy Kolonyası etkileri düşmana isabet ettiğinde 10sn boyunca düşmanın <dendro>Doğa Direnci</dendro> %30 azalır. \"Artakalan Koku\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {

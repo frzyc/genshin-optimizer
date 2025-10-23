@@ -140,7 +140,7 @@
       "1": "Wenn sich außer Chiori noch eine <geo>Geo</geo>-Figur in der Truppe befindet, werden nach dem Vorstoß von „Streichelnde Hasode“ zusätzlich die folgenden Effekte ausgelöst:",
       "2": [
         " Erschafft eine weitere Tamoto. Nur eine Tamoto von Chiori selbst, die auf diese Weise oder durch Geo-Objekte erschaffen wurde, kann zur selben Zeit existieren.",
-        " Löst das passive Talent „Vollendete Muster“ aus. Das passive Talent „Vollendete Muster“ muss zuerst freigeschaltet werden."
+        " Löst das Aufstiegstalent „Vollendete Muster“ aus. Das Aufstiegstalent „Vollendete Muster“ muss zuerst freigeschaltet werden."
       ]
     }
   },
@@ -161,8 +161,8 @@
   "constellation4": {
     "name": "Drei Rituale der Schneiderei",
     "description": {
-      "0": "Beschwört beim Treffen von Gegnern in der Nähe mit Standardangriffen, heftigen Schlägen oder Angriffen aus dem Fall der eigenen aktuellen Figur in der Truppe innerhalb von 8 s nach dem Auslösen eines Folgeeffekts des passiven Talents „Mode nach Maß“ in der Nähe des Gegners eine vereinfachte Automaton-Puppe „Kinu“. Beschwört auf diese Weise jede s höchstens 1 Kinu. Während der Wirkungsdauer einer Anwendung von Gute Stimmung oder Brokatschnitt des passiven Talents „Mode nach Maß“ kann Kinu bis zu 3-mal beschworen werden. 15 s Abklingzeit für diesen Effekt.",
-      "1": "Das passive Talent „Mode nach Maß“ muss zuerst freigeschaltet werden."
+      "0": "Beschwört beim Treffen von Gegnern in der Nähe mit Standardangriffen, heftigen Schlägen oder Angriffen aus dem Fall der eigenen aktuellen Figur in der Truppe innerhalb von 8 s nach dem Auslösen eines Folgeeffekts des Aufstiegstalents „Mode nach Maß“ in der Nähe des Gegners eine vereinfachte Automaton-Puppe „Kinu“. Beschwört auf diese Weise jede s höchstens 1 Kinu. Während der Wirkungsdauer einer Anwendung von Gute Stimmung oder Brokatschnitt des Aufstiegstalents „Mode nach Maß“ kann Kinu bis zu 3-mal beschworen werden. 15 s Abklingzeit für diesen Effekt.",
+      "1": "Das Aufstiegstalent „Mode nach Maß“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation5": {
@@ -175,7 +175,7 @@
   "constellation6": {
     "name": "Verfolgung des einen Prinzips",
     "description": {
-      "0": "Verringert die Abklingzeit von Chioris eigener Fähigkeit <strong>Streichelnde Hasode</strong> nach dem Auslösen eines Folgeeffekts des passiven Talents „Mode nach Maß“ um 12 s. Das passive Talent „Mode nach Maß“ muss zuerst freigeschaltet werden.",
+      "0": "Verringert die Abklingzeit von Chioris eigener Fähigkeit <strong>Streichelnde Hasode</strong> nach dem Auslösen eines Folgeeffekts des Aufstiegstalents „Mode nach Maß“ um 12 s. Das Aufstiegstalent „Mode nach Maß“ muss zuerst freigeschaltet werden.",
       "1": "Erhöht außerdem den von Chiori selbst mit Standardangriffen verursachten Schaden um 235 % von Chioris VTD."
     }
   }

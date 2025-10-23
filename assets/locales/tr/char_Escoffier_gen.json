@@ -126,7 +126,7 @@
     "name": "Damakları Şenlendiren Açılış Dansı",
     "description": {
       "0": "4 grup üyesi de <hydro>Su</hydro> veya <cryo>Buz</cryo> elementindense Escoffier <strong>Kısık Ateşte Pişirme</strong> Element Becerisi veya <strong>Ahenkli Kesikler</strong> Element Patlamasını kullandıktan sonra 15sn boyunca yakındaki tüm grup üyelerinin <cryo>Buz Hasarının</cryo> Kritik Hasarı %60 artar.",
-      "1": "\"İlham Veren Aromalar\" Pasif Yeteneğinin açılmış olması gerekir."
+      "1": "\"İlham Veren Aromalar\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation2": {
@@ -147,7 +147,7 @@
     "name": "Gizli Biberiye Tarifi",
     "description": {
       "0": "<strong>Şifa Diyeti</strong> 6 saniye daha uzun sürer. <strong>Şifa Diyeti</strong> etkinken iyileştirme tetiklendiğinde Escoffier fazladan %100 Can iyileştirme ve 2 Enerji yenileme şansı kazanır. Bu şans, Escoffier'nin Kritik Oranına denktir. Tek bir <strong>Şifa Diyeti</strong> süresince bu etki 7 defa tetiklenebilir.",
-      "1": "\"Can Boğazdan Gelir\" Pasif Yeteneğinin açılmış olması gerekir."
+      "1": "\"Can Boğazdan Gelir\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation5": {
