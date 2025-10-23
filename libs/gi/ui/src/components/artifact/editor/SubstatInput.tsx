@@ -58,6 +58,8 @@ export function SubstatInput({
   index,
   artifact,
   setSubstat,
+  onChange,
+  isUnactivatedSubstat,
 }: {
   index: number
   artifact: ICachedArtifact | undefined
@@ -66,9 +68,10 @@ export function SubstatInput({
     substat: ISubstat,
     isUnactivatedSubstat: boolean
   ) => void
+  onChange: (index: number, substat: ISubstat, isChecked: boolean) => void
+  isUnactivatedSubstat: boolean
 }) {
   const { t } = useTranslation('artifact')
-  const [isUnactivatedSubstat, setIsUnactivatedSubstat] = useState(false)
   const { mainStatKey = '', rarity = 5, level = 0 } = artifact ?? {}
   const {
     key = '',
@@ -112,24 +115,6 @@ export function SubstatInput({
         : [{ value: 0 }],
     [key, rarity]
   )
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsUnactivatedSubstat(event.target.checked)
-    setSubstat(index, { key: key, value: 0 }, event.target.checked)
-  }
-
-  useEffect(() => {
-    if (level >= 4) {
-      setIsUnactivatedSubstat(false)
-    }
-
-    if (
-      artifact?.unactivatedSubstats?.length &&
-      artifact.unactivatedSubstats[0].key
-    ) {
-      setIsUnactivatedSubstat(true)
-    }
-  }, [artifact?.unactivatedSubstats, level])
 
   return (
     <CardThemed bgt="light">
@@ -294,7 +279,13 @@ export function SubstatInput({
                   control={
                     <Checkbox
                       checked={isUnactivatedSubstat}
-                      onChange={handleChange}
+                      onChange={(e) =>
+                        onChange(
+                          index,
+                          { key: key, value: value },
+                          e.target.checked
+                        )
+                      }
                       sx={{ padding: 0 }}
                       disabled={!artifact || level > 0}
                     ></Checkbox>

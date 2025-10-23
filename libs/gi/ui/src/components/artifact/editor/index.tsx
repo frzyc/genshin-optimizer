@@ -167,6 +167,7 @@ function artifactReducer(
 
         // Allow swapping of substats between unactivated and activated
         if (index === 3) {
+          // check if unactivated stat needs to swap with activated stat
           if (oldUnactivatedIndex === -1 || oldUnactivatedIndex === index) {
             if (
               oldActivatedIndex !== -1 &&
@@ -180,6 +181,7 @@ function artifactReducer(
             }
           }
         } else {
+          // check if activated stat needs to swap with unactivated stat
           if (oldActivatedIndex === -1 || oldActivatedIndex === index) {
             if (
               oldUnactivatedIndex !== -1 &&
@@ -192,6 +194,7 @@ function artifactReducer(
               state!.substats[index] = activeSubstat
             }
           } else {
+            // swap between activated stats
             const tempStat = state!.substats[index]
             state!.substats[index] = state!.substats[oldActivatedIndex]
             state!.substats[oldActivatedIndex] = tempStat
@@ -253,6 +256,7 @@ export function ArtifactEditor({
   )
   const queue = queueRef.current
   const { t } = useTranslation('artifact')
+  const [isUnactivatedSubstat, setIsUnactivatedSubstat] = useState(false)
 
   const database = useDatabase()
 
@@ -506,6 +510,21 @@ export function ArtifactEditor({
       queue.callback = () => {}
     }
   }, [queue])
+
+  const handleChange = (
+    index: number,
+    substat: ISubstat,
+    isChecked: boolean
+  ) => {
+    setIsUnactivatedSubstat(isChecked)
+    setSubstat(index, substat, isChecked)
+  }
+
+  useEffect(() => {
+    if (level >= 4) {
+      setIsUnactivatedSubstat(false)
+    }
+  }, [artifact?.unactivatedSubstats, level])
 
   const removeId = (artifactIdToEdit !== 'new' && artifactIdToEdit) || old?.id
   return (
@@ -812,6 +831,8 @@ export function ArtifactEditor({
                   index={index}
                   artifact={cArtifact}
                   setSubstat={setSubstat}
+                  onChange={handleChange}
+                  isUnactivatedSubstat={isUnactivatedSubstat}
                 />
               ))}
               {texts && (
