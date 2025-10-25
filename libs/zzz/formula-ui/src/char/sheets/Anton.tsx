@@ -1,13 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { Anton } from '@genshin-optimizer/zzz/formula'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Anton'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
-const formula = formulas[key]
+const cond = Anton.conditionals
+const buff = Anton.buffs
+const formula = Anton.formulas
 
 const sheet = createBaseSheet(key, {
   core: [
@@ -40,7 +40,7 @@ const sheet = createBaseSheet(key, {
       type: 'fields',
       fields: [
         {
-          title: ch('m2_shield'),
+          title: st('shield'),
           fieldRef: formula.m2_shield.tag,
         },
       ],
@@ -50,7 +50,10 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m4Cond'),
+        label: st('uponLaunch.2', {
+          val1: '$t(skills.chain)',
+          val2: '$t(skills.ult)',
+        }),
         metadata: cond.chain_ult_used,
         fields: [fieldForBuff(buff.m4_crit_)],
       },

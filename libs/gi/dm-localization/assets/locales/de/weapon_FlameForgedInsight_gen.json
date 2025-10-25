@@ -6,19 +6,19 @@
   "passiveName": "Blühende Gedanken",
   "passiveDescription": {
     "0": {
-      "0": "Stellt nach Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“ oder „Sprießen“ <cryo>12</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>60</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+      "0": "Stellt beim Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“, „Sprießen“ oder „Mondspross“ <cryo>12</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>60</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
     },
     "1": {
-      "0": "Stellt nach Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“ oder „Sprießen“ <cryo>15</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>75</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+      "0": "Stellt beim Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“, „Sprießen“ oder „Mondspross“ <cryo>15</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>75</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
     },
     "2": {
-      "0": "Stellt nach Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“ oder „Sprießen“ <cryo>18</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>90</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+      "0": "Stellt beim Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“, „Sprießen“ oder „Mondspross“ <cryo>18</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>90</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
     },
     "3": {
-      "0": "Stellt nach Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“ oder „Sprießen“ <cryo>21</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>105</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+      "0": "Stellt beim Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“, „Sprießen“ oder „Mondspross“ <cryo>21</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>105</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
     },
     "4": {
-      "0": "Stellt nach Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“ oder „Sprießen“ <cryo>24</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>120</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+      "0": "Stellt beim Auslösen der Reaktionen „Unter Strom“, „Mond unter Strom“, „Sprießen“ oder „Mondspross“ <cryo>24</cryo> Punkte Elementarenergie wieder her und erhöht die Elementarkunde 15 s lang um <cryo>120</cryo> Punkte, 15 s Abklingzeit. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
     }
   }
 }

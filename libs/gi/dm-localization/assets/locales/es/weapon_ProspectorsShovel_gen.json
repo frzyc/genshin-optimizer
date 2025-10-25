@@ -1,0 +1,24 @@
+{
+  "name": "Azada Excavatesoros",
+  "description": {
+    "0": "Una lanza que parece haber sido forjada a partir de una azada agrícola. Aunque no llama nada la atención a primera vista, su ornamentación es extremadamente valiosa, y su discreto diseño esconde una sofisticación difícil de ignorar."
+  },
+  "passiveName": "Resolución",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>48%</cryo> el daño de la reacción de Electrocargado, y en un <cryo>12%</cryo> el de Electrocargado Lunar. Con “presagio lunar: resplandor ascendente”, el daño de la reacción de Electrocargado Lunar aumenta en un <cryo>12%</cryo> adicional."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>60%</cryo> el daño de la reacción de Electrocargado, y en un <cryo>15%</cryo> el de Electrocargado Lunar. Con “presagio lunar: resplandor ascendente”, el daño de la reacción de Electrocargado Lunar aumenta en un <cryo>15%</cryo> adicional."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>72%</cryo> el daño de la reacción de Electrocargado, y en un <cryo>18%</cryo> el de Electrocargado Lunar. Con “presagio lunar: resplandor ascendente”, el daño de la reacción de Electrocargado Lunar aumenta en un <cryo>18%</cryo> adicional."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>84%</cryo> el daño de la reacción de Electrocargado, y en un <cryo>21%</cryo> el de Electrocargado Lunar. Con “presagio lunar: resplandor ascendente”, el daño de la reacción de Electrocargado Lunar aumenta en un <cryo>21%</cryo> adicional."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>96%</cryo> el daño de la reacción de Electrocargado, y en un <cryo>24%</cryo> el de Electrocargado Lunar. Con “presagio lunar: resplandor ascendente”, el daño de la reacción de Electrocargado Lunar aumenta en un <cryo>24%</cryo> adicional."
+    }
+  }
+}

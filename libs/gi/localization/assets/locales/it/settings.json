@@ -1,0 +1,12 @@
+{
+  "title": "Impostazioni",
+  "languageCard": {
+    "languageFormat": "Lingua: {{language}}"
+  },
+  "uploadCard": {
+    "title": "Carica Database",
+    "replaceDatabase": "Aggiorna Database",
+    "hint": "Carica qui il tuo file JSON...",
+    "hintPaste": "...o incolla qui i dati."
+  }
+}

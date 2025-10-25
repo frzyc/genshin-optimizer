@@ -106,7 +106,7 @@
     "description": {
       "0": "Bir grup üyesi Elektrik Yüklü tepkimesi tetiklediğinde bu Ay Yüklü tepkimesine dönüşür. Ineffa'nın sahip olduğu her 100 Saldırı, Ay Yüklü tepkimesinin Temel Hasarını %0,7 artırır; bu Temel Hasar en fazla %14 artabilir.",
       "1": "<br/>",
-      "2": "Yeni ayın yükselişiyle daha fazla lütuf gelebilir..."
+      "2": "Ayrıca grubunda Ineffa olduğunda, grubunun <strong>Ay Sembolü</strong> 1 seviye yükselir."
     }
   },
   "passive": {

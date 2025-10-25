@@ -139,9 +139,9 @@
     "name": "Réclusion du monde",
     "description": {
       "0": "Après avoir utilisé l'échelle céleste de <strong>Nuages blancs à l'aube</strong>, l'ATQ de Xianyun augmente de 20 % pendant 15 s.",
-      "1": "De plus, l'effet de l'aptitude passive « Adepte dans sa demeure » est amélioré : lorsque l'étoileur d'osier créé par <strong>Étoiles réunies au crépuscule</strong> possède de l'aide adeptale, les DGT des attaques plongeantes (lorsqu'elles touchent le sol) des personnages déployés à proximité augmentent d'une valeur équivalant à 400 % de l'ATQ de Xianyun, ces DGT pouvant être augmentés d'un maximum de 18 000 de cette manière.",
+      "1": "De plus, l'effet de l'aptitude d'élévation « Adepte dans sa demeure » est amélioré : lorsque l'étoileur d'osier créé par <strong>Étoiles réunies au crépuscule</strong> possède de l'aide adeptale, les DGT des attaques plongeantes (lorsqu'elles touchent le sol) des personnages déployés à proximité augmentent d'une valeur équivalant à 400 % de l'ATQ de Xianyun, ces DGT pouvant être augmentés d'un maximum de 18 000 de cette manière.",
       "2": "Pour chaque attaque plongeante, cet effet d'augmentation des DGT ne s'applique qu'à un seul ennemi. Cet effet peut être déclenché une fois toutes les 0,4 s par personnage.",
-      "3": "L'aptitude passive « Adepte dans sa demeure » doit être déjà débloquée."
+      "3": "L'aptitude d'élévation « Adepte dans sa demeure » doit être déjà débloquée."
     }
   },
   "constellation3": {

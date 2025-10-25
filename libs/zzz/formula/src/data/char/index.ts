@@ -18,16 +18,20 @@ import Jane from './sheets/Jane'
 import JuFufu from './sheets/JuFufu'
 import Koleda from './sheets/Koleda'
 import Lighter from './sheets/Lighter'
+import Lucia from './sheets/Lucia'
 import Lucy from './sheets/Lucy'
 import Lycaon from './sheets/Lycaon'
+import Manato from './sheets/Manato'
 import Miyabi from './sheets/Miyabi'
 import Nekomata from './sheets/Nekomata'
 import Nicole from './sheets/Nicole'
+import OrphieMagus from './sheets/OrphieMagus'
 import PanYinhu from './sheets/PanYinhu'
 import Piper from './sheets/Piper'
 import Pulchra from './sheets/Pulchra'
 import Qingyi from './sheets/Qingyi'
 import Rina from './sheets/Rina'
+import Seed from './sheets/Seed'
 import Seth from './sheets/Seth'
 import Soldier0Anby from './sheets/Soldier0Anby'
 import Soldier11 from './sheets/Soldier11'
@@ -35,6 +39,7 @@ import Soukaku from './sheets/Soukaku'
 import Trigger from './sheets/Trigger'
 import Vivian from './sheets/Vivian'
 import Yanagi from './sheets/Yanagi'
+import Yidhari from './sheets/Yidhari'
 import Yixuan from './sheets/Yixuan'
 import Yuzuha from './sheets/Yuzuha'
 import ZhuYuan from './sheets/ZhuYuan'
@@ -58,16 +63,20 @@ const data: TagMapNodeEntries[] = [
   JuFufu,
   Koleda,
   Lighter,
+  Lucia,
   Lucy,
   Lycaon,
+  Manato,
   Miyabi,
   Nekomata,
   Nicole,
+  OrphieMagus,
   PanYinhu,
   Piper,
   Pulchra,
   Qingyi,
   Rina,
+  Seed,
   Seth,
   Soldier0Anby,
   Soldier11,
@@ -75,6 +84,7 @@ const data: TagMapNodeEntries[] = [
   Trigger,
   Vivian,
   Yanagi,
+  Yidhari,
   Yixuan,
   Yuzuha,
   ZhuYuan,

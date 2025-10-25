@@ -1,0 +1,69 @@
+{
+  "key": "Nefer",
+  "ele": "dendro",
+  "region": "nodKrai",
+  "weaponType": "catalyst",
+  "birthday": {
+    "month": 5,
+    "day": 9
+  },
+  "rarity": 5,
+  "lvlCurves": [
+    {
+      "key": "hp",
+      "base": 988.9742,
+      "curve": "GROW_CURVE_HP_S5"
+    },
+    {
+      "key": "atk",
+      "base": 26.8128,
+      "curve": "GROW_CURVE_ATTACK_S5"
+    },
+    {
+      "key": "def",
+      "base": 62.2232,
+      "curve": "GROW_CURVE_HP_S5"
+    }
+  ],
+  "ascensionBonus": {
+    "hp": [
+      0,
+      847.95593,
+      1450.4509,
+      2253.7776,
+      2856.2727,
+      3458.7676,
+      4061.2627
+    ],
+    "def": [
+      0,
+      53.352,
+      91.26,
+      141.804,
+      179.712,
+      217.62,
+      255.528
+    ],
+    "atk": [
+      0,
+      22.987871,
+      39.32136,
+      61.099342,
+      77.43283,
+      93.76632,
+      110.09981
+    ],
+    "critDMG_": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ]
+  },
+  "baseStats": {
+    "eleMas": 100
+  }
+}

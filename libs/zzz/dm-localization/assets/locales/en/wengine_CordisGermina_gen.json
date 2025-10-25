@@ -1,0 +1,25 @@
+{
+  "name": "Cordis Germina",
+  "desc": {
+    "0": "What is a \"heart\"?",
+    "1": "",
+    "2": "What is the weight of life?",
+    "3": "",
+    "4": "No matter how many machines she takes apart, no matter how many flowers she tends to, she still can't find the answer.",
+    "5": "",
+    "6": "She programmed the W-Engine to mimic her heartbeat exactly, hoping it would lead her to an answer. But as the rhythm echoed, she slowly drifted to sleep. In her dreams, Seed Sr. came to life — with a heartbeat of his own — and once again responded to her wild, wandering questions, just like he used to...",
+    "7": "Her journey continues along the long, endless circle.",
+    "8": "",
+    "9": "<ct color=#959595>\"Trigger's heartbeat is nice and steady. Soldier 11's is a bit fast. Orphie's picks up when the Captain scolds her, but it's kind of slow otherwise. As for you, Proxies~ Hmm, yours feels really intense?\" —Seed, pressing an ear against the chests of the Phaethon siblings to listen to their heartbeats.</ct>"
+  },
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "Her journey continues along the long, endless circle.",
+  "phase": "Sprouting Core",
+  "phaseDescs": [
+    "Increases CRIT Rate by <ct color=#2BAD00>15%</ct>. When the equipper deals DMG with a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, they gain 1 stack of a buff. Each stack increases the equipper's <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>12.5%</ct>, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG ignore <ct color=#2BAD00>20%</ct> of enemy DEF.",
+    "Increases CRIT Rate by <ct color=#2BAD00>17%</ct>. When the equipper deals DMG with a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, they gain 1 stack of a buff. Each stack increases the equipper's <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>14.5%</ct>, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG ignore <ct color=#2BAD00>23%</ct> of enemy DEF.",
+    "Increases CRIT Rate by <ct color=#2BAD00>19%</ct>. When the equipper deals DMG with a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, they gain 1 stack of a buff. Each stack increases the equipper's <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>16.5%</ct>, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG ignore <ct color=#2BAD00>26%</ct> of enemy DEF.",
+    "Increases CRIT Rate by <ct color=#2BAD00>21%</ct>. When the equipper deals DMG with a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, they gain 1 stack of a buff. Each stack increases the equipper's <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>18.5%</ct>, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG ignore <ct color=#2BAD00>29%</ct> of enemy DEF.",
+    "Increases CRIT Rate by <ct color=#2BAD00>23%</ct>. When the equipper deals DMG with a <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, they gain 1 stack of a buff. Each stack increases the equipper's <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>20%</ct>, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> DMG ignore <ct color=#2BAD00>32%</ct> of enemy DEF."
+  ]
+}

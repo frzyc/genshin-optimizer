@@ -52,7 +52,7 @@
       "3": "<strong>Amostra da Origem</strong>",
       "4": "Xilonen possui três Dispositivos de Amostra, e pode mostrar Notas diferentes com base nos Tipos Elementais dos membros da equipe, e ao ativar reduz a RES do Elemento correspondente do inimigo.",
       "5": "O início registrado dos três Dispositivos de Amostra é <geo>Geo</geo>, e para cada personagem <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ou <electro>Electro</electro> na equipe, uma amostra <geo>Geo</geo> será convertida para o Tipo Elemental correspondente.",
-      "6": "Quando está no estado Bênção do Espírito da Noite, a Amostra da Origem <geo>Geo</geo> que Xilonen carrega se manterá ativa do começo ao fim. Ao desbloquear o Talento Passivo \"Ecos de Netotiliztli\", Xilonen poderá regenerar seus pontos de Espírito da Noite através dos efeitos desse Talento Passivo. Quando seus pontos de Espírito da Noite alcançarem o máximo, Xilonen consome todos os pontos de Espírito da Noite e ativará as três Amostras da Origem de Xilonen por 15s.",
+      "6": "Quando está no estado Bênção do Espírito da Noite, a Amostra da Origem <geo>Geo</geo> que Xilonen carrega se manterá ativa do começo ao fim. Ao desbloquear o Talento de Ascensão \"Ecos de Netotiliztli\", Xilonen poderá regenerar seus pontos de Espírito da Noite através dos efeitos desse Talento de Ascensão. Quando seus pontos de Espírito da Noite alcançarem o máximo, Xilonen consome todos os pontos de Espírito da Noite e ativará as três Amostras da Origem de Xilonen por 15s.",
       "7": "Quando Amostra da Origem é ativada, reduz a RES dos Elementos correspondentes dos inimigos próximos. Efeitos de Amostras da Origem com Tipos Elementais iguais não acumulam. Esse efeito pode ser desencadeado quando Xilonen não é a personagem ativa.",
       "8": "<br/>",
       "9": "<strong>Bênção do Espírito da Noite</strong>",
@@ -62,7 +62,7 @@
         " O estado Bênção do Espírito da Noite de Xilonen possui os seguintes limites: quando está nele, os pontos de Espírito da Noite de Xilonen possuem um limite de 9s. Ao ultrapassarem esse limite, serão imediatamente deduzidos."
       ],
       "12": "<br/>",
-      "13": "Quando está no estado Benção do Espírito da Noite e os pontos de Espírito da Noite acabarem, Xilonen não poderá gerar pontos de Espírito da Noite através do Talento Passivo \"Ecos de Netotiliztli\".",
+      "13": "Quando está no estado Benção do Espírito da Noite e os pontos de Espírito da Noite acabarem, Xilonen não poderá gerar pontos de Espírito da Noite através do Talento de Ascensão \"Ecos de Netotiliztli\".",
       "14": "<br/>",
       "15": "<i>De certa forma, criar joias e fazer mix de música possuem princípios similares: filtrar as impurezas e reter só o que há de mais radiante",
       "16": "Xilonen não é muito exigente para escolher isso nos dois. Ela gosta bastante!</i>"

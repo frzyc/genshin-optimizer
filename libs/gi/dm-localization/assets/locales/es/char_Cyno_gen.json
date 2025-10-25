@@ -114,7 +114,7 @@
       "0": "Aumenta el daño de los siguientes ataques de Cyno en función de su Maestría Elemental:",
       "1": [
         "El daño de los Ataques Normales ejecutados en el estado de abrecaminos del juramento aumenta en un 150% de la Maestría Elemental.",
-        "El daño de los rayos catastróficos del talento pasivo “Juicio de la pluma” aumenta en un 250% de la Maestría Elemental."
+        "El daño de los rayos catastróficos del talento de ascensión “Juicio de la pluma” aumenta en un 250% de la Maestría Elemental."
       ]
     }
   },
@@ -127,8 +127,8 @@
   "constellation1": {
     "name": "Decreto: Vigilancia incansable",
     "description": {
-      "0": "Tras usar <strong>Rito sagrado: Celeridad lupina</strong>, la Vel. de Ataque Normal de Cyno aumenta en un 20% durante 10 s. Además, si al usar <strong>Rito secreto: Guía de las almas abismales</strong> se activa el efecto de “sentencia” del talento pasivo “Juicio de la pluma”, la duración del aumento de Vel. de Ataque Normal se reiniciará.",
-      "1": "Es necesario desbloquear el talento pasivo “Juicio de la pluma”."
+      "0": "Tras usar <strong>Rito sagrado: Celeridad lupina</strong>, la Vel. de Ataque Normal de Cyno aumenta en un 20% durante 10 s. Además, si al usar <strong>Rito secreto: Guía de las almas abismales</strong> se activa el efecto de “sentencia” del talento de ascensión “Juicio de la pluma”, la duración del aumento de Vel. de Ataque Normal se reiniciará.",
+      "1": "Es necesario desbloquear el talento de ascensión “Juicio de la pluma”."
     }
   },
   "constellation2": {
@@ -161,10 +161,10 @@
   "constellation6": {
     "name": "Liturgia: Balanza del juicio",
     "description": {
-      "0": "Tras usar <strong>Rito sagrado: Celeridad lupina</strong> o tras activar el efecto de sentencia del talento pasivo “Juicio de la pluma”, Cyno obtiene 4 cargas del efecto “rito chacálico”. Al golpear a un enemigo con un Ataque Normal, consume una carga y lanza un rayo catastrófico.",
+      "0": "Tras usar <strong>Rito sagrado: Celeridad lupina</strong> o tras activar el efecto de sentencia del talento de ascensión “Juicio de la pluma”, Cyno obtiene 4 cargas del efecto “rito chacálico”. Al golpear a un enemigo con un Ataque Normal, consume una carga y lanza un rayo catastrófico.",
       "1": "Rito chacálico dura 8 s, puede acumularse un máximo de 8 veces y se anulará cuando termine la duración del estado de abrecaminos del juramento de Rito sagrado: Celeridad lupina.",
       "2": "Como máximo, puede lanzar un rayo catastrófico cada 0.4 s de esta manera.",
-      "3": "Es necesario desbloquear el talento pasivo “Juicio de la pluma”."
+      "3": "Es necesario desbloquear el talento de ascensión “Juicio de la pluma”."
     }
   }
 }

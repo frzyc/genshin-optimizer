@@ -1,14 +1,17 @@
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
 import BashfulDemon from './sheets/BashfulDemon'
+import BellicoseBlaze from './sheets/BellicoseBlaze'
 import BigCylinder from './sheets/BigCylinder'
 import BlazingLaurel from './sheets/BlazingLaurel'
 import BoxCutter from './sheets/BoxCutter'
 import BunnyBand from './sheets/BunnyBand'
 import CannonRotor from './sheets/CannonRotor'
 import CinderCobalt from './sheets/CinderCobalt'
+import CordisGermina from './sheets/CordisGermina'
 import DeepSeaVisitor from './sheets/DeepSeaVisitor'
 import DemaraBatteryMarkII from './sheets/DemaraBatteryMarkII'
+import DreamlitHearth from './sheets/DreamlitHearth'
 import DrillRigRedAxis from './sheets/DrillRigRedAxis'
 import ElectroLipGloss from './sheets/ElectroLipGloss'
 import ElegantVanity from './sheets/ElegantVanity'
@@ -16,6 +19,7 @@ import FlamemakerShaker from './sheets/FlamemakerShaker'
 import FlightOfFancy from './sheets/FlightOfFancy'
 import FusionCompiler from './sheets/FusionCompiler'
 import GildedBlossom from './sheets/GildedBlossom'
+import GrillOWisp from './sheets/GrillOWisp'
 import HailstormShrine from './sheets/HailstormShrine'
 import HeartstringNocturne from './sheets/HeartstringNocturne'
 import HellfireGears from './sheets/HellfireGears'
@@ -24,6 +28,7 @@ import IceJadeTeapot from './sheets/IceJadeTeapot'
 import IdentityBase from './sheets/IdentityBase'
 import IdentityInflection from './sheets/IdentityInflection'
 import KaboomTheCannon from './sheets/KaboomTheCannon'
+import KrakensCradle from './sheets/KrakensCradle'
 import LunarDecrescent from './sheets/LunarDecrescent'
 import LunarNoviluna from './sheets/LunarNoviluna'
 import LunarPleniluna from './sheets/LunarPleniluna'
@@ -75,14 +80,17 @@ import ZanshinHerbCase from './sheets/ZanshinHerbCase'
 
 const data: TagMapNodeEntries[] = [
   BashfulDemon,
+  BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
   BoxCutter,
   BunnyBand,
   CannonRotor,
   CinderCobalt,
+  CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
+  DreamlitHearth,
   DrillRigRedAxis,
   ElectroLipGloss,
   ElegantVanity,
@@ -90,6 +98,7 @@ const data: TagMapNodeEntries[] = [
   FlightOfFancy,
   FusionCompiler,
   GildedBlossom,
+  GrillOWisp,
   HailstormShrine,
   HeartstringNocturne,
   HellfireGears,
@@ -98,6 +107,7 @@ const data: TagMapNodeEntries[] = [
   IdentityBase,
   IdentityInflection,
   KaboomTheCannon,
+  KrakensCradle,
   LunarDecrescent,
   LunarNoviluna,
   LunarPleniluna,

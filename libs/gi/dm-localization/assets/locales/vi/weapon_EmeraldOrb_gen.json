@@ -6,19 +6,19 @@
   "passiveName": "Kích Lưu",
   "passiveDescription": {
     "0": {
-      "0": "Trong 12s sau khi kích hoạt Bốc Hơi, Điện Cảm, Đóng Băng, Sum Suê, Nguyệt-Điện Cảm hoặc Khuếch Tán nguyên tố Thủy, Tấn Công tăng <cryo>20%</cryo>."
+      "0": "Trong 12s sau khi kích hoạt Bốc Hơi, Điện Cảm, Đóng Băng, Sum Suê, Nguyệt-Điện Cảm, Nguyệt-Sum Suê hoặc Khuếch Tán Nguyên Tố Thủy, Tấn Công tăng <cryo>20%</cryo>."
     },
     "1": {
-      "0": "Trong 12s sau khi kích hoạt Bốc Hơi, Điện Cảm, Đóng Băng, Sum Suê, Nguyệt-Điện Cảm hoặc Khuếch Tán nguyên tố Thủy, Tấn Công tăng <cryo>25%</cryo>."
+      "0": "Trong 12s sau khi kích hoạt Bốc Hơi, Điện Cảm, Đóng Băng, Sum Suê, Nguyệt-Điện Cảm, Nguyệt-Sum Suê hoặc Khuếch Tán Nguyên Tố Thủy, Tấn Công tăng <cryo>25%</cryo>."
     },
     "2": {
-      "0": "Trong 12s sau khi kích hoạt Bốc Hơi, Điện Cảm, Đóng Băng, Sum Suê, Nguyệt-Điện Cảm hoặc Khuếch Tán nguyên tố Thủy, Tấn Công tăng <cryo>30%</cryo>."
+      "0": "Trong 12s sau khi kích hoạt Bốc Hơi, Điện Cảm, Đóng Băng, Sum Suê, Nguyệt-Điện Cảm, Nguyệt-Sum Suê hoặc Khuếch Tán Nguyên Tố Thủy, Tấn Công tăng <cryo>30%</cryo>."
     },
     "3": {
-      "0": "Trong 12s sau khi kích hoạt Bốc Hơi, Điện Cảm, Đóng Băng, Sum Suê, Nguyệt-Điện Cảm hoặc Khuếch Tán nguyên tố Thủy, Tấn Công tăng <cryo>35%</cryo>."
+      "0": "Trong 12s sau khi kích hoạt Bốc Hơi, Điện Cảm, Đóng Băng, Sum Suê, Nguyệt-Điện Cảm, Nguyệt-Sum Suê hoặc Khuếch Tán Nguyên Tố Thủy, Tấn Công tăng <cryo>35%</cryo>."
     },
     "4": {
-      "0": "Trong 12s sau khi kích hoạt Bốc Hơi, Điện Cảm, Đóng Băng, Sum Suê, Nguyệt-Điện Cảm hoặc Khuếch Tán nguyên tố Thủy, Tấn Công tăng <cryo>40%</cryo>."
+      "0": "Trong 12s sau khi kích hoạt Bốc Hơi, Điện Cảm, Đóng Băng, Sum Suê, Nguyệt-Điện Cảm, Nguyệt-Sum Suê hoặc Khuếch Tán Nguyên Tố Thủy, Tấn Công tăng <cryo>40%</cryo>."
     }
   }
 }

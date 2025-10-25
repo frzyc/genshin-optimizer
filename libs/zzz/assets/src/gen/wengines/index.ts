@@ -1,13 +1,16 @@
 // This is a generated index file.
 import BashfulDemon from './BashfulDemon'
+import BellicoseBlaze from './BellicoseBlaze'
 import BigCylinder from './BigCylinder'
 import BlazingLaurel from './BlazingLaurel'
 import BoxCutter from './BoxCutter'
 import BunnyBand from './BunnyBand'
 import CannonRotor from './CannonRotor'
 import CinderCobalt from './CinderCobalt'
+import CordisGermina from './CordisGermina'
 import DeepSeaVisitor from './DeepSeaVisitor'
 import DemaraBatteryMarkII from './DemaraBatteryMarkII'
+import DreamlitHearth from './DreamlitHearth'
 import DrillRigRedAxis from './DrillRigRedAxis'
 import ElectroLipGloss from './ElectroLipGloss'
 import ElegantVanity from './ElegantVanity'
@@ -15,6 +18,7 @@ import FlamemakerShaker from './FlamemakerShaker'
 import FlightOfFancy from './FlightOfFancy'
 import FusionCompiler from './FusionCompiler'
 import GildedBlossom from './GildedBlossom'
+import GrillOWisp from './GrillOWisp'
 import HailstormShrine from './HailstormShrine'
 import HeartstringNocturne from './HeartstringNocturne'
 import HellfireGears from './HellfireGears'
@@ -23,6 +27,7 @@ import IceJadeTeapot from './IceJadeTeapot'
 import IdentityBase from './IdentityBase'
 import IdentityInflection from './IdentityInflection'
 import KaboomTheCannon from './KaboomTheCannon'
+import KrakensCradle from './KrakensCradle'
 import LunarDecrescent from './LunarDecrescent'
 import LunarNoviluna from './LunarNoviluna'
 import LunarPleniluna from './LunarPleniluna'
@@ -74,14 +79,17 @@ import ZanshinHerbCase from './ZanshinHerbCase'
 
 const data = {
   BashfulDemon,
+  BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
   BoxCutter,
   BunnyBand,
   CannonRotor,
   CinderCobalt,
+  CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
+  DreamlitHearth,
   DrillRigRedAxis,
   ElectroLipGloss,
   ElegantVanity,
@@ -89,6 +97,7 @@ const data = {
   FlightOfFancy,
   FusionCompiler,
   GildedBlossom,
+  GrillOWisp,
   HailstormShrine,
   HeartstringNocturne,
   HellfireGears,
@@ -97,6 +106,7 @@ const data = {
   IdentityBase,
   IdentityInflection,
   KaboomTheCannon,
+  KrakensCradle,
   LunarDecrescent,
   LunarNoviluna,
   LunarPleniluna,

@@ -1,6 +1,5 @@
 {
   "core_common_dmg_": "Crouching Shot DMG",
-  "abilityCond": "After Billy uses a Chain Attack",
   "m4Cond": "Distance from target",
   "m6Cond": "When Billy accumulates 10 hits on enemies or triggers a Perfect Dodge"
 }

@@ -17,16 +17,20 @@ import Jane from './maps/Jane'
 import JuFufu from './maps/JuFufu'
 import Koleda from './maps/Koleda'
 import Lighter from './maps/Lighter'
+import Lucia from './maps/Lucia'
 import Lucy from './maps/Lucy'
 import Lycaon from './maps/Lycaon'
+import Manato from './maps/Manato'
 import Miyabi from './maps/Miyabi'
 import Nekomata from './maps/Nekomata'
 import Nicole from './maps/Nicole'
+import OrphieMagus from './maps/OrphieMagus'
 import PanYinhu from './maps/PanYinhu'
 import Piper from './maps/Piper'
 import Pulchra from './maps/Pulchra'
 import Qingyi from './maps/Qingyi'
 import Rina from './maps/Rina'
+import Seed from './maps/Seed'
 import Seth from './maps/Seth'
 import Soldier0Anby from './maps/Soldier0Anby'
 import Soldier11 from './maps/Soldier11'
@@ -34,6 +38,7 @@ import Soukaku from './maps/Soukaku'
 import Trigger from './maps/Trigger'
 import Vivian from './maps/Vivian'
 import Yanagi from './maps/Yanagi'
+import Yidhari from './maps/Yidhari'
 import Yixuan from './maps/Yixuan'
 import Yuzuha from './maps/Yuzuha'
 import ZhuYuan from './maps/ZhuYuan'
@@ -57,16 +62,20 @@ const maps = {
   JuFufu,
   Koleda,
   Lighter,
+  Lucia,
   Lucy,
   Lycaon,
+  Manato,
   Miyabi,
   Nekomata,
   Nicole,
+  OrphieMagus,
   PanYinhu,
   Piper,
   Pulchra,
   Qingyi,
   Rina,
+  Seed,
   Seth,
   Soldier0Anby,
   Soldier11,
@@ -74,6 +83,7 @@ const maps = {
   Trigger,
   Vivian,
   Yanagi,
+  Yidhari,
   Yixuan,
   Yuzuha,
   ZhuYuan,

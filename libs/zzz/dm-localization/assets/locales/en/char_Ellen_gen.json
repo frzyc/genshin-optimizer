@@ -282,7 +282,7 @@
   "ability": {
     "name": "Additional Ability: Rising Storm",
     "desc": {
-      "0": "When another character in your squad shares the same Attribute or Faction:",
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> character or shares the same Attribute or Faction:",
       "1": "When Ellen deals <ct color=#98EFF0>Ice DMG</ct>, subsequent <ct color=#98EFF0>Ice DMG</ct> increases by 3% for 10s. This effect can stack up to 10 times, and repeated triggers reset the duration."
     }
   },

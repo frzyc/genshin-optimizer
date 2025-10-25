@@ -1,57 +1,59 @@
 {
-  "addNew": "キャラクター加入",
+  "addNew": "キャラクターを追加",
   "tabs": {
     "overview": "概要",
     "talent": "天賦",
-    "optimize": "改良",
-    "theorycraft": "セオリークラフト"
+    "optimize": "最適化",
+    "theorycraft": "セオリークラフト",
+    "upopt": "聖遺物アップグレーダー"
   },
-  "formulas": "式",
-  "calculations": "計算",
-  "selectCharacter": "キャラクター選択",
-  "removeCharacter": "{{value}}を削除してもよろしいですか?",
+  "formulas": "計算式",
+  "calculations": "数値",
+  "selectCharacter": "キャラクターを選択",
+  "removeCharacter": "{{value}}を削除してもよろしいですか？ このキャラクターの「戦闘設定」や「複合的な最適化設定」などのすべてのデータも削除され、割り当てられているすべてのチームからこのキャラクターが削除されます。",
   "delete": "キャラクター削除",
   "teammates": "チーム",
   "hitmode": {
-    "hit": "非会心攻撃ダメージ",
+    "hit": "非会心ダメージ",
     "avgHit": "平均ダメージ",
-    "critHit": "会心攻撃ダメージ",
+    "critHit": "会心ダメージ",
     "global": "グローバル標準"
   },
   "tabEquip": {
-    "swapWeapon": "武器変更",
-    "swapArt": "聖遺物変更",
-    "compare": "現ビルドと比較する",
+    "swapWeapon": "武器を変更",
+    "swapArt": "聖遺物を変更",
+    "compare": "現在の装備と比較する",
     "unequipArts": "全ての聖遺物を外す"
   },
   "characterName": "キャラクター名",
-  "teammate": "パーティーメンバー{{count}}",
-  "noReaction": "反応なし",
+  "teammate": "チームメンバー{{count}}",
+  "noReaction": "元素反応なし",
   "multiTarget": {
-    "title": "複数改良ターゲット構成",
-    "addNewTarget": "ターゲットを追加",
-    "addNewMTarget": "複数の改良ターゲットを作成",
-    "info1": "注：コミュニティが作成した複数改良ターゲットは、<1>GO Discord</1>または、<3>KQM</3>の複数改良ガイド内にありますが、その有効性は保証できません。",
-    "info2": "構成が正確に設定されている事を確認ください。",
-    "description": "詳細",
-    "duplicate": "重複",
-    "target_other": "<0>{{count}}</0>つのターゲット"
+    "title": "複合的な攻撃手段の設定",
+    "addNewTarget": "攻撃手段を追加",
+    "addNewMTarget": "最適化設定を作成",
+    "info1": "注：複数の攻撃手段を考慮した最適化 (原文：Multi-Optimization Targets) はコミュニティによって考案され、GOの <1>Discord</1> または KQMの <3>Multi-Optimization Guide</3> で詳細を知ることができます。 ただし、このような設定の有効性を保証するものではありません。",
+    "info2": "設定が実使用に即したものであるかは、自己の責任において確認してください。",
+    "description": "最適化設定の説明",
+    "duplicate": "最適化設定を複製",
+    "target_other": "<0>{{count}}</0>個のターゲット",
+    "jsonDescWarning": "最適化設定のデータが貼り付けられましたが、適切な場所ではありません。 設定をインポートするにはこのウィンドウを閉じ、「<strong>最適化設定をインポート</strong>」ボタンを押してください。"
   },
   "addStats": {
-    "title": "敵・ボーナスステータスの構成",
-    "info": "こちらでは、GOでサポートされていない食べ物バフ、アビスカードや、超電導などのバフ・デバフを追加できます。具体的な値については、<1>原神Wiki</1>を参照してください。",
-    "label": "新規ボーナスステータス"
+    "title": "バフ・デバフの設定",
+    "info": "食べ物・オイル、螺旋の深秘降福、超伝導の物理耐性デバフなどの設定をこちらで追加できます。具体的な数値については <1>原神 Wiki</1> を参照してください。",
+    "label": "バフ・デバフを追加"
   },
   "tabTheorycraft": {
     "substatType": {
-      "min": "最低サブ効果スコア",
-      "max": "最大サブ効果スコア",
-      "mid": "平均サブ効果スコア"
+      "min": "伸び幅：最小値",
+      "max": "伸び幅：最大値",
+      "mid": "伸び幅：平均値"
     },
-    "maxTotalRolls": "現ビルドは最大<strong>{{value}}</strong>のスコアが可能です",
-    "maxRolls": "このサブステータスは最大30回のスコアが可能です。",
-    "maxRollsMain": "最低1つのメイン効果が同じステータスのため、このサブ効果は最大{{value}}回のスコアが可能です。",
-    "distribute": "分配",
+    "maxTotalRolls": "現在の装備には最大<strong>{{value}}</strong>回まで割り当て可能です",
+    "maxRolls": "このサブステータスは最大30回まで割り当て可能です。",
+    "maxRollsMain": "同じ種類のメインステータスを指定しているため、このサブステータスは最大{{value}}回まで割り当て可能です。",
+    "distribute": "最適に割り振る",
     "compareToggle": {
       "equipped": "装備中の聖遺物と比較",
       "tc": "セオリークラフトステータスを表示"
@@ -66,36 +68,37 @@
       "content": "今設定されているセオリークラフトビルドが装備中のビルドに換えます。"
     },
     "kqmsDialog": {
-      "kqmsBtn": "KQM（刻晴メインズ）を使用",
-      "title": "KQMを使用しますか？",
-      "content": "今設定されている<strong>サブステ</strong>を<4>KQM標準</4>に準拠したものに換えます。"
+      "kqmsBtn": "KQMスタンダードを適用",
+      "title": "KQMスタンダードを適用しますか？",
+      "content": "現在割り当てられている<strong>サブステータス</strong>が、<5>KQMスタンダード</5>に準拠したものに置き換えられます。"
     },
     "gcsimDialog": {
-      "title": "gcsimエクスポート",
-      "content": "下記のコードからビルドをコピーし、<2>gcsim</2>にインポートできます",
-      "copied": "クリップボードにgcsim configをコピーしました。"
+      "title": "gcsim 向けにエクスポート",
+      "content": "下記のコードをコピーして、現在の構成を <2>gcsim</2> にインポートできます。",
+      "copied": "クリップボードにコピーしました。"
     },
     "all": {
-      "rolls": "全ての強化",
-      "max": "全てをマックス"
+      "rolls": "均等に割り当て：",
+      "max": "割り当て上限："
     },
     "substat": {
-      "max": "マックス"
+      "max": "割り当て上限："
     },
-    "feasibilityAlert": "現サブ効果の分布には、少なくとも <strong>{{minSubLines}}</strong> 行のサブ効果が必要です。よって、<strong>{{minOtherRolls}}</strong> の強化を他のサブステータスに割り当てる必要があります。",
+    "feasibilityAlert": "現在の装備には最低<strong>{{minSubLines}}回</strong>以上サブステータスを割り振る必要があります。必要な割り当て回数まで残り<strong>{{minOtherRolls}}回</strong>です。",
     "optAlert": {
-      "scalesWith": "選択された改良ターゲットと制約が計算する倍率は、次のサブステです：",
-      "distribute": "ステータスをこれらのサブ効果にのみ分配します。",
-      "feasibilty": "非倍率のサブ効果に分散する必要がある可能性があります。"
-    },
-    "constraint": {
-      "title": "ステータス制約",
-      "add": "ステータス制約を追加"
+      "scalesWith": "ステータスの下限値を満たしつつ、最適化したい項目を伸ばすために必要な割り当て先は次の通りです： ",
+      "distribute": "。 「最適に割り振る」を押すと、残りの割り当て回数をこれらのサブステータスに最適な比率で割り振ります。",
+      "feasibilty": " 割り当て回数を最低限満たすために、最適化したい項目と関係のないサブステータスに割り振られる場合があります。"
     }
   },
   "tabTeambuff": {
     "team_reso": "元素共鳴",
-    "resonance_tip": "元素共鳴の効果を発揮するためには、パーティーが4人揃っている必要があります。"
+    "resonance_tip": "元素共鳴の効果を発揮するためには、チームメンバーが4人揃っている必要があります。"
   },
-  "showingNum_other": "{{value}}人のキャラクターの内、<1>{{count}}</1> 人を表示中"
+  "showingNum_other": "{{value}}人中 <1>{{count}}</1>人のキャラクターを表示",
+  "noLoadout": "このキャラクターの戦闘設定 / チームはまだ追加されていないようです。<strong>装備を作成</strong>、<strong>セオリークラフト</strong>、または<strong>最適化</strong>するには、このキャラクターの戦闘設定とチームを作成する必要があります。",
+  "teammateUsing": {
+    "weapon": "同じ武器をチームメンバーの<strong><1></1></strong>も装備しています。",
+    "artifact": "同じ<3></3>をチームメンバーの<strong><1></1></strong>も装備しています。"
+  }
 }

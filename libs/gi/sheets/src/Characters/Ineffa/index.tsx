@@ -1,14 +1,16 @@
 import { type CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
+  constant,
   equal,
   greaterEq,
   infoMut,
   input,
-  lunarchargedDmg,
+  lunarDmg,
   min,
   percent,
   prod,
+  sum,
   target,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
@@ -71,9 +73,9 @@ const dm = {
     eleMasFromAtk: skillParam_gen.passive2[0][0],
     duration: skillParam_gen.passive2[1][0],
   },
-  passive: {
-    lunarcharged_base_dmg_per100: skillParam_gen.passive![0][0],
-    max: skillParam_gen.passive![1][0],
+  passive3: {
+    lunarcharged_base_dmg_per100: skillParam_gen.passive3![0][0],
+    max: skillParam_gen.passive3![1][0],
   },
   constellation1: {
     lunarcharged_dmg_: skillParam_gen.constellation1[0],
@@ -104,9 +106,9 @@ const a0_base_lc_dmg_ = min(
   prod(
     input.total.atk,
     1 / 100,
-    percent(dm.passive.lunarcharged_base_dmg_per100)
+    percent(dm.passive3.lunarcharged_base_dmg_per100)
   ),
-  percent(dm.passive.max)
+  percent(dm.passive3.max)
 )
 
 const [condA4AfterBurstPath, condA4AfterBurst] = cond(key, 'a4AfterBurst')
@@ -120,9 +122,12 @@ const a4AfterBurst_eleMasDisp = greaterEq(
   ),
   { path: 'eleMas', isTeamBuff: true }
 )
-const a4AfterBurst_eleMas = equal(
-  input.activeCharKey,
-  target.charKey,
+const a4AfterBurst_eleMas = greaterEq(
+  sum(
+    equal(input.activeCharKey, target.charKey, 1),
+    equal(key, target.charKey, 1)
+  ),
+  1,
   a4AfterBurst_eleMasDisp
 )
 
@@ -170,11 +175,11 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.asc,
       1,
-      lunarchargedDmg(percent(dm.passive1.dmg), 'atk')
+      lunarDmg(percent(dm.passive1.dmg), 'atk', 'lunarcharged')
     ),
   },
   passive2: {
-    a4AfterBurst_eleMas,
+    a4AfterBurst_eleMasDisp,
   },
   constellation1: {
     c1AfterShield_lc_dmg_,
@@ -183,14 +188,14 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.constellation,
       2,
-      lunarchargedDmg(percent(dm.constellation2.dmg), 'atk')
+      lunarDmg(percent(dm.constellation2.dmg), 'atk', 'lunarcharged')
     ),
   },
   constellation6: {
     dmg: greaterEq(
       input.constellation,
       6,
-      lunarchargedDmg(percent(dm.constellation6.dmg), 'atk')
+      lunarDmg(percent(dm.constellation6.dmg), 'atk', 'lunarcharged')
     ),
   },
 }
@@ -209,6 +214,9 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     },
     total: {
       eleMas: a4AfterBurst_eleMas,
+    },
+    tally: {
+      moonsign: constant(1),
     },
   },
 })
@@ -360,9 +368,9 @@ const sheet: TalentSheet = {
       },
     }),
   ]),
-  passive3: ct.talentTem('passive3'),
-  passive: ct.talentTem('passive', [
-    ct.fieldsTem('passive', {
+  passive3: ct.talentTem('passive3', [
+    ct.headerTem('passive3', {
+      teamBuff: true,
       fields: [
         {
           node: a0_base_lc_dmg_,
@@ -370,11 +378,13 @@ const sheet: TalentSheet = {
       ],
     }),
   ]),
+  passive: ct.talentTem('passive'),
   constellation1: ct.talentTem('constellation1', [
     ct.condTem('constellation1', {
       path: condC1AfterShieldPath,
       value: condC1AfterShield,
       name: ct.ch('c1Cond'),
+      teamBuff: true,
       states: {
         on: {
           fields: [

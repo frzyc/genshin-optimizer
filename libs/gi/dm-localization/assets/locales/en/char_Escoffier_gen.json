@@ -180,7 +180,7 @@
     "name": "Pre-Dinner Dance for Your Taste Buds",
     "description": {
       "0": "When 4 party members are <hydro>Hydro</hydro> or <cryo>Cryo</cryo>, all nearby party members will have their <cryo>Cryo DMG</cryo> CRIT DMG increased by 60% for 15s after Escoffier uses her Elemental Skill <strong>Low-Temperature Cooking</strong> or Elemental Burst <strong>Scoring Cuts</strong>.",
-      "1": "You must first unlock the Passive Talent \"Inspiration-Immersed Seasoning.\""
+      "1": "You must first unlock the Ascension Talent \"Inspiration-Immersed Seasoning.\""
     }
   },
   "constellation2": {
@@ -201,7 +201,7 @@
     "name": "Secret Rosemary Recipe",
     "description": {
       "0": "<strong>Rehab Diet</strong> lasts 6 more seconds. While it is active, you have a chance of healing 100% extra HP and restoring 2 Energy to Escoffier when you trigger healing through <strong>Rehab Diet</strong>. This chance corresponds to Escoffier's CRIT Rate. You can trigger this effect 7 times during any one <strong>Rehab Diet</strong>'s duration.",
-      "1": "You must first unlock the Passive Talent \"Better to Salivate Than Medicate.\""
+      "1": "You must first unlock the Ascension Talent \"Better to Salivate Than Medicate.\""
     }
   },
   "constellation5": {

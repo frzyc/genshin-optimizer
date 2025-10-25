@@ -6,7 +6,8 @@
     "tools": "Herramientas",
     "weapons": "Armas",
     "doc": "Docs",
-    "setting": "Ajustes"
+    "setting": "Ajustes",
+    "scanner": "Escáneres"
   },
   "social": {
     "paypal": "PayPal",
@@ -38,6 +39,13 @@
     "discord": "Enlace de Invitación a Discord"
   },
   "sortBy": "Ordenar por:",
+  "delete": "Eliminar",
   "locked": "Bloqueado",
-  "unlocked": "Desbloqueado"
+  "unlocked": "Desbloqueado",
+  "refinement": "Refinamiento {{value}}",
+  "selectlevel": "Seleccionar Nivel",
+  "gender": {
+    "F": "Mujer",
+    "M": "Hombre"
+  }
 }

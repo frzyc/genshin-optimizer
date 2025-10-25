@@ -1,13 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { Miyabi } from '@genshin-optimizer/zzz/formula'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Miyabi'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
-const formula = formulas[key]
+const cond = Miyabi.conditionals
+const buff = Miyabi.buffs
+const formula = Miyabi.formulas
 
 const sheet = createBaseSheet(key, {
   perSkillAbility: {
@@ -16,7 +16,7 @@ const sheet = createBaseSheet(key, {
         {
           type: 'conditional',
           conditional: {
-            label: ch('ultCond'),
+            label: st('uponLaunch.1', { val1: '$t(skills.ult)' }),
             metadata: cond.ult_used,
             fields: [fieldForBuff(buff.ult_ice_dmg_)],
           },

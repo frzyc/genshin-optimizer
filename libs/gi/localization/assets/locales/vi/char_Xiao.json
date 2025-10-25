@@ -1,0 +1,10 @@
+{
+  "burst": {
+    "lifeDrain_": "Mất HP",
+    "currentHPPerSec": "(HP hiện tại/giây)",
+    "incJump": "Tăng khả năng nhảy",
+    "inBurst": "<strong>Vũ Điệu Trừ Yêu</strong> có hiệu lực",
+    "stack": "Thời gian trong trạng thái <strong>Vũ Điệu Trừ Yêu</strong>"
+  },
+  "skillStack": "Số lần đã thi triển <strong>Đôi Bánh Xe Gió</strong>"
+}

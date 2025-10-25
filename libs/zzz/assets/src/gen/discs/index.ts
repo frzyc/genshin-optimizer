@@ -3,11 +3,13 @@ import AstralVoice from './AstralVoice'
 import BranchBladeSong from './BranchBladeSong'
 import ChaosJazz from './ChaosJazz'
 import ChaoticMetal from './ChaoticMetal'
+import DawnsBloom from './DawnsBloom'
 import FangedMetal from './FangedMetal'
 import FreedomBlues from './FreedomBlues'
 import HormonePunk from './HormonePunk'
 import InfernoMetal from './InfernoMetal'
 import KingOfTheSummit from './KingOfTheSummit'
+import MoonlightLullaby from './MoonlightLullaby'
 import PhaethonsMelody from './PhaethonsMelody'
 import PolarMetal from './PolarMetal'
 import ProtoPunk from './ProtoPunk'
@@ -25,11 +27,13 @@ const data = {
   BranchBladeSong,
   ChaosJazz,
   ChaoticMetal,
+  DawnsBloom,
   FangedMetal,
   FreedomBlues,
   HormonePunk,
   InfernoMetal,
   KingOfTheSummit,
+  MoonlightLullaby,
   PhaethonsMelody,
   PolarMetal,
   ProtoPunk,

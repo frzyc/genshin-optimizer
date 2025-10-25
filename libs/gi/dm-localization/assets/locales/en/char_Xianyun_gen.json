@@ -193,9 +193,9 @@
     "name": "Aloof From the World",
     "description": {
       "0": "After using a Skyladder from <strong>White Clouds at Dawn</strong>, Xianyun's ATK will be increased by 20% for 15s.",
-      "1": "Additionally, the effects of the Passive Talent \"Consider, the Adeptus in Her Realm\" will be enhanced: When the Starwicker created by <strong>Stars Gather at Dusk</strong> has Adeptal Assistance stacks, nearby active characters' Plunging Attack shockwave DMG will be increased by 400% of Xianyun's ATK. The maximum DMG increase that can be achieved this way is 18,000.",
+      "1": "Additionally, the effects of the Ascension Talent \"Consider, the Adeptus in Her Realm\" will be enhanced: When the Starwicker created by <strong>Stars Gather at Dusk</strong> has Adeptal Assistance stacks, nearby active characters' Plunging Attack shockwave DMG will be increased by 400% of Xianyun's ATK. The maximum DMG increase that can be achieved this way is 18,000.",
       "2": "Each Plunging Attack shockwave DMG instance can only apply this increased DMG effect to a single opponent. Each character can trigger this effect once every 0.4s.",
-      "3": "You must first unlock the Passive Talent \"Consider, the Adeptus in Her Realm.\""
+      "3": "You must first unlock the Ascension Talent \"Consider, the Adeptus in Her Realm.\""
     }
   },
   "constellation3": {

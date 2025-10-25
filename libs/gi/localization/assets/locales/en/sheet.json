@@ -49,7 +49,8 @@
     "cryo": "After dealing <cryo>Cryo DMG</cryo>",
     "pyro": "After dealing <pyro>Pyro DMG</pyro>",
     "electro": "After dealing <electro>Electro DMG</electro>",
-    "dendro": "After dealing <dendro>Dendro DMG</dendro>",
+    "dendro": "After dealing <hydro>Hydro DMG</hydro> or <dendro>Dendro DMG</dendro>",
+    "lunarbloom": "After dealing <lunarbloom>Lunar-Bloom DMG</lunarbloom>",
     "crit": "After dealing a CRIT Hit",
     "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot",
     "self": "After being hit by an opponent"
@@ -180,8 +181,11 @@
     "anemo": "After triggering an <anemo>Anemo-related</anemo> Elemental Reaction",
     "geo": "After triggering a <geo>Geo-related</geo> Elemental Reaction",
     "shatter": "After triggering a <shattered>Shatter</shattered> Elemental Reaction",
+    "lunarcharged": "After triggering a <lunarcharged>Lunar-Charged</lunarcharged> Reaction",
     "team": {
-      "pyro": "After a party member triggers a <pyro>Pyro-related</pyro> Elemental Reaction"
+      "pyro": "After a party member triggers a <pyro>Pyro-related</pyro> Elemental Reaction",
+      "lunar": "After a party member triggers a Lunar Reaction",
+      "lunarbloom": "After a party member triggers a <lunarbloom>Lunar-Bloom</lunarbloom> Reaction"
     },
     "nightsoul": {
       "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction while in Nightsoul's Blessing",

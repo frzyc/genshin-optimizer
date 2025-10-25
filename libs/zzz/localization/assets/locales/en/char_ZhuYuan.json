@@ -1,6 +1,5 @@
 {
   "core_dmg_": "Enhanced Shotshells DMG Increase",
-  "abilityCond": "EX Special Attack, Chain Attack, or Ultimate used",
   "m2SuppresiveModeCond": "In Suppressive Mode",
   "m2BasicDashEtherCond": "Enemy hit with Enhanced Shotshells",
   "m2_basic_dash_ether_dmg_": "Enhanced Shotshells Ether DMG Increase",

@@ -13,6 +13,7 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import {
   charTagMapNodeEntries,
+  conditionals,
   discTagMapNodeEntries,
   formulas,
   teamData,
@@ -23,6 +24,7 @@ import { Calculator } from './calculator'
 import { data, keys, values } from './data'
 import {
   type TagMapNodeEntries,
+  conditionalEntries,
   convert,
   enemy,
   enemyDebuff,
@@ -240,7 +242,11 @@ describe('char+wengine test', () => {
         own.common.critMode.add(critMode),
         enemy.common.def.add(635),
         enemy.common.res_.electric.add(0.1),
-        enemy.common.isStunned.add(isStunned ? 1 : 0),
+        conditionalEntries(
+          'enemy',
+          'Anby',
+          null
+        )(conditionals.enemy.isStunned.name, isStunned ? 1 : 0),
         enemyDebuff.common.resRed_.electric.add(0.15),
         enemyDebuff.common.dmgInc_.add(0.1),
         enemyDebuff.common.dmgRed_.add(0.15),
@@ -304,7 +310,7 @@ describe('char+wengine test', () => {
       own.common.critMode.add('avgHit'),
       enemy.common.def.add(635),
       enemy.common.res_.electric.add(0.1),
-      enemy.common.isStunned.add(1),
+      conditionalEntries('enemy', 'Anby', null)('isStunned', 1),
       enemyDebuff.common.resRed_.electric.add(0.15),
       enemyDebuff.common.dmgInc_.add(0.1),
       enemyDebuff.common.dmgRed_.add(0.15),
@@ -417,6 +423,7 @@ describe('sheet', () => {
       ...allWengineKeys,
       'disc',
       ...allDiscSetKeys,
+      'anomaly',
     ])
     for (const { tag } of data) {
       if (tag.et && tag.qt && tag.q) {

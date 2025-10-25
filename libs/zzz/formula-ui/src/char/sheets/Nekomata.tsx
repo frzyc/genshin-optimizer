@@ -1,12 +1,12 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { Nekomata } from '@genshin-optimizer/zzz/formula'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Nekomata'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
+const cond = Nekomata.conditionals
+const buff = Nekomata.buffs
 
 const sheet = createBaseSheet(key, {
   core: [
@@ -53,7 +53,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m4Cond'),
+        label: st('uponLaunch.1', { val1: '$t(skills.exSpecial)' }),
         metadata: cond.exSpecials_used,
         fields: [fieldForBuff(buff.m4_crit_)],
       },
@@ -63,7 +63,10 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m6Cond'),
+        label: st('uponLaunch.2', {
+          val1: '$t(skills.chain)',
+          val2: '$t(skills.ult)',
+        }),
         metadata: cond.chain_ult_used,
         fields: [fieldForBuff(buff.m6_crit_dmg_)],
       },

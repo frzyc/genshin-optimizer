@@ -103,9 +103,17 @@
   "10000114": "Skirk",
   "10000115": "Dahlia",
   "10000116": "Ineffa",
+  "10000117": "Manekin",
+  "10000118": "Manekina",
+  "10000119": "Lauma",
+  "10000120": "Flins",
+  "10000121": "Aino",
+  "10000122": "Nefer",
   "10000901": "MavuikaTrial",
   "10000902": "HuTaoTrial",
   "10000903": "Ineffa",
+  "10000998": "UGCOfficialMale",
+  "10000999": "UGCOfficialFemale",
   "11000008": "PartyTest4",
   "11000009": "BackgroundTest",
   "11000010": "NakedModel1",
@@ -133,5 +141,7 @@
   "11000043": "TestCharacter",
   "11000044": "QiqiTest",
   "11000045": "DionaTest",
-  "11000046": "PyroArchonTest"
+  "11000046": "PyroArchonTest",
+  "11000998": "UGCTestCharacterPrototypeMale",
+  "11000999": "UGCTestCharacterPrototypeFemale"
 }

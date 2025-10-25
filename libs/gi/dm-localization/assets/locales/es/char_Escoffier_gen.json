@@ -126,7 +126,7 @@
     "name": "Danza de sabores para el paladar",
     "description": {
       "0": "Cuando en el equipo haya 4 personajes <hydro>Hydro</hydro> o <cryo>Cryo</cryo>, el <cryo>Daño CRIT Cryo</cryo> de todos los miembros del equipo cercanos aumentará en un 60% durante 15 s después de que Escoffier use la Habilidad Elemental <strong>Cocina a baja temperatura</strong> o la Habilidad Definitiva <strong>Técnica de corte</strong>.",
-      "1": "Es necesario desbloquear el talento pasivo “Condimentación inspirada”."
+      "1": "Es necesario desbloquear el talento de ascensión “Condimentación inspirada”."
     }
   },
   "constellation2": {
@@ -147,7 +147,7 @@
     "name": "Receta secreta de romero",
     "description": {
       "0": "Aumenta en 6 s la duración de <strong>dieta rehabilitadora</strong>. Mientras este efecto está activo, la curación por medio de <strong>dieta rehabilitadora</strong> tiene una probabilidad equivalente a la Prob. CRIT de Escoffier de aumentar en un 100% la cantidad de curación realizada y de que Escoffier recupere 2 pts. de Energía Elemental. Este efecto puede ocurrir hasta 7 veces cada vez que <strong>dieta rehabilitadora</strong> está activa.",
-      "1": "Es necesario desbloquear el talento pasivo “Más vale comer que curar”."
+      "1": "Es necesario desbloquear el talento de ascensión “Más vale comer que curar”."
     }
   },
   "constellation5": {

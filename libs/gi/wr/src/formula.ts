@@ -7,6 +7,7 @@ import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allElementWithPhyKeys,
+  allLunarReactionKeys,
   allRegionKeys,
 } from '@genshin-optimizer/gi/consts'
 import {
@@ -46,7 +47,7 @@ const asConst = true as const,
 
 const allElements = allElementWithPhyKeys
 const allTalents = ['auto', 'skill', 'burst'] as const
-const allNonstackBuffs = [
+export const allNonstackBuffs = [
   'no4',
   'totm4',
   'ap4',
@@ -87,6 +88,10 @@ const allNonstackBuffs = [
   'ttds',
   'wolf',
   'symphonist',
+  'gleamingmoonintent',
+  'gleamingmoondevotion',
+  'nightweaver',
+  'bloomcd',
 ] as const
 export type NonStackBuff = (typeof allNonstackBuffs)[number]
 const allMoves = [
@@ -130,6 +135,7 @@ const allTransformative = [
   'bloom',
   'burgeon',
   'hyperbloom',
+  'lunarbloom',
 ] as const
 const allAmplifying = ['vaporize', 'melt'] as const
 const allAdditive = ['spread', 'aggravate'] as const
@@ -180,9 +186,12 @@ const allNonModStats = [
     `${x}_critRate_` as const,
     `${x}_critDMG_` as const,
   ]),
-  'swirl_dmgInc' as const,
+  ...allTransformative.map((x) => `${x}_dmgInc` as const),
   'all_dmgInc' as const,
-  'lunarcharged_baseDmg_' as const,
+  ...allLunarReactionKeys.flatMap((lr) => [
+    `${lr}_baseDmg_` as const,
+    `${lr}_specialDmg_` as const,
+  ]),
   ...allEleEnemyResKeys,
   'enemyDefRed_' as const,
   'enemyDefIgn_' as const,
@@ -217,6 +226,13 @@ for (const reaction of [
   ...allAdditive,
 ]) {
   allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
+}
+for (const reaction of allTransformative) {
+  allNonModStatNodes[`${reaction}_dmgInc`].info!.variant = reaction
+}
+for (const reaction of allLunarReactionKeys) {
+  allNonModStatNodes[`${reaction}_baseDmg_`].info!.variant = reaction
+  allNonModStatNodes[`${reaction}_specialDmg_`].info!.variant = reaction
 }
 crittableTransformativeReactions.forEach((reaction) => {
   allNonModStatNodes[`${reaction}_critRate_`].info!.variant = reaction
@@ -351,6 +367,8 @@ const inputBase = {
   tally: {
     ...objKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
     maxEleMas: read('max'),
+    moonsign: read('add'),
+    maxMoonsignBuff: read('max'),
   },
 }
 const input = setReadNodeKeys(deepNodeClone(inputBase))

@@ -1,13 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { Lycaon } from '@genshin-optimizer/zzz/formula'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Lycaon'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
-const formula = formulas[key]
+const cond = Lycaon.conditionals
+const buff = Lycaon.buffs
+const formula = Lycaon.formulas
 
 const sheet = createBaseSheet(key, {
   core: [
@@ -59,7 +59,7 @@ const sheet = createBaseSheet(key, {
       type: 'fields',
       fields: [
         {
-          title: ch('m4_shield'),
+          title: st('shield'),
           fieldRef: formula.m4_shield.tag,
         },
       ],

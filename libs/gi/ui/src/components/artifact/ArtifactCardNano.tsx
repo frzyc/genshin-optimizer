@@ -76,7 +76,15 @@ export function ArtifactCardNano({
       </Box>
     )
 
-  const { slotKey, rarity, level, mainStatKey, substats, location } = art
+  const {
+    slotKey,
+    rarity,
+    level,
+    mainStatKey,
+    substats,
+    location,
+    unactivatedSubstats,
+  } = art
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),
     level
@@ -198,12 +206,22 @@ export function ArtifactCardNano({
           {substats.map((stat: ICachedSubstat, i: number) => (
             <SubstatDisplay key={i + stat.key} stat={stat} />
           ))}
+          {unactivatedSubstats?.map((stat: ICachedSubstat, i: number) => (
+            <SubstatDisplay
+              key={i + stat.key}
+              stat={stat}
+              isActiveStat={false}
+            />
+          ))}
         </Box>
       </Box>
     </ConditionalWrapper>
   )
 }
-function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
+function SubstatDisplay({
+  stat,
+  isActiveStat = true,
+}: { stat: ICachedSubstat; isActiveStat?: boolean }) {
   if (!stat.value) return null
   const numRolls = stat.rolls?.length ?? 0
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
@@ -212,7 +230,13 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
     <Box display="flex" gap={1} alignContent="center">
       <Typography
         sx={{ flexGrow: 1, display: 'flex', gap: 0.5, alignItems: 'center' }}
-        color={(numRolls ? `${rollColor}.main` : 'error.main') as any}
+        color={
+          (numRolls
+            ? `${rollColor}.main`
+            : !isActiveStat
+              ? 'secondary'
+              : 'error.main') as any
+        }
         component="span"
       >
         <BootstrapTooltip

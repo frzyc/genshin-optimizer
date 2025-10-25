@@ -5,6 +5,8 @@ import {
   NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
 import { isIn } from '@genshin-optimizer/common/util'
+import type { Document } from '@genshin-optimizer/game-opt/sheet-ui'
+import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import type { EnemyStatKey, EnemyStatsTag } from '@genshin-optimizer/zzz/db'
 import { enemyStatKeys, newEnemyStatTag } from '@genshin-optimizer/zzz/db'
@@ -13,13 +15,16 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
+import {
+  type Attribute,
+  type Tag,
+  enemyMeta,
+} from '@genshin-optimizer/zzz/formula'
 import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName } from '@genshin-optimizer/zzz/ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
   Box,
-  Button,
   CardContent,
   IconButton,
   InputAdornment,
@@ -32,13 +37,8 @@ import { useCallback } from 'react'
 export function EnemyStatsSection() {
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
-  const {
-    enemyStats,
-    enemyLvl,
-    enemyDef,
-    enemyisStunned,
-    enemyStunMultiplier,
-  } = useCharOpt(characterKey)!
+  const { enemyStats, enemyLvl, enemyDef, enemyStunMultiplier } =
+    useCharOpt(characterKey)!
 
   const setStat = useCallback(
     (tag: EnemyStatsTag, value: number | null, index?: number) =>
@@ -74,17 +74,8 @@ export function EnemyStatsSection() {
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
           }}
         />
-        <Button
-          onClick={() =>
-            database.charOpts.set(characterKey, {
-              enemyisStunned: !enemyisStunned,
-            })
-          }
-          color={enemyisStunned ? 'success' : 'secondary'}
-        >
-          {enemyisStunned ? 'Stunned' : 'Not Stunned'}
-        </Button>
       </Box>
+      <DocumentDisplay document={enemyDoc} />
       {enemyStats.map(({ tag, value }, i) => (
         <EnemyStatDisplay
           key={JSON.stringify(tag) + i}
@@ -223,4 +214,12 @@ function AttributeDropdown({
       ))}
     </DropdownButton>
   )
+}
+
+const enemyDoc: Document = {
+  type: 'conditional',
+  conditional: {
+    label: 'Enemy is Stunned',
+    metadata: enemyMeta.conditionals.isStunned,
+  },
 }

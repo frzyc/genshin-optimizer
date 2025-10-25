@@ -10,16 +10,16 @@
         "noOverRoll": "Substat ไม่สามารถสุ่มได้มากกว่า {{value}} ครั้ง"
       },
       "noRoll": "ไม่มีการสุ่ม",
-      "noStat": "ไม่มีมูลค่า",
+      "noStat": "ไม่มีค่า",
       "eff": "RV: <1></1>"
     },
     "rarity": "ความหายาก",
     "level": "เลเวล",
     "unknownPieceName": "ไม่ทราบชื่อ",
     "curSubEff": "Roll Value ปัจจุบัน",
-    "curSubEffDesc": "ทุกๆครั้งที่ 4 ของการอัปเกรดอาร์ติแฟกต์ คุณจะได้รับ substat โดย <strong>Roll Value</strong> จะคำนวณว่า substat นั้นทบเป็นเปอร์เซ็นต์สูงเพียงใด",
+    "curSubEffDesc": "ทุก ๆ ครั้งที่ 4 ของการอัปเกรดอาร์ติแฟกต์ คุณจะได้รับ substat โดย <strong>Roll Value</strong> จะคำนวณว่า substat นั้นทบเป็นเปอร์เซ็นต์สูงเพียงใด",
     "maxSubEff": "Roll Value สูงสุด",
-    "maxSubEffDesc": "ค่า <strong>Roll Value สูงสุดของ Substats</strong> ของอาร์ติแฟคต์จะคำนวณ RV หากการอัปเกรดที่เหลือสุ่มได้มูลค่าสูงสุดของพวกเขา",
+    "maxSubEffDesc": "ค่า <strong>Roll Value สูงสุดของ Substat</strong> ของอาร์ติแฟคต์จะคำนวณ RV หากการอัปเกรดที่เหลือสุ่มได้มูลค่าสูงสุดของพวกเขา",
     "preview": "ดูตัวอย่างอาร์ติแฟกต์",
     "dupArt": "ตรวจพบอาร์ติแฟกต์ที่ซ้ำกัน",
     "upArt": "ตรวจพบอาร์ติแฟกต์ที่อัปเกรด",
@@ -71,5 +71,7 @@
   "efficiencyFilter": {
     "title": "Substat ที่ใช้ในการคำนวณ Roll Value"
   },
-  "resetFilters": "รีเซ็๋ตตัวกรอง"
+  "resetFilters": "รีเซ็๋ตตัวกรอง",
+  "addNew": "เพิ่มอาร์ติแฟกต์",
+  "artInInv": "อาร์ติแฟกต์ที่ไม่ถูกสวมใส่ทั้งหมด"
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Sacrificer's Staff",
+  "description": {
+    "0": "Tombak putih keperakan yang sempurna tanpa cela. Konon di masa lalu, ini adalah tongkat yang digunakan para penghulu Hyperborea untuk menggembalakan Bani Bulan Embun."
+  },
+  "passiveName": "Untainted Desire",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Elemental Skill mengenai musuh, ATK Karakter +<cryo>8%</cryo>, Energy Recharge +<cryo>6%</cryo> selama 6 detik. Efek ini dapat ditumpuk 3 lapis, dan dapat terpicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Setelah Elemental Skill mengenai musuh, ATK Karakter +<cryo>10%</cryo>, Energy Recharge +<cryo>7,5%</cryo> selama 6 detik. Efek ini dapat ditumpuk 3 lapis, dan dapat terpicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Setelah Elemental Skill mengenai musuh, ATK Karakter +<cryo>12%</cryo>, Energy Recharge +<cryo>9%</cryo> selama 6 detik. Efek ini dapat ditumpuk 3 lapis, dan dapat terpicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Setelah Elemental Skill mengenai musuh, ATK Karakter +<cryo>14%</cryo>, Energy Recharge +<cryo>10,5%</cryo> selama 6 detik. Efek ini dapat ditumpuk 3 lapis, dan dapat terpicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Setelah Elemental Skill mengenai musuh, ATK Karakter +<cryo>16%</cryo>, Energy Recharge +<cryo>12%</cryo> selama 6 detik. Efek ini dapat ditumpuk 3 lapis, dan dapat terpicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

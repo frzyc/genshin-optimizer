@@ -119,6 +119,18 @@
       "cd_s": "ItemSuitKingoftheSummit_S.png",
       "cd_a": "ItemSuitKingoftheSummit_A.png",
       "cd_b": "ItemSuitKingoftheSummit_B.png"
+    },
+    "DawnsBloom": {
+      "circle": "SuitDawnsBloom.png",
+      "cd_s": "ItemSuitDawnsBloom_S.png",
+      "cd_a": "ItemSuitDawnsBloom_A.png",
+      "cd_b": "ItemSuitDawnsBloom_B.png"
+    },
+    "MoonlightLullaby": {
+      "circle": "SuitMoonlightLullaby.png",
+      "cd_s": "ItemSuitMoonlightLullaby_S.png",
+      "cd_a": "ItemSuitMoonlightLullaby_A.png",
+      "cd_b": "ItemSuitMoonlightLullaby_B.png"
     }
   },
   "chars": {
@@ -149,6 +161,13 @@
       "trap": "IconRoleGeneral05.png",
       "select": "IconRoleSelect05.png",
       "interknot": "IconInterKnotRole0005.png"
+    },
+    "Yidhari": {
+      "full": "IconRole52.png",
+      "circle": "IconRoleCircle52.png",
+      "trap": "IconRoleGeneral52.png",
+      "select": "IconRoleSelect52.png",
+      "interknot": "IconInterKnotRole0052.png"
     },
     "Corin": {
       "full": "IconRole09.png",
@@ -311,6 +330,13 @@
       "select": "IconRoleSelect42.png",
       "interknot": "IconInterKnotRole0042.png"
     },
+    "OrphieMagus": {
+      "full": "IconRole49.png",
+      "circle": "IconRoleCircle49.png",
+      "trap": "IconRoleGeneral49.png",
+      "select": "IconRoleSelect49.png",
+      "interknot": "IconInterKnotRole0049.png"
+    },
     "AstraYao": {
       "full": "IconRole36.png",
       "circle": "IconRoleCircle36.png",
@@ -387,6 +413,27 @@
       "trap": "IconRoleGeneral45.png",
       "select": "IconRoleSelect45.png",
       "interknot": "IconInterKnotRole0045.png"
+    },
+    "Manato": {
+      "full": "IconRole51.png",
+      "circle": "IconRoleCircle51.png",
+      "trap": "IconRoleGeneral51.png",
+      "select": "IconRoleSelect51.png",
+      "interknot": "IconInterKnotRole0051.png"
+    },
+    "Lucia": {
+      "full": "IconRole50.png",
+      "circle": "IconRoleCircle50.png",
+      "trap": "IconRoleGeneral50.png",
+      "select": "IconRoleSelect50.png",
+      "interknot": "IconInterKnotRole0050.png"
+    },
+    "Seed": {
+      "full": "IconRole48.png",
+      "circle": "IconRoleCircle48.png",
+      "trap": "IconRoleGeneral48.png",
+      "select": "IconRoleSelect48.png",
+      "interknot": "IconInterKnotRole0048.png"
     }
   },
   "wengines": {
@@ -562,6 +609,10 @@
       "icon": "Weapon_A_1421.png",
       "big": "Weapon_A_1421Big.png"
     },
+    "GrillOWisp": {
+      "icon": "Weapon_A_1441.png",
+      "big": "Weapon_A_1441Big.png"
+    },
     "CannonRotor": {
       "icon": "Weapon_S_Common_01.png",
       "big": "Weapon_S_Common_01Big.png"
@@ -581,6 +632,10 @@
     "TheBrimstone": {
       "icon": "Weapon_S_1041.png",
       "big": "Weapon_S_1041Big.png"
+    },
+    "KrakensCradle": {
+      "icon": "Weapon_S_1051.png",
+      "big": "Weapon_S_1051Big.png"
     },
     "TusksOfFury": {
       "icon": "Weapon_S_1071.png",
@@ -642,6 +697,10 @@
       "icon": "Weapon_S_1291.png",
       "big": "Weapon_S_1291Big.png"
     },
+    "BellicoseBlaze": {
+      "icon": "Weapon_S_1301.png",
+      "big": "Weapon_S_1301Big.png"
+    },
     "ElegantVanity": {
       "icon": "Weapon_S_1311.png",
       "big": "Weapon_S_1311Big.png"
@@ -677,6 +736,14 @@
     "Metanukimorphosis": {
       "icon": "Weapon_S_1411.png",
       "big": "Weapon_S_1411Big.png"
+    },
+    "DreamlitHearth": {
+      "icon": "Weapon_S_1451.png",
+      "big": "Weapon_S_1451Big.png"
+    },
+    "CordisGermina": {
+      "icon": "Weapon_S_1461.png",
+      "big": "Weapon_S_1461Big.png"
     }
   }
 }

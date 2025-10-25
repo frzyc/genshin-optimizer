@@ -1,0 +1,24 @@
+{
+  "name": "Madenci Küreği",
+  "description": {
+    "0": "Metal bir tarım aletinden yapıldığı anlaşılan bir mızrak. İlk bakışta oldukça sıradan görünmesine karşın incelikli tasarımı, kaliteli olduğu yadsınamayacak pek çok teçhizat barındırıyor."
+  },
+  "passiveName": "Hızlı ve Kesin",
+  "passiveDescription": {
+    "0": {
+      "0": "Elektrik Yüklü Hasarı <cryo>%48</cryo> artar, Ay Yüklü Hasarı ise <cryo>%12</cryo> artar. Ay Sembolü: Yükselen Parıltı: Ay Yüklü Hasarı <cryo>%12</cryo> daha artar."
+    },
+    "1": {
+      "0": "Elektrik Yüklü Hasarı <cryo>%60</cryo> artar, Ay Yüklü Hasarı ise <cryo>%15</cryo> artar. Ay Sembolü: Yükselen Parıltı: Ay Yüklü Hasarı <cryo>%15</cryo> daha artar."
+    },
+    "2": {
+      "0": "Elektrik Yüklü Hasarı <cryo>%72</cryo> artar, Ay Yüklü Hasarı ise <cryo>%18</cryo> artar. Ay Sembolü: Yükselen Parıltı: Ay Yüklü Hasarı <cryo>%18</cryo> daha artar."
+    },
+    "3": {
+      "0": "Elektrik Yüklü Hasarı <cryo>%84</cryo> artar, Ay Yüklü Hasarı ise <cryo>%21</cryo> artar. Ay Sembolü: Yükselen Parıltı: Ay Yüklü Hasarı <cryo>%21</cryo> daha artar."
+    },
+    "4": {
+      "0": "Elektrik Yüklü Hasarı <cryo>%96</cryo> artar, Ay Yüklü Hasarı ise <cryo>%24</cryo> artar. Ay Sembolü: Yükselen Parıltı: Ay Yüklü Hasarı <cryo>%24</cryo> daha artar."
+    }
+  }
+}

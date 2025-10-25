@@ -1,12 +1,12 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { Soldier11 } from '@genshin-optimizer/zzz/formula'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Soldier11'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
+const cond = Soldier11.conditionals
+const buff = Soldier11.buffs
 
 const sheet = createBaseSheet(key, {
   core: [
@@ -63,7 +63,11 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m6Cond'),
+        label: st('uponLaunch.3', {
+          val1: '$t(skills.exSpecial)',
+          val2: '$t(skills.chain)',
+          val3: '$t(skills.ult)',
+        }),
         metadata: cond.charge_consumed,
         fields: [
           {

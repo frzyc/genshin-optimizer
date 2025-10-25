@@ -99,7 +99,7 @@ function Content() {
             />
             {res.canShow(data) && <Divider />}
             {res.canShow(data) && (
-              <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc />
+              <DocumentDisplay sections={res.sections} teamBuffOnly />
             )}
           </CardThemed>
         )

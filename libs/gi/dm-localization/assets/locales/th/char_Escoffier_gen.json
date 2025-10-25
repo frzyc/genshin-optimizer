@@ -126,7 +126,7 @@
     "name": "Pre-Dinner Dance for Your Taste Buds",
     "description": {
       "0": "เมื่อตัวละคร 4 ตัวในทีม มีประเภทของธาตุเป็น<hydro>ธาตุน้ำ</hydro>หรือ<cryo>ธาตุน้ำแข็ง</cryo> ภายใน 15 วินาทีหลังจาก Escoffier ใช้สกิลธาตุ <strong>Low-Temperature Cooking</strong> หรือท่าไม้ตาย <strong>Scoring Cuts</strong> ความแรงคริของ<cryo>ความเสียหายน้ำแข็ง</cryo>ที่ตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียงสร้าง จะเพิ่มขึ้น 60%",
-      "1": "ต้องปลดล็อกพรสวรรค์ติดตัว \"Inspiration-Immersed Seasoning\" ก่อน"
+      "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Inspiration-Immersed Seasoning\" ก่อน"
     }
   },
   "constellation2": {
@@ -147,7 +147,7 @@
     "name": "Secret Rosemary Recipe",
     "description": {
       "0": "ช่วงเวลาต่อเนื่องของ <strong>Rehab Diet</strong> ยาวนานขึ้น 6 วินาที ในช่วงเวลาต่อเนื่อง เมื่อ <strong>Rehab Diet</strong> ทำให้เกิดการรักษา จะมีโอกาสที่จะทำให้ปริมาณการรักษาเพิ่มขึ้น 100% และฟื้นฟูพลังงานธาตุให้กับ Escoffier 2 หน่วย โดยโอกาสนี้จะเท่ากับอัตราคริของ Escoffier เอง ในช่วงเวลาต่อเนื่องของ <strong>Rehab Diet</strong> หนึ่งครั้ง เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุด 7 ครั้ง",
-      "1": "ต้องปลดล็อกพรสวรรค์ติดตัว \"Better to Salivate Than Medicate\" ก่อน"
+      "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Better to Salivate Than Medicate\" ก่อน"
     }
   },
   "constellation5": {

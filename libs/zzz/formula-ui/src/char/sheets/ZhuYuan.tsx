@@ -1,13 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { ZhuYuan } from '@genshin-optimizer/zzz/formula'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'ZhuYuan'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
-const formula = formulas[key]
+const cond = ZhuYuan.conditionals
+const buff = ZhuYuan.buffs
+const formula = ZhuYuan.formulas
 
 const sheet = createBaseSheet(key, {
   core: [
@@ -25,7 +25,11 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('abilityCond'),
+        label: st('uponLaunch.3', {
+          val1: '$t(skills.exSpecial)',
+          val2: '$t(skills.chain)',
+          val3: '$t(skills.ult)',
+        }),
         metadata: cond.ex_chain_ult_used,
         fields: [fieldForBuff(buff.ability_crit_)],
       },

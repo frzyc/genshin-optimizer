@@ -306,6 +306,7 @@ export default function TabBuild() {
       maxBuildsToShow,
     } = buildSetting
     if (!characterKey || !optimizationTarget) return
+    if (notificationRef.current) Notification?.requestPermission()
 
     const split = compactArtifacts(
       filteredArts,
@@ -447,12 +448,17 @@ export default function TabBuild() {
         buildDate: Date.now(),
       })
 
-      setTimeout(() => {
+      setTimeout(async () => {
         // Using a ref because a user can cancel the notification while the build is going.
         if (results && notificationRef.current) {
           audio.play()
           if (!tabFocused.current)
-            setTimeout(() => window.alert(t('buildCompleted')), 1)
+            if (Notification?.permission === 'granted')
+              new Notification('Genshin Optimizer', {
+                body: t('buildCompleted'),
+                icon: './favicon.ico',
+              })
+            else setTimeout(() => window.alert(t('buildCompleted')), 1)
         }
       }, 100)
     } catch (e) {
@@ -720,7 +726,10 @@ export default function TabBuild() {
             <Button
               sx={{ borderRadius: 0 }}
               color="warning"
-              onClick={() => setnotification((n) => !n)}
+              onClick={async () => {
+                await Notification?.requestPermission()
+                setnotification((n) => !n)
+              }}
               disabled={!optimizationTarget}
             >
               {notification ? (

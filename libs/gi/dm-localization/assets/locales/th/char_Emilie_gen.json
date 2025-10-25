@@ -125,14 +125,14 @@
   "constellation1": {
     "name": "Light Fragrance Leaching",
     "description": {
-      "0": "ความเสียหายที่เกิดจากกลิ่นหยาดน้ำค้างบริสุทธิ์ ของ <strong>Fragrance Extraction</strong> และพรสวรรค์ติดตัว \"Lingering Fragrance\" เพิ่มขึ้น 20% โดยอย่างหลังต้องปลดล็อกพรสวรรค์ติดตัว \"Lingering Fragrance\" ก่อน",
+      "0": "ความเสียหายที่เกิดจากกลิ่นหยาดน้ำค้างบริสุทธิ์ ของ <strong>Fragrance Extraction</strong> และพรสวรรค์เพิ่มเติม \"Lingering Fragrance\" เพิ่มขึ้น 20% โดยอย่างหลังต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Lingering Fragrance\" ก่อน",
       "1": "นอกจากนี้ เมื่อตัวละครในทีมที่อยู่ใกล้เคียง ทำให้เกิดปฏิกิริยาติดไฟแก่ศัตรู หรือสร้าง<dendro>ความเสียหายไม้</dendro>แก่ศัตรูที่อยู่ในสถานะติดไฟ จะทำให้เกิด<strong>กลิ่นหอม</strong>เพิ่มอีก 1 อัน โดยเอฟเฟกต์นี้เกิดขึ้นได้มากสุดหนึ่งครั้งในทุก 2.9 วินาที"
     }
   },
   "constellation2": {
     "name": "Lakelight Top Note",
     "description": {
-      "0": "เมื่อ <strong>Fragrance Extraction</strong>, <strong>Aromatic Explication</strong> หรือ \"กลิ่นหยาดน้ำค้างบริสุทธิ์\" ที่เกิดจากพรสวรรค์ติดตัว \"Lingering Fragrance\" (ต้องปลดล็อกพรสวรรค์ติดตัวนี้ก่อน) โจมตีโดนศัตรู <dendro>ความต้านทานไม้</dendro>ของศัตรูดังกล่าวจะลดลง 30% เป็นเวลา 10 วินาที"
+      "0": "เมื่อ <strong>Fragrance Extraction</strong>, <strong>Aromatic Explication</strong> หรือ \"กลิ่นหยาดน้ำค้างบริสุทธิ์\" ที่เกิดจากพรสวรรค์เพิ่มเติม \"Lingering Fragrance\" (ต้องปลดล็อกพรสวรรค์เพิ่มเติมนี้ก่อน) โจมตีโดนศัตรู <dendro>ความต้านทานไม้</dendro>ของศัตรูดังกล่าวจะลดลง 30% เป็นเวลา 10 วินาที"
     }
   },
   "constellation3": {

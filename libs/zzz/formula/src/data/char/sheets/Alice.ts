@@ -9,10 +9,10 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
+import { anomTimePassed } from '../../common/anomaly'
 import {
   allBoolConditionals,
   customDmg,
-  enemy,
   enemyDebuff,
   own,
   ownBuff,
@@ -137,7 +137,7 @@ const sheet = register(
     teamBuff.combat.addl_disorder_.physical.add(
       min(
         prod(
-          sum(constant(10), prod(enemy.common.anomTimePassed, constant(-1))),
+          max(0, sum(constant(10), prod(anomTimePassed, constant(-1)))),
           percent(dm.core.addl_disorder_)
         ),
         percent(dm.core.max_addl_disorder_)

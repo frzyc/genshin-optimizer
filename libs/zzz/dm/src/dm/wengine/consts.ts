@@ -48,11 +48,13 @@ export const WengineIdMap = {
   '13128': 'RoaringRide',
   '13135': 'BoxCutter',
   '13142': 'TremorTrigramVessel',
+  '13144': 'GrillOWisp',
   '14001': 'CannonRotor',
   '14002': 'UnfetteredGameBall',
   '14003': 'SixShooter',
   '14102': 'SteelCushion',
   '14104': 'TheBrimstone',
+  '14105': 'KrakensCradle',
   '14107': 'TusksOfFury',
   '14109': 'HailstormShrine',
   '14110': 'HellfireGears',
@@ -68,6 +70,7 @@ export const WengineIdMap = {
   '14125': 'IceJadeTeapot',
   '14126': 'SharpenedStinger',
   '14129': 'MyriadEclipse',
+  '14130': 'BellicoseBlaze',
   '14131': 'ElegantVanity',
   '14132': 'HeartstringNocturne',
   '14133': 'FlightOfFancy',
@@ -77,6 +80,8 @@ export const WengineIdMap = {
   '14139': 'RoaringFurnace',
   '14140': 'PracticedPerfection',
   '14141': 'Metanukimorphosis',
+  '14145': 'DreamlitHearth',
+  '14146': 'CordisGermina',
 } as const
 
 export const specialityMap: Record<number, SpecialityKey> = {

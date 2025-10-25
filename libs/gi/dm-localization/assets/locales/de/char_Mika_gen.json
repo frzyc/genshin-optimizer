@@ -116,9 +116,9 @@
   "passive2": {
     "name": "Geomorphologische Kartografierung",
     "description": {
-      "0": "Wenn aktuelle Figuren mit ihren Angriffen kritische Treffer auslösen, während sie sich gleichzeitig in den Zuständen Falkenfeder von <strong>Der Federn Wunsch</strong> und Seelenböe des <strong>Sternenfrost-Strudels</strong> befinden, erschafft Seelenböe 1 Stapelung des Effekts Entdeckung des passiven Talents „Unterdrückendes Sperrfeuer“. Während einer einzigen Dauer des Zustands Seelenböe kann auf diese Weise höchstens 1 Stapelung des Effekts Entdeckung erschaffen werden.",
+      "0": "Wenn aktuelle Figuren mit ihren Angriffen kritische Treffer auslösen, während sie sich gleichzeitig in den Zuständen Falkenfeder von <strong>Der Federn Wunsch</strong> und Seelenböe des <strong>Sternenfrost-Strudels</strong> befinden, erschafft Seelenböe 1 Stapelung des Effekts Entdeckung des Aufstiegstalents „Unterdrückendes Sperrfeuer“. Während einer einzigen Dauer des Zustands Seelenböe kann auf diese Weise höchstens 1 Stapelung des Effekts Entdeckung erschaffen werden.",
       "1": "Außerdem kann im Zustand Seelenböe die maximale Stapelung des Effekts Entdeckung um 1 erhöht werden.",
-      "2": "Das passive Talent „Unterdrückendes Sperrfeuer“ muss zuerst freigeschaltet werden."
+      "2": "Das Aufstiegstalent „Unterdrückendes Sperrfeuer“ muss zuerst freigeschaltet werden."
     }
   },
   "passive3": {
@@ -136,8 +136,8 @@
   "constellation2": {
     "name": "Eine Reise in Begleitung",
     "description": {
-      "0": "Sobald der Frostfluss-Pfeil von <strong>Sternenfrost-Strudel</strong> zum ersten Mal, oder die Eisstern-Bake, einen Gegner trifft, wird 1 Stapelung des Effekts Entdeckung des passiven Talents „Unterdrückendes Sperrfeuer“ erschaffen.",
-      "1": "Das passive Talent „Unterdrückendes Sperrfeuer“ muss zuerst freigeschaltet werden."
+      "0": "Sobald der Frostfluss-Pfeil von <strong>Sternenfrost-Strudel</strong> zum ersten Mal, oder die Eisstern-Bake, einen Gegner trifft, wird 1 Stapelung des Effekts Entdeckung des Aufstiegstalents „Unterdrückendes Sperrfeuer“ erschaffen.",
+      "1": "Das Aufstiegstalent „Unterdrückendes Sperrfeuer“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation3": {
@@ -163,8 +163,8 @@
   "constellation6": {
     "name": "Unterstützung von Mitstreitern",
     "description": {
-      "0": "Erhöht die maximale Stapelung des Effekts Entdeckung des Zustands Seelenböe von <strong>Sternenfrost-Strudel</strong> um 1. Das passive Talent „Unterdrückendes Sperrfeuer“ muss zuerst freigeschaltet werden.",
-      "1": "Außerdem wird der KSCH des physischen Schadens der vom Zustand Seelenböe betroffenen aktiven Figuren um 60 % erhöht."
+      "0": "Erhöht die maximale Stapelung des Effekts Entdeckung des Zustands Seelenböe von <strong>Sternenfrost-Strudel</strong> um 1. Das Aufstiegstalent „Unterdrückendes Sperrfeuer“ muss zuerst freigeschaltet werden.",
+      "1": "Außerdem wird der KSCH des physischen Schadens der vom Zustand Seelenböe betroffenen aktiven Figuren um 60 % erhöht."
     }
   }
 }

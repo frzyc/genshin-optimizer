@@ -140,7 +140,7 @@
       "1": "De plus, si un personnage <geo>Géo</geo> (hormis Chiori) est dans l'équipe, les effets suivants se déclenchent à la fin de la ruée de Caresse de plume :",
       "2": [
         " Invoque un Tamoto supplémentaire. Il ne peut exister qu'un seul Tamoto supplémentaire à la fois, que ce dernier soit invoqué de cette manière ou grâce à une construction Géo.",
-        " Déclenche « Retouche finale ». L'aptitude passive « Retouche finale » doit être déjà débloquée."
+        " Déclenche « Retouche finale ». L'aptitude d'élévation « Retouche finale » doit être déjà débloquée."
       ]
     }
   },
@@ -161,8 +161,8 @@
   "constellation4": {
     "name": "Trois us de broderie",
     "description": {
-      "0": "Pendant 8 s après avoir déclenché un effet de l'aptitude passive « Sur-mesure », lorsqu'une attaque normale, chargée ou plongeante de votre personnage déployé touche un ennemi proche, une poupée automate simplifiée Kinu est invoquée à proximité de ce dernier. Un Kinu peut être invoqué une fois toutes les secondes de cette manière, et un maximum de 3 Kinu peut être invoqué de cette manière pendant la durée d'un effet Brocatelle ou Opportunisme de l'aptitude passive « Sur-mesure ». Cet effet peut se déclencher une fois toutes les 15 s.",
-      "1": "L'aptitude passive « Sur-mesure » doit être déjà débloquée."
+      "0": "Pendant 8 s après avoir déclenché un effet de l'aptitude d'élévation « Sur-mesure », lorsqu'une attaque normale, chargée ou plongeante de votre personnage déployé touche un ennemi proche, une poupée automate simplifiée Kinu est invoquée à proximité de ce dernier. Un Kinu peut être invoqué une fois toutes les secondes de cette manière, et un maximum de 3 Kinu peut être invoqué de cette manière pendant la durée d'un effet Brocatelle ou Opportunisme de l'aptitude d'élévation « Sur-mesure ». Cet effet peut se déclencher une fois toutes les 15 s.",
+      "1": "L'aptitude d'élévation « Sur-mesure » doit être déjà débloquée."
     }
   },
   "constellation5": {
@@ -175,7 +175,7 @@
   "constellation6": {
     "name": "Un précepte",
     "description": {
-      "0": "Après avoir déclenché un effet de l'aptitude passive « Sur-mesure », le TdR de <strong>Caresse de plume</strong> de Chiori diminue de 12 s. L'aptitude passive « Sur-mesure » doit être déjà débloquée.",
+      "0": "Après avoir déclenché un effet de l'aptitude d'élévation « Sur-mesure », le TdR de <strong>Caresse de plume</strong> de Chiori diminue de 12 s. L'aptitude d'élévation « Sur-mesure » doit être déjà débloquée.",
       "1": "De plus, les DGT infligés par les attaques normales de Chiori augmentent d'une valeur équivalant à 235 % de sa DÉF."
     }
   }

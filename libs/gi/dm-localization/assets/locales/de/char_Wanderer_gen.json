@@ -133,8 +133,8 @@
   "constellation1": {
     "name": "Shoban – Pompöses Gefieder",
     "description": {
-      "0": "Erhöht die Angriffs-GSW des Wanderers mit Kuugo – Fushoudan und Kuugo – Toufukai im Zustand <strong>Haltung des eleganten Windes</strong> um 10 %.",
-      "1": "Die Windpfeile vom passiven Talent „Brise der Träumerei“ verursachen zusätzlich Schaden in Höhe von 25 % ANG, dafür muss zuerst das passive Talent „Brise der Träumerei“ freigeschaltet werden."
+      "0": "Erhöht die Angriffs-GSW des Wanderers mit Kuugo – Fushoudan und Kuugo – Toufukai im Zustand <strong>Haltung des eleganten Windes</strong> um 10 %.",
+      "1": "Die Windpfeile vom Aufstiegstalent „Brise der Träumerei“ verursachen zusätzlich Schaden in Höhe von 25 % ANG, dafür muss zuerst das Aufstiegstalent „Brise der Träumerei“ freigeschaltet werden."
     }
   },
   "constellation2": {
@@ -154,8 +154,8 @@
   "constellation4": {
     "name": "Yonban – Aufbruch ins Frühjahr",
     "description": {
-      "0": "Erhält die Figur durch das passive Talent „Jadeblume“ beim Auslösen von <strong>Hanega – Gesang des Windes</strong> den entsprechenden Verstärkungseffekt in Abhängigkeit von dem Elementartyp, mit dem sie in Kontakt gekommen ist, wird ihr ein zufälliger weiterer noch nicht vergebener Verstärkungseffekt verliehen. Es können höchstens drei Elementen entsprechende Verstärkungseffekte gleichzeitig aktiv sein.",
-      "1": "Das passive Talent „Jadeblume“ muss zuerst freigeschaltet werden."
+      "0": "Erhält die Figur durch das Aufstiegstalent „Jadeblume“ beim Auslösen von <strong>Hanega – Gesang des Windes</strong> den entsprechenden Verstärkungseffekt in Abhängigkeit von dem Elementartyp, mit dem sie in Kontakt gekommen ist, wird ihr ein zufälliger weiterer noch nicht vergebener Verstärkungseffekt verliehen. Es können höchstens drei Elementen entsprechende Verstärkungseffekte gleichzeitig aktiv sein.",
+      "1": "Das Aufstiegstalent „Jadeblume“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation5": {

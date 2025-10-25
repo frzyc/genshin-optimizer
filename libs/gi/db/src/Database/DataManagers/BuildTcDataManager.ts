@@ -18,7 +18,11 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
-import { validateLevelAsc, validateTalent } from '@genshin-optimizer/gi/util'
+import {
+  validateCharLevelAsc,
+  validateTalent,
+  validateWeaponLevelAsc,
+} from '@genshin-optimizer/gi/util'
 import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { BuildTc } from '../../Interfaces/BuildTc'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -45,7 +49,7 @@ export class BuildTcDataManager extends DataManager<
     const { character, weapon, artifact, optimization } = obj as BuildTc
     const _character = validateBuildTCChar(character)
     if (typeof name !== 'string') name = 'Build(TC) Name'
-    if (typeof description !== 'string') description = 'Build(TC) Description'
+    if (typeof description !== 'string') description = ''
     const _weapon = validateBuildTCWeapon(weapon)
     if (!_weapon) return undefined
 
@@ -117,7 +121,7 @@ export class BuildTcDataManager extends DataManager<
 export function initCharTC(weaponKey: WeaponKey): BuildTc {
   return {
     name: 'Build(TC) Name',
-    description: 'Build(TC) Description',
+    description: '',
     weapon: {
       key: weaponKey,
       level: 1,
@@ -164,7 +168,7 @@ function validateBuildTCChar(char: unknown): BuildTc['character'] {
   )
     constellation = 0
 
-  const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
+  const { level, ascension } = validateCharLevelAsc(rawLevel, rawAscension)
   talent = validateTalent(ascension, talent)
 
   return {
@@ -187,7 +191,7 @@ function validateBuildTCWeapon(weapon: unknown): BuildTc['weapon'] | undefined {
   }
   if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
     refinement = 1
-  const { level: _level, ascension: _ascension } = validateLevelAsc(
+  const { level: _level, ascension: _ascension } = validateWeaponLevelAsc(
     level,
     ascension
   )

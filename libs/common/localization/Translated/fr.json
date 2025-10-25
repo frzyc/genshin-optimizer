@@ -34,7 +34,9 @@
       "btnRandom": "Randomiser",
       "btnUpdate": "Mettre à jour l'artéfact",
       "clearPrompt": "Il y a un artéfact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?",
-      "unknownSetName": "Nom de l'ensemble inconnu"
+      "unknownSetName": "Nom de l'ensemble inconnu",
+      "delete": "Supprimer",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet artéfact ?"
     },
     "artifactFilter": "Filtre d'artéfacts",
     "filterLocation": {
@@ -46,11 +48,12 @@
       "unequipArtifacts": "Déséquiper les artéfacts",
       "deleteArtifacts": "Supprimer les artéfacts",
       "lockArtifacts": "Verrouiller les artéfacts",
-      "unlockrtifacts": "Déverrouiller les artéfacts"
+      "unlockrtifacts": "Déverrouiller les artéfacts",
+      "unequipArtifact": "Déséquiper l'artéfact"
     },
     "buttonHint": "Note: les boutons rouges ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
     "tipsOfTheDay": [
-      "L'efficacité maximum d'un artéfact 4 étoiles est environ de 60%.",
+      "L'efficacité maximum d'un artéfact 4 étoiles est environ de 540%.",
       "L'efficacité maximum d'un artéfact diminuera généralement au fur et à mesure de l'amélioration. C'est parfaitement normal !",
       "Les substats avec des \"1\" sont les plus difficiles à analyser sur les captures d'écran.",
       "Si tous vos rolls (6) sont allés dans une seule substat, elle sera violette !",
@@ -102,7 +105,11 @@
     "substat_other": "{{count}} substats",
     "sub_one": "{{count}} sub",
     "sub_other": "{{count}} subs",
-    "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!"
+    "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!",
+    "subheadings": {
+      "general": "Général",
+      "inventory": "Inventaire"
+    }
   },
   "languages": {
     "chs": "Chinois (Simplifié)",
@@ -165,7 +172,9 @@
       "invalid": "Non valide:",
       "upgraded": "Amélioré :",
       "dbTotal": "Total fusionné :",
-      "notInImport": "Pas d'importation :"
+      "notInImport": "Pas d'importation :",
+      "teams": "Équipes:",
+      "builds": "Builds: "
     },
     "DatabaseCard": {
       "title": "Base de données",
@@ -195,7 +204,10 @@
       "weapons": "Armes",
       "doc": "Docs",
       "setting": "Paramètres",
-      "scanner": "Scanners"
+      "scanner": "Scanners",
+      "teams": "Équipes",
+      "archive": "Archives",
+      "builds": "Builds"
     },
     "social": {
       "paypal": "Paypal",
@@ -207,7 +219,7 @@
     "descending": "Décroissant",
     "loading": "Chargement...",
     "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par HoYoverse",
-    "appVersion": "$t(pageTitle) Version: {{version}}",
+    "appVersion": "$t(pageTitle) Version: <1>{{version}}</1>",
     "error": "Erreur",
     "reset": "Réinitialisation",
     "info": "Informations",
@@ -220,7 +232,8 @@
       "rarity": "Rareté",
       "efficiency": "Efficacité actuelle",
       "mefficiency": "Efficacité maximum",
-      "artsetkey": "Set d'artéfact"
+      "artsetkey": "Set d'artéfact",
+      "lastEdit": "Modifié récemment"
     },
     "link": {
       "download": "Lien de téléchargement",
@@ -253,7 +266,9 @@
       "stamina_buffs": "Buffs d'endurance",
       "misc": "Misc. Statistiques"
     },
-    "sillyPageTitle": "Silly Optimizer"
+    "sillyPageTitle": "Silly Optimizer",
+    "excluded": "Exclus",
+    "included": "Inclus"
   },
   "char_Eula": {
     "burstC": {
@@ -481,7 +496,8 @@
     "reactionOp": {
       "overload": "Après avoir déclenché une réaction de <overloaded>Surcharge</overloaded>"
     },
-    "afterOverflow": "Le soin a débordé"
+    "afterOverflow": "Le soin a débordé",
+    "level": "Niveau {{count}}"
   },
   "weapon_SongOfBrokenPines": {
     "name": "Sous les effets de Concert du millénaire - Hymne du drapeau"
@@ -616,8 +632,7 @@
     },
     "as": {
       "title": "AdeptiScanner",
-      "p1": "Scanne tous les artefacts et armes de votre inventaire. Dispose d'un mode de balayage manuel et peut également importer des données depuis <1>Enka.Network</1>.",
-      "p2": "Ce scanner peut également être configuré pour les nouveaux artefacts dans les nouvelles versions du jeu sans nécessiter de mise à jour."
+      "p1": "Scanne tous les artefacts et armes de votre inventaire. Dispose d'un mode de balayage manuel et peut également importer des données depuis <1>Enka.Network</1>."
     },
     "goodeng": "This app only scans in English and exports to <1>GOOD</1> format.",
     "tosWarn": "Comme tous les outils qui interagissent indirectement avec le jeu, bien que leur utilisation soit virtuellement indétectable, <1>il y a toujours un risque à les utiliser.</1> La discrétion de l'utilisateur est conseillée.",
@@ -635,11 +650,6 @@
       "title": "Artiscan",
       "p1": "Ce scanner en ligne peut capturer la fenêtre de votre jeu, numériser à partir d'une capture d'écran ou numériser à partir d'une vidéo. La capture d'écran ou de vidéo peut être réalisée en plein écran et n'a pas besoin d'être recadrée.",
       "p2": "Les téléphones portables et les consoles de jeux ne peuvent être scannés qu'à partir de captures d'écran ou de vidéos."
-    },
-    "ak": {
-      "title": "Scanner Akasha",
-      "p1": "Scanne automatiquement les artefacts ainsi que les personnages et les armes. Permet d'exporter les scansions antérieures en conservant un historique dans l'application. Scanne uniquement en anglais.",
-      "p2": "Cette application est également capable d'analyser les réalisations pour <1>Paimon.moe</1> et <1>Seelie.me</1>."
     },
     "seelieme": "Cette application peut également scanner des matériaux pour <1>Seelie.me</1>"
   },
@@ -1146,10 +1156,6 @@
       },
       "optAlert": {
         "feasibilty": "Il peut y avoir des substats supplémentaires qui devraient être distribuées aux statistiques sans scaling pour garantir que la solution est réalisable."
-      },
-      "constraint": {
-        "title": "Contrainte de Stat",
-        "add": "Ajouter une Contrainte de Stat"
       }
     },
     "tabTeambuff": {
@@ -1166,7 +1172,20 @@
     "addWeapon": "Ajouter une nouvelle arme",
     "showingNum_one": "Afficher <1>{{count}}</1> sur {{value}} Arme",
     "showingNum_other": "Utiliser les rouleaux de sous-statut médians",
-    "cantDeleteLock": "Impossible de supprimer l'arme car elle est verrouillée"
+    "cantDeleteLock": "Impossible de supprimer l'arme car elle est verrouillée",
+    "button": {
+      "deleteWeapons": "Supprimer les armes",
+      "lockWeapons": "Verouiller les armes",
+      "unlockWeapons": "Deverouiller les armes"
+    },
+    "buttonHint": "Note: les bouttons rouges ci-dessus ne s'appliquent qu'aux <1>armes filtrées</1>",
+    "equippedWeapon": "Toutes les armes équipées",
+    "weaponInInv": "Toutes les armes non équipées",
+    "locationsTooltip": "Désactivez \"Toutes les armes équipées\" pour filtrer par personnages",
+    "subheadings": {
+      "general": "Général",
+      "inventory": "Inventaire"
+    }
   },
   "weapon_AquaSimulacra": {
     "condName": "Opposants à proximité"
@@ -1298,7 +1317,8 @@
       "usingNum": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)",
       "button_txt": "Exclure les artefacts",
       "excNum_one": "<0>{{count}}</0> l'artefact est exclu",
-      "excNum_other": "Théorie de la construction"
+      "excNum_other": "Théorie de la construction",
+      "includeArtifactButton": "Inclure cet artéfact dans l'optimisation"
     },
     "excludeChar": {
       "title": "Configuration de l'artefact équipé",
@@ -1307,7 +1327,6 @@
         "disallow_All": "Supprimer tous les caractères affichés de la liste d'autorisation"
       },
       "allowEquip": "Permettre l'utilisation d'objets provenant de",
-      "tooltip": "Ajouter des personnages à la liste d'autorisation de ce personnage. Les personnages de la liste d'autorisation seront pris en compte lors de la génération de la construction. Vous pouvez également basculer entre l'utilisation des artefacts non équipés, votre liste d'autorisation personnalisée et l'utilisation de tous les artefacts.",
       "chars": "Personnages",
       "artis": "Artéfacts",
       "states": {
@@ -1327,7 +1346,11 @@
     "build_one": "<0>{{count}}</0> Construire",
     "build_other": "<0><0>Excluding<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
     "thread_one": "<0>{{count}}</0> File d'attente",
-    "thread_other": "<0><0>Excluding<1></1> 5-Arc-en-ciel</0></0>} exclurait les constructions complètes à 5 arcs-en-ciel : <2><0>RRRRR</0></2>."
+    "thread_other": "<0><0>Excluding<1></1> 5-Arc-en-ciel</0></0>} exclurait les constructions complètes à 5 arcs-en-ciel : <2><0>RRRRR</0></2>.",
+    "compareArtModal": {
+      "newArt": "Nouveau artéfact",
+      "oldArt": "Ancien artéfact"
+    }
   },
   "weapon_ForestRegalia": {
     "condName": "Après avoir ramassé une feuille de conscience"
@@ -1823,5 +1846,32 @@
     "wave_critDMG_": "DGT CRIT vague de nuage flottant",
     "a1Cond": "Penne de Tempête",
     "c6Cond": "Utilisation de l'échelle céleste"
+  },
+  "common_common": {
+    "social": {
+      "paypal": "PayPal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "unselect": "Déseléctionner",
+    "inventory": "Inventaire",
+    "ascending": "Croissant",
+    "descending": "Décroissant",
+    "sortBy": "Trier par: ",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "reset": "Réinitialiser",
+    "info": "Information",
+    "close": "Fermer",
+    "delete": "Supprimer",
+    "locked": "Verrouillé",
+    "unlocked": "Deverrouillé",
+    "excluded": "Exclus",
+    "included": "Inclus",
+    "selectlevel": "Sélectionner le niveau",
+    "gender": {
+      "F": "Femme",
+      "M": "Homme"
+    }
   }
 }

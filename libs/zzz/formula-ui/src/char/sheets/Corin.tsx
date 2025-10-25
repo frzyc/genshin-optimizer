@@ -1,13 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { Corin } from '@genshin-optimizer/zzz/formula'
+import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Corin'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
-const formula = formulas[key]
+const cond = Corin.conditionals
+const buff = Corin.buffs
+const formula = Corin.formulas
 
 const sheet = createBaseSheet(key, {
   // TODO: Add missing text for some hits
@@ -32,7 +32,10 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m1Cond'),
+        label: st('uponHit.2', {
+          val1: '$t(skills.chain)',
+          val2: '$t(skills.ult)',
+        }),
         metadata: cond.chain_ult_hit,
         fields: [fieldForBuff(buff.m1_common_dmg_)],
       },
@@ -42,7 +45,11 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m2Cond'),
+        label: st('uponHit.3', {
+          val1: '$t(skills.exSpecial)',
+          val2: '$t(skills.chain)',
+          val3: '$t(skills.ult)',
+        }),
         metadata: cond.exSpecial_chain_ult_hits,
         fields: [fieldForBuff(buff.m2_physical_resRed_)],
       },
@@ -56,7 +63,7 @@ const sheet = createBaseSheet(key, {
         metadata: cond.charge,
         fields: [
           {
-            title: ch('m6_dmg'),
+            title: st('dmg'),
             fieldRef: formula.m6_dmg.tag,
           },
         ],

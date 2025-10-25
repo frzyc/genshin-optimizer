@@ -1,11 +1,11 @@
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
+import { isStunned } from '../../common/enemy'
 import {
   allBoolConditionals,
   allNumConditionals,
   customDmg,
-  enemy,
   own,
   ownBuff,
   percent,
@@ -159,7 +159,7 @@ const sheet = register(
         ),
         1,
         cmpGE(
-          sum(enemy.common.isStunned, enemy_anomaly.ifOn(1)),
+          sum(isStunned.ifOn(1), enemy_anomaly.ifOn(1)),
           1,
           percent(dm.ability.common_dmg_)
         )

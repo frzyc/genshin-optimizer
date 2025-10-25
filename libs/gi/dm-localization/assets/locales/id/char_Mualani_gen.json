@@ -141,7 +141,7 @@
     "name": "Mualani, Going All Out!",
     "description": {
       "0": "Saat dalam status Nightsoul's Blessing, Mualani mendapatkan 2 lapis Wave Momentum dari <strong>Surfshark Wavebreaker</strong>. Saat Mualani mendapatkan Puffer, akan mendapatkan 1 lapis Wave Momentum.",
-      "1": "Selain itu, dalam 2 detik setelah Mualani mendapatkan 2 Puffer dalam satu kali status Nightsoul Blessing, dia akan memulihkan 12 poin Nightsoul. Efek ini harus membuka Talenta Pasif \"Heat-Resistant Freshwater Floater\" terlebih dahulu."
+      "1": "Selain itu, dalam 2 detik setelah Mualani mendapatkan 2 Puffer dalam satu kali status Nightsoul Blessing, dia akan memulihkan 12 poin Nightsoul. Efek ini harus membuka Talenta Ascension \"Heat-Resistant Freshwater Floater\" terlebih dahulu."
     }
   },
   "constellation3": {
@@ -154,7 +154,7 @@
   "constellation4": {
     "name": "Sharky Eats Puffies",
     "description": {
-      "0": "Saat mendapatkan Puffer, Mualani akan memulihkan 8 poin Energy. Efek ini harus membuka Talenta Pasif \"Heat-Resistant Freshwater Floater\" terlebih dahulu.",
+      "0": "Saat mendapatkan Puffer, Mualani akan memulihkan 8 poin Energy. Efek ini harus membuka Talenta Ascension \"Heat-Resistant Freshwater Floater\" terlebih dahulu.",
       "1": "Selain itu, DMG <strong>Boomsharka-laka</strong> meningkat 75%."
     }
   },

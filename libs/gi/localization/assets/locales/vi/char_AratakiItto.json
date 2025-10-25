@@ -1,9 +1,15 @@
 {
+  "a1": {
+    "name": "Số lần thi triển liên tục Arataki Kesagiri"
+  },
   "a4": {
-    "dmgInc": "Tăng sát thương gây ra từ Arataki Kesagiri"
+    "dmgInc": "Sát thương tăng thêm cho Arataki Kesagiri"
   },
   "c1": {
-    "initialGain": "nhận tầng hiệu ứng \"Quỷ Lực Vô Song\"",
-    "timedGain": "Sau 1s, Arataki Itto mỗi 0.5s sẽ nhận thêm 1 tầng \"Quỷ Lực Vô Song\", duy trì 1.5s"
+    "initialGain": "Số tầng Quỷ Lực Vô Song nhận được",
+    "timedGain": "Sau 1s, mỗi 0,5s tiếp sẽ nhận thêm 1 tầng Quỷ Lực Vô Song, duy trì 1,5s"
+  },
+  "c4": {
+    "name": "Sau khi kết thúc trạng thái Nộ Mục Quỷ Vương"
   }
 }

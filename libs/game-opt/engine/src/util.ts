@@ -19,7 +19,7 @@ export function correctConditionalValue(
       value = Math.round(value)
     }
     if (value < 0) value = 0
-    if (value > conditional.list.length - 1) value = conditional.list.length - 1
+    if (value > conditional.list.length) value = conditional.list.length
   }
   return value
 }

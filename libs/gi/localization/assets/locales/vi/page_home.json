@@ -1,36 +1,49 @@
 {
-  "intro": "<0>Giới thiệu về Genshin Optimizer</0><1>Genshin Optimizer (GO) là một trang web mã nguồn mở do người hâm mộ tạo ra cho trò chơi gacha hành động nhập vai <1><strong>Genshin Impact</strong></1>. Nó chủ yếu nhằm mục đích giúp đỡ người chơi về khía cạnh phức tạp của trò chơi: Tối ưu hoá Thánh Di Vật. Vì Thánh Di Vật là các yếu tố dựa trên RNG (Random Number Generator) góp phần trực tiếp vào mức độ hiệu quả của các nhân vật của bạn trong trò chơi, GO sẽ cố gắng tìm các Thánh Di Vật tốt nhất cho các nhân vật dựa trên Túi chứa Thánh Di Vật hiện tại của bạn.</1><2>GO có thể theo dõi các Thánh Di Vật và cho phép dễ dàng hơn trong việc lọc/so sánh các Thánh Di Vật, nó đóng vai trò như một công cụ giúp người dùng tìm Thánh Di Vật tốt trong túi để tăng cấp và Thánh Di Vật xấu để sử dụng làm nguyên liệu cường hoá.</2><3>Vì GO có thể sao chép các chỉ số chính xác của bất kỳ nhân vật nào, cùng với việc tính toán tất cả các con số sát thương với độ chính xác lên đến 1%, GO cũng có thể tính sát thương và là công cụ tính toán lý thuyết.</3>",
+  "intro": "Nhân danh trang tính toán <strong>tối thượng</strong> cho <3><i>Genshin Impact</i></3>, GO sẽ note lại túi đồ thánh di vật/vũ khí/nhân vật của bạn, từ đó giúp bạn tạo ra build tối ưu nhất dựa vào cách bạn chơi chỉ với những thứ mà bạn đã có sẵn.",
   "quickLinksCard": {
     "title": "Danh sách liên kết",
     "buttons": {
       "tyGuide": {
-        "tooltip": "Cách dùng công cụ tối ưu hóa Genshin"
+        "title": "Danh sách phát Youtube hướng dẫn",
+        "tooltip": "Học cách dùng Genshin Optimizer"
       },
       "scanners": {
         "title": "Tự động nhập dữ liệu",
-        "tooltip": "Phần mềm từ phía thứ 3 cho phép thực hiện lấy dữ liệu tdv tự động"
+        "tooltip": "Phần mềm từ phía thứ 3 cho phép thực hiện lấy dữ liệu thánh di vật tự động từ trong game"
+      },
+      "kqm": {
+        "title": "Keqing Mains",
+        "tooltip": "Cộng đồng theorycraft & làm guide"
       },
       "devDiscord": {
-        "title": "Discord của nhà phát triển Genshin ",
+        "title": "Discord của nhà phát triển Genshin",
         "tooltip": "Cộng đồng các nhà phát triển dành cho Genshin"
       },
       "good": {
-        "title": "Tài liệu về \"GOOD\""
+        "title": "Tài liệu về \"GOOD\"",
+        "tooltip": "Genshin Open Object Descriptor Documentation"
+      },
+      "patchNotes": {
+        "title": "Chi tiết cập nhật",
+        "tooltip": "Tất cả chi tiết cập nhật của GO"
       }
     }
   },
   "inventoryCard": {
-    "title": "ĐI ĐẾN túi đồ"
+    "title": "Túi đồ GO"
   },
   "vidGuideCard": {
     "title": "Video hướng dẫn"
   },
   "teamCard": {
-    "title": "Gặp nhóm chúng tôi",
+    "title": "Gặp gỡ đội ngũ",
     "jobTitle": {
       "leadDev": "Trưởng nhóm phát triển",
       "dev": "Nhà phát triển",
-      "mod": "Quản trị viên"
+      "mod": "Điều phối viên",
+      "admin": "Quản Trị Viên",
+      "translator": "Quản lý dịch thuật",
+      "TC": "Phụ trách Theorycraft"
     }
   }
 }

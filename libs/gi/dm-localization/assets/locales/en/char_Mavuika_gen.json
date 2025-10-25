@@ -227,9 +227,9 @@
   "constellation4": {
     "name": "The Leader's Resolve",
     "description": {
-      "0": "Enhances the effects of the Passive Talent \"Kiongozi\":",
+      "0": "Enhances the effects of the Ascension Talent \"Kiongozi\":",
       "1": "The DMG increase gained after using the Elemental Burst <strong>Hour of Burning Skies</strong> will not decay over time, and an additional 10% DMG Bonus will be gained.",
-      "2": "You must first unlock the Passive Talent \"Kiongozi.\""
+      "2": "You must first unlock the Ascension Talent \"Kiongozi.\""
     }
   },
   "constellation5": {

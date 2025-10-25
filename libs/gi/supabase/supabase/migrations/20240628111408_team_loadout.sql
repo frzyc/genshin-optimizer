@@ -131,6 +131,10 @@ alter table "public"."substats" add constraint "public_substats_artifact_id_fkey
 
 alter table "public"."substats" validate constraint "public_substats_artifact_id_fkey";
 
+alter table "public"."unactivatedSubstats" add constraint "public_unactivatedSubstats_artifact_id_fkey" FOREIGN KEY (artifact_id) REFERENCES artifacts(id) ON DELETE CASCADE not valid;
+
+alter table "public"."unactivatedSubstats" validate constraint "public_unactivatedSubstats_artifact_id_fkey";
+
 alter table "public"."team_loadouts" add constraint "public_team_loadouts_loadout_id_fkey" FOREIGN KEY (loadout_id) REFERENCES loadouts(id) ON DELETE CASCADE not valid;
 
 alter table "public"."team_loadouts" validate constraint "public_team_loadouts_loadout_id_fkey";

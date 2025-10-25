@@ -236,7 +236,7 @@ export function EnemyEditor({
         <StatInput
           sx={{ bgcolor: (t) => t.palette.contentLight.main, width: '100%' }}
           name={<b>{KeyMap.get('enemyDefIgn_')}</b>}
-          value={eDefRed}
+          value={eDefIgn}
           placeholder={KeyMap.getStr('enemyDefIgn_')}
           defaultValue={0}
           onValueChange={(value) =>
@@ -251,7 +251,7 @@ export function EnemyEditor({
         <StatInput
           sx={{ bgcolor: (t) => t.palette.contentLight.main, width: '100%' }}
           name={<b>{KeyMap.get('enemyDefRed_')}</b>}
-          value={eDefIgn}
+          value={eDefRed}
           placeholder={KeyMap.getStr('enemyDefRed_')}
           defaultValue={0}
           onValueChange={(value) =>

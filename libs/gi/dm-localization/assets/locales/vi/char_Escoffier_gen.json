@@ -126,7 +126,7 @@
     "name": "Vũ Điệu Trước Bữa Ăn",
     "description": {
       "0": "Khi loại nguyên tố của 4 nhân vật trong đội là <hydro>Thủy</hydro> hoặc <cryo>Băng</cryo>, trong vòng 15s sau khi Escoffier thi triển Kỹ Năng Nguyên Tố <strong>Nấu Với Lửa Nhỏ</strong> hoặc Kỹ Năng Nộ <strong>Tuyệt Kỹ Cắt Gọt</strong>, tất cả nhân vật trong đội gần đó khi gây <cryo>Sát Thương Nguyên Tố Băng</cryo> sẽ tăng 60% Sát Thương Bạo Kích.",
-      "1": "Cần mở khóa thiên phú cố định \"Đưa Cảm Hứng Vào Hương Vị\"."
+      "1": "Cần mở khóa thiên phú đột phá \"Đưa Cảm Hứng Vào Hương Vị\"."
     }
   },
   "constellation2": {
@@ -147,7 +147,7 @@
     "name": "Công Thức Hương Thảo Thần Bí",
     "description": {
       "0": "Thời gian duy trì <strong>Chế Độ Ăn Phục Hồi</strong> kéo dài thêm 6s. Trong thời gian duy trì, khi kích hoạt chữa trị thông qua <strong>Chế Độ Ăn Phục Hồi</strong>, có xác suất nhất định khiến lượng chữa trị tăng 100%, đồng thời hồi phục 2 điểm Năng Lượng Nguyên Tố cho Escoffier, xác suất này tương đương với Tỷ Lệ Bạo Kích của Escoffier. Trong một lần duy trì <strong>Chế Độ Ăn Phục Hồi</strong>, hiệu quả này tối đa kích hoạt 7 lần.",
-      "1": "Cần mở khóa thiên phú cố định \"Món Ngon Còn Hơn Thuốc Bổ\"."
+      "1": "Cần mở khóa thiên phú đột phá \"Món Ngon Còn Hơn Thuốc Bổ\"."
     }
   },
   "constellation5": {

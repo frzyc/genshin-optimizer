@@ -1,0 +1,29 @@
+{
+  "setName": "Notte della rivelazione celeste",
+  "setEffects": {
+    "2": "Maestria elementale +80.",
+    "4": "Se il personaggio che equipaggia il set è in campo, quando i membri vicini del gruppo innescano delle reazioni lunari si ottiene l'effetto Luna splendente: Intento per 4 s, che aumenta il tasso di CRIT di un 15%/30% quando il Presagio lunare del gruppo è Barlume nascente/Barlume ascendente. I DAN delle reazioni lunari di tutti i membri del gruppo aumentano di un 10% per ciascun tipo di effetto Luna splendente presente nel gruppo. Gli effetti di Luna splendente non sono cumulabili."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fioritura del desiderio della mente",
+      "desc": "Una reliquia sacra scolpita a forma di fiore. Sembra rappresentare una presenza terrificante che si schiude come un bocciolo."
+    },
+    "plume": {
+      "name": "Piuma del peccato indelebile",
+      "desc": "Un accessorio piumato un tempo indossato su un cappello di feltro. Sembra fuori luogo tra i nobili di Snezhnaya e il loro gusto per lo sfarzo."
+    },
+    "sands": {
+      "name": "Peso della rivelazione",
+      "desc": "Un magnifico orologio alimentato da un potere misterioso. Il suo scopo non sembra essere quello di segnare l'ora."
+    },
+    "goblet": {
+      "name": "Recipiente dell'abbondanza",
+      "desc": "Un calice realizzato appositamente per i banchetti a palazzo. Un tempo veniva impiegato per eseguire una specie di magia."
+    },
+    "circlet": {
+      "name": "Corona della calamità",
+      "desc": "Una corona ispirata alla tiara indossata da un peccatore. Forse, nel cuore di qualcuno, l'amore e il peccato scorrono dalla stessa fonte."
+    }
+  }
+}

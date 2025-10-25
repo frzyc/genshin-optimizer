@@ -1,0 +1,24 @@
+{
+  "name": "Kính Dệt Màn Đêm",
+  "description": {
+    "0": "Tấm gương sáng bằng bạc không tì vết, tương truyền đã chứng kiến sự ra đời của Thiếu Nữ Mặt Trăng, vì thế mà được Dòng Dõi Sương Nguyệt xem như thánh vật tối cao."
+  },
+  "passiveName": "Khúc Cầu Nguyện Ngàn Năm",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi Kỹ Năng Nguyên Tố gây ra Sát Thương Nguyên Tố Thủy hoặc Thảo, người trang bị sẽ nhận hiệu quả \"Thánh Ca Cực Bắc\": Tinh Thông Nguyên Tố tăng <cryo>60</cryo> điểm trong 4.5s. Khi nhân vật trong đội ở gần kích hoạt phản ứng Nguyệt-Sum Suê, người trang bị sẽ nhận hiệu quả \"Áng Thơ Trăng Non\": Tinh Thông Nguyên Tố tăng <cryo>60</cryo> điểm trong 10s. Khi cả hai hiệu quả Thánh Ca Cực Bắc và Áng Thơ Trăng Non cùng tồn tại, tất cả nhân vật trong đội ở gần tăng <cryo>120%</cryo> sát thương phản ứng Sum Suê, tăng <cryo>80%</cryo> sát thương phản ứng Nở Rộ, Bung Tỏa, tăng <cryo>40%</cryo> sát thương phản ứng Nguyệt-Sum Suê. Hiệu quả này không thể cộng dồn, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Khi Kỹ Năng Nguyên Tố gây ra Sát Thương Nguyên Tố Thủy hoặc Thảo, người trang bị sẽ nhận hiệu quả \"Thánh Ca Cực Bắc\": Tinh Thông Nguyên Tố tăng <cryo>75</cryo> điểm trong 4.5s. Khi nhân vật trong đội ở gần kích hoạt phản ứng Nguyệt-Sum Suê, người trang bị sẽ nhận hiệu quả \"Áng Thơ Trăng Non\": Tinh Thông Nguyên Tố tăng <cryo>75</cryo> điểm trong 10s. Khi cả hai hiệu quả Thánh Ca Cực Bắc và Áng Thơ Trăng Non cùng tồn tại, tất cả nhân vật trong đội ở gần tăng <cryo>150%</cryo> sát thương phản ứng Sum Suê, tăng <cryo>100%</cryo> sát thương phản ứng Nở Rộ, Bung Tỏa, tăng <cryo>50%</cryo> sát thương phản ứng Nguyệt-Sum Suê. Hiệu quả này không thể cộng dồn, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Khi Kỹ Năng Nguyên Tố gây ra Sát Thương Nguyên Tố Thủy hoặc Thảo, người trang bị sẽ nhận hiệu quả \"Thánh Ca Cực Bắc\": Tinh Thông Nguyên Tố tăng <cryo>90</cryo> điểm trong 4.5s. Khi nhân vật trong đội ở gần kích hoạt phản ứng Nguyệt-Sum Suê, người trang bị sẽ nhận hiệu quả \"Áng Thơ Trăng Non\": Tinh Thông Nguyên Tố tăng <cryo>90</cryo> điểm trong 10s. Khi cả hai hiệu quả Thánh Ca Cực Bắc và Áng Thơ Trăng Non cùng tồn tại, tất cả nhân vật trong đội ở gần tăng <cryo>180%</cryo> sát thương phản ứng Sum Suê, tăng <cryo>120%</cryo> sát thương phản ứng Nở Rộ, Bung Tỏa, tăng <cryo>60%</cryo> sát thương phản ứng Nguyệt-Sum Suê. Hiệu quả này không thể cộng dồn, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Khi Kỹ Năng Nguyên Tố gây ra Sát Thương Nguyên Tố Thủy hoặc Thảo, người trang bị sẽ nhận hiệu quả \"Thánh Ca Cực Bắc\": Tinh Thông Nguyên Tố tăng <cryo>105</cryo> điểm trong 4.5s. Khi nhân vật trong đội ở gần kích hoạt phản ứng Nguyệt-Sum Suê, người trang bị sẽ nhận hiệu quả \"Áng Thơ Trăng Non\": Tinh Thông Nguyên Tố tăng <cryo>105</cryo> điểm trong 10s. Khi cả hai hiệu quả Thánh Ca Cực Bắc và Áng Thơ Trăng Non cùng tồn tại, tất cả nhân vật trong đội ở gần tăng <cryo>210%</cryo> sát thương phản ứng Sum Suê, tăng <cryo>140%</cryo> sát thương phản ứng Nở Rộ, Bung Tỏa, tăng <cryo>70%</cryo> sát thương phản ứng Nguyệt-Sum Suê. Hiệu quả này không thể cộng dồn, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Khi Kỹ Năng Nguyên Tố gây ra Sát Thương Nguyên Tố Thủy hoặc Thảo, người trang bị sẽ nhận hiệu quả \"Thánh Ca Cực Bắc\": Tinh Thông Nguyên Tố tăng <cryo>120</cryo> điểm trong 4.5s. Khi nhân vật trong đội ở gần kích hoạt phản ứng Nguyệt-Sum Suê, người trang bị sẽ nhận hiệu quả \"Áng Thơ Trăng Non\": Tinh Thông Nguyên Tố tăng <cryo>120</cryo> điểm trong 10s. Khi cả hai hiệu quả Thánh Ca Cực Bắc và Áng Thơ Trăng Non cùng tồn tại, tất cả nhân vật trong đội ở gần tăng <cryo>240%</cryo> sát thương phản ứng Sum Suê, tăng <cryo>160%</cryo> sát thương phản ứng Nở Rộ, Bung Tỏa, tăng <cryo>80%</cryo> sát thương phản ứng Nguyệt-Sum Suê. Hiệu quả này không thể cộng dồn, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

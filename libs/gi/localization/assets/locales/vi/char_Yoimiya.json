@@ -1,4 +1,6 @@
 {
-  "c1": "Đánh bại kẻ địch ảnh hưởng bởi <strong>Lưu kim quang hỏa</strong>",
-  "c2": "Bạo kịch từ <pyro> Sát thương nguyên tố Hỏa</pyro>"
+  "c1": "Sau khi đánh bại kẻ địch chịu hiệu quả <strong>Lưu Kim Quang Hỏa</strong>",
+  "c2": "Sau khi gây ra <pyro>đòn bạo kích nguyên tố Hỏa</pyro>",
+  "normPyroInfus": "<pyro>Đính kèm nguyên tố Hỏa lên tấn công thường</pyro>",
+  "c6Key_": "Bội số mũi tên lửa"
 }

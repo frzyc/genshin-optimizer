@@ -1,6 +1,9 @@
 {
   "skill": {
     "coil": "Dây Móc",
-    "rush": "Hồ Băng"
-  }
+    "rush": "Hồ Băng",
+    "rushState": "Thời gian duy trì trong trạng thái Hồ Băng"
+  },
+  "a1CondName": "Sau khi nhận hiệu quả Dây Móc",
+  "normCryoInfus": "<cryo>Đính kèm nguyên tố Băng lên tấn công thường</cryo>"
 }

@@ -183,6 +183,14 @@
     }
   },
   "passive3": {
+    "name": "Night Realm's Gift: Hard Work and Drive",
+    "description": {
+      "0": "After Nightsoul points have been fully depleted and Iansan is on the field, she will switch to using Phlogiston to maintain her Nightsoul's Blessing.",
+      "1": "While in an area with Phlogiston Mechanics within Natlan, Nightsoul Transmission: Iansan can be used. When the current active character is sprinting or in movement modes caused by certain Talents, or at a certain height in the air, switching to Iansan will trigger the following: Iansan enters the Nightsoul's Blessing state and obtains 25 Nightsoul points. Nightsoul Transmission can be triggered once every 10s by your own party.",
+      "2": "While in an area with Phlogiston Mechanics within Natlan, Iansan will not take fall DMG when using terrain differences to make leaps."
+    }
+  },
+  "passive": {
     "name": "Caloric Balancing Plan",
     "description": {
       "0": "While in an area with Phlogiston Mechanics within Natlan, regain 10 Phlogiston when Phlogiston levels drop below 50%. This can occur once every 10s."
@@ -197,7 +205,7 @@
   "constellation2": {
     "name": "Laziness is the Enemy!",
     "description": {
-      "0": "When using the Elemental Burst <strong>The Three Principles of Power</strong>, Iansan will also gain the Precise Movement effect from her Passive Talent \"Enhanced Resistance Training\" for 15s. Additionally, if Iansan is off-field while Precise Movement is active, she will also increase your current active character's ATK by 30%. You must first unlock the Passive Talent \"Enhanced Resistance Training\" to access the above effect."
+      "0": "When using the Elemental Burst <strong>The Three Principles of Power</strong>, Iansan will also gain the Precise Movement effect from her Ascension Talent \"Enhanced Resistance Training\" for 15s. Additionally, if Iansan is off-field while Precise Movement is active, she will also increase your current active character's ATK by 30%. You must first unlock the Ascension Talent \"Enhanced Resistance Training\" to access the above effect."
     }
   },
   "constellation3": {

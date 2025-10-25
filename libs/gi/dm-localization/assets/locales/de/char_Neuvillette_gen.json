@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Erbe des Relikts der uralten See",
     "description": {
-      "0": "Neuvillette erhält für 30 s den Effekt „Glorie längst vergangener Drachen“, wenn Truppenmitglieder beim Gegner die Reaktionen „Verdampfen“, „Gefroren“, „Unter Strom“, „Mond unter Strom“, „Sprießen“, „Hydro-Verwirbelung“ oder „Hydro-Kristallisation“ auslösen. 3-fach stapelbar. Dieser Effekt erhöht den Schaden von „heftigem Schlag – Gerechter Vorstoß“ bei 1/2/3 Stapelungen auf 110/125/160 % des ursprünglichen Schadens.",
+      "0": "Neuvillette erhält für 30 s den Effekt „Glorie längst vergangener Drachen“, wenn Truppenmitglieder beim Gegner die Reaktionen „Verdampfen“, „Gefroren“, „Unter Strom“, „Mond unter Strom“, „Sprießen“, „Mondspross“, „Hydro-Verwirbelung“ oder „Hydro-Kristallisation“ auslösen. 3-fach stapelbar. Dieser Effekt erhöht den Schaden von „heftigem Schlag – Gerechter Vorstoß“ bei 1/2/3 Stapelungen auf 110/125/160 % des ursprünglichen Schadens.",
       "1": "Jede „Glorie längst vergangener Drachen“, die durch jede Art von Elementarreaktionen erzeugt wird, existiert unabhängig voneinander."
     }
   },
@@ -128,15 +128,15 @@
   "constellation1": {
     "name": "Erschaffung von Amt und Würde",
     "description": {
-      "0": "Neuvillette erhält beim Einwechseln einen Stapel „Glorie längst vergangener Drachen“ des passiven Talents „Erbe des Relikts der uralten See“. Das passive Talent „Erbe des Relikts der uralten See“ muss zuerst freigeschaltet werden.",
+      "0": "Neuvillette erhält beim Einwechseln einen Stapel „Glorie längst vergangener Drachen“ des Aufstiegstalents „Erbe des Relikts der uralten See“. Das Aufstiegstalent „Erbe des Relikts der uralten See“ muss zuerst freigeschaltet werden.",
       "1": "Außerdem erhöht sich beim Auslösen von Aufgeladener heftiger Schlag – Richterliche Prüfung und heftiger Schlag – Gerechter Vorstoß Neuvillettes Unterbrechungs-WDS."
     }
   },
   "constellation2": {
     "name": "Das Gesetz gebietet",
     "description": {
-      "0": "Verstärkt das passive Talent „Erbe des Relikts der uralten See“: Erhöht für jeden Stapel „Glorie längst vergangener Drachen“ den Kritischen Schaden von heftigem Schlag – Gerechter Vorstoß um 14 %. Bis zu 42 % Bonus auf diese Weise möglich.",
-      "1": "Das passive Talent „Erbe des Relikts der uralten See“ muss zuerst freigeschaltet werden."
+      "0": "Verstärkt das Aufstiegstalent „Erbe des Relikts der uralten See“: Erhöht für jede Stapelung „Glorie längst vergangener Drachen“ den Kritischen Schaden von heftigem Schlag – Gerechter Vorstoß um 14 %. Bis zu 42 % Bonus auf diese Weise möglich.",
+      "1": "Das Aufstiegstalent „Erbe des Relikts der uralten See“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation3": {

@@ -145,8 +145,9 @@
     "description": {
       "0": "Musuh yang berada dalam status <strong>Seed of Skandha</strong> yang diberikan oleh Nahida akan mendapatkan pengaruh efek sebagai berikut:",
       "1": [
-        "DMG reaksi Burning, Bloom, Hyperbloom, dan Burgeon yang diterimanya akan bisa mengakibatkan CRIT, dengan nilai CRIT Rate sebesar 20% dan CRIT DMG sebesar 100%;",
-        "Dalam 8 detik setelah reaksi Quicken, Aggravate, dan Spread terpicu, DEF berkurang 30%."
+        "DMG reaksi Burning, Bloom, Hyperbloom, dan Burgeon yang diterimanya akan bisa mengakibatkan CRIT, dengan nilai CRIT Rate tetap sebesar 20% dan CRIT DMG tetap sebesar 100%. CRIT Rate dari efek ini dapat ditumpuk dengan efek serupa lainnya yang membuat Reaksi Elemental dapat mengakibatkan CRIT juga.",
+        "Setelah terkena efek reaksi Quicken, Aggravate, dan Spread terpicu, DEF berkurang 30% selama 8 detik.",
+        "CRIT Rate untuk DMG dari reaksi Lunar-Bloom meningkat 10%, dan CRIT DMG meningkat sebesar 20%."
       ]
     }
   },

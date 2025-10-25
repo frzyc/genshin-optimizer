@@ -1,0 +1,16 @@
+{
+  "title": "🛑 Phát hiện tab GO mới 🛑",
+  "p1": "Hệ thống đã phát hiện bạn vừa mở Genshin Optimizer trong một tab khác 💞. Trang web này không được thiết kế để sử dụng cùng lúc trên các tab khác nhau 📵! Việc này có thể sẽ gây:",
+  "symptom": {
+    "1": "Dữ liệu không đồng nhất giữa các tab 🙃",
+    "2": "Làm hỏng cơ sở dữ liệu 💔",
+    "3": "Đau bụng 🤰 và khiến các nhà phát triển GO cực kỳ nhức đầu 😡",
+    "4": "Trong trường hợp hiếm gặp, TỬ VONG ☠️"
+  },
+  "p2": "Chúng tôi đã ngăn chặn các hành động trên, thay vào đó bạn đã thấy tin nhắn này 📝. Giờ bạn có thể:",
+  "choice": {
+    "1": "Đóng tab này 🔪 và chuyển qua dùng tab mới 🆕",
+    "2": "Đóng tab mới mở ↩️ và chỉ sau khi bạn chắc chắn rằng đây là tab GO DUY NHẤT còn đang mở 🔂, ấn tải lại trang này 🔄"
+  },
+  "refresh": "Tải lại trang"
+}

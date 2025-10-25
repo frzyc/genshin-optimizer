@@ -119,8 +119,8 @@
   "constellation1": {
     "name": "« Comme on peut marcher entre les nuages »",
     "description": {
-      "0": "Après avoir déclenché l'absorption élémentaire de l'aptitude passive « Quatre charmes divinatoires scellés », une utilisation de la compétence élémentaire <strong>Danse plumée d'hirondelle-follet</strong> permet à Lan Yan de lancer un anneau lunaire supplémentaire sur les ennemis le moment venu.",
-      "1": "L'aptitude passive « Quatre charmes divinatoires scellés » doit être déjà débloquée."
+      "0": "Après avoir déclenché l'absorption élémentaire de l'aptitude d'élévation « Quatre charmes divinatoires scellés », une utilisation de la compétence élémentaire <strong>Danse plumée d'hirondelle-follet</strong> permet à Lan Yan de lancer un anneau lunaire supplémentaire sur les ennemis le moment venu.",
+      "1": "L'aptitude d'élévation « Quatre charmes divinatoires scellés » doit être déjà débloquée."
     }
   },
   "constellation2": {

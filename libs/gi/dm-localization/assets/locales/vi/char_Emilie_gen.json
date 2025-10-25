@@ -125,14 +125,14 @@
   "constellation1": {
     "name": "Hương Hoa Nhẹ Nhàng",
     "description": {
-      "0": "Sát thương gây ra từ Tinh Hoa Sương Sớm của <strong>Chiết Xuất Nước Hoa</strong> và thiên phú \"Dư Hương\" tăng 20%, vế sau cần mở khóa thiên phú \"Dư Hương\".",
+      "0": "Sát thương gây ra từ <strong>Chiết Xuất Nước Hoa</strong> và Tinh Hoa Sương Sớm của thiên phú \"Dư Hương\" tăng 20%, vế sau cần mở khóa thiên phú \"Dư Hương\".",
       "1": "Ngoài ra, khi nhân vật trong đội gần đó kích hoạt phản ứng Thiêu Đốt lên kẻ địch hoặc gây <dendro>Sát Thương Nguyên Tố Thảo</dendro> lên kẻ địch đang trong trạng thái Thiêu Đốt, sẽ sinh thêm một <strong>Hương Thơm</strong>. Hiệu quả này mỗi 2.9s tối đa kích hoạt một lần."
     }
   },
   "constellation2": {
     "name": "Tinh Hoa Hồ Quang",
     "description": {
-      "0": "Khi <strong>Chiết Xuất Nước Hoa</strong>, <strong>Trình Diễn Hương Thơm</strong> hoặc Tinh Hoa Sương Sớm của thiên phú cố định Dư Hương (cần mở khóa thiên phú cố định) đánh trúng kẻ địch, kẻ địch này sẽ giảm 30% <dendro>Kháng Nguyên Tố Thảo</dendro> trong 10s."
+      "0": "Khi <strong>Chiết Xuất Nước Hoa</strong>, <strong>Trình Diễn Hương Thơm</strong> hoặc Tinh Hoa Sương Sớm của thiên phú đột phá Dư Hương (cần mở khóa thiên phú đột phá) đánh trúng kẻ địch, kẻ địch này sẽ giảm 30% <dendro>Kháng Nguyên Tố Thảo</dendro> trong 10s."
     }
   },
   "constellation3": {

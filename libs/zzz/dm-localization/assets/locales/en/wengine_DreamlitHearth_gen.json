@@ -1,0 +1,14 @@
+{
+  "name": "Dreamlit Hearth",
+  "desc": "...",
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "...",
+  "phase": "Moontide Epic",
+  "phaseDescs": [
+    "The equipper's Energy Regen increases by <ct color=#2BAD00>0.4</ct>/s. When the equipper activates <ct color=#FFFFFF>Ether Veil</ct> or extends its duration, all squad members gain <ct color=#2BAD00>25%</ct> increased DMG and <ct color=#2BAD00>15%</ct> increased Max HP for 45s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Energy Regen increases by <ct color=#2BAD00>0.46</ct>/s. When the equipper activates <ct color=#FFFFFF>Ether Veil</ct> or extends its duration, all squad members gain <ct color=#2BAD00>28.8%</ct> increased DMG and <ct color=#2BAD00>17.3%</ct> increased Max HP for 45s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Energy Regen increases by <ct color=#2BAD00>0.52</ct>/s. When the equipper activates <ct color=#FFFFFF>Ether Veil</ct> or extends its duration, all squad members gain <ct color=#2BAD00>32.5%</ct> increased DMG and <ct color=#2BAD00>19.5%</ct> increased Max HP for 45s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Energy Regen increases by <ct color=#2BAD00>0.58</ct>/s. When the equipper activates <ct color=#FFFFFF>Ether Veil</ct> or extends its duration, all squad members gain <ct color=#2BAD00>36.3%</ct> increased DMG and <ct color=#2BAD00>21.8%</ct> increased Max HP for 45s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Energy Regen increases by <ct color=#2BAD00>0.64</ct>/s. When the equipper activates <ct color=#FFFFFF>Ether Veil</ct> or extends its duration, all squad members gain <ct color=#2BAD00>40%</ct> increased DMG and <ct color=#2BAD00>24%</ct> increased Max HP for 45s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad."
+  ]
+}

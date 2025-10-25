@@ -37,12 +37,14 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { AnomalySection } from './Anomaly'
 import { BonusStatsSection } from './BonusStats'
 import { CharSheetSection } from './CharSheetsDisplay'
 import { EnemyStatsSection } from './EnemyStats'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
 import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
+import { TeammatesSection } from './Teammates'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 const BOT_PX = 0
@@ -139,7 +141,16 @@ function CharacterSection() {
         ['eq', <EquippedGrid key={'eq'} onClick={onClick} />],
         ['Conditionals', <EquippedConditionals key={'conditionals'} />],
         ['bonusStats', <BonusStatsSection key={'bonusStats'} />],
+        ...(shouldShowDevComponents
+          ? [
+              ['teammates', <TeammatesSection key={'teammates'} />] as [
+                key: string,
+                content: ReactNode,
+              ],
+            ]
+          : []),
         ['enemyStats', <EnemyStatsSection key={'enemyStats'} />],
+        ['anomaly', <AnomalySection key={'anomaly'} />],
         ...(characterKey === 'Yixuan' ||
         characterKey === 'Soldier0Anby' ||
         shouldShowDevComponents

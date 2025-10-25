@@ -1,5 +1,7 @@
 {
-  "burst": "Lễ phục nghi thức",
-  "c2": "Nhân vật có lượng HP bằng hoặc thấp hơn 50%",
-  "c6": "Lúc đòn tấn công thường và trọng kích trị liệu cho nhân vật có HP từ 80% trở lên"
+  "burst": "Lễ Phục Nghi Thức",
+  "c2": "HP nhân vật bằng hoặc thấp hơn 50%",
+  "c6": "Sau khi tấn công thường và trọng kích trị liệu cho nhân vật có HP trên 80%",
+  "c2SkillHeal": "Tăng trị liệu <strong>Lời Thề Kurage</strong>",
+  "c2BurstHeal": "Tăng trị liệu <strong>Nghi Lễ Nereid</strong>"
 }

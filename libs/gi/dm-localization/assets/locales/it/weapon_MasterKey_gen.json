@@ -1,0 +1,24 @@
+{
+  "name": "Chiave maestra",
+  "description": {
+    "0": "Un pesante spadone con una lama affilata come un rasoio. Il potere è una chiave che può aprire quasi ogni serratura."
+  },
+  "passiveName": "Incastro perfetto",
+  "passiveDescription": {
+    "0": {
+      "0": "Dopo aver innescato una reazione elementale, aumenta la maestria elementale di <cryo>60</cryo> per 12 s. Quando Presagio lunare: Barlume ascendente è attivo, la maestria elementale di questo effetto aumenta di ulteriori <cryo>60</cryo> punti. L'effetto si innesca anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "Dopo aver innescato una reazione elementale, aumenta la maestria elementale di <cryo>75</cryo> per 12 s. Quando Presagio lunare: Barlume ascendente è attivo, la maestria elementale di questo effetto aumenta di ulteriori <cryo>75</cryo> punti. L'effetto si innesca anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "Dopo aver innescato una reazione elementale, aumenta la maestria elementale di <cryo>90</cryo> per 12 s. Quando Presagio lunare: Barlume ascendente è attivo, la maestria elementale di questo effetto aumenta di ulteriori <cryo>90</cryo> punti. L'effetto si innesca anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "Dopo aver innescato una reazione elementale, aumenta la maestria elementale di <cryo>105</cryo> per 12 s. Quando Presagio lunare: Barlume ascendente è attivo, la maestria elementale di questo effetto aumenta di ulteriori <cryo>105</cryo> punti. L'effetto si innesca anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "Dopo aver innescato una reazione elementale, aumenta la maestria elementale di <cryo>120</cryo> per 12 s. Quando Presagio lunare: Barlume ascendente è attivo, la maestria elementale di questo effetto aumenta di ulteriori <cryo>120</cryo> punti. L'effetto si innesca anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

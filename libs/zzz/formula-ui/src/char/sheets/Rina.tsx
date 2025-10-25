@@ -1,13 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { Rina } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Rina'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
+const cond = Rina.conditionals
+const buff = Rina.buffs
 const dm = mappedStats.char[key]
 
 const sheet = createBaseSheet(key, {
@@ -51,7 +51,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('m2Cond'),
+        label: st('enterCombatOrSwitchIn'),
         metadata: cond.active_char,
         fields: [fieldForBuff(buff.m2_common_dmg_)],
       },

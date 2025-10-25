@@ -5,10 +5,15 @@
     "characters": "Figuren",
     "tools": "Extras",
     "weapons": "Waffen",
-    "setting": "Einstellungen"
+    "doc": "Docs",
+    "setting": "Einstellungen",
+    "scanner": "Scanner",
+    "teams": "Teams",
+    "archive": "Archiv",
+    "builds": "Builds"
   },
   "social": {
-    "paypal": "Paypal",
+    "paypal": "PayPal",
     "patreon": "Patreon",
     "discord": "Discord"
   },
@@ -16,8 +21,8 @@
   "ascending": "Aufsteigend",
   "descending": "Absteigend",
   "loading": "Laden...",
-  "rightsDisclaimer": "Genshin Optimizer ist kein Teil von miHoYo und wird nicht davon unterstützt.",
-  "appVersion": "$t(pageTitle) Version: {{version}}",
+  "rightsDisclaimer": "Genshin Optimizer ist kein Teil von HoYoverse und wird nicht davon unterstützt.",
+  "appVersion": "$t(pageTitle) Version: <1>{{version}}</1>",
   "error": "Fehler",
   "reset": "Zurücksetzen",
   "info": "Info",
@@ -27,9 +32,29 @@
     "new": "Neu",
     "name": "Name",
     "level": "Stufe",
+    "rarity": "Qualität",
     "efficiency": "Aktuelle RV",
     "mefficiency": "Maximale RV",
-    "artsetkey": "Artefaktset"
+    "artsetkey": "Artefaktset",
+    "lastEdit": "Zuletzt Bearbeitet"
   },
-  "refinement": "Verfeinerung {{value}}"
+  "link": {
+    "discord": "Discord Einladungslink"
+  },
+  "sortBy": "Sortieren Nach: ",
+  "delete": "Löschen",
+  "locked": "Gesperrt",
+  "unlocked": "Entsperrt",
+  "refinement": "Verfeinerung {{value}}",
+  "selectlevel": "Stufe Einstellen",
+  "gender": {
+    "F": "Weiblich",
+    "M": "Männlich"
+  },
+  "statGroupKey": {
+    "basic_stats": "Attribute"
+  },
+  "sillyPageTitle": "Silly Optimizer",
+  "excluded": "Ausgeschlossen",
+  "included": "Einbezogen"
 }

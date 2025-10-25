@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Legatario de toda agua",
     "description": {
-      "0": "Cuando un personaje del equipo causa una reacción de Vaporización, Congelado, Electrocargado, Electrocargado Lunar, Florecimiento, Torbellino Hydro o Cristalización Hydro, Neuvillette obtiene una carga de “gloria del legado draconiano” durante 30 s. Este efecto puede acumularse hasta 3 veces y hace que el Ataque Cargado: Sentencia ecuánime inflija, respectivamente, un 110/125/160% de su daño original.",
+      "0": "Cuando un personaje del equipo causa una reacción de Vaporización, Congelado, Electrocargado, Electrocargado Lunar, Florecimiento, Florecimiento Lunar, Torbellino Hydro o Cristalización Hydro, Neuvillette obtiene una carga de “gloria del legado draconiano” durante 30 s. Este efecto puede acumularse hasta 3 veces y hace que el Ataque Cargado: Sentencia ecuánime inflija, respectivamente, un 110/125/160% de su daño original.",
       "1": "Los efectos de gloria del legado draconiano obtenidos con cada Reacción Elemental son independientes unos de otros."
     }
   },
@@ -128,15 +128,15 @@
   "constellation1": {
     "name": "Eminente ordenanza",
     "description": {
-      "0": "Cuando Neuvillette entra en el campo de batalla, obtiene 1 carga del efecto “gloria del legado draconiano” del talento pasivo “Legatario de toda agua” (es necesario desbloquear el talento pasivo Legatario de toda agua).",
+      "0": "Cuando Neuvillette entra en el campo de batalla, obtiene 1 carga del efecto “gloria del legado draconiano” del talento de ascensión “Legatario de toda agua” (es necesario desbloquear el talento de ascensión Legatario de toda agua).",
       "1": "Además, al ejecutar el Ataque Potenciado: Apercibimiento procesal y el Ataque Cargado: Sentencia ecuánime, su RES a interrupción aumenta."
     }
   },
   "constellation2": {
     "name": "Mandato legal",
     "description": {
-      "0": "Fortalece el talento pasivo “Legatario de toda agua”, de modo que por cada carga de gloria del legado draconiano, el Daño CRIT del Ataque Cargado: Sentencia ecuánime aumenta en un 14%, hasta un máximo del 42%.",
-      "1": "Es necesario desbloquear el talento pasivo “Legatario de toda agua”."
+      "0": "Fortalece el talento de ascensión “Legatario de toda agua”, de modo que por cada carga de gloria del legado draconiano, el Daño CRIT del Ataque Cargado: Sentencia ecuánime aumenta en un 14%, hasta un máximo del 42%.",
+      "1": "Es necesario desbloquear el talento de ascensión “Legatario de toda agua”."
     }
   },
   "constellation3": {

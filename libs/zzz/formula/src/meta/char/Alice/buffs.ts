@@ -1,0 +1,122 @@
+// WARNING: Generated file, do not modify
+export const buffs = {
+  core_anom_mv_mult_: {
+    sheet: 'Alice',
+    name: 'core_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'anom_mv_mult_',
+      sheet: 'Alice',
+      attribute: 'physical',
+      name: 'core_anom_mv_mult_',
+    },
+  },
+  core_addl_disorder_: {
+    sheet: 'Alice',
+    name: 'core_addl_disorder_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'addl_disorder_',
+      sheet: 'Alice',
+      attribute: 'physical',
+      name: 'core_addl_disorder_',
+    },
+  },
+  core_physical_anomBuildup_: {
+    sheet: 'Alice',
+    name: 'core_physical_anomBuildup_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomBuildup_',
+      sheet: 'Alice',
+      attribute: 'physical',
+      name: 'core_physical_anomBuildup_',
+    },
+  },
+  ability_anomProf: {
+    sheet: 'Alice',
+    name: 'ability_anomProf',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomProf',
+      sheet: 'Alice',
+      name: 'ability_anomProf',
+    },
+  },
+  m1_defRed_: {
+    sheet: 'Alice',
+    name: 'm1_defRed_',
+    tag: {
+      et: 'display',
+      qt: 'common',
+      q: 'defRed_',
+      sheet: 'Alice',
+      name: 'm1_defRed_',
+    },
+  },
+  m2_physical_anomaly_buff_: {
+    sheet: 'Alice',
+    name: 'm2_physical_anomaly_buff_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'buff_',
+      sheet: 'Alice',
+      attribute: 'physical',
+      damageType1: 'anomaly',
+      name: 'm2_physical_anomaly_buff_',
+    },
+  },
+  m2_physical_disorder_buff_: {
+    sheet: 'Alice',
+    name: 'm2_physical_disorder_buff_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'buff_',
+      sheet: 'Alice',
+      attribute: 'physical',
+      damageType1: 'disorder',
+      name: 'm2_physical_disorder_buff_',
+    },
+  },
+  m4_physical_resIgn_: {
+    sheet: 'Alice',
+    name: 'm4_physical_resIgn_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'resIgn_',
+      sheet: 'Alice',
+      attribute: 'physical',
+      name: 'm4_physical_resIgn_',
+    },
+  },
+  m4_basic_anomBuildup_: {
+    sheet: 'Alice',
+    name: 'm4_basic_anomBuildup_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomBuildup_',
+      sheet: 'Alice',
+      damageType1: 'basic',
+      name: 'm4_basic_anomBuildup_',
+    },
+  },
+  m6_crit_: {
+    sheet: 'Alice',
+    name: 'm6_crit_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_',
+      sheet: 'Alice',
+      name: 'm6_crit_',
+    },
+  },
+} as const

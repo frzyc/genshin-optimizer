@@ -1,0 +1,29 @@
+{
+  "setName": "Đêm Trời Hé Lộ",
+  "setEffects": {
+    "2": "Tăng 80 điểm Tinh Thông Nguyên Tố.",
+    "4": "Khi nhân vật trong đội ở gần kích hoạt phản ứng Nguyệt, nếu người trang bị trong trận, sẽ nhận được hiệu quả \"Trăng Sáng - Ý Niệm\" trong 4s: Khi Nguyệt Triệu của đội là Hé Sáng/Rực Sáng, sẽ tăng 15%/30% Tỷ Lệ Bạo Kích. Với mỗi hiệu quả \"Trăng Sáng\" khác nhau mà nhân vật trong đội sở hữu, tất cả nhân vật trong đội sẽ tăng 10% sát thương phản ứng Nguyệt. Hiệu quả sản sinh từ \"Trăng Sáng\" sẽ không thể cộng dồn."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hoa Khao Khát Chân Thật",
+      "desc": "Thánh vật được chạm khắc thành hình hoa, nó dường như tượng trưng cho sự hiện diện đáng sợ đang nở rộ như một bông hoa."
+    },
+    "plume": {
+      "name": "Lông Vũ Trọng Tội",
+      "desc": "Trang sức lông vũ đeo trên chiếc mũ, không hề phù hợp với giới quý tộc Snezhnaya xa hoa."
+    },
+    "sands": {
+      "name": "Đồng Hồ Khải Huyền",
+      "desc": "Chiếc đồng hồ tinh xảo được vận hành bởi sức mạnh thần bí, nhưng dường như công dụng của nó không phải là xem thời gian."
+    },
+    "goblet": {
+      "name": "Ly Rượu Tràn Trề",
+      "desc": "Ly rượu đặc biệt dùng trong các buổi tiệc cung đình, từng được dùng để biểu diễn một màn ảo thuật nào đó."
+    },
+    "circlet": {
+      "name": "Vương Miện Vĩnh Kiếp",
+      "desc": "Vương miện được chế tạo dựa trên vòng đội đầu của tù nhân. Có lẽ trong lòng ai đó, tình yêu và tội ác vốn có cùng nguồn gốc."
+    }
+  }
+}

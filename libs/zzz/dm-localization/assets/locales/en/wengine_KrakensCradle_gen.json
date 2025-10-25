@@ -1,0 +1,14 @@
+{
+  "name": "Kraken's Cradle",
+  "desc": "...",
+  "desc2": "Equip to increase Rupture Agents' combat capabilities",
+  "desc3": "...",
+  "phase": "Heartfelt Caress",
+  "phaseDescs": [
+    "When the equipper's HP decreases, their <ct color=#98EFF0>Ice Sheer DMG</ct> increases by <ct color=#2BAD00>6%</ct>, stacking up to 3 times and lasting 25s. The duration of each stack is calculated separately. This effect can trigger once every 0.5s. When the equipper's HP falls to 50% of max HP or below, CRIT Rate increases by <ct color=#2BAD00>20%</ct>.",
+    "When the equipper's HP decreases, their <ct color=#98EFF0>Ice Sheer DMG</ct> increases by <ct color=#2BAD00>7%</ct>, stacking up to 3 times and lasting 25s. The duration of each stack is calculated separately. This effect can trigger once every 0.5s. When the equipper's HP falls to 50% of max HP or below, CRIT Rate increases by <ct color=#2BAD00>23%</ct>.",
+    "When the equipper's HP decreases, their <ct color=#98EFF0>Ice Sheer DMG</ct> increases by <ct color=#2BAD00>8%</ct>, stacking up to 3 times and lasting 25s. The duration of each stack is calculated separately. This effect can trigger once every 0.5s. When the equipper's HP falls to 50% of max HP or below, CRIT Rate increases by <ct color=#2BAD00>26%</ct>.",
+    "When the equipper's HP decreases, their <ct color=#98EFF0>Ice Sheer DMG</ct> increases by <ct color=#2BAD00>9%</ct>, stacking up to 3 times and lasting 25s. The duration of each stack is calculated separately. This effect can trigger once every 0.5s. When the equipper's HP falls to 50% of max HP or below, CRIT Rate increases by <ct color=#2BAD00>29%</ct>.",
+    "When the equipper's HP decreases, their <ct color=#98EFF0>Ice Sheer DMG</ct> increases by <ct color=#2BAD00>10%</ct>, stacking up to 3 times and lasting 25s. The duration of each stack is calculated separately. This effect can trigger once every 0.5s. When the equipper's HP falls to 50% of max HP or below, CRIT Rate increases by <ct color=#2BAD00>32%</ct>."
+  ]
+}

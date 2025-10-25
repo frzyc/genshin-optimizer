@@ -71,7 +71,7 @@
       "0": "Libera a energia de Mehrak completamente, criando um espaço mapeado cúbico que causa <dendro>Dano Dendro em AdE</dendro> contra os inimigos dentro dele, explode todos os Núcleos Dendro dentro da AdE e fortalece as habilidades de combate de Kaveh por um tempo:",
       "1": [
         " Aumenta a AdE dos Ataques Normais, Carregados e Imersivos de Kaveh, e converte seu Dano de Ataque em <dendro>Dano Dendro</dendro> que não pode ser substituído;",
-        " Núcleos Dendro criados por todos os membros da sua própria equipe, através da reação de Florescimento, causarão mais Dano ao explodirem;",
+        " Núcleos Dendro criados por todos os membros da sua própria equipe, através da reação de Florescimento ou Florescimento Lunar, causarão mais Dano ao explodirem;",
         " Aumenta a Resistência contra Interrupção de Kaveh."
       ],
       "2": "Esses efeitos serão removidos quando Kaveh sair do campo de batalha.",
@@ -138,7 +138,7 @@
   "constellation4": {
     "name": "Festa dos Cem Pilares",
     "description": {
-      "0": "Núcleos Dendro criados pela reação de Florescimento de Kaveh têm o Dano aumentado em 60%."
+      "0": "Núcleos Dendro criados pela reação de Florescimento ou Florescimento Lunar de Kaveh têm o Dano aumentado em 60%."
     }
   },
   "constellation5": {

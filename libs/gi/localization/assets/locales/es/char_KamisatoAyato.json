@@ -1,0 +1,20 @@
+{
+  "skill": {
+    "unableToAuto": "Incapaz de usar ataques Cargados o Descendentes",
+    "namisenStacks": "Oleaje Centelleante",
+    "shun_dmgInc": "<hydro>Daño de hidroespada aumentado</hydro>"
+  },
+  "passive1": {
+    "afterUse": "Cargas de Oleaje Centelleante ganadas despues de usar la habilidad",
+    "afterExplode": "Cargas de oleaje centelleante ganadas despues de que la ilusión de agua explote"
+  },
+  "c1": {
+    "shun_dmg_": "<hydro>Bonificación de Daño de Hidroespada</hydro>"
+  },
+  "c2": {
+    "addlStacks": "Cargas de Oleaje centelleante aumentadas"
+  },
+  "c6": {
+    "dmg": "Daño de Fuente Infinita"
+  }
+}

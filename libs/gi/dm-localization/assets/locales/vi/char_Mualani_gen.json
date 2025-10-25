@@ -141,7 +141,7 @@
     "name": "Mualani, Dốc Toàn Lực!",
     "description": {
       "0": "Khi tiến vào trạng thái Dạ Hồn Chúc Phúc, Mualani nhận 2 tầng Động Lượng Sóng của <strong>Cá Mập Xuyên Sóng</strong>; Khi Mualani nhận Bóng Nổi, sẽ nhận được 1 tầng Động Lượng Sóng.",
-      "1": "Ngoài ra, trong thời gian của một lần Dạ Hồn Chúc Phúc, khi Mualani nhận 2 Bóng Nổi sẽ hồi phục thêm 12 điểm Dạ Hồn trong vòng 2s. Hiệu quả này cần mở khóa thiên phú cố định \"Bóng Nước Kháng Nhiệt\"."
+      "1": "Ngoài ra, trong thời gian của một lần Dạ Hồn Chúc Phúc, khi Mualani nhận 2 Bóng Nổi sẽ hồi phục thêm 12 điểm Dạ Hồn trong vòng 2s. Hiệu quả này cần mở khóa thiên phú đột phá \"Bóng Nước Kháng Nhiệt\"."
     }
   },
   "constellation3": {
@@ -154,7 +154,7 @@
   "constellation4": {
     "name": "Cá Mập Ăn Bóng Nước",
     "description": {
-      "0": "Khi nhận được Bóng Nổi, Mualani hồi phục 8 điểm Năng Lượng Nguyên Tố; Hiệu quả này cần mở khóa thiên phú cố định \"Bóng Nước Kháng Nhiệt\".",
+      "0": "Khi nhận được Bóng Nổi, Mualani hồi phục 8 điểm Năng Lượng Nguyên Tố; Hiệu quả này cần mở khóa thiên phú đột phá \"Bóng Nước Kháng Nhiệt\".",
       "1": "Ngoài ra, sát thương gây ra từ <strong>Cá Mập Nổ Dồn Dập</strong> tăng 75%."
     }
   },

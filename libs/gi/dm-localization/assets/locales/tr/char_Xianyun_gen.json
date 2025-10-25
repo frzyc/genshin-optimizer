@@ -139,9 +139,9 @@
     "name": "Dünyadan Uzak",
     "description": {
       "0": "<strong>Şafaktaki Beyaz Bulutlar</strong> tarafından oluşturulan bir Göğe Uzanan Merdiven kullandıktan sonra 15sn boyunca Xianyun'un Saldırısı %20 artar.",
-      "1": "Ayrıca \"Kendi Diyarında Bir Adeptus\" Pasif Yeteneğinin etkileri güçlenir: <strong>Alacakaranlıkta Beliren Yıldızlar</strong> tarafından oluşturulan Hasır Yıldızın Adeptus Yardımı kademeleri olduğunda, yakındaki aktif karakterlerin Havadan Saldırı şok dalgası Hasarı Xianyun'un Saldırısının %400'ü kadar artar. Bu şekilde kazanılabilecek en fazla Hasar artışı 18.000'dir.",
+      "1": "Ayrıca \"Kendi Diyarında Bir Adeptus\" Yükseltme Yeteneğinin etkileri güçlenir: <strong>Alacakaranlıkta Beliren Yıldızlar</strong> tarafından oluşturulan Hasır Yıldızın Adeptus Yardımı kademeleri olduğunda, yakındaki aktif karakterlerin Havadan Saldırı şok dalgası Hasarı Xianyun'un Saldırısının %400'ü kadar artar. Bu şekilde kazanılabilecek en fazla Hasar artışı 18.000'dir.",
       "2": "Her bir Havadan Saldırı şok dalgası Hasarı, bu Hasar artışı etkisini sadece bir düşmana uygulayabilir. Bu etkiyi her karakter 0,4 saniyede bir tetikleyebilir.",
-      "3": "\"Kendi Diyarında Bir Adeptus\" Pasif Yeteneğinin açılmış olması gerekir."
+      "3": "\"Kendi Diyarında Bir Adeptus\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {

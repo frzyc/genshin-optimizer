@@ -1,12 +1,12 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { Yanagi } from '@genshin-optimizer/zzz/formula'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Yanagi'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
+const cond = Yanagi.conditionals
+const buff = Yanagi.buffs
 
 // TODO: check basic attack and ex special text
 // TODO: limit m2 cond to 2 stacks
@@ -37,8 +37,9 @@ const sheet = createBaseSheet(key, {
         {
           type: 'conditional',
           conditional: {
-            label: ch('polarityDisorderCond'),
-            metadata: cond.exSpecial_polarity_disorder,
+            label: (_, value) => ch(`polarityDisorderCond.${value}`),
+            metadata: cond.polarityDisorder,
+            badge: (_, value) => (value === 0 ? null : value),
             fields: [
               fieldForBuff(buff.exSpecial_anom_base_),
               fieldForBuff(buff.exSpecial_anom_flat_dmg),
@@ -55,15 +56,16 @@ const sheet = createBaseSheet(key, {
       ],
     },
     chain: {
-      ChainAttackCelestialHarmony: [
+      UltimateRaieiTenge: [
         {
           type: 'conditional',
           conditional: {
-            label: ch('polarityDisorderCond'),
-            metadata: cond.chain_polarity_disorder,
+            label: (_, value) => ch(`polarityDisorderCond.${value}`),
+            badge: (_, value) => (value === 0 ? null : value),
+            metadata: cond.polarityDisorder,
             fields: [
-              fieldForBuff(buff.chain_anom_base_),
-              fieldForBuff(buff.chain_anom_flat_dmg),
+              fieldForBuff(buff.ult_anom_base_),
+              fieldForBuff(buff.ult_anom_flat_dmg),
             ],
           },
         },

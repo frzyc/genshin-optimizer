@@ -17,16 +17,20 @@ import Jane from './Jane'
 import JuFufu from './JuFufu'
 import Koleda from './Koleda'
 import Lighter from './Lighter'
+import Lucia from './Lucia'
 import Lucy from './Lucy'
 import Lycaon from './Lycaon'
+import Manato from './Manato'
 import Miyabi from './Miyabi'
 import Nekomata from './Nekomata'
 import Nicole from './Nicole'
+import OrphieMagus from './OrphieMagus'
 import PanYinhu from './PanYinhu'
 import Piper from './Piper'
 import Pulchra from './Pulchra'
 import Qingyi from './Qingyi'
 import Rina from './Rina'
+import Seed from './Seed'
 import Seth from './Seth'
 import Soldier0Anby from './Soldier0Anby'
 import Soldier11 from './Soldier11'
@@ -34,6 +38,7 @@ import Soukaku from './Soukaku'
 import Trigger from './Trigger'
 import Vivian from './Vivian'
 import Yanagi from './Yanagi'
+import Yidhari from './Yidhari'
 import Yixuan from './Yixuan'
 import Yuzuha from './Yuzuha'
 import ZhuYuan from './ZhuYuan'
@@ -57,16 +62,20 @@ const data = {
   JuFufu,
   Koleda,
   Lighter,
+  Lucia,
   Lucy,
   Lycaon,
+  Manato,
   Miyabi,
   Nekomata,
   Nicole,
+  OrphieMagus,
   PanYinhu,
   Piper,
   Pulchra,
   Qingyi,
   Rina,
+  Seed,
   Seth,
   Soldier0Anby,
   Soldier11,
@@ -74,6 +83,7 @@ const data = {
   Trigger,
   Vivian,
   Yanagi,
+  Yidhari,
   Yixuan,
   Yuzuha,
   ZhuYuan,

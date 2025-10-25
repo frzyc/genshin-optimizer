@@ -1,0 +1,24 @@
+{
+  "name": "Gece Dokuyanın Sırlar Aynası",
+  "description": {
+    "0": "Ay Hanımı'nın doğuşuna tanıklık ettiği söylenen, kusursuz gümüşten yapılmış bir ayna. Donuk Ayın Çocukları için kıyas kabul etmez ölçüde değerli bir nesne."
+  },
+  "passiveName": "Binyılın İlahisi",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter, Element Becerisiyle Su ya da Doğa Hasarı verdiğinde Uzak Kuzeyin Duası etkisini kazanır: 4,5sn boyunca Element Ustalığı <cryo>60</cryo> artar. Yakındaki bir grup üyesi Ay Çiçeklenmesi tepkimesi tetiklediğinde kuşanan karakter Yeni Ay Mısrası etkisi kazanır: 10sn boyunca Element Becerisi <cryo>60</cryo> artar. Uzak Kuzeyin Duası ve Yeni Ay Mısrası etkileri aynı anda var olduğunda yakındaki tüm grup üyelerinin Çiçeklenme Hasarı <cryo>%120</cryo> artar, Aşırı Çiçeklenme ve Filizlenme Hasarı <cryo>%80</cryo> artar, Ay Çiçeklenmesi Hasarı ise <cryo>%40</cryo> artar. Bu etki birikemez. Bahsi geçen tüm etkiler, kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Kuşanan karakter, Element Becerisiyle Su ya da Doğa Hasarı verdiğinde Uzak Kuzeyin Duası etkisini kazanır: 4,5sn boyunca Element Ustalığı <cryo>75</cryo> artar. Yakındaki bir grup üyesi Ay Çiçeklenmesi tepkimesi tetiklediğinde kuşanan karakter Yeni Ay Mısrası etkisi kazanır: 10sn boyunca Element Becerisi <cryo>75</cryo> artar. Uzak Kuzeyin Duası ve Yeni Ay Mısrası etkileri aynı anda var olduğunda yakındaki tüm grup üyelerinin Çiçeklenme Hasarı <cryo>%150</cryo> artar, Aşırı Çiçeklenme ve Filizlenme Hasarı <cryo>%100</cryo> artar, Ay Çiçeklenmesi Hasarı ise <cryo>%50</cryo> artar. Bu etki birikemez. Bahsi geçen tüm etkiler, kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Kuşanan karakter, Element Becerisiyle Su ya da Doğa Hasarı verdiğinde Uzak Kuzeyin Duası etkisini kazanır: 4,5sn boyunca Element Ustalığı <cryo>90</cryo> artar. Yakındaki bir grup üyesi Ay Çiçeklenmesi tepkimesi tetiklediğinde kuşanan karakter Yeni Ay Mısrası etkisi kazanır: 10sn boyunca Element Becerisi <cryo>90</cryo> artar. Uzak Kuzeyin Duası ve Yeni Ay Mısrası etkileri aynı anda var olduğunda yakındaki tüm grup üyelerinin Çiçeklenme Hasarı <cryo>%180</cryo> artar, Aşırı Çiçeklenme ve Filizlenme Hasarı <cryo>%120</cryo> artar, Ay Çiçeklenmesi Hasarı ise <cryo>%60</cryo> artar. Bu etki birikemez. Bahsi geçen tüm etkiler, kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Kuşanan karakter, Element Becerisiyle Su ya da Doğa Hasarı verdiğinde Uzak Kuzeyin Duası etkisini kazanır: 4,5sn boyunca Element Ustalığı <cryo>105</cryo> artar. Yakındaki bir grup üyesi Ay Çiçeklenmesi tepkimesi tetiklediğinde kuşanan karakter Yeni Ay Mısrası etkisi kazanır: 10sn boyunca Element Becerisi <cryo>105</cryo> artar. Uzak Kuzeyin Duası ve Yeni Ay Mısrası etkileri aynı anda var olduğunda yakındaki tüm grup üyelerinin Çiçeklenme Hasarı <cryo>%210</cryo> artar, Aşırı Çiçeklenme ve Filizlenme Hasarı <cryo>%140</cryo> artar, Ay Çiçeklenmesi Hasarı ise <cryo>%70</cryo> artar. Bu etki birikemez. Bahsi geçen tüm etkiler, kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Kuşanan karakter, Element Becerisiyle Su ya da Doğa Hasarı verdiğinde Uzak Kuzeyin Duası etkisini kazanır: 4,5sn boyunca Element Ustalığı <cryo>120</cryo> artar. Yakındaki bir grup üyesi Ay Çiçeklenmesi tepkimesi tetiklediğinde kuşanan karakter Yeni Ay Mısrası etkisi kazanır: 10sn boyunca Element Becerisi <cryo>120</cryo> artar. Uzak Kuzeyin Duası ve Yeni Ay Mısrası etkileri aynı anda var olduğunda yakındaki tüm grup üyelerinin Çiçeklenme Hasarı <cryo>%240</cryo> artar, Aşırı Çiçeklenme ve Filizlenme Hasarı <cryo>%160</cryo> artar, Ay Çiçeklenmesi Hasarı ise <cryo>%80</cryo> artar. Bu etki birikemez. Bahsi geçen tüm etkiler, kuşanan karakter alanda olmasa da tetiklenebilir."
+    }
+  }
+}

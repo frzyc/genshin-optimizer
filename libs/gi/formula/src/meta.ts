@@ -240,6 +240,13 @@ export const conditionals = {
     isActive: { sheet: 'Nahida', name: 'isActive', type: 'bool' },
     partyInBurst: { sheet: 'Nahida', name: 'partyInBurst', type: 'bool' },
   },
+  NightOfTheSkysUnveiling: {
+    someBoolConditional: {
+      sheet: 'NightOfTheSkysUnveiling',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
   NighttimeWhispersInTheEchoingWoods: {
     someBoolConditional: {
       sheet: 'NighttimeWhispersInTheEchoingWoods',
@@ -344,6 +351,13 @@ export const conditionals = {
   ShimenawasReminiscence: {
     someBoolConditional: {
       sheet: 'ShimenawasReminiscence',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
+  SilkenMoonsSerenade: {
+    someBoolConditional: {
+      sheet: 'SilkenMoonsSerenade',
       name: 'someBoolConditional',
       type: 'bool',
     },
@@ -460,6 +474,20 @@ export const conditionals = {
   },
 } as const
 export const formulas = {
+  Aino: {
+    normal1: {
+      sheet: 'Aino',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Aino',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Albedo: {
     normal1: {
       sheet: 'Albedo',
@@ -1059,6 +1087,20 @@ export const formulas = {
       },
     },
   },
+  Flins: {
+    normal1: {
+      sheet: 'Flins',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Flins',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Freminet: {
     normal1: {
       sheet: 'Freminet',
@@ -1381,6 +1423,20 @@ export const formulas = {
       },
     },
   },
+  Lauma: {
+    normal1: {
+      sheet: 'Lauma',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Lauma',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Layla: {
     normal1: {
       sheet: 'Layla',
@@ -1636,6 +1692,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Navia',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Nefer: {
+    normal1: {
+      sheet: 'Nefer',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nefer',
         move: 'normal',
         name: 'normal1',
       },

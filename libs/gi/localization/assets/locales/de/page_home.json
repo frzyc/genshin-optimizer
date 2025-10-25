@@ -1,3 +1,34 @@
 {
-  "intro": "Der <strong>ultimative</strong> <3><i>Genshin Impact</i></3>-Rechner, GO behält den Überblick über dein Artefakt-/Waffen-/Charakterinventar und hilft dir, mit was du hast den besten Build zu erstellen, basierend auf deiner Spielweise."
+  "intro": "Der <strong>ultimative</strong> <3><i>Genshin Impact</i></3>-Rechner, GO behält den Überblick über dein Artefakt-/Waffen-/Charakterinventar und hilft dir, mit was du hast den besten Build zu erstellen, basierend auf deiner Spielweise.",
+  "quickLinksCard": {
+    "buttons": {
+      "scanners": {
+        "title": "Automatische Scanner"
+      },
+      "kqm": {
+        "title": "Keqing Mains"
+      },
+      "devDiscord": {
+        "title": "Genshin Entwickler Discord"
+      },
+      "good": {
+        "title": "GOOD Dokumentation"
+      },
+      "patchNotes": {
+        "title": "Patchnotizen"
+      }
+    }
+  },
+  "inventoryCard": {
+    "title": "GO Inventar"
+  },
+  "teamCard": {
+    "title": "Lern das Team Kennen",
+    "jobTitle": {
+      "dev": "Entwickler",
+      "mod": "Moderator",
+      "admin": "Administrator",
+      "translator": "Übersetzungsmanager"
+    }
+  }
 }

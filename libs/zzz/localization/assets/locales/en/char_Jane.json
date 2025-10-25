@@ -2,6 +2,5 @@
   "passionCond": "While in the Passion state",
   "abilityCond": "When the enemy is already suffering from an Attribute Anomaly",
   "gnawedCond": "Enemy in Gnawed state",
-  "m4Cond": "When any squad member triggers the Assault or Disorder effects",
-  "m6_additional_dmg": "Additional DMG"
+  "m4Cond": "When any squad member triggers the Assault or Disorder effects"
 }

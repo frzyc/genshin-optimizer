@@ -119,6 +119,7 @@ export class ArtifactDataManager extends DataManager<
       substats,
       location,
       lock,
+      unactivatedSubstats,
     } = artifact
     return {
       setKey,
@@ -132,6 +133,10 @@ export class ArtifactDataManager extends DataManager<
       })),
       location,
       lock,
+      unactivatedSubstats: unactivatedSubstats?.map((substat) => ({
+        key: substat.key,
+        value: substat.value,
+      })),
     }
   }
 
@@ -329,6 +334,13 @@ export function cachedArtifact(
     Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 4 : 4)
   )
   const mainStatVal = getMainStatDisplayValue(mainStatKey, rarity, level)
+  let unactivatedSubstats: ICachedSubstat[] | undefined =
+    flex.unactivatedSubstats?.map((substat) => ({
+      ...substat,
+      rolls: [],
+      efficiency: 0,
+      accurateValue: substat.value,
+    }))
 
   const errors: string[] = []
   const substats: ICachedSubstat[] = flex.substats.map((substat) => ({
@@ -348,6 +360,7 @@ export function cachedArtifact(
     level,
     substats,
     mainStatVal,
+    unactivatedSubstats,
   }
 
   const allPossibleRolls: { index: number; substatRolls: number[][] }[] = []
@@ -357,49 +370,56 @@ export function cachedArtifact(
     return value / getSubstatValue(key)
   }
 
-  substats.forEach((substat, index): void => {
-    const { key, value } = substat
-    if (!key) {
-      substat.value = 0
-      return
-    }
-    substat.efficiency = efficiency(value, key)
-
-    const possibleRolls = getSubstatRolls(key, value, rarity)
-
-    if (possibleRolls.length) {
-      // Valid Substat
-      const possibleLengths = new Set(possibleRolls.map((roll) => roll.length))
-
-      if (possibleLengths.size !== 1) {
-        // Ambiguous Rolls
-        allPossibleRolls.push({ index, substatRolls: possibleRolls })
-      } else {
-        // Unambiguous Rolls
-        totalUnambiguousRolls += possibleRolls[0].length
+  const getSubstatEffRoll = (substats: ICachedSubstat[] | undefined) => {
+    substats?.forEach((substat, index): void => {
+      const { key, value } = substat
+      if (!key) {
+        substat.value = 0
+        return
       }
+      substat.efficiency = efficiency(value, key)
 
-      substat.rolls = possibleRolls.reduce((best, current) =>
-        best.length < current.length ? best : current
-      )
-      substat.efficiency = efficiency(
-        substat.rolls.reduce((a: number, b: number) => a + b, 0),
-        key
-      )
-      substat.accurateValue = substat.rolls.reduce(
-        (a: number, b: number) => a + b,
-        0
-      )
-    } else {
-      // Invalid Substat
-      substat.rolls = []
-      errors.push(
-        `Invalid substat ${
-          statMap[substat.key as keyof typeof statMap] ?? substat.key
-        }`
-      )
-    }
-  })
+      const possibleRolls = getSubstatRolls(key, value, rarity)
+
+      if (possibleRolls.length) {
+        // Valid Substat
+        const possibleLengths = new Set(
+          possibleRolls.map((roll) => roll.length)
+        )
+
+        if (possibleLengths.size !== 1) {
+          // Ambiguous Rolls
+          allPossibleRolls.push({ index, substatRolls: possibleRolls })
+        } else {
+          // Unambiguous Rolls
+          totalUnambiguousRolls += possibleRolls[0].length
+        }
+
+        substat.rolls = possibleRolls.reduce((best, current) =>
+          best.length < current.length ? best : current
+        )
+        substat.efficiency = efficiency(
+          substat.rolls.reduce((a: number, b: number) => a + b, 0),
+          key
+        )
+        substat.accurateValue = substat.rolls.reduce(
+          (a: number, b: number) => a + b,
+          0
+        )
+      } else {
+        // Invalid Substat
+        substat.rolls = []
+        errors.push(
+          `Invalid substat ${
+            statMap[substat.key as keyof typeof statMap] ?? substat.key
+          }`
+        )
+      }
+    })
+  }
+
+  getSubstatEffRoll(substats)
+  getSubstatEffRoll(unactivatedSubstats)
 
   if (errors.length) return { artifact: validated, errors }
 
@@ -445,6 +465,11 @@ export function cachedArtifact(
 
   tryAllSubstats([], Infinity, totalUnambiguousRolls)
 
+  if (substats[3].rolls.length && unactivatedSubstats?.length) {
+    validated.unactivatedSubstats = []
+    unactivatedSubstats = []
+  }
+
   const totalRolls = substats.reduce(
     (accu, { rolls }) => accu + rolls.length,
     0
@@ -478,7 +503,8 @@ export function validateArtifact(
 ): IArtifact | undefined {
   if (!obj || typeof obj !== 'object') return undefined
   const { setKey, rarity, slotKey } = obj as IArtifact
-  let { level, mainStatKey, substats, location, lock } = obj as IArtifact
+  let { level, mainStatKey, substats, location, lock, unactivatedSubstats } =
+    obj as IArtifact
 
   if (
     !allArtifactSetKeys.includes(setKey) ||
@@ -497,14 +523,24 @@ export function validateArtifact(
   if (level > artMaxLevel[rarity]) return undefined
 
   substats = parseSubstats(substats, rarity, allowZeroSub)
+  unactivatedSubstats = parseSubstats(unactivatedSubstats, rarity, allowZeroSub)
+
   // substat cannot have same key as mainstat
-  if (substats.find((sub) => sub.key === mainStatKey)) return undefined
+  if (
+    substats.find((sub) => sub.key === mainStatKey) ||
+    unactivatedSubstats.find((sub) => sub.key === mainStatKey)
+  )
+    return undefined
   lock = !!lock
   const plausibleMainStats = artSlotMainKeys[slotKey]
   if (!(plausibleMainStats as unknown as MainStatKey[]).includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return undefined // ambiguous mainstat
   if (!location || !allLocationCharacterKeys.includes(location)) location = ''
+  if (level >= 4 && !substats[3].key) {
+    substats[3] = unactivatedSubstats[0]
+    unactivatedSubstats = []
+  }
   return {
     setKey,
     rarity,
@@ -514,6 +550,7 @@ export function validateArtifact(
     substats,
     location,
     lock,
+    unactivatedSubstats,
   }
 }
 function defSub(): ISubstat {
@@ -524,7 +561,8 @@ function parseSubstats(
   rarity: ArtifactRarity,
   allowZeroSub = false
 ): ISubstat[] {
-  if (!Array.isArray(obj)) return new Array(4).map((_) => defSub())
+  if (!obj || !Array.isArray(obj))
+    return Array.from({ length: 4 }, () => defSub())
   const substats = (obj as ISubstat[])
     .slice(0, 4)
     .map(({ key = '', value = 0 }) => {

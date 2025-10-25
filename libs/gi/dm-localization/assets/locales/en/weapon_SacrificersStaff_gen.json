@@ -1,0 +1,24 @@
+{
+  "name": "Sacrificer's Staff",
+  "description": {
+    "0": "A silver-white polearm, pure and completely without blemish. Legend has it that it was used by the Archpriestesses of Hyperborea in ages past to guide their flock of Frostmoon Scions."
+  },
+  "passiveName": "Untainted Desire",
+  "passiveDescription": {
+    "0": {
+      "0": "For 6s after an Elemental Skill hits an opponent, ATK is increased by <cryo>8%</cryo> and Energy Recharge is increased by <cryo>6%</cryo>. Max 3 stacks. This effect can be triggered even when the equipping character is off-field."
+    },
+    "1": {
+      "0": "For 6s after an Elemental Skill hits an opponent, ATK is increased by <cryo>10%</cryo> and Energy Recharge is increased by <cryo>7.5%</cryo>. Max 3 stacks. This effect can be triggered even when the equipping character is off-field."
+    },
+    "2": {
+      "0": "For 6s after an Elemental Skill hits an opponent, ATK is increased by <cryo>12%</cryo> and Energy Recharge is increased by <cryo>9%</cryo>. Max 3 stacks. This effect can be triggered even when the equipping character is off-field."
+    },
+    "3": {
+      "0": "For 6s after an Elemental Skill hits an opponent, ATK is increased by <cryo>14%</cryo> and Energy Recharge is increased by <cryo>10.5%</cryo>. Max 3 stacks. This effect can be triggered even when the equipping character is off-field."
+    },
+    "4": {
+      "0": "For 6s after an Elemental Skill hits an opponent, ATK is increased by <cryo>16%</cryo> and Energy Recharge is increased by <cryo>12%</cryo>. Max 3 stacks. This effect can be triggered even when the equipping character is off-field."
+    }
+  }
+}
