@@ -331,6 +331,7 @@ export function ArtifactEditor({
   const artStat = artifact && getArtSetStat(artifact.setKey)
   const reset = useCallback(() => {
     cancelEdit?.()
+    setIsUnactivatedSubstat(false)
     artifactDispatch({ type: 'reset' })
     setScannedData(undefined)
   }, [cancelEdit, artifactDispatch])
@@ -524,7 +525,11 @@ export function ArtifactEditor({
     if (level >= 4) {
       setIsUnactivatedSubstat(false)
     }
-  }, [artifact?.unactivatedSubstats, level])
+
+    if (artifactIdToEdit && artifact?.unactivatedSubstats?.[0]?.key) {
+      setIsUnactivatedSubstat(true)
+    }
+  }, [artifact?.unactivatedSubstats, artifactIdToEdit, level])
 
   const removeId = (artifactIdToEdit !== 'new' && artifactIdToEdit) || old?.id
   return (
