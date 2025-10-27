@@ -6,6 +6,7 @@ import {
   quadrinomial,
   rollCountProb,
 } from './mathUtil'
+import { gaussianPE, mvnPE_bad } from './mvncdf'
 
 test('quadranomial', () => {
   expect(quadrinomial(1, 1)).toEqual(1)
@@ -56,4 +57,19 @@ test('crawlUpgrade', () => {
     const p = rollCountProb(ns)
     expect(p).toEqual(correctValues[strKey])
   })
+})
+
+test('mvncdf', () => {
+  const r1 = gaussianPE(.3, .2, .1)
+  const r2 = mvnPE_bad([.3], [[.2]], [.1])
+  expect(r1.p).toBeCloseTo(r2.p)
+  expect(r1.upAvg).toBeCloseTo(r2.upAvg)
+
+  // Ensure edge case: 0 variance is consistent
+  const s1 = gaussianPE(0, 0, 0)
+  const s2 = mvnPE_bad([0], [[0]], [0])
+  expect(s1.p).toEqual(0)
+  expect(s1.upAvg).toEqual(0)
+  expect(s2.p).toEqual(0)
+  expect(s2.upAvg).toEqual(0)
 })

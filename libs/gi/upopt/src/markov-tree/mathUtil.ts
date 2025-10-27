@@ -20,7 +20,7 @@ export function quadrinomial(n: number, k: number) {
   while (n >= quadrinomials.length) {
     const i = quadrinomials.length - 1
     quadrinomials.push(
-      Array.from({ length: quadrinomials.length * 4 - 1 }, (_, j) => {
+      Array.from({ length: quadrinomials.length * 3 + 1 }, (_, j) => {
         return (
           (quadrinomials[i][j - 3] ?? 0) +
           (quadrinomials[i][j - 2] ?? 0) +
@@ -98,6 +98,8 @@ export function rollCountProb(n1234: number[], reshape?: ReshapeInfo) {
   if (rollCountPCache[key] !== undefined) return rollCountPCache[key]
 
   const N = n1234.reduce((a, b) => a + b, 0)
+  if (N > 12)
+    throw new Error('rollCountProb only supports total rolls up to 12 due to factorial implementation.')
   const factNs = n1234.reduce((a, b) => a * factorial(b), 1)
   if (!reshape || reshape.min === 0 || reshape.total > reshape.min) {
     const p = (factorial(N) / factNs) * 4 ** -N

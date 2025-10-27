@@ -5,7 +5,11 @@ import { erf, gaussPDF } from './mathUtil'
  * name as such due to convention from the MATLAB/scipy/FORTRAN implementations.
  */
 
-/** From a 1D Gaussian mean & variance, get P(x > mu) and E[x | x > mu] */
+/**
+ * For a 1D Gaussian (mu, var) and threshold x, return:
+ * - p = P[X > x]
+ * - upAvg = E[X - x | X > x]
+ */
 export function gaussianPE(
   mu: number,
   variance: number,
@@ -47,7 +51,7 @@ export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
     ptot *= p
   }
 
-  let p0 = mu[0] < x[0] ? 0 : 1 // Default if variance too small
+  let p0 = mu[0] > x[0] ? 1 : 0 // Default if variance too small
   if (cov[0][0] > 1e-5) {
     const z0 = (x[0] - mu[0]) / Math.sqrt(cov[0][0])
     p0 = (1 - erf(z0 / Math.sqrt(2))) / 2

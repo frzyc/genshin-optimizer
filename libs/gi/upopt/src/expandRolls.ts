@@ -12,7 +12,7 @@ export function expandRollsLevel({
 }: RollsLevelNode): { p: number; n: ValuesLevelNode }[] {
   // TODO: Given a rolls node, return a list of Values nodes and evaluate them.
   const rollValues = subs.map(({ key, rolls }) => {
-    const rollValue = range(7 * rolls, 10 * rolls + 1)
+    const rollValue = range(7 * rolls, 10 * rolls)
     return rollValue.map((v) => ({
       p: 4 ** -rolls * quadrinomial(rolls, v - 7 * rolls),
       stat: {
