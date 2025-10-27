@@ -99,7 +99,9 @@ export function rollCountProb(n1234: number[], reshape?: ReshapeInfo) {
 
   const N = n1234.reduce((a, b) => a + b, 0)
   if (N > 12)
-    throw new Error('rollCountProb only supports total rolls up to 12 due to factorial implementation.')
+    throw new Error(
+      'rollCountProb only supports total rolls up to 12 due to factorial implementation.'
+    )
   const factNs = n1234.reduce((a, b) => a * factorial(b), 1)
   if (!reshape || reshape.min === 0 || reshape.total > reshape.min) {
     const p = (factorial(N) / factNs) * 4 ** -N

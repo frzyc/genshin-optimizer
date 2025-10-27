@@ -60,8 +60,8 @@ test('crawlUpgrade', () => {
 })
 
 test('mvncdf', () => {
-  const r1 = gaussianPE(.3, .2, .1)
-  const r2 = mvnPE_bad([.3], [[.2]], [.1])
+  const r1 = gaussianPE(0.3, 0.2, 0.1)
+  const r2 = mvnPE_bad([0.3], [[0.2]], [0.1])
   expect(r1.p).toBeCloseTo(r2.p)
   expect(r1.upAvg).toBeCloseTo(r2.upAvg)
 
