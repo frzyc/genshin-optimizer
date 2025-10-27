@@ -1,0 +1,24 @@
+{
+  "name": "Ruínas Ensanguentadas",
+  "description": {
+    "0": "Uma lança longa pintada de preto por causa de incontáveis batalhas, reluz com um brilho etéreo sob a luz azulada fantasmagórica do fogo da lanterna."
+  },
+  "passiveName": "Tributo à Lamentação",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 3.5s depois de lançar o Supremo, aumenta o Dano de Carga Lunar causado pelo personagem que está com essa arma equipada em <cryo>36%</cryo>. Além disso, quando o personagem que está com essa arma equipada desencadear Carga Lunar, obtém Canção Desolada: aumenta o Dano do Supremo em <cryo>28%</cryo> por 6s, e regenera <cryo>12</cryo> de Energia Elemental para o personagem que está com essa arma equipada. Esse efeito de regeneração de Energia Elemental pode ser ativado uma vez a cada 14s."
+    },
+    "1": {
+      "0": "Nos 3.5s depois de lançar o Supremo, aumenta o Dano de Carga Lunar causado pelo personagem que está com essa arma equipada em <cryo>48%</cryo>. Além disso, quando o personagem que está com essa arma equipada desencadear Carga Lunar, obtém Canção Desolada: aumenta o Dano do Supremo em <cryo>35%</cryo> por 6s, e regenera <cryo>13</cryo> de Energia Elemental para o personagem que está com essa arma equipada. Esse efeito de regeneração de Energia Elemental pode ser ativado uma vez a cada 14s."
+    },
+    "2": {
+      "0": "Nos 3.5s depois de lançar o Supremo, aumenta o Dano de Carga Lunar causado pelo personagem que está com essa arma equipada em <cryo>60%</cryo>. Além disso, quando o personagem que está com essa arma equipada desencadear Carga Lunar, obtém Canção Desolada: aumenta o Dano do Supremo em <cryo>42%</cryo> por 6s, e regenera <cryo>14</cryo> de Energia Elemental para o personagem que está com essa arma equipada. Esse efeito de regeneração de Energia Elemental pode ser ativado uma vez a cada 14s."
+    },
+    "3": {
+      "0": "Nos 3.5s depois de lançar o Supremo, aumenta o Dano de Carga Lunar causado pelo personagem que está com essa arma equipada em <cryo>72%</cryo>. Além disso, quando o personagem que está com essa arma equipada desencadear Carga Lunar, obtém Canção Desolada: aumenta o Dano do Supremo em <cryo>49%</cryo> por 6s, e regenera <cryo>15</cryo> de Energia Elemental para o personagem que está com essa arma equipada. Esse efeito de regeneração de Energia Elemental pode ser ativado uma vez a cada 14s."
+    },
+    "4": {
+      "0": "Nos 3.5s depois de lançar o Supremo, aumenta o Dano de Carga Lunar causado pelo personagem que está com essa arma equipada em <cryo>84%</cryo>. Além disso, quando o personagem que está com essa arma equipada desencadear Carga Lunar, obtém Canção Desolada: aumenta o Dano do Supremo em <cryo>56%</cryo> por 6s, e regenera <cryo>16</cryo> de Energia Elemental para o personagem que está com essa arma equipada. Esse efeito de regeneração de Energia Elemental pode ser ativado uma vez a cada 14s."
+    }
+  }
+}

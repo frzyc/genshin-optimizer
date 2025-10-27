@@ -8,7 +8,7 @@
   "formulas": "Fórmulas",
   "calculations": "Cálculos",
   "selectCharacter": "Elige un personaje",
-  "removeCharacter": "¿Estás seguro que quieres remover a {{value}}?",
+  "removeCharacter": "¿Estás seguro que quieres remover a {{value}}? Esto también eliminará todos los datos, como configuraciones personalizadas y opciones múltiples, y eliminará a este personaje de cualquier equipo al que esté asignado.",
   "delete": "Borrar personaje",
   "teammates": "Compañeros",
   "hitmode": {
@@ -24,5 +24,27 @@
   },
   "characterName": "Nombre del personaje",
   "teammate": "Compañero {{count}}",
-  "noReaction": "Sin reacciones"
+  "noReaction": "Sin reacciones",
+  "multiTarget": {
+    "title": "Configuración de Objetivo de Multi-Optimización",
+    "addNewTarget": "Añadir Objetivo",
+    "addNewMTarget": "Crear Multi-Opimización"
+  },
+  "addStats": {
+    "title": "Estadísticas Adicionales"
+  },
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "Valor de Tirada mínimo de subestadística",
+      "max": "Valor de Tirada máximo de subestadística",
+      "mid": "Valor de Tirada mediana de subestadística"
+    },
+    "maxTotalRolls": "La configuración actual solo puede tener un máximo de <strong>{{value}}</strong> tiradas.",
+    "maxRolls": "Esta subestadística puede tener un máximo de 30 tiradas.",
+    "maxRollsMain": "Debido a que al menos una estadística principal tiene el mismo atributo, esta subestadística puede tener un máximo de {{value}} tiradas."
+  },
+  "tabTeambuff": {
+    "team_reso": "Resonancia de Equipo",
+    "resonance_tip": "El grupo debe estar completo con 4 personajes para que la Resonancia Elemental tenga efecto."
+  }
 }

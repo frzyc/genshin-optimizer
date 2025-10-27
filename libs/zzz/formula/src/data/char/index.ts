@@ -18,8 +18,10 @@ import Jane from './sheets/Jane'
 import JuFufu from './sheets/JuFufu'
 import Koleda from './sheets/Koleda'
 import Lighter from './sheets/Lighter'
+import Lucia from './sheets/Lucia'
 import Lucy from './sheets/Lucy'
 import Lycaon from './sheets/Lycaon'
+import Manato from './sheets/Manato'
 import Miyabi from './sheets/Miyabi'
 import Nekomata from './sheets/Nekomata'
 import Nicole from './sheets/Nicole'
@@ -37,6 +39,7 @@ import Soukaku from './sheets/Soukaku'
 import Trigger from './sheets/Trigger'
 import Vivian from './sheets/Vivian'
 import Yanagi from './sheets/Yanagi'
+import Yidhari from './sheets/Yidhari'
 import Yixuan from './sheets/Yixuan'
 import Yuzuha from './sheets/Yuzuha'
 import ZhuYuan from './sheets/ZhuYuan'
@@ -60,8 +63,10 @@ const data: TagMapNodeEntries[] = [
   JuFufu,
   Koleda,
   Lighter,
+  Lucia,
   Lucy,
   Lycaon,
+  Manato,
   Miyabi,
   Nekomata,
   Nicole,
@@ -79,6 +84,7 @@ const data: TagMapNodeEntries[] = [
   Trigger,
   Vivian,
   Yanagi,
+  Yidhari,
   Yixuan,
   Yuzuha,
   ZhuYuan,

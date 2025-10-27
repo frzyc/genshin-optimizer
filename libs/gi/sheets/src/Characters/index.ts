@@ -38,7 +38,7 @@ import Escoffier from './Escoffier'
 import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
-// import Flins from './Flins'
+import Flins from './Flins'
 import Freminet from './Freminet'
 import Furina from './Furina'
 import Gaming from './Gaming'
@@ -73,6 +73,7 @@ import Mona from './Mona'
 import Mualani from './Mualani'
 import Nahida from './Nahida'
 import Navia from './Navia'
+import Nefer from './Nefer'
 import Neuvillette from './Neuvillette'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
@@ -157,7 +158,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Eula,
   Faruzan,
   Fischl,
-  // Flins,
+  Flins,
   Freminet,
   Furina,
   Gaming,
@@ -192,6 +193,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Mualani,
   Nahida,
   Navia,
+  Nefer,
   Neuvillette,
   Nilou,
   Ningguang,

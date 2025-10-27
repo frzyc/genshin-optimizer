@@ -1,7 +1,8 @@
 {
-  "c1": "Thi triển <strong>Kazuha nhất đao trảm</strong> làm mới thời gian CD",
-  "c2": "Trong Một khắc gió thu",
+  "c1": "Thi triển <strong>Kazuha Nhất Đao Trảm</strong> làm mới CD",
+  "c2": "Một Khắc Gió Thu tồn tại trên sân",
   "c6": {
-    "after": "Sau khi thi truyển <strong>Chihayaburu</strong> hoặc <strong>Kazuha Nhất đao trảm</strong>"
-  }
+    "after": "Sau khi thi triển <strong>Chihayaburu</strong> hoặc <strong>Kazuha Nhất Đao Trảm</strong>"
+  },
+  "skillPlunge": "Xua Tan Mây Mù"
 }

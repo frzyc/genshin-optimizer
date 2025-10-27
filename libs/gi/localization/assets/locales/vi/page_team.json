@@ -1,0 +1,18 @@
+{
+  "buildInfo": {
+    "build": "Một <strong>Build</strong> bao gồm một vũ khí và 5 thánh di vật.",
+    "tcbuild": "Một <strong>>Build Theorycraft</strong> cho phép định rõ build bằng chỉ số thuần túy."
+  },
+  "buildTcCharOverride": {
+    "btn": "Ghi đè dữ liệu nhân vật cho build TC này"
+  },
+  "team": {
+    "editNameDesc": "Sửa Tên Đội & Mô Tả",
+    "name": "Tên Đội",
+    "desc": "Mô Tả Đội"
+  },
+  "loadout": {
+    "name": "Tên Bộ Trang Bị",
+    "desc": "Mô Tả Bộ Trang Bị"
+  }
+}

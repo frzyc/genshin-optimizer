@@ -1,8 +1,99 @@
 {
+  "addNew": "Thêm nhân vật",
+  "tabs": {
+    "overview": "Tổng quan",
+    "talent": "Thiên Phú",
+    "optimize": "Tối Ưu",
+    "theorycraft": "Theorycraft",
+    "upopt": "Trình Nâng Cấp TDV"
+  },
+  "formulas": "Công thức",
+  "calculations": "Tính toán",
+  "selectCharacter": "Chọn nhân vật",
+  "removeCharacter": "Chắc chắn xóa {{value}} chứ? Việc này cũng sẽ xóa tất cả dữ liệu như trang bị và tối ưu đa mục tiêu, cũng như xóa nhân vật này khỏi các đội hình liên quan.",
+  "delete": "Xóa nhân vật",
+  "teammates": "Đồng đội",
+  "hitmode": {
+    "hit": "ST Không Bạo",
+    "avgHit": "ST T.Bình",
+    "critHit": "ST Đòn Bạo",
+    "global": "Tuân theo quy tắc chung"
+  },
   "tabEquip": {
     "swapWeapon": "Đổi vũ khí",
     "swapArt": "Đổi thánh di vật",
-    "compare": "So sánh với bộ tdv hiện tại"
+    "compare": "So sánh với build hiện tại",
+    "unequipArts": "Gỡ toàn bộ thánh di vật"
   },
-  "characterName": "Tên nhân vật"
+  "characterName": "Tên nhân vật",
+  "teammate": "Đồng đội {{count}}",
+  "noReaction": "Không phản ứng",
+  "multiTarget": {
+    "title": "Cấu hình tối ưu đa mục tiêu",
+    "addNewTarget": "Thêm mục tiêu",
+    "addNewMTarget": "Tạo mục tối ưu đa mục tiêu",
+    "info1": "Ghi chú: Bạn có thể tìm mục tiêu tối ưu đa mục tiêu được tạo bởi cộng đồng ở trong <1>Discord của GO<1/> hoặc trang <3>hướng dẫn về tối ưu đa mục tiêu của KQM</3>, tuy nhiên tính hiệu lực của những cấu hình đó sẽ không thể được đảm bảo.",
+    "info2": "Người dùng có trách nhiệm đảm bảo rằng các thiết lập đã phản ánh chính xác cách sử dụng của bản thân.",
+    "description": "Mô tả",
+    "duplicate": "Trùng lặp",
+    "target_other": "<0>{{count}}</0> Mục Tiêu",
+    "jsonDescWarning": "Có vẻ bạn đang muốn nhập vào cấu hình tối ưu đa mục tiêu. Vào nhầm chỗ rồi! Hãy quay lại một đề mục và nhấn vào <strong>Import Multi-Opt</strong>."
+  },
+  "addStats": {
+    "title": "Thuộc tính thêm",
+    "info": "Bạn có thể dùng mục này để thêm buff/hiệu ứng xấu mà GO không hỗ trợ như buff món ăn, chúc phúc La Hoàn, Siêu Dẫn, v.v.. Xem <1>wiki Genshin Impact</1> để biết thông số cụ thể.",
+    "label": "Thuộc tính thêm mới"
+  },
+  "tabTheorycraft": {
+    "maxTotalRolls": "Build hiện tại chỉ có thể có tối đa <strong>{{value}}</strong> lần nhảy.",
+    "maxRolls": "Dòng phụ này có thể được nhảy tối đa 30 lần.",
+    "maxRollsMain": "Do có ít nhất một dòng chính trùng thuộc tính, dòng này có thể được nhảy tối đa {{value}} lần.",
+    "distribute": "Phân Phối",
+    "compareToggle": {
+      "equipped": "So sánh với hiện tại",
+      "tc": "Hiện chỉ số TC"
+    },
+    "resetDialog": {
+      "title": "Thiết lập lại cấu hình build TC?",
+      "content": "Việc này sẽ xóa cấu hình build TC hiện tại mà bạn đang có."
+    },
+    "copyDialog": {
+      "copyBtn": "Sao chép từ đã trang bị",
+      "title": "Sao chép dữ liệu từ thánh di vật và vũ khí đã trang bị?",
+      "content": "Việc này sẽ xóa cấu hình build TC hiện tại mà bạn đang có, kèm theo dữ liệu từ build đã trang bị."
+    },
+    "kqmsDialog": {
+      "kqmsBtn": "Dùng của KQM",
+      "title": "Dùng của KQM?",
+      "content": "Việc này sẽ thay thế <strong>thiết lập dòng phụ</strong>của bạn với thiết lập tuân theo <5>quy chuẩn của KQM</5>"
+    },
+    "gcsimDialog": {
+      "title": "Xuất ra gcsim",
+      "content": "Sao chép đoạn code phía dưới để nhập build này vào <2>gcsim</2>.",
+      "copied": "Đã sao chép cấu hình gcsim vào bộ nhớ tạm."
+    },
+    "all": {
+      "rolls": "Set hết lần nhảy",
+      "max": "Set hết tối đa"
+    },
+    "substat": {
+      "max": "Tối đa"
+    },
+    "feasibilityAlert": "Lượt phân phối substat này yêu cầu tối thiểu <strong>{{minSubLines}}</strong> lần nhảy chỉ số phụ. Cần phải chỉ định <strong>{{minOtherRolls}}</strong> lần nhảy cho các dòng phụ khác để hướng đi này khả thi.",
+    "optAlert": {
+      "scalesWith": "Mục tiêu Tối Ưu và yêu cầu tối thiểu đã chọn sẽ phụ thuộc vào: ",
+      "distribute": ". Thuật toán sẽ chỉ phân phối chỉ số cho các dòng phụ được nêu.",
+      "feasibilty": "Có thể sẽ có một số lần nhảy chỉ số thừa ra được phân phối cho các thuộc tính không phụ thuộc để hướng đi này khả thi."
+    }
+  },
+  "tabTeambuff": {
+    "team_reso": "Cộng Hưởng Đội",
+    "resonance_tip": "Đội phải đủ 4 nhân vật để Cộng Hưởng Nguyên Tố có hiệu lực."
+  },
+  "showingNum_other": "Đang hiện <1>{{count}}</1> trên tổng số {{value}} Nhân Vật",
+  "noLoadout": "Có vẻ bạn vẫn chưa thêm bất kỳ bộ trang bị/Đội nào có nhân vật này. Bạn cần phải tạo một bộ trang bị+đội với nhân vật này để có thể <strong>tạo build</strong>, <strong>theorycraft</strong> hay <strong>tối ưu</strong>",
+  "teammateUsing": {
+    "weapon": "Đồng đội <strong><1></1></strong> đang dùng vũ khí này.",
+    "artifact": "Đồng đội <strong><1></1></strong> đang dùng <3></3>"
+  }
 }

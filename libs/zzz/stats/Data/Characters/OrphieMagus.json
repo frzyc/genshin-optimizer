@@ -161,15 +161,15 @@
       ],
       "EXSpecialAttackWatchYourStep": [
         {
-          "DamagePercentage": 2.259,
-          "DamagePercentageGrowth": 0.206,
-          "StunRatio": 2.259,
-          "StunRatioGrowth": 0.103,
+          "DamagePercentage": 2.809,
+          "DamagePercentageGrowth": 0.256,
+          "StunRatio": 2.809,
+          "StunRatioGrowth": 0.128,
           "SpRecovery": 0,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 4963.75,
+          "FeverRecovery": 5821.75,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 231.25
+          "AttributeInfliction": 283.33
         }
       ],
       "EXSpecialAttackCrimsonVortex": [

@@ -6,7 +6,9 @@
       "name": "Basic Attack: Penetrating Shock",
       "desc": {
         "0": "Press <IconNormal /> to activate:",
-        "1": "Perform up to five slashes ahead, dealing <ct color=#2EB6FF>Electric DMG</ct>. After the 4th attack hits the enemy, repeatedly press or hold <IconNormal /> to quickly pass through enemies in front up to 5 times."
+        "1": "Perform up to five slashes ahead, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "On the 3rd hit of the Basic Attack, enemies are continuously pulled in.",
+        "3": "After the 4th attack hits the enemy, repeatedly press or hold <IconNormal /> to quickly pass through enemies in front up to 5 times."
       },
       "params": [
         "1st-Hit ",
@@ -42,8 +44,10 @@
       "name": "Dodge Counter: Ground Flash Counter",
       "desc": {
         "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
-        "1": "Repeatedly slash enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "Character is invulnerable while using this skill."
+        "1": "Perform consecutive slashes at enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>. On hit, gain the Voltage Overload state for 15s. Repeated triggers refresh the duration.",
+        "2": "While in the Voltage Overload state, dodge performance is enhanced. Additionally, when using Basic Attack/Dash Attack/Dodge Counter, if the enemy target has <ct color=#FFFFFF>White Thunder</ct>, pressing <IconSpecial /> will immediately cancel the current skill and launch <ct color=#FFFFFF>Special Attack: Azure Flash</ct>.",
+        "3": "While in this state, if the enemy does not have <ct color=#FFFFFF>White Thunder</ct>, press <IconSpecialReady /> to directly launch EX Special Attack: Sundering Bolt.",
+        "4": "Character is invulnerable while using this skill."
       },
       "params": [
         " "
@@ -86,6 +90,17 @@
       },
       "params": [
         "Thunder Smite "
+      ]
+    },
+    "SpecialAttackAzureFlashBoundary": {
+      "name": "Special Attack: Azure Flash - Boundary",
+      "desc": {
+        "0": "When <ct color=#FFFFFF>Special Attack: Thunder Smite</ct> DMG is triggered:",
+        "1": "If <ct color=#FFFFFF>EX Special Attack: Sundering Bolt</ct> or <ct color=#FFFFFF>Special Attack: Azure Flash</ct> is currently being used, then <ct color=#FFFFFF>Special Attack: Azure Flash - Boundary</ct> will automatically trigger when the current skill ends, unleashing a flurry of slashes that deal multiple instances of <ct color=#2EB6FF>Electric DMG</ct>. This skill counts as an <ct color=#FFFFFF>Aftershock</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
       ]
     },
     "EXSpecialAttackSunderingBolt": {
@@ -167,20 +182,42 @@
   "core": {
     "name": "Core Passive: Voltage Gap",
     "desc": [
-      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>12.5%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>15%</ct> of Soldier 0 - Anby's CRIT DMG.",
-      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>14.5%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>17.5%</ct> of Soldier 0 - Anby's CRIT DMG.",
-      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>16.5%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>20%</ct> of Soldier 0 - Anby's CRIT DMG.",
-      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>18.8%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>22.5%</ct> of Soldier 0 - Anby's CRIT DMG.",
-      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>20.8%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>25%</ct> of Soldier 0 - Anby's CRIT DMG.",
-      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>23%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>27.5%</ct> of Soldier 0 - Anby's CRIT DMG.",
-      "Soldier 0 - Anby's DMG against enemies with the <ct color=#FFFFFF>Silver Star</ct> mark increases by <ct color=#2BAD00>25%</ct>. After an enemy is marked with <ct color=#FFFFFF>Silver Star</ct>, the CRIT DMG received from <ct color=#FFFFFF>Aftershock</ct> attacks is further increased by <ct color=#2BAD00>30%</ct> of Soldier 0 - Anby's CRIT DMG."
+      {
+        "0": "Soldier 0 - Anby deals <ct color=#2BAD00>12.5%</ct> more DMG to enemies marked with <ct color=#FFFFFF>Silver Star</ct>. When an enemy is afflicted with <ct color=#FFFFFF>Silver Star</ct>, they take additional CRIT DMG from <ct color=#FFFFFF>Aftershocks</ct>, equal to <ct color=#2BAD00>15%</ct> of Soldier 0 - Anby's CRIT DMG. When marked with a Silver Star, DMG from allies' <ct color=#FFFFFF>Aftershocks</ct> builds <ct color=#FFFFFF> Silver Star</ct> charge on the enemy. This effect can trigger once every 5s.",
+        "1": "The Aftershock CRIT DMG bonus from Silver Star is further increased by 5% of Soldier 0 - Anby's CRIT DMG. When an enemy afflicted with <ct color=#FFFFFF>White Thunder</ct> is defeated, automatically unleash <ct color=#FFFFFF>Special Attack: Thunder Smite</ct> on the nearest enemy target."
+      },
+      {
+        "0": "Soldier 0 - Anby deals <ct color=#2BAD00>14.5%</ct> more DMG to enemies marked with <ct color=#FFFFFF>Silver Star</ct>. When an enemy is afflicted with <ct color=#FFFFFF>Silver Star</ct>, they take additional CRIT DMG from <ct color=#FFFFFF>Aftershocks</ct>, equal to <ct color=#2BAD00>17.5%</ct> of Soldier 0 - Anby's CRIT DMG. When marked with a Silver Star, DMG from allies' <ct color=#FFFFFF>Aftershocks</ct> builds <ct color=#FFFFFF> Silver Star</ct> charge on the enemy. This effect can trigger once every 5s.",
+        "1": "The Aftershock CRIT DMG bonus from Silver Star is further increased by 5% of Soldier 0 - Anby's CRIT DMG. When an enemy afflicted with <ct color=#FFFFFF>White Thunder</ct> is defeated, automatically unleash <ct color=#FFFFFF>Special Attack: Thunder Smite</ct> on the nearest enemy target."
+      },
+      {
+        "0": "Soldier 0 - Anby deals <ct color=#2BAD00>16.5%</ct> more DMG to enemies marked with <ct color=#FFFFFF>Silver Star</ct>. When an enemy is afflicted with <ct color=#FFFFFF>Silver Star</ct>, they take additional CRIT DMG from <ct color=#FFFFFF>Aftershocks</ct>, equal to <ct color=#2BAD00>20%</ct> of Soldier 0 - Anby's CRIT DMG. When marked with a Silver Star, DMG from allies' <ct color=#FFFFFF>Aftershocks</ct> builds <ct color=#FFFFFF> Silver Star</ct> charge on the enemy. This effect can trigger once every 5s.",
+        "1": "The Aftershock CRIT DMG bonus from Silver Star is further increased by 5% of Soldier 0 - Anby's CRIT DMG. When an enemy afflicted with <ct color=#FFFFFF>White Thunder</ct> is defeated, automatically unleash <ct color=#FFFFFF>Special Attack: Thunder Smite</ct> on the nearest enemy target."
+      },
+      {
+        "0": "Soldier 0 - Anby deals <ct color=#2BAD00>18.8%</ct> more DMG to enemies marked with <ct color=#FFFFFF>Silver Star</ct>. When an enemy is afflicted with <ct color=#FFFFFF>Silver Star</ct>, they take additional CRIT DMG from <ct color=#FFFFFF>Aftershocks</ct>, equal to <ct color=#2BAD00>22.5%</ct> of Soldier 0 - Anby's CRIT DMG. When marked with a Silver Star, DMG from allies' <ct color=#FFFFFF>Aftershocks</ct> builds <ct color=#FFFFFF> Silver Star</ct> charge on the enemy. This effect can trigger once every 5s.",
+        "1": "The Aftershock CRIT DMG bonus from Silver Star is further increased by 5% of Soldier 0 - Anby's CRIT DMG. When an enemy afflicted with <ct color=#FFFFFF>White Thunder</ct> is defeated, automatically unleash <ct color=#FFFFFF>Special Attack: Thunder Smite</ct> on the nearest enemy target."
+      },
+      {
+        "0": "Soldier 0 - Anby deals <ct color=#2BAD00>20.8%</ct> more DMG to enemies marked with <ct color=#FFFFFF>Silver Star</ct>. When an enemy is afflicted with <ct color=#FFFFFF>Silver Star</ct>, they take additional CRIT DMG from <ct color=#FFFFFF>Aftershocks</ct>, equal to <ct color=#2BAD00>25%</ct> of Soldier 0 - Anby's CRIT DMG. When marked with a Silver Star, DMG from allies' <ct color=#FFFFFF>Aftershocks</ct> builds <ct color=#FFFFFF> Silver Star</ct> charge on the enemy. This effect can trigger once every 5s.",
+        "1": "The Aftershock CRIT DMG bonus from Silver Star is further increased by 5% of Soldier 0 - Anby's CRIT DMG. When an enemy afflicted with <ct color=#FFFFFF>White Thunder</ct> is defeated, automatically unleash <ct color=#FFFFFF>Special Attack: Thunder Smite</ct> on the nearest enemy target."
+      },
+      {
+        "0": "Soldier 0 - Anby deals <ct color=#2BAD00>23%</ct> more DMG to enemies marked with <ct color=#FFFFFF>Silver Star</ct>. When an enemy is afflicted with <ct color=#FFFFFF>Silver Star</ct>, they take additional CRIT DMG from <ct color=#FFFFFF>Aftershocks</ct>, equal to <ct color=#2BAD00>27.5%</ct> of Soldier 0 - Anby's CRIT DMG. When marked with a Silver Star, DMG from allies' <ct color=#FFFFFF>Aftershocks</ct> builds <ct color=#FFFFFF> Silver Star</ct> charge on the enemy. This effect can trigger once every 5s.",
+        "1": "The Aftershock CRIT DMG bonus from Silver Star is further increased by 5% of Soldier 0 - Anby's CRIT DMG. When an enemy afflicted with <ct color=#FFFFFF>White Thunder</ct> is defeated, automatically unleash <ct color=#FFFFFF>Special Attack: Thunder Smite</ct> on the nearest enemy target."
+      },
+      {
+        "0": "Soldier 0 - Anby deals <ct color=#2BAD00>25%</ct> more DMG to enemies marked with <ct color=#FFFFFF>Silver Star</ct>. When an enemy is afflicted with <ct color=#FFFFFF>Silver Star</ct>, they take additional CRIT DMG from <ct color=#FFFFFF>Aftershocks</ct>, equal to <ct color=#2BAD00>30%</ct> of Soldier 0 - Anby's CRIT DMG. When marked with a Silver Star, DMG from allies' <ct color=#FFFFFF>Aftershocks</ct> builds <ct color=#FFFFFF> Silver Star</ct> charge on the enemy. This effect can trigger once every 5s.",
+        "1": "The Aftershock CRIT DMG bonus from Silver Star is further increased by 5% of Soldier 0 - Anby's CRIT DMG. When an enemy afflicted with <ct color=#FFFFFF>White Thunder</ct> is defeated, automatically unleash <ct color=#FFFFFF>Special Attack: Thunder Smite</ct> on the nearest enemy target."
+      }
     ]
   },
   "ability": {
     "name": "Additional Ability: Voltage Surge",
     "desc": {
       "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> or <ct color=#FFFFFF>Support</ct> character:",
-      "1": "Soldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' <ct color=#FFFFFF>Aftershock</ct> DMG to enemies with a <ct color=#FFFFFF>Silver Star</ct> mark increases by 25%."
+      "1": "Soldier 0 - Anby's CRIT Rate increases by 10%. When the current active character is Soldier 0 - Anby, all squad members' <ct color=#FFFFFF>Aftershocks</ct> deal 25% more DMG to enemies marked with <ct color=#FFFFFF>Silver Star</ct>.",
+      "2": "Soldier 0 - Anby's <ct color=#FFFFFF>Chain Attack</ct> and <ct color=#FFFFFF>Ultimate</ct> are treated as <ct color=#FFFFFF>Aftershock</ct> DMG."
     }
   },
   "mindscapes": {
@@ -195,7 +232,10 @@
     },
     "2": {
       "name": "Fail-Safe Protocol",
-      "desc": "Soldier 0 - Anby's CRIT Rate increases by 12%. When she uses her <ct color=#FFFFFF>Ultimate</ct>, she gains 6 stacks of <ct color=#FFFFFF>Thunder's Cry</ct> (max 6 stacks). With <ct color=#FFFFFF>Thunder's Cry</ct>, when using <ct color=#FFFFFF>Special Attack: Azure Flash</ct> to hit an enemy with <ct color=#FFFFFF>White Thunder</ct>, it will consume 1 stack of <ct color=#FFFFFF>Thunder's Cry</ct> instead. Only 1 stack of <ct color=#FFFFFF>Thunder's Cry</ct> will be consumed when a single use of a skill hits multiple enemies, and consuming <ct color=#FFFFFF>Thunder's Cry</ct> will still activate the additional DMG from <ct color=#FFFFFF>White Thunder</ct>.",
+      "desc": {
+        "0": "Soldier 0 - Anby's CRIT Rate increases by 12%. When she uses her <ct color=#FFFFFF>Ultimate</ct>, she gains 6 stacks of <ct color=#FFFFFF>Thunder's Cry</ct> (max 6 stacks). With <ct color=#FFFFFF>Thunder's Cry</ct>, when using <ct color=#FFFFFF>Special Attack: Azure Flash</ct> to hit an enemy with <ct color=#FFFFFF>White Thunder</ct>, it will consume 1 stack of <ct color=#FFFFFF>Thunder's Cry</ct> instead. Only 1 stack of <ct color=#FFFFFF>Thunder's Cry</ct> will be consumed when a single use of a skill hits multiple enemies, and consuming <ct color=#FFFFFF>Thunder's Cry</ct> will still activate the additional DMG from <ct color=#FFFFFF>White Thunder</ct>.",
+        "1": "After activating potential, every 3 stacks of <ct color=#FFFFFF>Thunder's Cry</ct> consumed, the next Special Attack: Azure Flash - Boundary will be activated faster."
+      },
       "flavor": {
         "0": "\"What's wrong? You look really tired.\"",
         "1": "\"I'm... fine.\"",

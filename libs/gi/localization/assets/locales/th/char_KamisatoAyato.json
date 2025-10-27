@@ -1,0 +1,6 @@
+{
+  "passive1": {
+    "afterUse": "จำนวนการซ้อนทับ Namisen ที่ได้รับหลังจากใช้สกิล",
+    "afterExplode": "จำนวนการซ้อนทับ Namisen ที่ได้รับหลังจากที่ Water Illusion ระเบิด"
+  }
+}

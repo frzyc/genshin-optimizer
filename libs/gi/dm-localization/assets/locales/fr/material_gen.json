@@ -233,6 +233,9 @@
   "LegionMorale": {
     "name": "Moral de légion"
   },
+  "PrepProgress": {
+    "name": "Préparatifs"
+  },
   "Primogem": {
     "name": "Primo-gemme"
   },
@@ -268,6 +271,33 @@
   },
   "AcquaintFate": {
     "name": "Pierre de la destinée"
+  },
+  "ChronalNexus": {
+    "name": "Chronocristal"
+  },
+  "ArcaneKeystone": {
+    "name": "Pierre arcanique"
+  },
+  "GeodeOfReplication": {
+    "name": "Géode de recréation"
+  },
+  "EngravedShard": {
+    "name": "Fragment gravé"
+  },
+  "FestiveKey": {
+    "name": "Clé festive"
+  },
+  "LuminousKeystone": {
+    "name": "Pierre lumineuse"
+  },
+  "WonderlandEXP": {
+    "name": "EXP du Paradisia"
+  },
+  "ChronicleEXP": {
+    "name": "EXP de Chroniques"
+  },
+  "ChroniclesOfTheRealms": {
+    "name": "Chroniques des royaumes"
   },
   "PyroSigil": {
     "name": "Sceau Pyro"
@@ -878,6 +908,12 @@
   "ReaffirmedAccordOfAppellation": {
     "name": "Accord d'appellation réaffirmé"
   },
+  "OverwriteKeyLeft": {
+    "name": "Clé d'écrasement : gauche"
+  },
+  "OverwriteKeyRight": {
+    "name": "Clé d'écrasement : droite"
+  },
   "EnergyOrbPyro": {
     "name": "Orbe d'énergie (Pyro)"
   },
@@ -1070,6 +1106,9 @@
   "Aino": {
     "name": "Aino"
   },
+  "Nefer": {
+    "name": "Nefer"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
   },
@@ -1129,6 +1168,9 @@
   },
   "AinosStellaFortuna": {
     "name": "Stella Fortuna d'Aino"
+  },
+  "NefersStellaFortuna": {
+    "name": "Stella Fortuna de Nefer"
   },
   "Apple": {
     "name": "Pomme"
@@ -8033,6 +8075,39 @@
   "SugarSculptureFlins": {
     "name": "Sculpture en sucre : Flins"
   },
+  "SuspiciousLakkaberryPie": {
+    "name": "Tarte aux lakkabaies (suspecte)"
+  },
+  "LakkaberryPie": {
+    "name": "Tarte aux lakkabaies"
+  },
+  "DeliciousLakkaberryPie": {
+    "name": "Tarte aux lakkabaies (délicieuse)"
+  },
+  "SuspiciousLohikeitto": {
+    "name": "Lohikeitto (suspect)"
+  },
+  "Lohikeitto": {
+    "name": "Lohikeitto"
+  },
+  "DeliciousLohikeitto": {
+    "name": "Lohikeitto (délicieux)"
+  },
+  "PiramidaNightingale": {
+    "name": "Rossignol de Piramida"
+  },
+  "FrontierLand": {
+    "name": "Terre frontalière"
+  },
+  "WildberryTrail": {
+    "name": "Route de baies sauvages"
+  },
+  "SecretsExchanged": {
+    "name": "Secret échangé"
+  },
+  "SugarSculptureNefer": {
+    "name": "Sculpture en sucre : Nefer"
+  },
   "RecipeItem": {
     "name": "Ingrédient"
   },
@@ -8797,6 +8872,12 @@
   },
   "RecipeLakkaberryMadame": {
     "name": "Recette : Poulet mariné aux lakkabaies"
+  },
+  "RecipeLakkaberryPie": {
+    "name": "Recette : Tarte aux lakkabaies"
+  },
+  "RecipeLohikeitto": {
+    "name": "Recette : Lohikeitto"
   },
   "CraftedItems": {
     "name": "Produit synthétisé"
@@ -9580,6 +9661,9 @@
   },
   "LightbearingScaleFeather": {
     "name": "Plume-écaille luminifère"
+  },
+  "RadiantAntler": {
+    "name": "Corne radieuse"
   },
   "TileOfDecarabiansTower": {
     "name": "Tuile cassée de Décarabian"
@@ -12671,8 +12755,8 @@
   "MysteriousMap": {
     "name": "Carte mystérieuse"
   },
-  "DazzlingMysteriousGift": {
-    "name": "Mystérieux cadeau brillant"
+  "WonderlandCosmosphere": {
+    "name": "Cosmosphère du Paradisia"
   },
   "LetterOfUnknownOrigin": {
     "name": "Lettre d'origine inconnue"
@@ -12830,8 +12914,14 @@
   "YellowedNotes": {
     "name": "Notes jaunâtres"
   },
+  "InvestmentCoupon": {
+    "name": "Coupon d'investissement"
+  },
   "EasybreezeBadge": {
     "name": "Badge de Brisedouce"
+  },
+  "InvestmentReturns": {
+    "name": "Retours sur investissement"
   },
   "SugarSculptureBox": {
     "name": "Boîte de sculpture en sucre"
@@ -12895,6 +12985,9 @@
   },
   "BountyTokenMudStainedHandguard": {
     "name": "Jeton de prime : Garde-main tachée de boue"
+  },
+  "RecordedIntel": {
+    "name": "Renseignements consignés"
   },
   "MessilyScribbledNotesI": {
     "name": "Notes griffonnées à la hâte (1)"
@@ -12974,6 +13067,9 @@
   "AunisNotes": {
     "name": "Notes d'Auni"
   },
+  "CollatedIntel": {
+    "name": "Regroupement de renseignements"
+  },
   "BackupProgramModule": {
     "name": "Module du programme de sauvegarde"
   },
@@ -12982,6 +13078,15 @@
   },
   "OpenedSecretLetter": {
     "name": "Lettre secrète ouverte"
+  },
+  "WayOpeningKey": {
+    "name": "Clé d'ouverture de voie"
+  },
+  "RaggedNotes": {
+    "name": "Notes déchirées"
+  },
+  "OrderedNotes": {
+    "name": "Notes ordonnées"
   },
   "ConchNotebook": {
     "name": "Carnet de conque"
@@ -13027,6 +13132,15 @@
   },
   "AilasNotes": {
     "name": "Notes d'Aila"
+  },
+  "TheManWhoBecameAMule": {
+    "name": "La personne qui se transforma en âne"
+  },
+  "HalfBurnedPage": {
+    "name": "Page à moitié brûlée"
+  },
+  "CuratoriumFunds": {
+    "name": "Fonds du Curatorium"
   },
   "TearsAmongTheStars": {
     "name": "Larme parmi les étoiles"
@@ -14939,6 +15053,12 @@
   "CelebrationSublimeFlavors": {
     "name": "Célébration - Saveurs suprêmes"
   },
+  "NeferSecrets": {
+    "name": "Nefer - Secrets"
+  },
+  "TravelNotesBygoneRuins": {
+    "name": "PB - Ruines d'antan"
+  },
   "EchoDandelionKnight": {
     "name": "Écho : Chevalier au Pissenlit"
   },
@@ -15779,6 +15899,24 @@
   "CarefulCommunication": {
     "name": "Communication prudente"
   },
+  "BattlePreparation": {
+    "name": "Préparation de combat"
+  },
+  "GatheredOverDrinks": {
+    "name": "Verres entre amis"
+  },
+  "BrandishingWeapons": {
+    "name": "Arme en l'air"
+  },
+  "TeachingAjawALesson": {
+    "name": "Une leçon pour Ajaw"
+  },
+  "ALittleScare": {
+    "name": "Petit choc"
+  },
+  "EagerAndReady": {
+    "name": "Prêt à en découdre"
+  },
   "FantasticalMarvel": {
     "name": "Merveille fantastique"
   },
@@ -15928,6 +16066,9 @@
   },
   "LordOfErodedPrimalFire": {
     "name": "Érodé seigneur du feu primordial"
+  },
+  "HydroTulpa": {
+    "name": "Tulpa Hydro"
   },
   "UndividedHeart": {
     "name": "Cœur indivisible"
@@ -16292,6 +16433,15 @@
   "UndyingFury": {
     "name": "Fureur éternelle"
   },
+  "AHeroOfJusticesTriumph": {
+    "name": "Le triomphe d'une héroïne de la justice"
+  },
+  "TacticalWarmCompressBandaging": {
+    "name": "Bandage tactique à compresses chaudes"
+  },
+  "FlowConvergence": {
+    "name": "Convergence de flux"
+  },
   "MagicGuide": {
     "name": "Guide de magie"
   },
@@ -16613,6 +16763,15 @@
   "AquaSimulacra": {
     "name": "Simulacre d'eau"
   },
+  "EverlastingMoonglow": {
+    "name": "Lueur de la lune éternelle"
+  },
+  "FellDragonsMonocle": {
+    "name": "Monocle de dragon démoniaque"
+  },
+  "NoblesseOblige": {
+    "name": "Ancien rituel royal"
+  },
   "LiyueHarborWharf": {
     "name": "Quai du Port de Liyue"
   },
@@ -16795,6 +16954,9 @@
   },
   "GiftOfTheGoddessOfProphecy": {
     "name": "Cadeau de la déesse prophétesse"
+  },
+  "AdventurersGuild": {
+    "name": "Guilde des aventuriers"
   },
   "ElementalResonanceWovenIce": {
     "name": "Résonance élémentaire : Glace tissée"
@@ -17018,6 +17180,9 @@
   "RevelrousBeats": {
     "name": "« Tempo festif »"
   },
+  "AnAncientSacrificeOfSacredBrocade": {
+    "name": "Sacrifice ancien ; brocart divin"
+  },
   "Origin": {
     "name": "Origine"
   },
@@ -17086,6 +17251,9 @@
   },
   "FontaPassionateRed": {
     "name": "Fonta : Rouge passion"
+  },
+  "SeaOfBygoneErasSlumber": {
+    "name": "Mer d'antan : Sommeil"
   },
   "BeginnerPlayerBadge": {
     "name": "Badge de {M#joueur débutant}{F#joueuse débutante}"
@@ -17798,6 +17966,12 @@
   "XochicuicatlMarketingMethod": {
     "name": "Méthode mercantile de Xochicuicatl"
   },
+  "DeductionAndInduction": {
+    "name": "« Déduction et induction »"
+  },
+  "FactoryCabinetSlapdashStorage": {
+    "name": "Armoire d'usine « Entassement en pagaille »"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "Bibliothèque à deux étages"
   },
@@ -17969,6 +18143,15 @@
   "FairsSimpleSalesStrategy": {
     "name": "« Stratégie commerciale de la Foire »"
   },
+  "FactoryLongTableNoTimeToWaste": {
+    "name": "Table longue d'usine « Pas une minute à perdre »"
+  },
+  "TavernSquareTableSelfDefense": {
+    "name": "Table carrée de taverne « Auto-défense »"
+  },
+  "IndoorLongTableMarksOfLove": {
+    "name": "Table longue d'intérieur « Marques d'affection »"
+  },
   "BreezeBlessedBed": {
     "name": "Lit « Douce brise »"
   },
@@ -17996,6 +18179,12 @@
   "StoneBedPeacefulSleep": {
     "name": "Lit « Repos paisible » en pierre"
   },
+  "FriendsThroughFriction": {
+    "name": "Amitié chahutée"
+  },
+  "TavernBedNotGreatNotTerrible": {
+    "name": "Lit de taverne « Ni bon, ni mauvais »"
+  },
   "PineReceptionCounter": {
     "name": "Comptoir de réception en pin"
   },
@@ -18022,6 +18211,9 @@
   },
   "TeahouseStoveSlowSteaming": {
     "name": "Four de salon de thé « Vapeur lente »"
+  },
+  "QuestionWithAPriceTag": {
+    "name": "« Question tarifée »"
   },
   "SoftLoungeSofa": {
     "name": "Canapé de salon confortable"
@@ -18103,6 +18295,15 @@
   },
   "GlugInOneGo": {
     "name": "« D'un glou, d'un seul »"
+  },
+  "QuietAndCozy": {
+    "name": "« Quiétude et douceur »"
+  },
+  "HazelwoodJadeBackedChair": {
+    "name": "Chaise en coudrier avec dossier jade"
+  },
+  "FactoryStoolMultiroleSeatingDevice": {
+    "name": "Tabouret d'usine « Outil polyvalent »"
   },
   "NorthernStoneHearth": {
     "name": "Cheminée en pierre du nord"
@@ -18290,6 +18491,18 @@
   "PortableAllPurposeGrill": {
     "name": "Gril portable multi-usages"
   },
+  "BoatOfClouds": {
+    "name": "Bateau de nuages"
+  },
+  "TipsyPlaylist": {
+    "name": "Sélection musicale d'ivresse"
+  },
+  "MultifunctionalPedunculateOakWoodCatTree": {
+    "name": "Arbre pour chat multifonction en chêne blanc"
+  },
+  "HiddenSecrets": {
+    "name": "« Secrets cachés »"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tapis de Mondstadt « Ardeur pourpre »"
   },
@@ -18343,6 +18556,12 @@
   },
   "FairCarpetWarmthAndPassion": {
     "name": "Tapis de la Foire « Chaleur et passion »"
+  },
+  "IndoorRugSoftPlush": {
+    "name": "Tapis d'intérieur « Douceur et moelleux »"
+  },
+  "IndoorRugStarlitNight": {
+    "name": "Tapis d'intérieur « Nuit étoilée »"
   },
   "VibrantPotBornInFlames": {
     "name": "Pot vibrant « Né des flammes »"
@@ -18724,6 +18943,12 @@
   },
   "SaveyWaveyLifeRing": {
     "name": "Bouée de sauvetage d'urgence"
+  },
+  "FactoryBroadcastInvigoration": {
+    "name": "Haut-parleur d'usine « Coup de fouet »"
+  },
+  "TavernDartboardValidThrow": {
+    "name": "Cible de taverne « Tir valide »"
   },
   "LingeringMoment": {
     "name": "« Moment suspendu »"
@@ -21044,6 +21269,9 @@
   "MediumCargoHoldSwiftTransport": {
     "name": "Soute moyenne « Transport efficace »"
   },
+  "PuzzlepalKeepCalmAndCarryOn": {
+    "name": "Compagnon-résolveur « Zen et efficace »"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "« Chevalier incisif »"
   },
@@ -21052,5 +21280,8 @@
   },
   "PorkyWorkyChef": {
     "name": "Chef rondouillard"
+  },
+  "LoafingKitty": {
+    "name": "Chat en boule"
   }
 }

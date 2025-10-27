@@ -1,8 +1,21 @@
 {
-  "edit": "武器改造",
-  "weaponName": "武器名",
+  "edit": "武器を編集",
+  "weaponName": "武器の名前で検索",
   "removeWeapon": "{{value}}を削除してよろしいですか？",
   "addWeapon": "武器を追加",
-  "showingNum_other": "武器{{value}}つの内、<1>{{count}}</1>つを表示中",
-  "cantDeleteLock": "武器がロックされているため解除できません"
+  "showingNum_other": "{{value}}個中 <1>{{count}}</1>個の武器を表示",
+  "cantDeleteLock": "武器がロックされているため削除できません",
+  "button": {
+    "deleteWeapons": "武器を削除",
+    "lockWeapons": "武器をロックする",
+    "unlockWeapons": "武器のロックを解除する"
+  },
+  "buttonHint": "注：上の赤いボタンは<1>フィルターされた武器</1>のみに適用されます",
+  "equippedWeapon": "装備中のすべての武器",
+  "weaponInInv": "未装備のすべての武器",
+  "locationsTooltip": "特定のキャラクターでフィルタリングするには「装備中のすべての武器」を無効にしてください",
+  "subheadings": {
+    "general": "全般",
+    "inventory": "インベントリー"
+  }
 }

@@ -217,8 +217,6 @@ export const enemyTag = {
     dazeInc_: agg,
     dazeRed_: agg,
     anomBuildupRes_: agg,
-    isStunned: iso,
-    anomTimePassed: iso,
   },
 } as const
 

@@ -1,0 +1,24 @@
+{
+  "name": "Reliquaire de la vérité",
+  "description": {
+    "0": "Un coffret anguleux sculpté en or et en jade. La légende raconte qu'il était autrefois conservé dans un temple au cœur de Tulaytullah, la cité de saphir."
+  },
+  "passiveName": "Essence de la fausseté",
+  "passiveDescription": {
+    "0": {
+      "0": "Le taux CRIT augmente de <cryo>8 %</cryo>. Lorsqu'il déclenche une compétence élémentaire, le personnage équipé de l'arme obtient l'effet Secret du mensonge : augmente la maîtrise élémentaire de <cryo>80</cryo> pts pendant 12 s. Lorsque le personnage équipé de l'arme inflige des DGT de réaction de Sélénofleurissement à un ennemi, il obtient l'effet Lune de la vérité : augmente les DGT CRIT de <cryo>24 %</cryo> pendant 4 s. Si ces deux effets existent en même temps, leurs bonus augmentent de 50 %."
+    },
+    "1": {
+      "0": "Le taux CRIT augmente de <cryo>10 %</cryo>. Lorsqu'il déclenche une compétence élémentaire, le personnage équipé de l'arme obtient l'effet Secret du mensonge : augmente la maîtrise élémentaire de <cryo>100</cryo> pts pendant 12 s. Lorsque le personnage équipé de l'arme inflige des DGT de réaction de Sélénofleurissement à un ennemi, il obtient l'effet Lune de la vérité : augmente les DGT CRIT de <cryo>30 %</cryo> pendant 4 s. Si ces deux effets existent en même temps, leurs bonus augmentent de 50 %."
+    },
+    "2": {
+      "0": "Le taux CRIT augmente de <cryo>12 %</cryo>. Lorsqu'il déclenche une compétence élémentaire, le personnage équipé de l'arme obtient l'effet Secret du mensonge : augmente la maîtrise élémentaire de <cryo>120</cryo> pts pendant 12 s. Lorsque le personnage équipé de l'arme inflige des DGT de réaction de Sélénofleurissement à un ennemi, il obtient l'effet Lune de la vérité : augmente les DGT CRIT de <cryo>36 %</cryo> pendant 4 s. Si ces deux effets existent en même temps, leurs bonus augmentent de 50 %."
+    },
+    "3": {
+      "0": "Le taux CRIT augmente de <cryo>14 %</cryo>. Lorsqu'il déclenche une compétence élémentaire, le personnage équipé de l'arme obtient l'effet Secret du mensonge : augmente la maîtrise élémentaire de <cryo>140</cryo> pts pendant 12 s. Lorsque le personnage équipé de l'arme inflige des DGT de réaction de Sélénofleurissement à un ennemi, il obtient l'effet Lune de la vérité : augmente les DGT CRIT de <cryo>42 %</cryo> pendant 4 s. Si ces deux effets existent en même temps, leurs bonus augmentent de 50 %."
+    },
+    "4": {
+      "0": "Le taux CRIT augmente de <cryo>16 %</cryo>. Lorsqu'il déclenche une compétence élémentaire, le personnage équipé de l'arme obtient l'effet Secret du mensonge : augmente la maîtrise élémentaire de <cryo>160</cryo> pts pendant 12 s. Lorsque le personnage équipé de l'arme inflige des DGT de réaction de Sélénofleurissement à un ennemi, il obtient l'effet Lune de la vérité : augmente les DGT CRIT de <cryo>48 %</cryo> pendant 4 s. Si ces deux effets existent en même temps, leurs bonus augmentent de 50 %."
+    }
+  }
+}

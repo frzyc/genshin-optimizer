@@ -104,7 +104,7 @@
     "name": "Vigilancia coordinada",
     "description": {
       "0": "Si el equipo está formado únicamente por personajes <pyro>Pyro</pyro> y <electro>Electro</electro> y hay al menos un personaje Pyro y uno Electro en él, Chevreuse otorga el efecto de “maniobra coordinada” a los miembros del equipo cercanos. Cuando un personaje bajo este efecto causa una reacción de Sobrecarga, la RES <pyro>Pyro</pyro> y <electro>Electro</electro> del enemigo afectado por dicha reacción se reduce en un 40% durante 6 s.",
-      "1": "El efecto de maniobra coordinada desaparecerá cuando el tipo elemental de los miembros de tu equipo no cumpla con los requisitos del talento pasivo."
+      "1": "El efecto de maniobra coordinada desaparecerá cuando el tipo elemental de los miembros de tu equipo no cumpla con los requisitos del talento de ascensión."
     }
   },
   "passive2": {
@@ -124,7 +124,7 @@
     "name": "Temple estabilizador en el frente",
     "description": {
       "0": "Cuando un personaje en uso (a excepción de Chevreuse) que está bajo el efecto de maniobra coordinada causa una reacción de Sobrecarga, recupera 6 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 10 s.",
-      "1": "Es necesario desbloquear el talento pasivo “Vigilancia coordinada”."
+      "1": "Es necesario desbloquear el talento de ascensión “Vigilancia coordinada”."
     }
   },
   "constellation2": {

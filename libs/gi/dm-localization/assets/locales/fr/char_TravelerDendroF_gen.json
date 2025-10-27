@@ -132,8 +132,8 @@
   "constellation4": {
     "name": "Herbe de mélasse",
     "description": {
-      "0": "Lorsque le <strong>lotus lumineux</strong> a déclenché sa transfiguration lotumineuse, il obtient 5 cumuls de lumière lotiforme de l'aptitude passive « Prolifération de verdure ».",
-      "1": "L'aptitude passive « Prolifération de verdure » doit être déjà débloquée."
+      "0": "Lorsque le <strong>lotus lumineux</strong> a déclenché sa transfiguration lotumineuse, il obtient 5 cumuls de lumière lotiforme de l'aptitude d'élévation « Prolifération de verdure ».",
+      "1": "L'aptitude d'élévation « Prolifération de verdure » doit être déjà débloquée."
     }
   },
   "constellation5": {

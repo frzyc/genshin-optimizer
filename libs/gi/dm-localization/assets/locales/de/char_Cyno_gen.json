@@ -113,8 +113,8 @@
     "description": {
       "0": "Erhöht den Schaden Cynos folgender Angriffe basierend auf seiner Elementarkunde:",
       "1": [
-        " Standardangriff im Modus „Paktverschworener Pfadklärer“: um 150 % seiner Elementarkunde.",
-        " Staubblitze des passiven Talents „Urteil der Federn“: um 250 % seiner Elementarkunde."
+        " Standardangriff im Modus „Paktverschworener Pfadklärer“: um 150 % seiner Elementarkunde.",
+        " Staubblitze des Aufstiegstalents „Urteil der Federn“: um 250 % seiner Elementarkunde."
       ]
     }
   },
@@ -127,8 +127,8 @@
   "constellation1": {
     "name": "Ordnungsritus – Unermüdliche Wachsamkeit",
     "description": {
-      "0": "Erhöht 10 s lang nach Anwenden der Fähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> Cynos Geschwindigkeit der Standardangriffe um 20 %. Wenn der Effekt „Zumessung“ des passiven Talents „Urteil der Federn“ beim Anwenden der Fähigkeit <strong>Geheimer Ritus – Abgründiger Seelenwanderer</strong> ausgelöst wird, wird die Dauer dieses Bonus aktualisiert.",
-      "1": "Das passive Talent „Urteil der Federn“ muss zuerst freigeschaltet werden."
+      "0": "Erhöht 10 s lang nach Anwenden der Fähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> Cynos Geschwindigkeit der Standardangriffe um 20 %. Wenn der Effekt „Zumessung“ des Aufstiegstalents „Urteil der Federn“ beim Anwenden der Fähigkeit <strong>Geheimer Ritus – Abgründiger Seelenwanderer</strong> ausgelöst wird, wird die Dauer dieses Bonus aktualisiert.",
+      "1": "Das Aufstiegstalent „Urteil der Federn“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation2": {
@@ -161,10 +161,10 @@
   "constellation6": {
     "name": "Federritus – Gerechte Waage",
     "description": {
-      "0": "Cyno erhält beim Anwenden der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> oder nach Auslösen des Effekts „Zumessung“ des passiven Talents „Urteil der Federn“ 4 Stapelungen des Effekts „Opfer des Schakals“. Beim Treffen von Gegnern mit Cynos Standardangriff verbraucht er 1 Stapelung von „Opfer des Schakals“, um einen Staubblitz auszulösen.",
-      "1": "Der Effekt „Opfer des Schakals“ hält 8 s, 8-fach stapelbar. „Opfer des Schakals“ wird entfernt, sobald der Modus „Paktverschworener Pfadklärer“ der Fähigkeit „Heiliger Ritus – Schnelligkeit des Wolfs“ endet.",
-      "2": "0,4 s Abklingzeit für das Auslösen solch eines Staubblitzes.",
-      "3": "Das passive Talent „Urteil der Federn“ muss zuerst freigeschaltet werden."
+      "0": "Cyno erhält beim Anwenden der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> oder nach Auslösen des Effekts „Zumessung“ des Aufstiegstalents „Urteil der Federn“ 4 Stapelungen des Effekts „Opfer des Schakals“. Beim Treffen von Gegnern mit Cynos Standardangriff verbraucht er 1 Stapelung von „Opfer des Schakals“, um einen Staubblitz auszulösen.",
+      "1": "Der Effekt „Opfer des Schakals“ hält 8 s, 8-fach stapelbar. „Opfer des Schakals“ wird entfernt, sobald der Modus „Paktverschworener Pfadklärer“ der Fähigkeit „Heiliger Ritus – Schnelligkeit des Wolfs“ endet.",
+      "2": "0,4 s Abklingzeit für das Auslösen solch eines Staubblitzes.",
+      "3": "Das Aufstiegstalent „Urteil der Federn“ muss zuerst freigeschaltet werden."
     }
   }
 }

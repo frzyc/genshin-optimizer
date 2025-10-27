@@ -6,8 +6,7 @@
   },
   "as": {
     "title": "AdeptiScanner",
-    "p1": "Scan semua artefak di inventorimu. Memiliki mode scanning manual.",
-    "p2": "Scanner ini juga dapat dikonfigurasi untuk artefak baru di versi game baru tanpa perlu pembaruan."
+    "p1": "Scan semua artefak di inventorimu. Memiliki mode scanning manual."
   },
   "goodeng": "Scanner ini hanya memindai bahasa Inggris, dan mengekspor ke format GOOD.",
   "tosWarn": "Karena alat apapun yang secara tidak langsung berinteraksi dengan game, meskipun penggunaannya hampir tidak terdeteksi, <1>masih ada risiko saat menggunakannya.</1> Kebijaksanaan pengguna disarankan.",

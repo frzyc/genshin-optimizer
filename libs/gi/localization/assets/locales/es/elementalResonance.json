@@ -1,0 +1,6 @@
+{
+  "SprawlingGreenery": {
+    "cond2ele": "Después de activar <pyro>Quemadura</pyro>, <spread>Aceleración</spread> o <bloom>Florecimiento</bloom>",
+    "cond3ele": "Después de activar <aggravate>Intensificación</aggravate>, <spread>Propagación</spread>, <hyperbloom>Sobreflorecimiento</hyperbloom> o <burgeon>Crepitar</burgeon"
+  }
+}

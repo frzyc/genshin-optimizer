@@ -132,8 +132,8 @@
   "constellation4": {
     "name": "Erbadolce",
     "description": {
-      "0": "Quando la <strong>Lampada di loto Lea</strong> innesca una Trasfigurazione della luce di loto, ottiene 5 accumuli dell'effetto Luce di Loto inondante dal talento passivo Supercrescita verdeggiante.",
-      "1": "Devi prima aver sbloccato questo talento passivo."
+      "0": "Quando la <strong>Lampada di loto Lea</strong> innesca una Trasfigurazione della luce di loto, ottiene 5 accumuli dell'effetto Luce di Loto inondante dal talento d'ascensione Supercrescita verdeggiante.",
+      "1": "Richiede il talento d'ascensione Supercrescita verdeggiante."
     }
   },
   "constellation5": {

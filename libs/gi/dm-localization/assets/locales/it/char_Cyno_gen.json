@@ -114,7 +114,7 @@
       "0": "I valori di DAN di Cyno aumentano in base alla sua maestria elementale con i seguenti criteri:",
       "1": [
         " i DAN da attacco normale di Precorritore giurato aumentano di un 150% della sua maestria elementale;",
-        " i DAN da Dardo del braccatore del talento passivo Giudizio della piuma cadente aumentano di un 250% della sua maestria elementale."
+        " i DAN da Dardo del braccatore del talento d'ascensione Giudizio della piuma cadente aumentano di un 250% della sua maestria elementale."
       ]
     }
   },
@@ -127,8 +127,8 @@
   "constellation1": {
     "name": "Ordinanza: Guardia instancabile",
     "description": {
-      "0": "Dopo aver usato <strong>Rito sacro: Destrezza del lupo</strong>, la VEL d'ATT normale di Cyno aumenta di un 20% per 10 s. Se l'effetto Verdetto del suo talento passivo Giudizio della piuma cadente viene attivato durante <strong>Rito arcano: Guida delle anime del baratro</strong>, la durata dell'incremento viene ripristinata.",
-      "1": "Devi prima sbloccare il talento passivo Giudizio della piuma cadente."
+      "0": "Dopo aver usato <strong>Rito sacro: Destrezza del lupo</strong>, la VEL d'ATT normale di Cyno aumenta di un 20% per 10 s. Se l'effetto Verdetto del suo talento d'ascensione Giudizio della piuma cadente viene attivato durante <strong>Rito arcano: Guida delle anime del baratro</strong>, la durata dell'incremento viene ripristinata.",
+      "1": "Richiede il talento d'ascensione Giudizio della piuma cadente."
     }
   },
   "constellation2": {
@@ -161,10 +161,10 @@
   "constellation6": {
     "name": "Veste: Bilancia dell'equità",
     "description": {
-      "0": "Dopo aver usato <strong>Rito sacro: Destrezza del lupo</strong> o attivato l'effetto Verdetto del talento passivo Giudizio della piuma cadente, Cyno ottiene 4 accumuli dell'effetto Giorno dello sciacallo. Quando colpisce gli avversari con gli attacchi normali, consuma 1 accumulo di Giorno dello sciacallo per scagliare un Dardo del braccatore.",
+      "0": "Dopo aver usato <strong>Rito sacro: Destrezza del lupo</strong> o attivato l'effetto Verdetto del talento d'ascensione Giudizio della piuma cadente, Cyno ottiene 4 accumuli dell'effetto Giorno dello sciacallo. Quando colpisce gli avversari con gli attacchi normali, consuma 1 accumulo di Giorno dello sciacallo per scagliare un Dardo del braccatore.",
       "1": "Giorno dello sciacallo dura 8 s e può essere accumulato per un massimo di 8 volte. I suoi effetti si annullano al termine di Precorritore giurato.",
       "2": "È possibile scagliare 1 Dardo del braccatore in questo modo ogni 0,4 s.",
-      "3": "Devi prima sbloccare il talento passivo Giudizio della piuma cadente."
+      "3": "Devi prima sbloccare il talento d'ascensione Giudizio della piuma cadente."
     }
   }
 }

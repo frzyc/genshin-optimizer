@@ -1,0 +1,12 @@
+{
+  "electroSigil": "Ấn Lôi",
+  "electroSigilAbsorbed": "Lượng năng lượng sinh ra khi xóa bỏ Ấn Lôi",
+  "opHitWithClawAndThunder": "Địch đã chịu đòn của <strong>Vuốt Và Sấm</strong> (nhấn)",
+  "electroSigilPerProc": "Ấn Lôi nhận được mỗi khi sét đánh",
+  "soulCompanion": {
+    "1": "Sát thương lần 1 của Sói",
+    "2": "Sát thương lần 2 của Sói",
+    "3": "Sát thương lần 3 của Sói",
+    "4": "Sát thương lần 4 của Sói"
+  }
+}

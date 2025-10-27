@@ -23,6 +23,7 @@ import BlackcliffPole from './BlackcliffPole'
 import BlackcliffSlasher from './BlackcliffSlasher'
 import BlackcliffWarbow from './BlackcliffWarbow'
 import BlackmarrowLantern from './BlackmarrowLantern'
+import BloodsoakedRuins from './BloodsoakedRuins'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import CalamityOfEshu from './CalamityOfEshu'
 import CalamityQueller from './CalamityQueller'
@@ -36,6 +37,7 @@ import CranesEchoingCall from './CranesEchoingCall'
 import CrescentPike from './CrescentPike'
 import CrimsonMoonsSemblance from './CrimsonMoonsSemblance'
 import DarkIronSword from './DarkIronSword'
+import DawningFrost from './DawningFrost'
 import Deathmatch from './Deathmatch'
 import DebateClub from './DebateClub'
 import DialoguesOfTheDesertSages from './DialoguesOfTheDesertSages'
@@ -136,6 +138,7 @@ import RangeGauge from './RangeGauge'
 import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
 import RedhornStonethresher from './RedhornStonethresher'
+import ReliquaryOfTruth from './ReliquaryOfTruth'
 import RightfulReward from './RightfulReward'
 import RingOfYaxche from './RingOfYaxche'
 import RoyalBow from './RoyalBow'
@@ -144,6 +147,7 @@ import RoyalGrimoire from './RoyalGrimoire'
 import RoyalLongsword from './RoyalLongsword'
 import RoyalSpear from './RoyalSpear'
 import Rust from './Rust'
+import SacrificersStaff from './SacrificersStaff'
 import SacrificialBow from './SacrificialBow'
 import SacrificialFragments from './SacrificialFragments'
 import SacrificialGreatsword from './SacrificialGreatsword'
@@ -246,6 +250,7 @@ const data = {
   BlackcliffSlasher,
   BlackcliffWarbow,
   BlackmarrowLantern,
+  BloodsoakedRuins,
   BloodtaintedGreatsword,
   CalamityOfEshu,
   CalamityQueller,
@@ -259,6 +264,7 @@ const data = {
   CrescentPike,
   CrimsonMoonsSemblance,
   DarkIronSword,
+  DawningFrost,
   Deathmatch,
   DebateClub,
   DialoguesOfTheDesertSages,
@@ -359,6 +365,7 @@ const data = {
   RavenBow,
   RecurveBow,
   RedhornStonethresher,
+  ReliquaryOfTruth,
   RightfulReward,
   RingOfYaxche,
   RoyalBow,
@@ -367,6 +374,7 @@ const data = {
   RoyalLongsword,
   RoyalSpear,
   Rust,
+  SacrificersStaff,
   SacrificialBow,
   SacrificialFragments,
   SacrificialGreatsword,

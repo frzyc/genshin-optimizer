@@ -142,7 +142,7 @@
     "name": "Huellas en el bosque brumoso",
     "description": {
       "0": "El <strong>orbe espiritual</strong> de la Habilidad Elemental, <strong>Amparo de la noche</strong>, puede rebotar 2 veces más.",
-      "1": "Además, cuando el <strong>orbe espiritual</strong> golpea a un enemigo, le aplica el efecto de “lobreguez” durante 12 s, el cual aumenta en un 50% el daño que recibe con el efecto de ultrapercepción del talento pasivo “Sinestesia noctívaga”. Es necesario desbloquear previamente el talento pasivo “Sinestesia noctívaga”."
+      "1": "Además, cuando el <strong>orbe espiritual</strong> golpea a un enemigo, le aplica el efecto de “lobreguez” durante 12 s, el cual aumenta en un 50% el daño que recibe con el efecto de ultrapercepción del talento de ascensión “Sinestesia noctívaga”. Es necesario desbloquear previamente el talento de ascensión “Sinestesia noctívaga”."
     }
   },
   "constellation2": {
@@ -179,9 +179,9 @@
   "constellation6": {
     "name": "Elogio de los manantiales",
     "description": {
-      "0": "Tras activar el efecto de ultrapercepción del talento pasivo “Sinestesia noctívaga”, el ATQ de tu personaje en uso aumenta en un 10% durante 9 s. Este efecto puede acumularse hasta 3 veces y su duración se calcula de forma independiente.",
+      "0": "Tras activar el efecto de ultrapercepción del talento de ascensión “Sinestesia noctívaga”, el ATQ de tu personaje en uso aumenta en un 10% durante 9 s. Este efecto puede acumularse hasta 3 veces y cada acumulación tiene su propia duración individual.",
       "1": "Además, al usar la Habilidad Definitiva, <strong>Eco de la oscuridad</strong>, se activa una vez un efecto equivalente a ultrapercepción, el cual inflige un 200% del daño original.",
-      "2": "Es necesario desbloquear el talento pasivo “Sinestesia noctívaga”."
+      "2": "Es necesario desbloquear el talento de ascensión “Sinestesia noctívaga”."
     }
   }
 }

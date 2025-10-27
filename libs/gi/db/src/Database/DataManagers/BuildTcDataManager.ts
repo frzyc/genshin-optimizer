@@ -49,7 +49,7 @@ export class BuildTcDataManager extends DataManager<
     const { character, weapon, artifact, optimization } = obj as BuildTc
     const _character = validateBuildTCChar(character)
     if (typeof name !== 'string') name = 'Build(TC) Name'
-    if (typeof description !== 'string') description = 'Build(TC) Description'
+    if (typeof description !== 'string') description = ''
     const _weapon = validateBuildTCWeapon(weapon)
     if (!_weapon) return undefined
 
@@ -121,7 +121,7 @@ export class BuildTcDataManager extends DataManager<
 export function initCharTC(weaponKey: WeaponKey): BuildTc {
   return {
     name: 'Build(TC) Name',
-    description: 'Build(TC) Description',
+    description: '',
     weapon: {
       key: weaponKey,
       level: 1,

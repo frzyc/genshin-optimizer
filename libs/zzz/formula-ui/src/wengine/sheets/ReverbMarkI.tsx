@@ -1,7 +1,7 @@
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { ReverbMarkI } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
@@ -10,8 +10,9 @@ const key: WengineKey = 'ReverbMarkI'
 const [chg, ch] = trans('wengine', key)
 const dm = mappedStats.wengine[key]
 const icon = wengineAsset(key, 'icon')
-const cond = conditionals[key]
-const buff = buffs[key]
+const cond = ReverbMarkI.conditionals
+const buff = ReverbMarkI.buffs
+
 const sheet: UISheetElement = {
   title: chg('phase'),
   img: icon,

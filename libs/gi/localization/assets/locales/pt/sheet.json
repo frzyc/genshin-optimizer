@@ -189,5 +189,17 @@
   "reactionOp": {
     "overload": "Após desencadear uma reação de <overloaded>Sobrecarga</overloaded>"
   },
-  "afterOverflow": "Recebeu cura em excesso"
+  "afterOverflow": "Recebeu cura em excesso",
+  "level": "Nível {{count}}",
+  "teamHitOp": {
+    "geo": "Após membros da equipe próximos infligirem <geo>Dano Geo</geo>",
+    "electroReaction": "Após membros da equipe próximos desencadearem uma <electro>reação Electro</electro>"
+  },
+  "afterPerformHeal": "Após realizar cura",
+  "bond": {
+    "current": "Porcentagem atual de Contrato de Vida",
+    "changes": "Após o valor de um Contrato de Vida aumentar ou diminuir",
+    "increases": "Após o valor de um Contrato de Vida aumentar",
+    "percentOf": "% de Contrato de Vida"
+  }
 }

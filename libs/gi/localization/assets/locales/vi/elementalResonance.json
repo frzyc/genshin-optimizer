@@ -1,0 +1,9 @@
+{
+  "SprawlingGreenery": {
+    "cond2ele": "Sau khi kích hoạt <pyro>Thiêu Đốt</pyro>, <spread>Sinh Trưởng</spread> hoặc <bloom>Sum Suê</bloom>",
+    "cond3ele": "Sau khi kích hoạt <aggravate>Tăng Cường</aggravate>, <spread>Lan Tràn</spread>, <hyperbloom>Nở Rộ</hyperbloom> hoặc <burgeon>Bung Tỏa</burgeon>"
+  },
+  "EnduringRock": {
+    "hitCond": "Khi được khiên bảo hộ, gây sát thương cho địch"
+  }
+}

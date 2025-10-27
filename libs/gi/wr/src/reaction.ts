@@ -335,7 +335,8 @@ export function lunarDmg(
   multiplier: NumNode,
   base: 'reaction' | MainStatKey | SubstatKey,
   variant: LunarReactionKey,
-  additional: Data = {}
+  additional: Data = {},
+  specialMultiplier?: NumNode
 ) {
   const transformative_dmg_ = sum(
     infoMut(sum(percent(1), prod(6, frac(input.total.eleMas, 2000))), {
@@ -364,26 +365,32 @@ export function lunarDmg(
     }
   )
 
-  const critDMG_ =
-    variant === 'lunarcharged'
-      ? input.total.critDMG_
-      : infoMut(sum(input.total.critDMG_, input.total.lunarbloom_critDMG_), {
-          ...input.total.critDMG_.info,
-          pivot: true,
-        })
+  const critDMG_ = infoMut(
+    sum(
+      input.total.critDMG_,
+      ...(variant === 'lunarbloom' ? [input.total.lunarbloom_critDMG_] : []),
+      input.total[`${transformativeReactions[variant].resist}_critDMG_`]
+    ),
+    {
+      ...input.total.critDMG_.info,
+      pivot: true,
+    }
+  )
 
   return data(
     prod(
       sum(
         prod(
           multiplier,
+          ...(specialMultiplier ? [specialMultiplier] : []),
           ...lunarDmgMultiplier(base, variant),
           transformative_dmg_,
           infoMut(sum(percent(1), input.total[`${variant}_baseDmg_`]), {
             path: `${variant}_baseDmg_`,
           })
         ),
-        input.total[`${variant}_dmgInc`]
+        input.total[`${variant}_dmgInc`],
+        input.total[`${transformativeReactions[variant].resist}_dmgInc`]
       ),
       lookup(
         input.hit.hitMode,

@@ -115,7 +115,7 @@
   "passive2": {
     "name": "Alba d'una notte d'estate",
     "description": {
-      "0": "Usando <strong>Sassifraga Ryuukin</strong>, l'ATT dei membri del gruppo vicini (esclusa Yoimiya) aumenta di un 10% per 15 s. Inoltre, viene aggiunto un ulteriore bonus ATT in base al numero di accumuli di Trucchi da combinaguai che Yoimiya possiede quando usa <strong>Sassifraga Ryuukin</strong>. Il bonus ATT aumenta di un 1% per ogni accumulo."
+      "0": "Usando <strong>Sassifraga Ryuukin</strong>, l'ATT dei membri del gruppo vicini (esclusa Yoimiya) aumenta di un 10% per 15 s. Inoltre, viene aggiunto un ulteriore bonus ATT in base al numero di accumuli di Trucchi da combinaguai del talento d'ascensione che Yoimiya possiede quando usa <strong>Sassifraga Ryuukin</strong>. Il bonus ATT aumenta di un 1% per ogni accumulo."
     }
   },
   "passive3": {

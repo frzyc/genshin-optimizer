@@ -52,7 +52,7 @@
       "3": "<strong>Campioni musicali</strong>",
       "4": "Xilonen ha 3 Campionatori che possono creare diverse Figure musicali a seconda dei tipi elementali degli altri membri del gruppo, riducendo le RES elementali corrispondenti degli avversari vicini quando sono attivi.",
       "5": "Il primo Campione musicale registrato in ciascun Campionatore è di <geo>Geo</geo>, e per ogni membro del gruppo di elemento <pyro>Pyro</pyro>/<hydro>Hydro</hydro>/<cryo>Cryo</cryo>/<electro>Electro</electro> il tipo elementale di ciascun Campione di <geo>Geo</geo> cambia nel tipo elementale corrispondente.",
-      "6": "Mentre Xilonen è in stato di Grazia dell'Anima della Notte, i Campioni musicali di <geo>Geo</geo> che porta con sé rimangono sempre attivi. Dopo aver sbloccato il suo talento passivo Echi di Netotiliztli, Xilonen può sfruttarne gli effetti per recuperare punti Anima della Notte. Quando i punti raggiungono il massimo, Xilonen li consuma tutti e attiva i 3 Campioni musicali che ha a disposizione per 15 s.",
+      "6": "Mentre Xilonen è in stato di Grazia dell'Anima della Notte, i Campioni musicali di <geo>Geo</geo> che porta con sé rimangono sempre attivi. Dopo aver sbloccato il suo talento d'ascensione Echi di Netotiliztli, Xilonen può sfruttarne gli effetti per recuperare punti Anima della Notte. Quando i punti raggiungono il massimo, Xilonen li consuma tutti e attiva i 3 Campioni musicali che ha a disposizione per 15 s.",
       "7": "Quando i Campioni musicali sono attivi, la RES elementale corrispondente dei nemici vicini diminuisce. I Campioni musicali dello stesso tipo elementale non sono cumulabili. Xilonen può attivare questi effetti anche quando non è in campo.",
       "8": "<br/>",
       "9": "<strong>Grazia dell'Anima della Notte: Xilonen</strong>",
@@ -62,7 +62,7 @@
         " La Grazia dell'Anima della Notte di Xilonen ha le seguenti limitazioni: quando è in questo stato, i punti Anima della Notte di Xilonen hanno un limite di tempo di 9 s. Una volta superato questo limite, tutti i suoi punti Anima della Notte scompaiono."
       ],
       "12": "<br/>",
-      "13": "Quando i punti Anima della Notte svaniscono mentre si trova nello stato di Grazia dell'Anima della Notte, Xilonen non è più in grado di generarne altri tramite il talento passivo Echi di Netotiliztli.",
+      "13": "Quando i punti Anima della Notte svaniscono mentre si trova nello stato di Grazia dell'Anima della Notte, Xilonen non è più in grado di generarne altri tramite il talento d'ascensione Echi di Netotiliztli.",
       "14": "<br/>",
       "15": "<i>Per certi versi, la gioielleria e il mixaggio musicale condividono principi simili: entrambi si occupano di filtrare le impurità e conservare solo ciò che è più brillante.",
       "16": "Xilonen non è particolarmente esigente riguardo all'una o all'altra opzione, poiché entrambe le cose la rendono estremamente felice!</i>"

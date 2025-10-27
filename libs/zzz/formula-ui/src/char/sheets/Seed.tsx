@@ -1,13 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
+import { Seed } from '@genshin-optimizer/zzz/formula'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Seed'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
-const formula = formulas[key]
+const cond = Seed.conditionals
+const buff = Seed.buffs
+const formula = Seed.formulas
 
 const sheet = createBaseSheet(key, {
   core: [
@@ -68,7 +68,7 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('coreCond.directStrike2Display'),
+        label: ch('coreCond.directStrikeDisplay'),
         metadata: cond.directStrikeDisplay,
         fields: [fieldForBuff(buff.m2_vanguard_defIgn_)],
       },

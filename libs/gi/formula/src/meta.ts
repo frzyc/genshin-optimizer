@@ -1087,6 +1087,20 @@ export const formulas = {
       },
     },
   },
+  Flins: {
+    normal1: {
+      sheet: 'Flins',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Flins',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Freminet: {
     normal1: {
       sheet: 'Freminet',
@@ -1678,6 +1692,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Navia',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Nefer: {
+    normal1: {
+      sheet: 'Nefer',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nefer',
         move: 'normal',
         name: 'normal1',
       },

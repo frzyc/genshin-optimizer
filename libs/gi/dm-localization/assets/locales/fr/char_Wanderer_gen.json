@@ -134,7 +134,7 @@
     "name": "Shoban : Pennage ostentatoire",
     "description": {
       "0": "Pendant l'état <strong>Bienfait venteux</strong>, la VIT d'attaque de Kuugo : Fushoudan et de Kuugo : Toufukai du Nomade augmente de 10 %.",
-      "1": "De plus, les flèches de vent tirées par l'aptitude passive « Rafales de rêverie » infligent des DGT supplémentaires équivalant à 25 % de l'ATQ. L'aptitude passive « Rafales de rêverie » doit être déjà débloquée pour cet effet."
+      "1": "De plus, les flèches de vent tirées par l'aptitude d'élévation « Rafales de rêverie » infligent des DGT supplémentaires équivalant à 25 % de l'ATQ. L'aptitude d'élévation « Rafales de rêverie » doit être déjà débloquée pour cet effet."
     }
   },
   "constellation2": {
@@ -154,8 +154,8 @@
   "constellation4": {
     "name": "Yonban : Dérive vers le printemps",
     "description": {
-      "0": "Si l'effet de renforcement selon le type élémentaire de l'aptitude passive « Fleur de jade » est déclenché en utilisant <strong>Hanega : Lyrisme des vents</strong>, un effet de renforcement n'ayant pas été déclenché cette fois-ci est aléatoirement accordé. Un maximum de 3 types différents de ces effets de renforcement peut être obtenu simultanément.",
-      "1": "L'aptitude passive « Fleur de jade » doit être déjà débloquée."
+      "0": "Si l'effet de renforcement selon le type élémentaire de l'aptitude d'élévation « Fleur de jade » est déclenché en utilisant <strong>Hanega : Lyrisme des vents</strong>, un effet de renforcement n'ayant pas été déclenché cette fois-ci est aléatoirement accordé. Un maximum de 3 types différents de ces effets de renforcement peut être obtenu simultanément.",
+      "1": "L'aptitude d'élévation « Fleur de jade » doit être déjà débloquée."
     }
   },
   "constellation5": {

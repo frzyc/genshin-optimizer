@@ -134,7 +134,7 @@
     "description": {
       "0": "Saat memenuhi salah satu kondisi berikut, <electro>Electro DMG Bonus</electro> Sethos meningkat 15% selama 10 detik, dapat ditumpuk sampai 2 lapis, durasi setiap lapisnya dihitung terpisah:",
       "1": [
-        "Mengonsumsi Energy melalui serangan Membidik, kondisi ini harus membuka Talenta Pasif \"Black Kite's Enigma\" terlebih dahulu;",
+        "Mengonsumsi Energy melalui serangan Membidik, kondisi ini harus membuka Talenta Ascension \"Black Kite's Enigma\" terlebih dahulu;",
         "Memicu Reaksi Elemental dan memulihkan Energy melalui <strong>Ancient Rite: The Thundering Sands</strong>;",
         "Melancarkan <strong>Secret Rite: Twilight Shadowpiercer</strong>."
       ]
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Pylon of the Sojourning Sun Temple",
     "description": {
-      "0": "Setelah <strong>Shadowpiercing Shot</strong> mengenai musuh, Energy yang dikonsumsi oleh Talenta Pasif \"Black Kite's Enigma\" akan dikembalikan. Efek ini dapat terpicu setiap 15 detik. Harus membuka Talenta Pasif \"Black Kite's Enigma\" terlebih dahulu."
+      "0": "Setelah <strong>Shadowpiercing Shot</strong> mengenai musuh, Energy yang dikonsumsi oleh Talenta Ascension \"Black Kite's Enigma\" akan dikembalikan. Efek ini dapat terpicu setiap 15 detik. Harus membuka Talenta Ascension \"Black Kite's Enigma\" terlebih dahulu."
     }
   }
 }

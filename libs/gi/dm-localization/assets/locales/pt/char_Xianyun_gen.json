@@ -137,9 +137,9 @@
     "name": "Alheia ao Mundo",
     "description": {
       "0": "Depois de lançar a Escada Celestial de <strong>Nuvens Brancas na Alvorada</strong>, aumenta o ATQ de Xianyun em 20% por 15s.",
-      "1": "Além disso, o efeito do Talento Passivo \"Pense a Adeptus em seu Reino\" obtém um aumento: quando o Bambu Estelar criado por <strong>As Estrelas se Reúnem no Crepúsculo</strong> possuir acúmulos de Ajuda Adepti, aumentará o Dano da onda de choque do Ataque Imersivo do personagem ativo próximo. O aumento é equivalente a 400% do ATQ de Xianyun. É possível aumentar o Dano da onda de choque do Ataque Imersivo do personagem ativo próximo em até 18.000.",
+      "1": "Além disso, o efeito do Talento de Ascensão \"Pense a Adeptus em seu Reino\" obtém um aumento: quando o Bambu Estelar criado por <strong>As Estrelas se Reúnem no Crepúsculo</strong> possuir acúmulos de Ajuda Adepti, aumentará o Dano da onda de choque do Ataque Imersivo do personagem ativo próximo. O aumento é equivalente a 400% do ATQ de Xianyun. É possível aumentar o Dano da onda de choque do Ataque Imersivo do personagem ativo próximo em até 18.000.",
       "2": "Só um oponente pode sofrer o aumento de Dano de uma onda de choque de um Ataque. Cada personagem pode desencadear esse efeito uma vez a cada 0.4s.",
-      "3": "É necessário desbloquear primeiro o Talento Passivo \"Pense a Adeptus em seu Reino\"."
+      "3": "É necessário desbloquear primeiro o Talento de Ascensão \"Pense a Adeptus em seu Reino\"."
     }
   },
   "constellation3": {

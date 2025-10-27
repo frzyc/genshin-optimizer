@@ -108,7 +108,7 @@
       "2": "Altın Kadeh etkisindeki karakterler <dendro>Doğa saldırıları</dendro> ile vurulduklarında 10 saniyeliğine yakındaki tüm karakterlerin Element Ustalığı 100 artar. Aynı zamanda Çiçeklenme veya Ay Çiçeklenmesi tepkimeleri tetiklendiğinde Doğa Çekirdekleri yerine Bereketli Çekirdekler oluşur.",
       "3": "Bu çekirdekler oluştuktan kısa bir süre sonra patlarlar ve daha büyük bir Etki Alanına sahiptirler.",
       "4": "Bereketli Çekirdekler, Aşırı Çiçeklenme ve Filizlenme tepkimelerini tetikleyemezler ve Doğa Çekirdekleriyle aynı üst sayısal sınıra sahiptirler. Bereketli Çekirdek Hasarı, Çiçeklenme tarafından üretilen Doğa Çekirdeklerinin verdiği Hasar olarak kabul edilir.",
-      "5": "Grup bu Pasif Yeteneğin koşullarını sağlamazsa Altın Kadehin mevcut etkileri iptal olur."
+      "5": "Grup bu Yükseltme Yeteneğinin koşullarını sağlamazsa Altın Kadehin mevcut etkileri iptal olur."
     }
   },
   "passive2": {
@@ -138,7 +138,7 @@
     "name": "Yıldızlı Göğün Çiçek Yağmuru",
     "description": {
       "0": "Altın Kadeh etkisindeki karakterler, düşmanlara <hydro>Su Hasarı</hydro> verdikten sonra 10 saniyeliğine düşmanların <hydro>Su Direnci</hydro> %35 azalır. Sonrasında tetiklenen Çiçeklenme veya Ay Çiçeklenmesi tepkimeleri düşmanlara Hasar verdiğinde 10 saniyeliğine düşmanların <dendro>Doğa Direncini</dendro> %35 azaltır.",
-      "1": "\"Çiçek Dansı Bahçesi\" Yeteneğinin açılmış olması gerekir."
+      "1": "\"Çiçek Dansı Bahçesi\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {

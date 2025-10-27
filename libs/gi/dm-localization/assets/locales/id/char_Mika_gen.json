@@ -116,9 +116,9 @@
   "passive2": {
     "name": "Topographical Mapping",
     "description": {
-      "0": "Saat Karakter aktif berada dalam status Eagleplume dari <strong>Skyfeather Song</strong> dan status Soulwind dari <strong>Starfrost Swirl</strong> secara bersamaan, saat Karakter mengakibatkan Serangan CRIT, status Soulwind akan memberikan 1 lapis efek Detector dari Talenta Pasif \"Suppressive Barrage\". Jumlah maksimum efek Detector yang bisa diperoleh dengan cara ini adalah 1 lapis dalam durasi satu kali status Eagleplume.",
+      "0": "Saat Karakter aktif berada dalam status Eagleplume dari <strong>Skyfeather Song</strong> dan status Soulwind dari <strong>Starfrost Swirl</strong> secara bersamaan, saat Karakter mengakibatkan Serangan CRIT, status Soulwind akan memberikan 1 lapis efek Detector dari Talenta Ascension \"Suppressive Barrage\". Jumlah maksimum efek Detector yang bisa diperoleh dengan cara ini adalah 1 lapis dalam durasi satu kali status Eagleplume.",
       "1": "Selain itu, jumlah maksimum efek Detector yang bisa diperoleh dari status Soulwind sendiri akan bertambah 1 lapis.",
-      "2": "Harus membuka Talenta Pasif \"Suppressive Barrage\" terlebih dahulu."
+      "2": "Harus membuka Talenta Ascension \"Suppressive Barrage\" terlebih dahulu."
     }
   },
   "passive3": {
@@ -136,8 +136,8 @@
   "constellation2": {
     "name": "Companion's Ingress",
     "description": {
-      "0": "Saat Flowfrost Arrow dari <strong>Starfrost Swirl</strong> mengenai musuh untuk pertama kalinya, atau saat Rimestar Flare mengenai musuh, akan menghasilkan 1 lapis efek Detector dari Talenta Pasif \"Suppressive Barrage\".",
-      "1": "Harus membuka Talenta Pasif Suppressive Barrage lebih dulu."
+      "0": "Saat Flowfrost Arrow dari <strong>Starfrost Swirl</strong> mengenai musuh untuk pertama kalinya, atau saat Rimestar Flare mengenai musuh, akan menghasilkan 1 lapis efek Detector dari Talenta Ascension \"Suppressive Barrage\".",
+      "1": "Harus membuka Talenta Ascension Suppressive Barrage lebih dulu."
     }
   },
   "constellation3": {
@@ -164,7 +164,7 @@
     "name": "Companion's Counsel",
     "description": {
       "0": "Jumlah maksimum tumpukan efek Detector status Soulwind dari <strong>Starfrost Swirl</strong> bertambah 1 lapis.",
-      "1": "Harus membuka Talenta Pasif Suppressive Barrage lebih dulu.",
+      "1": "Harus membuka Talenta Ascension Suppressive Barrage lebih dulu.",
       "2": "Selain itu, Physical CRIT DMG Karakter aktif yang berada dalam status Soulwind meningkat 60%."
     }
   }

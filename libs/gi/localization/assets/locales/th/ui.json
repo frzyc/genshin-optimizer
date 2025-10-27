@@ -8,7 +8,7 @@
     "doc": "เอกสาร"
   },
   "social": {
-    "paypal": "Paypal",
+    "paypal": "PayPal",
     "patreon": "Patreon",
     "discord": "Discord"
   },
@@ -16,10 +16,11 @@
   "ascending": "จากน้อยไปมาก",
   "descending": "จากมากไปน้อย",
   "loading": "กำลังโหลด...",
-  "rightsDisclaimer": "Genshin Optimizer ไม่มีส่วนเกี่ยวข้องหรือรับรองโดย miHoYo",
+  "rightsDisclaimer": "Genshin Optimizer ไม่มีส่วนเกี่ยวข้องหรือรับรองโดย HoYoverse",
   "appVersion": "$t(pageTitle) เวอร์ชั่น: <1>{{version}}</1>",
   "error": "ผิดพลาด",
   "reset": "รีเซ็ต",
+  "info": "ข้อมูล",
   "inventory": "คลัง",
   "close": "ปิด",
   "sortMap": {

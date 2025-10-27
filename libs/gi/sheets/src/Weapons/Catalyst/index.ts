@@ -8,6 +8,7 @@ import BlackcliffAgate from './BlackcliffAgate'
 import BlackmarrowLantern from './BlackmarrowLantern'
 import CashflowSupervision from './CashflowSupervision'
 import CranesEchoingCall from './CranesEchoingCall'
+import DawningFrost from './DawningFrost'
 import DodocoTales from './DodocoTales'
 import EmeraldOrb from './EmeraldOrb'
 import EtherlightSpindlelute from './EtherlightSpindlelute'
@@ -30,6 +31,7 @@ import OtherworldlyStory from './OtherworldlyStory'
 import PocketGrimoire from './PocketGrimoire'
 import PrototypeAmber from './PrototypeAmber'
 import QuantumCatalyst from './QuantumCatalyst'
+import ReliquaryOfTruth from './ReliquaryOfTruth'
 import RingOfYaxche from './RingOfYaxche'
 import RoyalGrimoire from './RoyalGrimoire'
 import SacrificialFragments from './SacrificialFragments'
@@ -57,6 +59,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   BlackmarrowLantern,
   CashflowSupervision,
   CranesEchoingCall,
+  DawningFrost,
   DodocoTales,
   EmeraldOrb,
   EtherlightSpindlelute,
@@ -79,6 +82,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   PocketGrimoire,
   PrototypeAmber,
   QuantumCatalyst,
+  ReliquaryOfTruth,
   RingOfYaxche,
   RoyalGrimoire,
   SacrificialFragments,

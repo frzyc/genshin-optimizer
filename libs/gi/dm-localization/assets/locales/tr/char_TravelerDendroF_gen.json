@@ -132,8 +132,8 @@
   "constellation4": {
     "name": "Şekerli Ot",
     "description": {
-      "0": "<strong>Nilüfer Lambası</strong>, Nilüfer Işığı Dönüşümünü tetikledikten sonra \"Aşırı Büyüyen Yeşillikler\" Pasif Yeteneğinden 5 kademe Nilüfer Işığı Taşkını etkisi elde eder.",
-      "1": "Öncelikle bu Pasif Yeteneğin açılmış olması gerekir."
+      "0": "<strong>Nilüfer Lambası</strong>, Nilüfer Işığı Dönüşümünü tetikledikten sonra \"Aşırı Büyüyen Yeşillikler\" Yükseltme Yeteneğinden 5 kademe Nilüfer Işığı Taşkını etkisi elde eder.",
+      "1": "\"Aşırı Büyüyen Yeşillikler\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation5": {

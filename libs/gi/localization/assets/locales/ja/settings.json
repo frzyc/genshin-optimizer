@@ -1,33 +1,33 @@
 {
   "title": "設定",
   "languageCard": {
-    "languageFormat": "言語: {{language}}"
+    "languageFormat": "言語：{{language}}"
   },
   "uploadCard": {
     "title": "データベースをアップロード",
     "replaceDatabase": "データベースを入れ替え",
-    "hint": "JSONファイルアップロードはこちら…",
-    "hintPaste": "…又はデータを下記にて貼付けください",
+    "hint": "JSONファイルのアップロードはこちらから",
+    "hintPaste": "もしくはテキストデータを下欄に貼り付けてください",
     "error": {
       "jsonParse": "JSON ファイルを解析できません。",
-      "unknown": "ファイルの形式が不明。",
-      "monaInvalid": "Mona-Uranaiファイル形式が無効です。",
-      "goInvalid": "Genshin Optimizerバックアップファイル形式が無効。"
+      "unknown": "不明な形式のファイルです。",
+      "monaInvalid": "無効な Mona-Uranai ファイル形式です。",
+      "goInvalid": "無効なGO バックアップファイル形式です。"
     },
     "dbSource": "データソース：",
     "goodUpload": {
-      "title": "<strong>Genshin Open Object Description</strong> (GOOD) 原神オープンオブジェクト詳細形式"
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) 形式"
     },
     "buttons": {
-      "open": "オープン",
-      "detectDups": "改良中・重複を検出",
-      "delNotInImport": "インポートに含まれないものを削除"
+      "open": "ファイルを選択する",
+      "detectDups": "強化された/重複している項目を検出",
+      "delNotInImport": "インポートデータに存在しない項目を削除"
     },
     "tooltip": {
-      "detectdup": "GOのインベントリーに改良中・重複するものを検出し、インポートをGOと統合します。",
-      "ignoreDup": "改良中・重複のものを検出せず、インポートをGOの既存のインベントリーに追加されます。",
-      "delNotInImport": "インポートが全てのアイテムであると考慮します。GOインベントリー内の、インポートにないものを削除します。",
-      "keepNotInImport": "インポートがアイテム全ての一部であると考慮します。なにも削除されません。"
+      "detectdup": "GOのインベントリーに強化された/重複している項目がないかを検出し、インポートデータを統合します。",
+      "ignoreDup": "強化された/重複している項目を検出しません。インポートデータ内の全ての項目が既存のインベントリーに追加されます。",
+      "delNotInImport": "インポートデータを、ゲーム内のすべてのデータを含んでいるものとして扱います。インポートデータに存在しないインベントリー内の項目は削除されます。",
+      "keepNotInImport": "インポートデータを、ゲーム内の一部のデータだけを含んでいるものとして扱います。なにも削除されません。"
     }
   },
   "count": {
@@ -35,14 +35,18 @@
     "arts": "聖遺物：",
     "weapons": "武器：",
     "total": "合計：",
-    "new": "新規：",
-    "updated": "更新済：",
-    "removed": "削除：",
-    "unchanged": "未更新：",
-    "invalid": "無効：",
-    "upgraded": "強化済：",
-    "dbTotal": "統合合計：",
-    "notInImport": "インポートに含まれない"
+    "new": "追加される数：",
+    "updated": "更新される数：",
+    "removed": "削除される数：",
+    "unchanged": "変更なしの数：",
+    "invalid": "無効数：",
+    "upgraded": "強化される数：",
+    "dbTotal": "統合後の合計数：",
+    "notInImport": "インポートに存在しない項目：",
+    "teams": "チーム：",
+    "loadouts": "戦闘設定：",
+    "builds": "装備：",
+    "buildTcs": "TC Builds："
   },
   "DatabaseCard": {
     "title": "データベース",
@@ -51,15 +55,15 @@
       "copy": "クリップボード",
       "delete": "削除",
       "upload": "アップロード",
-      "swap": "変更"
+      "swap": "データベースを切り替え"
     },
-    "currentDB": "現データベース"
+    "currentDB": "選択中のデータベース"
   },
   "sillyCard": {
-    "desc": "すべてのキャラクターアセットを<strong>Silly Wisher（やけくそ祈願）</strong>から（許可を得て）ぬす・・・<1>借用し</1>、それらをGenshin Optimizerに遺伝子スプライシングを成功しました。",
+    "desc": "我々は <strong>Silly Wisher</strong> からすべてのキャラクターアセットを<1>盗み</1> (許可を得て)借用し、それらの遺伝子を Genshin Optimizer に組み換えました。",
     "toggle": {
-      "enabled": "やけくそオプティマイザー有効",
-      "disabled": "やけくそオプティマイザー無効"
+      "enabled": "Silly Optimizer 有効",
+      "disabled": "Silly Optimizer 無効"
     }
   },
   "letsnow": "雪よ降れ"

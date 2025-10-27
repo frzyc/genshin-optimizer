@@ -48843,6 +48843,533 @@
           0.25
         ]
       },
+      "Flins": {
+        "auto": [
+          [
+            0.44726,
+            0.483665,
+            0.52007,
+            0.572077,
+            0.608482,
+            0.650088,
+            0.707295,
+            0.764503,
+            0.821711,
+            0.884119,
+            0.946527,
+            1.008936,
+            1.071344,
+            1.133753,
+            1.196161
+          ],
+          [
+            0.451483,
+            0.488231,
+            0.52498,
+            0.577478,
+            0.614227,
+            0.656225,
+            0.713973,
+            0.771721,
+            0.829468,
+            0.892466,
+            0.955464,
+            1.018461,
+            1.081459,
+            1.144456,
+            1.207454
+          ],
+          [
+            0.559198,
+            0.604714,
+            0.65023,
+            0.715253,
+            0.760769,
+            0.812787,
+            0.884313,
+            0.955838,
+            1.027363,
+            1.105391,
+            1.183419,
+            1.261446,
+            1.339474,
+            1.417501,
+            1.495529
+          ],
+          [
+            0.320389,
+            0.346467,
+            0.372545,
+            0.4098,
+            0.435878,
+            0.465681,
+            0.506661,
+            0.547641,
+            0.588621,
+            0.633327,
+            0.678032,
+            0.722737,
+            0.767443,
+            0.812148,
+            0.856853
+          ],
+          [
+            0.767946,
+            0.830453,
+            0.89296,
+            0.982256,
+            1.044763,
+            1.1162,
+            1.214426,
+            1.312651,
+            1.410877,
+            1.518032,
+            1.625187,
+            1.732342,
+            1.839498,
+            1.946653,
+            2.053808
+          ],
+          [
+            1.03028,
+            1.11414,
+            1.198,
+            1.3178,
+            1.40166,
+            1.4975,
+            1.62928,
+            1.76106,
+            1.89284,
+            2.0366,
+            2.18036,
+            2.32412,
+            2.46788,
+            2.61164,
+            2.7554
+          ],
+          [
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25
+          ],
+          [
+            0.639324,
+            0.691362,
+            0.7434,
+            0.81774,
+            0.869778,
+            0.92925,
+            1.011024,
+            1.092798,
+            1.174572,
+            1.26378,
+            1.352988,
+            1.442196,
+            1.531404,
+            1.620612,
+            1.70982
+          ],
+          [
+            1.278377,
+            1.382431,
+            1.486485,
+            1.635134,
+            1.739187,
+            1.858106,
+            2.02162,
+            2.185133,
+            2.348646,
+            2.527025,
+            2.705403,
+            2.883781,
+            3.062159,
+            3.240537,
+            3.418915
+          ],
+          [
+            1.596762,
+            1.726731,
+            1.8567,
+            2.04237,
+            2.172339,
+            2.320875,
+            2.525112,
+            2.729349,
+            2.933586,
+            3.15639,
+            3.379194,
+            3.601998,
+            3.824802,
+            4.047606,
+            4.27041
+          ]
+        ],
+        "skill": [
+          [
+            0.58248,
+            0.626166,
+            0.669852,
+            0.7281,
+            0.771786,
+            0.815472,
+            0.87372,
+            0.931968,
+            0.990216,
+            1.048464,
+            1.106712,
+            1.16496,
+            1.23777,
+            1.31058,
+            1.38339
+          ],
+          [
+            0.587976,
+            0.632074,
+            0.676172,
+            0.73497,
+            0.779068,
+            0.823166,
+            0.881964,
+            0.940762,
+            0.999559,
+            1.058357,
+            1.117154,
+            1.175952,
+            1.249449,
+            1.322946,
+            1.396443
+          ],
+          [
+            0.728256,
+            0.782875,
+            0.837494,
+            0.91032,
+            0.964939,
+            1.019558,
+            1.092384,
+            1.16521,
+            1.238035,
+            1.310861,
+            1.383686,
+            1.456512,
+            1.547544,
+            1.638576,
+            1.729608
+          ],
+          [
+            0.417252,
+            0.448546,
+            0.47984,
+            0.521565,
+            0.552859,
+            0.584153,
+            0.625878,
+            0.667603,
+            0.709328,
+            0.751054,
+            0.792779,
+            0.834504,
+            0.88666,
+            0.938817,
+            0.990973
+          ],
+          [
+            1.000112,
+            1.07512,
+            1.150129,
+            1.25014,
+            1.325148,
+            1.400157,
+            1.500168,
+            1.600179,
+            1.70019,
+            1.800202,
+            1.900213,
+            2.000224,
+            2.125238,
+            2.250252,
+            2.375266
+          ],
+          [
+            1.1496,
+            1.23582,
+            1.32204,
+            1.437,
+            1.52322,
+            1.60944,
+            1.7244,
+            1.83936,
+            1.95432,
+            2.06928,
+            2.18424,
+            2.2992,
+            2.4429,
+            2.5866,
+            2.7303
+          ],
+          [
+            1.784,
+            1.9178,
+            2.0516,
+            2.23,
+            2.3638,
+            2.4976,
+            2.676,
+            2.8544,
+            3.0328,
+            3.2112,
+            3.3896,
+            3.568,
+            3.791,
+            4.014,
+            4.237
+          ],
+          [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          [
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16
+          ]
+        ],
+        "burst": [
+          [
+            2.5984,
+            2.79328,
+            2.98816,
+            3.248,
+            3.44288,
+            3.63776,
+            3.8976,
+            4.15744,
+            4.41728,
+            4.67712,
+            4.93696,
+            5.1968,
+            5.5216,
+            5.8464,
+            6.1712
+          ],
+          [
+            0.1624,
+            0.17458,
+            0.18676,
+            0.203,
+            0.21518,
+            0.22736,
+            0.2436,
+            0.25984,
+            0.27608,
+            0.29232,
+            0.30856,
+            0.3248,
+            0.3451,
+            0.3654,
+            0.3857
+          ],
+          [
+            1.16928,
+            1.256976,
+            1.344672,
+            1.4616,
+            1.549296,
+            1.636992,
+            1.75392,
+            1.870848,
+            1.987776,
+            2.104704,
+            2.221632,
+            2.33856,
+            2.48472,
+            2.63088,
+            2.77704
+          ],
+          [
+            80,
+            80,
+            80,
+            80,
+            80,
+            80,
+            80,
+            80,
+            80,
+            80,
+            80,
+            80,
+            80,
+            80,
+            80
+          ],
+          [
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ],
+          [
+            0.71456,
+            0.768152,
+            0.821744,
+            0.8932,
+            0.946792,
+            1.000384,
+            1.07184,
+            1.143296,
+            1.214752,
+            1.286208,
+            1.357664,
+            1.42912,
+            1.51844,
+            1.60776,
+            1.69708
+          ],
+          [
+            1.03936,
+            1.117312,
+            1.195264,
+            1.2992,
+            1.377152,
+            1.455104,
+            1.55904,
+            1.662976,
+            1.766912,
+            1.870848,
+            1.974784,
+            2.07872,
+            2.20864,
+            2.33856,
+            2.46848
+          ],
+          [
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30
+          ]
+        ],
+        "passive1": [
+          [
+            0.2
+          ]
+        ],
+        "passive2": [
+          [
+            0.08
+          ],
+          [
+            160
+          ]
+        ],
+        "passive3": [
+          [
+            0.007
+          ],
+          [
+            0.14
+          ]
+        ],
+        "passive": [],
+        "constellation1": [
+          8,
+          5.5
+        ],
+        "constellation2": [
+          0.5,
+          6,
+          0.25,
+          7
+        ],
+        "constellation3": [],
+        "constellation4": [
+          0.2,
+          0.1,
+          220
+        ],
+        "constellation5": [],
+        "constellation6": [
+          0.35,
+          0.1
+        ]
+      },
       "Aino": {
         "auto": [
           [
@@ -49173,6 +49700,594 @@
           0.15,
           0.2,
           15
+        ]
+      },
+      "Nefer": {
+        "auto": [
+          [
+            0.380712,
+            0.409265,
+            0.437819,
+            0.47589,
+            0.504443,
+            0.532997,
+            0.571068,
+            0.609139,
+            0.64721,
+            0.685282,
+            0.723353,
+            0.761424,
+            0.809013,
+            0.856602,
+            0.904191
+          ],
+          [
+            0.37564,
+            0.403813,
+            0.431986,
+            0.46955,
+            0.497723,
+            0.525896,
+            0.56346,
+            0.601024,
+            0.638588,
+            0.676152,
+            0.713716,
+            0.75128,
+            0.798235,
+            0.84519,
+            0.892145
+          ],
+          [
+            0.2524,
+            0.27133,
+            0.29026,
+            0.3155,
+            0.33443,
+            0.35336,
+            0.3786,
+            0.40384,
+            0.42908,
+            0.45432,
+            0.47956,
+            0.5048,
+            0.53635,
+            0.5679,
+            0.59945
+          ],
+          [
+            0.609944,
+            0.65569,
+            0.701436,
+            0.76243,
+            0.808176,
+            0.853922,
+            0.914916,
+            0.97591,
+            1.036905,
+            1.097899,
+            1.158894,
+            1.219888,
+            1.296131,
+            1.372374,
+            1.448617
+          ],
+          [
+            1.3088,
+            1.40696,
+            1.50512,
+            1.636,
+            1.73416,
+            1.83232,
+            1.9632,
+            2.09408,
+            2.22496,
+            2.35584,
+            2.48672,
+            2.6176,
+            2.7812,
+            2.9448,
+            3.1084
+          ],
+          [
+            18.15,
+            18.15,
+            18.15,
+            18.15,
+            18.15,
+            18.15,
+            18.15,
+            18.15,
+            18.15,
+            18.15,
+            18.15,
+            18.15,
+            18.15,
+            18.15,
+            18.15
+          ],
+          [
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50
+          ],
+          [
+            0.568288,
+            0.614544,
+            0.6608,
+            0.72688,
+            0.773136,
+            0.826,
+            0.898688,
+            0.971376,
+            1.044064,
+            1.12336,
+            1.202656,
+            1.281952,
+            1.361248,
+            1.440544,
+            1.51984
+          ],
+          [
+            1.136335,
+            1.228828,
+            1.32132,
+            1.453452,
+            1.545944,
+            1.65165,
+            1.796995,
+            1.94234,
+            2.087686,
+            2.246244,
+            2.404802,
+            2.563361,
+            2.721919,
+            2.880478,
+            3.039036
+          ],
+          [
+            1.419344,
+            1.534872,
+            1.6504,
+            1.81544,
+            1.930968,
+            2.063,
+            2.244544,
+            2.426088,
+            2.607632,
+            2.80568,
+            3.003728,
+            3.201776,
+            3.399824,
+            3.597872,
+            3.79592
+          ],
+          [
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25
+          ]
+        ],
+        "skill": [
+          [
+            0.76384,
+            0.821128,
+            0.878416,
+            0.9548,
+            1.012088,
+            1.069376,
+            1.14576,
+            1.222144,
+            1.298528,
+            1.374912,
+            1.451296,
+            1.52768,
+            1.62316,
+            1.71864,
+            1.81412
+          ],
+          [
+            1.52768,
+            1.642256,
+            1.756832,
+            1.9096,
+            2.024176,
+            2.138752,
+            2.29152,
+            2.444288,
+            2.597056,
+            2.749824,
+            2.902592,
+            3.05536,
+            3.24632,
+            3.43728,
+            3.62824
+          ],
+          [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            0.2464,
+            0.26488,
+            0.28336,
+            0.308,
+            0.32648,
+            0.34496,
+            0.3696,
+            0.39424,
+            0.41888,
+            0.44352,
+            0.46816,
+            0.4928,
+            0.5236,
+            0.5544,
+            0.5852
+          ],
+          [
+            0.4928,
+            0.52976,
+            0.56672,
+            0.616,
+            0.65296,
+            0.68992,
+            0.7392,
+            0.78848,
+            0.83776,
+            0.88704,
+            0.93632,
+            0.9856,
+            1.0472,
+            1.1088,
+            1.1704
+          ],
+          [
+            0.32032,
+            0.344344,
+            0.368368,
+            0.4004,
+            0.424424,
+            0.448448,
+            0.48048,
+            0.512512,
+            0.544544,
+            0.576576,
+            0.608608,
+            0.64064,
+            0.68068,
+            0.72072,
+            0.76076
+          ],
+          [
+            0.64064,
+            0.688688,
+            0.736736,
+            0.8008,
+            0.848848,
+            0.896896,
+            0.96096,
+            1.025024,
+            1.089088,
+            1.153152,
+            1.217216,
+            1.28128,
+            1.36136,
+            1.44144,
+            1.52152
+          ],
+          [
+            0.96,
+            1.032,
+            1.104,
+            1.2,
+            1.272,
+            1.344,
+            1.44,
+            1.536,
+            1.632,
+            1.728,
+            1.824,
+            1.92,
+            2.04,
+            2.16,
+            2.28
+          ],
+          [
+            0.96,
+            1.032,
+            1.104,
+            1.2,
+            1.272,
+            1.344,
+            1.44,
+            1.536,
+            1.632,
+            1.728,
+            1.824,
+            1.92,
+            2.04,
+            2.16,
+            2.28
+          ],
+          [
+            1.28,
+            1.376,
+            1.472,
+            1.6,
+            1.696,
+            1.792,
+            1.92,
+            2.048,
+            2.176,
+            2.304,
+            2.432,
+            2.56,
+            2.72,
+            2.88,
+            3.04
+          ],
+          [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ]
+        ],
+        "burst": [
+          [
+            2.2464,
+            2.41488,
+            2.58336,
+            2.808,
+            2.97648,
+            3.14496,
+            3.3696,
+            3.59424,
+            3.81888,
+            4.04352,
+            4.26816,
+            4.4928,
+            4.7736,
+            5.0544,
+            5.3352
+          ],
+          [
+            4.4928,
+            4.82976,
+            5.16672,
+            5.616,
+            5.95296,
+            6.28992,
+            6.7392,
+            7.18848,
+            7.63776,
+            8.08704,
+            8.53632,
+            8.9856,
+            9.5472,
+            10.1088,
+            10.6704
+          ],
+          [
+            3.3696,
+            3.62232,
+            3.87504,
+            4.212,
+            4.46472,
+            4.71744,
+            5.0544,
+            5.39136,
+            5.72832,
+            6.06528,
+            6.40224,
+            6.7392,
+            7.1604,
+            7.5816,
+            8.0028
+          ],
+          [
+            6.7392,
+            7.24464,
+            7.75008,
+            8.424,
+            8.92944,
+            9.43488,
+            10.1088,
+            10.78272,
+            11.45664,
+            12.13056,
+            12.80448,
+            13.4784,
+            14.3208,
+            15.1632,
+            16.0056
+          ],
+          [
+            0.13,
+            0.16,
+            0.19,
+            0.22,
+            0.25,
+            0.28,
+            0.31,
+            0.34,
+            0.37,
+            0.4,
+            0.43,
+            0.46,
+            0.49,
+            0.52,
+            0.55
+          ],
+          [
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15
+          ],
+          [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ]
+        ],
+        "passive1": [
+          [
+            3
+          ],
+          [
+            9
+          ],
+          [
+            100
+          ],
+          [
+            8
+          ],
+          [
+            15
+          ],
+          [
+            0.08
+          ]
+        ],
+        "passive2": [
+          [
+            6
+          ],
+          [
+            5
+          ],
+          [
+            500
+          ],
+          [
+            0.001
+          ],
+          [
+            0.5
+          ]
+        ],
+        "passive3": [
+          [
+            0.000175
+          ],
+          [
+            0.14
+          ]
+        ],
+        "passive": [],
+        "constellation1": [
+          0.6,
+          0.6,
+          0.6,
+          0.6,
+          0.6
+        ],
+        "constellation2": [
+          2,
+          5,
+          200
+        ],
+        "constellation3": [],
+        "constellation4": [
+          0.25,
+          4.5,
+          0.2
+        ],
+        "constellation5": [],
+        "constellation6": [
+          0.85,
+          1.2,
+          0.15
         ]
       },
       "Somnia": {
@@ -56473,6 +57588,72 @@
           "eleMas": 200
         }
       },
+      "Flins": {
+        "key": "Flins",
+        "ele": "electro",
+        "region": "nodKrai",
+        "weaponType": "polearm",
+        "birthday": {
+          "month": 10,
+          "day": 31
+        },
+        "rarity": 5,
+        "lvlCurves": [
+          {
+            "key": "hp",
+            "base": 972.3864,
+            "curve": "GROW_CURVE_HP_S5"
+          },
+          {
+            "key": "atk",
+            "base": 27.3714,
+            "curve": "GROW_CURVE_ATTACK_S5"
+          },
+          {
+            "key": "def",
+            "base": 62.94116,
+            "curve": "GROW_CURVE_HP_S5"
+          }
+        ],
+        "ascensionBonus": {
+          "hp": [
+            0,
+            833.7334,
+            1426.1229,
+            2215.9756,
+            2808.3652,
+            3400.7546,
+            3993.1443
+          ],
+          "def": [
+            0,
+            53.9676,
+            92.313,
+            143.4402,
+            181.7856,
+            220.131,
+            258.4764
+          ],
+          "atk": [
+            0,
+            23.466785,
+            40.140556,
+            62.372246,
+            79.04601,
+            95.71979,
+            112.393555
+          ],
+          "critDMG_": [
+            0,
+            0,
+            0.096,
+            0.192,
+            0.192,
+            0.288,
+            0.384
+          ]
+        }
+      },
       "Aino": {
         "key": "Aino",
         "ele": "hydro",
@@ -56537,6 +57718,75 @@
             72,
             96
           ]
+        }
+      },
+      "Nefer": {
+        "key": "Nefer",
+        "ele": "dendro",
+        "region": "nodKrai",
+        "weaponType": "catalyst",
+        "birthday": {
+          "month": 5,
+          "day": 9
+        },
+        "rarity": 5,
+        "lvlCurves": [
+          {
+            "key": "hp",
+            "base": 988.9742,
+            "curve": "GROW_CURVE_HP_S5"
+          },
+          {
+            "key": "atk",
+            "base": 26.8128,
+            "curve": "GROW_CURVE_ATTACK_S5"
+          },
+          {
+            "key": "def",
+            "base": 62.2232,
+            "curve": "GROW_CURVE_HP_S5"
+          }
+        ],
+        "ascensionBonus": {
+          "hp": [
+            0,
+            847.95593,
+            1450.4509,
+            2253.7776,
+            2856.2727,
+            3458.7676,
+            4061.2627
+          ],
+          "def": [
+            0,
+            53.352,
+            91.26,
+            141.804,
+            179.712,
+            217.62,
+            255.528
+          ],
+          "atk": [
+            0,
+            22.987871,
+            39.32136,
+            61.099342,
+            77.43283,
+            93.76632,
+            110.09981
+          ],
+          "critDMG_": [
+            0,
+            0,
+            0.096,
+            0.192,
+            0.192,
+            0.288,
+            0.384
+          ]
+        },
+        "baseStats": {
+          "eleMas": 100
         }
       },
       "Somnia": {
@@ -63068,6 +64318,44 @@
           ]
         }
       },
+      "SacrificersStaff": {
+        "weaponType": "polearm",
+        "rarity": 4,
+        "mainStat": {
+          "type": "atk",
+          "base": 45.0687,
+          "curve": "GROW_CURVE_ATTACK_203"
+        },
+        "subStat": {
+          "type": "critRate_",
+          "base": 0.02,
+          "curve": "GROW_CURVE_CRITICAL_201"
+        },
+        "lvlCurves": [
+          {
+            "key": "atk",
+            "base": 45.0687,
+            "curve": "GROW_CURVE_ATTACK_203"
+          },
+          {
+            "key": "critRate_",
+            "base": 0.02,
+            "curve": "GROW_CURVE_CRITICAL_201"
+          }
+        ],
+        "refinementBonus": {},
+        "ascensionBonus": {
+          "atk": [
+            0,
+            25.9,
+            51.9,
+            77.8,
+            103.7,
+            129.7,
+            155.6
+          ]
+        }
+      },
       "StaffOfHoma": {
         "weaponType": "polearm",
         "rarity": 5,
@@ -63515,6 +64803,44 @@
           {
             "key": "critDMG_",
             "base": 0.144,
+            "curve": "GROW_CURVE_CRITICAL_301"
+          }
+        ],
+        "refinementBonus": {},
+        "ascensionBonus": {
+          "atk": [
+            0,
+            31.1,
+            62.2,
+            93.4,
+            124.5,
+            155.6,
+            186.7
+          ]
+        }
+      },
+      "BloodsoakedRuins": {
+        "weaponType": "polearm",
+        "rarity": 5,
+        "mainStat": {
+          "type": "atk",
+          "base": 47.537,
+          "curve": "GROW_CURVE_ATTACK_302"
+        },
+        "subStat": {
+          "type": "critRate_",
+          "base": 0.048,
+          "curve": "GROW_CURVE_CRITICAL_301"
+        },
+        "lvlCurves": [
+          {
+            "key": "atk",
+            "base": 47.537,
+            "curve": "GROW_CURVE_ATTACK_302"
+          },
+          {
+            "key": "critRate_",
+            "base": 0.048,
             "curve": "GROW_CURVE_CRITICAL_301"
           }
         ],
@@ -64701,6 +66027,44 @@
           ]
         }
       },
+      "DawningFrost": {
+        "weaponType": "catalyst",
+        "rarity": 4,
+        "mainStat": {
+          "type": "atk",
+          "base": 42.401,
+          "curve": "GROW_CURVE_ATTACK_201"
+        },
+        "subStat": {
+          "type": "critDMG_",
+          "base": 0.12,
+          "curve": "GROW_CURVE_CRITICAL_201"
+        },
+        "lvlCurves": [
+          {
+            "key": "atk",
+            "base": 42.401,
+            "curve": "GROW_CURVE_ATTACK_201"
+          },
+          {
+            "key": "critDMG_",
+            "base": 0.12,
+            "curve": "GROW_CURVE_CRITICAL_201"
+          }
+        ],
+        "refinementBonus": {},
+        "ascensionBonus": {
+          "atk": [
+            0,
+            25.9,
+            51.9,
+            77.8,
+            103.7,
+            129.7,
+            155.6
+          ]
+        }
+      },
       "SkywardAtlas": {
         "weaponType": "catalyst",
         "rarity": 5,
@@ -65360,6 +66724,53 @@
           }
         ],
         "refinementBonus": {},
+        "ascensionBonus": {
+          "atk": [
+            0,
+            31.1,
+            62.2,
+            93.4,
+            124.5,
+            155.6,
+            186.7
+          ]
+        }
+      },
+      "ReliquaryOfTruth": {
+        "weaponType": "catalyst",
+        "rarity": 5,
+        "mainStat": {
+          "type": "atk",
+          "base": 44.3358,
+          "curve": "GROW_CURVE_ATTACK_304"
+        },
+        "subStat": {
+          "type": "critDMG_",
+          "base": 0.192,
+          "curve": "GROW_CURVE_CRITICAL_301"
+        },
+        "lvlCurves": [
+          {
+            "key": "atk",
+            "base": 44.3358,
+            "curve": "GROW_CURVE_ATTACK_304"
+          },
+          {
+            "key": "critDMG_",
+            "base": 0.192,
+            "curve": "GROW_CURVE_CRITICAL_301"
+          }
+        ],
+        "refinementBonus": {
+          "critRate_": [
+            -1,
+            0.08,
+            0.1,
+            0.12,
+            0.14,
+            0.16
+          ]
+        },
         "ascensionBonus": {
           "atk": [
             0,
@@ -78751,6 +80162,9 @@
     "LegionMorale": {
       "type": "MATERIAL_NONE"
     },
+    "PrepProgress": {
+      "type": "MATERIAL_NONE"
+    },
     "Primogem": {
       "type": "MATERIAL_ADSORBATE"
     },
@@ -78785,6 +80199,33 @@
       "type": "MATERIAL_CONSUME"
     },
     "AcquaintFate": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "ChronalNexus": {
+      "type": "MATERIAL_NONE"
+    },
+    "ArcaneKeystone": {
+      "type": "MATERIAL_NONE"
+    },
+    "GeodeOfReplication": {
+      "type": "MATERIAL_NONE"
+    },
+    "EngravedShard": {
+      "type": "MATERIAL_NONE"
+    },
+    "FestiveKey": {
+      "type": "MATERIAL_NONE"
+    },
+    "LuminousKeystone": {
+      "type": "MATERIAL_NONE"
+    },
+    "WonderlandEXP": {
+      "type": "MATERIAL_NONE"
+    },
+    "ChronicleEXP": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "ChroniclesOfTheRealms": {
       "type": "MATERIAL_CONSUME"
     },
     "PyroSigil": {
@@ -79396,6 +80837,12 @@
     "ReaffirmedAccordOfAppellation": {
       "type": "MATERIAL_RENAME_ITEM"
     },
+    "OverwriteKeyLeft": {
+      "type": "MATERIAL_RENAME_ITEM"
+    },
+    "OverwriteKeyRight": {
+      "type": "MATERIAL_RENAME_ITEM"
+    },
     "EnergyOrbPyro": {
       "type": "MATERIAL_ADSORBATE"
     },
@@ -79562,13 +81009,13 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Varesa": {
-      "type": "MATERIAL_AVATAR"
+      "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Escoffier": {
       "type": "MATERIAL_AVATAR"
     },
     "Ifa": {
-      "type": "MATERIAL_AVATAR"
+      "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Skirk": {
       "type": "MATERIAL_AVATAR"
@@ -79586,6 +81033,9 @@
       "type": "MATERIAL_AVATAR"
     },
     "Aino": {
+      "type": "MATERIAL_AVATAR"
+    },
+    "Nefer": {
       "type": "MATERIAL_AVATAR"
     },
     "KachinasStellaFortuna": {
@@ -79646,6 +81096,9 @@
       "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
     },
     "AinosStellaFortuna": {
+      "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+    },
+    "NefersStellaFortuna": {
       "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
     },
     "Apple": {
@@ -85841,7 +87294,7 @@
       "type": "MATERIAL_NOTICE_ADD_HP"
     },
     "ChenyuBrew": {
-      "type": "MATERIAL_NOTICE_ADD_HP"
+      "type": "MATERIAL_GCG_CARD_FACE"
     },
     "DeliciousChenyuBrew": {
       "type": "MATERIAL_NOTICE_ADD_HP"
@@ -86549,6 +88002,39 @@
       "type": "MATERIAL_NOTICE_ADD_HP"
     },
     "SugarSculptureFlins": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "SuspiciousLakkaberryPie": {
+      "type": "MATERIAL_FOOD"
+    },
+    "LakkaberryPie": {
+      "type": "MATERIAL_FOOD"
+    },
+    "DeliciousLakkaberryPie": {
+      "type": "MATERIAL_FOOD"
+    },
+    "SuspiciousLohikeitto": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "Lohikeitto": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "DeliciousLohikeitto": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "PiramidaNightingale": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "FrontierLand": {
+      "type": "MATERIAL_FOOD"
+    },
+    "WildberryTrail": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "SecretsExchanged": {
+      "type": "MATERIAL_FOOD"
+    },
+    "SugarSculptureNefer": {
       "type": "MATERIAL_NOTICE_ADD_HP"
     },
     "RecipeItem": {
@@ -87314,6 +88800,12 @@
       "type": "MATERIAL_CONSUME"
     },
     "RecipeLakkaberryMadame": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "RecipeLakkaberryPie": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "RecipeLohikeitto": {
       "type": "MATERIAL_CONSUME"
     },
     "CraftedItems": {
@@ -88097,6 +89589,9 @@
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
     "LightbearingScaleFeather": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
+    "RadiantAntler": {
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
     "TileOfDecarabiansTower": {
@@ -91189,7 +92684,7 @@
     "MysteriousMap": {
       "type": "MATERIAL_QUEST"
     },
-    "DazzlingMysteriousGift": {
+    "WonderlandCosmosphere": {
       "type": "MATERIAL_QUEST"
     },
     "LetterOfUnknownOrigin": {
@@ -91348,8 +92843,14 @@
     "YellowedNotes": {
       "type": "MATERIAL_QUEST"
     },
+    "InvestmentCoupon": {
+      "type": "MATERIAL_QUEST"
+    },
     "EasybreezeBadge": {
       "type": "MATERIAL_QUEST"
+    },
+    "InvestmentReturns": {
+      "type": "MATERIAL_CHEST"
     },
     "SugarSculptureBox": {
       "type": "MATERIAL_CHEST"
@@ -91413,6 +92914,9 @@
     },
     "BountyTokenMudStainedHandguard": {
       "type": "MATERIAL_QUEST"
+    },
+    "RecordedIntel": {
+      "type": "MATERIAL_CONSUME"
     },
     "MessilyScribbledNotesI": {
       "type": "MATERIAL_QUEST"
@@ -91492,6 +92996,9 @@
     "AunisNotes": {
       "type": "MATERIAL_QUEST"
     },
+    "CollatedIntel": {
+      "type": "MATERIAL_QUEST"
+    },
     "BackupProgramModule": {
       "type": "MATERIAL_QUEST"
     },
@@ -91499,6 +93006,15 @@
       "type": "MATERIAL_QUEST"
     },
     "OpenedSecretLetter": {
+      "type": "MATERIAL_QUEST"
+    },
+    "WayOpeningKey": {
+      "type": "MATERIAL_QUEST"
+    },
+    "RaggedNotes": {
+      "type": "MATERIAL_QUEST"
+    },
+    "OrderedNotes": {
       "type": "MATERIAL_QUEST"
     },
     "ConchNotebook": {
@@ -91545,6 +93061,15 @@
     },
     "AilasNotes": {
       "type": "MATERIAL_QUEST"
+    },
+    "TheManWhoBecameAMule": {
+      "type": "MATERIAL_QUEST"
+    },
+    "HalfBurnedPage": {
+      "type": "MATERIAL_QUEST"
+    },
+    "CuratoriumFunds": {
+      "type": "MATERIAL_CHEST"
     },
     "TearsAmongTheStars": {
       "type": "MATERIAL_QUEST"
@@ -93457,6 +94982,12 @@
     "CelebrationSublimeFlavors": {
       "type": "MATERIAL_NAMECARD"
     },
+    "NeferSecrets": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "TravelNotesBygoneRuins": {
+      "type": "MATERIAL_NAMECARD"
+    },
     "EchoDandelionKnight": {
       "type": "MATERIAL_AVATAR_TRACE"
     },
@@ -94297,6 +95828,24 @@
     "CarefulCommunication": {
       "type": "MATERIAL_PHOTOGRAPH_POSE"
     },
+    "BattlePreparation": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "GatheredOverDrinks": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "BrandishingWeapons": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "TeachingAjawALesson": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "ALittleScare": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "EagerAndReady": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
     "FantasticalMarvel": {
       "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
     },
@@ -94445,6 +95994,9 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "LordOfErodedPrimalFire": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "HydroTulpa": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "UndividedHeart": {
@@ -94810,6 +96362,15 @@
     "UndyingFury": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "AHeroOfJusticesTriumph": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "TacticalWarmCompressBandaging": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "FlowConvergence": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "MagicGuide": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
@@ -95131,6 +96692,15 @@
     "AquaSimulacra": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "EverlastingMoonglow": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "FellDragonsMonocle": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "NoblesseOblige": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "LiyueHarborWharf": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
@@ -95312,6 +96882,9 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "GiftOfTheGoddessOfProphecy": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "AdventurersGuild": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "ElementalResonanceWovenIce": {
@@ -95536,6 +97109,9 @@
     "RevelrousBeats": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "AnAncientSacrificeOfSacredBrocade": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "Origin": {
       "type": "MATERIAL_GCG_CARD_BACK"
     },
@@ -95603,6 +97179,9 @@
       "type": "MATERIAL_GCG_CARD_BACK"
     },
     "FontaPassionateRed": {
+      "type": "MATERIAL_GCG_CARD_BACK"
+    },
+    "SeaOfBygoneErasSlumber": {
       "type": "MATERIAL_GCG_CARD_BACK"
     },
     "BeginnerPlayerBadge": {
@@ -96316,6 +97895,12 @@
     "XochicuicatlMarketingMethod": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "DeductionAndInduction": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "FactoryCabinetSlapdashStorage": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "TwoTierLibraryBookshelf": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -96487,6 +98072,15 @@
     "FairsSimpleSalesStrategy": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "FactoryLongTableNoTimeToWaste": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TavernSquareTableSelfDefense": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "IndoorLongTableMarksOfLove": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "BreezeBlessedBed": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -96514,6 +98108,12 @@
     "StoneBedPeacefulSleep": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "FriendsThroughFriction": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TavernBedNotGreatNotTerrible": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "PineReceptionCounter": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -96539,6 +98139,9 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "TeahouseStoveSlowSteaming": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "QuestionWithAPriceTag": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "SoftLoungeSofa": {
@@ -96620,6 +98223,15 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "GlugInOneGo": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "QuietAndCozy": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "HazelwoodJadeBackedChair": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "FactoryStoolMultiroleSeatingDevice": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "NorthernStoneHearth": {
@@ -96808,6 +98420,18 @@
     "PortableAllPurposeGrill": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "BoatOfClouds": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TipsyPlaylist": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "MultifunctionalPedunculateOakWoodCatTree": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "HiddenSecrets": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "MondstadtRugCrimsonArdor": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -96860,6 +98484,12 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "FairCarpetWarmthAndPassion": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "IndoorRugSoftPlush": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "IndoorRugStarlitNight": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "VibrantPotBornInFlames": {
@@ -97241,6 +98871,12 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "SaveyWaveyLifeRing": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "FactoryBroadcastInvigoration": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TavernDartboardValidThrow": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "LingeringMoment": {
@@ -99562,6 +101198,9 @@
     "MediumCargoHoldSwiftTransport": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "PuzzlepalKeepCalmAndCarryOn": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "SirCapyOfTheLongIncisors": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -99569,6 +101208,9 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "PorkyWorkyChef": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "LoafingKitty": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     }
   }

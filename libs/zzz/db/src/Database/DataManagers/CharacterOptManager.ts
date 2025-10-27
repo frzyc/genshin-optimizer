@@ -174,7 +174,6 @@ export type CharOpt = {
   // Enemy stuff
   enemyLvl: number
   enemyDef: number
-  enemyisStunned: boolean
   enemyStunMultiplier: number
   enemyStats: Array<{
     tag: EnemyStatsTag
@@ -204,7 +203,6 @@ export class CharacterOptManager extends DataManager<
 
       enemyLvl,
       enemyDef,
-      enemyisStunned,
       enemyStunMultiplier,
       enemyStats,
 
@@ -330,7 +328,6 @@ export class CharacterOptManager extends DataManager<
 
     if (typeof enemyLvl !== 'number') enemyLvl = 80
     if (typeof enemyDef !== 'number') enemyDef = 953
-    enemyisStunned = !!enemyisStunned
 
     if (typeof enemyStunMultiplier !== 'number') enemyStunMultiplier = 150
     if (!Array.isArray(enemyStats)) enemyStats = []
@@ -375,7 +372,6 @@ export class CharacterOptManager extends DataManager<
 
       enemyLvl,
       enemyDef,
-      enemyisStunned,
       enemyStunMultiplier,
       enemyStats,
 
@@ -517,7 +513,6 @@ export function initialCharOpt(): CharOpt {
 
     enemyLvl: 80,
     enemyDef: 953,
-    enemyisStunned: false,
     enemyStunMultiplier: 150,
     enemyStats: [],
   }

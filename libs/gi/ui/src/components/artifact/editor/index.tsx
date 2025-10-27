@@ -742,6 +742,7 @@ export function ArtifactEditor({
                     <div>{texts.level}</div>
                     <div>{texts.lock}</div>
                     <div>{texts.substats}</div>
+                    <div>{texts.unactivatedSubstats}</div>
                     <div>{texts.setKey}</div>
                     <div>{texts.location}</div>
                   </CardContent>

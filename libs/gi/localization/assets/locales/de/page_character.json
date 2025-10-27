@@ -1,19 +1,53 @@
 {
+  "addNew": "Figur Hinzufügen",
+  "tabs": {
+    "overview": "Übersicht",
+    "talent": "Talente",
+    "optimize": "Optimieren",
+    "theorycraft": "Theorycraften",
+    "upopt": "Artefaktverbesserer"
+  },
+  "delete": "Charakter löschen",
   "hitmode": {
+    "hit": "Nicht-Krit. Treffer",
+    "avgHit": "Durchschn.-SCH",
     "critHit": "KRIT Treffer-SCH"
   },
   "tabEquip": {
-    "compare": "Mit aktuellem Build vergleichen"
+    "swapWeapon": "Waffe Wechseln",
+    "swapArt": "Artefakt Wechseln",
+    "compare": "Mit aktuellem Build vergleichen",
+    "unequipArts": "Alle Artefakte ablegen"
+  },
+  "characterName": "Name der Figur",
+  "noReaction": "Keine Reaktion",
+  "multiTarget": {
+    "title": "Konfiguration Multi-Optimierungsziele",
+    "addNewTarget": "Ziel Hinzufügen",
+    "description": "Beschreibung",
+    "duplicate": "Kopie erstellen"
+  },
+  "addStats": {
+    "title": "Zusätzliche Attribute",
+    "label": "Neues Zusatzattribut"
   },
   "tabTheorycraft": {
     "maxTotalRolls": "Ein \"zulässiger\" Build kann maximal 45 Rolls haben.",
+    "distribute": "Verteilen",
+    "compareToggle": {
+      "equipped": "Vergleich mit Ausgerüstetem"
+    },
     "kqmsDialog": {
       "kqmsBtn": "KQMS verwenden",
       "title": "KQMS verwenden?",
       "content": "Dies wird deine aktuellen <strong>Bonusattribute</strong> mit den von den <4>KQM Standards</4> vorgesehenen ersetzen."
+    },
+    "gcsimDialog": {
+      "title": "gcsim Export"
     }
   },
-  "addStats": {
-    "label": "Neues Zusatzattribut"
+  "teammateUsing": {
+    "weapon": "Truppenmitglied <strong><1></1></strong> benutzt diese Waffe.",
+    "artifact": "Truppenmitglied <strong><1></1></strong> benutzt bereits <3></3>"
   }
 }

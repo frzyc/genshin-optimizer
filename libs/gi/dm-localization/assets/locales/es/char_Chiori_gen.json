@@ -142,7 +142,7 @@
       "1": "Además, si en el equipo hay algún personaje <geo>Geo</geo> aparte de Chiori, se activarán los siguientes efectos cuando finalice la arremetida de Caricia de mangas:",
       "2": [
         "Invoca a otra Tamoto. Solo puede haber una Tamoto adicional creada o bien de esta manera, o bien mediante una creación Geo.",
-        "Activa los efectos del talento pasivo “Retoque final”. Es necesario desbloquear este talento."
+        "Activa los efectos del talento de ascensión “Retoque final”. Es necesario desbloquear este talento."
       ]
     }
   },
@@ -163,8 +163,8 @@
   "constellation4": {
     "name": "Protocolo de sastre",
     "description": {
-      "0": "En los 8 s después de activarse alguno de los efectos del talento pasivo “Hecho a medida”, cuando tu personaje en uso golpea a un enemigo cercano con un Ataque Normal, Cargado o Descendente, invocará una robomuñeca sencilla Kinu cerca de dicho enemigo. Aunque de esta forma solo se puede invocar una robomuñeca sencilla Kinu por segundo, mientras el efecto de agudeza o el de costura del talento pasivo “Hecho a medida” estén activos, se podrán invocar un máximo de 3 robomuñecas Kinu. Todo este efecto solo se puede activar una vez cada 15 s.",
-      "1": "Es necesario desbloquear el talento pasivo “Hecho a medida”."
+      "0": "En los 8 s después de activarse alguno de los efectos del talento de ascensión “Hecho a medida”, cuando tu personaje en uso golpea a un enemigo cercano con un Ataque Normal, Cargado o Descendente, invocará una robomuñeca sencilla Kinu cerca de dicho enemigo. Aunque de esta forma solo se puede invocar una robomuñeca sencilla Kinu por segundo, mientras el efecto de agudeza o el de costura del talento de ascensión “Hecho a medida” estén activos, se podrán invocar un máximo de 3 robomuñecas Kinu. Todo este efecto solo se puede activar una vez cada 15 s.",
+      "1": "Es necesario desbloquear el talento de ascensión “Hecho a medida”."
     }
   },
   "constellation5": {
@@ -177,7 +177,7 @@
   "constellation6": {
     "name": "Convicción y ambición",
     "description": {
-      "0": "Tras activar alguno de los efectos del talento pasivo “Hecho a medida”, el TdE de <strong>Caricia de mangas</strong> se reduce en 12 s. Es necesario desbloquear el talento pasivo “Hecho a medida”.",
+      "0": "Tras activar alguno de los efectos del talento de ascensión “Hecho a medida”, el TdE de <strong>Caricia de mangas</strong> se reduce en 12 s. Es necesario desbloquear el talento de ascensión “Hecho a medida”.",
       "1": "Además, el daño del Ataque Normal de Chiori aumenta en una cantidad equivalente al 235% de su DEF."
     }
   }

@@ -154,17 +154,17 @@
   "constellation1": {
     "name": "Das Magazin, rastloses Roulette",
     "description": {
-      "0": "Beim Auslösen von „Wechsel der Nachtseelenbindung“ des passiven Talents „Kugeltrick“ wird zusätzlich das zweite ins Magazin geladene <strong>Schattenjagd-Projektil</strong> zu einem <strong>Funkel-Schattenjagd-Projektil</strong> umgewandelt.",
+      "0": "Beim Auslösen von „Wechsel der Nachtseelenbindung“ des Aufstiegstalents „Kugeltrick“ wird zusätzlich das zweite ins Magazin geladene <strong>Schattenjagd-Projektil</strong> zu einem <strong>Funkel-Schattenjagd-Projektil</strong> umgewandelt.",
       "1": "Erhöht die Wahrscheinlichkeit des Auslösens von „Wechsel der Nachtseelenbindung“: Wenn sich in der Truppe eine Figur befindet, deren Elementartyp die Bedingungen zur Elementarumwandlung erfüllt, erhöht sich die Wahrscheinlichkeit des Auslösens von „Wechsel der Nachtseelenbindung“ um 33,3 %, höchstens auf 100 %.",
       "2": "<br/>",
-      "3": "Das passive Talent „Kugeltrick“ muss zuerst freigeschaltet werden.",
+      "3": "Das Aufstiegstalent „Kugeltrick“ muss zuerst freigeschaltet werden.",
       "4": "Außerdem verringert sich Chascas Verbrauch an Nachtseelenpunkten und Phlogiston im Zustand Nachtseelensegen um 30 %, wenn sie sich nicht im Kampf befindet."
     }
   },
   "constellation2": {
     "name": "Die Mündung, sengender Qualm",
     "description": {
-      "0": "Verleiht Chasca beim Einwechseln 1 Stapelung „Funkel-Schattenseele“ ihres passiven Talents „Kugeltrick“. Das passive Talent „Kugeltrick“ muss für diesen Effekt zuerst freigeschaltet werden.",
+      "0": "Verleiht Chasca beim Einwechseln 1 Stapelung „Funkel-Schattenseele“ ihres Aufstiegstalents „Kugeltrick“. Das Aufstiegstalent „Kugeltrick“ muss für diesen Effekt zuerst freigeschaltet werden.",
       "1": "Treffen Chascas <strong>Funkel-Schattenjagd-Projektile</strong> Gegner, während <strong>Mehrfaches Zielen</strong> ihrer Elementarfähigkeit <strong>Auf der Jagd nach dem Schatten</strong> angewendet wird, verursachen diese dem Elementartyp des <strong>Funkel-Schattenjagd-Projektils</strong> entsprechenden Flächenschaden in Höhe von 400 % von Chascas ANG. Hierdurch verursachter Schaden gilt als Schaden von heftigen Schlägen. Dieser Effekt kann jeweils nur einmal beim Anwenden von <strong>Mehrfaches Zielen</strong> ausgelöst werden."
     }
   },
@@ -192,9 +192,9 @@
   "constellation6": {
     "name": "Das letzte Duell, der Ruhm der Schlacht",
     "description": {
-      "0": "Verringert die für Chascas <strong>Mehrfaches Zielen</strong> benötigte Zeit. Chasca tritt, nachdem sie „Wechsel der Nachtseelenbindung“ ihres passiven Talents „Kugeltrick“ ausgelöst hat, in den Zustand „Der letzte Tanz“ ein. Löst sie danach innerhalb von 3 s <strong>Mehrfaches Zielen</strong> ihrer Elementarfähigkeit <strong>Auf der Jagd nach dem Schatten</strong> aus, wird das entsprechende Aufladen sofort abgeschlossen und der KSCH der <strong>Schattenjagd-Projektile</strong> und <strong>Funkel-Schattenjagd-Projektile</strong> von <strong>Mehrfaches Zielen</strong> wird dieses Mal um 120 % erhöht. 3 s Abklingzeit für das Erhalten des Effekts „Der letzte Tanz“.",
+      "0": "Verringert die für Chascas <strong>Mehrfaches Zielen</strong> benötigte Zeit. Chasca tritt, nachdem sie „Wechsel der Nachtseelenbindung“ ihres Aufstiegstalents „Kugeltrick“ ausgelöst hat, in den Zustand „Der letzte Tanz“ ein. Löst sie danach innerhalb von 3 s <strong>Mehrfaches Zielen</strong> ihrer Elementarfähigkeit <strong>Auf der Jagd nach dem Schatten</strong> aus, wird das entsprechende Aufladen sofort abgeschlossen und der KSCH der <strong>Schattenjagd-Projektile</strong> und <strong>Funkel-Schattenjagd-Projektile</strong> von <strong>Mehrfaches Zielen</strong> wird dieses Mal um 120 % erhöht. 3 s Abklingzeit für das Erhalten des Effekts „Der letzte Tanz“.",
       "1": "<br/>",
-      "2": "Das passive Talent „Kugeltrick“ muss für diesen Effekt zuerst freigeschaltet werden."
+      "2": "Das Aufstiegstalent „Kugeltrick“ muss für diesen Effekt zuerst freigeschaltet werden."
     }
   }
 }

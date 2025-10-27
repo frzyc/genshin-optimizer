@@ -30,6 +30,7 @@ import Escoffier from './Character_Escoffier_Card.jpg'
 import Eula from './Character_Eula_Card.png'
 import Faruzan from './Character_Faruzan_Card.jpg'
 import Fischl from './Character_Fischl_Card.jpg'
+import Flins from './Character_Flins_Card.webp'
 import Freminet from './Character_Freminet_Card.jpg'
 import Furina from './Character_Furina_Card.jpg'
 import Gaming from './Character_Gaming_Card.jpg'
@@ -64,6 +65,7 @@ import Mona from './Character_Mona_Card.jpg'
 import Mualani from './Character_Mualani_Card.jpg'
 import Nahida from './Character_Nahida_Card.jpeg'
 import Navia from './Character_Navia_Card.jpg'
+import Nefer from './Character_Nefer_Card.webp'
 import Neuvillette from './Character_Neuvillette_Card.jpg'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
@@ -138,6 +140,7 @@ const charCards = {
   Eula,
   Faruzan,
   Fischl,
+  Flins,
   Freminet,
   Furina,
   Gaming,
@@ -172,6 +175,7 @@ const charCards = {
   Mualani,
   Nahida,
   Navia,
+  Nefer,
   Neuvillette,
   Nilou,
   Ningguang,

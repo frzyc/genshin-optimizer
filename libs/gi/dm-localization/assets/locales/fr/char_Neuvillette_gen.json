@@ -128,15 +128,15 @@
   "constellation1": {
     "name": "Création de l'honneur",
     "description": {
-      "0": "Neuvillette obtient un cumul de gloire draconique passée de l'aptitude passive « Héritier de l'autorité de l'ancienne mer » lorsqu'il est déployé au combat. L'aptitude passive « Héritier de l'autorité de l'ancienne mer » doit être déjà débloquée.",
+      "0": "Neuvillette obtient un cumul de gloire draconique passée de l'aptitude d'élévation « Héritier de l'autorité de l'ancienne mer » lorsqu'il est déployé au combat. L'aptitude d'élévation « Héritier de l'autorité de l'ancienne mer » doit être déjà débloquée.",
       "1": "De plus, sa RÉS à l'interruption augmente lors de la charge de l'attaque chargée « Avertissement procédural » et de l'utilisation de l'attaque chargée « Jugement équitable »."
     }
   },
   "constellation2": {
     "name": "Exhortation de la loi",
     "description": {
-      "0": "L'aptitude passive « Héritier de l'autorité de l'ancienne mer » est renforcée : chaque cumul de gloire draconique passée augmente les DGT CRIT de l'attaque chargée « Jugement équitable » de 14 %, les DGT CRIT pouvant être augmentés d'un maximum de 42 % de cette manière.",
-      "1": "L'aptitude passive « Héritier de l'autorité de l'ancienne mer » doit être déjà débloquée."
+      "0": "L'aptitude d'élévation « Héritier de l'autorité de l'ancienne mer » est renforcée : chaque cumul de gloire draconique passée augmente les DGT CRIT de l'attaque chargée « Jugement équitable » de 14 %, les DGT CRIT pouvant être augmentés d'un maximum de 42 % de cette manière.",
+      "1": "L'aptitude d'élévation « Héritier de l'autorité de l'ancienne mer » doit être déjà débloquée."
     }
   },
   "constellation3": {

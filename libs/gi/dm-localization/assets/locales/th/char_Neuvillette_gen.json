@@ -128,15 +128,15 @@
   "constellation1": {
     "name": "Venerable Institution",
     "description": {
-      "0": "เมื่อ Neuvillette เข้าสู่การต่อสู้ จะได้รับ \"Past Draconic Glories\" ของพรสวรรค์ติดตัว \"Heir to the Ancient Sea's Authority\" 1 ชั้น โดยต้องปลดล็อกพรสวรรค์ติดตัว \"Heir to the Ancient Sea's Authority\" ก่อน",
+      "0": "เมื่อ Neuvillette เข้าสู่การต่อสู้ จะได้รับ \"Past Draconic Glories\" ของพรสวรรค์เพิ่มเติม \"Heir to the Ancient Sea's Authority\" 1 ชั้น โดยต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Heir to the Ancient Sea's Authority\" ก่อน",
       "1": "นอกจากนี้ เมื่อใช้การชาร์จโจมตี: Legal Evaluation หรือชาร์จโจมตี: Equitable Judgment จะเพิ่มความสามารถในการต้านทานการหยุดชะงักของ Neuvillette"
     }
   },
   "constellation2": {
     "name": "Juridical Exhortation",
     "description": {
-      "0": "พรสวรรค์ติดตัว \"Heir to the Ancient Sea's Authority\" ได้รับการเสริมพลัง: แต่ละชั้นของ \"Past Draconic Glories\" จะทำให้ความแรงคริของการชาร์จโจมตี: Equitable Judgment เพิ่มขึ้น 14% โดยสามารถเพิ่มด้วยวิธีนี้ได้มากสุด 42%",
-      "1": "ต้องปลดล็อกพรสวรรค์ติดตัว \"Heir to the Ancient Sea's Authority\" ก่อน"
+      "0": "พรสวรรค์เพิ่มเติม \"Heir to the Ancient Sea's Authority\" ได้รับการเสริมพลัง: แต่ละชั้นของ \"Past Draconic Glories\" จะทำให้ความแรงคริของการชาร์จโจมตี: Equitable Judgment เพิ่มขึ้น 14% โดยสามารถเพิ่มด้วยวิธีนี้ได้มากสุด 42%",
+      "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Heir to the Ancient Sea's Authority\" ก่อน"
     }
   },
   "constellation3": {

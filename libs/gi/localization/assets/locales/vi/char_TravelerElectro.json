@@ -1,0 +1,21 @@
+{
+  "skill": {
+    "amuletGenAmt": "Số Khuyết Ngọc Dậy Sóng tạo ra",
+    "absorb": "Sau khi hấp thụ Khuyết Ngọc Dậy Sóng",
+    "enerRest": {
+      "none": "Lượng hồi Năng Lượng với mỗi Ngọc",
+      "over35": "Lượng hồi Năng Lượng với mỗi Ngọc (năng lượng trên 35%)",
+      "under35": "Lượng hồi Năng Lượng với mỗi Ngọc (năng lượng dưới 35%)"
+    }
+  },
+  "burst": {
+    "3rd": "Sát thương Sấm Sét Uy Vũ thứ 3",
+    "thunderCd": "Thời gian chờ Sấm Sét Uy Vũ"
+  },
+  "passive2": {
+    "enerRech_": "Hiệu Quả Nạp Nguyên Tố nhận thêm từ Khuyết Ngọc Dậy Sóng"
+  },
+  "c2": {
+    "thunderHit": "Địch đã trúng đòn <Strong>Sấm Sét Uy Vũ</strong>"
+  }
+}

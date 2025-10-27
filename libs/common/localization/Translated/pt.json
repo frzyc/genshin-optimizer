@@ -34,7 +34,9 @@
       "btnRandom": "Aleatório",
       "btnUpdate": "Atualizar Artefato",
       "clearPrompt": "Você está editando um artefato. Tem certeza de que limpar o editor?",
-      "unknownSetName": "Conjunto Desconhecido"
+      "unknownSetName": "Conjunto Desconhecido",
+      "delete": "Excluir",
+      "confirmDelete": "Você tem certeza que deseja excluir este artefato?"
     },
     "artifactFilter": "Filtrar Artefatos",
     "filterLocation": {
@@ -46,7 +48,8 @@
       "unequipArtifacts": "Desequipar Artefatos",
       "deleteArtifacts": "Excluir Artefatos",
       "lockArtifacts": "Trancar Artefatos",
-      "unlockrtifacts": "Destrancar Artefatos"
+      "unlockrtifacts": "Destrancar Artefatos",
+      "unequipArtifact": "Desequipar Artefato"
     },
     "buttonHint": "Nota: as opções acima só são aplicadas nos <1>artefatos filtrados</1>",
     "tipsOfTheDay": [
@@ -102,7 +105,12 @@
     "substat_other": "{{count}} secundários",
     "sub_one": "{{count}} secundário",
     "sub_other": "{{count}} secundários",
-    "noArtifacts": "Parece que você ainda não adicionou artefatos. Se você quiser, há <1>scanners automáticos</1> para você importá-los mais rapidamente!"
+    "noArtifacts": "Parece que você ainda não adicionou artefatos. Se você quiser, há <1>scanners automáticos</1> para você importá-los mais rapidamente!",
+    "subheadings": {
+      "general": "Geral",
+      "inventory": "Inventário",
+      "rollvalue": "Valor de Roll"
+    }
   },
   "languages": {
     "chs": "Chinês (Simplificado)",
@@ -165,7 +173,11 @@
       "invalid": "Inválido:",
       "upgraded": "Aprimorados:",
       "dbTotal": "Total Combinado:",
-      "notInImport": "Fora da Base de Dados:"
+      "notInImport": "Fora da Base de Dados:",
+      "teams": "Equipes:",
+      "loadouts": "Loadouts:",
+      "builds": "Builds: ",
+      "buildTcs": "Builds Teóricas: "
     },
     "DatabaseCard": {
       "title": "Base de Dados",
@@ -196,7 +208,11 @@
       "weapons": "Armas",
       "doc": "Docs",
       "setting": "Ajustes",
-      "scanner": "Scanners"
+      "scanner": "Scanners",
+      "teams": "Equipes",
+      "archive": "Arquivo",
+      "loadouts": "Loadouts",
+      "builds": "Builds"
     },
     "social": {
       "paypal": "PayPal",
@@ -221,7 +237,8 @@
       "rarity": "Raridade",
       "efficiency": "RV Atual",
       "mefficiency": "RV Máximo",
-      "artsetkey": "Conjunto de Artefatos"
+      "artsetkey": "Conjunto de Artefatos",
+      "lastEdit": "Editados Recentemente"
     },
     "link": {
       "download": "Link para Download",
@@ -254,7 +271,9 @@
       "stamina_buffs": "Efeitos de Stamina",
       "misc": "Outros Atributos"
     },
-    "sillyPageTitle": "Silly Optimizer"
+    "sillyPageTitle": "Silly Optimizer",
+    "excluded": "Excluídos",
+    "included": "Incluídos"
   },
   "char_Eula": {
     "burstC": {
@@ -482,7 +501,19 @@
     "reactionOp": {
       "overload": "Após desencadear uma reação de <overloaded>Sobrecarga</overloaded>"
     },
-    "afterOverflow": "Recebeu cura em excesso"
+    "afterOverflow": "Recebeu cura em excesso",
+    "level": "Nível {{count}}",
+    "teamHitOp": {
+      "geo": "Após membros da equipe próximos infligirem <geo>Dano Geo</geo>",
+      "electroReaction": "Após membros da equipe próximos desencadearem uma <electro>reação Electro</electro>"
+    },
+    "afterPerformHeal": "Após realizar cura",
+    "bond": {
+      "current": "Porcentagem atual de Contrato de Vida",
+      "changes": "Após o valor de um Contrato de Vida aumentar ou diminuir",
+      "increases": "Após o valor de um Contrato de Vida aumentar",
+      "percentOf": "% de Contrato de Vida"
+    }
   },
   "weapon_SongOfBrokenPines": {
     "name": "Sob o efeito de Concerto Milenar: Música do Levantar da Bandeira"
@@ -586,7 +617,7 @@
           "tooltip": "Documentação do Genshin Open Object Descriptor"
         },
         "patchNotes": {
-          "title": "Histórico de Versões do Genshin Optimizer",
+          "title": "Notas de Atualização",
           "tooltip": "Todas as Notas de Atualização do GO"
         }
       }
@@ -617,8 +648,7 @@
     },
     "as": {
       "title": "AdeptiScanner",
-      "p1": "Escaneia todos os artefatos no seu inventário. Possui um modo de leitura manual.",
-      "p2": "Esse scanner pode também ser configurado para artefatos em novas versões sem precisar ser atualizado."
+      "p1": "Escaneia todos os artefatos e armas no seu inventário. Possui um modo de escaneamento manual e também é capaz de importar dados de <1>Enka.Network</1>."
     },
     "goodeng": "Esse scanner lê apenas o idioma inglês e exporta no formato <1>GOOD</1>.",
     "tosWarn": "Assim como qualquer outra ferramenta que interage indiretamente com o jogo, apesar de seu uso ser praticamente indetectável, <1>seu uso pode acarretar algum risco.</1> Sua utilização fica a critério do usuário.",
@@ -636,11 +666,6 @@
       "title": "Artiscan",
       "p1": "Esse escaneador localizado no navegador pode obter dados a partir da janela do seu jogo, de uma captura de tela, ou escanear um vídeo.",
       "p2": "A captura de tela ou vídeo pode ser em tela cheia e não precisa ser recortada."
-    },
-    "ak": {
-      "title": "Akasha Scanner",
-      "p1": "Automaticamente escaneia artefatos e também personagens e armas. Permite a exportação de escaneamentos passados através de um histórico no app. Escaneia apenas em Inglês.",
-      "p2": "Este aplicativo também pode escanear conquistas para o <Paimon.moe</1> e <1>Seelie.me</1>."
     },
     "seelieme": "O aplicativo também pode escanear materiais para o <1>Seelie.me</1>."
   },
@@ -1086,12 +1111,13 @@
       "overview": "Visão Geral",
       "talent": "Talentos",
       "optimize": "Otimizar",
-      "theorycraft": "Theorycraft"
+      "theorycraft": "Theorycraft",
+      "upopt": "Aprimorador de Artefato"
     },
     "formulas": "Fórmulas",
     "calculations": "Cálculos",
     "selectCharacter": "Selecione um Personagem",
-    "removeCharacter": "Tem certeza de que quer excluir {{value}}?",
+    "removeCharacter": "Tem certeza de que quer excluir {{value}}? Isso excluirá todos os dados como loadouts e multi-objetivos, além de remover este personagem de qualquer time que esteja atribuído.",
     "delete": "Excluir o personagem",
     "teammates": "Companheiros",
     "hitmode": {
@@ -1118,20 +1144,21 @@
       "description": "Descrição",
       "duplicate": "Duplicar",
       "target_one": "<0>{{count}}</0> Objetivo",
-      "target_other": "<0>{{count}}</0> Objetivos"
+      "target_other": "<0>{{count}}</0> Objetivos",
+      "jsonDescWarning": "Parece que você está tentando importar uma configuração multi-obetivo. Esse não é o lugar certo para isso! Por favor retorne um menu e selecione <strong>Importar Multi-Objetivo.</strong>"
     },
     "addStats": {
-      "title": "Ajustes do Inimigo + Atributos Bônus",
+      "title": "Atributos Bônus",
       "info": "Você pode usar esses campos para adicionar buffs/debuffs que o GO não suporta diretamente, tais como efeitos de comida, cartas do Abismo ou Supercondutor. Veja a <1>Genshin Impact wiki</1> para encontrar valores exatos",
       "label": "Novo Atributo Bônus"
     },
     "tabTheorycraft": {
       "substatType": {
-        "min": "Usar rolls mínimos de atributos",
-        "max": "Usar rolls máximos de atributos",
-        "mid": "Usar rolls medianos de atributos"
+        "min": "Roll mínimo de atributo",
+        "max": "Roll máximo de atributo",
+        "mid": "Roll mediano de atributo"
       },
-      "maxTotalRolls": "Uma build \"válida\" pode ter no máximo 45 rolls.",
+      "maxTotalRolls": "A build atual pode ter um máximo de apenas <strong>{{value}}</strong> rolls.",
       "maxRolls": "Esse atributo pode ter no máximo 30 rolls.",
       "maxRollsMain": "Já que este também é pelo menos um dos atributos principais, esse atributo pode ter no máximo {{value}} rolls.",
       "distribute": "Distribuir",
@@ -1151,7 +1178,7 @@
       "kqmsDialog": {
         "kqmsBtn": "Usar KQMS",
         "title": "Usar KQMS?",
-        "content": "Isto trocará a sua <strong>configuração de atributos secundários</strong> atual por uma que siga os <4>Padrões da KQM</4>."
+        "content": "Isto trocará a sua <strong>configuração de atributos secundários</strong> atual por uma que siga os <5>Padrões da KQM</5>."
       },
       "gcsimDialog": {
         "title": "Exportar p/ gcsim",
@@ -1170,10 +1197,6 @@
         "scalesWith": "O Objetivo de Otimização atual aumenta com: ",
         "distribute": ". O programa distribuirá apenas entre esses atributos.",
         "feasibilty": "Podem sobrar secundários que devem ser distribuídos manualmente em atributos irrelevantes para que a configuração seja possível."
-      },
-      "constraint": {
-        "title": "Restrições de Atributos",
-        "add": "Adicione um requisito de atributo"
       }
     },
     "tabTeambuff": {
@@ -1181,7 +1204,12 @@
       "resonance_tip": "A equipe deve possuir 4 personagens para que a Ressonância Elemental tenha efeito."
     },
     "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Personagem",
-    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Personagens"
+    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Personagens",
+    "noLoadout": "Parece que você não adicionou nenhum loadout/Equipes com esse personagem ainda. Você precisa criar um loadout+equipe com esse personagem para <strong>criar builds</strong>, <strong>teorizar</strong>, ou <strong>otimizar</strong>.",
+    "teammateUsing": {
+      "weapon": "Companheiro de equipe <strong><1></1></strong> está usando esta arma.",
+      "artifact": "Companheiro de equipe <strong><1></1></strong> está usando isso <3></3>"
+    }
   },
   "page_weapon": {
     "edit": "Editar Arma",
@@ -1190,7 +1218,20 @@
     "addWeapon": "Adicionar Arma",
     "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Arma",
     "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Armas",
-    "cantDeleteLock": "Não é possível excluir a arma, pois ela está trancada"
+    "cantDeleteLock": "Não é possível excluir a arma, pois ela está trancada",
+    "button": {
+      "deleteWeapons": "Excluir Armas",
+      "lockWeapons": "Bloquear Armas",
+      "unlockWeapons": "Desbloquear Armas"
+    },
+    "buttonHint": "Nota: os botões vermelhos acima apenas se aplicam para <1>armas filtradas<1>",
+    "equippedWeapon": "Todas as Armas Equipadas",
+    "weaponInInv": "Todas as Armas Desequipadas",
+    "locationsTooltip": "Desabilite \"Todas as Armas Equipadas\" para filtrar por personagens específicos",
+    "subheadings": {
+      "general": "Geral",
+      "inventory": "Inventário"
+    }
   },
   "weapon_AquaSimulacra": {
     "condName": "Há oponentes próximos"
@@ -1322,18 +1363,19 @@
       "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)",
       "button_txt": "Bloquear Artefatos",
       "excNum_one": "<0>{{count}}</0> Artefato está bloqueado",
-      "excNum_other": "<0>{{count}}</0> Artefatos estão bloqueados"
+      "excNum_other": "<0>{{count}}</0> Artefatos estão bloqueados",
+      "includeArtifactTip": "Incluir um artefato permitirá o gerador de build usá-lo para este personagem.",
+      "includeArtifactButton": "Incluir este artefato nessa otimização"
     },
     "excludeChar": {
-      "title": "Configuração de Artefatos Equipados",
+      "title": "Usar Artefatos Equipados",
       "modal": {
         "allow_all": "Adicionar personagens visíveis à lista de permissão",
         "disallow_All": "Tirar personagens visíveis da lista de permissão"
       },
       "allowEquip": "Permitir o uso de artefatos de",
-      "tooltip": "Adicione personagens à lista de permissão deste personagem. Personagens na lista de permissão terão seus artefatos considerados na geração de builds. Também é possível alterar entre usar apenas artefatos desequipados, usar os de sua lista personalizada ou usar todos os artefatos equipados e desequipados.",
       "chars": "Personagens",
-      "artis": "Artefatos",
+      "artis": "Artefatos Equipados",
       "states": {
         "unequippedOnly": "Somente Não-Equipados",
         "customList": "Lista Personalizada",
@@ -1351,7 +1393,18 @@
     "build_one": "<0>{{count}}</0> Build",
     "build_other": "<0>{{count}}</0> Builds",
     "thread_one": "<0>{{count}}</0> Thread",
-    "thread_other": "<0>{{count}}</0> Threads"
+    "thread_other": "<0>{{count}}</0> Threads",
+    "upOptLevelFilter": "Filtro de Nível do Aprimorador de Artefato",
+    "upOptLevelFilterTooltip": "Esse filtro de Nível não está sincronizado com a configuração de Otimizar.",
+    "upOptNoResults": "Parece que não existem artefatos para aprimoramento que podem melhorar sua configuração. Seus filtros de artefato podem estar muitos restritivos. Alternativamente, use o otimizador de artefatos principal para encontrar uma build melhor.",
+    "upOptInfo": "O Aprimorador de Artefato identifica artefatos com alto potencial de melhorar o valor do Objetivo de Otimização, guiando-o a artefatos que merecem ser fortalecidos.<br/>Como apenas troca um artefato por vez, para a melhor build dentre todos os artefatos, utilize o otimizador de artefatos principal.",
+    "upOptEmptyBuild": "Você está usando uma build parcialmente vazia. Uma vez que o Aprimorador de Artefato apenas troca artefatos individualmente, completar um conjunto é pouco provável. É recomendável iniciar com uma build base, preferencialmente gerada pelo otimizador de artefatos principal.",
+    "targetSelectorTitle": "Selecionar Objetivo",
+    "compareArtModal": {
+      "newArt": "Novo Artefato",
+      "oldArt": "Artefato Anterior",
+      "tcArt": "Artefato Teorizado"
+    }
   },
   "weapon_ForestRegalia": {
     "condName": "Após coletar uma Folha da Consciência"
@@ -1848,5 +1901,147 @@
     "wave_critDMG_": "Dano Crítico de Onda das Nuvens",
     "a1Cond": "Pena Tempestuosa",
     "c6Cond": "Usos da Escada Celestial"
+  },
+  "common_common": {
+    "social": {
+      "paypal": "PayPal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "link": {
+      "download": "Link para Download",
+      "discord": "Convite para Discord"
+    },
+    "unselect": "Remover Seleção",
+    "inventory": "Inventário",
+    "ascending": "Ascendente",
+    "descending": "Descendente",
+    "sortBy": "Classificar por: ",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "reset": "Resetar",
+    "info": "Informações",
+    "close": "Fechar",
+    "delete": "Excluir",
+    "locked": "Bloqueado",
+    "unlocked": "Desbloqueado",
+    "excluded": "Excluído",
+    "included": "Incluído",
+    "selectlevel": "Selecionar Nível",
+    "gender": {
+      "F": "Feminino",
+      "M": "Masculino"
+    }
+  },
+  "char_Arlecchino": {
+    "bloodfireDmg": "Dano de Lua de Sangue",
+    "c2Cond": "Após absorver um <strong>Comando da Dívida de Sangue: Pagamento</strong>"
+  },
+  "char_Chiori": {
+    "a1Cond": "Sob o efeito Bordado",
+    "a4Cond": "Após um aliado próximo criar uma <geo>Construção Geo</geo>"
+  },
+  "char_Sethos": {
+    "shadow_dmgInc": "Aum. do dano de Flecha Perfura-Sombra",
+    "shadow_critRate_": "Taxa Crítica de Flecha Perfura-Sombra",
+    "a4Cond": "Sob o efeito de Sombra da Areia Escaldante",
+    "c4Cond": "Após <strong>Flecha Perfura-Sombra</strong> ou <strong> Flecha do Crepúsculo</strong> atingir 2 ou mais oponentes"
+  },
+  "char_Sigewinne": {
+    "skillTierCond": "Nível da Bolha Revigorante",
+    "bubbleHeal_": "Bônus de Cura da Bolha Revigorante",
+    "convaCond": "Acúmulos de Convalescença consumidos",
+    "a4Cond": "Contrato de Vida de toda equipe"
+  },
+  "page_team": {
+    "buildInfo": {
+      "equipped": "Essa é a build equipada atualmente por seu personagem, isso representa o equipamento do jogo e é persistente fora do Loadout.",
+      "build": "Uma <strong>Build</strong> é composta por uma arma e 5 artefatos.",
+      "tcbuild": "Uma <strong>Build Teórica</strong> permite definir uma build utilizando apenas atributos."
+    },
+    "buildTcCharOverride": {
+      "btn": "Substituir Dados do Personagem para essa Build Teórica"
+    },
+    "team": {
+      "editNameDesc": "Editar Nome da Equipe e Descrição",
+      "name": "Nome da Equipe",
+      "desc": "Descrição da Equipe"
+    },
+    "loadout": {
+      "name": "Nome do Loadout",
+      "desc": "Descrição do Loadout"
+    }
+  },
+  "page_teams": {
+    "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Equipe",
+    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Equipes"
+  },
+  "weapon_Cloudforged": {
+    "cond": "Após consumir ou perder Energia Elemental"
+  },
+  "weapon_SilvershowerHeartstrings": {
+    "cond": "Acúmulos de Remédio"
+  },
+  "sr_header": {
+    "tabs": {
+      "relics": "Relíquias",
+      "lightcones": "Cones de Luz",
+      "characters": "Personagens",
+      "teams": "Equipes",
+      "settings": "Configurações"
+    }
+  },
+  "sr_page_settings": {
+    "DatabaseCard": {
+      "title": "Base de Dados",
+      "button": {
+        "swap": "Trocar",
+        "copy": "Área de Transferência",
+        "upload": "Upload",
+        "download": "Download",
+        "delete": "Excluir"
+      },
+      "currentDB": "Base de Dados Atual"
+    },
+    "count": {
+      "chars": "Personagens:",
+      "relics": "Relíquias: ",
+      "lightCones": "Cones de Luz:",
+      "teams": "Times:",
+      "builds": "Builds:",
+      "new": "Novo:",
+      "unchanged": "Inalterado:",
+      "upgraded": "Atualizado:",
+      "removed": "Removido:",
+      "notInImport": "Não Importado:",
+      "dbTotal": "Total Mesclado:",
+      "invalid": "Inválido:"
+    },
+    "uploadCard": {
+      "error": {
+        "jsonParse": "Impossível analizar Base de Dados JSON.",
+        "sroInvalid": "Arquivo de Base de Dados SRO inválido.",
+        "unknown": "Ocorreu um erro desconhecido."
+      },
+      "title": "Fazer Upload de Base de Dados",
+      "buttons": {
+        "open": "Abrir",
+        "detectDups": "Detectar Atualizações/Duplicados",
+        "delNotInImport": "Excluir itens não importados"
+      },
+      "hint": "Carregue seu arquivo JSON aqui...",
+      "tooltip": {
+        "ignoreDup": "Não detectar atualizações/duplicados. Os itens importados serão adicionados além do seu inventário SRO existente.",
+        "detectDup": "Encontrar atualizações/duplicados no inventário SRO e mesclar os itens importados no SRO.",
+        "keepNotInImport": "Assumir que o arquivo importado é um inventário parcial. Nada será excluído.",
+        "delNotInImport": "Assumir que o arquivo importado é o seu inventário completo. Os itens do Inventário SRO que não existem no arquivo importado serão excluídos."
+      },
+      "hintPaste": "...ou cole seus dados abaixo.",
+      "dbSource": "Fonte dos dados:",
+      "replaceDatabase": "Atualizar Base de Dados"
+    }
+  },
+  "sr_ui": {
+    "pageTitle": "Star Rail Optimizer"
   }
 }

@@ -123,11 +123,11 @@
   "constellation2": {
     "name": "Pelas Colinas e Bosques",
     "description": {
-      "0": "Transforma o Talento Passivo Retorno Floral: ",
-      "1": "Quando o <strong>Bumerangue Floral</strong> retorna, fornece ao personagem o efeito \"Brotar\" do Talento Passivo \"Retorno Floral\", infligindo continuamente 40% do ATQ de Collei como <dendro>Dano Dendro</dendro> contra os inimigos próximos por 3s.",
+      "0": "Transforma o Talento de Ascensão Retorno Floral: ",
+      "1": "Quando o <strong>Bumerangue Floral</strong> retorna, fornece ao personagem o efeito \"Brotar\" do Talento de Ascensão \"Retorno Floral\", infligindo continuamente 40% do ATQ de Collei como <dendro>Dano Dendro</dendro> contra os inimigos próximos por 3s.",
       "2": "Quando <strong>Carícia das Flores</strong> é lançada até o fim do estado \"Brotar\", se qualquer um dos membros da equipe desencadear as reações de Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento, Germinação ou Florescimento Lunar antes que essa instância do efeito \"Brotar\" termine, a duração do efeito será estendida em 3s.",
       "3": "O efeito \"Brotar\" só pode ser estendido dessa forma uma vez. Se outro efeito \"Brotar\" for desencadeado na duração do efeito \"Brotar\" inicial, o efeito original será removido. O Dano infligido pelo efeito \"Brotar\" é considerado Dano de Habilidade Elemental.",
-      "4": "Requer que você tenha desbloqueado o Talento Passivo \"Retorno Floral\"."
+      "4": "Requer que você tenha desbloqueado o Talento de Ascensão \"Retorno Floral\"."
     }
   },
   "constellation3": {

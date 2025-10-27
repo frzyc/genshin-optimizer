@@ -114,8 +114,8 @@
   "constellation1": {
     "name": "Lago esondante",
     "description": {
-      "0": "Raccogliere una Goccia d'acqua sorgiva ripristina 2 di energia del{F#la }{M# }viaggiat{F#rice}{M#ore}.",
-      "1": "Richiede il talento passivo Acque incontaminate."
+      "0": "Raccogliere una Goccia d'acqua sorgiva ripristina di 2 l'energia {F#della viaggiatrice}{M#del viaggiatore}.",
+      "1": "Richiede il talento d'ascensione Acque incontaminate."
     }
   },
   "constellation2": {

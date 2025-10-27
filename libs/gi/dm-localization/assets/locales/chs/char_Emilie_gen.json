@@ -125,14 +125,14 @@
   "constellation1": {
     "name": "淡香浸析",
     "description": {
-      "0": "<strong>撷萃调香</strong>与固有天赋「余薰」的清露香氛造成的伤害提升20%，后者需要解锁固有天赋「余薰」。",
+      "0": "<strong>撷萃调香</strong>与突破天赋「余薰」的清露香氛造成的伤害提升20%，后者需要解锁突破天赋「余薰」。",
       "1": "此外，队伍中附近的角色对敌人触发燃烧反应或对处于燃烧状态下的敌人造成<dendro>草元素伤害</dendro>时，会额外生成一枚<strong>香韵</strong>。此效果每2.9秒至多触发一次。"
     }
   },
   "constellation2": {
     "name": "湖光顶调",
     "description": {
-      "0": "<strong>撷萃调香</strong>、<strong>香氛演绎</strong>或固有天赋「余薰」的清露香氛（需解锁该固有天赋）命中敌人时，该敌人的<dendro>草元素抗性</dendro>降低30%，持续10秒。"
+      "0": "<strong>撷萃调香</strong>、<strong>香氛演绎</strong>或突破天赋「余薰」的清露香氛（需解锁该突破天赋）命中敌人时，该敌人的<dendro>草元素抗性</dendro>降低30%，持续10秒。"
     }
   },
   "constellation3": {

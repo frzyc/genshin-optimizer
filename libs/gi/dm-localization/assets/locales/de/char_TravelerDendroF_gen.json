@@ -132,8 +132,8 @@
   "constellation4": {
     "name": "Zuckersüßes Gras",
     "description": {
-      "0": "<strong>Lampenlotos</strong> erhält nach Wandel des Lotoslichts 5 Stapelungen des Effekts „Glanz des Lotoslichts“ vom passiven Talent „Überwucherndes Wildgras“.",
-      "1": "Das passive Talent „Überwucherndes Wildgras“ muss zuerst freigeschaltet werden."
+      "0": "<strong>Lampenlotos</strong> erhält nach Wandel des Lotoslichts 5 Stapelungen des Effekts „Glanz des Lotoslichts“ vom Aufstiegstalent „Überwucherndes Wildgras“.",
+      "1": "Das Aufstiegstalent „Überwucherndes Wildgras“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation5": {

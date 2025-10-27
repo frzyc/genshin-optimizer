@@ -158,7 +158,8 @@
     "name": "El deber de creación de un genio",
     "description": {
       "0": "Tras usar la Habilidad Definitiva, <strong>Refrigerador hidrónico de precisión</strong>, el daño de las reacciones de Electrocargado, Florecimiento, Electrocargado Lunar y Florecimiento Lunar causadas por los personajes en uso cercanos aumenta en un 15% durante 15 s.",
-      "1": "<strong>Presagio lunar: resplandor ascendente</strong> - El daño infligido por las reacciones mencionadas aumenta en un 20% adicional."
+      "1": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "2": "El daño infligido por las reacciones mencionadas aumenta en un 20% adicional."
     }
   }
 }

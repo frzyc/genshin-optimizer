@@ -137,7 +137,7 @@
       "1": "Além disso, se há outro membro <geo>Geo</geo> na equipe além de Chiori, Carícia da Pluma Penada vai desencadear o seguinte efeito após a investida:",
       "2": [
         " Invoca outra Tamoto. Somente uma Tamoto adicional pode existir ao mesmo tempo, seja invocada por Chiori dessa forma ou através da presença de uma Construção Geo.",
-        " Desencadeia o Talento Passivo \"Retoque Final\". Esse efeito requer o desbloqueio do Talento Passivo \"Retoque Final\"."
+        " Desencadeia o Talento de Ascensão \"Retoque Final\". Esse efeito requer o desbloqueio do Talento de Ascensão \"Retoque Final\"."
       ]
     }
   },
@@ -158,8 +158,8 @@
   "constellation4": {
     "name": "Três Cortesias da Costura",
     "description": {
-      "0": "Por 8s após acionar qualquer um dos efeitos subsequentes do Talento Passivo \"Feito Sob Medida\", quando os Ataques Normais, Carregados ou Imersivos do seu personagem ativo atual atingirem um oponente, ele convocará o Autômato Simples Kinu próximo a esse oponente. Você pode invocar 1 Kinu dessa forma a cada 1s, e até 3 Kinu podem ser invocados dessa forma em cada instância de \"Feito Sob Medida\" de \"Aproveite o Momento\" ou do efeito \"Bordado\". Esse efeito acima pode ser ativado uma vez a cada 15s.",
-      "1": "É necessário desbloquear o Talento Passivo \"Feito Sob Medida\" primeiro."
+      "0": "Por 8s após acionar qualquer um dos efeitos subsequentes do Talento de Ascensão \"Feito Sob Medida\", quando os Ataques Normais, Carregados ou Imersivos do seu personagem ativo atual atingirem um oponente, ele convocará o Autômato Simples Kinu próximo a esse oponente. Você pode invocar 1 Kinu dessa forma a cada 1s, e até 3 Kinu podem ser invocados dessa forma em cada instância de \"Feito Sob Medida\" de \"Aproveite o Momento\" ou do efeito \"Bordado\". Esse efeito acima pode ser ativado uma vez a cada 15s.",
+      "1": "É necessário desbloquear o Talento de Ascensão \"Feito Sob Medida\" primeiro."
     }
   },
   "constellation5": {
@@ -172,7 +172,7 @@
   "constellation6": {
     "name": "Buscando o Princípio Universal",
     "description": {
-      "0": "Depois de desencadear o efeito subsequente do Talento Passivo \"Feito Sob Medida\", a <strong>Carícia da Pluma Penada</strong> de Chiori vai ter sua recarga reduzida em 12s. É necessário ter desbloqueado o Talento Passivo \"Feito Sob Medida\" primeiro.",
+      "0": "Depois de desencadear o efeito subsequente do Talento de Ascensão \"Feito Sob Medida\", a <strong>Carícia da Pluma Penada</strong> de Chiori vai ter sua recarga reduzida em 12s. É necessário ter desbloqueado o Talento de Ascensão \"Feito Sob Medida\" primeiro.",
       "1": "Além disso, o Dano causado pelo Ataque Normal de Chiori é aumentado em 235% de sua DEF."
     }
   }

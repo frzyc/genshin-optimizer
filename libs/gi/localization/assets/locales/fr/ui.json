@@ -7,7 +7,10 @@
     "weapons": "Armes",
     "doc": "Docs",
     "setting": "Paramètres",
-    "scanner": "Scanners"
+    "scanner": "Scanners",
+    "teams": "Équipes",
+    "archive": "Archives",
+    "builds": "Builds"
   },
   "social": {
     "paypal": "Paypal",
@@ -19,7 +22,7 @@
   "descending": "Décroissant",
   "loading": "Chargement...",
   "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par HoYoverse",
-  "appVersion": "$t(pageTitle) Version: {{version}}",
+  "appVersion": "$t(pageTitle) Version: <1>{{version}}</1>",
   "error": "Erreur",
   "reset": "Réinitialisation",
   "info": "Informations",
@@ -32,7 +35,8 @@
     "rarity": "Rareté",
     "efficiency": "Efficacité actuelle",
     "mefficiency": "Efficacité maximum",
-    "artsetkey": "Set d'artéfact"
+    "artsetkey": "Set d'artéfact",
+    "lastEdit": "Modifié récemment"
   },
   "link": {
     "download": "Lien de téléchargement",
@@ -65,5 +69,7 @@
     "stamina_buffs": "Buffs d'endurance",
     "misc": "Misc. Statistiques"
   },
-  "sillyPageTitle": "Silly Optimizer"
+  "sillyPageTitle": "Silly Optimizer",
+  "excluded": "Exclus",
+  "included": "Inclus"
 }

@@ -1,17 +1,11 @@
-import {
-  cmpEq,
-  cmpGE,
-  prod,
-  subscript,
-  sum,
-} from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
+import { isStunned } from '../../common/enemy'
 import {
   allBoolConditionals,
   allNumConditionals,
   customDmg,
-  enemy,
   own,
   ownBuff,
   percent,
@@ -39,11 +33,7 @@ const { shotshells_hit } = allNumConditionals(key, true, 0, dm.m2.stacks)
 const core_dmg_ = ownBuff.combat.common_dmg_.add(
   sum(
     percent(subscript(char.core, dm.core.dmg_)),
-    cmpEq(
-      enemy.common.isStunned,
-      1,
-      percent(subscript(char.core, dm.core.add_dmg_))
-    )
+    isStunned.ifOn(percent(subscript(char.core, dm.core.add_dmg_)))
   )
 )
 
