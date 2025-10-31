@@ -149,7 +149,7 @@ function mutateTeamBuild(
     const mutatedArtifacts = charArtifacts.map((art) =>
       Math.random() < mutationRate
         ? getRandomArtifact(
-            database.arts.values,
+            [...database.arts.values],
             new Set(charArtifacts.map((art) => art.id)),
             art.slotKey
           )
@@ -279,7 +279,7 @@ function generateRandomTeamBuild(
   for (const char of characterKeys) {
     const charArts: ICachedArtifact[] = []
     for (const slot of allArtifactSlotKeys) {
-      const artifact = getRandomArtifact(allArtifacts, usedArtifacts, slot)
+      const artifact = getRandomArtifact([...allArtifacts], usedArtifacts, slot)
       charArts.push(artifact)
       usedArtifacts.add(artifact.id)
     }
