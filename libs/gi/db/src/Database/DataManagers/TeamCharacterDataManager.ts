@@ -19,13 +19,13 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
+import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
 import type {
   BuildTc,
   CustomMultiTarget,
   ICachedArtifact,
   ICachedWeapon,
 } from '../../Interfaces'
-import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'

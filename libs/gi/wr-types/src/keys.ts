@@ -1,14 +1,62 @@
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allElementWithPhyKeys,
+  allLunarReactionKeys,
+} from '@genshin-optimizer/gi/consts'
 import {
   allEleEnemyResKeys,
   crittableTransformativeReactions,
 } from '@genshin-optimizer/gi/keymap'
-/**
- * Copied from Formula
- */
-const allElements = allElementWithPhyKeys
-const allTalents = ['auto', 'skill', 'burst'] as const
-const allMoves = [
+
+export const allElements = allElementWithPhyKeys
+export const allTalents = ['auto', 'skill', 'burst'] as const
+export const allNonstackBuffs = [
+  'no4',
+  'totm4',
+  'ap4',
+  'inst4',
+  'vv4pyro',
+  'vv4hydro',
+  'vv4electro',
+  'vv4cryo',
+  'dm4',
+  'scroll4basepyro',
+  'scroll4basehydro',
+  'scroll4baseelectro',
+  'scroll4basecryo',
+  'scroll4baseanemo',
+  'scroll4basegeo',
+  'scroll4basedendro',
+  'scroll4nspyro',
+  'scroll4nshydro',
+  'scroll4nselectro',
+  'scroll4nscryo',
+  'scroll4nsanemo',
+  'scroll4nsgeo',
+  'scroll4nsdendro',
+  'millenialatk',
+  'patrol',
+  'key',
+  'crane',
+  'starcaller',
+  'leafCon',
+  'leafRev',
+  'hakushinpyro',
+  'hakushinhydro',
+  'hakushinelectro',
+  'hakushincryo',
+  'hakushinanemo',
+  'hakushingeo',
+  'hakushindendro',
+  'ttds',
+  'wolf',
+  'symphonist',
+  'gleamingmoonintent',
+  'gleamingmoondevotion',
+  'nightweaver',
+  'bloomcd',
+] as const
+export type NonStackBuff = (typeof allNonstackBuffs)[number]
+export const allMoves = [
   'normal',
   'charged',
   'plunging_collision',
@@ -17,7 +65,7 @@ const allMoves = [
   'burst',
   'elemental',
 ] as const
-const allArtModStats = [
+export const allArtModStats = [
   'hp',
   'hp_',
   'atk',
@@ -38,7 +86,7 @@ const allArtModStats = [
   'dendro_dmg_',
   'heal_',
 ] as const
-const allTransformative = [
+export const allTransformative = [
   'overloaded',
   'shattered',
   'electrocharged',
@@ -51,9 +99,9 @@ const allTransformative = [
   'hyperbloom',
   'lunarbloom',
 ] as const
-const allAmplifying = ['vaporize', 'melt'] as const
-const allAdditive = ['spread', 'aggravate'] as const
-const allMisc = [
+export const allAmplifying = ['vaporize', 'melt'] as const
+export const allAdditive = ['spread', 'aggravate'] as const
+export const allMisc = [
   'stamina',
   'staminaDec_',
   'staminaSprintDec_',
@@ -68,9 +116,9 @@ const allMisc = [
   'dmgRed_',
   'healInc',
 ] as const
-const allBase = ['base_atk', 'base_hp', 'base_def'] as const
+export const allBase = ['base_atk', 'base_hp', 'base_def'] as const
 
-const allModStats = [
+export const allModStats = [
   ...allArtModStats,
   ...(
     [
@@ -84,7 +132,7 @@ const allModStats = [
     ] as const
   ).map((x) => `${x}_dmg_` as const),
 ] as const
-const allNonModStats = [
+export const allNonModStats = [
   ...allElements.flatMap((x) => [
     `${x}_dmgInc` as const,
     `${x}_critDMG_` as const,
@@ -100,20 +148,19 @@ const allNonModStats = [
     `${x}_critRate_` as const,
     `${x}_critDMG_` as const,
   ]),
+  ...allTransformative.map((x) => `${x}_dmgInc` as const),
   'all_dmgInc' as const,
+  ...allLunarReactionKeys.flatMap((lr) => [
+    `${lr}_baseDmg_` as const,
+    `${lr}_specialDmg_` as const,
+  ]),
   ...allEleEnemyResKeys,
   'enemyDefRed_' as const,
   'enemyDefIgn_' as const,
   ...allMisc,
   ...allBase,
 ] as const
-/**
- * @deprecated
- * Copied from Formula
- */
+
 export const allInputPremodKeys = [...allModStats, ...allNonModStats] as const
-/**
- * @deprecated
- * Copied from Formula
- */
+
 export type InputPremodKey = (typeof allInputPremodKeys)[number]
