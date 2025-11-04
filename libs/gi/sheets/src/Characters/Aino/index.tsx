@@ -141,21 +141,41 @@ const c6AfterBurst_gleam_lunarcharged_dmg_ = {
 const c6AfterBurst_gleam_lunarbloom_dmg_ = {
   ...c6AfterBurst_gleam_electrocharged_dmg_,
 }
-const c6AfterBurst_total_electrocharged_dmg_ = sum(
+const c6AfterBurst_total_electrocharged_dmg_disp = sum(
   c6AfterBurst_electrocharged_dmg_,
   c6AfterBurst_gleam_electrocharged_dmg_
 )
-const c6AfterBurst_total_bloom_dmg_ = sum(
+const c6AfterBurst_total_electrocharged_dmg_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  c6AfterBurst_total_electrocharged_dmg_disp
+)
+const c6AfterBurst_total_bloom_dmg_disp = sum(
   c6AfterBurst_bloom_dmg_,
   c6AfterBurst_gleam_bloom_dmg_
 )
-const c6AfterBurst_total_lunarcharged_dmg_ = sum(
+const c6AfterBurst_total_bloom_dmg_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  c6AfterBurst_total_bloom_dmg_disp
+)
+const c6AfterBurst_total_lunarcharged_dmg_disp = sum(
   c6AfterBurst_lunarcharged_dmg_,
   c6AfterBurst_gleam_lunarcharged_dmg_
 )
-const c6AfterBurst_total_lunarbloom_dmg_ = sum(
+const c6AfterBurst_total_lunarcharged_dmg_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  c6AfterBurst_total_lunarcharged_dmg_disp
+)
+const c6AfterBurst_total_lunarbloom_dmg_disp = sum(
   c6AfterBurst_lunarbloom_dmg_,
   c6AfterBurst_gleam_lunarbloom_dmg_
+)
+const c6AfterBurst_total_lunarbloom_dmg_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  c6AfterBurst_total_lunarbloom_dmg_disp
 )
 
 const dmgFormulas = {
@@ -394,16 +414,28 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: c6AfterBurst_total_electrocharged_dmg_,
+              node: infoMut(c6AfterBurst_total_electrocharged_dmg_disp, {
+                path: 'electrocharged_dmg_',
+                isTeamBuff: true,
+              }),
             },
             {
-              node: c6AfterBurst_total_bloom_dmg_,
+              node: infoMut(c6AfterBurst_total_bloom_dmg_disp, {
+                path: 'bloom_dmg_',
+                isTeamBuff: true,
+              }),
             },
             {
-              node: c6AfterBurst_total_lunarcharged_dmg_,
+              node: infoMut(c6AfterBurst_total_lunarcharged_dmg_disp, {
+                path: 'lunarcharged_dmg_',
+                isTeamBuff: true,
+              }),
             },
             {
-              node: c6AfterBurst_total_lunarbloom_dmg_,
+              node: infoMut(c6AfterBurst_total_lunarbloom_dmg_disp, {
+                path: 'lunarbloom_dmg_',
+                isTeamBuff: true,
+              }),
             },
             {
               text: stg('duration'),
