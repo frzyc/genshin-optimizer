@@ -294,7 +294,11 @@ function InnerContent({ tab }: { tab?: string }) {
             <OptTargetWrapper>
               <Routes>
                 <Route path=":characterKey">
-                  <Route path="*" index element={<Content tab={tab} />} />
+                  <Route
+                    path="*"
+                    index
+                    element={<Content key={characterKey} tab={tab} />}
+                  />
                 </Route>
               </Routes>
             </OptTargetWrapper>

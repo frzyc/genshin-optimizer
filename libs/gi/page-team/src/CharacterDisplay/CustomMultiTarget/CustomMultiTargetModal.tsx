@@ -47,7 +47,10 @@ export function CustomMultiTargetModal({
     setCustomTargets(teamChar.customMultiTargets)
 
   const addNewCustomMultiTarget = useCallback(() => {
-    setCustomTargets([initCustomMultiTarget(), ...customMultiTargets])
+    setCustomTargets([
+      initCustomMultiTarget(customMultiTargets.length + 1),
+      ...customMultiTargets,
+    ])
   }, [customMultiTargets, setCustomTargets])
   const setCustomMultiTarget = useCallback(
     (ind: number) => (newTarget: CustomMultiTarget) => {
