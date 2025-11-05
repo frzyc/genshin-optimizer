@@ -15,9 +15,9 @@ import { allInputPremodKeys } from '../../legacy/keys'
 
 export const MAX_NAME_LENGTH = 200
 export const MAX_DESC_LENGTH = 2000
-export function initCustomMultiTarget() {
+export function initCustomMultiTarget(index: number) {
   return {
-    name: 'New Custom Target',
+    name: `New Custom Target ${index}`,
     targets: [],
   }
 }
