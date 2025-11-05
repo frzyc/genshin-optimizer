@@ -11,9 +11,11 @@ import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import type { CalcResult, UIData } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
+import { DarkMode } from '@mui/icons-material'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 import GroupsIcon from '@mui/icons-material/Groups'
+import { Box } from '@mui/material'
 import type { ReactNode } from 'react'
 import { ArtifactSetName, WeaponName } from '../components'
 const errHeader = {
@@ -56,7 +58,15 @@ export function getDisplayHeader(
   else if (sectionKey === 'reaction')
     return { title: 'Transformative Reactions' }
   else if (sectionKey === 'moonsign')
-    return { title: 'Moonsign: Ascendant Gleam', icon: 'todo' }
+    return {
+      title: 'Moonsign: Ascendant Gleam',
+      icon: (
+        <Box display="flex">
+          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+        </Box>
+      ),
+    }
   else if (sectionKey.includes(':')) {
     const [namespace, key] = sectionKey.split(':')
     if (namespace === 'artifact') {
@@ -116,7 +126,8 @@ export function getDisplaySections(data: UIData): DisplaySections {
       k !== 'reaction' &&
       !k.startsWith('weapon') &&
       !k.startsWith('artifact') &&
-      k !== 'custom'
+      k !== 'custom' &&
+      k !== 'moonsign'
   )
   return [
     ...basic,

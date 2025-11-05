@@ -30,6 +30,7 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import { DarkMode } from '@mui/icons-material'
+import { Box } from '@mui/material'
 import type { ReactNode } from 'react'
 import type { CharacterSheet } from './Characters/CharacterSheet'
 import ElementCycle from './ElementCycle'
@@ -499,10 +500,10 @@ const moonsign: IResonance = {
         title: tr('Moonsign.ascendantGleam.name'),
         description: tr('Moonsign.ascendantGleam.desc'),
         icon: (
-          <span>
+          <Box display="flex">
             <DarkMode sx={{ transform: 'scaleX(-1)' }} />
             <DarkMode sx={{ transform: 'scaleX(-1)' }} />
-          </span>
+          </Box>
         ),
       },
       // We handle the moonsign conditionals per-character in TeamComponents.tsx,
@@ -534,10 +535,10 @@ export function MoonsignConditionalSection(
       title: tr('Moonsign.ascendantGleam.name'),
       description: tr('Moonsign.ascendantGleam.desc'),
       icon: (
-        <span>
+        <Box display="flex">
           <DarkMode sx={{ transform: 'scaleX(-1)' }} />
           <DarkMode sx={{ transform: 'scaleX(-1)' }} />
-        </span>
+        </Box>
       ),
     },
     teamBuff: true,
