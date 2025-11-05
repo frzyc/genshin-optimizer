@@ -5,13 +5,7 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
-import type {
-  Info,
-  NonStackBuff,
-  NumNode,
-  ReadNode,
-  StrNode,
-} from '@genshin-optimizer/gi/wr'
+import type { Info, NumNode, ReadNode, StrNode } from '@genshin-optimizer/gi/wr'
 import {
   customStringRead,
   equal,
@@ -19,6 +13,7 @@ import {
   input,
   unequal,
 } from '@genshin-optimizer/gi/wr'
+import type { NonStackBuff } from '@genshin-optimizer/gi/wr-types'
 import type { ReactNode } from 'react'
 
 export const st = (

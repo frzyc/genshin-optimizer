@@ -11,6 +11,7 @@ import {
 import {
   bulkCatTotal,
   deepClone,
+  isIn,
   objKeyMap,
 } from '@genshin-optimizer/common/util'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
@@ -46,7 +47,8 @@ import {
 } from '@genshin-optimizer/gi/ui'
 import { UIData } from '@genshin-optimizer/gi/uidata'
 import { setKeysByRarities } from '@genshin-optimizer/gi/util'
-import { allNonstackBuffs, constant } from '@genshin-optimizer/gi/wr'
+import { constant } from '@genshin-optimizer/gi/wr'
+import { allNonstackBuffs } from '@genshin-optimizer/gi/wr-types'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import CloseIcon from '@mui/icons-material/Close'
@@ -115,13 +117,14 @@ export default function ArtifactSetConfig({
     const catKeys = { allowTotals: ['2', '4'] }
     return bulkCatTotal(catKeys, (ctMap) =>
       artKeysByRarity.forEach((setKey) => {
-        ctMap.allowTotals['2'].total++
+        if (!isIn(allArtifactSetExclusionKeys, setKey)) return
+        ctMap['allowTotals']['2'].total++
         if (!artSetExclusion[setKey]?.includes(2)) {
-          ctMap.allowTotals['2'].current++
+          ctMap['allowTotals']['2'].current++
         }
-        ctMap.allowTotals['4'].total++
+        ctMap['allowTotals']['4'].total++
         if (!artSetExclusion[setKey]?.includes(4)) {
-          ctMap.allowTotals['4'].current++
+          ctMap['allowTotals']['4'].current++
         }
       })
     )
@@ -160,9 +163,10 @@ export default function ArtifactSetConfig({
     })
   }, [database, teamCharId, conditional])
   const setAllExclusion = useCallback(
-    (setnum: number, exclude = true) => {
+    (setnum: 2 | 4, exclude = true) => {
       const artSetExclusion_ = deepClone(artSetExclusion)
       artKeysByRarity.forEach((k) => {
+        if (!isIn(allArtifactSetExclusionKeys, k)) return
         if (exclude)
           artSetExclusion_[k] = [...(artSetExclusion_[k] ?? []), setnum]
         else if (artSetExclusion_[k])
