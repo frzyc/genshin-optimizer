@@ -300,12 +300,16 @@ const dmgFormulas = {
     ),
   },
   constellation6: {
-    dmg: lunarDmg(
-      sum(percent(dm.constellation6.dmg2), c1_ppLunarbloom_addlMv),
-      'eleMas',
-      'lunarbloom',
-      undefined,
-      a1VeilStacks_pp_mult_
+    dmg: greaterEq(
+      input.constellation,
+      6,
+      lunarDmg(
+        sum(percent(dm.constellation6.dmg2), c1_ppLunarbloom_addlMv),
+        'eleMas',
+        'lunarbloom',
+        undefined,
+        a1VeilStacks_pp_mult_
+      )
     ),
   },
 }
