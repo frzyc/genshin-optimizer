@@ -98,9 +98,19 @@ import { UploadExplainationModal } from './UploadExplainationModal'
 const allSubstatFilter = new Set(allSubstatKeys)
 type ResetMessage = { type: 'reset' }
 type SubstatMessage = { type: 'substat'; index: number; substat: ISubstat }
+type UnactivatedSubstatMessage = {
+  type: 'unactivatedSubstat'
+  index: number
+  substat: ISubstat
+}
 type OverwriteMessage = { type: 'overwrite'; artifact: IArtifact }
 type UpdateMessage = { type: 'update'; artifact: Partial<IArtifact> }
-type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
+type Message =
+  | ResetMessage
+  | SubstatMessage
+  | OverwriteMessage
+  | UpdateMessage
+  | UnactivatedSubstatMessage
 function artifactReducer(
   state: IArtifact | undefined,
   action: Message
@@ -114,6 +124,7 @@ function artifactReducer(
         const oldIndex = substat.key
           ? state!.substats.findIndex((current) => current.key === substat.key)
           : -1
+
         if (oldIndex === -1 || oldIndex === index)
           state!.substats[index] = substat
         // Already in used, swap the items instead
@@ -122,6 +133,79 @@ function artifactReducer(
             state!.substats[oldIndex],
             state!.substats[index],
           ]
+
+        // Reset unactivated substat data if it exists
+        if (
+          state!.unactivatedSubstats?.length &&
+          state!.unactivatedSubstats[0].key
+        ) {
+          state!.unactivatedSubstats = []
+        }
+        return { ...state! }
+      }
+      case 'unactivatedSubstat': {
+        if (!state?.unactivatedSubstats) {
+          return { ...state! }
+        }
+
+        const { index, substat } = action
+        const findSubstatIndex = (
+          substats: typeof state.substats,
+          key: string
+        ) => substats.findIndex((current) => current.key === key)
+        const oldActivatedIndex = substat.key
+          ? findSubstatIndex(state.substats, substat.key)
+          : -1
+        const unactivatedIndex = substat.key
+          ? findSubstatIndex(state.unactivatedSubstats, substat.key)
+          : -1
+        const oldUnactivatedIndex =
+          unactivatedIndex !== -1 ? unactivatedIndex + 3 : -1
+        const activeSubstat = state.substats[3].key
+          ? state.substats[3]
+          : substat
+
+        // Allow swapping of substats between unactivated and activated
+        if (index === 3) {
+          // check if unactivated stat needs to swap with activated stat
+          if (oldUnactivatedIndex === -1 || oldUnactivatedIndex === index) {
+            if (
+              oldActivatedIndex !== -1 &&
+              oldUnactivatedIndex !== oldActivatedIndex
+            ) {
+              const tempStat = state!.unactivatedSubstats[0]
+              state!.unactivatedSubstats[0] = state!.substats[oldActivatedIndex]
+              state!.substats[oldActivatedIndex] = tempStat
+            } else {
+              state!.unactivatedSubstats[0] = activeSubstat
+            }
+          }
+        } else {
+          // check if activated stat needs to swap with unactivated stat
+          if (oldActivatedIndex === -1 || oldActivatedIndex === index) {
+            if (
+              oldUnactivatedIndex !== -1 &&
+              oldUnactivatedIndex !== oldActivatedIndex
+            ) {
+              const tempStat = state!.substats[index]
+              state!.substats[index] = state!.unactivatedSubstats[0]
+              state!.unactivatedSubstats[0] = tempStat
+            } else {
+              state!.substats[index] = activeSubstat
+            }
+          } else {
+            // swap between activated stats
+            const tempStat = state!.substats[index]
+            state!.substats[index] = state!.substats[oldActivatedIndex]
+            state!.substats[oldActivatedIndex] = tempStat
+          }
+        }
+
+        // Reset activated substat
+        if (state.substats[3].key) {
+          state.substats[3] = { key: '', value: 0 }
+        }
+
         return { ...state! }
       }
       case 'overwrite':
@@ -172,6 +256,7 @@ export function ArtifactEditor({
   )
   const queue = queueRef.current
   const { t } = useTranslation('artifact')
+  const [isUnactivatedSubstat, setIsUnactivatedSubstat] = useState(false)
 
   const database = useDatabase()
 
@@ -246,6 +331,7 @@ export function ArtifactEditor({
   const artStat = artifact && getArtSetStat(artifact.setKey)
   const reset = useCallback(() => {
     cancelEdit?.()
+    setIsUnactivatedSubstat(false)
     artifactDispatch({ type: 'reset' })
     setScannedData(undefined)
   }, [cancelEdit, artifactDispatch])
@@ -304,8 +390,9 @@ export function ArtifactEditor({
     [artifact, artStat, artifactDispatch, fixedSlotKey]
   )
   const setSubstat = useCallback(
-    (index: number, substat: ISubstat) => {
-      artifactDispatch({ type: 'substat', index, substat })
+    (index: number, substat: ISubstat, isUnactivatedSubstat: boolean) => {
+      const type = isUnactivatedSubstat ? 'unactivatedSubstat' : 'substat'
+      artifactDispatch({ type: type, index, substat })
     },
     [artifactDispatch]
   )
@@ -424,6 +511,25 @@ export function ArtifactEditor({
       queue.callback = () => {}
     }
   }, [queue])
+
+  const handleChange = (
+    index: number,
+    substat: ISubstat,
+    isChecked: boolean
+  ) => {
+    setIsUnactivatedSubstat(isChecked)
+    setSubstat(index, substat, isChecked)
+  }
+
+  useEffect(() => {
+    if (level >= 4) {
+      setIsUnactivatedSubstat(false)
+    }
+
+    if (artifactIdToEdit && artifact?.unactivatedSubstats?.[0]?.key) {
+      setIsUnactivatedSubstat(true)
+    }
+  }, [artifact?.unactivatedSubstats, artifactIdToEdit, level])
 
   const removeId = (artifactIdToEdit !== 'new' && artifactIdToEdit) || old?.id
   return (
@@ -730,6 +836,8 @@ export function ArtifactEditor({
                   index={index}
                   artifact={cArtifact}
                   setSubstat={setSubstat}
+                  onChange={handleChange}
+                  isUnactivatedSubstat={isUnactivatedSubstat}
                 />
               ))}
               {texts && (
