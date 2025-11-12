@@ -14,6 +14,7 @@ import type { Attribute, Sheet } from './listing'
 export type FormulaArg = {
   team?: boolean // true if applies to every member, and false (default) if applies only to self
   cond?: string | StrNode
+  condDmg?: boolean
 }
 
 export type DmgTag = Partial<
@@ -113,7 +114,8 @@ function registerFormula(
     | 'shield'
     | 'anomalyDmg'
     | 'dazeBuildup'
-    | 'anomBuildup',
+    | 'anomBuildup'
+    | 'nonDmg',
   cond: string | StrNode,
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
@@ -146,13 +148,13 @@ export function customDmg(
   name: string,
   dmgTag: DmgTag,
   base: NumNode,
-  { team, cond = 'infer' }: FormulaArg = {},
+  { team, cond = 'infer', condDmg = false }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
     name,
     team,
-    'standardDmg',
+    condDmg ? 'nonDmg' : 'standardDmg',
     tag(cond, dmgTag),
     ownBuff.formula.base.add(base),
     ...extra

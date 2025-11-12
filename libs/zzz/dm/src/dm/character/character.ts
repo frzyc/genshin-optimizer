@@ -232,13 +232,15 @@ export const charactersDetailedJSONData = Object.fromEntries(
         coreStats: Object.values(raw.ExtraLevel).map(
           ({ Extra }) =>
             Object.fromEntries(
-              Object.values(Extra).map(({ Name, Value }) => [
-                coreStatMap[Name],
-                isPercentStat(coreStatMap[Name])
+              Object.values(Extra).map(({ Name, Value, Format }) => [
+                `${coreStatMap[Name]}${Format.includes('%') && !isPercentStat(coreStatMap[Name]) ? '_' : ''}`,
+                Format.includes('%') && !isPercentStat(coreStatMap[Name])
                   ? Value / PERCENT_SCALING
-                  : coreStatMap[Name] === 'enerRegen'
-                    ? Value / FLAT_SCALING
-                    : Value,
+                  : isPercentStat(coreStatMap[Name])
+                    ? Value / PERCENT_SCALING
+                    : coreStatMap[Name] === 'enerRegen'
+                      ? Value / FLAT_SCALING
+                      : Value,
               ])
             ) as Partial<
               Record<(typeof coreStatMap)[keyof typeof coreStatMap], number>
