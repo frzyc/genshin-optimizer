@@ -1,3 +1,4 @@
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
@@ -12,7 +13,13 @@ import {
   team,
   teamBuff,
 } from '../../util'
-import { entriesForChar, getBaseTag, registerAllDmgDazeAndAnom } from '../util'
+import {
+  conditionalFormulaDmgTag,
+  dmgDazeAndAnomOverride,
+  entriesForChar,
+  getBaseTag,
+  registerAllDmgDazeAndAnom,
+} from '../util'
 
 const key: CharacterKey = 'Soldier0Anby'
 const data_gen = allStats.char[key]
@@ -23,13 +30,51 @@ const { char } = own
 
 const { markedWithSilverStar } = allBoolConditionals(key)
 
+const ability_check = (a: NumNode | number, b?: NumNode | number) =>
+  cmpGE(
+    sum(
+      team.common.count.withSpecialty('stun'),
+      team.common.count.withSpecialty('support')
+    ),
+    1,
+    a,
+    b
+  )
+
 const sheet = register(
   key,
   // Handles base stats, core stats and Mindscapes 3 + 5
   entriesForChar(data_gen),
 
   // Formulas
-  ...registerAllDmgDazeAndAnom(key, dm),
+  ...registerAllDmgDazeAndAnom(
+    key,
+    dm,
+    dmgDazeAndAnomOverride(
+      dm,
+      'chain',
+      'ChainAttackLeapingThunderstrike',
+      0,
+      { ...baseTag, damageType1: 'chain', skillType: 'chainSkill' },
+      'atk',
+      { condDmg: true },
+      conditionalFormulaDmgTag(ability_check(1), 'standardDmg', {
+        damageType2: 'aftershock',
+      })
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'chain',
+      'UltimateVoidstrike',
+      0,
+      { ...baseTag, damageType1: 'ult', skillType: 'chainSkill' },
+      'atk',
+      { condDmg: true },
+      conditionalFormulaDmgTag(ability_check(1), 'standardDmg', {
+        damageType2: 'aftershock',
+      })
+    )
+  ),
 
   ...customDmg(
     'm6_additional_dmg',

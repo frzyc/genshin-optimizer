@@ -1,10 +1,12 @@
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
   cmpEq,
   cmpGE,
   constant,
   max,
   prod,
+  read,
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
@@ -205,6 +207,32 @@ export function dmgDazeAndAnomOverride<
       },
     },
   }
+}
+
+/**
+ * Creates a conditional formula node that reads from one of two damage instances based on a condition
+ * @param cond Condition node
+ * @param q One of 'standardDmg', 'sheerDmg' or 'anomalyDmg'
+ * @param dmgTagIfTrue DmgTag to use if condition is true
+ * @param dmgTagIfFalse DmgTag to use if condition is false
+ * @returns TagMapNodeEntry representing the conditional damage instance
+ */
+export function conditionalFormulaDmgTag(
+  cond: NumNode,
+  q: 'standardDmg' | 'sheerDmg' | 'anomalyDmg',
+  dmgTagIfTrue: DmgTag,
+  dmgTagIfFalse: DmgTag = {}
+) {
+  return ownBuff
+    .withTag({ qt: 'formula', q: 'nonDmg' })
+    .add(
+      cmpEq(
+        cond,
+        1,
+        read({ q, ...dmgTagIfTrue }),
+        read({ q, ...dmgTagIfFalse })
+      )
+    )
 }
 
 /**

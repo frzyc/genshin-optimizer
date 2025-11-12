@@ -614,7 +614,7 @@ export const formulas = {
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'nonDmg',
       sheet: 'Soldier0Anby',
       attribute: 'electric',
       damageType1: 'chain',
@@ -656,7 +656,7 @@ export const formulas = {
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'nonDmg',
       sheet: 'Soldier0Anby',
       attribute: 'electric',
       damageType1: 'ult',
