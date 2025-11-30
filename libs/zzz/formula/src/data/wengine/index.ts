@@ -76,6 +76,8 @@ import VortexHatchet from './sheets/VortexHatchet'
 import VortexRevolver from './sheets/VortexRevolver'
 import WeepingCradle from './sheets/WeepingCradle'
 import WeepingGemini from './sheets/WeepingGemini'
+import WrathfulVajra from './sheets/WrathfulVajra'
+import YesterdayCalls from './sheets/YesterdayCalls'
 import ZanshinHerbCase from './sheets/ZanshinHerbCase'
 
 const data: TagMapNodeEntries[] = [
@@ -155,6 +157,8 @@ const data: TagMapNodeEntries[] = [
   VortexRevolver,
   WeepingCradle,
   WeepingGemini,
+  WrathfulVajra,
+  YesterdayCalls,
   ZanshinHerbCase,
 ]
 

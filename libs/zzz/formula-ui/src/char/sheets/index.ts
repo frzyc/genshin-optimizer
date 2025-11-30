@@ -5,11 +5,13 @@ import Alice from './Alice'
 import Anby from './Anby'
 import Anton from './Anton'
 import AstraYao from './AstraYao'
+import Banyue from './Banyue'
 import Ben from './Ben'
 import Billy from './Billy'
 import Burnice from './Burnice'
 import Caesar from './Caesar'
 import Corin from './Corin'
+import Dialyn from './Dialyn'
 import Ellen from './Ellen'
 import Evelyn from './Evelyn'
 import Grace from './Grace'
@@ -50,11 +52,13 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Anby,
   Anton,
   AstraYao,
+  Banyue,
   Ben,
   Billy,
   Burnice,
   Caesar,
   Corin,
+  Dialyn,
   Ellen,
   Evelyn,
   Grace,

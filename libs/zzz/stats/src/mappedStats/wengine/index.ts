@@ -75,6 +75,8 @@ import VortexHatchet from './maps/VortexHatchet'
 import VortexRevolver from './maps/VortexRevolver'
 import WeepingCradle from './maps/WeepingCradle'
 import WeepingGemini from './maps/WeepingGemini'
+import WrathfulVajra from './maps/WrathfulVajra'
+import YesterdayCalls from './maps/YesterdayCalls'
 import ZanshinHerbCase from './maps/ZanshinHerbCase'
 
 const maps = {
@@ -154,6 +156,8 @@ const maps = {
   VortexRevolver,
   WeepingCradle,
   WeepingGemini,
+  WrathfulVajra,
+  YesterdayCalls,
   ZanshinHerbCase,
 }
 export default maps

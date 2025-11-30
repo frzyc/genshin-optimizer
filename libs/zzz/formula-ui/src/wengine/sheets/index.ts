@@ -78,6 +78,8 @@ import VortexHatchet from './VortexHatchet'
 import VortexRevolver from './VortexRevolver'
 import WeepingCradle from './WeepingCradle'
 import WeepingGemini from './WeepingGemini'
+import WrathfulVajra from './WrathfulVajra'
+import YesterdayCalls from './YesterdayCalls'
 import ZanshinHerbCase from './ZanshinHerbCase'
 
 export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
@@ -157,5 +159,7 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   VortexRevolver,
   WeepingCradle,
   WeepingGemini,
+  WrathfulVajra,
+  YesterdayCalls,
   ZanshinHerbCase,
 }

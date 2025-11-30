@@ -3,11 +3,13 @@ import Alice from './maps/Alice'
 import Anby from './maps/Anby'
 import Anton from './maps/Anton'
 import AstraYao from './maps/AstraYao'
+import Banyue from './maps/Banyue'
 import Ben from './maps/Ben'
 import Billy from './maps/Billy'
 import Burnice from './maps/Burnice'
 import Caesar from './maps/Caesar'
 import Corin from './maps/Corin'
+import Dialyn from './maps/Dialyn'
 import Ellen from './maps/Ellen'
 import Evelyn from './maps/Evelyn'
 import Grace from './maps/Grace'
@@ -48,11 +50,13 @@ const maps = {
   Anby,
   Anton,
   AstraYao,
+  Banyue,
   Ben,
   Billy,
   Burnice,
   Caesar,
   Corin,
+  Dialyn,
   Ellen,
   Evelyn,
   Grace,
