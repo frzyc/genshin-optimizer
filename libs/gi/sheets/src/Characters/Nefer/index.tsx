@@ -330,10 +330,8 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       lunarbloom_baseDmg_: a0_lunarbloom_baseDmg_,
       dendro_enemyRes_: c4ShadowDance_dendro_enemyRes_,
     },
-    tally: {
-      moonsign: constant(1),
-    },
   },
+  isMoonsign: constant(1),
 })
 
 const sheet: TalentSheet = {

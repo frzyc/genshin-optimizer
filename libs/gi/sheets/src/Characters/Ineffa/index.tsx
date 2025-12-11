@@ -215,10 +215,8 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     total: {
       eleMas: a4AfterBurst_eleMas,
     },
-    tally: {
-      moonsign: constant(1),
-    },
   },
+  isMoonsign: constant(1),
 })
 
 const sheet: TalentSheet = {

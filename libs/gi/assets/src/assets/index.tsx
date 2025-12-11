@@ -23,6 +23,9 @@ import goblet from './icon_slot_goblet.png'
 import plume from './icon_slot_plume.png'
 import sands from './icon_slot_sands.png'
 
+import hexerei from './UI_BtnIcon_Hexenzirkel.png'
+import moonsign from './UI_BtnIcon_MoonPhase.png'
+
 export const imgAssets = {
   weaponTypes: { bow, catalyst, claymore, polearm, sword },
   slot: {
@@ -46,5 +49,9 @@ export const imgAssets = {
     team2,
     team3,
     team4,
+  },
+  resonance: {
+    moonsign,
+    hexerei,
   },
 } as const
