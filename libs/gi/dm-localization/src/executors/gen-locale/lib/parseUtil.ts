@@ -167,6 +167,10 @@ export const parsingFunctions: {
         const [normal, charged, plunging, nightsoul] = strings
         return { normal, charged, plunging, nightsoul } as any
       }
+      if (charkey === 'Venti') {
+        const [normal, charged, plunging, hexerei] = strings
+        return { normal, charged, plunging, hexerei } as any
+      }
     } else if (strings.length === 5) {
       const [, charkey] = keys as any
       if (charkey === 'Neuvillette') {
