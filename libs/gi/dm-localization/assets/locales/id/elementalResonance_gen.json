@@ -58,5 +58,11 @@
         }
       }
     }
+  },
+  "Hexerei": {
+    "name": "Hexerei: Secret Rite",
+    "desc": {
+      "0": "Karakter Hexerei dalam party saat ini sudah diperkuat."
+    }
   }
 }

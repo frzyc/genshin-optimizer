@@ -60,5 +60,11 @@
         }
       }
     }
+  },
+  "Hexerei": {
+    "name": "Cadılık: Saklı Ayin",
+    "desc": {
+      "0": "Grubundaki Cadılık karakterleri daha da geliştirildi."
+    }
   }
 }

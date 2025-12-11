@@ -60,5 +60,11 @@
         }
       }
     }
+  },
+  "Hexerei": {
+    "name": "Mágico: Ritual Secreto",
+    "desc": {
+      "0": "Os personagens Mágicos da equipe foram fortalecidos ainda mais."
+    }
   }
 }

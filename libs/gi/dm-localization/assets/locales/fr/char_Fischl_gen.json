@@ -122,6 +122,20 @@
       "0": "Diminue la durée d'une expédition de 25 % lorsqu'elle se déroule à Mondstadt."
     }
   },
+  "lockedPassive": {
+    "name": "Veillée de la sorcière : Nocturne fantomatique",
+    "description": {
+      "0": "Après avoir terminé le <strong>devoir de la sorcière « De l'inattendu »</strong>, Fischl devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei : Rituel secret</strong>",
+      "3": "Oyez, Ozvaldo von Hrafnavines le seigneur des corbeaux, celui qui a assisté à la chute d'innombrables mondes : chantez maintenant le septuor étoilé pour votre souveraine, car c'est le moment du péché le plus profond, lorsque les âmes rassemblées à la fin de la causalité brisent les ténèbres du destin.",
+      "4": "De plus, les personnages de l'équipe obtiennent des bonus supplémentaires lorsque Oz est sur le terrain :",
+      "5": [
+        " L'ATQ de Fischl et des autres personnages déployés de l'équipe à proximité augmente de 22,5 % pendant 10 s lorsqu'un personnage de l'équipe à proximité a déclenché une réaction de Surcharge.",
+        " La maîtrise élémentaire de Fischl et des autres personnages déployés de l'équipe à proximité augmente de 90 pts pendant 10 s lorsqu'un personnage de l'équipe à proximité a déclenché une réaction d'Électrocution ou de Sélénocution."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Œil du corbeau obscur",
     "description": {
@@ -159,6 +173,10 @@
     "name": "Oiseau de la nuit éternelle",
     "description": {
       "0": "Prolonge la durée d'Oz de 2 s. De plus, Oz attaque aux côtés de votre personnage déployé, infligeant des <electro>DGT Électro</electro> équivalant à 30 % de l'ATQ de Fischl."
+    },
+    "upgradedDescription": {
+      "0": "Prolonge la durée d'Oz de 2 s. De plus, Oz attaque aux côtés de votre personnage déployé, infligeant des <electro>DGT Électro</electro> équivalant à 30 % de l'ATQ de Fischl.",
+      "1": "Lorsque Oz a effectué une attaque coordonnée, les effets d'augmentation de l'ATQ et de la maîtrise élémentaire de <strong>Veillée de la sorcière : Nocturne fantomatique</strong> augmentent de 100 % de plus pendant 10 s."
     }
   }
 }

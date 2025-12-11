@@ -101,6 +101,13 @@
     "description": {
       "0": "Khi <strong>Bom Nảy</strong> và tấn công thường tạo thành sát thương, có tỷ lệ 50% tạo thành một đoá Hoa Tia Lửa cho Klee.",
       "1": "Thi triển trọng kích sẽ tiêu hao Hoa Tia Lửa, khiến lần trọng kích này không tiêu hao thể lực, đồng thời tăng 50% sát thương gây ra."
+    },
+    "upgradedDescription": {
+      "0": "Khi Kỹ Năng Nguyên Tố <strong>Bom Nảy</strong> và Tấn Công Thường gây ra sát thương, có 50% xác suất tạo ra 1 đóa Hoa Tia Lửa cho Klee. Khi thi triển Kỹ Năng Nguyên Tố <strong>Bom Nảy</strong> và Kỹ Năng Nộ <strong>Tia Lửa Mãnh Liệt</strong>, cũng sẽ cung cấp cho Klee 1 đóa Hoa Tia Lửa. Klee tối đa sở hữu 3 đóa Hoa Tia Lửa.",
+      "1": "Khi Klee có Hoa Tia Lửa và thi triển Trọng Kích, sẽ tiêu hao 1 đóa Hoa Tia Lửa để chuyển sang thi triển Trọng Kích đặc biệt \"Bùm Bùm Oanh Tạc\" và không tiêu hao Thể Lực, đồng thời tăng 50% sát thương gây ra.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "4": "Trong thời gian duy trì Kỹ Năng Nộ <strong>Tia Lửa Mãnh Liệt</strong>, chuỗi liên kích Tấn Công Thường của Klee sẽ không bị đặt lại. Khi Klee có Hoa Tia Lửa và thực hiện Tấn Công Thường, đòn tấn công bước 3 sẽ tiêu hao 1 đóa Hoa Tia Lửa, gây thêm một đòn tấn công tương đương với \"Bùm Bùm Oanh Tạc\" lên kẻ địch."
     }
   },
   "passive2": {
@@ -115,16 +122,32 @@
       "0": "Hiển thị vị trí <strong>đặc sản khu vực Mondstadt</strong> ở xung quanh trên bản đồ nhỏ."
     }
   },
+  "lockedPassive": {
+    "name": "Đêm Lễ Ma Nữ - Ma Pháp Tia Lửa",
+    "description": {
+      "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Về Lá Hoa Lửa</strong>, Klee sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "3": "Khi Klee gây sát thương từ Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, sẽ nhận được 1 \"Huy Hiệu Bùm Bùm\", duy trì 20s. Mỗi loại tấn công tối đa có thể giúp Klee nhận được 1 \"Huy Hiệu Bùm Bùm\" thông qua cách này, Huy Hiệu Bùm Bùm nhận từ các loại tấn công khác nhau sẽ tồn tại độc lập. Khi Klee có 1/2/3 \"Huy Hiệu Bùm Bùm\", Trọng Kích đặc biệt \"Bùm Bùm Oanh Tạc\" sẽ gây ra 115%/130%/150% sát thương gốc."
+    }
+  },
   "constellation1": {
     "name": "Vụ Nổ Liên Hoàn",
     "description": {
       "0": "Khi tấn công và thi triển kỹ năng, có tỷ lệ triệu hồi tia lửa tấn công kẻ địch, gây sát thương tương đương với 120% sát thương của <strong>Tia Lửa Mãnh Liệt</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Khi tấn công và thi triển kỹ năng, có tỷ lệ triệu hồi tia lửa tấn công kẻ địch, gây sát thương tương đương 120% sát thương của <strong>Tia Lửa Mãnh Liệt</strong>.",
+      "1": "Trong 12s sau khi kích hoạt hiệu quả trên, Klee sẽ tăng 60% Tấn Công."
     }
   },
   "constellation2": {
     "name": "Mảnh Đạn Vỡ Vụn",
     "description": {
       "0": "Quỷ Lôi của <strong>Bom Nảy</strong> sẽ làm giảm 23% phòng ngự của kẻ địch, kéo dài 10s."
+    },
+    "upgradedDescription": {
+      "0": "Khi Kỹ Năng Nguyên Tố của Klee đánh trúng kẻ địch, sẽ khiến kẻ địch giảm 23% Phòng Ngự trong 10s."
     }
   },
   "constellation3": {
@@ -138,6 +161,9 @@
     "name": "Toàn Lực Khai Hỏa",
     "description": {
       "0": "Nếu rời khỏi trận trong thời gian <strong>Tia Lửa Mãnh Liệt</strong> đang tồn tại, sẽ tạo ra vụ nổ, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> với 555% lực tấn công."
+    },
+    "upgradedDescription": {
+      "0": "Nếu rời trận trong thời gian duy trì <strong>Tia Lửa Mãnh Liệt</strong>, hoặc khi thời gian duy trì <strong>Tia Lửa Mãnh Liệt</strong> kết thúc, sẽ tạo ra vụ nổ, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> bằng 555% Tấn Công. Khi kích hoạt hiệu quả nêu trên, nếu Klee đang trong trận, sát thương gây ra sẽ tăng 100%."
     }
   },
   "constellation5": {
@@ -152,6 +178,13 @@
     "description": {
       "0": "Trong trạng thái <strong>Tia Lửa Mãnh Liệt</strong>, cứ mỗi 3s Klee sẽ hồi phục 3 điểm Năng Lượng Nguyên Tố cho tất cả nhân vật trong đội (Không bao gồm bản thân Klee);",
       "1": "Trong 25s sau khi phóng <strong>Tia Lửa Mãnh Liệt</strong>, tất cả nhân vật trong đội nhận được 10% <pyro>Buff Sát Thương Nguyên Tố Hỏa</pyro>."
+    },
+    "upgradedDescription": {
+      "0": "Trong trạng thái <strong>Tia Lửa Mãnh Liệt</strong>, cứ mỗi 3s Klee sẽ hồi phục 3 điểm Năng Lượng Nguyên Tố cho tất cả nhân vật trong đội (không bao gồm bản thân Klee).",
+      "1": "Trong 25s sau khi thi triển <strong>Tia Lửa Mãnh Liệt</strong>, tất cả nhân vật khác trong đội nhận 10% <pyro>Buff Sát Thương Nguyên Tố Hỏa</pyro>, Klee nhận 50% <pyro>Buff Sát Thương Nguyên Tố Hỏa</pyro>.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "4": "Khi kích hoạt hiệu quả tiêu hao <strong>Hoa Tia Lửa</strong>, có 50% xác suất không tiêu hao <strong>Hoa Tia Lửa</strong>. Ngoài ra, trong trạng thái <strong>Tia Lửa Mãnh Liệt</strong>, khi Klee thực hiện Tấn Công Thường, đòn 1 và đòn 2 có 40% xác suất tiêu hao một Hoa Tia Lửa, gây thêm một lần tấn công tương đương với \"Bùm Bùm Oanh Tạc\" lên kẻ địch."
     }
   }
 }

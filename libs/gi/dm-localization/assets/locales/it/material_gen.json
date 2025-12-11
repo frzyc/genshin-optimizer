@@ -236,6 +236,9 @@
   "PrepProgress": {
     "name": "Progressi preparazione"
   },
+  "BlazingSpirit": {
+    "name": "Spirito ardente"
+  },
   "Primogem": {
     "name": "Primogemma"
   },
@@ -1109,6 +1112,12 @@
   "Nefer": {
     "name": "Nefer"
   },
+  "Durin": {
+    "name": "Durin"
+  },
+  "Jahoda": {
+    "name": "Jahoda"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna di Kachina"
   },
@@ -1171,6 +1180,12 @@
   },
   "NefersStellaFortuna": {
     "name": "Stella Fortuna di Nefer"
+  },
+  "DurinsStellaFortuna": {
+    "name": "Stella Fortuna di Durin"
+  },
+  "JahodasStellaFortuna": {
+    "name": "Stella Fortuna di Jahoda"
   },
   "Apple": {
     "name": "Mela"
@@ -8108,6 +8123,27 @@
   "SugarSculptureNefer": {
     "name": "Scultura di zucchero: Nefer"
   },
+  "AfterClassPractice": {
+    "name": "\"Pratica dopo le lezioni\""
+  },
+  "AppleStewTrialVersion": {
+    "name": "Stufato di mele (versione di prova)"
+  },
+  "SuspiciousSpicedFriedChicken": {
+    "name": "Pollo fritto speziato sospetto"
+  },
+  "SpicedFriedChicken": {
+    "name": "Pollo fritto speziato"
+  },
+  "DeliciousSpicedFriedChicken": {
+    "name": "Pollo fritto speziato delizioso"
+  },
+  "SugarSculptureJahoda": {
+    "name": "Scultura di zucchero: Jahoda"
+  },
+  "SugarSculptureKuuhenki": {
+    "name": "Scultura di zucchero: Kuuhenki"
+  },
   "RecipeItem": {
     "name": "Ingrediente"
   },
@@ -8878,6 +8914,9 @@
   },
   "RecipeLohikeitto": {
     "name": "Ricetta: lohikeitto"
+  },
+  "RecipeSpicedFriedChicken": {
+    "name": "Ricetta: pollo fritto speziato"
   },
   "CraftedItems": {
     "name": "Oggetti creati"
@@ -9664,6 +9703,9 @@
   },
   "RadiantAntler": {
     "name": "Corno splendente"
+  },
+  "CyclicMilitaryKuuvahkiCore": {
+    "name": "Nucleo Kuuvahki militare ciclico"
   },
   "TileOfDecarabiansTower": {
     "name": "Tegola della Torre di Decarabian"
@@ -13142,6 +13184,30 @@
   "CuratoriumFunds": {
     "name": "Fondi del Consiglio"
   },
+  "RhinedottirsGift": {
+    "name": "\"Dono\" di Rhinedottir"
+  },
+  "RaggedDoll": {
+    "name": "Bambola logora"
+  },
+  "ScribbledLetter": {
+    "name": "Lettera scarabocchiata"
+  },
+  "MoonPrayerNightPamphlet": {
+    "name": "Opuscolo della Notte di Preghiera lunare"
+  },
+  "GreetingCardForColumbina": {
+    "name": "Biglietto d'auguri per Colombina"
+  },
+  "MoonPrayerCandyFromColumbina": {
+    "name": "Caramelle della Preghiera lunare di Colombina"
+  },
+  "TheSoulblazerSagaVolume2": {
+    "name": "Saga delle Anime ardenti: Volume 2"
+  },
+  "TaleOfDurin": {
+    "name": "Storia di \"Durin\""
+  },
   "TearsAmongTheStars": {
     "name": "Lacrime tra le stelle"
   },
@@ -14132,6 +14198,9 @@
   "GoldenStrings": {
     "name": "Corde dorate"
   },
+  "RefinedHeart": {
+    "name": "Cuore raffinato"
+  },
   "FalconsDance": {
     "name": "Danza del falco"
   },
@@ -15059,6 +15128,18 @@
   "TravelNotesBygoneRuins": {
     "name": "Appunti di viaggio: Rovine del passato"
   },
+  "DurinRadiantHeart": {
+    "name": "Durin: Cuore raggiante"
+  },
+  "JahodaHelpingHand": {
+    "name": "Jahoda: Una mano amica"
+  },
+  "TravelNotesBlazingSnow": {
+    "name": "Appunti di viaggio: Neve ardente"
+  },
+  "CelebrationDreamReader": {
+    "name": "Celebrazione: Lettore di sogni"
+  },
   "EchoDandelionKnight": {
     "name": "Eco: Cavaliere del Dente di leone"
   },
@@ -15103,6 +15184,12 @@
   },
   "EchoPhysicOfPurity": {
     "name": "Eco: Fisica della purezza"
+  },
+  "EchoKreideprinz": {
+    "name": "Eco: Kreideprinz"
+  },
+  "EchoFleeingSunlight": {
+    "name": "Eco: Sole fugace"
   },
   "FaintGlow": {
     "name": "Flebile bagliore"
@@ -15433,6 +15520,9 @@
   },
   "LunarArcanaCase": {
     "name": "Scatola degli Arcani lunari"
+  },
+  "TheLittleWitchsDictionary": {
+    "name": "Dizionario della piccola strega"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Istruzioni: pietra di risonanza per Anemoculi"
@@ -15917,6 +16007,27 @@
   "EagerAndReady": {
     "name": "Passione ed energia"
   },
+  "SharpObserver": {
+    "name": "Osservatore sveglio"
+  },
+  "TeaTime": {
+    "name": "Ora del tè"
+  },
+  "MerchantsAura": {
+    "name": "Aura da mercante"
+  },
+  "IngeniousForesight": {
+    "name": "Previsione ingegnosa"
+  },
+  "CelebrityCountenance": {
+    "name": "Aspetto da celebrità"
+  },
+  "CoolWatcher": {
+    "name": "Osservatore glaciale"
+  },
+  "SignOfProsperity": {
+    "name": "Segno di prosperità"
+  },
   "FantasticalMarvel": {
     "name": "Prodigio fantastico"
   },
@@ -15976,6 +16087,9 @@
   },
   "VigorousYapping": {
     "name": "Chiacchiera vivace"
+  },
+  "DiligentStudy": {
+    "name": "Studio diligente"
   },
   "RhodeiaOfLoch": {
     "name": "Rhodeia di Loch"
@@ -16069,6 +16183,9 @@
   },
   "HydroTulpa": {
     "name": "Tulpa di Hydro"
+  },
+  "BlackSerpentKnightRockbreakerAx": {
+    "name": "Cavaliere del Serpente nero: Scure spaccapietra"
   },
   "UndividedHeart": {
     "name": "Cuore indivisibile"
@@ -16442,6 +16559,15 @@
   "FlowConvergence": {
     "name": "Flussi convergenti"
   },
+  "TeaPartiesBurstingWithColor": {
+    "name": "Ricevimento del tè multicolore"
+  },
+  "BringerOfBlessing": {
+    "name": "Portatore di buona sorte"
+  },
+  "OnceStoodAgainstTheTideOfDarkWatersLikeBedrock": {
+    "name": "\"Colui che si oppose alle maree delle acque oscure come un macigno...\""
+  },
   "MagicGuide": {
     "name": "Manuale di magia"
   },
@@ -16772,6 +16898,9 @@
   "NoblesseOblige": {
     "name": "Noblesse oblige"
   },
+  "NymphsDream": {
+    "name": "Sogno della ninfa"
+  },
   "LiyueHarborWharf": {
     "name": "Molo del Porto di Liyue"
   },
@@ -16957,6 +17086,9 @@
   },
   "AdventurersGuild": {
     "name": "Gilda degli avventurieri"
+  },
+  "Seymour": {
+    "name": "Seymour"
   },
   "ElementalResonanceWovenIce": {
     "name": "Risonanza elementale: Ghiaccio intrecciato"
@@ -17183,6 +17315,15 @@
   "AnAncientSacrificeOfSacredBrocade": {
     "name": "Antichi sacrifici e sacri broccati"
   },
+  "LostLegaciesInTheSand": {
+    "name": "Eredità perdute nella sabbia"
+  },
+  "TheNarzissenkreuzAdventure": {
+    "name": "L'avventura della Narzissenkreuz"
+  },
+  "PlanToSaveTheWorld": {
+    "name": "Piano di salvataggio del mondo"
+  },
   "Origin": {
     "name": "Origine"
   },
@@ -17338,6 +17479,9 @@
   },
   "AdventuresInBlazingHue": {
     "name": "Avventure tra colori sfolgoranti"
+  },
+  "TowardTheDistantHorizon": {
+    "name": "Verso l'orizzonte distante"
   },
   "RadiantPhantasm": {
     "name": "Illusione splendente"
@@ -17902,6 +18046,12 @@
   },
   "CloudWrappedMoon": {
     "name": "Luna avvolta dalle nuvole"
+  },
+  "TheLonelyWayfarer": {
+    "name": "Viandante solitario"
+  },
+  "TimelessShine": {
+    "name": "Luce senza tempo"
   },
   "EfflorescentIllumination": {
     "name": "Illuminazione in boccio"
@@ -18824,6 +18974,15 @@
   "ModelDishSaurusCrackers": {
     "name": "Piatto modello Saurocracker"
   },
+  "GleamGlow": {
+    "name": "Luccichio e bagliore"
+  },
+  "LuckySpin": {
+    "name": "Ruota della fortuna"
+  },
+  "BurstOfAppetite": {
+    "name": "Esplosione di appetito"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Zelo della Terra della Saggezza"
   },
@@ -18949,6 +19108,9 @@
   },
   "TavernDartboardValidThrow": {
     "name": "Bersaglio per freccette da taverna Bel lancio"
+  },
+  "TavernNoticeWhispersOfTheStreet": {
+    "name": "Avviso della taverna: Sussurri dalla strada"
   },
   "LingeringMoment": {
     "name": "Momento indimenticabile"
@@ -20342,6 +20504,9 @@
   "SoftHuedHydrangeas": {
     "name": "Ortensie tenui"
   },
+  "PetalsWithoutPerfume": {
+    "name": "Petali senza profumo"
+  },
   "FirShelves": {
     "name": "Libreria in abete rosso"
   },
@@ -20906,6 +21071,9 @@
   "SmallCargoContainerSafeStowage": {
     "name": "Container medio Stivaggio sicuro"
   },
+  "UtilityPocketDetector": {
+    "name": "Rilevatore tascabile di utilità"
+  },
   "WeatheredBambooFence": {
     "name": "Recinto in bambù consumato"
   },
@@ -21272,6 +21440,18 @@
   "PuzzlepalKeepCalmAndCarryOn": {
     "name": "Indovinella \"Ci vuole calma e sangue freddo\""
   },
+  "OneSecWhiz": {
+    "name": "Genio in un secondo"
+  },
+  "GrillmasterSupreme": {
+    "name": "Maestro della griglia supremo"
+  },
+  "WobblyPonyRide": {
+    "name": "Pony traballante"
+  },
+  "VerticalBipolarTriLegTower": {
+    "name": "Torre tripode verticale bipolare"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "Messer Capibara l'Incisivo"
   },
@@ -21283,5 +21463,17 @@
   },
   "LoafingKitty": {
     "name": "Gattino ozioso"
+  },
+  "LittleFinchie": {
+    "name": "Fringuellino"
+  },
+  "GourmetBandit": {
+    "name": "Bandito buongustaio"
+  },
+  "MasterWeaselmind": {
+    "name": "Donnola superiore"
+  },
+  "DragonOnTheMove": {
+    "name": "Drago in movimento"
   }
 }

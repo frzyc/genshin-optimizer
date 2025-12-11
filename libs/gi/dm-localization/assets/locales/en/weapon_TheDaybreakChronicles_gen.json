@@ -1,0 +1,29 @@
+{
+  "name": "The Daybreak Chronicles",
+  "description": {
+    "0": "The songs of resistance come hither on the wind to settle as gentle tones upon these strings, their combined power great enough to rip boundless darkness asunder with the light of the breaking dawn."
+  },
+  "passiveName": "Ode Beyond Time",
+  "passiveDescription": {
+    "0": {
+      "0": "The equipping character gains Stirring Dawn Breeze: 3s after leaving combat, Normal Attack, Elemental Skill, and Elemental Burst DMG is increased by <cryo>60%</cryo>. While in combat, this DMG Bonus will decrease by <cryo>10%</cryo> per second until it reaches 0%. When the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for the corresponding DMG type is increased by <cryo>10%</cryo> until it reaches <cryo>60%</cryo>. This effect can be triggered once every 0.1s for each of the attack types mentioned above. This effect can be triggered even if the equipping character is off-field.",
+      "1": "Additionally, when the party possesses Hexerei: Secret Rite effects, when the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for all these DMG types is increased by <cryo>20%</cryo> instead."
+    },
+    "1": {
+      "0": "The equipping character gains Stirring Dawn Breeze: 3s after leaving combat, Normal Attack, Elemental Skill, and Elemental Burst DMG is increased by <cryo>75%</cryo>. While in combat, this DMG Bonus will decrease by <cryo>12.5%</cryo> per second until it reaches 0%. When the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for the corresponding DMG type is increased by <cryo>12.5%</cryo> until it reaches <cryo>75%</cryo>. This effect can be triggered once every 0.1s for each of the attack types mentioned above. This effect can be triggered even if the equipping character is off-field.",
+      "1": "Additionally, when the party possesses Hexerei: Secret Rite effects, when the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for all these DMG types is increased by <cryo>25%</cryo> instead."
+    },
+    "2": {
+      "0": "The equipping character gains Stirring Dawn Breeze: 3s after leaving combat, Normal Attack, Elemental Skill, and Elemental Burst DMG is increased by <cryo>90%</cryo>. While in combat, this DMG Bonus will decrease by <cryo>15%</cryo> per second until it reaches 0%. When the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for the corresponding DMG type is increased by <cryo>15%</cryo> until it reaches <cryo>90%</cryo>. This effect can be triggered once every 0.1s for each of the attack types mentioned above. This effect can be triggered even if the equipping character is off-field.",
+      "1": "Additionally, when the party possesses Hexerei: Secret Rite effects, when the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for all these DMG types is increased by <cryo>30%</cryo> instead."
+    },
+    "3": {
+      "0": "The equipping character gains Stirring Dawn Breeze: 3s after leaving combat, Normal Attack, Elemental Skill, and Elemental Burst DMG is increased by <cryo>105%</cryo>. While in combat, this DMG Bonus will decrease by <cryo>17.5%</cryo> per second until it reaches 0%. When the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for the corresponding DMG type is increased by <cryo>17.5%</cryo> until it reaches <cryo>105%</cryo>. This effect can be triggered once every 0.1s for each of the attack types mentioned above. This effect can be triggered even if the equipping character is off-field.",
+      "1": "Additionally, when the party possesses Hexerei: Secret Rite effects, when the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for all these DMG types is increased by <cryo>35%</cryo> instead."
+    },
+    "4": {
+      "0": "The equipping character gains Stirring Dawn Breeze: 3s after leaving combat, Normal Attack, Elemental Skill, and Elemental Burst DMG is increased by <cryo>120%</cryo>. While in combat, this DMG Bonus will decrease by <cryo>20%</cryo> per second until it reaches 0%. When the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for the corresponding DMG type is increased by <cryo>20%</cryo> until it reaches <cryo>120%</cryo>. This effect can be triggered once every 0.1s for each of the attack types mentioned above. This effect can be triggered even if the equipping character is off-field.",
+      "1": "Additionally, when the party possesses Hexerei: Secret Rite effects, when the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for all these DMG types is increased by <cryo>40%</cryo> instead."
+    }
+  }
+}

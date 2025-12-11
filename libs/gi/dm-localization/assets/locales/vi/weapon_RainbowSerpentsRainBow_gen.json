@@ -1,0 +1,24 @@
+{
+  "name": "Dây Mưa Của Cầu Vồng",
+  "description": {
+    "0": "Dụng cụ nghi thức của Chủ Nhân Gió Đêm được truyền lại từ thời viễn cổ, thân cung mang màu sắc u ám, luôn mang đến một cảm giác lạnh lẽo không thể xua tan."
+  },
+  "passiveName": "Ngôn Ngữ Tinh Tú Ngoài Thánh Tọa",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi người trang bị không ra trận, trong 8s sau khi đòn tấn công của người trang bị đánh trúng kẻ địch, Tấn Công tăng <cryo>28%</cryo>."
+    },
+    "1": {
+      "0": "Khi người trang bị không ra trận, trong 8s sau khi đòn tấn công của người trang bị đánh trúng kẻ địch, Tấn Công tăng <cryo>35%</cryo>."
+    },
+    "2": {
+      "0": "Khi người trang bị không ra trận, trong 8s sau khi đòn tấn công của người trang bị đánh trúng kẻ địch, Tấn Công tăng <cryo>42%</cryo>."
+    },
+    "3": {
+      "0": "Khi người trang bị không ra trận, trong 8s sau khi đòn tấn công của người trang bị đánh trúng kẻ địch, Tấn Công tăng <cryo>49%</cryo>."
+    },
+    "4": {
+      "0": "Khi người trang bị không ra trận, trong 8s sau khi đòn tấn công của người trang bị đánh trúng kẻ địch, Tấn Công tăng <cryo>56%</cryo>."
+    }
+  }
+}

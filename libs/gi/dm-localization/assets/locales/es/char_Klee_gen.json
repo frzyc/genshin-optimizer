@@ -101,6 +101,13 @@
     "description": {
       "0": "Cuando se inflige daño con <strong>Bomba saltarina</strong> y Ataque Normal, hay una probabilidad del 50% de que Klee obtenga una flor explosiva.",
       "1": "El siguiente Ataque Cargado consumirá esta flor explosiva sin ningún Coste de Aguante y tendrá un aumento de daño del 50%."
+    },
+    "upgradedDescription": {
+      "0": "Al infligir daño con la Habilidad Elemental, <strong>Bomba saltarina</strong>, o el Ataque Normal, hay un 50% de probabilidad de que Klee obtenga una flor explosiva. Al usar la Habilidad Elemental, <strong>Bomba saltarina</strong>, o la Habilidad Definitiva, <strong>Chispas explosivas</strong>, Klee también obtendrá una flor explosiva. Klee puede tener un máximo de tres flores explosivas.",
+      "1": "Cuando ejecute un Ataque Cargado mientras tiene flores explosivas, consumirá una para usar un Ataque Cargado especial llamado “Bombardeo pium-pium” que no consume Aguante y cuyo daño aumenta en un 50%.",
+      "2": "<br/>",
+      "3": "<strong>Taumaturgia: rito secreto</strong>",
+      "4": "Mientras la Habilidad Definitiva, <strong>Chispas explosivas</strong>, esté activa, la secuencia de los Ataques Normales de Klee no se reiniciará. Cuando tenga flores explosivas y ejecute un Ataque Normal, el tercer golpe consumirá una flor para realizar un ataque adicional contra los enemigos equivalente a “Bombardeo pium-pium”."
     }
   },
   "passive2": {
@@ -115,16 +122,32 @@
       "0": "Muestra la ubicación de los <strong>objetos típicos de Mondstadt</strong> cercanos en el minimapa."
     }
   },
+  "lockedPassive": {
+    "name": "Rito de la noche de brujas: Magia chispeante",
+    "description": {
+      "0": "Tras completar la misión <strong>«Lecciones del Aquelarre: De hojas chispeantes»</strong>, Klee se convertirá en un personaje <strong>taumatúrgico</strong>. Cuando en el equipo haya al menos 2 personajes taumatúrgicos, estos obtendrán el efecto de <strong>taumaturgia: rito secreto</strong>, el cual les otorgará ciertos fortalecimientos.",
+      "1": "<br/>",
+      "2": "<strong>Taumaturgia: rito secreto</strong>",
+      "3": "Cuando Klee inflige daño con un Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva, obtiene una “medalla bum-bum” durante 20 s. Como máximo, cada uno de dichos ataques puede otorgarle de esta manera una medalla bum-bum a Klee. Las medallas bum-bum obtenidas mediante distintos tipos de ataque son independientes entre sí. Cuando Klee tiene 1/2/3 medallas, su Ataque Cargado especial, “Bombardeo pium-pium”, infligirá un 115/130/150% de su daño original."
+    }
+  },
   "constellation1": {
     "name": "Explosión en cadena",
     "description": {
       "0": "Al atacar o usar una habilidad, hay una probabilidad de invocar chispas que atacan al enemigo, las cuales infligen daño equivalente al 120% del daño de <strong>Chispas explosivas</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Al atacar o usar una habilidad, hay una probabilidad de invocar chispas que atacan al enemigo, las cuales infligen daño equivalente al 120% del daño de <strong>Chispas explosivas</strong>.",
+      "1": "Tras activarse este efecto, el ATQ de Klee aumenta en un 60% durante 12 s."
     }
   },
   "constellation2": {
     "name": "Fragmentos de metralla",
     "description": {
       "0": "Las minas de <strong>Bomba saltarina</strong> reducen la DEF de los enemigos en un 23% durante 10 s."
+    },
+    "upgradedDescription": {
+      "0": "Cuando Klee golpea a un enemigo con su Habilidad Elemental, la DEF de dicho enemigo se reduce en un 23% durante 10 s."
     }
   },
   "constellation3": {
@@ -138,6 +161,9 @@
     "name": "¡Bomba va!",
     "description": {
       "0": "Si Klee se retira de combate mientras la habilidad <strong>Chispas explosivas</strong> está activa, creará una explosión que inflige un 555% de <pyro>Daño Pyro en el AdE</pyro>."
+    },
+    "upgradedDescription": {
+      "0": "Si se retira de combate mientras las <strong>Chispas explosivas</strong> están activas o cuando termine la duración de dicha habilidad, se producirá una explosión que inflige <pyro>Daño Pyro en el AdE</pyro> en una cantidad equivalente al 555% del ATQ. Si Klee está en uso cuando se active este efecto, el daño que inflige aumenta en un 100%."
     }
   },
   "constellation5": {
@@ -152,6 +178,13 @@
     "description": {
       "0": "Mientras las <strong>Chispas explosivas</strong> estén activas, Klee hará que todos los miembros del equipo (a excepción de Klee) recuperen 3 pts. de Energía Elemental cada 3 s.",
       "1": "Después de activar <strong>Chispas explosivas</strong>, todos los miembros del equipo reciben un 10% de <pyro>Bono de Daño Pyro</pyro> durante 25 s."
+    },
+    "upgradedDescription": {
+      "0": "Mientras las <strong>Chispas explosivas</strong> estén activas, Klee hará que todos los miembros del equipo (a excepción de sí misma) recuperen 3 pts. de Energía Elemental cada 3 s.",
+      "1": "Durante 25 s tras usar <strong>Chispas explosivas</strong>, todos los miembros del equipo (a excepción de Klee) obtienen un 10% de <pyro>Bono de Daño Pyro</pyro>, y ella obtiene un 50% de <pyro>Bono de Daño Pyro</pyro>.",
+      "2": "<br/>",
+      "3": "<strong>Taumaturgia: rito secreto</strong>",
+      "4": "Al activarse un efecto que requiera consumir <strong>flores explosivas</strong>, hay un 50% de probabilidad de que no se consuman. Además, mientras las <strong>Chispas explosivas</strong> estén activas, el primer y segundo golpe del Ataque Normal de Klee tienen un 40% de probabilidad de consumir una flor explosiva para realizar un ataque adicional contra los enemigos equivalente a “Bombardeo pium-pium”."
     }
   }
 }

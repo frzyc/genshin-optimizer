@@ -1,0 +1,24 @@
+{
+  "name": "Arco pluviale del serpente arcobaleno",
+  "description": {
+    "0": "Un'antica arma cerimoniale tramandata dai Maestri del Vento della Notte. Questo arco oscuro è perennemente avvolto da un gelo inestinguibile."
+  },
+  "passiveName": "Sussurri astrali oltre il trono sacro",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando il personaggio che equipaggia l'arma colpisce un avversario con i suoi attacchi mentre non è in campo, il suo ATT aumenta di un <cryo>28%</cryo> per 8 s."
+    },
+    "1": {
+      "0": "Quando il personaggio che equipaggia l'arma colpisce un avversario con i suoi attacchi mentre non è in campo, il suo ATT aumenta di un <cryo>35%</cryo> per 8 s."
+    },
+    "2": {
+      "0": "Quando il personaggio che equipaggia l'arma colpisce un avversario con i suoi attacchi mentre non è in campo, il suo ATT aumenta di un <cryo>42%</cryo> per 8 s."
+    },
+    "3": {
+      "0": "Quando il personaggio che equipaggia l'arma colpisce un avversario con i suoi attacchi mentre non è in campo, il suo ATT aumenta di un <cryo>49%</cryo> per 8 s."
+    },
+    "4": {
+      "0": "Quando il personaggio che equipaggia l'arma colpisce un avversario con i suoi attacchi mentre non è in campo, il suo ATT aumenta di un <cryo>56%</cryo> per 8 s."
+    }
+  }
+}
