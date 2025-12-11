@@ -64,6 +64,7 @@ i18n
     },
     interpolation: {
       escapeValue: false, //react does interlopation already
+      skipOnVariables: false, // Enables passing nested interpolation
     },
   })
 i18n.services.formatter?.add('percent', (value, _lng, options) => {

@@ -67,6 +67,25 @@ export const characterSpecializedStatKeys = [
 export type CharacterSpecializedStatKey =
   (typeof characterSpecializedStatKeys)[number]
 
+export const allCharacterSkillKeys = [
+  'auto',
+  'skill',
+  'burst',
+  'sprint',
+  'passive',
+  'passive1',
+  'passive2',
+  'passive3',
+  'lockedPassive',
+  'constellation1',
+  'constellation2',
+  'constellation3',
+  'constellation4',
+  'constellation5',
+  'constellation6',
+] as const
+export type CharacterSkillKey = (typeof allCharacterSkillKeys)[number]
+
 export const nonTravelerCharacterKeys = [
   'Aino',
   'Albedo',

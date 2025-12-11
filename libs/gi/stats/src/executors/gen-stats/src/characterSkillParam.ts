@@ -2,13 +2,17 @@ import {
   layeredAssignment,
   transposeArray,
 } from '@genshin-optimizer/common/util'
-import type { NonTravelerCharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterSkillKey,
+  NonTravelerCharacterKey,
+} from '@genshin-optimizer/gi/consts'
 import type {
   AvatarSkillDepotExcelConfigData,
   CharacterId,
   ProudSkillExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
 import {
+  TextMapEN,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
   avatarSkillExcelConfigData,
@@ -29,12 +33,14 @@ type CharacterSkillParams = {
   passive1: number[][]
   passive2: number[][]
   passive3?: number[][] //Travelers don't have passive3s
+  lockedPassive?: number[][] // Hexenzirkel buffs
   constellation1: number[]
   constellation2: number[]
   constellation3: number[]
   constellation4: number[]
   constellation5: number[]
   constellation6: number[]
+  upgradeableSkills: CharacterSkillKey[]
 }
 
 type SkillParamCharacterKey =
@@ -67,7 +73,9 @@ export default function characterSkillParam() {
       skills: [normal, skill, sprint],
       talents,
       inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+      lockedProudSkillOpens: [lockedPassive],
     } = depot
+    const upgradeableSkills: CharacterSkillKey[] = []
 
     function parseSkillParams(
       keys: string[],
@@ -89,6 +97,11 @@ export default function characterSkillParam() {
         (arr) => !arr.every((i) => !i)
       )
       layeredAssignment(characterSkillParamDump, keys, skillParam)
+
+      // Check if upgraded description exists, only works for p1/p2/p3
+      if (TextMapEN[skillArr[0].upgradedDescTextMapHash]) {
+        upgradeableSkills.push(keys[keys.length - 1] as CharacterSkillKey)
+      }
     }
     parseSkillParams(
       [...keys, 'auto'],
@@ -96,6 +109,9 @@ export default function characterSkillParam() {
         avatarSkillExcelConfigData[normal].proudSkillGroupId
       ]
     )
+    if (TextMapEN[avatarSkillExcelConfigData[normal].upgradedDescTextMapHash]) {
+      upgradeableSkills.push('auto')
+    }
 
     parseSkillParams(
       [...keys, 'skill'],
@@ -103,12 +119,19 @@ export default function characterSkillParam() {
         avatarSkillExcelConfigData[skill].proudSkillGroupId
       ]
     )
+    if (TextMapEN[avatarSkillExcelConfigData[skill].upgradedDescTextMapHash]) {
+      upgradeableSkills.push('skill')
+    }
+
     parseSkillParams(
       [...keys, 'burst'],
       proudSkillExcelConfigData[
         avatarSkillExcelConfigData[burst].proudSkillGroupId
       ]
     )
+    if (TextMapEN[avatarSkillExcelConfigData[burst].upgradedDescTextMapHash]) {
+      upgradeableSkills.push('burst')
+    }
 
     if (sprint)
       parseSkillParams(
@@ -133,14 +156,18 @@ export default function characterSkillParam() {
         [...keys, 'passive3'],
         proudSkillExcelConfigData[passive3.proudSkillGroupId]
       )
-    //seems to be only used by sangonomiyaKokomi
     if (passive?.proudSkillGroupId)
       parseSkillParams(
         [...keys, 'passive'],
         proudSkillExcelConfigData[passive.proudSkillGroupId]
       )
+    if (lockedPassive?.proudSkillGroupId)
+      parseSkillParams(
+        [...keys, 'lockedPassive'],
+        proudSkillExcelConfigData[lockedPassive.proudSkillGroupId]
+      )
 
-    talents.forEach((skId, i) =>
+    talents.forEach((skId, i) => {
       layeredAssignment(
         characterSkillParamDump,
         [...keys, `constellation${i + 1}`],
@@ -148,6 +175,18 @@ export default function characterSkillParam() {
           .filter((i) => i)
           .map((value) => value)
       )
+      // Check if upgraded description exists
+      if (
+        TextMapEN[avatarTalentExcelConfigData[skId].upgradedDescTextMapHash]
+      ) {
+        upgradeableSkills.push(`constellation${i + 1}` as CharacterSkillKey)
+      }
+    })
+
+    layeredAssignment(
+      characterSkillParamDump,
+      [...keys, 'upgradeableSkills'],
+      upgradeableSkills
     )
   }
   Object.entries(avatarExcelConfigData).forEach(([ci, charData]) => {
@@ -227,6 +266,7 @@ function getDataFromHakushin(key: NonTravelerCharacterKey) {
     constellation4: data.Constellations[3].ParamList,
     constellation5: data.Constellations[4].ParamList,
     constellation6: data.Constellations[5].ParamList,
+    upgradeableSkills: [], // todo
   }
   return skillParams
 }

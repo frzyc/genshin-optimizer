@@ -112,6 +112,12 @@ export const parsingFunctions: {
   },
   autoFields: (lang, string, keys) => {
     const strings = autoFields(string)
+    // Skip empty upgraded descriptions
+    if (
+      keys[keys.length - 1] === 'upgradedFields' &&
+      Object.keys(string).length === 0
+    )
+      return strings
     if (strings.length === 3) {
       const [normal, charged, plunging] = strings
       return { normal, charged, plunging } as any

@@ -6,9 +6,9 @@ import {
   travelerFKeys,
   travelerMKeys,
 } from '@genshin-optimizer/gi/consts'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { allStats, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
-import { greaterEq, input } from '@genshin-optimizer/gi/wr'
+import { greaterEq, input, unequal } from '@genshin-optimizer/gi/wr'
 import type { StaticImageData } from 'next/image'
 import type { ReactNode } from 'react'
 import { st, trans } from '../SheetUtil'
@@ -55,10 +55,14 @@ export interface ICharacterTemplate {
     partialCond: DocumentConditionalBase
   ) => DocumentConditional
 }
-export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
+export const charTemplates = (
+  cKey: CharacterSheetKey,
+  upgradedTextCondition?: NumNode
+): ICharacterTemplate => {
   const [chg, ch] = trans('char', cKey)
   const characterKey = charSheetKeyToCharKey(cKey)
   const wKey = getCharStat(characterKey).weaponType
+  const skillParam_gen = allStats.char.skillParam[cKey]
 
   const img = (tk: TalentSheetElementKey) => {
     if (tk === 'auto') return imgAssets.weaponTypes[wKey]
@@ -71,11 +75,29 @@ export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
     talentTem: (
       talentKey: TalentSheetElementKey,
       docSections?: DocumentSection[]
-    ) => talentTemplate(talentKey, chg, img(talentKey), docSections),
+    ) =>
+      talentTemplate(
+        talentKey,
+        chg,
+        img(talentKey),
+        docSections,
+        skillParam_gen.upgradeableSkills.includes(talentKey)
+          ? upgradedTextCondition
+          : undefined
+      ),
     headerTem: (
       talentKey: TalentSheetElementKey,
       partialSection: DocumentSection
-    ) => headerTemplate(talentKey, chg, img(talentKey), partialSection),
+    ) =>
+      headerTemplate(
+        talentKey,
+        chg,
+        img(talentKey),
+        partialSection,
+        skillParam_gen.upgradeableSkills.includes(talentKey)
+          ? upgradedTextCondition
+          : undefined
+      ),
     fieldsTem: (
       talentKey: TalentSheetElementKey,
       partialFields: IDocumentFields
@@ -83,7 +105,16 @@ export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
     condTem: (
       talentKey: TalentSheetElementKey,
       partialCond: DocumentConditionalBase
-    ) => conditionalTemplate(talentKey, partialCond, chg, img(talentKey)),
+    ) =>
+      conditionalTemplate(
+        talentKey,
+        partialCond,
+        chg,
+        img(talentKey),
+        skillParam_gen.upgradeableSkills.includes(talentKey)
+          ? upgradedTextCondition
+          : undefined
+      ),
   }
 }
 
@@ -91,12 +122,30 @@ const talentTemplate = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
   img: string | StaticImageData,
-  docSections?: DocumentSection[]
+  docSections?: DocumentSection[],
+  upgradedTextCondition?: NumNode
 ): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
   img,
   sections: [
-    ...(talentKey !== 'auto' ? [{ text: tr(`${talentKey}.description`) }] : []),
+    ...(talentKey !== 'auto'
+      ? [
+          {
+            canShow: upgradedTextCondition
+              ? unequal(upgradedTextCondition, 1, 1)
+              : upgradedTextCondition,
+            text: tr(`${talentKey}.description`),
+          },
+          ...(upgradedTextCondition
+            ? [
+                {
+                  canShow: upgradedTextCondition,
+                  text: tr(`${talentKey}.upgradedDescription`),
+                },
+              ]
+            : []),
+        ]
+      : []),
     ...(docSections || []),
   ],
 })
@@ -104,13 +153,17 @@ const talentTemplate = (
 const talentHeader = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
-  img: string | StaticImageData
+  img: string | StaticImageData,
+  upgradedTextCondition?: NumNode
 ): IDocumentHeader => {
   return {
     title: tr(`${talentKey}.name`),
     icon: <ImgIcon size={2} src={img} />,
     action: <SqBadge color="success">{st(`talents.${talentKey}`)}</SqBadge>,
-    description: tr(`${talentKey}.description`),
+    description: (data) =>
+      upgradedTextCondition && data.get(upgradedTextCondition).value
+        ? tr(`${talentKey}.upgradedDescription`)
+        : tr(`${talentKey}.description`),
   }
 }
 
@@ -127,10 +180,11 @@ const headerTemplate = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
   img: string | StaticImageData,
-  partialSection: DocumentSection
+  partialSection: DocumentSection,
+  upgradedTextCondition?: NumNode
 ): DocumentSection => ({
   ...partialSection,
-  header: talentHeader(talentKey, tr, img),
+  header: talentHeader(talentKey, tr, img, upgradedTextCondition),
   canShow: canShowTemplate(talentKey, partialSection.canShow),
 })
 
@@ -146,10 +200,14 @@ const conditionalTemplate = (
   talentKey: TalentSheetElementKey,
   partialCond: DocumentConditionalBase,
   tr: (i18key: string) => ReactNode,
-  img: string | StaticImageData
+  img: string | StaticImageData,
+  upgradedTextCondition?: NumNode
 ): DocumentConditional => ({
   ...partialCond,
-  header: { ...talentHeader(talentKey, tr, img), ...partialCond.header },
+  header: {
+    ...talentHeader(talentKey, tr, img, upgradedTextCondition),
+    ...partialCond.header,
+  },
   canShow: canShowTemplate(talentKey, partialCond.canShow),
 })
 function canShowTemplate(
