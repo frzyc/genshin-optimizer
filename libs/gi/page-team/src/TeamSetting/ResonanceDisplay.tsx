@@ -7,7 +7,11 @@ import type { Team } from '@genshin-optimizer/gi/db'
 import type { TeamCharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import { TeamCharacterContext, useTeam } from '@genshin-optimizer/gi/db-ui'
 import type { IResonance } from '@genshin-optimizer/gi/sheets'
-import { moonsignSheet, resonanceSheets } from '@genshin-optimizer/gi/sheets'
+import {
+  hexereiSheet,
+  moonsignSheet,
+  resonanceSheets,
+} from '@genshin-optimizer/gi/sheets'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import { DataContext, DocumentDisplay } from '@genshin-optimizer/gi/ui'
 import { tally } from '@genshin-optimizer/gi/wr'
@@ -20,7 +24,6 @@ import {
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { hexereiSheet } from '../../../sheets/src/Resonance'
 
 export function ResonanceDisplay({
   teamId,
