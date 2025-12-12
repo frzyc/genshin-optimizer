@@ -60,5 +60,11 @@
         }
       }
     }
+  },
+  "Hexerei": {
+    "name": "Hexerei : Rituel secret",
+    "desc": {
+      "0": "Les personnages héxères de votre équipe sont davantage renforcés"
+    }
   }
 }

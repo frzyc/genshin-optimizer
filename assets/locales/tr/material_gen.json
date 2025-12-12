@@ -236,6 +236,9 @@
   "PrepProgress": {
     "name": "Hazırlık İlerlemesi"
   },
+  "BlazingSpirit": {
+    "name": "Alevli Ruh"
+  },
   "Primogem": {
     "name": "Köken Taşı"
   },
@@ -1109,6 +1112,12 @@
   "Nefer": {
     "name": "Nefer"
   },
+  "Durin": {
+    "name": "Durin"
+  },
+  "Jahoda": {
+    "name": "Jahoda"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina'nın Yaşam Yıldızı"
   },
@@ -1171,6 +1180,12 @@
   },
   "NefersStellaFortuna": {
     "name": "Nefer'ın Yaşam Yıldızı"
+  },
+  "DurinsStellaFortuna": {
+    "name": "Durin'in Yaşam Yıldızı"
+  },
+  "JahodasStellaFortuna": {
+    "name": "Jahoda'nın Yaşam Yıldızı"
   },
   "Apple": {
     "name": "Elma"
@@ -8108,6 +8123,27 @@
   "SugarSculptureNefer": {
     "name": "Şeker Heykelcik: Nefer"
   },
+  "AfterClassPractice": {
+    "name": "\"Ders Sonrası Pratik\""
+  },
+  "AppleStewTrialVersion": {
+    "name": "Elmalı Güveç (Deneme Sürümü)"
+  },
+  "SuspiciousSpicedFriedChicken": {
+    "name": "Baharatlı Kızarmış Tavuk (Tuhaf)"
+  },
+  "SpicedFriedChicken": {
+    "name": "Baharatlı Kızarmış Tavuk"
+  },
+  "DeliciousSpicedFriedChicken": {
+    "name": "Baharatlı Kızarmış Tavuk (Lezzetli)"
+  },
+  "SugarSculptureJahoda": {
+    "name": "Şeker Heykelcik: Jahoda"
+  },
+  "SugarSculptureKuuhenki": {
+    "name": "Şeker Heykelcik: Kuuhenki"
+  },
   "RecipeItem": {
     "name": "Yemek Malzemesi"
   },
@@ -8878,6 +8914,9 @@
   },
   "RecipeLohikeitto": {
     "name": "Tarif: Lohikeitto"
+  },
+  "RecipeSpicedFriedChicken": {
+    "name": "Tarif: Baharatlı Kızarmış Tavuk"
   },
   "CraftedItems": {
     "name": "Üretilen Malzemeler"
@@ -9664,6 +9703,9 @@
   },
   "RadiantAntler": {
     "name": "Görkemli Boynuz"
+  },
+  "CyclicMilitaryKuuvahkiCore": {
+    "name": "Döngüsel Askeri Kuuvahki Çekirdeği"
   },
   "TileOfDecarabiansTower": {
     "name": "Decarabian'ın Kırık Çinisi"
@@ -13142,6 +13184,30 @@
   "CuratoriumFunds": {
     "name": "Arşiv Sermayesi"
   },
+  "RhinedottirsGift": {
+    "name": "Rhinedottir'in \"Hediyesi\""
+  },
+  "RaggedDoll": {
+    "name": "Yıpranmış Oyuncak Bebek"
+  },
+  "ScribbledLetter": {
+    "name": "Karalanmış Mektup"
+  },
+  "MoonPrayerNightPamphlet": {
+    "name": "Ay Duası Gecesi Broşürü"
+  },
+  "GreetingCardForColumbina": {
+    "name": "Columbina İçin Tebrik Kartı"
+  },
+  "MoonPrayerCandyFromColumbina": {
+    "name": "Columbina'nın Ay Duası Şekeri"
+  },
+  "TheSoulblazerSagaVolume2": {
+    "name": "Ruhyakan Destanı: 2. Cilt"
+  },
+  "TaleOfDurin": {
+    "name": "\"Durin\"in Hikayesi"
+  },
   "TearsAmongTheStars": {
     "name": "Yıldızlar Arasındaki Gözyaşları"
   },
@@ -14132,6 +14198,9 @@
   "GoldenStrings": {
     "name": "Altın Teller"
   },
+  "RefinedHeart": {
+    "name": "Saf Kalp"
+  },
   "FalconsDance": {
     "name": "Şahin Dansı"
   },
@@ -15059,6 +15128,18 @@
   "TravelNotesBygoneRuins": {
     "name": "Gezi Notları: Kadim Harabeler"
   },
+  "DurinRadiantHeart": {
+    "name": "Durin: Parlak Kalp"
+  },
+  "JahodaHelpingHand": {
+    "name": "Jahoda: Yardım Eli"
+  },
+  "TravelNotesBlazingSnow": {
+    "name": "Gezi Notları: Alevli Karlar"
+  },
+  "CelebrationDreamReader": {
+    "name": "Kutlama: Rüya Okuyucu"
+  },
   "EchoDandelionKnight": {
     "name": "Yankı: Karahindiba Şövalyesi"
   },
@@ -15103,6 +15184,12 @@
   },
   "EchoPhysicOfPurity": {
     "name": "Yankı: Saflık Abidesi"
+  },
+  "EchoKreideprinz": {
+    "name": "Yankı: Kreideprinz"
+  },
+  "EchoFleeingSunlight": {
+    "name": "Yankı: Kaçan Güneş Işığı"
   },
   "FaintGlow": {
     "name": "Soluk Işıltı"
@@ -15433,6 +15520,9 @@
   },
   "LunarArcanaCase": {
     "name": "Ay Arkanası Kutusu"
+  },
+  "TheLittleWitchsDictionary": {
+    "name": "Küçük Cadının Sözlüğü"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Talimatlar: Rüzgar Özü Rezonans Taşı"
@@ -15917,6 +16007,27 @@
   "EagerAndReady": {
     "name": "Hazır ve Nazır"
   },
+  "SharpObserver": {
+    "name": "Keskin Gözlemci"
+  },
+  "TeaTime": {
+    "name": "Çay Saati"
+  },
+  "MerchantsAura": {
+    "name": "Peşin Satan"
+  },
+  "IngeniousForesight": {
+    "name": "Dahiyane Öngörü"
+  },
+  "CelebrityCountenance": {
+    "name": "Star Duruşu"
+  },
+  "CoolWatcher": {
+    "name": "Havalı İzleyici"
+  },
+  "SignOfProsperity": {
+    "name": "Refah Sembolü"
+  },
   "FantasticalMarvel": {
     "name": "Olağanüstü Mucize"
   },
@@ -15976,6 +16087,9 @@
   },
   "VigorousYapping": {
     "name": "Heyecanlı Sohbet"
+  },
+  "DiligentStudy": {
+    "name": "Özenli Çalışma"
   },
   "RhodeiaOfLoch": {
     "name": "Lochlu Rhodeia"
@@ -16069,6 +16183,9 @@
   },
   "HydroTulpa": {
     "name": "Su Tulpası"
+  },
+  "BlackSerpentKnightRockbreakerAx": {
+    "name": "Kara Yılan Şövalyesi: Kaya Kıran Balta"
   },
   "UndividedHeart": {
     "name": "Tek Yürek"
@@ -16442,6 +16559,15 @@
   "FlowConvergence": {
     "name": "Akışların Kesişimi"
   },
+  "TeaPartiesBurstingWithColor": {
+    "name": "Rengarenk Çay Partileri"
+  },
+  "BringerOfBlessing": {
+    "name": "Lütuf Getiren"
+  },
+  "OnceStoodAgainstTheTideOfDarkWatersLikeBedrock": {
+    "name": "\"Karanlık Gelgitlerin Yıkamadığı Kadim Kaya...\""
+  },
   "MagicGuide": {
     "name": "Büyü Rehberi"
   },
@@ -16772,6 +16898,9 @@
   "NoblesseOblige": {
     "name": "Asil Minnettarlık"
   },
+  "NymphsDream": {
+    "name": "Nergisin Rüyası"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı"
   },
@@ -16957,6 +17086,9 @@
   },
   "AdventurersGuild": {
     "name": "Maceracılar Loncası"
+  },
+  "Seymour": {
+    "name": "Seymour"
   },
   "ElementalResonanceWovenIce": {
     "name": "Element Rezonansı: Örülü Buzlar"
@@ -17183,6 +17315,15 @@
   "AnAncientSacrificeOfSacredBrocade": {
     "name": "Sırmalı Adeptusun Fedakarlığı"
   },
+  "LostLegaciesInTheSand": {
+    "name": "Kumdaki Yitik Miraslar"
+  },
+  "TheNarzissenkreuzAdventure": {
+    "name": "Nergis Haçı Macerası"
+  },
+  "PlanToSaveTheWorld": {
+    "name": "Dünyayı Kurtarma Planı"
+  },
   "Origin": {
     "name": "Köken"
   },
@@ -17338,6 +17479,9 @@
   },
   "AdventuresInBlazingHue": {
     "name": "Alev Renkli Maceralar"
+  },
+  "TowardTheDistantHorizon": {
+    "name": "Uzaktaki Ufka Doğru"
   },
   "RadiantPhantasm": {
     "name": "Parıltılı Düşler"
@@ -17902,6 +18046,12 @@
   },
   "CloudWrappedMoon": {
     "name": "Bulutlarla Kaplı Ay"
+  },
+  "TheLonelyWayfarer": {
+    "name": "Yalnız Yolcu"
+  },
+  "TimelessShine": {
+    "name": "Zamansız Parıltı"
   },
   "EfflorescentIllumination": {
     "name": "Gelişen Aydınlatma"
@@ -18824,6 +18974,15 @@
   "ModelDishSaurusCrackers": {
     "name": "Yemek Modeli: Sürüngen Krakerleri"
   },
+  "GleamGlow": {
+    "name": "Parıltı ve Işıltı"
+  },
+  "LuckySpin": {
+    "name": "Çarkıfelek"
+  },
+  "BurstOfAppetite": {
+    "name": "İştah Patlaması"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Bilgelik Diyarı İdrakı\""
   },
@@ -18949,6 +19108,9 @@
   },
   "TavernDartboardValidThrow": {
     "name": "Han Dart Tahtası: \"Geçerli Atış\""
+  },
+  "TavernNoticeWhispersOfTheStreet": {
+    "name": "Han Bildirisi: Sokağın Fısıltıları"
   },
   "LingeringMoment": {
     "name": "Ölümsüz An"
@@ -20342,6 +20504,9 @@
   "SoftHuedHydrangeas": {
     "name": "Hafif Renkli Ortancalar"
   },
+  "PetalsWithoutPerfume": {
+    "name": "Kokusuz Yapraklar"
+  },
   "FirShelves": {
     "name": "Köknar Raf"
   },
@@ -20906,6 +21071,9 @@
   "SmallCargoContainerSafeStowage": {
     "name": "Küçük Yük Kasası: Güvenli Depolama"
   },
+  "UtilityPocketDetector": {
+    "name": "Kullanışlı Cep Dedektörü"
+  },
   "WeatheredBambooFence": {
     "name": "Eski Bambu Çit"
   },
@@ -21272,6 +21440,18 @@
   "PuzzlepalKeepCalmAndCarryOn": {
     "name": "Bulmaca Dostu: \"Sakin Ol ve Devam Et\""
   },
+  "OneSecWhiz": {
+    "name": "Saniyede Şipşak Robot"
+  },
+  "GrillmasterSupreme": {
+    "name": "Gurme Et Kuzinesi"
+  },
+  "WobblyPonyRide": {
+    "name": "Sallanan Midilli"
+  },
+  "VerticalBipolarTriLegTower": {
+    "name": "Dikey Çift Kutuplu Üç Ayaklı Kule"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "Dişlek Sör Kapibara"
   },
@@ -21283,5 +21463,17 @@
   },
   "LoafingKitty": {
     "name": "Aylak Kedicik"
+  },
+  "LittleFinchie": {
+    "name": "Küçük Serçecik"
+  },
+  "GourmetBandit": {
+    "name": "Haydut Gurme"
+  },
+  "MasterWeaselmind": {
+    "name": "Dahi Gelincik"
+  },
+  "DragonOnTheMove": {
+    "name": "Hareketli Ejderha"
   }
 }

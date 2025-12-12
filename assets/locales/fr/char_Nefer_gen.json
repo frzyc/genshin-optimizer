@@ -120,8 +120,7 @@
   "passive": {
     "name": "Conspiration du coffre-fort doré",
     "description": {
-      "0": "Augmente les récompenses d'une expédition de 20 h à Nod-Krai de 25 %.",
-      "1": "De plus, étant la patronne du Curatorium des secrets, Nefer semble pouvoir obtenir des renseignements provenant de diverses sources... Des renseignements que certaines factions du Village de Nasha pourraient trouver extrêmement intéressants..."
+      "0": "Augmente les récompenses d'une expédition de 20 h à Nod-Krai de 25 %."
     }
   },
   "constellation1": {

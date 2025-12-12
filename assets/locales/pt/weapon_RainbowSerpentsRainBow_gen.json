@@ -1,0 +1,24 @@
+{
+  "name": "Cordas da Chuva da Serpente Arco-Íris",
+  "description": {
+    "0": "Uma arma cerimonial antiga passada de geração em geração pelos Mestres do Vento Noturno. Esse arco escuro estará para sempre envolto por um frio indelével."
+  },
+  "passiveName": "Idioma Estelar Estrangeiro Sagrado",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando o portador não é o personagem ativo, aumenta o ATQ em <cryo>28%</cryo> por 8s após o portador atingir um inimigo com um ataque."
+    },
+    "1": {
+      "0": "Quando o portador não é o personagem ativo, aumenta o ATQ em <cryo>35%</cryo> por 8s após o portador atingir um inimigo com um ataque."
+    },
+    "2": {
+      "0": "Quando o portador não é o personagem ativo, aumenta o ATQ em <cryo>42%</cryo> por 8s após o portador atingir um inimigo com um ataque."
+    },
+    "3": {
+      "0": "Quando o portador não é o personagem ativo, aumenta o ATQ em <cryo>49%</cryo> por 8s após o portador atingir um inimigo com um ataque."
+    },
+    "4": {
+      "0": "Quando o portador não é o personagem ativo, aumenta o ATQ em <cryo>56%</cryo> por 8s após o portador atingir um inimigo com um ataque."
+    }
+  }
+}

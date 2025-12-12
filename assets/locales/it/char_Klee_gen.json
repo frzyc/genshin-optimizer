@@ -101,6 +101,13 @@
     "description": {
       "0": "Quando il <strong>Coniglio Bumbum</strong> e gli attacchi normali infliggono DAN, Klee ha un 50% di probabilità di ottenere una Scintilla esplosiva.",
       "1": "La Scintilla esplosiva è consumata dal successivo attacco caricato, che non ha costo di vigore e infligge un 50% di DAN in più."
+    },
+    "upgradedDescription": {
+      "0": "Quando l'abilità elementale <strong>Coniglio Bumbum</strong> e gli attacchi normali infliggono DAN, Klee ha un 50% di probabilità di ottenere una Scintilla esplosiva. Usare la sua abilità elementale <strong>Coniglio Bumbum</strong> o il suo Tripudio elementale <strong>Schizzi e scintille</strong> fornisce 1 Scintilla esplosiva aggiuntiva. Klee può avere un massimo di 3 Scintille esplosive.",
+      "1": "Quando Klee ha una Scintilla esplosiva, il suo attacco caricato ne consuma 1 per eseguire un Colpo Bumbum, un attacco caricato speciale che non consuma vigore e che infligge un 50% di DAN in più.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei: Rito segreto</strong>",
+      "4": "Per la durata del Tripudio elementale <strong>Schizzi e scintille</strong>, la sequenza degli attacchi normali di Klee non si azzera. Se Klee ha una Scintilla esplosiva a disposizione mentre esegue gli attacchi normali, il terzo attacco normale della sequenza la consuma per scatenare un attacco aggiuntivo equivalente a un Colpo Bumbum."
     }
   },
   "passive2": {
@@ -115,16 +122,32 @@
       "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Mondstadt</strong>."
     }
   },
+  "lockedPassive": {
+    "name": "Rito della Vigilia della strega: Magia scintillante",
+    "description": {
+      "0": "Dopo aver completato <strong>Compiti della strega: Sulle foglie che scintillano</strong>, Klee acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Rito segreto</strong>",
+      "3": "Quando Klee infligge DAN da attacchi normali, abilità elementale o Tripudio elementale, ottiene un Distintivo Bumbum che dura 20 s. In questo modo, è possibile ottenere non più di 1 Distintivo Bumbum per ogni tipo d'attacco, ciascuno di durata indipendente. Quando Klee ha 1/2/3 Distintivi Bumbum, il suo attacco caricato speciale Colpo Bumbum infligge un 115%/130%/150% dei suoi DAN originali."
+    }
+  },
   "constellation1": {
     "name": "Esplosioni a catena",
     "description": {
       "0": "Gli attacchi e le abilità hanno una certa probabilità di evocare scintille che bombardano gli avversari, infliggendo DAN pari a un 120% dei DAN di <strong>Schizzi e scintille</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Gli attacchi e le abilità hanno una certa probabilità di evocare scintille che bombardano gli avversari, infliggendo DAN pari a un 120% dei DAN di <strong>Schizzi e scintille</strong>.",
+      "1": "Per 12 s dopo aver innescato l'effetto sopracitato, l'ATT di Klee aumenta di un 60%."
     }
   },
   "constellation2": {
     "name": "Schegge esplosive",
     "description": {
       "0": "Quando un avversario viene colpito dalle mine di <strong>Coniglio Bumbum</strong>, la sua DIF si riduce di un 23% per 10 s."
+    },
+    "upgradedDescription": {
+      "0": "Quando l'abilità elementale di Klee colpisce un avversario, la DIF di quest'ultimo si riduce di un 23% per 10 s."
     }
   },
   "constellation3": {
@@ -137,7 +160,10 @@
   "constellation4": {
     "name": "Esplosione scintillante",
     "description": {
-      "0": "Se Klee lascia il campo di battaglia mentre <strong>Schizzi e scintille</strong> è attiva, verrà innescata un'esplosione che infligge <pyro>DAN da Pyro ad area</pyro> pari a un 555% del suo ATT."
+      "0": "Se Klee lascia il campo di battaglia mentre <strong>Schizzi e scintille</strong> è attiva, si innesca un'esplosione che infligge <pyro>DAN da Pyro ad area</pyro> pari a un 555% del suo ATT."
+    },
+    "upgradedDescription": {
+      "0": "Quando la durata di <strong>Schizzi e scintille</strong> termina, o quando Klee lascia il campo mentre <strong>Schizzi e scintille</strong> è attiva, si innesca un'esplosione che infligge <pyro>DAN da Pyro ad area</pyro> pari a un 555% del suo ATT. Se Klee è il personaggio in campo quando si verifica l'esplosione, i DAN dell'esplosione aumentano di un 100%."
     }
   },
   "constellation5": {
@@ -150,8 +176,17 @@
   "constellation6": {
     "name": "Delizia ardente",
     "description": {
-      "0": "Mentre è sotto l'effetto di <strong>Schizzi e scintille</strong>, Klee ripristinerà 3 di energia a tutti i membri del gruppo (esclusa Klee) ogni 3 s.",
-      "1": "Quando <strong>Schizzi e scintille</strong> viene usata, tutti i membri del gruppo otterranno un <pyro>bonus DAN da Pyro</pyro> di un 10% per 25 s."
+      "0": "Mentre è sotto l'effetto di <strong>Schizzi e scintille</strong>, Klee ripristina di 3 l'energia di tutti i membri del gruppo (esclusa sé stessa) ogni 3 s.",
+      "1": "Per 25 s dopo aver usato <strong>Schizzi e scintille</strong>, tutti i membri del gruppo ottengono un <pyro>bonus DAN da Pyro</pyro> pari a un 10%."
+    },
+    "upgradedDescription": {
+      "0": "Mentre è sotto l'effetto di <strong>Schizzi e scintille</strong>, Klee ripristina di 3 l'energia di tutti i membri del gruppo (esclusa sé stessa) ogni 3 s.",
+      "1": "Per 25 s dopo aver usato <strong>Schizzi e scintille</strong>, tutti i membri del gruppo ottengono un <pyro>bonus DAN da Pyro</pyro> pari a un 50% per Klee e a un 10% per i membri restanti.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei: Rito segreto</strong>",
+      "4": [
+        " Quando Klee usa una <strong>Scintilla esplosiva</strong>, ha un 50% di probabilità di non consumarla. Inoltre, mentre <strong>Schizzi e scintille</strong> è attiva, il primo e il secondo colpo degli attacchi normali di Klee hanno un 40% di probabilità di consumare una Scintilla esplosiva, infliggendo un attacco aggiuntivo equivalente a un Colpo Bumbum ai suoi avversari."
+      ]
     }
   }
 }

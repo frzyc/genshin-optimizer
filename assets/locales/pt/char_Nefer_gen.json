@@ -120,8 +120,7 @@
   "passive": {
     "name": "Conspiração do Cofre Dourado",
     "description": {
-      "0": "Quando é enviada em uma Expedição de 20 horas em Nod-Krai, obtém 25% a mais de recompensas.",
-      "1": "Além disso, como mestre da Curadoria dos Segredos, Nefer parece ter alguma forma de obter informações, e algumas facções da Cidade de Nasha parecem ter muito interesse nelas..."
+      "0": "Ganha 25% de recompensas a mais quando enviada numa Expedição em Nod-Krai por 20 horas."
     }
   },
   "constellation1": {
@@ -133,7 +132,7 @@
   "constellation2": {
     "name": "Precisão Planejada",
     "description": {
-      "0": "Fortalece o efeito do Talento de Ascensão <strong>Aposta Sob o Luar</strong>: prolonga a duração de <strong>Cortina do Segredo Falso</strong> por 5s, aumenta o máximo de acúmulos para 5, e o Dano de <strong>Truque Fantástico</strong> para 140% do Dano original causado. Quando Nefer lançar sua Habilidade Elemental <strong>Estratégia de Senet: Dança de Mil Noites</strong>, imediatamente obtém 2 acúmulos de Cortina do Segredo Falso. Além disso, quando acumular 5 Cortinas do Segredo Falso, ou quando redefinir a duração dos 5 acúmulos, aumenta a Proficiência Elemental de Nefer em 500 por 8s.",
+      "0": "Fortalece o efeito do Talento de Ascensão <strong>Aposta Sob o Luar</strong>: prolonga a duração de <strong>Cortina do Segredo Falso</strong> por 5s, aumenta o máximo de acúmulos para 5, e o Dano de <strong>Truque Fantástico</strong> para 140% do Dano original causado. Quando Nefer lançar sua Habilidade Elemental <strong>Estratégia de Senet: Dança de Mil Noites</strong>, imediatamente obtém 2 acúmulos de Cortina do Segredo Falso. Além disso, quando acumular 5 Cortinas do Segredo Falso, ou quando redefinir a duração dos 5 acúmulos, aumenta a Proficiência Elemental de Nefer em 200 por 8s.",
       "1": "É necessário desbloquear o Talento de Ascensão Aposta Sob o Luar."
     }
   },

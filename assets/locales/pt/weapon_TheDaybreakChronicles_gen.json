@@ -1,0 +1,29 @@
+{
+  "name": "As Crônicas do Amanhecer",
+  "description": {
+    "0": "As canções de resistência chegam ao vento como tons gentis, seu poder combinado é grande o suficiente para rasgar a escuridão sem limites com a luz do amanhecer."
+  },
+  "passiveName": "Canção da Ode Atemporal",
+  "passiveDescription": {
+    "0": {
+      "0": "O portador obtém Prenúncio da Alvorada: 3s depois de sair de batalha, aumenta o Dano do Ataque Normal, Habilidade Elemental e Supremo em <cryo>60%</cryo>. Em batalha, esse efeito de aumento de Dano é reduzido em <cryo>10%</cryo> por segundo até alcançar 0%. Quando o Ataque Normal, Habilidade Elemental ou Supremo do portador atinge o inimigo, aumenta o efeito de aumento de Dano correspondente em <cryo>10%</cryo> até alcançar <cryo>60%</cryo>, esse efeito pode ser desencadeado uma vez a cada 0.1s para cada tipo de ataque acima. Esse efeito pode ser desencadeado, mesmo que o portador não seja o personagem ativo.",
+      "1": "Além disso, quando possui o efeito Mágico: Ritual Secreto e o portador atinge o inimigo com um Ataque Normal, Habilidade Elemental ou Supremo, aumenta o efeito de aumento para todos os tipos de Dano em <cryo>20%</cryo>."
+    },
+    "1": {
+      "0": "O portador obtém Prenúncio da Alvorada: 3s depois de sair de batalha, aumenta o Dano do Ataque Normal, Habilidade Elemental e Supremo em <cryo>75%</cryo>. Em batalha, esse efeito de aumento de Dano é reduzido em <cryo>12.5%</cryo> por segundo até alcançar 0%. Quando o Ataque Normal, Habilidade Elemental ou Supremo do portador atinge o inimigo, aumenta o efeito de aumento de Dano correspondente em <cryo>12.5%</cryo> até alcançar <cryo>75%</cryo>, esse efeito pode ser desencadeado uma vez a cada 0.1s para cada tipo de ataque acima. Esse efeito pode ser desencadeado, mesmo que o portador não seja o personagem ativo.",
+      "1": "Além disso, quando possui o efeito Mágico: Ritual Secreto e o portador atinge o inimigo com um Ataque Normal, Habilidade Elemental ou Supremo, o efeito de aumento para todos os tipos de Dano passa a ser <cryo>25%</cryo>."
+    },
+    "2": {
+      "0": "O portador obtém Prenúncio da Alvorada: 3s depois de sair de batalha, aumenta o Dano do Ataque Normal, Habilidade Elemental e Supremo em <cryo>90%</cryo>. Em batalha, esse efeito de aumento de Dano é reduzido em <cryo>15%</cryo> por segundo até alcançar 0%. Quando o Ataque Normal, Habilidade Elemental ou Supremo do portador atinge o inimigo, aumenta o efeito de aumento de Dano correspondente em <cryo>15%</cryo> até alcançar <cryo>90%</cryo>, esse efeito pode ser desencadeado uma vez a cada 0.1s para cada tipo de ataque acima. Esse efeito pode ser desencadeado, mesmo que o portador não seja o personagem ativo.",
+      "1": "Além disso, quando possui o efeito Mágico: Ritual Secreto e o portador atinge o inimigo com um Ataque Normal, Habilidade Elemental ou Supremo, aumenta o efeito de aumento para todos os tipos de Dano em <cryo>30%</cryo>."
+    },
+    "3": {
+      "0": "O portador obtém Prenúncio da Alvorada: 3s depois de sair de batalha, aumenta o Dano do Ataque Normal, Habilidade Elemental e Supremo em <cryo>105%</cryo>. Em batalha, esse efeito de aumento de Dano é reduzido em <cryo>17.5%</cryo> por segundo até alcançar 0%. Quando o Ataque Normal, Habilidade Elemental ou Supremo do portador atinge o inimigo, aumenta o efeito de aumento de Dano correspondente em <cryo>17.5%</cryo> até alcançar <cryo>105%</cryo>, esse efeito pode ser desencadeado uma vez a cada 0.1s para cada tipo de ataque acima. Esse efeito pode ser desencadeado, mesmo que o portador não seja o personagem ativo.",
+      "1": "Além disso, quando possui o efeito Mágico: Ritual Secreto e o portador atinge o inimigo com um Ataque Normal, Habilidade Elemental ou Supremo, aumenta o efeito de aumento para todos os tipos de Dano em <cryo>35%</cryo>."
+    },
+    "4": {
+      "0": "O portador obtém Prenúncio da Alvorada: 3s depois de sair de batalha, aumenta o Dano do Ataque Normal, Habilidade Elemental e Supremo em <cryo>120%</cryo>. Em batalha, esse efeito de aumento de Dano é reduzido em <cryo>20%</cryo> por segundo até alcançar 0%. Quando o Ataque Normal, Habilidade Elemental ou Supremo do portador atinge o inimigo, aumenta o efeito de aumento de Dano correspondente em <cryo>20%</cryo> até alcançar <cryo>120%</cryo>, esse efeito pode ser desencadeado uma vez a cada 0.1s para cada tipo de ataque acima. Esse efeito pode ser desencadeado, mesmo que o portador não seja o personagem ativo.",
+      "1": "Além disso, quando a equipe possui o efeito Mágico: Ritual Secreto e o portador atinge o inimigo com um Ataque Normal, Habilidade Elemental ou Supremo, o efeito de aumento para todos os tipos de Dano passa a ser <cryo>40%</cryo>."
+    }
+  }
+}

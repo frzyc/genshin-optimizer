@@ -60,5 +60,11 @@
         }
       }
     }
+  },
+  "Hexerei": {
+    "name": "Hexerei – Geheimes Ritual",
+    "desc": {
+      "0": "Die Hexerei-Figur(en) in der aktuellen Truppe wurden weiter verstärkt."
+    }
   }
 }

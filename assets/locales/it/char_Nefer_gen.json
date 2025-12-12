@@ -120,8 +120,7 @@
   "passive": {
     "name": "Cospirazione della camera dorata",
     "description": {
-      "0": "Ottiene un 25% in più di ricompense quando intraprende una spedizione a Nod-Krai per 20 ore.",
-      "1": "Inoltre, in quanto capo del Consiglio dei segreti, Nefer sembra avere le risorse per ottenere informazioni da un certo numero di fonti, informazioni che alcune fazioni di Nasha troverebbero particolarmente interessanti..."
+      "0": "Ottiene un 25% in più di ricompense quando intraprende una spedizione a Nod-Krai per 20 ore."
     }
   },
   "constellation1": {
@@ -133,7 +132,7 @@
   "constellation2": {
     "name": "L'osservazione nutre la strategia",
     "description": {
-      "0": "Potenzia gli effetti del talento d'ascensione <strong>Scommessa al chiaro di luna</strong>. La durata di <strong>Velo della menzogna</strong> aumenta di 5 s, il limite di accumuli sale a 5 e questi fanno sì che <strong>Spettacolo fantasma</strong> infligga fino a un 140% del suo DAN originale. Quando Nefer scatena la sua abilità elementale, <strong>Strategia del senet: Danza delle mille notti</strong>, ottiene immediatamente 2 accumuli di Velo della menzogna. Inoltre, quando quest'ultimo raggiunge i 5 accumuli, o quando la durata del quinto accumulo si ripristina, la maestria elementale di Nefer aumenta di 200 per 8 s.",
+      "0": "Potenzia gli effetti del talento d'ascensione <strong>Scommessa al chiaro di luna</strong>. La durata di <strong>Velo della menzogna</strong> aumenta di 5 s, il suo limite di accumuli sale a 5 e <strong>Spettacolo fantasma</strong> infligge fino a un 140% dei suoi DAN originali. Quando Nefer scatena la sua abilità elementale <strong>Strategia del senet: Danza delle mille notti</strong>, ottiene immediatamente 2 accumuli di Velo della menzogna. Inoltre, quando quest'ultimo raggiunge i 5 accumuli, o quando la durata del quinto accumulo si ripristina, la maestria elementale di Nefer aumenta di 200 per 8 s.",
       "1": "Richiede il talento d'ascensione Scommessa al chiaro di luna."
     }
   },
