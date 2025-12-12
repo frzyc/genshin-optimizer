@@ -289,27 +289,27 @@ const c1StacksWhite_burst_dmgIncDisp = { ...c1StacksWhite_normal_dmgIncDisp }
 const c1StacksWhite_normal_dmgInc = unequal(
   target.charKey,
   key,
-  c1StacksWhite_normal_dmgIncDisp
+  equal(input.activeCharKey, target.charKey, c1StacksWhite_normal_dmgIncDisp)
 )
 const c1StacksWhite_charged_dmgInc = unequal(
   target.charKey,
   key,
-  c1StacksWhite_charged_dmgIncDisp
+  equal(input.activeCharKey, target.charKey, c1StacksWhite_charged_dmgIncDisp)
 )
 const c1StacksWhite_plunging_dmgInc = unequal(
   target.charKey,
   key,
-  c1StacksWhite_plunging_dmgIncDisp
+  equal(input.activeCharKey, target.charKey, c1StacksWhite_plunging_dmgIncDisp)
 )
 const c1StacksWhite_skill_dmgInc = unequal(
   target.charKey,
   key,
-  c1StacksWhite_skill_dmgIncDisp
+  equal(input.activeCharKey, target.charKey, c1StacksWhite_skill_dmgIncDisp)
 )
 const c1StacksWhite_burst_dmgInc = unequal(
   target.charKey,
   key,
-  c1StacksWhite_burst_dmgIncDisp
+  equal(input.activeCharKey, target.charKey, c1StacksWhite_burst_dmgIncDisp)
 )
 
 const c1StacksDark_burst_dmgInc = greaterEq(
@@ -327,6 +327,8 @@ const c1StacksDark_burst_dmgInc = greaterEq(
 )
 
 const [condC2AfterBurstPath, condC2AfterBurst] = cond(key, 'c2AfterBurst')
+const [condC2HydroPath, condC2Hydro] = cond(key, 'c2Hydro')
+const [condC2CryoPath, condC2Cryo] = cond(key, 'c2Cryo')
 const c2AfterBurst_pyro_dmg_ = greaterEq(
   input.constellation,
   2,
@@ -335,6 +337,8 @@ const c2AfterBurst_pyro_dmg_ = greaterEq(
     'on',
     greaterEq(
       sum(
+        equal(condC2Hydro, 'hydro', 1),
+        equal(condC2Cryo, 'cryo', 1),
         equal(condA1WhiteDendro, 'dendro', 1),
         equal(condA1WhiteElectro, 'electro', 1),
         equal(condA1WhiteAnemo, 'anemo', 1),
@@ -343,6 +347,24 @@ const c2AfterBurst_pyro_dmg_ = greaterEq(
       1,
       dm.constellation2.dmg_
     )
+  )
+)
+const c2AfterBurst_hydro_dmg_ = greaterEq(
+  input.constellation,
+  2,
+  equal(
+    condC2AfterBurst,
+    'on',
+    equal(condC2Hydro, 'hydro', dm.constellation2.dmg_)
+  )
+)
+const c2AfterBurst_cryo_dmg_ = greaterEq(
+  input.constellation,
+  2,
+  equal(
+    condC2AfterBurst,
+    'on',
+    equal(condC2Cryo, 'cryo', dm.constellation2.dmg_)
   )
 )
 const c2AfterBurst_dendro_dmg_ = greaterEq(
@@ -491,6 +513,13 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       skill_dmgInc: c1StacksWhite_skill_dmgInc,
       burst_dmgInc: c1StacksWhite_burst_dmgInc,
       enemyDefRed_: c6LightBurstHit_defRed_,
+      pyro_dmg_: c2AfterBurst_pyro_dmg_,
+      hydro_dmg_: c2AfterBurst_hydro_dmg_,
+      cryo_dmg_: c2AfterBurst_cryo_dmg_,
+      dendro_dmg_: c2AfterBurst_dendro_dmg_,
+      electro_dmg_: c2AfterBurst_electro_dmg_,
+      anemo_dmg_: c2AfterBurst_anemo_dmg_,
+      geo_dmg_: c2AfterBurst_geo_dmg_,
     },
   },
   isHexerei: lockHomework_hexerei,
@@ -693,7 +722,7 @@ const sheet: TalentSheet = {
         electro: {
           path: condA1WhiteElectroPath,
           value: condA1WhiteElectro,
-          name: ct.ch('a1Electro'),
+          name: st('elementalReaction.team.overload'),
           fields: [],
         },
         anemo: {
@@ -974,6 +1003,18 @@ const sheet: TalentSheet = {
       canShow: equal(condC2AfterBurst, 'on', 1),
       teamBuff: true,
       states: {
+        hydro: {
+          path: condC2HydroPath,
+          value: condC2Hydro,
+          name: st('elementalReaction.team.vaporize'),
+          fields: [],
+        },
+        cryo: {
+          path: condC2CryoPath,
+          value: condC2Cryo,
+          name: st('elementalReaction.team.melt'),
+          fields: [],
+        },
         dendro: {
           path: condA1WhiteDendroPath,
           value: condA1WhiteDendro,
@@ -983,7 +1024,7 @@ const sheet: TalentSheet = {
         electro: {
           path: condA1WhiteElectroPath,
           value: condA1WhiteElectro,
-          name: ct.ch('a1Electro'),
+          name: st('elementalReaction.team.overload'),
           fields: [],
         },
         anemo: {
@@ -1007,6 +1048,8 @@ const sheet: TalentSheet = {
         'on',
         greaterEq(
           sum(
+            equal(condC2Hydro, 'hydro', 1),
+            equal(condC2Cryo, 'cryo', 1),
             equal(condA1WhiteDendro, 'dendro', 1),
             equal(condA1WhiteElectro, 'electro', 1),
             equal(condA1WhiteAnemo, 'anemo', 1),
@@ -1017,6 +1060,18 @@ const sheet: TalentSheet = {
         )
       ),
       fields: [
+        {
+          node: infoMut(c2AfterBurst_hydro_dmg_, {
+            path: 'hydro_dmg_',
+            isTeamBuff: true,
+          }),
+        },
+        {
+          node: infoMut(c2AfterBurst_cryo_dmg_, {
+            path: 'cryo_dmg_',
+            isTeamBuff: true,
+          }),
+        },
         {
           node: infoMut(c2AfterBurst_pyro_dmg_, {
             path: 'pyro_dmg_',
@@ -1049,7 +1104,7 @@ const sheet: TalentSheet = {
         },
         {
           text: stg('duration'),
-          value: dm.constellation2.duration,
+          value: dm.constellation2.buffDuration,
           unit: 's',
         },
       ],

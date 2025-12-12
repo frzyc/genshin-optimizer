@@ -188,7 +188,9 @@
       "pyro": "After a party member triggers a <pyro>Pyro-related</pyro> Elemental Reaction",
       "lunar": "After a party member triggers a Lunar Reaction",
       "lunarbloom": "After a party member triggers a <lunarbloom>Lunar-Bloom</lunarbloom> Reaction",
-      "overload": "After a party member triggers an <overloaded>Overloaded</overloaded> Reaction"
+      "overload": "After a party member triggers an <overloaded>Overloaded</overloaded> Reaction",
+      "vaporize": "After a party member triggers an <vaporize>Vaporize</vaporize> Reaction",
+      "melt": "After a party member triggers an <vaporize>Melt</vaporize> Reaction"
     },
     "nightsoul": {
       "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction while in Nightsoul's Blessing",
