@@ -1017,6 +1017,20 @@ export const formulas = {
       },
     },
   },
+  Durin: {
+    normal1: {
+      sheet: 'Durin',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Durin',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Emilie: {
     normal1: {
       sheet: 'Emilie',
@@ -1222,6 +1236,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Ifa',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Jahoda: {
+    normal1: {
+      sheet: 'Jahoda',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Jahoda',
         move: 'normal',
         name: 'normal1',
       },
