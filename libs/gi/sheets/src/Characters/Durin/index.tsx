@@ -754,6 +754,7 @@ const sheet: TalentSheet = {
           1
         )
       ),
+      teamBuff: true,
       fields: [
         {
           node: infoMut(a1White_pyro_enemyRes_, {
