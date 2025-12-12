@@ -1037,7 +1037,7 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(c2AfterBurst_geo_dmg_, {
-            path: 'geo_enemyRes_',
+            path: 'geo_dmg_',
             isTeamBuff: true,
           }),
         },
