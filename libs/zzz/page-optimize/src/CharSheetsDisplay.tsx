@@ -146,14 +146,14 @@ function MinimalYidhariSheet() {
 const banyueDocs: Document[] = [
   {
     type: 'text',
-    text: "We automatically convert Banyue's HP to Sheer Force at a ratio of 1:0.1. Everything else in her kit is not factored",
+    text: "We automatically convert Banyue's HP to Sheer Force at a ratio of 1:0.1. Everything else in his kit is not factored",
   },
   {
     type: 'fields',
     fields: [
       {
         title: <TagDisplay tag={Banyue.buffs.core_hpSheerForce.tag} />,
-        fieldRef: Yidhari.buffs.core_hpSheerForce.tag,
+        fieldRef: Banyue.buffs.core_hpSheerForce.tag,
       },
     ],
   },
