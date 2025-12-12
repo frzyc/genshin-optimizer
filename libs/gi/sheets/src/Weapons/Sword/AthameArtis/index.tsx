@@ -9,6 +9,8 @@ import {
   subscript,
   sum,
   tally,
+  target,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -35,10 +37,15 @@ const burstHit_selfAtk_ = equal(
   'on',
   subscript(input.weapon.refinement, self_atk_arr)
 )
-const burstHit_teamAtk_ = equal(
+const burstHit_teamAtk_disp = equal(
   condBurstHit,
   'on',
   subscript(input.weapon.refinement, team_atk_arr)
+)
+const burstHit_teamAtk_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  unequal(input.activeCharKey, input.charKey, burstHit_teamAtk_disp)
 )
 
 const hexerei_selfAtk_ = greaterEq(
@@ -46,10 +53,15 @@ const hexerei_selfAtk_ = greaterEq(
   2,
   equal(input.isHexerei, 1, prod(percent(0.75), burstHit_selfAtk_))
 )
-const hexerei_teamAtk_ = greaterEq(
+const hexerei_teamAtk_disp = greaterEq(
   tally.hexerei,
   2,
-  equal(input.isHexerei, 1, prod(percent(0.75), burstHit_teamAtk_))
+  equal(input.isHexerei, 1, prod(percent(0.75), burstHit_teamAtk_disp))
+)
+const hexerei_teamAtk_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  unequal(input.activeCharKey, input.charKey, hexerei_teamAtk_disp)
 )
 
 const data = dataObjForWeaponSheet(key, {
@@ -92,7 +104,7 @@ const sheet: IWeaponSheet = {
               node: infoMut(burstHit_selfAtk_, { path: 'atk_' }),
             },
             {
-              node: infoMut(burstHit_teamAtk_, {
+              node: infoMut(burstHit_teamAtk_disp, {
                 path: 'atk_',
                 isTeamBuff: true,
               }),
@@ -119,7 +131,10 @@ const sheet: IWeaponSheet = {
           node: infoMut(hexerei_selfAtk_, { path: 'atk_' }),
         },
         {
-          node: infoMut(hexerei_teamAtk_, { path: 'atk_', isTeamBuff: true }),
+          node: infoMut(hexerei_teamAtk_disp, {
+            path: 'atk_',
+            isTeamBuff: true,
+          }),
         },
         {
           text: stg('duration'),
