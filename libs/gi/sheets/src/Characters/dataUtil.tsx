@@ -333,15 +333,10 @@ export function dataObjForCharacterSheet(
     'moonsignAfterSkillBurst'
   )
   function moonsignBuff(value: NumNode): NumNode {
-    const teamSize = sum(...allElementKeys.map((ele) => tally[ele]))
     return greaterEq(
-      teamSize,
-      4,
-      greaterEq(
-        tally.moonsign,
-        2,
-        equal(condMoonsignAfterSkillBurst, 'on', min(value, percent(0.36)))
-      )
+      tally.moonsign,
+      2,
+      equal(condMoonsignAfterSkillBurst, 'on', min(value, percent(0.36)))
     )
   }
   const element = getCharEle(key)
@@ -361,7 +356,7 @@ export function dataObjForCharacterSheet(
     data.teamBuff!.tally![element] = constant(1)
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
-    if (region !== 'nodKrai') {
+    if (additional.isMoonsign === undefined) {
       let moonsign: NumNode
       switch (element) {
         case 'pyro':
@@ -393,6 +388,8 @@ export function dataObjForCharacterSheet(
       ])
     }
   }
+  data.teamBuff!.tally!.hexerei = additional.isHexerei
+  data.teamBuff!.tally!.moonsign = additional.isMoonsign
   if (region) data.teamBuff!.tally![region] = constant(1)
   if (weaponType !== 'catalyst')
     data.display!['basic']!['physical_dmg_'] = input.total.physical_dmg_

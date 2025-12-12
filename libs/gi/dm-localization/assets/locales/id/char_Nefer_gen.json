@@ -43,7 +43,7 @@
     "name": "Senet Strategy: Dance of a Thousand Nights",
     "description": {
       "0": "Sebuah tarian memikat yang mampu meruntuhkan bangsa, lembut bagaikan kerudung cahaya bulan yang membelai mesra, juga bagaikan lautan pasir di malam dingin yang menusuk tulang. Nefer menerjang ke depan dengan jarak tertentu, mengakibatkan <dendro>Dendro DMG Area</dendro>, dan memasuki status <strong>Shadow Dance</strong>.",
-      "1": "Saat dalam status Shadow Dance dan jika memiliki setidaknya <strong>Verdant Dew</strong>, maka Charged Attack Nefer akan berubah menjadi Charged Attack Khusus yang tidak mengonsumsi Stamina, yaitu <strong>Phantasm Performance</strong>. Ketahanan Nefer terhadap interupsi juga akan meningkat saat berada dalam status Shadow Dance.",
+      "1": "Saat dalam status Shadow Dance dan jika memiliki setidaknya 1 <strong>Verdant Dew</strong>, maka Charged Attack Nefer akan berubah menjadi Charged Attack Khusus yang tidak mengonsumsi Stamina, yaitu <strong>Phantasm Performance</strong>. Ketahanan Nefer terhadap interupsi juga akan meningkat saat berada dalam status Shadow Dance.",
       "2": "<br/>",
       "3": "Jumlah penggunaan awal adalah 2 kali.",
       "4": "<br/>",
@@ -121,8 +121,7 @@
   "passive": {
     "name": "Conspiracy of the Golden Vault",
     "description": {
-      "0": "Ketika dikirim untuk melakukan ekspedisi di Nod-Krai selama 20 jam, hadiah yang didapatkan akan bertambah 25%.",
-      "1": "Selain itu, sebagai pemilik Curatorium of Secrets, Nefer sepertinya dapat memperoleh informasi dari berbagai pihak melalui berbagai cara, dan pasukan tertentu di Kota Nasha tampaknya sangat tertarik dengan informasi ini ...."
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Nod-Krai selama 20 jam, hadiah yang didapatkan akan bertambah 25%."
     }
   },
   "constellation1": {

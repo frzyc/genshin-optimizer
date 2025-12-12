@@ -60,5 +60,11 @@
         }
       }
     }
+  },
+  "Hexerei": {
+    "name": "Taumaturgia: rito secreto",
+    "desc": {
+      "0": "Los personajes taumatúrgicos del equipo actual se han fortalecido aún más."
+    }
   }
 }

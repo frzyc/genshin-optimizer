@@ -60,5 +60,11 @@
         }
       }
     }
+  },
+  "Hexerei": {
+    "name": "Hexerei: Secret Rite",
+    "desc": {
+      "0": "The Hexerei characters in your party have been further enhanced."
+    }
   }
 }

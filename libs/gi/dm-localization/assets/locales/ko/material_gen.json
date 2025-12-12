@@ -236,6 +236,9 @@
   "PrepProgress": {
     "name": "완성도"
   },
+  "BlazingSpirit": {
+    "name": "투지력"
+  },
   "Primogem": {
     "name": "원석"
   },
@@ -1109,6 +1112,12 @@
   "Nefer": {
     "name": "네페르"
   },
+  "Durin": {
+    "name": "두린"
+  },
+  "Jahoda": {
+    "name": "야호다"
+  },
   "KachinasStellaFortuna": {
     "name": "카치나의 운명의 별"
   },
@@ -1171,6 +1180,12 @@
   },
   "NefersStellaFortuna": {
     "name": "네페르의 운명의 별"
+  },
+  "DurinsStellaFortuna": {
+    "name": "두린의 운명의 별"
+  },
+  "JahodasStellaFortuna": {
+    "name": "야호다의 운명의 별"
   },
   "Apple": {
     "name": "사과"
@@ -8108,6 +8123,27 @@
   "SugarSculptureNefer": {
     "name": "설탕 공예·네페르"
   },
+  "AfterClassPractice": {
+    "name": "「요리 숙제」"
+  },
+  "AppleStewTrialVersion": {
+    "name": "사과고기찜(첫 요리)"
+  },
+  "SuspiciousSpicedFriedChicken": {
+    "name": "이상한 매콤한 치킨"
+  },
+  "SpicedFriedChicken": {
+    "name": "매콤한 치킨"
+  },
+  "DeliciousSpicedFriedChicken": {
+    "name": "맛있는 매콤한 치킨"
+  },
+  "SugarSculptureJahoda": {
+    "name": "설탕 공예·야호다"
+  },
+  "SugarSculptureKuuhenki": {
+    "name": "설탕 공예·월령"
+  },
   "RecipeItem": {
     "name": "레시피 아이템"
   },
@@ -8878,6 +8914,9 @@
   },
   "RecipeLohikeitto": {
     "name": "레시피: 크림 연어 수프"
+  },
+  "RecipeSpicedFriedChicken": {
+    "name": "레시피: 매콤한 치킨"
   },
   "CraftedItems": {
     "name": "합성 산물"
@@ -9664,6 +9703,9 @@
   },
   "RadiantAntler": {
     "name": "빛나는 뿔"
+  },
+  "CyclicMilitaryKuuvahkiCore": {
+    "name": "군용 순환식 달의 힘 코어"
   },
   "TileOfDecarabiansTower": {
     "name": "고탑 왕의 잔해"
@@ -13142,6 +13184,30 @@
   "CuratoriumFunds": {
     "name": "「비밀의 집」 자금"
   },
+  "RhinedottirsGift": {
+    "name": "라인도티르의 「선물」"
+  },
+  "RaggedDoll": {
+    "name": "낡은 「인형」"
+  },
+  "ScribbledLetter": {
+    "name": "휘갈겨 쓴 편지"
+  },
+  "MoonPrayerNightPamphlet": {
+    "name": "「기도의 밤」 가이드북"
+  },
+  "GreetingCardForColumbina": {
+    "name": "콜롬비나에게 전하는 축하 카드"
+  },
+  "MoonPrayerCandyFromColumbina": {
+    "name": "콜롬비나가 준비한 달 사탕"
+  },
+  "TheSoulblazerSagaVolume2": {
+    "name": "열혈 투사 전기·2권"
+  },
+  "TaleOfDurin": {
+    "name": "「두린」 이야기"
+  },
   "TearsAmongTheStars": {
     "name": "뭇별 사이의 눈물"
   },
@@ -14132,6 +14198,9 @@
   "GoldenStrings": {
     "name": "금빛 현"
   },
+  "RefinedHeart": {
+    "name": "정신 수양"
+  },
   "FalconsDance": {
     "name": "송골매의 춤"
   },
@@ -15059,6 +15128,18 @@
   "TravelNotesBygoneRuins": {
     "name": "기행·유적"
   },
+  "DurinRadiantHeart": {
+    "name": "두린·빛나는 심장"
+  },
+  "JahodaHelpingHand": {
+    "name": "야호다·고양이 손"
+  },
+  "TravelNotesBlazingSnow": {
+    "name": "기행·열혈 눈보라"
+  },
+  "CelebrationDreamReader": {
+    "name": "축제·꿈의 공부"
+  },
   "EchoDandelionKnight": {
     "name": "궤적·민들레 기사"
   },
@@ -15103,6 +15184,12 @@
   },
   "EchoPhysicOfPurity": {
     "name": "궤적·정화의 하얀 풀"
+  },
+  "EchoKreideprinz": {
+    "name": "궤적·백악의 아이"
+  },
+  "EchoFleeingSunlight": {
+    "name": "궤적·도망치는 태양"
   },
   "FaintGlow": {
     "name": "삭"
@@ -15433,6 +15520,9 @@
   },
   "LunarArcanaCase": {
     "name": "달 계시 상자"
+  },
+  "TheLittleWitchsDictionary": {
+    "name": "꼬마 마녀 사전"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "설명서: 바람 신의 눈동자 공명석"
@@ -15917,6 +16007,27 @@
   "EagerAndReady": {
     "name": "주먹 문지르기"
   },
+  "SharpObserver": {
+    "name": "관찰과 탐구"
+  },
+  "TeaTime": {
+    "name": "차 한 잔의 여유"
+  },
+  "MerchantsAura": {
+    "name": "거상의 기세"
+  },
+  "IngeniousForesight": {
+    "name": "창의와 사고"
+  },
+  "CelebrityCountenance": {
+    "name": "스타의 자태"
+  },
+  "CoolWatcher": {
+    "name": "침착한 관망"
+  },
+  "SignOfProsperity": {
+    "name": "재물운의 징조"
+  },
   "FantasticalMarvel": {
     "name": "절묘한 트릭"
   },
@@ -15976,6 +16087,9 @@
   },
   "VigorousYapping": {
     "name": "활기찬 대화"
+  },
+  "DiligentStudy": {
+    "name": "공부"
   },
   "RhodeiaOfLoch": {
     "name": "물의 정령·로데이아"
@@ -16069,6 +16183,9 @@
   },
   "HydroTulpa": {
     "name": "물의 환인간"
+  },
+  "BlackSerpentKnightRockbreakerAx": {
+    "name": "흑 뱀 기사·바위를 부수는 도끼"
   },
   "UndividedHeart": {
     "name": "단 하나의 마음"
@@ -16442,6 +16559,15 @@
   "FlowConvergence": {
     "name": "합류"
   },
+  "TeaPartiesBurstingWithColor": {
+    "name": "무지갯빛 티타임"
+  },
+  "BringerOfBlessing": {
+    "name": "통명의 가호"
+  },
+  "OnceStoodAgainstTheTideOfDarkWatersLikeBedrock": {
+    "name": "「검은 격류를 막은 반석…」"
+  },
   "MagicGuide": {
     "name": "마도 서론"
   },
@@ -16772,6 +16898,9 @@
   "NoblesseOblige": {
     "name": "옛 왕실의 의식"
   },
+  "NymphsDream": {
+    "name": "님프의 꿈"
+  },
   "LiyueHarborWharf": {
     "name": "리월 항구"
   },
@@ -16957,6 +17086,9 @@
   },
   "AdventurersGuild": {
     "name": "모험가 길드"
+  },
+  "Seymour": {
+    "name": "시모어"
   },
   "ElementalResonanceWovenIce": {
     "name": "원소 공명: 뒤엉킨 얼음"
@@ -17183,6 +17315,15 @@
   "AnAncientSacrificeOfSacredBrocade": {
     "name": "과거의 의식과 진심 어린 마음"
   },
+  "LostLegaciesInTheSand": {
+    "name": "「사막에 전해져오는 이야기」"
+  },
+  "TheNarzissenkreuzAdventure": {
+    "name": "수선화 십자 대모험"
+  },
+  "PlanToSaveTheWorld": {
+    "name": "세계 구원 계획"
+  },
   "Origin": {
     "name": "원초"
   },
@@ -17338,6 +17479,9 @@
   },
   "AdventuresInBlazingHue": {
     "name": "뜨거운 색채"
+  },
+  "TowardTheDistantHorizon": {
+    "name": "저편의 이야기"
   },
   "RadiantPhantasm": {
     "name": "찬란한 형상"
@@ -17902,6 +18046,12 @@
   },
   "CloudWrappedMoon": {
     "name": "「솜털 구름의 품」"
+  },
+  "TheLonelyWayfarer": {
+    "name": "「홀로 걷는 사람」"
+  },
+  "TimelessShine": {
+    "name": "「변치 않는 빛」"
   },
   "EfflorescentIllumination": {
     "name": "「백만 꽃잎의 빛」"
@@ -18824,6 +18974,15 @@
   "ModelDishSaurusCrackers": {
     "name": "음식 모형-「용용 쿠키」"
   },
+  "GleamGlow": {
+    "name": "「기묘한 반짝임」"
+  },
+  "LuckySpin": {
+    "name": "「행운의 룰렛」"
+  },
+  "BurstOfAppetite": {
+    "name": "「식욕 폭발」"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "「탁견의 땅의 불변」"
   },
@@ -18949,6 +19108,9 @@
   },
   "TavernDartboardValidThrow": {
     "name": "주점 과녁-「득점」"
+  },
+  "TavernNoticeWhispersOfTheStreet": {
+    "name": "술집 공지-「항간의 소문」"
   },
   "LingeringMoment": {
     "name": "「유대의 순간」"
@@ -20342,6 +20504,9 @@
   "SoftHuedHydrangeas": {
     "name": "「하얀 꽃뭉치」"
   },
+  "PetalsWithoutPerfume": {
+    "name": "「향기 없는 꽃」"
+  },
   "FirShelves": {
     "name": "삼나무 거치대"
   },
@@ -20906,6 +21071,9 @@
   "SmallCargoContainerSafeStowage": {
     "name": "소형 화물 상자-「적절한 배치」"
   },
+  "UtilityPocketDetector": {
+    "name": "「휴대용 탐지기」"
+  },
   "WeatheredBambooFence": {
     "name": "풍파를 겪은 대나무 울타리"
   },
@@ -21272,6 +21440,18 @@
   "PuzzlepalKeepCalmAndCarryOn": {
     "name": "수수께끼 파트너-「사라진 긴장감」"
   },
+  "OneSecWhiz": {
+    "name": "「1초 컷」"
+  },
+  "GrillmasterSupreme": {
+    "name": "「전설의 바비큐 마스터」"
+  },
+  "WobblyPonyRide": {
+    "name": "「흔들흔들 목마」"
+  },
+  "VerticalBipolarTriLegTower": {
+    "name": "입식 삼각 쌍극탑"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "「잠꾸러기 기병」"
   },
@@ -21283,5 +21463,17 @@
   },
   "LoafingKitty": {
     "name": "「납작 고양이」"
+  },
+  "LittleFinchie": {
+    "name": "「짹짹 참새」"
+  },
+  "GourmetBandit": {
+    "name": "「미식 대도」"
+  },
+  "MasterWeaselmind": {
+    "name": "「흑막 족제비」"
+  },
+  "DragonOnTheMove": {
+    "name": "「마룡 출격」"
   }
 }

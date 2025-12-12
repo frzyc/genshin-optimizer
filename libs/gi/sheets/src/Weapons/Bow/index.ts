@@ -25,6 +25,7 @@ import MouunsMoon from './MouunsMoon'
 import PolarStar from './PolarStar'
 import Predator from './Predator'
 import PrototypeCrescent from './PrototypeCrescent'
+import RainbowSerpentsRainBow from './RainbowSerpentsRainBow'
 import RangeGauge from './RangeGauge'
 import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
@@ -40,6 +41,7 @@ import SkywardHarp from './SkywardHarp'
 import Slingshot from './Slingshot'
 import SnareHook from './SnareHook'
 import SongOfStillness from './SongOfStillness'
+import TheDaybreakChronicles from './TheDaybreakChronicles'
 import TheFirstGreatMagic from './TheFirstGreatMagic'
 import TheStringless from './TheStringless'
 import TheViridescentHunt from './TheViridescentHunt'
@@ -70,6 +72,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   PolarStar,
   Predator,
   PrototypeCrescent,
+  RainbowSerpentsRainBow,
   RangeGauge,
   RavenBow,
   RecurveBow,
@@ -85,6 +88,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   Slingshot,
   SnareHook,
   SongOfStillness,
+  TheDaybreakChronicles,
   TheFirstGreatMagic,
   TheStringless,
   TheViridescentHunt,

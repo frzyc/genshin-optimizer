@@ -12,6 +12,7 @@ import {
   percent,
   prod,
   sum,
+  tally,
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
@@ -27,7 +28,11 @@ import {
 
 const key: CharacterKey = 'Sucrose'
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key)
+
+const [condLockHomeworkPath, condLockHomework] = cond(key, 'lockHomework')
+const lockHomework_hexerei = equal(condLockHomework, 'on', 1)
+
+const ct = charTemplates(key, lockHomework_hexerei)
 
 let a = 0,
   s = 0,
@@ -71,11 +76,18 @@ const dm = {
     eleMas_: skillParam_gen.passive2[p2++][0],
     duration: skillParam_gen.passive2[p2++][0],
   },
+  lockedPassive: {
+    smallDuration: skillParam_gen.lockedPassive![0][0],
+    small_dmg_: skillParam_gen.lockedPassive![1][0],
+    largeDuration: skillParam_gen.lockedPassive![2][0],
+    large_dmg_: skillParam_gen.lockedPassive![3][0],
+  },
   constellation2: {
     durationInc: skillParam_gen.constellation2[0],
   },
   constellation6: {
     ele_dmg_: skillParam_gen.constellation6[0],
+    hex_dmg_: skillParam_gen.constellation6[1],
   },
 } as const
 
@@ -108,11 +120,59 @@ const asc4OptNode = infoMut(
 )
 const asc4Disp = equal('hit', condSkillHitOpponent, asc4OptNode)
 const asc4 = unequal(target.charKey, key, asc4Disp)
-const c6Base = greaterEq(input.constellation, 6, percent(0.2))
 
+const c6Base = greaterEq(
+  input.constellation,
+  6,
+  percent(dm.constellation6.ele_dmg_)
+)
 const c6Bonus = objKeyMap(
   absorbableEle.map((ele) => `${ele}_dmg_` as const),
   (key) => equal(condAbsorption, key.slice(0, -5), c6Base)
+)
+
+const [condLockAfterSkillPath, condLockAfterSkill] = cond(key, 'lockAfterSkill')
+const lockAfterSkill_normal_dmg_ = greaterEq(
+  tally.hexerei,
+  2,
+  equal(
+    condLockHomework,
+    'on',
+    equal(condLockAfterSkill, 'on', dm.lockedPassive.small_dmg_)
+  )
+)
+const lockAfterSkill_charged_dmg_ = { ...lockAfterSkill_normal_dmg_ }
+const lockAfterSkill_plunging_dmg_ = { ...lockAfterSkill_normal_dmg_ }
+const lockAfterSkill_skill_dmg_ = { ...lockAfterSkill_normal_dmg_ }
+const lockAfterSkill_burst_dmg_ = { ...lockAfterSkill_normal_dmg_ }
+
+const [condLockAfterBurstPath, condLockAfterBurst] = cond(key, 'lockAfterBurst')
+const lockAfterBurst_normal_dmg_ = greaterEq(
+  tally.hexerei,
+  2,
+  equal(
+    condLockHomework,
+    'on',
+    equal(condLockAfterBurst, 'on', dm.lockedPassive.large_dmg_)
+  )
+)
+const lockAfterBurst_charged_dmg_ = { ...lockAfterBurst_normal_dmg_ }
+const lockAfterBurst_plunging_dmg_ = { ...lockAfterBurst_normal_dmg_ }
+const lockAfterBurst_skill_dmg_ = { ...lockAfterBurst_normal_dmg_ }
+const lockAfterBurst_burst_dmg_ = { ...lockAfterBurst_normal_dmg_ }
+
+const c6LockBase = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockHomework,
+    'on',
+    equal(target.isHexerei, 1, percent(dm.constellation6.hex_dmg_))
+  )
+)
+const c6LockBonus = objKeyMap(
+  absorbableEle.map((ele) => `${ele}_dmg_` as const),
+  (key) => equal(condAbsorption, key.slice(0, -5), c6LockBase)
 )
 
 export const dmgFormulas = {
@@ -155,8 +215,25 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   },
   teamBuff: {
     total: { eleMas: asc4 },
-    premod: { ...c6Bonus, eleMas: sum(...Object.values(asc1)) },
+    premod: {
+      ...objKeyMap(Object.keys(c6Bonus), (k) =>
+        sum(c6Bonus[k], c6LockBonus[k])
+      ),
+      eleMas: sum(...Object.values(asc1)),
+      normal_dmg_: sum(lockAfterSkill_normal_dmg_, lockAfterBurst_normal_dmg_),
+      charged_dmg_: sum(
+        lockAfterSkill_charged_dmg_,
+        lockAfterBurst_charged_dmg_
+      ),
+      plunging_dmg_: sum(
+        lockAfterSkill_plunging_dmg_,
+        lockAfterBurst_plunging_dmg_
+      ),
+      skill_dmg_: sum(lockAfterSkill_skill_dmg_, lockAfterBurst_skill_dmg_),
+      burst_dmg_: sum(lockAfterSkill_burst_dmg_, lockAfterBurst_burst_dmg_),
+    },
   },
+  isHexerei: lockHomework_hexerei,
 })
 
 const sheet: TalentSheet = {
@@ -299,14 +376,17 @@ const sheet: TalentSheet = {
             name: (
               <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>
             ),
-            fields: Object.values(c6Bonus).map((n) => ({ node: n })),
+            fields: [
+              ...Object.entries(c6Bonus).map(([k, n]) => ({
+                node: infoMut(n, { path: k, isTeamBuff: true }),
+              })),
+              ...Object.entries(c6LockBonus).map(([k, n]) => ({
+                node: infoMut(n, { path: k, isTeamBuff: true }),
+              })),
+            ],
           },
         ])
       ),
-    }),
-    ct.headerTem('constellation6', {
-      canShow: unequal(condAbsorption, undefined, 1),
-      fields: Object.values(c6Bonus).map((n) => ({ node: n })),
     }),
   ]),
 
@@ -361,6 +441,124 @@ const sheet: TalentSheet = {
     }),
   ]),
   passive3: ct.talentTem('passive3'),
+  lockedPassive: ct.talentTem('lockedPassive', [
+    ct.condTem('lockedPassive', {
+      path: condLockHomeworkPath,
+      value: condLockHomework,
+      teamBuff: true,
+      name: st('hexerei.homeworkDone'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('hexerei.becomeHexerei', {
+                val: `$t(charNames_gen:${key})`,
+              }),
+            },
+            {
+              text: st('hexerei.talentEnhance'),
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('lockedPassive', {
+      path: condLockAfterSkillPath,
+      value: condLockAfterSkill,
+      teamBuff: true,
+      canShow: greaterEq(tally.hexerei, 2, lockHomework_hexerei),
+      name: st('afterUse.skill'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: infoMut(lockAfterSkill_normal_dmg_, {
+                path: 'normal_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(lockAfterSkill_charged_dmg_, {
+                path: 'charged_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(lockAfterSkill_plunging_dmg_, {
+                path: 'plunging_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(lockAfterSkill_skill_dmg_, {
+                path: 'skill_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(lockAfterSkill_burst_dmg_, {
+                path: 'burst_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              text: stg('duration'),
+              value: dm.lockedPassive.smallDuration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('lockedPassive', {
+      path: condLockAfterBurstPath,
+      value: condLockAfterBurst,
+      teamBuff: true,
+      canShow: greaterEq(tally.hexerei, 2, lockHomework_hexerei),
+      name: st('afterUse.burst'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: infoMut(lockAfterBurst_normal_dmg_, {
+                path: 'normal_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(lockAfterBurst_charged_dmg_, {
+                path: 'charged_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(lockAfterBurst_plunging_dmg_, {
+                path: 'plunging_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(lockAfterBurst_skill_dmg_, {
+                path: 'skill_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(lockAfterBurst_burst_dmg_, {
+                path: 'burst_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              text: stg('duration'),
+              value: dm.lockedPassive.largeDuration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+  ]),
   constellation1: ct.talentTem('constellation1', [
     ct.fieldsTem('constellation1', {
       fields: [

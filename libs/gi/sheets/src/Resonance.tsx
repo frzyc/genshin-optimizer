@@ -1,5 +1,7 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { NextImage } from '@genshin-optimizer/common/ui'
 import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allElementKeys,
@@ -29,7 +31,6 @@ import {
   tally,
   target,
 } from '@genshin-optimizer/gi/wr'
-import { DarkMode } from '@mui/icons-material'
 import { Box } from '@mui/material'
 import type { ReactNode } from 'react'
 import type { CharacterSheet } from './Characters/CharacterSheet'
@@ -44,7 +45,7 @@ const trm = (strKey: string) => (
   <Translate ns="elementalResonance" key18={strKey} />
 )
 
-type IResonance = {
+export type IResonance = {
   name: ReactNode
   desc: ReactNode
   icon: ReactNode
@@ -464,28 +465,37 @@ const sprawlingGreenery: IResonance = {
 const [moonsignBuffDisp, moonsignBuff] = activeCharBuff(
   input.charKey,
   greaterEq(
-    teamSize,
-    4,
-    greaterEq(
-      tally.moonsign,
-      2,
-      lessThan(tally.moonsign, 4, tally.maxMoonsignBuff)
-    )
+    tally.moonsign,
+    2,
+    lessThan(tally.moonsign, 4, tally.maxMoonsignBuff)
   ),
   { isTeamBuff: true }
 )
-const moonsign: IResonance = {
+export const moonsignSheet: IResonance = {
   name: tr('Moonsign.name'),
   desc: tr('Moonsign.desc'),
-  icon: <DarkMode sx={{ transform: 'scaleX(-1)' }} />,
-  canShow: (data) =>
-    data.get(teamSize).value >= 4 && data.get(tally.moonsign).value >= 1,
+  icon: (
+    <Box
+      component={NextImage ? NextImage : 'img'}
+      src={imgAssets.resonance.moonsign}
+      width="2em"
+      height="auto"
+    />
+  ),
+  canShow: (data) => data.get(tally.moonsign).value >= 1,
   sections: [
     {
       teamBuff: true,
       header: {
         title: tr('Moonsign.nascentGleam.name'),
-        icon: <DarkMode sx={{ transform: 'scaleX(-1)' }} />,
+        icon: (
+          <Box
+            component={NextImage ? NextImage : 'img'}
+            src={imgAssets.resonance.moonsign}
+            width="2em"
+            height="auto"
+          />
+        ),
       },
       fields: [
         {
@@ -501,8 +511,18 @@ const moonsign: IResonance = {
         description: tr('Moonsign.ascendantGleam.desc'),
         icon: (
           <Box display="flex">
-            <DarkMode sx={{ transform: 'scaleX(-1)' }} />
-            <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+            <Box
+              component={NextImage ? NextImage : 'img'}
+              src={imgAssets.resonance.moonsign}
+              width="2em"
+              height="auto"
+            />
+            <Box
+              component={NextImage ? NextImage : 'img'}
+              src={imgAssets.resonance.moonsign}
+              width="2em"
+              height="auto"
+            />
           </Box>
         ),
       },
@@ -514,6 +534,57 @@ const moonsign: IResonance = {
           { path: `${lr}_dmg_`, isTeamBuff: true }
         ),
       })),
+    },
+  ],
+}
+
+export const hexereiSheet: IResonance = {
+  name: tr('Hexerei.name'),
+  desc: tr('Hexerei.desc'),
+  icon: (
+    <>
+      <Box
+        component={NextImage ? NextImage : 'img'}
+        src={imgAssets.resonance.hexerei}
+        width="2em"
+        height="auto"
+      />
+      <Box
+        component={NextImage ? NextImage : 'img'}
+        src={imgAssets.resonance.hexerei}
+        width="2em"
+        height="auto"
+      />
+    </>
+  ),
+  canShow: (data) => data.get(tally.hexerei).value >= 2,
+  sections: [
+    {
+      teamBuff: true,
+      header: {
+        title: tr('Hexerei.name'),
+        icon: (
+          <>
+            <Box
+              component={NextImage ? NextImage : 'img'}
+              src={imgAssets.resonance.hexerei}
+              width="2em"
+              height="auto"
+            />
+            <Box
+              component={NextImage ? NextImage : 'img'}
+              src={imgAssets.resonance.hexerei}
+              width="2em"
+              height="auto"
+            />
+          </>
+        ),
+      },
+      fields: [
+        {
+          text: tr('Hexerei.desc'),
+        },
+      ],
     },
   ],
 }
@@ -536,8 +607,18 @@ export function MoonsignConditionalSection(
       description: tr('Moonsign.ascendantGleam.desc'),
       icon: (
         <Box display="flex">
-          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
-          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+          <Box
+            component={NextImage ? NextImage : 'img'}
+            src={imgAssets.resonance.moonsign}
+            width="2em"
+            height="auto"
+          />
+          <Box
+            component={NextImage ? NextImage : 'img'}
+            src={imgAssets.resonance.moonsign}
+            width="2em"
+            height="auto"
+          />
         </Box>
       ),
     },
@@ -572,7 +653,6 @@ export const resonanceSheets: IResonance[] = [
   impetuousWinds,
   enduringRock,
   sprawlingGreenery,
-  moonsign,
 ]
 
 export const resonanceData = inferInfoMut({

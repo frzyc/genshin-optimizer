@@ -5,6 +5,77 @@ type CostItem = {
   count: number
 }
 
+type ProudSkillExcelConfigDataObf = {
+  proudSkillId: number //342101,
+  proudSkillGroupId: number //3421,
+  level: number //1,
+  proudSkillType: number //2,
+  nameTextMapHash: number //4119686205,
+  descTextMapHash: number //59436107,
+  unlockDescTextMapHash: number //4234322242,
+  icon: string //"UI_Talent_S_Noel_05",
+  costItems: CostItem[]
+  // [
+  //   {},
+  //   {},
+  //   {},
+  //   {}
+  // ],
+  coinCost?: number
+  filterConds: string[]
+  // [
+  //   "TALENT_FILTER_NONE",
+  //   "TALENT_FILTER_NONE"
+  // ],
+  breakLevel: number //1,
+  paramDescList: number[]
+  // [
+  //   2427507414,
+  //   666607366,
+  //   3540150159,
+  //   851185503,
+  //   2672927838,
+  //   3082332970,
+  //   3533092951,
+  //   146906413,
+  //   3917368436,
+  //   3971663087,
+  //   2461662564,
+  //   2867379219,
+  //   3063793031,
+  //   1869540363
+  // ],
+  lifeEffectParams: ['', '', '', '', '']
+  openConfig: 'Noel_ProudSkill_21'
+  addProps: object[]
+  // [
+  //     {},
+  //     {}
+  // ],
+  paramList: number[]
+  // [
+  //     0.30000001192092896,
+  //     4.0,
+  //     20.0,
+  //     60.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0,
+  //     0.0
+  // ]
+  IACNAENANDH: number // Text hash for upgraded version of passive
+}
 export type ProudSkillExcelConfigData = {
   proudSkillId: number //342101,
   proudSkillGroupId: number //3421,
@@ -74,16 +145,19 @@ export type ProudSkillExcelConfigData = {
   //     0.0,
   //     0.0
   // ]
+  upgradedDescTextMapHash: number // Text hash for upgraded version of passive
 }
 const proudSkillExcelConfigDataSrc = JSON.parse(
   readDMJSON('ExcelBinOutput/ProudSkillExcelConfigData.json')
-) as ProudSkillExcelConfigData[]
+) as ProudSkillExcelConfigDataObf[]
 
 const proudSkillExcelConfigData = {} as {
   [id: number]: ProudSkillExcelConfigData[]
 }
 
-proudSkillExcelConfigDataSrc.forEach((data) => {
+proudSkillExcelConfigDataSrc.forEach((dataObf) => {
+  const { IACNAENANDH, ...dataTrim } = dataObf
+  const data = { ...dataTrim, upgradedDescTextMapHash: IACNAENANDH }
   const { proudSkillGroupId, level } = data
   if (!proudSkillExcelConfigData[proudSkillGroupId])
     proudSkillExcelConfigData[proudSkillGroupId] = []

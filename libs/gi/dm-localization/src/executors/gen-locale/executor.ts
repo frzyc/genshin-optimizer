@@ -86,6 +86,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         skills: [normal, skill, sprint],
         talents,
         inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+        lockedProudSkillOpens: [lockedPassive],
       } = depot
       layeredAssignment(
         mapHashData,
@@ -96,6 +97,14 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         mapHashData,
         [...keys, 'auto', 'fields'],
         [avatarSkillExcelConfigData[normal].descTextMapHash, 'autoFields']
+      )
+      layeredAssignment(
+        mapHashData,
+        [...keys, 'auto', 'upgradedFields'],
+        [
+          avatarSkillExcelConfigData[normal].upgradedDescTextMapHash,
+          'autoFields',
+        ]
       )
       layeredAssignment(
         mapHashData,
@@ -124,6 +133,11 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       )
       layeredAssignment(
         mapHashData,
+        [...keys, 'skill', 'upgradedDescription'],
+        [avatarSkillExcelConfigData[skill].upgradedDescTextMapHash, 'paragraph']
+      )
+      layeredAssignment(
+        mapHashData,
         [...keys, 'skill', 'skillParams'],
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[skill].proudSkillGroupId
@@ -146,6 +160,11 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         mapHashData,
         [...keys, 'burst', 'description'],
         [avatarSkillExcelConfigData[burst].descTextMapHash, 'paragraph']
+      )
+      layeredAssignment(
+        mapHashData,
+        [...keys, 'burst', 'upgradedDescription'],
+        [avatarSkillExcelConfigData[burst].upgradedDescTextMapHash, 'paragraph']
       )
       layeredAssignment(
         mapHashData,
@@ -192,6 +211,16 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
             'paragraph',
           ]
         )
+      passive1.proudSkillGroupId &&
+        layeredAssignment(
+          mapHashData,
+          [...keys, 'passive1', 'upgradedDescription'],
+          [
+            proudSkillExcelConfigData[passive1.proudSkillGroupId][0]
+              .upgradedDescTextMapHash,
+            'paragraph',
+          ]
+        )
 
       passive2.proudSkillGroupId &&
         layeredAssignment(
@@ -207,6 +236,16 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           [
             proudSkillExcelConfigData[passive2.proudSkillGroupId][0]
               .descTextMapHash,
+            'paragraph',
+          ]
+        )
+      passive2.proudSkillGroupId &&
+        layeredAssignment(
+          mapHashData,
+          [...keys, 'passive2', 'upgradedDescription'],
+          [
+            proudSkillExcelConfigData[passive2.proudSkillGroupId][0]
+              .upgradedDescTextMapHash,
             'paragraph',
           ]
         )
@@ -228,7 +267,6 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           ]
         )
       }
-      //seems to be only used by SangonomiyaKokomi
       if (passive?.proudSkillGroupId) {
         layeredAssignment(
           mapHashData,
@@ -246,6 +284,23 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           ]
         )
       }
+      if (lockedPassive?.proudSkillGroupId) {
+        layeredAssignment(
+          mapHashData,
+          [...keys, 'lockedPassive', 'name'],
+          proudSkillExcelConfigData[lockedPassive.proudSkillGroupId][0]
+            .nameTextMapHash
+        )
+        layeredAssignment(
+          mapHashData,
+          [...keys, 'lockedPassive', 'description'],
+          [
+            proudSkillExcelConfigData[lockedPassive.proudSkillGroupId][0]
+              .descTextMapHash,
+            'paragraph',
+          ]
+        )
+      }
 
       talents.forEach((skId, i) => {
         layeredAssignment(
@@ -257,6 +312,14 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           mapHashData,
           [...keys, `constellation${i + 1}`, 'description'],
           [avatarTalentExcelConfigData[skId].descTextMapHash, 'paragraph']
+        )
+        layeredAssignment(
+          mapHashData,
+          [...keys, `constellation${i + 1}`, 'upgradedDescription'],
+          [
+            avatarTalentExcelConfigData[skId].upgradedDescTextMapHash,
+            'paragraph',
+          ]
         )
       })
     }
@@ -407,7 +470,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         if (
           processing === 'autoFields' &&
           lang === 'ru' &&
-          rawString.split('\\n\\n').length === 2
+          rawString?.split('\\n\\n').length === 2
         ) {
           const ind = rawString.indexOf('n<color=#FFD780FF>') + 1
           rawString = rawString.slice(0, ind) + '\\n' + rawString.slice(ind)
@@ -421,6 +484,13 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         )
         if (string === undefined)
           throw `Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`
+        // Skip empty upgraded descriptions
+        if (
+          (keys[keys.length - 1] === 'upgradedDescription' ||
+            keys[keys.length - 1] === 'upgradedFields') &&
+          Object.keys(string).length === 0
+        )
+          return
         layeredAssignment(languageData, [lang, ...keys], string)
       }
     )

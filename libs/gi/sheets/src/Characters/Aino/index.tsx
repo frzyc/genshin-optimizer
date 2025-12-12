@@ -227,10 +227,8 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       lunarcharged_dmg_: c6AfterBurst_total_lunarcharged_dmg_,
       lunarbloom_dmg_: c6AfterBurst_total_lunarbloom_dmg_,
     },
-    tally: {
-      moonsign: constant(1),
-    },
   },
+  isMoonsign: constant(1),
 })
 
 const sheet: TalentSheet = {

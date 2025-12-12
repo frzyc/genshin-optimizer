@@ -20,6 +20,29 @@
         "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG Area saat mendarat."
       }
     },
+    "upgradedFields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 6 tembakan panah berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG yang lebih besar.",
+        "2": "Saat membidik, angin akan berkumpul di ujung anak panah. Panah dengan angin yang terkumpul penuh akan mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG Area saat mendarat."
+      },
+      "hexerei": {
+        "0": "<strong>Hexerei: Secret Rite</strong>",
+        "1": "Selama Stormeye yang dihasilkan oleh Elemental Burst <strong>Wind's Grand Ode</strong> aktif, Venti akan mendapatkan efek penguatan tambahan:",
+        "2": [
+          "Normal Attack Venti akan dikonversi menjadi tembakan <strong>Windsunder Arrows</strong> yang bisa menembus musuh dan mengakibatkan <anemo>Anemo DMG</anemo> yang lebih besar terhadap musuh di sepanjang jalur.",
+          "Saat Normal Attack Venti mengenai musuh, durasi Stormeye diperpanjang 1 detik dan cooldown-nya diperpanjang 0,5 detik. Efek ini dapat terpicu sekali setiap 0,1 detik. Dapat terpicu maksimum 2 kali untuk setiap Elemental Burst <strong>Wind's Grand Ode</strong>."
+        ]
+      }
+    },
     "skillParams": {
       "0": "DMG Tahap 1",
       "1": "DMG Tahap 2",
@@ -31,7 +54,7 @@
       "7": "DMG Membidik Penuh",
       "8": "DMG Selama Plunging",
       "9": "DMG Plunging Attack Rendah/Tinggi",
-      "10": "",
+      "10": "DMG Windsunder Arrow",
       "11": "",
       "12": "",
       "13": "",
@@ -124,10 +147,23 @@
       "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Temporal Wind's Eulogy",
+    "description": {
+      "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Bertiupnya Sang Angin</strong>, Venti akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "Selama Stormeye yang dihasilkan oleh Elemental Burst <strong>Wind's Grand Ode</strong> aktif, DMG Karakter ini meningkat 50% dan DMG Stormeye Venti sendiri meningkat menjadi 135% dari DMG awalnya selama 4 detik setelah Karakter aktif di sekitar memicu reaksi Swirl."
+    }
+  },
   "constellation1": {
     "name": "Splitting Gales",
     "description": {
       "0": "Menembakkan 2 anak panah tambahan setiap <strong>Serangan Membidik</strong>, yang masing-masing mengakibatkan 33% DMG dari panah utama."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Aimed Shot</strong> akan menembakkan dua anak panah tambahan, masing-masingnya mengakibatkan 33% DMG awal.",
+      "1": "Selain itu, <strong>Windsunder Arrow</strong> juga akan menembakkan dua anak panah tambahan yang bisa mengejar musuh, masing-masingnya mengakibatkan 20% DMG panah awal. Efek ini dapat terpicu sekali setiap 0,25 detik."
     }
   },
   "constellation2": {
@@ -135,6 +171,13 @@
     "description": {
       "0": "<strong>Skyward Sonnet</strong> mengurangi 12% <anemo>Anemo RES</anemo> dan Physical RES musuh selama 10 detik.",
       "1": "<anemo>Anemo RES</anemo> dan Physical RES musuh yang terhempas oleh <strong>Skyward Sonnet</strong> berkurang lagi 12% saat di udara."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Skyward Sonnet</strong> akan membuat <anemo>Anemo RES</anemo> dan Physical RES musuh berkurang 24% selama 10 detik.",
+      "1": "Selain itu, setelah melancarkan Elemental Burst <strong>Wind's Grand Ode</strong>, Venti akan mendapatkan efek <strong>Wherever a Breeze Blows</strong> dan cooldown <strong>Skyward Sonnet</strong> langsung selesai. Setelah <strong>Windsunder Arrow</strong> mengenai musuh, Venti juga memiliki 25% kemungkinan untuk mendapatkan efek <strong>Wherever a Breeze Blows</strong>.",
+      "2": "<br/>",
+      "3": "<strong>Wherever a Breeze Blows</strong>",
+      "4": "Saat menekan Elemental Skill <strong>Skyward Sonnet</strong>, langsung mengakibatkan DMG sebesar 300% DMG awal. Efek ini berlangsung selama 15 detik, dan akan dihapus setelah Venti melancarkan Elemental Skill <strong>Skyward Sonnet</strong> dengan Mode Tekan."
     }
   },
   "constellation3": {
@@ -148,6 +191,9 @@
     "name": "Hurricane of Freedom",
     "description": {
       "0": "Saat Venti mengambil sebuah Elemental Orb atau Particle, dia akan menerima 25% <anemo>Anemo DMG Bonus</anemo> selama 10 detik."
+    },
+    "upgradedDescription": {
+      "0": "Setelah Venti melancarkan Elemental Skill <strong>Skyward Sonnet</strong> atau Elemental Burst <strong>Wind's Grand Ode</strong>, Venti dan Karakter aktif lain di dalam party mendapatkan 25% <anemo>Anemo DMG Bonus</anemo> selama 10 detik."
     }
   },
   "constellation5": {
@@ -162,6 +208,11 @@
     "description": {
       "0": "Musuh yang menerima DMG dari <strong>Wind's Grand Ode</strong> akan mendapat pengurangan <anemo>Anemo RES</anemo> sebanyak 20%.",
       "1": "Jika Elemental Absorption muncul, maka RES terhadap elemen yang bersangkutan juga berkurang 20%."
+    },
+    "upgradedDescription": {
+      "0": "<anemo>Anemo RES</anemo> musuh yang terkena DMG <strong>Wind's Grand Ode</strong> berkurang 20%.",
+      "1": "Jika terjadi Elemental Absorption, maka RES elemen tersebut juga berkurang 20%.",
+      "2": "Selain itu, DMG yang diakibatkan Venti terhadap musuh tersebut akan mendapatkan 100% Bonus CRIT DMG."
     }
   }
 }

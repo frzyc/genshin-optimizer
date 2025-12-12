@@ -47,7 +47,7 @@
       "2": "<br/>",
       "3": "Inicialmente, esta habilidad tiene 2 cargas.",
       "4": "<br/>",
-      "5": "<i>La vida es como una partida de ajedrez en la que los jugadores se esconden tras un telón. Si no quieres que te atrapen cuando menos te lo esperas, lo mejor que puedes hacer es poseer una gran cantidad de información. En eso consisten los secretos.</i>"
+      "5": "<i>“La vida es como una partida de ajedrez en la que los jugadores se esconden tras un telón. Si no quieres que te atrapen cuando menos te lo esperas, lo mejor que puedes hacer es poseer una gran cantidad de información. En eso consisten los secretos”.</i>"
     },
     "skillParams": {
       "0": "Daño de habilidad",
@@ -121,8 +121,7 @@
   "passive": {
     "name": "Intrigas de la cámara dorada",
     "description": {
-      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Nod Krai.",
-      "1": "Además, como dueña de la Cámara de Secretos, parece que Néfer puede obtener información de diversas maneras, y algunas facciones de la Villa Nasha podrían estar muy interesadas en ello..."
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Nod Krai."
     }
   },
   "constellation1": {

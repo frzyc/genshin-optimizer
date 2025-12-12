@@ -1,6 +1,10 @@
-import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
+import { ColorText, ImgIcon, NextImage } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
-import { artifactDefIcon, weaponAsset } from '@genshin-optimizer/gi/assets'
+import {
+  artifactDefIcon,
+  imgAssets,
+  weaponAsset,
+} from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSetKey,
   CharacterKey,
@@ -11,7 +15,6 @@ import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import type { CalcResult, UIData } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
-import { DarkMode } from '@mui/icons-material'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 import GroupsIcon from '@mui/icons-material/Groups'
@@ -62,8 +65,18 @@ export function getDisplayHeader(
       title: 'Moonsign: Ascendant Gleam',
       icon: (
         <Box display="flex">
-          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
-          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
+          <Box
+            component={NextImage ? NextImage : 'img'}
+            src={imgAssets.resonance.moonsign}
+            width="2em"
+            height="auto"
+          />
+          <Box
+            component={NextImage ? NextImage : 'img'}
+            src={imgAssets.resonance.moonsign}
+            width="2em"
+            height="auto"
+          />
         </Box>
       ),
     }

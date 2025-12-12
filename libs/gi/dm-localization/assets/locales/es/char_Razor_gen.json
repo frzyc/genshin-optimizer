@@ -133,6 +133,16 @@
       "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
     }
   },
+  "lockedPassive": {
+    "name": "Rito de la noche de brujas: Surgimiento atronador",
+    "description": {
+      "0": "Tras completar la misión <strong>«Lecciones del Aquelarre: De la manada del Lobezno»</strong>, Razor se convertirá en un personaje <strong>taumatúrgico</strong>. Cuando en el equipo haya al menos 2 personajes taumatúrgicos, estos obtendrán el efecto de <strong>taumaturgia: rito secreto</strong>, el cual les otorgará ciertos fortalecimientos.",
+      "1": "Además, fortalece la Habilidad Definitiva de Razor, <strong>Colmillo relámpago</strong>, de manera que el daño infligido por el <strong>lobo interior</strong> aumenta en una cantidad equivalente al 70% del ATQ de Razor.",
+      "2": "<br/>",
+      "3": "<strong>Taumaturgia: rito secreto</strong>",
+      "4": "Mientras el lobo interior invocado con la Habilidad Definitiva, <strong>Colmillo relámpago</strong>, esté activo, si Razor obtiene un exceso de cargas Electro creadas mediante la Habilidad Elemental, <strong>Garra y trueno</strong>, el lobo interior hará caer un rayo que atacará a los enemigos cercanos y les infligirá un Daño Electro en el AdE equivalente al 150% del ATQ de Razor, y que regenerará 7 pts. de Energía Elemental para Razor. Este efecto solo puede activarse una vez por segundo."
+    }
+  },
   "constellation1": {
     "name": "Naturaleza del lobo",
     "description": {
@@ -170,6 +180,12 @@
     "description": {
       "0": "La espada de Razor se carga de electricidad cada 10 s, lo que hace que su próximo Ataque Normal libere un rayo que inflige un 100% del ATQ como <electro>Daño Electro</electro>.",
       "1": "Cuando no está bajo los efectos de <strong>Colmillo relámpago</strong>, cada rayo añade 1 carga Electro a <strong>Garra y trueno</strong>."
+    },
+    "upgradedDescription": {
+      "0": "La espada de Razor se recarga cada 10 s, lo que hace que su próximo Ataque Normal libere un rayo que inflige <electro>Daño Electro</electro> en una cantidad equivalente al 100% de su ATQ.",
+      "1": "Cuando no está bajo los efectos de <strong>Colmillo relámpago</strong>, cada rayo que golpee a un enemigo otorgará a Razor tres cargas Electro de la Habilidad Elemental, <strong>Garra y trueno</strong>.",
+      "2": "Además, cuando Razor obtenga cargas Electro a través de la Habilidad Elemental, <strong>Garra y trueno</strong>, obtendrá tres cargas en su lugar.",
+      "3": "Después de consumir cargas, la Prob. CRIT de Razor aumenta en un 10% y su Daño CRIT aumenta en un 50% durante 15 s."
     }
   }
 }

@@ -766,7 +766,8 @@
         "constellation6": [
           10,
           2.98
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Jean": {
         "auto": [
@@ -1178,7 +1179,8 @@
         "constellation5": [],
         "constellation6": [
           0.35
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "TravelerAnemoM": {
         "auto": [
@@ -1568,7 +1570,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "TravelerGeoM": {
         "auto": [
@@ -1890,7 +1893,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "TravelerElectroM": {
         "auto": [
@@ -2313,7 +2317,8 @@
         "constellation6": [
           2,
           1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "TravelerDendroM": {
         "auto": [
@@ -2686,7 +2691,8 @@
         "constellation5": [],
         "constellation6": [
           0.12
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "TravelerHydroM": {
         "auto": [
@@ -3137,7 +3143,8 @@
         "constellation5": [],
         "constellation6": [
           0.06
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "TravelerPyroM": {
         "auto": [
@@ -3476,7 +3483,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "Lisa": {
         "auto": [
@@ -3844,7 +3852,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "TravelerAnemoF": {
         "auto": [
@@ -4234,7 +4243,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "TravelerGeoF": {
         "auto": [
@@ -4556,7 +4566,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "TravelerElectroF": {
         "auto": [
@@ -4979,7 +4990,8 @@
         "constellation6": [
           2,
           1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "TravelerDendroF": {
         "auto": [
@@ -5352,7 +5364,8 @@
         "constellation5": [],
         "constellation6": [
           0.12
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "TravelerHydroF": {
         "auto": [
@@ -5803,7 +5816,8 @@
         "constellation5": [],
         "constellation6": [
           0.06
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "TravelerPyroF": {
         "auto": [
@@ -6142,7 +6156,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "Barbara": {
         "auto": [
@@ -6510,7 +6525,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "Kaeya": {
         "auto": [
@@ -6816,7 +6832,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "Diluc": {
         "auto": [
@@ -7218,7 +7235,8 @@
           6,
           0.3,
           0.3
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Razor": {
         "auto": [
@@ -7655,12 +7673,33 @@
         "passive1": [],
         "passive2": [],
         "passive3": [],
+        "lockedPassive": [
+          [
+            0.7
+          ],
+          [
+            1.5
+          ],
+          [
+            7
+          ],
+          [
+            1
+          ]
+        ],
         "constellation1": [],
         "constellation2": [],
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [
+          0.1,
+          0.5,
+          15
+        ],
+        "upgradeableSkills": [
+          "constellation6"
+        ]
       },
       "Amber": {
         "auto": [
@@ -8022,7 +8061,8 @@
           0.15,
           0.15,
           10
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Venti": {
         "auto": [
@@ -8212,6 +8252,23 @@
             3.399824,
             3.597872,
             3.79592
+          ],
+          [
+            1.6,
+            1.7,
+            1.8,
+            1.9,
+            2,
+            2.1,
+            2.2,
+            2.3,
+            2.4,
+            2.5,
+            2.6,
+            2.7,
+            2.8,
+            2.9,
+            3
           ]
         ],
         "skill": [
@@ -8385,12 +8442,38 @@
           ]
         ],
         "passive3": [],
-        "constellation1": [],
-        "constellation2": [],
+        "lockedPassive": [
+          [
+            0.5
+          ],
+          [
+            1.35
+          ],
+          [
+            4
+          ]
+        ],
+        "constellation1": [
+          0.2
+        ],
+        "constellation2": [
+          0.25,
+          3,
+          15
+        ],
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [
+          1
+        ],
+        "upgradeableSkills": [
+          "auto",
+          "constellation1",
+          "constellation2",
+          "constellation4",
+          "constellation6"
+        ]
       },
       "Xiangling": {
         "auto": [
@@ -8752,7 +8835,8 @@
         "constellation5": [],
         "constellation6": [
           0.15
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Beidou": {
         "auto": [
@@ -9176,7 +9260,8 @@
         "constellation5": [],
         "constellation6": [
           0.15
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Xingqiu": {
         "auto": [
@@ -9567,7 +9652,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "Xiao": {
         "auto": [
@@ -9945,7 +10031,8 @@
         "constellation5": [],
         "constellation6": [
           1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Ningguang": {
         "auto": [
@@ -10207,7 +10294,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "Klee": {
         "auto": [
@@ -10542,12 +10630,45 @@
         "passive1": [],
         "passive2": [],
         "passive3": [],
-        "constellation1": [],
+        "lockedPassive": [
+          [
+            20
+          ],
+          [
+            0.15
+          ],
+          [
+            0.3
+          ],
+          [
+            0.5
+          ],
+          [
+            2
+          ]
+        ],
+        "constellation1": [
+          12,
+          0.6
+        ],
         "constellation2": [],
         "constellation3": [],
-        "constellation4": [],
+        "constellation4": [
+          1
+        ],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [
+          0.5,
+          0.4,
+          0.4
+        ],
+        "upgradeableSkills": [
+          "passive1",
+          "constellation1",
+          "constellation2",
+          "constellation4",
+          "constellation6"
+        ]
       },
       "Zhongli": {
         "auto": [
@@ -10975,7 +11096,8 @@
         "constellation6": [
           0.4,
           0.08
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Fischl": {
         "auto": [
@@ -11301,6 +11423,20 @@
           ]
         ],
         "passive3": [],
+        "lockedPassive": [
+          [
+            10
+          ],
+          [
+            0.225
+          ],
+          [
+            10
+          ],
+          [
+            90
+          ]
+        ],
         "constellation1": [
           0.22
         ],
@@ -11315,7 +11451,12 @@
         "constellation5": [],
         "constellation6": [
           0.3,
-          2
+          2,
+          1,
+          10
+        ],
+        "upgradeableSkills": [
+          "constellation6"
         ]
       },
       "Bennett": {
@@ -11801,7 +11942,8 @@
         "constellation5": [],
         "constellation6": [
           0.15
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Tartaglia": {
         "auto": [
@@ -12438,7 +12580,8 @@
           4
         ],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "Noelle": {
         "auto": [
@@ -12907,7 +13050,8 @@
         "constellation6": [
           0.5,
           10
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Qiqi": {
         "auto": [
@@ -13332,7 +13476,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "Chongyun": {
         "auto": [
@@ -13678,7 +13823,8 @@
         "constellation5": [],
         "constellation6": [
           0.15
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Ganyu": {
         "auto": [
@@ -14067,7 +14213,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "Albedo": {
         "auto": [
@@ -14399,7 +14546,17 @@
             40
           ]
         ],
-        "passive1": [],
+        "passive1": [
+          [
+            0.5
+          ],
+          [
+            0.25
+          ],
+          [
+            2.4
+          ]
+        ],
         "passive2": [
           [
             125
@@ -14416,16 +14573,53 @@
             2
           ]
         ],
+        "lockedPassive": [
+          [
+            0.04
+          ],
+          [
+            0.12
+          ],
+          [
+            0.1
+          ],
+          [
+            0.3
+          ],
+          [
+            20
+          ],
+          [
+            20
+          ]
+        ],
         "constellation1": [
-          1.2
+          1.2,
+          0.5,
+          20
         ],
         "constellation2": [
-          0.3
+          0.3,
+          3
         ],
         "constellation3": [],
-        "constellation4": [],
+        "constellation4": [
+          0.3,
+          3,
+          0.3
+        ],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [
+          20,
+          2.5
+        ],
+        "upgradeableSkills": [
+          "passive1",
+          "constellation1",
+          "constellation2",
+          "constellation4",
+          "constellation6"
+        ]
       },
       "Diona": {
         "auto": [
@@ -14857,7 +15051,8 @@
         "constellation6": [
           0.3,
           200
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Mona": {
         "auto": [
@@ -15217,29 +15412,62 @@
           ]
         ],
         "passive3": [],
+        "lockedPassive": [
+          [
+            8
+          ],
+          [
+            3
+          ],
+          [
+            0.05
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            0.5
+          ]
+        ],
         "constellation1": [
           0.15,
           0.15,
           0.15,
           0.15,
           5,
-          8
+          8,
+          0.6,
+          0.15
         ],
         "constellation2": [
           0.2,
           1,
-          5
+          5,
+          5,
+          80,
+          12
         ],
         "constellation3": [],
         "constellation4": [
-          -0.15
+          -0.15,
+          0.15
         ],
         "constellation5": [],
         "constellation6": [
           1,
           0.6,
           1.8,
-          8
+          8,
+          1
+        ],
+        "upgradeableSkills": [
+          "constellation1",
+          "constellation2",
+          "constellation4",
+          "constellation6"
         ]
       },
       "Keqing": {
@@ -15639,7 +15867,8 @@
         "constellation6": [
           0.06,
           8
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Sucrose": {
         "auto": [
@@ -15937,6 +16166,20 @@
           ]
         ],
         "passive3": [],
+        "lockedPassive": [
+          [
+            15
+          ],
+          [
+            0.057143
+          ],
+          [
+            20
+          ],
+          [
+            0.071429
+          ]
+        ],
         "constellation1": [],
         "constellation2": [
           2
@@ -15945,7 +16188,11 @@
         "constellation4": [],
         "constellation5": [],
         "constellation6": [
-          0.2
+          0.2,
+          0.085714
+        ],
+        "upgradeableSkills": [
+          "constellation6"
         ]
       },
       "Xinyan": {
@@ -16420,7 +16667,8 @@
         "constellation6": [
           -0.3,
           0.5
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Rosaria": {
         "auto": [
@@ -16810,7 +17058,8 @@
           0.2,
           10,
           1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "HuTao": {
         "auto": [
@@ -17293,7 +17542,8 @@
           10,
           2,
           1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "KaedeharaKazuha": {
         "auto": [
@@ -17705,7 +17955,8 @@
         "constellation6": [
           0.002,
           5
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Yanfei": {
         "auto": [
@@ -18222,7 +18473,8 @@
         "constellation5": [],
         "constellation6": [
           1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Yoimiya": {
         "auto": [
@@ -18625,7 +18877,8 @@
         "constellation6": [
           0.5,
           0.6
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Thoma": {
         "auto": [
@@ -19095,7 +19348,8 @@
         "constellation6": [
           0.15,
           6
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Eula": {
         "auto": [
@@ -19652,7 +19906,8 @@
         "constellation6": [
           5,
           0.5
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "RaidenShogun": {
         "auto": [
@@ -20309,7 +20564,8 @@
         "constellation6": [
           1,
           1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Sayu": {
         "auto": [
@@ -20844,7 +21100,8 @@
           4,
           3,
           6000
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "SangonomiyaKokomi": {
         "auto": [
@@ -21253,7 +21510,8 @@
           0.8,
           0.4,
           4
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Gorou": {
         "auto": [
@@ -21617,7 +21875,8 @@
           0.2,
           0.4,
           12
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "KujouSara": {
         "auto": [
@@ -21958,7 +22217,8 @@
         "constellation5": [],
         "constellation6": [
           0.6
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "AratakiItto": {
         "auto": [
@@ -22385,7 +22645,8 @@
         "constellation6": [
           0.7,
           0.5
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "YaeMiko": {
         "auto": [
@@ -22723,7 +22984,8 @@
         "constellation5": [],
         "constellation6": [
           0.6
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "ShikanoinHeizou": {
         "auto": [
@@ -23114,7 +23376,8 @@
         "constellation6": [
           0.04,
           0.32
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Yelan": {
         "auto": [
@@ -23491,7 +23754,8 @@
           5,
           20,
           1.56
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Kirara": {
         "auto": [
@@ -24013,7 +24277,8 @@
         "constellation6": [
           0.12,
           15
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Aloy": {
         "auto": [
@@ -24432,7 +24697,8 @@
         "constellation3": [],
         "constellation4": [],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "Shenhe": {
         "auto": [
@@ -24913,7 +25179,8 @@
           50
         ],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "YunJin": {
         "auto": [
@@ -25359,7 +25626,8 @@
         "constellation5": [],
         "constellation6": [
           0.12
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "KukiShinobu": {
         "auto": [
@@ -25808,7 +26076,8 @@
           15,
           150,
           60
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "KamisatoAyato": {
         "auto": [
@@ -26244,7 +26513,8 @@
         "constellation5": [],
         "constellation6": [
           4.5
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Collei": {
         "auto": [
@@ -26561,7 +26831,8 @@
         "constellation5": [],
         "constellation6": [
           2
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Dori": {
         "auto": [
@@ -26957,7 +27228,8 @@
         "constellation6": [
           3,
           0.04
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Tighnari": {
         "auto": [
@@ -27322,7 +27594,8 @@
         "constellation6": [
           3,
           1.5
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Nilou": {
         "auto": [
@@ -27783,7 +28056,8 @@
           0.012,
           0.3,
           0.6
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Cyno": {
         "auto": [
@@ -28340,7 +28614,8 @@
           8,
           8,
           0.4
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Candace": {
         "auto": [
@@ -28760,7 +29035,8 @@
         "constellation6": [
           0.15,
           2.3
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Nahida": {
         "auto": [
@@ -29255,7 +29531,8 @@
           4,
           6,
           10
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Layla": {
         "auto": [
@@ -29616,7 +29893,8 @@
         "constellation6": [
           0.2,
           0.4
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Wanderer": {
         "auto": [
@@ -29989,7 +30267,8 @@
           0.4,
           4,
           40
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Faruzan": {
         "auto": [
@@ -30405,7 +30684,8 @@
         "constellation6": [
           0.4,
           3
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Yaoyao": {
         "auto": [
@@ -30859,7 +31139,8 @@
         "constellation6": [
           0.75,
           0.075
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Alhaitham": {
         "auto": [
@@ -31430,7 +31711,8 @@
           0.1,
           0.7,
           6
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Dehya": {
         "auto": [
@@ -31944,7 +32226,8 @@
           0.15,
           0.5,
           4
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Mika": {
         "auto": [
@@ -32403,7 +32686,8 @@
         "constellation6": [
           0.6,
           1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Kaveh": {
         "auto": [
@@ -32751,7 +33035,8 @@
         "constellation6": [
           0.618,
           3
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Baizhu": {
         "auto": [
@@ -33200,7 +33485,8 @@
         "constellation6": [
           1,
           0.08
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Lynette": {
         "auto": [
@@ -33667,7 +33953,8 @@
         "constellation6": [
           0.2,
           6
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Lyney": {
         "auto": [
@@ -34202,7 +34489,8 @@
         "constellation5": [],
         "constellation6": [
           0.8
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Freminet": {
         "auto": [
@@ -34721,7 +35009,8 @@
           6,
           3,
           0.3
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Wriothesley": {
         "auto": [
@@ -35131,7 +35420,8 @@
           0.1,
           0.8,
           1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Neuvillette": {
         "auto": [
@@ -35552,7 +35842,8 @@
         "constellation6": [
           0.1,
           2
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Charlotte": {
         "auto": [
@@ -36097,7 +36388,8 @@
           1.8,
           0.42,
           6
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Furina": {
         "auto": [
@@ -36685,7 +36977,8 @@
           0.01,
           0.25,
           6
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Chevreuse": {
         "auto": [
@@ -37125,7 +37418,8 @@
           0.2,
           8,
           3
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Navia": {
         "auto": [
@@ -37554,7 +37848,8 @@
         "constellation5": [],
         "constellation6": [
           0.45
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Gaming": {
         "auto": [
@@ -37921,7 +38216,8 @@
         "constellation6": [
           0.2,
           0.4
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Xianyun": {
         "auto": [
@@ -38404,7 +38700,8 @@
           0.7,
           8,
           16
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Chiori": {
         "auto": [
@@ -38833,7 +39130,8 @@
         "constellation6": [
           12,
           2.35
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Sigewinne": {
         "auto": [
@@ -39280,7 +39578,8 @@
           15,
           0.2,
           1.1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Arlecchino": {
         "auto": [
@@ -39823,7 +40122,8 @@
           20,
           15,
           7
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Sethos": {
         "auto": [
@@ -40177,7 +40477,8 @@
         "constellation5": [],
         "constellation6": [
           15
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Clorinde": {
         "auto": [
@@ -40745,7 +41046,8 @@
           2,
           6,
           12
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Emilie": {
         "auto": [
@@ -41131,7 +41433,8 @@
           4,
           3,
           12
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Kachina": {
         "auto": [
@@ -41483,7 +41786,8 @@
         "constellation6": [
           2,
           5
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Kinich": {
         "auto": [
@@ -41842,7 +42146,8 @@
         "constellation5": [],
         "constellation6": [
           7
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Mualani": {
         "auto": [
@@ -42186,7 +42491,8 @@
           0.75
         ],
         "constellation5": [],
-        "constellation6": []
+        "constellation6": [],
+        "upgradeableSkills": []
       },
       "Xilonen": {
         "auto": [
@@ -42685,7 +42991,8 @@
           3,
           15,
           1.2
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Chasca": {
         "auto": [
@@ -43084,7 +43391,8 @@
         "constellation6": [
           3,
           1.2
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Ororon": {
         "auto": [
@@ -43403,7 +43711,8 @@
           9,
           3,
           2
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Mavuika": {
         "auto": [
@@ -44001,7 +44310,8 @@
           3,
           80,
           15
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Citlali": {
         "auto": [
@@ -44465,7 +44775,8 @@
           0.015,
           0.025,
           40
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "LanYan": {
         "auto": [
@@ -44826,7 +45137,8 @@
           0.001,
           0.5,
           2
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "YumemizukiMizuki": {
         "auto": [
@@ -45204,7 +45516,8 @@
         "constellation5": [],
         "constellation6": [
           0.3
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Iansan": {
         "auto": [
@@ -45611,7 +45924,8 @@
           3,
           3,
           0.25
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Varesa": {
         "auto": [
@@ -46121,7 +46435,8 @@
         "constellation6": [
           0.1,
           1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Escoffier": {
         "auto": [
@@ -46533,7 +46848,8 @@
           5,
           0.5,
           6
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Ifa": {
         "auto": [
@@ -46886,7 +47202,8 @@
         "constellation6": [
           1.2,
           -0.2
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Skirk": {
         "auto": [
@@ -47523,7 +47840,8 @@
           1.8,
           0.8,
           1.8
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Dahlia": {
         "auto": [
@@ -47883,7 +48201,8 @@
         "constellation5": [],
         "constellation6": [
           0.1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Ineffa": {
         "auto": [
@@ -48274,7 +48593,8 @@
         "constellation6": [
           1.35,
           3.5
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Lauma": {
         "auto": [
@@ -48841,7 +49161,8 @@
           8,
           1.5,
           0.25
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Flins": {
         "auto": [
@@ -49368,7 +49689,8 @@
         "constellation6": [
           0.35,
           0.1
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Aino": {
         "auto": [
@@ -49700,7 +50022,8 @@
           0.15,
           0.2,
           15
-        ]
+        ],
+        "upgradeableSkills": []
       },
       "Nefer": {
         "auto": [
@@ -50288,7 +50611,1087 @@
           0.85,
           1.2,
           0.15
-        ]
+        ],
+        "upgradeableSkills": []
+      },
+      "Durin": {
+        "auto": [
+          [
+            0.456505,
+            0.493663,
+            0.53082,
+            0.583902,
+            0.621059,
+            0.663525,
+            0.721915,
+            0.780305,
+            0.838696,
+            0.902394,
+            0.966092,
+            1.029791,
+            1.093489,
+            1.157188,
+            1.220886
+          ],
+          [
+            0.410048,
+            0.443424,
+            0.4768,
+            0.52448,
+            0.557856,
+            0.596,
+            0.648448,
+            0.700896,
+            0.753344,
+            0.81056,
+            0.867776,
+            0.924992,
+            0.982208,
+            1.039424,
+            1.09664
+          ],
+          [
+            0.291617,
+            0.315354,
+            0.33909,
+            0.372999,
+            0.396735,
+            0.423863,
+            0.461162,
+            0.498462,
+            0.535762,
+            0.576453,
+            0.617144,
+            0.657835,
+            0.698525,
+            0.739216,
+            0.779907
+          ],
+          [
+            0.291617,
+            0.315354,
+            0.33909,
+            0.372999,
+            0.396735,
+            0.423863,
+            0.461162,
+            0.498462,
+            0.535762,
+            0.576453,
+            0.617144,
+            0.657835,
+            0.698525,
+            0.739216,
+            0.779907
+          ],
+          [
+            0.711521,
+            0.769436,
+            0.82735,
+            0.910085,
+            0.968,
+            1.034188,
+            1.125196,
+            1.216205,
+            1.307213,
+            1.406495,
+            1.505777,
+            1.605059,
+            1.704341,
+            1.803623,
+            1.902905
+          ],
+          [
+            1.13434,
+            1.22667,
+            1.319,
+            1.4509,
+            1.54323,
+            1.64875,
+            1.79384,
+            1.93893,
+            2.08402,
+            2.2423,
+            2.40058,
+            2.55886,
+            2.71714,
+            2.87542,
+            3.0337
+          ],
+          [
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ],
+          [
+            0.639324,
+            0.691362,
+            0.7434,
+            0.81774,
+            0.869778,
+            0.92925,
+            1.011024,
+            1.092798,
+            1.174572,
+            1.26378,
+            1.352988,
+            1.442196,
+            1.531404,
+            1.620612,
+            1.70982
+          ],
+          [
+            1.278377,
+            1.382431,
+            1.486485,
+            1.635134,
+            1.739187,
+            1.858106,
+            2.02162,
+            2.185133,
+            2.348646,
+            2.527025,
+            2.705403,
+            2.883781,
+            3.062159,
+            3.240537,
+            3.418915
+          ],
+          [
+            1.596762,
+            1.726731,
+            1.8567,
+            2.04237,
+            2.172339,
+            2.320875,
+            2.525112,
+            2.729349,
+            2.933586,
+            3.15639,
+            3.379194,
+            3.601998,
+            3.824802,
+            4.047606,
+            4.27041
+          ]
+        ],
+        "skill": [
+          [
+            1.056,
+            1.1352,
+            1.2144,
+            1.32,
+            1.3992,
+            1.4784,
+            1.584,
+            1.6896,
+            1.7952,
+            1.9008,
+            2.0064,
+            2.112,
+            2.244,
+            2.376,
+            2.508
+          ],
+          [
+            0.7224,
+            0.77658,
+            0.83076,
+            0.903,
+            0.95718,
+            1.01136,
+            1.0836,
+            1.15584,
+            1.22808,
+            1.30032,
+            1.37256,
+            1.4448,
+            1.5351,
+            1.6254,
+            1.7157
+          ],
+          [
+            0.532,
+            0.5719,
+            0.6118,
+            0.665,
+            0.7049,
+            0.7448,
+            0.798,
+            0.8512,
+            0.9044,
+            0.9576,
+            1.0108,
+            1.064,
+            1.1305,
+            1.197,
+            1.2635
+          ],
+          [
+            0.6464,
+            0.69488,
+            0.74336,
+            0.808,
+            0.85648,
+            0.90496,
+            0.9696,
+            1.03424,
+            1.09888,
+            1.16352,
+            1.22816,
+            1.2928,
+            1.3736,
+            1.4544,
+            1.5352
+          ],
+          [
+            6,
+            9,
+            12,
+            15,
+            18,
+            21,
+            24,
+            27,
+            30,
+            33,
+            36,
+            39,
+            42,
+            45,
+            48
+          ],
+          [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ]
+        ],
+        "burst": [
+          [
+            1.1896,
+            1.27882,
+            1.36804,
+            1.487,
+            1.57622,
+            1.66544,
+            1.7844,
+            1.90336,
+            2.02232,
+            2.14128,
+            2.26024,
+            2.3792,
+            2.5279,
+            2.6766,
+            2.8253
+          ],
+          [
+            0.964,
+            1.0363,
+            1.1086,
+            1.205,
+            1.2773,
+            1.3496,
+            1.446,
+            1.5424,
+            1.6388,
+            1.7352,
+            1.8316,
+            1.928,
+            2.0485,
+            2.169,
+            2.2895
+          ],
+          [
+            1.1184,
+            1.20228,
+            1.28616,
+            1.398,
+            1.48188,
+            1.56576,
+            1.6776,
+            1.78944,
+            1.90128,
+            2.01312,
+            2.12496,
+            2.2368,
+            2.3766,
+            2.5164,
+            2.6562
+          ],
+          [
+            1.2544,
+            1.34848,
+            1.44256,
+            1.568,
+            1.66208,
+            1.75616,
+            1.8816,
+            2.00704,
+            2.13248,
+            2.25792,
+            2.38336,
+            2.5088,
+            2.6656,
+            2.8224,
+            2.9792
+          ],
+          [
+            1.0176,
+            1.09392,
+            1.17024,
+            1.272,
+            1.34832,
+            1.42464,
+            1.5264,
+            1.62816,
+            1.72992,
+            1.83168,
+            1.93344,
+            2.0352,
+            2.1624,
+            2.2896,
+            2.4168
+          ],
+          [
+            1.1184,
+            1.20228,
+            1.28616,
+            1.398,
+            1.48188,
+            1.56576,
+            1.6776,
+            1.78944,
+            1.90128,
+            2.01312,
+            2.12496,
+            2.2368,
+            2.3766,
+            2.5164,
+            2.6562
+          ],
+          [
+            0.9464,
+            1.01738,
+            1.08836,
+            1.183,
+            1.25398,
+            1.32496,
+            1.4196,
+            1.51424,
+            1.60888,
+            1.70352,
+            1.79816,
+            1.8928,
+            2.0111,
+            2.1294,
+            2.2477
+          ],
+          [
+            1.2984,
+            1.39578,
+            1.49316,
+            1.623,
+            1.72038,
+            1.81776,
+            1.9476,
+            2.07744,
+            2.20728,
+            2.33712,
+            2.46696,
+            2.5968,
+            2.7591,
+            2.9214,
+            3.0837
+          ],
+          [
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ],
+          [
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ],
+          [
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18
+          ],
+          [
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70
+          ]
+        ],
+        "passive1": [
+          [
+            0.2
+          ],
+          [
+            6
+          ],
+          [
+            0.4
+          ],
+          [
+            0.4
+          ]
+        ],
+        "passive2": [
+          [
+            0.03
+          ],
+          [
+            0.75
+          ],
+          [
+            10
+          ]
+        ],
+        "passive3": [],
+        "lockedPassive": [
+          [
+            0.75
+          ]
+        ],
+        "constellation1": [
+          20,
+          20,
+          1,
+          0.6,
+          2,
+          1.5
+        ],
+        "constellation2": [
+          20,
+          6,
+          0.5
+        ],
+        "constellation3": [],
+        "constellation4": [
+          20,
+          0.3,
+          0.4
+        ],
+        "constellation5": [],
+        "constellation6": [
+          0.3,
+          0.3,
+          6,
+          0.4
+        ],
+        "upgradeableSkills": []
+      },
+      "Jahoda": {
+        "auto": [
+          [
+            0.416739,
+            0.450659,
+            0.48458,
+            0.533038,
+            0.566959,
+            0.605725,
+            0.659029,
+            0.712333,
+            0.765636,
+            0.823786,
+            0.881936,
+            0.940085,
+            0.998235,
+            1.056384,
+            1.114534
+          ],
+          [
+            0.192313,
+            0.207967,
+            0.22362,
+            0.245982,
+            0.261635,
+            0.279525,
+            0.304123,
+            0.328721,
+            0.35332,
+            0.380154,
+            0.406988,
+            0.433823,
+            0.460657,
+            0.487492,
+            0.514326
+          ],
+          [
+            0.511975,
+            0.553648,
+            0.59532,
+            0.654852,
+            0.696524,
+            0.74415,
+            0.809635,
+            0.87512,
+            0.940606,
+            1.012044,
+            1.083482,
+            1.154921,
+            1.226359,
+            1.297798,
+            1.369236
+          ],
+          [
+            0.4386,
+            0.4743,
+            0.51,
+            0.561,
+            0.5967,
+            0.6375,
+            0.6936,
+            0.7497,
+            0.8058,
+            0.867,
+            0.9282,
+            0.9894,
+            1.0506,
+            1.1118,
+            1.173
+          ],
+          [
+            1.24,
+            1.333,
+            1.426,
+            1.55,
+            1.643,
+            1.736,
+            1.86,
+            1.984,
+            2.108,
+            2.232,
+            2.356,
+            2.48,
+            2.635,
+            2.79,
+            2.945
+          ],
+          [
+            0.568288,
+            0.614544,
+            0.6608,
+            0.72688,
+            0.773136,
+            0.826,
+            0.898688,
+            0.971376,
+            1.044064,
+            1.12336,
+            1.202656,
+            1.281952,
+            1.361248,
+            1.440544,
+            1.51984
+          ],
+          [
+            1.136335,
+            1.228828,
+            1.32132,
+            1.453452,
+            1.545944,
+            1.65165,
+            1.796995,
+            1.94234,
+            2.087686,
+            2.246244,
+            2.404802,
+            2.563361,
+            2.721919,
+            2.880478,
+            3.039036
+          ],
+          [
+            1.419344,
+            1.534872,
+            1.6504,
+            1.81544,
+            1.930968,
+            2.063,
+            2.244544,
+            2.426088,
+            2.607632,
+            2.80568,
+            3.003728,
+            3.201776,
+            3.399824,
+            3.597872,
+            3.79592
+          ]
+        ],
+        "skill": [
+          [
+            1.59,
+            1.70925,
+            1.8285,
+            1.9875,
+            2.10675,
+            2.226,
+            2.385,
+            2.544,
+            2.703,
+            2.862,
+            3.021,
+            3.18,
+            3.37875,
+            3.5775,
+            3.77625
+          ],
+          [
+            1.908,
+            2.0511,
+            2.1942,
+            2.385,
+            2.5281,
+            2.6712,
+            2.862,
+            3.0528,
+            3.2436,
+            3.4344,
+            3.6252,
+            3.816,
+            4.0545,
+            4.293,
+            4.5315
+          ],
+          [
+            2.12,
+            2.279,
+            2.438,
+            2.65,
+            2.809,
+            2.968,
+            3.18,
+            3.392,
+            3.604,
+            3.816,
+            4.028,
+            4.24,
+            4.505,
+            4.77,
+            5.035
+          ],
+          [
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ],
+          [
+            1.28,
+            1.376,
+            1.472,
+            1.6,
+            1.696,
+            1.792,
+            1.92,
+            2.048,
+            2.176,
+            2.304,
+            2.432,
+            2.56,
+            2.72,
+            2.88,
+            3.04
+          ],
+          [
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            10.5,
+            10.5,
+            10.5,
+            10.5,
+            10.5,
+            10.5,
+            10.5,
+            10.5,
+            10.5,
+            10.5,
+            10.5,
+            10.5,
+            10.5,
+            10.5,
+            10.5
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5,
+            3.5
+          ]
+        ],
+        "burst": [
+          [
+            2.072,
+            2.2274,
+            2.3828,
+            2.59,
+            2.7454,
+            2.9008,
+            3.108,
+            3.3152,
+            3.5224,
+            3.7296,
+            3.9368,
+            4.144,
+            4.403,
+            4.662,
+            4.921
+          ],
+          [
+            0.172664,
+            0.185614,
+            0.198564,
+            0.21583,
+            0.22878,
+            0.24173,
+            0.258996,
+            0.276262,
+            0.293529,
+            0.310795,
+            0.328062,
+            0.345328,
+            0.366911,
+            0.388494,
+            0.410077
+          ],
+          [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          [
+            0.79872,
+            0.858624,
+            0.918528,
+            0.9984,
+            1.058304,
+            1.118208,
+            1.19808,
+            1.277952,
+            1.357824,
+            1.437696,
+            1.517568,
+            1.59744,
+            1.69728,
+            1.79712,
+            1.89696
+          ],
+          [
+            500.73764,
+            550.81836,
+            605.0725,
+            663.5,
+            726.1009,
+            792.8752,
+            863.8229,
+            938.944,
+            1018.23846,
+            1101.7063,
+            1189.3477,
+            1281.1622,
+            1377.1503,
+            1477.3118,
+            1581.6466
+          ],
+          [
+            0.3072,
+            0.33024,
+            0.35328,
+            0.384,
+            0.40704,
+            0.43008,
+            0.4608,
+            0.49152,
+            0.52224,
+            0.55296,
+            0.58368,
+            0.6144,
+            0.6528,
+            0.6912,
+            0.7296
+          ],
+          [
+            192.59721,
+            211.8596,
+            232.7272,
+            255.2,
+            279.27798,
+            304.96118,
+            332.2496,
+            361.1432,
+            391.642,
+            423.74597,
+            457.45517,
+            492.76956,
+            529.68915,
+            568.214,
+            608.34393
+          ],
+          [
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18
+          ],
+          [
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70,
+            70
+          ],
+          [
+            2.4,
+            2.4,
+            2.4,
+            2.4,
+            2.4,
+            2.4,
+            2.4,
+            2.4,
+            2.4,
+            2.4,
+            2.4,
+            2.4,
+            2.4,
+            2.4,
+            2.4
+          ],
+          [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ]
+        ],
+        "passive1": [
+          [
+            1.3
+          ],
+          [
+            1.2
+          ],
+          [
+            -0.1
+          ]
+        ],
+        "passive2": [
+          [
+            100
+          ],
+          [
+            6
+          ]
+        ],
+        "passive3": [],
+        "passive": [],
+        "constellation1": [
+          0.5
+        ],
+        "constellation2": [],
+        "constellation3": [],
+        "constellation4": [
+          4
+        ],
+        "constellation5": [],
+        "constellation6": [
+          0.05,
+          0.4,
+          20
+        ],
+        "upgradeableSkills": []
       },
       "Somnia": {
         "auto": [
@@ -50787,7 +52190,8 @@
           0.05,
           8,
           13
-        ]
+        ],
+        "upgradeableSkills": []
       }
     },
     "data": {
@@ -57789,6 +59193,138 @@
           "eleMas": 100
         }
       },
+      "Durin": {
+        "key": "Durin",
+        "ele": "pyro",
+        "region": "mondstadt",
+        "weaponType": "sword",
+        "birthday": {
+          "month": 3,
+          "day": 14
+        },
+        "rarity": 5,
+        "lvlCurves": [
+          {
+            "key": "hp",
+            "base": 967.6198,
+            "curve": "GROW_CURVE_HP_S5"
+          },
+          {
+            "key": "atk",
+            "base": 26.999,
+            "curve": "GROW_CURVE_ATTACK_S5"
+          },
+          {
+            "key": "def",
+            "base": 64.0181,
+            "curve": "GROW_CURVE_HP_S5"
+          }
+        ],
+        "ascensionBonus": {
+          "hp": [
+            0,
+            829.6465,
+            1419.1322,
+            2205.113,
+            2794.5986,
+            3384.0842,
+            3973.57
+          ],
+          "def": [
+            0,
+            54.891,
+            93.8925,
+            145.8945,
+            184.896,
+            223.8975,
+            262.899
+          ],
+          "atk": [
+            0,
+            23.14751,
+            39.594425,
+            61.523643,
+            77.97056,
+            94.41747,
+            110.86439
+          ],
+          "critDMG_": [
+            0,
+            0,
+            0.096,
+            0.192,
+            0.192,
+            0.288,
+            0.384
+          ]
+        }
+      },
+      "Jahoda": {
+        "key": "Jahoda",
+        "ele": "anemo",
+        "region": "nodKrai",
+        "weaponType": "bow",
+        "birthday": {
+          "month": 1,
+          "day": 5
+        },
+        "rarity": 4,
+        "lvlCurves": [
+          {
+            "key": "hp",
+            "base": 808.7586,
+            "curve": "GROW_CURVE_HP_S4"
+          },
+          {
+            "key": "atk",
+            "base": 18.6984,
+            "curve": "GROW_CURVE_ATTACK_S4"
+          },
+          {
+            "key": "def",
+            "base": 48.64125,
+            "curve": "GROW_CURVE_HP_S4"
+          }
+        ],
+        "ascensionBonus": {
+          "hp": [
+            0,
+            604.1841,
+            1033.4728,
+            1605.8577,
+            2035.1465,
+            2464.435,
+            2893.7239
+          ],
+          "def": [
+            0,
+            36.3375,
+            62.15625,
+            96.58125,
+            122.4,
+            148.21875,
+            174.0375
+          ],
+          "atk": [
+            0,
+            13.96899,
+            23.894325,
+            37.128105,
+            47.05344,
+            56.978775,
+            66.90411
+          ],
+          "heal_": [
+            0,
+            0,
+            0.0462,
+            0.0923,
+            0.0923,
+            0.1385,
+            0.1846
+          ]
+        }
+      },
       "Somnia": {
         "key": "Somnia",
         "ele": "electro",
@@ -61671,6 +63207,44 @@
           {
             "key": "critRate_",
             "base": 0.048,
+            "curve": "GROW_CURVE_CRITICAL_301"
+          }
+        ],
+        "refinementBonus": {},
+        "ascensionBonus": {
+          "atk": [
+            0,
+            31.1,
+            62.2,
+            93.4,
+            124.5,
+            155.6,
+            186.7
+          ]
+        }
+      },
+      "AthameArtis": {
+        "weaponType": "sword",
+        "rarity": 5,
+        "mainStat": {
+          "type": "atk",
+          "base": 45.9364,
+          "curve": "GROW_CURVE_ATTACK_301"
+        },
+        "subStat": {
+          "type": "critRate_",
+          "base": 0.072,
+          "curve": "GROW_CURVE_CRITICAL_301"
+        },
+        "lvlCurves": [
+          {
+            "key": "atk",
+            "base": 45.9364,
+            "curve": "GROW_CURVE_ATTACK_301"
+          },
+          {
+            "key": "critRate_",
+            "base": 0.072,
             "curve": "GROW_CURVE_CRITICAL_301"
           }
         ],
@@ -68067,6 +69641,44 @@
           ]
         }
       },
+      "RainbowSerpentsRainBow": {
+        "weaponType": "bow",
+        "rarity": 4,
+        "mainStat": {
+          "type": "atk",
+          "base": 42.401,
+          "curve": "GROW_CURVE_ATTACK_201"
+        },
+        "subStat": {
+          "type": "enerRech_",
+          "base": 0.1,
+          "curve": "GROW_CURVE_CRITICAL_201"
+        },
+        "lvlCurves": [
+          {
+            "key": "atk",
+            "base": 42.401,
+            "curve": "GROW_CURVE_ATTACK_201"
+          },
+          {
+            "key": "enerRech_",
+            "base": 0.1,
+            "curve": "GROW_CURVE_CRITICAL_201"
+          }
+        ],
+        "refinementBonus": {},
+        "ascensionBonus": {
+          "atk": [
+            0,
+            25.9,
+            51.9,
+            77.8,
+            103.7,
+            129.7,
+            155.6
+          ]
+        }
+      },
       "SkywardHarp": {
         "weaponType": "bow",
         "rarity": 5,
@@ -68467,6 +70079,44 @@
           {
             "key": "critDMG_",
             "base": 0.144,
+            "curve": "GROW_CURVE_CRITICAL_301"
+          }
+        ],
+        "refinementBonus": {},
+        "ascensionBonus": {
+          "atk": [
+            0,
+            31.1,
+            62.2,
+            93.4,
+            124.5,
+            155.6,
+            186.7
+          ]
+        }
+      },
+      "TheDaybreakChronicles": {
+        "weaponType": "bow",
+        "rarity": 5,
+        "mainStat": {
+          "type": "atk",
+          "base": 47.537,
+          "curve": "GROW_CURVE_ATTACK_302"
+        },
+        "subStat": {
+          "type": "critDMG_",
+          "base": 0.096,
+          "curve": "GROW_CURVE_CRITICAL_301"
+        },
+        "lvlCurves": [
+          {
+            "key": "atk",
+            "base": 47.537,
+            "curve": "GROW_CURVE_ATTACK_302"
+          },
+          {
+            "key": "critDMG_",
+            "base": 0.096,
             "curve": "GROW_CURVE_CRITICAL_301"
           }
         ],
@@ -80165,6 +81815,9 @@
     "PrepProgress": {
       "type": "MATERIAL_NONE"
     },
+    "BlazingSpirit": {
+      "type": "MATERIAL_NONE"
+    },
     "Primogem": {
       "type": "MATERIAL_ADSORBATE"
     },
@@ -80544,7 +82197,7 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Gaming": {
-      "type": "MATERIAL_AVATAR"
+      "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Xianyun": {
       "type": "MATERIAL_GCG_CARD_FACE"
@@ -81012,7 +82665,7 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Escoffier": {
-      "type": "MATERIAL_AVATAR"
+      "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Ifa": {
       "type": "MATERIAL_GCG_CARD_FACE"
@@ -81036,6 +82689,12 @@
       "type": "MATERIAL_AVATAR"
     },
     "Nefer": {
+      "type": "MATERIAL_AVATAR"
+    },
+    "Durin": {
+      "type": "MATERIAL_AVATAR"
+    },
+    "Jahoda": {
       "type": "MATERIAL_AVATAR"
     },
     "KachinasStellaFortuna": {
@@ -81099,6 +82758,12 @@
       "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
     },
     "NefersStellaFortuna": {
+      "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+    },
+    "DurinsStellaFortuna": {
+      "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+    },
+    "JahodasStellaFortuna": {
       "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
     },
     "Apple": {
@@ -88037,6 +89702,27 @@
     "SugarSculptureNefer": {
       "type": "MATERIAL_NOTICE_ADD_HP"
     },
+    "AfterClassPractice": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "AppleStewTrialVersion": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "SuspiciousSpicedFriedChicken": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "SpicedFriedChicken": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "DeliciousSpicedFriedChicken": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "SugarSculptureJahoda": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "SugarSculptureKuuhenki": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
     "RecipeItem": {
       "type": "MATERIAL_CONSUME"
     },
@@ -88806,6 +90492,9 @@
       "type": "MATERIAL_CONSUME"
     },
     "RecipeLohikeitto": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "RecipeSpicedFriedChicken": {
       "type": "MATERIAL_CONSUME"
     },
     "CraftedItems": {
@@ -89592,6 +91281,9 @@
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
     "RadiantAntler": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
+    "CyclicMilitaryKuuvahkiCore": {
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
     "TileOfDecarabiansTower": {
@@ -92997,7 +94689,7 @@
       "type": "MATERIAL_QUEST"
     },
     "CollatedIntel": {
-      "type": "MATERIAL_QUEST"
+      "type": "MATERIAL_CLUE_SHOP_HANDBOOK"
     },
     "BackupProgramModule": {
       "type": "MATERIAL_QUEST"
@@ -93070,6 +94762,30 @@
     },
     "CuratoriumFunds": {
       "type": "MATERIAL_CHEST"
+    },
+    "RhinedottirsGift": {
+      "type": "MATERIAL_QUEST"
+    },
+    "RaggedDoll": {
+      "type": "MATERIAL_QUEST"
+    },
+    "ScribbledLetter": {
+      "type": "MATERIAL_QUEST"
+    },
+    "MoonPrayerNightPamphlet": {
+      "type": "MATERIAL_MOON_NIGHT_CARD"
+    },
+    "GreetingCardForColumbina": {
+      "type": "MATERIAL_QUEST_ALBUM"
+    },
+    "MoonPrayerCandyFromColumbina": {
+      "type": "MATERIAL_QUEST"
+    },
+    "TheSoulblazerSagaVolume2": {
+      "type": "MATERIAL_QUEST"
+    },
+    "TaleOfDurin": {
+      "type": "MATERIAL_MAGIC_STORY_BOOK"
     },
     "TearsAmongTheStars": {
       "type": "MATERIAL_QUEST"
@@ -94061,6 +95777,9 @@
     "GoldenStrings": {
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
+    "RefinedHeart": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
     "FalconsDance": {
       "type": "MATERIAL_CHANNELLER_SLAB_BUFF"
     },
@@ -94988,6 +96707,18 @@
     "TravelNotesBygoneRuins": {
       "type": "MATERIAL_NAMECARD"
     },
+    "DurinRadiantHeart": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "JahodaHelpingHand": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "TravelNotesBlazingSnow": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "CelebrationDreamReader": {
+      "type": "MATERIAL_NAMECARD"
+    },
     "EchoDandelionKnight": {
       "type": "MATERIAL_AVATAR_TRACE"
     },
@@ -95031,6 +96762,12 @@
       "type": "MATERIAL_AVATAR_TRACE"
     },
     "EchoPhysicOfPurity": {
+      "type": "MATERIAL_AVATAR_TRACE"
+    },
+    "EchoKreideprinz": {
+      "type": "MATERIAL_AVATAR_TRACE"
+    },
+    "EchoFleeingSunlight": {
       "type": "MATERIAL_AVATAR_TRACE"
     },
     "FaintGlow": {
@@ -95361,6 +97098,9 @@
       "type": "MATERIAL_WIDGET"
     },
     "LunarArcanaCase": {
+      "type": "MATERIAL_WIDGET"
+    },
+    "TheLittleWitchsDictionary": {
       "type": "MATERIAL_WIDGET"
     },
     "InstructionsAnemoculusResonanceStone": {
@@ -95846,6 +97586,27 @@
     "EagerAndReady": {
       "type": "MATERIAL_PHOTOGRAPH_POSE"
     },
+    "SharpObserver": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "TeaTime": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "MerchantsAura": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "IngeniousForesight": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "CelebrityCountenance": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "CoolWatcher": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "SignOfProsperity": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
     "FantasticalMarvel": {
       "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
     },
@@ -95904,6 +97665,9 @@
       "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
     },
     "VigorousYapping": {
+      "type": "MATERIAL_PROFILE_PICTURE"
+    },
+    "DiligentStudy": {
       "type": "MATERIAL_PROFILE_PICTURE"
     },
     "RhodeiaOfLoch": {
@@ -95997,6 +97761,9 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "HydroTulpa": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "BlackSerpentKnightRockbreakerAx": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "UndividedHeart": {
@@ -96371,6 +98138,15 @@
     "FlowConvergence": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "TeaPartiesBurstingWithColor": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "BringerOfBlessing": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "OnceStoodAgainstTheTideOfDarkWatersLikeBedrock": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "MagicGuide": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
@@ -96701,6 +98477,9 @@
     "NoblesseOblige": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "NymphsDream": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "LiyueHarborWharf": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
@@ -96885,6 +98664,9 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "AdventurersGuild": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "Seymour": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "ElementalResonanceWovenIce": {
@@ -97112,6 +98894,15 @@
     "AnAncientSacrificeOfSacredBrocade": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "LostLegaciesInTheSand": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "TheNarzissenkreuzAdventure": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "PlanToSaveTheWorld": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "Origin": {
       "type": "MATERIAL_GCG_CARD_BACK"
     },
@@ -97266,6 +99057,9 @@
       "type": "MATERIAL_COSTUME"
     },
     "AdventuresInBlazingHue": {
+      "type": "MATERIAL_COSTUME"
+    },
+    "TowardTheDistantHorizon": {
       "type": "MATERIAL_COSTUME"
     },
     "RadiantPhantasm": {
@@ -97830,6 +99624,12 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "CloudWrappedMoon": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TheLonelyWayfarer": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TimelessShine": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "EfflorescentIllumination": {
@@ -98753,6 +100553,15 @@
     "ModelDishSaurusCrackers": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "GleamGlow": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "LuckySpin": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "BurstOfAppetite": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "RealizationsFromTheLandOfWisdom": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -98877,6 +100686,9 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "TavernDartboardValidThrow": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TavernNoticeWhispersOfTheStreet": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "LingeringMoment": {
@@ -100271,6 +102083,9 @@
     "SoftHuedHydrangeas": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "PetalsWithoutPerfume": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "FirShelves": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -100835,6 +102650,9 @@
     "SmallCargoContainerSafeStowage": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "UtilityPocketDetector": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "WeatheredBambooFence": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -101201,6 +103019,18 @@
     "PuzzlepalKeepCalmAndCarryOn": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "OneSecWhiz": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "GrillmasterSupreme": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "WobblyPonyRide": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "VerticalBipolarTriLegTower": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "SirCapyOfTheLongIncisors": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -101211,6 +103041,18 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "LoafingKitty": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "LittleFinchie": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "GourmetBandit": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "MasterWeaselmind": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "DragonOnTheMove": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     }
   }

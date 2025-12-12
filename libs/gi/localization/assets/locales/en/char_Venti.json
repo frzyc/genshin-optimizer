@@ -8,5 +8,7 @@
   "c2": {
     "hit": "Opponent hit",
     "launched": "Opponent launched"
-  }
+  },
+  "lockCond": "Stormeye active and a nearby active character triggers a Swirl reaction",
+  "stormeye_mult_": "Stormeye DMG Mult."
 }

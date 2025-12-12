@@ -139,6 +139,16 @@
       "0": "Quando Mona cria Materiais de Avanço de Armas, ela tem 25% de chance de recuperar parte do material usado para criação."
     }
   },
+  "lockedPassive": {
+    "name": "Presente da Noite da Bruxa: Verdade nas Estrelas",
+    "description": {
+      "0": "Depois de completar <strong>Tarefa da Bruxa: Teste de Perspicácia</strong>, Mona se torna uma personagem <strong>Mágica</strong>. Quando a equipe possui pelo menos 2 personagens Mágicos, obtém o efeito <strong>Mágico: Ritual Secreto</strong>, fortalecendo os personagens Mágicos.",
+      "1": "<br/>",
+      "2": "<strong>Mágico: Ritual Secreto</strong>",
+      "3": "Quando o Ataque Normal ou Carregado de Mona atinge um inimigo, obtém 1 acúmulo de Esplendor da Hydromancia por 8s. É possível acumular até 3 vezes. É possível obter até 1 acúmulo de Esplendor da Hydromancia a cada 0.1s dessa forma. Quando os outros personagens da equipe desencadearem Vaporização nos inimigos, consome todos os acúmulos de Esplendor da Hydromancia para aumentar o Dano causado de Vaporização em 5% por acúmulo.",
+      "4": "Além disso, quando os Ataques Normais ou Carregados de Mona atingem o inimigo, prolongam a duração de <strong>Presságio</strong> por 2s. Esse efeito pode ser desencadeado uma vez a cada 0.5s. É possível prolongar a duração de <strong>Presságio</strong> dessa forma em até 8s."
+    }
+  },
   "constellation1": {
     "name": "Profecia da Submersão",
     "description": {
@@ -147,6 +157,15 @@
         " Dano Eletricamente Carregado é aumentado em 15%. Dano Carga Lunar é aumentado em 15%. Dano de Vaporizar é aumentado em 15%. Dano de Redemoinho é aumentado em 15%.",
         " A duração em que os inimigos ficam Congelados é aumentada em 15%."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Nos 8 segundos após um Personagem da equipe atingir um inimigo afetado por Presságio, os efeitos <hydro>relacionados ao Hydro</hydro> são fortalecidos:",
+      "1": [
+        " O Dano da Reação Eletricamente Carregado é aumentado em 15%, o Dano de Carga Lunar é aumentado em 15%, o Dano da Reação de Vaporização é aumentado em 15% e o Dano da Reação de Redemoinho com Hydro é aumentado em 15%;",
+        " A Duração da Reação Congelado é aumentada em 15%."
+      ],
+      "2": "<br/>",
+      "3": "Além disso, se o personagem que não está ativo causar o efeito acima, o efeito de aumento de Dano será aumentado em 160% do original."
     }
   },
   "constellation2": {
@@ -154,6 +173,11 @@
     "description": {
       "0": "Quando um Ataque Normal acerta, existe 20% de chance que ele será automaticamente seguido de um Ataque Carregado.",
       "1": "Esse efeito pode ocorrer apenas uma vez a cada 5 segundos."
+    },
+    "upgradedDescription": {
+      "0": "Quando atinge um Ataque Normal, possui 20% de chance de automaticamente lançar um Ataque Carregado. Além disso, nos 5s após Mona lançar seu Supremo <strong>Órbita Divina</strong>, quando Mona atingir um inimigo com seu próximo Ataque Normal, lançará um Ataque Carregado automaticamente.",
+      "1": "Esse efeito de Ataque Carregado automático pode ser desencadeado uma vez a cada 5s.",
+      "2": "Quando Mona atinge um inimigo com um Ataque Carregado, aumenta a Proficiência Elemental de todos os personagens próximos da equipe em 80 por 12s."
     }
   },
   "constellation3": {
@@ -167,6 +191,10 @@
     "name": "Profecia do Fim",
     "description": {
       "0": "Quando todos os personagens na equipe atacarem um inimigo afetado pelo status do Presságio, sua Taxa Crítica é aumentada em 15%."
+    },
+    "upgradedDescription": {
+      "0": "Quando todos os membros da equipe atacam inimigos afetados por Presságio, a Taxa CRIT é aumentada em 15%.",
+      "1": "Os Personagens Mágicos da equipe têm o Dano CRIT aumentado em 15% ao atacarem inimigos sob o efeito de Presságio."
     }
   },
   "constellation5": {
@@ -181,6 +209,10 @@
     "description": {
       "0": "Ao entrar em <strong>Vicissitude</strong>, Mona ganha um aumento de 60% de Dano em seu próximo Ataque Carregado por segundo.",
       "1": "Um máximo de 180% de Dano adicional pode ser atingido desta maneira, e este efeito dura por não mais que 8 segundos."
+    },
+    "upgradedDescription": {
+      "0": "Quando Mona é a personagem ativa e está em <strong>Vicissitude</strong>, ou quando há um inimigo afetado por Presságio por perto, Mona ganha um aumento de 60% de Dano em seu próximo Ataque Carregado por segundo. Um máximo de 180% de Dano adicional pode ser atingido desta maneira, e este efeito dura por não mais que 8 segundos.",
+      "1": "Além disso, quando o inimigo está sob o estado Presságio, o Ataque Carregado de Mona causa 200% de seu Dano original."
     }
   }
 }

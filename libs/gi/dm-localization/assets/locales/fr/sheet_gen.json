@@ -83,5 +83,8 @@
   },
   "unlockPassive1": "Disponible lorsque le personnage atteint la phase d'élévation 1",
   "unlockPassive2": "Disponible lorsque le personnage atteint la phase d'élévation 4",
-  "unlockPassive3": "Aptitude passive"
+  "unlockPassive3": "Aptitude passive",
+  "witchPassive": "Devoirs de la sorcière",
+  "moonsign": "Signelune",
+  "hexerei": "Hexerei"
 }

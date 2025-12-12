@@ -236,6 +236,9 @@
   "PrepProgress": {
     "name": "完备进度"
   },
+  "BlazingSpirit": {
+    "name": "炽魂豪气"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -1109,6 +1112,12 @@
   "Nefer": {
     "name": "奈芙尔"
   },
+  "Durin": {
+    "name": "杜林"
+  },
+  "Jahoda": {
+    "name": "雅珂达"
+  },
   "KachinasStellaFortuna": {
     "name": "卡齐娜的命星"
   },
@@ -1171,6 +1180,12 @@
   },
   "NefersStellaFortuna": {
     "name": "奈芙尔的命星"
+  },
+  "DurinsStellaFortuna": {
+    "name": "杜林的命星"
+  },
+  "JahodasStellaFortuna": {
+    "name": "雅珂达的命星"
   },
   "Apple": {
     "name": "苹果"
@@ -8108,6 +8123,27 @@
   "SugarSculptureNefer": {
     "name": "糖雕・奈芙尔"
   },
+  "AfterClassPractice": {
+    "name": "「课后作业」"
+  },
+  "AppleStewTrialVersion": {
+    "name": "苹果焖肉（初试版）"
+  },
+  "SuspiciousSpicedFriedChicken": {
+    "name": "奇怪的香辛炸鸡块"
+  },
+  "SpicedFriedChicken": {
+    "name": "香辛炸鸡块"
+  },
+  "DeliciousSpicedFriedChicken": {
+    "name": "美味的香辛炸鸡块"
+  },
+  "SugarSculptureJahoda": {
+    "name": "糖雕・雅珂达"
+  },
+  "SugarSculptureKuuhenki": {
+    "name": "糖雕・月灵"
+  },
   "RecipeItem": {
     "name": "食谱道具"
   },
@@ -8878,6 +8914,9 @@
   },
   "RecipeLohikeitto": {
     "name": "食谱：奶油鲑鱼汤"
+  },
+  "RecipeSpicedFriedChicken": {
+    "name": "食谱：香辛炸鸡块"
   },
   "CraftedItems": {
     "name": "合成产物"
@@ -9664,6 +9703,9 @@
   },
   "RadiantAntler": {
     "name": "漫光的辉角"
+  },
+  "CyclicMilitaryKuuvahkiCore": {
+    "name": "循环式军用月矩核心"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
@@ -13142,6 +13184,30 @@
   "CuratoriumFunds": {
     "name": "「秘闻馆」资金"
   },
+  "RhinedottirsGift": {
+    "name": "莱茵多特的「礼物」"
+  },
+  "RaggedDoll": {
+    "name": "破旧的「玩偶」"
+  },
+  "ScribbledLetter": {
+    "name": "笔迹潦草的信件"
+  },
+  "MoonPrayerNightPamphlet": {
+    "name": "「祈月之夜」导览册"
+  },
+  "GreetingCardForColumbina": {
+    "name": "送给哥伦比娅的贺卡"
+  },
+  "MoonPrayerCandyFromColumbina": {
+    "name": "哥伦比娅准备的祈月糖"
+  },
+  "TheSoulblazerSagaVolume2": {
+    "name": "炽魂斗士战记·第二册"
+  },
+  "TaleOfDurin": {
+    "name": "名为「杜林」的故事"
+  },
   "TearsAmongTheStars": {
     "name": "星间之泪"
   },
@@ -14132,6 +14198,9 @@
   "GoldenStrings": {
     "name": "金色弦丝"
   },
+  "RefinedHeart": {
+    "name": "练心"
+  },
   "FalconsDance": {
     "name": "鹰隼之舞"
   },
@@ -15059,6 +15128,18 @@
   "TravelNotesBygoneRuins": {
     "name": "纪行·故墟"
   },
+  "DurinRadiantHeart": {
+    "name": "杜林·曜心"
+  },
+  "JahodaHelpingHand": {
+    "name": "雅珂达·帮手"
+  },
+  "TravelNotesBlazingSnow": {
+    "name": "纪行·炽雪"
+  },
+  "CelebrationDreamReader": {
+    "name": "庆典·梦读"
+  },
   "EchoDandelionKnight": {
     "name": "游迹·蒲公英骑士"
   },
@@ -15103,6 +15184,12 @@
   },
   "EchoPhysicOfPurity": {
     "name": "游迹·白草净华"
+  },
+  "EchoKreideprinz": {
+    "name": "游迹·白垩之子"
+  },
+  "EchoFleeingSunlight": {
+    "name": "游迹·逃跑的太阳"
   },
   "FaintGlow": {
     "name": "薄光"
@@ -15433,6 +15520,9 @@
   },
   "LunarArcanaCase": {
     "name": "月谕之匣"
+  },
+  "TheLittleWitchsDictionary": {
+    "name": "小魔女辞典"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "说明：风神瞳共鸣石"
@@ -15917,6 +16007,27 @@
   "EagerAndReady": {
     "name": "摩拳擦掌"
   },
+  "SharpObserver": {
+    "name": "观察探寻"
+  },
+  "TeaTime": {
+    "name": "品茶时间"
+  },
+  "MerchantsAura": {
+    "name": "富商气势"
+  },
+  "IngeniousForesight": {
+    "name": "巧思远虑"
+  },
+  "CelebrityCountenance": {
+    "name": "明星仪容"
+  },
+  "CoolWatcher": {
+    "name": "冷静观望"
+  },
+  "SignOfProsperity": {
+    "name": "发财预兆"
+  },
   "FantasticalMarvel": {
     "name": "幻戏瑰意"
   },
@@ -15976,6 +16087,9 @@
   },
   "VigorousYapping": {
     "name": "活力相谈"
+  },
+  "DiligentStudy": {
+    "name": "勤思勉学"
   },
   "RhodeiaOfLoch": {
     "name": "纯水精灵·洛蒂娅"
@@ -16069,6 +16183,9 @@
   },
   "HydroTulpa": {
     "name": "水形幻人"
+  },
+  "BlackSerpentKnightRockbreakerAx": {
+    "name": "黑蛇骑士·摧岩之钺"
   },
   "UndividedHeart": {
     "name": "唯此一心"
@@ -16442,6 +16559,15 @@
   "FlowConvergence": {
     "name": "汇流"
   },
+  "TeaPartiesBurstingWithColor": {
+    "name": "虹彩缤纷的甜点茶话"
+  },
+  "BringerOfBlessing": {
+    "name": "通明庇佑"
+  },
+  "OnceStoodAgainstTheTideOfDarkWatersLikeBedrock": {
+    "name": "「曾如磐石抵挡黑水奔流…」"
+  },
   "MagicGuide": {
     "name": "魔导绪论"
   },
@@ -16772,6 +16898,9 @@
   "NoblesseOblige": {
     "name": "昔日宗室之仪"
   },
+  "NymphsDream": {
+    "name": "水仙之梦"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -16957,6 +17086,9 @@
   },
   "AdventurersGuild": {
     "name": "冒险家协会"
+  },
+  "Seymour": {
+    "name": "西摩尔"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鸣：交织之冰"
@@ -17183,6 +17315,15 @@
   "AnAncientSacrificeOfSacredBrocade": {
     "name": "祀珑在昔，灵锦歆诚"
   },
+  "LostLegaciesInTheSand": {
+    "name": "「沙中遗事」"
+  },
+  "TheNarzissenkreuzAdventure": {
+    "name": "水仙十字大冒险"
+  },
+  "PlanToSaveTheWorld": {
+    "name": "拯救世界的计划"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -17338,6 +17479,9 @@
   },
   "AdventuresInBlazingHue": {
     "name": "炽绘奇旅"
+  },
+  "TowardTheDistantHorizon": {
+    "name": "故事的远方"
   },
   "RadiantPhantasm": {
     "name": "幻煌至形"
@@ -17902,6 +18046,12 @@
   },
   "CloudWrappedMoon": {
     "name": "「如絮云缠抱」"
+  },
+  "TheLonelyWayfarer": {
+    "name": "「独步行者」"
+  },
+  "TimelessShine": {
+    "name": "「不变的明光」"
   },
   "EfflorescentIllumination": {
     "name": "「花叶百相之光」"
@@ -18824,6 +18974,15 @@
   "ModelDishSaurusCrackers": {
     "name": "菜肴模型-「龙龙饼干」"
   },
+  "GleamGlow": {
+    "name": "「奇妙闪闪」"
+  },
+  "LuckySpin": {
+    "name": "「好运速转」"
+  },
+  "BurstOfAppetite": {
+    "name": "「食欲迸发」"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "「卓识之地的余醒」"
   },
@@ -18949,6 +19108,9 @@
   },
   "TavernDartboardValidThrow": {
     "name": "酒馆镖靶-「有效得分」"
+  },
+  "TavernNoticeWhispersOfTheStreet": {
+    "name": "酒馆公告-「市井传闻」"
   },
   "LingeringMoment": {
     "name": "「萦绊之刻」"
@@ -20342,6 +20504,9 @@
   "SoftHuedHydrangeas": {
     "name": "「素色绣球」"
   },
+  "PetalsWithoutPerfume": {
+    "name": "「失芬芳之花」"
+  },
   "FirShelves": {
     "name": "杉木置物架"
   },
@@ -20906,6 +21071,9 @@
   "SmallCargoContainerSafeStowage": {
     "name": "小型货箱-「妥善安置」"
   },
+  "UtilityPocketDetector": {
+    "name": "「实用型便携探测器」"
+  },
   "WeatheredBambooFence": {
     "name": "饱经风雨的竹制围篱"
   },
@@ -21272,6 +21440,18 @@
   "PuzzlepalKeepCalmAndCarryOn": {
     "name": "解谜伙伴-「紧张走开」"
   },
+  "OneSecWhiz": {
+    "name": "「一秒钟快快」"
+  },
+  "GrillmasterSupreme": {
+    "name": "「超级烤肉传奇」"
+  },
+  "WobblyPonyRide": {
+    "name": "「摇摇小马」"
+  },
+  "VerticalBipolarTriLegTower": {
+    "name": "立式三脚双极塔"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "「困困门牙骑士」"
   },
@@ -21283,5 +21463,17 @@
   },
   "LoafingKitty": {
     "name": "「趴趴小猫」"
+  },
+  "LittleFinchie": {
+    "name": "「小小雀雀」"
+  },
+  "GourmetBandit": {
+    "name": "「美食大盗」"
+  },
+  "MasterWeaselmind": {
+    "name": "「幕后黑鼬」"
+  },
+  "DragonOnTheMove": {
+    "name": "「魔龙出击」"
   }
 }

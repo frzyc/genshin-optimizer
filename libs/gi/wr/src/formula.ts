@@ -128,6 +128,8 @@ const inputBase = {
   constellation: read(undefined, { ...info('constellation'), prefix: 'char' }),
   asc: read(undefined, { ...info('ascension'), prefix: 'char' }),
   special: read(),
+  isHexerei: read(),
+  isMoonsign: read(),
 
   infusion: {
     overridableSelf: stringRead('small'),
@@ -220,6 +222,7 @@ const inputBase = {
     ...objKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
     maxEleMas: read('max'),
     moonsign: read('add'),
+    hexerei: read('add'),
     maxMoonsignBuff: read('max'),
   },
 }

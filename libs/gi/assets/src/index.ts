@@ -22,6 +22,7 @@ type characterAssetKey =
   | 'passive1'
   | 'passive2'
   | 'passive3'
+  | 'lockedPassive'
   | 'constellation1'
   | 'constellation2'
   | 'constellation3'

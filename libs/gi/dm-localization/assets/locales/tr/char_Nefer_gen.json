@@ -120,8 +120,7 @@
   "passive": {
     "name": "Altın Kasa Komplosu",
     "description": {
-      "0": "20 saatliğine bir Nod-Krai Keşfine gönderildiğinde %25 daha fazla ödül kazanır.",
-      "1": "Ayrıca Sırlar Arşivi'nin lideri olarak Nefer'ın çeşitli kaynaklardan istihbarat edinme yeteneği vardır. Nasha Kasabası'ndaki bazı gruplar bu istihbaratları son derece ilgi çekici bulabilir..."
+      "0": "20 saatliğine bir Nod-Krai Keşfine gönderildiğinde %25 daha fazla ödül kazanır."
     }
   },
   "constellation1": {

@@ -1,0 +1,29 @@
+{
+  "name": "Hắc Ám Xâm Thực",
+  "description": {
+    "0": "Trong câu chuyện của ma nữ nhỏ, đây vốn dĩ là thanh bảo kiếm được Vua Ban Ngày tặng cho dũng sĩ, sau đó ma nữ nhỏ đã dùng nó để đánh bại dũng sĩ."
+  },
+  "passiveName": "Ánh Sáng Của Vua Ban Ngày",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát Thương Bạo Kích từ Kỹ Năng Nộ tăng <cryo>16%</cryo>. Khi Kỹ Năng Nộ đánh trúng kẻ địch, sẽ nhận được hiệu ứng \"Lưỡi Đao Ban Ngày\": Tấn Công tăng <cryo>20%</cryo>, ngoại trừ người trang bị, Tấn Công của nhân vật ra trận trong đội gần đó tăng <cryo>16%</cryo>, duy trì 3s.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\" thì hiệu quả của \"Lưỡi Đao Ban Ngày\" sẽ tăng thêm 75%. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Sát Thương Bạo Kích từ Kỹ Năng Nộ tăng <cryo>20%</cryo>. Khi Kỹ Năng Nộ đánh trúng kẻ địch, sẽ nhận được hiệu ứng \"Lưỡi Đao Ban Ngày\": Tấn Công tăng <cryo>25%</cryo>, ngoại trừ người trang bị, Tấn Công của nhân vật ra trận trong đội gần đó tăng <cryo>20%</cryo>, duy trì 3s.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\" thì hiệu quả của \"Lưỡi Đao Ban Ngày\" sẽ tăng thêm 75%. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Sát Thương Bạo Kích từ Kỹ Năng Nộ tăng <cryo>24%</cryo>. Khi Kỹ Năng Nộ đánh trúng kẻ địch, sẽ nhận được hiệu ứng \"Lưỡi Đao Ban Ngày\": Tấn Công tăng <cryo>30%</cryo>, ngoại trừ người trang bị, Tấn Công của nhân vật ra trận trong đội gần đó tăng <cryo>24%</cryo>, duy trì 3s.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\" thì hiệu quả của \"Lưỡi Đao Ban Ngày\" sẽ tăng thêm 75%. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Sát Thương Bạo Kích từ Kỹ Năng Nộ tăng <cryo>28%</cryo>. Khi Kỹ Năng Nộ đánh trúng kẻ địch, sẽ nhận được hiệu ứng \"Lưỡi Đao Ban Ngày\": Tấn Công tăng <cryo>35%</cryo>, ngoại trừ người trang bị, Tấn Công của nhân vật ra trận trong đội gần đó tăng <cryo>28%</cryo>, duy trì 3s.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\" thì hiệu quả của \"Lưỡi Đao Ban Ngày\" sẽ tăng thêm 75%. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Sát Thương Bạo Kích từ Kỹ Năng Nộ tăng <cryo>32%</cryo>. Khi Kỹ Năng Nộ đánh trúng kẻ địch, sẽ nhận được hiệu ứng \"Lưỡi Đao Ban Ngày\": Tấn Công tăng <cryo>40%</cryo>, ngoại trừ người trang bị, Tấn Công của nhân vật ra trận trong đội gần đó tăng <cryo>32%</cryo>, duy trì 3s.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\" thì hiệu quả của \"Lưỡi Đao Ban Ngày\" sẽ tăng thêm 75%. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

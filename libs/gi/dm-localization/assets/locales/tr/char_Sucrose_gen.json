@@ -113,6 +113,18 @@
       "0": "Sucrose, Karakter ve Silah Geliştirme Malzemeleri ürettiğinde elde edilen ürün %10 ihtimalle iki katına çıkar."
     }
   },
+  "lockedPassive": {
+    "name": "Cadının Gece Ayini: Yedi Katlı Dönüşüm",
+    "description": {
+      "0": "<strong>Cadının Ödevi: Harikalar Diyarı Çiçekleri</strong> tamamlandıktan sonra Sucrose bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini geliştiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
+      "1": "<br/>",
+      "2": "<strong>Cadılık: Saklı Ayin</strong>",
+      "3": [
+        "Sucrose bir Küçük Rüzgar Ruhu oluşturduktan sonra yakındaki grup üyelerinin 15sn boyunca Normal Saldırı, Yüklü Saldırı, Havadan Saldırı, Element Becerisi ve Element Patlaması Hasarı %5,71428 artar.",
+        "Sucrose bir Büyük Rüzgar Ruhu oluşturduktan sonra yakındaki grup üyesi Cadılık karakterlerinin 20sn boyunca Normal Saldırı, Yüklü Saldırı, Havadan Saldırı, Element Becerisi ve Element Patlaması Hasarı %7,14285 artar."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Odaklı Çekim Alanı",
     "description": {
@@ -150,6 +162,9 @@
     "name": "Entropi Yasası",
     "description": {
       "0": "<strong>Yasaklı İcat - İzomer 75 / Tip II</strong> bir Element Emilimi tetiklediğinde beceri süresince tüm grup üyeleri emilen elemente göre %20 Element Hasarı Bonusu kazanır."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Yasaklı İcat - İzomer 75 / Tip II</strong> bir Element Emilimi tetiklediğinde beceri süresince tüm grup üyeleri emilen element için %20 Element Hasarı Bonusu kazanır. Ayrıca grubun yakındaki Cadılık karakterleri, emilen element için ek %8,57142 Element Hasarı Bonusu daha kazanır."
     }
   }
 }

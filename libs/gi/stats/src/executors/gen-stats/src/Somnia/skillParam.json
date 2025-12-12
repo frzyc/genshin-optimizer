@@ -104,5 +104,6 @@
   "constellation3": [],
   "constellation4": [4, 4],
   "constellation5": [],
-  "constellation6": [1, 1, 0.2, 0.03, 0.05, 8, 13]
+  "constellation6": [1, 1, 0.2, 0.03, 0.05, 8, 13],
+  "upgradeableSkills": []
 }
