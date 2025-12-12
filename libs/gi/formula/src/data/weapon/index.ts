@@ -11,6 +11,7 @@ import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
 import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
 import AstralVulturesCrimsonPlumage from './AstralVulturesCrimsonPlumage'
+import AthameArtis from './AthameArtis'
 import Azurelight from './Azurelight'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BalladOfTheFjords from './BalladOfTheFjords'
@@ -133,6 +134,7 @@ import PrototypeCrescent from './PrototypeCrescent'
 import PrototypeRancour from './PrototypeRancour'
 import PrototypeStarglitter from './PrototypeStarglitter'
 import QuantumCatalyst from './QuantumCatalyst'
+import RainbowSerpentsRainBow from './RainbowSerpentsRainBow'
 import Rainslasher from './Rainslasher'
 import RangeGauge from './RangeGauge'
 import RavenBow from './RavenBow'
@@ -192,6 +194,7 @@ import TheAlleyFlash from './TheAlleyFlash'
 import TheBell from './TheBell'
 import TheBlackSword from './TheBlackSword'
 import TheCatch from './TheCatch'
+import TheDaybreakChronicles from './TheDaybreakChronicles'
 import TheDockhandsAssistant from './TheDockhandsAssistant'
 import TheFirstGreatMagic from './TheFirstGreatMagic'
 import TheFlute from './TheFlute'
@@ -229,6 +232,7 @@ const data: TagMapNodeEntries[] = [
   Absolution,
   AmenomaKageuchi,
   AquilaFavonia,
+  AthameArtis,
   Azurelight,
   BlackcliffLongsword,
   CalamityOfEshu,
@@ -381,6 +385,7 @@ const data: TagMapNodeEntries[] = [
   PolarStar,
   Predator,
   PrototypeCrescent,
+  RainbowSerpentsRainBow,
   RangeGauge,
   RavenBow,
   RecurveBow,
@@ -396,6 +401,7 @@ const data: TagMapNodeEntries[] = [
   Slingshot,
   SnareHook,
   SongOfStillness,
+  TheDaybreakChronicles,
   TheFirstGreatMagic,
   TheStringless,
   TheViridescentHunt,
