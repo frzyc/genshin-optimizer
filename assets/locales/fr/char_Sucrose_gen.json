@@ -113,6 +113,18 @@
       "0": "10 % de chances d'obtenir le double de produits lors de la synthèse de matériaux d'amélioration de personnage ou d'arme."
     }
   },
+  "lockedPassive": {
+    "name": "Veillée de la sorcière : Transmutation septuple",
+    "description": {
+      "0": "Après avoir terminé le <strong>devoir de la sorcière « Des fleurs du pays des merveilles »</strong>, Sucrose devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei : Rituel secret</strong>",
+      "3": [
+        " Créer un esprit du vent de taille réduite augmente les DGT infligés par les attaques normales, les attaques chargées, les attaques plongeantes, les compétences élémentaires et les déchaînements élémentaires des personnages de l'équipe à proximité de 5,71428 % pendant 15 s.",
+        " Créer un esprit du vent de grande taille augmente les DGT infligés par les attaques normales, les attaques chargées, les attaques plongeantes, les compétences élémentaires et les déchaînements élémentaires des personnages héxères de l'équipe à proximité de 7,14285 % pendant 20 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Champ du néant",
     "description": {
@@ -150,6 +162,9 @@
     "name": "Théorie de l'entropie",
     "description": {
       "0": "En cas d'absorption élémentaire, <strong>Esprit du vent : Isomorphe 75 Type II</strong> confère à tous les personnages de l'équipe un bonus de DGT élémentaires de 20 % pour l'élément absorbé tant que la compétence est active."
+    },
+    "upgradedDescription": {
+      "0": "En cas d'absorption élémentaire, <strong>Esprit du vent : Isomorphe 75 Type II</strong> confère à tous les personnages de l'équipe un bonus de DGT élémentaires de 20 % pour l'élément absorbé tant que la compétence est active, et les personnages héxères de l'équipe à proximité obtiennent un bonus de DGT élémentaires de 8,57142 % pour l'élément absorbé pendant cette durée."
     }
   }
 }

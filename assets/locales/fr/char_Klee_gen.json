@@ -101,6 +101,13 @@
     "description": {
       "0": "Les attaques normales ainsi que <strong>Bombe rebondissante</strong> ont 50 % de chances de conférer à Klee une étincelle explosive lorsqu'elles infligent des DGT.",
       "1": "Cette dernière est consommée lors de la prochaine attaque chargée, qui inflige 50 % de DGT supplémentaires sans consommer d'endurance."
+    },
+    "upgradedDescription": {
+      "0": "En infligeant des DGT avec sa compétence élémentaire <strong>Bombe rebondissante</strong> ou son attaque normale, Klee a 50 % de chances d'obtenir une étincelle explosive, utiliser sa compétence élémentaire <strong>Bombe rebondissante</strong> ou son déchaînement élémentaire <strong>Fleur bombardier</strong> lui accordant également une étincelle explosive. Klee peut posséder un maximum de 3 étincelles explosives.",
+      "1": "Lorsqu'elle effectue une attaque chargée tout en possédant des étincelles explosives, Klee en consomme une pour déclencher à la place l'attaque chargée spéciale « Frappe boum-boum » ne consommant pas d'endurance et augmentant les DGT infligés de 50 %.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei : Rituel secret</strong>",
+      "4": "Pendant la durée de son déchaînement élémentaire <strong>Fleur bombardier</strong>, la séquence de l'attaque normale de Klee ne se réinitialise pas. De plus, si Klee possède des étincelles explosives lorsqu'elle effectue une attaque normale, le troisième coup de la séquence en consomme une pour déclencher une attaque additionnelle équivalant à une frappe boum-boum sur l'ennemi."
     }
   },
   "passive2": {
@@ -115,16 +122,32 @@
       "0": "Affiche l'emplacement des <strong>produits de Mondstadt</strong> sur la mini-carte."
     }
   },
+  "lockedPassive": {
+    "name": "Veillée de la sorcière : Magie des étincelles",
+    "description": {
+      "0": "Après avoir terminé le <strong>devoir de la sorcière « De feuilles d'étincelles »</strong>, Klee devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei : Rituel secret</strong>",
+      "3": "Lorsque Klee inflige des DGT avec une attaque normale, une compétence élémentaire ou un déchaînement élémentaire, elle gagne 1 boum-badge d'une durée de 20 s, chaque type d'attaque pouvant accorder 1 boum-badge existant indépendamment de cette manière. Lorsque Klee possède 1/2/3 boum-badges, son attaque chargée spéciale « Frappe boum-boum » inflige respectivement 115 %/130 %/150 % des DGT d'origine."
+    }
+  },
   "constellation1": {
     "name": "Bombardement continu",
     "description": {
       "0": "Les attaques et compétences ont une chance de générer des étincelles qui bombardent les ennemis, infligeant 120 % des DGT de <strong>Fleur bombardier</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Les attaques et compétences ont une chance de générer des étincelles qui bombardent les ennemis, infligeant 120 % des DGT de <strong>Fleur bombardier</strong>.",
+      "1": "Déclencher cet effet augmente l'ATQ de Klee de 60 % pendant 12 s."
     }
   },
   "constellation2": {
     "name": "Éclats de bombe",
     "description": {
       "0": "Les mines de <strong>Bombe rebondissante</strong> réduisent la DÉF des ennemis de 23 % pendant 10 s."
+    },
+    "upgradedDescription": {
+      "0": "Toucher des ennemis avec la compétence élémentaire de Klee diminue leur DÉF de 23 % pendant 10 s."
     }
   },
   "constellation3": {
@@ -138,6 +161,9 @@
     "name": "Tout est prêt",
     "description": {
       "0": "Une explosion se produit lorsque Klee quitte le champ de bataille tant que <strong>Fleur bombardier</strong> est active. Cette explosion inflige 555 % de l'ATQ en <pyro>DGT Pyro de zone</pyro>."
+    },
+    "upgradedDescription": {
+      "0": "Si Klee quitte le terrain pendant la durée de <strong>Fleur bombardier</strong> ou si la durée de <strong>Fleur bombardier</strong> arrive à son terme, une explosion se déclenche, infligeant des <pyro>DGT Pyro de zone</pyro> d'une valeur équivalant à 555 % de l'ATQ. Si Klee est sur le terrain lors du déclenchement de cet effet, les DGT infligés augmentent de 100 %."
     }
   },
   "constellation5": {
@@ -152,6 +178,13 @@
     "description": {
       "0": "Klee restaure 3 pts d'énergie élémentaire à tous les personnages de l'équipe (hormis Klee) toutes les 3 s tant que <strong>Fleur bombardier</strong> est active.",
       "1": "L'activation de <strong>Fleur bombardier</strong> confère un bonus de <pyro>DGT Pyro</pyro> de 10 % pendant 25 s à tous les membres de l'équipe."
+    },
+    "upgradedDescription": {
+      "0": "Klee restaure 3 pts d'énergie élémentaire à tous les personnages de l'équipe (hormis Klee) toutes les 3 s tant que <strong>Fleur bombardier</strong> est active.",
+      "1": "L'activation de <strong>Fleur bombardier</strong> confère un bonus de <pyro>DGT Pyro</pyro> de 10 % à tous les autres membres de l'équipe et accorde un <pyro>bonus de DGT Pyro</pyro> de 50 % à Klee, le tout pendant 25 s.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei : Rituel secret</strong>",
+      "4": "En déclenchant un effet consommant une <strong>étincelle explosive</strong>, il y a 50 % de chances de ne pas en consommer<strong></strong>. De plus, tant que <strong>Fleur bombardier</strong> est active, le premier et le deuxième coup de l'attaque normale de Klee ont 40 % de chances de consommer une étincelle explosive pour déclencher une attaque additionnelle équivalant à une frappe boum-boum sur l'ennemi."
     }
   }
 }

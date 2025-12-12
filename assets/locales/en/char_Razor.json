@@ -8,5 +8,7 @@
   "electroSigil": "Electro Sigil",
   "electroSigilAbsorbed": "Energy Regenerated if Electro Sigils are Cleared",
   "opHitWithClawAndThunder": "Opponent's been hit by <strong>Claw and Thunder</strong> (Press)",
-  "electroSigilPerProc": "Electro Sigils Per Proc"
+  "electroSigilPerProc": "Electro Sigils Per Proc",
+  "wolf_dmgInc": "<strong>The Wolf Within</strong> Addl. DMG Increase",
+  "c6LockCond": "After consuming Electro Sigils"
 }

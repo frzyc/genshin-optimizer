@@ -236,6 +236,9 @@
   "PrepProgress": {
     "name": "ความคืบหน้าการเตรียมการ"
   },
+  "BlazingSpirit": {
+    "name": "จิตห้าวหาญโชติช่วง"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -1109,6 +1112,12 @@
   "Nefer": {
     "name": "Nefer"
   },
+  "Durin": {
+    "name": "Durin"
+  },
+  "Jahoda": {
+    "name": "Jahoda"
+  },
   "KachinasStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Kachina"
   },
@@ -1171,6 +1180,12 @@
   },
   "NefersStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Nefer"
+  },
+  "DurinsStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Durin"
+  },
+  "JahodasStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Jahoda"
   },
   "Apple": {
     "name": "Apple"
@@ -8108,6 +8123,27 @@
   "SugarSculptureNefer": {
     "name": "น้ำตาลปั้น - Nefer"
   },
+  "AfterClassPractice": {
+    "name": "\"After-Class Practice\""
+  },
+  "AppleStewTrialVersion": {
+    "name": "Apple Stew (เวอร์ชันทดลอง)"
+  },
+  "SuspiciousSpicedFriedChicken": {
+    "name": "Spiced Fried Chicken รสประหลาด"
+  },
+  "SpicedFriedChicken": {
+    "name": "Spiced Fried Chicken"
+  },
+  "DeliciousSpicedFriedChicken": {
+    "name": "Spiced Fried Chicken แสนอร่อย"
+  },
+  "SugarSculptureJahoda": {
+    "name": "น้ำตาลปั้น: Jahoda"
+  },
+  "SugarSculptureKuuhenki": {
+    "name": "น้ำตาลปั้น: ภูตจันทรา"
+  },
   "RecipeItem": {
     "name": "Cooking Ingredients"
   },
@@ -8878,6 +8914,9 @@
   },
   "RecipeLohikeitto": {
     "name": "สูตรอาหาร: Lohikeitto"
+  },
+  "RecipeSpicedFriedChicken": {
+    "name": "สูตรอาหาร: Spiced Fried Chicken"
   },
   "CraftedItems": {
     "name": "ไอเทมจากการสร้าง"
@@ -9664,6 +9703,9 @@
   },
   "RadiantAntler": {
     "name": "Radiant Antler"
+  },
+  "CyclicMilitaryKuuvahkiCore": {
+    "name": "Cyclic Military Kuuvahki Core"
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
@@ -13142,6 +13184,30 @@
   "CuratoriumFunds": {
     "name": "เงินทุนของ \"เคหาสน์แห่งความลับ\""
   },
+  "RhinedottirsGift": {
+    "name": "\"ของขวัญ\" จาก Rhinedottir"
+  },
+  "RaggedDoll": {
+    "name": "\"ตุ๊กตา\" ที่เก่าซอมซ่อ"
+  },
+  "ScribbledLetter": {
+    "name": "จดหมายลายมือหวัด ๆ"
+  },
+  "MoonPrayerNightPamphlet": {
+    "name": "คู่มือนำเที่ยว \"คืนจันทราธิษฐาน\""
+  },
+  "GreetingCardForColumbina": {
+    "name": "การ์ดอวยพรสำหรับ Columbina"
+  },
+  "MoonPrayerCandyFromColumbina": {
+    "name": "ลูกอมจันทราธิษฐานที่ Columbina เตรียมไว้"
+  },
+  "TheSoulblazerSagaVolume2": {
+    "name": "มหากาพย์นักรบวิญญาณโชติช่วง: เล่ม 2"
+  },
+  "TaleOfDurin": {
+    "name": "เรื่องราวที่มีชื่อว่า \"Durin\""
+  },
   "TearsAmongTheStars": {
     "name": "น้ำตาแห่งดวงดาว"
   },
@@ -14132,6 +14198,9 @@
   "GoldenStrings": {
     "name": "Golden Strings"
   },
+  "RefinedHeart": {
+    "name": "Refined Heart"
+  },
   "FalconsDance": {
     "name": "Falcon's Dance"
   },
@@ -15059,6 +15128,18 @@
   "TravelNotesBygoneRuins": {
     "name": "บันทึก - ซากอดีตกาล"
   },
+  "DurinRadiantHeart": {
+    "name": "Durin - หัวใจเรืองรอง"
+  },
+  "JahodaHelpingHand": {
+    "name": "Jahoda - ผู้ช่วย"
+  },
+  "TravelNotesBlazingSnow": {
+    "name": "บันทึก - หิมะโชติช่วง"
+  },
+  "CelebrationDreamReader": {
+    "name": "การฉลอง - อ่านฝัน"
+  },
   "EchoDandelionKnight": {
     "name": "เอฟเฟกต์วิ่ง - อัศวิน Dandelion"
   },
@@ -15103,6 +15184,12 @@
   },
   "EchoPhysicOfPurity": {
     "name": "เอฟเฟกต์วิ่ง - พฤกษาช้อยวิสุทธิ์"
+  },
+  "EchoKreideprinz": {
+    "name": "เอฟเฟกต์วิ่ง - องค์ชายชอล์กขาว"
+  },
+  "EchoFleeingSunlight": {
+    "name": "เอฟเฟกต์วิ่ง - ดวงอาทิตย์ที่หลบหนี"
   },
   "FaintGlow": {
     "name": "แสงอ่อนจาง"
@@ -15433,6 +15520,9 @@
   },
   "LunarArcanaCase": {
     "name": "กล่องจันทรา"
+  },
+  "TheLittleWitchsDictionary": {
+    "name": "พจนานุกรมแม่มดน้อย"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "คู่มือ: Anemoculus Resonance Stone"
@@ -15917,6 +16007,27 @@
   "EagerAndReady": {
     "name": "คันไม้คันมือ"
   },
+  "SharpObserver": {
+    "name": "สำรวจและค้นหา"
+  },
+  "TeaTime": {
+    "name": "เวลาจิบชา"
+  },
+  "MerchantsAura": {
+    "name": "ออร่านักธุรกิจผู้ร่ำรวย"
+  },
+  "IngeniousForesight": {
+    "name": "คิดอย่างแยบยล"
+  },
+  "CelebrityCountenance": {
+    "name": "รูปลักษณ์ดารา"
+  },
+  "CoolWatcher": {
+    "name": "ดูอย่างใจเย็น"
+  },
+  "SignOfProsperity": {
+    "name": "ลางความมั่งคั่ง"
+  },
   "FantasticalMarvel": {
     "name": "มายาลวงตาพิศวง"
   },
@@ -15966,16 +16077,19 @@
     "name": "ฝันนิรันดร์ไร้พะวง"
   },
   "FalconWingsAblaze": {
-    "name": "Falcon Wings Ablaze"
+    "name": "ปีกปักษาแผดเผา"
   },
   "WisdomOfCherriedFrost": {
-    "name": "Wisdom of Cherried Frost"
+    "name": "เกล็ดซากุระเบิกบาน"
   },
   "RedHotMeter": {
-    "name": "Red-Hot Meter"
+    "name": "จังหวะสุดร้อนแรง"
   },
   "VigorousYapping": {
     "name": "พูดคุยอย่างคึกคัก"
+  },
+  "DiligentStudy": {
+    "name": "ขยันคิด ขยันเรียน"
   },
   "RhodeiaOfLoch": {
     "name": "Rhodeia of Loch"
@@ -16069,6 +16183,9 @@
   },
   "HydroTulpa": {
     "name": "Hydro Tulpa"
+  },
+  "BlackSerpentKnightRockbreakerAx": {
+    "name": "Black Serpent Knight: Rockbreaker Ax"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -16442,6 +16559,15 @@
   "FlowConvergence": {
     "name": "Flow Convergence"
   },
+  "TeaPartiesBurstingWithColor": {
+    "name": "Tea Parties Bursting With Color"
+  },
+  "BringerOfBlessing": {
+    "name": "Bringer of Blessing"
+  },
+  "OnceStoodAgainstTheTideOfDarkWatersLikeBedrock": {
+    "name": "\"Once Stood Against the Tide of Dark Waters Like Bedrock...\""
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -16772,6 +16898,9 @@
   "NoblesseOblige": {
     "name": "Noblesse Oblige"
   },
+  "NymphsDream": {
+    "name": "Nymph's Dream"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -16957,6 +17086,9 @@
   },
   "AdventurersGuild": {
     "name": "กิลด์นักผจญภัย"
+  },
+  "Seymour": {
+    "name": "Seymour"
   },
   "ElementalResonanceWovenIce": {
     "name": "Elemental Resonance: Woven Ice"
@@ -17183,6 +17315,15 @@
   "AnAncientSacrificeOfSacredBrocade": {
     "name": "หยกปฏิญาณในอดีต เปี่ยมด้วยจิตวิญญาณที่สัตย์ซื่อ"
   },
+  "LostLegaciesInTheSand": {
+    "name": "\"สิ่งที่หลงเหลือไว้ในเม็ดทราย\""
+  },
+  "TheNarzissenkreuzAdventure": {
+    "name": "การผจญภัยแห่ง Narzissenkreuz"
+  },
+  "PlanToSaveTheWorld": {
+    "name": "แผนการช่วยเหลือโลก"
+  },
   "Origin": {
     "name": "แรกเริ่ม"
   },
@@ -17338,6 +17479,9 @@
   },
   "AdventuresInBlazingHue": {
     "name": "การผจญภัยอันลุกโชน"
+  },
+  "TowardTheDistantHorizon": {
+    "name": "ปลายทางอันไกลโพ้นของเรื่องราว"
   },
   "RadiantPhantasm": {
     "name": "จินตนาการช่วงโชติ"
@@ -17902,6 +18046,12 @@
   },
   "CloudWrappedMoon": {
     "name": "\"ดุจปุยเมฆโอบกอด\""
+  },
+  "TheLonelyWayfarer": {
+    "name": "\"ผู้เดินเดียวดาย\""
+  },
+  "TimelessShine": {
+    "name": "\"แสงสว่างที่ไม่เปลี่ยนแปลง\""
   },
   "EfflorescentIllumination": {
     "name": "\"กลีบดอกทอแสง\""
@@ -18824,6 +18974,15 @@
   "ModelDishSaurusCrackers": {
     "name": "โมเดลอาหารปลอม - \"Saurus Cracker\""
   },
+  "GleamGlow": {
+    "name": "\"ประกายมหัศจรรย์\""
+  },
+  "LuckySpin": {
+    "name": "\"หมุนทำนาย\""
+  },
+  "BurstOfAppetite": {
+    "name": "\"เรียกน้ำย่อย\""
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"สำนึกของดินแดนแห่งวิสัยทัศน์\""
   },
@@ -18949,6 +19108,9 @@
   },
   "TavernDartboardValidThrow": {
     "name": "กระดานปาเป้าในร้านเหล้า - \"คะแนนสุทธิ\""
+  },
+  "TavernNoticeWhispersOfTheStreet": {
+    "name": "ประกาศจากร้านเหล้า - \"เรื่องเล่าในเมือง\""
   },
   "LingeringMoment": {
     "name": "\"ช่วงเวลาที่ผ่อนคลาย\""
@@ -20342,6 +20504,9 @@
   "SoftHuedHydrangeas": {
     "name": "\"ช่อดอกไม้สีอ่อน\""
   },
+  "PetalsWithoutPerfume": {
+    "name": "\"ดอกไม้ที่ไร้กลิ่นหอม\""
+  },
   "FirShelves": {
     "name": "ชั้นวางของไม้สนหนาม"
   },
@@ -20906,6 +21071,9 @@
   "SmallCargoContainerSafeStowage": {
     "name": "กล่องสินค้าขนาดเล็ก - \"จัดวางอย่างเหมาะสม\""
   },
+  "UtilityPocketDetector": {
+    "name": "\"เครื่องตรวจจับพกพาอเนกประสงค์\""
+  },
   "WeatheredBambooFence": {
     "name": "รั้วไม้ไผ่ทนสภาพอากาศ"
   },
@@ -21272,6 +21440,18 @@
   "PuzzlepalKeepCalmAndCarryOn": {
     "name": "คู่หูไขปริศนา - \"จากไปอย่างรีบร้อน\""
   },
+  "OneSecWhiz": {
+    "name": "\"หนึ่งวิพริบตาเดียว\""
+  },
+  "GrillmasterSupreme": {
+    "name": "\"ตำนานสุดยอดเนื้อย่าง\""
+  },
+  "WobblyPonyRide": {
+    "name": "\"ม้าจิ๋วโยกเยก\""
+  },
+  "VerticalBipolarTriLegTower": {
+    "name": "หอคอยสามขาแบบตั้งสองขั้ว"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "\"อัศวินฟันยื่นขี้เซา\""
   },
@@ -21283,5 +21463,17 @@
   },
   "LoafingKitty": {
     "name": "\"แมวน้อยนอนหมอบ\""
+  },
+  "LittleFinchie": {
+    "name": "\"นกน้อยจิ๊บจิ๊บ\""
+  },
+  "GourmetBandit": {
+    "name": "\"โจรขโมยอาหาร\""
+  },
+  "MasterWeaselmind": {
+    "name": "\"วีเซลวายร้ายจอมบงการ\""
+  },
+  "DragonOnTheMove": {
+    "name": "\"มังกรพร้อมรบ\""
   }
 }

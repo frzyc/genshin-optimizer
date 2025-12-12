@@ -236,6 +236,9 @@
   "PrepProgress": {
     "name": "Прогресс подготовки"
   },
+  "BlazingSpirit": {
+    "name": "Пылающее воодушевление"
+  },
   "Primogem": {
     "name": "Камень Истока"
   },
@@ -1109,6 +1112,12 @@
   "Nefer": {
     "name": "Нефер"
   },
+  "Durin": {
+    "name": "Дурин"
+  },
+  "Jahoda": {
+    "name": "Ягода"
+  },
   "KachinasStellaFortuna": {
     "name": "Удача Качины"
   },
@@ -1171,6 +1180,12 @@
   },
   "NefersStellaFortuna": {
     "name": "Удача Нефер"
+  },
+  "DurinsStellaFortuna": {
+    "name": "Удача Дурина"
+  },
+  "JahodasStellaFortuna": {
+    "name": "Удача Ягоды"
   },
   "Apple": {
     "name": "Яблоко"
@@ -2907,7 +2922,7 @@
     "name": "Пейзаж долины Ветров"
   },
   "CyrusLetterToIris": {
-    "name": "Письмо Сайруса для Юй Ся"
+    "name": "Письмо Сайруса для Айрис"
   },
   "PictureOfDragonspine": {
     "name": "Пейзаж Драконьего хребта"
@@ -8108,6 +8123,27 @@
   "SugarSculptureNefer": {
     "name": "Сахарная фигурка: Нефер"
   },
+  "AfterClassPractice": {
+    "name": "Домашняя работа"
+  },
+  "AppleStewTrialVersion": {
+    "name": "Тушёное мясо с яблоками (пробная версия)"
+  },
+  "SuspiciousSpicedFriedChicken": {
+    "name": "Странные пряные куриные наггетсы"
+  },
+  "SpicedFriedChicken": {
+    "name": "Пряные куриные наггетсы"
+  },
+  "DeliciousSpicedFriedChicken": {
+    "name": "Вкусные пряные куриные наггетсы"
+  },
+  "SugarSculptureJahoda": {
+    "name": "Сахарная фигурка: Ягода"
+  },
+  "SugarSculptureKuuhenki": {
+    "name": "Сахарная фигурка: Куухенки"
+  },
   "RecipeItem": {
     "name": "Ингредиенты"
   },
@@ -8878,6 +8914,9 @@
   },
   "RecipeLohikeitto": {
     "name": "Рецепт: Лохикейтто"
+  },
+  "RecipeSpicedFriedChicken": {
+    "name": "Рецепт: Пряные куриные наггетсы"
   },
   "CraftedItems": {
     "name": "Созданные Предметы"
@@ -9664,6 +9703,9 @@
   },
   "RadiantAntler": {
     "name": "Сияющий рог"
+  },
+  "CyclicMilitaryKuuvahkiCore": {
+    "name": "Циклическое военное ядро куувяки"
   },
   "TileOfDecarabiansTower": {
     "name": "Плитка башни Декарабиана"
@@ -13142,6 +13184,30 @@
   "CuratoriumFunds": {
     "name": "Средства Куратория тайн"
   },
+  "RhinedottirsGift": {
+    "name": "«Подарок» Рэйндоттир"
+  },
+  "RaggedDoll": {
+    "name": "Потрёпанная кукла"
+  },
+  "ScribbledLetter": {
+    "name": "Небрежно написанное письмо"
+  },
+  "MoonPrayerNightPamphlet": {
+    "name": "Путеводитель «Ночь лунной молитвы»"
+  },
+  "GreetingCardForColumbina": {
+    "name": "Открытка для Коломбины"
+  },
+  "MoonPrayerCandyFromColumbina": {
+    "name": "Конфеты лунной молитвы Коломбины"
+  },
+  "TheSoulblazerSagaVolume2": {
+    "name": "Сага Пылких Сердец II"
+  },
+  "TaleOfDurin": {
+    "name": "История Дурина"
+  },
   "TearsAmongTheStars": {
     "name": "Слёзы средь звёзд"
   },
@@ -14132,6 +14198,9 @@
   "GoldenStrings": {
     "name": "Золотые струны"
   },
+  "RefinedHeart": {
+    "name": "Закалка сердца"
+  },
   "FalconsDance": {
     "name": "Танец сокола"
   },
@@ -15059,6 +15128,18 @@
   "TravelNotesBygoneRuins": {
     "name": "Руины"
   },
+  "DurinRadiantHeart": {
+    "name": "Сияющее сердце"
+  },
+  "JahodaHelpingHand": {
+    "name": "Рука помощи"
+  },
+  "TravelNotesBlazingSnow": {
+    "name": "Пылающий снег"
+  },
+  "CelebrationDreamReader": {
+    "name": "В объятиях книг"
+  },
   "EchoDandelionKnight": {
     "name": "Эхо: Рыцарь Одуванчик"
   },
@@ -15103,6 +15184,12 @@
   },
   "EchoPhysicOfPurity": {
     "name": "Эхо: Средоточие чистоты"
+  },
+  "EchoKreideprinz": {
+    "name": "Эхо: Принц мела"
+  },
+  "EchoFleeingSunlight": {
+    "name": "Эхо: Ускользающее солнце"
   },
   "FaintGlow": {
     "name": "Бледный свет"
@@ -15433,6 +15520,9 @@
   },
   "LunarArcanaCase": {
     "name": "Шкатулка лунных арканов"
+  },
+  "TheLittleWitchsDictionary": {
+    "name": "Словарь маленькой ведьмы"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Инструкции: Камень эха анемокула"
@@ -15917,6 +16007,27 @@
   "EagerAndReady": {
     "name": "Не терпится"
   },
+  "SharpObserver": {
+    "name": "Наблюдение и исследование"
+  },
+  "TeaTime": {
+    "name": "Время чаепития"
+  },
+  "MerchantsAura": {
+    "name": "Аура торговца"
+  },
+  "IngeniousForesight": {
+    "name": "Остроумие и предусмотрительность"
+  },
+  "CelebrityCountenance": {
+    "name": "Звёздный образ"
+  },
+  "CoolWatcher": {
+    "name": "Спокойное наблюдение"
+  },
+  "SignOfProsperity": {
+    "name": "Предвестие богатства"
+  },
   "FantasticalMarvel": {
     "name": "Чудесная идея"
   },
@@ -15976,6 +16087,9 @@
   },
   "VigorousYapping": {
     "name": "Активное общение"
+  },
+  "DiligentStudy": {
+    "name": "Усердное обучение"
   },
   "RhodeiaOfLoch": {
     "name": "Родия"
@@ -16069,6 +16183,9 @@
   },
   "HydroTulpa": {
     "name": "Гидротульпа"
+  },
+  "BlackSerpentKnightRockbreakerAx": {
+    "name": "Рыцарь Чёрного Змея: Крушащая камни секира"
   },
   "UndividedHeart": {
     "name": "Неразделённое сердце"
@@ -16442,6 +16559,15 @@
   "FlowConvergence": {
     "name": "Слияние потоков"
   },
+  "TeaPartiesBurstingWithColor": {
+    "name": "Красочные чаепития"
+  },
+  "BringerOfBlessing": {
+    "name": "Несущий благословение"
+  },
+  "OnceStoodAgainstTheTideOfDarkWatersLikeBedrock": {
+    "name": "«Когда-то сдерживал потоки чёрных вод, как скала...»"
+  },
   "MagicGuide": {
     "name": "Руководство по магии"
   },
@@ -16772,6 +16898,9 @@
   "NoblesseOblige": {
     "name": "Церемония древней знати"
   },
+  "NymphsDream": {
+    "name": "Сон нимфы"
+  },
   "LiyueHarborWharf": {
     "name": "Гавань Ли Юэ"
   },
@@ -16957,6 +17086,9 @@
   },
   "AdventurersGuild": {
     "name": "Гильдия искателей приключений"
+  },
+  "Seymour": {
+    "name": "Сеймур"
   },
   "ElementalResonanceWovenIce": {
     "name": "Элементальный резонанс: Переплетение Крио"
@@ -17183,6 +17315,15 @@
   "AnAncientSacrificeOfSacredBrocade": {
     "name": "Древняя жертва Священной кометы"
   },
+  "LostLegaciesInTheSand": {
+    "name": "Наследие песков"
+  },
+  "TheNarzissenkreuzAdventure": {
+    "name": "Великое приключение в Нарциссенкрейце"
+  },
+  "PlanToSaveTheWorld": {
+    "name": "План спасения мира"
+  },
   "Origin": {
     "name": "Изначальный"
   },
@@ -17338,6 +17479,9 @@
   },
   "AdventuresInBlazingHue": {
     "name": "Пылающие приключения"
+  },
+  "TowardTheDistantHorizon": {
+    "name": "К дальним горизонтам"
   },
   "RadiantPhantasm": {
     "name": "Сияющий фантазм"
@@ -17902,6 +18046,12 @@
   },
   "CloudWrappedMoon": {
     "name": "В объятиях облаков"
+  },
+  "TheLonelyWayfarer": {
+    "name": "Одинокий путник"
+  },
+  "TimelessShine": {
+    "name": "Вечное сияние"
   },
   "EfflorescentIllumination": {
     "name": "Флуоресцентное освещение"
@@ -18824,6 +18974,15 @@
   "ModelDishSaurusCrackers": {
     "name": "Модель блюда: Заврианское печенье"
   },
+  "GleamGlow": {
+    "name": "Блеск и сияние"
+  },
+  "LuckySpin": {
+    "name": "Колесо удачи"
+  },
+  "BurstOfAppetite": {
+    "name": "Взрыв аппетита"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "«Постижения из страны мудрости»"
   },
@@ -18949,6 +19108,9 @@
   },
   "TavernDartboardValidThrow": {
     "name": "Дартс для таверны: Меткий бросок"
+  },
+  "TavernNoticeWhispersOfTheStreet": {
+    "name": "Объявления таверны: Городские слухи"
   },
   "LingeringMoment": {
     "name": "Затянувшееся мгновение"
@@ -20342,6 +20504,9 @@
   "SoftHuedHydrangeas": {
     "name": "Нежные гортензии"
   },
+  "PetalsWithoutPerfume": {
+    "name": "Лепестки без аромата"
+  },
   "FirShelves": {
     "name": "Полки из пихты"
   },
@@ -20906,6 +21071,9 @@
   "SmallCargoContainerSafeStowage": {
     "name": "Малый грузовой контейнер: Надёжное хранение"
   },
+  "UtilityPocketDetector": {
+    "name": "Карманный детектор"
+  },
   "WeatheredBambooFence": {
     "name": "Ветхая бамбуковая ограда"
   },
@@ -21272,6 +21440,18 @@
   "PuzzlepalKeepCalmAndCarryOn": {
     "name": "Друг-разгадчик: Хладнокровие и решительность"
   },
+  "OneSecWhiz": {
+    "name": "Быстроделкин"
+  },
+  "GrillmasterSupreme": {
+    "name": "Великий мастер гриля"
+  },
+  "WobblyPonyRide": {
+    "name": "Лошадка-качалка"
+  },
+  "VerticalBipolarTriLegTower": {
+    "name": "Вертикальная трёхопорная башня"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "Капибальеро Дон Зубастик"
   },
@@ -21283,5 +21463,17 @@
   },
   "LoafingKitty": {
     "name": "Котик-хлебушек"
+  },
+  "LittleFinchie": {
+    "name": "Маленький зяблик"
+  },
+  "GourmetBandit": {
+    "name": "Вор вкусняшек"
+  },
+  "MasterWeaselmind": {
+    "name": "Хитрый хорь"
+  },
+  "DragonOnTheMove": {
+    "name": "Атака дракона"
   }
 }

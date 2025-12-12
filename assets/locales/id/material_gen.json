@@ -236,6 +236,9 @@
   "PrepProgress": {
     "name": "Kemajuan Persiapan"
   },
+  "BlazingSpirit": {
+    "name": "Blazing Spirit"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -1109,6 +1112,12 @@
   "Nefer": {
     "name": "Nefer"
   },
+  "Durin": {
+    "name": "Durin"
+  },
+  "Jahoda": {
+    "name": "Jahoda"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina's Stella Fortuna"
   },
@@ -1171,6 +1180,12 @@
   },
   "NefersStellaFortuna": {
     "name": "Nefer's Stella Fortuna"
+  },
+  "DurinsStellaFortuna": {
+    "name": "Durin's Stella Fortuna"
+  },
+  "JahodasStellaFortuna": {
+    "name": "Jahoda's Stella Fortuna"
   },
   "Apple": {
     "name": "Apple"
@@ -8108,6 +8123,27 @@
   "SugarSculptureNefer": {
     "name": "Sugar Sculpture: Nefer"
   },
+  "AfterClassPractice": {
+    "name": "\"After-Class Practice\""
+  },
+  "AppleStewTrialVersion": {
+    "name": "Apple Stew (Trial Version)"
+  },
+  "SuspiciousSpicedFriedChicken": {
+    "name": "Suspicious Spiced Fried Chicken"
+  },
+  "SpicedFriedChicken": {
+    "name": "Spiced Fried Chicken"
+  },
+  "DeliciousSpicedFriedChicken": {
+    "name": "Delicious Spiced Fried Chicken"
+  },
+  "SugarSculptureJahoda": {
+    "name": "Sugar Sculpture: Jahoda"
+  },
+  "SugarSculptureKuuhenki": {
+    "name": "Sugar Sculpture: Kuuhenki"
+  },
   "RecipeItem": {
     "name": "Bahan Resep"
   },
@@ -8878,6 +8914,9 @@
   },
   "RecipeLohikeitto": {
     "name": "Resep: Lohikeitto"
+  },
+  "RecipeSpicedFriedChicken": {
+    "name": "Resep: Spiced Fried Chicken"
   },
   "CraftedItems": {
     "name": "Hasil Craft"
@@ -9664,6 +9703,9 @@
   },
   "RadiantAntler": {
     "name": "Radiant Antler"
+  },
+  "CyclicMilitaryKuuvahkiCore": {
+    "name": "Cyclic Military Kuuvahki Core"
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
@@ -13142,6 +13184,30 @@
   "CuratoriumFunds": {
     "name": "Curatorium Funds"
   },
+  "RhinedottirsGift": {
+    "name": "\"Hadiah\" Rhinedottir"
+  },
+  "RaggedDoll": {
+    "name": "\"Boneka\" Usang"
+  },
+  "ScribbledLetter": {
+    "name": "Surat Corat-Coret"
+  },
+  "MoonPrayerNightPamphlet": {
+    "name": "Buku Panduan \"Malam Doa Rembulan\""
+  },
+  "GreetingCardForColumbina": {
+    "name": "Kartu Ucapan untuk Columbina"
+  },
+  "MoonPrayerCandyFromColumbina": {
+    "name": "Permen Doa Rembulan Buatan Columbina"
+  },
+  "TheSoulblazerSagaVolume2": {
+    "name": "Kisah Pertarungan Soulblazer: Volume 2"
+  },
+  "TaleOfDurin": {
+    "name": "Kisah Tentang \"Durin\""
+  },
   "TearsAmongTheStars": {
     "name": "Air Mata di Lautan Bintang"
   },
@@ -14132,6 +14198,9 @@
   "GoldenStrings": {
     "name": "Golden String"
   },
+  "RefinedHeart": {
+    "name": "Refined Heart"
+  },
   "FalconsDance": {
     "name": "Falcon's Dance"
   },
@@ -15059,6 +15128,18 @@
   "TravelNotesBygoneRuins": {
     "name": "Catatan Perjalanan: Reruntuhan Kuno"
   },
+  "DurinRadiantHeart": {
+    "name": "Durin: Radiant Heart"
+  },
+  "JahodaHelpingHand": {
+    "name": "Jahoda: Helping Hand"
+  },
+  "TravelNotesBlazingSnow": {
+    "name": "Catatan Perjalanan: Salju Membara"
+  },
+  "CelebrationDreamReader": {
+    "name": "Perayaan: Pembaca Mimpi"
+  },
   "EchoDandelionKnight": {
     "name": "Echo: Dandelion Knight"
   },
@@ -15103,6 +15184,12 @@
   },
   "EchoPhysicOfPurity": {
     "name": "Echo: Physic of Purity"
+  },
+  "EchoKreideprinz": {
+    "name": "Echo: Kreideprinz"
+  },
+  "EchoFleeingSunlight": {
+    "name": "Echo: Fleeing Sunlight"
   },
   "FaintGlow": {
     "name": "Faint Glow"
@@ -15433,6 +15520,9 @@
   },
   "LunarArcanaCase": {
     "name": "Lunar Arcana Case"
+  },
+  "TheLittleWitchsDictionary": {
+    "name": "The Little Witch's Dictionary"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Panduan: Anemoculus Resonance Stone"
@@ -15917,6 +16007,27 @@
   "EagerAndReady": {
     "name": "Semangat dan Siap"
   },
+  "SharpObserver": {
+    "name": "Pengamat Cermat"
+  },
+  "TeaTime": {
+    "name": "Waktunya Minum Teh"
+  },
+  "MerchantsAura": {
+    "name": "Aura Pebisnis"
+  },
+  "IngeniousForesight": {
+    "name": "Pertimbangan Matang"
+  },
+  "CelebrityCountenance": {
+    "name": "Pose Artis"
+  },
+  "CoolWatcher": {
+    "name": "Nonton Saja Deh"
+  },
+  "SignOfProsperity": {
+    "name": "Tanda-Tanda Ketiban Rejeki"
+  },
   "FantasticalMarvel": {
     "name": "Fantastical Marvel"
   },
@@ -15976,6 +16087,9 @@
   },
   "VigorousYapping": {
     "name": "Celotehan Bersemangat"
+  },
+  "DiligentStudy": {
+    "name": "Tekun Belajar"
   },
   "RhodeiaOfLoch": {
     "name": "Rhodeia of Loch"
@@ -16069,6 +16183,9 @@
   },
   "HydroTulpa": {
     "name": "Hydro Tulpa"
+  },
+  "BlackSerpentKnightRockbreakerAx": {
+    "name": "Black Serpent Knight: Rockbreaker Ax"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -16442,6 +16559,15 @@
   "FlowConvergence": {
     "name": "Flow Convergence"
   },
+  "TeaPartiesBurstingWithColor": {
+    "name": "Tea Parties Bursting With Color"
+  },
+  "BringerOfBlessing": {
+    "name": "Bringer of Blessing"
+  },
+  "OnceStoodAgainstTheTideOfDarkWatersLikeBedrock": {
+    "name": "\"Once Stood Against the Tide of Dark Waters Like Bedrock...\""
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -16772,6 +16898,9 @@
   "NoblesseOblige": {
     "name": "Noblesse Oblige"
   },
+  "NymphsDream": {
+    "name": "Nymph's Dream"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -16957,6 +17086,9 @@
   },
   "AdventurersGuild": {
     "name": "Adventurers' Guild"
+  },
+  "Seymour": {
+    "name": "Seymour"
   },
   "ElementalResonanceWovenIce": {
     "name": "Resonansi Elemental: Woven Ice"
@@ -17183,6 +17315,15 @@
   "AnAncientSacrificeOfSacredBrocade": {
     "name": "An Ancient Sacrifice of Sacred Brocade"
   },
+  "LostLegaciesInTheSand": {
+    "name": "Lost Legacies in the Sand"
+  },
+  "TheNarzissenkreuzAdventure": {
+    "name": "The Narzissenkreuz Adventure"
+  },
+  "PlanToSaveTheWorld": {
+    "name": "Plan to Save the World"
+  },
   "Origin": {
     "name": "Origin"
   },
@@ -17338,6 +17479,9 @@
   },
   "AdventuresInBlazingHue": {
     "name": "Adventures in Blazing Hue"
+  },
+  "TowardTheDistantHorizon": {
+    "name": "Toward the Distant Horizon"
   },
   "RadiantPhantasm": {
     "name": "Radiant Phantasm"
@@ -17902,6 +18046,12 @@
   },
   "CloudWrappedMoon": {
     "name": "\"Layaknya Dekapan Rembulan\""
+  },
+  "TheLonelyWayfarer": {
+    "name": "\"Pengembara Tunggal\""
+  },
+  "TimelessShine": {
+    "name": "\"Cahaya Abadi\""
   },
   "EfflorescentIllumination": {
     "name": "Iluminasi Berbunga"
@@ -18824,6 +18974,15 @@
   "ModelDishSaurusCrackers": {
     "name": "Model Hidangan: \"Saurus Crackers\""
   },
+  "GleamGlow": {
+    "name": "\"Kilau Luar Biasa\""
+  },
+  "LuckySpin": {
+    "name": "\"Roda Keberuntungan\""
+  },
+  "BurstOfAppetite": {
+    "name": "\"Menggugah Selera\""
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Kesadaran dari Tanah Kebijaksanaan\""
   },
@@ -18949,6 +19108,9 @@
   },
   "TavernDartboardValidThrow": {
     "name": "Papan Dart Tavern: Lemparan yang Sah"
+  },
+  "TavernNoticeWhispersOfTheStreet": {
+    "name": "Pengumuman Kedai: Rumor Jalanan"
   },
   "LingeringMoment": {
     "name": "Momen tak Terlupakan"
@@ -20342,6 +20504,9 @@
   "SoftHuedHydrangeas": {
     "name": "\"Hydrangea Berwarna Lembut\""
   },
+  "PetalsWithoutPerfume": {
+    "name": "\"Bunga Tanpa Aroma\""
+  },
   "FirShelves": {
     "name": "Rak Kayu Fir"
   },
@@ -20906,6 +21071,9 @@
   "SmallCargoContainerSafeStowage": {
     "name": "Kabin Kargo Kecil: \"Penempatan Aman\""
   },
+  "UtilityPocketDetector": {
+    "name": "\"Detektor Portabel Praktis\""
+  },
   "WeatheredBambooFence": {
     "name": "Pagar Bambu Lapuk"
   },
@@ -21272,6 +21440,18 @@
   "PuzzlepalKeepCalmAndCarryOn": {
     "name": "Puzzlepal: Tetap Tenang dan Terus Maju"
   },
+  "OneSecWhiz": {
+    "name": "\"Satu Detik Beres\""
+  },
+  "GrillmasterSupreme": {
+    "name": "\"Pemanggang Super Legendaris\""
+  },
+  "WobblyPonyRide": {
+    "name": "\"Kuda-Kudaan Goyang\""
+  },
+  "VerticalBipolarTriLegTower": {
+    "name": "Menara Bipolar Berkaki Tiga"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "\"Kesatria Kapi Bertaring Panjang\""
   },
@@ -21283,5 +21463,17 @@
   },
   "LoafingKitty": {
     "name": "Kucing Malas Gerak"
+  },
+  "LittleFinchie": {
+    "name": "\"Si Finch Kecil\""
+  },
+  "GourmetBandit": {
+    "name": "\"Pencuri Kuliner\""
+  },
+  "MasterWeaselmind": {
+    "name": "\"Musang di Balik Layar\""
+  },
+  "DragonOnTheMove": {
+    "name": "\"Naga yang Menyerang\""
   }
 }

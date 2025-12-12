@@ -1,0 +1,24 @@
+{
+  "name": "Arc pluvial du serpent arc-en-ciel",
+  "description": {
+    "0": "Une arme cérémonielle ancestrale transmise par les Maîtres du vent nocturne. Cet arc ténébreux est à jamais imprégné d'un froid inébranlable."
+  },
+  "passiveName": "Murmures astraux d'au-delà du trône sacré",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, l'ATQ augmente de <cryo>28 %</cryo> pendant 8 s après que le personnage équipé de l'arme touche un ennemi."
+    },
+    "1": {
+      "0": "Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, l'ATQ augmente de <cryo>35 %</cryo> pendant 8 s après que le personnage équipé de l'arme touche un ennemi."
+    },
+    "2": {
+      "0": "Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, l'ATQ augmente de <cryo>42 %</cryo> pendant 8 s après que le personnage équipé de l'arme touche un ennemi."
+    },
+    "3": {
+      "0": "Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, l'ATQ augmente de <cryo>49 %</cryo> pendant 8 s après que le personnage équipé de l'arme touche un ennemi."
+    },
+    "4": {
+      "0": "Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, l'ATQ augmente de <cryo>56 %</cryo> pendant 8 s après que le personnage équipé de l'arme touche un ennemi."
+    }
+  }
+}

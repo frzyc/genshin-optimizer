@@ -17,7 +17,7 @@
       },
       "plunging": {
         "0": "<strong>Angriff aus dem Fall</strong> ",
-        "1": "Konzentriert die Dendro-Kraft, um sich aus der Luft auf den Boden zu stürzen, Gegner auf dem Weg anzugreifen und beim Aufprall auf den Boden <dendro>Dendro-Flächenschaden</dendro> zu verursachen."
+        "1": "Konzentriert die Dendro-Kraft, um sich aus der Luft auf den Boden zu stürzen, Gegner in der Bahn anzugreifen und beim Aufprall auf den Boden <dendro>Dendro-Flächenschaden</dendro> zu verursachen."
       }
     },
     "skillParams": {
@@ -120,8 +120,7 @@
   "passive": {
     "name": "Verschwörung der Goldenen Kammer",
     "description": {
-      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Nod-Krai 25 % mehr Belohnungen.",
-      "1": "Als Leiterin des Kuratoriums der Geheimnisse hat Nefer auf irgendeine Art und Weise Zugang zu allen möglichen Informationen ... Informationen, die für die unterschiedlichen Fraktionen in Nasha von großem Interesse sind ..."
+      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Nod-Krai 25 % mehr Belohnungen."
     }
   },
   "constellation1": {
@@ -147,8 +146,8 @@
   "constellation4": {
     "name": "Gefangen im Labyrinth der Rätsel",
     "description": {
-      "0": "Erhöht, wenn Nefer sich auf dem Feld und im Zustand <strong>Schattentanz</strong> befindet, ihre Geschwindigkeit zum Erhalt von „Grünender Tau“ um 25 %.",
-      "1": "Verringert zudem, wenn Nefer sich im Zustand „Schattentanz“ befindet, den <dendro>Dendro-WDS</dendro> von Gegnern in der Nähe um 20 %. Dieser Effekt wird 4,5 s, nachdem Nefer den Zustand „Schattentanz“ verlässt oder sie sich eine gewisse Distanz von den Gegnern entfernt, enden."
+      "0": "Erhöht, wenn Nefer sich auf dem Feld und im Zustand <strong>Schattentanz</strong> befindet, ihre Effizienz zum Erhalt von „Grünender Tau“ um 25 %.",
+      "1": "Verringert zudem, wenn Nefer sich im Zustand „Schattentanz“ befindet, den <dendro>Dendro-WDS</dendro> von Gegnern in der Nähe um 20 %. Dieser Effekt endet 4,5 s, nachdem Nefer den Zustand „Schattentanz“ verlassen oder sich eine gewisse Distanz von den Gegnern entfernt hat."
     }
   },
   "constellation5": {
@@ -161,7 +160,7 @@
   "constellation6": {
     "name": "Sieg entspringt dem Umbruch der Zeit",
     "description": {
-      "0": "Wandelt, wenn Nefer <strong>Fantasmaauftritt</strong> anwendet, die zweite Phase des von ihr selbst verursachten Schadens in <dendro>Dendro-Flächenschaden</dendro> in Höhe von 85 % von Nefers Elementarkunde um. Verursacht zudem, wenn der Fantasmaauftritt-Angriff beendet ist, einmal <dendro>Dendro-Flächenschaden</dendro> in Höhe von 120 % von Nefers Elementarkunde. Oben genannter Schaden gilt beides als mit Fantasmaaustritt verursachter Schaden der Reaktion Mondspross.",
+      "0": "Wandelt, wenn Nefer <strong>Fantasmaauftritt</strong> anwendet, die zweite Phase des von ihr selbst verursachten Schadens in <dendro>Dendro-Flächenschaden</dendro> in Höhe von 85 % von Nefers Elementarkunde um. Verursacht zudem, wenn der Fantasmaauftritt-Angriff beendet ist, einmal <dendro>Dendro-Flächenschaden</dendro> in Höhe von 120 % von Nefers Elementarkunde. Oben genannter Schaden gilt beides als mit Fantasmaauftritt verursachter Schaden der Reaktion Mondspross.",
       "1": "<br/>",
       "2": "<strong>Mondomen – Reifer Glanz</strong> ",
       "3": "<strong>Steigert</strong> den von Nefer mit der Reaktion Mondspross verursachten Schaden um 15 %."

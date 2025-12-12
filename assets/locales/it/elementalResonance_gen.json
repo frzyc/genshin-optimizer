@@ -61,5 +61,11 @@
         }
       }
     }
+  },
+  "Hexerei": {
+    "name": "Hexerei: Rito segreto",
+    "desc": {
+      "0": "I personaggi nel tuo gruppo con attributo Hexerei vengono ulteriormente potenziati."
+    }
   }
 }

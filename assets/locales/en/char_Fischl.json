@@ -3,5 +3,8 @@
   "a2Name": "Thundering Retribution DMG",
   "c1Name": "Joint Attack DMG",
   "c4AoeDmg": "Additional AoE DMG",
-  "c6OzDmg": "Coordinated Attack DMG"
+  "c6OzDmg": "Coordinated Attack DMG",
+  "lockEcLcCond": "After a party member triggers an <electrocharged>Electro-Charged</electrocharged> or <lunarcharged>Lunar-Charged</lunarcharged> Reaction",
+  "c6Cond": "After Oz performs a coordinated attack",
+  "c6Text": "<strong>Witch's Eve Rite: Phantasmal Nocturne</strong> effects increase"
 }
