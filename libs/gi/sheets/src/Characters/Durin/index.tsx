@@ -467,18 +467,24 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
     skillBoost: skillC5,
     burstBoost: burstC3,
-    vaporize_dmg_: sum(a1Dark_vaporize_dmg_),
-    melt_dmg_: sum(a1Dark_melt_dmg_),
+    vaporize_dmg_: sum(a1Dark_vaporize_dmg_, lockDark_vaporize_dmg_),
+    melt_dmg_: sum(a1Dark_melt_dmg_, lockDark_melt_dmg_),
     burst_dmgInc: c1StacksDark_burst_dmgInc,
     burst_dmg_: c4_burst_dmg_,
   },
   teamBuff: {
     premod: {
-      pyro_enemyRes_: sum(a1White_pyro_enemyRes_),
-      dendro_enemyRes_: sum(a1White_dendro_enemyRes_),
-      electro_enemyRes_: sum(a1White_electro_enemyRes_),
-      anemo_enemyRes_: sum(a1White_anemo_enemyRes_),
-      geo_enemyRes_: sum(a1White_geo_enemyRes_),
+      pyro_enemyRes_: sum(a1White_pyro_enemyRes_, lockWhite_pyro_enemyRes_),
+      dendro_enemyRes_: sum(
+        a1White_dendro_enemyRes_,
+        lockWhite_dendro_enemyRes_
+      ),
+      electro_enemyRes_: sum(
+        a1White_electro_enemyRes_,
+        lockWhite_electro_enemyRes_
+      ),
+      anemo_enemyRes_: sum(a1White_anemo_enemyRes_, lockWhite_anemo_enemyRes_),
+      geo_enemyRes_: sum(a1White_geo_enemyRes_, lockWhite_geo_enemyRes_),
       normal_dmgInc: c1StacksWhite_normal_dmgInc,
       charged_dmgInc: c1StacksWhite_charged_dmgInc,
       plunging_dmgInc: c1StacksWhite_plunging_dmgInc,
