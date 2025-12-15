@@ -263,6 +263,8 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
   )
   if (!damageType) {
     if (key === 'AstraYao' && abilityName === 'Chord') return 'exSpecial'
+    if (key === 'Banyue' && abilityName === 'DodgeImmovableMountain')
+      return 'dodgeCounter'
     if (key === 'Lucy' && abilityName === 'GuardBoarsToArms') return 'basic'
     if (key === 'Lucy' && abilityName === 'GuardBoarsSpinningSwing')
       return 'basic'

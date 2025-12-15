@@ -4,11 +4,13 @@ import Alice from './sheets/Alice'
 import Anby from './sheets/Anby'
 import Anton from './sheets/Anton'
 import AstraYao from './sheets/AstraYao'
+import Banyue from './sheets/Banyue'
 import Ben from './sheets/Ben'
 import Billy from './sheets/Billy'
 import Burnice from './sheets/Burnice'
 import Caesar from './sheets/Caesar'
 import Corin from './sheets/Corin'
+import Dialyn from './sheets/Dialyn'
 import Ellen from './sheets/Ellen'
 import Evelyn from './sheets/Evelyn'
 import Grace from './sheets/Grace'
@@ -49,11 +51,13 @@ const data: TagMapNodeEntries[] = [
   Anby,
   Anton,
   AstraYao,
+  Banyue,
   Ben,
   Billy,
   Burnice,
   Caesar,
   Corin,
+  Dialyn,
   Ellen,
   Evelyn,
   Grace,

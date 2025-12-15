@@ -78,6 +78,8 @@ export const allWengineKeys = [
   'VortexRevolver',
   'WeepingCradle',
   'WeepingGemini',
+  'WrathfulVajra',
+  'YesterdayCalls',
   'ZanshinHerbCase',
 ] as const
 

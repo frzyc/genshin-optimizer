@@ -25,6 +25,7 @@
   },
   "skills": {
     "basic": "Basic Attack",
+    "assistFollowUp": "Assist Follow-Up",
     "special": "Special Attack",
     "exSpecial": "EX Special Attack",
     "chain": "Chain Attack",

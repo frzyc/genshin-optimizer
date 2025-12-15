@@ -75,6 +75,8 @@ import VortexHatchet from './VortexHatchet'
 import VortexRevolver from './VortexRevolver'
 import WeepingCradle from './WeepingCradle'
 import WeepingGemini from './WeepingGemini'
+import WrathfulVajra from './WrathfulVajra'
+import YesterdayCalls from './YesterdayCalls'
 import ZanshinHerbCase from './ZanshinHerbCase'
 
 const data = {
@@ -154,6 +156,8 @@ const data = {
   VortexRevolver,
   WeepingCradle,
   WeepingGemini,
+  WrathfulVajra,
+  YesterdayCalls,
   ZanshinHerbCase,
 } as const
 export default data

@@ -3,6 +3,7 @@ import type { Document } from '@genshin-optimizer/game-opt/sheet-ui'
 import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
 import { useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import {
+  Banyue,
   Manato,
   Soldier0Anby,
   Yidhari,
@@ -19,6 +20,7 @@ export function CharSheetSection() {
       {characterKey === 'Soldier0Anby' && <MinimalS0AnbySheet />}
       {characterKey === 'Manato' && <MinimalManatoSheet />}
       {characterKey === 'Yidhari' && <MinimalYidhariSheet />}
+      {characterKey === 'Banyue' && <MinimalBanyueSheet />}
       {shouldShowDevComponents &&
         Object.values(charSheets[characterKey]).flatMap((sheet, index1) =>
           sheet.documents.map((doc, index2) => (
@@ -135,6 +137,31 @@ function MinimalYidhariSheet() {
   return (
     <>
       {yidhariDocs.map((doc, index) => (
+        <DocumentDisplay key={index} document={doc} />
+      ))}
+    </>
+  )
+}
+
+const banyueDocs: Document[] = [
+  {
+    type: 'text',
+    text: "We automatically convert Banyue's HP to Sheer Force at a ratio of 1:0.1. Everything else in his kit is not factored",
+  },
+  {
+    type: 'fields',
+    fields: [
+      {
+        title: <TagDisplay tag={Banyue.buffs.core_hpSheerForce.tag} />,
+        fieldRef: Banyue.buffs.core_hpSheerForce.tag,
+      },
+    ],
+  },
+]
+function MinimalBanyueSheet() {
+  return (
+    <>
+      {banyueDocs.map((doc, index) => (
         <DocumentDisplay key={index} document={doc} />
       ))}
     </>

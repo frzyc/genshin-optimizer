@@ -434,6 +434,20 @@
       "trap": "IconRoleGeneral48.png",
       "select": "IconRoleSelect48.png",
       "interknot": "IconInterKnotRole0048.png"
+    },
+    "Banyue": {
+      "full": "IconRole53.png",
+      "circle": "IconRoleCircle53.png",
+      "trap": "IconRoleGeneral53.png",
+      "select": "IconRoleSelect53.png",
+      "interknot": "IconInterKnotRole0053.png"
+    },
+    "Dialyn": {
+      "full": "IconRole54.png",
+      "circle": "IconRoleCircle54.png",
+      "trap": "IconRoleGeneral54.png",
+      "select": "IconRoleSelect54.png",
+      "interknot": "IconInterKnotRole0054.png"
     }
   },
   "wengines": {
@@ -744,6 +758,14 @@
     "CordisGermina": {
       "icon": "Weapon_S_1461.png",
       "big": "Weapon_S_1461Big.png"
+    },
+    "WrathfulVajra": {
+      "icon": "Weapon_S_1471.png",
+      "big": "Weapon_S_1471Big.png"
+    },
+    "YesterdayCalls": {
+      "icon": "Weapon_S_1481.png",
+      "big": "Weapon_S_1481Big.png"
     }
   }
 }
