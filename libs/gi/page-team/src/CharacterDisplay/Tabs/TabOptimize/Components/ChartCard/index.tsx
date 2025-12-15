@@ -573,14 +573,16 @@ function getLabelFromNode(info: InfoExtra & Info, t: TFunction) {
   if (textSuffix) {
     formattedSuffix =
       typeof textSuffix === 'string'
-        ? textSuffix
+        ? ` ${textSuffix}`
         : ` ${t(`${textSuffix?.props.ns}:${textSuffix?.props.key18}`)} ${
-            textSuffix?.props.values?.count
+            textSuffix?.props.values?.count != null
+              ? textSuffix.props.values.count
+              : ''
           }`
     // e.g. Clorinde's Swift Hunt DMG [Level 2]: Level(t(ns:key)) 2(values.count)
   }
 
   return typeof name === 'string'
     ? name
-    : `${t(`${name?.props.ns}:${name?.props.key18}`)} ${formattedSuffix}`
+    : `${t(`${name?.props.ns}:${name?.props.key18}`)}${formattedSuffix}`
 }
