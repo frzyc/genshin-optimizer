@@ -92,7 +92,7 @@ export default function ChartCard({
     generatedBuildListId: undefined,
   }
   const { builds: generatedBuilds } = useGeneratedBuildList(
-    generatedBuildListId ?? ''
+    generatedBuildListId ?? '',
   ) ?? { builds: [] as GeneratedBuild[] }
 
   const [sliderLow, setSliderLow] = useState(-Infinity)
@@ -105,7 +105,7 @@ export default function ChartCard({
       setSliderLow(l)
       setSliderHigh(h)
     },
-    [setSliderLow, setSliderHigh]
+    [setSliderLow, setSliderHigh],
   )
   // Reset the slider when chartData changes
   if (usePrev(chartData) !== chartData) {
@@ -118,7 +118,7 @@ export default function ChartCard({
     let sliderMin = Infinity
     let sliderMax = -Infinity
     const currentBuild = allArtifactSlotKeys.map(
-      (slotKey) => data?.get(input.art[slotKey].id).value ?? ''
+      (slotKey) => data?.get(input.art[slotKey].id).value ?? '',
     )
     // Shape the data so we know the current and highlighted builds
     const points = chartData.data
@@ -145,8 +145,8 @@ export default function ChartCard({
           (build) =>
             build.weaponId === weaponId &&
             Object.values(build.artifactIds).every(
-              (aId) => aId && datumBuildMap[aId]
-            )
+              (aId) => aId && datumBuildMap[aId],
+            ),
         )
         if (graphBuildIndex !== undefined && graphBuildIndex !== -1) {
           // Skip setting y-value if it has already been set.
@@ -162,8 +162,8 @@ export default function ChartCard({
           (build) =>
             build.weaponId === weaponId &&
             Object.values(build.artifactIds).every(
-              (aId) => aId && datumBuildMap[aId]
-            )
+              (aId) => aId && datumBuildMap[aId],
+            ),
         )
         if (generBuildIndex !== -1) {
           // Skip setting y-value if it has already been set.
@@ -207,7 +207,7 @@ export default function ChartCard({
     }
     return {
       displayData: points.filter(
-        (pt) => pt && pt.x >= sliderLow && pt.x <= sliderHigh
+        (pt) => pt && pt.x >= sliderLow && pt.x <= sliderHigh,
       ),
       downloadData,
       sliderMin,
@@ -372,16 +372,16 @@ function Chart({
       setGraphBuilds([...(graphBuilds ?? []), build])
       setSelectedPoint(undefined)
     },
-    [setGraphBuilds, graphBuilds]
+    [setGraphBuilds, graphBuilds],
   )
   const chartOnClick = useCallback(
     (props) => {
       if (props && props.chartX && props.chartY)
         setSelectedPoint(
-          getNearestPoint(props.chartX, props.chartY, 20, displayData)
+          getNearestPoint(props.chartX, props.chartY, 20, displayData),
         )
     },
-    [setSelectedPoint, displayData]
+    [setSelectedPoint, displayData],
   )
 
   const plotNodeInfo = plotNode.info && resolveInfo(plotNode.info)
@@ -536,18 +536,18 @@ function getNearestPoint(
   clickedX: number,
   clickedY: number,
   threshold: number,
-  data: EnhancedPoint[]
+  data: EnhancedPoint[],
 ) {
   const nearestDomPtData = Array.from(
-    document.querySelectorAll<DomPt>('.custom-dot')
+    document.querySelectorAll<DomPt>('.custom-dot'),
   ).reduce((domPtA, domPtB) => {
     const { chartX: aChartX, chartY: aChartY } = domPtA.dataset
     const aDistance = Math.sqrt(
-      (clickedX - aChartX) ** 2 + (clickedY - aChartY) ** 2
+      (clickedX - aChartX) ** 2 + (clickedY - aChartY) ** 2,
     )
     const { chartX: bChartX, chartY: bChartY } = domPtB.dataset
     const bDistance = Math.sqrt(
-      (clickedX - bChartX) ** 2 + (clickedY - bChartY) ** 2
+      (clickedX - bChartX) ** 2 + (clickedY - bChartY) ** 2,
     )
     return aDistance <= bDistance ? domPtA : domPtB
   })['dataset']
@@ -555,12 +555,12 @@ function getNearestPoint(
   // Don't select a point too far away
   const distance = Math.sqrt(
     (clickedX - nearestDomPtData.chartX) ** 2 +
-      (clickedY - nearestDomPtData.chartY) ** 2
+      (clickedY - nearestDomPtData.chartY) ** 2,
   )
   return distance < threshold
     ? data.find(
         (d) =>
-          d.x === +nearestDomPtData.xValue && d.y === +nearestDomPtData.yValue
+          d.x === +nearestDomPtData.xValue && d.y === +nearestDomPtData.yValue,
       )
     : undefined
 }
@@ -568,9 +568,19 @@ function getNearestPoint(
 // Should work because character translation should already be loaded
 function getLabelFromNode(info: InfoExtra & Info, t: TFunction) {
   const { name, textSuffix } = info
+
+  let formattedSuffix = ''
+  if (textSuffix) {
+    formattedSuffix =
+      typeof textSuffix === 'string'
+        ? textSuffix
+        : ` ${t(`${textSuffix?.props.ns}:${textSuffix?.props.key18}`)} ${
+            textSuffix?.props.values?.count
+          }`
+    // e.g. Clorinde's Swift Hunt DMG [Level 2]: Level(t(ns:key)) 2(values.count)
+  }
+
   return typeof name === 'string'
     ? name
-    : `${t(`${name?.props.ns}:${name?.props.key18}`)}${
-        textSuffix ? ` ${textSuffix}` : ''
-      }`
+    : `${t(`${name?.props.ns}:${name?.props.key18}`)} ${formattedSuffix}`
 }
