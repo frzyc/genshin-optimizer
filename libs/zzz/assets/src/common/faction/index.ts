@@ -1,4 +1,5 @@
 import BelebogHeavyIndustries from './IconCampBelobogIndustries.png'
+import KrampusComplianceAuthority from './IconCampBlackRoot.png'
 import CunningHares from './IconCampGentleHouse.png'
 import HollowSpecialOoperationsSection6 from './IconCampH.S.O-S6.png'
 import Mockingbird from './IconCampMockingBird.png'
@@ -16,6 +17,7 @@ const data = {
   CunningHares,
   CriminalInvestigationSpecialResponseTeam,
   HollowSpecialOoperationsSection6,
+  KrampusComplianceAuthority,
   Mockingbird,
   NewEriduDefenseForce,
   RandomPlay,

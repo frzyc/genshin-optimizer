@@ -1,18 +1,13 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: { sheet: 'Dialyn', name: 'boolConditional', type: 'bool' },
-  listConditional: {
+  malicious_complaint: {
     sheet: 'Dialyn',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
+    name: 'malicious_complaint',
+    type: 'bool',
   },
-  numConditional: {
+  overwhelmingly_positive: {
     sheet: 'Dialyn',
-    name: 'numConditional',
-    type: 'num',
-    int_only: true,
-    min: 0,
-    max: 2,
+    name: 'overwhelmingly_positive',
+    type: 'bool',
   },
 } as const

@@ -19815,6 +19815,7 @@
       "rarity": "S",
       "attribute": "fire",
       "specialty": "rupture",
+      "faction": "KrampusComplianceAuthority",
       "stats": {
         "atk_base": 124,
         "atk_growth": 7.4561,
@@ -20505,6 +20506,7 @@
       "rarity": "S",
       "attribute": "physical",
       "specialty": "stun",
+      "faction": "KrampusComplianceAuthority",
       "stats": {
         "atk_base": 109,
         "atk_growth": 6.4272,
