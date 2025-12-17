@@ -33,7 +33,7 @@ import {
   infusionVals,
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import { allInputPremodKeys } from '@genshin-optimizer/gi/wr'
+import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -137,7 +137,7 @@ export default function ItemConfigPanel({
       }
     }
     const exportData: CustomMultiTarget = {
-      ...initCustomMultiTarget(),
+      ...initCustomMultiTarget(1),
       name: func.name,
       functions: functions.filter((f) => functionsToExport.includes(f.name)),
       expression: [initExpressionUnit({ type: 'function', name: func.name })],
