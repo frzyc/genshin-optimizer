@@ -569,20 +569,20 @@ function getNearestPoint(
 function getLabelFromNode(info: InfoExtra & Info, t: TFunction) {
   const { name, textSuffix } = info
 
-  let formattedSuffix = ''
-  if (textSuffix) {
-    formattedSuffix =
-      typeof textSuffix === 'string'
-        ? ` ${textSuffix}`
-        : ` ${t(`${textSuffix?.props.ns}:${textSuffix?.props.key18}`)} ${
-            textSuffix?.props.values?.count != null
-              ? textSuffix.props.values.count
-              : ''
-          }`
-    // e.g. Clorinde's Swift Hunt DMG [Level 2]: Level(t(ns:key)) 2(values.count)
+  // helper function to format node info
+  function formatInfo(nodeInfo: any) {
+    let formattedInfo = ''
+
+    if (nodeInfo) {
+      formattedInfo =
+        typeof nodeInfo === 'string'
+          ? ` ${nodeInfo}`
+          : // Pass in data such as namespace, values, etc... through second parameter.
+            ` ${t(`${nodeInfo?.props.key18}`, { ns: nodeInfo?.props.ns, ...nodeInfo?.props.values })}`
+    }
+
+    return formattedInfo
   }
 
-  return typeof name === 'string'
-    ? name
-    : `${t(`${name?.props.ns}:${name?.props.key18}`)}${formattedSuffix}`
+  return `${formatInfo(name)}${formatInfo(textSuffix)}`
 }
