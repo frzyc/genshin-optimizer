@@ -570,19 +570,24 @@ function getLabelFromNode(info: InfoExtra & Info, t: TFunction) {
   const { name, textSuffix } = info
 
   // helper function to format node info
-  function formatInfo(nodeInfo: any) {
+  function formatInfo(
+    nodeInfo:
+      | string
+      | {
+          props?: { ns?: string; key18?: string; values?: Record<string, any> }
+        }
+      | undefined
+  ) {
     let formattedInfo = ''
-
-    if (nodeInfo) {
+    if (typeof nodeInfo === 'string') formattedInfo = nodeInfo
+    else if (nodeInfo && nodeInfo.props?.key18) {
       formattedInfo =
-        typeof nodeInfo === 'string'
-          ? ` ${nodeInfo}`
-          : // Pass in data such as namespace, values, etc... through second parameter.
-            ` ${t(`${nodeInfo?.props.key18}`, { ns: nodeInfo?.props.ns, ...nodeInfo?.props.values })}`
+        // Pass in data such as namespace, values, etc... through second parameter.
+        `${t(`${nodeInfo.props.key18}`, { ns: nodeInfo.props.ns, ...nodeInfo.props.values })}`
     }
 
     return formattedInfo
   }
 
-  return `${formatInfo(name)}${formatInfo(textSuffix)}`
+  return `${formatInfo(name)} ${formatInfo(textSuffix)}`
 }
