@@ -288,7 +288,12 @@ function burstEmbed(
   return embed
 }
 
-type Passives = 'passive1' | 'passive2' | 'passive3' | 'passive' | 'lockedPassive'
+type Passives =
+   | 'passive1'
+   | 'passive2'
+   | 'passive3'
+   | 'passive'
+   | 'lockedPassive'
 function selectPassive(p: number): Passives[] {
   if (p) {
     if (p === 1) return ['passive1']
