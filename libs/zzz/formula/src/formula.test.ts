@@ -32,6 +32,7 @@ import {
   own,
   ownBuff,
   ownTag,
+  prevMember,
   tagStr,
   team,
 } from './data/util'
@@ -87,6 +88,65 @@ describe('character test', () => {
       expect(calc.compute(anby.final.anomProf).val).toBeCloseTo(anomProf)
     }
   )
+})
+
+describe('temp test', () => {
+  it('fetches previous member specialty correctly', () => {
+    const charKey: CharacterKey = 'Dialyn'
+    const data: TagMapNodeEntries = [
+      ...teamData(['Dialyn', 'Banyue']),
+      ...withMember(
+        'Dialyn',
+        ...charTagMapNodeEntries({
+          level: 60,
+          promotion: 5,
+          key: charKey,
+          mindscape: 0,
+          basic: 1,
+          dodge: 1,
+          special: 1,
+          assist: 1,
+          chain: 1,
+          core: 6,
+        }),
+        ...wengineTagMapNodeEntries({
+          key: 'VortexRevolver',
+          level: 60,
+          modification: 5,
+          phase: 1,
+        }),
+        ...discTagMapNodeEntries({ atk: 100 }, { BranchBladeSong: 2 })
+      ),
+      ...withMember(
+        'Banyue',
+        ...charTagMapNodeEntries({
+          level: 60,
+          promotion: 5,
+          key: 'Banyue',
+          mindscape: 0,
+          basic: 1,
+          dodge: 1,
+          special: 1,
+          assist: 1,
+          chain: 1,
+          core: 6,
+        }),
+        ...wengineTagMapNodeEntries({
+          key: 'VortexRevolver',
+          level: 60,
+          modification: 5,
+          phase: 1,
+        }),
+        ...discTagMapNodeEntries({ atk: 100 }, { BranchBladeSong: 2 })
+      ),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    expect(
+      calc
+        .withTag({ src: 'Dialyn', dst: 'Dialyn', preset: 'preset0' })
+        .compute(prevMember.char.specialty).val
+    ).toBe('rupture')
+  })
 })
 
 describe('wengine test', () => {
