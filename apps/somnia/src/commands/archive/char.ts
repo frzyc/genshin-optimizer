@@ -219,12 +219,22 @@ function normalsEmbed(
     .setTitle(auto.name)
     .setDescription(
       clean(
-        Object.values(auto.fields.normal).join('\n') +
-          '\n\n' +
-          Object.values(auto.fields.charged).join('\n') +
-          '\n\n' +
-          Object.values(auto.fields.plunging).join('\n') +
-          '\n\n'
+        auto.upgradedFields
+          ? Object.values(auto.upgradedFields.normal).join('\n') +
+              '\n\n' +
+              Object.values(auto.upgradedFields.charged).join('\n') +
+              '\n\n' +
+              Object.values(auto.upgradedFields.plunging).join('\n') +
+              '\n\n' +
+              (auto.upgradedFields.hexerei
+                ? Object.values(auto.upgradedFields.hexerei).join('\n') + '\n\n'
+                : '')
+          : Object.values(auto.fields.normal).join('\n') +
+              '\n\n' +
+              Object.values(auto.fields.charged).join('\n') +
+              '\n\n' +
+              Object.values(auto.fields.plunging).join('\n') +
+              '\n\n'
       )
     )
     .setThumbnail(giURL(CommonAssetData.normalIcons[weapon]))
@@ -278,13 +288,13 @@ function burstEmbed(
   return embed
 }
 
-type Passives = 'passive1' | 'passive2' | 'passive3' | 'passive'
+type Passives = 'passive1' | 'passive2' | 'passive3' | 'passive' | 'lockedPassive'
 function selectPassive(p: number): Passives[] {
   if (p) {
     if (p === 1) return ['passive1']
     if (p === 4) return ['passive2']
   }
-  return ['passive1', 'passive2', 'passive3', 'passive']
+  return ['passive1', 'passive2', 'passive3', 'passive', 'lockedPassive']
 }
 
 function passivesEmbed(
@@ -333,10 +343,16 @@ function constellationsEmbed(
       lang,
       true
     )
-    text +=
-      `**${constellationId}. ${constellation.name}** ` +
-      Object.values(constellation.description).flat().join('\n') +
-      '\n\n'
+    text += `**C${constellationId}: ${constellation.name}**\n`
+
+    //hexerei upgrade
+    if (constellation.upgradedDescription)
+      text +=
+        Object.values(constellation.upgradedDescription).flat().join('\n') +
+        '\n\n'
+    else
+      text +=
+        Object.values(constellation.description).flat().join('\n') + '\n\n'
   }
   //make embed
   const embed = baseEmbed(id, lang).setDescription(clean(text))
