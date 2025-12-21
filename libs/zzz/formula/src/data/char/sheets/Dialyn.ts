@@ -1,5 +1,6 @@
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
+  cmpEq,
   cmpGE,
   constant,
   max,
@@ -17,6 +18,7 @@ import {
   own,
   ownBuff,
   percent,
+  prevMember,
   register,
   registerBuff,
   team,
@@ -50,11 +52,34 @@ const ability_check = (a: NumNode | number, b?: NumNode | number) =>
 
 const ability_attack_dmg = ownBuff.combat.flat_dmg.addWithDmgType(
   'exSpecial',
-  ability_check(prod(own.final.atk, percent(dm.ability.attack_dmg)))
+  ability_check(
+    // cmpEq(
+    //   prevMember.common.count.withSpecialty('attack'),
+    //   1,
+    prod(prevMember.final.atk, percent(dm.ability.attack_dmg))
+    // )
+  )
 )
 const ability_rupture_dmg = ownBuff.combat.flat_dmg.addWithDmgType(
   'exSpecial',
-  ability_check(prod(own.final.sheerForce, percent(dm.ability.rupture_dmg)))
+  ability_check(
+    cmpEq(
+      // read({
+      //   src: 'Banyue',
+      //   preset: 'preset0',
+      //   et: 'own',
+      //   qt: 'common',
+      //   q: 'count',
+      //   sheet: 'iso',
+      //   damageType1: 'exSpecial',
+      //   attribute: 'physical',
+      //   specialty: 'rupture',
+      // }),
+      prevMember.char.specialty,
+      'rupture',
+      prod(prevMember.final.sheerForce, percent(dm.ability.rupture_dmg))
+    )
+  )
 )
 
 const sheet = register(

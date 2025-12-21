@@ -9,7 +9,11 @@ import type {
   DiscIds,
   ICachedCharacter,
 } from '@genshin-optimizer/zzz/db'
-import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
+import {
+  useCharacter,
+  useDiscs,
+  useWengine,
+} from '@genshin-optimizer/zzz/db-ui'
 import {
   charTagMapNodeEntries,
   conditionalEntries,
@@ -43,14 +47,27 @@ export function CharCalcProvider({
   children: ReactNode
 }) {
   const member0 = useCharacterAndEquipment(character, wengineId, discIds)
+  const char = useCharacter('Banyue')
+  const member1 = useCharacterAndEquipment(char!, undefined, {
+    '1': undefined,
+    '2': undefined,
+    '3': undefined,
+    '4': undefined,
+    '5': undefined,
+    '6': undefined,
+  })
 
   const calc = useMemo(
     () =>
       zzzCalculatorWithEntries([
         // Specify members present in the team
-        ...teamData([character.key]),
+        ...teamData([
+          character.key,
+          ...charOpt.teammates.map((charKey) => charKey),
+        ]),
         // Add actual member data
         ...member0,
+        ...member1,
         // TODO: Get enemy values from db
         ownBuff.common.critMode.add(charOpt.critMode),
         enemy.common.lvl.add(charOpt.enemyLvl),
@@ -91,7 +108,7 @@ export function CharCalcProvider({
             .add(1),
         ]),
       ]),
-    [member0, charOpt, character.key]
+    [member0, member1, charOpt, character.key]
   )
   // Refresh the formula text cache per calc
   const formulaTextCache = useMemo(() => calc && new Map(), [calc])

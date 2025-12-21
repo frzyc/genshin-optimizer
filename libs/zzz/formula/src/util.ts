@@ -165,6 +165,16 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         .withTag({ et: 'target', dst })
         .reread(reader.withTag({ et: 'own', dst: null, src: dst }))
     ),
+    // Previous Member
+    members.map((src, i) =>
+      reader.withTag({ et: 'prevMember', src }).reread(
+        reader.withTag({
+          et: 'own',
+          dst: null,
+          src: members[(i + members.length - 1) % members.length],
+        })
+      )
+    ),
     // Team Buff
     members.flatMap((dst) => {
       const entry = own.with('src', dst)

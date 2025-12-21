@@ -228,6 +228,11 @@ export const own = convert(ownTag, { et: 'own', dst: null })
 export const team = convert(ownTag, { et: 'team', dst: null, ...noName })
 export const target = convert(ownTag, { et: 'target', ...noName })
 export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
+export const prevMember = convert(ownTag, {
+  et: 'prevMember',
+  dst: null,
+  name: null,
+})
 // Avoid reading from two counts at once
 team.common.count = team.common.count.withTag({
   specialty: null,
