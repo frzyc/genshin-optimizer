@@ -670,10 +670,6 @@ export const resonanceData = inferInfoMut({
         pivot: true,
       }),
       all_dmg_: erNodeDMG_,
-      // ...objKeyValMap(allLunarReactionKeys, (lr) => [
-      //   `${lr}_dmg_`,
-      //   { ...moonsignBuff },
-      // ]),
     },
     total: {
       // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
