@@ -327,7 +327,7 @@ const dmgFormulas = {
   skill: {
     dmg: dmgNode('atk', dm.skill.skillDmg, 'skill'),
     blossom: dmgNode('def', dm.skill.blossomDmg, 'skill', {
-      total: {
+      premod: {
         skill_dmg_: p1_blossom_dmg_,
         skill_dmgInc: a1LockSilver_blossom_dmgInc,
       },
