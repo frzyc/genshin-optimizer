@@ -1071,4 +1071,15 @@ export const formulas = {
       name: 'AssistFollowUpGlacialOnslaught_0_anomBuildup',
     },
   },
+  m6_heal: {
+    sheet: 'Yidhari',
+    name: 'm6_heal',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'heal',
+      sheet: 'Yidhari',
+      name: 'm6_heal',
+    },
+  },
 } as const

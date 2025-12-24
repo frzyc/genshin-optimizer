@@ -1,18 +1,13 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: { sheet: 'Yidhari', name: 'boolConditional', type: 'bool' },
-  listConditional: {
+  erudition: { sheet: 'Yidhari', name: 'erudition', type: 'bool' },
+  etherVeil: { sheet: 'Yidhari', name: 'etherVeil', type: 'bool' },
+  missingHp: {
     sheet: 'Yidhari',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'Yidhari',
-    name: 'numConditional',
+    name: 'missingHp',
     type: 'num',
     int_only: true,
     min: 0,
-    max: 2,
+    max: 50,
   },
 } as const

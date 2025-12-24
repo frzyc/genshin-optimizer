@@ -74,6 +74,10 @@ function StatLine({ read }: { read: Read<Tag> }) {
   )
   const computed = calc?.compute(newRead)
   const name = tag.name || tag.q
+  const computedTag = useMemo(
+    () => ({ ...computed?.meta.tag, ...tag }),
+    [tag, computed?.meta.tag]
+  )
 
   const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
   const tagQStatKqy = tag.name
@@ -118,11 +122,11 @@ function StatLine({ read }: { read: Read<Tag> }) {
       }}
     >
       <Box sx={{ flexGrow: 1 }}>
-        <TagDisplay tag={tag} />
+        <TagDisplay tag={computedTag} />
       </Box>
       {valDisplay}
       <FormulaHelpIcon
-        tag={tag}
+        tag={computedTag}
         onClick={() => {
           shouldShowDevComponents && setRead(newRead)
         }}
