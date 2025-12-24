@@ -481,6 +481,17 @@ const dmgFormulas = {
       a4Stack_burstPeriodic_mult_
     ),
   },
+  passive2: {
+    a4Stack_burstPeriodic_mult_,
+  },
+  constellation1: {
+    c1StacksWhite_normal_dmgIncDisp,
+    c1StacksWhite_charged_dmgIncDisp,
+    c1StacksWhite_plunging_dmgIncDisp,
+    c1StacksWhite_skill_dmgIncDisp,
+    c1StacksWhite_burst_dmgIncDisp,
+    c1StacksDark_burst_dmgInc,
+  },
 }
 const burstC3 = greaterEq(input.constellation, 3, 3)
 const skillC5 = greaterEq(input.constellation, 5, 3)
