@@ -3,18 +3,19 @@ import {
   ColorText,
   InfoTooltipInline,
 } from '@genshin-optimizer/common/ui'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { Team } from '@genshin-optimizer/gi/db'
 import type { TeamCharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import { TeamCharacterContext, useTeam } from '@genshin-optimizer/gi/db-ui'
 import type { IResonance } from '@genshin-optimizer/gi/sheets'
 import {
+  getMoonsignSheet,
   hexereiSheet,
-  moonsignSheet,
   resonanceSheets,
 } from '@genshin-optimizer/gi/sheets'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import { DataContext, DocumentDisplay } from '@genshin-optimizer/gi/ui'
-import { tally } from '@genshin-optimizer/gi/wr'
+import { input, tally } from '@genshin-optimizer/gi/wr'
 import {
   CardContent,
   CardHeader,
@@ -103,7 +104,12 @@ function ElementalResonance({
 function Moonsign() {
   const { t } = useTranslation('sheet_gen')
 
-  const { data } = useContext(DataContext)
+  const { data, teamData } = useContext(DataContext)
+  const moonsignCondChar = data.get(input.nonStacking.moonsignascend).value
+  const moonsignCondCharData =
+    moonsignCondChar !== undefined
+      ? teamData[moonsignCondChar as CharacterKey]?.target
+      : undefined
   const moonsignCount = data.get(tally.moonsign).value
 
   return (
@@ -125,7 +131,9 @@ function Moonsign() {
       <>
         <Divider />
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <TeamResonanceDisplay resonances={[moonsignSheet]} />
+          <TeamResonanceDisplay
+            resonances={[getMoonsignSheet(moonsignCondCharData)]}
+          />
         </CardContent>
       </>
     </CardThemed>
