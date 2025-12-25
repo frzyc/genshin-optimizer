@@ -1,4 +1,3 @@
-'use client'
 import {
   useDataEntryBase,
   useDataManagerValues,
@@ -7,7 +6,6 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
-  NextImage,
   SortByButton,
   SqBadge,
   StarsDisplay,
@@ -715,7 +713,7 @@ function SelectionCard({
           zIndex={1}
         >
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={iconAsset(characterKey, gender, silly)}
             width="100%"
             height="auto"

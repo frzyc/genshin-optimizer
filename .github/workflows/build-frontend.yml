@@ -5,7 +5,7 @@ on:
   workflow_call:
     inputs:
       frontend_name:
-        description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`, or `zzz-frontend`.'
+        description: 'Frontend type to build. Can be `frontend`, `sr-frontend`, or `zzz-frontend`.'
         type: string
         required: true
       deployment_name:
@@ -55,12 +55,6 @@ jobs:
           echo "NX_URL_GITHUB_GO_CURRENT_VERSION=https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           echo "NX_DAEMON=false" >> $GITHUB_ENV
           echo "NX_SHOW_DEV_COMPONENTS=${{inputs.show_dev_components}}" >> $GITHUB_ENV
-      - name: Build gi-frontend
-        if: inputs.frontend_name == 'gi-frontend'
-        run: yarn nx run gi-frontend:next:build
-      - name: Build other frontend
-        if: inputs.frontend_name != 'gi-frontend'
-        run: |
           echo $NX_SHOW_DEV_COMPONENTS
           yarn run nx run ${{inputs.frontend_name}}:build:production
       - name: echos

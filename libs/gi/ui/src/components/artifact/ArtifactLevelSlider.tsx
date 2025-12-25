@@ -1,4 +1,3 @@
-'use client'
 import { CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import { Box, Divider, Slider } from '@mui/material'

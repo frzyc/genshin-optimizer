@@ -1,9 +1,4 @@
-import {
-  ImgIcon,
-  NextImage,
-  SqBadge,
-  StarsDisplay,
-} from '@genshin-optimizer/common/ui'
+import { ImgIcon, SqBadge, StarsDisplay } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
@@ -35,7 +30,6 @@ import {
   Typography,
 } from '@mui/material'
 import { grey, yellow } from '@mui/material/colors'
-import type { StaticImageData } from 'next/image'
 import { useContext } from 'react'
 import { DataContext, SillyContext } from '../../context'
 import { CharacterName } from './Trans'
@@ -86,7 +80,7 @@ export function CharacterCompactTalent() {
                 }}
               >
                 <Box
-                  component={NextImage ? NextImage : 'img'}
+                  component="img"
                   src={characterSheet.getTalentOfKey(tKey)?.img}
                   width="100%"
                   height="auto"
@@ -126,7 +120,7 @@ export function CharacterCompactConstSelector({
             }}
           >
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={
                 characterSheet.getTalentOfKey(
                   `constellation${i}` as TalentSheetElementKey
@@ -168,7 +162,7 @@ function SillyCoverArea({
   level,
   ascension,
 }: {
-  src: string | StaticImageData
+  src: string
   level: number
   ascension: AscensionKey
 }) {
@@ -178,12 +172,7 @@ function SillyCoverArea({
 
   return (
     <Box sx={{ display: 'flex', position: 'relative' }}>
-      <Box
-        src={src}
-        component={NextImage ? NextImage : 'img'}
-        width="100%"
-        height="auto"
-      />
+      <Box src={src} component="img" width="100%" height="auto" />
       <Box sx={{ width: '100%', height: '100%' }}>
         <Box
           sx={{
@@ -218,7 +207,7 @@ function CoverArea({
   level,
   ascension,
 }: {
-  src: string | StaticImageData
+  src: string
   level: number
   ascension: AscensionKey
 }) {
@@ -261,12 +250,7 @@ function CoverArea({
         <FavoriteButton />
         <LevelBadge level={level} ascension={ascension} />
       </Box>
-      <Box
-        src={src}
-        component={NextImage ? NextImage : 'img'}
-        width="100%"
-        height="auto"
-      ></Box>
+      <Box src={src} component="img" width="100%" height="auto"></Box>
     </Box>
   )
 }

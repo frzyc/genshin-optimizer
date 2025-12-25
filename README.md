@@ -18,7 +18,7 @@ A repo hosting a few different optimizer websites for different gacha games.
 Are you a web developer who is looking to contribute to the most over-engineered Genshin website ever made? Can you distinguish which one of the following is a pokemon?
 
 ```
-React MaterialUI nx ekans GraphQL git metapod NextJS discord.js vite nodeJS emotion prisma Agumon tessract.js typescript bun sawk webpack next-auth jest
+React MaterialUI nx ekans GraphQL git metapod discord.js vite nodeJS emotion prisma Agumon tessract.js typescript bun sawk webpack jest
 ```
 
 If you have knowledge in some(or any) of those techonology mentioned above, or are hoping to learn in an actively-developed app with thousands of users, please join our [Discord](https://discord.gg/CXUbQXyfUs)! We'd love to work with you.
@@ -53,19 +53,6 @@ Last updated Feb 2025
 - Access your GO builds from a Discord bot **TBD**
 - ~~Coming Q2 2024~~
 
-### GO-next
-
-- A full-stack GO solution with a backend and database
-- User login, saving artifacts/data in the backend
-  - Easily sharing character builds (URL)
-  - Easily sharing multi-targets
-- New calculation engine - Pando
-  - Allow for weapon optimization
-- Teams + Loadouts
-  - Calculate team damage
-  - Sharable loadouts
-- ~~**Coming Q4 2024**~~ On Hiatus
-
 ## Code structure
 
 GO is hosted as a monorepo.
@@ -81,8 +68,6 @@ For a more interactive and detailed view of the project, run `nx graph`.
 [`zzz-frontend`](/apps/zzz-frontend/) - Zenless Optimizer frontend - static website built using React with MUI, using a bare-bones calculation engine.
 
 [`sr-frontend`](/apps/sr-frontend/) - WIP Star Rail optimizer frontend - static website built using React with MUI, using the Pando calculation engine.
-
-[`gi-frontend`](/apps/gi-frontend/) - WIP GO frontend - website built using Next.js, MUI, supabase, using the Pando calculation engine.
 
 [`somnia-bot`](/apps/somnia/) - WIP Discord bot - built using discord.js, using the Pando calculation engine.
 

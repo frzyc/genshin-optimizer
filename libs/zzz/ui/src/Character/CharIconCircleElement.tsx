@@ -1,11 +1,10 @@
-import { NextImage } from '@genshin-optimizer/common/ui'
 import { characterAsset } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { styled } from '@mui/material/styles'
 interface ImgIconProps {
   size?: number
 }
-const CharIconWrapper = styled(NextImage ? (NextImage as any) : 'img', {
+const CharIconWrapper = styled('img', {
   name: 'ImgIcon',
   slot: 'Root',
   shouldForwardProp: (pn: string) => !['size'].includes(pn),

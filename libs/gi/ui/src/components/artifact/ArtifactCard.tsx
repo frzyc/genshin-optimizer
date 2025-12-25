@@ -1,4 +1,3 @@
-'use client'
 // use client due to hydration difference between client rendering and server in translation
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
@@ -10,7 +9,6 @@ import {
   InfoTooltip,
   InfoTooltipInline,
   ModalWrapper,
-  NextImage,
   SqBadge,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
@@ -313,7 +311,7 @@ export function ArtifactCardObj({
               sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}
             >
               <Box
-                component={NextImage ? NextImage : 'img'}
+                component="img"
                 alt="Artifact Piece Image"
                 src={artifactAsset(setKey, slotKey)}
                 sx={{

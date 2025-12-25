@@ -1,4 +1,3 @@
-'use client'
 import { createContext, useEffect, useMemo, useState } from 'react'
 
 export type SnowContextObj = {

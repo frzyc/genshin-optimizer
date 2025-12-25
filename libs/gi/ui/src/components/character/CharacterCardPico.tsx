@@ -3,7 +3,6 @@ import {
   BootstrapTooltip,
   CardThemed,
   ConditionalWrapper,
-  NextImage,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
@@ -87,7 +86,7 @@ export function CharacterCardPico({
             className={`grad-${getCharStat(characterKey).rarity}star`}
           >
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={iconAsset(characterKey, gender, silly)}
               maxWidth="100%"
               maxHeight="100%"
@@ -155,7 +154,7 @@ export function BlankCharacterCardPico({ index }: { index: number }) {
       }}
     >
       <Box
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         src={imgAssets.team[`team${index + 1}` as keyof typeof imgAssets.team]}
         sx={{ width: '75%', height: 'auto', opacity: 0.7 }}
       />

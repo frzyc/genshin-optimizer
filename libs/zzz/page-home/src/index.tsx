@@ -3,7 +3,7 @@ import {
   ZO_LOOTBAR_LINK,
   zo_lootbar_banner,
 } from '@genshin-optimizer/common/ad'
-import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { ZCard, ZOAdWrapper } from '@genshin-optimizer/zzz/ui'
 import DescriptionIcon from '@mui/icons-material/Description'
 import {
@@ -125,7 +125,7 @@ function LootbarCard() {
         aria-label="Visit Lootbar.gg for Zenless Zone Zero top-ups"
       >
         <Box
-          component={NextImage ? NextImage : 'img'}
+          component="img"
           alt="Lootbar.gg Banner"
           src={zo_lootbar_banner}
           sx={{ width: '100%', height: 'auto', marginBottom: '-7px' }}

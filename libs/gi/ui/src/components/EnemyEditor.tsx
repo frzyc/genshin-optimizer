@@ -1,4 +1,3 @@
-'use client'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed, ColorText, StatInput } from '@genshin-optimizer/common/ui'
 import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'

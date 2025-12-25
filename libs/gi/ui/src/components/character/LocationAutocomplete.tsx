@@ -1,4 +1,3 @@
-'use client'
 import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'

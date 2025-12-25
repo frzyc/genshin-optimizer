@@ -1,4 +1,3 @@
-'use client'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import {
