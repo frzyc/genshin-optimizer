@@ -1,8 +1,8 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   DocumentDisplay,
   type UISheetElement,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import { CardThemed } from '@genshin-optimizer/common/ui'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { LightConeName } from '@genshin-optimizer/sr/ui'
