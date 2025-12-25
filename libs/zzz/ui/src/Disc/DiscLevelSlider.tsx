@@ -1,4 +1,3 @@
-'use client'
 import { CustomNumberInput, usePrev } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import { discMaxLevel } from '@genshin-optimizer/zzz/consts'

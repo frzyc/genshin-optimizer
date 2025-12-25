@@ -1,4 +1,3 @@
-'use client'
 import { styled } from '@mui/material'
 interface ImgIconProps {
   size?: number

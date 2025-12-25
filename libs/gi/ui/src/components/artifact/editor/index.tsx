@@ -1,4 +1,3 @@
-'use client'
 import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,

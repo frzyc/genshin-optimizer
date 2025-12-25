@@ -1,4 +1,3 @@
-'use client'
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,

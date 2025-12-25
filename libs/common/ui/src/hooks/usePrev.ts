@@ -8,3 +8,7 @@ export function usePrev<T>(value: T): T {
 
   return prev
 }
+
+export function useIsPrev<T>(value: T) {
+  return usePrev(value) === value
+}

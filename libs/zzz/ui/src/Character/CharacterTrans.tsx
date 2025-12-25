@@ -1,4 +1,3 @@
-'use client'
 import {
   type AttributeKey,
   type CharacterKey,

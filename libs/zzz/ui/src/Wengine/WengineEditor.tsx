@@ -1,4 +1,3 @@
-'use client'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ImgIcon, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { FieldDisplayList } from '@genshin-optimizer/game-opt/sheet-ui'
