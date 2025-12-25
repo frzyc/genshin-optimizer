@@ -1,7 +1,4 @@
-import {
-  CardThemed,
-  ModalWrapper,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Alert,

@@ -1,8 +1,4 @@
-import {
-  ImgIcon,
-  SqBadge,
-  StarsDisplay,
-} from '@genshin-optimizer/common/ui'
+import { ImgIcon, SqBadge, StarsDisplay } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
@@ -176,12 +172,7 @@ function SillyCoverArea({
 
   return (
     <Box sx={{ display: 'flex', position: 'relative' }}>
-      <Box
-        src={src}
-        component="img"
-        width="100%"
-        height="auto"
-      />
+      <Box src={src} component="img" width="100%" height="auto" />
       <Box sx={{ width: '100%', height: '100%' }}>
         <Box
           sx={{
@@ -259,12 +250,7 @@ function CoverArea({
         <FavoriteButton />
         <LevelBadge level={level} ascension={ascension} />
       </Box>
-      <Box
-        src={src}
-        component="img"
-        width="100%"
-        height="auto"
-      ></Box>
+      <Box src={src} component="img" width="100%" height="auto"></Box>
     </Box>
   )
 }

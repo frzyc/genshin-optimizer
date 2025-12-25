@@ -1,4 +1,5 @@
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'

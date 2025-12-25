@@ -1,8 +1,5 @@
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
-import {
-  CardThemed,
-  ConditionalWrapper,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import {
   characterAsset,
   characterKeyToGenderedKey,

@@ -1,7 +1,4 @@
-import {
-  ConditionalWrapper,
-  ImgIcon,
-} from '@genshin-optimizer/common/ui'
+import { ConditionalWrapper, ImgIcon } from '@genshin-optimizer/common/ui'
 import {
   commonDefIcon,
   rarityDefIcon,

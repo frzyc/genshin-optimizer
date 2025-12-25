@@ -1,3 +1,4 @@
+import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
   artifactDefIcon,

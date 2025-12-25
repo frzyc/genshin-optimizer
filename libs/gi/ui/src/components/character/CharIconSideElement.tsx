@@ -31,15 +31,12 @@ const CharIconSideWrapper = styled('img', {
 /**
  * Silly wisher side icons are just front icons, and they are much more sensibly sized.
  */
-const SillyCharIconSideWrapper = styled(
-  'img',
-  {
-    name: 'ImgIcon',
-    slot: 'Root',
-    shouldForwardProp: (pn) =>
-      !['size', 'sideMargin'].includes(pn as 'size' | 'sideMargin'),
-  }
-)<ImgIconProps>(({ size = 2, sideMargin = false }) => ({
+const SillyCharIconSideWrapper = styled('img', {
+  name: 'ImgIcon',
+  slot: 'Root',
+  shouldForwardProp: (pn) =>
+    !['size', 'sideMargin'].includes(pn as 'size' | 'sideMargin'),
+})<ImgIconProps>(({ size = 2, sideMargin = false }) => ({
   display: 'inline-block',
   width: `${size}em`,
   height: `${size}em`,

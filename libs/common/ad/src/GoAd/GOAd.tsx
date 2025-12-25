@@ -30,12 +30,7 @@ function GOAd({ children }: { children: ReactNode }) {
       }}
     >
       {children}
-      <Box
-        component="img"
-        src={go}
-        height={100}
-        maxHeight={'100%'}
-      />
+      <Box component="img" src={go} height={100} maxHeight={'100%'} />
       <Typography>
         The Ultimate Genshin Impact calculator, that allows you to min-max your
         characters according to how you play, using what you have.

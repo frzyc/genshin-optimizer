@@ -1,7 +1,4 @@
-import {
-  CardThemed,
-  ModalWrapper,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'

@@ -1,9 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import {
-  CardThemed,
-  ModalWrapper,
-  usePrev,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper, usePrev } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
   range,
@@ -717,11 +713,7 @@ function DebugModal({ imgs }: { imgs: Record<string, string> }) {
               {Object.entries(imgs).map(([key, url]) => (
                 <Box key={key}>
                   <Typography>{key}</Typography>
-                  <Box
-                    component="img"
-                    src={url}
-                    maxWidth="100%"
-                  />
+                  <Box component="img" src={url} maxWidth="100%" />
                 </Box>
               ))}
             </Stack>

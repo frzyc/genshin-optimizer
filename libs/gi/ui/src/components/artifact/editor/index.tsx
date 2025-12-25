@@ -1027,11 +1027,7 @@ function DebugModal({ imgs }: { imgs: Record<string, string> }) {
               {Object.entries(imgs).map(([key, url]) => (
                 <Box key={key}>
                   <Typography>{key}</Typography>
-                  <Box
-                    component="img"
-                    src={url}
-                    maxWidth="100%"
-                  />
+                  <Box component="img" src={url} maxWidth="100%" />
                 </Box>
               ))}
             </Stack>

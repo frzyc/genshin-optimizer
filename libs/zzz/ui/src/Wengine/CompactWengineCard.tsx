@@ -1,7 +1,4 @@
-import {
-  CardThemed,
-  ConditionalWrapper,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
   range,
