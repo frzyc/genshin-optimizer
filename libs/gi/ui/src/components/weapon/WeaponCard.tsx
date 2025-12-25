@@ -2,7 +2,6 @@ import {
   CardThemed,
   ConditionalWrapper,
   ImgIcon,
-  NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
@@ -178,7 +177,7 @@ export function WeaponCardObj({
               sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}
             >
               <Box
-                component={NextImage ? NextImage : 'img'}
+                component="img"
                 src={img ?? ''}
                 width="auto"
                 height="100%"

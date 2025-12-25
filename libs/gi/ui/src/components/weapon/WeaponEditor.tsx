@@ -3,7 +3,6 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
-  NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
@@ -130,7 +129,7 @@ export function WeaponEditor({
                   <Grid item xs={6} sm={12}>
                     <Box sx={{ position: 'relative', display: 'flex' }}>
                       <Box
-                        component={NextImage ? NextImage : 'img'}
+                        component="img"
                         src={img}
                         className={`grad-${weaponStat.rarity}star`}
                         sx={{

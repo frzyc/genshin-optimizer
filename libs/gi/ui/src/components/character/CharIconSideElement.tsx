@@ -1,4 +1,3 @@
-import { NextImage } from '@genshin-optimizer/common/ui'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
@@ -13,7 +12,7 @@ interface ImgIconProps {
 /**
  * Genshin side icons are not very well cropped, so we have to manually apply margin to get it to look pretty.
  */
-const CharIconSideWrapper = styled(NextImage ? (NextImage as any) : 'img', {
+const CharIconSideWrapper = styled('img', {
   name: 'ImgIcon',
   slot: 'Root',
   shouldForwardProp: (pn) =>
@@ -33,7 +32,7 @@ const CharIconSideWrapper = styled(NextImage ? (NextImage as any) : 'img', {
  * Silly wisher side icons are just front icons, and they are much more sensibly sized.
  */
 const SillyCharIconSideWrapper = styled(
-  NextImage ? (NextImage as any) : 'img',
+  'img',
   {
     name: 'ImgIcon',
     slot: 'Root',

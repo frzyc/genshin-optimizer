@@ -1,7 +1,6 @@
 import {
   ConditionalWrapper,
   ImgIcon,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import {
   commonDefIcon,
@@ -149,7 +148,7 @@ function CharImage({
       </Box>
       <Box
         src={`${CHARACTER_IMAGE_URL_BASE}${id}.png`}
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         width={charCardConfig.charImgWidth}
         height="auto"
         position="relative"

@@ -1,6 +1,6 @@
-import { CardThemed, NextImage, SqBadge } from '@genshin-optimizer/common/ui'
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { RelicSetName } from '@genshin-optimizer/sr/ui'
@@ -23,7 +23,7 @@ export function RelicSheetDisplay({ setKey }: { setKey: RelicSetKey }) {
       <CardContent>
         <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             alt="Relic Piece Image"
             src={relicAsset(setKey, getDefaultRelicSlot(setKey))}
             sx={{

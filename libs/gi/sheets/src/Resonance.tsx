@@ -1,5 +1,4 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { NextImage } from '@genshin-optimizer/common/ui'
 import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
@@ -476,7 +475,7 @@ export const moonsignSheet: IResonance = {
   desc: tr('Moonsign.desc'),
   icon: (
     <Box
-      component={NextImage ? NextImage : 'img'}
+      component="img"
       src={imgAssets.resonance.moonsign}
       width="2em"
       height="auto"
@@ -490,7 +489,7 @@ export const moonsignSheet: IResonance = {
         title: tr('Moonsign.nascentGleam.name'),
         icon: (
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={imgAssets.resonance.moonsign}
             width="2em"
             height="auto"
@@ -512,13 +511,13 @@ export const moonsignSheet: IResonance = {
         icon: (
           <Box display="flex">
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={imgAssets.resonance.moonsign}
               width="2em"
               height="auto"
             />
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={imgAssets.resonance.moonsign}
               width="2em"
               height="auto"
@@ -544,13 +543,13 @@ export const hexereiSheet: IResonance = {
   icon: (
     <>
       <Box
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         src={imgAssets.resonance.hexerei}
         width="2em"
         height="auto"
       />
       <Box
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         src={imgAssets.resonance.hexerei}
         width="2em"
         height="auto"
@@ -566,13 +565,13 @@ export const hexereiSheet: IResonance = {
         icon: (
           <>
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={imgAssets.resonance.hexerei}
               width="2em"
               height="auto"
             />
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={imgAssets.resonance.hexerei}
               width="2em"
               height="auto"
@@ -608,13 +607,13 @@ export function MoonsignConditionalSection(
       icon: (
         <Box display="flex">
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={imgAssets.resonance.moonsign}
             width="2em"
             height="auto"
           />
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={imgAssets.resonance.moonsign}
             width="2em"
             height="auto"

@@ -4,7 +4,6 @@ import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
-  NextImage,
   usePrev,
 } from '@genshin-optimizer/common/ui'
 import { catTotal } from '@genshin-optimizer/common/util'
@@ -166,7 +165,7 @@ export function WengineSelectionModal({
                       sx={{ display: 'flex' }}
                     >
                       <Box
-                        component={NextImage ? NextImage : 'img'}
+                        component="img"
                         src={wengineAsset(wengineKey, 'icon')}
                         sx={{ width: 100, height: 'auto' }}
                         className={` grad-${wengineStat.rarity}star`}

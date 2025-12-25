@@ -1,4 +1,3 @@
-import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
@@ -55,7 +54,7 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
       >
         <WeaponNameTooltip weaponKey={weapon.key} addlText={tooltipAddl}>
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={weaponAsset(weapon.key, weapon.ascension >= 2)}
             maxWidth="100%"
             maxHeight="100%"

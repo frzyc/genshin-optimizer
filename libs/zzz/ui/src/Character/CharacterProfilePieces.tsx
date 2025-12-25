@@ -1,4 +1,3 @@
-import { ImgIcon, NextImage, SqBadge } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
   characterAsset,
@@ -148,7 +147,7 @@ function CoverArea({
       </Box>
       <Box
         src={characterAsset(characterKey, 'full')}
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         width="100%"
         height="auto"
       ></Box>

@@ -1,4 +1,3 @@
-import { ColorText, ImgIcon, NextImage } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
   artifactDefIcon,
@@ -66,13 +65,13 @@ export function getDisplayHeader(
       icon: (
         <Box display="flex">
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={imgAssets.resonance.moonsign}
             width="2em"
             height="auto"
           />
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={imgAssets.resonance.moonsign}
             width="2em"
             height="auto"

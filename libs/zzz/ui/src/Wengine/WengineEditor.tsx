@@ -4,7 +4,6 @@ import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import { FieldDisplayList } from '@genshin-optimizer/game-opt/sheet-ui'
 import { rarityDefIcon, wengineAsset } from '@genshin-optimizer/zzz/assets'
@@ -121,7 +120,7 @@ export function WengineEditor({
                   <Grid item xs={6} sm={12}>
                     <Box sx={{ position: 'relative', display: 'flex' }}>
                       <Box
-                        component={NextImage ? NextImage : 'img'}
+                        component="img"
                         src={img}
                         className={`grad-${wengineStat.rarity}star`}
                         sx={{

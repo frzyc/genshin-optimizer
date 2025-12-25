@@ -1,7 +1,6 @@
 import {
   CardThemed,
   ColorText,
-  NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
@@ -94,7 +93,7 @@ function Header({ character }: { character: ICachedCharacter }) {
   return (
     <Box sx={{ display: 'flex' }}>
       <Box
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         alt="Character Icon"
         src={characterAsset(genderedKey, 'icon')}
         sx={{

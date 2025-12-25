@@ -2,7 +2,6 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
-  NextImage,
   usePrev,
 } from '@genshin-optimizer/common/ui'
 import {
@@ -480,7 +479,7 @@ export function DiscEditor({
                         {imageURL && (
                           <Box display="flex" justifyContent="center">
                             <Box
-                              component={NextImage ? NextImage : 'img'}
+                              component="img"
                               src={imageURL}
                               width="100%"
                               maxWidth={350}
@@ -719,7 +718,7 @@ function DebugModal({ imgs }: { imgs: Record<string, string> }) {
                 <Box key={key}>
                   <Typography>{key}</Typography>
                   <Box
-                    component={NextImage ? NextImage : 'img'}
+                    component="img"
                     src={url}
                     maxWidth="100%"
                   />

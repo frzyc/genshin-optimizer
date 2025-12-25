@@ -10,7 +10,6 @@ import {
   InfoTooltip,
   InfoTooltipInline,
   ModalWrapper,
-  NextImage,
   SqBadge,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
@@ -313,7 +312,7 @@ export function ArtifactCardObj({
               sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}
             >
               <Box
-                component={NextImage ? NextImage : 'img'}
+                component="img"
                 alt="Artifact Piece Image"
                 src={artifactAsset(setKey, slotKey)}
                 sx={{

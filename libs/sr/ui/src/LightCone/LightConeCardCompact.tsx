@@ -2,7 +2,6 @@ import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import {
   CardThemed,
   ConditionalWrapper,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import {
   characterAsset,
@@ -108,7 +107,7 @@ export function LightConeCardCompactObj({
             }}
           >
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={lightConeAsset(key, 'cover')}
               sx={{ m: -1, maxHeight: '100%', maxWidth: '100%' }}
             />
@@ -135,7 +134,7 @@ export function LightConeCardCompactObj({
                 >
                   {location ? (
                     <Box
-                      component={NextImage ? NextImage : 'img'}
+                      component="img"
                       sx={{
                         borderRadius: '50%',
                         width: '2em',
