@@ -76,7 +76,7 @@ export class DisplayArchiveEntry extends DataEntry<
     super(database, 'display_archive', initialState, 'display_archive')
   }
   override validate(obj: any): IDisplayArchiveEntry | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null) return undefined
     let { artifact, character, weapon } = obj
 
     if (typeof artifact !== 'object') artifact = initialArtifactOption()

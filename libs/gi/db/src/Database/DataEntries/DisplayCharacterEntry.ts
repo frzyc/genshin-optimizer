@@ -47,7 +47,7 @@ export class DisplayCharacterEntry extends DataEntry<
     super(database, 'display_character', initialState, 'display_character')
   }
   override validate(obj: any): IDisplayCharacterEntry | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null) return undefined
     let { sortType, ascending, weaponType, element, rarity } = obj
 
     //Disallow sorting by "new" explicitly.

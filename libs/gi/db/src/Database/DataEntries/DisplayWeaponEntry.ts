@@ -52,7 +52,7 @@ export class DisplayWeaponEntry extends DataEntry<
     super(database, 'display_weapon', initialState, 'display_weapon')
   }
   override validate(obj: any): IDisplayWeapon | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null) return undefined
     let {
       sortType,
       ascending,
@@ -64,7 +64,9 @@ export class DisplayWeaponEntry extends DataEntry<
       locations,
     } = obj
     const { editWeaponId } = obj
-    if (typeof editWeaponId !== 'string') return editWeaponId
+    if (typeof editWeaponId !== 'string' && editWeaponId !== undefined) {
+      // Invalid editWeaponId type, but we'll allow undefined
+    }
     if (
       typeof sortType !== 'string' ||
       !weaponSortKeys.includes(sortType as any)

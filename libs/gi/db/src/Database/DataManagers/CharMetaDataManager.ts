@@ -9,9 +9,13 @@ import { DataManager } from '../DataManager'
 
 export interface ICharMeta {
   favorite: boolean
+  description?: string
+  rvFilter?: unknown[]
 }
 const initCharMeta: ICharMeta = deepFreeze({
   favorite: false,
+  description: '',
+  rvFilter: [],
 })
 const storageHash = 'charMeta_'
 export class CharMetaDataManager extends DataManager<
@@ -31,12 +35,14 @@ export class CharMetaDataManager extends DataManager<
         this.database.storage.remove(key)
   }
   override validate(obj: any): ICharMeta | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null) return undefined
 
-    let { favorite } = obj
+    let { favorite, description, rvFilter } = obj
 
     if (typeof favorite !== 'boolean') favorite = false
-    return { favorite }
+    if (typeof description !== 'string') description = ''
+    if (!Array.isArray(rvFilter)) rvFilter = []
+    return { favorite, description, rvFilter }
   }
 
   override toStorageKey(key: CharacterKey): string {

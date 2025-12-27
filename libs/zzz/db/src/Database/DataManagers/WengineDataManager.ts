@@ -23,7 +23,7 @@ export class WengineDataManager extends DataManager<
   }
 
   override validate(obj: unknown): IWengine | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null) return undefined
     const { key, level: rawLevel, modification: rawMod } = obj as IWengine
     let { phase, location, lock } = obj as IWengine
 

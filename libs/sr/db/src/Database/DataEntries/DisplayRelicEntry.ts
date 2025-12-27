@@ -91,7 +91,7 @@ export class DisplayRelicEntry extends DataEntry<
     super(database, 'display_relic', initialState, 'display_relic')
   }
   override validate(obj: unknown): IDisplayRelic | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
     let { filterOption, ascending, sortType, effFilter } = obj as IDisplayRelic
 
     if (typeof filterOption !== 'object') filterOption = initialFilterOption()

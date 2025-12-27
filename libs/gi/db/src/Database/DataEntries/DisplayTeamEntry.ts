@@ -33,7 +33,7 @@ export class DisplayTeamEntry extends DataEntry<
     super(database, 'display_team', initialState, 'display_team')
   }
   override validate(obj: unknown): IDisplayTeamEntry | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null) return undefined
     let { ascending, sortType, charKeys, searchTerm } = obj as IDisplayTeamEntry
 
     if (typeof ascending !== 'boolean') ascending = false

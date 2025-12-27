@@ -291,11 +291,12 @@ export class DiscDataManager extends DataManager<
 }
 
 export function validateDisc(
-  obj: unknown = {},
+  obj: unknown,
   allowZeroSub = false,
   sortSubs = true
 ): IDisc | undefined {
-  if (!obj || typeof obj !== 'object') return undefined
+  if (!obj || typeof obj !== 'object' || obj === null || Array.isArray(obj))
+    return undefined
   let {
     setKey,
     rarity,

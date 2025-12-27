@@ -44,7 +44,7 @@ export class BuildTcDataManager extends DataManager<
     }
   }
   override validate(obj: unknown): BuildTc | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null) return undefined
     let { name, description } = obj as BuildTc
     const { character, weapon, artifact, optimization } = obj as BuildTc
     const _character = validateBuildTCChar(character)

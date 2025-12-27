@@ -25,7 +25,8 @@ export class GeneratedBuildListDataManager extends DataManager<
     super(database, 'generatedBuildList')
   }
   override validate(obj: object): GeneratedBuildList | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
+    if (typeof obj !== 'object' || obj === null || Array.isArray(obj))
+      return undefined
     let { builds, buildDate } = obj as GeneratedBuildList
 
     if (!Array.isArray(builds)) {

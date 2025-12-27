@@ -91,7 +91,8 @@ export class DisplayDiscEntry extends DataEntry<
     super(database, 'display_disc', initialState, 'display_disc')
   }
   override validate(obj: unknown): IDisplayDisc | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null || Array.isArray(obj))
+      return undefined
     let { filterOption, ascending, sortType, effFilter } = obj as IDisplayDisc
 
     if (typeof filterOption !== 'object') filterOption = initialFilterOption()

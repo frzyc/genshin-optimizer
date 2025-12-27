@@ -193,7 +193,7 @@ export class CharacterOptManager extends DataManager<
     super(database, 'charOpts')
   }
   override validate(obj: unknown): CharOpt | undefined {
-    if (!obj || typeof obj !== 'object') return undefined
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
     let {
       target,
       conditionals,
@@ -351,14 +351,16 @@ export class CharacterOptManager extends DataManager<
       .filter(notEmpty)
 
     if (!Array.isArray(teammates)) teammates = []
-    teammates = teammates.reduce((acc: CharacterKey[], charKey) => {
-      const charKey_ = validateValue(charKey, allCharacterKeys)
+    teammates = teammates
+      .reduce((acc: CharacterKey[], charKey) => {
+        const charKey_ = validateValue(charKey, allCharacterKeys)
 
-      if (!charKey_) return acc
+        if (!charKey_) return acc
 
-      acc.push(charKey_)
-      return acc
-    }, [])
+        acc.push(charKey_)
+        return acc
+      }, [])
+      .slice(0, 2) // Limit to 2 teammates
 
     if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = undefined

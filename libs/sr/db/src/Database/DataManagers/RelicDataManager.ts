@@ -438,11 +438,11 @@ export function cachedRelic(
 }
 
 export function validateRelic(
-  obj: unknown = {},
+  obj: unknown,
   allowZeroSub = false,
   sortSubs = true
 ): IRelic | undefined {
-  if (!obj || typeof obj !== 'object') return undefined
+  if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
   const { setKey, rarity, slotKey } = obj as IRelic
   let { level, mainStatKey, substats, location, lock } = obj as IRelic
 

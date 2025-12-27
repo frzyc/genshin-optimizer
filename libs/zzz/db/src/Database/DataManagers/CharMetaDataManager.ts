@@ -17,7 +17,8 @@ export class CharMetaDataManager extends DataManager<
     super(database, 'charMetas')
   }
   override validate(obj: any): ICharMeta | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null || Array.isArray(obj))
+      return undefined
 
     let { description } = obj
 

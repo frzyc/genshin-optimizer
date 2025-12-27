@@ -29,7 +29,7 @@ export class DisplayLightConeEntry extends DataEntry<
     super(database, 'display_lightcone', initialState, 'display_lightcone')
   }
   override validate(obj: any): IDisplayLightCone | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
     let { sortType, ascending, rarity, path } = obj
     if (
       typeof sortType !== 'string' ||

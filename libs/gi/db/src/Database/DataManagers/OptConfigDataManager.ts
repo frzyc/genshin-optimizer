@@ -96,7 +96,7 @@ export class OptConfigDataManager extends DataManager<
         this.database.storage.remove(key)
   }
   override validate(obj: object, key: string): OptConfig | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null) return undefined
     let {
       artSetExclusion,
       artExclusion,

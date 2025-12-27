@@ -94,7 +94,7 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
 export function validateCustomMultiTarget(
   cmt: unknown
 ): CustomMultiTarget | undefined {
-  if (typeof cmt !== 'object') return undefined
+  if (typeof cmt !== 'object' || cmt === null) return undefined
   let { name, description, targets } = cmt as CustomMultiTarget
   if (typeof name !== 'string') name = 'New Custom Target'
   else if (name.length > MAX_NAME_LENGTH) name = name.slice(0, MAX_NAME_LENGTH)

@@ -15,6 +15,7 @@ interface IDisplayToolEntry {
   resin: number
   resinDate: number
   timeZoneKey: TimeZoneKey
+  tcMode?: boolean
 }
 
 function initialTabOptimize(): IDisplayToolEntry {
@@ -35,8 +36,8 @@ export class DisplayToolEntry extends DataEntry<
     super(database, 'display_tool', initialTabOptimize, 'display_tool')
   }
   override validate(obj: any): IDisplayToolEntry | undefined {
-    if (typeof obj !== 'object') return undefined
-    let { timeZoneKey, resin, resinDate } = obj
+    if (typeof obj !== 'object' || obj === null) return undefined
+    let { timeZoneKey, resin, resinDate, tcMode } = obj
     if (!Object.keys(timeZones).includes(timeZoneKey))
       timeZoneKey = Object.keys(timeZones)[0]
     if (typeof resin !== 'number' || resin < 0 || !Number.isInteger(resin))
@@ -47,6 +48,7 @@ export class DisplayToolEntry extends DataEntry<
       !Number.isInteger(resinDate)
     )
       resinDate = new Date().getTime()
-    return { timeZoneKey, resin, resinDate } as IDisplayToolEntry
+    if (typeof tcMode !== 'boolean') tcMode = !!tcMode
+    return { timeZoneKey, resin, resinDate, tcMode } as IDisplayToolEntry
   }
 }

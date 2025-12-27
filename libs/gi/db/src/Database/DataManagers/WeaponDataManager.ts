@@ -57,7 +57,7 @@ export class WeaponDataManager extends DataManager<
     return weapon
   }
   override validate(obj: unknown): IWeapon | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
     const { key, level: rawLevel, ascension: rawAscension } = obj as IWeapon
     let { refinement, location, lock } = obj as IWeapon
 

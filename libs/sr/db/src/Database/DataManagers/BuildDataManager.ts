@@ -27,6 +27,7 @@ export class BuildDataManager extends DataManager<
     super(database, 'builds')
   }
   override validate(obj: unknown): Build | undefined {
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
     const { characterKey, teamId } = obj as Build
     if (!allCharacterKeys.includes(characterKey)) return undefined
 

@@ -53,7 +53,8 @@ export class DisplayWengineEntry extends DataEntry<
     super(database, 'display_wengine', initialState, 'display_wengine')
   }
   override validate(obj: any): IDisplayWengine | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null || Array.isArray(obj))
+      return undefined
     let {
       sortType,
       ascending,

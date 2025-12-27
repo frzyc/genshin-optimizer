@@ -29,6 +29,7 @@ export class BuildDataManager extends DataManager<
         this.database.storage.remove(key)
   }
   override validate(obj: unknown): Build | undefined {
+    if (typeof obj !== 'object' || obj === null) return undefined
     let { name, description, weaponId, artifactIds } = obj as Build
     const { id } = obj as Build
     if (typeof name !== 'string') name = 'Build Name'

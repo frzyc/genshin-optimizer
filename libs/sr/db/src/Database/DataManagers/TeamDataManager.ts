@@ -85,6 +85,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     return `Team Name`
   }
   override validate(obj: unknown): Team | undefined {
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
     let {
       name,
       description,

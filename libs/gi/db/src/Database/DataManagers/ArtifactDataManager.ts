@@ -498,10 +498,10 @@ export function cachedArtifact(
 }
 
 export function validateArtifact(
-  obj: unknown = {},
+  obj: unknown,
   allowZeroSub = false
 ): IArtifact | undefined {
-  if (!obj || typeof obj !== 'object') return undefined
+  if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
   const { setKey, rarity, slotKey } = obj as IArtifact
   let { level, mainStatKey, substats, location, lock, unactivatedSubstats } =
     obj as IArtifact

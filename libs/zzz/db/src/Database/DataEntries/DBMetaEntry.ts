@@ -32,7 +32,7 @@ export class DBMetaEntry extends DataEntry<
     super(database, 'dbMeta', dbMetaInit, 'dbMeta')
   }
   override validate(obj: any): IDBMeta | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
     let { name, lastEdit, optCharKey } = obj
     if (typeof name !== 'string')
       name = `Database ${this.database.storage.getDBIndex()}`

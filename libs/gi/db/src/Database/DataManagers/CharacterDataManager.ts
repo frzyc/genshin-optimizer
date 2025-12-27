@@ -52,12 +52,8 @@ export class CharacterDataManager extends DataManager<
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
-    if (
-      typeof constellation !== 'number' &&
-      constellation < 0 &&
-      constellation > 6
-    )
-      constellation = 0
+    if (typeof constellation !== 'number') constellation = 0
+    else constellation = Math.max(0, Math.min(6, Math.round(constellation)))
 
     const { level, ascension } = validateCharLevelAsc(rawLevel, rawAscension)
     talent = validateTalent(ascension, talent)

@@ -29,7 +29,7 @@ export class CharacterDataManager extends DataManager<
     super(database, 'characters')
   }
   override validate(obj: unknown): ICharacter | undefined {
-    if (!obj || typeof obj !== 'object') return undefined
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
     const {
       key: characterKey,
       level: rawLevel,
@@ -49,7 +49,10 @@ export class CharacterDataManager extends DataManager<
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
-    if (typeof eidolon !== 'number' && eidolon < 0 && eidolon > 6) eidolon = 0
+    if (typeof eidolon !== 'number') eidolon = 0
+    // Clamp eidolon to valid range [0, 6]
+    if (eidolon < 0) eidolon = 0
+    if (eidolon > 6) eidolon = 6
 
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
 

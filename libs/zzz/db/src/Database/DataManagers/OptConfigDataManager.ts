@@ -96,7 +96,8 @@ export class OptConfigDataManager extends DataManager<
     super(database, 'optConfigs')
   }
   override validate(obj: object): OptConfig | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null || Array.isArray(obj))
+      return undefined
     let {
       statFilters,
 

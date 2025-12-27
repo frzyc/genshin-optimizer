@@ -235,16 +235,18 @@ export class LightConeDataManager extends DataManager<
   }
 }
 
-export function validateLightCone(obj: unknown = {}): ILightCone | undefined {
-  if (typeof obj !== 'object') return undefined
+export function validateLightCone(obj: unknown): ILightCone | undefined {
+  if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
   const { key, level: rawLevel, ascension: rawAscension } = obj as ILightCone
   let { superimpose, location, lock } = obj as ILightCone
 
   if (!allLightConeKeys.includes(key)) return undefined
   if (rawLevel > lightConeMaxLevel) return undefined
   const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
-  if (typeof superimpose !== 'number' || superimpose < 1 || superimpose > 5)
-    superimpose = 1
+  if (typeof superimpose !== 'number') superimpose = 1
+  // Clamp superimpose to valid range [1, 5]
+  if (superimpose < 1) superimpose = 1
+  if (superimpose > 5) superimpose = 5
   if (!location || !allCharacterKeys.includes(location)) location = ''
   lock = !!lock
   return { key, level, ascension, superimpose, location, lock }

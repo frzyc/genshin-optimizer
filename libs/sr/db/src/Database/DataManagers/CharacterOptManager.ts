@@ -37,7 +37,7 @@ export class CharacterOptManager extends DataManager<
     super(database, 'charOpts')
   }
   override validate(obj: unknown, key: CharacterKey): CharOpt | undefined {
-    if (!obj || typeof obj !== 'object') return undefined
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
     let { target, conditionals, bonusStats, statConstraints, optConfigId } =
       obj as CharOpt
     if (!validateTag(target)) target = defOptTarget(key)
