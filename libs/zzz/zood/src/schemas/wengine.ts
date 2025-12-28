@@ -14,14 +14,6 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import { z } from 'zod'
 
-/**
- * Wengine schema - single source of truth for:
- * - TypeScript type (via z.infer)
- * - Validation
- * - Import/export parsing
- */
-
-// Strict schemas - fail on invalid data (for import validation)
 export const wengineKeySchema = z
   .string()
   .refine((val): val is WengineKey =>
@@ -36,7 +28,6 @@ export const locationKeySchema = z
     allLocationKeys.includes(val as LocationKey)
   )
 
-// Base wengine schema - strict validation for imports
 export const wengineSchema = z.object({
   key: wengineKeySchema,
   level: z.number().int().min(1).max(wengineMaxLevel),
@@ -46,9 +37,8 @@ export const wengineSchema = z.object({
   lock: z.boolean(),
 })
 
-// Lenient schema for database recovery - provides defaults for invalid values
 export const wengineRecoverySchema = z.object({
-  key: wengineKeySchema, // Key must be valid - can't recover
+  key: wengineKeySchema,
   level: z.preprocess(
     (val) =>
       typeof val === 'number' && val >= 1 && val <= wengineMaxLevel ? val : 1,
@@ -74,9 +64,6 @@ export const wengineRecoverySchema = z.object({
   lock: z.preprocess((val) => !!val, z.boolean()),
 })
 
-// TypeScript interface for the wengine
-// Note: We keep the interface explicit for documentation and IDE support
-// The schema validates that data conforms to this shape
 export interface IWengine {
   key: WengineKey
   level: number
@@ -86,13 +73,6 @@ export interface IWengine {
   lock: boolean
 }
 
-/**
- * Parse wengine with schema (lenient - for database recovery)
- *
- * Note: This returns the raw parsed data. For full validation including
- * level/modification co-validation, use the DataManager.validate() method
- * or apply business rules after parsing.
- */
 export function parseWengineRecovery(
   obj: unknown
 ): z.infer<typeof wengineRecoverySchema> | undefined {
@@ -102,21 +82,15 @@ export function parseWengineRecovery(
   return result.success ? result.data : undefined
 }
 
-/**
- * Validate wengine data (lenient - for database recovery)
- *
- * Note: Full validation including level/modification co-validation
- * should be done in the DataManager which has access to game utils.
- */
 export function validateWengine(obj: unknown): IWengine | undefined {
   const data = parseWengineRecovery(obj)
   return data ? (data as IWengine) : undefined
 }
 
 export function parseWengineImport(obj: unknown): IWengine {
-  return wengineSchema.parse(obj) as IWengine // Throws on invalid - use for imports
+  return wengineSchema.parse(obj) as IWengine
 }
 
 export function safeParseWengineImport(obj: unknown) {
-  return wengineSchema.safeParse(obj) // Returns result object
+  return wengineSchema.safeParse(obj)
 }

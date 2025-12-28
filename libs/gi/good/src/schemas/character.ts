@@ -7,34 +7,20 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { z } from 'zod'
 
-/**
- * GI Character schema - single source of truth for:
- * - TypeScript types (ICharacter interface)
- * - Structural validation
- * - Import/export parsing
- *
- * Note: Business rules (level/ascension co-validation, talent limits)
- * are handled in the DataManager using validateCharLevelAsc and validateTalent.
- */
-
-// Strict schemas for imports
 export const characterKeySchema = z
   .string()
   .refine((val): val is CharacterKey =>
     allCharacterKeys.includes(val as CharacterKey)
   )
 
-// ascensionKeySchema is exported from weapon.ts
 const ascensionKeySchema = zodNumericLiteral(allAscensionKeys)
 
-// Talent schema - strict
 export const talentSchema = z.object({
   auto: z.number().int().min(1).max(15),
   skill: z.number().int().min(1).max(15),
   burst: z.number().int().min(1).max(15),
 })
 
-// Talent schema - recovery
 export const talentRecoverySchema = z.object({
   auto: z.preprocess(
     (val) => (typeof val === 'number' ? clamp(Math.round(val), 1, 15) : 1),
@@ -50,7 +36,6 @@ export const talentRecoverySchema = z.object({
   ),
 })
 
-// STRICT schema - for imports (rejects invalid data)
 export const characterSchema = z.object({
   key: characterKeySchema,
   level: z.number().int().min(1).max(90),
@@ -59,9 +44,8 @@ export const characterSchema = z.object({
   talent: talentSchema,
 })
 
-// LENIENT schema - for database recovery (provides defaults)
 export const characterRecoverySchema = z.object({
-  key: characterKeySchema, // Key must be valid - can't recover
+  key: characterKeySchema,
   level: z.preprocess(
     (val) => (typeof val === 'number' && val >= 1 && val <= 90 ? val : 1),
     z.number()
@@ -85,7 +69,6 @@ export const characterRecoverySchema = z.object({
   }, talentRecoverySchema),
 })
 
-// TypeScript interfaces
 export interface ICharacterTalent {
   auto: number
   skill: number
@@ -100,19 +83,14 @@ export interface ICharacter {
   talent: ICharacterTalent
 }
 
-// Utility function to check if a key is a talent key
 export function isTalentKey(tKey: string): tKey is keyof ICharacterTalent {
   return (['auto', 'skill', 'burst'] as const).includes(
     tKey as keyof ICharacterTalent
   )
 }
 
-// Raw parsed data type
 export type CharacterRecoveryData = z.infer<typeof characterRecoverySchema>
 
-/**
- * Parse character with schema (lenient - for database recovery)
- */
 export function parseCharacterRecovery(
   obj: unknown
 ): CharacterRecoveryData | undefined {
@@ -122,16 +100,10 @@ export function parseCharacterRecovery(
   return result.success ? result.data : undefined
 }
 
-/**
- * Parse character import data (strict - throws on invalid)
- */
 export function parseCharacterImport(obj: unknown) {
   return characterSchema.parse(obj)
 }
 
-/**
- * Safe parse character import data (strict - returns result object)
- */
 export function safeParseCharacterImport(obj: unknown) {
   return characterSchema.safeParse(obj)
 }

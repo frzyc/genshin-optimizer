@@ -24,20 +24,17 @@ import {
 import { z } from 'zod'
 import type { IRelic, ISubstat } from '../IRelic'
 
-// Strict key validations
 const relicSetKey = zodEnum(allRelicSetKeys)
 const relicSlotKey = zodEnum(allRelicSlotKeys)
 const relicRarityKey = zodNumericLiteral(allRelicRarityKeys)
 const relicMainStatKey = zodEnum(allRelicMainStatKeys)
 
-// Location validation - '' for unequipped, or a valid character key
 const locationKey = z.preprocess((val) => {
   if (val === '' || val === null || val === undefined) return ''
   if (typeof val !== 'string') return ''
   return allLocationKeys.includes(val as LocationKey) ? val : ''
 }, z.string()) as z.ZodType<LocationKey>
 
-// Substat schema
 const substatSchema = z.object({
   key: z.preprocess((val) => {
     if (val === '' || val === null || val === undefined) return ''
@@ -47,10 +44,6 @@ const substatSchema = z.object({
   value: z.number().catch(0),
 })
 
-/**
- * Schema for basic relic structure validation.
- * Use validateRelicWithRules for full validation with substat clamping.
- */
 export const relicSchemaBase = z.object({
   setKey: relicSetKey,
   slotKey: relicSlotKey,
@@ -66,9 +59,6 @@ function defSub(): ISubstat {
   return { key: '', value: 0 }
 }
 
-/**
- * Parses and validates substats, clamping values to valid ranges.
- */
 function parseSubstats(
   obj: unknown,
   rarity: RelicRarityKey,
@@ -104,7 +94,7 @@ function parseSubstats(
   if (sortSubs)
     substats = substats.sort((a, b) => {
       function getPrio(key: ISubstat['key']) {
-        if (!key) return 100 // empty subs go to the end
+        if (!key) return 100
         return allRelicSubStatKeys.indexOf(key)
       }
       return getPrio(a.key) - getPrio(b.key)
@@ -113,14 +103,6 @@ function parseSubstats(
   return pruneOrPadArray(substats, 4, defSub())
 }
 
-/**
- * Validates relic data with full business rule validation.
- * @param obj - Raw relic data to validate
- * @param getSubstatRange - Function to get valid substat ranges
- * @param allowZeroSub - Whether to allow zero-value substats
- * @param sortSubs - Whether to sort substats by key order
- * @returns Validated IRelic or undefined if invalid
- */
 export function validateRelicWithRules(
   obj: unknown,
   getSubstatRange: (
@@ -135,7 +117,6 @@ export function validateRelicWithRules(
   const { setKey, rarity, slotKey } = obj as IRelic
   let { level, mainStatKey, substats, location, lock } = obj as IRelic
 
-  // Non-recoverable validations
   if (
     !allRelicSetKeys.includes(setKey) ||
     !allRelicSlotKeys.includes(slotKey) ||
@@ -150,7 +131,6 @@ export function validateRelicWithRules(
   level = Math.round(level)
   if (level > relicMaxLevel[rarity]) return undefined
 
-  // Parse substats with clamping
   substats = parseSubstats(
     substats,
     rarity,
@@ -159,19 +139,16 @@ export function validateRelicWithRules(
     sortSubs
   )
 
-  // Substat cannot have same key as mainstat
   if (substats.find((sub) => sub.key === mainStatKey)) return undefined
 
   lock = !!lock
 
-  // Validate main stat against slot
   const plausibleMainStats = relicSlotToMainStatKeys[slotKey]
   if (!(plausibleMainStats as RelicMainStatKey[]).includes(mainStatKey)) {
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
-    else return undefined // ambiguous mainstat
+    else return undefined
   }
 
-  // Validate location
   if (!location || !allCharacterKeys.includes(location)) location = ''
 
   return {

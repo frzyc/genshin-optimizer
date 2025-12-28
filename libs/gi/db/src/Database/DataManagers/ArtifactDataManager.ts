@@ -500,44 +500,31 @@ export function cachedArtifact(
   return { artifact: validated, errors }
 }
 
-/**
- * Default empty substat
- */
 function defSub(): ISubstat {
   return { key: '', value: 0 }
 }
 
-/**
- * Parse substats using Zod schema from gi-good
- * Business logic (value rounding/clamping) stays here in the DataManager
- */
 function parseSubstats(
   obj: unknown,
   rarity: ArtifactRarity,
   allowZeroSub = false
 ): ISubstat[] {
-  // Handle non-array input
   if (!obj || !Array.isArray(obj)) {
     return Array.from({ length: 4 }, () => defSub())
   }
 
-  // Parse each substat using Zod schema from gi-good
   const substats = obj.slice(0, 4).map((item): ISubstat => {
-    // Structural validation via Zod schema
     const result = substatRecoverySchema.safeParse(item)
     if (!result.success) return defSub()
 
     const { key, value: rawValue, initialValue } = result.data
 
-    // Empty key means empty substat
     if (!key) return { key: '', value: 0 }
 
-    // Round value based on stat type (% stats get 1 decimal, flat stats rounded)
     let value = key.endsWith('_')
       ? Math.round(rawValue * 10) / 10
       : Math.round(rawValue)
 
-    // Clamp to valid range for this rarity
     const { low, high } = getSubstatRange(rarity, key as SubstatKey)
     value = clamp(value, allowZeroSub ? 0 : low, high)
 
@@ -546,7 +533,6 @@ function parseSubstats(
       : { key, value }
   })
 
-  // Pad to 4 substats
   while (substats.length < 4) substats.push(defSub())
 
   return substats
@@ -556,15 +542,12 @@ export function validateArtifact(
   obj: unknown,
   allowZeroSub = false
 ): IArtifact | undefined {
-  // Step 1: Structural validation via shared schema
   const parsed = parseArtifactRecovery(obj)
   if (!parsed) return undefined
 
   const { setKey, rarity, slotKey, substats, unactivatedSubstats } = parsed
   let { level, mainStatKey, location, lock } = parsed
 
-  // Step 2: Business rules validation using allStats
-  // Check setKey is valid and has the required slot and rarity
   if (
     !allArtifactSetKeys.includes(setKey) ||
     !allArtifactSlotKeys.includes(slotKey) ||
@@ -580,7 +563,6 @@ export function validateArtifact(
   level = Math.round(level)
   if (level > artMaxLevel[rarity]) return undefined
 
-  // Parse and validate substats with Zod-based function
   const parsedSubstats = parseSubstats(substats, rarity, allowZeroSub)
   const parsedUnactivated = parseSubstats(
     unactivatedSubstats,
@@ -588,7 +570,6 @@ export function validateArtifact(
     allowZeroSub
   )
 
-  // Substat cannot have same key as mainstat
   if (
     parsedSubstats.find((sub) => sub.key === mainStatKey) ||
     parsedUnactivated.find((sub) => sub.key === mainStatKey)
@@ -597,16 +578,13 @@ export function validateArtifact(
 
   lock = !!lock
 
-  // Validate mainStatKey based on slotKey
   const plausibleMainStats = artSlotMainKeys[slotKey]
   if (!(plausibleMainStats as unknown as MainStatKey[]).includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
-    else return undefined // ambiguous mainstat
+    else return undefined
 
-  // Validate location
   if (!location || !allLocationCharacterKeys.includes(location)) location = ''
 
-  // Move unactivated substats to activated if level >= 4 and slot 4 is empty
   let finalUnactivated: ISubstat[] | undefined = parsedUnactivated.length
     ? parsedUnactivated
     : undefined

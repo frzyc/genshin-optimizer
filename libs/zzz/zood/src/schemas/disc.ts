@@ -21,22 +21,6 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import { z } from 'zod'
 
-/**
- * Disc schema - single source of truth for:
- * - TypeScript types (IDisc, ISubstat)
- * - Validation
- * - Import/export parsing
- *
- * Note: Disc validation has complex interdependencies:
- * - mainStatKey validity depends on slotKey
- * - level max depends on rarity
- * - substats cannot match mainStatKey
- *
- * The schema handles basic structure, while validateDisc() handles
- * the interdependent business rules.
- */
-
-// TypeScript interfaces
 export interface ISubstat {
   key: DiscSubStatKey
   upgrades: number
@@ -54,7 +38,6 @@ export interface IDisc {
   substats: ISubstat[]
 }
 
-// Substat schema
 export const substatSchema = z.object({
   key: z
     .string()
@@ -64,7 +47,6 @@ export const substatSchema = z.object({
   upgrades: z.number().int().min(0),
 })
 
-// STRICT schema - for imports (rejects invalid data)
 export const discSchema = z.object({
   setKey: z
     .string()
@@ -93,7 +75,6 @@ export const discSchema = z.object({
   substats: z.array(substatSchema),
 })
 
-// LENIENT schema - for database recovery (provides defaults)
 export const discRecoverySchema = z.object({
   setKey: z.preprocess(
     (val): DiscSetKey =>
@@ -118,8 +99,8 @@ export const discRecoverySchema = z.object({
         : 'S',
     z.string() as z.ZodType<DiscRarityKey>
   ),
-  mainStatKey: z.unknown(), // Validated based on slotKey in post-processing
-  substats: z.unknown(), // Parsed separately in post-processing
+  mainStatKey: z.unknown(),
+  substats: z.unknown(),
   location: z.preprocess(
     (val): LocationKey =>
       val && allCharacterKeys.includes(val as (typeof allCharacterKeys)[number])
@@ -131,9 +112,6 @@ export const discRecoverySchema = z.object({
   trash: z.preprocess((val) => !!val, z.boolean()),
 })
 
-/**
- * Parse substats array with validation
- */
 export function parseSubstats(
   obj: unknown,
   _rarity: DiscRarityKey,
@@ -160,10 +138,6 @@ export function parseSubstats(
   return substats
 }
 
-/**
- * Apply business rules after schema validation.
- * Handles interdependent validations (mainStat/slot, level/rarity, substats).
- */
 export function applyDiscRules(
   data: z.infer<typeof discRecoverySchema>,
   allowZeroSub = false,
@@ -172,21 +146,17 @@ export function applyDiscRules(
   const slotKey = data.slotKey
   const rarity = data.rarity
 
-  // Validate level based on rarity
   let level = data.level
   if (level < 0 || level > discMaxLevel[rarity]) level = 0
 
-  // Validate mainStatKey based on slotKey - always provide valid fallback
   const plausibleMainStats = discSlotToMainStatKeys[slotKey]
   let mainStatKey = data.mainStatKey as DiscMainStatKey
   if (!plausibleMainStats.includes(mainStatKey)) {
     mainStatKey = plausibleMainStats[0]
   }
 
-  // Parse substats
   const substats = parseSubstats(data.substats, rarity, allowZeroSub, sortSubs)
 
-  // Substat cannot have same key as mainstat
   if (substats.find((sub) => sub.key === mainStatKey)) return undefined
 
   return {
@@ -202,9 +172,6 @@ export function applyDiscRules(
   }
 }
 
-/**
- * Validate disc data (lenient - for database recovery)
- */
 export function validateDisc(
   obj: unknown,
   allowZeroSub = false,
@@ -219,13 +186,9 @@ export function validateDisc(
   return applyDiscRules(result.data, allowZeroSub, sortSubs)
 }
 
-/**
- * Parse disc import data (strict - throws on invalid)
- */
 export function parseDiscImport(obj: unknown): IDisc {
   const data = discSchema.parse(obj)
 
-  // Apply business rules (mainStat/slot validation)
   const slotKey = data.slotKey as DiscSlotKey
   const mainStatKey = data.mainStatKey as DiscMainStatKey
   const plausibleMainStats = discSlotToMainStatKeys[slotKey]
@@ -233,7 +196,6 @@ export function parseDiscImport(obj: unknown): IDisc {
     throw new Error(`Invalid mainStatKey ${mainStatKey} for slotKey ${slotKey}`)
   }
 
-  // Check substats don't match mainstat
   if (data.substats.find((sub) => sub.key === data.mainStatKey)) {
     throw new Error(`Substat cannot have same key as mainstat`)
   }
@@ -241,9 +203,6 @@ export function parseDiscImport(obj: unknown): IDisc {
   return data as IDisc
 }
 
-/**
- * Safe parse disc import data (strict - returns result object)
- */
 export function safeParseDiscImport(obj: unknown) {
   try {
     const data = parseDiscImport(obj)
@@ -256,10 +215,6 @@ export function safeParseDiscImport(obj: unknown) {
   }
 }
 
-/**
- * Validate disc with additional rarity-based checks.
- * Returns validation errors for user feedback.
- */
 export function validateDiscWithErrors(disc: Partial<IDisc>) {
   const errors: string[] = []
   const { mainStatKey } = disc
@@ -271,7 +226,6 @@ export function validateDiscWithErrors(disc: Partial<IDisc>) {
   substats = substats ? substats : []
   const minSubstats = rarity === allDiscRarityKeys[0] ? 3 : 2
 
-  // Substat cannot have same key as mainstat
   if (mainStatKey) {
     const dupSubIndex = substats.findIndex((sub) => sub.key === mainStatKey)
     if (dupSubIndex > -1)

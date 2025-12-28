@@ -13,24 +13,19 @@ import {
 import { z } from 'zod'
 import type { ICharacter } from '../ICharacter'
 
-// Character key - non-recoverable
 const characterKey = zodEnum(allCharacterKeys)
 
-// Ascension key validation
 const ascensionKey = z.preprocess((val) => {
   if (typeof val !== 'number') return 0
   if (!allAscensionKeys.includes(val as AscensionKey)) return 0
   return val
 }, z.number()) as z.ZodType<AscensionKey>
 
-// Eidolon validation - clamp to [0, 6]
 const eidolonKey = zodClampedNumber(0, 6, 0)
 
-// Skill levels validation
 const basicLevel = zodClampedNumber(1, 6, 1)
 const skillLevel = zodClampedNumber(1, 10, 1)
 
-// Bonus abilities partial record
 const bonusAbilitiesSchema = z.preprocess((val) => {
   const defaultVal = {} as Partial<Record<BonusAbilityKey, boolean>>
   for (const key of allBonusAbilityKeys) {
@@ -44,7 +39,6 @@ const bonusAbilitiesSchema = z.preprocess((val) => {
   return defaultVal
 }, z.any()) as z.ZodType<Partial<Record<BonusAbilityKey, boolean>>>
 
-// Stat boosts partial record
 const statBoostsSchema = z.preprocess((val) => {
   const defaultVal = {} as Partial<Record<StatBoostKey, boolean>>
   for (const key of allStatBoostKeys) {
@@ -58,9 +52,6 @@ const statBoostsSchema = z.preprocess((val) => {
   return defaultVal
 }, z.any()) as z.ZodType<Partial<Record<StatBoostKey, boolean>>>
 
-/**
- * Schema for validating character data during import/recovery.
- */
 export const characterSchema = z.object({
   key: characterKey,
   level: zodClampedNumber(1, 80, 1),
@@ -76,12 +67,6 @@ export const characterSchema = z.object({
   servantTalent: skillLevel,
 }) as z.ZodType<ICharacter>
 
-/**
- * Validates character data and applies level/ascension co-validation.
- * @param obj - Raw character data to validate
- * @param validateLevelAsc - Function to co-validate level and ascension
- * @returns Validated ICharacter or undefined if invalid
- */
 export function validateCharacterWithRules(
   obj: unknown,
   validateLevelAsc: (
@@ -93,10 +78,8 @@ export function validateCharacterWithRules(
 
   const { key, level: rawLevel, ascension: rawAscension } = obj as ICharacter
 
-  // Key is non-recoverable
   if (!allCharacterKeys.includes(key)) return undefined
 
-  // Apply level/ascension co-validation
   const { level, ascension } = validateLevelAsc(
     typeof rawLevel === 'number' ? rawLevel : 1,
     typeof rawAscension === 'number' &&
@@ -105,7 +88,6 @@ export function validateCharacterWithRules(
       : 0
   )
 
-  // Now parse with defaults for other fields
   const result = characterSchema.safeParse({ ...obj, level, ascension })
   return result.success ? result.data : undefined
 }
