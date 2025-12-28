@@ -1,10 +1,8 @@
-'use client'
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
-  NextImage,
   SortByButton,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
@@ -347,7 +345,7 @@ function SelectionCard({
           }}
         >
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={characterAsset(characterKey, 'interknot')}
           />
         </Box>

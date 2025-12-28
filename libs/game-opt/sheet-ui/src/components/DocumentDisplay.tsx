@@ -1,4 +1,3 @@
-'use client'
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'

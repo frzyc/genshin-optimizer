@@ -3,7 +3,6 @@ import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import {
@@ -186,7 +185,7 @@ export function TeamCard({
                       }}
                     >
                       <Box
-                        component={NextImage ? NextImage : 'img'}
+                        component="img"
                         src={
                           imgAssets.team[
                             `team${i + 1}` as keyof typeof imgAssets.team
@@ -398,7 +397,7 @@ function CharacterArea({
             </Box>
 
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={iconAsset(characterKey, gender, silly)}
               sx={{
                 height: 120,
@@ -469,7 +468,7 @@ function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
       }}
     >
       <Box
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         src={weaponAsset(weapon.key, weapon.ascension >= 2)}
         maxWidth="100%"
         maxHeight="50px"
@@ -603,7 +602,7 @@ function Set22({ sets }: { sets: ArtifactSetKey[] }) {
     <>
       {/* top left */}
       <Box
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         sx={{
           position: 'absolute',
           top: 0,
@@ -616,7 +615,7 @@ function Set22({ sets }: { sets: ArtifactSetKey[] }) {
       />
       {/* bottom right */}
       <Box
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         sx={{
           position: 'absolute',
           top: 0,
@@ -688,7 +687,7 @@ function Set4({ set, num }: { set: ArtifactSetKey; num: number }) {
         {num}
       </Box>
       <Box
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         src={artifactAsset(set, 'flower')}
         sx={{ Width: '50px', height: '50px' }}
       />

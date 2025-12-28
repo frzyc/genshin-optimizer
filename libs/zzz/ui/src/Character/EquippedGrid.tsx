@@ -1,4 +1,3 @@
-'use client'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { specialityDefIcon } from '@genshin-optimizer/zzz/assets'

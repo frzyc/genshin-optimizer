@@ -7,7 +7,6 @@ import type {
   SpecialityKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
-import type { StaticImageData } from 'next/image'
 import commonImages from './common'
 import faction from './common/faction'
 import mindscape from './common/mindscape'
@@ -33,14 +32,14 @@ export function characterAsset(
   ck: CharacterKey,
   asset: keyof AssetDataType['chars'][CharacterKey]
 ) {
-  return (chars[ck]?.[asset] ?? '') as string | StaticImageData
+  return (chars[ck]?.[asset] ?? '') as string
 }
 
 export function wengineAsset(
   wk: WengineKey,
   asset: keyof AssetDataType['wengines'][WengineKey]
 ) {
-  return (wengines[wk]?.[asset] ?? '') as string | StaticImageData
+  return (wengines[wk]?.[asset] ?? '') as string
 }
 
 export function wenginePhaseIcon(pk: WenginePhaseKey) {
