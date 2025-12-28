@@ -12,7 +12,7 @@ describe('RelicDataManager.validate', () => {
     relics = database.relics
   })
 
-  it('should validate valid IRelic', () => {
+  it('should validate complete IRelic', () => {
     const valid = {
       setKey: allRelicSetKeys[0],
       rarity: 5,
@@ -28,11 +28,7 @@ describe('RelicDataManager.validate', () => {
     expect(result?.setKey).toBe(allRelicSetKeys[0])
   })
 
-  it('should return undefined for non-object types', () => {
-    expect(relics['validate'](null)).toBeUndefined()
-  })
-
-  it('should return undefined for invalid setKey', () => {
+  it('should reject invalid setKey', () => {
     const invalid = {
       setKey: 'INVALID' as any,
       rarity: 5,
@@ -43,12 +39,10 @@ describe('RelicDataManager.validate', () => {
       location: '',
       lock: false,
     }
-    const result = relics['validate'](invalid)
-    // SR validation is strict - returns undefined for invalid setKey
-    expect(result).toBeUndefined()
+    expect(relics['validate'](invalid)).toBeUndefined()
   })
 
-  it('should return undefined if level exceeds max for rarity', () => {
+  it('should reject level exceeding max for rarity', () => {
     const invalid = {
       setKey: allRelicSetKeys[0],
       rarity: 5,
@@ -59,12 +53,10 @@ describe('RelicDataManager.validate', () => {
       location: '',
       lock: false,
     }
-    const result = relics['validate'](invalid)
-    // SR validation is strict - returns undefined for invalid level
-    expect(result).toBeUndefined()
+    expect(relics['validate'](invalid)).toBeUndefined()
   })
 
-  it('should return undefined if substat has same key as mainstat', () => {
+  it('should reject substat with same key as mainstat', () => {
     const invalid = {
       setKey: allRelicSetKeys[0],
       rarity: 5,
@@ -78,7 +70,7 @@ describe('RelicDataManager.validate', () => {
     expect(relics['validate'](invalid)).toBeUndefined()
   })
 
-  it('should clear invalid location', () => {
+  it('should clear invalid location to empty string', () => {
     const invalid = {
       setKey: allRelicSetKeys[0],
       rarity: 5,

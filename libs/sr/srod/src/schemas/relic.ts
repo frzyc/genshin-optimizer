@@ -1,4 +1,8 @@
-import { zodBoundedNumber, zodEnum, zodNumericLiteral } from '@genshin-optimizer/common/database'
+import {
+  zodBoundedNumber,
+  zodEnum,
+  zodNumericLiteral,
+} from '@genshin-optimizer/common/database'
 import { clamp, pruneOrPadArray } from '@genshin-optimizer/common/util'
 import type {
   LocationKey,
@@ -147,7 +151,13 @@ export function validateRelicWithRules(
   if (level > relicMaxLevel[rarity]) return undefined
 
   // Parse substats with clamping
-  substats = parseSubstats(substats, rarity, getSubstatRange, allowZeroSub, sortSubs)
+  substats = parseSubstats(
+    substats,
+    rarity,
+    getSubstatRange,
+    allowZeroSub,
+    sortSubs
+  )
 
   // Substat cannot have same key as mainstat
   if (substats.find((sub) => sub.key === mainStatKey)) return undefined

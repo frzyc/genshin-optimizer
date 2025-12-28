@@ -3,7 +3,7 @@ import { allWeaponKeys, weaponMaxLevel } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
-describe('WeaponDataManager.validate', () => {
+describe('WeaponDataManager', () => {
   let database: ArtCharDatabase
   let weapons: ArtCharDatabase['weapons']
 
@@ -13,7 +13,7 @@ describe('WeaponDataManager.validate', () => {
     weapons = database.weapons
   })
 
-  it('should validate valid IWeapon', () => {
+  it('should validate complete IWeapon', () => {
     const valid = {
       key: allWeaponKeys[0],
       level: 50,
@@ -27,7 +27,7 @@ describe('WeaponDataManager.validate', () => {
     expect(result?.key).toBe(allWeaponKeys[0])
   })
 
-  it('should return undefined for invalid key', () => {
+  it('should reject invalid weapon key', () => {
     const invalid = {
       key: 'INVALID_KEY',
       level: 50,
@@ -39,7 +39,7 @@ describe('WeaponDataManager.validate', () => {
     expect(weapons['validate'](invalid)).toBeUndefined()
   })
 
-  it('should return undefined for level exceeding max', () => {
+  it('should reject level exceeding rarity max', () => {
     const weaponKey = allWeaponKeys[0]
     const { rarity } = allStats.weapon.data[weaponKey]
     const maxLevel = weaponMaxLevel[rarity]
@@ -54,7 +54,7 @@ describe('WeaponDataManager.validate', () => {
     expect(weapons['validate'](invalid)).toBeUndefined()
   })
 
-  it('should reset refinement to 1 for invalid value', () => {
+  it('should reset refinement to 1 for out-of-range value', () => {
     const invalid = {
       key: allWeaponKeys[0],
       level: 50,
@@ -64,7 +64,6 @@ describe('WeaponDataManager.validate', () => {
       lock: false,
     }
     const result = weapons['validate'](invalid)
-    expect(result).toBeDefined()
     expect(result?.refinement).toBe(1)
   })
 })

@@ -2,7 +2,7 @@ import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { allCharacterKeys, talentLimits } from '@genshin-optimizer/gi/consts'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
-describe('CharacterDataManager.validate', () => {
+describe('CharacterDataManager', () => {
   let database: ArtCharDatabase
   let chars: ArtCharDatabase['chars']
 
@@ -12,7 +12,7 @@ describe('CharacterDataManager.validate', () => {
     chars = database.chars
   })
 
-  it('should validate valid ICharacter', () => {
+  it('should validate complete ICharacter', () => {
     const valid = {
       key: allCharacterKeys[0],
       level: 50,
@@ -25,7 +25,7 @@ describe('CharacterDataManager.validate', () => {
     expect(result?.key).toBe(allCharacterKeys[0])
   })
 
-  it('should return undefined for invalid character key', () => {
+  it('should reject invalid character key', () => {
     const invalid = {
       key: 'INVALID_KEY',
       level: 50,
@@ -36,7 +36,7 @@ describe('CharacterDataManager.validate', () => {
     expect(chars['validate'](invalid)).toBeUndefined()
   })
 
-  it('should clamp constellation to valid range', () => {
+  it('should clamp constellation to max 6', () => {
     const invalid = {
       key: allCharacterKeys[0],
       level: 50,
@@ -45,23 +45,22 @@ describe('CharacterDataManager.validate', () => {
       talent: { auto: 5, skill: 5, burst: 5 },
     }
     const result = chars['validate'](invalid)
-    expect(result).toBeDefined()
     expect(result?.constellation).toBe(6)
   })
 
-  it('should clamp talent levels to max', () => {
+  it('should clamp talent levels to ascension max', () => {
+    const ascension = 3
+    const maxTalent = talentLimits[ascension]
     const invalid = {
       key: allCharacterKeys[0],
       level: 50,
       constellation: 2,
-      ascension: 3,
+      ascension,
       talent: { auto: 100, skill: 100, burst: 100 },
     }
     const result = chars['validate'](invalid)
-    expect(result).toBeDefined()
-    const maxTalentForAscension = talentLimits[3] // ascension 3
-    expect(result?.talent.auto).toBe(maxTalentForAscension)
-    expect(result?.talent.skill).toBe(maxTalentForAscension)
-    expect(result?.talent.burst).toBe(maxTalentForAscension)
+    expect(result?.talent.auto).toBe(maxTalent)
+    expect(result?.talent.skill).toBe(maxTalent)
+    expect(result?.talent.burst).toBe(maxTalent)
   })
 })

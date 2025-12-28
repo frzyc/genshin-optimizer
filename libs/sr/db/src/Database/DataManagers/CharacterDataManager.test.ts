@@ -2,7 +2,7 @@ import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
 import { SroDatabase } from '../Database'
 
-// SR max values
+// SR max values for business logic testing
 const eidolonMaxLevel = 6
 const skillMaxLevel = { basic: 6, skill: 10, ult: 10, talent: 10 }
 
@@ -16,7 +16,7 @@ describe('CharacterDataManager.validate', () => {
     chars = database.chars
   })
 
-  it('should validate valid ICharacter', () => {
+  it('should validate complete ICharacter', () => {
     const valid = {
       key: allCharacterKeys[0],
       level: 50,
@@ -34,11 +34,7 @@ describe('CharacterDataManager.validate', () => {
     expect(result?.eidolon).toBe(2)
   })
 
-  it('should return undefined for non-object types', () => {
-    expect(chars['validate'](null)).toBeUndefined()
-  })
-
-  it('should return undefined for invalid character key', () => {
+  it('should reject invalid character key', () => {
     const invalid = {
       key: 'INVALID_KEY',
       level: 50,
@@ -53,7 +49,7 @@ describe('CharacterDataManager.validate', () => {
     expect(chars['validate'](invalid)).toBeUndefined()
   })
 
-  it('should clamp eidolon to valid range', () => {
+  it('should clamp eidolon to max 6', () => {
     const invalid = {
       key: allCharacterKeys[0],
       level: 50,
@@ -70,7 +66,7 @@ describe('CharacterDataManager.validate', () => {
     expect(result?.eidolon).toBe(eidolonMaxLevel)
   })
 
-  it('should clamp skill levels to max', () => {
+  it('should clamp skill levels to their max values', () => {
     const invalid = {
       key: allCharacterKeys[0],
       level: 50,

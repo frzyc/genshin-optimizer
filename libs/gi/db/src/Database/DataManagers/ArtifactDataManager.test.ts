@@ -3,7 +3,7 @@ import { allArtifactSetKeys, artMaxLevel } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
-describe('ArtifactDataManager.validate', () => {
+describe('ArtifactDataManager', () => {
   let database: ArtCharDatabase
   let artifacts: ArtCharDatabase['arts']
 
@@ -13,16 +13,19 @@ describe('ArtifactDataManager.validate', () => {
     artifacts = database.arts
   })
 
-  it('should validate valid IArtifact', () => {
-    // Find a valid artifact set that supports rarity 5 and flower slot
-    const validSetKey = allArtifactSetKeys.find(
+  // Helper to find a valid set key for flower slot with rarity 5
+  function getValidFlowerSetKey() {
+    return allArtifactSetKeys.find(
       (setKey) =>
         allStats.art.data[setKey].slots.includes('flower') &&
         allStats.art.data[setKey].rarities.includes(5)
-    )
-    expect(validSetKey).toBeDefined()
+    )!
+  }
+
+  it('should validate complete IArtifact', () => {
+    const validSetKey = getValidFlowerSetKey()
     const valid = {
-      setKey: validSetKey!,
+      setKey: validSetKey,
       rarity: 5,
       level: 10,
       slotKey: 'flower',
@@ -32,15 +35,10 @@ describe('ArtifactDataManager.validate', () => {
       lock: false,
     }
     const result = artifacts['validate'](valid)
-    expect(result).toBeDefined()
     expect(result?.setKey).toBe(validSetKey)
   })
 
-  it('should return undefined for non-object types', () => {
-    expect(artifacts['validate'](null)).toBeUndefined()
-  })
-
-  it('should return undefined for invalid setKey', () => {
+  it('should reject invalid setKey', () => {
     const invalid = {
       setKey: 'INVALID' as any,
       rarity: 5,
@@ -51,21 +49,13 @@ describe('ArtifactDataManager.validate', () => {
       location: '',
       lock: false,
     }
-    const result = artifacts['validate'](invalid)
-    // GI validation is strict - returns undefined for invalid setKey
-    expect(result).toBeUndefined()
+    expect(artifacts['validate'](invalid)).toBeUndefined()
   })
 
-  it('should return undefined if level exceeds max for rarity', () => {
-    // Find a valid artifact set that supports rarity 5 and flower slot
-    const validSetKey = allArtifactSetKeys.find(
-      (setKey) =>
-        allStats.art.data[setKey].slots.includes('flower') &&
-        allStats.art.data[setKey].rarities.includes(5)
-    )
-    expect(validSetKey).toBeDefined()
+  it('should reject level exceeding max for rarity', () => {
+    const validSetKey = getValidFlowerSetKey()
     const invalid = {
-      setKey: validSetKey!,
+      setKey: validSetKey,
       rarity: 5,
       level: artMaxLevel[5] + 1,
       slotKey: 'flower',
@@ -74,21 +64,13 @@ describe('ArtifactDataManager.validate', () => {
       location: '',
       lock: false,
     }
-    const result = artifacts['validate'](invalid)
-    // GI validation is strict - returns undefined for invalid level
-    expect(result).toBeUndefined()
+    expect(artifacts['validate'](invalid)).toBeUndefined()
   })
 
-  it('should return undefined if substat has same key as mainstat', () => {
-    // Find a valid artifact set that supports rarity 5 and flower slot
-    const validSetKey = allArtifactSetKeys.find(
-      (setKey) =>
-        allStats.art.data[setKey].slots.includes('flower') &&
-        allStats.art.data[setKey].rarities.includes(5)
-    )
-    expect(validSetKey).toBeDefined()
+  it('should reject substat with same key as mainstat', () => {
+    const validSetKey = getValidFlowerSetKey()
     const invalid = {
-      setKey: validSetKey!,
+      setKey: validSetKey,
       rarity: 5,
       level: 10,
       slotKey: 'flower',

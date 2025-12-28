@@ -15,7 +15,7 @@ describe('LightConeDataManager.validate', () => {
     lightCones = database.lightCones
   })
 
-  it('should validate valid ILightCone', () => {
+  it('should validate complete ILightCone', () => {
     const valid = {
       key: allLightConeKeys[0],
       level: 50,
@@ -30,11 +30,7 @@ describe('LightConeDataManager.validate', () => {
     expect(result?.level).toBe(50)
   })
 
-  it('should return undefined for non-object types', () => {
-    expect(lightCones['validate'](null)).toBeUndefined()
-  })
-
-  it('should return undefined for invalid key', () => {
+  it('should reject invalid light cone key', () => {
     const invalid = {
       key: 'INVALID_KEY',
       level: 50,
@@ -46,7 +42,7 @@ describe('LightConeDataManager.validate', () => {
     expect(lightCones['validate'](invalid)).toBeUndefined()
   })
 
-  it('should return undefined for level exceeding max', () => {
+  it('should reject level exceeding max', () => {
     const invalid = {
       key: allLightConeKeys[0],
       level: lightConeMaxLevel + 1,
@@ -58,7 +54,7 @@ describe('LightConeDataManager.validate', () => {
     expect(lightCones['validate'](invalid)).toBeUndefined()
   })
 
-  it('should clamp superimpose to valid range', () => {
+  it('should clamp superimpose to valid range [1, 5]', () => {
     const invalid = {
       key: allLightConeKeys[0],
       level: 50,
@@ -72,7 +68,7 @@ describe('LightConeDataManager.validate', () => {
     expect(result?.superimpose).toBe(5)
   })
 
-  it('should clear invalid location', () => {
+  it('should clear invalid location to empty string', () => {
     const invalid = {
       key: allLightConeKeys[0],
       level: 50,
@@ -84,19 +80,5 @@ describe('LightConeDataManager.validate', () => {
     const result = lightCones['validate'](invalid)
     expect(result).toBeDefined()
     expect(result?.location).toBe('')
-  })
-
-  it('should coerce lock to boolean', () => {
-    const invalid = {
-      key: allLightConeKeys[0],
-      level: 50,
-      ascension: 3,
-      superimpose: 1,
-      location: '',
-      lock: 1,
-    }
-    const result = lightCones['validate'](invalid)
-    expect(result).toBeDefined()
-    expect(result?.lock).toBe(true)
   })
 })

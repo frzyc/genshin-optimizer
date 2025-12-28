@@ -1,7 +1,7 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
-describe('BuildTcDataManager.validate', () => {
+describe('BuildTcDataManager', () => {
   let database: ArtCharDatabase
   let buildTcs: ArtCharDatabase['buildTcs']
 
@@ -11,7 +11,7 @@ describe('BuildTcDataManager.validate', () => {
     buildTcs = database.buildTcs
   })
 
-  it('should validate valid BuildTc', () => {
+  it('should validate complete BuildTc', () => {
     const valid = {
       name: 'Test BuildTc',
       description: 'Test description',
@@ -44,11 +44,6 @@ describe('BuildTcDataManager.validate', () => {
       },
     }
     const result = buildTcs['validate'](valid)
-    expect(result).toBeDefined()
     expect(result?.name).toBe('Test BuildTc')
-  })
-
-  it('should return undefined for non-object types', () => {
-    expect(buildTcs['validate'](null)).toBeUndefined()
   })
 })

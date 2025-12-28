@@ -36,7 +36,8 @@ export const locationCharacterKeySchema = z
   .string()
   .refine(
     (val): val is LocationKey =>
-      val === '' || allLocationCharacterKeys.includes(val as LocationCharacterKey)
+      val === '' ||
+      allLocationCharacterKeys.includes(val as LocationCharacterKey)
   )
 
 // STRICT schema - for imports (rejects invalid data)
@@ -53,18 +54,19 @@ export const weaponSchema = z.object({
 // Note: level is preserved as-is for business rule validation (reject if > max for rarity)
 export const weaponRecoverySchema = z.object({
   key: weaponKeySchema, // Key must be valid - can't recover
-  level: z.preprocess(
-    (val) => (typeof val === 'number' ? val : 1),
-    z.number()
-  ),
+  level: z.preprocess((val) => (typeof val === 'number' ? val : 1), z.number()),
   ascension: z.preprocess(
     (val): AscensionKey =>
-      typeof val === 'number' && val >= 0 && val <= 6 ? (val as AscensionKey) : 0,
+      typeof val === 'number' && val >= 0 && val <= 6
+        ? (val as AscensionKey)
+        : 0,
     z.number() as z.ZodType<AscensionKey>
   ),
   refinement: z.preprocess(
     (val): RefinementKey =>
-      typeof val === 'number' && val >= 1 && val <= 5 ? (val as RefinementKey) : 1,
+      typeof val === 'number' && val >= 1 && val <= 5
+        ? (val as RefinementKey)
+        : 1,
     z.number() as z.ZodType<RefinementKey>
   ),
   location: z.preprocess(
@@ -94,7 +96,10 @@ export type WeaponRecoveryData = z.infer<typeof weaponRecoverySchema>
  * Weapon stats lookup type - passed in to avoid circular dependency with gi-stats
  */
 export interface WeaponStatsLookup {
-  getWeaponData(key: WeaponKey): { rarity: 1 | 2 | 3 | 4 | 5; weaponType: string }
+  getWeaponData(key: WeaponKey): {
+    rarity: 1 | 2 | 3 | 4 | 5
+    weaponType: string
+  }
   getCharWeaponType(location: LocationCharacterKey): string
   getMaxLevel(rarity: 1 | 2 | 3 | 4 | 5): number
   validateLevelAsc(
@@ -140,12 +145,17 @@ export function validateWeapon(
   if (data.level > stats.getMaxLevel(rarity)) return undefined
 
   // Apply level/ascension co-validation
-  const { level, ascension } = stats.validateLevelAsc(data.level, data.ascension)
+  const { level, ascension } = stats.validateLevelAsc(
+    data.level,
+    data.ascension
+  )
 
   // Validate weapon type matches character (if equipped)
   const location = data.location
   if (location) {
-    const charWeaponType = stats.getCharWeaponType(location as LocationCharacterKey)
+    const charWeaponType = stats.getCharWeaponType(
+      location as LocationCharacterKey
+    )
     if (charWeaponType !== weaponType) {
       return undefined // Weapon type mismatch - can't recover
     }

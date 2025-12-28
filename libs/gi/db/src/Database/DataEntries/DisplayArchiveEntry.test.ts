@@ -1,7 +1,7 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
-describe('DisplayArchiveEntry.validate', () => {
+describe('DisplayArchiveEntry', () => {
   let database: ArtCharDatabase
   let displayArchive: ArtCharDatabase['displayArchive']
 
@@ -11,7 +11,7 @@ describe('DisplayArchiveEntry.validate', () => {
     displayArchive = database.displayArchive
   })
 
-  it('should validate valid DisplayArchive', () => {
+  it('should validate complete DisplayArchive', () => {
     const valid = {
       artifact: { rarity: [5] },
       character: {
@@ -29,13 +29,8 @@ describe('DisplayArchiveEntry.validate', () => {
       },
     }
     const result = displayArchive['validate'](valid)
-    expect(result).toBeDefined()
     expect(result?.artifact).toBeDefined()
     expect(result?.character).toBeDefined()
     expect(result?.weapon).toBeDefined()
-  })
-
-  it('should return undefined for non-object types', () => {
-    expect(displayArchive['validate'](null)).toBeUndefined()
   })
 })

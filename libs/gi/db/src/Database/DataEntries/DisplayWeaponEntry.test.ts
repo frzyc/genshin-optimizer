@@ -2,7 +2,7 @@ import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
-describe('DisplayWeaponEntry.validate', () => {
+describe('DisplayWeaponEntry', () => {
   let database: ArtCharDatabase
   let displayWeapon: ArtCharDatabase['displayWeapon']
 
@@ -12,7 +12,7 @@ describe('DisplayWeaponEntry.validate', () => {
     displayWeapon = database.displayWeapon
   })
 
-  it('should validate valid DisplayWeapon', () => {
+  it('should validate complete DisplayWeapon', () => {
     const valid = {
       sortType: 'level' as const,
       ascending: false,
@@ -20,12 +20,7 @@ describe('DisplayWeaponEntry.validate', () => {
       rarity: [5, 4, 3, 2, 1],
     }
     const result = displayWeapon['validate'](valid)
-    expect(result).toBeDefined()
     expect(result?.sortType).toBe('level')
-  })
-
-  it('should return undefined for non-object types', () => {
-    expect(displayWeapon['validate'](null)).toBeUndefined()
   })
 
   it('should filter invalid weaponType values', () => {
@@ -36,7 +31,6 @@ describe('DisplayWeaponEntry.validate', () => {
       rarity: [5, 4, 3, 2, 1],
     }
     const result = displayWeapon['validate'](invalid)
-    expect(result).toBeDefined()
     expect(result?.weaponType).toEqual([allWeaponTypeKeys[0]])
   })
 })

@@ -2,7 +2,7 @@ import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { allCharacterKeys } from '@genshin-optimizer/gi/consts'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
-describe('TeamCharacterDataManager.validate', () => {
+describe('TeamCharacterDataManager', () => {
   let database: ArtCharDatabase
   let teamChars: ArtCharDatabase['teamChars']
 
@@ -12,7 +12,7 @@ describe('TeamCharacterDataManager.validate', () => {
     teamChars = database.teamChars
   })
 
-  it('should validate valid TeamCharacter', () => {
+  it('should validate complete TeamCharacter', () => {
     const valid = {
       key: allCharacterKeys[0],
       optConfigId: '',
@@ -27,11 +27,10 @@ describe('TeamCharacterDataManager.validate', () => {
       infusionAura: '',
     }
     const result = teamChars['validate'](valid)
-    expect(result).toBeDefined()
     expect(result?.key).toBe(allCharacterKeys[0])
   })
 
-  it('should return undefined for invalid character key', () => {
+  it('should reject invalid character key', () => {
     const invalid = {
       key: 'INVALID_KEY',
       optConfigId: '',

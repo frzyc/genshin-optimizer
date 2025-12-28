@@ -5,7 +5,6 @@
  * - TypeScript types (via z.infer)
  * - Validation logic
  * - Import/export parsing
- * - Relationship validation
  *
  * Benefits:
  * 1. Types and validation are always in sync
@@ -33,5 +32,4 @@
 export * from './wengine'
 export * from './character'
 export * from './disc'
-export * from './relationships'
 export * from './zod-format'

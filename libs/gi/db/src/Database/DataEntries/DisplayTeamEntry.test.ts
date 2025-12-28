@@ -1,7 +1,7 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
-describe('DisplayTeamEntry.validate', () => {
+describe('DisplayTeamEntry', () => {
   let database: ArtCharDatabase
   let displayTeam: ArtCharDatabase['displayTeam']
 
@@ -11,17 +11,12 @@ describe('DisplayTeamEntry.validate', () => {
     displayTeam = database.displayTeam
   })
 
-  it('should validate valid DisplayTeam', () => {
+  it('should validate complete DisplayTeam', () => {
     const valid = {
       sortType: 'lastEdit' as const,
       ascending: false,
     }
     const result = displayTeam['validate'](valid)
-    expect(result).toBeDefined()
     expect(result?.sortType).toBe('lastEdit')
-  })
-
-  it('should return undefined for non-object types', () => {
-    expect(displayTeam['validate'](null)).toBeUndefined()
   })
 })

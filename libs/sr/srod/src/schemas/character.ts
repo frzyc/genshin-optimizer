@@ -1,5 +1,9 @@
 import { zodClampedNumber, zodEnum } from '@genshin-optimizer/common/database'
-import type { AscensionKey, BonusAbilityKey, StatBoostKey } from '@genshin-optimizer/sr/consts'
+import type {
+  AscensionKey,
+  BonusAbilityKey,
+  StatBoostKey,
+} from '@genshin-optimizer/sr/consts'
 import {
   allAscensionKeys,
   allBonusAbilityKeys,
@@ -95,7 +99,8 @@ export function validateCharacterWithRules(
   // Apply level/ascension co-validation
   const { level, ascension } = validateLevelAsc(
     typeof rawLevel === 'number' ? rawLevel : 1,
-    typeof rawAscension === 'number' && allAscensionKeys.includes(rawAscension as AscensionKey)
+    typeof rawAscension === 'number' &&
+      allAscensionKeys.includes(rawAscension as AscensionKey)
       ? (rawAscension as AscensionKey)
       : 0
   )

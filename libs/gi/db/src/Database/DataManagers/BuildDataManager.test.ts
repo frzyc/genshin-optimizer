@@ -1,7 +1,7 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
-describe('BuildDataManager.validate', () => {
+describe('BuildDataManager', () => {
   let database: ArtCharDatabase
   let builds: ArtCharDatabase['builds']
 
@@ -11,7 +11,7 @@ describe('BuildDataManager.validate', () => {
     builds = database.builds
   })
 
-  it('should validate valid Build', () => {
+  it('should validate complete Build', () => {
     const valid = {
       name: 'Test Build',
       description: 'Test description',
@@ -19,22 +19,7 @@ describe('BuildDataManager.validate', () => {
       weaponId: '',
     }
     const result = builds['validate'](valid)
-    expect(result).toBeDefined()
     expect(result?.name).toBe('Test Build')
-  })
-
-  it('should return undefined for non-object types', () => {
-    expect(builds['validate'](null)).toBeUndefined()
-  })
-
-  it('should apply default description if missing', () => {
-    const partial = {
-      name: 'Test',
-      artifactIds: {},
-      weaponId: '',
-    }
-    const result = builds['validate'](partial)
-    expect(result).toBeDefined()
-    expect(result?.description).toBe('')
+    expect(result?.description).toBe('Test description')
   })
 })

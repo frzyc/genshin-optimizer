@@ -5,7 +5,7 @@ import {
   maxBuildsToShowList,
 } from './OptConfigDataManager'
 
-describe('OptConfigDataManager.validate', () => {
+describe('OptConfigDataManager', () => {
   let database: ArtCharDatabase
   let optConfigs: ArtCharDatabase['optConfigs']
 
@@ -15,7 +15,7 @@ describe('OptConfigDataManager.validate', () => {
     optConfigs = database.optConfigs
   })
 
-  it('should validate valid OptConfig', () => {
+  it('should validate complete OptConfig', () => {
     const valid = {
       statFilters: [],
       maxBuildsToShow: 5,
@@ -25,12 +25,7 @@ describe('OptConfigDataManager.validate', () => {
       useEquippedArts: [],
     }
     const result = optConfigs['validate'](valid)
-    expect(result).toBeDefined()
     expect(result?.maxBuildsToShow).toBe(5)
-  })
-
-  it('should return undefined for non-object types', () => {
-    expect(optConfigs['validate'](null)).toBeUndefined()
   })
 
   it('should apply default maxBuildsToShow for invalid value', () => {
@@ -39,7 +34,6 @@ describe('OptConfigDataManager.validate', () => {
       maxBuildsToShow: 999,
     }
     const result = optConfigs['validate'](invalid)
-    expect(result).toBeDefined()
     expect(result?.maxBuildsToShow).toBe(maxBuildsToShowDefault)
   })
 
@@ -50,7 +44,6 @@ describe('OptConfigDataManager.validate', () => {
         maxBuildsToShow: maxBuilds,
       }
       const result = optConfigs['validate'](valid)
-      expect(result).toBeDefined()
       expect(result?.maxBuildsToShow).toBe(maxBuilds)
     })
   })

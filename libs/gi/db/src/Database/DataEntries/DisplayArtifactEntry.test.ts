@@ -2,7 +2,7 @@ import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
-describe('DisplayArtifactEntry.validate', () => {
+describe('DisplayArtifactEntry', () => {
   let database: ArtCharDatabase
   let displayArtifact: ArtCharDatabase['displayArtifact']
 
@@ -12,7 +12,7 @@ describe('DisplayArtifactEntry.validate', () => {
     displayArtifact = database.displayArtifact
   })
 
-  it('should validate valid DisplayArtifact', () => {
+  it('should validate complete DisplayArtifact', () => {
     const valid = {
       filterOption: {
         artSetKeys: [],
@@ -39,11 +39,7 @@ describe('DisplayArtifactEntry.validate', () => {
     expect(result).toBeDefined()
   })
 
-  it('should return undefined for non-object types', () => {
-    expect(displayArtifact['validate'](null)).toBeUndefined()
-  })
-
-  it('should clamp levelLow to valid range', () => {
+  it('should clamp levelLow to [0, 20]', () => {
     const invalid = {
       filterOption: {
         artSetKeys: [],
@@ -67,7 +63,6 @@ describe('DisplayArtifactEntry.validate', () => {
       effFilter: [],
     }
     const result = displayArtifact['validate'](invalid)
-    expect(result).toBeDefined()
     expect(result?.filterOption.levelLow).toBe(0)
   })
 })

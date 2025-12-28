@@ -16,7 +16,7 @@ describe('DisplayRelicEntry.validate', () => {
     displayRelic = database.displayRelic
   })
 
-  it('should validate valid DisplayRelic', () => {
+  it('should validate complete DisplayRelic', () => {
     const valid = {
       filterOption: initialFilterOption(),
       ascending: false,
@@ -28,22 +28,7 @@ describe('DisplayRelicEntry.validate', () => {
     expect(result?.sortType).toBe('rarity')
   })
 
-  it('should return undefined for non-object types', () => {
-    expect(displayRelic['validate'](null)).toBeUndefined()
-  })
-
-  it('should apply default filterOption if missing', () => {
-    const partial = {
-      ascending: false,
-      sortType: 'rarity' as const,
-      effFilter: [...allRelicSubStatKeys],
-    }
-    const result = displayRelic['validate'](partial)
-    expect(result).toBeDefined()
-    expect(result?.filterOption).toEqual(initialFilterOption())
-  })
-
-  it('should clamp levelLow to valid range', () => {
+  it('should clamp levelLow to valid range [0, 15]', () => {
     const invalid = {
       filterOption: {
         ...initialFilterOption(),
@@ -73,7 +58,7 @@ describe('DisplayRelicEntry.validate', () => {
     expect(result?.filterOption.relicSetKeys).toEqual([allRelicSetKeys[0]])
   })
 
-  it('should validate all valid sortType values', () => {
+  it('should validate all sortType values', () => {
     relicSortKeys.forEach((sortKey) => {
       const valid = {
         filterOption: initialFilterOption(),

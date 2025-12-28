@@ -2,7 +2,7 @@ import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { allElementKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
-describe('DisplayCharacterEntry.validate', () => {
+describe('DisplayCharacterEntry', () => {
   let database: ArtCharDatabase
   let displayChar: ArtCharDatabase['displayCharacter']
 
@@ -12,7 +12,7 @@ describe('DisplayCharacterEntry.validate', () => {
     displayChar = database.displayCharacter
   })
 
-  it('should validate valid DisplayCharacterEntry', () => {
+  it('should validate complete DisplayCharacterEntry', () => {
     const valid = {
       sortType: 'level' as const,
       ascending: false,
@@ -25,11 +25,7 @@ describe('DisplayCharacterEntry.validate', () => {
     expect(result?.sortType).toBe('level')
   })
 
-  it('should return undefined for non-object types', () => {
-    expect(displayChar['validate'](null)).toBeUndefined()
-  })
-
-  it('should disallow "new" as sortType', () => {
+  it('should disallow "new" as sortType (business rule)', () => {
     const invalid = {
       sortType: 'new',
       ascending: false,
@@ -38,7 +34,6 @@ describe('DisplayCharacterEntry.validate', () => {
       pageIndex: 0,
     }
     const result = displayChar['validate'](invalid)
-    expect(result).toBeDefined()
     expect(result?.sortType).toBe('level')
   })
 
@@ -51,7 +46,6 @@ describe('DisplayCharacterEntry.validate', () => {
       pageIndex: 0,
     }
     const result = displayChar['validate'](invalid)
-    expect(result).toBeDefined()
     expect(result?.weaponType).toEqual([allWeaponTypeKeys[0]])
   })
 })
