@@ -8,7 +8,7 @@ import { ZzzDatabase } from '../Database'
 
 describe('WengineDataManager.validate', () => {
   let database: ZzzDatabase
-  let wengines: ReturnType<typeof database.wengines>
+  let wengines: ZzzDatabase['wengines']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('zzz')
@@ -88,7 +88,7 @@ describe('WengineDataManager.validate', () => {
       expect(wengines['validate'](invalid)).toBeUndefined()
     })
 
-    it('should return undefined for level exceeding max', () => {
+    it('should recover with default level if exceeding max', () => {
       const invalid = {
         key: allWengineKeys[0],
         level: wengineMaxLevel + 1,
@@ -97,7 +97,9 @@ describe('WengineDataManager.validate', () => {
         location: '',
         lock: false,
       }
-      expect(wengines['validate'](invalid)).toBeUndefined()
+      const result = wengines['validate'](invalid)
+      expect(result).toBeDefined()
+      expect(result?.level).toBe(1) // Falls back to default
     })
   })
 

@@ -4,7 +4,7 @@ import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('CharMetaDataManager.validate', () => {
   let database: ArtCharDatabase
-  let charMetas: ReturnType<typeof database.charMeta>
+  let charMetas: ArtCharDatabase['charMeta']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')
@@ -13,7 +13,11 @@ describe('CharMetaDataManager.validate', () => {
   })
 
   it('should validate valid ICharMeta', () => {
-    const valid = { description: 'Test description', favorite: true, rvFilter: [] }
+    const valid = {
+      description: 'Test description',
+      favorite: true,
+      rvFilter: [],
+    }
     const result = charMetas['validate'](valid)
     expect(result).toBeDefined()
     expect(result?.description).toBe('Test description')

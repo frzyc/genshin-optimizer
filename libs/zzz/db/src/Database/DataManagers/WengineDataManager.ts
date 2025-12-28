@@ -1,4 +1,14 @@
-import type { CharacterKey, WengineKey } from '@genshin-optimizer/zzz/consts'
+import {
+  zodBoolean,
+  zodBoundedNumber,
+  zodEnum,
+  zodEnumWithDefault,
+} from '@genshin-optimizer/common/database'
+import type {
+  CharacterKey,
+  MilestoneKey,
+  WengineKey,
+} from '@genshin-optimizer/zzz/consts'
 import {
   allLocationKeys,
   allWengineKeys,
@@ -6,11 +16,22 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { IWengine } from '@genshin-optimizer/zzz/zood'
+import { z } from 'zod'
 import type { ICachedCharacter } from '../../Interfaces'
 import type { ICachedWengine } from '../../Interfaces/IDbWengine'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
 import { initialCharacterData } from './CharacterDataManager'
+
+// Define schema at module level for reuse and clarity
+const wengineSchema = z.object({
+  key: zodEnum(allWengineKeys), // Only key is strict - invalid key = reject
+  level: zodBoundedNumber(1, wengineMaxLevel, 1),
+  modification: zodBoundedNumber(0, 5, 0),
+  phase: zodBoundedNumber(1, 5, 1),
+  location: zodEnumWithDefault(allLocationKeys, ''),
+  lock: zodBoolean(true), // Coerce truthy values (1 → true, 0 → false)
+})
 
 export class WengineDataManager extends DataManager<
   string,
@@ -24,25 +45,25 @@ export class WengineDataManager extends DataManager<
 
   override validate(obj: unknown): IWengine | undefined {
     if (typeof obj !== 'object' || obj === null) return undefined
-    const { key, level: rawLevel, modification: rawMod } = obj as IWengine
-    let { phase, location, lock } = obj as IWengine
 
-    if (!allWengineKeys.includes(key)) return undefined
-    if (rawLevel > wengineMaxLevel) return undefined
-    const { sanitizedLevel, milestone: modification } = validateLevelMilestone(
-      rawLevel,
-      rawMod
+    const result = wengineSchema.safeParse(obj)
+    if (!result.success) return undefined
+
+    const data = result.data
+
+    // Apply level/milestone co-validation
+    const { sanitizedLevel, milestone } = validateLevelMilestone(
+      data.level,
+      data.modification as MilestoneKey
     )
-    if (typeof phase !== 'number' || phase < 1 || phase > 5) phase = 1
-    if (location && !allLocationKeys.includes(location)) location = ''
-    lock = !!lock
+
     return {
-      key,
+      key: data.key as WengineKey,
       level: sanitizedLevel,
-      modification,
-      phase,
-      location,
-      lock,
+      modification: milestone,
+      phase: data.phase as 1 | 2 | 3 | 4 | 5,
+      location: data.location,
+      lock: data.lock,
     }
   }
   override toCache(

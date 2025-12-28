@@ -1,24 +1,10 @@
-import { clamp, pruneOrPadArray } from '@genshin-optimizer/common/util'
 import type {
-  RelicMainStatKey,
   RelicRarityKey,
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
-import {
-  allCharacterKeys,
-  allRelicMainStatKeys,
-  allRelicRarityKeys,
-  allRelicSetKeys,
-  allRelicSlotKeys,
-  allRelicSubStatKeys,
-  relicMaxLevel,
-  relicSlotToMainStatKeys,
-} from '@genshin-optimizer/sr/consts'
-import type {
-  IRelic,
-  ISrObjectDescription,
-  ISubstat,
-} from '@genshin-optimizer/sr/srod'
+import { relicMaxLevel } from '@genshin-optimizer/sr/consts'
+import type { IRelic, ISrObjectDescription } from '@genshin-optimizer/sr/srod'
+import { validateRelicWithRules } from '@genshin-optimizer/sr/srod'
 import {
   getRelicMainStatVal,
   getSubstatRange,
@@ -437,84 +423,19 @@ export function cachedRelic(
   return { relic: validated, errors }
 }
 
+/**
+ * Validates relic data using Zod schema with substat range validation.
+ */
 export function validateRelic(
   obj: unknown,
   allowZeroSub = false,
   sortSubs = true
 ): IRelic | undefined {
-  if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
-  const { setKey, rarity, slotKey } = obj as IRelic
-  let { level, mainStatKey, substats, location, lock } = obj as IRelic
-
-  if (
-    !allRelicSetKeys.includes(setKey) ||
-    !allRelicSlotKeys.includes(slotKey) ||
-    !allRelicMainStatKeys.includes(mainStatKey) ||
-    !allRelicRarityKeys.includes(rarity) ||
-    typeof level !== 'number' ||
-    level < 0 ||
-    level > 15
+  return validateRelicWithRules(
+    obj,
+    (rarity: RelicRarityKey, key: RelicSubStatKey) =>
+      getSubstatRange(rarity, key),
+    allowZeroSub,
+    sortSubs
   )
-    return undefined // non-recoverable
-  level = Math.round(level)
-  if (level > relicMaxLevel[rarity]) return undefined
-
-  substats = parseSubstats(substats, rarity, allowZeroSub, sortSubs)
-  // substat cannot have same key as mainstat
-  if (substats.find((sub) => sub.key === mainStatKey)) return undefined
-  lock = !!lock
-  const plausibleMainStats = relicSlotToMainStatKeys[slotKey]
-  if (!(plausibleMainStats as RelicMainStatKey[]).includes(mainStatKey))
-    if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
-    else return undefined // ambiguous mainstat
-  if (!location || !allCharacterKeys.includes(location)) location = ''
-  return {
-    setKey,
-    rarity,
-    level,
-    slotKey,
-    mainStatKey,
-    substats,
-    location,
-    lock,
-  }
-}
-function defSub(): ISubstat {
-  return { key: '', value: 0 }
-}
-function parseSubstats(
-  obj: unknown,
-  rarity: RelicRarityKey,
-  allowZeroSub = false,
-  sortSubs = true
-): ISubstat[] {
-  if (!Array.isArray(obj)) return new Array(4).map((_) => defSub())
-  let substats = (obj as ISubstat[]).map(({ key = '', value = 0 }) => {
-    if (
-      !allRelicSubStatKeys.includes(key as RelicSubStatKey) ||
-      typeof value !== 'number' ||
-      !isFinite(value)
-    )
-      return defSub()
-    if (key) {
-      value = key.endsWith('_')
-        ? Math.round(value * 1000) / 1000
-        : Math.round(value)
-      const { low, high } = getSubstatRange(rarity, key)
-      value = clamp(value, allowZeroSub ? 0 : low, high)
-    } else value = 0
-    return { key, value }
-  })
-  if (sortSubs)
-    substats = substats
-      // SR substats are sorted by the order of allRelicSubStatKeys
-      .sort((a, b) => {
-        function getPrio(key: ISubstat['key']) {
-          if (!key) return 100 // empty subs to to the end
-          return allRelicSubStatKeys.indexOf(key)
-        }
-        return getPrio(a.key) - getPrio(b.key)
-      })
-
-  return pruneOrPadArray(substats, 4, defSub())
 }

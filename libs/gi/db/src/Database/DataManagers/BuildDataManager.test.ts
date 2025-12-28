@@ -3,7 +3,7 @@ import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('BuildDataManager.validate', () => {
   let database: ArtCharDatabase
-  let builds: ReturnType<typeof database.builds>
+  let builds: ArtCharDatabase['builds']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')

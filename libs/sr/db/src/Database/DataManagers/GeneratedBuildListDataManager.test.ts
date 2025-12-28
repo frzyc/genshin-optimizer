@@ -6,7 +6,7 @@ import type { GeneratedBuildList } from './GeneratedBuildListDataManager'
 
 describe('GeneratedBuildListDataManager.validate', () => {
   let database: SroDatabase
-  let generatedBuildList: ReturnType<typeof database.generatedBuildList>
+  let generatedBuildList: SroDatabase['generatedBuildList']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

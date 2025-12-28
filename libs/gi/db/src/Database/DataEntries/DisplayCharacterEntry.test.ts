@@ -4,7 +4,7 @@ import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('DisplayCharacterEntry.validate', () => {
   let database: ArtCharDatabase
-  let displayChar: ReturnType<typeof database.displayCharacter>
+  let displayChar: ArtCharDatabase['displayCharacter']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')

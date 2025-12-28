@@ -4,19 +4,22 @@ import type {
   LocationCharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
+import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 
-export interface ICharMeta {
-  favorite: boolean
-  description?: string
-  rvFilter?: unknown[]
-}
-const initCharMeta: ICharMeta = deepFreeze({
-  favorite: false,
-  description: '',
-  rvFilter: [],
+// Schema with defaults - single source of truth
+const charMetaSchema = z.object({
+  favorite: z.boolean().catch(false),
+  description: z.string().catch(''),
+  rvFilter: z.array(z.unknown()).catch([]),
 })
+
+// Type derived from schema
+export type ICharMeta = z.infer<typeof charMetaSchema>
+
+const initCharMeta: ICharMeta = deepFreeze(charMetaSchema.parse({}))
+
 const storageHash = 'charMeta_'
 export class CharMetaDataManager extends DataManager<
   CharacterKey,
@@ -34,15 +37,10 @@ export class CharMetaDataManager extends DataManager<
       )
         this.database.storage.remove(key)
   }
-  override validate(obj: any): ICharMeta | undefined {
+  override validate(obj: unknown): ICharMeta | undefined {
     if (typeof obj !== 'object' || obj === null) return undefined
-
-    let { favorite, description, rvFilter } = obj
-
-    if (typeof favorite !== 'boolean') favorite = false
-    if (typeof description !== 'string') description = ''
-    if (!Array.isArray(rvFilter)) rvFilter = []
-    return { favorite, description, rvFilter }
+    const result = charMetaSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
 
   override toStorageKey(key: CharacterKey): string {

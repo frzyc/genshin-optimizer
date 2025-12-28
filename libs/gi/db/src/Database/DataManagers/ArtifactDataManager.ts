@@ -10,13 +10,16 @@ import {
   allArtifactSlotKeys,
   allLocationCharacterKeys,
   allMainStatKeys,
-  allSubstatKeys,
   artMaxLevel,
   artSlotMainKeys,
   artSubstatRollData,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, IGOOD, ISubstat } from '@genshin-optimizer/gi/good'
+import {
+  parseArtifactRecovery,
+  substatRecoverySchema,
+} from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   getMainStatDisplayValue,
@@ -497,91 +500,130 @@ export function cachedArtifact(
   return { artifact: validated, errors }
 }
 
+/**
+ * Default empty substat
+ */
+function defSub(): ISubstat {
+  return { key: '', value: 0 }
+}
+
+/**
+ * Parse substats using Zod schema from gi-good
+ * Business logic (value rounding/clamping) stays here in the DataManager
+ */
+function parseSubstats(
+  obj: unknown,
+  rarity: ArtifactRarity,
+  allowZeroSub = false
+): ISubstat[] {
+  // Handle non-array input
+  if (!obj || !Array.isArray(obj)) {
+    return Array.from({ length: 4 }, () => defSub())
+  }
+
+  // Parse each substat using Zod schema from gi-good
+  const substats = obj.slice(0, 4).map((item): ISubstat => {
+    // Structural validation via Zod schema
+    const result = substatRecoverySchema.safeParse(item)
+    if (!result.success) return defSub()
+
+    const { key, value: rawValue, initialValue } = result.data
+
+    // Empty key means empty substat
+    if (!key) return { key: '', value: 0 }
+
+    // Round value based on stat type (% stats get 1 decimal, flat stats rounded)
+    let value = key.endsWith('_')
+      ? Math.round(rawValue * 10) / 10
+      : Math.round(rawValue)
+
+    // Clamp to valid range for this rarity
+    const { low, high } = getSubstatRange(rarity, key as SubstatKey)
+    value = clamp(value, allowZeroSub ? 0 : low, high)
+
+    return initialValue !== undefined
+      ? { key, value, initialValue }
+      : { key, value }
+  })
+
+  // Pad to 4 substats
+  while (substats.length < 4) substats.push(defSub())
+
+  return substats
+}
+
 export function validateArtifact(
   obj: unknown,
   allowZeroSub = false
 ): IArtifact | undefined {
-  if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
-  const { setKey, rarity, slotKey } = obj as IArtifact
-  let { level, mainStatKey, substats, location, lock, unactivatedSubstats } =
-    obj as IArtifact
+  // Step 1: Structural validation via shared schema
+  const parsed = parseArtifactRecovery(obj)
+  if (!parsed) return undefined
 
+  const { setKey, rarity, slotKey, substats, unactivatedSubstats } = parsed
+  let { level, mainStatKey, location, lock } = parsed
+
+  // Step 2: Business rules validation using allStats
+  // Check setKey is valid and has the required slot and rarity
   if (
     !allArtifactSetKeys.includes(setKey) ||
     !allArtifactSlotKeys.includes(slotKey) ||
     !allMainStatKeys.includes(mainStatKey) ||
-    !allArtifactRarityKeys.includes(rarity) ||
-    typeof level !== 'number' ||
-    level < 0 ||
-    level > 20
+    !allArtifactRarityKeys.includes(rarity)
   )
-    return undefined // non-recoverable
-  const data = allStats.art.data[setKey]
-  if (!data.slots.includes(slotKey)) return undefined
-  if (!data.rarities.includes(rarity)) return undefined
+    return undefined
+
+  const setData = allStats.art.data[setKey]
+  if (!setData.slots.includes(slotKey)) return undefined
+  if (!setData.rarities.includes(rarity)) return undefined
+
   level = Math.round(level)
   if (level > artMaxLevel[rarity]) return undefined
 
-  substats = parseSubstats(substats, rarity, allowZeroSub)
-  unactivatedSubstats = parseSubstats(unactivatedSubstats, rarity, allowZeroSub)
+  // Parse and validate substats with Zod-based function
+  const parsedSubstats = parseSubstats(substats, rarity, allowZeroSub)
+  const parsedUnactivated = parseSubstats(
+    unactivatedSubstats,
+    rarity,
+    allowZeroSub
+  )
 
-  // substat cannot have same key as mainstat
+  // Substat cannot have same key as mainstat
   if (
-    substats.find((sub) => sub.key === mainStatKey) ||
-    unactivatedSubstats.find((sub) => sub.key === mainStatKey)
+    parsedSubstats.find((sub) => sub.key === mainStatKey) ||
+    parsedUnactivated.find((sub) => sub.key === mainStatKey)
   )
     return undefined
+
   lock = !!lock
+
+  // Validate mainStatKey based on slotKey
   const plausibleMainStats = artSlotMainKeys[slotKey]
   if (!(plausibleMainStats as unknown as MainStatKey[]).includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return undefined // ambiguous mainstat
+
+  // Validate location
   if (!location || !allLocationCharacterKeys.includes(location)) location = ''
-  if (level >= 4 && !substats[3].key) {
-    substats[3] = unactivatedSubstats[0]
-    unactivatedSubstats = []
+
+  // Move unactivated substats to activated if level >= 4 and slot 4 is empty
+  let finalUnactivated: ISubstat[] | undefined = parsedUnactivated.length
+    ? parsedUnactivated
+    : undefined
+  if (level >= 4 && !parsedSubstats[3].key && parsedUnactivated[0]) {
+    parsedSubstats[3] = parsedUnactivated[0]
+    finalUnactivated = []
   }
+
   return {
     setKey,
     rarity,
     level,
     slotKey,
     mainStatKey,
-    substats,
+    substats: parsedSubstats,
     location,
     lock,
-    unactivatedSubstats,
+    unactivatedSubstats: finalUnactivated,
   }
-}
-function defSub(): ISubstat {
-  return { key: '', value: 0 }
-}
-function parseSubstats(
-  obj: unknown,
-  rarity: ArtifactRarity,
-  allowZeroSub = false
-): ISubstat[] {
-  if (!obj || !Array.isArray(obj))
-    return Array.from({ length: 4 }, () => defSub())
-  const substats = (obj as ISubstat[])
-    .slice(0, 4)
-    .map(({ key = '', value = 0 }) => {
-      if (
-        !allSubstatKeys.includes(key as SubstatKey) ||
-        typeof value !== 'number' ||
-        !isFinite(value)
-      )
-        return defSub()
-      if (key) {
-        value = key.endsWith('_')
-          ? Math.round(value * 10) / 10
-          : Math.round(value)
-        const { low, high } = getSubstatRange(rarity, key)
-        value = clamp(value, allowZeroSub ? 0 : low, high)
-      } else value = 0
-      return { key, value }
-    })
-  while (substats.length < 4) substats.push(defSub())
-
-  return substats
 }

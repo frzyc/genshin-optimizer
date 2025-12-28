@@ -2,16 +2,17 @@ import type { TriggerString } from '@genshin-optimizer/common/database'
 import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
-  allCharacterKeys,
   allDiscSlotKeys,
   coreLimits,
   skillLimits,
 } from '@genshin-optimizer/zzz/consts'
 import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { ICharacter } from '@genshin-optimizer/zzz/zood'
+import { parseCharacterRecovery } from '@genshin-optimizer/zzz/zood'
 import type { ICachedCharacter } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
+
 export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
@@ -22,48 +23,32 @@ export class CharacterDataManager extends DataManager<
     super(database, 'characters')
   }
   override validate(obj: unknown): ICharacter | undefined {
-    if (!obj || typeof obj !== 'object') return undefined
-    const { key: characterKey } = obj as ICharacter
-    let { core, mindscape, dodge, basic, chain, special, assist } =
-      obj as ICharacter
-    const { level: rawLevel, promotion: rawAscension } = obj as ICharacter
+    // Use shared schema from zood for structural validation
+    const data = parseCharacterRecovery(obj)
+    if (!data) return undefined
 
-    if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
-
-    if (typeof mindscape !== 'number' || mindscape < 0 || mindscape > 6)
-      mindscape = 0
-
+    // Apply business rules: level/promotion co-validation
     const { sanitizedLevel, milestone: promotion } = validateLevelMilestone(
-      rawLevel,
-      rawAscension
+      data.level,
+      data.promotion
     )
-    if (typeof basic !== 'number') basic = 1
-    basic = clamp(basic, 1, skillLimits[promotion])
-    if (typeof dodge !== 'number') dodge = 1
-    dodge = clamp(dodge, 1, skillLimits[promotion])
-    if (typeof chain !== 'number') chain = 1
-    chain = clamp(chain, 1, skillLimits[promotion])
-    if (typeof special !== 'number') special = 1
-    special = clamp(special, 1, skillLimits[promotion])
-    if (typeof assist !== 'number') assist = 1
-    assist = clamp(assist, 1, skillLimits[promotion])
 
-    if (typeof core !== 'number') core = 0
-    core = clamp(core, 0, coreLimits[promotion])
+    // Clamp skills to promotion-dependent limits
+    const skillMax = skillLimits[promotion]
+    const coreMax = coreLimits[promotion]
 
-    const char: ICharacter = {
-      key: characterKey,
+    return {
+      key: data.key as CharacterKey,
       level: sanitizedLevel,
-      core,
-      mindscape,
-      dodge,
-      basic,
-      chain,
-      special,
-      assist,
       promotion,
+      mindscape: data.mindscape,
+      core: clamp(data.core, 0, coreMax),
+      dodge: clamp(data.dodge, 1, skillMax),
+      basic: clamp(data.basic, 1, skillMax),
+      chain: clamp(data.chain, 1, skillMax),
+      special: clamp(data.special, 1, skillMax),
+      assist: clamp(data.assist, 1, skillMax),
     }
-    return char
   }
 
   override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {

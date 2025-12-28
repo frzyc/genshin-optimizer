@@ -114,7 +114,8 @@
     "regenerator-runtime": "0.13.11",
     "remark-gfm": "^3.0.1",
     "tesseract.js": "^5.0.2",
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.0",
+    "zod": "^4.2.1"
   },
   "packageManager": "yarn@3.4.1"
 }

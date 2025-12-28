@@ -8,7 +8,7 @@ import { ZzzDatabase } from '../Database'
 
 describe('CharacterDataManager.validate', () => {
   let database: ZzzDatabase
-  let chars: ReturnType<typeof database.chars>
+  let chars: ZzzDatabase['chars']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('zzz')

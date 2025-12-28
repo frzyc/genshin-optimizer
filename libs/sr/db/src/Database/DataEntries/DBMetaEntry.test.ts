@@ -4,7 +4,7 @@ import { SroDatabase } from '../Database'
 
 describe('DBMetaEntry.validate', () => {
   let database: SroDatabase
-  let dbMeta: ReturnType<typeof database.dbMeta>
+  let dbMeta: SroDatabase['dbMeta']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

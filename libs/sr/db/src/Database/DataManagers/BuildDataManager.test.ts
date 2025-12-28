@@ -4,7 +4,7 @@ import { SroDatabase } from '../Database'
 
 describe('BuildDataManager.validate', () => {
   let database: SroDatabase
-  let builds: ReturnType<typeof database.builds>
+  let builds: SroDatabase['builds']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

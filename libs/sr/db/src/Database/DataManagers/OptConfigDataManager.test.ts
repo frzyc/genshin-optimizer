@@ -1,9 +1,5 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import {
-  allRelicSetKeys,
-  relicMaxLevel,
-  relicSlotToMainStatKeys,
-} from '@genshin-optimizer/sr/consts'
+import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import { SroDatabase } from '../Database'
 import {
   maxBuildsToShowDefault,
@@ -12,7 +8,7 @@ import {
 
 describe('OptConfigDataManager.validate', () => {
   let database: SroDatabase
-  let optConfigs: ReturnType<typeof database.optConfigs>
+  let optConfigs: SroDatabase['optConfigs']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

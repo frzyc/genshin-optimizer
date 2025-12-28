@@ -1,17 +1,10 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import {
-  allLocationCharacterKeys,
-  allRelicRarityKeys,
-  allRelicSetKeys,
-  allRelicSlotKeys,
-  relicMaxLevel,
-  relicSlotToMainStatKeys,
-} from '@genshin-optimizer/sr/consts'
+import { allRelicSetKeys, relicMaxLevel } from '@genshin-optimizer/sr/consts'
 import { SroDatabase } from '../Database'
 
 describe('RelicDataManager.validate', () => {
   let database: SroDatabase
-  let relics: ReturnType<typeof database.relics>
+  let relics: SroDatabase['relics']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

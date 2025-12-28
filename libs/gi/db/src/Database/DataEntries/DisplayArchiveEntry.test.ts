@@ -3,7 +3,7 @@ import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('DisplayArchiveEntry.validate', () => {
   let database: ArtCharDatabase
-  let displayArchive: ReturnType<typeof database.displayArchive>
+  let displayArchive: ArtCharDatabase['displayArchive']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')
@@ -14,8 +14,19 @@ describe('DisplayArchiveEntry.validate', () => {
   it('should validate valid DisplayArchive', () => {
     const valid = {
       artifact: { rarity: [5] },
-      character: { rarity: [5], weaponType: ['sword'], sortOrder: 'desc' as const, sortOrderBy: 'name' as const },
-      weapon: { rarity: [5], weaponType: ['sword'], subStat: [], sortOrder: 'desc' as const, sortOrderBy: 'name' as const },
+      character: {
+        rarity: [5],
+        weaponType: ['sword'],
+        sortOrder: 'desc' as const,
+        sortOrderBy: 'name' as const,
+      },
+      weapon: {
+        rarity: [5],
+        weaponType: ['sword'],
+        subStat: [],
+        sortOrder: 'desc' as const,
+        sortOrderBy: 'name' as const,
+      },
     }
     const result = displayArchive['validate'](valid)
     expect(result).toBeDefined()

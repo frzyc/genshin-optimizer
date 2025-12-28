@@ -1,17 +1,11 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import {
-  allArtifactSetKeys,
-  allArtifactSlotKeys,
-  allLocationCharacterKeys,
-  artMaxLevel,
-  artSlotMainKeys,
-} from '@genshin-optimizer/gi/consts'
+import { allArtifactSetKeys, artMaxLevel } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('ArtifactDataManager.validate', () => {
   let database: ArtCharDatabase
-  let artifacts: ReturnType<typeof database.arts>
+  let artifacts: ArtCharDatabase['arts']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')

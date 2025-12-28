@@ -9,7 +9,7 @@ import { wengineSortKeys } from './DisplayWengineEntry'
 
 describe('DisplayWengineEntry.validate', () => {
   let database: ZzzDatabase
-  let displayWengine: ReturnType<typeof database.displayWengine>
+  let displayWengine: ZzzDatabase['displayWengine']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('zzz')
@@ -74,7 +74,7 @@ describe('DisplayWengineEntry.validate', () => {
       expect(displayWengine['validate']([])).toBeUndefined()
     })
 
-    it('should return undefined if editWengineId is not a string', () => {
+    it('should recover with default editWengineId if not a string', () => {
       const invalid = {
         editWengineId: 123,
         sortType: 'level' as const,
@@ -86,7 +86,9 @@ describe('DisplayWengineEntry.validate', () => {
         showEquipped: true,
         locations: [],
       }
-      expect(displayWengine['validate'](invalid)).toBeUndefined()
+      const result = displayWengine['validate'](invalid)
+      expect(result).toBeDefined()
+      expect(result?.editWengineId).toBe('')
     })
   })
 

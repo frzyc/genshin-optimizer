@@ -4,7 +4,7 @@ import { SroDatabase } from '../Database'
 
 describe('BuildTcDataManager.validate', () => {
   let database: SroDatabase
-  let buildTcs: ReturnType<typeof database.buildTcs>
+  let buildTcs: SroDatabase['buildTcs']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

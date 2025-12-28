@@ -1,14 +1,13 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import {
   allLightConeKeys,
-  allLocationCharacterKeys,
   lightConeMaxLevel,
 } from '@genshin-optimizer/sr/consts'
 import { SroDatabase } from '../Database'
 
 describe('LightConeDataManager.validate', () => {
   let database: SroDatabase
-  let lightCones: ReturnType<typeof database.lightCones>
+  let lightCones: SroDatabase['lightCones']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

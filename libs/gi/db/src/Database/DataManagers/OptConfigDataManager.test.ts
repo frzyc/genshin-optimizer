@@ -1,11 +1,13 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import { allArtifactSetKeys, artMaxLevel } from '@genshin-optimizer/gi/consts'
 import { ArtCharDatabase } from '../ArtCharDatabase'
-import { maxBuildsToShowDefault, maxBuildsToShowList } from './OptConfigDataManager'
+import {
+  maxBuildsToShowDefault,
+  maxBuildsToShowList,
+} from './OptConfigDataManager'
 
 describe('OptConfigDataManager.validate', () => {
   let database: ArtCharDatabase
-  let optConfigs: ReturnType<typeof database.optConfigs>
+  let optConfigs: ArtCharDatabase['optConfigs']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')

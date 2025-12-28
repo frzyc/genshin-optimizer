@@ -1,10 +1,18 @@
+import {
+  zodBoolean,
+  zodEnumWithDefault,
+  zodFilteredArray,
+} from '@genshin-optimizer/common/database'
 import type { PathKey, RarityKey } from '@genshin-optimizer/sr/consts'
 import { allPathKeys, allRarityKeys } from '@genshin-optimizer/sr/consts'
+import { z } from 'zod'
 import { DataEntry } from '../DataEntry'
 import type { SroDatabase } from '../Database'
 
 export const lightConeSortKeys = ['level', 'rarity', 'name'] as const
 export type LightConeSortKey = (typeof lightConeSortKeys)[number]
+
+// Explicit type definition for better type inference
 export interface IDisplayLightCone {
   sortType: LightConeSortKey
   ascending: boolean
@@ -12,12 +20,13 @@ export interface IDisplayLightCone {
   path: PathKey[]
 }
 
-const initialState = () => ({
-  sortType: lightConeSortKeys[0],
-  ascending: false,
-  rarity: [...allRarityKeys],
-  path: [...allPathKeys],
-})
+// Schema with defaults - single source of truth
+const displayLightConeSchema = z.object({
+  sortType: zodEnumWithDefault(lightConeSortKeys, 'level'),
+  ascending: zodBoolean(),
+  rarity: zodFilteredArray(allRarityKeys),
+  path: zodFilteredArray(allPathKeys),
+}) as z.ZodType<IDisplayLightCone>
 
 export class DisplayLightConeEntry extends DataEntry<
   'display_lightcone',
@@ -26,27 +35,16 @@ export class DisplayLightConeEntry extends DataEntry<
   IDisplayLightCone
 > {
   constructor(database: SroDatabase) {
-    super(database, 'display_lightcone', initialState, 'display_lightcone')
-  }
-  override validate(obj: any): IDisplayLightCone | undefined {
-    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
-    let { sortType, ascending, rarity, path } = obj
-    if (
-      typeof sortType !== 'string' ||
-      !lightConeSortKeys.includes(sortType as any)
+    super(
+      database,
+      'display_lightcone',
+      () => displayLightConeSchema.parse({}),
+      'display_lightcone'
     )
-      sortType = lightConeSortKeys[0]
-    if (typeof ascending !== 'boolean') ascending = false
-    if (!Array.isArray(rarity)) rarity = [...allRarityKeys]
-    else rarity = rarity.filter((r) => allRarityKeys.includes(r))
-    if (!Array.isArray(path)) path = [...allPathKeys]
-    else path = path.filter((r) => allPathKeys.includes(r))
-    const data: IDisplayLightCone = {
-      sortType,
-      ascending,
-      rarity,
-      path,
-    }
-    return data
+  }
+  override validate(obj: unknown): IDisplayLightCone | undefined {
+    if (typeof obj !== 'object' || obj === null) return undefined
+    const result = displayLightConeSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
 }

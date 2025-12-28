@@ -1,10 +1,9 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
 import { SroDatabase } from '../Database'
 
 describe('TeamDataManager.validate', () => {
   let database: SroDatabase
-  let teams: ReturnType<typeof database.teams>
+  let teams: SroDatabase['teams']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

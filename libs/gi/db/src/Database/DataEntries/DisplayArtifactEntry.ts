@@ -1,78 +1,72 @@
-import { clamp, validateArr } from '@genshin-optimizer/common/util'
-import type {
-  ArtifactRarity,
-  ArtifactSetKey,
-  ArtifactSlotKey,
-  LocationCharacterKey,
-  MainStatKey,
-  SubstatKey,
-} from '@genshin-optimizer/gi/consts'
+import { zodFilteredArray } from '@genshin-optimizer/common/database'
+import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
+  allMainStatKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import {
+  type ArtifactFilterOption,
   type ArtifactSortKey,
   artifactSortKeys,
 } from '@genshin-optimizer/gi/util'
+import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 
-export type FilterOption = {
-  artSetKeys: ArtifactSetKey[]
-  rarity: ArtifactRarity[]
-  levelLow: number
-  levelHigh: number
-  slotKeys: ArtifactSlotKey[]
-  mainStatKeys: MainStatKey[]
-  substats: SubstatKey[]
-  locations: LocationCharacterKey[]
-  showEquipped: boolean
-  showInventory: boolean
-  locked: Array<'locked' | 'unlocked'>
-  rvLow: number
-  rvHigh: number
-  useMaxRV: boolean
-  lines: Array<1 | 2 | 3 | 4>
-}
+// Use the existing FilterOption type from gi/util for compatibility
+export type FilterOption = ArtifactFilterOption
 
-export type IDisplayArtifact = {
+// Filter option schema with defaults
+const filterOptionSchema = z.object({
+  artSetKeys: zodFilteredArray(allArtifactSetKeys, []),
+  rarity: zodFilteredArray(allArtifactRarityKeys, [...allArtifactRarityKeys]),
+  levelLow: z.number().min(0).max(20).catch(0),
+  levelHigh: z.number().min(0).max(20).catch(20),
+  slotKeys: zodFilteredArray(allArtifactSlotKeys, [...allArtifactSlotKeys]),
+  mainStatKeys: zodFilteredArray(allMainStatKeys, []),
+  substats: zodFilteredArray(allSubstatKeys, []),
+  locations: zodFilteredArray(allLocationCharacterKeys, []),
+  showEquipped: z.boolean().catch(true),
+  showInventory: z.boolean().catch(true),
+  locked: zodFilteredArray(['locked', 'unlocked'] as const, [
+    'locked',
+    'unlocked',
+  ]),
+  rvLow: z.number().catch(0),
+  rvHigh: z.number().catch(900),
+  useMaxRV: z.boolean().catch(false),
+  lines: zodFilteredArray([1, 2, 3, 4] as const, [1, 2, 3, 4]),
+}) as z.ZodType<FilterOption>
+
+// Display artifact interface using existing types
+export interface IDisplayArtifact {
   filterOption: FilterOption
   ascending: boolean
   sortType: ArtifactSortKey
   effFilter: SubstatKey[]
 }
 
-export function initialFilterOption(): FilterOption {
-  return {
-    artSetKeys: [],
-    rarity: [...allArtifactRarityKeys],
-    levelLow: 0,
-    levelHigh: 20,
-    slotKeys: [...allArtifactSlotKeys],
-    mainStatKeys: [],
-    substats: [],
-    locations: [],
-    showEquipped: true,
-    showInventory: true,
-    locked: ['locked', 'unlocked'],
-    rvLow: 0,
-    rvHigh: 900,
-    useMaxRV: false,
-    lines: [1, 2, 3, 4],
-  }
-}
+// Main display artifact schema with defaults
+const displayArtifactSchema = z.object({
+  filterOption: filterOptionSchema.catch(filterOptionSchema.parse({})),
+  ascending: z.boolean().catch(false),
+  sortType: z
+    .enum(
+      artifactSortKeys as unknown as [ArtifactSortKey, ...ArtifactSortKey[]]
+    )
+    .catch(artifactSortKeys[0]),
+  effFilter: z
+    .array(z.enum(allSubstatKeys as unknown as [SubstatKey, ...SubstatKey[]]))
+    .catch([...allSubstatKeys]),
+}) as z.ZodType<IDisplayArtifact>
 
-function initialState(): IDisplayArtifact {
-  return {
-    filterOption: initialFilterOption(),
-    ascending: false,
-    sortType: artifactSortKeys[0],
-    effFilter: [...allSubstatKeys],
-  }
+// Helper for reset action
+export function initialFilterOption(): FilterOption {
+  return filterOptionSchema.parse({})
 }
 
 export class DisplayArtifactEntry extends DataEntry<
@@ -82,85 +76,17 @@ export class DisplayArtifactEntry extends DataEntry<
   IDisplayArtifact
 > {
   constructor(database: ArtCharDatabase) {
-    super(database, 'display_artifact', initialState, 'display_artifact')
+    super(
+      database,
+      'display_artifact',
+      () => displayArtifactSchema.parse({}),
+      'display_artifact'
+    )
   }
   override validate(obj: unknown): IDisplayArtifact | undefined {
     if (typeof obj !== 'object' || obj === null) return undefined
-    let { filterOption, ascending, sortType, effFilter } =
-      obj as IDisplayArtifact
-
-    if (typeof filterOption !== 'object') filterOption = initialFilterOption()
-    else {
-      let {
-        artSetKeys,
-        rarity,
-        levelLow,
-        levelHigh,
-        slotKeys,
-        mainStatKeys,
-        substats,
-        locations,
-        showEquipped,
-        showInventory,
-        locked,
-        rvLow,
-        rvHigh,
-        useMaxRV,
-        lines,
-      } = filterOption
-      artSetKeys = validateArr(artSetKeys, allArtifactSetKeys, [])
-      rarity = validateArr(rarity, allArtifactRarityKeys)
-
-      if (typeof levelLow !== 'number') levelLow = 0
-      else levelLow = clamp(levelLow, 0, 20)
-      if (typeof levelHigh !== 'number') levelHigh = 0
-      else levelHigh = clamp(levelHigh, 0, 20)
-
-      slotKeys = validateArr(slotKeys, allArtifactSlotKeys)
-      mainStatKeys = validateArr(mainStatKeys, mainStatKeys, [])
-      substats = validateArr(substats, allSubstatKeys, [])
-      locations = validateArr(locations, allLocationCharacterKeys, [])
-      if (typeof showEquipped !== 'boolean') showEquipped = true
-      if (typeof showInventory !== 'boolean') showInventory = true
-      locked = validateArr(locked, ['locked', 'unlocked'])
-
-      if (typeof rvLow !== 'number') rvLow = 0
-      if (typeof rvHigh !== 'number') rvHigh = 900
-
-      if (typeof useMaxRV !== 'boolean') useMaxRV = false
-
-      lines = validateArr(lines, [1, 2, 3, 4])
-
-      filterOption = {
-        artSetKeys,
-        rarity,
-        levelLow,
-        levelHigh,
-        slotKeys,
-        mainStatKeys,
-        substats,
-        locations,
-        showEquipped,
-        showInventory,
-        locked,
-        rvLow,
-        rvHigh,
-        useMaxRV,
-        lines,
-      } as FilterOption
-    }
-
-    if (typeof ascending !== 'boolean') ascending = false
-    if (!artifactSortKeys.includes(sortType)) sortType = artifactSortKeys[0]
-
-    effFilter = validateArr(effFilter, allSubstatKeys)
-
-    return {
-      filterOption,
-      ascending,
-      sortType,
-      effFilter,
-    } as IDisplayArtifact
+    const result = displayArtifactSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
   override set(
     value:

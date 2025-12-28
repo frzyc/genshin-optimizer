@@ -9,7 +9,7 @@ import { characterSortKeys } from './DisplayCharacterEntry'
 
 describe('DisplayCharacterEntry.validate', () => {
   let database: ZzzDatabase
-  let displayChar: ReturnType<typeof database.displayCharacter>
+  let displayChar: ZzzDatabase['displayCharacter']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('zzz')

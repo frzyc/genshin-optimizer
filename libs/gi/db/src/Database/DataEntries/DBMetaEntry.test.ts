@@ -4,7 +4,7 @@ import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('DBMetaEntry.validate', () => {
   let database: ArtCharDatabase
-  let dbMeta: ReturnType<typeof database.dbMeta>
+  let dbMeta: ArtCharDatabase['dbMeta']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')

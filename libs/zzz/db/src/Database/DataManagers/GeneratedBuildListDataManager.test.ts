@@ -2,11 +2,11 @@ import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import { allDiscSlotKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import { ZzzDatabase } from '../Database'
-import type { GeneratedBuild, GeneratedBuildList } from './GeneratedBuildListDataManager'
+import type { GeneratedBuildList } from './GeneratedBuildListDataManager'
 
 describe('GeneratedBuildListDataManager.validate', () => {
   let database: ZzzDatabase
-  let generatedBuildList: ReturnType<typeof database.generatedBuildList>
+  let generatedBuildList: ZzzDatabase['generatedBuildList']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('zzz')
@@ -34,7 +34,8 @@ describe('GeneratedBuildListDataManager.validate', () => {
           rarity: 'S',
           level: 0,
           slotKey,
-          mainStatKey: slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
+          mainStatKey:
+            slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
           substats: [],
           location: '',
           lock: false,
@@ -74,7 +75,8 @@ describe('GeneratedBuildListDataManager.validate', () => {
           rarity: 'S',
           level: 0,
           slotKey,
-          mainStatKey: slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
+          mainStatKey:
+            slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
           substats: [],
           location: '',
           lock: false,
@@ -151,7 +153,8 @@ describe('GeneratedBuildListDataManager.validate', () => {
           rarity: 'S',
           level: 0,
           slotKey,
-          mainStatKey: slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
+          mainStatKey:
+            slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
           substats: [],
           location: '',
           lock: false,
@@ -210,7 +213,8 @@ describe('GeneratedBuildListDataManager.validate', () => {
           rarity: 'S',
           level: 0,
           slotKey,
-          mainStatKey: slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
+          mainStatKey:
+            slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
           substats: [],
           location: '',
           lock: false,
@@ -298,7 +302,8 @@ describe('GeneratedBuildListDataManager.validate', () => {
           rarity: 'S',
           level: 0,
           slotKey,
-          mainStatKey: slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
+          mainStatKey:
+            slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
           substats: [],
           location: '',
           lock: false,
@@ -312,7 +317,8 @@ describe('GeneratedBuildListDataManager.validate', () => {
           rarity: 'S',
           level: 0,
           slotKey,
-          mainStatKey: slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
+          mainStatKey:
+            slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
           substats: [],
           location: '',
           lock: false,
@@ -341,7 +347,8 @@ describe('GeneratedBuildListDataManager.validate', () => {
           rarity: 'S',
           level: 0,
           slotKey,
-          mainStatKey: slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
+          mainStatKey:
+            slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
           substats: [],
           location: '',
           lock: false,

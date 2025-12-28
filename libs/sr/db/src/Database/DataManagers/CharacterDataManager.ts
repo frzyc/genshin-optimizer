@@ -1,17 +1,15 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
-import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/common/util'
+import { deepClone, objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import {
-  allBonusAbilityKeys,
-  allCharacterKeys,
   allRelicSlotKeys,
-  allStatBoostKeys,
   allTrailblazerKeys,
 } from '@genshin-optimizer/sr/consts'
 import type {
   ICharacter,
   ISrObjectDescription,
 } from '@genshin-optimizer/sr/srod'
+import { validateCharacterWithRules } from '@genshin-optimizer/sr/srod'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type { ICachedCharacter, ISroDatabase } from '../../Interfaces'
 import { SroSource } from '../../Interfaces'
@@ -29,75 +27,7 @@ export class CharacterDataManager extends DataManager<
     super(database, 'characters')
   }
   override validate(obj: unknown): ICharacter | undefined {
-    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
-    const {
-      key: characterKey,
-      level: rawLevel,
-      ascension: rawAscension,
-    } = obj as ICharacter
-    let {
-      basic,
-      skill,
-      ult,
-      talent,
-      bonusAbilities,
-      statBoosts,
-      eidolon,
-      servantSkill,
-      servantTalent,
-    } = obj as ICharacter
-
-    if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
-
-    if (typeof eidolon !== 'number') eidolon = 0
-    // Clamp eidolon to valid range [0, 6]
-    if (eidolon < 0) eidolon = 0
-    if (eidolon > 6) eidolon = 6
-
-    const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
-
-    if (typeof bonusAbilities !== 'object')
-      bonusAbilities = objKeyMap(allBonusAbilityKeys, (_key) => false)
-    else {
-      bonusAbilities = objKeyMap(allBonusAbilityKeys, (key) =>
-        typeof bonusAbilities[key] !== 'boolean'
-          ? false
-          : (bonusAbilities[key] ?? false)
-      )
-    }
-    if (typeof statBoosts !== 'object')
-      statBoosts = objKeyMap(allStatBoostKeys, (_key) => false)
-    else {
-      statBoosts = objKeyMap(allStatBoostKeys, (key) =>
-        typeof statBoosts[key] !== 'boolean'
-          ? false
-          : (statBoosts[key] ?? false)
-      )
-    }
-    basic = typeof basic !== 'number' ? 1 : clamp(basic, 1, 6)
-    skill = typeof skill !== 'number' ? 1 : clamp(skill, 1, 10)
-    ult = typeof ult !== 'number' ? 1 : clamp(ult, 1, 10)
-    talent = typeof talent !== 'number' ? 1 : clamp(talent, 1, 10)
-    servantSkill =
-      typeof servantSkill !== 'number' ? 1 : clamp(servantSkill, 1, 10)
-    servantTalent =
-      typeof servantTalent !== 'number' ? 1 : clamp(servantTalent, 1, 10)
-
-    const char: ICharacter = {
-      key: characterKey,
-      level,
-      ascension,
-      basic,
-      skill,
-      ult,
-      talent,
-      bonusAbilities,
-      statBoosts,
-      eidolon,
-      servantSkill,
-      servantTalent,
-    }
-    return char
+    return validateCharacterWithRules(obj, validateLevelAsc)
   }
   override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)

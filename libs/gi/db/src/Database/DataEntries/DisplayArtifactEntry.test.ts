@@ -1,10 +1,10 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import { allArtifactSetKeys, allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('DisplayArtifactEntry.validate', () => {
   let database: ArtCharDatabase
-  let displayArtifact: ReturnType<typeof database.displayArtifact>
+  let displayArtifact: ArtCharDatabase['displayArtifact']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')

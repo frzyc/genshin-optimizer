@@ -5,7 +5,7 @@ import { critModeKeys, targetQ, targetQt } from './CharacterOptManager'
 
 describe('CharacterOptManager.validate', () => {
   let database: ZzzDatabase
-  let charOpts: ReturnType<typeof database.charOpts>
+  let charOpts: ZzzDatabase['charOpts']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('zzz')

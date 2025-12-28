@@ -8,11 +8,11 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
-  allCharacterKeys,
   allTravelerKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
+import { parseCharacterRecovery } from '@genshin-optimizer/gi/good'
 import {
   validateCharLevelAsc,
   validateTalent,
@@ -42,30 +42,27 @@ export class CharacterDataManager extends DataManager<
     }
   }
   override validate(obj: unknown): ICharacter | undefined {
-    if (!obj || typeof obj !== 'object') return undefined
-    const {
-      key: characterKey,
-      level: rawLevel,
-      ascension: rawAscension,
-    } = obj as ICharacter
-    let { talent, constellation } = obj as ICharacter
+    // Step 1: Structural validation via shared schema
+    const data = parseCharacterRecovery(obj)
+    if (!data) return undefined
 
-    if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
+    // Step 2: Apply business rules
+    // Level/ascension co-validation
+    const { level, ascension } = validateCharLevelAsc(
+      data.level,
+      data.ascension
+    )
 
-    if (typeof constellation !== 'number') constellation = 0
-    else constellation = Math.max(0, Math.min(6, Math.round(constellation)))
+    // Talent validation based on ascension
+    const talent = validateTalent(ascension, data.talent)
 
-    const { level, ascension } = validateCharLevelAsc(rawLevel, rawAscension)
-    talent = validateTalent(ascension, talent)
-
-    const char: ICharacter = {
-      key: characterKey,
+    return {
+      key: data.key as CharacterKey,
       level,
       ascension,
       talent,
-      constellation,
+      constellation: data.constellation,
     }
-    return char
   }
   override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)

@@ -1,4 +1,4 @@
-import { validateArr } from '@genshin-optimizer/common/util'
+import { zodFilteredArray } from '@genshin-optimizer/common/database'
 import type {
   CharacterRarityKey,
   ElementKey,
@@ -9,6 +9,7 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
+import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 
@@ -21,6 +22,7 @@ export const characterSortKeys = [
 ] as const
 export type CharacterSortKey = (typeof characterSortKeys)[number]
 
+// Explicit type definition for better type inference
 export interface IDisplayCharacterEntry {
   sortType: CharacterSortKey
   ascending: boolean
@@ -29,13 +31,18 @@ export interface IDisplayCharacterEntry {
   rarity: CharacterRarityKey[]
 }
 
-const initialState = (): IDisplayCharacterEntry => ({
-  sortType: 'level',
-  ascending: false,
-  weaponType: [...allWeaponTypeKeys],
-  element: [...allElementKeys],
-  rarity: [...allCharacterRarityKeys],
-})
+// Schema with defaults - single source of truth
+const displayCharacterSchema = z.object({
+  // Disallow 'new' as explicit sort - use 'level' as fallback
+  sortType: z
+    .enum(characterSortKeys)
+    .refine((val) => val !== 'new')
+    .catch('level'),
+  ascending: z.boolean().catch(false),
+  weaponType: zodFilteredArray(allWeaponTypeKeys, [...allWeaponTypeKeys]),
+  element: zodFilteredArray(allElementKeys, [...allElementKeys]),
+  rarity: zodFilteredArray(allCharacterRarityKeys, [...allCharacterRarityKeys]),
+}) as z.ZodType<IDisplayCharacterEntry>
 
 export class DisplayCharacterEntry extends DataEntry<
   'display_character',
@@ -44,27 +51,16 @@ export class DisplayCharacterEntry extends DataEntry<
   IDisplayCharacterEntry
 > {
   constructor(database: ArtCharDatabase) {
-    super(database, 'display_character', initialState, 'display_character')
+    super(
+      database,
+      'display_character',
+      () => displayCharacterSchema.parse({}),
+      'display_character'
+    )
   }
-  override validate(obj: any): IDisplayCharacterEntry | undefined {
+  override validate(obj: unknown): IDisplayCharacterEntry | undefined {
     if (typeof obj !== 'object' || obj === null) return undefined
-    let { sortType, ascending, weaponType, element, rarity } = obj
-
-    //Disallow sorting by "new" explicitly.
-    if (sortType === 'new' || !characterSortKeys.includes(sortType))
-      sortType = 'level'
-    if (typeof ascending !== 'boolean') ascending = false
-    weaponType = validateArr(weaponType, allWeaponTypeKeys)
-    element = validateArr(element, allElementKeys)
-    rarity = validateArr(rarity, allCharacterRarityKeys)
-
-    const data: IDisplayCharacterEntry = {
-      sortType,
-      ascending,
-      weaponType,
-      element,
-      rarity,
-    }
-    return data
+    const result = displayCharacterSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
 }

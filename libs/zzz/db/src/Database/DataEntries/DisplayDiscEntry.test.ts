@@ -15,7 +15,7 @@ import {
 
 describe('DisplayDiscEntry.validate', () => {
   let database: ZzzDatabase
-  let displayDisc: ReturnType<typeof database.displayDisc>
+  let displayDisc: ZzzDatabase['displayDisc']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('zzz')

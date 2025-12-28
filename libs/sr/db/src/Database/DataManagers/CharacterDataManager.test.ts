@@ -8,7 +8,7 @@ const skillMaxLevel = { basic: 6, skill: 10, ult: 10, talent: 10 }
 
 describe('CharacterDataManager.validate', () => {
   let database: SroDatabase
-  let chars: ReturnType<typeof database.chars>
+  let chars: SroDatabase['chars']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

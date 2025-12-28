@@ -5,7 +5,7 @@ import { lightConeSortKeys } from './DisplayLightConeEntry'
 
 describe('DisplayLightConeEntry.validate', () => {
   let database: SroDatabase
-  let displayLightCone: ReturnType<typeof database.displayLightCone>
+  let displayLightCone: SroDatabase['displayLightCone']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

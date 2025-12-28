@@ -1,8 +1,6 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import {
-  allRelicRarityKeys,
   allRelicSetKeys,
-  allRelicSlotKeys,
   allRelicSubStatKeys,
 } from '@genshin-optimizer/sr/consts'
 import { SroDatabase } from '../Database'
@@ -10,7 +8,7 @@ import { initialFilterOption, relicSortKeys } from './DisplayRelicEntry'
 
 describe('DisplayRelicEntry.validate', () => {
   let database: SroDatabase
-  let displayRelic: ReturnType<typeof database.displayRelic>
+  let displayRelic: SroDatabase['displayRelic']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

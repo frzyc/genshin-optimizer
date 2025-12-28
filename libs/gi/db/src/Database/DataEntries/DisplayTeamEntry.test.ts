@@ -3,7 +3,7 @@ import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('DisplayTeamEntry.validate', () => {
   let database: ArtCharDatabase
-  let displayTeam: ReturnType<typeof database.displayTeam>
+  let displayTeam: ArtCharDatabase['displayTeam']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')

@@ -4,7 +4,7 @@ import { ZzzDatabase } from '../Database'
 
 describe('DBMetaEntry.validate', () => {
   let database: ZzzDatabase
-  let dbMeta: ReturnType<typeof database.dbMeta>
+  let dbMeta: ZzzDatabase['dbMeta']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('zzz')

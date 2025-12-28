@@ -4,7 +4,7 @@ import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('TeamCharacterDataManager.validate', () => {
   let database: ArtCharDatabase
-  let teamChars: ReturnType<typeof database.teamChars>
+  let teamChars: ArtCharDatabase['teamChars']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')

@@ -4,7 +4,7 @@ import { SroDatabase } from '../Database'
 
 describe('CharacterOptManager.validate', () => {
   let database: SroDatabase
-  let charOpts: ReturnType<typeof database.charOpts>
+  let charOpts: SroDatabase['charOpts']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

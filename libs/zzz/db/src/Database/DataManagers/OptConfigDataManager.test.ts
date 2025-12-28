@@ -17,7 +17,7 @@ import {
 
 describe('OptConfigDataManager.validate', () => {
   let database: ZzzDatabase
-  let optConfigs: ReturnType<typeof database.optConfigs>
+  let optConfigs: ZzzDatabase['optConfigs']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('zzz')

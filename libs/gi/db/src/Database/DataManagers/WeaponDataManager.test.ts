@@ -5,7 +5,7 @@ import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('WeaponDataManager.validate', () => {
   let database: ArtCharDatabase
-  let weapons: ReturnType<typeof database.weapons>
+  let weapons: ArtCharDatabase['weapons']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')

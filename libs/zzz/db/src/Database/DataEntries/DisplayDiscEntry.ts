@@ -1,5 +1,9 @@
-import { clamp, validateArr } from '@genshin-optimizer/common/util'
-
+import {
+  zodBoolean,
+  zodClampedNumber,
+  zodEnumWithDefault,
+  zodFilteredArray,
+} from '@genshin-optimizer/common/database'
 import type {
   DiscMainStatKey,
   DiscRarityKey,
@@ -9,12 +13,14 @@ import type {
   LocationKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
+  allDiscMainStatKeys,
   allDiscRarityKeys,
   allDiscSetKeys,
   allDiscSlotKeys,
   allDiscSubStatKeys,
   allLocationKeys,
 } from '@genshin-optimizer/zzz/consts'
+import { z } from 'zod'
 import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'
 
@@ -52,34 +58,43 @@ export type IDisplayDisc = {
   effFilter: DiscSubStatKey[]
 }
 
+// Schema for nested FilterOption - single source of truth
+const filterOptionSchemaInternal = z.object({
+  discSetKeys: zodFilteredArray(allDiscSetKeys, []),
+  rarity: zodFilteredArray(allDiscRarityKeys),
+  levelLow: zodClampedNumber(0, 15, 0),
+  levelHigh: zodClampedNumber(0, 15, 15),
+  slotKeys: zodFilteredArray(allDiscSlotKeys),
+  mainStatKeys: zodFilteredArray(allDiscMainStatKeys, []),
+  substats: zodFilteredArray(allDiscSubStatKeys, []),
+  locations: zodFilteredArray(allLocationKeys, []),
+  showEquipped: zodBoolean({ defaultValue: true }),
+  showInventory: zodBoolean({ defaultValue: true }),
+  locked: zodFilteredArray(['locked', 'unlocked'] as const),
+  rvLow: zodClampedNumber(0, 900, 0),
+  rvHigh: zodClampedNumber(0, 900, 900),
+  useMaxRV: zodBoolean(),
+  lines: zodFilteredArray([1, 2, 3, 4] as const),
+})
+
+// Typed version for external use
+const filterOptionSchema = filterOptionSchemaInternal as z.ZodType<FilterOption>
+
+// Helper function for getting initial filter option (uses schema as source of truth)
 export function initialFilterOption(): FilterOption {
-  return {
-    discSetKeys: [],
-    rarity: [...allDiscRarityKeys],
-    levelLow: 0,
-    levelHigh: 15,
-    slotKeys: [...allDiscSlotKeys],
-    mainStatKeys: [],
-    substats: [],
-    locations: [],
-    showEquipped: true,
-    showInventory: true,
-    locked: ['locked', 'unlocked'],
-    rvLow: 0,
-    rvHigh: 900, // TODO: Figure out RVs for ZZZ
-    useMaxRV: false,
-    lines: [1, 2, 3, 4],
-  }
+  return filterOptionSchema.parse({})
 }
 
-function initialState(): IDisplayDisc {
-  return {
-    filterOption: initialFilterOption(),
-    ascending: false,
-    sortType: discSortKeys[0],
-    effFilter: [...allDiscSubStatKeys],
-  }
-}
+// Main display disc schema - single source of truth
+const displayDiscSchema = z.object({
+  filterOption: z.preprocess(
+    (val) => (typeof val === 'object' && val !== null ? val : {}),
+    filterOptionSchemaInternal
+  ),
+  ascending: zodBoolean(),
+  sortType: zodEnumWithDefault(discSortKeys, 'rarity'),
+  effFilter: zodFilteredArray(allDiscSubStatKeys),
+}) as z.ZodType<IDisplayDisc>
 
 export class DisplayDiscEntry extends DataEntry<
   'display_disc',
@@ -88,85 +103,17 @@ export class DisplayDiscEntry extends DataEntry<
   IDisplayDisc
 > {
   constructor(database: ZzzDatabase) {
-    super(database, 'display_disc', initialState, 'display_disc')
+    super(
+      database,
+      'display_disc',
+      () => displayDiscSchema.parse({}),
+      'display_disc'
+    )
   }
   override validate(obj: unknown): IDisplayDisc | undefined {
-    if (typeof obj !== 'object' || obj === null || Array.isArray(obj))
-      return undefined
-    let { filterOption, ascending, sortType, effFilter } = obj as IDisplayDisc
-
-    if (typeof filterOption !== 'object') filterOption = initialFilterOption()
-    else {
-      let {
-        discSetKeys,
-        rarity,
-        levelLow,
-        levelHigh,
-        slotKeys,
-        mainStatKeys,
-        substats,
-        locations,
-        showEquipped,
-        showInventory,
-        locked,
-        rvLow,
-        rvHigh,
-        useMaxRV,
-        lines,
-      } = filterOption
-      discSetKeys = validateArr(discSetKeys, allDiscSetKeys, [])
-      rarity = validateArr(rarity, allDiscRarityKeys)
-
-      if (typeof levelLow !== 'number') levelLow = 0
-      else levelLow = clamp(levelLow, 0, 15)
-      if (typeof levelHigh !== 'number') levelHigh = 0
-      else levelHigh = clamp(levelHigh, 0, 15)
-
-      slotKeys = validateArr(slotKeys, allDiscSlotKeys)
-      mainStatKeys = validateArr(mainStatKeys, mainStatKeys, [])
-      substats = validateArr(substats, allDiscSubStatKeys, [])
-      locations = validateArr(locations, allLocationKeys, [])
-      if (typeof showEquipped !== 'boolean') showEquipped = true
-      if (typeof showInventory !== 'boolean') showInventory = true
-      locked = validateArr(locked, ['locked', 'unlocked'])
-
-      if (typeof rvLow !== 'number') rvLow = 0
-      if (typeof rvHigh !== 'number') rvHigh = 900 // TODO: Figure out RVs for ZZZ
-
-      if (typeof useMaxRV !== 'boolean') useMaxRV = false
-
-      lines = validateArr(lines, [1, 2, 3, 4])
-
-      filterOption = {
-        discSetKeys,
-        rarity,
-        levelLow,
-        levelHigh,
-        slotKeys,
-        mainStatKeys,
-        substats,
-        locations,
-        showEquipped,
-        showInventory,
-        locked,
-        rvLow,
-        rvHigh,
-        useMaxRV,
-        lines,
-      } as FilterOption
-    }
-
-    if (typeof ascending !== 'boolean') ascending = false
-    if (!discSortKeys.includes(sortType)) sortType = discSortKeys[0]
-
-    effFilter = validateArr(effFilter, allDiscSubStatKeys)
-
-    return {
-      filterOption,
-      ascending,
-      sortType,
-      effFilter,
-    } as IDisplayDisc
+    if (typeof obj !== 'object' || obj === null) return undefined
+    const result = displayDiscSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
   override set(
     value:
@@ -176,7 +123,7 @@ export class DisplayDiscEntry extends DataEntry<
   ): boolean {
     if ('action' in value) {
       if (value.action === 'reset')
-        return super.set({ filterOption: initialFilterOption() })
+        return super.set({ filterOption: filterOptionSchema.parse({}) })
       return false
     } else return super.set(value)
   }

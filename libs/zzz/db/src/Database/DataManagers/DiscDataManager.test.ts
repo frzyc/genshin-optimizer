@@ -4,7 +4,6 @@ import {
   allDiscRarityKeys,
   allDiscSetKeys,
   allDiscSlotKeys,
-  allDiscSubStatKeys,
   discMaxLevel,
   discSlotToMainStatKeys,
 } from '@genshin-optimizer/zzz/consts'
@@ -13,7 +12,7 @@ import { validateDisc, validateDiscBasedOnRarity } from './DiscDataManager'
 
 describe('DiscDataManager.validate', () => {
   let database: ZzzDatabase
-  let discs: ReturnType<typeof database.discs>
+  let discs: ZzzDatabase['discs']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('zzz')

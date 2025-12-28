@@ -3,7 +3,7 @@ import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('DisplayTool.validate', () => {
   let database: ArtCharDatabase
-  let displayTool: ReturnType<typeof database.displayTool>
+  let displayTool: ArtCharDatabase['displayTool']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')

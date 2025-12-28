@@ -1,4 +1,9 @@
-import { validateArr } from '@genshin-optimizer/common/util'
+import {
+  zodBoolean,
+  zodEnumWithDefault,
+  zodFilteredArray,
+  zodString,
+} from '@genshin-optimizer/common/database'
 import type {
   LocationKey,
   SpecialityKey,
@@ -9,6 +14,7 @@ import {
   allSpecialityKeys,
   allWengineRarityKeys,
 } from '@genshin-optimizer/zzz/consts'
+import { z } from 'zod'
 import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'
 
@@ -27,21 +33,31 @@ export interface IDisplayWengine {
   locations: LocationKey[]
 }
 
-const initialOption = (): Omit<IDisplayWengine, 'ascending' | 'sortType'> => ({
-  editWengineId: '',
-  rarity: [...allWengineRarityKeys],
-  speciality: [...allSpecialityKeys],
-  locked: ['locked', 'unlocked'],
-  showEquipped: true,
-  showInventory: true,
-  locations: [],
+// Schema with defaults - single source of truth
+const displayWengineSchemaInternal = z.object({
+  editWengineId: zodString(''),
+  sortType: zodEnumWithDefault(wengineSortKeys, 'level'),
+  ascending: zodBoolean(),
+  rarity: zodFilteredArray(allWengineRarityKeys),
+  speciality: zodFilteredArray(allSpecialityKeys),
+  locked: zodFilteredArray(['locked', 'unlocked'] as const),
+  showEquipped: zodBoolean({ defaultValue: true }),
+  showInventory: zodBoolean({ defaultValue: true }),
+  locations: zodFilteredArray(allLocationKeys, []),
 })
 
-const initialState = (): IDisplayWengine => ({
-  ...initialOption(),
-  sortType: wengineSortKeys[0],
-  ascending: false,
-})
+// Typed version for external use
+const displayWengineSchema =
+  displayWengineSchemaInternal as z.ZodType<IDisplayWengine>
+
+// Reset schema type (excludes sortType and ascending - those are preserved on reset)
+type ResetOptions = Omit<IDisplayWengine, 'sortType' | 'ascending'>
+
+// Reset schema (excludes sortType and ascending - those are preserved on reset)
+const resetSchema = displayWengineSchemaInternal.omit({
+  sortType: true,
+  ascending: true,
+}) as z.ZodType<ResetOptions>
 
 export class DisplayWengineEntry extends DataEntry<
   'display_wengine',
@@ -50,47 +66,17 @@ export class DisplayWengineEntry extends DataEntry<
   IDisplayWengine
 > {
   constructor(database: ZzzDatabase) {
-    super(database, 'display_wengine', initialState, 'display_wengine')
-  }
-  override validate(obj: any): IDisplayWengine | undefined {
-    if (typeof obj !== 'object' || obj === null || Array.isArray(obj))
-      return undefined
-    let {
-      sortType,
-      ascending,
-      rarity,
-      speciality,
-      locked,
-      showEquipped,
-      showInventory,
-      locations,
-    } = obj
-    const { editWengineId } = obj
-    if (typeof editWengineId !== 'string') return undefined
-    if (
-      typeof sortType !== 'string' ||
-      !wengineSortKeys.includes(sortType as any)
+    super(
+      database,
+      'display_wengine',
+      () => displayWengineSchema.parse({}),
+      'display_wengine'
     )
-      sortType = wengineSortKeys[0]
-    if (typeof ascending !== 'boolean') ascending = false
-    if (typeof showEquipped !== 'boolean') showEquipped = true
-    if (typeof showInventory !== 'boolean') showInventory = true
-    speciality = validateArr(speciality, allSpecialityKeys)
-    rarity = validateArr(rarity, allWengineRarityKeys)
-    locked = validateArr(locked, ['locked', 'unlocked'])
-    locations = validateArr(locations, allLocationKeys)
-    const data: IDisplayWengine = {
-      editWengineId,
-      sortType,
-      ascending,
-      rarity,
-      speciality,
-      locked,
-      showEquipped,
-      showInventory,
-      locations,
-    }
-    return data
+  }
+  override validate(obj: unknown): IDisplayWengine | undefined {
+    if (typeof obj !== 'object' || obj === null) return undefined
+    const result = displayWengineSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
   override set(
     value:
@@ -99,7 +85,7 @@ export class DisplayWengineEntry extends DataEntry<
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {
-      if (value.action === 'reset') return super.set(initialOption())
+      if (value.action === 'reset') return super.set(resetSchema.parse({}))
       return false
     } else return super.set(value)
   }

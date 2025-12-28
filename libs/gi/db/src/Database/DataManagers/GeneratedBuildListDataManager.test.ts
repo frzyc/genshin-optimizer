@@ -4,7 +4,7 @@ import type { GeneratedBuildList } from './GeneratedBuildListDataManager'
 
 describe('GeneratedBuildListDataManager.validate', () => {
   let database: ArtCharDatabase
-  let generatedBuildList: ReturnType<typeof database.generatedBuildList>
+  let generatedBuildList: ArtCharDatabase['generatedBuildList']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')

@@ -4,7 +4,7 @@ import { SroDatabase } from '../Database'
 
 describe('CharMetaDataManager.validate', () => {
   let database: SroDatabase
-  let charMeta: ReturnType<typeof database.charMeta>
+  let charMeta: SroDatabase['charMeta']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('sro')

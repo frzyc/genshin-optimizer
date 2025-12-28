@@ -1,10 +1,9 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import { allCharacterKeys } from '@genshin-optimizer/gi/consts'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('BuildTcDataManager.validate', () => {
   let database: ArtCharDatabase
-  let buildTcs: ReturnType<typeof database.buildTcs>
+  let buildTcs: ArtCharDatabase['buildTcs']
 
   beforeEach(() => {
     const dbStorage = createTestDBStorage('go')
@@ -16,8 +15,18 @@ describe('BuildTcDataManager.validate', () => {
     const valid = {
       name: 'Test BuildTc',
       description: 'Test description',
-      character: { level: 80, constellation: 0, ascension: 6, talent: { auto: 1, skill: 1, burst: 1 } },
-      weapon: { key: 'DullBlade' as const, level: 1, ascension: 0, refinement: 1 },
+      character: {
+        level: 80,
+        constellation: 0,
+        ascension: 6,
+        talent: { auto: 1, skill: 1, burst: 1 },
+      },
+      weapon: {
+        key: 'DullBlade' as const,
+        level: 1,
+        ascension: 0,
+        refinement: 1,
+      },
       artifact: {
         slots: {
           flower: { level: 0, statKey: 'hp', rarity: 5 },
