@@ -3,15 +3,8 @@ import {
   zodClampedNumber,
   zodEnumWithDefault,
   zodFilteredArray,
+  zodObjectSchema,
 } from '@genshin-optimizer/common/database'
-import type {
-  LocationKey,
-  RelicMainStatKey,
-  RelicRarityKey,
-  RelicSetKey,
-  RelicSlotKey,
-  RelicSubStatKey,
-} from '@genshin-optimizer/sr/consts'
 import {
   allLocationKeys,
   allRelicMainStatKeys,
@@ -33,34 +26,7 @@ export const relicSortKeys = [
 ] as const
 export type RelicSortKey = (typeof relicSortKeys)[number]
 
-// Explicit types for better type inference
-export type FilterOption = {
-  relicSetKeys: RelicSetKey[]
-  rarity: RelicRarityKey[]
-  levelLow: number
-  levelHigh: number
-  slotKeys: RelicSlotKey[]
-  mainStatKeys: RelicMainStatKey[]
-  substats: RelicSubStatKey[]
-  locations: LocationKey[]
-  showEquipped: boolean
-  showInventory: boolean
-  locked: Array<'locked' | 'unlocked'>
-  rvLow: number
-  rvHigh: number
-  useMaxRV: boolean
-  lines: Array<1 | 2 | 3 | 4>
-}
-
-export type IDisplayRelic = {
-  filterOption: FilterOption
-  ascending: boolean
-  sortType: RelicSortKey
-  effFilter: RelicSubStatKey[]
-}
-
-// Schema for nested FilterOption - single source of truth
-const filterOptionSchemaInternal = z.object({
+const filterOptionSchema = z.object({
   relicSetKeys: zodFilteredArray(allRelicSetKeys, []),
   rarity: zodFilteredArray(allRelicRarityKeys),
   levelLow: zodClampedNumber(0, 15, 0),
@@ -77,25 +43,19 @@ const filterOptionSchemaInternal = z.object({
   useMaxRV: zodBoolean(),
   lines: zodFilteredArray([1, 2, 3, 4] as const),
 })
+export type FilterOption = z.infer<typeof filterOptionSchema>
 
-// Typed version for external use
-const filterOptionSchema = filterOptionSchemaInternal as z.ZodType<FilterOption>
-
-// Helper function for getting initial filter option (uses schema as source of truth)
 export function initialFilterOption(): FilterOption {
   return filterOptionSchema.parse({})
 }
 
-// Main display relic schema - single source of truth
 const displayRelicSchema = z.object({
-  filterOption: z.preprocess(
-    (val) => (typeof val === 'object' && val !== null ? val : {}),
-    filterOptionSchemaInternal
-  ),
+  filterOption: zodObjectSchema(filterOptionSchema),
   ascending: zodBoolean(),
   sortType: zodEnumWithDefault(relicSortKeys, 'rarity'),
   effFilter: zodFilteredArray(allRelicSubStatKeys),
-}) as z.ZodType<IDisplayRelic>
+})
+export type IDisplayRelic = z.infer<typeof displayRelicSchema>
 
 export class DisplayRelicEntry extends DataEntry<
   'display_relic',

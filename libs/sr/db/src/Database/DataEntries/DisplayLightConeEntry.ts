@@ -3,7 +3,6 @@ import {
   zodEnumWithDefault,
   zodFilteredArray,
 } from '@genshin-optimizer/common/database'
-import type { PathKey, RarityKey } from '@genshin-optimizer/sr/consts'
 import { allPathKeys, allRarityKeys } from '@genshin-optimizer/sr/consts'
 import { z } from 'zod'
 import { DataEntry } from '../DataEntry'
@@ -12,21 +11,13 @@ import type { SroDatabase } from '../Database'
 export const lightConeSortKeys = ['level', 'rarity', 'name'] as const
 export type LightConeSortKey = (typeof lightConeSortKeys)[number]
 
-// Explicit type definition for better type inference
-export interface IDisplayLightCone {
-  sortType: LightConeSortKey
-  ascending: boolean
-  rarity: RarityKey[]
-  path: PathKey[]
-}
-
-// Schema with defaults - single source of truth
 const displayLightConeSchema = z.object({
   sortType: zodEnumWithDefault(lightConeSortKeys, 'level'),
   ascending: zodBoolean(),
   rarity: zodFilteredArray(allRarityKeys),
   path: zodFilteredArray(allPathKeys),
-}) as z.ZodType<IDisplayLightCone>
+})
+export type IDisplayLightCone = z.infer<typeof displayLightConeSchema>
 
 export class DisplayLightConeEntry extends DataEntry<
   'display_lightcone',

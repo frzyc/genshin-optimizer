@@ -3,15 +3,8 @@ import {
   zodClampedNumber,
   zodEnumWithDefault,
   zodFilteredArray,
+  zodObjectSchema,
 } from '@genshin-optimizer/common/database'
-import type {
-  DiscMainStatKey,
-  DiscRarityKey,
-  DiscSetKey,
-  DiscSlotKey,
-  DiscSubStatKey,
-  LocationKey,
-} from '@genshin-optimizer/zzz/consts'
 import {
   allDiscMainStatKeys,
   allDiscRarityKeys,
@@ -33,33 +26,7 @@ export const discSortKeys = [
 ] as const
 export type DiscSortKey = (typeof discSortKeys)[number]
 
-export type FilterOption = {
-  discSetKeys: DiscSetKey[]
-  rarity: DiscRarityKey[]
-  levelLow: number
-  levelHigh: number
-  slotKeys: DiscSlotKey[]
-  mainStatKeys: DiscMainStatKey[]
-  substats: DiscSubStatKey[]
-  locations: LocationKey[]
-  showEquipped: boolean
-  showInventory: boolean
-  locked: Array<'locked' | 'unlocked'>
-  rvLow: number
-  rvHigh: number
-  useMaxRV: boolean
-  lines: Array<1 | 2 | 3 | 4>
-}
-
-export type IDisplayDisc = {
-  filterOption: FilterOption
-  ascending: boolean
-  sortType: DiscSortKey
-  effFilter: DiscSubStatKey[]
-}
-
-// Schema for nested FilterOption - single source of truth
-const filterOptionSchemaInternal = z.object({
+const filterOptionSchema = z.object({
   discSetKeys: zodFilteredArray(allDiscSetKeys, []),
   rarity: zodFilteredArray(allDiscRarityKeys),
   levelLow: zodClampedNumber(0, 15, 0),
@@ -76,25 +43,19 @@ const filterOptionSchemaInternal = z.object({
   useMaxRV: zodBoolean(),
   lines: zodFilteredArray([1, 2, 3, 4] as const),
 })
+export type FilterOption = z.infer<typeof filterOptionSchema>
 
-// Typed version for external use
-const filterOptionSchema = filterOptionSchemaInternal as z.ZodType<FilterOption>
-
-// Helper function for getting initial filter option (uses schema as source of truth)
 export function initialFilterOption(): FilterOption {
   return filterOptionSchema.parse({})
 }
 
-// Main display disc schema - single source of truth
 const displayDiscSchema = z.object({
-  filterOption: z.preprocess(
-    (val) => (typeof val === 'object' && val !== null ? val : {}),
-    filterOptionSchemaInternal
-  ),
+  filterOption: zodObjectSchema(filterOptionSchema),
   ascending: zodBoolean(),
   sortType: zodEnumWithDefault(discSortKeys, 'rarity'),
   effFilter: zodFilteredArray(allDiscSubStatKeys),
-}) as z.ZodType<IDisplayDisc>
+})
+export type IDisplayDisc = z.infer<typeof displayDiscSchema>
 
 export class DisplayDiscEntry extends DataEntry<
   'display_disc',

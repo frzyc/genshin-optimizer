@@ -3,11 +3,6 @@ import {
   zodEnumWithDefault,
   zodFilteredArray,
 } from '@genshin-optimizer/common/database'
-import type {
-  AttributeKey,
-  CharacterRarityKey,
-  SpecialityKey,
-} from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeKeys,
   allCharacterRarityKeys,
@@ -20,25 +15,20 @@ import type { ZzzDatabase } from '../Database'
 export const characterSortKeys = ['new', 'level', 'rarity', 'name'] as const
 export type CharacterSortKey = (typeof characterSortKeys)[number]
 
-export interface IDisplayCharacterEntry {
-  sortType: CharacterSortKey
-  ascending: boolean
-  specialtyType: SpecialityKey[]
-  attribute: AttributeKey[]
-  rarity: CharacterRarityKey[]
-}
+const persistedSortKeys = ['level', 'rarity', 'name'] as const
+type PersistedSortKey = (typeof persistedSortKeys)[number]
 
-// Exclude 'new' from allowed sort types for storage
-const allowedSortKeys = ['level', 'rarity', 'name'] as const
-
-// Schema with defaults - single source of truth
 const displayCharacterSchema = z.object({
-  sortType: zodEnumWithDefault(allowedSortKeys, 'level'),
+  sortType: zodEnumWithDefault(
+    persistedSortKeys,
+    'level'
+  ) as z.ZodType<PersistedSortKey>,
   ascending: zodBoolean(),
   specialtyType: zodFilteredArray(allSpecialityKeys),
   attribute: zodFilteredArray(allAttributeKeys),
   rarity: zodFilteredArray(allCharacterRarityKeys),
-}) as z.ZodType<IDisplayCharacterEntry>
+})
+export type IDisplayCharacterEntry = z.infer<typeof displayCharacterSchema>
 
 export class DisplayCharacterEntry extends DataEntry<
   'display_character',

@@ -1,9 +1,4 @@
 import { zodFilteredArray } from '@genshin-optimizer/common/database'
-import type {
-  LocationCharacterKey,
-  RarityKey,
-  WeaponTypeKey,
-} from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
   allRarityKeys,
@@ -16,47 +11,25 @@ import { DataEntry } from '../DataEntry'
 export const weaponSortKeys = ['level', 'rarity', 'name'] as const
 export type WeaponSortKey = (typeof weaponSortKeys)[number]
 
-// Explicit type definition for better type inference
-export interface IDisplayWeapon {
-  editWeaponId: string
-  sortType: WeaponSortKey
-  ascending: boolean
-  rarity: RarityKey[]
-  weaponType: WeaponTypeKey[]
-  locked: Array<'locked' | 'unlocked'>
-  showEquipped: boolean
-  showInventory: boolean
-  locations: LocationCharacterKey[]
-}
+const lockedValues = ['locked', 'unlocked'] as const
 
-// Schema with defaults - single source of truth
-const displayWeaponSchemaInternal = z.object({
+const displayWeaponSchema = z.object({
   editWeaponId: z.string().catch(''),
   sortType: z.enum(weaponSortKeys).catch('level'),
   ascending: z.boolean().catch(false),
   rarity: zodFilteredArray(allRarityKeys, [...allRarityKeys]),
   weaponType: zodFilteredArray(allWeaponTypeKeys, [...allWeaponTypeKeys]),
-  locked: zodFilteredArray(['locked', 'unlocked'] as const, [
-    'locked',
-    'unlocked',
-  ]),
+  locked: zodFilteredArray(lockedValues, [...lockedValues]),
   showEquipped: z.boolean().catch(true),
   showInventory: z.boolean().catch(true),
   locations: zodFilteredArray(allLocationCharacterKeys, []),
 })
+export type IDisplayWeapon = z.infer<typeof displayWeaponSchema>
 
-// Typed version for external use
-const displayWeaponSchema =
-  displayWeaponSchemaInternal as z.ZodType<IDisplayWeapon>
-
-// Reset schema type (excludes sortType and ascending - those are preserved on reset)
-type ResetOptions = Omit<IDisplayWeapon, 'sortType' | 'ascending'>
-
-// Reset schema (excludes sortType and ascending - those are preserved on reset)
-const resetSchema = displayWeaponSchemaInternal.omit({
+const resetSchema = displayWeaponSchema.omit({
   sortType: true,
   ascending: true,
-}) as z.ZodType<ResetOptions>
+})
 
 export class DisplayWeaponEntry extends DataEntry<
   'display_weapon',

@@ -1,8 +1,9 @@
 import {
+  zodArray,
   zodBoolean,
   zodClampedNumber,
   zodEnumWithDefault,
-  zodNumericLiteral,
+  zodNumericLiteralWithDefault,
 } from '@genshin-optimizer/common/database'
 import { clamp } from '@genshin-optimizer/common/util'
 import type { ArtifactRarity } from '@genshin-optimizer/gi/consts'
@@ -19,51 +20,26 @@ import { z } from 'zod'
 
 export const substatSchema = z.object({
   key: zodEnumWithDefault([...allSubstatKeys, ''] as const, ''),
-  value: z.preprocess(
-    (val) => (typeof val === 'number' && isFinite(val) ? val : 0),
-    z.number()
-  ),
-  initialValue: z.preprocess(
-    (val) => (typeof val === 'number' && isFinite(val) ? val : undefined),
-    z.number().optional()
-  ),
+  value: z.number().finite().catch(0),
+  initialValue: z.number().finite().optional(),
 })
 
 export const artifactSchema = z.object({
   setKey: zodEnumWithDefault(allArtifactSetKeys, allArtifactSetKeys[0]),
   slotKey: zodEnumWithDefault(allArtifactSlotKeys, 'flower'),
   level: zodClampedNumber(0, 20, 0),
-  rarity: z.preprocess(
-    (val) =>
-      allArtifactRarityKeys.includes(val as ArtifactRarity)
-        ? (val as ArtifactRarity)
-        : 5,
-    zodNumericLiteral(allArtifactRarityKeys)
+  rarity: zodNumericLiteralWithDefault(
+    allArtifactRarityKeys,
+    5
   ) as z.ZodType<ArtifactRarity>,
   mainStatKey: zodEnumWithDefault(allMainStatKeys, 'hp'),
   location: zodEnumWithDefault([...allLocationCharacterKeys, ''] as const, ''),
   lock: zodBoolean({ coerce: true }),
-  substats: z.preprocess(
-    (val) => (Array.isArray(val) ? val : []),
-    z.array(substatSchema)
-  ),
-  totalRolls: z.preprocess(
-    (val) =>
-      typeof val === 'number' ? clamp(Math.round(val), 0, 9) : undefined,
-    z.number().optional()
-  ),
-  astralMark: z.preprocess(
-    (val) => (typeof val === 'boolean' ? val : undefined),
-    z.boolean().optional()
-  ),
-  elixirCrafted: z.preprocess(
-    (val) => (typeof val === 'boolean' ? val : undefined),
-    z.boolean().optional()
-  ),
-  unactivatedSubstats: z.preprocess(
-    (val) => (Array.isArray(val) ? val : undefined),
-    z.array(substatSchema).optional()
-  ),
+  substats: zodArray(substatSchema),
+  totalRolls: z.number().int().min(0).max(9).optional(),
+  astralMark: z.boolean().optional(),
+  elixirCrafted: z.boolean().optional(),
+  unactivatedSubstats: z.array(substatSchema).optional(),
 })
 
 export type IArtifact = z.infer<typeof artifactSchema>

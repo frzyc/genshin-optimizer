@@ -4,11 +4,6 @@ import {
   zodFilteredArray,
   zodString,
 } from '@genshin-optimizer/common/database'
-import type {
-  LocationKey,
-  SpecialityKey,
-  WengineRarityKey,
-} from '@genshin-optimizer/zzz/consts'
 import {
   allLocationKeys,
   allSpecialityKeys,
@@ -21,20 +16,7 @@ import type { ZzzDatabase } from '../Database'
 export const wengineSortKeys = ['level', 'rarity', 'name'] as const
 export type WengineSortKey = (typeof wengineSortKeys)[number]
 
-export interface IDisplayWengine {
-  editWengineId: string
-  sortType: WengineSortKey
-  ascending: boolean
-  rarity: WengineRarityKey[]
-  speciality: SpecialityKey[]
-  locked: Array<'locked' | 'unlocked'>
-  showInventory: boolean
-  showEquipped: boolean
-  locations: LocationKey[]
-}
-
-// Schema with defaults - single source of truth
-const displayWengineSchemaInternal = z.object({
+const displayWengineSchema = z.object({
   editWengineId: zodString(''),
   sortType: zodEnumWithDefault(wengineSortKeys, 'level'),
   ascending: zodBoolean(),
@@ -45,19 +27,12 @@ const displayWengineSchemaInternal = z.object({
   showInventory: zodBoolean({ defaultValue: true }),
   locations: zodFilteredArray(allLocationKeys, []),
 })
+export type IDisplayWengine = z.infer<typeof displayWengineSchema>
 
-// Typed version for external use
-const displayWengineSchema =
-  displayWengineSchemaInternal as z.ZodType<IDisplayWengine>
-
-// Reset schema type (excludes sortType and ascending - those are preserved on reset)
-type ResetOptions = Omit<IDisplayWengine, 'sortType' | 'ascending'>
-
-// Reset schema (excludes sortType and ascending - those are preserved on reset)
-const resetSchema = displayWengineSchemaInternal.omit({
+const resetSchema = displayWengineSchema.omit({
   sortType: true,
   ascending: true,
-}) as z.ZodType<ResetOptions>
+})
 
 export class DisplayWengineEntry extends DataEntry<
   'display_wengine',

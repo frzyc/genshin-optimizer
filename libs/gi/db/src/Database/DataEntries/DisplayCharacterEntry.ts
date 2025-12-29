@@ -1,9 +1,4 @@
 import { zodFilteredArray } from '@genshin-optimizer/common/database'
-import type {
-  CharacterRarityKey,
-  ElementKey,
-  WeaponTypeKey,
-} from '@genshin-optimizer/gi/consts'
 import {
   allCharacterRarityKeys,
   allElementKeys,
@@ -22,27 +17,19 @@ export const characterSortKeys = [
 ] as const
 export type CharacterSortKey = (typeof characterSortKeys)[number]
 
-// Explicit type definition for better type inference
-export interface IDisplayCharacterEntry {
-  sortType: CharacterSortKey
-  ascending: boolean
-  weaponType: WeaponTypeKey[]
-  element: ElementKey[]
-  rarity: CharacterRarityKey[]
-}
+const persistedSortKeys = ['level', 'rarity', 'name', 'favorite'] as const
+type PersistedSortKey = (typeof persistedSortKeys)[number]
 
-// Schema with defaults - single source of truth
 const displayCharacterSchema = z.object({
-  // Disallow 'new' as explicit sort - use 'level' as fallback
   sortType: z
-    .enum(characterSortKeys)
-    .refine((val) => val !== 'new')
-    .catch('level'),
+    .enum(persistedSortKeys)
+    .catch('level') as z.ZodType<PersistedSortKey>,
   ascending: z.boolean().catch(false),
   weaponType: zodFilteredArray(allWeaponTypeKeys, [...allWeaponTypeKeys]),
   element: zodFilteredArray(allElementKeys, [...allElementKeys]),
   rarity: zodFilteredArray(allCharacterRarityKeys, [...allCharacterRarityKeys]),
-}) as z.ZodType<IDisplayCharacterEntry>
+})
+export type IDisplayCharacterEntry = z.infer<typeof displayCharacterSchema>
 
 export class DisplayCharacterEntry extends DataEntry<
   'display_character',

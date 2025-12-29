@@ -1,4 +1,8 @@
-import type { ICharacter, ILightCone, IRelic } from '@genshin-optimizer/sr/schema'
+import type {
+  ICharacter,
+  ILightCone,
+  IRelic,
+} from '@genshin-optimizer/sr/schema'
 
 export type ISrObjectDescription = {
   format: string

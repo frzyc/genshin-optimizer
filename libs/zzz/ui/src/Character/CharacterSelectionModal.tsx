@@ -103,7 +103,7 @@ export function CharacterSingleSelectionModal({
       setSearchTerm(e.target.value)
     },
     onChangeSort: (sortType: CharacterSortKey) => {
-      database.displayCharacter.set({ sortType })
+      if (sortType !== 'new') database.displayCharacter.set({ sortType })
     },
     onChangeAsc: (ascending: boolean) => {
       database.displayCharacter.set({ ascending })

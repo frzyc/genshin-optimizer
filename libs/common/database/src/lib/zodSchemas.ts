@@ -8,25 +8,18 @@ export function zodEnumWithDefault<T extends string>(
   values: readonly T[],
   defaultValue: T
 ) {
-  return z.preprocess(
-    (val) => (values.includes(val as T) ? val : defaultValue),
-    z.enum(values as unknown as [T, ...T[]])
-  )
+  return z.enum(values as unknown as [T, ...T[]]).catch(defaultValue)
 }
 
 export function zodBoundedNumber(min: number, max: number, fallback: number) {
-  return z.preprocess((val) => {
-    if (typeof val !== 'number' || !Number.isFinite(val)) return fallback
-    if (val < min || val > max) return fallback
-    return val
-  }, z.number().min(min).max(max))
+  return z.number().min(min).max(max).catch(fallback)
 }
 
 export function zodClampedNumber(min: number, max: number, fallback: number) {
-  return z.preprocess((val) => {
-    if (typeof val !== 'number' || !Number.isFinite(val)) return fallback
-    return Math.max(min, Math.min(max, val))
-  }, z.number())
+  return z
+    .number()
+    .catch(fallback)
+    .transform((val) => Math.max(min, Math.min(max, val)))
 }
 
 export function zodBoolean(
@@ -35,11 +28,11 @@ export function zodBoolean(
   if (typeof options === 'boolean') {
     options = { coerce: options }
   }
-  const { coerce = false, defaultValue = false } = options
-  return z.preprocess(
-    (val) => (coerce ? !!val : typeof val === 'boolean' ? val : defaultValue),
-    z.boolean()
-  )
+  const { coerce, defaultValue = false } = options
+  if (coerce) {
+    return z.preprocess((val) => !!val, z.boolean())
+  }
+  return z.boolean().catch(defaultValue)
 }
 
 export function zodFilteredArray<T>(
@@ -47,10 +40,12 @@ export function zodFilteredArray<T>(
   defaultValue?: readonly T[]
 ): z.ZodType<T[]> {
   const def: T[] = defaultValue ? [...defaultValue] : [...validKeys]
-  return z.preprocess((val): T[] => {
-    if (!Array.isArray(val)) return def
-    return val.filter((k) => validKeys.includes(k as T)) as T[]
-  }, z.array(z.any())) as z.ZodType<T[]>
+  return z
+    .array(z.any())
+    .catch(def)
+    .transform((arr) =>
+      arr.filter((k) => validKeys.includes(k as T))
+    ) as z.ZodType<T[]>
 }
 
 export function zodNumericLiteral<T extends readonly number[]>(values: T) {
@@ -60,10 +55,7 @@ export function zodNumericLiteral<T extends readonly number[]>(values: T) {
 }
 
 export function zodString(fallback = '') {
-  return z.preprocess(
-    (val) => (typeof val === 'string' ? val : fallback),
-    z.string()
-  )
+  return z.string().catch(fallback)
 }
 
 export function zodBooleanRecord<K extends string | number>(
@@ -81,4 +73,30 @@ export function zodBooleanRecord<K extends string | number>(
     },
     z.record(z.union([z.string(), z.number()]), z.boolean())
   ) as unknown as z.ZodType<Partial<Record<K, boolean>>>
+}
+
+export function zodNumericLiteralWithDefault<T extends readonly number[]>(
+  values: T,
+  defaultValue: T[number]
+) {
+  return zodNumericLiteral(values).catch(defaultValue)
+}
+
+export function zodArray<T extends z.ZodTypeAny>(
+  schema: T,
+  fallback: z.infer<T>[] = []
+) {
+  return z.array(schema).catch(fallback)
+}
+
+export function zodObject<T extends z.ZodRawShape>(shape: T) {
+  return z.looseObject({}).catch({}).pipe(z.object(shape))
+}
+
+export function zodObjectSchema<T extends z.ZodTypeAny>(schema: T) {
+  return z
+    .looseObject({})
+    .catch({})
+    .pipe(schema as unknown as z.ZodObject<z.ZodRawShape>)
+    .transform((val) => val as z.infer<T>)
 }

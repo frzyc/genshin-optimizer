@@ -1,5 +1,8 @@
-import { zodFilteredArray } from '@genshin-optimizer/common/database'
-import type { SubstatKey } from '@genshin-optimizer/gi/consts'
+import {
+  zodEnumWithDefault,
+  zodFilteredArray,
+  zodObjectSchema,
+} from '@genshin-optimizer/common/database'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
@@ -8,19 +11,19 @@ import {
   allMainStatKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
-import {
-  type ArtifactFilterOption,
-  type ArtifactSortKey,
-  artifactSortKeys,
-} from '@genshin-optimizer/gi/util'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 
-// Use the existing FilterOption type from gi/util for compatibility
-export type FilterOption = ArtifactFilterOption
+export const artifactSortKeys = [
+  'rarity',
+  'level',
+  'artsetkey',
+  'efficiency',
+  'mefficiency',
+] as const
+export type ArtifactSortKey = (typeof artifactSortKeys)[number]
 
-// Filter option schema with defaults
 const filterOptionSchema = z.object({
   artSetKeys: zodFilteredArray(allArtifactSetKeys, []),
   rarity: zodFilteredArray(allArtifactRarityKeys, [...allArtifactRarityKeys]),
@@ -40,32 +43,23 @@ const filterOptionSchema = z.object({
   rvHigh: z.number().catch(900),
   useMaxRV: z.boolean().catch(false),
   lines: zodFilteredArray([1, 2, 3, 4] as const, [1, 2, 3, 4]),
-}) as z.ZodType<FilterOption>
+  excluded: zodFilteredArray(['excluded', 'included'] as const, [
+    'excluded',
+    'included',
+  ]).optional(),
+})
+export type ArtifactFilterOption = z.infer<typeof filterOptionSchema>
 
-// Display artifact interface using existing types
-export interface IDisplayArtifact {
-  filterOption: FilterOption
-  ascending: boolean
-  sortType: ArtifactSortKey
-  effFilter: SubstatKey[]
-}
-
-// Main display artifact schema with defaults
 const displayArtifactSchema = z.object({
-  filterOption: filterOptionSchema.catch(filterOptionSchema.parse({})),
+  filterOption: zodObjectSchema(filterOptionSchema),
   ascending: z.boolean().catch(false),
-  sortType: z
-    .enum(
-      artifactSortKeys as unknown as [ArtifactSortKey, ...ArtifactSortKey[]]
-    )
-    .catch(artifactSortKeys[0]),
-  effFilter: z
-    .array(z.enum(allSubstatKeys as unknown as [SubstatKey, ...SubstatKey[]]))
-    .catch([...allSubstatKeys]),
-}) as z.ZodType<IDisplayArtifact>
+  sortType: zodEnumWithDefault(artifactSortKeys, 'rarity'),
+  effFilter: zodFilteredArray(allSubstatKeys, [...allSubstatKeys]),
+})
+export type IDisplayArtifact = z.infer<typeof displayArtifactSchema>
 
 // Helper for reset action
-export function initialFilterOption(): FilterOption {
+export function initialArtifactFilterOption(): ArtifactFilterOption {
   return filterOptionSchema.parse({})
 }
 
@@ -96,7 +90,7 @@ export class DisplayArtifactEntry extends DataEntry<
   ): boolean {
     if ('action' in value) {
       if (value.action === 'reset')
-        return super.set({ filterOption: initialFilterOption() })
+        return super.set({ filterOption: initialArtifactFilterOption() })
       return false
     } else return super.set(value)
   }

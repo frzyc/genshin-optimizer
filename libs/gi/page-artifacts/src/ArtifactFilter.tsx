@@ -76,7 +76,7 @@ export default function ArtifactFilter({
             }
           >
             <ArtifactFilterDisplay
-              filterOption={filterOption}
+              filterOption={filterOption as ArtifactFilterOption}
               filterOptionDispatch={filterOptionDispatch}
               filteredIds={artifactIds}
             />

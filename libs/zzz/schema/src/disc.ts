@@ -1,4 +1,5 @@
 import {
+  zodArray,
   zodBoolean,
   zodBoundedNumber,
   zodEnumWithDefault,
@@ -26,16 +27,18 @@ export const substatSchema = z.object({
   upgrades: zodBoundedNumber(0, 5, 0),
 })
 
+const substatValidationSchema = z.object({
+  key: z.string(),
+  upgrades: z.number().default(0),
+})
+
 export const discSchema = z.object({
   setKey: zodEnumWithDefault(allDiscSetKeys, allDiscSetKeys[0]),
   slotKey: zodEnumWithDefault(allDiscSlotKeys, '1'),
   level: zodBoundedNumber(0, 15, 0),
   rarity: zodEnumWithDefault(allDiscRarityKeys, 'S'),
   mainStatKey: zodEnumWithDefault(allDiscMainStatKeys, allDiscMainStatKeys[0]),
-  substats: z.preprocess(
-    (val) => (Array.isArray(val) ? val : []),
-    z.array(substatSchema)
-  ),
+  substats: zodArray(substatSchema),
   location: zodEnumWithDefault(allLocationKeys, ''),
   lock: zodBoolean({ coerce: true }),
   trash: zodBoolean({ coerce: true }),
@@ -93,57 +96,78 @@ export function validateDisc(
   return applyDiscRules(data, allowZeroSub)
 }
 
-export function validateDiscWithErrors(disc: Partial<IDisc>) {
-  const errors: string[] = []
-  const { mainStatKey } = disc
-  let { rarity, level, substats } = disc
-  const validatedDisc = validateDisc(disc)
+const discValidationBaseSchema = z.object({
+  mainStatKey: z.string(),
+  rarity: zodEnumWithDefault(allDiscRarityKeys, 'S'),
+  level: z.number().default(0),
+  substats: z.array(substatValidationSchema).default([]),
+})
 
-  rarity = rarity ? rarity : allDiscRarityKeys[0]
-  level = level ? level : 0
-  substats = substats ? substats : []
-  const minSubstats = rarity === allDiscRarityKeys[0] ? 3 : 2
+export const discValidationSchema = discValidationBaseSchema.superRefine(
+  (disc, ctx) => {
+    const { mainStatKey, rarity, level, substats } = disc
+    const minSubstats = rarity === allDiscRarityKeys[0] ? 3 : 2
 
-  if (mainStatKey) {
     const dupSubIndex = substats.findIndex((sub) => sub.key === mainStatKey)
-    if (dupSubIndex > -1)
-      errors.push(
-        `Substat at row ${dupSubIndex + 1} with ${
-          statKeyTextMap[mainStatKey]
-        } is the same as mainstat.`
-      )
-  }
+    if (dupSubIndex > -1) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['substats', dupSubIndex, 'key'],
+        message: `Substat at row ${dupSubIndex + 1} with ${statKeyTextMap[mainStatKey]} is the same as mainstat.`,
+      })
+    }
 
-  if (substats && substats.length >= minSubstats) {
-    const totalUpgrades = substats.reduce((sum, item) => sum + item.upgrades, 0)
-    const { low, high } = discSubstatRollData[rarity]
-    const lowerBound = low + Math.floor(level / 3)
-    const upperBound = high + Math.floor(level / 3)
+    if (substats.length >= minSubstats) {
+      const totalUpgrades = substats.reduce(
+        (sum, item) => sum + item.upgrades,
+        0
+      )
+      const { low, high } = discSubstatRollData[rarity]
+      const lowerBound = low + Math.floor(level / 3)
+      const upperBound = high + Math.floor(level / 3)
 
-    if (totalUpgrades > upperBound)
-      errors.push(
-        `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} upgrades. It currently has ${totalUpgrades} upgrades.`
-      )
-    else if (totalUpgrades < lowerBound)
-      errors.push(
-        `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} upgrades. It currently has ${totalUpgrades} upgrades.`
-      )
-  } else {
-    errors.push(
-      `${rarity}-rank disc (level ${level}) should have at least ${minSubstats} substats. It currently has ${substats?.length} substats.`
-    )
-  }
+      if (totalUpgrades > upperBound) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['substats'],
+          message: `${rarity}-rank disc (level ${level}) should have no more than ${upperBound} upgrades. It currently has ${totalUpgrades} upgrades.`,
+        })
+      } else if (totalUpgrades < lowerBound) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['substats'],
+          message: `${rarity}-rank disc (level ${level}) should have at least ${lowerBound} upgrades. It currently has ${totalUpgrades} upgrades.`,
+        })
+      }
+    } else {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['substats'],
+        message: `${rarity}-rank disc (level ${level}) should have at least ${minSubstats} substats. It currently has ${substats.length} substats.`,
+      })
+    }
 
-  if (substats.length < 4) {
-    const substat = substats.find((substat) => (substat.upgrades ?? 0) > 1)
-    if (substat)
-      errors.push(
-        `Substat ${
-          statKeyTextMap[substat.key as keyof typeof statKeyTextMap] ??
-          substat.key
-        } has > 1 upgrade, but not all substats are unlocked.`
-      )
+    if (substats.length < 4) {
+      const substat = substats.find((sub) => sub.upgrades > 1)
+      if (substat) {
+        const subIndex = substats.indexOf(substat)
+        ctx.addIssue({
+          code: 'custom',
+          path: ['substats', subIndex, 'upgrades'],
+          message: `Substat ${statKeyTextMap[substat.key as keyof typeof statKeyTextMap] ?? substat.key} has > 1 upgrade, but not all substats are unlocked.`,
+        })
+      }
+    }
   }
+)
+
+export function validateDiscWithErrors(disc: Partial<IDisc>) {
+  const validatedDisc = validateDisc(disc)
+  const result = discValidationSchema.safeParse(disc)
+
+  const errors = result.success
+    ? []
+    : result.error.issues.map((issue) => issue.message)
 
   return { validatedDisc, errors }
 }
