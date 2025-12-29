@@ -17,7 +17,7 @@ export const weaponSchema = z.object({
   ascension: zodBoundedNumber(0, 6, 0) as z.ZodType<AscensionKey>,
   refinement: zodBoundedNumber(1, 5, 1) as z.ZodType<RefinementKey>,
   location: zodEnumWithDefault([...allLocationCharacterKeys, ''] as const, ''),
-  lock: zodBoolean({ coerce: true }),
+  lock: zodBoolean(),
 })
 
 export type IWeapon = z.infer<typeof weaponSchema>

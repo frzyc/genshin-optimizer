@@ -18,7 +18,7 @@ export const wengineSchema = z.object({
   phase: zodBoundedNumber(1, 5, 1) as z.ZodType<PhaseKey>,
   modification: zodBoundedNumber(0, 5, 0) as z.ZodType<MilestoneKey>,
   location: zodEnumWithDefault(allLocationKeys, ''),
-  lock: zodBoolean({ coerce: true }),
+  lock: zodBoolean(),
 })
 
 export type IWengine = z.infer<typeof wengineSchema>

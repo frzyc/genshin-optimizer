@@ -34,7 +34,7 @@ export const artifactSchema = z.object({
   ) as z.ZodType<ArtifactRarity>,
   mainStatKey: zodEnumWithDefault(allMainStatKeys, 'hp'),
   location: zodEnumWithDefault([...allLocationCharacterKeys, ''] as const, ''),
-  lock: zodBoolean({ coerce: true }),
+  lock: zodBoolean(),
   substats: zodArray(substatSchema),
   totalRolls: z.number().int().min(0).max(9).optional(),
   astralMark: z.boolean().optional(),

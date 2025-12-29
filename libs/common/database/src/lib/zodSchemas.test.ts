@@ -52,23 +52,10 @@ describe('zodSchemas utilities', () => {
   })
 
   describe('zodBoolean', () => {
-    it('should return default for non-boolean (no coercion)', () => {
+    it('should return default for non-boolean', () => {
       expect(zodBoolean().parse(1)).toBe(false)
       expect(zodBoolean().parse('true')).toBe(false)
-      expect(zodBoolean({ defaultValue: true }).parse('string')).toBe(true)
-    })
-
-    it('should coerce truthy/falsy values when coerce=true', () => {
-      const schema = zodBoolean({ coerce: true })
-      expect(schema.parse(1)).toBe(true)
-      expect(schema.parse(0)).toBe(false)
-      expect(schema.parse('string')).toBe(true)
-      expect(schema.parse('')).toBe(false)
-    })
-
-    it('should support legacy boolean argument for coerce mode', () => {
-      expect(zodBoolean(true).parse(1)).toBe(true)
-      expect(zodBoolean(true).parse(0)).toBe(false)
+      expect(zodBoolean(true).parse('string')).toBe(true)
     })
   })
 

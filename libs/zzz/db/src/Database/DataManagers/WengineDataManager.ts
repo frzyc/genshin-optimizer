@@ -30,7 +30,7 @@ const wengineSchema = z.object({
   modification: zodBoundedNumber(0, 5, 0),
   phase: zodBoundedNumber(1, 5, 1),
   location: zodEnumWithDefault(allLocationKeys, ''),
-  lock: zodBoolean(true), // Coerce truthy values (1 → true, 0 → false)
+  lock: zodBoolean(),
 })
 
 export class WengineDataManager extends DataManager<

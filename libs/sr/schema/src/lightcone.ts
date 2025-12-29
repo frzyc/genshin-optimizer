@@ -19,7 +19,7 @@ export const lightConeSchema = z.object({
   ascension: zodBoundedNumber(0, 6, 0) as z.ZodType<AscensionKey>,
   superimpose: zodClampedNumber(1, 5, 1) as z.ZodType<SuperimposeKey>,
   location: zodEnumWithDefault(allLocationKeys, ''),
-  lock: zodBoolean({ coerce: true }),
+  lock: zodBoolean(),
 })
 
 export type ILightCone = z.infer<typeof lightConeSchema>

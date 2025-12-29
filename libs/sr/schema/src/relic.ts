@@ -35,7 +35,7 @@ export const relicSchema = z.object({
   rarity: zodNumericLiteral(allRelicRarityKeys) as z.ZodType<RelicRarityKey>,
   mainStatKey: zodEnum(allRelicMainStatKeys),
   location: zodEnumWithDefault(allLocationKeys, ''),
-  lock: zodBoolean({ coerce: true }),
+  lock: zodBoolean(),
   substats: z.array(substatSchema).catch([]),
 })
 

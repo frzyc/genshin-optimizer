@@ -40,8 +40,8 @@ export const discSchema = z.object({
   mainStatKey: zodEnumWithDefault(allDiscMainStatKeys, allDiscMainStatKeys[0]),
   substats: zodArray(substatSchema),
   location: zodEnumWithDefault(allLocationKeys, ''),
-  lock: zodBoolean({ coerce: true }),
-  trash: zodBoolean({ coerce: true }),
+  lock: zodBoolean(),
+  trash: zodBoolean(),
 })
 
 export type ISubstat = z.infer<typeof substatSchema>

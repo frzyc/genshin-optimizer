@@ -23,8 +23,8 @@ const displayWengineSchema = z.object({
   rarity: zodFilteredArray(allWengineRarityKeys),
   speciality: zodFilteredArray(allSpecialityKeys),
   locked: zodFilteredArray(['locked', 'unlocked'] as const),
-  showEquipped: zodBoolean({ defaultValue: true }),
-  showInventory: zodBoolean({ defaultValue: true }),
+  showEquipped: zodBoolean(true),
+  showInventory: zodBoolean(true),
   locations: zodFilteredArray(allLocationKeys, []),
 })
 export type IDisplayWengine = z.infer<typeof displayWengineSchema>

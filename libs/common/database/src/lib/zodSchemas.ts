@@ -22,16 +22,7 @@ export function zodClampedNumber(min: number, max: number, fallback: number) {
     .transform((val) => Math.max(min, Math.min(max, val)))
 }
 
-export function zodBoolean(
-  options: { coerce?: boolean; defaultValue?: boolean } | boolean = {}
-) {
-  if (typeof options === 'boolean') {
-    options = { coerce: options }
-  }
-  const { coerce, defaultValue = false } = options
-  if (coerce) {
-    return z.preprocess((val) => !!val, z.boolean())
-  }
+export function zodBoolean(defaultValue = false) {
   return z.boolean().catch(defaultValue)
 }
 
