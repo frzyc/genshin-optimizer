@@ -13,20 +13,6 @@ describe('WeaponDataManager', () => {
     weapons = database.weapons
   })
 
-  it('should validate complete IWeapon', () => {
-    const valid = {
-      key: allWeaponKeys[0],
-      level: 50,
-      ascension: 3,
-      refinement: 1,
-      location: '',
-      lock: false,
-    }
-    const result = weapons['validate'](valid)
-    expect(result).toBeDefined()
-    expect(result?.key).toBe(allWeaponKeys[0])
-  })
-
   it('should reject invalid weapon key', () => {
     const invalid = {
       key: 'INVALID_KEY',

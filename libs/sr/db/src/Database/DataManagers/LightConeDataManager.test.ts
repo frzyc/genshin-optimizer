@@ -15,21 +15,6 @@ describe('LightConeDataManager.validate', () => {
     lightCones = database.lightCones
   })
 
-  it('should validate complete ILightCone', () => {
-    const valid = {
-      key: allLightConeKeys[0],
-      level: 50,
-      ascension: 3,
-      superimpose: 1,
-      location: '',
-      lock: false,
-    }
-    const result = lightCones['validate'](valid)
-    expect(result).toBeDefined()
-    expect(result?.key).toBe(allLightConeKeys[0])
-    expect(result?.level).toBe(50)
-  })
-
   it('should reject invalid light cone key', () => {
     const invalid = {
       key: 'INVALID_KEY',

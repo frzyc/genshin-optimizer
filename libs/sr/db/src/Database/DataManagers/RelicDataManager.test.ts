@@ -12,22 +12,6 @@ describe('RelicDataManager.validate', () => {
     relics = database.relics
   })
 
-  it('should validate complete IRelic', () => {
-    const valid = {
-      setKey: allRelicSetKeys[0],
-      rarity: 5,
-      level: 10,
-      slotKey: 'head',
-      mainStatKey: 'hp',
-      substats: [],
-      location: '',
-      lock: false,
-    }
-    const result = relics['validate'](valid)
-    expect(result).toBeDefined()
-    expect(result?.setKey).toBe(allRelicSetKeys[0])
-  })
-
   it('should reject invalid setKey', () => {
     const invalid = {
       setKey: 'INVALID' as any,

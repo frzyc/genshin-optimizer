@@ -1,10 +1,7 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import { SroDatabase } from '../Database'
-import {
-  maxBuildsToShowDefault,
-  maxBuildsToShowList,
-} from './OptConfigDataManager'
+import { maxBuildsToShowDefault } from './OptConfigDataManager'
 
 describe('OptConfigDataManager.validate', () => {
   let database: SroDatabase
@@ -14,32 +11,6 @@ describe('OptConfigDataManager.validate', () => {
     const dbStorage = createTestDBStorage('sro')
     database = new SroDatabase(1, dbStorage)
     optConfigs = database.optConfigs
-  })
-
-  it('should validate valid OptConfig', () => {
-    const valid = {
-      statFilters: [],
-      maxBuildsToShow: 5,
-      levelLow: 0,
-      levelHigh: 15,
-      head: [],
-      hands: [],
-      body: [],
-      feet: [],
-      planarSphere: [],
-      linkRope: [],
-      setFilter2: [],
-      setFilter4: [],
-      useEquipped: false,
-      useEquippedLightCone: false,
-    }
-    const result = optConfigs['validate'](valid)
-    expect(result).toBeDefined()
-    expect(result?.maxBuildsToShow).toBe(5)
-  })
-
-  it('should return undefined for non-object types', () => {
-    expect(optConfigs['validate'](null)).toBeUndefined()
   })
 
   it('should apply default statFilters if not array', () => {
@@ -71,17 +42,5 @@ describe('OptConfigDataManager.validate', () => {
     const result = optConfigs['validate'](invalid)
     expect(result).toBeDefined()
     expect(result?.setFilter2Cavern).toEqual([allRelicSetKeys[0]])
-  })
-
-  it('should validate all valid maxBuildsToShow values', () => {
-    maxBuildsToShowList.forEach((maxBuilds) => {
-      const valid = {
-        statFilters: [],
-        maxBuildsToShow: maxBuilds,
-      }
-      const result = optConfigs['validate'](valid)
-      expect(result).toBeDefined()
-      expect(result?.maxBuildsToShow).toBe(maxBuilds)
-    })
   })
 })

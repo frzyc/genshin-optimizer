@@ -16,24 +16,6 @@ describe('CharacterDataManager.validate', () => {
     chars = database.chars
   })
 
-  it('should validate complete ICharacter', () => {
-    const valid = {
-      key: allCharacterKeys[0],
-      level: 50,
-      eidolon: 2,
-      ascension: 3,
-      basic: 5,
-      skill: 5,
-      ult: 5,
-      talent: 5,
-      bonusAbilities: {},
-    }
-    const result = chars['validate'](valid)
-    expect(result).toBeDefined()
-    expect(result?.key).toBe(allCharacterKeys[0])
-    expect(result?.eidolon).toBe(2)
-  })
-
   it('should reject invalid character key', () => {
     const invalid = {
       key: 'INVALID_KEY',

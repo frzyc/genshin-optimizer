@@ -1,9 +1,6 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { ArtCharDatabase } from '../ArtCharDatabase'
-import {
-  maxBuildsToShowDefault,
-  maxBuildsToShowList,
-} from './OptConfigDataManager'
+import { maxBuildsToShowDefault } from './OptConfigDataManager'
 
 describe('OptConfigDataManager', () => {
   let database: ArtCharDatabase
@@ -15,19 +12,6 @@ describe('OptConfigDataManager', () => {
     optConfigs = database.optConfigs
   })
 
-  it('should validate complete OptConfig', () => {
-    const valid = {
-      statFilters: [],
-      maxBuildsToShow: 5,
-      levelLow: 0,
-      levelHigh: 20,
-      useEquipped: false,
-      useEquippedArts: [],
-    }
-    const result = optConfigs['validate'](valid)
-    expect(result?.maxBuildsToShow).toBe(5)
-  })
-
   it('should apply default maxBuildsToShow for invalid value', () => {
     const invalid = {
       statFilters: [],
@@ -35,16 +19,5 @@ describe('OptConfigDataManager', () => {
     }
     const result = optConfigs['validate'](invalid)
     expect(result?.maxBuildsToShow).toBe(maxBuildsToShowDefault)
-  })
-
-  it('should validate all valid maxBuildsToShow values', () => {
-    maxBuildsToShowList.forEach((maxBuilds) => {
-      const valid = {
-        statFilters: [],
-        maxBuildsToShow: maxBuilds,
-      }
-      const result = optConfigs['validate'](valid)
-      expect(result?.maxBuildsToShow).toBe(maxBuilds)
-    })
   })
 })

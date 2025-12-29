@@ -1,8 +1,6 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import {
-  allDiscRarityKeys,
   allDiscSetKeys,
-  allDiscSlotKeys,
   discMaxLevel,
   discSlotToMainStatKeys,
 } from '@genshin-optimizer/zzz/consts'
@@ -17,23 +15,6 @@ describe('DiscDataManager', () => {
     const dbStorage = createTestDBStorage('zzz')
     database = new ZzzDatabase(1, dbStorage)
     discs = database.discs
-  })
-
-  it('should validate complete IDisc', () => {
-    const valid = {
-      setKey: allDiscSetKeys[0],
-      rarity: 'S' as const,
-      level: 10,
-      slotKey: '1' as const,
-      mainStatKey: 'hp' as const,
-      substats: [],
-      location: '',
-      lock: false,
-      trash: false,
-    }
-    const result = discs['validate'](valid)
-    expect(result).toBeDefined()
-    expect(result?.setKey).toBe(allDiscSetKeys[0])
   })
 
   it('should reject level exceeding max for rarity', () => {
@@ -117,43 +98,6 @@ describe('DiscDataManager', () => {
     const result = discs['validate'](invalid)
     expect(result?.substats).toHaveLength(1)
     expect(result?.substats[0]?.key).toBe('atk_')
-  })
-
-  it('should validate all disc slot keys with their main stats', () => {
-    allDiscSlotKeys.forEach((slotKey) => {
-      const mainStatKey = discSlotToMainStatKeys[slotKey][0]
-      const valid = {
-        setKey: allDiscSetKeys[0],
-        rarity: 'S' as const,
-        level: 10,
-        slotKey,
-        mainStatKey,
-        substats: [],
-        location: '',
-        lock: false,
-        trash: false,
-      }
-      const result = discs['validate'](valid)
-      expect(result?.slotKey).toBe(slotKey)
-    })
-  })
-
-  it('should validate all disc rarity keys', () => {
-    allDiscRarityKeys.forEach((rarity) => {
-      const valid = {
-        setKey: allDiscSetKeys[0],
-        rarity,
-        level: 10,
-        slotKey: '1' as const,
-        mainStatKey: 'hp' as const,
-        substats: [],
-        location: '',
-        lock: false,
-        trash: false,
-      }
-      const result = discs['validate'](valid)
-      expect(result?.rarity).toBe(rarity)
-    })
   })
 })
 

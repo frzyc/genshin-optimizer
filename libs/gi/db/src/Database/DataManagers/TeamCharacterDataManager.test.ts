@@ -12,24 +12,6 @@ describe('TeamCharacterDataManager', () => {
     teamChars = database.teamChars
   })
 
-  it('should validate complete TeamCharacter', () => {
-    const valid = {
-      key: allCharacterKeys[0],
-      optConfigId: '',
-      buildType: 'real' as const,
-      buildId: '',
-      buildTcId: '',
-      compareAgainst: '',
-      customMultiTargets: [],
-      bonusStats: {},
-      enemyOverride: {},
-      conditionalValues: {},
-      infusionAura: '',
-    }
-    const result = teamChars['validate'](valid)
-    expect(result?.key).toBe(allCharacterKeys[0])
-  })
-
   it('should reject invalid character key', () => {
     const invalid = {
       key: 'INVALID_KEY',

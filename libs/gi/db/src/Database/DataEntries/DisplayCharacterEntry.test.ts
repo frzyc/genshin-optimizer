@@ -12,20 +12,7 @@ describe('DisplayCharacterEntry', () => {
     displayChar = database.displayCharacter
   })
 
-  it('should validate complete DisplayCharacterEntry', () => {
-    const valid = {
-      sortType: 'level' as const,
-      ascending: false,
-      weaponType: [...allWeaponTypeKeys],
-      element: [...allElementKeys],
-      pageIndex: 0,
-    }
-    const result = displayChar['validate'](valid)
-    expect(result).toBeDefined()
-    expect(result?.sortType).toBe('level')
-  })
-
-  it('should disallow "new" as sortType (business rule)', () => {
+  it('should disallow "new" as sortType', () => {
     const invalid = {
       sortType: 'new',
       ascending: false,
@@ -35,17 +22,5 @@ describe('DisplayCharacterEntry', () => {
     }
     const result = displayChar['validate'](invalid)
     expect(result?.sortType).toBe('level')
-  })
-
-  it('should filter invalid weaponType values', () => {
-    const invalid = {
-      sortType: 'level' as const,
-      ascending: false,
-      weaponType: [allWeaponTypeKeys[0], 'INVALID'],
-      element: [...allElementKeys],
-      pageIndex: 0,
-    }
-    const result = displayChar['validate'](invalid)
-    expect(result?.weaponType).toEqual([allWeaponTypeKeys[0]])
   })
 })

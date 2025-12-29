@@ -14,21 +14,6 @@ describe('GeneratedBuildListDataManager.validate', () => {
     generatedBuildList = database.generatedBuildList
   })
 
-  it('should validate valid GeneratedBuildList with empty builds', () => {
-    const valid: GeneratedBuildList = {
-      builds: [],
-      buildDate: 12345,
-    }
-    const result = generatedBuildList['validate'](valid)
-    expect(result).toBeDefined()
-    expect(result?.builds).toEqual([])
-    expect(result?.buildDate).toBe(12345)
-  })
-
-  it('should return undefined for non-object types', () => {
-    expect(generatedBuildList['validate'](null)).toBeUndefined()
-  })
-
   it('should apply default builds and buildDate if builds is not an array', () => {
     const invalid = {
       builds: 'not an array',

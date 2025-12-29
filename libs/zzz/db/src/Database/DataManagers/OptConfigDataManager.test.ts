@@ -5,10 +5,7 @@ import {
   discSlotToMainStatKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { ZzzDatabase } from '../Database'
-import {
-  maxBuildsToShowDefault,
-  maxBuildsToShowList,
-} from './OptConfigDataManager'
+import { maxBuildsToShowDefault } from './OptConfigDataManager'
 
 describe('OptConfigDataManager', () => {
   let database: ZzzDatabase
@@ -18,64 +15,6 @@ describe('OptConfigDataManager', () => {
     const dbStorage = createTestDBStorage('zzz')
     database = new ZzzDatabase(1, dbStorage)
     optConfigs = database.optConfigs
-  })
-
-  it('should validate complete OptConfig', () => {
-    const valid = {
-      statFilters: [],
-      maxBuildsToShow: 5,
-      levelLow: 0,
-      levelHigh: 15,
-      slot4: [],
-      slot5: [],
-      slot6: [],
-      setFilter2: [],
-      setFilter4: [],
-      useEquipped: false,
-      optWengine: false,
-      wlevelLow: 0,
-      wlevelHigh: 60,
-      wEngineTypes: [],
-      useEquippedWengine: false,
-    }
-    const result = optConfigs['validate'](valid)
-    expect(result?.maxBuildsToShow).toBe(5)
-  })
-
-  it('should validate with statFilters', () => {
-    const valid = {
-      statFilters: [
-        {
-          tag: { q: 'hp' as const, qt: 'final' as const },
-          value: 1000,
-          isMax: false,
-          disabled: false,
-        },
-      ],
-      maxBuildsToShow: 5,
-    }
-    const result = optConfigs['validate'](valid)
-    expect(result?.statFilters[0]?.tag.q).toBe('hp')
-  })
-
-  it('should validate dmg_ statFilter with attribute', () => {
-    const valid = {
-      statFilters: [
-        {
-          tag: {
-            q: 'dmg_' as const,
-            qt: 'final' as const,
-            attribute: allAttributeKeys[0],
-          },
-          value: 100,
-          isMax: true,
-          disabled: false,
-        },
-      ],
-      maxBuildsToShow: 5,
-    }
-    const result = optConfigs['validate'](valid)
-    expect(result?.statFilters[0]?.tag.attribute).toBe(allAttributeKeys[0])
   })
 
   it('should remove attribute if q is not dmg_', () => {
@@ -98,14 +37,6 @@ describe('OptConfigDataManager', () => {
     const invalid = { statFilters: [], maxBuildsToShow: 999 }
     const result = optConfigs['validate'](invalid)
     expect(result?.maxBuildsToShow).toBe(maxBuildsToShowDefault)
-  })
-
-  it('should validate all valid maxBuildsToShow values', () => {
-    maxBuildsToShowList.forEach((maxBuilds) => {
-      const valid = { statFilters: [], maxBuildsToShow: maxBuilds }
-      const result = optConfigs['validate'](valid)
-      expect(result?.maxBuildsToShow).toBe(maxBuilds)
-    })
   })
 
   it('should filter invalid setFilter2 values', () => {

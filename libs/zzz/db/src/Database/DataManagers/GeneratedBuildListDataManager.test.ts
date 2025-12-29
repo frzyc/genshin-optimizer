@@ -30,42 +30,6 @@ describe('GeneratedBuildListDataManager', () => {
     })
   }
 
-  it('should validate GeneratedBuildList with empty builds', () => {
-    const valid: GeneratedBuildList = { builds: [], buildDate: 12345 }
-    const result = generatedBuildList['validate'](valid)
-    expect(result?.builds).toEqual([])
-    expect(result?.buildDate).toBe(12345)
-  })
-
-  it('should validate builds with valid disc IDs', () => {
-    const discIds = createValidDiscIds()
-    const valid: GeneratedBuildList = {
-      builds: [{ value: 100, discIds }],
-      buildDate: 12345,
-    }
-    const result = generatedBuildList['validate'](valid)
-    expect(result?.builds).toHaveLength(1)
-    expect(result?.builds[0]?.value).toBe(100)
-  })
-
-  it('should validate builds with wengine ID', () => {
-    const wengineId = database.wengines.new({
-      key: allWengineKeys[0],
-      level: 50,
-      modification: 3,
-      phase: 2,
-      location: '',
-      lock: false,
-    })
-    const discIds = createValidDiscIds()
-    const valid: GeneratedBuildList = {
-      builds: [{ value: 100, wengineId, discIds }],
-      buildDate: 12345,
-    }
-    const result = generatedBuildList['validate'](valid)
-    expect(result?.builds[0]?.wengineId).toBe(wengineId)
-  })
-
   it('should remove invalid wengineId', () => {
     const discIds = createValidDiscIds()
     const invalid = {

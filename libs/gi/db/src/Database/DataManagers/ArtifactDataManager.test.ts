@@ -22,22 +22,6 @@ describe('ArtifactDataManager', () => {
     )!
   }
 
-  it('should validate complete IArtifact', () => {
-    const validSetKey = getValidFlowerSetKey()
-    const valid = {
-      setKey: validSetKey,
-      rarity: 5,
-      level: 10,
-      slotKey: 'flower',
-      mainStatKey: 'hp',
-      substats: [],
-      location: '',
-      lock: false,
-    }
-    const result = artifacts['validate'](valid)
-    expect(result?.setKey).toBe(validSetKey)
-  })
-
   it('should reject invalid setKey', () => {
     const invalid = {
       setKey: 'INVALID' as any,

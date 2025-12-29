@@ -27,7 +27,7 @@ export class CharacterDataManager extends DataManager<
     const data = parseCharacter(obj)
     if (!data) return undefined
 
-    // Apply business rules: level/promotion co-validation
+    // level/promotion co-validation
     const { sanitizedLevel, milestone: promotion } = validateLevelMilestone(
       data.level,
       data.promotion

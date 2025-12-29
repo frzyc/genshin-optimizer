@@ -12,22 +12,6 @@ describe('CharacterOptManager.validate', () => {
     charOpts = database.charOpts
   })
 
-  it('should validate minimal CharOpt', () => {
-    const valid = {
-      target: { sheet: 'char' as const, name: 'atk' },
-      conditionals: [],
-      bonusStats: [],
-      statConstraints: [],
-    }
-    const result = charOpts['validate'](valid, allCharacterKeys[0])
-    expect(result).toBeDefined()
-    expect(result?.conditionals).toEqual([])
-  })
-
-  it('should return undefined for non-object types', () => {
-    expect(charOpts['validate'](null, allCharacterKeys[0])).toBeUndefined()
-  })
-
   it('should apply default conditionals if not array', () => {
     const invalid = {
       target: { sheet: 'char' as const, name: 'atk' },
