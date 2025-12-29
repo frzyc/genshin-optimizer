@@ -5,21 +5,13 @@ import type {
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import {
-  allArtifactRarityKeys,
-  allArtifactSetKeys,
-  allArtifactSlotKeys,
-  allLocationCharacterKeys,
-  allMainStatKeys,
   artMaxLevel,
   artSlotMainKeys,
   artSubstatRollData,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, IGOOD, ISubstat } from '@genshin-optimizer/gi/good'
-import {
-  parseArtifactRecovery,
-  substatRecoverySchema,
-} from '@genshin-optimizer/gi/good'
+import { parseArtifact, substatSchema } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   getMainStatDisplayValue,
@@ -514,7 +506,7 @@ function parseSubstats(
   }
 
   const substats = obj.slice(0, 4).map((item): ISubstat => {
-    const result = substatRecoverySchema.safeParse(item)
+    const result = substatSchema.safeParse(item)
     if (!result.success) return defSub()
 
     const { key, value: rawValue, initialValue } = result.data
@@ -542,49 +534,52 @@ export function validateArtifact(
   obj: unknown,
   allowZeroSub = false
 ): IArtifact | undefined {
-  const parsed = parseArtifactRecovery(obj)
+  const parsed = parseArtifact(obj)
   if (!parsed) return undefined
 
-  const { setKey, rarity, slotKey, substats, unactivatedSubstats } = parsed
-  let { level, mainStatKey, location, lock } = parsed
+  const {
+    setKey,
+    rarity,
+    slotKey,
+    substats,
+    unactivatedSubstats,
+    location,
+    lock,
+  } = parsed
+  let { mainStatKey } = parsed
 
-  if (
-    !allArtifactSetKeys.includes(setKey) ||
-    !allArtifactSlotKeys.includes(slotKey) ||
-    !allMainStatKeys.includes(mainStatKey) ||
-    !allArtifactRarityKeys.includes(rarity)
-  )
-    return undefined
-
+  // set/slot/rarity compatibility (needs allStats)
   const setData = allStats.art.data[setKey]
+  if (!setData) return undefined
   if (!setData.slots.includes(slotKey)) return undefined
   if (!setData.rarities.includes(rarity)) return undefined
 
-  level = Math.round(level)
+  // level capped by rarity (check raw input)
+  const rawLevel = (obj as { level?: unknown }).level
+  if (typeof rawLevel !== 'number' || rawLevel < 0) return undefined
+  const level = Math.round(rawLevel)
   if (level > artMaxLevel[rarity]) return undefined
 
+  // substat can't match mainstat
   const parsedSubstats = parseSubstats(substats, rarity, allowZeroSub)
   const parsedUnactivated = parseSubstats(
     unactivatedSubstats,
     rarity,
     allowZeroSub
   )
-
   if (
     parsedSubstats.find((sub) => sub.key === mainStatKey) ||
     parsedUnactivated.find((sub) => sub.key === mainStatKey)
   )
     return undefined
 
-  lock = !!lock
-
+  // mainstat must be valid for slot
   const plausibleMainStats = artSlotMainKeys[slotKey]
   if (!(plausibleMainStats as unknown as MainStatKey[]).includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return undefined
 
-  if (!location || !allLocationCharacterKeys.includes(location)) location = ''
-
+  // move unactivated to slot 4 if level >= 4
   let finalUnactivated: ISubstat[] | undefined = parsedUnactivated.length
     ? parsedUnactivated
     : undefined

@@ -5,8 +5,10 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { RefinementKey } from '@genshin-optimizer/gi/consts'
 import { allWeaponKeys } from '@genshin-optimizer/gi/consts'
-import type { IWeapon } from '@genshin-optimizer/gi/good'
-import { validateWeaponLevelAsc } from './level'
+import {
+  type IWeapon,
+  validateWeaponLevelAsc,
+} from '@genshin-optimizer/gi/schema'
 
 const weaponKeys = allWeaponKeys.filter(
   (k) =>

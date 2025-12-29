@@ -1,5 +1,6 @@
 import {
   zodBoolean,
+  zodBooleanRecord,
   zodBoundedNumber,
   zodClampedNumber,
   zodEnum,
@@ -208,6 +209,43 @@ describe('zodSchemas utilities', () => {
         expect(schema.parse(123)).toBe('default')
         expect(schema.parse(null)).toBe('default')
       })
+    })
+  })
+
+  describe('zodBooleanRecord', () => {
+    const keys = ['ability1', 'ability2', 'ability3'] as const
+    const schema = zodBooleanRecord(keys)
+
+    it('should parse valid boolean records', () => {
+      expect(schema.parse({ ability1: true, ability2: false })).toEqual({
+        ability1: true,
+        ability2: false,
+      })
+    })
+
+    it('should only include keys that exist in input', () => {
+      expect(schema.parse({ ability1: true })).toEqual({ ability1: true })
+      expect(schema.parse({})).toEqual({})
+    })
+
+    it('should ignore keys not in the allowed list', () => {
+      expect(
+        schema.parse({ ability1: true, invalidKey: true, ability2: false })
+      ).toEqual({ ability1: true, ability2: false })
+    })
+
+    it('should ignore non-boolean values', () => {
+      expect(
+        schema.parse({ ability1: true, ability2: 'not-a-boolean' })
+      ).toEqual({ ability1: true })
+    })
+
+    it('should return empty object for non-object input', () => {
+      expect(schema.parse(null)).toEqual({})
+      expect(schema.parse(undefined)).toEqual({})
+      expect(schema.parse('string')).toEqual({})
+      expect(schema.parse(123)).toEqual({})
+      expect(schema.parse([])).toEqual({})
     })
   })
 })

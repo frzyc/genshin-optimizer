@@ -3,9 +3,11 @@ import {
   getRandomIntInclusive,
 } from '@genshin-optimizer/common/util'
 import { allCharacterKeys } from '@genshin-optimizer/gi/consts'
-import type { ICharacter } from '@genshin-optimizer/gi/good'
-import { validateTalent } from '../talent'
-import { validateCharLevelAsc } from './level'
+import {
+  type ICharacter,
+  validateCharLevelAsc,
+  validateTalent,
+} from '@genshin-optimizer/gi/schema'
 
 export function randomizeCharacter(base: Partial<ICharacter> = {}): ICharacter {
   const key =

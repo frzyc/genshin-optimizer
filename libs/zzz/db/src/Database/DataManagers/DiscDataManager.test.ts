@@ -1,6 +1,5 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import {
-  allCharacterKeys,
   allDiscRarityKeys,
   allDiscSetKeys,
   allDiscSlotKeys,
@@ -8,7 +7,7 @@ import {
   discSlotToMainStatKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { ZzzDatabase } from '../Database'
-import { validateDisc, validateDiscBasedOnRarity } from './DiscDataManager'
+import { validateDiscBasedOnRarity } from './DiscDataManager'
 
 describe('DiscDataManager', () => {
   let database: ZzzDatabase

@@ -1,10 +1,14 @@
 import type {
+  RelicMainStatKey,
   RelicRarityKey,
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
-import { relicMaxLevel } from '@genshin-optimizer/sr/consts'
+import {
+  relicMaxLevel,
+  relicSlotToMainStatKeys,
+} from '@genshin-optimizer/sr/consts'
 import type { IRelic, ISrObjectDescription } from '@genshin-optimizer/sr/srod'
-import { validateRelicWithRules } from '@genshin-optimizer/sr/srod'
+import { parseRelic, parseSubstats } from '@genshin-optimizer/sr/srod'
 import {
   getRelicMainStatVal,
   getSubstatRange,
@@ -423,19 +427,43 @@ export function cachedRelic(
   return { relic: validated, errors }
 }
 
-/**
- * Validates relic data using Zod schema with substat range validation.
- */
 export function validateRelic(
   obj: unknown,
   allowZeroSub = false,
   sortSubs = true
 ): IRelic | undefined {
-  return validateRelicWithRules(
-    obj,
-    (rarity: RelicRarityKey, key: RelicSubStatKey) =>
-      getSubstatRange(rarity, key),
+  const parsed = parseRelic(obj)
+  if (!parsed) return undefined
+
+  const { rarity, slotKey, substats } = parsed
+  let { mainStatKey } = parsed
+
+  const rawLevel = (obj as { level?: unknown })?.level
+  if (typeof rawLevel !== 'number' || rawLevel < 0 || rawLevel > 15)
+    return undefined
+  const level = Math.round(rawLevel)
+  if (level > relicMaxLevel[rarity]) return undefined
+
+  const parsedSubstats = parseSubstats(
+    substats,
+    rarity,
+    (r: RelicRarityKey, k: RelicSubStatKey) => getSubstatRange(r, k),
     allowZeroSub,
     sortSubs
   )
+
+  if (parsedSubstats.find((sub) => sub.key === mainStatKey)) return undefined
+
+  const plausibleMainStats = relicSlotToMainStatKeys[slotKey]
+  if (!(plausibleMainStats as RelicMainStatKey[]).includes(mainStatKey)) {
+    if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
+    else return undefined
+  }
+
+  return {
+    ...parsed,
+    level,
+    mainStatKey,
+    substats: parsedSubstats,
+  }
 }

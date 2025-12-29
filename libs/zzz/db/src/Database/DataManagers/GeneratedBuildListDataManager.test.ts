@@ -21,8 +21,7 @@ describe('GeneratedBuildListDataManager', () => {
         rarity: 'S',
         level: 0,
         slotKey,
-        mainStatKey:
-          slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
+        mainStatKey: slotKey === '4' ? 'atk_' : slotKey === '5' ? 'atk_' : 'hp',
         substats: [],
         location: '',
         lock: false,

@@ -1,44 +1,5 @@
-// Legacy interface exports
-export * from './ICharacter'
-export * from './IDisc'
-export * from './IWengine'
+// Re-export all schemas and types from zzz-schema
+export * from '@genshin-optimizer/zzz/schema'
 
-// Schema exports (excluding duplicated interfaces)
-export {
-  // Wengine schemas
-  wengineKeySchema,
-  phaseKeySchema,
-  milestoneKeySchema,
-  locationKeySchema,
-  wengineSchema,
-  wengineRecoverySchema,
-  parseWengineRecovery,
-  validateWengine,
-  parseWengineImport,
-  safeParseWengineImport,
-  // Character schemas
-  characterKeySchema,
-  promotionSchema,
-  characterSchema,
-  characterRecoverySchema,
-  skillKeys,
-  parseCharacterRecovery,
-  parseCharacterImport,
-  safeParseCharacterImport,
-  type SkillKey,
-  type CharacterRecoveryData,
-  // Disc schemas
-  substatSchema,
-  discSchema,
-  discRecoverySchema,
-  parseSubstats,
-  applyDiscRules,
-  validateDisc,
-  parseDiscImport,
-  safeParseDiscImport,
-  validateDiscWithErrors,
-  // ZOD format
-  zodFormatSchema,
-  validateZODImport,
-  type ZODFormat,
-} from './schemas'
+// ZOOD format (specific to this package)
+export * from './schemas/zood-format'

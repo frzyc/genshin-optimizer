@@ -8,7 +8,7 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { ICharacter } from '@genshin-optimizer/zzz/zood'
-import { parseCharacterRecovery } from '@genshin-optimizer/zzz/zood'
+import { parseCharacter } from '@genshin-optimizer/zzz/zood'
 import type { ICachedCharacter } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
@@ -24,7 +24,7 @@ export class CharacterDataManager extends DataManager<
   }
   override validate(obj: unknown): ICharacter | undefined {
     // Use shared schema from zood for structural validation
-    const data = parseCharacterRecovery(obj)
+    const data = parseCharacter(obj)
     if (!data) return undefined
 
     // Apply business rules: level/promotion co-validation

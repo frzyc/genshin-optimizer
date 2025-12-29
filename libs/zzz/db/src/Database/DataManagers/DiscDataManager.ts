@@ -99,14 +99,14 @@ export class DiscDataManager extends DataManager<
         this.database.chars.setEquippedDisc(disc.location, disc.slotKey, '')
     return disc
   }
-  override importZOD(
-    zod: IZenlessObjectDescription & IZZZDatabase,
+  override importZOOD(
+    zood: IZenlessObjectDescription & IZZZDatabase,
     result: ImportResult
   ) {
     result.discs.beforeMerge = this.values.length
 
     // Match discs for counter, metadata, and locations
-    const discs = zod.discs
+    const discs = zood.discs
 
     if (!Array.isArray(discs) || !discs.length) {
       result.discs.notInImport = this.values.length

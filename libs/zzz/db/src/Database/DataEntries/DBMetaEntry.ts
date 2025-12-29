@@ -46,11 +46,11 @@ export class DBMetaEntry extends DataEntry<
     const result = createDbMetaSchema(defaultName).safeParse(obj)
     return result.success ? result.data : undefined
   }
-  override importZOD(
-    zoDb: IZZZDatabase & IZenlessObjectDescription,
+  override importZOOD(
+    zoodDb: IZZZDatabase & IZenlessObjectDescription,
     _result: ImportResult
   ): void {
-    const data = zoDb[this.dataKey]
+    const data = zoodDb[this.dataKey]
     if (data) {
       // Don't copy over lastEdit data
       const { lastEdit, ...rest } = data as IDBMeta

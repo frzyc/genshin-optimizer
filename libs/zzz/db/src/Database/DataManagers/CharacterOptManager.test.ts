@@ -1,7 +1,7 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
 import { ZzzDatabase } from '../Database'
-import { critModeKeys, targetQ, targetQt } from './CharacterOptManager'
+import { critModeKeys, targetQ } from './CharacterOptManager'
 
 describe('CharacterOptManager', () => {
   let database: ZzzDatabase
@@ -116,7 +116,11 @@ describe('CharacterOptManager', () => {
     const invalid = {
       conditionals: [],
       bonusStats: [],
-      teammates: [allCharacterKeys[0], allCharacterKeys[1], allCharacterKeys[2]],
+      teammates: [
+        allCharacterKeys[0],
+        allCharacterKeys[1],
+        allCharacterKeys[2],
+      ],
       critMode: 'avg' as const,
       enemyLvl: 60,
       enemyDef: 0,

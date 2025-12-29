@@ -8,7 +8,6 @@ import { ZzzDatabase } from '../Database'
 import {
   maxBuildsToShowDefault,
   maxBuildsToShowList,
-  statFilterStatKeys,
 } from './OptConfigDataManager'
 
 describe('OptConfigDataManager', () => {

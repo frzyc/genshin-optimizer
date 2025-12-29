@@ -65,3 +65,20 @@ export function zodString(fallback = '') {
     z.string()
   )
 }
+
+export function zodBooleanRecord<K extends string | number>(
+  keys: readonly K[]
+): z.ZodType<Partial<Record<K, boolean>>> {
+  return z.preprocess(
+    (val) => {
+      const result: Partial<Record<K, boolean>> = {}
+      if (typeof val !== 'object' || val === null) return result
+      const obj = val as Record<string | number, unknown>
+      for (const key of keys) {
+        if (typeof obj[key] === 'boolean') result[key] = obj[key]
+      }
+      return result
+    },
+    z.record(z.union([z.string(), z.number()]), z.boolean())
+  ) as unknown as z.ZodType<Partial<Record<K, boolean>>>
+}

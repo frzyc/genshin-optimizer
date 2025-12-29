@@ -13,7 +13,7 @@ import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
 import { WengineDataManager } from './DataManagers/WengineDataManager'
 import type { ImportResult } from './exim'
 import { newImportResult } from './exim'
-import { currentDBVersion, migrateStorage, migrateZOD } from './migrate'
+import { currentDBVersion, migrateStorage, migrateZOOD } from './migrate'
 export class ZzzDatabase extends Database {
   discs: DiscDataManager
   chars: CharacterDataManager
@@ -109,27 +109,27 @@ export class ZzzDatabase extends Database {
     this.dataManagers.map((dm) => dm.clear())
     this.dataEntries.map((de) => de.clear())
   }
-  exportZOD() {
-    const zod: Partial<IZZZDatabase & IZenlessObjectDescription> = {
-      format: 'ZOD',
+  exportZOOD() {
+    const zood: Partial<IZZZDatabase & IZenlessObjectDescription> = {
+      format: 'ZOOD',
       dbVersion: currentDBVersion,
       source: zzzSource,
       version: 1,
     }
-    this.dataManagers.map((dm) => dm.exportZOD(zod))
-    this.dataEntries.map((de) => de.exportZOD(zod))
-    return zod as IZZZDatabase & IZenlessObjectDescription
+    this.dataManagers.map((dm) => dm.exportZOOD(zood))
+    this.dataEntries.map((de) => de.exportZOOD(zood))
+    return zood as IZZZDatabase & IZenlessObjectDescription
   }
-  importZOD(
-    zod: IZenlessObjectDescription & IZZZDatabase,
+  importZOOD(
+    zood: IZenlessObjectDescription & IZZZDatabase,
     keepNotInImport: boolean,
     ignoreDups: boolean
   ): ImportResult {
-    zod = migrateZOD(zod)
-    const source = zod.source ?? 'Unknown'
+    zood = migrateZOOD(zood)
+    const source = zood.source ?? 'Unknown'
     // Some Scanners might carry their own id field, which would conflict with GO dup resolution.
     if (source !== zzzSource) {
-      zod.discs?.forEach((a) => delete (a as unknown as { id?: string }).id)
+      zood.discs?.forEach((a) => delete (a as unknown as { id?: string }).id)
     }
     const result: ImportResult = newImportResult(
       source,
@@ -158,8 +158,8 @@ export class ZzzDatabase extends Database {
       ), */
     ]
 
-    this.dataManagers.map((dm) => dm.importZOD(zod, result))
-    this.dataEntries.map((de) => de.importZOD(zod, result))
+    this.dataManagers.map((dm) => dm.importZOOD(zood, result))
+    this.dataEntries.map((de) => de.importZOOD(zood, result))
     unfollows.forEach((f) => f())
 
     return result

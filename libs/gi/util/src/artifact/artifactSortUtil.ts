@@ -12,7 +12,7 @@ import {
   allArtifactSlotKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
-import type { IArtifact } from '@genshin-optimizer/gi/good'
+import type { IArtifact } from '@genshin-optimizer/gi/schema'
 import { getArtifactEfficiency } from './artifact'
 export const artifactSortKeys = [
   'rarity',

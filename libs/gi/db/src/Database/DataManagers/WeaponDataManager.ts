@@ -8,14 +8,9 @@ import {
   charKeyToLocCharKey,
   weaponMaxLevel,
 } from '@genshin-optimizer/gi/consts'
-import type {
-  IGOOD,
-  IWeapon,
-  WeaponStatsLookup,
-} from '@genshin-optimizer/gi/good'
-import { validateWeapon } from '@genshin-optimizer/gi/good'
+import type { IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
+import { parseWeapon, validateWeaponLevelAsc } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { validateWeaponLevelAsc } from '@genshin-optimizer/gi/util'
 import type { ICachedCharacter } from '../../Interfaces/ICachedCharacter'
 import type { ICachedWeapon } from '../../Interfaces/ICachedWeapon'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -59,17 +54,31 @@ export class WeaponDataManager extends DataManager<
     this.set(weaponId, { ...weapon, location: locKey })
     return weapon
   }
-  // Stats lookup adapter for Zod validation (avoids circular dependency)
-  private statsLookup: WeaponStatsLookup = {
-    getWeaponData: (key: WeaponKey) => allStats.weapon.data[key],
-    getCharWeaponType: (location: LocationCharacterKey) =>
-      allStats.char.data[location].weaponType,
-    getMaxLevel: (rarity) => weaponMaxLevel[rarity],
-    validateLevelAsc: validateWeaponLevelAsc,
-  }
 
   override validate(obj: unknown): IWeapon | undefined {
-    return validateWeapon(obj, this.statsLookup)
+    const data = parseWeapon(obj)
+    if (!data) return undefined
+
+    const weaponData = allStats.weapon.data[data.key]
+    if (!weaponData) return undefined
+
+    const { rarity, weaponType } = weaponData
+
+    const rawLevel = (obj as { level?: unknown }).level
+    if (typeof rawLevel === 'number' && rawLevel > weaponMaxLevel[rarity])
+      return undefined
+
+    const { level, ascension } = validateWeaponLevelAsc(
+      data.level,
+      data.ascension
+    )
+
+    if (data.location) {
+      const charWeaponType = allStats.char.data[data.location].weaponType
+      if (charWeaponType !== weaponType) return undefined
+    }
+
+    return { ...data, level, ascension }
   }
   override toCache(storageObj: IWeapon, id: string): ICachedWeapon | undefined {
     const newWeapon = { ...storageObj, id }

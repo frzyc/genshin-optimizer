@@ -9,7 +9,7 @@ import type {
   ICharacter,
   ISrObjectDescription,
 } from '@genshin-optimizer/sr/srod'
-import { validateCharacterWithRules } from '@genshin-optimizer/sr/srod'
+import { parseCharacter } from '@genshin-optimizer/sr/srod'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type { ICachedCharacter, ISroDatabase } from '../../Interfaces'
 import { SroSource } from '../../Interfaces'
@@ -27,7 +27,12 @@ export class CharacterDataManager extends DataManager<
     super(database, 'characters')
   }
   override validate(obj: unknown): ICharacter | undefined {
-    return validateCharacterWithRules(obj, validateLevelAsc)
+    const data = parseCharacter(obj)
+    if (!data) return undefined
+
+    const { level, ascension } = validateLevelAsc(data.level, data.ascension)
+
+    return { ...data, level, ascension }
   }
   override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)

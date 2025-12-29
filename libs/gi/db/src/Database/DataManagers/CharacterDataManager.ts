@@ -12,7 +12,7 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
-import { parseCharacterRecovery } from '@genshin-optimizer/gi/good'
+import { parseCharacter } from '@genshin-optimizer/gi/good'
 import {
   validateCharLevelAsc,
   validateTalent,
@@ -42,27 +42,16 @@ export class CharacterDataManager extends DataManager<
     }
   }
   override validate(obj: unknown): ICharacter | undefined {
-    // Step 1: Structural validation via shared schema
-    const data = parseCharacterRecovery(obj)
+    const data = parseCharacter(obj)
     if (!data) return undefined
 
-    // Step 2: Apply business rules
-    // Level/ascension co-validation
     const { level, ascension } = validateCharLevelAsc(
       data.level,
       data.ascension
     )
-
-    // Talent validation based on ascension
     const talent = validateTalent(ascension, data.talent)
 
-    return {
-      key: data.key as CharacterKey,
-      level,
-      ascension,
-      talent,
-      constellation: data.constellation,
-    }
+    return { ...data, level, ascension, talent }
   }
   override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)
