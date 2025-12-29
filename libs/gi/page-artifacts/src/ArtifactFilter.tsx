@@ -2,7 +2,7 @@ import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
 import { ArtifactFilterDisplay } from '@genshin-optimizer/gi/ui'
-import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
+import type { FilterOption } from '@genshin-optimizer/gi/schema'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
@@ -25,7 +25,7 @@ export default function ArtifactFilter({
   const database = useDatabase()
   const { filterOption } = useDisplayArtifact()
   const filterOptionDispatch = useCallback(
-    (option: Partial<ArtifactFilterOption>) =>
+    (option: Partial<FilterOption>) =>
       database.displayArtifact.set({
         filterOption: { ...filterOption, ...option },
       }),
@@ -76,7 +76,7 @@ export default function ArtifactFilter({
             }
           >
             <ArtifactFilterDisplay
-              filterOption={filterOption as ArtifactFilterOption}
+              filterOption={filterOption}
               filterOptionDispatch={filterOptionDispatch}
               filteredIds={artifactIds}
             />

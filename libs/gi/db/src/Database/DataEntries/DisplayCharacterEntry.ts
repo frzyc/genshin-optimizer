@@ -18,12 +18,9 @@ export const characterSortKeys = [
 export type CharacterSortKey = (typeof characterSortKeys)[number]
 
 const persistedSortKeys = ['level', 'rarity', 'name', 'favorite'] as const
-type PersistedSortKey = (typeof persistedSortKeys)[number]
 
 const displayCharacterSchema = z.object({
-  sortType: z
-    .enum(persistedSortKeys)
-    .catch('level') as z.ZodType<PersistedSortKey>,
+  sortType: z.enum(persistedSortKeys).catch('level'),
   ascending: z.boolean().catch(false),
   weaponType: zodFilteredArray(allWeaponTypeKeys, [...allWeaponTypeKeys]),
   element: zodFilteredArray(allElementKeys, [...allElementKeys]),

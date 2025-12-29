@@ -17,11 +17,13 @@ import {
   ArtifactEditor,
   InfoComponent,
 } from '@genshin-optimizer/gi/ui'
-import type { ArtifactSortKey } from '@genshin-optimizer/gi/util'
+import {
+  artifactSortKeys,
+  type ArtifactSortKey,
+} from '@genshin-optimizer/gi/schema'
 import {
   artifactFilterConfigs,
   artifactSortConfigs,
-  artifactSortKeys,
   artifactSortMap,
 } from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'

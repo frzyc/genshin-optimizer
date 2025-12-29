@@ -1,67 +1,12 @@
 import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common/util'
+import type { SubstatKey } from '@genshin-optimizer/gi/consts'
+import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import type {
-  ArtifactRarity,
-  ArtifactSetKey,
-  ArtifactSlotKey,
-  LocationCharacterKey,
-  MainStatKey,
-  SubstatKey,
-} from '@genshin-optimizer/gi/consts'
-import {
-  allArtifactRarityKeys,
-  allArtifactSlotKeys,
-  allSubstatKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { IArtifact } from '@genshin-optimizer/gi/schema'
+  ArtifactSortKey,
+  FilterOption,
+  IArtifact,
+} from '@genshin-optimizer/gi/schema'
 import { getArtifactEfficiency } from './artifact'
-export const artifactSortKeys = [
-  'rarity',
-  'level',
-  'artsetkey',
-  'efficiency',
-  'mefficiency',
-] as const
-export type ArtifactSortKey = (typeof artifactSortKeys)[number]
-
-export type ArtifactFilterOption = {
-  artSetKeys: ArtifactSetKey[]
-  rarity: ArtifactRarity[]
-  levelLow: number
-  levelHigh: number
-  slotKeys: ArtifactSlotKey[]
-  mainStatKeys: MainStatKey[]
-  substats: SubstatKey[]
-  locations: LocationCharacterKey[]
-  showEquipped: boolean
-  showInventory: boolean
-  locked: Array<'locked' | 'unlocked'>
-  rvLow: number
-  rvHigh: number
-  useMaxRV: boolean
-  lines: Array<1 | 2 | 3 | 4>
-  excluded?: Array<'excluded' | 'included'>
-}
-
-export function initialArtifactFilterOption(): ArtifactFilterOption {
-  return {
-    artSetKeys: [],
-    rarity: [...allArtifactRarityKeys],
-    levelLow: 0,
-    levelHigh: 20,
-    slotKeys: [...allArtifactSlotKeys],
-    mainStatKeys: [],
-    substats: [],
-    locations: [],
-    showEquipped: true,
-    showInventory: true,
-    locked: ['locked', 'unlocked'],
-    rvLow: 0,
-    rvHigh: 900,
-    useMaxRV: false,
-    lines: [1, 2, 3, 4],
-    excluded: ['excluded', 'included'],
-  }
-}
 
 export function artifactSortConfigs(
   effFilterSet: Set<SubstatKey>
@@ -82,7 +27,7 @@ export function artifactFilterConfigs({
 }: {
   effFilterSet?: Set<SubstatKey>
   excludedIds?: string[]
-} = {}): FilterConfigs<keyof ArtifactFilterOption, IArtifact & { id: string }> {
+} = {}): FilterConfigs<keyof FilterOption, IArtifact & { id: string }> {
   return {
     locked: (art, filter) => {
       if (!filter.includes('locked') && art.lock) return false
@@ -93,7 +38,7 @@ export function artifactFilterConfigs({
       art.location && !filters['showEquipped']
         ? filter.includes(art.location)
         : true,
-    showEquipped: () => true, // Per character filtering is applied in `locations`
+    showEquipped: () => true,
     showInventory: (art, filter) => (!art.location ? filter : true),
     artSetKeys: (art, filter) =>
       filter.length ? filter.includes(art.setKey) : true,

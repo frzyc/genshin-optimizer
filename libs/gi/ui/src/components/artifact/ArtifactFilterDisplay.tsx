@@ -18,7 +18,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
-import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
+import type { FilterOption } from '@genshin-optimizer/gi/schema'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
@@ -54,8 +54,8 @@ const lineHandler = handleMultiSelect([1, 2, 3, 4])
 const excludedHandler = handleMultiSelect([...excludedValues])
 
 interface ArtifactFilterDisplayProps {
-  filterOption: ArtifactFilterOption
-  filterOptionDispatch: (option: Partial<ArtifactFilterOption>) => void
+  filterOption: FilterOption
+  filterOptionDispatch: (option: Partial<FilterOption>) => void
   disableSlotFilter?: boolean
   filteredIds: string[]
   enableExclusionFilter?: boolean
