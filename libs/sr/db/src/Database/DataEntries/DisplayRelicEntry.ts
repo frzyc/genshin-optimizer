@@ -72,7 +72,6 @@ export class DisplayRelicEntry extends DataEntry<
     )
   }
   override validate(obj: unknown): IDisplayRelic | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
     const result = displayRelicSchema.safeParse(obj)
     return result.success ? result.data : undefined
   }

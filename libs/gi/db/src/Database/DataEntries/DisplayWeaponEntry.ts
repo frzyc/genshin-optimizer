@@ -46,7 +46,6 @@ export class DisplayWeaponEntry extends DataEntry<
     )
   }
   override validate(obj: unknown): IDisplayWeapon | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
     const result = displayWeaponSchema.safeParse(obj)
     return result.success ? result.data : undefined
   }

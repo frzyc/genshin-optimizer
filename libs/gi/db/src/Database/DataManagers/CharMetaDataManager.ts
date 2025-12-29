@@ -38,7 +38,6 @@ export class CharMetaDataManager extends DataManager<
         this.database.storage.remove(key)
   }
   override validate(obj: unknown): ICharMeta | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
     const result = charMetaSchema.safeParse(obj)
     return result.success ? result.data : undefined
   }

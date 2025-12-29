@@ -34,7 +34,6 @@ export class DisplayLightConeEntry extends DataEntry<
     )
   }
   override validate(obj: unknown): IDisplayLightCone | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
     const result = displayLightConeSchema.safeParse(obj)
     return result.success ? result.data : undefined
   }

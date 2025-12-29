@@ -36,7 +36,6 @@ export class DisplayArtifactEntry extends DataEntry<
     )
   }
   override validate(obj: unknown): IDisplayArtifact | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
     const result = displayArtifactSchema.safeParse(obj)
     return result.success ? result.data : undefined
   }

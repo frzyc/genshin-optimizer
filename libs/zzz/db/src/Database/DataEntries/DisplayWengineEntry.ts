@@ -49,7 +49,6 @@ export class DisplayWengineEntry extends DataEntry<
     )
   }
   override validate(obj: unknown): IDisplayWengine | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
     const result = displayWengineSchema.safeParse(obj)
     return result.success ? result.data : undefined
   }

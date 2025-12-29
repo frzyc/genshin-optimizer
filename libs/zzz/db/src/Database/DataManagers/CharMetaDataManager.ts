@@ -23,14 +23,9 @@ export class CharMetaDataManager extends DataManager<
   constructor(database: ZzzDatabase) {
     super(database, 'charMetas')
   }
-  override validate(obj: any): ICharMeta | undefined {
-    if (typeof obj !== 'object' || obj === null || Array.isArray(obj))
-      return undefined
-
+  override validate(obj: unknown): ICharMeta | undefined {
     const result = charMetaSchema.safeParse(obj)
-    if (!result.success) return undefined
-
-    return result.data
+    return result.success ? result.data : undefined
   }
 
   override toStorageKey(key: string): string {

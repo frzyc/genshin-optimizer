@@ -37,8 +37,6 @@ export class DBMetaEntry extends DataEntry<
     )
   }
   override validate(obj: unknown): IDBMeta | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
-
     const defaultName = `Database ${this.database.storage.getDBIndex()}`
     const result = createDbMetaSchema(defaultName).safeParse(obj)
     return result.success ? result.data : undefined

@@ -44,8 +44,6 @@ export class WengineDataManager extends DataManager<
   }
 
   override validate(obj: unknown): IWengine | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
-
     const result = wengineSchema.safeParse(obj)
     if (!result.success) return undefined
 

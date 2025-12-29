@@ -72,7 +72,6 @@ export class DisplayDiscEntry extends DataEntry<
     )
   }
   override validate(obj: unknown): IDisplayDisc | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
     const result = displayDiscSchema.safeParse(obj)
     return result.success ? result.data : undefined
   }

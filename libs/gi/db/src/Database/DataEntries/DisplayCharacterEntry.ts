@@ -43,7 +43,6 @@ export class DisplayCharacterEntry extends DataEntry<
     )
   }
   override validate(obj: unknown): IDisplayCharacterEntry | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
     const result = displayCharacterSchema.safeParse(obj)
     return result.success ? result.data : undefined
   }
