@@ -12,15 +12,15 @@ import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
 import {
+  type ArtifactSortKey,
+  artifactSortKeys,
+} from '@genshin-optimizer/gi/schema'
+import {
   AddArtInfo,
   ArtifactCard,
   ArtifactEditor,
   InfoComponent,
 } from '@genshin-optimizer/gi/ui'
-import {
-  artifactSortKeys,
-  type ArtifactSortKey,
-} from '@genshin-optimizer/gi/schema'
 import {
   artifactFilterConfigs,
   artifactSortConfigs,

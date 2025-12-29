@@ -5,7 +5,6 @@ import {
   zodEnumWithDefault,
   zodNumericLiteralWithDefault,
 } from '@genshin-optimizer/common/database'
-import { clamp } from '@genshin-optimizer/common/util'
 import type { ArtifactRarity } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
@@ -14,7 +13,6 @@ import {
   allLocationCharacterKeys,
   allMainStatKeys,
   allSubstatKeys,
-  artMaxLevel,
 } from '@genshin-optimizer/gi/consts'
 import { z } from 'zod'
 
@@ -48,12 +46,4 @@ export type ISubstat = IArtifact['substats'][number]
 export function parseArtifact(obj: unknown): IArtifact | undefined {
   const result = artifactSchema.safeParse(obj)
   return result.success ? result.data : undefined
-}
-
-export function validateArtifactLevel(
-  level: number,
-  rarity: ArtifactRarity
-): number {
-  const maxLevel = artMaxLevel[rarity]
-  return clamp(level, 0, maxLevel)
 }

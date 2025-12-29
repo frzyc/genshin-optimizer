@@ -16,6 +16,7 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import { initialFilterOption } from '@genshin-optimizer/gi/schema'
 import {
   ArtifactCard,
   ArtifactCardNano,
@@ -23,7 +24,6 @@ import {
   ExcludeIcon,
   OptimizationIcon,
 } from '@genshin-optimizer/gi/ui'
-import { initialFilterOption } from '@genshin-optimizer/gi/schema'
 import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'

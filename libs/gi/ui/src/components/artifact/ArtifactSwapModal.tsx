@@ -18,8 +18,8 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
-  initialFilterOption,
   type FilterOption,
+  initialFilterOption,
 } from '@genshin-optimizer/gi/schema'
 import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'

@@ -25,6 +25,10 @@ import {
   useLoadoutArtifacts,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import {
+  type FilterOption,
+  initialFilterOption,
+} from '@genshin-optimizer/gi/schema'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AddArtInfo,
@@ -41,10 +45,6 @@ import {
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import {
-  initialFilterOption,
-  type FilterOption,
-} from '@genshin-optimizer/gi/schema'
 import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
