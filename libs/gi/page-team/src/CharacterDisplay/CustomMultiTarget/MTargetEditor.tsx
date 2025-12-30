@@ -66,6 +66,9 @@ export default function MTargetEditor({
   maxRank,
   setTargetIndex,
   onDup,
+  collapse,
+  setcollapse,
+  onSave,
 }: {
   customTarget: CustomTarget
   setCustomTarget: (t: CustomTarget) => void
@@ -74,6 +77,9 @@ export default function MTargetEditor({
   maxRank: number
   setTargetIndex: (ind?: number) => void
   onDup: () => void
+  collapse: boolean
+  setcollapse: (v: boolean | ((v: boolean) => boolean)) => void
+  onSave: () => void
 }) {
   const { t } = useTranslation(['page_character', 'loadout'])
   const {
@@ -89,8 +95,6 @@ export default function MTargetEditor({
     bonusStats,
     description,
   } = customTarget
-
-  const [collapse, setcollapse] = useState(true)
 
   const setWeight = useCallback(
     (weight: number) => setCustomTarget({ ...customTarget, weight }),
