@@ -28,8 +28,6 @@ import type { SroDatabase } from '../Database'
 import { validateTag } from '../tagUtil'
 import type { RelicIds } from './BuildDataManager'
 
-// --- Schemas ---
-
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 
 const teammateDatumSchema = z.object({

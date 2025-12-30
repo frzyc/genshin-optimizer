@@ -5,9 +5,11 @@ import { z } from 'zod'
 import type { DiscIds, ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 
-
 const discIdValueSchema = z.union([z.string(), z.undefined()])
-const discIdsSchema = zodTypedRecord(allDiscSlotKeys, discIdValueSchema) as z.ZodType<DiscIds>
+const discIdsSchema = zodTypedRecord(
+  allDiscSlotKeys,
+  discIdValueSchema
+) as z.ZodType<DiscIds>
 
 const generatedBuildSchema = z.object({
   value: z.number(),

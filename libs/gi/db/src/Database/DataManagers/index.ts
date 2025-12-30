@@ -1,8 +1,8 @@
 import type { ICachedArtifact, ICachedSubstat } from './ArtifactDataManager'
 import { cachedArtifact, validateArtifact } from './ArtifactDataManager'
-import type { ICachedCharacter } from './CharacterDataManager'
 import type { BuildTc, BuildTcArtifactSlot } from './BuildTcDataManager'
 import { initCharTC, toBuildTc } from './BuildTcDataManager'
+import type { ICachedCharacter } from './CharacterDataManager'
 import type {
   BonusStats,
   CustomMultiTarget,

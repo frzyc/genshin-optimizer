@@ -30,13 +30,11 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { z } from 'zod'
-import type { ICachedArtifact } from './ArtifactDataManager'
-import type { ICachedWeapon } from './WeaponDataManager'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
-
-// --- Schema Definitions (internal) ---
+import type { ICachedArtifact } from './ArtifactDataManager'
+import type { ICachedWeapon } from './WeaponDataManager'
 
 const buildTcArtifactSlotSchema = z.object({
   level: z.number().int().min(0).max(20).catch(20),

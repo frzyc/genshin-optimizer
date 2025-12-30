@@ -35,8 +35,6 @@ export const allAllowLocationsState = [
 ] as const
 export type AllowLocationsState = (typeof allAllowLocationsState)[number]
 
-// --- Schemas ---
-
 const statFilterSchema = z.object({
   tag: z.record(z.string(), z.unknown()) as z.ZodType<Tag>,
   value: z.number(),

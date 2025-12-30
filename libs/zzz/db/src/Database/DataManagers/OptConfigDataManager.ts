@@ -3,7 +3,10 @@ import {
   zodFilteredArray,
   zodNumericLiteralWithDefault,
 } from '@genshin-optimizer/common/database'
-import { removeUndefinedFields, validateValue } from '@genshin-optimizer/common/util'
+import {
+  removeUndefinedFields,
+  validateValue,
+} from '@genshin-optimizer/common/util'
 import type { AttributeKey, SpecialityKey } from '@genshin-optimizer/zzz/consts'
 import {
   type DiscMainStatKey,
@@ -71,13 +74,22 @@ export type StatFilters = StatFilter[]
 
 const optConfigSchema = z.object({
   statFilters: z.array(statFilterSchema).catch([]),
-  maxBuildsToShow: zodNumericLiteralWithDefault(maxBuildsToShowList, maxBuildsToShowDefault),
+  maxBuildsToShow: zodNumericLiteralWithDefault(
+    maxBuildsToShowList,
+    maxBuildsToShowDefault
+  ),
 
   levelLow: z.number().int().min(0).max(15).catch(discMaxLevel['S']),
   levelHigh: z.number().int().min(0).max(15).catch(discMaxLevel['S']),
-  slot4: zodFilteredArray(discSlotToMainStatKeys['4'], [...discSlotToMainStatKeys['4']]) as z.ZodType<DiscMainStatKey[]>,
-  slot5: zodFilteredArray(discSlotToMainStatKeys['5'], [...discSlotToMainStatKeys['5']]) as z.ZodType<DiscMainStatKey[]>,
-  slot6: zodFilteredArray(discSlotToMainStatKeys['6'], [...discSlotToMainStatKeys['6']]) as z.ZodType<DiscMainStatKey[]>,
+  slot4: zodFilteredArray(discSlotToMainStatKeys['4'], [
+    ...discSlotToMainStatKeys['4'],
+  ]) as z.ZodType<DiscMainStatKey[]>,
+  slot5: zodFilteredArray(discSlotToMainStatKeys['5'], [
+    ...discSlotToMainStatKeys['5'],
+  ]) as z.ZodType<DiscMainStatKey[]>,
+  slot6: zodFilteredArray(discSlotToMainStatKeys['6'], [
+    ...discSlotToMainStatKeys['6'],
+  ]) as z.ZodType<DiscMainStatKey[]>,
   setFilter2: zodFilteredArray(allDiscSetKeys, []) as z.ZodType<DiscSetKey[]>,
   setFilter4: zodFilteredArray(allDiscSetKeys, []) as z.ZodType<DiscSetKey[]>,
   useEquipped: zodBoolean(),
@@ -85,7 +97,9 @@ const optConfigSchema = z.object({
   optWengine: zodBoolean(),
   wlevelLow: z.number().int().min(0).max(60).catch(wengineMaxLevel),
   wlevelHigh: z.number().int().min(0).max(60).catch(wengineMaxLevel),
-  wEngineTypes: zodFilteredArray(allSpecialityKeys, []) as z.ZodType<SpecialityKey[]>,
+  wEngineTypes: zodFilteredArray(allSpecialityKeys, []) as z.ZodType<
+    SpecialityKey[]
+  >,
   useEquippedWengine: zodBoolean(),
 
   generatedBuildListId: z.string().optional(),
@@ -115,8 +129,10 @@ export class OptConfigDataManager extends DataManager<
     // Validate statFilters with business logic
     const statFilters = rawStatFilters.map((statFilter) => {
       const { tag, value, isMax, disabled } = statFilter
-      const q = validateValue(tag.q, statFilterStatKeys) ?? statFilterStatKeys[0]
-      const qt = validateValue(tag.qt, statFilterStatQtKeys) ?? statFilterStatQtKeys[0]
+      const q =
+        validateValue(tag.q, statFilterStatKeys) ?? statFilterStatKeys[0]
+      const qt =
+        validateValue(tag.qt, statFilterStatQtKeys) ?? statFilterStatQtKeys[0]
       let attribute = tag.attribute
       if (q !== 'dmg_') attribute = undefined
       if (attribute) attribute = validateValue(attribute, allAttributeKeys)
@@ -155,12 +171,8 @@ export class OptConfigDataManager extends DataManager<
   export(optConfigId: string): object {
     const optConfig = this.database.optConfigs.get(optConfigId)
     if (!optConfig) return {}
-    const {
-      useEquipped,
-      useEquippedWengine,
-      generatedBuildListId,
-      ...rest
-    } = optConfig
+    const { useEquipped, useEquippedWengine, generatedBuildListId, ...rest } =
+      optConfig
     return rest
   }
   import(data: object): string {

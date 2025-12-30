@@ -16,11 +16,11 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
-import type { ICachedArtifact } from './ArtifactDataManager'
-import type { ICachedWeapon } from './WeaponDataManager'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
+import type { ICachedArtifact } from './ArtifactDataManager'
+import type { ICachedWeapon } from './WeaponDataManager'
 import { defaultInitialWeapon } from './WeaponDataManager'
 
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const

@@ -9,8 +9,6 @@ import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import { validateTag } from '../tagUtil'
 
-// --- Schemas ---
-
 const tagSchema = z.record(z.string(), z.unknown()) as z.ZodType<Tag>
 
 const conditionalSchema = z.object({
@@ -98,7 +96,9 @@ export class CharacterOptManager extends DataManager<
     // Validate statConstraints
     const statConstraints = rawStatConstraints.filter(
       ({ tag, value, isMax }) =>
-        validateTag(tag) && typeof value === 'number' && typeof isMax === 'boolean'
+        validateTag(tag) &&
+        typeof value === 'number' &&
+        typeof isMax === 'boolean'
     )
 
     // Validate optConfigId

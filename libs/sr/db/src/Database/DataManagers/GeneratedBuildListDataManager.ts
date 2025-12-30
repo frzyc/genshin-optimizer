@@ -6,10 +6,11 @@ import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import type { RelicIds } from './BuildDataManager'
 
-// --- Schemas ---
-
 const relicIdValueSchema = z.union([z.string(), z.undefined()])
-const relicIdsSchema = zodTypedRecord(allRelicSlotKeys, relicIdValueSchema) as z.ZodType<RelicIds>
+const relicIdsSchema = zodTypedRecord(
+  allRelicSlotKeys,
+  relicIdValueSchema
+) as z.ZodType<RelicIds>
 
 const generatedBuildSchema = z.object({
   value: z.number(),

@@ -136,8 +136,6 @@ export const bonusStatDamageTypes: BonusStatDamageType[] = [
   'disorder',
 ] as const
 
-// --- Schemas ---
-
 export type TargetTag = {
   sheet?: string
   name?: string
@@ -207,7 +205,9 @@ const charOptSchema = z.object({
   target: targetTagSchema,
   conditionals: z.array(conditionalSchema).catch([]),
   bonusStats: z.array(bonusStatSchema).catch([]),
-  teammates: zodFilteredArray(allCharacterKeys, []) as z.ZodType<CharacterKey[]>,
+  teammates: zodFilteredArray(allCharacterKeys, []) as z.ZodType<
+    CharacterKey[]
+  >,
   critMode: zodEnumWithDefault(critModeKeys, 'avg'),
 
   enemyLvl: z.number().catch(80),
@@ -257,7 +257,10 @@ export class CharacterOptManager extends DataManager<
           formula.name === 'standardDmgInst' ||
           formula.name === 'sheerDmgInst'
         ) {
-          if (rawTarget.damageType1 && isSpecificDmgTypeKey(rawTarget.damageType1))
+          if (
+            rawTarget.damageType1 &&
+            isSpecificDmgTypeKey(rawTarget.damageType1)
+          )
             damageType1 = rawTarget.damageType1
           if (rawTarget.damageType2 === 'aftershock')
             damageType2 = rawTarget.damageType2
@@ -271,12 +274,7 @@ export class CharacterOptManager extends DataManager<
       }
     } else if (rawTarget) {
       const { q, qt } = rawTarget
-      if (
-        q &&
-        qt &&
-        targetQ.includes(q) &&
-        targetQt.includes(qt)
-      ) {
+      if (q && qt && targetQ.includes(q) && targetQt.includes(qt)) {
         target = { q, qt }
       }
     }
