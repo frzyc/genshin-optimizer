@@ -95,6 +95,8 @@ export class UIData {
       child = new UIData(data, this)
       this.children.set(data, child)
     }
+    // console.log(data)
+    // console.log(child)
     return child
   }
 
@@ -154,6 +156,8 @@ export class UIData {
           layeredAssignment(result, key, this.get(x))
       )
     }
+    console.log(result)
+    console.log(this.data)
     return result
   }
 
@@ -508,6 +512,7 @@ export function uiDataForTeam(
   const asConst = true
 
   const keys = Object.keys(teamData)
+  console.log(teamData)
   const sources = keys.map((key): any =>
     key.includes('Traveler') ? key + gender : key
   )
@@ -558,12 +563,29 @@ export function uiDataForTeam(
     })
   )
   Object.values(teamData).forEach((data, i) =>
-    Object.assign(own[i], mergeData([...data, totalBuff[i], commonData]), {
-      teamBuffDisplay: totalBuff[i],
-    })
+    Object.assign(
+      own[i],
+      mergeData([
+        ...data.filter((d) => !d.hit?.hitMode || d.lvl),
+        totalBuff[i],
+        commonData,
+      ]),
+      {
+        teamBuffDisplay: totalBuff[i],
+      }
+    )
   )
 
   const origin = new UIData(undefined as any, undefined)
+  console.log(teamData)
+  console.log(own)
+  console.log(target)
+  keys.map((k, i) =>
+    Object.values(teamData).forEach((td) =>
+      td.filter((d) => d.hit?.hitMode && !d.lvl).forEach((d) => origin.child(d))
+    )
+  )
+  console.log(origin)
   return Object.fromEntries(
     keys.map((k, i) => [k, { target: origin.child(target[i]).child(own[i]) }])
   )
