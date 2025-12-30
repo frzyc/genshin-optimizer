@@ -41,9 +41,11 @@ import Soukaku from './sheets/Soukaku'
 import Trigger from './sheets/Trigger'
 import Vivian from './sheets/Vivian'
 import Yanagi from './sheets/Yanagi'
+import YeShunguang from './sheets/YeShunguang'
 import Yidhari from './sheets/Yidhari'
 import Yixuan from './sheets/Yixuan'
 import Yuzuha from './sheets/Yuzuha'
+import Zhao from './sheets/Zhao'
 import ZhuYuan from './sheets/ZhuYuan'
 
 const data: TagMapNodeEntries[] = [
@@ -88,9 +90,11 @@ const data: TagMapNodeEntries[] = [
   Trigger,
   Vivian,
   Yanagi,
+  YeShunguang,
   Yidhari,
   Yixuan,
   Yuzuha,
+  Zhao,
   ZhuYuan,
 ]
 export default data.flat()

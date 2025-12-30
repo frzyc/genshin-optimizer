@@ -2,6 +2,7 @@ import {
   nameToKey,
   notEmpty,
   objMap,
+  range,
   transposeArray,
   verifyObjKeys,
 } from '@genshin-optimizer/common/util'
@@ -31,12 +32,14 @@ export function getCharactersData(): CharactersData {
       skills,
       cores,
       mindscapes,
+      potential,
     }) => {
       const skillParams = extractSkillParams(skills)
       const calcedParams = extractCalcedParams(skills)
       const coreParams = extractCoreParams(cores)
       const abilityParams = extractAbilityParams(cores)
       const mindscapeParams = extraMindscapeParams(mindscapes)
+      const potentialParams = extractPotentialParams(potential)
 
       return {
         id,
@@ -52,6 +55,7 @@ export function getCharactersData(): CharactersData {
         coreParams,
         abilityParams,
         mindscapeParams,
+        potentialParams,
       }
     }
   )
@@ -188,4 +192,16 @@ function extraMindscapeParams(mindscapes: CharacterData['mindscapes']) {
   return Object.values(mindscapes).map(({ Desc }) =>
     extractParamsFromString(Desc.replaceAll('Soldier 0 - Anby', 'Anby'))
   )
+}
+
+function extractPotentialParams(potential: CharacterData['potential']) {
+  if (Object.keys(potential).length === 0) return []
+  const data = Object.values(potential)
+    .filter((_, i) => i > 0)
+    .map(({ Desc }) =>
+      extractParamsFromString(Desc.replaceAll('Soldier 0 - Anby', 'Anby'))
+    )
+  data.unshift(range(1, data[0].length).map(() => 0))
+
+  return transposeArray(data)
 }

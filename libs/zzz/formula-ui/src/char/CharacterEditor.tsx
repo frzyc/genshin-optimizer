@@ -6,12 +6,14 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
+import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import {
   CharacterCard,
   CharacterCompactMindscapeSelector,
   CoreDropdown,
   EquippedGrid,
   LevelSelect,
+  PotentialSelect,
   SkillDropdown,
 } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -25,7 +27,7 @@ import {
   Skeleton,
 } from '@mui/material'
 import type { Variant } from '@mui/material/styles/createTypography'
-import { Suspense, useCallback } from 'react'
+import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { CharStatsDisplay } from './CharStatsDisplay'
@@ -107,6 +109,9 @@ export function Content({ onClose }: { onClose?: () => void }) {
     database.chars.remove(characterKey)
     navigate('/characters')
   }, [database, navigate, characterKey, t])
+  const hasPotential = useMemo(() => {
+    return getCharStat(characterKey).potentialParams.length > 0
+  }, [characterKey])
 
   return (
     <Box display="flex" flexDirection="column" gap={1}>
@@ -152,7 +157,18 @@ export function Content({ onClose }: { onClose?: () => void }) {
                   }
                 />
               </Box>
-              <CharStatsDisplay />
+              <Box sx={{ px: 1 }}>
+                {hasPotential && (
+                  <PotentialSelect
+                    potential={character.potential}
+                    setPotential={(potential) =>
+                      database.chars.set(characterKey, {
+                        potential,
+                      })
+                    }
+                  />
+                )}
+              </Box>
               <CharacterCompactMindscapeSelector
                 mindscape={character.mindscape}
                 setMindscape={(mindscape) =>
@@ -161,6 +177,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
                   })
                 }
               />
+              <CharStatsDisplay />
             </CardThemed>
           </Grid>
           <Grid

@@ -28,7 +28,14 @@ export function CharacterCompactMindscapeSelector({
   const { t } = useTranslation('page_characters')
 
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: '12px' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 2,
+        justifyContent: 'center',
+      }}
+    >
       {range(1, 6).map((i) => (
         <Box key={i}>
           <ZCard sx={{ position: 'relative', borderRadius: '40px' }}>

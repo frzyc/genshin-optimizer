@@ -15,10 +15,12 @@ import PolarMetal from './PolarMetal'
 import ProtoPunk from './ProtoPunk'
 import PufferElectro from './PufferElectro'
 import ShadowHarmony from './ShadowHarmony'
+import ShiningAria from './ShiningAria'
 import ShockstarDisco from './ShockstarDisco'
 import SoulRock from './SoulRock'
 import SwingJazz from './SwingJazz'
 import ThunderMetal from './ThunderMetal'
+import WhiteWaterBallad from './WhiteWaterBallad'
 import WoodpeckerElectro from './WoodpeckerElectro'
 import YunkuiTales from './YunkuiTales'
 
@@ -39,10 +41,12 @@ const data = {
   ProtoPunk,
   PufferElectro,
   ShadowHarmony,
+  ShiningAria,
   ShockstarDisco,
   SoulRock,
   SwingJazz,
   ThunderMetal,
+  WhiteWaterBallad,
   WoodpeckerElectro,
   YunkuiTales,
 } as const
