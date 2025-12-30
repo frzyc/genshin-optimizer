@@ -11,9 +11,12 @@ import {
 import type { IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
 import { parseWeapon, validateWeaponLevelAsc } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import type { ICachedCharacter } from '../../Interfaces/ICachedCharacter'
-import type { ICachedWeapon } from '../../Interfaces/ICachedWeapon'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
+import type { ICachedCharacter } from './CharacterDataManager'
+
+export interface ICachedWeapon extends IWeapon {
+  id: string
+}
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import { initialCharacter } from './CharacterDataManager'

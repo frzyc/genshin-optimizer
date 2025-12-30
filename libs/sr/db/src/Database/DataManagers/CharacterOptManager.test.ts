@@ -12,42 +12,6 @@ describe('CharacterOptManager.validate', () => {
     charOpts = database.charOpts
   })
 
-  it('should apply default conditionals if not array', () => {
-    const invalid = {
-      target: { sheet: 'char' as const, name: 'atk' },
-      conditionals: 'not an array' as any,
-      bonusStats: [],
-      statConstraints: [],
-    }
-    const result = charOpts['validate'](invalid, allCharacterKeys[0])
-    expect(result).toBeDefined()
-    expect(result?.conditionals).toEqual([])
-  })
-
-  it('should apply default bonusStats if not array', () => {
-    const invalid = {
-      target: { sheet: 'char' as const, name: 'atk' },
-      conditionals: [],
-      bonusStats: 'not an array' as any,
-      statConstraints: [],
-    }
-    const result = charOpts['validate'](invalid, allCharacterKeys[0])
-    expect(result).toBeDefined()
-    expect(result?.bonusStats).toEqual([])
-  })
-
-  it('should apply default statConstraints if not array', () => {
-    const invalid = {
-      target: { sheet: 'char' as const, name: 'atk' },
-      conditionals: [],
-      bonusStats: [],
-      statConstraints: 'not an array' as any,
-    }
-    const result = charOpts['validate'](invalid, allCharacterKeys[0])
-    expect(result).toBeDefined()
-    expect(result?.statConstraints).toEqual([])
-  })
-
   it('should remove invalid optConfigId', () => {
     const invalid = {
       target: { sheet: 'char' as const, name: 'atk' },

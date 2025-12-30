@@ -1,33 +1,171 @@
-import { clamp, objKeyMap, objMap } from '@genshin-optimizer/common/util'
+import {
+  zodClampedNumber,
+  zodEnum,
+  zodEnumWithDefault,
+  zodNumberRecord,
+  zodNumericLiteralWithDefault,
+  zodObject,
+  zodString,
+  zodTypedRecordWith,
+} from '@genshin-optimizer/common/database'
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
-  MainStatKey,
+  AscensionKey,
+  RefinementKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
+  allArtifactSetKeys,
   allArtifactSlotKeys,
+  allAscensionKeys,
+  allMainStatKeys,
+  allRefinementKeys,
   allSubstatKeys,
   allWeaponKeys,
-  artMaxLevel,
   substatTypeKeys,
-  weaponMaxAscension,
-  weaponMaxLevel,
 } from '@genshin-optimizer/gi/consts'
-import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
-import { getWeaponStat } from '@genshin-optimizer/gi/stats'
-import {
-  validateCharLevelAsc,
-  validateTalent,
-  validateWeaponLevelAsc,
-} from '@genshin-optimizer/gi/util'
-import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
-import type { BuildTc } from '../../Interfaces/BuildTc'
+import type { IGOOD } from '@genshin-optimizer/gi/good'
+import { z } from 'zod'
+import type { ICachedArtifact } from './ArtifactDataManager'
+import type { ICachedWeapon } from './WeaponDataManager'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
+
+// --- Schema Definitions (internal) ---
+
+const buildTcArtifactSlotSchema = z.object({
+  level: z.number().int().min(0).max(20).catch(20),
+  statKey: zodEnumWithDefault(allMainStatKeys, 'atk'),
+  rarity: zodNumericLiteralWithDefault(
+    allArtifactRarityKeys,
+    5
+  ) as z.ZodType<ArtifactRarity>,
+})
+export type BuildTcArtifactSlot = z.infer<typeof buildTcArtifactSlotSchema>
+
+const defaultSlot = (sk: ArtifactSlotKey): BuildTcArtifactSlot => ({
+  level: 20,
+  rarity: 5,
+  statKey: sk === 'flower' ? 'hp' : sk === 'plume' ? 'atk' : 'atk_',
+})
+
+const buildTcArtifactSlotsSchema = zodTypedRecordWith(
+  allArtifactSlotKeys,
+  (sk) => buildTcArtifactSlotSchema.catch(defaultSlot(sk))
+)
+
+const buildTcSubstatsSchema = z.object({
+  type: zodEnumWithDefault(substatTypeKeys, 'max'),
+  stats: zodNumberRecord(allSubstatKeys, 0),
+  rarity: zodNumericLiteralWithDefault(
+    allArtifactRarityKeys,
+    5
+  ) as z.ZodType<ArtifactRarity>,
+})
+
+const buildTcArtifactSetsSchema = z.preprocess(
+  (val) => {
+    if (typeof val !== 'object' || val === null) return {}
+    const result: Partial<Record<ArtifactSetKey, 1 | 2 | 4>> = {}
+    for (const [key, value] of Object.entries(val)) {
+      if (
+        allArtifactSetKeys.includes(key as ArtifactSetKey) &&
+        (value === 1 || value === 2 || value === 4)
+      ) {
+        result[key as ArtifactSetKey] = value
+      }
+    }
+    return result
+  },
+  z.record(z.string(), z.number())
+) as z.ZodType<Partial<Record<ArtifactSetKey, 1 | 2 | 4>>>
+
+const buildTcArtifactSchema = z.object({
+  slots: buildTcArtifactSlotsSchema.catch(
+    objKeyMap(allArtifactSlotKeys, defaultSlot)
+  ),
+  substats: zodObject(buildTcSubstatsSchema.shape).catch({
+    type: 'max',
+    stats: objKeyMap(allSubstatKeys, () => 0),
+    rarity: 5,
+  }),
+  sets: buildTcArtifactSetsSchema,
+})
+
+const talentSchema = z.object({
+  auto: zodClampedNumber(1, 15, 1),
+  skill: zodClampedNumber(1, 15, 1),
+  burst: zodClampedNumber(1, 15, 1),
+})
+
+const buildTcCharacterSchema = z
+  .object({
+    level: zodClampedNumber(1, 90, 1),
+    ascension: zodNumericLiteralWithDefault(
+      allAscensionKeys,
+      0
+    ) as z.ZodType<AscensionKey>,
+    constellation: zodClampedNumber(0, 6, 0),
+    talent: zodObject(talentSchema.shape).catch({
+      auto: 1,
+      skill: 1,
+      burst: 1,
+    }),
+  })
+  .optional()
+
+const buildTcWeaponSchema = z.object({
+  key: zodEnum(allWeaponKeys),
+  level: zodClampedNumber(1, 90, 1),
+  ascension: zodNumericLiteralWithDefault(
+    allAscensionKeys,
+    0
+  ) as z.ZodType<AscensionKey>,
+  refinement: zodNumericLiteralWithDefault(
+    allRefinementKeys,
+    1
+  ) as z.ZodType<RefinementKey>,
+})
+
+const defaultMaxSubstats = () =>
+  objKeyMap(
+    allSubstatKeys,
+    (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5)
+  )
+
+const buildTcOptimizationSchema = z.object({
+  distributedSubstats: z.number().int().catch(45),
+  maxSubstats: zodNumberRecord(allSubstatKeys, 0).catch(defaultMaxSubstats()),
+})
+
+const buildTcSchema = z.object({
+  name: zodString('Build(TC) Name'),
+  description: zodString(),
+  character: buildTcCharacterSchema,
+  weapon: buildTcWeaponSchema,
+  artifact: zodObject(buildTcArtifactSchema.shape).catch({
+    slots: objKeyMap(allArtifactSlotKeys, defaultSlot),
+    substats: {
+      type: 'max',
+      stats: objKeyMap(allSubstatKeys, () => 0),
+      rarity: 5,
+    },
+    sets: {},
+  }),
+  optimization: zodObject(buildTcOptimizationSchema.shape).catch({
+    distributedSubstats: 45,
+    maxSubstats: defaultMaxSubstats(),
+  }),
+})
+
+export type BuildTc = z.infer<typeof buildTcSchema>
+
+// --- DataManager ---
 
 export class BuildTcDataManager extends DataManager<
   string,
@@ -44,27 +182,8 @@ export class BuildTcDataManager extends DataManager<
     }
   }
   override validate(obj: unknown): BuildTc | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
-    let { name, description } = obj as BuildTc
-    const { character, weapon, artifact, optimization } = obj as BuildTc
-    const _character = validateBuildTCChar(character)
-    if (typeof name !== 'string') name = 'Build(TC) Name'
-    if (typeof description !== 'string') description = ''
-    const _weapon = validateBuildTCWeapon(weapon)
-    if (!_weapon) return undefined
-
-    const _artifact = validateBuildTCArtifact(artifact)
-    if (!_artifact) return undefined
-    const _optimization = validateBuildTcOptimization(optimization)
-    if (!_optimization) return undefined
-    return {
-      name,
-      description,
-      character: _character,
-      artifact: _artifact,
-      weapon: _weapon,
-      optimization: _optimization,
-    }
+    const result = buildTcSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
   new(data: Partial<BuildTc>) {
     const id = this.generateKey()
@@ -78,22 +197,19 @@ export class BuildTcDataManager extends DataManager<
   }
   override remove(key: string, notify?: boolean): BuildTc | undefined {
     const buildTc = super.remove(key, notify)
-    // remove data from teamChar first
     this.database.teamChars.entries.forEach(
       ([teamCharId, teamChar]) =>
         teamChar.buildTcIds.includes(key) &&
         this.database.teamChars.set(teamCharId, {})
     )
-    // once teamChars are validated, teams can be validated as well
     this.database.teams.entries.forEach(
       ([teamId, team]) =>
         team.loadoutData?.some(
           (loadoutDatum) =>
             loadoutDatum?.buildTcId === key ||
             loadoutDatum?.compareBuildTcId === key
-        ) && this.database.teams.set(teamId, {}) // trigger a validation
+        ) && this.database.teams.set(teamId, {})
     )
-
     return buildTc
   }
   export(buildTcId: string): object | undefined {
@@ -108,14 +224,22 @@ export class BuildTcDataManager extends DataManager<
   }
   override importGOOD(good: IGOOD & IGO, result: ImportResult): void {
     result.buildTcs.beforeImport = this.entries.length
-
     const buildTcs = good[this.dataKey]
     if (buildTcs && Array.isArray(buildTcs)) {
       result.buildTcs.import = buildTcs.length
     }
-
     super.importGOOD(good, result)
   }
+}
+
+// --- Helper Functions ---
+
+function initCharTCArtifactSlots(): BuildTc['artifact']['slots'] {
+  return objKeyMap(allArtifactSlotKeys, defaultSlot)
+}
+
+function initBuildTcOptimizationMaxSubstats(): BuildTc['optimization']['maxSubstats'] {
+  return defaultMaxSubstats()
 }
 
 export function initCharTC(weaponKey: WeaponKey): BuildTc {
@@ -143,129 +267,7 @@ export function initCharTC(weaponKey: WeaponKey): BuildTc {
     },
   }
 }
-function initCharTCArtifactSlots() {
-  return objKeyMap(allArtifactSlotKeys, (s) => ({
-    level: 20,
-    rarity: 5 as ArtifactRarity,
-    statKey: (s === 'flower'
-      ? 'hp'
-      : s === 'plume'
-        ? 'atk'
-        : 'atk_') as MainStatKey,
-  }))
-}
-function validateBuildTCChar(char: unknown): BuildTc['character'] {
-  if (typeof char !== 'object' || typeof char === 'undefined') return undefined
-  const { level: rawLevel, ascension: rawAscension } = char as Omit<
-    ICharacter,
-    'key'
-  >
-  let { constellation, talent } = char as Omit<ICharacter, 'key'>
-  if (
-    typeof constellation !== 'number' &&
-    constellation < 0 &&
-    constellation > 6
-  )
-    constellation = 0
 
-  const { level, ascension } = validateCharLevelAsc(rawLevel, rawAscension)
-  talent = validateTalent(ascension, talent)
-
-  return {
-    level,
-    ascension,
-    talent,
-    constellation,
-  }
-}
-function validateBuildTCWeapon(weapon: unknown): BuildTc['weapon'] | undefined {
-  if (typeof weapon !== 'object') return undefined
-  const { key } = weapon as BuildTc['weapon']
-  let { level, ascension, refinement } = weapon as BuildTc['weapon']
-
-  if (!allWeaponKeys.includes(key)) return undefined
-  const { rarity } = getWeaponStat(key)
-  if (level > weaponMaxLevel[rarity]) {
-    level = weaponMaxLevel[rarity]
-    ascension = weaponMaxAscension[rarity]
-  }
-  if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
-    refinement = 1
-  const { level: _level, ascension: _ascension } = validateWeaponLevelAsc(
-    level,
-    ascension
-  )
-  ;[level, ascension] = [_level, _ascension]
-  return { key, level, ascension, refinement }
-}
-function validateBuildTCArtifact(
-  artifact: unknown
-): BuildTc['artifact'] | undefined {
-  if (typeof artifact !== 'object') return undefined
-  let {
-    slots,
-    substats: { type, stats, rarity },
-    sets,
-  } = artifact as BuildTc['artifact']
-  const _slots = validateBuildTCArtifactSlots(slots)
-  if (!_slots) return undefined
-  slots = _slots
-  if (!substatTypeKeys.includes(type)) type = 'max'
-  if (!allArtifactRarityKeys.includes(rarity)) rarity = 5
-  if (typeof stats !== 'object') stats = objKeyMap(allSubstatKeys, () => 0)
-  stats = objKeyMap(allSubstatKeys, (k) =>
-    typeof stats[k] === 'number' ? stats[k] : 0
-  )
-
-  if (typeof sets !== 'object') sets = {}
-  // TODO: validate sets
-
-  return { slots, substats: { type, stats, rarity }, sets }
-}
-function validateBuildTCArtifactSlots(
-  slots: unknown
-): BuildTc['artifact']['slots'] | undefined {
-  if (typeof slots !== 'object') return initCharTCArtifactSlots()
-
-  if (
-    Object.keys(slots as BuildTc['artifact']['slots']).length !==
-      allArtifactSlotKeys.length ||
-    Object.keys(slots as BuildTc['artifact']['slots']).some(
-      (s) => !allArtifactSlotKeys.includes(s as ArtifactSlotKey)
-    )
-  )
-    return initCharTCArtifactSlots()
-  return objMap(
-    slots as BuildTc['artifact']['slots'],
-    ({ level, rarity, ...rest }) => {
-      return {
-        level: clamp(level, 0, artMaxLevel[rarity]),
-        rarity,
-        ...rest,
-      }
-    }
-  )
-}
-function validateBuildTcOptimization(
-  optimization: unknown
-): BuildTc['optimization'] | undefined {
-  if (typeof optimization !== 'object') return undefined
-  let { distributedSubstats, maxSubstats } =
-    optimization as BuildTc['optimization']
-  if (typeof distributedSubstats !== 'number') distributedSubstats = 20
-  if (typeof maxSubstats !== 'object')
-    maxSubstats = initBuildTcOptimizationMaxSubstats()
-  maxSubstats = objKeyMap([...allSubstatKeys], (k) =>
-    typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0
-  )
-  return { distributedSubstats, maxSubstats }
-}
-function initBuildTcOptimizationMaxSubstats(): BuildTc['optimization']['maxSubstats'] {
-  return objKeyMap(
-    allSubstatKeys,
-    (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5)
-  )
-}
 export function toBuildTc(
   charTC: BuildTc,
   eWeapon: ICachedWeapon | undefined = undefined,

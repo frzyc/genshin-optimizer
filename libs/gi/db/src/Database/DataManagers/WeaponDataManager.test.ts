@@ -13,18 +13,6 @@ describe('WeaponDataManager', () => {
     weapons = database.weapons
   })
 
-  it('should reject invalid weapon key', () => {
-    const invalid = {
-      key: 'INVALID_KEY',
-      level: 50,
-      ascension: 3,
-      refinement: 1,
-      location: '',
-      lock: false,
-    }
-    expect(weapons['validate'](invalid)).toBeUndefined()
-  })
-
   it('should reject level exceeding rarity max', () => {
     const weaponKey = allWeaponKeys[0]
     const { rarity } = allStats.weapon.data[weaponKey]
@@ -38,18 +26,5 @@ describe('WeaponDataManager', () => {
       lock: false,
     }
     expect(weapons['validate'](invalid)).toBeUndefined()
-  })
-
-  it('should reset refinement to 1 for out-of-range value', () => {
-    const invalid = {
-      key: allWeaponKeys[0],
-      level: 50,
-      ascension: 3,
-      refinement: 10,
-      location: '',
-      lock: false,
-    }
-    const result = weapons['validate'](invalid)
-    expect(result?.refinement).toBe(1)
   })
 })

@@ -1,11 +1,8 @@
-import { validateArr } from '@genshin-optimizer/common/util'
-import type {
-  ArtifactRarity,
-  CharacterRarityKey,
-  RarityKey,
-  WeaponSubstatKey,
-  WeaponTypeKey,
-} from '@genshin-optimizer/gi/consts'
+import {
+  zodEnumWithDefault,
+  zodFilteredArray,
+  zodObject,
+} from '@genshin-optimizer/common/database'
 import {
   allArtifactRarityKeys,
   allCharacterRarityKeys,
@@ -13,58 +10,54 @@ import {
   allWeaponSubstatKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
+import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 
-export interface ArchiveArtifactOption {
-  rarity: ArtifactRarity[]
-}
+const sortOrderKeys = ['asc', 'desc'] as const
+const characterSortByKeys = ['name', 'rarity', 'element', 'type'] as const
+const weaponSortByKeys = [
+  'name',
+  'type',
+  'rarity',
+  'main',
+  'sub',
+  'subType',
+] as const
 
-export interface ArchiveCharacterOption {
-  rarity: CharacterRarityKey[]
-  weaponType: WeaponTypeKey[]
-  sortOrder: 'asc' | 'desc'
-  sortOrderBy: 'name' | 'rarity' | 'element' | 'type'
-}
-
-export interface ArchiveWeaponOption {
-  rarity: RarityKey[]
-  weaponType: WeaponTypeKey[]
-  subStat: WeaponSubstatKey[]
-  sortOrder: 'asc' | 'desc'
-  sortOrderBy: 'name' | 'type' | 'rarity' | 'main' | 'sub' | 'subType'
-}
-
-export interface IDisplayArchiveEntry {
-  artifact: ArchiveArtifactOption
-  character: ArchiveCharacterOption
-  weapon: ArchiveWeaponOption
-}
-
-const initialArtifactOption = (): ArchiveArtifactOption => ({
-  rarity: [...allArtifactRarityKeys],
+const artifactOptionSchema = z.object({
+  rarity: zodFilteredArray(allArtifactRarityKeys),
 })
 
-const initialCharacterOption = (): ArchiveCharacterOption => ({
-  rarity: [...allCharacterRarityKeys],
-  weaponType: [...allWeaponTypeKeys],
-  sortOrder: 'desc',
-  sortOrderBy: 'name',
+const characterOptionSchema = z.object({
+  rarity: zodFilteredArray(allCharacterRarityKeys),
+  weaponType: zodFilteredArray(allWeaponTypeKeys),
+  sortOrder: zodEnumWithDefault(sortOrderKeys, 'desc'),
+  sortOrderBy: zodEnumWithDefault(characterSortByKeys, 'name'),
 })
 
-const initialWeaponOption = (): ArchiveWeaponOption => ({
-  rarity: [...allRarityKeys],
-  weaponType: [...allWeaponTypeKeys],
-  subStat: [],
-  sortOrder: 'desc',
-  sortOrderBy: 'name',
+const weaponOptionSchema = z.object({
+  rarity: zodFilteredArray(allRarityKeys),
+  weaponType: zodFilteredArray(allWeaponTypeKeys),
+  subStat: zodFilteredArray(allWeaponSubstatKeys, []),
+  sortOrder: zodEnumWithDefault(sortOrderKeys, 'desc'),
+  sortOrderBy: zodEnumWithDefault(weaponSortByKeys, 'name'),
 })
 
-const initialState = (): IDisplayArchiveEntry => ({
-  artifact: initialArtifactOption(),
-  character: initialCharacterOption(),
-  weapon: initialWeaponOption(),
+const displayArchiveSchema = z.object({
+  artifact: zodObject(artifactOptionSchema.shape),
+  character: zodObject(characterOptionSchema.shape),
+  weapon: zodObject(weaponOptionSchema.shape),
 })
+
+export type ArchiveArtifactOption = z.infer<typeof artifactOptionSchema>
+export type ArchiveCharacterOption = z.infer<typeof characterOptionSchema>
+export type ArchiveWeaponOption = z.infer<typeof weaponOptionSchema>
+export type IDisplayArchiveEntry = z.infer<typeof displayArchiveSchema>
+
+function initialState(): IDisplayArchiveEntry {
+  return displayArchiveSchema.parse({})
+}
 
 export class DisplayArchiveEntry extends DataEntry<
   'display_archive',
@@ -75,65 +68,8 @@ export class DisplayArchiveEntry extends DataEntry<
   constructor(database: ArtCharDatabase) {
     super(database, 'display_archive', initialState, 'display_archive')
   }
-  override validate(obj: any): IDisplayArchiveEntry | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
-    let { artifact, character, weapon } = obj
-
-    if (typeof artifact !== 'object') artifact = initialArtifactOption()
-    else {
-      let { rarity } = artifact
-      rarity = validateArr(rarity, allArtifactRarityKeys)
-
-      artifact = {
-        rarity,
-      }
-
-      if (typeof character !== 'object') character = initialCharacterOption()
-      else {
-        let { rarity, weaponType, sortOrder, sortOrderBy } = character
-        rarity = validateArr(rarity, allCharacterRarityKeys)
-        weaponType = validateArr(weaponType, allWeaponTypeKeys)
-        if (!['asc', 'desc'].includes(sortOrder)) {
-          sortOrder = 'desc'
-        }
-        if (!['name', 'rarity', 'element', 'type'].includes(sortOrderBy)) {
-          sortOrderBy = 'name'
-        }
-        character = {
-          rarity,
-          weaponType,
-          sortOrder,
-          sortOrderBy,
-        }
-      }
-
-      if (typeof weapon !== 'object') weapon = initialWeaponOption()
-      else {
-        let { rarity, subStat, weaponType, sortOrder, sortOrderBy } = weapon
-        rarity = validateArr(rarity, allRarityKeys)
-        subStat = validateArr(subStat, allWeaponSubstatKeys, [])
-        weaponType = validateArr(weaponType, allWeaponTypeKeys)
-        if (!['asc', 'desc'].includes(sortOrder)) {
-          sortOrder = 'desc'
-        }
-        if (!['name', 'type', 'rarity', 'main', 'sub'].includes(sortOrderBy)) {
-          sortOrderBy = 'name'
-        }
-
-        weapon = {
-          rarity,
-          subStat,
-          weaponType,
-          sortOrder,
-          sortOrderBy,
-        }
-      }
-    }
-
-    return {
-      artifact,
-      character,
-      weapon,
-    }
+  override validate(obj: unknown): IDisplayArchiveEntry | undefined {
+    const result = displayArchiveSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
 }

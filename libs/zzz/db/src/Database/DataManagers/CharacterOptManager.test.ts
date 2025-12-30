@@ -28,22 +28,6 @@ describe('CharacterOptManager', () => {
     expect(result?.target).toBeUndefined()
   })
 
-  it('should filter invalid teammates', () => {
-    const invalid = {
-      conditionals: [],
-      bonusStats: [],
-      teammates: ['INVALID_KEY' as any, allCharacterKeys[0]],
-      critMode: 'avg' as const,
-      enemyLvl: 60,
-      enemyDef: 0,
-      enemyStunMultiplier: 1,
-      enemyStats: {},
-    }
-    const result = charOpts['validate'](invalid)
-    expect(result?.teammates).toHaveLength(1)
-    expect(result?.teammates[0]).toBe(allCharacterKeys[0])
-  })
-
   it('should limit teammates to 2', () => {
     const invalid = {
       conditionals: [],

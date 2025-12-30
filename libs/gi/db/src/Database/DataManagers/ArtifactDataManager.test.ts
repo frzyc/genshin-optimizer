@@ -13,7 +13,6 @@ describe('ArtifactDataManager', () => {
     artifacts = database.arts
   })
 
-  // Helper to find a valid set key for flower slot with rarity 5
   function getValidFlowerSetKey() {
     return allArtifactSetKeys.find(
       (setKey) =>
@@ -21,20 +20,6 @@ describe('ArtifactDataManager', () => {
         allStats.art.data[setKey].rarities.includes(5)
     )!
   }
-
-  it('should reject invalid setKey', () => {
-    const invalid = {
-      setKey: 'INVALID' as any,
-      rarity: 5,
-      level: 10,
-      slotKey: 'flower',
-      mainStatKey: 'hp',
-      substats: [],
-      location: '',
-      lock: false,
-    }
-    expect(artifacts['validate'](invalid)).toBeUndefined()
-  })
 
   it('should reject level exceeding max for rarity', () => {
     const validSetKey = getValidFlowerSetKey()

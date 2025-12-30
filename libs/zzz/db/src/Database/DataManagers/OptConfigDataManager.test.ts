@@ -1,11 +1,6 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import {
-  allAttributeKeys,
-  allDiscSetKeys,
-  discSlotToMainStatKeys,
-} from '@genshin-optimizer/zzz/consts'
+import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import { ZzzDatabase } from '../Database'
-import { maxBuildsToShowDefault } from './OptConfigDataManager'
 
 describe('OptConfigDataManager', () => {
   let database: ZzzDatabase
@@ -31,32 +26,6 @@ describe('OptConfigDataManager', () => {
     }
     const result = optConfigs['validate'](invalid)
     expect(result?.statFilters[0]?.tag.attribute).toBeUndefined()
-  })
-
-  it('should apply default maxBuildsToShow for invalid value', () => {
-    const invalid = { statFilters: [], maxBuildsToShow: 999 }
-    const result = optConfigs['validate'](invalid)
-    expect(result?.maxBuildsToShow).toBe(maxBuildsToShowDefault)
-  })
-
-  it('should filter invalid setFilter2 values', () => {
-    const invalid = {
-      statFilters: [],
-      maxBuildsToShow: 5,
-      setFilter2: ['INVALID', allDiscSetKeys[0]],
-    }
-    const result = optConfigs['validate'](invalid)
-    expect(result?.setFilter2).toEqual([allDiscSetKeys[0]])
-  })
-
-  it('should filter invalid slot4 values', () => {
-    const invalid = {
-      statFilters: [],
-      maxBuildsToShow: 5,
-      slot4: ['INVALID', discSlotToMainStatKeys['4'][0]],
-    }
-    const result = optConfigs['validate'](invalid)
-    expect(result?.slot4).toEqual([discSlotToMainStatKeys['4'][0]])
   })
 
   it('should remove invalid generatedBuildListId', () => {

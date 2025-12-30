@@ -20,12 +20,10 @@ import {
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
-import type {
-  BuildTc,
-  CustomMultiTarget,
-  ICachedArtifact,
-  ICachedWeapon,
-} from '../../Interfaces'
+import type { ICachedArtifact } from './ArtifactDataManager'
+import type { ICachedWeapon } from './WeaponDataManager'
+import type { CustomMultiTarget } from './CustomMultiTarget'
+import type { BuildTc } from './BuildTcDataManager'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'

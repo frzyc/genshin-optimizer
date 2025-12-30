@@ -66,6 +66,71 @@ export function zodBooleanRecord<K extends string | number>(
   ) as unknown as z.ZodType<Partial<Record<K, boolean>>>
 }
 
+export function zodNumberRecord<K extends string>(
+  keys: readonly K[],
+  defaultValue = 0
+): z.ZodType<Record<K, number>> {
+  return z.preprocess(
+    (val) => {
+      const result: Record<string, number> = {}
+      const obj =
+        typeof val === 'object' && val !== null
+          ? (val as Record<string, unknown>)
+          : {}
+      for (const key of keys) {
+        result[key] =
+          typeof obj[key] === 'number' ? (obj[key] as number) : defaultValue
+      }
+      return result
+    },
+    z.record(z.string(), z.number())
+  ) as unknown as z.ZodType<Record<K, number>>
+}
+
+/**
+ * Creates a Zod object schema from an array of keys with proper type inference.
+ * Each key maps to the same value schema.
+ *
+ * Use this when you need `Record<SpecificKey, Value>` type inference.
+ *
+ * @example
+ * const slotKeys = ['flower', 'plume', 'sands'] as const
+ * const schema = zodTypedRecord(slotKeys, z.string().optional())
+ * type Result = z.infer<typeof schema>
+ * // Result = { flower: string | undefined; plume: string | undefined; sands: string | undefined }
+ */
+export function zodTypedRecord<K extends string, V extends z.ZodTypeAny>(
+  keys: readonly K[],
+  valueSchema: V
+): z.ZodObject<{ [P in K]: V }> {
+  const shape = Object.fromEntries(keys.map((k) => [k, valueSchema])) as {
+    [P in K]: V
+  }
+  return z.object(shape)
+}
+
+/**
+ * Creates a Zod object schema from an array of keys where each key can have
+ * a different schema based on a factory function.
+ *
+ * Use this when you need `Record<SpecificKey, Value>` with per-key customization.
+ *
+ * @example
+ * const slotKeys = ['flower', 'plume', 'sands'] as const
+ * const schema = zodTypedRecordWith(slotKeys, (key) =>
+ *   z.object({ level: z.number() }).catch({ level: key === 'flower' ? 0 : 20 })
+ * )
+ */
+export function zodTypedRecordWith<K extends string, V extends z.ZodTypeAny>(
+  keys: readonly K[],
+  schemaFactory: (key: K) => V
+): z.ZodObject<{ [P in K]: V }> {
+  const shape = Object.fromEntries(keys.map((k) => [k, schemaFactory(k)])) as {
+    [P in K]: V
+  }
+  return z.object(shape)
+}
+
 export function zodNumericLiteralWithDefault<T extends readonly number[]>(
   values: T,
   defaultValue: T[number]

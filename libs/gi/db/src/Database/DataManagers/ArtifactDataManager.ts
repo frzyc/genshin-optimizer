@@ -19,10 +19,22 @@ import {
   getSubstatRolls,
   getSubstatValue,
 } from '@genshin-optimizer/gi/util'
-import type { ICachedArtifact, ICachedSubstat } from '../../Interfaces'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
+
+export interface ICachedArtifact extends IArtifact {
+  id: string
+  mainStatVal: number
+  substats: ICachedSubstat[]
+  unactivatedSubstats: ICachedSubstat[] | undefined
+}
+
+export interface ICachedSubstat extends ISubstat {
+  rolls: number[]
+  efficiency: number
+  accurateValue: number
+}
 
 const statMap = {
   hp: 'HP',

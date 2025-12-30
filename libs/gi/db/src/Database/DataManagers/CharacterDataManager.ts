@@ -17,9 +17,12 @@ import {
   validateCharLevelAsc,
   validateTalent,
 } from '@genshin-optimizer/gi/util'
-import type { ICachedCharacter } from '../../Interfaces/ICachedCharacter'
-
 import type { ArtCharDatabase } from '../ArtCharDatabase'
+
+export interface ICachedCharacter extends ICharacter {
+  equippedArtifacts: Record<ArtifactSlotKey, string>
+  equippedWeapon: string
+}
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import { GOSource } from '../exim'

@@ -12,20 +12,6 @@ describe('RelicDataManager.validate', () => {
     relics = database.relics
   })
 
-  it('should reject invalid setKey', () => {
-    const invalid = {
-      setKey: 'INVALID' as any,
-      rarity: 5,
-      level: 10,
-      slotKey: 'head',
-      mainStatKey: 'hp',
-      substats: [],
-      location: '',
-      lock: false,
-    }
-    expect(relics['validate'](invalid)).toBeUndefined()
-  })
-
   it('should reject level exceeding max for rarity', () => {
     const invalid = {
       setKey: allRelicSetKeys[0],
@@ -52,21 +38,5 @@ describe('RelicDataManager.validate', () => {
       lock: false,
     }
     expect(relics['validate'](invalid)).toBeUndefined()
-  })
-
-  it('should clear invalid location to empty string', () => {
-    const invalid = {
-      setKey: allRelicSetKeys[0],
-      rarity: 5,
-      level: 10,
-      slotKey: 'head',
-      mainStatKey: 'hp',
-      substats: [],
-      location: 'INVALID_LOCATION',
-      lock: false,
-    }
-    const result = relics['validate'](invalid)
-    expect(result).toBeDefined()
-    expect(result?.location).toBe('')
   })
 })

@@ -1,32 +1,47 @@
+import { zodBoolean } from '@genshin-optimizer/common/database'
 import { notEmpty, shallowCompareObj } from '@genshin-optimizer/common/util'
 import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { Dst, Sheet, Src, Tag } from '@genshin-optimizer/sr/formula'
 import { getConditional, isMember } from '@genshin-optimizer/sr/formula'
+import { z } from 'zod'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import { validateTag } from '../tagUtil'
 
-export type CharOpt = {
-  target: Tag
-  conditionals: Array<{
-    sheet: Sheet
-    src: Src
-    dst: Dst
-    condKey: string
-    condValue: number
-  }>
-  bonusStats: Array<{
-    tag: Tag
-    value: number
-  }>
-  statConstraints: Array<{
-    tag: Tag
-    value: number
-    isMax: boolean
-  }>
-  optConfigId?: string
-}
+// --- Schemas ---
+
+const tagSchema = z.record(z.string(), z.unknown()) as z.ZodType<Tag>
+
+const conditionalSchema = z.object({
+  sheet: z.string() as z.ZodType<Sheet>,
+  src: z.string() as z.ZodType<Src>,
+  dst: z.string().nullable() as z.ZodType<Dst>,
+  condKey: z.string(),
+  condValue: z.number(),
+})
+
+const bonusStatSchema = z.object({
+  tag: tagSchema,
+  value: z.number(),
+})
+
+const statConstraintSchema = z.object({
+  tag: tagSchema,
+  value: z.number(),
+  isMax: zodBoolean(),
+})
+
+const charOptSchema = z.object({
+  target: tagSchema,
+  conditionals: z.array(conditionalSchema).catch([]),
+  bonusStats: z.array(bonusStatSchema).catch([]),
+  statConstraints: z.array(statConstraintSchema).catch([]),
+  optConfigId: z.string().optional(),
+})
+
+export type CharOpt = z.infer<typeof charOptSchema>
+
 export class CharacterOptManager extends DataManager<
   CharacterKey,
   'charOpts',
@@ -37,64 +52,70 @@ export class CharacterOptManager extends DataManager<
     super(database, 'charOpts')
   }
   override validate(obj: unknown, key: CharacterKey): CharOpt | undefined {
-    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
-    let { target, conditionals, bonusStats, statConstraints, optConfigId } =
-      obj as CharOpt
-    if (!validateTag(target)) target = defOptTarget(key)
-    if (!Array.isArray(conditionals)) conditionals = []
-    const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
-    conditionals = conditionals
+    const result = charOptSchema.safeParse(obj)
+    if (!result.success) return undefined
+
+    const {
+      target: rawTarget,
+      conditionals: rawConditionals,
+      bonusStats: rawBonusStats,
+      statConstraints: rawStatConstraints,
+      optConfigId: rawOptConfigId,
+    } = result.data
+
+    // Validate target
+    const target = validateTag(rawTarget) ? rawTarget : defOptTarget(key)
+
+    // Validate conditionals
+    const hashList: string[] = []
+    const conditionals = rawConditionals
       .map(({ sheet, condKey, src, dst, condValue }) => {
         if (!isMember(src) || !(dst === null || isMember(dst))) return undefined
         const cond = getConditional(sheet, condKey)
         if (!cond) return undefined
 
-        // validate uniqueness
         const hash = `${sheet}:${condKey}:${src}:${dst}`
         if (hashList.includes(hash)) return undefined
         hashList.push(hash)
 
-        // validate values
-        condValue = correctConditionalValue(cond, condValue)
+        const correctedCondValue = correctConditionalValue(cond, condValue)
 
         return {
           sheet,
           src,
           dst,
           condKey,
-          condValue,
+          condValue: correctedCondValue,
         }
       })
       .filter(notEmpty)
-    if (!Array.isArray(bonusStats)) bonusStats = []
-    bonusStats = bonusStats.filter(({ tag, value }) => {
-      if (!validateTag(tag)) return false
-      if (typeof value !== 'number') return false
-      return true
-    })
-    if (!Array.isArray(statConstraints)) statConstraints = []
-    statConstraints = statConstraints.filter(({ tag, value, isMax }) => {
-      if (!validateTag(tag)) return false
-      if (typeof value !== 'number') return false
-      if (typeof isMax !== 'boolean') return false
-      return true
-    })
 
-    if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
-      optConfigId = undefined
+    // Validate bonusStats
+    const bonusStats = rawBonusStats.filter(
+      ({ tag, value }) => validateTag(tag) && typeof value === 'number'
+    )
 
-    const charOpt: CharOpt = {
+    // Validate statConstraints
+    const statConstraints = rawStatConstraints.filter(
+      ({ tag, value, isMax }) =>
+        validateTag(tag) && typeof value === 'number' && typeof isMax === 'boolean'
+    )
+
+    // Validate optConfigId
+    const optConfigId =
+      rawOptConfigId && this.database.optConfigs.keys.includes(rawOptConfigId)
+        ? rawOptConfigId
+        : undefined
+
+    return {
       target,
       conditionals,
       bonusStats,
       statConstraints,
       optConfigId,
     }
-    return charOpt
   }
 
-  // These overrides allow CharacterKey to be used as id.
-  // This assumes we only support one copy of a character opt in a DB.
   override toStorageKey(key: string): string {
     return `${this.goKeySingle}_${key}`
   }
@@ -134,7 +155,6 @@ export class CharacterOptManager extends DataManager<
         })
       } else {
         const cond = conditionals[condIndex]
-        // Check if the value is the same, return false to not propagate the update.
         if (
           cond.sheet === sheet &&
           cond.src === src &&
@@ -155,8 +175,8 @@ export class CharacterOptManager extends DataManager<
   setBonusStat(
     charKey: CharacterKey,
     tag: Tag,
-    value: number | null, // use null to remove the stat
-    index?: number // to edit an existing stat
+    value: number | null,
+    index?: number
   ) {
     this.set(charKey, (charOpt) => {
       const statIndex =
@@ -176,7 +196,7 @@ export class CharacterOptManager extends DataManager<
   }
 }
 
-function defOptTarget(key: CharacterKey): CharOpt['target'] {
+function defOptTarget(key: CharacterKey): Tag {
   return {
     src: key,
     et: 'own',
@@ -185,11 +205,13 @@ function defOptTarget(key: CharacterKey): CharOpt['target'] {
     sheet: 'agg',
   }
 }
+
 export function initialCharOpt(key: CharacterKey): CharOpt {
   return {
     target: defOptTarget(key),
     conditionals: [],
     bonusStats: [],
     statConstraints: [],
+    optConfigId: undefined,
   }
 }

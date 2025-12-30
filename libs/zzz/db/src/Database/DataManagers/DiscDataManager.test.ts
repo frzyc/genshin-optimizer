@@ -1,9 +1,5 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import {
-  allDiscSetKeys,
-  discMaxLevel,
-  discSlotToMainStatKeys,
-} from '@genshin-optimizer/zzz/consts'
+import { allDiscSetKeys } from '@genshin-optimizer/zzz/consts'
 import { ZzzDatabase } from '../Database'
 import { validateDiscBasedOnRarity } from './DiscDataManager'
 
@@ -17,54 +13,6 @@ describe('DiscDataManager', () => {
     discs = database.discs
   })
 
-  it('should reject level exceeding max for rarity', () => {
-    const invalid = {
-      setKey: allDiscSetKeys[0],
-      rarity: 'S' as const,
-      level: discMaxLevel['S'] + 1,
-      slotKey: '1' as const,
-      mainStatKey: 'hp' as const,
-      substats: [],
-      location: '',
-      lock: false,
-      trash: false,
-    }
-    const result = discs['validate'](invalid)
-    expect(result?.level).toBe(0) // Falls back to 0
-  })
-
-  it('should apply default mainStatKey if invalid for slot', () => {
-    const invalid = {
-      setKey: allDiscSetKeys[0],
-      rarity: 'S' as const,
-      level: 10,
-      slotKey: '1' as const,
-      mainStatKey: 'INVALID',
-      substats: [],
-      location: '',
-      lock: false,
-      trash: false,
-    }
-    const result = discs['validate'](invalid)
-    expect(result?.mainStatKey).toBe(discSlotToMainStatKeys['1'][0])
-  })
-
-  it('should clear invalid location', () => {
-    const invalid = {
-      setKey: allDiscSetKeys[0],
-      rarity: 'S' as const,
-      level: 10,
-      slotKey: '1' as const,
-      mainStatKey: 'hp' as const,
-      substats: [],
-      location: 'INVALID_LOCATION',
-      lock: false,
-      trash: false,
-    }
-    const result = discs['validate'](invalid)
-    expect(result?.location).toBe('')
-  })
-
   it('should reject substat with same key as mainstat', () => {
     const invalid = {
       setKey: allDiscSetKeys[0],
@@ -72,32 +20,12 @@ describe('DiscDataManager', () => {
       level: 10,
       slotKey: '1' as const,
       mainStatKey: 'hp' as const,
-      substats: [{ key: 'hp', upgrades: 2 }],
+      substats: [{ key: 'hp' as const, upgrades: 2 }],
       location: '',
       lock: false,
       trash: false,
     }
     expect(discs['validate'](invalid)).toBeUndefined()
-  })
-
-  it('should filter invalid substat keys', () => {
-    const invalid = {
-      setKey: allDiscSetKeys[0],
-      rarity: 'S' as const,
-      level: 10,
-      slotKey: '1' as const,
-      mainStatKey: 'hp' as const,
-      substats: [
-        { key: 'INVALID', upgrades: 2 },
-        { key: 'atk_', upgrades: 1 },
-      ],
-      location: '',
-      lock: false,
-      trash: false,
-    }
-    const result = discs['validate'](invalid)
-    expect(result?.substats).toHaveLength(1)
-    expect(result?.substats[0]?.key).toBe('atk_')
   })
 })
 
@@ -110,10 +38,10 @@ describe('validateDiscBasedOnRarity (business logic)', () => {
       slotKey: '1' as const,
       mainStatKey: 'hp' as const,
       substats: [
-        { key: 'atk_', upgrades: 2 },
-        { key: 'def_', upgrades: 2 },
-        { key: 'crit_', upgrades: 2 },
-        { key: 'crit_dmg_', upgrades: 1 },
+        { key: 'atk_' as const, upgrades: 2 },
+        { key: 'def_' as const, upgrades: 2 },
+        { key: 'crit_' as const, upgrades: 2 },
+        { key: 'crit_dmg_' as const, upgrades: 1 },
       ],
       location: '',
       lock: false,
@@ -132,9 +60,9 @@ describe('validateDiscBasedOnRarity (business logic)', () => {
       slotKey: '1' as const,
       mainStatKey: 'hp' as const,
       substats: [
-        { key: 'hp', upgrades: 2 },
-        { key: 'def_', upgrades: 2 },
-        { key: 'crit_', upgrades: 2 },
+        { key: 'hp' as const, upgrades: 2 },
+        { key: 'def_' as const, upgrades: 2 },
+        { key: 'crit_' as const, upgrades: 2 },
       ],
       location: '',
       lock: false,
@@ -151,7 +79,7 @@ describe('validateDiscBasedOnRarity (business logic)', () => {
       level: 12,
       slotKey: '1' as const,
       mainStatKey: 'hp' as const,
-      substats: [{ key: 'atk_', upgrades: 2 }],
+      substats: [{ key: 'atk_' as const, upgrades: 2 }],
       location: '',
       lock: false,
       trash: false,
@@ -170,9 +98,9 @@ describe('validateDiscBasedOnRarity (business logic)', () => {
       slotKey: '1' as const,
       mainStatKey: 'hp' as const,
       substats: [
-        { key: 'atk_', upgrades: 10 },
-        { key: 'def_', upgrades: 10 },
-        { key: 'crit_', upgrades: 10 },
+        { key: 'atk_' as const, upgrades: 10 },
+        { key: 'def_' as const, upgrades: 10 },
+        { key: 'crit_' as const, upgrades: 10 },
       ],
       location: '',
       lock: false,

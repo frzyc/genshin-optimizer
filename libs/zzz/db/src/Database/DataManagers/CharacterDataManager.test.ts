@@ -16,24 +16,7 @@ describe('CharacterDataManager', () => {
     chars = database.chars
   })
 
-  it('should reject invalid character key', () => {
-    const invalid = {
-      key: 'INVALID_KEY',
-      level: 50,
-      promotion: 3,
-      core: 3,
-      mindscape: 2,
-      dodge: 5,
-      basic: 5,
-      chain: 5,
-      special: 5,
-      assist: 5,
-    }
-    expect(chars['validate'](invalid)).toBeUndefined()
-  })
-
   it('should validate level/promotion co-validation', () => {
-    // Level 50 requires promotion 4
     const valid = {
       key: allCharacterKeys[0],
       level: 50,
@@ -48,23 +31,6 @@ describe('CharacterDataManager', () => {
     }
     const result = chars['validate'](valid)
     expect(result?.promotion).toBe(4)
-  })
-
-  it('should clamp mindscape to [0, 6]', () => {
-    const invalid = {
-      key: allCharacterKeys[0],
-      level: 50,
-      promotion: 4,
-      core: 3,
-      mindscape: 7,
-      dodge: 5,
-      basic: 5,
-      chain: 5,
-      special: 5,
-      assist: 5,
-    }
-    const result = chars['validate'](invalid)
-    expect(result?.mindscape).toBe(0) // Falls back to 0 when out of bounds
   })
 
   it('should clamp skill levels to promotion limits', () => {

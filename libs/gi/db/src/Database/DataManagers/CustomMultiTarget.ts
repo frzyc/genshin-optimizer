@@ -1,26 +1,93 @@
-import type { MultiOptHitModeKey } from '@genshin-optimizer/gi/consts'
+import {
+  zodEnumWithDefault,
+  zodString,
+} from '@genshin-optimizer/common/database'
+import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
+import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'
 import {
   allAdditiveReactions,
   allAmpReactionKeys,
   allInfusionAuraElementKeys,
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
-
-import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
-import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'
-import type {
-  CustomMultiTarget,
-  CustomTarget,
-} from '../../Interfaces/CustomMultiTarget'
+import { z } from 'zod'
 
 export const MAX_NAME_LENGTH = 200
 export const MAX_DESC_LENGTH = 2000
-export function initCustomMultiTarget(index: number) {
+
+// --- Schemas ---
+
+const bonusStatsSchema = z.preprocess(
+  (val) => {
+    if (typeof val !== 'object' || val === null) return {}
+    const result: Partial<Record<InputPremodKey, number>> = {}
+    for (const [key, value] of Object.entries(val)) {
+      if (
+        allInputPremodKeys.includes(key as InputPremodKey) &&
+        typeof value === 'number'
+      ) {
+        result[key as InputPremodKey] = value
+      }
+    }
+    return result
+  },
+  z.record(z.string(), z.number())
+) as z.ZodType<Partial<Record<InputPremodKey, number>>>
+
+const allReactionKeys = [
+  ...allAmpReactionKeys,
+  ...allAdditiveReactions,
+] as const
+
+const customTargetSchema = z
+  .object({
+    weight: z.number().positive().catch(1),
+    path: z.array(z.string()),
+    hitMode: zodEnumWithDefault(allMultiOptHitModeKeys, 'avgHit'),
+    reaction: z.enum(allReactionKeys).optional().catch(undefined),
+    infusionAura: z
+      .enum(allInfusionAuraElementKeys)
+      .optional()
+      .catch(undefined),
+    bonusStats: bonusStatsSchema,
+    description: zodString(),
+  })
+  .refine((ct) => ct.path[0] !== 'custom', {
+    message: 'Path cannot start with "custom"',
+  })
+
+export type CustomTarget = z.infer<typeof customTargetSchema>
+export type BonusStats = CustomTarget['bonusStats']
+
+const customMultiTargetSchema = z.object({
+  name: z
+    .string()
+    .catch('New Custom Target')
+    .transform((n) =>
+      n.length > MAX_NAME_LENGTH ? n.slice(0, MAX_NAME_LENGTH) : n
+    ),
+  description: z
+    .string()
+    .optional()
+    .catch(undefined)
+    .transform((d) =>
+      d && d.length > MAX_DESC_LENGTH ? d.slice(0, MAX_DESC_LENGTH) : d
+    ),
+  targets: z.array(customTargetSchema).catch([]),
+})
+
+export type CustomMultiTarget = z.infer<typeof customMultiTargetSchema>
+
+// --- Functions ---
+
+export function initCustomMultiTarget(index: number): CustomMultiTarget {
   return {
     name: `New Custom Target ${index}`,
+    description: undefined,
     targets: [],
   }
 }
+
 export function initCustomTarget(path: string[], multi = 1): CustomTarget {
   return {
     weight: multi,
@@ -30,80 +97,24 @@ export function initCustomTarget(path: string[], multi = 1): CustomTarget {
     description: '',
   }
 }
-function validateOptTarget(path: string[]): string[] {
-  // TODO: validate path. This function will probably need to be async
-  return path
-}
-function validateCustomTarget(ct: unknown): CustomTarget | undefined {
-  if (typeof ct !== 'object') return undefined
-  let {
-    weight,
-    path,
-    hitMode,
-    reaction,
-    infusionAura,
-    bonusStats,
-    description,
-  } = ct as CustomTarget
 
-  if (typeof weight !== 'number' || weight <= 0) weight = 1
-
-  if (!Array.isArray(path) || path[0] === 'custom') return undefined
-
-  path = validateOptTarget(path)
-
-  if (
-    !hitMode ||
-    typeof hitMode !== 'string' ||
-    !allMultiOptHitModeKeys.includes(hitMode as MultiOptHitModeKey)
-  )
-    hitMode = 'avgHit'
-
-  if (
-    reaction &&
-    !(allAmpReactionKeys as readonly string[]).includes(reaction) &&
-    !(allAdditiveReactions as readonly string[]).includes(reaction)
-  )
-    reaction = undefined
-
-  if (infusionAura && !allInfusionAuraElementKeys.includes(infusionAura))
-    infusionAura = undefined
-
-  if (!bonusStats) bonusStats = {}
-
-  if (typeof description !== 'string') description = ''
-
-  bonusStats = Object.fromEntries(
-    Object.entries(bonusStats).filter(
-      ([key, value]) =>
-        allInputPremodKeys.includes(key as InputPremodKey) &&
-        typeof value == 'number'
-    )
-  )
-
-  return {
-    weight,
-    path,
-    hitMode,
-    reaction,
-    infusionAura,
-    bonusStats,
-    description,
-  }
-}
 export function validateCustomMultiTarget(
   cmt: unknown
 ): CustomMultiTarget | undefined {
-  if (typeof cmt !== 'object' || cmt === null) return undefined
-  let { name, description, targets } = cmt as CustomMultiTarget
-  if (typeof name !== 'string') name = 'New Custom Target'
-  else if (name.length > MAX_NAME_LENGTH) name = name.slice(0, MAX_NAME_LENGTH)
-  if (typeof description !== 'string') description = undefined
-  else if (description.length > MAX_DESC_LENGTH)
-    description = description.slice(0, MAX_DESC_LENGTH)
+  const result = customMultiTargetSchema.safeParse(cmt)
+  if (!result.success) return undefined
+
+  // Filter out targets that failed the refine (path[0] === 'custom')
+  const targets = (cmt as { targets?: unknown[] }).targets
   if (!Array.isArray(targets)) return undefined
-  targets = targets
-    .map((t) => validateCustomTarget(t))
-    .filter((t): t is NonNullable<CustomTarget> => t !== undefined)
-  return { name, description, targets }
+
+  const validatedTargets = targets
+    .map((t) => customTargetSchema.safeParse(t))
+    .filter((r) => r.success)
+    .map((r) => r.data!)
+
+  return {
+    ...result.data,
+    targets: validatedTargets,
+  }
 }

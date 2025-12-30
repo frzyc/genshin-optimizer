@@ -7,8 +7,11 @@ import {
   zodClampedNumber,
   zodEnumWithDefault,
   zodFilteredArray,
+  zodNumberRecord,
   zodNumericLiteralWithDefault,
   zodString,
+  zodTypedRecord,
+  zodTypedRecordWith,
 } from './zodSchemas'
 
 describe('zodSchemas utilities', () => {
@@ -115,6 +118,73 @@ describe('zodSchemas utilities', () => {
       expect(zodArray(itemSchema, [{ id: 0 }]).parse('string')).toEqual([
         { id: 0 },
       ])
+    })
+  })
+
+  describe('zodNumberRecord', () => {
+    const keys = ['stat1', 'stat2', 'stat3'] as const
+    const schema = zodNumberRecord(keys, 0)
+
+    it('should create record with all keys and default value for missing/invalid', () => {
+      expect(schema.parse({})).toEqual({ stat1: 0, stat2: 0, stat3: 0 })
+      expect(schema.parse({ stat1: 10, stat2: 'invalid' })).toEqual({
+        stat1: 10,
+        stat2: 0,
+        stat3: 0,
+      })
+    })
+
+    it('should return record with defaults for non-object input', () => {
+      expect(schema.parse(null)).toEqual({ stat1: 0, stat2: 0, stat3: 0 })
+      expect(schema.parse('string')).toEqual({ stat1: 0, stat2: 0, stat3: 0 })
+    })
+  })
+
+  describe('zodTypedRecord', () => {
+    const keys = ['flower', 'plume', 'sands'] as const
+    const schema = zodTypedRecord(keys, z.string().optional())
+
+    it('should create object schema with all specified keys', () => {
+      const result = schema.parse({ flower: 'a', plume: 'b', sands: 'c' })
+      expect(result).toEqual({ flower: 'a', plume: 'b', sands: 'c' })
+    })
+
+    it('should apply value schema to each key', () => {
+      const result = schema.parse({ flower: 'a' })
+      expect(result).toEqual({
+        flower: 'a',
+        plume: undefined,
+        sands: undefined,
+      })
+    })
+
+    it('should infer correct type', () => {
+      type Result = z.infer<typeof schema>
+      const typeCheck: Result = { flower: 'a', plume: undefined, sands: 'c' }
+      expect(typeCheck.flower).toBe('a')
+    })
+  })
+
+  describe('zodTypedRecordWith', () => {
+    const keys = ['flower', 'plume', 'sands'] as const
+    const schema = zodTypedRecordWith(keys, (key) =>
+      z.number().catch(key === 'flower' ? 100 : 0)
+    )
+
+    it('should apply per-key schema factory', () => {
+      const result = schema.parse({})
+      expect(result).toEqual({ flower: 100, plume: 0, sands: 0 })
+    })
+
+    it('should use factory defaults only for invalid values', () => {
+      const result = schema.parse({ flower: 50, plume: 'invalid', sands: 25 })
+      expect(result).toEqual({ flower: 50, plume: 0, sands: 25 })
+    })
+
+    it('should infer correct type', () => {
+      type Result = z.infer<typeof schema>
+      const typeCheck: Result = { flower: 1, plume: 2, sands: 3 }
+      expect(typeCheck.flower).toBe(1)
     })
   })
 })

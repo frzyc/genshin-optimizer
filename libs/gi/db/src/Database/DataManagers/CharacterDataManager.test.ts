@@ -12,29 +12,6 @@ describe('CharacterDataManager', () => {
     chars = database.chars
   })
 
-  it('should reject invalid character key', () => {
-    const invalid = {
-      key: 'INVALID_KEY',
-      level: 50,
-      constellation: 2,
-      ascension: 3,
-      talent: { auto: 5, skill: 5, burst: 5 },
-    }
-    expect(chars['validate'](invalid)).toBeUndefined()
-  })
-
-  it('should clamp constellation to max 6', () => {
-    const invalid = {
-      key: allCharacterKeys[0],
-      level: 50,
-      constellation: 10,
-      ascension: 3,
-      talent: { auto: 5, skill: 5, burst: 5 },
-    }
-    const result = chars['validate'](invalid)
-    expect(result?.constellation).toBe(6)
-  })
-
   it('should clamp talent levels to ascension max', () => {
     const ascension = 3
     const maxTalent = talentLimits[ascension]

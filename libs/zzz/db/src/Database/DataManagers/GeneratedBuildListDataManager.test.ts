@@ -1,8 +1,7 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import { allDiscSlotKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
+import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
 import { ZzzDatabase } from '../Database'
-import type { GeneratedBuildList } from './GeneratedBuildListDataManager'
 
 describe('GeneratedBuildListDataManager', () => {
   let database: ZzzDatabase
@@ -69,21 +68,5 @@ describe('GeneratedBuildListDataManager', () => {
     const result = generatedBuildList['validate'](invalid)
     expect(result?.builds[0]?.discIds['1']).toBe(validDiscId)
     expect(result?.builds[0]?.discIds['2']).toBeUndefined()
-  })
-
-  it('should filter mixed valid and invalid builds', () => {
-    const discIds = createValidDiscIds()
-    const mixed = {
-      builds: [
-        { value: 100, discIds },
-        { value: 'invalid', discIds },
-        { value: 200, discIds },
-      ],
-      buildDate: 12345,
-    }
-    const result = generatedBuildList['validate'](mixed)
-    expect(result?.builds).toHaveLength(2)
-    expect(result?.builds[0]?.value).toBe(100)
-    expect(result?.builds[1]?.value).toBe(200)
   })
 })

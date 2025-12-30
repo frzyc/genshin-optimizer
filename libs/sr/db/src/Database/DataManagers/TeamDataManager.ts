@@ -1,4 +1,9 @@
 import {
+  zodBoolean,
+  zodEnumWithDefault,
+  zodString,
+} from '@genshin-optimizer/common/database'
+import {
   notEmpty,
   objKeyMap,
   pruneOrPadArray,
@@ -6,7 +11,6 @@ import {
   shallowCompareObj,
 } from '@genshin-optimizer/common/util'
 import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allRelicSlotKeys,
@@ -18,59 +22,71 @@ import {
   getConditional,
   isMember,
 } from '@genshin-optimizer/sr/formula'
-import type { RelicIds } from '../../Types'
+import { z } from 'zod'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import { validateTag } from '../tagUtil'
+import type { RelicIds } from './BuildDataManager'
+
+// --- Schemas ---
 
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
-type BuildTypeKey = (typeof buildTypeKeys)[number]
-export type TeammateDatum = {
-  characterKey: CharacterKey
 
-  buildType: BuildTypeKey
-  buildId: string
-  buildTcId: string
-  compare: boolean
-  compareType: BuildTypeKey
-  compareBuildId: string
-  compareBuildTcId: string
+const teammateDatumSchema = z.object({
+  characterKey: z.enum(allCharacterKeys),
+  buildType: zodEnumWithDefault(buildTypeKeys, 'equipped'),
+  buildId: zodString(),
+  buildTcId: zodString(),
+  compare: zodBoolean(),
+  compareType: zodEnumWithDefault(buildTypeKeys, 'equipped'),
+  compareBuildId: zodString(),
+  compareBuildTcId: zodString(),
+  optConfigId: z.string().optional(),
+})
 
-  optConfigId?: string
-}
-export type Frame = {
-  tag: Tag
-  multiplier: number
-  description?: string
-}
-export interface Team {
-  name: string
-  description: string
+export type TeammateDatum = z.infer<typeof teammateDatumSchema>
 
-  lastEdit: number
+const frameSchema = z.object({
+  tag: z.record(z.string(), z.unknown()) as z.ZodType<Tag>,
+  multiplier: z.number().catch(1),
+  description: z.string().optional(),
+})
 
-  // frames, store data as a "sparse 2d array"
-  frames: Array<Frame>
-  conditionals: Array<{
-    sheet: Sheet
-    src: Src
-    dst: Dst
-    condKey: string
-    condValues: number[] // should be the same length as `frames`
-  }>
-  bonusStats: Array<{
-    tag: Tag
-    values: number[] // should be the same length as `frames`
-  }>
-  statConstraints: Array<{
-    tag: Tag
-    values: number[] // should be the same length as `frames`
-    isMaxs: boolean[] // should be the same length as `frames`
-  }>
+export type Frame = z.infer<typeof frameSchema>
 
-  // TODO enemy base stats
-  teamMetadata: Array<TeammateDatum | undefined>
-}
+const conditionalSchema = z.object({
+  sheet: z.string() as z.ZodType<Sheet>,
+  src: z.string() as z.ZodType<Src>,
+  dst: z.string().nullable() as z.ZodType<Dst>,
+  condKey: z.string(),
+  condValues: z.array(z.number()),
+})
+
+const bonusStatSchema = z.object({
+  tag: z.record(z.string(), z.unknown()) as z.ZodType<Tag>,
+  values: z.array(z.number()),
+})
+
+const statConstraintSchema = z.object({
+  tag: z.record(z.string(), z.unknown()) as z.ZodType<Tag>,
+  values: z.array(z.number()),
+  isMaxs: z.array(z.boolean()),
+})
+
+const teamSchema = z.object({
+  name: z.string().catch('Team Name'),
+  description: zodString(),
+  lastEdit: z.number().catch(Date.now()),
+  frames: z.array(frameSchema).catch([]),
+  conditionals: z.array(conditionalSchema).catch([]),
+  bonusStats: z.array(bonusStatSchema).catch([]),
+  statConstraints: z.array(statConstraintSchema).catch([]),
+  teamMetadata: z
+    .array(teammateDatumSchema.optional())
+    .catch(range(0, 3).map(() => undefined)),
+})
+
+export type Team = z.infer<typeof teamSchema>
 
 export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   constructor(database: SroDatabase) {
@@ -85,9 +101,11 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     return `Team Name`
   }
   override validate(obj: unknown): Team | undefined {
-    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return undefined
-    let {
-      name,
+    const result = teamSchema.safeParse(obj)
+    if (!result.success) return undefined
+
+    const {
+      name: rawName,
       description,
       teamMetadata,
       lastEdit,
@@ -95,163 +113,147 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       conditionals,
       bonusStats,
       statConstraints,
-    } = obj as Team
-    if (typeof name !== 'string') name = this.newName()
-    if (typeof description !== 'string') description = ''
+    } = result.data
 
-    // Validate teamMetadata
-    {
-      // validate loadoutIds
-      if (!Array.isArray(teamMetadata))
-        teamMetadata = range(0, 3).map(() => undefined)
+    const name = rawName === 'Team Name' ? this.newName() : rawName
 
-      teamMetadata = range(0, 3).map((ind) => {
-        const teammateDatum = teamMetadata[ind]
-        if (!teammateDatum || typeof teammateDatum !== 'object')
-          return undefined
-        const { characterKey } = teammateDatum
-        let {
-          buildType,
-          buildId,
-          buildTcId,
-          compare,
-          compareType,
-          compareBuildId,
-          compareBuildTcId,
-          optConfigId,
-        } = teammateDatum
+    // Validate teamMetadata - apply business logic for database references
+    const validatedTeamMetadata = range(0, 3).map((ind) => {
+      const teammateDatum = teamMetadata[ind]
+      if (!teammateDatum) return undefined
 
-        if (!allCharacterKeys.includes(characterKey)) return undefined
-        if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
-        if (
-          typeof buildId !== 'string' ||
-          !this.database.builds.keys.includes(buildId)
-        )
-          buildId = ''
+      const {
+        characterKey,
+        buildType: rawBuildType,
+        buildId: rawBuildId,
+        buildTcId: rawBuildTcId,
+        compare,
+        compareType: rawCompareType,
+        compareBuildId: rawCompareBuildId,
+        compareBuildTcId: rawCompareBuildTcId,
+        optConfigId: rawOptConfigId,
+      } = teammateDatum
 
-        if (
-          typeof buildTcId !== 'string' ||
-          !this.database.buildTcs.keys.includes(buildTcId)
-        )
-          buildTcId = ''
+      if (!allCharacterKeys.includes(characterKey)) return undefined
 
-        if (
-          (!buildId && !buildTcId) ||
-          (buildType === 'real' && !buildId) ||
-          (buildType === 'tc' && !buildTcId)
-        )
-          buildType = 'equipped'
+      // Validate buildId exists in database
+      const buildId = this.database.builds.keys.includes(rawBuildId)
+        ? rawBuildId
+        : ''
+      const buildTcId = this.database.buildTcs.keys.includes(rawBuildTcId)
+        ? rawBuildTcId
+        : ''
 
-        if (typeof compare !== 'boolean') compare = false
-        if (!buildTypeKeys.includes(compareType)) compareType = 'equipped'
+      // Fix buildType if the referenced build doesn't exist
+      let buildType = rawBuildType
+      if (
+        (!buildId && !buildTcId) ||
+        (buildType === 'real' && !buildId) ||
+        (buildType === 'tc' && !buildTcId)
+      )
+        buildType = 'equipped'
 
-        if (
-          typeof compareBuildId !== 'string' ||
-          !this.database.builds.keys.includes(compareBuildId)
-        ) {
-          compareBuildId = ''
-          if (compareType === 'real') compareType = 'equipped'
-        }
+      // Validate compare builds
+      let compareType = rawCompareType
+      let compareBuildId = rawCompareBuildId
+      let compareBuildTcId = rawCompareBuildTcId
+      if (!this.database.builds.keys.includes(compareBuildId)) {
+        compareBuildId = ''
+        if (compareType === 'real') compareType = 'equipped'
+      }
 
-        if (
-          typeof compareBuildTcId !== 'string' ||
-          !this.database.buildTcs.keys.includes(compareBuildTcId)
-        ) {
-          compareBuildTcId = ''
-          if (compareType === 'tc') compareType = 'equipped'
-        }
+      if (!this.database.buildTcs.keys.includes(compareBuildTcId)) {
+        compareBuildTcId = ''
+        if (compareType === 'tc') compareType = 'equipped'
+      }
 
-        if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
-          optConfigId = undefined
+      // Validate optConfigId
+      const optConfigId =
+        rawOptConfigId && this.database.optConfigs.keys.includes(rawOptConfigId)
+          ? rawOptConfigId
+          : undefined
 
-        return {
-          characterKey,
-          buildType,
-          buildId,
-          buildTcId,
-          compare,
-          compareType,
-          compareBuildId,
-          compareBuildTcId,
-          optConfigId,
-        } as TeammateDatum
-      })
-    }
+      return {
+        characterKey,
+        buildType,
+        buildId,
+        buildTcId,
+        compare,
+        compareType,
+        compareBuildId,
+        compareBuildTcId,
+        optConfigId,
+      } as TeammateDatum
+    })
 
-    if (typeof lastEdit !== 'number') lastEdit = Date.now()
-
-    if (!Array.isArray(frames)) frames = []
-    frames = frames
+    // Validate frames
+    const validatedFrames = frames
       .map((f) => {
-        const { tag } = f
-        let { multiplier, description } = f
-        if (!validateTag(tag)) return undefined
-        if (typeof multiplier !== 'number' || multiplier === 0) multiplier = 1
-        if (typeof description !== 'string') description = undefined
-
-        return { tag, multiplier, description }
+        const { tag, description } = f
+        const multiplier = f.multiplier === 0 ? 1 : f.multiplier
+        if (!validateTag(tag as Tag)) return undefined
+        return { tag: tag as Tag, multiplier, description }
       })
       .filter(notEmpty)
-    const framesLength = frames.length
-    if (!framesLength) {
-      conditionals = []
-      bonusStats = []
-    } else {
-      if (!Array.isArray(conditionals)) conditionals = []
-      const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
-      conditionals = conditionals.filter(
-        ({ sheet, condKey, src, dst, condValues }) => {
-          if (!isMember(src) || !(dst === null || isMember(dst))) return false
-          const cond = getConditional(sheet, condKey)
-          if (!cond) return false
 
-          // validate uniqueness
-          const hash = `${sheet}:${condKey}:${src}:${dst}`
-          if (hashList.includes(hash)) return false
-          hashList.push(hash)
+    const framesLength = validatedFrames.length
 
-          // validate values
-          if (!Array.isArray(condValues)) return false
-          pruneOrPadArray(condValues, framesLength, 0)
-          condValues = condValues.map((v) => correctConditionalValue(cond, v))
-          // If all values are false, remove the conditional
-          if (condValues.every((v) => !v)) return false
+    // Validate conditionals, bonusStats, statConstraints based on frames length
+    let validatedConditionals: Team['conditionals'] = []
+    let validatedBonusStats: Team['bonusStats'] = []
+    let validatedStatConstraints: Team['statConstraints'] = []
 
+    if (framesLength > 0) {
+      const hashList: string[] = []
+      validatedConditionals = conditionals.filter((cond) => {
+        const { sheet, condKey, src, dst, condValues } = cond
+        if (!isMember(src as Src)) return false
+        if (dst !== null && !isMember(dst)) return false
+        const condDef = getConditional(sheet as Sheet, condKey)
+        if (!condDef) return false
+
+        const hash = `${sheet}:${condKey}:${src}:${dst}`
+        if (hashList.includes(hash)) return false
+        hashList.push(hash)
+
+        if (!Array.isArray(condValues)) return false
+        pruneOrPadArray(condValues, framesLength, 0)
+        const corrected = condValues.map((v) =>
+          correctConditionalValue(condDef, v)
+        )
+        if (corrected.every((v) => !v)) return false
+
+        return true
+      })
+
+      validatedBonusStats = bonusStats.filter(({ tag, values }) => {
+        if (!validateTag(tag as Tag)) return false
+        if (!Array.isArray(values)) return false
+        pruneOrPadArray(values, framesLength, 0)
+        return true
+      })
+
+      validatedStatConstraints = statConstraints.filter(
+        ({ tag, values, isMaxs }) => {
+          if (!validateTag(tag as Tag)) return false
+          if (!Array.isArray(values)) return false
+          pruneOrPadArray(values, framesLength, 0)
+          if (!Array.isArray(isMaxs)) return false
+          pruneOrPadArray(isMaxs, framesLength, false)
           return true
         }
       )
-
-      if (!Array.isArray(bonusStats)) bonusStats = []
-      bonusStats = bonusStats.filter(({ tag, values }) => {
-        if (!validateTag(tag)) return false
-        if (!Array.isArray(values)) return false
-        pruneOrPadArray(values, framesLength, 0)
-        return true
-      })
-
-      if (!Array.isArray(statConstraints)) statConstraints = []
-      statConstraints = statConstraints.filter(({ tag, values, isMaxs }) => {
-        if (!validateTag(tag)) return false
-        if (!Array.isArray(values)) return false
-        pruneOrPadArray(values, framesLength, 0)
-        if (!Array.isArray(isMaxs)) return false
-        pruneOrPadArray(isMaxs, framesLength, false)
-        return true
-      })
     }
-    // TODO: validate frames
-
-    // TODO: validate bonusStats
 
     return {
       name,
       description,
-      teamMetadata: teamMetadata,
+      teamMetadata: validatedTeamMetadata,
       lastEdit,
-      frames,
-      conditionals,
-      bonusStats,
-      statConstraints,
+      frames: validatedFrames,
+      conditionals: validatedConditionals,
+      bonusStats: validatedBonusStats,
+      statConstraints: validatedStatConstraints,
     }
   }
 
@@ -273,51 +275,6 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     super.clear()
   }
 
-  //TODO: dup + i/o
-  // duplicate(teamId: string): string {
-  //   const teamRaw = this.database.teams.get(teamId)
-  //   if (!teamRaw) return ''
-  //   const team = deepClone(teamRaw)
-  //   team.name = `${team.name} (duplicated)`
-  //   return this.new(team)
-  // }
-  // export(teamId: string): object {
-  //   const team = this.database.teams.get(teamId)
-  //   if (!team) return {}
-  //   const { loadoutMetadata, ...rest } = team
-  //   return {
-  //     ...rest,
-  //     loadoutMetadata: loadoutMetadata.map(
-  //       (loadoutMetadatum) =>
-  //         loadoutMetadatum?.loadoutId &&
-  //         this.database.loadouts.export(loadoutMetadatum?.loadoutId)
-  //     ),
-  //   }
-  // }
-  // import(data: object): string {
-  //   const { teamMetadata: loadoutMetadata, ...rest } = data as Team & {
-  //     loadoutMetadata: object[]
-  //   }
-  //   const id = this.generateKey()
-  //   if (
-  //     !this.set(id, {
-  //       ...rest,
-  //       name: `${rest.name ?? ''} (Imported)`,
-  //       teamMetadata: loadoutMetadata.map(
-  //         (obj) =>
-  //           obj && {
-  //             loadoutId: this.database.loadouts.import(obj),
-  //           }
-  //       ),
-  //     } as Team)
-  //   )
-  //     return ''
-  //   return id
-  // }
-
-  /**
-   * Note: this doesnt return any ids (all undefined) when the current teamchar is using a TC Build.
-   */
   getTeamActiveBuild({ characterKey, buildType, buildId }: TeammateDatum): {
     relicIds: RelicIds
     lightConeId: string | undefined
@@ -442,7 +399,6 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         })
       } else {
         const cond = team.conditionals[condIndex]
-        // Check if the value is the same, return false to not propagate the update.
         if (
           cond.sheet === sheet &&
           cond.src === src &&
@@ -460,13 +416,6 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       return team
     })
   }
-  /**
-   *
-   * @param teamId
-   * @param tag
-   * @param value number or null, null to delete
-   * @param frameIndex
-   */
   setBonusStat(
     teamId: string,
     tag: Tag,
@@ -489,14 +438,6 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       }
     })
   }
-  /**
-   *
-   * @param teamId
-   * @param tag
-   * @param value number or null, null to delete
-   * @param isMax
-   * @param frameIndex
-   */
   setStatConstraint(
     teamId: string,
     tag: Tag,
