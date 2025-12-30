@@ -4,11 +4,13 @@ import Alice from './sheets/Alice'
 import Anby from './sheets/Anby'
 import Anton from './sheets/Anton'
 import AstraYao from './sheets/AstraYao'
+import Banyue from './sheets/Banyue'
 import Ben from './sheets/Ben'
 import Billy from './sheets/Billy'
 import Burnice from './sheets/Burnice'
 import Caesar from './sheets/Caesar'
 import Corin from './sheets/Corin'
+import Dialyn from './sheets/Dialyn'
 import Ellen from './sheets/Ellen'
 import Evelyn from './sheets/Evelyn'
 import Grace from './sheets/Grace'
@@ -39,9 +41,11 @@ import Soukaku from './sheets/Soukaku'
 import Trigger from './sheets/Trigger'
 import Vivian from './sheets/Vivian'
 import Yanagi from './sheets/Yanagi'
+import YeShunguang from './sheets/YeShunguang'
 import Yidhari from './sheets/Yidhari'
 import Yixuan from './sheets/Yixuan'
 import Yuzuha from './sheets/Yuzuha'
+import Zhao from './sheets/Zhao'
 import ZhuYuan from './sheets/ZhuYuan'
 
 const data: TagMapNodeEntries[] = [
@@ -49,11 +53,13 @@ const data: TagMapNodeEntries[] = [
   Anby,
   Anton,
   AstraYao,
+  Banyue,
   Ben,
   Billy,
   Burnice,
   Caesar,
   Corin,
+  Dialyn,
   Ellen,
   Evelyn,
   Grace,
@@ -84,9 +90,11 @@ const data: TagMapNodeEntries[] = [
   Trigger,
   Vivian,
   Yanagi,
+  YeShunguang,
   Yidhari,
   Yixuan,
   Yuzuha,
+  Zhao,
   ZhuYuan,
 ]
 export default data.flat()

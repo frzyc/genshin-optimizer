@@ -41,6 +41,7 @@ export const characterIdMap = {
   '1311': 'AstraYao',
   '1321': 'Evelyn',
   '1331': 'Vivian',
+  '1341': 'Zhao',
   '1351': 'Pulchra',
   '1361': 'Trigger',
   '1371': 'Yixuan',
@@ -49,9 +50,12 @@ export const characterIdMap = {
   '1401': 'Alice',
   '1411': 'Yuzuha',
   '1421': 'PanYinhu',
+  '1431': 'YeShunguang',
   '1441': 'Manato',
   '1451': 'Lucia',
   '1461': 'Seed',
+  '1471': 'Banyue',
+  '1481': 'Dialyn',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {

@@ -60,5 +60,11 @@
         }
       }
     }
+  },
+  "Hexerei": {
+    "name": "Hexerei - Nghi Thức Bí Mật",
+    "desc": {
+      "0": "Nhân Vật Hexerei trong đội hiện tại đã được cường hóa."
+    }
   }
 }

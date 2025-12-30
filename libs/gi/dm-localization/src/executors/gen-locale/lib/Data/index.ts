@@ -84,6 +84,10 @@ export const mapHashData = {
         ],
       },
     },
+    Hexerei: {
+      name: 1797652852,
+      desc: [838432396, 'paragraph'],
+    },
   },
   statKey: {
     hp: 2404061249,

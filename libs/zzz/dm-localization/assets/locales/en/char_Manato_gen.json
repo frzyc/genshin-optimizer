@@ -164,9 +164,8 @@
         "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
         "1": "Unleash multiple slashes at enemies ahead, dealing <ct color=#FF5521>Fire DMG</ct>.",
         "2": "Repeated presses allow up to 7 extra consecutive slashes.",
-        "3": "During the consecutive slashes, if Manato's HP is above 30%, 2% of Max HP is consumed.",
-        "4": "Character is invulnerable when activating this skill.",
-        "5": "The DMG taken during the consecutive slashes is reduced by 60%, and Anti-Interrupt Level is increased."
+        "3": "While chaining slashes, if Manato's HP is above 30%, 2% of Max HP is consumed.",
+        "4": "Character is invulnerable while using this skill."
       },
       "params": [
         " ",
@@ -180,7 +179,7 @@
       {
         "0": "Manato gains extra Sheer Force based on his Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
         "1": "All <ct color=#FF5521>Fire DMG</ct> Manato deals is Sheer DMG, ignoring enemy DEF and using his Sheer Force stat as the DMG Multiplier.",
-        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes {EXCEL:5} <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
+        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes 3.3 <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
         "3": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's <ct color=#FFFFFF>Basic Attacks</ct> are enhanced, and he can use <ct color=#FFFFFF>EX Special Attack: Return to Ashes - Fall</ct>.",
         "4": "When consuming HP during <ct color=#FFFFFF>Basic Attack: Blazing Wind - Misty Slash</ct> or during the consecutive slashes from an <ct color=#FFFFFF>Assist Follow-Up</ct>, that attack's CRIT DMG increases by <ct color=#2BAD00>25%</ct>, and the Adrenaline Generation Rate increases by 100%.",
         "5": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's CRIT Rate increases by 10%, and his <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>10%</ct>."
@@ -188,7 +187,7 @@
       {
         "0": "Manato gains extra Sheer Force based on his Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
         "1": "All <ct color=#FF5521>Fire DMG</ct> Manato deals is Sheer DMG, ignoring enemy DEF and using his Sheer Force stat as the DMG Multiplier.",
-        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes {EXCEL:5} <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
+        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes 3.3 <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
         "3": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's <ct color=#FFFFFF>Basic Attacks</ct> are enhanced, and he can use <ct color=#FFFFFF>EX Special Attack: Return to Ashes - Fall</ct>.",
         "4": "When consuming HP during <ct color=#FFFFFF>Basic Attack: Blazing Wind - Misty Slash</ct> or during the consecutive slashes from an <ct color=#FFFFFF>Assist Follow-Up</ct>, that attack's CRIT DMG increases by <ct color=#2BAD00>29.2%</ct>, and the Adrenaline Generation Rate increases by 100%.",
         "5": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's CRIT Rate increases by 10%, and his <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>11.7%</ct>."
@@ -196,7 +195,7 @@
       {
         "0": "Manato gains extra Sheer Force based on his Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
         "1": "All <ct color=#FF5521>Fire DMG</ct> Manato deals is Sheer DMG, ignoring enemy DEF and using his Sheer Force stat as the DMG Multiplier.",
-        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes {EXCEL:5} <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
+        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes 3.3 <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
         "3": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's <ct color=#FFFFFF>Basic Attacks</ct> are enhanced, and he can use <ct color=#FFFFFF>EX Special Attack: Return to Ashes - Fall</ct>.",
         "4": "When consuming HP during <ct color=#FFFFFF>Basic Attack: Blazing Wind - Misty Slash</ct> or during the consecutive slashes from an <ct color=#FFFFFF>Assist Follow-Up</ct>, that attack's CRIT DMG increases by <ct color=#2BAD00>33.3%</ct>, and the Adrenaline Generation Rate increases by 100%.",
         "5": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's CRIT Rate increases by 10%, and his <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>13.3%</ct>."
@@ -204,7 +203,7 @@
       {
         "0": "Manato gains extra Sheer Force based on his Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
         "1": "All <ct color=#FF5521>Fire DMG</ct> Manato deals is Sheer DMG, ignoring enemy DEF and using his Sheer Force stat as the DMG Multiplier.",
-        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes {EXCEL:5} <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
+        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes 3.3 <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
         "3": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's <ct color=#FFFFFF>Basic Attacks</ct> are enhanced, and he can use <ct color=#FFFFFF>EX Special Attack: Return to Ashes - Fall</ct>.",
         "4": "When consuming HP during <ct color=#FFFFFF>Basic Attack: Blazing Wind - Misty Slash</ct> or during the consecutive slashes from an <ct color=#FFFFFF>Assist Follow-Up</ct>, that attack's CRIT DMG increases by <ct color=#2BAD00>37.5%</ct>, and the Adrenaline Generation Rate increases by 100%.",
         "5": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's CRIT Rate increases by 10%, and his <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>15%</ct>."
@@ -212,7 +211,7 @@
       {
         "0": "Manato gains extra Sheer Force based on his Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
         "1": "All <ct color=#FF5521>Fire DMG</ct> Manato deals is Sheer DMG, ignoring enemy DEF and using his Sheer Force stat as the DMG Multiplier.",
-        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes {EXCEL:5} <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
+        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes 3.3 <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
         "3": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's <ct color=#FFFFFF>Basic Attacks</ct> are enhanced, and he can use <ct color=#FFFFFF>EX Special Attack: Return to Ashes - Fall</ct>.",
         "4": "When consuming HP during <ct color=#FFFFFF>Basic Attack: Blazing Wind - Misty Slash</ct> or during the consecutive slashes from an <ct color=#FFFFFF>Assist Follow-Up</ct>, that attack's CRIT DMG increases by <ct color=#2BAD00>41.7%</ct>, and the Adrenaline Generation Rate increases by 100%.",
         "5": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's CRIT Rate increases by 10%, and his <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>16.7%</ct>."
@@ -220,7 +219,7 @@
       {
         "0": "Manato gains extra Sheer Force based on his Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
         "1": "All <ct color=#FF5521>Fire DMG</ct> Manato deals is Sheer DMG, ignoring enemy DEF and using his Sheer Force stat as the DMG Multiplier.",
-        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes {EXCEL:5} <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
+        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes 3.3 <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
         "3": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's <ct color=#FFFFFF>Basic Attacks</ct> are enhanced, and he can use <ct color=#FFFFFF>EX Special Attack: Return to Ashes - Fall</ct>.",
         "4": "When consuming HP during <ct color=#FFFFFF>Basic Attack: Blazing Wind - Misty Slash</ct> or during the consecutive slashes from an <ct color=#FFFFFF>Assist Follow-Up</ct>, that attack's CRIT DMG increases by <ct color=#2BAD00>45.8%</ct>, and the Adrenaline Generation Rate increases by 100%.",
         "5": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's CRIT Rate increases by 10%, and his <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>18.3%</ct>."
@@ -228,7 +227,7 @@
       {
         "0": "Manato gains extra Sheer Force based on his Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
         "1": "All <ct color=#FF5521>Fire DMG</ct> Manato deals is Sheer DMG, ignoring enemy DEF and using his Sheer Force stat as the DMG Multiplier.",
-        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes {EXCEL:5} <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
+        "2": "When Manato uses <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct> or a <ct color=#FFFFFF>Defensive Assist</ct>, he accumulates <ct color=#FFFFFF>Blazing Heart</ct>, up to a maximum of 100 points. At 75 <ct color=#FFFFFF>Blazing Heart</ct>, Manato enters the <ct color=#FFFFFF>Molten Edge</ct> state. While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato consumes 3.3 <ct color=#FFFFFF>Blazing Heart</ct> per second. When <ct color=#FFFFFF>Blazing Heart</ct> is fully depleted, he exits <ct color=#FFFFFF>Molten Edge</ct>.",
         "3": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's <ct color=#FFFFFF>Basic Attacks</ct> are enhanced, and he can use <ct color=#FFFFFF>EX Special Attack: Return to Ashes - Fall</ct>.",
         "4": "When consuming HP during <ct color=#FFFFFF>Basic Attack: Blazing Wind - Misty Slash</ct> or during the consecutive slashes from an <ct color=#FFFFFF>Assist Follow-Up</ct>, that attack's CRIT DMG increases by <ct color=#2BAD00>50%</ct>, and the Adrenaline Generation Rate increases by 100%.",
         "5": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato's CRIT Rate increases by 10%, and his <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>20%</ct>."
@@ -245,7 +244,7 @@
   "mindscapes": {
     "1": {
       "name": "Drifter's Rules of Survival",
-      "desc": "As Manato's HP decreases, his HP lost is accumulated. Each 1% of his Max HP accumulated increases the <ct color=#FF5521>Fire DMG</ct> of <ct color=#FFFFFF>Assist Follow-Ups</ct> and <ct color=#FFFFFF>Basic Attacks</ct> by 0.4%, up to a max of 20%.",
+      "desc": "Whenever Manato loses HP, the amount of HP lost is tallied. Each 1% of his Max HP tallied increases the <ct color=#FF5521>Fire DMG</ct> of <ct color=#FFFFFF>Assist Follow-Ups</ct> and <ct color=#FFFFFF>Basic Attacks</ct> by 0.4%, up to a max of 20%.",
       "flavor": {
         "0": "Unfortunate children are all alike.",
         "1": "The once-kind voices, the warm lights, the joyful promises... all vanished without a farewell. Being formless, even the sharpest fangs could not hold them, nor the sharpest claws grasp them.",
@@ -253,13 +252,13 @@
       }
     },
     "2": {
-      "name": "Drifter's Rules of Survival",
+      "name": "Day & Night, Kitchen & Love",
       "desc": "While in the <ct color=#FFFFFF>Molten Edge</ct> state, Manato ignores 8% of a target's <ct color=#FF5521>Fire RES</ct>. After being hit by an enemy while using <ct color=#FFFFFF>Special Attack: Return to Ashes</ct> or <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct>, press <IconNormal /> to trigger an <ct color=#FFFFFF>Assist Follow-Up</ct>.",
       "flavor": {
-        "0": "Perhaps a peaceful family is like this — Manato, A-Cing and A-Yuet all think of themselves as the fortunate \"child picked up and brought home.\"",
-        "1": "If there's anything left worth arguing about, it's probably just \"who should eat the last piece of vegetable.\"",
+        "0": "Perhaps this is what a peaceful family is — Manato, A-Cing, and A-Yuet all think of themselves as the fortunate \"child picked up and brought home.\"",
+        "1": "If there's anything left worth arguing about, it's probably just \"who should eat the last bit of vegetables.\"",
         "2": "\"It doesn't taste good? I'll ask at Yum Cha Sin if maybe I made a mistake somewhere...\"",
-        "3": "\"...Trade secret?! But last time... I just stood there while the chef told me everything.\""
+        "3": "\"...Trade secret?! But last time... I just stood there and the chef told me everything.\""
       }
     },
     "3": {
@@ -267,35 +266,42 @@
       "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
       "flavor": {
         "0": "Getting established on a forum starts with a memorable nickname — everyone thinks they're bad at it, but for a dog Thiren who sometimes has to stay back for make-up exams in literature, it's especially tough.",
-        "1": "\"...You already know it, don’t you? It's, uh... ahem, SailumeSadLoneGhost\"",
-        "2": "\"—You heard me perfectly well!\"",
+        "1": "\"...You already know it, don't you? It's, uh... ahem, SailumeSadLoneGhost\"",
+        "2": "\"—You heard me!\"",
         "3": "\"Damn it. One of these days, I'm changing it to 'Mention My Old Name Again and I'll See You in the Hollow.'\""
       }
     },
     "4": {
       "name": "Childhood Oath",
-      "desc": "Max HP increases by 8%. During <ct color=#FFFFFF>Special Attack: Return to Ashes</ct> and <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct>, when Manato takes fatal DMG, he remains in battle, with his HP not dropping below 1.",
+      "desc": "Max HP increases by 8%. During <ct color=#FFFFFF>Special Attack: Return to Ashes</ct> and <ct color=#FFFFFF>Special Attack: Return to Ashes - Sacrifice</ct>, when Manato takes fatal DMG, he remains in battle, with his HP not dropping below 1. This effect can trigger once every 10s.",
       "flavor": {
-        "0": "Maybe every teenager imagines themselves as a lone wolf with cold eyes... but Masato had an edge in that regard.",
-        "1": "If not for the appearance of the drowned ideals, he could have gone on pretending nothing had ever happened, just like everyone else.",
+        "0": "Maybe every teenager imagines themselves as a lone wolf with cold eyes... but Manato had an edge in that regard.",
+        "1": "If not for the drowned ideals, he could have gone on pretending nothing had ever happened, just like everyone else.",
         "2": "\"Like I said, that was just how I thought when I was eight—\"",
-        "3": "\"So this is what a 'friend' is... You didn't treat me like I was fragile, but you didn't treat me like a person either.\""
+        "3": "\"So this is what a 'friend' is... You didn't treat me like I was fragile, but sometimes you don't treat me like a person either.\""
       }
     },
     "5": {
       "name": "Lone Shadow Returns to the Pack",
       "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
       "flavor": {
-        "0": "In truth, despite the barrier his appearance put up, Masato was popular with everyone.",
-        "1": "Some made friends with him, some looked to him for shelter, and some... tried to rope him into advertising.",
+        "0": "In truth, despite the barrier his appearance put up, Manato was popular with everyone.",
+        "1": "Some made friends with him, some looked to him for protection, and some... tried to rope him into advertising.",
         "2": "\"Sorry, I'm probably not the right choice to promote your shop.\"",
-        "3": "\"As for 'bench pressing,' I've never done it — unless you're referring to... being forced down by Ethereals and pushing up my greatsword to keep their claws off me?\""
+        "3": "\"As for 'bench pressing,' I've never done it — unless you're referring to... being pinned by Ethereals and pushing up my greatsword to keep their claws off me?\""
       }
     },
     "6": {
       "name": "Beyond Dreams of the Past",
       "desc": "When <ct color=#FFFFFF>Special Attack: Return to Ashes</ct> hits a Stunned enemy, Manato gains 75 Blazing Heart and 4 stacks of Remnant Flame, and pressing <IconNormal /> will launch an <ct color=#FFFFFF>Assist Follow-Up</ct>. This Remnant Flame effect can trigger once every 20s. When his <ct color=#FFFFFF>Assist Follow-Up</ct> hits an enemy, Manato's <ct color=#FF5521>Fire DMG</ct> increases by 3% for 8s, stacking up to 5 times. Repeated triggers reset the duration.",
-      "flavor": ""
+      "flavor": {
+        "0": "Manato set aside the dream of lone courage and embraced the friends he held dear.",
+        "1": "Of course, these friends could still cause him trouble, like at Waifei Peninsula's specialty soup shop.",
+        "2": "\"When I said I'd cover the rear, I didn't mean while drinking coconut chicken soup.\"",
+        "3": "\"Then how come I'm the one on the front lines when it's scorpion soup?\"",
+        "4": "...But he charged ahead anyway."
+      }
     }
-  }
+  },
+  "potential": {}
 }

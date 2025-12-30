@@ -1,8 +1,13 @@
 {
   "name": "Grill O'Wisp",
-  "desc": "...",
+  "desc": {
+    "0": "Under the stars at midnight, the artisan raised this tool, awakening slumbering flames. Amid the misty dark, it was the lone flame that refused to die.",
+    "1": "Its body gleamed black with a crimson sheen, etched with cryptic markings. Was it an ancient relic, a mere toy, or a legendary weapon? Only its wielder knew the truth.",
+    "2": "",
+    "3": "<ct color=#959595>\"It's nothing more than a fire-starting tool... but I can't deny it's useful.\" —So he would say, each time someone guessed it served some impressive function.</ct>"
+  },
   "desc2": "Equip to increase Rupture Agents' combat capabilities",
-  "desc3": "...",
+  "desc3": "A flame both fierce and faithful, burning without end.",
   "phase": "Caged Fire",
   "phaseDescs": [
     "The equipper's <ct color=#FF5521>Fire DMG</ct> increases by <ct color=#2BAD00>15%</ct>. When the equipper's HP decreases, their CRIT Rate increases by <ct color=#2BAD00>15%</ct> for 5s.",

@@ -133,6 +133,16 @@
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },
+  "lockedPassive": {
+    "name": "Veillée de la sorcière : Déferlement de foudre",
+    "description": {
+      "0": "Après avoir terminé le <strong>devoir de la sorcière « De la petite meute »</strong>, Razor devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
+      "1": "De plus, le déchaînement élémentaire <strong>Croc éclair</strong> de Razor est renforcé : les DGT infligés par le <strong>loup de tonnerre</strong> augmentent d'une valeur équivalant à 70 % de l'ATQ de Razor.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei : Rituel secret</strong>",
+      "4": "Si la quantité de sceaux Électro de la compétence élémentaire <strong>Griffe et tonnerre</strong> dépasse la limite pendant la durée du loup de tonnerre invoqué par le déchaînement élémentaire <strong>Croc éclair</strong>, le loup de tonnerre déclenche un éclair sur les ennemis à proximité, infligeant des DGT Électro de zone d'une valeur équivalant à 150 % de l'ATQ de Razor et restaurant 7 pts d'énergie élémentaire à Razor. Cet effet peut être déclenché une fois toutes les secondes."
+    }
+  },
   "constellation1": {
     "name": "Nature du loup",
     "description": {
@@ -170,6 +180,12 @@
     "description": {
       "0": "Toutes les 10 s, l'arme de Razor se charge d'énergie électrique pour infliger lors de la prochaine attaque normale des <electro>DGT Électro</electro> équivalant à 100 % de l'ATQ.",
       "1": "Chaque ennemi touché confère à Razor un sceau Électro de <strong>Griffe et tonnerre</strong> tant que <strong>Croc éclair</strong> n'est pas actif."
+    },
+    "upgradedDescription": {
+      "0": "Toutes les 10 s, l'arme de Razor se charge d'énergie électrique pour infliger des <electro>DGT Électro</electro> d'une valeur équivalant à 100 % de l'ATQ de Razor lors de la prochaine attaque normale.",
+      "1": "Chaque ennemi touché confère à Razor 3 sceaux Électro de la compétence élémentaire <strong>Griffe et tonnerre</strong> tant que <strong>Croc éclair</strong> n'est pas actif.",
+      "2": "De plus, lorsque Razor gagne un sceau Électro grâce à sa compétence élémentaire <strong>Griffe et tonnerre</strong>, il obtient 3 sceaux Électro à la place.",
+      "3": "Pendant 15 s après avoir consommé un sceau Électro, le taux CRIT de Razor augmente de 10 % et ses DGT CRIT augmentent de 50 %."
     }
   }
 }

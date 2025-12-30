@@ -1,7 +1,7 @@
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { <% sheet %> } from '@genshin-optimizer/zzz/formula'
+import { <%= sheet %> } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import { trans } from '../../util'
 import { PhaseWrapper } from '../components'
@@ -18,12 +18,12 @@ const icon = wengineAsset(key, 'icon')
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const cond = <% sheet %>.conditionals
+const cond = <%= sheet %>.conditionals
 // TODO: Cleanup
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const buff = <% sheet %>.buffs
+const buff = <%= sheet %>.buffs
 
 const sheet: UISheetElement = {
   title: chg('phase'),

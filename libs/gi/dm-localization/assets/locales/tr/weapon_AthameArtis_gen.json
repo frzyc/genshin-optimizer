@@ -1,0 +1,29 @@
+{
+  "name": "Karanlık Ayin Kılıcı",
+  "description": {
+    "0": "Küçük cadının hikayesinde Gündüz Kralı tarafından cesur kahramana hediye edilen değerli bir kılıç. Cadı bu kılıcı alıp kahramanı bizzat yenmiştir."
+  },
+  "passiveName": "Gündüz Kralı'nın Işıltısı",
+  "passiveDescription": {
+    "0": {
+      "0": "Element Patlamalarından gelen Kritik Hasar <cryo>%16</cryo> artar. Element Patlaması bir düşmana isabet ettiğinde Gün Işığı Kılıcı etkisi kazanılır: Saldırı <cryo>%20</cryo> artar. Kuşanan karakter dışında yakındaki aktif grup üyelerinin 3 saniyeliğine Saldırıları <cryo>%16</cryo> artar.",
+      "1": "Ayrıca grup Cadılık: Saklı Ayin etkilerine sahipken Gün Işığı Kılıcı etkisi %75 daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Element Patlamalarından gelen Kritik Hasar <cryo>%20</cryo> artar. Element Patlaması bir düşmana isabet ettiğinde Gün Işığı Kılıcı etkisi kazanılır: Saldırı <cryo>%25</cryo> artar. Kuşanan karakter dışında yakındaki aktif grup üyelerinin 3 saniyeliğine Saldırıları <cryo>%20</cryo> artar.",
+      "1": "Ayrıca grup Cadılık: Saklı Ayin etkilerine sahipken Gün Işığı Kılıcı etkisi %75 daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Element Patlamalarından gelen Kritik Hasar <cryo>%24</cryo> artar. Element Patlaması bir düşmana isabet ettiğinde Gün Işığı Kılıcı etkisi kazanılır: Saldırı <cryo>%30</cryo> artar. Kuşanan karakter dışında yakındaki aktif grup üyelerinin 3 saniyeliğine Saldırıları <cryo>%24</cryo> artar.",
+      "1": "Ayrıca grup Cadılık: Saklı Ayin etkilerine sahipken Gün Işığı Kılıcı etkisi %75 daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Element Patlamalarından gelen Kritik Hasar <cryo>%28</cryo> artar. Element Patlaması bir düşmana isabet ettiğinde Gün Işığı Kılıcı etkisi kazanılır: Saldırı <cryo>%35</cryo> artar. Kuşanan karakter dışında yakındaki aktif grup üyelerinin 3 saniyeliğine Saldırıları <cryo>%28</cryo> artar.",
+      "1": "Ayrıca grup Cadılık: Saklı Ayin etkilerine sahipken Gün Işığı Kılıcı etkisi %75 daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Element Patlamalarından gelen Kritik Hasar <cryo>%32</cryo> artar. Element Patlaması bir düşmana isabet ettiğinde Gün Işığı Kılıcı etkisi kazanılır: Saldırı <cryo>%40</cryo> artar. Kuşanan karakter dışında yakındaki aktif grup üyelerinin 3 saniyeliğine Saldırıları <cryo>%32</cryo> artar.",
+      "1": "Ayrıca grup Cadılık: Saklı Ayin etkilerine sahipken Gün Işığı Kılıcı etkisi %75 daha artar. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    }
+  }
+}

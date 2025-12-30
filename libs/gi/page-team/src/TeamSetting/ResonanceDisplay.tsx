@@ -6,10 +6,22 @@ import {
 import type { Team } from '@genshin-optimizer/gi/db'
 import type { TeamCharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import { TeamCharacterContext, useTeam } from '@genshin-optimizer/gi/db-ui'
-import { resonanceSheets } from '@genshin-optimizer/gi/sheets'
+import type { IResonance } from '@genshin-optimizer/gi/sheets'
+import {
+  hexereiSheet,
+  moonsignSheet,
+  resonanceSheets,
+} from '@genshin-optimizer/gi/sheets'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import { DataContext, DocumentDisplay } from '@genshin-optimizer/gi/ui'
-import { CardContent, CardHeader, Divider, Typography } from '@mui/material'
+import { tally } from '@genshin-optimizer/gi/wr'
+import {
+  CardContent,
+  CardHeader,
+  Divider,
+  Stack,
+  Typography,
+} from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -22,11 +34,6 @@ export function ResonanceDisplay({
   team: Team
   dataContextValue?: dataContextObj
 }) {
-  const { t } = useTranslation('page_character')
-
-  const { loadoutData } = useTeam(teamId)!
-  const teamCount = loadoutData.reduce((a, t) => a + (t ? 1 : 0), 0)
-
   // This context is only used by the ResonanceDisplay, which needs to attach conditional values to team data.
   const teamCharContextObj = useMemo(
     () =>
@@ -38,6 +45,31 @@ export function ResonanceDisplay({
       }) as TeamCharacterContextObj,
     [team, teamId]
   )
+
+  return (
+    dataContextValue && (
+      <DataContext.Provider value={dataContextValue}>
+        <TeamCharacterContext.Provider value={teamCharContextObj}>
+          <Stack gap={1}>
+            <ElementalResonance teamId={teamId} />
+            <Moonsign />
+            <Hexerei />
+          </Stack>
+        </TeamCharacterContext.Provider>
+      </DataContext.Provider>
+    )
+  )
+}
+
+function ElementalResonance({
+  teamId,
+}: {
+  teamId: string
+}) {
+  const { t } = useTranslation('page_character')
+
+  const { loadoutData } = useTeam(teamId)!
+  const teamCount = loadoutData.reduce((a, t) => a + (t ? 1 : 0), 0)
 
   return (
     <CardThemed bgt="light">
@@ -58,29 +90,86 @@ export function ResonanceDisplay({
         titleTypographyProps={{ variant: 'h6' }}
       />
 
-      {dataContextValue && (
-        <>
-          <Divider />
-          <CardContent
-            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-          >
-            <DataContext.Provider value={dataContextValue}>
-              <TeamCharacterContext.Provider value={teamCharContextObj}>
-                <Content />
-              </TeamCharacterContext.Provider>
-            </DataContext.Provider>
-          </CardContent>
-        </>
-      )}
+      <>
+        <Divider />
+        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+          <TeamResonanceDisplay resonances={resonanceSheets} />
+        </CardContent>
+      </>
     </CardThemed>
   )
 }
-function Content() {
+
+function Moonsign() {
+  const { t } = useTranslation('sheet_gen')
+
   const { data } = useContext(DataContext)
-  const hasReso = resonanceSheets.some((res) => res.canShow(data))
+  const moonsignCount = data.get(tally.moonsign).value
+
+  return (
+    <CardThemed bgt="light">
+      <CardHeader
+        title={
+          <span>
+            {t('moonsign')}{' '}
+            <strong>
+              <ColorText color={moonsignCount >= 2 ? 'success' : 'warning'}>
+                ({moonsignCount}/2)
+              </ColorText>
+            </strong>
+          </span>
+        }
+        titleTypographyProps={{ variant: 'h6' }}
+      />
+
+      <>
+        <Divider />
+        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+          <TeamResonanceDisplay resonances={[moonsignSheet]} />
+        </CardContent>
+      </>
+    </CardThemed>
+  )
+}
+
+function Hexerei() {
+  const { t } = useTranslation('sheet_gen')
+
+  const { data } = useContext(DataContext)
+  const hexereiCount = data.get(tally.hexerei).value
+
+  return (
+    <CardThemed bgt="light">
+      <CardHeader
+        title={
+          <span>
+            {t('hexerei')}{' '}
+            <strong>
+              <ColorText color={hexereiCount >= 2 ? 'success' : 'warning'}>
+                ({hexereiCount}/2)
+              </ColorText>
+            </strong>
+          </span>
+        }
+        titleTypographyProps={{ variant: 'h6' }}
+      />
+
+      <>
+        <Divider />
+        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+          <TeamResonanceDisplay resonances={[hexereiSheet]} />
+        </CardContent>
+      </>
+    </CardThemed>
+  )
+}
+
+function TeamResonanceDisplay({ resonances }: { resonances: IResonance[] }) {
+  const { data } = useContext(DataContext)
+  const hasReso = resonances.some((res) => res.canShow(data))
   return (
     <>
-      {resonanceSheets.map((res, i) => {
+      {resonances.map((res, i) => {
         const show = res.canShow(data)
         if (!show && hasReso) return null
         return (

@@ -379,10 +379,10 @@ export function lunarDmg(
 
   return data(
     prod(
-      ...(specialMultiplier ? [specialMultiplier] : []),
       sum(
         prod(
           multiplier,
+          ...(specialMultiplier ? [specialMultiplier] : []),
           ...lunarDmgMultiplier(base, variant),
           transformative_dmg_,
           infoMut(sum(percent(1), input.total[`${variant}_baseDmg_`]), {

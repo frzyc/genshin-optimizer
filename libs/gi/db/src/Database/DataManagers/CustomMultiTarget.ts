@@ -6,18 +6,18 @@ import {
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
 
+import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
+import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'
 import type {
   CustomMultiTarget,
   CustomTarget,
 } from '../../Interfaces/CustomMultiTarget'
-import type { InputPremodKey } from '../../legacy/keys'
-import { allInputPremodKeys } from '../../legacy/keys'
 
 export const MAX_NAME_LENGTH = 200
 export const MAX_DESC_LENGTH = 2000
-export function initCustomMultiTarget() {
+export function initCustomMultiTarget(index: number) {
   return {
-    name: 'New Custom Target',
+    name: `New Custom Target ${index}`,
     targets: [],
   }
 }

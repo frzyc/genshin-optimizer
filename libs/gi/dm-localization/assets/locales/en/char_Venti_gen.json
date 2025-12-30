@@ -20,6 +20,29 @@
         "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
       }
     },
+    "upgradedFields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 6 consecutive shots with a bow."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Performs a more precise <strong>Aimed Shot</strong> with increased DMG.",
+        "2": "While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal <anemo>Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
+      },
+      "hexerei": {
+        "0": "<strong>Hexerei: Secret Rite</strong>",
+        "1": "While the Stormeye created by the Elemental Burst <strong>Wind's Grand Ode</strong> is active, Venti will gain additional buff effects:",
+        "2": [
+          " Venti's Normal Attacks will be converted into enemy-piercing <strong>Windsunder Arrows</strong> that deal even more <anemo>Anemo DMG</anemo> to opponents along the path.",
+          " When Venti's Normal Attacks hit opponents, Stormeye's duration is increased by 1s, and its CD is increased by 0.5s. This effect can be triggered once every 0.1s and up to 2 times after each use of the Elemental Burst <strong>Wind's Grand Ode</strong>."
+        ]
+      }
+    },
     "skillParams": {
       "0": "1-Hit DMG",
       "1": "2-Hit DMG",
@@ -31,7 +54,7 @@
       "7": "Fully-Charged Aimed Shot",
       "8": "Plunge DMG",
       "9": "Low/High Plunge DMG",
-      "10": "",
+      "10": "Windsunder Arrow DMG",
       "11": "",
       "12": "",
       "13": "",
@@ -49,7 +72,7 @@
       "7": "{{7, percent}}%",
       "8": "{{8, percent(fixed: 1)}}%",
       "9": "{{9, percent}}%/{{10, percent}}%",
-      "10": "",
+      "10": "{{11, percent(fixed: 1)}}% Normal Attack DMG",
       "11": "",
       "12": "",
       "13": "",
@@ -178,10 +201,23 @@
       "1": "Not stackable with Passive Talents that provide the exact same effects."
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Temporal Wind's Eulogy",
+    "description": {
+      "0": "After completing <strong>Witch's Homework: Of the Waking of Wind</strong>, Venti will become a <strong>Hexerei</strong> character. When the party includes at least 2 Hexerei characters, you will gain the <strong>Hexerei: Secret Rite</strong> effect, which enhances Hexerei characters.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "While the Stormeye created by the Elemental Burst <strong>Wind's Grand Ode</strong> is active, for 4s after a nearby active character triggers a Swirl reaction, that character's DMG is increased by 50%, and Venti's Stormeye deals 135% of its original DMG."
+    }
+  },
   "constellation1": {
     "name": "Splitting Gales",
     "description": {
       "0": "Fires 2 additional arrows per <strong>Aimed Shot</strong>, each dealing 33% of the original arrow's DMG."
+    },
+    "upgradedDescription": {
+      "0": "Fires 2 additional arrows per <strong>Aimed Shot</strong>, each dealing 33% of the original arrow's DMG.",
+      "1": "Additionally, 2 extra arrows that track opponents will be fired per <strong>Windsunder Arrow</strong>, each dealing 20% of the original arrow's DMG. This effect can be triggered once every 0.25s."
     }
   },
   "constellation2": {
@@ -189,6 +225,13 @@
     "description": {
       "0": "<strong>Skyward Sonnet</strong> decreases opponents' <anemo>Anemo RES</anemo> and Physical RES by 12% for 10s.",
       "1": "Opponents launched by <strong>Skyward Sonnet</strong> suffer an additional 12% <anemo>Anemo RES</anemo> and Physical RES decrease while airborne."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Skyward Sonnet</strong> decreases opponents' <anemo>Anemo RES</anemo> and Physical RES by 24% for 10s.",
+      "1": "Additionally, after unleashing the Elemental Burst <strong>Wind's Grand Ode</strong>, Venti gains the <strong>Wherever a Breeze Blows</strong> effect, and the cooldown for his Elemental Skill <strong>Skyward Sonnet</strong> is reset. After a <strong>Windsunder Arrow</strong> hits an opponent, there is also a 25% chance for Venti to gain the <strong>Wherever a Breeze Blows</strong> effect.",
+      "2": "<br/>",
+      "3": "<strong>Wherever a Breeze Blows</strong>",
+      "4": "When pressing to unleash the Elemental Skill <strong>Skyward Sonnet</strong>, 300% of the original amount of DMG is dealt. This effect lasts for 15s and is removed after Venti presses to use the Elemental Skill <strong>Skyward Sonnet</strong>."
     }
   },
   "constellation3": {
@@ -202,6 +245,9 @@
     "name": "Hurricane of Freedom",
     "description": {
       "0": "When Venti picks up an Elemental Orb or Particle, he receives a 25% <anemo>Anemo DMG Bonus</anemo> for 10s."
+    },
+    "upgradedDescription": {
+      "0": "After unleashing his Elemental Skill <strong>Skyward Sonnet</strong> or Elemental Burst <strong>Wind's Grand Ode</strong>, Venti and his own active party members gain a 25% <anemo>Anemo DMG Bonus</anemo> for 10s."
     }
   },
   "constellation5": {
@@ -216,6 +262,11 @@
     "description": {
       "0": "Targets who take DMG from <strong>Wind's Grand Ode</strong> have their <anemo>Anemo RES</anemo> decreased by 20%.",
       "1": "If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%."
+    },
+    "upgradedDescription": {
+      "0": "Targets who take DMG from <strong>Wind's Grand Ode</strong> have their <anemo>Anemo RES</anemo> decreased by 20%.",
+      "1": "If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.",
+      "2": "Additionally, the DMG Venti deals to these opponents will gain a CRIT DMG Bonus of 100%."
     }
   }
 }

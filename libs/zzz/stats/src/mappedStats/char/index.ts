@@ -3,11 +3,13 @@ import Alice from './maps/Alice'
 import Anby from './maps/Anby'
 import Anton from './maps/Anton'
 import AstraYao from './maps/AstraYao'
+import Banyue from './maps/Banyue'
 import Ben from './maps/Ben'
 import Billy from './maps/Billy'
 import Burnice from './maps/Burnice'
 import Caesar from './maps/Caesar'
 import Corin from './maps/Corin'
+import Dialyn from './maps/Dialyn'
 import Ellen from './maps/Ellen'
 import Evelyn from './maps/Evelyn'
 import Grace from './maps/Grace'
@@ -38,9 +40,11 @@ import Soukaku from './maps/Soukaku'
 import Trigger from './maps/Trigger'
 import Vivian from './maps/Vivian'
 import Yanagi from './maps/Yanagi'
+import YeShunguang from './maps/YeShunguang'
 import Yidhari from './maps/Yidhari'
 import Yixuan from './maps/Yixuan'
 import Yuzuha from './maps/Yuzuha'
+import Zhao from './maps/Zhao'
 import ZhuYuan from './maps/ZhuYuan'
 
 const maps = {
@@ -48,11 +52,13 @@ const maps = {
   Anby,
   Anton,
   AstraYao,
+  Banyue,
   Ben,
   Billy,
   Burnice,
   Caesar,
   Corin,
+  Dialyn,
   Ellen,
   Evelyn,
   Grace,
@@ -83,9 +89,11 @@ const maps = {
   Trigger,
   Vivian,
   Yanagi,
+  YeShunguang,
   Yidhari,
   Yixuan,
   Yuzuha,
+  Zhao,
   ZhuYuan,
 }
 export default maps

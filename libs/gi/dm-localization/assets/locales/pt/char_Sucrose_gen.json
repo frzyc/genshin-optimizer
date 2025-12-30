@@ -112,6 +112,18 @@
       "0": "Quando Sucrose cria Materiais de Elevação de Personagens e de Armas, ela tem 10% de chance de receber o dobro de produção."
     }
   },
+  "lockedPassive": {
+    "name": "Presente da Noite da Bruxa: Heptatransmutação",
+    "description": {
+      "0": "Ao concluir <strong>Tarefa da Bruxa: Das Flores do País das Maravilhas</strong>, Sucrose se tornará uma Personagem do tipo <strong>Mágico</strong>. Quando houver pelo menos 2 Personagens Mágicos na equipe, será ativado o efeito <strong>Mágico: Ritual Secreto</strong>, fortalecendo os Personagens Mágicos.",
+      "1": "<br/>",
+      "2": "<strong>Mágico: Ritual Secreto</strong>",
+      "3": [
+        " Nos 15 segundos após invocar um Pequeno Espírito de Vento, os Personagens próximos da equipe terão o Dano de seus Ataques Normais, Ataques Carregados, Ataques Imersivos, Habilidade Elemental e Supremo aumentado em 5.71428%.",
+        " Nos 20 segundos após invocar um Grande Espírito do Vento, os Personagens Mágicos próximos da equipe terão o Dano de seus Ataques Normais, Ataques Carregados, Ataques Imersivos, Habilidade Elemental e Supremo aumentado em 7.14285%."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Campo de Vácuo Acumulado",
     "description": {
@@ -149,6 +161,9 @@
     "name": "Entropia Caótica",
     "description": {
       "0": "Se <strong>Criação Proibida do Espírito do Vento: Isomórfico-75 Tipo II</strong> aciona uma Absorção Elemental, todos os membros de equipe ganham 20% de Bônus de Dano Elemental para o elemento correspondente absorvido enquanto a habilidade estiver em duração."
+    },
+    "upgradedDescription": {
+      "0": "Se <strong>Criação Proibida do Espírito do Vento: Isomórfico-75 Tipo II</strong> realizar uma Conversão Elemental, todos os membros da equipe receberão um Bônus de Dano do elemento correspondente de 20% durante a Duração da habilidade, e os Personagens Mágicos próximos da equipe receberão um Bônus adicional de Dano do elemento correspondente de 8.57142%."
     }
   }
 }

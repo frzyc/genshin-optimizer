@@ -9,7 +9,9 @@ export const allWengineKeys = [
   'BoxCutter',
   'BunnyBand',
   'CannonRotor',
+  'CauldronOfClarity',
   'CinderCobalt',
+  'CloudcleaveRadiance',
   'CordisGermina',
   'DeepSeaVisitor',
   'DemaraBatteryMarkII',
@@ -23,6 +25,7 @@ export const allWengineKeys = [
   'GildedBlossom',
   'GrillOWisp',
   'HailstormShrine',
+  'HalfSugarBunny',
   'HeartstringNocturne',
   'HellfireGears',
   'Housekeeper',
@@ -78,6 +81,8 @@ export const allWengineKeys = [
   'VortexRevolver',
   'WeepingCradle',
   'WeepingGemini',
+  'WrathfulVajra',
+  'YesterdayCalls',
   'ZanshinHerbCase',
 ] as const
 

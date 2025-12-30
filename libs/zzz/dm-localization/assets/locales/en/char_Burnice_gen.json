@@ -20,10 +20,11 @@
       "name": "Basic Attack: Mixed Flame Blend",
       "desc": {
         "0": "In the <ct color=#FFFFFF>Nitro-Fuel Cocktail</ct> state, hold <IconNormal /> to activate:",
-        "1": "Spin continuously while spraying flames around, followed by a Finishing Move that inflicts <ct color=#FF5521>Fire DMG</ct>. Continuing to hold extends the flame-spraying duration.",
-        "2": "When the move is activated, it consumes 20 <ct color=#FFFFFF>Heat</ct>;",
-        "3": "Anti-Interrupt level is increased while using this skill.",
-        "4": "After executing the Finishing Move, press <IconSpecialReady /> to immediately follow up with <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>."
+        "1": "Spins continuously while spraying flames around, followed by a Finishing Move, then triggers an extra instance of <ct color=#FFFFFF>Afterburn</ct> that doesn't cost <ct color=#FFFFFF>Heat</ct> and deals <ct color=#FF5521>Fire DMG</ct>. Continuing to hold extends the flame-spraying duration.",
+        "2": "The DMG dealt by this skill also counts as <ct color=#FFFFFF>Assist Attack</ct> DMG.",
+        "3": "Upon activation, it consumes 20 <ct color=#FFFFFF>Heat</ct>.",
+        "4": "Anti-Interrupt level is increased while using this skill.",
+        "5": "After executing the Finishing Move, press <IconSpecialReady /> to immediately follow up with <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>."
       },
       "params": [
         "Continuous Spray ",
@@ -84,7 +85,7 @@
         "0": "With enough energy, press <IconSpecialReady /> to activate:",
         "1": "Continuously spray flames with a one-handed flamethrower, then release a fire blast in a straight line ahead, dealing massive <ct color=#FF5521>Fire DMG</ct>. Continue holding to steadily consume energy and extend the spray's duration.",
         "2": "While continuously spraying, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to execute a sidestep dodge, adjusting your position in the corresponding direction.",
-        "3": "Anti-Interrupt Level is increased while continuously spraying, and DMG taken is reduced by 40%.",
+        "3": "Anti-Interrupt Level is increased while continuously spraying, and DMG taken is reduced by 60%.",
         "4": "Character is invulnerable during sidestep dodge and fire blast."
       },
       "params": [
@@ -101,7 +102,7 @@
         "0": "While using <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method</ct>, with enough Energy, press <IconSpecialReady /> to activate:",
         "1": "Use both flamethrowers to continuously spray flames, followed by a fire blast in a front line, dealing massive <ct color=#FF5521>Fire DMG</ct>. Keep holding to continue consuming Energy and extend the spray's duration.",
         "2": "Character is invulnerable during the moment the spray is activated and during the activation of the fire blast.",
-        "3": "Anti-Interrupt Level is increased while spraying, and DMG received is reduced by 40%."
+        "3": "Anti-Interrupt Level is increased while spraying, and DMG received is reduced by 60%."
       },
       "params": [
         "Continuous Spray ",
@@ -109,6 +110,21 @@
         "Energy Cost to Use ",
         "Continuous Spray Energy Cost ",
         "Fire Blast Energy Cost "
+      ]
+    },
+    "EXSpecialAttackIntenseHeatTossingMethod": {
+      "name": "EX Special Attack: Intense Heat Tossing Method",
+      "desc": {
+        "0": "If Burnice has <ct color=#FFFFFF>Emberflow</ct>, coming on-field activates this skill.",
+        "1": "After squadmates trigger <ct color=#FFFFFF>Afterburn</ct> 12 times, Burnice gains 1 point of <ct color=#FFFFFF>Emberflow</ct>. With <ct color=#FFFFFF>Emberflow</ct>, Burnice's next entry onto the field consumes 1 stack to automatically activate this skill. This entry is considered a Quick Assist. When <ct color=#FFFFFF>Afterburn</ct> triggered by <ct color=#FFFFFF>Basic Attack: Mixed Flame Blend</ct> hits an enemy, it counts for 2 times. While possessing <ct color=#FFFFFF>Emberflow</ct>, the counter no longer increases. Consuming <ct color=#FFFFFF>Emberflow</ct> clears the counter.",
+        "2": "Quickly dashes forward and passes through the enemy, unleashing a fiery impact that deals <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>.",
+        "3": "When the skill's heavy attack hits a target suffering <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it triggers <ct color=#FFFFFF>Abloom</ct>: deals an additional instance of DMG equal to <ct color=#FE437E>480%</ct>/<ct color=#2EB6FF>240%</ct>/<ct color=#FF5521>600%</ct>/<ct color=#F0D12B>40%</ct>/<ct color=#98EFF0>60%</ct> of the original Anomaly's DMG.",
+        "4": "The <ct color=#FF5521>Fire Anomaly Buildup</ct> increase from Additional Ability: Fire Kindling applies to this skill.",
+        "5": "Character is invulnerable while using this skill.",
+        "6": "After using this skill, press <IconSpecialReady /> to immediately follow up with <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>."
+      },
+      "params": [
+        " "
       ]
     }
   },
@@ -144,8 +160,9 @@
       "name": "Quick Assist: Energizing Specialty Drink",
       "desc": {
         "0": "When the active character is launched, press <IconSwitch /> to activate:",
-        "1": "Unleash a flurry of attacks on enemies in front while spraying flames, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>.",
-        "2": "Character is invulnerable while using this skill."
+        "1": "Launches a series of attacks at enemies ahead and sprays flames, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "After using this skill, press <IconSpecialReady /> to immediately follow up with <ct color=#FFFFFF>EX Special Attack: Intense Heat Stirring Method - Double Shot</ct>."
       },
       "params": [
         " "
@@ -272,5 +289,16 @@
         "2": "— From a driver getting ready to sleep atop Steeltusk"
       }
     }
+  },
+  "potential": {
+    "name": "Awakened Potential: Boiling Point Party",
+    "desc": [
+      "",
+      "When Burnice's initial Energy Regen is greater than or equal to 1.8, every extra 0.1 points of initial Energy Regen increases Anomaly Mastery by <ct color=#2BAD00>1</ct> and DMG by <ct color=#2BAD00>1%</ct>, up to a maximum increase of 25 Anomaly Mastery and 20% DMG. Core Passive: Nitro-Fuel Cocktail's <ct color=#FFFFFF>Afterburn</ct> interval is reduced to 1.35s.",
+      "When Burnice's initial Energy Regen is greater than or equal to 1.8, every extra 0.1 points of initial Energy Regen increases Anomaly Mastery by <ct color=#2BAD00>1.3</ct> and DMG by <ct color=#2BAD00>1.25%</ct>, up to a maximum increase of 25 Anomaly Mastery and 20% DMG. Core Passive: Nitro-Fuel Cocktail's <ct color=#FFFFFF>Afterburn</ct> interval is reduced to 1.35s.",
+      "When Burnice's initial Energy Regen is greater than or equal to 1.8, every extra 0.1 points of initial Energy Regen increases Anomaly Mastery by <ct color=#2BAD00>1.6</ct> and DMG by <ct color=#2BAD00>1.5%</ct>, up to a maximum increase of 25 Anomaly Mastery and 20% DMG. Core Passive: Nitro-Fuel Cocktail's <ct color=#FFFFFF>Afterburn</ct> interval is reduced to 1.35s.",
+      "When Burnice's initial Energy Regen is greater than or equal to 1.8, every extra 0.1 points of initial Energy Regen increases Anomaly Mastery by <ct color=#2BAD00>2</ct> and DMG by <ct color=#2BAD00>1.75%</ct>, up to a maximum increase of 25 Anomaly Mastery and 20% DMG. Core Passive: Nitro-Fuel Cocktail's <ct color=#FFFFFF>Afterburn</ct> interval is reduced to 1.35s.",
+      "When Burnice's initial Energy Regen is greater than or equal to 1.8, every extra 0.1 points of initial Energy Regen increases Anomaly Mastery by <ct color=#2BAD00>2.5</ct> and DMG by <ct color=#2BAD00>2%</ct>, up to a maximum increase of 25 Anomaly Mastery and 20% DMG. Core Passive: Nitro-Fuel Cocktail's <ct color=#FFFFFF>Afterburn</ct> interval is reduced to 1.35s."
+    ]
   }
 }

@@ -20,9 +20,9 @@
       "name": "Basic Attack: Frostbite Embrace",
       "desc": {
         "0": "Hold <IconNormal /> to activate:",
-        "1": "Yidhari begins charging, continuously consuming HP to reach up to three levels of charge. When <IconNormal /> is released, Yidhari unleashes a powerful charged hammer strike in front based on the current charge level, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "1": "Yidhari begins charging, continuously consuming HP to reach up to three levels of charge. When <IconNormal /> is released, Yidhari unleashes a powerful charged hammer attack in front based on the current charge level, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
         "2": "The higher Yidhari's HP, the faster charging consumes it. HP consumption will at most reduce Yidhari's HP to 25% of Max HP.",
-        "3": "At 2 charge levels, after using the skill, press <IconNormal /> to chain directly into the 3rd hit of <ct color=#FFFFFF>Basic Attack: Crushing Strike</ct>. The DMG of a <ct color=#FFFFFF>Basic Attack: Crushing Strike</ct> triggered this way increases based on the current charge level, up to 30%.",
+        "3": "At 2 charge levels, after using the skill, press <IconNormal /> to immediately follow up with the 3rd hit of <ct color=#FFFFFF>Basic Attack: Crushing Strike</ct>. The DMG of a <ct color=#FFFFFF>Basic Attack: Crushing Strike</ct> triggered this way increases based on the current charge level, up to 30%.",
         "4": "At 3 charge levels, Yidhari gains increased Anti-Interrupt level during the charged skill. Press <IconNormal /> to chain early into the finishing smash."
       },
       "params": [
@@ -123,10 +123,10 @@
       "name": "EX Special Attack: Glacial Crush",
       "desc": {
         "0": "When triggering Surging Cold or Crushing Pursuit, and with enough Adrenaline, press <IconSpecialReadyRp /> or <IconNormal /> to activate:",
-        "1": "Dash forward with an upward attack, then leap into the air before delivering a powerful ground smash, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "1": "Dash forward with an upward attack, then leap into the air before delivering a powerful downward smash, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
         "2": "If <ct color=#FFFFFF>EX Special Attack: Glacial Crush</ct> hits an enemy, Yidhari heals at the end of the skill for 33% of her missing HP.",
         "3": "If the skill is used after Surging Cold, it grants an additional 15 Adrenaline. This effect can trigger once every 1s.",
-        "4": "After the skill, press <IconNormal /> to immediately unleash the finishing slam of <ct color=#FFFFFF>Basic Attack: Frostbite Embrace</ct> based on the current charge level.",
+        "4": "After using this skill, press <IconNormal /> to immediately unleash the finishing slam of <ct color=#FFFFFF>Basic Attack: Frostbite Embrace</ct> based on the current charge level.",
         "5": "Character is invulnerable while using this skill."
       },
       "params": [
@@ -147,7 +147,7 @@
       },
       "params": [
         " ",
-        "Chain Attack in Ether Veil: Wellspring "
+        "in Ether Veil: Wellspring "
       ]
     },
     "EtherVeilWellspring": {
@@ -299,14 +299,14 @@
         "3": "\"What must I do? What must I bear?\"",
         "4": "\"Good thing it's me, and not someone else.\"",
         "5": "\"I know how to deal with being alone... I think.\"",
-        "6": "As she sifted through the past, the girl calmly accepted this heavy gift."
+        "6": "As she sifted through those pasts, the girl calmly accepted this heavy gift."
       }
     },
     "3": {
       "name": "A Story Without an Audience",
       "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
       "flavor": {
-        "0": "So this is what humanity is—such a complex existence.",
+        "0": "So this is what humanity is — such a complex existence.",
         "1": "A lifetime can hold so much joy, and just as much sorrow.",
         "2": "Yet now, all of it has fallen into this void, to be swallowed, erased, and buried.",
         "3": "No one will ever care again for those joyful laughs, or those grief-stricken cries.",
@@ -338,10 +338,11 @@
       "name": "At Last, a Peaceful Dream",
       "desc": "After Yidhari spends Decibels to activate or extend <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, she gains <ct color=#FFFFFF>Erudition</ct> for 30s. While <ct color=#FFFFFF>Erudition</ct> is active, her Sheer DMG increases by 25%. Also, upon taking fatal DMG for the first time, her HP is reduced to at most 1, and for the next 5s, she cannot be defeated and will restore 25% HP over time.",
       "flavor": {
-        "0": "Immersed in the tide of memories, she had never found even a fleeting rest.",
+        "0": "Immersed in the tide of memories, she had never found even fleeting rest.",
         "1": "Her only refuge was solitude, escaping the bustle of the world, losing herself in strange tales, seeking quiet beneath veils of misty rain or within the embrace of warm waters.",
         "2": "But now, she can walk calmly among the crowds, no longer troubled by noise or the burning sun, for \"illusion\" no longer binds her spirit, and \"reality\" has become the anchor of her soul."
       }
     }
-  }
+  },
+  "potential": {}
 }

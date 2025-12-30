@@ -1,4 +1,3 @@
-import { NextImage } from '@genshin-optimizer/common/ui'
 import { Link } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
@@ -25,7 +24,7 @@ function GODrakeAd({ children }: { children: ReactNode }) {
     >
       {children}
       <Box
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         src={drake}
         maxWidth="100%"
         maxHeight="100%"

@@ -1,0 +1,19 @@
+{
+  "name": "Wrathful Vajra",
+  "desc": {
+    "0": "The Vajra with unquenchable rage — surely there's more to their cruelty than this. The warrior as steadfast as a mountain — surely there's more to their purity than this. The ascetic with a heart of flame — surely there's more to their suffering than this.",
+    "1": "",
+    "2": "<ct color=#959595>\"The craftsman was really fixated on the design of the lion's head... He said all the anger and courage were hidden in those eyes.\"",
+    "3": "—Banyue, who can't help but think the W-Engine looks a bit too much like himself.</ct>"
+  },
+  "desc2": "Equip to increase Rupture Agents' combat capabilities",
+  "desc3": "The purging flames burned a hundred times, yet never cleansed me.",
+  "phase": "Purging Karmic Fire",
+  "phaseDescs": [
+    "CRIT Rate increases by <ct color=#2BAD00>20%</ct>. When the equipper launches an <ct color=#FFFFFF>EX Special Attack</ct>, their <ct color=#FF5521>Fire Sheer DMG</ct> increases by <ct color=#2BAD00>9%</ct>, stacking up to 2 times and lasting 20s. The duration of each stack is calculated separately.",
+    "CRIT Rate increases by <ct color=#2BAD00>23%</ct>. When the equipper launches an <ct color=#FFFFFF>EX Special Attack</ct>, their <ct color=#FF5521>Fire Sheer DMG</ct> increases by <ct color=#2BAD00>10.35%</ct>, stacking up to 2 times and lasting 20s. The duration of each stack is calculated separately.",
+    "CRIT Rate increases by <ct color=#2BAD00>26%</ct>. When the equipper launches an <ct color=#FFFFFF>EX Special Attack</ct>, their <ct color=#FF5521>Fire Sheer DMG</ct> increases by <ct color=#2BAD00>11.7%</ct>, stacking up to 2 times and lasting 20s. The duration of each stack is calculated separately.",
+    "CRIT Rate increases by <ct color=#2BAD00>29%</ct>. When the equipper launches an <ct color=#FFFFFF>EX Special Attack</ct>, their <ct color=#FF5521>Fire Sheer DMG</ct> increases by <ct color=#2BAD00>13.05%</ct>, stacking up to 2 times and lasting 20s. The duration of each stack is calculated separately.",
+    "CRIT Rate increases by <ct color=#2BAD00>32%</ct>. When the equipper launches an <ct color=#FFFFFF>EX Special Attack</ct>, their <ct color=#FF5521>Fire Sheer DMG</ct> increases by <ct color=#2BAD00>14.4%</ct>, stacking up to 2 times and lasting 20s. The duration of each stack is calculated separately."
+  ]
+}

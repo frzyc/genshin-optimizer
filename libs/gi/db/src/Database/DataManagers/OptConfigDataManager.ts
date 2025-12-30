@@ -197,6 +197,16 @@ export class OptConfigDataManager extends DataManager<
       !this.database.generatedBuildList.get(generatedBuildListId)
     )
       generatedBuildListId = undefined
+    // Don't allow 2 opt configs to have the same build list
+    if (
+      generatedBuildListId &&
+      this.database.optConfigs.entries.some(
+        ([otherKey, otherConfig]) =>
+          key !== otherKey &&
+          otherConfig.generatedBuildListId === generatedBuildListId
+      )
+    )
+      generatedBuildListId = undefined
     if (typeof useTeammateBuild !== 'boolean') useTeammateBuild = false
 
     return {

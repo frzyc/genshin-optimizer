@@ -120,8 +120,7 @@
   "passive": {
     "name": "Âm Mưu Căn Phòng Vàng",
     "description": {
-      "0": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Nod-Krai, phần thưởng nhận được tăng 25%.",
-      "1": "Ngoài ra, với tư cách là chủ nhân Hội Đồng Bí Mật, dường như Nefer có thể thu thập thông tin tình báo từ nhiều bên theo cách nào đó, mà dường như thế lực nào đó ở Thị Trấn Nasha cũng rất hứng thú với những thông tin này..."
+      "0": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Nod-Krai, phần thưởng nhận được tăng 25%."
     }
   },
   "constellation1": {

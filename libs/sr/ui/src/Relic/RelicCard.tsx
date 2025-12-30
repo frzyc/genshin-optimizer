@@ -2,7 +2,6 @@ import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
-  NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
@@ -196,7 +195,7 @@ export function RelicCard({
           </Box>
           <Box sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}>
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               alt="Relic Piece Image"
               src={relicAsset(setKey, slotKey)}
               sx={{

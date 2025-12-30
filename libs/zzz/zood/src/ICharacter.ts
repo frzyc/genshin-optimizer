@@ -14,4 +14,5 @@ export interface ICharacter extends ICharacterSkill {
   core: number
   mindscape: number
   promotion: MilestoneKey
+  potential: number
 }

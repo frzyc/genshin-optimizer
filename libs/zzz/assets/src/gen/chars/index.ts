@@ -3,11 +3,13 @@ import Alice from './Alice'
 import Anby from './Anby'
 import Anton from './Anton'
 import AstraYao from './AstraYao'
+import Banyue from './Banyue'
 import Ben from './Ben'
 import Billy from './Billy'
 import Burnice from './Burnice'
 import Caesar from './Caesar'
 import Corin from './Corin'
+import Dialyn from './Dialyn'
 import Ellen from './Ellen'
 import Evelyn from './Evelyn'
 import Grace from './Grace'
@@ -38,9 +40,11 @@ import Soukaku from './Soukaku'
 import Trigger from './Trigger'
 import Vivian from './Vivian'
 import Yanagi from './Yanagi'
+import YeShunguang from './YeShunguang'
 import Yidhari from './Yidhari'
 import Yixuan from './Yixuan'
 import Yuzuha from './Yuzuha'
+import Zhao from './Zhao'
 import ZhuYuan from './ZhuYuan'
 
 const data = {
@@ -48,11 +52,13 @@ const data = {
   Anby,
   Anton,
   AstraYao,
+  Banyue,
   Ben,
   Billy,
   Burnice,
   Caesar,
   Corin,
+  Dialyn,
   Ellen,
   Evelyn,
   Grace,
@@ -83,9 +89,11 @@ const data = {
   Trigger,
   Vivian,
   Yanagi,
+  YeShunguang,
   Yidhari,
   Yixuan,
   Yuzuha,
+  Zhao,
   ZhuYuan,
 } as const
 export default data

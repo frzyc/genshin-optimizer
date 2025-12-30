@@ -157,6 +157,10 @@ type CharacterRawData = {
       Desc2: string
     }
   >
+  PotentialDetail: Record<
+    string,
+    { Level: '1' | '2' | '3' | '4' | '5' | '6'; Name: string; Desc: string }
+  >
 }
 export type CharacterData = {
   id: string
@@ -185,6 +189,7 @@ export type CharacterData = {
   skillList: CharacterRawData['SkillList']
   cores: CharacterRawData['Passive']
   mindscapes: CharacterRawData['Talent']
+  potential: CharacterRawData['PotentialDetail']
   fullname: string
   name: string
 }
@@ -289,6 +294,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
         skillList: raw.SkillList,
         cores: raw.Passive,
         mindscapes: raw.Talent,
+        potential: raw.PotentialDetail,
       }
       return [name, data] as const
     })

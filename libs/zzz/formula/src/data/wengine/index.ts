@@ -7,7 +7,9 @@ import BlazingLaurel from './sheets/BlazingLaurel'
 import BoxCutter from './sheets/BoxCutter'
 import BunnyBand from './sheets/BunnyBand'
 import CannonRotor from './sheets/CannonRotor'
+import CauldronOfClarity from './sheets/CauldronOfClarity'
 import CinderCobalt from './sheets/CinderCobalt'
+import CloudcleaveRadiance from './sheets/CloudcleaveRadiance'
 import CordisGermina from './sheets/CordisGermina'
 import DeepSeaVisitor from './sheets/DeepSeaVisitor'
 import DemaraBatteryMarkII from './sheets/DemaraBatteryMarkII'
@@ -21,6 +23,7 @@ import FusionCompiler from './sheets/FusionCompiler'
 import GildedBlossom from './sheets/GildedBlossom'
 import GrillOWisp from './sheets/GrillOWisp'
 import HailstormShrine from './sheets/HailstormShrine'
+import HalfSugarBunny from './sheets/HalfSugarBunny'
 import HeartstringNocturne from './sheets/HeartstringNocturne'
 import HellfireGears from './sheets/HellfireGears'
 import Housekeeper from './sheets/Housekeeper'
@@ -76,6 +79,8 @@ import VortexHatchet from './sheets/VortexHatchet'
 import VortexRevolver from './sheets/VortexRevolver'
 import WeepingCradle from './sheets/WeepingCradle'
 import WeepingGemini from './sheets/WeepingGemini'
+import WrathfulVajra from './sheets/WrathfulVajra'
+import YesterdayCalls from './sheets/YesterdayCalls'
 import ZanshinHerbCase from './sheets/ZanshinHerbCase'
 
 const data: TagMapNodeEntries[] = [
@@ -86,7 +91,9 @@ const data: TagMapNodeEntries[] = [
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CauldronOfClarity,
   CinderCobalt,
+  CloudcleaveRadiance,
   CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
@@ -100,6 +107,7 @@ const data: TagMapNodeEntries[] = [
   GildedBlossom,
   GrillOWisp,
   HailstormShrine,
+  HalfSugarBunny,
   HeartstringNocturne,
   HellfireGears,
   Housekeeper,
@@ -155,6 +163,8 @@ const data: TagMapNodeEntries[] = [
   VortexRevolver,
   WeepingCradle,
   WeepingGemini,
+  WrathfulVajra,
+  YesterdayCalls,
   ZanshinHerbCase,
 ]
 

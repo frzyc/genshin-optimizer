@@ -8,7 +8,7 @@ import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import type { InputPremodKey } from '@genshin-optimizer/gi/wr'
+import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,

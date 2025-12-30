@@ -68810,6 +68810,1248 @@
       }
     }
   },
+  "Durin": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfBallad",
+              "amount": 3
+            },
+            {
+              "item": "TatteredWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 2
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 4
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 6
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 9
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 4
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 4
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 6
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 6
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 12
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 9
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 16
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 12
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfBallad",
+              "amount": 3
+            },
+            {
+              "item": "TatteredWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 2
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 4
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 6
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 9
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 4
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 4
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 6
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 6
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 12
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 9
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 16
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 12
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfBallad",
+              "amount": 3
+            },
+            {
+              "item": "TatteredWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 2
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 4
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 6
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToBallad",
+              "amount": 9
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 4
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 4
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 6
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 6
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 12
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 9
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfBallad",
+              "amount": 16
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 12
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "AgnidusAgateSliver",
+            "amount": 1
+          },
+          {
+            "item": "FrostlampFlower",
+            "amount": 3
+          },
+          {
+            "item": "TatteredWarrant",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "AgnidusAgateFragment",
+            "amount": 3
+          },
+          {
+            "item": "CyclicMilitaryKuuvahkiCore",
+            "amount": 2
+          },
+          {
+            "item": "FrostlampFlower",
+            "amount": 10
+          },
+          {
+            "item": "TatteredWarrant",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "AgnidusAgateFragment",
+            "amount": 6
+          },
+          {
+            "item": "CyclicMilitaryKuuvahkiCore",
+            "amount": 4
+          },
+          {
+            "item": "FrostlampFlower",
+            "amount": 20
+          },
+          {
+            "item": "ImmaculateWarrant",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "AgnidusAgateChunk",
+            "amount": 3
+          },
+          {
+            "item": "CyclicMilitaryKuuvahkiCore",
+            "amount": 8
+          },
+          {
+            "item": "FrostlampFlower",
+            "amount": 30
+          },
+          {
+            "item": "ImmaculateWarrant",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "AgnidusAgateChunk",
+            "amount": 6
+          },
+          {
+            "item": "CyclicMilitaryKuuvahkiCore",
+            "amount": 12
+          },
+          {
+            "item": "FrostlampFlower",
+            "amount": 45
+          },
+          {
+            "item": "FrostEtchedWarrant",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "AgnidusAgateGemstone",
+            "amount": 6
+          },
+          {
+            "item": "CyclicMilitaryKuuvahkiCore",
+            "amount": 20
+          },
+          {
+            "item": "FrostlampFlower",
+            "amount": 60
+          },
+          {
+            "item": "FrostEtchedWarrant",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
+  "Jahoda": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfVagrancy",
+              "amount": 3
+            },
+            {
+              "item": "BrokenDriveShaft",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 2
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 4
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 6
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 9
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 4
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 4
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 6
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 6
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 12
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 9
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 16
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 12
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfVagrancy",
+              "amount": 3
+            },
+            {
+              "item": "BrokenDriveShaft",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 2
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 4
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 6
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 9
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 4
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 4
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 6
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 6
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 12
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 9
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 16
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 12
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfVagrancy",
+              "amount": 3
+            },
+            {
+              "item": "BrokenDriveShaft",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 2
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 4
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 6
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToVagrancy",
+              "amount": 9
+            },
+            {
+              "item": "ReinforcedDriveShaft",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 4
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 4
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 6
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 6
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 12
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 9
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfVagrancy",
+              "amount": 16
+            },
+            {
+              "item": "PrecisionDriveShaft",
+              "amount": 12
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseSliver",
+            "amount": 1
+          },
+          {
+            "item": "PortableBearing",
+            "amount": 3
+          },
+          {
+            "item": "BrokenDriveShaft",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseFragment",
+            "amount": 3
+          },
+          {
+            "item": "LightbearingScaleFeather",
+            "amount": 2
+          },
+          {
+            "item": "PortableBearing",
+            "amount": 10
+          },
+          {
+            "item": "BrokenDriveShaft",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseFragment",
+            "amount": 6
+          },
+          {
+            "item": "LightbearingScaleFeather",
+            "amount": 4
+          },
+          {
+            "item": "PortableBearing",
+            "amount": 20
+          },
+          {
+            "item": "ReinforcedDriveShaft",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseChunk",
+            "amount": 3
+          },
+          {
+            "item": "LightbearingScaleFeather",
+            "amount": 8
+          },
+          {
+            "item": "PortableBearing",
+            "amount": 30
+          },
+          {
+            "item": "ReinforcedDriveShaft",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseChunk",
+            "amount": 6
+          },
+          {
+            "item": "LightbearingScaleFeather",
+            "amount": 12
+          },
+          {
+            "item": "PortableBearing",
+            "amount": 45
+          },
+          {
+            "item": "PrecisionDriveShaft",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseGemstone",
+            "amount": 6
+          },
+          {
+            "item": "LightbearingScaleFeather",
+            "amount": 20
+          },
+          {
+            "item": "PortableBearing",
+            "amount": 60
+          },
+          {
+            "item": "PrecisionDriveShaft",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
   "Somnia": {
     "talents": {
       "normal": {

@@ -200,6 +200,10 @@
       "icon": "UI_EquipIcon_Sword_OuterSword",
       "awakenIcon": "UI_EquipIcon_Sword_OuterSword_Awaken"
     },
+    "AthameArtis": {
+      "icon": "UI_EquipIcon_Sword_Motsognir",
+      "awakenIcon": "UI_EquipIcon_Sword_Motsognir_Awaken"
+    },
     "WasterGreatsword": {
       "icon": "UI_EquipIcon_Claymore_Aniki",
       "awakenIcon": "UI_EquipIcon_Claymore_Aniki_Awaken"
@@ -856,6 +860,10 @@
       "icon": "UI_EquipIcon_Bow_Ilmarinen",
       "awakenIcon": "UI_EquipIcon_Bow_Ilmarinen_Awaken"
     },
+    "RainbowSerpentsRainBow": {
+      "icon": "UI_EquipIcon_Bow_ElegguaBow",
+      "awakenIcon": "UI_EquipIcon_Bow_ElegguaBow_Awaken"
+    },
     "SkywardHarp": {
       "icon": "UI_EquipIcon_Bow_Dvalin",
       "awakenIcon": "UI_EquipIcon_Bow_Dvalin_Awaken"
@@ -895,6 +903,10 @@
     "AstralVulturesCrimsonPlumage": {
       "icon": "UI_EquipIcon_Bow_Qoyllorsnova",
       "awakenIcon": "UI_EquipIcon_Bow_Qoyllorsnova_Awaken"
+    },
+    "TheDaybreakChronicles": {
+      "icon": "UI_EquipIcon_Bow_Arianna",
+      "awakenIcon": "UI_EquipIcon_Bow_Arianna_Awaken"
     },
     "QuantumCatalyst": {}
   },
@@ -1405,6 +1417,7 @@
       "passive1": "UI_Talent_S_Razor_05",
       "passive2": "UI_Talent_S_Razor_06",
       "passive3": "UI_Talent_Explosion_Sprint",
+      "lockedPassive": "UI_Talent_S_Razor_07",
       "constellation1": "UI_Talent_S_Razor_01",
       "constellation2": "UI_Talent_S_Razor_02",
       "constellation3": "UI_Talent_U_Razor_02",
@@ -1439,6 +1452,7 @@
       "passive1": "UI_Talent_S_Venti_05",
       "passive2": "UI_Talent_S_Venti_06",
       "passive3": "UI_Talent_Explosion_Glide",
+      "lockedPassive": "UI_Talent_S_Venti_07",
       "constellation1": "UI_Talent_S_Venti_01",
       "constellation2": "UI_Talent_S_Venti_02",
       "constellation3": "UI_Talent_U_Venti_02",
@@ -1541,6 +1555,7 @@
       "passive1": "UI_Talent_S_Klee_05",
       "passive2": "UI_Talent_S_Klee_06",
       "passive3": "UI_Talent_Collect_Local_Mengde",
+      "lockedPassive": "UI_Talent_S_Klee_07",
       "constellation1": "UI_Talent_S_Klee_01",
       "constellation2": "UI_Talent_S_Klee_02",
       "constellation3": "UI_Talent_U_Klee_01",
@@ -1575,6 +1590,7 @@
       "passive1": "UI_Talent_S_Fischl_05",
       "passive2": "UI_Talent_S_Fischl_06",
       "passive3": "UI_Talent_Expedition_Mengde",
+      "lockedPassive": "UI_Talent_S_Fischl_07",
       "constellation1": "UI_Talent_S_Fischl_01",
       "constellation2": "UI_Talent_S_Fischl_02",
       "constellation3": "UI_Talent_U_Fischl_01",
@@ -1694,6 +1710,7 @@
       "passive1": "UI_Talent_S_Albedo_05",
       "passive2": "UI_Talent_S_Albedo_06",
       "passive3": "UI_Talent_Combine_Weapon_Double",
+      "lockedPassive": "UI_Talent_S_Albedo_07",
       "constellation1": "UI_Talent_S_Albedo_01",
       "constellation2": "UI_Talent_S_Albedo_02",
       "constellation3": "UI_Talent_U_Albedo_01",
@@ -1729,6 +1746,7 @@
       "passive1": "UI_Talent_S_Mona_05",
       "passive2": "UI_Talent_S_Mona_06",
       "passive3": "UI_Talent_Combine_Weapon",
+      "lockedPassive": "UI_Talent_S_Mona_07",
       "constellation1": "UI_Talent_S_Mona_01",
       "constellation2": "UI_Talent_S_Mona_02",
       "constellation3": "UI_Talent_U_Mona_01",
@@ -1763,6 +1781,7 @@
       "passive1": "UI_Talent_S_Sucrose_05",
       "passive2": "UI_Talent_S_Sucrose_06",
       "passive3": "UI_Talent_Combine_Material",
+      "lockedPassive": "UI_Talent_S_Sucrose_07",
       "constellation1": "UI_Talent_S_Sucrose_01",
       "constellation2": "UI_Talent_S_Sucrose_02",
       "constellation3": "UI_Talent_U_Sucrose_01",
@@ -3095,6 +3114,42 @@
       "constellation4": "UI_Talent_S_Nefer_03",
       "constellation5": "UI_Talent_U_Nefer_02",
       "constellation6": "UI_Talent_S_Nefer_04"
+    },
+    "Durin": {
+      "icon": "UI_AvatarIcon_Durin",
+      "iconSide": "UI_AvatarIcon_Side_Durin",
+      "banner": "UI_NameCardPic_Durin_P",
+      "bar": "UI_NameCardPic_Durin_Alpha",
+      "skill": "Skill_S_Durin_01",
+      "burst": "Skill_E_Durin_01_HD",
+      "passive1": "UI_Talent_S_Durin_01",
+      "passive2": "UI_Talent_S_Durin_02",
+      "passive3": "UI_Talent_S_Durin_07",
+      "lockedPassive": "UI_Talent_S_Durin_03",
+      "constellation1": "UI_Talent_S_Durin_03",
+      "constellation2": "UI_Talent_S_Durin_04",
+      "constellation3": "UI_Talent_U_Durin_01",
+      "constellation4": "UI_Talent_S_Durin_05",
+      "constellation5": "UI_Talent_U_Durin_02",
+      "constellation6": "UI_Talent_S_Durin_06"
+    },
+    "Jahoda": {
+      "icon": "UI_AvatarIcon_Jahoda",
+      "iconSide": "UI_AvatarIcon_Side_Jahoda",
+      "banner": "UI_NameCardPic_Jahoda_P",
+      "bar": "UI_NameCardPic_Jahoda_Alpha",
+      "skill": "Skill_S_Jahoda_01",
+      "burst": "Skill_E_Jahoda_01_HD",
+      "passive1": "UI_Talent_S_Jahoda_05",
+      "passive2": "UI_Talent_S_Jahoda_06",
+      "passive3": "UI_Talent_S_Jahoda_07",
+      "passive": "UI_Talent_S_Jahoda_08",
+      "constellation1": "UI_Talent_S_Jahoda_03",
+      "constellation2": "UI_Talent_S_Jahoda_02",
+      "constellation3": "UI_Talent_U_Jahoda_01",
+      "constellation4": "UI_Talent_S_Jahoda_01",
+      "constellation5": "UI_Talent_U_Jahoda_02",
+      "constellation6": "UI_Talent_S_Jahoda_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

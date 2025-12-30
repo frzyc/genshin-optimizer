@@ -1,0 +1,24 @@
+{
+  "name": "Rainbow Serpent's Rain Bow",
+  "description": {
+    "0": "Alat upacara yang diturunkan dari generasi ke generasi oleh Penguasa Angin Malam, busurnya yang berwarna biru tua selalu diselimuti hawa dingin yang menyengat."
+  },
+  "passiveName": "Astral Whispers Beyond the Sacred Throne",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran dan setelah serangan Karakter yang mengenakan mengenai musuh, ATK +<cryo>28%</cryo> selama 8 detik."
+    },
+    "1": {
+      "0": "Saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran dan setelah serangan Karakter yang mengenakan mengenai musuh, ATK +<cryo>35%</cryo> selama 8 detik."
+    },
+    "2": {
+      "0": "Saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran dan setelah serangan Karakter yang mengenakan mengenai musuh, ATK +<cryo>42%</cryo> selama 8 detik."
+    },
+    "3": {
+      "0": "Saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran dan setelah serangan Karakter yang mengenakan mengenai musuh, ATK +<cryo>49%</cryo> selama 8 detik."
+    },
+    "4": {
+      "0": "Saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran dan setelah serangan Karakter yang mengenakan mengenai musuh, ATK +<cryo>56%</cryo> selama 8 detik."
+    }
+  }
+}

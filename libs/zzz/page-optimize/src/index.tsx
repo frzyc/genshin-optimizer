@@ -193,7 +193,7 @@ export default function PageOptimize() {
                             charOpt={charOpt}
                           />
                           <TeamHeaderHeightContext.Provider value={74}>
-                            <CharacterOptDisplay />
+                            <CharacterOptDisplay key={character.key} />
                           </TeamHeaderHeightContext.Provider>
                         </Box>
                       </DebugReadContext.Provider>

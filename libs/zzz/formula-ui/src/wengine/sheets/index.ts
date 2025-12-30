@@ -9,7 +9,9 @@ import BlazingLaurel from './BlazingLaurel'
 import BoxCutter from './BoxCutter'
 import BunnyBand from './BunnyBand'
 import CannonRotor from './CannonRotor'
+import CauldronOfClarity from './CauldronOfClarity'
 import CinderCobalt from './CinderCobalt'
+import CloudcleaveRadiance from './CloudcleaveRadiance'
 import CordisGermina from './CordisGermina'
 import DeepSeaVisitor from './DeepSeaVisitor'
 import DemaraBatteryMarkII from './DemaraBatteryMarkII'
@@ -23,6 +25,7 @@ import FusionCompiler from './FusionCompiler'
 import GildedBlossom from './GildedBlossom'
 import GrillOWisp from './GrillOWisp'
 import HailstormShrine from './HailstormShrine'
+import HalfSugarBunny from './HalfSugarBunny'
 import HeartstringNocturne from './HeartstringNocturne'
 import HellfireGears from './HellfireGears'
 import Housekeeper from './Housekeeper'
@@ -78,6 +81,8 @@ import VortexHatchet from './VortexHatchet'
 import VortexRevolver from './VortexRevolver'
 import WeepingCradle from './WeepingCradle'
 import WeepingGemini from './WeepingGemini'
+import WrathfulVajra from './WrathfulVajra'
+import YesterdayCalls from './YesterdayCalls'
 import ZanshinHerbCase from './ZanshinHerbCase'
 
 export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
@@ -88,7 +93,9 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CauldronOfClarity,
   CinderCobalt,
+  CloudcleaveRadiance,
   CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
@@ -102,6 +109,7 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   GildedBlossom,
   GrillOWisp,
   HailstormShrine,
+  HalfSugarBunny,
   HeartstringNocturne,
   HellfireGears,
   Housekeeper,
@@ -157,5 +165,7 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   VortexRevolver,
   WeepingCradle,
   WeepingGemini,
+  WrathfulVajra,
+  YesterdayCalls,
   ZanshinHerbCase,
 }

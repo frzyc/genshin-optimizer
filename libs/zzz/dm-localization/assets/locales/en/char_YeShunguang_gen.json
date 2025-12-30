@@ -1,0 +1,475 @@
+{
+  "name": "Ye Shunguang",
+  "fullName": "Ye Shunguang",
+  "basic": {
+    "BasicAttackSwiftedge": {
+      "name": "Basic Attack: Swiftedge",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Launches up to four forward slashes, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Can be chained into <ct color=#FFFFFF>Dash Attack: Phantasm Dash</ct> after the 4th hit."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackCloudstreamSwordWill": {
+      "name": "Basic Attack: Cloudstream Sword Will",
+      "desc": {
+        "0": "Hold <IconNormal /> to activate:",
+        "1": "Launches a flurry of blade shockwaves, dealing <ct color=#F0D12B>Physical DMG</ct>. Hold to extend the attack.",
+        "2": "Anti-Interrupt Level is increased during this skill."
+      },
+      "params": [
+        "Individual Blade Energy "
+      ]
+    },
+    "BasicAttackEnlightenedMindSplittingCurrents": {
+      "name": "Basic Attack: Enlightened Mind - Splitting Currents",
+      "desc": {
+        "0": "While in the <ct color=#FFFFFF>Enlightened Mind</ct> state and on the ground, press <IconNormal /> to activate:",
+        "1": "Performs up to three forward slashes, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "If struck by an enemy attack during the 3rd hit, triggers a block, negating that instance of DMG.",
+        "3": "If she possesses <ct color=#FFFFFF>Qingming Sword Force</ct>, the 3rd hit is replaced with <ct color=#FFFFFF>Basic Attack: Enlightened Mind - Skyward Ascent</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackEnlightenedMindSkywardAscent": {
+      "name": "Basic Attack: Enlightened Mind - Skyward Ascent",
+      "desc": {
+        "0": "While in the <ct color=#FFFFFF>Enlightened Mind</ct> state and with <ct color=#FFFFFF>Qingming Sword Force</ct>, after the 2nd hit of <ct color=#FFFFFF>Basic Attack: Enlightened Mind - Splitting Currents</ct>, press <IconNormal /> to activate:",
+        "1": "Launches a swift rising attack, dealing <ct color=#F0D12B>Physical DMG</ct> and entering an airborne state.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackEnlightenedMindSunderlightMaximum": {
+      "name": "Basic Attack: Enlightened Mind - Sunderlight Maximum",
+      "desc": {
+        "0": "After activating <ct color=#FFFFFF>Basic Attack: Enlightened Mind - Sunderlight Annihilation</ct>, and with <ct color=#FFFFFF>Qingming Sword Force</ct>, press <IconNormal /> to activate:",
+        "1": "Launches a wide sweeping slash forward, dealing massive <ct color=#F0D12B>Physical DMG</ct>. On hit, 1 point of <ct color=#FFFFFF>Qingming Sword Force</ct> is consumed.",
+        "2": "If struck by an enemy during the skill, triggers a block, negating that instance of DMG and increasing the skill's Interrupt Level.",
+        "3": "After using this skill and with <ct color=#FFFFFF>Qingming Sword Force</ct>, press <IconSpecialReady /> to consume 1 point of <ct color=#FFFFFF>Qingming Sword Force</ct> and launch a hit of <ct color=#FFFFFF>EX Special Attack: Enlightened Mind - Soaring Light</ct>. This skill is automatically followed up with <ct color=#FFFFFF>Basic Attack: Enlightened Mind - Skyward Ascent</ct>, and Ye Shunguang enters an airborne state.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackEnlightenedMindSunderlight": {
+      "name": "Basic Attack: Enlightened Mind - Sunderlight",
+      "desc": {
+        "0": "In the <ct color=#FFFFFF>Enlightened Mind</ct> state, and while airborne, press <IconNormal /> to activate:",
+        "1": "Launches up to two downward slashes in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Ye Shunguang will not exit the <ct color=#FFFFFF>Enlightened Mind</ct> state during this skill.",
+        "3": "Press <IconSpecialReady /> or <IconEvade /> to follow up with <ct color=#FFFFFF>Basic Attack: Enlightened Mind - Sunderlight Annihilation</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit "
+      ]
+    },
+    "BasicAttackEnlightenedMindSunderlightAnnihilation": {
+      "name": "Basic Attack: Enlightened Mind - Sunderlight Annihilation",
+      "desc": {
+        "0": "After the 2nd hit of <ct color=#FFFFFF>Basic Attack: Enlightened Mind - Sunderlight</ct>, press <IconNormal /> to activate:",
+        "1": "Performs a falling attack in front, entering a grounded state, and dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "When launching this skill with 2 or more points of <ct color=#FFFFFF>Qingming Sword Force</ct>, Ye Shunguang will perform a downward falling strike across a large area in front instead, dealing massive <ct color=#F0D12B>Physical DMG</ct>. On hit, 2 points of <ct color=#FFFFFF>Qingming Sword Force</ct> are consumed, granting the <ct color=#FFFFFF>Culmination</ct> effect. After using this skill, if Ye Shunguang possesses <ct color=#FFFFFF>Qingming Sword Force</ct>, press <IconSpecialReady /> to consume 1 point of <ct color=#FFFFFF>Qingming Sword Force</ct> and launch a hit of <ct color=#FFFFFF>EX Special Attack: Enlightened Mind - Soaring Light</ct>, which can be quickly followed up with <ct color=#FFFFFF>Basic Attack: Enlightened Mind - Sunderlight Maximum</ct>.",
+        "3": "Ye Shunguang will not exit the <ct color=#FFFFFF>Enlightened Mind</ct> state during this skill.",
+        "4": "During this skill, if attacked by enemies, triggers a block, negating that instance of DMG.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "With Qingming Sword Force ",
+        "Without Qingming Sword Force "
+      ]
+    },
+    "Culmination": {
+      "name": "Culmination",
+      "desc": "During <ct color=#FFFFFF>EX Special Attack: Enlightened Mind - Soaring Light</ct>, each time <ct color=#FFFFFF>Qingming Sword Force</ct> is consumed while <ct color=#FFFFFF>Culmination</ct> is active, the <ct color=#FFFFFF>Qingming Sword Force</ct> cost is replaced by consuming <ct color=#FFFFFF>Culmination</ct> instead. This effect does not stack, and lasts until the current <ct color=#FFFFFF>Enlightened Mind</ct> ends.",
+      "params": []
+    }
+  },
+  "dodge": {
+    "DodgeLeaveNoTrace": {
+      "name": "Dodge: Leave No Trace",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "During the <ct color=#FFFFFF>Enlightened Mind</ct> state, and if a <ct color=#FFFFFF>Perfect Dodge</ct> is triggered, press <IconNormal /> to activate <ct color=#FFFFFF>Basic Attack: Enlightened Mind - Skyward Ascent</ct>."
+      },
+      "params": []
+    },
+    "DodgeWanderingCloud": {
+      "name": "Dodge: Wandering Cloud",
+      "desc": {
+        "0": "While tilting the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick}, hold <IconEvade /> to activate:",
+        "1": "Enters a high-speed movement state. Steer with the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick}, and release the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to stop."
+      },
+      "params": []
+    },
+    "DashAttackPhantasmDash": {
+      "name": "Dash Attack: Phantasm Dash",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slashes enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterSwallowStrike": {
+      "name": "Dodge Counter: Swallow Strike",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Leaps into the air and thrusts forward, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackGuidingTides": {
+      "name": "Special Attack: Guiding Tides",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "If a dodge is available, 1 dodge chance is consumed, and the action is counted as activating a <ct color=#FFFFFF>Dodge</ct>.",
+        "2": "If no dodge is available or a <ct color=#FFFFFF>Perfect Dodge</ct> is not triggered, launches a quick sword energy attack that deals <ct color=#F0D12B>Physical DMG</ct>.",
+        "3": "If a <ct color=#FFFFFF>Perfect Dodge</ct> is triggered at this time, launches a flying sword attack, dealing <ct color=#F0D12B>Physical DMG</ct>, and immediately follow up with the 2nd hit of <ct color=#FFFFFF>Basic Attack: Swiftedge</ct>.",
+        "4": "Character is briefly invulnerable during the skill."
+      },
+      "params": [
+        " ",
+        "Perfect Dodge Triggered "
+      ]
+    },
+    "EXSpecialAttackGaleSuppression": {
+      "name": "EX Special Attack: Gale Suppression",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Launches a rushing slash and a flying sword attack at the enemy, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Enemy attacks can be dodged during this skill.",
+        "3": "After this skill is used, gain 1 point of <ct color=#FFFFFF>Qingming Sword Force</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "SpecialAttackEnlightenedMindCleanExit": {
+      "name": "Special Attack: Enlightened Mind - Clean Exit",
+      "desc": {
+        "0": "While in the <ct color=#FFFFFF>Enlightened Mind</ct> state and grounded, press <IconSpecialReady /> to activate:",
+        "1": "Performs a swift backstep slash, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "If a dodge is available, 1 dodge chance is consumed, and the action is counted as activating a <ct color=#FFFFFF>Dodge</ct>.",
+        "3": "If a <ct color=#FFFFFF>Perfect Dodge</ct> is triggered at this time, press <IconNormal /> to quickly activate <ct color=#FFFFFF>Enlightened Mind - Sunderlight Maximum</ct> and enter <ct color=#FFFFFF>Vital View</ct>.",
+        "4": "After this <ct color=#FFFFFF>Enlightened Mind - Sunderlight Maximum</ct> activates, it can be immediately followed up with <ct color=#FFFFFF>Basic Attack: Enlightened Mind - Skyward Ascent</ct>.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackEnlightenedMindSoaringLight": {
+      "name": "EX Special Attack: Enlightened Mind - Soaring Light",
+      "desc": {
+        "0": "In the <ct color=#FFFFFF>Enlightened Mind</ct> state and with <ct color=#FFFFFF>Qingming Sword Force</ct>, hold <IconSpecialReady /> to activate:",
+        "1": "Performs quick consecutive slashes, dealing massive <ct color=#F0D12B>Physical DMG</ct> while rapidly consuming <ct color=#FFFFFF>Qingming Sword Force</ct> until none remains.",
+        "2": "The skill ends early if <ct color=#FFFFFF>Qingming Sword Force</ct> is insufficient or if <IconSpecialReady /> is released.",
+        "3": "Ye Shunguang will not exit the <ct color=#FFFFFF>Enlightened Mind</ct> state during this skill.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "1 Qingming Sword Force Consumed ",
+        "6 Qingming Sword Force Consumed "
+      ]
+    },
+    "EXSpecialAttackEnlightenedMindReturnToDust": {
+      "name": "EX Special Attack: Enlightened Mind - Return to Dust",
+      "desc": {
+        "0": "In the <ct color=#FFFFFF>Enlightened Mind</ct> state, press <IconUltimateReady /> or hold <IconSpecialReady /> when all <ct color=#FFFFFF>Qingming Sword Force</ct> is expended to activate:",
+        "1": "Deals massive <ct color=#F0D12B>Physical DMG</ct> to enemies in a large area.",
+        "2": "Ye Shunguang will not exit the <ct color=#FFFFFF>Enlightened Mind</ct> state during this skill.",
+        "3": "After using this skill, <ct color=#FFFFFF>Ether Veil: Verdict</ct> is removed and the <ct color=#FFFFFF>Enlightened Mind</ct> state ends.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackSmiteTheWicked": {
+      "name": "Chain Attack: Smite the Wicked",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful slash at enemies ahead in a large area, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateChasingStorms": {
+      "name": "Ultimate: Chasing Storms",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Summons a sword formation and enter the <ct color=#FFFFFF>Enlightened Mind</ct> state, activating an <ct color=#FFFFFF>Ether Veil: Verdict</ct> while also gaining 6 <ct color=#FFFFFF>Qingming Sword Force</ct>. This skill deals massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Upon activating this skill, if Decibels are consumed, press <IconUltimateReady /> while in this <ct color=#FFFFFF>Enlightened Mind</ct> state to launch an <ct color=#FFFFFF>Ultimate: Cleaving Heavens</ct> that doesn't consume Decibels.",
+        "3": "Enter the airborne state after using this skill.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "ChainAttackEnlightenedMindLureThunder": {
+      "name": "Chain Attack: Enlightened Mind - Lure Thunder",
+      "desc": {
+        "0": "While in the <ct color=#FFFFFF>Enlightened Mind</ct> state, and when a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleashes a powerful slash at enemies ahead in a large area, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Ye Shunguang will not exit the <ct color=#FFFFFF>Enlightened Mind</ct> state during this skill.",
+        "3": "Enter the airborne state after using this skill.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateCleavingHeavens": {
+      "name": "Ultimate: Cleaving Heavens",
+      "desc": {
+        "0": "After consuming Decibels to launch <ct color=#FFFFFF>Ultimate: Chasing Storms</ct> and while in the <ct color=#FFFFFF>Enlightened Mind</ct> state, press <IconUltimateReady /> or hold <IconSpecialReady /> when all <ct color=#FFFFFF>Qingming Sword Force</ct> is expended to activate:",
+        "1": "Summons a massive blade, dealing massive <ct color=#F0D12B>Physical DMG</ct> to enemies.",
+        "2": "Ye Shunguang will not exit the <ct color=#FFFFFF>Enlightened Mind</ct> state during this skill.",
+        "3": "After using this skill, the <ct color=#FFFFFF>Enlightened Mind</ct> state ends, and <ct color=#FFFFFF>Ether Veil: Verdict</ct> is removed.",
+        "4": "This skill doesn't consume Decibels.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "EntrySkillIlluminatingDarkness": {
+      "name": "Entry Skill: Illuminating Darkness",
+      "desc": {
+        "0": "With 6 <ct color=#FFFFFF>Qingming Sword Force</ct> and while not in the <ct color=#FFFFFF>Enlightened Mind</ct> state, hold <IconNormal /> to activate, or press <IconSwitch /> while in combat and switch on-field from off-field to activate:",
+        "1": "Enters the <ct color=#FFFFFF>Enlightened Mind</ct> state and activates <ct color=#FFFFFF>Ether Veil: Verdict</ct>.",
+        "2": "Deals <ct color=#F0D12B>Physical DMG</ct> to enemies in a large area in front.",
+        "3": "Activating this skill is considered as activating a <ct color=#FFFFFF>Quick Assist</ct>.",
+        "4": "Enters the airborne state after using this skill.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "QuickAssistSupportGuard": {
+      "name": "Quick Assist: Support Guard",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Leaps into the air and thrusts forward, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "AssistFollowUpCeaseHostility": {
+      "name": "Assist Follow-Up: Cease Hostility",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Deals massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistWhenIReturn": {
+      "name": "Defensive Assist: When I Return",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "QuickAssistEnlightenedMindTacticalSupport": {
+      "name": "Quick Assist: Enlightened Mind - Tactical Support",
+      "desc": {
+        "0": "While in the <ct color=#FFFFFF>Enlightened Mind</ct> state, when the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Launches a forward slash, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "AssistFollowUpEnlightenedMindUnification": {
+      "name": "Assist Follow-Up: Enlightened Mind - Unification",
+      "desc": {
+        "0": "While in the <ct color=#FFFFFF>Enlightened Mind</ct> state and after a <ct color=#FFFFFF>Defensive Assist</ct>, press <IconNormal /> to activate:",
+        "1": "Deals massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Burning Clarity",
+    "desc": [
+      {
+        "0": "When not in the <ct color=#FFFFFF>Enlightened Mind</ct> state and with fewer than 6 points of Qingming Sword Force, certain attacks slowly build <ct color=#FFFFFF>Qingming Sword Force</ct>. Whenever <ct color=#FFFFFF>Qingming Sword Force</ct> is gained by any means, each 1 point of <ct color=#FFFFFF>Qingming Sword Force</ct> that exceeds the limit is converted into 1 stack of <ct color=#FFFFFF>Bearer</ct>, stacking up to 3 times. Upon leaving the <ct color=#FFFFFF>Enlightened Mind</ct> state, all <ct color=#FFFFFF>Bearer</ct> stacks are consumed to grant the same number of <ct color=#FFFFFF>Qingming Sword Force</ct> stacks.",
+        "1": "Upon entering the battlefield, gain <ct color=#FFFFFF>Unity</ct>, increasing CRIT Rate by <ct color=#2BAD00>15%</ct> and DMG by <ct color=#2BAD00>10%</ct>.",
+        "2": "When <ct color=#FFFFFF>Ultimate: Chasing Storms</ct> or <ct color=#FFFFFF>Entry Skill: Illuminating Darkness</ct> is unleashed, Ye Shunguang enters the <ct color=#FFFFFF>Enlightened Mind</ct> state and activates <ct color=#FFFFFF>Ether Veil: Verdict</ct>. <ct color=#FFFFFF>Ether Veil: Verdict</ct> has the same duration as <ct color=#FFFFFF>Enlightened Mind</ct>. The duration lasts 16s, and the duration timer pauses while she is off-field. During the <ct color=#FFFFFF>Enlightened Mind</ct> state, Ye Shunguang's skills are enhanced, all <ct color=#F0D12B>Physical DMG</ct> dealt by her skills becomes <ct color=#F0D12B>Honed Edge DMG</ct>.",
+        "3": "While <ct color=#FFFFFF>Ether Veil: Verdict</ct> is active, when an enemy enters <ct color=#FFFFFF>Ether Veil: Verdict</ct>, they gain a Veil Vulnerability effect based on their current Stun DMG Multiplier. During this, when Ye Shunguang deals DMG to enemies with her skills, enemy Stun DMG Multiplier is ignored and replaced with the Veil Vulnerability bonus. Veil Vulnerability caps at 110%. The effect is removed when <ct color=#FFFFFF>Ether Veil: Verdict</ct> ends."
+      },
+      {
+        "0": "When not in the <ct color=#FFFFFF>Enlightened Mind</ct> state and with fewer than 6 points of Qingming Sword Force, certain attacks slowly build <ct color=#FFFFFF>Qingming Sword Force</ct>. Whenever <ct color=#FFFFFF>Qingming Sword Force</ct> is gained by any means, each 1 point of <ct color=#FFFFFF>Qingming Sword Force</ct> that exceeds the limit is converted into 1 stack of <ct color=#FFFFFF>Bearer</ct>, stacking up to 3 times. Upon leaving the <ct color=#FFFFFF>Enlightened Mind</ct> state, all <ct color=#FFFFFF>Bearer</ct> stacks are consumed to grant the same number of <ct color=#FFFFFF>Qingming Sword Force</ct> stacks.",
+        "1": "Upon entering the battlefield, gain <ct color=#FFFFFF>Unity</ct>, increasing CRIT Rate by <ct color=#2BAD00>17.5%</ct> and DMG by <ct color=#2BAD00>12.5%</ct>.",
+        "2": "When <ct color=#FFFFFF>Ultimate: Chasing Storms</ct> or <ct color=#FFFFFF>Entry Skill: Illuminating Darkness</ct> is unleashed, Ye Shunguang enters the <ct color=#FFFFFF>Enlightened Mind</ct> state and activates <ct color=#FFFFFF>Ether Veil: Verdict</ct>. <ct color=#FFFFFF>Ether Veil: Verdict</ct> has the same duration as <ct color=#FFFFFF>Enlightened Mind</ct>. The duration lasts 16s, and the duration timer pauses while she is off-field. During the <ct color=#FFFFFF>Enlightened Mind</ct> state, Ye Shunguang's skills are enhanced, all <ct color=#F0D12B>Physical DMG</ct> dealt by her skills becomes <ct color=#F0D12B>Honed Edge DMG</ct>.",
+        "3": "While <ct color=#FFFFFF>Ether Veil: Verdict</ct> is active, when an enemy enters <ct color=#FFFFFF>Ether Veil: Verdict</ct>, they gain a Veil Vulnerability effect based on their current Stun DMG Multiplier. During this, when Ye Shunguang deals DMG to enemies with her skills, enemy Stun DMG Multiplier is ignored and replaced with the Veil Vulnerability bonus. Veil Vulnerability caps at 110%. The effect is removed when <ct color=#FFFFFF>Ether Veil: Verdict</ct> ends."
+      },
+      {
+        "0": "When not in the <ct color=#FFFFFF>Enlightened Mind</ct> state and with fewer than 6 points of Qingming Sword Force, certain attacks slowly build <ct color=#FFFFFF>Qingming Sword Force</ct>. Whenever <ct color=#FFFFFF>Qingming Sword Force</ct> is gained by any means, each 1 point of <ct color=#FFFFFF>Qingming Sword Force</ct> that exceeds the limit is converted into 1 stack of <ct color=#FFFFFF>Bearer</ct>, stacking up to 3 times. Upon leaving the <ct color=#FFFFFF>Enlightened Mind</ct> state, all <ct color=#FFFFFF>Bearer</ct> stacks are consumed to grant the same number of <ct color=#FFFFFF>Qingming Sword Force</ct> stacks.",
+        "1": "Upon entering the battlefield, gain <ct color=#FFFFFF>Unity</ct>, increasing CRIT Rate by <ct color=#2BAD00>20%</ct> and DMG by <ct color=#2BAD00>15%</ct>.",
+        "2": "When <ct color=#FFFFFF>Ultimate: Chasing Storms</ct> or <ct color=#FFFFFF>Entry Skill: Illuminating Darkness</ct> is unleashed, Ye Shunguang enters the <ct color=#FFFFFF>Enlightened Mind</ct> state and activates <ct color=#FFFFFF>Ether Veil: Verdict</ct>. <ct color=#FFFFFF>Ether Veil: Verdict</ct> has the same duration as <ct color=#FFFFFF>Enlightened Mind</ct>. The duration lasts 16s, and the duration timer pauses while she is off-field. During the <ct color=#FFFFFF>Enlightened Mind</ct> state, Ye Shunguang's skills are enhanced, all <ct color=#F0D12B>Physical DMG</ct> dealt by her skills becomes <ct color=#F0D12B>Honed Edge DMG</ct>.",
+        "3": "While <ct color=#FFFFFF>Ether Veil: Verdict</ct> is active, when an enemy enters <ct color=#FFFFFF>Ether Veil: Verdict</ct>, they gain a Veil Vulnerability effect based on their current Stun DMG Multiplier. During this, when Ye Shunguang deals DMG to enemies with her skills, enemy Stun DMG Multiplier is ignored and replaced with the Veil Vulnerability bonus. Veil Vulnerability caps at 110%. The effect is removed when <ct color=#FFFFFF>Ether Veil: Verdict</ct> ends."
+      },
+      {
+        "0": "When not in the <ct color=#FFFFFF>Enlightened Mind</ct> state and with fewer than 6 points of Qingming Sword Force, certain attacks slowly build <ct color=#FFFFFF>Qingming Sword Force</ct>. Whenever <ct color=#FFFFFF>Qingming Sword Force</ct> is gained by any means, each 1 point of <ct color=#FFFFFF>Qingming Sword Force</ct> that exceeds the limit is converted into 1 stack of <ct color=#FFFFFF>Bearer</ct>, stacking up to 3 times. Upon leaving the <ct color=#FFFFFF>Enlightened Mind</ct> state, all <ct color=#FFFFFF>Bearer</ct> stacks are consumed to grant the same number of <ct color=#FFFFFF>Qingming Sword Force</ct> stacks.",
+        "1": "Upon entering the battlefield, gain <ct color=#FFFFFF>Unity</ct>, increasing CRIT Rate by <ct color=#2BAD00>22.5%</ct> and DMG by <ct color=#2BAD00>17.5%</ct>.",
+        "2": "When <ct color=#FFFFFF>Ultimate: Chasing Storms</ct> or <ct color=#FFFFFF>Entry Skill: Illuminating Darkness</ct> is unleashed, Ye Shunguang enters the <ct color=#FFFFFF>Enlightened Mind</ct> state and activates <ct color=#FFFFFF>Ether Veil: Verdict</ct>. <ct color=#FFFFFF>Ether Veil: Verdict</ct> has the same duration as <ct color=#FFFFFF>Enlightened Mind</ct>. The duration lasts 16s, and the duration timer pauses while she is off-field. During the <ct color=#FFFFFF>Enlightened Mind</ct> state, Ye Shunguang's skills are enhanced, all <ct color=#F0D12B>Physical DMG</ct> dealt by her skills becomes <ct color=#F0D12B>Honed Edge DMG</ct>.",
+        "3": "While <ct color=#FFFFFF>Ether Veil: Verdict</ct> is active, when an enemy enters <ct color=#FFFFFF>Ether Veil: Verdict</ct>, they gain a Veil Vulnerability effect based on their current Stun DMG Multiplier. During this, when Ye Shunguang deals DMG to enemies with her skills, enemy Stun DMG Multiplier is ignored and replaced with the Veil Vulnerability bonus. Veil Vulnerability caps at 110%. The effect is removed when <ct color=#FFFFFF>Ether Veil: Verdict</ct> ends."
+      },
+      {
+        "0": "When not in the <ct color=#FFFFFF>Enlightened Mind</ct> state and with fewer than 6 points of Qingming Sword Force, certain attacks slowly build <ct color=#FFFFFF>Qingming Sword Force</ct>. Whenever <ct color=#FFFFFF>Qingming Sword Force</ct> is gained by any means, each 1 point of <ct color=#FFFFFF>Qingming Sword Force</ct> that exceeds the limit is converted into 1 stack of <ct color=#FFFFFF>Bearer</ct>, stacking up to 3 times. Upon leaving the <ct color=#FFFFFF>Enlightened Mind</ct> state, all <ct color=#FFFFFF>Bearer</ct> stacks are consumed to grant the same number of <ct color=#FFFFFF>Qingming Sword Force</ct> stacks.",
+        "1": "Upon entering the battlefield, gain <ct color=#FFFFFF>Unity</ct>, increasing CRIT Rate by <ct color=#2BAD00>25%</ct> and DMG by <ct color=#2BAD00>20%</ct>.",
+        "2": "When <ct color=#FFFFFF>Ultimate: Chasing Storms</ct> or <ct color=#FFFFFF>Entry Skill: Illuminating Darkness</ct> is unleashed, Ye Shunguang enters the <ct color=#FFFFFF>Enlightened Mind</ct> state and activates <ct color=#FFFFFF>Ether Veil: Verdict</ct>. <ct color=#FFFFFF>Ether Veil: Verdict</ct> has the same duration as <ct color=#FFFFFF>Enlightened Mind</ct>. The duration lasts 16s, and the duration timer pauses while she is off-field. During the <ct color=#FFFFFF>Enlightened Mind</ct> state, Ye Shunguang's skills are enhanced, all <ct color=#F0D12B>Physical DMG</ct> dealt by her skills becomes <ct color=#F0D12B>Honed Edge DMG</ct>.",
+        "3": "While <ct color=#FFFFFF>Ether Veil: Verdict</ct> is active, when an enemy enters <ct color=#FFFFFF>Ether Veil: Verdict</ct>, they gain a Veil Vulnerability effect based on their current Stun DMG Multiplier. During this, when Ye Shunguang deals DMG to enemies with her skills, enemy Stun DMG Multiplier is ignored and replaced with the Veil Vulnerability bonus. Veil Vulnerability caps at 110%. The effect is removed when <ct color=#FFFFFF>Ether Veil: Verdict</ct> ends."
+      },
+      {
+        "0": "When not in the <ct color=#FFFFFF>Enlightened Mind</ct> state and with fewer than 6 points of Qingming Sword Force, certain attacks slowly build <ct color=#FFFFFF>Qingming Sword Force</ct>. Whenever <ct color=#FFFFFF>Qingming Sword Force</ct> is gained by any means, each 1 point of <ct color=#FFFFFF>Qingming Sword Force</ct> that exceeds the limit is converted into 1 stack of <ct color=#FFFFFF>Bearer</ct>, stacking up to 3 times. Upon leaving the <ct color=#FFFFFF>Enlightened Mind</ct> state, all <ct color=#FFFFFF>Bearer</ct> stacks are consumed to grant the same number of <ct color=#FFFFFF>Qingming Sword Force</ct> stacks.",
+        "1": "Upon entering the battlefield, gain <ct color=#FFFFFF>Unity</ct>, increasing CRIT Rate by <ct color=#2BAD00>27.5%</ct> and DMG by <ct color=#2BAD00>22.5%</ct>.",
+        "2": "When <ct color=#FFFFFF>Ultimate: Chasing Storms</ct> or <ct color=#FFFFFF>Entry Skill: Illuminating Darkness</ct> is unleashed, Ye Shunguang enters the <ct color=#FFFFFF>Enlightened Mind</ct> state and activates <ct color=#FFFFFF>Ether Veil: Verdict</ct>. <ct color=#FFFFFF>Ether Veil: Verdict</ct> has the same duration as <ct color=#FFFFFF>Enlightened Mind</ct>. The duration lasts 16s, and the duration timer pauses while she is off-field. During the <ct color=#FFFFFF>Enlightened Mind</ct> state, Ye Shunguang's skills are enhanced, all <ct color=#F0D12B>Physical DMG</ct> dealt by her skills becomes <ct color=#F0D12B>Honed Edge DMG</ct>.",
+        "3": "While <ct color=#FFFFFF>Ether Veil: Verdict</ct> is active, when an enemy enters <ct color=#FFFFFF>Ether Veil: Verdict</ct>, they gain a Veil Vulnerability effect based on their current Stun DMG Multiplier. During this, when Ye Shunguang deals DMG to enemies with her skills, enemy Stun DMG Multiplier is ignored and replaced with the Veil Vulnerability bonus. Veil Vulnerability caps at 110%. The effect is removed when <ct color=#FFFFFF>Ether Veil: Verdict</ct> ends."
+      },
+      {
+        "0": "When not in the <ct color=#FFFFFF>Enlightened Mind</ct> state and with fewer than 6 points of Qingming Sword Force, certain attacks slowly build <ct color=#FFFFFF>Qingming Sword Force</ct>. Whenever <ct color=#FFFFFF>Qingming Sword Force</ct> is gained by any means, each 1 point of <ct color=#FFFFFF>Qingming Sword Force</ct> that exceeds the limit is converted into 1 stack of <ct color=#FFFFFF>Bearer</ct>, stacking up to 3 times. Upon leaving the <ct color=#FFFFFF>Enlightened Mind</ct> state, all <ct color=#FFFFFF>Bearer</ct> stacks are consumed to grant the same number of <ct color=#FFFFFF>Qingming Sword Force</ct> stacks.",
+        "1": "Upon entering the battlefield, gain <ct color=#FFFFFF>Unity</ct>, increasing CRIT Rate by <ct color=#2BAD00>30%</ct> and DMG by <ct color=#2BAD00>25%</ct>.",
+        "2": "When <ct color=#FFFFFF>Ultimate: Chasing Storms</ct> or <ct color=#FFFFFF>Entry Skill: Illuminating Darkness</ct> is unleashed, Ye Shunguang enters the <ct color=#FFFFFF>Enlightened Mind</ct> state and activates <ct color=#FFFFFF>Ether Veil: Verdict</ct>. <ct color=#FFFFFF>Ether Veil: Verdict</ct> has the same duration as <ct color=#FFFFFF>Enlightened Mind</ct>. The duration lasts 16s, and the duration timer pauses while she is off-field. During the <ct color=#FFFFFF>Enlightened Mind</ct> state, Ye Shunguang's skills are enhanced, all <ct color=#F0D12B>Physical DMG</ct> dealt by her skills becomes <ct color=#F0D12B>Honed Edge DMG</ct>.",
+        "3": "While <ct color=#FFFFFF>Ether Veil: Verdict</ct> is active, when an enemy enters <ct color=#FFFFFF>Ether Veil: Verdict</ct>, they gain a Veil Vulnerability effect based on their current Stun DMG Multiplier. During this, when Ye Shunguang deals DMG to enemies with her skills, enemy Stun DMG Multiplier is ignored and replaced with the Veil Vulnerability bonus. Veil Vulnerability caps at 110%. The effect is removed when <ct color=#FFFFFF>Ether Veil: Verdict</ct> ends."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Shadowtrace Flight",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Support</ct> or <ct color=#FFFFFF>Defense</ct> character:",
+      "1": "When a squadmate activates any <ct color=#FFFFFF>Ether Veil</ct>, gain 3 points of <ct color=#FFFFFF>Qingming Sword Force</ct>. If already in the <ct color=#FFFFFF>Enlightened Mind</ct> state, this is instead converted into 3 stacks of <ct color=#FFFFFF>Bearer</ct>."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Dreambound Self",
+      "desc": {
+        "0": "Upon entering the battlefield, gains 6 <ct color=#FFFFFF>Qingming Sword Force</ct>. This effect can trigger once every 180s in Investigation Zone mode.",
+        "1": "The <ct color=#FFFFFF>Unity</ct> effect from <ct color=#FFFFFF>Core Passive: Burning Clarity</ct> increases DMG dealt by an additional 10%, and they ignore 20% of the target's DEF."
+      },
+      "flavor": {
+        "0": "Countless times, in the dead of night, she finds herself returning to that day...",
+        "1": "Steel cried out, the sword acknowledged its wielder, and a contract was forged.",
+        "2": "Was it a blessing, or a curse?",
+        "3": "",
+        "4": "...No one knows the answer. Yet from that day on, her fate became bound to the sword."
+      }
+    },
+    "2": {
+      "name": "Light & Shadow",
+      "desc": "The max stack count of <ct color=#FFFFFF>Bearer</ct> increases to 6, and <ct color=#FFFFFF>Culmination</ct> can stack up to 9 times. While in the <ct color=#FFFFFF>Enlightened Mind</ct> state, each point of <ct color=#FFFFFF>Qingming Sword Force</ct> consumed grants 1 stack of <ct color=#FFFFFF>Culmination</ct>. <ct color=#FFFFFF>EX Special Attack: Enlightened Mind - Soaring Light</ct> and <ct color=#FFFFFF>Ultimate: Cleaving Heavens</ct>'s DMG ignore 40% of the target's DEF.",
+      "flavor": {
+        "0": "Time flowed on, winters giving way to summers.",
+        "1": "Her entire world amounted to this tiny stretch of Yunkui Summit, the changing seasons of the mountain were all she would ever see.",
+        "2": "In endless solitude and ever-present fear, \"another self\" quietly came into being.",
+        "3": "",
+        "4": "\"...I am a part of her. From beginning to end, we were never apart.\"",
+        "5": "\"If she is the light, then I am the shadow. If she stands as a lofty idol, then I am the mortal who crawls below.\"",
+        "6": "\"Unlike her, I have no wish to become some kind of 'hero'...\"",
+        "7": "\"...I just want to survive.\""
+      }
+    },
+    "3": {
+      "name": "Swordswoman",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "A peerless famed sword lies hidden deep in the mountains, its edge fully restrained.",
+        "1": "But once unsheathed, its icy light reaches far and wide, even after storms of wind and snow, a single piercing light endures.",
+        "2": "",
+        "3": "\"What is someone who wields a blade?\"",
+        "4": "\"Nothing more than... the courage to press forward without hesitation, and the resolve to cut through anything.\""
+      }
+    },
+    "4": {
+      "name": "Together into the Dust",
+      "desc": "Upon entering the battlefield, gains 1,000 Decibels. In Investigation Zone mode, this effect can trigger once every 180s. The Vulnerability bonus provided by <ct color=#FFFFFF>Ether Veil: Verdict</ct> is increased to a maximum of 200%.",
+      "flavor": {
+        "0": "Hidden beneath a grand vision was a lie, where salvation came only by burning oneself to ash.",
+        "1": "Fate showed her no mercy, yet she willingly met her end.",
+        "2": "",
+        "3": "\"I understand.\"",
+        "4": "\"I will live my whole life alongside 'loss'.\"",
+        "5": "\"I willingly accept everything...\"",
+        "6": "\"...This is the person I choose to be.\""
+      }
+    },
+    "5": {
+      "name": "Guiding Glimmer",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"...I suppose, in the end, I'm still that 'lucky' child.\"",
+        "1": "\"Miasma won't overwhelm me, disaster won't swallow me.\"",
+        "2": "\"Even the Qingming Sword can't drag me into that pitch-black, bottomless abyss...\"",
+        "3": "",
+        "4": "\"My brother, Shifu, everyone at Suibian Temple... and you.\"",
+        "5": "\"...I know you'll all keep waiting for me.\"",
+        "6": "And so, even if the road ahead is filled with thorns, a faint light still guides the way."
+      }
+    },
+    "6": {
+      "name": "Lantern Wish",
+      "desc": "Upon entering the battlefield, gains 2 stacks of <ct color=#FFFFFF>Lantern Wish</ct>. When entering the <ct color=#FFFFFF>Enlightened Mind</ct> state, gains 1 stack of <ct color=#FFFFFF>Lantern Wish</ct>, stacking up to 4 times. With 3 stacks of <ct color=#FFFFFF>Lantern Wish</ct>, <ct color=#FFFFFF>EX Special Attack: Enlightened Mind - Return to Dust</ct> is replaced with <ct color=#FFFFFF>Ultimate: Cleaving Heavens</ct>. When this <ct color=#FFFFFF>Ultimate: Cleaving Heavens</ct> is activated, it consumes 3 stacks of <ct color=#FFFFFF>Lantern Wish</ct>. The last hit of <ct color=#FFFFFF>Enlightened Mind - Return to Dust</ct> and <ct color=#FFFFFF>Ultimate: Cleaving Heavens</ct> deal 1,500% of ATK as additional <ct color=#F0D12B>Physical DMG</ct>.",
+      "flavor": {
+        "0": "Once, she stood alone, walking through the dark.",
+        "1": "Then she took up her sword and rushed toward disaster. As Qingming left its sheath, a fleeting arc of light split the sky, illuminating that silent, shadowed land.",
+        "2": "",
+        "3": "\"...I want to be one light among countless fireflies.\"",
+        "4": "\"The sun will rise. No matter how long the night lasts, dawn always comes.\"",
+        "5": "\"In the distant past, and in the distant future, there must be countless others who made the same choice as me. We... were never alone.\""
+      }
+    }
+  },
+  "potential": {}
+}

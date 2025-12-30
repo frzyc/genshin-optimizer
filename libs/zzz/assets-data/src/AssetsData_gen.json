@@ -131,6 +131,18 @@
       "cd_s": "ItemSuitMoonlightLullaby_S.png",
       "cd_a": "ItemSuitMoonlightLullaby_A.png",
       "cd_b": "ItemSuitMoonlightLullaby_B.png"
+    },
+    "WhiteWaterBallad": {
+      "circle": "SuitWhiteWaterBallad.png",
+      "cd_s": "ItemSuitWhiteWaterBallad_S.png",
+      "cd_a": "ItemSuitWhiteWaterBallad_A.png",
+      "cd_b": "ItemSuitWhiteWaterBallad_B.png"
+    },
+    "ShiningAria": {
+      "circle": "SuitShiningAria.png",
+      "cd_s": "ItemSuitShiningAria_S.png",
+      "cd_a": "ItemSuitShiningAria_A.png",
+      "cd_b": "ItemSuitShiningAria_B.png"
     }
   },
   "chars": {
@@ -358,6 +370,13 @@
       "select": "IconRoleSelect41.png",
       "interknot": "IconInterKnotRole0041.png"
     },
+    "Zhao": {
+      "full": "IconRole56.png",
+      "circle": "IconRoleCircle56.png",
+      "trap": "IconRoleGeneral56.png",
+      "select": "IconRoleSelect56.png",
+      "interknot": "IconInterKnotRole0056.png"
+    },
     "Pulchra": {
       "full": "IconRole38.png",
       "circle": "IconRoleCircle38.png",
@@ -414,6 +433,13 @@
       "select": "IconRoleSelect45.png",
       "interknot": "IconInterKnotRole0045.png"
     },
+    "YeShunguang": {
+      "full": "IconRole55.png",
+      "circle": "IconRoleCircle55.png",
+      "trap": "IconRoleGeneral55.png",
+      "select": "IconRoleSelect55.png",
+      "interknot": "IconInterKnotRole0055.png"
+    },
     "Manato": {
       "full": "IconRole51.png",
       "circle": "IconRoleCircle51.png",
@@ -434,6 +460,20 @@
       "trap": "IconRoleGeneral48.png",
       "select": "IconRoleSelect48.png",
       "interknot": "IconInterKnotRole0048.png"
+    },
+    "Banyue": {
+      "full": "IconRole53.png",
+      "circle": "IconRoleCircle53.png",
+      "trap": "IconRoleGeneral53.png",
+      "select": "IconRoleSelect53.png",
+      "interknot": "IconInterKnotRole0053.png"
+    },
+    "Dialyn": {
+      "full": "IconRole54.png",
+      "circle": "IconRoleCircle54.png",
+      "trap": "IconRoleGeneral54.png",
+      "select": "IconRoleSelect54.png",
+      "interknot": "IconInterKnotRole0054.png"
     }
   },
   "wengines": {
@@ -560,6 +600,10 @@
     "ReelProjector": {
       "icon": "Weapon_A_Common_16.png",
       "big": "Weapon_A_Common_16Big.png"
+    },
+    "CauldronOfClarity": {
+      "icon": "Weapon_A_Common_19.png",
+      "big": "Weapon_A_Common_19Big.png"
     },
     "DemaraBatteryMarkII": {
       "icon": "Weapon_A_1011.png",
@@ -713,6 +757,10 @@
       "icon": "Weapon_S_1331.png",
       "big": "Weapon_S_1331Big.png"
     },
+    "HalfSugarBunny": {
+      "icon": "Weapon_S_1341.png",
+      "big": "Weapon_S_1341Big.png"
+    },
     "SpectralGaze": {
       "icon": "Weapon_S_1361.png",
       "big": "Weapon_S_1361Big.png"
@@ -737,6 +785,10 @@
       "icon": "Weapon_S_1411.png",
       "big": "Weapon_S_1411Big.png"
     },
+    "CloudcleaveRadiance": {
+      "icon": "Weapon_S_1431.png",
+      "big": "Weapon_S_1431Big.png"
+    },
     "DreamlitHearth": {
       "icon": "Weapon_S_1451.png",
       "big": "Weapon_S_1451Big.png"
@@ -744,6 +796,14 @@
     "CordisGermina": {
       "icon": "Weapon_S_1461.png",
       "big": "Weapon_S_1461Big.png"
+    },
+    "WrathfulVajra": {
+      "icon": "Weapon_S_1471.png",
+      "big": "Weapon_S_1471Big.png"
+    },
+    "YesterdayCalls": {
+      "icon": "Weapon_S_1481.png",
+      "big": "Weapon_S_1481Big.png"
     }
   }
 }

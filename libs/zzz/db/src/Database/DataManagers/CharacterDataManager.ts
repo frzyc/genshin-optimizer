@@ -24,7 +24,7 @@ export class CharacterDataManager extends DataManager<
   override validate(obj: unknown): ICharacter | undefined {
     if (!obj || typeof obj !== 'object') return undefined
     const { key: characterKey } = obj as ICharacter
-    let { core, mindscape, dodge, basic, chain, special, assist } =
+    let { core, mindscape, dodge, basic, chain, special, assist, potential } =
       obj as ICharacter
     const { level: rawLevel, promotion: rawAscension } = obj as ICharacter
 
@@ -32,6 +32,9 @@ export class CharacterDataManager extends DataManager<
 
     if (typeof mindscape !== 'number' || mindscape < 0 || mindscape > 6)
       mindscape = 0
+
+    if (typeof potential !== 'number' || potential < 0 || potential > 6)
+      potential = 0
 
     const { sanitizedLevel, milestone: promotion } = validateLevelMilestone(
       rawLevel,
@@ -62,6 +65,7 @@ export class CharacterDataManager extends DataManager<
       special,
       assist,
       promotion,
+      potential,
     }
     return char
   }
@@ -216,6 +220,7 @@ export function initialCharacterData(key: CharacterKey): ICachedCharacter {
     core: 6,
     promotion: 0,
     mindscape: 0,
+    potential: 0,
     dodge: 1,
     basic: 1,
     chain: 1,

@@ -32,6 +32,7 @@ export const damageTypeKeysMap: Record<DamageType, string> = {
   exSpecial: 'EX Special',
   chain: 'Chain',
   ult: 'Ultimate',
+  entrySkill: 'Entry Skill',
   quickAssist: 'Quick Assist',
   defensiveAssist: 'Defensive Assist',
   evasiveAssist: 'Evasive Assist',

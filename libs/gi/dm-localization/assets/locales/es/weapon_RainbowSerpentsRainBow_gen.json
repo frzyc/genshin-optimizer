@@ -1,0 +1,24 @@
+{
+  "name": "Pluvioarco de la Serpiente Arcoíris",
+  "description": {
+    "0": "Un objeto ritual de los Augures Vientonocturno heredado desde tiempos inmemoriales. Un frío imposible de quitar envuelve el cuerpo de este arco de color oscuro."
+  },
+  "passiveName": "Susurros estelares más allá del trono sagrado",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando el portador de esta arma está en tu equipo pero no en uso y golpea con un ataque a un enemigo, su ATQ aumenta en un <cryo>28%</cryo> durante 8 s."
+    },
+    "1": {
+      "0": "Cuando el portador de esta arma está en tu equipo pero no en uso y golpea con un ataque a un enemigo, su ATQ aumenta en un <cryo>35%</cryo> durante 8 s."
+    },
+    "2": {
+      "0": "Cuando el portador de esta arma está en tu equipo pero no en uso y golpea con un ataque a un enemigo, su ATQ aumenta en un <cryo>42%</cryo> durante 8 s."
+    },
+    "3": {
+      "0": "Cuando el portador de esta arma está en tu equipo pero no en uso y golpea con un ataque a un enemigo, su ATQ aumenta en un <cryo>49%</cryo> durante 8 s."
+    },
+    "4": {
+      "0": "Cuando el portador de esta arma está en tu equipo pero no en uso y golpea con un ataque a un enemigo, su ATQ aumenta en un <cryo>56%</cryo> durante 8 s."
+    }
+  }
+}

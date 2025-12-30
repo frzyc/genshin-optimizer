@@ -1,0 +1,342 @@
+{
+  "name": "Dialyn",
+  "fullName": "Dialyn",
+  "basic": {
+    "BasicAttackHappyToBeOfService": {
+      "name": "Basic Attack: Happy to Be of Service",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to four attacks, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackRockPaperScissors": {
+      "name": "Basic Attack: Rock, Paper, Scissors",
+      "desc": {
+        "0": "After <ct color=#FFFFFF>EX Special Attack: Rock</ct> or <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, press <IconNormal /> to activate:",
+        "1": "Performs up to two attacks, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeLineBusy": {
+      "name": "Dodge: Line Busy",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackSuddenCall": {
+      "name": "Dash Attack: Sudden Call",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Launches a dashing attack at enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterNumberUnavailable": {
+      "name": "Dodge Counter: Number Unavailable",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Launches consecutive attacks against enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "After using this skill, can immediately follow up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Happy to Be of Service</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "EXSpecialAttackGetLost": {
+      "name": "EX Special Attack: Get Lost!",
+      "desc": {
+        "0": "With <ct color=#FFFFFF>Customer Complaint</ct>, hold <IconNormal /> to activate:",
+        "1": "Delivers a forward martial salute attack. On activation, it consumes 1 <ct color=#FFFFFF>Customer Complaint</ct> and deals <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "After activation, the previous character's <ct color=#FFFFFF>Quick Assist</ct> is triggered.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SpecialAttackWelcomeGesture": {
+      "name": "Special Attack: Welcome Gesture",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Throws dual rings to slash enemies, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackRock": {
+      "name": "EX Special Attack: Rock",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Launches a fist attack, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackScissors": {
+      "name": "EX Special Attack: Scissors",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Launches a scissors attack, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackPaper": {
+      "name": "EX Special Attack: Paper!",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Launches a paper attack, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackWelcomeMat": {
+      "name": "Chain Attack: Welcome Mat",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Launches consecutive kicks against enemies in front, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "After using this skill, can immediately follow up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Happy to Be of Service</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateServiceStoppedForNumberDialed": {
+      "name": "Ultimate: Service Stopped for Number Dialed",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Rushes forward and performs a finger flick attack, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "After using this skill, can immediately follow up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Happy to Be of Service</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistForwardCall": {
+      "name": "Quick Assist: Forward Call",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Launches consecutive attacks against enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "After using this skill, can immediately follow up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Happy to Be of Service</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistDeclineCall": {
+      "name": "Defensive Assist: Decline Call",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpBacktoBackCalls": {
+      "name": "Assist Follow-Up: Back-to-Back Calls",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Performs a rapid dash followed by a slash attack, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "After using this skill, can immediately follow up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Happy to Be of Service</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Five-Star Service Hotline",
+    "desc": [
+      {
+        "0": "Upon entering the battlefield, Dialyn starts with 60 <ct color=#FFFFFF>Positive Reviews</ct>. If her initial CRIT Rate surpasses 50%, her Impact increases by <ct color=#2BAD00>1.4</ct> for each additional 1%, up to a maximum increase of 100.",
+        "1": "After using <ct color=#FFFFFF>EX Special Attack: Rock</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Scissors</ct> for 8s.",
+        "2": "After using <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Paper!</ct> for 8s.",
+        "3": "When <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits an enemy, it applies the <ct color=#FFFFFF>Malicious Complaint</ct> effect. While under <ct color=#FFFFFF>Malicious Complaint</ct>, if the enemy becomes Stunned, the Stun duration is extended by 2s, and Stun DMG Multiplier increases by <ct color=#2BAD00>15%</ct>. Before recovering from Stun, <ct color=#FFFFFF>Malicious Complaint</ct> can trigger on the same target only once. The Stun duration bonus does not stack with similar effects. When an enemy with <ct color=#FFFFFF>Malicious Complaint</ct> recovers from being Stunned, the effect ends.",
+        "4": "While in combat, Dialyn gains 0.6 <ct color=#FFFFFF>Positive Reviews</ct> per second. When a heavy attack of <ct color=#FFFFFF>EX Special Attack: Rock</ct>, <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, or <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits enemies, she gains 7.5 <ct color=#FFFFFF>Positive Reviews</ct>. Each use of a skill can grant this bonus only once, up to a maximum of 120.",
+        "5": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn triggers the <ct color=#FFFFFF>Chain Attack</ct> window using <ct color=#FFFFFF>Chain Attack: Welcome Mat</ct>, <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct>, or <ct color=#FFFFFF>Quick Assist: Forward Call</ct>, the next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>. When an ally launches an <ct color=#FFFFFF>Ultimate</ct> this way, Dialyn consumes 60 <ct color=#FFFFFF>Positive Reviews</ct>.",
+        "6": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn hits an enemy with <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct> and doesn't trigger a <ct color=#FFFFFF>Chain Attack</ct> window, she consumes 90 <ct color=#FFFFFF>Positive Reviews</ct> to forcibly trigger a <ct color=#FFFFFF>Chain Attack</ct> window. The next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>.",
+        "7": "Each time <ct color=#FFFFFF>Positive Reviews</ct> reaches 90 or an <ct color=#FFFFFF>Ultimate</ct> is activated, Dialyn obtains 1 <ct color=#FFFFFF>Customer Complaint</ct>. A maximum of 1 <ct color=#FFFFFF>Customer Complaint</ct> can be held at a time."
+      },
+      {
+        "0": "Upon entering the battlefield, Dialyn starts with 60 <ct color=#FFFFFF>Positive Reviews</ct>. If her initial CRIT Rate surpasses 50%, her Impact increases by <ct color=#2BAD00>1.5</ct> for each additional 1%, up to a maximum increase of 100.",
+        "1": "After using <ct color=#FFFFFF>EX Special Attack: Rock</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Scissors</ct> for 8s.",
+        "2": "After using <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Paper!</ct> for 8s.",
+        "3": "When <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits an enemy, it applies the <ct color=#FFFFFF>Malicious Complaint</ct> effect. While under <ct color=#FFFFFF>Malicious Complaint</ct>, if the enemy becomes Stunned, the Stun duration is extended by 2s, and Stun DMG Multiplier increases by <ct color=#2BAD00>17.5%</ct>. Before recovering from Stun, <ct color=#FFFFFF>Malicious Complaint</ct> can trigger on the same target only once. The Stun duration bonus does not stack with similar effects. When an enemy with <ct color=#FFFFFF>Malicious Complaint</ct> recovers from being Stunned, the effect ends.",
+        "4": "While in combat, Dialyn gains 0.6 <ct color=#FFFFFF>Positive Reviews</ct> per second. When a heavy attack of <ct color=#FFFFFF>EX Special Attack: Rock</ct>, <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, or <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits enemies, she gains 7.5 <ct color=#FFFFFF>Positive Reviews</ct>. Each use of a skill can grant this bonus only once, up to a maximum of 120.",
+        "5": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn triggers the <ct color=#FFFFFF>Chain Attack</ct> window using <ct color=#FFFFFF>Chain Attack: Welcome Mat</ct>, <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct>, or <ct color=#FFFFFF>Quick Assist: Forward Call</ct>, the next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>. When an ally launches an <ct color=#FFFFFF>Ultimate</ct> this way, Dialyn consumes 60 <ct color=#FFFFFF>Positive Reviews</ct>.",
+        "6": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn hits an enemy with <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct> and doesn't trigger a <ct color=#FFFFFF>Chain Attack</ct> window, she consumes 90 <ct color=#FFFFFF>Positive Reviews</ct> to forcibly trigger a <ct color=#FFFFFF>Chain Attack</ct> window. The next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>.",
+        "7": "Each time <ct color=#FFFFFF>Positive Reviews</ct> reaches 90 or an <ct color=#FFFFFF>Ultimate</ct> is activated, Dialyn obtains 1 <ct color=#FFFFFF>Customer Complaint</ct>. A maximum of 1 <ct color=#FFFFFF>Customer Complaint</ct> can be held at a time."
+      },
+      {
+        "0": "Upon entering the battlefield, Dialyn starts with 60 <ct color=#FFFFFF>Positive Reviews</ct>. If her initial CRIT Rate surpasses 50%, her Impact increases by <ct color=#2BAD00>1.6</ct> for each additional 1%, up to a maximum increase of 100.",
+        "1": "After using <ct color=#FFFFFF>EX Special Attack: Rock</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Scissors</ct> for 8s.",
+        "2": "After using <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Paper!</ct> for 8s.",
+        "3": "When <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits an enemy, it applies the <ct color=#FFFFFF>Malicious Complaint</ct> effect. While under <ct color=#FFFFFF>Malicious Complaint</ct>, if the enemy becomes Stunned, the Stun duration is extended by 2s, and Stun DMG Multiplier increases by <ct color=#2BAD00>20%</ct>. Before recovering from Stun, <ct color=#FFFFFF>Malicious Complaint</ct> can trigger on the same target only once. The Stun duration bonus does not stack with similar effects. When an enemy with <ct color=#FFFFFF>Malicious Complaint</ct> recovers from being Stunned, the effect ends.",
+        "4": "While in combat, Dialyn gains 0.6 <ct color=#FFFFFF>Positive Reviews</ct> per second. When a heavy attack of <ct color=#FFFFFF>EX Special Attack: Rock</ct>, <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, or <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits enemies, she gains 7.5 <ct color=#FFFFFF>Positive Reviews</ct>. Each use of a skill can grant this bonus only once, up to a maximum of 120.",
+        "5": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn triggers the <ct color=#FFFFFF>Chain Attack</ct> window using <ct color=#FFFFFF>Chain Attack: Welcome Mat</ct>, <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct>, or <ct color=#FFFFFF>Quick Assist: Forward Call</ct>, the next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>. When an ally launches an <ct color=#FFFFFF>Ultimate</ct> this way, Dialyn consumes 60 <ct color=#FFFFFF>Positive Reviews</ct>.",
+        "6": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn hits an enemy with <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct> and doesn't trigger a <ct color=#FFFFFF>Chain Attack</ct> window, she consumes 90 <ct color=#FFFFFF>Positive Reviews</ct> to forcibly trigger a <ct color=#FFFFFF>Chain Attack</ct> window. The next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>.",
+        "7": "Each time <ct color=#FFFFFF>Positive Reviews</ct> reaches 90 or an <ct color=#FFFFFF>Ultimate</ct> is activated, Dialyn obtains 1 <ct color=#FFFFFF>Customer Complaint</ct>. A maximum of 1 <ct color=#FFFFFF>Customer Complaint</ct> can be held at a time."
+      },
+      {
+        "0": "Upon entering the battlefield, Dialyn starts with 60 <ct color=#FFFFFF>Positive Reviews</ct>. If her initial CRIT Rate surpasses 50%, her Impact increases by <ct color=#2BAD00>1.7</ct> for each additional 1%, up to a maximum increase of 100.",
+        "1": "After using <ct color=#FFFFFF>EX Special Attack: Rock</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Scissors</ct> for 8s.",
+        "2": "After using <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Paper!</ct> for 8s.",
+        "3": "When <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits an enemy, it applies the <ct color=#FFFFFF>Malicious Complaint</ct> effect. While under <ct color=#FFFFFF>Malicious Complaint</ct>, if the enemy becomes Stunned, the Stun duration is extended by 2s, and Stun DMG Multiplier increases by <ct color=#2BAD00>22.5%</ct>. Before recovering from Stun, <ct color=#FFFFFF>Malicious Complaint</ct> can trigger on the same target only once. The Stun duration bonus does not stack with similar effects. When an enemy with <ct color=#FFFFFF>Malicious Complaint</ct> recovers from being Stunned, the effect ends.",
+        "4": "While in combat, Dialyn gains 0.6 <ct color=#FFFFFF>Positive Reviews</ct> per second. When a heavy attack of <ct color=#FFFFFF>EX Special Attack: Rock</ct>, <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, or <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits enemies, she gains 7.5 <ct color=#FFFFFF>Positive Reviews</ct>. Each use of a skill can grant this bonus only once, up to a maximum of 120.",
+        "5": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn triggers the <ct color=#FFFFFF>Chain Attack</ct> window using <ct color=#FFFFFF>Chain Attack: Welcome Mat</ct>, <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct>, or <ct color=#FFFFFF>Quick Assist: Forward Call</ct>, the next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>. When an ally launches an <ct color=#FFFFFF>Ultimate</ct> this way, Dialyn consumes 60 <ct color=#FFFFFF>Positive Reviews</ct>.",
+        "6": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn hits an enemy with <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct> and doesn't trigger a <ct color=#FFFFFF>Chain Attack</ct> window, she consumes 90 <ct color=#FFFFFF>Positive Reviews</ct> to forcibly trigger a <ct color=#FFFFFF>Chain Attack</ct> window. The next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>.",
+        "7": "Each time <ct color=#FFFFFF>Positive Reviews</ct> reaches 90 or an <ct color=#FFFFFF>Ultimate</ct> is activated, Dialyn obtains 1 <ct color=#FFFFFF>Customer Complaint</ct>. A maximum of 1 <ct color=#FFFFFF>Customer Complaint</ct> can be held at a time."
+      },
+      {
+        "0": "Upon entering the battlefield, Dialyn starts with 60 <ct color=#FFFFFF>Positive Reviews</ct>. If her initial CRIT Rate surpasses 50%, her Impact increases by <ct color=#2BAD00>1.8</ct> for each additional 1%, up to a maximum increase of 100.",
+        "1": "After using <ct color=#FFFFFF>EX Special Attack: Rock</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Scissors</ct> for 8s.",
+        "2": "After using <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Paper!</ct> for 8s.",
+        "3": "When <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits an enemy, it applies the <ct color=#FFFFFF>Malicious Complaint</ct> effect. While under <ct color=#FFFFFF>Malicious Complaint</ct>, if the enemy becomes Stunned, the Stun duration is extended by 2s, and Stun DMG Multiplier increases by <ct color=#2BAD00>25%</ct>. Before recovering from Stun, <ct color=#FFFFFF>Malicious Complaint</ct> can trigger on the same target only once. The Stun duration bonus does not stack with similar effects. When an enemy with <ct color=#FFFFFF>Malicious Complaint</ct> recovers from being Stunned, the effect ends.",
+        "4": "While in combat, Dialyn gains 0.6 <ct color=#FFFFFF>Positive Reviews</ct> per second. When a heavy attack of <ct color=#FFFFFF>EX Special Attack: Rock</ct>, <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, or <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits enemies, she gains 7.5 <ct color=#FFFFFF>Positive Reviews</ct>. Each use of a skill can grant this bonus only once, up to a maximum of 120.",
+        "5": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn triggers the <ct color=#FFFFFF>Chain Attack</ct> window using <ct color=#FFFFFF>Chain Attack: Welcome Mat</ct>, <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct>, or <ct color=#FFFFFF>Quick Assist: Forward Call</ct>, the next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>. When an ally launches an <ct color=#FFFFFF>Ultimate</ct> this way, Dialyn consumes 60 <ct color=#FFFFFF>Positive Reviews</ct>.",
+        "6": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn hits an enemy with <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct> and doesn't trigger a <ct color=#FFFFFF>Chain Attack</ct> window, she consumes 90 <ct color=#FFFFFF>Positive Reviews</ct> to forcibly trigger a <ct color=#FFFFFF>Chain Attack</ct> window. The next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>.",
+        "7": "Each time <ct color=#FFFFFF>Positive Reviews</ct> reaches 90 or an <ct color=#FFFFFF>Ultimate</ct> is activated, Dialyn obtains 1 <ct color=#FFFFFF>Customer Complaint</ct>. A maximum of 1 <ct color=#FFFFFF>Customer Complaint</ct> can be held at a time."
+      },
+      {
+        "0": "Upon entering the battlefield, Dialyn starts with 60 <ct color=#FFFFFF>Positive Reviews</ct>. If her initial CRIT Rate surpasses 50%, her Impact increases by <ct color=#2BAD00>1.9</ct> for each additional 1%, up to a maximum increase of 100.",
+        "1": "After using <ct color=#FFFFFF>EX Special Attack: Rock</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Scissors</ct> for 8s.",
+        "2": "After using <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Paper!</ct> for 8s.",
+        "3": "When <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits an enemy, it applies the <ct color=#FFFFFF>Malicious Complaint</ct> effect. While under <ct color=#FFFFFF>Malicious Complaint</ct>, if the enemy becomes Stunned, the Stun duration is extended by 2s, and Stun DMG Multiplier increases by <ct color=#2BAD00>27.5%</ct>. Before recovering from Stun, <ct color=#FFFFFF>Malicious Complaint</ct> can trigger on the same target only once. The Stun duration bonus does not stack with similar effects. When an enemy with <ct color=#FFFFFF>Malicious Complaint</ct> recovers from being Stunned, the effect ends.",
+        "4": "While in combat, Dialyn gains 0.6 <ct color=#FFFFFF>Positive Reviews</ct> per second. When a heavy attack of <ct color=#FFFFFF>EX Special Attack: Rock</ct>, <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, or <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits enemies, she gains 7.5 <ct color=#FFFFFF>Positive Reviews</ct>. Each use of a skill can grant this bonus only once, up to a maximum of 120.",
+        "5": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn triggers the <ct color=#FFFFFF>Chain Attack</ct> window using <ct color=#FFFFFF>Chain Attack: Welcome Mat</ct>, <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct>, or <ct color=#FFFFFF>Quick Assist: Forward Call</ct>, the next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>. When an ally launches an <ct color=#FFFFFF>Ultimate</ct> this way, Dialyn consumes 60 <ct color=#FFFFFF>Positive Reviews</ct>.",
+        "6": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn hits an enemy with <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct> and doesn't trigger a <ct color=#FFFFFF>Chain Attack</ct> window, she consumes 90 <ct color=#FFFFFF>Positive Reviews</ct> to forcibly trigger a <ct color=#FFFFFF>Chain Attack</ct> window. The next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>.",
+        "7": "Each time <ct color=#FFFFFF>Positive Reviews</ct> reaches 90 or an <ct color=#FFFFFF>Ultimate</ct> is activated, Dialyn obtains 1 <ct color=#FFFFFF>Customer Complaint</ct>. A maximum of 1 <ct color=#FFFFFF>Customer Complaint</ct> can be held at a time."
+      },
+      {
+        "0": "Upon entering the battlefield, Dialyn starts with 60 <ct color=#FFFFFF>Positive Reviews</ct>. If her initial CRIT Rate surpasses 50%, her Impact increases by <ct color=#2BAD00>2</ct> for each additional 1%, up to a maximum increase of 100.",
+        "1": "After using <ct color=#FFFFFF>EX Special Attack: Rock</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Scissors</ct> for 8s.",
+        "2": "After using <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, the next <ct color=#FFFFFF>EX Special Attack</ct> becomes <ct color=#FFFFFF>EX Special Attack: Paper!</ct> for 8s.",
+        "3": "When <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits an enemy, it applies the <ct color=#FFFFFF>Malicious Complaint</ct> effect. While under <ct color=#FFFFFF>Malicious Complaint</ct>, if the enemy becomes Stunned, the Stun duration is extended by 2s, and Stun DMG Multiplier increases by <ct color=#2BAD00>30%</ct>. Before recovering from Stun, <ct color=#FFFFFF>Malicious Complaint</ct> can trigger on the same target only once. The Stun duration bonus does not stack with similar effects. When an enemy with <ct color=#FFFFFF>Malicious Complaint</ct> recovers from being Stunned, the effect ends.",
+        "4": "While in combat, Dialyn gains 0.6 <ct color=#FFFFFF>Positive Reviews</ct> per second. When a heavy attack of <ct color=#FFFFFF>EX Special Attack: Rock</ct>, <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, or <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits enemies, she gains 7.5 <ct color=#FFFFFF>Positive Reviews</ct>. Each use of a skill can grant this bonus only once, up to a maximum of 120.",
+        "5": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn triggers the <ct color=#FFFFFF>Chain Attack</ct> window using <ct color=#FFFFFF>Chain Attack: Welcome Mat</ct>, <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct>, or <ct color=#FFFFFF>Quick Assist: Forward Call</ct>, the next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>. When an ally launches an <ct color=#FFFFFF>Ultimate</ct> this way, Dialyn consumes 60 <ct color=#FFFFFF>Positive Reviews</ct>.",
+        "6": "With at least 90 <ct color=#FFFFFF>Positive Reviews</ct>, when Dialyn hits an enemy with <ct color=#FFFFFF>EX Special Attack: Get Lost!</ct> and doesn't trigger a <ct color=#FFFFFF>Chain Attack</ct> window, she consumes 90 <ct color=#FFFFFF>Positive Reviews</ct> to forcibly trigger a <ct color=#FFFFFF>Chain Attack</ct> window. The next character to switch in will have their <ct color=#FFFFFF>Chain Attack</ct> upgraded to an <ct color=#FFFFFF>Ultimate</ct>.",
+        "7": "Each time <ct color=#FFFFFF>Positive Reviews</ct> reaches 90 or an <ct color=#FFFFFF>Ultimate</ct> is activated, Dialyn obtains 1 <ct color=#FFFFFF>Customer Complaint</ct>. A maximum of 1 <ct color=#FFFFFF>Customer Complaint</ct> can be held at a time."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: External Line",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Rupture</ct> character:",
+      "1": "Dialyn's <ct color=#FFFFFF>EX Special Attack</ct> CRIT DMG is increased by 50%.",
+      "2": "When an <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> is activated, all squad members gain the <ct color=#FFFFFF>Overwhelmingly Positive</ct> effect. While <ct color=#FFFFFF>Overwhelmingly Positive</ct> is active, DMG dealt is increased by 40% for 15s. When Dialyn uses an <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> while <ct color=#FFFFFF>Overwhelmingly Positive</ct> is active, if the remaining duration of <ct color=#FFFFFF>Overwhelmingly Positive</ct> is less than 35s, its duration is extended by 10s.",
+      "3": "When a heavy attack from <ct color=#FFFFFF>EX Special Attack: Rock</ct>, <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, or <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits, additional DMG is dealt based on the previous squad member's Specialty:",
+      "4": "If the squad member is an <ct color=#FFFFFF>Attack</ct> Agent, <ct color=#FFFFFF>EX Special Attack: Rock</ct>, <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, and <ct color=#FFFFFF>EX Special Attack: Paper!</ct> deal additional DMG equal to 320% of that <ct color=#FFFFFF>Attack</ct> Agent's ATK.",
+      "5": "If the squad member is a <ct color=#FFFFFF>Rupture</ct> Agent, <ct color=#FFFFFF>EX Special Attack: Rock</ct>, <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, and <ct color=#FFFFFF>EX Special Attack: Paper!</ct> deal additional DMG equal to 400% of that <ct color=#FFFFFF>Rupture</ct> Agent's Sheer Force."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Boundless Hospitality",
+      "desc": "The amount of <ct color=#FFFFFF>Positive Reviews</ct> accumulated each second and gained when <ct color=#FFFFFF>EX Special Attack: Rock</ct>, <ct color=#FFFFFF>EX Special Attack: Scissors</ct>, or <ct color=#FFFFFF>EX Special Attack: Paper!</ct> hits an enemy increase by 16%. While the <ct color=#FFFFFF>Overwhelmingly Positive</ct> effect is active, characters ignore 15% of enemy All-Attribute RES.",
+      "flavor": {
+        "0": "Welcome to the Cross-Department Customer Service Center!",
+        "1": "Our motto is simple: always wear a smile, always greet every customer with passion~!",
+        "2": "A smile... the one expression I once found hardest to fake. When did it become second nature to me?",
+        "3": "\"Hello there, darling~ How can I help you? Well~ not that I really can do anything for you!\""
+      }
+    },
+    "2": {
+      "name": "24/7 Hotline",
+      "desc": "Enemies affected by <ct color=#FFFFFF>Malicious Complaint</ct> gain an additional 20% Stun DMG Multiplier when Stunned, and all units deal 15% increased DMG to targets affected by <ct color=#FFFFFF>Malicious Complaint</ct>.",
+      "flavor": {
+        "0": "TOPS is the biggest corporate alliance in New Eridu, and our work keeps this city alive~!",
+        "1": "We're the essential lubricant that keeps this great machine turning, so our service hotline must stay open 24/7, no matter what!",
+        "2": "Endless noise and constant chatter? No problem — that's what I know best.",
+        "3": "\"Please feel free to contact me anytime~! No matter when you do, I'll still be just as annoying~!\""
+      }
+    },
+    "3": {
+      "name": "Call From the Hollow",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The Hollows are a vast tomb, where every echo of life falls silent within its pitch-black coffin.",
+        "1": "But to me, it's a call I can never refuse, the final page of every diary, a memo of obsession and lingering resentment.",
+        "2": "Even if... all that talk of letting go or holding on, they've got nothing to do with my own story.",
+        "3": "\"It's alright! I've talked with plenty of clients far harder to communicate with than you~!\""
+      }
+    },
+    "4": {
+      "name": "The Past Never Fades",
+      "desc": "Upon entering combat, Dialyn recovers 20 Energy. This effect can trigger once every 180s in Investigation Zone Mode. While the <ct color=#FFFFFF>Overwhelmingly Positive</ct> effect is active, Dialyn's ATK increases by 500.",
+      "flavor": {
+        "0": "People always treat me like a kid because I'm small, but my childhood is long since over.",
+        "1": "Which day did it end, though? The first time I heard the whispers of the dead? When I was sent into the Hollow as a sacrifice? Or that first night I cried myself to sleep?",
+        "2": "With no one to protect me, I had to find my own footing. Unable to forget the past, I pretended to let it go.",
+        "3": "\"I don't care about your personal issues~ but I am very concerned about how your childhood trauma might affect my complaint rate~!\""
+      }
+    },
+    "5": {
+      "name": "Lies",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "We lie when others still care about us, and only tell the truth once they've stopped.",
+        "1": "Such foolish choices always lead to regret. My job is simply to use yesterday's regrets to make today's a little lighter.",
+        "2": "I know people always lie, but at least there are still some who bother to lie to me.",
+        "3": "\"My suggestion? Mix a bit of flattering nonsense in between your insults — it'll work in your favor~!\""
+      }
+    },
+    "6": {
+      "name": "Truth",
+      "desc": "When an ally enters the field with an Ultimate through the <ct color=#FFFFFF>Core Passive</ct>'s effect, that ally gains the <ct color=#FFFFFF>Aftertone</ct> effect. With this effect, landing an attack causes Dialyn to deal an additional instance of <ct color=#F0D12B>Physical DMG</ct> equal to 480% of Dialyn's ATK. This DMG is treated as <ct color=#FFFFFF>EX Special Attack</ct> DMG, and can trigger once every second, up to 12 times. Gaining <ct color=#FFFFFF>Aftertone</ct> again refreshes its trigger count. Only one ally can have <ct color=#FFFFFF>Aftertone</ct> at a time.",
+      "flavor": {
+        "0": "A sudden death is like a moment preserved in time, capturing truth in its final, immutable form.",
+        "1": "I take these specimens from the hands of the dead, using their death certificates as the foundation for my judgments.",
+        "2": "Pure, objective \"truth\" is the only rule I can depend on, the only thread guiding my way forward... until—",
+        "3": "\"Proxy, can I lie as well?\""
+      }
+    }
+  },
+  "potential": {}
+}

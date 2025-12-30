@@ -450,5 +450,6 @@
   "constellation6": [
     0.75,
     0.075
-  ]
+  ],
+  "upgradeableSkills": []
 }

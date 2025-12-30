@@ -1,4 +1,3 @@
-'use client'
 import type { ContainerProps, ModalProps } from '@mui/material'
 import { Container, Modal, styled } from '@mui/material'
 

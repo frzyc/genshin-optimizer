@@ -10,7 +10,7 @@ import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { formulas, own } from '@genshin-optimizer/zzz/formula'
-import { mappedStats } from '@genshin-optimizer/zzz/stats'
+import { getCharStat, mappedStats } from '@genshin-optimizer/zzz/stats'
 import { TagDisplay } from '../components'
 import { st, trans } from '../util'
 import type { CharUISheet } from './consts'
@@ -22,6 +22,7 @@ type AddlDocuments = {
   perSkillAbility?: AddlDocumentsPerSkillAbility
   core?: Document[]
   ability?: Document[]
+  potential?: Document[]
   m1?: Document[]
   m2?: Document[]
   m3?: Document[]
@@ -35,6 +36,8 @@ export function createBaseSheet(
   key: CharacterKey,
   addlDocuments: AddlDocuments = {}
 ): CharUISheet {
+  const hasPotential = getCharStat(key).potentialParams.length > 0
+
   return {
     ...createSkillsSheets(key, addlDocuments?.perSkillAbility),
     core: createCoreAndAbilitySheet(
@@ -42,6 +45,9 @@ export function createBaseSheet(
       addlDocuments?.core,
       addlDocuments?.ability
     ),
+    ...(hasPotential
+      ? { potential: createPotentialSheet(key, addlDocuments?.potential) }
+      : {}),
     m1: createMindscapeSheet(key, 1, addlDocuments?.m1),
     m2: createMindscapeSheet(key, 2, addlDocuments?.m2),
     m3: createMindscapeSheet(key, 3, addlDocuments?.m3),
@@ -162,6 +168,28 @@ function createMindscapeSheet(
         ),
       },
       ...addlDocuments,
+    ],
+  }
+}
+
+function createPotentialSheet(
+  charKey: CharacterKey,
+  addlPotentialDocuments: Document[] = []
+): UISheetElement {
+  const [chg, _ch] = trans('char', charKey)
+  return {
+    title: 'potential',
+    documents: [
+      {
+        type: 'text',
+        header: {
+          icon: <ImgIcon src={commonDefIcon('coreFlat')} size={1.5} />,
+          text: chg(`potential.name`),
+        },
+        text: (calc) =>
+          chg(`potential.desc.${calc.compute(own.char.potential).val}`),
+      },
+      ...addlPotentialDocuments,
     ],
   }
 }

@@ -21,5 +21,6 @@
   },
   "mindscapeTitle": "Mindscape",
   "mindscape": "M{{level}}",
-  "characterName": "Character Name"
+  "characterName": "Character Name",
+  "potential": "Potential Lv. {{level}}"
 }

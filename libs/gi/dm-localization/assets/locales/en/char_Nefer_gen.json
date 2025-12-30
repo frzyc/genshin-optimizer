@@ -174,8 +174,7 @@
   "passive": {
     "name": "Conspiracy of the Golden Vault",
     "description": {
-      "0": "Gains 25% more rewards when dispatched on a Nod-Krai Expedition for 20 hours.",
-      "1": "Additionally, as the head of the Curatorium of Secrets, Nefer seemingly has the ability to obtain intelligence from a variety of sources — intelligence that certain factions in Nasha Town might find extremely interesting..."
+      "0": "Gains 25% more rewards when dispatched on a Nod-Krai Expedition for 20 hours."
     }
   },
   "constellation1": {

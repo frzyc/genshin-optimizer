@@ -23,6 +23,7 @@ import {
   Box,
   Button,
   ButtonGroup,
+  FormControlLabel,
   Grid,
   ListItemIcon,
   ListItemText,
@@ -30,28 +31,54 @@ import {
   Slider,
   Typography,
 } from '@mui/material'
+import Checkbox from '@mui/material/Checkbox'
 import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { PercentBadge } from '../../PercentBadge'
 import { ArtifactStatWithUnit } from '../ArtifactStatKeyDisplay'
 import type { RollColorKey } from '../util'
+
+function getCorrectSubstats(
+  artifact: ICachedArtifact | undefined,
+  isUnactivatedSubstat: boolean,
+  substatIndex: number
+) {
+  if (
+    artifact?.unactivatedSubstats &&
+    substatIndex === 3 &&
+    isUnactivatedSubstat
+  ) {
+    return artifact.unactivatedSubstats[0]
+  } else {
+    return artifact?.substats[substatIndex]
+  }
+}
+
 export function SubstatInput({
   index,
   artifact,
   setSubstat,
+  onChange,
+  isUnactivatedSubstat,
 }: {
   index: number
   artifact: ICachedArtifact | undefined
-  setSubstat: (index: number, substat: ISubstat) => void
+  setSubstat: (
+    index: number,
+    substat: ISubstat,
+    isUnactivatedSubstat: boolean
+  ) => void
+  onChange: (index: number, substat: ISubstat, isChecked: boolean) => void
+  isUnactivatedSubstat: boolean
 }) {
   const { t } = useTranslation('artifact')
-  const { mainStatKey = '', rarity = 5 } = artifact ?? {}
+  const { mainStatKey = '', rarity = 5, level = 0 } = artifact ?? {}
   const {
     key = '',
     value = 0,
     rolls = [],
     efficiency = 0,
-  } = artifact?.substats[index] ?? {}
+  } = getCorrectSubstats(artifact, isUnactivatedSubstat, index) ?? {}
 
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
   const unit = getUnitStr(key),
@@ -108,7 +135,9 @@ export function SubstatInput({
           >
             {key && (
               <MenuItem
-                onClick={() => setSubstat(index, { key: '', value: 0 })}
+                onClick={() =>
+                  setSubstat(index, { key: '', value: 0 }, isUnactivatedSubstat)
+                }
               >
                 {t('editor.substat.noSubstat')}
               </MenuItem>
@@ -120,7 +149,13 @@ export function SubstatInput({
                   key={k}
                   selected={key === k}
                   disabled={key === k}
-                  onClick={() => setSubstat(index, { key: k, value: 0 })}
+                  onClick={() =>
+                    setSubstat(
+                      index,
+                      { key: k, value: 0 },
+                      isUnactivatedSubstat
+                    )
+                  }
                 >
                   <ListItemIcon>
                     <StatIcon statKey={k} />
@@ -144,8 +179,14 @@ export function SubstatInput({
             float={unit === '%'}
             placeholder={t('editor.substat.selectSub')}
             value={key ? value : 0}
-            onChange={(value) => setSubstat(index, { key, value: value ?? 0 })}
-            disabled={!key}
+            onChange={(value) =>
+              setSubstat(
+                index,
+                { key, value: value ?? 0 },
+                isUnactivatedSubstat
+              )
+            }
+            disabled={!key || (isUnactivatedSubstat && index === 3)}
             error={!!error}
             inputProps={{
               sx: { textAlign: 'right' },
@@ -163,9 +204,17 @@ export function SubstatInput({
               <Button
                 key={i}
                 color={`roll${clamp(rollOffset + i, 1, 6)}` as any}
-                disabled={(value && !rollNum) || allowedRolls <= 0}
+                disabled={
+                  (value && !rollNum) ||
+                  allowedRolls <= 0 ||
+                  (isUnactivatedSubstat && rollNum > 0 && index === 3)
+                }
                 onClick={() =>
-                  setSubstat(index, { key, value: parseFloat(newValue) })
+                  setSubstat(
+                    index,
+                    { key, value: parseFloat(newValue) },
+                    isUnactivatedSubstat
+                  )
                 }
               >
                 {newValue}
@@ -179,9 +228,13 @@ export function SubstatInput({
           value={value}
           marks={marks}
           setValue={(v) =>
-            setSubstat(index, { key, value: (v as number) ?? 0 })
+            setSubstat(
+              index,
+              { key, value: (v as number) ?? 0 },
+              isUnactivatedSubstat
+            )
           }
-          disabled={!key}
+          disabled={!key || (isUnactivatedSubstat && index === 3)}
         />
       </Box>
       <Box sx={{ px: 1, pb: 1 }}>
@@ -202,7 +255,7 @@ export function SubstatInput({
                   : t('editor.substat.noRoll')}
               </SqBadge>
             </Grid>
-            <Grid item flexGrow={1}>
+            <Grid item>
               {!!rolls.length &&
                 [...rolls].sort().map((val, i) => (
                   <Typography
@@ -218,6 +271,30 @@ export function SubstatInput({
                     {artDisplayValue(val, unit)}
                   </Typography>
                 ))}
+            </Grid>
+            <Grid item flexGrow={1}>
+              {index === 3 ? (
+                <FormControlLabel
+                  label={t('editor.unactivated')}
+                  control={
+                    <Checkbox
+                      checked={isUnactivatedSubstat}
+                      onChange={(e) =>
+                        onChange(
+                          index,
+                          { key: key, value: value },
+                          e.target.checked
+                        )
+                      }
+                      sx={{ padding: 0 }}
+                      disabled={!artifact || level > 0}
+                    ></Checkbox>
+                  }
+                  sx={{ ml: 1 }}
+                />
+              ) : (
+                ''
+              )}
             </Grid>
             <Grid item xs="auto" flexShrink={1}>
               <Typography>

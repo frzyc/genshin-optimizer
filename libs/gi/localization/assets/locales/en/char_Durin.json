@@ -1,0 +1,13 @@
+{
+  "burstForm": "<strong>Essential Transmutation</strong> state",
+  "whiteForm": "<strong>Confirmation of Purity</strong>",
+  "darkForm": "<strong>Denial of Darkness</strong>",
+  "a1Dendro": "After a party member triggers <pyro>Burning</pyro> reactions or deals <pyro>Pyro DMG</pyro> or <dendro>Dendro DMG</dendro> to an opponent affected by <pyro>Burning</pyro>",
+  "a1Anemo": "After a party member triggers <pyro>Pyro Swirl</pyro> reactions",
+  "a1Geo": "After a party member triggers <pyro>Pyro Crystallize</pyro> reactions",
+  "burstPeriodic_mult_": "Burst Periodic DMG Mult.",
+  "a4Cond": "Consuming a stack of Primordial Fusion",
+  "c1Cond": "Consuming a stack of <strong>Cycle of Enlightenment</strong>",
+  "burst_defIgn_": "Ele. Burst Def. Ign.",
+  "dark_burst_defIgn_": "Denial of Darkness Ele. Burst Def. Ign."
+}

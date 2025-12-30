@@ -33,6 +33,7 @@ import Dehya from './Dehya'
 import Diluc from './Diluc'
 import Diona from './Diona'
 import Dori from './Dori'
+import Durin from './Durin'
 import Emilie from './Emilie'
 import Escoffier from './Escoffier'
 import Eula from './Eula'
@@ -48,6 +49,7 @@ import HuTao from './HuTao'
 import Iansan from './Iansan'
 import Ifa from './Ifa'
 import Ineffa from './Ineffa'
+import Jahoda from './Jahoda'
 import Jean from './Jean'
 import Kachina from './Kachina'
 import KaedeharaKazuha from './KaedeharaKazuha'
@@ -153,6 +155,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Diluc,
   Diona,
   Dori,
+  Durin,
   Emilie,
   Escoffier,
   Eula,
@@ -168,6 +171,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Iansan,
   Ifa,
   Ineffa,
+  Jahoda,
   Jean,
   Kachina,
   KaedeharaKazuha,

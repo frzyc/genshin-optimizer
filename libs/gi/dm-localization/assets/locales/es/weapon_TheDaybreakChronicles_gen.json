@@ -1,0 +1,29 @@
+{
+  "name": "Albores de la Historia",
+  "description": {
+    "0": "Toda canción de resistencia se convierte en una suave nota musical al ser traída por el viento, y la fuerza que concentra es como un rayo del alba capaz de romper la oscuridad tras una infinidad de noches."
+  },
+  "passiveName": "Oda atemporal",
+  "passiveDescription": {
+    "0": {
+      "0": "El portador de esta arma obtiene el efecto de “brisa del amanecer”, de manera que, 3 s después de salir de combate, el daño del Ataque Normal, la Habilidad Elemental y la Habilidad Definitiva aumenta en un <cryo>60%</cryo>. Al estar en combate, este aumento de daño se reduce en un <cryo>10%</cryo> por segundo hasta llegar al 0%. Cuando el portador golpea a un enemigo con un Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva, el aumento de daño correspondiente se incrementa en un <cryo>10%</cryo>, hasta alcanzar el <cryo>60%</cryo>. Este efecto solo puede activarse una vez cada 0.1 s para cada tipo de ataque, y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso.",
+      "1": "Además, cuando el equipo tiene el efecto “taumaturgia: rito secreto” y dicho portador golpea a un enemigo con un Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva, el aumento de daño obtenido pasa a ser de un <cryo>20%</cryo> para todos los tipos de daño."
+    },
+    "1": {
+      "0": "El portador de esta arma obtiene el efecto de “brisa del amanecer”, de manera que, 3 s después de salir de combate, el daño del Ataque Normal, la Habilidad Elemental y la Habilidad Definitiva aumenta en un <cryo>75%</cryo>. Al estar en combate, este aumento de daño se reduce en un <cryo>12.5%</cryo> por segundo hasta llegar al 0%. Cuando el portador golpea a un enemigo con un Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva, el aumento de daño correspondiente se incrementa en un <cryo>12.5%</cryo>, hasta alcanzar el <cryo>75%</cryo>. Este efecto solo puede activarse una vez cada 0.1 s para cada tipo de ataque, y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso.",
+      "1": "Además, cuando el equipo tiene el efecto “taumaturgia: rito secreto” y dicho portador golpea a un enemigo con un Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva, el aumento de daño obtenido pasa a ser de un <cryo>25%</cryo> para todos los tipos de daño."
+    },
+    "2": {
+      "0": "El portador de esta arma obtiene el efecto de “brisa del amanecer”, de manera que, 3 s después de salir de combate, el daño del Ataque Normal, la Habilidad Elemental y la Habilidad Definitiva aumenta en un <cryo>90%</cryo>. Al estar en combate, este aumento de daño se reduce en un <cryo>15%</cryo> por segundo hasta llegar al 0%. Cuando el portador golpea a un enemigo con un Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva, el aumento de daño correspondiente se incrementa en un <cryo>15%</cryo>, hasta alcanzar el <cryo>90%</cryo>. Este efecto solo puede activarse una vez cada 0.1 s para cada tipo de ataque, y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso.",
+      "1": "Además, cuando el equipo tiene el efecto “taumaturgia: rito secreto” y dicho portador golpea a un enemigo con un Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva, el aumento de daño obtenido pasa a ser de un <cryo>30%</cryo> para todos los tipos de daño."
+    },
+    "3": {
+      "0": "El portador de esta arma obtiene el efecto de “brisa del amanecer”, de manera que, 3 s después de salir de combate, el daño del Ataque Normal, la Habilidad Elemental y la Habilidad Definitiva aumenta en un <cryo>105%</cryo>. Al estar en combate, este aumento de daño se reduce en un <cryo>17.5%</cryo> por segundo hasta llegar al 0%. Cuando el portador golpea a un enemigo con un Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva, el aumento de daño correspondiente se incrementa en un <cryo>17.5%</cryo>, hasta alcanzar el <cryo>105%</cryo>. Este efecto solo puede activarse una vez cada 0.1 s para cada tipo de ataque, y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso.",
+      "1": "Además, cuando el equipo tiene el efecto “taumaturgia: rito secreto” y dicho portador golpea a un enemigo con un Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva, el aumento de daño obtenido pasa a ser de un <cryo>35%</cryo> para todos los tipos de daño."
+    },
+    "4": {
+      "0": "El portador de esta arma obtiene el efecto de “brisa del amanecer”, de manera que, 3 s después de salir de combate, el daño del Ataque Normal, la Habilidad Elemental y la Habilidad Definitiva aumenta en un <cryo>120%</cryo>. Al estar en combate, este aumento de daño se reduce en un <cryo>20%</cryo> por segundo hasta llegar al 0%. Cuando el portador golpea a un enemigo con un Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva, el aumento de daño correspondiente se incrementa en un <cryo>20%</cryo>, hasta alcanzar el <cryo>120%</cryo>. Este efecto solo puede activarse una vez cada 0.1 s para cada tipo de ataque, y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso.",
+      "1": "Además, cuando el equipo tiene el efecto “taumaturgia: rito secreto” y dicho portador golpea a un enemigo con un Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva, el aumento de daño obtenido pasa a ser de un <cryo>40%</cryo> para todos los tipos de daño."
+    }
+  }
+}

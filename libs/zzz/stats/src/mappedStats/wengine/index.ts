@@ -6,7 +6,9 @@ import BlazingLaurel from './maps/BlazingLaurel'
 import BoxCutter from './maps/BoxCutter'
 import BunnyBand from './maps/BunnyBand'
 import CannonRotor from './maps/CannonRotor'
+import CauldronOfClarity from './maps/CauldronOfClarity'
 import CinderCobalt from './maps/CinderCobalt'
+import CloudcleaveRadiance from './maps/CloudcleaveRadiance'
 import CordisGermina from './maps/CordisGermina'
 import DeepSeaVisitor from './maps/DeepSeaVisitor'
 import DemaraBatteryMarkII from './maps/DemaraBatteryMarkII'
@@ -20,6 +22,7 @@ import FusionCompiler from './maps/FusionCompiler'
 import GildedBlossom from './maps/GildedBlossom'
 import GrillOWisp from './maps/GrillOWisp'
 import HailstormShrine from './maps/HailstormShrine'
+import HalfSugarBunny from './maps/HalfSugarBunny'
 import HeartstringNocturne from './maps/HeartstringNocturne'
 import HellfireGears from './maps/HellfireGears'
 import Housekeeper from './maps/Housekeeper'
@@ -75,6 +78,8 @@ import VortexHatchet from './maps/VortexHatchet'
 import VortexRevolver from './maps/VortexRevolver'
 import WeepingCradle from './maps/WeepingCradle'
 import WeepingGemini from './maps/WeepingGemini'
+import WrathfulVajra from './maps/WrathfulVajra'
+import YesterdayCalls from './maps/YesterdayCalls'
 import ZanshinHerbCase from './maps/ZanshinHerbCase'
 
 const maps = {
@@ -85,7 +90,9 @@ const maps = {
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CauldronOfClarity,
   CinderCobalt,
+  CloudcleaveRadiance,
   CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
@@ -99,6 +106,7 @@ const maps = {
   GildedBlossom,
   GrillOWisp,
   HailstormShrine,
+  HalfSugarBunny,
   HeartstringNocturne,
   HellfireGears,
   Housekeeper,
@@ -154,6 +162,8 @@ const maps = {
   VortexRevolver,
   WeepingCradle,
   WeepingGemini,
+  WrathfulVajra,
+  YesterdayCalls,
   ZanshinHerbCase,
 }
 export default maps

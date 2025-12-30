@@ -87,12 +87,6 @@
         "linter": "eslint",
         "unitTestRunner": "none"
       }
-    },
-    "@nx/next": {
-      "application": {
-        "style": "none",
-        "linter": "eslint"
-      }
     }
   },
   "affected": {
@@ -104,15 +98,6 @@
       "options": {
         "targetName": "eslint:lint",
         "extensions": ["ts", "tsx", "js", "jsx", "html", "vue"]
-      }
-    },
-    {
-      "plugin": "@nx/next/plugin",
-      "options": {
-        "startTargetName": "start",
-        "buildTargetName": "next:build",
-        "devTargetName": "dev",
-        "serveStaticTargetName": "serve-static"
       }
     },
     {

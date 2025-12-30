@@ -4,7 +4,7 @@ import type {
   InfusionAuraElementKey,
   MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
-import type { InputPremodKey } from '../legacy/keys'
+import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
 
 export type BonusStats = Partial<Record<InputPremodKey, number>>
 export interface CustomTarget {

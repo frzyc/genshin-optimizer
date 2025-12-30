@@ -1,4 +1,3 @@
-'use client'
 import type { CardProps, Palette, PaletteColor } from '@mui/material'
 import { Card, styled } from '@mui/material'
 

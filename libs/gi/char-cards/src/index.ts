@@ -25,6 +25,7 @@ import Dehya from './Character_Dehya_Card.jpg'
 import Diluc from './Character_Diluc_Card.jpg'
 import Diona from './Character_Diona_Card.png'
 import Dori from './Character_Dori_Card.jpg'
+import Durin from './Character_Durin_Card.webp'
 import Emilie from './Character_Emilie_Card.jpg'
 import Escoffier from './Character_Escoffier_Card.jpg'
 import Eula from './Character_Eula_Card.png'
@@ -40,6 +41,7 @@ import HuTao from './Character_Hu_Tao_Card.png'
 import Iansan from './Character_Iansan_Card.jpg'
 import Ifa from './Character_Ifa_Card.jpg'
 import Ineffa from './Character_Ineffa_Card.png'
+import Jahoda from './Character_Jahoda_Card.webp'
 import Jean from './Character_Jean_Card.jpg'
 import Kachina from './Character_Kachina_Card.jpg'
 import Kaeya from './Character_Kaeya_Card.jpg'
@@ -135,6 +137,7 @@ const charCards = {
   Diluc,
   Diona,
   Dori,
+  Durin,
   Emilie,
   Escoffier,
   Eula,
@@ -150,6 +153,7 @@ const charCards = {
   Iansan,
   Ifa,
   Ineffa,
+  Jahoda,
   Jean,
   Kachina,
   KaedeharaKazuha,

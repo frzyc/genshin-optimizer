@@ -125,5 +125,11 @@ const data = {
   unlockPassive2: [941237898, 'passive4'],
   // Passive Talent
   unlockPassive3: 2602723764,
+  // Witch's Homework
+  witchPassive: 3169849014,
+  // Moonsign
+  moonsign: 47522259,
+  // Hexerei
+  hexerei: 218825378,
 } as const
 export default data

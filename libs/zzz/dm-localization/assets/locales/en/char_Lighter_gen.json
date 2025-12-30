@@ -91,15 +91,14 @@
       "name": "EX Special Attack: V-Form Sunrise Uppercut - Full Distance",
       "desc": {
         "0": "With enough Energy, press <IconSpecialReady /> to activate:",
-        "1": "Leaps into the air with a powerful uppercut, striking enemies in front and dealing massive <ct color=#FF5521>Fire DMG</ct>.",
-        "2": "Press <IconSpecialReady /> again during this skill to spend additional Energy to perform a powerful follow-up attack, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
-        "3": "Character is invulnerable while using this skill.",
-        "4": "After using this skill, press or hold <IconNormal /> to follow up with the 4th hit of the <ct color=#FFFFFF>Basic Attack</ct>.",
-        "5": "With enough Energy, press <IconSpecialReady /> during the shuffle dodge to activate:",
-        "6": "Strike forward with a powerful punch combo, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
-        "7": "This skill will not interrupt the combo count for <ct color=#FFFFFF>Basic Attacks</ct>.",
-        "8": "Character is invulnerable while using this skill.",
-        "9": "After using this skill, press or hold <IconNormal /> to immediately follow up with the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>."
+        "1": "Strikes enemies in front with a powerful uppercut, leaping into the air and dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "During the move, press <IconSpecialReady /> again to spend additional Energy to perform a powerful follow-up attack, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "3": "Character is invulnerable while using this skill",
+        "4": "After using the move, press or hold <IconNormal /> to transition to the 4th hit of the <ct color=#FFFFFF>Basic Attack</ct>.",
+        "5": "During the shuffle dodge, with enough Energy, press <IconSpecialReady /> to activate:",
+        "6": "Perform a powerful combo punch forward, dealing massive <ct color=#FF5521>Fire DMG</ct>. Using this skill will not break the combo count for <ct color=#FFFFFF>Basic Attacks</ct>.",
+        "7": "Character is invulnerable while using this skill.",
+        "8": "After the attack, press or hold <IconNormal /> to immediately transition into the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>. "
       },
       "params": [
         " ",
@@ -279,5 +278,6 @@
         "1": "Unfortunately, fate is rarely a choice."
       }
     }
-  }
+  },
+  "potential": {}
 }
