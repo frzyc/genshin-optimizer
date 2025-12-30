@@ -42,9 +42,11 @@ import Soukaku from './Soukaku'
 import Trigger from './Trigger'
 import Vivian from './Vivian'
 import Yanagi from './Yanagi'
+import YeShunguang from './YeShunguang'
 import Yidhari from './Yidhari'
 import Yixuan from './Yixuan'
 import Yuzuha from './Yuzuha'
+import Zhao from './Zhao'
 import ZhuYuan from './ZhuYuan'
 
 export const charSheets: Record<CharacterKey, CharUISheet> = {
@@ -89,8 +91,10 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Trigger,
   Vivian,
   Yanagi,
+  YeShunguang,
   Yidhari,
   Yixuan,
   Yuzuha,
+  Zhao,
   ZhuYuan,
 } as const

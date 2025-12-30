@@ -40,9 +40,11 @@ import Soukaku from './maps/Soukaku'
 import Trigger from './maps/Trigger'
 import Vivian from './maps/Vivian'
 import Yanagi from './maps/Yanagi'
+import YeShunguang from './maps/YeShunguang'
 import Yidhari from './maps/Yidhari'
 import Yixuan from './maps/Yixuan'
 import Yuzuha from './maps/Yuzuha'
+import Zhao from './maps/Zhao'
 import ZhuYuan from './maps/ZhuYuan'
 
 const maps = {
@@ -87,9 +89,11 @@ const maps = {
   Trigger,
   Vivian,
   Yanagi,
+  YeShunguang,
   Yidhari,
   Yixuan,
   Yuzuha,
+  Zhao,
   ZhuYuan,
 }
 export default maps
