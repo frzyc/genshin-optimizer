@@ -86,6 +86,7 @@ export const factionMap: Record<number, FactionKey> = {
   9: 'Mockingbird',
   10: 'YunkuiSummit',
   11: 'SpookShack',
+  12: 'KrampusComplianceAuthority',
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {
