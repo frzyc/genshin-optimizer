@@ -1,7 +1,7 @@
 import { DropdownButton, ImgIcon } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
-import { coreLimits } from '@genshin-optimizer/zzz/consts'
+import { coreByLevel } from '@genshin-optimizer/zzz/consts'
 import {
   useCharacterContext,
   useDatabaseContext,
@@ -14,7 +14,7 @@ export function CoreDropdown() {
   const { t } = useTranslation('page_characters')
   const { database } = useDatabaseContext()
   const character = useCharacterContext()
-  const { core = 0, promotion = 0, key: characterKey } = character ?? {}
+  const { core = 0, key: characterKey, level = 1 } = character ?? {}
   const setCore = useCallback(
     (val: number) =>
       characterKey &&
@@ -30,7 +30,7 @@ export function CoreDropdown() {
       color={'primary'}
       startIcon={<ImgIcon src={commonDefIcon('core')} size={1.75} sideMargin />}
     >
-      {range(0, coreLimits[promotion]).map((i) => (
+      {range(0, coreByLevel(level)).map((i) => (
         <MenuItem
           key={i}
           selected={core === i}

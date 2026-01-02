@@ -72,6 +72,7 @@ export function dmgDazeAndAnom(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
+  if (!dmgTag.skillType) dmgTag.skillType = `${abilityScalingType}Skill`
   const dmgMulti = sum(
     percent(skillParam.DamagePercentage),
     prod(
@@ -126,6 +127,7 @@ export function dmgDazeAndAnomMerge(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
+  if (!dmgTag.skillType) dmgTag.skillType = `${abilityScalingType}Skill`
   const dmgMulti = sum(
     ...skillParam.map((sp) => percent(sp.DamagePercentage)),
     prod(

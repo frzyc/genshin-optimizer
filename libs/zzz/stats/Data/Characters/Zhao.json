@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "ice",
   "specialty": "defense",
+  "faction": "KrampusComplianceAuthority",
   "stats": {
     "atk_base": 110,
     "atk_growth": 6.5027,

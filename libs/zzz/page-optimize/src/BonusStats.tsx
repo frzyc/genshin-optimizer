@@ -159,7 +159,7 @@ function BonusStatDisplay({
           <TagDisplay tag={tag} />
         </Typography>
         <QtDropdown qt={tag.qt} setQt={(qt) => setTag({ ...tag, qt })} />
-        {tag.q === 'dmg_' && (
+        {['dmg_', 'sheer_dmg_', 'resIgn_'].includes(tag.q) && (
           <AttributeDropdown
             tag={tag}
             setAttribute={(ele) => {
