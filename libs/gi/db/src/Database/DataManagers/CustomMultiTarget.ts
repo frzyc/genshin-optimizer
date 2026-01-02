@@ -76,7 +76,6 @@ const customMultiTargetSchema = z.object({
 
 export type CustomMultiTarget = z.infer<typeof customMultiTargetSchema>
 
-
 export function initCustomMultiTarget(index: number): CustomMultiTarget {
   return {
     name: `New Custom Target ${index}`,

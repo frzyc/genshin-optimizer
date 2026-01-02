@@ -1,37 +1,11 @@
-import {
-  zodBoolean,
-  zodBoundedNumber,
-  zodEnum,
-  zodEnumWithDefault,
-} from '@genshin-optimizer/common/database'
-import type {
-  CharacterKey,
-  MilestoneKey,
-  WengineKey,
-} from '@genshin-optimizer/zzz/consts'
-import {
-  allLocationKeys,
-  allWengineKeys,
-  wengineMaxLevel,
-} from '@genshin-optimizer/zzz/consts'
-import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
+import type { CharacterKey, WengineKey } from '@genshin-optimizer/zzz/consts'
 import type { IWengine } from '@genshin-optimizer/zzz/zood'
-import { z } from 'zod'
+import { parseWengine } from '@genshin-optimizer/zzz/zood'
 import type { ICachedCharacter } from '../../Interfaces'
 import type { ICachedWengine } from '../../Interfaces/IDbWengine'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
 import { initialCharacterData } from './CharacterDataManager'
-
-// Define schema at module level for reuse and clarity
-const wengineSchema = z.object({
-  key: zodEnum(allWengineKeys), // Only key is strict - invalid key = reject
-  level: zodBoundedNumber(1, wengineMaxLevel, 1),
-  modification: zodBoundedNumber(0, 5, 0),
-  phase: zodBoundedNumber(1, 5, 1),
-  location: zodEnumWithDefault(allLocationKeys, ''),
-  lock: zodBoolean(),
-})
 
 export class WengineDataManager extends DataManager<
   string,
@@ -44,25 +18,7 @@ export class WengineDataManager extends DataManager<
   }
 
   override validate(obj: unknown): IWengine | undefined {
-    const result = wengineSchema.safeParse(obj)
-    if (!result.success) return undefined
-
-    const data = result.data
-
-    // Apply level/milestone co-validation
-    const { sanitizedLevel, milestone } = validateLevelMilestone(
-      data.level,
-      data.modification as MilestoneKey
-    )
-
-    return {
-      key: data.key as WengineKey,
-      level: sanitizedLevel,
-      modification: milestone,
-      phase: data.phase as 1 | 2 | 3 | 4 | 5,
-      location: data.location,
-      lock: data.lock,
-    }
+    return parseWengine(obj)
   }
   override toCache(
     storageObj: IWengine,

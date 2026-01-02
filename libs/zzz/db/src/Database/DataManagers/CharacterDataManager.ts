@@ -1,12 +1,7 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
-import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/common/util'
+import { deepClone, objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import {
-  allDiscSlotKeys,
-  coreLimits,
-  skillLimits,
-} from '@genshin-optimizer/zzz/consts'
-import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
+import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
 import type { ICharacter } from '@genshin-optimizer/zzz/zood'
 import { parseCharacter } from '@genshin-optimizer/zzz/zood'
 import type { ICachedCharacter } from '../../Interfaces'
@@ -22,34 +17,8 @@ export class CharacterDataManager extends DataManager<
   constructor(database: ZzzDatabase) {
     super(database, 'characters')
   }
-  override validate(obj: unknown): ICharacter | undefined {
-    // Use shared schema from zood for structural validation
-    const data = parseCharacter(obj)
-    if (!data) return undefined
-
-    // level/promotion co-validation
-    const { sanitizedLevel, milestone: promotion } = validateLevelMilestone(
-      data.level,
-      data.promotion
-    )
-
-    // Clamp skills to promotion-dependent limits
-    const skillMax = skillLimits[promotion]
-    const coreMax = coreLimits[promotion]
-
-    return {
-      key: data.key as CharacterKey,
-      level: sanitizedLevel,
-      promotion,
-      mindscape: data.mindscape,
-      core: clamp(data.core, 0, coreMax),
-      dodge: clamp(data.dodge, 1, skillMax),
-      basic: clamp(data.basic, 1, skillMax),
-      chain: clamp(data.chain, 1, skillMax),
-      special: clamp(data.special, 1, skillMax),
-      assist: clamp(data.assist, 1, skillMax),
-      potential: data.potential,
-    }
+  override validate(obj: unknown) {
+    return parseCharacter(obj)
   }
 
   override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {

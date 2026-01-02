@@ -1,22 +1,22 @@
 import { clamp } from '@genshin-optimizer/common/util'
 import { type AscensionKey, talentLimits } from '@genshin-optimizer/gi/consts'
-import type { ICharacterTalent } from './schema'
 
 export function validateTalent(
   ascension: AscensionKey,
-  talent: ICharacterTalent
-): ICharacterTalent {
+  talent: unknown
+): {
+  auto: number
+  skill: number
+  burst: number
+} {
+  const talentMax = talentLimits[ascension]
   if (talent === null || typeof talent !== 'object') {
     return { auto: 1, skill: 1, burst: 1 }
-  } else {
-    const clampedTalent: ICharacterTalent = { ...talent }
-    for (const [key, value] of Object.entries(clampedTalent)) {
-      clampedTalent[key as keyof ICharacterTalent] = clamp(
-        value,
-        1,
-        talentLimits[ascension]
-      )
-    }
-    return clampedTalent
+  }
+  const t = talent as { auto?: unknown; skill?: unknown; burst?: unknown }
+  return {
+    auto: clamp(typeof t.auto === 'number' ? t.auto : 1, 1, talentMax),
+    skill: clamp(typeof t.skill === 'number' ? t.skill : 1, 1, talentMax),
+    burst: clamp(typeof t.burst === 'number' ? t.burst : 1, 1, talentMax),
   }
 }

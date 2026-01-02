@@ -29,8 +29,8 @@ import {
   allSuperimposeKeys,
   relicMaxLevel,
   relicSubstatTypeKeys,
+  validateLevelAsc,
 } from '@genshin-optimizer/sr/consts'
-import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import { z } from 'zod'
 import type { ICachedLightCone, ICachedRelic } from '../../Interfaces'
 import { DataManager } from '../DataManager'

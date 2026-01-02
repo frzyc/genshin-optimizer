@@ -21,10 +21,10 @@ import {
   allAttributeKeys,
   allCharacterKeys,
   allSpecialityKeys,
+  milestoneMaxLevel,
 } from '@genshin-optimizer/zzz/consts'
 import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
-import { milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,

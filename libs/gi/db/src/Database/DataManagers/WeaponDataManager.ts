@@ -4,12 +4,9 @@ import type {
   WeaponKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
-import {
-  charKeyToLocCharKey,
-  weaponMaxLevel,
-} from '@genshin-optimizer/gi/consts'
+import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import type { IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
-import { parseWeapon, validateWeaponLevelAsc } from '@genshin-optimizer/gi/good'
+import { parseWeapon } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import type { ICachedCharacter } from './CharacterDataManager'
@@ -59,29 +56,7 @@ export class WeaponDataManager extends DataManager<
   }
 
   override validate(obj: unknown): IWeapon | undefined {
-    const data = parseWeapon(obj)
-    if (!data) return undefined
-
-    const weaponData = allStats.weapon.data[data.key]
-    if (!weaponData) return undefined
-
-    const { rarity, weaponType } = weaponData
-
-    const rawLevel = (obj as { level?: unknown }).level
-    if (typeof rawLevel === 'number' && rawLevel > weaponMaxLevel[rarity])
-      return undefined
-
-    const { level, ascension } = validateWeaponLevelAsc(
-      data.level,
-      data.ascension
-    )
-
-    if (data.location) {
-      const charWeaponType = allStats.char.data[data.location].weaponType
-      if (charWeaponType !== weaponType) return undefined
-    }
-
-    return { ...data, level, ascension }
+    return parseWeapon(obj)
   }
   override toCache(storageObj: IWeapon, id: string): ICachedWeapon | undefined {
     const newWeapon = { ...storageObj, id }

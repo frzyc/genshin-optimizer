@@ -1,25 +1,50 @@
+import { zodBoundedNumber, zodEnum } from '@genshin-optimizer/common/database'
+import { clamp } from '@genshin-optimizer/common/util'
 import {
-  zodBoundedNumber,
-  zodClampedNumber,
-  zodEnum,
-} from '@genshin-optimizer/common/database'
-import type { MilestoneKey } from '@genshin-optimizer/zzz/consts'
-import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
+  type MilestoneKey,
+  allCharacterKeys,
+  coreLimits,
+  skillLimits,
+  validateLevelMilestone,
+} from '@genshin-optimizer/zzz/consts'
 import { z } from 'zod'
 
-export const characterSchema = z.object({
-  key: zodEnum(allCharacterKeys),
-  level: zodBoundedNumber(1, 60, 1),
-  promotion: zodBoundedNumber(0, 5, 0) as z.ZodType<MilestoneKey>,
-  mindscape: zodBoundedNumber(0, 6, 0),
-  core: zodClampedNumber(0, 100, 0),
-  dodge: zodClampedNumber(1, 100, 1),
-  basic: zodClampedNumber(1, 100, 1),
-  chain: zodClampedNumber(1, 100, 1),
-  special: zodClampedNumber(1, 100, 1),
-  assist: zodClampedNumber(1, 100, 1),
-  potential: zodBoundedNumber(0, 6, 0),
-})
+export const characterSchema = z
+  .object({
+    key: zodEnum(allCharacterKeys),
+    level: zodBoundedNumber(1, 60, 1),
+    promotion: zodBoundedNumber(0, 5, 0) as z.ZodType<MilestoneKey>,
+    mindscape: zodBoundedNumber(0, 6, 0),
+    core: z.number().catch(0),
+    dodge: z.number().catch(1),
+    basic: z.number().catch(1),
+    chain: z.number().catch(1),
+    special: z.number().catch(1),
+    assist: z.number().catch(1),
+    potential: zodBoundedNumber(0, 6, 0),
+  })
+  .transform((data) => {
+    const { sanitizedLevel: level, milestone: promotion } =
+      validateLevelMilestone(data.level, data.promotion)
+
+    // Clamp skills to promotion-dependent limits
+    const skillMax = skillLimits[promotion]
+    const coreMax = coreLimits[promotion]
+
+    return {
+      key: data.key,
+      level,
+      promotion,
+      mindscape: data.mindscape,
+      core: clamp(data.core, 0, coreMax),
+      dodge: clamp(data.dodge, 1, skillMax),
+      basic: clamp(data.basic, 1, skillMax),
+      chain: clamp(data.chain, 1, skillMax),
+      special: clamp(data.special, 1, skillMax),
+      assist: clamp(data.assist, 1, skillMax),
+      potential: data.potential,
+    }
+  })
 
 export type ICharacter = z.infer<typeof characterSchema>
 

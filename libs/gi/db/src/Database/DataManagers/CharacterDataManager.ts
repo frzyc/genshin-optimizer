@@ -13,10 +13,6 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
 import { parseCharacter } from '@genshin-optimizer/gi/good'
-import {
-  validateCharLevelAsc,
-  validateTalent,
-} from '@genshin-optimizer/gi/util'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 
 export interface ICachedCharacter extends ICharacter {
@@ -45,16 +41,7 @@ export class CharacterDataManager extends DataManager<
     }
   }
   override validate(obj: unknown): ICharacter | undefined {
-    const data = parseCharacter(obj)
-    if (!data) return undefined
-
-    const { level, ascension } = validateCharLevelAsc(
-      data.level,
-      data.ascension
-    )
-    const talent = validateTalent(ascension, data.talent)
-
-    return { ...data, level, ascension, talent }
+    return parseCharacter(obj)
   }
   override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)

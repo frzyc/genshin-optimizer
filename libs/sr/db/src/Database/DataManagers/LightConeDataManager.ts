@@ -1,11 +1,9 @@
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { lightConeMaxLevel } from '@genshin-optimizer/sr/consts'
 import type {
   ILightCone,
   ISrObjectDescription,
 } from '@genshin-optimizer/sr/srod'
 import { parseLightCone } from '@genshin-optimizer/sr/srod'
-import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type {
   ICachedCharacter,
   ICachedLightCone,
@@ -26,7 +24,7 @@ export class LightConeDataManager extends DataManager<
     super(database, 'lightCones')
   }
   override validate(obj: unknown): ILightCone | undefined {
-    return validateLightCone(obj)
+    return parseLightCone(obj)
   }
   override toCache(
     storageObj: ILightCone,
@@ -233,14 +231,5 @@ export class LightConeDataManager extends DataManager<
 }
 
 export function validateLightCone(obj: unknown): ILightCone | undefined {
-  const rawLevel = (obj as { level?: unknown })?.level
-  if (typeof rawLevel === 'number' && rawLevel > lightConeMaxLevel)
-    return undefined
-
-  const data = parseLightCone(obj)
-  if (!data) return undefined
-
-  const { level, ascension } = validateLevelAsc(data.level, data.ascension)
-
-  return { ...data, level, ascension }
+  return parseLightCone(obj)
 }

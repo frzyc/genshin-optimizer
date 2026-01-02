@@ -4,11 +4,23 @@ import {
   zodEnum,
   zodObject,
 } from '@genshin-optimizer/common/database'
-import type { AscensionKey } from '@genshin-optimizer/gi/consts'
-import { allCharacterKeys } from '@genshin-optimizer/gi/consts'
+import { clamp } from '@genshin-optimizer/common/util'
+import {
+  type AscensionKey,
+  type CharacterKey,
+  allCharacterKeys,
+  talentLimits,
+  validateCharLevelAsc,
+} from '@genshin-optimizer/gi/consts'
 import { z } from 'zod'
 
-export const characterSchema = z.object({
+export interface ICharacterTalent {
+  auto: number
+  skill: number
+  burst: number
+}
+
+const characterBaseSchema = z.object({
   key: zodEnum(allCharacterKeys),
   level: zodBoundedNumber(1, 90, 1),
   constellation: zodClampedNumber(0, 6, 0),
@@ -20,8 +32,26 @@ export const characterSchema = z.object({
   }),
 })
 
+export const characterSchema = characterBaseSchema.transform((data) => {
+  const { level, ascension } = validateCharLevelAsc(data.level, data.ascension)
+
+  const talentMax = talentLimits[ascension]
+  const talent: ICharacterTalent = {
+    auto: clamp(data.talent.auto, 1, talentMax),
+    skill: clamp(data.talent.skill, 1, talentMax),
+    burst: clamp(data.talent.burst, 1, talentMax),
+  }
+
+  return {
+    key: data.key as CharacterKey,
+    level,
+    ascension,
+    constellation: data.constellation,
+    talent,
+  }
+})
+
 export type ICharacter = z.infer<typeof characterSchema>
-export type ICharacterTalent = ICharacter['talent']
 
 export function isTalentKey(tKey: string): tKey is keyof ICharacterTalent {
   return (['auto', 'skill', 'burst'] as const).includes(

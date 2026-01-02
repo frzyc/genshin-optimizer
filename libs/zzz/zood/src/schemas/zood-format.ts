@@ -1,7 +1,7 @@
 import {
   characterSchema,
   discSchema,
-  wengineSchema,
+  wengineBaseSchema,
 } from '@genshin-optimizer/zzz/schema'
 import { z } from 'zod'
 
@@ -14,7 +14,7 @@ const zoodMetadataSchema = z.object({
 
 export const zoodFormatSchema = z.object({
   ...zoodMetadataSchema.shape,
-  wengines: z.array(wengineSchema.extend({ id: z.string() })).optional(),
+  wengines: z.array(wengineBaseSchema.extend({ id: z.string() })).optional(),
   characters: z.array(characterSchema).optional(),
   discs: z.array(discSchema.extend({ id: z.string() })).optional(),
 })

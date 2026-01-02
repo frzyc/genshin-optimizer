@@ -3,12 +3,12 @@ import {
   getRandomElementFromArray,
   getRandomIntInclusive,
 } from '@genshin-optimizer/common/util'
-import type { RefinementKey } from '@genshin-optimizer/gi/consts'
-import { allWeaponKeys } from '@genshin-optimizer/gi/consts'
 import {
-  type IWeapon,
+  type RefinementKey,
+  allWeaponKeys,
   validateWeaponLevelAsc,
-} from '@genshin-optimizer/gi/schema'
+} from '@genshin-optimizer/gi/consts'
+import type { IWeapon } from '@genshin-optimizer/gi/schema'
 
 const weaponKeys = allWeaponKeys.filter(
   (k) =>

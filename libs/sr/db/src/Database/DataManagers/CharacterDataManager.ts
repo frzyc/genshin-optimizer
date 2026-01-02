@@ -10,7 +10,6 @@ import type {
   ISrObjectDescription,
 } from '@genshin-optimizer/sr/srod'
 import { parseCharacter } from '@genshin-optimizer/sr/srod'
-import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type { ICachedCharacter, ISroDatabase } from '../../Interfaces'
 import { SroSource } from '../../Interfaces'
 import { DataManager } from '../DataManager'
@@ -27,12 +26,7 @@ export class CharacterDataManager extends DataManager<
     super(database, 'characters')
   }
   override validate(obj: unknown): ICharacter | undefined {
-    const data = parseCharacter(obj)
-    if (!data) return undefined
-
-    const { level, ascension } = validateLevelAsc(data.level, data.ascension)
-
-    return { ...data, level, ascension }
+    return parseCharacter(obj)
   }
   override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)
@@ -55,35 +49,8 @@ export class CharacterDataManager extends DataManager<
     }
   }
   override deCache(char: ICachedCharacter): ICharacter {
-    const {
-      key,
-      level,
-      ascension,
-      basic,
-      skill,
-      ult,
-      talent,
-      bonusAbilities,
-      statBoosts,
-      eidolon,
-      servantSkill,
-      servantTalent,
-    } = char
-    const result: ICharacter = {
-      key,
-      level,
-      ascension,
-      basic,
-      skill,
-      ult,
-      talent,
-      bonusAbilities,
-      statBoosts,
-      eidolon,
-      servantSkill,
-      servantTalent,
-    }
-    return result
+    const { equippedRelics, equippedLightCone, ...rest } = char
+    return rest
   }
   // These overrides allow CharacterKey to be used as id.
   // This assumes we only support one copy of a character in a DB.
