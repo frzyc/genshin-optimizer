@@ -1,0 +1,7 @@
+{
+  "coreCond": {
+    "consumingHp": "When consuming HP during Basic Attack: Blazing Wind - Misty Slash or during the consecutive slashes from an Assist Follow-Up",
+    "moltenEdge": "In the Molten Edge state"
+  },
+  "m1Cond": "Each 1% of HP consumed"
+}
