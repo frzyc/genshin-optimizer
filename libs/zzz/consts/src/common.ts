@@ -219,3 +219,22 @@ export const potentialLimits = [0, 1, 2, 3, 4, 5, 6] as const
 // Referred to as "promotions" for characters, and "modifications" for wengines
 export const allMilestoneKeys = [0, 1, 2, 3, 4, 5] as const
 export type MilestoneKey = (typeof allMilestoneKeys)[number]
+
+export function skillByLevel(level: number) {
+  if (level < 15) return 1
+  if (level < 25) return 3
+  if (level < 35) return 5
+  if (level < 45) return 7
+  if (level < 55) return 9
+  if (level < 60) return 11
+  return 12
+}
+export function coreByLevel(level: number) {
+  if (level < 15) return 0
+  if (level < 25) return 1
+  if (level < 35) return 2
+  if (level < 45) return 3
+  if (level < 55) return 4
+  if (level < 60) return 5
+  return 6
+}

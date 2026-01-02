@@ -4,8 +4,8 @@ import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
   allCharacterKeys,
   allDiscSlotKeys,
-  coreLimits,
-  skillLimits,
+  coreByLevel,
+  skillByLevel,
 } from '@genshin-optimizer/zzz/consts'
 import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { ICharacter } from '@genshin-optimizer/zzz/zood'
@@ -41,18 +41,18 @@ export class CharacterDataManager extends DataManager<
       rawAscension
     )
     if (typeof basic !== 'number') basic = 1
-    basic = clamp(basic, 1, skillLimits[promotion])
+    basic = clamp(basic, 1, skillByLevel(sanitizedLevel))
     if (typeof dodge !== 'number') dodge = 1
-    dodge = clamp(dodge, 1, skillLimits[promotion])
+    dodge = clamp(dodge, 1, skillByLevel(sanitizedLevel))
     if (typeof chain !== 'number') chain = 1
-    chain = clamp(chain, 1, skillLimits[promotion])
+    chain = clamp(chain, 1, skillByLevel(sanitizedLevel))
     if (typeof special !== 'number') special = 1
-    special = clamp(special, 1, skillLimits[promotion])
+    special = clamp(special, 1, skillByLevel(sanitizedLevel))
     if (typeof assist !== 'number') assist = 1
-    assist = clamp(assist, 1, skillLimits[promotion])
+    assist = clamp(assist, 1, skillByLevel(sanitizedLevel))
 
     if (typeof core !== 'number') core = 0
-    core = clamp(core, 0, coreLimits[promotion])
+    core = clamp(core, 0, coreByLevel(sanitizedLevel))
 
     const char: ICharacter = {
       key: characterKey,
