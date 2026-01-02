@@ -48,6 +48,7 @@ export class CharacterDataManager extends DataManager<
       chain: clamp(data.chain, 1, skillMax),
       special: clamp(data.special, 1, skillMax),
       assist: clamp(data.assist, 1, skillMax),
+      potential: data.potential,
     }
   }
 
@@ -201,6 +202,7 @@ export function initialCharacterData(key: CharacterKey): ICachedCharacter {
     core: 6,
     promotion: 0,
     mindscape: 0,
+    potential: 0,
     dodge: 1,
     basic: 1,
     chain: 1,

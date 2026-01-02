@@ -15,8 +15,6 @@ import { z } from 'zod'
 export const MAX_NAME_LENGTH = 200
 export const MAX_DESC_LENGTH = 2000
 
-// --- Schemas ---
-
 const bonusStatsSchema = z.preprocess(
   (val) => {
     if (typeof val !== 'object' || val === null) return {}
@@ -78,7 +76,6 @@ const customMultiTargetSchema = z.object({
 
 export type CustomMultiTarget = z.infer<typeof customMultiTargetSchema>
 
-// --- Functions ---
 
 export function initCustomMultiTarget(index: number): CustomMultiTarget {
   return {

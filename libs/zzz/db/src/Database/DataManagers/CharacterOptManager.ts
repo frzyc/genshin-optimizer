@@ -34,8 +34,6 @@ import { z } from 'zod'
 import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 
-// --- Constants & Types ---
-
 export type critModeKey = 'avg' | 'crit' | 'nonCrit'
 export const critModeKeys = ['avg', 'crit', 'nonCrit'] as const
 

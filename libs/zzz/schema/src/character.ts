@@ -18,6 +18,7 @@ export const characterSchema = z.object({
   chain: zodClampedNumber(1, 100, 1),
   special: zodClampedNumber(1, 100, 1),
   assist: zodClampedNumber(1, 100, 1),
+  potential: zodBoundedNumber(0, 6, 0),
 })
 
 export type ICharacter = z.infer<typeof characterSchema>

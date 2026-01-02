@@ -1,0 +1,14 @@
+{
+  "name": "Cauldron of Clarity",
+  "desc": "Countless threads of Sword Will pulse like heartbeats, echoing through this tiny stretch of sky. Just don't get too close and don't try to make sense of the world inside the cauldron with your own ears. Those echoes have already been twisted into the brain-melting chant of \"Ehn-ne ehn-ne.\"",
+  "desc2": "Equip to increase Rupture Agents' combat capabilities",
+  "desc3": "Countless threads of Sword Will echo through this tiny stretch of sky.",
+  "phase": "Summoning Arcanum",
+  "phaseDescs": [
+    "When the equipper activates an <ct color=#FFFFFF>EX Special Attack</ct>, they gain 1 stack of a buff. Each stack increases the equipper's DMG by <ct color=#2BAD00>4%</ct>, up to 3 stacks, and lasting 20s. This effect can trigger once every 0.5s, and repeated triggers reset the duration. At 3 stacks, the equipper's CRIT Rate increases by <ct color=#2BAD00>6.5%</ct>.",
+    "When the equipper activates an <ct color=#FFFFFF>EX Special Attack</ct>, they gain 1 stack of a buff. Each stack increases the equipper's DMG by <ct color=#2BAD00>4.6%</ct>, up to 3 stacks, and lasting 20s. This effect can trigger once every 0.5s, and repeated triggers reset the duration. At 3 stacks, the equipper's CRIT Rate increases by <ct color=#2BAD00>7.5%</ct>.",
+    "When the equipper activates an <ct color=#FFFFFF>EX Special Attack</ct>, they gain 1 stack of a buff. Each stack increases the equipper's DMG by <ct color=#2BAD00>5.2%</ct>, up to 3 stacks, and lasting 20s. This effect can trigger once every 0.5s, and repeated triggers reset the duration. At 3 stacks, the equipper's CRIT Rate increases by <ct color=#2BAD00>8.5%</ct>.",
+    "When the equipper activates an <ct color=#FFFFFF>EX Special Attack</ct>, they gain 1 stack of a buff. Each stack increases the equipper's DMG by <ct color=#2BAD00>5.8%</ct>, up to 3 stacks, and lasting 20s. This effect can trigger once every 0.5s, and repeated triggers reset the duration. At 3 stacks, the equipper's CRIT Rate increases by <ct color=#2BAD00>9.4%</ct>.",
+    "When the equipper activates an <ct color=#FFFFFF>EX Special Attack</ct>, they gain 1 stack of a buff. Each stack increases the equipper's DMG by <ct color=#2BAD00>6.4%</ct>, up to 3 stacks, and lasting 20s. This effect can trigger once every 0.5s, and repeated triggers reset the duration. At 3 stacks, the equipper's CRIT Rate increases by <ct color=#2BAD00>10.4%</ct>."
+  ]
+}

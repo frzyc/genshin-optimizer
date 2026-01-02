@@ -225,5 +225,6 @@
       "desc": "When Zhu Yuan consumes a total of 12 <ct color=#FFFFFF>Enhanced Shotshells</ct>, she receives the <ct color=#FFFFFF>Ether Afterglow</ct> effect, and the Energy cost of the next <ct color=#FFFFFF>EX Special Attack</ct> is reduced by 30. Launching an <ct color=#FFFFFF>EX Special Attack</ct> will consume <ct color=#FFFFFF>Ether Afterglow</ct> and shoot an additional 4-bullet Ether Buckshot. Each extra bullet deals DMG equal to 220% of Zhu Yuan's ATK.",
       "flavor": "Zhu Yuan often worries about her gear's remaining battery, getting nervous when the power dips into the red zone and consciously saving power. Public Security finally equipped her with an energy pack that offered both high capacity and long-lasting endurance."
     }
-  }
+  },
+  "potential": {}
 }

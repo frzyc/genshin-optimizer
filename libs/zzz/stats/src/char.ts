@@ -34,6 +34,7 @@ export type CharacterDatum = {
   coreParams: number[][]
   abilityParams: number[]
   mindscapeParams: number[][]
+  potentialParams: number[][]
 }
 export type SkillParam = {
   DamagePercentage: number

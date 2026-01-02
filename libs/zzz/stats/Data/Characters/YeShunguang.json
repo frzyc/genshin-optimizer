@@ -1,0 +1,531 @@
+{
+  "id": "1431",
+  "rarity": "S",
+  "attribute": "physical",
+  "specialty": "attack",
+  "faction": "YunkuiSummit",
+  "stats": {
+    "atk_base": 135,
+    "atk_growth": 8.2578,
+    "def_base": 49,
+    "def_growth": 6.6203,
+    "hp_base": 617,
+    "hp_growth": 83.7238,
+    "anomMas": 94,
+    "anomProf": 93,
+    "impact": 83,
+    "enerRegen": 1.2
+  },
+  "promotionStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 423, "atk": 48, "def": 33 },
+    { "hp": 847, "atk": 96, "def": 67 },
+    { "hp": 1270, "atk": 145, "def": 100 },
+    { "hp": 1694, "atk": 193, "def": 134 },
+    { "hp": 2117, "atk": 241, "def": 167 }
+  ],
+  "coreStats": [
+    { "atk": 0, "crit_": 0.048 },
+    { "atk": 25, "crit_": 0.048 },
+    { "atk": 25, "crit_": 0.096 },
+    { "atk": 50, "crit_": 0.096 },
+    { "atk": 50, "crit_": 0.144 },
+    { "atk": 75, "crit_": 0.144 }
+  ],
+  "skillParams": {
+    "basic": {
+      "BasicAttackSwiftedge": [
+        {
+          "DamagePercentage": 0.794,
+          "DamagePercentageGrowth": 0.073,
+          "StunRatio": 0.265,
+          "StunRatioGrowth": 0.013,
+          "SpRecovery": 173.4,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1061.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 2.441,
+          "DamagePercentageGrowth": 0.222,
+          "StunRatio": 0.775,
+          "StunRatioGrowth": 0.036,
+          "SpRecovery": 507,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3099.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 1.246,
+          "DamagePercentageGrowth": 0.114,
+          "StunRatio": 0.354,
+          "StunRatioGrowth": 0.017,
+          "SpRecovery": 231.5,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1416.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 3.68,
+          "DamagePercentageGrowth": 0.335,
+          "StunRatio": 1.073,
+          "StunRatioGrowth": 0.049,
+          "SpRecovery": 701.9,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 4290,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "BasicAttackCloudstreamSwordWill": [
+        {
+          "DamagePercentage": 1.167,
+          "DamagePercentageGrowth": 0.107,
+          "StunRatio": 0.367,
+          "StunRatioGrowth": 0.017,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 918.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "BasicAttackEnlightenedMindSplittingCurrents": [
+        {
+          "DamagePercentage": 1.126,
+          "DamagePercentageGrowth": 0.103,
+          "StunRatio": 0.358,
+          "StunRatioGrowth": 0.017,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1430,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 65
+        },
+        {
+          "DamagePercentage": 1.559,
+          "DamagePercentageGrowth": 0.142,
+          "StunRatio": 0.495,
+          "StunRatioGrowth": 0.023,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1980,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 90
+        },
+        {
+          "DamagePercentage": 2.166,
+          "DamagePercentageGrowth": 0.197,
+          "StunRatio": 0.688,
+          "StunRatioGrowth": 0.032,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2752.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 125
+        }
+      ],
+      "BasicAttackEnlightenedMindSkywardAscent": [
+        {
+          "DamagePercentage": 0.91,
+          "DamagePercentageGrowth": 0.083,
+          "StunRatio": 0.358,
+          "StunRatioGrowth": 0.017,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 715,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 32.5
+        }
+      ],
+      "BasicAttackEnlightenedMindSunderlightMaximum": [
+        {
+          "DamagePercentage": 6.048,
+          "DamagePercentageGrowth": 0.55,
+          "StunRatio": 0.77,
+          "StunRatioGrowth": 0.035,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3080,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 140
+        }
+      ],
+      "BasicAttackEnlightenedMindSunderlight": [
+        {
+          "DamagePercentage": 1.207,
+          "DamagePercentageGrowth": 0.11,
+          "StunRatio": 0.34,
+          "StunRatioGrowth": 0.016,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1358.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 61.66
+        },
+        {
+          "DamagePercentage": 1.565,
+          "DamagePercentageGrowth": 0.143,
+          "StunRatio": 0.44,
+          "StunRatioGrowth": 0.02,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1760,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 80
+        }
+      ],
+      "BasicAttackEnlightenedMindSunderlightAnnihilation": [
+        {
+          "DamagePercentage": 8.912,
+          "DamagePercentageGrowth": 0.811,
+          "StunRatio": 0.578,
+          "StunRatioGrowth": 0.027,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2312.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 105.03
+        },
+        {
+          "DamagePercentage": 1.599,
+          "DamagePercentageGrowth": 0.146,
+          "StunRatio": 0.45,
+          "StunRatioGrowth": 0.021,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1798.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 81.69
+        }
+      ],
+      "Culmination": []
+    },
+    "dodge": {
+      "DodgeLeaveNoTrace": [],
+      "DodgeWanderingCloud": [],
+      "DashAttackPhantasmDash": [
+        {
+          "DamagePercentage": 1.05,
+          "DamagePercentageGrowth": 0.096,
+          "StunRatio": 0.207,
+          "StunRatioGrowth": 0.01,
+          "SpRecovery": 135,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 825,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "DodgeCounterSwallowStrike": [
+        {
+          "DamagePercentage": 3.463,
+          "DamagePercentageGrowth": 0.315,
+          "StunRatio": 1.174,
+          "StunRatioGrowth": 0.054,
+          "SpRecovery": 408,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2494.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ]
+    },
+    "special": {
+      "SpecialAttackGuidingTides": [
+        {
+          "DamagePercentage": 0.989,
+          "DamagePercentageGrowth": 0.09,
+          "StunRatio": 0.243,
+          "StunRatioGrowth": 0.012,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 973.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 3.159,
+          "DamagePercentageGrowth": 0.288,
+          "StunRatio": 1.321,
+          "StunRatioGrowth": 0.061,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3082.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "EXSpecialAttackGaleSuppression": [
+        {
+          "DamagePercentage": 11.784,
+          "DamagePercentageGrowth": 1.072,
+          "StunRatio": 3.401,
+          "StunRatioGrowth": 0.155,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 18518.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "SpecialAttackEnlightenedMindCleanExit": [
+        {
+          "DamagePercentage": 0.71,
+          "DamagePercentageGrowth": 0.065,
+          "StunRatio": 0.175,
+          "StunRatioGrowth": 0.008,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 698.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 31.66
+        }
+      ],
+      "EXSpecialAttackEnlightenedMindSoaringLight": [
+        {
+          "DamagePercentage": 10.58,
+          "DamagePercentageGrowth": 0.962,
+          "StunRatio": 1.082,
+          "StunRatioGrowth": 0.05,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 4328.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 196.66
+        }
+      ],
+      "EXSpecialAttackEnlightenedMindReturnToDust": [
+        {
+          "DamagePercentage": 11.611,
+          "DamagePercentageGrowth": 1.056,
+          "StunRatio": 1.394,
+          "StunRatioGrowth": 0.064,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 5574.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 253.33
+        }
+      ]
+    },
+    "chain": {
+      "ChainAttackSmiteTheWicked": [
+        {
+          "DamagePercentage": 8.716,
+          "DamagePercentageGrowth": 0.793,
+          "StunRatio": 1.815,
+          "StunRatioGrowth": 0.083,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 21890,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "UltimateChasingStorms": [
+        {
+          "DamagePercentage": 19.25,
+          "DamagePercentageGrowth": 1.75,
+          "StunRatio": 0.55,
+          "StunRatioGrowth": 0.025,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 100
+        }
+      ],
+      "ChainAttackEnlightenedMindLureThunder": [
+        {
+          "DamagePercentage": 9.086,
+          "DamagePercentageGrowth": 0.826,
+          "StunRatio": 1.375,
+          "StunRatioGrowth": 0.063,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 20130,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 449.5
+        }
+      ],
+      "UltimateCleavingHeavens": [
+        {
+          "DamagePercentage": 30.843,
+          "DamagePercentageGrowth": 2.804,
+          "StunRatio": 1.513,
+          "StunRatioGrowth": 0.069,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 275
+        }
+      ]
+    },
+    "assist": {
+      "EntrySkillIlluminatingDarkness": [
+        {
+          "DamagePercentage": 4.004,
+          "DamagePercentageGrowth": 0.364,
+          "StunRatio": 1.21,
+          "StunRatioGrowth": 0.055,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 4840,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 220
+        }
+      ],
+      "QuickAssistSupportGuard": [
+        {
+          "DamagePercentage": 0.805,
+          "DamagePercentageGrowth": 0.074,
+          "StunRatio": 0.317,
+          "StunRatioGrowth": 0.015,
+          "SpRecovery": 207,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1265,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "AssistFollowUpCeaseHostility": [
+        {
+          "DamagePercentage": 4.137,
+          "DamagePercentageGrowth": 0.377,
+          "StunRatio": 1.4,
+          "StunRatioGrowth": 0.064,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 7403,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "DefensiveAssistWhenIReturn": [
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.953,
+          "StunRatioGrowth": 0.089,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.072,
+          "StunRatioGrowth": 0.095,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.192,
+          "StunRatioGrowth": 0.055,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "QuickAssistEnlightenedMindTacticalSupport": [
+        {
+          "DamagePercentage": 0.673,
+          "DamagePercentageGrowth": 0.062,
+          "StunRatio": 0.331,
+          "StunRatioGrowth": 0.016,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1322.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 60
+        }
+      ],
+      "AssistFollowUpEnlightenedMindUnification": [
+        {
+          "DamagePercentage": 4.3,
+          "DamagePercentageGrowth": 0.391,
+          "StunRatio": 1.46,
+          "StunRatioGrowth": 0.067,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 7678,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 286.22
+        }
+      ]
+    }
+  },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackSwiftedge": [],
+      "BasicAttackCloudstreamSwordWill": [],
+      "BasicAttackEnlightenedMindSplittingCurrents": [],
+      "BasicAttackEnlightenedMindSkywardAscent": [],
+      "BasicAttackEnlightenedMindSunderlightMaximum": [],
+      "BasicAttackEnlightenedMindSunderlight": [],
+      "BasicAttackEnlightenedMindSunderlightAnnihilation": [],
+      "Culmination": []
+    },
+    "dodge": {
+      "DodgeLeaveNoTrace": [],
+      "DodgeWanderingCloud": [],
+      "DashAttackPhantasmDash": [],
+      "DodgeCounterSwallowStrike": []
+    },
+    "special": {
+      "SpecialAttackGuidingTides": [],
+      "EXSpecialAttackGaleSuppression": [],
+      "SpecialAttackEnlightenedMindCleanExit": [],
+      "EXSpecialAttackEnlightenedMindSoaringLight": [],
+      "EXSpecialAttackEnlightenedMindReturnToDust": []
+    },
+    "chain": {
+      "ChainAttackSmiteTheWicked": [],
+      "UltimateChasingStorms": [],
+      "ChainAttackEnlightenedMindLureThunder": [],
+      "UltimateCleavingHeavens": []
+    },
+    "assist": {
+      "EntrySkillIlluminatingDarkness": [],
+      "QuickAssistSupportGuard": [],
+      "AssistFollowUpCeaseHostility": [],
+      "DefensiveAssistWhenIReturn": [],
+      "QuickAssistEnlightenedMindTacticalSupport": [],
+      "AssistFollowUpEnlightenedMindUnification": []
+    }
+  },
+  "coreParams": [
+    [6, 6, 6, 6, 6, 6, 6],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [3, 3, 3, 3, 3, 3, 3],
+    [0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3],
+    [0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25],
+    [16, 16, 16, 16, 16, 16, 16],
+    [1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1]
+  ],
+  "abilityParams": [3, 3],
+  "mindscapeParams": [
+    [6, 180, 0.1, 0.2],
+    [6, 9, 1, 0.4],
+    [2],
+    [1000, 180, 2],
+    [2],
+    [2, 1, 4, 3, 3, 15]
+  ],
+  "potentialParams": []
+}

@@ -163,8 +163,6 @@ const buildTcSchema = z.object({
 
 export type BuildTc = z.infer<typeof buildTcSchema>
 
-// --- DataManager ---
-
 export class BuildTcDataManager extends DataManager<
   string,
   'buildTcs',
@@ -229,8 +227,6 @@ export class BuildTcDataManager extends DataManager<
     super.importGOOD(good, result)
   }
 }
-
-// --- Helper Functions ---
 
 function initCharTCArtifactSlots(): BuildTc['artifact']['slots'] {
   return objKeyMap(allArtifactSlotKeys, defaultSlot)

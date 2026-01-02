@@ -36,7 +36,6 @@ import type { ICachedLightCone, ICachedRelic } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 
-// --- Relic Slot Schema ---
 const buildTcRelicSlotSchema = z.object({
   level: z.number().int().min(0).max(15).catch(15),
   statKey: zodEnumWithDefault(
@@ -74,7 +73,6 @@ const buildTcRelicSlotsSchema = zodTypedRecordWith(allRelicSlotKeys, (sk) =>
   buildTcRelicSlotSchema.catch(defaultSlot(sk))
 )
 
-// --- Substats Schema ---
 const buildTcSubstatsSchema = z.object({
   type: zodEnumWithDefault(relicSubstatTypeKeys, 'max'),
   stats: zodNumberRecord(allRelicSubStatKeys, 0),
@@ -84,7 +82,6 @@ const buildTcSubstatsSchema = z.object({
   ) as z.ZodType<RelicRarityKey>,
 })
 
-// --- Sets Schema ---
 const buildTcSetsSchema = z.preprocess(
   (val) => {
     if (typeof val !== 'object' || val === null) return {}
@@ -102,7 +99,6 @@ const buildTcSetsSchema = z.preprocess(
   z.record(z.string(), z.number())
 ) as z.ZodType<Partial<Record<RelicSetKey, 2 | 4>>>
 
-// --- Relic Schema ---
 const buildTcRelicSchema = z.object({
   slots: buildTcRelicSlotsSchema.catch(
     objKeyMap(allRelicSlotKeys, defaultSlot)
@@ -115,7 +111,6 @@ const buildTcRelicSchema = z.object({
   sets: buildTcSetsSchema,
 })
 
-// --- LightCone Schema ---
 const buildTcLightConeSchema = z.object({
   key: zodEnum(allLightConeKeys),
   level: zodClampedNumber(1, 80, 1),
@@ -129,7 +124,6 @@ const buildTcLightConeSchema = z.object({
   ) as z.ZodType<SuperimposeKey>,
 })
 
-// --- Optimization Schema ---
 const defaultMaxSubstats = () =>
   objKeyMap(
     allRelicSubStatKeys,
@@ -143,7 +137,6 @@ const buildTcOptimizationSchema = z.object({
   ),
 })
 
-// --- Main BuildTc Schema ---
 export const buildTcSchema = z.object({
   name: z.string().catch('Build(TC) Name'),
   description: zodString('Build(TC) Description'),
