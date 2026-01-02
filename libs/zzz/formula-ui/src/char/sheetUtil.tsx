@@ -108,7 +108,7 @@ function abilityFormulaNameToTranslated(
 ) {
   const [ability, hitNumber, type] = abilityFormulaName.split('_')
   return st(type, {
-    val: `$t(char_${charKey}_gen:${skill}.${ability}.params.${hitNumber})`,
+    val: `$t(char_${charKey}_gen:${skill}.${ability}.params.${hitNumber.replace(/\D/g, '')})`, // Only grab number for special overrides
   })
 }
 

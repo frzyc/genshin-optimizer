@@ -1,4 +1,3 @@
-import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
@@ -14,7 +13,7 @@ import {
   teamBuff,
 } from '../../util'
 import {
-  conditionalFormulaDmgTag,
+  dmgDazeAndAnom,
   dmgDazeAndAnomOverride,
   entriesForChar,
   getBaseTag,
@@ -30,16 +29,24 @@ const { char } = own
 
 const { markedWithSilverStar } = allBoolConditionals(key)
 
-const ability_check = (a: NumNode | number, b?: NumNode | number) =>
-  cmpGE(
-    sum(
-      team.common.count.withSpecialty('stun'),
-      team.common.count.withSpecialty('support')
-    ),
-    1,
-    a,
-    b
-  )
+const ability_on = cmpGE(
+  sum(
+    team.common.count.withSpecialty('stun'),
+    team.common.count.withSpecialty('support')
+  ),
+  1,
+  'infer',
+  ''
+)
+const ability_off = cmpGE(
+  sum(
+    team.common.count.withSpecialty('stun'),
+    team.common.count.withSpecialty('support')
+  ),
+  1,
+  '',
+  'infer'
+)
 
 const sheet = register(
   key,
@@ -57,23 +64,49 @@ const sheet = register(
       0,
       { ...baseTag, damageType1: 'chain', skillType: 'chainSkill' },
       'atk',
-      { condDmg: true },
-      conditionalFormulaDmgTag(ability_check(1), 'standardDmg', {
-        damageType2: 'aftershock',
-      })
+      { cond: ability_off }
     ),
     dmgDazeAndAnomOverride(
       dm,
       'chain',
       'UltimateVoidstrike',
       0,
-      { ...baseTag, damageType1: 'ult', skillType: 'chainSkill' },
+      {
+        ...baseTag,
+        damageType1: 'ult',
+        skillType: 'chainSkill',
+      },
       'atk',
-      { condDmg: true },
-      conditionalFormulaDmgTag(ability_check(1), 'standardDmg', {
-        damageType2: 'aftershock',
-      })
+      { cond: ability_off }
     )
+  ),
+
+  // TODO: Technically causes wrong order in the meta file, probably won't matter?
+  ...dmgDazeAndAnom(
+    dm.chain.ChainAttackLeapingThunderstrike[0],
+    'ChainAttackLeapingThunderstrike_aftershock0',
+    {
+      ...baseTag,
+      damageType1: 'chain',
+      damageType2: 'aftershock',
+      skillType: 'chainSkill',
+    },
+    'atk',
+    'chain',
+    { cond: ability_on }
+  ),
+  ...dmgDazeAndAnom(
+    dm.chain.UltimateVoidstrike[0],
+    'UltimateVoidstrike_aftershock0',
+    {
+      ...baseTag,
+      damageType1: 'ult',
+      damageType2: 'aftershock',
+      skillType: 'chainSkill',
+    },
+    'atk',
+    'chain',
+    { cond: ability_on }
   ),
 
   ...customDmg(

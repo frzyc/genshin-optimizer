@@ -1,12 +1,11 @@
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
-import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
   cmpEq,
   cmpGE,
+  cmpNE,
   constant,
   max,
   prod,
-  read,
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
@@ -63,7 +62,7 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
  * @param extra Buffs that should only apply to this damage instance
  * @returns Array of TagMapNodeEntries representing the damage instance, daze and anomaly buildup
  */
-function dmgDazeAndAnom(
+export function dmgDazeAndAnom(
   skillParam: SkillParam,
   name: string,
   dmgTag: DmgTag,
@@ -85,6 +84,7 @@ function dmgDazeAndAnom(
     dmgMulti,
     cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
   )
+  const dmg = arg.cond ? cmpNE(arg.cond, '', dmgBase) : dmgBase
   const dazeBase = sum(
     percent(skillParam.StunRatio),
     prod(
@@ -92,19 +92,16 @@ function dmgDazeAndAnom(
       percent(skillParam.StunRatioGrowth)
     )
   )
+  const daze = arg.cond ? cmpNE(arg.cond, '', dazeBase) : dazeBase
+  const anomBase = constant(skillParam.AttributeInfliction / 100)
+  const anom = arg.cond ? cmpNE(arg.cond, '', anomBase) : anomBase
   return [
     stat === 'sheerForce'
-      ? customSheerDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra)
-      : customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
-    customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
+      ? customSheerDmg(`${name}_dmg`, dmgTag, dmg, arg, ...extra)
+      : customDmg(`${name}_dmg`, dmgTag, dmg, arg, ...extra),
+    customDaze(`${name}_daze`, dmgTag, daze, arg, ...extra),
     // TODO: No clue if this is right
-    customAnomalyBuildup(
-      `${name}_anomBuildup`,
-      dmgTag,
-      constant(skillParam.AttributeInfliction / 100),
-      arg,
-      ...extra
-    ),
+    customAnomalyBuildup(`${name}_anomBuildup`, dmgTag, anom, arg, ...extra),
   ]
 }
 
