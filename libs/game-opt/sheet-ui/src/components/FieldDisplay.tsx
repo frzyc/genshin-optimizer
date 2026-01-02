@@ -251,16 +251,12 @@ export function FormulaHelpIcon({
     () => computed && formulaText(computed as any, formulaTextCache),
     [computed, formulaText, formulaTextCache]
   )
-  const computedTag = useMemo(
-    () => ({ ...computed?.meta.tag, ...tag }),
-    [tag, computed?.meta.tag]
-  )
   return (
     <BootstrapTooltip
       title={
         <Typography component="div">
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <FullTagDisplay tag={computedTag} />
+            <FullTagDisplay tag={tag} />
             <span>{valDisplay}</span>
           </Box>
           <Divider />

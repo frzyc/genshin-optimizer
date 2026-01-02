@@ -210,32 +210,6 @@ export function dmgDazeAndAnomOverride<
 }
 
 /**
- * Creates a conditional formula node that reads from one of two damage instances based on a condition
- * @param cond Condition node
- * @param q One of 'standardDmg', 'sheerDmg' or 'anomalyDmg'
- * @param dmgTagIfTrue DmgTag to use if condition is true
- * @param dmgTagIfFalse DmgTag to use if condition is false
- * @returns TagMapNodeEntry representing the conditional damage instance
- */
-export function conditionalFormulaDmgTag(
-  cond: NumNode,
-  q: 'standardDmg' | 'sheerDmg' | 'anomalyDmg',
-  dmgTagIfTrue: DmgTag,
-  dmgTagIfFalse: DmgTag = {}
-) {
-  return ownBuff
-    .withTag({ qt: 'formula', q: 'nonDmg' })
-    .add(
-      cmpEq(
-        cond,
-        1,
-        read({ q, ...dmgTagIfTrue }),
-        read({ q, ...dmgTagIfFalse })
-      )
-    )
-}
-
-/**
  * Registers all damage, daze and anomaly buildup instances for a character.
  * If you need to override the element, damage type, add some extra buffs, etc., pass in dmgDazeAndAnomOverride to 3rd+ param.
  * @param key Character key
