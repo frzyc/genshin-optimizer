@@ -398,13 +398,17 @@ function SelectionCard({
             <>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                 <Typography
-                  variant="subtitle2"
+                  variant="h6"
                   sx={{
                     fontWeight: '900',
+                    textTransform: 'uppercase',
+                    fontStyle: 'italic',
                   }}
                 >
                   {t(`charNames_gen:${characterKey}`)}
                 </Typography>
+              </Box>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                 <ImgIcon
                   size={2}
                   src={factionDefIcon(faction ?? 'BelebogHeavyIndustries')}
@@ -422,8 +426,10 @@ function SelectionCard({
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <ImgIcon size={1.5} src={rarityDefIcon(rarity ?? 'A')} />
                 {!!character && (
-                  <>
-                    <Box sx={{ textShadow: '0 0 5px gray' }}>
+                  <Box
+                    sx={{ textShadow: '0 0 5px gray', display: 'flex', gap: 1 }}
+                  >
+                    <Box>
                       <Typography
                         variant="body2"
                         component="span"
@@ -439,8 +445,10 @@ function SelectionCard({
                         /{milestoneMaxLevel[promotion]}
                       </Typography>
                     </Box>
-                    <Typography variant="body2">M{mindscape}</Typography>
-                  </>
+                    <Typography variant="body2" component="span">
+                      M{mindscape}
+                    </Typography>
+                  </Box>
                 )}
 
                 {!character && (
