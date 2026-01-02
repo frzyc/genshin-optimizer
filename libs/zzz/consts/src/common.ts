@@ -19,6 +19,8 @@ export const otherStatKeys = [
   'enerRegen',
   'anom_crit_', // Anomaly CRIT Rate
   'anom_crit_dmg_', // Anomaly CRIT DMG
+  'dazeInc_', // Daze Increase
+  'sheerForce',
 ] as const
 
 export const unCondKeys = [
@@ -111,6 +113,8 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   def_: 'DEF',
   pen: 'PEN',
   pen_: 'PEN Ratio',
+  resIgn_: 'Res Ignore',
+  defIgn_: 'DEF Ignore',
   crit_: 'CRIT Rate',
   crit_dmg_: 'CRIT DMG',
   sheer_dmg_: 'Sheer DMG',
