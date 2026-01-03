@@ -1,8 +1,8 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import {
   allCharacterKeys,
-  coreLimits,
-  skillLimits,
+  coreByLevel,
+  skillByLevel,
 } from '@genshin-optimizer/zzz/consts'
 import { ZzzDatabase } from '../Database'
 
@@ -33,12 +33,12 @@ describe('CharacterDataManager', () => {
     expect(result?.promotion).toBe(4)
   })
 
-  it('should clamp skill levels to promotion limits', () => {
-    const promotion = 4
-    const maxSkill = skillLimits[promotion]
+  it('should clamp skill levels to level-based limits', () => {
+    const level = 50
+    const maxSkill = skillByLevel(level)
     const invalid = {
       key: allCharacterKeys[0],
-      level: 50,
+      level,
       promotion: 4,
       core: 3,
       mindscape: 2,
@@ -53,12 +53,12 @@ describe('CharacterDataManager', () => {
     expect(result?.basic).toBe(maxSkill)
   })
 
-  it('should clamp core to promotion limits', () => {
-    const promotion = 4
-    const maxCore = coreLimits[promotion]
+  it('should clamp core to level-based limits', () => {
+    const level = 50
+    const maxCore = coreByLevel(level)
     const invalid = {
       key: allCharacterKeys[0],
-      level: 50,
+      level,
       promotion: 4,
       core: maxCore + 5,
       mindscape: 2,
