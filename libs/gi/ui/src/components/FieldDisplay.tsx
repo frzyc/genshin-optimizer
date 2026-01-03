@@ -10,7 +10,7 @@ import type {
   IBasicFieldDisplay,
   IFieldDisplay,
 } from '@genshin-optimizer/gi/sheets'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult, UIData } from '@genshin-optimizer/gi/uidata'
 import GroupsIcon from '@mui/icons-material/Groups'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, PaletteColor } from '@mui/material'
@@ -45,6 +45,13 @@ export function FieldsDisplay({
   )
 }
 
+function deleteNodes(d: UIData) {
+  for (const child of d.children.values()) {
+    deleteNodes(child)
+  }
+  d.nodes.clear()
+}
+
 function FieldDisplay({
   field,
   component = ListItem,
@@ -58,6 +65,16 @@ function FieldDisplay({
   if ('node' in field) {
     const node = data.get(field.node)
     if (node.isEmpty) return null
+    console.log(node)
+    if (node.info.path === 'path_2163') {
+      console.log(data)
+      console.log(node)
+      console.log(field.node)
+      deleteNodes(data)
+      console.log('get')
+      data.get(field.node)
+      console.log('getDone')
+    }
     if (compareData) {
       const compareNode = compareData.get(field.node)
       return (
@@ -129,6 +146,11 @@ export function NodeFieldDisplay({
     [setFormulaData, data, calcRes]
   )
   if (!calcRes && !compareCalcRes) return null
+  // console.log(calcRes)
+  if (calcRes?.info.path === 'path_2165') {
+    console.log(data)
+    console.log(calcRes)
+  }
   const { multi, strikethrough } = calcRes?.info ?? compareCalcRes?.info ?? {}
 
   const multiDisplay = multi && <span>{multi}&#215;</span>

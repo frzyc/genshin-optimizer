@@ -3,6 +3,7 @@ import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import {
   ArtifactCardNano,
   DataContext,
+  FieldsDisplay,
   HitModeToggle,
   ReactionToggle,
   StatDisplayComponent,
@@ -82,6 +83,15 @@ export default function TabOverview() {
       <Box ref={scrollRef}>
         <EquipmentSection />
       </Box>
+      {data.data.data[0].display?.['custom']?.[0] && (
+        <FieldsDisplay
+          fields={[
+            {
+              node: data.data.data[0].display['custom'][0]!,
+            },
+          ]}
+        />
+      )}
     </Stack>
   )
 }

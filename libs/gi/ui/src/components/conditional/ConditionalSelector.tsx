@@ -5,7 +5,11 @@ import {
   evalIfFunc,
   layeredAssignment,
 } from '@genshin-optimizer/common/util'
-import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  MultiTargetContext,
+  TeamCharacterContext,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import type {
   DocumentConditional,
@@ -64,6 +68,7 @@ function SimpleConditionalSelector({
   disabled,
 }: SimpleConditionalSelectorProps) {
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
+  const { customTarget, setCustomTarget } = useContext(MultiTargetContext)
   const { data } = useContext(DataContext)
   const database = useDatabase()
 
@@ -79,7 +84,7 @@ function SimpleConditionalSelector({
           }
           team.conditional = conditionalValues
         })
-      else
+      else if (!customTarget)
         database.teamChars.set(teamCharId, (teamChar) => {
           const conditionalValues = deepClone(teamChar.conditional)
           if (v) {
@@ -89,8 +94,28 @@ function SimpleConditionalSelector({
           }
           teamChar.conditional = conditionalValues
         })
+      else {
+        const conditionalValues = deepClone(customTarget.conditionals)
+        if (v) {
+          layeredAssignment(conditionalValues, conditional.path, v)
+        } else {
+          deletePropPath(conditionalValues, conditional.path)
+        }
+        setCustomTarget({
+          ...customTarget,
+          conditionals: conditionalValues,
+        })
+      }
     },
-    [database, conditional.path, teamCharId, teamId]
+    [
+      conditional.path,
+      database.teams,
+      database.teamChars,
+      teamId,
+      customTarget,
+      teamCharId,
+      setCustomTarget,
+    ]
   )
 
   const conditionalValue = data.get(conditional.value).value

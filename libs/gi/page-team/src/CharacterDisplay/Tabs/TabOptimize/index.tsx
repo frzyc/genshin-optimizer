@@ -322,6 +322,7 @@ export default function TabBuild() {
       []
     )
     if (!teamData) return
+    console.log(uiDataForTeam(teamData.teamData, gender, activeCharKey))
     const workerData = uiDataForTeam(teamData.teamData, gender, activeCharKey)[
       characterKey
     ]?.target.data![0]
@@ -332,6 +333,7 @@ export default function TabBuild() {
       optimizationTarget
     ) as NumNode | undefined
     if (!unoptimizedOptimizationTargetNode) return
+    console.log(unoptimizedOptimizationTargetNode)
     const targetNode = unoptimizedOptimizationTargetNode
     const valueFilter = statFilterToNumNode(workerData, statFilters)
 
@@ -356,6 +358,7 @@ export default function TabBuild() {
       workerData,
       ({ path: [p] }) => p !== 'dyn'
     )
+    console.log(nodes[1])
     const plotBaseNode = plotBaseNumNode ? nodes.pop() : undefined
     const optimizationTargetNode = nodes.pop()!
 
