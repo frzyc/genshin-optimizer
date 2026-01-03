@@ -2,6 +2,8 @@
 import * as process from 'process'
 export const cwd = process.env['NX_WORKSPACE_ROOT'] ?? process.cwd()
 
+export const fieldsJoin = (o: any) => Object.values(o).join('\n')
+
 const GI_BASE_URL = 'https://gi.yatta.moe/assets/UI/'
 export function giURL(
   asset: string,
