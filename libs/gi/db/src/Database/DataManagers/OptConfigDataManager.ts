@@ -1,19 +1,17 @@
 import {
-  clamp,
-  deepClone,
-  deepFreeze,
-  validateArr,
-} from '@genshin-optimizer/common/util'
-import type {
-  ArtifactSetKey,
-  LocationCharacterKey,
-  MainStatKey,
-} from '@genshin-optimizer/gi/consts'
+  zodBoolean,
+  zodClampedNumber,
+  zodFilteredArray,
+  zodNumericLiteralWithDefault,
+} from '@genshin-optimizer/common/database'
+import { clamp, deepClone, deepFreeze } from '@genshin-optimizer/common/util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allLocationCharacterKeys,
   artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
+import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { GeneratedBuildList } from './GeneratedBuildListDataManager'
@@ -45,42 +43,79 @@ export type ArtSetExclusionKey =
   | 'rainbow'
 export type ArtSetExclusion = Partial<Record<ArtSetExclusionKey, (2 | 4)[]>>
 
-export interface StatFilterSetting {
-  value: number
-  disabled: boolean
-}
-export type StatFilters = Record<string, StatFilterSetting[]>
+const statFilterSettingSchema = z.object({
+  value: z.number().catch(0),
+  disabled: zodBoolean(),
+})
+export type StatFilterSetting = z.infer<typeof statFilterSettingSchema>
 
-export interface OptConfig {
-  artSetExclusion: ArtSetExclusion
-  statFilters: StatFilters
-  mainStatKeys: {
-    sands: MainStatKey[]
-    goblet: MainStatKey[]
-    circlet: MainStatKey[]
-    flower?: never
-    plume?: never
-  }
-  excludedLocations: LocationCharacterKey[]
-  artExclusion: string[]
-  useExcludedArts: boolean
-  optimizationTarget?: string[]
-  mainStatAssumptionLevel: number
-  allowPartial: boolean
-  maxBuildsToShow: number
-  plotBase?: string[]
-  compareBuild: boolean
-  levelLow: number
-  levelHigh: number
-  useTeammateBuild: boolean // teammates loadout exclusion flag
+const statFiltersSchema = z
+  .record(z.string(), z.array(statFilterSettingSchema))
+  .catch({})
+export type StatFilters = z.infer<typeof statFiltersSchema>
 
-  //generated opt builds
-  generatedBuildListId?: string
+const artSetExclusionSchema = z.preprocess(
+  (val) => {
+    if (typeof val !== 'object' || val === null) return {}
+    const result: ArtSetExclusion = {}
+    for (const [k, v] of Object.entries(val as Record<string, unknown>)) {
+      if (!allArtifactSetExclusionKeys.includes(k as ArtSetExclusionKey))
+        continue
+      if (!Array.isArray(v)) continue
+      const filtered = [...new Set(v.filter((n) => n === 2 || n === 4))] as (
+        | 2
+        | 4
+      )[]
+      if (filtered.length) result[k as ArtSetExclusionKey] = filtered
+    }
+    return result
+  },
+  z.record(z.string(), z.array(z.union([z.literal(2), z.literal(4)])))
+) as z.ZodType<ArtSetExclusion>
 
-  // upOpt
-  upOptLevelLow: number
-  upOptLevelHigh: number
-}
+const mainStatKeysSchema = z
+  .object({
+    sands: zodFilteredArray(artSlotMainKeys.sands, artSlotMainKeys.sands),
+    goblet: zodFilteredArray(artSlotMainKeys.goblet, artSlotMainKeys.goblet),
+    circlet: zodFilteredArray(artSlotMainKeys.circlet, artSlotMainKeys.circlet),
+  })
+  .catch({
+    sands: [...artSlotMainKeys.sands],
+    goblet: [...artSlotMainKeys.goblet],
+    circlet: [...artSlotMainKeys.circlet],
+  })
+  .transform((val) => {
+    // Ensure arrays are not empty
+    if (!val.sands.length) val.sands = [...artSlotMainKeys.sands]
+    if (!val.goblet.length) val.goblet = [...artSlotMainKeys.goblet]
+    if (!val.circlet.length) val.circlet = [...artSlotMainKeys.circlet]
+    return val
+  })
+
+const optConfigSchema = z.object({
+  artSetExclusion: artSetExclusionSchema.catch({}),
+  statFilters: statFiltersSchema,
+  mainStatKeys: mainStatKeysSchema,
+  excludedLocations: zodFilteredArray(allLocationCharacterKeys, []),
+  artExclusion: z.array(z.string()).catch([]),
+  useExcludedArts: zodBoolean(),
+  optimizationTarget: z.array(z.string()).optional().catch(undefined),
+  mainStatAssumptionLevel: zodClampedNumber(0, 20, 0),
+  allowPartial: zodBoolean(),
+  maxBuildsToShow: zodNumericLiteralWithDefault(
+    maxBuildsToShowList,
+    maxBuildsToShowDefault
+  ),
+  plotBase: z.array(z.string()).optional().catch(undefined),
+  compareBuild: zodBoolean(true),
+  levelLow: zodClampedNumber(0, 20, 0),
+  levelHigh: zodClampedNumber(0, 20, 20),
+  useTeammateBuild: zodBoolean(),
+  generatedBuildListId: z.string().optional().catch(undefined),
+  upOptLevelLow: zodClampedNumber(0, 20, 0),
+  upOptLevelHigh: zodClampedNumber(0, 20, 19),
+})
+export type OptConfig = z.infer<typeof optConfigSchema>
 
 export class OptConfigDataManager extends DataManager<
   string,
@@ -95,109 +130,44 @@ export class OptConfigDataManager extends DataManager<
       if (key.startsWith('optConfig_') && !this.set(key, {}))
         this.database.storage.remove(key)
   }
-  override validate(obj: object, key: string): OptConfig | undefined {
-    if (typeof obj !== 'object') return undefined
+  override validate(obj: unknown, key: string): OptConfig | undefined {
+    const result = optConfigSchema.safeParse(obj)
+    if (!result.success) return undefined
+
+    const { ...data } = result.data
     let {
-      artSetExclusion,
       artExclusion,
-      useExcludedArts,
-      statFilters,
-      mainStatKeys,
-      optimizationTarget,
-      mainStatAssumptionLevel,
       excludedLocations,
-      allowPartial,
-      maxBuildsToShow,
-      plotBase,
-      compareBuild,
+      generatedBuildListId,
       levelLow,
       levelHigh,
-      generatedBuildListId,
-      useTeammateBuild,
       upOptLevelLow,
       upOptLevelHigh,
-    } = obj as OptConfig
+    } = data
 
-    if (typeof statFilters !== 'object') statFilters = {}
-
-    if (
-      !mainStatKeys ||
-      !mainStatKeys.sands ||
-      !mainStatKeys.goblet ||
-      !mainStatKeys.circlet
+    // Business logic: filter artExclusion to only IDs that exist in database
+    artExclusion = [...new Set(artExclusion)].filter((id) =>
+      this.database.arts.keys.includes(id)
     )
-      mainStatKeys = deepClone(initialBuildSettings.mainStatKeys)
-    else {
-      const slots = ['sands', 'goblet', 'circlet'] as const
-      // make sure the arrays are not empty
-      slots.forEach((sk) => {
-        if (!mainStatKeys[sk].length)
-          mainStatKeys[sk] = [...artSlotMainKeys[sk]]
-      })
-    }
 
-    if (!optimizationTarget || !Array.isArray(optimizationTarget))
-      optimizationTarget = undefined
-    if (
-      typeof mainStatAssumptionLevel !== 'number' ||
-      mainStatAssumptionLevel < 0 ||
-      mainStatAssumptionLevel > 20
-    )
-      mainStatAssumptionLevel = 0
-
-    if (!artExclusion || !Array.isArray(artExclusion)) artExclusion = []
-    else
-      artExclusion = [...new Set(artExclusion)].filter((id) =>
-        this.database.arts.keys.includes(id)
+    // Business logic: filter excludedLocations to valid chars, exclude self
+    excludedLocations = excludedLocations
+      .filter((k) => k !== key) // Remove self from list
+      .filter(
+        (lk) =>
+          this.database.chars.get(
+            this.database.chars.LocationToCharacterKey(lk)
+          ) // Remove characters who do not exist in the DB
       )
 
-    excludedLocations = validateArr(
-      excludedLocations,
-      allLocationCharacterKeys.filter((k) => k !== key),
-      [] // Remove self from list
-    ).filter(
-      (lk) =>
-        this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)) // Remove characters who do not exist in the DB
-    )
-
-    if (
-      !maxBuildsToShowList.includes(
-        maxBuildsToShow as (typeof maxBuildsToShowList)[number]
-      )
-    )
-      maxBuildsToShow = maxBuildsToShowDefault
-    if (!plotBase || !Array.isArray(plotBase)) plotBase = undefined
-    if (compareBuild === undefined) compareBuild = false
-
-    if (typeof levelLow !== 'number') levelLow = 0
-    if (typeof levelHigh !== 'number') levelHigh = 20
-    levelLow = clamp(levelLow, 0, 20)
-    levelHigh = clamp(levelHigh, 0, 20)
-    levelLow = clamp(levelLow, levelLow, levelHigh)
-    levelHigh = clamp(levelHigh, levelLow, levelHigh)
-
-    if (typeof upOptLevelLow !== 'number') upOptLevelLow = 0
-    if (typeof upOptLevelHigh !== 'number') upOptLevelHigh = 19
-    upOptLevelLow = clamp(upOptLevelLow, 0, 20)
-    upOptLevelHigh = clamp(upOptLevelHigh, 0, 20)
-    upOptLevelLow = clamp(upOptLevelLow, upOptLevelLow, upOptLevelHigh)
-    upOptLevelHigh = clamp(upOptLevelHigh, upOptLevelLow, upOptLevelHigh)
-
-    if (!artSetExclusion) artSetExclusion = {}
-    if (useExcludedArts === undefined) useExcludedArts = false
-    if (!allowPartial) allowPartial = false
-    artSetExclusion = Object.fromEntries(
-      Object.entries(artSetExclusion as ArtSetExclusion)
-        .map(([k, a]) => [k, [...new Set(a)]])
-        .filter(([_, a]) => a.length)
-    )
-
+    // Business logic: validate generatedBuildListId exists in database
     if (
       generatedBuildListId &&
       !this.database.generatedBuildList.get(generatedBuildListId)
     )
       generatedBuildListId = undefined
-    // Don't allow 2 opt configs to have the same build list
+
+    // Business logic: don't allow 2 opt configs to have the same build list
     if (
       generatedBuildListId &&
       this.database.optConfigs.entries.some(
@@ -207,32 +177,29 @@ export class OptConfigDataManager extends DataManager<
       )
     )
       generatedBuildListId = undefined
-    if (typeof useTeammateBuild !== 'boolean') useTeammateBuild = false
+
+    // Business logic: ensure levelLow <= levelHigh
+    levelLow = clamp(levelLow, levelLow, levelHigh)
+    levelHigh = clamp(levelHigh, levelLow, levelHigh)
+
+    // Business logic: ensure upOptLevelLow <= upOptLevelHigh
+    upOptLevelLow = clamp(upOptLevelLow, upOptLevelLow, upOptLevelHigh)
+    upOptLevelHigh = clamp(upOptLevelHigh, upOptLevelLow, upOptLevelHigh)
 
     return {
-      artSetExclusion,
+      ...data,
       artExclusion,
-      useExcludedArts,
-      statFilters,
-      mainStatKeys,
-      optimizationTarget,
-      mainStatAssumptionLevel,
       excludedLocations,
-      allowPartial,
-      maxBuildsToShow,
-      plotBase,
-      compareBuild,
+      generatedBuildListId,
       levelLow,
       levelHigh,
-      generatedBuildListId,
-      useTeammateBuild,
       upOptLevelLow,
       upOptLevelHigh,
     }
   }
   new(data: Partial<OptConfig> = {}) {
     const id = this.generateKey()
-    this.set(id, { ...initialBuildSettings, ...data })
+    this.set(id, { ...initialBuildSettings(), ...data })
     return id
   }
   duplicate(optConfigId: string): string {
@@ -284,30 +251,8 @@ export class OptConfigDataManager extends DataManager<
   }
 }
 
-const initialBuildSettings: OptConfig = deepFreeze({
-  artSetExclusion: {},
-  artExclusion: [],
-  useExcludedArts: false,
-  statFilters: {},
-  mainStatKeys: {
-    sands: [...artSlotMainKeys['sands']],
-    goblet: [...artSlotMainKeys['goblet']],
-    circlet: [...artSlotMainKeys['circlet']],
-  },
-  optimizationTarget: undefined,
-  mainStatAssumptionLevel: 0,
-  excludedLocations: [],
-  allowPartial: false,
-  maxBuildsToShow: 5,
-  plotBase: undefined,
-  compareBuild: true,
-  levelLow: 0,
-  levelHigh: 20,
-  useTeammateBuild: false,
-  upOptLevelLow: 0,
-  upOptLevelHigh: 19,
-  generatedBuildListId: undefined,
-})
+const initialBuildSettings = (): OptConfig =>
+  deepFreeze(optConfigSchema.parse({}))
 
 export function handleArtSetExclusion(
   currentArtSetExclusion: ArtSetExclusion,
@@ -320,7 +265,7 @@ export function handleArtSetExclusion(
   else if (!setExclusion.includes(num))
     artSetExclusion[setKey] = [...setExclusion, num]
   else {
-    artSetExclusion[setKey] = setExclusion.filter((n) => n !== num)
+    artSetExclusion[setKey] = setExclusion.filter((n: 2 | 4) => n !== num)
     if (!setExclusion.length) delete artSetExclusion[setKey]
   }
   return artSetExclusion

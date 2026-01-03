@@ -1,7 +1,10 @@
-import type { UnArray } from '@genshin-optimizer/common/util'
+import {
+  zodBoolean,
+  zodFilteredArray,
+  zodNumericLiteralWithDefault,
+} from '@genshin-optimizer/common/database'
 import {
   removeUndefinedFields,
-  validateArr,
   validateValue,
 } from '@genshin-optimizer/common/util'
 import type { AttributeKey, SpecialityKey } from '@genshin-optimizer/zzz/consts'
@@ -16,6 +19,7 @@ import {
   wengineMaxLevel,
 } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { z } from 'zod'
 import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 import type { GeneratedBuildList } from './GeneratedBuildListDataManager'
@@ -54,40 +58,57 @@ export type StatFilterTag = {
   qt?: (typeof statFilterStatQtKeys)[number]
   attribute?: AttributeKey
 }
-export type StatFilter = {
-  tag: StatFilterTag
-  value: number
-  isMax: boolean
-  disabled: boolean
-}
-export type StatFilters = Array<StatFilter>
 
-export interface OptConfig {
-  statFilters: StatFilters
-  maxBuildsToShow: number
-  // Disc Filters
-  levelLow: number
-  levelHigh: number
-  slot4: DiscMainStatKey[]
-  slot5: DiscMainStatKey[]
-  slot6: DiscMainStatKey[]
-  setFilter2: DiscSetKey[]
-  setFilter4: DiscSetKey[]
-  useEquipped: boolean
-  // excludedLocations: CharacterKey[]
-  // allowLocationsState: AllowLocationsState
-  // discExclusionIds: string[]
+const statFilterTagSchema = z.object({
+  q: z.string(),
+  qt: z.string().optional(),
+  attribute: z.string().optional(),
+}) as z.ZodType<StatFilterTag>
 
-  // Wengine Filters
-  optWengine: boolean
-  wlevelLow: number
-  wlevelHigh: number
-  wEngineTypes: SpecialityKey[]
-  useEquippedWengine: boolean
+const statFilterSchema = z.object({
+  tag: statFilterTagSchema,
+  value: z.number().catch(0),
+  isMax: zodBoolean(),
+  disabled: zodBoolean(),
+})
 
-  //generated opt builds
-  generatedBuildListId?: string
-}
+export type StatFilter = z.infer<typeof statFilterSchema>
+export type StatFilters = StatFilter[]
+
+const optConfigSchema = z.object({
+  statFilters: z.array(statFilterSchema).catch([]),
+  maxBuildsToShow: zodNumericLiteralWithDefault(
+    maxBuildsToShowList,
+    maxBuildsToShowDefault
+  ),
+
+  levelLow: z.number().int().min(0).max(15).catch(discMaxLevel['S']),
+  levelHigh: z.number().int().min(0).max(15).catch(discMaxLevel['S']),
+  slot4: zodFilteredArray(discSlotToMainStatKeys['4'], [
+    ...discSlotToMainStatKeys['4'],
+  ]) as z.ZodType<DiscMainStatKey[]>,
+  slot5: zodFilteredArray(discSlotToMainStatKeys['5'], [
+    ...discSlotToMainStatKeys['5'],
+  ]) as z.ZodType<DiscMainStatKey[]>,
+  slot6: zodFilteredArray(discSlotToMainStatKeys['6'], [
+    ...discSlotToMainStatKeys['6'],
+  ]) as z.ZodType<DiscMainStatKey[]>,
+  setFilter2: zodFilteredArray(allDiscSetKeys, []) as z.ZodType<DiscSetKey[]>,
+  setFilter4: zodFilteredArray(allDiscSetKeys, []) as z.ZodType<DiscSetKey[]>,
+  useEquipped: zodBoolean(),
+
+  optWengine: zodBoolean(),
+  wlevelLow: z.number().int().min(0).max(60).catch(wengineMaxLevel),
+  wlevelHigh: z.number().int().min(0).max(60).catch(wengineMaxLevel),
+  wEngineTypes: zodFilteredArray(allSpecialityKeys, []) as z.ZodType<
+    SpecialityKey[]
+  >,
+  useEquippedWengine: zodBoolean(),
+
+  generatedBuildListId: z.string().optional(),
+})
+
+export type OptConfig = z.infer<typeof optConfigSchema>
 
 export class OptConfigDataManager extends DataManager<
   string,
@@ -98,48 +119,27 @@ export class OptConfigDataManager extends DataManager<
   constructor(database: ZzzDatabase) {
     super(database, 'optConfigs')
   }
-  override validate(obj: object): OptConfig | undefined {
-    if (typeof obj !== 'object') return undefined
-    let {
-      statFilters,
+  override validate(obj: unknown): OptConfig | undefined {
+    const result = optConfigSchema.safeParse(obj)
+    if (!result.success) return undefined
 
-      levelLow,
-      levelHigh,
-      slot4,
-      slot5,
-      slot6,
-      setFilter2,
-      setFilter4,
-      useEquipped,
-      // excludedLocations,
-      // allowLocationsState,
-      // discExclusionIds,
+    const {
+      statFilters: rawStatFilters,
+      generatedBuildListId: rawGeneratedBuildListId,
+      ...rest
+    } = result.data
 
-      optWengine,
-      wlevelLow,
-      wlevelHigh,
-      wEngineTypes,
-      useEquippedWengine,
-      maxBuildsToShow,
-      generatedBuildListId,
-    } = obj as OptConfig
-
-    if (!Array.isArray(statFilters)) statFilters = []
-    statFilters = statFilters.map((statFilter) => {
-      let {
-        tag: { q, qt, attribute },
-        value,
-        isMax,
-        disabled,
-      } = statFilter as UnArray<StatFilters>
-      q = validateValue(q, statFilterStatKeys) ?? statFilterStatKeys[0]
-      qt = validateValue(qt, statFilterStatQtKeys) ?? statFilterStatQtKeys[0]
+    // Validate statFilters with business logic
+    const statFilters = rawStatFilters.map((statFilter) => {
+      const { tag, value, isMax, disabled } = statFilter
+      const q =
+        validateValue(tag.q, statFilterStatKeys) ?? statFilterStatKeys[0]
+      const qt =
+        validateValue(tag.qt, statFilterStatQtKeys) ?? statFilterStatQtKeys[0]
+      let attribute = tag.attribute
       if (q !== 'dmg_') attribute = undefined
       if (attribute) attribute = validateValue(attribute, allAttributeKeys)
 
-      if (typeof value !== 'number') value = 0
-      isMax = !!isMax
-      disabled = !!disabled
       return {
         tag: removeUndefinedFields({ q, qt, attribute }) as StatFilterTag,
         value,
@@ -148,73 +148,16 @@ export class OptConfigDataManager extends DataManager<
       }
     })
 
-    setFilter2 = validateArr(setFilter2, allDiscSetKeys, [])
-    setFilter4 = validateArr(setFilter4, allDiscSetKeys, [])
-    slot4 = validateArr(slot4, discSlotToMainStatKeys['4'])
-    slot5 = validateArr(slot5, discSlotToMainStatKeys['5'])
-    slot6 = validateArr(slot6, discSlotToMainStatKeys['6'])
-
-    // if (!discExclusionIds || !Array.isArray(discExclusionIds))
-    //   discExclusionIds = []
-    // else
-    //   discExclusionIds = [...new Set(discExclusionIds)].filter((id) =>
-    //     this.database.discs.keys.includes(id)
-    //   )
-
-    useEquipped = !!useEquipped
-    // excludedLocations = validateArr(
-    //   excludedLocations,
-    //   allCharacterKeys,
-    //   []
-    // ).filter(
-    //   (ck) => this.database.chars.get(ck) // Remove characters who do not exist in the DB
-    // )
-    // if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
-
-    if (levelLow === undefined) levelLow = 0
-    if (levelHigh === undefined) levelHigh = discMaxLevel['S']
-
-    optWengine = !!optWengine
-    if (wlevelLow === undefined) wlevelLow = 0
-    if (wlevelHigh === undefined) wlevelHigh = wengineMaxLevel
-    wEngineTypes = validateArr(wEngineTypes, allSpecialityKeys, [])
-
-    useEquippedWengine = !!useEquippedWengine
-
-    if (
-      generatedBuildListId &&
-      !this.database.generatedBuildList.get(generatedBuildListId)
-    )
-      generatedBuildListId = undefined
-
-    if (
-      !maxBuildsToShowList.includes(
-        maxBuildsToShow as (typeof maxBuildsToShowList)[number]
-      )
-    )
-      maxBuildsToShow = maxBuildsToShowDefault
+    // Validate generatedBuildListId exists in database
+    const generatedBuildListId =
+      rawGeneratedBuildListId &&
+      this.database.generatedBuildList.get(rawGeneratedBuildListId)
+        ? rawGeneratedBuildListId
+        : undefined
 
     return {
+      ...rest,
       statFilters,
-
-      levelLow,
-      levelHigh,
-      slot4,
-      slot5,
-      slot6,
-      setFilter2,
-      setFilter4,
-      useEquipped,
-      // excludedLocations,
-      // allowLocationsState,
-      // discExclusionIds,
-
-      optWengine,
-      wlevelLow,
-      wlevelHigh,
-      wEngineTypes,
-      useEquippedWengine,
-      maxBuildsToShow,
       generatedBuildListId,
     }
   }
@@ -231,15 +174,8 @@ export class OptConfigDataManager extends DataManager<
   export(optConfigId: string): object {
     const optConfig = this.database.optConfigs.get(optConfigId)
     if (!optConfig) return {}
-    const {
-      // remove user-specific data
-      useEquipped,
-      useEquippedWengine,
-      // excludedLocations,
-      // allowLocationsState,
-      generatedBuildListId,
-      ...rest
-    } = optConfig
+    const { useEquipped, useEquippedWengine, generatedBuildListId, ...rest } =
+      optConfig
     return rest
   }
   import(data: object): string {
@@ -261,35 +197,11 @@ export class OptConfigDataManager extends DataManager<
     else
       return this.database.optConfigs.set(optConfigId, {
         generatedBuildListId: this.database.generatedBuildList.new(list),
-      }) // Create a new list
+      })
   }
 }
 
-function initialOptConfig(): OptConfig {
-  return {
-    statFilters: [],
-
-    levelLow: discMaxLevel['S'],
-    levelHigh: discMaxLevel['S'],
-    slot4: [...discSlotToMainStatKeys['4']],
-    slot5: [...discSlotToMainStatKeys['5']],
-    slot6: [...discSlotToMainStatKeys['6']],
-    setFilter2: [],
-    setFilter4: [],
-    useEquipped: false,
-    // discExclusionIds: [],
-    // excludedLocations: [],
-    // allowLocationsState: 'unequippedOnly',
-    maxBuildsToShow: 5,
-    optWengine: false,
-    wlevelLow: wengineMaxLevel,
-    wlevelHigh: wengineMaxLevel,
-    wEngineTypes: [],
-    useEquippedWengine: false,
-
-    generatedBuildListId: undefined,
-  }
-}
+const initialOptConfig = (): OptConfig => optConfigSchema.parse({})
 
 export function newStatFilterTag(q: StatFilterStatKey): StatFilterTag {
   return {

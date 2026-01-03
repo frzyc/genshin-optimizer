@@ -1,4 +1,9 @@
 import {
+  zodBoolean,
+  zodEnumWithDefault,
+  zodFilteredArray,
+} from '@genshin-optimizer/common/database'
+import {
   notEmpty,
   removeUndefinedFields,
   shallowCompareObj,
@@ -25,19 +30,17 @@ import {
   getConditional,
   isMember,
 } from '@genshin-optimizer/zzz/formula'
+import { z } from 'zod'
 import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 
-// Corresponds to the `own.common.critMode` libs\zzz\formula\src\data\common\dmg.ts
 export type critModeKey = 'avg' | 'crit' | 'nonCrit'
-export const critModeKeys: critModeKey[] = ['avg', 'crit', 'nonCrit'] as const
+export const critModeKeys = ['avg', 'crit', 'nonCrit'] as const
 
-// Target
 export type SpecificDmgTypeKey = Exclude<
   DamageType,
   'anomaly' | 'disorder' | 'aftershock' | 'elemental'
 >
-// Corresponds to damageTypes in libs\zzz\formula\src\data\util\listing.ts
 export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
   'basic',
   'dash',
@@ -52,9 +55,10 @@ export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
   'assistFollowUp',
 ] as const
 
-function isSpeicifcDmgTypeKey(key: string): key is SpecificDmgTypeKey {
+function isSpecificDmgTypeKey(key: string): key is SpecificDmgTypeKey {
   return specificDmgTypeKeys.includes(key as SpecificDmgTypeKey)
 }
+
 export const targetQ = [
   'hp',
   'atk',
@@ -65,15 +69,6 @@ export const targetQ = [
   'anomMas',
 ] as const
 export const targetQt = ['initial', 'final'] as const
-
-export type TargetTag = {
-  sheet?: string
-  name?: string
-  damageType1?: SpecificDmgTypeKey
-  damageType2?: 'aftershock'
-  q?: (typeof targetQ)[number]
-  qt?: (typeof targetQt)[number]
-}
 
 // Bonus Stats
 export const bonusStatQtKeys = ['combat', 'base', 'initial'] as const
@@ -124,7 +119,6 @@ export const enemyStatKeys: Array<keyof typeof enemy.common> = [
 
 export type EnemyStatKey = (typeof enemyStatKeys)[number]
 
-// Could add 'elemental' back if there is all elemental dmg bonus in the future
 export type BonusStatDamageType = Exclude<
   DamageType,
   'elemental' | 'aftershock'
@@ -146,6 +140,34 @@ export const bonusStatDamageTypes: BonusStatDamageType[] = [
   'disorder',
 ] as const
 
+export type TargetTag = {
+  sheet?: string
+  name?: string
+  damageType1?: SpecificDmgTypeKey
+  damageType2?: 'aftershock'
+  q?: (typeof targetQ)[number]
+  qt?: (typeof targetQt)[number]
+}
+
+const targetTagSchema = z
+  .object({
+    sheet: z.string().optional(),
+    name: z.string().optional(),
+    damageType1: z.string().optional(),
+    damageType2: z.literal('aftershock').optional(),
+    q: z.enum(targetQ).optional(),
+    qt: z.enum(targetQt).optional(),
+  })
+  .optional() as z.ZodType<TargetTag | undefined>
+
+const conditionalSchema = z.object({
+  sheet: z.string() as z.ZodType<Sheet>,
+  src: z.string() as z.ZodType<Src>,
+  dst: z.string().nullable() as z.ZodType<Dst>,
+  condKey: z.string(),
+  condValue: z.number(),
+})
+
 export type BonusStatTag = {
   q: BonusStatKey
   qt: (typeof bonusStatQtKeys)[number]
@@ -154,41 +176,54 @@ export type BonusStatTag = {
   damageType2?: 'aftershock'
 }
 
+const bonusStatTagSchema = z.object({
+  q: z.string(),
+  qt: z.string(),
+  attribute: z.string().optional(),
+  damageType1: z.string().optional(),
+  damageType2: z.literal('aftershock').optional(),
+}) as z.ZodType<BonusStatTag>
+
+const bonusStatSchema = z.object({
+  tag: bonusStatTagSchema,
+  value: z.number().catch(0),
+  disabled: zodBoolean(),
+})
+
 export type EnemyStatsTag = {
   q: EnemyStatKey
   attribute?: AttributeKey
 }
 
-export type CharOpt = {
-  target?: TargetTag
+const enemyStatsTagSchema = z.object({
+  q: z.string(),
+  attribute: z.string().optional(),
+}) as z.ZodType<EnemyStatsTag>
 
-  conditionals: Array<{
-    sheet: Sheet
-    src: Src
-    dst: Dst
-    condKey: string
-    condValue: number
-  }>
-  bonusStats: Array<{
-    tag: BonusStatTag
-    value: number
-    disabled: boolean
-  }>
-  teammates: Array<CharacterKey>
-  critMode: critModeKey
+const enemyStatSchema = z.object({
+  tag: enemyStatsTagSchema,
+  value: z.number().catch(0),
+})
 
-  // Enemy stuff
-  enemyLvl: number
-  enemyDef: number
-  enemyStunMultiplier: number
-  enemyStats: Array<{
-    tag: EnemyStatsTag
-    value: number
-  }>
+const charOptSchema = z.object({
+  target: targetTagSchema,
+  conditionals: z.array(conditionalSchema).catch([]),
+  bonusStats: z.array(bonusStatSchema).catch([]),
+  teammates: zodFilteredArray(allCharacterKeys, []) as z.ZodType<
+    CharacterKey[]
+  >,
+  critMode: zodEnumWithDefault(critModeKeys, 'avg'),
 
-  // link to optConfig
-  optConfigId?: string
-}
+  enemyLvl: z.number().catch(80),
+  enemyDef: z.number().catch(953),
+  enemyStunMultiplier: z.number().catch(150),
+  enemyStats: z.array(enemyStatSchema).catch([]),
+
+  optConfigId: z.string().optional(),
+})
+
+export type CharOpt = z.infer<typeof charOptSchema>
+
 export class CharacterOptManager extends DataManager<
   CharacterKey,
   'charOpts',
@@ -199,152 +234,134 @@ export class CharacterOptManager extends DataManager<
     super(database, 'charOpts')
   }
   override validate(obj: unknown): CharOpt | undefined {
-    if (!obj || typeof obj !== 'object') return undefined
-    let {
-      target,
-      conditionals,
-      bonusStats,
-      teammates,
-      critMode,
+    const result = charOptSchema.safeParse(obj)
+    if (!result.success) return undefined
 
+    const {
+      target: rawTarget,
+      conditionals: rawConditionals,
+      bonusStats: rawBonusStats,
+      teammates: rawTeammates,
+      critMode,
       enemyLvl,
       enemyDef,
       enemyStunMultiplier,
-      enemyStats,
+      enemyStats: rawEnemyStats,
+      optConfigId: rawOptConfigId,
+    } = result.data
 
-      optConfigId,
-    } = obj as CharOpt
-    if (!Array.isArray(conditionals)) conditionals = []
     // Validate target for formula
-    if (target?.name) {
-      const formula = getFormula(target)
+    let target: TargetTag | undefined
+    if (rawTarget?.name) {
+      const formula = getFormula(rawTarget as TargetTag)
       if (formula) {
-        let { damageType1, damageType2 } = target
+        let damageType1: SpecificDmgTypeKey | undefined
+        let damageType2: 'aftershock' | undefined
         if (
-          formula.name !== 'standardDmgInst' &&
-          formula.name !== 'sheerDmgInst'
+          formula.name === 'standardDmgInst' ||
+          formula.name === 'sheerDmgInst'
         ) {
-          damageType1 = undefined
-          damageType2 = undefined
+          if (
+            rawTarget.damageType1 &&
+            isSpecificDmgTypeKey(rawTarget.damageType1)
+          )
+            damageType1 = rawTarget.damageType1
+          if (rawTarget.damageType2 === 'aftershock')
+            damageType2 = rawTarget.damageType2
         }
-        if (damageType1 && !isSpeicifcDmgTypeKey(damageType1))
-          damageType1 = undefined
-        if (damageType2 && damageType2 !== 'aftershock') damageType2 = undefined
         target = removeUndefinedFields({
           sheet: formula.sheet,
           name: formula.name,
           damageType1,
           damageType2,
         }) as TargetTag
-      } else {
-        target = undefined
       }
-    } else if (target) {
-      // target is a stat
-      const { q, qt } = target
-      if (
-        !q ||
-        !qt ||
-        !targetQ.includes(q as (typeof targetQ)[number]) ||
-        !targetQt.includes(qt as (typeof targetQt)[number])
-      )
-        target = undefined
-      else
-        target = {
-          q,
-          qt,
-        }
+    } else if (rawTarget) {
+      const { q, qt } = rawTarget
+      if (q && qt && targetQ.includes(q) && targetQt.includes(qt)) {
+        target = { q, qt }
+      }
     }
 
-    const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
-    conditionals = conditionals
+    // Validate conditionals
+    const hashList: string[] = []
+    const conditionals = rawConditionals
       .map(({ sheet, condKey, src, dst, condValue }) => {
-        if (!condValue) return undefined //remove conditionals when the value is 0
+        if (!condValue) return undefined
         if (!isMember(src) || !(dst === null || isMember(dst))) return undefined
         const cond = getConditional(sheet, condKey)
         if (!cond) return undefined
 
-        // validate uniqueness
         const hash = `${sheet}:${condKey}:${src}:${dst}`
         if (hashList.includes(hash)) return undefined
         hashList.push(hash)
 
-        // validate values
-        condValue = correctConditionalValue(cond, condValue)
+        const correctedCondValue = correctConditionalValue(cond, condValue)
 
         return {
           sheet,
           src,
           dst,
           condKey,
-          condValue,
+          condValue: correctedCondValue,
         }
       })
       .filter(notEmpty)
-    if (!Array.isArray(bonusStats)) bonusStats = []
-    bonusStats = bonusStats
-      .map(
-        ({
-          tag: { q, qt, attribute, damageType1, damageType2 },
+
+    // Validate bonusStats
+    const bonusStats = rawBonusStats
+      .map(({ tag, value, disabled }) => {
+        const q = validateValue(tag.q, bonusStatKeys)
+        const qt = validateValue(tag.qt, bonusStatQtKeys)
+        if (!q || !qt) return undefined
+
+        let { attribute, damageType1, damageType2 } = tag
+
+        if (q !== 'dmg_') attribute = undefined
+        if (attribute)
+          attribute = validateValue(attribute, allAttributeKeys) as
+            | AttributeKey
+            | undefined
+
+        if (
+          !bonusStatDmgTypeIncStats.includes(
+            q as (typeof bonusStatDmgTypeIncStats)[number]
+          )
+        )
+          damageType1 = undefined
+        if (damageType1)
+          damageType1 = validateValue(damageType1, bonusStatDamageTypes) as
+            | BonusStatDamageType
+            | undefined
+
+        if (q !== 'dmg_' && q !== 'crit_dmg_') damageType2 = undefined
+        if (damageType2 && damageType2 !== 'aftershock') damageType2 = undefined
+
+        return {
+          tag: removeUndefinedFields({
+            q,
+            qt,
+            attribute,
+            damageType1,
+            damageType2,
+          }) as BonusStatTag,
           value,
           disabled,
-        }) => {
-          if (typeof value !== 'number') value = 0
-          const q_ = validateValue(q, bonusStatKeys)
-          const qt_ = validateValue(qt, bonusStatQtKeys)
-          if (!q_ || !qt_) return undefined
-          q = q_
-          qt = qt_
-
-          if (q !== 'dmg_') attribute = undefined
-          if (attribute) attribute = validateValue(attribute, allAttributeKeys)
-
-          if (
-            !bonusStatDmgTypeIncStats.includes(
-              q as (typeof bonusStatDmgTypeIncStats)[number]
-            )
-          )
-            damageType1 = undefined
-          if (damageType1)
-            damageType1 = validateValue(damageType1, bonusStatDamageTypes)
-
-          // damageType2 is only 'aftershock', and in-game there is only buffs that increase its dmg_ and crit_dmg_
-          if (q !== 'dmg_' && q !== 'crit_dmg_') damageType2 = undefined
-          if (damageType2 && damageType2 !== 'aftershock')
-            damageType2 = undefined
-
-          disabled = !!disabled
-
-          return {
-            tag: removeUndefinedFields({
-              q,
-              qt,
-              attribute,
-              damageType1,
-              damageType2,
-            }) as BonusStatTag,
-            value,
-            disabled,
-          }
         }
-      )
+      })
       .filter(notEmpty)
 
-    if (!critModeKeys.includes(critMode)) critMode = 'avg'
+    // Validate enemyStats
+    const enemyStats = rawEnemyStats
+      .map(({ tag, value }) => {
+        const q = validateValue(tag.q, enemyStatKeys)
+        if (!q) return undefined
 
-    if (typeof enemyLvl !== 'number') enemyLvl = 80
-    if (typeof enemyDef !== 'number') enemyDef = 953
-
-    if (typeof enemyStunMultiplier !== 'number') enemyStunMultiplier = 150
-    if (!Array.isArray(enemyStats)) enemyStats = []
-    enemyStats = enemyStats
-      .map(({ tag: { q, attribute }, value }) => {
-        if (typeof value !== 'number') value = 0
-        const q_ = validateValue(q, enemyStatKeys)
-        if (!q_) return undefined
-        q = q_
-
-        if (attribute) attribute = validateValue(attribute, allAttributeKeys)
+        let { attribute } = tag
+        if (attribute)
+          attribute = validateValue(attribute, allAttributeKeys) as
+            | AttributeKey
+            | undefined
 
         return {
           tag: removeUndefinedFields({
@@ -356,38 +373,29 @@ export class CharacterOptManager extends DataManager<
       })
       .filter(notEmpty)
 
-    if (!Array.isArray(teammates)) teammates = []
-    teammates = teammates.reduce((acc: CharacterKey[], charKey) => {
-      const charKey_ = validateValue(charKey, allCharacterKeys)
+    // Validate teammates (limit to 2)
+    const teammates = rawTeammates.slice(0, 2) as CharacterKey[]
 
-      if (!charKey_) return acc
+    // Validate optConfigId
+    const optConfigId =
+      rawOptConfigId && this.database.optConfigs.keys.includes(rawOptConfigId)
+        ? rawOptConfigId
+        : undefined
 
-      acc.push(charKey_)
-      return acc
-    }, [])
-
-    if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
-      optConfigId = undefined
-
-    const charOpt: CharOpt = {
+    return {
       target,
       conditionals,
       bonusStats,
       teammates,
       critMode,
-
       enemyLvl,
       enemyDef,
       enemyStunMultiplier,
       enemyStats,
-
       optConfigId,
     }
-    return charOpt
   }
 
-  // These overrides allow CharacterKey to be used as id.
-  // This assumes we only support one copy of a character opt in a DB.
   override toStorageKey(key: string): string {
     return `${this.goKeySingle}_${key}`
   }
@@ -427,7 +435,6 @@ export class CharacterOptManager extends DataManager<
         })
       } else {
         const cond = conditionals[condIndex]
-        // Check if the value is the same, return false to not propagate the update.
         if (
           cond.sheet === sheet &&
           cond.src === src &&
@@ -448,9 +455,9 @@ export class CharacterOptManager extends DataManager<
   setBonusStat(
     charKey: CharacterKey,
     tag: BonusStatTag,
-    value: number | null, // use null to remove the stat
+    value: number | null,
     disabled: boolean,
-    index = -1 // to edit an existing stat
+    index = -1
   ) {
     this.set(charKey, (charOpt) => {
       const bonusStats = [...charOpt.bonusStats]
@@ -469,8 +476,8 @@ export class CharacterOptManager extends DataManager<
   setEnemyStat(
     charKey: CharacterKey,
     tag: EnemyStatsTag,
-    value: number | null, // use null to remove the stat
-    index?: number // to edit an existing stat
+    value: number | null,
+    index?: number
   ) {
     this.set(charKey, (charOpt) => {
       const statIndex =
@@ -512,6 +519,7 @@ export class CharacterOptManager extends DataManager<
 
 export function initialCharOpt(): CharOpt {
   return {
+    target: undefined,
     conditionals: [],
     bonusStats: [],
     teammates: [],
@@ -521,6 +529,7 @@ export function initialCharOpt(): CharOpt {
     enemyDef: 953,
     enemyStunMultiplier: 150,
     enemyStats: [],
+    optConfigId: undefined,
   }
 }
 
@@ -552,7 +561,6 @@ export function targetTag(target: Exclude<CharOpt['target'], undefined>): Tag {
   const formula = getFormula(target)
   if (formula)
     return applyDamageTypeToTag(formula.tag, damageType1, damageType2)
-  // stat target
   return {
     et: 'own',
     q: target.q ?? 'atk',

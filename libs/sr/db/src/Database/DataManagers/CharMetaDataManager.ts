@@ -1,15 +1,20 @@
-import { deepFreeze } from '@genshin-optimizer/common/util'
+import { zodBoolean } from '@genshin-optimizer/common/database'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allTrailblazerKeys } from '@genshin-optimizer/sr/consts'
+import { z } from 'zod'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 
-interface ICharMeta {
-  favorite: boolean
-}
-const initCharMeta: ICharMeta = deepFreeze({
-  favorite: false,
+// Schema with defaults - single source of truth
+const charMetaSchema = z.object({
+  favorite: zodBoolean(),
 })
+
+// Type derived from schema
+export type ICharMeta = z.infer<typeof charMetaSchema>
+
+// Initial state uses schema as source of truth
+const initCharMeta: ICharMeta = charMetaSchema.parse({})
 
 export class CharMetaDataManager extends DataManager<
   CharacterKey,
@@ -20,12 +25,9 @@ export class CharMetaDataManager extends DataManager<
   constructor(database: SroDatabase) {
     super(database, 'charMetas')
   }
-  override validate(obj: any): ICharMeta | undefined {
-    if (typeof obj !== 'object') return undefined
-
-    let { favorite } = obj
-    if (typeof favorite !== 'boolean') favorite = false
-    return { favorite }
+  override validate(obj: unknown): ICharMeta | undefined {
+    const result = charMetaSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
   getTrailblazerCharacterKey(): CharacterKey {
     return (

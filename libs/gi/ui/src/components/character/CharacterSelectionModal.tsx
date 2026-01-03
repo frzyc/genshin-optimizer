@@ -26,6 +26,7 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
+import { getCharMaxLevel } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
   useCharMeta,
@@ -34,7 +35,6 @@ import {
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { getCharMaxLevel } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
@@ -154,7 +154,7 @@ export function CharacterSingleSelectionModal({
       setSearchTerm(e.target.value)
     },
     onChangeSort: (sortType: CharacterSortKey) => {
-      database.displayCharacter.set({ sortType })
+      if (sortType !== 'new') database.displayCharacter.set({ sortType })
     },
     onChangeAsc: (ascending: boolean) => {
       database.displayCharacter.set({ ascending })
@@ -328,7 +328,7 @@ export function CharacterMultiSelectionModal({
       setCachedTeamCharKeys(teamCharKeys)
     },
     onChangeSort: (sortType: CharacterSortKey) => {
-      database.displayCharacter.set({ sortType })
+      if (sortType !== 'new') database.displayCharacter.set({ sortType })
       setCachedTeamCharKeys(teamCharKeys)
     },
     onChangeAsc: (ascending: boolean) => {

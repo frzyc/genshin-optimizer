@@ -12,6 +12,10 @@ import {
   weaponAsset,
 } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
+import {
+  getCharLevelString,
+  getLevelString as getWeaponLevelString,
+} from '@genshin-optimizer/gi/consts'
 import type {
   ArtifactData,
   ICachedArtifact,
@@ -32,10 +36,6 @@ import {
   weaponHasRefinement,
 } from '@genshin-optimizer/gi/stats'
 import { ElementIcon, SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
-import {
-  getCharLevelString,
-  getWeaponLevelString,
-} from '@genshin-optimizer/gi/util'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'

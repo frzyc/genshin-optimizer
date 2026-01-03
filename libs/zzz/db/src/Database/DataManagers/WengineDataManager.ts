@@ -1,11 +1,6 @@
 import type { CharacterKey, WengineKey } from '@genshin-optimizer/zzz/consts'
-import {
-  allLocationKeys,
-  allWengineKeys,
-  wengineMaxLevel,
-} from '@genshin-optimizer/zzz/consts'
-import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { IWengine } from '@genshin-optimizer/zzz/zood'
+import { parseWengine } from '@genshin-optimizer/zzz/zood'
 import type { ICachedCharacter } from '../../Interfaces'
 import type { ICachedWengine } from '../../Interfaces/IDbWengine'
 import { DataManager } from '../DataManager'
@@ -23,27 +18,7 @@ export class WengineDataManager extends DataManager<
   }
 
   override validate(obj: unknown): IWengine | undefined {
-    if (typeof obj !== 'object') return undefined
-    const { key, level: rawLevel, modification: rawMod } = obj as IWengine
-    let { phase, location, lock } = obj as IWengine
-
-    if (!allWengineKeys.includes(key)) return undefined
-    if (rawLevel > wengineMaxLevel) return undefined
-    const { sanitizedLevel, milestone: modification } = validateLevelMilestone(
-      rawLevel,
-      rawMod
-    )
-    if (typeof phase !== 'number' || phase < 1 || phase > 5) phase = 1
-    if (location && !allLocationKeys.includes(location)) location = ''
-    lock = !!lock
-    return {
-      key,
-      level: sanitizedLevel,
-      modification,
-      phase,
-      location,
-      lock,
-    }
+    return parseWengine(obj)
   }
   override toCache(
     storageObj: IWengine,
