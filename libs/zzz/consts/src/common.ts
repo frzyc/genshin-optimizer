@@ -19,6 +19,8 @@ export const otherStatKeys = [
   'enerRegen',
   'anom_crit_', // Anomaly CRIT Rate
   'anom_crit_dmg_', // Anomaly CRIT DMG
+  'dazeInc_', // Daze Increase
+  'sheerForce',
 ] as const
 
 export const unCondKeys = [
@@ -111,6 +113,8 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   def_: 'DEF',
   pen: 'PEN',
   pen_: 'PEN Ratio',
+  resIgn_: 'Res Ignore',
+  defIgn_: 'DEF Ignore',
   crit_: 'CRIT Rate',
   crit_dmg_: 'CRIT DMG',
   sheer_dmg_: 'Sheer DMG',
@@ -208,8 +212,6 @@ export const rarityColor = {
 
 export const allRaritykeys = ['S', 'A', 'B'] as const
 export type Raritykey = (typeof allRaritykeys)[number]
-export const skillLimits = [1, 3, 5, 7, 9, 12] as const
-export const coreLimits = [0, 1, 2, 3, 4, 6] as const
 export const potentialLimits = [0, 1, 2, 3, 4, 5, 6] as const
 
 // Referred to as "promotions" for characters, and "modifications" for wengines
@@ -256,14 +258,8 @@ export function validateLevelMilestone(
   milestone: MilestoneKey
 ): { sanitizedLevel: number; milestone: MilestoneKey } {
   let sanitizedLevel = inputLevel
-  if (
-    typeof sanitizedLevel !== 'number' ||
-    sanitizedLevel < 1 ||
-    sanitizedLevel > 60
-  )
-    sanitizedLevel = 1
-  if (typeof milestone !== 'number' || milestone < 0 || milestone > 5)
-    milestone = 0
+  if (sanitizedLevel < 1 || sanitizedLevel > 60) sanitizedLevel = 1
+  if (milestone < 0 || milestone > 5) milestone = 0
 
   if (
     sanitizedLevel > milestoneMaxLevel[milestone] ||
@@ -273,4 +269,22 @@ export function validateLevelMilestone(
       (maxLvl) => sanitizedLevel <= maxLvl
     ) as MilestoneKey
   return { sanitizedLevel, milestone }
+}
+export function skillByLevel(level: number) {
+  if (level < 15) return 1
+  if (level < 25) return 3
+  if (level < 35) return 5
+  if (level < 45) return 7
+  if (level < 55) return 9
+  if (level < 60) return 11
+  return 12
+}
+export function coreByLevel(level: number) {
+  if (level < 15) return 0
+  if (level < 25) return 1
+  if (level < 35) return 2
+  if (level < 45) return 3
+  if (level < 55) return 4
+  if (level < 60) return 5
+  return 6
 }

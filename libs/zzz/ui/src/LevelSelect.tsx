@@ -47,8 +47,8 @@ export function LevelSelect({
       (ascenML) => level !== 60 && level === ascenML
     ) as MilestoneKey
     if (milestone === lowerAscension)
-      setBoth({ milestone: (milestone + 1) as MilestoneKey })
-    else setBoth({ milestone: lowerAscension })
+      setBoth({ level, milestone: (milestone + 1) as MilestoneKey })
+    else setBoth({ level, milestone: lowerAscension })
   }, [setBoth, milestoneMaxLevels, milestone, level])
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', rowGap: '4px' }}>

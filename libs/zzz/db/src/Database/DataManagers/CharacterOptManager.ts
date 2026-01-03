@@ -84,12 +84,17 @@ export const bonusStatKeys: Array<keyof typeof own.final> = [
   'crit_',
   'crit_dmg_',
   'anomProf',
+  'impact',
   'impact_',
+  'dazeInc_',
   'anomMas_',
   'anomMas',
   'pen_',
   'pen',
+  'defIgn_',
+  'resIgn_',
   'sheerForce',
+  'sheer_dmg_',
 ] as const
 export type BonusStatKey = (typeof bonusStatKeys)[number]
 
@@ -126,6 +131,7 @@ export const bonusStatDamageTypes: BonusStatDamageType[] = [
   'exSpecial',
   'chain',
   'ult',
+  'entrySkill',
   'quickAssist',
   'defensiveAssist',
   'evasiveAssist',

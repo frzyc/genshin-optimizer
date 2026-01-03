@@ -72,9 +72,10 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Build Somnia
         run: |
-          NX_DAEMON="false"
           cp apps/somnia/src/config.empty.json apps/somnia/src/config.json
           yarn run nx run somnia:build:production
+        env:
+          NX_DAEMON: false
       - name: echos
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then

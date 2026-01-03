@@ -3,8 +3,8 @@ import { clamp } from '@genshin-optimizer/common/util'
 import {
   type MilestoneKey,
   allCharacterKeys,
-  coreLimits,
-  skillLimits,
+  coreByLevel,
+  skillByLevel,
   validateLevelMilestone,
 } from '@genshin-optimizer/zzz/consts'
 import { z } from 'zod'
@@ -28,21 +28,19 @@ export const characterSchema = z
       validateLevelMilestone(data.level, data.promotion)
 
     // Clamp skills to promotion-dependent limits
-    const skillMax = skillLimits[promotion]
-    const coreMax = coreLimits[promotion]
+    const skillMax = skillByLevel(level)
+    const coreMax = coreByLevel(level)
 
     return {
-      key: data.key,
+      ...data,
       level,
       promotion,
-      mindscape: data.mindscape,
       core: clamp(data.core, 0, coreMax),
       dodge: clamp(data.dodge, 1, skillMax),
       basic: clamp(data.basic, 1, skillMax),
       chain: clamp(data.chain, 1, skillMax),
       special: clamp(data.special, 1, skillMax),
       assist: clamp(data.assist, 1, skillMax),
-      potential: data.potential,
     }
   })
 

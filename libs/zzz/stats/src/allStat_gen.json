@@ -14788,6 +14788,7 @@
       "rarity": "S",
       "attribute": "ice",
       "specialty": "defense",
+      "faction": "KrampusComplianceAuthority",
       "stats": {
         "atk_base": 110,
         "atk_growth": 6.5027,
@@ -14834,27 +14835,27 @@
       ],
       "coreStats": [
         {
-          "hp": 600,
+          "hp_": 0.06,
           "atk": 0
         },
         {
-          "hp": 600,
+          "hp_": 0.06,
           "atk": 25
         },
         {
-          "hp": 1200,
+          "hp_": 0.12,
           "atk": 25
         },
         {
-          "hp": 1200,
+          "hp_": 0.12,
           "atk": 50
         },
         {
-          "hp": 1800,
+          "hp_": 0.18,
           "atk": 50
         },
         {
-          "hp": 1800,
+          "hp_": 0.18,
           "atk": 75
         }
       ],
@@ -19752,27 +19753,27 @@
       ],
       "coreStats": [
         {
-          "hp": 600,
+          "hp_": 0.06,
           "atk": 0
         },
         {
-          "hp": 600,
+          "hp_": 0.06,
           "atk": 25
         },
         {
-          "hp": 1200,
+          "hp_": 0.12,
           "atk": 25
         },
         {
-          "hp": 1200,
+          "hp_": 0.12,
           "atk": 50
         },
         {
-          "hp": 1800,
+          "hp_": 0.18,
           "atk": 50
         },
         {
-          "hp": 1800,
+          "hp_": 0.18,
           "atk": 75
         }
       ],
@@ -21260,6 +21261,7 @@
       "rarity": "S",
       "attribute": "fire",
       "specialty": "rupture",
+      "faction": "KrampusComplianceAuthority",
       "stats": {
         "atk_base": 124,
         "atk_growth": 7.4561,
@@ -21951,6 +21953,7 @@
       "rarity": "S",
       "attribute": "physical",
       "specialty": "stun",
+      "faction": "KrampusComplianceAuthority",
       "stats": {
         "atk_base": 109,
         "atk_growth": 6.4272,

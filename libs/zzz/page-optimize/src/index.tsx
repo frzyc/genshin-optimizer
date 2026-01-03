@@ -62,7 +62,8 @@ export default function PageOptimize() {
   const characterKey = optCharKey ?? allCharacterKeys[0]
   const [show, onShow, onHide] = useBoolState()
   const setCharacterKey = useCallback(
-    (ck: CharacterKey) => database.dbMeta.set({ optCharKey: ck }),
+    (ck: CharacterKey | null) =>
+      database.dbMeta.set({ optCharKey: ck === null ? undefined : ck }),
     [database.dbMeta]
   )
 

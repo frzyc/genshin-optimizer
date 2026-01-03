@@ -111,7 +111,8 @@ export default function PageCharacter() {
   const [newCharacter, setnewCharacter] = useState(false)
 
   const editCharacter = useCallback(
-    (characterKey: CharacterKey) => {
+    (characterKey: CharacterKey | null) => {
+      if (characterKey === null) return
       const character = database.chars.get(characterKey)
       if (!character) {
         database.chars.getOrCreate(characterKey)
