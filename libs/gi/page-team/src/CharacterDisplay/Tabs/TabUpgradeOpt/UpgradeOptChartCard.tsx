@@ -2,7 +2,7 @@ import {
   useBoolState,
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, SqBadge, usePrev } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { linspace, objMap } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSlotKey,
@@ -156,8 +156,12 @@ function UpgradeOptChartCardGraph({
   const [, forceUpdate] = useForceUpdate()
   const equippedArt = useArtifact(upArt.id)
 
-  if (usePrev(equippedArt) !== equippedArt && equippedArt)
-    upOptCalc.reCalc(ix, equippedArt)
+  useEffect(() => {
+    if (equippedArt) {
+      upOptCalc.reCalc(ix, equippedArt)
+      forceUpdate()
+    }
+  }, [equippedArt, upOptCalc, ix, forceUpdate])
 
   const constrained = thresholds.length > 1
 
