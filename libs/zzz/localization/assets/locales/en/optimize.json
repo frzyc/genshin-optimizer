@@ -1,0 +1,21 @@
+{
+  "statFilter": "Stat Filter",
+  "addStatFilter": "Add Stat Filter",
+  "wengines": "Wengines",
+  "optWengine": "Optimize Wengine",
+  "wengineFilterConfig": "Wengine Filter Config",
+  "discFilter": "Disc Filter",
+  "disc": "Disc",
+  "discFilterConfig": "Disc Filter Config",
+  "useEquippedWengine": "Use equipped Wengine",
+  "useEquippedDiscs": "Use equipped Discs",
+  "computed": "Computed",
+  "computedSkipped": "Computed + Skipped",
+  "cancel": "Cancel",
+  "optimize": "Optimize",
+  "wengineConditionalConfig": "Wengine Conditional Configuration",
+  "wengineStatsNote": "Wengine stats are displayed to be Lvl 60/60, P1, actual level/phase of wengine will be used in the solver.",
+  "constraintFilter": {
+    "tooltip": "Constraint Filter Tooltip"
+  }
+}

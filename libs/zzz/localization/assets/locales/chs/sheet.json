@@ -1,0 +1,44 @@
+{
+  "dmg": "{{val}}伤害",
+  "anomBuildup": "{{val}}异常积蓄",
+  "daze": "{{val}}失衡值",
+  "targetHpLe": "目标生命值低于 {{val}}%",
+  "stack_one": "{{count}} 层",
+  "stack_other": "{{count}} 层",
+  "stacks": "层数",
+  "cd": "冷却时间",
+  "duration": "持续时间",
+  "shield": "护盾",
+  "heal": "治疗",
+  "enterCombatOrSwitchIn": "进入战斗或切换入场",
+  "uponLaunch": {
+    "1": "施放<strong>{{val1}}</strong>时",
+    "2": "施放<strong>{{val1}}</strong>或<strong>{{val2}}</strong>时",
+    "3": "施放<strong>{{val1}}</strong>、<strong>{{val2}}</strong>或<strong>{{val3}}</strong>时"
+  },
+  "uponHit": {
+    "1": "<strong>{{val1}}</strong>命中敌人时",
+    "2": "<strong>{{val1}}</strong>或<strong>{{val2}}</strong>命中敌人时",
+    "3": "<strong>{{val1}}</strong>、<strong>{{val2}}</strong>或<strong>{{val3}}</strong>命中敌人时"
+  },
+  "dealsDamage": {
+    "1": "造成<strong>{{val1}}</strong>伤害"
+  },
+  "skills": {
+    "basic": "普通攻击",
+    "assistFollowUp": "支援追加",
+    "special": "特殊技",
+    "exSpecial": "强化特殊技",
+    "chain": "连携技",
+    "ult": "终结技",
+    "aftershock": "追击"
+  },
+  "attributes": {
+    "electric": "电属性",
+    "fire": "火属性",
+    "ice": "冰属性",
+    "physical": "物理属性",
+    "ether": "以太属性",
+    "frost": "冰霜"
+  }
+}

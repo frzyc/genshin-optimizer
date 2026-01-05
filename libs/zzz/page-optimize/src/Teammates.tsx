@@ -23,8 +23,10 @@ import {
 import { Button, Grid, Stack } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useCallback, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export function TeammatesSection() {
+  const { t } = useTranslation('page_optimize')
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
   const { teammates } = useCharOpt(characterKey)!
@@ -75,7 +77,7 @@ export function TeammatesSection() {
               {(!!teammates[i] && (
                 <CharacterName characterKey={teammates[i]} />
               )) ||
-                `Add ${i === 0 ? 'First' : 'Second'} Teammate`}
+                t(i === 0 ? 'addFirstTeammate' : 'addSecondTeammate')}
             </Button>
             {!!teammates[i] && (
               <ZCard bgt="dark">

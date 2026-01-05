@@ -13,6 +13,7 @@ import {
 } from '@genshin-optimizer/zzz/formula-ui'
 import { Box, ListItemText, MenuItem } from '@mui/material'
 import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const statTargets = [
   own.final.atk,
@@ -30,6 +31,7 @@ export function OptSelector({
   charOpt: CharOpt
   character: ICachedCharacter
 }) {
+  const { t } = useTranslation('page_optimize')
   const calc = useZzzCalcContext()
   const { database } = useDatabaseContext()
   const tag = useMemo(() => {
@@ -43,12 +45,11 @@ export function OptSelector({
       title={
         tag ? (
           <Box sx={{ display: 'flex', gap: 1 }}>
-            {/* TODO: translate */}
-            <strong>Optimization Target: </strong>
+            <strong>{t('optTarget')}</strong>
             {<FullTagDisplay tag={tag} />}
           </Box>
         ) : (
-          'Select an Optimization Target'
+          t('selectOptTarget')
         )
       }
       variant={tag ? 'outlined' : undefined}

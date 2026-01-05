@@ -6,11 +6,11 @@ import type {
 } from '@genshin-optimizer/zzz/consts'
 import {
   discSlotToMainStatKeys,
-  statKeyTextMap,
 } from '@genshin-optimizer/zzz/consts'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Button, ButtonGroup } from '@mui/material'
 import type { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 import { StatDisplay } from '../Character'
 
 export function DiscMainStatGroup({
@@ -24,6 +24,7 @@ export function DiscMainStatGroup({
   defText?: ReactNode
   dropdownButtonProps?: Omit<DropdownButtonProps, 'children' | 'title'>
 }) {
+  const { t } = useTranslation('statKey_gen')
   if (!slotKey) return null
   if (statKey && ['1', '2', '3'].includes(slotKey))
     return (
@@ -38,7 +39,7 @@ export function DiscMainStatGroup({
           <BootstrapTooltip
             key={stat}
             placement="top"
-            title={statKeyTextMap[stat]}
+            title={t(stat)}
           >
             <Button
               color={statKey === stat ? 'success' : undefined}

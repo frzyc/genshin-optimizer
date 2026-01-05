@@ -38,8 +38,10 @@ import {
   Typography,
 } from '@mui/material'
 import { useCallback, useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
+  const { t } = useTranslation('optimize')
   const {
     optConfigId,
     optConfig: { statFilters },
@@ -63,8 +65,7 @@ export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
         }}
       >
         <Box display="flex" justifyContent="space-between">
-          {/* TODO: Translate */}
-          <Typography sx={{ fontWeight: 'bold' }}>Stat Filter</Typography>
+          <Typography sx={{ fontWeight: 'bold' }}>{t('statFilter')}</Typography>
           {/* <InfoTooltip
               title={<Typography>{t('constraintFilter.tooltip')}</Typography>}
             /> */}
@@ -167,9 +168,10 @@ function InitialStatDropdown({
   tag?: Tag
   onSelect: (key: (typeof statFilterStatKeys)[number]) => void
 }) {
+  const { t } = useTranslation('optimize')
   return (
     <DropdownButton
-      title={(tag && <TagDisplay tag={tag} />) ?? 'Add Stat Filter'}
+      title={(tag && <TagDisplay tag={tag} />) ?? t('addStatFilter')}
     >
       {statFilterStatKeys.map((statKey) => (
         <MenuItem key={statKey} onClick={() => onSelect(statKey)}>
@@ -263,18 +265,19 @@ function AttributeDropdown({
   tag: Tag
   setAttribute: (ele: AttributeKey | null) => void
 }) {
+  const { t } = useTranslation('page_optimize')
   return (
     <DropdownButton
       title={
         tag.attribute ? (
           <AttributeName attribute={tag.attribute} />
         ) : (
-          'No Attribute'
+          t('noAttribute')
         )
       }
       color={tag.attribute!}
     >
-      <MenuItem onClick={() => setAttribute(null)}>No Attribute</MenuItem>
+      <MenuItem onClick={() => setAttribute(null)}>{t('noAttribute')}</MenuItem>
       {allAttributeKeys.map((attr) => (
         <MenuItem key={attr} onClick={() => setAttribute(attr)}>
           <ColorText color={attr}>

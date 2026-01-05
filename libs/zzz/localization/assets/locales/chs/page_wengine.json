@@ -1,0 +1,25 @@
+{
+  "wengineFilterTitle": "音擎筛选",
+  "showingNum_one": "显示 <1>{{count}}</1> / {{value}} 个音擎",
+  "showingNum_other": "显示 <1>{{count}}</1> / {{value}} 个音擎",
+  "edit": "编辑音擎",
+  "wengineName": "音擎名称",
+  "removeWengine": "确定要移除 {{value}} 吗？",
+  "addWengine": "添加新音擎",
+  "cantDeleteLock": "无法删除已锁定的音擎",
+  "button": {
+    "deleteWengines": "删除音擎",
+    "lockWengines": "锁定音擎",
+    "unlockWengines": "解锁音擎"
+  },
+  "buttonHint": "注意：上方红色按钮仅对<1>已筛选的音擎</1>生效",
+  "equippedWengine": "所有已装备的音擎",
+  "wengineInInv": "所有未装备的音擎",
+  "locationsTooltip": "禁用[所有已装备的音擎]以按特定角色筛选",
+  "subheadings": {
+    "general": "常规",
+    "inventory": "库存"
+  },
+  "refinement": "精炼 <1>{{rank}}</1>",
+  "tcBuild": "理论配装"
+}

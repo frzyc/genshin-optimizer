@@ -7,14 +7,10 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { Box, MenuItem } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
-// TODO: translation
-const modeMap: Record<critModeKey, string> = {
-  avg: 'Average',
-  crit: 'Crit Hit',
-  nonCrit: 'Non-Crit Hit',
-}
 export function CritModeSelector() {
+  const { t } = useTranslation('page_optimize')
   const { database } = useDatabaseContext()
   const character = useCharacterContext()!
   const charOpt = useCharOpt(character.key)!
@@ -22,7 +18,9 @@ export function CritModeSelector() {
   return (
     <DropdownButton
       title={
-        <Box sx={{ textWrap: 'nowrap' }}>Hit mode: {modeMap[critMode]}</Box>
+        <Box sx={{ textWrap: 'nowrap' }}>
+          {t('hitMode')} {t(critMode)}
+        </Box>
       }
     >
       {critModeKeys.map((k) => (
@@ -32,7 +30,7 @@ export function CritModeSelector() {
           disabled={critMode === k}
           onClick={() => database.charOpts.set(character.key, { critMode: k })}
         >
-          {modeMap[k]}
+          {t(k)}
         </MenuItem>
       ))}
     </DropdownButton>
