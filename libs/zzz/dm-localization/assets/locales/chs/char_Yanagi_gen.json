@@ -1,0 +1,260 @@
+{
+  "name": "月城柳",
+  "fullName": "月城柳",
+  "basic": {
+    "BasicAttackTsukuyomiKagura": {
+      "name": "普通攻击：夜见尊神乐",
+      "desc": {
+        "0": "月城柳拥有<ct color=#FFFFFF>[上弦]</ct>和<ct color=#FFFFFF>[下弦]</ct>两种架势；",
+        "1": "点按 <IconNormal /> 发动：",
+        "2": "根据当前架势，向前方进行至多五段的斩击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#2EB6FF>电属性伤害</ct>；",
+        "3": "在战斗中，月城柳可根据当前架势类型获得对应的架势增益：",
+        "4": "<ct color=#FFFFFF>[上弦]</ct>架势增益：自身造成的<ct color=#2EB6FF>电属性伤害</ct>提升10%，<ct color=#FFFFFF>[普通攻击]</ct>发动期间抗打断等级提升；",
+        "5": "<ct color=#FFFFFF>[下弦]</ct>架势增益：自身穿透率提升10%，<ct color=#FFFFFF>[普通攻击]</ct>的打断等级提升；",
+        "6": "架势切换后，月城柳仍可继续保有上一架势的架势增益，持续8秒。"
+      },
+      "params": []
+    },
+    "StanceJougen": {
+      "name": "架势：上弦",
+      "desc": "",
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "StanceKagen": {
+      "name": "架势：下弦",
+      "desc": "",
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeWanderingBreeze": {
+      "name": "闪避：流岚",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackFleetingFlight": {
+      "name": "冲刺攻击：飞掠",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterRapidRetaliation": {
+      "name": "闪避反击：疾反",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，可以直接衔接当前架势下第三段<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackRuten": {
+      "name": "特殊技：流转",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方进行斩击，造成<ct color=#2EB6FF>电属性伤害</ct>，并切换当前架势；",
+        "2": "招式发动期间抗打断等级提升；",
+        "3": "若衔接在<ct color=#FFFFFF>[普通攻击]</ct>第三、四、五段之后发动，则能够触发<ct color=#FFFFFF>[快速流转]</ct>，以更快的速度进行斩击并切换当前架势；",
+        "4": "<ct color=#FFFFFF>[快速流转]</ct>发动期间可以格挡敌人的攻击；",
+        "5": "触发<ct color=#FFFFFF>[快速流转]</ct>后，可以直接衔接当前架势下第三段<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackGekkaRuten": {
+      "name": "强化特殊技：月华流转",
+      "desc": {
+        "0": "能量足够时，长按 <IconSpecialReady /> 发动：",
+        "1": "积蓄力量向前快速突刺，随后发动下落攻击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "突刺发动时，月城柳会切换当前架势，并进入<ct color=#FFFFFF>[森罗万象]</ct>状态，持续15秒，状态持续期间，从<ct color=#FFFFFF>[普通攻击]</ct>第五段或其他招式衔接后继<ct color=#FFFFFF>[普通攻击]</ct>时，将直接从第三段<ct color=#FFFFFF>[普通攻击]</ct> 起手；",
+        "3": "下落攻击命中处于属性异常状态下的敌人时，将会触发特殊的<ct color=#FFFFFF>[紊乱]</ct>效果<ct color=#FFFFFF>[极性紊乱]</ct>，对目标造成原本<ct color=#FFFFFF>[紊乱]</ct>效果15%的伤害，并额外附加月城柳<ct color=#2BAD00>{CAL:5+AvatarSkillLevel(1)*2.25,100,2}%</ct>异常精通的伤害，<ct color=#FFFFFF>[极性紊乱]</ct>不会清除目标所处的属性异常状态；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "能量消耗",
+        "Thrust Attack ",
+        "Downward Attack ",
+        "Additional "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackCelestialHarmony": {
+      "name": "连携技：星月相随",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "切换当前架势，并对前方敌人发动强力斩击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，可以直接衔接当前架势下第三段<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateRaieiTenge": {
+      "name": "终结技：雷影天华",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "激发自身能力，在极短时间内对前方大范围敌人发动强力斩击，并追加落雷攻击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "落雷攻击命中处于属性异常状态下的敌人时，将会触发特殊的<ct color=#FFFFFF>[紊乱]</ct>效果<ct color=#FFFFFF>[极性紊乱]</ct>，对目标造成原本<ct color=#FFFFFF>[紊乱]</ct>效果15%的伤害，并额外附加月城柳<ct color=#2BAD00>{CAL:5+AvatarSkillLevel(3)*2.25,100,2}%</ct>异常精通的伤害，<ct color=#FFFFFF>[极性紊乱]</ct>不会清除目标所处的属性异常状态；",
+        "3": "招式发动期间拥有无敌效果；",
+        "4": "招式发动后，可以直接衔接当前架势下第三段<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " ",
+        "Additional "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistBladeOfElegance": {
+      "name": "快速支援：风华斩",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，可以直接衔接当前架势下第三段<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistRadiantReversal": {
+      "name": "招架支援：流光反",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpWeepingWillowStab": {
+      "name": "支援突击：飞絮刺",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "切换当前架势，对前方敌人快速发动多段斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，可以直接衔接当前架势下第三段<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：月蚀",
+    "desc": [
+      {
+        "0": "月城柳发动<ct color=#FFFFFF>[强化特殊技]</ct>后，队伍中任意角色对敌人施加<ct color=#FFFFFF>[紊乱]</ct>效果时，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升<ct color=#2BAD00>125%</ct>，持续15秒；<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，月城柳对目标造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>10%</ct>，持续15秒。",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>10%</ct> for 15s."
+      },
+      {
+        "0": "月城柳发动<ct color=#FFFFFF>[强化特殊技]</ct>后，队伍中任意角色对敌人施加<ct color=#FFFFFF>[紊乱]</ct>效果时，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升<ct color=#2BAD00>145%</ct>，持续15秒；<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，月城柳对目标造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>11.6%</ct>，持续15秒。",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>11.6%</ct> for 15s."
+      },
+      {
+        "0": "月城柳发动<ct color=#FFFFFF>[强化特殊技]</ct>后，队伍中任意角色对敌人施加<ct color=#FFFFFF>[紊乱]</ct>效果时，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升<ct color=#2BAD00>166%</ct>，持续15秒；<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，月城柳对目标造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>13.3%</ct>，持续15秒。",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>13.3%</ct> for 15s."
+      },
+      {
+        "0": "月城柳发动<ct color=#FFFFFF>[强化特殊技]</ct>后，队伍中任意角色对敌人施加<ct color=#FFFFFF>[紊乱]</ct>效果时，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升<ct color=#2BAD00>188%</ct>，持续15秒；<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，月城柳对目标造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>15%</ct>，持续15秒。",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>15%</ct> for 15s."
+      },
+      {
+        "0": "月城柳发动<ct color=#FFFFFF>[强化特殊技]</ct>后，队伍中任意角色对敌人施加<ct color=#FFFFFF>[紊乱]</ct>效果时，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升<ct color=#2BAD00>208%</ct>，持续15秒；<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，月城柳对目标造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>16.6%</ct>，持续15秒。",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>16.6%</ct> for 15s."
+      },
+      {
+        "0": "月城柳发动<ct color=#FFFFFF>[强化特殊技]</ct>后，队伍中任意角色对敌人施加<ct color=#FFFFFF>[紊乱]</ct>效果时，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升<ct color=#2BAD00>230%</ct>，持续15秒；<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，月城柳对目标造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>18.3%</ct>，持续15秒。",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>18.3%</ct> for 15s."
+      },
+      {
+        "0": "月城柳发动<ct color=#FFFFFF>[强化特殊技]</ct>后，队伍中任意角色对敌人施加<ct color=#FFFFFF>[紊乱]</ct>效果时，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升<ct color=#2BAD00>250%</ct>，持续15秒；<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，月城柳对目标造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>20%</ct>，持续15秒。",
+        "1": "When her <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, Yanagi's <ct color=#2EB6FF>Electric DMG</ct> against the target is increased by <ct color=#2BAD00>20%</ct> for 15s."
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：月相",
+    "desc": {
+      "0": "队伍中存在其他<ct color=#FFFFFF>[异常]</ct>角色或与自身属性相同的角色时触发：",
+      "1": "架势切换后，月城柳发动<ct color=#FFFFFF>[普通攻击：夜见尊神乐]</ct>命中敌人时累积的<ct color=#2EB6FF>电属性异常积蓄值</ct>提升45%，持续8秒。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "知己知彼",
+      "desc": "队伍中任意角色对敌人施加属性异常效果时，月城柳会获得1层<ct color=#FFFFFF>[洞悉]</ct>，持续15秒，最多叠加3层，重复触发时刷新持续时间；受到敌方攻击时，月城柳将消耗1层<ct color=#FFFFFF>[洞悉]</ct>并获得无敌效果，持续1秒；拥有1层或以上<ct color=#FFFFFF>[洞悉]</ct>时，月城柳的异常精通提升80点。",
+      "flavor": {
+        "0": "「洞悉敌人的弱点，等同于为自己赢得更多的保障…和胜算。」",
+        "1": "柳推了推眼镜，即使已然胜券在握，她依然如像往常一般不动声色。"
+      }
+    },
+    "2": {
+      "name": "卓越适应性",
+      "desc": "<ct color=#FFFFFF>[强化特殊技]</ct>中，快速突刺累积的<ct color=#2EB6FF>电属性异常积蓄值</ct>提升20%；快速突刺命中敌人时，保持长按「特殊攻击」按键，可以额外消耗10点能量，再次发动突刺攻击，能量不足或停止长按后将自动衔接下落攻击；下落攻击命中处于属性异常状态下的敌人并触发<ct color=#FFFFFF>[极性紊乱]</ct>效果时，对目标造成的伤害倍率提升至原本<ct color=#FFFFFF>[紊乱]</ct>效果的20%，每额外发动一次突刺攻击，该伤害倍率额外提升15%，伤害倍率额外提升效果最多触发2次。",
+      "flavor": {
+        "0": "「柳的话…无论被丢到怎样异常的环境，一定都能处理好的。」",
+        "1": "「我比相信自己更加相信她。」",
+        "2": "——来自一位正在进行「斩断面前所有落叶」修行的武者"
+      }
+    },
+    "3": {
+      "name": "月城氏管理学",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "人人都说对空六课聚集了一帮怪人和天才，其中唯一的「正常人」便是月城柳了。\n但也正是她的存在，把怪人和天才们「粘合」了起来。"
+    },
+    "4": {
+      "name": "掌棋者",
+      "desc": "月城柳对敌人造成属性异常伤害时，会为其施加<ct color=#FFFFFF>[识破]</ct>效果，持续15秒；处于<ct color=#FFFFFF>[识破]</ct>效果下的敌人受到攻击时，本次攻击的穿透率提升16%。",
+      "flavor": "无论在何种情况下，月城柳都能以最快的速度掌握当下所有信息，并据此做出最合适的判断。"
+    },
+    "5": {
+      "name": "鬼「妈妈」",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "目前，月城柳是苍角的唯一指定监护人。",
+        "1": "「苍角，这是课长的饭团，不可以随便吃——算了，过来，我给你加热一下。」",
+        "2": "「之后再买个一样的还给课长吧…」"
+      }
+    },
+    "6": {
+      "name": "非人之血",
+      "desc": "在<ct color=#FFFFFF>[强化特殊技]</ct>中发动突刺攻击后，<ct color=#FFFFFF>[森罗万象]</ct>状态的持续时间提升至30秒，状态持续期间，<ct color=#FFFFFF>[强化特殊技]</ct>造成的伤害提升20%；<ct color=#FFFFFF>[卓越适应性]</ct>中，<ct color=#FFFFFF>[极性紊乱]</ct>伤害倍率额外提升效果的触发次数上限提升至4次，前4次额外发动突刺攻击时所需的能量消耗减半。",
+      "flavor": {
+        "0": "月城柳的身体中流淌着一部分不属于她的血液。\n这些血曾让她在绝境中获得了新生，也因此拥有了一些特殊的力量。\n「但如你所知，一切本不属于我的东西…终有代价。」",
+        "1": "\"But as you know, something that isn't mine... comes with a price.\""
+      }
+    }
+  },
+  "potential": {}
+}

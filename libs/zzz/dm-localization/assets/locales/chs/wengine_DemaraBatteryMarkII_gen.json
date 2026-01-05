@@ -1,0 +1,18 @@
+{
+  "name": "德玛拉电池Ⅱ型",
+  "desc": {
+    "0": "重视储能效率，在蓄电功能上做了特化处理的定制款音擎核心，能有效增强武器电能输出的功率，是玩具店老板的杰作。不久后，安比根据使用习惯又对它进行了些许调整，但从她每次保养时都异常严肃小心的举动来看，估计不是什么安全的调整方法。",
+    "1": "",
+    "2": "<ct color=#959595>「武器就应该是危险的。如果它都不能电倒我，那就更不能电倒敌人了。」——安比，小心翼翼保养时的回答</ct>"
+  },
+  "desc2": "装备后可提升[击破]代理人的战斗能力",
+  "desc3": "重视储能效率，在蓄电功能上做了特化处理的定制款的音擎核心，是安比惯用的款式。",
+  "phase": "电光石火",
+  "phaseDescs": [
+    "<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>15%</ct>；<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[支援攻击]</ct>命中敌人时，装备者的能量获得效率提升<ct color=#2BAD00>18%</ct>，持续8秒。",
+    "<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>17.5%</ct>；<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[支援攻击]</ct>命中敌人时，装备者的能量获得效率提升<ct color=#2BAD00>20.5%</ct>，持续8秒。",
+    "<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>20%</ct>；<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[支援攻击]</ct>命中敌人时，装备者的能量获得效率提升<ct color=#2BAD00>23%</ct>，持续8秒。",
+    "<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>22%</ct>；<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[支援攻击]</ct>命中敌人时，装备者的能量获得效率提升<ct color=#2BAD00>25%</ct>，持续8秒。",
+    "<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>24%</ct>；<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[支援攻击]</ct>命中敌人时，装备者的能量获得效率提升<ct color=#2BAD00>27.5%</ct>，持续8秒。"
+  ]
+}

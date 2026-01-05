@@ -1,0 +1,261 @@
+{
+  "name": "「11号」",
+  "fullName": "「11号」",
+  "basic": {
+    "BasicAttackWarmupSparks": {
+      "name": "普通攻击：热身火花",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的斩击，造成<ct color=#F0D12B>物理伤害</ct>；"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackFireSuppression": {
+      "name": "普通攻击：火力镇压",
+      "desc": {
+        "0": "在恰当的时机点按 <IconNormal /> 发动：",
+        "1": "发动更加强力的斩击，造成<ct color=#FF5521>火属性伤害</ct>。",
+        "2": "必定触发<ct color=#FFFFFF>[火力镇压]</ct>的状态下，在进攻即将结束时点按 <IconNormal /> 可更快速地衔接至下一段<ct color=#FFFFFF>[普通攻击]</ct>。",
+        "3": "在必定触发<ct color=#FFFFFF>[火力镇压]</ct>的状态下，可解锁第五段<ct color=#FFFFFF>[普通攻击]</ct>，发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，可强化下一次第五段<ct color=#FFFFFF>[普通攻击]</ct>。强化第五段<ct color=#FFFFFF>[普通攻击]</ct>发动时可消耗当前所有必定触发<ct color=#FFFFFF>[火力镇压]</ct>的次数，每消耗一次造成额外<ct color=#FF5521>火属性伤害</ct>。",
+        "4": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，可保留当前普攻段数持续5秒，发动<ct color=#FFFFFF>[闪避反击]</ct>后点按 <IconNormal /> 可从保留的普攻段数开始发动<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit ",
+        "Enhanced Basic Attack 5th-Hit ",
+        "Enhanced Basic Attack 5th-Hit Additional "
+      ]
+    },
+    "BasicAttackFireAssault": {
+      "name": "普通攻击:火力迸发",
+      "desc": {
+        "0": "长按 <IconNormal /> 发动：<ct color=#FFFFFF>[普通攻击：火力充能]</ct>",
+        "1": "<ct color=#FFFFFF>[普通攻击：火力充能]</ct>发动过程中松开 <IconNormal /> 时发动<ct color=#FFFFFF>[普通攻击：火力迸发]</ct>。",
+        "2": "<ct color=#FFFFFF>[普通攻击：火力迸发]</ct>发动过程中或<ct color=#FFFFFF>[普通攻击：火力充能]</ct>发动瞬间受到敌方攻击时，可触发格挡反击，免疫该次伤害，并额外获得3次必定触发<ct color=#FFFFFF>[火力镇压]</ct>的次数，点按 <IconNormal /> 可衔接至第三段<ct color=#FFFFFF>[普通攻击]</ct>，上限为8次，",
+        "3": "在蓄力过程中拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}时，可以发动<ct color=#FFFFFF>[普通攻击：烈焰奔袭]</ct>。"
+      },
+      "params": [
+        "普通攻击:火力迸发"
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeTemperedFire": {
+      "name": "闪避：退火",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackBlazingFire": {
+      "name": "冲刺攻击：炽火",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DashAttackFireSuppression": {
+      "name": "冲刺攻击：火力镇压",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行斩击，造成<ct color=#FF5521>火属性伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterBackdraft": {
+      "name": "闪避反击：逆火",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动强力斩击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackRagingFire": {
+      "name": "特殊技：烈火",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向身周进行斩击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackFerventFire": {
+      "name": "强化特殊技：盛燃烈火",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向身周进行强力斩击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[冲刺攻击]</ct>必定触发<ct color=#FFFFFF>[火力镇压]</ct>，最多持续30秒或触发8次。",
+        "4": "招式发动后，点击 <IconNormal /> 可直接衔接至第四段<ct color=#FFFFFF>[普通攻击]</ct>。",
+        "5": "招式发动后，将进入<ct color=#FFFFFF>[戒备姿态]</ct>；在<ct color=#FFFFFF>[戒备姿态]</ct>下，若<ct color=#FFFFFF>[普通攻击]</ct>期间受到敌人攻击，会发动<ct color=#FFFFFF>[普通攻击：火力充能]</ct>格挡此次攻击，随后发动<ct color=#FFFFFF>[普通攻击：火力迸发]</ct>，在<ct color=#FFFFFF>[普通攻击：火力迸发]</ct>发动后点按 <IconNormal /> 可从保留的普攻段数开始发动<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackUpliftingFlame": {
+      "name": "连携技：昂扬烈焰",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方小范围敌人进行强力上挑斩击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[冲刺攻击]</ct>必定触发<ct color=#FFFFFF>[火力镇压]</ct>，最多持续30秒或触发8次。",
+        "4": "招式发动后，点击 <IconNormal /> 可直接衔接至第四段<ct color=#FFFFFF>[普通攻击]</ct>。 ",
+        "5": "招式发动后，将进入<ct color=#FFFFFF>[戒备姿态]</ct>；在<ct color=#FFFFFF>[戒备姿态]</ct>下，若<ct color=#FFFFFF>[普通攻击]</ct>期间受到敌人攻击，会发动<ct color=#FFFFFF>[普通攻击：火力充能]</ct>格挡此次攻击，随后发动<ct color=#FFFFFF>[普通攻击：火力迸发]</ct>，在<ct color=#FFFFFF>[普通攻击：火力迸发]</ct>发动后点按 <IconNormal /> 可从保留的普攻段数开始发动<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateBellowingFlame": {
+      "name": "终结技：轰鸣烈焰",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方小范围敌人进行强力上挑斩击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[冲刺攻击]</ct>必定触发<ct color=#FFFFFF>[火力镇压]</ct>，最多持续30秒或触发8次。",
+        "4": "招式发动后，点击 <IconNormal /> 可直接衔接至第四段<ct color=#FFFFFF>[普通攻击]</ct>。",
+        "5": "招式发动后，将进入<ct color=#FFFFFF>[戒备姿态]</ct>；在<ct color=#FFFFFF>[戒备姿态]</ct>下，若<ct color=#FFFFFF>[普通攻击]</ct>期间受到敌人攻击，会发动<ct color=#FFFFFF>[普通攻击：火力充能]</ct>格挡此次攻击，随后发动<ct color=#FFFFFF>[普通攻击：火力迸发]</ct>，在<ct color=#FFFFFF>[普通攻击：火力迸发]</ct>发动后点按 <IconNormal /> 可从保留的普攻段数开始发动<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistCoveringFire": {
+      "name": "快速支援：火力掩护",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistHoldTheLine": {
+      "name": "招架支援：巩固防线",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpReignition": {
+      "name": "支援突击：重燃",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动交叉斩击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：热浪",
+    "desc": [
+      "「11号」在<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>中触发<ct color=#FFFFFF>[火力镇压]</ct>时，招式造成的伤害提升<ct color=#2BAD00>35%</ct>。",
+      "「11号」在<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>中触发<ct color=#FFFFFF>[火力镇压]</ct>时，招式造成的伤害提升<ct color=#2BAD00>40.8%</ct>。",
+      "「11号」在<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>中触发<ct color=#FFFFFF>[火力镇压]</ct>时，招式造成的伤害提升<ct color=#2BAD00>46.6%</ct>。",
+      "「11号」在<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>中触发<ct color=#FFFFFF>[火力镇压]</ct>时，招式造成的伤害提升<ct color=#2BAD00>52.5%</ct>。",
+      "「11号」在<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>中触发<ct color=#FFFFFF>[火力镇压]</ct>时，招式造成的伤害提升<ct color=#2BAD00>58.3%</ct>。",
+      "「11号」在<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>中触发<ct color=#FFFFFF>[火力镇压]</ct>时，招式造成的伤害提升<ct color=#2BAD00>64.1%</ct>。",
+      "「11号」在<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>中触发<ct color=#FFFFFF>[火力镇压]</ct>时，招式造成的伤害提升<ct color=#2BAD00>70%</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：燎原",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "「11号」造成的<ct color=#FF5521>火属性伤害</ct>提升10%，攻击处于失衡状态下的敌人时，该增益效果额外提升22.5%。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "快速升温",
+      "desc": "成为接战状态下的当前操作角色时，若「11号」的能量不足40点，则立即回复至80点，50秒内最多触发一次。",
+      "flavor": {
+        "0": "长期的高强度实战训练让「11号」掌握了对于自身状态的调控。",
+        "1": "她会竭尽全力，保证以最好的状态迎接每一场战斗。"
+      }
+    },
+    "2": {
+      "name": "高温汇聚",
+      "desc": "触发<ct color=#FFFFFF>[火力镇压]</ct>时，<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>造成的伤害提升3%，最多叠加12层，持续15秒，每层效果单独结算持续时间。",
+      "flavor": {
+        "0": "「虽然她看起来又冷又硬，跟个大冰块似的…」\n「实际上内心却是滚烫滚烫的呢，就像有火在燃烧。」\n——来自黑曜石营内一位匿名的军人",
+        "1": "— From an anonymous soldier of the Obsidian Division"
+      }
+    },
+    "3": {
+      "name": "精锐士兵",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "不论是训练还是实战，「11号」从来都是以最高标准要求自己，故而能一直拥有高标准的战斗力。"
+    },
+    "4": {
+      "name": "纵情燃烧",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[普通攻击]</ct>第一、二、三段或<ct color=#FFFFFF>[冲刺攻击]</ct>发动时，若触发<ct color=#FFFFFF>[火力镇压]</ct>，则在招式发动期间抗打断等级提升，受到的伤害降低18%；<ct color=#FFFFFF>[普通攻击]</ct>第四段发动时，若触发<ct color=#FFFFFF>[火力镇压]</ct>，则在招式发动期间获得无敌效果。",
+        "1": "If <ct color=#FFFFFF>Fire Suppression</ct> is triggered during the 4th hit of her <ct color=#FFFFFF>Basic Attack</ct>, she becomes invulnerable during skill activation."
+      },
+      "flavor": "她很羡慕火焰。\n而这些尽情燃烧着的火焰，也总会帮到她。"
+    },
+    "5": {
+      "name": "完美士兵",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "从精锐到楷模是一次漫长的跨越，但「11号」依然咬牙坚持着，似乎暗中有些什么理由一直鞭策她向完美士兵这一目标努力…"
+    },
+    "6": {
+      "name": "炽热心流",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，「11号」获得8层充能（上限8层）；触发<ct color=#FFFFFF>[火力镇压]</ct>时，消耗1层充能，使当前招式无视目标25%<ct color=#FF5521>火属性伤害抗性</ct>。",
+        "1": "When <ct color=#FFFFFF>Fire Suppression</ct> is triggered, 1 stack of Charge is consumed, causing the current move to ignore 25% of the target's <ct color=#FF5521>Fire RES</ct>."
+      },
+      "flavor": "剑刃的火焰撩起热浪，银发少女的战斗越来越热烈，那份热度仿佛顺着呼吸渗入了精神，连思考也变得炽热起来。"
+    }
+  },
+  "potential": {
+    "name": "潜能觉醒：绝焰",
+    "desc": [
+      "",
+      "[额外能力：燎原]中，「11号」自身暴击伤害提升<ct color=#2BAD00>16%</ct>。",
+      "[额外能力：燎原]中，「11号」自身暴击伤害提升<ct color=#2BAD00>24%</ct>。",
+      "[额外能力：燎原]中，「11号」自身暴击伤害提升<ct color=#2BAD00>32%</ct>。",
+      "[额外能力：燎原]中，「11号」自身暴击伤害提升<ct color=#2BAD00>40%</ct>。",
+      "[额外能力：燎原]中，「11号」自身暴击伤害提升<ct color=#2BAD00>48%</ct>。"
+    ]
+  }
+}

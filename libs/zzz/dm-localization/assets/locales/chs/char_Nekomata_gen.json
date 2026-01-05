@@ -1,0 +1,216 @@
+{
+  "name": "猫又",
+  "fullName": "Nekomiya Mana",
+  "basic": {
+    "BasicAttackKittySlash": {
+      "name": "普通攻击：猫猫爪刺",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "发动最后一段斩击时，有33.33%的概率重复攻击三次。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackCrimsonBlade": {
+      "name": "普通攻击：赤色之刃",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[普通攻击]</ct>前三段中，长按 <IconNormal /> 发动：",
+        "1": "向前方进行斩击，可穿过前方敌人，并对其造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动时，有33.33%的概率重复攻击三次。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeCantTouchMeow": {
+      "name": "闪避：打不着喵~",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackOverHere": {
+      "name": "冲刺攻击：你在看哪边？",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterPhantomClaws": {
+      "name": "闪避反击：虚影双刺",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSurpriseAttack": {
+      "name": "特殊技：奇袭",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方进行下落打击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackSuperSurpriseAttack": {
+      "name": "强化特殊技：超~凶奇袭！",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方进行强力下落斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackClawSwipe": {
+      "name": "连携技：刃爪挥击",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方大范围敌人发动强力斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateClawSmash": {
+      "name": "终结技：刃爪强袭",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方大范围敌人发动强力斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistCatsPaw": {
+      "name": "快速支援：借用猫爪",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistDesperateDefense": {
+      "name": "招架支援：应激防御",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpShadowStrike": {
+      "name": "支援突击：迅影",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动突进斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：猫步诡影",
+    "desc": [
+      "猫又<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[快速支援]</ct>命中敌人时，自身造成的伤害提升<ct color=#2BAD00>30%</ct>，持续6秒。",
+      "猫又<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[快速支援]</ct>命中敌人时，自身造成的伤害提升<ct color=#2BAD00>35%</ct>，持续6秒。",
+      "猫又<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[快速支援]</ct>命中敌人时，自身造成的伤害提升<ct color=#2BAD00>40%</ct>，持续6秒。",
+      "猫又<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[快速支援]</ct>命中敌人时，自身造成的伤害提升<ct color=#2BAD00>45%</ct>，持续6秒。",
+      "猫又<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[快速支援]</ct>命中敌人时，自身造成的伤害提升<ct color=#2BAD00>50%</ct>，持续6秒。",
+      "猫又<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[快速支援]</ct>命中敌人时，自身造成的伤害提升<ct color=#2BAD00>55%</ct>，持续6秒。",
+      "猫又<ct color=#FFFFFF>[闪避反击]</ct>或<ct color=#FFFFFF>[快速支援]</ct>命中敌人时，自身造成的伤害提升<ct color=#2BAD00>60%</ct>，持续6秒。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：猫步秀",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "队伍中任意角色对敌人施加<ct color=#F0D12B>[强击]</ct>效果后，猫又下一次发动<ct color=#FFFFFF>[强化特殊技]</ct>时，招式造成的伤害提升35%，最多叠加2层。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "猎鸟技巧",
+      "desc": "从背后攻击命中敌人时，猫又无视目标16%<ct color=#F0D12B>物理伤害抗性</ct>；敌方处于失衡状态时，猫又对其的所有攻击均被视为背后攻击。",
+      "flavor": "娇小的猫又并没有强大的膂力，取而代之的是捕捉对手弱点的眼光，和准确攻击弱点的迅敏。"
+    },
+    "2": {
+      "name": "猫鼠游戏",
+      "desc": "当场上只有一名敌人且自身位于前场时，猫又的能量获得效率提升25%。",
+      "flavor": {
+        "0": "猫咪们总是更喜欢玩弄猎物。",
+        "1": "当场上的「老鼠」只剩一只时，就是独属于她的玩乐时光了。"
+      }
+    },
+    "3": {
+      "name": "好奇的左尾",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "在旧文明的传说里，一根尾巴代表猫的一条命，里面寄宿着多年的生存智慧…",
+        "1": "这话是假的，但猫又积累的街头生存经验确实是真的。"
+      }
+    },
+    "4": {
+      "name": "磨爪",
+      "desc": "发动<ct color=#FFFFFF>[强化特殊技]</ct>时，猫又的暴击率提升7%，最多叠加2层，持续15秒，每层效果单独结算持续时间。",
+      "flavor": {
+        "0": "「多来点多来点！我全~部都能消化掉哟！」",
+        "1": "猫希人舔了舔爪子，眼睛亮晶晶的。"
+      }
+    },
+    "5": {
+      "name": "幸运的右尾",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "在旧文明的传说里，一根尾巴代表猫的一条命，里面寄宿着多年的生存智慧…\n有时候猫又也会好奇，如果自己能继续幸运地活下去，是不是还会长出新尾巴？"
+    },
+    "6": {
+      "name": "捕食者血统",
+      "desc": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，猫又的暴击伤害提升18%，最多叠加3层，退出接战状态时增益效果结束；猫又击败敌人时，该增益效果直接叠加至层数上限。",
+      "flavor": {
+        "0": "「对猫希人来说，因攻击行为而获得的正向反馈，",
+        "1": "极有可能触发他们性格中所潜藏的暴力倾向。",
+        "2": "幸运的是，这种倾向似乎并不具有永久性效果…」",
+        "3": "——摘自一本破旧的《猫希人不完全研究手册》"
+      }
+    }
+  },
+  "potential": {}
+}

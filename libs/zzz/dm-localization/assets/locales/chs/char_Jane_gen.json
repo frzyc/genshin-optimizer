@@ -1,0 +1,274 @@
+{
+  "name": "简",
+  "fullName": "Jane Doe",
+  "basic": {
+    "BasicAttackDancingBlades": {
+      "name": "普通攻击：跳步刃舞",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多六段的攻击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit ",
+        "6th-Hit "
+      ]
+    },
+    "Passion": {
+      "name": "狂热",
+      "desc": {
+        "0": "简触发<ct color=#FFFFFF>[极限闪避]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或发动招式对敌人造成伤害时，会累积<ct color=#FFFFFF>[狂热心流]</ct>，当<ct color=#FFFFFF>[狂热心流]</ct>累积至上限时，简将进入<ct color=#FFFFFF>[狂热]</ct>状态；",
+        "1": "<ct color=#FFFFFF>[狂热]</ct>状态下，简的<ct color=#F0D12B>物理异常积蓄效率</ct>提升25%，此外，若简的异常精通高于120点，每超过1点异常精通会使自身的攻击力提升2点，通过这种方式最多使自身的攻击力提升600点；",
+        "2": "简在<ct color=#FFFFFF>[狂热]</ct>状态下发动招式造成伤害时，会消耗<ct color=#FFFFFF>[狂热心流]</ct>，触发<ct color=#FFFFFF>[极限闪避]</ct>或<ct color=#FFFFFF>[招架支援]</ct>时，可以回复<ct color=#FFFFFF>[狂热心流]</ct>，当<ct color=#FFFFFF>[狂热心流]</ct>耗尽时，将退出<ct color=#FFFFFF>[狂热]</ct>状态。"
+      },
+      "params": []
+    },
+    "BasicAttackSalchowJump": {
+      "name": "普通攻击：萨霍夫跳",
+      "desc": {
+        "0": "进入<ct color=#FFFFFF>[狂热]</ct>状态时，简将获得一次<ct color=#FFFFFF>[普通攻击：萨霍夫跳]</ct>的可使用次数；",
+        "1": "当有可使用次数时，长按 <IconNormal /> 发动：",
+        "2": "向前方发动快速的连续攻击，随后发动终结一击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "3": "连续攻击期间，保持长按可以延长招式的持续时间，松开 <IconNormal /> 可以提前发动终结一击；",
+        "4": "连续攻击发动期间抗打断等级提升，受到的伤害降低40%，终结一击发动期间具有无敌效果；",
+        "5": "在<ct color=#FFFFFF>[狂热]</ct>状态下发动<ct color=#FFFFFF>[普通攻击：萨霍夫跳]</ct>对敌人造成伤害时，可以回复<ct color=#FFFFFF>[狂热心流]</ct>。"
+      },
+      "params": [
+        "Consecutive Attack ",
+        "Finishing Move "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgePhantom": {
+      "name": "闪避：残影",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的滑步闪避；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "简拥有一次额外的闪避次数，在进入<ct color=#FFFFFF>[狂热]</ct>状态前，简会交替使用两段闪避，在进入<ct color=#FFFFFF>[狂热]</ct>状态后，简在闪避时可以穿过前方的敌人。"
+      },
+      "params": []
+    },
+    "DashAttackEdgeJump": {
+      "name": "冲刺攻击：刀刃跳",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "若衔接在一段闪避后，将向前方进行上挑斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "若衔接在二段闪避后，将向前方进行连续斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        "1st-Dodge ",
+        "2nd-Dodge "
+      ]
+    },
+    "DashAttackPhantomThrust": {
+      "name": "冲刺攻击：虚像突刺",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[狂热]</ct>状态下，闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行三次快速的突进斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterSwiftShadow": {
+      "name": "闪避反击：疾影",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "若衔接在一段闪避后，将对前方敌人发动多次斩击，随后向下突刺，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "若衔接在二段闪避后，将会跃起并对前方敌人发动三次连续攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "1st-Dodge ",
+        "2nd-Dodge "
+      ]
+    },
+    "DodgeCounterSwiftShadowDance": {
+      "name": "闪避反击：疾影连舞",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[狂热]</ct>状态下，触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动多次快速斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackAerialSweep": {
+      "name": "特殊技：掠空",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "腾空跃起，向前方发动连续踢击后横扫，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackAerialSweepClearout": {
+      "name": "强化特殊技：掠空-横扫",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "腾空跃起，向前方发动多次连续踢击后横扫，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackFlowersOfSin": {
+      "name": "连携技：罪孽生花",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方大范围敌人发动穿梭斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动时，简将直接进入<ct color=#FFFFFF>[狂热]</ct>状态，并使<ct color=#FFFFFF>[狂热心流]</ct>回复至上限；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateFinalCurtain": {
+      "name": "终结技：终幕演出",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方大范围敌人发动强力穿梭斩击，随后发动终结一击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动时，简将直接进入<ct color=#FFFFFF>[狂热]</ct>状态，并使<ct color=#FFFFFF>[狂热心流]</ct>回复至上限；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistDarkThorn": {
+      "name": "快速支援：乌刺",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动多次斩击，随后向下突刺，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "QuickAssistLutzJump": {
+      "name": "快速支援：勾手跳",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[狂热]</ct>状态下，当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动多次快速斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistLastDefense": {
+      "name": "招架支援：最后防线",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpGaleSweep": {
+      "name": "支援突击：疾风扫",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "腾空跃起后对敌人发动快速斩击，随后在前方大范围内再次发动横扫斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：洞察",
+    "desc": [
+      "简攻击命中敌人时，会使其陷入<ct color=#FFFFFF>[啮咬]</ct>状态，持续10秒；队伍中任意角色对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人触发<ct color=#F0D12B>[强击]</ct>并施加<ct color=#F0D12B>[畏缩]</ct>效果时，<ct color=#F0D12B>[畏缩]</ct>效果的持续时间提升5秒；对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人造成的<ct color=#F0D12B>[强击]</ct>伤害有概率触发暴击，基础暴击率为<ct color=#2BAD00>20%</ct>，暴击伤害为50%，简的每点异常精通会使该效果的暴击率额外提升<ct color=#2BAD00>0.1%</ct>。",
+      "简攻击命中敌人时，会使其陷入<ct color=#FFFFFF>[啮咬]</ct>状态，持续10秒；队伍中任意角色对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人触发<ct color=#F0D12B>[强击]</ct>并施加<ct color=#F0D12B>[畏缩]</ct>效果时，<ct color=#F0D12B>[畏缩]</ct>效果的持续时间提升5秒；对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人造成的<ct color=#F0D12B>[强击]</ct>伤害有概率触发暴击，基础暴击率为<ct color=#2BAD00>25%</ct>，暴击伤害为50%，简的每点异常精通会使该效果的暴击率额外提升<ct color=#2BAD00>0.11%</ct>。",
+      "简攻击命中敌人时，会使其陷入<ct color=#FFFFFF>[啮咬]</ct>状态，持续10秒；队伍中任意角色对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人触发<ct color=#F0D12B>[强击]</ct>并施加<ct color=#F0D12B>[畏缩]</ct>效果时，<ct color=#F0D12B>[畏缩]</ct>效果的持续时间提升5秒；对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人造成的<ct color=#F0D12B>[强击]</ct>伤害有概率触发暴击，基础暴击率为<ct color=#2BAD00>28%</ct>，暴击伤害为50%，简的每点异常精通会使该效果的暴击率额外提升<ct color=#2BAD00>0.12%</ct>。",
+      "简攻击命中敌人时，会使其陷入<ct color=#FFFFFF>[啮咬]</ct>状态，持续10秒；队伍中任意角色对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人触发<ct color=#F0D12B>[强击]</ct>并施加<ct color=#F0D12B>[畏缩]</ct>效果时，<ct color=#F0D12B>[畏缩]</ct>效果的持续时间提升5秒；对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人造成的<ct color=#F0D12B>[强击]</ct>伤害有概率触发暴击，基础暴击率为<ct color=#2BAD00>31%</ct>，暴击伤害为50%，简的每点异常精通会使该效果的暴击率额外提升<ct color=#2BAD00>0.13%</ct>。",
+      "简攻击命中敌人时，会使其陷入<ct color=#FFFFFF>[啮咬]</ct>状态，持续10秒；队伍中任意角色对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人触发<ct color=#F0D12B>[强击]</ct>并施加<ct color=#F0D12B>[畏缩]</ct>效果时，<ct color=#F0D12B>[畏缩]</ct>效果的持续时间提升5秒；对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人造成的<ct color=#F0D12B>[强击]</ct>伤害有概率触发暴击，基础暴击率为<ct color=#2BAD00>34%</ct>，暴击伤害为50%，简的每点异常精通会使该效果的暴击率额外提升<ct color=#2BAD00>0.14%</ct>。",
+      "简攻击命中敌人时，会使其陷入<ct color=#FFFFFF>[啮咬]</ct>状态，持续10秒；队伍中任意角色对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人触发<ct color=#F0D12B>[强击]</ct>并施加<ct color=#F0D12B>[畏缩]</ct>效果时，<ct color=#F0D12B>[畏缩]</ct>效果的持续时间提升5秒；对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人造成的<ct color=#F0D12B>[强击]</ct>伤害有概率触发暴击，基础暴击率为<ct color=#2BAD00>37%</ct>，暴击伤害为50%，简的每点异常精通会使该效果的暴击率额外提升<ct color=#2BAD00>0.15%</ct>。",
+      "简攻击命中敌人时，会使其陷入<ct color=#FFFFFF>[啮咬]</ct>状态，持续10秒；队伍中任意角色对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人触发<ct color=#F0D12B>[强击]</ct>并施加<ct color=#F0D12B>[畏缩]</ct>效果时，<ct color=#F0D12B>[畏缩]</ct>效果的持续时间提升5秒；对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人造成的<ct color=#F0D12B>[强击]</ct>伤害有概率触发暴击，基础暴击率为<ct color=#2BAD00>40%</ct>，暴击伤害为50%，简的每点异常精通会使该效果的暴击率额外提升<ct color=#2BAD00>0.16%</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：痛点",
+    "desc": {
+      "0": "队伍中存在其他<ct color=#FFFFFF>[异常]</ct>角色或与自身阵营相同的角色时触发：",
+      "1": "简的<ct color=#F0D12B>物理异常积蓄效率</ct>提升20%，当敌人已经处于属性异常状态下时，简对其累积的<ct color=#F0D12B>物理异常积蓄值</ct>额外提升15%。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "犯罪顾问",
+      "desc": "<ct color=#FFFFFF>[普通攻击：萨霍夫跳]</ct>的可使用次数上限增加一次；在<ct color=#FFFFFF>[狂热]</ct>状态下，简的<ct color=#F0D12B>物理异常积蓄效率</ct>额外提升15%，同时每点异常精通将会使自身造成的伤害提升0.1%，最多提升30%。",
+      "flavor": {
+        "0": "「犯罪顾问，是指研究犯罪行为学的顾问，不是精通如何犯罪的顾问。」",
+        "1": "简忽然凑近，眨了眨眼睛。",
+        "2": "「当然，你要理解成后者的话…我也不反对哦。」"
+      }
+    },
+    "2": {
+      "name": "近朱者赤",
+      "desc": "简攻击命中处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人，或队伍中任意角色对处于<ct color=#FFFFFF>[啮咬]</ct>状态下的敌人触发<ct color=#F0D12B>[强击]</ct>时，将会无视其15%防御力，当<ct color=#F0D12B>[强击]</ct>伤害触发暴击时，其暴击伤害额外提升50%。",
+      "flavor": {
+        "0": "凝视深渊时会被深渊回以凝视，这只是第一步。",
+        "1": "「然后要靠近它、进入它、理解它，这是第二步。」",
+        "2": "「最后一步…不要成为它。」"
+      }
+    },
+    "3": {
+      "name": "无名氏",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「无名氏，意味着我可以成为任何人。比如你最喜欢的人~」",
+        "1": "「或者，你最恐惧的人？」"
+      }
+    },
+    "4": {
+      "name": "因势利导",
+      "desc": "队伍中任意角色触发<ct color=#F0D12B>[强击]</ct>或<ct color=#FFFFFF>[紊乱]</ct>效果时，全队角色造成的属性异常伤害提升18%，持续15秒。",
+      "flavor": {
+        "0": "「是猎人还是猎物，往往取决于你选择的视角。不过，我更喜欢另一个简单的判断方式——」",
+        "1": "「输的人，就是猎物。」"
+      }
+    },
+    "5": {
+      "name": "囤积癖好",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "简的房间里永远塞满了各式各样的东西，其中最多的是速食食品。",
+        "1": "「这里很不错吧？到处都是触手可及的食物哦~」"
+      }
+    },
+    "6": {
+      "name": "「肮脏」技巧",
+      "desc": "<ct color=#FFFFFF>[狂热]</ct>状态下，简的暴击率提升20%，暴击伤害提升40%；队伍中任意角色对敌人施加<ct color=#F0D12B>[强击]</ct>效果时，简将直接进入<ct color=#FFFFFF>[狂热]</ct>状态，并使<ct color=#FFFFFF>[狂热心流]</ct>回复至上限，此次<ct color=#F0D12B>[强击]</ct>伤害触发暴击时，将会对目标发动一次额外攻击，造成等同于简1600%异常精通的<ct color=#F0D12B>物理伤害</ct>。",
+      "flavor": {
+        "0": "街头可不在乎手段脏不脏，只在乎结果赢没赢。",
+        "1": "「看清最黑暗的欲望，才能推演出最痛切的弱点。」"
+      }
+    }
+  },
+  "potential": {}
+}

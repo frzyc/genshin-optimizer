@@ -1,0 +1,14 @@
+{
+  "name": "「月相」-望",
+  "desc": "专注调整输出能力、因此忽视降噪处理的音擎，能够对周围的单位造成无差别伤害。设计者对此的辩解是：当月光过分明亮，失眠者也会难受、无计可施；那月光也不是故意的，习惯就好。",
+  "desc2": "装备后可提升[强攻]代理人的战斗能力",
+  "desc3": "专注调整输出能力、因此忽视降噪处理的音擎，能够对周围的单位造成无差别伤害。",
+  "phase": "满月",
+  "phaseDescs": [
+    "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>造成的伤害提升<ct color=#2BAD00>12%</ct>。",
+    "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>造成的伤害提升<ct color=#2BAD00>14%</ct>。",
+    "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>造成的伤害提升<ct color=#2BAD00>16%</ct>。",
+    "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>造成的伤害提升<ct color=#2BAD00>18%</ct>。",
+    "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>造成的伤害提升<ct color=#2BAD00>20%</ct>。"
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "name": "柏妮思",
+  "fullName": "Burnice White",
+  "basic": {
+    "BasicAttackDirectFlameBlend": {
+      "name": "普通攻击：炽焰直调式",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FF5521>火属性伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackMixedFlameBlend": {
+      "name": "普通攻击：炽焰搅拌式",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[燃油特调]</ct>状态下，长按 <IconNormal /> 发动：",
+        "1": "持续回旋并向周身喷射火焰，随后发动终结一击，额外触发一次不消耗<ct color=#FFFFFF>[燃点]</ct>的<ct color=#FFFFFF>[余烬]</ct>，造成<ct color=#FF5521>火属性伤害</ct>，保持长按可以延长喷射的持续时间；",
+        "2": "招式造成的伤害同时视为<ct color=#FFFFFF>[支援攻击]</ct>伤害；",
+        "3": "招式发动时，将会消耗20点<ct color=#FFFFFF>[燃点]</ct>；",
+        "4": "招式发动期间抗打断等级提升；",
+        "5": "终结一击发动后，点按 <IconSpecialReady /> 可以直接衔接发动<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>。"
+      },
+      "params": [
+        "Continuous Spray ",
+        "Finishing Move "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeFieryPhantomDash": {
+      "name": "闪避：焰影疾行",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackDangerousFermentation": {
+      "name": "冲刺攻击：危险发酵式",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "挥舞喷射器向前方进行突进攻击，造成<ct color=#FF5521>火属性伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterFlutteringSteps": {
+      "name": "闪避反击：摇荡闪",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动连续攻击并喷射火焰，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackIntenseHeatAgingMethod": {
+      "name": "特殊技：灼热熟成法",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方发动一次火焰冲击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "长按 <IconSpecial /> 可以进行蓄力，提升招式的威力；",
+        "3": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " ",
+        "Charged Attack ",
+        "Charged "
+      ]
+    },
+    "EXSpecialAttackIntenseHeatStirringMethod": {
+      "name": "强化特殊技：灼热摇荡法",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "使用单手喷射器持续喷射火焰，随后向前方直线范围发动一次火焰冲击，造成大量<ct color=#FF5521>火属性伤害</ct>，保持长按可以持续消耗能量并延长喷射的持续时间；",
+        "2": "持续喷射期间拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，可以发动侧身闪避，向对应方向调整身位；",
+        "3": "持续喷射期间抗打断等级提升，受到的伤害降低60%；",
+        "4": "侧身闪避和火焰冲击发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Continuous Spray ",
+        "Fire Blast ",
+        "发动所需能量",
+        "持续喷射能量消耗",
+        "火焰冲击能量消耗"
+      ]
+    },
+    "EXSpecialAttackIntenseHeatStirringMethodDoubleShot": {
+      "name": "强化特殊技：灼热摇荡法·双份",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[强化特殊技：灼热摇荡法]</ct>发动期间，能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "使用双手喷射器持续喷射火焰，随后向前方直线范围发动一次强力的火焰冲击，造成大量<ct color=#FF5521>火属性伤害</ct>，保持长按可以持续消耗能量并延长喷射的持续时间；",
+        "2": "喷射发动瞬间和火焰冲击发动期间拥有无敌效果；",
+        "3": "持续喷射期间抗打断等级提升，受到的伤害降低60%。"
+      },
+      "params": [
+        "Continuous Spray ",
+        "Fire Blast ",
+        "发动所需能量",
+        "持续喷射能量消耗",
+        "火焰冲击能量消耗"
+      ]
+    },
+    "EXSpecialAttackIntenseHeatTossingMethod": {
+      "name": "强化特殊技：灼热抛接法",
+      "desc": {
+        "0": "拥有<ct color=#FFFFFF>[流火]</ct>时，换入前场时发动：",
+        "1": "队友触发12次<ct color=#FFFFFF>[余烬]</ct>后，柏妮思获得一点<ct color=#FFFFFF>[流火]</ct>，拥有<ct color=#FFFFFF>[流火]</ct>时，柏妮思下一次换入前场时消耗一点<ct color=#FFFFFF>[流火]</ct>自动发动该招式，该次入场视作以[快速支援]入场，<ct color=#FFFFFF>[普通攻击：炽焰搅拌式]</ct>触发的<ct color=#FFFFFF>[余烬]</ct>命中敌人时增加2次计数，拥有<ct color=#FFFFFF>[流火]</ct>时不再增加计数，消耗<ct color=#FFFFFF>[流火]</ct>时清空计数；",
+        "2": "快速突进并越过敌人，向敌人发动一次火焰冲击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FF5521>火属性伤害</ct>；",
+        "3": "招式重击命中处于<ct color=#FE437E>以太异常状态</ct>、<ct color=#2EB6FF>电属性异常状态</ct>、<ct color=#FF5521>火属性异常状态</ct>、<ct color=#F0D12B>物理属性异常状态</ct>、<ct color=#98EFF0>冰属性异常状态</ct>的目标时，触发一次<ct color=#FFFFFF>[异放]</ct>：额外结算一次原属性异常<ct color=#FE437E>480%</ct>/<ct color=#2EB6FF>240%</ct>/<ct color=#FF5521>600%</ct>/<ct color=#F0D12B>40%</ct>/<ct color=#98EFF0>60%</ct>的伤害；",
+        "4": "[额外能力：星火燎原]的<ct color=#FF5521>火属性异常积蓄值</ct>提升效果对该招式生效；",
+        "5": "招式发动期间拥有无敌效果；",
+        "6": "招式发动后，点按 <IconSpecialReady /> 可以直接衔接发动<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackFuelFedFlame": {
+      "name": "连携技：燃油熔焰",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "快速突进并向周身喷射火焰，随后向前方扇形范围发动一次火焰冲击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，点按 <IconSpecialReady /> 可以直接衔接发动<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateGloriousInferno": {
+      "name": "终结技：纵享盛焰",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "快速突进后跃向空中，对前方大范围区域持续喷射火焰，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "跃向空中时，将触发<ct color=#FFFFFF>[快速支援]</ct>，若响应<ct color=#FFFFFF>[快速支援]</ct>，柏妮思会延长火焰喷射的持续时间；",
+        "3": "招式发动时，回复50点<ct color=#FFFFFF>[燃点]</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Maximum "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistEnergizingSpecialtyDrink": {
+      "name": "快速支援：提神特饮",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动连续攻击并喷射火焰，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，点按 <IconSpecialReady /> 可以直接衔接发动<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistSmokyCauldron": {
+      "name": "招架支援：烟熏油盅",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpScorchingDew": {
+      "name": "支援突击：灼焰甘露",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "腾空跃起，快速旋转前进并向周身喷射火焰，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，点按 <IconSpecialReady /> 可以直接衔接发动<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：燃油特调",
+    "desc": [
+      {
+        "0": "柏妮思消耗能量值时，会为自身累积<ct color=#FFFFFF>[燃点]</ct>，最多累积100点；每消耗1点能量值，能够累积1.4点<ct color=#FFFFFF>[燃点]</ct>，当<ct color=#FFFFFF>[燃点]</ct>累积至50点时，柏妮思将进入<ct color=#FFFFFF>[燃油特调]</ct>状态，直到<ct color=#FFFFFF>[燃点]</ct>耗尽；进入战场时，柏妮思立刻累积100点<ct color=#FFFFFF>[燃点]</ct>；",
+        "1": "<ct color=#FFFFFF>[燃油特调]</ct>状态下，柏妮思的<ct color=#FFFFFF>[普通攻击：炽焰搅拌式]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>、<ct color=#FFFFFF>[连携技：燃油熔焰]</ct>或<ct color=#FFFFFF>[终结技：纵享盛焰]</ct>命中敌人时，将对目标施加<ct color=#FFFFFF>[灼伤]</ct>效果，直到柏妮思退出<ct color=#FFFFFF>[燃油特调]</ct>状态；队伍中其他角色攻击命中处于<ct color=#FFFFFF>[灼伤]</ct>状态下的敌人时，会触发<ct color=#FFFFFF>[余烬]</ct>效果，消耗8点<ct color=#FFFFFF>[燃点]</ct>，对目标造成等同于柏妮思<ct color=#2BAD00>175%</ct>攻击力的<ct color=#FF5521>火属性伤害</ct>并累积<ct color=#FF5521>火属性异常积蓄值</ct>，1.5秒内最多触发一次；每拥有10点异常精通，<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害提升1%，最多提升30%；<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害被视为<ct color=#FFFFFF>[支援攻击]</ct>伤害。"
+      },
+      {
+        "0": "柏妮思消耗能量值时，会为自身累积<ct color=#FFFFFF>[燃点]</ct>，最多累积100点；每消耗1点能量值，能够累积1.4点<ct color=#FFFFFF>[燃点]</ct>，当<ct color=#FFFFFF>[燃点]</ct>累积至50点时，柏妮思将进入<ct color=#FFFFFF>[燃油特调]</ct>状态，直到<ct color=#FFFFFF>[燃点]</ct>耗尽；进入战场时，柏妮思立刻累积100点<ct color=#FFFFFF>[燃点]</ct>；",
+        "1": "<ct color=#FFFFFF>[燃油特调]</ct>状态下，柏妮思的<ct color=#FFFFFF>[普通攻击：炽焰搅拌式]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>、<ct color=#FFFFFF>[连携技：燃油熔焰]</ct>或<ct color=#FFFFFF>[终结技：纵享盛焰]</ct>命中敌人时，将对目标施加<ct color=#FFFFFF>[灼伤]</ct>效果，直到柏妮思退出<ct color=#FFFFFF>[燃油特调]</ct>状态；队伍中其他角色攻击命中处于<ct color=#FFFFFF>[灼伤]</ct>状态下的敌人时，会触发<ct color=#FFFFFF>[余烬]</ct>效果，消耗8点<ct color=#FFFFFF>[燃点]</ct>，对目标造成等同于柏妮思<ct color=#2BAD00>205%</ct>攻击力的<ct color=#FF5521>火属性伤害</ct>并累积<ct color=#FF5521>火属性异常积蓄值</ct>，1.5秒内最多触发一次；每拥有10点异常精通，<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害提升1%，最多提升30%；<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害被视为<ct color=#FFFFFF>[支援攻击]</ct>伤害。"
+      },
+      {
+        "0": "柏妮思消耗能量值时，会为自身累积<ct color=#FFFFFF>[燃点]</ct>，最多累积100点；每消耗1点能量值，能够累积1.4点<ct color=#FFFFFF>[燃点]</ct>，当<ct color=#FFFFFF>[燃点]</ct>累积至50点时，柏妮思将进入<ct color=#FFFFFF>[燃油特调]</ct>状态，直到<ct color=#FFFFFF>[燃点]</ct>耗尽；进入战场时，柏妮思立刻累积100点<ct color=#FFFFFF>[燃点]</ct>；",
+        "1": "<ct color=#FFFFFF>[燃油特调]</ct>状态下，柏妮思的<ct color=#FFFFFF>[普通攻击：炽焰搅拌式]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>、<ct color=#FFFFFF>[连携技：燃油熔焰]</ct>或<ct color=#FFFFFF>[终结技：纵享盛焰]</ct>命中敌人时，将对目标施加<ct color=#FFFFFF>[灼伤]</ct>效果，直到柏妮思退出<ct color=#FFFFFF>[燃油特调]</ct>状态；队伍中其他角色攻击命中处于<ct color=#FFFFFF>[灼伤]</ct>状态下的敌人时，会触发<ct color=#FFFFFF>[余烬]</ct>效果，消耗8点<ct color=#FFFFFF>[燃点]</ct>，对目标造成等同于柏妮思<ct color=#2BAD00>235%</ct>攻击力的<ct color=#FF5521>火属性伤害</ct>并累积<ct color=#FF5521>火属性异常积蓄值</ct>，1.5秒内最多触发一次；每拥有10点异常精通，<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害提升1%，最多提升30%；<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害被视为<ct color=#FFFFFF>[支援攻击]</ct>伤害。"
+      },
+      {
+        "0": "柏妮思消耗能量值时，会为自身累积<ct color=#FFFFFF>[燃点]</ct>，最多累积100点；每消耗1点能量值，能够累积1.4点<ct color=#FFFFFF>[燃点]</ct>，当<ct color=#FFFFFF>[燃点]</ct>累积至50点时，柏妮思将进入<ct color=#FFFFFF>[燃油特调]</ct>状态，直到<ct color=#FFFFFF>[燃点]</ct>耗尽；进入战场时，柏妮思立刻累积100点<ct color=#FFFFFF>[燃点]</ct>；",
+        "1": "<ct color=#FFFFFF>[燃油特调]</ct>状态下，柏妮思的<ct color=#FFFFFF>[普通攻击：炽焰搅拌式]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>、<ct color=#FFFFFF>[连携技：燃油熔焰]</ct>或<ct color=#FFFFFF>[终结技：纵享盛焰]</ct>命中敌人时，将对目标施加<ct color=#FFFFFF>[灼伤]</ct>效果，直到柏妮思退出<ct color=#FFFFFF>[燃油特调]</ct>状态；队伍中其他角色攻击命中处于<ct color=#FFFFFF>[灼伤]</ct>状态下的敌人时，会触发<ct color=#FFFFFF>[余烬]</ct>效果，消耗8点<ct color=#FFFFFF>[燃点]</ct>，对目标造成等同于柏妮思<ct color=#2BAD00>262%</ct>攻击力的<ct color=#FF5521>火属性伤害</ct>并累积<ct color=#FF5521>火属性异常积蓄值</ct>，1.5秒内最多触发一次；每拥有10点异常精通，<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害提升1%，最多提升30%；<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害被视为<ct color=#FFFFFF>[支援攻击]</ct>伤害。"
+      },
+      {
+        "0": "柏妮思消耗能量值时，会为自身累积<ct color=#FFFFFF>[燃点]</ct>，最多累积100点；每消耗1点能量值，能够累积1.4点<ct color=#FFFFFF>[燃点]</ct>，当<ct color=#FFFFFF>[燃点]</ct>累积至50点时，柏妮思将进入<ct color=#FFFFFF>[燃油特调]</ct>状态，直到<ct color=#FFFFFF>[燃点]</ct>耗尽；进入战场时，柏妮思立刻累积100点<ct color=#FFFFFF>[燃点]</ct>；",
+        "1": "<ct color=#FFFFFF>[燃油特调]</ct>状态下，柏妮思的<ct color=#FFFFFF>[普通攻击：炽焰搅拌式]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>、<ct color=#FFFFFF>[连携技：燃油熔焰]</ct>或<ct color=#FFFFFF>[终结技：纵享盛焰]</ct>命中敌人时，将对目标施加<ct color=#FFFFFF>[灼伤]</ct>效果，直到柏妮思退出<ct color=#FFFFFF>[燃油特调]</ct>状态；队伍中其他角色攻击命中处于<ct color=#FFFFFF>[灼伤]</ct>状态下的敌人时，会触发<ct color=#FFFFFF>[余烬]</ct>效果，消耗8点<ct color=#FFFFFF>[燃点]</ct>，对目标造成等同于柏妮思<ct color=#2BAD00>290%</ct>攻击力的<ct color=#FF5521>火属性伤害</ct>并累积<ct color=#FF5521>火属性异常积蓄值</ct>，1.5秒内最多触发一次；每拥有10点异常精通，<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害提升1%，最多提升30%；<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害被视为<ct color=#FFFFFF>[支援攻击]</ct>伤害。"
+      },
+      {
+        "0": "柏妮思消耗能量值时，会为自身累积<ct color=#FFFFFF>[燃点]</ct>，最多累积100点；每消耗1点能量值，能够累积1.4点<ct color=#FFFFFF>[燃点]</ct>，当<ct color=#FFFFFF>[燃点]</ct>累积至50点时，柏妮思将进入<ct color=#FFFFFF>[燃油特调]</ct>状态，直到<ct color=#FFFFFF>[燃点]</ct>耗尽；进入战场时，柏妮思立刻累积100点<ct color=#FFFFFF>[燃点]</ct>；",
+        "1": "<ct color=#FFFFFF>[燃油特调]</ct>状态下，柏妮思的<ct color=#FFFFFF>[普通攻击：炽焰搅拌式]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>、<ct color=#FFFFFF>[连携技：燃油熔焰]</ct>或<ct color=#FFFFFF>[终结技：纵享盛焰]</ct>命中敌人时，将对目标施加<ct color=#FFFFFF>[灼伤]</ct>效果，直到柏妮思退出<ct color=#FFFFFF>[燃油特调]</ct>状态；队伍中其他角色攻击命中处于<ct color=#FFFFFF>[灼伤]</ct>状态下的敌人时，会触发<ct color=#FFFFFF>[余烬]</ct>效果，消耗8点<ct color=#FFFFFF>[燃点]</ct>，对目标造成等同于柏妮思<ct color=#2BAD00>320%</ct>攻击力的<ct color=#FF5521>火属性伤害</ct>并累积<ct color=#FF5521>火属性异常积蓄值</ct>，1.5秒内最多触发一次；每拥有10点异常精通，<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害提升1%，最多提升30%；<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害被视为<ct color=#FFFFFF>[支援攻击]</ct>伤害。"
+      },
+      {
+        "0": "柏妮思消耗能量值时，会为自身累积<ct color=#FFFFFF>[燃点]</ct>，最多累积100点；每消耗1点能量值，能够累积1.4点<ct color=#FFFFFF>[燃点]</ct>，当<ct color=#FFFFFF>[燃点]</ct>累积至50点时，柏妮思将进入<ct color=#FFFFFF>[燃油特调]</ct>状态，直到<ct color=#FFFFFF>[燃点]</ct>耗尽；进入战场时，柏妮思立刻累积100点<ct color=#FFFFFF>[燃点]</ct>；",
+        "1": "<ct color=#FFFFFF>[燃油特调]</ct>状态下，柏妮思的<ct color=#FFFFFF>[普通攻击：炽焰搅拌式]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>、<ct color=#FFFFFF>[连携技：燃油熔焰]</ct>或<ct color=#FFFFFF>[终结技：纵享盛焰]</ct>命中敌人时，将对目标施加<ct color=#FFFFFF>[灼伤]</ct>效果，直到柏妮思退出<ct color=#FFFFFF>[燃油特调]</ct>状态；队伍中其他角色攻击命中处于<ct color=#FFFFFF>[灼伤]</ct>状态下的敌人时，会触发<ct color=#FFFFFF>[余烬]</ct>效果，消耗8点<ct color=#FFFFFF>[燃点]</ct>，对目标造成等同于柏妮思<ct color=#2BAD00>350%</ct>攻击力的<ct color=#FF5521>火属性伤害</ct>并累积<ct color=#FF5521>火属性异常积蓄值</ct>，1.5秒内最多触发一次；每拥有10点异常精通，<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害提升1%，最多提升30%；<ct color=#FFFFFF>[余烬]</ct>效果造成的伤害被视为<ct color=#FFFFFF>[支援攻击]</ct>伤害。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：星火燎原",
+    "desc": {
+      "0": "队伍中存在其他<ct color=#FFFFFF>[异常]</ct>角色或与自身阵营相同的角色时触发：",
+      "1": "柏妮思<ct color=#FFFFFF>[普通攻击：炽焰搅拌式]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法]</ct>、<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>命中敌人，或触发<ct color=#FFFFFF>[余烬]</ct>效果时，招式累积的<ct color=#FF5521>火属性异常积蓄值</ct>提升65%；队伍中任意角色对敌人施加<ct color=#FF5521>[灼烧]</ct>效果时，该效果的持续时间提升3秒。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "热络同心",
+      "desc": "<ct color=#FFFFFF>[燃点]</ct>的上限从100点提升至140点，进入战场时，柏妮思额外累积40点<ct color=#FFFFFF>[燃点]</ct>；<ct color=#FFFFFF>[余烬]</ct>效果的伤害倍率提升，提升效果等同于柏妮思攻击力的100%；<ct color=#FFFFFF>[余烬]</ct>效果累积的<ct color=#FF5521>火属性异常积蓄值</ct>提升25%。",
+      "flavor": {
+        "0": "「谁都有不够顺利的时候，很正常啦！」",
+        "1": "「别难过，凯撒，来一杯燃油饮特调怎么样？我加了很多很多糖哦！」"
+      }
+    },
+    "2": {
+      "name": "加量不加价",
+      "desc": "触发<ct color=#FFFFFF>[余烬]</ct>效果时，将对敌人施加<ct color=#FFFFFF>[热意洞穿]</ct>，最多叠加5层，持续6秒，重复触发时刷新持续时间；受到我方攻击时，目标每拥有一层<ct color=#FFFFFF>[热意洞穿]</ct>，本次攻击的穿透率提升4%，最多提升20%。",
+      "flavor": {
+        "0": "作为卡吕冬之子的调饮师，柏妮思乐于为所有朋友调制新艾利都最美味的燃油饮。",
+        "1": "当然，如果你是她的「敌人」…则会有机会喝到前所未有的新口味饮品。",
+        "2": "「是一生只能喝一次的超绝美味哦！」"
+      }
+    },
+    "3": {
+      "name": "天性乐观",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「柏妮思那家伙，不管什么时候都是一副元气满满的样子啊！就连刚起床都是！真不知道她从哪来这么多能量…」",
+        "1": "「更可怕的是，她还能把身边人都带动着积极起来！这简直快称得上是妖怪了吧！」",
+        "2": "「不过…我倒是不讨厌就是啦…」",
+        "3": "——来自一位不愿意透露姓名的猪猪管理者"
+      }
+    },
+    "4": {
+      "name": "超绝燃油补给",
+      "desc": "<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[支援攻击]</ct>命中敌人时，招式的暴击率提升30%；<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>中，火焰喷射的持续时间上限提升1秒。",
+      "flavor": {
+        "0": "「喜欢我调的饮料？谢谢你，大钢牙也很喜欢~那家伙一顿能吃两百升呢！」",
+        "1": "「哦，大钢牙就是我们的那辆大卡车啦！」",
+        "2": "「想尝尝它的特供燃油吗？很火热的哦~」"
+      }
+    },
+    "5": {
+      "name": "火与冰之舞",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "在调制饮品的时候，冰块也是非常重要的一环。",
+        "1": "毕竟没有极致的冰冷，就难以衬托出极致的火热。",
+        "2": "「这种火与冰交融的感觉~真令人沉迷呢！」"
+      }
+    },
+    "6": {
+      "name": "盛焰邀约",
+      "desc": "柏妮思的<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>命中敌人时，将额外触发特殊的<ct color=#FFFFFF>[余烬]</ct>效果，对目标造成等同于柏妮思60%攻击力的<ct color=#FF5521>火属性伤害</ct>，0.5秒内最多触发1次，无需消耗<ct color=#FFFFFF>[燃点]</ct>；发动<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>命中敌人后，招式发动期间，<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>、特殊的<ct color=#FFFFFF>[余烬]</ct>效果、<ct color=#FF5521>[灼烧]</ct>效果将无视目标25%<ct color=#FF5521>火属性伤害抗性</ct>；在<ct color=#FFFFFF>[强化特殊技：灼热摇荡法·双份]</ct>中发动火焰冲击命中处于<ct color=#FF5521>[灼烧]</ct>状态下的敌人时，能够额外结算一次<ct color=#FF5521>[灼烧]</ct>伤害，伤害效果等同于原本的1800%，同一目标20秒内最多触发一次。",
+      "flavor": {
+        "0": "好像从来没有谁见过柏妮思真正生气的样子。",
+        "1": "「相信我，你们不会想要看到的~」",
+        "2": "——来自一位正在大钢牙上准备入睡的司机"
+      }
+    }
+  },
+  "potential": {
+    "name": "潜能觉醒：沸点派对",
+    "desc": [
+      "",
+      "当柏妮思的初始能量自动回复大于等于1.8点时，超过的部分每拥有0.1点初始能量自动回复，异常掌控额外提升<ct color=#2BAD00>1</ct>点，造成的伤害提升<ct color=#2BAD00>1%</ct>，异常掌控最多提升25点，造成的伤害最多提升20%；[核心被动：燃油特调]中触发<ct color=#FFFFFF>[余烬]</ct>的间隔降低至1.35秒。",
+      "当柏妮思的初始能量自动回复大于等于1.8点时，超过的部分每拥有0.1点初始能量自动回复，异常掌控额外提升<ct color=#2BAD00>1.3</ct>点，造成的伤害提升<ct color=#2BAD00>1.25%</ct>，异常掌控最多提升25点，造成的伤害最多提升20%；[核心被动：燃油特调]中触发<ct color=#FFFFFF>[余烬]</ct>的间隔降低至1.35秒。",
+      "当柏妮思的初始能量自动回复大于等于1.8点时，超过的部分每拥有0.1点初始能量自动回复，异常掌控额外提升<ct color=#2BAD00>1.6</ct>点，造成的伤害提升<ct color=#2BAD00>1.5%</ct>，异常掌控最多提升25点，造成的伤害最多提升20%；[核心被动：燃油特调]中触发<ct color=#FFFFFF>[余烬]</ct>的间隔降低至1.35秒。",
+      "当柏妮思的初始能量自动回复大于等于1.8点时，超过的部分每拥有0.1点初始能量自动回复，异常掌控额外提升<ct color=#2BAD00>2</ct>点，造成的伤害提升<ct color=#2BAD00>1.75%</ct>，异常掌控最多提升25点，造成的伤害最多提升20%；[核心被动：燃油特调]中触发<ct color=#FFFFFF>[余烬]</ct>的间隔降低至1.35秒。",
+      "当柏妮思的初始能量自动回复大于等于1.8点时，超过的部分每拥有0.1点初始能量自动回复，异常掌控额外提升<ct color=#2BAD00>2.5</ct>点，造成的伤害提升<ct color=#2BAD00>2%</ct>，异常掌控最多提升25点，造成的伤害最多提升20%；[核心被动：燃油特调]中触发<ct color=#FFFFFF>[余烬]</ct>的间隔降低至1.35秒。"
+    ]
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "name": "格莉丝",
+  "fullName": "Grace Howard",
+  "basic": {
+    "BasicAttackHighPressureSpike": {
+      "name": "普通攻击：高压射钉",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "在<ct color=#FFFFFF>[普通攻击]</ct>期间向侧方拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，可以发动垫步射击，调整身位并造成<ct color=#F0D12B>物理伤害</ct>，在<ct color=#FFFFFF>[普通攻击]</ct>第一/第二段后发动时，继续点按 <IconNormal /> 会从<ct color=#FFFFFF>[普通攻击]</ct>第三/第四段连击继续；",
+        "3": "格莉丝在<ct color=#FFFFFF>[普通攻击]</ct>期间发动<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>时，不会打断<ct color=#FFFFFF>[普通攻击]</ct>的连击段数。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "Moving Shot "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeSafetyRegulation": {
+      "name": "闪避：安全条款",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackQuickInspection": {
+      "name": "冲刺攻击：突击检查",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方滑铲扫射，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterViolationPenalty": {
+      "name": "闪避反击：违章处罚",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对敌人投掷一颗手雷，造成<ct color=#2EB6FF>电属性伤害</ct>，随后自动发动<ct color=#FFFFFF>[普通攻击]</ct>第四段；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackObstructionRemoval": {
+      "name": "特殊技：工程清障",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方投掷一颗手雷，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "发动招式时，可以拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，向对应方向调整身位；",
+        "3": "消耗<ct color=#FFFFFF>[电能]</ct>发动时可以闪避敌人的攻击；",
+        "4": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackSuperchargedObstructionRemoval": {
+      "name": "强化特殊技：超规工程清障",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "腾空跃起，并向前方投掷两颗手雷，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "发动招式时，可以拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，向对应方向调整身位；",
+        "3": "若<ct color=#FFFFFF>[电能]</ct>层数到达上限，会额外投掷一枚[涡流集束手雷]，在爆炸位置生成电磁场，持续牵引敌人，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    },
+    "Pulse": {
+      "name": "[脉冲]",
+      "desc": {
+        "0": "发动[终结技]时，获得25层<ct color=#FFFFFF>[脉冲]</ct>（上限25层），获得<ct color=#FFFFFF>[电能]</ct>时会消耗一层<ct color=#FFFFFF>[脉冲]</ct>；",
+        "1": "消耗<ct color=#FFFFFF>[脉冲]</ct>获得8层<ct color=#FFFFFF>[电能]</ct>时，下次投掷手雷时会额外丢出一枚脉冲手雷，并在命中处于<ct color=#FE437E>以太异常状态</ct>、<ct color=#2EB6FF>电属性异常状态</ct>、<ct color=#FF5521>火属性异常状态</ct>、<ct color=#F0D12B>物理属性异常状态</ct>、<ct color=#98EFF0>冰属性异常状态</ct>的目标时，触发一次<ct color=#FFFFFF>[异放]</ct>：额外结算一次原属性异常<ct color=#FE437E>560%</ct>/<ct color=#2EB6FF>280%</ct>/<ct color=#FF5521>700%</ct>/<ct color=#F0D12B>50%</ct>/<ct color=#98EFF0>70%</ct>的伤害；",
+        "2": "[脉冲]状态下解锁<ct color=#FFFFFF>[特殊技：工程清障·循环]</ct>。"
+      },
+      "params": []
+    },
+    "SpecialAttackObstructionRemovalCycle": {
+      "name": "特殊技：工程清障·循环",
+      "desc": {
+        "0": "[脉冲]状态下长按 <IconSpecial /> 发动：",
+        "1": "招式期间持续向前方投掷手雷，造成<ct color=#2EB6FF>电属性伤害</ct>，每次投掷手雷获得一层<ct color=#FFFFFF>[电能]</ct>；",
+        "2": "发动招式时，可以拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，向对应方向调整身位，并可以闪避敌人的攻击；",
+        "3": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackCollaborativeConstruction": {
+      "name": "连携技：协作施工",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "向空中抛出三颗手雷，随后扫射将其引爆，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateDemolitionBlastBeware": {
+      "name": "终结技：工程爆破请勿接近",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "丢出一枚特制的手雷，其在空中爆炸后会分裂成四颗更小的手雷，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "获得8层<ct color=#FFFFFF>[电能]</ct>和25层<ct color=#FFFFFF>[脉冲]</ct>（上限25层）；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistIncidentManagement": {
+      "name": "快速支援：事故解决方案",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对敌人投掷一颗手雷，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EvasiveAssistRapidRiskResponse": {
+      "name": "回避支援：快速风险响应",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "回避敌人的攻击，并触发<ct color=#FFFFFF>[极限视域]</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "AssistFollowUpCounterVoltNeedle": {
+      "name": "支援突击：反击电针",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[回避支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动回旋扫射并投掷手雷，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：预驱动撞针",
+    "desc": [
+      "格莉丝<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>命中敌人并造成<ct color=#F0D12B>物理伤害</ct>时，获得一层<ct color=#FFFFFF>[电能]</ct>（上限8层）；<ct color=#FFFFFF>[电能]</ct>层数到达上限后，发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，会消耗所有<ct color=#FFFFFF>[电能]</ct>，使招式累积的<ct color=#2EB6FF>电属性异常积蓄值</ct>提升<ct color=#2BAD00>65%</ct>。",
+      "格莉丝<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>命中敌人并造成<ct color=#F0D12B>物理伤害</ct>时，获得一层<ct color=#FFFFFF>[电能]</ct>（上限8层）；<ct color=#FFFFFF>[电能]</ct>层数到达上限后，发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，会消耗所有<ct color=#FFFFFF>[电能]</ct>，使招式累积的<ct color=#2EB6FF>电属性异常积蓄值</ct>提升<ct color=#2BAD00>75.8%</ct>。",
+      "格莉丝<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>命中敌人并造成<ct color=#F0D12B>物理伤害</ct>时，获得一层<ct color=#FFFFFF>[电能]</ct>（上限8层）；<ct color=#FFFFFF>[电能]</ct>层数到达上限后，发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，会消耗所有<ct color=#FFFFFF>[电能]</ct>，使招式累积的<ct color=#2EB6FF>电属性异常积蓄值</ct>提升<ct color=#2BAD00>86.6%</ct>。",
+      "格莉丝<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>命中敌人并造成<ct color=#F0D12B>物理伤害</ct>时，获得一层<ct color=#FFFFFF>[电能]</ct>（上限8层）；<ct color=#FFFFFF>[电能]</ct>层数到达上限后，发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，会消耗所有<ct color=#FFFFFF>[电能]</ct>，使招式累积的<ct color=#2EB6FF>电属性异常积蓄值</ct>提升<ct color=#2BAD00>97.5%</ct>。",
+      "格莉丝<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>命中敌人并造成<ct color=#F0D12B>物理伤害</ct>时，获得一层<ct color=#FFFFFF>[电能]</ct>（上限8层）；<ct color=#FFFFFF>[电能]</ct>层数到达上限后，发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，会消耗所有<ct color=#FFFFFF>[电能]</ct>，使招式累积的<ct color=#2EB6FF>电属性异常积蓄值</ct>提升<ct color=#2BAD00>108.3%</ct>。",
+      "格莉丝<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>命中敌人并造成<ct color=#F0D12B>物理伤害</ct>时，获得一层<ct color=#FFFFFF>[电能]</ct>（上限8层）；<ct color=#FFFFFF>[电能]</ct>层数到达上限后，发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，会消耗所有<ct color=#FFFFFF>[电能]</ct>，使招式累积的<ct color=#2EB6FF>电属性异常积蓄值</ct>提升<ct color=#2BAD00>119.1%</ct>。",
+      "格莉丝<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>命中敌人并造成<ct color=#F0D12B>物理伤害</ct>时，获得一层<ct color=#FFFFFF>[电能]</ct>（上限8层）；<ct color=#FFFFFF>[电能]</ct>层数到达上限后，发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，会消耗所有<ct color=#FFFFFF>[电能]</ct>，使招式累积的<ct color=#2EB6FF>电属性异常积蓄值</ct>提升<ct color=#2BAD00>130%</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：技术支持班组",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色或其他<ct color=#FFFFFF>[异常]</ct>角色时触发：",
+      "1": "格莉丝<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，目标下次被施加<ct color=#2EB6FF>[感电]</ct>效果时，该次<ct color=#2EB6FF>[感电]</ct>伤害提升18%，最多叠加2层，同一招式内每个敌人最多触发一次效果，<ct color=#2EB6FF>[感电]</ct>状态结束时效果重置。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "再充能弹膛",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[普通攻击]</ct>第四段每次命中敌人时，全队角色回复0.25点能量；",
+        "1": "同一招式内，该效果最多为全队回复2点能量。"
+      },
+      "flavor": "效率是工程学的生命。在格莉丝的枪膛里，回响着工程学的心跳声。"
+    },
+    "2": {
+      "name": "电致击穿",
+      "desc": "在<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>等招式中投掷手雷命中敌人时，目标的<ct color=#2EB6FF>电属性伤害抗性</ct>降低8.5%，<ct color=#2EB6FF>电属性异常积蓄抗性</ct>降低8.5%，持续8秒。",
+      "flavor": {
+        "0": "「解剖」复杂的机械结构是格莉丝最大的爱好，即使是在战斗之中。",
+        "1": "被解剖者会作何感想呢？当它们每一方寸的破绽都如此赤裸。"
+      }
+    },
+    "3": {
+      "name": "首席机械师",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "格莉丝亲自参与编写了《白祇重工安全施工指南》，",
+        "1": "并且成为了违反「禁止在施工场地携带危险爆炸物」条例次数最多的员工。"
+      }
+    },
+    "4": {
+      "name": "爆破电容",
+      "desc": "发动<ct color=#FFFFFF>[强化特殊技]</ct>时，格莉丝获得6层充能（上限6层）；<ct color=#FFFFFF>[普通攻击：高压射钉]</ct>或<ct color=#FFFFFF>[冲刺攻击：突击检查]</ct>命中敌人时，消耗1层充能，使当前招式的能量获得效率提升20%。",
+      "flavor": {
+        "0": "安东怀疑，在被格莉丝称为「电脉冲回收模块」的元件里，其实有一只以太仓鼠在不分昼夜地鼠力发电。",
+        "1": "「能在我兄弟上也整一个吗？」"
+      }
+    },
+    "5": {
+      "name": "「冰冷铁魔女」",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "「冰冷铁魔女」能够驯服任何机械造物，至少起这个名字的匿名粉丝是这么认为的。"
+    },
+    "6": {
+      "name": "起爆扳机",
+      "desc": "消耗所有<ct color=#FFFFFF>[电能]</ct>发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，能够强化招式效果，额外投掷一颗手雷，并使每颗手雷造成的伤害提升至原本的200%。",
+      "flavor": {
+        "0": "白祇重工旗下员工的平均血液温度是九十八摄氏度，格莉丝总是被当作沸腾前的降温阀。",
+        "1": "当格莉丝放弃了克制，大家就知道，是时候把耳朵捂上了。"
+      }
+    }
+  },
+  "potential": {
+    "name": "潜能觉醒：超频工程引擎",
+    "desc": [
+      "",
+      "消耗<ct color=#FFFFFF>[电能]</ct>时获得<ct color=#FFFFFF>[电能强化]</ct>状态，造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>10%</ct>，持续25秒，重复触发时刷新持续时间。",
+      "消耗<ct color=#FFFFFF>[电能]</ct>时获得<ct color=#FFFFFF>[电能强化]</ct>状态，造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>15%</ct>，持续25秒，重复触发时刷新持续时间。",
+      "消耗<ct color=#FFFFFF>[电能]</ct>时获得<ct color=#FFFFFF>[电能强化]</ct>状态，造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>20%</ct>，持续25秒，重复触发时刷新持续时间。",
+      "消耗<ct color=#FFFFFF>[电能]</ct>时获得<ct color=#FFFFFF>[电能强化]</ct>状态，造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>25%</ct>，持续25秒，重复触发时刷新持续时间。",
+      "消耗<ct color=#FFFFFF>[电能]</ct>时获得<ct color=#FFFFFF>[电能强化]</ct>状态，造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>30%</ct>，持续25秒，重复触发时刷新持续时间。"
+    ]
+  }
+}

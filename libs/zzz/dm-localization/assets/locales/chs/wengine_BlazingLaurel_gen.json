@@ -1,0 +1,18 @@
+{
+  "name": "焰心桂冠",
+  "desc": {
+    "0": "能以虹吸管引燃烈焰的暴力音擎，以简单粗暴的灼烧伤害，鼓励拳拳到肉的猛烈追击。据称，其中的液体燃剂曾是某个旧文明帝国称霸海战的秘密武器！配方本已失传、重制极其艰难！",
+    "1": "",
+    "2": "<ct color=#959595>「…我本来是说，能有个备用打火机就好。」——莱特，作为此等珍贵燃料的使用者表示</ct>"
+  },
+  "desc2": "装备后可提升[击破]代理人的战斗能力",
+  "desc3": "能以虹吸管引燃烈焰的暴力音擎，以简单粗暴的灼烧伤害，鼓励拳拳到肉的猛烈追击。",
+  "phase": "流动之火",
+  "phaseDescs": [
+    "发动<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[极限支援]</ct>时，装备者的冲击力提升<ct color=#2BAD00>25%</ct>，持续8秒；装备者的<ct color=#FFFFFF>[普通攻击]</ct>命中敌人时，对目标施加一层<ct color=#FFFFFF>[萎靡]</ct>，最多叠加20层，持续30秒，重复触发时刷新持续时间；队伍中任意角色攻击命中敌人时，目标每拥有一层<ct color=#FFFFFF>[萎靡]</ct>，本次攻击中<ct color=#98EFF0>冰属性伤害</ct>和<ct color=#FF5521>火属性伤害</ct>的暴击伤害提升<ct color=#2BAD00>1.5%</ct>，该效果全队唯一。",
+    "发动<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[极限支援]</ct>时，装备者的冲击力提升<ct color=#2BAD00>28.75%</ct>，持续8秒；装备者的<ct color=#FFFFFF>[普通攻击]</ct>命中敌人时，对目标施加一层<ct color=#FFFFFF>[萎靡]</ct>，最多叠加20层，持续30秒，重复触发时刷新持续时间；队伍中任意角色攻击命中敌人时，目标每拥有一层<ct color=#FFFFFF>[萎靡]</ct>，本次攻击中<ct color=#98EFF0>冰属性伤害</ct>和<ct color=#FF5521>火属性伤害</ct>的暴击伤害提升<ct color=#2BAD00>1.72%</ct>，该效果全队唯一。",
+    "发动<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[极限支援]</ct>时，装备者的冲击力提升<ct color=#2BAD00>32.5%</ct>，持续8秒；装备者的<ct color=#FFFFFF>[普通攻击]</ct>命中敌人时，对目标施加一层<ct color=#FFFFFF>[萎靡]</ct>，最多叠加20层，持续30秒，重复触发时刷新持续时间；队伍中任意角色攻击命中敌人时，目标每拥有一层<ct color=#FFFFFF>[萎靡]</ct>，本次攻击中<ct color=#98EFF0>冰属性伤害</ct>和<ct color=#FF5521>火属性伤害</ct>的暴击伤害提升<ct color=#2BAD00>1.95%</ct>，该效果全队唯一。",
+    "发动<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[极限支援]</ct>时，装备者的冲击力提升<ct color=#2BAD00>36.25%</ct>，持续8秒；装备者的<ct color=#FFFFFF>[普通攻击]</ct>命中敌人时，对目标施加一层<ct color=#FFFFFF>[萎靡]</ct>，最多叠加20层，持续30秒，重复触发时刷新持续时间；队伍中任意角色攻击命中敌人时，目标每拥有一层<ct color=#FFFFFF>[萎靡]</ct>，本次攻击中<ct color=#98EFF0>冰属性伤害</ct>和<ct color=#FF5521>火属性伤害</ct>的暴击伤害提升<ct color=#2BAD00>2.17%</ct>，该效果全队唯一。",
+    "发动<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[极限支援]</ct>时，装备者的冲击力提升<ct color=#2BAD00>40%</ct>，持续8秒；装备者的<ct color=#FFFFFF>[普通攻击]</ct>命中敌人时，对目标施加一层<ct color=#FFFFFF>[萎靡]</ct>，最多叠加20层，持续30秒，重复触发时刷新持续时间；队伍中任意角色攻击命中敌人时，目标每拥有一层<ct color=#FFFFFF>[萎靡]</ct>，本次攻击中<ct color=#98EFF0>冰属性伤害</ct>和<ct color=#FF5521>火属性伤害</ct>的暴击伤害提升<ct color=#2BAD00>2.4%</ct>，该效果全队唯一。"
+  ]
+}

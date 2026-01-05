@@ -1,0 +1,263 @@
+{
+  "name": "「扳机」",
+  "fullName": "「扳机」",
+  "basic": {
+    "BasicAttackColdBoreShot": {
+      "name": "普通攻击：冷膛射击",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的射击，前三段造成<ct color=#F0D12B>物理伤害</ct>，第四段造成<ct color=#2EB6FF>电属性伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackSilencedShot": {
+      "name": "普通攻击：无音狙杀",
+      "desc": {
+        "0": "长按 <IconNormal /> 发动：",
+        "1": "「扳机」进入<ct color=#FFFFFF>[狙击姿态]</ct>，向前方连续射击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "连续射击期间，受到敌方攻击时，「扳机」将自动回避攻击，8秒内最多触发一次；",
+        "3": "连续射击期间，可以拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，向左侧/右侧/后方调整身位；",
+        "4": "自动回避攻击或在即将受到攻击时调整身位，将触发<ct color=#FFFFFF>[极限闪避]</ct>，随后自动衔接发动蓄力反击；",
+        "5": "松开 <IconNormal /> 后，「扳机」将后撤架枪并发动终结一击，随后退出<ct color=#FFFFFF>[狙击姿态]</ct>；",
+        "6": "蓄力反击和终结一击发动期间拥有无敌效果；",
+        "7": "连续射击或蓄力反击命中敌人时，「扳机」将获得25点<ct color=#FFFFFF>[绝意]</ct>值，<ct color=#FFFFFF>[绝意]</ct>值上限100点；",
+        "8": "终结一击命中敌人时，将触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>，通过这种方式发动的<ct color=#FFFFFF>[快速支援]</ct>25秒内最多触发一次。"
+      },
+      "params": [
+        "Shot ",
+        "反击",
+        "Finishing Move "
+      ]
+    },
+    "BasicAttackHarmonizingShot": {
+      "name": "普通攻击：协奏狙杀",
+      "desc": {
+        "0": "「扳机」拥有<ct color=#FFFFFF>[绝意]</ct>值后，队伍中其他操作中的角色，发动<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[快速支援]</ct>命中敌人时触发：",
+        "1": "围绕目标敌人，连续发动两次快速射击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动时，消耗3点<ct color=#FFFFFF>[绝意]</ct>值；",
+        "3": "招式发动期间拥有无敌效果；",
+        "4": "<ct color=#FFFFFF>[普通攻击：协奏狙杀]</ct>为<ct color=#FFFFFF>[追加攻击]</ct>；",
+        "5": "全队3秒内最多触发1次<ct color=#FFFFFF>[普通攻击：协奏狙杀]</ct>。"
+      },
+      "params": [
+        "Continuous Fire "
+      ]
+    },
+    "BasicAttackHarmonizingShotTartarus": {
+      "name": "普通攻击：协奏狙杀·冥狱",
+      "desc": {
+        "0": "「扳机」拥有<ct color=#FFFFFF>[绝意]</ct>值后，队伍中其他操作中的角色，发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[终结技]</ct>重击命中敌人时触发：",
+        "1": "围绕目标敌人，连续发动三次快速射击，随后发动终结一击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动时，消耗5点<ct color=#FFFFFF>[绝意]</ct>值；",
+        "3": "招式发动期间拥有无敌效果；",
+        "4": "<ct color=#FFFFFF>[普通攻击：协奏狙杀·冥狱]</ct>为<ct color=#FFFFFF>[追加攻击]</ct>；",
+        "5": "全队同一类型的招式，20秒内最多触发2次<ct color=#FFFFFF>[普通攻击：协奏狙杀·冥狱]</ct>；",
+        "6": "<ct color=#FFFFFF>[普通攻击：协奏狙杀]</ct>发动期间，触发<ct color=#FFFFFF>[普通攻击：协奏狙杀·冥狱]</ct>会直接发动。"
+      },
+      "params": [
+        "Continuous Fire ",
+        "Finishing Move "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgePhantomConcealment": {
+      "name": "闪避：魂隐",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackVengefulSpecter": {
+      "name": "冲刺攻击：怨魂返",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "快速举枪射击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterCondemnedSoul": {
+      "name": "闪避反击：极魂罚",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "转身回旋并对前方敌人发动快速射击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSpectralFlash": {
+      "name": "特殊技：幽闪",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方发动突进斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackFlashBurial": {
+      "name": "强化特殊技：幽闪花葬",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方发动突进斩击，并在跃起后向地面追加一段强力射击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式命中敌人时，将触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>；",
+        "4": "招式命中敌人时，「扳机」将进入<ct color=#FFFFFF>[协战状态]</ct>，期间队伍中其他操作中的角色，发动任意攻击命中敌人时，即可触发<ct color=#FFFFFF>[普通攻击：协奏狙杀]</ct>，无需消耗<ct color=#FFFFFF>[绝意]</ct>值，且没有冷却时间的限制，持续8秒，可触发4次，重复进入<ct color=#FFFFFF>[协战状态]</ct>时延长持续时间，并获得可触发次数；最多持续20秒，可触发10次。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackStygianGuide": {
+      "name": "连携技：冥河之引",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "向前方连续发动强力射击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateUnderworldRequiem": {
+      "name": "终结技：冥府挽歌",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方大范围敌人发动强力射击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式命中敌人时，将触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>；",
+        "4": "招式命中敌人时，「扳机」将进入<ct color=#FFFFFF>[协战状态]</ct>，期间队伍中其他操作中的角色，发动任意攻击命中敌人时，即可触发<ct color=#FFFFFF>[普通攻击：协奏狙杀]</ct>，无需消耗<ct color=#FFFFFF>[绝意]</ct>值，且没有冷却时间的限制，持续12秒，可触发6次，重复进入<ct color=#FFFFFF>[协战状态]</ct>时延长持续时间，并获得可触发次数；最多持续20秒，可触发10次。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistColdBoreCoverFire": {
+      "name": "快速支援：冷枪援护",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "转身回旋并对前方敌人发动快速射击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistDelayingDemise": {
+      "name": "招架支援：死线偏移",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpPiercingThunder": {
+      "name": "支援突击：殛雷穿心",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动连续斩击，随后落地蓄力并追加一段强力射击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：破隙幽瞳",
+    "desc": [
+      "「扳机」发动<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，目标的失衡易伤倍率提升<ct color=#2BAD00>20%</ct>，持续5秒，通过这种途径施加的失衡易伤倍率提升效果，在目标未进入失衡状态时亦可生效。",
+      "「扳机」发动<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，目标的失衡易伤倍率提升<ct color=#2BAD00>22.5%</ct>，持续5秒，通过这种途径施加的失衡易伤倍率提升效果，在目标未进入失衡状态时亦可生效。",
+      "「扳机」发动<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，目标的失衡易伤倍率提升<ct color=#2BAD00>25%</ct>，持续5秒，通过这种途径施加的失衡易伤倍率提升效果，在目标未进入失衡状态时亦可生效。",
+      "「扳机」发动<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，目标的失衡易伤倍率提升<ct color=#2BAD00>27.5%</ct>，持续5秒，通过这种途径施加的失衡易伤倍率提升效果，在目标未进入失衡状态时亦可生效。",
+      "「扳机」发动<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，目标的失衡易伤倍率提升<ct color=#2BAD00>30%</ct>，持续5秒，通过这种途径施加的失衡易伤倍率提升效果，在目标未进入失衡状态时亦可生效。",
+      "「扳机」发动<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，目标的失衡易伤倍率提升<ct color=#2BAD00>32.5%</ct>，持续5秒，通过这种途径施加的失衡易伤倍率提升效果，在目标未进入失衡状态时亦可生效。",
+      "「扳机」发动<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，目标的失衡易伤倍率提升<ct color=#2BAD00>35%</ct>，持续5秒，通过这种途径施加的失衡易伤倍率提升效果，在目标未进入失衡状态时亦可生效。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：灵目银灯",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[强攻]</ct>角色或与自身属性相同的角色时触发：",
+      "1": "「扳机」的暴击率高于40%时，每超过1%暴击率会使自身发动<ct color=#FFFFFF>[追加攻击]</ct>造成的失衡值提升1.5%，最多提升75%。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "精准感知",
+      "desc": "通过<ct color=#FFFFFF>[核心被动：破隙幽瞳]</ct>施加的失衡易伤倍率额外提升20%；发动<ct color=#FFFFFF>[普通攻击：协奏狙杀]</ct>时，触发的冷却时间降低至2秒；在<ct color=#FFFFFF>[狙击姿态]</ct>下发动连续射击或蓄力反击命中敌人时，获得的<ct color=#FFFFFF>[绝意]</ct>值提升25%，<ct color=#FFFFFF>[绝意]</ct>值上限提升至125点。",
+      "flavor": {
+        "0": "能分辨微风的每一丝变化的听觉，能感知地面的每一次震动的触觉。为了弥补视觉上的缺憾，少女将其余的五感磨练到了极致。",
+        "1": "「除了狙击，我别无所长…至少在狙击上，我不想败给任何人。」"
+      }
+    },
+    "2": {
+      "name": "「以太视域」",
+      "desc": "发动<ct color=#FFFFFF>[追加攻击]</ct>时，「扳机」将获得1层<ct color=#FFFFFF>[猎眸]</ct>；在<ct color=#FFFFFF>[狙击姿态]</ct>下发动终结一击时，「扳机」将获得2层<ct color=#FFFFFF>[猎眸]</ct>；每拥有1层<ct color=#FFFFFF>[猎眸]</ct>，全队角色暴击伤害提升6%，最多叠加4层，持续10秒，重复触发时刷新持续时间。",
+      "flavor": {
+        "0": "置身于空洞内时，周围的一切以太波动都将成为她观测空间的助力。",
+        "1": "「曾经的我一直觉得这是双充满痛苦的、被诅咒的眼睛。」",
+        "2": "「但现在…它们是我达成目标的通行证，更是我不曾忘却往日的证明。」"
+      }
+    },
+    "3": {
+      "name": "《归乡》",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "能够归去的家，已经尘封于昨日。",
+        "1": "她有些冰凉的双唇抵住口琴，孤寂的旋律是记忆铭刻下的唯一证明。"
+      }
+    },
+    "4": {
+      "name": "匿息隐踪",
+      "desc": "「扳机」进入或延长<ct color=#FFFFFF>[协战状态]</ct>后，状态持续期间，队伍中其他角色下一次触发<ct color=#FFFFFF>[普通攻击：协奏狙杀]</ct>或<ct color=#FFFFFF>[普通攻击：协奏狙杀·冥狱]</ct>时，将会在招式命中敌人时触发<ct color=#FFFFFF>[断离]</ct>效果，额外造成「扳机」200%攻击力的伤害，并累积「扳机」120%冲击力的失衡值；招式具有较高的打断等级。",
+      "flavor": {
+        "0": "脚步，呼吸，心跳。扼杀自己的一切气息，直至整个身形完全与环境融为一体。她如神出鬼没的死神一般游走于战场。",
+        "1": "而在战场外，由于这种悄无声息的行动方式已经给队友造成了数次惊吓，因此被禁止使用。",
+        "2": "当然，找不到见面机会而频繁使用此行动方式在录像店周边观察店内这种事，或许应该大概也是没做过的…吧？"
+      }
+    },
+    "5": {
+      "name": "锁定的意志",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "一旦锁定目标，哪怕躯体破损腐朽、刺痛力竭，也绝不会将准心挪开。从复仇对象到保护对象，从敌军到同伴均是如此——此为狙击手的意志。",
+        "1": "唯有那对在至暗之刻为自己洒下阳光的绳匠。与其说是锁定，不如说是被吸引，哪怕找不到继续注视的理由，也绝不想将准心挪开——此为少女的意志。"
+      }
+    },
+    "6": {
+      "name": "冥河彼岸",
+      "desc": "进入战场时，「扳机」可获得5枚<ct color=#FFFFFF>[破甲凶弹]</ct>，每消耗25点<ct color=#FFFFFF>[绝意]</ct>值，「扳机」可额外获得1枚<ct color=#FFFFFF>[破甲凶弹]</ct>，上限5枚；拥有<ct color=#FFFFFF>[破甲凶弹]</ct>时，「扳机」在<ct color=#FFFFFF>[狙击姿态]</ct>中命中目标时，将消耗1枚<ct color=#FFFFFF>[破甲凶弹]</ct>，额外对目标造成「扳机」1200%攻击力的<ct color=#2EB6FF>电属性伤害</ct>，且<ct color=#FFFFFF>[破甲凶弹]</ct>造成的伤害额外提升50%，0.2秒内最多触发一次。",
+      "flavor": {
+        "0": "「你知道吗？在战斗中沾染血腥之人，死后能去往的地方只有冥界。」",
+        "1": "「渡过冥河的彼岸，一定能见到无比美丽的景色。绽放的曼珠沙华簇拥着我，熟悉的故人们陪伴我迎接最后的安宁与归宿。」",
+        "2": "「但…因为有你，因为有想守护的事物，或许我还不希望那一天那么早到来。」"
+      }
+    }
+  },
+  "potential": {}
+}

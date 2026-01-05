@@ -1,0 +1,253 @@
+{
+  "name": "安东",
+  "fullName": "Anton Ivanov",
+  "basic": {
+    "BasicAttackEnthusiasticDrills": {
+      "name": "普通攻击：热血上工操",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的混合攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "第四段攻击为<ct color=#FFFFFF>[打桩攻击]</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackEnthusiasticDrillsBurstMode": {
+      "name": "普通攻击：热血上工操（爆发状态）",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[爆发状态]</ct>下，点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多三段的混合攻击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "在第二段<ct color=#FFFFFF>[电钻攻击]</ct>和第三段<ct color=#FFFFFF>[打桩攻击]</ct>期间，连点或长按 <IconNormal /> 可以延长招式的持续时间。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeLetsMove": {
+      "name": "闪避：动起来",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackFireWithFire": {
+      "name": "冲刺攻击：硬碰硬",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行撞击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterRetaliation": {
+      "name": "闪避反击：回敬拳击",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动连续重拳，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterOverloadDrillBurstMode": {
+      "name": "闪避反击：过载钻击（爆发状态）",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[爆发状态]</ct>下，触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人使用<ct color=#FFFFFF>[电钻攻击]</ct>，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSpinBro": {
+      "name": "特殊技：兄弟，转起来！",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "对前方直线区域内敌人发动<ct color=#FFFFFF>[打桩攻击]</ct>，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackSmashTheHorizonBro": {
+      "name": "强化特殊技：兄弟，突破天际！",
+      "desc": {
+        "0": "能量足够时，若点按 <IconSpecialReady /> 发动：",
+        "1": "对前方直线区域内敌人发动多段<ct color=#FFFFFF>[打桩攻击]</ct>，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，安东将进入<ct color=#FFFFFF>[爆发状态]</ct>；在<ct color=#FFFFFF>[爆发状态]</ct>下，安东会使用更加强力的招式，造成大量<ct color=#2EB6FF>电属性伤害</ct>，并随招式命中目标，逐渐消耗能量，持续至能量耗尽。"
+      },
+      "params": [
+        " ",
+        "发动所需能量"
+      ]
+    },
+    "SpecialAttackExplosiveDrillBurstMode": {
+      "name": "特殊技：爆发钻击（爆发状态）",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[爆发状态]</ct>下，点按 <IconSpecial /> 发动：",
+        "1": "对前方敌人发动<ct color=#FFFFFF>[打桩攻击]</ct>，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackGoGoGo": {
+      "name": "连携技：转转转！",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方地面进行大范围<ct color=#FFFFFF>[打桩攻击]</ct>，对区域内的敌人造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateGoGoGoGoGo": {
+      "name": "终结技：转转转转转！",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方地面进行大范围<ct color=#FFFFFF>[打桩攻击]</ct>，对区域内的敌人造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistShoulderToShoulder": {
+      "name": "快速支援：并肩作战",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动连续重拳，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "QuickAssistProtectiveDrillBurstMode": {
+      "name": "快速支援：援护钻击（爆发状态）",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动<ct color=#FFFFFF>[电钻攻击]</ct>，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistIronWrist": {
+      "name": "招架支援：钢腕",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "具有较为优秀的招架性能，承受高强度攻击时<ct color=#FFFFFF>[支援点数]</ct>的消耗量降低；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpLimitBurst": {
+      "name": "支援突击：极限突进",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动<ct color=#FFFFFF>[电钻攻击]</ct>并以<ct color=#FFFFFF>[打桩攻击]</ct>收尾，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：兄弟齐心！",
+    "desc": [
+      "安东发动<ct color=#FFFFFF>[打桩攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>12%</ct>，发动<ct color=#FFFFFF>[电钻攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>20%</ct>。",
+      "安东发动<ct color=#FFFFFF>[打桩攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>14%</ct>，发动<ct color=#FFFFFF>[电钻攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>23.3%</ct>。",
+      "安东发动<ct color=#FFFFFF>[打桩攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>16%</ct>，发动<ct color=#FFFFFF>[电钻攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>26.6%</ct>。",
+      "安东发动<ct color=#FFFFFF>[打桩攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>18%</ct>，发动<ct color=#FFFFFF>[电钻攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>30%</ct>。",
+      "安东发动<ct color=#FFFFFF>[打桩攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>20%</ct>，发动<ct color=#FFFFFF>[电钻攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>33.3%</ct>。",
+      "安东发动<ct color=#FFFFFF>[打桩攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>22%</ct>，发动<ct color=#FFFFFF>[电钻攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>36.6%</ct>。",
+      "安东发动<ct color=#FFFFFF>[打桩攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>24%</ct>，发动<ct color=#FFFFFF>[电钻攻击]</ct>时，招式造成的伤害提升<ct color=#2BAD00>40%</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：通力合作",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "安东进入<ct color=#FFFFFF>[爆发状态]</ct>后，每触发4次暴击，下一次攻击命中处于<ct color=#2EB6FF>[感电]</ct>状态下的敌人时，能够额外结算一次<ct color=#2EB6FF>[感电]</ct>伤害，伤害效果等同于原本的45%，0.5秒内最多触发一次。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "热身运动",
+      "desc": "<ct color=#FFFFFF>[电钻攻击]</ct>命中敌人时，能够额外回复能量；同一招式内，该效果最多为安东回复5点能量。",
+      "flavor": {
+        "0": "「醒了吗？转起来，兄弟！」",
+        "1": "「跟上节奏，现在是早操时间！」"
+      }
+    },
+    "2": {
+      "name": "气势如虹",
+      "desc": "发动<ct color=#FFFFFF>[强化特殊技]</ct>进入<ct color=#FFFFFF>[爆发状态]</ct>时，获得等同于安东7.5%生命值上限的护盾；在<ct color=#FFFFFF>[爆发状态]</ct>下进入接战状态或换入前场时，将刷新护盾效果，15秒内最多触发一次；退出<ct color=#FFFFFF>[爆发状态]</ct>时，该护盾效果结束。",
+      "flavor": {
+        "0": "经过长期的艰苦训练，有少部分幸运儿在进行高强度运动时，会爆发绝佳气势，超水平发挥自身能力，俗称「领域」。",
+        "1": "现在，你准备好一起动起来，进入「领域」了吗？",
+        "2": "——燃油饮独家冠名节目，「早安，热血上班族！」"
+      }
+    },
+    "3": {
+      "name": "轮岗培训",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "什么都会一点只能叫平庸，但在情况复杂多变的空洞作业现场，多一个技能有时就意味着多一个突破困境的可能。"
+    },
+    "4": {
+      "name": "一起燃烧！",
+      "desc": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，全队角色暴击率提升10%，持续12秒。",
+      "flavor": {
+        "0": "「想想平时训练的感觉，一起动起来！」",
+        "1": "当安东开始认真时，所有人的动作都会跟着变得利索起来。",
+        "2": "毕竟，如果跟不上他的节拍，明天的早操是要单独加练的。"
+      }
+    },
+    "5": {
+      "name": "全栈专家",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "什么都会一点只能叫平庸，但如果你足够坚定，从「会一点」变成「很擅长」，那你就是全能！"
+    },
+    "6": {
+      "name": "突破极限",
+      "desc": "<ct color=#FFFFFF>[打桩攻击]</ct>造成暴击时，<ct color=#FFFFFF>[普通攻击：热血上工操（爆发状态）]</ct>和<ct color=#FFFFFF>[闪避反击：过载钻击（爆发状态）]</ct>造成的伤害提升4%，最多叠加6层，持续30秒，重复触发时刷新持续时间。",
+      "flavor": {
+        "0": "「哦，兄弟！你也想燃烧吗！」",
+        "1": "每当安东想要突破极限时，",
+        "2": "「兄弟」便会爆发出惊人的转速，以嗡鸣声应和着他的意志。"
+      }
+    }
+  },
+  "potential": {}
+}

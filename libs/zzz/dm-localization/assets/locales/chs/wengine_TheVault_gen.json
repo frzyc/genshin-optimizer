@@ -1,0 +1,18 @@
+{
+  "name": "聚宝箱",
+  "desc": {
+    "0": "高性价比的储能型音擎，在被妮可改造了内部空间后，平时也可当做储物箱使用。虽然里面的金币都是假货，但偶尔可以唬住贪心的盗洞客；或是更干脆一点——直接丢出去砸晕他们。",
+    "1": "",
+    "2": "<ct color=#959595>「很痛吧？厉害吧？哼哼，这就叫金钱的力量！」——妮可，击倒敌人后的炫耀</ct>"
+  },
+  "desc2": "装备后可提升[支援]代理人的战斗能力",
+  "desc3": "高性价比的储能型音擎，并被刻意改造了内部空间，是妮可惯用的款式。",
+  "phase": "财迷心窍",
+  "phaseDescs": [
+    "<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>造成<ct color=#FE437E>以太伤害</ct>时，所有单位对目标造成的伤害提升<ct color=#2BAD00>15%</ct>，装备者的能量自动回复提升<ct color=#2BAD00>0.5</ct>点/秒，持续2秒，同名被动效果之间不可叠加。",
+    "<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>造成<ct color=#FE437E>以太伤害</ct>时，所有单位对目标造成的伤害提升<ct color=#2BAD00>17.5%</ct>，装备者的能量自动回复提升<ct color=#2BAD00>0.58</ct>点/秒，持续2秒，同名被动效果之间不可叠加。",
+    "<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>造成<ct color=#FE437E>以太伤害</ct>时，所有单位对目标造成的伤害提升<ct color=#2BAD00>20%</ct>，装备者的能量自动回复提升<ct color=#2BAD00>0.65</ct>点/秒，持续2秒，同名被动效果之间不可叠加。",
+    "<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>造成<ct color=#FE437E>以太伤害</ct>时，所有单位对目标造成的伤害提升<ct color=#2BAD00>22%</ct>，装备者的能量自动回复提升<ct color=#2BAD00>0.72</ct>点/秒，持续2秒，同名被动效果之间不可叠加。",
+    "<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>造成<ct color=#FE437E>以太伤害</ct>时，所有单位对目标造成的伤害提升<ct color=#2BAD00>24%</ct>，装备者的能量自动回复提升<ct color=#2BAD00>0.8</ct>点/秒，持续2秒，同名被动效果之间不可叠加。"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "福虓炉炉",
+  "desc": {
+    "0": "告别过往的命运，告别倏然溜走的童年，告别父亲的拥抱与母亲的笑容，告别利爪与斑纹，告别不动容的山与不停留的云，告别恩师与故友，告别我，告别我。",
+    "1": "只要世上还记得，我曾勇敢咆哮过。",
+    "2": "",
+    "3": "<ct color=#959595>「别怕！大师姐来了！」——福福来援华丽登场时的台词</ct>"
+  },
+  "desc2": "装备后可提升[击破]代理人的战斗能力",
+  "desc3": "炉火融融暖长夜，照我心中虎啸声。",
+  "phase": "虎气融融",
+  "phaseDescs": [
+    {
+      "0": "装备者的<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>造成的失衡值提升<ct color=#2BAD00>28%</ct>；",
+      "1": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>并造成<ct color=#FF5521>火属性伤害</ct>时，全队角色造成伤害提升<ct color=#2BAD00>10%</ct>，最多叠加2层，持续30秒，每层效果单独结算持续时间，同一招式内最多触发一次，该效果全队唯一。"
+    },
+    {
+      "0": "装备者的<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>造成的失衡值提升<ct color=#2BAD00>32.2%</ct>；",
+      "1": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>并造成<ct color=#FF5521>火属性伤害</ct>时，全队角色造成伤害提升<ct color=#2BAD00>11.5%</ct>，最多叠加2层，持续30秒，每层效果单独结算持续时间，同一招式内最多触发一次，该效果全队唯一。"
+    },
+    {
+      "0": "装备者的<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>造成的失衡值提升<ct color=#2BAD00>36.4%</ct>；",
+      "1": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>并造成<ct color=#FF5521>火属性伤害</ct>时，全队角色造成伤害提升<ct color=#2BAD00>13%</ct>，最多叠加2层，持续30秒，每层效果单独结算持续时间，同一招式内最多触发一次，该效果全队唯一。"
+    },
+    {
+      "0": "装备者的<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>造成的失衡值提升<ct color=#2BAD00>40.6%</ct>；",
+      "1": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>并造成<ct color=#FF5521>火属性伤害</ct>时，全队角色造成伤害提升<ct color=#2BAD00>14.5%</ct>，最多叠加2层，持续30秒，每层效果单独结算持续时间，同一招式内最多触发一次，该效果全队唯一。"
+    },
+    {
+      "0": "装备者的<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>造成的失衡值提升<ct color=#2BAD00>44.8%</ct>；",
+      "1": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>并造成<ct color=#FF5521>火属性伤害</ct>时，全队角色造成伤害提升<ct color=#2BAD00>16%</ct>，最多叠加2层，持续30秒，每层效果单独结算持续时间，同一招式内最多触发一次，该效果全队唯一。"
+    }
+  ]
+}

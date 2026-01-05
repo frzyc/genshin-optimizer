@@ -1,0 +1,307 @@
+{
+  "name": "薇薇安",
+  "fullName": "Vivian Banshee",
+  "basic": {
+    "BasicAttackFeatheredStrike": {
+      "name": "普通攻击：翎羽拂击",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FE437E>以太伤害</ct>；",
+        "2": "发动第四段攻击后进入<ct color=#FFFFFF>[淑女礼仪]</ct>状态；",
+        "3": "拥有<ct color=#FFFFFF>[飞羽]</ct>时，在第四段攻击过程中保持按住 <IconNormal /> 可进入<ct color=#FFFFFF>[裙裾浮游]</ct>状态。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackNoblewomanWaltz": {
+      "name": "普通攻击：淑女礼仪 · 舞步",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[淑女礼仪]</ct>状态下，点按 <IconNormal /> 发动：",
+        "1": "向前突进攻击，造成<ct color=#FE437E>以太伤害</ct>，并在命中目标时回复1点<ct color=#FFFFFF>[飞羽]</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "若突进期间触发极限闪避，会额外回复1点<ct color=#FFFFFF>[飞羽]</ct>；",
+        "4": "招式发动后若拥有<ct color=#FFFFFF>[飞羽]</ct>，会进入<ct color=#FFFFFF>[裙裾浮游]</ct>状态，可以通过招式发动时保持长按 <IconEvade /> 取消。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackFlutteringFrockSuspension": {
+      "name": "普通攻击：裙裾浮游 · 悬落",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[裙裾浮游]</ct>状态下，点按 <IconNormal /> 发动：",
+        "1": "向前方发动范围攻击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动后消耗全部<ct color=#FFFFFF>[飞羽]</ct>，每消耗1点<ct color=#FFFFFF>[飞羽]</ct>，都会获得1点<ct color=#FFFFFF>[护羽]</ct>；",
+        "3": "招式发动期间拥有无敌效果；",
+        "4": "在<ct color=#FFFFFF>[裙裾浮游]</ct>状态下切换角色时，薇薇安会自动发动<ct color=#FFFFFF>[普通攻击：裙裾浮游·悬落]</ct>；",
+        "5": "在<ct color=#FFFFFF>[裙裾浮游]</ct>状态下点按 <IconEvade /> 可以退出<ct color=#FFFFFF>[裙裾浮游]</ct>状态。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackFeatherbloom": {
+      "name": "普通攻击：落羽生花",
+      "desc": {
+        "0": "队伍中任意角色发动<ct color=#FFFFFF>[强化特殊技]</ct>命中目标后，薇薇安会消耗1点<ct color=#FFFFFF>[护羽]</ct>并对目标发动一次<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>，造成<ct color=#FE437E>以太伤害</ct>，同一招式最多触发一次，这一效果可以在薇薇安处于后场时触发；",
+        "1": "<ct color=#FFFFFF>[护羽]</ct>最多持有5点。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeLightstream": {
+      "name": "闪避：流光",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackSilverThornedMelody": {
+      "name": "冲刺攻击：银刺舞曲",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行突刺，造成<ct color=#F0D12B>物理伤害</ct>；"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterWingbladeReverb": {
+      "name": "闪避反击：羽刃反振",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后进入<ct color=#FFFFFF>[淑女礼仪]</ct>状态；",
+        "4": "拥有<ct color=#FFFFFF>[飞羽]</ct>时，在招式发动过程中保持按住 <IconNormal /> 可进入<ct color=#FFFFFF>[裙裾浮游]</ct>状态。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeDaintySteps": {
+      "name": "闪避：淑女滑步",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[淑女礼仪]</ct>状态下即将受到攻击时，会进行自动闪避，期间拥有无敌效果，但不会触发<ct color=#FFFFFF>[极限闪避]</ct>；",
+        "1": "每次进入<ct color=#FFFFFF>[淑女礼仪]</ct>状态仅能触发一次。"
+      },
+      "params": []
+    }
+  },
+  "special": {
+    "SpecialAttackSongOfSilverWings": {
+      "name": "特殊技：银羽咏叹",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "快速向前方进行攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackVioletRequiem": {
+      "name": "强化特殊技：堇花悼亡",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方发动强力攻击，造成大量<ct color=#FE437E>以太伤害</ct>，并回复3点<ct color=#FFFFFF>[飞羽]</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后进入<ct color=#FFFFFF>[裙裾浮游]</ct>状态，可以通过招式发动时保持长按 <IconEvade /> 进入<ct color=#FFFFFF>[淑女礼仪]</ct>状态。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackChorusOfCelestialWings": {
+      "name": "连携技：星羽和声",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方大范围敌人发动强力攻击，造成大量<ct color=#FE437E>以太伤害</ct>，并回复2点<ct color=#FFFFFF>[飞羽]</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后进入<ct color=#FFFFFF>[裙裾浮游]</ct>状态，可以通过招式发动时保持长按 <IconEvade /> 取消。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateSoaringBirdsSong": {
+      "name": "终结技：飞鸟鸣颂",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方大范围敌人发动强力攻击，造成大量<ct color=#FE437E>以太伤害</ct>，并回复5点<ct color=#FFFFFF>[飞羽]</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后进入<ct color=#FFFFFF>[裙裾浮游]</ct>状态，可以通过招式发动时保持长按 <IconEvade /> 取消。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistFrostwingGuard": {
+      "name": "快速支援：凛羽之护",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后进入<ct color=#FFFFFF>[淑女礼仪]</ct>状态；",
+        "4": "拥有<ct color=#FFFFFF>[飞羽]</ct>时，在招式发动过程中保持按住 <IconNormal /> 可进入<ct color=#FFFFFF>[裙裾浮游]</ct>状态。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistSilverUmbrellaFormation": {
+      "name": "招架支援：银伞列阵",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpFeatherbladeExecution": {
+      "name": "支援突击：裁决羽刃",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动攻击，造成<ct color=#FE437E>以太伤害</ct>，并回复2点<ct color=#FFFFFF>[飞羽]</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后进入<ct color=#FFFFFF>[裙裾浮游]</ct>状态，可以通过招式发动时保持长按 <IconEvade /> 取消。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：命运悲歌",
+    "desc": [
+      {
+        "0": "<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于<ct color=#FE437E>以太异常状态</ct>、<ct color=#2EB6FF>电属性异常状态</ct>、<ct color=#FF5521>火属性异常状态</ct>、<ct color=#F0D12B>物理属性异常状态</ct>、<ct color=#98EFF0>冰属性异常状态</ct>的目标时，触发一次<ct color=#FFFFFF>[异放]</ct>：额外结算一次属性异常伤害，相对于原属性异常伤害的比例为每10点异常精通<ct color=#FE437E>3.07%</ct>/<ct color=#2EB6FF>1.6%</ct>/<ct color=#FF5521>4%</ct>/<ct color=#F0D12B>0.37%</ct>/<ct color=#98EFF0>0.54%</ct>；",
+        "1": "<ct color=#FFFFFF>[普通攻击：裙裾浮游·悬落]</ct>或<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于任意属性异常状态的目标时，使目标陷入<ct color=#FFFFFF>[薇薇安的预言]</ct>，每0.55秒受到薇薇安55%攻击力的<ct color=#FE437E>以太伤害</ct>，该伤害可以触发属性异常效果的额外伤害；当目标不再处于属性异常状态时，<ct color=#FFFFFF>[薇薇安的预言]</ct>结束；",
+        "2": "进入战场时，薇薇安获得2点<ct color=#FFFFFF>[飞羽]</ct>。"
+      },
+      {
+        "0": "<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于<ct color=#FE437E>以太异常状态</ct>、<ct color=#2EB6FF>电属性异常状态</ct>、<ct color=#FF5521>火属性异常状态</ct>、<ct color=#F0D12B>物理属性异常状态</ct>、<ct color=#98EFF0>冰属性异常状态</ct>的目标时，触发一次<ct color=#FFFFFF>[异放]</ct>：额外结算一次属性异常伤害，相对于原属性异常伤害的比例为每10点异常精通<ct color=#FE437E>3.59%</ct>/<ct color=#2EB6FF>1.86%</ct>/<ct color=#FF5521>4.66%</ct>/<ct color=#F0D12B>0.44%</ct>/<ct color=#98EFF0>0.63%</ct>；",
+        "1": "<ct color=#FFFFFF>[普通攻击：裙裾浮游·悬落]</ct>或<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于任意属性异常状态的目标时，使目标陷入<ct color=#FFFFFF>[薇薇安的预言]</ct>，每0.55秒受到薇薇安55%攻击力的<ct color=#FE437E>以太伤害</ct>，该伤害可以触发属性异常效果的额外伤害；当目标不再处于属性异常状态时，<ct color=#FFFFFF>[薇薇安的预言]</ct>结束；",
+        "2": "进入战场时，薇薇安获得2点<ct color=#FFFFFF>[飞羽]</ct>。"
+      },
+      {
+        "0": "<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于<ct color=#FE437E>以太异常状态</ct>、<ct color=#2EB6FF>电属性异常状态</ct>、<ct color=#FF5521>火属性异常状态</ct>、<ct color=#F0D12B>物理属性异常状态</ct>、<ct color=#98EFF0>冰属性异常状态</ct>的目标时，触发一次<ct color=#FFFFFF>[异放]</ct>：额外结算一次属性异常伤害，相对于原属性异常伤害的比例为每10点异常精通<ct color=#FE437E>4.11%</ct>/<ct color=#2EB6FF>2.12%</ct>/<ct color=#FF5521>5.32%</ct>/<ct color=#F0D12B>0.51%</ct>/<ct color=#98EFF0>0.72%</ct>；",
+        "1": "<ct color=#FFFFFF>[普通攻击：裙裾浮游·悬落]</ct>或<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于任意属性异常状态的目标时，使目标陷入<ct color=#FFFFFF>[薇薇安的预言]</ct>，每0.55秒受到薇薇安55%攻击力的<ct color=#FE437E>以太伤害</ct>，该伤害可以触发属性异常效果的额外伤害；当目标不再处于属性异常状态时，<ct color=#FFFFFF>[薇薇安的预言]</ct>结束；",
+        "2": "进入战场时，薇薇安获得2点<ct color=#FFFFFF>[飞羽]</ct>。"
+      },
+      {
+        "0": "<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于<ct color=#FE437E>以太异常状态</ct>、<ct color=#2EB6FF>电属性异常状态</ct>、<ct color=#FF5521>火属性异常状态</ct>、<ct color=#F0D12B>物理属性异常状态</ct>、<ct color=#98EFF0>冰属性异常状态</ct>的目标时，触发一次<ct color=#FFFFFF>[异放]</ct>：额外结算一次属性异常伤害，相对于原属性异常伤害的比例为每10点异常精通<ct color=#FE437E>4.63%</ct>/<ct color=#2EB6FF>2.38%</ct>/<ct color=#FF5521>5.98%</ct>/<ct color=#F0D12B>0.58%</ct>/<ct color=#98EFF0>0.81%</ct>；",
+        "1": "<ct color=#FFFFFF>[普通攻击：裙裾浮游·悬落]</ct>或<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于任意属性异常状态的目标时，使目标陷入<ct color=#FFFFFF>[薇薇安的预言]</ct>，每0.55秒受到薇薇安55%攻击力的<ct color=#FE437E>以太伤害</ct>，该伤害可以触发属性异常效果的额外伤害；当目标不再处于属性异常状态时，<ct color=#FFFFFF>[薇薇安的预言]</ct>结束；",
+        "2": "进入战场时，薇薇安获得2点<ct color=#FFFFFF>[飞羽]</ct>。"
+      },
+      {
+        "0": "<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于<ct color=#FE437E>以太异常状态</ct>、<ct color=#2EB6FF>电属性异常状态</ct>、<ct color=#FF5521>火属性异常状态</ct>、<ct color=#F0D12B>物理属性异常状态</ct>、<ct color=#98EFF0>冰属性异常状态</ct>的目标时，触发一次<ct color=#FFFFFF>[异放]</ct>：额外结算一次属性异常伤害，相对于原属性异常伤害的比例为每10点异常精通<ct color=#FE437E>5.15%</ct>/<ct color=#2EB6FF>2.64%</ct>/<ct color=#FF5521>6.64%</ct>/<ct color=#F0D12B>0.65%</ct>/<ct color=#98EFF0>0.9%</ct>；",
+        "1": "<ct color=#FFFFFF>[普通攻击：裙裾浮游·悬落]</ct>或<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于任意属性异常状态的目标时，使目标陷入<ct color=#FFFFFF>[薇薇安的预言]</ct>，每0.55秒受到薇薇安55%攻击力的<ct color=#FE437E>以太伤害</ct>，该伤害可以触发属性异常效果的额外伤害；当目标不再处于属性异常状态时，<ct color=#FFFFFF>[薇薇安的预言]</ct>结束；",
+        "2": "进入战场时，薇薇安获得2点<ct color=#FFFFFF>[飞羽]</ct>。"
+      },
+      {
+        "0": "<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于<ct color=#FE437E>以太异常状态</ct>、<ct color=#2EB6FF>电属性异常状态</ct>、<ct color=#FF5521>火属性异常状态</ct>、<ct color=#F0D12B>物理属性异常状态</ct>、<ct color=#98EFF0>冰属性异常状态</ct>的目标时，触发一次<ct color=#FFFFFF>[异放]</ct>：额外结算一次属性异常伤害，相对于原属性异常伤害的比例为每10点异常精通<ct color=#FE437E>5.65%</ct>/<ct color=#2EB6FF>2.9%</ct>/<ct color=#FF5521>7.3%</ct>/<ct color=#F0D12B>0.7%</ct>/<ct color=#98EFF0>0.99%</ct>；",
+        "1": "<ct color=#FFFFFF>[普通攻击：裙裾浮游·悬落]</ct>或<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于任意属性异常状态的目标时，使目标陷入<ct color=#FFFFFF>[薇薇安的预言]</ct>，每0.55秒受到薇薇安55%攻击力的<ct color=#FE437E>以太伤害</ct>，该伤害可以触发属性异常效果的额外伤害；当目标不再处于属性异常状态时，<ct color=#FFFFFF>[薇薇安的预言]</ct>结束；",
+        "2": "进入战场时，薇薇安获得2点<ct color=#FFFFFF>[飞羽]</ct>。"
+      },
+      {
+        "0": "<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于<ct color=#FE437E>以太异常状态</ct>、<ct color=#2EB6FF>电属性异常状态</ct>、<ct color=#FF5521>火属性异常状态</ct>、<ct color=#F0D12B>物理属性异常状态</ct>、<ct color=#98EFF0>冰属性异常状态</ct>的目标时，触发一次<ct color=#FFFFFF>[异放]</ct>：额外结算一次属性异常伤害，相对于原属性异常伤害的比例为每10点异常精通<ct color=#FE437E>6.15%</ct>/<ct color=#2EB6FF>3.2%</ct>/<ct color=#FF5521>8%</ct>/<ct color=#F0D12B>0.75%</ct>/<ct color=#98EFF0>1.08%</ct>；",
+        "1": "<ct color=#FFFFFF>[普通攻击：裙裾浮游·悬落]</ct>或<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中处于任意属性异常状态的目标时，使目标陷入<ct color=#FFFFFF>[薇薇安的预言]</ct>，每0.55秒受到薇薇安55%攻击力的<ct color=#FE437E>以太伤害</ct>，该伤害可以触发属性异常效果的额外伤害；当目标不再处于属性异常状态时，<ct color=#FFFFFF>[薇薇安的预言]</ct>结束；",
+        "2": "进入战场时，薇薇安获得2点<ct color=#FFFFFF>[飞羽]</ct>。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：预言之泪",
+    "desc": {
+      "0": "队伍中存在其他<ct color=#FFFFFF>[异常]</ct>角色或与自身属性相同的角色时触发：",
+      "1": "队伍中其他角色对敌人施加属性异常效果时，薇薇安会消耗1点<ct color=#FFFFFF>[护羽]</ct>并对目标发动一次<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>，0.5秒内至多触发一次；",
+      "2": "全队角色造成的<ct color=#FE437E>[侵蚀]</ct>伤害和<ct color=#FE437E>[侵蚀]</ct>状态被结算的<ct color=#FFFFFF>[紊乱]</ct>伤害提升<ct color=#2BAD00>12%</ct>。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "《在春天走进果园》",
+      "desc": "累计消耗4点<ct color=#FFFFFF>[护羽]</ct>时回复1点<ct color=#FFFFFF>[飞羽]</ct>；处于<ct color=#FFFFFF>[薇薇安的预言]</ct>下的目标受到的所有属性异常伤害和<ct color=#FFFFFF>[紊乱]</ct>伤害提升16%。",
+      "flavor": {
+        "0": "「每个清晨都是与你的初遇，每个夜晚都是重逢。」",
+        "1": "她曾窥得命运无常，无法改变的结局总是被泪水侵染。",
+        "2": "但因你的出现，她不愿再成为那预言灾厄的飞鸟，她愿让自己消失在火里，沉眠于光中，用自己的一切改变关于你的结局。",
+        "3": "所以，请不要关上窗，飞鸟会为你衔来爱意，衔走死亡。"
+      }
+    },
+    "2": {
+      "name": "《暴风雨夜，暴风雨夜》",
+      "desc": "薇薇安的<ct color=#FE437E>以太异常积蓄效率</ct>提升25%；<ct color=#FFFFFF>[异放]</ct>从精通中获得的收益提升至原本的130%，且无视目标15%全属性伤害抗性。",
+      "flavor": {
+        "0": "「假如我不曾见过太阳 我本可以忍受黑暗。」",
+        "1": "救赎者这个词汇太过沉重，好心人这个词又稍显轻率。",
+        "2": "所以，不如说，你曾是她的撑船人。",
+        "3": "在那场名为恶意与自我懊悔的暴风雨中，你是一束光，引她渡过洪流。",
+        "4": "于是那之后，她无法再忍受诅咒与噩梦，她走向追寻你的旅程。"
+      }
+    },
+    "3": {
+      "name": "《另一个，同一个》",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「我们用黄昏丈量彼此的阴影，发现完全重叠。」",
+        "1": "在你不知道的无数个黄昏里，她曾与你看着同一个太阳西沉，将一片海煮沸至瑰丽暖色。",
+        "2": "在无数分岔的路径中，她坚定地选择了走到你身边的方向。",
+        "3": "而今天，她终于与你影子相叠。",
+        "4": "而今天，夕阳依旧。"
+      }
+    },
+    "4": {
+      "name": "《苇间风》",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[普通攻击：裙裾浮游·悬落]</ct>和<ct color=#FFFFFF>[普通攻击：落羽生花]</ct>命中时必定暴击，并使薇薇安的攻击力提升12%，持续12秒，重复触发时刷新持续时间；进入战场时，薇薇安立即获得5点<ct color=#FFFFFF>[护羽]</ct>。",
+        "1": "When entering the battlefield, Vivian immediately gains 5 <ct color=#FFFFFF>Guard Feathers</ct>."
+      },
+      "flavor": {
+        "0": "「将我的真心，如月光铺满你脚下的路。」",
+        "1": "在追赶你的路上，她已自成穹顶。",
+        "2": "她没有如此博爱，拥有的也并不算多。",
+        "3": "但为你，只为你，她可倾泻月光，覆盖黑暗，修补裂痕。",
+        "4": "你是她唯一的慷慨，是她最大的勇气。"
+      }
+    },
+    "5": {
+      "name": "《十四行诗》",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「能否将你比作夏日？」",
+        "1": "她如飞鸟，带着悸动与期盼从深秋启航，羽翼掠过冬雪，在春日里采衔一枝花，就这么撞入夏日炙阳中。",
+        "2": "只因你的眼中藏着千万个太阳，让她永爱烈阳，不惧寒霜侵袭。"
+      }
+    },
+    "6": {
+      "name": "《薇薇安》",
+      "desc": "薇薇安造成的<ct color=#FE437E>以太伤害</ct>提升40%；<ct color=#FFFFFF>[普通攻击：淑女礼仪·舞步]</ct>突进期间触发极限闪避、发动<ct color=#FFFFFF>[强化特殊技：堇花悼亡]</ct>时，均额外回复1点<ct color=#FFFFFF>[飞羽]</ct>；发动<ct color=#FFFFFF>[普通攻击：裙裾浮游·悬落]</ct>时会消耗全部<ct color=#FFFFFF>[护羽]</ct>，下落攻击的范围大幅增加，并在命中时触发一次特殊的<ct color=#FFFFFF>[异放]</ct>，额外消耗的<ct color=#FFFFFF>[护羽]</ct>会提高此次<ct color=#FFFFFF>[异放]</ct>结算的额外异常伤害的比例，最多消耗5点<ct color=#FFFFFF>[护羽]</ct>，使伤害比例提高至原本的5倍。",
+      "flavor": {
+        "0": "「薇薇安是一首只送给你的情诗。」",
+        "1": "「我们拥有世界上所有的时间。」",
+        "2": "「所以，请允许我把余生写成你的注脚。」"
+      }
+    }
+  },
+  "potential": {}
+}

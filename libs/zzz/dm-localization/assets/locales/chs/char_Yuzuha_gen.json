@@ -1,0 +1,371 @@
+{
+  "name": "柚叶",
+  "fullName": "浮波柚叶",
+  "basic": {
+    "BasicAttackTanukiClaws": {
+      "name": "普通攻击：狸之爪",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的打击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackTanukiCloak": {
+      "name": "普通攻击：狸之帐",
+      "desc": {
+        "0": "长按 <IconNormal /> 发动：",
+        "1": "进入防御姿态，最多持续1.5秒，期间如果受到敌人攻击，会招架敌人的攻击，累积大量失衡值；",
+        "2": "成功招架敌人攻击时，获得1点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "3": "成功招架敌人攻击时拥有无敌效果。"
+      },
+      "params": [
+        "Parry "
+      ]
+    },
+    "BasicAttackHardCandyShot": {
+      "name": "普通攻击：硬糖射击",
+      "desc": {
+        "0": "当柚叶拥有<ct color=#FFFFFF>[甜度点]</ct>时，其他操作中的角色攻击命中敌人时，柚叶会围绕敌人旋转伞持续攻击后射出一发强力炮弹，造成<ct color=#F0D12B>物理伤害</ct>，该攻击重击命中敌人时，柚叶会消耗1点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "1": "<ct color=#FFFFFF>[普通攻击：硬糖射击]</ct>为<ct color=#FFFFFF>[追加攻击]</ct>；",
+        "2": "<ct color=#FFFFFF>[普通攻击：硬糖射击]</ct>每8秒最多触发一次；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackSugarburstSparkles": {
+      "name": "普通攻击：彩糖花火",
+      "desc": {
+        "0": "处于<ct color=#FFFFFF>[甜蜜惊吓]</ct>状态下的敌人，每1秒会受到一次<ct color=#FFFFFF>[普通攻击：彩糖花火]</ct>攻击；",
+        "1": "<ct color=#FFFFFF>[普通攻击：彩糖花火]</ct>攻击初始造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "<ct color=#FFFFFF>[普通攻击：彩糖花火]</ct>攻击累积的属性异常积蓄值不参与异常伤害结算；",
+        "3": "<ct color=#FFFFFF>[普通攻击：彩糖花火]</ct>攻击的属性异常积蓄效率提升<ct color=#2BAD00>{CAL:0.07+AvatarSkillLevel(0)*0.015,100,4}%</ct>。"
+      },
+      "params": [
+        " ",
+        "异常积蓄效率提升"
+      ]
+    },
+    "BasicAttackSugarburstSparklesMax": {
+      "name": "普通攻击：彩糖花火·极",
+      "desc": {
+        "0": "处于<ct color=#FFFFFF>[甜蜜惊吓]</ct>状态下的敌人，被<ct color=#FFFFFF>[普通攻击：硬糖射击]</ct>或<ct color=#FFFFFF>[支援突击：夹心硬糖射击]</ct>重击命中时，会受到一次<ct color=#FFFFFF>[普通攻击：彩糖花火·极]</ct>攻击；",
+        "1": "<ct color=#FFFFFF>[普通攻击：彩糖花火·极]</ct>攻击初始造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "<ct color=#FFFFFF>[普通攻击：彩糖花火·极]</ct>攻击累积的属性异常积蓄值不参与异常伤害结算；",
+        "3": "<ct color=#FFFFFF>[普通攻击：彩糖花火·极]</ct>攻击的属性异常积蓄效率提升<ct color=#2BAD00>{CAL:0.07+AvatarSkillLevel(0)*0.015,100,4}%</ct>。"
+      },
+      "params": [
+        " ",
+        "异常积蓄效率提升"
+      ]
+    },
+    "BasicAttackTanukiHelper": {
+      "name": "普通攻击：狸之助",
+      "desc": {
+        "0": "当柚叶位于后场时，狸猫阿釜会协助操作中的角色攻击敌人，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "1": "当柚叶发动<ct color=#FFFFFF>[普通攻击：狸之帐]</ct>时，狸猫阿釜会协助柚叶攻击敌人，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "狸猫阿釜可以继承柚叶的初始攻击力。"
+      },
+      "params": [
+        "Tanuki Kama & Yuzuha Coordinated Attack ",
+        "Tanuki Kama Auto-Attack "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeDidIScareYou": {
+      "name": "闪避：吓到了吗？",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackYoureOuttaLuck": {
+      "name": "冲刺攻击：你要倒霉了！",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行快速打击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterTimeForPayback": {
+      "name": "闪避反击：报复开始~",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前方进行快速打击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackGummyBombardment": {
+      "name": "特殊技：软糖轰击",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方开炮射击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackCavityAlert": {
+      "name": "强化特殊技：小心蛀牙",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向敌人扔出炸弹，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "重击命中敌人时，会使其陷入<ct color=#FFFFFF>[甜蜜惊吓]</ct>状态；",
+        "3": "发动时，获得2点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "4": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    },
+    "EXSpecialAttackCavityAlertRightNow": {
+      "name": "强化特殊技：小心蛀牙，就是现在！",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[闪避反击：报复开始~]</ct>、<ct color=#FFFFFF>[快速支援：甜点时间]</ct>、<ct color=#FFFFFF>[支援突击：来块曲奇]</ct>、<ct color=#FFFFFF>[支援突击：夹心硬糖射击]</ct>攻击后或触发<ct color=#FFFFFF>[极限闪避]</ct>时，点按  <IconSpecialReady />  发动：",
+        "1": "向敌人快速扔出炸弹，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "重击命中敌人时，会使其陷入<ct color=#FFFFFF>[甜蜜惊吓]</ct>状态；",
+        "3": "发动时，获得2点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "4": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    },
+    "SweetScare": {
+      "name": "甜蜜惊吓",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[甜蜜惊吓]</ct>状态持续<ct color=#2BAD00>{CAL:16+AvatarSkillLevel(1)*2,1,2}</ct>秒，重复触发时刷新持续时间；",
+        "1": "处于<ct color=#FFFFFF>[甜蜜惊吓]</ct>状态下的敌人，首次被操作中的角色以与其属性相同的攻击命中时，将对该敌人触发<ct color=#FFFFFF>[十人十色]</ct>，使得<ct color=#FFFFFF>[普通攻击：彩糖花火]</ct>和<ct color=#FFFFFF>[普通攻击：彩糖花火·极]</ct>对该敌人的攻击属性转变为触发此次[十人十色]的角色的属性；",
+        "2": "当敌人的<ct color=#FFFFFF>[甜蜜惊吓]</ct>状态被重复触发时，原本的<ct color=#FFFFFF>[十人十色]</ct>状态会被移除，可再次重复上述操作，改变<ct color=#FFFFFF>[普通攻击：彩糖花火]</ct>和<ct color=#FFFFFF>[普通攻击：彩糖花火·极]</ct>的属性。"
+      },
+      "params": [
+        "甜蜜惊吓状态持续时间"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackPrankAssault": {
+      "name": "连携技：恶作剧合战",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方小范围敌人发动强力打击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动时，获得1点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "3": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateSurrenderOrSufferTheMischief": {
+      "name": "终结技：不投降就捣乱",
+      "desc": {
+        "0": "喧响等级达到[极]时，点按 <IconUltimateReady /> 发动：",
+        "1": "对周身大范围敌人发动强力打击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "重击命中敌人时，会使其陷入<ct color=#FFFFFF>[甜蜜惊吓]</ct>状态；",
+        "3": "招式发动时，队伍中其他角色回复<ct color=#2BAD00>{CAL:7+AvatarSkillLevel(3)*1.5,1,2}</ct>点能量； ",
+        "4": "招式发动时，获得2点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "5": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "6": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "队伍中其他角色回复能量"
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistDessertTime": {
+      "name": "快速支援：甜点时间",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistReplenishYourFun": {
+      "name": "招架支援：趣能补给",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "成功招架敌人攻击时，获得1点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpWeHaveCookies": {
+      "name": "支援突击：来块曲奇",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>或通过<ct color=#FFFFFF>[普通攻击：狸之帐]</ct>成功招架敌人攻击后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "AssistFollowUpStuffedHardCandyShot": {
+      "name": "支援突击：夹心硬糖射击",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>或通过<ct color=#FFFFFF>[普通攻击：狸之帐]</ct>成功招架敌人攻击后，在恰当的时机点按 <IconNormal /> 发动：",
+        "1": "旋转伞持续攻击后射出一发强力炮弹，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：奇巧缤纷",
+    "desc": [
+      {
+        "0": "进入战场时，柚叶立刻获得3点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "1": "柚叶最多持有6点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "2": "柚叶的<ct color=#FFFFFF>[强化特殊技：小心蛀牙]</ct>、<ct color=#FFFFFF>[强化特殊技：小心蛀牙，就是现在！]</ct>和<ct color=#FFFFFF>[终结技：不投降就捣乱]</ct>攻击命中敌人时，为全队角色施加<ct color=#FFFFFF>[狸之愿]</ct>效果；",
+        "3": "<ct color=#FFFFFF>[狸之愿]</ct>效果会提供等同于柚叶的40%初始攻击力的攻击力加成，最多提升<ct color=#2BAD00>600</ct>点，并使拥有者造成的伤害提升15%，持续40秒，重复触发时刷新持续时间；",
+        "4": "当柚叶的初始攻击力达到1500点时，为全队角色提供的攻击力增益效果达到最大值。"
+      },
+      {
+        "0": "进入战场时，柚叶立刻获得3点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "1": "柚叶最多持有6点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "2": "柚叶的<ct color=#FFFFFF>[强化特殊技：小心蛀牙]</ct>、<ct color=#FFFFFF>[强化特殊技：小心蛀牙，就是现在！]</ct>和<ct color=#FFFFFF>[终结技：不投降就捣乱]</ct>攻击命中敌人时，为全队角色施加<ct color=#FFFFFF>[狸之愿]</ct>效果；",
+        "3": "<ct color=#FFFFFF>[狸之愿]</ct>效果会提供等同于柚叶的40%初始攻击力的攻击力加成，最多提升<ct color=#2BAD00>700</ct>点，并使拥有者造成的伤害提升15%，持续40秒，重复触发时刷新持续时间；",
+        "4": "当柚叶的初始攻击力达到1750点时，为全队角色提供的攻击力增益效果达到最大值。"
+      },
+      {
+        "0": "进入战场时，柚叶立刻获得3点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "1": "柚叶最多持有6点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "2": "柚叶的<ct color=#FFFFFF>[强化特殊技：小心蛀牙]</ct>、<ct color=#FFFFFF>[强化特殊技：小心蛀牙，就是现在！]</ct>和<ct color=#FFFFFF>[终结技：不投降就捣乱]</ct>攻击命中敌人时，为全队角色施加<ct color=#FFFFFF>[狸之愿]</ct>效果；",
+        "3": "<ct color=#FFFFFF>[狸之愿]</ct>效果会提供等同于柚叶的40%初始攻击力的攻击力加成，最多提升<ct color=#2BAD00>800</ct>点，并使拥有者造成的伤害提升15%，持续40秒，重复触发时刷新持续时间；",
+        "4": "当柚叶的初始攻击力达到2000点时，为全队角色提供的攻击力增益效果达到最大值。"
+      },
+      {
+        "0": "进入战场时，柚叶立刻获得3点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "1": "柚叶最多持有6点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "2": "柚叶的<ct color=#FFFFFF>[强化特殊技：小心蛀牙]</ct>、<ct color=#FFFFFF>[强化特殊技：小心蛀牙，就是现在！]</ct>和<ct color=#FFFFFF>[终结技：不投降就捣乱]</ct>攻击命中敌人时，为全队角色施加<ct color=#FFFFFF>[狸之愿]</ct>效果；",
+        "3": "<ct color=#FFFFFF>[狸之愿]</ct>效果会提供等同于柚叶的40%初始攻击力的攻击力加成，最多提升<ct color=#2BAD00>900</ct>点，并使拥有者造成的伤害提升15%，持续40秒，重复触发时刷新持续时间；",
+        "4": "当柚叶的初始攻击力达到2250点时，为全队角色提供的攻击力增益效果达到最大值。"
+      },
+      {
+        "0": "进入战场时，柚叶立刻获得3点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "1": "柚叶最多持有6点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "2": "柚叶的<ct color=#FFFFFF>[强化特殊技：小心蛀牙]</ct>、<ct color=#FFFFFF>[强化特殊技：小心蛀牙，就是现在！]</ct>和<ct color=#FFFFFF>[终结技：不投降就捣乱]</ct>攻击命中敌人时，为全队角色施加<ct color=#FFFFFF>[狸之愿]</ct>效果；",
+        "3": "<ct color=#FFFFFF>[狸之愿]</ct>效果会提供等同于柚叶的40%初始攻击力的攻击力加成，最多提升<ct color=#2BAD00>1000</ct>点，并使拥有者造成的伤害提升15%，持续40秒，重复触发时刷新持续时间；",
+        "4": "当柚叶的初始攻击力达到2500点时，为全队角色提供的攻击力增益效果达到最大值。"
+      },
+      {
+        "0": "进入战场时，柚叶立刻获得3点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "1": "柚叶最多持有6点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "2": "柚叶的<ct color=#FFFFFF>[强化特殊技：小心蛀牙]</ct>、<ct color=#FFFFFF>[强化特殊技：小心蛀牙，就是现在！]</ct>和<ct color=#FFFFFF>[终结技：不投降就捣乱]</ct>攻击命中敌人时，为全队角色施加<ct color=#FFFFFF>[狸之愿]</ct>效果；",
+        "3": "<ct color=#FFFFFF>[狸之愿]</ct>效果会提供等同于柚叶的40%初始攻击力的攻击力加成，最多提升<ct color=#2BAD00>1100</ct>点，并使拥有者造成的伤害提升15%，持续40秒，重复触发时刷新持续时间；",
+        "4": "当柚叶的初始攻击力达到2750点时，为全队角色提供的攻击力增益效果达到最大值。"
+      },
+      {
+        "0": "进入战场时，柚叶立刻获得3点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "1": "柚叶最多持有6点<ct color=#FFFFFF>[甜度点]</ct>；",
+        "2": "柚叶的<ct color=#FFFFFF>[强化特殊技：小心蛀牙]</ct>、<ct color=#FFFFFF>[强化特殊技：小心蛀牙，就是现在！]</ct>和<ct color=#FFFFFF>[终结技：不投降就捣乱]</ct>攻击命中敌人时，为全队角色施加<ct color=#FFFFFF>[狸之愿]</ct>效果；",
+        "3": "<ct color=#FFFFFF>[狸之愿]</ct>效果会提供等同于柚叶的40%初始攻击力的攻击力加成，最多提升<ct color=#2BAD00>1200</ct>点，并使拥有者造成的伤害提升15%，持续40秒，重复触发时刷新持续时间；",
+        "4": "当柚叶的初始攻击力达到3000点时，为全队角色提供的攻击力增益效果达到最大值。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：人多乐趣大",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[异常]</ct>角色或与自身阵营相同的角色时触发：",
+      "1": "若柚叶的异常掌控大于100点，每超过1点异常掌控会使拥有<ct color=#FFFFFF>[狸之愿]</ct>效果的角色的属性异常积蓄效率提升<ct color=#2BAD00>0.2%</ct>，最多提升<ct color=#2BAD00>20%</ct>，还会使其所有属性异常伤害和<ct color=#FFFFFF>[紊乱]</ct>伤害提升<ct color=#2BAD00>0.2%</ct>，最多提升<ct color=#2BAD00>20%</ct>，当柚叶的异常掌控达到200点时，上述增益效果达到最大值。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "幸运体质",
+      "desc": "柚叶进入战场时，回复30点能量，在勘域模式中该效果每180秒最多触发一次；处于<ct color=#FFFFFF>[甜蜜惊吓]</ct>状态下的敌人全属性伤害抗性降低10%；<ct color=#FFFFFF>[额外能力]</ct>中属性异常伤害和<ct color=#FFFFFF>[紊乱]</ct>伤害增益效果提升至原本的130%。",
+      "flavor": {
+        "0": "「唉，这下完蛋了！」",
+        "1": "「柚叶你也考砸了吗？呜哇，92！这真是靠蒙能蒙出来的分数吗，你这完全是在炫耀吧！」",
+        "2": "「不不不，幸运最重要的就是适度，这一科明明没必要考这么高的…直觉告诉我，这下下午的考试肯定没有选择题了！」"
+      }
+    },
+    "2": {
+      "name": "趣友云集",
+      "desc": "柚叶的<ct color=#FFFFFF>[强化特殊技：小心蛀牙]</ct>、<ct color=#FFFFFF>[强化特殊技：小心蛀牙，就是现在！]</ct>和<ct color=#FFFFFF>[终结技：不投降就捣乱]</ct>攻击命中敌人时，会使全队角色造成的伤害提升15%，属性异常积蓄效率提升15%，持续40秒，重复触发时刷新持续时间，重击命中不处于失衡状态的敌人时，会强制触发<ct color=#FFFFFF>[连携技]</ct>，通过该种方式发动的<ct color=#FFFFFF>[连携技]</ct>，打断等级降低，强制触发<ct color=#FFFFFF>[连携技]</ct>的效果每20秒最多触发一次；其他角色通过<ct color=#FFFFFF>[连携技]</ct>入场时，柚叶会获得1点<ct color=#FFFFFF>[甜度点]</ct>；柚叶触发<ct color=#FFFFFF>[普通攻击：硬糖射击]</ct>的冷却时间减少25%。",
+      "flavor": {
+        "0": "「阿釜明明没离开过我的视线，可一瞬间这么多东西都被掉包了，到底是怎么做到的？」",
+        "1": "「哼哼~阿釜也是有很多朋友的呀！来来来，大家都出来，给你介绍一下，从左到右依次是：竹之助、伊之助，百之助…」",
+        "2": "「等等，说太快了！」",
+        "3": "「那再来一次，信之助、喜之助、春之助…」",
+        "4": "「名字跟之前完全不一样啊！」"
+      }
+    },
+    "3": {
+      "name": "幽城童话",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「…公主的每一天都很忙碌，清晨，老成沉默的侍女们就会为她穿上华服，戴上沉重的魔法头冠和其他首饰，簇拥着她前往王座。在那里，她将施展神奇的力量，将平平无奇的石头变为价值连城的珍宝。」",
+        "1": "「姐姐，公主每天都要把石头变成宝石吗？比一边看店一边写作业还无聊呢。」",
+        "2": "「嗯…可如果公主不做这些，贫穷的王国就要灭亡了呀。」",
+        "3": "「只靠公主一个人拼命的没用王国，就让它灭亡好了！」",
+        "4": "她忍不住大笑起来。是呀，那样没用的王国，就让它灭亡好了。"
+      }
+    },
+    "4": {
+      "name": "坠落魔法",
+      "desc": "柚叶的<ct color=#FFFFFF>[支援突击：夹心硬糖射击]</ct>和<ct color=#FFFFFF>[支援突击：来块曲奇]</ct>造成的伤害提升30%，属性异常积蓄效率提升20%，且该招式命中敌人时将触发<ct color=#FFFFFF>[快速支援]</ct>。",
+      "flavor": {
+        "0": "从狭窄的通风口看到的那个女孩，闪亮得就像是从童话书里走出来的一样。",
+        "1": "她才是真正的公主，而我只不过是一个囚徒。",
+        "2": "神啊，她已经拥有那么多东西了，即使分给我一点点也没关系吧？",
+        "3": "然后，那个发卡就无声地落了下来。"
+      }
+    },
+    "5": {
+      "name": "残冬梦迹",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "TOPS高层和督导调查团来的那天，她和真斗也刚好从学校返回，为了给贵客们的座驾腾位置，他们乘坐的空艇在附近盘旋了好久才降落。在二人满头大汗地穿过天桥时，大批记者正簇拥着贵客们从下方经过，她一眼就看到了那个女孩。那天晚上，她做了一个梦，被记者簇拥着从天桥下走过的人变成了她，然而在路的尽头，她看到了那把专门为她准备的王座…",
+        "1": "已经很久没有再梦到类似的事了。她爬起来喝水，回想起白天听到的话：「什么专家组成的调查团，竟然让有钱人家的小姐混在里面充数！」",
+        "2": "「阿釜，阿釜！」她拉开窗户小声呼唤，一个毛茸茸的身影立刻从窗外探出头来。「我有个好主意，明天晚上，我们去做点有趣的事吧。」"
+      }
+    },
+    "6": {
+      "name": "落地生根",
+      "desc": "通过<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[普通攻击：狸之帐]</ct>成功招架敌人攻击时额外获得1点<ct color=#FFFFFF>[甜度点]</ct>，发动<ct color=#FFFFFF>[支援突击：夹心硬糖射击]</ct>时可以长按<IconNormal />进行蓄能，最多持续0.8秒，松开<IconNormal />或蓄能至最大时间时，柚叶会额外发射强力炮弹攻击敌人。每蓄能0.4秒，柚叶都会消耗1点<ct color=#FFFFFF>[甜度点]</ct>追加发射一枚强力炮弹，每颗追加强力炮弹攻击造成柚叶300%攻击力的<ct color=#F0D12B>物理伤害</ct>；<ct color=#FFFFFF>[支援突击：夹心硬糖射击]</ct>的任意强力炮弹命中敌人时，会使全队角色<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升105%，持续40秒，最多叠加3层，每层单独结算持续时间，额外强力炮弹命中处于<ct color=#FFFFFF>[甜蜜惊吓]</ct>状态的敌人时也会触发1次<ct color=#FFFFFF>[普通攻击：彩糖花火·极]</ct>攻击；柚叶蓄能过程中如果受到敌人攻击，会自动闪避敌人攻击并直接发动最大蓄能攻击。",
+      "flavor": {
+        "0": "听证会结束那天晚上，宝荣叔说要庆祝小枫拿到奖学金，于是释诡斋早早关了店，全家人一起去了饮茶仙。\n席间，远在法努斯区的哥哥也打来电话祝贺，小堇和阿文则绘声绘色地讲着白天发生的事：学校里那只花斑猫丢了孩子，大家怎么找都找不到，今天中午，小猫竟然自己回来了。哥哥在电话里叹气：「阿文，一问你成绩你就转移话题，爸和柚叶不管你，我可要替他们管了！」全家人都笑了起来，只有宝荣叔不住地喃喃道：「返嚟就好啦，返嚟就好啦…」",
+        "1": "During the meal, her brother called from the far-off Faunus Quarter to offer his congratulations. While Sumire and A-Wen animatedly recounted the day's events: a calico cat at school had lost her kitten, and no one could find it — until, miraculously, it came back on its own at noon.",
+        "2": "On the phone, her brother sighed, \"A-Wen, every time I ask about your grades, you change the subject. If Dad and Yuzuha won't say anything, then I will!\"",
+        "3": "Everyone laughed — except Baorong, who just kept murmuring, \"It came back, that's what matters... that it came back...\""
+      }
+    }
+  },
+  "potential": {}
+}

@@ -1,0 +1,208 @@
+{
+  "name": "比利",
+  "fullName": "Billy Kid",
+  "basic": {
+    "BasicAttackFullFirepower": {
+      "name": "普通攻击：火力全开",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动穿透攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "连点或长按时，可以进入蹲姿射击，延长射击的持续时间；",
+        "3": "蹲姿射击途中拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}时，可以发动翻滚射击，调整身位并造成<ct color=#F0D12B>物理伤害</ct>；",
+        "4": "蹲姿射击途中停止连点或松开长按时，对前方敌人发动终结射击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        "Standing Fire ",
+        "Standing Bullet ",
+        "Crouching Fire ",
+        "Crouching Bullet ",
+        "Rolling Shot ",
+        "Finishing Shot "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeRiskyBusiness": {
+      "name": "闪避：好险好险",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackStarlightSanction": {
+      "name": "冲刺攻击：星-徽-制-裁",
+      "desc": {
+        "0": "拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}发动闪避后，点按 <IconNormal /> 发动：",
+        "1": "向身周大范围区域进行穿透攻击，造成<ct color=#F0D12B>物理伤害</ct>。",
+        "2": "未拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}发动闪避后，点按 <IconNormal /> 发动：",
+        "3": "向前方直线区域进行穿透攻击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        "360-degree Shot ",
+        "Straight Shot "
+      ]
+    },
+    "DodgeCounterFairFight": {
+      "name": "闪避反击：公平决斗",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动穿透攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackStandStill": {
+      "name": "特殊技：乖乖站好",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方直线区域进行至多三段的穿透攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "EXSpecialAttackClearanceTime": {
+      "name": "强化特殊技：清场时间",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方直线区域进行强力穿透攻击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackStarlightMirage": {
+      "name": "连携技：星徽荣耀幻影",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对身周大范围敌人发动强力穿透攻击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateStarlightShineBright": {
+      "name": "终结技：星徽在此闪耀",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对身周大范围敌人发动强力穿透攻击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistPowerOfTeamwork": {
+      "name": "快速支援：星徽-同伴之力",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动穿透攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EvasiveAssistFlashSpin": {
+      "name": "回避支援：闪转步伐",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "回避敌人的攻击，并触发<ct color=#FFFFFF>[极限视域]</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "AssistFollowUpFatalShot": {
+      "name": "支援突击：要害射击",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[回避支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方大范围敌人发动穿透攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：稳定据枪",
+    "desc": [
+      "比利在<ct color=#FFFFFF>[普通攻击]</ct>中进入蹲姿射击后，自身造成的伤害提升<ct color=#2BAD00>25%</ct>，进行移动、回到待机、被击退或被击飞时增益效果结束。",
+      "比利在<ct color=#FFFFFF>[普通攻击]</ct>中进入蹲姿射击后，自身造成的伤害提升<ct color=#2BAD00>29.1%</ct>，进行移动、回到待机、被击退或被击飞时增益效果结束。",
+      "比利在<ct color=#FFFFFF>[普通攻击]</ct>中进入蹲姿射击后，自身造成的伤害提升<ct color=#2BAD00>33.3%</ct>，进行移动、回到待机、被击退或被击飞时增益效果结束。",
+      "比利在<ct color=#FFFFFF>[普通攻击]</ct>中进入蹲姿射击后，自身造成的伤害提升<ct color=#2BAD00>37.5%</ct>，进行移动、回到待机、被击退或被击飞时增益效果结束。",
+      "比利在<ct color=#FFFFFF>[普通攻击]</ct>中进入蹲姿射击后，自身造成的伤害提升<ct color=#2BAD00>41.6%</ct>，进行移动、回到待机、被击退或被击飞时增益效果结束。",
+      "比利在<ct color=#FFFFFF>[普通攻击]</ct>中进入蹲姿射击后，自身造成的伤害提升<ct color=#2BAD00>45.8%</ct>，进行移动、回到待机、被击退或被击飞时增益效果结束。",
+      "比利在<ct color=#FFFFFF>[普通攻击]</ct>中进入蹲姿射击后，自身造成的伤害提升<ct color=#2BAD00>50%</ct>，进行移动、回到待机、被击退或被击飞时增益效果结束。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：骑士战队",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "比利发动<ct color=#FFFFFF>[连携技]</ct>后，下次发动<ct color=#FFFFFF>[终结技]</ct>时，招式造成的伤害提升50%，最多叠加2次，发动<ct color=#FFFFFF>[终结技]</ct>后效果重置。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "闪亮登场",
+      "desc": "<ct color=#FFFFFF>[冲刺攻击]</ct>或<ct color=#FFFFFF>[闪避反击]</ct>命中敌人时，比利额外回复2.7点能量，5秒内最多触发一次。",
+      "flavor": {
+        "0": "「作为反派，你们也太老实了！」",
+        "1": "「就像为了配合主角登场，故意设置的固定靶一样！」"
+      }
+    },
+    "2": {
+      "name": "游斗射术",
+      "desc": "<ct color=#FFFFFF>[闪避反击]</ct>造成的伤害提升25%；<ct color=#FFFFFF>[普通攻击]</ct>中的翻滚射击将被视为闪避动作，在招式发动期间获得无敌效果，并且能够触发<ct color=#FFFFFF>[极限闪避]</ct>，翻滚射击触发<ct color=#FFFFFF>[极限闪避]</ct>时，将自动衔接<ct color=#FFFFFF>[闪避反击]</ct>。",
+      "flavor": {
+        "0": "「星徽骑士从来不会逃避危险，那叫做战术游走射击！」",
+        "1": "——星徽闪耀-交流区，会员「哦梦中的莫妮卡」留言。"
+      }
+    },
+    "3": {
+      "name": "星徽骑士的教导",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "绝不懈怠训练，绝不停止进步！这是星徽骑士倡导的精神。比利真的相信，而且真的在遵守。"
+    },
+    "4": {
+      "name": "星徽-惩戒弹药",
+      "desc": "<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，招式的暴击率随自身与目标之间的距离而提升；比利与目标距离越近，提升效果越显著，最高提升32%。",
+      "flavor": {
+        "0": "比利独创的爆破型子弹，\n在近身战时有着惊人的威力。\n不过比利改造子弹的本意，是让开枪时的演出效果更加帅气。",
+        "1": "Their performance far outstrips Billy's original intention of simply making them cooler."
+      }
+    },
+    "5": {
+      "name": "失落技术构造体",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "未知的精密元件和独特的构造设计带给了比利远超同侪的性能…和维修养护费用。"
+    },
+    "6": {
+      "name": "星徽-英雄时刻",
+      "desc": "累计命中敌人10次或触发<ct color=#FFFFFF>[极限闪避]</ct>时，比利造成的伤害提升6%，最多叠加5层，被敌方击退或击飞后增益效果重置。",
+      "flavor": {
+        "0": "「呼~感觉来了！安比你让开，现在是我的主场！」",
+        "1": "「呃，安比，能帮忙放一下星徽骑士片头曲吗？」",
+        "2": "——狡兔屋内部「十大禁句」评选，安比的提案。"
+      }
+    }
+  },
+  "potential": {}
+}

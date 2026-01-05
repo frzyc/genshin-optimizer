@@ -1,0 +1,243 @@
+{
+  "name": "莱卡恩",
+  "fullName": "冯·莱卡恩",
+  "basic": {
+    "BasicAttackMoonHunter": {
+      "name": "普通攻击：狩月舞步",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的打击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "长按 <IconNormal /> 可以进行蓄力，提升招式的威力，并造成<ct color=#98EFF0>冰属性伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "1st-Hit Charged Attack ",
+        "2nd-Hit ",
+        "2nd-Hit Charged Attack ",
+        "3rd-Hit ",
+        "3rd-Hit Charged Attack ",
+        "4th-Hit ",
+        "4th-Hit Charged Attack ",
+        "5th-Hit ",
+        "5th-Hit Level-1 Charged Attack ",
+        "5th-Hit Level-2 Charged Attack ",
+        "1st-Hit Charged ",
+        "2nd-Hit Charged ",
+        "3rd-Hit Charged ",
+        "4th-Hit Charged ",
+        "5th-Hit Level-1 Charged ",
+        "5th-Hit Level-2 Charged "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeSuitablePositioning": {
+      "name": "闪避：进退得体",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackKeepItClean": {
+      "name": "冲刺攻击：保持清洁",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方滑铲进行连续打击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterEtiquetteManual": {
+      "name": "闪避反击：礼仪教导",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackTimeToHunt": {
+      "name": "特殊技：追猎时刻",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方进行连续打击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "长按 <IconSpecial /> 可以进行蓄力，提升招式的威力；",
+        "3": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " ",
+        "Charged Attack ",
+        "Charged "
+      ]
+    },
+    "EXSpecialAttackThrillOfTheHunt": {
+      "name": "强化特殊技：狂猎时刻",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方进行强力连续打击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "长按 <IconSpecialReady /> 可以进行蓄力，消耗能量并提升招式的威力；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "Charged Attack ",
+        "Charged ",
+        "发动能量消耗",
+        "蓄力能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackAsYouWish": {
+      "name": "连携技：遵命",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方小范围敌人发动强力连续打击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateMissionComplete": {
+      "name": "终结技：不辱使命",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方大范围敌人发动强力连续打击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistWolfPack": {
+      "name": "快速支援：狼群",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistDisruptedHunt": {
+      "name": "招架支援：狩猎干预",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpVengefulCounterattack": {
+      "name": "支援突击：复仇反扑",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "在前方生成冰柱并对区域内的敌人发动打击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：金属狼足",
+    "desc": [
+      {
+        "0": "莱卡恩在<ct color=#FFFFFF>[普通攻击]</ct>中完成蓄力时，招式造成的失衡值提升<ct color=#2BAD00>40%</ct>；",
+        "1": "<ct color=#FFFFFF>[强化特殊技：狂猎时刻]</ct>或<ct color=#FFFFFF>[支援突击：复仇反扑]</ct>命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>降低25%，持续30秒。"
+      },
+      {
+        "0": "莱卡恩在<ct color=#FFFFFF>[普通攻击]</ct>中完成蓄力时，招式造成的失衡值提升<ct color=#2BAD00>46.6%</ct>；",
+        "1": "<ct color=#FFFFFF>[强化特殊技：狂猎时刻]</ct>或<ct color=#FFFFFF>[支援突击：复仇反扑]</ct>命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>降低25%，持续30秒。"
+      },
+      {
+        "0": "莱卡恩在<ct color=#FFFFFF>[普通攻击]</ct>中完成蓄力时，招式造成的失衡值提升<ct color=#2BAD00>53.3%</ct>；",
+        "1": "<ct color=#FFFFFF>[强化特殊技：狂猎时刻]</ct>或<ct color=#FFFFFF>[支援突击：复仇反扑]</ct>命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>降低25%，持续30秒。"
+      },
+      {
+        "0": "莱卡恩在<ct color=#FFFFFF>[普通攻击]</ct>中完成蓄力时，招式造成的失衡值提升<ct color=#2BAD00>60%</ct>；",
+        "1": "<ct color=#FFFFFF>[强化特殊技：狂猎时刻]</ct>或<ct color=#FFFFFF>[支援突击：复仇反扑]</ct>命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>降低25%，持续30秒。"
+      },
+      {
+        "0": "莱卡恩在<ct color=#FFFFFF>[普通攻击]</ct>中完成蓄力时，招式造成的失衡值提升<ct color=#2BAD00>66.6%</ct>；",
+        "1": "<ct color=#FFFFFF>[强化特殊技：狂猎时刻]</ct>或<ct color=#FFFFFF>[支援突击：复仇反扑]</ct>命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>降低25%，持续30秒。"
+      },
+      {
+        "0": "莱卡恩在<ct color=#FFFFFF>[普通攻击]</ct>中完成蓄力时，招式造成的失衡值提升<ct color=#2BAD00>73.3%</ct>；",
+        "1": "<ct color=#FFFFFF>[强化特殊技：狂猎时刻]</ct>或<ct color=#FFFFFF>[支援突击：复仇反扑]</ct>命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>降低25%，持续30秒。"
+      },
+      {
+        "0": "莱卡恩在<ct color=#FFFFFF>[普通攻击]</ct>中完成蓄力时，招式造成的失衡值提升<ct color=#2BAD00>80%</ct>；",
+        "1": "<ct color=#FFFFFF>[强化特殊技：狂猎时刻]</ct>或<ct color=#FFFFFF>[支援突击：复仇反扑]</ct>命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>降低25%，持续30秒。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：优雅猎群",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "莱卡恩攻击命中处于失衡状态下的敌人时，目标的失衡易伤倍率提升35%。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "满月蓄势",
+      "desc": "<ct color=#FFFFFF>[强化特殊技：狂猎时刻]</ct>命中敌人时，招式造成的失衡值提升12%，8秒内最多触发一次；在<ct color=#FFFFFF>[强化特殊技：狂猎时刻]</ct>中完成蓄力时，该增益效果额外提升10%。",
+      "flavor": {
+        "0": "据记载，当狼人身处月夜的时候，其攻击性将有显著提升。",
+        "1": "「不要直视月亮。」"
+      }
+    },
+    "2": {
+      "name": "能量回馈",
+      "desc": "使敌人失衡或触发队友的<ct color=#FFFFFF>[连携技]</ct>时，莱卡恩回复5点能量，1秒内最多触发一次。",
+      "flavor": {
+        "0": "「对于犬科动物来说，当他们完成某些较难的任务后，大脑所产生的兴奋感会短暂地提升他们的精神能量。」\n「这时作为主人的你若是可以摸摸他们的头，以示鼓励，他们将为此感到非常开心…」\n——摘自《犬类动物不靠谱研究手册》",
+        "1": "—Excerpt from the \"Handbook of Unreliable Canine Research\""
+      }
+    },
+    "3": {
+      "name": "执事教养",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "他的举手投足总是充满从容，他的言谈举止让人如沐春风。执事的教养就是让一切都在掌握中。"
+    },
+    "4": {
+      "name": "保持风度",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[特殊技]</ct>的发动期间受到敌方攻击时，\n莱卡恩立刻获得等同于自身7.5%生命值上限的护盾，持续15秒，\n护盾持续期间抗打断等级提升，15秒内最多触发一次。",
+        "1": "During the Shield's duration, his Anti-Interrupt level is increased. This effect can trigger once every 15s."
+      },
+      "flavor": "「优秀的执事，在任何情况下都能保持风度。」"
+    },
+    "5": {
+      "name": "头狼本色",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "他的眼神暗藏野性，他的喉间滚动嚎音。不论现在的他如何优雅，礼服下的他依然凶猛。"
+    },
+    "6": {
+      "name": "冷酷猎手",
+      "desc": "蓄力攻击命中敌人时，莱卡恩对目标造成的伤害提升10%，最多叠加5层，持续12秒；同一招式内最多叠加1层效果，重复触发时刷新持续时间。",
+      "flavor": {
+        "0": "「抱歉，即使如此，我也是不会手下留情的。」",
+        "1": "「毕竟，空洞可不是什么需要公平对决的地方。」"
+      }
+    }
+  },
+  "potential": {}
+}

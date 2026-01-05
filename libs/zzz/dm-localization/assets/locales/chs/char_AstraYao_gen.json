@@ -1,0 +1,283 @@
+{
+  "name": "耀嘉音",
+  "fullName": "耀嘉音",
+  "basic": {
+    "BasicAttackCapriccio": {
+      "name": "普通攻击：《随想曲》",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多三段的攻击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "第三段攻击期间，可长按 <IconNormal /> 进行蓄力，持续聚集敌人，提升攻击范围，释放更加强力的攻击；",
+        "3": "其他招式发动后，可长按 <IconNormal /> 直接发动第三段攻击。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit Min ",
+        "3rd-Hit Max "
+      ]
+    },
+    "BasicAttackInterlude": {
+      "name": "普通攻击：间奏",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，点按 <IconNormal /> 发动：",
+        "1": "向前方释放<ct color=#FFFFFF>[震音]</ct>进行攻击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackChorus": {
+      "name": "普通攻击：副歌",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动多道<ct color=#FFFFFF>[震音]</ct>进行攻击，造成大量<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackFinale": {
+      "name": "普通攻击：终曲",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，长按 <IconNormal /> 发动：",
+        "1": "向前方释放<ct color=#FFFFFF>[震音]</ct>进行攻击，造成<ct color=#FE437E>以太伤害</ct>，并退出<ct color=#FFFFFF>[咏叹华彩]</ct>状态；",
+        "2": "招式发动时，会对自身施加<ct color=#FFFFFF>[核心被动：《如歌的行板》]</ct>中的增益效果；",
+        "3": "能量足够时，会消耗能量追加释放1道<ct color=#FFFFFF>[震音]</ct>和3枚<ct color=#FFFFFF>[音簇]</ct>进行攻击，该次<ct color=#FFFFFF>[震音]</ct>会被视为<ct color=#FFFFFF>[强化特殊技]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeMiniWaltz": {
+      "name": "闪避：《小华尔兹》",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackLunarEclipseMelody": {
+      "name": "冲刺攻击：《蚀月奏》",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行攻击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "发动时若拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，可以向对应方向位移。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterUmbrellaWaltz": {
+      "name": "闪避反击：《折伞华尔兹》",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前方敌人发动攻击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackWindchimesOaths": {
+      "name": "特殊技：《风铃与旧约》",
+      "desc": {
+        "0": "点按 <IconSpecial />  发动：",
+        "1": "快速位移，随后释放<ct color=#FFFFFF>[震音]</ct>造成<ct color=#FE437E>以太伤害</ct>，并进入<ct color=#FFFFFF>[咏叹华彩]</ct>状态；",
+        "2": "发动时若拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，可以向对应方向位移；",
+        "3": "发动时可长按 <IconSpecial /> 进行蓄力，持续聚集敌人，并根据蓄力时长追加释放1~4道<ct color=#FFFFFF>[震音]</ct>；",
+        "4": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "5": "快速位移期间拥有无敌效果。"
+      },
+      "params": [
+        "全队角色伤害提升",
+        "全队角色暴击伤害提升",
+        "Minimum ",
+        "Maximum "
+      ]
+    },
+    "IdyllicCadenza": {
+      "name": "咏叹华彩",
+      "desc": {
+        "0": "耀嘉音进入<ct color=#FFFFFF>[咏叹华彩]</ct>状态后，全队角色造成的伤害提升<ct color=#2BAD00>{CAL:0.08+AvatarSkillLevel(1)*0.01,100,2}%</ct>，全队角色暴击伤害提升<ct color=#2BAD00>{CAL:0.07+AvatarSkillLevel(1)*0.015,100,2}%</ct>;",
+        "1": "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，耀嘉音无法移动，但可以点按 <IconNormal /> 发动<ct color=#FFFFFF>[普通攻击：间奏]</ct>，或点按 <IconEvade /> 发动闪避，触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> ，可以发动<ct color=#FFFFFF>[普通攻击：副歌]</ct>；",
+        "2": "状态持续期间，耀嘉音的抗打断等级提升，受到的伤害降低40%，切换至其他角色后，耀嘉音会继续留在前场，并获得无敌效果，切换回耀嘉音时，则会自动衔接发动<ct color=#FFFFFF>[特殊技：《风铃与旧约》]</ct>；",
+        "3": "状态持续期间，长按 <IconNormal /> 发动<ct color=#FFFFFF>[普通攻击：终曲]</ct>，或长按 <IconEvade /> ，可以退出<ct color=#FFFFFF>[咏叹华彩]</ct>状态。"
+      },
+      "params": []
+    },
+    "Chord": {
+      "name": "和弦",
+      "desc": {
+        "0": "每拥有25点能量，耀嘉音将拥有1点<ct color=#FFFFFF>[和弦]</ct>；",
+        "1": "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，耀嘉音拥有<ct color=#FFFFFF>[和弦]</ct>时，能够在以下情况中触发<ct color=#FFFFFF>[快速支援]</ct>：",
+        "2": "· 操作中的角色攻击命中敌人时，3秒内最多触发一次；",
+        "3": "· 操作中的角色重击命中敌人时，1秒内最多触发一次；",
+        "4": "队伍中其他角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[回避支援]</ct>入场时，耀嘉音将消耗25点能量，并追加释放1道<ct color=#FFFFFF>[震音]</ct>进行攻击，该次<ct color=#FFFFFF>[震音]</ct>会被视为<ct color=#FFFFFF>[强化特殊技]</ct>；",
+        "5": "触发<ct color=#FFFFFF>[快速支援]</ct>后，短时间内点按 <IconSwitch /> 切换角色，将触发<ct color=#FFFFFF>[精准支援]</ct>，耀嘉音会额外追加释放3枚<ct color=#FFFFFF>[音簇]</ct>进行攻击，队伍中其他角色通过<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[回避支援]</ct>入场时，将直接触发<ct color=#FFFFFF>[精准支援]</ct>。"
+      },
+      "params": [
+        "Follow-Up Tremolo ",
+        "Follow-Up Tone Cluster ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackTipsyConcerto": {
+      "name": "连携技：《微醺协奏》",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "用歌声引导能量轰击，造成大量<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "4": "招式发动后，耀嘉音将进入<ct color=#FFFFFF>[咏叹华彩]</ct>状态。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateFantasianSonata": {
+      "name": "终结技：《幻想式奏鸣》",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "用歌声引导能量轰击，造成大量<ct color=#FE437E>以太伤害</ct>，并为全队角色回复<ct color=#2BAD00>{CAL:-50+AvatarSkillLevel(3)*250,1,2}</ct>点生命值；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "4": "招式发动后，耀嘉音将进入<ct color=#FFFFFF>[咏叹华彩]</ct>状态；",
+        "5": "招式发动后，下两次发动的<ct color=#FFFFFF>[快速支援]</ct>，将被替换为<ct color=#FFFFFF>[连携技]</ct>；",
+        "6": "次数耗尽前，全队角色<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>。"
+      },
+      "params": [
+        " ",
+        "生命值回复"
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistOneLuminousSky": {
+      "name": "快速支援：《一川烟火》",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "向前方敌人发动攻击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EvasiveAssistTwoHearts": {
+      "name": "回避支援：《两份相惜》",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "回避敌人的攻击，并触发<ct color=#FFFFFF>[极限视域]</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "AssistFollowUpThreeLifetimesOfFate": {
+      "name": "支援突击：《三生初见》",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[回避支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前方发出能量光束，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：《如歌的行板》",
+    "desc": [
+      "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，队伍中其他角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[回避支援]</ct>入场，耀嘉音消耗能量追加释放<ct color=#FFFFFF>[震音]</ct>进行攻击时，耀嘉音和入场角色的攻击力提升，提升效果等同于耀嘉音初始攻击力的<ct color=#2BAD00>22%</ct>，最高不超过1200点，持续20秒，重复触发时延长持续时间，最多不超过30秒。",
+      "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，队伍中其他角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[回避支援]</ct>入场，耀嘉音消耗能量追加释放<ct color=#FFFFFF>[震音]</ct>进行攻击时，耀嘉音和入场角色的攻击力提升，提升效果等同于耀嘉音初始攻击力的<ct color=#2BAD00>24%</ct>，最高不超过1200点，持续20秒，重复触发时延长持续时间，最多不超过30秒。",
+      "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，队伍中其他角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[回避支援]</ct>入场，耀嘉音消耗能量追加释放<ct color=#FFFFFF>[震音]</ct>进行攻击时，耀嘉音和入场角色的攻击力提升，提升效果等同于耀嘉音初始攻击力的<ct color=#2BAD00>26%</ct>，最高不超过1200点，持续20秒，重复触发时延长持续时间，最多不超过30秒。",
+      "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，队伍中其他角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[回避支援]</ct>入场，耀嘉音消耗能量追加释放<ct color=#FFFFFF>[震音]</ct>进行攻击时，耀嘉音和入场角色的攻击力提升，提升效果等同于耀嘉音初始攻击力的<ct color=#2BAD00>28%</ct>，最高不超过1200点，持续20秒，重复触发时延长持续时间，最多不超过30秒。",
+      "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，队伍中其他角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[回避支援]</ct>入场，耀嘉音消耗能量追加释放<ct color=#FFFFFF>[震音]</ct>进行攻击时，耀嘉音和入场角色的攻击力提升，提升效果等同于耀嘉音初始攻击力的<ct color=#2BAD00>30%</ct>，最高不超过1200点，持续20秒，重复触发时延长持续时间，最多不超过30秒。",
+      "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，队伍中其他角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[回避支援]</ct>入场，耀嘉音消耗能量追加释放<ct color=#FFFFFF>[震音]</ct>进行攻击时，耀嘉音和入场角色的攻击力提升，提升效果等同于耀嘉音初始攻击力的<ct color=#2BAD00>32%</ct>，最高不超过1200点，持续20秒，重复触发时延长持续时间，最多不超过30秒。",
+      "<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，队伍中其他角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[回避支援]</ct>入场，耀嘉音消耗能量追加释放<ct color=#FFFFFF>[震音]</ct>进行攻击时，耀嘉音和入场角色的攻击力提升，提升效果等同于耀嘉音初始攻击力的<ct color=#2BAD00>35%</ct>，最高不超过1200点，持续20秒，重复触发时延长持续时间，最多不超过30秒。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：《月华乱舞》",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[强攻]</ct>、<ct color=#FFFFFF>[异常]</ct>或<ct color=#FFFFFF>[命破]</ct>角色时触发：",
+      "1": "消耗能量发动<ct color=#FFFFFF>[精准支援]</ct>或<ct color=#FFFFFF>[普通攻击：终曲]</ct>时，耀嘉音将额外追加释放1道<ct color=#FFFFFF>[震音]</ct>和3枚<ct color=#FFFFFF>[音簇]</ct>进行攻击。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "十二平均律",
+      "desc": "耀嘉音攻击命中敌人时，目标的全属性伤害抗性降低6%，最多叠加3层，持续30秒，重复触发时刷新持续时间；进入战场时，耀嘉音立刻获得1000点喧响值；发动<ct color=#FFFFFF>[终结技]</ct>时，全队角色各自获得1层<ct color=#FFFFFF>[庇佑之音]</ct>效果，持续60秒，受到敌方攻击时，将消耗<ct color=#FFFFFF>[庇佑之音]</ct>并获得无敌效果，持续1秒。",
+      "flavor": {
+        "0": "「老师老师，什么是十二平均律？」",
+        "1": "「十二平均律是一种音乐的律式，就像小朋友们要排队队一样，声音也要排队队。」",
+        "2": "「那声音肯定也和小朋友一样，不爱排队队！」",
+        "3": "——嘉音六岁时的音乐老师，在她成名之后回忆道。"
+      }
+    },
+    "2": {
+      "name": "贪心艺术",
+      "desc": "<ct color=#FFFFFF>[核心被动：《如歌的行板》]</ct>中的攻击力提升效果额外提升19%，上限额外提升400点；<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，队伍中其他角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[回避支援]</ct>入场时，耀嘉音将额外追加释放1道<ct color=#FFFFFF>[震音]</ct>和3枚<ct color=#FFFFFF>[音簇]</ct>进行攻击，3秒内最多触发一次。",
+      "flavor": {
+        "0": "「这个世界上最闪亮的东西，当然是爱！」",
+        "1": "像筑巢的小鸟，想要收集亮晶晶的东西。艺术家内心的那份小贪心，就是收集世界上所有的爱吧？只要将所有的爱汇聚在一起，就能创作出最动人的旋律。"
+      }
+    },
+    "3": {
+      "name": "交错五线谱",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "空白的五线谱，是永不相交的平行线，就像未曾相遇的灵魂，静静等待着彼此的旋律交织成曲。",
+        "1": "「那就用音符填满它好了！还要很多很多连音符，会是一首很棒的歌吧？」",
+        "2": "就这样创作了一首从头到尾用连音符横跨了136小节的新歌…"
+      }
+    },
+    "4": {
+      "name": "《后颈的碎发》",
+      "desc": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>后，15秒内，耀嘉音未拥有<ct color=#FFFFFF>[和弦]</ct>时也能够触发<ct color=#FFFFFF>[快速支援]</ct>，且攻击命中敌人时触发<ct color=#FFFFFF>[快速支援]</ct>的间隔缩短至1秒；<ct color=#FFFFFF>[咏叹华彩]</ct>状态下，队伍中其他角色通过<ct color=#FFFFFF>[快速支援]</ct>入场时，将根据自身特性获得不同的增益效果，全队3秒内最多触发一次：<ct color=#FFFFFF>[强攻]</ct>：下一次<ct color=#FFFFFF>[快速支援]</ct>重击命中敌人时，额外造成等同于耀嘉音300%攻击力的伤害；<ct color=#FFFFFF>[异常]</ct>：下一次<ct color=#FFFFFF>[快速支援]</ct>累积的属性异常积蓄值提升50%；<ct color=#FFFFFF>[击破]</ct>：下一次<ct color=#FFFFFF>[快速支援]</ct>造成的失衡值提升50%。",
+      "flavor": {
+        "0": "一只手悬在钢琴上",
+        "1": "不知该按下哪一个键",
+        "2": "是悲伤的小调",
+        "3": "还是悠扬的思念？",
+        "4": "在音符间寻觅你的影子",
+        "5": "闭上眼，就能看到",
+        "6": "你后颈的碎发"
+      }
+    },
+    "5": {
+      "name": "绳匠与丝弦",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「伊芙！我有一个重大发现——伊芙和{M#哲}{F#铃}都是长条形的！」",
+        "1": "「…这两者的共性是什么？」",
+        "2": "「你们都是我最喜欢的人啊！」",
+        "3": "嘉音像发现了什么不得了的机密一般，开心而明媚。"
+      }
+    },
+    "6": {
+      "name": "我们即是世界",
+      "desc": "在<ct color=#FFFFFF>[咏叹华彩]</ct>状态下释放和追加释放的<ct color=#FFFFFF>[震音]</ct>和<ct color=#FFFFFF>[音簇]</ct>的伤害倍率提升至原本的200%，暴击率提升80%；触发<ct color=#FFFFFF>[精准支援]</ct>时，耀嘉音会自动追加发动蓄力完成后的<ct color=#FFFFFF>[普通攻击：《随想曲》]</ct>第三段攻击，并使该招式的暴击率提升80%，10秒内最多触发一次。",
+      "flavor": {
+        "0": "世界的纷纷扰扰，都是源自人心的孤寂。如果每个人的心都可以得到回音，会不会，这个世界的苦难、悲伤、沉默都可以被统统抹去？",
+        "1": "若能用歌声编织起这份连结，是否所有的裂痕都会愈合，所有的痛楚都会化作悠扬的音律，在寂静中响起？那时，整个世界，便不再是任何一座孤岛。",
+        "2": "「这首歌，献给这个世界！」"
+      }
+    }
+  },
+  "potential": {}
+}
