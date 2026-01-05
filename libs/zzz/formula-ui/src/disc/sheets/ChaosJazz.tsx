@@ -43,14 +43,8 @@ const sheet: UISheet<'2' | '4'> = {
           label: ch('set4_cond'),
           metadata: cond.while_off_field,
           fields: [
-            {
-              title: 'EX Special Attack DMG', // TODO: L10n
-              fieldRef: buff.set4_off_field_special_dmg_.tag,
-            },
-            {
-              title: 'Assist Attack Attack DMG', // TODO: L10n
-              fieldRef: buff.set4_off_field_assist_dmg_.tag,
-            },
+            tagToTagField(buff.set4_off_field_special_dmg_.tag),
+            tagToTagField(buff.set4_off_field_assist_dmg_.tag),
           ],
         },
       },

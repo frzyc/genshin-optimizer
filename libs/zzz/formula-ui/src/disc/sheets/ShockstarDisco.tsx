@@ -2,7 +2,7 @@ import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { ShockstarDisco } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 
 const key: DiscSetKey = 'ShockstarDisco'
@@ -32,18 +32,9 @@ const sheet: UISheet<'2' | '4'> = {
       {
         type: 'fields',
         fields: [
-          {
-            title: 'Basic Attack Daze', // TODO: L10n
-            fieldRef: buff.set4_basic_daze_.tag,
-          },
-          {
-            title: 'Dash Attack Daze', // TODO: L10n
-            fieldRef: buff.set4_dash_daze_.tag,
-          },
-          {
-            title: 'Dodge Counter Daze', // TODO: L10n
-            fieldRef: buff.set4_dodgeCounter_daze_.tag,
-          },
+          tagToTagField(buff.set4_basic_daze_.tag),
+          tagToTagField(buff.set4_dash_daze_.tag),
+          tagToTagField(buff.set4_dodgeCounter_daze_.tag),
         ],
       },
     ],
