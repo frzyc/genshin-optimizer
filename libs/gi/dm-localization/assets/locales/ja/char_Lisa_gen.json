@@ -100,7 +100,7 @@
     }
   },
   "passive1": {
-    "name": "感電余震",
+    "name": "感電追击",
     "description": {
       "0": "重撃が命中した時、敵に<strong>蒼雷</strong>の誘雷効果を付与する。"
     }

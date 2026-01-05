@@ -1,0 +1,12 @@
+{
+  "coreCond": {
+    "morale_consumed": "消耗的士气点",
+    "morale_burst_hit": "在士气爆发状态，当起手轻拳或刺拳连击命中敌人时"
+  },
+  "abilityCond": "昂扬层数",
+  "collapseCond": "敌人具有溃败效果",
+  "m1_finishing_move_dmg_": "第5段强力终结技（士气爆发）伤害加成",
+  "m2Cond": "在士气爆发状态，当终结技命中敌人时",
+  "m2_elation_inc_": "昂扬增益提升",
+  "m6_blazing_impact_dmg": "火焰冲击伤害"
+}

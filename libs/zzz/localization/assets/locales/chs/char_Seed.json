@@ -1,0 +1,8 @@
+{
+  "coreCond": {
+    "onslaught": "当先锋发动强化特殊技时",
+    "directStrike": "当「席德」发动强化特殊技时",
+    "directStrikeDisplay": "当「席德」发动强化特殊技时"
+  },
+  "m2Cond": "强化特殊技：铁落花每消耗5点能量"
+}
