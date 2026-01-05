@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(taskkill:*)",
+      "Bash(yarn run nx serve:*)",
+      "Bash(npx yarn run nx serve:*)"
+    ]
+  }
+}

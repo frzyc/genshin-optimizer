@@ -1,6 +1,7 @@
 {
   "char": "Character",
   "opt": "Optimize",
+  "optimizeTitle": "Optimize - {{name}}",
   "builds": "Builds",
   "eq": "Equip",
   "charSheet": "Character Mechanics",

@@ -1,0 +1,29 @@
+{
+  "addNew": "添加角色",
+  "charLevel": "Lv. {{level}}",
+  "characterCard": {
+    "coreStat": "核心属性",
+    "notUnlocked": "未解锁"
+  },
+  "characterEditor": {
+    "delete": "删除角色",
+    "new": "新增",
+    "none": "无"
+  },
+  "basic": "普攻 Lv. {{level}}",
+  "dodge": "闪避 Lv. {{level}}",
+  "assist": "支援 Lv. {{level}}",
+  "special": "特殊技 Lv. {{level}}",
+  "chain": "连携技 Lv. {{level}}",
+  "core": "核心技 Lv. {{level}}",
+  "tabEquip": {
+    "swapDisc": "更换驱动盘",
+    "swapWengine": "更换音擎"
+  },
+  "mindscapeTitle": "影画",
+  "mindscape": "M{{level}}",
+  "characterName": "角色名称",
+  "potential": "强化 Lv. {{level}}",
+  "showingNum_one": "显示 <1>{{count}}</1> / {{value}} 个角色",
+  "showingNum_other": "显示 <1>{{count}}</1> / {{value}} 个角色"
+}

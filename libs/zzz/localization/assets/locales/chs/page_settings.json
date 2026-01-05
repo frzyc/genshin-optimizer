@@ -1,0 +1,54 @@
+{
+  "title": "设置",
+  "languageCard": {
+    "languageFormat": "语言：{{language}}"
+  },
+  "DatabaseCard": {
+    "title": "数据库",
+    "button": {
+      "swap": "切换",
+      "copy": "复制到剪贴板",
+      "upload": "上传",
+      "download": "下载",
+      "delete": "删除"
+    },
+    "currentDB": "当前数据库"
+  },
+  "count": {
+    "chars": "角色：",
+    "discs": "驱动盘：",
+    "wengines": "音擎：",
+    "teams": "队伍：",
+    "builds": "配装：",
+    "new": "新增：",
+    "unchanged": "未变更：",
+    "upgraded": "已升级：",
+    "removed": "已移除：",
+    "notInImport": "不在导入中：",
+    "dbTotal": "合并总计：",
+    "invalid": "无效："
+  },
+  "uploadCard": {
+    "error": {
+      "jsonParse": "无法解析数据库JSON文件。",
+      "sroInvalid": "无效的SRO数据库文件。",
+      "unknown": "发生未知错误。"
+    },
+    "title": "数据库上传",
+    "buttons": {
+      "open": "打开",
+      "detectDups": "检测更新/重复",
+      "delNotInImport": "删除不在导入中的项目"
+    },
+    "hint": "在此加载您的JSON文件...",
+    "tooltip": {
+      "ignoreDup": "不检测升级/重复项。导入内容将添加到现有SRO库存之上。",
+      "detectDup": "在SRO库存中查找升级/重复项，并将导入内容合并到SRO中。",
+      "keepNotInImport": "假设导入的是部分库存。不会删除任何内容。",
+      "delNotInImport": "假设导入的是完整库存。SRO库存中不存在于导入中的项目将被删除。"
+    },
+    "hintPaste": "...或在下方粘贴您的数据。",
+    "dbSource": "数据来源：",
+    "replaceDatabase": "更新数据库"
+  }
+}

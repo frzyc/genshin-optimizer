@@ -18,7 +18,7 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense, useDeferredValue, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { DiscCard } from './DiscCard'
 import DiscFilter from './DiscFilter'
 
@@ -88,8 +88,15 @@ export function DiscInventory({
             flexWrap="wrap"
           >
             <Typography color="text.secondary">
-              Showing <b>{showingTextProps.numShowing}</b> out of{' '}
-              {showingTextProps.totalShowing} Items
+              <Trans
+                t={t}
+                i18nKey="showingNum"
+                count={showingTextProps.numShowing}
+                values={{ value: showingTextProps.totalShowing }}
+              >
+                Showing <b>{{ count: showingTextProps.numShowing }}</b> out of{' '}
+                {{ value: showingTextProps.totalShowing }} Disc
+              </Trans>
             </Typography>
           </Box>
         </CardContent>

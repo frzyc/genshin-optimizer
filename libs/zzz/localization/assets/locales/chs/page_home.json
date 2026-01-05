@@ -1,0 +1,19 @@
+{
+  "quickLinksCard": {
+    "title": "快速链接",
+    "buttons": {
+      "patchNotes": {
+        "title": "补丁说明",
+        "tooltip": "绝区零优化器的所有补丁说明"
+      }
+    }
+  },
+  "teamCard": {
+    "title": "致谢名单",
+    "jobTitle": {
+      "leadDev": "首席开发者",
+      "dev": "开发者",
+      "designer": "设计师"
+    }
+  }
+}
