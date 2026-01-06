@@ -1,10 +1,8 @@
-'use client'
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
-  NextImage,
   SortByButton,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
@@ -13,7 +11,12 @@ import {
   filterFunction,
   sortFunction,
 } from '@genshin-optimizer/common/util'
-import { characterAsset, rarityDefIcon } from '@genshin-optimizer/zzz/assets'
+import {
+  characterAsset,
+  factionDefIcon,
+  rarityDefIcon,
+  specialityDefIcon,
+} from '@genshin-optimizer/zzz/assets'
 import type {
   AttributeKey,
   CharacterKey,
@@ -26,7 +29,9 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
+import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
+import { Block } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
@@ -56,11 +61,13 @@ export function CharacterSingleSelectionModal({
   onHide,
   onSelect,
   newFirst = false,
+  showNone = false,
 }: {
   show: boolean
   onHide: () => void
-  onSelect: (cKey: CharacterKey) => void
+  onSelect: (cKey: CharacterKey | null) => void
   newFirst?: boolean
+  showNone?: boolean
 }) {
   const { database } = useDatabaseContext()
   const displayCharacter = useDataEntryBase(database.displayCharacter)
@@ -125,38 +132,54 @@ export function CharacterSingleSelectionModal({
             <Skeleton variant="rectangular" width="100%" height={1000} />
           }
         >
-          <Grid
-            container
-            spacing={0.5}
-            columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}
-          >
+          <Grid container spacing={0.5} columns={{ xs: 1, sm: 2, lg: 3 }}>
+            {showNone && (
+              <Grid item xs={1}>
+                <CharacterCard
+                  characterKey={undefined}
+                  onClick={() => {
+                    onHide()
+                    onSelect(null)
+                  }}
+                />
+              </Grid>
+            )}
             {characterKeyList.map((characterKey) => (
               <Grid item key={characterKey} xs={1}>
-                <CardThemed
-                  bgt="light"
-                  sx={(theme) => ({
-                    position: 'relative',
-                    flexGrow: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    borderRadius: '40px 16px 16px 40px',
-                    border: `3px solid ${theme.palette.contentZzz.main}`,
-                  })}
-                >
-                  <SelectionCard
-                    characterKey={characterKey}
-                    onClick={() => {
-                      onHide()
-                      onSelect(characterKey)
-                    }}
-                  />
-                </CardThemed>
+                <CharacterCard
+                  characterKey={characterKey}
+                  onClick={() => {
+                    onHide()
+                    onSelect(characterKey)
+                  }}
+                />
               </Grid>
             ))}
           </Grid>
         </Suspense>
       </CardContent>
     </CharacterSelectionModalBase>
+  )
+}
+
+function CharacterCard({
+  characterKey,
+  onClick,
+}: { characterKey: CharacterKey | undefined; onClick: () => void }) {
+  return (
+    <CardThemed
+      bgt="light"
+      sx={(theme) => ({
+        position: 'relative',
+        flexGrow: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        borderRadius: '16px 16px 16px 16px',
+        border: `3px solid ${theme.palette.contentZzz.main}`,
+      })}
+    >
+      <SelectionCard characterKey={characterKey} onClick={onClick} />
+    </CardThemed>
   )
 }
 
@@ -301,18 +324,21 @@ function SelectionCard({
   characterKey,
   onClick,
 }: {
-  characterKey: CharacterKey
+  characterKey: CharacterKey | undefined
   onClick: () => void
 }) {
   const { t } = useTranslation(['page_characters', 'charNames_gen'])
   const theme = useTheme()
   const character = useCharacter(characterKey)
-  const { rarity, attribute } = getCharStat(characterKey)
+  const { rarity, attribute, faction, specialty } = characterKey
+    ? getCharStat(characterKey)
+    : {}
   const { level = 1, promotion = 0, mindscape = 0 } = character ?? {}
-  const selectorBackgroundColor =
-    attribute === 'electric'
+  const selectorBackgroundColor = attribute
+    ? attribute === 'electric'
       ? theme.palette[attribute].light
       : theme.palette[attribute].main
+    : theme.palette.contentZzz.main
 
   return (
     <CardActionArea onClick={onClick}>
@@ -320,9 +346,11 @@ function SelectionCard({
         sx={{
           position: 'relative',
           width: '100%',
+          height: '120px',
           display: 'flex',
-          padding: '3px',
+          paddingLeft: '3px',
           gap: 0.5,
+          alignItems: 'center',
           '&::before': {
             content: '""',
             display: 'block',
@@ -338,18 +366,21 @@ function SelectionCard({
       >
         <Box
           sx={{
-            maxWidth: { xs: '33%', lg: '30%' },
-            alignSelf: 'flex-end',
             display: 'flex',
             flexDirection: 'column',
             zIndex: 1,
             flexShrink: 1,
           }}
         >
-          <Box
-            component={NextImage ? NextImage : 'img'}
-            src={characterAsset(characterKey, 'interknot')}
-          />
+          {characterKey ? (
+            <Box
+              component="img"
+              sx={{ height: '120px' }}
+              src={characterAsset(characterKey, 'select')}
+            />
+          ) : (
+            <Block sx={{ fontSize: '100px' }} />
+          )}
         </Box>
         <Box
           sx={{
@@ -357,54 +388,80 @@ function SelectionCard({
             flexDirection: 'column',
             zIndex: 1,
             justifyContent: 'space-evenly',
+            background: theme.palette.contentNormal.main,
+            padding: '4px 12px',
+            width: '100%',
+            height: '100%',
           }}
         >
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-            <ImgIcon size={1.5} src={rarityDefIcon(rarity)} />
-            <Typography
-              variant="subtitle2"
-              sx={(theme) => ({
-                flexGrow: 1,
-                color: theme.palette.contentNormal.main,
-                fontWeight: '900',
-              })}
-            >
-              {t(`charNames_gen:${characterKey}`)}
-            </Typography>
-          </Box>
-          {character ? (
-            <Box
-              sx={(theme) => ({
-                display: 'flex',
-                gap: 1,
-                alignItems: 'center',
-                background: theme.palette.contentNormal.main,
-                padding: '4px 12px',
-                borderRadius: '20px',
-              })}
-            >
-              <Box sx={{ textShadow: '0 0 5px gray' }}>
+          {characterKey ? (
+            <>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                 <Typography
-                  variant="body2"
-                  component="span"
-                  whiteSpace="nowrap"
+                  variant="h6"
+                  sx={{
+                    fontWeight: '900',
+                    textTransform: 'uppercase',
+                    fontStyle: 'italic',
+                  }}
                 >
-                  {t('charLevel', { level: level })}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  component="span"
-                  color="text.secondary"
-                >
-                  /{milestoneMaxLevel[promotion]}
+                  {t(`charNames_gen:${characterKey}`)}
                 </Typography>
               </Box>
-              <Typography variant="body2">M{mindscape}</Typography>
-            </Box>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                <ImgIcon
+                  size={2}
+                  src={factionDefIcon(faction ?? 'BelebogHeavyIndustries')}
+                />
+                <ElementIcon
+                  ele={attribute ?? 'physical'}
+                  iconProps={{ sx: { fontSize: '1.5em' } }}
+                />
+                <ImgIcon
+                  size={1.5}
+                  src={specialityDefIcon(specialty ?? 'anomaly')}
+                />
+              </Box>
+
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <ImgIcon size={1.5} src={rarityDefIcon(rarity ?? 'A')} />
+                {!!character && (
+                  <Box
+                    sx={{ textShadow: '0 0 5px gray', display: 'flex', gap: 1 }}
+                  >
+                    <Box>
+                      <Typography
+                        variant="body2"
+                        component="span"
+                        whiteSpace="nowrap"
+                      >
+                        {t('charLevel', { level: level })}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        component="span"
+                        color="text.secondary"
+                      >
+                        /{milestoneMaxLevel[promotion]}
+                      </Typography>
+                    </Box>
+                    <Typography variant="body2" component="span">
+                      M{mindscape}
+                    </Typography>
+                  </Box>
+                )}
+
+                {!character && (
+                  <Typography component="span" variant="body2">
+                    <SqBadge color={'electric'}>
+                      {t('characterEditor.new')}
+                    </SqBadge>
+                  </Typography>
+                )}
+              </Box>
+            </>
           ) : (
-            <Typography component="span" variant="body2">
-              <SqBadge color={'electric'}>{t('characterEditor.new')}</SqBadge>
-            </Typography>
+            <Typography variant="h6">{t('characterEditor.none')}</Typography>
           )}
         </Box>
       </Box>

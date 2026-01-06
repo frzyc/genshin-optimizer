@@ -1,4 +1,4 @@
-import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
@@ -30,7 +30,7 @@ export function ArtifactCardPico({
               transform: 'translate(-50%, -50%)',
               opacity: 0.7,
             }}
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={imgAssets.slot[key]}
           />
         </Box>
@@ -46,7 +46,7 @@ export function ArtifactCardPico({
         sx={{ display: 'flex', flexDirection: 'column', position: 'relative' }}
       >
         <Box
-          component={NextImage ? NextImage : 'img'}
+          component="img"
           className={`grad-${rarity}star`}
           src={artifactAsset(art.setKey, art.slotKey)}
           maxWidth="100%"

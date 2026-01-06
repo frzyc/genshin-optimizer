@@ -21,6 +21,7 @@ export function dumpChars(fileDir: string) {
       core: getCoreStrings(charData.cores),
       ability: getAbilityStrings(charData.cores),
       mindscapes: getMindscapeStrings(charData.mindscapes),
+      potential: getPotentialStrings(charData.potential),
     })
   })
   dumpFile(`${fileDir}/charNames_gen.json`, charNames)
@@ -103,4 +104,14 @@ function getMindscapeStrings(data: CharacterData['mindscapes']) {
       },
     ])
   )
+}
+
+function getPotentialStrings(data: CharacterData['potential']) {
+  if (Object.keys(data).length === 0) {
+    return {}
+  }
+  return {
+    name: Object.values(data).filter((_, i) => i > 0)[0].Name,
+    desc: Object.values(data).map((pot) => processText(pot.Desc)),
+  }
 }

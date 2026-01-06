@@ -1,4 +1,3 @@
-'use client'
 import type { EmotionJSX } from '@emotion/react/types/jsx-namespace'
 import { Skeleton, Typography } from '@mui/material'
 import type { TFunction } from 'i18next'

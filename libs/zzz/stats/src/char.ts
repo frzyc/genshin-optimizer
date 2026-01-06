@@ -28,12 +28,13 @@ export type CharacterDatum = {
     enerRegen: number
   }
   promotionStats: Array<{ hp: number; atk: number; def: number }>
-  coreStats: Array<Partial<Record<BaseStatKey, number>>>
+  coreStats: Array<Partial<Record<BaseStatKey | 'hp_', number>>>
   skillParams: Record<SkillKey, Record<string, SkillParam[]>>
   calcedParams: Record<SkillKey, Record<string, CalcedParam[]>>
   coreParams: number[][]
   abilityParams: number[]
   mindscapeParams: number[][]
+  potentialParams: number[][]
 }
 export type SkillParam = {
   DamagePercentage: number

@@ -4,8 +4,8 @@ import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
   allCharacterKeys,
   allDiscSlotKeys,
-  coreLimits,
-  skillLimits,
+  coreByLevel,
+  skillByLevel,
 } from '@genshin-optimizer/zzz/consts'
 import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { ICharacter } from '@genshin-optimizer/zzz/zood'
@@ -24,7 +24,7 @@ export class CharacterDataManager extends DataManager<
   override validate(obj: unknown): ICharacter | undefined {
     if (!obj || typeof obj !== 'object') return undefined
     const { key: characterKey } = obj as ICharacter
-    let { core, mindscape, dodge, basic, chain, special, assist } =
+    let { core, mindscape, dodge, basic, chain, special, assist, potential } =
       obj as ICharacter
     const { level: rawLevel, promotion: rawAscension } = obj as ICharacter
 
@@ -33,23 +33,26 @@ export class CharacterDataManager extends DataManager<
     if (typeof mindscape !== 'number' || mindscape < 0 || mindscape > 6)
       mindscape = 0
 
+    if (typeof potential !== 'number' || potential < 0 || potential > 6)
+      potential = 0
+
     const { sanitizedLevel, milestone: promotion } = validateLevelMilestone(
       rawLevel,
       rawAscension
     )
     if (typeof basic !== 'number') basic = 1
-    basic = clamp(basic, 1, skillLimits[promotion])
+    basic = clamp(basic, 1, skillByLevel(sanitizedLevel))
     if (typeof dodge !== 'number') dodge = 1
-    dodge = clamp(dodge, 1, skillLimits[promotion])
+    dodge = clamp(dodge, 1, skillByLevel(sanitizedLevel))
     if (typeof chain !== 'number') chain = 1
-    chain = clamp(chain, 1, skillLimits[promotion])
+    chain = clamp(chain, 1, skillByLevel(sanitizedLevel))
     if (typeof special !== 'number') special = 1
-    special = clamp(special, 1, skillLimits[promotion])
+    special = clamp(special, 1, skillByLevel(sanitizedLevel))
     if (typeof assist !== 'number') assist = 1
-    assist = clamp(assist, 1, skillLimits[promotion])
+    assist = clamp(assist, 1, skillByLevel(sanitizedLevel))
 
     if (typeof core !== 'number') core = 0
-    core = clamp(core, 0, coreLimits[promotion])
+    core = clamp(core, 0, coreByLevel(sanitizedLevel))
 
     const char: ICharacter = {
       key: characterKey,
@@ -62,6 +65,7 @@ export class CharacterDataManager extends DataManager<
       special,
       assist,
       promotion,
+      potential,
     }
     return char
   }
@@ -216,6 +220,7 @@ export function initialCharacterData(key: CharacterKey): ICachedCharacter {
     core: 6,
     promotion: 0,
     mindscape: 0,
+    potential: 0,
     dodge: 1,
     basic: 1,
     chain: 1,

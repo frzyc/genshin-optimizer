@@ -41,9 +41,11 @@ export const allCharacterKeys = [
   'Trigger',
   'Vivian',
   'Yanagi',
+  'YeShunguang',
   'Yidhari',
   'Yixuan',
   'Yuzuha',
+  'Zhao',
   'ZhuYuan',
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]

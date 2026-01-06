@@ -1,7 +1,6 @@
 import {
   BootstrapTooltip,
   CardThemed,
-  NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
@@ -126,7 +125,7 @@ export function LightConeCard({
           </Box>
           <Box sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}>
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               alt="Light Cone Image"
               src={lightConeAsset(key, 'icon')}
               sx={{

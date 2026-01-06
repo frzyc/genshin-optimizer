@@ -9,6 +9,7 @@
   "cd": "Cooldown",
   "duration": "Duration",
   "shield": "Shield",
+  "heal": "Healing",
   "enterCombatOrSwitchIn": "Entering combat or switching in",
   "uponLaunch": {
     "1": "Upon launching <strong>{{val1}}</strong>",
@@ -30,7 +31,8 @@
     "exSpecial": "EX Special Attack",
     "chain": "Chain Attack",
     "ult": "Ultimate",
-    "aftershock": "Aftershock"
+    "aftershock": "Aftershock",
+    "assistFollowUp": "Assist Follow-Up"
   },
   "attributes": {
     "electric": "Electric",

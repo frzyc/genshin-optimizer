@@ -568,9 +568,26 @@ function getNearestPoint(
 // Should work because character translation should already be loaded
 function getLabelFromNode(info: InfoExtra & Info, t: TFunction) {
   const { name, textSuffix } = info
-  return typeof name === 'string'
-    ? name
-    : `${t(`${name?.props.ns}:${name?.props.key18}`)}${
-        textSuffix ? ` ${textSuffix}` : ''
-      }`
+
+  // helper function to format node info
+  function formatInfo(
+    nodeInfo:
+      | string
+      | {
+          props?: { ns?: string; key18?: string; values?: Record<string, any> }
+        }
+      | undefined
+  ) {
+    let formattedInfo = ''
+    if (typeof nodeInfo === 'string') formattedInfo = nodeInfo
+    else if (nodeInfo && nodeInfo.props?.key18) {
+      formattedInfo =
+        // Pass in data such as namespace, values, etc... through second parameter.
+        `${t(`${nodeInfo.props.key18}`, { ns: nodeInfo.props.ns, ...nodeInfo.props.values })}`
+    }
+
+    return formattedInfo
+  }
+
+  return `${formatInfo(name)} ${formatInfo(textSuffix)}`
 }

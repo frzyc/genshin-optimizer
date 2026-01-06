@@ -1,4 +1,4 @@
-import { ImgIcon, NextImage, SqBadge } from '@genshin-optimizer/common/ui'
+import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
   characterAsset,
@@ -28,7 +28,14 @@ export function CharacterCompactMindscapeSelector({
   const { t } = useTranslation('page_characters')
 
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: '12px' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 2,
+        justifyContent: 'center',
+      }}
+    >
       {range(1, 6).map((i) => (
         <Box key={i}>
           <ZCard sx={{ position: 'relative', borderRadius: '40px' }}>
@@ -148,7 +155,7 @@ function CoverArea({
       </Box>
       <Box
         src={characterAsset(characterKey, 'full')}
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         width="100%"
         height="auto"
       ></Box>

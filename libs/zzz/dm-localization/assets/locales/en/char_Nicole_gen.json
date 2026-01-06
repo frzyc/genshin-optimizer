@@ -225,5 +225,6 @@
       "desc": "When Nicole's energy fields deal DMG to an enemy, all units' CRIT Rate against that enemy increases by 1.5%, stacking up to 10 times, and lasting 12s. The duration of each stack is calculated separately.",
       "flavor": "A switch to higher quality ammo with better firepower and increased compressed Etheric Matter leads to higher damage, longer use duration... and higher costs."
     }
-  }
+  },
+  "potential": {}
 }

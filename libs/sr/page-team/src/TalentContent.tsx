@@ -3,7 +3,6 @@ import {
   CardThemed,
   ConditionalWrapper,
   DropdownButton,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
@@ -354,7 +353,7 @@ function SkillDisplayCard({
             {img && (
               <Grid item>
                 <Box
-                  component={NextImage ? NextImage : 'img'}
+                  component="img"
                   src={img}
                   sx={{ width: 60, height: 'auto' }}
                 />
