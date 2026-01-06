@@ -166,8 +166,8 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         .reread(reader.withTag({ et: 'own', dst: null, src: dst }))
     ),
     // Previous Member
-    members.map((src, i) =>
-      reader.withTag({ et: 'prevMember', src }).reread(
+    members.map((dst, i) =>
+      reader.withTag({ et: 'prevMember', dst }).reread(
         reader.withTag({
           et: 'own',
           dst: null,
