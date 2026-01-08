@@ -28,6 +28,7 @@ export function initCustomTarget(path: string[], multi = 1): CustomTarget {
     hitMode: 'avgHit',
     bonusStats: {},
     description: '',
+    conditionals: {},
   }
 }
 function validateOptTarget(path: string[]): string[] {
@@ -44,6 +45,7 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
     infusionAura,
     bonusStats,
     description,
+    conditionals,
   } = ct as CustomTarget
 
   if (typeof weight !== 'number' || weight <= 0) weight = 1
@@ -81,6 +83,8 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
     )
   )
 
+  if (!conditionals) conditionals = {}
+
   return {
     weight,
     path,
@@ -89,6 +93,7 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
     infusionAura,
     bonusStats,
     description,
+    conditionals,
   }
 }
 export function validateCustomMultiTarget(

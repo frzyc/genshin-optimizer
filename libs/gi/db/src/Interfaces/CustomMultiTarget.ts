@@ -5,6 +5,7 @@ import type {
   MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
 import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
+import type { IConditionalValues } from '../Database/DataManagers/TeamCharacterDataManager'
 
 export type BonusStats = Partial<Record<InputPremodKey, number>>
 export interface CustomTarget {
@@ -15,6 +16,7 @@ export interface CustomTarget {
   infusionAura?: InfusionAuraElementKey
   bonusStats: BonusStats
   description: string
+  conditionals: IConditionalValues
 }
 export interface CustomMultiTarget {
   name: string
