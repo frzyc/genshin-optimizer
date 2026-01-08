@@ -111,7 +111,7 @@ export class ZzzDatabase extends Database {
   }
   exportZOOD() {
     const zood: Partial<IZZZDatabase & IZenlessObjectDescription> = {
-      format: 'ZOOD',
+      format: 'ZOD',
       dbVersion: currentDBVersion,
       source: zzzSource,
       version: 1,
