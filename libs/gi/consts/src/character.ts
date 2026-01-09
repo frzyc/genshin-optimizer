@@ -355,7 +355,6 @@ export function validateCharLevelAsc(
   let level = inputLevel
   const ascension = inputAscension
 
-  // Handle special levels > 90 for Somnia
   if (typeof level === 'number' && level > 90) {
     if (level > 97) level = 100
     else if (level > 92) level = 95
