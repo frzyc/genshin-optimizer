@@ -154,11 +154,15 @@ export function getDisplaySections(data: UIData): DisplaySections {
     ...artifact,
     [
       'teamBuff',
-      [
-        ...Object.values(teamBuff.total ?? {}),
-        ...Object.values(teamBuff.premod ?? {}),
-        ...Object.values(teamBuff.enemy ?? {}),
-      ],
+      Object.entries(teamBuff).reduce(
+        (acc, [key, value]) => {
+          Object.entries(value).forEach(([subKey, node]) => {
+            acc[key + ':' + subKey] = node
+          })
+          return acc
+        },
+        {} as DisplaySub<CalcResult>
+      ),
     ],
   ] as DisplaySections
 }
