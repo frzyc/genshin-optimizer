@@ -147,8 +147,8 @@
   "constellation2": {
     "name": "Sitzender Hund – Verlässlich wie eine Uhr",
     "description": {
-      "0": "Verlängert die Wirkungsdauer von Gorous <strong>Würde des Generals</strong> beim Erhalten von durch Kristallisationsreaktionen entstehenden Splittern durch aktuelle Figuren in der Nähe während der Wirkungsdauer von Würde des Generals um 1 s.",
-      "1": "0,1 s Abklingzeit, verlängert die Wirkungsdauer auf diese Weise um bis zu 3 s."
+      "0": "Verlängert die Wirkungsdauer von Gorous <strong>Würde des Generals</strong> beim Erhalten von durch Kristallisationsreaktionen entstehenden Splittern oder Auslösen der Reaktion „Mond-Kristallisation“ durch aktuelle Figuren in der Nähe während der Wirkungsdauer von Würde des Generals um 1 s.",
+      "1": "0,1 s Abklingzeit, verlängert die Wirkungsdauer auf diese Weise um bis zu 3 s."
     }
   },
   "constellation3": {

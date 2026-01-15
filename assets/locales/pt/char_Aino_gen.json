@@ -156,7 +156,7 @@
   "constellation6": {
     "name": "A Responsabilidade de um Gênio Mecânico",
     "description": {
-      "0": "Nos 15s depois de lançar o Supremo <strong>Dispositivo Refrigerador Preciso</strong>, se um personagem ativo próximo desencadear Eletricamente Carregado, Florescimento, Carga Lunar ou Florescimento Lunar, aumenta o Dano causado em 15%.",
+      "0": "Nos 15s depois de lançar o Supremo <strong>Dispositivo Refrigerador Preciso</strong>, se um personagem ativo próximo desencadear Eletricamente Carregado, Florescimento, Carga Lunar, Florescimento Lunar ou Cristalização Lunar aumenta o Dano causado em 15%.",
       "1": "<strong>Presságio Lunar: Reluzir Cheio</strong>: aumenta o Dano da reação em mais 20%."
     }
   }

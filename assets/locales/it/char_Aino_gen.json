@@ -156,7 +156,7 @@
   "constellation6": {
     "name": "Il peso della genialità",
     "description": {
-      "0": "Per i 15 s successivi all'utilizzo del Tripudio elementale <strong>Raffreddatore idronico di precisione</strong>, i DAN delle reazioni di Electrocarica, Fioritura, Carica lunare e Fioritura lunare dei personaggi attivi vicini aumentano di un 15%.",
+      "0": "Per i 15 s successivi all'utilizzo del Tripudio elementale <strong>Raffreddatore idronico di precisione</strong>, i DAN delle reazioni di Electrocarica, Fioritura, Carica lunare, Fioritura lunare e Cristallizzazione lunare dei personaggi attivi vicini aumentano di un 15%.",
       "1": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, i DAN delle reazioni sopracitate aumentano di un ulteriore 20%."
     }
   }

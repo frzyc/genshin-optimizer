@@ -1,0 +1,24 @@
+{
+  "name": "Nocturne's Curtain Call",
+  "description": {
+    "0": "Manik-manik giok yang diselubungi cahaya bulan, memancarkan pesona lembut dan merdu bahkan di malam musim dingin yang dingin."
+  },
+  "passiveName": "Ballad of the Crossroads",
+  "passiveDescription": {
+    "0": {
+      "0": "Max HP +<cryo>10%</cryo>. Saat Karakter yang mengenakan memicu reaksi Lunar atau mengakibatkan DMG reaksi Lunar terhadap musuh, akan memulihkan <cryo>14</cryo> poin Energy kepada Karakter yang mengenakan dan mendapatkan efek \"Bountiful Sea's Sacred Wine\" selama 12 detik: Max HP +<cryo>14%</cryo> lagi, CRIT DMG untuk DMG reaksi Lunar +<cryo>60%</cryo>. Efek pemulihan Energy hanya dapat terpicu sekali setiap 18 detik. Efek di atas tetap dapat terpicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Max HP +<cryo>12%</cryo>. Saat Karakter yang mengenakan memicu reaksi Lunar atau mengakibatkan DMG reaksi Lunar terhadap musuh, akan memulihkan <cryo>15</cryo> poin Energy kepada Karakter yang mengenakan dan mendapatkan efek \"Bountiful Sea's Sacred Wine\" selama 12 detik: Max HP +<cryo>16%</cryo> lagi, CRIT DMG untuk DMG reaksi Lunar +<cryo>80%</cryo>. Efek pemulihan Energy hanya dapat terpicu sekali setiap 18 detik. Efek di atas tetap dapat terpicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Max HP +<cryo>14%</cryo>. Saat Karakter yang mengenakan memicu reaksi Lunar atau mengakibatkan DMG reaksi Lunar terhadap musuh, akan memulihkan <cryo>16</cryo> poin Energy kepada Karakter yang mengenakan dan mendapatkan efek \"Bountiful Sea's Sacred Wine\" selama 12 detik: Max HP +<cryo>18%</cryo> lagi, CRIT DMG untuk DMG reaksi Lunar +<cryo>100%</cryo>. Efek pemulihan Energy hanya dapat terpicu sekali setiap 18 detik. Efek di atas tetap dapat terpicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Max HP +<cryo>16%</cryo>. Saat Karakter yang mengenakan memicu reaksi Lunar atau mengakibatkan DMG reaksi Lunar terhadap musuh, akan memulihkan <cryo>17</cryo> poin Energy kepada Karakter yang mengenakan dan mendapatkan efek \"Bountiful Sea's Sacred Wine\" selama 12 detik: Max HP +<cryo>20%</cryo> lagi, CRIT DMG untuk DMG reaksi Lunar +<cryo>120%</cryo>. Efek pemulihan Energy hanya dapat terpicu sekali setiap 18 detik. Efek di atas tetap dapat terpicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Max HP +<cryo>18%</cryo>. Saat Karakter yang mengenakan memicu reaksi Lunar atau mengakibatkan DMG reaksi Lunar terhadap musuh, akan memulihkan <cryo>18</cryo> poin Energy kepada Karakter yang mengenakan dan mendapatkan efek \"Bountiful Sea's Sacred Wine\" selama 12 detik: Max HP +<cryo>22%</cryo> lagi, CRIT DMG untuk DMG reaksi Lunar +<cryo>140%</cryo>. Efek pemulihan Energy hanya dapat terpicu sekali setiap 18 detik. Efek di atas tetap dapat terpicu meski Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

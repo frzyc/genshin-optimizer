@@ -201,7 +201,7 @@
   "constellation2": {
     "name": "Sitting Hound: Steady as a Clock",
     "description": {
-      "0": "While <strong>General's Glory</strong> is in effect, its duration is extended by 1s when a nearby active character obtains an Elemental Shard from a Crystallize reaction. ",
+      "0": "While <strong>General's Glory</strong> is in effect, its duration is extended by 1s when a nearby active character obtains an Elemental Shard from a Crystallize reaction, or triggers a Lunar-Crystallize reaction. ",
       "1": "This effect can occur once every 0.1s. Max extension is 3s."
     }
   },

@@ -1,0 +1,29 @@
+{
+  "setName": "A Day Carved From Rising Winds",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "After a Normal Attack, Charged Attack, Elemental Skill, or Elemental Burst hits an opponent, gain the Blessing of Pastoral Winds effect for 6s: ATK is increased by 25%. If the equipping character has completed Witch's Homework, Blessing of Pastoral Winds will be upgraded to Resolve of Pastoral Winds, which also increases the CRIT Rate of the equipping character by an additional 20%. This effect can be triggered even when the character is off-field."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Windborne Flower's Spruchdichtung",
+      "desc": "An azure crystal bloom that never withers, said to have once belonged, in ages past, to a wandering girl who invoked the thousand winds and countless flowers."
+    },
+    "plume": {
+      "name": "Dawn's Brilliant Oath",
+      "desc": "A feather accessory of azure, clear as the dawn, said to have once belonged to a guard who cast aside his name in ages past."
+    },
+    "sands": {
+      "name": "A Note in Spring's Leich",
+      "desc": "An hourglass filled with azure sand. For reasons unknown, no matter how it is turned, the grains within it refuse to stir."
+    },
+    "goblet": {
+      "name": "Heldenepos's Unspoken Tale",
+      "desc": "An ancient goblet, its azure surface weathered by time. It is rumored to have belonged to an unnamed bard in ages past."
+    },
+    "circlet": {
+      "name": "Minnesang of Love and Lament",
+      "desc": "A luxurious hair accessory adorned with jade and azure crystals, said to have once been a token bestowed by the Lord of Storm upon a favored recipient in ages past."
+    }
+  }
+}

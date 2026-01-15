@@ -145,7 +145,7 @@
   "constellation4": {
     "name": "Flower and a Fighter",
     "description": {
-      "0": "Setelah Yun Jin memicu reaksi Crystallize, DEF Yun Jin meningkat 20% selama 12 detik."
+      "0": "Setelah Yun Jin memicu reaksi Crystallize atau Lunar-Crystallize, DEF-nya akan meningkat 20% selama 12 detik."
     }
   },
   "constellation5": {

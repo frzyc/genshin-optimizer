@@ -139,7 +139,7 @@
     "name": "Auch Kristallsplitter sind Edelsteine",
     "description": {
       "0": "Wenn Kachina auf den <strong>kleinen Wirbelwind</strong> steigt oder von ihm absteigt, sammelt sie die Splitter in der Nähe ein, die durch die Reaktion „Kristallisation“ erzeugt wurden.",
-      "1": "Wenn ein Truppenmitglied einen Splitter einsammelt, werden Kachina außerdem 3 Punkte Elementarenergie wiederhergestellt. Elementarenergie kann auf diese Weise einmal alle 5 s wiederhergestellt werden."
+      "1": "Wenn ein Truppenmitglied einen Splitter einsammelt oder die Reaktion „Mond-Kristallisation“ auslöst, werden Kachina außerdem 3 Punkte Elementarenergie wiederhergestellt. Elementarenergie kann auf diese Weise einmal alle 5 s wiederhergestellt werden."
     }
   },
   "constellation2": {

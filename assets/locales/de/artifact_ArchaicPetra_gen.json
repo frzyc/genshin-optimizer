@@ -2,7 +2,7 @@
   "setName": "Archaischer Fels",
   "setEffects": {
     "2": "Erhöht den Geo-Schaden um 15 %.",
-    "4": "Erhöht beim Erschaffen von Splittern durch eine Kristallisationsreaktion den mit dem jeweiligen Element verursachen Schaden aller Truppenmitglieder 10 s lang um 35 %. Zu einem Zeitpunkt kann nur ein SCH-Bonus aufgrund dieses Effekts bestehen."
+    "4": "Erhöht beim Erhalten von durch die Reaktion Kristallisation erschaffenen Splittern oder beim Auslösen der Reaktion Mond-Kristallisation den mit dem jeweiligen Element verursachten Schaden aller Truppenmitglieder 10 s lang um 35 %. Zu einem Zeitpunkt kann nur ein SCH-Bonus aufgrund dieses Effekts bestehen."
   },
   "pieces": {
     "flower": {

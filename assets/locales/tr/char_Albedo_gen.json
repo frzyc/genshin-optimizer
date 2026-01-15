@@ -195,10 +195,10 @@
   "constellation6": {
     "name": "Arınma Tozu",
     "description": {
-      "0": "Güneş Çiçeği alanının içinde bulunan aktif grup üyeleri, Kristalleşme tepkimesi ile oluşmuş bir kalkanla korunuyorlarsa verdikleri Hasar %17 artar."
+      "0": "Güneş Çiçeği alanının içinde bulunan aktif grup üyeleri, Kristalleşme ile oluşturulan bir Kalkanla korunuyorsa veya Güneş Çiçeği alanında Ay Akıntıları mevcutsa o grup üyelerinin Hasarı %17 artar."
     },
     "upgradedDescription": {
-      "0": "Güneş Çiçeği alanı içindeyken, Kristalleşme tepkimesi ile oluşmuş bir Kalkanla korunan mevcut aktif grup üyelerinin Hasarı %17 artar.",
+      "0": "Güneş Çiçeği alanının içinde bulunan aktif grup üyeleri, Kristalleşme ile oluşturulan bir Kalkanla korunuyorsa veya Güneş Çiçeği alanında Ay Akıntıları mevcutsa o grup üyelerinin Hasarı %17 artar.",
       "1": "Ayrıca <strong>Varoluş Ayini: Tektonik Dalga</strong> Element Patlaması kullanıldığında savaş alanındaki tüm Gümüş Çiçekleri yok olur ve bu şekilde bir Gümüş Çiçeği yok olduğunda mevcut Element Patlaması, <strong>Ebedi Başlangıç</strong> Takımyıldızından 4 Ölümcül Hesaplaşma kademesi kaldırmış sayılır. Bu, Ölümcül Çiçeğin sonraki 20 saniye boyunca verdiği Hasarı Albedo'nun Savunmasının %250'si kadar artırır."
     }
   }

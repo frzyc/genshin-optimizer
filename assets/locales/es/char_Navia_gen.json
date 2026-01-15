@@ -42,7 +42,7 @@
   "skill": {
     "name": "Etiqueta vidriopírica",
     "description": {
-      "0": "Cuando un personaje del equipo recoge un fragmento creado con la reacción de Cristalización, Navia obtiene un “fragmento de metralla”, acumulable hasta 6 fragmentos. Cada vez que se recoja un fragmento de Cristalización, se reiniciará la duración de los fragmentos de metralla que posea Navia.",
+      "0": "Cuando un personaje del equipo recoge un fragmento creado con la reacción de Cristalización o cuando causa una reacción de Cristalización Lunar, Navia obtiene un “fragmento de metralla”, acumulable hasta 6 fragmentos. Cada vez que esto ocurra, se reiniciará la duración de los fragmentos de metralla que posea Navia. Navia solo puede obtener 1 fragmento de metralla por segundo con la reacción de Cristalización Lunar.",
       "1": "Al usar esta habilidad, Navia consume todos los fragmentos de metralla, abre su elegante y letal rifleparaguas y dispara varias vidriobalas rosáceas capaces de atravesar las defensas de los enemigos alcanzados para infligirles <geo>Daño Geo</geo>.",
       "2": "Al consumir 0/1/2/3 o más fragmentos de metralla, se dispararán respectivamente 5/7/9/11 vidriobalas rosáceas. Cuantas más vidriobalas alcancen a un enemigo, más daño recibirá. Si un enemigo es alcanzado por 11 vidriobalas rosáceas, estas infligirán un 200% de su daño original.",
       "3": "Además, al consumir más de 3 fragmentos de metralla, cada fragmento por encima del tercero aumenta en un 15% adicional el daño infligido por el próximo disparo.",
