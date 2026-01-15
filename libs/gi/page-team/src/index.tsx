@@ -297,7 +297,12 @@ function InnerContent({ tab }: { tab?: string }) {
                   <Route
                     path="*"
                     index
-                    element={<Content key={characterKey} tab={tab} />}
+                    element={
+                      <Content
+                        key={`${characterKey}${loadoutDatum.teamCharId}${loadoutDatum.buildType === 'tc' ? loadoutDatum.buildTcId : loadoutDatum.buildId}`}
+                        tab={tab}
+                      />
+                    }
                   />
                 </Route>
               </Routes>
