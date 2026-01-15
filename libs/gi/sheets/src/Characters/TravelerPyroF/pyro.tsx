@@ -11,15 +11,18 @@ import {
   equalStr,
   greaterEq,
   greaterEqStr,
+  inferInfoMut,
   infoMut,
   input,
+  percent,
+  prod,
   sum,
   target,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { dataObjForCharacterSheet, dmgNode, hitEle } from '../dataUtil'
 
 export default function pyro(
   key: CharacterSheetKey,
@@ -34,6 +37,10 @@ export default function pyro(
   let s = 0,
     b = 0
   const dm = {
+    charged: {
+      dmg1: skillParam_gen.auto[5],
+      dmg2: skillParam_gen.auto[6],
+    },
     skill: {
       blazingDmg: skillParam_gen.skill[s++],
       scorchingInstantDmg: skillParam_gen.skill[s++],
@@ -45,6 +52,10 @@ export default function pyro(
       dmg: skillParam_gen.burst[b++],
       cd: skillParam_gen.burst[b++][0],
       enerCost: skillParam_gen.burst[b++][0],
+    },
+    lockedPassive: {
+      charged_dmgInc: skillParam_gen.lockedPassive![7][0],
+      cd: skillParam_gen.lockedPassive![8][0],
     },
     // TODO
     constellation1: {
@@ -116,6 +127,17 @@ export default function pyro(
   const c6InNs_charged_critDMG_ = { ...c6InNs_normal_critDMG_ }
   const c6InNs_plunging_critDMG_ = { ...c6InNs_normal_critDMG_ }
 
+  const [, condLockedPassive] = cond('Traveler', 'lockedPassive')
+  const lockedPassive_charged_dmgInc = equal(
+    condLockedPassive,
+    'on',
+    prod(percent(dm.lockedPassive.charged_dmgInc), input.total.atk)
+  )
+  const lockedPassiveData = inferInfoMut({
+    ...hitEle.pyro,
+    premod: { charged_dmgInc: lockedPassive_charged_dmgInc },
+  })
+
   const dmgFormulas = {
     ...dmgForms,
     skill: {
@@ -129,6 +151,18 @@ export default function pyro(
     },
     burst: {
       dmg: dmgNode('atk', dm.burst.dmg, 'burst'),
+    },
+    lockedPassive: {
+      dmg1: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg1, 'charged', lockedPassiveData)
+      ),
+      dmg2: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg2, 'charged', lockedPassiveData)
+      ),
     },
   } as const
 
@@ -259,6 +293,33 @@ export default function pyro(
 
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
+    lockedPassive: ct.talentTem('lockedPassive', [
+      ct.fieldsTem('lockedPassive', {
+        canShow: equal(condLockedPassive, 'on', 1),
+        fields: [
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg1, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(1)',
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg2, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(2)',
+            }),
+          },
+          {
+            node: lockedPassive_charged_dmgInc,
+          },
+          {
+            text: stg('cd'),
+            value: dm.lockedPassive.cd,
+            unit: 's',
+          },
+        ],
+      }),
+    ]),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
