@@ -1,0 +1,24 @@
+{
+  "name": "Son Perde Noktürnü",
+  "description": {
+    "0": "Ay ışığıyla çevrili yeşim bir inci. En soğuk kış gecesinde bile narin sıcaklığı yankılanan bir şarkı gibi hissedilir."
+  },
+  "passiveName": "Kesişen Yolların Şarkısı",
+  "passiveDescription": {
+    "0": {
+      "0": "Maks. Can <cryo>%10</cryo> artar. Ay Tepkimeleri tetikledikten veya düşmanlara Ay Tepkimesi Hasarı verdikten sonra kuşanan karakter <cryo>14</cryo> Enerji yeniler ve 12 saniyeliğine Bereketli Denizin Kutsal Şarabı etkisini kazanır: Maks. Can fazladan <cryo>%14</cryo> artar, Ay Tepkimesi Hasarı kaynaklı Kritik Hasar <cryo>%60</cryo> artar. Enerji yenileme etkisi en fazla 18 saniyede bir tetiklenebilir ve kuşanan karakter alanda olmasa bile tetiklenebilir."
+    },
+    "1": {
+      "0": "Maks. Can <cryo>%12</cryo> artar. Ay Tepkimelerini tetikledikten veya düşmanlara Ay Tepkimesi Hasarı verdikten sonra kuşanan karakter <cryo>15</cryo> Enerji yeniler ve 12 saniyeliğine Bereketli Denizin Kutsal Şarabı etkisini kazanır: Maks. Can fazladan <cryo>%16</cryo> artar, Ay Tepkimesi Hasarı kaynaklı Kritik Hasar <cryo>%80</cryo> artar. Enerji yenileme etkisi en fazla 18 saniyede bir tetiklenebilir ve kuşanan karakter alanda olmasa bile tetiklenebilir."
+    },
+    "2": {
+      "0": "Maks. Can <cryo>%14</cryo> artar. Ay Tepkimelerini tetikledikten veya düşmanlara Ay Tepkimesi Hasarı verdikten sonra kuşanan karakter <cryo>16</cryo> Enerji yeniler ve 12 saniyeliğine Bereketli Denizin Kutsal Şarabı etkisini kazanır: Maks. Can fazladan <cryo>%18</cryo> artar, Ay Tepkimesi Hasarı kaynaklı Kritik Hasar <cryo>%100</cryo> artar. Enerji yenileme etkisi en fazla 18 saniyede bir tetiklenebilir ve kuşanan karakter alanda olmasa bile tetiklenebilir."
+    },
+    "3": {
+      "0": "Maks. Can <cryo>%16</cryo> artar. Ay Tepkimelerini tetikledikten veya düşmanlara Ay Tepkimesi Hasarı verdikten sonra kuşanan karakter <cryo>17</cryo> Enerji yeniler ve 12 saniyeliğine Bereketli Denizin Kutsal Şarabı etkisini kazanır: Maks. Can fazladan <cryo>%20</cryo> artar, Ay Tepkimesi Hasarı kaynaklı Kritik Hasar <cryo>%120</cryo> artar. Enerji yenileme etkisi en fazla 18 saniyede bir tetiklenebilir ve kuşanan karakter alanda olmasa bile tetiklenebilir."
+    },
+    "4": {
+      "0": "Maks. Can <cryo>%18</cryo> artar. Ay Tepkimelerini tetikledikten veya düşmanlara Ay Tepkimesi Hasarı verdikten sonra kuşanan karakter <cryo>18</cryo> Enerji yeniler ve 12 saniyeliğine Bereketli Denizin Kutsal Şarabı etkisini kazanır: Maks. Can fazladan <cryo>%22</cryo> artar, Ay Tepkimesi Hasarı kaynaklı Kritik Hasar <cryo>%140</cryo> artar. Enerji yenileme etkisi en fazla 18 saniyede bir tetiklenebilir ve kuşanan karakter alanda olmasa bile tetiklenebilir."
+    }
+  }
+}

@@ -156,7 +156,7 @@
   "constellation6": {
     "name": "Die Last des kreativen Genies",
     "description": {
-      "0": "Erhöht nach Anwenden der Spezialfähigkeit <strong>Präzises Wasserkühlgerät</strong> 15 s lang den Schaden der von den aktuellen Figuren in der Nähe ausgelösten Reaktionen „Unter Strom“, „Sprießen“, „Mond unter Strom“ und „Mondspross“ um 15 %.",
+      "0": "Erhöht nach Anwenden der Spezialfähigkeit <strong>Präzises Wasserkühlgerät</strong> 15 s lang den Schaden der von den aktuellen Figuren in der Nähe ausgelösten Reaktionen „Unter Strom“, „Sprießen“, „Mond unter Strom“, „Mondspross“ und „Mond-Kristallisation“ um 15 %.",
       "1": "<strong>Mondomen – Reifer Glanz</strong>: Erhöht den durch obige Reaktionen verursachten Schaden zusätzlich um 20 %."
     }
   }

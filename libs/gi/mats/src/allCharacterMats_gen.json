@@ -70052,6 +70052,627 @@
       }
     }
   },
+  "Columbina": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfMoonlight",
+              "amount": 3
+            },
+            {
+              "item": "SlimeCondensate",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 2
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 4
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 6
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 9
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 4
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 4
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 6
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 6
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 12
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 9
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 16
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 12
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfMoonlight",
+              "amount": 3
+            },
+            {
+              "item": "SlimeCondensate",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 2
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 4
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 6
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 9
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 4
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 4
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 6
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 6
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 12
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 9
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 16
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 12
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfMoonlight",
+              "amount": 3
+            },
+            {
+              "item": "SlimeCondensate",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 2
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 4
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 6
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToMoonlight",
+              "amount": 9
+            },
+            {
+              "item": "SlimeSecretions",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 4
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 4
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 6
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 6
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 12
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 9
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfMoonlight",
+              "amount": 16
+            },
+            {
+              "item": "SlimeConcentrate",
+              "amount": 12
+            },
+            {
+              "item": "MaskOfTheVirtuousDoctor",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "VarunadaLazuriteSliver",
+            "amount": 1
+          },
+          {
+            "item": "WinterIcelea",
+            "amount": 3
+          },
+          {
+            "item": "SlimeCondensate",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "VarunadaLazuriteFragment",
+            "amount": 3
+          },
+          {
+            "item": "RadiantAntler",
+            "amount": 2
+          },
+          {
+            "item": "WinterIcelea",
+            "amount": 10
+          },
+          {
+            "item": "SlimeCondensate",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "VarunadaLazuriteFragment",
+            "amount": 6
+          },
+          {
+            "item": "RadiantAntler",
+            "amount": 4
+          },
+          {
+            "item": "WinterIcelea",
+            "amount": 20
+          },
+          {
+            "item": "SlimeSecretions",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "VarunadaLazuriteChunk",
+            "amount": 3
+          },
+          {
+            "item": "RadiantAntler",
+            "amount": 8
+          },
+          {
+            "item": "WinterIcelea",
+            "amount": 30
+          },
+          {
+            "item": "SlimeSecretions",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "VarunadaLazuriteChunk",
+            "amount": 6
+          },
+          {
+            "item": "RadiantAntler",
+            "amount": 12
+          },
+          {
+            "item": "WinterIcelea",
+            "amount": 45
+          },
+          {
+            "item": "SlimeConcentrate",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "VarunadaLazuriteGemstone",
+            "amount": 6
+          },
+          {
+            "item": "RadiantAntler",
+            "amount": 20
+          },
+          {
+            "item": "WinterIcelea",
+            "amount": 60
+          },
+          {
+            "item": "SlimeConcentrate",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
   "Somnia": {
     "talents": {
       "normal": {

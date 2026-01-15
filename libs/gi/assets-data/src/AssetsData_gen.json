@@ -724,6 +724,10 @@
       "icon": "UI_EquipIcon_Catalyst_Sistrum",
       "awakenIcon": "UI_EquipIcon_Catalyst_Sistrum_Awaken"
     },
+    "NocturnesCurtainCall": {
+      "icon": "UI_EquipIcon_Catalyst_Brisingamen",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Brisingamen_Awaken"
+    },
     "HuntersBow": {
       "icon": "UI_EquipIcon_Bow_Hunters",
       "awakenIcon": "UI_EquipIcon_Bow_Hunters_Awaken"
@@ -1293,6 +1297,20 @@
       "sands": "UI_RelicIcon_15042_5",
       "goblet": "UI_RelicIcon_15042_1",
       "circlet": "UI_RelicIcon_15042_3"
+    },
+    "AubadeOfMorningstarAndMoon": {
+      "flower": "UI_RelicIcon_15043_4",
+      "plume": "UI_RelicIcon_15043_2",
+      "sands": "UI_RelicIcon_15043_5",
+      "goblet": "UI_RelicIcon_15043_1",
+      "circlet": "UI_RelicIcon_15043_3"
+    },
+    "ADayCarvedFromRisingWinds": {
+      "flower": "UI_RelicIcon_15044_4",
+      "plume": "UI_RelicIcon_15044_2",
+      "sands": "UI_RelicIcon_15044_5",
+      "goblet": "UI_RelicIcon_15044_1",
+      "circlet": "UI_RelicIcon_15044_3"
     }
   },
   "chars": {
@@ -3151,11 +3169,30 @@
       "constellation5": "UI_Talent_U_Jahoda_02",
       "constellation6": "UI_Talent_S_Jahoda_04"
     },
+    "Columbina": {
+      "icon": "UI_AvatarIcon_Columbina",
+      "iconSide": "UI_AvatarIcon_Side_Columbina",
+      "banner": "UI_NameCardPic_Columbina_P",
+      "bar": "UI_NameCardPic_Columbina_Alpha",
+      "skill": "Skill_S_Columbina_01",
+      "burst": "Skill_E_Columbina_01_HD",
+      "passive1": "UI_Talent_S_Columbina_05",
+      "passive2": "UI_Talent_S_Columbina_06",
+      "passive3": "UI_Talent_S_Columbina_07",
+      "passive": "UI_Talent_S_Columbina_08",
+      "constellation1": "UI_Talent_S_Columbina_01",
+      "constellation2": "UI_Talent_S_Columbina_02",
+      "constellation3": "UI_Talent_U_Columbina_01",
+      "constellation4": "UI_Talent_S_Columbina_03",
+      "constellation5": "UI_Talent_U_Columbina_02",
+      "constellation6": "UI_Talent_S_Columbina_04"
+    },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",
       "burst": "Skill_E_PlayerWind_01_HD",
       "passive1": "UI_Talent_S_PlayerWind_05",
       "passive2": "UI_Talent_S_PlayerWind_06",
+      "lockedPassive": "UI_Talent_S_PlayerWind_07",
       "constellation1": "UI_Talent_S_PlayerWind_01",
       "constellation2": "UI_Talent_S_PlayerWind_02",
       "constellation3": "UI_Talent_U_PlayerWind_02",
@@ -3168,6 +3205,7 @@
       "burst": "Skill_E_PlayerRock_01_HD",
       "passive1": "UI_Talent_S_PlayerRock_05",
       "passive2": "UI_Talent_S_PlayerRock_06",
+      "lockedPassive": "UI_Talent_S_PlayerRock_07",
       "constellation1": "UI_Talent_S_PlayerRock_01",
       "constellation2": "UI_Talent_S_PlayerRock_02",
       "constellation3": "UI_Talent_U_PlayerRock_02",
@@ -3180,6 +3218,7 @@
       "burst": "Skill_E_PlayerElectric_01_HD",
       "passive1": "UI_Talent_S_PlayerElectric_05",
       "passive2": "UI_Talent_S_PlayerElectric_06",
+      "lockedPassive": "UI_Talent_S_PlayerElectric_07",
       "constellation1": "UI_Talent_S_PlayerElectric_01",
       "constellation2": "UI_Talent_S_PlayerElectric_02",
       "constellation3": "UI_Talent_U_PlayerElectric_01",
@@ -3192,6 +3231,7 @@
       "burst": "Skill_S_PlayerGrass_01_HD",
       "passive1": "UI_Talent_U_PlayerGrass_01",
       "passive2": "UI_Talent_U_PlayerGrass_02",
+      "lockedPassive": "UI_Talent_U_PlayerGrass_03",
       "constellation1": "UI_Talent_S_PlayerGrass_01",
       "constellation2": "UI_Talent_S_PlayerGrass_02",
       "constellation3": "UI_Talent_S_PlayerGrass_03",
@@ -3204,6 +3244,7 @@
       "burst": "Skill_E_PlayerWater_01_HD",
       "passive1": "UI_Talent_S_PlayerWater_05",
       "passive2": "UI_Talent_S_PlayerWater_06",
+      "lockedPassive": "UI_Talent_S_PlayerWater_07",
       "constellation1": "UI_Talent_S_PlayerWater_01",
       "constellation2": "UI_Talent_S_PlayerWater_02",
       "constellation3": "UI_Talent_U_PlayerWater_01",
@@ -3216,6 +3257,7 @@
       "burst": "Skill_E_PlayerFire_01_HD",
       "passive1": "UI_Talent_S_PlayerFire_05",
       "passive2": "UI_Talent_S_PlayerFire_06",
+      "lockedPassive": "UI_Talent_S_PlayerFire_07",
       "constellation1": "UI_Talent_S_PlayerFire_01",
       "constellation2": "UI_Talent_S_PlayerFire_02",
       "constellation3": "UI_Talent_U_PlayerFire_01",

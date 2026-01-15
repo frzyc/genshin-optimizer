@@ -156,7 +156,7 @@
   "constellation6": {
     "name": "Fardeau du génie créatif",
     "description": {
-      "0": "Après l'utilisation du déchaînement élémentaire <strong>Refroidisseur hydronique de précision</strong>, les DGT infligés par les réactions d'Électrocution, de Sélénocution, de Fleurissement et de Sélénofleurissement des personnages déployés à proximité augmentent de 15 % pendant 15 s.",
+      "0": "Après l'utilisation du déchaînement élémentaire <strong>Refroidisseur hydronique de précision</strong>, les DGT infligés par les réactions d'Électrocution, de Sélénocution, de Fleurissement, de Sélénofleurissement et de Sélénocristallisation des personnages déployés à proximité augmentent de 15 % pendant 15 s.",
       "1": "<strong>Signelune « Lueur ascendante »</strong> : les DGT infligés par ces réactions augmentent de 20 % supplémentaires."
     }
   }

@@ -154,15 +154,15 @@
     "description": {
       "0": "Nos 8s após o personagem da equipe atingir um inimigo afetado por Presságio, aumenta os efeitos <hydro>relacionados ao Hydro</hydro>:",
       "1": [
-        " Dano Eletricamente Carregado é aumentado em 15%. Dano Carga Lunar é aumentado em 15%. Dano de Vaporizar é aumentado em 15%. Dano de Redemoinho é aumentado em 15%.",
+        " Dano Eletricamente Carregado é aumentado em 15%. Dano Carga Lunar é aumentado em 15%. Dano de Vaporizar é aumentado em 15%. Dano de Redemoinho é aumentado em 15%. O Dano de Cristalização Lunar é aumentado em 15%.",
         " A duração em que os inimigos ficam Congelados é aumentada em 15%."
       ]
     },
     "upgradedDescription": {
       "0": "Nos 8 segundos após um Personagem da equipe atingir um inimigo afetado por Presságio, os efeitos <hydro>relacionados ao Hydro</hydro> são fortalecidos:",
       "1": [
-        " O Dano da Reação Eletricamente Carregado é aumentado em 15%, o Dano de Carga Lunar é aumentado em 15%, o Dano da Reação de Vaporização é aumentado em 15% e o Dano da Reação de Redemoinho com Hydro é aumentado em 15%;",
-        " A Duração da Reação Congelado é aumentada em 15%."
+        " O Dano da Reação Eletricamente Carregado é aumentado em 15%, o Dano de Carga Lunar é aumentado em 15%, o Dano da Reação de Vaporização é aumentado em 15% e o Dano da Reação de Redemoinho com Hydro é aumentado em 15%; o Dano de Cristalização Lunar é aumentado em 15%.",
+        " A Duração da Reação Congelado é aumentada em 15%. "
       ],
       "2": "<br/>",
       "3": "Além disso, se o personagem que não está ativo causar o efeito acima, o efeito de aumento de Dano será aumentado em 160% do original."

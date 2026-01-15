@@ -42,13 +42,13 @@
   "skill": {
     "name": "Ceremonial Crystalshot",
     "description": {
-      "0": "Saat Karakter dalam party mendapatkan shard dari reaksi Crystallize, Navia akan mendapatkan 1 \"Crystal Shrapnel\", dan maksimum bisa mendapatkan hingga 6 \"Crystal Shrapnel\". Setiap kali perolehan \"Crystal Shrapnel\" terpicu, durasi \"Crystal Shrapnel\" yang sudah dimiliki akan diulang.",
-      "1": "Saat dilancarkan, Navia akan mengonsumsi semua \"Crystal Shrapnel\" yang dimiliki dan membuka Gunbrella elegannya untuk menembakkan beberapa Rosula Shardshots yang dapat menembus musuh dan mengakibatkan <geo>Geo DMG</geo>.",
-      "2": "Saat mengonsumsi 0/1/2/3 atau lebih \"Crystal Shrapnel\", 5/7/9/11 Rosula Shardshots akan ditembakkan sesuai dengan jumlah yang ditentukan. Semakin banyak \"Rosula Shardshots\" yang mengenai satu musuh, semakin tinggi pula DMG yang diakibatkan terhadap musuh tersebut. Saat semua 11 \"Rosula Shardshots\" mengenai satu target, akan mengakibatkan DMG sebesar 200% dari DMG awal.",
+      "0": "Saat Karakter dalam party mendapatkan shard dari reaksi Crystallize atau memicu reaksi Lunar-Crystallize, Navia akan mendapatkan 1 \"Crystal Shrapnel\", dan maksimum bisa mendapatkan hingga 6 Crystal Shrapnel. Setiap kali perolehan Crystal Shrapnel terpicu, durasi Crystal Shrapnel yang sudah dimiliki akan diulang. Maksimum 1 Crystal Shrapnel yang bisa didapatkan oleh Navia per detik melalui reaksi Lunar-Crystallize.",
+      "1": "Saat dilancarkan, Navia akan mengonsumsi semua Crystal Shrapnel yang dimiliki dan membuka Gunbrella elegannya untuk menembakkan beberapa Rosula Shardshot yang dapat menembus musuh dan mengakibatkan <geo>Geo DMG</geo>.",
+      "2": "Saat mengonsumsi 0/1/2/3 atau lebih \"Crystal Shrapnel\", maka 5/7/9/11 Rosula Shardshot akan ditembakkan sesuai dengan jumlah yang ditentukan. Semakin banyak Rosula Shardshot yang mengenai satu musuh, semakin tinggi pula DMG yang diakibatkan terhadap musuh tersebut. Saat semua 11 Rosula Shardshot mengenai satu target, akan mengakibatkan DMG sebesar 200% dari DMG awal.",
       "3": "Selain itu, saat mengonsumsi lebih dari 3 Crystal Shrapnel, setiap Crystal Shrapnel yang dikonsumsi selain 3 Crystal Shrapnel tersebut akan meningkatkan DMG tembakan kali ini lagi sebesar 15%. ",
       "4": "<br/>",
       "5": "<strong>Mode Tahan</strong>",
-      "6": "Memasuki Mode Membidik dan terus mendapatkan shard dari reaksi Crystallize di sekitar. Saat Mode Tahan selesai, akan menembakkan \"Rosula Shardshots\" yang sama dengan Mode Tekan.",
+      "6": "Memasuki Mode Membidik dan terus mendapatkan shard dari reaksi Crystallize di sekitar. Saat Mode Tahan selesai, akan menembakkan Rosula Shardshot yang sama dengan Mode Tekan.",
       "7": "<br/>",
       "8": "Memiliki 2 kali jumlah penggunaan di awal.",
       "9": "<br/>",

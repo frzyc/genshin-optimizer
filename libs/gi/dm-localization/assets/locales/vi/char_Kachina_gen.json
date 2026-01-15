@@ -139,7 +139,7 @@
     "name": "Mảnh Tinh Thạch Cũng Là Đá Quý",
     "description": {
       "0": "Kachina khi lái và thoát <strong>Mũi Khoan Quay Tròn</strong>, sẽ thu thập mảnh tinh thể sinh ra từ phản ứng Kết Tinh ở xung quanh.",
-      "1": "Ngoài ra, khi nhân vật trong đội nhận mảnh tinh thể, sẽ hồi phục 3 điểm Năng Lượng Nguyên Tố cho Kachina. Mỗi 5s tối đa hồi phục một lần Năng Lượng Nguyên Tố bằng cách này."
+      "1": "Ngoài ra, khi nhân vật trong đội nhận mảnh tinh thể hoặc kích hoạt phản ứng Nguyệt-Kết Tinh, sẽ hồi phục 3 điểm Năng Lượng Nguyên Tố cho Kachina. Mỗi 5s tối đa hồi phục một lần Năng Lượng Nguyên Tố bằng cách này."
     }
   },
   "constellation2": {

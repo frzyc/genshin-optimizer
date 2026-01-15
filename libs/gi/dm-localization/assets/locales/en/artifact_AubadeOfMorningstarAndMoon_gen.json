@@ -1,0 +1,29 @@
+{
+  "setName": "Aubade of Morningstar and Moon",
+  "setEffects": {
+    "2": "Increases Elemental Mastery by 80.",
+    "4": "When the equipping character is off-field, Lunar Reaction DMG is increased by 20%. When the party's Moonsign Level is at least Ascendant Gleam, Lunar Reaction DMG will be further increased by 40%. This effect will disappear after the equipping character is active for 3s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Moonlit Offering's Opulent Dream",
+      "desc": "A meticulously carved floral ornament meant to highlight the resplendent beauty of the goddesses of the heavenly moons, crafted in ancient times by artisans who sculpted statues of them."
+    },
+    "plume": {
+      "name": "Moonlit Offering's Parting Light",
+      "desc": "A quill that, in ancient times, granted boundless inspiration to priests who penned prayers to the heavenly moons."
+    },
+    "sands": {
+      "name": "Moonlit Offering's Final Hour",
+      "desc": "An hourglass meant to commemorate the final hour, prepared by sages who, in ancient times, sought truth from the heavenly moons."
+    },
+    "goblet": {
+      "name": "Moonlit Offering's Libation",
+      "desc": "A wine cup lost in the final revelry of an ancient rite, in which believers once offered sacrifices to the heavenly moons."
+    },
+    "circlet": {
+      "name": "Moonlit Offering's Silver Crown",
+      "desc": "A silver circlet set aside at the final syllable of a hymn, worn by poets who, in ancient times, sang in praise of the heavenly moons."
+    }
+  }
+}

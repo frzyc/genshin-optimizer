@@ -139,7 +139,7 @@
     "name": "Anche i frammenti sono gemme",
     "description": {
       "0": "Quando Kachina sale a bordo o scende da <strong>Trottolino</strong>, assorbe i frammenti elementali circostanti creati tramite la Cristallizzazione.",
-      "1": "Inoltre, ogni volta che un membro del gruppo raccoglie uno di questi frammenti, l'energia di Kachina si ripristina di 3. È possibile fornire energia a Kachina in questo modo una volta ogni 5 s."
+      "1": "Inoltre, ogni volta che un membro del gruppo raccoglie uno di questi frammenti o innesca reazioni di Cristallizzazione lunare, l'energia di Kachina si ripristina di 3. È possibile fornire energia a Kachina in questo modo una volta ogni 5 s."
     }
   },
   "constellation2": {

@@ -239,6 +239,15 @@
   "BlazingSpirit": {
     "name": "Heroísmo Incandescente"
   },
+  "FortuneCoin": {
+    "name": "Moedas da Sorte"
+  },
+  "SightseeingExperience": {
+    "name": "Experiência de Turista"
+  },
+  "TreasuredInsights": {
+    "name": "Coleção de Experiências"
+  },
   "Primogem": {
     "name": "Gema Essencial"
   },
@@ -301,6 +310,9 @@
   },
   "ChroniclesOfTheRealms": {
     "name": "Crônicas dos Reinos"
+  },
+  "PrismaticCrystal": {
+    "name": "Cristal Prismático"
   },
   "PyroSigil": {
     "name": "Selo Pyro"
@@ -1118,6 +1130,15 @@
   "Jahoda": {
     "name": "Jahoda"
   },
+  "Columbina": {
+    "name": "Columbina"
+  },
+  "Zibai": {
+    "name": "Zibai"
+  },
+  "Illuga": {
+    "name": "Illuga"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
   },
@@ -1186,6 +1207,15 @@
   },
   "JahodasStellaFortuna": {
     "name": "Stella Fortuna de Jahoda"
+  },
+  "ColumbinasStellaFortuna": {
+    "name": "Stella Fortuna de Columbina"
+  },
+  "ZibaisStellaFortuna": {
+    "name": "Stella Fortuna de Zibai"
+  },
+  "IllugasStellaFortuna": {
+    "name": "Stella Fortuna de Illuga"
   },
   "Apple": {
     "name": "Maçã"
@@ -3643,6 +3673,12 @@
   },
   "MidsommarBerry": {
     "name": "Baga de Veraneio"
+  },
+  "WinterIcelea": {
+    "name": "Capim de Gelo Invernal"
+  },
+  "PineAmber": {
+    "name": "Âmbar de Pinheiro"
   },
   "BirchWood": {
     "name": "Vidoeiro"
@@ -8144,6 +8180,78 @@
   "SugarSculptureKuuhenki": {
     "name": "Escultura de Açúcar: Kuuhenki"
   },
+  "SuspiciousLuckySnowDelight": {
+    "name": "Deleite Nevado Estranho"
+  },
+  "LuckySnowDelight": {
+    "name": "Deleite Nevado"
+  },
+  "DeliciousLuckySnowDelight": {
+    "name": "Deleite Nevado Delicioso"
+  },
+  "SuspiciousCrispySpringRolls": {
+    "name": "Rolinho Primavera Crocante Estranho"
+  },
+  "CrispySpringRolls": {
+    "name": "Rolinho Primavera Crocante"
+  },
+  "DeliciousCrispySpringRolls": {
+    "name": "Rolinho Primavera Crocante Delicioso"
+  },
+  "SuspiciousBerryHerbalCandy": {
+    "name": "Doce de Ervas Frutado Estranho"
+  },
+  "BerryHerbalCandy": {
+    "name": "Doce de Ervas Frutado"
+  },
+  "DeliciousBerryHerbalCandy": {
+    "name": "Doce de Ervas Frutado Delicioso"
+  },
+  "SuspiciousVeggiePotSoup": {
+    "name": "Sopa de Legumes Estranha"
+  },
+  "VeggiePotSoup": {
+    "name": "Sopa de Legumes"
+  },
+  "DeliciousVeggiePotSoup": {
+    "name": "Sopa de Legumes Deliciosa"
+  },
+  "SuspiciousFiresideMerriment": {
+    "name": "Júbilo da Fogueira Estranho"
+  },
+  "FiresideMerriment": {
+    "name": "Júbilo da Fogueira"
+  },
+  "DeliciousFiresideMerriment": {
+    "name": "Júbilo da Fogueira Delicioso"
+  },
+  "SuspiciousMushroomPhantasm": {
+    "name": "Cogumelo Fantasma Estranho"
+  },
+  "MushroomPhantasm": {
+    "name": "Cogumelo Fantasma"
+  },
+  "DeliciousMushroomPhantasm": {
+    "name": "Cogumelo Fantasma Delicioso"
+  },
+  "FlavorOfSpring": {
+    "name": "Sabor da Primavera"
+  },
+  "MoonlitMirage": {
+    "name": "Miragem Sob o Luar"
+  },
+  "NightwatchSoup": {
+    "name": "Sopa da Guarda Noturna"
+  },
+  "SugarSculptureColumbina": {
+    "name": "Escultura de Açúcar: Columbina"
+  },
+  "SugarSculptureIlluga": {
+    "name": "Escultura de Açúcar: Illuga"
+  },
+  "CharredMushroomPhantasm": {
+    "name": "Cogumelo Fantasma Carbonizado"
+  },
   "RecipeItem": {
     "name": "Ingredientes"
   },
@@ -8918,6 +9026,24 @@
   "RecipeSpicedFriedChicken": {
     "name": "Receita: Frango Frito Temperado"
   },
+  "RecipeLuckySnowDelight": {
+    "name": "Receita: Deleite Nevado"
+  },
+  "RecipeCrispySpringRolls": {
+    "name": "Receita: Rolinho Primavera Crocante"
+  },
+  "RecipeBerryHerbalCandy": {
+    "name": "Receita: Doce de Ervas Frutado"
+  },
+  "RecipeVeggiePotSoup": {
+    "name": "Receita: Sopa de Legumes"
+  },
+  "RecipeFiresideMerriment": {
+    "name": "Receita: Júbilo da Fogueira"
+  },
+  "RecipeMushroomPhantasm": {
+    "name": "Receita: Cogumelo Fantasma"
+  },
   "CraftedItems": {
     "name": "Produtos Combinados"
   },
@@ -9467,6 +9593,15 @@
   "MistshroudHelmet": {
     "name": "Capacete da Névoa"
   },
+  "FracturedEyeOfTheDeepShadow": {
+    "name": "Olho Fraturado da Sombra Profunda"
+  },
+  "AberrantCoreOfTheDeepShadow": {
+    "name": "Núcleo Aberrante da Sombra Profunda"
+  },
+  "HookedBeakOfTheDeepShadow": {
+    "name": "Bico da Sombra Profunda"
+  },
   "HurricaneSeed": {
     "name": "Semente de Furacão"
   },
@@ -9706,6 +9841,18 @@
   },
   "CyclicMilitaryKuuvahkiCore": {
     "name": "Núcleo de Kuuvahki Militar Cíclico"
+  },
+  "MaskOfTheVirtuousDoctor": {
+    "name": "Máscara do Doutor Virtuoso"
+  },
+  "MadmansRestraint": {
+    "name": "Contenções do Louco"
+  },
+  "ElixirOfTheHeretic": {
+    "name": "Elixir do Herege"
+  },
+  "RemnantOfTheDreadwing": {
+    "name": "Carcaça da Asa Terrível"
   },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de Azulejo de Decarabian"
@@ -10063,6 +10210,9 @@
   },
   "MaskedBallInvitationLetter": {
     "name": "Carta de Convite para o Baile de Máscaras"
+  },
+  "SetGiftBoxGallop": {
+    "name": "Conjunto de Caixa de Presentes: Galopar"
   },
   "BEP": {
     "name": "EXP de PB"
@@ -13004,8 +13154,14 @@
   "SomeonesLostPassword": {
     "name": "Senha Perdida de Alguém"
   },
+  "MemorataCognoscentisJest": {
+    "name": "Brincadeiras do Cognoscente-Memorata"
+  },
   "InscriptaCognoscentisFeather": {
     "name": "Pena do Cognoscente"
+  },
+  "DevocinaCognoscentisSorrow": {
+    "name": "Tristeza do Cognoscente-Devocina"
   },
   "WeavenexaCognoscentisIntoxication": {
     "name": "Embriaguez do Cognoscente"
@@ -13018,6 +13174,9 @@
   },
   "SomeonesRequestForHelp": {
     "name": "Carta de Pedido de Socorro de Alguém"
+  },
+  "SpareBunkerHandwheel": {
+    "name": "Volante Reserva do Abrigo"
   },
   "BountyTokenTrickstersRedSatin": {
     "name": "Prova de Recompensa: Cetim Vermelho da Golpista"
@@ -13082,6 +13241,15 @@
   "SomeonesResearchNotes": {
     "name": "Anotações de Pesquisa de Alguém"
   },
+  "TierIBunkerAccessCard": {
+    "name": "Cartão Básico do Abrigo"
+  },
+  "TierIIBunkerAccessCard": {
+    "name": "Cartão Avançado do Abrigo"
+  },
+  "TierIIIBunkerAccessCard": {
+    "name": "Cartão Superior do Abrigo"
+  },
   "Toolkit": {
     "name": "Kit de Ferramentas"
   },
@@ -13129,6 +13297,18 @@
   },
   "OrderedNotes": {
     "name": "Notas Organizadas"
+  },
+  "GoldenKey": {
+    "name": "Chave Dourada"
+  },
+  "SilverKey": {
+    "name": "Chave de Prata"
+  },
+  "IronKey": {
+    "name": "Chave de Ferro"
+  },
+  "StrangeIronCoin": {
+    "name": "Moeda de Ferro Estranha"
   },
   "ConchNotebook": {
     "name": "Caderno de Concha"
@@ -13181,8 +13361,20 @@
   "HalfBurnedPage": {
     "name": "Página Meio Queimada"
   },
+  "AgedPinecone": {
+    "name": "Pinha Envelhecida"
+  },
+  "AgedRye": {
+    "name": "Centeio Envelhecido"
+  },
   "CuratoriumFunds": {
     "name": "Fundos da Curadoria dos Segredos"
+  },
+  "ShutterflashKamera": {
+    "name": "Aparelho Fotográfico de Obturação"
+  },
+  "TheShiniestAndBrightestBerylConch": {
+    "name": "A Concha de Cristal Azul \"Mais Brilhante\""
   },
   "RhinedottirsGift": {
     "name": "\"Presente\" de Rhinedottir"
@@ -13208,11 +13400,173 @@
   "TaleOfDurin": {
     "name": "O Conto de \"Durin\""
   },
+  "LanternRiteGiftGiftOfRadiantNight": {
+    "name": "Presente do Ritual de Lanternas: Presente da Noite Brilhante"
+  },
+  "LanternRiteGiftGiftOfSeekingLight": {
+    "name": "Ritual de Lanternas: Presente da Busca da Luz"
+  },
+  "LanternRiteGiftGiftOfDistantLonging": {
+    "name": "Ritual de Lanternas: Presente de uma Lembrança Distante"
+  },
+  "LanternRiteGiftGiftOfJoyousWishes": {
+    "name": "Ritual de Lanternas: Presente de Desejos Alegres"
+  },
+  "LanternRiteGiftGiftOfVenerableVirtue": {
+    "name": "Ritual de Lanternas: Presente da Veneração Virtuosa"
+  },
+  "LanternRiteGiftGiftOfGuidingMoonlight": {
+    "name": "Ritual de Lanternas: Presente do Luar"
+  },
+  "AncientIncantations": {
+    "name": "Encantamentos Antigos"
+  },
+  "Wish": {
+    "name": "Aspiração"
+  },
+  "Moonlight": {
+    "name": "Luz do Luar"
+  },
+  "LostNotesIV": {
+    "name": "Anotações Perdidas (IV)"
+  },
+  "LostNotesII": {
+    "name": "Anotações Perdidas (II)"
+  },
+  "LostNotesI": {
+    "name": "Anotações Perdidas (I)"
+  },
+  "IrismoonSeal": {
+    "name": "Selo da Lua Iridescente"
+  },
+  "TheWhiteHorseAdeptusMeetsTheWhiteHorseAdeptusInLiyueHarbor": {
+    "name": "\"A Adeptus Cavalo Branco Encontra a Adeptus Cavalo Branco, Porto de Liyue\""
+  },
+  "AnAncientPoem": {
+    "name": "Um Poema Antigo"
+  },
+  "MarionettesNotebook": {
+    "name": "Caderno de Marionette"
+  },
+  "LostNotesIII": {
+    "name": "Anotações Perdidas (III)"
+  },
+  "ProspectorsCommand": {
+    "name": "Comando do Prospector"
+  },
+  "ThatWhichHasLostItsPower": {
+    "name": "Aquela Bruxa Que Perdeu o Poder"
+  },
+  "FreshRye": {
+    "name": "Centeio Fresco"
+  },
+  "TheFirstIronCoin": {
+    "name": "\"A Primeira Moeda de Ferro\""
+  },
+  "SilverLampwick": {
+    "name": "Pavio de Prata"
+  },
+  "UnknownPersonsAbandonedDiary": {
+    "name": "Diário Abandonado de Alguém"
+  },
+  "NeatlyWrittenDiaryI": {
+    "name": "Diário Bem Escrito I"
+  },
+  "NeatlyWrittenDiaryII": {
+    "name": "Diário Bem Escrito II"
+  },
+  "NeatlyWrittenDiaryIII": {
+    "name": "Diário Bem Escrito III"
+  },
+  "ForgottenKey": {
+    "name": "Chave Esquecida"
+  },
+  "AncientLogCarterScherbius": {
+    "name": "Diário Antigo (Carter Scherbius)"
+  },
+  "AncientLogAlainGuillotin": {
+    "name": "Diário Antigo (Alain Guillotin)"
+  },
+  "AncientLogJakobIngold": {
+    "name": "Diário Antigo (Jakob Ingold)"
+  },
+  "TheResearchNotesOfMasterRuggiero": {
+    "name": "Notas de Pesquisa do Mestre Ruggiero"
+  },
+  "TheBiographyOfGuillotinDeluxeEdition": {
+    "name": "Biografia de Guillotin (Edição de Luxo)"
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuria": {
+    "name": "A Queda de Remuria"
+  },
+  "TimeTrekker": {
+    "name": "Viajante do Tempo"
+  },
+  "AutomnequiSermonDictationConcerningTheApocalypse": {
+    "name": "Ditado do Sermão Outonal: Sobre o Apocalipse"
+  },
+  "AutomnequiSermonDictationExplicationsOnTheChymicalMarriage": {
+    "name": "Ditado do Sermão Outonal: Explicações das Núpcias Alquímicas"
+  },
+  "GreatDetectiveHurlockTheAlchemistAndTheClockworkSaint": {
+    "name": "O Grande Detetive Herlock: O Alquimista e o Santo Mecânico"
+  },
+  "DamagedLogs": {
+    "name": "Registros Danificados"
+  },
+  "BloodstainedLogs": {
+    "name": "Registros Ensanguentados"
+  },
+  "MessilyWrittenNotes": {
+    "name": "Notas Rabiscadas"
+  },
+  "CommunicationsLog": {
+    "name": "Registro de Comunicação"
+  },
+  "TerminalLog": {
+    "name": "Registro do Terminal"
+  },
+  "NoteClippedInABook": {
+    "name": "Nota Num Livro"
+  },
+  "AMessageFromTheLegendaryThiefReedMiller": {
+    "name": "Uma Mensagem do Lendário Ladrão Reed Miller"
+  },
+  "BrahesNotesI": {
+    "name": "Anotações de Brahe I"
+  },
+  "BrahesNotesII": {
+    "name": "Anotações de Brahe II"
+  },
+  "BrahesNotesIII": {
+    "name": "Anotações de Brahe III"
+  },
+  "BrahesNotesIV": {
+    "name": "Anotações de Brahe IV"
+  },
+  "LetterBuriedInTheTimeCapsule": {
+    "name": "Carta Enterrada na Cápsula do Tempo"
+  },
+  "ABriefHistoryOfThePaleStarborn": {
+    "name": "Uma Breve História dos Nascidos da Estrela Azul"
+  },
+  "NightMurmursFromTheFarBorderVarcolac": {
+    "name": "Sussurros Noturnos da Fronteira Distante: Maneodon"
+  },
+  "TalesCarriedByTheNorthwind": {
+    "name": "Contos Levados Pelo Vento do Norte"
+  },
+  "AncientHandwriting": {
+    "name": "Caligrafia Antiga"
+  },
   "TearsAmongTheStars": {
     "name": "Lágrima das Estrelas"
   },
   "ObsidianAncientName": {
     "name": "Nome Antigo de Obsidiana"
+  },
+  "MoonPrayerBlossomFromColumbina": {
+    "name": "Flor da Oração Lunar de Columbina"
   },
   "SilkFlowerSeed": {
     "name": "Semente de Flor de Seda"
@@ -13336,6 +13690,12 @@
   },
   "LakkaberrySeed": {
     "name": "Semente de Lakkabaga"
+  },
+  "WinterIceleaSeed": {
+    "name": "Semente de Capim de Gelo Invernal"
+  },
+  "PineAmberSeed": {
+    "name": "Semente de Âmbar de Pinheiro"
   },
   "Medaka": {
     "name": "Medaka"
@@ -14105,6 +14465,30 @@
   "RadiantSpincrystal168": {
     "name": "Cristal Rodopiante Radiante 168"
   },
+  "RadiantSpincrystal169": {
+    "name": "Cristal Rodopiante Radiante 169"
+  },
+  "RadiantSpincrystal170": {
+    "name": "Cristal Rodopiante Radiante 170"
+  },
+  "RadiantSpincrystal171": {
+    "name": "Cristal Rodopiante Radiante 171"
+  },
+  "RadiantSpincrystal172": {
+    "name": "Cristal Rodopiante Radiante 172"
+  },
+  "RadiantSpincrystal173": {
+    "name": "Cristal Rodopiante Radiante 173"
+  },
+  "RadiantSpincrystal174": {
+    "name": "Cristal Rodopiante Radiante 174"
+  },
+  "RadiantSpincrystal175": {
+    "name": "Cristal Rodopiante Radiante 175"
+  },
+  "RadiantSpincrystal176": {
+    "name": "Cristal Rodopiante Radiante 176"
+  },
   "LanternFiber": {
     "name": "Fibra de Lanterna"
   },
@@ -14116,6 +14500,18 @@
   },
   "XiaoLantern": {
     "name": "Lanterna Celeste"
+  },
+  "CelebratoryXiaoLantern": {
+    "name": "Lanterna Celeste Comemorativa"
+  },
+  "GiftXiaoLantern": {
+    "name": "Lanterna Celeste de Presente"
+  },
+  "XiaoLanternFlightManual": {
+    "name": "Manual de Formação de Lanterna Celeste"
+  },
+  "MoonLightsTheSkySpringBlossomsHigh": {
+    "name": "Lua Brilhante, Primavera Transcendente"
   },
   "RimeWornFragment": {
     "name": "Fragmento de Gelo"
@@ -15140,6 +15536,24 @@
   "CelebrationDreamReader": {
     "name": "Celebração: Leitor de Sonhos"
   },
+  "ColumbinaSomeday": {
+    "name": "Columbina: Algum Dia"
+  },
+  "ZibaiVeiledVista": {
+    "name": "Zibai: Vista Velada"
+  },
+  "IllugaNightmareSongbird": {
+    "name": "Illuga: Orioles do Pesadelo"
+  },
+  "AchievementFarSighted": {
+    "name": "Conquista: Visão Além do Alcance"
+  },
+  "NodKraiLanternOfLongestNight": {
+    "name": "Nod-Krai: Lâmpada das Noites Longas"
+  },
+  "TravelNotesLanternlitOde": {
+    "name": "Passe de Batalha: À Luz de Lanternas"
+  },
   "EchoDandelionKnight": {
     "name": "Eco: Cavaleira de Dandelion"
   },
@@ -15523,6 +15937,9 @@
   },
   "TheLittleWitchsDictionary": {
     "name": "Dicionário da Bruxinha"
+  },
+  "JadelightCanopy": {
+    "name": "Dossel da Luz de Jade"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instruções: Pedra de Ressonância de Anemoculus"
@@ -16028,6 +16445,27 @@
   "SignOfProsperity": {
     "name": "Sinal de Prosperidade"
   },
+  "CaseOverview": {
+    "name": "Pesquisa de Todos os Casos"
+  },
+  "SnapshotEssentials": {
+    "name": "Princípios do Desenho Rápido"
+  },
+  "UnderControl": {
+    "name": "Bem Ao Seu Alcance"
+  },
+  "TalismanicGrace": {
+    "name": "Talismã e Espírito"
+  },
+  "TheArtOfCreation": {
+    "name": "A Arte da Criação"
+  },
+  "AdeptalArtisanry": {
+    "name": "Artes Adepti Engenhosas"
+  },
+  "ByDecree": {
+    "name": "Por Decreto"
+  },
   "FantasticalMarvel": {
     "name": "Maravilha Fantástica"
   },
@@ -16186,6 +16624,9 @@
   },
   "BlackSerpentKnightRockbreakerAx": {
     "name": "Cavaleiro da Serpente Negra - Machado Quebra-rocha"
+  },
+  "ConsecratedHornedCrocodile": {
+    "name": "Crocodilo da Ossada Sagrada"
   },
   "UndividedHeart": {
     "name": "Com Todo Coração"
@@ -16568,6 +17009,15 @@
   "OnceStoodAgainstTheTideOfDarkWatersLikeBedrock": {
     "name": "\"Ergueu-se como um penhasco contra a maré das águas escuras...\""
   },
+  "FarToFall": {
+    "name": "Queda Longínqua"
+  },
+  "TrailsAmidstTheForestFog": {
+    "name": "Rastros Entre a Floresta Enevoada"
+  },
+  "DeathlyOverflow": {
+    "name": "Transbordamento Mortal"
+  },
   "MagicGuide": {
     "name": "Guia de Magia"
   },
@@ -16901,6 +17351,12 @@
   "NymphsDream": {
     "name": "Sonho da Ninfa"
   },
+  "StarcallersWatch": {
+    "name": "Observatório do Chamador de Estrelas"
+  },
+  "FlameForgedInsight": {
+    "name": "Forja da Sabedoria"
+  },
   "LiyueHarborWharf": {
     "name": "Porto de Liyue"
   },
@@ -17089,6 +17545,9 @@
   },
   "Seymour": {
     "name": "Seymour"
+  },
+  "BonaAndCocouik": {
+    "name": "Bona e Cocouik"
   },
   "ElementalResonanceWovenIce": {
     "name": "Ressonância Elemental: Entrelaçamento Cryo"
@@ -17306,6 +17765,9 @@
   "NarrationFootnotes": {
     "name": "Notas de Rodapé da Narração"
   },
+  "BrokenSea": {
+    "name": "Mar Quebrado"
+  },
   "ABlessingFromM": {
     "name": "\"Uma Bênção de 'M'\""
   },
@@ -17323,6 +17785,9 @@
   },
   "PlanToSaveTheWorld": {
     "name": "Plano para Salvar o Mundo"
+  },
+  "AnAdventureThroughTheMorningMist": {
+    "name": "\"Uma Aventura Pela Névoa Matinal\""
   },
   "Origin": {
     "name": "Primordial"
@@ -17395,6 +17860,12 @@
   },
   "SeaOfBygoneErasSlumber": {
     "name": "Mar Antigo: Sono Profundo"
+  },
+  "FontaLakelightLuminescence": {
+    "name": "Fonta: Brilho de Um Lago"
+  },
+  "SeaOfBygoneErasCrown": {
+    "name": "Mar Antigo: Coroa"
   },
   "BeginnerPlayerBadge": {
     "name": "Emblema de Jogador Novato"
@@ -17480,8 +17951,17 @@
   "AdventuresInBlazingHue": {
     "name": "Jornada das Chamas"
   },
+  "AsHeavenAndEarthAreMadeAnew": {
+    "name": "Conforme Céu e Terra São Renovados"
+  },
   "TowardTheDistantHorizon": {
     "name": "Histórias Distantes"
+  },
+  "MelusentGift": {
+    "name": "Presente Melusente"
+  },
+  "RainlitBambooReverie": {
+    "name": "Canção do Bambu na Chuva"
   },
   "RadiantPhantasm": {
     "name": "Fantasma Radiante"
@@ -18053,6 +18533,18 @@
   "TimelessShine": {
     "name": "Brilho Atemporal"
   },
+  "LightweightMetalLamp": {
+    "name": "Luminária Leve de Metal"
+  },
+  "StandingStreetLampEfficiencyMaxed": {
+    "name": "Poste de Luz Vertical: \"Baixo Consumo, Baixo Investimento\""
+  },
+  "VibrantXiaoLanternMayMyWishTravelFar": {
+    "name": "Lanterna Celeste Vibrante: \"Que Meu Desejo Voe Longe\""
+  },
+  "VibrantXiaoLanternAMeetingWithFriends": {
+    "name": "Lanterna Celeste Vibrante: \"Até Logo, Meu Amigo\""
+  },
   "EfflorescentIllumination": {
     "name": "Luz Floral"
   },
@@ -18302,6 +18794,9 @@
   "IndoorLongTableMarksOfLove": {
     "name": "Mesa de Interior: \"Marcas de Amor\""
   },
+  "WhispersInTheMoonlight": {
+    "name": "Sussurros Sob o Luar"
+  },
   "BreezeBlessedBed": {
     "name": "Cama Suave Como a Brisa"
   },
@@ -18334,6 +18829,9 @@
   },
   "TavernBedNotGreatNotTerrible": {
     "name": "Cama de Taverna: \"Nem Ótimo, Nem Terrível\""
+  },
+  "SimpleCareBed": {
+    "name": "Cama Médica Simples"
   },
   "PineReceptionCounter": {
     "name": "Balcão de Pinheiro"
@@ -18454,6 +18952,9 @@
   },
   "FactoryStoolMultiroleSeatingDevice": {
     "name": "Banco de Fábrica: Assento Multifuncional"
+  },
+  "ToAFriend": {
+    "name": "\"Ao Meu Amigo\""
   },
   "NorthernStoneHearth": {
     "name": "Lareira de Pedra do Norte"
@@ -18649,6 +19150,12 @@
   },
   "MultifunctionalPedunculateOakWoodCatTree": {
     "name": "Árvore para Gatos Multifuncional de Carvalho-roble"
+  },
+  "SimpleStretcherSteadyEvacuation": {
+    "name": "Maca Simples: \"Transporte Estável\""
+  },
+  "BottomsUp": {
+    "name": "\"Saúde\""
   },
   "HiddenSecrets": {
     "name": "Segredos Ocultos"
@@ -19111,6 +19618,9 @@
   },
   "TavernNoticeWhispersOfTheStreet": {
     "name": "Anúncios da Taverna: Sussurros das Ruas"
+  },
+  "FlagOfPiramida": {
+    "name": "\"Bandeira de Piramida\""
   },
   "LingeringMoment": {
     "name": "Momento Marcante"
@@ -19886,6 +20396,27 @@
   "SteelboundSecrecy": {
     "name": "Guarda Rochosa"
   },
+  "AdjustableMetalBarrier": {
+    "name": "Barreira de Metal Ajustável"
+  },
+  "SolitudeInTheCityOfTheEverWatchful": {
+    "name": "\"Solidão na Cidade dos Vigilantes\""
+  },
+  "ShelterInTheCityOfTheEverWatchful": {
+    "name": "\"Abrigo na Cidade dos Vigilantes\""
+  },
+  "ACornerOfOnesOwn": {
+    "name": "\"Um Cantinho Próprio\""
+  },
+  "CareInTheCityOfTheEverWatchful": {
+    "name": "\"Cuidado na Cidade dos Vigilantes\""
+  },
+  "ForgeInTheCityOfTheEverWatchful": {
+    "name": "\"Forjando na Cidade dos Vigilantes\""
+  },
+  "StarshynaWalking": {
+    "name": "\"Starshyna Caminhando\""
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fonte com Pássaros e Flores"
   },
@@ -20506,6 +21037,12 @@
   },
   "PetalsWithoutPerfume": {
     "name": "Pétalas sem Perfume"
+  },
+  "LushVerdure": {
+    "name": "Florescimento Frondoso"
+  },
+  "BrightVerdure": {
+    "name": "Florescimento Verdejante"
   },
   "FirShelves": {
     "name": "Prateleiras de Abeto"
@@ -21311,6 +21848,9 @@
   "LeisurelyFeast": {
     "name": "Banquete do Lazer"
   },
+  "WarmAndCozy": {
+    "name": "\"Quentinho e Confortável\""
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Balcão de Loja de Vinhos: \"Para Alegrar Seu Coração\""
   },
@@ -21451,6 +21991,18 @@
   },
   "VerticalBipolarTriLegTower": {
     "name": "Torre Triangular Bipolar Vertical"
+  },
+  "CommandWithConfidence": {
+    "name": "\"Comandar com Confiança\""
+  },
+  "SimpleWeaponRackEasyAccess": {
+    "name": "Suporte Simples de Armas: \"Rápido e Prático\""
+  },
+  "LightkeepersMovingLighthouse": {
+    "name": "\"Cabana Brilhante Móvel\""
+  },
+  "ShimmerOfLife": {
+    "name": "Brilho da Vida"
   },
   "SirCapyOfTheLongIncisors": {
     "name": "Cavaleiro Capivara dos Dentes Longos"
