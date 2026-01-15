@@ -231,6 +231,7 @@ export const allWeaponCatalystKeys = [
   'MappaMare',
   'MemoryOfDust',
   'NightweaversLookingGlass',
+  'NocturnesCurtainCall',
   'OathswornEye',
   'OtherworldlyStory',
   'PocketGrimoire',

@@ -236,12 +236,18 @@ export function plungingDmgNodes(
 /** Note: `additional` applies only to this formula */
 export function shieldNode(
   base: MainStatKey | SubstatKey,
-  percent: NumNode | number,
-  flat: NumNode | number,
+  percentVal: NumNode | number,
+  flatVal: NumNode | number,
   additional?: Data
 ): NumNode {
   return customShieldNode(
-    sum(prod(percent, input.total[base]), flat),
+    sum(
+      prod(
+        typeof percentVal === 'number' ? percent(percentVal) : percentVal,
+        input.total[base]
+      ),
+      flatVal
+    ),
     additional
   )
 }
@@ -320,7 +326,7 @@ export function healNodeTalent(
 export function dataObjForCharacterSheet(
   key: CharacterKey,
   display: { [key: string]: DisplaySub },
-  additional: Data = {}
+  ...additional: Data[]
 ): Data {
   function curve(base: number, lvlCurve: CharacterGrowCurveKey): NumNode {
     return prod(
@@ -356,7 +362,7 @@ export function dataObjForCharacterSheet(
     data.teamBuff!.tally![element] = constant(1)
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
-    if (additional.isMoonsign === undefined) {
+    if (additional[0]?.isMoonsign === undefined) {
       let moonsign: NumNode
       switch (element) {
         case 'pyro':
@@ -388,8 +394,8 @@ export function dataObjForCharacterSheet(
       ])
     }
   }
-  data.teamBuff!.tally!.hexerei = additional.isHexerei
-  data.teamBuff!.tally!.moonsign = additional.isMoonsign
+  data.teamBuff!.tally!.hexerei = additional[0]?.isHexerei
+  data.teamBuff!.tally!.moonsign = additional[0]?.isMoonsign
   if (region) data.teamBuff!.tally![region] = constant(1)
   if (weaponType !== 'catalyst')
     data.display!['basic']!['physical_dmg_'] = input.total.physical_dmg_
@@ -428,5 +434,5 @@ export function dataObjForCharacterSheet(
     }
   }
 
-  return mergeData([data, inferInfoMut(additional)])
+  return mergeData([data, ...additional.map((d) => inferInfoMut(d))])
 }

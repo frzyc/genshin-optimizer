@@ -1,0 +1,10 @@
+{
+  "c2BrillianceCond": "Under the <strong>Lunar Brilliance</strong> effect",
+  "c2lunarchargedCond": "<strong>Gravity Interference</strong> triggered Lunar-Charged",
+  "c2lunarbloomCond": "<strong>Gravity Interference</strong> triggered Lunar-Bloom",
+  "c2lunarcrystallizeCond": "<strong>Gravity Interference</strong> triggered Lunar-Crystallize",
+  "c4Cond": "Gravity Interference buff active",
+  "c6lunarchargedCond": "After a party member triggers a <lunarcharged>Lunar-Charged</lunarcharged> Reaction inside the <strong>Lunar Domain</strong>",
+  "c6lunarbloomCond": "After a party member triggers a <lunarbloom>Lunar-Bloom</lunarbloom> Reaction inside the <strong>Lunar Domain</strong>",
+  "c6lunarcrystallizeCond": "After a party member triggers a <lunarcrystallize>Lunar-Crystallize</lunarcrystallize> Reaction inside the <strong>Lunar Domain</strong>"
+}
