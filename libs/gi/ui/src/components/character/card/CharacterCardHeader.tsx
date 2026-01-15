@@ -9,9 +9,9 @@ import type {
   CharacterKey,
   ElementKey,
 } from '@genshin-optimizer/gi/consts'
+import { getCharMaxLevel } from '@genshin-optimizer/gi/consts'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { getCharMaxLevel } from '@genshin-optimizer/gi/util'
 import { input } from '@genshin-optimizer/gi/wr'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import type { ReactNode } from 'react'

@@ -17,11 +17,11 @@ import {
   allArtifactSlotKeys,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
 import {
-  artifactFilterConfigs,
-  initialArtifactFilterOption,
-} from '@genshin-optimizer/gi/util'
+  type FilterOption,
+  initialFilterOption,
+} from '@genshin-optimizer/gi/schema'
+import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'
@@ -61,7 +61,7 @@ export function ArtifactSwapModal({
   const database = useDatabase()
 
   const filterOptionReducer = useCallback(
-    (state: ArtifactFilterOption, action: Partial<ArtifactFilterOption>) => ({
+    (state: FilterOption, action: Partial<FilterOption>) => ({
       ...state,
       ...action,
       slotKeys: [slotKey],
@@ -72,10 +72,10 @@ export function ArtifactSwapModal({
   const [showEditor, onShowEditor, onHideEditor] = useBoolState(false)
 
   const [filterOption, filterOptionDispatch]: [
-    ArtifactFilterOption,
+    FilterOption,
     (action: any) => void,
   ] = useReducer(filterOptionReducer, {
-    ...initialArtifactFilterOption(),
+    ...initialFilterOption(),
     slotKeys: [slotKey],
   })
 

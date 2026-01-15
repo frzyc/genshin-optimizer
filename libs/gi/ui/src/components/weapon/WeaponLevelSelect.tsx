@@ -1,16 +1,16 @@
 import { DropdownButton, NumberInputLazy } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
-import type { AscensionKey } from '@genshin-optimizer/gi/consts'
 import {
-  weaponAmbiguousLevel,
-  weaponAmbiguousLevelLow,
-  weaponAscensionMaxLevel,
-  weaponAscensionMaxLevelLow,
-  weaponMaxLevel,
-  weaponMaxLevelLow,
-  weaponMilestoneLevels,
-  weaponMilestoneLevelsLow,
-} from '@genshin-optimizer/gi/util'
+  type AscensionKey,
+  ambiguousLevel,
+  ambiguousLevelLow,
+  ascensionMaxLevel,
+  ascensionMaxLevelLow,
+  maxLevel,
+  maxLevelLow,
+  milestoneLevels,
+  milestoneLevelsLow,
+} from '@genshin-optimizer/gi/consts'
 import { Box, Button, InputAdornment, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -31,12 +31,10 @@ export function WeaponLevelSelect({
   warning?: boolean
 }) {
   const { t } = useTranslation('ui')
-  const ascensionMaxLevels = useLow
-    ? weaponAscensionMaxLevelLow
-    : weaponAscensionMaxLevel
+  const ascensionMaxLevels = useLow ? ascensionMaxLevelLow : ascensionMaxLevel
   const setLevel = useCallback(
     (level = 1) => {
-      level = clamp(level, 1, useLow ? weaponMaxLevelLow : weaponMaxLevel)
+      level = clamp(level, 1, useLow ? maxLevelLow : maxLevel)
       const ascension = ascensionMaxLevels.findIndex(
         (ascenML) => level <= ascenML
       ) as AscensionKey
@@ -73,14 +71,16 @@ export function WeaponLevelSelect({
               <Button
                 sx={{ ml: 'auto' }}
                 disabled={
-                  !(useLow ? weaponAmbiguousLevelLow : weaponAmbiguousLevel)(
-                    level
-                  ) || disabled
+                  !(
+                    useLow
+                      ? ambiguousLevelLow
+                      : (l: number) => ambiguousLevel(l, maxLevel)
+                  )(level) || disabled
                 }
                 onClick={setAscension}
                 color={warning ? 'warning' : undefined}
               >
-                <strong>/ {weaponAscensionMaxLevel[ascension]}</strong>
+                <strong>/ {ascensionMaxLevel[ascension]}</strong>
               </Button>
             </InputAdornment>
           ),
@@ -96,7 +96,7 @@ export function WeaponLevelSelect({
         disabled={disabled}
         color={warning ? 'warning' : undefined}
       >
-        {[...(useLow ? weaponMilestoneLevelsLow : weaponMilestoneLevels)].map(
+        {[...(useLow ? milestoneLevelsLow : milestoneLevels)].map(
           ([lv, as]) => {
             const selected = lv === level && as === ascension
             return (

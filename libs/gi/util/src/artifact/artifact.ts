@@ -18,7 +18,7 @@ import {
   artMaxLevel,
   artSubstatRollData,
 } from '@genshin-optimizer/gi/consts'
-import type { IArtifact } from '@genshin-optimizer/gi/good'
+import type { IArtifact } from '@genshin-optimizer/gi/schema'
 import { allStats, getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { getArtifactMeta } from './artifactMeta'
 

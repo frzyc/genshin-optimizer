@@ -1,35 +1,34 @@
-import { validateArr } from '@genshin-optimizer/common/util'
-import type {
-  AttributeKey,
-  CharacterRarityKey,
-  SpecialityKey,
-} from '@genshin-optimizer/zzz/consts'
+import {
+  zodBoolean,
+  zodEnumWithDefault,
+  zodFilteredArray,
+} from '@genshin-optimizer/common/database'
 import {
   allAttributeKeys,
   allCharacterRarityKeys,
   allSpecialityKeys,
 } from '@genshin-optimizer/zzz/consts'
+import { z } from 'zod'
 import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'
 
 export const characterSortKeys = ['new', 'level', 'rarity', 'name'] as const
 export type CharacterSortKey = (typeof characterSortKeys)[number]
 
-export interface IDisplayCharacterEntry {
-  sortType: CharacterSortKey
-  ascending: boolean
-  specialtyType: SpecialityKey[]
-  attribute: AttributeKey[]
-  rarity: CharacterRarityKey[]
-}
+const persistedSortKeys = ['level', 'rarity', 'name'] as const
+type PersistedSortKey = (typeof persistedSortKeys)[number]
 
-const initialState = (): IDisplayCharacterEntry => ({
-  sortType: 'level',
-  ascending: false,
-  specialtyType: [...allSpecialityKeys],
-  attribute: [...allAttributeKeys],
-  rarity: [...allCharacterRarityKeys],
+const displayCharacterSchema = z.object({
+  sortType: zodEnumWithDefault(
+    persistedSortKeys,
+    'level'
+  ) as z.ZodType<PersistedSortKey>,
+  ascending: zodBoolean(),
+  specialtyType: zodFilteredArray(allSpecialityKeys),
+  attribute: zodFilteredArray(allAttributeKeys),
+  rarity: zodFilteredArray(allCharacterRarityKeys),
 })
+export type IDisplayCharacterEntry = z.infer<typeof displayCharacterSchema>
 
 export class DisplayCharacterEntry extends DataEntry<
   'display_character',
@@ -38,27 +37,15 @@ export class DisplayCharacterEntry extends DataEntry<
   IDisplayCharacterEntry
 > {
   constructor(database: ZzzDatabase) {
-    super(database, 'display_character', initialState, 'display_character')
+    super(
+      database,
+      'display_character',
+      () => displayCharacterSchema.parse({}),
+      'display_character'
+    )
   }
-  override validate(obj: any): IDisplayCharacterEntry | undefined {
-    if (typeof obj !== 'object') return undefined
-    let { sortType, ascending, specialtyType, attribute, rarity } = obj
-
-    //Disallow sorting by "new" explicitly.
-    if (sortType === 'new' || !characterSortKeys.includes(sortType))
-      sortType = 'level'
-    if (typeof ascending !== 'boolean') ascending = false
-    specialtyType = validateArr(specialtyType, allSpecialityKeys)
-    attribute = validateArr(attribute, allAttributeKeys)
-    rarity = validateArr(rarity, allCharacterRarityKeys)
-
-    const data: IDisplayCharacterEntry = {
-      sortType,
-      ascending,
-      specialtyType,
-      attribute,
-      rarity,
-    }
-    return data
+  override validate(obj: unknown): IDisplayCharacterEntry | undefined {
+    const result = displayCharacterSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
 }

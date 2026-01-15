@@ -56,15 +56,15 @@ export function UploadCard({
         return undefined
       }
       // Figure out the file format
-      if (parsed.format === 'ZOD') {
-        // Parse as ZOD format
+      if (parsed.format === 'ZOOD') {
+        // Parse as ZOOD format
         const copyStorage = new SandboxStorage(undefined, 'zzz')
         copyStorage.copyFrom(database.storage)
         const importedDatabase = new ZzzDatabase(
           (index + 1) as 1 | 2 | 3 | 4,
           copyStorage
         )
-        const importResult = importedDatabase.importZOD(
+        const importResult = importedDatabase.importZOOD(
           parsed,
           keepNotInImport,
           ignoreDups
@@ -210,7 +210,7 @@ export function UploadCard({
           onChange={(e) => setData(e.target.value)}
         />
         {importResult && importedDatabase ? (
-          <ZODUploadInfo
+          <ZOODUploadInfo
             importResult={importResult}
             importedDatabase={importedDatabase}
           />
@@ -227,7 +227,7 @@ export function UploadCard({
   )
 }
 
-function ZODUploadInfo({
+function ZOODUploadInfo({
   importResult: { source, discs },
   importedDatabase,
 }: {

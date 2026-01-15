@@ -1,4 +1,4 @@
-import { validateTalent } from './talent'
+import { validateTalent } from '@genshin-optimizer/gi/schema'
 
 describe('Test character talent validation', () => {
   test('Should return default talents for invalid input', () => {

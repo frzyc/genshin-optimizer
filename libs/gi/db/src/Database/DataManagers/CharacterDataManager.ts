@@ -8,18 +8,17 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
-  allCharacterKeys,
   allTravelerKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
-import {
-  validateCharLevelAsc,
-  validateTalent,
-} from '@genshin-optimizer/gi/util'
-import type { ICachedCharacter } from '../../Interfaces/ICachedCharacter'
-
+import { parseCharacter } from '@genshin-optimizer/gi/good'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
+
+export interface ICachedCharacter extends ICharacter {
+  equippedArtifacts: Record<ArtifactSlotKey, string>
+  equippedWeapon: string
+}
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import { GOSource } from '../exim'
@@ -42,34 +41,7 @@ export class CharacterDataManager extends DataManager<
     }
   }
   override validate(obj: unknown): ICharacter | undefined {
-    if (!obj || typeof obj !== 'object') return undefined
-    const {
-      key: characterKey,
-      level: rawLevel,
-      ascension: rawAscension,
-    } = obj as ICharacter
-    let { talent, constellation } = obj as ICharacter
-
-    if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
-
-    if (
-      typeof constellation !== 'number' &&
-      constellation < 0 &&
-      constellation > 6
-    )
-      constellation = 0
-
-    const { level, ascension } = validateCharLevelAsc(rawLevel, rawAscension)
-    talent = validateTalent(ascension, talent)
-
-    const char: ICharacter = {
-      key: characterKey,
-      level,
-      ascension,
-      talent,
-      constellation,
-    }
-    return char
+    return parseCharacter(obj)
   }
   override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)

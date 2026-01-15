@@ -9,15 +9,15 @@ export class DataEntry<
   CacheValue,
   StorageValue,
 > extends DataEntryBase<Key, ZOKey, CacheValue, StorageValue, ZzzDatabase> {
-  exportZOD(zoDb: Partial<IZZZDatabase & IZenlessObjectDescription>) {
-    zoDb[this.dataKey] = this.data
+  exportZOOD(zoodDb: Partial<IZZZDatabase & IZenlessObjectDescription>) {
+    zoodDb[this.dataKey] = this.data
   }
-  importZOD(
-    zoDb: IZenlessObjectDescription &
+  importZOOD(
+    zoodDb: IZenlessObjectDescription &
       IZZZDatabase & { [k in ZOKey]?: Partial<StorageValue> | never },
     _result: ImportResult
   ) {
-    const data = zoDb[this.dataKey]
+    const data = zoodDb[this.dataKey]
     if (data) this.set(data)
   }
   override toStorageKey(): string {
