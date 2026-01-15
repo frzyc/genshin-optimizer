@@ -336,7 +336,6 @@ export const allowedAdditiveReactions: Partial<
   anemo: ['aggravate'],
 }
 
-// Character-specific max level (100 for Somnia)
 export const charMaxLevel = 100
 
 export const getCharMaxLevel = (
