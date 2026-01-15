@@ -68,6 +68,7 @@ const allNonModStatNodes = objKeyMap(allNonModStats, (key) =>
 for (const ele of allElements) {
   allNonModStatNodes[`${ele}_res_`].info!.variant = ele
   allNonModStatNodes[`${ele}_enemyRes_`].info!.variant = ele
+  allNonModStatNodes[`${ele}_critRate_`].info!.variant = ele
   allNonModStatNodes[`${ele}_critDMG_`].info!.variant = ele
   allNonModStatNodes[`${ele}_dmgInc`].info!.variant = ele
   allModStatNodes[`${ele}_dmg_`].info!.variant = ele
@@ -281,6 +282,11 @@ const common: Data = {
         case 'critRate_':
           operands.push(
             percent(0.05, { ...inf, prefix: 'default' }),
+            lookup(
+              hit.ele,
+              objKeyMap(allElements, (ele) => premod[`${ele}_critRate_`]),
+              0
+            ),
             lookup(
               hit.move,
               // Plunging buff applies to both collision and shockwave types
