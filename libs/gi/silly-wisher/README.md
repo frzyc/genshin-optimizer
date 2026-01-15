@@ -4,28 +4,23 @@ This library was generated with [Nx](https://nx.dev).
 
 This is a library for the Silly Wisher Assets used by Genshin Optimizer, with their permission to use for the April fools event.
 
-## Updating the splash and portrait art
+## Grabbing assets
 
-You can extract the assets from the Silly Wisher APK. I used
-[AssetRipper](https://github.com/AssetRipper/AssetRipper) for this. Make sure
-to run the extractor on the entire contents of the APK, not just the
-`data.unity3d` file.
+Things to download:
+* [AssetRipper](https://github.com/AssetRipper/AssetRipper/releases/latest)
+  * Extract to your preferred folder.
+* [Silly Wisher xAPK](https://apkcombo.com/silly-wisher/com.sketchi.sillywisher/download/apk)
+  * Once downloaded, extract/open in 7zip to grab the APK `com.sketchi.sillywisher.apk`.
 
-The Silly Wisher APK should be available at APKCombo
-[here](https://apkcombo.com/silly-wisher/com.sketchi.sillywisher/download/apk).
-
-```bash
-mkdir silly-wisher
-unzip -d silly-wisher "Silly Wisher_${SILLY_WISHER_VERSION}_apkcombo.com.apk"
-
-mkdir asset-ripper
-unzip -d asset-ripper AssetRipper.zip
-./asset-ripper/AssetRipper silly-wisher
-```
+Steps:
+1. Open `AssetRipper.GUI.Free.exe`.
+1. In the top left, click **File**, then **Open File**.
+1. Open the APK `com.sketchi.sillywisher.apk` from before.
+1. In the top bar, click **Export**, then **Export All Files**.
+1. Create/select a folder. NOTE: All content in this folder will be deleted, it is recommended to create a blank folder for this purpose.
+1. Click **Export Unity Project**.
 
 Now the splash and portrait files should be in
-`asset-ripper/Ripped/ExportedProject/Assets/Texture2D`. The language assets
-file should be in
-`asset-ripper/Ripped/ExportedProject/Assets/Resources/I2Languages.asset`.
+`<selectedFolder>/ExportedProject/Assets/Texture2D`.
 
 We keep the portraits as 256x256 and the splashes as 512x512.
