@@ -22,7 +22,7 @@ export interface ICharacterTalent {
 
 const characterBaseSchema = z.object({
   key: zodEnum(allCharacterKeys),
-  level: zodBoundedNumber(1, 90, 1),
+  level: zodBoundedNumber(1, 100, 1),
   constellation: zodClampedNumber(0, 6, 0),
   ascension: zodBoundedNumber(0, 6, 0) as z.ZodType<AscensionKey>,
   talent: zodObject({
