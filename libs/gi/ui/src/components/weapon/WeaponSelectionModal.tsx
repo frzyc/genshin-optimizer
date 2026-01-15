@@ -1,9 +1,7 @@
-'use client'
 import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
-  NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { catTotal } from '@genshin-optimizer/common/util'
@@ -164,7 +162,7 @@ export function WeaponSelectionModal({
                       sx={{ display: 'flex' }}
                     >
                       <Box
-                        component={NextImage ? NextImage : 'img'}
+                        component="img"
                         src={weaponAsset(weaponKey, ascension >= 2)}
                         sx={{ width: 100, height: 'auto' }}
                         className={` grad-${weaponStat.rarity}star`}

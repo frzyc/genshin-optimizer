@@ -3,7 +3,7 @@ import {
   GO_LOOTBAR_LINK,
   go_lootbar_banner,
 } from '@genshin-optimizer/common/ad'
-import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { GOAdWrapper } from '@genshin-optimizer/gi/ui'
 import DescriptionIcon from '@mui/icons-material/Description'
 import {
@@ -113,7 +113,7 @@ function LootbarCard() {
         aria-label="Visit Lootbar.gg for Genshin Impact top-ups"
       >
         <Box
-          component={NextImage ? NextImage : 'img'}
+          component="img"
           alt="Lootbar.gg Banner"
           src={go_lootbar_banner}
           sx={{ width: '100%', height: 'auto', marginBottom: '-7px' }}

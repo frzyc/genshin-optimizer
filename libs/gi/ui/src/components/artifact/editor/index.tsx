@@ -1,11 +1,9 @@
-'use client'
 import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import {
   CardThemed,
   DropdownButton,
   ImgIcon,
   ModalWrapper,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import {
   clamp,
@@ -779,7 +777,7 @@ export function ArtifactEditor({
                       {imageURL && (
                         <Box display="flex" justifyContent="center">
                           <Box
-                            component={NextImage ? NextImage : 'img'}
+                            component="img"
                             src={imageURL}
                             width="100%"
                             maxWidth={350}
@@ -1028,11 +1026,7 @@ function DebugModal({ imgs }: { imgs: Record<string, string> }) {
               {Object.entries(imgs).map(([key, url]) => (
                 <Box key={key}>
                   <Typography>{key}</Typography>
-                  <Box
-                    component={NextImage ? NextImage : 'img'}
-                    src={url}
-                    maxWidth="100%"
-                  />
+                  <Box component="img" src={url} maxWidth="100%" />
                 </Box>
               ))}
             </Stack>

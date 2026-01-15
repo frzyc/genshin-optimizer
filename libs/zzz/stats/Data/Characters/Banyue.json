@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "fire",
   "specialty": "rupture",
+  "faction": "KrampusComplianceAuthority",
   "stats": {
     "atk_base": 124,
     "atk_growth": 7.4561,
@@ -210,19 +211,6 @@
       ]
     },
     "special": {
-      "EXSpecialAttackMountainTremor": [
-        {
-          "DamagePercentage": 1.713,
-          "DamagePercentageGrowth": 0.156,
-          "StunRatio": 1.571,
-          "StunRatioGrowth": 0.072,
-          "SpRecovery": 0,
-          "SpRecoveryGrowth": 0,
-          "FeverRecovery": 5354.25,
-          "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 155.75
-        }
-      ],
       "EXSpecialAttackEarthShaker": [
         {
           "DamagePercentage": 2.548,
@@ -236,17 +224,17 @@
           "AttributeInfliction": 241.16
         }
       ],
-      "EXSpecialAttackLionsRoar": [
+      "EXSpecialAttackMountainTremor": [
         {
-          "DamagePercentage": 1.537,
-          "DamagePercentageGrowth": 0.14,
-          "StunRatio": 1.381,
-          "StunRatioGrowth": 0.063,
+          "DamagePercentage": 1.713,
+          "DamagePercentageGrowth": 0.156,
+          "StunRatio": 1.571,
+          "StunRatioGrowth": 0.072,
           "SpRecovery": 0,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 4804.25,
+          "FeverRecovery": 5354.25,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 137.75
+          "AttributeInfliction": 155.75
         }
       ],
       "EXSpecialAttackOnesPath": [
@@ -262,17 +250,17 @@
           "AttributeInfliction": 146.66
         }
       ],
-      "EXSpecialAttackLionsRoarWrath": [
+      "EXSpecialAttackLionsRoar": [
         {
-          "DamagePercentage": 3.001,
-          "DamagePercentageGrowth": 0.273,
-          "StunRatio": 2.021,
-          "StunRatioGrowth": 0.092,
+          "DamagePercentage": 1.537,
+          "DamagePercentageGrowth": 0.14,
+          "StunRatio": 1.381,
+          "StunRatioGrowth": 0.063,
           "SpRecovery": 0,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 7474.5,
+          "FeverRecovery": 4804.25,
           "FeverRecoveryGrowth": 0,
-          "AttributeInfliction": 205.71
+          "AttributeInfliction": 137.75
         }
       ],
       "EXSpecialAttackMountainTremorWrath": [
@@ -286,6 +274,19 @@
           "FeverRecovery": 8024.5,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 223.71
+        }
+      ],
+      "EXSpecialAttackLionsRoarWrath": [
+        {
+          "DamagePercentage": 3.001,
+          "DamagePercentageGrowth": 0.273,
+          "StunRatio": 2.021,
+          "StunRatioGrowth": 0.092,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 7474.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 205.71
         }
       ],
       "Cancel": []
@@ -412,12 +413,12 @@
       "DodgeCounterStoneburst": []
     },
     "special": {
-      "EXSpecialAttackMountainTremor": [],
       "EXSpecialAttackEarthShaker": [],
-      "EXSpecialAttackLionsRoar": [],
+      "EXSpecialAttackMountainTremor": [],
       "EXSpecialAttackOnesPath": [],
-      "EXSpecialAttackLionsRoarWrath": [],
+      "EXSpecialAttackLionsRoar": [],
       "EXSpecialAttackMountainTremorWrath": [],
+      "EXSpecialAttackLionsRoarWrath": [],
       "Cancel": []
     },
     "chain": { "ChainAttackBlazingWrath": [], "UltimateTheWorldTrembles": [] },
@@ -458,5 +459,6 @@
     [0.3],
     [2],
     [0.08, 30, 6]
-  ]
+  ],
+  "potentialParams": []
 }

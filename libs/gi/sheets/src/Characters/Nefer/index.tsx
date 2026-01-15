@@ -97,7 +97,7 @@ const dm = {
   },
   constellation2: {
     stackGain: skillParam_gen.constellation2[0],
-    newMaxStacks: skillParam_gen.constellation2[1],
+    durationInc: skillParam_gen.constellation2[1],
     newEleMas: skillParam_gen.constellation2[2],
   },
   constellation4: {
@@ -506,7 +506,10 @@ const sheet: TalentSheet = {
               },
               {
                 text: stg('duration'),
-                value: dm.passive1.veilDuration,
+                value: (data) =>
+                  data.get(input.constellation).value >= 2
+                    ? `${dm.passive1.veilDuration}s + ${dm.constellation2.durationInc}s = ${dm.passive1.veilDuration + dm.constellation2.durationInc}`
+                    : dm.passive1.veilDuration,
                 unit: 's',
               },
             ],

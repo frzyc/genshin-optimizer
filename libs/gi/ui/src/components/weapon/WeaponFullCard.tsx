@@ -1,5 +1,5 @@
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
-import { CardThemed, NextImage, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
@@ -50,7 +50,7 @@ export function WeaponFullCardObj({
           className={`grad-${getWeaponStat(weapon.key).rarity}star`}
         >
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={weaponAsset(weapon.key, weapon.ascension >= 2)}
             width="100%"
             height="auto"

@@ -1,4 +1,3 @@
-import { NextImage } from '@genshin-optimizer/common/ui'
 import {
   characterAsset,
   commonDefImages,
@@ -80,7 +79,7 @@ export function CharacterCardEquipment({
     >
       <Box
         flexShrink={1}
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         src={characterAsset(characterKey, 'full')}
         sx={{ maxWidth: '100%' }}
         position="absolute"
@@ -138,7 +137,7 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
                 }}
               >
                 <Box
-                  component={NextImage ? NextImage : 'img'}
+                  component="img"
                   src={discDefIcon(discInfo.disc?.setKey)}
                   width="30px"
                   height="30px"

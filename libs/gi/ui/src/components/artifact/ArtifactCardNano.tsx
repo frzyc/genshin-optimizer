@@ -2,7 +2,6 @@ import {
   BootstrapTooltip,
   ColorText,
   ConditionalWrapper,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
@@ -69,7 +68,7 @@ export function ArtifactCardNano({
         }}
       >
         <Box
-          component={NextImage ? NextImage : 'img'}
+          component="img"
           src={imgAssets.slot[pSlotKey]}
           sx={{ width: '25%', height: 'auto', opacity: 0.7 }}
         />
@@ -111,7 +110,7 @@ export function ArtifactCardNano({
         >
           <ArtifactTooltip art={art}>
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={artifactAsset(art.setKey, slotKey)}
               sx={{ m: -1, maxHeight: '110%', maxWidth: '110%' }}
             />

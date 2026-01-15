@@ -4,7 +4,6 @@ import {
   CardThemed,
   ConditionalWrapper,
   ImgIcon,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import type { WenginePhaseKey } from '@genshin-optimizer/zzz/assets'
 import {
@@ -184,7 +183,7 @@ export function WengineCardObj({
                 </ClickAwayListener>
                 <Box component="div">
                   <Box
-                    component={NextImage ? NextImage : 'img'}
+                    component="img"
                     alt="Wengine Image"
                     src={wengineAsset(key, 'icon')}
                     sx={{

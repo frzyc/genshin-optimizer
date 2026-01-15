@@ -16,10 +16,12 @@ import PolarMetal from './sheets/PolarMetal'
 import ProtoPunk from './sheets/ProtoPunk'
 import PufferElectro from './sheets/PufferElectro'
 import ShadowHarmony from './sheets/ShadowHarmony'
+import ShiningAria from './sheets/ShiningAria'
 import ShockstarDisco from './sheets/ShockstarDisco'
 import SoulRock from './sheets/SoulRock'
 import SwingJazz from './sheets/SwingJazz'
 import ThunderMetal from './sheets/ThunderMetal'
+import WhiteWaterBallad from './sheets/WhiteWaterBallad'
 import WoodpeckerElectro from './sheets/WoodpeckerElectro'
 import YunkuiTales from './sheets/YunkuiTales'
 
@@ -40,10 +42,12 @@ const data: TagMapNodeEntries[] = [
   ProtoPunk,
   PufferElectro,
   ShadowHarmony,
+  ShiningAria,
   ShockstarDisco,
   SoulRock,
   SwingJazz,
   ThunderMetal,
+  WhiteWaterBallad,
   WoodpeckerElectro,
   YunkuiTales,
 ]

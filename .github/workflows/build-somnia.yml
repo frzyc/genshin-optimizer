@@ -8,8 +8,6 @@ on:
     paths-ignore:
       - 'apps/frontend/**'
       - 'apps/frontend-e2e/**'
-      - 'apps/gi-frontend/**'
-      - 'apps/gi-frontend-e2e/**'
       - 'apps/sr-frontend/**'
       - 'apps/sr-frontend-e2e/**'
       - 'apps/zzz-frontend/**'
@@ -32,7 +30,6 @@ on:
       - 'libs/gi/silly-wisher-names/**'
       - 'libs/gi/solver/**'
       - 'libs/gi/solver-tc/**'
-      - 'libs/gi/supabase/**'
       - 'libs/gi/svgicons/**'
       - 'libs/gi/ui/**'
       - 'libs/gi/uidata/**'
@@ -75,9 +72,10 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Build Somnia
         run: |
-          NX_DAEMON="false"
           cp apps/somnia/src/config.empty.json apps/somnia/src/config.json
           yarn run nx run somnia:build:production
+        env:
+          NX_DAEMON: false
       - name: echos
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then

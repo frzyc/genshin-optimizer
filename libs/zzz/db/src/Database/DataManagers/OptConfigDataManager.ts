@@ -36,6 +36,9 @@ export const statFilterStatKeys = [
   'pen_',
   'anomProf',
   'anomMas',
+  'impact',
+  'dazeInc_',
+  'sheerForce',
 ] as const
 export type StatFilterStatKey = (typeof statFilterStatKeys)[number]
 export const statFilterStatQtKeys = ['final', 'combat', 'initial'] as const

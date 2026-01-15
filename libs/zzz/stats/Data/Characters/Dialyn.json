@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "physical",
   "specialty": "stun",
+  "faction": "KrampusComplianceAuthority",
   "stats": {
     "atk_base": 109,
     "atk_growth": 6.4272,
@@ -370,5 +371,6 @@
     [20, 180, 500],
     [2],
     [4.8, 12]
-  ]
+  ],
+  "potentialParams": []
 }

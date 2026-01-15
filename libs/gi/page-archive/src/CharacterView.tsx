@@ -1,8 +1,4 @@
-import {
-  CardThemed,
-  ModalWrapper,
-  NextImage,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
@@ -214,7 +210,7 @@ function SkillDisplayCard({
         <Grid container sx={{ flexWrap: 'nowrap' }}>
           <Grid item>
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={talentSheet?.img}
               sx={{ width: 60, height: 'auto' }}
             />
