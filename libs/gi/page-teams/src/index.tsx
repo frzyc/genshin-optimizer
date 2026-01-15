@@ -45,7 +45,7 @@ export default function PageTeams() {
     'page_team',
     'page_teams',
     // Always load these 2 so character names are loaded for searching/sorting
-    'sillywisher_charNames_gen',
+    'sillyWisher_charNames',
     'charNames_gen',
   ])
   const database = useDatabase()

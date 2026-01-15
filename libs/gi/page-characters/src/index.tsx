@@ -88,7 +88,7 @@ export default function PageCharacter() {
   const { t } = useTranslation([
     'page_character',
     // Always load these 2 so character names are loaded for searching/sorting
-    'sillywisher_charNames_gen',
+    'sillyWisher_charNames',
     'charNames_gen',
   ])
   const { silly } = useContext(SillyContext)

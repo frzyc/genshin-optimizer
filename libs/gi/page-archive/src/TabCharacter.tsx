@@ -75,8 +75,8 @@ export default function TabCharacter() {
 
       const nameStr = i18n.t(`charNames_gen:${cKey}`)
       const sillyStr =
-        silly && i18n.exists(`sillywisher_charNames_gen:${cKey}`)
-          ? i18n.t(`sillywisher_charNames_gen:${cKey}`)
+        silly && i18n.exists(`sillyWisher_charNames:${cKey}`)
+          ? i18n.t(`sillyWisher_charNames:${cKey}`)
           : ''
       if (
         searchTermDeferred &&
@@ -107,8 +107,8 @@ export default function TabCharacter() {
     () =>
       sortFunction([character.sortOrderBy], character.sortOrder === 'asc', {
         name: (cKey: CharacterKey) =>
-          silly && i18n.exists(`sillywisher_charNames_gen:${cKey}`)
-            ? i18n.t(`sillywisher_charNames_gen:${cKey}`)
+          silly && i18n.exists(`sillyWisher_charNames:${cKey}`)
+            ? i18n.t(`sillyWisher_charNames:${cKey}`)
             : i18n.t(`charNames_gen:${cKey}`),
         rarity: (cKey: CharacterKey) => getCharStat(cKey).rarity,
         element: (cKey: CharacterKey) => getCharEle(cKey),

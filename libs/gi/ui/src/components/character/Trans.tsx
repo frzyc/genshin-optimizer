@@ -19,12 +19,12 @@ export function CharacterName({
   const { silly } = useContext(SillyContext)
   const cKey = charKeyToLocGenderedCharKey(characterKey, gender)
 
-  const { i18n } = useTranslation('sillywisher_charNames_gen')
+  const { i18n } = useTranslation('sillyWisher_charNames')
   return (
     <Translate
       ns={
-        silly && i18n.exists(`sillywisher_charNames_gen:${cKey}`)
-          ? 'sillywisher_charNames_gen'
+        silly && i18n.exists(`sillyWisher_charNames:${cKey}`)
+          ? 'sillyWisher_charNames'
           : 'charNames_gen'
       }
       key18={cKey}
