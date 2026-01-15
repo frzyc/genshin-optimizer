@@ -198,10 +198,10 @@
   "constellation6": {
     "name": "Đất Tinh Khiết",
     "description": {
-      "0": "Nhân vật trong đội trên trận ở khu vực Hoa Mặt Trời, nếu đang được bảo vệ bởi khiên sinh ra từ phản ứng kết tinh, thì sát thương tạo thành sẽ tăng 17%."
+      "0": "Nhân vật ra trận trong đội hiện tại khi ở trong phạm vi của Hoa Mặt Trời, nếu được bảo vệ bởi khiên sinh ra từ phản ứng Kết Tinh, hoặc khi có Trăng Trôi trong khu vực của Hoa Mặt Trời, thì sẽ tăng 17% sát thương gây ra."
     },
     "upgradedDescription": {
-      "0": "Nhân vật ra trận trong đội hiện tại khi ở trong phạm vi của Hoa Mặt Trời, nếu được bảo vệ bởi khiên sinh ra từ phản ứng Kết Tinh, sẽ tăng 17% sát thương gây ra.",
+      "0": "Nhân vật ra trận trong đội hiện tại khi ở trong phạm vi của Hoa Mặt Trời, nếu được bảo vệ bởi khiên sinh ra từ phản ứng Kết Tinh, hoặc khi có Trăng Trôi trong khu vực của Hoa Mặt Trời, thì sẽ tăng 17% sát thương gây ra.",
       "1": "Ngoài ra, khi thi triển Kỹ Năng Nộ <strong>Chiêu Giáng Sinh - Sóng Vỗ Đại Lục</strong>, sẽ phá hủy tất cả Đồng Vị Bạc trên sân. Khi phá hủy Đồng Vị Bạc thông qua cách này, Kỹ Năng Nộ lần này sẽ xem như xóa bỏ 4 tầng hiệu quả Sinh Tử trong Cung Mệnh <strong>Liên Đại Hiển Sinh</strong>, đồng thời trong 20s tiếp theo sẽ tăng sát thương Hoa Sinh Tử gây ra, mức tăng tương đương 250% Phòng Ngự của Albedo."
     }
   }

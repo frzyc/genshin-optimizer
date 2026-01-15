@@ -145,7 +145,7 @@
   "constellation4": {
     "name": "Le tranchant d'une fleur",
     "description": {
-      "0": "Lorsque Yun Jin déclenche une réaction de Cristallisation, sa DÉF augmente de 20 % pendant 12 s."
+      "0": "Lorsque Yun Jin déclenche une réaction de Cristallisation ou de Sélénocristallisation, sa DÉF augmente de 20 % pendant 12 s."
     }
   },
   "constellation5": {

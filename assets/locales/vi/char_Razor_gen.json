@@ -77,16 +77,16 @@
   "burst": {
     "name": "Răng Sét",
     "description": {
-      "0": "Đánh thức sói vô hình để bảo vệ bản thân, gây cho địch xung quanh <electro>Sát Thương Nguyên Tố Lôi</electro>, và tiêu hao tất cả Ấn Lôi, hồi năng lượng nguyên tố cho Razor.",
-      "1": "Trong thời gian Sói tồn tại, sẽ chiến đấu cùng Razor.",
+      "0": "Đánh thức Lôi Lang vô hình để bảo vệ bản thân, gây cho địch xung quanh <electro>Sát Thương Nguyên Tố Lôi</electro>, và tiêu hao tất cả Ấn Lôi, hồi năng lượng nguyên tố cho Razor.",
+      "1": "Trong thời gian Lôi Lang tồn tại, sẽ chiến đấu cùng Razor.",
       "2": "<br/>",
-      "3": "<strong>Sói</strong>",
+      "3": "<strong>Lôi Lang</strong>",
       "4": [
-        "sẽ cùng Razor tấn công thường, gây <electro>Sát Thương Nguyên Tố Lôi</electro>;",
+        "Sẽ cùng Razor tấn công thường, gây <electro>Sát Thương Nguyên Tố Lôi</electro>;",
         "Tăng tốc độ tấn công của Razor và <electro>Kháng Nguyên Tố Lôi</electro>;",
         "Giúp Razor miễn nhiễm với sát thương phản ứng <electro>Điện Cảm</electro>;",
         "Không thể thi triển Trọng Kích;",
-        "Tăng khả năng chống gián đoạn cho Razor."
+        "Tăng khả năng kháng gián đoạn cho Razor."
       ],
       "5": "<br/>",
       "6": "Hiệu quả sẽ mất khi Razor rời khỏi trận.",

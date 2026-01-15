@@ -1,0 +1,29 @@
+{
+  "setName": "Día de los Vientos Alzantes",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Tras golpear a un enemigo con un Ataque Normal o Cargado o con la Habilidad Elemental o Definitiva, se obtiene el efecto de “bendición del viento y la poesía” durante 6 s, el cual aumenta el ATQ en un 25%. Si el portador de este conjunto ya ha completado la misión de «Lecciones del Aquelarre», dicho efecto mejorará y se convertirá en “determinación del viento y la poesía”, el cual aumenta adicionalmente en un 20% la Prob. CRIT del portador que haya superado dicha prueba. Este efecto se puede activar incluso cuando el portador está en tu equipo pero no en uso."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Canto de la Flor de Viento",
+      "desc": "Una flor de cristal azulada e inmarcesible que, según dicen, perteneció a una joven exiliada de un pasado muy remoto que rezaba a los mil vientos y a las flores."
+    },
+    "plume": {
+      "name": "Juramento de la Luz del Alba",
+      "desc": "Una pluma de color claro y puro como la luz del alba que, según dicen, perteneció a una guardia real de un pasado muy remoto que renunció a su nombre."
+    },
+    "sands": {
+      "name": "Nota de la Melodía Primaveral",
+      "desc": "Un reloj de arena que contiene unos finos granos azulados. Por alguna razón, por más que se voltee, la arena nunca cae."
+    },
+    "goblet": {
+      "name": "Historia sin Contar del Heldenepos",
+      "desc": "Una copa de vino de color azulado y estilo antiguo que, según dicen, perteneció a un bardo anónimo de un pasado muy remoto."
+    },
+    "circlet": {
+      "name": "Minnesang Melancólico de Amor",
+      "desc": "Un lujoso accesorio de cabeza adornado con jade y cristal que, según dicen, era un amuleto que el Rey de la Tempestad otorgó en un pasado muy remoto a la persona que más le importaba."
+    }
+  }
+}

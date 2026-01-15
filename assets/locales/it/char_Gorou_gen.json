@@ -147,7 +147,7 @@
   "constellation2": {
     "name": "Segugio seduto: Affidabile come un orologio",
     "description": {
-      "0": "Mentre <strong>Gloria del generale</strong> è attiva, la sua durata si estende di 1 s quando un personaggio attivo vicino ottiene un frammento elementale tramite una reazione di Cristallizzazione. ",
+      "0": "Mentre <strong>Gloria del generale</strong> è attiva, la sua durata si estende di 1 s quando un personaggio attivo vicino ottiene un frammento elementale tramite una reazione di Cristallizzazione o quando innesca una reazione di Cristallizzazione lunare. ",
       "1": "Si può verificare una sola volta ogni 0,1 s. La durata può estendersi fino a 3 s."
     }
   },

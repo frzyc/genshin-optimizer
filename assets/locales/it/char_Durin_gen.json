@@ -76,7 +76,7 @@
       "0": "Scatena il potere della \"Bestia\" in diversi modi. Durin può usare diversi Tripudi elementali in base al suo stato di <strong>Trasmutazione essenziale</strong>.",
       "1": "<br/>",
       "2": "<strong>Principio della purezza: Trasmutazione luminosa</strong>",
-      "3": "Quando Durin è nello stato di <strong>Conferma della purezza</strong>, usa il Tripudio elementale <strong>Principio della purezza: Trasmutazione luminosa</strong>, infliggendo 3 iterazioni di <pyro>DAN da Pyro ad area</pyro> agli avversari davanti a sé e manifestando il suo potere nella forma di <strong>Drago della Fiamma bianca</strong>. Quest'ultimo segue il personaggio attivo e attacca periodicamente i nemici vicini, infliggendo <pyro>DAN da Pyro ad area</pyro>. Tali DAN sono considerati DAN da Tripudio elementale.",
+      "3": "Quando Durin è nello stato di <strong>Conferma della purezza</strong>, usa il Tripudio elementale <strong>Principio della purezza: Trasmutazione luminosa</strong>, infliggendo 3 iterazioni di <pyro>DAN da Pyro ad area</pyro> agli avversari davanti a sé e manifestando il suo potere nella forma di <strong>Drago della Fiamma bianca</strong>. Quest'ultimo segue il personaggio attivo e attacca i nemici vicini a intervalli regolari, infliggendo <pyro>DAN da Pyro ad area</pyro>. Tali DAN sono considerati DAN da Tripudio elementale.",
       "4": "<br/>",
       "5": "<strong>Principio dell'oscurità: Stelle quiescenti</strong>",
       "6": "Quando Durin è nello stato di <strong>Negazione delle tenebre</strong>, usa il Tripudio elementale <strong>Principio dell'oscurità: Stelle quiescenti</strong>, infliggendo 3 iterazioni di <pyro>DAN da Pyro ad area</pyro> agli avversari davanti a sé e manifestando il suo potere nella forma di <strong>Drago del Deterioramento oscuro</strong>. Quest'ultimo segue il personaggio attivo e attacca periodicamente un nemico vicino, infliggendo <pyro>DAN da Pyro</pyro>. Tali DAN sono considerati DAN da Tripudio elementale.",
@@ -117,8 +117,8 @@
   "passive2": {
     "name": "Caos simile alla notte",
     "description": {
-      "0": "Dopo aver usato il suo Tripudio elementale, Durin ottiene l'effetto Fusione primordiale delle forme per 20 s, che gli conferisce 10 accumuli di Fusione primordiale. Quando un attacco periodico di <strong>Drago della Fiamma bianca</strong> o <strong>Drago del Deterioramento oscuro</strong> infligge DAN, viene consumato 1 accumulo di Fusione primordiale delle forme per aumentare i DAN inflitti di un 3% dei DAN originali per ogni 100 di ATT. È possibile infliggere in questo modo fino a un 75% di DAN aggiuntivi. Quando un singolo attacco di <strong>Drago della Fiamma bianca</strong> o <strong>Drago del Deterioramento oscuro</strong> colpisce più avversari, viene consumato solo 1 accumulo di Fusione primordiale delle forme.",
-      "1": "Gli accumuli di Fusione primordiale delle forme vengono ripristinati usando nuovamente il Tripudio elementale."
+      "0": "Dopo aver usato il suo Tripudio elementale, Durin ottiene l'effetto Fusione primordiale delle forme per 20 s, che gli conferisce 10 accumuli di Fusione primordiale. Quando un attacco periodico di <strong>Drago della Fiamma bianca</strong> o <strong>Drago del Deterioramento oscuro</strong> infligge DAN, viene consumato 1 accumulo di Fusione primordiale per aumentare i DAN inflitti di un 3% dei DAN originali per ogni 100 di ATT. È possibile infliggere in questo modo fino a un 75% di DAN aggiuntivi. Quando un singolo attacco di <strong>Drago della Fiamma bianca</strong> o <strong>Drago del Deterioramento oscuro</strong> colpisce più avversari, viene consumato solo 1 accumulo di Fusione primordiale.",
+      "1": "Gli accumuli di Fusione primordiale vengono ripristinati usando nuovamente il Tripudio elementale."
     }
   },
   "passive3": {

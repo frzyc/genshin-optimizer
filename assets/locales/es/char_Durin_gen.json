@@ -1,6 +1,6 @@
 {
   "name": "Durin",
-  "title": "El Fuego Inextinguible",
+  "title": "“El Fuego Inextinguible”",
   "description": "Un dragón nacido de la pluma de la bruja M y llegado al mundo de los humanos. Su “historia” continúa desarrollándose.",
   "constellationName": "Draco Rubedo",
   "auto": {
@@ -145,7 +145,7 @@
       ],
       "2": "Todos los personajes cercanos del equipo obtienen 20 cargas de <strong>iluminación cíclica</strong> durante 20 s. Cuando los personajes en uso cercanos que posean iluminación cíclica inflijan daño con un Ataque Normal, Cargado o Descendente, o con la Habilidad Elemental o Definitiva, consumirán 1 carga de iluminación cíclica para aumentar el daño infligido en una cantidad equivalente al 60% del ATQ de Durin. El número de cargas de los personajes del equipo con iluminación cíclica se calcula de forma independiente.",
       "3": [
-        "<strong> Principio de oscuridad: Combustión estelar</strong>"
+        "<strong>Principio de oscuridad: Combustión estelar</strong>"
       ],
       "4": "Durin obtiene 20 cargas de <strong>iluminación cíclica</strong> durante 20 s. Cuando inflija daño con su Habilidad Definitiva, consumirá 2 cargas para aumentar el daño infligido en una cantidad equivalente al 150% de su ATQ.",
       "5": "<br/>",

@@ -192,10 +192,10 @@
   "constellation6": {
     "name": "Poeira da Purificação",
     "description": {
-      "0": "Membros ativos da equipe que estiverem dentro do campo de Radiação Solar forem protegidos por um escudo criado pela Cristalização, tem seu Dano aumentado em 17%."
+      "0": "Membros ativos da equipe que estiverem dentro do campo de Radiação Solar e forem protegidos por um escudo criado pela Cristalização, ou quando houver uma Jaula Lunar dentro da área de Radiação Solar, tem seu Dano aumentado em 17%."
     },
     "upgradedDescription": {
-      "0": "Quando o Personagem em campo da equipe estiver dentro da Área da Radiação Solar e sob a proteção de um Escudo gerado por uma Reação de Cristalização, o Dano causado será aumentado em 17%.",
+      "0": "Quando o Personagem em campo da equipe estiver dentro da Área da Radiação Solar e sob a proteção de um Escudo gerado por uma Reação de Cristalização, ou quando houver uma Jaula Lunar na área de Radiação Solar, o Dano causado será aumentado em 17%.",
       "1": "Além disso, ao usar o Supremo <strong>Ritual da Progenitura - Maré Tectônica</strong>, todas as Aurelitas em campo serão destruídas; ao destruí-las dessa forma, o Supremo será considerado como se tivesse consumido 4 Acúmulos de Julgamento Fatal da Constelação <strong>Éon da Vida</strong>, e durante os 20 segundos seguintes, o Dano causado pelas Flores Fatais será aumentado em um Valor equivalente a 250% da DEF de Albedo."
     }
   }

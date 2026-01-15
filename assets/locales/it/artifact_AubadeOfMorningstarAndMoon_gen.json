@@ -1,0 +1,29 @@
+{
+  "setName": "Aubade della stella del mattino e della luna",
+  "setEffects": {
+    "2": "Maestria elementale +80.",
+    "4": "Quando il personaggio che equipaggia il set non è in campo, i DAN da reazione lunare aumentano di un 20%. Quando il livello del Presagio lunare del gruppo è almeno Barlume ascendente, i DAN da reazione lunare aumentano di un ulteriore 40%. Quest'effetto scompare quando il personaggio rimane attivo per 3 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Sogno ornato dell'offerta al chiaro di luna",
+      "desc": "Un ornamento floreale meticolosamente intagliato, atto a enfatizzare la splendida beltà delle divinità delle lune celesti, realizzato in tempi antichi dagli artigiani che ne scolpivano le statue."
+    },
+    "plume": {
+      "name": "Luce d'addio dell'offerta al chiaro di luna",
+      "desc": "Una piuma che, in tempi antichi, donava ispirazione infinita ai sacerdoti che scrivevano preghiere alle lune celesti."
+    },
+    "sands": {
+      "name": "Ora finale dell'offerta al chiaro di luna",
+      "desc": "Una clessidra pensata per commemorare l'ultima ora, preparata dai saggi che, in tempi antichi, impetravano la verità dalle lune celesti."
+    },
+    "goblet": {
+      "name": "Libagione dell'offerta al chiaro di luna",
+      "desc": "Una coppa di vino andata perduta durante i festeggiamenti finali di un antico rito, nel quale un tempo i credenti offrivano sacrifici alle lune celesti."
+    },
+    "circlet": {
+      "name": "Corona d'argento dell'offerta al chiaro di luna",
+      "desc": "Una corona d'argento riservata alla sillaba finale di un inno, indossata da poeti che, in tempi antichi, cantavano lodi alle lune celesti."
+    }
+  }
+}

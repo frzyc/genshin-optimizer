@@ -1,0 +1,24 @@
+{
+  "name": "Dạ Khúc Hạ Màn",
+  "description": {
+    "0": "Viên ngọc được phủ một lớp ánh trăng mỏng phía trên, dù trong đêm đông lạnh giá vẫn toát lên sự ấm áp dịu dàng như khúc hát."
+  },
+  "passiveName": "Bài Ca Ngã Rẽ",
+  "passiveDescription": {
+    "0": {
+      "0": "Giới Hạn HP tăng <cryo>10%</cryo>. Khi người trang bị kích hoạt phản ứng Nguyệt hoặc gây sát thương phản ứng Nguyệt lên kẻ địch, sẽ hồi phục <cryo>14</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị và nhận hiệu quả \"Rượu Thần Của Biển Phì Nhiêu\" trong 12s: Giới Hạn HP tăng thêm <cryo>14%</cryo>, sát thương phản ứng Nguyệt tăng <cryo>60%</cryo> Sát Thương Bạo Kích. Hiệu quả hồi Năng Lượng Nguyên Tố mỗi 18s tối đa kích hoạt một lần, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Giới Hạn HP tăng <cryo>12%</cryo>. Khi người trang bị kích hoạt phản ứng Nguyệt hoặc gây sát thương phản ứng Nguyệt lên kẻ địch, sẽ hồi phục <cryo>15</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị và nhận hiệu quả \"Rượu Thần Của Biển Phì Nhiêu\" trong 12s: Giới Hạn HP tăng thêm <cryo>16%</cryo>, sát thương phản ứng Nguyệt tăng <cryo>80%</cryo> Sát Thương Bạo Kích. Hiệu quả hồi Năng Lượng Nguyên Tố mỗi 18s tối đa kích hoạt một lần, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Giới Hạn HP tăng <cryo>14%</cryo>. Khi người trang bị kích hoạt phản ứng Nguyệt hoặc gây sát thương phản ứng Nguyệt lên kẻ địch, sẽ hồi phục <cryo>16</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị và nhận hiệu quả \"Rượu Thần Của Biển Phì Nhiêu\" trong 12s: Giới Hạn HP tăng thêm <cryo>18%</cryo>, sát thương phản ứng Nguyệt tăng <cryo>100%</cryo> Sát Thương Bạo Kích. Hiệu quả hồi Năng Lượng Nguyên Tố mỗi 18s tối đa kích hoạt một lần, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Giới Hạn HP tăng <cryo>16%</cryo>. Khi người trang bị kích hoạt phản ứng Nguyệt hoặc gây sát thương phản ứng Nguyệt lên kẻ địch, sẽ hồi phục <cryo>17</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị và nhận hiệu quả \"Rượu Thần Của Biển Phì Nhiêu\" trong 12s: Giới Hạn HP tăng thêm <cryo>20%</cryo>, sát thương phản ứng Nguyệt tăng <cryo>120%</cryo> Sát Thương Bạo Kích. Hiệu quả hồi Năng Lượng Nguyên Tố mỗi 18s tối đa kích hoạt một lần, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Giới Hạn HP tăng <cryo>18%</cryo>. Khi người trang bị kích hoạt phản ứng Nguyệt hoặc gây sát thương phản ứng Nguyệt lên kẻ địch, sẽ hồi phục <cryo>18</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị và nhận hiệu quả \"Rượu Thần Của Biển Phì Nhiêu\" trong 12s: Giới Hạn HP tăng thêm <cryo>22%</cryo>, sát thương phản ứng Nguyệt tăng <cryo>140%</cryo> Sát Thương Bạo Kích. Hiệu quả hồi Năng Lượng Nguyên Tố mỗi 18s tối đa kích hoạt một lần, người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

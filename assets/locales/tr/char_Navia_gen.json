@@ -42,7 +42,7 @@
   "skill": {
     "name": "Kristal Tören Atışı",
     "description": {
-      "0": "Gruptaki karakterlerden biri Kristalleşme tepkimesiyle oluşan bir Element Parçası elde ettiğinde Navia 1 Kristal Şarapnel kazanır. Navia bir seferde en fazla 6 Kristal Şarapnele sahip olabilir. Kristal Şarapnel kazanımı her tetiklendiğinde mevcut Kristal Şarapnellerinin süresi de sıfırlanır.",
+      "0": "Gruptaki karakterlerden biri Kristalleşme tepkimesiyle oluşan bir Element Parçası elde ettiğinde veya Ay Kristalleşmesi tepkimesini tetiklediğinde Navia 1 Kristal Şarapnel kazanır. Navia bir seferde en fazla 6 Kristal Şarapnele sahip olabilir. Kristal Şarapnel kazanımı her tetiklendiğinde mevcut Kristal Şarapnellerinin süresi de sıfırlanır. Navia, Ay Kristalleşmesi tepkimesiyle her saniye en fazla 1 Kristal Şarapnel kademesi kazanır.",
       "1": "Navia ateş ettiğinde Kristal Şarapnellerin tümünü harcar ve şık ama ölümcül Şemsilahını açarak düşmanları delip geçen Rosula Kristal Mermileri ateşleyerek <geo>Toprak Hasarı</geo> verir.",
       "2": "0/1/2/3 veya daha fazla Kristal Şarapnel harcandığında sırasıyla 5/7/9/11 Rosula Kristal Mermi ateşlenir. Tek bir düşmana ne kadar çok Rosula Kristal Mermi isabet ederse verilen Hasar da o kadar büyük olur. 11 Rosula Kristal Merminin hepsi isabet ettiğinde asıl Hasarın %200'ü kadar Hasar verilir.",
       "3": "Ayrıca 3'ten fazla Kristal Şarapnel harcandığında harcanan ilk 3 Kristal Şarapnelden sonraki her bir Şarapnel, asıl Şemsilah saldırısının verdiği Hasarı %15 artırır.",

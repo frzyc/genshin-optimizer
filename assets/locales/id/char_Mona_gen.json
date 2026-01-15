@@ -159,20 +159,20 @@
   "constellation1": {
     "name": "Prophecy of Submersion",
     "description": {
-      "0": "Efek <hydro>Reaksi Elemental yang berhubungan dengan elemen Hydro</hydro> akan ditingkatkan selama 8 detik setelah serangan Karakter dalam party sendiri mengenai musuh yang berada dalam status Omen:",
+      "0": "Setelah serangan Karakter sendiri di dalam party mengenai musuh yang berada dalam status Omen, efek dari <hydro>reaksi terkait Hydro</hydro> diperkuat selama 8 detik:",
       "1": [
-        "DMG Electro Charged meningkat 15%. ·DMG Lunar-Charged meningkat 15%. DMG Vaporize meningkat 15%. DMG Hydro Swirl meningkat 15%.",
-        "Durasi musuh yang terkena Frozen meningkat 15%."
+        "DMG Electro Charged meningkat 15%. ·DMG Lunar-Charged meningkat 15%. DMG Vaporize meningkat 15%. DMG Hydro Swirl meningkat 15%. DMG reaksi Lunar-Crystallize meningkat 15%.",
+        "Durasi Frozen diperpanjang 15%."
       ]
     },
     "upgradedDescription": {
-      "0": "Setelah serangan Karakter sendiri di dalam party mengenai musuh yang berada dalam status Omen, efek dari <hydro>reaksi terkait Hydro</hydro> meningkat selama 8 detik:",
+      "0": "Setelah serangan Karakter sendiri di dalam party mengenai musuh yang berada dalam status Omen, efek dari <hydro>reaksi terkait Hydro</hydro> diperkuat selama 8 detik:",
       "1": [
-        "DMG Electro-Charged meningkat 15%, DMG Lunar-Charged meningkat 15%, DMG Vaporize meningkat 15%, DMG Hydro Swirl meningkat 15%.",
+        "DMG Electro-Charged meningkat 15%, DMG Lunar-Charged meningkat 15%, DMG Vaporize meningkat 15%, DMG Hydro Swirl meningkat 15%. DMG reaksi Lunar-Crystallize meningkat 15%.",
         "Durasi Frozen diperpanjang 15%."
       ],
       "2": "<br/>",
-      "3": "Selain itu, saat Karakter yang memicu efek di atas ada di dalam party namun tidak berada dalam medan pertempuran, efek peningkatan DMG reaksi yang disebutkan akan meningkat menjadi 160% dari efek awalnya."
+      "3": "Selain itu, saat Karakter yang memicu efek di atas ada di dalam party namun tidak berada dalam medan pertempuran, efek peningkatan DMG yang disebutkan akan meningkat menjadi 160% dari efek awalnya."
     }
   },
   "constellation2": {

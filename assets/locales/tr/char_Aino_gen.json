@@ -156,7 +156,7 @@
   "constellation6": {
     "name": "Yaratıcı Dehanın Ağırlığı",
     "description": {
-      "0": "Aino <strong>Hassas Hidronik Soğutucu</strong> Element Patlamasını kullandıktan sonra 15sn boyunca, yakındaki aktif karakterlerin verdiği Elektrik Yüklü, Çiçeklenme, Ay Yüklü ve Ay Çiçeklenmesi tepkimesi Hasarları %15 artar.",
+      "0": "Aino <strong>Hassas Hidronik Soğutucu</strong> Element Patlamasını kullandıktan sonra 15sn boyunca, yakındaki aktif karakterlerin verdiği Elektrik Yüklü, Çiçeklenme, Ay Yüklü, Ay Çiçeklenmesi ve Ay Kristalleşmesi tepkimelerinin Hasarları %15 artar.",
       "1": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Yukarıda bahsedilen tepkimelerin verdikleri Hasar %20 daha artar."
     }
   }

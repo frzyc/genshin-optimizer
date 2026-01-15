@@ -126,7 +126,7 @@
   "constellation2": {
     "name": "Support Cleaning Module",
     "description": {
-      "0": "Setelah Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong> mengenai musuh, akan memberikan status Punishment Edict pada salah satu musuh yang terkena serangan. Setelah jeda singkat atau saat musuh ini diserang, musuh di sekitarnya akan terkena <electro>Electro DMG Area</electro> sebesar 300% ATK Ineffa. DMG ini dianggap sebagai DMG Lunar-Charged.",
+      "0": "Setelah Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong> mengenai musuh, akan memberikan status Punishment Edict pada salah satu musuh yang terkena serangan. Punishment Edict: Setelah jeda singkat atau saat musuh ini diserang, musuh di sekitarnya akan terkena <electro>Electro DMG Area</electro> sebesar 300% ATK Ineffa. DMG ini dianggap sebagai DMG Lunar-Charged.",
       "1": "Selain itu, saat Ineffa melancarkan Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong>, Karakter aktif di sekitar akan mendapatkan Optical Flow Shield Barrier."
     }
   },

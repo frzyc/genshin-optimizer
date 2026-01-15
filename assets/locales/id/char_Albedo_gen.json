@@ -198,12 +198,12 @@
   "constellation6": {
     "name": "Dust of Purification",
     "description": {
-      "0": "Solar Isotoma akan meningkatkan 17% DMG Karakter aktif yang berada dalam lingkup areanya dan dilindungi oleh Perisai yang terbuat dari Crystallize."
+      "0": "Solar Isotoma akan meningkatkan 17% DMG Karakter aktif yang berada dalam lingkup areanya dan dilindungi oleh Perisai yang tercipta dari reaksi Crystallize, atau saat ada Moondrift dalam lingkup area Solar Isotoma."
     },
     "upgradedDescription": {
-      "0": "Karakter aktif dalam party yang berada dalam area Solar Isotoma akan mendapatkan peningkatan DMG sebesar 17% saat terlindungi oleh Perisai yang tercipta dari reaksi Crystallize.",
+      "0": "Karakter aktif dalam party yang berada dalam area Solar Isotoma akan mendapatkan peningkatan DMG sebesar 17% saat terlindungi oleh Perisai yang tercipta dari reaksi Crystallize, atau saat ada Moondrift di dalam lingkup area Solar Isotoma.",
       "1": "<br/>",
-      "2": "Selain itu, saat melancarkan Elemental Burst <strong>Rite of Progeniture: Tectonic Tide</strong>, akan langsung menghancurkan semua Silver Isotoma yang ada di medan pertempuran. Saat menghancurkan Silver Isotoma dengan cara ini, Elemental Burst yang dilancarkan kali ini akan terhitung seperti telah mengonsumsi 4 lapis Fatal Reckoning dari Konstelasi <strong>Opening of Phanerozoic</strong>. Efek ini akan meningkatkan DMG Fatal Blossom sebesar 250% dari DEF Albedo selama 20 detik."
+      "2": "Selain itu, melancarkan Elemental Burst <strong>Rite of Progeniture: Tectonic Tide</strong> akan langsung menghancurkan semua Silver Isotoma yang ada di medan pertempuran. Saat menghancurkan Silver Isotoma dengan cara ini, Elemental Burst yang dilancarkan kali ini akan terhitung seperti telah mengonsumsi 4 lapis Fatal Reckoning dari Konstelasi <strong>Opening of Phanerozoic</strong>. Efek ini akan meningkatkan DMG Fatal Blossom sebesar 250% dari DEF Albedo selama 20 detik."
     }
   }
 }
