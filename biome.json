@@ -22,7 +22,8 @@
       "./libs/gi/stats/Data/**",
       "./.nx/cache",
       "./.nx/workspace-data",
-      "./libs/*/localization/assets/locales/*/*.json"
+      "./libs/*/localization/assets/locales/*/*.json",
+      "./libs/gi/silly-wisher-names/Translated/*.json"
     ]
   },
   "formatter": {
