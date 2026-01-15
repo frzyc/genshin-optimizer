@@ -1,29 +1,165 @@
-import { clamp, objKeyMap, objMap } from '@genshin-optimizer/common/util'
+import {
+  zodClampedNumber,
+  zodEnum,
+  zodEnumWithDefault,
+  zodNumberRecord,
+  zodNumericLiteralWithDefault,
+  zodObject,
+  zodString,
+  zodTypedRecordWith,
+} from '@genshin-optimizer/common/database'
+import { clamp, objKeyMap } from '@genshin-optimizer/common/util'
 import type {
+  AscensionKey,
   CharacterKey,
   RelicMainStatKey,
   RelicRarityKey,
   RelicSetKey,
   RelicSlotKey,
+  SuperimposeKey,
 } from '@genshin-optimizer/sr/consts'
 import {
+  allAscensionKeys,
   allCharacterKeys,
   allLightConeKeys,
+  allRelicRarityKeys,
+  allRelicSetKeys,
   allRelicSlotKeys,
   allRelicSubStatKeys,
-  isRelicRarityKey,
+  allSuperimposeKeys,
   relicMaxLevel,
   relicSubstatTypeKeys,
+  validateLevelAsc,
 } from '@genshin-optimizer/sr/consts'
-import { validateLevelAsc } from '@genshin-optimizer/sr/util'
-import type {
-  BuildTcRelicSlot,
-  ICachedLightCone,
-  ICachedRelic,
-} from '../../Interfaces'
-import { type IBuildTc } from '../../Interfaces/IBuildTc'
+import { z } from 'zod'
+import type { ICachedLightCone, ICachedRelic } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+
+const buildTcRelicSlotSchema = z.object({
+  level: z.number().int().min(0).max(15).catch(15),
+  statKey: zodEnumWithDefault(
+    [
+      'hp',
+      'atk',
+      'hp_',
+      'atk_',
+      'def_',
+      'spd',
+      'crit_',
+      'crit_dmg_',
+      'heal_',
+      'eff_',
+      'eff_res_',
+      'brEff_',
+    ] as const,
+    'atk_'
+  ) as z.ZodType<RelicMainStatKey>,
+  rarity: zodNumericLiteralWithDefault(
+    allRelicRarityKeys,
+    5
+  ) as z.ZodType<RelicRarityKey>,
+})
+
+export type BuildTcRelicSlot = z.infer<typeof buildTcRelicSlotSchema>
+
+const defaultSlot = (sk: RelicSlotKey): BuildTcRelicSlot => ({
+  level: 15,
+  rarity: 5,
+  statKey: sk === 'head' ? 'hp' : sk === 'hands' ? 'atk' : 'atk_',
+})
+
+const buildTcRelicSlotsSchema = zodTypedRecordWith(allRelicSlotKeys, (sk) =>
+  buildTcRelicSlotSchema.catch(defaultSlot(sk))
+)
+
+const buildTcSubstatsSchema = z.object({
+  type: zodEnumWithDefault(relicSubstatTypeKeys, 'max'),
+  stats: zodNumberRecord(allRelicSubStatKeys, 0),
+  rarity: zodNumericLiteralWithDefault(
+    allRelicRarityKeys,
+    5
+  ) as z.ZodType<RelicRarityKey>,
+})
+
+const buildTcSetsSchema = z.preprocess(
+  (val) => {
+    if (typeof val !== 'object' || val === null) return {}
+    const result: Partial<Record<RelicSetKey, 2 | 4>> = {}
+    for (const [key, value] of Object.entries(val)) {
+      if (
+        allRelicSetKeys.includes(key as RelicSetKey) &&
+        (value === 2 || value === 4)
+      ) {
+        result[key as RelicSetKey] = value
+      }
+    }
+    return result
+  },
+  z.record(z.string(), z.number())
+) as z.ZodType<Partial<Record<RelicSetKey, 2 | 4>>>
+
+const buildTcRelicSchema = z.object({
+  slots: buildTcRelicSlotsSchema.catch(
+    objKeyMap(allRelicSlotKeys, defaultSlot)
+  ),
+  substats: zodObject(buildTcSubstatsSchema.shape).catch({
+    type: 'max',
+    stats: objKeyMap(allRelicSubStatKeys, () => 0),
+    rarity: 5,
+  }),
+  sets: buildTcSetsSchema,
+})
+
+const buildTcLightConeSchema = z.object({
+  key: zodEnum(allLightConeKeys),
+  level: zodClampedNumber(1, 80, 1),
+  ascension: zodNumericLiteralWithDefault(
+    allAscensionKeys,
+    0
+  ) as z.ZodType<AscensionKey>,
+  superimpose: zodNumericLiteralWithDefault(
+    allSuperimposeKeys,
+    1
+  ) as z.ZodType<SuperimposeKey>,
+})
+
+const defaultMaxSubstats = () =>
+  objKeyMap(
+    allRelicSubStatKeys,
+    (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5)
+  )
+
+const buildTcOptimizationSchema = z.object({
+  distributedSubstats: z.number().int().catch(45),
+  maxSubstats: zodNumberRecord(allRelicSubStatKeys, 0).catch(
+    defaultMaxSubstats()
+  ),
+})
+
+export const buildTcSchema = z.object({
+  name: z.string().catch('Build(TC) Name'),
+  description: zodString('Build(TC) Description'),
+  characterKey: z.enum(allCharacterKeys),
+  teamId: z.string().optional(),
+  lightCone: buildTcLightConeSchema.optional().catch(undefined),
+  relic: zodObject(buildTcRelicSchema.shape).catch({
+    slots: objKeyMap(allRelicSlotKeys, defaultSlot),
+    substats: {
+      type: 'max',
+      stats: objKeyMap(allRelicSubStatKeys, () => 0),
+      rarity: 5,
+    },
+    sets: {},
+  }),
+  optimization: zodObject(buildTcOptimizationSchema.shape).catch({
+    distributedSubstats: 45,
+    maxSubstats: defaultMaxSubstats(),
+  }),
+})
+
+export type IBuildTc = z.infer<typeof buildTcSchema>
+export type BuildTCLightCone = NonNullable<IBuildTc['lightCone']>
 
 export class BuildTcDataManager extends DataManager<
   string,
@@ -35,32 +171,37 @@ export class BuildTcDataManager extends DataManager<
     super(database, 'buildTcs')
   }
   override validate(obj: unknown): IBuildTc | undefined {
-    if (!obj || typeof obj !== 'object') return undefined
-    const { characterKey, teamId } = obj as IBuildTc
-    if (!allCharacterKeys.includes(characterKey)) return undefined
+    const result = buildTcSchema.safeParse(obj)
+    if (!result.success) return undefined
 
-    let { name, description } = obj as IBuildTc
-    const { lightCone, relic, optimization } = obj as IBuildTc
+    const { lightCone, relic, ...rest } = result.data
 
-    // Cannot validate teamId, since on db init database.teams do not exist yet.
-    // if (teamId && !this.database.teams.get(teamId)) teamId = undefined
+    // Validate lightCone level/ascension
+    let validatedLightCone = lightCone
+    if (lightCone) {
+      const { level, ascension } = validateLevelAsc(
+        lightCone.level,
+        lightCone.ascension
+      )
+      validatedLightCone = { ...lightCone, level, ascension }
+    }
 
-    if (typeof name !== 'string') name = 'Build(TC) Name'
-    if (typeof description !== 'string') description = 'Build(TC) Description'
-    const _lightCone = validateCharTCLightCone(lightCone)
+    // Clamp relic slot levels to rarity max
+    const validatedSlots = objKeyMap(allRelicSlotKeys, (sk) => {
+      const slot = relic.slots[sk]
+      return {
+        ...slot,
+        level: clamp(slot.level, 0, relicMaxLevel[slot.rarity]),
+      }
+    })
 
-    const _relic = validateCharTCRelic(relic)
-    if (!_relic) return undefined
-    const _optimization = validateCharTcOptimization(optimization)
-    if (!_optimization) return undefined
     return {
-      name,
-      characterKey,
-      teamId,
-      description,
-      relic: _relic,
-      lightCone: _lightCone,
-      optimization: _optimization,
+      ...rest,
+      lightCone: validatedLightCone,
+      relic: {
+        ...relic,
+        slots: validatedSlots,
+      },
     }
   }
   new(data: Partial<IBuildTc>) {
@@ -106,113 +247,23 @@ export function initCharTC(characterKey: CharacterKey): IBuildTc {
     },
     optimization: {
       distributedSubstats: 45,
-      maxSubstats: initCharTcOptimizationMaxSubstats(),
+      maxSubstats: defaultMaxSubstats(),
     },
   }
 }
+
 function initCharTCRelicSlots(): Record<RelicSlotKey, BuildTcRelicSlot> {
   return objKeyMap(allRelicSlotKeys, (s) => ({
-    level: 20,
+    level: 15,
+    rarity: 5,
     statKey: (s === 'head'
       ? 'hp'
       : s === 'hands'
         ? 'atk'
         : 'atk_') as RelicMainStatKey,
-    rarity: 5,
   }))
 }
 
-function validateCharTCLightCone(
-  lightCone: unknown
-): IBuildTc['lightCone'] | undefined {
-  if (typeof lightCone !== 'object') return undefined
-  const { key } = lightCone as Exclude<IBuildTc['lightCone'], undefined>
-  let { level, ascension, superimpose } = lightCone as Exclude<
-    IBuildTc['lightCone'],
-    undefined
-  >
-  if (!allLightConeKeys.includes(key)) return undefined
-  if (typeof superimpose !== 'number' || superimpose < 1 || superimpose > 5)
-    superimpose = 1
-  const { level: _level, ascension: _ascension } = validateLevelAsc(
-    level,
-    ascension
-  )
-  ;[level, ascension] = [_level, _ascension]
-  return { key, level, ascension, superimpose }
-}
-function validateCharTCRelic(relic: unknown): IBuildTc['relic'] | undefined {
-  if (typeof relic !== 'object') return undefined
-  let {
-    slots,
-    substats: { type, stats, rarity },
-    sets,
-  } = relic as IBuildTc['relic']
-  const _slots = validateCharTCRelicSlots(slots)
-  if (!_slots) return undefined
-  slots = _slots
-  if (!relicSubstatTypeKeys.includes(type)) type = 'max'
-  if (typeof stats !== 'object') stats = objKeyMap(allRelicSubStatKeys, () => 0)
-  stats = objKeyMap(allRelicSubStatKeys, (k) =>
-    typeof stats[k] === 'number' ? stats[k] : 0
-  )
-  rarity = validateRelicRarity(rarity)
-
-  if (typeof sets !== 'object') sets = {}
-  // TODO: validate sets
-
-  return { slots, substats: { type, stats, rarity }, sets }
-}
-
-function validateRelicRarity(rarity: unknown): RelicRarityKey {
-  return isRelicRarityKey(rarity) ? rarity : 5
-}
-function validateCharTCRelicSlots(
-  slots: unknown
-): IBuildTc['relic']['slots'] | undefined {
-  if (typeof slots !== 'object') return initCharTCRelicSlots()
-
-  if (
-    Object.keys(slots as IBuildTc['relic']['slots']).length !==
-      allRelicSlotKeys.length ||
-    Object.keys(slots as IBuildTc['relic']['slots']).some(
-      (s) => !allRelicSlotKeys.includes(s as RelicSlotKey)
-    )
-  )
-    return initCharTCRelicSlots()
-  return objMap(
-    slots as IBuildTc['relic']['slots'],
-    ({ level, rarity, ...rest }) => {
-      rarity = validateRelicRarity(rarity)
-      return {
-        level: clamp(level, 0, relicMaxLevel[rarity]),
-        rarity,
-        ...rest,
-      }
-    }
-  )
-}
-function validateCharTcOptimization(
-  optimization: unknown
-): IBuildTc['optimization'] | undefined {
-  if (typeof optimization !== 'object') return undefined
-  let { distributedSubstats, maxSubstats } =
-    optimization as IBuildTc['optimization']
-  if (typeof distributedSubstats !== 'number') distributedSubstats = 20
-  if (typeof maxSubstats !== 'object')
-    maxSubstats = initCharTcOptimizationMaxSubstats()
-  maxSubstats = objKeyMap([...allRelicSubStatKeys], (k) =>
-    typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0
-  )
-
-  return { distributedSubstats, maxSubstats }
-}
-function initCharTcOptimizationMaxSubstats(): IBuildTc['optimization']['maxSubstats'] {
-  return objKeyMap(
-    allRelicSubStatKeys,
-    (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5)
-  )
-}
 export function toBuildTc(
   charTC: IBuildTc,
   eLightCone: ICachedLightCone | undefined = undefined,
@@ -249,6 +300,6 @@ export function toBuildTc(
     Object.entries(sets)
       .map(([key, value]) => [key, value === 3 ? 2 : value === 5 ? 4 : value])
       .filter(([, value]) => value)
-  )
+  ) as Partial<Record<RelicSetKey, 2 | 4>>
   return charTC
 }

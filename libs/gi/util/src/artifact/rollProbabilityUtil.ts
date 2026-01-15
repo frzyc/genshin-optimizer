@@ -1,6 +1,6 @@
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
-import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/schema'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { getRollsRemaining, getSubstatValue } from './artifact'
 

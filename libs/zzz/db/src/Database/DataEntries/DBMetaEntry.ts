@@ -1,26 +1,28 @@
 import type { Database } from '@genshin-optimizer/common/database'
-import { validateValue } from '@genshin-optimizer/common/util'
 import {
   type CharacterKey,
   allCharacterKeys,
 } from '@genshin-optimizer/zzz/consts'
+import { z } from 'zod'
 import type { IZZZDatabase, IZenlessObjectDescription } from '../../Interfaces'
 import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'
 import type { ImportResult } from '../exim'
 
-interface IDBMeta {
-  name: string
-  lastEdit: number
-  optCharKey?: CharacterKey
-}
+// Schema with defaults - single source of truth
+// Uses .catch() to provide fallback values for invalid data
+const createDbMetaSchema = (defaultName: string) =>
+  z.object({
+    name: z.string().catch(defaultName),
+    lastEdit: z.number().catch(0),
+    optCharKey: z
+      .enum(allCharacterKeys as unknown as [CharacterKey, ...CharacterKey[]])
+      .optional()
+      .catch(undefined),
+  })
 
-function dbMetaInit(database: Database): IDBMeta {
-  return {
-    name: `Database ${database.storage.getDBIndex()}`,
-    lastEdit: 0,
-  }
-}
+// Type derived from schema
+export type IDBMeta = z.infer<ReturnType<typeof createDbMetaSchema>>
 
 export class DBMetaEntry extends DataEntry<
   'dbMeta',
@@ -29,23 +31,24 @@ export class DBMetaEntry extends DataEntry<
   IDBMeta
 > {
   constructor(database: ZzzDatabase) {
-    super(database, 'dbMeta', dbMetaInit, 'dbMeta')
+    const defaultName = (db: Database) => `Database ${db.storage.getDBIndex()}`
+    super(
+      database,
+      'dbMeta',
+      (db) => createDbMetaSchema(defaultName(db)).parse({}),
+      'dbMeta'
+    )
   }
-  override validate(obj: any): IDBMeta | undefined {
-    if (typeof obj !== 'object') return undefined
-    let { name, lastEdit, optCharKey } = obj
-    if (typeof name !== 'string')
-      name = `Database ${this.database.storage.getDBIndex()}`
-    if (typeof lastEdit !== 'number') console.warn('lastEdit INVALID')
-    if (typeof lastEdit !== 'number') lastEdit = 0
-    optCharKey = validateValue(optCharKey, allCharacterKeys)
-    return { name, lastEdit, optCharKey } as IDBMeta
+  override validate(obj: unknown): IDBMeta | undefined {
+    const defaultName = `Database ${this.database.storage.getDBIndex()}`
+    const result = createDbMetaSchema(defaultName).safeParse(obj)
+    return result.success ? result.data : undefined
   }
-  override importZOD(
-    zoDb: IZZZDatabase & IZenlessObjectDescription,
+  override importZOOD(
+    zoodDb: IZZZDatabase & IZenlessObjectDescription,
     _result: ImportResult
   ): void {
-    const data = zoDb[this.dataKey]
+    const data = zoodDb[this.dataKey]
     if (data) {
       // Don't copy over lastEdit data
       const { lastEdit, ...rest } = data as IDBMeta

@@ -18,7 +18,7 @@ import {
   artSlotMainKeys,
   artSubstatRollData,
 } from '@genshin-optimizer/gi/consts'
-import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/schema'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { artDisplayValue, getSubstatValuesPercent } from './artifact'
 

@@ -1,8 +1,4 @@
-import {
-  objKeyMap,
-  objKeyValMap,
-  verifyObjKeys,
-} from '@genshin-optimizer/common/util'
+import { objKeyMap, verifyObjKeys } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
@@ -21,6 +17,7 @@ import {
   constant,
   data,
   equal,
+  equalStr,
   greaterEq,
   inferInfoMut,
   infoMut,
@@ -38,7 +35,7 @@ import {
   sum,
   tally,
 } from '@genshin-optimizer/gi/wr'
-import { cond } from '../SheetUtil'
+import { cond, nonStackBuff } from '../SheetUtil'
 
 const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
@@ -338,11 +335,16 @@ export function dataObjForCharacterSheet(
     key,
     'moonsignAfterSkillBurst'
   )
-  function moonsignBuff(value: NumNode): NumNode {
-    return greaterEq(
-      tally.moonsign,
-      2,
-      equal(condMoonsignAfterSkillBurst, 'on', min(value, percent(0.36)))
+  function moonsignBuff(path: string, value: NumNode) {
+    return nonStackBuff(
+      'moonsignascend',
+      path,
+      greaterEq(
+        tally.moonsign,
+        2,
+        equal(condMoonsignAfterSkillBurst, 'on', min(value, percent(0.36))),
+        { path, isTeamBuff: true }
+      )
     )
   }
   const element = getCharEle(key)
@@ -355,48 +357,64 @@ export function dataObjForCharacterSheet(
     weaponType: constant(weaponType),
     premod: {},
     display,
-    teamBuff: { tally: { maxEleMas: input.premod.eleMas } },
+    teamBuff: { tally: { maxEleMas: input.premod.eleMas }, nonStacking: {} },
+  }
+  const moonsignData: Data = {
+    teamBuff: {
+      premod: {},
+    },
   }
   if (element) {
     data.charEle = constant(element)
     data.teamBuff!.tally![element] = constant(1)
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
+
+    // Moonsign buff handling for non-moonsign chars
     if (additional[0]?.isMoonsign === undefined) {
-      let moonsign: NumNode
+      let moonsignBase: NumNode
+      const moonsignTallyWrite = equalStr(
+        condMoonsignAfterSkillBurst,
+        'on',
+        input.charKey
+      )
       switch (element) {
         case 'pyro':
         case 'electro':
         case 'cryo':
-          moonsign = moonsignBuff(
-            prod(input.total.atk, 1 / 100, percent(0.009))
-          )
+          moonsignBase = prod(input.total.atk, 1 / 100, percent(0.009))
           break
         case 'hydro':
-          moonsign = moonsignBuff(
-            prod(input.total.hp, 1 / 1000, percent(0.006))
-          )
+          moonsignBase = prod(input.total.hp, 1 / 1000, percent(0.006))
           break
         case 'geo':
-          moonsign = moonsignBuff(prod(input.total.def, 1 / 100, percent(0.01)))
+          moonsignBase = prod(input.total.def, 1 / 100, percent(0.01))
           break
         case 'anemo':
         case 'dendro':
-          moonsign = moonsignBuff(
-            prod(input.total.eleMas, 1 / 100, percent(0.0225))
-          )
+          moonsignBase = prod(input.total.eleMas, 1 / 100, percent(0.0225))
           break
       }
-      data.teamBuff!.tally!.maxMoonsignBuff = moonsign
-      data.display!['moonsign'] = objKeyValMap(allLunarReactionKeys, (lr) => [
-        `${lr}_dmg_`,
-        { ...moonsign },
-      ])
+      data.teamBuff!.nonStacking!.moonsignascend = moonsignTallyWrite
+      data.display!['moonsign'] = Object.fromEntries(
+        allLunarReactionKeys.flatMap((lr) => {
+          const key = `${lr}_dmg_` as const
+          const moonsign = moonsignBuff(`${lr}_dmg_`, moonsignBase)
+          moonsignData.teamBuff!.premod![key] = moonsign[0]
+          return [
+            [key, moonsign[0]],
+            [`${key}Inactive`, moonsign[1]],
+          ]
+        })
+      )
     }
   }
+
+  // Tally handling for faction stuff
   data.teamBuff!.tally!.hexerei = additional[0]?.isHexerei
   data.teamBuff!.tally!.moonsign = additional[0]?.isMoonsign
   if (region) data.teamBuff!.tally![region] = constant(1)
+
   if (weaponType !== 'catalyst')
     data.display!['basic']!['physical_dmg_'] = input.total.physical_dmg_
 
@@ -434,5 +452,9 @@ export function dataObjForCharacterSheet(
     }
   }
 
-  return mergeData([data, ...additional.map((d) => inferInfoMut(d))])
+  return mergeData([
+    data,
+    moonsignData,
+    ...additional.map((d) => inferInfoMut(d)),
+  ])
 }

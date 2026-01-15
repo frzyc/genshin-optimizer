@@ -1,14 +1,9 @@
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import {
-  allCharacterKeys,
-  allLightConeKeys,
-  lightConeMaxLevel,
-} from '@genshin-optimizer/sr/consts'
 import type {
   ILightCone,
   ISrObjectDescription,
 } from '@genshin-optimizer/sr/srod'
-import { validateLevelAsc } from '@genshin-optimizer/sr/util'
+import { parseLightCone } from '@genshin-optimizer/sr/srod'
 import type {
   ICachedCharacter,
   ICachedLightCone,
@@ -29,7 +24,7 @@ export class LightConeDataManager extends DataManager<
     super(database, 'lightCones')
   }
   override validate(obj: unknown): ILightCone | undefined {
-    return validateLightCone(obj)
+    return parseLightCone(obj)
   }
   override toCache(
     storageObj: ILightCone,
@@ -235,17 +230,6 @@ export class LightConeDataManager extends DataManager<
   }
 }
 
-export function validateLightCone(obj: unknown = {}): ILightCone | undefined {
-  if (typeof obj !== 'object') return undefined
-  const { key, level: rawLevel, ascension: rawAscension } = obj as ILightCone
-  let { superimpose, location, lock } = obj as ILightCone
-
-  if (!allLightConeKeys.includes(key)) return undefined
-  if (rawLevel > lightConeMaxLevel) return undefined
-  const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
-  if (typeof superimpose !== 'number' || superimpose < 1 || superimpose > 5)
-    superimpose = 1
-  if (!location || !allCharacterKeys.includes(location)) location = ''
-  lock = !!lock
-  return { key, level, ascension, superimpose, location, lock }
+export function validateLightCone(obj: unknown): ILightCone | undefined {
+  return parseLightCone(obj)
 }

@@ -1,20 +1,31 @@
+import { zodTypedRecord } from '@genshin-optimizer/common/database'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
-import type { RelicIds } from '../../Types'
+import { z } from 'zod'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import type { RelicIds } from './BuildDataManager'
 
-export type GeneratedBuild = {
-  value: number //TODO: remove this when build display is more refined.
-  lightConeId?: string
-  relicIds: RelicIds
-}
+const relicIdValueSchema = z.union([z.string(), z.undefined()])
+const relicIdsSchema = zodTypedRecord(
+  allRelicSlotKeys,
+  relicIdValueSchema
+) as z.ZodType<RelicIds>
 
-export interface GeneratedBuildList {
-  //generated opt builds
-  builds: Array<GeneratedBuild>
-  buildDate: number
-}
+const generatedBuildSchema = z.object({
+  value: z.number(),
+  lightConeId: z.string().optional(),
+  relicIds: relicIdsSchema,
+})
+
+export type GeneratedBuild = z.infer<typeof generatedBuildSchema>
+
+const generatedBuildListSchema = z.object({
+  builds: z.array(generatedBuildSchema).catch([]),
+  buildDate: z.number().int().catch(0),
+})
+
+export type GeneratedBuildList = z.infer<typeof generatedBuildListSchema>
 
 export class GeneratedBuildListDataManager extends DataManager<
   string,
@@ -25,36 +36,30 @@ export class GeneratedBuildListDataManager extends DataManager<
   constructor(database: SroDatabase) {
     super(database, 'generatedBuildList')
   }
-  override validate(obj: object): GeneratedBuildList | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
-    let { builds, buildDate } = obj as GeneratedBuildList
+  override validate(obj: unknown): GeneratedBuildList | undefined {
+    const result = generatedBuildListSchema.safeParse(obj)
+    if (!result.success) return undefined
 
-    if (!Array.isArray(builds)) {
-      builds = []
-      buildDate = 0
-    } else {
-      builds = builds
-        .map((build) => {
-          if (typeof build !== 'object' || build === null) return undefined
-          const { relicIds: relicIdsRaw, value } = build as GeneratedBuild
-          if (typeof value !== 'number') return undefined
-          if (typeof relicIdsRaw !== 'object' || relicIdsRaw === null)
-            return undefined
-          let { lightConeId } = build as GeneratedBuild
-          if (lightConeId && !this.database.lightCones.get(lightConeId))
-            lightConeId = undefined
+    const { builds: rawBuilds, buildDate } = result.data
 
-          const relicIds = objKeyMap(allRelicSlotKeys, (slotKey) =>
-            this.database.relics.get(relicIdsRaw[slotKey])?.slotKey === slotKey
-              ? relicIdsRaw[slotKey]
-              : undefined
-          )
+    // Validate builds with database lookups
+    const builds: GeneratedBuild[] = rawBuilds.map((build) => {
+      const { relicIds: relicIdsRaw, value } = build
+      let { lightConeId } = build
 
-          return { relicIds, lightConeId, value }
-        })
-        .filter((b) => b) as GeneratedBuild[]
-      if (!Number.isInteger(buildDate)) buildDate = 0
-    }
+      // Validate lightConeId exists in database
+      if (lightConeId && !this.database.lightCones.get(lightConeId))
+        lightConeId = undefined
+
+      // Validate relicIds - ensure each relic exists and matches its slot
+      const relicIds = objKeyMap(allRelicSlotKeys, (slotKey) =>
+        this.database.relics.get(relicIdsRaw[slotKey])?.slotKey === slotKey
+          ? relicIdsRaw[slotKey]
+          : undefined
+      )
+
+      return { relicIds, lightConeId, value }
+    })
 
     return {
       builds,

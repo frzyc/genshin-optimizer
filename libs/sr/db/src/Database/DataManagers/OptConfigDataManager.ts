@@ -1,5 +1,9 @@
-import type { UnArray } from '@genshin-optimizer/common/util'
-import { deepFreeze, validateArr } from '@genshin-optimizer/common/util'
+import {
+  zodBoolean,
+  zodFilteredArray,
+  zodNumericLiteralWithDefault,
+} from '@genshin-optimizer/common/database'
+import { deepFreeze } from '@genshin-optimizer/common/util'
 import type {
   PathKey,
   RelicCavernSetKey,
@@ -15,6 +19,7 @@ import {
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { Tag } from '@genshin-optimizer/sr/formula'
+import { z } from 'zod'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import { validateTag } from '../tagUtil'
@@ -30,46 +35,44 @@ export const allAllowLocationsState = [
 ] as const
 export type AllowLocationsState = (typeof allAllowLocationsState)[number]
 
-export type StatFilter = {
-  tag: Tag
-  value: number
-  isMax: boolean
-  disabled: boolean
-}
-export type StatFilters = Array<StatFilter>
+const statFilterSchema = z.object({
+  tag: z.record(z.string(), z.unknown()) as z.ZodType<Tag>,
+  value: z.number(),
+  isMax: z.boolean(),
+  disabled: z.boolean(),
+})
 
-export interface OptConfig {
-  statFilters: StatFilters
+export type StatFilter = z.infer<typeof statFilterSchema>
+export type StatFilters = StatFilter[]
 
-  // Relic filters
-  levelLow: number
-  levelHigh: number
-  slotBodyKeys: RelicMainStatKey[]
-  slotFeetKeys: RelicMainStatKey[]
-  slotSphereKeys: RelicMainStatKey[]
-  slotRopeKeys: RelicMainStatKey[]
-  setFilter2Cavern: RelicCavernSetKey[]
-  setFilter4Cavern: RelicCavernSetKey[]
-  setFilter2Planar: RelicPlanarSetKey[]
-  useEquipped: boolean
+const optConfigSchema = z.object({
+  statFilters: z.array(statFilterSchema).catch([]),
 
-  // excludedLocations: CharacterKey[]
-  // allowLocationsState: AllowLocationsState
-  // relicExclusion: string[]
-  // useExcludedRelics: boolean
-  // allowPartial: boolean
+  levelLow: z.number().int().min(0).max(15).catch(relicMaxLevel['5']),
+  levelHigh: z.number().int().min(0).max(15).catch(relicMaxLevel['5']),
+  slotBodyKeys: zodFilteredArray(relicSlotToMainStatKeys.body, []),
+  slotFeetKeys: zodFilteredArray(relicSlotToMainStatKeys.feet, []),
+  slotSphereKeys: zodFilteredArray(relicSlotToMainStatKeys.sphere, []),
+  slotRopeKeys: zodFilteredArray(relicSlotToMainStatKeys.rope, []),
+  setFilter2Cavern: zodFilteredArray(allRelicCavernSetKeys, []),
+  setFilter4Cavern: zodFilteredArray(allRelicCavernSetKeys, []),
+  setFilter2Planar: zodFilteredArray(allRelicPlanarSetKeys, []),
+  useEquipped: zodBoolean(),
 
-  // LC Filters
-  optLightCone: boolean
-  lcLevelLow: number
-  lcLevelHigh: number
-  lightConePaths: PathKey[]
-  useEquippedLightCone: boolean
+  optLightCone: zodBoolean(),
+  lcLevelLow: z.number().int().min(0).max(80).catch(lightConeMaxLevel),
+  lcLevelHigh: z.number().int().min(0).max(80).catch(lightConeMaxLevel),
+  lightConePaths: zodFilteredArray(allPathKeys, []),
+  useEquippedLightCone: zodBoolean(),
 
-  //generated opt builds
-  maxBuildsToShow: number
-  generatedBuildListId?: string
-}
+  maxBuildsToShow: zodNumericLiteralWithDefault(
+    maxBuildsToShowList,
+    maxBuildsToShowDefault
+  ),
+  generatedBuildListId: z.string().optional(),
+})
+
+export type OptConfig = z.infer<typeof optConfigSchema>
 
 export class OptConfigDataManager extends DataManager<
   string,
@@ -80,124 +83,31 @@ export class OptConfigDataManager extends DataManager<
   constructor(database: SroDatabase) {
     super(database, 'optConfigs')
   }
-  override validate(obj: object): OptConfig | undefined {
-    if (typeof obj !== 'object') return undefined
-    let {
-      statFilters,
+  override validate(obj: unknown): OptConfig | undefined {
+    const result = optConfigSchema.safeParse(obj)
+    if (!result.success) return undefined
 
-      levelLow,
-      levelHigh,
-      slotBodyKeys,
-      slotFeetKeys,
-      slotSphereKeys,
-      slotRopeKeys,
-      setFilter2Cavern,
-      setFilter4Cavern,
-      setFilter2Planar,
-      useEquipped,
-      // relicExclusion,
-      // useExcludedRelics,
-      // excludedLocations,
-      // allowLocationsState,
-      // allowPartial,
+    const {
+      statFilters: rawStatFilters,
+      generatedBuildListId: rawGeneratedBuildListId,
+      ...rest
+    } = result.data
 
-      optLightCone,
-      lcLevelLow,
-      lcLevelHigh,
-      lightConePaths,
-      useEquippedLightCone,
-
-      maxBuildsToShow,
-      generatedBuildListId,
-    } = obj as OptConfig
-
-    if (!Array.isArray(statFilters)) statFilters = []
-    statFilters = statFilters.filter((statFilter) => {
-      const { tag, value, isMax, disabled } = statFilter as UnArray<StatFilters>
-      if (!validateTag(tag)) return false
-      if (typeof value !== 'number') return false
-      if (typeof isMax !== 'boolean') return false
-      if (typeof disabled !== 'boolean') return false
-      return true
-    })
-
-    if (levelLow === undefined) levelLow = 0
-    if (levelHigh === undefined) levelHigh = relicMaxLevel['5']
-
-    slotBodyKeys = validateArr(slotBodyKeys, relicSlotToMainStatKeys.body, [])
-    slotFeetKeys = validateArr(slotFeetKeys, relicSlotToMainStatKeys.feet, [])
-    slotSphereKeys = validateArr(
-      slotSphereKeys,
-      relicSlotToMainStatKeys.sphere,
-      []
+    // Filter statFilters with business logic (validateTag)
+    const statFilters = rawStatFilters.filter((statFilter) =>
+      validateTag(statFilter.tag as Tag)
     )
-    slotRopeKeys = validateArr(slotRopeKeys, relicSlotToMainStatKeys.rope, [])
-    setFilter2Cavern = validateArr(setFilter2Cavern, allRelicCavernSetKeys, [])
-    setFilter4Cavern = validateArr(setFilter4Cavern, allRelicCavernSetKeys, [])
-    setFilter2Planar = validateArr(setFilter2Planar, allRelicPlanarSetKeys, [])
-    useEquipped = !!useEquipped
 
-    // if (!relicExclusion || !Array.isArray(relicExclusion)) relicExclusion = []
-    // else
-    //   relicExclusion = [...new Set(relicExclusion)].filter((id) =>
-    //     this.database.relics.keys.includes(id)
-    //   )
-
-    // excludedLocations = validateArr(
-    //   excludedLocations,
-    //   allCharacterKeys,
-    //   []
-    // ).filter(
-    //   (ck) => this.database.chars.get(ck) // Remove characters who do not exist in the DB
-    // )
-    // if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
-
-    optLightCone = !!optLightCone
-    if (lcLevelLow === undefined) lcLevelLow = 0
-    if (lcLevelHigh === undefined) lcLevelHigh = lightConeMaxLevel
-    lightConePaths = validateArr(lightConePaths, allPathKeys, [])
-    useEquippedLightCone = !!useEquippedLightCone
-
-    if (
-      !maxBuildsToShowList.includes(
-        maxBuildsToShow as (typeof maxBuildsToShowList)[number]
-      )
-    )
-      maxBuildsToShow = maxBuildsToShowDefault
-    // if (!plotBase || !Array.isArray(plotBase)) plotBase = undefined
-
-    if (
-      generatedBuildListId &&
-      !this.database.generatedBuildList.get(generatedBuildListId)
-    )
-      generatedBuildListId = undefined
+    // Validate generatedBuildListId exists in database
+    const generatedBuildListId =
+      rawGeneratedBuildListId &&
+      this.database.generatedBuildList.get(rawGeneratedBuildListId)
+        ? rawGeneratedBuildListId
+        : undefined
 
     return {
+      ...rest,
       statFilters,
-
-      levelLow,
-      levelHigh,
-      slotBodyKeys,
-      slotFeetKeys,
-      slotSphereKeys,
-      slotRopeKeys,
-      setFilter2Cavern,
-      setFilter4Cavern,
-      setFilter2Planar,
-      useEquipped,
-      // relicExclusion,
-      // useExcludedRelics,
-      // excludedLocations,
-      // allowLocationsState,
-      // allowPartial,
-
-      optLightCone,
-      lcLevelLow,
-      lcLevelHigh,
-      lightConePaths,
-      useEquippedLightCone,
-
-      maxBuildsToShow,
       generatedBuildListId,
     }
   }
@@ -215,11 +125,6 @@ export class OptConfigDataManager extends DataManager<
     const optConfig = this.database.optConfigs.get(optConfigId)
     if (!optConfig) return {}
     const {
-      // remove user-specific data
-      // useExcludedRelics,
-      // excludedLocations,
-      // allowLocationsState,
-      // relicExclusion,
       useEquipped,
       useEquippedLightCone: useEquippedLC,
       generatedBuildListId,
@@ -246,7 +151,7 @@ export class OptConfigDataManager extends DataManager<
     else
       return this.database.optConfigs.set(optConfigId, {
         generatedBuildListId: this.database.generatedBuildList.new(list),
-      }) // Create a new list
+      })
   }
 }
 
@@ -255,19 +160,19 @@ const initialBuildSettings: OptConfig = deepFreeze({
 
   levelLow: relicMaxLevel['5'],
   levelHigh: relicMaxLevel['5'],
-  slotBodyKeys: [...relicSlotToMainStatKeys.body],
-  slotFeetKeys: [...relicSlotToMainStatKeys.feet],
-  slotSphereKeys: [...relicSlotToMainStatKeys.sphere],
-  slotRopeKeys: [...relicSlotToMainStatKeys.rope],
-  setFilter2Cavern: [],
-  setFilter4Cavern: [],
-  setFilter2Planar: [],
+  slotBodyKeys: [...relicSlotToMainStatKeys.body] as RelicMainStatKey[],
+  slotFeetKeys: [...relicSlotToMainStatKeys.feet] as RelicMainStatKey[],
+  slotSphereKeys: [...relicSlotToMainStatKeys.sphere] as RelicMainStatKey[],
+  slotRopeKeys: [...relicSlotToMainStatKeys.rope] as RelicMainStatKey[],
+  setFilter2Cavern: [] as RelicCavernSetKey[],
+  setFilter4Cavern: [] as RelicCavernSetKey[],
+  setFilter2Planar: [] as RelicPlanarSetKey[],
   useEquipped: false,
 
   optLightCone: false,
   lcLevelLow: lightConeMaxLevel,
   lcLevelHigh: lightConeMaxLevel,
-  lightConePaths: [],
+  lightConePaths: [] as PathKey[],
   useEquippedLightCone: false,
 
   maxBuildsToShow: 5,

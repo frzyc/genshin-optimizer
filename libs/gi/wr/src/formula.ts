@@ -224,7 +224,6 @@ const inputBase = {
     maxEleMas: read('max'),
     moonsign: read('add'),
     hexerei: read('add'),
-    maxMoonsignBuff: read('max'),
   },
 }
 const input = setReadNodeKeys(deepNodeClone(inputBase))

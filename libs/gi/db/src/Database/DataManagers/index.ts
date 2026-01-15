@@ -1,5 +1,13 @@
+import type { ICachedArtifact, ICachedSubstat } from './ArtifactDataManager'
 import { cachedArtifact, validateArtifact } from './ArtifactDataManager'
+import type { BuildTc, BuildTcArtifactSlot } from './BuildTcDataManager'
 import { initCharTC, toBuildTc } from './BuildTcDataManager'
+import type { ICachedCharacter } from './CharacterDataManager'
+import type {
+  BonusStats,
+  CustomMultiTarget,
+  CustomTarget,
+} from './CustomMultiTarget'
 import {
   MAX_DESC_LENGTH,
   MAX_NAME_LENGTH,
@@ -29,6 +37,7 @@ import type {
   Team,
 } from './TeamDataManager'
 import { defLoadoutExportSetting } from './TeamDataManager'
+import type { ICachedWeapon } from './WeaponDataManager'
 import {
   defaultInitialWeapon,
   defaultInitialWeaponKey,
@@ -56,7 +65,16 @@ export type {
   ArtSetExclusion,
   ArtSetExclusionKey,
   ArtifactData,
+  BonusStats,
+  BuildTc,
+  BuildTcArtifactSlot,
+  CustomMultiTarget,
+  CustomTarget,
   GeneratedBuild,
+  ICachedArtifact,
+  ICachedCharacter,
+  ICachedSubstat,
+  ICachedWeapon,
   LoadoutDataExportSetting,
   LoadoutDatum,
   LoadoutExportSetting,
