@@ -75,7 +75,7 @@ export function travelerSheet(
     prefix: 'base',
   })
   const [condBonusSkirk1Path, condBonusSkirk1] = cond('Traveler', 'bonusSkirk1')
-  const bonusSkirk1_base_atk = equal(condBonusSkirk1, 'on', 2, {
+  const bonusSkirk1_base_atk = equal(condBonusSkirk1, 'on', 7, {
     path: 'atk',
     prefix: 'base',
   })
