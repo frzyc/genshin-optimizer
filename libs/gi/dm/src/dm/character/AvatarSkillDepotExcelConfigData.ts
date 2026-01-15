@@ -9,15 +9,15 @@ type AvatarSkillDepotExcelConfigDataObf = {
   talents: number[] //[341, 342, 343, 344, 345, 346],
   talentStarName: string //"Talent_Noel",
   // inherentProudSkillOpens
-  FECDDOLDHBL: {
+  LOAMPGAFLMA: {
     proudSkillGroupId?: number
-    LKJNHHPJKIA?: number // needAvatarPromoteLevel
+    AMKLKEEBGPM?: number // needAvatarPromoteLevel
   }[]
   // unlocked proudskills
-  LLALJAIDKPI: [
+  GFFGFBCGBDH: [
     {
-      AFMEMNMEABG: number[] // no clue [ 1000701 ],
-      KLHCAFHKLNI: string // unlock condition "SPECIAL_PROUD_SKILL_OPEN_CONDITION_TYPE_QUEST_FINISH",
+      BFCALCJMJKD: number[] // no clue [ 1000701 ],
+      AFMOAPEAINH: string // unlock condition "SPECIAL_PROUD_SKILL_OPEN_CONDITION_TYPE_QUEST_FINISH",
       proudSkillGroupId: number // 2251
     },
   ]
@@ -92,20 +92,20 @@ const avatarSkillDepotExcelConfigData = Object.fromEntries(
   avatarSkillDepotExcelConfigDataSrc
     // Convert obfuscated properties to unobf names
     .map((obfSkill) => {
-      const { FECDDOLDHBL: _, ...obfSkillTrim } = obfSkill
+      const { LOAMPGAFLMA: _, ...obfSkillTrim } = obfSkill
       return {
         ...obfSkillTrim,
-        inherentProudSkillOpens: obfSkill.FECDDOLDHBL.map((openObf) => {
-          const { LKJNHHPJKIA: _, ...openObfTrim } = openObf
+        inherentProudSkillOpens: obfSkill.LOAMPGAFLMA.map((openObf) => {
+          const { AMKLKEEBGPM: _, ...openObfTrim } = openObf
           return {
             ...openObfTrim,
-            needAvatarPromoteLevel: openObf.LKJNHHPJKIA,
+            needAvatarPromoteLevel: openObf.AMKLKEEBGPM,
           }
         }),
-        lockedProudSkillOpens: obfSkill.LLALJAIDKPI.map((openObf) => ({
+        lockedProudSkillOpens: obfSkill.GFFGFBCGBDH.map((openObf) => ({
           ...openObf,
-          numberArray: openObf.AFMEMNMEABG,
-          unlockCondition: openObf.KLHCAFHKLNI,
+          numberArray: openObf.BFCALCJMJKD,
+          unlockCondition: openObf.AFMOAPEAINH,
         })),
       } as AvatarSkillDepotExcelConfigData
     })
