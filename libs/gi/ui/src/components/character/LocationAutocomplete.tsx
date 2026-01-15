@@ -44,7 +44,7 @@ export function LocationAutocomplete({
   const { t } = useTranslation([
     'ui',
     'artifact',
-    'sillyWisher_charNames',
+    'sillywisher_charNames_gen',
     'charNames_gen',
   ])
   const { silly } = useContext(SillyContext)
@@ -55,7 +55,7 @@ export function LocationAutocomplete({
       (key: LocationCharacterKey): string =>
         t(
           `${
-            silly ? 'sillyWisher_charNames' : 'charNames_gen'
+            silly ? 'sillywisher_charNames_gen' : 'charNames_gen'
           }:${charKeyToLocGenderedCharKey(
             database.chars.LocationToCharacterKey(key),
             gender

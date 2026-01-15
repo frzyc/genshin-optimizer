@@ -124,7 +124,7 @@ function Page({ teamId }: { teamId: string }) {
   const teamChar = useTeamChar(teamCharId ?? '')
 
   const { t } = useTranslation([
-    'sillyWisher_charNames',
+    'sillywisher_charNames_gen',
     'charNames_gen',
     'page_character',
     'page_team',
@@ -135,7 +135,7 @@ function Page({ teamId }: { teamId: string }) {
       const charName = characterKey
         ? t(
             `${
-              silly ? 'sillyWisher_charNames' : 'charNames_gen'
+              silly ? 'sillywisher_charNames_gen' : 'charNames_gen'
             }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
           )
         : t('page_team:teamSettings.tab.team')

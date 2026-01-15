@@ -27,7 +27,7 @@ export function LocationFilterMultiAutocomplete({
 }) {
   const { t } = useTranslation([
     'artifact',
-    'sillyWisher_charNames',
+    'sillywisher_charNames_gen',
     'charNames_gen',
   ])
   const database = useDatabase()
@@ -37,7 +37,7 @@ export function LocationFilterMultiAutocomplete({
     (key: LocationCharacterKey, silly: boolean): string =>
       t(
         `${
-          silly ? 'sillyWisher_charNames' : 'charNames_gen'
+          silly ? 'sillywisher_charNames_gen' : 'charNames_gen'
         }:${charKeyToLocGenderedCharKey(
           database.chars.LocationToCharacterKey(key),
           gender

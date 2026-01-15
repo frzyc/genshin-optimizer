@@ -33,7 +33,7 @@ export function characterSortConfigs(
       i18n
         .t(
           `${
-            silly ? 'sillyWisher_charNames' : 'charNames_gen' // Should already be loaded by caller
+            silly ? 'sillywisher_charNames_gen' : 'charNames_gen' // Should already be loaded by caller
           }:${charKeyToLocGenderedCharKey(ck, database.gender)}`
         )
         .toString(),
@@ -72,7 +72,7 @@ export function characterFilterConfigs(
       i18n
         .t(
           `${
-            silly ? 'sillyWisher_charNames' : 'charNames_gen' // Should already be loaded by caller
+            silly ? 'sillywisher_charNames_gen' : 'charNames_gen' // Should already be loaded by caller
           }:${charKeyToLocGenderedCharKey(ck, database.gender)}`
         )
         .toLowerCase()

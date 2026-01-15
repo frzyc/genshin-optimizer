@@ -28,7 +28,7 @@ export function CharacterMultiAutocomplete({
 }) {
   const { t } = useTranslation([
     'page_team',
-    'sillyWisher_charNames',
+    'sillywisher_charNames_gen',
     'charNames_gen',
   ])
 
@@ -49,7 +49,7 @@ export function CharacterMultiAutocomplete({
     (key: CharacterKey, silly: boolean): string =>
       t(
         `${
-          silly ? 'sillyWisher_charNames' : 'charNames_gen'
+          silly ? 'sillywisher_charNames_gen' : 'charNames_gen'
         }:${charKeyToLocGenderedCharKey(key, gender)}`
       ),
     [gender, t]

@@ -64,7 +64,7 @@ function SourceDisplay({ source }: { source: string | undefined }) {
         {' '}
         (
         <Translate
-          ns={silly ? 'sillyWisher_charNames' : 'charNames_gen'}
+          ns={silly ? 'sillywisher_charNames_gen' : 'charNames_gen'}
           key18={source}
         />
         )

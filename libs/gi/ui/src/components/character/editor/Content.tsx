@@ -41,7 +41,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
   const { t } = useTranslation([
     'page_character',
     // Always load these 2 so character names are loaded for searching/sorting
-    'sillyWisher_charNames',
+    'sillywisher_charNames_gen',
     'charNames_gen',
   ])
   const navigate = useNavigate()
@@ -56,7 +56,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
   const deleteCharacter = useCallback(async () => {
     const name = t(
       `${
-        silly ? 'sillyWisher_charNames' : 'charNames_gen'
+        silly ? 'sillywisher_charNames_gen' : 'charNames_gen'
       }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
     )
 
