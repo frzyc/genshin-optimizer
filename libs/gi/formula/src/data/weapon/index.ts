@@ -116,6 +116,7 @@ import MoonweaversDawn from './MoonweaversDawn'
 import MountainBracingBolt from './MountainBracingBolt'
 import MouunsMoon from './MouunsMoon'
 import NightweaversLookingGlass from './NightweaversLookingGlass'
+import NocturnesCurtainCall from './NocturnesCurtainCall'
 import OathswornEye from './OathswornEye'
 import OldMercsPal from './OldMercsPal'
 import OtherworldlyStory from './OtherworldlyStory'
@@ -433,6 +434,7 @@ const data: TagMapNodeEntries[] = [
   MappaMare,
   MemoryOfDust,
   NightweaversLookingGlass,
+  NocturnesCurtainCall,
   OathswornEye,
   OtherworldlyStory,
   PocketGrimoire,
