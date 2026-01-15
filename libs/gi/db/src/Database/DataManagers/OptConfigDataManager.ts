@@ -200,7 +200,7 @@ export class OptConfigDataManager extends DataManager<
     // Don't allow 2 opt configs to have the same build list
     if (
       generatedBuildListId &&
-      this.database.optConfigs.entries.some(
+      this.entries.some(
         ([otherKey, otherConfig]) =>
           key !== otherKey &&
           otherConfig.generatedBuildListId === generatedBuildListId
