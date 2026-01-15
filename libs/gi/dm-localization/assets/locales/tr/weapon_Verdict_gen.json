@@ -6,19 +6,19 @@
   "passiveName": "Şafak ve Alacakaranlık Yeminleri",
   "passiveDescription": {
     "0": {
-      "0": "Saldırıyı <cryo>%20</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%18</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur."
+      "0": "Saldırıyı <cryo>%20</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde veya Ay Kristalleşmesi tepkimeleri tetiklediğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%18</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur. Ay Kristalleşmesi tepkimesiyle her saniye en fazla 1 Mühür kazanılabilir."
     },
     "1": {
-      "0": "Saldırıyı <cryo>%25</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%22,5</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur."
+      "0": "Saldırıyı <cryo>%25</cryo> artırır. Grup üyeleri Kristalleşme veya Ay Kristalleşmesi tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%22,5</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur. Ay Kristalleşmesi tepkimesiyle her saniye en fazla 1 Mühür kazanılabilir."
     },
     "2": {
-      "0": "Saldırıyı <cryo>%30</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%27</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur."
+      "0": "Saldırıyı <cryo>%30</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde veya Ay Kristalleşmesi tepkimeleri tetiklediğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%27</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur. Ay Kristalleşmesi tepkimesiyle her saniye en fazla 1 Mühür kazanılabilir."
     },
     "3": {
-      "0": "Saldırıyı <cryo>%35</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%31,5</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur."
+      "0": "Saldırıyı <cryo>%35</cryo> artırır. Grup üyeleri Kristalleşme veya Ay Kristalleşmesi tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%31,5</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur. Ay Kristalleşmesi tepkimesiyle her saniye en fazla 1 Mühür kazanılabilir."
     },
     "4": {
-      "0": "Saldırıyı <cryo>%40</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%36</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur."
+      "0": "Saldırıyı <cryo>%40</cryo> artırır. Grup üyeleri Kristalleşme tepkimelerinden Element Parçaları elde ettiğinde veya Ay Kristalleşmesi tepkimeleri tetiklediğinde kuşanan karakter 1 Mühür kazanır ve Element Becerisi Hasarı <cryo>%36</cryo> artar. Mühür 15sn sürer ve kuşanan karakterin aynı anda en fazla 2 Mührü olabilir. Tüm Mühürler, Element Becerisi Hasar verdikten 0,2sn sonra kaybolur. Ay Kristalleşmesi tepkimesiyle her saniye en fazla 1 Mühür kazanılabilir."
     }
   }
 }

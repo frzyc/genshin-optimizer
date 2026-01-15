@@ -42,7 +42,7 @@
   "skill": {
     "name": "Zeremonieller Kristallschuss",
     "description": {
-      "0": "Wenn eine Figur in der Truppe einen Elementarsplitter erhält, der durch die Reaktion „Kristallisation“ erzeugt wurde, erhält Navia einen „kristallscharfen Splitter“. Navia kann bis zu 6 Splitter ansammeln. Bei jedem Auslösen wird die Wirkungsdauer der vorhandenen „kristallscharfen Splitter“ aktualisiert.",
+      "0": "Wenn eine Figur in der Truppe einen Elementarsplitter erhält, der durch die Reaktion „Kristallisation“ oder durch das Auslösen der Reaktion „Mond-Kristallisation“ erzeugt wurde, erhält Navia einen „kristallscharfen Splitter“. Navia kann bis zu 6 Splitter ansammeln. Bei jedem Auslösen wird die Wirkungsdauer der vorhandenen „kristallscharfen Splitter“ aktualisiert. Durch die Reaktion „Mond-Kristallisation“ kann pro Sekunde max. 1 „kristallscharfer Splitter“ für Navia gesammelt werden.",
       "1": "Wenn sie feuert, verbraucht Navia alle „kristallscharfen Splitter“ und öffnet ihren eleganten, aber tödlichen Musketenschirm, der mehrere Rosenkristallkugeln abfeuert, die Gegner durchdringen können und getroffenen Gegnern <geo>Geo-Schaden</geo> zufügen.",
       "2": "Wenn 0/1/2/3 oder mehr „kristallscharfe Splitter“ verbraucht sind, werden 5/7/9/11 Rosenkristallkugeln abgefeuert. Je mehr Rosenkristallkugeln einen Gegner treffen, desto höher ist der verursachte Schaden. Wenn alle 11 Rosenkristallkugeln ein einzelnes Ziel treffen, verursachen sie 200 % des ursprünglichen Schadens.",
       "3": "Wenn mehr als 3 „kristallscharfe Splitter“ verbraucht werden, erhöht jeder weitere „kristallscharfe Splitter“ den von diesem Schuss verursachten Schaden zusätzlich um 15 %.",

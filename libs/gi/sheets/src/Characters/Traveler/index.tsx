@@ -1,11 +1,19 @@
-import type {
-  CharacterKey,
-  CharacterSheetKey,
+import { objKeyMap } from '@genshin-optimizer/common/util'
+import {
+  type CharacterKey,
+  type CharacterSheetKey,
+  allElementKeys,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
-import { infoMut } from '@genshin-optimizer/gi/wr'
-import { stg } from '../../SheetUtil'
+import {
+  equal,
+  inferInfoMut,
+  infoMut,
+  mergeData,
+} from '@genshin-optimizer/gi/wr'
+import { cond, stg, trans } from '../../SheetUtil'
+import type { IDocumentHeader } from '../../sheet'
 import { CharacterSheet } from '../CharacterSheet'
 import type {
   TalentSheetElement,
@@ -27,6 +35,7 @@ export function travelerSheet(
   charKey: CharacterKey,
   talentFunc: TravelerTalentFunc
 ) {
+  const [, ch] = trans('char', 'Traveler')
   const skillParam_gen = allStats.char.skillParam[key]
   const dm = {
     normal: {
@@ -48,7 +57,78 @@ export function travelerSheet(
       low: skillParam_gen.auto[9] as number[],
       high: skillParam_gen.auto[10] as number[],
     },
+    lockedPassive: {
+      anemo: skillParam_gen.lockedPassive![0][0],
+      geo: skillParam_gen.lockedPassive![1][0],
+      electro: skillParam_gen.lockedPassive![2][0],
+      dendro: skillParam_gen.lockedPassive![3][0],
+      hydro: skillParam_gen.lockedPassive![4][0],
+      pyro: skillParam_gen.lockedPassive![5][0],
+      cryo: skillParam_gen.lockedPassive![6][0],
+    },
   } as const
+
+  const [condBonusCannedPath, condBonusCanned] = cond('Traveler', 'bonusCanned')
+  const bonusCanned_base_atk = equal(condBonusCanned, 'on', 3, {
+    path: 'atk',
+    prefix: 'base',
+  })
+  const [condBonusSkirk1Path, condBonusSkirk1] = cond('Traveler', 'bonusSkirk1')
+  const bonusSkirk1_base_atk = equal(condBonusSkirk1, 'on', 7, {
+    path: 'atk',
+    prefix: 'base',
+  })
+  const [condBonusSkirk2Path, condBonusSkirk2] = cond('Traveler', 'bonusSkirk2')
+  const bonusSkirk2_eleMas = equal(condBonusSkirk2, 'on', 15, {
+    path: 'eleMas',
+    prefix: 'base',
+  })
+  const [condBonusSkirk3Path, condBonusSkirk3] = cond('Traveler', 'bonusSkirk3')
+  const bonusSkirk3_base_hp = equal(condBonusSkirk3, 'on', 50, {
+    path: 'hp',
+    prefix: 'base',
+  })
+
+  const [condLockedPassivePath, condLockedPassive] = cond(
+    'Traveler',
+    'lockedPassive'
+  )
+  const allEleConds = objKeyMap(allElementKeys, (ele) => {
+    const [path, value] = cond('Traveler', `traveler${ele}`)
+    const buff = equal(
+      condLockedPassive,
+      'on',
+      equal(value, 'on', dm.lockedPassive[ele])
+    )
+    return { path, value, buff }
+  })
+  const baseData: Data = mergeData([
+    {
+      base: {
+        atk: bonusCanned_base_atk,
+        hp: bonusSkirk3_base_hp,
+      },
+      premod: {
+        eleMas: bonusSkirk2_eleMas,
+      },
+    },
+    {
+      base: {
+        atk: bonusSkirk1_base_atk,
+      },
+    },
+    inferInfoMut({
+      premod: {
+        critRate_: allEleConds.anemo.buff,
+        def_: allEleConds.geo.buff,
+        enerRech_: allEleConds.electro.buff,
+        eleMas: allEleConds.dendro.buff,
+        hp_: allEleConds.hydro.buff,
+        atk_: allEleConds.pyro.buff,
+        critDMG_: allEleConds.cryo.buff,
+      },
+    }),
+  ])
 
   const dmgFormulas = {
     normal: Object.fromEntries(
@@ -131,5 +211,102 @@ export function travelerSheet(
     },
   ])
 
-  return new CharacterSheet(talent, data)
+  const fakeHeader = {
+    action: {
+      props: {
+        children: {
+          props: {
+            key18: 'passive',
+          },
+        },
+      },
+    },
+  } as IDocumentHeader
+  talent.passive = {
+    name: ch('questBonusTitle'),
+    img: '',
+    sections: [
+      {
+        header: fakeHeader,
+        value: condBonusCanned,
+        path: condBonusCannedPath,
+        name: ch('bonusCanned'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: bonusCanned_base_atk,
+              },
+            ],
+          },
+        },
+      },
+      {
+        header: fakeHeader,
+        value: condBonusSkirk1,
+        path: condBonusSkirk1Path,
+        name: ch('bonusSkirk1'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: bonusSkirk1_base_atk,
+              },
+            ],
+          },
+        },
+      },
+      {
+        header: fakeHeader,
+        value: condBonusSkirk2,
+        path: condBonusSkirk2Path,
+        name: ch('bonusSkirk2'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: bonusSkirk2_eleMas,
+              },
+            ],
+          },
+        },
+      },
+      {
+        header: fakeHeader,
+        value: condBonusSkirk3,
+        path: condBonusSkirk3Path,
+        name: ch('bonusSkirk3'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: bonusSkirk3_base_hp,
+              },
+            ],
+          },
+        },
+      },
+    ],
+  }
+
+  // Insert after the passive text, but before any other element-specific stuff
+  talent.lockedPassive?.sections.splice(
+    1,
+    0,
+    ct.condTem('lockedPassive', {
+      path: condLockedPassivePath,
+      value: condLockedPassive,
+      name: ch('lockedPassiveCond'),
+      teamBuff: true,
+      states: {
+        on: {
+          fields: Object.values(allEleConds).map(({ buff }) => ({
+            node: buff,
+          })),
+        },
+      },
+    })
+  )
+
+  return new CharacterSheet(talent, mergeData([data, baseData]))
 }

@@ -71,8 +71,7 @@ export default function CharacterTalentPane() {
     ['passive1', t('unlockPassive1'), 1],
     ['passive2', t('unlockPassive2'), 4],
     ['passive3', t('unlockPassive3'), 0],
-    // TODO: Update this if they add other locked passives
-    ['lockedPassive', t('witchPassive'), 0],
+    ['lockedPassive', t('unlockLockedPassive'), 0],
   ]
   const ascension = data.get(input.asc).value
   const constellation = data.get(input.constellation).value

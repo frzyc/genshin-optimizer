@@ -1,0 +1,24 @@
+{
+  "name": "Nachtmusik im Schleier",
+  "description": {
+    "0": "Eine vom Mondlicht umhüllte Jadeperle. Sie strahlt selbst in der kalten Winternacht eine liedhafte Wärme aus."
+  },
+  "passiveName": "Ballade der Kreuzung",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die max. LP um <cryo>10 %</cryo>. Stellt dem Träger, wenn dieser eine Mondleuchten-Reaktion auslöst oder Gegnern damit Schaden zufügt, <cryo>14</cryo> Punkte Elementarenergie wieder her und verleiht ihm den Effekt „Heiligwein des Meers des reichen Segens“, der 12 s lang anhält: Erhöht die max. LP weiter um <cryo>14 %</cryo> und den KSCH durch Mondleuchten-Reaktionen um <cryo>60 %</cryo>. Der Elementarenergie-Wiederherstellungs-Effekt hat eine Abklingzeit von 18 s und kann auch ausgelöst werden, wenn der Träger inaktiv ist."
+    },
+    "1": {
+      "0": "Erhöht die max. LP um <cryo>12 %</cryo>. Stellt dem Träger, wenn dieser eine Mondleuchten-Reaktion auslöst oder Gegnern damit Schaden zufügt, <cryo>15</cryo> Punkte Elementarenergie wieder her und verleiht ihm den Effekt „Heiligwein des Meers des reichen Segens“, der 12 s lang anhält: Erhöht die max. LP weiter um <cryo>16 %</cryo> und den KSCH durch Mondleuchten-Reaktionen um <cryo>80 %</cryo>. Der Elementarenergie-Wiederherstellungs-Effekt hat eine Abklingzeit von 18 s und kann auch ausgelöst werden, wenn der Träger inaktiv ist."
+    },
+    "2": {
+      "0": "Erhöht die max. LP um <cryo>14 %</cryo>. Stellt dem Träger, wenn dieser eine Mondleuchten-Reaktion auslöst oder Gegnern damit Schaden zufügt, <cryo>16</cryo> Punkte Elementarenergie wieder her und verleiht ihm den Effekt „Heiligwein des Meers des reichen Segens“, der 12 s lang anhält: Erhöht die max. LP weiter um <cryo>18 %</cryo> und den KSCH durch Mondleuchten-Reaktionen um <cryo>100 %</cryo>. Der Elementarenergie-Wiederherstellungs-Effekt hat eine Abklingzeit von 18 s und kann auch ausgelöst werden, wenn der Träger inaktiv ist."
+    },
+    "3": {
+      "0": "Erhöht die max. LP um <cryo>16 %</cryo>. Stellt dem Träger, wenn dieser eine Mondleuchten-Reaktion auslöst oder Gegnern damit Schaden zufügt, <cryo>17</cryo> Punkte Elementarenergie wieder her und verleiht ihm den Effekt „Heiligwein des Meers des reichen Segens“, der 12 s lang anhält: Erhöht die max. LP weiter um <cryo>20 %</cryo> und den KSCH durch Mondleuchten-Reaktionen um <cryo>120 %</cryo>. Der Elementarenergie-Wiederherstellungs-Effekt hat eine Abklingzeit von 18 s und kann auch ausgelöst werden, wenn der Träger inaktiv ist."
+    },
+    "4": {
+      "0": "Erhöht die max. LP um <cryo>18 %</cryo>. Stellt dem Träger, wenn dieser eine Mondleuchten-Reaktion anwendet oder Gegnern damit Schaden zufügt, <cryo>18</cryo> Punkte Elementarenergie wieder her und verleiht ihm den Effekt „Heiligwein des Meers des reichen Segens“, der 12 s lang anhält: Erhöht die max. LP weiter um <cryo>22 %</cryo> und den KSCH durch Mondleuchten-Reaktionen um <cryo>140 %</cryo>. Der Elementarenergie-Wiederherstellungs-Effekt hat eine Abklingzeit von 18 s und kann auch ausgelöst werden, wenn der Träger inaktiv ist."
+    }
+  }
+}

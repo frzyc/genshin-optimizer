@@ -145,7 +145,7 @@
   "constellation4": {
     "name": "Flor e Lutadora",
     "description": {
-      "0": "Quando Yunjin desencadeia Cristalização, sua DEF aumenta 20% por 12s."
+      "0": "Quando Yunjin desencadeia Cristalização ou Cristalização Lunar, sua DEF aumenta 20% por 12s."
     }
   },
   "constellation5": {

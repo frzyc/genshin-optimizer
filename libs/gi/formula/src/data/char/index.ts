@@ -19,6 +19,7 @@ import Chongyun from './Chongyun'
 import Citlali from './Citlali'
 import Clorinde from './Clorinde'
 import Collei from './Collei'
+import Columbina from './Columbina'
 import Cyno from './Cyno'
 import Dahlia from './Dahlia'
 import Dehya from './Dehya'
@@ -135,6 +136,7 @@ const data: TagMapNodeEntries[] = [
   Citlali,
   Clorinde,
   Collei,
+  Columbina,
   Cyno,
   Dahlia,
   Dehya,
@@ -155,8 +157,8 @@ const data: TagMapNodeEntries[] = [
   Gorou,
   HuTao,
   Iansan,
-  Ineffa,
   Ifa,
+  Ineffa,
   Jahoda,
   Jean,
   Kachina,

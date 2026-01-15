@@ -1,4 +1,8 @@
-export const allLunarReactionKeys = ['lunarcharged', 'lunarbloom'] as const
+export const allLunarReactionKeys = [
+  'lunarcharged',
+  'lunarbloom',
+  'lunarcrystallize',
+] as const
 export type LunarReactionKey = (typeof allLunarReactionKeys)[number]
 export const allTransformativeReactionKeys = [
   'overloaded',
@@ -12,6 +16,7 @@ export const allTransformativeReactionKeys = [
   'burgeon',
   'hyperbloom',
   'lunarbloom',
+  'lunarcrystallize',
 ] as const
 export type TransformativeReactionKey =
   (typeof allTransformativeReactionKeys)[number]

@@ -1,5 +1,5 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
-import { objKeyValMap } from '@genshin-optimizer/common/util'
+import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   CharacterSheetKey,
@@ -12,6 +12,7 @@ import {
   constant,
   equal,
   greaterEq,
+  inferInfoMut,
   infoMut,
   input,
   percent,
@@ -26,6 +27,7 @@ import {
   customHealNode,
   dataObjForCharacterSheet,
   dmgNode,
+  hitEle,
 } from '../dataUtil'
 
 export default function anemo(
@@ -42,6 +44,10 @@ export default function anemo(
   let s = 0,
     b = 0
   const dm = {
+    charged: {
+      dmg1: skillParam_gen.auto[5],
+      dmg2: skillParam_gen.auto[6],
+    },
     skill: {
       initial_dmg: skillParam_gen.skill[s++],
       initial_max: skillParam_gen.skill[s++],
@@ -63,6 +69,11 @@ export default function anemo(
     },
     passive2: {
       heal_: 0.02,
+    },
+    lockedPassive: {
+      charged_dmgInc: skillParam_gen.lockedPassive![7][0],
+      cd: skillParam_gen.lockedPassive![8][0],
+      dmg: skillParam_gen.lockedPassive![9][0],
     },
     constellation2: {
       enerRech_: 0.16,
@@ -104,6 +115,17 @@ export default function anemo(
   ])
 
   const absorptionData: Data = { hit: { ele: condSkillAbsorption } }
+
+  const [, condLockedPassive] = cond('Traveler', 'lockedPassive')
+  const lockedPassive_charged_dmgInc = equal(
+    condLockedPassive,
+    'on',
+    prod(percent(dm.lockedPassive.charged_dmgInc), input.total.atk)
+  )
+  const lockedPassiveData = inferInfoMut({
+    ...hitEle.anemo,
+    premod: { charged_dmgInc: lockedPassive_charged_dmgInc },
+  })
 
   const dmgFormulas = {
     ...dmgForms,
@@ -181,6 +203,29 @@ export default function anemo(
         input.asc,
         2,
         customHealNode(prod(percent(dm.passive2.heal_), input.total.hp))
+      ),
+    },
+    lockedPassive: {
+      dmg1: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg1, 'charged', lockedPassiveData)
+      ),
+      dmg2: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg2, 'charged', lockedPassiveData)
+      ),
+      ...objKeyMap(absorbableEle, (ele) =>
+        equal(
+          condLockedPassive,
+          'on',
+          customDmgNode(
+            prod(percent(dm.lockedPassive.dmg), input.total.atk),
+            'charged',
+            { ...lockedPassiveData, ...hitEle[ele] }
+          )
+        )
       ),
     },
   } as const
@@ -398,6 +443,36 @@ export default function anemo(
         fields: [
           {
             node: infoMut(dmgFormulas.passive2.heal, { name: stg(`healing`) }),
+          },
+        ],
+      }),
+    ]),
+    lockedPassive: ct.talentTem('lockedPassive', [
+      ct.fieldsTem('lockedPassive', {
+        canShow: equal(condLockedPassive, 'on', 1),
+        fields: [
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg1, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(1)',
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg2, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(2)',
+            }),
+          },
+          ...absorbableEle.map((ele) => ({
+            node: infoMut(dmgFormulas.lockedPassive[ele], { name: st('dmg') }),
+          })),
+          {
+            node: lockedPassive_charged_dmgInc,
+          },
+          {
+            text: stg('cd'),
+            value: dm.lockedPassive.cd,
+            unit: 's',
           },
         ],
       }),

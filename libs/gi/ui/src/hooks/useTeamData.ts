@@ -306,7 +306,11 @@ function getCharDataBundle(
     : [artifacts]
   const data = [
     ...artifactData,
-    dataObjForCharacterNew(charInfo, useCustom ? sheetData : undefined),
+    dataObjForCharacterNew(
+      charInfo,
+      database,
+      useCustom ? sheetData : undefined
+    ),
     dataObjForWeapon(weapon),
     sheetData,
     common, // NEED TO PUT THIS AT THE END

@@ -1,0 +1,29 @@
+{
+  "setName": "Alborada de la Estrella del Alba y la Luna",
+  "setEffects": {
+    "2": "Maestría Elemental +80 pts.",
+    "4": "Cuando el portador de este conjunto está en tu equipo pero no en uso, el daño de Reacción Lunar que inflige aumenta en un 20%. Cuando el nivel de presagio lunar del equipo es de, al menos, resplandor ascendente, el daño de Reacción Lunar aumenta en un 40% adicional. Estos efectos se anularán después de que el portador de este conjunto permanezca en el campo de batalla durante 3 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Sueño Esplendoroso para la Luna",
+      "desc": "Un ornamento floral tallado con esmero por los artesanos de la antigüedad para las estatuas divinas de las lunas celestiales, con el fin de resaltar la belleza y magnificencia de dichas diosas."
+    },
+    "plume": {
+      "name": "Luz del Adiós para la Luna",
+      "desc": "Una pluma estilográfica que utilizaban los sacerdotes de la antigüedad para escribir letanías a las lunas celestiales, y gracias a la cual obtenían una gran inspiración."
+    },
+    "sands": {
+      "name": "Hora Final para la Luna",
+      "desc": "Un reloj de arena que utilizaban los sabios de la antigüedad para preguntar a las lunas celestiales por la verdad, y con el que grabaron el momento final."
+    },
+    "goblet": {
+      "name": "Libación para la Luna",
+      "desc": "Una copa de vino que utilizaban los devotos de la antigüedad para realizar ofrendas a las lunas celestiales, y que acabó perdiéndose en el último banquete de celebración de este ritual."
+    },
+    "circlet": {
+      "name": "Corona de Plata para la Luna",
+      "desc": "Una corona de plata que utilizaban los poetas de la antigüedad para ofrecer poemas a las lunas celestiales, y que se quitaban al leer la última palabra de sus versos."
+    }
+  }
+}

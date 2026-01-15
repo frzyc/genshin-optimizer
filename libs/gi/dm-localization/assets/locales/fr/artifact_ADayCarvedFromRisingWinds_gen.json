@@ -1,0 +1,29 @@
+{
+  "setName": "Journée sculptée par les vents ascendants",
+  "setEffects": {
+    "2": "Augmente l'ATQ de 18 %.",
+    "4": "Toucher un ennemi avec une attaque normale, une attaque chargée, une compétence élémentaire ou un déchaînement élémentaire accorde l'effet Bénédiction des vents pastoraux pendant 6 s : augmente l'ATQ de 25 %. Si le personnage équipé de l'artéfact a terminé son devoir de la sorcière, l'effet est converti en l'effet Détermination des vents pastoraux, augmentant en plus le taux CRIT de 20 %. Les effets décrits ci-dessus peuvent être déclenchés même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Inscription de fleur sur le vent",
+      "desc": "Une fleur de cristal azur qui ne se fane jamais, ayant jadis appartenu, dit-on, à une jeune fille errante qui invoquait mille vents et mille fleurs."
+    },
+    "plume": {
+      "name": "Serment éclatant de l'aube",
+      "desc": "Un accessoire de plumes de couleur azur, limpide comme l'aurore, qui aurait appartenu jadis à un garde ayant renié son nom."
+    },
+    "sands": {
+      "name": "Note dans le chant printanier",
+      "desc": "Un sablier rempli de sable azur. Pour des raisons inconnues, peu importe comment on le retourne, les grains de sable restent immobiles."
+    },
+    "goblet": {
+      "name": "Conte inavoué du banquet",
+      "desc": "Un gobelet ancien, dont la surface azurée est ternie par le temps. La rumeur prétend qu'il aurait jadis appartenu à un barde anonyme."
+    },
+    "circlet": {
+      "name": "Ballade d'amour et de lamentations",
+      "desc": "Un accessoire de cheveux luxueux orné de cristaux de jade et d'azur, qui aurait été jadis un gage offert par le seigneur de la tempête à une personne privilégiée."
+    }
+  }
+}

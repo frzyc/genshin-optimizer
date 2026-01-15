@@ -184,8 +184,8 @@
     "upgradedDescription": {
       "0": "Lädt Razors Großschwert alle 10 s automatisch auf, ruft beim nächsten Standardangriff einen Blitz hervor und verursacht damit <electro>Elektro-Schaden</electro> in Höhe von 100 % des ANG.",
       "1": "Verleiht Razor, wenn er sich nicht im Zustand <strong>Blitzklauen</strong> befindet und einen Gegner mit dem Blitzangriff trifft, 3 Elektro-Siegel der Fähigkeit <strong>Klauen und Donner</strong>.",
-      "2": "Verleiht Razor zudem, wenn er über die Elementarfähigkeit <strong>Klauen und Donner</strong> Elektro-Siegel sammelt, stattdessen 3 Elektro-Siegel.",
-      "3": "Erhöht zudem nach dem Verbrauch der Elektro-Siegel innerhalb von 15 s Razors KT um 10 %. Erhöht den kritischen Schaden um 50 %."
+      "2": "Verleiht Razor zudem, wenn er über die Elementarfähigkeit <strong>Klauen und Donner</strong> ein Elektro-Siegel sammelt, stattdessen 3 Elektro-Siegel.",
+      "3": "Erhöht zudem nach dem Verbrauch der Elektro-Siegel innerhalb von 15 s Razors KT um 10 % sowie seinen kritischen Schaden um 50 %."
     }
   }
 }

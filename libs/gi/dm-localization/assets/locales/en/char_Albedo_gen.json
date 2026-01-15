@@ -249,10 +249,10 @@
   "constellation6": {
     "name": "Dust of Purification",
     "description": {
-      "0": "Active party members within the Solar Isotoma field who are protected by a shield created by Crystallize have their DMG increased by 17%."
+      "0": "Active party members within the Solar Isotoma field who are protected by a shield created by Crystallize, or when Moondrifts are present within the Solar Isotoma field, have their DMG increased by 17%."
     },
     "upgradedDescription": {
-      "0": "Current active party members within the Solar Isotoma field who are protected by a Shield created by Crystallize have their DMG increased by 17%.",
+      "0": "Current active party members within the Solar Isotoma field who are protected by a Shield created by Crystallize, or when Moondrifts are present within the Solar Isotoma field, have their DMG increased by 17%.",
       "1": "Additionally, use of the Elemental Burst <strong>Rite of Progeniture: Tectonic Tide</strong> destroys all Silver Isotomas present on the field, and whenever a Silver Isotoma is destroyed this way the current instance of Elemental Burst will also be considered as having cleared 4 Fatal Reckoning stacks from the Constellation <strong>Opening of Phanerozoic</strong>. This increases the DMG dealt by Fatal Blossom by 250% of Albedo's DEF for the next 20s."
     }
   }

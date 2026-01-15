@@ -1,5 +1,12 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
+  ADayCarvedFromRisingWinds: {
+    someBoolConditional: {
+      sheet: 'ADayCarvedFromRisingWinds',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
   Adventurer: {
     someBoolConditional: {
       sheet: 'Adventurer',
@@ -10,6 +17,13 @@ export const conditionals = {
   ArchaicPetra: {
     someBoolConditional: {
       sheet: 'ArchaicPetra',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
+  AubadeOfMorningstarAndMoon: {
+    someBoolConditional: {
+      sheet: 'AubadeOfMorningstarAndMoon',
       name: 'someBoolConditional',
       type: 'bool',
     },
@@ -933,6 +947,20 @@ export const formulas = {
       },
     },
   },
+  Columbina: {
+    normal1: {
+      sheet: 'Columbina',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Columbina',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Cyno: {
     normal1: {
       sheet: 'Cyno',
@@ -1213,20 +1241,6 @@ export const formulas = {
       },
     },
   },
-  Ineffa: {
-    normal1: {
-      sheet: 'Ineffa',
-      name: 'normal1',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Ineffa',
-        move: 'normal',
-        name: 'normal1',
-      },
-    },
-  },
   Ifa: {
     normal1: {
       sheet: 'Ifa',
@@ -1236,6 +1250,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Ifa',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Ineffa: {
+    normal1: {
+      sheet: 'Ineffa',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Ineffa',
         move: 'normal',
         name: 'normal1',
       },

@@ -19,6 +19,7 @@ import Chongyun from './Character_Chongyun_Card.jpg'
 import Citlali from './Character_Citlali_Card.jpg'
 import Clorinde from './Character_Clorinde_Card.jpg'
 import Collei from './Character_Collei_Card.jpg'
+import Columbina from './Character_Columbina_Card.webp'
 import Cyno from './Character_Cyno_Card.jpg'
 import Dahlia from './Character_Dahlia_Card.jpg'
 import Dehya from './Character_Dehya_Card.jpg'
@@ -131,6 +132,7 @@ const charCards = {
   Citlali,
   Clorinde,
   Collei,
+  Columbina,
   Cyno,
   Dahlia,
   Dehya,

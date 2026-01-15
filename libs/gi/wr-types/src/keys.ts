@@ -99,6 +99,7 @@ export const allTransformative = [
   'burgeon',
   'hyperbloom',
   'lunarbloom',
+  'lunarcrystallize',
 ] as const
 export const allAmplifying = ['vaporize', 'melt'] as const
 export const allAdditive = ['spread', 'aggravate'] as const
@@ -136,6 +137,7 @@ export const allModStats = [
 export const allNonModStats = [
   ...allElements.flatMap((x) => [
     `${x}_dmgInc` as const,
+    `${x}_critRate_` as const,
     `${x}_critDMG_` as const,
     `${x}_res_` as const,
   ]),

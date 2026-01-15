@@ -19,6 +19,7 @@ import Chongyun from './Chongyun'
 import Citlali from './Citlali'
 import Clorinde from './Clorinde'
 import Collei from './Collei'
+import Columbina from './Columbina'
 import Cyno from './Cyno'
 import Dahlia from './Dahlia'
 import Dehya from './Dehya'
@@ -137,6 +138,7 @@ const data = {
   Citlali,
   Clorinde,
   Collei,
+  Columbina,
   Cyno,
   Dahlia,
   Dehya,

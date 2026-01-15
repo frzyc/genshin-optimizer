@@ -43,7 +43,7 @@
     "name": "Atemberaubende Kriegslist – Plan zur Reichtumsverteilung",
     "description": {
       "0": "Jahoda stürzt auf Gegner zu und tritt beim Kontakt mit ihnen in den Zustand „Schattenverfolgung“ ein. In diesem Zustand bewegt sie sich fortlaufend schnell. Wandelt, wenn sich in der Nähe vom <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Element betroffene Gegner befinden, heimlich Jahodas mitgeführte <strong>Hululu-Geheimflasche</strong> in den entsprechenden Elementartyp um und füllt sie kontinuierlich auf. Leert nach Ablauf der Dauer oder bei erneuter Anwendung die <strong>Hululu-Geheimflasche</strong> und fügt Gegnern in der Nähe einmal <anemo>Anemo-SCH</anemo> zu. Wenn die <strong>Hululu-Geheimflasche</strong> voll ist, leert Jahoda sie ebenfalls, verlässt den Zustand „Schattenverfolgung“ und fügt den Gegnern in der Nähe einmal erhöhten <anemo>Anemo-SCH</anemo> zu.",
-      "1": "Lässt Jahoda, wenn ihr Vorstoß keinen Gegner trifft, an der Stelle eine Rauchbombe werfen, die den Gegnern in der Nähe <anemo>Anemo-SCH</anemo> zufügt.",
+      "1": "Lässt Jahoda, wenn ihr Vorstoß keinen Gegner trifft, an der Stelle eine Rauchbombe werfen, die den Gegnern in der Nähe einmal <anemo>Anemo-SCH</anemo> zufügt.",
       "2": "<br/>",
       "3": "<strong>Mondomen – Reifer Glanz</strong>: Wenn die <strong>Hululu-Geheimflasche</strong> voll ist, leert Jahoda diese nicht sofort, sondern verbraucht fortlaufend das gefüllte Element über einen bestimmten Zeitraum und schießt in gewissen Abständen <strong>flauschige Katzenbälle</strong> auf Gegner in der Nähe, die Schaden des entsprechenden Elementartyps der <strong>Hululu-Geheimflasche</strong> verursachen. Stellt, wenn die <strong>flauschigen Katzenbälle</strong> Gegner treffen, Jahoda 2 Punkte Elementarenergie wieder her, 3,5 s Abklingzeit.",
       "4": "<br/>",
@@ -162,7 +162,7 @@
   "constellation6": {
     "name": "Das kleinste Glück",
     "description": {
-      "0": "<strong>Mondomen – Reifer Glanz</strong>: Erhöht, wenn die <strong>Hululu-Geheimflasche</strong> der Elementarfähigkeit <strong>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</strong> gefüllt ist, 20 s lang die KT der Mondomen-Truppenmitglieder in der Nähe um 5 % und ihren kritischen Schaden um 40 %."
+      "0": "<strong>Mondomen – Reifer Glanz</strong>: Erhöht, wenn die <strong>Hululu-Geheimflasche</strong> der Elementarfähigkeit <strong>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</strong> voll gefüllt ist, 20 s lang die KT der Mondomen-Truppenmitglieder in der Nähe um 5 % und ihren kritischen Schaden um 40 %."
     }
   }
 }

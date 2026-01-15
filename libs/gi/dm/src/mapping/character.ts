@@ -177,6 +177,7 @@ export const characterIdMap: Record<
   10000122: 'Nefer',
   10000123: 'Durin',
   10000124: 'Jahoda',
+  10000125: 'Columbina',
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",

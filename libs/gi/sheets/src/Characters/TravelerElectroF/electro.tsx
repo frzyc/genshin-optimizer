@@ -9,6 +9,7 @@ import {
   constant,
   equal,
   greaterEq,
+  inferInfoMut,
   infoMut,
   input,
   percent,
@@ -17,10 +18,15 @@ import {
   sum,
   target,
 } from '@genshin-optimizer/gi/wr'
-import { cond, stg, trans } from '../../SheetUtil'
+import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import {
+  customDmgNode,
+  dataObjForCharacterSheet,
+  dmgNode,
+  hitEle,
+} from '../dataUtil'
 
 export default function electro(
   key: CharacterSheetKey,
@@ -35,6 +41,10 @@ export default function electro(
   let s = 0,
     b = 0
   const dm = {
+    charged: {
+      dmg1: skillParam_gen.auto[5],
+      dmg2: skillParam_gen.auto[6],
+    },
     skill: {
       dmg: skillParam_gen.skill[s++],
       energyRestore: skillParam_gen.skill[s++],
@@ -58,6 +68,12 @@ export default function electro(
     },
     passive2: {
       enerRech_: skillParam_gen.passive2[0][0],
+    },
+    lockedPassive: {
+      charged_dmgInc: skillParam_gen.lockedPassive![7][0],
+      cd: skillParam_gen.lockedPassive![8][0],
+      delay: skillParam_gen.lockedPassive![9][0],
+      dmg: skillParam_gen.lockedPassive![10][0],
     },
     constellation1: {
       addlAmulets: 1,
@@ -108,6 +124,17 @@ export default function electro(
     equal(condC2Thunder, 'on', dm.constellation2.electro_enemyRes)
   )
 
+  const [, condLockedPassive] = cond('Traveler', 'lockedPassive')
+  const lockedPassive_charged_dmgInc = equal(
+    condLockedPassive,
+    'on',
+    prod(percent(dm.lockedPassive.charged_dmgInc), input.total.atk)
+  )
+  const lockedPassiveData = inferInfoMut({
+    ...hitEle.electro,
+    premod: { charged_dmgInc: lockedPassive_charged_dmgInc },
+  })
+
   const dmgFormulas = {
     ...dmgForms,
     skill: {
@@ -129,6 +156,27 @@ export default function electro(
           ),
           'burst',
           { hit: { ele: constant(elementKey) } }
+        )
+      ),
+    },
+    lockedPassive: {
+      dmg1: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg1, 'charged', lockedPassiveData)
+      ),
+      dmg2: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg2, 'charged', lockedPassiveData)
+      ),
+      lightningDmg: equal(
+        condLockedPassive,
+        'on',
+        customDmgNode(
+          prod(percent(dm.lockedPassive.dmg), input.total.atk),
+          'charged',
+          lockedPassiveData
         )
       ),
     },
@@ -318,6 +366,38 @@ export default function electro(
 
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
+    lockedPassive: ct.talentTem('lockedPassive', [
+      ct.fieldsTem('lockedPassive', {
+        canShow: equal(condLockedPassive, 'on', 1),
+        fields: [
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg1, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(1)',
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg2, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(2)',
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.lockedPassive.lightningDmg, {
+              name: st('dmg'),
+            }),
+          },
+          {
+            node: lockedPassive_charged_dmgInc,
+          },
+          {
+            text: stg('cd'),
+            value: dm.lockedPassive.cd,
+            unit: 's',
+          },
+        ],
+      }),
+    ]),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [

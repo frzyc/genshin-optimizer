@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Heir to the Ancient Sea's Authority",
     "description": {
-      "0": "Saat Karakter di dalam party memicu reaksi Vaporize, Frozen, Electro-Charged, Lunar-Charged, Bloom, Lunar-Bloom, Hydro Swirl, atau Hydro Crystallize terhadap musuh, Neuvillette akan mendapat satu lapis efek \"Past Draconic Glories\" selama 30 detik, efek ini dapat ditumpuk sampai 3 lapis. Efek Past Draconic Glories meningkatkan DMG Charged Attack: Equitable Judgment menjadi 110%/125%/160% dari DMG awalnya.",
+      "0": "Saat Karakter di dalam party memicu reaksi Vaporize, Frozen, Electro-Charged, Lunar-Charged, Bloom, Lunar-Bloom, Hydro Swirl, Hydro Crystallize, atau Lunar-Crystallize terhadap musuh, Neuvillette akan mendapat satu lapis efek \"Past Draconic Glories\" selama 30 detik, efek ini dapat ditumpuk sampai 3 lapis. Efek Past Draconic Glories akan meningkatkan DMG Charged Attack: Equitable Judgment menjadi 110%/125%/160% dari DMG awalnya.",
       "1": "Setiap lapis efek Past Draconic Glories yang dihasilkan oleh masing-masing Reaksi Elemental dihitung secara terpisah."
     }
   },

@@ -125,6 +125,8 @@ const data = {
   unlockPassive2: [941237898, 'passive4'],
   // Passive Talent
   unlockPassive3: 2602723764,
+  // Unlocks after completing the prerequisite quests
+  unlockLockedPassive: 2816162158,
   // Witch's Homework
   witchPassive: 3169849014,
   // Moonsign

@@ -23,6 +23,7 @@ const textComponents = {
   bloom: <ColorText color="bloom" />,
   burgeon: <ColorText color="burgeon" />,
   hyperbloom: <ColorText color="hyperbloom" />,
+  lunarcrystallize: <ColorText color="lunarcrystallize" />,
 }
 
 const badgeComponents = {
@@ -46,6 +47,7 @@ const badgeComponents = {
   bloom: <SqBadge color="bloom" />,
   burgeon: <SqBadge color="burgeon" />,
   hyperbloom: <SqBadge color="hyperbloom" />,
+  lunarcrystallize: <SqBadge color="lunarcrystallize" />,
 }
 
 export function Translate({

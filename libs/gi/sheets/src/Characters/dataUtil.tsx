@@ -233,12 +233,18 @@ export function plungingDmgNodes(
 /** Note: `additional` applies only to this formula */
 export function shieldNode(
   base: MainStatKey | SubstatKey,
-  percent: NumNode | number,
-  flat: NumNode | number,
+  percentVal: NumNode | number,
+  flatVal: NumNode | number,
   additional?: Data
 ): NumNode {
   return customShieldNode(
-    sum(prod(percent, input.total[base]), flat),
+    sum(
+      prod(
+        typeof percentVal === 'number' ? percent(percentVal) : percentVal,
+        input.total[base]
+      ),
+      flatVal
+    ),
     additional
   )
 }
@@ -317,7 +323,7 @@ export function healNodeTalent(
 export function dataObjForCharacterSheet(
   key: CharacterKey,
   display: { [key: string]: DisplaySub },
-  additional: Data = {}
+  ...additional: Data[]
 ): Data {
   function curve(base: number, lvlCurve: CharacterGrowCurveKey): NumNode {
     return prod(
@@ -365,7 +371,7 @@ export function dataObjForCharacterSheet(
     data.display!['reaction'] = reactions[element]
 
     // Moonsign buff handling for non-moonsign chars
-    if (additional.isMoonsign === undefined) {
+    if (additional[0]?.isMoonsign === undefined) {
       let moonsignBase: NumNode
       const moonsignTallyWrite = equalStr(
         condMoonsignAfterSkillBurst,
@@ -405,8 +411,8 @@ export function dataObjForCharacterSheet(
   }
 
   // Tally handling for faction stuff
-  data.teamBuff!.tally!.hexerei = additional.isHexerei
-  data.teamBuff!.tally!.moonsign = additional.isMoonsign
+  data.teamBuff!.tally!.hexerei = additional[0]?.isHexerei
+  data.teamBuff!.tally!.moonsign = additional[0]?.isMoonsign
   if (region) data.teamBuff!.tally![region] = constant(1)
 
   if (weaponType !== 'catalyst')
@@ -446,5 +452,9 @@ export function dataObjForCharacterSheet(
     }
   }
 
-  return mergeData([data, moonsignData, inferInfoMut(additional)])
+  return mergeData([
+    data,
+    moonsignData,
+    ...additional.map((d) => inferInfoMut(d)),
+  ])
 }

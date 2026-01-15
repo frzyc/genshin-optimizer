@@ -120,6 +120,9 @@ export class Read extends BaseRead<Tag> {
   get lunarbloom(): Read {
     return super.with('trans', 'lunarbloom')
   }
+  get lunarcrystallize(): Read {
+    return super.with('trans', 'lunarcrystallize')
+  }
   get vaporize(): Read {
     return super.with('amp', 'vaporize')
   }

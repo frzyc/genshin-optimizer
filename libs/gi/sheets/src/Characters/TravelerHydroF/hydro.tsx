@@ -9,9 +9,11 @@ import {
   constant,
   equal,
   greaterEq,
+  inferInfoMut,
   infoMut,
   input,
   lookup,
+  mergeData,
   min,
   naught,
   percent,
@@ -25,11 +27,12 @@ import {
   dataObjForCharacterSheet,
   dmgNode,
   healNode,
+  hitEle,
   shieldElement,
   shieldNode,
 } from '../dataUtil'
 
-export default function dendro(
+export default function hydro(
   key: CharacterSheetKey,
   charKey: CharacterKey,
   dmgForms: { [key: string]: DisplaySub }
@@ -42,6 +45,10 @@ export default function dendro(
   let s = 0,
     b = 0
   const dm = {
+    charged: {
+      dmg1: skillParam_gen.auto[5],
+      dmg2: skillParam_gen.auto[6],
+    },
     skill: {
       dewdropDmg: skillParam_gen.skill[s++],
       surgeDmg: skillParam_gen.skill[s++],
@@ -67,6 +74,16 @@ export default function dendro(
     passive2: {
       surge_dmgInc: skillParam_gen.passive2[0][0],
       maxSurge_dmgInc: skillParam_gen.passive2[1][0],
+    },
+    lockedPassive: {
+      charged_dmgInc: skillParam_gen.lockedPassive![7][0],
+      cd: skillParam_gen.lockedPassive![8][0],
+      stackCd: skillParam_gen.lockedPassive![9][0],
+      hpThresh: skillParam_gen.lockedPassive![10][0],
+      heal: skillParam_gen.lockedPassive![11][0],
+      hpConsume: skillParam_gen.lockedPassive![12][0],
+      charged_dmgIncMore: skillParam_gen.lockedPassive![13][0],
+      hpIncDec: skillParam_gen.lockedPassive![14][0],
     },
     constellation1: {
       energyRegen: skillParam_gen.constellation1[0],
@@ -145,6 +162,35 @@ export default function dendro(
     healNode('hp', dm.constellation6.heal, 0)
   )
 
+  const [, condLockedPassive] = cond('Traveler', 'lockedPassive')
+  const lockedPassive_charged_dmgInc = equal(
+    condLockedPassive,
+    'on',
+    prod(percent(dm.lockedPassive.charged_dmgInc), input.total.atk)
+  )
+  const [condLockedPassiveHpPath, condLockedPassiveHp] = cond(
+    condCharKey,
+    'lockedPassiveHp'
+  )
+  const lockedPassiveHp_charged_dmgInc = equal(
+    condLockedPassive,
+    'on',
+    equal(
+      condLockedPassiveHp,
+      'on',
+      prod(percent(dm.lockedPassive.charged_dmgIncMore), input.total.atk)
+    )
+  )
+  const lockedPassiveData = mergeData([
+    inferInfoMut({
+      ...hitEle.hydro,
+      premod: { charged_dmgInc: lockedPassive_charged_dmgInc },
+    }),
+    inferInfoMut({
+      premod: { charged_dmgInc: lockedPassiveHp_charged_dmgInc },
+    }),
+  ])
+
   const dmgFormulas = {
     ...dmgForms,
     skill: {
@@ -166,6 +212,19 @@ export default function dendro(
     },
     passive2: {
       a4HpConsumed_surge_dmgInc,
+    },
+    lockedPassive: {
+      dmg1: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg1, 'charged', lockedPassiveData)
+      ),
+      dmg2: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg2, 'charged', lockedPassiveData)
+      ),
+      heal: healNode('hp', percent(dm.lockedPassive.heal), 0),
     },
     constellation4: {
       c4Shield,
@@ -303,7 +362,7 @@ export default function dendro(
       ct.headerTem('constellation2', {
         fields: [
           {
-            node: constant(dm.constellation2.movementSpdDec * -100, {
+            node: constant(dm.constellation2.movementSpdDec * -1, {
               path: 'moveSPD_',
             }),
           },
@@ -334,6 +393,48 @@ export default function dendro(
       }),
     ]),
     passive2: ct.talentTem('passive2'),
+    lockedPassive: ct.talentTem('lockedPassive', [
+      ct.fieldsTem('lockedPassive', {
+        canShow: equal(condLockedPassive, 'on', 1),
+        fields: [
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg1, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(1)',
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg2, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(2)',
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.lockedPassive.heal, {
+              name: stg('healing'),
+            }),
+          },
+          {
+            node: lockedPassive_charged_dmgInc,
+          },
+        ],
+      }),
+      ct.condTem('lockedPassive', {
+        path: condLockedPassiveHpPath,
+        value: condLockedPassiveHp,
+        canShow: equal(condLockedPassive, 'on', 1),
+        name: ch('lockedPassiveCond'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: lockedPassiveHp_charged_dmgInc,
+              },
+            ],
+          },
+        },
+      }),
+    ]),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
