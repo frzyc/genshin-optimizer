@@ -5,16 +5,15 @@ import {
   allElementKeys,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
+import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
   equal,
   inferInfoMut,
   infoMut,
   mergeData,
 } from '@genshin-optimizer/gi/wr'
-import { SwitchAccessShortcut } from '@mui/icons-material'
-import { cond, condReadNode, stg, trans } from '../../SheetUtil'
-import { IDocumentHeader } from '../../sheet'
+import { cond, stg, trans } from '../../SheetUtil'
+import type { IDocumentHeader } from '../../sheet'
 import { CharacterSheet } from '../CharacterSheet'
 import type {
   TalentSheetElement,
