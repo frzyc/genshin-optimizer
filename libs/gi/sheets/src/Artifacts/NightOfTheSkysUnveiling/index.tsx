@@ -1,4 +1,5 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
+import { type ArtifactSetKey, allLunarReactionKeys } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   equal,
@@ -39,15 +40,8 @@ const set4_critRate_ = greaterEq(
     )
   )
 )
-const [set4_lunarcharged_dmg_, set4_lunarcharged_dmg_inactive] = nonStackBuff(
-  'gleamingmoonintent',
-  'lunarcharged_dmg_',
-  percent(0.1)
-)
-const [set4_lunarbloom_dmg_, set4_lunarbloom_dmg_inactive] = nonStackBuff(
-  'gleamingmoonintent',
-  'lunarbloom_dmg_',
-  percent(0.1)
+const lunar_dmg_obj = objKeyValMap(allLunarReactionKeys, (k) =>
+  [`${k}_dmg_`, nonStackBuff('gleamingmoonintent', `${k}_dmg_`, percent(0.1))]
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {
@@ -56,10 +50,7 @@ export const data: Data = dataObjForArtifactSheet(key, {
     critRate_: set4_critRate_,
   },
   teamBuff: {
-    premod: {
-      lunarcharged_dmg_: set4_lunarcharged_dmg_,
-      lunarbloom_dmg_: set4_lunarbloom_dmg_,
-    },
+    premod: objMap(lunar_dmg_obj, (buffs) => buffs[0]),
     nonStacking: {
       gleamingmoonintent: set4TallyWrite,
     },
@@ -92,18 +83,12 @@ const sheet: SetEffectSheet = {
               {
                 node: set4_critRate_,
               },
-              {
-                node: set4_lunarcharged_dmg_,
-              },
-              {
-                node: set4_lunarbloom_dmg_,
-              },
-              {
-                node: set4_lunarcharged_dmg_inactive,
-              },
-              {
-                node: set4_lunarbloom_dmg_inactive,
-              },
+              ...Object.values(lunar_dmg_obj).map((nodes) => ({
+                node: nodes[0],
+              })),
+              ...Object.values(lunar_dmg_obj).map((nodes) => ({
+                node: nodes[1],
+              })),
               {
                 text: stg('duration'),
                 value: 4,
