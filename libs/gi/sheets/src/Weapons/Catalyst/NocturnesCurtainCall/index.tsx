@@ -13,7 +13,7 @@ const key: WeaponKey = 'NocturnesCurtainCall'
 const [, trm] = trans('weapon', key)
 
 const hp_arr = [-1, 0.1, 0.12, 0.14, 0.16, 0.18]
-// const energyArr = [-1, 12, 13, 14, 15, 16]
+// const energyArr = [-1, 14, 15, 16, 17, 18]
 const condHp_arr = [-1, 0.14, 0.16, 0.18, 0.2, 0.22]
 const lunarCritDMG_arr = [-1, 0.6, 0.8, 1, 1.2, 1.4]
 const hp_ = equal(
@@ -43,9 +43,7 @@ const passiveLunarCritDMG_obj = objKeyValMap(allLunarReactionKeys, (k) => [
 const data = dataObjForWeaponSheet(key, {
   premod: {
     hp_: sum(hp_, passiveHp_),
-  },
-  teamBuff: {
-    premod: passiveLunarCritDMG_obj,
+    ...passiveLunarCritDMG_obj,
   },
 })
 
