@@ -44,7 +44,7 @@
       "0": "극악 기사의 전투 스타일을 모방하여 짧은 터치 또는 홀드에 따라 각기 다른 효과를 생성한다.",
       "1": "<br/>",
       "2": "<strong>짧은 터치</strong>",
-      "3": "스커크가 <strong>뱀의 계략</strong>을 45pt 획득하고 <strong>일곱빛 섬광</strong> 모드로 전환된다.",
+      "3": "스커크가 <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>뱀의 계략</strong></tooltip>을 45pt 획득하고 <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>일곱빛 섬광</strong></tooltip> 모드로 전환된다.",
       "4": "<br/>",
       "5": "<strong>홀드</strong>",
       "6": "스커크가 뱀의 계략을 45pt 획득하고 지속적으로 빠르게 이동한다. 해당 상태에서 스커크의 경직 저항력이 증가한다.",
@@ -72,14 +72,14 @@
   "burst": {
     "name": "극악기·멸",
     "description": {
-      "0": "스커크의 원소폭발은 원소 에너지가 아닌 <strong>뱀의 계략</strong>에서 나온다.",
+      "0": "스커크의 원소폭발은 원소 에너지가 아닌 <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>뱀의 계략</strong></tooltip>에서 나온다.",
       "1": "스커크가 뱀의 계략을 최소 50pt 보유 시, 스커크는 모든 뱀의 계략을 소모해 원소폭발을 발동할 수 있다. 이때 전방의 공간을 찢고 빠른 속도로 연속 참격을 날려 <cryo>얼음 원소 범위 피해</cryo>를 준다. 또한 발동 시 스커크가 보유한 뱀의 계략이 50pt를 초과하면, 초과한 뱀의 계략 1pt당 이번 원소폭발로 주는 피해가 증가한다. 해당 방식으로 뱀의 계략을 최대 12pt까지 계산한다.",
       "2": "<br/>",
-      "3": "스커크가 <strong>일곱빛 섬광</strong> 모드 시, 원소폭발 「극악기·멸」이 「극악기·진」으로 대체된다.",
+      "3": "스커크가 <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>일곱빛 섬광</strong></tooltip> 모드 시, 원소폭발 「극악기·멸」이 「극악기·진」으로 대체된다.",
       "4": "<br/>",
       "5": "<strong>극악기·진</strong>",
       "6": "뱀의 계략을 소모하지 않고 발동할 수 있는 특수 원소폭발.",
-      "7": "발동 후, 스커크가 일곱빛 섬광 모드가 종료될 때까지 지속되는 고갈 효과를 획득한다. 돌파 특성 <strong>이치 너머의 이치</strong>를 해금한 후, 스커크가 주변 일정 범위 내의 허계 균열을 흡수한다.",
+      "7": "발동 후, 스커크가 일곱빛 섬광 모드가 종료될 때까지 지속되는 고갈 효과를 획득한다. 돌파 특성 <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>이치 너머의 이치</strong></tooltip>를 해금한 후, 스커크가 주변 일정 범위 내의 허계 균열을 흡수한다.",
       "8": "고갈 효과 지속 시간 동안 0.1초마다 스커크의 일반 공격이 적에게 명중 후, 이번 일반 공격으로 주는 피해가 증가한다. 만약 <strong>극악기·진</strong> 발동 시, 허계 균열을 흡수했다면 흡수한 허계 균열 수량에 따라 이번 일반 공격으로 주는 피해가 더 증가한다.",
       "9": "해당 효과는 10회 발동 후 사라진다"
     },
@@ -109,12 +109,12 @@
       "1": "<br/>",
       "2": "스커크가 아래 방식으로 주변 일정 범위 내의 허계 균열을 흡수한다:",
       "3": [
-        "<strong>일곱빛 섬광</strong> 모드에서 강공격으로 적 명중 시.",
+        "<tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>일곱빛 섬광</strong></tooltip> 모드에서 강공격으로 적 명중 시.",
         "일곱빛 섬광 모드에서 특수 원소폭발 <strong>극악기·진</strong> 발동 시.",
         "홀드로 원소전투 스킬 <strong>극악기·섬</strong>을 발동해 빠른 이동 진행 시."
       ],
       "4": "<br/>",
-      "5": "허계 균열을 1개 흡수할 때마다 스커크가 <strong>뱀의 계략</strong>을 8pt 획득한다"
+      "5": "허계 균열을 1개 흡수할 때마다 스커크가 <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>뱀의 계략</strong></tooltip>을 8pt 획득한다"
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
     "description": {
       "0": "파티 내 주변에 있는 <hydro>물 원소</hydro> 타입 캐릭터가 <hydro>물 원소</hydro> 공격으로 적을 명중하거나, 파티 내 주변에 있는 다른 <cryo>얼음 원소</cryo> 타입 캐릭터가 <cryo>얼음 원소</cryo> 공격으로 적 명중 시, 스커크가 죽음의 강 효과를 1스택 획득한다. 지속 시간: 20초. 최대 중첩수: 3스택. 스택마다 지속 시간은 독립적으로 계산된다.",
       "1": "각 캐릭터는 해당 방식으로 스커크에게 죽음의 강 효과를 최대 1스택 부여할 수 있다.",
-      "2": "죽음의 강 효과 스택마다 스커크가 <strong>일곱빛 섬광</strong> 모드에서 일반 공격으로 기존의 110%/120%/170%에 해당하는 피해를 주고, 원소폭발 <strong>극악기·멸</strong>로 기존의 105%/115%/160%에 해당하는 피해를 준다"
+      "2": "죽음의 강 효과 스택마다 스커크가 <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>일곱빛 섬광</strong></tooltip> 모드에서 일반 공격으로 기존의 110%/120%/170%에 해당하는 피해를 주고, 원소폭발 <strong>극악기·멸</strong>로 기존의 105%/115%/160%에 해당하는 피해를 준다"
     }
   },
   "passive3": {
@@ -134,43 +134,43 @@
   "constellation1": {
     "name": "요원",
     "description": {
-      "0": "돌파 특성 <strong>이치 너머의 이치</strong>의 효과가 강화된다: 허계 균열을 1개 흡수할 때마다, 수정 칼날 하나를 소환해 주변의 적을 공격하고 스커크 공격력의 500%에 해당하는 <cryo>얼음 원소 피해</cryo>를 준다. 해당 피해는 강공격 피해로 간주한다.",
+      "0": "돌파 특성 <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>이치 너머의 이치</strong></tooltip>의 효과가 강화된다: 허계 균열을 1개 흡수할 때마다, 수정 칼날 하나를 소환해 주변의 적을 공격하고 스커크 공격력의 500%에 해당하는 <cryo>얼음 원소 피해</cryo>를 준다. 해당 피해는 강공격 피해로 간주한다.",
       "1": "돌파 특성 「이치 너머의 이치」를 해금해야 한다"
     }
   },
   "constellation2": {
     "name": "심연",
     "description": {
-      "0": "원소전투 스킬 <strong>극악기·섬</strong> 발동 후, 스커크가 추가로 <strong>뱀의 계략</strong>을 10pt 획득한다.",
+      "0": "원소전투 스킬 <strong>극악기·섬</strong> 발동 후, 스커크가 추가로 <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>뱀의 계략</strong></tooltip>을 10pt 획득한다.",
       "1": "원소폭발 <strong>극악기·멸</strong> 발동 시, 뱀의 계략을 최대 10pt까지 추가로 계산해 이번 원소폭발로 주는 피해가 증가한다.",
-      "2": "또한, 스커크가 <strong>일곱빛 섬광</strong> 모드에서 특수 원소폭발 <strong>극악기·진</strong> 발동 후 12.5초 동안 공격력이 70% 증가한다. 해당 효과는 스커크가 일곱빛 섬광 모드에서 퇴장하면 사라진다"
+      "2": "또한, 스커크가 <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>일곱빛 섬광</strong></tooltip> 모드에서 특수 원소폭발 <strong>극악기·진</strong> 발동 후 12.5초 동안 공격력이 70% 증가한다. 해당 효과는 스커크가 일곱빛 섬광 모드에서 퇴장하면 사라진다"
     }
   },
   "constellation3": {
     "name": "악연",
     "description": {
-      "0": "원소폭발 <strong>극악기·멸</strong>의 스킬 레벨+3",
+      "0": "원소폭발 <tooltip ns=char_Skirk_gen baseKey18=burst><strong>극악기·멸</strong></tooltip>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },
   "constellation4": {
     "name": "멸류",
     "description": {
-      "0": "돌파 특성 <strong>흐름의 적멸</strong>의 효과가 강화된다: 죽음의 강 효과 스택마다 스커크의 공격력이 10%/20%/40% 증가한다.",
+      "0": "돌파 특성 <tooltip ns=tooltips_gen baseKey18=11130008 values=[]><strong>흐름의 적멸</strong></tooltip>의 효과가 강화된다: 죽음의 강 효과 스택마다 스커크의 공격력이 10%/20%/40% 증가한다.",
       "1": "돌파 특성 「흐름의 적멸」을 해금해야 한다"
     }
   },
   "constellation5": {
     "name": "소망",
     "description": {
-      "0": "원소전투 스킬 <strong>극악기·섬</strong>의 스킬 레벨+3",
+      "0": "원소전투 스킬 <tooltip ns=char_Skirk_gen baseKey18=skill><strong>극악기·섬</strong></tooltip>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },
   "constellation6": {
     "name": "근원",
     "description": {
-      "0": "스커크가 돌파 특성 <strong>이치 너머의 이치</strong>의 효과를 통해 허계 균열을 1개 흡수할 때마다 극악기·참 효과를 1스택 획득한다. 스커크는 해당 효과를 소모해 협동 공격을 할 수 있고, <strong>일곱빛 섬광</strong> 모드에서 받는 피해가 감소한다. 해당 효과 지속 시간: 15초, 최대 중첩수: 3스택. 스택마다 지속 시간은 독립적으로 계산된다.",
+      "0": "스커크가 돌파 특성 <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>이치 너머의 이치</strong></tooltip>의 효과를 통해 허계 균열을 1개 흡수할 때마다 극악기·참 효과를 1스택 획득한다. 스커크는 해당 효과를 소모해 협동 공격을 할 수 있고, <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>일곱빛 섬광</strong></tooltip> 모드에서 받는 피해가 감소한다. 해당 효과 지속 시간: 15초, 최대 중첩수: 3스택. 스택마다 지속 시간은 독립적으로 계산된다.",
       "1": "돌파 특성 「이치 너머의 이치」를 해금해야 한다.",
       "2": "<br/>",
       "3": "<strong>극악기·참</strong>",

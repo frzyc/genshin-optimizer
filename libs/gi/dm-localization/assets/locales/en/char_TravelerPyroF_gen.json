@@ -167,7 +167,7 @@
   "lockedPassive": {
     "name": "Foreign Starfire",
     "description": {
-      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <strong>buffs</strong>.",
+      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>buffs</strong></tooltip>.",
       "1": "<br/>",
       "2": "Additionally, when nearby party members trigger Nightsoul Burst, Traveler will receive 1 stack of Blade of the Sacred Flame, max 2 stacks. After obtaining 2 stacks of Blade of the Sacred Flame, performing a Charged Attack will consume all stacks of Blade of the Sacred Flame and transform into a special <strong>Charged Attack: Inferno</strong>.",
       "3": "<br/>",

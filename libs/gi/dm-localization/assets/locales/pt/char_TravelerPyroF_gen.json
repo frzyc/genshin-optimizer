@@ -113,7 +113,7 @@
   "lockedPassive": {
     "name": "Fogo Estelar Forasteiro",
     "description": {
-      "0": "Reúne novas forças das jornadas do passado. Para cada elemento que você ressoou, obtém um <strong>fortalecimento adicional</strong>.",
+      "0": "Reúne novas forças das jornadas do passado. Para cada elemento que você ressoou, obtém um <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimento adicional</strong></tooltip>.",
       "1": "<br/>",
       "2": "Além disso, quando um membro próximo da equipe desencadeia Explosão do Espírito da Noite, {F#a}{M#o} Viajante obtém 1 acúmulo de Lâmina da Chama Sagrada, podendo acumular até 2 vezes. Ao possuir 2 acúmulos de Lâmina da Chama Sagrada e realizar um Ataque Carregado, consome todos esses acúmulos e realiza o especial <strong>Ataque Carregado: Chamas Devoradoras</strong>.",
       "3": "<br/>",

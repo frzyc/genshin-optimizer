@@ -113,7 +113,7 @@
   "lockedPassive": {
     "name": "Ánh Lửa Dị Bang",
     "description": {
-      "0": "Đúc kết sức mạnh mới từ những chuyến hành trình đã qua. Khi cộng hưởng với mỗi loại nguyên tố, sẽ nhận được <strong>hiệu quả cường hóa</strong> thêm.",
+      "0": "Đúc kết sức mạnh mới từ những chuyến hành trình đã qua. Khi cộng hưởng với mỗi loại nguyên tố, sẽ nhận được <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>hiệu quả cường hóa</strong></tooltip> thêm.",
       "1": "<br/>",
       "2": "Ngoài ra, khi nhân vật trong đội ở gần kích hoạt \"Dạ Hồn Bùng Nổ\", Nhà Lữ Hành sẽ nhận được 1 tầng \"Lưỡi Đao Lửa Thánh\", tối đa cộng dồn 2 tầng. Khi có 2 tầng Lưỡi Đao Lửa Thánh và thực hiện Trọng Kích, sẽ tiêu hao toàn bộ Lưỡi Đao Lửa Thánh và chuyển sang thực hiện <strong>Trọng Kích - Hỏa Diệt</strong> đặc biệt.",
       "3": "<br/>",

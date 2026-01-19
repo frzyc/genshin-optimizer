@@ -60,7 +60,7 @@
   "skill": {
     "name": "Savvy Strategy: Splitting the Spoils",
     "description": {
-      "0": "Jahoda dashes toward her opponent, entering the Shadow Pursuit state upon contact. While in this state, Jahoda moves continuously and swiftly: If nearby opponents are affected by <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, or <cryo>Cryo</cryo>, she will quietly convert her <strong>Purr-loined Treasure Flask</strong> to that element, gradually filling it. When the duration ends or the skill is used again, Jahoda drains the <strong>Purr-loined Treasure Flask</strong> and deals a single instance of <anemo>Anemo DMG</anemo> to nearby opponents. When the <strong>Purr-loined Treasure Flask</strong> is full, Jahoda immediately drains it, exiting the Shadow Pursuit state and dealing a more powerful instance of <anemo>Anemo DMG</anemo>.",
+      "0": "Jahoda dashes toward her opponent, entering the Shadow Pursuit state upon contact. While in this state, Jahoda moves continuously and swiftly: If nearby opponents are affected by <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, or <cryo>Cryo</cryo>, she will quietly convert her <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Purr-loined Treasure Flask</strong></tooltip> to that element, gradually filling it. When the duration ends or the skill is used again, Jahoda drains the <strong>Purr-loined Treasure Flask</strong> and deals a single instance of <anemo>Anemo DMG</anemo> to nearby opponents. When the <strong>Purr-loined Treasure Flask</strong> is full, Jahoda immediately drains it, exiting the Shadow Pursuit state and dealing a more powerful instance of <anemo>Anemo DMG</anemo>.",
       "1": "If her dash fails to make contact with an opponent, Jahoda instead drops a Smoke Bomb at her location, dealing a single instance of <anemo>Anemo DMG</anemo> to nearby opponents.",
       "2": "<br/>",
       "3": "<strong>Moonsign: Ascendant Gleam</strong>: When the <strong>Purr-loined Treasure Flask</strong> becomes full, Jahoda will not immediately discharge it. Instead, for a short duration, she steadily consumes the stored element inside and periodically fires <strong>Fluffy Meowballs</strong> at nearby opponents, dealing DMG of the corresponding element stored in the <strong>Purr-loined Treasure Flask</strong>. When a <strong>Fluffy Meowball</strong> hits an opponent, Jahoda regenerates 2 Elemental Energy. This effect can be triggered once every 3.5s.",
@@ -107,7 +107,7 @@
   "burst": {
     "name": "Hidden Aces: Seven Tools of the Hunter",
     "description": {
-      "0": "Time to reveal those pocket aces! Jahoda retrieves 2 <strong>Purrsonal Coordinated Assistance Robots</strong> and deals a single instance of <anemo>Anemo DMG</anemo> to nearby opponents.",
+      "0": "Time to reveal those pocket aces! Jahoda retrieves 2 <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Purrsonal Coordinated Assistance Robots</strong></tooltip> and deals a single instance of <anemo>Anemo DMG</anemo> to nearby opponents.",
       "1": "<br/>",
       "2": "<i>\"Coordinated assistance? It means you 'assist' some Mora our way, and we handle the 'coordination.' Makes purrfect sense, don't you agree?\"</i>"
     },
@@ -151,7 +151,7 @@
   "passive1": {
     "name": "Plan to Get Paid",
     "description": {
-      "0": "When your team has at least one <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, or <cryo>Cryo</cryo> character, the <strong>Purrsonal Coordinated Assistance Robots</strong> from the Elemental Burst <strong>Hidden Aces: Seven Tools of the Hunter</strong> will be enhanced based on the number of characters of each corresponding element.",
+      "0": "When your team has at least one <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, or <cryo>Cryo</cryo> character, the <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Purrsonal Coordinated Assistance Robots</strong></tooltip> from the Elemental Burst <strong>Hidden Aces: Seven Tools of the Hunter</strong> will be enhanced based on the number of characters of each corresponding element.",
       "1": "Jahoda secretly keeps track of these characters. Among them, the element with the highest number of characters determines the enhancement effect:",
       "2": [
         " <pyro>Pyro</pyro>: <strong>Purrsonal Coordinated Assistance Robots</strong> deal 130% of their original DMG.",
@@ -166,7 +166,7 @@
   "passive2": {
     "name": "Sweet Berry Bounty",
     "description": {
-      "0": "When a <strong>Purrsonal Coordinated Assistance Robot</strong> from the Elemental Burst <strong>Hidden Aces: Seven Tools of the Hunter</strong> triggers healing on an active team member, if that character's HP is above 70%, their Elemental Mastery will be increased by 100 for 6s."
+      "0": "When a <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Purrsonal Coordinated Assistance Robot</strong></tooltip> from the Elemental Burst <strong>Hidden Aces: Seven Tools of the Hunter</strong> triggers healing on an active team member, if that character's HP is above 70%, their Elemental Mastery will be increased by 100 for 6s."
     }
   },
   "passive3": {
@@ -184,39 +184,39 @@
   "constellation1": {
     "name": "One More Flask!",
     "description": {
-      "0": "When a <strong>Fluffy Meowball</strong> fired by the <strong>Purr-loined Treasure Flask</strong> from the Elemental Skill <strong>Savvy Strategy: Splitting the Spoils</strong> hits an enemy, there is a 50% chance for it to bounce, dealing the corresponding Elemental DMG to nearby opponents."
+      "0": "When a <strong>Fluffy Meowball</strong> fired by the <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Purr-loined Treasure Flask</strong></tooltip> from the Elemental Skill <strong>Savvy Strategy: Splitting the Spoils</strong> hits an enemy, there is a 50% chance for it to bounce, dealing the corresponding Elemental DMG to nearby opponents."
     }
   },
   "constellation2": {
     "name": "Rogue's Quick Thinking",
     "description": {
-      "0": "<strong>Moonsign: Ascendant Gleam</strong>: In the Ascension Talent <strong>\"Plan to Get Paid,\"</strong> Jahoda can secretly track, in addition to the element with the highest number of characters, the element with the next highest number of characters among the remaining types. This allows up to two elemental effects to be active at once. You must first unlock the Ascension Talent \"Plan to Get Paid.\""
+      "0": "<strong>Moonsign: Ascendant Gleam</strong>: In the Ascension Talent <tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>\"Plan to Get Paid,\"</strong></tooltip> Jahoda can secretly track, in addition to the element with the highest number of characters, the element with the next highest number of characters among the remaining types. This allows up to two elemental effects to be active at once. You must first unlock the Ascension Talent \"Plan to Get Paid.\""
     }
   },
   "constellation3": {
     "name": "Desperate Gamble",
     "description": {
-      "0": "Increases the Level of <strong>Hidden Aces: Seven Tools of the Hunter</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Jahoda_gen baseKey18=burst>Hidden Aces: Seven Tools of the Hunter</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
     "name": "Wild Berry Amid the Dust",
     "description": {
-      "0": "When a <strong>Purrsonal Coordinated Assistance Robot</strong> from the Elemental Burst <strong>Hidden Aces: Seven Tools of the Hunter</strong> undergoes an Elemental Conversion, Jahoda will recover 4 Elemental Energy."
+      "0": "When a <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Purrsonal Coordinated Assistance Robot</strong></tooltip> from the Elemental Burst <strong>Hidden Aces: Seven Tools of the Hunter</strong> undergoes an Elemental Conversion, Jahoda will recover 4 Elemental Energy."
     }
   },
   "constellation5": {
     "name": "The Greatest Treasure",
     "description": {
-      "0": "Increases the Level of <strong>Savvy Strategy: Splitting the Spoils</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Jahoda_gen baseKey18=skill>Savvy Strategy: Splitting the Spoils</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
     "name": "The Littlest Luck",
     "description": {
-      "0": "<strong>Moonsign: Ascendant Gleam</strong>: After the <strong>Purr-loined Treasure Flask</strong> from the Elemental Skill <strong>Savvy Strategy: Splitting the Spoils</strong> is full, nearby Moonsign characters in your party have their CRIT Rate increased by 5% and CRIT DMG increased by 40% for 20s."
+      "0": "<strong>Moonsign: Ascendant Gleam</strong>: After the <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Purr-loined Treasure Flask</strong></tooltip> from the Elemental Skill <strong>Savvy Strategy: Splitting the Spoils</strong> is full, nearby Moonsign characters in your party have their CRIT Rate increased by 5% and CRIT DMG increased by 40% for 20s."
     }
   }
 }

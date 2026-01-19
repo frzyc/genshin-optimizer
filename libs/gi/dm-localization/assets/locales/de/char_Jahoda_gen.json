@@ -42,7 +42,7 @@
   "skill": {
     "name": "Atemberaubende Kriegslist – Plan zur Reichtumsverteilung",
     "description": {
-      "0": "Jahoda stürzt auf Gegner zu und tritt beim Kontakt mit ihnen in den Zustand „Schattenverfolgung“ ein. In diesem Zustand bewegt sie sich fortlaufend schnell. Wandelt, wenn sich in der Nähe vom <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Element betroffene Gegner befinden, heimlich Jahodas mitgeführte <strong>Hululu-Geheimflasche</strong> in den entsprechenden Elementartyp um und füllt sie kontinuierlich auf. Leert nach Ablauf der Dauer oder bei erneuter Anwendung die <strong>Hululu-Geheimflasche</strong> und fügt Gegnern in der Nähe einmal <anemo>Anemo-SCH</anemo> zu. Wenn die <strong>Hululu-Geheimflasche</strong> voll ist, leert Jahoda sie ebenfalls, verlässt den Zustand „Schattenverfolgung“ und fügt den Gegnern in der Nähe einmal erhöhten <anemo>Anemo-SCH</anemo> zu.",
+      "0": "Jahoda stürzt auf Gegner zu und tritt beim Kontakt mit ihnen in den Zustand „Schattenverfolgung“ ein. In diesem Zustand bewegt sie sich fortlaufend schnell. Wandelt, wenn sich in der Nähe vom <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Element betroffene Gegner befinden, heimlich Jahodas mitgeführte <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Hululu-Geheimflasche</strong></tooltip> in den entsprechenden Elementartyp um und füllt sie kontinuierlich auf. Leert nach Ablauf der Dauer oder bei erneuter Anwendung die <strong>Hululu-Geheimflasche</strong> und fügt Gegnern in der Nähe einmal <anemo>Anemo-SCH</anemo> zu. Wenn die <strong>Hululu-Geheimflasche</strong> voll ist, leert Jahoda sie ebenfalls, verlässt den Zustand „Schattenverfolgung“ und fügt den Gegnern in der Nähe einmal erhöhten <anemo>Anemo-SCH</anemo> zu.",
       "1": "Lässt Jahoda, wenn ihr Vorstoß keinen Gegner trifft, an der Stelle eine Rauchbombe werfen, die den Gegnern in der Nähe einmal <anemo>Anemo-SCH</anemo> zufügt.",
       "2": "<br/>",
       "3": "<strong>Mondomen – Reifer Glanz</strong>: Wenn die <strong>Hululu-Geheimflasche</strong> voll ist, leert Jahoda diese nicht sofort, sondern verbraucht fortlaufend das gefüllte Element über einen bestimmten Zeitraum und schießt in gewissen Abständen <strong>flauschige Katzenbälle</strong> auf Gegner in der Nähe, die Schaden des entsprechenden Elementartyps der <strong>Hululu-Geheimflasche</strong> verursachen. Stellt, wenn die <strong>flauschigen Katzenbälle</strong> Gegner treffen, Jahoda 2 Punkte Elementarenergie wieder her, 3,5 s Abklingzeit.",
@@ -71,7 +71,7 @@
   "burst": {
     "name": "Geheimgeräte – Die sieben Objekte des Jägers",
     "description": {
-      "0": "Zeit, die geheimen Schätze zu verwenden! Jahoda nimmt zwei <strong>katzenförmige Geräte für Hilfe und Koordination im Haushalt</strong> heraus und fügt Gegnern in der Nähe einmal <anemo>Anemo-SCH</anemo> zu.",
+      "0": "Zeit, die geheimen Schätze zu verwenden! Jahoda nimmt zwei <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>katzenförmige Geräte für Hilfe und Koordination im Haushalt</strong></tooltip> heraus und fügt Gegnern in der Nähe einmal <anemo>Anemo-SCH</anemo> zu.",
       "1": "<br/>",
       "2": "<i>„Was Hilfe und Koordination angeht: Du hilfst mit Mora aus und wir koordinieren. Na, das klingt doch fair, oder?“</i>"
     },
@@ -97,7 +97,7 @@
   "passive1": {
     "name": "Listiger Belohnungsplan",
     "description": {
-      "0": "Verstärkt, wenn sich mindestens 1 <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Figur in der Truppe befindet, die <strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong> der Spezialfähigkeit <strong>Geheimgeräte – Die sieben Objekte des Jägers</strong> basierend auf der Anzahl der Figuren des entsprechenden Elementartyps.",
+      "0": "Verstärkt, wenn sich mindestens 1 <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Figur in der Truppe befindet, die <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong></tooltip> der Spezialfähigkeit <strong>Geheimgeräte – Die sieben Objekte des Jägers</strong> basierend auf der Anzahl der Figuren des entsprechenden Elementartyps.",
       "1": "Jahoda merkt sich heimlich die Figuren der oben genannten Elementartypen in der Truppe. Wenn unter diesen Figuren die meisten zu folgendem Elementartyp gehören:",
       "2": [
         " <pyro>Pyro</pyro>: Lässt die <strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong> 130 % des ursprünglichen Schadens verursachen.",
@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Honigbeeren-Belohnung",
     "description": {
-      "0": "Erhöht, wenn die <strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong> der Spezialfähigkeit <strong>Geheimgeräte – Die sieben Objekte des Jägers</strong> LP beim aktuellen Truppenmitglied wiederherstellen und die LP dieser Figur bei über 70 % liegen, die Elementarkunde dieser Figur 6 s lang um 100 Punkte."
+      "0": "Erhöht, wenn die <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong></tooltip> der Spezialfähigkeit <strong>Geheimgeräte – Die sieben Objekte des Jägers</strong> LP beim aktuellen Truppenmitglied wiederherstellen und die LP dieser Figur bei über 70 % liegen, die Elementarkunde dieser Figur 6 s lang um 100 Punkte."
     }
   },
   "passive3": {
@@ -130,39 +130,39 @@
   "constellation1": {
     "name": "Noch eine Flasche!",
     "description": {
-      "0": "Führt, wenn mithilfe der <strong>Hululu-Geheimflasche</strong> der Elementarfähigkeit <strong>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</strong> ein <strong>flauschiger Katzenball</strong> abgefeuert wird und Gegner trifft, mit einer Wahrscheinlichkeit von 50 % einen Sprung aus und fügt Gegnern in der Nähe entsprechenden Elementar-SCH zu."
+      "0": "Führt, wenn mithilfe der <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Hululu-Geheimflasche</strong></tooltip> der Elementarfähigkeit <strong>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</strong> ein <strong>flauschiger Katzenball</strong> abgefeuert wird und Gegner trifft, mit einer Wahrscheinlichkeit von 50 % einen Sprung aus und fügt Gegnern in der Nähe entsprechenden Elementar-SCH zu."
     }
   },
   "constellation2": {
     "name": "Improvisation des Gesetzesbrechers",
     "description": {
-      "0": "<strong>Mondomen – Reifer Glanz</strong>: Im Aufstiegstalent <strong>„Listiger Belohnungsplan“</strong> kann sich Jahoda zusätzlich zum Elementartyp mit den meisten Figuren auch heimlich den Elementartyp mit den zweitmeisten Figuren merken und die Effekte von bis zu zwei Elementartypen aktivieren. Das Aufstiegstalent „Listiger Belohnungsplan“ muss zuerst freigeschaltet werden."
+      "0": "<strong>Mondomen – Reifer Glanz</strong>: Im Aufstiegstalent <tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>„Listiger Belohnungsplan“</strong></tooltip> kann sich Jahoda zusätzlich zum Elementartyp mit den meisten Figuren auch heimlich den Elementartyp mit den zweitmeisten Figuren merken und die Effekte von bis zu zwei Elementartypen aktivieren. Das Aufstiegstalent „Listiger Belohnungsplan“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation3": {
     "name": "Heimatloser Glücksspieler",
     "description": {
-      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Geheimgeräte – Die sieben Objekte des Jägers</strong> um 3.",
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Jahoda_gen baseKey18=burst>Geheimgeräte – Die sieben Objekte des Jägers</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation4": {
     "name": "Wildbeeren auf dem Staub",
     "description": {
-      "0": "Stellt, wenn das Element der <strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong> der Spezialfähigkeit <strong>Geheimgeräte – Die sieben Objekte des Jägers</strong> umgewandelt wird, Jahoda 4 Punkte Elementarenergie wieder her."
+      "0": "Stellt, wenn das Element der <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong></tooltip> der Spezialfähigkeit <strong>Geheimgeräte – Die sieben Objekte des Jägers</strong> umgewandelt wird, Jahoda 4 Punkte Elementarenergie wieder her."
     }
   },
   "constellation5": {
     "name": "Der größte Schatz",
     "description": {
-      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</strong> um 3.",
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Jahoda_gen baseKey18=skill>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation6": {
     "name": "Das kleinste Glück",
     "description": {
-      "0": "<strong>Mondomen – Reifer Glanz</strong>: Erhöht, wenn die <strong>Hululu-Geheimflasche</strong> der Elementarfähigkeit <strong>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</strong> voll gefüllt ist, 20 s lang die KT der Mondomen-Truppenmitglieder in der Nähe um 5 % und ihren kritischen Schaden um 40 %."
+      "0": "<strong>Mondomen – Reifer Glanz</strong>: Erhöht, wenn die <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Hululu-Geheimflasche</strong></tooltip> der Elementarfähigkeit <strong>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</strong> voll gefüllt ist, 20 s lang die KT der Mondomen-Truppenmitglieder in der Nähe um 5 % und ihren kritischen Schaden um 40 %."
     }
   }
 }

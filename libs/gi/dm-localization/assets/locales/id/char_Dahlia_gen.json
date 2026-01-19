@@ -113,13 +113,13 @@
   "passive1": {
     "name": "The Wind's Gentle Grace",
     "description": {
-      "0": "Saat Karakter yang berada dalam pengaruh Favonian Favor dari Elemental Burst <strong>Radiant Psalter</strong> memicu reaksi Frozen pada musuh, akan memberikan 2 lapis efek Benison kepada Dahlia. Efek ini dapat terpicu sekali setiap 8 detik."
+      "0": "Saat Karakter yang berada dalam pengaruh Favonian Favor dari Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> memicu reaksi Frozen pada musuh, akan memberikan 2 lapis efek Benison kepada Dahlia. Efek ini dapat terpicu sekali setiap 8 detik."
     }
   },
   "passive2": {
     "name": "Prayer of Well-Wrought Joy",
     "description": {
-      "0": "Saat Karakter aktif di dalam party sendiri berada dalam pengaruh Favonian Favor dari Elemental Burst <strong>Radiant Psalter</strong>, ATK SPD-nya akan meningkat berdasarkan Max HP Dahlia: Setiap 1.000 poin Max HP Dahlia akan meningkatkan 0,5% ATK SPD. ATK SPD Karakter dapat meningkat hingga 20% dengan cara ini."
+      "0": "Saat Karakter aktif di dalam party sendiri berada dalam pengaruh Favonian Favor dari Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong>, ATK SPD-nya akan meningkat berdasarkan Max HP Dahlia: Setiap 1.000 poin Max HP Dahlia akan meningkatkan 0,5% ATK SPD. ATK SPD Karakter dapat meningkat hingga 20% dengan cara ini."
     }
   },
   "passive3": {
@@ -132,39 +132,39 @@
   "constellation1": {
     "name": "Infallible Procession",
     "description": {
-      "0": "Setiap kali Dahlia mendapatkan satu lapis efek Benison dari Elemental Burst <strong>Radiant Psalter</strong>, ia akan memulihkan 2,5 poin Energy."
+      "0": "Setiap kali Dahlia mendapatkan satu lapis efek Benison dari Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong>, ia akan memulihkan 2,5 poin Energy."
     }
   },
   "constellation2": {
     "name": "Revelation of Mercy",
     "description": {
-      "0": "Setelah Dahlia mengonsumsi efek Benison dari Elemental Burst <strong>Radiant Psalter</strong> untuk memanggil Shield of Sacred Favor, Karakter yang dilindungi oleh Shield of Sacred Favor akan mendapatkan 25% peningkatan Kekuatan Perisai selama 12 detik."
+      "0": "Setelah Dahlia mengonsumsi efek Benison dari Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> untuk memanggil Shield of Sacred Favor, Karakter yang dilindungi oleh Shield of Sacred Favor akan mendapatkan 25% peningkatan Kekuatan Perisai selama 12 detik."
     }
   },
   "constellation3": {
     "name": "Windblume Offertory",
     "description": {
-      "0": "Meningkatkan 3 level <strong>Radiant Psalter</strong>.",
+      "0": "Meningkatkan 3 level <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
     "name": "Collect of the Assembly",
     "description": {
-      "0": "Durasi efek Favonian Favor dari Elemental Burst <strong>Radiant Psalter</strong> diperpanjang 3 detik."
+      "0": "Durasi efek Favonian Favor dari Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> diperpanjang 3 detik."
     }
   },
   "constellation5": {
     "name": "Let It Be Subtly So",
     "description": {
-      "0": "Meningkatkan 3 level <strong>Immersive Ordinance</strong>.",
+      "0": "Meningkatkan 3 level <strong><tooltip ns=char_Dahlia_gen baseKey18=skill>Immersive Ordinance</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {
     "name": "You Shall Go Out With Joy",
     "description": {
-      "0": "ATK SPD Karakter aktif yang berada dalam pengaruh Favonian Favor dari Elemental Burst <strong>Radiant Psalter</strong> akan meningkat 10%.",
+      "0": "ATK SPD Karakter aktif yang berada dalam pengaruh Favonian Favor dari Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> akan meningkat 10%.",
       "1": "Selain itu, saat Karakter aktif yang berada dalam pengaruh Favonian Favor gugur, maka akan langsung:",
       "2": [
         "Dihidupkan kembali.",

@@ -42,7 +42,7 @@
     "name": "Ngừa Bệnh Từ Trên Không",
     "description": {
       "0": "Đến lúc để anh em tốt ra trận rồi, người anh em à! Ifa triệu hồi Cacucu cùng chiến đấu.",
-      "1": "Sau khi thi triển, Ifa nhận 80 điểm Dạ Hồn và vào trạng thái <strong>Dạ Hồn Chúc Phúc</strong>. Trong thời gian Dạ Hồn Chúc Phúc, Ifa sẽ có thể bay lên nhờ sự trợ giúp của Cacucu, khi tiến hành Tấn Công Thường, sẽ căn cứ vào hành động Nhấn hoặc Nhấn Giữ để chuyển sang thực hiện <strong>Bắn Chi Viện</strong> theo cách thức khác nhau, bắn ra Đạn Bí Dược có thể hồi phục HP cho toàn bộ nhân vật trong đội.",
+      "1": "Sau khi thi triển, Ifa nhận 80 điểm Dạ Hồn và vào trạng thái <tooltip ns=tooltips_gen baseKey18=11130003 values=[]><strong>Dạ Hồn Chúc Phúc</strong></tooltip>. Trong thời gian Dạ Hồn Chúc Phúc, Ifa sẽ có thể bay lên nhờ sự trợ giúp của Cacucu, khi tiến hành Tấn Công Thường, sẽ căn cứ vào hành động Nhấn hoặc Nhấn Giữ để chuyển sang thực hiện <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Bắn Chi Viện</strong></tooltip> theo cách thức khác nhau, bắn ra Đạn Bí Dược có thể hồi phục HP cho toàn bộ nhân vật trong đội.",
       "2": "<br/>",
       "3": "Ngoài ra, trong trạng thái Dạ Hồn Chúc Phúc, nếu Nhấn Giữ thi triển Kỹ Năng Nguyên Tố <strong>Ngừa Bệnh Từ Trên Không</strong>, Ifa sẽ chuyển sang tiến hành Tấn Công Khi Đáp mang thuộc tính Dạ Hồn, khi thả nút kỹ năng sẽ ngắt Tấn Công Khi Đáp, tiếp tục duy trì trạng thái lơ lửng. Trong quá trình Tấn Công Khi Đáp, nếu Ifa đáp xuống sẽ kết thúc trạng thái Dạ Hồn Chúc Phúc."
     },
@@ -69,7 +69,7 @@
     "name": "Khu Phức Hợp An Thần",
     "description": {
       "0": "Bắn Đạn An Thần vào kẻ địch (nếu vẫn chưa chịu bình tĩnh lại). Đạn An Thần sẽ phát nổ khi trúng kẻ địch, tạo ra khu vực gió hút vật thể và kẻ địch xung quanh, đồng thời gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> mang thuộc tính Dạ Hồn.",
-      "1": "Khi Đạn An Thần đánh trúng kẻ địch có gán ấn Nguyên Tố <hydro>Thủy</hydro>/<pyro>Hỏa</pyro>/<cryo>Băng</cryo>/<electro>Lôi</electro>, sẽ áp dụng hiệu quả <strong>Ký Hiệu An Thần</strong> cho những kẻ địch này."
+      "1": "Khi Đạn An Thần đánh trúng kẻ địch có gán ấn Nguyên Tố <hydro>Thủy</hydro>/<pyro>Hỏa</pyro>/<cryo>Băng</cryo>/<electro>Lôi</electro>, sẽ áp dụng hiệu quả <tooltip ns=tooltips_gen baseKey18=11130004 values=[]><strong>Ký Hiệu An Thần</strong></tooltip> cho những kẻ địch này."
     },
     "skillParams": {
       "0": "Sát Thương Kỹ Năng",
@@ -93,7 +93,7 @@
   "passive1": {
     "name": "Tầm Nhìn Của Thầy Thuốc",
     "description": {
-      "0": "Khi Ifa trong trạng thái Dạ Hồn Chúc Phúc, sẽ căn cứ vào tổng điểm Dạ Hồn hiện tại của tất cả nhân vật trong đội, Ifa sẽ nhận được 1 điểm <strong>Cứu Hộ Thiết Yếu</strong> với mỗi 1 điểm Dạ Hồn. Cứu Hộ Thiết Yếu sẽ giúp tăng sát thương phản ứng Khuếch Tán, Điện Cảm, Nguyệt-Điện Cảm cho nhân vật trong đội ở gần."
+      "0": "Khi Ifa trong trạng thái Dạ Hồn Chúc Phúc, sẽ căn cứ vào tổng điểm Dạ Hồn hiện tại của tất cả nhân vật trong đội, Ifa sẽ nhận được 1 điểm <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>Cứu Hộ Thiết Yếu</strong></tooltip> với mỗi 1 điểm Dạ Hồn. Cứu Hộ Thiết Yếu sẽ giúp tăng sát thương phản ứng Khuếch Tán, Điện Cảm, Nguyệt-Điện Cảm cho nhân vật trong đội ở gần."
     }
   },
   "passive2": {
@@ -118,42 +118,42 @@
   "constellation1": {
     "name": "Liều Thuốc Dây Leo Dự Phòng",
     "description": {
-      "0": "<strong>Bắn Chi Viện</strong> khi bắn trúng kẻ địch sẽ hồi phục 6 điểm Năng Lượng Nguyên Tố cho Ifa. Mỗi 8s tối đa hồi phục một lần Năng Lượng Nguyên Tố thông qua cách này."
+      "0": "<tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Bắn Chi Viện</strong></tooltip> khi bắn trúng kẻ địch sẽ hồi phục 6 điểm Năng Lượng Nguyên Tố cho Ifa. Mỗi 8s tối đa hồi phục một lần Năng Lượng Nguyên Tố thông qua cách này."
     }
   },
   "constellation2": {
     "name": "Đạn Cầu Nguyện Trợ Linh",
     "description": {
-      "0": "Khi Ifa trong trạng thái Dạ Hồn Chúc Phúc, căn cứ vào tổng điểm Dạ Hồn hiện tại của tất cả nhân vật trong đội vượt mức 60 điểm, mỗi 1 điểm Dạ Hồn sẽ giúp Ifa nhận thêm 4 điểm <strong>Cứu Hộ Thiết Yếu</strong>.",
+      "0": "Khi Ifa trong trạng thái Dạ Hồn Chúc Phúc, căn cứ vào tổng điểm Dạ Hồn hiện tại của tất cả nhân vật trong đội vượt mức 60 điểm, mỗi 1 điểm Dạ Hồn sẽ giúp Ifa nhận thêm 4 điểm <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>Cứu Hộ Thiết Yếu</strong></tooltip>.",
       "1": "Ngoài ra, giới hạn Cứu Hộ Thiết Yếu của Ifa tăng 50 điểm.",
-      "2": "Cần mở khóa thiên phú đột phá <strong>Tầm Nhìn Của Thầy Thuốc</strong>."
+      "2": "Cần mở khóa thiên phú đột phá <tooltip ns=char_Ifa_gen baseKey18=passive1><strong>Tầm Nhìn Của Thầy Thuốc</strong></tooltip>."
     }
   },
   "constellation3": {
     "name": "Bác Bỏ Đàm Phán Với Màn Đêm",
     "description": {
-      "0": "Cấp kỹ năng <strong>Ngừa Bệnh Từ Trên Không</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Ifa_gen baseKey18=skill>Ngừa Bệnh Từ Trên Không</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation4": {
     "name": "Hoán Vị Ứng Thể Phân Hủy",
     "description": {
-      "0": "Thời gian duy trì khu vực gió sinh ra từ Kỹ Năng Nộ <strong>Khu Phức Hợp An Thần</strong> kéo dài đến 3s.",
+      "0": "Thời gian duy trì khu vực gió sinh ra từ Kỹ Năng Nộ <strong><tooltip ns=char_Ifa_gen baseKey18=burst>Khu Phức Hợp An Thần</tooltip></strong> kéo dài đến 3s.",
       "1": "Ngoài ra, sau khi thi triển Kỹ Năng Nộ <strong>Khu Phức Hợp An Thần</strong>, Ifa sẽ tăng 100 điểm Tinh Thông Nguyên Tố trong 15s."
     }
   },
   "constellation5": {
     "name": "Lời Thề Vạn Vật Chung Sống",
     "description": {
-      "0": "Cấp kỹ năng <strong>Khu Phức Hợp An Thần</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Ifa_gen baseKey18=burst>Khu Phức Hợp An Thần</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation6": {
     "name": "Lời Hứa Lông Vũ Che Chở",
     "description": {
-      "0": "Khi Ifa Nhấn Giữ thực hiện <strong>Bắn Chi Viện</strong>, có 50% bắn thêm 1 viên Đạn Bí Dược, gây Sát Thương Nguyên Tố Phong tương đương 120% Tấn Công của Ifa. Sát thương này được xem là sát thương Tấn Công Thường.",
+      "0": "Khi Ifa Nhấn Giữ thực hiện <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Bắn Chi Viện</strong></tooltip>, có 50% bắn thêm 1 viên Đạn Bí Dược, gây Sát Thương Nguyên Tố Phong tương đương 120% Tấn Công của Ifa. Sát thương này được xem là sát thương Tấn Công Thường.",
       "1": "Ngoài ra, trạng thái Dạ Hồn Chúc Phúc của Ifa sẽ giảm 20% tiêu hao điểm Dạ Hồn và Phlogiston khi không trong trạng thái chiến đấu."
     }
   }

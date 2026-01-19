@@ -53,7 +53,7 @@
       "9": "ทุกช่วงระยะเวลาหนึ่ง เมื่อ Escoffier เปิดใช้กลไกทำอาหารโหมด \"จัดเก็บอุณหภูมิต่ำ\" จะปล่อย Surging Blade ออกมา สร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo>ที่มีพลังสสารอยู่",
       "10": "<br/>",
       "11": "<strong>กดค้าง</strong>",
-      "12": "ใช้<strong>โหมดปรุงอาหารด่วนทันใจ</strong> เพื่อเปิดใช้งานกลไกทำอาหารอเนกประสงค์เต็มสเปกตรัม"
+      "12": "ใช้<tooltip ns=tooltips_gen baseKey18=11120002 values=[]><strong>โหมดปรุงอาหารด่วนทันใจ</strong></tooltip> เพื่อเปิดใช้งานกลไกทำอาหารอเนกประสงค์เต็มสเปกตรัม"
     },
     "skillParams": {
       "0": "ความเสียหายสกิล",
@@ -101,19 +101,19 @@
   "passive1": {
     "name": "Better to Salivate Than Medicate",
     "description": {
-      "0": "หลังจากใช้ท่าไม้ตาย <strong>Scoring Cuts</strong> แล้ว Escoffier จะได้รับเอฟเฟกต์ \"Rehab Diet\" เป็นเวลา 9 วินาที: ทุก 1 วินาที จะทำการฟื้นฟูพลังชีวิต ให้แก่ตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ใกล้เคียง โดยปริมาณการฟื้นฟูจะขึ้นอยู่กับ 138.24% ของพลังโจมตีของ Escoffier เอง"
+      "0": "หลังจากใช้ท่าไม้ตาย <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>Scoring Cuts</tooltip></strong> แล้ว Escoffier จะได้รับเอฟเฟกต์ \"Rehab Diet\" เป็นเวลา 9 วินาที: ทุก 1 วินาที จะทำการฟื้นฟูพลังชีวิต ให้แก่ตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ใกล้เคียง โดยปริมาณการฟื้นฟูจะขึ้นอยู่กับ 138.24% ของพลังโจมตีของ Escoffier เอง"
     }
   },
   "passive2": {
     "name": "Inspiration-Immersed Seasoning",
     "description": {
-      "0": "เมื่อในทีมมีตัวละคร <hydro>ธาตุน้ำ</hydro> หรือ <cryo>ธาตุน้ำแข็ง</cryo> 1/2/3/4 ตัว เมื่อสกิลธาตุ <strong>Low-Temperature Cooking</strong> หรือท่าไม้ตาย <strong>Scoring Cuts</strong> ของ Escoffier โจมตีโดนศัตรู จะทำให้<hydro>ความต้านทานน้ำ</hydro>และ<cryo>ความต้านทานน้ำแข็ง</cryo>ของศัตรูลดลง 5%/10%/15%/55% ตามลำดับ เป็นเวลา 12 วินาที"
+      "0": "เมื่อในทีมมีตัวละคร <hydro>ธาตุน้ำ</hydro> หรือ <cryo>ธาตุน้ำแข็ง</cryo> 1/2/3/4 ตัว เมื่อสกิลธาตุ <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>Low-Temperature Cooking</tooltip></strong> หรือท่าไม้ตาย <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>Scoring Cuts</tooltip></strong> ของ Escoffier โจมตีโดนศัตรู จะทำให้<hydro>ความต้านทานน้ำ</hydro>และ<cryo>ความต้านทานน้ำแข็ง</cryo>ของศัตรูลดลง 5%/10%/15%/55% ตามลำดับ เป็นเวลา 12 วินาที"
     }
   },
   "passive3": {
     "name": "Constant Off-the-Cuff Cookery",
     "description": {
-      "0": "เมื่อกดค้างเพื่อปล่อยสกิลธาตุ <strong>Low-Temperature Cooking</strong> ใช้โหมด \"ปรุงอาหารด่วนทันใจ\" เพื่อเปิดใช้งานกลไกทำอาหารอเนกประสงค์เต็มสเปกตรัม",
+      "0": "เมื่อกดค้างเพื่อปล่อยสกิลธาตุ <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>Low-Temperature Cooking</tooltip></strong> ใช้โหมด \"ปรุงอาหารด่วนทันใจ\" เพื่อเปิดใช้งานกลไกทำอาหารอเนกประสงค์เต็มสเปกตรัม",
       "1": "<br/>",
       "2": "<strong>กลไกทำอาหาร: โหมดปรุงอาหารด่วนทันใจ</strong>",
       "3": [
@@ -125,42 +125,42 @@
   "constellation1": {
     "name": "Pre-Dinner Dance for Your Taste Buds",
     "description": {
-      "0": "เมื่อตัวละคร 4 ตัวในทีม มีประเภทของธาตุเป็น<hydro>ธาตุน้ำ</hydro>หรือ<cryo>ธาตุน้ำแข็ง</cryo> ภายใน 15 วินาทีหลังจาก Escoffier ใช้สกิลธาตุ <strong>Low-Temperature Cooking</strong> หรือท่าไม้ตาย <strong>Scoring Cuts</strong> ความแรงคริของ<cryo>ความเสียหายน้ำแข็ง</cryo>ที่ตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียงสร้าง จะเพิ่มขึ้น 60%",
+      "0": "เมื่อตัวละคร 4 ตัวในทีม มีประเภทของธาตุเป็น<hydro>ธาตุน้ำ</hydro>หรือ<cryo>ธาตุน้ำแข็ง</cryo> ภายใน 15 วินาทีหลังจาก Escoffier ใช้สกิลธาตุ <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>Low-Temperature Cooking</tooltip></strong> หรือท่าไม้ตาย <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>Scoring Cuts</tooltip></strong> ความแรงคริของ<cryo>ความเสียหายน้ำแข็ง</cryo>ที่ตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียงสร้าง จะเพิ่มขึ้น 60%",
       "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Inspiration-Immersed Seasoning\" ก่อน"
     }
   },
   "constellation2": {
     "name": "Fresh, Fragrant Stew Is an Art",
     "description": {
-      "0": "เมื่อ Escoffier ใช้<strong>โหมดจัดเก็บอุณหภูมิต่ำ</strong> เพื่อเปิดใช้งานกลไกทำอาหาร จะได้รับเอฟเฟกต์ \"เมนูทำสด\" เป็นเวลา 15 วินาที: ในช่วงเวลาต่อเนื่อง Escoffier จะได้รับ \"ตุ๋นเย็น\" 5 ชั้น เมื่อตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ใกล้เคียงนอกเหนือจาก Escoffier เอง ทำการโจมตีปกติ, ชาร์จโจมตี, โจมตีพุ่งลงจากอากาศ, ใช้สกิลธาตุ หรือท่าไม้ตาย สร้าง<cryo>ความเสียหายน้ำแข็ง</cryo>แก่ศัตรู จะใช้ \"ตุ๋นเย็น\" 1 ชั้น เพื่อเพิ่มความเสียหายที่สร้าง โดยค่าที่เพิ่มจะเท่ากับ 240% ของพลังโจมตีของ Escoffier",
+      "0": "เมื่อ Escoffier ใช้<tooltip ns=tooltips_gen baseKey18=11120001 values=[]><strong>โหมดจัดเก็บอุณหภูมิต่ำ</strong></tooltip> เพื่อเปิดใช้งานกลไกทำอาหาร จะได้รับเอฟเฟกต์ \"เมนูทำสด\" เป็นเวลา 15 วินาที: ในช่วงเวลาต่อเนื่อง Escoffier จะได้รับ \"ตุ๋นเย็น\" 5 ชั้น เมื่อตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ใกล้เคียงนอกเหนือจาก Escoffier เอง ทำการโจมตีปกติ, ชาร์จโจมตี, โจมตีพุ่งลงจากอากาศ, ใช้สกิลธาตุ หรือท่าไม้ตาย สร้าง<cryo>ความเสียหายน้ำแข็ง</cryo>แก่ศัตรู จะใช้ \"ตุ๋นเย็น\" 1 ชั้น เพื่อเพิ่มความเสียหายที่สร้าง โดยค่าที่เพิ่มจะเท่ากับ 240% ของพลังโจมตีของ Escoffier",
       "1": "เมื่อโจมตีโดนศัตรูด้วย<cryo>ความเสียหายน้ำแข็ง</cryo>พร้อมกันหลายตัวในครั้งเดียว จำนวนชั้นของ \"ตุ๋นเย็น\" ที่ถูกใช้จะขึ้นอยู่กับจำนวนของศัตรูที่ถูกโจมตี"
     }
   },
   "constellation3": {
     "name": "The Bakery Magic of Caramel Browning",
     "description": {
-      "0": "เพิ่มเลเวลสกิลธาตุของ <strong>Low-Temperature Cooking</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลธาตุของ <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>Low-Temperature Cooking</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
     "name": "Secret Rosemary Recipe",
     "description": {
-      "0": "ช่วงเวลาต่อเนื่องของ <strong>Rehab Diet</strong> ยาวนานขึ้น 6 วินาที ในช่วงเวลาต่อเนื่อง เมื่อ <strong>Rehab Diet</strong> ทำให้เกิดการรักษา จะมีโอกาสที่จะทำให้ปริมาณการรักษาเพิ่มขึ้น 100% และฟื้นฟูพลังงานธาตุให้กับ Escoffier 2 หน่วย โดยโอกาสนี้จะเท่ากับอัตราคริของ Escoffier เอง ในช่วงเวลาต่อเนื่องของ <strong>Rehab Diet</strong> หนึ่งครั้ง เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุด 7 ครั้ง",
+      "0": "ช่วงเวลาต่อเนื่องของ <tooltip ns=char_Escoffier_gen baseKey18=passive1><strong>Rehab Diet</strong></tooltip> ยาวนานขึ้น 6 วินาที ในช่วงเวลาต่อเนื่อง เมื่อ <strong>Rehab Diet</strong> ทำให้เกิดการรักษา จะมีโอกาสที่จะทำให้ปริมาณการรักษาเพิ่มขึ้น 100% และฟื้นฟูพลังงานธาตุให้กับ Escoffier 2 หน่วย โดยโอกาสนี้จะเท่ากับอัตราคริของ Escoffier เอง ในช่วงเวลาต่อเนื่องของ <strong>Rehab Diet</strong> หนึ่งครั้ง เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุด 7 ครั้ง",
       "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Better to Salivate Than Medicate\" ก่อน"
     }
   },
   "constellation5": {
     "name": "Symphony of a Thousand Sauces",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong>Scoring Cuts</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>Scoring Cuts</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {
     "name": "Tea Parties Bursting With Color",
     "description": {
-      "0": "<strong>กลไกทำอาหาร: โหมดจัดเก็บอุณหภูมิต่ำ</strong> ได้รับการเสริมพลัง:",
+      "0": "<tooltip ns=tooltips_gen baseKey18=11120001 values=[]><strong>กลไกทำอาหาร: โหมดจัดเก็บอุณหภูมิต่ำ</strong></tooltip> ได้รับการเสริมพลัง:",
       "1": [
         "เมื่อการโจมตีปกติ, ชาร์จโจมตี หรือการโจมตีพุ่งลงจากอากาศของตัวละครในทีมตนเอง ที่เข้าร่วมการต่อสู้ในขณะนั้นโดนศัตรู กลไกทำอาหาร: โหมดจัดเก็บอุณหภูมิต่ำจะปล่อยพาร์เฟต์เยือกแข็งพิเศษออกมาเพิ่มเติมหนึ่งอัน สร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo> 500% ของพลังโจมตีของ Escoffier โดยความเสียหายนี้จะถูกนับเป็นความเสียหายสกิลธาตุ"
       ],

@@ -114,7 +114,7 @@
   "lockedPassive": {
     "name": "Acquacristallo straniero",
     "description": {
-      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <strong>effetti positivi aggiuntivi</strong> per ogni elemento con cui hai risuonato.",
+      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effetti positivi aggiuntivi</strong></tooltip> per ogni elemento con cui hai risuonato.",
       "1": "<br/>",
       "2": "Inoltre, quando i PS attuali dei membri vicini del gruppo aumentano o diminuiscono di un 5%, {F#la viaggiatrice}{M#il viaggiatore} ottiene 1 accumulo di Lama delle Mille acque. È possibile ottenere 1 accumulo in questo modo una volta ogni 4 s, fino a un massimo di 3 accumuli. Dopo aver raggiunto il numero massimo di accumuli, sferrare un attacco caricato li consuma tutti e trasforma l'attacco in un <strong>Attacco caricato: Legamaree</strong> speciale.",
       "3": "<br/>",

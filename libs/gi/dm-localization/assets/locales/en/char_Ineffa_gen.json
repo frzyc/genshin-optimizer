@@ -59,7 +59,7 @@
   "skill": {
     "name": "Cleaning Mode: Carrier Frequency",
     "description": {
-      "0": "Ineffa engages her Enhanced Cleaning Module, dealing a single instance of <electro>AoE Electro DMG</electro> to nearby opponents, activating her Optical Flow Shield Barrier, and summoning the Multipurpose Smart Assistance Unit, <strong>Birgitta</strong>.",
+      "0": "Ineffa engages her Enhanced Cleaning Module, dealing a single instance of <electro>AoE Electro DMG</electro> to nearby opponents, activating her Optical Flow Shield Barrier, and summoning the Multipurpose Smart Assistance Unit, <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>.",
       "1": "The Optical Flow Shield Barrier absorbs DMG based on Ineffa's ATK, and it will absorb <electro>Electro DMG</electro> with 250% effectiveness."
     },
     "skillParams": {
@@ -102,7 +102,7 @@
   "burst": {
     "name": "Supreme Instruction: Cyclonic Exterminator",
     "description": {
-      "0": "Through Multipurpose Smart Assistance Unit, <strong>Birgitta</strong>, Ineffa can use Rocket Punches to quickly clean up opponents! Shoots Birgitta into the fray, dealing <electro>AoE Electro DMG</electro> and allowing Birgitta to remain on the field.",
+      "0": "Through Multipurpose Smart Assistance Unit, <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>, Ineffa can use Rocket Punches to quickly clean up opponents! Shoots Birgitta into the fray, dealing <electro>AoE Electro DMG</electro> and allowing Birgitta to remain on the field.",
       "1": "<br/>",
       "2": "If Birgitta is already on the field, having been summoned by Ineffa, this Skill will re-summon Birgitta at the target's location and reset her duration."
     },
@@ -146,13 +146,13 @@
   "passive1": {
     "name": "Overclocking Circuit",
     "description": {
-      "0": "If there are thunderclouds created by Lunar-Charged reactions nearby when <strong>Birgitta</strong> unleashes Discharge attacks, she will initiate an additional attack, dealing <electro>AoE Electro DMG</electro> equal to 65% of Ineffa's ATK. This DMG is considered Lunar-Charged DMG."
+      "0": "If there are thunderclouds created by Lunar-Charged reactions nearby when <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip> unleashes Discharge attacks, she will initiate an additional attack, dealing <electro>AoE Electro DMG</electro> equal to 65% of Ineffa's ATK. This DMG is considered Lunar-Charged DMG."
     }
   },
   "passive2": {
     "name": "Panoramic Permutation Protocol",
     "description": {
-      "0": "When using the Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong>, all your party members will gain the Parameter Permutation effect: Increases Ineffa and your own active party member's Elemental Mastery by 6% of Ineffa's ATK for 20s."
+      "0": "When using the Elemental Burst <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Supreme Instruction: Cyclonic Exterminator</tooltip></strong>, all your party members will gain the Parameter Permutation effect: Increases Ineffa and your own active party member's Elemental Mastery by 6% of Ineffa's ATK for 20s."
     }
   },
   "passive3": {
@@ -180,14 +180,14 @@
   "constellation2": {
     "name": "Support Cleaning Module",
     "description": {
-      "0": "After the Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong> hits opponents, it will inflict the Punishment Edict status on one of those hit opponents: After a brief delay, or when this opponent is defeated, nearby opponents will take <electro>AoE Electro DMG</electro> equal to 300% of Ineffa's ATK. This DMG is considered Lunar-Charged DMG.",
+      "0": "After the Elemental Burst <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Supreme Instruction: Cyclonic Exterminator</tooltip></strong> hits opponents, it will inflict the Punishment Edict status on one of those hit opponents: After a brief delay, or when this opponent is defeated, nearby opponents will take <electro>AoE Electro DMG</electro> equal to 300% of Ineffa's ATK. This DMG is considered Lunar-Charged DMG.",
       "1": "Additionally, when the Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong> is unleashed, nearby party members will gain Optical Flow Shield Barriers."
     }
   },
   "constellation3": {
     "name": "Enhanced Emotion Emulator",
     "description": {
-      "0": "Increases the Level of <strong>Cleaning Mode: Carrier Frequency</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Ineffa_gen baseKey18=skill>Cleaning Mode: Carrier Frequency</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
@@ -200,7 +200,7 @@
   "constellation5": {
     "name": "Mirror's Dream Transcension",
     "description": {
-      "0": "Increases the Level of <strong>Supreme Instruction: Cyclonic Exterminator</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Supreme Instruction: Cyclonic Exterminator</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },

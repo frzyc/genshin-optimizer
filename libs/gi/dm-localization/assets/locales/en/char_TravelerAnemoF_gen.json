@@ -168,7 +168,7 @@
   "lockedPassive": {
     "name": "Foreign Windwrath",
     "description": {
-      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <strong>buffs</strong>.",
+      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>buffs</strong></tooltip>.",
       "1": "<br/>",
       "2": "Additionally, when <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, or <electro>Electro</electro> attacks from nearby party members hit opponents, Traveler will receive 1 stack of Blade of the Dawn Breeze. Each Elemental Type can grant 1 Blade of the Dawn Breeze stack. After obtaining at least 2 stacks of Blade of the Dawn Breeze, performing a Charged Attack will consume all stacks of Blade of the Dawn Breeze and transform into the special <strong>Charged Attack: Whirlwind</strong>.",
       "3": "<br/>",

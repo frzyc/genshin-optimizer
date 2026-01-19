@@ -114,7 +114,7 @@
   "lockedPassive": {
     "name": "Aguas extranjeras",
     "description": {
-      "0": "Obtienes nuevos poderes gracias a tus viajes pasados, de manera que ganarás <strong>fortalecimientos</strong> adicionales por cada elemento con el que hayas resonado.",
+      "0": "Obtienes nuevos poderes gracias a tus viajes pasados, de manera que ganarás <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimientos</strong></tooltip> adicionales por cada elemento con el que hayas resonado.",
       "1": "<br/>",
       "2": "Además, cuando la Vida de un personaje cercano del equipo aumente o disminuya en un 5%, {F#la}{M#el} Viajer{F#a}{M#o} obtendrá 1 carga de “filo de todas las aguas”. Como máximo, se puede obtener 1 carga cada 4 s de esta forma, acumulable hasta un máximo de 3 cargas. Al tener 3 cargas y ejecutar un Ataque Cargado, se consumirán todas las cargas de filo de todas las aguas para ejecutar un <strong>Ataque Cargado: Hidroprisión</strong> especial.",
       "3": "<br/>",

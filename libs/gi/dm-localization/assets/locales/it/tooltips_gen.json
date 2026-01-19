@@ -1,0 +1,334 @@
+{
+  "10050001": {
+    "name": "Effetti positivi aggiuntivi",
+    "description": {
+      "0": "{F#La viaggiatrice}{M#Il viaggiatore} ottiene un bonus alle statistiche per ogni elemento con cui ha risuonato.",
+      "1": "<anemo>Anemo</anemo>: il tasso di CRIT aumenta di un 10%.",
+      "2": "<geo>Geo</geo>: la DIF aumenta di un 20%.",
+      "3": "<electro>Electro</electro>: la ricarica d'energia aumenta di un 20%.",
+      "4": "<dendro>Dendro</dendro>: la maestria elementale aumenta di 60.",
+      "5": "<hydro>Hydro</hydro>: i PS aumentano di un 20%.",
+      "6": "<pyro>Pyro</pyro>: l'ATT aumenta di un 20%.",
+      "7": "<cryo>Cryo</cryo>: i DAN da CRIT aumentano di un 20%."
+    }
+  },
+  "11120001": {
+    "name": "Modalità Refrigerazione",
+    "description": {
+      "0": "<strong>Pressione</strong>",
+      "1": "Escoffier attiva il suo Meka da cucina multiuso nella modalità Refrigerazione e infligge <cryo>DAN da Cryo ad area</cryo> agli avversari vicini.",
+      "2": "<br/>",
+      "3": "<strong>Meka da cucina: modalità Refrigerazione</strong>",
+      "4": "Segue il personaggio attivo e scaglia dei Parfait congelati contro gli avversari vicini a intervalli regolari, infliggendo <cryo>DAN da Cryo</cryo>."
+    }
+  },
+  "11120002": {
+    "name": "Modalità Cucina estemporanea",
+    "description": {
+      "0": "<strong>Meka da cucina: modalità Cucina estemporanea</strong>",
+      "1": [
+        " Il Meka da cucina viene posizionato in campo e assorbe gli attacchi elementali. Quando l'energia elementale assorbita raggiunge un certo limite, Escoffier converte gli ingredienti contenuti nel Meka in dei piatti deliziosi.",
+        " Escoffier ha bisogno di tempo per comprare nuovi ingredienti, quindi può creare in questo modo solo un certo numero di piatti alla settimana. Il numero di piatti che Escoffier può preparare si ripristina ogni lunedì alle 04:00."
+      ]
+    }
+  },
+  "11130001": {
+    "name": "Fuoco di supporto",
+    "description": {
+      "0": "Nello stato di Grazia dell'Anima della Notte, gli attacchi normali di Ifa si trasformano in Fuoco di supporto.",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Spara un Colpo rinvigorente.",
+      "4": "<br/>",
+      "5": "<strong>Pressione prolungata</strong>",
+      "6": "Spara continuamente dei Colpi rinvigorenti.",
+      "7": "<br/>",
+      "8": "<strong>Colpo rinvigorente</strong>",
+      "9": "Infligge <anemo>DAN da Anemo</anemo> con attributo Anima della Notte e, quando colpisce un avversario, ripristina i PS di tutti i membri del gruppo vicini in base alla maestria elementale di Ifa."
+    }
+  },
+  "11130002": {
+    "name": "Fondamentali di soccorso",
+    "description": {
+      "0": "Massimo 150 punti. Ogni punto di Fondamentali di soccorso di Ifa aumenta di un 1,5% i DAN da Turbinio ed Electrocarica inflitti dai membri vicini del gruppo, e di uno 0,2% i loro DAN da Carica lunare. Questi punti si azzerano quando lo stato di Grazia dell'Anima della Notte di Ifa termina."
+    }
+  },
+  "11130003": {
+    "name": "Grazia dell'Anima della Notte: Ifa",
+    "description": {
+      "0": "Consuma costantemente punti Anima della Notte. Questo stato termina quando tutti i punti si esauriscono o se l'abilità viene usata di nuovo. Il suo stato di Grazia dell'Anima della Notte ha le seguenti proprietà:",
+      "1": [
+        " Ifa si libra in aria con l'aiuto di Cacucu, aumentando la sua VEL di movimento e la resistenza alle interruzioni. Ifa consuma costantemente punti Anima della Notte per continuare a fluttuare. Quando esegue uno Scatto o aumenta di velocità, Ifa consuma punti Anima della Notte aggiuntivi;",
+        " quando sferra attacchi normali, Ifa usa diversi tipi di Fuoco di supporto in base alla diversa pressione dell'abilità."
+      ]
+    }
+  },
+  "11130004": {
+    "name": "Marchio di sedazione",
+    "description": {
+      "0": "Esplode e svanisce dopo un breve lasso di tempo, infliggendo DAN ad area dell'elemento corrispondente. Il Sedativo terapeutico può applicare un Marchio di sedazione a un massimo di 4 avversari colpiti. Lo stesso avversario non può ricevere Marchi di più elementi contemporaneamente."
+    }
+  },
+  "11130005": {
+    "name": "Astuzia del serpente",
+    "description": {
+      "0": "Skirk può consumare i punti Astuzia del serpente per mantenere la modalità Lampo eptafasico o per scatenare il suo Tripudio elementale Caos: Rovina.",
+      "1": "<br/>",
+      "2": "Skirk ottiene punti Astuzia del serpente nei modi seguenti:",
+      "3": [
+        " dopo aver usato la sua abilità elementale Caos: Distorsione;",
+        " dopo aver innescato l'effetto del suo talento d'ascensione Oltre ogni logica, e aver assorbito i Varchi nel Vuoto."
+      ],
+      "4": "<br/>",
+      "5": "Quando Skirk lascia il campo in modalità Lampo eptafasico o se quest'ultima termina, i suoi punti Astuzia del serpente vengono rimossi."
+    }
+  },
+  "11130006": {
+    "name": "Lampo eptafasico",
+    "description": {
+      "0": "Skirk entra in questa modalità per un determinato periodo di tempo quando usa la sua abilità elementale <strong>Caos: Distorsione</strong>. La modalità ha le seguenti proprietà:",
+      "1": [
+        " consuma continuamente punti Astuzia del serpente;",
+        " aumenta l'area d'effetto degli attacchi normali e caricati e la resistenza all'interruzione di Skirk;",
+        " converte i DAN inflitti dai suoi attacchi normali, caricati e in picchiata in <cryo>DAN da Cryo</cryo> non influenzabili da altre infusioni elementali;",
+        " converte il suo Tripudio elementale <strong>Caos: Rovina</strong> nel Tripudio elementale speciale <strong>Caos: Estinzione</strong>;",
+        " permette a Skirk di muoversi sulle superfici acquatiche quando compie uno Scatto."
+      ],
+      "2": "Skirk esce da questa modalità quando i punti Astuzia del serpente si esauriscono o al termine della sua durata, e l'abilità elementale entra in TdR."
+    }
+  },
+  "11130007": {
+    "name": "Oltre ogni logica",
+    "description": {
+      "0": "Quando i membri del gruppo vicini innescano reazioni di Congelamento, Superconduzione, Turbinio di Cryo o Cristallizzazione di Cryo su un avversario, si genera un Varco nel Vuoto vicino a quest'ultimo. Quest'effetto può attivarsi una volta ogni 2,5 s. Nel campo possono coesistere fino a 3 Varchi nel Vuoto generati da Skirk.",
+      "1": "<br/>",
+      "2": "Per assorbire i Varchi nel Vuoto vicini, Skirk può usare i seguenti metodi:",
+      "3": [
+        " colpire un avversario con un attacco caricato nella sua modalità Lampo eptafasico;",
+        " usare il suo Tripudio elementale speciale <strong>Caos: Estinzione</strong> mentre è in modalità Lampo eptafasico;",
+        " tenere premuta la sua abilità elementale <strong>Caos: Distorsione</strong> per muoversi velocemente."
+      ],
+      "4": "<br/>",
+      "5": "Ogni Varco assorbito le conferisce 8 punti Astuzia del serpente."
+    }
+  },
+  "11130008": {
+    "name": "Ritorno all'oblio",
+    "description": {
+      "0": "Quando gli attacchi di <hydro>Hydro</hydro> dei membri del gruppo di <hydro>Hydro</hydro> vicini colpiscono gli avversari, o quando i membri del gruppo di <cryo>Cryo</cryo> vicini, a parte Skirk, colpiscono gli avversari con attacchi di <cryo>Cryo</cryo>, Skirk ottiene l'effetto Traversata della morte per 20 s, cumulabile fino a 3 volte. La durata di ciascun accumulo è calcolata in modo indipendente.",
+      "1": "In questo modo, ciascun personaggio può conferire a Skirk solo 1 accumulo di Traversata della Morte.",
+      "2": "Ogni accumulo di Traversata della Morte aumenta i DAN da attacco normale inflitti da Skirk nella modalità Lampo eptafasico di un 110%/120%/170% dei DAN originali, nonché i DAN inflitti utilizzando il suo Tripudio elementale <strong>Caos: Rovina</strong> di un 105%/115%/160% dei DAN originali."
+    }
+  },
+  "11130009": {
+    "name": "Pioggia sacramentale",
+    "description": {
+      "0": "Si innescano degli effetti diversi a seconda di chi ci entra in contatto:",
+      "1": "se è un avversario a toccare la Pioggia, quest'ultima esplode e infligge <hydro>DAN da Hydro ad area</hydro> agli avversari vicini;",
+      "2": "se è un membro del gruppo a toccare la pioggia, quest'ultima farà sì che il personaggio che l'ha toccata rimbalzi in aria.",
+      "3": "<br/>",
+      "4": "Non può esistere più di 1 Pioggia sacramentale evocato da Dahlia in campo alla volta."
+    }
+  },
+  "11130010": {
+    "name": "Grazia di Favonius",
+    "description": {
+      "0": "Quando Dahlia usa il suo Tripudio elementale <strong>Salterio radioso</strong>, applica questo effetto ai membri del gruppo.",
+      "1": "Mentre l'effetto è attivo, Dahlia può consumare 1 accumulo di Benedizione per generare un nuovo Scudo di Grazia sacra quando quello esistente termina la sua durata o viene infranto a causa dei DAN subiti."
+    }
+  },
+  "11130011": {
+    "name": "Benedizione",
+    "description": {
+      "0": "Dahlia ottiene Benedizione nei modi seguenti:",
+      "1": [
+        " ottiene × accumuli di Benedizione quando il membro attivo del gruppo colpisce 4 volte con gli attacchi normali gli avversari mentre è sotto l'effetto di Grazia di Favonius;",
+        " dopo aver innescato l'effetto del suo talento d'ascensione Grazia gentile del vento."
+      ],
+      "2": "<br/>",
+      "3": "Dahlia può ottenere un massimo di × accumuli di Benedizione nel corso della durata di Grazia di Favonius."
+    }
+  },
+  "11160001": {
+    "name": "Birgitta",
+    "description": {
+      "0": "L'assistente e compagna di battaglia di Ineffa. Può essere evocata sul campo tramite l'abilità o il Tripudio elementale.",
+      "1": "Se sono presenti avversari nelle vicinanze, Birgitta si sposta rapidamente verso uno di loro e sprigiona una Scarica ogni 2 s, infliggendo <electro>DAN da Electro ad area</electro>.",
+      "2": "Può esistere solo una Birgitta evocata da Ineffa alla volta.",
+      "3": "<br/>",
+      "4": "Inoltre, sembra che a Nod-Krai esistano dei metodi per modificarne l'aspetto esteriore..."
+    }
+  },
+  "11190001": {
+    "name": "Santuario di Boscogelo",
+    "description": {
+      "0": "Una matrice magica che protegge le Cantaluna e che può essere evocata usando l'abilità elementale <strong>Runo: Riposo senz'alba di Karsikko</strong>.",
+      "1": "Il Santuario di Boscogelo segue il personaggio attivo e infligge un'iterazione di <dendro>DAN da Dendro ad area</dendro> agli avversari dentro la matrice ogni 2 s. Tali DAN sono considerati DAN da abilità elementale."
+    }
+  },
+  "11190002": {
+    "name": "Canto della luna",
+    "description": {
+      "0": "Una melodia usata per intrecciare inni. Quando si usa un Tripudio elementale, o per un certo periodo di tempo dopo averne usato uno, il Canto può essere convertito in accumuli di Inno pallido, che aumentano i DAN delle reazioni di Fioritura, Iperfioritura, Germinazione e Fioritura lunare.",
+      "1": "Quando Lauma consuma Rugiada verdeggiante per usare la variante a pressione prolungata della sua abilità elementale <strong>Runo: Riposo senz'alba di Karsikko</strong>, ogni unità di Rugiada verdeggiante consumata fornisce a Lauma 1 accumulo di Canto della luna."
+    }
+  },
+  "11190003": {
+    "name": "Inno pallido",
+    "description": {
+      "0": "Un inno tramandato da generazioni di Cantaluna che aumenta i DAN inflitti dalle reazioni di Fioritura, Iperfioritura, Germinazione e Fioritura lunare.",
+      "1": "<br/>",
+      "2": "Lauma può ottenere accumuli di Inno pallido nei modi seguenti:",
+      "3": [
+        " usando il suo Tripudio elementale <strong>Runo: Cuori uniti nella luna battente</strong>;",
+        " quando consuma gli accumuli di Canto della luna a causa dell'utilizzo del Tripudio elementale <strong>Runo: Cuori uniti nella luna battente</strong>;",
+        " quando il Santuario di Boscogelo innesca l'effetto della sua costellazione <strong>\"Sangue e lacrime offro al chiaro di luna\"</strong>."
+      ],
+      "4": "<br/>",
+      "5": "Quando i membri del gruppo infliggono DAN da Fioritura, Iperfioritura, Germinazione o Fioritura lunare, viene consumato 1 accumulo di Inno pallido e i DAN inflitti aumentano in base alla maestria elementale di Lauma. Se più avversari contemporaneamente subiscono DAN, vengono consumati più accumuli di Inno pallido in base al numero di avversari colpiti.",
+      "6": "La durata di ogni accumulo di Inno pallido è indipendente dalle altre."
+    }
+  },
+  "11190004": {
+    "name": "Veglia della marea crepuscolare",
+    "description": {
+      "0": "I DAN da Fioritura, Iperfioritura e Germinazione inflitti dai membri del gruppo possono causare colpi CRIT, con un tasso di CRIT e DAN da CRIT fissati rispettivamente a un 15% e un 100%. Il tasso di CRIT di quest'effetto si può accumulare con il tasso di CRIT ottenuto da effetti simili che permettono a queste reazioni elementali di innescare colpi CRIT."
+    }
+  },
+  "11190005": {
+    "name": "Preghiera al chiaro di luna",
+    "description": {
+      "0": "Il tasso di CRIT e i DAN da CRIT dei DAN da Fioritura lunare dei membri del gruppo aumentano rispettivamente di un 10% e di un 20%."
+    }
+  },
+  "11190007": {
+    "name": "Innalzamento",
+    "description": {
+      "0": "Effetto di aumento DAN speciale. Viene calcolato in modo indipendente rispetto ad altri effetti di aumento DAN."
+    }
+  },
+  "11190008": {
+    "name": "Rugiada verdeggiante",
+    "description": {
+      "0": "Una risorsa che si ottiene quando i membri del gruppo innescano reazioni di Fioritura lunare.",
+      "1": "Il gruppo ottiene 1 Rugiada verdeggiante ogni 2,5 s per 2,5 s dopo aver innescato una reazione di Fioritura lunare. Il gruppo può avere un massimo di 3 Rugiade verdeggianti. Innescando un'altra reazione di Fioritura lunare in questo periodo di tempo, la durata dell'effetto viene ripristinata."
+    }
+  },
+  "11200001": {
+    "name": "Sinfonia tonante",
+    "description": {
+      "0": "Consuma meno energia elementale per usare un Tripudio elementale speciale. Flins infligge un'iterazione di <electro>DAN da Electro ad area</electro>. Tali DAN sono considerati DAN da Carica lunare.",
+      "1": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, se sono presenti delle nubi temporalesche nelle vicinanze, Flins infligge un'iterazione aggiuntiva di <electro>DAN da Electro ad area</electro>. Tali DAN sono considerati DAN da Carica lunare."
+    }
+  },
+  "11220001": {
+    "name": "Danza dell'ombra",
+    "description": {
+      "0": "Uno stato che si attiva quando Nefer usa la sua abilità elementale <strong>Strategia del senet: Danza delle mille notti</strong>.",
+      "1": "Mentre è attivo, se Nefer ha almeno 1 unità di Rugiada verdeggiante a disposizione, i suoi attacchi caricati vengono sostituiti dall'attacco caricato speciale Spettacolo fantasma.",
+      "2": "Nefer esce dallo stato di Danza dell'ombra dopo aver scatenato 3 volte Spettacolo fantasma o al termine della sua durata."
+    }
+  },
+  "11220002": {
+    "name": "Spettacolo fantasma",
+    "description": {
+      "0": "Quando è nello stato di Danza dell'ombra derivante dalla sua abilità elementale <strong>Strategia del senet: Danza delle mille notti</strong>, se Nefer ha almeno 1 unità di Rugiada verdeggiante a disposizione, i suoi attacchi caricati vengono sostituiti dall'attacco caricato speciale Spettacolo fantasma, che non consuma vigore.",
+      "1": "Nefer evoca delle Ombre di sé stessa per effettuare degli attacchi coordinati contro i nemici. Nefer e le Ombre infliggono rispettivamente la seconda e terza fase dei <dendro>DAN da Dendro ad area</dendro>. I DAN inflitti dalle Ombre sono considerati DAN da Fioritura lunare. Evocare le Ombre per la prima volta dopo ogni Spettacolo fantasma consuma 1 unità di Rugiada verdeggiante."
+    }
+  },
+  "11220003": {
+    "name": "Velo della menzogna",
+    "description": {
+      "0": "Dopo aver assorbito i Semi dell'inganno grazie al talento d'ascensione Scommessa al chiaro di luna, Nefer ottiene questo effetto, aumentando di conseguenza i DAN inflitti dal suo Spettacolo fantasma.",
+      "1": "Ogni accumulo di Velo della menzogna aumenta i DAN inflitti dallo Spettacolo fantasma di Nefer di un 8%. Il numero massimo di accumuli iniziali è 3. La durata di ogni accumulo è di 9 s e ciascuna viene calcolata in modo indipendente."
+    }
+  },
+  "11230001": {
+    "name": "Trasmutazione essenziale",
+    "description": {
+      "0": "Un effetto che Durin ottiene per 6 s dopo aver scatenato l'abilità elementale <strong>Forma binaria: Convergenza e divisione</strong>.",
+      "1": "Mentre è attivo, Durin può premere il tasto dell'abilità elementale per entrare nello stato di <strong>Conferma della purezza</strong> o quello dell'attacco normale per entrare nello stato di <strong>Negazione delle tenebre</strong>.",
+      "2": "Quando è in questi stati, Durin ottiene sia effetti positivi sia Tripudi elementali diversi."
+    }
+  },
+  "11240001": {
+    "name": "Fiaschetta preziosa Purr purr",
+    "description": {
+      "0": "Un piccolo recipiente che Jahoda estrae quando usa la sua abilità elementale, <strong>Strategia ingegnosa: Condivisione del bottino</strong>.",
+      "1": "Mentre Jahoda è in stato di Inseguimento ombroso, se i nemici vicini sono affetti da <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, la Fiaschetta preziosa Purr purr subisce una conversione nell'elemento corrispondente e inizia a riempirsi, seguendo il seguente ordine di priorità: <pyro>Pyro</pyro> > <hydro>Hydro</hydro> > <electro>Electro</electro> > <cryo>Cryo</cryo>. Ogni volta che l'abilità elementale viene usata, la Fiaschetta preziosa Purr purr può subire una sola delle suddette conversioni.",
+      "2": "Una volta riempita la Fiaschetta, Jahoda la svuota immediatamente ed esce dallo stato di Inseguimento ombroso per infliggere un'iterazione di <anemo>DAN da Anemo</anemo> agli avversari vicini.",
+      "3": "Ogni volta che l'abilità elementale viene usata, Jahoda estrae una nuova Fiaschetta preziosa Purr purr.",
+      "4": "<br/>",
+      "5": "<strong>Presagio lunare: Barlume ascendente</strong>",
+      "6": "Quando la <strong>Fiaschetta preziosa Purr purr</strong> è piena, Jahoda non la svuota immediatamente. Al contrario, consuma costantemente l'elemento immagazzinato per un breve periodo di tempo, scagliando a intermittenza contro i nemici vicini delle <strong>Miciosfere morbidose</strong>, che infliggono DAN dello stesso elemento della <strong>Fiaschetta preziosa Purr purr</strong>."
+    }
+  },
+  "11240002": {
+    "name": "Robot di assistenza coordinata purrsonali",
+    "description": {
+      "0": "Dei piccoli congegni che Jahoda, ex cacciatrice di tesori, porta con sé. Vengono schierati quando usa il suo Tripudio elementale, <strong>Assi segreti: Sette strumenti della cacciatrice</strong>.",
+      "1": "I Robot di assistenza coordinata purrsonali ripristinano costantemente i PS del tuo personaggio attivo. Se i PS del personaggio curato sono superiori a un 70%, ripristinano anche i PS del membro del gruppo vicino con i PS più bassi.",
+      "2": "<br/>",
+      "3": "<strong>Presagio lunare: Barlume ascendente</strong>",
+      "4": "Quando i nemici vicini sono affetti da <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, i Robot di assistenza coordinata purrsonali subiscono una conversione nell'elemento corrispondente, seguendo il seguente ordine di priorità: <pyro>Pyro</pyro> > <hydro>Hydro</hydro> > <electro>Electro</electro> > <cryo>Cryo</cryo>. Ogni volta che viene schierato, un Robot di assistenza coordinata purrsonale può subire una sola conversione elementale. Dopo la conversione, attacca periodicamente fino a 3 avversari vicini, infliggendo DAN dell'elemento corrispondente."
+    }
+  },
+  "11250001": {
+    "name": "Marea gravitazionale",
+    "description": {
+      "0": "Dopo aver sprigionato l'abilità elementale <strong>Maree eterne</strong>, Colombina evoca una <strong>Marea gravitazionale</strong>.",
+      "1": "La Marea gravitazionale segue il personaggio attivo in campo e infligge costantemente <hydro>DAN da Hydro ad area</hydro> agli avversari circostanti.",
+      "2": "<br/>",
+      "3": "Inoltre, quando la Marea gravitazionale è in campo e i membri vicini del gruppo innescano reazioni lunari o infliggono DAN da reazione lunare, Colombina ottiene l'effetto Presagio della Luna nuova per 2 s, accumulando continuamente <strong>Gravità</strong>. Ogni 2 s è possibile ottenere fino a 20 accumuli di Gravità.",
+      "4": "Il limite massimo di Gravità è 60, e una volta terminata la durata della Marea gravitazionale, tutta la Gravità accumulata viene rimossa.",
+      "5": "Una volta raggiunto il limite di Gravità, si attiva una speciale <strong>Interferenza gravitazionale</strong> che, in base al tipo di reazione lunare che ha fornito la maggiore quantità di Gravità a Colombina, innesca effetti diversi.",
+      "6": [
+        " <strong>Carica lunare</strong>: l'Interferenza gravitazionale infligge una singola iterazione di <electro>DAN da Electro ad area</electro> considerati come DAN da Carica lunare.",
+        " <strong>Fioritura lunare</strong>: l'Interferenza gravitazionale scaglia 5 Sigilli di rugiada lunare agli avversari circostanti, infliggendo <dendro>DAN da Dendro</dendro> considerati come DAN da Fioritura lunare.",
+        " <strong>Cristallizzazione lunare</strong>: l'Interferenza gravitazionale infligge una singola iterazione di <geo>DAN da Geo ad area</geo> considerati come DAN da Cristallizzazione lunare."
+      ]
+    }
+  },
+  "11250002": {
+    "name": "Dominio lunare",
+    "description": {
+      "0": "Il dominio che Colombina evoca dopo aver sprigionato il Tripudio elementale <strong>Malinconia lunare</strong>.",
+      "1": "Quando i personaggi attivi attuali sono all'interno del <strong>Dominio lunare</strong>, i DAN da reazione lunare inflitti da tutti i membri del gruppo aumentano."
+    }
+  },
+  "11250003": {
+    "name": "Rugiada selenica",
+    "description": {
+      "0": "Un tipo speciale di Rugiada verdeggiante fornito dal talento passivo di Colombina, <strong>Legge della Luna nuova</strong>. La sua capacità e la sua durata massime sono calcolate indipendentemente dalla Rugiada verdeggiante.",
+      "1": "Quando la Rugiada verdeggiante del gruppo si esaurisce, al suo posto viene consumata la <strong>Rugiada selenica</strong>.",
+      "2": "Il tuo gruppo può avere fino a 3 unità di <strong>Rugiada selenica</strong>."
+    }
+  },
+  "11260001": {
+    "name": "Cambio delle fasi lunari",
+    "description": {
+      "0": "Dopo aver usato la sua abilità elementale <strong>Manifestazione di cielo e terra</strong>, Zibai entra in questa modalità, che dura al massimo 15 s e ha le seguenti proprietà:",
+      "1": [
+        " i DAN degli attacchi normali e caricati vengono convertiti in <geo>DAN da Geo</geo> non influenzabili da altre infusioni elementali;",
+        " l'abilità elementale <strong>Manifestazione di cielo e terra</strong> viene convertita nell'abilità elementale <strong>Passo del destriero spirituale</strong>. Quando Zibai ha almeno 70 accumuli di <strong>Cambio di fase splendente</strong>, può consumarli per scatenare Passo del destriero spirituale e infliggere due iterazioni di <geo>DAN da Geo</geo>. I DAN della seconda iterazione vengono considerati DAN da Cristallizzazione lunare."
+      ],
+      "2": "<br/>",
+      "3": "È possibile avere un massimo di 100 accumuli di <strong>Cambio di fase splendente</strong>, che Zibai può ottenere nei seguenti modi:",
+      "4": [
+        " 10 per ogni secondo in cui si trova nello stato di <strong>Cambio delle fasi lunari</strong>;",
+        " 5 quando colpisce un avversario con i suoi attacchi normali, una volta ogni 0,5 s."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Presagio lunare: Barlume ascendente</strong>",
+      "7": "Quando i membri del gruppo vicini innescano Cristallizzazione lunare, forniscono a Zibai 35 accumuli di <strong>Cambio di fase splendente</strong>. È possibile ottenere accumuli in questo modo una volta ogni 4 s. Scatenare l'abilità elementale speciale <strong>Passo del destriero spirituale</strong> annulla il suddetto tempo di attesa, permettendo di accumulare immediatamente altro <strong>Cambio di fase splendente</strong> in questo modo.",
+      "8": "<br/>",
+      "9": "Zibai esce da questa modalità dopo aver scatenato <strong>Passo del destriero spirituale</strong> 4 volte o quando la durata dell'abilità termina."
+    }
+  },
+  "11270001": {
+    "name": "Canzone dell'usignolo",
+    "description": {
+      "0": "L'effetto derivante dall'attivazione del Tripudio elementale di Illuga <strong>Riflesso senz'ombra</strong>. Può aumentare i <geo>DAN da Geo</geo> inflitti dal personaggio attivo attuale."
+    }
+  }
+}
