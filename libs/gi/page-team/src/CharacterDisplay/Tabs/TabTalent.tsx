@@ -50,6 +50,8 @@ const talentSpacing = {
 
 export default function CharacterTalentPane() {
   const { t } = useTranslation('sheet_gen')
+  // Load tooltip translations
+  useTranslation('tooltips_gen')
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)

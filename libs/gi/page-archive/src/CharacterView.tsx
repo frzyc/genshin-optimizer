@@ -40,6 +40,8 @@ export function CharacterView({
   onClose?: () => void
 }) {
   const { t } = useTranslation('sheet_gen')
+  // Load tooltip translations
+  useTranslation('tooltips_gen')
   const theme = useTheme()
   const grlg = useMediaQuery(theme.breakpoints.up('lg'))
 
