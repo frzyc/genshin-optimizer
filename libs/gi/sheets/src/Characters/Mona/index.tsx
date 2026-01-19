@@ -103,7 +103,7 @@ const dm = {
     unknown: skillParam_gen.constellation1[4], // what is this?
     duration: skillParam_gen.constellation1[5],
     bonusEffect: skillParam_gen.constellation1[6],
-    another15: skillParam_gen.constellation1[7],
+    lunarcrystallize_dmg_: skillParam_gen.constellation1[7],
   },
   constellation2: {
     caChance: skillParam_gen.constellation2[0],
@@ -157,7 +157,7 @@ const vaporize_dmg_ = greaterEq(
 const lunarcrystallize_dmg_ = greaterEq(
   input.constellation,
   1,
-  equal('on', condPoS, percent(dm.constellation1.vaporize_dmg_))
+  equal('on', condPoS, percent(dm.constellation1.lunarcrystallize_dmg_))
 )
 
 const critRate_ = greaterEq(
@@ -284,14 +284,14 @@ const lockC1_lunarcrystallize_dmg_disp = greaterEq(
     equal(
       condPoS,
       'on',
-      dm.constellation1.electrocharged_dmg_ * dm.constellation1.bonusEffect
+      dm.constellation1.lunarcrystallize_dmg_ * dm.constellation1.bonusEffect
     )
   )
 )
 const lockC1_lunarcrystallize_dmg_ = unequal(
   input.activeCharKey,
   target.charKey,
-  lockC1_lunarcharged_dmg_disp
+  lockC1_lunarcrystallize_dmg_disp
 )
 
 const [condLockC2Chargedpath, condLockC2Charged] = cond(key, 'lockC2Charged')

@@ -1,5 +1,8 @@
 import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
-import { type ArtifactSetKey, allLunarReactionKeys } from '@genshin-optimizer/gi/consts'
+import {
+  type ArtifactSetKey,
+  allLunarReactionKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   equal,
@@ -40,9 +43,10 @@ const set4_critRate_ = greaterEq(
     )
   )
 )
-const lunar_dmg_obj = objKeyValMap(allLunarReactionKeys, (k) =>
-  [`${k}_dmg_`, nonStackBuff('gleamingmoonintent', `${k}_dmg_`, percent(0.1))]
-)
+const lunar_dmg_obj = objKeyValMap(allLunarReactionKeys, (k) => [
+  `${k}_dmg_`,
+  nonStackBuff('gleamingmoonintent', `${k}_dmg_`, percent(0.1)),
+])
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
