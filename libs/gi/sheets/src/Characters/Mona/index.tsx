@@ -103,7 +103,7 @@ const dm = {
     unknown: skillParam_gen.constellation1[4], // what is this?
     duration: skillParam_gen.constellation1[5],
     bonusEffect: skillParam_gen.constellation1[6],
-    another15: skillParam_gen.constellation1[7],
+    lunarcrystallize_dmg_: skillParam_gen.constellation1[7],
   },
   constellation2: {
     caChance: skillParam_gen.constellation2[0],
@@ -153,6 +153,11 @@ const vaporize_dmg_ = greaterEq(
   input.constellation,
   1,
   equal('on', condPoS, percent(dm.constellation1.vaporize_dmg_))
+)
+const lunarcrystallize_dmg_ = greaterEq(
+  input.constellation,
+  1,
+  equal('on', condPoS, percent(dm.constellation1.lunarcrystallize_dmg_))
 )
 
 const critRate_ = greaterEq(
@@ -270,6 +275,25 @@ const lockC1_hydro_swirl_dmg_ = unequal(
   lockC1_hydro_swirl_dmg_disp
 )
 
+const lockC1_lunarcrystallize_dmg_disp = greaterEq(
+  input.constellation,
+  1,
+  equal(
+    condLockHomework,
+    'on',
+    equal(
+      condPoS,
+      'on',
+      dm.constellation1.lunarcrystallize_dmg_ * dm.constellation1.bonusEffect
+    )
+  )
+)
+const lockC1_lunarcrystallize_dmg_ = unequal(
+  input.activeCharKey,
+  target.charKey,
+  lockC1_lunarcrystallize_dmg_disp
+)
+
 const [condLockC2Chargedpath, condLockC2Charged] = cond(key, 'lockC2Charged')
 const lockC2Charged_eleMas = greaterEq(
   input.constellation,
@@ -369,6 +393,10 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
         vaporize_dmg_,
         lockStacks_vaporize_dmg_,
         lockC1_vaporize_dmg_
+      ),
+      lunarcrystallize_dmg_: sum(
+        lunarcrystallize_dmg_,
+        lockC1_lunarcrystallize_dmg_
       ),
       critRate_,
       eleMas: lockC2Charged_eleMas,
@@ -642,6 +670,12 @@ const sheet: TalentSheet = {
               }),
             },
             {
+              node: infoMut(lunarcrystallize_dmg_, {
+                path: 'lunarcrystallize_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
               node: infoMut(percent(dm.constellation1.frozenExtension), {
                 name: ct.ch('frozenDuration'),
                 isTeamBuff: true,
@@ -681,6 +715,12 @@ const sheet: TalentSheet = {
         {
           node: infoMut(lockC1_vaporize_dmg_disp, {
             path: 'vaporize_dmg_',
+            isTeamBuff: true,
+          }),
+        },
+        {
+          node: infoMut(lockC1_lunarcrystallize_dmg_disp, {
+            path: 'lunarcrystallize_dmg_',
             isTeamBuff: true,
           }),
         },
