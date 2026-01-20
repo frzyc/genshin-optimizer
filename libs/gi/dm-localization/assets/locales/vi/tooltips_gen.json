@@ -1,0 +1,329 @@
+{
+  "10050001": {
+    "name": "Hiệu Quả Cường Hóa Thêm",
+    "description": {
+      "0": "Khi cộng hưởng với mỗi loại nguyên tố, Nhà Lữ Hành sẽ nhận tăng cường thuộc tính tương ứng:",
+      "1": "<anemo>Nguyên Tố Phong</anemo>: Tỷ Lệ Bạo Kích tăng 10%.",
+      "2": "<geo>Nguyên Tố Nham</geo>: Phòng Ngự tăng 20%.",
+      "3": "<electro>Nguyên Tố Lôi</electro>: Hiệu Quả Nạp Nguyên Tố tăng 20%.",
+      "4": "<dendro>Nguyên Tố Thảo</dendro>: Tinh Thông Nguyên Tố tăng 60 điểm.",
+      "5": "<hydro>Nguyên Tố Thủy</hydro>: HP tăng 20%.",
+      "6": "<pyro>Nguyên Tố Hỏa</pyro>: Tấn Công tăng 20%.",
+      "7": "<cryo>Nguyên Tố Băng</cryo>: Sát Thương Bạo Kích tăng 20%."
+    }
+  },
+  "11120001": {
+    "name": "Chế Độ Cấp Đông",
+    "description": {
+      "0": "<strong>Nhấn</strong>",
+      "1": "Khởi động Máy Nấu Nướng Đa Chức Năng ở chế độ \"Cấp Đông\", gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> cho kẻ địch xung quanh.",
+      "2": "<br/>",
+      "3": "<strong>Máy Nấu Nướng: Chế Độ Cấp Đông</strong>",
+      "4": "Bám theo nhân vật trong trận hiện tại, phóng Parfait Sương Giá vào kẻ địch ở gần theo chu kỳ, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>."
+    }
+  },
+  "11120002": {
+    "name": "Chế Độ Nấu Nướng Ngẫu Hứng",
+    "description": {
+      "0": "<strong>Máy Nấu Nướng Đa Chức Năng: Chế Độ Nấu Nướng Ngẫu Hứng</strong>",
+      "1": [
+        "Đặt Máy Nấu Nướng trên sân. Máy Nấu Nướng có thể hấp thụ đòn tấn công nguyên tố. Khi Năng Lượng Nguyên Tố hấp thụ đến mức giới hạn sẽ chuyển hóa nguyên liệu mà Escoffier đặt trong đó thành món ăn ngon.",
+        "Escoffier cần thời gian để mua nguyên liệu mới. Mỗi tuần chỉ có thể thông qua cách thức này để chế biến một lượng món ăn nhất định, số lần sẽ làm mới lúc 4:00 sáng mỗi thứ hai."
+      ]
+    }
+  },
+  "11130001": {
+    "name": "Bắn Chi Viện",
+    "description": {
+      "0": "Trong trạng thái Dạ Hồn Chúc Phúc, Tấn Công Thường của Ifa sẽ chuyển thành Bắn Chi Viện.",
+      "1": "<strong>Nhấn</strong>",
+      "2": "Bắn Đạn Bí Dược.",
+      "3": "<strong>Nhấn Giữ</strong>",
+      "4": "Liên tục bắn Đạn Bí Dược.",
+      "5": "<strong>Đạn Bí Dược</strong>",
+      "6": "Gây <anemo>Sát Thương Nguyên Tố Phong</anemo> mang thuộc tính Dạ Hồn, đồng thời khi đánh trúng kẻ địch sẽ hồi phục HP cho tất cả nhân vật trong đội ở gần, lượng hồi phục dựa trên Tinh Thông Nguyên Tố của Ifa."
+    }
+  },
+  "11130002": {
+    "name": "Cứu Hộ Thiết Yếu",
+    "description": {
+      "0": "Giới hạn 150 điểm. Dựa trên điểm Cứu Hộ Thiết Yếu mà Ifa sở hữu, mỗi 1 điểm sẽ tăng 1.5% sát thương phản ứng Khuếch Tán và Điện Cảm cho nhân vật trong đội ở gần, sát thương phản ứng Nguyệt-Điện Cảm tăng 0.2%. Cứu Hộ Thiết Yếu sẽ bị xóa khi Ifa kết thúc trạng thái Dạ Hồn Chúc Phúc."
+    }
+  },
+  "11130003": {
+    "name": "Dạ Hồn Chúc Phúc - Ifa",
+    "description": {
+      "0": "Liên tục tiêu hao điểm Dạ Hồn. Khi hết điểm Dạ Hồn hoặc thi triển lần nữa, Ifa sẽ kết thúc trạng thái Dạ Hồn Chúc Phúc. Trạng thái Dạ Hồn Chúc Phúc có đặc tính sau:",
+      "1": [
+        "Bay lên nhờ sự giúp đỡ của Cacucu, tăng Tốc Độ Di Chuyển và khả năng Kháng Gián Đoạn của Ifa. Trong trạng thái này, Ifa sẽ liên tục tiêu hao điểm Dạ Hồn để duy trì trạng thái lơ lửng, tiến hành Xung Kích hoặc bay lên cao sẽ tiêu hao thêm điểm Dạ Hồn.",
+        "Khi tiến hành Tấn Công Thường, sẽ căn cứ vào Nhấn hoặc Nhấn Giữ để thực hiện Bắn Chi Viện theo cách thức khác nhau."
+      ]
+    }
+  },
+  "11130004": {
+    "name": "Ký Hiệu An Thần",
+    "description": {
+      "0": "Hiệu quả này sẽ phát nổ sau đó và biến mất, gây sát thương phạm vi với nguyên tố tương ứng. Đạn An Thần sẽ áp dụng Ký Hiệu An Thần lên tối đa 4 kẻ địch bị đánh trúng. Kẻ địch sẽ không thể chịu trạng thái Ký Hiệu An Thần của nhiều loại nguyên tố cùng lúc."
+    }
+  },
+  "11130005": {
+    "name": "Rắn Xảo Quyệt",
+    "description": {
+      "0": "Skirk có thể tiêu hao Rắn Xảo Quyệt để duy trì chế độ Thất Tướng Nhất Thiểm, hoặc thi triển Kỹ Năng Nộ Cực Ác Kỹ - Diệt.",
+      "1": "<br/>",
+      "2": "Skirk có thể nhận Rắn Xảo Quyệt thông qua những cách sau:",
+      "3": [
+        "Sau khi thi triển Kỹ Năng Nguyên Tố Cực Ác Kỹ - Tránh.",
+        "Sau khi kích hoạt hiệu quả hấp thụ Vết Nứt Hư Không của thiên phú đột phá Lý Luận Vượt Nguyên Lý."
+      ],
+      "4": "<br/>",
+      "5": "Khi Skirk rời trận trong trạng thái Thất Tướng Nhất Thiểm, hoặc kết thúc chế độ Thất Tướng Nhất Thiểm, sẽ xóa bỏ Rắn Xảo Quyệt hiện có của Skirk."
+    }
+  },
+  "11130006": {
+    "name": "Thất Tướng Nhất Thiểm",
+    "description": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố <strong>Cực Ác Kỹ - Tránh</strong>, Skirk sẽ chuyển sang chế độ này trong một khoảng thời gian và mang đặc tính sau:",
+      "1": [
+        "Liên tục tiêu hao Rắn Xảo Quyệt.",
+        "Tăng phạm vi tấn công của đòn Tấn Công Thường và Trọng Kích, tăng Kháng Gián Đoạn của Skirk.",
+        "Khi thực hiện Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp sẽ chuyển thành gây <cryo>Sát Thương Nguyên Tố Băng</cryo> không thể bị thay thế.",
+        "Kỹ Năng Nộ <strong>Cực Ác Kỹ - Diệt</strong> sẽ được thay thế bằng Kỹ Năng Nộ đặc biệt <strong>Cực Ác Kỹ - Tận</strong>.",
+        "Khi Skirk xung kích, sẽ có thể di chuyển trên mặt nước.",
+        "Khi tiêu hao hết Rắn Xảo Quyệt hoặc kết thúc thời gian duy trì, Skirk sẽ thoát khỏi chế độ này và Kỹ Năng Nguyên Tố sẽ vào thời gian chờ."
+      ]
+    }
+  },
+  "11130007": {
+    "name": "Lý Luận Vượt Nguyên Lý",
+    "description": {
+      "0": "Khi nhân vật trong đội gần đó kích hoạt phản ứng Đóng Băng, Siêu Dẫn, Khuếch Tán Nguyên Tố Băng hoặc Kết Tinh Nguyên Tố Băng lên kẻ địch, sẽ tạo ra một Vết Nứt Hư Không gần kẻ địch. Hiệu quả này mỗi 2.5s tối đa kích hoạt một lần, trong trận chỉ tồn tại tối đa 3 Vết Nứt Hư Không do bản thân Skirk tạo ra.",
+      "1": "<br/>",
+      "2": "Skirk có thể thông qua những cách sau để hấp thụ Vết Nứt Hư Không trong phạm vi nhất định gần đó:",
+      "3": [
+        "Khi đòn Trọng Kích trong chế độ Thất Tướng Nhất Thiểm đánh trúng kẻ địch.",
+        "Khi thi triển Kỹ Năng Nộ đặc biệt <strong>Cực Ác Kỹ - Tận</strong> trong chế độ Thất Tướng Nhất Thiểm.",
+        "Khi Nhấn Giữ thi triển Kỹ Năng Nguyên Tố <strong>Cực Ác Kỹ - Tránh</strong> để tiến hành di chuyển nhanh."
+      ],
+      "4": "<br/>",
+      "5": "Mỗi hút được một Vết Nứt Hư Không, Skirk sẽ nhận 8 điểm Rắn Xảo Quyệt."
+    }
+  },
+  "11130008": {
+    "name": "Về Với Quên Lãng",
+    "description": {
+      "0": "Khi nhân vật <hydro>Nguyên Tố Thủy</hydro> trong đội ở gần tấn công <hydro>Nguyên Tố Thủy</hydro> trúng kẻ địch, hoặc nhân vật <cryo>Nguyên Tố Băng</cryo> khác Skirk trong đội ở gần tấn công <cryo>Nguyên Tố Băng</cryo> trúng kẻ địch, Skirk sẽ nhận được một tầng hiệu quả Vượt Qua Chết Chóc trong 20s, tối đa cộng dồn 3 tầng, mỗi tầng tính giờ riêng.",
+      "1": "Mỗi nhân vật tối đa khiến Skirk nhận được 1 tầng Vượt Qua Chết Chóc thông qua cách thức này.",
+      "2": "Mỗi tầng Vượt Qua Chết Chóc sẽ khiến Skirk khi thi triển Tấn Công Thường trong chế độ Thất Tướng Nhất Thiểm sẽ gây lượng sát thương bằng 110%/120%/170% sát thương gốc, đồng thời thi triển Kỹ Năng Nộ <strong>Cực Ác Kỹ - Diệt</strong> sẽ gây lượng sát thương bằng 105%/115%/160% sát thương gốc."
+    }
+  },
+  "11130009": {
+    "name": "Bí Ẩn Mưa Sương",
+    "description": {
+      "0": "Sau khi kẻ địch hoặc nhân vật trong đội ở gần tiếp xúc với Bí Ẩn Mưa Sương, sẽ tạo ra hiệu quả khác nhau tùy thuộc vào đối tượng tiếp xúc:",
+      "1": "Nếu kẻ địch tiếp xúc, Bí Ẩn Mưa Sương sẽ phát nổ và gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> cho kẻ địch xung quanh.",
+      "2": "Nếu nhân vật trong đội ở gần tiếp xúc, Bí Ẩn Mưa Sương sẽ đẩy người tiếp xúc lên cao.",
+      "3": "<br/>",
+      "4": "Cùng lúc chỉ tồn tại một Bí Ẩn Mưa Sương do chính Dahlia tạo ra."
+    }
+  },
+  "11130010": {
+    "name": "Tây Phong Thân Quyến",
+    "description": {
+      "0": "Khi Dahlia thi triển Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong>, sẽ cung cấp hiệu quả này cho nhân vật của bản thân trong đội.",
+      "1": "Trong thời gian duy trì, khi Khiên Thánh kết thúc hiệu quả hoặc bị sát thương phá hủy, Dahlia có thể tiêu hao một tầng Chúc Tụng để triệu hồi lại Khiên Thánh."
+    }
+  },
+  "11130011": {
+    "name": "Chúc Tụng",
+    "description": {
+      "0": "Dahlia có thể nhận hiệu quả Chúc Tụng bằng những cách thức sau:",
+      "1": [
+        "Khi nhân vật ra trận trong đội bản thân đang chịu ảnh hưởng bởi hiệu quả Tây Phong Thân Quyến, mỗi khi Tấn Công Thường trúng kẻ địch 4 lần, Dahlia sẽ nhận X tầng Chúc Tụng.",
+        "Sau khi kích hoạt hiệu quả của Thiên Phú Đột Phá \"Sự Dịu Dàng Của Gió\"."
+      ],
+      "2": "<br/>",
+      "3": "Trong mỗi lần hiệu quả Tây Phong Thân Quyến, Dahlia tối đa nhận X tầng Chúc Tụng."
+    }
+  },
+  "11160001": {
+    "name": "Birgitta",
+    "description": {
+      "0": "Trợ thủ đáng tin cậy của Ineffa, có thể dùng Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ để triệu hồi.",
+      "1": "Nếu xung quanh có kẻ địch thì mỗi 2s Birgitta sẽ di chuyển nhanh đến gần một kẻ địch và Phóng Điện, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>.",
+      "2": "Cùng lúc chỉ có thể tồn tại một Birgitta do Ineffa tạo ra.",
+      "3": "<br/>",
+      "4": "Ngoài ra, ở Nod-Krai, dường như có thể thay đổi ngoại hình của Birgitta bằng cách nào đó..."
+    }
+  },
+  "11190001": {
+    "name": "Thánh Vực Rừng Sương",
+    "description": {
+      "0": "Pháp trận dùng để bảo vệ Vịnh Nguyệt Sứ, được triệu hồi bằng cách thi triển Kỹ Năng Nguyên Tố <strong>Runo - Karsikko Yên Giấc</strong>.",
+      "1": "Thánh Vực Rừng Sương sẽ đi theo nhân vật trong trận hiện tại, mỗi 2s sẽ gây cho kẻ địch trong đó một lần <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro>, sát thương này được xem là sát thương Kỹ Năng Nguyên Tố."
+    }
+  },
+  "11190002": {
+    "name": "Nguyệt Vịnh",
+    "description": {
+      "0": "Dùng để dệt ra khúc nhạc cầu nguyện, có thể chuyển hóa thành Thánh Ca Sắc Xanh khi thi triển Kỹ Năng Nộ hoặc trong một khoảng thời gian sau khi thi triển Kỹ Năng Nộ để tăng sát thương phản ứng Sum Suê, Nở Rộ, Bung Tỏa, Nguyệt-Sum Suê.",
+      "1": "Khi Lauma tiêu hao Sương Xanh để Nhấn Giữ thi triển Kỹ Năng Nguyên Tố <strong>Runo - Karsikko Yên Giấc</strong>, sẽ căn cứ vào số lượng tiêu hao, mỗi giọt Sương Xanh sẽ cung cấp 1 tầng Nguyệt Vịnh cho Lauma."
+    }
+  },
+  "11190003": {
+    "name": "Thánh Ca Sắc Xanh",
+    "description": {
+      "0": "Lời cầu nguyện được lưu truyền qua nhiều thế hệ Vịnh Nguyệt Sứ, có thể tăng sát thương gây ra bởi phản ứng Sum Suê, Nở Rộ, Bung Tỏa, Nguyệt-Sum Suê.",
+      "1": "<br/>",
+      "2": "Lauma có thể nhận Thánh Ca Sắc Xanh bằng những cách sau:",
+      "3": [
+        "Khi thi triển Kỹ Năng Nộ <strong>Runo - Vạn Tâm Vì Ánh Trăng</strong>.",
+        "Khi kích hoạt hiệu quả tiêu hao Nguyệt Vịnh trong Kỹ Năng Nộ <strong>Runo - Vạn Tâm Vì Ánh Trăng</strong>.",
+        "Kích hoạt hiệu quả Thánh Vực Rừng Sương trong Cung Mệnh <strong>\"Nguyện Dâng Máu Lệ Tặng Ánh Trăng\"</strong>."
+      ],
+      "4": "<br/>",
+      "5": "Nhân vật trong đội gần đó khi gây sát thương phản ứng Sum Suê, Nở Rộ, Bung Tỏa, Nguyệt-Sum Suê sẽ tiêu hao một tầng Thánh Ca Sắc Xanh để tăng sát thương gây ra, mức tăng căn cứ vào Tinh Thông Nguyên Tố của Lauma. Khi sát thương kể trên đồng thời đánh trúng nhiều kẻ địch, sẽ căn cứ vào số lượng kẻ địch trúng đòn để tiêu hao số tầng Thánh Ca Sắc Xanh.",
+      "6": "Mỗi tầng Thánh Ca Sắc Xanh sẽ tính thời gian duy trì riêng."
+    }
+  },
+  "11190004": {
+    "name": "Tiếng Hát Đêm Khuya",
+    "description": {
+      "0": "Sát thương phản ứng Sum Suê, Nở Rộ, Bung Tỏa do nhân vật trong đội kích hoạt có thể gây Bạo Kích, Tỷ Lệ Bạo Kích cố định là 15%, Sát Thương Bạo Kích cố định là 100%. Tỷ Lệ Bạo Kích do hiệu quả này cung cấp có thể cộng dồn với Tỷ Lệ Bạo Kích từ hiệu quả tương đồng gây Bạo Kích phản ứng nguyên tố tương ứng."
+    }
+  },
+  "11190005": {
+    "name": "Thánh Ca Ánh Trăng",
+    "description": {
+      "0": "Sát thương phản ứng Nguyệt-Sum Suê mà nhân vật trong đội gây ra sẽ tăng 10% Tỷ Lệ Bạo Kích, tăng 20% Sát Thương Bạo Kích."
+    }
+  },
+  "11190007": {
+    "name": "Thăng Tiến",
+    "description": {
+      "0": "Hiệu quả tăng sát thương đặc biệt, tính độc lập với hiệu quả tăng sát thương khác."
+    }
+  },
+  "11190008": {
+    "name": "Sương Xanh",
+    "description": {
+      "0": "Loại tài nguyên cung cấp cho đội sau khi nhân vật trong đội kích hoạt phản ứng Nguyệt-Sum Suê.",
+      "1": "Trong 2.5s sau khi kích hoạt phản ứng Nguyệt-Sum Suê, mỗi 2.5s sẽ cung cấp một giọt Sương Xanh cho đội, giới hạn của Sương Xanh là 3 giọt. Trong thời gian duy trì, khi kích hoạt phản ứng Nguyệt-Sum Suê lần nữa sẽ làm mới thời gian duy trì hiệu quả trên."
+    }
+  },
+  "11200001": {
+    "name": "Giao Hưởng Sấm Sét",
+    "description": {
+      "0": "Kỹ Năng Nộ đặc biệt có thể thi triển với ít Năng Lượng Nguyên Tố hơn. Flins gây một lần <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> được tính là sát thương phản ứng Nguyệt-Điện Cảm.",
+      "1": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Nếu gần đó có Mây Sấm Sét, sẽ gây thêm một lần <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> được tính là sát thương phản ứng Nguyệt-Điện Cảm."
+    }
+  },
+  "11220001": {
+    "name": "Ảnh Vũ",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Chiến Thuật Senet - Vũ Điệu Ngàn Đêm</strong>, Nefer sẽ vào trạng thái này.",
+      "1": "Trong trạng thái Ảnh Vũ, nếu sở hữu ít nhất 1 Sương Xanh, Nefer thi triển Trọng Kích sẽ thay thế bằng Trọng Kích đặc biệt \"Ảo Kịch\".",
+      "2": "Trạng thái Ảnh Vũ sẽ bị xóa sau khi Nefer thi triển 3 lần Ảo Kịch hoặc kết thúc thời gian duy trì."
+    }
+  },
+  "11220002": {
+    "name": "Ảo Kịch",
+    "description": {
+      "0": "Khi trong trạng thái Ảnh Vũ từ Kỹ Năng Nguyên Tố <strong>Chiến Thuật Senet - Vũ Điệu Ngàn Đêm</strong>, nếu sở hữu ít nhất 1 Sương Xanh, Nefer thi triển Trọng Kích sẽ thay thế bằng Trọng Kích đặc biệt \"Ảo Kịch\" không tiêu hao Thể Lực.",
+      "1": "Nefer triệu hồi Hư Ảnh của bản thân và phát động tấn công hợp sức lên kẻ địch, bản thân và Hư Ảnh sẽ lần lượt gây ra 2 và 3 đòn <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro>. Sát thương Hư Ảnh gây ra được xem là sát thương phản ứng Nguyệt-Sum Suê, sau mỗi lần thi triển Ảo Kịch, lần đầu triệu hồi Hư Ảnh sẽ tiêu hao 1 Sương Xanh."
+    }
+  },
+  "11220003": {
+    "name": "Bức Màn Lừa Dối",
+    "description": {
+      "0": "Hiệu quả nhận được sau khi Nefer hấp thụ Hạt Dối Trá thông qua thiên phú đột phá \"Đánh Cược Dưới Trăng\", giúp tăng sát thương Ảo Kịch gây ra.",
+      "1": "Mỗi tầng Bức Màn Lừa Dối sẽ tăng sát thương khi Nefer thi triển Ảo Kịch thêm 8%. Ban đầu tối đa cộng dồn 3 tầng, duy trì 9s, mỗi tầng tính giờ riêng."
+    }
+  },
+  "11230001": {
+    "name": "Chuyển Hóa Tinh Chất",
+    "description": {
+      "0": "Hiệu quả nhận được sau khi Durin thi triển Kỹ Năng Nguyên Tố <strong>Nhị Nguyên - Hội Tụ Và Phân Chia</strong>, duy trì 6s.",
+      "1": "Trong thời gian duy trì, Durin có thể nhấn Kỹ Năng Nguyên Tố để vào trạng thái <strong>Xác Nhận Hóa Trắng</strong>, hoặc nhấn Tấn Công Thường để vào trạng thái <strong>Phủ Nhận Độ Đen</strong>.",
+      "2": "Trong hai trạng thái này, Durin sẽ nhận các hiệu ứng cường hóa khác nhau và có thể thi triển Kỹ Năng Nộ khác nhau."
+    }
+  },
+  "11240001": {
+    "name": "Bình Kho Báu Khò Khè",
+    "description": {
+      "0": "Bình nguyên tố cỡ nhỏ Jahoda lấy ra sau khi thi triển Kỹ Năng Nguyên Tố <strong>Kỳ Sách - Cách Phân Chia Của Cải</strong>.",
+      "1": "Khi Jahoda trong trạng thái Ảo Ảnh Truy Kích, nếu kẻ địch ở gần đang bị gán ấn Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <electro>Lôi</electro> hoặc <cryo>Băng</cryo>, Bình Kho Báu Khò Khè sẽ chuyển hóa thành loại nguyên tố tương ứng và liên tục nạp dần, đồng thời sẽ chuyển hóa dựa trên mức độ ưu tiên Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <electro>Lôi</electro>, <cryo>Băng</cryo>. Sau mỗi lần thi triển Kỹ Năng Nguyên Tố, Bình Kho Báu Khò Khè tối đa được tiến hành một lần chuyển hóa.",
+      "2": "Khi Bình Kho Báu Khò Khè được nạp đầy, Jahoda sẽ thoát trạng thái Ảo Ảnh Truy Kích, gây một lần <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch ở gần và xóa sạch Bình Kho Báu Khò Khè.",
+      "3": "Mỗi lần thi triển Kỹ Năng Nguyên Tố, Jahoda đều sẽ lấy ra một Bình Kho Báu Khò Khè mới.",
+      "4": "<br/>",
+      "5": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Khi <strong>Bình Kho Báu Khò Khè</strong> được nạp đầy, Jahoda sẽ không lập tức xóa sạch <strong>Bình Kho Báu Khò Khè</strong>, mà trong một khoảng thời gian sau đó sẽ liên tục tiêu hao nguyên tố trong bình và phóng <strong>Bóng Mèo Mềm Mại</strong> lên kẻ địch ở gần theo chu kỳ, gây sát thương nguyên tố tương ứng với <strong>Bình Kho Báu Khò Khè</strong>."
+    }
+  },
+  "11240002": {
+    "name": "Thiết Bị Điều Phối Giúp Việc Dạng Mèo",
+    "description": {
+      "0": "Một trong những đạo cụ nhỏ mà Jahoda - cựu thợ săn kho báu luôn mang theo bên mình, được lấy ra sau khi thi triển Kỹ Năng Nộ <strong>Bí Khí - Bảy Đạo Cụ Thợ Săn</strong>.",
+      "1": "Thiết Bị Điều Phối Giúp Việc Dạng Mèo sẽ liên tục hồi phục HP cho nhân vật ra trận hiện tại trong đội bản thân. Nếu HP của nhân vật nhận trị liệu trên 70%, sẽ đồng thời hồi phục HP cho nhân vật có HP thấp nhất trong đội ở gần.",
+      "2": "<br/>",
+      "3": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Nếu kẻ địch ở gần đang bị gán ấn Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <electro>Lôi</electro> hoặc <cryo>Băng</cryo>, Thiết Bị Điều Phối Giúp Việc Dạng Mèo sẽ chuyển hóa thành loại nguyên tố tương ứng, và sẽ chuyển hóa dựa trên mức độ ưu tiên <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <electro>Lôi</electro>, <cryo>Băng</cryo>. Sau mỗi lần lấy ra Thiết Bị Điều Phối Giúp Việc Dạng Mèo, tối đa được chuyển hóa nguyên tố một lần theo cách này. Sau khi kích hoạt chuyển hóa nguyên tố, Thiết Bị Điều Phối Giúp Việc Dạng Mèo sẽ tấn công tối đa 3 kẻ địch ở gần theo chu kỳ, gây Sát Thương Nguyên Tố tương ứng."
+    }
+  },
+  "11250001": {
+    "name": "Gợn Sóng Hấp Dẫn",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Thủy Triều Vĩnh Cửu</strong>, Columbina sẽ triệu hồi <strong>Gợn Sóng Hấp Dẫn</strong>.",
+      "1": "Gợn Sóng Hấp Dẫn sẽ đi theo nhân vật trong trận hiện tại, liên tục gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> lên kẻ địch xung quanh.",
+      "2": "<br/>",
+      "3": "Ngoài ra, trong thời gian tồn tại Gợn Sóng Hấp Dẫn, khi nhân vật trong đội ở gần kích hoạt phản ứng Nguyệt hoặc gây sát thương phản ứng Nguyệt, Columbina sẽ nhận hiệu quả Chỉ Thị Tân Nguyệt trong vòng 2s tiếp theo, liên tục tích lũy <strong>Lực Hấp Dẫn</strong>. Mỗi 2s có thể tích lũy 20 điểm Lực Hấp Dẫn.",
+      "4": "Giới hạn Lực Hấp Dẫn là 60 điểm, sẽ xóa khi kết thúc thời gian duy trì Gợn Sóng Hấp Dẫn.",
+      "5": "Khi Lực Hấp Dẫn tích lũy đến tối đa, sẽ kích hoạt \"Giao Thoa Trọng Lực\" đặc biệt, căn cứ vào loại phản ứng Nguyệt mà Columbina tích lũy Lực Hấp Dẫn nhiều nhất để lần lượt sản sinh hiệu quả khác nhau. Nếu phản ứng Nguyệt mà Columbina tích lũy Lực Hấp Dẫn nhiều nhất là:",
+      "6": [
+        "<strong>Nguyệt-Điện Cảm</strong>: Giao Thoa Trọng Lực sẽ gây một lần <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>. Sát thương này được xem là sát thương phản ứng Nguyệt-Điện Cảm.",
+        "<strong>Nguyệt-Sum Suê</strong>: Giao Thoa Trọng Lực sẽ phóng 5 Ấn Sương Trăng lên kẻ địch xung quanh, gây <dendro>Sát Thương Nguyên Tố Thảo</dendro>. Sát thương này được xem là sát thương phản ứng Nguyệt-Sum Suê.",
+        "<strong>Nguyệt-Kết Tinh</strong>: Giao Thoa Trọng Lực sẽ gây một lần <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo>. Sát thương này được xem là sát thương phản ứng Nguyệt-Kết Tinh."
+      ]
+    }
+  },
+  "11250002": {
+    "name": "Vùng Ánh Trăng",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nộ <strong>Nỗi Nhớ Quê Nhà</strong>, Columbina sẽ triệu hồi khu vực này.",
+      "1": "Khi nhân vật trong trận hiện tại ở trong phạm vi <strong>Vùng Ánh Trăng</strong>, tất cả nhân vật trong đội sẽ tăng sát thương phản ứng Nguyệt gây ra."
+    }
+  },
+  "11250003": {
+    "name": "Sương Xanh Trăng Núi",
+    "description": {
+      "0": "Tài nguyên Sương Xanh đặc biệt, cung cấp bởi thiên phú <strong>Quy Tắc Của Tân Nguyệt</strong> từ Columbina, có giới hạn và thời gian duy trì riêng so với Sương Xanh.",
+      "1": "Khi đội ngũ tiêu hao hết Sương Xanh, sẽ chuyển sang tiêu hao <strong>Sương Xanh Trăng Núi</strong>.",
+      "2": "<strong>Sương Xanh Trăng Núi</strong> có giới hạn là 3."
+    }
+  },
+  "11260001": {
+    "name": "Thời Khắc Nguyệt Chuyển",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Thiên Địa Hốt Nhiên Thân</strong>, Zibai sẽ chuyển sang chế độ này. Chế độ này tối đa duy trì 15s và mang đặc tính sau:",
+      "1": [
+        "Khi thực hiện Tấn Công Thường và Trọng Kích, sẽ chuyển sang gây <geo>Sát Thương Nguyên Tố Nham</geo> không thể bị thay thế.",
+        "Kỹ Năng Nguyên Tố <strong>Thiên Địa Hốt Nhiên Thân</strong> sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <strong>Linh Câu Phi Đạp</strong>: Khi Zibai có ít nhất 70 điểm <strong>Ánh Sáng Lưu Chuyển</strong>, Zibai có thể tiêu hao 70 điểm Ánh Sáng Lưu Chuyển, thi triển Linh Câu Phi Đạp để gây hai lần <geo>Sát Thương Nguyên Tố Nham</geo>, trong đó sát thương đòn thứ hai được xem là sát thương phản ứng Nguyệt-Kết Tinh."
+      ],
+      "2": "<br/>",
+      "3": "Giới hạn <strong>Ánh Sáng Lưu Chuyển</strong> là 100 điểm, Zibai có thể thông qua những cách thức sau để tích lũy Ánh Sáng Lưu Chuyển:",
+      "4": [
+        "Khi trong chế độ <strong>Thời Khắc Nguyệt Chuyển</strong>, mỗi giây sẽ tích lũy 10 điểm Ánh Sáng Lưu Chuyển.",
+        "Khi Tấn Công Thường trúng kẻ địch, sẽ tích lũy 5 điểm Ánh Sáng Lưu Chuyển, Zibai mỗi 0.5s tối đa tích lũy một lần Ánh Sáng Lưu Chuyển theo cách này."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Nguyệt Triệu - Rực Sáng</strong>",
+      "7": "Khi nhân vật trong đội ở gần kích hoạt phản ứng Nguyệt-Kết Tinh, sẽ tích lũy 35 điểm <strong>Ánh Sáng Lưu Chuyển</strong> cho Zibai, mỗi 4s tối đa tích lũy một lần Ánh Sáng Lưu Chuyển theo cách này. Thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Linh Câu Phi Đạp</strong>, sẽ đặt lại CD tích lũy <strong>Ánh Sáng Lưu Chuyển</strong> theo cách này.",
+      "8": "<br/>",
+      "9": "Sau khi thi triển 4 lần <strong>Linh Câu Phi Đạp</strong> hoặc kết thúc thời gian duy trì, Zibai sẽ thoát chế độ này."
+    }
+  },
+  "11270001": {
+    "name": "Khúc Ca Dạ Oanh",
+    "description": {
+      "0": "Hiệu quả nhận được sau khi Illuga thi triển Kỹ Năng Nộ <strong>Phản Chiếu Vô Hình</strong>, giúp nhân vật trong trận hiện tại tăng <geo>Sát Thương Nguyên Tố Nham</geo> gây ra."
+    }
+  }
+}

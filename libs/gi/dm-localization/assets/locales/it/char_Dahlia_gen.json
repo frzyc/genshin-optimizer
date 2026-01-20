@@ -115,13 +115,13 @@
   "passive1": {
     "name": "Grazia gentile del vento",
     "description": {
-      "0": "Quando i personaggi sotto l'effetto di Grazia di Favonius del Tripudio elementale <strong>Salterio radioso</strong> innescano reazioni di Congelamento sugli avversari, conferiscono a Dahlia 2 accumuli di Benedizione. Quest'effetto può attivarsi una volta ogni 8 s."
+      "0": "Quando i personaggi sotto l'effetto di Grazia di Favonius del Tripudio elementale <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio radioso</tooltip></strong> innescano reazioni di Congelamento sugli avversari, conferiscono a Dahlia 2 accumuli di Benedizione. Quest'effetto può attivarsi una volta ogni 8 s."
     }
   },
   "passive2": {
     "name": "Preghiera di gioia benedetta",
     "description": {
-      "0": "Quando il membro attivo del gruppo è sotto l'effetto di Grazia di Favonius del Tripudio elementale <strong>Salterio radioso</strong>, la sua VEL d'ATT aumenta in base ai PS max di Dahlia. Per ogni 1.000 di PS max, la VEL d'ATT aumenta di uno 0,5%, fino a un 20% massimo."
+      "0": "Quando il membro attivo del gruppo è sotto l'effetto di Grazia di Favonius del Tripudio elementale <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio radioso</tooltip></strong>, la sua VEL d'ATT aumenta in base ai PS max di Dahlia. Per ogni 1.000 di PS max, la VEL d'ATT aumenta di uno 0,5%, fino a un 20% massimo."
     }
   },
   "passive3": {
@@ -134,39 +134,39 @@
   "constellation1": {
     "name": "Processione infallibile",
     "description": {
-      "0": "Ogni volta che Dahlia ottiene 1 accumulo di Benedizione del suo Tripudio elementale <strong>Salterio radioso</strong>, recupera 2,5 di energia elementale."
+      "0": "Ogni volta che Dahlia ottiene 1 accumulo di Benedizione del suo Tripudio elementale <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio radioso</tooltip></strong>, recupera 2,5 di energia elementale."
     }
   },
   "constellation2": {
     "name": "Rivelazione della misericordia",
     "description": {
-      "0": "Dopo che Dahlia ha consumato gli accumuli di Benedizione del suo Tripudio elementale <strong>Salterio radioso</strong> per evocare uno Scudo di Grazia sacra, il personaggio protetto dallo Scudo sopracitato ottiene un 25% di aumento dell'efficacia dello scudo per 12 s."
+      "0": "Dopo che Dahlia ha consumato gli accumuli di Benedizione del suo Tripudio elementale <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio radioso</tooltip></strong> per evocare uno Scudo di Grazia sacra, il personaggio protetto dallo Scudo sopracitato ottiene un 25% di aumento dell'efficacia dello scudo per 12 s."
     }
   },
   "constellation3": {
     "name": "Offertorio del Florvento",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Salterio radioso</strong>.",
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio radioso</tooltip></strong>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation4": {
     "name": "Colletta dell'assemblea",
     "description": {
-      "0": "La Grazia di Favonius ottenuta dal Tripudio elementale di Dahlia, <strong>Salterio radioso</strong>, dura 3 s in più."
+      "0": "La Grazia di Favonius ottenuta dal Tripudio elementale di Dahlia, <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio radioso</tooltip></strong>, dura 3 s in più."
     }
   },
   "constellation5": {
     "name": "Che sobriamente sia così",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Ordinazione immersiva</strong>.",
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Dahlia_gen baseKey18=skill>Ordinazione immersiva</tooltip></strong>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation6": {
     "name": "Partirete con gioia",
     "description": {
-      "0": "La VEL d'ATT del personaggio attivo sotto l'effetto di Grazia di Favonius del Tripudio elementale <strong>Salterio radioso</strong> aumenta di un 10%.",
+      "0": "La VEL d'ATT del personaggio attivo sotto l'effetto di Grazia di Favonius del Tripudio elementale <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio radioso</tooltip></strong> aumenta di un 10%.",
       "1": "Inoltre, quando il personaggio sotto l'effetto di Grazia di Favonius finisce fuori combattimento:",
       "2": [
         " viene rianimato immediatamente;",

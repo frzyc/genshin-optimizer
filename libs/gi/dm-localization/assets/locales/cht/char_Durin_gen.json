@@ -41,7 +41,7 @@
   "skill": {
     "name": "二元式·聚分熔煉",
     "description": {
-      "0": "將靈魂與願望的質料純化，進行<strong>精質轉變</strong>。期間，杜林的元素戰技<strong>二元式·聚分熔煉</strong>將會被替換為特殊的元素戰技<strong>轉變·白化之是</strong>，普通攻擊<strong>芒焰之翼斬</strong>將會被替換為特殊的元素戰技<strong>轉變·黑度之否</strong>。",
+      "0": "將靈魂與願望的質料純化，進行<tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>精質轉變</strong></tooltip>。期間，杜林的元素戰技<strong>二元式·聚分熔煉</strong>將會被替換為特殊的元素戰技<strong>轉變·白化之是</strong>，普通攻擊<strong>芒焰之翼斬</strong>將會被替換為特殊的元素戰技<strong>轉變·黑度之否</strong>。",
       "1": "<br/>",
       "2": "<strong>轉變·白化之是</strong>",
       "3": "對附近的敵人造成一次<pyro>火元素範圍傷害</pyro>，解除精質轉變，並進入<strong>白化之是</strong>狀態，持續30秒。",
@@ -73,7 +73,7 @@
   "burst": {
     "name": "白化法·如光流變",
     "description": {
-      "0": "以不同的方式解放「獸」的力量。依據杜林的<strong>精質轉變</strong>狀態，杜林可以施放不同的元素爆發。",
+      "0": "以不同的方式解放「獸」的力量。依據杜林的<tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>精質轉變</strong></tooltip>狀態，杜林可以施放不同的元素爆發。",
       "1": "<br/>",
       "2": "<strong>白化法·如光流變</strong>",
       "3": "若杜林處於<strong>白化之是</strong>狀態，將施放元素爆發<strong>白化法·如光流變</strong>，對前方的敵人造成三次<pyro>火元素範圍傷害</pyro>，並將自身的力量以<strong>「白焰之龍」</strong>的形態顯現。「白焰之龍」將跟隨目前場上角色，並間歇性攻擊周圍的敵人，造成<pyro>火元素範圍傷害</pyro>，該傷害視為元素爆發傷害。",
@@ -133,7 +133,7 @@
       "0": "完成<strong>魔女的課業·此世之題</strong>後，杜林將成為<strong>魔導</strong>角色。隊伍中編入至少2名魔導角色時，將獲得<strong>魔導·秘儀</strong>效果，使魔導角色獲得強化。",
       "1": "<br/>",
       "2": "<strong>魔導·秘儀</strong>",
-      "3": "除持續時間外，突破天賦<strong>「光靈遵神數顯現」</strong>中的所有效果提升75%。"
+      "3": "除持續時間外，突破天賦<tooltip ns=char_Durin_gen baseKey18=passive1><strong>「光靈遵神數顯現」</strong></tooltip>中的所有效果提升75%。"
     }
   },
   "constellation1": {
@@ -157,20 +157,20 @@
   "constellation3": {
     "name": "焰鏡之顯",
     "description": {
-      "0": "元素爆發<strong>白化法·如光流變</strong>的技能等級提高3級。",
+      "0": "元素爆發<strong><tooltip ns=char_Durin_gen baseKey18=burst>白化法·如光流變</tooltip></strong>的技能等級提高3級。",
       "1": "至多提升至15級。"
     }
   },
   "constellation4": {
     "name": "流溢之原",
     "description": {
-      "0": "杜林造成的元素爆發傷害提升40%。此外，觸發命之座<strong>「紅土之逆」</strong>中消耗<strong>「輪變啟迪」</strong>的效果時，有30%機率不會消耗「輪變啟迪」。"
+      "0": "杜林造成的元素爆發傷害提升40%。此外，觸發命之座<strong><tooltip ns=char_Durin_gen baseKey18=constellation1>「紅土之逆」</tooltip></strong>中消耗<strong>「輪變啟迪」</strong>的效果時，有30%機率不會消耗「輪變啟迪」。"
     }
   },
   "constellation5": {
     "name": "苦火之裂",
     "description": {
-      "0": "元素戰技<strong>二元式·聚分熔煉</strong>的技能等級提高3級。",
+      "0": "元素戰技<strong><tooltip ns=char_Durin_gen baseKey18=skill>二元式·聚分熔煉</tooltip></strong>的技能等級提高3級。",
       "1": "至多提升至15級。"
     }
   },

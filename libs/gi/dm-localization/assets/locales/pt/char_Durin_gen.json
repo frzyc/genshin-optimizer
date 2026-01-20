@@ -41,7 +41,7 @@
   "skill": {
     "name": "Forma Binária: Convergência e Divisão",
     "description": {
-      "0": "Purifica a substância das almas e dos desejos para realizar a <strong>Transmutação Essencial</strong>. Nesse período, a Habilidade Elemental <strong>Forma Binária: Convergência e Divisão</strong> de Durin será substituída pela Habilidade Elemental especial <strong>Conversão: Confirmação da Pureza</strong>, seu Ataque Normal <strong>Golpe da Asa Radiante</strong> será substituído pela sua Habilidade Elemental especial <strong>Conversão: Negação da Escuridão</strong>.",
+      "0": "Purifica a substância das almas e dos desejos para realizar a <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Transmutação Essencial</strong></tooltip>. Nesse período, a Habilidade Elemental <strong>Forma Binária: Convergência e Divisão</strong> de Durin será substituída pela Habilidade Elemental especial <strong>Conversão: Confirmação da Pureza</strong>, seu Ataque Normal <strong>Golpe da Asa Radiante</strong> será substituído pela sua Habilidade Elemental especial <strong>Conversão: Negação da Escuridão</strong>.",
       "1": "<br/>",
       "2": "<strong>Conversão: Confirmação da Pureza</strong>",
       "3": "Causa uma instância de <pyro>Dano Pyro em AdE</pyro> contra os inimigos próximos, remove a Transmutação Essencial e entra no estado <strong>Confirmação da Pureza</strong> por 30s.",
@@ -73,7 +73,7 @@
   "burst": {
     "name": "Princípio da Pureza: Transformação da Luz",
     "description": {
-      "0": "Usa formas diferentes para liberar o poder de uma besta. Durin lança seu Supremo de formas diferentes de acordo com o estado de <strong>Transmutação Essencial</strong>.",
+      "0": "Usa formas diferentes para liberar o poder de uma besta. Durin lança seu Supremo de formas diferentes de acordo com o estado de <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Transmutação Essencial</strong></tooltip>.",
       "1": "<br/>",
       "2": "<strong>Princípio da Pureza: Transformação da Luz</strong>",
       "3": "Se Durin estiver no estado <strong>Confirmação da Pureza</strong>, lançará o Supremo <strong>Princípio da Pureza: Transformação da Luz</strong>, causando 3 instâncias de <pyro>Dano Pyro em AdE</pyro> contra o inimigo em frente, e revelando o poder da forma <strong>Dragão da Chama Branca</strong>. Dragão da Chama Branca acompanha o personagem ativo, e periodicamente ataca os inimigos próximos, causando <pyro>Dano Pyro em AdE</pyro>. Esse Dano é considerado Dano de Supremo.",
@@ -132,7 +132,7 @@
       "0": "Depois de completar <strong>Tarefa da Bruxa: Deste Mundo</strong>, Durin se tornará um personagem <strong>Mágico</strong>. Quando a equipe possuir pelo menos 2 personagens Mágicos, obtém o efeito <strong>Mágico: Ritual Secreto</strong>, fortalecendo os personagens Mágicos.",
       "1": "<br/>",
       "2": "<strong>Mágico: Ritual Secreto</strong>",
-      "3": "O Talento de Ascensão <strong>Luz Manifesta do Cálculo Divino</strong> tem todos os seus efeitos fortalecidos em 75%, exceto sua duração."
+      "3": "O Talento de Ascensão <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Luz Manifesta do Cálculo Divino</strong></tooltip> tem todos os seus efeitos fortalecidos em 75%, exceto sua duração."
     }
   },
   "constellation1": {
@@ -156,20 +156,20 @@
   "constellation3": {
     "name": "Revelação do Espelho Flamejante",
     "description": {
-      "0": "Aumenta o nível do Supremo <strong>Princípio da Pureza: Transformação da Luz</strong> em 3.",
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Durin_gen baseKey18=burst>Princípio da Pureza: Transformação da Luz</tooltip></strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation4": {
     "name": "Fonte de Emanare",
     "description": {
-      "0": "O Dano do Supremo de Durin aumenta em 40%. Além disso, quando ativar efeitos que consomem <strong>Ciclo do Esclarecimento</strong> da Constelação <strong>Redenção de Adamah</strong>, possui 30% de chance de não consumir Ciclo do Esclarecimento."
+      "0": "O Dano do Supremo de Durin aumenta em 40%. Além disso, quando ativar efeitos que consomem <strong>Ciclo do Esclarecimento</strong> da Constelação <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Redenção de Adamah</tooltip></strong>, possui 30% de chance de não consumir Ciclo do Esclarecimento."
     }
   },
   "constellation5": {
     "name": "Rachadura da Chama Furiosa",
     "description": {
-      "0": "Aumenta o nível da Habilidade Elemental <strong>Forma Binária: Convergência e Divisão</strong> em 3 níveis. ",
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Durin_gen baseKey18=skill>Forma Binária: Convergência e Divisão</tooltip></strong> em 3 níveis. ",
       "1": "O nível máximo de elevação é 15."
     }
   },

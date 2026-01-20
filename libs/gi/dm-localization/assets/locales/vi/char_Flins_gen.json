@@ -49,7 +49,7 @@
       ],
       "2": "<br/>",
       "3": "<strong>Thương Trận Bắc Quốc</strong>",
-      "4": "Flins triệu hồi thương trận ở phía trước, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>, đồng thời trong 6s tiếp theo sẽ khiến Kỹ Năng Nộ <strong>Nghi Thức Cổ - Khách Đêm Ghé Thăm</strong> của Flins được thay thế bằng Kỹ Năng Nộ đặc biệt <strong>Giao Hưởng Sấm Sét</strong>.",
+      "4": "Flins triệu hồi thương trận ở phía trước, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>, đồng thời trong 6s tiếp theo sẽ khiến Kỹ Năng Nộ <strong>Nghi Thức Cổ - Khách Đêm Ghé Thăm</strong> của Flins được thay thế bằng Kỹ Năng Nộ đặc biệt <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Giao Hưởng Sấm Sét</strong></tooltip>.",
       "5": "Thời gian chờ cơ bản của <strong>Thương Trận Bắc Quốc</strong> là 6s, và sẽ không bị ảnh hưởng bởi hiệu quả khác."
     },
     "skillParams": {
@@ -148,7 +148,7 @@
   "constellation3": {
     "name": "Khách Lạ Giữa Đêm Khuya",
     "description": {
-      "0": "Cấp kỹ năng <strong>Nghi Thức Cổ - Khách Đêm Ghé Thăm</strong> +3.",
+      "0": "Cấp kỹ năng <tooltip ns=char_Flins_gen baseKey18=burst><strong>Nghi Thức Cổ - Khách Đêm Ghé Thăm</strong></tooltip> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
@@ -156,20 +156,20 @@
     "name": "Đêm Núi Rừng Gào Thét",
     "description": {
       "0": "Flins tăng 20% Tấn Công.",
-      "1": "Ngoài ra, thiên phú <strong>Lời Thì Thầm Của Lửa</strong> được cường hóa: Tăng Tinh Thông Nguyên Tố của Flins, mức tăng tương đương 10% Tấn Công của Flins. Tối đa tăng 220 Tinh Thông Nguyên Tố của Flins thông qua cách này."
+      "1": "Ngoài ra, thiên phú <tooltip ns=char_Flins_gen baseKey18=passive2><strong>Lời Thì Thầm Của Lửa</strong></tooltip> được cường hóa: Tăng Tinh Thông Nguyên Tố của Flins, mức tăng tương đương 10% Tấn Công của Flins. Tối đa tăng 220 Tinh Thông Nguyên Tố của Flins thông qua cách này."
     }
   },
   "constellation5": {
     "name": "Bóng Hình Kẻ Lưu Đày",
     "description": {
-      "0": "Cấp kỹ năng <strong>Lễ Nghi Cổ - Ngọn Đèn Huyền Bí</strong> +3.",
+      "0": "Cấp kỹ năng <tooltip ns=char_Flins_gen baseKey18=skill><strong>Lễ Nghi Cổ - Ngọn Đèn Huyền Bí</strong></tooltip> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation6": {
     "name": "Vũ Khúc Của Cái Chết",
     "description": {
-      "0": "Sát thương phản ứng Nguyệt-Điện Cảm mà Flins gây ra cho kẻ địch <strong>Thăng Tiến</strong> 35%.",
+      "0": "Sát thương phản ứng Nguyệt-Điện Cảm mà Flins gây ra cho kẻ địch <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Thăng Tiến</strong></tooltip> 35%.",
       "1": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Sát thương phản ứng Nguyệt-Điện Cảm của tất cả nhân vật trong đội gần đó gây ra sẽ <strong>Thăng Tiến</strong> 10%."
     }
   }

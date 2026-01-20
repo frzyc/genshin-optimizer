@@ -62,7 +62,7 @@
       "0": "Imitates the combat style of \"The Foul.\" Produces different effects depending on whether you Tap or Hold.",
       "1": "<br/>",
       "2": "<strong>Tap</strong>",
-      "3": "Skirk gains 45 <strong>Serpent's Subtlety</strong> and switches to <strong>Seven-Phase Flash</strong> mode.",
+      "3": "Skirk gains 45 <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Serpent's Subtlety</strong></tooltip> and switches to <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong></tooltip> mode.",
       "4": "<br/>",
       "5": "<strong>Hold</strong>",
       "6": "Skirk gains 45 Serpent's Subtlety and will continuously move at high speed. Her interruption resistance is increased in this state.",
@@ -108,14 +108,14 @@
   "burst": {
     "name": "Havoc: Ruin",
     "description": {
-      "0": "Skirk's Elemental Burst is not reliant on Elemental Energy but instead on <strong>Serpent's Subtlety</strong>.",
+      "0": "Skirk's Elemental Burst is not reliant on Elemental Energy but instead on <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Serpent's Subtlety</strong></tooltip>.",
       "1": "When Skirk has at least 50 Serpent's Subtlety, she can expend all her Serpent's Subtlety to unleash her Elemental Burst, ripping the space before her apart and using rapid consecutive slashes that deal <cryo>AoE Cryo DMG</cryo>. At the same time, the DMG dealt by an instance of this Elemental Burst will be increased by every point of Serpent's Subtlety over 50 when it is unleashed. Up to 12 points can be counted for this purpose.",
       "2": "<br/>",
-      "3": "When Skirk is in <strong>Seven-Phase Flash</strong> mode, Havoc: Ruin will be replaced by Havoc: Extinction.",
+      "3": "When Skirk is in <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong></tooltip> mode, Havoc: Ruin will be replaced by Havoc: Extinction.",
       "4": "<br/>",
       "5": "<strong>Havoc: Extinction</strong>",
       "6": "A special Elemental Burst that can be used even without consuming Serpent's Subtlety.",
-      "7": "After using it, Skirk will gain the \"All Shall Wither\" effect, which will last until Seven-Phase Flash ends. After unlocking the Ascension Talent <strong>Reason Beyond Reason</strong>, she can also absorb nearby Void Rifts.",
+      "7": "After using it, Skirk will gain the \"All Shall Wither\" effect, which will last until Seven-Phase Flash ends. After unlocking the Ascension Talent <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Reason Beyond Reason</strong></tooltip>, she can also absorb nearby Void Rifts.",
       "8": "While \"All Shall Wither\" is active, every 0.1s, after Skirk's Normal Attack hits an opponent, that Normal Attack will deal increased DMG. If she absorbed any Void Rifts while using <strong>Havoc: Extinction</strong>, this Normal Attack's DMG will be further increased based on the number of Rifts absorbed.",
       "9": "This effect will be canceled when it has triggered 10 times."
     },
@@ -163,12 +163,12 @@
       "1": "<br/>",
       "2": "Skirk can use the following methods to absorb nearby Void Rifts:",
       "3": [
-        " When she hits an opponent with a Charged Attack in her <strong>Seven-Phase Flash</strong> mode.",
+        " When she hits an opponent with a Charged Attack in her <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong></tooltip> mode.",
         " When she uses the special Elemental Burst <strong>Havoc: Extinction</strong> while in Seven-Phase Flash mode.",
         " When she Holds her Elemental Skill <strong>Havoc: Warp</strong> to engage in rapid movement."
       ],
       "4": "<br/>",
-      "5": "Each Rift absorbed will grant her 8 <strong>Serpent's Subtlety</strong> points."
+      "5": "Each Rift absorbed will grant her 8 <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Serpent's Subtlety</strong></tooltip> points."
     }
   },
   "passive2": {
@@ -176,7 +176,7 @@
     "description": {
       "0": "When nearby <hydro>Hydro</hydro> party members' <hydro>Hydro</hydro> attacks hit opponents, or when nearby <cryo>Cryo</cryo> party members apart from Skirk hit opponents with <cryo>Cryo</cryo> attacks, Skirk will gain the \"Death's Crossing\" effect for 20s. Max 3 stacks, each stack's duration is counted independently.",
       "1": "Each character can grant Skirk at most 1 \"Death's Crossing\" stack by this means.",
-      "2": "Each \"Death's Crossing\" stack increases the Normal Attack DMG dealt by Skirk in <strong>Seven-Phase Flash</strong> mode to 110%/120%/170% of its original DMG and the DMG dealt when using her Elemental Burst <strong>Havoc: Ruin</strong> to 105%/115%/160% of its original DMG."
+      "2": "Each \"Death's Crossing\" stack increases the Normal Attack DMG dealt by Skirk in <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong></tooltip> mode to 110%/120%/170% of its original DMG and the DMG dealt when using her Elemental Burst <strong>Havoc: Ruin</strong> to 105%/115%/160% of its original DMG."
     }
   },
   "passive3": {
@@ -188,43 +188,43 @@
   "constellation1": {
     "name": "Far to Fall",
     "description": {
-      "0": "Enhances the effects of the Ascension Talent <strong>Reason Beyond Reason</strong>: Every Void Rift absorbed will summon a crystal blade to attack nearby opponents, dealing 500% of Skirk's ATK as <cryo>Cryo DMG</cryo>. This DMG is considered Charged Attack DMG.",
+      "0": "Enhances the effects of the Ascension Talent <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Reason Beyond Reason</strong></tooltip>: Every Void Rift absorbed will summon a crystal blade to attack nearby opponents, dealing 500% of Skirk's ATK as <cryo>Cryo DMG</cryo>. This DMG is considered Charged Attack DMG.",
       "1": "You must first unlock the Ascension Talent Reason Beyond Reason."
     }
   },
   "constellation2": {
     "name": "Into the Abyss",
     "description": {
-      "0": "After unleashing her Elemental Skill <strong>Havoc: Warp</strong>, Skirk will gain 10 additional <strong>Serpent's Subtlety</strong> points.",
+      "0": "After unleashing her Elemental Skill <strong>Havoc: Warp</strong>, Skirk will gain 10 additional <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Serpent's Subtlety</strong></tooltip> points.",
       "1": "When using her Elemental Burst <strong>Havoc: Ruin</strong>, the DMG of this Elemental Burst instance will be increased by taking up to 10 more Serpent's Subtlety points into account.",
-      "2": "Additionally, within 12.5s after Skirk unleashes the special Elemental Burst <strong>Havoc: Extinction</strong> while in her <strong>Seven-Phase Flash</strong> mode, her ATK is increased by 70%. This effect will be canceled when she leaves the Seven-Phase Flash mode."
+      "2": "Additionally, within 12.5s after Skirk unleashes the special Elemental Burst <strong>Havoc: Extinction</strong> while in her <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong></tooltip> mode, her ATK is increased by 70%. This effect will be canceled when she leaves the Seven-Phase Flash mode."
     }
   },
   "constellation3": {
     "name": "Serendipitous Sin",
     "description": {
-      "0": "Increases the Level of <strong>Havoc: Ruin</strong> by 3.",
+      "0": "Increases the Level of <tooltip ns=char_Skirk_gen baseKey18=burst><strong>Havoc: Ruin</strong></tooltip> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
     "name": "Fractured Flow",
     "description": {
-      "0": "Enhances the effects of the Ascension Talent <strong>Return to Oblivion</strong>: Each Death's Crossing stack also increases Skirk's ATK by 10%/20%/40%.",
+      "0": "Enhances the effects of the Ascension Talent <tooltip ns=tooltips_gen baseKey18=11130008 values=[]><strong>Return to Oblivion</strong></tooltip>: Each Death's Crossing stack also increases Skirk's ATK by 10%/20%/40%.",
       "1": "You must first unlock the Ascension Talent Return to Oblivion."
     }
   },
   "constellation5": {
     "name": "End of Wishes",
     "description": {
-      "0": "Increases the Level of <strong>Havoc: Warp</strong> by 3.",
+      "0": "Increases the Level of <tooltip ns=char_Skirk_gen baseKey18=skill><strong>Havoc: Warp</strong></tooltip> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
     "name": "To the Source",
     "description": {
-      "0": "Each Void Rift Skirk absorbs via the effects of the Ascension Talent <strong>Reason Beyond Reason</strong> will grant her 1 Havoc: Sever stack. She can consume such stacks to initiate coordinated attacks and decrease the DMG she takes while in <strong>Seven-Phase Flash</strong> mode. These stacks last for 15s, and each stack's duration is counted independently (max 3 stacks).",
+      "0": "Each Void Rift Skirk absorbs via the effects of the Ascension Talent <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Reason Beyond Reason</strong></tooltip> will grant her 1 Havoc: Sever stack. She can consume such stacks to initiate coordinated attacks and decrease the DMG she takes while in <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong></tooltip> mode. These stacks last for 15s, and each stack's duration is counted independently (max 3 stacks).",
       "1": "You must first unlock the Ascension Talent \"Reason Beyond Reason.\"",
       "2": "<br/>",
       "3": "<strong>Havoc: Sever</strong>",

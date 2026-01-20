@@ -162,7 +162,7 @@
         " Esse efeito pode ser acumulado até 4 vezes;"
       ],
       "2": "<br/>",
-      "3": "Além disso, quando Albedo estiver em segundo plano e atingir 4 Acúmulos de Julgamento Fatal, todos os Acúmulos serão consumidos, gerando 3 Flores Fatais próximas ao Personagem em campo, que florescerão violentamente e causarão <geo>Dano Geo em uma AdE</geo>. Esse Dano é baseado em 300% da DEF de Albedo e é considerado como Dano de Supremo. Após desbloquear o Talento Passivo <strong>Sabedoria em Uma Garrafa</strong>, esse Talento também será ativado, aumentando a Proficiência Elemental dos Personagens próximos da equipe em 125 pontos por 10 segundos."
+      "3": "Além disso, quando Albedo estiver em segundo plano e atingir 4 Acúmulos de Julgamento Fatal, todos os Acúmulos serão consumidos, gerando 3 Flores Fatais próximas ao Personagem em campo, que florescerão violentamente e causarão <geo>Dano Geo em uma AdE</geo>. Esse Dano é baseado em 300% da DEF de Albedo e é considerado como Dano de Supremo. Após desbloquear o Talento Passivo <strong><tooltip ns=char_Albedo_gen baseKey18=passive2>Sabedoria em Uma Garrafa</strong></tooltip>, esse Talento também será ativado, aumentando a Proficiência Elemental dos Personagens próximos da equipe em 125 pontos por 10 segundos."
     }
   },
   "constellation3": {
@@ -196,7 +196,7 @@
     },
     "upgradedDescription": {
       "0": "Quando o Personagem em campo da equipe estiver dentro da Área da Radiação Solar e sob a proteção de um Escudo gerado por uma Reação de Cristalização, ou quando houver uma Jaula Lunar na área de Radiação Solar, o Dano causado será aumentado em 17%.",
-      "1": "Além disso, ao usar o Supremo <strong>Ritual da Progenitura - Maré Tectônica</strong>, todas as Aurelitas em campo serão destruídas; ao destruí-las dessa forma, o Supremo será considerado como se tivesse consumido 4 Acúmulos de Julgamento Fatal da Constelação <strong>Éon da Vida</strong>, e durante os 20 segundos seguintes, o Dano causado pelas Flores Fatais será aumentado em um Valor equivalente a 250% da DEF de Albedo."
+      "1": "Além disso, ao usar o Supremo <strong>Ritual da Progenitura - Maré Tectônica</strong>, todas as Aurelitas em campo serão destruídas; ao destruí-las dessa forma, o Supremo será considerado como se tivesse consumido 4 Acúmulos de Julgamento Fatal da Constelação {LINK#TE382}<strong>Éon da Vida</strong></tooltip>, e durante os 20 segundos seguintes, o Dano causado pelas Flores Fatais será aumentado em um Valor equivalente a 250% da DEF de Albedo."
     }
   }
 }

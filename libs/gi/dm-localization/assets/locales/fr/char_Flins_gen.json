@@ -49,7 +49,7 @@
       ],
       "2": "<br/>",
       "3": "<strong>Lances du nord</strong>",
-      "4": "Flins invoque une salve de lances devant lui, infligeant des <electro>DGT Électro de zone</electro> et remplaçant son déchaînement élémentaire <strong>Rituel ancien : Visite de la nuit</strong> par le déchaînement élémentaire spécial <strong>Symphonie tonitruante</strong> pendant 6 s.",
+      "4": "Flins invoque une salve de lances devant lui, infligeant des <electro>DGT Électro de zone</electro> et remplaçant son déchaînement élémentaire <strong>Rituel ancien : Visite de la nuit</strong> par le déchaînement élémentaire spécial <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Symphonie tonitruante</strong></tooltip> pendant 6 s.",
       "5": "Le TdR de base de <strong>Lances du nord</strong> est de 6 s, ce TdR n'étant pas affecté par d'autres effets."
     },
     "skillParams": {
@@ -148,7 +148,7 @@
   "constellation3": {
     "name": "Étranger dans la nuit",
     "description": {
-      "0": "Niveau d'aptitude <strong>Rituel ancien : Visite de la nuit</strong> +3.",
+      "0": "Niveau d'aptitude <tooltip ns=char_Flins_gen baseKey18=burst><strong>Rituel ancien : Visite de la nuit</strong></tooltip> +3.",
       "1": "Niveau max : 15"
     }
   },
@@ -156,20 +156,20 @@
     "name": "Nuit sur la montagne nue",
     "description": {
       "0": "L'ATQ de Flins augmente de 20 %.",
-      "1": "De plus, son aptitude d'élévation <strong>« Murmure de flamme »</strong> est renforcée : la maîtrise élémentaire de Flins augmente d'une valeur équivalant à 10 % de son ATQ, la maîtrise élémentaire pouvant être augmentée d'un maximum de 220 pts de cette manière."
+      "1": "De plus, son aptitude d'élévation <tooltip ns=char_Flins_gen baseKey18=passive2><strong>« Murmure de flamme »</strong></tooltip> est renforcée : la maîtrise élémentaire de Flins augmente d'une valeur équivalant à 10 % de son ATQ, la maîtrise élémentaire pouvant être augmentée d'un maximum de 220 pts de cette manière."
     }
   },
   "constellation5": {
     "name": "Ombre de l'exilé",
     "description": {
-      "0": "Niveau d'aptitude <strong>Rite ancien : Lumière d'arcane</strong> +3.",
+      "0": "Niveau d'aptitude <tooltip ns=char_Flins_gen baseKey18=skill><strong>Rite ancien : Lumière d'arcane</strong></tooltip> +3.",
       "1": "Niveau max : 15"
     }
   },
   "constellation6": {
     "name": "Ballets et chants de la mort",
     "description": {
-      "0": "Les DGT infligés aux ennemis par les réactions de Sélénocution de Flins bénéficient d'une <strong>élévation</strong> de 35 %.",
+      "0": "Les DGT infligés aux ennemis par les réactions de Sélénocution de Flins bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 35 %.",
       "1": "<strong>Signelune « Lueur ascendante »</strong> : les DGT infligés par les réactions de Sélénocution de tous les personnages de l'équipe à proximité bénéficient d'une <strong>élévation</strong> de 10 %."
     }
   }

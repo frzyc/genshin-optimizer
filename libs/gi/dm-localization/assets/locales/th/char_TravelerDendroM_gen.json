@@ -113,7 +113,7 @@
   "lockedPassive": {
     "name": "Foreign Verdalume",
     "description": {
-      "0": "ดูดซับพลังใหม่จากการเดินทางที่ผ่านมา เมื่อทำการสั่นพ้องกับธาตุแต่ละชนิด จะได้รับ<strong>เอฟเฟกต์เสริมพลัง</strong>เพิ่มเติม",
+      "0": "ดูดซับพลังใหม่จากการเดินทางที่ผ่านมา เมื่อทำการสั่นพ้องกับธาตุแต่ละชนิด จะได้รับ<tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>เอฟเฟกต์เสริมพลัง</strong></tooltip>เพิ่มเติม",
       "1": "<br/>",
       "2": "นอกจากนี้ เมื่อ Dendro Core (รวมถึง Bountiful Core และ Seeds of Deceit) เกิดขึ้นในบริเวณใกล้เคียงในสนาม หรือเมื่อทีมได้รับหยาดพฤกษา นักเดินทางจะได้รับ Blade of Verdant Viridis 1 ชั้น โดยนักเดินทางสามารถรับ Blade of Verdant Viridis ด้วยสองวิธีข้างต้นได้สูงสุด 1 ชั้นในทุก 4 วินาที และซ้อนทับได้มากสุด 3 ชั้น เมื่อมี Blade of Verdant Viridis 3 ชั้น และทำการชาร์จโจมตี จะใช้ Blade of Verdant Viridis ทั้งหมด เพื่อเปลี่ยนเป็น<strong>ชาร์จโจมตี: Verdessence</strong>",
       "3": "<br/>",

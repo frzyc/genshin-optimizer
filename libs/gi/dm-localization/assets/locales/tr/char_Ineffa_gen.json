@@ -41,7 +41,7 @@
   "skill": {
     "name": "Temizlik Modu: Taşıyıcı Frekans",
     "description": {
-      "0": "Ineffa Gelişmiş Temizleme Modülünü devreye alır, yakındaki düşmanlara tek seferlik <electro>Elektrik Alan Hasarı</electro> vererek Optik Akış Bariyer Kalkanını etkinleştirir ve Çok Amaçlı Akıllı Destek Ünitesi <strong>Birgitta'yı</strong> çağırır.",
+      "0": "Ineffa Gelişmiş Temizleme Modülünü devreye alır, yakındaki düşmanlara tek seferlik <electro>Elektrik Alan Hasarı</electro> vererek Optik Akış Bariyer Kalkanını etkinleştirir ve Çok Amaçlı Akıllı Destek Ünitesi <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta'yı</strong></tooltip> çağırır.",
       "1": "Optik Akış Bariyer Kalkanı, Ineffa'nın Saldırısına göre alınan Hasarı emer ve <electro>Elektrik Hasarını</electro> %250 verimlilikle emer."
     },
     "skillParams": {
@@ -66,7 +66,7 @@
   "burst": {
     "name": "Üstün Talimat: İmha Edici Kasırga",
     "description": {
-      "0": "Ineffa, Çok Amaçlı Akıllı Destek Ünitesi <strong>Birgitta</strong> aracılığıyla Roket Yumrukları kullanarak düşmanları hızlıca temizler! Ineffa, Birgitta'yı çağırarak <electro>Elektrik Alan Hasarı</electro> verir ve savaş alanında kalmasını sağlar.",
+      "0": "Ineffa, Çok Amaçlı Akıllı Destek Ünitesi <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip> aracılığıyla Roket Yumrukları kullanarak düşmanları hızlıca temizler! Ineffa, Birgitta'yı çağırarak <electro>Elektrik Alan Hasarı</electro> verir ve savaş alanında kalmasını sağlar.",
       "1": "<br/>",
       "2": "Eğer Ineffa, Birgitta'yı zaten çağırmışsa ve Birgitta savaş alanındaysa bu Beceri onu hedeflenen yerde tekrar çağırır ve süresini yeniden başlatır."
     },
@@ -92,13 +92,13 @@
   "passive1": {
     "name": "Hız Aşırtma Modülü",
     "description": {
-      "0": "<strong>Birgitta</strong> Elektrik Akımı saldırıları yaptığında yakında Ay Yüklü tepkimeleri ile oluşan şimşek bulutları varsa ek bir saldırı daha yapar ve Ineffa'nın Saldırısının %65'i kadar <electro>Elektrik Alan Hasarı</electro> verir. Bu Hasar, Ay Yüklü Hasarı sayılır."
+      "0": "<tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip> Elektrik Akımı saldırıları yaptığında yakında Ay Yüklü tepkimeleri ile oluşan şimşek bulutları varsa ek bir saldırı daha yapar ve Ineffa'nın Saldırısının %65'i kadar <electro>Elektrik Alan Hasarı</electro> verir. Bu Hasar, Ay Yüklü Hasarı sayılır."
     }
   },
   "passive2": {
     "name": "Panoramik Permütasyon Protokolü",
     "description": {
-      "0": "Ineffa <strong>Üstün Talimat: İmha Edici Kasırga</strong> Element Patlamasını kullandığında tüm grup üyeleri Parametre Permütasyonu etkisi kazanır: 20sn boyunca Ineffa ve aktif grup üyelerinin Element Ustalığı, Ineffa'nın Saldırısının %6'sı kadar artar."
+      "0": "Ineffa <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Üstün Talimat: İmha Edici Kasırga</tooltip></strong> Element Patlamasını kullandığında tüm grup üyeleri Parametre Permütasyonu etkisi kazanır: 20sn boyunca Ineffa ve aktif grup üyelerinin Element Ustalığı, Ineffa'nın Saldırısının %6'sı kadar artar."
     }
   },
   "passive3": {
@@ -126,14 +126,14 @@
   "constellation2": {
     "name": "Temizlik Destek Modülü",
     "description": {
-      "0": "<strong>Üstün Talimat: İmha Edici Kasırga</strong> Element Patlaması düşmanlara isabet ettikten sonra düşmanlardan birine Ceza Hükmü durumu uygular: Kısa bir beklemenin ardından veya düşman yenildiğinde yakındaki düşmanlar, Ineffa'nın Saldırısının %300'ü kadar <electro>Elektrik Alan Hasarı</electro> alır. Bu Hasar, Ay Yüklü Hasarı sayılır.",
+      "0": "<strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Üstün Talimat: İmha Edici Kasırga</tooltip></strong> Element Patlaması düşmanlara isabet ettikten sonra düşmanlardan birine Ceza Hükmü durumu uygular: Kısa bir beklemenin ardından veya düşman yenildiğinde yakındaki düşmanlar, Ineffa'nın Saldırısının %300'ü kadar <electro>Elektrik Alan Hasarı</electro> alır. Bu Hasar, Ay Yüklü Hasarı sayılır.",
       "1": "Ayrıca <strong>Üstün Talimat: Kasırga İmha Edici</strong> Element Patlaması kullanıldığında yakındaki grup üyeleri Optik Akış Bariyer Kalkanı kazanır."
     }
   },
   "constellation3": {
     "name": "Gelişmiş Duygu Emülasyonu",
     "description": {
-      "0": "<strong>Temizlik Modu: Taşıyıcı Frekans</strong> Seviyesini 3 artırır.",
+      "0": "<strong><tooltip ns=char_Ineffa_gen baseKey18=skill>Temizlik Modu: Taşıyıcı Frekans</tooltip></strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -146,7 +146,7 @@
   "constellation5": {
     "name": "Aynanın Ötesindeki Rüya",
     "description": {
-      "0": "<strong>Üstün Talimat: İmha Edici Kasırga</strong> Seviyesini 3 artırır.",
+      "0": "<strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Üstün Talimat: İmha Edici Kasırga</tooltip></strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

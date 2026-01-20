@@ -41,7 +41,7 @@
   "skill": {
     "name": "İkili Form: Birleşme ve Ayrılma",
     "description": {
-      "0": "Ruhların ve dileklerin özünü saflaştırarak <strong>Temel Dönüşüm</strong> geçirir. Dönüşüm sırasında Durin'in <strong>İkili Form: Birleşme ve Ayrılma</strong> Element Becerisi, <strong>Dönüşüm: Saflığın Kabulü</strong> özel Element Becerisi olarak değişir. <strong>Parlak Kanat Darbesi</strong> Normal Saldırısı ise <strong>Dönüşüm: Karanlığın Reddi</strong> özel Element Becerisi olarak değişir.",
+      "0": "Ruhların ve dileklerin özünü saflaştırarak <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Temel Dönüşüm</strong></tooltip> geçirir. Dönüşüm sırasında Durin'in <strong>İkili Form: Birleşme ve Ayrılma</strong> Element Becerisi, <strong>Dönüşüm: Saflığın Kabulü</strong> özel Element Becerisi olarak değişir. <strong>Parlak Kanat Darbesi</strong> Normal Saldırısı ise <strong>Dönüşüm: Karanlığın Reddi</strong> özel Element Becerisi olarak değişir.",
       "1": "<br/>",
       "2": "<strong>Dönüşüm: Saflığın Kabulü</strong>",
       "3": "Yakındaki düşmanlara 1 defa <pyro>Ateş Alan Hasarı</pyro> verir, Temel Dönüşümü tersine çevirir ve 30 saniyeliğine <strong>Saflığın Kabulü</strong> durumuna girer.",
@@ -73,7 +73,7 @@
   "burst": {
     "name": "Saflık İlkesi: Değişen Işık Misali",
     "description": {
-      "0": "\"Canavar\"ın gücünü farklı şekillerde ortaya çıkar. Durin, <strong>Temel Dönüşüm</strong> durumuna bağlı olarak farklı Element Patlamaları kullanabilir.",
+      "0": "\"Canavar\"ın gücünü farklı şekillerde ortaya çıkar. Durin, <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Temel Dönüşüm</strong></tooltip> durumuna bağlı olarak farklı Element Patlamaları kullanabilir.",
       "1": "<br/>",
       "2": "<strong>Saflık İlkesi: Değişen Işık Misali</strong>",
       "3": "Durin, <strong>Saflığın Kabulü</strong> durumundayken <strong>Saflık İlkesi: Değişen Işık Misali</strong> Element Patlamasını kullanarak önündeki düşmanlara 3 defa <pyro>Ateş Alan Hasarı</pyro> verir ve gücünü <strong>Beyaz Alev Ejderhası</strong> formunda ortaya çıkarır. Beyaz Alev Ejderhası mevcut aktif karakteri takip eder ve belirli aralıklarla yakındaki düşmanlara saldırarak <pyro>Ateş Alan Hasarı</pyro> verir. Bu Hasar Element Patlaması Hasarı sayılır.",
@@ -133,7 +133,7 @@
       "0": "<strong>Cadının Ödevi: Bu Dünyaya Ait</strong> tamamlandıktan sonra Durin bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini güçlendiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
       "1": "<br/>",
       "2": "<strong>Cadılık: Saklı Ayin</strong>",
-      "3": "<strong>Kutsal Hesabın Işık Tezahürü</strong> Yükseltme Yeteneğinin süresi hariç tüm etkilerini %75 artırır."
+      "3": "<tooltip ns=char_Durin_gen baseKey18=passive1><strong>Kutsal Hesabın Işık Tezahürü</strong></tooltip> Yükseltme Yeteneğinin süresi hariç tüm etkilerini %75 artırır."
     }
   },
   "constellation1": {
@@ -157,20 +157,20 @@
   "constellation3": {
     "name": "Alev Aynasındaki Hakikat",
     "description": {
-      "0": "<strong>Saflık İlkesi: Değişen Işık Misali</strong> Seviyesini 3 arttırır.",
+      "0": "<strong><tooltip ns=char_Durin_gen baseKey18=burst>Saflık İlkesi: Değişen Işık Misali</tooltip></strong> Seviyesini 3 arttırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
   "constellation4": {
     "name": "Taşkının Kaynağı",
     "description": {
-      "0": "Durin'in Element Patlaması Hasarı %40 artar. Ayrıca, <strong>Adamah'nın Kurtuluşu</strong> Takımyıldızına bağlı olarak <strong>Aydınlanma Döngüsü</strong> kademesi tüketen etkiler tetiklendiğinde %30 ihtimalle Aydınlanma Döngüsü kademesi tüketilmeyebilir."
+      "0": "Durin'in Element Patlaması Hasarı %40 artar. Ayrıca, <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Adamah'nın Kurtuluşu</tooltip></strong> Takımyıldızına bağlı olarak <strong>Aydınlanma Döngüsü</strong> kademesi tüketen etkiler tetiklendiğinde %30 ihtimalle Aydınlanma Döngüsü kademesi tüketilmeyebilir."
     }
   },
   "constellation5": {
     "name": "Yakıcı Alevlerin Parçalanışı",
     "description": {
-      "0": "<strong>İkili Form: Birleşme ve Ayrılma</strong> Seviyesini 3 artırır.",
+      "0": "<strong><tooltip ns=char_Durin_gen baseKey18=skill>İkili Form: Birleşme ve Ayrılma</tooltip></strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
