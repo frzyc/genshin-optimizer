@@ -1,7 +1,11 @@
+import { useTranslation } from 'react-i18next'
+
 export function Set2Display() {
-  return '2-Set' // TODO: L10n
+  const { t } = useTranslation('optimize')
+  return <>{t('set2')}</>
 }
 
 export function Set4Display() {
-  return '4-Set' // TODO: L10n
+  const { t } = useTranslation('optimize')
+  return <>{t('set4')}</>
 }

@@ -1,0 +1,347 @@
+{
+  "name": "艾莲",
+  "fullName": "Ellen Joe",
+  "basic": {
+    "BasicAttackSawTeethTrimming": {
+      "name": "普通攻击：利齿修剪法",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多三段的攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "第三段攻击期间，连点或长按 <IconNormal /> 可以延长招式的持续时间。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackFlashFreezeTrimming": {
+      "name": "普通攻击：急冻修剪法",
+      "desc": {
+        "0": "激活<ct color=#FFFFFF>[急冻]</ct>效果后，点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多三段的攻击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "每段攻击消耗1点<ct color=#FFFFFF>[急冻充能]</ct>；",
+        "3": "第三段攻击期间，连点或长按 <IconNormal /> 可以延长招式的持续时间。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackGlacialBladeWave": {
+      "name": "普通攻击：冰刃浪",
+      "desc": {
+        "0": "第三段<ct color=#FFFFFF>[普通攻击：急冻修剪法]</ct>、<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>蓄力剪击、<ct color=#FFFFFF>[闪避反击：暗礁]</ct>和<ct color=#FFFFFF>[快速支援]</ct>发动后，若艾莲拥有<ct color=#FFFFFF>[急冻充能]</ct>，点按 <IconNormal /> 可以发动<ct color=#FFFFFF>[普通攻击：冰刃浪]</ct>，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "1": "招式消耗2点<ct color=#FFFFFF>[急冻充能]</ct>;",
+        "2": "招式发动后，可直接衔接第三段<ct color=#FFFFFF>[普通攻击]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit "
+      ]
+    },
+    "BasicAttackIcyBlade": {
+      "name": "普通攻击：霜锋",
+      "desc": {
+        "0": "第三段<ct color=#FFFFFF>[普通攻击：急冻修剪法]</ct>、<ct color=#FFFFFF>[强化特殊技：鲨卷风]</ct>、<ct color=#FFFFFF>[闪避反击：暗礁]</ct>和<ct color=#FFFFFF>[支援突击]</ct>发动后，将自动发动<ct color=#FFFFFF>[普通攻击：霜锋]</ct>，对前方大范围敌人造成多段<ct color=#98EFF0>冰属性伤害</ct>，且对中/大体型的敌人会分别额外造成多段<ct color=#98EFF0>冰属性伤害</ct>；",
+        "1": "招式发动后，艾莲将获得<ct color=#FFFFFF>[快蓄]</ct>效果；",
+        "2": "<ct color=#FFFFFF>[普通攻击：霜锋]</ct>不影响原本招式派生;",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "to Small Enemies ",
+        "to Medium Enemies ",
+        "to Large Enemies "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeVortex": {
+      "name": "闪避：涡漩",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "触发<ct color=#FFFFFF>[极限闪避]</ct>时，艾莲将获得<ct color=#FFFFFF>[快蓄]</ct>效果，缩短<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>的蓄力时间，最多持续5秒或触发一次。"
+      },
+      "params": []
+    },
+    "DashRoamingHunt": {
+      "name": "冲刺：狩猎巡游",
+      "desc": {
+        "0": "长按或双击 <IconEvade /> 发动：",
+        "1": "进入<ct color=#FFFFFF>[巡游]</ct>状态，快速冲刺移动；",
+        "2": "在<ct color=#FFFFFF>[巡游]</ct>状态下使用{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}控制方向，松开{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}则会停下；",
+        "3": "招式发动瞬间拥有短暂的无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackArcticAmbush": {
+      "name": "冲刺攻击：冰渊潜袭",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[巡游]</ct>状态下，点按 <IconNormal /> 发动：",
+        "1": "对敌人进行回旋斩击，随后拉开剪刀，发动快速剪击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "快速剪击命中时，获得1点<ct color=#FFFFFF>[急冻充能]</ct>。",
+        "3": "",
+        "4": "在<ct color=#FFFFFF>[巡游]</ct>状态下，长按 <IconNormal /> 发动：",
+        "5": "对敌人进行回旋斩击，随后拉开剪刀，发动蓄力剪击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "6": "蓄力剪击命中时，获得3点<ct color=#FFFFFF>[急冻充能]</ct>，若敌人处于<ct color=#98EFF0>[冻结]</ct>状态下，则必定触发<ct color=#98EFF0>[碎冰]</ct>效果；",
+        "7": "招式蓄力期间抗打断等级提升，受到的伤害降低40%；",
+        "8": "招式蓄力期间受到敌人伤害时，可以免疫该次伤害，并立即完成蓄力；",
+        "9": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Spinning Slash ",
+        "Swift Scissors ",
+        "Charged Scissors ",
+        "快速剪击获得急冻充能",
+        "蓄力剪击获得急冻充能"
+      ]
+    },
+    "FlashFreeze": {
+      "name": "急冻",
+      "desc": "拥有<ct color=#FFFFFF>[急冻充能]</ct>时，将激活<ct color=#FFFFFF>[急冻]</ct>效果；激活<ct color=#FFFFFF>[急冻]</ct>效果后，<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[冲刺攻击]</ct>将消耗<ct color=#FFFFFF>[急冻充能]</ct>，造成大量<ct color=#98EFF0>冰属性伤害</ct>；艾莲最多可以拥有6点<ct color=#FFFFFF>[急冻充能]</ct>。",
+      "params": []
+    },
+    "DashAttackMonstrousWave": {
+      "name": "冲刺攻击：骇浪",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行突进斩击，造成<ct color=#F0D12B>物理伤害</ct>；"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DashAttackColdSnap": {
+      "name": "冲刺攻击：寒潮",
+      "desc": {
+        "0": "激活<ct color=#FFFFFF>[急冻]</ct>效果后，闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行突进斩击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "消耗1点<ct color=#FFFFFF>[急冻充能]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterReefRock": {
+      "name": "闪避反击：暗礁",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "快速穿过敌人，拉开剪刀进行剪击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackDrift": {
+      "name": "特殊技：摆尾",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方进行快速甩尾攻击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackTailSwipe": {
+      "name": "强化特殊技：横扫",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方进行强力甩尾攻击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "命中敌人时，获得1点<ct color=#FFFFFF>[急冻充能]</ct>；",
+        "3": "招式发动期间拥有无敌效果；",
+        "4": "招式发动后，可直接衔接第三段<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    },
+    "EXSpecialAttackSharknami": {
+      "name": "强化特殊技：鲨卷风",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[强化特殊技：横扫]</ct>发动后，能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方进行强力连续斩击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "命中敌人时，获得1点<ct color=#FFFFFF>[急冻充能]</ct>；",
+        "3": "招式发动期间拥有无敌效果；",
+        "4": "招式发动后，可直接衔接第三段<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackAvalanche": {
+      "name": "连携技：雪崩",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "从空中下砸并生成一阵冰风暴，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateEndlessWinter": {
+      "name": "终结技：永冬狂宴",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "从空中下砸并生成一阵冰风暴，随后使用剪刀进行强力一击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistSharkSentinel": {
+      "name": "快速支援：护卫鲛",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "快速穿过敌人，拉开剪刀进行剪击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。",
+        "3": "当前操作中的角色被击飞时，拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，点按 <IconSwitch /> 发动：",
+        "4": "进入<ct color=#FFFFFF>[巡游]</ct>状态，快速冲刺移动；",
+        "5": "在<ct color=#FFFFFF>[巡游]</ct>状态下使用{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}控制方向，松开{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}则会停下；",
+        "6": "招式发动瞬间拥有短暂的无敌效果。",
+        "7": "发动<ct color=#FFFFFF>[快速支援]</ct>时，艾莲将获得<ct color=#FFFFFF>[快蓄]</ct>效果，缩短<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>的蓄力时间，最多持续5秒或触发一次。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistWavefrontImpact": {
+      "name": "招架支援：迎头浪",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpSharkCruiser": {
+      "name": "支援突击：巡洋鲨",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动突进斩击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式攻击期间，连点或长按 <IconNormal /> 可以延长招式的持续时间；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：凌牙厉齿",
+    "desc": [
+      {
+        "0": "艾莲在<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>中发动蓄力剪击，或消耗<ct color=#FFFFFF>[急冻充能]</ct>发动<ct color=#FFFFFF>[普通攻击：急冻修剪法]</ct>时，招式的暴击伤害提升<ct color=#2BAD00>50%</ct>；",
+        "1": "上述效果对<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[普通攻击：霜锋]</ct>和<ct color=#FFFFFF>[普通攻击：冰刃浪]</ct>同样生效。"
+      },
+      {
+        "0": "艾莲在<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>中发动蓄力剪击，或消耗<ct color=#FFFFFF>[急冻充能]</ct>发动<ct color=#FFFFFF>[普通攻击：急冻修剪法]</ct>时，招式的暴击伤害提升<ct color=#2BAD00>58.3%</ct>；",
+        "1": "上述效果对<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[普通攻击：霜锋]</ct>和<ct color=#FFFFFF>[普通攻击：冰刃浪]</ct>同样生效。"
+      },
+      {
+        "0": "艾莲在<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>中发动蓄力剪击，或消耗<ct color=#FFFFFF>[急冻充能]</ct>发动<ct color=#FFFFFF>[普通攻击：急冻修剪法]</ct>时，招式的暴击伤害提升<ct color=#2BAD00>66.6%</ct>；",
+        "1": "上述效果对<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[普通攻击：霜锋]</ct>和<ct color=#FFFFFF>[普通攻击：冰刃浪]</ct>同样生效。"
+      },
+      {
+        "0": "艾莲在<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>中发动蓄力剪击，或消耗<ct color=#FFFFFF>[急冻充能]</ct>发动<ct color=#FFFFFF>[普通攻击：急冻修剪法]</ct>时，招式的暴击伤害提升<ct color=#2BAD00>75%</ct>；",
+        "1": "上述效果对<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[普通攻击：霜锋]</ct>和<ct color=#FFFFFF>[普通攻击：冰刃浪]</ct>同样生效。"
+      },
+      {
+        "0": "艾莲在<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>中发动蓄力剪击，或消耗<ct color=#FFFFFF>[急冻充能]</ct>发动<ct color=#FFFFFF>[普通攻击：急冻修剪法]</ct>时，招式的暴击伤害提升<ct color=#2BAD00>83.3%</ct>；",
+        "1": "上述效果对<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[普通攻击：霜锋]</ct>和<ct color=#FFFFFF>[普通攻击：冰刃浪]</ct>同样生效。"
+      },
+      {
+        "0": "艾莲在<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>中发动蓄力剪击，或消耗<ct color=#FFFFFF>[急冻充能]</ct>发动<ct color=#FFFFFF>[普通攻击：急冻修剪法]</ct>时，招式的暴击伤害提升<ct color=#2BAD00>91.6%</ct>；",
+        "1": "上述效果对<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[普通攻击：霜锋]</ct>和<ct color=#FFFFFF>[普通攻击：冰刃浪]</ct>同样生效。"
+      },
+      {
+        "0": "艾莲在<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>中发动蓄力剪击，或消耗<ct color=#FFFFFF>[急冻充能]</ct>发动<ct color=#FFFFFF>[普通攻击：急冻修剪法]</ct>时，招式的暴击伤害提升<ct color=#2BAD00>100%</ct>；",
+        "1": "上述效果对<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[普通攻击：霜锋]</ct>和<ct color=#FFFFFF>[普通攻击：冰刃浪]</ct>同样生效。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：风暴潮",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色或<ct color=#FFFFFF>[击破]</ct>角色时触发：",
+      "1": "艾莲造成<ct color=#98EFF0>冰属性伤害</ct>时，后继<ct color=#98EFF0>冰属性伤害</ct>提升3%，持续10秒，最多叠加10层，重复触发时刷新持续时间。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "凛冬前兆",
+      "desc": "在<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>中发动快速剪击命中敌人时，获得的<ct color=#FFFFFF>[急冻充能]</ct>提升至3点；在<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>中发动蓄力剪击命中敌人时，获得的<ct color=#FFFFFF>[急冻充能]</ct>提升至6点；每消耗1点<ct color=#FFFFFF>[急冻充能]</ct>，艾莲的暴击率提升2%，持续15秒，最多叠加6层，每层效果单独结算持续时间。",
+      "flavor": {
+        "0": "寒风是凛冬的前兆，也是艾莲请长假冬眠的信号。",
+        "1": "话说回来，鲨鱼真的需要冬眠吗？"
+      }
+    },
+    "2": {
+      "name": "冰洋掠食者",
+      "desc": "发动第三段<ct color=#FFFFFF>[普通攻击：急冻修剪法]</ct>后，可以直接衔接发动<ct color=#FFFFFF>[强化特殊技：鲨卷风]</ct>；发动<ct color=#FFFFFF>[强化特殊技]</ct>时，每拥有1点<ct color=#FFFFFF>[急冻充能]</ct>，当前招式造成的暴击伤害提升20%，最多提升60%。",
+      "flavor": {
+        "0": "虽然沾染鲜红，艾莲所持的巨剪并无半分温热。",
+        "1": "彻骨的寒意来自铁铸的凶器，也来自面对捕食者的恐慌。"
+      }
+    },
+    "3": {
+      "name": "永不加班",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「效率」的意义就是今天可以早点回家睡觉。",
+        "1": "所以要更快地斩击，更用力地出刀。"
+      }
+    },
+    "4": {
+      "name": "无休寒潮",
+      "desc": "队伍中任意角色对敌人施加<ct color=#98EFF0>[冻结]</ct>效果或使敌人失衡时，自身获得6点<ct color=#FFFFFF>[急冻充能]</ct>和<ct color=#FFFFFF>[快蓄]</ct>效果，并回复4点能量，能量回复效果10秒内最多触发一次。",
+      "flavor": {
+        "0": "凌冽的攻势不曾止休，\n可怖的造物们得以在艾莲的刀下领受冬的美与残酷。\n不过相比起来，还是作为女仆节假日无休的工作更加残酷…",
+        "1": "But, actually, the endless work that maids have during holidays is far more cruel... "
+      }
+    },
+    "5": {
+      "name": "睡眠充足",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "除非是最艰难的战斗中，艾莲永远都是一副「如果不是在工作我立刻深度睡眠」的样子。",
+        "1": "因此掉以轻心而完蛋的敌人不在少数。"
+      }
+    },
+    "6": {
+      "name": "盛宴时分",
+      "desc": "发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>或获得<ct color=#FFFFFF>[快蓄]</ct>时，艾莲的穿透率提升20%，持续6秒，同时获得1层<ct color=#FFFFFF>[盛宴]</ct>，<ct color=#FFFFFF>[盛宴]</ct>最多叠加3层；拥有3层<ct color=#FFFFFF>[盛宴]</ct>后，在<ct color=#FFFFFF>[冲刺攻击：冰渊潜袭]</ct>中发动蓄力剪击命中敌人时，消耗所有<ct color=#FFFFFF>[盛宴]</ct>，使当前招式造成的伤害提升250%。",
+      "flavor": "一道伤口，一滴鲜血。一次狩猎，一场盛宴。一纸薄命，一刻满足。"
+    }
+  },
+  "potential": {
+    "name": "潜能觉醒：极冰带",
+    "desc": [
+      "",
+      "艾莲[额外能力：风暴潮]，每层暴击伤害提升<ct color=#2BAD00>1.6%</ct>。叠加至10层时，攻击目标无视<ct color=#2BAD00>3.3%</ct>的<ct color=#98EFF0>冰属性伤害抗性</ct>",
+      "艾莲[额外能力：风暴潮]，每层暴击伤害提升<ct color=#2BAD00>2.4%</ct>。叠加至10层时，攻击目标无视<ct color=#2BAD00>5%</ct>的<ct color=#98EFF0>冰属性伤害抗性</ct>",
+      "艾莲[额外能力：风暴潮]，每层暴击伤害提升<ct color=#2BAD00>3.2%</ct>。叠加至10层时，攻击目标无视<ct color=#2BAD00>6.7%</ct>的<ct color=#98EFF0>冰属性伤害抗性</ct>",
+      "艾莲[额外能力：风暴潮]，每层暴击伤害提升<ct color=#2BAD00>4%</ct>。叠加至10层时，攻击目标无视<ct color=#2BAD00>8.3%</ct>的<ct color=#98EFF0>冰属性伤害抗性</ct>",
+      "艾莲[额外能力：风暴潮]，每层暴击伤害提升<ct color=#2BAD00>4.8%</ct>。叠加至10层时，攻击目标无视<ct color=#2BAD00>10%</ct>的<ct color=#98EFF0>冰属性伤害抗性</ct>"
+    ]
+  }
+}

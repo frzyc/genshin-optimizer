@@ -1,0 +1,17 @@
+{
+  "name": "时光切片",
+  "desc": {
+    "0": "搭载有高速取景模块的特型音擎，空洞内摄影爱好者的最佳选择，记录痛扁以骸的每一个感动时刻，只要你能腾出按快门的手。",
+    "1": "PS：内部光学元件未作抗侵蚀处理，不要弄丢保修单。"
+  },
+  "desc2": "装备后可提升[支援]代理人的战斗能力",
+  "desc3": "搭载有高速取景模块的特型音擎，是空洞内摄影爱好者的最佳选择。",
+  "phase": "说「茄子」",
+  "phaseDescs": [
+    "队伍中任意角色发动<ct color=#FFFFFF>[闪避反击]</ct>/<ct color=#FFFFFF>[强化特殊技]</ct>/<ct color=#FFFFFF>[支援攻击]</ct>/<ct color=#FFFFFF>[连携技]</ct>时，额外获得<ct color=#2BAD00>20</ct>/<ct color=#2BAD00>25</ct>/<ct color=#2BAD00>30</ct>/<ct color=#2BAD00>35</ct>点喧响值，并为装备者回复<ct color=#2BAD00>0.7</ct>点能量，12秒内最多触发一次，不同招式分别结算冷却时间，同名被动效果之间不可叠加。",
+    "队伍中任意角色发动<ct color=#FFFFFF>[闪避反击]</ct>/<ct color=#FFFFFF>[强化特殊技]</ct>/<ct color=#FFFFFF>[支援攻击]</ct>/<ct color=#FFFFFF>[连携技]</ct>时，额外获得<ct color=#2BAD00>23</ct>/<ct color=#2BAD00>28.5</ct>/<ct color=#2BAD00>34.5</ct>/<ct color=#2BAD00>40</ct>点喧响值，并为装备者回复<ct color=#2BAD00>0.8</ct>点能量，12秒内最多触发一次，不同招式分别结算冷却时间，同名被动效果之间不可叠加。",
+    "队伍中任意角色发动<ct color=#FFFFFF>[闪避反击]</ct>/<ct color=#FFFFFF>[强化特殊技]</ct>/<ct color=#FFFFFF>[支援攻击]</ct>/<ct color=#FFFFFF>[连携技]</ct>时，额外获得<ct color=#2BAD00>26</ct>/<ct color=#2BAD00>32</ct>/<ct color=#2BAD00>39</ct>/<ct color=#2BAD00>45</ct>点喧响值，并为装备者回复<ct color=#2BAD00>0.9</ct>点能量，12秒内最多触发一次，不同招式分别结算冷却时间，同名被动效果之间不可叠加。",
+    "队伍中任意角色发动<ct color=#FFFFFF>[闪避反击]</ct>/<ct color=#FFFFFF>[强化特殊技]</ct>/<ct color=#FFFFFF>[支援攻击]</ct>/<ct color=#FFFFFF>[连携技]</ct>时，额外获得<ct color=#2BAD00>29</ct>/<ct color=#2BAD00>35.5</ct>/<ct color=#2BAD00>43.5</ct>/<ct color=#2BAD00>50</ct>点喧响值，并为装备者回复<ct color=#2BAD00>1</ct>点能量，12秒内最多触发一次，不同招式分别结算冷却时间，同名被动效果之间不可叠加。",
+    "队伍中任意角色发动<ct color=#FFFFFF>[闪避反击]</ct>/<ct color=#FFFFFF>[强化特殊技]</ct>/<ct color=#FFFFFF>[支援攻击]</ct>/<ct color=#FFFFFF>[连携技]</ct>时，额外获得<ct color=#2BAD00>32</ct>/<ct color=#2BAD00>40</ct>/<ct color=#2BAD00>48</ct>/<ct color=#2BAD00>55</ct>点喧响值，并为装备者回复<ct color=#2BAD00>1.1</ct>点能量，12秒内最多触发一次，不同招式分别结算冷却时间，同名被动效果之间不可叠加。"
+  ]
+}

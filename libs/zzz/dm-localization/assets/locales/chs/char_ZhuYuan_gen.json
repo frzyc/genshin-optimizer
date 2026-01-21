@@ -1,0 +1,230 @@
+{
+  "name": "朱鸢",
+  "fullName": "朱鸢",
+  "basic": {
+    "BasicAttackDontMove": {
+      "name": "普通攻击：不许动！",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[突击模式]</ct>",
+        "1": "点按 <IconNormal /> 发动：",
+        "2": "交替使用体术、手枪和以太鹿弹，向前方进行至多五段的攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FE437E>以太伤害</ct>；",
+        "3": "第四、第五段攻击命中敌人时，获得1枚<ct color=#FFFFFF>[强化霰弹]</ct>，同一招式中最多获得1枚；",
+        "4": "招式发动期间，拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}并点按 <IconNormal /> ，可以发动<ct color=#FFFFFF>[冲刺攻击：火力奇袭]</ct>，向对应方向调整身位；",
+        "5": "<ct color=#FFFFFF>[突击模式]</ct>下，长按 <IconNormal /> 时，将会切换攻击方式，进入<ct color=#FFFFFF>[压制模式]</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackPleaseDoNotResist": {
+      "name": "普通攻击：请勿抵抗",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[压制模式]</ct>",
+        "1": "长按 <IconNormal /> 发动：",
+        "2": "使用霰弹枪向前方进行至多三段的穿透射击，造成<ct color=#F0D12B>物理伤害</ct>；开火时若拥有<ct color=#FFFFFF>[强化霰弹]</ct>，则会消耗1枚<ct color=#FFFFFF>[强化霰弹]</ct>，造成大量<ct color=#FE437E>以太伤害</ct>；",
+        "3": "招式发动期间，拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}可以发动<ct color=#FFFFFF>[冲刺攻击：火力压制]</ct>，向对应方向调整身位；",
+        "4": "<ct color=#FFFFFF>[压制模式]</ct>下，松开 <IconNormal /> 时，将会切换攻击方式，回到<ct color=#FFFFFF>[突击模式]</ct>。"
+      },
+      "params": [
+        "1st-Hit (Physical) ",
+        "2nd-Hit (Physical) ",
+        "3rd-Hit (Physical) ",
+        "1st-Hit (Ether) ",
+        "2nd-Hit (Ether) ",
+        "3rd-Hit (Ether) "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeTacticalDetour": {
+      "name": "闪避：迂回",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackFirepowerOffensive": {
+      "name": "冲刺攻击：火力奇袭",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[突击模式]</ct>",
+        "1": "闪避时，点按 <IconNormal /> 发动：",
+        "2": "使用手枪进行射击，造成<ct color=#FE437E>以太伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DashAttackOverwhelmingFirepower": {
+      "name": "冲刺攻击：火力压制",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[压制模式]</ct>",
+        "1": "在<ct color=#FFFFFF>[普通攻击：请勿抵抗]</ct>发动期间，拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}发动：",
+        "2": "使用霰弹枪进行穿透射击，造成<ct color=#F0D12B>物理伤害</ct>；开火时若拥有<ct color=#FFFFFF>[强化霰弹]</ct>，则会消耗1枚<ct color=#FFFFFF>[强化霰弹]</ct>，造成大量<ct color=#FE437E>以太伤害</ct>。"
+      },
+      "params": [
+        "(Physical) ",
+        "(Ether) "
+      ]
+    },
+    "DodgeCounterFireBlast": {
+      "name": "闪避反击：火力震爆",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "使用以太鹿弹对前方敌人发动射击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动时，获得1枚<ct color=#FFFFFF>[强化霰弹]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackBuckshotBlast": {
+      "name": "特殊技：鹿弹射击",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "使用以太鹿弹进行射击，造成<ct color=#FE437E>以太伤害</ct>，连续点按 <IconSpecial /> ，可以重复射击三次；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackFullBarrage": {
+      "name": "强化特殊技：全弹连射",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "使用以太鹿弹进行连续射击，造成大量<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动时，获得3枚<ct color=#FFFFFF>[强化霰弹]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackEradicationMode": {
+      "name": "连携技：歼灭模式",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "使用完全变形武器进行饱和攻击，发射直线激光和追踪导弹，造成大量<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动时，获得3枚<ct color=#FFFFFF>[强化霰弹]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateMaxEradicationMode": {
+      "name": "终结技：歼灭模式MAX ",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "使用完全变形武器进行饱和攻击，发射直线激光和追踪导弹，造成大量<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动时，获得3枚<ct color=#FFFFFF>[强化霰弹]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistCoveringShot": {
+      "name": "快速支援：掩护射击",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "使用以太鹿弹对前方敌人发动射击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动时，获得1枚<ct color=#FFFFFF>[强化霰弹]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EvasiveAssistGuardedBackup": {
+      "name": "回避支援：警戒援护",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "回避敌人的攻击，并触发<ct color=#FFFFFF>[极限视域]</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "AssistFollowUpDefensiveCounter": {
+      "name": "支援突击：自卫还击",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[回避支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "交替使用体术和霰弹枪进行攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动时，获得3枚<ct color=#FFFFFF>[强化霰弹]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：特种弹药",
+    "desc": [
+      "朱鸢在<ct color=#FFFFFF>[压制模式]</ct>下，消耗<ct color=#FFFFFF>[强化霰弹]</ct>进行攻击时，招式造成的伤害提升<ct color=#2BAD00>20%</ct>，攻击处于失衡状态下的敌人时，该增益效果额外提升<ct color=#2BAD00>20%</ct>；进入战场时，朱鸢立刻获得6枚<ct color=#FFFFFF>[强化霰弹]</ct>。",
+      "朱鸢在<ct color=#FFFFFF>[压制模式]</ct>下，消耗<ct color=#FFFFFF>[强化霰弹]</ct>进行攻击时，招式造成的伤害提升<ct color=#2BAD00>23.3%</ct>，攻击处于失衡状态下的敌人时，该增益效果额外提升<ct color=#2BAD00>23.3%</ct>；进入战场时，朱鸢立刻获得6枚<ct color=#FFFFFF>[强化霰弹]</ct>。",
+      "朱鸢在<ct color=#FFFFFF>[压制模式]</ct>下，消耗<ct color=#FFFFFF>[强化霰弹]</ct>进行攻击时，招式造成的伤害提升<ct color=#2BAD00>26.6%</ct>，攻击处于失衡状态下的敌人时，该增益效果额外提升<ct color=#2BAD00>26.6%</ct>；进入战场时，朱鸢立刻获得6枚<ct color=#FFFFFF>[强化霰弹]</ct>。",
+      "朱鸢在<ct color=#FFFFFF>[压制模式]</ct>下，消耗<ct color=#FFFFFF>[强化霰弹]</ct>进行攻击时，招式造成的伤害提升<ct color=#2BAD00>30%</ct>，攻击处于失衡状态下的敌人时，该增益效果额外提升<ct color=#2BAD00>30%</ct>；进入战场时，朱鸢立刻获得6枚<ct color=#FFFFFF>[强化霰弹]</ct>。",
+      "朱鸢在<ct color=#FFFFFF>[压制模式]</ct>下，消耗<ct color=#FFFFFF>[强化霰弹]</ct>进行攻击时，招式造成的伤害提升<ct color=#2BAD00>33.3%</ct>，攻击处于失衡状态下的敌人时，该增益效果额外提升<ct color=#2BAD00>33.3%</ct>；进入战场时，朱鸢立刻获得6枚<ct color=#FFFFFF>[强化霰弹]</ct>。",
+      "朱鸢在<ct color=#FFFFFF>[压制模式]</ct>下，消耗<ct color=#FFFFFF>[强化霰弹]</ct>进行攻击时，招式造成的伤害提升<ct color=#2BAD00>36.6%</ct>，攻击处于失衡状态下的敌人时，该增益效果额外提升<ct color=#2BAD00>36.6%</ct>；进入战场时，朱鸢立刻获得6枚<ct color=#FFFFFF>[强化霰弹]</ct>。",
+      "朱鸢在<ct color=#FFFFFF>[压制模式]</ct>下，消耗<ct color=#FFFFFF>[强化霰弹]</ct>进行攻击时，招式造成的伤害提升<ct color=#2BAD00>40%</ct>，攻击处于失衡状态下的敌人时，该增益效果额外提升<ct color=#2BAD00>40%</ct>；进入战场时，朱鸢立刻获得6枚<ct color=#FFFFFF>[强化霰弹]</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：武装协同",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[支援]</ct>角色或与自身阵营相同的角色时触发：",
+      "1": "朱鸢发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，自身暴击率提升30%，持续10秒。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "快速装填",
+      "desc": "朱鸢发动<ct color=#FFFFFF>[连携技]</ct>/<ct color=#FFFFFF>[终结技]</ct>时，将获得<ct color=#FFFFFF>[快速装填]</ct>效果；当朱鸢拥有<ct color=#FFFFFF>[快速装填]</ct>效果时，耗尽所有<ct color=#FFFFFF>[强化霰弹]</ct>后，将消耗<ct color=#FFFFFF>[快速装填]</ct>效果，立刻获得6/9枚<ct color=#FFFFFF>[强化霰弹]</ct>。",
+      "flavor": "朱鸢曾经参加过雅努斯区治安官能力比拼大赛，并凭借着魔术般的装填技巧拔得头筹。\n同事对此评价道：无他，惟手熟尔。"
+    },
+    "2": {
+      "name": "以太余烬",
+      "desc": "<ct color=#FFFFFF>[压制模式]</ct>下，朱鸢的抗打断等级提升，受到伤害降低10%；消耗<ct color=#FFFFFF>[强化霰弹]</ct>攻击命中敌人时，<ct color=#FFFFFF>[普通攻击：请勿抵抗]</ct>与<ct color=#FFFFFF>[冲刺攻击：火力压制]</ct>造成的<ct color=#FE437E>以太伤害</ct>提升10%，最多叠加5层，持续5秒，每次开火最多获得一层效果，重复触发时刷新持续时间。",
+      "flavor": {
+        "0": "朱鸢装配有治安局特制的以太子弹，一旦击中敌人，则会对其造成不可逆的侵蚀伤害。",
+        "1": "所以，朱鸢在开枪前会喊话让敌方乖乖投降、放弃抵抗，真的是为了对方的安全着想…"
+      }
+    },
+    "3": {
+      "name": "治安官特训",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "作为精英治安官，朱鸢接受的训练只有一个目的：全面提升空洞内各项作战能力，碾压一切不法之徒。"
+    },
+    "4": {
+      "name": "以太侵彻",
+      "desc": "朱鸢消耗<ct color=#FFFFFF>[强化霰弹]</ct>攻击命中敌人时，<ct color=#FFFFFF>[普通攻击：请勿抵抗]</ct>与<ct color=#FFFFFF>[冲刺攻击：火力压制]</ct>无视目标25%<ct color=#FE437E>以太伤害抗性</ct>。",
+      "flavor": "在交战的时候，空洞的匪帮们喜欢暗中计算对方还剩多少子弹；\n但他们绝对想不到，朱鸢配备的特制弹匣，能够利用周围的以太为自己持续供电…"
+    },
+    "5": {
+      "name": "特勤经验",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "老练的特勤组治安官，更能懂得审时度势，高效发挥作战能力。\n有时候甚至只需要一个充满震慑力的眼神，就能让敌人打消抵抗的念头。"
+    },
+    "6": {
+      "name": "扩容能源包-叁型",
+      "desc": "朱鸢累计消耗12枚<ct color=#FFFFFF>[强化霰弹]</ct>时，将获得<ct color=#FFFFFF>[以太余温]</ct>效果，并使下次发动的<ct color=#FFFFFF>[强化特殊技]</ct>能量消耗降低30点；发动<ct color=#FFFFFF>[强化特殊技]</ct>时，将消耗<ct color=#FFFFFF>[以太余温]</ct>效果，额外发射总计4枚以太鹿弹，每枚额外发射的以太鹿弹将造成朱鸢220%攻击力的伤害。",
+      "flavor": "朱鸢会经常在意自身装备的剩余电量，在电量下降至红色区域时感到紧张，并刻意节省电量。\n直到治安局为其配备了超大容量持续续航的能源包，才彻底解决了这个烦恼。"
+    }
+  },
+  "potential": {}
+}

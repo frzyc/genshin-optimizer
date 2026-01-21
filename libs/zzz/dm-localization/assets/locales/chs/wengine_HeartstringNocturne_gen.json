@@ -1,0 +1,19 @@
+{
+  "name": "心弦夜响",
+  "desc": {
+    "0": "暗弦轻鸣，微光在深邃的夜色中绽开，锋芒与冷静交织，化作一曲无声的乐章。丝丝纤纤，将所珍视之物，网罗其中。\n\n<ct color=#959595>「这个么？只是用来储存琴弦的装置罢了。」——伊芙琳轻轻拨动，低沉的弦音在空气中回响，最后一声落定，敌人已无声息。</ct>",
+    "1": "",
+    "2": "<ct color=#959595>\"This? It's just a device for storing instrument strings.\"",
+    "3": "—Evelyn, gently strumming the strings. A low hum fills the air, and as the final note echoes, the enemy falls silent.</ct>"
+  },
+  "desc2": "装备后可提升[强攻]代理人的战斗能力",
+  "desc3": "弦音如刃，穿过夜幕，守护注定之人。",
+  "phase": "弦音相随",
+  "phaseDescs": [
+    "暴击伤害提升<ct color=#2BAD00>50%</ct>；装备者进入接战状态、发动<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，获得1层<ct color=#FFFFFF>[心弦]</ct>，每层<ct color=#FFFFFF>[心弦]</ct>会使装备者的<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>无视目标<ct color=#2BAD00>12.5%</ct><ct color=#FF5521>火属性伤害抗性</ct>，最多叠加2层，持续30秒，重复触发时刷新持续时间。",
+    "暴击伤害提升<ct color=#2BAD00>57.5%</ct>；装备者进入接战状态、发动<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，获得1层<ct color=#FFFFFF>[心弦]</ct>，每层<ct color=#FFFFFF>[心弦]</ct>会使装备者的<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>无视目标<ct color=#2BAD00>14.5%</ct><ct color=#FF5521>火属性伤害抗性</ct>，最多叠加2层，持续30秒，重复触发时刷新持续时间。",
+    "暴击伤害提升<ct color=#2BAD00>65%</ct>；装备者进入接战状态、发动<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，获得1层<ct color=#FFFFFF>[心弦]</ct>，每层<ct color=#FFFFFF>[心弦]</ct>会使装备者的<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>无视目标<ct color=#2BAD00>16.5%</ct><ct color=#FF5521>火属性伤害抗性</ct>，最多叠加2层，持续30秒，重复触发时刷新持续时间。",
+    "暴击伤害提升<ct color=#2BAD00>72.5%</ct>；装备者进入接战状态、发动<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，获得1层<ct color=#FFFFFF>[心弦]</ct>，每层<ct color=#FFFFFF>[心弦]</ct>会使装备者的<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>无视目标<ct color=#2BAD00>18.5%</ct><ct color=#FF5521>火属性伤害抗性</ct>，最多叠加2层，持续30秒，重复触发时刷新持续时间。",
+    "暴击伤害提升<ct color=#2BAD00>80%</ct>；装备者进入接战状态、发动<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，获得1层<ct color=#FFFFFF>[心弦]</ct>，每层<ct color=#FFFFFF>[心弦]</ct>会使装备者的<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>无视目标<ct color=#2BAD00>20%</ct><ct color=#FF5521>火属性伤害抗性</ct>，最多叠加2层，持续30秒，重复触发时刷新持续时间。"
+  ]
+}

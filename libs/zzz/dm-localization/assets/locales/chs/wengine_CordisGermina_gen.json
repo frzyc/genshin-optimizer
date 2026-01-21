@@ -1,0 +1,25 @@
+{
+  "name": "机巧心种",
+  "desc": {
+    "0": "「心」是什么？\n生命的重量是多少？\n纵使拆解再多的机械，纵使浇灌再多的花朵，她始终找不到问题的答案。\n她用音擎完美模拟出了自己的心跳频率，期待着它能提供一种解答。但在规律的跳动声中，她逐渐陷入了沉睡，在梦里，「老席德」动了起来，拥有了心跳，还会像过去那样回应她天马行空的提问…\n在漫长的圆上，少女的旅途仍在继续。\n\n<ct color=#959595>「『扳机』的心跳很平缓，『11号』的有点快，『奥菲丝』被队长训会变快，其他时候又有点慢，至于绳匠~唔，总感觉跳得特别厉害？」——「席德」，为了感受同伴们的心跳，此刻耳朵正紧贴在「法厄同」兄妹的胸前。</ct>",
+    "1": "",
+    "2": "What is the weight of life?",
+    "3": "",
+    "4": "No matter how many machines she takes apart, no matter how many flowers she tends to, she still can't find the answer.",
+    "5": "",
+    "6": "She programmed the W-Engine to mimic her heartbeat exactly, hoping it would lead her to an answer. But as the rhythm echoed, she slowly drifted to sleep. In her dreams, Seed Sr. came to life — with a heartbeat of his own — and once again responded to her wild, wandering questions, just like he used to...",
+    "7": "Her journey continues along the long, endless circle.",
+    "8": "",
+    "9": "<ct color=#959595>\"Trigger's heartbeat is nice and steady. Soldier 11's is a bit fast. Orphie's picks up when the Captain scolds her, but it's kind of slow otherwise. As for you, Proxies~ Hmm, yours feels really intense?\" —Seed, pressing an ear against the chests of the Phaethon siblings to listen to their heartbeats.</ct>"
+  },
+  "desc2": "装备后可提升[强攻]代理人的战斗能力",
+  "desc3": "在漫长的圆上，少女的旅途仍在继续。",
+  "phase": "芽生炉心",
+  "phaseDescs": [
+    "暴击率提升<ct color=#2BAD00>15%</ct>；装备者的<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>造成伤害时，可分别获得1层增益效果，每层增益效果使装备者造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>12.5%</ct>，最多叠加2层，持续40秒，每层效果单独结算持续时间，同一招式内最多触发一次；拥有2层增益效果时，装备者的<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[终结技]</ct>对敌人造成的伤害无视<ct color=#2BAD00>20%</ct>防御力。",
+    "暴击率提升<ct color=#2BAD00>17%</ct>；装备者的<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>造成伤害时，可分别获得1层增益效果，每层增益效果使装备者造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>14.5%</ct>，最多叠加2层，持续40秒，每层效果单独结算持续时间，同一招式内最多触发一次；拥有2层增益效果时，装备者的<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[终结技]</ct>对敌人造成的伤害无视<ct color=#2BAD00>23%</ct>防御力。",
+    "暴击率提升<ct color=#2BAD00>19%</ct>；装备者的<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>造成伤害时，可分别获得1层增益效果，每层增益效果使装备者造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>16.5%</ct>，最多叠加2层，持续40秒，每层效果单独结算持续时间，同一招式内最多触发一次；拥有2层增益效果时，装备者的<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[终结技]</ct>对敌人造成的伤害无视<ct color=#2BAD00>26%</ct>防御力。",
+    "暴击率提升<ct color=#2BAD00>21%</ct>；装备者的<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>造成伤害时，可分别获得1层增益效果，每层增益效果使装备者造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>18.5%</ct>，最多叠加2层，持续40秒，每层效果单独结算持续时间，同一招式内最多触发一次；拥有2层增益效果时，装备者的<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[终结技]</ct>对敌人造成的伤害无视<ct color=#2BAD00>29%</ct>防御力。",
+    "暴击率提升<ct color=#2BAD00>23%</ct>；装备者的<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>造成伤害时，可分别获得1层增益效果，每层增益效果使装备者造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>20%</ct>，最多叠加2层，持续40秒，每层效果单独结算持续时间，同一招式内最多触发一次；拥有2层增益效果时，装备者的<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[终结技]</ct>对敌人造成的伤害无视<ct color=#2BAD00>32%</ct>防御力。"
+  ]
+}

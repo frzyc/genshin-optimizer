@@ -1,6 +1,7 @@
 {
   "char": "Character",
   "opt": "Optimize",
+  "optimizeTitle": "Optimize - {{name}}",
   "builds": "Builds",
   "eq": "Equip",
   "charSheet": "Character Mechanics",
@@ -12,6 +13,10 @@
   "anomaly": "Anomaly Conditionals",
   "buildDropdownDesc": "Reducing generated builds shortens calculation time.",
   "bonusStatsNotes": "Write some notes about how you play your character",
+  "addFirstTeammate": "Add First Teammate",
+  "addSecondTeammate": "Add Second Teammate",
+  "frostbite": "Frostbite",
+  "anomalyTimePassed": "Anomaly Time Passed",
   "build_one": "{{count}} Build",
   "build_other": "{{count}} Builds",
   "worker_one": "{{count}} Worker",

@@ -1,0 +1,33 @@
+{
+  "name": "嵌合编译器",
+  "desc": {
+    "0": "嵌合了超算核心的最新款音擎，能够以顶尖的运行速度编译机械的运行代码，或快速收集战场数据，为小队提供作战支援。当然，对于格莉丝来说，这款音擎只是她和「硅基孩子们」之间沟通感情用的小玩具。",
+    "1": "",
+    "2": "<ct color=#959595>「仔细一看…你自己就长得眉清目秀的很有特点嘛~！哎呀，虽然说明书上提示过密封后不能拆开…唔嗯嗯嗯——！不试试看怎么知道呢？！」——格莉丝，盯着手里的音擎突然陷入狂热</ct>"
+  },
+  "desc2": "装备后可提升[异常]代理人的战斗能力",
+  "desc3": "嵌合了超算核心的最新款音擎，能够以顶尖的运行速度编译机械的运行代码，是格莉丝爱用的款式。",
+  "phase": "数据洪流",
+  "phaseDescs": [
+    {
+      "0": "攻击力提升<ct color=#2BAD00>12%</ct>；发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，装备者的异常精通提升<ct color=#2BAD00>25</ct>点，最多叠加3层，持续8秒，每层效果单独结算持续时间。",
+      "1": "When using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>25</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "攻击力提升<ct color=#2BAD00>15%</ct>；发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，装备者的异常精通提升<ct color=#2BAD00>31</ct>点，最多叠加3层，持续8秒，每层效果单独结算持续时间。",
+      "1": "When using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>31</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "攻击力提升<ct color=#2BAD00>18%</ct>；发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，装备者的异常精通提升<ct color=#2BAD00>37</ct>点，最多叠加3层，持续8秒，每层效果单独结算持续时间。",
+      "1": "When using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>37</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "攻击力提升<ct color=#2BAD00>21%</ct>；发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，装备者的异常精通提升<ct color=#2BAD00>43</ct>点，最多叠加3层，持续8秒，每层效果单独结算持续时间。",
+      "1": "When using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>43</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+    },
+    {
+      "0": "攻击力提升<ct color=#2BAD00>24%</ct>；发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，装备者的异常精通提升<ct color=#2BAD00>50</ct>点，最多叠加3层，持续8秒，每层效果单独结算持续时间。",
+      "1": "When using a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, the equipper's Anomaly Proficiency is increased by <ct color=#2BAD00>50</ct> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+    }
+  ]
+}

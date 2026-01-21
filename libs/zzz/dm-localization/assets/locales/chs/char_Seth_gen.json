@@ -1,0 +1,236 @@
+{
+  "name": "赛斯",
+  "fullName": "Seth Lowell",
+  "basic": {
+    "BasicAttackLightningStrike": {
+      "name": "普通攻击：雷霆击",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#2EB6FF>电属性伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackLightningStrikeElectrified": {
+      "name": "普通攻击：雷霆击-感电",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[意气]</ct>大于等于75%时，长按 <IconNormal /> 发动：",
+        "1": "消耗75%<ct color=#FFFFFF>[意气]</ct>向前方发动持续攻击，随后发动终结一击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "终结一击命中敌人时，将触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>；",
+        "3": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        "Consecutive Attack ",
+        "Finishing Move "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeEvasionManeuver": {
+      "name": "闪避：避障",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackThunderAssault": {
+      "name": "冲刺攻击：电光突袭",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行盾冲攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间受到的伤害降低40%。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterRetreatToAdvance": {
+      "name": "闪避反击：以退为进",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动快速的下砸斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动后，长按 <IconSpecialReady /> 衔接<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，能够以更快的速度完成蓄力；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackThunderShieldRush": {
+      "name": "特殊技：电光盾冲",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方发动两次盾击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackThunderShieldRushHighVoltage": {
+      "name": "强化特殊技：电光盾冲-高伏特",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方发动连续斩击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "长按 <IconSpecialReady /> 可以进行蓄力，蓄力完成后赛斯将向前方突进，发动高量级的连续斩击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "3": "招式发动时，会为自身累积75%<ct color=#FFFFFF>[意气]</ct>；",
+        "4": "招式蓄力期间抗打断等级提升，受到的伤害降低40%；",
+        "5": "连续斩击期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "(Charged) ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackFinalJudgment": {
+      "name": "连携技：最终制裁",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "向前方进行连续斩击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动时，会为自身累积75%<ct color=#FFFFFF>[意气]</ct>；",
+        "3": "招式发动后，长按 <IconSpecialReady /> 衔接<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，能够以更快的速度完成蓄力；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateJusticePrevails": {
+      "name": "终结技：正义必胜",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "向前方进行连续上挑攻击，随后发动终结一击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动时，会为自身累积75%<ct color=#FFFFFF>[意气]</ct>，额外回复3点支援点数；",
+        "3": "招式发动后，长按 <IconSpecialReady /> 衔接<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，能够以更快的速度完成蓄力；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistArmedSupport": {
+      "name": "快速支援：武力支援",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动快速的下砸斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动后，长按 <IconSpecialReady /> 衔接<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，能够以更快的速度完成蓄力；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistThundershield": {
+      "name": "招架支援：迅雷盾",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动时，会为自身累积25%<ct color=#FFFFFF>[意气]</ct>；",
+        "3": "具有较为优秀的招架性能，承受高强度攻击时<ct color=#FFFFFF>[支援点数]</ct>的消耗量降低；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpPublicSecurityRuling": {
+      "name": "支援突击：治安裁决",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前方发动突刺攻击，随后进行两次横扫斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式命中敌人时，将触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>；",
+        "3": "招式发动后，长按 <IconSpecialReady /> 衔接<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，能够以更快的速度完成蓄力；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：守望者",
+    "desc": [
+      "赛斯发动<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，会获得等同于自身<ct color=#2BAD00>40%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；队伍中其他角色通过<ct color=#FFFFFF>[普通攻击：雷霆击-感电]</ct>或<ct color=#FFFFFF>[支援突击：治安裁决]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，会为该队友提供等同于赛斯<ct color=#2BAD00>40%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；拥有<ct color=#FFFFFF>[匪石之盾]</ct>时，持有者的异常精通提升<ct color=#2BAD00>50</ct>点。",
+      "赛斯发动<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，会获得等同于自身<ct color=#2BAD00>50%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；队伍中其他角色通过<ct color=#FFFFFF>[普通攻击：雷霆击-感电]</ct>或<ct color=#FFFFFF>[支援突击：治安裁决]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，会为该队友提供等同于赛斯<ct color=#2BAD00>50%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；拥有<ct color=#FFFFFF>[匪石之盾]</ct>时，持有者的异常精通提升<ct color=#2BAD00>62</ct>点。",
+      "赛斯发动<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，会获得等同于自身<ct color=#2BAD00>60%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；队伍中其他角色通过<ct color=#FFFFFF>[普通攻击：雷霆击-感电]</ct>或<ct color=#FFFFFF>[支援突击：治安裁决]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，会为该队友提供等同于赛斯<ct color=#2BAD00>60%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；拥有<ct color=#FFFFFF>[匪石之盾]</ct>时，持有者的异常精通提升<ct color=#2BAD00>75</ct>点。",
+      "赛斯发动<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，会获得等同于自身<ct color=#2BAD00>68%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；队伍中其他角色通过<ct color=#FFFFFF>[普通攻击：雷霆击-感电]</ct>或<ct color=#FFFFFF>[支援突击：治安裁决]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，会为该队友提供等同于赛斯<ct color=#2BAD00>68%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；拥有<ct color=#FFFFFF>[匪石之盾]</ct>时，持有者的异常精通提升<ct color=#2BAD00>85</ct>点。",
+      "赛斯发动<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，会获得等同于自身<ct color=#2BAD00>72%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；队伍中其他角色通过<ct color=#FFFFFF>[普通攻击：雷霆击-感电]</ct>或<ct color=#FFFFFF>[支援突击：治安裁决]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，会为该队友提供等同于赛斯<ct color=#2BAD00>72%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；拥有<ct color=#FFFFFF>[匪石之盾]</ct>时，持有者的异常精通提升<ct color=#2BAD00>90</ct>点。",
+      "赛斯发动<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，会获得等同于自身<ct color=#2BAD00>76%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；队伍中其他角色通过<ct color=#FFFFFF>[普通攻击：雷霆击-感电]</ct>或<ct color=#FFFFFF>[支援突击：治安裁决]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，会为该队友提供等同于赛斯<ct color=#2BAD00>76%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；拥有<ct color=#FFFFFF>[匪石之盾]</ct>时，持有者的异常精通提升<ct color=#2BAD00>95</ct>点。",
+      "赛斯发动<ct color=#FFFFFF>[强化特殊技：电光盾冲-高伏特]</ct>时，会获得等同于自身<ct color=#2BAD00>80%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；队伍中其他角色通过<ct color=#FFFFFF>[普通攻击：雷霆击-感电]</ct>或<ct color=#FFFFFF>[支援突击：治安裁决]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，会为该队友提供等同于赛斯<ct color=#2BAD00>80%</ct>初始攻击力的护盾<ct color=#FFFFFF>[匪石之盾]</ct>，最高不超过3000点，持续25秒，10秒内最多触发一次；拥有<ct color=#FFFFFF>[匪石之盾]</ct>时，持有者的异常精通提升<ct color=#2BAD00>100</ct>点。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：意气风发",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "赛斯发动<ct color=#FFFFFF>[连携技：最终制裁]</ct>命中敌人或在<ct color=#FFFFFF>[普通攻击：雷霆击-感电]</ct>中发动终结一击命中敌人时，目标的全属性异常积蓄抗性降低20%，持续20秒。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "英雄主义",
+      "desc": "<ct color=#FFFFFF>[匪石之盾]</ct>提供的护盾及其上限提升30%，<ct color=#FFFFFF>[匪石之盾]</ct>失效时，<ct color=#FFFFFF>[核心被动：守望者]</ct>提供的异常精通提升效果额外维持10秒。",
+      "flavor": {
+        "0": "团队行动的时候，赛斯永远是冲在最前面的人。",
+        "1": "「逮捕犯人就交给我吧！我的近身擒拿成绩是99分，扣掉的那一分是因为不小心扭伤了教官的手腕。」"
+      }
+    },
+    "2": {
+      "name": "年少轻狂",
+      "desc": "进入战场时，赛斯立刻为自身累积75%<ct color=#FFFFFF>[意气]</ct>；发动<ct color=#FFFFFF>[普通攻击：雷霆击-感电]</ct>命中敌人时，招式累积的<ct color=#2EB6FF>电属性异常积蓄值</ct>提升35%。",
+      "flavor": {
+        "0": "赛斯很容易被各种犯罪者小看。\n或许是因为他的眼神太过清澈，又或许是因为那无害的毛茸茸耳朵和尾巴——\n无论如何，所有看低他的人，最终都会付出相应的代价。",
+        "1": "It might be his pure, clear eyes or those innocent-looking furry ears and tail. Whatever the reason, everyone who underestimates him eventually pays the price."
+      }
+    },
+    "3": {
+      "name": "钝感力",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「像你这么厉害的治安官，肯定做什么都是靠自己吧？绝对没依赖其他人吧？」\n即使被这么说了，赛斯依然不动声色。\n直到半夜，他才忽然惊醒：\n「那家伙白天的话…莫非是在讽刺我？」",
+        "1": "Even after hearing this, Seth remained composed and didn't say a word.",
+        "2": "It wasn't until midnight that he suddenly woke up: \"Could that guy's comment earlier... have been a dig at me?\""
+      }
+    },
+    "4": {
+      "name": "初心",
+      "desc": "<ct color=#FFFFFF>[招架支援：迅雷盾]</ct>造成的失衡值提升25%。",
+      "flavor": {
+        "0": "「放下你那愚蠢的善恶观。世上没有一种方式可以守护所有人。有时候，你必须做出选择。」",
+        "1": "「这就是我的选择，也是治安官最基本的职责——是你变了，哥哥。」"
+      }
+    },
+    "5": {
+      "name": "憧憬的距离",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "对于自己的兄长，赛斯曾抱有极度的憧憬和尊敬。\n但就像你知道的那样——「憧憬」是距离「理解」最遥远的距离。\n「总有一天，我会成为最厉害的治安官…让那家伙收回之前的话！」",
+        "1": "\"Someday, I'll become the finest officer... and make him eat his words!\""
+      }
+    },
+    "6": {
+      "name": "理想主义",
+      "desc": "赛斯在<ct color=#FFFFFF>[普通攻击：雷霆击-感电]</ct>中发动终结一击命中敌人时，额外造成自身500%攻击力的伤害，本次攻击必定触发暴击，且暴击伤害提升60%。",
+      "flavor": {
+        "0": "少年人眼里的一切很清晰，黑白分明，善恶有别。",
+        "1": "一定会有人想告诉他世界的颜色是混沌的灰。但黑白分明善恶有别的世界…不值得追求吗？"
+      }
+    }
+  },
+  "potential": {}
+}

@@ -1,0 +1,243 @@
+{
+  "name": "派派",
+  "fullName": "派派",
+  "basic": {
+    "BasicAttackLoadUpAndRollOut": {
+      "name": "普通攻击：准备发车",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的斩击，造成<ct color=#F0D12B>物理伤害</ct>；"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeHandbrakeDrift": {
+      "name": "闪避：手刹漂移",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackPedalToTheMetal": {
+      "name": "冲刺攻击：一脚油门",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterPowerDrift": {
+      "name": "闪避反击：动力漂移",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动下砸攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackTireSpin": {
+      "name": "特殊技：轮胎转",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "转动身体向周围发动旋转斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "长按 <IconSpecial /> 可以延长招式的持续时间，发动越来越强的旋转斩击，并提升招式的蓄力等级，最多提升2次；",
+        "3": "若衔接在<ct color=#FFFFFF>[普通攻击]</ct>前三段、<ct color=#FFFFFF>[冲刺攻击]</ct>或<ct color=#FFFFFF>[闪避反击]</ct>之后，则能够以提升后的蓄力等级快速发动<ct color=#FFFFFF>[特殊技：轮胎转]</ct>；",
+        "4": "招式发动期间抗打断等级提升，受到的伤害降低40%。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SpecialAttackOneTrillionTons": {
+      "name": "特殊技：有亿点重",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[特殊技：轮胎转]</ct>发动期间，松开 <IconSpecial /> 发动：\n根据<ct color=#FFFFFF>[特殊技：轮胎转]</ct>的蓄力等级，向前方发动下砸攻击，造成<ct color=#F0D12B>物理伤害</ct>；\n招式发动期间拥有无敌效果。",
+        "1": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Level-1 Charged Attack ",
+        "Level-2 Charged Attack ",
+        "Level-3 Charged Attack ",
+        "Level-1 Charged ",
+        "Level-2 Charged "
+      ]
+    },
+    "EXSpecialAttackEngineSpin": {
+      "name": "强化特殊技：引擎转",
+      "desc": {
+        "0": "能量足够时，在<ct color=#FFFFFF>[特殊技：轮胎转]</ct>达到最高蓄力等级后，继续长按 <IconSpecialReady /> 发动：",
+        "1": "快速转动身体，向周围发动旋转斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "发动期间持续消耗能量，最多持续3秒；",
+        "3": "招式发动期间抗打断等级提升，受到的伤害降低40%。"
+      },
+      "params": [
+        "Every Spin ",
+        "能量消耗"
+      ]
+    },
+    "EXSpecialAttackReallyHeavy": {
+      "name": "强化特殊技：非常重",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>发动期间，松开 <IconSpecialReady /> 发动：",
+        "1": "向前方发动强力的下砸攻击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "在<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>发动期间，持续时间达到上限或能量降低至20点时，将会自动发动<ct color=#FFFFFF>[强化特殊技：非常重]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackBuckleUp": {
+      "name": "连携技：系好安全带",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方敌人发动强力下砸攻击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateHoldOnTight": {
+      "name": "终结技：坐~稳~啦~",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "快速转动身体，对前方大范围敌人发动强力的旋转斩击，随后发动下砸攻击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistBrakeTap": {
+      "name": "快速支援：点刹",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动下砸攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistEmergencyBrake": {
+      "name": "招架支援：极限刹车",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "具有较为优秀的招架性能，承受高强度攻击时<ct color=#FFFFFF>[支援点数]</ct>的消耗量降低；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpOvertakingManeuver": {
+      "name": "支援突击：弯道超车",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动突进斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：动力蓄能",
+    "desc": [
+      "派派在<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>或<ct color=#FFFFFF>[终结技]</ct>中发动旋转斩击命中敌人时，获得1层<ct color=#FFFFFF>[动力]</ct>，最多叠加20层，持续12秒，重复触发时刷新持续时间；每拥有一层<ct color=#FFFFFF>[动力]</ct>，派派的<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>2%</ct>。",
+      "派派在<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>或<ct color=#FFFFFF>[终结技]</ct>中发动旋转斩击命中敌人时，获得1层<ct color=#FFFFFF>[动力]</ct>，最多叠加20层，持续12秒，重复触发时刷新持续时间；每拥有一层<ct color=#FFFFFF>[动力]</ct>，派派的<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>2.3%</ct>。",
+      "派派在<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>或<ct color=#FFFFFF>[终结技]</ct>中发动旋转斩击命中敌人时，获得1层<ct color=#FFFFFF>[动力]</ct>，最多叠加20层，持续12秒，重复触发时刷新持续时间；每拥有一层<ct color=#FFFFFF>[动力]</ct>，派派的<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>2.6%</ct>。",
+      "派派在<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>或<ct color=#FFFFFF>[终结技]</ct>中发动旋转斩击命中敌人时，获得1层<ct color=#FFFFFF>[动力]</ct>，最多叠加20层，持续12秒，重复触发时刷新持续时间；每拥有一层<ct color=#FFFFFF>[动力]</ct>，派派的<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>3%</ct>。",
+      "派派在<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>或<ct color=#FFFFFF>[终结技]</ct>中发动旋转斩击命中敌人时，获得1层<ct color=#FFFFFF>[动力]</ct>，最多叠加20层，持续12秒，重复触发时刷新持续时间；每拥有一层<ct color=#FFFFFF>[动力]</ct>，派派的<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>3.3%</ct>。",
+      "派派在<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>或<ct color=#FFFFFF>[终结技]</ct>中发动旋转斩击命中敌人时，获得1层<ct color=#FFFFFF>[动力]</ct>，最多叠加20层，持续12秒，重复触发时刷新持续时间；每拥有一层<ct color=#FFFFFF>[动力]</ct>，派派的<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>3.6%</ct>。",
+      "派派在<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>或<ct color=#FFFFFF>[终结技]</ct>中发动旋转斩击命中敌人时，获得1层<ct color=#FFFFFF>[动力]</ct>，最多叠加20层，持续12秒，重复触发时刷新持续时间；每拥有一层<ct color=#FFFFFF>[动力]</ct>，派派的<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>4%</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：同步疾驰",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "派派拥有20层或以上<ct color=#FFFFFF>[动力]</ct>时，全队角色造成的伤害提升18%。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "悠闲一刻",
+      "desc": "派派在<ct color=#FFFFFF>[特殊技：轮胎转]</ct>、<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>或<ct color=#FFFFFF>[终结技]</ct>中发动旋转斩击命中敌人时，有50%概率额外获得1层<ct color=#FFFFFF>[动力]</ct>，<ct color=#FFFFFF>[动力]</ct>的叠加层数上限提升至30层。",
+      "flavor": {
+        "0": "卡吕冬之子某个平常的上午，派派慢悠悠地打了个哈欠。",
+        "1": "「早上好——」",
+        "2": "「今天也能悠闲地度过吧？养生可是很重要的，不然这个人会过劳死哦——」"
+      }
+    },
+    "2": {
+      "name": "上进心",
+      "desc": "在<ct color=#FFFFFF>[特殊技：轮胎转]</ct>和<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>发动期间，派派的移动速度有所提升；在<ct color=#FFFFFF>[特殊技：有亿点重]</ct>、<ct color=#FFFFFF>[强化特殊技：非常重]</ct>和<ct color=#FFFFFF>[终结技]</ct>中发动下砸攻击命中敌人时，招式造成的<ct color=#F0D12B>物理伤害</ct>提升10%，每拥有1层<ct color=#FFFFFF>[动力]</ct>，该增益效果额外提升1%。",
+      "flavor": {
+        "0": "暂时的努力，是为了更加长久的休憩。",
+        "1": "当然，如果能一直都不努力就更好了——派派伸了个懒腰，拍了拍卡车里的柔软床铺，躺了下来。"
+      }
+    },
+    "3": {
+      "name": "卡车专家",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "派派总是对卡车的一切充满兴趣。",
+        "1": "即使是在熟睡的状态下，只要引擎声响起，少女就能瞬间清醒：",
+        "2": "「100马力，载重5吨，这是…三门重工新发售的轻型卡车！」"
+      }
+    },
+    "4": {
+      "name": "技巧娴熟",
+      "desc": "队伍中任意角色对敌人施加属性异常效果时，派派回复20点能量，30秒内最多触发一次。",
+      "flavor": {
+        "0": "成为派派的乘客是一件让人心惊胆战的事。",
+        "1": "通常在她慢悠悠地提醒「坐~稳~咯~」的时候，「稳」字发音还没结束，卡车就已经向前行驶了惊人的距离。",
+        "2": "当然，她总能在最短的时间内把你安全送到目的地——精神损失不算在内。"
+      }
+    },
+    "5": {
+      "name": "私人爱好",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "派派似乎拥有一些不太符合外表的私人爱好。",
+        "1": "「这匹马好像很能跑的样子…唔，但是买的人好少，果然还是那匹胜率更高吗…」",
+        "2": "「嗝——燃油饮…我才没喝多…再来一杯！」"
+      }
+    },
+    "6": {
+      "name": "轻度兴奋",
+      "desc": "<ct color=#FFFFFF>[强化特殊技：引擎转]</ct>的持续时间上限提升2秒，<ct color=#FFFFFF>[动力]</ct>的持续时间提升4秒。",
+      "flavor": {
+        "0": "如你所知，派派最大的愿望是永远都能悠闲度日。",
+        "1": "但此刻，少女总是半睁着的双眸竟少有的精神奕奕。",
+        "2": "「如果是为了你…这个人稍微努力一下下，也可以哦~」"
+      }
+    }
+  },
+  "potential": {}
+}

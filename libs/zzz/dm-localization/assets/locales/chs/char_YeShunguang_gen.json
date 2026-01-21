@@ -1,0 +1,475 @@
+{
+  "name": "叶瞬光",
+  "fullName": "叶瞬光",
+  "basic": {
+    "BasicAttackSwiftedge": {
+      "name": "普通攻击：快剑",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "第四段攻击发动后，可以衔接<ct color=#FFFFFF>[冲刺攻击：如影疾行]</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackCloudstreamSwordWill": {
+      "name": "普通攻击：流云剑意",
+      "desc": {
+        "0": "长按 <IconNormal /> 发动：",
+        "1": "快速发动多道剑气，造成<ct color=#F0D12B>物理伤害</ct>，可以通过长按延长攻击；",
+        "2": "招式发动期间，抗打断等级提升。"
+      },
+      "params": [
+        "Individual Blade Energy "
+      ]
+    },
+    "BasicAttackEnlightenedMindSplittingCurrents": {
+      "name": "普通攻击：明心境·分水行",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[明心境]</ct>状态下并处于地面时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多三段的斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "第三段攻击发动时，若受到敌人攻击，可触发格挡效果，免疫该次伤害；",
+        "3": "若拥有<ct color=#FFFFFF>[青溟剑势]</ct>，第三段攻击将被替换为<ct color=#FFFFFF>[普通攻击：明心境·扶摇势]</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackEnlightenedMindSkywardAscent": {
+      "name": "普通攻击：明心境·扶摇势",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[明心境]</ct>状态下，拥有<ct color=#FFFFFF>[青溟剑势]</ct>时，第二段 <ct color=#FFFFFF>[普通攻击：明心境·分水行]</ct> 后，点按 <IconNormal /> 发动：",
+        "1": "快速发动升空攻击，对敌人造成<ct color=#F0D12B>物理伤害</ct>，并进入空中状态；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackEnlightenedMindSunderlightMaximum": {
+      "name": "普通攻击：明心境·斩流光 极",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[普通攻击：明心境·斩流光 灭]</ct>发动后，拥有<ct color=#FFFFFF>[青溟剑势]</ct>时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行大范围斩击，造成大量<ct color=#F0D12B>物理伤害</ct>，命中敌人时会消耗1点<ct color=#FFFFFF>[青溟剑势]</ct>；",
+        "2": "招式发动时，若受到敌人攻击，可触发格挡效果，免疫该次伤害，并提升招式打断等级；",
+        "3": "招式发动后，若拥有<ct color=#FFFFFF>[青溟剑势]</ct>，点按 <IconSpecialReady /> 可以消耗1点<ct color=#FFFFFF>[青溟剑势]</ct>，发动一段<ct color=#FFFFFF>[强化特殊技：明心境·飞光]</ct>，发动后会自动衔接<ct color=#FFFFFF>[普通攻击：明心境·扶摇势]</ct>，并进入空中状态；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackEnlightenedMindSunderlight": {
+      "name": "普通攻击：明心境·斩流光",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[明心境]</ct>状态下，并处于空中时，点按 <IconNormal /> 发动：",
+        "1": "向前下方进行至多两段的斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "发动期间不会退出<ct color=#FFFFFF>[明心境]</ct>状态；",
+        "3": "点按 <IconSpecialReady /> 或 <IconEvade /> 可以直接发动<ct color=#FFFFFF>[普通攻击：明心境·斩流光 灭]</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit "
+      ]
+    },
+    "BasicAttackEnlightenedMindSunderlightAnnihilation": {
+      "name": "普通攻击：明心境·斩流光 灭",
+      "desc": {
+        "0": "发动第二段<ct color=#FFFFFF>[普通攻击：明心境·斩流光]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前下方进行下坠攻击，并进入地面状态，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "发动时若自身拥有2点及以上<ct color=#FFFFFF>[青溟剑势]</ct>，则向前下方进行大范围下坠攻击，造成大量<ct color=#F0D12B>物理伤害</ct>，命中敌人时，会消耗2点<ct color=#FFFFFF>[青溟剑势]</ct>，并获得<ct color=#FFFFFF>[观止]</ct>效果；招式发动后，若拥有<ct color=#FFFFFF>[青溟剑势]</ct>，点按 <IconSpecialReady /> 可以消耗1点<ct color=#FFFFFF>[青溟剑势]</ct>，发动一段<ct color=#FFFFFF>[强化特殊技：明心境·飞光]</ct>，发动后可快速衔接<ct color=#FFFFFF>[普通攻击：明心境·斩流光 极]</ct>；",
+        "3": "发动期间不会退出<ct color=#FFFFFF>[明心境]</ct>状态；",
+        "4": "招式发动时，若受到敌人攻击，可触发格挡效果，免疫该次伤害；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "With Qingming Sword Force ",
+        "Without Qingming Sword Force "
+      ]
+    },
+    "Culmination": {
+      "name": "观止",
+      "desc": "发动<ct color=#FFFFFF>[强化特殊技：明心境·飞光]</ct>期间，每次消耗<ct color=#FFFFFF>[青溟剑势]</ct>时，若拥有<ct color=#FFFFFF>[观止]</ct>效果，则不消耗<ct color=#FFFFFF>[青溟剑势]</ct>，改为消耗<ct color=#FFFFFF>[观止]</ct>效果，该效果不可叠加，持续至该次<ct color=#FFFFFF>[明心境]</ct>状态结束。",
+      "params": []
+    }
+  },
+  "dodge": {
+    "DodgeLeaveNoTrace": {
+      "name": "闪避：不留行",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "在<ct color=#FFFFFF>[明心境]</ct>状态下，若触发<ct color=#FFFFFF>[极限闪避]</ct>，点按 <IconNormal /> 可发动<ct color=#FFFFFF>[普通攻击：明心境·扶摇势]</ct>。"
+      },
+      "params": []
+    },
+    "DodgeWanderingCloud": {
+      "name": "闪避：逍遥云踪",
+      "desc": {
+        "0": "拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}时长按 <IconEvade /> 发动：",
+        "1": "进入高速移动状态，使用{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}控制方向，松开{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}则会停下。"
+      },
+      "params": []
+    },
+    "DashAttackPhantasmDash": {
+      "name": "冲刺攻击：如影疾行",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterSwallowStrike": {
+      "name": "闪避反击：燕袭",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "跃起并向前方进行刺击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackGuidingTides": {
+      "name": "特殊技：引沧澜",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "若拥有闪避次数，则消耗1次闪避次数并视为同时发动了<ct color=#FFFFFF>[闪避]</ct>；",
+        "2": "若未拥有闪避次数或未触发<ct color=#FFFFFF>[极限闪避]</ct>，对敌人发动快速剑气攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "3": "若此时触发了<ct color=#FFFFFF>[极限闪避]</ct>，对敌人发动飞剑攻击，造成<ct color=#F0D12B>物理伤害</ct>，并可直接衔接第二段<ct color=#FFFFFF>[普通攻击：快剑]</ct>；",
+        "4": "招式发动期间拥有短暂无敌效果。"
+      },
+      "params": [
+        " ",
+        "Perfect Dodge Triggered "
+      ]
+    },
+    "EXSpecialAttackGaleSuppression": {
+      "name": "强化特殊技：定风波",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "对敌人造成突进斩击和飞剑攻击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "发动时可以闪避敌人的攻击；",
+        "3": "发动后获得1点<ct color=#FFFFFF>[青溟剑势]</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    },
+    "SpecialAttackEnlightenedMindCleanExit": {
+      "name": "特殊技：明心境·拂衣去",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[明心境]</ct>状态下，处于地面状态时，点按 <IconSpecialReady /> 发动：",
+        "1": "发动快速的后撤斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "若拥有闪避次数，则消耗1次闪避次数并视为同时发动了<ct color=#FFFFFF>[闪避]</ct>；",
+        "3": "若此时触发了<ct color=#FFFFFF>[极限闪避]</ct>，点按 <IconNormal /> 可以快速发动<ct color=#FFFFFF>[普通攻击：明心境·斩流光 极]</ct>，并进入<ct color=#FFFFFF>[极限视域]</ct>；",
+        "4": "且该次<ct color=#FFFFFF>[普通攻击：明心境·斩流光 极]</ct>发动后，可以直接衔接<ct color=#FFFFFF>[普通攻击：明心境·扶摇势]</ct>；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackEnlightenedMindSoaringLight": {
+      "name": "强化特殊技：明心境·飞光",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[明心境]</ct>状态下，拥有<ct color=#FFFFFF>[青溟剑势]</ct>时，长按 <IconSpecialReady /> 发动：",
+        "1": "发动快速斩击，造成大量<ct color=#F0D12B>物理伤害</ct>并持续快速消耗<ct color=#FFFFFF>[青溟剑势]</ct>，直至耗尽<ct color=#FFFFFF>[青溟剑势]</ct>；",
+        "2": "若<ct color=#FFFFFF>[青溟剑势]</ct>不足或停止长按 <IconSpecialReady /> ，招式会提前结束；",
+        "3": "发动期间不会退出<ct color=#FFFFFF>[明心境]</ct>状态；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "1 Qingming Sword Force Consumed ",
+        "6 Qingming Sword Force Consumed "
+      ]
+    },
+    "EXSpecialAttackEnlightenedMindReturnToDust": {
+      "name": "强化特殊技：明心境·归尘",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[明心境]</ct>状态下，点按 <IconUltimateReady /> 或<ct color=#FFFFFF>[青溟剑势]</ct>耗尽时长按 <IconSpecialReady /> 发动：",
+        "1": "对大范围敌人造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "发动期间不会退出<ct color=#FFFFFF>[明心境]</ct>状态；",
+        "3": "招式发动后，关闭<ct color=#FFFFFF>[以太帷幕·决裁]</ct>退出<ct color=#FFFFFF>[明心境]</ct>状态；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackSmiteTheWicked": {
+      "name": "连携技：斩邪祟",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方大范围敌人发动强力斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateChasingStorms": {
+      "name": "终结技：逐云惊霆",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "召唤剑阵，进入<ct color=#FFFFFF>[明心境]</ct>状态，开启<ct color=#FFFFFF>[以太帷幕·决裁]</ct>，并获得6点<ct color=#FFFFFF>[青溟剑势]</ct>，对敌人造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动时，若消耗了喧响值，则可以在该次<ct color=#FFFFFF>[明心境]</ct>中点按 <IconUltimateReady /> 发动不消耗喧响值的<ct color=#FFFFFF>[终结技：斩妄开天]</ct>；",
+        "3": "招式发动后，将处于空中状态；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "ChainAttackEnlightenedMindLureThunder": {
+      "name": "连携技：明心境·掣惊雷",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[明心境]</ct>状态下，触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方大范围敌人发动强力斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "发动期间不会退出<ct color=#FFFFFF>[明心境]</ct>状态；",
+        "3": "招式发动后，将处于空中状态；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateCleavingHeavens": {
+      "name": "终结技：斩妄开天",
+      "desc": {
+        "0": "消耗喧响值发动<ct color=#FFFFFF>[终结技：逐云惊霆]</ct>后，在<ct color=#FFFFFF>[明心境]</ct>状态下，点按 <IconUltimateReady /> 或<ct color=#FFFFFF>[青溟剑势]</ct>消耗尽后，长按 <IconSpecialReady /> 发动：",
+        "1": "召唤巨剑，对敌人造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "发动期间不会退出<ct color=#FFFFFF>[明心境]</ct>状态；",
+        "3": "招式发动后，会退出<ct color=#FFFFFF>[明心境]</ct>并关闭<ct color=#FFFFFF>[以太帷幕·决裁]</ct>；",
+        "4": "该招式不消耗喧响值；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "EntrySkillIlluminatingDarkness": {
+      "name": "登场技：照影",
+      "desc": {
+        "0": "拥有6点<ct color=#FFFFFF>[青溟剑势]</ct>时，在非<ct color=#FFFFFF>[明心境]</ct>状态下，长按 <IconNormal /> 或接战状态下点按 <IconSwitch /> 从后场切换至前场发动：",
+        "1": "进入<ct color=#FFFFFF>[明心境]</ct>，开启<ct color=#FFFFFF>[以太帷幕·决裁]</ct>；",
+        "2": "对前方大范围敌人造成<ct color=#F0D12B>物理伤害</ct>；",
+        "3": "招式发动时视为发动<ct color=#FFFFFF>[快速支援]</ct>；",
+        "4": "招式发动后，将处于空中状态；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "QuickAssistSupportGuard": {
+      "name": "快速支援：援守",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "跃起并向前方进行刺击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "AssistFollowUpCeaseHostility": {
+      "name": "支援突击：止戈",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistWhenIReturn": {
+      "name": "招架支援：归去时",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "QuickAssistEnlightenedMindTacticalSupport": {
+      "name": "快速支援：明心境·策应",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[明心境]</ct>状态下，当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "向前方进行一次斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "AssistFollowUpEnlightenedMindUnification": {
+      "name": "支援突击：明心境·抱一",
+      "desc": {
+        "0": "在<ct color=#FFFFFF>[明心境]</ct>状态下，发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：照破无明",
+    "desc": [
+      {
+        "0": "非<ct color=#FFFFFF>[明心境]</ct>状态且未拥有6点[青溟剑势]时，部分攻击会缓慢积攒<ct color=#FFFFFF>[青溟剑势]</ct>；任意方式获得<ct color=#FFFFFF>[青溟剑势]</ct>时，每溢出1点<ct color=#FFFFFF>[青溟剑势]</ct>，将转化为1层<ct color=#FFFFFF>[载物]</ct>效果，至多叠加3层，在退出<ct color=#FFFFFF>[明心境]</ct>状态时，会消耗所有<ct color=#FFFFFF>[载物]</ct>获得对应层数的<ct color=#FFFFFF>[青溟剑势]</ct>。",
+        "1": "进入战场时，获得<ct color=#FFFFFF>[合道]</ct>效果，暴击率提升<ct color=#2BAD00>15%</ct>，造成的伤害提升<ct color=#2BAD00>10%</ct>。",
+        "2": "释放<ct color=#FFFFFF>[终结技：逐云惊霆]</ct>或<ct color=#FFFFFF>[登场技：照影]</ct>后，叶瞬光将进入<ct color=#FFFFFF>[明心境]</ct>状态，并开启<ct color=#FFFFFF>[以太帷幕·决裁]</ct>；<ct color=#FFFFFF>[以太帷幕·决裁]</ct>与<ct color=#FFFFFF>[明心境]</ct>持续时间相同，持续16秒，处于后场时，持续时间不再减少；处于<ct color=#FFFFFF>[明心境]</ct>状态下，叶瞬光将使用更加强力的招式，造成的<ct color=#F0D12B>物理伤害</ct>均为<ct color=#F0D12B>凛刃伤害</ct>。",
+        "3": "<ct color=#FFFFFF>[以太帷幕·决裁]</ct>持续期间，敌人进入<ct color=#FFFFFF>[以太帷幕·决裁]</ct>时，将基于其此时的失衡易伤倍率为其附加帷幕易伤效果，期间叶瞬光发动的招式对敌人造成伤害时都将不计算敌人的失衡易伤加成，转而计算帷幕易伤加成；帷幕易伤加成上限为110%，<ct color=#FFFFFF>[以太帷幕·决裁]</ct>结束时移除帷幕易伤效果。"
+      },
+      {
+        "0": "非<ct color=#FFFFFF>[明心境]</ct>状态且未拥有6点[青溟剑势]时，部分攻击会缓慢积攒<ct color=#FFFFFF>[青溟剑势]</ct>；任意方式获得<ct color=#FFFFFF>[青溟剑势]</ct>时，每溢出1点<ct color=#FFFFFF>[青溟剑势]</ct>，将转化为1层<ct color=#FFFFFF>[载物]</ct>效果，至多叠加3层，在退出<ct color=#FFFFFF>[明心境]</ct>状态时，会消耗所有<ct color=#FFFFFF>[载物]</ct>获得对应层数的<ct color=#FFFFFF>[青溟剑势]</ct>。",
+        "1": "进入战场时，获得<ct color=#FFFFFF>[合道]</ct>效果，暴击率提升<ct color=#2BAD00>17.5%</ct>，造成的伤害提升<ct color=#2BAD00>12.5%</ct>。",
+        "2": "释放<ct color=#FFFFFF>[终结技：逐云惊霆]</ct>或<ct color=#FFFFFF>[登场技：照影]</ct>后，叶瞬光将进入<ct color=#FFFFFF>[明心境]</ct>状态，并开启<ct color=#FFFFFF>[以太帷幕·决裁]</ct>；<ct color=#FFFFFF>[以太帷幕·决裁]</ct>与<ct color=#FFFFFF>[明心境]</ct>持续时间相同，持续16秒，处于后场时，持续时间不再减少；处于<ct color=#FFFFFF>[明心境]</ct>状态下，叶瞬光将使用更加强力的招式，造成的<ct color=#F0D12B>物理伤害</ct>均为<ct color=#F0D12B>凛刃伤害</ct>。",
+        "3": "<ct color=#FFFFFF>[以太帷幕·决裁]</ct>持续期间，敌人进入<ct color=#FFFFFF>[以太帷幕·决裁]</ct>时，将基于其此时的失衡易伤倍率为其附加帷幕易伤效果，期间叶瞬光发动的招式对敌人造成伤害时都将不计算敌人的失衡易伤加成，转而计算帷幕易伤加成；帷幕易伤加成上限为110%，<ct color=#FFFFFF>[以太帷幕·决裁]</ct>结束时移除帷幕易伤效果。"
+      },
+      {
+        "0": "非<ct color=#FFFFFF>[明心境]</ct>状态且未拥有6点[青溟剑势]时，部分攻击会缓慢积攒<ct color=#FFFFFF>[青溟剑势]</ct>；任意方式获得<ct color=#FFFFFF>[青溟剑势]</ct>时，每溢出1点<ct color=#FFFFFF>[青溟剑势]</ct>，将转化为1层<ct color=#FFFFFF>[载物]</ct>效果，至多叠加3层，在退出<ct color=#FFFFFF>[明心境]</ct>状态时，会消耗所有<ct color=#FFFFFF>[载物]</ct>获得对应层数的<ct color=#FFFFFF>[青溟剑势]</ct>。",
+        "1": "进入战场时，获得<ct color=#FFFFFF>[合道]</ct>效果，暴击率提升<ct color=#2BAD00>20%</ct>，造成的伤害提升<ct color=#2BAD00>15%</ct>。",
+        "2": "释放<ct color=#FFFFFF>[终结技：逐云惊霆]</ct>或<ct color=#FFFFFF>[登场技：照影]</ct>后，叶瞬光将进入<ct color=#FFFFFF>[明心境]</ct>状态，并开启<ct color=#FFFFFF>[以太帷幕·决裁]</ct>；<ct color=#FFFFFF>[以太帷幕·决裁]</ct>与<ct color=#FFFFFF>[明心境]</ct>持续时间相同，持续16秒，处于后场时，持续时间不再减少；处于<ct color=#FFFFFF>[明心境]</ct>状态下，叶瞬光将使用更加强力的招式，造成的<ct color=#F0D12B>物理伤害</ct>均为<ct color=#F0D12B>凛刃伤害</ct>。",
+        "3": "<ct color=#FFFFFF>[以太帷幕·决裁]</ct>持续期间，敌人进入<ct color=#FFFFFF>[以太帷幕·决裁]</ct>时，将基于其此时的失衡易伤倍率为其附加帷幕易伤效果，期间叶瞬光发动的招式对敌人造成伤害时都将不计算敌人的失衡易伤加成，转而计算帷幕易伤加成；帷幕易伤加成上限为110%，<ct color=#FFFFFF>[以太帷幕·决裁]</ct>结束时移除帷幕易伤效果。"
+      },
+      {
+        "0": "非<ct color=#FFFFFF>[明心境]</ct>状态且未拥有6点[青溟剑势]时，部分攻击会缓慢积攒<ct color=#FFFFFF>[青溟剑势]</ct>；任意方式获得<ct color=#FFFFFF>[青溟剑势]</ct>时，每溢出1点<ct color=#FFFFFF>[青溟剑势]</ct>，将转化为1层<ct color=#FFFFFF>[载物]</ct>效果，至多叠加3层，在退出<ct color=#FFFFFF>[明心境]</ct>状态时，会消耗所有<ct color=#FFFFFF>[载物]</ct>获得对应层数的<ct color=#FFFFFF>[青溟剑势]</ct>。",
+        "1": "进入战场时，获得<ct color=#FFFFFF>[合道]</ct>效果，暴击率提升<ct color=#2BAD00>22.5%</ct>，造成的伤害提升<ct color=#2BAD00>17.5%</ct>。",
+        "2": "释放<ct color=#FFFFFF>[终结技：逐云惊霆]</ct>或<ct color=#FFFFFF>[登场技：照影]</ct>后，叶瞬光将进入<ct color=#FFFFFF>[明心境]</ct>状态，并开启<ct color=#FFFFFF>[以太帷幕·决裁]</ct>；<ct color=#FFFFFF>[以太帷幕·决裁]</ct>与<ct color=#FFFFFF>[明心境]</ct>持续时间相同，持续16秒，处于后场时，持续时间不再减少；处于<ct color=#FFFFFF>[明心境]</ct>状态下，叶瞬光将使用更加强力的招式，造成的<ct color=#F0D12B>物理伤害</ct>均为<ct color=#F0D12B>凛刃伤害</ct>。",
+        "3": "<ct color=#FFFFFF>[以太帷幕·决裁]</ct>持续期间，敌人进入<ct color=#FFFFFF>[以太帷幕·决裁]</ct>时，将基于其此时的失衡易伤倍率为其附加帷幕易伤效果，期间叶瞬光发动的招式对敌人造成伤害时都将不计算敌人的失衡易伤加成，转而计算帷幕易伤加成；帷幕易伤加成上限为110%，<ct color=#FFFFFF>[以太帷幕·决裁]</ct>结束时移除帷幕易伤效果。"
+      },
+      {
+        "0": "非<ct color=#FFFFFF>[明心境]</ct>状态且未拥有6点[青溟剑势]时，部分攻击会缓慢积攒<ct color=#FFFFFF>[青溟剑势]</ct>；任意方式获得<ct color=#FFFFFF>[青溟剑势]</ct>时，每溢出1点<ct color=#FFFFFF>[青溟剑势]</ct>，将转化为1层<ct color=#FFFFFF>[载物]</ct>效果，至多叠加3层，在退出<ct color=#FFFFFF>[明心境]</ct>状态时，会消耗所有<ct color=#FFFFFF>[载物]</ct>获得对应层数的<ct color=#FFFFFF>[青溟剑势]</ct>。",
+        "1": "进入战场时，获得<ct color=#FFFFFF>[合道]</ct>效果，暴击率提升<ct color=#2BAD00>25%</ct>，造成的伤害提升<ct color=#2BAD00>20%</ct>。",
+        "2": "释放<ct color=#FFFFFF>[终结技：逐云惊霆]</ct>或<ct color=#FFFFFF>[登场技：照影]</ct>后，叶瞬光将进入<ct color=#FFFFFF>[明心境]</ct>状态，并开启<ct color=#FFFFFF>[以太帷幕·决裁]</ct>；<ct color=#FFFFFF>[以太帷幕·决裁]</ct>与<ct color=#FFFFFF>[明心境]</ct>持续时间相同，持续16秒，处于后场时，持续时间不再减少；处于<ct color=#FFFFFF>[明心境]</ct>状态下，叶瞬光将使用更加强力的招式，造成的<ct color=#F0D12B>物理伤害</ct>均为<ct color=#F0D12B>凛刃伤害</ct>。",
+        "3": "<ct color=#FFFFFF>[以太帷幕·决裁]</ct>持续期间，敌人进入<ct color=#FFFFFF>[以太帷幕·决裁]</ct>时，将基于其此时的失衡易伤倍率为其附加帷幕易伤效果，期间叶瞬光发动的招式对敌人造成伤害时都将不计算敌人的失衡易伤加成，转而计算帷幕易伤加成；帷幕易伤加成上限为110%，<ct color=#FFFFFF>[以太帷幕·决裁]</ct>结束时移除帷幕易伤效果。"
+      },
+      {
+        "0": "非<ct color=#FFFFFF>[明心境]</ct>状态且未拥有6点[青溟剑势]时，部分攻击会缓慢积攒<ct color=#FFFFFF>[青溟剑势]</ct>；任意方式获得<ct color=#FFFFFF>[青溟剑势]</ct>时，每溢出1点<ct color=#FFFFFF>[青溟剑势]</ct>，将转化为1层<ct color=#FFFFFF>[载物]</ct>效果，至多叠加3层，在退出<ct color=#FFFFFF>[明心境]</ct>状态时，会消耗所有<ct color=#FFFFFF>[载物]</ct>获得对应层数的<ct color=#FFFFFF>[青溟剑势]</ct>。",
+        "1": "进入战场时，获得<ct color=#FFFFFF>[合道]</ct>效果，暴击率提升<ct color=#2BAD00>27.5%</ct>，造成的伤害提升<ct color=#2BAD00>22.5%</ct>。",
+        "2": "释放<ct color=#FFFFFF>[终结技：逐云惊霆]</ct>或<ct color=#FFFFFF>[登场技：照影]</ct>后，叶瞬光将进入<ct color=#FFFFFF>[明心境]</ct>状态，并开启<ct color=#FFFFFF>[以太帷幕·决裁]</ct>；<ct color=#FFFFFF>[以太帷幕·决裁]</ct>与<ct color=#FFFFFF>[明心境]</ct>持续时间相同，持续16秒，处于后场时，持续时间不再减少；处于<ct color=#FFFFFF>[明心境]</ct>状态下，叶瞬光将使用更加强力的招式，造成的<ct color=#F0D12B>物理伤害</ct>均为<ct color=#F0D12B>凛刃伤害</ct>。",
+        "3": "<ct color=#FFFFFF>[以太帷幕·决裁]</ct>持续期间，敌人进入<ct color=#FFFFFF>[以太帷幕·决裁]</ct>时，将基于其此时的失衡易伤倍率为其附加帷幕易伤效果，期间叶瞬光发动的招式对敌人造成伤害时都将不计算敌人的失衡易伤加成，转而计算帷幕易伤加成；帷幕易伤加成上限为110%，<ct color=#FFFFFF>[以太帷幕·决裁]</ct>结束时移除帷幕易伤效果。"
+      },
+      {
+        "0": "非<ct color=#FFFFFF>[明心境]</ct>状态且未拥有6点[青溟剑势]时，部分攻击会缓慢积攒<ct color=#FFFFFF>[青溟剑势]</ct>；任意方式获得<ct color=#FFFFFF>[青溟剑势]</ct>时，每溢出1点<ct color=#FFFFFF>[青溟剑势]</ct>，将转化为1层<ct color=#FFFFFF>[载物]</ct>效果，至多叠加3层，在退出<ct color=#FFFFFF>[明心境]</ct>状态时，会消耗所有<ct color=#FFFFFF>[载物]</ct>获得对应层数的<ct color=#FFFFFF>[青溟剑势]</ct>。",
+        "1": "进入战场时，获得<ct color=#FFFFFF>[合道]</ct>效果，暴击率提升<ct color=#2BAD00>30%</ct>，造成的伤害提升<ct color=#2BAD00>25%</ct>。",
+        "2": "释放<ct color=#FFFFFF>[终结技：逐云惊霆]</ct>或<ct color=#FFFFFF>[登场技：照影]</ct>后，叶瞬光将进入<ct color=#FFFFFF>[明心境]</ct>状态，并开启<ct color=#FFFFFF>[以太帷幕·决裁]</ct>；<ct color=#FFFFFF>[以太帷幕·决裁]</ct>与<ct color=#FFFFFF>[明心境]</ct>持续时间相同，持续16秒，处于后场时，持续时间不再减少；处于<ct color=#FFFFFF>[明心境]</ct>状态下，叶瞬光将使用更加强力的招式，造成的<ct color=#F0D12B>物理伤害</ct>均为<ct color=#F0D12B>凛刃伤害</ct>。",
+        "3": "<ct color=#FFFFFF>[以太帷幕·决裁]</ct>持续期间，敌人进入<ct color=#FFFFFF>[以太帷幕·决裁]</ct>时，将基于其此时的失衡易伤倍率为其附加帷幕易伤效果，期间叶瞬光发动的招式对敌人造成伤害时都将不计算敌人的失衡易伤加成，转而计算帷幕易伤加成；帷幕易伤加成上限为110%，<ct color=#FFFFFF>[以太帷幕·决裁]</ct>结束时移除帷幕易伤效果。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：溯影惊鸿",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[支援]</ct>或<ct color=#FFFFFF>[防护]</ct>角色时触发：",
+      "1": "队友开启任意<ct color=#FFFFFF>[以太帷幕]</ct>时，获得3点<ct color=#FFFFFF>[青溟剑势]</ct>，若自身已经处于<ct color=#FFFFFF>[明心境]</ct>状态，则会转化为3层<ct color=#FFFFFF>[载物]</ct>效果。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "梦中身",
+      "desc": {
+        "0": "进入战场时，获得6点<ct color=#FFFFFF>[青溟剑势]</ct>，在勘域模式中此效果180秒内最多触发一次；",
+        "1": "<ct color=#FFFFFF>[核心被动：照破无明]</ct>中<ct color=#FFFFFF>[合道]</ct>效果额外使造成的伤害提升10%，无视目标20%防御力。"
+      },
+      "flavor": {
+        "0": "无数次午夜梦回，她都会回想起那一天——",
+        "1": "剑刃嗡鸣，长剑认主，契约就此缔结。",
+        "2": "那究竟是幸运，亦或是诅咒？",
+        "3": "",
+        "4": "…无人知晓这个问题的答案，然而从那一日开始，她的命运便牵系于此剑之上。"
+      }
+    },
+    "2": {
+      "name": "光与影",
+      "desc": "<ct color=#FFFFFF>[载物]</ct>可叠加层数提升至6层，<ct color=#FFFFFF>[观止]</ct>可叠加至9层；<ct color=#FFFFFF>[明心境]</ct>状态下，每消耗1点<ct color=#FFFFFF>[青溟剑势]</ct>，则获得1层<ct color=#FFFFFF>[观止]</ct>效果；<ct color=#FFFFFF>[强化特殊技：明心境·飞光]</ct>和<ct color=#FFFFFF>[终结技：斩妄开天]</ct>造成的伤害无视目标40%防御力。",
+      "flavor": {
+        "0": "岁月流淌，寒来暑往。",
+        "1": "她所拥有的天地，不过云岿山上这小小一隅，山间四时便是能看到的所有景象。",
+        "2": "在漫长无尽的寂寥与如影随形的恐惧中，「另一个自己」悄然诞生。",
+        "3": "",
+        "4": "「…我是她的一部分，从始至终，未曾分离。」",
+        "5": "「若她是光，那我就是影子。若她是高悬的圣像，那我就是匍匐的凡人。」",
+        "6": "「与她不同，我不愿成为什么『英雄』…」",
+        "7": "「…我只想活下去。」"
+      }
+    },
+    "3": {
+      "name": "剑客行",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "绝世的名剑藏于深山，敛尽锋芒。",
+        "1": "而它出鞘之时，长剑所及寒芒千丈，风雪过处仍余孤光耀目。",
+        "2": "",
+        "3": "「剑客是什么？」",
+        "4": "「不过是…一往无前的勇气，与斩开一切的决心。」"
+      }
+    },
+    "4": {
+      "name": "共黯尘",
+      "desc": "进入战场时，获得1000点喧响值，在勘域模式中此效果180秒内最多触发一次；<ct color=#FFFFFF>[以太帷幕·决裁]</ct>提供的帷幕易伤加成上限提升至200%。",
+      "flavor": {
+        "0": "宏大的愿景下潜藏着谎言，所谓的拯救却需得燃尽自身。",
+        "1": "命运于她从无怜悯，而她欣然奔赴最后的结局。",
+        "2": "",
+        "3": "「我知道的。」",
+        "4": "「我的一生都会与『失去』共存。」",
+        "5": "「我自愿接受这一切…」",
+        "6": "「…我选择去成为这样的人。」"
+      }
+    },
+    "5": {
+      "name": "微光引",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「…我想，我终究还是那个『幸运』的孩子。」",
+        "1": "「秽息不会淹没我，灾难不会吞噬我。」",
+        "2": "「即便是青溟剑，也无法将我拽进漆黑不见底的深渊…」",
+        "3": "",
+        "4": "「哥哥、师父、随便观的大家…还有你。」",
+        "5": "「…我知道，你们会一直等着我。」",
+        "6": "如此，纵使前路棘刺满地，亦存微光照亮旅途。"
+      }
+    },
+    "6": {
+      "name": "明灯愿",
+      "desc": "进入战场时，获得2层<ct color=#FFFFFF>[明灯愿]</ct>；每次进入<ct color=#FFFFFF>[明心境]</ct>状态会获得1层<ct color=#FFFFFF>[明灯愿]</ct>，至多叠加4层；拥有3层<ct color=#FFFFFF>[明灯愿]</ct>时，将<ct color=#FFFFFF>[强化特殊技：明心境·归尘]</ct>替换为<ct color=#FFFFFF>[终结技：斩妄开天]</ct>，发动此<ct color=#FFFFFF>[终结技：斩妄开天]</ct>时，消耗3层<ct color=#FFFFFF>[明灯愿]</ct>；<ct color=#FFFFFF>[强化特殊技：明心境·归尘]</ct>和<ct color=#FFFFFF>[终结技：斩妄开天]</ct>最后一击额外造成1500%攻击力的<ct color=#F0D12B>物理伤害</ct>。",
+      "flavor": {
+        "0": "她曾孑然一身，独行于黑暗；",
+        "1": "又执剑奔赴灾厄，青溟出鞘之时，一瞬的虹光划破长空，照彻静寂黑暗之地。",
+        "2": "",
+        "3": "「…我想成为万千萤火中的一盏。」",
+        "4": "「天总会亮的。无论黑夜多么漫长，白昼终将到来。」",
+        "5": "「在遥远的过去，和遥远的未来，一定也有无数人做出了和我一样的选择。我们…从不孤单。」"
+      }
+    }
+  },
+  "potential": {}
+}

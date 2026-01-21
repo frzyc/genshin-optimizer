@@ -1,0 +1,242 @@
+{
+  "name": "本",
+  "fullName": "Ben Bigger",
+  "basic": {
+    "BasicAttackDebtReconciliation": {
+      "name": "普通攻击：对账",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多三段的打击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeMissingInvoice": {
+      "name": "闪避：发票漏洞",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackIncomingExpense": {
+      "name": "冲刺攻击：前来报销",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行打击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterAccountsSettled": {
+      "name": "闪避反击：清算",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackFiscalFist": {
+      "name": "特殊技：拳债统计",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "架起武器格挡敌人的攻击，随后对前方进行打击，造成<ct color=#F0D12B>物理伤害</ct>，若在格挡期间成功格挡敌人的攻击，将提升招式的威力，发动格挡反击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "长按 <IconSpecial /> 能够维持格挡；",
+        "3": "维持格挡时获得护盾，护盾值随时间衰减；",
+        "4": "退出格挡后移除护盾，护盾值随时间回复；",
+        "5": "护盾值最高不超过本生命值上限的16%；",
+        "6": "格挡发动时拥有无敌效果；",
+        "7": "打击发动期间抗打断等级提升。"
+      },
+      "params": [
+        "Active Attack ",
+        "Block Counter "
+      ]
+    },
+    "EXSpecialAttackCashflowCounter": {
+      "name": "强化特殊技：到期还拳",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "架起武器格挡敌人的攻击，随后对前方进行打击，造成<ct color=#FF5521>火属性伤害</ct>，若在格挡期间成功格挡敌人的攻击，将提升招式的威力，发动格挡反击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "长按 <IconSpecialReady /> 能够维持格挡；",
+        "3": "维持格挡时获得护盾，护盾值随时间衰减；",
+        "4": "退出格挡后移除护盾，护盾值随时间回复；",
+        "5": "护盾值最高不超过本生命值上限的16%；",
+        "6": "招式发动时，回复护盾至最大值；",
+        "7": "招式发动后，再次点按 <IconSpecialReady /> ，能够向前方追加强力打击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "8": "格挡发动时拥有无敌效果；",
+        "9": "打击发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Active Attack ",
+        "Follow-Up Attack ",
+        "Block Counter ",
+        "Block Follow-Up ",
+        "格挡能量消耗",
+        "追击能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackSignedAndSealed": {
+      "name": "连携技：盖章，结算",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方大范围敌人发动强力打击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateCompletePayback": {
+      "name": "终结技：拳债，全面清偿",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方大范围敌人发动强力打击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动时，额外回复3点支援点数；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistJointAccount": {
+      "name": "快速支援：联合追债",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistRiskAllocation": {
+      "name": "招架支援：分摊风险",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "具有较为优秀的招架性能，承受高强度攻击时<ct color=#FFFFFF>[支援点数]</ct>的消耗量降低；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpDontBreakContract": {
+      "name": "支援突击：违约惩罚",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动突进打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：守卫",
+    "desc": [
+      {
+        "0": "本的初始攻击力随初始防御力提升，提升效果等同于自身初始防御力的<ct color=#2BAD00>40%</ct>；",
+        "1": "在<ct color=#FFFFFF>[强化特殊技]</ct>中追加强力打击时，为全队角色提供等同于自身<ct color=#2BAD00>15%</ct>防御力+<ct color=#2BAD00>100</ct>点护盾，持续30秒。"
+      },
+      {
+        "0": "本的初始攻击力随初始防御力提升，提升效果等同于自身初始防御力的<ct color=#2BAD00>46%</ct>；",
+        "1": "在<ct color=#FFFFFF>[强化特殊技]</ct>中追加强力打击时，为全队角色提供等同于自身<ct color=#2BAD00>17.5%</ct>防御力+<ct color=#2BAD00>220</ct>点护盾，持续30秒。"
+      },
+      {
+        "0": "本的初始攻击力随初始防御力提升，提升效果等同于自身初始防御力的<ct color=#2BAD00>52%</ct>；",
+        "1": "在<ct color=#FFFFFF>[强化特殊技]</ct>中追加强力打击时，为全队角色提供等同于自身<ct color=#2BAD00>20%</ct>防御力+<ct color=#2BAD00>330</ct>点护盾，持续30秒。"
+      },
+      {
+        "0": "本的初始攻击力随初始防御力提升，提升效果等同于自身初始防御力的<ct color=#2BAD00>60%</ct>；",
+        "1": "在<ct color=#FFFFFF>[强化特殊技]</ct>中追加强力打击时，为全队角色提供等同于自身<ct color=#2BAD00>22.5%</ct>防御力+<ct color=#2BAD00>460</ct>点护盾，持续30秒。"
+      },
+      {
+        "0": "本的初始攻击力随初始防御力提升，提升效果等同于自身初始防御力的<ct color=#2BAD00>66%</ct>；",
+        "1": "在<ct color=#FFFFFF>[强化特殊技]</ct>中追加强力打击时，为全队角色提供等同于自身<ct color=#2BAD00>25%</ct>防御力+<ct color=#2BAD00>500</ct>点护盾，持续30秒。"
+      },
+      {
+        "0": "本的初始攻击力随初始防御力提升，提升效果等同于自身初始防御力的<ct color=#2BAD00>72%</ct>；",
+        "1": "在<ct color=#FFFFFF>[强化特殊技]</ct>中追加强力打击时，为全队角色提供等同于自身<ct color=#2BAD00>27.5%</ct>防御力+<ct color=#2BAD00>525</ct>点护盾，持续30秒。"
+      },
+      {
+        "0": "本的初始攻击力随初始防御力提升，提升效果等同于自身初始防御力的<ct color=#2BAD00>80%</ct>；",
+        "1": "在<ct color=#FFFFFF>[强化特殊技]</ct>中追加强力打击时，为全队角色提供等同于自身<ct color=#2BAD00>30%</ct>防御力+<ct color=#2BAD00>550</ct>点护盾，持续30秒。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：协议合同",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "拥有<ct color=#FFFFFF>[核心被动：守卫]</ct>施加的护盾时，角色的暴击率提升16%。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "反作用力",
+      "desc": "发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>，成功格挡敌人的攻击时，攻击者造成的伤害降低30%，持续15秒。",
+      "flavor": {
+        "0": "「力的作用是相互的，为什么还要正面撞过来？」",
+        "1": "「看来你没有好好计算过」"
+      }
+    },
+    "2": {
+      "name": "以守为攻",
+      "desc": "在<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>中，成功触发格挡反击时，额外造成本300%防御力的伤害。",
+      "flavor": {
+        "0": "不像其他熊希人，战斗时的本非常有耐心。",
+        "1": "因为他相信，只要做好防护，一定能等到敌人露出破绽的时刻。"
+      }
+    },
+    "3": {
+      "name": "精打细算",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "担当财务负责人必须学会精打细算，用一切可用的资源强化大家和自己。"
+    },
+    "4": {
+      "name": "灵活应变",
+      "desc": "在<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>中，通过无敌效果成功格挡攻击时 ，后继反击造成的伤害提升30%。",
+      "flavor": {
+        "0": "出于会计的职业本能，\n本总是会根据形式，动态调整自己的对策。\n无论是账目还是对敌，务必以最小成本达到最佳效果。",
+        "1": "Whether dealing with accounts or enemies, it's important to achieve the best results at the lowest cost."
+      }
+    },
+    "5": {
+      "name": "巨细靡遗",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "本敏锐的眼光不会放弃任何报表上的错误，同样也不会放过自己战斗方式上的失误，在纠错中逐渐变强。"
+    },
+    "6": {
+      "name": "野性斗志",
+      "desc": "在<ct color=#FFFFFF>[强化特殊技]</ct>中发动攻击或追加强力打击后，<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>造成的失衡值提升20%，持续12秒。",
+      "flavor": {
+        "0": "熊希人与犬希人不同，",
+        "1": "并不能用食物安抚他们躁动的情绪。",
+        "2": "当他们发脾气时，你唯一能做的就是跑快一点，跑远一点…",
+        "3": "——下架书籍《做个好邻居！与希人相处的100个小窍门》"
+      }
+    }
+  },
+  "potential": {}
+}

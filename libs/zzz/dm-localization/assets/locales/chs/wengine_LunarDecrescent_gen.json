@@ -1,0 +1,14 @@
+{
+  "name": "「月相」-晦",
+  "desc": "在声能与热能运用上都有不俗表现的音擎，能够赋予受击者双重伤害。受此音擎攻击或误击的对象有一定概率被确诊为雪盲症，原因目前未知；一位可怜的空洞调查员因此未能从保险公司索赔成功。",
+  "desc2": "装备后可提升[强攻]代理人的战斗能力",
+  "desc3": "在声能与热能运用上都有不俗表现的音擎，能够赋予受击者双重伤害。",
+  "phase": "残月",
+  "phaseDescs": [
+    "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，装备者造成的伤害提升<ct color=#2BAD00>15%</ct>，持续6秒。",
+    "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，装备者造成的伤害提升<ct color=#2BAD00>17.5%</ct>，持续6秒。",
+    "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，装备者造成的伤害提升<ct color=#2BAD00>20%</ct>，持续6秒。",
+    "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，装备者造成的伤害提升<ct color=#2BAD00>22.5%</ct>，持续6秒。",
+    "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，装备者造成的伤害提升<ct color=#2BAD00>25%</ct>，持续6秒。"
+  ]
+}

@@ -305,7 +305,7 @@ function ProgressIndicator(props: { progress: Progress; total: number }) {
         <Monospace value={unskipped} />{' '}
       </Typography>
       <Typography>
-        {t('computed + skipped')}: <Monospace value={computed + skipped} /> /{' '}
+        {t('computedSkipped')}: <Monospace value={computed + skipped} /> /{' '}
         <Monospace value={props.total} />
       </Typography>
       <LinearProgress // ideally, it should be | <computed> | <remaining> | <skipped> |

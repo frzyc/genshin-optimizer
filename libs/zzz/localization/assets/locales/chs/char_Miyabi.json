@@ -1,0 +1,16 @@
+{
+  "frostbiteCond": "敌人受到霜冻影响",
+  "coreIcefireCond": "敌人受到冰火影响",
+  "core_frostburnBreak_dmg": "冰火·破伤害",
+  "coreFrostburnCond": "敌人处于冰火状态",
+  "ability_dmg_": "普通攻击：霜月伤害",
+  "abilityCond": "当队伍中任意角色触发紊乱时",
+  "ability_ice_resIgn_": "普通攻击：霜月冰属性抗性穿透",
+  "m1Cond": "在霜月架势下，每消耗1点霜落",
+  "m1_defIgn_": "普通攻击：霜月防御穿透",
+  "m1Cond2": "当普通攻击：霜月充能等级三的斩击命中处于冰火状态的敌人时",
+  "m2_dmg_": "普通攻击：华风伤害",
+  "m4_frostburnBreak_dmg_": "冰火·破伤害",
+  "m6Cond": "极性",
+  "m6_dmg_": "普通攻击：霜月伤害"
+}

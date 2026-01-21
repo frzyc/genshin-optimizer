@@ -3,20 +3,18 @@ import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
 import { evalIfFunc, getUnitStr } from '@genshin-optimizer/common/util'
 import type { Calculator as GameOptCalculator } from '@genshin-optimizer/game-opt/engine'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
-import { elementalData, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
 import { Read, type Tag } from '@genshin-optimizer/zzz/formula'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
+import { useTranslation } from 'react-i18next'
 import {
   condMap,
-  damageTypeKeysMap,
   getDmgType,
   getVariant,
   tagFieldMap,
 } from '../char'
 import { useZzzCalcContext } from '../hooks'
 import { getTagLabel } from '../util'
-import { qtMap } from './qtMap'
 export function TagDisplay({
   tag,
   showPercent,
@@ -36,12 +34,13 @@ export function FullTagDisplay({
   tag,
   showPercent,
 }: { tag: Tag; showPercent?: boolean }) {
+  const { t } = useTranslation('statKey_gen')
   return (
     <>
       <TagDisplay tag={tag} showPercent={showPercent} />
       {/* Show DMG type */}
       {getDmgType(tag).map((dmgType) => (
-        <SqBadge key={dmgType}>{damageTypeKeysMap[dmgType]}</SqBadge>
+        <SqBadge key={dmgType}>{t(dmgType)}</SqBadge>
       ))}
       {/* Show Attribute */}
       {tag.attribute && (
@@ -73,6 +72,7 @@ function TagStrDisplay({
   showPercent,
   preventRecursion,
 }: { tag: Tag; showPercent?: boolean; preventRecursion?: boolean }) {
+  const { t } = useTranslation('statKey_gen')
   const calc = useZzzCalcContext()
   const title = tagFieldMap.subset(tag)[0]?.title
   if (title && !preventRecursion) return title
@@ -93,8 +93,8 @@ function TagStrDisplay({
       <span>
         <StatIcon statKey={label} iconProps={iconInlineProps} />{' '}
         <span>
-          {(tag.qt && qtMap[tag.qt as keyof typeof qtMap]) ?? tag.qt}{' '}
-          {statKeyTextMap[label]}
+          {tag.qt && t(tag.qt)}{' '}
+          {t(label)}
           {showPercent && getUnitStr(label)}
           {/* {tag.sheet && tag.sheet !== 'agg' ? ` (${tag.sheet})` : ''} */}
         </span>
@@ -102,10 +102,10 @@ function TagStrDisplay({
     )
   if (labelMap[label as keyof typeof labelMap]) {
     const strs = [
-      ...(tag.attribute ? [elementalData[tag.attribute]] : []),
-      ...(tag.damageType1 ? [damageTypeKeysMap[tag.damageType1]] : []),
-      ...(tag.damageType2 ? [damageTypeKeysMap[tag.damageType2]] : []),
-      labelMap[label as keyof typeof labelMap],
+      ...(tag.attribute ? [t(tag.attribute)] : []),
+      ...(tag.damageType1 ? [t(tag.damageType1)] : []),
+      ...(tag.damageType2 ? [t(tag.damageType2)] : []),
+      t(labelMap[label as keyof typeof labelMap]),
     ]
     return <span>{strs.join(' ')}</span>
   }

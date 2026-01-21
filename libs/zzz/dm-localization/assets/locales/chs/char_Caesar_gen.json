@@ -1,0 +1,298 @@
+{
+  "name": "凯撒",
+  "fullName": "Caesar King",
+  "basic": {
+    "BasicAttackRampagingSlash": {
+      "name": "普通攻击：横行斩打",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多六段的斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "3rd-Hit (ALT) ",
+        "4th-Hit ",
+        "5th-Hit ",
+        "6th-Hit "
+      ]
+    },
+    "BasicAttackDeadEnd": {
+      "name": "普通攻击：此路不通！",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[支援点数]</ct>足够时，长按 <IconNormal /> 发动：",
+        "1": "消耗1点<ct color=#FFFFFF>[支援点数]</ct>，丢出手中的盾牌对四周进行攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "支援点数消耗"
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeAdrift": {
+      "name": "闪避：漂移",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackHogRush": {
+      "name": "冲刺攻击：猪突猛进",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "使用盾牌向前方进行打击，造成<ct color=#F0D12B>物理伤害</ct>。",
+        "2": "招式发动期间自身受到的伤害降低40%，受到敌人攻击时将持盾格挡并被击退，随后点按 <IconSpecial /> 或 <IconSpecialReady /> ，可以触发<ct color=#FFFFFF>[防御反击]</ct>，发动<ct color=#FFFFFF>[特殊技：喧嚣直刺]</ct>或<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterEyeForAnEye": {
+      "name": "闪避反击：以牙还牙",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动刺击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackShockwaveShieldBash": {
+      "name": "特殊技：震荡盾击",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "使用盾牌向前方进行打击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "若在招式发动初期的较短时间内受到敌方攻击，将触发<ct color=#FFFFFF>[精准格挡]</ct>，抵挡此次攻击伤害，并自动衔接发动<ct color=#FFFFFF>[特殊技：喧嚣直刺]</ct>；",
+        "3": "招式发动后，凯撒将进入格挡架势，期间自身受到的伤害降低40%，受到敌人攻击时将持盾格挡并被击退，随后点按 <IconSpecial /> 或 <IconSpecialReady /> ，可以触发<ct color=#FFFFFF>[防御反击]</ct>，发动<ct color=#FFFFFF>[特殊技：喧嚣直刺]</ct>或<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>；",
+        "4": "触发<ct color=#FFFFFF>[防御反击]</ct>时，招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "[Perfect Block] "
+      ]
+    },
+    "SpecialAttackRoaringThrust": {
+      "name": "特殊技：喧嚣直刺",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[特殊技：震荡盾击]</ct>发动后，点按 <IconSpecial /> 发动：",
+        "1": "向前方进行刺击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "未触发<ct color=#FFFFFF>[精准格挡]</ct>和<ct color=#FFFFFF>[防御反击]</ct>时，招式发动期间抗打断等级提升；",
+        "3": "触发<ct color=#FFFFFF>[精准格挡]</ct>或<ct color=#FFFFFF>[防御反击]</ct>时，招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackParryCounter": {
+      "name": "强化特殊技：招架反击",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "使用盾牌向前方进行打击，随后发动强力刺击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "若在招式发动初期受到敌方攻击，或通过盾牌打击触发<ct color=#FFFFFF>[破招]</ct>时，将触发<ct color=#FFFFFF>[精准格挡]</ct>，抵挡此次攻击伤害，并挥盾反击；触发<ct color=#FFFFFF>[精准格挡]</ct>后，点按 <IconSpecialReady /> ，可以发动<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>，且无需消耗能量；",
+        "3": "招式发动后，凯撒将进入格挡架势，期间自身受到的伤害降低40%，受到敌人攻击时将持盾格挡并被击退，随后点按 <IconSpecial /> 或 <IconSpecialReady /> ，可以触发<ct color=#FFFFFF>[防御反击]</ct>，发动<ct color=#FFFFFF>[特殊技：喧嚣直刺]</ct>或<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "[Perfect Block] ",
+        "[Perfect Block] Counter ",
+        "能量消耗"
+      ]
+    },
+    "EXSpecialAttackOverpoweredShieldBash": {
+      "name": "强化特殊技：超强力盾击",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[强化特殊技：招架反击]</ct>发动后，能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "使用盾牌向前方进行打击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "若在招式发动初期受到敌方攻击，或通过盾牌打击触发<ct color=#FFFFFF>[破招]</ct>时，将触发<ct color=#FFFFFF>[精准格挡]</ct>，抵挡此次攻击伤害，并返还发动招式所消耗的能量；",
+        "3": "以<ct color=#FFFFFF>[精准格挡]</ct>或<ct color=#FFFFFF>[防御反击]</ct>的方式发动时，无法再次触发<ct color=#FFFFFF>[精准格挡]</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "[Perfect Block] ",
+        "点按发动能量消耗"
+      ]
+    },
+    "StanceSwitch": {
+      "name": "攻防转换",
+      "desc": "凯撒触发<ct color=#FFFFFF>[精准格挡]</ct>、<ct color=#FFFFFF>[防御反击]</ct>或<ct color=#FFFFFF>[招架支援]</ct>时，自身冲击力提升<ct color=#2BAD00>{CAL:8+AvatarSkillLevel(1)*1,1,2}</ct>%，持续3秒。",
+      "params": [
+        "冲击力提升"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackRoadRageSlam": {
+      "name": "连携技：路怒震打",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方范围敌人发动强力下落打击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateSavageSmash": {
+      "name": "终结技：暴君猛击",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "丢出手中的盾牌对前方敌人发动强力旋转攻击，随后发动下落打击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "命中持有护盾的敌人时，招式造成的失衡值提升<ct color=#2BAD00>{CAL:40+AvatarSkillLevel(3)*5,1,2}%</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "失衡值提升"
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistLaneChange": {
+      "name": "快速支援：变道支援",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动刺击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistAegisShield": {
+      "name": "招架支援：守御之盾",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "具有较为优秀的招架性能，承受高强度攻击时<ct color=#FFFFFF>[支援点数]</ct>的消耗量降低；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpAidingBlade": {
+      "name": "支援突击：支援之锋",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "丢出手中的盾牌对前方敌人发动强力旋转攻击，随后发动斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动后点按 <IconSpecial /> 或 <IconSpecialReady /> ，可以触发<ct color=#FFFFFF>[防御反击]</ct>，发动<ct color=#FFFFFF>[特殊技：喧嚣直刺]</ct>或<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：坚韧之壁",
+    "desc": [
+      {
+        "0": "凯撒发动<ct color=#FFFFFF>[强化特殊技：招架反击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>或以<ct color=#FFFFFF>[防御反击]</ct>的方式发动<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>时，为全队提供等同于自身<ct color=#2BAD00>300%</ct>初始冲击力+<ct color=#2BAD00>200</ct>点的护盾<ct color=#FFFFFF>[荣光之盾]</ct>，持续60秒，<ct color=#FFFFFF>[荣光之盾]</ct>由当前操作中的角色持有，护盾值为全队共享，单次受到的伤害不会超过护盾值；",
+        "1": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的抗打断等级提升；",
+        "2": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的攻击力提升<ct color=#2BAD00>40</ct>点，<ct color=#FFFFFF>[荣光之盾]</ct>效果结束后，该增益效果仍然保留，持续5秒。"
+      },
+      {
+        "0": "凯撒发动<ct color=#FFFFFF>[强化特殊技：招架反击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>或以<ct color=#FFFFFF>[防御反击]</ct>的方式发动<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>时，为全队提供等同于自身<ct color=#2BAD00>500%</ct>初始冲击力+<ct color=#2BAD00>400</ct>点的护盾<ct color=#FFFFFF>[荣光之盾]</ct>，持续60秒，<ct color=#FFFFFF>[荣光之盾]</ct>由当前操作中的角色持有，护盾值为全队共享，单次受到的伤害不会超过护盾值；",
+        "1": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的抗打断等级提升；",
+        "2": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的攻击力提升<ct color=#2BAD00>135</ct>点，<ct color=#FFFFFF>[荣光之盾]</ct>效果结束后，该增益效果仍然保留，持续5秒。"
+      },
+      {
+        "0": "凯撒发动<ct color=#FFFFFF>[强化特殊技：招架反击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>或以<ct color=#FFFFFF>[防御反击]</ct>的方式发动<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>时，为全队提供等同于自身<ct color=#2BAD00>700%</ct>初始冲击力+<ct color=#2BAD00>700</ct>点的护盾<ct color=#FFFFFF>[荣光之盾]</ct>，持续60秒，<ct color=#FFFFFF>[荣光之盾]</ct>由当前操作中的角色持有，护盾值为全队共享，单次受到的伤害不会超过护盾值；",
+        "1": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的抗打断等级提升；",
+        "2": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的攻击力提升<ct color=#2BAD00>240</ct>点，<ct color=#FFFFFF>[荣光之盾]</ct>效果结束后，该增益效果仍然保留，持续5秒。"
+      },
+      {
+        "0": "凯撒发动<ct color=#FFFFFF>[强化特殊技：招架反击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>或以<ct color=#FFFFFF>[防御反击]</ct>的方式发动<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>时，为全队提供等同于自身<ct color=#2BAD00>900%</ct>初始冲击力+<ct color=#2BAD00>900</ct>点的护盾<ct color=#FFFFFF>[荣光之盾]</ct>，持续60秒，<ct color=#FFFFFF>[荣光之盾]</ct>由当前操作中的角色持有，护盾值为全队共享，单次受到的伤害不会超过护盾值；",
+        "1": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的抗打断等级提升；",
+        "2": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的攻击力提升<ct color=#2BAD00>400</ct>点，<ct color=#FFFFFF>[荣光之盾]</ct>效果结束后，该增益效果仍然保留，持续5秒。"
+      },
+      {
+        "0": "凯撒发动<ct color=#FFFFFF>[强化特殊技：招架反击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>或以<ct color=#FFFFFF>[防御反击]</ct>的方式发动<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>时，为全队提供等同于自身<ct color=#2BAD00>1100%</ct>初始冲击力+<ct color=#2BAD00>1100</ct>点的护盾<ct color=#FFFFFF>[荣光之盾]</ct>，持续60秒，<ct color=#FFFFFF>[荣光之盾]</ct>由当前操作中的角色持有，护盾值为全队共享，单次受到的伤害不会超过护盾值；",
+        "1": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的抗打断等级提升；",
+        "2": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的攻击力提升<ct color=#2BAD00>650</ct>点，<ct color=#FFFFFF>[荣光之盾]</ct>效果结束后，该增益效果仍然保留，持续5秒。"
+      },
+      {
+        "0": "凯撒发动<ct color=#FFFFFF>[强化特殊技：招架反击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>或以<ct color=#FFFFFF>[防御反击]</ct>的方式发动<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>时，为全队提供等同于自身<ct color=#2BAD00>1300%</ct>初始冲击力+<ct color=#2BAD00>1300</ct>点的护盾<ct color=#FFFFFF>[荣光之盾]</ct>，持续60秒，<ct color=#FFFFFF>[荣光之盾]</ct>由当前操作中的角色持有，护盾值为全队共享，单次受到的伤害不会超过护盾值；",
+        "1": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的抗打断等级提升；",
+        "2": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的攻击力提升<ct color=#2BAD00>900</ct>点，<ct color=#FFFFFF>[荣光之盾]</ct>效果结束后，该增益效果仍然保留，持续5秒。"
+      },
+      {
+        "0": "凯撒发动<ct color=#FFFFFF>[强化特殊技：招架反击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>或以<ct color=#FFFFFF>[防御反击]</ct>的方式发动<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>时，为全队提供等同于自身<ct color=#2BAD00>1400%</ct>初始冲击力+<ct color=#2BAD00>1400</ct>点的护盾<ct color=#FFFFFF>[荣光之盾]</ct>，持续60秒，<ct color=#FFFFFF>[荣光之盾]</ct>由当前操作中的角色持有，护盾值为全队共享，单次受到的伤害不会超过护盾值；",
+        "1": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的抗打断等级提升；",
+        "2": "<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者的攻击力提升<ct color=#2BAD00>1000</ct>点，<ct color=#FFFFFF>[荣光之盾]</ct>效果结束后，该增益效果仍然保留，持续5秒。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：战意激昂",
+    "desc": {
+      "0": "队伍中存在其他可发动<ct color=#FFFFFF>[招架支援]</ct>的角色或与自身阵营相同的角色时触发：",
+      "1": "凯撒触发<ct color=#FFFFFF>[精准格挡]</ct>、<ct color=#FFFFFF>[防御反击]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或发动<ct color=#FFFFFF>[普通攻击：此路不通！]</ct>时，对自身附近7米范围内的敌人施加减益效果，使全队角色对其造成的伤害提升25%，持续30秒。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "楔式进军",
+      "desc": "成为接战状态下的当前操作角色时，凯撒立即为全队提供<ct color=#FFFFFF>[荣光之盾]</ct>，300秒内最多触发一次；<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，持有者附近5米范围内敌人的全属性伤害抗性降低15%。",
+      "flavor": {
+        "0": "「大老爹教过我，这时候就该以强大的兵力构成楔子般的队形，向敌方最薄弱之处进行攻击——」",
+        "1": "「当然，是由我来打头阵！」"
+      }
+    },
+    "2": {
+      "name": "异域传承",
+      "desc": "<ct color=#FFFFFF>[核心被动：坚韧之壁]</ct>中，<ct color=#FFFFFF>[荣光之盾]</ct>存在期间，凯撒的能量获得效率提升10%，持有者的攻击力提升效果提升至原本的150%。",
+      "flavor": {
+        "0": "凯撒的战斗方式与新艾利都或是外环的风格都略有不同，继承成自流浪者集团最厉害的武者们。\n在恰当的时候收敛锋芒，在恰当的时候一击毙命——这向来是流浪者们的生存之道。\n而凯撒一直是个好学生。",
+        "1": "Knowing when to hold back and when to strike decisively — that has always been the wanderer's way of survival. And Caesar has always been a good student of this philosophy."
+      }
+    },
+    "3": {
+      "name": "绝对信任",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "一旦认可某个人之后，凯撒就会把对方划到自己的麾下，并予以其绝对的信任，毫不设防…",
+        "1": "一如她现在对待你那样。"
+      }
+    },
+    "4": {
+      "name": "阿瑞斯攻城锤",
+      "desc": "凯撒发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，额外回复3点<ct color=#FFFFFF>[支援点数]</ct>；凯撒的能量值不足20点时，可以消耗1点<ct color=#FFFFFF>[支援点数]</ct>作为代替，发动<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>，代替效果5秒内最多触发一次。",
+      "flavor": {
+        "0": "凯撒在流浪者集团导师教育下学会的战术之一。",
+        "1": "「无论如何，我会战到最后一刻！」"
+      }
+    },
+    "5": {
+      "name": "浪漫征伐",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "与外表不同，凯撒拥有特别的浪漫情怀。",
+        "1": "例如她总是对一些恋爱戏码充满了好奇心。",
+        "2": "但如果你和她更「深入」地聊这个话题…凯撒则会难得红了脸。"
+      }
+    },
+    "6": {
+      "name": "霸主之志",
+      "desc": "<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>和<ct color=#FFFFFF>[支援突击：支援之锋]</ct>必定触发暴击，招式造成的伤害提升50%，对主要目标造成的伤害额外提升50%；凯撒发动<ct color=#FFFFFF>[强化特殊技：超强力盾击]</ct>或<ct color=#FFFFFF>[支援突击：支援之锋]</ct>时，自身暴击率提升30%，暴击伤害提升60%，持续15秒。",
+      "flavor": {
+        "0": "「我曾只看向前方。我以为只要自己够强，就没有办不到的事。」",
+        "1": "「但要成为优秀的霸主，这还远远不够。」",
+        "2": "「我还需要守护好后方的同伴——他们才是我最大的底气。」"
+      }
+    }
+  },
+  "potential": {}
+}
