@@ -1,0 +1,24 @@
+{
+  "name": "Işıldayan Ay Parçası",
+  "description": {
+    "0": "Efsanevi bir kılıç. Berrak pınarların arasına gizlenmiş bir Adeptus tarafından, bir kuyunun içindeki parıldayan ay ışığıyla dövüldüğü söylenir. Gerçek formu ancak alacakaranlık ile şafağın buluştuğu anda ortaya çıkar."
+  },
+  "passiveName": "Lang-Gan'ın Mirası",
+  "passiveDescription": {
+    "0": {
+      "0": "Savunmayı <cryo>%20</cryo> artırır. Kuşanan karakter bir Element Becerisi kullandıktan sonra 5 saniyeliğine Ay Kristalleşmesi tepkimeleri ile verilen Hasar <cryo>%64</cryo> artar."
+    },
+    "1": {
+      "0": "Savunmayı <cryo>%25</cryo> artırır. Kuşanan karakter bir Element Becerisi kullandıktan sonra 5 saniyeliğine Ay Kristalleşmesi tepkimeleri ile verilen Hasar <cryo>%80</cryo> artar."
+    },
+    "2": {
+      "0": "Savunmayı <cryo>%30</cryo> artırır. Kuşanan karakter bir Element Becerisi kullandıktan sonra 5 saniyeliğine Ay Kristalleşmesi tepkimeleri ile verilen Hasar <cryo>%96</cryo> artar."
+    },
+    "3": {
+      "0": "Savunmayı <cryo>%35</cryo> artırır. Kuşanan karakter bir Element Becerisi kullandıktan sonra 5 saniyeliğine Ay Kristalleşmesi tepkimeleri ile verilen Hasar <cryo>%112</cryo> artar."
+    },
+    "4": {
+      "0": "Savunmayı <cryo>%40</cryo> artırır. Kuşanan karakter bir Element Becerisi kullandıktan sonra 5 saniyeliğine Ay Kristalleşmesi tepkimeleri ile verilen Hasar <cryo>%128</cryo> artar."
+    }
+  }
+}

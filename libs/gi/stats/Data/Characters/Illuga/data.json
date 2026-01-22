@@ -1,0 +1,66 @@
+{
+  "key": "Illuga",
+  "ele": "geo",
+  "region": "nodKrai",
+  "weaponType": "polearm",
+  "birthday": {
+    "month": 12,
+    "day": 23
+  },
+  "rarity": 4,
+  "lvlCurves": [
+    {
+      "key": "hp",
+      "base": 1002.9701,
+      "curve": "GROW_CURVE_HP_S4"
+    },
+    {
+      "key": "atk",
+      "base": 16.0272,
+      "curve": "GROW_CURVE_ATTACK_S4"
+    },
+    {
+      "key": "def",
+      "base": 68.2122,
+      "curve": "GROW_CURVE_HP_S4"
+    }
+  ],
+  "ascensionBonus": {
+    "hp": [
+      0,
+      749.27,
+      1281.6461,
+      1991.4808,
+      2523.857,
+      3056.233,
+      3588.6091
+    ],
+    "def": [
+      0,
+      50.958,
+      87.165,
+      135.441,
+      171.648,
+      207.855,
+      244.062
+    ],
+    "atk": [
+      0,
+      11.97342,
+      20.48085,
+      31.82409,
+      40.33152,
+      48.83895,
+      57.34638
+    ],
+    "eleMas": [
+      0,
+      0,
+      24,
+      48,
+      48,
+      72,
+      96
+    ]
+  }
+}
