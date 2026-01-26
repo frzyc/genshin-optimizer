@@ -129,7 +129,10 @@ const sheet = register(
       markedWithSilverStar.ifOn(
         prod(
           sum(own.initial.crit_dmg_, own.combat.crit_dmg_),
-          percent(subscript(char.core, dm.core.aftershock_crit_dmg_scaling_))
+          sum(
+            percent(dm.core.bonus_aftershock_crit_dmg_scaling_),
+            percent(subscript(char.core, dm.core.aftershock_crit_dmg_scaling_))
+          )
         )
       )
     ),
@@ -159,7 +162,14 @@ const sheet = register(
           team.common.count.withSpecialty('support')
         ),
         1,
-        markedWithSilverStar.ifOn(dm.ability.aftershock_dmg_)
+        markedWithSilverStar.ifOn(
+          cmpGE(
+            char.potential,
+            1,
+            subscript(char.potential, dm.potential.aftershock_dmg_),
+            dm.ability.aftershock_dmg_
+          )
+        )
       )
     ),
     undefined,
