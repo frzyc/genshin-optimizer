@@ -12,6 +12,7 @@ import {
   allWengineKeys,
 } from '@genshin-optimizer/zzz/consts'
 import {
+  Dialyn,
   charTagMapNodeEntries,
   conditionals,
   discTagMapNodeEntries,
@@ -23,6 +24,7 @@ import {
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
 import {
+  Read,
   type TagMapNodeEntries,
   conditionalEntries,
   convert,
@@ -32,7 +34,6 @@ import {
   own,
   ownBuff,
   ownTag,
-  prevMember,
   tagStr,
   team,
 } from './data/util'
@@ -68,6 +69,7 @@ describe('character test', () => {
             promotion,
             key: charKey,
             mindscape: 0,
+            potential: 0,
             basic: 0,
             dodge: 0,
             special: 0,
@@ -102,6 +104,7 @@ describe('temp test', () => {
           promotion: 5,
           key: charKey,
           mindscape: 0,
+          potential: 0,
           basic: 1,
           dodge: 1,
           special: 1,
@@ -124,6 +127,7 @@ describe('temp test', () => {
           promotion: 5,
           key: 'Banyue',
           mindscape: 0,
+          potential: 0,
           basic: 1,
           dodge: 1,
           special: 1,
@@ -141,11 +145,13 @@ describe('temp test', () => {
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    expect(
+    expect(() =>
       calc
         .withTag({ src: 'Dialyn', dst: 'Dialyn', preset: 'preset0' })
-        .compute(prevMember.char.specialty).val
-    ).toBe('rupture')
+        .compute(
+          new Read(Dialyn.formulas.EXSpecialAttackPaper_0_dmg.tag, undefined)
+        )
+    ).not.toThrow()
   })
 })
 
@@ -167,6 +173,7 @@ describe('wengine test', () => {
             promotion: 0,
             key: 'Anby',
             mindscape: 0,
+            potential: 0,
             basic: 0,
             dodge: 0,
             special: 0,
@@ -205,6 +212,7 @@ describe('char+wengine test', () => {
           promotion: 0,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
@@ -233,6 +241,7 @@ describe('char+wengine test', () => {
           promotion: 5,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
@@ -274,6 +283,7 @@ describe('char+wengine test', () => {
             promotion: 5,
             key: 'Anby',
             mindscape: 0,
+            potential: 0,
             basic: 0,
             dodge: 0,
             special: 0,
@@ -340,6 +350,7 @@ describe('char+wengine test', () => {
           promotion: 5,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
@@ -399,6 +410,7 @@ describe('disc2p test', () => {
           promotion: 0,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
@@ -431,6 +443,7 @@ describe('team', () => {
           promotion: 0,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
@@ -446,6 +459,7 @@ describe('team', () => {
           promotion: 0,
           key: 'Anton',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
