@@ -1,6 +1,7 @@
 import {
   cmpGE,
   constant,
+  max,
   min,
   prod,
   subscript,
@@ -35,7 +36,7 @@ const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
-const { exSpecial_active, additional_burn } = allBoolConditionals(key)
+const { exSpecial_active, additional_burn, abloom } = allBoolConditionals(key)
 const { thermal_penetration } = allNumConditionals(key, true, 0, dm.m2.stacks)
 
 const core_afterburn_dmg_ = ownBuff.combat.common_dmg_.add(
@@ -194,6 +195,26 @@ const sheet = register(
 
   // Buffs
   registerBuff(
+    'exSpecial_ether_abloom',
+    teamBuff.dmg.anom_mv_mult_.ether.add(abloom.ifOn(percent(4.8)))
+  ),
+  registerBuff(
+    'exSpecial_electric_abloom',
+    teamBuff.dmg.anom_mv_mult_.electric.add(abloom.ifOn(percent(2.4)))
+  ),
+  registerBuff(
+    'exSpecial_fire_abloom',
+    teamBuff.dmg.anom_mv_mult_.fire.add(abloom.ifOn(percent(6)))
+  ),
+  registerBuff(
+    'exSpecial_physical_abloom',
+    teamBuff.dmg.anom_mv_mult_.physical.add(abloom.ifOn(percent(0.4)))
+  ),
+  registerBuff(
+    'exSpecial_ice_abloom',
+    teamBuff.dmg.anom_mv_mult_.ice.add(abloom.ifOn(percent(0.6)))
+  ),
+  registerBuff(
     'core_afterburn_dmg_',
     core_afterburn_dmg_,
     undefined,
@@ -206,6 +227,32 @@ const sheet = register(
     undefined,
     undefined,
     false
+  ),
+  registerBuff(
+    'potential_anomMas',
+    ownBuff.combat.anomMas.add(
+      min(
+        dm.potential.max_anomMas,
+        prod(
+          max(0, sum(own.initial.enerRegen, -dm.potential.initial_enerRegen)),
+          subscript(char.potential, dm.potential.anomMas),
+          percent(1 / dm.potential.enerRegenStep)
+        )
+      )
+    )
+  ),
+  registerBuff(
+    'potential_common_dmg_',
+    ownBuff.combat.common_dmg_.add(
+      min(
+        percent(dm.potential.max_common_dmg_),
+        prod(
+          max(0, sum(own.initial.enerRegen, -dm.potential.initial_enerRegen)),
+          subscript(char.potential, dm.potential.common_dmg_),
+          percent(1 / dm.potential.enerRegenStep)
+        )
+      )
+    )
   ),
   registerBuff(
     'm1_afterburn_fire_anomBuildup_',

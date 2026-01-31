@@ -202,6 +202,7 @@ function extractPotentialParams(potential: CharacterData['potential']) {
       extractParamsFromString(Desc.replaceAll('Soldier 0 - Anby', 'Anby'))
     )
   data.unshift(range(1, data[0].length).map(() => 0))
+  data.unshift(range(1, data[0].length).map(() => 0))
 
   return transposeArray(data)
 }

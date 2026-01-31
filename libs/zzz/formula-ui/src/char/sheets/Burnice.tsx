@@ -12,6 +12,26 @@ const formula = Burnice.formulas
 const dm = mappedStats.char[key]
 
 const sheet = createBaseSheet(key, {
+  perSkillAbility: {
+    special: {
+      EXSpecialAttackIntenseHeatTossingMethod: [
+        {
+          type: 'conditional',
+          conditional: {
+            label: ch('abloom'),
+            metadata: cond.abloom,
+            fields: [
+              fieldForBuff(buff.exSpecial_ether_abloom),
+              fieldForBuff(buff.exSpecial_electric_abloom),
+              fieldForBuff(buff.exSpecial_fire_abloom),
+              fieldForBuff(buff.exSpecial_physical_abloom),
+              fieldForBuff(buff.exSpecial_ice_abloom),
+            ],
+          },
+        },
+      ],
+    },
+  },
   core: [
     {
       type: 'fields',
@@ -36,6 +56,15 @@ const sheet = createBaseSheet(key, {
     {
       type: 'fields',
       fields: [fieldForBuff(buff.ability_fire_anomBuildup_)],
+    },
+  ],
+  potential: [
+    {
+      type: 'fields',
+      fields: [
+        fieldForBuff(buff.potential_anomMas),
+        fieldForBuff(buff.potential_common_dmg_),
+      ],
     },
   ],
   m1: [
