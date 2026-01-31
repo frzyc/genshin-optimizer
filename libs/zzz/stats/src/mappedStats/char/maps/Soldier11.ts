@@ -10,6 +10,8 @@ const dm = {
       data_gen.skillParams['basic']['BasicAttackWarmupSparks'],
     BasicAttackFireSuppression:
       data_gen.skillParams['basic']['BasicAttackFireSuppression'],
+    BasicAttackFireAssault:
+      data_gen.skillParams['basic']['BasicAttackFireAssault'],
   },
   dodge: {
     DodgeTemperedFire: data_gen.skillParams['dodge']['DodgeTemperedFire'],
@@ -46,6 +48,9 @@ const dm = {
   ability: {
     fire_dmg_: data_gen.abilityParams[1],
     fire_dmg_additional: data_gen.abilityParams[2],
+  },
+  potential: {
+    crit_dmg_: data_gen.potentialParams[1],
   },
   m1: {
     energy_threshold: data_gen.mindscapeParams[0][1],
