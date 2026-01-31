@@ -56,6 +56,7 @@ export function TeammatesSection() {
           onHide={onHide}
           onSelect={(ck) => setTeammate(ck, teammateIndex)}
           showNone
+          characterFilter={(ck) => ck !== characterKey}
         />
       </Suspense>
       {range(0, 1).map((i) => (
