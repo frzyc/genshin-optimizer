@@ -95,7 +95,12 @@ const sheet = register(
       'basic',
       'BasicAttackMixedFlameBlend',
       0,
-      { ...baseTag, damageType1: 'basic' },
+      {
+        ...baseTag,
+        damageType1: 'basic',
+        skillType1: 'basicSkill',
+        skillType2: 'assistSkill',
+      },
       'atk',
       undefined,
       ability_fire_anomBuildup_
@@ -105,7 +110,12 @@ const sheet = register(
       'basic',
       'BasicAttackMixedFlameBlend',
       1,
-      { ...baseTag, damageType1: 'basic' },
+      {
+        ...baseTag,
+        damageType1: 'basic',
+        skillType1: 'basicSkill',
+        skillType2: 'assistSkill',
+      },
       'atk',
       undefined,
       ability_fire_anomBuildup_
@@ -156,7 +166,7 @@ const sheet = register(
 
   ...customDmg(
     'core_afterburn_dmg',
-    { ...baseTag, skillType: 'assistSkill' },
+    { ...baseTag, skillType1: 'assistSkill' },
     prod(
       own.final.atk,
       sum(
@@ -173,7 +183,7 @@ const sheet = register(
     'core_afterburn_anomBuildup',
     {
       ...baseTag,
-      skillType: 'assistSkill',
+      skillType1: 'assistSkill',
     },
     constant(60),
     undefined,
@@ -183,7 +193,7 @@ const sheet = register(
   ),
   ...customDmg(
     'm6_additional_afterburn_dmg',
-    { ...baseTag, skillType: 'assistSkill' },
+    { ...baseTag, skillType1: 'assistSkill' },
     cmpGE(
       char.mindscape,
       6,
@@ -278,7 +288,8 @@ const sheet = register(
   ),
   registerBuff(
     'm4_assistSkill_crit_',
-    ownBuff.combat.crit_.assistSkill.add(
+    ownBuff.combat.crit_.addWithSkillType(
+      'assistSkill',
       cmpGE(char.mindscape, 4, dm.m4.exSpecial_assist_crit_)
     )
   ),

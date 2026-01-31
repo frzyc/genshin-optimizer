@@ -36,7 +36,8 @@ export const fixedTags = {
   sheet: sheets,
 
   attribute: attributes,
-  skillType: skillTypes,
+  skillType1: skillTypes,
+  skillType2: skillTypes,
   damageType1: damageTypes,
   damageType2: damageTypes,
 
@@ -46,7 +47,8 @@ export const fixedTags = {
 }
 export interface Tag extends BaseTag<Sheet, Src, Dst> {
   attribute?: Attribute | null
-  skillType?: SkillType | null
+  skillType1?: SkillType | null
+  skillType2?: SkillType | null
   damageType1?: DamageType | null
   damageType2?: DamageType | null
 
@@ -63,7 +65,8 @@ export class Read extends BaseRead<Tag> {
       !force &&
       this.tag.q === 'dmg_' &&
       !this.tag.attribute &&
-      !this.tag.skillType &&
+      !this.tag.skillType1 &&
+      !this.tag.skillType2 &&
       !this.tag.damageType1 &&
       !this.tag.damageType2
     ) {
@@ -79,6 +82,13 @@ export class Read extends BaseRead<Tag> {
     val: number | string | AnyNode
   ): TagMapNodeEntry[] {
     return this[dmgType].map((r) => r.add(val))
+  }
+
+  addWithSkillType(
+    skillType: SkillType,
+    val: number | string | AnyNode
+  ): TagMapNodeEntry[] {
+    return this[skillType].map((r) => r.add(val))
   }
 
   override toString(): string {
@@ -105,20 +115,35 @@ export class Read extends BaseRead<Tag> {
   }
 
   // Skill type
-  get basicSkill(): Read {
-    return super.with('skillType', 'basicSkill')
+  get basicSkill(): Read[] {
+    return [
+      super.with('skillType1', 'basicSkill'),
+      super.with('skillType2', 'basicSkill'),
+    ]
   }
-  get dodgeSkill(): Read {
-    return super.with('skillType', 'dodgeSkill')
+  get dodgeSkill(): Read[] {
+    return [
+      super.with('skillType1', 'dodgeSkill'),
+      super.with('skillType2', 'dodgeSkill'),
+    ]
   }
-  get specialSkill(): Read {
-    return super.with('skillType', 'specialSkill')
+  get specialSkill(): Read[] {
+    return [
+      super.with('skillType1', 'specialSkill'),
+      super.with('skillType2', 'specialSkill'),
+    ]
   }
-  get chainSkill(): Read {
-    return super.with('skillType', 'chainSkill')
+  get chainSkill(): Read[] {
+    return [
+      super.with('skillType1', 'chainSkill'),
+      super.with('skillType2', 'chainSkill'),
+    ]
   }
-  get assistSkill(): Read {
-    return super.with('skillType', 'assistSkill')
+  get assistSkill(): Read[] {
+    return [
+      super.with('skillType1', 'assistSkill'),
+      super.with('skillType2', 'assistSkill'),
+    ]
   }
 
   // Damage type
