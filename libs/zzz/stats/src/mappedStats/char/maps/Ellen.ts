@@ -53,6 +53,11 @@ const dm = {
     duration: data_gen.abilityParams[1],
     stacks: data_gen.abilityParams[2],
   },
+  potential: {
+    crit_dmg_: data_gen.potentialParams[0],
+    stackThreshold: data_gen.potentialParams[1][2],
+    ice_resIgn_: data_gen.potentialParams[2],
+  },
   m1: {
     swift_charges: data_gen.mindscapeParams[0][0],
     charged_charges: data_gen.mindscapeParams[0][1],

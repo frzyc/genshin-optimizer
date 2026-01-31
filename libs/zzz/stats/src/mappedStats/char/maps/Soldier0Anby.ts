@@ -22,6 +22,8 @@ const dm = {
       data_gen.skillParams['special']['SpecialAttackAzureFlash'],
     SpecialAttackThunderSmite:
       data_gen.skillParams['special']['SpecialAttackThunderSmite'],
+    SpecialAttackAzureFlashBoundary:
+      data_gen.skillParams['special']['SpecialAttackAzureFlashBoundary'],
     EXSpecialAttackSunderingBolt:
       data_gen.skillParams['special']['EXSpecialAttackSunderingBolt'],
   },
