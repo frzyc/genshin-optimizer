@@ -1,5 +1,65 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
+  special_ether_abloom: {
+    sheet: 'Grace',
+    name: 'special_ether_abloom',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'anom_mv_mult_',
+      sheet: 'Grace',
+      attribute: 'ether',
+      name: 'special_ether_abloom',
+    },
+  },
+  special_electric_abloom: {
+    sheet: 'Grace',
+    name: 'special_electric_abloom',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'anom_mv_mult_',
+      sheet: 'Grace',
+      attribute: 'electric',
+      name: 'special_electric_abloom',
+    },
+  },
+  special_fire_abloom: {
+    sheet: 'Grace',
+    name: 'special_fire_abloom',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'anom_mv_mult_',
+      sheet: 'Grace',
+      attribute: 'fire',
+      name: 'special_fire_abloom',
+    },
+  },
+  special_physical_abloom: {
+    sheet: 'Grace',
+    name: 'special_physical_abloom',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'anom_mv_mult_',
+      sheet: 'Grace',
+      attribute: 'physical',
+      name: 'special_physical_abloom',
+    },
+  },
+  special_ice_abloom: {
+    sheet: 'Grace',
+    name: 'special_ice_abloom',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'anom_mv_mult_',
+      sheet: 'Grace',
+      attribute: 'ice',
+      name: 'special_ice_abloom',
+    },
+  },
   core_special_electric_anomBuildup_: {
     sheet: 'Grace',
     name: 'core_special_electric_anomBuildup_',
@@ -37,6 +97,18 @@ export const buffs = {
       attribute: 'electric',
       damageType1: 'anomaly',
       name: 'ability_shock_dmg_',
+    },
+  },
+  potential_electric_dmg_: {
+    sheet: 'Grace',
+    name: 'potential_electric_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Grace',
+      attribute: 'electric',
+      name: 'potential_electric_dmg_',
     },
   },
   m2_electric_resRed_: {

@@ -206,23 +206,33 @@ const sheet = register(
   // Buffs
   registerBuff(
     'exSpecial_ether_abloom',
-    teamBuff.dmg.anom_mv_mult_.ether.add(abloom.ifOn(percent(4.8)))
+    teamBuff.dmg.anom_mv_mult_.ether.add(abloom.ifOn(percent(4.8))),
+    undefined,
+    true
   ),
   registerBuff(
     'exSpecial_electric_abloom',
-    teamBuff.dmg.anom_mv_mult_.electric.add(abloom.ifOn(percent(2.4)))
+    teamBuff.dmg.anom_mv_mult_.electric.add(abloom.ifOn(percent(2.4))),
+    undefined,
+    true
   ),
   registerBuff(
     'exSpecial_fire_abloom',
-    teamBuff.dmg.anom_mv_mult_.fire.add(abloom.ifOn(percent(6)))
+    teamBuff.dmg.anom_mv_mult_.fire.add(abloom.ifOn(percent(6))),
+    undefined,
+    true
   ),
   registerBuff(
     'exSpecial_physical_abloom',
-    teamBuff.dmg.anom_mv_mult_.physical.add(abloom.ifOn(percent(0.4)))
+    teamBuff.dmg.anom_mv_mult_.physical.add(abloom.ifOn(percent(0.4))),
+    undefined,
+    true
   ),
   registerBuff(
     'exSpecial_ice_abloom',
-    teamBuff.dmg.anom_mv_mult_.ice.add(abloom.ifOn(percent(0.6)))
+    teamBuff.dmg.anom_mv_mult_.ice.add(abloom.ifOn(percent(0.6))),
+    undefined,
+    true
   ),
   registerBuff(
     'core_afterburn_dmg_',
