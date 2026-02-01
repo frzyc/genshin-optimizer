@@ -139,6 +139,8 @@ export const talentlist = {
 export function clean(s: string) {
   //trim whitespace
   s = s.trim()
+  //remove tooltips
+  s = s.replace(/<\/?tooltip[\s\S]*?>/g, '')
   //italics become small
   s = s.replace(/(<i>[\s\S]*)\n([\s\S]*<\/i>)/g, (m) =>
     m.replace(/\n/g, '\n-# ')
