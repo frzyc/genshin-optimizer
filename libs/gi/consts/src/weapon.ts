@@ -33,6 +33,7 @@ export const allWeaponSwordKeys = [
   'IronSting',
   'KagotsurubeIsshin',
   'KeyOfKhajNisut',
+  'LightbearingMoonshard',
   'LightOfFoliarIncision',
   'LionsRoar',
   'MistsplitterReforged',

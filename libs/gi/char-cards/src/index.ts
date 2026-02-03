@@ -41,6 +41,7 @@ import Gorou from './Character_Gorou_Card.png'
 import HuTao from './Character_Hu_Tao_Card.png'
 import Iansan from './Character_Iansan_Card.jpg'
 import Ifa from './Character_Ifa_Card.jpg'
+import Illuga from './Character_Illuga_Card.webp'
 import Ineffa from './Character_Ineffa_Card.png'
 import Jahoda from './Character_Jahoda_Card.webp'
 import Jean from './Character_Jean_Card.jpg'
@@ -108,6 +109,7 @@ import Yoimiya from './Character_Yoimiya_Card.png'
 import YumemizukiMizuki from './Character_YumemizukiMizuki_Card.jpg'
 import YunJin from './Character_Yun_Jin_Card.jpg'
 import Zhongli from './Character_Zhongli_Card.png'
+import Zibai from './Character_Zibai_Card.webp'
 import TravelerF from './Traveler_Female_Card.jpg'
 import TravelerM from './Traveler_Male_Card.jpg'
 
@@ -154,6 +156,7 @@ const charCards = {
   HuTao,
   Iansan,
   Ifa,
+  Illuga,
   Ineffa,
   Jahoda,
   Jean,
@@ -223,6 +226,7 @@ const charCards = {
   YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
 } as const
 
 export function charCard(charKey: CharacterKey, gender: GenderKey) {
