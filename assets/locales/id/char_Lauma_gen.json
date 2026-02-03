@@ -42,13 +42,13 @@
   "skill": {
     "name": "Runo: Dawnless Rest of Karsikko",
     "description": {
-      "0": "Sambil merapalkan doa kuno dalam hati, Lauma mengaktifkan <strong>Frostgrove Sanctuary</strong> yang akan menghasilkan efek yang berbeda berdasarkan Mode Tekan atau Mode Tahan.",
+      "0": "Sambil merapalkan doa kuno dalam hati, Lauma mengaktifkan <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Frostgrove Sanctuary</strong></tooltip> yang akan menghasilkan efek yang berbeda berdasarkan Mode Tekan atau Mode Tahan.",
       "1": "<br/>",
       "2": "<strong>Mode Tekan</strong>",
       "3": "Membacakan Hymn of Hunting untuk mengakibatkan <dendro>Dendro DMG Area</dendro>.",
       "4": "<br/>",
       "5": "<strong>Mode Tahan</strong>",
-      "6": "Dapat dilancarkan saat memiliki setidaknya 1 <strong>Verdant Dew</strong>. Lauma akan mengonsumsi semua Verdant Dew untuk membacakan Hymn of Eternal Rest dan mengakibatkan satu kali <dendro>Dendro DMG Area</dendro> dan satu kali <dendro>Dendro DMG Area</dendro> yang dianggap sebagai DMG reaksi Lunar-Bloom. Setiap Verdant Dew yang dikonsumsi akan memberikan satu lapis <strong>Moon Song</strong> kepada Lauma. Setiap kali melancarkan Elemental Skill dalam Mode Tahan, Lauma dapat mengonsumsi maksimum 3 Verdant Dew dengan cara ini.",
+      "6": "Dapat dilancarkan saat memiliki setidaknya 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Verdant Dew</strong></tooltip>. Lauma akan mengonsumsi semua Verdant Dew untuk membacakan Hymn of Eternal Rest dan mengakibatkan satu kali <dendro>Dendro DMG Area</dendro> dan satu kali <dendro>Dendro DMG Area</dendro> yang dianggap sebagai DMG reaksi Lunar-Bloom. Setiap Verdant Dew yang dikonsumsi akan memberikan satu lapis <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>Moon Song</strong></tooltip> kepada Lauma. Setiap kali melancarkan Elemental Skill dalam Mode Tahan, Lauma dapat mengonsumsi maksimum 3 Verdant Dew dengan cara ini.",
       "7": "<br/>",
       "8": "Selain itu, saat Elemental Skill Lauma atau serangan Frostgrove Sanctuary mengenai musuh, maka <dendro>Dendro RES</dendro> dan <hydro>Hydro RES</hydro> musuh tersebut akan berkurang selama 10 detik."
     },
@@ -74,8 +74,8 @@
   "burst": {
     "name": "Runo: All Hearts Become the Beating Moon",
     "description": {
-      "0": "Biarlah keinginan semua makhluk hidup berubah menjadi cahaya bulan yang menerangi bumi. Lauma merapalkan lagu suci dari ujung utara dan mendapatkan 18 lapis <strong>Pale Hymn</strong>.",
-      "1": "Selain itu, jika Lauma melancarkan Elemental Burst saat memiliki <strong>Moon Song</strong>, atau saat ia mendapatkan Moon Song dalam 15 detik setelah melancarkan Elemental Burst, maka Lauma akan mengonsumsi semua Moon Song dan mendapatkan 6 lapis Pale Hymn untuk setiap lapis Moon Song yang dikonsumsi. Efek ini hanya dapat terpicu sekali setiap kali Lauma melancarkan Elemental Burst, termasuk periode 15 detik setelah melancarkan Elemental Burst yang disebutkan di atas.",
+      "0": "Biarlah keinginan semua makhluk hidup berubah menjadi cahaya bulan yang menerangi bumi. Lauma merapalkan lagu suci dari ujung utara dan mendapatkan 18 lapis <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Pale Hymn</strong></tooltip>.",
+      "1": "Selain itu, jika Lauma melancarkan Elemental Burst saat memiliki <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>Moon Song</strong></tooltip>, atau saat ia mendapatkan Moon Song dalam 15 detik setelah melancarkan Elemental Burst, maka Lauma akan mengonsumsi semua Moon Song dan mendapatkan 6 lapis Pale Hymn untuk setiap lapis Moon Song yang dikonsumsi. Efek ini hanya dapat terpicu sekali setiap kali Lauma melancarkan Elemental Burst, termasuk periode 15 detik setelah melancarkan Elemental Burst yang disebutkan di atas.",
       "2": "<br/>",
       "3": "<strong>Pale Hymn</strong>",
       "4": "Saat Karakter di sekitar dalam party mengakibatkan DMG reaksi Bloom, Hyperbloom, Burgeon, atau Lunar-Bloom, maka satu lapis Pale Hymn akan dikonsumsi untuk meningkatkan DMG yang diakibatkan. Jumlah peningkatan DMG ini didasarkan pada Elemental Mastery Lauma. Saat DMG yang disebutkan di atas mengenai beberapa musuh secara bersamaan, maka jumlah lapisan Pale Hymn yang dikonsumsi juga disesuaikan berdasarkan jumlah musuh yang terkena serangan.",
@@ -103,7 +103,7 @@
   "passive1": {
     "name": "Light for the Frosty Night",
     "description": {
-      "0": "Setelah Lauma melancarkan Elemental Skill <strong>Runo: Dawnless Rest of Karsikko</strong>, akan mendapatkan efek penguatan yang berbeda selama 20 detik berdasarkan <strong>Moonsign</strong> milik party. Efek penguatan dari Level Moonsign yang berbeda tidak bisa ditumpuk.",
+      "0": "Setelah Lauma melancarkan Elemental Skill <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Dawnless Rest of Karsikko</tooltip></strong>, akan mendapatkan efek penguatan yang berbeda selama 20 detik berdasarkan <strong>Moonsign</strong> milik party. Efek penguatan dari Level Moonsign yang berbeda tidak bisa ditumpuk.",
       "1": "<br/>",
       "2": "<strong>Moonsign: Nascent Gleam</strong>",
       "3": "DMG reaksi Bloom, Hyperbloom, dan Burgeon yang dipicu oleh seluruh anggota party di sekitar dapat mengakibatkan CRIT. Dengan nilai CRIT Rate tetap sebesar 15%, dan CRIT DMG tetap sebesar 100%. CRIT Rate dari efek ini dapat ditumpuk dengan efek serupa lainnya yang membuat Reaksi Elemental dapat mengakibatkan CRIT juga.",
@@ -140,7 +140,7 @@
   "constellation1": {
     "name": "\"O Lips, Weave Me Songs and Psalms\"",
     "description": {
-      "0": "Setelah melancarkan Elemental Skill <strong>Runo: Dawnless Rest of Karsikko</strong> atau Elemental Burst <strong>Runo: All Hearts Become the Beating Moon</strong>, Lauma akan mendapatkan Threads of Life selama 20 detik.",
+      "0": "Setelah melancarkan Elemental Skill <tooltip ns=char_Lauma_gen baseKey18=skill><strong>Runo: Dawnless Rest of Karsikko</strong></tooltip> atau Elemental Burst <tooltip ns=char_Lauma_gen baseKey18=burst><strong>Runo: All Hearts Become the Beating Moon</strong></tooltip>, Lauma akan mendapatkan Threads of Life selama 20 detik.",
       "1": "Selama durasi ini, saat Karakter dalam party yang di sekitar memicu reaksi Lunar-Bloom, HP Karakter aktif di sekitar akan dipulihkan sebesar 500% Elemental Mastery Lauma. Efek ini dapat terpicu sekali setiap 1,9 detik.",
       "2": "Selain itu, konsumsi Stamina Lauma saat berada dalam wujud Spirit Envoy berkurang 40% dan durasi maksimumnya diperpanjang 5 detik."
     }
@@ -148,9 +148,9 @@
   "constellation2": {
     "name": "\"Twine Warnings and Tales From the North\"",
     "description": {
-      "0": "Elemental Burst <strong>Runo: All Hearts Become the Beating Moon</strong> diperkuat:",
+      "0": "Elemental Burst <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo: All Hearts Become the Beating Moon</tooltip></strong> diperkuat:",
       "1": [
-        "Efek <strong>Pale Hymn</strong> diperkuat: DMG reaksi Bloom, Hyperbloom, dan Burgeon, DMG yang dipicu oleh Karakter dalam party meningkat lagi sebesar 500% Elemental Mastery Lauma, sedangkan DMG reaksi Lunar-Bloom yang diakibatkan oleh Karakter dalam party meningkat lagi sebesar 400% Elemental Mastery Lauma."
+        "Efek <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Pale Hymn</strong></tooltip> diperkuat: DMG reaksi Bloom, Hyperbloom, dan Burgeon, DMG yang dipicu oleh Karakter dalam party meningkat lagi sebesar 500% Elemental Mastery Lauma, sedangkan DMG reaksi Lunar-Bloom yang diakibatkan oleh Karakter dalam party meningkat lagi sebesar 400% Elemental Mastery Lauma."
       ],
       "2": "<br/>",
       "3": "<strong>Moonsign: Ascendant Gleam</strong>: DMG reaksi Lunar-Bloom yang diakibatkan Karakter dalam party meningkat 40%."
@@ -159,32 +159,32 @@
   "constellation3": {
     "name": "\"Seek Not to Tread the Sly Fox's Path\"",
     "description": {
-      "0": "Meningkatkan 3 level Elemental Burst <strong>Runo: All Hearts Become the Beating Moon</strong>.",
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo: All Hearts Become the Beating Moon</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
     "name": "\"Nor Yearn for the Great Bear's Might\"",
     "description": {
-      "0": "Saat serangan <strong>Frostgrove Sanctuary</strong> dari Elemental Skill <strong>Runo: Dawnless Rest of Karsikko</strong> mengenai musuh, Lauma akan mendapatkan 4 poin Energy. Efek ini dapat terpicu sekali setiap 5 detik."
+      "0": "Saat serangan <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Frostgrove Sanctuary</strong></tooltip> dari Elemental Skill <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Dawnless Rest of Karsikko</tooltip></strong> mengenai musuh, Lauma akan mendapatkan 4 poin Energy. Efek ini dapat terpicu sekali setiap 5 detik."
     }
   },
   "constellation5": {
     "name": "\"If Truth May Be Subject to Witness\"",
     "description": {
-      "0": "Meningkatkan 3 level <strong>Runo: Dawnless Rest of Karsikko</strong>.",
+      "0": "Meningkatkan 3 level <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Dawnless Rest of Karsikko</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {
     "name": "\"I Offer Blood and Tears to the Moonlight\"",
     "description": {
-      "0": "Saat <strong>Frostgrove Sanctuary</strong> menyerang musuh, akan mengakibatkan satu kali <dendro>Dendro DMG Area</dendro> tambahan sebesar 185% Elemental Mastery Lauma yang dianggap sebagai DMG Lunar-Bloom. DMG ini tidak akan mengonsumsi <strong>Pale Hymn</strong>, namun akan memberikan 2 lapis Pale Hymn bagi Lauma serta memperbarui durasi Pale Hymn yang diperoleh dengan cara ini.",
-      "1": "Dalam satu kali durasi Frostgrove Sanctuary, efek ini dapat terpicu maksimum 8 kali. Saat melancarkan Elemental Skill <strong>Runo: Dawnless Rest of Karsikko</strong>, semua lapisan Pale Hymn yang diperoleh dengan cara ini akan dihapus.",
+      "0": "Saat <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Frostgrove Sanctuary</strong></tooltip> menyerang musuh, akan mengakibatkan satu kali <dendro>Dendro DMG Area</dendro> tambahan sebesar 185% Elemental Mastery Lauma yang dianggap sebagai DMG Lunar-Bloom. DMG ini tidak akan mengonsumsi <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Pale Hymn</strong></tooltip>, namun akan memberikan 2 lapis Pale Hymn bagi Lauma serta memperbarui durasi Pale Hymn yang diperoleh dengan cara ini.",
+      "1": "Dalam satu kali durasi Frostgrove Sanctuary, efek ini dapat terpicu maksimum 8 kali. Saat melancarkan Elemental Skill <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Dawnless Rest of Karsikko</tooltip></strong>, semua lapisan Pale Hymn yang diperoleh dengan cara ini akan dihapus.",
       "2": "<br/>",
       "3": "Selain itu, jika Lauma melancarkan Normal Attack saat memiliki Pale Hymn, maka Lauma akan mengonsumsi satu lapis Pale Hymn dan mengonversi serangannya menjadi <dendro>Dendro DMG</dendro> sebesar 150% Elemental Mastery Lauma dan dianggap sebagai DMG Lunar-Bloom.",
       "4": "<br/>",
-      "5": "<strong>Moonsign: Ascendant Gleam</strong>: DMG reaksi Lunar-Bloom seluruh Karakter di sekitar dalam party <strong>bertumbuh</strong> sebesar 25%."
+      "5": "<strong>Moonsign: Ascendant Gleam</strong>: DMG reaksi Lunar-Bloom seluruh Karakter di sekitar dalam party <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> sebesar 25%."
     }
   }
 }

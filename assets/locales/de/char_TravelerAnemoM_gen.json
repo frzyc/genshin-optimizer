@@ -114,7 +114,7 @@
   "lockedPassive": {
     "name": "Wind aus der Fremde",
     "description": {
-      "0": "Verleiht {F#der}{M#dem} Reisenden Kraft aus der Vergangenheit und für jedes Element, mit dem {F#sie}{M#er} im Einklang gestanden hat, zusätzliche <strong>Verstärkungseffekte</strong>.",
+      "0": "Verleiht {F#der}{M#dem} Reisenden Kraft aus der Vergangenheit und für jedes Element, mit dem {F#sie}{M#er} im Einklang gestanden hat, zusätzliche <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>Verstärkungseffekte</strong></tooltip>.",
       "1": "<br/>",
       "2": "Verleiht {F#der}{M#dem} Reisenden zudem, wenn ein Truppenmitglied in der Nähe Gegner mit einem Angriff des Elementartyps <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Kryo</cryo> oder <electro>Elektro</electro> trifft, 1 Stapelung „Klinge des Morgenwinds“ des entsprechenden Elements. „Klinge des Morgenwinds“ von jedem Elementartyp ist nur 1-fach stapelbar. Verbraucht, wenn mindestens 2 Stapelungen „Klinge des Morgenwinds“ vorhanden sind und {F#die}{M#der} Reisende einen heftigen Schlag ausführt, alle Stapelungen und wandelt den heftigen Schlag in den besonderen <strong>heftigen Schlag – Wirbelwind</strong> um.",
       "3": "<br/>",

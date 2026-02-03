@@ -219,7 +219,7 @@
         " This effect stacks up to 4 times."
       ],
       "2": "<br/>",
-      "3": "Additionally, when Albedo is not on the field and when the stack count of Fatal Reckoning reaches 4, all stacks of Fatal Reckoning are consumed. This generates 3 Fatal Blossoms near your active character, which will violently bloom to deal <geo>AoE Geo DMG</geo> equal to 300% of Albedo's DEF, DMG that will be considered Elemental Burst DMG. Where the Passive Talent <strong>Homuncular Nature</strong> has also been unlocked, the Elemental Mastery of nearby party members will also increase by 125 for 10s."
+      "3": "Additionally, when Albedo is not on the field and when the stack count of Fatal Reckoning reaches 4, all stacks of Fatal Reckoning are consumed. This generates 3 Fatal Blossoms near your active character, which will violently bloom to deal <geo>AoE Geo DMG</geo> equal to 300% of Albedo's DEF, DMG that will be considered Elemental Burst DMG. Where the Passive Talent <tooltip ns=char_Albedo_gen baseKey18=passive2><strong>Homuncular Nature</strong></tooltip> has also been unlocked, the Elemental Mastery of nearby party members will also increase by 125 for 10s."
     }
   },
   "constellation3": {
@@ -253,7 +253,7 @@
     },
     "upgradedDescription": {
       "0": "Current active party members within the Solar Isotoma field who are protected by a Shield created by Crystallize, or when Moondrifts are present within the Solar Isotoma field, have their DMG increased by 17%.",
-      "1": "Additionally, use of the Elemental Burst <strong>Rite of Progeniture: Tectonic Tide</strong> destroys all Silver Isotomas present on the field, and whenever a Silver Isotoma is destroyed this way the current instance of Elemental Burst will also be considered as having cleared 4 Fatal Reckoning stacks from the Constellation <strong>Opening of Phanerozoic</strong>. This increases the DMG dealt by Fatal Blossom by 250% of Albedo's DEF for the next 20s."
+      "1": "Additionally, use of the Elemental Burst <strong>Rite of Progeniture: Tectonic Tide</strong> destroys all Silver Isotomas present on the field, and whenever a Silver Isotoma is destroyed this way the current instance of Elemental Burst will also be considered as having cleared 4 Fatal Reckoning stacks from the Constellation {LINK#TE382}<strong>Opening of Phanerozoic</strong></tooltip>. This increases the DMG dealt by Fatal Blossom by 250% of Albedo's DEF for the next 20s."
     }
   }
 }

@@ -44,7 +44,7 @@
       "0": "\"Kötülük\"ün savaş tarzını taklit eder. Dokunma veya Basılı Tutmaya göre farklı etkiler ortaya çıkar.",
       "1": "<br/>",
       "2": "<strong>Dokun</strong>",
-      "3": "Skirk, 45 <strong>Yılan Kurnazlığı</strong> kazanır ve <strong>Yedi Aşamalı Parıltı</strong> moduna geçer.",
+      "3": "Skirk, 45 <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Yılan Kurnazlığı</strong></tooltip> kazanır ve <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Yedi Aşamalı Parıltı</strong></tooltip> moduna geçer.",
       "4": "<br/>",
       "5": "<strong>Basılı Tut</strong>",
       "6": "Skirk, 45 Yılan Kurnazlığı kazanır ve sürekli yüksek bir hızla hareket eder. Bu durumdayken Skirk'ün müdahaleye karşı direnci artar.",
@@ -72,14 +72,14 @@
   "burst": {
     "name": "Yıkım: Harap Etme",
     "description": {
-      "0": "Skirk'ün Element Patlaması, Element Enerjisi yerine <strong>Yılan Kurnazlığı</strong> ile gerçekleşir.",
+      "0": "Skirk'ün Element Patlaması, Element Enerjisi yerine <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Yılan Kurnazlığı</strong></tooltip> ile gerçekleşir.",
       "1": "Skirk en az 50 Yılan Kurnazlığına sahipse tüm Yılan Kurnazlığı puanlarını tüketerek Element Patlamasını gerçekleştirir ve önündeki boşluğu kesip açarak <cryo>Buz Alan Hasarı</cryo> veren seri darbelerle saldırır. Ayrıca Element Patlamasını kullandığı anda 50'nin üzerindeki her Yılan Kurnazlığı puanı, bu Element Patlaması ile verilen Hasarı artırır. Bu artışa en fazla 12 puan katkıda bulunabilir.",
       "2": "<br/>",
-      "3": "Skirk <strong>Yedi Aşamalı Parıltı</strong> modundayken Yıkım: Harap Etme becerisi, Yıkım: Tükeniş olarak değişir.",
+      "3": "Skirk <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Yedi Aşamalı Parıltı</strong></tooltip> modundayken Yıkım: Harap Etme becerisi, Yıkım: Tükeniş olarak değişir.",
       "4": "<br/>",
       "5": "<strong>Yıkım: Tükeniş</strong>",
       "6": "Yılan Kurnazlığı tüketmeden de kullanılabilen özel bir Element Patlamasıdır.",
-      "7": "Skirk, bunu kullandıktan sonra Yedi Aşamalı Parıltı modu sona erene kadar \"Her Şey Solup Gidecek\" etkisi kazanır. <strong>Akıl Almaz Mantık</strong> Yükseltme Yeteneği açıldıktan sonra Skirk yakındaki Boşluk Yarıklarını soğurabilir.",
+      "7": "Skirk, bunu kullandıktan sonra Yedi Aşamalı Parıltı modu sona erene kadar \"Her Şey Solup Gidecek\" etkisi kazanır. <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Akıl Almaz Mantık</strong></tooltip> Yükseltme Yeteneği açıldıktan sonra Skirk yakındaki Boşluk Yarıklarını soğurabilir.",
       "8": "\"Her Şey Solup Gidecek\" etkinken her 0,1 saniyede bir, Skirk'ün Normal Saldırısı düşmana isabet ettiğinde bu saldırı daha fazla Hasar verir. Skirk <strong>Yıkım: Tükeniş</strong> kullanırken Boşluk Yarığı soğurduysa soğurulan Yarık sayısına göre bu Normal Saldırı Hasarı daha da artar.",
       "9": "Bu etki 10 defa tetiklendikten sonra iptal olur."
     },
@@ -109,12 +109,12 @@
       "1": "<br/>",
       "2": "Skirk, yakınındaki Boşluk Yarıklarını şu yöntemlerle soğurabilir:",
       "3": [
-        "<strong>Yedi Aşamalı Parıltı</strong> modundayken bir düşmana Yüklü Saldırı ile vurarak.",
+        "<tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Yedi Aşamalı Parıltı</strong></tooltip> modundayken bir düşmana Yüklü Saldırı ile vurarak.",
         "Yedi Aşamalı Parıltı modundayken <strong>Yıkım: Tükeniş</strong> özel Element Patlamasını kullanarak.",
         "<strong>Yıkım: Bükme</strong> Element Becerisine Basılı Tutup hızlı hareket etmeye başlayarak."
       ],
       "4": "<br/>",
-      "5": "Skirk, soğurduğu her Yarık için 8 <strong>Yılan Kurnazlığı</strong> puanı kazanır."
+      "5": "Skirk, soğurduğu her Yarık için 8 <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Yılan Kurnazlığı</strong></tooltip> puanı kazanır."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
     "description": {
       "0": "Yakındaki <hydro>Su</hydro> grup üyelerinin <hydro>Su</hydro> elementi saldırıları düşmanlara vurduğunda veya Skirk dışındaki <cryo>Buz</cryo> grup üyelerinin <cryo>Buz</cryo> elementi saldırıları düşmanlara vurduğunda Skirk 20 saniyeliğine \"Ölümün Kıyısı\" etkisini kazanır. Bu etki 3 kademeye kadar birikebilir ve her kademenin süresi birbirinden bağımsızdır.",
       "1": "Her karakter bu şekilde Skirk'e en fazla 1 \"Ölümün Kıyısı\" kademesi sağlayabilir.",
-      "2": "Her \"Ölümün Kıyısı\" kademesi, <strong>Yedi Aşamalı Parıltı</strong> modunda Skirk'ün Normal Saldırı Hasarını orijinal Hasarın %110/%120/%170'i kadar artırır. <strong>Yıkım: Harap Etme</strong> Element Patlaması Hasarını ise orijinal Hasarın %105/%115/%160'ı kadar artırır."
+      "2": "Her \"Ölümün Kıyısı\" kademesi, <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Yedi Aşamalı Parıltı</strong></tooltip> modunda Skirk'ün Normal Saldırı Hasarını orijinal Hasarın %110/%120/%170'i kadar artırır. <strong>Yıkım: Harap Etme</strong> Element Patlaması Hasarını ise orijinal Hasarın %105/%115/%160'ı kadar artırır."
     }
   },
   "passive3": {
@@ -134,43 +134,43 @@
   "constellation1": {
     "name": "Derinlere Düşüş",
     "description": {
-      "0": "<strong>Akıl Almaz Mantık</strong> Yükseltme Yeteneğinin etkilerini geliştirir: Skirk'ün soğurduğu her Boşluk Yarığı, yakındaki düşmanlara saldıran ve Skirk'ün Saldırısının %500'ü kadar <cryo>Buz Hasarı</cryo> veren kristal bir kılıç çağırır. Bu Hasar, Yüklü Saldırı Hasarı sayılır.",
+      "0": "<tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Akıl Almaz Mantık</strong></tooltip> Yükseltme Yeteneğinin etkilerini geliştirir: Skirk'ün soğurduğu her Boşluk Yarığı, yakındaki düşmanlara saldıran ve Skirk'ün Saldırısının %500'ü kadar <cryo>Buz Hasarı</cryo> veren kristal bir kılıç çağırır. Bu Hasar, Yüklü Saldırı Hasarı sayılır.",
       "1": "Akıl Almaz Mantık Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation2": {
     "name": "Hiçliğe Doğru",
     "description": {
-      "0": "Skirk, <strong>Yıkım: Bükme</strong> Element Becerisini kullandıktan sonra fazladan 10 <strong>Yılan Kurnazlığı</strong> puanı kazanır.",
+      "0": "Skirk, <strong>Yıkım: Bükme</strong> Element Becerisini kullandıktan sonra fazladan 10 <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Yılan Kurnazlığı</strong></tooltip> puanı kazanır.",
       "1": "<strong>Yıkım: Harap Etme</strong> Element Patlamasını kullandığında bu Element Patlamasının Hasarı, en fazla 10 Yılan Kurnazlığı daha hesaba katılarak artar.",
-      "2": "Ayrıca Skirk <strong>Yedi Aşamalı Parıltı</strong> modundayken özel <strong>Yıkım: Tükeniş</strong> Element Patlamasını kullandıktan sonra 12,5 saniyeliğine Saldırısı %70 artar. Bu etki Skirk Yedi Aşamalı Parıltı modundan çıktığında iptal olur."
+      "2": "Ayrıca Skirk <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Yedi Aşamalı Parıltı</strong></tooltip> modundayken özel <strong>Yıkım: Tükeniş</strong> Element Patlamasını kullandıktan sonra 12,5 saniyeliğine Saldırısı %70 artar. Bu etki Skirk Yedi Aşamalı Parıltı modundan çıktığında iptal olur."
     }
   },
   "constellation3": {
     "name": "Kaderdeki Günah",
     "description": {
-      "0": "<strong>Yıkım: Harap Etme</strong> Seviyesini 3 artırır.",
+      "0": "<tooltip ns=char_Skirk_gen baseKey18=burst><strong>Yıkım: Harap Etme</strong></tooltip> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
   "constellation4": {
     "name": "Bölünen Akış",
     "description": {
-      "0": "<strong>Unutulmaya Dönüş</strong> Yükseltme Yeteneğinin etkilerini geliştirir. Her Ölümün Kıyısı kademesi Skirk'ün Saldırısını %10/%20/%40 artırır.",
+      "0": "<tooltip ns=tooltips_gen baseKey18=11130008 values=[]><strong>Unutulmaya Dönüş</strong></tooltip> Yükseltme Yeteneğinin etkilerini geliştirir. Her Ölümün Kıyısı kademesi Skirk'ün Saldırısını %10/%20/%40 artırır.",
       "1": "Unutulmaya Dönüş Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation5": {
     "name": "Dileklerin Sonu",
     "description": {
-      "0": "<strong>Yıkım: Bükme</strong> Seviyesini 3 artırır.",
+      "0": "<tooltip ns=char_Skirk_gen baseKey18=skill><strong>Yıkım: Bükme</strong></tooltip> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
   "constellation6": {
     "name": "Kaynağa Dönüş",
     "description": {
-      "0": "Skirk, <strong>Akıl Almaz Mantık</strong> Yükseltme Yeteneği ile soğurduğu her Boşluk Yarığı için 15sn boyunca 1 Yıkım: Koparma kademesi kazanır. Skirk bu kademeleri tüketerek ortak saldırılar yapabilir ve <strong>Yedi Aşamalı Parıltı</strong> modundayken daha az Hasar alır. Bu kademeler 15sn sürer ve her kademenin süresi birbirinden bağımsızdır. (3 kademeye kadar birikebilir)",
+      "0": "Skirk, <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Akıl Almaz Mantık</strong></tooltip> Yükseltme Yeteneği ile soğurduğu her Boşluk Yarığı için 15sn boyunca 1 Yıkım: Koparma kademesi kazanır. Skirk bu kademeleri tüketerek ortak saldırılar yapabilir ve <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Yedi Aşamalı Parıltı</strong></tooltip> modundayken daha az Hasar alır. Bu kademeler 15sn sürer ve her kademenin süresi birbirinden bağımsızdır. (3 kademeye kadar birikebilir)",
       "1": "\"Akıl Almaz Mantık\" Yükseltme Yeteneğinin açılmış olması gerekir.",
       "2": "<br/>",
       "3": "<strong>Yıkım: Koparma</strong>",

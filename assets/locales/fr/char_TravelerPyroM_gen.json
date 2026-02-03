@@ -113,7 +113,7 @@
   "lockedPassive": {
     "name": "Stellafeu d'ailleurs",
     "description": {
-      "0": "Permet {M#au voyageur}{F#à la voyageuse} de puiser une force nouvelle dans ses périples passés, lui accordant un <strong>effet de renforcement</strong> supplémentaire pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance.",
+      "0": "Permet {M#au voyageur}{F#à la voyageuse} de puiser une force nouvelle dans ses périples passés, lui accordant un <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effet de renforcement</strong></tooltip> supplémentaire pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance.",
       "1": "<br/>",
       "2": "De plus, lorsqu'un personnage de l'équipe à proximité déclenche une éruption noctâme, {M#le voyageur}{F#la voyageuse} obtient 1 lame de feu sacré, un maximum de 2 lames pouvant être obtenu. Avec 2 lames de feu sacré, effectuer une attaque chargée consomme toutes les lames pour déclencher une <strong>attaque chargée « Incinération »</strong> spéciale.",
       "3": "<br/>",

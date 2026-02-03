@@ -41,7 +41,7 @@
   "skill": {
     "name": "Cleaning Mode: Carrier Frequency",
     "description": {
-      "0": "Ineffa เปิดใช้งานโมดูลกวาดล้างขั้นสูง สร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> ให้กับศัตรูโดยรอบหนึ่งครั้ง กางโล่บาเรียลำแสง และเรียกหน่วยผู้ช่วยอัจฉริยะสารพัดประโยชน์ <strong>\"Birgitta\"</strong> ออกมา",
+      "0": "Ineffa เปิดใช้งานโมดูลกวาดล้างขั้นสูง สร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> ให้กับศัตรูโดยรอบหนึ่งครั้ง กางโล่บาเรียลำแสง และเรียกหน่วยผู้ช่วยอัจฉริยะสารพัดประโยชน์ <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>\"Birgitta\"</strong></tooltip> ออกมา",
       "1": "ปริมาณการดูดซับความเสียหายของโล่บาเรียลำแสง จะขึ้นอยู่กับพลังโจมตีของ Ineffa และมีเอฟเฟกต์ดูดซับต่อ<electro>ความเสียหายไฟฟ้า</electro> 250%"
     },
     "skillParams": {
@@ -66,7 +66,7 @@
   "burst": {
     "name": "Supreme Instruction: Cyclonic Exterminator",
     "description": {
-      "0": "ใช้หน่วยผู้ช่วยอัจฉริยะสารพัดประโยชน์ <strong>\"Birgitta\"</strong>  เพื่อกวาดล้างศัตรูด้วยหมัดจรวด! Ineffa จะยิง Birgitta ออกไป สร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> และทำให้ Birgitta อยู่ในสนามต่อไป",
+      "0": "ใช้หน่วยผู้ช่วยอัจฉริยะสารพัดประโยชน์ <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>\"Birgitta\"</strong> </tooltip> เพื่อกวาดล้างศัตรูด้วยหมัดจรวด! Ineffa จะยิง Birgitta ออกไป สร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> และทำให้ Birgitta อยู่ในสนามต่อไป",
       "1": "<br/>",
       "2": "หากมี Birgitta ที่ Ineffa เรียกออกมาอยู่ในสนามอยู่แล้ว จะเปลี่ยนไปเรียก Birgitta ออกมาใหม่ในตำแหน่งเป้าหมายอีกครั้ง และรีเซ็ตเวลาต่อเนื่อง"
     },
@@ -92,13 +92,13 @@
   "passive1": {
     "name": "Overclocking Circuit",
     "description": {
-      "0": "หากบริเวณใกล้เคียง <strong>\"Birgitta\"</strong> มีเมฆสายฟ้าที่เกิดจากปฏิกิริยาชาร์จจันทราอยู่ Birgitta จะปล่อยไฟฟ้าโจมตี และทำการโจมตีเพิ่มอีกหนึ่งครั้ง โดยจะสร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro>เท่ากับ 65% ของพลังโจมตีของ Ineffa ซึ่งความเสียหายนี้จะนับเป็นความเสียหาย ที่เกิดจากปฏิกิริยาชาร์จจันทรา"
+      "0": "หากบริเวณใกล้เคียง <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>\"Birgitta\"</strong></tooltip> มีเมฆสายฟ้าที่เกิดจากปฏิกิริยาชาร์จจันทราอยู่ Birgitta จะปล่อยไฟฟ้าโจมตี และทำการโจมตีเพิ่มอีกหนึ่งครั้ง โดยจะสร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro>เท่ากับ 65% ของพลังโจมตีของ Ineffa ซึ่งความเสียหายนี้จะนับเป็นความเสียหาย ที่เกิดจากปฏิกิริยาชาร์จจันทรา"
     }
   },
   "passive2": {
     "name": "Panoramic Permutation Protocol",
     "description": {
-      "0": "เมื่อใช้ท่าไม้ตาย <strong>Supreme Instruction: Cyclonic Exterminator</strong> จะมอบเอฟเฟกต์ \"Parameter Permutation\" ให้แก่ตัวละครทั้งหมดในทีม: เพิ่มความชำนาญธาตุของ Ineffa และตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นของทีมตนเอง ตาม 6% ของพลังโจมตีของ Ineffa เป็นเวลา 20 วินาที"
+      "0": "เมื่อใช้ท่าไม้ตาย <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Supreme Instruction: Cyclonic Exterminator</tooltip></strong> จะมอบเอฟเฟกต์ \"Parameter Permutation\" ให้แก่ตัวละครทั้งหมดในทีม: เพิ่มความชำนาญธาตุของ Ineffa และตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นของทีมตนเอง ตาม 6% ของพลังโจมตีของ Ineffa เป็นเวลา 20 วินาที"
     }
   },
   "passive3": {
@@ -126,14 +126,14 @@
   "constellation2": {
     "name": "Support Cleaning Module",
     "description": {
-      "0": "หลังจากที่ท่าไม้ตาย <strong>Supreme Instruction: Cyclonic Exterminator</strong> โจมตีโดนศัตรู จะมอบสถานะ \"คำสั่งลงทัณฑ์\" ให้แก่ศัตรูหนึ่งตัวในนั้น: หลังจากช่วงเวลาสั้น ๆ หรือเมื่อศัตรูตัวดังกล่าวถูกกำจัด จะสร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> เท่ากับ 300% ของพลังโจมตีของ Ineffa แก่ศัตรูที่อยู่ใกล้เคียงศัตรูดังกล่าว ซึ่งความเสียหายนี้จะนับเป็น ความเสียหายที่เกิดจากปฏิกิริยาชาร์จจันทรา",
+      "0": "หลังจากที่ท่าไม้ตาย <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Supreme Instruction: Cyclonic Exterminator</tooltip></strong> โจมตีโดนศัตรู จะมอบสถานะ \"คำสั่งลงทัณฑ์\" ให้แก่ศัตรูหนึ่งตัวในนั้น: หลังจากช่วงเวลาสั้น ๆ หรือเมื่อศัตรูตัวดังกล่าวถูกกำจัด จะสร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> เท่ากับ 300% ของพลังโจมตีของ Ineffa แก่ศัตรูที่อยู่ใกล้เคียงศัตรูดังกล่าว ซึ่งความเสียหายนี้จะนับเป็น ความเสียหายที่เกิดจากปฏิกิริยาชาร์จจันทรา",
       "1": "นอกจากนี้ เมื่อปล่อยท่าไม้ตาย <strong>Supreme Instruction: Cyclonic Exterminator</strong> จะมอบโล่บาเรียลำแสง ให้แก่ตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น ที่อยู่ในบริเวณใกล้เคียงด้วย"
     }
   },
   "constellation3": {
     "name": "Enhanced Emotion Emulator",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong>Cleaning Mode: Carrier Frequency</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Ineffa_gen baseKey18=skill>Cleaning Mode: Carrier Frequency</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
@@ -146,7 +146,7 @@
   "constellation5": {
     "name": "Mirror's Dream Transcension",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong>Supreme Instruction: Cyclonic Exterminator</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Supreme Instruction: Cyclonic Exterminator</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },

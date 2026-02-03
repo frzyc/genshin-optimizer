@@ -114,7 +114,7 @@
   "lockedPassive": {
     "name": "異邦的烈風",
     "description": {
-      "0": "從過往的旅途中，汲取全新的力量。每與一種元素進行過共鳴，便會獲得額外的<strong>強化效果</strong>。",
+      "0": "從過往的旅途中，汲取全新的力量。每與一種元素進行過共鳴，便會獲得額外的<tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>強化效果</strong></tooltip>。",
       "1": "<br/>",
       "2": "此外，隊伍中附近的角色元素類型為<pyro>火元素</pyro>、<hydro>水元素</hydro>、<cryo>冰元素</cryo>或<electro>雷元素</electro>的攻擊命中敵人時，旅行者將獲得1層對應元素類型的「晨風之刃」，每種元素類型的「晨風之刃」至多疊加1層。擁有至少2層「晨風之刃」時進行重擊，會消耗所有的「晨風之刃」，轉為進行特殊的<strong>重擊·風旋</strong>。",
       "3": "<br/>",

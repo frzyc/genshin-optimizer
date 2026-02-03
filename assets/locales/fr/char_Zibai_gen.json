@@ -1,0 +1,163 @@
+{
+  "name": "Zibai",
+  "title": "Cheval blanc de la source éphémère",
+  "description": "L'Adepte cheval blanc des légendes de Liyue du nom de Zibai est le personnage le plus mystérieux des mythes locaux.",
+  "constellationName": "Equa Alba",
+  "auto": {
+    "name": "Toucher pétale de la lame d'or",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ciel et terre manifestés",
+    "description": {
+      "0": "Invoquant une ombre de ses anciens pouvoirs, Zibai passe en mode <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Déphasage lunaire</strong></tooltip>.",
+      "1": "Dans ce mode, les attaques normales et chargées de Zibai sont converties pour infliger des <geo>DGT Géo</geo> ne pouvant pas être enchantés et Zibai peut accumuler du <strong>rayonnage de déphasage</strong> spécial via diverses méthodes, rayonnage que Zibai peut consommer pour déclencher une compétence élémentaire spéciale, <strong>Foulée de destrier spirituel</strong>.",
+      "2": "<br/>",
+      "3": "<strong>Signelune « Lueur ascendante »</strong>",
+      "4": "Lorsque Zibai effectue une attaque normale pendant son <strong>déphasage lunaire</strong>, le 4e coup inflige une fois supplémentaire des <geo>DGT Géo</geo>, ces DGT étant considérés comme des DGT de réaction de Sélénocristallisation."
+    },
+    "skillParams": {
+      "0": "DGT 1er coup (déphasage lunaire)",
+      "1": "DGT 2e coup (déphasage lunaire)",
+      "2": "DGT 3e coup (déphasage lunaire)",
+      "3": "DGT 4e coup (déphasage lunaire)",
+      "4": "DGT attaque chargée (déphasage lunaire)",
+      "5": "DGT 1er coup (foulée de destrier spirituel)",
+      "6": "DGT 2e coup (foulée de destrier spirituel)",
+      "7": "DGT bonus 4e coup en lueur ascendante (déphasage lunaire)",
+      "8": "Durée de déphasage lunaire",
+      "9": "Temps de recharge",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Éminence de trisphère",
+    "description": {
+      "0": "Zibai utilise sa canopée de jade, infligeant deux fois des <geo>DGT Géo</geo>, les DGT de la seconde fois étant considérés comme des DGT de réaction de Sélénocristallisation.",
+      "1": "Si Zibai est en <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>déphasage lunaire</strong></tooltip> lors de l'utilisation, la durée de ce déphasage est prolongée de 1,7 s."
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "L'Adepte de la lune arrive",
+    "description": {
+      "0": "En utilisant sa compétence élémentaire <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Ciel et terre manifestés</tooltip></strong> ou si un personnage de l'équipe à proximité déclenche son harmonie de voile lunaire, Zibai obtient l'effet <strong>Descente sélénique</strong> pendant 4 s : augmente les DGT infligés par le 2e coup de ses <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>foulées de destrier spirituel</strong></tooltip> d'une valeur équivalant à 60 % de sa DÉF."
+    }
+  },
+  "passive2": {
+    "name": "Pics stratifiés perçant les nuages",
+    "description": {
+      "0": "La DÉF de Zibai augmente de 15 % pour chaque autre personnage <geo>Géo</geo> dans l'équipe, et sa maîtrise élémentaire augmente de 60 pts pour chaque autre personnage <hydro>Hydro</hydro> dans l'équipe."
+    }
+  },
+  "passive3": {
+    "name": "Bénédiction de signelune : Soleil et lune en mouvement",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction de Cristallisation Hydro, elle est convertie en réaction de Sélénocristallisation, dont les DGT de base augmentent selon la DÉF de Zibai : chaque tranche de 100 pts de DÉF augmente les DGT de base de 0,7 %, les DGT pouvant être augmentés d'un maximum de 14 % de cette manière.",
+      "1": "<br/>",
+      "2": "De plus, la <strong>signelune</strong> de l'équipe augmente d'un niveau lorsque Zibai fait partie de l'équipe."
+    }
+  },
+  "passive": {
+    "name": "Forêt de fleurs au clair de lune",
+    "description": {
+      "0": "La nuit (18 h 00 - 06 h 00), Zibai récupère 1 pt d'énergie élémentaire toutes les 2 secondes en dehors des combats.",
+      "1": "Cet effet ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées."
+    }
+  },
+  "constellation1": {
+    "name": "Avancez avec vigueur, mais entrez en silence",
+    "description": {
+      "0": "Après avoir utilisé la compétence élémentaire <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Ciel et terre manifestés</tooltip></strong>, Zibai obtient immédiatement 100 pts de <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>rayonnage de déphasage</strong></tooltip> et la quantité de <strong>foulées de destrier spirituel</strong> qu'elle peut utiliser pendant son <strong>déphasage lunaire</strong> passe à 5.",
+      "1": "De plus, chaque fois qu'elle passe en déphasage lunaire, les DGT de réaction de Sélénocristallisation du 2e coup de sa première foulée de destrier spirituel augmentent de 220 %."
+    }
+  },
+  "constellation2": {
+    "name": "À la naissance des âmes, et à la mort des coquilles vides",
+    "description": {
+      "0": "Pendant son <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>déphasage lunaire</strong></tooltip>, les DGT de réaction de Sélénocristallisation de tous les personnages de l'équipe à proximité augmentent de 30 %.",
+      "1": "<br/>",
+      "2": "<strong>Signelune « Lueur ascendante »</strong> : l'effet de l'aptitude d'élévation <strong><tooltip ns=char_Zibai_gen baseKey18=passive1>« L'Adepte de la lune arrive »</tooltip></strong> est renforcé : les DGT infligés par le 2e coup de ses <strong>foulées de destrier spirituel</strong> augmentent davantage d'une valeur équivalant à 550 % de la DÉF de Zibai, l'aptitude d'élévation « L'Adepte de la lune arrive » devant déjà être débloquée."
+    }
+  },
+  "constellation3": {
+    "name": "Libre de toute contrainte, et affranchi des liens terrestres",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Ciel et terre manifestés</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "L'esprit passe, puis la forme suit",
+    "description": {
+      "0": "Pendant son <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>déphasage lunaire</strong></tooltip>, la séquence de l'attaque normale de Zibai ne se réinitialise pas, et Zibai obtient l'effet <strong>Splendeur lunaire dispersée</strong> lorsque sa <strong>foulée de destrier spirituel</strong> touche un ennemi : la prochaine fois qu'elle effectue une attaque normale, le 4e coup inflige des DGT supplémentaires de réaction de Sélénocristallisation d'une valeur équivalant à 250 % des DGT d'origine."
+    }
+  },
+  "constellation5": {
+    "name": "Percevez ce qui est sans valeur, et ne le contestez pas",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Zibai_gen baseKey18=burst>Éminence de trisphère</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Le monde, un voyage de passage",
+    "description": {
+      "0": "Pendant son <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>déphasage lunaire</strong></tooltip>, le taux d'accumulation de <strong>rayonnage de déphasage</strong> de Zibai augmente de 50 %.",
+      "1": "De plus, sa <strong>foulée de destrier spirituel</strong> est convertie pour consommer tout son rayonnage de déphasage : chaque point de rayonnage consommé au-delà de 70 pts permet aux DGT de cette foulée de destrier spirituel et aux DGT de réaction de Sélénocristallisation de Zibai des 3 prochaines secondes de bénéficier d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 1,6 %, cet effet ne se cumulant pas."
+    }
+  }
+}

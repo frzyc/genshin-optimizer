@@ -168,7 +168,7 @@
         "Hiệu quả này tối đa cộng dồn 4 lần."
       ],
       "2": "<br/>",
-      "3": "Ngoài ra, khi Albedo đang dự bị và hiệu quả Sinh Tử cộng dồn đến 4 tầng, sẽ xóa tất cả hiệu quả Sinh Tử và sinh ra 3 đóa Hoa Sinh Tử ở gần nhân vật của bản thân trong trận hiện tại, bung nở mãnh liệt và gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> dựa trên 300% Phòng Ngự của Albedo, sát thương này được xem là sát thương Kỹ Năng Nộ. Sau khi mở khóa Thiên Phú Cố Định <strong>Trí Tuệ Người Trong Bình</strong>, sẽ còn kích hoạt hiệu quả trong Thiên Phú Cố Định, khiến nhân vật trong đội ở gần tăng 125 Tinh Thông Nguyên Tố trong 10s."
+      "3": "Ngoài ra, khi Albedo đang dự bị và hiệu quả Sinh Tử cộng dồn đến 4 tầng, sẽ xóa tất cả hiệu quả Sinh Tử và sinh ra 3 đóa Hoa Sinh Tử ở gần nhân vật của bản thân trong trận hiện tại, bung nở mãnh liệt và gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> dựa trên 300% Phòng Ngự của Albedo, sát thương này được xem là sát thương Kỹ Năng Nộ. Sau khi mở khóa Thiên Phú Cố Định <tooltip ns=char_Albedo_gen baseKey18=passive2><strong>Trí Tuệ Người Trong Bình</strong></tooltip>, sẽ còn kích hoạt hiệu quả trong Thiên Phú Cố Định, khiến nhân vật trong đội ở gần tăng 125 Tinh Thông Nguyên Tố trong 10s."
     }
   },
   "constellation3": {
@@ -202,7 +202,7 @@
     },
     "upgradedDescription": {
       "0": "Nhân vật ra trận trong đội hiện tại khi ở trong phạm vi của Hoa Mặt Trời, nếu được bảo vệ bởi khiên sinh ra từ phản ứng Kết Tinh, hoặc khi có Trăng Trôi trong khu vực của Hoa Mặt Trời, thì sẽ tăng 17% sát thương gây ra.",
-      "1": "Ngoài ra, khi thi triển Kỹ Năng Nộ <strong>Chiêu Giáng Sinh - Sóng Vỗ Đại Lục</strong>, sẽ phá hủy tất cả Đồng Vị Bạc trên sân. Khi phá hủy Đồng Vị Bạc thông qua cách này, Kỹ Năng Nộ lần này sẽ xem như xóa bỏ 4 tầng hiệu quả Sinh Tử trong Cung Mệnh <strong>Liên Đại Hiển Sinh</strong>, đồng thời trong 20s tiếp theo sẽ tăng sát thương Hoa Sinh Tử gây ra, mức tăng tương đương 250% Phòng Ngự của Albedo."
+      "1": "Ngoài ra, khi thi triển Kỹ Năng Nộ <strong>Chiêu Giáng Sinh - Sóng Vỗ Đại Lục</strong>, sẽ phá hủy tất cả Đồng Vị Bạc trên sân. Khi phá hủy Đồng Vị Bạc thông qua cách này, Kỹ Năng Nộ lần này sẽ xem như xóa bỏ 4 tầng hiệu quả Sinh Tử trong Cung Mệnh {LINK#TE382}<strong>Liên Đại Hiển Sinh</strong></tooltip>, đồng thời trong 20s tiếp theo sẽ tăng sát thương Hoa Sinh Tử gây ra, mức tăng tương đương 250% Phòng Ngự của Albedo."
     }
   }
 }
