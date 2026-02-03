@@ -113,7 +113,7 @@
   "lockedPassive": {
     "name": "Fuego estelar extranjero",
     "description": {
-      "0": "Obtienes nuevos poderes gracias a tus viajes pasados, de manera que ganarás <strong>fortalecimientos</strong> adicionales por cada elemento con el que hayas resonado.",
+      "0": "Obtienes nuevos poderes gracias a tus viajes pasados, de manera que ganarás <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimientos</strong></tooltip> adicionales por cada elemento con el que hayas resonado.",
       "1": "<br/>",
       "2": "Además, cuando un personaje cercano del equipo cause una explosión noctámbula, {F#la Viajera}{M#el Viajero} obtendrá 1 carga de “filo sacrofuego”, acumulable hasta un máximo de 2 cargas. Al tener 2 cargas y ejecutar un Ataque Cargado, se consumirán todas las cargas de filo sacrofuego para ejecutar un <strong>Ataque Cargado: Infierno</strong> especial.",
       "3": "<br/>",

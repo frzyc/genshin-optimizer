@@ -42,7 +42,7 @@
     "name": "공중 구조대",
     "description": {
       "0": "형씨, 우리가 나설 차례야! 이파가 카쿠쿠를 소환해 함께 전투한다.",
-      "1": "발동 후, 이파는 밤혼을 80pt 획득하고 <strong>밤혼 가호</strong> 상태에 진입한다. 해당 상태에서 이파는 카쿠쿠의 도움을 받아 부유한다. 일반 공격 진행 시, 짧은 터치 또는 홀드에 따라 각기 다른 방식으로 <strong>「지원 사격」</strong>을 진행해, 파티 내 모든 캐릭터의 HP를 회복하는 치료탄을 발사한다.",
+      "1": "발동 후, 이파는 밤혼을 80pt 획득하고 <tooltip ns=tooltips_gen baseKey18=11130003 values=[]><strong>밤혼 가호</strong></tooltip> 상태에 진입한다. 해당 상태에서 이파는 카쿠쿠의 도움을 받아 부유한다. 일반 공격 진행 시, 짧은 터치 또는 홀드에 따라 각기 다른 방식으로 <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>「지원 사격」</strong></tooltip>을 진행해, 파티 내 모든 캐릭터의 HP를 회복하는 치료탄을 발사한다.",
       "2": "<br/>",
       "3": "또한 밤혼 가호 상태에서 원소전투 스킬 <strong>공중 구조대</strong> 홀드 시, 이파가 밤혼 성질의 낙하 공격을 진행한다. 스킬에서 손을 떼면 낙하 공격을 중단하고 부유 상태를 유지한다. 낙하 공격 과정에서 착지 시, 이파의 밤혼 가호 상태가 종료된다"
     },
@@ -69,7 +69,7 @@
     "name": "강제 진정 구역",
     "description": {
       "0": "흥분한 적에게 광역 진정제를 발사한다. 광역 진정제는 명중 시, 폭발하며 묶음 윈드 필드를 생성해 주변의 물체와 적을 끌어당기고, 밤혼 성질의 <anemo>바람 원소 범위 피해</anemo>를 준다.",
-      "1": "광역 진정제가 <hydro>물 원소</hydro>/<pyro>불 원소</pyro>/<cryo>얼음 원소</cryo>/<electro>번개 원소</electro>가 부착된 적에게 명중 시, 해당 적에게 <strong>「진정 표식」</strong> 효과를 부여한다"
+      "1": "광역 진정제가 <hydro>물 원소</hydro>/<pyro>불 원소</pyro>/<cryo>얼음 원소</cryo>/<electro>번개 원소</electro>가 부착된 적에게 명중 시, 해당 적에게 <tooltip ns=tooltips_gen baseKey18=11130004 values=[]><strong>「진정 표식」</strong></tooltip> 효과를 부여한다"
     },
     "skillParams": {
       "0": "스킬 피해",
@@ -93,7 +93,7 @@
   "passive1": {
     "name": "응급 구조사의 시야",
     "description": {
-      "0": "이파가 밤혼 가호 상태 시, 파티 내 모든 캐릭터의 밤혼 총합에 기반해, 이파가 밤혼 1pt당 <strong>「구급 비결」</strong>을 1pt 획득한다. 구급 비결: 주변에 있는 파티 내 캐릭터가 발동한 확산, 감전, 달 감전 반응으로 주는 피해가 증가한다"
+      "0": "이파가 밤혼 가호 상태 시, 파티 내 모든 캐릭터의 밤혼 총합에 기반해, 이파가 밤혼 1pt당 <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>「구급 비결」</strong></tooltip>을 1pt 획득한다. 구급 비결: 주변에 있는 파티 내 캐릭터가 발동한 확산, 감전, 달 감전 반응으로 주는 피해가 증가한다"
     }
   },
   "passive2": {
@@ -118,42 +118,42 @@
   "constellation1": {
     "name": "덩굴 비약 제조법",
     "description": {
-      "0": "<strong>「지원 사격」</strong>이 적에게 명중 시, 이파가 원소 에너지를 6pt 회복한다. 해당 방식으로 8초마다 원소 에너지를 최대 1회 회복할 수 있다"
+      "0": "<tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>「지원 사격」</strong></tooltip>이 적에게 명중 시, 이파가 원소 에너지를 6pt 회복한다. 해당 방식으로 8초마다 원소 에너지를 최대 1회 회복할 수 있다"
     }
   },
   "constellation2": {
     "name": "탄도의 수호령",
     "description": {
-      "0": "이파가 밤혼 가호 상태 시, 파티 내 모든 캐릭터의 밤혼 총합이 60pt를 초과한 경우, 초과한 밤혼 1pt마다 이파가 추가로 <strong>「구급 비결」</strong>을 4pt 획득한다.",
+      "0": "이파가 밤혼 가호 상태 시, 파티 내 모든 캐릭터의 밤혼 총합이 60pt를 초과한 경우, 초과한 밤혼 1pt마다 이파가 추가로 <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>「구급 비결」</strong></tooltip>을 4pt 획득한다.",
       "1": "또한, 이파가 보유할 수 있는 「구급 비결」의 최대치가 50pt 증가한다.",
-      "2": "돌파 특성 <strong>응급 구조사의 시야</strong>를 해금해야 한다"
+      "2": "돌파 특성 <tooltip ns=char_Ifa_gen baseKey18=passive1><strong>응급 구조사의 시야</strong></tooltip>를 해금해야 한다"
     }
   },
   "constellation3": {
     "name": "밤과의 담판",
     "description": {
-      "0": "원소전투 스킬 <strong>공중 구조대</strong>의 스킬 레벨+3",
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Ifa_gen baseKey18=skill>공중 구조대</tooltip></strong>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },
   "constellation4": {
     "name": "썩은 부위 치환술",
     "description": {
-      "0": "원소폭발 <strong>강제 진정 구역</strong>으로 생성된 묶음 윈드 필드의 지속 시간이 3초로 연장된다.",
+      "0": "원소폭발 <strong><tooltip ns=char_Ifa_gen baseKey18=burst>강제 진정 구역</tooltip></strong>으로 생성된 묶음 윈드 필드의 지속 시간이 3초로 연장된다.",
       "1": "또한 원소폭발 <strong>강제 진정 구역</strong> 발동 후 이파의 원소 마스터리가 100pt 증가한다. 지속 시간: 15초"
     }
   },
   "constellation5": {
     "name": "만물공존의 서약",
     "description": {
-      "0": "원소폭발 <strong>강제 진정 구역</strong>의 스킬 레벨+3",
+      "0": "원소폭발 <strong><tooltip ns=char_Ifa_gen baseKey18=burst>강제 진정 구역</tooltip></strong>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },
   "constellation6": {
     "name": "깃털 매듭의 맹세",
     "description": {
-      "0": "이파가 홀드로 <strong>「지원 사격」</strong> 진행 시, 50% 확률로 추가 치료탄을 1개 발사해, 이파 공격력의 120%에 해당하는 바람 원소 피해를 준다. 해당 피해는 일반 공격 피해로 간주한다.",
+      "0": "이파가 홀드로 <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>「지원 사격」</strong></tooltip> 진행 시, 50% 확률로 추가 치료탄을 1개 발사해, 이파 공격력의 120%에 해당하는 바람 원소 피해를 준다. 해당 피해는 일반 공격 피해로 간주한다.",
       "1": "또한, 비전투 상태에서 이파의 밤혼 가호 상태가 소모하는 밤혼과 열소가 20% 감소한다"
     }
   }

@@ -41,7 +41,7 @@
   "skill": {
     "name": "Forma binaria: Convergenza e divisione",
     "description": {
-      "0": "Purifica la sostanza dell'anima ed esprime la volontà di sottoporsi alla <strong>Trasmutazione essenziale</strong>. Mentre è trasmutato, l'abilità elementale <strong>Forma binaria: Convergenza e divisione</strong> e l'attacco normale <strong>Colpo d'ala splendente</strong> di Durin vengono sostituiti rispettivamente con le abilità elementali speciali <strong>Trasmutazione: Conferma della purezza</strong> e <strong>Trasmutazione: Negazione delle tenebre</strong>.",
+      "0": "Purifica la sostanza dell'anima ed esprime la volontà di sottoporsi alla <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Trasmutazione essenziale</strong></tooltip>. Mentre è trasmutato, l'abilità elementale <strong>Forma binaria: Convergenza e divisione</strong> e l'attacco normale <strong>Colpo d'ala splendente</strong> di Durin vengono sostituiti rispettivamente con le abilità elementali speciali <strong>Trasmutazione: Conferma della purezza</strong> e <strong>Trasmutazione: Negazione delle tenebre</strong>.",
       "1": "<br/>",
       "2": "<strong>Trasmutazione: Conferma della purezza</strong>",
       "3": "Infligge 1 iterazione di <pyro>DAN da Pyro ad area</pyro> agli avversari vicini, inverte la Trasmutazione essenziale ed entra nello stato di <strong>Conferma della purezza</strong> per 30 s.",
@@ -73,7 +73,7 @@
   "burst": {
     "name": "Principio della purezza: Trasmutazione luminosa",
     "description": {
-      "0": "Scatena il potere della \"Bestia\" in diversi modi. Durin può usare diversi Tripudi elementali in base al suo stato di <strong>Trasmutazione essenziale</strong>.",
+      "0": "Scatena il potere della \"Bestia\" in diversi modi. Durin può usare diversi Tripudi elementali in base al suo stato di <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Trasmutazione essenziale</strong></tooltip>.",
       "1": "<br/>",
       "2": "<strong>Principio della purezza: Trasmutazione luminosa</strong>",
       "3": "Quando Durin è nello stato di <strong>Conferma della purezza</strong>, usa il Tripudio elementale <strong>Principio della purezza: Trasmutazione luminosa</strong>, infliggendo 3 iterazioni di <pyro>DAN da Pyro ad area</pyro> agli avversari davanti a sé e manifestando il suo potere nella forma di <strong>Drago della Fiamma bianca</strong>. Quest'ultimo segue il personaggio attivo e attacca i nemici vicini a intervalli regolari, infliggendo <pyro>DAN da Pyro ad area</pyro>. Tali DAN sono considerati DAN da Tripudio elementale.",
@@ -133,7 +133,7 @@
       "0": "Dopo aver completato <strong>Compiti della strega: Su questo mondo</strong>, Durin acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
       "1": "<br/>",
       "2": "<strong>Hexerei: Rito segreto</strong>",
-      "3": "Aumenta tutti gli effetti del talento d'ascensione <strong>Luce manifesta del calcolo divino</strong> (tranne la durata) di un 75%."
+      "3": "Aumenta tutti gli effetti del talento d'ascensione <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Luce manifesta del calcolo divino</strong></tooltip> (tranne la durata) di un 75%."
     }
   },
   "constellation1": {
@@ -157,20 +157,20 @@
   "constellation3": {
     "name": "Rivelazione dello Specchio di fiamma",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Principio della purezza: Trasmutazione luminosa</strong>.",
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Durin_gen baseKey18=burst>Principio della purezza: Trasmutazione luminosa</tooltip></strong>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation4": {
     "name": "Fonte dell'emanare",
     "description": {
-      "0": "I DAN da Tripudio elementale di Durin aumentano di un 40%. Inoltre, quando gli effetti che consumano accumuli di <strong>Ciclo dell'illuminazione</strong> vengono attivati come parte del livello costellazione <strong>Redenzione dell'Adamah</strong>, c'è un 30% di probabilità che i suddetti accumuli non vengano consumati."
+      "0": "I DAN da Tripudio elementale di Durin aumentano di un 40%. Inoltre, quando gli effetti che consumano accumuli di <strong>Ciclo dell'illuminazione</strong> vengono attivati come parte del livello costellazione <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Redenzione dell'Adamah</tooltip></strong>, c'è un 30% di probabilità che i suddetti accumuli non vengano consumati."
     }
   },
   "constellation5": {
     "name": "Scissione della Fiamma abrasiva",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Forma binaria: Convergenza e divisione</strong>.",
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Durin_gen baseKey18=skill>Forma binaria: Convergenza e divisione</tooltip></strong>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },

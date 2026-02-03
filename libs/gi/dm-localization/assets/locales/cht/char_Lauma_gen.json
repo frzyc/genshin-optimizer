@@ -42,13 +42,13 @@
   "skill": {
     "name": "聖言述詠·終宵永眠",
     "description": {
-      "0": "默詠古老的禱歌，展開<strong>霜林聖域</strong>，並依據點按、長按，以不同的方式產生效果。",
+      "0": "默詠古老的禱歌，展開<tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>霜林聖域</strong></tooltip>，並依據點按、長按，以不同的方式產生效果。",
       "1": "<br/>",
       "2": "<strong>點按</strong>",
       "3": "詠唱狩獵的禱歌，造成<dendro>草元素範圍傷害</dendro>。",
       "4": "<br/>",
       "5": "<strong>長按</strong>",
-      "6": "擁有至少1枚<strong>草露</strong>時可以施放。菈烏瑪將消耗所有草露，詠唱永眠的禱歌，造成一次<dendro>草元素範圍傷害</dendro>與一次視為月綻放反應傷害的<dendro>草元素範圍傷害</dendro>。依據消耗的草露數，每一枚草露還會使菈烏瑪獲得一層<strong>「月詠」</strong>，每次長按施放元素戰技時，至多依此方式消耗3枚草露。",
+      "6": "擁有至少1枚<tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>草露</strong></tooltip>時可以施放。菈烏瑪將消耗所有草露，詠唱永眠的禱歌，造成一次<dendro>草元素範圍傷害</dendro>與一次視為月綻放反應傷害的<dendro>草元素範圍傷害</dendro>。依據消耗的草露數，每一枚草露還會使菈烏瑪獲得一層<tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>「月詠」</strong></tooltip>，每次長按施放元素戰技時，至多依此方式消耗3枚草露。",
       "7": "<br/>",
       "8": "此外，菈烏瑪的元素戰技或霜林聖域的攻擊命中敵人時，將使該敵人的<dendro>草元素抗性</dendro>與<hydro>水元素抗性</hydro>降低，持續10秒。"
     },
@@ -74,8 +74,8 @@
   "burst": {
     "name": "聖言述詠·眾心為月",
     "description": {
-      "0": "讓眾生的心願，成為照亮大地的月光。菈烏瑪默詠終北的聖歌，並獲得18層<strong>「蒼色禱歌」</strong>。",
-      "1": "此外，菈烏瑪在擁有<strong>「月詠」</strong>的情況下施放元素爆發時，或是在施放元素爆發後的15秒內獲得「月詠」時，菈烏瑪將消耗所有的「月詠」，並依據消耗的層數，每層使菈烏瑪獲得6層「蒼色禱歌」。每次施放元素爆發以及施放元素爆發後的15秒內，該效果至多觸發一次。",
+      "0": "讓眾生的心願，成為照亮大地的月光。菈烏瑪默詠終北的聖歌，並獲得18層<tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>「蒼色禱歌」</strong></tooltip>。",
+      "1": "此外，菈烏瑪在擁有<tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>「月詠」</strong></tooltip>的情況下施放元素爆發時，或是在施放元素爆發後的15秒內獲得「月詠」時，菈烏瑪將消耗所有的「月詠」，並依據消耗的層數，每層使菈烏瑪獲得6層「蒼色禱歌」。每次施放元素爆發以及施放元素爆發後的15秒內，該效果至多觸發一次。",
       "2": "<br/>",
       "3": "<strong>蒼色禱歌</strong>",
       "4": "隊伍中附近的角色造成綻放、超綻放、烈綻放、月綻放反應傷害時，將消耗一層「蒼色禱歌」，提升造成的傷害，提升值基於菈烏瑪的元素精通。上述傷害同時命中多名敵人時，會依據命中敵人的數量消耗「蒼色禱歌」層數。",
@@ -103,7 +103,7 @@
   "passive1": {
     "name": "奉向霜夜的明光",
     "description": {
-      "0": "菈烏瑪施放元素戰技<strong>聖言述詠·終宵永眠</strong>後的20秒內，將依據隊伍的<strong>月兆</strong>，分別產生不同的強化效果，不同月兆等級提供的強化效果無法疊加。",
+      "0": "菈烏瑪施放元素戰技<strong><tooltip ns=char_Lauma_gen baseKey18=skill>聖言述詠·終宵永眠</tooltip></strong>後的20秒內，將依據隊伍的<strong>月兆</strong>，分別產生不同的強化效果，不同月兆等級提供的強化效果無法疊加。",
       "1": "<br/>",
       "2": "<strong>月兆·初輝</strong>",
       "3": "隊伍中附近的所有角色觸發的綻放、超綻放、烈綻放反應造成的傷害能夠造成暴擊，暴擊率固定為15%，暴擊傷害固定為100%。該效果提供的暴擊率可以與使對應元素反應能夠造成暴擊的同類效果提供的暴擊率疊加。",
@@ -140,7 +140,7 @@
   "constellation1": {
     "name": "「唇啊，為我紡出歌與吟哦」",
     "description": {
-      "0": "菈烏瑪施放元素戰技<strong>聖言述詠·終宵永眠</strong>或元素爆發<strong>聖言述詠·眾心為月</strong>後，將獲得「生之紡線」，持續20秒。",
+      "0": "菈烏瑪施放元素戰技<strong><tooltip ns=char_Lauma_gen baseKey18=skill>聖言述詠·終宵永眠</tooltip></strong>或元素爆發<strong><tooltip ns=char_Lauma_gen baseKey18=burst>聖言述詠·眾心為月</tooltip></strong>後，將獲得「生之紡線」，持續20秒。",
       "1": "持續期間，隊伍中附近的角色觸發月綻放反應時，為附近的目前場上角色恢復生命值，回復量相當於菈烏瑪元素精通的500%，該效果每1.9秒至多觸發一次。",
       "2": "此外，菈烏瑪的靈使形態消耗的體力減少40%，最大持續時間延長5秒。"
     }
@@ -148,9 +148,9 @@
   "constellation2": {
     "name": "「紡出那終北的告誡與述說」",
     "description": {
-      "0": "元素爆發<strong>聖言述詠·眾心為月</strong>獲得強化：",
+      "0": "元素爆發<strong><tooltip ns=char_Lauma_gen baseKey18=burst>聖言述詠·眾心為月</tooltip></strong>獲得強化：",
       "1": [
-        "<strong>「蒼色禱歌」</strong>的效果提升：隊伍中附近的所有角色觸發綻放、超綻放、烈綻放反應時造成的傷害額外提升，提升值相當於菈烏瑪元素精通的500%；隊伍中附近的所有角色造成的月綻放反應傷害額外提升，提升值相當於菈烏瑪元素精通的400%。"
+        "<tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>「蒼色禱歌」</strong></tooltip>的效果提升：隊伍中附近的所有角色觸發綻放、超綻放、烈綻放反應時造成的傷害額外提升，提升值相當於菈烏瑪元素精通的500%；隊伍中附近的所有角色造成的月綻放反應傷害額外提升，提升值相當於菈烏瑪元素精通的400%。"
       ],
       "2": "<br/>",
       "3": "<strong>月兆·滿輝</strong>：隊伍中附近的所有角色造成的月綻放反應傷害提升40%。"
@@ -159,32 +159,32 @@
   "constellation3": {
     "name": "「汝、切莫貪求狡狐的小徑」",
     "description": {
-      "0": "元素爆發<strong>聖言述詠·眾心為月</strong>的技能等級提高3級。",
+      "0": "元素爆發<strong><tooltip ns=char_Lauma_gen baseKey18=burst>聖言述詠·眾心為月</tooltip></strong>的技能等級提高3級。",
       "1": "至多提升至15級。"
     }
   },
   "constellation4": {
     "name": "「汝、切莫貪戀巨熊的權柄」",
     "description": {
-      "0": "元素戰技<strong>聖言述詠·終宵永眠</strong>中的<strong>霜林聖域</strong>的攻擊命中敵人時，將為菈烏瑪恢復4點元素能量，該效果每5秒至多觸發一次。"
+      "0": "元素戰技<strong><tooltip ns=char_Lauma_gen baseKey18=skill>聖言述詠·終宵永眠</tooltip></strong>中的<tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>霜林聖域</strong></tooltip>的攻擊命中敵人時，將為菈烏瑪恢復4點元素能量，該效果每5秒至多觸發一次。"
     }
   },
   "constellation5": {
     "name": "「若是得以將真實之物見證」",
     "description": {
-      "0": "元素戰技<strong>聖言述詠·終宵永眠</strong>的技能等級提高3級。",
+      "0": "元素戰技<strong><tooltip ns=char_Lauma_gen baseKey18=skill>聖言述詠·終宵永眠</tooltip></strong>的技能等級提高3級。",
       "1": "至多提升至15級。"
     }
   },
   "constellation6": {
     "name": "「我願將這血與淚奉予月明」",
     "description": {
-      "0": "<strong>霜林聖域</strong>攻擊敵人時，會額外造成一次視為月綻放反應傷害的<dendro>草元素範圍傷害</dendro>。該傷害基於菈烏瑪元素精通的185%，不會消耗<strong>「蒼色禱歌」</strong>，而是會使菈烏瑪獲得2層「蒼色禱歌」，並重置依此方式獲得的「蒼色禱歌」的持續時間。",
-      "1": "一次霜林聖域持續期間，該效果至多觸發8次；施放元素戰技<strong>聖言述詠·終宵永眠</strong>時，將清除依此方式獲得的「蒼色禱歌」。",
+      "0": "<tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>霜林聖域</strong></tooltip>攻擊敵人時，會額外造成一次視為月綻放反應傷害的<dendro>草元素範圍傷害</dendro>。該傷害基於菈烏瑪元素精通的185%，不會消耗<tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>「蒼色禱歌」</strong></tooltip>，而是會使菈烏瑪獲得2層「蒼色禱歌」，並重置依此方式獲得的「蒼色禱歌」的持續時間。",
+      "1": "一次霜林聖域持續期間，該效果至多觸發8次；施放元素戰技<strong><tooltip ns=char_Lauma_gen baseKey18=skill>聖言述詠·終宵永眠</tooltip></strong>時，將清除依此方式獲得的「蒼色禱歌」。",
       "2": "<br/>",
       "3": "此外，菈烏瑪在擁有「蒼色禱歌」的情況下進行普通攻擊時，會消耗一層「蒼色禱歌」，轉為造成相當於菈烏瑪元素精通150%的<dendro>草元素傷害</dendro>，該傷害視為月綻放反應造成的傷害。",
       "4": "<br/>",
-      "5": "<strong>月兆·滿輝</strong>：隊伍中附近的所有角色造成的月綻放反應傷害<strong>擢升</strong>25%。"
+      "5": "<strong>月兆·滿輝</strong>：隊伍中附近的所有角色造成的月綻放反應傷害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>25%。"
     }
   }
 }

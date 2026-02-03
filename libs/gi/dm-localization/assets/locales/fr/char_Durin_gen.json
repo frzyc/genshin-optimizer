@@ -41,7 +41,7 @@
   "skill": {
     "name": "Forme binaire : Convergence et division",
     "description": {
-      "0": "Purifie la substance des âmes et en appelle au désir de la <strong>transmutation essentielle</strong>. Pendant la transmutation de Durin, sa compétence élémentaire <strong>Forme binaire : Convergence et division</strong> est convertie en compétence élémentaire spéciale <strong>Transmutation : Confirmation de pureté</strong> et son attaque normale <strong>Coupe d'aile radieuse</strong> en la compétence élémentaire spéciale <strong>Transmutation : Déni de ténèbre</strong>.",
+      "0": "Purifie la substance des âmes et en appelle au désir de la <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>transmutation essentielle</strong></tooltip>. Pendant la transmutation de Durin, sa compétence élémentaire <strong>Forme binaire : Convergence et division</strong> est convertie en compétence élémentaire spéciale <strong>Transmutation : Confirmation de pureté</strong> et son attaque normale <strong>Coupe d'aile radieuse</strong> en la compétence élémentaire spéciale <strong>Transmutation : Déni de ténèbre</strong>.",
       "1": "<br/>",
       "2": "<strong>Transmutation : Confirmation de pureté</strong>",
       "3": "Inflige une fois des <pyro>DGT Pyro de zone</pyro> aux ennemis proches, annule la transmutation essentielle et active l'état <strong>Confirmation de pureté</strong> pendant 30 s.",
@@ -73,7 +73,7 @@
   "burst": {
     "name": "Principe de pureté : Comme la lumière qui fluctue",
     "description": {
-      "0": "Libère la puissance de la « bête » de différentes manières. Durin peut utiliser différents déchaînements élémentaires selon sa <strong>transmutation essentielle</strong>.",
+      "0": "Libère la puissance de la « bête » de différentes manières. Durin peut utiliser différents déchaînements élémentaires selon sa <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>transmutation essentielle</strong></tooltip>.",
       "1": "<br/>",
       "2": "<strong>Principe de pureté : Comme la lumière qui fluctue</strong>",
       "3": "En <strong>confirmation de pureté</strong>, Durin utilise le déchaînement élémentaire <strong>Principe de pureté : Comme la lumière qui fluctue</strong> pour infliger 3 fois des <pyro>DGT Pyro de zone</pyro> aux ennemis en avant et matérialiser sa puissance en un <strong>dragon de flamme blanche</strong>. Le dragon de flamme blanche suit le personnage déployé et attaque de façon intermittente les ennemis à portée, infligeant des <pyro>DGT Pyro de zone</pyro> considérés comme des DGT de déchaînement élémentaire.",
@@ -133,7 +133,7 @@
       "0": "Après avoir terminé le <strong>devoir de la sorcière « De ce monde »</strong>, Durin devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
       "1": "<br/>",
       "2": "<strong>Hexerei : Rituel secret</strong>",
-      "3": "Tous les effets, sauf la durée, de l'aptitude d'élévation <strong>Manifestation lumineuse du calcul divin</strong> augmentent de 75 %."
+      "3": "Tous les effets, sauf la durée, de l'aptitude d'élévation <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Manifestation lumineuse du calcul divin</strong></tooltip> augmentent de 75 %."
     }
   },
   "constellation1": {
@@ -157,20 +157,20 @@
   "constellation3": {
     "name": "Révélation du miroir de flammes",
     "description": {
-      "0": "Niveau d'aptitude <strong>Principe de pureté : Comme la lumière qui fluctue</strong> +3.",
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Durin_gen baseKey18=burst>Principe de pureté : Comme la lumière qui fluctue</tooltip></strong> +3.",
       "1": "Niveau max : 15"
     }
   },
   "constellation4": {
     "name": "Source d'emanare",
     "description": {
-      "0": "Les DGT de déchaînement élémentaire infligés par Durin augmentent de 40 %. De plus, en déclenchant un effet consommant des cumuls de <strong>cycle d'illumination</strong> de la constellation <strong>Rédemption de l'adamah</strong>, il y a 30 % de chances de ne pas consommer de cycle d'illumination."
+      "0": "Les DGT de déchaînement élémentaire infligés par Durin augmentent de 40 %. De plus, en déclenchant un effet consommant des cumuls de <strong>cycle d'illumination</strong> de la constellation <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Rédemption de l'adamah</tooltip></strong>, il y a 30 % de chances de ne pas consommer de cycle d'illumination."
     }
   },
   "constellation5": {
     "name": "Déchirure du feu purgateur",
     "description": {
-      "0": "Niveau d'aptitude <strong>Forme binaire : Convergence et division</strong> +3.",
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Durin_gen baseKey18=skill>Forme binaire : Convergence et division</tooltip></strong> +3.",
       "1": "Niveau max : 15"
     }
   },

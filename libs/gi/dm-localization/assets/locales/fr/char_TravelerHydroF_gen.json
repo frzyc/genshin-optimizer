@@ -114,7 +114,7 @@
   "lockedPassive": {
     "name": "Cristalline d'ailleurs",
     "description": {
-      "0": "Permet {M#au voyageur}{F#à la voyageuse} de puiser une force nouvelle dans ses périples passés, lui accordant un <strong>effet de renforcement</strong> supplémentaire pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance.",
+      "0": "Permet {M#au voyageur}{F#à la voyageuse} de puiser une force nouvelle dans ses périples passés, lui accordant un <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effet de renforcement</strong></tooltip> supplémentaire pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance.",
       "1": "<br/>",
       "2": "De plus, lorsque les PV d'un personnage de l'équipe à proximité augmentent ou diminuent de 5 %, {M#le voyageur}{F#la voyageuse} obtient 1 lame d'eau multiple, une lame pouvant être obtenue une fois toutes les 4 s de cette manière jusqu'à un maximum de 3 lames. Avec 3 lames d'eau multiple, effectuer une attaque chargée consomme toutes les lames pour déclencher une <strong>attaque chargée « Marée »</strong> spéciale.",
       "3": "<br/>",

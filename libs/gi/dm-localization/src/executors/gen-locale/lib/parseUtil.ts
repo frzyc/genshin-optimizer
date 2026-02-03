@@ -1,8 +1,9 @@
 import type { Language } from '@genshin-optimizer/common/pipeline'
 import type { ColorTag } from '@genshin-optimizer/gi/dm'
-import { tagColor } from '@genshin-optimizer/gi/dm'
+import { proudSkillExcelConfigData, tagColor } from '@genshin-optimizer/gi/dm'
+import { replaceLinkWithTooltip } from './tooltips'
 
-export function preprocess(string: string): string {
+export function preprocess(string: string, namespace: string): string {
   {
     // color tags
     const stack: ColorTag[] = []
@@ -21,9 +22,20 @@ export function preprocess(string: string): string {
   string = string
     .replaceAll(/\{SPACE\}/g, ' ')
     .replaceAll(/\{NON_BREAK_SPACE\}/g, '\u00A0')
-    // TODO: Properly add some linking support?
-    .replaceAll(/\{LINK#[A-Z0-9]*\}/g, '')
-    .replaceAll(/\{\/LINK\}/g, '')
+    .replaceAll(
+      /\{LINK#([PSTN])([0-9]*)\}/g,
+      replaceLinkWithTooltip(string, namespace)
+    )
+    // If this ever requires level-specific values, it'll be very annoying
+    .replaceAll(
+      /\{PARAM#P([0-9]*)\|([0-9])*S([10]*)\}/g,
+      (_match: string, id: string, index: string, factor: string) => {
+        const proudSkillGroupId = +id.substring(0, id.length - 2)
+        const paramIndex = +index - 1
+        return `${proudSkillExcelConfigData[proudSkillGroupId][0].paramList[paramIndex] * +factor}`
+      }
+    )
+    .replaceAll(/\{\/LINK\}/g, '</tooltip>')
 
   if (string.startsWith('#')) {
     // `{}` tags

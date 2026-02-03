@@ -41,7 +41,7 @@
   "skill": {
     "name": "Forma binaria: Convergencia y división",
     "description": {
-      "0": "Purifica la esencia del alma y los deseos para realizar una <strong>transmutación esencial</strong>. Durante este proceso, la Habilidad Elemental de Durin, <strong>Forma binaria: Convergencia y división</strong>, será reemplazada por la Habilidad Elemental especial <strong>Transmutación: Confirmación de la pureza</strong>, y su Ataque Normal, <strong>Corte del ala ardiente</strong>, será reemplazado por la Habilidad Elemental especial <strong>Transmutación: Negación de la oscuridad</strong>.",
+      "0": "Purifica la esencia del alma y los deseos para realizar una <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>transmutación esencial</strong></tooltip>. Durante este proceso, la Habilidad Elemental de Durin, <strong>Forma binaria: Convergencia y división</strong>, será reemplazada por la Habilidad Elemental especial <strong>Transmutación: Confirmación de la pureza</strong>, y su Ataque Normal, <strong>Corte del ala ardiente</strong>, será reemplazado por la Habilidad Elemental especial <strong>Transmutación: Negación de la oscuridad</strong>.",
       "1": "<br/>",
       "2": "<strong>Transmutación: Confirmación de la pureza</strong>",
       "3": "Inflige <pyro>Daño Pyro en el AdE</pyro> una vez a los enemigos cercanos, anula la transmutación esencial y entra en el estado de <strong>confirmación de la pureza</strong> durante 30 s.",
@@ -73,7 +73,7 @@
   "burst": {
     "name": "Principio de pureza: Fluctuación lumínica",
     "description": {
-      "0": "Libera el poder de la “bestia” de diferentes maneras. Durin podrá usar distintas Habilidades Definitivas según el estado de <strong>transmutación esencial</strong> en el que se encuentre.",
+      "0": "Libera el poder de la “bestia” de diferentes maneras. Durin podrá usar distintas Habilidades Definitivas según el estado de <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>transmutación esencial</strong></tooltip> en el que se encuentre.",
       "1": "<br/>",
       "2": "<strong>Principio de pureza: Fluctuación lumínica</strong>",
       "3": "Si Durin está en estado de <strong>confirmación de la pureza</strong>, usará la Habilidad Definitiva <strong>Principio de pureza: Fluctuación lumínica</strong>, la cual inflige tres veces <pyro>Daño Pyro en el AdE</pyro> a los enemigos que tenga enfrente, y manifestará su poder en forma de un <strong>dragón alboflamígero</strong>. El dragón alboflamígero seguirá al personaje en uso y atacará cada cierto tiempo a los enemigos cercanos para infligirles <pyro>Daño Pyro en el AdE</pyro>, el cual se considera daño de Habilidad Definitiva.",
@@ -133,7 +133,7 @@
       "0": "Tras completar la misión <strong>«Lecciones del Aquelarre: De este mundo»</strong>, Durin se convertirá en un personaje <strong>taumatúrgico</strong>. Cuando en el equipo haya al menos 2 personajes taumatúrgicos, estos obtendrán el efecto de <strong>taumaturgia: rito secreto</strong>, el cual les otorgará ciertos fortalecimientos.",
       "1": "<br/>",
       "2": "<strong>Taumaturgia: rito secreto</strong>",
-      "3": "Potencia en un 75% todos los efectos (excepto la duración) del talento de ascensión <strong>Lumimanifestación del cálculo divino</strong>."
+      "3": "Potencia en un 75% todos los efectos (excepto la duración) del talento de ascensión <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Lumimanifestación del cálculo divino</strong></tooltip>."
     }
   },
   "constellation1": {
@@ -161,20 +161,20 @@
   "constellation3": {
     "name": "Revelación del espejo ardiente",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Principio de pureza: Fluctuación lumínica</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Durin_gen baseKey18=burst>Principio de pureza: Fluctuación lumínica</tooltip></strong> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
     "name": "Fuente desbordante",
     "description": {
-      "0": "El daño infligido por la Habilidad Definitiva de Durin aumenta en un 40%. Al activarse el efecto de consumo de <strong>iluminación cíclica</strong> de la constelación <strong>Redención de Adamah</strong>, hay un 30% de probabilidad de que las cargas no se consuman."
+      "0": "El daño infligido por la Habilidad Definitiva de Durin aumenta en un 40%. Al activarse el efecto de consumo de <strong>iluminación cíclica</strong> de la constelación <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Redención de Adamah</tooltip></strong>, hay un 30% de probabilidad de que las cargas no se consuman."
     }
   },
   "constellation5": {
     "name": "Fisura del fuego amargo",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Forma binaria: Convergencia y división</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Durin_gen baseKey18=skill>Forma binaria: Convergencia y división</tooltip></strong> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },

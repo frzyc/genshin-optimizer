@@ -327,7 +327,7 @@ const enduringRock: IResonance = {
         title: tr('EnduringRock.name'),
         icon: <GeoIcon />,
       },
-      name: st('protectedByShield'),
+      name: trm('EnduringRock.baseCond'),
       states: {
         on: {
           fields: [

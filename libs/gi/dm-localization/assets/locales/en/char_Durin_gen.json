@@ -59,7 +59,7 @@
   "skill": {
     "name": "Binary Form: Convergence and Division",
     "description": {
-      "0": "Purify the substance of souls and wishes to undergo <strong>Essential Transmutation</strong>. While transmuted, Durin's Elemental Skill <strong>Binary Form: Convergence and Division</strong> will be replaced with the special Elemental Skill <strong>Transmutation: Confirmation of Purity</strong>, and the Normal Attack <strong>Radiant Wingslash</strong> will be replaced with the special Elemental Skill <strong>Transmutation: Denial of Darkness</strong>.",
+      "0": "Purify the substance of souls and wishes to undergo <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Essential Transmutation</strong></tooltip>. While transmuted, Durin's Elemental Skill <strong>Binary Form: Convergence and Division</strong> will be replaced with the special Elemental Skill <strong>Transmutation: Confirmation of Purity</strong>, and the Normal Attack <strong>Radiant Wingslash</strong> will be replaced with the special Elemental Skill <strong>Transmutation: Denial of Darkness</strong>.",
       "1": "<br/>",
       "2": "<strong>Transmutation: Confirmation of Purity</strong>",
       "3": "Deal 1 instance of <pyro>AoE Pyro DMG</pyro> to nearby opponents, reverse Essential Transmutation, and enter the <strong>Confirmation of Purity</strong> state for 30s.",
@@ -109,7 +109,7 @@
   "burst": {
     "name": "Principle of Purity: As the Light Shifts",
     "description": {
-      "0": "Unleash the power of the \"Beast\" in different ways. Durin can use different Elemental Bursts based on his <strong>Essential Transmutation</strong> state.",
+      "0": "Unleash the power of the \"Beast\" in different ways. Durin can use different Elemental Bursts based on his <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Essential Transmutation</strong></tooltip> state.",
       "1": "<br/>",
       "2": "<strong>Principle of Purity: As the Light Shifts</strong>",
       "3": "When Durin is in the <strong>Confirmation of Purity</strong> state, he will use the Elemental Burst <strong>Principle of Purity: As the Light Shifts</strong>, dealing 3 instances of <pyro>AoE Pyro DMG</pyro> to opponents in front, and manifesting his power in the <strong>Dragon of White Flame</strong> form. The Dragon of White Flame will follow the current active character and attack nearby opponents at intervals, dealing <pyro>AoE Pyro DMG</pyro>. This DMG is considered Elemental Burst DMG.",
@@ -187,7 +187,7 @@
       "0": "After completing <strong>Witch's Homework: Of This World</strong>, Durin will become a <strong>Hexerei</strong> character. When the party includes at least 2 Hexerei characters, you will gain the <strong>Hexerei: Secret Rite</strong> effect, which enhances Hexerei characters.",
       "1": "<br/>",
       "2": "<strong>Hexerei: Secret Rite</strong>",
-      "3": "Increases all effects of the Ascension Talent <strong>Light Manifest of the Divine Calculus</strong> (except for Duration) by 75%."
+      "3": "Increases all effects of the Ascension Talent <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Light Manifest of the Divine Calculus</strong></tooltip> (except for Duration) by 75%."
     }
   },
   "constellation1": {
@@ -211,20 +211,20 @@
   "constellation3": {
     "name": "Flame Mirror's Revelation",
     "description": {
-      "0": "Increases the Level of <strong>Principle of Purity: As the Light Shifts</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Durin_gen baseKey18=burst>Principle of Purity: As the Light Shifts</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
     "name": "Emanare's Source",
     "description": {
-      "0": "Durin's Elemental Burst DMG is increased by 40%. Additionally, when effects that consume <strong>Cycle of Enlightenment</strong> stacks are triggered as part of the Constellation <strong>Adamah's Redemption</strong>, there is a 30% chance that no Cycle of Enlightenment stacks will be consumed."
+      "0": "Durin's Elemental Burst DMG is increased by 40%. Additionally, when effects that consume <strong>Cycle of Enlightenment</strong> stacks are triggered as part of the Constellation <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Adamah's Redemption</tooltip></strong>, there is a 30% chance that no Cycle of Enlightenment stacks will be consumed."
     }
   },
   "constellation5": {
     "name": "Scouring Flame's Sundering",
     "description": {
-      "0": "Increases the Level of <strong>Binary Form: Convergence and Division</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Durin_gen baseKey18=skill>Binary Form: Convergence and Division</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },

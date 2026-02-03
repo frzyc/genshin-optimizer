@@ -1,0 +1,329 @@
+{
+  "10050001": {
+    "name": "Effets de renforcement supplémentaires",
+    "description": {
+      "0": "{M#Le voyageur}{F#La voyageuse} obtient un bonus d'attribut pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance :",
+      "1": "<anemo>Anémo</anemo> : augmente le taux CRIT de 10 %.",
+      "2": "<geo>Géo</geo> : augmente la DÉF de 20 %.",
+      "3": "<electro>Électro</electro> : augmente la recharge d'énergie de 20 %.",
+      "4": "<dendro>Dendro</dendro> : augmente la maîtrise élémentaire de 60 pts.",
+      "5": "<hydro>Hydro</hydro> : augmente les PV de 20 %.",
+      "6": "<pyro>Pyro</pyro> : augmente l'ATQ de 20 %.",
+      "7": "<cryo>Cryo</cryo> : augmente les DGT CRIT de 20 %."
+    }
+  },
+  "11120001": {
+    "name": "Mode « Stockage à froid »",
+    "description": {
+      "0": "<strong>Appui simple</strong>",
+      "1": "Escoffier active son mek cuistot multi-usages à palette complète en mode « Stockage à froid », infligeant des <cryo>DGT Cryo de zone</cryo> aux ennemis proches.",
+      "2": "<br/>",
+      "3": "<strong>Mek cuistot : mode « Stockage à froid »</strong>",
+      "4": "Le mek cuistot suit le personnage déployé et tire des parfaits glacés de façon intermittente sur les ennemis proches, infligeant des <cryo>DGT Cryo</cryo>."
+    }
+  },
+  "11120002": {
+    "name": "Mode « Cuisson impromptue »",
+    "description": {
+      "0": "<strong>Mek cuistot : mode « Cuisson impromptue »</strong>",
+      "1": [
+        " Place le mek cuistot sur le terrain, ce dernier pouvant absorber les attaques élémentaires. Lorsque l'énergie élémentaire absorbée atteint une certaine limite, Escoffier peut convertir les ingrédients placés à l'intérieur de son mek en délicieuse nourriture.",
+        " Escoffier a besoin de temps pour acheter de nouveaux ingrédients et ne peut donc préparer qu'un certain nombre de plats chaque semaine de cette manière. La quantité de plats qu'Escoffier peut préparer chaque semaine est réinitialisée tous les lundis à 04 h 00."
+      ]
+    }
+  },
+  "11130001": {
+    "name": "Tir de soutien",
+    "description": {
+      "0": "Pendant sa bénédiction noctâme, les attaques normales d'Ifa sont converties en tirs de soutien.",
+      "1": "<strong>Appui simple</strong>",
+      "2": "Déclenche un tir tonique.",
+      "3": "<strong>Appui long</strong>",
+      "4": "Déclenche des tirs toniques de façon continue.",
+      "5": "<strong>Tir tonique</strong>",
+      "6": "Les tirs toniques infligent des <anemo>DGT Anémo</anemo> infusés de noctâme et soignent les PV de tous les personnages de l'équipe à proximité en touchant un ennemi selon la maîtrise élémentaire d'Ifa."
+    }
+  },
+  "11130002": {
+    "name": "Essentiels de sauvetage",
+    "description": {
+      "0": "Chaque point d'essentiels de sauvetage qu'Ifa possède augmente les DGT infligés par les réactions de Dispersion et d'Électrocution des membres de l'équipe à proximité de 1,5 % et ceux des réactions de Sélénocution de 0,2 %, Ifa pouvant posséder un maximum de 150 pts d'essentiels de sauvetage. Tous les points d'essentiels de sauvetage sont annulés lorsque la bénédiction noctâme d'Ifa prend fin."
+    }
+  },
+  "11130003": {
+    "name": "Bénédiction noctâme : Ifa",
+    "description": {
+      "0": "La bénédiction noctâme d'Ifa consomme de façon continue ses points de noctâme et prend fin une fois les points épuisés ou lors d'une nouvelle utilisation de la compétence. L'état Bénédiction noctâme d'Ifa possède les propriétés spéciales suivantes :",
+      "1": [
+        " Ifa flotte dans les airs avec l'aide de Cacucu, augmentant sa VIT de déplacement et sa RÉS à l'interruption. Dans cet état, Ifa consomme de façon continue ses points de noctâme pour flotter dans les airs, sprinter et flotter plus haut consommant des points de noctâme supplémentaires.",
+        " Les attaques normales d'Ifa sont converties en tirs de soutien qui diffèrent selon qu'ils sont déclenchés avec un appui simple ou un appui long."
+      ]
+    }
+  },
+  "11130004": {
+    "name": "Marque de sédation",
+    "description": {
+      "0": "Cet effet explose après un court délai pour infliger des DGT de zone de l'élément correspondant. Les sédatifs thérapeutiques peuvent appliquer des marques de sédation à un maximum de 4 ennemis touchés, un même ennemi ne pouvant pas être affligé simultanément de marques de différents éléments."
+    }
+  },
+  "11130005": {
+    "name": "Finesse serpentine",
+    "description": {
+      "0": "Skirk peut consommer sa finesse serpentine pour maintenir son mode Flash à sept phases ou utiliser son déchaînement élémentaire « Ravage : Ruine ».",
+      "1": "<br/>",
+      "2": "Skirk peut obtenir de la finesse serpentine des manières suivantes :",
+      "3": [
+        " En ayant utilisé sa compétence élémentaire « Ravage : Distorsion ».",
+        " En ayant déclenché l'effet d'absorption d'une faille du néant de son aptitude d'élévation « Raisonnement outre-raison »."
+      ],
+      "4": "<br/>",
+      "5": "Tous les points de finesse serpentine sont supprimés lorsque Skirk quitte le champ de bataille pendant son mode Flash à sept phases ou lorsque son mode Flash à sept phases prend fin."
+    }
+  },
+  "11130006": {
+    "name": "Flash à sept phases",
+    "description": {
+      "0": "Skirk passe en mode Flash à sept phases pendant un certain temps lorsqu'elle utilise sa compétence élémentaire <strong>Ravage : Distorsion</strong>. Ce mode possède les propriétés spéciales suivantes :",
+      "1": [
+        " La finesse serpentine de Skirk se consomme de façon continue.",
+        " La portée des attaques normales et chargées et la RÉS à l'interruption de Skirk augmentent.",
+        " Les DGT des attaques normales, chargées et plongeantes de Skirk sont convertis en <cryo>DGT Cryo</cryo> ne pouvant pas être enchantés.",
+        " Le déchainement élémentaire <strong>Ravage : Ruine</strong> de Skirk est remplacé par le déchaînement élémentaire spécial <strong>Ravage : Extinction</strong>.",
+        " Le sprint de Skirk permet de se déplacer sur l'eau."
+      ],
+      "2": "Le mode prend fin et la compétence élémentaire de Skirk entre en TdR une fois la finesse serpentine épuisée ou à la fin de la durée."
+    }
+  },
+  "11130007": {
+    "name": "Raisonnement outre-raison",
+    "description": {
+      "0": "Lorsqu'un membre de l'équipe à proximité déclenche une réaction de Gel, de Supraconduction, de Dispersion Cryo ou de Cristallisation Cryo sur un ennemi, une faille du néant apparaît à proximité de ce dernier. Cet effet peut être déclenché une fois toutes les 2,5 s et un maximum de 3 failles du néant créées par Skirk peut exister en même temps sur le terrain.",
+      "1": "<br/>",
+      "2": "Skirk peut absorber les failles du néant à proximité des manières suivantes :",
+      "3": [
+        " En touchant un ennemi avec une attaque chargée pendant son mode Flash à sept phases.",
+        " En utilisant son déchaînement élémentaire spécial <strong>Ravage : Extinction</strong> pendant son mode Flash à sept phases.",
+        " En se déplaçant rapidement grâce à un appui long de sa compétence élémentaire <strong>Ravage : Distorsion</strong>."
+      ],
+      "4": "<br/>",
+      "5": "Chaque faille du néant absorbée permet à Skirk d'obtenir 8 pts de finesse serpentine."
+    }
+  },
+  "11130008": {
+    "name": "Retour à la désolation",
+    "description": {
+      "0": "Lorsqu'un personnage proche de type <hydro>Hydro</hydro> dans l'équipe touche un ennemi avec une attaque <hydro>Hydro</hydro> ou qu'un personnage proche de type <cryo>Cryo</cryo> autre que Skirk dans l'équipe touche un ennemi avec une attaque <cryo>Cryo</cryo>, Skirk obtient un cumul de l'effet Traversée de la mort pendant 20 s. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
+      "1": "De plus, chaque personnage permet à Skirk d'obtenir 1 cumul de traversée de la mort maximum de cette manière.",
+      "2": "Chaque cumul de traversée de la mort permet à l'attaque normale de Skirk d'infliger des DGT d'une valeur équivalant à 110 %/120 %/170 % des DGT d'origine en mode Flash à sept phases et permet à son déchaînement élémentaire <strong>Ravage : Ruine</strong> d'infliger des DGT d'une valeur équivalant à 105 %/115 %/160 % des DGT d'origine."
+    }
+  },
+  "11130009": {
+    "name": "Mystère bruineux",
+    "description": {
+      "0": "Lorsqu'un ennemi ou un membre de l'équipe à proximité touche un mystère bruineux, différents effets se produisent selon la personne concernée :",
+      "1": "Si un ennemi touche un mystère bruineux, ce dernier explose et inflige des <hydro>DGT Hydro de zone</hydro> aux ennemis à proximité.",
+      "2": "Si un membre de l'équipe à proximité touche un mystère bruineux, il se fait projeter dans les airs.",
+      "3": "<br/>",
+      "4": "Il ne peut exister qu'un seul mystère bruineux invoqué par Dahlia à la fois."
+    }
+  },
+  "11130010": {
+    "name": "Faveur favonienne",
+    "description": {
+      "0": "Dahlia accorde cet effet à vos personnages dans l'équipe lorsqu'il utilise son déchaînement élémentaire <strong>Psautier radieux</strong>.",
+      "1": "Pendant cet effet, Dahlia peut consommer un cumul de sacrement pour invoquer à nouveau un bouclier de faveur sacrée lorsqu'un précédent bouclier a expiré ou été détruit en subissant des DGT."
+    }
+  },
+  "11130011": {
+    "name": "Sacrement",
+    "description": {
+      "0": "Dahlia peut obtenir du sacrement des manières suivantes :",
+      "1": [
+        " Il obtient X cumul de sacrement à chaque fois que votre personnage déployé touche un total de 4 ennemis avec des attaques normales tout en étant sous l'effet d'une faveur favonienne.",
+        " En déclenchant l'effet de l'aptitude d'élévation « La douce grâce du vent »."
+      ],
+      "2": "<br/>",
+      "3": "Dahlia peut obtenir un maximum de X cumuls de sacrement pendant la durée une faveur favonienne."
+    }
+  },
+  "11160001": {
+    "name": "Birgitta",
+    "description": {
+      "0": "Assistante d'Ineffa au combat, elle peut être invoquée sur le champ de bataille via une compétence élémentaire ou un déchaînement élémentaire.",
+      "1": "Si des ennemis sont à proximité, Birgitta se rapproche rapidement de l'un d'entre eux toutes les 2 s afin de déclencher une décharge électrique infligeant des <electro>DGT Électro de zone</electro>.",
+      "2": "Il ne peut exister qu'une seule Birgitta créée par Ineffa à la fois.",
+      "3": "<br/>",
+      "4": "De plus, il semble que vous pourrez changer l'apparence de Birgitta par certains moyens dans Nod-Krai..."
+    }
+  },
+  "11190001": {
+    "name": "Sanctuaire du givrebois",
+    "description": {
+      "0": "Cette zone magique protège les Émissaires de chantelune et peut être invoquée grâce à la compétence élémentaire <strong>Runo : Repos sans aube de karsikko</strong>.",
+      "1": "Le sanctuaire du givrebois suit le personnage déployé et inflige une fois des <dendro>DGT Dendro de zone</dendro> aux ennemis en son sein toutes les 2 s, ces DGT étant considérés comme des DGT de compétence élémentaire."
+    }
+  },
+  "11190002": {
+    "name": "Chant lunaire",
+    "description": {
+      "0": "Cette mélodie, utilisée pour tisser des hymnes, peut, lors de l'utilisation d'un déchaînement élémentaire ou pendant une courte période après en avoir utilisé un, être convertie en hymne pâle augmentant les DGT des réactions de Fleurissement, d'Exubérance, de Bourgeonnement et de Sélénofleurissement.",
+      "1": "Lorsque Lauma consomme de la rosée verdoyante pour déclencher sa compétence élémentaire <strong>Runo : Repos sans aube de karsikko</strong> avec un appui long, chaque rosée verdoyante consommée lui accorde un cumul de chant lunaire."
+    }
+  },
+  "11190003": {
+    "name": "Hymne pâle",
+    "description": {
+      "0": "Cet hymne, transmis de génération en génération par les Émissaire de chantelune, augmente les DGT infligés par les réactions de Fleurissement, d'Exubérance, de Bourgeonnement et de Sélénofleurissement.",
+      "1": "<br/>",
+      "2": "Lauma peut obtenir de l'hymne pâle des manières suivantes :",
+      "3": [
+        " En utilisant son déchaînement élémentaire <strong>Runo : Cœurs devenant la lune battante</strong>.",
+        " En consommant des cumuls de chant lunaire lors de son déchaînement élémentaire <strong>Runo : Cœurs devenant la lune battante</strong>.",
+        " En déclenchant un sanctuaire du givrebois avec sa constellation <strong>« À la lune, j'offre mon sang et mes émois »</strong>."
+      ],
+      "4": "<br/>",
+      "5": "Lorsqu'un personnage de l'équipe inflige des DGT avec une réaction de Fleurissement, d'Exubérance, de Bourgeonnement ou de Sélénofleurissement, un cumul d'hymne pâle est consommé pour augmenter les DGT infligés selon la maîtrise élémentaire de Lauma. Un nombre de cumuls égal au nombre d'ennemis touchés sera consommé si ces DGT touchent plusieurs ennemis en même temps.",
+      "6": "La durée de chaque cumul d'hymne pâle est calculée de façon indépendante."
+    }
+  },
+  "11190004": {
+    "name": "Vigile crépusculaire",
+    "description": {
+      "0": "Les DGT infligés par les réactions de Fleurissement, d'Exubérance et de Bourgeonnement des personnages de l'équipe peuvent déclencher des coups CRIT dont le taux CRIT est fixé à 15 % et les DGT CRIT à 100 %. Le taux CRIT accordé par cet effet peut se cumuler avec le taux CRIT des effets similaires qui permettent aux réactions élémentaires de déclencher des coups CRIT."
+    }
+  },
+  "11190005": {
+    "name": "Prière au clair de lune",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe inflige des DGT avec une réaction de Sélénofleurissement, le taux CRIT augmente de 10 % et les DGT CRIT de 20 %."
+    }
+  },
+  "11190007": {
+    "name": "Élévation",
+    "description": {
+      "0": "Cet effet spécial d'augmentation des DGT est calculée indépendamment des autres effets d'augmentation des DGT."
+    }
+  },
+  "11190008": {
+    "name": "Rosée verdoyante",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe a déclenché une réaction de Sélénofleurissement, toute l'équipe obtient des ressources.",
+      "1": "Déclencher une réaction de Sélénofleurissement accorde 1 rosée verdoyante à l'équipe toutes les 2,5 s pendant 2,5 s, l'équipe pouvant avoir un maximum de 3 rosées verdoyantes. Déclencher à nouveau une réaction de Sélénofleurissement pendant cette période réinitialise la durée de l'effet."
+    }
+  },
+  "11200001": {
+    "name": "Symphonie tonitruante",
+    "description": {
+      "0": "Flins peut consommer moins d'énergie élémentaire pour déclencher un déchaînement élémentaire spécial, infligeant 1 fois des <electro>DGT Électro de zone</electro> considérés comme des DGT de réaction de Sélénocution.",
+      "1": "<strong>Signelune « Lueur ascendante »</strong> : inflige 1 fois de plus des <electro>DGT Électro de zone</electro> considérés comme des DGT de réaction de Sélénocution si un ou plusieurs nuages orageux sont à proximité."
+    }
+  },
+  "11220001": {
+    "name": "Danse d'ombre",
+    "description": {
+      "0": "Nefer entre dans l'état Danse d'ombre après avoir utilisé sa compétence élémentaire <strong>Tactique de senet : Danse des mille nuits</strong>.",
+      "1": "Dans cet état, les attaques chargées de Nefer sont remplacées par l'attaque chargée spéciale « Performance fantasmatique » si l'équipe possède au moins 1 rosée verdoyante.",
+      "2": "L'état Danse d'ombre prend fin lorsque Nefer a déclenché 3 performances fantasmatiques ou à la fin de sa durée."
+    }
+  },
+  "11220002": {
+    "name": "Performance fantasmatique",
+    "description": {
+      "0": "Pendant l'état Danse d'ombre déclenché par la compétence élémentaire <strong>Tactique de senet : Danse des mille nuits</strong>, les attaques chargées de Nefer sont remplacées par l'attaque chargée spéciale « Performance fantasmatique » si l'équipe possède au moins 1 rosée verdoyante, cette attaque ne consommant pas d'endurance.",
+      "1": "Nefer invoque des ombres d'elle-même pour déclencher une attaque coordonnée contre les ennemis : Nefer et ses ombres infligent respectivement 2/3 instances de <dendro>DGT Dendro de zone</dendro> en séquence, les DGT infligés par les ombres étant considérés comme des DGT de réaction de Sélénofleurissement. Les premières ombres de Nefer invoquées après le déclenchement d'une performance fantasmatique consomment 1 rosée verdoyante."
+    }
+  },
+  "11220003": {
+    "name": "Voile mensonger",
+    "description": {
+      "0": "Nefer obtient cet effet après avoir absorbé des graines de tromperie grâce à l'aptitude d'élévation Pari au clair de lune, ce qui lui permet d'augmenter les DGT infligés par ses performances fantasmatiques.",
+      "1": "Chaque cumul de voile mensonger augmente les DGT infligés par les performances fantasmatiques de Nefer de 8 % des DGT d'origine. Cet effet peut être initialement cumulé 3 fois maximum et dure 9 s, la durée de chaque cumul étant calculée de façon indépendante."
+    }
+  },
+  "11230001": {
+    "name": "Transmutation essentielle",
+    "description": {
+      "0": "Durin obtient cet effet pendant 6 s après avoir utilisé la compétence élémentaire <strong>Forme binaire : Convergence et division</strong>.",
+      "1": "Pendant cet effet, Durin peut utiliser sa compétence élémentaire avec un appui simple pour entrer dans l'état <strong>Confirmation de pureté</strong> ou son attaque normale avec un appui simple pour entrer dans l'état <strong>Déni de ténèbre</strong>.",
+      "2": "Durin obtient différents bonus et peut utiliser différents déchaînements élémentaires pendant ces deux états."
+    }
+  },
+  "11240001": {
+    "name": "Flasque au trésor ronronnant",
+    "description": {
+      "0": "Une petite fiole élémentaire que Jahoda sort après avoir utilisé sa compétence élémentaire <strong>Stratégie astucieuse : Partage de butin</strong>.",
+      "1": "Lorsque Jahoda est dans l'état Poursuite d'ombre, si un ennemi à proximité est affecté par l'élément <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> ou <cryo>Cryo</cryo>, la flasque au trésor ronronnant se convertit en l'élément correspondant et se remplit progressivement, selon l'ordre de priorité suivant : <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro>, <cryo>Cryo</cryo>. La flasque au trésor ronronnant ne peut subir qu'une seule conversion de ce type après chaque utilisation de la compétence élémentaire.",
+      "2": "Lorsque la flasque au trésor ronronnant est pleine, Jahoda quitte l'état Poursuite d'ombre, inflige une fois des <anemo>DGT Anémo</anemo> aux ennemis à proximité et vide la flasque au trésor ronronnant.",
+      "3": "Jahoda sort une nouvelle flasque au trésor ronronnant à chaque utilisation de sa compétence élémentaire.",
+      "4": "<br/>",
+      "5": "<strong>Signelune « Lueur ascendante »</strong> : lorsque la <strong>flasque au trésor ronronnant</strong> est pleine, Jahoda ne la vide pas immédiatement<strong></strong>, mais consomme progressivement l'énergie élémentaire stockée à l'intérieur pour tirer de façon intermittente des <strong>bouboules miaou</strong> sur les ennemis proches, infligeant des DGT de l'élément de la <strong>flasque au trésor ronronnant</strong>."
+    }
+  },
+  "11240002": {
+    "name": "Chatssistant coordinateur personnel",
+    "description": {
+      "0": "L'un des petits gadgets que Jahoda, autrefois chasseuse de trésors, transportait. Il se déploie lors de l'utilisation de son déchaînement élémentaire <strong>Atout secret : Sept gadgets du chasseur</strong>.",
+      "1": "Le chatssistant coordinateur personnel restaure continuellement les PV de votre personnage déployé. Si les PV du personnage soigné dépassent 70 %, les PV du personnage de l'équipe à proximité en ayant le moins sont également restaurés.",
+      "2": "<br/>",
+      "3": "<strong>Signelune « Lueur ascendante »</strong> : si un ennemi à proximité est affecté par l'élément <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> ou <cryo>Cryo</cryo>, le chatssistant coordinateur personnel se convertit en l'élément correspondant, selon l'ordre de priorité suivant : <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro>, <cryo>Cryo</cryo>. Un chatssistant coordinateur personnel ne peut subir qu'une seule conversion de cette manière chaque fois qu'il est déployé. Après sa conversion, un chatssistant coordinateur personnel attaque de façon intermittente 3 ennemis à proximité, infligeant des DGT de l'élément correspondant."
+    }
+  },
+  "11250001": {
+    "name": "Ondulation de gravité",
+    "description": {
+      "0": "Après avoir utilisé sa compétence élémentaire <strong>Marée éternelle</strong>, Columbina déclenche une <strong>ondulation de gravité</strong>.",
+      "1": "L'ondulation de gravité suit le personnage déployé et inflige des <hydro>DGT Hydro de zone</hydro> de façon continue aux ennemis proches.",
+      "2": "<br/>",
+      "3": "Pendant la durée d'une ondulation de gravité, lorsqu'un personnage de l'équipe à proximité déclenche une réaction sélène ou inflige des DGT de réaction sélène, Columbina obtient l'effet Présage de la nouvelle lune pendant 2 s, lui permettant de cumuler de la <strong>force gravitationnelle</strong> de façon continue, 20 pts pouvant être cumulés toutes les 2 s.",
+      "4": "La force gravitationnelle peut être cumulée jusqu'à un maximum de 60 pts et est annulée à la fin de la durée de l'ondulation de gravité.",
+      "5": "Une fois la force gravitationnelle au maximum, une <strong>interférence gravitationnelle</strong> spéciale se déclenche, entraînant divers effets selon le type de réaction sélène ayant permis de cumuler le plus de force gravitationnelle :",
+      "6": [
+        " <strong>Réaction de Sélénocution</strong> : l'interférence gravitationnelle inflige une fois des <electro>DGT Électro de zone</electro>, ces DGT étant considérés comme des DGT de réaction de Sélénocution.",
+        " <strong>Réaction de Sélénofleurissement</strong> : l'interférence gravitationnelle tire 5 sceaux de rosée lunaire sur les ennemis proches pour infliger des <dendro>DGT Dendro</dendro>, ces DGT étant considérés comme des DGT de réaction de Sélénofleurissement.",
+        " <strong>Réaction de Sélénocristallisation</strong> : l'interférence gravitationnelle inflige une fois des <geo>DGT Géo de zone</geo>, ces DGT étant considérés comme des DGT de réaction de Sélénocristallisation."
+      ]
+    }
+  },
+  "11250002": {
+    "name": "Domaine lunaire",
+    "description": {
+      "0": "Après avoir utilisé son déchaînement élémentaire <strong>Mélancolie sous la lune</strong>, Columbina invoque un domaine lunaire.",
+      "1": "Lorsque le personnage déployé est dans un <strong>domaine lunaire</strong>, les DGT de réaction sélène infligés par tous les personnages de l'équipe augmentent."
+    }
+  },
+  "11250003": {
+    "name": "Rosée de crête lunaire",
+    "description": {
+      "0": "Les rosées de crête lunaire sont des ressources spéciales de type rosée verdoyante accordées par l'aptitude passive <strong>Loi de la nouvelle lune</strong> de Columbina, leur limite et leur durée étant cependant calculées indépendamment de celles des rosées verdoyantes.",
+      "1": "Les <strong>rosées de crête lunaire</strong> sont consommées lorsque l'équipe n'a plus de rosée verdoyante.",
+      "2": "Il est possible de cumuler un maximum de 3 <strong>rosées de crête lunaire</strong>."
+    }
+  },
+  "11260001": {
+    "name": "Déphasage lunaire",
+    "description": {
+      "0": "Zibai active le mode Déphasage lunaire après avoir utilisé sa compétence élémentaire <strong>Ciel et terre manifestés</strong>, mode qui dure un maximum de 15 s et possède les propriétés suivantes :",
+      "1": [
+        " Les attaques normales et chargées de Zibai sont converties pour infliger des <geo>DGT Géo</geo> ne pouvant pas être enchantés.",
+        " La compétence élémentaire <strong>Ciel et terre manifestés</strong> de Zibai est convertie en la compétence élémentaire spéciale <strong>Foulée de destrier spirituel</strong> : lorsque Zibai possède au moins 70 pts de <strong>rayonnage de déphasage</strong>, elle en consomme 70 pts pour déclencher une foulée de destrier spirituel qui inflige deux fois des <geo>DGT Géo</geo>, les DGT de la seconde fois étant considérés comme des DGT de réaction de Sélénocristallisation."
+      ],
+      "2": "<br/>",
+      "3": "Zibai peut accumuler un maximum de 100 pts de <strong>rayonnage de déphasage</strong> des manières suivantes : ",
+      "4": [
+        " Pendant son <strong>déphasage lunaire</strong>, Zibai obtient 10 pts de rayonnage de déphasage toutes les secondes.",
+        " En touchant un ennemi avec une attaque normale, Zibai obtient 5 pts de rayonnage de déphasage, Zibai pouvant cumuler du rayonnage une fois toutes les 0,5 s de cette manière."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Signelune « Lueur ascendante »</strong>",
+      "7": "Lorsqu'un personnage de l'équipe à proximité déclenche une réaction de Sélénocristallisation, Zibai obtient 35 pts de <strong>rayonnage de déphasage</strong>, Zibai pouvant cumuler du rayonnage une fois toutes les 4 s de cette manière. Utiliser la compétence élémentaire spéciale <strong>Foulée de destrier spirituel</strong> réinitialise le TdR du <strong>rayonnage de déphasage</strong> cumulé de cette manière.",
+      "8": "<br/>",
+      "9": "Le déphasage lunaire prend fin après avoir utilisé 4 <strong>foulées de destrier spirituel</strong> ou à la fin de la durée."
+    }
+  },
+  "11270001": {
+    "name": "Chant de rossignol",
+    "description": {
+      "0": "Illuga bénéfice des effets du chant de rossignol après avoir utilisé son déchaînement élémentaire <strong>Reflet sans ombre</strong>, augmentant ainsi les <geo>DGT Géo</geo> infligés par le personnage déployé."
+    }
+  }
+}

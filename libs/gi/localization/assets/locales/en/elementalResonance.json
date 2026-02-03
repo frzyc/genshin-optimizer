@@ -4,6 +4,7 @@
     "cond3ele": "After triggering <aggravate>Aggravate</aggravate>, <spread>Spread</spread>, <hyperbloom>Hyperbloom</hyperbloom>, or <burgeon>Burgeon</burgeon> reactions"
   },
   "EnduringRock": {
-    "hitCond": "After dealing DMG to enemies while protected by a shield"
+    "baseCond": "Character protected by a shield or when Moondrifts formed by <lunarcrystallize>Lunar-Crystallize</lunarcrystallize> are nearby",
+    "hitCond": "After dealing DMG to enemies while protected by a shield or when Moondrifts from <lunarcrystallize>Lunar-Crystallize</lunarcrystallize> are nearby"
   }
 }

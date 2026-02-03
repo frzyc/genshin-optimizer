@@ -167,7 +167,7 @@
         " Cet effet peut être cumulé 4 fois maximum."
       ],
       "2": "<br/>",
-      "3": "De plus, lorsque Albedo n'est pas déployé et que les cumuls de jugement fatal atteignent 4, tous les cumuls de jugement fatal sont consommés pour générer 3 germes fatals à proximité de votre personnage déployé. Ces germes explosent violemment et infligent des <geo>DGT Géo de zone</geo> d'une valeur équivalant à 300 % de la DÉF d'Albedo, ces DGT étant considérés comme des DGT de déchaînement élémentaire. Après avoir débloqué l'aptitude passive <strong>Sagesse en bouteille</strong>, l'effet de ce talent se déclenche également, augmentant la maîtrise élémentaire des personnages de l'équipe à proximité de 125 pts pendant 10 s."
+      "3": "De plus, lorsque Albedo n'est pas déployé et que les cumuls de jugement fatal atteignent 4, tous les cumuls de jugement fatal sont consommés pour générer 3 germes fatals à proximité de votre personnage déployé. Ces germes explosent violemment et infligent des <geo>DGT Géo de zone</geo> d'une valeur équivalant à 300 % de la DÉF d'Albedo, ces DGT étant considérés comme des DGT de déchaînement élémentaire. Après avoir débloqué l'aptitude passive <tooltip ns=char_Albedo_gen baseKey18=passive2><strong>Sagesse en bouteille</strong></tooltip>, l'effet de ce talent se déclenche également, augmentant la maîtrise élémentaire des personnages de l'équipe à proximité de 125 pts pendant 10 s."
     }
   },
   "constellation3": {
@@ -201,7 +201,7 @@
     },
     "upgradedDescription": {
       "0": "Les personnages déployés se trouvant dans la zone de l'aura solaire infligent 17 % de DGT supplémentaires lorsqu'ils sont sous la protection d'un bouclier généré par une réaction de Cristallisation ou si un voile lunaire est présent dans la zone de l'aura solaire.",
-      "1": "De plus, utiliser le déchaînement élémentaire <strong>Transformation : Reflux Géo</strong> détruit également toutes les auras argentées du terrain, ce qui permet à cette instance du déchaînement élémentaire de consommer 4 cumuls de jugement fatal de la constellation <strong>Éon de l'avènement</strong> afin d'augmenter les DGT infligés par les germes fatals d'une valeur équivalant à 250 % de la DÉF d'Albedo pendant 20 s."
+      "1": "De plus, utiliser le déchaînement élémentaire <strong>Transformation : Reflux Géo</strong> détruit également toutes les auras argentées du terrain, ce qui permet à cette instance du déchaînement élémentaire de consommer 4 cumuls de jugement fatal de la constellation {LINK#TE382}<strong>Éon de l'avènement</strong></tooltip> afin d'augmenter les DGT infligés par les germes fatals d'une valeur équivalant à 250 % de la DÉF d'Albedo pendant 20 s."
     }
   }
 }

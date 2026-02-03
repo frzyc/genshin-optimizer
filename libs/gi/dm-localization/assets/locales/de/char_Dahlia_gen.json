@@ -113,13 +113,13 @@
   "passive1": {
     "name": "Sanfte Anmut des Windes",
     "description": {
-      "0": "Verleiht Dahlia beim Auslösen der Reaktion Gefroren an Gegnern durch Figuren unter dem Effekt „Favonius-Gunst“ der Spezialfähigkeit <strong>Glänzend reines Gebet</strong> 2 Stapelungen des Effekts „Segen“. 8 s Abklingzeit."
+      "0": "Verleiht Dahlia beim Auslösen der Reaktion Gefroren an Gegnern durch Figuren unter dem Effekt „Favonius-Gunst“ der Spezialfähigkeit <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Glänzend reines Gebet</tooltip></strong> 2 Stapelungen des Effekts „Segen“. 8 s Abklingzeit."
     }
   },
   "passive2": {
     "name": "Gebet der wohlverdienten Freude",
     "description": {
-      "0": "Erhöht die Angriffs-GSW der eigenen aktuellen Figur in der Truppe, wenn sie unter dem Effekt „Favonius-Gunst“ der Spezialfähigkeit <strong>Glänzend reines Gebet</strong> steht, um 0,5 % für je 1.000 Punkte von Dahlias max. LP. Max. 20 % Angriffs-GSW-Bonus auf diese Weise möglich."
+      "0": "Erhöht die Angriffs-GSW der eigenen aktuellen Figur in der Truppe, wenn sie unter dem Effekt „Favonius-Gunst“ der Spezialfähigkeit <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Glänzend reines Gebet</tooltip></strong> steht, um 0,5 % für je 1.000 Punkte von Dahlias max. LP. Max. 20 % Angriffs-GSW-Bonus auf diese Weise möglich."
     }
   },
   "passive3": {
@@ -132,39 +132,39 @@
   "constellation1": {
     "name": "Makellose Führung",
     "description": {
-      "0": "Stellt Dahlia für jede erhaltene Stapelung des Effekts „Segen“ der Spezialfähigkeit <strong>Glänzend reines Gebet</strong> 2,5 Punkte Elementarenergie wieder her."
+      "0": "Stellt Dahlia für jede erhaltene Stapelung des Effekts „Segen“ der Spezialfähigkeit <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Glänzend reines Gebet</tooltip></strong> 2,5 Punkte Elementarenergie wieder her."
     }
   },
   "constellation2": {
     "name": "Offenbarung der Barmherzigkeit",
     "description": {
-      "0": "Erhöht die Schildeffizienz der Figuren im Schutz vom Schild der heiligen Gunst für 12 s um 25 %, nachdem Dahlia den Effekt „Segen“ der Spezialfähigkeit <strong>Glänzend reines Gebet</strong> verbraucht und dadurch den Schild der heiligen Gunst erschaffen hat."
+      "0": "Erhöht die Schildeffizienz der Figuren im Schutz vom Schild der heiligen Gunst für 12 s um 25 %, nachdem Dahlia den Effekt „Segen“ der Spezialfähigkeit <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Glänzend reines Gebet</tooltip></strong> verbraucht und dadurch den Schild der heiligen Gunst erschaffen hat."
     }
   },
   "constellation3": {
     "name": "Windblumenopfer",
     "description": {
-      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Glänzend reines Gebet</strong> um 3.",
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Glänzend reines Gebet</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation4": {
     "name": "Oration aller Wünsche",
     "description": {
-      "0": "Verlängert die Dauer des Effekts „Favonius-Gunst“ der Spezialfähigkeit <strong>Glänzend reines Gebet</strong> um 3 s."
+      "0": "Verlängert die Dauer des Effekts „Favonius-Gunst“ der Spezialfähigkeit <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Glänzend reines Gebet</tooltip></strong> um 3 s."
     }
   },
   "constellation5": {
     "name": "Wachsende Intrigen",
     "description": {
-      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Sakrament der Immersion</strong> um 3.",
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Dahlia_gen baseKey18=skill>Sakrament der Immersion</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation6": {
     "name": "Möge dich die Freude begleiten",
     "description": {
-      "0": "Erhöht die Angriffs-GSW der vom Effekt „Favonius-Gunst“ der Spezialfähigkeit <strong>Glänzend reines Gebet</strong> betroffenen aktiven Figuren um 10 %.",
+      "0": "Erhöht die Angriffs-GSW der vom Effekt „Favonius-Gunst“ der Spezialfähigkeit <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Glänzend reines Gebet</tooltip></strong> betroffenen aktiven Figuren um 10 %.",
       "1": "Außerdem, wenn die vom Effekt „Favonius-Gunst“ betroffenen aktiven Figuren besiegt werden:",
       "2": [
         " Belebt diese Figur wieder.",

@@ -67,7 +67,7 @@
       ],
       "2": "<br/>",
       "3": "<strong>Northland Spearstorm</strong>",
-      "4": "Flins summons a flurry of spears in front, dealing <electro>AoE Electro DMG</electro> and causing his Elemental Burst <strong>Ancient Ritual: Cometh the Night</strong> to be replaced with the special Elemental Burst <strong>Thunderous Symphony</strong> for the next 6s.",
+      "4": "Flins summons a flurry of spears in front, dealing <electro>AoE Electro DMG</electro> and causing his Elemental Burst <strong>Ancient Ritual: Cometh the Night</strong> to be replaced with the special Elemental Burst <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Thunderous Symphony</strong></tooltip> for the next 6s.",
       "5": "The base CD of <strong>Northland Spearstorm</strong> is 6s and will not be affected by other effects."
     },
     "skillParams": {
@@ -202,7 +202,7 @@
   "constellation3": {
     "name": "Stranger in the Night",
     "description": {
-      "0": "Increases the Level of <strong>Ancient Ritual: Cometh the Night</strong> by 3.",
+      "0": "Increases the Level of <tooltip ns=char_Flins_gen baseKey18=burst><strong>Ancient Ritual: Cometh the Night</strong></tooltip> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
@@ -210,20 +210,20 @@
     "name": "Night on Bald Mountain",
     "description": {
       "0": "Flins's ATK is increased by 20%.",
-      "1": "Additionally, his Ascension Talent <strong>\"Whispering Flame\"</strong> is enhanced: Flins's Elemental Mastery is increased by 10% of his ATK. The maximum increase obtainable this way is 220."
+      "1": "Additionally, his Ascension Talent <tooltip ns=char_Flins_gen baseKey18=passive2><strong>\"Whispering Flame\"</strong></tooltip> is enhanced: Flins's Elemental Mastery is increased by 10% of his ATK. The maximum increase obtainable this way is 220."
     }
   },
   "constellation5": {
     "name": "Exile's Shadow",
     "description": {
-      "0": "Increases the Level of <strong>Ancient Rite: Arcane Light</strong> by 3.",
+      "0": "Increases the Level of <tooltip ns=char_Flins_gen baseKey18=skill><strong>Ancient Rite: Arcane Light</strong></tooltip> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
     "name": "Songs and Dances of Death",
     "description": {
-      "0": "The DMG dealt to opponents by Flins's Lunar-Charged reactions is <strong>elevated</strong> by 35%.",
+      "0": "The DMG dealt to opponents by Flins's Lunar-Charged reactions is <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>elevated</strong></tooltip> by 35%.",
       "1": "<strong>Moonsign: Ascendant Gleam</strong>: All nearby party members' Lunar-Charged DMG is <strong>elevated</strong> by 10%."
     }
   }

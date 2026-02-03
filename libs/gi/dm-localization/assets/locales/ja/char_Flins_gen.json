@@ -47,7 +47,7 @@
       "3": "・元素スキル<strong>古律・孤灯の秘密</strong>は、特殊な元素スキル<strong>北国の嵐槍</strong>に切り替わる。",
       "4": "<br/>",
       "5": "<strong>北国の嵐槍</strong>",
-      "6": "前方に槍陣を生成し、<electro>雷元素範囲ダメージ</electro>を与える。さらにその後の6秒間、フリンズの元素爆発<strong>旧儀・夜の賓客</strong>は特殊な元素爆発<strong>雷霆のシンフォニー</strong>に切り替わる。",
+      "6": "前方に槍陣を生成し、<electro>雷元素範囲ダメージ</electro>を与える。さらにその後の6秒間、フリンズの元素爆発<strong>旧儀・夜の賓客</strong>は特殊な元素爆発<tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>雷霆のシンフォニー</strong></tooltip>に切り替わる。",
       "7": "<strong>北国の嵐槍</strong>の基本クールタイムは6秒であり、他の効果の影響を受けない。"
     },
     "skillParams": {
@@ -146,7 +146,7 @@
   "constellation3": {
     "name": "闇に訪う見知らぬ客",
     "description": {
-      "0": "元素爆発<strong>旧儀・夜の賓客</strong>のスキルLv.+3。",
+      "0": "元素爆発<tooltip ns=char_Flins_gen baseKey18=burst><strong>旧儀・夜の賓客</strong></tooltip>のスキルLv.+3。",
       "1": "最大Lv.15まで。"
     }
   },
@@ -154,20 +154,20 @@
     "name": "咆哮する荒れ山の夜",
     "description": {
       "0": "フリンズの攻撃力+20%。",
-      "1": "また、固有天賦<strong>「幽炎の囁き」</strong>は以下のように強化される。フリンズの元素熟知が、フリンズの攻撃力の10%分アップする。この方法でアップできるフリンズの元素熟知は、最大220まで。"
+      "1": "また、固有天賦<tooltip ns=char_Flins_gen baseKey18=passive2><strong>「幽炎の囁き」</strong></tooltip>は以下のように強化される。フリンズの元素熟知が、フリンズの攻撃力の10%分アップする。この方法でアップできるフリンズの元素熟知は、最大220まで。"
     }
   },
   "constellation5": {
     "name": "俗世から遠ざかる影",
     "description": {
-      "0": "元素スキル<strong>古律・孤灯の秘密</strong>のスキルLv.+3。",
+      "0": "元素スキル<tooltip ns=char_Flins_gen baseKey18=skill><strong>古律・孤灯の秘密</strong></tooltip>のスキルLv.+3。",
       "1": "最大Lv.15まで。"
     }
   },
   "constellation6": {
     "name": "歌と死の舞踏",
     "description": {
-      "0": "フリンズが敵に与える月感電反応ダメージが35%<strong>向上</strong>する。",
+      "0": "フリンズが敵に与える月感電反応ダメージが35%<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>向上</strong></tooltip>する。",
       "1": "<strong>月兆・満照</strong>：付近にいるチーム内キャラクターが与える月感電反応ダメージが10%<strong>向上</strong>する。"
     }
   }

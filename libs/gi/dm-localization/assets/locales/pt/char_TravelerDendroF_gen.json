@@ -113,7 +113,7 @@
   "lockedPassive": {
     "name": "Luz Verdejante Forasteira",
     "description": {
-      "0": "Reúne novas forças das jornadas do passado. Para cada elemento que você ressoou, obtém um <strong>fortalecimento adicional</strong>.",
+      "0": "Reúne novas forças das jornadas do passado. Para cada elemento que você ressoou, obtém um <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimento adicional</strong></tooltip>.",
       "1": "<br/>",
       "2": "Além disso, quando o membro ativo gera um Núcleo Dendro (inclui Núcleo da Riqueza e Núcleo da Falsidade), ou quando obtém um Orvalho Verdejante, {F#a}{M#o} Viajante obtém 1 acúmulo de Lâmina das Orquídeas. Estes dois métodos podem conceder, cada um, ao Viajante até 1 acúmulo da Lâmina das Orquídeas a cada 4s, com um máximo de 3 acúmulos. Quando possuir 3 Lâminas das Orquídeas e fizer um Ataque Carregado, consumirá todas as Lâminas das Orquídeas e realizará o especial <strong>Ataque Carregado: Gentileza Verde</strong>.",
       "3": "<br/>",
