@@ -1,3 +1,4 @@
+import { deobfPropMappings } from '../../mapping'
 import { readDMJSON } from '../../util'
 
 type AvatarTalentExcelConfigDataObf = {
@@ -23,7 +24,7 @@ type AvatarTalentExcelConfigDataObf = {
   //     0.0,
   //     0.0
   // ]
-  HCAOGPJPGLM: number // Text hash for upgraded version of constellation
+  [deobfPropMappings.upgradedDescTextMapHash]: number // Text hash for upgraded version of constellation
 }
 type AvatarTalentExcelConfigData = {
   talentId: number //293,
@@ -55,7 +56,10 @@ const avatarTalentExcelConfigDataSrc = JSON.parse(
 ) as AvatarTalentExcelConfigDataObf[]
 const avatarTalentExcelConfigData = Object.fromEntries(
   avatarTalentExcelConfigDataSrc.map((dataObf) => {
-    const { HCAOGPJPGLM: upgradedDescTextMapHash, ...dataTrim } = dataObf
+    const {
+      [deobfPropMappings.upgradedDescTextMapHash]: upgradedDescTextMapHash,
+      ...dataTrim
+    } = dataObf
     const data = { ...dataTrim, upgradedDescTextMapHash }
     return [data.talentId, data]
   })
