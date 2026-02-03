@@ -1,0 +1,24 @@
+{
+  "name": "Éclat lunaire luminescent",
+  "description": {
+    "0": "Une épée légendaire, forgée, dit-on, à partir du clair de lune scintillant recueilli dans un puits par un Adepte caché parmi des sources limpides. Sa véritable forme ne se révèle qu'à la rencontre du crépuscule et de l'aube."
+  },
+  "passiveName": "Héritage de Lang-Gan",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente la DÉF de <cryo>20 %</cryo>. Lorsque le personnage équipé de l'arme a déclenché une compétence élémentaire, les DGT des réactions de Sélénocristallisation augmentent de <cryo>64 %</cryo> pendant 5 s."
+    },
+    "1": {
+      "0": "Augmente la DÉF de <cryo>25 %</cryo>. Lorsque le personnage équipé de l'arme a déclenché une compétence élémentaire, les DGT des réactions de Sélénocristallisation augmentent de <cryo>80 %</cryo> pendant 5 s."
+    },
+    "2": {
+      "0": "Augmente la DÉF de <cryo>30 %</cryo>. Lorsque le personnage équipé de l'arme a déclenché une compétence élémentaire, les DGT des réactions de Sélénocristallisation augmentent de <cryo>96 %</cryo> pendant 5 s."
+    },
+    "3": {
+      "0": "Augmente la DÉF de <cryo>35 %</cryo>. Lorsque le personnage équipé de l'arme a déclenché une compétence élémentaire, les DGT des réactions de Sélénocristallisation augmentent de <cryo>112 %</cryo> pendant 5 s."
+    },
+    "4": {
+      "0": "Augmente la DÉF de <cryo>40 %</cryo>. Lorsque le personnage équipé de l'arme a déclenché une compétence élémentaire, les DGT des réactions de Sélénocristallisation augmentent de <cryo>128 %</cryo> pendant 5 s."
+    }
+  }
+}

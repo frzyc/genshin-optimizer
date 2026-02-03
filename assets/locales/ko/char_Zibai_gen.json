@@ -1,0 +1,163 @@
+{
+  "name": "자백",
+  "title": "샘물에 숨은 세월",
+  "description": "리월의 전설 속 백마 선인, 이름하여 자백. 리월의 선인 중에서도 특히 신비로운 인물이다",
+  "constellationName": "백마자리",
+  "auto": {
+    "name": "금빛 가지치기",
+    "fields": {
+      "normal": {
+        "0": "<strong>일반 공격</strong>",
+        "1": "검으로 최대 4번 공격한다."
+      },
+      "charged": {
+        "0": "<strong>강공격</strong>",
+        "1": "일정 스태미나를 소모해 순간적으로 전방을 향해 검을 두 번 휘두른다."
+      },
+      "plunging": {
+        "0": "<strong>낙하 공격</strong>",
+        "1": "공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 범위 피해를 준다"
+      }
+    },
+    "skillParams": {
+      "0": "1단 공격 피해",
+      "1": "2단 공격 피해",
+      "2": "3단 공격 피해",
+      "3": "4단 공격 피해",
+      "4": "강공격 피해",
+      "5": "강공격 스태미나 소모",
+      "6": "낙하 기간 피해",
+      "7": "저공/고공 추락 충격 피해",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "천지일체",
+    "description": {
+      "0": "옛 권능의 편린을 불러일으켜 <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「세월의 틈새」</strong></tooltip> 모드로 전환한다.",
+      "1": "해당 모드에서 자백이 일반 공격과 강공격 진행 시, 다른 원소 부여 효과로 대체될 수 없는 <geo>바위 원소 피해</geo>를 주는 것으로 전환된다. 또한, 서로 다른 방식을 통해 특수한 <strong>「시간의 빛」</strong>을 축적할 수 있다. 자백은 「시간의 빛」을 소모해 특수한 원소전투 스킬 <strong>백마 돌격</strong>을 발동할 수 있다.",
+      "2": "<br/>",
+      "3": "<strong>달빛 징조·보름</strong> ",
+      "4": "<strong>「세월의 틈새」</strong> 모드에서 자백이 일반 공격 진행 시, 4단 공격이 추가로 <geo>바위 원소 피해</geo>를 1회 주고, 해당 피해는 달 결정 반응 피해로 간주된다"
+    },
+    "skillParams": {
+      "0": "세월의 틈새 1단 공격 피해",
+      "1": "세월의 틈새 2단 공격 피해",
+      "2": "세월의 틈새 3단 공격 피해",
+      "3": "세월의 틈새 4단 공격 피해",
+      "4": "세월의 틈새 강공격 피해",
+      "5": "백마 돌격 제1단 공격 피해",
+      "6": "백마 돌격 제2단 공격 피해",
+      "7": "세월의 틈새 제4단 공격 추가 피해",
+      "8": "세월의 틈새 지속 시간",
+      "9": "재사용 대기시간",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "천상 삼원의 법칙",
+    "description": {
+      "0": "자백이 청옥 우산 지붕을 돌려 <geo>바위 원소 피해</geo>를 2회 주고, 그중 제2단 공격 피해는 달 결정 반응 피해로 간주한다.",
+      "1": "발동 시, 자백이 <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「세월의 틈새」</strong></tooltip> 모드인 경우, 이번 「세월의 틈새」 모드의 지속 시간이 1.7초 연장된다"
+    },
+    "skillParams": {
+      "0": "스킬 제1단 공격 피해",
+      "1": "스킬 제2단 공격 피해",
+      "2": "재사용 대기시간",
+      "3": "원소 에너지",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "달에서 강림한 선인",
+    "description": {
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Zibai_gen baseKey18=skill>천지일체</tooltip></strong> 발동 또는 주변에 있는 파티 내 캐릭터가 달빛 조각 화음 발동 시, 자백은 4초 동안 지속되는 <strong>「달빛 강림」</strong> 효과를 획득한다: <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>백마 돌격</strong></tooltip>의 제2단 공격으로 주는 피해가 자백 방어력의 60%만큼 증가한다"
+    }
+  },
+  "passive2": {
+    "name": "운해를 가르는 산맥",
+    "description": {
+      "0": "파티에 <geo>바위 원소</geo> 타입의 다른 캐릭터가 1명 존재할 때마다 자백의 방어력이 15% 증가한다. 파티에 <hydro>물 원소</hydro> 타입의 다른 캐릭터가 1명 존재할 때마다 자백의 원소 마스터리가 60pt 증가한다"
+    }
+  },
+  "passive3": {
+    "name": "달빛 징조의 축복·빛의 흐름",
+    "description": {
+      "0": "파티 내 캐릭터가 물 원소 결정 반응 발동 시, 달 결정 반응 발동으로 전환되며, 자백의 방어력에 기반해 파티 내 캐릭터가 주는 달 결정 반응의 기본 피해가 증가한다: 방어력 100pt마다 달 결정 반응 기본 피해가 0.7% 증가하며, 해당 방식으로 피해는 최대 14% 증가한다.",
+      "1": "<br/>",
+      "2": "또한, 자백이 파티에 있을 경우 파티의 <strong>달빛 징조</strong>가 1레벨 상승한다"
+    }
+  },
+  "passive": {
+    "name": "꽃밭의 아지랑이",
+    "description": {
+      "0": "야간(18시~6시)에 비전투 상태인 경우, 2초마다 자백의 원소 에너지가 1pt 회복된다.",
+      "1": "해당 효과는 비경, 영역 토벌, 나선 비경에서 적용되지 않는다"
+    }
+  },
+  "constellation1": {
+    "name": "홀연한 탄생과 고요한 끝",
+    "description": {
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Zibai_gen baseKey18=skill>천지일체</tooltip></strong> 발동 후, 자백이 즉시 <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「시간의 빛」</strong></tooltip>을 100pt 축적하고, <strong>「세월의 틈새」</strong> 모드에서 <strong>백마 돌격</strong>의 최대 사용 가능 횟수가 5회로 증가한다.",
+      "1": "또한, 「세월의 틈새」 모드로 전환할 때마다 첫 번째 백마 돌격 발동 시, 제2단 공격으로 주는 달 결정 반응 피해가 220% 증가한다"
+    }
+  },
+  "constellation2": {
+    "name": "생사의 섭리",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「세월의 틈새」</strong></tooltip> 모드일 때, 주변에 있는 파티 내 모든 캐릭터의 달 결정 반응으로 주는 피해가 30% 증가한다.",
+      "1": "<br/>",
+      "2": "<strong>달빛 징조·보름</strong>: 돌파 특성 <strong><tooltip ns=char_Zibai_gen baseKey18=passive1>달에서 강림한 선인</tooltip></strong>의 효과가 강화된다: <strong>백마 돌격</strong>의 제2단 공격으로 주는 피해가 자백 방어력의 550%만큼 추가로 증가한다. 해당 효과는 돌파 특성 달에서 강림한 선인을 해금해야 한다"
+    }
+  },
+  "constellation3": {
+    "name": "무소유",
+    "description": {
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Zibai_gen baseKey18=skill>천지일체</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation4": {
+    "name": "혼을 따르는 육신",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「세월의 틈새」</strong></tooltip> 모드일 때, 자백의 일반 공격 콤보수가 초기화되지 않으며, <strong>백마 돌격</strong>이 적 명중 시 자백이 <strong>「월화」</strong> 효과를 획득한다: 다음 일반 공격 시, 4단의 추가 공격이 기존 피해의 250%에 해당하는 달 결정 반응 피해를 준다"
+    }
+  },
+  "constellation5": {
+    "name": "침묵으로 깨달은 도리",
+    "description": {
+      "0": "원소폭발 <strong><tooltip ns=char_Zibai_gen baseKey18=burst>천상 삼원의 법칙</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation6": {
+    "name": "천지를 스쳐가는 여정",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「세월의 틈새」</strong></tooltip> 모드일 때, 자백의 <strong>「시간의 빛」</strong> 축적 효율이 50% 증가한다.",
+      "1": "또한, <strong>백마 돌격</strong>이 모든 「시간의 빛」을 소모하도록 변경된다. 소모한 「시간의 빛」이 70pt를 초과하면 초과 소모한 「시간의 빛」 1pt마다 이번 백마 돌격과 이어지는 3초 동안 자백이 주는 달 결정 반응 피해가 1.6% <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>승격</strong></tooltip>된다. 해당 효과는 중첩되지 않는다"
+    }
+  }
+}

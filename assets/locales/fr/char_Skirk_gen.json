@@ -44,7 +44,7 @@
       "0": "Skirk imite le style de combat du Cavalier abominable : différents effets se produisent selon la méthode de déclenchement :",
       "1": "<br/>",
       "2": "<strong>Appui simple</strong>",
-      "3": "Skirk obtient 45 pts de <strong>finesse serpentine</strong> et passe en mode <strong>Flash à sept phases</strong>.",
+      "3": "Skirk obtient 45 pts de <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>finesse serpentine</strong></tooltip> et passe en mode <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Flash à sept phases</strong></tooltip>.",
       "4": "<br/>",
       "5": "<strong>Appui long</strong>",
       "6": "Skirk obtient 45 pts de finesse serpentine et se déplace continuellement à grande vitesse, cet état augmentant sa RÉS à l'interruption.",
@@ -72,14 +72,14 @@
   "burst": {
     "name": "Ravage : Ruine",
     "description": {
-      "0": "Le déchaînement élémentaire de Skirk ne se repose pas sur l'énergie élémentaire, mais sur la <strong>finesse serpentine</strong>.",
+      "0": "Le déchaînement élémentaire de Skirk ne se repose pas sur l'énergie élémentaire, mais sur la <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>finesse serpentine</strong></tooltip>.",
       "1": "Lorsque Skirk a au moins 50 pts de finesse serpentine, elle peut la consommer entièrement pour déclencher son déchaînement élémentaire : elle déchire l'espace devant elle et effectue de rapides entailles consécutives pour infliger des <cryo>DGT Cryo de zone</cryo>, DGT qui augmentent selon la quantité de finesse serpentine dépassant ce seuil de 50 pts, un maximum de 12 pts pouvant être pris en compte.",
       "2": "<br/>",
-      "3": "Lorsque Skirk est en mode <strong>Flash à sept phases</strong>, son déchaînement élémentaire « Ravage : Ruine » est remplacé par « Ravage : Extinction ».",
+      "3": "Lorsque Skirk est en mode <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Flash à sept phases</strong></tooltip>, son déchaînement élémentaire « Ravage : Ruine » est remplacé par « Ravage : Extinction ».",
       "4": "<br/>",
       "5": "<strong>Ravage : Extinction</strong>",
       "6": "Ce déchaînement élémentaire spécial peut être utilisé sans consommer de finesse serpentine.",
-      "7": "Après utilisation, Skirk obtient l'effet Dépérissement jusqu'à la fin du mode Flash à sept phases. Après avoir débloqué l'aptitude d'élévation « <strong>Raisonnement outre-raison</strong> », Skirk peut également absorber les failles du néant à proximité.",
+      "7": "Après utilisation, Skirk obtient l'effet Dépérissement jusqu'à la fin du mode Flash à sept phases. Après avoir débloqué l'aptitude d'élévation « <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Raisonnement outre-raison</strong></tooltip> », Skirk peut également absorber les failles du néant à proximité.",
       "8": "Toutes les 0,1 s pendant la durée de l'effet Dépérissement, les DGT des attaques normales de Skirk augmentent en touchant un ennemi. Si elle a absorbé des failles du néant en utilisant <strong>Ravage : Extinction</strong>, les DGT de l'attaque normale de Skirk augmentent davantage.",
       "9": "Cet effet prend fin après 10 déclenchements."
     },
@@ -109,12 +109,12 @@
       "1": "<br/>",
       "2": "Skirk peut absorber les failles du néant à proximité des manières suivantes :",
       "3": [
-        " En touchant un ennemi avec une attaque chargée pendant son mode <strong>Flash à sept phases</strong>.",
+        " En touchant un ennemi avec une attaque chargée pendant son mode <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Flash à sept phases</strong></tooltip>.",
         " En utilisant son déchaînement élémentaire spécial <strong>Ravage : Extinction</strong> pendant son mode Flash à sept phases.",
         " En se déplaçant rapidement grâce à un appui long de sa compétence élémentaire <strong>Ravage : Distorsion</strong>."
       ],
       "4": "<br/>",
-      "5": "Chaque faille du néant absorbée permet à Skirk d'obtenir 8 pts de <strong>finesse serpentine</strong>."
+      "5": "Chaque faille du néant absorbée permet à Skirk d'obtenir 8 pts de <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>finesse serpentine</strong></tooltip>."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
     "description": {
       "0": "Lorsqu'un personnage proche de type <hydro>Hydro</hydro> dans l'équipe touche un ennemi avec une attaque <hydro>Hydro</hydro> ou qu'un personnage proche de type <cryo>Cryo</cryo> autre que Skirk dans l'équipe touche un ennemi avec une attaque <cryo>Cryo</cryo>, Skirk obtient un cumul de l'effet Traversée de la mort pendant 20 s. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
       "1": "De plus, chaque personnage permet à Skirk d'obtenir 1 cumul de traversée de la mort maximum de cette manière.",
-      "2": "Chaque cumul de traversée de la mort permet à l'attaque normale de Skirk d'infliger des DGT d'une valeur équivalant à 110 %/120 %/170 % des DGT d'origine en mode <strong>Flash à sept phases</strong> et permet à son déchaînement élémentaire <strong>Ravage : Ruine</strong> d'infliger des DGT d'une valeur équivalant à 105 %/115 %/160 % des DGT d'origine."
+      "2": "Chaque cumul de traversée de la mort permet à l'attaque normale de Skirk d'infliger des DGT d'une valeur équivalant à 110 %/120 %/170 % des DGT d'origine en mode <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Flash à sept phases</strong></tooltip> et permet à son déchaînement élémentaire <strong>Ravage : Ruine</strong> d'infliger des DGT d'une valeur équivalant à 105 %/115 %/160 % des DGT d'origine."
     }
   },
   "passive3": {
@@ -134,43 +134,43 @@
   "constellation1": {
     "name": "Chute longue",
     "description": {
-      "0": "L'aptitude d'élévation « <strong>Raisonnement outre-raison</strong> » est renforcée : absorber une faille du néant invoque une lame cristalline qui attaque les ennemis proches, infligeant des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 500 % de l'ATQ de Skirk. Ces DGT sont considérés comme des DGT d'attaque chargée.",
+      "0": "L'aptitude d'élévation « <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Raisonnement outre-raison</strong></tooltip> » est renforcée : absorber une faille du néant invoque une lame cristalline qui attaque les ennemis proches, infligeant des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 500 % de l'ATQ de Skirk. Ces DGT sont considérés comme des DGT d'attaque chargée.",
       "1": "L'aptitude d'élévation « Raisonnement outre-raison » doit être déjà débloquée."
     }
   },
   "constellation2": {
     "name": "Abîme profond",
     "description": {
-      "0": "Après avoir utilisé sa compétence élémentaire <strong>Ravage : Distorsion</strong>, Skirk obtient 10 pts de <strong>finesse serpentine</strong> supplémentaires.",
+      "0": "Après avoir utilisé sa compétence élémentaire <strong>Ravage : Distorsion</strong>, Skirk obtient 10 pts de <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>finesse serpentine</strong></tooltip> supplémentaires.",
       "1": "En utilisant le déchaînement élémentaire <strong>Ravage : Ruine</strong>, les DGT augmentent en prenant en compte 10 pts de finesse serpentine supplémentaires.",
-      "2": "De plus, lorsque Skirk a utilisé son déchaînement élémentaire spécial <strong>Ravage : Extinction</strong> pendant son mode <strong>Flash à sept phases</strong>, son ATQ augmente de 70 % pendant 12,5 s, cet effet prenant fin lorsqu'elle quitte le mode Flash à sept phases."
+      "2": "De plus, lorsque Skirk a utilisé son déchaînement élémentaire spécial <strong>Ravage : Extinction</strong> pendant son mode <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Flash à sept phases</strong></tooltip>, son ATQ augmente de 70 % pendant 12,5 s, cet effet prenant fin lorsqu'elle quitte le mode Flash à sept phases."
     }
   },
   "constellation3": {
     "name": "Vice fortuit",
     "description": {
-      "0": "Niveau d'aptitude <strong>Ravage : Ruine</strong> +3.",
+      "0": "Niveau d'aptitude <tooltip ns=char_Skirk_gen baseKey18=burst><strong>Ravage : Ruine</strong></tooltip> +3.",
       "1": "Niveau max : 15"
     }
   },
   "constellation4": {
     "name": "Flux scindé",
     "description": {
-      "0": "L'aptitude d'élévation « <strong>Retour à la désolation</strong> » est renforcée : chaque cumul de traversée de la mort augmente également l'ATQ de Skirk de 10 %/20 %/40 %.",
+      "0": "L'aptitude d'élévation « <tooltip ns=tooltips_gen baseKey18=11130008 values=[]><strong>Retour à la désolation</strong></tooltip> » est renforcée : chaque cumul de traversée de la mort augmente également l'ATQ de Skirk de 10 %/20 %/40 %.",
       "1": "L'aptitude d'élévation « Retour à la désolation » doit être déjà débloquée."
     }
   },
   "constellation5": {
     "name": "Fin des souhaits",
     "description": {
-      "0": "Niveau d'aptitude <strong>Ravage : Distorsion</strong> +3.",
+      "0": "Niveau d'aptitude <tooltip ns=char_Skirk_gen baseKey18=skill><strong>Ravage : Distorsion</strong></tooltip> +3.",
       "1": "Niveau max : 15"
     }
   },
   "constellation6": {
     "name": "Source revenue",
     "description": {
-      "0": "Skirk obtient un cumul de « Ravage : Section » pendant 15 s chaque fois qu'elle absorbe une faille du néant grâce à l'aptitude d'élévation « <strong>Raisonnement outre-raison</strong> ». Skirk peut consommer ces cumuls pour déclencher une attaque coordonnée et diminuer les DGT qu'elle subit en mode <strong>Flash à sept phases</strong>. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
+      "0": "Skirk obtient un cumul de « Ravage : Section » pendant 15 s chaque fois qu'elle absorbe une faille du néant grâce à l'aptitude d'élévation « <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Raisonnement outre-raison</strong></tooltip> ». Skirk peut consommer ces cumuls pour déclencher une attaque coordonnée et diminuer les DGT qu'elle subit en mode <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Flash à sept phases</strong></tooltip>. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
       "1": "L'aptitude d'élévation « Raisonnement outre-raison » doit être déjà débloquée.",
       "2": "<br/>",
       "3": "<strong>Ravage : Section</strong>",

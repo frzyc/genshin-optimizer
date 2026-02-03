@@ -113,13 +113,13 @@
   "passive1": {
     "name": "La douce grâce du vent",
     "description": {
-      "0": "Lorsqu'un personnage affecté par une faveur favonienne du déchaînement élémentaire <strong>Psautier radieux</strong> déclenche une réaction de Gel sur un ennemi, Dahlia obtient 2 cumuls de sacrement. Cet effet peut être déclenché une fois toutes les 8 s."
+      "0": "Lorsqu'un personnage affecté par une faveur favonienne du déchaînement élémentaire <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Psautier radieux</tooltip></strong> déclenche une réaction de Gel sur un ennemi, Dahlia obtient 2 cumuls de sacrement. Cet effet peut être déclenché une fois toutes les 8 s."
     }
   },
   "passive2": {
     "name": "Prière de joie ingénieuse",
     "description": {
-      "0": "Lorsque votre personnage déployé est affecté par une faveur favonienne du déchaînement élémentaire <strong>Psautier radieux</strong>, sa VIT d'attaque augmente selon les PV max de Dahlia : chaque tranche de 1 000 PV max augmente la VIT d'attaque de 0,5 %, la VIT d'attaque pouvant être augmentée d'un maximum de 20 % de cette manière."
+      "0": "Lorsque votre personnage déployé est affecté par une faveur favonienne du déchaînement élémentaire <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Psautier radieux</tooltip></strong>, sa VIT d'attaque augmente selon les PV max de Dahlia : chaque tranche de 1 000 PV max augmente la VIT d'attaque de 0,5 %, la VIT d'attaque pouvant être augmentée d'un maximum de 20 % de cette manière."
     }
   },
   "passive3": {
@@ -132,39 +132,39 @@
   "constellation1": {
     "name": "Procession infaillible",
     "description": {
-      "0": "Chaque fois que Dahlia obtient 1 cumul de sacrement de son déchaînement élémentaire <strong>Psautier radieux</strong>, il récupère 2,5 pts d'énergie élémentaire."
+      "0": "Chaque fois que Dahlia obtient 1 cumul de sacrement de son déchaînement élémentaire <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Psautier radieux</tooltip></strong>, il récupère 2,5 pts d'énergie élémentaire."
     }
   },
   "constellation2": {
     "name": "Révélation de miséricorde",
     "description": {
-      "0": "Lorsque Dahlia a consommé un cumul de sacrement du déchaînement élémentaire <strong>Psautier radieux</strong> pour invoquer un bouclier de faveur sacrée, la force du bouclier augmente de 25 % pendant 12 s pour le personnage protégé par le bouclier en question."
+      "0": "Lorsque Dahlia a consommé un cumul de sacrement du déchaînement élémentaire <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Psautier radieux</tooltip></strong> pour invoquer un bouclier de faveur sacrée, la force du bouclier augmente de 25 % pendant 12 s pour le personnage protégé par le bouclier en question."
     }
   },
   "constellation3": {
     "name": "Offertoire des alizées",
     "description": {
-      "0": "Niveau d'aptitude <strong>Psautier radieux</strong> +3.",
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Psautier radieux</tooltip></strong> +3.",
       "1": "Niveau max : 15"
     }
   },
   "constellation4": {
     "name": "Collecte de l'assemblée",
     "description": {
-      "0": "La durée de l'effet Faveur favonienne du déchaînement élémentaire <strong>Psautier radieux</strong> augmente de 3 s."
+      "0": "La durée de l'effet Faveur favonienne du déchaînement élémentaire <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Psautier radieux</tooltip></strong> augmente de 3 s."
     }
   },
   "constellation5": {
     "name": "Qu'il en soit subtilement ainsi",
     "description": {
-      "0": "Niveau d'aptitude <strong>Ordonnance immersive</strong> +3.",
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Dahlia_gen baseKey18=skill>Ordonnance immersive</tooltip></strong> +3.",
       "1": "Niveau max : 15"
     }
   },
   "constellation6": {
     "name": "Que la joie suive",
     "description": {
-      "0": "La VIT d'attaque du personnage déployé augmente de 10 % lorsqu'il est affecté par l'effet Faveur favonienne du déchaînement élémentaire <strong>Psautier radieux</strong>.",
+      "0": "La VIT d'attaque du personnage déployé augmente de 10 % lorsqu'il est affecté par l'effet Faveur favonienne du déchaînement élémentaire <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Psautier radieux</tooltip></strong>.",
       "1": "De plus, lorsqu'un personnage déployé affecté par une faveur favonienne est vaincu :",
       "2": [
         " Dahlia le réanime immédiatement.",

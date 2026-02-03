@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
         "1": "Verbraucht eine gewisse Menge Ausdauer und verursacht nach kurzer Aufladezeit <hydro>Hydro-Flächenschaden</hydro>.",
-        "2": "Ersetzt, wenn du über mindestens 1 Stapelung <strong>Grünender Tau</strong> verfügst, den von Columbina angewendeten heftigen Schlag durch den besonderen heftigen Schlag <strong>Mondtau-Reinigung</strong>, der keine Ausdauer verbraucht: Verbraucht 1 Stapelung Grünender Tau und fügt den Gegnern vor sich 3-mal <dendro>Dendro-Flächenschaden</dendro> zu. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion Mondspross."
+        "2": "Ersetzt, wenn du über mindestens 1 Stapelung <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Grünender Tau</strong></tooltip> verfügst, den von Columbina angewendeten heftigen Schlag durch den besonderen heftigen Schlag <strong>Mondtau-Reinigung</strong>, der keine Ausdauer verbraucht: Verbraucht 1 Stapelung Grünender Tau und fügt den Gegnern vor sich 3-mal <dendro>Dendro-Flächenschaden</dendro> zu. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion Mondspross."
       },
       "plunging": {
         "0": "<strong>Angriff aus dem Fall</strong>",
@@ -42,7 +42,7 @@
   "skill": {
     "name": "Ewige Gezeiten",
     "description": {
-      "0": "Ruft Gezeiten des Mondmeeres herbei, verursacht <hydro>Hydro-Flächenschaden</hydro> und erschafft eine <strong>Gravitationswelle</strong>.",
+      "0": "Ruft Gezeiten des Mondmeeres herbei, verursacht <hydro>Hydro-Flächenschaden</hydro> und erschafft eine <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravitationswelle</strong></tooltip>.",
       "1": "Die <strong>Gravitationswelle</strong> folgt der aktuellen Figur und fügt Gegnern in der Umgebung fortlaufend <hydro>Hydro-Flächenschaden</hydro> zu. Während die <strong>Gravitationswelle</strong> existiert und Truppenmitglieder in der Nähe eine Mondleuchten-Reaktion auslösen oder Schaden durch eine Mondleuchten-Reaktion verursachen, wird eine besondere <strong>Gravitation</strong> für Columbina angesammelt. Fügt, wenn deren Maximalwert erreicht ist, Gegnern Schaden der Art der Mondleuchten-Reaktion zu, durch die Columbina am meisten <strong>Gravitation</strong> gesammelt hat.",
       "2": "<strong>Mondomen – Reifer Glanz</strong>: Die <strong>Gravitationswelle</strong> verursacht <hydro>Hydro-Flächenschaden</hydro> mit größerer Reichweite."
     },
@@ -68,7 +68,7 @@
   "burst": {
     "name": "Melancholie unterm Mond",
     "description": {
-      "0": "Berge und Meer verbinden sich unter dem Namen des makellosen neuen Mondes. Verwandelt das Gelände um sich herum kurzzeitig in ein <strong>Mondgebiet</strong> und verursacht <hydro>Hydro-Flächenschaden</hydro>."
+      "0": "Berge und Meer verbinden sich unter dem Namen des makellosen neuen Mondes. Verwandelt das Gelände um sich herum kurzzeitig in ein <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Mondgebiet</strong></tooltip> und verursacht <hydro>Hydro-Flächenschaden</hydro>."
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -92,16 +92,16 @@
   "passive1": {
     "name": "Mondbedingter Wahnsinn",
     "description": {
-      "0": "Verleiht Columbina beim Auslösen der <strong>Gravitations-Interferenz</strong> den Effekt „Mond-Wahnsinn“, der die eigenen KT 10 s lang um 5 % erhöht, max. 3-fach stapelbar."
+      "0": "Verleiht Columbina beim Auslösen der <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravitations-Interferenz</strong></tooltip> den Effekt „Mond-Wahnsinn“, der die eigenen KT 10 s lang um 5 % erhöht, max. 3-fach stapelbar."
     }
   },
   "passive2": {
     "name": "Gesetz des Neumonds",
     "description": {
-      "0": "Verleiht Figuren, die sich im <strong>Mondgebiet</strong> befinden und eine Mondleuchten-Reaktion auslösen, jeweils den folgenden Effekt:",
+      "0": "Verleiht Figuren, die sich im <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Mondgebiet</strong></tooltip> befinden und eine Mondleuchten-Reaktion auslösen, jeweils den folgenden Effekt:",
       "1": [
         " <strong>Mond unter Strom</strong>: Wenn Ziele, die bestimmte Bedingungen erfüllen, mit Blitzen der Gewitterwolken betroffen sind, besteht eine Wahrscheinlichkeit von 33 %, dass die Gewitterwolken zusätzlich einmal auf die Ziele mit Blitzen einschlagen.",
-        " <strong>Mondspross</strong>: Verleiht der Truppe beim Auslösen der Reaktion „Mondspross“ 1 Stapelung besonderen <strong>Grünenden Mondtau</strong>. Auf diese Weise können alle 18 s bis zu 3 Stapelungen „Grünender Mondtau“ für die Truppe generiert werden.",
+        " <strong>Mondspross</strong>: Verleiht der Truppe beim Auslösen der Reaktion „Mondspross“ 1 Stapelung besonderen <tooltip ns=tooltips_gen baseKey18=11250003 values=[]><strong>Grünenden Mondtau</strong></tooltip>. Auf diese Weise können alle 18 s bis zu 3 Stapelungen „Grünender Mondtau“ für die Truppe generiert werden.",
         " <strong>Mond-Kristallisation</strong>: Gibt beim Auslösen von „Harmonie der Mondkäfige“ jedem Mondkäfig eine Möglichkeit von 33 %, zusätzlich einen Angriff auszuführen."
       ]
     }
@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Strahlkraft über Blüten und Gipfeln",
     "description": {
-      "0": "Löst, wenn die Elementarfähigkeit <strong>Ewige Gezeiten</strong> angewendet wird, sofort einmal einen der <strong>Gravitations-Interferenz</strong> entsprechenden Effekt aus. 15 s Abklingzeit.",
+      "0": "Löst, wenn die Elementarfähigkeit <strong>Ewige Gezeiten</strong> angewendet wird, sofort einmal einen der <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravitations-Interferenz</strong></tooltip> entsprechenden Effekt aus. 15 s Abklingzeit.",
       "1": "<strong>Mondomen – Reifer Glanz</strong> ",
       "2": "Wenn beim Auslösen der Gravitations-Interferenz die Art von Mondleuchten-Reaktion, die am meisten Gravitation für Columbina angesammelt hat, folgende ist:",
       "3": [
@@ -133,13 +133,13 @@
         " <strong>Mond-Kristallisation</strong>: Beschwört einen <strong>Regensee-Schild</strong> herauf. Die Schildstärke basiert auf 12 % der max. LP von Columbina und hält bei <hydro>Hydro-SCH</hydro> 250 % Schaden ab, hält 8 s lang."
       ],
       "4": "<br/>",
-      "5": "<strong>Steigert</strong> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 1,5 %."
+      "5": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 1,5 %."
     }
   },
   "constellation2": {
     "name": "Nicht in einsamer Pracht",
     "description": {
-      "0": "Erhöht die Ansammlungsgeschwindigkeit der <strong>Gravitation</strong> um 34 %.",
+      "0": "Erhöht die Ansammlungsgeschwindigkeit der <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravitation</strong></tooltip> um 34 %.",
       "1": "Verleiht Columbina, wenn die <strong>Gravitations-Interferenz</strong> ausgelöst wird, den Effekt <strong>Mondstrahlung</strong>, der ihre max. LP 8 s lang um 40 % erhöht.",
       "2": "<strong>Mondomen – Reifer Glanz</strong>:",
       "3": "Wenn während der Wirkungsdauer von <strong>Mondstrahlung</strong> beim Auslösen dieser <strong>Gravitations-Interferenz</strong> die Art von Mondleuchten-Reaktion, die am meisten Gravitation für Columbina angesammelt hat, folgende ist:",
@@ -149,42 +149,42 @@
         " <strong>Mond-Kristallisation</strong>: Erhöht die VTD des eigenen aktuellen Truppenmitglieds um 1 % von Columbinas max. LP."
       ],
       "5": "<br/>",
-      "6": "<strong>Steigert</strong> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 7 %."
+      "6": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 7 %."
     }
   },
   "constellation3": {
     "name": "Traumhafter Schein über ruhigen Gewässern",
     "description": {
-      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Ewige Gezeiten</strong> um 3.",
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Columbina_gen baseKey18=skill>Ewige Gezeiten</tooltip></strong> um 3.",
       "1": "Höchststufe 15.",
       "2": "<br/>",
-      "3": "<strong>Steigert</strong> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 1,5 %."
+      "3": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 1,5 %."
     }
   },
   "constellation4": {
     "name": "Wolkige Berge in blumigem Nebel",
     "description": {
-      "0": "Stellt Columbina, wenn die <strong>Gravitations-Interferenz</strong> ausgelöst wird, 4 Punkte Elementarenergie wieder her.",
+      "0": "Stellt Columbina, wenn die <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravitations-Interferenz</strong></tooltip> ausgelöst wird, 4 Punkte Elementarenergie wieder her.",
       "1": "Erhöht zudem, wenn die Art Mondleuchten-Reaktion, die am meisten <strong>Gravitation</strong> für Columbina angesammelt hat, Mond unter Strom / Mondspross / Mond-Kristallisation ist, den durch diese Gravitations-Interferenz verursachten Schaden der Mondleuchten-Reaktion jeweils um 12,5 % / 2,5 % / 12,5 % von Columbinas max. LP. 15 s Abklingzeit.",
       "2": "<br/>",
-      "3": "<strong>Steigert</strong> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 1,5 %."
+      "3": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 1,5 %."
     }
   },
   "constellation5": {
     "name": "Einsames Lied der Stille",
     "description": {
-      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Melancholie unterm Mond</strong> um 3.",
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Columbina_gen baseKey18=burst>Melancholie unterm Mond</tooltip></strong> um 3.",
       "1": "Höchststufe 15.",
       "2": "<br/>",
-      "3": "<strong>Steigert</strong> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 1,5 %."
+      "3": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 1,5 %."
     }
   },
   "constellation6": {
     "name": "Durch die Dunkelheit, geführt vom Mondlicht",
     "description": {
-      "0": "Erhöht 8 s, nachdem eine beliebige Figur im <strong>Mondgebiet</strong> eine Mondleuchten-Reaktion ausgelöst hat, basierend auf dem Elementartyp der Reaktion, den verursachten kritischen Schaden des entsprechenden Elements aller Truppenmitglieder um 80 %. Der Verstärkungseffekt für kritischen Schaden desselben Elementartyps ist nicht stapelbar.",
+      "0": "Erhöht 8 s, nachdem eine beliebige Figur im <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Mondgebiet</strong></tooltip> eine Mondleuchten-Reaktion ausgelöst hat, basierend auf dem Elementartyp der Reaktion, den verursachten kritischen Schaden des entsprechenden Elements aller Truppenmitglieder um 80 %. Der Verstärkungseffekt für kritischen Schaden desselben Elementartyps ist nicht stapelbar.",
       "1": "<br/>",
-      "2": "<strong>Steigert</strong> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 7 %."
+      "2": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> den von allen Truppenmitgliedern in der Nähe verursachten Schaden durch Mondleuchten-Reaktionen um 7 %."
     }
   }
 }

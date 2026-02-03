@@ -1,0 +1,24 @@
+{
+  "name": "Refulgencia de la Luna",
+  "description": {
+    "0": "Cuenta la leyenda que una Adeptus que vivía recluida en un manantial cristalino forjó esta espada con la luz lunar reflejada en un pozo, la cual solo revelaba su verdadera forma durante el crepúsculo y el amanecer."
+  },
+  "passiveName": "Legado de Lang Gan",
+  "passiveDescription": {
+    "0": {
+      "0": "La DEF aumenta en un <cryo>20%</cryo>. Después de que el portador de esta arma use su Habilidad Elemental, el daño de la reacción de Cristalización Lunar aumentará en un <cryo>64%</cryo> durante 5 s."
+    },
+    "1": {
+      "0": "La DEF aumenta en un <cryo>25%</cryo>. Después de que el portador de esta arma use su Habilidad Elemental, el daño de la reacción de Cristalización Lunar aumentará en un <cryo>80%</cryo> durante 5 s."
+    },
+    "2": {
+      "0": "La DEF aumenta en un <cryo>30%</cryo>. Después de que el portador de esta arma use su Habilidad Elemental, el daño de la reacción de Cristalización Lunar aumentará en un <cryo>96%</cryo> durante 5 s."
+    },
+    "3": {
+      "0": "La DEF aumenta en un <cryo>35%</cryo>. Después de que el portador de esta arma use su Habilidad Elemental, el daño de la reacción de Cristalización Lunar aumentará en un <cryo>112%</cryo> durante 5 s."
+    },
+    "4": {
+      "0": "La DEF aumenta en un <cryo>40%</cryo>. Después de que el portador de esta arma use su Habilidad Elemental, el daño de la reacción de Cristalización Lunar aumentará en un <cryo>128%</cryo> durante 5 s."
+    }
+  }
+}

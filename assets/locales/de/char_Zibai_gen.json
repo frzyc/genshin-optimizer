@@ -1,0 +1,163 @@
+{
+  "name": "Zibai",
+  "title": "Weißes Pferd und die reine Quelle",
+  "description": "Die Adeptin des weißen Pferdes aus den Legenden von Liyue, die den Namen Zibai trägt. Eine der geheimnisvollsten Figuren in den Mythen Liyues.",
+  "constellationName": "Equa Alba",
+  "auto": {
+    "name": "Berührende Kraft der goldenen Klinge",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Himmel und Erde in Gestalt",
+    "description": {
+      "0": "Ruft einen Schatten ihrer alten Kräfte herbei und wechselt in den Modus <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Wechsel des Mondabschnitts</strong></tooltip>.",
+      "1": "In diesem Modus verursacht Zibai mit Standardangriffen und heftigen Schlägen <geo>Geo-SCH</geo>, der nicht von anderen Elementen überdeckt werden kann. Durch verschiedene Methoden kann sie zudem speziellen <strong>Abschnittswechsel-Glanz</strong> sammeln. Durch Verbrauchen von Abschnittswechsel-Glanz kann Zibai die besondere Elementarfähigkeit <strong>Galopp des Geisterrosses</strong> anwenden.",
+      "2": "<br/>",
+      "3": "<strong>Mondomen – Reifer Glanz</strong>",
+      "4": "Wenn Zibai im Modus <strong>Wechsel des Mondabschnitts</strong> Standardangriffe ausführt, verursacht die 4. Angriffsphase zusätzlich einmal <geo>Geo-SCH</geo>. Hierdurch verursachter Schaden gilt als Schaden durch Mond-Kristallisation."
+    },
+    "skillParams": {
+      "0": "SCH Phase 1 von „Wechsel des Mondabschnitts“",
+      "1": "SCH Phase 2 von „Wechsel des Mondabschnitts“",
+      "2": "SCH Phase 3 von „Wechsel des Mondabschnitts“",
+      "3": "SCH Phase 4 von „Wechsel des Mondabschnitts“",
+      "4": "SCH durch heftige Schläge bei „Wechsel des Mondabschnitts“",
+      "5": "SCH Phase 1 von „Galopp des Geisterrosses“",
+      "6": "SCH Phase 2 von „Galopp des Geisterrosses“",
+      "7": "Zusätzlicher SCH Phase 4 von „Wechsel des Mondabschnitts“",
+      "8": "Dauer von „Wechsel des Mondabschnitts“",
+      "9": "Abklingzeit",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dreisphären-Eminenz",
+    "description": {
+      "0": "Zibai dreht den Baldachin des Himmels und verursacht zweimal <geo>Geo-SCH</geo>, wobei die zweite Schadens-Phase als Schaden durch die Reaktion Mond-Kristallisation gilt.",
+      "1": "Befindet sich Zibai beim Anwenden der Fähigkeit im Modus <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Wechsel des Mondabschnitts</strong></tooltip>, verlängert sich die diesmalige Dauer des Modus „Wechsel des Mondabschnitts“ um 1,7 s."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH Phase 1",
+      "1": "Fähigkeits-SCH Phase 2",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ankunft des selenischen Adepten",
+    "description": {
+      "0": "Verleiht Zibai beim Anwenden von <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Himmel und Erde in Gestalt</tooltip></strong> durch Zibai oder beim Auslösen von „Harmonie der Mondkäfige“ durch Truppenmitglieder in der Nähe 4 s lang den Effekt <strong>Selenische Ankunft</strong>: Erhöht den durch die zweite Angriffsphase von <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Galopp des Geisterrosses</strong></tooltip> verursachten Schaden um 60 % von Zibais VTD."
+    }
+  },
+  "passive2": {
+    "name": "Berge und Gipfel in den Wolken",
+    "description": {
+      "0": "Erhöht für jede andere <geo>Geo</geo>-Figur in der Truppe Zibais VTD um 15 %. Erhöht für jede andere <hydro>Hydro</hydro>-Figur in der Truppe Zibais Elementarkunde um 60 Punkte."
+    }
+  },
+  "passive3": {
+    "name": "Mondomen-Segen – Fließende Klarheit",
+    "description": {
+      "0": "Wenn eine Figur in der Truppe die Reaktion „Hydro-Kristallisation“ auslöst, wird diese in die Reaktion „Mond-Kristallisation“ umgewandelt, wobei der durch Figuren in der Truppe verursachte Basis-SCH der Reaktion „Mond-Kristallisation“ auf der Grundlage von Zibais VTD erhöht wird: Für je 100 Punkte VTD wird der Basis-SCH der Reaktion „Mond-Kristallisation“ um 0,7 % erhöht. Auf diese Weise kann der Schaden um bis zu 14 % erhöht werden.",
+      "1": "<br/>",
+      "2": "Erhöht zudem die Stufe vom <strong>Mondomen</strong> der Truppe um 1, wenn sich Zibai in der Truppe befindet."
+    }
+  },
+  "passive": {
+    "name": "Mondbeschienener Blumenwald",
+    "description": {
+      "0": "Stellt Zibai nachts (18:00 bis 06:00 Uhr), wenn sie sich nicht im Kampf befindet, alle 2 s 1 Punkt Elementarenergie wieder her.",
+      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund."
+    }
+  },
+  "constellation1": {
+    "name": "Mit großer Kraft auftauchen, doch in völliger Stille eintreten",
+    "description": {
+      "0": "Sammelt nach dem Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Himmel und Erde in Gestalt</tooltip></strong> 100 Punkte <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Abschnittswechsel-Glanz</strong></tooltip> für Zibai an. Erhöht zudem im Modus <strong>Wechsel des Mondabschnitts</strong> die max. Anzahl der Nutzungen von <strong>Galopp des Geisterrosses</strong> auf 5.",
+      "1": "Erhöht des Weiteren nach jedem Wechseln in den Modus Wechsel des Mondabschnitts bei der ersten Anwendung von Galopp des Geisterrosses den Mond-Kristallisation-Schaden, der durch die 2. Angriffsphase verursacht wird, um 220 %."
+    }
+  },
+  "constellation2": {
+    "name": "Zum Leben geboren, doch im Tod vergehend",
+    "description": {
+      "0": "Erhöht im Modus <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Wechsel des Mondabschnitts</strong></tooltip> den von allen Truppenmitgliedern in der Nähe durch die Mond-Kristallisation verursachten Schaden um 30 %.",
+      "1": "<br/>",
+      "2": "<strong>Mondomen – Reifer Glanz</strong>: Verstärkt den Effekt des Aufstiegstalents <strong><tooltip ns=char_Zibai_gen baseKey18=passive1>Ankunft des selenischen Adepten</tooltip></strong>: Erhöht den durch die zweite Angriffsphase von <strong>Galopp des Geisterrosses</strong> verursachten Schaden zusätzlich um 550 % von Zibais VTD. Das Aufstiegstalent „Ankunft des selenischen Adepten“ muss freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "Frei von Fesseln und weltlichen Bindungen",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Himmel und Erde in Gestalt</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Die Seele vergeht und der Körper folgt",
+    "description": {
+      "0": "Setzt im Modus <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>„Wechsel des Mondabschnitts“</strong></tooltip> die Angriffsphase von Zibais Standardangriffen nicht zurück. Verleiht Zibai beim Treffen von Gegnern mit <strong>Galopp des Geisterrosses</strong> den Effekt <strong>„Pracht des Streumonds“</strong>: Der zusätzliche Angriff der 4. Phase des nächsten Standardangriffs verursacht Mond-Kristallisation-Schaden in Höhe von 250 % des ursprünglichen Schadens."
+    }
+  },
+  "constellation5": {
+    "name": "Das Wertlose erkennen und es akzeptieren",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Zibai_gen baseKey18=burst>Dreisphären-Eminenz</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Himmel und Erde, eine weite Reise im Nu",
+    "description": {
+      "0": "Erhöht im Modus <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Wechsel des Mondabschnitts</strong></tooltip> Zibais Sammeleffizienz von <strong>Abschnittswechsel-Glanz</strong> um 50 %.",
+      "1": "Ändert zudem <strong>Galopp des Geisterrosses</strong>, sodass dabei alle Punkte Abschnittswechsel-Glanz verbraucht werden. <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> für jeden verbrauchten Punkt Abschnittswechsel-Glanz über 70 den durch diesmaligen Galopp des Geisterrosses sowie den innerhalb der nächsten 3 s von Zibai verursachten Mond-Kristallisations-Schaden um 1,6 %. Dieser Effekt ist nicht stapelbar."
+    }
+  }
+}

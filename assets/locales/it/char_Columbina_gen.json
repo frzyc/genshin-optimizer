@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
         "1": "Consuma una determinata quantità di vigore per infliggere <hydro>DAN da Hydro ad area</hydro> dopo un breve periodo di lancio.",
-        "2": "Se ha almeno 1 unità di <strong>Rugiada verdeggiante</strong> a disposizione, gli attacchi caricati di Colombina vengono sostituiti dall'attacco caricato speciale <strong>Purificazione della rugiada lunare</strong>, che consuma 1 unità di Rugiada verdeggiante al posto del vigore per infliggere 3 iterazioni di <dendro>DAN da Dendro ad area</dendro> agli avversari di fronte a lei. Tali DAN sono considerati DAN da Fioritura lunare."
+        "2": "Se ha almeno 1 unità di <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Rugiada verdeggiante</strong></tooltip> a disposizione, gli attacchi caricati di Colombina vengono sostituiti dall'attacco caricato speciale <strong>Purificazione della rugiada lunare</strong>, che consuma 1 unità di Rugiada verdeggiante al posto del vigore per infliggere 3 iterazioni di <dendro>DAN da Dendro ad area</dendro> agli avversari di fronte a lei. Tali DAN sono considerati DAN da Fioritura lunare."
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
@@ -42,7 +42,7 @@
   "skill": {
     "name": "Maree eterne",
     "description": {
-      "0": "Risveglia le Maree di luna, infliggendo <hydro>DAN da Hydro ad area</hydro> ed evocando una <strong>Marea gravitazionale</strong>.",
+      "0": "Risveglia le Maree di luna, infliggendo <hydro>DAN da Hydro ad area</hydro> ed evocando una <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Marea gravitazionale</strong></tooltip>.",
       "1": "La <strong>Marea gravitazionale</strong> segue il personaggio attivo in campo e infligge costantemente <hydro>DAN da Hydro ad area</hydro> agli avversari circostanti. Quando la <strong>Marea gravitazionale</strong> è in campo e i membri vicini del gruppo innescano reazioni lunari o infliggono DAN da reazione lunare, Colombina accumula della <strong>Gravità</strong> speciale. Quando quest'ultima raggiunge il suo limite, gli avversari subiscono diversi tipi di DAN in base al tipo di reazione lunare che ha fornito la maggiore quantità di <strong>Gravità</strong> a Colombina.",
       "2": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, la <strong>Marea gravitazionale</strong> infligge <hydro>DAN da Hydro ad area</hydro> in una zona più ampia."
     },
@@ -68,7 +68,7 @@
   "burst": {
     "name": "Malinconia lunare",
     "description": {
-      "0": "Le colline e le maree si uniscono sotto la luce argentea di una nuova luna. Trasforma temporaneamente il terreno circostante in un <strong>Dominio lunare</strong>, infliggendo <hydro>DAN da Hydro ad area</hydro>."
+      "0": "Le colline e le maree si uniscono sotto la luce argentea di una nuova luna. Trasforma temporaneamente il terreno circostante in un <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Dominio lunare</strong></tooltip>, infliggendo <hydro>DAN da Hydro ad area</hydro>."
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -92,16 +92,16 @@
   "passive1": {
     "name": "Delirio lunare",
     "description": {
-      "0": "Quando s'innesca un'<strong>Interferenza gravitazionale</strong>, Colombina ottiene l'effetto Tentazione lunare, che aumenta il suo tasso di CRIT di un 5% per 10 s. Quest'effetto è cumulabile fino a 3 volte."
+      "0": "Quando s'innesca un'<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Interferenza gravitazionale</strong></tooltip>, Colombina ottiene l'effetto Tentazione lunare, che aumenta il suo tasso di CRIT di un 5% per 10 s. Quest'effetto è cumulabile fino a 3 volte."
     }
   },
   "passive2": {
     "name": "Legge della Luna nuova",
     "description": {
-      "0": "Quando i personaggi all'interno del <strong>Dominio lunare</strong> innescano una reazione lunare, ottengono i seguenti effetti in base alla reazione innescata.",
+      "0": "Quando i personaggi all'interno del <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Dominio lunare</strong></tooltip> innescano una reazione lunare, ottengono i seguenti effetti in base alla reazione innescata.",
       "1": [
         " <strong>Carica lunare</strong>: quando i fulmini delle nubi temporalesche colpiscono un bersaglio valido, c'è un 33% di probabilità che venga scagliato un fulmine aggiuntivo.",
-        " <strong>Fioritura lunare</strong>: il gruppo ottiene 1 unità della speciale <strong>Rugiada selenica</strong>, per un massimo di 3 ogni 18 s.",
+        " <strong>Fioritura lunare</strong>: il gruppo ottiene 1 unità della speciale <tooltip ns=tooltips_gen baseKey18=11250003 values=[]><strong>Rugiada selenica</strong></tooltip>, per un massimo di 3 ogni 18 s.",
         " <strong>Cristallizzazione lunare</strong>: quando viene innescata Armonia della Gabbia lunare, ogni Gabbia lunare ha un 33% di probabilità di infliggere un attacco aggiuntivo."
       ]
     }
@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Bagliore su fiori e cime",
     "description": {
-      "0": "Scatenare la sua abilità elementale <strong>Maree eterne</strong> innesca immediatamente un effetto equivalente a quello dell'<strong>Interferenza gravitazionale</strong>. Quest'effetto può attivarsi una volta ogni 15 s.",
+      "0": "Scatenare la sua abilità elementale <strong>Maree eterne</strong> innesca immediatamente un effetto equivalente a quello dell'<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Interferenza gravitazionale</strong></tooltip>. Quest'effetto può attivarsi una volta ogni 15 s.",
       "1": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo e viene innescata un'Interferenza gravitazionale, si verificano effetti diversi in base al tipo di reazione lunare che ha fornito la quantità maggiore di Gravità a Colombina.",
       "2": [
         " <strong>Carica lunare</strong>: l'energia del tuo personaggio attivo attuale si ripristina di 6.",
@@ -132,13 +132,13 @@
         " <strong>Cristallizzazione lunare</strong>: evoca uno <strong>Scudo piovano</strong>. L'assorbimento DAN di tale scudo si basa su un 12% dei PS max di Colombina e assorbe i <hydro>DAN da Hydro</hydro> con un 250% di efficienza per 8 s."
       ],
       "3": "<br/>",
-      "4": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <strong>innalzati</strong> di un 1,5%."
+      "4": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 1,5%."
     }
   },
   "constellation2": {
     "name": "Splendore in compagnia",
     "description": {
-      "0": "La velocità di accumulo di <strong>Gravità</strong> aumenta di un 34%.",
+      "0": "La velocità di accumulo di <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravità</strong></tooltip> aumenta di un 34%.",
       "1": "Quando l'<strong>Interferenza gravitazionale</strong> viene innescata, Colombina riceve l'effetto <strong>Splendore selenico</strong>, che aumenta i suoi PS max di un 40% per 8 s.",
       "2": "<br/>",
       "3": "<strong>Presagio lunare: Barlume ascendente</strong>",
@@ -149,42 +149,42 @@
         " <strong>Cristallizzazione lunare</strong>: la DIF del tuo personaggio attivo attuale aumenta di un 1% dei PS max di Colombina."
       ],
       "6": "<br/>",
-      "7": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <strong>innalzati</strong> di un 7%."
+      "7": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 7%."
     }
   },
   "constellation3": {
     "name": "Luce onirica sulle placide acque",
     "description": {
-      "0": "Aumenta di 3 il livello dell'abilità elementale <strong>Maree eterne</strong>.",
+      "0": "Aumenta di 3 il livello dell'abilità elementale <strong><tooltip ns=char_Columbina_gen baseKey18=skill>Maree eterne</tooltip></strong>.",
       "1": "Il livello di potenziamento massimo è 15.",
       "2": "<br/>",
-      "3": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <strong>innalzati</strong> di un 1,5%."
+      "3": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 1,5%."
     }
   },
   "constellation4": {
     "name": "Costa nuvolosa tra la nebbia floreale",
     "description": {
-      "0": "Quando viene innescata un'<strong>Interferenza gravitazionale</strong>, l'energia elementale di Colombina si ripristina di 4.",
+      "0": "Quando viene innescata un'<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Interferenza gravitazionale</strong></tooltip>, l'energia elementale di Colombina si ripristina di 4.",
       "1": "Inoltre, se il tipo di reazione lunare che ha accumulato la quantità maggiore di <strong>Gravità</strong> è Carica lunare, Fioritura lunare o Cristallizzazione lunare, i DAN da reazione lunare inflitti dall'attuale iterazione dell'Interferenza gravitazionale aumentano rispettivamente di un 12,5%, 2,5% o 12,5% dei PS max di Colombina. Quest'effetto può attivarsi non più di una volta ogni 15 s.",
       "2": "<br/>",
-      "3": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <strong>innalzati</strong> di un 1,5%."
+      "3": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 1,5%."
     }
   },
   "constellation5": {
     "name": "Canzone solitaria nel silenzio",
     "description": {
-      "0": "Aumenta di 3 il livello del Tripudio elementale <strong>Malinconia lunare</strong>.",
+      "0": "Aumenta di 3 il livello del Tripudio elementale <strong><tooltip ns=char_Columbina_gen baseKey18=burst>Malinconia lunare</tooltip></strong>.",
       "1": "Il livello di potenziamento massimo è 15.",
       "2": "<br/>",
-      "3": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <strong>innalzati</strong> di un 1,5%."
+      "3": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 1,5%."
     }
   },
   "constellation6": {
     "name": "Attraverso le tenebre, guidati dal chiaro di luna",
     "description": {
-      "0": "Per 8 s dopo che i personaggi nel <strong>Dominio lunare</strong> hanno innescato una reazione lunare, in base agli elementi coinvolti nella reazione, i DAN da CRIT dei DAN elementali corrispondenti inflitti da tutti i membri del gruppo aumentano di un 80%. Gli effetti di aumento dei DAN da CRIT di uno stesso tipo elementale non si accumulano.",
+      "0": "Per 8 s dopo che i personaggi nel <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Dominio lunare</strong></tooltip> hanno innescato una reazione lunare, in base agli elementi coinvolti nella reazione, i DAN da CRIT dei DAN elementali corrispondenti inflitti da tutti i membri del gruppo aumentano di un 80%. Gli effetti di aumento dei DAN da CRIT di uno stesso tipo elementale non si accumulano.",
       "1": "<br/>",
-      "2": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <strong>innalzati</strong> di un 7%."
+      "2": "I DAN da reazione lunare di tutti i membri del gruppo vicini vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 7%."
     }
   }
 }

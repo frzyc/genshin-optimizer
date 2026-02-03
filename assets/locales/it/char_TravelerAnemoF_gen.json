@@ -114,7 +114,7 @@
   "lockedPassive": {
     "name": "Iravento straniero",
     "description": {
-      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <strong>effetti positivi aggiuntivi</strong> per ogni elemento con cui hai risuonato.",
+      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effetti positivi aggiuntivi</strong></tooltip> per ogni elemento con cui hai risuonato.",
       "1": "<br/>",
       "2": "Inoltre, quando gli attacchi dei membri vicini del gruppo il cui elemento è <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> o <electro>Electro</electro> colpiscono gli avversari, {F#la viaggiatrice}{M#il viaggiatore} ottiene 1 accumulo di Lama della Brezza mattutina. Ogni tipo elementale può fornire 1 accumulo di Lama della Brezza mattutina. Dopo aver ottenuto almeno 2 accumuli, sferrare un attacco caricato li consuma tutti e trasforma l'attacco in un <strong>Attacco caricato: Turbine</strong> speciale.",
       "3": "<br/>",

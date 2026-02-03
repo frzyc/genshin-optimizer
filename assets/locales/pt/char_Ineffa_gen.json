@@ -41,7 +41,7 @@
   "skill": {
     "name": "Modo de Limpeza: Frequência Estável",
     "description": {
-      "0": "Ineffa ativa seu Módulo de Limpeza Melhorada, causando uma instância de <electro>Dano Electro em AdE</electro> contra os inimigos próximos, ativando seu Escudo do Fluxo Óptico e invocando a Unidade Multiúso Inteligente <strong>Birgitta</strong>.",
+      "0": "Ineffa ativa seu Módulo de Limpeza Melhorada, causando uma instância de <electro>Dano Electro em AdE</electro> contra os inimigos próximos, ativando seu Escudo do Fluxo Óptico e invocando a Unidade Multiúso Inteligente <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>.",
       "1": "O Dano absorvido pelo Escudo do Fluxo Óptico é baseado no ATQ de Ineffa, e possui 250% de eficácia contra <electro>Dano Electro</electro>."
     },
     "skillParams": {
@@ -66,7 +66,7 @@
   "burst": {
     "name": "Ordem Suprema: Exterminador Ciclônico",
     "description": {
-      "0": "Com a ajuda da Unidade Multiúso Inteligente, <strong>Birgitta</strong>, ela pode usar Socos Foguetes para eliminar os inimigos rapidamente! Ineffa dispara Birgitta, causando <electro>Dano Electro em AdE</electro>, e faz Birgitta ficar no campo por um tempo.",
+      "0": "Com a ajuda da Unidade Multiúso Inteligente, <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>, ela pode usar Socos Foguetes para eliminar os inimigos rapidamente! Ineffa dispara Birgitta, causando <electro>Dano Electro em AdE</electro>, e faz Birgitta ficar no campo por um tempo.",
       "1": "Se já houver uma Birgitta criada por Ineffa invocada, muda a posição alvo e invoca Birgitta novamente, e redefine a duração."
     },
     "skillParams": {
@@ -91,13 +91,13 @@
   "passive1": {
     "name": "Sobrecarga de Circuito",
     "description": {
-      "0": "Se houver Nuvens Trovejantes criadas por reações de Carga Lunar nas proximidades quando <strong>Birgitta</strong> lançar descargas elétricas, ela realizará um ataque adicional, causando Dano equivalente a 65% do ATQ de Ineffa como <electro>Dano Electro em AdE</electro>. Esse Dano é considerado como Dano de Carga Lunar."
+      "0": "Se houver Nuvens Trovejantes criadas por reações de Carga Lunar nas proximidades quando <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip> lançar descargas elétricas, ela realizará um ataque adicional, causando Dano equivalente a 65% do ATQ de Ineffa como <electro>Dano Electro em AdE</electro>. Esse Dano é considerado como Dano de Carga Lunar."
     }
   },
   "passive2": {
     "name": "Protocolo de Permutação Panorâmica",
     "description": {
-      "0": "Ao lançar o Supremo <strong>Ordem Suprema: Exterminador Ciclônico</strong>, concede o efeito Parâmetro de Permutação para todos os seus membros próximos da equipe: aumenta a Proficiência Elemental de Ineffa e do personagem ativo da equipe com base em 6% do ATQ de Ineffa por 20s."
+      "0": "Ao lançar o Supremo <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Ordem Suprema: Exterminador Ciclônico</tooltip></strong>, concede o efeito Parâmetro de Permutação para todos os seus membros próximos da equipe: aumenta a Proficiência Elemental de Ineffa e do personagem ativo da equipe com base em 6% do ATQ de Ineffa por 20s."
     }
   },
   "passive3": {
@@ -123,14 +123,14 @@
   "constellation2": {
     "name": "Módulo Auxiliar de Limpeza",
     "description": {
-      "0": "Quando o Supremo <strong>Ordem Suprema: Exterminador Ciclônico</strong> atinge um inimigo, aplica nele o estado Édito Punitivo: depois de um certo tempo, ou quando esse inimigo for derrotado, causa 300% do ATQ de Ineffa como <electro>Dano Electro em AdE</electro> contra os inimigos próximos. Esse Dano é considerado Dano de Carga Lunar.",
+      "0": "Quando o Supremo <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Ordem Suprema: Exterminador Ciclônico</tooltip></strong> atinge um inimigo, aplica nele o estado Édito Punitivo: depois de um certo tempo, ou quando esse inimigo for derrotado, causa 300% do ATQ de Ineffa como <electro>Dano Electro em AdE</electro> contra os inimigos próximos. Esse Dano é considerado Dano de Carga Lunar.",
       "1": "Além disso, ao lançar o Supremo <strong>Ordem Suprema: Exterminador Ciclônico</strong>, também concede um Escudo do Fluxo Óptico para o personagem ativo próximo da equipe."
     }
   },
   "constellation3": {
     "name": "Emulador Melhorado de Emoções",
     "description": {
-      "0": "Aumenta o nível da Habilidade Elemental <strong>Modo de Limpeza: Frequência Estável</strong> em 3 níveis. ",
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Ineffa_gen baseKey18=skill>Modo de Limpeza: Frequência Estável</tooltip></strong> em 3 níveis. ",
       "1": "O nível máximo de elevação é 15."
     }
   },
@@ -143,7 +143,7 @@
   "constellation5": {
     "name": "Sonho do Espelho Transcendental",
     "description": {
-      "0": "Aumenta o nível do Supremo <strong>Ordem Suprema: Exterminador Ciclônico</strong> em 3.",
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Ordem Suprema: Exterminador Ciclônico</tooltip></strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },

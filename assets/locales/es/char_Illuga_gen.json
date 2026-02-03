@@ -1,0 +1,171 @@
+{
+  "name": "Illuga",
+  "title": "El Corazón Ardiente de la Pesadilla",
+  "description": "Miembro del escuadrón de investigación “Orioles de la Pesadilla” y el capitán más joven de los Lampareros.",
+  "constellationName": "Oriolus",
+  "auto": {
+    "name": "Lanza del juramento",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente e infligir daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ruiseñor del amanecer",
+    "description": {
+      "0": "Invoca a su fiel pájaro mensajero, Aedón, y se producen diferentes efectos dependiendo de si la habilidad se pulsa una vez o se mantiene pulsada.",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Aedón se lanza contra los enemigos que tiene delante e inflige <geo>Daño Geo</geo> a aquellos con los que entre en contacto.",
+      "4": "<br/>",
+      "5": "<strong>Mantener pulsado</strong>",
+      "6": "Entra en modo puntería y ordena a Aedón que se lance contra el enemigo al que apunta para infligir <geo>Daño Geo</geo> a los enemigos con los que entre en contacto."
+    },
+    "skillParams": {
+      "0": "Daño al pulsar una vez",
+      "1": "Daño al mantener pulsado",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Reflejo sin sombra",
+    "description": {
+      "0": "Enciende la lámpara, inflige <geo>Daño Geo en el AdE</geo> y obtiene el efecto de “canto nochembrujado del oriol” durante 20 s. Mientras este efecto está activo, Illuga obtiene 21 cargas de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>“canto del ruiseñor”</strong></tooltip>. Cuando un personaje cercano en uso del equipo inflige <geo>Daño Geo</geo> a un enemigo con un Ataque Normal, Cargado o Descendente o con una Habilidad Elemental o Definitiva, se consume 1 carga de canto del ruiseñor para aumentar el daño infligido en función de la Maestría Elemental de Illuga. El daño infligido será aún mayor si es daño de Cristalización Lunar.",
+      "1": "Al golpear a varios enemigos a la vez con el <geo>Daño Geo</geo> infligido de esta manera, se consumirán cargas de canto del ruiseñor en función del número de enemigos golpeados.",
+      "2": "<br/>",
+      "3": "Además, cuando Illuga use su Habilidad Definitiva mientras en el campo de batalla haya alguna <geo>creación Geo</geo> generada por un personaje cercano del equipo, o cuando un personaje cercano del equipo genere una <geo>creación Geo</geo> mientras canto nochembrujado del oriol esté activo, Illuga obtendrá 5 cargas adicionales de canto del ruiseñor por cada <geo>creación Geo</geo> que haya en el campo de batalla. Illuga puede obtener un máximo de 15 cargas adicionales de canto del ruiseñor de esta manera durante los 20 s posteriores a usar la Habilidad Definitiva.",
+      "4": "<br/>",
+      "5": "Cuando se hayan consumido todas las cargas de canto del ruiseñor o cuando finalice su duración, se anulará el efecto de canto nochembrujado del oriol."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Aumento de Daño Geo",
+      "2": "Aumento de daño de Cristalización Lunar",
+      "3": "Cargas de canto del ruiseñor obtenidas con la Habilidad Definitiva",
+      "4": "Cargas de canto del ruiseñor obtenidas al generar creaciones Geo",
+      "5": "Duración",
+      "6": "TdE",
+      "7": "Energía Elemental",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Pacto del Forjador de Lámparas",
+    "description": {
+      "0": "Tras usar la Habilidad Elemental, <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Ruiseñor del amanecer</tooltip></strong>, o la Habilidad Definitiva, <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflejo sin sombra</tooltip></strong>, los demás personajes cercanos del equipo obtienen el efecto de “juramento del lamparero” durante 20 s, el cual aumenta en un 5% la Prob. CRIT de los ataques que infligen <geo>Daño Geo</geo> y en un 10% su Daño CRIT.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "3": "La Maestría Elemental de los personajes afectados por juramento del lamparero aumenta en 50 pts."
+    }
+  },
+  "passive2": {
+    "name": "Crepúsculo del cazador de demonios",
+    "description": {
+      "0": "Fortalece los efectos de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>canto del ruiseñor</strong></tooltip>, de manera que, cuando en el equipo haya 1/2/3 personajes <hydro>Hydro</hydro> o <geo>Geo</geo>, canto del ruiseñor incrementará aún más el daño infligido en una cantidad equivalente al 7/14/24% de la Maestría Elemental de Illuga. Si dicho daño es causado por la reacción de Cristalización Lunar, el aumento de daño será equivalente al 48/96/160% de la Maestría Elemental de Illuga."
+    }
+  },
+  "passive3": {
+    "name": "Bendición presagiolunar: Invierno perenne",
+    "description": {
+      "0": "Cuando Illuga esté en el equipo, el nivel de <strong>presagio lunar</strong> de los personajes aumentará en 1."
+    }
+  },
+  "passive": {
+    "name": "Marcha del vigilante nocturno",
+    "description": {
+      "0": "Tus personajes del equipo obtienen el efecto de “paso ligero”, de manera que su Vel. Movimiento aumenta en un 10% por la noche (18-06 h).",
+      "1": "Este efecto no se activará en dominios, Dominios de la cruzada y la Espiral del Abismo, y no se puede acumular con otros efectos de paso ligero.",
+      "2": "Además, parece que Illuga es capaz de entender los susurros de la Cacería salvaje..."
+    }
+  },
+  "constellation1": {
+    "name": "Faisán centinela",
+    "description": {
+      "0": "Cuando Illuga causa una <geo>Reacción Elemental Geo</geo> mientras está en uso, recuperará 12 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 15 s."
+    }
+  },
+  "constellation2": {
+    "name": "Alce astadevorador",
+    "description": {
+      "0": "Mientras el efecto de canto nochembrujado del oriol de la Habilidad Definitiva, <tooltip ns=char_Illuga_gen baseKey18=burst><strong>Reflejo sin sombra</strong></tooltip>, esté activo, cada vez que se consuman 7 cargas de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>canto del ruiseñor</strong></tooltip>, Illuga invocará a Aedón para infligir una vez <geo>Daño Geo</geo> a un enemigo cercano en una cantidad equivalente al 400% de la Maestría Elemental de Illuga y el 200% de su DEF. Este daño se considera daño de Habilidad Definitiva."
+    }
+  },
+  "constellation3": {
+    "name": "Fauces estremecedoras",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflejo sin sombra</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lobo acechasoles",
+    "description": {
+      "0": "Mientras el efecto de canto nochembrujado del oriol de la Habilidad Definitiva, <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflejo sin sombra</tooltip></strong>, esté activo, la DEF de los personajes en uso cercanos del equipo aumenta en 200 pts."
+    }
+  },
+  "constellation5": {
+    "name": "Corcel ululante",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Ruiseñor del amanecer</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Orioles de la Pesadilla",
+    "description": {
+      "0": "Fortalece el efecto de juramento del lamparero del talento de ascensión <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>Pacto del Forjador de Lámparas</tooltip></strong>, de manera que la Prob. CRIT de los ataques que infligen <geo>Daño Geo</geo> aumenta en un 10%, y el Daño CRIT de dichos ataques aumenta en un 30%.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "3": "La Maestría Elemental de los personajes afectados por juramento del lamparero aumenta en 80 pts.",
+      "4": "Es necesario desbloquear el talento de ascensión <strong>Pacto del Forjador de Lámparas</strong>."
+    }
+  }
+}

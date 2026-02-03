@@ -168,7 +168,7 @@
   "lockedPassive": {
     "name": "Foreign Aqualis",
     "description": {
-      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <strong>buffs</strong>.",
+      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>buffs</strong></tooltip>.",
       "1": "<br/>",
       "2": "Additionally, when nearby party members' current HP increases or decreases by 5%, Traveler will receive 1 stack of Blade of Many Waters. You can gain 1 stack of Blade of Many Waters this way once every 4s, max 3 stacks. After obtaining 3 stacks of Blade of Many Waters, performing a Charged Attack will consume all stacks of Blade of Many Waters and transform into the special <strong>Charged Attack: Tidebound</strong>.",
       "3": "<br/>",

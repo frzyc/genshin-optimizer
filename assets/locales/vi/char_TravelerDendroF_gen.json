@@ -113,7 +113,7 @@
   "lockedPassive": {
     "name": "Huệ Thảo Dị Bang",
     "description": {
-      "0": "Đúc kết sức mạnh mới từ những chuyến hành trình đã qua. Khi cộng hưởng với mỗi loại nguyên tố, sẽ nhận được <strong>hiệu quả cường hóa</strong> thêm.",
+      "0": "Đúc kết sức mạnh mới từ những chuyến hành trình đã qua. Khi cộng hưởng với mỗi loại nguyên tố, sẽ nhận được <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>hiệu quả cường hóa</strong></tooltip> thêm.",
       "1": "<br/>",
       "2": "Ngoài ra, khi tạo ra Hạt Nhân Thảo trong trận ở gần (bao gồm Hạt Nhân Căng Tràn, Hạt Dối Trá), hoặc khi đội nhận được Sương Xanh, Nhà Lữ Hành sẽ nhận được 1 tầng \"Lưỡi Đao Hoa Lan\". Hai cách thức trên mỗi 4s tối đa khiến Nhà Lữ Hành nhận 1 tầng Lưỡi Đao Hoa Lan riêng biệt, tối đa cộng dồn 3 tầng. Khi có 3 tầng Lưỡi Đao Hoa Lan và thực hiện Trọng Kích, sẽ tiêu hao toàn bộ Lưỡi Đao Hoa Lan và chuyển sang thực hiện <strong>Trọng Kích - Ân Thảo</strong> đặc biệt.",
       "3": "<br/>",

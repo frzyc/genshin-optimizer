@@ -1,0 +1,329 @@
+{
+  "10050001": {
+    "name": "Additional Buff Effects",
+    "description": {
+      "0": "The Traveler gains an attribute bonus for every element they have resonated with: ",
+      "1": "<anemo>Anemo</anemo>: CRIT Rate is increased by 10%,",
+      "2": "<geo>Geo</geo>: DEF is increased by 20%,",
+      "3": "<electro>Electro</electro>: Energy Recharge is increased by 20%, ",
+      "4": "<dendro>Dendro</dendro>: Elemental Mastery is increased by 60,",
+      "5": "<hydro>Hydro</hydro>: HP is increased by 20%,",
+      "6": "<pyro>Pyro</pyro>: ATK is increased by 20%,",
+      "7": "<cryo>Cryo</cryo>: CRIT DMG is increased by 20%."
+    }
+  },
+  "11120001": {
+    "name": "Cold Storage Mode",
+    "description": {
+      "0": "<strong>Tap</strong>",
+      "1": "Activates her All-Spectrum Multi-Use Cooking Mek in its Cold Storage mode and deals <cryo>AoE Cryo DMG</cryo> to nearby opponents.",
+      "2": "<br/>",
+      "3": "<strong>Cooking Mek: Cold Storage Mode</strong>",
+      "4": "Follows the current active character and fires Frosty Parfaits at nearby opponents at intervals, dealing <cryo>Cryo DMG</cryo>."
+    }
+  },
+  "11120002": {
+    "name": "Off-the-Cuff Cookery Mode",
+    "description": {
+      "0": "<strong>Cooking Mek: Off-the-Cuff Cookery Mode</strong>",
+      "1": [
+        " Places the Cooking Mek on the field. The Cooking Mek can absorb elemental attacks. When the absorbed elemental energy hits a certain limit, Escoffier can convert the ingredients placed within it into wonderful food.",
+        " Escoffier needs time to purchase new ingredients, so she can only make a certain number of dishes like this each week. The number of dishes Escoffier can make resets every Monday at 4:00 AM."
+      ]
+    }
+  },
+  "11130001": {
+    "name": "Supporting Fire",
+    "description": {
+      "0": "In the Nightsoul's Blessing State, Ifa's Normal Attacks will turn into Supporting Fire.",
+      "1": "<strong>Tap</strong>",
+      "2": "Fires a Tonicshot.",
+      "3": "<strong>Hold</strong>",
+      "4": "Continuously fires Tonicshots.",
+      "5": "<strong>Tonicshot</strong>",
+      "6": "Deals Nightsoul-aligned <anemo>Anemo DMG</anemo>, and will heal all nearby party members based on Ifa's Elemental Mastery upon hitting an opponent."
+    }
+  },
+  "11130002": {
+    "name": "Rescue Essentials",
+    "description": {
+      "0": "Max 150 points. Each Rescue Essentials point Ifa has will increase the Swirl and Electro-Charged DMG dealt by nearby party members by 1.5%, and their Lunar-Charged DMG dealt by 0.2%. These points will be cleared when his Nightsoul's Blessing state ends."
+    }
+  },
+  "11130003": {
+    "name": "Nightsoul's Blessing: Ifa",
+    "description": {
+      "0": "Continuously consumes Nightsoul points. This state will end when Ifa runs out of Nightsoul points or if he uses this skill again. His Nightsoul's Blessing state has the following properties:",
+      "1": [
+        " Hovers with Cacucu's help, increasing Ifa's Movement SPD and interruption resistance. In this state, Ifa will continuously consume Nightsoul points to maintain this hovering state. If he sprints or accelerates, he will consume additional points.",
+        " When he uses Normal Attacks, he will use different kinds of Supporting Fire depending on whether you Tap or Hold."
+      ]
+    }
+  },
+  "11130004": {
+    "name": "Sedation Mark",
+    "description": {
+      "0": "This effect will explode after a short delay and disappear, dealing AoE DMG aligned with the corresponding element. The Therapeutic Sedative can apply Sedation Marks to a maximum of 4 hit opponents. A single opponent cannot receive Marks of different elements simultaneously."
+    }
+  },
+  "11130005": {
+    "name": "Serpent's Subtlety",
+    "description": {
+      "0": "Skirk can consume Serpent's Subtlety to maintain her Seven-Phase Flash mode or to use her Elemental Burst, Havoc: Ruin.",
+      "1": "<br/>",
+      "2": "Skirk can gain Serpent's Subtlety points in the following ways:",
+      "3": [
+        " After using her Elemental Skill, Havoc: Warp.",
+        " After triggering the effect of her Ascension Talent, Reason Beyond Reason, and absorbing Void Rifts."
+      ],
+      "4": "<br/>",
+      "5": "When Skirk leaves the field while in Seven-Phase Flash mode or when Seven-Phase Flash ends, her Serpent's Subtlety points will be removed."
+    }
+  },
+  "11130006": {
+    "name": "Seven-Phase Flash",
+    "description": {
+      "0": "Skirk will switch to this mode for a fixed time when using the Elemental Skill <strong>Havoc: Warp</strong>. This mode has the following properties:",
+      "1": [
+        " Continuously consumes Serpent's Subtlety.",
+        " Increases Normal and Charged Attack AoE and Skirk's interruption resistance.",
+        " Normal, Charged, and Plunging Attacks are converted to <cryo>Cryo DMG</cryo> that cannot be overridden by other Elemental infusions.",
+        " Her Elemental Burst, <strong>Havoc: Ruin</strong> is converted to the special Elemental Burst <strong>Havoc: Extinction</strong>.",
+        " Skirk can move on water when she Sprints.",
+        " Skirk will exit this mode when Serpent's Subtlety is fully depleted or its duration ends. Then, the Elemental Skill will go on cooldown."
+      ]
+    }
+  },
+  "11130007": {
+    "name": "Reason Beyond Reason",
+    "description": {
+      "0": "When nearby party members trigger Frozen, Superconduct, Cryo Swirl, or Cryo Crystallize reactions against opponents, a Void Rift will be created near this opponent. This effect can be triggered once every 2.5s. A maximum of 3 Void Rifts created by Skirk herself can exist on the field at once.",
+      "1": "<br/>",
+      "2": "Skirk can use the following methods to absorb nearby Void Rifts:",
+      "3": [
+        " When she hits an opponent with a Charged Attack in her Seven-Phase Flash mode.",
+        " When she uses the special Elemental Burst <strong>Havoc: Extinction</strong> while in Seven-Phase Flash mode.",
+        " When she Holds her Elemental Skill <strong>Havoc: Warp</strong> to engage in rapid movement."
+      ],
+      "4": "<br/>",
+      "5": "Each Rift absorbed will grant her 8 Serpent's Subtlety points."
+    }
+  },
+  "11130008": {
+    "name": "Return to Oblivion",
+    "description": {
+      "0": "When nearby <hydro>Hydro</hydro> party members' <hydro>Hydro</hydro> attacks hit opponents, or when nearby <cryo>Cryo</cryo> party members apart from Skirk hit opponents with <cryo>Cryo</cryo> attacks, Skirk will gain the \"Death's Crossing\" effect for 20s. Max 3 stacks, each stack's duration is counted independently.",
+      "1": "Each character can grant Skirk at most 1 \"Death's Crossing\" stack by this means.",
+      "2": "Each \"Death's Crossing\" stack increases the Normal Attack DMG dealt by Skirk in Seven-Phase Flash mode to 110%/120%/170% of its original DMG and the DMG dealt when using her Elemental Burst <strong>Havoc: Ruin</strong> to 105%/115%/160% of its original DMG."
+    }
+  },
+  "11130009": {
+    "name": "Sacramental Shower",
+    "description": {
+      "0": "When opponents or nearby party members touch the Sacramental Shower, different effects will occur depending on the one who touches it:",
+      "1": "If an opponent touches the Shower, it will explode and deal <hydro>AoE Hydro DMG</hydro> to nearby opponents.",
+      "2": "If a nearby party member touches it, it will bounce the one who touches it high in the air.",
+      "3": "<br/>",
+      "4": "Only 1 Sacramental Shower summoned by Dahlia himself can be on the field at once."
+    }
+  },
+  "11130010": {
+    "name": "Favonian Favor",
+    "description": {
+      "0": "Dahlia will apply this effect to his own party members when unleashing his Elemental Burst <strong>Radiant Psalter</strong>.",
+      "1": "While this effect is active, 1 Benison stack may be consumed to summon a new Shield of Sacred Favor when the existing Shield expires or is broken via DMG."
+    }
+  },
+  "11130011": {
+    "name": "Benison",
+    "description": {
+      "0": "Dahlia can obtain Benison via the following methods:",
+      "1": [
+        " He will gain X Benison stacks when his own active party member hits opponents 4 times with Normal Attacks while affected by Favonian Favor.",
+        " After triggering the effect of his Ascension Talent, \"The Wind's Gentle Grace.\""
+      ],
+      "2": "<br/>",
+      "3": "Dahlia can gain a maximum of X Benison stacks per Favonian Favor duration."
+    }
+  },
+  "11160001": {
+    "name": "Birgitta",
+    "description": {
+      "0": "Ineffa's assistant and companion in battle, she can be summoned to the battlefield via Elemental Skill or Elemental Burst.",
+      "1": "If there are opponents nearby, Birgitta will quickly move close to an opponent and unleash Discharge attacks every 2s, dealing <electro>AoE Electro DMG</electro>.",
+      "2": "Only one Birgitta that has been summoned by Ineffa herself can exist at any one time.",
+      "3": "<br/>",
+      "4": "Additionally, in Nod-Krai, it seems you'll be able to change Birgitta's appearance through certain means..."
+    }
+  },
+  "11190001": {
+    "name": "Frostgrove Sanctuary",
+    "description": {
+      "0": "A magical array that protects the Moonchanters and can be summoned by using the Elemental Skill <strong>Runo: Dawnless Rest of Karsikko</strong>.",
+      "1": "The Frostgrove Sanctuary will follow the active character, dealing a single instance of <dendro>AoE Dendro DMG</dendro> to opponents within the array every 2s. This DMG is considered Elemental Skill DMG."
+    }
+  },
+  "11190002": {
+    "name": "Moon Song",
+    "description": {
+      "0": "A melody used to weave together hymns. When an Elemental Burst is used, or for a period of time after an Elemental Burst has been used, it can be converted into Pale Hymn stacks that increase the DMG from Bloom, Hyperbloom, Burgeon, and Lunar-Bloom reactions.",
+      "1": "When Lauma consumes Verdant Dew to perform the Hold version of her Elemental Skill <strong>Runo: Dawnless Rest of Karsikko</strong>, each Verdant Dew consumed will provide Lauma with 1 stack of Moon Song."
+    }
+  },
+  "11190003": {
+    "name": "Pale Hymn",
+    "description": {
+      "0": "A hymn passed down by generations of Moonchanters that increases the DMG dealt by Bloom, Hyperbloom, Burgeon, and Lunar-Bloom reactions.",
+      "1": "<br/>",
+      "2": "Lauma can gain Pale Hymn stacks in the following ways:",
+      "3": [
+        " When using her Elemental Burst <strong>Runo: All Hearts Become the Beating Moon</strong>.",
+        " When consuming Moon Song stacks due to using her Elemental Burst <strong>Runo: All Hearts Become the Beating Moon</strong>.",
+        " When the Frostgrove Sanctuary triggers the effect of her Constellation <strong>\"I Offer Blood and Tears to the Moonlight\"</strong>."
+      ],
+      "4": "<br/>",
+      "5": "When party members deal Bloom, Hyperbloom, Burgeon, or Lunar-Bloom DMG, 1 stack of Pale Hymn will be consumed and the DMG dealt will be increased based on Lauma's Elemental Mastery. If this DMG hits multiple opponents at once, then multiple stacks of Pale Hymn will be consumed, depending on how many opponents are hit.",
+      "6": "The duration for each stack of Pale Hymn is counted independently."
+    }
+  },
+  "11190004": {
+    "name": "Dusktide Vigil",
+    "description": {
+      "0": "Bloom, Hyperbloom, and Burgeon DMG dealt by party members can score CRIT Hits, with CRIT Rate fixed at 15%, and CRIT DMG fixed at 100%. CRIT Rate from this effect stacks with CRIT Rate from similar effects that allow these Elemental Reactions to CRIT."
+    }
+  },
+  "11190005": {
+    "name": "Moonlight Prayer",
+    "description": {
+      "0": "Party members' Lunar-Bloom DMG CRIT Rate +10%, CRIT DMG +20%"
+    }
+  },
+  "11190007": {
+    "name": "Elevation",
+    "description": {
+      "0": "Special DMG Boost effect. It is calculated independently of other DMG Boost effects."
+    }
+  },
+  "11190008": {
+    "name": "Verdant Dew",
+    "description": {
+      "0": "When party members trigger Lunar-Bloom reactions, the party will receive such a resource.",
+      "1": "Your party will receive 1 Verdant Dew every 2.5s for 2.5s after triggering a Lunar-Bloom reaction. Your party can have up to 3 Verdant Dew. If you trigger another Lunar-Bloom reaction during this time, the duration of this effect will be reset."
+    }
+  },
+  "11200001": {
+    "name": "Thunderous Symphony",
+    "description": {
+      "0": "Consume less Elemental Energy to unleash a special Elemental Burst. Flins deals a single instance of <electro>AoE Electro DMG</electro>. This DMG is considered Lunar-Charged DMG.",
+      "1": "<strong>Moonsign: Ascendant Gleam</strong>: If there are thunderclouds nearby, Flins will deal 1 additional instance of <electro>AoE Electro DMG</electro>. This DMG is considered Lunar-Charged DMG."
+    }
+  },
+  "11220001": {
+    "name": "Shadow Dance",
+    "description": {
+      "0": "After using the Elemental Skill <strong>Senet Strategy: Dance of a Thousand Nights</strong>, Nefer will enter this state.",
+      "1": "While in the Shadow Dance state, if you have at least 1 Verdant Dew, Nefer's Charged Attacks will be replaced with the special Charged Attack Phantasm Performance.",
+      "2": "Nefer will exit the Shadow Dance state when she unleashes 3 Phantasm Performance(s) or the state's duration ends."
+    }
+  },
+  "11220002": {
+    "name": "Phantasm Performance",
+    "description": {
+      "0": "When in the Shadow Dance state caused by her Elemental Skill <strong>Senet Strategy: Dance of a Thousand Nights</strong>, if you have at least 1 Verdant Dew, Nefer's Charged Attacks will be replaced with the special Charged Attack Phantasm Performance, which will not consume Stamina.",
+      "1": "Nefer summons shades of herself to perform Coordinated Attacks against enemies. Nefer and the shades will deal 2 and 3 stages of <dendro>AoE Dendro DMG</dendro> respectively. DMG dealt by the shades is considered Lunar-Bloom DMG. 1 Verdant Dew will be consumed the first time shades are summoned after every Phantasm Performance."
+    }
+  },
+  "11220003": {
+    "name": "Veil of Falsehood",
+    "description": {
+      "0": "After absorbing Seeds of Deceit via the Ascension Talent A Wager of Moonlight, Nefer gains this effect, thereby increasing the DMG dealt by her Phantasm Performance.",
+      "1": "Each stack of Veil of Falsehood increases the DMG dealt by Nefer's Phantasm Performance by 8%. The initial maximum number of stacks is 3, with each stack lasting for 9s (each stack's duration is counted independently)."
+    }
+  },
+  "11230001": {
+    "name": "Essential Transmutation",
+    "description": {
+      "0": "After unleashing the Elemental Skill <strong>Binary Form: Convergence and Division</strong>, Durin gains this effect for 6s.",
+      "1": "While the effect is active, press the Elemental Skill button to enter the <strong>Confirmation of Purity</strong> state, or press the Normal Attack button to enter the <strong>Denial of Darkness</strong> state.",
+      "2": "Durin will gain different buffs and can unleash different Elemental Bursts while in these states."
+    }
+  },
+  "11240001": {
+    "name": "Purr-loined Treasure Flask",
+    "description": {
+      "0": "A small elemental vessel that Jahoda retrieves after casting her Elemental Skill <strong>Savvy Strategy: Splitting the Spoils</strong>.",
+      "1": "While Jahoda is in the Shadow Pursuit state, if nearby opponents are affected by <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, or <cryo>Cryo</cryo>, the Purr-loined Treasure Flask will convert to that element and begin filling up. The order of priority that determines which element will be converted to is: <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, then <cryo>Cryo</cryo>. After each use of her Elemental Skill, the Purr-loined Treasure Flask can undergo one such conversion.",
+      "2": "When the Purr-loined Treasure Flask is full, Jahoda immediately drains it, exiting the Shadow Pursuit state and dealing a single instance of <anemo>Anemo DMG</anemo> to nearby opponents.",
+      "3": "Each time the Elemental Skill is cast, Jahoda takes out a brand-new Purr-loined Treasure Flask.",
+      "4": "<br/>",
+      "5": "<strong>Moonsign: Ascendant Gleam</strong>: When the <strong>Purr-loined Treasure Flask</strong> becomes full, Jahoda will not immediately discharge it. Instead, for a short duration, she steadily consumes the stored element inside and periodically fires <strong>Fluffy Meowballs</strong> at nearby opponents, dealing DMG of the corresponding element stored in the <strong>Purr-loined Treasure Flask</strong>."
+    }
+  },
+  "11240002": {
+    "name": "Purrsonal Coordinated Assistance Robots",
+    "description": {
+      "0": "One of the gadgets that Jahoda — a former treasure hunter — carries around with her. It is deployed upon using her Elemental Burst <strong>Hidden Aces: Seven Tools of the Hunter</strong>.",
+      "1": "Purrsonal Coordinated Assistance Robots continuously restore HP to your active character. If the healed character's HP is above 70%, they also restore HP to the nearby party member with the lowest HP.",
+      "2": "<br/>",
+      "3": "<strong>Moonsign: Ascendant Gleam</strong>: If nearby opponents are affected by <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, or <cryo>Cryo</cryo>, Purrsonal Coordinated Assistance Robots will convert to that element. The order of priority that determines which element will be converted to is: <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, then <cryo>Cryo</cryo>. After each deployment, a Purrsonal Coordinated Assistance Robot can undergo one such conversion. After converting, the Purrsonal Coordinated Assistance Robot will periodically attack up to 3 nearby opponents, dealing damage of the corresponding element."
+    }
+  },
+  "11250001": {
+    "name": "Gravity Ripple",
+    "description": {
+      "0": "After unleashing Elemental Skill <strong>Eternal Tides</strong>, Columbina will summon <strong>Gravity Ripple</strong>.",
+      "1": "Gravity Ripple will follow the current active character on the field, while continuously dealing <hydro>AoE Hydro DMG</hydro> to surrounding opponents.",
+      "2": "<br/>",
+      "3": "Additionally, while Gravity Ripple is on the field, and nearby party members trigger Lunar reactions or inflict Lunar Reaction DMG, Columbina will gain the New Moon's Omen effect for 2s, continuously accumulating <strong>Gravity</strong>. 20 Gravity can be accumulated every 2s.",
+      "4": "You can have up to 60 Gravity, and it will be removed when the duration of Gravity Ripple ends.",
+      "5": "Once Gravity is accumulated to its limit, a special <strong>Gravity Interference</strong> will be triggered. Different effects will be triggered depending on the Lunar reaction type that has accumulated the most Gravity for Columbina. If the Lunar reaction type that has accumulated the most Gravity for Columbina is:",
+      "6": [
+        " <strong>Lunar-Charged</strong>: Gravity Interference will deal a single instance of <electro>Electro AoE DMG</electro>. This DMG is considered Lunar-Charged DMG. ",
+        " <strong>Lunar-Bloom</strong>: Gravity Interference will fire 5 Moondew Sigils at surrounding opponents, dealing <dendro>Dendro DMG</dendro>. This DMG is considered Lunar-Bloom DMG.",
+        " <strong>Lunar-Crystallize</strong>: Gravity Interference will deal a single instance of <geo>Geo AoE DMG</geo>. This DMG is considered Lunar-Crystallize DMG."
+      ]
+    }
+  },
+  "11250002": {
+    "name": "Lunar Domain",
+    "description": {
+      "0": "The domain that Columbina summons after unleashing the Elemental Burst <strong>Moonlit Melancholy</strong>.",
+      "1": "When current active characters are within the <strong>Lunar Domain</strong>, Lunar Reaction DMG inflicted by all party members will increase."
+    }
+  },
+  "11250003": {
+    "name": "Moonridge Dew",
+    "description": {
+      "0": "A special Verdant Dew resource provided by Columbina's Passive Talent, <strong>Law of the New Moon</strong>. Its maximum capacity and duration are calculated separately from Verdant Dew.",
+      "1": "When the party's Verdant Dew is expended, <strong>Moonridge Dew</strong> will be consumed instead.",
+      "2": "Your party can have up to 3 <strong>Moonridge Dew</strong>."
+    }
+  },
+  "11260001": {
+    "name": "Lunar Phase Shift",
+    "description": {
+      "0": "After using the Elemental Skill <strong>Heaven and Earth Made Manifest</strong>, Zibai will change to this mode. This mode lasts at most 15s and has the following properties:",
+      "1": [
+        " Normal and Charged Attacks are converted into <geo>Geo DMG</geo> that cannot be overridden by other infusions.",
+        " The Elemental Skill <strong>Heaven and Earth Made Manifest</strong> will also be converted to the Elemental Skill <strong>Spirit Steed's Stride</strong>: When Zibai has at least 70 <strong>Phase Shift Radiance</strong>, she can consume 70 Phase Shift Radiance to unleash Spirit Steed's Stride and cause two instances of <geo>Geo DMG</geo>. The second instance will be considered Lunar-Crystallize Reaction DMG."
+      ],
+      "2": "<br/>",
+      "3": "A maximum of 100 <strong>Phase Shift Radiance</strong> points can be accrued, and Zibai can accumulate them in the following ways:",
+      "4": [
+        " She gains 10 points every second she is in the <strong>Lunar Phase Shift</strong> mode.",
+        " She gains 5 points when hitting an opponent with her Normal Attacks. She can gain Phase Shift Radiance points in this way once every 0.5s."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Moonsign: Ascendant Gleam</strong>",
+      "7": "When nearby party members trigger Lunar-Crystallize, they will also accrue 35 <strong>Phase Shift Radiance</strong> points for Zibai. Points can be gained this way once every 4s. Unleashing the special elemental skill <strong>Spirit Steed's Stride</strong> will reset the CD for <strong>Phase Shift Radiance</strong> gained this way.",
+      "8": "<br/>",
+      "9": "Zibai will leave this mode after unleashing <strong>Spirit Steed's Stride</strong> 4 times, or when the skill's duration ends."
+    }
+  },
+  "11270001": {
+    "name": "Nightingale's Song",
+    "description": {
+      "0": "The effect gained after Illuga unleashes his Elemental Burst <strong>Shadowless Reflection</strong>. It can increase the <geo>Geo DMG</geo> inflicted by current active characters."
+    }
+  }
+}

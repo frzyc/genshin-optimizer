@@ -113,7 +113,7 @@
   "lockedPassive": {
     "name": "Verdeluce straniera",
     "description": {
-      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <strong>effetti positivi aggiuntivi</strong> per ogni elemento con cui hai risuonato.",
+      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effetti positivi aggiuntivi</strong></tooltip> per ogni elemento con cui hai risuonato.",
       "1": "<br/>",
       "2": "Inoltre, quando i nuclei di Dendro (inclusi Nuclei munifici e Semi dell'inganno) appaiono nelle vicinanze o quando il gruppo ottiene Rugiada verdeggiante, {F#la viaggiatrice}{M#il viaggiatore} ottiene 1 accumulo di Lama della Prosperità virente. Ciascuno di questi due metodi può fornire non più di 1 accumulo ogni 4 s, fino a un massimo di 3 accumuli. Dopo aver raggiunto il numero massimo di accumuli, sferrare un attacco caricato li consuma tutti e trasforma l'attacco in un <strong>Attacco caricato: Verdessenza</strong> speciale.",
       "3": "<br/>",
