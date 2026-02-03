@@ -95,6 +95,7 @@ import KeyOfKhajNisut from './KeyOfKhajNisut'
 import KingsSquire from './KingsSquire'
 import KitainCrossSpear from './KitainCrossSpear'
 import LightOfFoliarIncision from './LightOfFoliarIncision'
+import LightbearingMoonshard from './LightbearingMoonshard'
 import LionsRoar from './LionsRoar'
 import LithicBlade from './LithicBlade'
 import LithicSpear from './LithicSpear'
@@ -253,6 +254,7 @@ const data: TagMapNodeEntries[] = [
   IronSting,
   KagotsurubeIsshin,
   KeyOfKhajNisut,
+  LightbearingMoonshard,
   LightOfFoliarIncision,
   LionsRoar,
   MistsplitterReforged,

@@ -38,6 +38,7 @@ export type AvatarAssocType =
   | 'ASSOC_TYPE_MAINACTOR'
   | 'ASSOC_TYPE_RANGER'
   | 'ASSOC_TYPE_NODKRAI'
+  | 'ASSOC_TYPE_NODKRAI_ZIBAI'
 type Regionkey =
   | 'mondstadt'
   | 'liyue'
@@ -60,6 +61,7 @@ export const regionMap: Record<AvatarAssocType, Regionkey | undefined> = {
   ASSOC_TYPE_MAINACTOR: undefined, // Traveler
   ASSOC_TYPE_RANGER: undefined, // Aloy
   ASSOC_TYPE_NODKRAI: 'nodKrai',
+  ASSOC_TYPE_NODKRAI_ZIBAI: 'nodKrai',
 }
 
 export const characterIdMap: Record<
@@ -178,6 +180,8 @@ export const characterIdMap: Record<
   10000123: 'Durin',
   10000124: 'Jahoda',
   10000125: 'Columbina',
+  10000126: 'Zibai',
+  10000127: 'Illuga',
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
