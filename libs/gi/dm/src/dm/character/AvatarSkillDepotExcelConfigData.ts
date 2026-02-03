@@ -30,13 +30,11 @@ type AvatarSkillDepotExcelConfigDataObf = {
     {}
   ],*/
   // unlocked proudskills
-  [deobfPropMappings.lockedProudSkillOpens]: [
-    {
-      [deobfPropMappings.numberArray]: number[] // no clue, prob related to proudSkillId [ 1000701 ],
-      [deobfPropMappings.unlockCondition]: string // unlock condition "SPECIAL_PROUD_SKILL_OPEN_CONDITION_TYPE_QUEST_FINISH",
-      proudSkillGroupId: number // 2251
-    },
-  ]
+  [deobfPropMappings.lockedProudSkillOpens]: {
+    [deobfPropMappings.numberArray]: number[] // no clue, prob related to proudSkillId [ 1000701 ],
+    [deobfPropMappings.unlockCondition]: string // unlock condition "SPECIAL_PROUD_SKILL_OPEN_CONDITION_TYPE_QUEST_FINISH",
+    proudSkillGroupId: number // 2251
+  }[]
   skillDepotAbilityGroup: string //""
 }
 export type AvatarSkillDepotExcelConfigData = {
