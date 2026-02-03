@@ -71,7 +71,7 @@
   "burst": {
     "name": "Reflexo Vazio",
     "description": {
-      "0": "Acende uma lâmpada, causando <geo>Dano Geo em AdE</geo> e obtendo o efeito Pesadelo de Luscinia por 20s. Nessa duração, Illuga obtém 21 acúmulos de <strong>Canção de Luscinia</strong>. Quando o Ataque Normal, Carregado, Imersivo, a Habilidade Elemental ou o Supremo do personagem ativo próximo causar <geo>Dano Geo</geo> contra o inimigo, consome 1 acúmulo de Canção de Luscinia, aumentando o Dano causado. O valor do aumento é baseado na Proficiência Elemental de Illuga. Se esse Dano for Dano de Cristalização Lunar, aumenta ainda mais o Dano causado.",
+      "0": "Acende uma lâmpada, causando <geo>Dano Geo em AdE</geo> e obtendo o efeito Pesadelo de Luscinia por 20s. Nessa duração, Illuga obtém 21 acúmulos de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Canção de Luscinia</strong></tooltip>. Quando o Ataque Normal, Carregado, Imersivo, a Habilidade Elemental ou o Supremo do personagem ativo próximo causar <geo>Dano Geo</geo> contra o inimigo, consome 1 acúmulo de Canção de Luscinia, aumentando o Dano causado. O valor do aumento é baseado na Proficiência Elemental de Illuga. Se esse Dano for Dano de Cristalização Lunar, aumenta ainda mais o Dano causado.",
       "1": "Quando o <geo>Dano Geo</geo> acima atingir mais de um inimigo simultaneamente, consumirá acúmulos de Canção de Luscinia correspondentes a quantidade de inimigos atingidos.",
       "2": "<br/>",
       "3": "Além disso, quando Illuga é o personagem ativo e há uma <geo>Construção Geo</geo> criada por um personagem próximo e lançar seu Supremo, ou na duração do Pesadelo de Luscinia, e quando o personagem próximo criar uma <geo>Construção Geo</geo>, cada <geo>Construção Geo</geo> ativa farão Illuga obter 5 acúmulos adicionais de Canção de Luscinia. Illuga pode obter até 15 acúmulos adicionais de Canção de Luscinia nos 20s após lançar um Supremo dessa forma.",
@@ -100,7 +100,7 @@
   "passive1": {
     "name": "Juramento do Iluminador",
     "description": {
-      "0": "Depois que lançar a Habilidade Elemental <strong>Pássaro da Canção Matinal</strong> ou o Supremo <strong>Reflexo Vazio</strong>, todos os outros personagens da equipe obtém o efeito Juramento da Lâmpada por 20s: aumenta a Taxa CRIT em 5% o Dano CRIT em 10% contra os inimigos que sofrerem <geo>Dano Geo</geo>.",
+      "0": "Depois que lançar a Habilidade Elemental <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Pássaro da Canção Matinal</tooltip></strong> ou o Supremo <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflexo Vazio</tooltip></strong>, todos os outros personagens da equipe obtém o efeito Juramento da Lâmpada por 20s: aumenta a Taxa CRIT em 5% o Dano CRIT em 10% contra os inimigos que sofrerem <geo>Dano Geo</geo>.",
       "1": "<br/>",
       "2": "<strong>Presságio Lunar: Reluzir Cheio</strong>",
       "3": "Personagens afetados por Juramento da Lâmpada obtêm 50 de Proficiência Elemental."
@@ -109,7 +109,7 @@
   "passive2": {
     "name": "Crepúsculo do Caçador de Demônios",
     "description": {
-      "0": "Fortalece o efeito de <strong>Canção de Luscinia</strong>: quando a equipe possuir 1/2/3 personagens <hydro>Hydro</hydro> ou <geo>Geo</geo>, Canção de Luscinia aumenta ainda mais o Dano. A quantidade aumentada é baseada em 7%/14%/24% da Proficiência Elemental de Illuga. Se o Dano causado for Dano de Cristalização Lunar, esse aumento será de 48%/96%/160% da Proficiência Elemental de Illuga."
+      "0": "Fortalece o efeito de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Canção de Luscinia</strong></tooltip>: quando a equipe possuir 1/2/3 personagens <hydro>Hydro</hydro> ou <geo>Geo</geo>, Canção de Luscinia aumenta ainda mais o Dano. A quantidade aumentada é baseada em 7%/14%/24% da Proficiência Elemental de Illuga. Se o Dano causado for Dano de Cristalização Lunar, esse aumento será de 48%/96%/160% da Proficiência Elemental de Illuga."
     }
   },
   "passive3": {
@@ -135,33 +135,33 @@
   "constellation2": {
     "name": "Alce com Chifres Pontudos",
     "description": {
-      "0": "Na duração do efeito Pesadelo de Luscinia do Supremo <strong>Reflexo Vazio</strong>, cada 7 acúmulos de <strong>Canção de Luscinia</strong> consumidos farão Illuga invocar Aedon para causar uma instância de <geo>Dano Geo</geo> contra um inimigo próximo. Esse Dano é equivalente a 400% da Proficiência Elemental e 200% da DEF de Illuga. Esse Dano é considerado Dano de Supremo."
+      "0": "Na duração do efeito Pesadelo de Luscinia do Supremo <tooltip ns=char_Illuga_gen baseKey18=burst><strong>Reflexo Vazio</strong></tooltip>, cada 7 acúmulos de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Canção de Luscinia</strong></tooltip> consumidos farão Illuga invocar Aedon para causar uma instância de <geo>Dano Geo</geo> contra um inimigo próximo. Esse Dano é equivalente a 400% da Proficiência Elemental e 200% da DEF de Illuga. Esse Dano é considerado Dano de Supremo."
     }
   },
   "constellation3": {
     "name": "Mordida Estremecedora",
     "description": {
-      "0": "Aumenta o nível do Supremo <strong>Reflexo Vazio</strong> em 3.",
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflexo Vazio</tooltip></strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation4": {
     "name": "Lobo Caçador do Sol",
     "description": {
-      "0": "Na duração do efeito Pesadelo de Luscinia do Supremo <strong>Reflexo Vazio</strong>, aumenta a DEF do personagem próximo ativo da equipe em 200."
+      "0": "Na duração do efeito Pesadelo de Luscinia do Supremo <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflexo Vazio</tooltip></strong>, aumenta a DEF do personagem próximo ativo da equipe em 200."
     }
   },
   "constellation5": {
     "name": "Alazão do Vento",
     "description": {
-      "0": "Aumenta o nível da Habilidade Elemental <strong>Pássaro da Canção Matinal</strong> em 3.",
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Pássaro da Canção Matinal</tooltip></strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation6": {
     "name": "Pássaro da Noite Assombrada",
     "description": {
-      "0": "Fortalece o efeito Juramento da Lâmpada do Talento de Ascensão <strong>Juramento do Iluminador</strong>: aumenta a Taxa CRIT em 10% e o Dano CRIT em 30% de <geo>Dano Geo</geo> causado contra inimigos.",
+      "0": "Fortalece o efeito Juramento da Lâmpada do Talento de Ascensão <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>Juramento do Iluminador</tooltip></strong>: aumenta a Taxa CRIT em 10% e o Dano CRIT em 30% de <geo>Dano Geo</geo> causado contra inimigos.",
       "1": "<br/>",
       "2": "<strong>Presságio Lunar: Reluzir Cheio</strong>",
       "3": "Quando o personagem está afetado por Juramento da Lâmpada, aumenta sua Proficiência Elemental em 80.",

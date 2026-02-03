@@ -41,7 +41,7 @@
   "skill": {
     "name": "Thiên Địa Hốt Nhiên Thân",
     "description": {
-      "0": "Đánh thức hình bóng quyền năng xưa cũ, chuyển sang chế độ <strong>Thời Khắc Nguyệt Chuyển</strong>.",
+      "0": "Đánh thức hình bóng quyền năng xưa cũ, chuyển sang chế độ <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Thời Khắc Nguyệt Chuyển</strong></tooltip>.",
       "1": "Trong chế độ này, khi Zibai thực hiện Tấn Công Thường và Trọng Kích, sẽ chuyển sang gây <geo>Sát Thương Nguyên Tố Nham</geo> không thể bị thay thế, và có thể thông qua cách thức khác nhau để tích lũy <strong>Ánh Sáng Lưu Chuyển</strong> đặc biệt. Zibai có thể tiêu hao Ánh Sáng Lưu Chuyển để thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>\"Linh Câu Phi Đạp\"</strong>.",
       "2": "<br/>",
       "3": "<strong>Nguyệt Triệu - Rực Sáng</strong>",
@@ -70,7 +70,7 @@
     "name": "Tam Viên Uy Nghi Pháp",
     "description": {
       "0": "Zibai xoay Lọng Hoa Thanh Huyền Thừa Dương, gây hai lần <geo>Sát Thương Nguyên Tố Nham</geo>, trong đó sát thương lần hai được xem là sát thương phản ứng Nguyệt-Kết Tinh.",
-      "1": "Khi thi triển, nếu Zibai trong chế độ <strong>Thời Khắc Nguyệt Chuyển</strong>, thì thời gian duy trì chế độ Thời Khắc Nguyệt Chuyển lần này sẽ kéo dài 1.7s."
+      "1": "Khi thi triển, nếu Zibai trong chế độ <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Thời Khắc Nguyệt Chuyển</strong></tooltip>, thì thời gian duy trì chế độ Thời Khắc Nguyệt Chuyển lần này sẽ kéo dài 1.7s."
     },
     "skillParams": {
       "0": "Sát thương kỹ năng lần 1",
@@ -94,7 +94,7 @@
   "passive1": {
     "name": "Nguyệt Hạ Tố Nga Giáng Tiên",
     "description": {
-      "0": "Khi thi triển Kỹ Năng Nguyên Tố <strong>Thiên Địa Hốt Nhiên Thân</strong>, hoặc khi nhân vật trong đội ở gần kích hoạt Trăng Trôi Hòa Tấu, Zibai sẽ nhận hiệu quả <strong>Thái Âm Giáng</strong> duy trì 4s: Tăng sát thương đòn thứ hai của <strong>Linh Câu Phi Đạp</strong> tương đương 60% Phòng Ngự của Zibai."
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Thiên Địa Hốt Nhiên Thân</tooltip></strong>, hoặc khi nhân vật trong đội ở gần kích hoạt Trăng Trôi Hòa Tấu, Zibai sẽ nhận hiệu quả <strong>Thái Âm Giáng</strong> duy trì 4s: Tăng sát thương đòn thứ hai của <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Linh Câu Phi Đạp</strong></tooltip> tương đương 60% Phòng Ngự của Zibai."
     }
   },
   "passive2": {
@@ -121,43 +121,43 @@
   "constellation1": {
     "name": "Xuất Bột Nhiên Nhi Nhập Liêu Nhiên",
     "description": {
-      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Thiên Địa Hốt Nhiên Thân</strong>, Zibai lập tức tích lũy 100 điểm <strong>Ánh Sáng Lưu Chuyển</strong>, đồng thời số lần khả dụng tối đa của <strong>Linh Câu Phi Đạp</strong> trong chế độ <strong>Thời Khắc Nguyệt Chuyển</strong> sẽ tăng đến 5 lần.",
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Thiên Địa Hốt Nhiên Thân</tooltip></strong>, Zibai lập tức tích lũy 100 điểm <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Ánh Sáng Lưu Chuyển</strong></tooltip>, đồng thời số lần khả dụng tối đa của <strong>Linh Câu Phi Đạp</strong> trong chế độ <strong>Thời Khắc Nguyệt Chuyển</strong> sẽ tăng đến 5 lần.",
       "1": "Ngoài ra, sau mỗi lần chuyển sang chế độ Thời Khắc Nguyệt Chuyển, lần đầu thi triển Linh Câu Phi Đạp sẽ tăng 220% sát thương phản ứng Nguyệt-Kết Tinh gây ra bởi đòn thứ 2."
     }
   },
   "constellation2": {
     "name": "Hóa Vu Sinh Nhi Tử Vu Thi",
     "description": {
-      "0": "Khi trong chế độ <strong>Thời Khắc Nguyệt Chuyển</strong>, tất cả nhân vật trong đội ở gần sẽ tăng 30% sát thương phản ứng Nguyệt-Kết Tinh.",
+      "0": "Khi trong chế độ <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Thời Khắc Nguyệt Chuyển</strong></tooltip>, tất cả nhân vật trong đội ở gần sẽ tăng 30% sát thương phản ứng Nguyệt-Kết Tinh.",
       "1": "<br/>",
-      "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Hiệu quả thiên phú đột phá <strong>Nguyệt Hạ Tố Nga Giáng Tiên</strong> sẽ được tăng cường: Tăng thêm sát thương <strong>Linh Câu Phi Đạp</strong> đòn thứ 2, mức tăng tương đương 550% Phòng Ngự của Zibai. Hiệu quả này cần mở khóa thiên phú Nguyệt Hạ Tố Nga Giáng Tiên."
+      "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Hiệu quả thiên phú đột phá <strong><tooltip ns=char_Zibai_gen baseKey18=passive1>Nguyệt Hạ Tố Nga Giáng Tiên</tooltip></strong> sẽ được tăng cường: Tăng thêm sát thương <strong>Linh Câu Phi Đạp</strong> đòn thứ 2, mức tăng tương đương 550% Phòng Ngự của Zibai. Hiệu quả này cần mở khóa thiên phú Nguyệt Hạ Tố Nga Giáng Tiên."
     }
   },
   "constellation3": {
     "name": "Giải Thiên Thao Nhi Đọa Kỳ Trật",
     "description": {
-      "0": "Cấp kỹ năng <strong>Thiên Địa Hốt Nhiên Thân</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Thiên Địa Hốt Nhiên Thân</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation4": {
     "name": "Hồn Phách Vãng Nhi Thân Tòng Chi",
     "description": {
-      "0": "Khi trong chế độ <strong>Thời Khắc Nguyệt Chuyển</strong>, chuỗi liên kích Tấn Công Thường của Zibai sẽ không bị đặt lại, đồng thời khi <strong>Linh Câu Phi Đạp</strong> đánh trúng kẻ địch, Zibai sẽ nhận được hiệu quả <strong>\"Nguyệt Hoán Hoa\"</strong>: Lần sau thực hiện Tấn Công Thường, đòn tấn công thêm ở đòn thứ 4 sẽ gây sát thương phản ứng Nguyệt-Kết Tinh bằng 250% sát thương gốc."
+      "0": "Khi trong chế độ <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Thời Khắc Nguyệt Chuyển</strong></tooltip>, chuỗi liên kích Tấn Công Thường của Zibai sẽ không bị đặt lại, đồng thời khi <strong>Linh Câu Phi Đạp</strong> đánh trúng kẻ địch, Zibai sẽ nhận được hiệu quả <strong>\"Nguyệt Hoán Hoa\"</strong>: Lần sau thực hiện Tấn Công Thường, đòn tấn công thêm ở đòn thứ 4 sẽ gây sát thương phản ứng Nguyệt-Kết Tinh bằng 250% sát thương gốc."
     }
   },
   "constellation5": {
     "name": "Minh Kiến Vô Trị Chí Bất Luận",
     "description": {
-      "0": "Cấp kỹ năng <strong>Tam Viên Uy Nghi Pháp</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Zibai_gen baseKey18=burst>Tam Viên Uy Nghi Pháp</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation6": {
     "name": "Thiên Địa Hốt Như Nhất Viễn Hành",
     "description": {
-      "0": "Khi trong chế độ <strong>Thời Khắc Nguyệt Chuyển</strong>, hiệu suất tích lũy <strong>Ánh Sáng Lưu Chuyển</strong> của Zibai tăng 50%.",
-      "1": "Ngoài ra, <strong>Linh Câu Phi Đạp</strong> sẽ chuyển sang tiêu hao toàn bộ Ánh Sáng Lưu Chuyển, dựa trên phần Ánh Sáng Lưu Chuyển tiêu hao vượt quá 70 điểm, mỗi 1 điểm Ánh Sáng Lưu Chuyển tiêu hao thêm sẽ khiến sát thương Linh Câu Phi Đạp lần này và sát thương phản ứng Nguyệt-Kết Tinh gây ra bởi Zibai trong 3s tiếp theo <strong>Thăng Tiến</strong> 1.6%. Hiệu quả này không thể cộng dồn."
+      "0": "Khi trong chế độ <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Thời Khắc Nguyệt Chuyển</strong></tooltip>, hiệu suất tích lũy <strong>Ánh Sáng Lưu Chuyển</strong> của Zibai tăng 50%.",
+      "1": "Ngoài ra, <strong>Linh Câu Phi Đạp</strong> sẽ chuyển sang tiêu hao toàn bộ Ánh Sáng Lưu Chuyển, dựa trên phần Ánh Sáng Lưu Chuyển tiêu hao vượt quá 70 điểm, mỗi 1 điểm Ánh Sáng Lưu Chuyển tiêu hao thêm sẽ khiến sát thương Linh Câu Phi Đạp lần này và sát thương phản ứng Nguyệt-Kết Tinh gây ra bởi Zibai trong 3s tiếp theo <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Thăng Tiến</strong></tooltip> 1.6%. Hiệu quả này không thể cộng dồn."
     }
   }
 }

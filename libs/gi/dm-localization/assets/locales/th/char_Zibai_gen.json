@@ -41,7 +41,7 @@
   "skill": {
     "name": "Heaven and Earth Made Manifest",
     "description": {
-      "0": "ปลุกเงาแห่งพลังในอดีตกาล เปลี่ยนเป็นโหมด <strong>\"Lunar Phase Shift\" (ห้วงดิถีจันทร์)</strong>",
+      "0": "ปลุกเงาแห่งพลังในอดีตกาล เปลี่ยนเป็นโหมด <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>\"Lunar Phase Shift\" (ห้วงดิถีจันทร์)</strong></tooltip>",
       "1": "ในโหมดนี้ เมื่อ Zibai ใช้โจมตีปกติและชาร์จโจมตี จะเปลี่ยนเป็น<geo>ความเสียหายหิน</geo> ที่ไม่สามารถซ้อนทับด้วยธาตุอื่นได้ และสามารถสะสม <strong>Phase Shift Radiance</strong> พิเศษได้ด้วยวิธีการต่าง ๆ; Zibai สามารถใช้ Phase Shift Radiance เพื่อปล่อยสกิลธาตุพิเศษ <strong>Spirit Steed's Stride</strong>",
       "2": "<br/>",
       "3": "<strong>ลัคนาจันทร์ - จรัสแสง</strong>",
@@ -70,7 +70,7 @@
     "name": "Tri-Sphere Eminence",
     "description": {
       "0": "Zibai หมุนกลดหยกครามสุริยัน สร้าง<geo>ความเสียหายหิน</geo> 2 ครั้ง ซึ่งความเสียหายครั้งที่ 2 จะถูกนับเป็นความเสียหายที่เกิดจากปฏิกิริยาตกผลึกจันทรา",
-      "1": "หาก Zibai อยู่ในโหมด <strong>Lunar Phase Shift</strong> ในขณะที่ปล่อย จะขยายระยะเวลาต่อเนื่องของโหมด \"Lunar Phase Shift\" ในครั้งนี้ออกไป 1.7 วินาที"
+      "1": "หาก Zibai อยู่ในโหมด <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Lunar Phase Shift</strong></tooltip> ในขณะที่ปล่อย จะขยายระยะเวลาต่อเนื่องของโหมด \"Lunar Phase Shift\" ในครั้งนี้ออกไป 1.7 วินาที"
     },
     "skillParams": {
       "0": "ความเสียหายสกิลครั้งที่ 1",
@@ -94,7 +94,7 @@
   "passive1": {
     "name": "The Selenic Adeptus Descends",
     "description": {
-      "0": "เมื่อใช้สกิลธาตุ <strong>Heaven and Earth Made Manifest</strong> หรือเมื่อตัวละครในทีมที่อยู่ใกล้เคียงทำให้เกิด Moondrift Harmony แล้ว Zibai จะได้รับเอฟเฟกต์ <strong>\"Selenic Descent\"</strong> เป็นเวลา 4 วินาที: ความเสียหายที่เกิดจากการโจมตีครั้งที่ 2 ของ <strong>Spirit Steed's Stride</strong> จะเพิ่มขึ้น โดยค่าที่เพิ่มขึ้นเท่ากับ 60% ของพลังป้องกันของ Zibai"
+      "0": "เมื่อใช้สกิลธาตุ <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Heaven and Earth Made Manifest</tooltip></strong> หรือเมื่อตัวละครในทีมที่อยู่ใกล้เคียงทำให้เกิด Moondrift Harmony แล้ว Zibai จะได้รับเอฟเฟกต์ <strong>\"Selenic Descent\"</strong> เป็นเวลา 4 วินาที: ความเสียหายที่เกิดจากการโจมตีครั้งที่ 2 ของ <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Spirit Steed's Stride</tooltip></strong> จะเพิ่มขึ้น โดยค่าที่เพิ่มขึ้นเท่ากับ 60% ของพลังป้องกันของ Zibai"
     }
   },
   "passive2": {
@@ -121,43 +121,43 @@
   "constellation1": {
     "name": "Burst Forth With Vigor, But Enter in Silence",
     "description": {
-      "0": "หลังจากใช้สกิลธาตุ <strong>Heaven and Earth Made Manifest</strong> แล้ว Zibai จะสะสม <strong>Phase Shift Radiance</strong> 100 หน่วยทันที และในโหมด <strong>Lunar Phase Shift</strong> จำนวนครั้งที่ใช้ได้สูงสุดของ <strong>Spirit Steed's Stride</strong> จะเพิ่มขึ้นเป็น 5 ครั้ง",
+      "0": "หลังจากใช้สกิลธาตุ <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Heaven and Earth Made Manifest</tooltip></strong> แล้ว Zibai จะสะสม <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Phase Shift Radiance</strong></tooltip> 100 หน่วยทันที และในโหมด <strong>Lunar Phase Shift</strong> จำนวนครั้งที่ใช้ได้สูงสุดของ <strong>Spirit Steed's Stride</strong> จะเพิ่มขึ้นเป็น 5 ครั้ง",
       "1": "นอกจากนี้ ทุกครั้งหลังจากเปลี่ยนเป็นโหมด Lunar Phase Shift เมื่อใช้ Spirit Steed's Stride ครั้งแรก ความเสียหายจากปฏิกิริยาตกผลึกจันทรา ของการโจมตีครั้งที่ 2 จะเพิ่มขึ้น 220%"
     }
   },
   "constellation2": {
     "name": "At Birth Are Souls Born, and in Death Leave But Husks",
     "description": {
-      "0": "เมื่ออยู่ในโหมด <strong>\"Lunar Phase Shift\"</strong> ตัวละครทั้งหมดในทีมที่อยู่ในบริเวณใกล้เคียง จะสร้างความเสียหายจากปฏิกิริยาตกผลึกจันทราเพิ่มขึ้น 30%",
+      "0": "เมื่ออยู่ในโหมด <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>\"Lunar Phase Shift\"</strong></tooltip> ตัวละครทั้งหมดในทีมที่อยู่ในบริเวณใกล้เคียง จะสร้างความเสียหายจากปฏิกิริยาตกผลึกจันทราเพิ่มขึ้น 30%",
       "1": "<br/>",
-      "2": "<strong>ลัคนาจันทร์ - จรัสแสง</strong>: เอฟเฟกต์ของพรสวรรค์เพิ่มเติม <strong>The Selenic Adeptus Descends</strong> จะเพิ่มขึ้น: ความเสียหายที่เกิดจากการโจมตีขั้นที่ 2 ของ <strong>Spirit Steed's Stride</strong> จะเพิ่มขึ้นอีก โดยค่าที่เพิ่มขึ้นจะเท่ากับ 550% ของพลังป้องกันของ Zibai; เอฟเฟกต์นี้จำเป็นต้องปลดล็อกพรสวรรค์ติดตัว The Selenic Adeptus Descends ก่อน"
+      "2": "<strong>ลัคนาจันทร์ - จรัสแสง</strong>: เอฟเฟกต์ของพรสวรรค์เพิ่มเติม <strong><tooltip ns=char_Zibai_gen baseKey18=passive1>The Selenic Adeptus Descends</tooltip></strong> จะเพิ่มขึ้น: ความเสียหายที่เกิดจากการโจมตีขั้นที่ 2 ของ <strong>Spirit Steed's Stride</strong> จะเพิ่มขึ้นอีก โดยค่าที่เพิ่มขึ้นจะเท่ากับ 550% ของพลังป้องกันของ Zibai; เอฟเฟกต์นี้จำเป็นต้องปลดล็อกพรสวรรค์ติดตัว The Selenic Adeptus Descends ก่อน"
     }
   },
   "constellation3": {
     "name": "Free From Constraints and Worldly Ties",
     "description": {
-      "0": "เพิ่มเลเวลสกิลธาตุของ <strong>Heaven and Earth Made Manifest</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลธาตุของ <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Heaven and Earth Made Manifest</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
     "name": "The Spirit Passes, Then Form Follows",
     "description": {
-      "0": "เมื่ออยู่ในโหมด <strong>Lunar Phase Shift</strong> จำนวนคอมโบของการโจมตีปกติของ Zibai จะไม่ถูกรีเซ็ต และเมื่อ <strong>Spirit Steed's Stride</strong> โจมตีโดนศัตรู Zibai จะได้รับเอฟเฟกต์ <strong>\"Scattermoon Splendor\"</strong>: เมื่อทำการโจมตีปกติครั้งถัดไป การโจมตีเพิ่มเติมในครั้งที่ 4 จะสร้างความเสียหายปฏิกิริยาตกผลึกจันทราเท่ากับ 250% ของความเสียหายเดิม"
+      "0": "เมื่ออยู่ในโหมด <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Lunar Phase Shift</strong></tooltip> จำนวนคอมโบของการโจมตีปกติของ Zibai จะไม่ถูกรีเซ็ต และเมื่อ <strong>Spirit Steed's Stride</strong> โจมตีโดนศัตรู Zibai จะได้รับเอฟเฟกต์ <strong>\"Scattermoon Splendor\"</strong>: เมื่อทำการโจมตีปกติครั้งถัดไป การโจมตีเพิ่มเติมในครั้งที่ 4 จะสร้างความเสียหายปฏิกิริยาตกผลึกจันทราเท่ากับ 250% ของความเสียหายเดิม"
     }
   },
   "constellation5": {
     "name": "Perceive the Worthless and Debate It Not",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong>Tri-Sphere Eminence</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Zibai_gen baseKey18=burst>Tri-Sphere Eminence</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {
     "name": "The World, A Journey in Passing",
     "description": {
-      "0": "เมื่ออยู่ในโหมด <strong>Lunar Phase Shift</strong> อัตราการสะสม <strong>Phase Shift Radiance</strong> ของ Zibai จะเพิ่มขึ้น 50%",
-      "1": "นอกจากนี้ <strong>Spirit Steed's Stride</strong> จะเปลี่ยนเป็นใช้ Phase Shift Radiance ทั้งหมด โดยทุก ๆ 1 หน่วยของ Phase Shift Radiance ที่ใช้เกินจาก 70 หน่วย จะทำให้ Spirit Steed's Stride ครั้งนี้ และความเสียหายจากปฏิกิริยาตกผลึกจันทราที่ Zibai สร้างขึ้นภายใน 3 วินาทีถัดไป <strong>ยกระดับ</strong>ขึ้น 1.6% ซึ่งเอฟเฟกต์นี้ไม่สามารถซ้อนทับได้"
+      "0": "เมื่ออยู่ในโหมด <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Lunar Phase Shift</strong></tooltip> อัตราการสะสม <strong>Phase Shift Radiance</strong> ของ Zibai จะเพิ่มขึ้น 50%",
+      "1": "นอกจากนี้ <strong>Spirit Steed's Stride</strong> จะเปลี่ยนเป็นใช้ Phase Shift Radiance ทั้งหมด โดยทุก ๆ 1 หน่วยของ Phase Shift Radiance ที่ใช้เกินจาก 70 หน่วย จะทำให้ Spirit Steed's Stride ครั้งนี้ และความเสียหายจากปฏิกิริยาตกผลึกจันทราที่ Zibai สร้างขึ้นภายใน 3 วินาทีถัดไป <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>ยกระดับ</strong></tooltip>ขึ้น 1.6% ซึ่งเอฟเฟกต์นี้ไม่สามารถซ้อนทับได้"
     }
   }
 }

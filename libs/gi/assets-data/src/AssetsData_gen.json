@@ -204,6 +204,10 @@
       "icon": "UI_EquipIcon_Sword_Motsognir",
       "awakenIcon": "UI_EquipIcon_Sword_Motsognir_Awaken"
     },
+    "LightbearingMoonshard": {
+      "icon": "UI_EquipIcon_Sword_SilverwareSaw",
+      "awakenIcon": "UI_EquipIcon_Sword_SilverwareSaw_Awaken"
+    },
     "WasterGreatsword": {
       "icon": "UI_EquipIcon_Claymore_Aniki",
       "awakenIcon": "UI_EquipIcon_Claymore_Aniki_Awaken"
@@ -3186,6 +3190,42 @@
       "constellation4": "UI_Talent_S_Columbina_03",
       "constellation5": "UI_Talent_U_Columbina_02",
       "constellation6": "UI_Talent_S_Columbina_04"
+    },
+    "Zibai": {
+      "icon": "UI_AvatarIcon_Zibai",
+      "iconSide": "UI_AvatarIcon_Side_Zibai",
+      "banner": "UI_NameCardPic_Zibai_P",
+      "bar": "UI_NameCardPic_Zibai_Alpha",
+      "skill": "Skill_S_Zibai_01",
+      "burst": "Skill_E_Zibai_01_HD",
+      "passive1": "UI_Talent_S_Zibai_05",
+      "passive2": "UI_Talent_S_Zibai_06",
+      "passive3": "UI_Talent_S_Zibai_07",
+      "passive": "UI_Talent_S_Zibai_08",
+      "constellation1": "UI_Talent_S_Zibai_01",
+      "constellation2": "UI_Talent_S_Zibai_02",
+      "constellation3": "UI_Talent_U_Zibai_01",
+      "constellation4": "UI_Talent_S_Zibai_03",
+      "constellation5": "UI_Talent_U_Zibai_02",
+      "constellation6": "UI_Talent_S_Zibai_04"
+    },
+    "Illuga": {
+      "icon": "UI_AvatarIcon_Illuga",
+      "iconSide": "UI_AvatarIcon_Side_Illuga",
+      "banner": "UI_NameCardPic_Illuga_P",
+      "bar": "UI_NameCardPic_Illuga_Alpha",
+      "skill": "Skill_S_Illuga_01",
+      "burst": "Skill_E_Illuga_01_HD",
+      "passive1": "UI_Talent_S_Illuga_05",
+      "passive2": "UI_Talent_S_Illuga_06",
+      "passive3": "UI_Talent_S_Illuga_07",
+      "passive": "UI_Talent_S_Illuga_08",
+      "constellation1": "UI_Talent_S_Illuga_01",
+      "constellation2": "UI_Talent_S_Illuga_02",
+      "constellation3": "UI_Talent_U_Illuga_01",
+      "constellation4": "UI_Talent_S_Illuga_03",
+      "constellation5": "UI_Talent_U_Illuga_02",
+      "constellation6": "UI_Talent_S_Illuga_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

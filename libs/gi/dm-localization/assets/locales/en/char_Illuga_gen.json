@@ -107,7 +107,7 @@
   "burst": {
     "name": "Shadowless Reflection",
     "description": {
-      "0": "Light the lamp, dealing <geo>AoE Geo DMG</geo>, and gain Haunted Night's Oriole-Song effect for 20s. When this effect is active, Illuga gains 21 stacks of <strong>Nightingale's Song</strong>. When Normal Attacks, Charged Attacks, Plunging Attacks, Elemental Skills, and Elemental Bursts of nearby active party members deal <geo>Geo DMG</geo> to opponents, 1 stack of Nightingale's Song is consumed to increase the DMG dealt. Increase in DMG is based on Illuga's Elemental Mastery. If DMG is inflicted by Lunar-Crystallize, DMG dealt will increase further.",
+      "0": "Light the lamp, dealing <geo>AoE Geo DMG</geo>, and gain Haunted Night's Oriole-Song effect for 20s. When this effect is active, Illuga gains 21 stacks of <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Nightingale's Song</strong></tooltip>. When Normal Attacks, Charged Attacks, Plunging Attacks, Elemental Skills, and Elemental Bursts of nearby active party members deal <geo>Geo DMG</geo> to opponents, 1 stack of Nightingale's Song is consumed to increase the DMG dealt. Increase in DMG is based on Illuga's Elemental Mastery. If DMG is inflicted by Lunar-Crystallize, DMG dealt will increase further.",
       "1": "When <geo>Geo DMG</geo> dealt in this manner hits multiple opponents, multiple stacks of Nightingale's Song will be consumed, depending on how many opponents are hit.",
       "2": "<br/>",
       "3": "Additionally, if there are <geo>Geo Constructs</geo> created by nearby party members on the battlefield while Illuga unleashes his Elemental Burst, or when nearby party members create <geo>Geo Constructs</geo> while Haunted Night's Oriole-Song is active, every <geo>Geo Construct</geo> on the battlefield will allow Illuga to gain 5 additional stacks of Nightingale's Song. Within 20s after unleashing his Elemental Burst, Illuga can gain a maximum of 15 additional stacks of Nightingale's Song this way.",
@@ -154,7 +154,7 @@
   "passive1": {
     "name": "Torchforger's Covenant",
     "description": {
-      "0": "After unleashing Elemental Skill <strong>Dawnbearing Songbird</strong> or Elemental Burst <strong>Shadowless Reflection</strong>, other nearby party members will gain the Lightkeeper's Oath effect for 20s: For <geo>Geo DMG</geo> dealt to opponents, CRIT Rate increases by 5% and CRIT DMG increases by 10%.",
+      "0": "After unleashing Elemental Skill <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Dawnbearing Songbird</tooltip></strong> or Elemental Burst <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Shadowless Reflection</tooltip></strong>, other nearby party members will gain the Lightkeeper's Oath effect for 20s: For <geo>Geo DMG</geo> dealt to opponents, CRIT Rate increases by 5% and CRIT DMG increases by 10%.",
       "1": "<br/>",
       "2": "<strong>Moonsign: Ascendant Gleam</strong> ",
       "3": "Party members affected by the Lightkeeper's Oath effect have their Elemental Mastery increased by 50."
@@ -163,7 +163,7 @@
   "passive2": {
     "name": "Demonhunter's Dusk",
     "description": {
-      "0": "<strong>Nightingale's Song</strong>'s effects are enhanced: When there are 1/2/3 <hydro>Hydro</hydro> or <geo>Geo</geo> characters in the party, Nightingale's Song will further increase DMG. Increase in DMG is equal to 7%/14%/24% of Illuga's Elemental Mastery. If this aforementioned DMG is inflicted by a Lunar-Crystallize reaction, increase in DMG is equal to 48%/96%/160% of Illuga's Elemental Mastery."
+      "0": "<tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Nightingale's Song</strong></tooltip>'s effects are enhanced: When there are 1/2/3 <hydro>Hydro</hydro> or <geo>Geo</geo> characters in the party, Nightingale's Song will further increase DMG. Increase in DMG is equal to 7%/14%/24% of Illuga's Elemental Mastery. If this aforementioned DMG is inflicted by a Lunar-Crystallize reaction, increase in DMG is equal to 48%/96%/160% of Illuga's Elemental Mastery."
     }
   },
   "passive3": {
@@ -189,33 +189,33 @@
   "constellation2": {
     "name": "Elk With Fanged Antlers",
     "description": {
-      "0": "When Elemental Burst <strong>Shadowless Reflection</strong>'s Haunted Night's Oriole-Song effect is active, for every 7 stacks of <strong>Nightingale's Song</strong> consumed, Illuga will summon Aedon, dealing a single instance of <geo>Geo DMG</geo> to 1 nearby opponent. The DMG dealt is based on 400% of Illuga's Elemental Mastery and 200% of his DEF. This DMG is considered Elemental Burst DMG."
+      "0": "When Elemental Burst <tooltip ns=char_Illuga_gen baseKey18=burst><strong>Shadowless Reflection</strong></tooltip>'s Haunted Night's Oriole-Song effect is active, for every 7 stacks of <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Nightingale's Song</strong></tooltip> consumed, Illuga will summon Aedon, dealing a single instance of <geo>Geo DMG</geo> to 1 nearby opponent. The DMG dealt is based on 400% of Illuga's Elemental Mastery and 200% of his DEF. This DMG is considered Elemental Burst DMG."
     }
   },
   "constellation3": {
     "name": "Earthshaking Maw",
     "description": {
-      "0": "Increases the Level of Elemental Burst <strong>Shadowless Reflection</strong> by 3.",
+      "0": "Increases the Level of Elemental Burst <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Shadowless Reflection</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
     "name": "Solarhunting Wolf",
     "description": {
-      "0": "When Elemental Burst <strong>Shadowless Reflection</strong>'s Haunted Night's Oriole-Song effect is active, nearby active party members will have their DEF increased by 200."
+      "0": "When Elemental Burst <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Shadowless Reflection</tooltip></strong>'s Haunted Night's Oriole-Song effect is active, nearby active party members will have their DEF increased by 200."
     }
   },
   "constellation5": {
     "name": "Hurricane Steed",
     "description": {
-      "0": "Increases the Level of Elemental Skill <strong>Dawnbearing Songbird</strong> by 3.",
+      "0": "Increases the Level of Elemental Skill <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Dawnbearing Songbird</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
     "name": "Nightmare Orioles",
     "description": {
-      "0": "Enhances the Lightkeeper's Oath effect of the Ascension Talent <strong>Torchforger's Covenant</strong>: For <geo>Geo DMG</geo> dealt to opponents, CRIT Rate is increased by 10%, CRIT DMG is increased by 30%.",
+      "0": "Enhances the Lightkeeper's Oath effect of the Ascension Talent <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>Torchforger's Covenant</tooltip></strong>: For <geo>Geo DMG</geo> dealt to opponents, CRIT Rate is increased by 10%, CRIT DMG is increased by 30%.",
       "1": "<br/>",
       "2": "<strong>Moonsign: Ascendant Gleam:</strong>",
       "3": "When characters are affected by Lightkeeper's Oath, Elemental Mastery is increased by 80.",

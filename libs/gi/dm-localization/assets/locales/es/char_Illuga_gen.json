@@ -71,7 +71,7 @@
   "burst": {
     "name": "Reflejo sin sombra",
     "description": {
-      "0": "Enciende la lámpara, inflige <geo>Daño Geo en el AdE</geo> y obtiene el efecto de “canto nochembrujado del oriol” durante 20 s. Mientras este efecto está activo, Illuga obtiene 21 cargas de <strong>“canto del ruiseñor”</strong>. Cuando un personaje cercano en uso del equipo inflige <geo>Daño Geo</geo> a un enemigo con un Ataque Normal, Cargado o Descendente o con una Habilidad Elemental o Definitiva, se consume 1 carga de canto del ruiseñor para aumentar el daño infligido en función de la Maestría Elemental de Illuga. El daño infligido será aún mayor si es daño de Cristalización Lunar.",
+      "0": "Enciende la lámpara, inflige <geo>Daño Geo en el AdE</geo> y obtiene el efecto de “canto nochembrujado del oriol” durante 20 s. Mientras este efecto está activo, Illuga obtiene 21 cargas de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>“canto del ruiseñor”</strong></tooltip>. Cuando un personaje cercano en uso del equipo inflige <geo>Daño Geo</geo> a un enemigo con un Ataque Normal, Cargado o Descendente o con una Habilidad Elemental o Definitiva, se consume 1 carga de canto del ruiseñor para aumentar el daño infligido en función de la Maestría Elemental de Illuga. El daño infligido será aún mayor si es daño de Cristalización Lunar.",
       "1": "Al golpear a varios enemigos a la vez con el <geo>Daño Geo</geo> infligido de esta manera, se consumirán cargas de canto del ruiseñor en función del número de enemigos golpeados.",
       "2": "<br/>",
       "3": "Además, cuando Illuga use su Habilidad Definitiva mientras en el campo de batalla haya alguna <geo>creación Geo</geo> generada por un personaje cercano del equipo, o cuando un personaje cercano del equipo genere una <geo>creación Geo</geo> mientras canto nochembrujado del oriol esté activo, Illuga obtendrá 5 cargas adicionales de canto del ruiseñor por cada <geo>creación Geo</geo> que haya en el campo de batalla. Illuga puede obtener un máximo de 15 cargas adicionales de canto del ruiseñor de esta manera durante los 20 s posteriores a usar la Habilidad Definitiva.",
@@ -100,7 +100,7 @@
   "passive1": {
     "name": "Pacto del Forjador de Lámparas",
     "description": {
-      "0": "Tras usar la Habilidad Elemental, <strong>Ruiseñor del amanecer</strong>, o la Habilidad Definitiva, <strong>Reflejo sin sombra</strong>, los demás personajes cercanos del equipo obtienen el efecto de “juramento del lamparero” durante 20 s, el cual aumenta en un 5% la Prob. CRIT de los ataques que infligen <geo>Daño Geo</geo> y en un 10% su Daño CRIT.",
+      "0": "Tras usar la Habilidad Elemental, <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Ruiseñor del amanecer</tooltip></strong>, o la Habilidad Definitiva, <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflejo sin sombra</tooltip></strong>, los demás personajes cercanos del equipo obtienen el efecto de “juramento del lamparero” durante 20 s, el cual aumenta en un 5% la Prob. CRIT de los ataques que infligen <geo>Daño Geo</geo> y en un 10% su Daño CRIT.",
       "1": "<br/>",
       "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
       "3": "La Maestría Elemental de los personajes afectados por juramento del lamparero aumenta en 50 pts."
@@ -109,7 +109,7 @@
   "passive2": {
     "name": "Crepúsculo del cazador de demonios",
     "description": {
-      "0": "Fortalece los efectos de <strong>canto del ruiseñor</strong>, de manera que, cuando en el equipo haya 1/2/3 personajes <hydro>Hydro</hydro> o <geo>Geo</geo>, canto del ruiseñor incrementará aún más el daño infligido en una cantidad equivalente al 7/14/24% de la Maestría Elemental de Illuga. Si dicho daño es causado por la reacción de Cristalización Lunar, el aumento de daño será equivalente al 48/96/160% de la Maestría Elemental de Illuga."
+      "0": "Fortalece los efectos de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>canto del ruiseñor</strong></tooltip>, de manera que, cuando en el equipo haya 1/2/3 personajes <hydro>Hydro</hydro> o <geo>Geo</geo>, canto del ruiseñor incrementará aún más el daño infligido en una cantidad equivalente al 7/14/24% de la Maestría Elemental de Illuga. Si dicho daño es causado por la reacción de Cristalización Lunar, el aumento de daño será equivalente al 48/96/160% de la Maestría Elemental de Illuga."
     }
   },
   "passive3": {
@@ -135,33 +135,33 @@
   "constellation2": {
     "name": "Alce astadevorador",
     "description": {
-      "0": "Mientras el efecto de canto nochembrujado del oriol de la Habilidad Definitiva, <strong>Reflejo sin sombra</strong>, esté activo, cada vez que se consuman 7 cargas de <strong>canto del ruiseñor</strong>, Illuga invocará a Aedón para infligir una vez <geo>Daño Geo</geo> a un enemigo cercano en una cantidad equivalente al 400% de la Maestría Elemental de Illuga y el 200% de su DEF. Este daño se considera daño de Habilidad Definitiva."
+      "0": "Mientras el efecto de canto nochembrujado del oriol de la Habilidad Definitiva, <tooltip ns=char_Illuga_gen baseKey18=burst><strong>Reflejo sin sombra</strong></tooltip>, esté activo, cada vez que se consuman 7 cargas de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>canto del ruiseñor</strong></tooltip>, Illuga invocará a Aedón para infligir una vez <geo>Daño Geo</geo> a un enemigo cercano en una cantidad equivalente al 400% de la Maestría Elemental de Illuga y el 200% de su DEF. Este daño se considera daño de Habilidad Definitiva."
     }
   },
   "constellation3": {
     "name": "Fauces estremecedoras",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Reflejo sin sombra</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflejo sin sombra</tooltip></strong> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
     "name": "Lobo acechasoles",
     "description": {
-      "0": "Mientras el efecto de canto nochembrujado del oriol de la Habilidad Definitiva, <strong>Reflejo sin sombra</strong>, esté activo, la DEF de los personajes en uso cercanos del equipo aumenta en 200 pts."
+      "0": "Mientras el efecto de canto nochembrujado del oriol de la Habilidad Definitiva, <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflejo sin sombra</tooltip></strong>, esté activo, la DEF de los personajes en uso cercanos del equipo aumenta en 200 pts."
     }
   },
   "constellation5": {
     "name": "Corcel ululante",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Ruiseñor del amanecer</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Ruiseñor del amanecer</tooltip></strong> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
     "name": "Orioles de la Pesadilla",
     "description": {
-      "0": "Fortalece el efecto de juramento del lamparero del talento de ascensión <strong>Pacto del Forjador de Lámparas</strong>, de manera que la Prob. CRIT de los ataques que infligen <geo>Daño Geo</geo> aumenta en un 10%, y el Daño CRIT de dichos ataques aumenta en un 30%.",
+      "0": "Fortalece el efecto de juramento del lamparero del talento de ascensión <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>Pacto del Forjador de Lámparas</tooltip></strong>, de manera que la Prob. CRIT de los ataques que infligen <geo>Daño Geo</geo> aumenta en un 10%, y el Daño CRIT de dichos ataques aumenta en un 30%.",
       "1": "<br/>",
       "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
       "3": "La Maestría Elemental de los personajes afectados por juramento del lamparero aumenta en 80 pts.",

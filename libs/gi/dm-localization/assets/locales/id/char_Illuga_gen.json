@@ -71,7 +71,7 @@
   "burst": {
     "name": "Shadowless Reflection",
     "description": {
-      "0": "Menyalakan api lentera untuk mengakibatkan <geo>Geo DMG Area</geo> dan mendapatkan efek \"Haunted Night's Oriole-Song\" yang bertahan selama 20 detik. Selama durasi ini, Illuga mendapatkan 21 lapis <strong>Nightingale's Song</strong>. Saat Karakter aktif dalam party mengakibatkan <geo>Geo DMG</geo> terhadap musuh melalui Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst, maka Illuga akan mengonsumsi 1 lapis Nightingale's Song untuk meningkatkan DMG yang diakibatkan berdasarkan Elemental Mastery Illuga. Jika DMG-nya diakibatkan oleh reaksi Lunar-Crystallize, maka peningkatan DMG-nya akan menjadi semakin besar.",
+      "0": "Menyalakan api lentera untuk mengakibatkan <geo>Geo DMG Area</geo> dan mendapatkan efek \"Haunted Night's Oriole-Song\" yang bertahan selama 20 detik. Selama durasi ini, Illuga mendapatkan 21 lapis <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Nightingale's Song</strong></tooltip>. Saat Karakter aktif dalam party mengakibatkan <geo>Geo DMG</geo> terhadap musuh melalui Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst, maka Illuga akan mengonsumsi 1 lapis Nightingale's Song untuk meningkatkan DMG yang diakibatkan berdasarkan Elemental Mastery Illuga. Jika DMG-nya diakibatkan oleh reaksi Lunar-Crystallize, maka peningkatan DMG-nya akan menjadi semakin besar.",
       "1": "Jika <geo>Geo DMG</geo> yang diakibatkan dengan cara di atas mengenai beberapa musuh sekaligus, maka jumlah lapisan Nightingale's Song akan dikonsumsi akan disesuaikan dengan jumlah musuh yang terkena serangan.",
       "2": "<br/>",
       "3": "Selain itu, jika Illuga melancarkan Elemental Burst saat ada <geo>Geo Construct</geo> yang diciptakan oleh Karakter party di sekitar, atau saat Karakter party di sekitar menciptakan <geo>Geo Construct</geo> selama Haunted Night's Oriole-Song aktif, maka setiap <geo>Geo Construct</geo> yang ada akan memberikan Illuga 5 lapis Nightingale's Song tambahan. Illuga hanya bisa mendapatkan maksimum 15 lapis Nightingale's Song tambahan dengan cara ini dalam 20 detik setelah melancarkan Elemental Burst.",
@@ -100,7 +100,7 @@
   "passive1": {
     "name": "Torchforger's Covenant",
     "description": {
-      "0": "Setelah melancarkan Elemental Skill <strong>Dawnbearing Songbird</strong> atau Elemental Burst <strong>Shadowless Reflection</strong>, anggota party lain di sekitar akan mendapatkan efek \"Lightkeeper's Oath\" selama 20 detik: <geo>Geo DMG</geo> yang diakibatkan pada musuh akan mendapatkan CRIT Rate +5% dan CRIT DMG +10%.",
+      "0": "Setelah melancarkan Elemental Skill <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Dawnbearing Songbird</tooltip></strong> atau Elemental Burst <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Shadowless Reflection</tooltip></strong>, anggota party lain di sekitar akan mendapatkan efek \"Lightkeeper's Oath\" selama 20 detik: <geo>Geo DMG</geo> yang diakibatkan pada musuh akan mendapatkan CRIT Rate +5% dan CRIT DMG +10%.",
       "1": "<br/>",
       "2": "<strong>Moonsign: Ascendant Gleam</strong>",
       "3": "Karakter yang berada dalam pengaruh efek Lightkeeper's Oath akan mendapatkan peningkatan 50 poin Elemental Mastery."
@@ -109,7 +109,7 @@
   "passive2": {
     "name": "Demonhunter's Dusk",
     "description": {
-      "0": "Efek <strong>Nightingale's Song</strong> diperkuat: Saat ada 1/2/3 Karakter <hydro>Hydro</hydro> atau <geo>Geo</geo> di dalam party, Nightingale's Song akan meningkatkan DMG lagi sebesar 7%/14%/24% Elemental Mastery Illuga. Jika DMG yang disebutkan di atas merupakan DMG reaksi Lunar-Crystallize, maka peningkatannya menjadi sebesar 48%/96%/160% Elemental Mastery Illuga."
+      "0": "Efek <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Nightingale's Song</strong></tooltip> diperkuat: Saat ada 1/2/3 Karakter <hydro>Hydro</hydro> atau <geo>Geo</geo> di dalam party, Nightingale's Song akan meningkatkan DMG lagi sebesar 7%/14%/24% Elemental Mastery Illuga. Jika DMG yang disebutkan di atas merupakan DMG reaksi Lunar-Crystallize, maka peningkatannya menjadi sebesar 48%/96%/160% Elemental Mastery Illuga."
     }
   },
   "passive3": {
@@ -135,33 +135,33 @@
   "constellation2": {
     "name": "Elk With Fanged Antlers",
     "description": {
-      "0": "Selama durasi efek Haunted Night's Oriole-Song dari Elemental Burst <strong>Shadowless Reflection</strong> berlangsung, untuk setiap 7 lapis <strong>Nightingale's Song</strong> yang dikonsumsi, Illuga akan memanggil Aedon untuk menyerang satu musuh di sekitar, mengakibatkan satu kali <geo>Geo DMG</geo> sebesar 400% Elemental Mastery Illuga dan 200% DEF Illuga. DMG ini dianggap sebagai DMG Elemental Burst."
+      "0": "Selama durasi efek Haunted Night's Oriole-Song dari Elemental Burst <tooltip ns=char_Illuga_gen baseKey18=burst><strong>Shadowless Reflection</strong></tooltip> berlangsung, untuk setiap 7 lapis <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Nightingale's Song</strong></tooltip> yang dikonsumsi, Illuga akan memanggil Aedon untuk menyerang satu musuh di sekitar, mengakibatkan satu kali <geo>Geo DMG</geo> sebesar 400% Elemental Mastery Illuga dan 200% DEF Illuga. DMG ini dianggap sebagai DMG Elemental Burst."
     }
   },
   "constellation3": {
     "name": "Earthshaking Maw",
     "description": {
-      "0": "Meningkatkan 3 level Elemental Burst <strong>Shadowless Reflection</strong>.",
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Shadowless Reflection</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
     "name": "Solarhunting Wolf",
     "description": {
-      "0": "Selama efek Haunted Night's Oriole-Song dari Elemental Burst <strong>Shadowless Reflection</strong> aktif, DEF Karakter aktif party di sekitar meningkat 200 poin."
+      "0": "Selama efek Haunted Night's Oriole-Song dari Elemental Burst <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Shadowless Reflection</tooltip></strong> aktif, DEF Karakter aktif party di sekitar meningkat 200 poin."
     }
   },
   "constellation5": {
     "name": "Hurricane Steed",
     "description": {
-      "0": "Meningkatkan 3 level Elemental Skill <strong>Dawnbearing Songbird</strong>.",
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Dawnbearing Songbird</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {
     "name": "Nightmare Orioles",
     "description": {
-      "0": "Efek Lightkeeper's Oath dari Talenta Ascension <strong>Torchforger's Covenant</strong> diperkuat: <geo>Geo DMG</geo> yang diakibatkan terhadap musuh mendapatkan peningkatan CRIT Rate sebesar 10% dan CRIT DMG sebesar 30%.",
+      "0": "Efek Lightkeeper's Oath dari Talenta Ascension <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>Torchforger's Covenant</tooltip></strong> diperkuat: <geo>Geo DMG</geo> yang diakibatkan terhadap musuh mendapatkan peningkatan CRIT Rate sebesar 10% dan CRIT DMG sebesar 30%.",
       "1": "<br/>",
       "2": "<strong>Moonsign: Ascendant Gleam</strong>",
       "3": "Karakter dalam efek \"Lightkeeper's Oath\" mendapatkan peningkatan 80 poin Elemental Mastery.",

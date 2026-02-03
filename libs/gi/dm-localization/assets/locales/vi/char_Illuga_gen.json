@@ -71,7 +71,7 @@
   "burst": {
     "name": "Phản Chiếu Vô Hình",
     "description": {
-      "0": "Thắp sáng ngọn đèn, gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> và nhận hiệu quả \"Tiếng Hót Đêm Ác Mộng\" trong 20s: Trong thời gian duy trì, Illuga sẽ nhận 21 tầng <strong>Khúc Ca Dạ Oanh</strong>, khi nhân vật ra trận trong đội ở gần dùng Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ gây <geo>Sát Thương Nguyên Tố Nham</geo> lên kẻ địch, sẽ tiêu hao 1 tầng Khúc Ca Dạ Oanh để tăng sát thương gây ra, mức tăng dựa trên Tinh Thông Nguyên Tố của Illuga. Nếu sát thương này do phản ứng Nguyệt-Kết Tinh gây ra, thì sẽ còn tăng thêm sát thương gây ra.",
+      "0": "Thắp sáng ngọn đèn, gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> và nhận hiệu quả \"Tiếng Hót Đêm Ác Mộng\" trong 20s: Trong thời gian duy trì, Illuga sẽ nhận 21 tầng <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Khúc Ca Dạ Oanh</strong></tooltip>, khi nhân vật ra trận trong đội ở gần dùng Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ gây <geo>Sát Thương Nguyên Tố Nham</geo> lên kẻ địch, sẽ tiêu hao 1 tầng Khúc Ca Dạ Oanh để tăng sát thương gây ra, mức tăng dựa trên Tinh Thông Nguyên Tố của Illuga. Nếu sát thương này do phản ứng Nguyệt-Kết Tinh gây ra, thì sẽ còn tăng thêm sát thương gây ra.",
       "1": "Khi <geo>Sát Thương Nguyên Tố Nham</geo> gây ra theo cách trên đánh trúng nhiều kẻ địch cùng lúc, sẽ căn cứ vào số lượng kẻ địch bị đánh trúng để tiêu hao số tầng Khúc Ca Dạ Oanh.",
       "2": "<br/>",
       "3": "Ngoài ra, nếu Illuga thi triển Kỹ Năng Nộ khi trên sân có <geo>tạo vật Nguyên Tố Nham</geo> do nhân vật trong đội ở gần tạo ra, hoặc trong thời gian duy trì Tiếng Hót Đêm Ác Mộng có nhân vật trong đội ở gần tạo ra <geo>tạo vật Nguyên Tố Nham</geo>, thì với mỗi <geo>tạo vật Nguyên Tố Nham</geo> trên sân sẽ khiến Illuga nhận thêm 5 tầng Khúc Ca Dạ Oanh. Trong 20s sau mỗi lần thi triển Kỹ Năng Nộ, Illuga tối đa nhận thêm 15 tầng Khúc Ca Dạ Oanh theo cách này.",
@@ -100,7 +100,7 @@
   "passive1": {
     "name": "Hiệp Ước Người Đúc Đèn",
     "description": {
-      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Chim Hót Bình Minh</strong> hoặc Kỹ Năng Nộ <strong>Phản Chiếu Vô Hình</strong>, nhân vật khác trong đội ở gần sẽ nhận hiệu quả \"Lời Thề Giữ Đèn\" trong 20s: <geo>Sát Thương Nguyên Tố Nham</geo> gây ra cho kẻ địch sẽ tăng 5% Tỷ Lệ Bạo Kích và 10% Sát Thương Bạo Kích.",
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Chim Hót Bình Minh</tooltip></strong> hoặc Kỹ Năng Nộ <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Phản Chiếu Vô Hình</tooltip></strong>, nhân vật khác trong đội ở gần sẽ nhận hiệu quả \"Lời Thề Giữ Đèn\" trong 20s: <geo>Sát Thương Nguyên Tố Nham</geo> gây ra cho kẻ địch sẽ tăng 5% Tỷ Lệ Bạo Kích và 10% Sát Thương Bạo Kích.",
       "1": "<br/>",
       "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>",
       "3": "Nhân vật chịu ảnh hưởng bởi hiệu quả Lời Thề Giữ Đèn sẽ tăng 50 điểm Tinh Thông Nguyên Tố."
@@ -109,7 +109,7 @@
   "passive2": {
     "name": "Hoàng Hôn Người Săn Ma",
     "description": {
-      "0": "Hiệu quả <strong>Khúc Ca Dạ Oanh</strong> sẽ được cường hóa: Khi trong đội có 1/2/3 nhân vật Nguyên Tố <hydro>Thủy</hydro> hoặc <geo>Nham</geo>, Khúc Ca Dạ Oanh sẽ tăng thêm sát thương gây ra, lượng tăng thêm tương đương 7%/14%/24% Tinh Thông Nguyên Tố của Illuga. Nếu sát thương trên do phản ứng Nguyệt-Kết Tinh gây ra, lượng tăng thêm sẽ tương đương với 48%/96%/160% Tinh Thông Nguyên Tố của Illuga."
+      "0": "Hiệu quả <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Khúc Ca Dạ Oanh</strong></tooltip> sẽ được cường hóa: Khi trong đội có 1/2/3 nhân vật Nguyên Tố <hydro>Thủy</hydro> hoặc <geo>Nham</geo>, Khúc Ca Dạ Oanh sẽ tăng thêm sát thương gây ra, lượng tăng thêm tương đương 7%/14%/24% Tinh Thông Nguyên Tố của Illuga. Nếu sát thương trên do phản ứng Nguyệt-Kết Tinh gây ra, lượng tăng thêm sẽ tương đương với 48%/96%/160% Tinh Thông Nguyên Tố của Illuga."
     }
   },
   "passive3": {
@@ -135,33 +135,33 @@
   "constellation2": {
     "name": "Nai Mọc Sừng Nhánh",
     "description": {
-      "0": "Trong thời gian duy trì hiệu quả Tiếng Hót Đêm Ác Mộng của Kỹ Năng Nộ <strong>Phản Chiếu Vô Hình</strong>, mỗi khi tiêu hao 7 tầng <strong>Khúc Ca Dạ Oanh</strong>, Illuga sẽ triệu hồi Aedon, gây một lần <geo>Sát Thương Nguyên Tố Nham</geo> lên 1 kẻ địch ở gần, lượng sát thương dựa trên 400% Tinh Thông Nguyên Tố và 200% Phòng Ngự của Illuga. Sát thương này được xem là sát thương Kỹ Năng Nộ."
+      "0": "Trong thời gian duy trì hiệu quả Tiếng Hót Đêm Ác Mộng của Kỹ Năng Nộ <tooltip ns=char_Illuga_gen baseKey18=burst><strong>Phản Chiếu Vô Hình</strong></tooltip>, mỗi khi tiêu hao 7 tầng <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Khúc Ca Dạ Oanh</strong></tooltip>, Illuga sẽ triệu hồi Aedon, gây một lần <geo>Sát Thương Nguyên Tố Nham</geo> lên 1 kẻ địch ở gần, lượng sát thương dựa trên 400% Tinh Thông Nguyên Tố và 200% Phòng Ngự của Illuga. Sát thương này được xem là sát thương Kỹ Năng Nộ."
     }
   },
   "constellation3": {
     "name": "Gấu Nâu Gầm Gừ",
     "description": {
-      "0": "Cấp kỹ năng <strong>Phản Chiếu Vô Hình</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Phản Chiếu Vô Hình</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation4": {
     "name": "Sói Đuổi Mặt Trời",
     "description": {
-      "0": "Trong thời gian duy trì hiệu quả Tiếng Hót Đêm Ác Mộng của Kỹ Năng Nộ <strong>Phản Chiếu Vô Hình</strong>, nhân vật ra trận hiện tại trong đội ở gần sẽ tăng 200 điểm Phòng Ngự."
+      "0": "Trong thời gian duy trì hiệu quả Tiếng Hót Đêm Ác Mộng của Kỹ Năng Nộ <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Phản Chiếu Vô Hình</tooltip></strong>, nhân vật ra trận hiện tại trong đội ở gần sẽ tăng 200 điểm Phòng Ngự."
     }
   },
   "constellation5": {
     "name": "Ngựa Chiến Xé Gió",
     "description": {
-      "0": "Cấp kỹ năng <strong>Chim Hót Bình Minh</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Chim Hót Bình Minh</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation6": {
     "name": "Chim Đêm Ác Mộng",
     "description": {
-      "0": "Hiệu quả \"Lời Thề Giữ Đèn\" trong thiên phú <strong>Hiệp Ước Người Đúc Đèn</strong> sẽ được cường hóa: <geo>Sát Thương Nguyên Tố Nham</geo> gây ra cho kẻ địch sẽ tăng 10% Tỷ Lệ Bạo Kích và 30% Sát Thương Bạo Kích.",
+      "0": "Hiệu quả \"Lời Thề Giữ Đèn\" trong thiên phú <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>Hiệp Ước Người Đúc Đèn</tooltip></strong> sẽ được cường hóa: <geo>Sát Thương Nguyên Tố Nham</geo> gây ra cho kẻ địch sẽ tăng 10% Tỷ Lệ Bạo Kích và 30% Sát Thương Bạo Kích.",
       "1": "<br/>",
       "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>",
       "3": "Nhân vật chịu ảnh hưởng bởi hiệu quả Lời Thề Giữ Đèn sẽ tăng 80 điểm Tinh Thông Nguyên Tố.",

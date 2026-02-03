@@ -71,7 +71,7 @@
   "burst": {
     "name": "鉴照无影",
     "description": {
-      "0": "点亮灯火，造成<geo>岩元素范围伤害</geo>，并获得「魇夜的莺歌」效果，持续20秒：持续期间，叶洛亚获得21层<strong>「夜莺之歌」</strong>，队伍中附近的当前场上角色的普通攻击、重击、下落攻击、元素战技或元素爆发对敌人造成<geo>岩元素伤害</geo>时，将消耗1层「夜莺之歌」，提升造成的伤害，提升值基于叶洛亚的元素精通；若该伤害为月结晶反应造成的伤害，还会进一步提升造成的伤害。",
+      "0": "点亮灯火，造成<geo>岩元素范围伤害</geo>，并获得「魇夜的莺歌」效果，持续20秒：持续期间，叶洛亚获得21层<tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>「夜莺之歌」</strong></tooltip>，队伍中附近的当前场上角色的普通攻击、重击、下落攻击、元素战技或元素爆发对敌人造成<geo>岩元素伤害</geo>时，将消耗1层「夜莺之歌」，提升造成的伤害，提升值基于叶洛亚的元素精通；若该伤害为月结晶反应造成的伤害，还会进一步提升造成的伤害。",
       "1": "通过上述方式造成的<geo>岩元素伤害</geo>同时命中多名敌人时，会依据命中敌人的数量消耗「夜莺之歌」的层数。",
       "2": "<br/>",
       "3": "此外，叶洛亚在场上存在队伍中附近的角色创造的<geo>岩元素创造物</geo>的情况下施放元素爆发时，或在「魇夜的莺歌」持续期间，队伍中附近的角色创造了<geo>岩元素创造物</geo>时，场上的每个<geo>岩元素创造物</geo>都会使叶洛亚额外获得5层「夜莺之歌」。每次施放元素爆发后的20秒内，叶洛亚至多通过这种方式额外获得15层「夜莺之歌」。",
@@ -100,7 +100,7 @@
   "passive1": {
     "name": "铸灯者的盟约",
     "description": {
-      "0": "施放元素战技<strong>衔莺破晓</strong>或元素爆发<strong>鉴照无影</strong>后，队伍中附近的其他角色将获得持续20秒的「执灯之誓」效果：对敌人造成的<geo>岩元素伤害</geo>，暴击率提升5%，暴击伤害提升10%。",
+      "0": "施放元素战技<strong><tooltip ns=char_Illuga_gen baseKey18=skill>衔莺破晓</tooltip></strong>或元素爆发<strong><tooltip ns=char_Illuga_gen baseKey18=burst>鉴照无影</tooltip></strong>后，队伍中附近的其他角色将获得持续20秒的「执灯之誓」效果：对敌人造成的<geo>岩元素伤害</geo>，暴击率提升5%，暴击伤害提升10%。",
       "1": "<br/>",
       "2": "<strong>月兆·满辉</strong> ",
       "3": "处于「执灯之誓」效果影响下的角色，元素精通提升50点。"
@@ -109,7 +109,7 @@
   "passive2": {
     "name": "狩魔者的黄昏",
     "description": {
-      "0": "<strong>「夜莺之歌」</strong>的效果获得强化：当队伍中存在1/2/3名<hydro>水元素</hydro>或<geo>岩元素</geo>角色时，「夜莺之歌」会进一步提升造成的伤害，提升值相当于叶洛亚元素精通的7%/14%/24%；若上述伤害为月结晶反应造成的伤害，提升值则相当于叶洛亚元素精通的48%/96%/160%。"
+      "0": "<tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>「夜莺之歌」</strong></tooltip>的效果获得强化：当队伍中存在1/2/3名<hydro>水元素</hydro>或<geo>岩元素</geo>角色时，「夜莺之歌」会进一步提升造成的伤害，提升值相当于叶洛亚元素精通的7%/14%/24%；若上述伤害为月结晶反应造成的伤害，提升值则相当于叶洛亚元素精通的48%/96%/160%。"
     }
   },
   "passive3": {
@@ -135,33 +135,33 @@
   "constellation2": {
     "name": "噬枝之麋",
     "description": {
-      "0": "元素爆发<strong>鉴照无影</strong>中的「魇夜的莺歌」效果持续期间，每消耗7层<strong>「夜莺之歌」</strong>，叶洛亚都将唤出阿咚，对周围一名敌人造成一次<geo>岩元素伤害</geo>，伤害值基于叶洛亚元素精通的400%与防御力的200%，该伤害视为元素爆发伤害。"
+      "0": "元素爆发<tooltip ns=char_Illuga_gen baseKey18=burst><strong>鉴照无影</strong></tooltip>中的「魇夜的莺歌」效果持续期间，每消耗7层<tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>「夜莺之歌」</strong></tooltip>，叶洛亚都将唤出阿咚，对周围一名敌人造成一次<geo>岩元素伤害</geo>，伤害值基于叶洛亚元素精通的400%与防御力的200%，该伤害视为元素爆发伤害。"
     }
   },
   "constellation3": {
     "name": "山吼之罴",
     "description": {
-      "0": "元素爆发<strong>鉴照无影</strong>的技能等级提高3级。",
+      "0": "元素爆发<strong><tooltip ns=char_Illuga_gen baseKey18=burst>鉴照无影</tooltip></strong>的技能等级提高3级。",
       "1": "至多提升至15级。"
     }
   },
   "constellation4": {
     "name": "逐日之狼",
     "description": {
-      "0": "元素爆发<strong>鉴照无影</strong>中的「魇夜的莺歌」效果持续期间，队伍中附近的当前场上角色防御力提升200点。"
+      "0": "元素爆发<strong><tooltip ns=char_Illuga_gen baseKey18=burst>鉴照无影</tooltip></strong>中的「魇夜的莺歌」效果持续期间，队伍中附近的当前场上角色防御力提升200点。"
     }
   },
   "constellation5": {
     "name": "啸风之马",
     "description": {
-      "0": "元素战技<strong>衔莺破晓</strong>的技能等级提高3级。",
+      "0": "元素战技<strong><tooltip ns=char_Illuga_gen baseKey18=skill>衔莺破晓</tooltip></strong>的技能等级提高3级。",
       "1": "至多提升至15级。"
     }
   },
   "constellation6": {
     "name": "魇夜之莺",
     "description": {
-      "0": "突破天赋<strong>铸灯者的盟约</strong>中「执灯之誓」的效果获得强化：对敌人造成的<geo>岩元素伤害</geo>，暴击率提升10%，暴击伤害提升30%。",
+      "0": "突破天赋<strong><tooltip ns=char_Illuga_gen baseKey18=passive1>铸灯者的盟约</tooltip></strong>中「执灯之誓」的效果获得强化：对敌人造成的<geo>岩元素伤害</geo>，暴击率提升10%，暴击伤害提升30%。",
       "1": "<br/>",
       "2": "<strong>月兆·满辉</strong> ",
       "3": "处于「执灯之誓」效果影响下的角色，元素精通提升80点。",

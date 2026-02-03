@@ -41,7 +41,7 @@
   "skill": {
     "name": "Manifestazione di cielo e terra",
     "description": {
-      "0": "Evocando un'ombra dei suoi vecchi poteri, entra nella modalità <strong>Cambio delle fasi lunari</strong>.",
+      "0": "Evocando un'ombra dei suoi vecchi poteri, entra nella modalità <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Cambio delle fasi lunari</strong></tooltip>.",
       "1": "In questa modalità, gli attacchi normali e caricati di Zibai infliggono <geo>DAN da Geo</geo> non influenzabili da altre infusioni elementali. Inoltre, Zibai può ottenere accumuli di <strong>Cambio di fase splendente</strong> speciale in diversi modi, che può consumare per scatenare l'abilità elementale speciale <strong>Passo del destriero spirituale</strong>.",
       "2": "<br/>",
       "3": "<strong>Presagio lunare: Barlume ascendente</strong>",
@@ -70,7 +70,7 @@
     "name": "Eminenza trisferica",
     "description": {
       "0": "Zibai usa il Paracielo di Giadaluce, infliggendo due iterazioni di <geo>DAN da Geo</geo>. I DAN del secondo colpo sono considerati DAN da Cristallizzazione lunare.",
-      "1": "Se Zibai è nella modalità <strong>Cambio delle fasi lunari</strong> quando usa quest'abilità, la durata della modalità stessa si estende di 1,7 s."
+      "1": "Se Zibai è nella modalità <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Cambio delle fasi lunari</strong></tooltip> quando usa quest'abilità, la durata della modalità stessa si estende di 1,7 s."
     },
     "skillParams": {
       "0": "DAN da 1º colpo abilità",
@@ -94,7 +94,7 @@
   "passive1": {
     "name": "Discesa dell'Adepta selenica",
     "description": {
-      "0": "Quando viene usata l'abilità elementale <strong>Manifestazione di cielo e terra</strong> o quando i membri vicini del gruppo innescano Armonia della Gabbia lunare, Zibai ottiene l'effetto <strong>Discesa selenica</strong> per 4 s, che aumenta i DAN inflitti dal 2º colpo di <strong>Passo del destriero spirituale</strong> di un 60% della DIF di Zibai."
+      "0": "Quando viene usata l'abilità elementale <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Manifestazione di cielo e terra</tooltip></strong> o quando i membri vicini del gruppo innescano Armonia della Gabbia lunare, Zibai ottiene l'effetto <strong>Discesa selenica</strong> per 4 s, che aumenta i DAN inflitti dal 2º colpo di <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Passo del destriero spirituale</strong></tooltip> di un 60% della DIF di Zibai."
     }
   },
   "passive2": {
@@ -121,43 +121,43 @@
   "constellation1": {
     "name": "Avanza con vigore, ma entra in silenzio",
     "description": {
-      "0": "Dopo aver usato l'abilità elementale <strong>Manifestazione di cielo e terra</strong>, Zibai ottiene immediatamente 100 accumuli di <strong>Cambio di fase splendente</strong>, e il numero massimo di usi di <strong>Passo del destriero spirituale</strong> per la modalità <strong>Cambio delle fasi lunari</strong> aumenta a 5.",
+      "0": "Dopo aver usato l'abilità elementale <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Manifestazione di cielo e terra</tooltip></strong>, Zibai ottiene immediatamente 100 accumuli di <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Cambio di fase splendente</strong></tooltip>, e il numero massimo di usi di <strong>Passo del destriero spirituale</strong> per la modalità <strong>Cambio delle fasi lunari</strong> aumenta a 5.",
       "1": "Inoltre, ogni volta che entra nella modalità Cambio delle fasi lunari, i DAN da reazione di Cristallizzazione lunare del 2º colpo del primo Passo del destriero spirituale aumentano di un 220%."
     }
   },
   "constellation2": {
     "name": "Anime alla nascita e ombre alla morte",
     "description": {
-      "0": "Quando è nella modalità <strong>Cambio delle fasi lunari</strong>, i DAN da Cristallizzazione lunare di tutti i membri del gruppo vicini aumentano di un 30%.",
+      "0": "Quando è nella modalità <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Cambio delle fasi lunari</strong></tooltip>, i DAN da Cristallizzazione lunare di tutti i membri del gruppo vicini aumentano di un 30%.",
       "1": "<br/>",
-      "2": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, il talento d'ascensione <strong>Discesa dell'Adepta selenica</strong> viene potenziato: i DAN inflitti dal 2º colpo di <strong>Passo del destriero spirituale</strong> aumentano ulteriormente di un 550% della DIF di Zibai. Richiede il talento d'ascensione Discesa dell'Adepta selenica."
+      "2": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, il talento d'ascensione <strong><tooltip ns=char_Zibai_gen baseKey18=passive1>Discesa dell'Adepta selenica</tooltip></strong> viene potenziato: i DAN inflitti dal 2º colpo di <strong>Passo del destriero spirituale</strong> aumentano ulteriormente di un 550% della DIF di Zibai. Richiede il talento d'ascensione Discesa dell'Adepta selenica."
     }
   },
   "constellation3": {
     "name": "Libera da vincoli e legami del mondo",
     "description": {
-      "0": "Aumenta di 3 il livello dell'abilità elementale <strong>Manifestazione di cielo e terra</strong>.",
+      "0": "Aumenta di 3 il livello dell'abilità elementale <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Manifestazione di cielo e terra</tooltip></strong>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation4": {
     "name": "Lo spirito passa, la forma segue",
     "description": {
-      "0": "Mentre è nella modalità <strong>Cambio delle fasi lunari</strong>, la sequenza degli attacchi normali di Zibai non si azzera e, quando <strong>Passo del destriero spirituale</strong> colpisce gli avversari, Zibai ottiene l'effetto <strong>Splendore Disperdiluna</strong>: la volta successiva che Zibai usa gli attacchi normali, l'attacco aggiuntivo del suo 4º colpo infligge un 250% dei DAN originali come DAN da Cristallizzazione lunare."
+      "0": "Mentre è nella modalità <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Cambio delle fasi lunari</strong></tooltip>, la sequenza degli attacchi normali di Zibai non si azzera e, quando <strong>Passo del destriero spirituale</strong> colpisce gli avversari, Zibai ottiene l'effetto <strong>Splendore Disperdiluna</strong>: la volta successiva che Zibai usa gli attacchi normali, l'attacco aggiuntivo del suo 4º colpo infligge un 250% dei DAN originali come DAN da Cristallizzazione lunare."
     }
   },
   "constellation5": {
     "name": "Non ragionar di loro, ma guarda e passa",
     "description": {
-      "0": "Aumenta di 3 il livello del Tripudio elementale <strong>Eminenza trisferica</strong>.",
+      "0": "Aumenta di 3 il livello del Tripudio elementale <strong><tooltip ns=char_Zibai_gen baseKey18=burst>Eminenza trisferica</tooltip></strong>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation6": {
     "name": "Il mondo, un viaggio incidentale",
     "description": {
-      "0": "Mentre Zibai è nella modalità <strong>Cambio delle fasi lunari</strong>, il tasso di ottenimento di <strong>Cambio di fase splendente</strong> aumenta di un 50%.",
-      "1": "Inoltre, <strong>Passo del destriero spirituale</strong> si modifica per consumare tutti gli accumuli di Cambio di fase splendente a disposizione. Questo <strong>innalza</strong> i DAN inflitti dalla suddetta iterazione di Passo del destriero spirituale e i DAN da reazione di Cristallizzazione lunare inflitti da Zibai nei 3 s successivi di un 1,6% per ogni punto superiore a 70 consumato. L'effetto non è cumulabile."
+      "0": "Mentre Zibai è nella modalità <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Cambio delle fasi lunari</strong></tooltip>, il tasso di ottenimento di <strong>Cambio di fase splendente</strong> aumenta di un 50%.",
+      "1": "Inoltre, <strong>Passo del destriero spirituale</strong> si modifica per consumare tutti gli accumuli di Cambio di fase splendente a disposizione. Questo <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalza</strong></tooltip> i DAN inflitti dalla suddetta iterazione di Passo del destriero spirituale e i DAN da reazione di Cristallizzazione lunare inflitti da Zibai nei 3 s successivi di un 1,6% per ogni punto superiore a 70 consumato. L'effetto non è cumulabile."
     }
   }
 }

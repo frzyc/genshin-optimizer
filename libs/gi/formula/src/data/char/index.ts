@@ -41,6 +41,7 @@ import Gorou from './Gorou'
 import HuTao from './HuTao'
 import Iansan from './Iansan'
 import Ifa from './Ifa'
+import Illuga from './Illuga'
 import Ineffa from './Ineffa'
 import Jahoda from './Jahoda'
 import Jean from './Jean'
@@ -114,6 +115,7 @@ import Yoimiya from './Yoimiya'
 import YumemizukiMizuki from './YumemizukiMizuki'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
+import Zibai from './Zibai'
 
 const data: TagMapNodeEntries[] = [
   Aino,
@@ -157,6 +159,7 @@ const data: TagMapNodeEntries[] = [
   Gorou,
   HuTao,
   Iansan,
+  Illuga,
   Ifa,
   Ineffa,
   Jahoda,
@@ -225,6 +228,7 @@ const data: TagMapNodeEntries[] = [
   YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
   TravelerAnemo,
   TravelerGeo,
   TravelerElectro,

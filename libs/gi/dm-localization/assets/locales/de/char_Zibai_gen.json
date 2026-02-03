@@ -41,7 +41,7 @@
   "skill": {
     "name": "Himmel und Erde in Gestalt",
     "description": {
-      "0": "Ruft einen Schatten ihrer alten Kräfte herbei und wechselt in den Modus <strong>Wechsel des Mondabschnitts</strong>.",
+      "0": "Ruft einen Schatten ihrer alten Kräfte herbei und wechselt in den Modus <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Wechsel des Mondabschnitts</strong></tooltip>.",
       "1": "In diesem Modus verursacht Zibai mit Standardangriffen und heftigen Schlägen <geo>Geo-SCH</geo>, der nicht von anderen Elementen überdeckt werden kann. Durch verschiedene Methoden kann sie zudem speziellen <strong>Abschnittswechsel-Glanz</strong> sammeln. Durch Verbrauchen von Abschnittswechsel-Glanz kann Zibai die besondere Elementarfähigkeit <strong>Galopp des Geisterrosses</strong> anwenden.",
       "2": "<br/>",
       "3": "<strong>Mondomen – Reifer Glanz</strong>",
@@ -70,7 +70,7 @@
     "name": "Dreisphären-Eminenz",
     "description": {
       "0": "Zibai dreht den Baldachin des Himmels und verursacht zweimal <geo>Geo-SCH</geo>, wobei die zweite Schadens-Phase als Schaden durch die Reaktion Mond-Kristallisation gilt.",
-      "1": "Befindet sich Zibai beim Anwenden der Fähigkeit im Modus <strong>Wechsel des Mondabschnitts</strong>, verlängert sich die diesmalige Dauer des Modus „Wechsel des Mondabschnitts“ um 1,7 s."
+      "1": "Befindet sich Zibai beim Anwenden der Fähigkeit im Modus <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Wechsel des Mondabschnitts</strong></tooltip>, verlängert sich die diesmalige Dauer des Modus „Wechsel des Mondabschnitts“ um 1,7 s."
     },
     "skillParams": {
       "0": "Fähigkeits-SCH Phase 1",
@@ -94,7 +94,7 @@
   "passive1": {
     "name": "Ankunft des selenischen Adepten",
     "description": {
-      "0": "Verleiht Zibai beim Anwenden von <strong>Himmel und Erde in Gestalt</strong> durch Zibai oder beim Auslösen von „Harmonie der Mondkäfige“ durch Truppenmitglieder in der Nähe 4 s lang den Effekt <strong>Selenische Ankunft</strong>: Erhöht den durch die zweite Angriffsphase von <strong>Galopp des Geisterrosses</strong> verursachten Schaden um 60 % von Zibais VTD."
+      "0": "Verleiht Zibai beim Anwenden von <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Himmel und Erde in Gestalt</tooltip></strong> durch Zibai oder beim Auslösen von „Harmonie der Mondkäfige“ durch Truppenmitglieder in der Nähe 4 s lang den Effekt <strong>Selenische Ankunft</strong>: Erhöht den durch die zweite Angriffsphase von <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Galopp des Geisterrosses</strong></tooltip> verursachten Schaden um 60 % von Zibais VTD."
     }
   },
   "passive2": {
@@ -121,43 +121,43 @@
   "constellation1": {
     "name": "Mit großer Kraft auftauchen, doch in völliger Stille eintreten",
     "description": {
-      "0": "Sammelt nach dem Anwenden der Elementarfähigkeit <strong>Himmel und Erde in Gestalt</strong> 100 Punkte <strong>Abschnittswechsel-Glanz</strong> für Zibai an. Erhöht zudem im Modus <strong>Wechsel des Mondabschnitts</strong> die max. Anzahl der Nutzungen von <strong>Galopp des Geisterrosses</strong> auf 5.",
+      "0": "Sammelt nach dem Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Himmel und Erde in Gestalt</tooltip></strong> 100 Punkte <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Abschnittswechsel-Glanz</strong></tooltip> für Zibai an. Erhöht zudem im Modus <strong>Wechsel des Mondabschnitts</strong> die max. Anzahl der Nutzungen von <strong>Galopp des Geisterrosses</strong> auf 5.",
       "1": "Erhöht des Weiteren nach jedem Wechseln in den Modus Wechsel des Mondabschnitts bei der ersten Anwendung von Galopp des Geisterrosses den Mond-Kristallisation-Schaden, der durch die 2. Angriffsphase verursacht wird, um 220 %."
     }
   },
   "constellation2": {
     "name": "Zum Leben geboren, doch im Tod vergehend",
     "description": {
-      "0": "Erhöht im Modus <strong>Wechsel des Mondabschnitts</strong> den von allen Truppenmitgliedern in der Nähe durch die Mond-Kristallisation verursachten Schaden um 30 %.",
+      "0": "Erhöht im Modus <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Wechsel des Mondabschnitts</strong></tooltip> den von allen Truppenmitgliedern in der Nähe durch die Mond-Kristallisation verursachten Schaden um 30 %.",
       "1": "<br/>",
-      "2": "<strong>Mondomen – Reifer Glanz</strong>: Verstärkt den Effekt des Aufstiegstalents <strong>Ankunft des selenischen Adepten</strong>: Erhöht den durch die zweite Angriffsphase von <strong>Galopp des Geisterrosses</strong> verursachten Schaden zusätzlich um 550 % von Zibais VTD. Das Aufstiegstalent „Ankunft des selenischen Adepten“ muss freigeschaltet werden."
+      "2": "<strong>Mondomen – Reifer Glanz</strong>: Verstärkt den Effekt des Aufstiegstalents <strong><tooltip ns=char_Zibai_gen baseKey18=passive1>Ankunft des selenischen Adepten</tooltip></strong>: Erhöht den durch die zweite Angriffsphase von <strong>Galopp des Geisterrosses</strong> verursachten Schaden zusätzlich um 550 % von Zibais VTD. Das Aufstiegstalent „Ankunft des selenischen Adepten“ muss freigeschaltet werden."
     }
   },
   "constellation3": {
     "name": "Frei von Fesseln und weltlichen Bindungen",
     "description": {
-      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Himmel und Erde in Gestalt</strong> um 3.",
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Himmel und Erde in Gestalt</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation4": {
     "name": "Die Seele vergeht und der Körper folgt",
     "description": {
-      "0": "Setzt im Modus <strong>„Wechsel des Mondabschnitts“</strong> die Angriffsphase von Zibais Standardangriffen nicht zurück. Verleiht Zibai beim Treffen von Gegnern mit <strong>Galopp des Geisterrosses</strong> den Effekt <strong>„Pracht des Streumonds“</strong>: Der zusätzliche Angriff der 4. Phase des nächsten Standardangriffs verursacht Mond-Kristallisation-Schaden in Höhe von 250 % des ursprünglichen Schadens."
+      "0": "Setzt im Modus <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>„Wechsel des Mondabschnitts“</strong></tooltip> die Angriffsphase von Zibais Standardangriffen nicht zurück. Verleiht Zibai beim Treffen von Gegnern mit <strong>Galopp des Geisterrosses</strong> den Effekt <strong>„Pracht des Streumonds“</strong>: Der zusätzliche Angriff der 4. Phase des nächsten Standardangriffs verursacht Mond-Kristallisation-Schaden in Höhe von 250 % des ursprünglichen Schadens."
     }
   },
   "constellation5": {
     "name": "Das Wertlose erkennen und es akzeptieren",
     "description": {
-      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Dreisphären-Eminenz</strong> um 3.",
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Zibai_gen baseKey18=burst>Dreisphären-Eminenz</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation6": {
     "name": "Himmel und Erde, eine weite Reise im Nu",
     "description": {
-      "0": "Erhöht im Modus <strong>Wechsel des Mondabschnitts</strong> Zibais Sammeleffizienz von <strong>Abschnittswechsel-Glanz</strong> um 50 %.",
-      "1": "Ändert zudem <strong>Galopp des Geisterrosses</strong>, sodass dabei alle Punkte Abschnittswechsel-Glanz verbraucht werden. <strong>Steigert</strong> für jeden verbrauchten Punkt Abschnittswechsel-Glanz über 70 den durch diesmaligen Galopp des Geisterrosses sowie den innerhalb der nächsten 3 s von Zibai verursachten Mond-Kristallisations-Schaden um 1,6 %. Dieser Effekt ist nicht stapelbar."
+      "0": "Erhöht im Modus <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Wechsel des Mondabschnitts</strong></tooltip> Zibais Sammeleffizienz von <strong>Abschnittswechsel-Glanz</strong> um 50 %.",
+      "1": "Ändert zudem <strong>Galopp des Geisterrosses</strong>, sodass dabei alle Punkte Abschnittswechsel-Glanz verbraucht werden. <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> für jeden verbrauchten Punkt Abschnittswechsel-Glanz über 70 den durch diesmaligen Galopp des Geisterrosses sowie den innerhalb der nächsten 3 s von Zibai verursachten Mond-Kristallisations-Schaden um 1,6 %. Dieser Effekt ist nicht stapelbar."
     }
   }
 }
