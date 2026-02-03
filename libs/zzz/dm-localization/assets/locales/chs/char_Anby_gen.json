@@ -1,0 +1,216 @@
+{
+  "name": "安比",
+  "fullName": "Anby Demara",
+  "basic": {
+    "BasicAttackTurboVolt": {
+      "name": "普通攻击：伏特速攻",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的斩击，前三段造成<ct color=#F0D12B>物理伤害</ct>，第四段造成<ct color=#2EB6FF>电属性伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackThunderbolt": {
+      "name": "普通攻击：落雷",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[普通攻击]</ct>第三段后，长按或停顿后点按 <IconNormal /> 发动：",
+        "1": "向前方进行下落打击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeSlide": {
+      "name": "闪避：滑步",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackTaserBlast": {
+      "name": "冲刺攻击：电弧斩",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向身周进行斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterThunderclap": {
+      "name": "闪避反击：迅雷",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackForkLightning": {
+      "name": "特殊技：电光挥击",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方进行上挑斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "若衔接在<ct color=#FFFFFF>[普通攻击]</ct>第三段或<ct color=#FFFFFF>[普通攻击：落雷]</ct>之后，则能够以更快的速度发动；",
+        "3": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackLightningBolt": {
+      "name": "强化特殊技：苍雷斩",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方进行强力上挑斩击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "若衔接在<ct color=#FFFFFF>[普通攻击]</ct>第三段或<ct color=#FFFFFF>[普通攻击：落雷]</ct>之后，则能够以更快的速度发动；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackElectroEngine": {
+      "name": "连携技：电磁引擎",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方小范围敌人发动强力上挑斩击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateOverdriveEngine": {
+      "name": "终结技：过载引擎",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方小范围敌人发动强力上挑斩击，并追加下落攻击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistThunderfall": {
+      "name": "快速支援：降雷",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistFlash": {
+      "name": "招架支援：电光一闪",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpLightningWhirl": {
+      "name": "支援突击：回旋闪电",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动回旋斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：波动电压",
+    "desc": [
+      "安比在<ct color=#FFFFFF>[普通攻击]</ct>第三段后发动<ct color=#FFFFFF>[普通攻击：落雷]</ct>、<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>32%</ct>。",
+      "安比在<ct color=#FFFFFF>[普通攻击]</ct>第三段后发动<ct color=#FFFFFF>[普通攻击：落雷]</ct>、<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>37.3%</ct>。",
+      "安比在<ct color=#FFFFFF>[普通攻击]</ct>第三段后发动<ct color=#FFFFFF>[普通攻击：落雷]</ct>、<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>42.6%</ct>。",
+      "安比在<ct color=#FFFFFF>[普通攻击]</ct>第三段后发动<ct color=#FFFFFF>[普通攻击：落雷]</ct>、<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>48%</ct>。",
+      "安比在<ct color=#FFFFFF>[普通攻击]</ct>第三段后发动<ct color=#FFFFFF>[普通攻击：落雷]</ct>、<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>53.3%</ct>。",
+      "安比在<ct color=#FFFFFF>[普通攻击]</ct>第三段后发动<ct color=#FFFFFF>[普通攻击：落雷]</ct>、<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>58.6%</ct>。",
+      "安比在<ct color=#FFFFFF>[普通攻击]</ct>第三段后发动<ct color=#FFFFFF>[普通攻击：落雷]</ct>、<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>64%</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：并联电路",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "安比<ct color=#FFFFFF>[闪避反击]</ct>命中敌人时，额外回复7.2点能量，5秒内最多触发一次。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "快充模式",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>第四段斩击命中敌人时，安比的能量获得效率提升12%，持续30秒。",
+      "flavor": {
+        "0": "「快充一分钟，战斗半小时！」\n为武器加装拓展功能模块的专家是这么保证的——\n使用效果也确实符合他的宣言。",
+        "1": "And they deliver exactly that."
+      }
+    },
+    "2": {
+      "name": "精准放电",
+      "desc": "<ct color=#FFFFFF>[普通攻击：落雷]</ct>命中处于失衡状态下的敌人时，招式造成的伤害提升30%；<ct color=#FFFFFF>[强化特殊技]</ct>命中未处于失衡状态下的敌人时，招式造成的失衡值提升10%。",
+      "flavor": {
+        "0": "「触电了，就会晕倒。」",
+        "1": "少女淡淡的望着面前轰然昏倒的敌人，补了一句：",
+        "2": "「电影里都是这么演的。」"
+      }
+    },
+    "3": {
+      "name": "训练有素",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "奔跑、挥刀、动若雷霆。少女不是探索空洞的生手，而是精于此道的专家。"
+    },
+    "4": {
+      "name": "电荷传导",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，为后场电属性角色回复3点能量；安比每拥有12%能量获得效率，回复量额外提升2点，最多额外提升6点。",
+        "1": "For every 12% Energy Generation Rate Anby has, recover an additional 2 Energy, up to a maximum of 6."
+      },
+      "flavor": "单打独斗不是长久之计，老练的盗洞客还会在战斗中适时为队友创造机会。"
+    },
+    "5": {
+      "name": "街头经验",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "狡兔屋的工作不仅能提升心理素质，还能（被迫）提升身体素质。"
+    },
+    "6": {
+      "name": "充能电场",
+      "desc": "发动<ct color=#FFFFFF>[强化特殊技]</ct>时，安比获得8层充能（上限8层）；<ct color=#FFFFFF>[普通攻击]</ct>或<ct color=#FFFFFF>[冲刺攻击]</ct>命中敌人时，消耗1层充能，使当前招式造成的伤害提升45%。",
+      "flavor": {
+        "0": "闪烁的电光在少女的指尖跳跃。",
+        "1": "少女抬起头，眼里盛着超出外貌年龄的坚毅。",
+        "2": "或许终有一日，她将成为掌控这须臾电光的人。"
+      }
+    }
+  },
+  "potential": {}
+}

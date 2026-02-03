@@ -1,0 +1,18 @@
+{
+  "name": "淬锋钳刺",
+  "desc": {
+    "0": "获取途径不明的高危级音擎，由简·杜本人亲手改装，兼顾物理杀伤力和异常触及。内载能量运转核心确保异常触发效果，外部的所有尖锐部分则已经反复打磨，确保能在近身格斗中造成出其不意的撕裂伤害。",
+    "1": "",
+    "2": "<ct color=#959595>「难道要和以骸讲究决斗礼仪？用最快的方式结束它们的痛苦，还不够礼貌吗~」——简，面对「战斗手段是否过于残忍」的质疑时忍不住发笑</ct>"
+  },
+  "desc2": "装备后可提升[异常]代理人的战斗能力",
+  "desc3": "获取途径不明的高危级音擎，由简·杜本人亲手改装，兼顾物理杀伤力和异常触及。",
+  "phase": "恣横猎心",
+  "phaseDescs": [
+    "发动<ct color=#FFFFFF>[冲刺攻击]</ct>时，获得1层<ct color=#FFFFFF>[猎意]</ct>，每层<ct color=#FFFFFF>[猎意]</ct>使装备者造成的<ct color=#F0D12B>物理伤害</ct>提升<ct color=#2BAD00>12%</ct>，最多叠加3层，持续10秒，0.5秒内最多触发一次，重复触发时刷新持续时间；进入接战状态或触发<ct color=#FFFFFF>[极限闪避]</ct>时，直接获得3层<ct color=#FFFFFF>[猎意]</ct>；<ct color=#FFFFFF>[猎意]</ct>叠加至层数上限后，装备者的属性异常积蓄效率提升<ct color=#2BAD00>40%</ct>。",
+    "发动<ct color=#FFFFFF>[冲刺攻击]</ct>时，获得1层<ct color=#FFFFFF>[猎意]</ct>，每层<ct color=#FFFFFF>[猎意]</ct>使装备者造成的<ct color=#F0D12B>物理伤害</ct>提升<ct color=#2BAD00>15%</ct>，最多叠加3层，持续10秒，0.5秒内最多触发一次，重复触发时刷新持续时间；进入接战状态或触发<ct color=#FFFFFF>[极限闪避]</ct>时，直接获得3层<ct color=#FFFFFF>[猎意]</ct>；<ct color=#FFFFFF>[猎意]</ct>叠加至层数上限后，装备者的属性异常积蓄效率提升<ct color=#2BAD00>50%</ct>。",
+    "发动<ct color=#FFFFFF>[冲刺攻击]</ct>时，获得1层<ct color=#FFFFFF>[猎意]</ct>，每层<ct color=#FFFFFF>[猎意]</ct>使装备者造成的<ct color=#F0D12B>物理伤害</ct>提升<ct color=#2BAD00>18%</ct>，最多叠加3层，持续10秒，0.5秒内最多触发一次，重复触发时刷新持续时间；进入接战状态或触发<ct color=#FFFFFF>[极限闪避]</ct>时，直接获得3层<ct color=#FFFFFF>[猎意]</ct>；<ct color=#FFFFFF>[猎意]</ct>叠加至层数上限后，装备者的属性异常积蓄效率提升<ct color=#2BAD00>60%</ct>。",
+    "发动<ct color=#FFFFFF>[冲刺攻击]</ct>时，获得1层<ct color=#FFFFFF>[猎意]</ct>，每层<ct color=#FFFFFF>[猎意]</ct>使装备者造成的<ct color=#F0D12B>物理伤害</ct>提升<ct color=#2BAD00>21%</ct>，最多叠加3层，持续10秒，0.5秒内最多触发一次，重复触发时刷新持续时间；进入接战状态或触发<ct color=#FFFFFF>[极限闪避]</ct>时，直接获得3层<ct color=#FFFFFF>[猎意]</ct>；<ct color=#FFFFFF>[猎意]</ct>叠加至层数上限后，装备者的属性异常积蓄效率提升<ct color=#2BAD00>70%</ct>。",
+    "发动<ct color=#FFFFFF>[冲刺攻击]</ct>时，获得1层<ct color=#FFFFFF>[猎意]</ct>，每层<ct color=#FFFFFF>[猎意]</ct>使装备者造成的<ct color=#F0D12B>物理伤害</ct>提升<ct color=#2BAD00>24%</ct>，最多叠加3层，持续10秒，0.5秒内最多触发一次，重复触发时刷新持续时间；进入接战状态或触发<ct color=#FFFFFF>[极限闪避]</ct>时，直接获得3层<ct color=#FFFFFF>[猎意]</ct>；<ct color=#FFFFFF>[猎意]</ct>叠加至层数上限后，装备者的属性异常积蓄效率提升<ct color=#2BAD00>80%</ct>。"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "旋钻机-赤轴",
+  "desc": {
+    "0": "原本为转速增强型音擎，安东选用了最昂贵的旋钻机配件对其进行一体化改装，使其输出功率可以在短时间内超越极限，更好地为自己的「兄弟」供能。在对待「兄弟」的相关配件上，安东从不吝啬。",
+    "1": "",
+    "2": "<ct color=#959595>「材料是本亲自采购的，改装技术是格莉丝支持的，威力是社长验证过的…兄弟，白祇重工的祝福都集中在你身上了，一起加油吧！」——安东，初次启动时的自言自语</ct>"
+  },
+  "desc2": "装备后可提升[强攻]代理人的战斗能力",
+  "desc3": "原本为转速增强型音擎，为了使其输出功率超越极限，安东对其进行一体化改装。",
+  "phase": "红莲电机",
+  "phaseDescs": [
+    "发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[连携技]</ct>时，<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[冲刺攻击]</ct>造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>50%</ct>，持续10秒，15秒内最多触发一次。",
+    "发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[连携技]</ct>时，<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[冲刺攻击]</ct>造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>57.5%</ct>，持续10秒，15秒内最多触发一次。",
+    "发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[连携技]</ct>时，<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[冲刺攻击]</ct>造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>65%</ct>，持续10秒，15秒内最多触发一次。",
+    "发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[连携技]</ct>时，<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[冲刺攻击]</ct>造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>72.5%</ct>，持续10秒，15秒内最多触发一次。",
+    "发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[连携技]</ct>时，<ct color=#FFFFFF>[普通攻击]</ct>和<ct color=#FFFFFF>[冲刺攻击]</ct>造成的<ct color=#2EB6FF>电属性伤害</ct>提升<ct color=#2BAD00>80%</ct>，持续10秒，15秒内最多触发一次。"
+  ]
+}

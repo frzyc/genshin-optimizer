@@ -10,6 +10,7 @@ import {
 } from '@genshin-optimizer/zzz/formula-ui'
 import { Box, Button, ButtonGroup, Grid, Typography } from '@mui/material'
 import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export function DiscSetFilter({
   discBySlot,
@@ -25,6 +26,7 @@ export function DiscSetFilter({
   setSetFilter4: (setFilter4: DiscSetKey[]) => void
   setSetFilter2: (setFilter2: DiscSetKey[]) => void
 }) {
+  const { t } = useTranslation('optimize')
   const character = useCharacterContext()
   const charOpt = useCharOpt(character?.key)
   const discSetBySlot = useMemo(() => {
@@ -43,13 +45,13 @@ export function DiscSetFilter({
     <>
       <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          Disc Set Config
+          {t('discSetConfig')}
         </Typography>
         <Button disabled={!setFilter4.length} onClick={() => setSetFilter4([])}>
-          Reset 4p filter
+          {t('reset4pFilter')}
         </Button>
         <Button disabled={!setFilter2.length} onClick={() => setSetFilter2([])}>
-          Reset 2p filter
+          {t('reset2pFilter')}
         </Button>
       </Box>
 
@@ -94,6 +96,7 @@ function AdvSetFilterDiscCard({
   setSetFilter4: (setFilter4: DiscSetKey[]) => void
   setSetFilter2: (setFilter2: DiscSetKey[]) => void
 }) {
+  const { t } = useTranslation('optimize')
   const greyOut2 = !!setFilter2.length && !setFilter2.includes(setKey)
   const greyOut4 = !!setFilter4.length && !setFilter4.includes(setKey)
   return (
@@ -121,7 +124,7 @@ function AdvSetFilterDiscCard({
             )
           }
         >
-          Allow 4p
+          {t('allow4p')}
         </Button>
         <Button
           sx={{ borderRadius: 0 }}
@@ -138,7 +141,7 @@ function AdvSetFilterDiscCard({
             )
           }
         >
-          Allow 2p
+          {t('allow2p')}
         </Button>
       </ButtonGroup>
     </DiscSheetDisplay>

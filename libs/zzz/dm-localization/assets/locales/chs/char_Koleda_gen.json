@@ -1,0 +1,221 @@
+{
+  "name": "珂蕾妲",
+  "fullName": "Koleda Belobog",
+  "basic": {
+    "BasicAttackSmashNBash": {
+      "name": "普通攻击：砸扁，粉碎",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的打击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "当珂蕾妲拥有<ct color=#FFFFFF>[熔炉升温]</ct>效果时，能够在第二段攻击后发动强化<ct color=#FFFFFF>[普通攻击]</ct>，消耗<ct color=#FFFFFF>[熔炉升温]</ct>效果并造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "3": "当珂蕾妲与本同时出战，发动强化<ct color=#FFFFFF>[普通攻击]</ct>时，会由双方配合发动协同攻击，进一步提升招式的威力；",
+        "4": "<ct color=#FFFFFF>[普通攻击]</ct>第四段和强化<ct color=#FFFFFF>[普通攻击]</ct>发动期间拥有无敌效果。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "Enhanced Basic Attack 1st-Hit ",
+        "Enhanced Basic Attack 2nd-Hit ",
+        "强化普攻二段伤害倍率（协同）",
+        "Enhanced Basic Attack 2nd-Hit (Teamwork) "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeWaitNSee": {
+      "name": "闪避：走着瞧",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackTremble": {
+      "name": "冲刺攻击：给我颤抖",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行打击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterDontLookDownOnMe": {
+      "name": "闪避反击：别小看我",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前方敌人发动打击并引发爆炸，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackHammerTime": {
+      "name": "特殊技：爆破！铁锤时间",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "对前方进行打击并引发爆炸，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "若衔接在<ct color=#FFFFFF>[普通攻击]</ct>第二、第四段或强化<ct color=#FFFFFF>[普通攻击]</ct>后，则能够快速发动招式，直接引发爆炸；",
+        "3": "当珂蕾妲与本同时出战，并衔接在强化<ct color=#FFFFFF>[普通攻击]</ct>后快速发动招式时，会由双方配合发动协同攻击，进一步提升招式的威力；",
+        "4": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        "打击",
+        "Explosion ",
+        "Explosion (Teamwork) "
+      ]
+    },
+    "EXSpecialAttackBoilingFurnace": {
+      "name": "强化特殊技：沸腾熔炉",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "对前方进行打击并引发强力爆炸，造成大量<ct color=#FF5521>火属性伤害</ct>，并获得<ct color=#FFFFFF>[熔炉升温]</ct>效果；",
+        "2": "若衔接在<ct color=#FFFFFF>[普通攻击]</ct>第二、第四段或强化<ct color=#FFFFFF>[普通攻击]</ct>后，则能够快速发动招式，直接引发爆炸；",
+        "3": "当珂蕾妲与本同时出战，并衔接在强化<ct color=#FFFFFF>[普通攻击]</ct>后快速发动招式时，会由双方配合发动协同攻击，进一步提升招式的威力；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "打击",
+        "Explosion ",
+        "Explosion (Teamwork) ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackNaturalDisaster": {
+      "name": "连携技：天崩-地裂",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "在前方大范围区域发动强力爆炸，造成大量<ct color=#FF5521>火属性伤害</ct>，并获得<ct color=#FFFFFF>[熔炉升温]</ct>效果；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateHammerquake": {
+      "name": "终结技：锤进地心",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "在前方大范围区域发动强力爆炸，造成大量<ct color=#FF5521>火属性伤害</ct>，并获得<ct color=#FFFFFF>[熔炉升温]</ct>效果；",
+        "2": "当珂蕾妲与本同时出战时，会由双方配合发动协同攻击，进一步提升招式的威力；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "(Teamwork) "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistComingThru": {
+      "name": "快速支援：让我来",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "向前方敌人发动打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistProtectiveHammer": {
+      "name": "招架支援：护身锤",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "具有较为优秀的招架性能，承受高强度攻击时<ct color=#FFFFFF>[支援点数]</ct>的消耗量降低；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpHammerBell": {
+      "name": "支援突击：锤钟",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动突进打击，造成<ct color=#FF5521>火属性伤害</ct>，并获得<ct color=#FFFFFF>[熔炉升温]</ct>效果；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：爆破锤",
+    "desc": [
+      "珂蕾妲发动<ct color=#FFFFFF>[强化特殊技]</ct>，或消耗<ct color=#FFFFFF>[熔炉升温]</ct>发动强化<ct color=#FFFFFF>[普通攻击]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>30%</ct>。",
+      "珂蕾妲发动<ct color=#FFFFFF>[强化特殊技]</ct>，或消耗<ct color=#FFFFFF>[熔炉升温]</ct>发动强化<ct color=#FFFFFF>[普通攻击]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>35%</ct>。",
+      "珂蕾妲发动<ct color=#FFFFFF>[强化特殊技]</ct>，或消耗<ct color=#FFFFFF>[熔炉升温]</ct>发动强化<ct color=#FFFFFF>[普通攻击]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>40%</ct>。",
+      "珂蕾妲发动<ct color=#FFFFFF>[强化特殊技]</ct>，或消耗<ct color=#FFFFFF>[熔炉升温]</ct>发动强化<ct color=#FFFFFF>[普通攻击]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>45%</ct>。",
+      "珂蕾妲发动<ct color=#FFFFFF>[强化特殊技]</ct>，或消耗<ct color=#FFFFFF>[熔炉升温]</ct>发动强化<ct color=#FFFFFF>[普通攻击]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>50%</ct>。",
+      "珂蕾妲发动<ct color=#FFFFFF>[强化特殊技]</ct>，或消耗<ct color=#FFFFFF>[熔炉升温]</ct>发动强化<ct color=#FFFFFF>[普通攻击]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>55%</ct>。",
+      "珂蕾妲发动<ct color=#FFFFFF>[强化特殊技]</ct>，或消耗<ct color=#FFFFFF>[熔炉升温]</ct>发动强化<ct color=#FFFFFF>[普通攻击]</ct>时，招式造成的失衡值提升<ct color=#2BAD00>60%</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：白祇管理学",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色或<ct color=#FFFFFF>[命破]</ct>角色时触发：",
+      "1": "珂蕾妲发动<ct color=#FFFFFF>[强化特殊技]</ct>引发爆炸命中敌人时，对目标施加减益效果；当目标陷入失衡状态后，<ct color=#FFFFFF>[连携技]</ct>对其造成的伤害提升35%，最多叠加2层，失衡状态结束时该效果重置。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "锤击节奏",
+      "desc": "当衔接在<ct color=#FFFFFF>[普通攻击]</ct>第二、第四段或强化<ct color=#FFFFFF>[普通攻击]</ct>后，快速发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，招式造成的失衡值提升15%。",
+      "flavor": "火爆的脾气只是表象，其实珂蕾妲心思很细腻。比如她知道什么时候挥锤能打得更痛。"
+    },
+    "2": {
+      "name": "动能回收",
+      "desc": "<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，珂蕾妲回复60点能量，45秒内最多触发一次。",
+      "flavor": {
+        "0": "对珂蕾妲来说，完美的锤击自有独特的节奏。",
+        "1": "像是加速敲击手鼓，每一击都在为下一次更强的节拍蓄力。",
+        "2": "当然，面前的「玩具」能够撑住几下，就不好说了。"
+      }
+    },
+    "3": {
+      "name": "「别惹我！」",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "作为合格的「玩具」，当珂蕾妲逐渐找到挥锤的手感时，\n最好不要节外生枝惹麻烦，只要老老实实挨锤就好。\n——毕竟，反抗又有什么用呢？",
+        "1": "—After all, what's the point of resisting?"
+      }
+    },
+    "4": {
+      "name": "熔炉余温",
+      "desc": "消耗<ct color=#FFFFFF>[熔炉升温]</ct>发动强化<ct color=#FFFFFF>[普通攻击]</ct>时，珂蕾妲获得1层充能（上限2层）；<ct color=#FFFFFF>[连携技：天崩-地裂]</ct>或<ct color=#FFFFFF>[终结技：锤进地心]</ct>命中敌人时，消耗所有充能，每层充能使当前招式造成的伤害提升18%。",
+      "flavor": {
+        "0": "当炽热的挥锤让周围温度上升后，珂蕾妲便进入了作战状态。",
+        "1": "现在，她比以太炸药更易燃易爆。"
+      }
+    },
+    "5": {
+      "name": "「敢小瞧我？」",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "珂蕾妲非常在意自己这个年轻的首领会让外人小瞧白祇重工。为了弥补这一点，她总是悄悄努力训练。"
+    },
+    "6": {
+      "name": "饱和爆破",
+      "desc": "在<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>中，引发爆炸命中敌人时，额外造成珂蕾妲360%攻击力的伤害。",
+      "flavor": {
+        "0": "在珂蕾妲眼里，讨厌的人分为两种：\n笨蛋，和无可救药的笨蛋。\n万幸的是，白祇重工向来不缺烈性以太炸药。\n多余的份正好可以用在这些笨蛋头上。",
+        "1": "Stupid people, and hopelessly stupid people.",
+        "2": "Luckily for her, Belobog always has a good supply of strong Ether explosives — plenty to use on the stupid."
+      }
+    }
+  },
+  "potential": {}
+}

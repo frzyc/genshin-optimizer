@@ -1,0 +1,283 @@
+{
+  "name": "莱特",
+  "fullName": "莱特",
+  "basic": {
+    "BasicAttackLFormThunderingFist": {
+      "name": "普通攻击：L式轰鸣拳",
+      "desc": {
+        "0": "点按或长按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的打击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "在<ct color=#FFFFFF>[普通攻击]</ct>第三段发动期间，拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，同时连点或长按 <IconNormal /> ，可以持续发动连续体术追击，松开{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，则衔接后继第四段<ct color=#FFFFFF>[普通攻击]</ct>；",
+        "3": "在<ct color=#FFFFFF>[普通攻击]</ct>第五段轻拳起攻期间，拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，同时连点或长按 <IconNormal /> ，可以循环发动轻拳起攻和第四段<ct color=#FFFFFF>[普通攻击]</ct>，松开{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}，则衔接后继刺拳连击；",
+        "4": "保持连点或长按 <IconNormal /> 时，可以延长刺拳连击的持续时间；",
+        "5": "停止连点或长按 <IconNormal /> 后，或刺拳连击至持续时间上限后，将向前方发动终结一击，终结一击期间拥有无敌效果；",
+        "6": "<ct color=#FFFFFF>[普通攻击]</ct>第五段发动期间，莱特受到的伤害降低40%；",
+        "7": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，<ct color=#FFFFFF>[普通攻击]</ct>第五段发动期间抗打断等级提升，伤害降低效果提升至80%。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "Follow-Up 1st-Hit ",
+        "Follow-Up 2nd-Hit ",
+        "Follow-Up 3rd-Hit ",
+        "Follow-Up 4th-Hit ",
+        "Follow-Up 5th-Hit ",
+        "4th-Hit ",
+        "5th-Hit Startup ",
+        "5th-Hit Combo ",
+        "5th-Hit Finisher ",
+        "5th-Hit Startup (Morale Burst) ",
+        "5th-Hit Combo (Morale Burst) ",
+        "5th-Hit Finisher (Morale Burst) ",
+        "5th-Hit Powerful Finisher (Morale Burst) "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeShadowedSlide": {
+      "name": "闪避：匿影滑步",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。",
+        "3": "角色发动攻击期间，点按 <IconEvade /> 发动：",
+        "4": "向{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}方向垫步闪避；",
+        "5": "发动该招式不会打断<ct color=#FFFFFF>[普通攻击]</ct>的连击段数；",
+        "6": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackChargingSlam": {
+      "name": "冲刺攻击：骸突",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行快速打击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterBlazingFlash": {
+      "name": "闪避反击：烈闪",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，点按或长按 <IconNormal /> 可以直接衔接发动第五段<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackVFormSunriseUppercut": {
+      "name": "特殊技：V式日轮升拳",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "使用上勾拳向前方进行打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。",
+        "3": "垫步闪避期间，点按 <IconSpecial /> 发动：",
+        "4": "使用组合拳向前方进行打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "5": "发动该招式不会打断<ct color=#FFFFFF>[普通攻击]</ct>的连击段数；",
+        "6": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackVFormSunriseUppercutFullDistance": {
+      "name": "强化特殊技：V式日轮升拳-全冲程",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：\n使用上勾拳离地跃起并向前方进行强力打击，造成大量<ct color=#FF5521>火属性伤害</ct>；\n招式发动期间，再次点按 <IconSpecialReady /> 可以额外消耗能量，发动强力追击，造成大量<ct color=#FF5521>火属性伤害</ct>；\n招式发动期间拥有无敌效果，\n招式发动后，点按或长按 <IconNormal /> 可以直接衔接发动第四段<ct color=#FFFFFF>[普通攻击]</ct>。\n垫步闪避期间，能量足够时，点按 <IconSpecialReady /> 发动：\n使用组合拳向前方进行强力打击，造成大量<ct color=#FF5521>火属性伤害</ct>；\n发动该招式不会打断<ct color=#FFFFFF>[普通攻击]</ct>的连击段数；\n招式发动期间拥有无敌效果；\n招式发动后，点按或长按 <IconNormal /> 可以直接衔接发动第五段<ct color=#FFFFFF>[普通攻击]</ct>。",
+        "1": "Strikes enemies in front with a powerful uppercut, leaping into the air and dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "During the move, press <IconSpecialReady /> again to spend additional Energy to perform a powerful follow-up attack, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "3": "Character is invulnerable while using this skill",
+        "4": "After using the move, press or hold <IconNormal /> to transition to the 4th hit of the <ct color=#FFFFFF>Basic Attack</ct>.",
+        "5": "During the shuffle dodge, with enough Energy, press <IconSpecialReady /> to activate:",
+        "6": "Perform a powerful combo punch forward, dealing massive <ct color=#FF5521>Fire DMG</ct>. Using this skill will not break the combo count for <ct color=#FFFFFF>Basic Attacks</ct>.",
+        "7": "Character is invulnerable while using this skill.",
+        "8": "After the attack, press or hold <IconNormal /> to immediately transition into the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>. "
+      },
+      "params": [
+        " ",
+        "Follow-Up ",
+        "发动能量消耗",
+        "追击能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackVFormScorchingSun": {
+      "name": "连携技：V式灼日炎",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方小范围敌人发动强力打击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateWFormCrownedInferno": {
+      "name": "终结技：W式桂冠终火",
+      "desc": {
+        "0": "喧响等级达到[极]时，点按 <IconUltimateReady /> 发动：",
+        "1": "对身周大范围敌人发动强力打击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistBlazingFlashGuard": {
+      "name": "快速支援：烈闪-守",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，点按或长按 <IconNormal /> 可以直接衔接发动第五段<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistSwiftBreak": {
+      "name": "招架支援：瞬破",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpChargingSlamStab": {
+      "name": "支援突击：骸突-刺",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后，点按或长按 <IconNormal /> 可以直接衔接发动第五段<ct color=#FFFFFF>[普通攻击]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：助燃剂",
+    "desc": [
+      {
+        "0": "莱特会随时间自动获得<ct color=#FFFFFF>[士气]</ct>，每秒回复2.9点，队伍中任意角色每消耗1点能量值，额外为莱特回复0.26点<ct color=#FFFFFF>[士气]</ct>，莱特最多拥有100点<ct color=#FFFFFF>[士气]</ct>；<ct color=#FFFFFF>[士气]</ct>回复至80点时，下一次换入前场将直接发动<ct color=#FFFFFF>[快速支援]</ct>；<ct color=#FFFFFF>[士气]</ct>大于等于80点后，莱特发动第五段<ct color=#FFFFFF>[普通攻击]</ct>时，将进入<ct color=#FFFFFF>[士气喷发]</ct>状态，提升<ct color=#FFFFFF>[普通攻击]</ct>第五段中轻拳起攻、刺拳连击和终结一击的威力；威力提升后，招式命中敌人时，会持续消耗<ct color=#FFFFFF>[士气]</ct>，每消耗10点<ct color=#FFFFFF>[士气]</ct>，莱特的冲击力提升<ct color=#2BAD00>1%</ct>，最多提升<ct color=#2BAD00>10%</ct>，持续6秒；",
+        "1": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，莱特不再随时间自动获得<ct color=#FFFFFF>[士气]</ct>，轻拳起攻或刺拳连击期间耗尽<ct color=#FFFFFF>[士气]</ct>时，会自动衔接发动更加强力的终结一击；",
+        "2": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，轻拳起攻或刺拳连击命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>和<ct color=#FF5521>火属性伤害抗性</ct>降低15%，持续30秒；",
+        "3": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，终结一击命中敌人时，会对目标施加<ct color=#FFFFFF>[溃败]</ct>效果，使其进入失衡状态后的失衡持续时间提升3秒，从失衡状态恢复前<ct color=#FFFFFF>[溃败]</ct>效果对同一目标最多触发一次；",
+        "4": "<ct color=#FFFFFF>[普通攻击]</ct>第五段终结一击命中敌人、换回后场或<ct color=#FFFFFF>[士气]</ct>耗尽时，莱特将退出<ct color=#FFFFFF>[士气喷发]</ct>状态，尚未消耗的<ct color=#FFFFFF>[士气]</ct>会被保留。"
+      },
+      {
+        "0": "莱特会随时间自动获得<ct color=#FFFFFF>[士气]</ct>，每秒回复2.9点，队伍中任意角色每消耗1点能量值，额外为莱特回复0.26点<ct color=#FFFFFF>[士气]</ct>，莱特最多拥有100点<ct color=#FFFFFF>[士气]</ct>；<ct color=#FFFFFF>[士气]</ct>回复至80点时，下一次换入前场将直接发动<ct color=#FFFFFF>[快速支援]</ct>；<ct color=#FFFFFF>[士气]</ct>大于等于80点后，莱特发动第五段<ct color=#FFFFFF>[普通攻击]</ct>时，将进入<ct color=#FFFFFF>[士气喷发]</ct>状态，提升<ct color=#FFFFFF>[普通攻击]</ct>第五段中轻拳起攻、刺拳连击和终结一击的威力；威力提升后，招式命中敌人时，会持续消耗<ct color=#FFFFFF>[士气]</ct>，每消耗10点<ct color=#FFFFFF>[士气]</ct>，莱特的冲击力提升<ct color=#2BAD00>1.17%</ct>，最多提升<ct color=#2BAD00>11.7%</ct>，持续6秒；",
+        "1": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，莱特不再随时间自动获得<ct color=#FFFFFF>[士气]</ct>，轻拳起攻或刺拳连击期间耗尽<ct color=#FFFFFF>[士气]</ct>时，会自动衔接发动更加强力的终结一击；",
+        "2": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，轻拳起攻或刺拳连击命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>和<ct color=#FF5521>火属性伤害抗性</ct>降低15%，持续30秒；",
+        "3": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，终结一击命中敌人时，会对目标施加<ct color=#FFFFFF>[溃败]</ct>效果，使其进入失衡状态后的失衡持续时间提升3秒，从失衡状态恢复前<ct color=#FFFFFF>[溃败]</ct>效果对同一目标最多触发一次；",
+        "4": "<ct color=#FFFFFF>[普通攻击]</ct>第五段终结一击命中敌人、换回后场或<ct color=#FFFFFF>[士气]</ct>耗尽时，莱特将退出<ct color=#FFFFFF>[士气喷发]</ct>状态，尚未消耗的<ct color=#FFFFFF>[士气]</ct>会被保留。"
+      },
+      {
+        "0": "莱特会随时间自动获得<ct color=#FFFFFF>[士气]</ct>，每秒回复2.9点，队伍中任意角色每消耗1点能量值，额外为莱特回复0.26点<ct color=#FFFFFF>[士气]</ct>，莱特最多拥有100点<ct color=#FFFFFF>[士气]</ct>；<ct color=#FFFFFF>[士气]</ct>回复至80点时，下一次换入前场将直接发动<ct color=#FFFFFF>[快速支援]</ct>；<ct color=#FFFFFF>[士气]</ct>大于等于80点后，莱特发动第五段<ct color=#FFFFFF>[普通攻击]</ct>时，将进入<ct color=#FFFFFF>[士气喷发]</ct>状态，提升<ct color=#FFFFFF>[普通攻击]</ct>第五段中轻拳起攻、刺拳连击和终结一击的威力；威力提升后，招式命中敌人时，会持续消耗<ct color=#FFFFFF>[士气]</ct>，每消耗10点<ct color=#FFFFFF>[士气]</ct>，莱特的冲击力提升<ct color=#2BAD00>1.33%</ct>，最多提升<ct color=#2BAD00>13.3%</ct>，持续6秒；",
+        "1": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，莱特不再随时间自动获得<ct color=#FFFFFF>[士气]</ct>，轻拳起攻或刺拳连击期间耗尽<ct color=#FFFFFF>[士气]</ct>时，会自动衔接发动更加强力的终结一击；",
+        "2": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，轻拳起攻或刺拳连击命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>和<ct color=#FF5521>火属性伤害抗性</ct>降低15%，持续30秒；",
+        "3": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，终结一击命中敌人时，会对目标施加<ct color=#FFFFFF>[溃败]</ct>效果，使其进入失衡状态后的失衡持续时间提升3秒，从失衡状态恢复前<ct color=#FFFFFF>[溃败]</ct>效果对同一目标最多触发一次；",
+        "4": "<ct color=#FFFFFF>[普通攻击]</ct>第五段终结一击命中敌人、换回后场或<ct color=#FFFFFF>[士气]</ct>耗尽时，莱特将退出<ct color=#FFFFFF>[士气喷发]</ct>状态，尚未消耗的<ct color=#FFFFFF>[士气]</ct>会被保留。"
+      },
+      {
+        "0": "莱特会随时间自动获得<ct color=#FFFFFF>[士气]</ct>，每秒回复2.9点，队伍中任意角色每消耗1点能量值，额外为莱特回复0.26点<ct color=#FFFFFF>[士气]</ct>，莱特最多拥有100点<ct color=#FFFFFF>[士气]</ct>；<ct color=#FFFFFF>[士气]</ct>回复至80点时，下一次换入前场将直接发动<ct color=#FFFFFF>[快速支援]</ct>；<ct color=#FFFFFF>[士气]</ct>大于等于80点后，莱特发动第五段<ct color=#FFFFFF>[普通攻击]</ct>时，将进入<ct color=#FFFFFF>[士气喷发]</ct>状态，提升<ct color=#FFFFFF>[普通攻击]</ct>第五段中轻拳起攻、刺拳连击和终结一击的威力；威力提升后，招式命中敌人时，会持续消耗<ct color=#FFFFFF>[士气]</ct>，每消耗10点<ct color=#FFFFFF>[士气]</ct>，莱特的冲击力提升<ct color=#2BAD00>1.5%</ct>，最多提升<ct color=#2BAD00>15%</ct>，持续6秒；",
+        "1": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，莱特不再随时间自动获得<ct color=#FFFFFF>[士气]</ct>，轻拳起攻或刺拳连击期间耗尽<ct color=#FFFFFF>[士气]</ct>时，会自动衔接发动更加强力的终结一击；",
+        "2": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，轻拳起攻或刺拳连击命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>和<ct color=#FF5521>火属性伤害抗性</ct>降低15%，持续30秒；",
+        "3": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，终结一击命中敌人时，会对目标施加<ct color=#FFFFFF>[溃败]</ct>效果，使其进入失衡状态后的失衡持续时间提升3秒，从失衡状态恢复前<ct color=#FFFFFF>[溃败]</ct>效果对同一目标最多触发一次；",
+        "4": "<ct color=#FFFFFF>[普通攻击]</ct>第五段终结一击命中敌人、换回后场或<ct color=#FFFFFF>[士气]</ct>耗尽时，莱特将退出<ct color=#FFFFFF>[士气喷发]</ct>状态，尚未消耗的<ct color=#FFFFFF>[士气]</ct>会被保留。"
+      },
+      {
+        "0": "莱特会随时间自动获得<ct color=#FFFFFF>[士气]</ct>，每秒回复2.9点，队伍中任意角色每消耗1点能量值，额外为莱特回复0.26点<ct color=#FFFFFF>[士气]</ct>，莱特最多拥有100点<ct color=#FFFFFF>[士气]</ct>；<ct color=#FFFFFF>[士气]</ct>回复至80点时，下一次换入前场将直接发动<ct color=#FFFFFF>[快速支援]</ct>；<ct color=#FFFFFF>[士气]</ct>大于等于80点后，莱特发动第五段<ct color=#FFFFFF>[普通攻击]</ct>时，将进入<ct color=#FFFFFF>[士气喷发]</ct>状态，提升<ct color=#FFFFFF>[普通攻击]</ct>第五段中轻拳起攻、刺拳连击和终结一击的威力；威力提升后，招式命中敌人时，会持续消耗<ct color=#FFFFFF>[士气]</ct>，每消耗10点<ct color=#FFFFFF>[士气]</ct>，莱特的冲击力提升<ct color=#2BAD00>1.67%</ct>，最多提升<ct color=#2BAD00>16.7%</ct>，持续6秒；",
+        "1": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，莱特不再随时间自动获得<ct color=#FFFFFF>[士气]</ct>，轻拳起攻或刺拳连击期间耗尽<ct color=#FFFFFF>[士气]</ct>时，会自动衔接发动更加强力的终结一击；",
+        "2": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，轻拳起攻或刺拳连击命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>和<ct color=#FF5521>火属性伤害抗性</ct>降低15%，持续30秒；",
+        "3": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，终结一击命中敌人时，会对目标施加<ct color=#FFFFFF>[溃败]</ct>效果，使其进入失衡状态后的失衡持续时间提升3秒，从失衡状态恢复前<ct color=#FFFFFF>[溃败]</ct>效果对同一目标最多触发一次；",
+        "4": "<ct color=#FFFFFF>[普通攻击]</ct>第五段终结一击命中敌人、换回后场或<ct color=#FFFFFF>[士气]</ct>耗尽时，莱特将退出<ct color=#FFFFFF>[士气喷发]</ct>状态，尚未消耗的<ct color=#FFFFFF>[士气]</ct>会被保留。"
+      },
+      {
+        "0": "莱特会随时间自动获得<ct color=#FFFFFF>[士气]</ct>，每秒回复2.9点，队伍中任意角色每消耗1点能量值，额外为莱特回复0.26点<ct color=#FFFFFF>[士气]</ct>，莱特最多拥有100点<ct color=#FFFFFF>[士气]</ct>；<ct color=#FFFFFF>[士气]</ct>回复至80点时，下一次换入前场将直接发动<ct color=#FFFFFF>[快速支援]</ct>；<ct color=#FFFFFF>[士气]</ct>大于等于80点后，莱特发动第五段<ct color=#FFFFFF>[普通攻击]</ct>时，将进入<ct color=#FFFFFF>[士气喷发]</ct>状态，提升<ct color=#FFFFFF>[普通攻击]</ct>第五段中轻拳起攻、刺拳连击和终结一击的威力；威力提升后，招式命中敌人时，会持续消耗<ct color=#FFFFFF>[士气]</ct>，每消耗10点<ct color=#FFFFFF>[士气]</ct>，莱特的冲击力提升<ct color=#2BAD00>1.83%</ct>，最多提升<ct color=#2BAD00>18.3%</ct>，持续6秒；",
+        "1": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，莱特不再随时间自动获得<ct color=#FFFFFF>[士气]</ct>，轻拳起攻或刺拳连击期间耗尽<ct color=#FFFFFF>[士气]</ct>时，会自动衔接发动更加强力的终结一击；",
+        "2": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，轻拳起攻或刺拳连击命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>和<ct color=#FF5521>火属性伤害抗性</ct>降低15%，持续30秒；",
+        "3": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，终结一击命中敌人时，会对目标施加<ct color=#FFFFFF>[溃败]</ct>效果，使其进入失衡状态后的失衡持续时间提升3秒，从失衡状态恢复前<ct color=#FFFFFF>[溃败]</ct>效果对同一目标最多触发一次；",
+        "4": "<ct color=#FFFFFF>[普通攻击]</ct>第五段终结一击命中敌人、换回后场或<ct color=#FFFFFF>[士气]</ct>耗尽时，莱特将退出<ct color=#FFFFFF>[士气喷发]</ct>状态，尚未消耗的<ct color=#FFFFFF>[士气]</ct>会被保留。"
+      },
+      {
+        "0": "莱特会随时间自动获得<ct color=#FFFFFF>[士气]</ct>，每秒回复2.9点，队伍中任意角色每消耗1点能量值，额外为莱特回复0.26点<ct color=#FFFFFF>[士气]</ct>，莱特最多拥有100点<ct color=#FFFFFF>[士气]</ct>；<ct color=#FFFFFF>[士气]</ct>回复至80点时，下一次换入前场将直接发动<ct color=#FFFFFF>[快速支援]</ct>；<ct color=#FFFFFF>[士气]</ct>大于等于80点后，莱特发动第五段<ct color=#FFFFFF>[普通攻击]</ct>时，将进入<ct color=#FFFFFF>[士气喷发]</ct>状态，提升<ct color=#FFFFFF>[普通攻击]</ct>第五段中轻拳起攻、刺拳连击和终结一击的威力；威力提升后，招式命中敌人时，会持续消耗<ct color=#FFFFFF>[士气]</ct>，每消耗10点<ct color=#FFFFFF>[士气]</ct>，莱特的冲击力提升<ct color=#2BAD00>2%</ct>，最多提升<ct color=#2BAD00>20%</ct>，持续6秒；",
+        "1": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，莱特不再随时间自动获得<ct color=#FFFFFF>[士气]</ct>，轻拳起攻或刺拳连击期间耗尽<ct color=#FFFFFF>[士气]</ct>时，会自动衔接发动更加强力的终结一击；",
+        "2": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，轻拳起攻或刺拳连击命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>和<ct color=#FF5521>火属性伤害抗性</ct>降低15%，持续30秒；",
+        "3": "<ct color=#FFFFFF>[士气喷发]</ct>状态下，终结一击命中敌人时，会对目标施加<ct color=#FFFFFF>[溃败]</ct>效果，使其进入失衡状态后的失衡持续时间提升3秒，从失衡状态恢复前<ct color=#FFFFFF>[溃败]</ct>效果对同一目标最多触发一次；",
+        "4": "<ct color=#FFFFFF>[普通攻击]</ct>第五段终结一击命中敌人、换回后场或<ct color=#FFFFFF>[士气]</ct>耗尽时，莱特将退出<ct color=#FFFFFF>[士气喷发]</ct>状态，尚未消耗的<ct color=#FFFFFF>[士气]</ct>会被保留。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：斗志昂扬",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[强攻]</ct>角色或与自身阵营相同的角色时触发：\n<ct color=#FFFFFF>[士气喷发]</ct>状态下，莱特第五段<ct color=#FFFFFF>[普通攻击]</ct>命中敌人时，全队角色获得一层<ct color=#FFFFFF>[昂扬]</ct>，最多叠加20层，持续30秒，重复触发时刷新持续时间；每拥有一层<ct color=#FFFFFF>[昂扬]</ct>，代理人造成的<ct color=#98EFF0>冰属性伤害</ct>和<ct color=#FF5521>火属性伤害</ct>提升1.25%，获得<ct color=#FFFFFF>[昂扬]</ct>时，若莱特的冲击力高于170点，每超过10点冲击力会使每层<ct color=#FFFFFF>[昂扬]</ct>提供的增益效果额外提升0.25%；队伍中任意角色发动<ct color=#FFFFFF>[连携技]</ct>时，会刷新全队角色<ct color=#FFFFFF>[昂扬]</ct>的持续时间；<ct color=#FFFFFF>[昂扬]</ct>最多使代理人造成的<ct color=#98EFF0>冰属性伤害</ct>和<ct color=#FF5521>火属性伤害</ct>提升75%。",
+      "1": "While under the <ct color=#FFFFFF>Morale Burst</ct> state, when the 5th hit of Lighter's <ct color=#FFFFFF>Basic Attack</ct> hits an enemy, all squad members gain a stack of <ct color=#FFFFFF>Elation</ct>, stacking up to 20 times and lasting 30s. Repeated triggers reset the duration. For each stack of <ct color=#FFFFFF>Elation</ct>, an Agent's <ct color=#98EFF0>Ice DMG</ct> and <ct color=#FF5521>Fire DMG</ct> increase by 1.25%.",
+      "2": "When obtaining <ct color=#FFFFFF>Elation</ct>, if Lighter's Impact exceeds 170, every additional 10 points of Impact will increase the buff effect provided by each stack of <ct color=#FFFFFF>Elation</ct> by an extra 0.25%. When any squad member launches a <ct color=#FFFFFF>Chain Attack</ct>, it will refresh the duration of all squad members' <ct color=#FFFFFF>Elation</ct>. <ct color=#FFFFFF>Elation</ct> can increase the <ct color=#98EFF0>Ice DMG</ct> and <ct color=#FF5521>Fire DMG</ct> of Agents by a maximum of 75%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "常胜冠军",
+      "desc": "在<ct color=#FFFFFF>[核心被动：助燃剂]</ct>所施加的减益效果中，<ct color=#FFFFFF>[溃败]</ct>效果将使失衡持续时间提升5秒，<ct color=#98EFF0>冰属性伤害抗性</ct>和<ct color=#FF5521>火属性伤害抗性</ct>将额外降低10%；在轻拳起攻或刺拳连击期间耗尽<ct color=#FFFFFF>[士气]</ct>，自动衔接发动强力终结一击时，强力终结一击造成的伤害提升30%。",
+      "flavor": {
+        "0": "常胜冠军的胜利至关重要。与对面最强的战士决斗，为团长解决威胁——同时为团队带来巨大的士气鼓舞。",
+        "1": "对他来说，唯有胜利值得赞颂。",
+        "2": "「常胜冠军不能倒下。」"
+      }
+    },
+    "2": {
+      "name": "红围巾",
+      "desc": "通过<ct color=#FFFFFF>[核心被动：助燃剂]</ct>对敌人施加<ct color=#FFFFFF>[溃败]</ct>效果时，目标的失衡易伤倍率提升25%；<ct color=#FFFFFF>[额外能力：斗志昂扬]</ct>中由<ct color=#FFFFFF>[昂扬]</ct>提供的<ct color=#98EFF0>冰属性伤害</ct>和<ct color=#FF5521>火属性伤害</ct>增益效果提升至原本的120%。",
+      "flavor": {
+        "0": "作为卡吕冬之子的「红围巾」，莱特在外环非常有名。\n不只是因为他的拳头，也因为…某些说话风格。\n「虽然我乐得清闲…不过没有我的话，你们也搞不定吧？」",
+        "1": "\"I enjoy taking it easy... but you wouldn't manage without me, would you?\""
+      }
+    },
+    "3": {
+      "name": "佣兵队长",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "「我大概是全世界最不适合当团长的人吧。」"
+    },
+    "4": {
+      "name": "墨镜",
+      "desc": "莱特位于后场时，前场角色的能量自动回复效率提升10%；莱特进入<ct color=#FFFFFF>[士气喷发]</ct>状态时，为后场角色回复4点能量，18秒内最多触发一次。",
+      "flavor": "「问我为什么要带墨镜？嗯…因为我晕血啊，大概吧。」"
+    },
+    "5": {
+      "name": "决策者",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「给我命令，我来照做。就这么简单。」",
+        "1": "莱特推了推自己的墨镜，笑得漫不经心。",
+        "2": "「别再让我来做决定就行。」"
+      }
+    },
+    "6": {
+      "name": "幸存者",
+      "desc": "莱特的<ct color=#FFFFFF>[士气]</ct>回复效率提升至原本的200%；莱特在<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>中发动重击命中敌人时，将会触发<ct color=#FFFFFF>[火焰冲击]</ct>效果，造成250%攻击力的<ct color=#FF5521>火属性伤害</ct>，每个敌人8秒内最多触发一次；若莱特的冲击力高于170点，每超过1点冲击力会使<ct color=#FFFFFF>[火焰冲击]</ct>的倍率额外提升5%，最多提升500%；在轻拳起攻或刺拳连击期间耗尽<ct color=#FFFFFF>[士气]</ct>，自动衔接发动强力终结一击命中敌人时，可以忽略冷却时间，额外触发一次<ct color=#FFFFFF>[火焰冲击]</ct>效果。",
+      "flavor": {
+        "0": "重来一次，他绝不会选择成为唯一的幸存者。",
+        "1": "可惜命运向来无法选择。"
+      }
+    }
+  },
+  "potential": {}
+}

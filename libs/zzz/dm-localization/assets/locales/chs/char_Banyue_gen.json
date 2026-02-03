@@ -1,0 +1,478 @@
+{
+  "name": "般岳",
+  "fullName": "般岳",
+  "basic": {
+    "BasicAttackToweringPeaks": {
+      "name": "普通攻击：峥嵘",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的攻击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间，打断等级提升。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackMajesticSummit": {
+      "name": "普通攻击：崔巍",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方进行至多四段的攻击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间，抗打断等级提升。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackImmolate": {
+      "name": "普通攻击：焚身",
+      "desc": {
+        "0": "不处于<ct color=#FFFFFF>[怒相]</ct>状态且拥有120点<ct color=#FFFFFF>[嗔火]</ct>时，长按 <IconNormal /> 发动：",
+        "1": "对周身敌人造成<ct color=#FF5521>火属性伤害</ct>，随后进入<ct color=#FFFFFF>[怒相]</ct>状态。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackInflame": {
+      "name": "普通攻击：引火",
+      "desc": {
+        "0": "不处于接战状态、生命值大于50%且<ct color=#FFFFFF>[嗔火]</ct>不足120点时，长按 <IconNormal /> 发动：",
+        "1": "般岳主动消耗生命值回复<ct color=#FFFFFF>[嗔火]</ct>，<ct color=#FFFFFF>[嗔火]</ct>回复至120点时般岳将直接进入<ct color=#FFFFFF>[怒相]</ct>状态；",
+        "2": "进入战场时，获得一次释放该招式的机会，在勘域模式中该效果180秒内最多触发一次；",
+        "3": "般岳最多消耗生命值至最大生命值的50%。"
+      },
+      "params": []
+    },
+    "BasicAttackTopplingMountain": {
+      "name": "普通攻击：倾山",
+      "desc": {
+        "0": "当般岳处于<ct color=#FFFFFF>[怒相]</ct>状态时，长按 <IconNormal /> 消耗120点<ct color=#FFFFFF>[嗔火]</ct>发动：",
+        "1": "般岳轰出巨大的山体攻击敌人，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "发动该招式后，般岳退出<ct color=#FFFFFF>[怒相]</ct>状态；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackCrushingPeaks": {
+      "name": "普通攻击：摧岳",
+      "desc": {
+        "0": "当般岳处于<ct color=#FFFFFF>[怒相]</ct>状态时，通过普通攻击派生或者快速键入指令的方式释放两次不同的<ct color=#FFFFFF>[强化特殊技]</ct>后，长按 <IconNormal /> 发动：",
+        "1": "般岳向前方打出珠子禁锢敌人造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "随后般岳将自动释放<ct color=#FFFFFF>[普通攻击：倾山]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeImmovableMountain": {
+      "name": "闪避：不动如山",
+      "desc": {
+        "0": "攻击过程中不拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}点按 <IconEvade /> 发动：",
+        "1": "般岳进入防御姿态，期间如果受到敌人攻击，会招架敌人攻击，累积失衡值；",
+        "2": "如果在招式发动的瞬间受到敌人的攻击，则可以触发完美格挡；",
+        "3": "成功招架敌人攻击时拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeOvercomePeaks": {
+      "name": "闪避：越岭",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DodgeBattleCry": {
+      "name": "闪避：叫阵",
+      "desc": {
+        "0": "拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}半周并点按 <IconEvade /> 发动：",
+        "1": "向后闪避并挑衅敌人；",
+        "2": "在任意<ct color=#FFFFFF>[强化特殊技]</ct>后衔接派生<ct color=#FFFFFF>[闪避：叫阵]</ct>，可在<ct color=#FFFFFF>[闪避：叫阵]</ct>期间快速键入对应指令继续派生<ct color=#FFFFFF>[强化特殊技]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackScatteringSands": {
+      "name": "冲刺攻击：飞砂",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 或在<ct color=#FFFFFF>[闪避：叫阵]</ct>时长按 <IconNormal /> 发动：",
+        "1": "向前方打出珠子，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动后可直接衔接<ct color=#FFFFFF>[普通攻击：峥嵘]</ct>的第二段攻击或<ct color=#FFFFFF>[普通攻击：崔巍]</ct>的第二段攻击。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterStoneburst": {
+      "name": "闪避反击：扬砾",
+      "desc": {
+        "0": "通过<ct color=#FFFFFF>[闪避：越岭]</ct>触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 或通过<ct color=#FFFFFF>[闪避：叫阵]</ct>触发<ct color=#FFFFFF>[极限闪避]</ct>后，长按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动攻击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动后可直接衔接<ct color=#FFFFFF>[普通攻击：峥嵘]</ct>的第三段攻击或<ct color=#FFFFFF>[普通攻击：崔巍]</ct>的第三段攻击；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "EXSpecialAttackEarthShaker": {
+      "name": "强化特殊技：地动",
+      "desc": {
+        "0": "闪能足够时，可通过以下三种方式发动：",
+        "1": "在第三段或第四段<ct color=#FFFFFF>[普通攻击：峥嵘]</ct>后点按 <IconSpecialReady_Rp /> 发动；",
+        "2": "在<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>、<ct color=#FFFFFF>[快速支援]</ct>后长按 <IconSpecialReady_Rp /> 发动；",
+        "3": "在发动任意<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[普通攻击：焚身]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>、<ct color=#FFFFFF>[快速支援]</ct>时，快速键入指令 <IconNormal /> <IconSpecialReady_Rp /> <IconNormal /> 发动；",
+        "4": "般岳连续重击地面，对敌人造成<ct color=#FF5521>火属性伤害</ct>；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "闪能消耗"
+      ]
+    },
+    "EXSpecialAttackMountainTremor": {
+      "name": "强化特殊技：山摇",
+      "desc": {
+        "0": "闪能足够时，可通过以下两种方式发动：",
+        "1": "在第一段或第二段<ct color=#FFFFFF>[普通攻击：崔巍]</ct>后点按 <IconNormal /> 发动；",
+        "2": "在发动任意<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[普通攻击：焚身]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>、<ct color=#FFFFFF>[快速支援]</ct>时，快速键入指令 <IconSpecialReady_Rp /> <IconSpecialReady_Rp /> <IconNormal /> 发动；",
+        "3": "般岳掀出山体，对敌人造成<ct color=#FF5521>火属性伤害</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "闪能消耗"
+      ]
+    },
+    "EXSpecialAttackOnesPath": {
+      "name": "强化特殊技：论道",
+      "desc": {
+        "0": "闪能足够时，可通过以下三种方式发动：",
+        "1": "在第三段或第四段<ct color=#FFFFFF>[普通攻击：崔巍]</ct>后点按 <IconNormal /> 发动；",
+        "2": "在<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>、<ct color=#FFFFFF>[快速支援]</ct>后长按 <IconNormal /> 发动；",
+        "3": "在发动任意<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[普通攻击：焚身]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>、<ct color=#FFFFFF>[快速支援]</ct>时，快速键入指令 <IconSpecialReady_Rp /> <IconNormal /> <IconSpecialReady_Rp /> 发动；",
+        "4": "般岳扔出珠子对前方敌人造成<ct color=#FF5521>火属性伤害</ct>；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "闪能消耗"
+      ]
+    },
+    "EXSpecialAttackLionsRoar": {
+      "name": "强化特殊技：狮子吼",
+      "desc": {
+        "0": "闪能足够时，可通过以下两种方式发动：",
+        "1": "在第一段或第二段<ct color=#FFFFFF>[普通攻击：峥嵘]</ct>后点按 <IconSpecialReady_Rp /> 发动；",
+        "2": "在发动任意<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[普通攻击：焚身]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>、<ct color=#FFFFFF>[快速支援]</ct>时，快速键入指令 <IconNormal /> <IconNormal /> <IconSpecialReady_Rp /> 发动；",
+        "3": "般岳向前方发动音波攻击，对敌人造成<ct color=#FF5521>火属性伤害</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "闪能消耗"
+      ]
+    },
+    "EXSpecialAttackMountainTremorWrath": {
+      "name": "强化特殊技：山摇·怒",
+      "desc": {
+        "0": "闪能足够时，在发动<ct color=#FFFFFF>[强化特殊技：地动]</ct>时快速键入指令 <IconSpecialReady_Rp /> <IconSpecialReady_Rp /> <IconNormal /> 发动：",
+        "1": "般岳掀出更巨大的山体，对敌人造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "闪能消耗"
+      ]
+    },
+    "EXSpecialAttackLionsRoarWrath": {
+      "name": "强化特殊技：狮子吼·怒",
+      "desc": {
+        "0": "闪能足够时，在发动<ct color=#FFFFFF>[强化特殊技：论道]</ct>时快速键入指令 <IconNormal /> <IconNormal /> <IconSpecialReady_Rp /> 发动：",
+        "1": "般岳向前方发动更强力的音波攻击，对敌人造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "闪能消耗"
+      ]
+    },
+    "Cancel": {
+      "name": "取消应用",
+      "desc": {
+        "0": "当般岳通过快速键入指令的方式派生<ct color=#FFFFFF>[强化特殊技]</ct>时，可以打断正在发动的<ct color=#FFFFFF>[强化特殊技]</ct>，每一种<ct color=#FFFFFF>[强化特殊技]</ct>都存在特殊的完美打断节点，在完美打断节点之后打断<ct color=#FFFFFF>[强化特殊技]</ct>，被打断的<ct color=#FFFFFF>[强化特殊技]</ct>的攻击效果将不会受到影响，在完美打断节点时打断<ct color=#FFFFFF>[强化特殊技]</ct>，被视为触发了<ct color=#FFFFFF>[完美取消]</ct>；",
+        "1": "处于<ct color=#FFFFFF>[怒相]</ct>状态且拥有<ct color=#FFFFFF>[山威]</ct>时，更容易触发<ct color=#FFFFFF>[完美取消]</ct>。"
+      },
+      "params": []
+    }
+  },
+  "chain": {
+    "ChainAttackBlazingWrath": {
+      "name": "连携技：怒焰",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "向前方发动大范围攻击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "若般岳的<ct color=#FFFFFF>[嗔火]</ct>大于120点，攻击结束后般岳会自动进入<ct color=#FFFFFF>[怒相]</ct>状态；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateTheWorldTrembles": {
+      "name": "终结技：撼天动地",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "向前方发动大范围攻击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "若般岳的<ct color=#FFFFFF>[嗔火]</ct>大于120点，攻击结束后般岳会自动进入<ct color=#FFFFFF>[怒相]</ct>状态；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistBatholith": {
+      "name": "快速支援：磐岩",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动连续攻击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistIronBastion": {
+      "name": "招架支援：铁壁",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpLoftyAscent": {
+      "name": "支援突击：昂霄",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "快速突进并发动攻击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "AssistFollowUpPierceHeavens": {
+      "name": "支援突击：冲霄",
+      "desc": {
+        "0": "通过<ct color=#FFFFFF>[闪避：不动如山]</ct>成功招架敌人攻击后，点按 <IconNormal /> 发动：",
+        "1": "快速突进并发动攻击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：群山如我",
+    "desc": [
+      {
+        "0": "般岳会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "般岳发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "般岳进入战场时即可回复60闪能，在勘域模式中此效果180秒内最多触发一次。",
+        "3": "般岳可以通过以下方式回复<ct color=#FFFFFF>[嗔火]</ct>：",
+        "4": "每消耗1点闪能，回复0.5点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "5": "发动<ct color=#FFFFFF>[招架支援]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "6": "通过<ct color=#FFFFFF>[闪避：不动如山]</ct>成功招架敌人攻击时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，若触发完美格挡，则改为回复6点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次；",
+        "7": "触发<ct color=#FFFFFF>[极限闪避]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次。",
+        "8": "般岳最多拥有150点<ct color=#FFFFFF>[嗔火]</ct>，拥有120点<ct color=#FFFFFF>[嗔火]</ct>时，般岳可以通过发动<ct color=#FFFFFF>[普通攻击：焚身]</ct>进入<ct color=#FFFFFF>[怒相]</ct>状态，处于<ct color=#FFFFFF>[怒相]</ct>状态时，般岳无法再获得<ct color=#FFFFFF>[嗔火]</ct>，当般岳发动<ct color=#FFFFFF>[普通攻击：倾山]</ct>后，会退出<ct color=#FFFFFF>[怒相]</ct>状态；",
+        "9": "进入<ct color=#FFFFFF>[怒相]</ct>状态时，般岳会获得4点<ct color=#FFFFFF>[山威]</ct>，若般岳拥有<ct color=#FFFFFF>[山威]</ct>，则发动<ct color=#FFFFFF>[强化特殊技]</ct>时，不再消耗闪能，转而消耗1点<ct color=#FFFFFF>[山威]</ct>并回复10点闪能，否则仍会消耗闪能，退出<ct color=#FFFFFF>[怒相]</ct>状态时，会清空<ct color=#FFFFFF>[山威]</ct>；",
+        "10": "处于<ct color=#FFFFFF>[怒相]</ct>状态且有<ct color=#FFFFFF>[山威]</ct>时，可以长按 <IconSpecial /> 按固定顺序自动打出四种<ct color=#FFFFFF>[强化特殊技]</ct>及<ct color=#FFFFFF>[普通攻击：倾山]</ct>；",
+        "11": "般岳发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[支援突击]</ct>时，贯穿力提升<ct color=#2BAD00>150</ct>点，造成的<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>18%</ct>，暴击伤害提升<ct color=#2BAD00>18%</ct>，持续30秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "般岳会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "般岳发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "般岳进入战场时即可回复60闪能，在勘域模式中此效果180秒内最多触发一次。",
+        "3": "般岳可以通过以下方式回复<ct color=#FFFFFF>[嗔火]</ct>：",
+        "4": "每消耗1点闪能，回复0.5点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "5": "发动<ct color=#FFFFFF>[招架支援]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "6": "通过<ct color=#FFFFFF>[闪避：不动如山]</ct>成功招架敌人攻击时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，若触发完美格挡，则改为回复6点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次；",
+        "7": "触发<ct color=#FFFFFF>[极限闪避]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次。",
+        "8": "般岳最多拥有150点<ct color=#FFFFFF>[嗔火]</ct>，拥有120点<ct color=#FFFFFF>[嗔火]</ct>时，般岳可以通过发动<ct color=#FFFFFF>[普通攻击：焚身]</ct>进入<ct color=#FFFFFF>[怒相]</ct>状态，处于<ct color=#FFFFFF>[怒相]</ct>状态时，般岳无法再获得<ct color=#FFFFFF>[嗔火]</ct>，当般岳发动<ct color=#FFFFFF>[普通攻击：倾山]</ct>后，会退出<ct color=#FFFFFF>[怒相]</ct>状态；",
+        "9": "进入<ct color=#FFFFFF>[怒相]</ct>状态时，般岳会获得4点<ct color=#FFFFFF>[山威]</ct>，若般岳拥有<ct color=#FFFFFF>[山威]</ct>，则发动<ct color=#FFFFFF>[强化特殊技]</ct>时，不再消耗闪能，转而消耗1点<ct color=#FFFFFF>[山威]</ct>并回复10点闪能，否则仍会消耗闪能，退出<ct color=#FFFFFF>[怒相]</ct>状态时，会清空<ct color=#FFFFFF>[山威]</ct>；",
+        "10": "处于<ct color=#FFFFFF>[怒相]</ct>状态且有<ct color=#FFFFFF>[山威]</ct>时，可以长按 <IconSpecial /> 按固定顺序自动打出四种<ct color=#FFFFFF>[强化特殊技]</ct>及<ct color=#FFFFFF>[普通攻击：倾山]</ct>；",
+        "11": "般岳发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[支援突击]</ct>时，贯穿力提升<ct color=#2BAD00>175</ct>点，造成的<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>21%</ct>，暴击伤害提升<ct color=#2BAD00>21%</ct>，持续30秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "般岳会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "般岳发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "般岳进入战场时即可回复60闪能，在勘域模式中此效果180秒内最多触发一次。",
+        "3": "般岳可以通过以下方式回复<ct color=#FFFFFF>[嗔火]</ct>：",
+        "4": "每消耗1点闪能，回复0.5点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "5": "发动<ct color=#FFFFFF>[招架支援]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "6": "通过<ct color=#FFFFFF>[闪避：不动如山]</ct>成功招架敌人攻击时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，若触发完美格挡，则改为回复6点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次；",
+        "7": "触发<ct color=#FFFFFF>[极限闪避]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次。",
+        "8": "般岳最多拥有150点<ct color=#FFFFFF>[嗔火]</ct>，拥有120点<ct color=#FFFFFF>[嗔火]</ct>时，般岳可以通过发动<ct color=#FFFFFF>[普通攻击：焚身]</ct>进入<ct color=#FFFFFF>[怒相]</ct>状态，处于<ct color=#FFFFFF>[怒相]</ct>状态时，般岳无法再获得<ct color=#FFFFFF>[嗔火]</ct>，当般岳发动<ct color=#FFFFFF>[普通攻击：倾山]</ct>后，会退出<ct color=#FFFFFF>[怒相]</ct>状态；",
+        "9": "进入<ct color=#FFFFFF>[怒相]</ct>状态时，般岳会获得4点<ct color=#FFFFFF>[山威]</ct>，若般岳拥有<ct color=#FFFFFF>[山威]</ct>，则发动<ct color=#FFFFFF>[强化特殊技]</ct>时，不再消耗闪能，转而消耗1点<ct color=#FFFFFF>[山威]</ct>并回复10点闪能，否则仍会消耗闪能，退出<ct color=#FFFFFF>[怒相]</ct>状态时，会清空<ct color=#FFFFFF>[山威]</ct>；",
+        "10": "处于<ct color=#FFFFFF>[怒相]</ct>状态且有<ct color=#FFFFFF>[山威]</ct>时，可以长按 <IconSpecial /> 按固定顺序自动打出四种<ct color=#FFFFFF>[强化特殊技]</ct>及<ct color=#FFFFFF>[普通攻击：倾山]</ct>；",
+        "11": "般岳发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[支援突击]</ct>时，贯穿力提升<ct color=#2BAD00>200</ct>点，造成的<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>24%</ct>，暴击伤害提升<ct color=#2BAD00>24%</ct>，持续30秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "般岳会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "般岳发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "般岳进入战场时即可回复60闪能，在勘域模式中此效果180秒内最多触发一次。",
+        "3": "般岳可以通过以下方式回复<ct color=#FFFFFF>[嗔火]</ct>：",
+        "4": "每消耗1点闪能，回复0.5点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "5": "发动<ct color=#FFFFFF>[招架支援]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "6": "通过<ct color=#FFFFFF>[闪避：不动如山]</ct>成功招架敌人攻击时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，若触发完美格挡，则改为回复6点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次；",
+        "7": "触发<ct color=#FFFFFF>[极限闪避]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次。",
+        "8": "般岳最多拥有150点<ct color=#FFFFFF>[嗔火]</ct>，拥有120点<ct color=#FFFFFF>[嗔火]</ct>时，般岳可以通过发动<ct color=#FFFFFF>[普通攻击：焚身]</ct>进入<ct color=#FFFFFF>[怒相]</ct>状态，处于<ct color=#FFFFFF>[怒相]</ct>状态时，般岳无法再获得<ct color=#FFFFFF>[嗔火]</ct>，当般岳发动<ct color=#FFFFFF>[普通攻击：倾山]</ct>后，会退出<ct color=#FFFFFF>[怒相]</ct>状态；",
+        "9": "进入<ct color=#FFFFFF>[怒相]</ct>状态时，般岳会获得4点<ct color=#FFFFFF>[山威]</ct>，若般岳拥有<ct color=#FFFFFF>[山威]</ct>，则发动<ct color=#FFFFFF>[强化特殊技]</ct>时，不再消耗闪能，转而消耗1点<ct color=#FFFFFF>[山威]</ct>并回复10点闪能，否则仍会消耗闪能，退出<ct color=#FFFFFF>[怒相]</ct>状态时，会清空<ct color=#FFFFFF>[山威]</ct>；",
+        "10": "处于<ct color=#FFFFFF>[怒相]</ct>状态且有<ct color=#FFFFFF>[山威]</ct>时，可以长按 <IconSpecial /> 按固定顺序自动打出四种<ct color=#FFFFFF>[强化特殊技]</ct>及<ct color=#FFFFFF>[普通攻击：倾山]</ct>；",
+        "11": "般岳发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[支援突击]</ct>时，贯穿力提升<ct color=#2BAD00>225</ct>点，造成的<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>27%</ct>，暴击伤害提升<ct color=#2BAD00>27%</ct>，持续30秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "般岳会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "般岳发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "般岳进入战场时即可回复60闪能，在勘域模式中此效果180秒内最多触发一次。",
+        "3": "般岳可以通过以下方式回复<ct color=#FFFFFF>[嗔火]</ct>：",
+        "4": "每消耗1点闪能，回复0.5点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "5": "发动<ct color=#FFFFFF>[招架支援]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "6": "通过<ct color=#FFFFFF>[闪避：不动如山]</ct>成功招架敌人攻击时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，若触发完美格挡，则改为回复6点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次；",
+        "7": "触发<ct color=#FFFFFF>[极限闪避]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次。",
+        "8": "般岳最多拥有150点<ct color=#FFFFFF>[嗔火]</ct>，拥有120点<ct color=#FFFFFF>[嗔火]</ct>时，般岳可以通过发动<ct color=#FFFFFF>[普通攻击：焚身]</ct>进入<ct color=#FFFFFF>[怒相]</ct>状态，处于<ct color=#FFFFFF>[怒相]</ct>状态时，般岳无法再获得<ct color=#FFFFFF>[嗔火]</ct>，当般岳发动<ct color=#FFFFFF>[普通攻击：倾山]</ct>后，会退出<ct color=#FFFFFF>[怒相]</ct>状态；",
+        "9": "进入<ct color=#FFFFFF>[怒相]</ct>状态时，般岳会获得4点<ct color=#FFFFFF>[山威]</ct>，若般岳拥有<ct color=#FFFFFF>[山威]</ct>，则发动<ct color=#FFFFFF>[强化特殊技]</ct>时，不再消耗闪能，转而消耗1点<ct color=#FFFFFF>[山威]</ct>并回复10点闪能，否则仍会消耗闪能，退出<ct color=#FFFFFF>[怒相]</ct>状态时，会清空<ct color=#FFFFFF>[山威]</ct>；",
+        "10": "处于<ct color=#FFFFFF>[怒相]</ct>状态且有<ct color=#FFFFFF>[山威]</ct>时，可以长按 <IconSpecial /> 按固定顺序自动打出四种<ct color=#FFFFFF>[强化特殊技]</ct>及<ct color=#FFFFFF>[普通攻击：倾山]</ct>；",
+        "11": "般岳发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[支援突击]</ct>时，贯穿力提升<ct color=#2BAD00>250</ct>点，造成的<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>30%</ct>，暴击伤害提升<ct color=#2BAD00>30%</ct>，持续30秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "般岳会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "般岳发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "般岳进入战场时即可回复60闪能，在勘域模式中此效果180秒内最多触发一次。",
+        "3": "般岳可以通过以下方式回复<ct color=#FFFFFF>[嗔火]</ct>：",
+        "4": "每消耗1点闪能，回复0.5点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "5": "发动<ct color=#FFFFFF>[招架支援]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "6": "通过<ct color=#FFFFFF>[闪避：不动如山]</ct>成功招架敌人攻击时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，若触发完美格挡，则改为回复6点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次；",
+        "7": "触发<ct color=#FFFFFF>[极限闪避]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次。",
+        "8": "般岳最多拥有150点<ct color=#FFFFFF>[嗔火]</ct>，拥有120点<ct color=#FFFFFF>[嗔火]</ct>时，般岳可以通过发动<ct color=#FFFFFF>[普通攻击：焚身]</ct>进入<ct color=#FFFFFF>[怒相]</ct>状态，处于<ct color=#FFFFFF>[怒相]</ct>状态时，般岳无法再获得<ct color=#FFFFFF>[嗔火]</ct>，当般岳发动<ct color=#FFFFFF>[普通攻击：倾山]</ct>后，会退出<ct color=#FFFFFF>[怒相]</ct>状态；",
+        "9": "进入<ct color=#FFFFFF>[怒相]</ct>状态时，般岳会获得4点<ct color=#FFFFFF>[山威]</ct>，若般岳拥有<ct color=#FFFFFF>[山威]</ct>，则发动<ct color=#FFFFFF>[强化特殊技]</ct>时，不再消耗闪能，转而消耗1点<ct color=#FFFFFF>[山威]</ct>并回复10点闪能，否则仍会消耗闪能，退出<ct color=#FFFFFF>[怒相]</ct>状态时，会清空<ct color=#FFFFFF>[山威]</ct>；",
+        "10": "处于<ct color=#FFFFFF>[怒相]</ct>状态且有<ct color=#FFFFFF>[山威]</ct>时，可以长按 <IconSpecial /> 按固定顺序自动打出四种<ct color=#FFFFFF>[强化特殊技]</ct>及<ct color=#FFFFFF>[普通攻击：倾山]</ct>；",
+        "11": "般岳发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[支援突击]</ct>时，贯穿力提升<ct color=#2BAD00>275</ct>点，造成的<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>33%</ct>，暴击伤害提升<ct color=#2BAD00>33%</ct>，持续30秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "般岳会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "般岳发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "般岳进入战场时即可回复60闪能，在勘域模式中此效果180秒内最多触发一次。",
+        "3": "般岳可以通过以下方式回复<ct color=#FFFFFF>[嗔火]</ct>：",
+        "4": "每消耗1点闪能，回复0.5点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "5": "发动<ct color=#FFFFFF>[招架支援]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>；",
+        "6": "通过<ct color=#FFFFFF>[闪避：不动如山]</ct>成功招架敌人攻击时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，若触发完美格挡，则改为回复6点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次；",
+        "7": "触发<ct color=#FFFFFF>[极限闪避]</ct>时，回复4点<ct color=#FFFFFF>[嗔火]</ct>，每1秒最多触发一次。",
+        "8": "般岳最多拥有150点<ct color=#FFFFFF>[嗔火]</ct>，拥有120点<ct color=#FFFFFF>[嗔火]</ct>时，般岳可以通过发动<ct color=#FFFFFF>[普通攻击：焚身]</ct>进入<ct color=#FFFFFF>[怒相]</ct>状态，处于<ct color=#FFFFFF>[怒相]</ct>状态时，般岳无法再获得<ct color=#FFFFFF>[嗔火]</ct>，当般岳发动<ct color=#FFFFFF>[普通攻击：倾山]</ct>后，会退出<ct color=#FFFFFF>[怒相]</ct>状态；",
+        "9": "进入<ct color=#FFFFFF>[怒相]</ct>状态时，般岳会获得4点<ct color=#FFFFFF>[山威]</ct>，若般岳拥有<ct color=#FFFFFF>[山威]</ct>，则发动<ct color=#FFFFFF>[强化特殊技]</ct>时，不再消耗闪能，转而消耗1点<ct color=#FFFFFF>[山威]</ct>并回复10点闪能，否则仍会消耗闪能，退出<ct color=#FFFFFF>[怒相]</ct>状态时，会清空<ct color=#FFFFFF>[山威]</ct>；",
+        "10": "处于<ct color=#FFFFFF>[怒相]</ct>状态且有<ct color=#FFFFFF>[山威]</ct>时，可以长按 <IconSpecial /> 按固定顺序自动打出四种<ct color=#FFFFFF>[强化特殊技]</ct>及<ct color=#FFFFFF>[普通攻击：倾山]</ct>；",
+        "11": "般岳发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[支援突击]</ct>时，贯穿力提升<ct color=#2BAD00>300</ct>点，造成的<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>36%</ct>，暴击伤害提升<ct color=#2BAD00>36%</ct>，持续30秒，重复触发时刷新持续时间。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：绝巅",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[支援]</ct>或<ct color=#FFFFFF>[击破]</ct>角色时触发：",
+      "1": "处于<ct color=#FFFFFF>[怒相]</ct>状态时，若通过普通攻击派生或者快速键入指令的方式消耗<ct color=#FFFFFF>[山威]</ct>发动<ct color=#FFFFFF>[强化特殊技]</ct>时 ，般岳会获得一层<ct color=#FFFFFF>[明王]</ct>，每层<ct color=#FFFFFF>[明王]</ct>会使自身造成的<ct color=#FF5521>火属性伤害</ct>提升5%，最多叠加3层，持续8秒，重复触发时刷新持续时间。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "贪欲如火",
+      "desc": "<ct color=#FFFFFF>[强化特殊技：论道]</ct>和<ct color=#FFFFFF>[强化特殊技：地动]</ct>命中敌人时，会使敌人陷入<ct color=#FFFFFF>[战栗]</ct>状态，处于该状态的敌人<ct color=#FF5521>火属性伤害抗性</ct>降低10%，持续30秒；<ct color=#FFFFFF>[强化特殊技：狮子吼]</ct>、<ct color=#FFFFFF>[强化特殊技：狮子吼·怒]</ct>、<ct color=#FFFFFF>[强化特殊技：山摇]</ct>、<ct color=#FFFFFF>[强化特殊技：山摇·怒]</ct>、<ct color=#FFFFFF>[普通攻击：倾山]</ct>和<ct color=#FFFFFF>[普通攻击：摧岳]</ct>命中处于<ct color=#FFFFFF>[战栗]</ct>状态的敌人时，造成的贯穿伤害提高10%；<ct color=#FFFFFF>[普通攻击：摧岳]</ct>命中处于失衡状态的敌人时，会使其此次失衡的失衡持续时间提升2秒，敌人在一次失衡期间内只会受到一次该效果，且同类效果不可叠加。",
+      "flavor": {
+        "0": "般岳师父可有过什么欲求么，他在澄辉坪开着家武馆，似乎也只因为某位宗师提议他开家武馆。",
+        "1": "那座武馆连名字都没有，既不为名，更不图利，甚至连什么要传宗授艺之类的口号都没教学生喊过。",
+        "2": "只有般岳师父自己知道，名为「赎罪」的执妄日夜灼烧着他钢铁铸成的心，一着不慎便是迷途。",
+        "3": "",
+        "4": "「贪欲如火，恰当的欲望能够成为前行的炬火，不加收敛便会自受其焚。」"
+      }
+    },
+    "2": {
+      "name": "嗔恨如刀",
+      "desc": "<ct color=#FFFFFF>[核心被动]</ct>中的暴击伤害增益效果额外提升15%，<ct color=#FF5521>火属性伤害</ct>增益效果额外提升15%；处于<ct color=#FFFFFF>[怒相]</ct>状态时，般岳消耗<ct color=#FFFFFF>[山威]</ct>发动<ct color=#FFFFFF>[强化特殊技]</ct>时，额外回复5点闪能。",
+      "flavor": {
+        "0": "武馆的学生们从未见过般岳师父生气——更别说是发怒，即使对于最驽钝或最轻狂的学生，般岳师父似乎也拥有无限的耐心。\n山脉怎么会轻易发怒呢，它过分厚重的沉稳总使人们几乎忘记它的暴烈。\n但当它引动天倾的怒火，即使最嚣狂的恶兽，也要因此而战栗。\n\n「嗔恨如刀，平日要好生藏于鞘中，莫要伤了身边的人。」",
+        "1": "But when it stirs with the wrath of the heavens, even the fiercest of beasts will tremble in fear.",
+        "2": "",
+        "3": "\"Anger is like a blade — keep it sheathed in daily life, lest it wound those around you.\""
+      }
+    },
+    "3": {
+      "name": "痴愚如锁",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "般岳师父不止是武人，更是位智者——不管是武馆的学生们还是相熟的邻里，都这么说。",
+        "1": "毕竟般岳师父平常看起来就很深沉的样子嘛，寡言少语的他一开口，总是些让人耐人寻味的格言般的句子。",
+        "2": "武道不止修身，更是修心，而般岳师父常说，自己皆不过是学徒。",
+        "3": "",
+        "4": "「般岳鲁钝，也曾踏入歧途，但为阁下开辟这一程的道路…尚有双拳可付。」"
+      }
+    },
+    "4": {
+      "name": "肃灭单元·零型",
+      "desc": "<ct color=#FFFFFF>[强化特殊技：狮子吼·怒]</ct>、<ct color=#FFFFFF>[强化特殊技：山摇·怒]</ct>、<ct color=#FFFFFF>[普通攻击：倾山]</ct>和<ct color=#FFFFFF>[普通攻击：摧岳]</ct>造成的伤害提升<ct color=#FFFFFF>30%</ct>。",
+      "flavor": {
+        "0": "命运或许是天定或许是人为，但有些人的宿命与罪责，从不曾有幸被自由意志粉饰。",
+        "1": "在获得如今的姓名之前，被称为「零型」的作战构造体不过是字面意义的杀戮机器。",
+        "2": "而「心」是何时诞生的呢？是代码的桎梏被她抹去的那天，还是当你获得背负这一切前行的勇气？",
+        "3": "",
+        "4": "「忏悔太过轻巧，比起逃避曾经的罪孽，不如背负这如山的过往…为如今挥拳吧。」"
+      }
+    },
+    "5": {
+      "name": "学生",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "听说了么？山上开了家武馆，教功夫的是个大个子构造体。",
+        "1": "从那武馆里出来的学徒都颇有些真功夫呢，连以骸都能过上几招。",
+        "2": "那位铁铸的师父也常跑到空洞里救灾救人，想必也是位武道的宗师吧？",
+        "3": "",
+        "4": "「我不过也还是个稚拙的学徒…各位虽然称我一声师父，却也教会我许多为『人』的道理 。」"
+      }
+    },
+    "6": {
+      "name": "降世明王",
+      "desc": "任意时刻，般岳发动<ct color=#FFFFFF>[强化特殊技]</ct>都可获取<ct color=#FFFFFF>[明王]</ct>；<ct color=#FFFFFF>[明王]</ct>提供的<ct color=#FF5521>火属性伤害</ct>增益效果额外提升8%，持续时间提升至30秒；发动<ct color=#FFFFFF>[普通攻击：摧岳]</ct>时，般岳会对周身敌人造成等同于自身600%贯穿力的<ct color=#FF5521>火属性伤害</ct>；衔接在<ct color=#FFFFFF>[强化特殊技]</ct>后释放<ct color=#FFFFFF>[闪避：叫阵]</ct>也可以获取<ct color=#FFFFFF>[明王]</ct>。",
+      "flavor": {
+        "0": "「用性命抵债很轻松吧大块头？可你前面还有很长的赎罪之路要走呢！」",
+        "1": "「这是我对你…最终的裁决！」",
+        "2": "那个女孩的身形实在纤细，但那掷地有声的判词却似乎拨开如山的重负与迷雾。",
+        "3": "",
+        "4": "「我仍在思索自己是否具备裁决的智勇…但那不是我驻足不前的借口。」"
+      }
+    }
+  },
+  "potential": {}
+}

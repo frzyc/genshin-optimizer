@@ -2,7 +2,7 @@ import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { PolarMetal } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 
 const key: DiscSetKey = 'PolarMetal'
@@ -40,14 +40,8 @@ const sheet: UISheet<'2' | '4'> = {
       {
         type: 'fields',
         fields: [
-          {
-            title: 'Basic Attack DMG', // TODO: L10n
-            fieldRef: buff.set4_basic_dmg_.tag,
-          },
-          {
-            title: 'Dash Attack DMG', // TODO: L10n
-            fieldRef: buff.set4_dash_dmg_.tag,
-          },
+          tagToTagField(buff.set4_basic_dmg_.tag),
+          tagToTagField(buff.set4_dash_dmg_.tag),
         ],
       },
     ],

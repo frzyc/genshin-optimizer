@@ -1,0 +1,277 @@
+{
+  "name": "伊芙琳",
+  "fullName": "Evelyn Chevalier",
+  "basic": {
+    "BasicAttackRazorWire": {
+      "name": "普通攻击：割弦",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "第五段攻击命中敌人时，伊芙琳会使用<ct color=#FFFFFF>[月辉丝·弦]</ct>链接主要目标，与其进入<ct color=#FFFFFF>[牵缠禁制]</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "PassiveBind": {
+      "name": "被动：绑缚",
+      "desc": {
+        "0": "伊芙琳发动招式对敌人造成伤害时，会累积<ct color=#FFFFFF>[燎火]</ct>；",
+        "1": "伊芙琳消耗<ct color=#FFFFFF>[燎火]</ct>发动<ct color=#FFFFFF>[绞勒式]</ct>，或消耗<ct color=#FFFFFF>[喧响值]</ct>发动<ct color=#FFFFFF>[终结技]</ct>时，会累积1点<ct color=#FFFFFF>[燎索点]</ct>；",
+        "2": "拥有3点<ct color=#FFFFFF>[燎索点]</ct>后，伊芙琳下一次发动<ct color=#FFFFFF>[绞勒式]</ct>时，会消耗所有<ct color=#FFFFFF>[燎索点]</ct>，并将招式替换为打断等级较弱的<ct color=#FFFFFF>[连携技：月辉丝·绊]</ct>。"
+      },
+      "params": []
+    },
+    "BasicAttackGarroteFirstForm": {
+      "name": "普通攻击：绞勒式·I型",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[燎火]</ct>大于等于50%时，长按 <IconNormal /> 或 <IconSpecial /> 发动：",
+        "1": "消耗50%<ct color=#FFFFFF>[燎火]</ct>，使用<ct color=#FFFFFF>[月辉丝·弦]</ct>进行斩击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升，受到的伤害降低40%；",
+        "3": "招式发动后，累积1点<ct color=#FFFFFF>[燎索点]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackGarroteSecondForm": {
+      "name": "普通攻击：绞勒式·II型",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[燎火]</ct>大于等于50%时，<ct color=#FFFFFF>[普通攻击：绞勒式·I型]</ct>发动后，继续长按  <IconNormal /> 或 <IconSpecial /> 发动：",
+        "1": "消耗50%<ct color=#FFFFFF>[燎火]</ct>，使用<ct color=#FFFFFF>[月辉丝·弦]</ct>进行追击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升，受到的伤害降低40%；",
+        "3": "招式发动后，累积1点<ct color=#FFFFFF>[燎索点]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeArcStep": {
+      "name": "闪避：弧步",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackPiercingAmbush": {
+      "name": "冲刺攻击：穿梭潜袭",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "踢击前方敌人，造成<ct color=#F0D12B>物理伤害</ct>；"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterStranglingReversal": {
+      "name": "闪避反击：绞缢反制",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "挥动<ct color=#FFFFFF>[月辉丝·弦]</ct>斩击周围敌人，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "攻击命中敌人时，伊芙琳会使用<ct color=#FFFFFF>[月辉丝·弦]</ct>链接主要目标，与其进入<ct color=#FFFFFF>[牵缠禁制]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackLockedPosition": {
+      "name": "特殊技：锁系控位",
+      "desc": {
+        "0": "未进入<ct color=#FFFFFF>[牵缠禁制]</ct>前，点按 <IconSpecial /> 或 <IconSpecialReady />  发动：",
+        "1": "使用<ct color=#FFFFFF>[月辉丝·弦]</ct>牵引敌人并突进踢击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "攻击命中敌人时，伊芙琳会使用<ct color=#FFFFFF>[月辉丝·弦]</ct>链接主要目标，与其进入<ct color=#FFFFFF>[牵缠禁制]</ct>；",
+        "3": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        "1st-Hit "
+      ]
+    },
+    "SpecialAttackBindingSunderFirstForm": {
+      "name": "特殊技：束裂式·I型",
+      "desc": {
+        "0": "进入<ct color=#FFFFFF>[牵缠禁制]</ct>后，点按或长按 <IconSpecial /> 发动：",
+        "1": "以被<ct color=#FFFFFF>[牵缠禁制]</ct>的目标为中心，牵引周围敌人并引爆，造成<ct color=#FF5521>火属性伤害</ct>，引爆后将退出<ct color=#FFFFFF>[牵缠禁制]</ct>；",
+        "2": "招式发动时，可以闪避敌人的攻击，若成功触发<ct color=#FFFFFF>[极限闪避]</ct>，将额外累积25%<ct color=#FFFFFF>[燎火]</ct>；",
+        "3": "牵引周围敌人后，点按 <IconNormal /> ，可以取消引爆，直接衔接第三段<ct color=#FFFFFF>[普通攻击]</ct>；",
+        "4": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        "Bind ",
+        "Explosion "
+      ]
+    },
+    "EXSpecialAttackBindingSunderFinalForm": {
+      "name": "强化特殊技：束裂式·终型",
+      "desc": {
+        "0": "进入<ct color=#FFFFFF>[牵缠禁制]</ct>后，能量足够时，点按或长按 <IconSpecialReady /> 发动：",
+        "1": "以被<ct color=#FFFFFF>[牵缠禁制]</ct>的目标为中心，牵引周围敌人并引爆，造成大量<ct color=#FF5521>火属性伤害</ct>，引爆后将退出<ct color=#FFFFFF>[牵缠禁制]</ct>；",
+        "2": "招式发动时，可以闪避敌人的攻击，若成功触发<ct color=#FFFFFF>[极限闪避]</ct>，将额外累积25%<ct color=#FFFFFF>[燎火]</ct>；",
+        "3": "牵引周围敌人后，点按 <IconNormal /> ，可以取消引爆，直接衔接第三段<ct color=#FFFFFF>[普通攻击]</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Bind ",
+        "Explosion ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackLunaluxSnare": {
+      "name": "连携技：月辉丝·绊",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "使用复数<ct color=#FFFFFF>[月辉丝·弦]</ct>连续斩击前方范围内敌人并引爆，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "攻击命中敌人时，伊芙琳会使用<ct color=#FFFFFF>[月辉丝·弦]</ct>链接主要目标，与其进入<ct color=#FFFFFF>[牵缠禁制]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateLunaluxGarroteTimbre": {
+      "name": "终结技：月辉丝·弦音",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：\n使用复数<ct color=#FFFFFF>[月辉丝·弦]</ct>连续斩击前方范围内敌人并引爆，造成大量<ct color=#FF5521>火属性伤害</ct>；\n招式发动时，伊芙琳将脱掉风衣，并进入<ct color=#FFFFFF>[焰舞觉醒]</ct>状态，持续整场战斗，<ct color=#FFFFFF>[焰舞觉醒]</ct>状态下，伊芙琳消耗<ct color=#FFFFFF>[燎索点]</ct>发动<ct color=#FFFFFF>[连携技：月辉丝·绊]</ct>时，将会保留1点<ct color=#FFFFFF>[燎索点]</ct>；\n攻击命中敌人时，伊芙琳会使用<ct color=#FFFFFF>[月辉丝·弦]</ct>链接主要目标，与其进入<ct color=#FFFFFF>[牵缠禁制]</ct>；\n招式发动期间拥有无敌效果；\n招式发动后，累积1点<ct color=#FFFFFF>[燎索点]</ct>。",
+        "1": "Evelyn slashes in front with multiple <ct color=#FFFFFF>Lunalux Garrotes</ct> and detonates an explosion, dealing massive <ct color=#FF5521>Fire DMG</ct> to enemies in the area.",
+        "2": "Upon activating this skill, Evelyn removes her jacket and enters the <ct color=#FFFFFF>Dance of Awakened Fire</ct> state, which lasts for the entire battle. While in the <ct color=#FFFFFF>Dance of Awakened Fire</ct> state, when Evelyn consumes <ct color=#FFFFFF>Burning Tether Points</ct> to activate <ct color=#FFFFFF>Chain Attack: Lunalux - Snare</ct>, she will retain 1 point of <ct color=#FFFFFF>Burning Tether Point</ct>. When the attack hits an enemy, Evelyn uses <ct color=#FFFFFF>Lunalux Garrote</ct> to bind the primary target, entering <ct color=#FFFFFF>Binding Seal</ct>.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "After using this skill, gain 1 <ct color=#FFFFFF>Burning Tether Point</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateLunaluxGarroteShadow": {
+      "name": "终结技：月辉丝·弦影",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[焰舞觉醒]</ct>状态下，喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "使用复数<ct color=#FFFFFF>[月辉丝·弦]</ct>连续斩击前方范围内敌人并引爆，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "攻击命中敌人时，伊芙琳会使用<ct color=#FFFFFF>[月辉丝·弦]</ct>链接主要目标，与其进入<ct color=#FFFFFF>[牵缠禁制]</ct>；",
+        "3": "招式发动期间拥有无敌效果；",
+        "4": "招式发动后，累积1点<ct color=#FFFFFF>[燎索点]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistFierceBlade": {
+      "name": "快速支援：烈锋",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "挥动<ct color=#FFFFFF>[月辉丝·弦]</ct>斩击周围敌人，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "攻击命中敌人时，伊芙琳会使用<ct color=#FFFFFF>[月辉丝·弦]</ct>链接主要目标，与其进入<ct color=#FFFFFF>[牵缠禁制]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistSilentProtection": {
+      "name": "招架支援：静默掩护",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpCourseDisruption": {
+      "name": "支援突击：轨迹干涉",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "挥动<ct color=#FFFFFF>[月辉丝·弦]</ct>进行斩击，随后在前方引发爆炸，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "攻击命中敌人时，伊芙琳会使用<ct color=#FFFFFF>[月辉丝·弦]</ct>链接主要目标，与其进入<ct color=#FFFFFF>[牵缠禁制]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：缠丝",
+    "desc": [
+      "进入<ct color=#FFFFFF>[牵缠禁制]</ct>时，伊芙琳的暴击率提升<ct color=#2BAD00>12.5%</ct>，退出<ct color=#FFFFFF>[牵缠禁制]</ct>后，伊芙琳仍可继续保有增益，持续10秒；在<ct color=#FFFFFF>[牵缠禁制]</ct>期间切换至其他角色时，伊芙琳将自动衔接<ct color=#FFFFFF>[特殊技：束裂式·I型]</ct>。",
+      "进入<ct color=#FFFFFF>[牵缠禁制]</ct>时，伊芙琳的暴击率提升<ct color=#2BAD00>14.6%</ct>，退出<ct color=#FFFFFF>[牵缠禁制]</ct>后，伊芙琳仍可继续保有增益，持续10秒；在<ct color=#FFFFFF>[牵缠禁制]</ct>期间切换至其他角色时，伊芙琳将自动衔接<ct color=#FFFFFF>[特殊技：束裂式·I型]</ct>。",
+      "进入<ct color=#FFFFFF>[牵缠禁制]</ct>时，伊芙琳的暴击率提升<ct color=#2BAD00>16.7%</ct>，退出<ct color=#FFFFFF>[牵缠禁制]</ct>后，伊芙琳仍可继续保有增益，持续10秒；在<ct color=#FFFFFF>[牵缠禁制]</ct>期间切换至其他角色时，伊芙琳将自动衔接<ct color=#FFFFFF>[特殊技：束裂式·I型]</ct>。",
+      "进入<ct color=#FFFFFF>[牵缠禁制]</ct>时，伊芙琳的暴击率提升<ct color=#2BAD00>18.8%</ct>，退出<ct color=#FFFFFF>[牵缠禁制]</ct>后，伊芙琳仍可继续保有增益，持续10秒；在<ct color=#FFFFFF>[牵缠禁制]</ct>期间切换至其他角色时，伊芙琳将自动衔接<ct color=#FFFFFF>[特殊技：束裂式·I型]</ct>。",
+      "进入<ct color=#FFFFFF>[牵缠禁制]</ct>时，伊芙琳的暴击率提升<ct color=#2BAD00>20.8%</ct>，退出<ct color=#FFFFFF>[牵缠禁制]</ct>后，伊芙琳仍可继续保有增益，持续10秒；在<ct color=#FFFFFF>[牵缠禁制]</ct>期间切换至其他角色时，伊芙琳将自动衔接<ct color=#FFFFFF>[特殊技：束裂式·I型]</ct>。",
+      "进入<ct color=#FFFFFF>[牵缠禁制]</ct>时，伊芙琳的暴击率提升<ct color=#2BAD00>23%</ct>，退出<ct color=#FFFFFF>[牵缠禁制]</ct>后，伊芙琳仍可继续保有增益，持续10秒；在<ct color=#FFFFFF>[牵缠禁制]</ct>期间切换至其他角色时，伊芙琳将自动衔接<ct color=#FFFFFF>[特殊技：束裂式·I型]</ct>。",
+      "进入<ct color=#FFFFFF>[牵缠禁制]</ct>时，伊芙琳的暴击率提升<ct color=#2BAD00>25%</ct>，退出<ct color=#FFFFFF>[牵缠禁制]</ct>后，伊芙琳仍可继续保有增益，持续10秒；在<ct color=#FFFFFF>[牵缠禁制]</ct>期间切换至其他角色时，伊芙琳将自动衔接<ct color=#FFFFFF>[特殊技：束裂式·I型]</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：潜袭支点",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[击破]</ct>角色或<ct color=#FFFFFF>[支援]</ct>角色时触发：",
+      "1": "伊芙琳的<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>造成的伤害提升30%；当伊芙琳的暴击率大于等于80%时，<ct color=#FFFFFF>[连携技：月辉丝·绊]</ct>、<ct color=#FFFFFF>[终结技：月辉丝·弦音]</ct>和<ct color=#FFFFFF>[终结技：月辉丝·弦影]</ct>的伤害倍率提升至原本的125%。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "织梦",
+      "desc": "进入战场时，伊芙琳立刻获得1500点喧响值；敌人进入<ct color=#FFFFFF>[牵缠禁制]</ct>后，将被施加<ct color=#FFFFFF>[禁锢]</ct>效果，伊芙琳攻击带有<ct color=#FFFFFF>[禁锢]</ct>效果的敌人时，无视目标12%防御力；伊芙琳发动<ct color=#FFFFFF>[特殊技：束裂式·I型]</ct>或<ct color=#FFFFFF>[强化特殊技：束裂式·终型]</ct>时，会将<ct color=#FFFFFF>[禁锢]</ct>效果扩散给所有被招式命中的敌人，被扩散的<ct color=#FFFFFF>[禁锢]</ct>效果持续10秒。",
+      "flavor": {
+        "0": "远方模糊的光亮，似乎是她编织出的梦，一个无法触碰的未来。那不是为了赎罪，而是对自由的渴求。",
+        "1": "「你果然也是想要的吧？真正的生活。」——一位匿名的前同事曾对伊芙琳这样说道。"
+      }
+    },
+    "2": {
+      "name": "赴火之舞",
+      "desc": "伊芙琳的攻击力提升15%；伊芙琳发动<ct color=#FFFFFF>[普通攻击：绞勒式·I型]</ct>或<ct color=#FFFFFF>[普通攻击：绞勒式·II型]</ct>时，将返还所消耗的<ct color=#FFFFFF>[燎火]</ct>，25秒内最多触发一次；伊芙琳消耗<ct color=#FFFFFF>[燎索点]</ct>发动<ct color=#FFFFFF>[连携技：月辉丝·绊]</ct>时，招式的打断等级提升。",
+      "flavor": {
+        "0": "「对我来说，那种光是陌生的，我本该避开，可它却穿透了所有防线，像是要提醒我，黑暗之外还有什么值得追寻。」",
+        "1": "回忆起第一次见到嘉音的情景，伊芙琳的语气里夹杂着一丝罕见的柔软。"
+      }
+    },
+    "3": {
+      "name": "激变",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "那一刻，她从禁锢中脱身，成为更真实的自己。\n绷紧的绳索断裂，曾经的枷锁化作破碎的茧壳。伊芙琳站在新生的边界，冷冽的目光里，一丝柔光若隐若现。"
+    },
+    "4": {
+      "name": "命运的弦音",
+      "desc": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，伊芙琳立刻获得等同于自身10%生命值上限的护盾，持有该护盾时，伊芙琳的暴击伤害提升40%。",
+      "flavor": {
+        "0": "「伊芙，你知道吗？每次遇到对我的生命而言至关重要的人时，我心里都会『噔噔！』这样响一下~」",
+        "1": "伊芙琳叹了口气，示意时间已经不早了，嘉音慌忙拉上礼服的后襟，推门而出。",
+        "2": "「…噔噔。」独自留在化妆间的伊芙琳，低声重复了一遍。"
+      }
+    },
+    "5": {
+      "name": "丹缕如霞",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "她的丝线，如同被晨曦染成赤红的云霞。",
+        "1": "每一次攻击后潇洒地回身，炽焰如霞光般散落。无需言语，伊芙琳早已将守护化为燃烧的光辉。"
+      }
+    },
+    "6": {
+      "name": "光与影的牵绊",
+      "desc": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，伊芙琳将获得<ct color=#FFFFFF>[弦影绝锋]</ct>，持续20秒；<ct color=#FFFFFF>[弦影绝锋]</ct>期间，伊芙琳发动<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>命中主要攻击目标时，将额外释放一段<ct color=#FFFFFF>[月辉丝·弦]</ct>进行追击，对范围内敌人造成等同于伊芙琳375%攻击力的<ct color=#FF5521>火属性伤害</ct>，该伤害会被视为<ct color=#FFFFFF>[连携技]</ct>伤害，最多触发16次，再次获得<ct color=#FFFFFF>[弦影绝锋]</ct>时刷新可触发次数。",
+      "flavor": {
+        "0": "有光的地方，永远有影。\n它无声无息地隐匿，追随着光的轨迹，守护每一次明亮的绽放。\n影从不试图夺走光的辉煌，却在每一个转身间，默默填补它未及的角落。\n两者从未分离，也无法分离——光因影而完整，影因光而存在。这是一场永无止息的追随，也是一份不可言说的羁绊。",
+        "1": "It silently hides, tracing the light's path, guarding each bright burst. The shadow never tries to steal the light's brilliance, but at every turn, it quietly fills those corners the light cannot reach. The two have never been separated, nor can they be — light is whole because of shadow, and shadow exists because of light. It's an eternal pursuit, an unspeakable connection."
+      }
+    }
+  },
+  "potential": {}
+}

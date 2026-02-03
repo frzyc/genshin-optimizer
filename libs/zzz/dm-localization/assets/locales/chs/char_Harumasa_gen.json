@@ -1,0 +1,265 @@
+{
+  "name": "悠真",
+  "fullName": "浅羽悠真",
+  "basic": {
+    "BasicAttackCloudPiercer": {
+      "name": "普通攻击：穿云",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的穿透攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "第五段攻击命中敌人时，可生成2枚<ct color=#FFFFFF>[电壶]</ct>；",
+        "3": "发动<ct color=#FFFFFF>[连携技]</ct>后，悠真下一次发动<ct color=#FFFFFF>[普通攻击：穿云]</ct>第五段命中敌人时，可生成6枚<ct color=#FFFFFF>[电壶]</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackCloudPiercerDrift": {
+      "name": "普通攻击：穿云·移形",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[普通攻击：穿云]</ct>发动期间，拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}并点按 <IconNormal /> 发动：",
+        "1": "发动远程穿透攻击，并向拖曳方向调整身位，对前方敌人造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackFallingFeather": {
+      "name": "普通攻击：落羽",
+      "desc": {
+        "0": "第五段<ct color=#FFFFFF>[普通攻击：穿云]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[连携技]</ct>发动后，长按 <IconSpecial /> 发动：",
+        "1": "立即向前方敌人发射<ct color=#FFFFFF>[落羽]</ct>，造成<ct color=#2EB6FF>电属性伤害</ct>。",
+        "2": "长按 <IconNormal /> 瞄准目标，松开 <IconNormal /> 发动：",
+        "3": "引弓瞄准敌人后，向目标发射<ct color=#FFFFFF>[落羽]</ct>，造成<ct color=#2EB6FF>电属性伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackHaOtoNoYa": {
+      "name": "普通攻击：甲乙矢",
+      "desc": {
+        "0": "第五段<ct color=#FFFFFF>[普通攻击：穿云]</ct>/<ct color=#FFFFFF>[强化特殊技]</ct>/<ct color=#FFFFFF>[连携技]</ct>命中敌人或地面时，可生成2/6/6枚<ct color=#FFFFFF>[电壶]</ct>；\n若场上不存在<ct color=#FFFFFF>[电壶]</ct>，队伍中任意角色对敌人施加属性异常效果时，可生成6枚<ct color=#FFFFFF>[电壶]</ct>，12秒内最多触发一次；\n<ct color=#FFFFFF>[电壶]</ct>同一时间内最多存在6枚，悠真发射<ct color=#FFFFFF>[落羽]</ct>命中敌人时，若场上存在<ct color=#FFFFFF>[电壶]</ct>，则会将其激活，向被<ct color=#FFFFFF>[落羽]</ct>命中的目标发射<ct color=#FFFFFF>[甲乙矢]</ct>，造成<ct color=#2EB6FF>电属性伤害</ct>；\n<ct color=#FFFFFF>[甲乙矢]</ct>命中敌人时，会为其施加<ct color=#FFFFFF>[电囚]</ct>效果，最多叠加8层，持续10秒，重复触发时刷新持续时间，<ct color=#FFFFFF>[电囚]</ct>效果大于等于2层时，将在目标身上生成<ct color=#FFFFFF>[十文字]</ct>标记。",
+        "1": "There can be up to 6 <ct color=#FFFFFF>Electro Quivers</ct> present at a time. If there are any <ct color=#FFFFFF>Electro Quivers</ct> present when Harumasa fires and hits enemies with <ct color=#FFFFFF>Falling Feather</ct>, the <ct color=#FFFFFF>Electro Quivers</ct> will activate and fire <ct color=#FFFFFF>Ha-Oto no Ya</ct> at the enemies hit by <ct color=#FFFFFF>Falling Feather</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "<ct color=#FFFFFF>Ha-Oto no Ya</ct> will apply <ct color=#FFFFFF>Electro Prison</ct> to enemies hit, stacking up to 8 times and lasting 10s, repeated triggers reset the duration. While a target has at least 2 stacks of <ct color=#FFFFFF>Electro Prison</ct>, they will be <ct color=#FFFFFF>X-Marked</ct>."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeQuickFlash": {
+      "name": "闪避：瞬闪",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackHitenNoTsuru": {
+      "name": "冲刺攻击：飞弦",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行多段穿透攻击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterHiddenEdge": {
+      "name": "闪避反击：藏锋",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动穿透攻击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DashAttackHitenNoTsuruSlash": {
+      "name": "冲刺攻击：飞弦·斩",
+      "desc": {
+        "0": "当场上存在拥有<ct color=#FFFFFF>[十文字]</ct>标记的敌人时，悠真会进入<ct color=#FFFFFF>[醒觉]</ct>状态，并将<ct color=#FFFFFF>[冲刺攻击：飞弦]</ct>替换为<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>。\n<ct color=#FFFFFF>[醒觉]</ct>状态下，闪避时，点按 <IconNormal /> 发动：\n快速突进至距离自身最近的带有<ct color=#FFFFFF>[十文字]</ct>标记的敌人身前，发动强力斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；\n斩击命中目标时会消耗2层<ct color=#FFFFFF>[电囚]</ct>效果，<ct color=#FFFFFF>[电囚]</ct>效果少于2层时，将消除<ct color=#FFFFFF>[十文字]</ct>标记；在<ct color=#FFFFFF>[十文字]</ct>标记耗尽前，连续点按 <IconNormal /> ，可连续发动<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>；当场上不存在带有<ct color=#FFFFFF>[十文字]</ct>标记的敌人时，悠真将退出<ct color=#FFFFFF>[醒觉]</ct>状态；\n<ct color=#FFFFFF>[醒觉]</ct>状态下，<ct color=#FFFFFF>[普通攻击：落羽]</ct>发动后，点按 <IconNormal /> 可以快速衔接发动<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>；\n招式发动期间抗打断等级提升，受到的伤害降低40%。",
+        "1": "",
+        "2": "While in the <ct color=#FFFFFF>Awakened</ct> state, press <IconNormal /> during a dodge to activate:",
+        "3": "Rush forwards to the closest <ct color=#FFFFFF>X-Marked</ct> enemy and execute a powerful slash, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "4": "When the slash hits the target, it consumes 2 stacks of <ct color=#FFFFFF>Electro Prison</ct>. With less than 2 stacks of <ct color=#FFFFFF>Electro Prison</ct>, <ct color=#FFFFFF>X-Marked</ct> will be removed from the enemy. Before <ct color=#FFFFFF>X-Marked</ct> is removed, repeatedly press <IconNormal /> to repeatedly use <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>. While no <ct color=#FFFFFF>X-Marked</ct> enemies exist on the field, Harumasa leaves the <ct color=#FFFFFF>Awakened</ct> state.",
+        "5": "While in the <ct color=#FFFFFF>Awakened</ct> state, press <IconNormal /> after <ct color=#FFFFFF>Basic Attack: Falling Feather</ct> to quickly follow up with <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>.",
+        "6": "During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackNowhereToHide": {
+      "name": "特殊技：天罗",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方发射箭矢，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackNowhereToRun": {
+      "name": "强化特殊技：地网",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方发射飞刃和强化箭矢，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "强化箭矢命中敌人或地面时，可生成6枚<ct color=#FFFFFF>[电壶]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackKaiHanare": {
+      "name": "连携技：会·离",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方大范围敌人发动穿透攻击，并发射强化箭矢，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "箭矢命中地面时，可生成6枚<ct color=#FFFFFF>[电壶]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateZanshin": {
+      "name": "终结技：残心",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方敌人发动强力穿透攻击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistBracedBow": {
+      "name": "快速支援：穿弦",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动穿透攻击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistYugamae": {
+      "name": "招架支援：构身",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpYugamaeSlash": {
+      "name": "支援突击：构身·斩",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动连续斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：破晓",
+    "desc": [
+      "<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>的暴击率提升<ct color=#2BAD00>10.6%</ct>，悠真的<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>命中敌人并触发暴击时，将获得1层<ct color=#FFFFFF>[锋芒]</ct>，同一招式内最多获得3层，<ct color=#FFFFFF>[锋芒]</ct>最多叠加6层，持续5秒，重复触发时刷新持续时间；每层<ct color=#FFFFFF>[锋芒]</ct>会使<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>造成的暴击伤害提升<ct color=#2BAD00>6%</ct>。",
+      "<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>的暴击率提升<ct color=#2BAD00>13%</ct>，悠真的<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>命中敌人并触发暴击时，将获得1层<ct color=#FFFFFF>[锋芒]</ct>，同一招式内最多获得3层，<ct color=#FFFFFF>[锋芒]</ct>最多叠加6层，持续5秒，重复触发时刷新持续时间；每层<ct color=#FFFFFF>[锋芒]</ct>会使<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>造成的暴击伤害提升<ct color=#2BAD00>7%</ct>。",
+      "<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>的暴击率提升<ct color=#2BAD00>15.4%</ct>，悠真的<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>命中敌人并触发暴击时，将获得1层<ct color=#FFFFFF>[锋芒]</ct>，同一招式内最多获得3层，<ct color=#FFFFFF>[锋芒]</ct>最多叠加6层，持续5秒，重复触发时刷新持续时间；每层<ct color=#FFFFFF>[锋芒]</ct>会使<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>造成的暴击伤害提升<ct color=#2BAD00>8%</ct>。",
+      "<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>的暴击率提升<ct color=#2BAD00>17.8%</ct>，悠真的<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>命中敌人并触发暴击时，将获得1层<ct color=#FFFFFF>[锋芒]</ct>，同一招式内最多获得3层，<ct color=#FFFFFF>[锋芒]</ct>最多叠加6层，持续5秒，重复触发时刷新持续时间；每层<ct color=#FFFFFF>[锋芒]</ct>会使<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>造成的暴击伤害提升<ct color=#2BAD00>9%</ct>。",
+      "<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>的暴击率提升<ct color=#2BAD00>20.2%</ct>，悠真的<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>命中敌人并触发暴击时，将获得1层<ct color=#FFFFFF>[锋芒]</ct>，同一招式内最多获得3层，<ct color=#FFFFFF>[锋芒]</ct>最多叠加6层，持续5秒，重复触发时刷新持续时间；每层<ct color=#FFFFFF>[锋芒]</ct>会使<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>造成的暴击伤害提升<ct color=#2BAD00>10%</ct>。",
+      "<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>的暴击率提升<ct color=#2BAD00>22.6%</ct>，悠真的<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>命中敌人并触发暴击时，将获得1层<ct color=#FFFFFF>[锋芒]</ct>，同一招式内最多获得3层，<ct color=#FFFFFF>[锋芒]</ct>最多叠加6层，持续5秒，重复触发时刷新持续时间；每层<ct color=#FFFFFF>[锋芒]</ct>会使<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>造成的暴击伤害提升<ct color=#2BAD00>11%</ct>。",
+      "<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>的暴击率提升<ct color=#2BAD00>25%</ct>，悠真的<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>命中敌人并触发暴击时，将获得1层<ct color=#FFFFFF>[锋芒]</ct>，同一招式内最多获得3层，<ct color=#FFFFFF>[锋芒]</ct>最多叠加6层，持续5秒，重复触发时刷新持续时间；每层<ct color=#FFFFFF>[锋芒]</ct>会使<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>造成的暴击伤害提升<ct color=#2BAD00>12%</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：超频",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[击破]</ct>角色或<ct color=#FFFFFF>[异常]</ct>角色时触发：",
+      "1": "悠真攻击命中处于失衡状态或属性异常状态下的敌人时，自身造成的伤害提升40%；悠真发射<ct color=#FFFFFF>[落羽]</ct>命中处于失衡状态或属性异常状态下的敌人时，会为其施加2层<ct color=#FFFFFF>[电囚]</ct>效果。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "「意气风发」",
+      "desc": "<ct color=#FFFFFF>[普通攻击：甲乙矢]</ct>中，<ct color=#FFFFFF>[电囚]</ct>效果的叠加层数上限提升至14层；<ct color=#FFFFFF>[电壶]</ct>被激活时，将会向目标连续发射2支<ct color=#FFFFFF>[甲乙矢]</ct>。",
+      "flavor": {
+        "0": "「我才不像某些死心眼的家伙一样，总之执着于正面战。」",
+        "1": "「不管是明枪还是暗箭，能让我早点下班的都是好孩子~」"
+      }
+    },
+    "2": {
+      "name": "挥霍",
+      "desc": "发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，悠真获得7层<ct color=#FFFFFF>[电掣]</ct>，最多叠加7层；拥有<ct color=#FFFFFF>[电掣]</ct>时，<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>造成的伤害提升50%；<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>结束后，消耗1层<ct color=#FFFFFF>[电掣]</ct>。",
+      "flavor": {
+        "0": "「别看我这样，我其实很弱很弱的~」",
+        "1": "悠真懒洋洋地趴在了办公桌上。",
+        "2": "「所以这次的任务，换个人怎么样？」"
+      }
+    },
+    "3": {
+      "name": "白色谎言",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「…放心，暂时死不了。」",
+        "1": "他笑着抹了一把嘴角溢出的鲜血，再次架起了弓。",
+        "2": "「我可是要遗千年的。」"
+      }
+    },
+    "4": {
+      "name": "偶有充盈",
+      "desc": "<ct color=#FFFFFF>[电囚]</ct>效果的持续时间提升至20秒；<ct color=#FFFFFF>[冲刺攻击：飞弦·斩]</ct>命中敌人时，悠真获得30点喧响值，同一招式内最多触发一次；发动<ct color=#FFFFFF>[终结技]</ct>时，将为场上所有敌人施加满层<ct color=#FFFFFF>[电囚]</ct>效果。",
+      "flavor": {
+        "0": "悠真偶尔也有干劲满满的时候——",
+        "1": "在距离下班还有五分钟之前。"
+      }
+    },
+    "5": {
+      "name": "无人知晓",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「我想要假期，要自由，要每天都开开心心——」",
+        "1": "「骗你的。我想活着。」"
+      }
+    },
+    "6": {
+      "name": "会心",
+      "desc": "<ct color=#FFFFFF>[甲乙矢]</ct>命中处于失衡状态或属性异常状态下的敌人后，悠真将无视其15%<ct color=#2EB6FF>电属性伤害抗性</ct>，持续12秒；<ct color=#FFFFFF>[甲乙矢]</ct>每命中同一名敌人12次，将额外触发1次电磁爆炸，对目标造成悠真1500%攻击力的<ct color=#2EB6FF>电属性伤害</ct>。",
+      "flavor": {
+        "0": "「师父曾教过我很多事。如何拉弓，如何用刀，如何…在这个世界里幸存下来。」",
+        "1": "「…你问后来？」",
+        "2": "「后来啊…他也离开我了。」"
+      }
+    }
+  },
+  "potential": {}
+}

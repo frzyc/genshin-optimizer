@@ -1,0 +1,300 @@
+{
+  "name": "爱丽丝",
+  "fullName": "Alice Thymefield",
+  "basic": {
+    "BasicAttackCelestialOverture": {
+      "name": "普通攻击：星仪序曲",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "爱丽丝通过属性异常积蓄触发<ct color=#F0D12B>[强击]</ct>时，下一次发动的<ct color=#FFFFFF>[普通攻击]</ct>第五段获得强化。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit ",
+        "5th-Hit (Enhanced) "
+      ]
+    },
+    "BasicAttackStarshineWaltz": {
+      "name": "普通攻击：星芒圆舞曲",
+      "desc": {
+        "0": "爱丽丝的<ct color=#FFFFFF>[剑仪]</ct>达到1格时，长按 <IconNormal /> 发动：",
+        "1": "长按进入蓄力，消耗至多3格<ct color=#FFFFFF>[剑仪]</ct>，松开 <IconNormal /> 或<ct color=#FFFFFF>[剑仪]</ct>不满1格时，爱丽丝将根据当前蓄力段数以目标敌人为中心发动多段斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "三段蓄力的<ct color=#FFFFFF>[普通攻击：星芒圆舞曲]</ct>的终结一击命中敌人时，触发特殊的<ct color=#F0D12B>[强击]</ct>效果<ct color=#F0D12B>[极性强击]</ct>，无视属性积蓄进度造成一次原本<ct color=#F0D12B>[强击]</ct>效果{CAL:0+100,1,2}%的伤害，并可以与包括物理异常效果在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "3": "命中敌人时，不累积<ct color=#FFFFFF>[剑仪]</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "One-Staged Charged Attack ",
+        "Two-Staged Charged Attack ",
+        "Three-Staged Charged Attack ",
+        "One-Staged Charged ",
+        "Two-Staged Charged ",
+        "Three-Staged Charged "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeJumpyBunny": {
+      "name": "闪避：动若脱兔",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackBladeDancersGale": {
+      "name": "冲刺攻击：剑舞之风",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterCeremonyOfSwordlight": {
+      "name": "闪避反击：剑闪之仪",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动斩击和踢击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackPiercingDawn": {
+      "name": "特殊技：破晓突刺",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "丢出剑攻击并穿过前方敌人，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动时可以触发<ct color=#FFFFFF>[极限闪避]</ct>；",
+        "3": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 可以衔接发动第五段<ct color=#FFFFFF>[普通攻击]</ct>；",
+        "4": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackAuroraThrustNorthernCross": {
+      "name": "强化特殊技：极光突刺·北十字",
+      "desc": {
+        "0": "能量足够时，向前拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}并点按 <IconSpecialReady /> 发动：",
+        "1": "突刺攻击并穿过前方敌人，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动时可以触发<ct color=#FFFFFF>[极限闪避]</ct>，并回复10点<ct color=#FFFFFF>[剑仪]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    },
+    "EXSpecialAttackAuroraThrustSouthernCross": {
+      "name": "强化特殊技：极光突刺·南十字",
+      "desc": {
+        "0": "能量足够时，不拖曳或者向后方拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}并点按 <IconSpecialReady /> 发动：",
+        "1": "后退并发动斩击随后向前穿刺，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动时可以触发<ct color=#FFFFFF>[极限闪避]</ct>，并回复10点<ct color=#FFFFFF>[剑仪]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackStarfallIntermission": {
+      "name": "连携技：星落间章",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方敌人发动强力多段斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateStarfallFinale": {
+      "name": "终结技：星芒终章",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方大范围敌人发动强力多段斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动时，回复200点<ct color=#FFFFFF>[剑仪]</ct>；",
+        "3": "命中敌人时，不累积<ct color=#FFFFFF>[剑仪]</ct>；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistIntertwinedStab": {
+      "name": "快速支援：交替穿刺",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动斩击和踢击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistParryGuard": {
+      "name": "招架支援：对抗防守",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpCrossRiposte": {
+      "name": "支援突击：交叉还击",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动突进斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：剑心双虹",
+    "desc": [
+      {
+        "0": "队伍中任意角色对敌人施加<ct color=#F0D12B>物理异常状态</ct>后，在异常状态的持续期间，爱丽丝每0.95秒对其额外造成基于该物理异常伤害比例2.5%的伤害，并使<ct color=#F0D12B>物理异常状态</ct>下的敌人被触发<ct color=#FFFFFF>[紊乱]</ct>效果时，每有1秒<ct color=#F0D12B>物理异常状态</ct>剩余时间，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升18%，最多提升{CAL:18*10,1,2}%；",
+        "1": "爱丽丝攻击命中敌人时，累积<ct color=#FFFFFF>[剑仪]</ct>，爱丽丝通过属性异常积蓄触发<ct color=#F0D12B>[强击]</ct>时，回复10点<ct color=#FFFFFF>[剑仪]</ct>，<ct color=#FFFFFF>[剑仪]</ct>的上限为300点，每100点为1格；",
+        "2": "三段蓄力的<ct color=#FFFFFF>[普通攻击：星芒圆舞曲]</ct>的终结一击命中敌人时，触发特殊的<ct color=#F0D12B>[强击]</ct>效果<ct color=#F0D12B>[极性强击]</ct>，无视属性积蓄进度造成一次原本<ct color=#F0D12B>[强击]</ct>效果{CAL:0+100,1,2}%的伤害，并可以与包括物理异常效果在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "3": "爱丽丝触发<ct color=#F0D12B>[强击]</ct>时，<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>12.5%</ct>，持续30秒。"
+      },
+      {
+        "0": "队伍中任意角色对敌人施加<ct color=#F0D12B>物理异常状态</ct>后，在异常状态的持续期间，爱丽丝每0.95秒对其额外造成基于该物理异常伤害比例2.5%的伤害，并使<ct color=#F0D12B>物理异常状态</ct>下的敌人被触发<ct color=#FFFFFF>[紊乱]</ct>效果时，每有1秒<ct color=#F0D12B>物理异常状态</ct>剩余时间，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升18%，最多提升{CAL:18*10,1,2}%；",
+        "1": "爱丽丝攻击命中敌人时，累积<ct color=#FFFFFF>[剑仪]</ct>，爱丽丝通过属性异常积蓄触发<ct color=#F0D12B>[强击]</ct>时，回复10点<ct color=#FFFFFF>[剑仪]</ct>，<ct color=#FFFFFF>[剑仪]</ct>的上限为300点，每100点为1格；",
+        "2": "三段蓄力的<ct color=#FFFFFF>[普通攻击：星芒圆舞曲]</ct>的终结一击命中敌人时，触发特殊的<ct color=#F0D12B>[强击]</ct>效果<ct color=#F0D12B>[极性强击]</ct>，无视属性积蓄进度造成一次原本<ct color=#F0D12B>[强击]</ct>效果{CAL:0+100,1,2}%的伤害，并可以与包括物理异常效果在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "3": "爱丽丝触发<ct color=#F0D12B>[强击]</ct>时，<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>14.6%</ct>，持续30秒。"
+      },
+      {
+        "0": "队伍中任意角色对敌人施加<ct color=#F0D12B>物理异常状态</ct>后，在异常状态的持续期间，爱丽丝每0.95秒对其额外造成基于该物理异常伤害比例2.5%的伤害，并使<ct color=#F0D12B>物理异常状态</ct>下的敌人被触发<ct color=#FFFFFF>[紊乱]</ct>效果时，每有1秒<ct color=#F0D12B>物理异常状态</ct>剩余时间，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升18%，最多提升{CAL:18*10,1,2}%；",
+        "1": "爱丽丝攻击命中敌人时，累积<ct color=#FFFFFF>[剑仪]</ct>，爱丽丝通过属性异常积蓄触发<ct color=#F0D12B>[强击]</ct>时，回复10点<ct color=#FFFFFF>[剑仪]</ct>，<ct color=#FFFFFF>[剑仪]</ct>的上限为300点，每100点为1格；",
+        "2": "三段蓄力的<ct color=#FFFFFF>[普通攻击：星芒圆舞曲]</ct>的终结一击命中敌人时，触发特殊的<ct color=#F0D12B>[强击]</ct>效果<ct color=#F0D12B>[极性强击]</ct>，无视属性积蓄进度造成一次原本<ct color=#F0D12B>[强击]</ct>效果{CAL:0+100,1,2}%的伤害，并可以与包括物理异常效果在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "3": "爱丽丝触发<ct color=#F0D12B>[强击]</ct>时，<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>16.7%</ct>，持续30秒。"
+      },
+      {
+        "0": "队伍中任意角色对敌人施加<ct color=#F0D12B>物理异常状态</ct>后，在异常状态的持续期间，爱丽丝每0.95秒对其额外造成基于该物理异常伤害比例2.5%的伤害，并使<ct color=#F0D12B>物理异常状态</ct>下的敌人被触发<ct color=#FFFFFF>[紊乱]</ct>效果时，每有1秒<ct color=#F0D12B>物理异常状态</ct>剩余时间，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升18%，最多提升{CAL:18*10,1,2}%；",
+        "1": "爱丽丝攻击命中敌人时，累积<ct color=#FFFFFF>[剑仪]</ct>，爱丽丝通过属性异常积蓄触发<ct color=#F0D12B>[强击]</ct>时，回复10点<ct color=#FFFFFF>[剑仪]</ct>，<ct color=#FFFFFF>[剑仪]</ct>的上限为300点，每100点为1格；",
+        "2": "三段蓄力的<ct color=#FFFFFF>[普通攻击：星芒圆舞曲]</ct>的终结一击命中敌人时，触发特殊的<ct color=#F0D12B>[强击]</ct>效果<ct color=#F0D12B>[极性强击]</ct>，无视属性积蓄进度造成一次原本<ct color=#F0D12B>[强击]</ct>效果{CAL:0+100,1,2}%的伤害，并可以与包括物理异常效果在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "3": "爱丽丝触发<ct color=#F0D12B>[强击]</ct>时，<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>18.8%</ct>，持续30秒。"
+      },
+      {
+        "0": "队伍中任意角色对敌人施加<ct color=#F0D12B>物理异常状态</ct>后，在异常状态的持续期间，爱丽丝每0.95秒对其额外造成基于该物理异常伤害比例2.5%的伤害，并使<ct color=#F0D12B>物理异常状态</ct>下的敌人被触发<ct color=#FFFFFF>[紊乱]</ct>效果时，每有1秒<ct color=#F0D12B>物理异常状态</ct>剩余时间，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升18%，最多提升{CAL:18*10,1,2}%；",
+        "1": "爱丽丝攻击命中敌人时，累积<ct color=#FFFFFF>[剑仪]</ct>，爱丽丝通过属性异常积蓄触发<ct color=#F0D12B>[强击]</ct>时，回复10点<ct color=#FFFFFF>[剑仪]</ct>，<ct color=#FFFFFF>[剑仪]</ct>的上限为300点，每100点为1格；",
+        "2": "三段蓄力的<ct color=#FFFFFF>[普通攻击：星芒圆舞曲]</ct>的终结一击命中敌人时，触发特殊的<ct color=#F0D12B>[强击]</ct>效果<ct color=#F0D12B>[极性强击]</ct>，无视属性积蓄进度造成一次原本<ct color=#F0D12B>[强击]</ct>效果{CAL:0+100,1,2}%的伤害，并可以与包括物理异常效果在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "3": "爱丽丝触发<ct color=#F0D12B>[强击]</ct>时，<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>20.8%</ct>，持续30秒。"
+      },
+      {
+        "0": "队伍中任意角色对敌人施加<ct color=#F0D12B>物理异常状态</ct>后，在异常状态的持续期间，爱丽丝每0.95秒对其额外造成基于该物理异常伤害比例2.5%的伤害，并使<ct color=#F0D12B>物理异常状态</ct>下的敌人被触发<ct color=#FFFFFF>[紊乱]</ct>效果时，每有1秒<ct color=#F0D12B>物理异常状态</ct>剩余时间，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升18%，最多提升{CAL:18*10,1,2}%；",
+        "1": "爱丽丝攻击命中敌人时，累积<ct color=#FFFFFF>[剑仪]</ct>，爱丽丝通过属性异常积蓄触发<ct color=#F0D12B>[强击]</ct>时，回复10点<ct color=#FFFFFF>[剑仪]</ct>，<ct color=#FFFFFF>[剑仪]</ct>的上限为300点，每100点为1格；",
+        "2": "三段蓄力的<ct color=#FFFFFF>[普通攻击：星芒圆舞曲]</ct>的终结一击命中敌人时，触发特殊的<ct color=#F0D12B>[强击]</ct>效果<ct color=#F0D12B>[极性强击]</ct>，无视属性积蓄进度造成一次原本<ct color=#F0D12B>[强击]</ct>效果{CAL:0+100,1,2}%的伤害，并可以与包括物理异常效果在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "3": "爱丽丝触发<ct color=#F0D12B>[强击]</ct>时，<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>22.9%</ct>，持续30秒。"
+      },
+      {
+        "0": "队伍中任意角色对敌人施加<ct color=#F0D12B>物理异常状态</ct>后，在异常状态的持续期间，爱丽丝每0.95秒对其额外造成基于该物理异常伤害比例2.5%的伤害，并使<ct color=#F0D12B>物理异常状态</ct>下的敌人被触发<ct color=#FFFFFF>[紊乱]</ct>效果时，每有1秒<ct color=#F0D12B>物理异常状态</ct>剩余时间，<ct color=#FFFFFF>[紊乱]</ct>效果的伤害倍率提升18%，最多提升{CAL:18*10,1,2}%；",
+        "1": "爱丽丝攻击命中敌人时，累积<ct color=#FFFFFF>[剑仪]</ct>，爱丽丝通过属性异常积蓄触发<ct color=#F0D12B>[强击]</ct>时，回复10点<ct color=#FFFFFF>[剑仪]</ct>，<ct color=#FFFFFF>[剑仪]</ct>的上限为300点，每100点为1格；",
+        "2": "三段蓄力的<ct color=#FFFFFF>[普通攻击：星芒圆舞曲]</ct>的终结一击命中敌人时，触发特殊的<ct color=#F0D12B>[强击]</ct>效果<ct color=#F0D12B>[极性强击]</ct>，无视属性积蓄进度造成一次原本<ct color=#F0D12B>[强击]</ct>效果{CAL:0+100,1,2}%的伤害，并可以与包括物理异常效果在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "3": "爱丽丝触发<ct color=#F0D12B>[强击]</ct>时，<ct color=#F0D12B>物理异常积蓄效率</ct>提升<ct color=#2BAD00>25%</ct>，持续30秒。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：寻奇猎幽",
+    "desc": {
+      "0": "队伍中存在另一名<ct color=#FFFFFF>[异常]</ct>或<ct color=#FFFFFF>[支援]</ct>角色时触发：",
+      "1": "队伍中任意角色触发<ct color=#FFFFFF>[紊乱]</ct>效果时，爱丽丝回复30点<ct color=#FFFFFF>[剑仪]</ct>；",
+      "2": "若爱丽丝的异常掌控大于140点，每超过1点异常掌控会提升1.6点异常精通；",
+      "3": "进入战场时，爱丽丝获得300点<ct color=#FFFFFF>[剑仪]</ct>，在勘域模式中此效果180秒内最多触发一次。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "掌心的芫荽",
+      "desc": "爱丽丝触发<ct color=#F0D12B>[极性强击]</ct>时，回复25点<ct color=#FFFFFF>[剑仪]</ct>；爱丽丝触发<ct color=#F0D12B>[强击]</ct>时，目标的防御力降低20%，持续30秒。",
+      "flavor": {
+        "0": "一株芫荽摇曳如新生的绿星，",
+        "1": "指尖仿佛下一秒便能将它穿透。",
+        "2": "她摊开微微颤抖的双手，",
+        "3": "将那丝悸动拥入掌心。",
+        "4": "少女的心跳如雨后晨曦破土的春芽。"
+      }
+    },
+    "2": {
+      "name": "剑尖的鼠尾草",
+      "desc": "<ct color=#FFFFFF>[终结技：星芒终章]</ct>的终结一击命中敌人时，触发<ct color=#F0D12B>[极性强击]</ct>；全队角色造成的<ct color=#F0D12B>[强击]</ct>伤害提升15%；<ct color=#F0D12B>物理异常状态</ct>下的敌人被结算的<ct color=#FFFFFF>[紊乱]</ct>伤害提升15%；进入战场时，爱丽丝立刻获得1000点喧响值，在勘域模式中此效果180秒内最多触发一次。",
+      "flavor": {
+        "0": "银色的剑尖低吻着鼠尾草叶上的霜痕，",
+        "1": "战前的行礼是少女余裕的体现。",
+        "2": "恐惧与无力已被冰封于昨日的故梦中，",
+        "3": "佩剑跃动着，将要勾勒出繁星的轮廓。",
+        "4": "破晓就要到来，花蕾等待着盛开。"
+      }
+    },
+    "3": {
+      "name": "对称主义",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "她无法拒绝完美的对称。",
+        "1": "对称之中，存在着秩序与规律。若看不到对称，她的兔耳和尾巴将会丧失柔顺与光泽，仿佛美好的事物下一秒就会离她而去。",
+        "2": "「所以…这就是你非得提我的堆堆袜，还想卸掉我腿环的理由？」",
+        "3": "「我实在受不了你的不对称啦！就一下，我保证就一下！」"
+      }
+    },
+    "4": {
+      "name": "唇间的迷迭香",
+      "desc": "爱丽丝无视目标10%<ct color=#F0D12B>物理伤害抗性</ct>；强化后的<ct color=#FFFFFF>[普通攻击：星仪序曲]</ct>累积的<ct color=#F0D12B>物理异常积蓄值</ct>提升25%。",
+      "flavor": {
+        "0": "双唇间残留着迷迭香的香气，",
+        "1": "誓言滚烫且坚定，烙印于吐出的白息之中。",
+        "2": "纵使吸入肺内的空气冰冷而沉重，",
+        "3": "少女也绝不会忘却名为爱的咒语。",
+        "4": "「以泰姆菲尔德之名…我绝不背弃。」"
+      }
+    },
+    "5": {
+      "name": "灵异渴求",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "她无法拒绝恐怖的灵异。",
+        "1": "灵异之中，隐藏着未知与危险。若能感受到灵异，她的兔耳和尾巴都会在战栗中炸毛，却又在平复过后欲罢不能地变得更加顺滑。",
+        "2": "「所以…这就是你每回怪谈冒险明明怕得要死，还是要紧跟着我的理由？」",
+        "3": "「我只是好奇会发生什么…但是好恐怖，我已经后悔了！就一次，下次绝对不来了！」"
+      }
+    },
+    "6": {
+      "name": "心中的百里香",
+      "desc": "爱丽丝发动三段蓄力的<ct color=#FFFFFF>[普通攻击：星芒圆舞曲]</ct>或<ct color=#FFFFFF>[终结技：星芒终章]</ct>时，进入<ct color=#FFFFFF>[决胜状态]</ct>，持续30秒，在持续期间，队伍中任意角色攻击命中目标后的短时间内，爱丽丝对目标发动1次额外攻击，造成等同于爱丽丝3300%异常精通的物理伤害，必定暴击，该效果1秒内最多触发一次，最多触发6次，再次获得<ct color=#FFFFFF>[决胜状态]</ct>时刷新可触发次数。",
+      "flavor": {
+        "0": "百里香漫放的那片庄园，",
+        "1": "天体观测的那个夜晚，",
+        "2": "知晓勇气为何物的那个瞬间。",
+        "3": "熏风驱散了乌云，阳光掩盖了水晶灯的华彩，",
+        "4": "少女向往日轻轻行了个礼。",
+        "5": "她缓缓消失在百里香的花田。"
+      }
+    }
+  },
+  "potential": {}
+}

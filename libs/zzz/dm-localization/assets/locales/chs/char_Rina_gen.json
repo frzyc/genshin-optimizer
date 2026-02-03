@@ -1,0 +1,222 @@
+{
+  "name": "丽娜",
+  "fullName": "Alexandrina Sebastiane",
+  "basic": {
+    "BasicAttackWhackTheDimwit": {
+      "name": "普通攻击：痛打呆子",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "指派杜苏拉和安娜塔莎发动至多四段的攻击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "在杜苏拉和安娜塔莎攻击期间，丽娜执行其他行动，不会打断<ct color=#FFFFFF>[普通攻击]</ct>的连击段数。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackShooTheFool": {
+      "name": "普通攻击：赶走傻瓜",
+      "desc": {
+        "0": "长按 <IconNormal /> 或 <IconSpecial /> 发动：",
+        "1": "召回杜苏拉和安娜塔莎，在身边回旋后进行范围攻击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeDressAdjustment": {
+      "name": "闪避：抚平裙摆",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackSuddenSurprise": {
+      "name": "冲刺攻击：突然惊吓",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "指派杜苏拉和安娜塔莎发动穿透攻击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterBangbooCallback": {
+      "name": "闪避反击：邦布回魂",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "指派杜苏拉和安娜塔莎，向前方旋转飞出并触发爆炸，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackBeatTheBlockhead": {
+      "name": "特殊技：砸扁笨蛋",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "指派安娜塔莎发动下砸攻击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackDimwitDisappearingTrick": {
+      "name": "强化特殊技：笨蛋消失魔法",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "指派杜苏拉和安娜塔莎发动持续下砸攻击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackCodeOfConduct": {
+      "name": "连携技：侍者守则",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：\n指派杜苏拉和安娜塔莎，向前方持续推进并生成球形电场，造成大量<ct color=#2EB6FF>电属性伤害</ct>；\n杜苏拉和安娜塔莎在推进期间无法响应<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>的指令，但可以通过发动<ct color=#FFFFFF>[普通攻击：赶走傻瓜]</ct>将其召回丽娜身边；\n招式发动期间拥有无敌效果；\n招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>。\n",
+        "1": "Order Drusilla and Anastella to push forward and generate a ball-shaped electrical field that deals massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "During this skill, Drusilla and Anastella are unable to perform <ct color=#FFFFFF>Basic Attacks</ct>, <ct color=#FFFFFF>Dash Attacks</ct>, <ct color=#FFFFFF>Special Attacks</ct>, and <ct color=#FFFFFF>EX Special Attacks</ct>, but can be recalled to Rina's side through <ct color=#FFFFFF>Basic Attack: Shoo the Fool</ct>.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateTheQueensAttendants": {
+      "name": "终结技：女王的侍从们",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "指派杜苏拉和安娜塔莎，向前方持续推进并发动高速回旋，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "杜苏拉和安娜塔莎在推进期间无法响应<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>的指令，但可以通过发动<ct color=#FFFFFF>[普通攻击：赶走傻瓜]</ct>将其召回丽娜身边；",
+        "3": "招式发动时，队伍中其他角色回复10点能量，下一名换入前场的角色额外回复20点能量；",
+        "4": "招式发动期间拥有无敌效果；",
+        "5": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistDupleMeterAllemande": {
+      "name": "快速支援：二拍的阿勒芒德",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "指派杜苏拉和安娜塔莎，向前方旋转飞出并触发爆炸，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EvasiveAssistTripleMeterCourante": {
+      "name": "回避支援：三拍的库朗特",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "回避敌人的攻击，并触发<ct color=#FFFFFF>[极限视域]</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "AssistFollowUpQuadrupleMeterGavotte": {
+      "name": "支援突击：四拍的加沃特",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[回避支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "指派杜苏拉和安娜塔莎，向前方持续推进并生成涡旋电场，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：迷你毁灭拍档",
+    "desc": [
+      "指派杜苏拉或安娜塔莎进行攻击时，队伍中其他角色的穿透率随丽娜自身的穿透率提升，提升效果等同于丽娜25%穿透率+<ct color=#2BAD00>6%</ct>，最高提升30%，杜苏拉和安娜塔莎均返回丽娜身边后，对应增益效果结束。",
+      "指派杜苏拉或安娜塔莎进行攻击时，队伍中其他角色的穿透率随丽娜自身的穿透率提升，提升效果等同于丽娜25%穿透率+<ct color=#2BAD00>7.5%</ct>，最高提升30%，杜苏拉和安娜塔莎均返回丽娜身边后，对应增益效果结束。",
+      "指派杜苏拉或安娜塔莎进行攻击时，队伍中其他角色的穿透率随丽娜自身的穿透率提升，提升效果等同于丽娜25%穿透率+<ct color=#2BAD00>9%</ct>，最高提升30%，杜苏拉和安娜塔莎均返回丽娜身边后，对应增益效果结束。",
+      "指派杜苏拉或安娜塔莎进行攻击时，队伍中其他角色的穿透率随丽娜自身的穿透率提升，提升效果等同于丽娜25%穿透率+<ct color=#2BAD00>10.2%</ct>，最高提升30%，杜苏拉和安娜塔莎均返回丽娜身边后，对应增益效果结束。",
+      "指派杜苏拉或安娜塔莎进行攻击时，队伍中其他角色的穿透率随丽娜自身的穿透率提升，提升效果等同于丽娜25%穿透率+<ct color=#2BAD00>10.8%</ct>，最高提升30%，杜苏拉和安娜塔莎均返回丽娜身边后，对应增益效果结束。",
+      "指派杜苏拉或安娜塔莎进行攻击时，队伍中其他角色的穿透率随丽娜自身的穿透率提升，提升效果等同于丽娜25%穿透率+<ct color=#2BAD00>11.4%</ct>，最高提升30%，杜苏拉和安娜塔莎均返回丽娜身边后，对应增益效果结束。",
+      "指派杜苏拉或安娜塔莎进行攻击时，队伍中其他角色的穿透率随丽娜自身的穿透率提升，提升效果等同于丽娜25%穿透率+<ct color=#2BAD00>12%</ct>，最高提升30%，杜苏拉和安娜塔莎均返回丽娜身边后，对应增益效果结束。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：完美舞会",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "队伍中任意角色对敌人施加<ct color=#2EB6FF>[感电]</ct>效果时，该效果的持续时间提升3秒；场上存在处于<ct color=#2EB6FF>[感电]</ct>状态下的敌人时，全队角色造成的<ct color=#2EB6FF>电属性伤害</ct>提升10%。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "「双人舞」",
+      "desc": {
+        "0": "被指派并发动攻击后，返回丽娜身边前，杜苏拉和安娜塔莎会在原处额外逗留5.5秒；在杜苏拉或安娜塔莎附近10米范围内的角色，从<ct color=#FFFFFF>[核心被动：迷你毁灭拍档]</ct>中获得的增益效果提升至原本的130%。",
+        "1": "The effect gained from <ct color=#FFFFFF>Core Passive: Mini Destruction Partner</ct> by characters within 10m is increased to 130% of the original value."
+      },
+      "flavor": {
+        "0": "「干不完活就要挨揍！」杜苏拉总是这样鼓励大家。",
+        "1": "「挨揍挨揍！」安娜塔莎总是如此附和。"
+      }
+    },
+    "2": {
+      "name": "主人的典范",
+      "desc": "成为接战状态下的当前操作角色时，丽娜造成的伤害提升15%，持续12秒，18秒内最多触发一次。",
+      "flavor": "「只有卓越的女仆长能够带领卓越的女仆，\n只有模范的主人能够培养模范的邦布。」\n——丽娜在「维多利亚家政人力资源管理暨邦布培养心得分享讲座」上的讲话"
+    },
+    "3": {
+      "name": "女仆长的专长",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "丽娜总是有做好任何事的自信和毁灭任何事的本领。",
+        "1": "不过，在毁灭敌人的好心情这件事上，她的信心和能力得到了统一。"
+      }
+    },
+    "4": {
+      "name": "针与锤",
+      "desc": "杜苏拉和安娜塔莎均被指派在外时，丽娜的能量自动回复速度提升0.5点/秒；杜苏拉或安娜塔莎返回丽娜身边时，对应增益效果结束。",
+      "flavor": {
+        "0": "杜苏拉和安娜塔莎从未达成任何一致的意见，",
+        "1": "「殴打前面那个傻瓜」是一个例外。"
+      }
+    },
+    "5": {
+      "name": "完美主义女仆长",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「『丽娜』在邦布的语言里是完美的意思。」",
+        "1": "完美主义是维多利亚家政员工手册的第一准则。",
+        "2": "而对于「完美」的评判，丽娜自有准绳。"
+      }
+    },
+    "6": {
+      "name": "雷雨夜惊魂",
+      "desc": "<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>命中敌人时，全队角色造成的<ct color=#2EB6FF>电属性伤害</ct>提升15%，持续8秒。",
+      "flavor": {
+        "0": "雨夜的古堡，雷声隆隆。长廊的深处，诡影憧憧。 ",
+        "1": "恐惧电路超载，惊悚电影开拍。"
+      }
+    }
+  },
+  "potential": {}
+}

@@ -1,0 +1,242 @@
+{
+  "name": "露西",
+  "fullName": "Luciana de Montefio",
+  "basic": {
+    "BasicAttackLadysBat": {
+      "name": "普通攻击：淑女的球棍",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的打击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "当露西发动<ct color=#FFFFFF>[普通攻击]</ct>第四段时，场上的亲卫队小猪会一起发动<ct color=#FFFFFF>[亲卫队小猪：回旋挥击！]</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "3rd-Hit (ALT) ",
+        "4th-Hit "
+      ]
+    },
+    "GuardBoarsToArms": {
+      "name": "亲卫队小猪：抄家伙！",
+      "desc": "战斗中，亲卫队小猪会随机使用棒球棍、拳套、弹弓，自动对敌人发动攻击， 造成<ct color=#F0D12B>物理伤害</ct>。",
+      "params": [
+        "棒球棒",
+        "Boxing Gloves ",
+        "弹弓"
+      ]
+    },
+    "GuardBoarsSpinningSwing": {
+      "name": "亲卫队小猪：回旋挥击！",
+      "desc": "当露西发动<ct color=#FFFFFF>[普通攻击]</ct>第四段，或自身获得<ct color=#FFFFFF>[加油！]</ct>状态时，亲卫队小猪会挥舞棒球棍持续转圈，对周围敌人造成<ct color=#F0D12B>物理伤害</ct>。若无法立即发动，亲卫队小猪会记住所需发动次数。",
+      "params": [
+        "Spinning Swing "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeFoulBall": {
+      "name": "闪避：坏球！",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackFearlessBoar": {
+      "name": "冲刺攻击：豪勇猪突！",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行快速打击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterReturningTusk": {
+      "name": "闪避反击：獠牙折转！",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSolidHit": {
+      "name": "特殊技：安打！",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "将亲卫队小猪召回并击出<ct color=#FFFFFF>[平直球]</ct>，亲卫队小猪命中敌人或墙壁时引发爆炸，造成<ct color=#FF5521>火属性伤害</ct>。",
+        "2": "长按 <IconSpecial /> 发动：",
+        "3": "将亲卫队小猪召回并击出<ct color=#FFFFFF>[高飞球]</ct>，亲卫队小猪从空中落地时引发爆炸，造成<ct color=#FF5521>火属性伤害</ct>。"
+      },
+      "params": [
+        "Line Drive ",
+        "Fly Ball "
+      ]
+    },
+    "EXSpecialAttackHomeRun": {
+      "name": "强化特殊技：全垒打！",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "将亲卫队小猪召回并击出<ct color=#FFFFFF>[平直球]</ct>，亲卫队小猪命中敌人或墙壁时引发爆炸，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>。",
+        "4": "能量足够时，长按 <IconSpecialReady /> 发动：",
+        "5": "将亲卫队小猪召回并击出<ct color=#FFFFFF>[高飞球]</ct>，亲卫队小猪从空中落地时引发爆炸，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "6": "招式发动期间拥有无敌效果；",
+        "7": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>。"
+      },
+      "params": [
+        "Line Drive ",
+        "Fly Ball ",
+        "能量消耗"
+      ]
+    },
+    "CheerOn": {
+      "name": "加油！",
+      "desc": "发动<ct color=#FFFFFF>[强化特殊技]</ct>后，亲卫队小猪引发爆炸时，将为全队角色、邦布和亲卫队小猪施加<ct color=#FFFFFF>[加油！]</ct>状态。<ct color=#FFFFFF>[加油！]</ct>状态下，友方单位的攻击力提升，提升数值等同于露西<ct color=#2BAD00>{CAL:13+AvatarSkillLevel(1)*0.8,1,2}%</ct>初始攻击力+<ct color=#2BAD00>{CAL:40+AvatarSkillLevel(1)*4,1,2}</ct>点，最高不超过600点。击出<ct color=#FFFFFF>[平直球]</ct>时，<ct color=#FFFFFF>[加油！]</ct>状态持续10秒，击出<ct color=#FFFFFF>[高飞球]</ct>时，<ct color=#FFFFFF>[加油！]</ct>状态持续15秒，重复触发时刷新持续时间。",
+      "params": [
+        "攻击力提升"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackGrandSlam": {
+      "name": "连携技：大满贯！",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "露西起跳将场上亲卫队小猪打出，对前方大范围敌人造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateWalkOffHomeRun": {
+      "name": "终结技：再见全垒打！",
+      "desc": {
+        "0": "喧响等级达到[极]时，点按 <IconUltimateReady /> 发动：",
+        "1": "将所有亲卫队小猪依次打出，对前方大范围敌人造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动时，队伍中其他角色回复10点能量，下一名换入前场的角色额外回复20点能量；",
+        "3": "招式发动期间拥有无敌效果；",
+        "4": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistHitByPitch": {
+      "name": "快速支援：触身球！",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistSafeOnBase": {
+      "name": "招架支援：安全上垒！",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpScoredARun": {
+      "name": "支援突击：触垒得分！",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动打击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：赤鬣亲卫队",
+    "desc": [
+      "当露西发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，亲卫队小猪会加入战斗并呼叫出另外两只亲卫队小猪；亲卫队小猪可以继承露西的攻击力、冲击力和异常精通；<ct color=#FFFFFF>[加油！]</ct>对亲卫队小猪的增益效果提升至原本的<ct color=#2BAD00>140%</ct>，并使亲卫队小猪的攻击频率提升。",
+      "当露西发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，亲卫队小猪会加入战斗并呼叫出另外两只亲卫队小猪；亲卫队小猪可以继承露西的攻击力、冲击力和异常精通；<ct color=#FFFFFF>[加油！]</ct>对亲卫队小猪的增益效果提升至原本的<ct color=#2BAD00>150%</ct>，并使亲卫队小猪的攻击频率提升。",
+      "当露西发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，亲卫队小猪会加入战斗并呼叫出另外两只亲卫队小猪；亲卫队小猪可以继承露西的攻击力、冲击力和异常精通；<ct color=#FFFFFF>[加油！]</ct>对亲卫队小猪的增益效果提升至原本的<ct color=#2BAD00>160%</ct>，并使亲卫队小猪的攻击频率提升。",
+      "当露西发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，亲卫队小猪会加入战斗并呼叫出另外两只亲卫队小猪；亲卫队小猪可以继承露西的攻击力、冲击力和异常精通；<ct color=#FFFFFF>[加油！]</ct>对亲卫队小猪的增益效果提升至原本的<ct color=#2BAD00>170%</ct>，并使亲卫队小猪的攻击频率提升。",
+      "当露西发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，亲卫队小猪会加入战斗并呼叫出另外两只亲卫队小猪；亲卫队小猪可以继承露西的攻击力、冲击力和异常精通；<ct color=#FFFFFF>[加油！]</ct>对亲卫队小猪的增益效果提升至原本的<ct color=#2BAD00>180%</ct>，并使亲卫队小猪的攻击频率提升。",
+      "当露西发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，亲卫队小猪会加入战斗并呼叫出另外两只亲卫队小猪；亲卫队小猪可以继承露西的攻击力、冲击力和异常精通；<ct color=#FFFFFF>[加油！]</ct>对亲卫队小猪的增益效果提升至原本的<ct color=#2BAD00>190%</ct>，并使亲卫队小猪的攻击频率提升。",
+      "当露西发动<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>时，亲卫队小猪会加入战斗并呼叫出另外两只亲卫队小猪；亲卫队小猪可以继承露西的攻击力、冲击力和异常精通；<ct color=#FFFFFF>[加油！]</ct>对亲卫队小猪的增益效果提升至原本的<ct color=#2BAD00>200%</ct>，并使亲卫队小猪的攻击频率提升。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：击「球」准备！",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色或<ct color=#FFFFFF>[命破]</ct>角色时触发：",
+      "1": "亲卫队小猪可以继承露西的暴击率和暴击伤害。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "队形操练中",
+      "desc": "亲卫队小猪发动<ct color=#FFFFFF>[亲卫队小猪：回旋挥击！]</ct>时，为露西回复2点能量，15秒内最多触发一次，每只亲卫队小猪单独结算冷却时间。",
+      "flavor": {
+        "0": "「阿草，向右看齐！…那是左边，笨蛋！！！」",
+        "1": "一声令下，两种方向，三阵惨呼，四面哀嚎。"
+      }
+    },
+    "2": {
+      "name": "小猪大队长",
+      "desc": "露西发动<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，将为全队角色、邦布和亲卫队小猪施加<ct color=#FFFFFF>[加油！]</ct>状态，持续10秒。",
+      "flavor": {
+        "0": "「毋庸置疑，露西队长是卡吕冬野猪希人最棒的领导者！」",
+        "1": "这是阿木在「卡吕冬之子年度工作报告」中的结语。"
+      }
+    },
+    "3": {
+      "name": "铁腕监护人",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「要是露西队长在打飞我们的时候下手轻点就更好了。」",
+        "1": "这是阿木没敢说出来的后半句心里话。"
+      }
+    },
+    "4": {
+      "name": "无规则球赛",
+      "desc": "处于<ct color=#FFFFFF>[加油！]</ct>状态下的友方单位，暴击伤害额外提升10%。",
+      "flavor": "规则和裁判的肋骨，总有一样要被打破。"
+    },
+    "5": {
+      "name": "荒原贵公主",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "对球棍下惨叫的对手用敬语，",
+        "1": "向匍匐在脚边的敌人说抱歉，",
+        "2": "这就是千金的完美礼仪。"
+      }
+    },
+    "6": {
+      "name": "獠牙堪烈火",
+      "desc": "处于<ct color=#FFFFFF>[加油！]</ct>状态下的队友<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，一只亲卫队小猪会从空中落地引发爆炸，造成等同于亲卫队小猪300%攻击力的<ct color=#FF5521>火属性伤害</ct>，并使全队角色、邦布和亲卫队小猪的<ct color=#FFFFFF>[加油！]</ct>状态的持续时间提升5秒；持续时间最多提升3次，上限30秒，重新获得<ct color=#FFFFFF>[加油！]</ct>状态时刷新可提升次数；亲卫队小猪落地引发爆炸后，将会发动一次<ct color=#FFFFFF>[亲卫队小猪：回旋挥击！]</ct>。",
+      "flavor": {
+        "0": "被称为「赤鬣亲卫队」的小猪希人们总是冲锋在战斗的最前线！",
+        "1": "虽然说不清从球棒起飞的那一刹那，心绪是万念俱灰还是心甘情愿。",
+        "2": "勇敢小猪，身先士卒！"
+      }
+    }
+  },
+  "potential": {}
+}

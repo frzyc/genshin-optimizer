@@ -1,0 +1,230 @@
+{
+  "name": "妮可",
+  "fullName": "Nicole Demara",
+  "basic": {
+    "BasicAttackCunningCombo": {
+      "name": "普通攻击：狡兔连打",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多三段的打击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackDoAsIPlease": {
+      "name": "普通攻击：为所欲为",
+      "desc": "发动<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>等招式后，能够上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>，提升子弹的威力。",
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeSpeedDemon": {
+      "name": "闪避：脱兔",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}发动闪避时，长按 <IconEvade /> ，可以在闪避中途上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>，最多触发8次。"
+      },
+      "params": []
+    },
+    "DashAttackJackInTheBox": {
+      "name": "冲刺攻击：惊喜开箱",
+      "desc": {
+        "0": "拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}发动闪避后，点按 <IconNormal /> 发动：",
+        "1": "向对应方向冲刺，并对身周敌人进行打击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "未拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}发动闪避后，点按 <IconNormal /> 发动：",
+        "3": "向后躲避，并对前方敌人发动远程打击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "4": "招式发动后自动上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>，最多触发8次。"
+      },
+      "params": [
+        "Forward Dash ",
+        "Backward Vault "
+      ]
+    },
+    "DodgeCounterDivertedBombard": {
+      "name": "闪避反击：牵制炮击",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向后闪避，并对前方敌人发动远程打击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后自动上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>，最多触发8次。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSugarcoatedBullet": {
+      "name": "特殊技：糖衣炮弹",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "对前方敌人发动远程打击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升；",
+        "3": "招式发动后自动上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>，最多触发8次。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackStuffedSugarcoatedBullet": {
+      "name": "强化特殊技：夹心糖衣炮弹",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "对前方敌人发动强力远程打击，并在目标处生成能量场，持续牵引敌人，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "长按 <IconSpecialReady /> 可以进行蓄力，在炮口生成小型能量场，持续消耗能量并对近处的敌人造成额外伤害；",
+        "3": "招式发动期间拥有无敌效果；",
+        "4": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "5": "招式发动后自动上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>，最多触发8次。"
+      },
+      "params": [
+        "Charged Attack ",
+        "Bombard ",
+        "Energy Field ",
+        "Charged ",
+        "蓄力能量消耗",
+        "炮击能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackEtherShellacking": {
+      "name": "连携技：高价以太爆弹",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方小范围敌人发动强力远程打击，并在目标处生成能量场，持续牵引周围敌人，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "4": "招式发动后自动上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>，最多触发8次。"
+      },
+      "params": [
+        "Bombard ",
+        "Energy Field "
+      ]
+    },
+    "UltimateEtherGrenade": {
+      "name": "终结技：特制以太榴弹",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方小范围敌人发动强力远程打击，并在目标处生成能量场，持续牵引周围敌人，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动时，队伍中其他角色回复10点能量，下一名换入前场的角色额外回复20点能量；",
+        "3": "招式发动期间拥有无敌效果；",
+        "4": "招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "5": "招式发动后自动上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>，最多触发8次。"
+      },
+      "params": [
+        "Bombard ",
+        "Energy Field "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistEmergencyBombard": {
+      "name": "快速支援：救急炮击",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "向后闪避，并对前方敌人发动远程打击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果；",
+        "3": "招式发动后自动上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>，最多触发8次。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistTheHareStrikesBack": {
+      "name": "招架支援：狡兔出手！",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpWindowOfOpportunity": {
+      "name": "支援突击：趁虚而入",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前方突进后对敌人发动炮击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：机关箱",
+    "desc": [
+      "妮可在<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>等招式中，上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>；强化子弹或能量场命中敌人时，目标的防御力降低<ct color=#2BAD00>20%</ct>，持续3.5秒。",
+      "妮可在<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>等招式中，上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>；强化子弹或能量场命中敌人时，目标的防御力降低<ct color=#2BAD00>25%</ct>，持续3.5秒。",
+      "妮可在<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>等招式中，上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>；强化子弹或能量场命中敌人时，目标的防御力降低<ct color=#2BAD00>30%</ct>，持续3.5秒。",
+      "妮可在<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>等招式中，上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>；强化子弹或能量场命中敌人时，目标的防御力降低<ct color=#2BAD00>34%</ct>，持续3.5秒。",
+      "妮可在<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>等招式中，上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>；强化子弹或能量场命中敌人时，目标的防御力降低<ct color=#2BAD00>36%</ct>，持续3.5秒。",
+      "妮可在<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>等招式中，上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>；强化子弹或能量场命中敌人时，目标的防御力降低<ct color=#2BAD00>38%</ct>，持续3.5秒。",
+      "妮可在<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>等招式中，上弹并强化<ct color=#FFFFFF>[普通攻击]</ct>与<ct color=#FFFFFF>[冲刺攻击]</ct>；强化子弹或能量场命中敌人时，目标的防御力降低<ct color=#2BAD00>40%</ct>，持续3.5秒。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：狡兔三窟",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "妮可通过<ct color=#FFFFFF>[核心被动：机关箱]</ct>对敌人施加减益效果时，所有单位对目标造成的<ct color=#FE437E>以太伤害</ct>额外提升25%，持续3.5秒。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "增压强化弹",
+      "desc": "<ct color=#FFFFFF>[强化特殊技]</ct>造成的伤害和累积的属性异常积蓄值提升16%；发动<ct color=#FFFFFF>[强化特殊技]</ct>时，每多蓄力0.1秒，在目标处生成的能量场持续时间提升0.15秒。",
+      "flavor": {
+        "0": "「你们都被我强化了，赶紧上！」",
+        "1": "「什么，我、我才没有想趁机逃跑，只是需要休息下而已！」"
+      }
+    },
+    "2": {
+      "name": "聚能装置",
+      "desc": "触发<ct color=#FFFFFF>[核心被动：机关箱]</ct>的减益效果时，妮可回复5点能量，15秒内最多触发一次。",
+      "flavor": {
+        "0": "「不要小看增加的这一秒钟！」",
+        "1": "「你知道这一秒内，我能产生多少价值吗？那可是数都数不清！」",
+        "2": "「所以，我再多要10％的补贴，不过分吧？」"
+      }
+    },
+    "3": {
+      "name": "狡兔智慧",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "既没有卓绝的武力，也没有丰厚的资源，妮可能把狡兔屋运营至今靠的是灵活的头脑。"
+    },
+    "4": {
+      "name": "领域扩增",
+      "desc": "妮可发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，在目标处生成的能量场攻击范围提升，直径增加3米。",
+      "flavor": {
+        "0": "「这里，还有这里，以后都会成为狡兔屋的领域，你听明白了吗！」",
+        "1": "「什么，你问多久之后？」",
+        "2": "「呃…按照我们现在的营收状况，也就10000年左右吧！」"
+      }
+    },
+    "5": {
+      "name": "业界红人",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "虽然在业界仇人众多，但妮可还是屡次率领部下们从九死一生的险境里生还，狡兔屋的名气和经验也因此稳步提升。"
+    },
+    "6": {
+      "name": "侵蚀能量场",
+      "desc": "能量场对敌人造成伤害时，所有单位对该目标的暴击率提升1.5%，最多叠加10层，持续12秒，每层效果单独结算持续时间。",
+      "flavor": "选用更高级的机关弹药，装药量和浓缩以太物质含量均有所提高，更强的伤害、更长的持续时间…更贵的价格。"
+    }
+  },
+  "potential": {}
+}

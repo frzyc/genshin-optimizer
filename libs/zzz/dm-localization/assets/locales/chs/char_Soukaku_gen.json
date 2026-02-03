@@ -1,0 +1,250 @@
+{
+  "name": "苍角",
+  "fullName": "苍角",
+  "basic": {
+    "BasicAttackMakingRiceCakes": {
+      "name": "普通攻击：打年糕",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多三段攻击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackMakingRiceCakesFrostedBanner": {
+      "name": "普通攻击：打年糕（霜染刃旗）",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[霜染刃旗]</ct>状态下，点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多三段更快速的攻击，造成<ct color=#98EFF0>冰属性伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeGrabABite": {
+      "name": "闪避：抢食",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttack5050": {
+      "name": "冲刺攻击：对半分",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DashAttack5050FrostedBanner": {
+      "name": "冲刺攻击：对半分（霜染刃旗）",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[霜染刃旗]</ct>状态下，闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行斩击，造成<ct color=#98EFF0>冰属性伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterAwayFromMySnacks": {
+      "name": "闪避反击：别抢零食",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackCoolingBento": {
+      "name": "特殊技：吹凉便当",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方扇出风场，随后释放终结一击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升，受到的伤害降低40%；",
+        "3": "招式发动期间长按 <IconSpecial /> ，可以快速衔接<ct color=#FFFFFF>[展旗]</ct>攻击。"
+      },
+      "params": [
+        "1st-Hit ",
+        "Finishing Move "
+      ]
+    },
+    "EXSpecialAttackFanningMosquitoes": {
+      "name": "强化特殊技：扇走蚊虫",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方扇出范围更远的风场，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "多次点按可以连续发动招式，每次发动时将消耗一定能量，能量不足或停止点按时会自动释放终结一击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "3": "招式发动期间抗打断等级提升，受到的伤害降低40%；",
+        "4": "招式发动期间长按 <IconSpecial /> ，可以快速衔接<ct color=#FFFFFF>[展旗]</ct>攻击。"
+      },
+      "params": [
+        "Consecutive Attack ",
+        "Wind Current ",
+        "发动所需能量",
+        "每次攻击消耗能量"
+      ]
+    },
+    "SpecialAttackRally": {
+      "name": "特殊技：集合啦！",
+      "desc": {
+        "0": "长按 <IconSpecial /> 发动：",
+        "1": "将武器插入地面变形为旗帜，发动<ct color=#FFFFFF>[展旗]</ct>攻击，造成<ct color=#98EFF0>冰属性伤害</ct>，<ct color=#FFFFFF>[展旗]</ct>攻击命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>；",
+        "2": "<ct color=#FFFFFF>[展旗]</ct>攻击后再次点按 <IconNormal /> 或 <IconSpecial /> ，将发动一次特殊的收旗攻击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "3": "发动<ct color=#FFFFFF>[展旗]</ct>攻击时，若拥有三层<ct color=#FFFFFF>[涡流]</ct>，则会消耗所有<ct color=#FFFFFF>[涡流]</ct>，进入<ct color=#FFFFFF>[霜染刃旗]</ct>状态；<ct color=#FFFFFF>[霜染刃旗]</ct>状态下，苍角能够发动强化<ct color=#FFFFFF>[普通攻击]</ct>和强化<ct color=#FFFFFF>[冲刺攻击]</ct>，造成大量<ct color=#98EFF0>冰属性伤害</ct>，最多持续45秒或触发6次；",
+        "4": "苍角的武器在以下情况下会获得<ct color=#FFFFFF>[涡流]</ct>：",
+        "5": "发动<ct color=#FFFFFF>[强化特殊技]</ct>时，获得一层<ct color=#FFFFFF>[涡流]</ct>；",
+        "6": "发动<ct color=#FFFFFF>[连携技]</ct>时，获得一层<ct color=#FFFFFF>[涡流]</ct>；",
+        "7": "发动<ct color=#FFFFFF>[终结技]</ct>时，获得三层<ct color=#FFFFFF>[涡流]</ct>；",
+        "8": "<ct color=#FFFFFF>[涡流]</ct>上限为三层。"
+      },
+      "params": [
+        "Fly the Flag ",
+        "Quick Fly the Flag ",
+        "Lowering the Flag "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackPuddingSlash": {
+      "name": "连携技：鹅鸡斩",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "快速对前方敌人发动多次打击，随后衔接<ct color=#FFFFFF>[展旗]</ct>攻击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateJumboPuddingSlash": {
+      "name": "终结技：大份鹅鸡斩",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "快速对前方敌人发动更多次打击，随后衔接<ct color=#FFFFFF>[展旗]</ct>攻击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动时，苍角会进入<ct color=#FFFFFF>[鬼面]</ct>状态，使自身的暴击率提升15%，持续15秒；",
+        "3": "招式发动时，队伍中其他角色回复10点能量，下一名换入前场的角色额外回复20点能量；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistASetForTwo": {
+      "name": "快速支援：双人套餐",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistGuardingTactics": {
+      "name": "招架支援：防守战术",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "具有较为优秀的招架性能，承受高强度攻击时<ct color=#FFFFFF>[支援点数]</ct>的消耗量降低；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpSweepingStrike": {
+      "name": "支援突击：席卷打击",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动突进打击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。",
+        "3": "招式发动期间长按 <IconNormal /> ，可以快速衔接<ct color=#FFFFFF>[展旗]</ct>攻击。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：刃旗助威",
+    "desc": [
+      "苍角发动<ct color=#FFFFFF>[展旗]</ct>时，自身攻击力提升，提升数值等同于苍角<ct color=#2BAD00>10%</ct>初始攻击力，最高不超过500点，持续22秒，发动<ct color=#FFFFFF>[展旗]</ct>并消耗<ct color=#FFFFFF>[涡流]</ct>时，该增益效果翻倍，最高不超过1000点。队伍中其他角色通过<ct color=#FFFFFF>[展旗]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，该增益效果将传递给对应的角色，并刷新其持续时间。",
+      "苍角发动<ct color=#FFFFFF>[展旗]</ct>时，自身攻击力提升，提升数值等同于苍角<ct color=#2BAD00>12.5%</ct>初始攻击力，最高不超过500点，持续22秒，发动<ct color=#FFFFFF>[展旗]</ct>并消耗<ct color=#FFFFFF>[涡流]</ct>时，该增益效果翻倍，最高不超过1000点。队伍中其他角色通过<ct color=#FFFFFF>[展旗]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，该增益效果将传递给对应的角色，并刷新其持续时间。",
+      "苍角发动<ct color=#FFFFFF>[展旗]</ct>时，自身攻击力提升，提升数值等同于苍角<ct color=#2BAD00>15%</ct>初始攻击力，最高不超过500点，持续22秒，发动<ct color=#FFFFFF>[展旗]</ct>并消耗<ct color=#FFFFFF>[涡流]</ct>时，该增益效果翻倍，最高不超过1000点。队伍中其他角色通过<ct color=#FFFFFF>[展旗]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，该增益效果将传递给对应的角色，并刷新其持续时间。",
+      "苍角发动<ct color=#FFFFFF>[展旗]</ct>时，自身攻击力提升，提升数值等同于苍角<ct color=#2BAD00>17%</ct>初始攻击力，最高不超过500点，持续22秒，发动<ct color=#FFFFFF>[展旗]</ct>并消耗<ct color=#FFFFFF>[涡流]</ct>时，该增益效果翻倍，最高不超过1000点。队伍中其他角色通过<ct color=#FFFFFF>[展旗]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，该增益效果将传递给对应的角色，并刷新其持续时间。",
+      "苍角发动<ct color=#FFFFFF>[展旗]</ct>时，自身攻击力提升，提升数值等同于苍角<ct color=#2BAD00>18%</ct>初始攻击力，最高不超过500点，持续22秒，发动<ct color=#FFFFFF>[展旗]</ct>并消耗<ct color=#FFFFFF>[涡流]</ct>时，该增益效果翻倍，最高不超过1000点。队伍中其他角色通过<ct color=#FFFFFF>[展旗]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，该增益效果将传递给对应的角色，并刷新其持续时间。",
+      "苍角发动<ct color=#FFFFFF>[展旗]</ct>时，自身攻击力提升，提升数值等同于苍角<ct color=#2BAD00>19%</ct>初始攻击力，最高不超过500点，持续22秒，发动<ct color=#FFFFFF>[展旗]</ct>并消耗<ct color=#FFFFFF>[涡流]</ct>时，该增益效果翻倍，最高不超过1000点。队伍中其他角色通过<ct color=#FFFFFF>[展旗]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，该增益效果将传递给对应的角色，并刷新其持续时间。",
+      "苍角发动<ct color=#FFFFFF>[展旗]</ct>时，自身攻击力提升，提升数值等同于苍角<ct color=#2BAD00>20%</ct>初始攻击力，最高不超过500点，持续22秒，发动<ct color=#FFFFFF>[展旗]</ct>并消耗<ct color=#FFFFFF>[涡流]</ct>时，该增益效果翻倍，最高不超过1000点。队伍中其他角色通过<ct color=#FFFFFF>[展旗]</ct>所触发的<ct color=#FFFFFF>[快速支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>入场时，该增益效果将传递给对应的角色，并刷新其持续时间。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：团膳套餐",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "苍角消耗<ct color=#FFFFFF>[涡流]</ct>发动<ct color=#FFFFFF>[展旗]</ct>时，全队角色造成的<ct color=#98EFF0>冰属性伤害</ct>提升20%，持续22秒。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "振奋汇流",
+      "desc": "苍角触发<ct color=#FFFFFF>[核心被动：刃旗助威]</ct>或<ct color=#FFFFFF>[额外能力：团膳套餐]</ct>时，增益效果的持续时间提升8秒。",
+      "flavor": {
+        "0": "蓄能完毕后，特制充能模块可以形成以太能量风场，为周围的以太设备充能。",
+        "1": "对苍角来说，这就像她最喜欢的聚餐时刻。",
+        "2": "「大家~来吃自助餐咯！」"
+      }
+    },
+    "2": {
+      "name": "实验型充能模块",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[冲刺攻击]</ct>、<ct color=#FFFFFF>[闪避反击]</ct>、<ct color=#FFFFFF>[快速支援]</ct>命中敌人时，苍角有15%的概率获得一层<ct color=#FFFFFF>[涡流]</ct>，1秒内最多触发一次；<ct color=#FFFFFF>[涡流]</ct>层数到达上限后，若再次获得<ct color=#FFFFFF>[涡流]</ct>，将改为苍角回复1.2点能量。",
+        "1": "When <ct color=#FFFFFF>Vortex</ct> reaches max stacks, any additional stacks grant Soukaku 1.2 Energy instead."
+      },
+      "flavor": {
+        "0": "充能模块能够在战斗中不断积蓄能量，",
+        "1": "因此被研发部门视作划时代的新概念战术兵器。",
+        "2": "但对苍角来说，蓄能完毕，只意味着开饭的时间到了。"
+      }
+    },
+    "3": {
+      "name": "出勤餐补",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "要激励苍角努力锻炼的方法非常简单：提高出勤的餐饮补助标准就行。"
+    },
+    "4": {
+      "name": "失温症",
+      "desc": "<ct color=#FFFFFF>[展旗]</ct>攻击命中敌人时，目标的<ct color=#98EFF0>冰属性伤害抗性</ct>降低10%，持续8秒。",
+      "flavor": "特制武装战鬼刃旗内置强大的制冷装置，产生冷气的催化剂中含有以太物质，能深度伤害被击中的敌人。"
+    },
+    "5": {
+      "name": "夜宵福利",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "要进一步激励苍角努力锻炼的方法也很简单：在出勤餐补之外再追加夜宵。"
+    },
+    "6": {
+      "name": "朔风侵袭",
+      "desc": "<ct color=#FFFFFF>[霜染刃旗]</ct>状态下，强化<ct color=#FFFFFF>[普通攻击]</ct>和强化<ct color=#FFFFFF>[冲刺攻击]</ct>的可发动次数提升至12次，且招式造成的伤害提升45%。",
+      "flavor": "解开刃旗内的保险装置，让武器以最大功率模式运转，不仅战斗没问题…用来吹凉便当也没问题。"
+    }
+  },
+  "potential": {}
+}

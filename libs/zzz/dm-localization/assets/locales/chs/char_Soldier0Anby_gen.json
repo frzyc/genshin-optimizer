@@ -1,0 +1,301 @@
+{
+  "name": "零号·安比",
+  "fullName": "零号·安比",
+  "basic": {
+    "BasicAttackPenetratingShock": {
+      "name": "普通攻击：电击穿",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "第三段普通攻击会持续聚集敌人；",
+        "3": "第四段攻击命中敌人后，连点或长按 <IconNormal /> 时，可以快速穿过前方敌人，最多重复发动5次。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "3rd-Hit Finisher ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeStrobe": {
+      "name": "闪避：频闪",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackTorrent": {
+      "name": "冲刺攻击：奔流",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方横向斩击后，衔接突刺攻击，造成<ct color=#2EB6FF>电属性伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterGroundFlashCounter": {
+      "name": "闪避反击：地闪回击",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动连续斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；命中敌人时获得15秒[电荷超载]状态，重复获得刷新持续时间；",
+        "2": "[电荷超载]状态期间闪避性能提升，且发动[普通攻击]/[冲刺攻击]/[闪避反击]时敌方目标若拥有<ct color=#FFFFFF>[白雷]</ct>，点按 <IconSpecial /> 可以随时打断当前招式并发动<ct color=#FFFFFF>[特殊技：苍光]</ct>；",
+        "3": "状态期间点按 <IconSpecialReady /> 时，若敌人未拥有<ct color=#FFFFFF>[白雷]</ct>，能直接发动[强化特殊技：极雷断空]；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackCelestialThunder": {
+      "name": "特殊技：星雷",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向斜前方快速突进，随后进行交叉斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SpecialAttackAzureFlash": {
+      "name": "特殊技：苍光",
+      "desc": {
+        "0": "零号·安比攻击命中敌人时，会对目标施加<ct color=#FFFFFF>[银星]</ct>标记，并为其进行充能；",
+        "1": "每拥有三分之一充能，敌人将被施加1层<ct color=#FFFFFF>[白雷]</ct>，最多叠加3层；",
+        "2": "敌方目标拥有<ct color=#FFFFFF>[白雷]</ct>时，点按 <IconSpecial /> 发动：",
+        "3": "快速向前方位移，穿过敌人并进行斩击，对命中的敌人造成多段<ct color=#2EB6FF>电属性伤害</ct>；",
+        "4": "招式命中敌人时，将消耗1层<ct color=#FFFFFF>[白雷]</ct>，发动<ct color=#FFFFFF>[追加攻击]</ct>，造成1次额外的<ct color=#2EB6FF>电属性伤害</ct>；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "White Thunder ",
+        " "
+      ]
+    },
+    "SpecialAttackThunderSmite": {
+      "name": "特殊技：雷殛",
+      "desc": {
+        "0": "针对同一名敌人，连续触发3次<ct color=#FFFFFF>[白雷]</ct>的额外伤害时发动：",
+        "1": "在敌方位置降下落雷，对范围内的敌人造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "该伤害被视为<ct color=#FFFFFF>[追加攻击]</ct>伤害。"
+      },
+      "params": [
+        "Thunder Smite "
+      ]
+    },
+    "SpecialAttackAzureFlashBoundary": {
+      "name": "特殊技：苍光·临界",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[特殊技：雷殛]</ct>伤害时：",
+        "1": "若正在发动[强化特殊技：极雷断空]或[特殊技：苍光]，会在当前招式结束时自动发动<ct color=#FFFFFF>[特殊技：苍光·临界]</ct>，连续斩击敌人造成多段<ct color=#2EB6FF>电属性伤害</ct>，招式为<ct color=#FFFFFF>[追加攻击]</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackSunderingBolt": {
+      "name": "强化特殊技：极雷断空",
+      "desc": {
+        "0": "能量足够时，长按 <IconSpecialReady /> 发动：",
+        "1": "将双剑拼接后向前方丢出进行高速斩击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式命中敌人时，将为<ct color=#FFFFFF>[银星]</ct>充能至上限；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackLeapingThunderstrike": {
+      "name": "连携技：疾跃落雷",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "向前方跃起，随后快速俯冲并发动交叉斩击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateVoidstrike": {
+      "name": "终结技：斩空掠电",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方大范围敌人发动强力连斩，并追加落雷攻击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式命中敌人时，将为<ct color=#FFFFFF>[银星]</ct>充能至上限；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistCloudFlash": {
+      "name": "快速支援：云闪",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动连续斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistCounterSurge": {
+      "name": "招架支援：逆极反袭",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpConductingBlow": {
+      "name": "支援突击：直击先导",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前突进并对前方敌人发动连续斩击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：电位差",
+    "desc": [
+      {
+        "0": "零号·安比对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升<ct color=#2BAD00>12.5%</ct>；敌方单位被施加<ct color=#FFFFFF>[银星]</ct>标记后，受到的<ct color=#FFFFFF>[追加攻击]</ct>暴击伤害额外提升，提升效果等同于零号·安比暴击伤害的<ct color=#2BAD00>15%</ct>；[银星]标记期间，受到来自队友的<ct color=#FFFFFF>[追加攻击]</ct>伤害会为敌方单位累积<ct color=#FFFFFF>[银星]</ct>充能，该效果5秒内最多触发一次；",
+        "1": "[银星]的[追加攻击]暴击伤害提升效果，额外提升零号·安比暴击伤害的5%；拥有<ct color=#FFFFFF>[白雷]</ct>的敌方目标被击败时，会对最近的敌方目标发动<ct color=#FFFFFF>[特殊技：雷殛]</ct>。"
+      },
+      {
+        "0": "零号·安比对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升<ct color=#2BAD00>14.5%</ct>；敌方单位被施加<ct color=#FFFFFF>[银星]</ct>标记后，受到的<ct color=#FFFFFF>[追加攻击]</ct>暴击伤害额外提升，提升效果等同于零号·安比暴击伤害的<ct color=#2BAD00>17.5%</ct>；[银星]标记期间，受到来自队友的<ct color=#FFFFFF>[追加攻击]</ct>伤害会为敌方单位累积<ct color=#FFFFFF>[银星]</ct>充能，该效果5秒内最多触发一次；",
+        "1": "[银星]的[追加攻击]暴击伤害提升效果，额外提升零号·安比暴击伤害的5%；拥有<ct color=#FFFFFF>[白雷]</ct>的敌方目标被击败时，会对最近的敌方目标发动<ct color=#FFFFFF>[特殊技：雷殛]</ct>。"
+      },
+      {
+        "0": "零号·安比对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升<ct color=#2BAD00>16.5%</ct>；敌方单位被施加<ct color=#FFFFFF>[银星]</ct>标记后，受到的<ct color=#FFFFFF>[追加攻击]</ct>暴击伤害额外提升，提升效果等同于零号·安比暴击伤害的<ct color=#2BAD00>20%</ct>；[银星]标记期间，受到来自队友的<ct color=#FFFFFF>[追加攻击]</ct>伤害会为敌方单位累积<ct color=#FFFFFF>[银星]</ct>充能，该效果5秒内最多触发一次；",
+        "1": "[银星]的[追加攻击]暴击伤害提升效果，额外提升零号·安比暴击伤害的5%；拥有<ct color=#FFFFFF>[白雷]</ct>的敌方目标被击败时，会对最近的敌方目标发动<ct color=#FFFFFF>[特殊技：雷殛]</ct>。"
+      },
+      {
+        "0": "零号·安比对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升<ct color=#2BAD00>18.8%</ct>；敌方单位被施加<ct color=#FFFFFF>[银星]</ct>标记后，受到的<ct color=#FFFFFF>[追加攻击]</ct>暴击伤害额外提升，提升效果等同于零号·安比暴击伤害的<ct color=#2BAD00>22.5%</ct>；[银星]标记期间，受到来自队友的<ct color=#FFFFFF>[追加攻击]</ct>伤害会为敌方单位累积<ct color=#FFFFFF>[银星]</ct>充能，该效果5秒内最多触发一次；",
+        "1": "[银星]的[追加攻击]暴击伤害提升效果，额外提升零号·安比暴击伤害的5%；拥有<ct color=#FFFFFF>[白雷]</ct>的敌方目标被击败时，会对最近的敌方目标发动<ct color=#FFFFFF>[特殊技：雷殛]</ct>。"
+      },
+      {
+        "0": "零号·安比对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升<ct color=#2BAD00>20.8%</ct>；敌方单位被施加<ct color=#FFFFFF>[银星]</ct>标记后，受到的<ct color=#FFFFFF>[追加攻击]</ct>暴击伤害额外提升，提升效果等同于零号·安比暴击伤害的<ct color=#2BAD00>25%</ct>；[银星]标记期间，受到来自队友的<ct color=#FFFFFF>[追加攻击]</ct>伤害会为敌方单位累积<ct color=#FFFFFF>[银星]</ct>充能，该效果5秒内最多触发一次；",
+        "1": "[银星]的[追加攻击]暴击伤害提升效果，额外提升零号·安比暴击伤害的5%；拥有<ct color=#FFFFFF>[白雷]</ct>的敌方目标被击败时，会对最近的敌方目标发动<ct color=#FFFFFF>[特殊技：雷殛]</ct>。"
+      },
+      {
+        "0": "零号·安比对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升<ct color=#2BAD00>23%</ct>；敌方单位被施加<ct color=#FFFFFF>[银星]</ct>标记后，受到的<ct color=#FFFFFF>[追加攻击]</ct>暴击伤害额外提升，提升效果等同于零号·安比暴击伤害的<ct color=#2BAD00>27.5%</ct>；[银星]标记期间，受到来自队友的<ct color=#FFFFFF>[追加攻击]</ct>伤害会为敌方单位累积<ct color=#FFFFFF>[银星]</ct>充能，该效果5秒内最多触发一次；",
+        "1": "[银星]的[追加攻击]暴击伤害提升效果，额外提升零号·安比暴击伤害的5%；拥有<ct color=#FFFFFF>[白雷]</ct>的敌方目标被击败时，会对最近的敌方目标发动<ct color=#FFFFFF>[特殊技：雷殛]</ct>。"
+      },
+      {
+        "0": "零号·安比对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升<ct color=#2BAD00>25%</ct>；敌方单位被施加<ct color=#FFFFFF>[银星]</ct>标记后，受到的<ct color=#FFFFFF>[追加攻击]</ct>暴击伤害额外提升，提升效果等同于零号·安比暴击伤害的<ct color=#2BAD00>30%</ct>；[银星]标记期间，受到来自队友的<ct color=#FFFFFF>[追加攻击]</ct>伤害会为敌方单位累积<ct color=#FFFFFF>[银星]</ct>充能，该效果5秒内最多触发一次；",
+        "1": "[银星]的[追加攻击]暴击伤害提升效果，额外提升零号·安比暴击伤害的5%；拥有<ct color=#FFFFFF>[白雷]</ct>的敌方目标被击败时，会对最近的敌方目标发动<ct color=#FFFFFF>[特殊技：雷殛]</ct>。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：电极化",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[击破]</ct>或<ct color=#FFFFFF>[支援]</ct>角色时触发：",
+      "1": "零号·安比的暴击率提升10%；当前操作中的角色为零号·安比时，全队角色<ct color=#FFFFFF>[追加攻击]</ct>对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升25%；",
+      "2": "零号·安比的<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[终结技]</ct>视为<ct color=#FFFFFF>[追加攻击]</ct>伤害。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "静滞电荷",
+      "desc": "零号·安比发动<ct color=#FFFFFF>[强化特殊技]</ct>命中敌人时，将会连续触发3次<ct color=#FFFFFF>[白雷]</ct>的额外伤害，该效果不会消耗<ct color=#FFFFFF>[白雷]</ct>层数。",
+      "flavor": {
+        "0": "「我在这里的事，请不要让妮可他们知道。」",
+        "1": "「好的。今天你睡楼下沙发，还是楼上？」",
+        "2": "「…绳匠…谢谢。」"
+      }
+    },
+    "2": {
+      "name": "冗余协议",
+      "desc": {
+        "0": "零号·安比的暴击率提升12%；发动<ct color=#FFFFFF>[终结技]</ct>时，零号·安比会获得6层<ct color=#FFFFFF>[电鸣]</ct>（上限6层）；拥有<ct color=#FFFFFF>[电鸣]</ct>后，零号·安比<ct color=#FFFFFF>[特殊技：苍光]</ct>命中拥有<ct color=#FFFFFF>[白雷]</ct>的敌人时，将改为消耗1层<ct color=#FFFFFF>[电鸣]</ct>作为代替，同一招式命中多名敌人时最多消耗1层<ct color=#FFFFFF>[电鸣]</ct>，消耗<ct color=#FFFFFF>[电鸣]</ct>时仍会触发<ct color=#FFFFFF>[白雷]</ct>的额外伤害；",
+        "1": "激发潜能后，每消耗3层<ct color=#FFFFFF>[电鸣]</ct>，下次发动[特殊技：苍光·临界]时速度加快。"
+      },
+      "flavor": {
+        "0": "「怎么了？你看起来很累。」",
+        "1": "「我…没事。」",
+        "2": "「如果需要帮忙，随时开口。」"
+      }
+    },
+    "3": {
+      "name": "旧日荣光",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「安比，我们刚刚还在聊你的事。你——真的撑得住吗？」",
+        "1": "「我，没…」",
+        "2": "「再想用『没事』敷衍，小心我对你不客气。」",
+        "3": "「绳匠的不客气…会是怎样的？」"
+      }
+    },
+    "4": {
+      "name": "银白残响",
+      "desc": "攻击命中拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人时，零号·安比无视目标12%<ct color=#2EB6FF>电属性伤害抗性</ct>。",
+      "flavor": {
+        "0": "「安比，你刚从空洞里回来，要洗澡吗？」",
+        "1": "「绳匠先洗吧。我还有些情报，需要再整理一下…」",
+        "2": "「哈。」",
+        "3": "「唔？」",
+        "4": "「为什么觉得安比，好像已经在这个家里住了很久了呢…」"
+      }
+    },
+    "5": {
+      "name": "导演剪辑版",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「原来如此。安比的事，还有白银小队的事…」",
+        "1": "「对不起。我本来不想让这些事成为绳匠的负担。」",
+        "2": "「所以——今晚想看什么电影？」",
+        "3": "「诶…？」",
+        "4": "「你的事，永远不会是负担。看吧，我们的日常生活还是可以继续下去。」"
+      }
+    },
+    "6": {
+      "name": "前传主角",
+      "desc": "触发6次<ct color=#FFFFFF>[白雷]</ct>的额外伤害时，将会引发电磁涡流，对目标及其周围的敌人造成零号·安比1000%攻击力的<ct color=#2EB6FF>电属性伤害</ct>，该伤害被视为<ct color=#FFFFFF>[追加攻击]</ct>伤害。",
+      "flavor": {
+        "0": "「那么…我要回去了，绳匠。谢谢你一直以来的照顾。」",
+        "1": "「我知道你答应过妮可，不再离家出走。但这样，对我有点不公平吧？",
+        "2": "——我也很怀念和安比两个人一起看电影到天亮的日子。」",
+        "3": "「对…对绳匠不公平？那么，我会想出补偿的方法的。」",
+        "4": "「快点想。」",
+        "5": "「零号，遵命。…诶、诶…」"
+      }
+    }
+  },
+  "potential": {
+    "name": "潜能觉醒：电脉冲",
+    "desc": [
+      "",
+      "[额外能力：电极化]中，全队角色<ct color=#FFFFFF>[追加攻击]</ct>对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升效果提升至<ct color=#2BAD00>34%</ct>",
+      "[额外能力：电极化]中，全队角色<ct color=#FFFFFF>[追加攻击]</ct>对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升效果提升至<ct color=#2BAD00>38%</ct>",
+      "[额外能力：电极化]中，全队角色<ct color=#FFFFFF>[追加攻击]</ct>对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升效果提升至<ct color=#2BAD00>42%</ct>",
+      "[额外能力：电极化]中，全队角色<ct color=#FFFFFF>[追加攻击]</ct>对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升效果提升至<ct color=#2BAD00>46%</ct>",
+      "[额外能力：电极化]中，全队角色<ct color=#FFFFFF>[追加攻击]</ct>对拥有<ct color=#FFFFFF>[银星]</ct>标记的敌人造成的伤害提升效果提升至<ct color=#2BAD00>50%</ct>"
+    ]
+  }
+}

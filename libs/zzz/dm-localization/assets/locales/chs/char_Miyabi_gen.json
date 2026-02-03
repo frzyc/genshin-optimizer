@@ -1,0 +1,260 @@
+{
+  "name": "雅",
+  "fullName": "星见雅",
+  "basic": {
+    "BasicAttackKazahana": {
+      "name": "普通攻击：风花",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的斩击，前两段造成<ct color=#F0D12B>物理伤害</ct>，后三段造成<ct color=#98EFF0>烈霜伤害</ct>；",
+        "2": "第五段<ct color=#FFFFFF>[普通攻击]</ct>发动期间可以格挡敌人的攻击。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackShimotsuki": {
+      "name": "普通攻击：霜月",
+      "desc": {
+        "0": "拥有2点或以上<ct color=#FFFFFF>[落霜]</ct>时，长按 <IconNormal /> 发动：\n星见雅收刀进入<ct color=#FFFFFF>[霜月架势]</ct>并开始蓄力，每段蓄力会消耗2点<ct color=#FFFFFF>[落霜]</ct>，最多可以进行三段蓄力，松开 <IconNormal /> 或<ct color=#FFFFFF>[落霜]</ct>耗尽时，星见雅将根据当前蓄力段数，拔刀向前方发动强力斩击，造成大量<ct color=#98EFF0>烈霜伤害</ct>，随后退出<ct color=#FFFFFF>[霜月架势]</ct>；\n<ct color=#FFFFFF>[霜月架势]</ct>期间拥有无敌效果；\n星见雅最多拥有6点<ct color=#FFFFFF>[落霜]</ct>，进入战场时，星见雅立刻获得3点<ct color=#FFFFFF>[落霜]</ct>。",
+        "1": "Hoshimi Miyabi sheaths her blade, enters <ct color=#FFFFFF>Shimotsuki Stance</ct> and starts to charge up. Every level of charge will consume 2 points of <ct color=#FFFFFF>Fallen Frost</ct>, up to a maximum of three levels of charge.",
+        "2": "When releasing <IconNormal />, or when <ct color=#FFFFFF>Fallen Frost</ct> is completely depleted, Hoshimi Miyabi will draw her blade and unleash a powerful slash ahead based on the current charge level, dealing massive <ct color=#98EFF0>Frost DMG</ct>. She then exits <ct color=#FFFFFF>Shimotsuki Stance</ct>.",
+        "3": "Character is invulnerable during <ct color=#FFFFFF>Shimotsuki Stance</ct>.",
+        "4": "Hoshimi Miyabi can have up to 6 points of <ct color=#FFFFFF>Fallen Frost</ct>. Upon entering the battlefield, Hoshimi Miyabi immediately obtains 3 points of <ct color=#FFFFFF>Fallen Frost</ct>."
+      },
+      "params": [
+        "Charge Level One Slash ",
+        "Charge Level Two Slash ",
+        "Charge Level Three Slash "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeMizutori": {
+      "name": "闪避：水鸟",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。",
+        "3": "闪避时，连点或长按 <IconEvade /> 发动：",
+        "4": "长距离的冲刺闪避；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackFuyubachi": {
+      "name": "冲刺攻击：冬蜂",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterKanSuzume": {
+      "name": "闪避反击：寒雀",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#98EFF0>烈霜伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackMiyuki": {
+      "name": "特殊技：深雪",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "快速拔刀向前方进行斩击，造成<ct color=#98EFF0>烈霜伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackHisetsu": {
+      "name": "强化特殊技：飞雪",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "快速突进，对路径上的敌人发动强力斩击，造成大量<ct color=#98EFF0>烈霜伤害</ct>；",
+        "2": "招式发动时，获得2点<ct color=#FFFFFF>[落霜]</ct>；",
+        "3": "招式发动期间拥有无敌效果。",
+        "4": "招式发动后，能量足够时，再次点按 <IconSpecialReady /> 发动：",
+        "5": "额外消耗能量，对前方范围内的敌人发动强力追击，造成大量<ct color=#98EFF0>烈霜伤害</ct>；",
+        "6": "招式发动时，获得2点<ct color=#FFFFFF>[落霜]</ct>；",
+        "7": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "<ct color=#FF3333>斩</ct>",
+        "Follow-Up ",
+        "斩击能量消耗",
+        "追击能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackSpringsCall": {
+      "name": "连携技：春临",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方大范围敌人发动强力斩击，造成大量<ct color=#98EFF0>烈霜伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateLingeringSnow": {
+      "name": "终结技：名残雪",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方大范围敌人发动强力斩击，略作延迟后发动终结一击，造成大量<ct color=#98EFF0>烈霜伤害</ct>；",
+        "2": "招式发动时，获得3点<ct color=#FFFFFF>[落霜]</ct>，自身造成的<ct color=#98EFF0>冰属性伤害</ct>提升30%，持续12秒；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistDancingPetals": {
+      "name": "快速支援：花信风",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#98EFF0>烈霜伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistDriftingPetals": {
+      "name": "招架支援：花筏",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpFallingPetals": {
+      "name": "支援突击：花辞",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动突进斩击，造成<ct color=#98EFF0>烈霜伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：寒炎",
+    "desc": [
+      {
+        "0": "星见雅对敌人造成<ct color=#98EFF0>烈霜伤害</ct>时，将会为目标附着<ct color=#FFFFFF>[冰焰]</ct>，持续30秒；对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，会基于星见雅暴击率的100%提升<ct color=#98EFF0>烈霜异常积蓄效率</ct>，最多提升80%；星见雅累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，具有独立的属性异常积蓄槽，随之触发的<ct color=#98EFF0>[冻结]</ct>、<ct color=#98EFF0>[碎冰]</ct>和<ct color=#98EFF0>[霜寒]</ct>效果，可以与包括<ct color=#98EFF0>冰属性异常效果</ct>在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "1": "星见雅对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人施加<ct color=#98EFF0>[霜寒]</ct>效果时，将会消除<ct color=#FFFFFF>[冰焰]</ct>并触发<ct color=#FFFFFF>[霜灼·破]</ct>，对目标造成星见雅<ct color=#2BAD00>750%</ct>攻击力的<ct color=#98EFF0>烈霜伤害</ct>，同时使目标进入<ct color=#FFFFFF>[霜灼]</ct>状态；<ct color=#FFFFFF>[霜灼]</ct>状态下，所有单位对目标累积的属性异常积蓄值提升<ct color=#2BAD00>14%</ct>，但星见雅无法再次为其附着<ct color=#FFFFFF>[冰焰]</ct>；<ct color=#FFFFFF>[霜灼]</ct>状态将会随本次<ct color=#98EFF0>[霜寒]</ct>效果一起结束，状态持续期间，对敌人重新施加属性异常效果可以覆盖<ct color=#98EFF0>[霜寒]</ct>并消除<ct color=#FFFFFF>[霜灼]</ct>；",
+        "2": "触发<ct color=#FFFFFF>[霜灼·破]</ct>时，星见雅获得1点<ct color=#FFFFFF>[落霜]</ct>，10秒内最多触发一次。"
+      },
+      {
+        "0": "星见雅对敌人造成<ct color=#98EFF0>烈霜伤害</ct>时，将会为目标附着<ct color=#FFFFFF>[冰焰]</ct>，持续30秒；对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，会基于星见雅暴击率的100%提升<ct color=#98EFF0>烈霜异常积蓄效率</ct>，最多提升80%；星见雅累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，具有独立的属性异常积蓄槽，随之触发的<ct color=#98EFF0>[冻结]</ct>、<ct color=#98EFF0>[碎冰]</ct>和<ct color=#98EFF0>[霜寒]</ct>效果，可以与包括<ct color=#98EFF0>冰属性异常效果</ct>在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "1": "星见雅对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人施加<ct color=#98EFF0>[霜寒]</ct>效果时，将会消除<ct color=#FFFFFF>[冰焰]</ct>并触发<ct color=#FFFFFF>[霜灼·破]</ct>，对目标造成星见雅<ct color=#2BAD00>875%</ct>攻击力的<ct color=#98EFF0>烈霜伤害</ct>，同时使目标进入<ct color=#FFFFFF>[霜灼]</ct>状态；<ct color=#FFFFFF>[霜灼]</ct>状态下，所有单位对目标累积的属性异常积蓄值提升<ct color=#2BAD00>15%</ct>，但星见雅无法再次为其附着<ct color=#FFFFFF>[冰焰]</ct>；<ct color=#FFFFFF>[霜灼]</ct>状态将会随本次<ct color=#98EFF0>[霜寒]</ct>效果一起结束，状态持续期间，对敌人重新施加属性异常效果可以覆盖<ct color=#98EFF0>[霜寒]</ct>并消除<ct color=#FFFFFF>[霜灼]</ct>；",
+        "2": "触发<ct color=#FFFFFF>[霜灼·破]</ct>时，星见雅获得1点<ct color=#FFFFFF>[落霜]</ct>，10秒内最多触发一次。"
+      },
+      {
+        "0": "星见雅对敌人造成<ct color=#98EFF0>烈霜伤害</ct>时，将会为目标附着<ct color=#FFFFFF>[冰焰]</ct>，持续30秒；对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，会基于星见雅暴击率的100%提升<ct color=#98EFF0>烈霜异常积蓄效率</ct>，最多提升80%；星见雅累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，具有独立的属性异常积蓄槽，随之触发的<ct color=#98EFF0>[冻结]</ct>、<ct color=#98EFF0>[碎冰]</ct>和<ct color=#98EFF0>[霜寒]</ct>效果，可以与包括<ct color=#98EFF0>冰属性异常效果</ct>在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "1": "星见雅对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人施加<ct color=#98EFF0>[霜寒]</ct>效果时，将会消除<ct color=#FFFFFF>[冰焰]</ct>并触发<ct color=#FFFFFF>[霜灼·破]</ct>，对目标造成星见雅<ct color=#2BAD00>1000%</ct>攻击力的<ct color=#98EFF0>烈霜伤害</ct>，同时使目标进入<ct color=#FFFFFF>[霜灼]</ct>状态；<ct color=#FFFFFF>[霜灼]</ct>状态下，所有单位对目标累积的属性异常积蓄值提升<ct color=#2BAD00>16%</ct>，但星见雅无法再次为其附着<ct color=#FFFFFF>[冰焰]</ct>；<ct color=#FFFFFF>[霜灼]</ct>状态将会随本次<ct color=#98EFF0>[霜寒]</ct>效果一起结束，状态持续期间，对敌人重新施加属性异常效果可以覆盖<ct color=#98EFF0>[霜寒]</ct>并消除<ct color=#FFFFFF>[霜灼]</ct>；",
+        "2": "触发<ct color=#FFFFFF>[霜灼·破]</ct>时，星见雅获得1点<ct color=#FFFFFF>[落霜]</ct>，10秒内最多触发一次。"
+      },
+      {
+        "0": "星见雅对敌人造成<ct color=#98EFF0>烈霜伤害</ct>时，将会为目标附着<ct color=#FFFFFF>[冰焰]</ct>，持续30秒；对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，会基于星见雅暴击率的100%提升<ct color=#98EFF0>烈霜异常积蓄效率</ct>，最多提升80%；星见雅累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，具有独立的属性异常积蓄槽，随之触发的<ct color=#98EFF0>[冻结]</ct>、<ct color=#98EFF0>[碎冰]</ct>和<ct color=#98EFF0>[霜寒]</ct>效果，可以与包括<ct color=#98EFF0>冰属性异常效果</ct>在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "1": "星见雅对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人施加<ct color=#98EFF0>[霜寒]</ct>效果时，将会消除<ct color=#FFFFFF>[冰焰]</ct>并触发<ct color=#FFFFFF>[霜灼·破]</ct>，对目标造成星见雅<ct color=#2BAD00>1125%</ct>攻击力的<ct color=#98EFF0>烈霜伤害</ct>，同时使目标进入<ct color=#FFFFFF>[霜灼]</ct>状态；<ct color=#FFFFFF>[霜灼]</ct>状态下，所有单位对目标累积的属性异常积蓄值提升<ct color=#2BAD00>17%</ct>，但星见雅无法再次为其附着<ct color=#FFFFFF>[冰焰]</ct>；<ct color=#FFFFFF>[霜灼]</ct>状态将会随本次<ct color=#98EFF0>[霜寒]</ct>效果一起结束，状态持续期间，对敌人重新施加属性异常效果可以覆盖<ct color=#98EFF0>[霜寒]</ct>并消除<ct color=#FFFFFF>[霜灼]</ct>；",
+        "2": "触发<ct color=#FFFFFF>[霜灼·破]</ct>时，星见雅获得1点<ct color=#FFFFFF>[落霜]</ct>，10秒内最多触发一次。"
+      },
+      {
+        "0": "星见雅对敌人造成<ct color=#98EFF0>烈霜伤害</ct>时，将会为目标附着<ct color=#FFFFFF>[冰焰]</ct>，持续30秒；对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，会基于星见雅暴击率的100%提升<ct color=#98EFF0>烈霜异常积蓄效率</ct>，最多提升80%；星见雅累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，具有独立的属性异常积蓄槽，随之触发的<ct color=#98EFF0>[冻结]</ct>、<ct color=#98EFF0>[碎冰]</ct>和<ct color=#98EFF0>[霜寒]</ct>效果，可以与包括<ct color=#98EFF0>冰属性异常效果</ct>在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "1": "星见雅对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人施加<ct color=#98EFF0>[霜寒]</ct>效果时，将会消除<ct color=#FFFFFF>[冰焰]</ct>并触发<ct color=#FFFFFF>[霜灼·破]</ct>，对目标造成星见雅<ct color=#2BAD00>1250%</ct>攻击力的<ct color=#98EFF0>烈霜伤害</ct>，同时使目标进入<ct color=#FFFFFF>[霜灼]</ct>状态；<ct color=#FFFFFF>[霜灼]</ct>状态下，所有单位对目标累积的属性异常积蓄值提升<ct color=#2BAD00>18%</ct>，但星见雅无法再次为其附着<ct color=#FFFFFF>[冰焰]</ct>；<ct color=#FFFFFF>[霜灼]</ct>状态将会随本次<ct color=#98EFF0>[霜寒]</ct>效果一起结束，状态持续期间，对敌人重新施加属性异常效果可以覆盖<ct color=#98EFF0>[霜寒]</ct>并消除<ct color=#FFFFFF>[霜灼]</ct>；",
+        "2": "触发<ct color=#FFFFFF>[霜灼·破]</ct>时，星见雅获得1点<ct color=#FFFFFF>[落霜]</ct>，10秒内最多触发一次。"
+      },
+      {
+        "0": "星见雅对敌人造成<ct color=#98EFF0>烈霜伤害</ct>时，将会为目标附着<ct color=#FFFFFF>[冰焰]</ct>，持续30秒；对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，会基于星见雅暴击率的100%提升<ct color=#98EFF0>烈霜异常积蓄效率</ct>，最多提升80%；星见雅累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，具有独立的属性异常积蓄槽，随之触发的<ct color=#98EFF0>[冻结]</ct>、<ct color=#98EFF0>[碎冰]</ct>和<ct color=#98EFF0>[霜寒]</ct>效果，可以与包括<ct color=#98EFF0>冰属性异常效果</ct>在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "1": "星见雅对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人施加<ct color=#98EFF0>[霜寒]</ct>效果时，将会消除<ct color=#FFFFFF>[冰焰]</ct>并触发<ct color=#FFFFFF>[霜灼·破]</ct>，对目标造成星见雅<ct color=#2BAD00>1375%</ct>攻击力的<ct color=#98EFF0>烈霜伤害</ct>，同时使目标进入<ct color=#FFFFFF>[霜灼]</ct>状态；<ct color=#FFFFFF>[霜灼]</ct>状态下，所有单位对目标累积的属性异常积蓄值提升<ct color=#2BAD00>19%</ct>，但星见雅无法再次为其附着<ct color=#FFFFFF>[冰焰]</ct>；<ct color=#FFFFFF>[霜灼]</ct>状态将会随本次<ct color=#98EFF0>[霜寒]</ct>效果一起结束，状态持续期间，对敌人重新施加属性异常效果可以覆盖<ct color=#98EFF0>[霜寒]</ct>并消除<ct color=#FFFFFF>[霜灼]</ct>；",
+        "2": "触发<ct color=#FFFFFF>[霜灼·破]</ct>时，星见雅获得1点<ct color=#FFFFFF>[落霜]</ct>，10秒内最多触发一次。"
+      },
+      {
+        "0": "星见雅对敌人造成<ct color=#98EFF0>烈霜伤害</ct>时，将会为目标附着<ct color=#FFFFFF>[冰焰]</ct>，持续30秒；对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，会基于星见雅暴击率的100%提升<ct color=#98EFF0>烈霜异常积蓄效率</ct>，最多提升80%；星见雅累积<ct color=#98EFF0>烈霜异常积蓄值</ct>时，具有独立的属性异常积蓄槽，随之触发的<ct color=#98EFF0>[冻结]</ct>、<ct color=#98EFF0>[碎冰]</ct>和<ct color=#98EFF0>[霜寒]</ct>效果，可以与包括<ct color=#98EFF0>冰属性异常效果</ct>在内的其他属性异常效果互相结算<ct color=#FFFFFF>[紊乱]</ct>；",
+        "1": "星见雅对附着<ct color=#FFFFFF>[冰焰]</ct>的敌人施加<ct color=#98EFF0>[霜寒]</ct>效果时，将会消除<ct color=#FFFFFF>[冰焰]</ct>并触发<ct color=#FFFFFF>[霜灼·破]</ct>，对目标造成星见雅<ct color=#2BAD00>1500%</ct>攻击力的<ct color=#98EFF0>烈霜伤害</ct>，同时使目标进入<ct color=#FFFFFF>[霜灼]</ct>状态；<ct color=#FFFFFF>[霜灼]</ct>状态下，所有单位对目标累积的属性异常积蓄值提升<ct color=#2BAD00>20%</ct>，但星见雅无法再次为其附着<ct color=#FFFFFF>[冰焰]</ct>；<ct color=#FFFFFF>[霜灼]</ct>状态将会随本次<ct color=#98EFF0>[霜寒]</ct>效果一起结束，状态持续期间，对敌人重新施加属性异常效果可以覆盖<ct color=#98EFF0>[霜寒]</ct>并消除<ct color=#FFFFFF>[霜灼]</ct>；",
+        "2": "触发<ct color=#FFFFFF>[霜灼·破]</ct>时，星见雅获得1点<ct color=#FFFFFF>[落霜]</ct>，10秒内最多触发一次。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：同沐霜雪",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[支援]</ct>角色或与自身阵营相同的角色时触发：",
+      "1": "<ct color=#FFFFFF>[普通攻击：霜月]</ct>造成的伤害提升60%；队伍中任意角色触发<ct color=#FFFFFF>[紊乱]</ct>效果时，星见雅获得2点<ct color=#FFFFFF>[落霜]</ct>，且在下一次<ct color=#FFFFFF>[霜月架势]</ct>期间，<ct color=#FFFFFF>[普通攻击：霜月]</ct>将无视目标30%<ct color=#98EFF0>冰属性伤害抗性</ct>。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "雪上加霜",
+      "desc": "在<ct color=#FFFFFF>[霜月架势]</ct>期间，每消耗1点<ct color=#FFFFFF>[落霜]</ct>，<ct color=#FFFFFF>[普通攻击：霜月]</ct>将无视目标6%防御力，最多叠加6层，退出<ct color=#FFFFFF>[霜月架势]</ct>后增益效果结束；在<ct color=#FFFFFF>[普通攻击：霜月]</ct>中进行三段蓄力，斩击命中处于<ct color=#FFFFFF>[霜灼]</ct>状态下的敌人时，可以立即消除目标的<ct color=#FFFFFF>[霜灼]</ct>状态，并使全队角色属性异常积蓄效率提升20%，持续10秒。",
+      "flavor": {
+        "0": "雅自幼起便喜欢吟诵霜雪相关的诗句。\n即使初见时不能完全理解，但她依旧日复一日地思索着。\n不知不觉间，她已明悟出其中的真意。\n不是在某个清朗的雪夜，而是在刀刃相向的战场上。",
+        "1": "Before long, she came to realize their true meaning.",
+        "2": "She found clarity not on a still and snowy night, but rather upon the battlefield."
+      }
+    },
+    "2": {
+      "name": "吐纳法",
+      "desc": "<ct color=#FFFFFF>[普通攻击：风花]</ct>和<ct color=#FFFFFF>[闪避反击]</ct>造成的伤害提升30%；第五段<ct color=#FFFFFF>[普通攻击：风花]</ct>最后一击命中敌人时，星见雅获得1点<ct color=#FFFFFF>[落霜]</ct>；进入战场时，星见雅立刻获得6点<ct color=#FFFFFF>[落霜]</ct>，自身暴击率提升15%。",
+      "flavor": {
+        "0": "「刀刃如常，心亦如是。」这是星见流剑术的训诫之一。",
+        "1": "击倒敌人只是致胜的第一步，在战斗中不失从容之心、",
+        "2": "保持毫不懈怠的仪态始终如一，才是武者的修行之道。"
+      }
+    },
+    "3": {
+      "name": "武者修养",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "武家出身的雅有着极好锻炼习惯，剑术修行是不能断的。什么？要开会？那就翘掉开会。"
+    },
+    "4": {
+      "name": "命破",
+      "desc": "<ct color=#FFFFFF>[霜灼·破]</ct>造成的伤害提升30%，触发<ct color=#FFFFFF>[霜灼·破]</ct>时，星见雅额外获得250点喧响值。",
+      "flavor": {
+        "0": "战斗时轻吟诗句，可以调节呼吸的节律。",
+        "1": "无论是心境还是呼吸，少女都时刻保持在盛开前的最佳状态。"
+      }
+    },
+    "5": {
+      "name": "纪念日",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "少女带着鲜花来到那个熟悉的地方，呼出的气化作白雾，融化在冰冷的空气里。",
+        "1": "她的指尖轻轻抚过纪念碑上的那个名字。",
+        "2": "周围的一切都很安静，如同最沉默的见证者。"
+      }
+    },
+    "6": {
+      "name": "天资卓越",
+      "desc": "在<ct color=#FFFFFF>[霜月架势]</ct>期间，星见雅将获得<ct color=#FFFFFF>[极意]</ct>效果，使<ct color=#FFFFFF>[普通攻击：霜月]</ct>造成的伤害提升30%，获得<ct color=#FFFFFF>[极意]</ct>效果后，消耗<ct color=#FFFFFF>[落霜]</ct>时，星见雅会根据当前蓄力段数，自动拔刀向前方发动强力斩击；在<ct color=#FFFFFF>[落霜]</ct>耗尽前，拔刀斩击不会打断<ct color=#FFFFFF>[霜月架势]</ct>下的蓄力进度；在一次<ct color=#FFFFFF>[霜月架势]</ct>期间，最多连续发动3次拔刀斩击。",
+      "flavor": "经历的战斗数量越多，越是能让外人察觉到一个事实：若是有刀剑的神灵存在，那他们一定颇为偏爱星见雅。"
+    }
+  },
+  "potential": {}
+}

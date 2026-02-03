@@ -1,0 +1,85 @@
+{
+  "buildDropdown": {
+    "tcBadge": "理论",
+    "equipped": "已装备配装"
+  },
+  "buildCardTip": {
+    "edit": "编辑配装设置",
+    "copyTc": "复制到理论配装",
+    "duplicate": "复制配装",
+    "equip": "装备配装",
+    "delete": "删除配装"
+  },
+  "buildEqCard": {
+    "name": "已装备配装",
+    "copy": {
+      "nameReal": "已装备的副本",
+      "nameTc": "已装备配装 - 已复制",
+      "desc": "从已装备配装复制"
+    }
+  },
+  "buildRealCard": {
+    "copy": {
+      "nameReal": "{{name}}的副本",
+      "nameTc": "{{name}} - 已复制",
+      "equipped": "已装备"
+    },
+    "edit": {
+      "title": "配装设置",
+      "label": "配装名称",
+      "placeholder": "配装名称",
+      "desc": "配装描述"
+    }
+  },
+  "buildTcCard": {
+    "copy": {
+      "nameTc": "{{name}}的副本"
+    },
+    "edit": {
+      "title": "配装设置",
+      "label": "配装名称",
+      "placeholder": "配装名称",
+      "desc": "配装描述"
+    }
+  },
+  "equipBuildModal": {
+    "title": "确认<2>{{currentName}}</2>的装备更改",
+    "desc": "是否要进行以下更改？",
+    "overwrite": "将<2>{{currentName}}</2>中的当前装备复制到新配装。否则，它们将被覆盖。",
+    "label": "配装名称",
+    "newName": "{{currentName}}的副本",
+    "cancel": "取消",
+    "equip": "装备"
+  },
+  "compareBtn": {
+    "compare": "对比",
+    "equipped": "已装备",
+    "crrBadge": "当前",
+    "tcBadge": "理论"
+  },
+  "createBuildTc": {
+    "button": "新建理论配装",
+    "title": "新建理论配装",
+    "desc": "将此配装复制到新的理论配装",
+    "label": "理论配装名称",
+    "cancel": "取消",
+    "create": "创建"
+  },
+  "createBuildReal": {
+    "button": "新建配装",
+    "title": "新建配装",
+    "desc": "将此配装复制到新配装",
+    "label": "配装名称",
+    "cancel": "取消",
+    "create": "创建"
+  },
+  "buildDisplay": {
+    "equippedBadge": "（已装备）",
+    "currentBadge": "（当前配装）",
+    "equipped": "已装备",
+    "equipToCrr": "装备到当前配装",
+    "oldWeapon": "旧武器",
+    "tcWeapon": "理论武器",
+    "newWeapon": "新武器"
+  }
+}

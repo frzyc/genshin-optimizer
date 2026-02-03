@@ -200,7 +200,7 @@ export default function PageCharacter() {
     numShowing: charKeysToShow.length,
     total: totalShowing,
     t: t,
-    namespace: 'page_character',
+    namespace: 'page_characters',
   }
 
   const sortByButtonProps = {

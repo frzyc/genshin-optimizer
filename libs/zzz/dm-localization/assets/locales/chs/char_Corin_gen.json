@@ -1,0 +1,227 @@
+{
+  "name": "可琳",
+  "fullName": "Corin Wickes",
+  "basic": {
+    "BasicAttackWipeout": {
+      "name": "普通攻击：扫除开始",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "在第三、第五段中连点或长按时，可以使用电锯持续斩击敌人。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeShoo": {
+      "name": "闪避：[离]",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackOopsyDaisy": {
+      "name": "冲刺攻击：[断]",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方发动斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "连点或长按时，可以使用电锯持续斩击敌人。"
+      },
+      "params": [
+        "Maximum "
+      ]
+    },
+    "DodgeCounterNope": {
+      "name": "闪避反击：[舍]",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动斩击，随后引爆电锯，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "连点或长按时，可以使用电锯持续斩击敌人；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackCleanSweep": {
+      "name": "特殊技：强力清扫",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方进行持续斩击，随后引爆电锯，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "连点或长按时，可以使用电锯持续斩击敌人；",
+        "3": "招式发动期间抗打断等级提升，受到的伤害降低40%。"
+      },
+      "params": [
+        "Spinning Slash ",
+        "Extended Slash Maximum ",
+        "Explosion "
+      ]
+    },
+    "EXSpecialAttackSkirtAlert": {
+      "name": "强化特殊技：小心裙角",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方进行持续强力斩击，随后引爆电锯，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "连点或长按时，可以使用电锯持续斩击敌人，并随招式命中目标，逐渐消耗能量；",
+        "3": "回旋斩击期间拥有无敌效果；",
+        "4": "持续斩击期间抗打断等级提升，受到的伤害降低40%。"
+      },
+      "params": [
+        "Spinning Slash ",
+        "Extended Slash Maximum ",
+        "Explosion ",
+        "回旋斩击能量消耗",
+        "持续斩击最大能量消耗",
+        "引爆能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackSorry": {
+      "name": "连携技：抱歉…",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方小范围敌人发动强力斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "连点或长按时，可以使用电锯持续斩击敌人；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateVeryVerySorry": {
+      "name": "终结技：非、非常抱歉！",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方小范围敌人发动强力斩击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "连点或长按时，可以使用电锯持续斩击敌人；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistEmergencyMeasures": {
+      "name": "快速支援：应急措施",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动斩击，随后引爆电锯，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "连点或长按时，可以使用电锯持续斩击敌人；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistPPleaseAllowMe": {
+      "name": "招架支援：请，请让我来！",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "具有较为优秀的招架性能，承受高强度攻击时<ct color=#FFFFFF>[支援点数]</ct>的消耗量降低；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpQuickSweep": {
+      "name": "支援突击：快速清扫",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动连续斩击，随后引爆电锯，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "连点或长按时，可以使用电锯持续斩击敌人；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：专注",
+    "desc": [
+      "连点或长按后，可琳使用电锯持续斩击敌人时，招式造成的伤害提升<ct color=#2BAD00>18.7%</ct>。",
+      "连点或长按后，可琳使用电锯持续斩击敌人时，招式造成的伤害提升<ct color=#2BAD00>21.8%</ct>。",
+      "连点或长按后，可琳使用电锯持续斩击敌人时，招式造成的伤害提升<ct color=#2BAD00>25%</ct>。",
+      "连点或长按后，可琳使用电锯持续斩击敌人时，招式造成的伤害提升<ct color=#2BAD00>28.1%</ct>。",
+      "连点或长按后，可琳使用电锯持续斩击敌人时，招式造成的伤害提升<ct color=#2BAD00>31.2%</ct>。",
+      "连点或长按后，可琳使用电锯持续斩击敌人时，招式造成的伤害提升<ct color=#2BAD00>34.3%</ct>。",
+      "连点或长按后，可琳使用电锯持续斩击敌人时，招式造成的伤害提升<ct color=#2BAD00>37.5%</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：扫除帮手",
+    "desc": {
+      "0": "队伍中存在与自身属性或阵营相同的角色时触发：",
+      "1": "可琳攻击命中处于失衡状态下的敌人时，自身造成的伤害提升35%。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "开放性创伤",
+      "desc": "<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>命中敌人时，可琳对目标造成的伤害提升12%，持续15秒。",
+      "flavor": {
+        "0": "「大小姐说，做事情的时候一定要专注，不能被周围影响。」",
+        "1": "「可琳练习了很久，终于可以做到了！」",
+        "2": "「可是…你看到了吗，大小姐…」"
+      }
+    },
+    "2": {
+      "name": "裂解效应",
+      "desc": "<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[终结技]</ct>命中敌人时，目标的<ct color=#F0D12B>物理伤害抗性</ct>下降0.5%，最多叠加20层，持续5秒，每层效果单独结算持续时间。",
+      "flavor": {
+        "0": "「对不起，以骸先生或者以骸女士！」\n「但是可琳需要完成自己的任务…真的很抱歉！」\n少女真诚而愧疚地对着面前的怪物道歉——\n一边挥动着手上的电锯，将面前的敌人们尽数消灭。",
+        "1": "\"But I've got work to do... I really am sorry!\"",
+        "2": "Feeling guilty, Corin sincerely apologizes to the monster — as she wields her savage chainsaw, slicing through the enemies in her way."
+      }
+    },
+    "3": {
+      "name": "初级女仆",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "「为、为了成为能独当一面的女仆，可琳会加油努力的！」\n——可琳手持锯子，一边走向以骸一边说道"
+    },
+    "4": {
+      "name": "战场随侍",
+      "desc": "发动<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[招架支援]</ct>或<ct color=#FFFFFF>[连携技]</ct>时，可琳回复7.2点能量，16秒内最多触发一次。",
+      "flavor": {
+        "0": "勤恳认真的女仆小姐，对待任何事情都是一心一意的。",
+        "1": "当然，也包括在战场上面对敌人的时候。"
+      }
+    },
+    "5": {
+      "name": "特勤女仆",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「唔…对、对不起，可琳笨手笨脚的，没办法把东西切得很均匀…」",
+        "1": "——看着脚下遍布的以骸残块，可琳沮丧地说道"
+      }
+    },
+    "6": {
+      "name": "厚积薄发",
+      "desc": {
+        "0": "持续斩击命中敌人时，可琳获得1层充能（最多40层）；在<ct color=#FFFFFF>[闪避反击]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[支援突击]</ct>中，引爆电锯命中敌人时，消耗所有充能，每层充能使本次攻击额外造成可琳3%攻击力的伤害。",
+        "1": "During a <ct color=#FFFFFF>Dodge Counter</ct>, <ct color=#FFFFFF>Special Attack</ct>, <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Quick Assist</ct>, or <ct color=#FFFFFF>Assist Follow-Up</ct>, when her chainsaw detonation hits an enemy, consumes all stacks of Charge. Each stack consumed causes the attack to deal an additional 3% of ATK as DMG."
+      },
+      "flavor": {
+        "0": "可琳知道，自己并不是最厉害的女仆，也不是最聪明的女仆。\n但她希望能成为最努力的女仆。\n过去积累的每一份努力，都有存在的意义。",
+        "1": "She puts to good use everything she's ever learned."
+      }
+    }
+  },
+  "potential": {}
+}

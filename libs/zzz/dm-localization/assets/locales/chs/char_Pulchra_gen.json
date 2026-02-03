@@ -1,0 +1,234 @@
+{
+  "name": "波可娜",
+  "fullName": "Pulchra Fellini",
+  "basic": {
+    "BasicAttackSwiftStrike": {
+      "name": "普通攻击：捷击",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多三段的攻击，造成<ct color=#F0D12B>物理伤害</ct>；"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackLeapingStrike": {
+      "name": "普通攻击：跃击",
+      "desc": {
+        "0": "长按 <IconNormal /> 发动：",
+        "1": "向前跃进并发动连续斩击，造成<ct color=#F0D12B>物理伤害</ct>；"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeReversalShot": {
+      "name": "闪避：翻正反射",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackFirstStrikeAdvantage": {
+      "name": "冲刺攻击：先下手为强",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方突进斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterRelentlessRetribution": {
+      "name": "闪避反击：睚眦必报",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动突刺并衔接快速斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackRendingClaw": {
+      "name": "特殊技：噬爪",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方快速来回穿刺，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SpecialAttackRendingClawNightmareShadow": {
+      "name": "特殊技：噬爪·噩梦袭影",
+      "desc": {
+        "0": "波可娜进入<ct color=#FFFFFF>[猎步]</ct>状态后，队伍中其他操作中的角色的<ct color=#FFFFFF>[特殊技]</ct>或<ct color=#FFFFFF>[强化特殊技]</ct>重击命中敌人时触发：",
+        "1": "围绕目标敌人，快速来回穿刺，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动后，队伍中其他操作中的角色，发动任意攻击命中敌人时，波可娜会重复发动攻击，最多额外触发5次，且最后一次攻击会被替换为更加强力的终结一击；",
+        "3": "招式发动期间拥有无敌效果；",
+        "4": "<ct color=#FFFFFF>[特殊技：噬爪·噩梦袭影]</ct>为<ct color=#FFFFFF>[追加攻击]</ct>。"
+      },
+      "params": [
+        " ",
+        "Finishing Move "
+      ]
+    },
+    "EXSpecialAttackRendingClawFlashstep": {
+      "name": "强化特殊技：噬爪·瞬步",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "向前方多次来回穿刺，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackHeyDidntExpectThatRight": {
+      "name": "连携技：嗨，想不到吧",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "向前方发动蓄力射击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateOhTimeToPlay": {
+      "name": "终结技：噢，游戏时间",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "向前方大范围敌人发动强力射击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistContractBodyguard": {
+      "name": "快速支援：雇佣合同·保镖业务",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动突刺并衔接快速斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EvasiveAssistContractOutsourcedCombat": {
+      "name": "回避支援：雇佣合同·作战外包",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "回避敌人的攻击，并触发<ct color=#FFFFFF>[极限视域]</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "AssistFollowUpIndependentPricing": {
+      "name": "支援突击：单独计价",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[回避支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前腾空跃起后开枪射击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动时，将消耗1点<ct color=#FFFFFF>[支援点数]</ct>，使自身进入<ct color=#FFFFFF>[猎步]</ct>状态；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：猎手本能",
+    "desc": [
+      "波可娜发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，将会进入<ct color=#FFFFFF>[猎步]</ct>状态，使自身造成的失衡值提升<ct color=#2BAD00>15%</ct>，持续6秒；切换至其他角色后，若波可娜仍处于<ct color=#FFFFFF>[猎步]</ct>状态下，则其持续时间会改为切换回波可娜时；进入<ct color=#FFFFFF>[猎步]</ct>状态后，自身为当前操作中的角色时，波可娜重击命中敌人，能够触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>。",
+      "波可娜发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，将会进入<ct color=#FFFFFF>[猎步]</ct>状态，使自身造成的失衡值提升<ct color=#2BAD00>17.5%</ct>，持续6秒；切换至其他角色后，若波可娜仍处于<ct color=#FFFFFF>[猎步]</ct>状态下，则其持续时间会改为切换回波可娜时；进入<ct color=#FFFFFF>[猎步]</ct>状态后，自身为当前操作中的角色时，波可娜重击命中敌人，能够触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>。",
+      "波可娜发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，将会进入<ct color=#FFFFFF>[猎步]</ct>状态，使自身造成的失衡值提升<ct color=#2BAD00>20%</ct>，持续6秒；切换至其他角色后，若波可娜仍处于<ct color=#FFFFFF>[猎步]</ct>状态下，则其持续时间会改为切换回波可娜时；进入<ct color=#FFFFFF>[猎步]</ct>状态后，自身为当前操作中的角色时，波可娜重击命中敌人，能够触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>。",
+      "波可娜发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，将会进入<ct color=#FFFFFF>[猎步]</ct>状态，使自身造成的失衡值提升<ct color=#2BAD00>22.5%</ct>，持续6秒；切换至其他角色后，若波可娜仍处于<ct color=#FFFFFF>[猎步]</ct>状态下，则其持续时间会改为切换回波可娜时；进入<ct color=#FFFFFF>[猎步]</ct>状态后，自身为当前操作中的角色时，波可娜重击命中敌人，能够触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>。",
+      "波可娜发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，将会进入<ct color=#FFFFFF>[猎步]</ct>状态，使自身造成的失衡值提升<ct color=#2BAD00>25%</ct>，持续6秒；切换至其他角色后，若波可娜仍处于<ct color=#FFFFFF>[猎步]</ct>状态下，则其持续时间会改为切换回波可娜时；进入<ct color=#FFFFFF>[猎步]</ct>状态后，自身为当前操作中的角色时，波可娜重击命中敌人，能够触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>。",
+      "波可娜发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，将会进入<ct color=#FFFFFF>[猎步]</ct>状态，使自身造成的失衡值提升<ct color=#2BAD00>27.5%</ct>，持续6秒；切换至其他角色后，若波可娜仍处于<ct color=#FFFFFF>[猎步]</ct>状态下，则其持续时间会改为切换回波可娜时；进入<ct color=#FFFFFF>[猎步]</ct>状态后，自身为当前操作中的角色时，波可娜重击命中敌人，能够触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>。",
+      "波可娜发动<ct color=#FFFFFF>[强化特殊技]</ct>、<ct color=#FFFFFF>[支援突击]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[终结技]</ct>时，将会进入<ct color=#FFFFFF>[猎步]</ct>状态，使自身造成的失衡值提升<ct color=#2BAD00>30%</ct>，持续6秒；切换至其他角色后，若波可娜仍处于<ct color=#FFFFFF>[猎步]</ct>状态下，则其持续时间会改为切换回波可娜时；进入<ct color=#FFFFFF>[猎步]</ct>状态后，自身为当前操作中的角色时，波可娜重击命中敌人，能够触发队伍中上一位角色的<ct color=#FFFFFF>[快速支援]</ct>。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：业务搭档",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[强攻]</ct>或<ct color=#FFFFFF>[命破]</ct>角色或自身阵营相同的角色时触发：",
+      "1": "波可娜发动<ct color=#FFFFFF>[特殊技：噬爪·噩梦袭影]</ct>、<ct color=#FFFFFF>[强化特殊技：噬爪·瞬步]</ct>、<ct color=#FFFFFF>[支援突击：单独计价]</ct>、<ct color=#FFFFFF>[连携技：嗨，想不到吧]</ct>、<ct color=#FFFFFF>[终结技：噢，游戏时间]</ct>命中敌人时，将对敌人施加<ct color=#FFFFFF>[困迹]</ct>效果，持续15秒；被施加<ct color=#FFFFFF>[困迹]</ct>效果后，所有单位发动<ct color=#FFFFFF>[追加攻击]</ct>对目标造成的伤害提升30%。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "利己主义",
+      "desc": "对被施加<ct color=#FFFFFF>[困迹]</ct>效果的敌人造成伤害时，自身暴击率提升10%。",
+      "flavor": {
+        "0": "「利己主义是一种本能，但其实也可以在后天习得。」",
+        "1": "「如何习得？」",
+        "2": "「多吃点亏自然就明白了。」"
+      }
+    },
+    "2": {
+      "name": "借势而为",
+      "desc": "处于<ct color=#FFFFFF>[核心被动：猎手本能]</ct>的<ct color=#FFFFFF>[猎步]</ct>状态时，波可娜的攻击力额外提升10%。",
+      "flavor": {
+        "0": "「一个雇佣兵最重要的素质不是忠诚，而是懂得借势而为。挑选合适的雇主，接下合适的委托，完成分内工作，绝不签长期合同。即使跳槽去对手那边，原雇主也没什么话好说。」",
+        "1": "「波可娜，刚才又有人来找你麻烦，被我打发走了。你怎么会得罪这么多人？」",
+        "2": "「是感情用事的人太多了。所以你看，他们都是一群拈不清自己斤两的失败者。」"
+      }
+    },
+    "3": {
+      "name": "领地意识",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "波可娜居住的卡车车厢门上贴着一张大纸。上面用红色的大字写着：这是我的地盘！进来要敲门！敲门！敲门！",
+        "1": "纸下方还贴有一张稍小的纸，上面用黑色的大字写着：凯撒，赔我的锁！10万丁尼！",
+        "2": "黑色的大字下还有一行歪歪扭扭的小字：我问过绳匠了，那锁2万！"
+      }
+    },
+    "4": {
+      "name": "狩猎乐趣",
+      "desc": "发动<ct color=#FFFFFF>[强化特殊技：噬爪·瞬步]</ct>时的能量消耗降低5点。",
+      "flavor": {
+        "0": "「挑战强者有什么意思，我又不是自虐狂。对我而言知道自己稳赢的时候，才能体会真正的狩猎乐趣！」",
+        "1": "5分钟后。",
+        "2": "「这游戏的AI太弱了吧，没劲。」"
+      }
+    },
+    "5": {
+      "name": "尾巴游戏",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "波可娜童年最早的模糊回忆，是一条温暖的大尾巴。在她刚学会爬行的时候，最喜欢玩追逐它的游戏。",
+        "1": "「后来呢？」",
+        "2": "「他们告诉我，那条尾巴就是我自己的。」",
+        "3": "但波可娜知道，那条尾巴不是她的。因为除了尾巴游戏，晚上它还会紧紧地包裹住她，度过每一个寒冷的夜晚。可能是空洞把它夺走了，或者是别的什么…哎，无所谓，反正她早就不玩这个游戏了。"
+      }
+    },
+    "6": {
+      "name": "面具之下",
+      "desc": "<ct color=#FFFFFF>[特殊技：噬爪·噩梦袭影]</ct>造成的伤害提升15%，重复攻击的可触发次数额外提升2次；<ct color=#FFFFFF>[额外能力：业务搭档]</ct>中<ct color=#FFFFFF>[困迹]</ct>的效果对<ct color=#FFFFFF>[追加攻击]</ct>以外的伤害类型也会生效。",
+      "flavor": {
+        "0": "覆面式呼吸过滤器挡住了以太粒子和花粉，阻隔了或好奇或畏惧或不怀好意的视线，却让人再也没办法蜷缩起来舒服地睡个好觉了。好想去一个温暖的地方，毫无防备地睡一个午觉…",
+        "1": "车厢的门被毫无征兆地推开了，从梦中惊醒的她立刻抓起老搭档扣在脸上，「你们能不能学会敲门？！」",
+        "2": "…啊，原来现在她已经可以摘掉它了。"
+      }
+    }
+  },
+  "potential": {}
+}

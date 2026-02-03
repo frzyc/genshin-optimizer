@@ -1,0 +1,248 @@
+{
+  "name": "青衣",
+  "fullName": "青衣",
+  "basic": {
+    "BasicAttackPenultimate": {
+      "name": "普通攻击：一煞",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的打击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "第三段攻击期间，连续点按 <IconNormal /> 可以维持连击，持续打击敌人，在此期间发动<ct color=#FFFFFF>[闪避]</ct>，不会打断<ct color=#FFFFFF>[普通攻击]</ct>的连击段数；",
+        "3": "第三段攻击期间，停止点按 <IconNormal /> 将会中断连击，自动衔接第四段攻击，维持连击超过一定时间后，第四段攻击将会得到强化；",
+        "4": "第三、第四段攻击期间抗打断等级提升，受到的伤害降低40%。"
+      },
+      "params": [
+        "1st-Hit ",
+        "1st-Hit (ALT) ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "4th-Hit (Enhanced) "
+      ]
+    },
+    "BasicAttackEnchantedBlossoms": {
+      "name": "普通攻击：醉花云",
+      "desc": {
+        "0": "长按 <IconNormal /> 发动：",
+        "1": "向前方发动一次突进攻击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "FlashConnect": {
+      "name": "闪络",
+      "desc": "青衣发动招式造成<ct color=#2EB6FF>电属性伤害</ct>时，会累积<ct color=#FFFFFF>[闪络电压]</ct>，当<ct color=#FFFFFF>[闪络电压]</ct>累积至75%时，青衣将进入<ct color=#FFFFFF>[闪络]</ct>状态。发动<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>时，青衣会消耗所有<ct color=#FFFFFF>[闪络电压]</ct>并退出<ct color=#FFFFFF>[闪络]</ct>状态，所消耗的<ct color=#FFFFFF>[闪络电压]</ct>中超过75%的部分，每1%能够使本次招式造成的伤害/失衡值额外提升1%/0.5%。<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>本身不会累积<ct color=#FFFFFF>[闪络电压]</ct>。",
+      "params": []
+    },
+    "BasicAttackEnchantedMoonlitBlossoms": {
+      "name": "普通攻击：醉花月云转",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[闪络]</ct>状态下，长按 <IconNormal /> 发动：",
+        "1": "向前方连续发动五次突进攻击，随后发动终结一击，造成大量<ct color=#2EB6FF>电属性伤害</ct>，招式发动期间松开 <IconNormal /> ，可以提前发动终结一击；",
+        "2": "在角色即将受到攻击时发动终结一击，可以触发<ct color=#FFFFFF>[极限闪避]</ct>；",
+        "3": "突进攻击发动期间抗打断等级提升，受到的伤害降低40%，终结一击发动期间具有无敌效果。"
+      },
+      "params": [
+        "Rush Attack ",
+        "Finishing Move "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeSwanSong": {
+      "name": "闪避：雁过声",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackBreach": {
+      "name": "冲刺攻击：入破",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前突进后发动上挑攻击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterLingeringSentiments": {
+      "name": "闪避反击：意不尽",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "腾空跃起后发动下落攻击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSunlitGlory": {
+      "name": "特殊技：昼锦堂",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方快速上挑，随后发动下砸攻击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackMoonlitBegonia": {
+      "name": "强化特殊技：月上海棠",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：\n向前方快速上挑后腾空跃起，转身连打后发动强力的下砸攻击，造成大量<ct color=#2EB6FF>电属性伤害</ct>，长按 <IconSpecialReady /> 时，可以额外消耗能量，提升转身连打的攻击次数；\n招式发动期间拥有无敌效果；\n招式发动后，可直接衔接第三段<ct color=#FFFFFF>[普通攻击]</ct>。",
+        "1": "Quickly swings upward and leaps into the air, turning around to launch a series of attacks, then follows up with a powerful downward smash, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Hold <IconSpecialReady /> to consume additional energy to increase the number of hits of the series of attacks.",
+        "3": "Character is invulnerable while using this skill.",
+        "4": "After executing the move, you can immediately follow up with the 3rd hit of a <ct color=#FFFFFF>Basic Attack</ct>."
+      },
+      "params": [
+        " ",
+        "能量消耗",
+        "额外能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackTranquilSerenade": {
+      "name": "连携技：太平令",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "对前方大范围区域发动强力连续打击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "攻击命中敌人时，目标每拥有一层<ct color=#FFFFFF>[核心被动：千秋岁]</ct>中的<ct color=#FFFFFF>[羁服]</ct>，招式对其造成的伤害提升3%；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateEightSoundsOfGanzhou": {
+      "name": "终结技：八声甘州",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "对前方大范围区域发动强力连续打击，随后发动终结一击，造成大量<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistWindThroughThePines": {
+      "name": "快速支援：风入松",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "腾空跃起后发动下落攻击，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistGracefulEmbellishment": {
+      "name": "招架支援：锦上花",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "具有较为优秀的招架性能，承受高强度攻击时<ct color=#FFFFFF>[支援点数]</ct>的消耗量降低；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpSongOfTheClearRiver": {
+      "name": "支援突击：清江引",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前方快速突进攻击并向地面注入电能，随后拔起引发爆炸，造成<ct color=#2EB6FF>电属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：千秋岁",
+    "desc": [
+      "青衣在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中发动终结一击命中敌人时，会对敌人施加5层<ct color=#FFFFFF>[羁服]</ct>，最多叠加20层，每层<ct color=#FFFFFF>[羁服]</ct>能够使目标的失衡易伤倍率提升<ct color=#2BAD00>2%</ct>；在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中每发动一次突进攻击，终结一击将额外施加1层<ct color=#FFFFFF>[羁服]</ct>，在发动终结一击时，若触发<ct color=#FFFFFF>[极限闪避]</ct>，可以直接施加{CAL:5+5,1,2}层<ct color=#FFFFFF>[羁服]</ct>；对普通或精英敌人施加[羁服]时，施加的层数翻倍；目标从失衡状态恢复时，对应<ct color=#FFFFFF>[羁服]</ct>层数重置。",
+      "青衣在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中发动终结一击命中敌人时，会对敌人施加5层<ct color=#FFFFFF>[羁服]</ct>，最多叠加20层，每层<ct color=#FFFFFF>[羁服]</ct>能够使目标的失衡易伤倍率提升<ct color=#2BAD00>2.4%</ct>；在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中每发动一次突进攻击，终结一击将额外施加1层<ct color=#FFFFFF>[羁服]</ct>，在发动终结一击时，若触发<ct color=#FFFFFF>[极限闪避]</ct>，可以直接施加{CAL:5+5,1,2}层<ct color=#FFFFFF>[羁服]</ct>；对普通或精英敌人施加[羁服]时，施加的层数翻倍；目标从失衡状态恢复时，对应<ct color=#FFFFFF>[羁服]</ct>层数重置。",
+      "青衣在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中发动终结一击命中敌人时，会对敌人施加5层<ct color=#FFFFFF>[羁服]</ct>，最多叠加20层，每层<ct color=#FFFFFF>[羁服]</ct>能够使目标的失衡易伤倍率提升<ct color=#2BAD00>2.7%</ct>；在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中每发动一次突进攻击，终结一击将额外施加1层<ct color=#FFFFFF>[羁服]</ct>，在发动终结一击时，若触发<ct color=#FFFFFF>[极限闪避]</ct>，可以直接施加{CAL:5+5,1,2}层<ct color=#FFFFFF>[羁服]</ct>；对普通或精英敌人施加[羁服]时，施加的层数翻倍；目标从失衡状态恢复时，对应<ct color=#FFFFFF>[羁服]</ct>层数重置。",
+      "青衣在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中发动终结一击命中敌人时，会对敌人施加5层<ct color=#FFFFFF>[羁服]</ct>，最多叠加20层，每层<ct color=#FFFFFF>[羁服]</ct>能够使目标的失衡易伤倍率提升<ct color=#2BAD00>3%</ct>；在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中每发动一次突进攻击，终结一击将额外施加1层<ct color=#FFFFFF>[羁服]</ct>，在发动终结一击时，若触发<ct color=#FFFFFF>[极限闪避]</ct>，可以直接施加{CAL:5+5,1,2}层<ct color=#FFFFFF>[羁服]</ct>；对普通或精英敌人施加[羁服]时，施加的层数翻倍；目标从失衡状态恢复时，对应<ct color=#FFFFFF>[羁服]</ct>层数重置。",
+      "青衣在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中发动终结一击命中敌人时，会对敌人施加5层<ct color=#FFFFFF>[羁服]</ct>，最多叠加20层，每层<ct color=#FFFFFF>[羁服]</ct>能够使目标的失衡易伤倍率提升<ct color=#2BAD00>3.4%</ct>；在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中每发动一次突进攻击，终结一击将额外施加1层<ct color=#FFFFFF>[羁服]</ct>，在发动终结一击时，若触发<ct color=#FFFFFF>[极限闪避]</ct>，可以直接施加{CAL:5+5,1,2}层<ct color=#FFFFFF>[羁服]</ct>；对普通或精英敌人施加[羁服]时，施加的层数翻倍；目标从失衡状态恢复时，对应<ct color=#FFFFFF>[羁服]</ct>层数重置。",
+      "青衣在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中发动终结一击命中敌人时，会对敌人施加5层<ct color=#FFFFFF>[羁服]</ct>，最多叠加20层，每层<ct color=#FFFFFF>[羁服]</ct>能够使目标的失衡易伤倍率提升<ct color=#2BAD00>3.7%</ct>；在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中每发动一次突进攻击，终结一击将额外施加1层<ct color=#FFFFFF>[羁服]</ct>，在发动终结一击时，若触发<ct color=#FFFFFF>[极限闪避]</ct>，可以直接施加{CAL:5+5,1,2}层<ct color=#FFFFFF>[羁服]</ct>；对普通或精英敌人施加[羁服]时，施加的层数翻倍；目标从失衡状态恢复时，对应<ct color=#FFFFFF>[羁服]</ct>层数重置。",
+      "青衣在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中发动终结一击命中敌人时，会对敌人施加5层<ct color=#FFFFFF>[羁服]</ct>，最多叠加20层，每层<ct color=#FFFFFF>[羁服]</ct>能够使目标的失衡易伤倍率提升<ct color=#2BAD00>4%</ct>；在<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>中每发动一次突进攻击，终结一击将额外施加1层<ct color=#FFFFFF>[羁服]</ct>，在发动终结一击时，若触发<ct color=#FFFFFF>[极限闪避]</ct>，可以直接施加{CAL:5+5,1,2}层<ct color=#FFFFFF>[羁服]</ct>；对普通或精英敌人施加[羁服]时，施加的层数翻倍；目标从失衡状态恢复时，对应<ct color=#FFFFFF>[羁服]</ct>层数重置。"
+    ]
+  },
+  "ability": {
+    "name": "额外能力：阳关三叠",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[强攻]</ct>角色或与自身阵营相同的角色时触发：",
+      "1": "<ct color=#FFFFFF>[普通攻击]</ct>造成的失衡值提升20%；此外，若青衣的冲击力高于120点，每超过1点冲击力会使自身的攻击力提升6点，通过这种方式最多使自身的攻击力提升600点。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "介电击穿",
+      "desc": "青衣进入战场时，立即使<ct color=#FFFFFF>[闪络电压]</ct>回复至上限，并使其后继累积效率提升30%；发动<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>时，若<ct color=#FFFFFF>[闪络电压]</ct>已累积至上限，则使本次招式命中的敌人防御力降低15%，且自身对该目标的暴击率提升20%，持续15秒。",
+      "flavor": {
+        "0": "「虽不会有生命危险，不过还请不要拒捕…」",
+        "1": "电流的方向和强度都经过精密的计算，保证每位嫌疑犯都能获得安全的电击体验。"
+      }
+    },
+    "2": {
+      "name": "四两拨千斤",
+      "desc": "<ct color=#FFFFFF>[核心被动：千秋岁]</ct>中每层<ct color=#FFFFFF>[羁服]</ct>提供的失衡易伤倍率提升效果提升至原本的135%；青衣攻击命中敌人时，若对其施加的<ct color=#FFFFFF>[羁服]</ct>已叠加至层数上限，则自身对其造成的失衡值提升15%。",
+      "flavor": {
+        "0": "旧文明典籍中记载的一种搏击技术，起初似乎是一种拳术而非棍术的技巧。",
+        "1": "「不必拘泥，其实手臂也是一种三节棍，嗯。」"
+      }
+    },
+    "3": {
+      "name": "多喝热水",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「年轻人要注意养生，还是多喝热水吧。」",
+        "1": "每次青衣捧着保温杯啜饮的时候，都给人以非常温暖的感受。但接过她递上的热水时一定要小心——",
+        "2": "「就算是100度的开水前辈也能不动声色地喝下…」某位中过招的治安官留下了这样的记录。"
+      }
+    },
+    "4": {
+      "name": "稳态电弧屏障",
+      "desc": "进入或退出<ct color=#FFFFFF>[闪络]</ct>状态时，获得等同于青衣10%生命值上限的护盾；护盾效果刷新时，如果上一次获得的护盾仍然存在，则为青衣回复5点能量，能量回复效果10秒内最多触发一次。",
+      "flavor": {
+        "0": "怀斯塔学会逆向研究旧文明的钰偶而开发出的电弧屏障，是集防御、攻击、电能转换于一体的技术。",
+        "1": "「俗话说：水能载舟，亦能覆舟。物理学俗话又说：电流如水流。并联得到：电流进可攻退可守。真是相当好的结合。」"
+      }
+    },
+    "5": {
+      "name": "童心未泯",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「善，年轻人就要勇于尝试新的事物，加油！」",
+        "1": "虽然有时候会觉得青衣的鼓励里带着几分摸鱼、几分捉弄。但如果真的不幸捅了娄子，只要信赖她就可以了。",
+        "2": "毕竟是活了几百上千年的老家伙了，什么都能摆平。"
+      }
+    },
+    "6": {
+      "name": "奇经八脉",
+      "desc": "<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>的打断等级大幅提升，招式的暴击伤害额外提升100%；青衣<ct color=#FFFFFF>[普通攻击：醉花月云转]</ct>命中敌人时，目标的全属性伤害抗性降低20%，持续15秒。",
+      "flavor": {
+        "0": "旧文明典籍中记载的对人体循环系统的一种学说，据说完整掌握这一理论后，可以在搏击中瞬间让对手失去行动能力。",
+        "1": "「下次试试让人发痒的穴位吧，找谁来试验呢？店长？还是朱鸢？」"
+      }
+    }
+  },
+  "potential": {}
+}

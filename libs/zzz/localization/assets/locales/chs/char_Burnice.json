@@ -1,0 +1,14 @@
+{
+  "core_afterburn_dmg": "后燃伤害",
+  "core_afterburn_anomBuildup": "后燃异常积蓄",
+  "core_afterburn_dmg_": "后燃伤害提升",
+  "m1_afterburn_mv_mult": "后燃伤害倍率提升",
+  "m1_afterburn_anomBuildup": "后燃火属性异常积蓄提升",
+  "m2Cond": "当触发后燃效果时",
+  "m4_exSpecial_crit_": "强化特殊技暴击率",
+  "m4_assistSkill_crit_": "支援攻击暴击率",
+  "m6_additional_afterburn_dmg": "额外后燃伤害",
+  "m6Cond": "使用强化特殊技：灼热摇荡法·双份命中敌人后",
+  "m6_fire_resIgn": "强化特殊技：灼热摇荡法·双份和特殊后燃效果火属性抗性穿透",
+  "m6CondBurn": "额外燃烧伤害"
+}
