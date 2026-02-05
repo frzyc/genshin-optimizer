@@ -181,11 +181,11 @@ export const theme = createTheme({
   palette: {
     ...commonTheme.palette,
     geo: commonTheme.palette.augmentColor({
-      color: { main: '#f8ba4e', contrastText: '#fff' },
+      color: { main: '#f8ba4e', contrastText: '#222' },
       name: 'geo',
     }),
     dendro: commonTheme.palette.augmentColor({
-      color: { main: '#a5c83b', contrastText: '#fff' },
+      color: { main: '#a5c83b', contrastText: '#222' },
       name: 'dendro',
     }),
     pyro: commonTheme.palette.augmentColor({
@@ -265,7 +265,7 @@ export const theme = createTheme({
       name: 'heal',
     }),
     bloom: commonTheme.palette.augmentColor({
-      color: { main: '#47c83b', contrastText: '#fff' },
+      color: { main: '#47c83b', contrastText: '#222' },
       name: 'bloom',
     }),
     burgeon: commonTheme.palette.augmentColor({
@@ -277,11 +277,11 @@ export const theme = createTheme({
       name: 'hyperbloom',
     }),
     lunarbloom: commonTheme.palette.augmentColor({
-      color: { main: '#c8efc4', contrastText: '#fff' },
+      color: { main: '#c8efc4', contrastText: '#222' },
       name: 'lunarbloom',
     }),
     lunarcrystallize: commonTheme.palette.augmentColor({
-      color: { main: '#fff2baff', contrastText: '#fff' },
+      color: { main: '#fff2baff', contrastText: '#222' },
       name: 'lunarcrystallize',
     }),
   },
