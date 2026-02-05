@@ -84,11 +84,13 @@ const dm = {
       skillParam_gen.passive2[0][0],
       skillParam_gen.passive2[1][0],
       skillParam_gen.passive2[2][0],
+      skillParam_gen.passive2[2][0],
     ],
     lunarcrystallize_dmgInc: [
       -1,
       skillParam_gen.passive2[3][0],
       skillParam_gen.passive2[4][0],
+      skillParam_gen.passive2[5][0],
       skillParam_gen.passive2[5][0],
     ],
   },
@@ -117,15 +119,21 @@ const dm = {
 } as const
 
 const [condBurstSongPath, condBurstSong] = cond(key, 'burstSong')
-const burstSong_geo_dmgInc = equal(
+const burstSong_geo_dmgIncDisp = equal(
   condBurstSong,
   'on',
   prod(
     subscript(input.total.burstIndex, dm.burst.geo_dmgInc, { unit: '%' }),
     input.total.eleMas
-  )
+  ),
+  { path: 'geo_dmgInc', isTeamBuff: true }
 )
-const burstSong_lunarcrystallize_dmgInc = equal(
+const burstSong_geo_dmgInc = equal(
+  input.activeCharKey,
+  target.charKey,
+  burstSong_geo_dmgIncDisp
+)
+const burstSong_lunarcrystallize_dmgIncDisp = equal(
   condBurstSong,
   'on',
   prod(
@@ -133,7 +141,13 @@ const burstSong_lunarcrystallize_dmgInc = equal(
       unit: '%',
     }),
     input.total.eleMas
-  )
+  ),
+  { path: 'lunarcrystallize_dmgInc', isTeamBuff: true }
+)
+const burstSong_lunarcrystallize_dmgInc = equal(
+  input.activeCharKey,
+  target.charKey,
+  burstSong_lunarcrystallize_dmgIncDisp
 )
 
 const [condA1AfterSkillBurstPath, condA1AfterSkillBurst] = cond(
@@ -187,8 +201,8 @@ const a1AfterSkillBurstGleam_eleMas = greaterEq(
   )
 )
 
-const hydroGeoCount = sum(tally.geo, tally.hydro, -1)
-const a4Song_geo_dmgInc = greaterEq(
+const hydroGeoCount = sum(tally.geo, tally.hydro)
+const a4Song_geo_dmgIncDisp = greaterEq(
   input.asc,
   4,
   equal(
@@ -199,12 +213,18 @@ const a4Song_geo_dmgInc = greaterEq(
       1,
       prod(
         subscript(hydroGeoCount, [...dm.passive2.geo_dmgInc], { unit: '%' }),
-        input.total.elemental_critDMG_
+        input.total.eleMas
       )
     )
-  )
+  ),
+  { path: 'geo_dmgInc', isTeamBuff: true }
 )
-const a4Song_lunarcrystallize_dmgInc = greaterEq(
+const a4Song_geo_dmgInc = equal(
+  input.activeCharKey,
+  target.charKey,
+  a4Song_geo_dmgIncDisp
+)
+const a4Song_lunarcrystallize_dmgIncDisp = greaterEq(
   input.asc,
   4,
   equal(
@@ -220,7 +240,13 @@ const a4Song_lunarcrystallize_dmgInc = greaterEq(
         input.total.eleMas
       )
     )
-  )
+  ),
+  { path: 'lunarcrystallize_dmgInc', isTeamBuff: true }
+)
+const a4Song_lunarcrystallize_dmgInc = equal(
+  input.activeCharKey,
+  target.charKey,
+  a4Song_lunarcrystallize_dmgIncDisp
 )
 
 const [condC4BurstActivePath, condC4BurstActive] = cond(key, 'c4BurstActive')
@@ -263,12 +289,12 @@ const dmgFormulas = {
       [dm.burst.skillDmgEleMas, dm.burst.skillDmgDef],
       'burst'
     ),
-    burstSong_geo_dmgInc,
-    burstSong_lunarcrystallize_dmgInc,
+    burstSong_geo_dmgIncDisp,
+    burstSong_lunarcrystallize_dmgIncDisp,
   },
   passive2: {
-    a4Song_geo_dmgInc,
-    a4Song_lunarcrystallize_dmgInc,
+    a4Song_geo_dmgIncDisp,
+    a4Song_lunarcrystallize_dmgIncDisp,
   },
   constellation2: {
     dmg: greaterEq(
@@ -420,14 +446,25 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: burstSong_geo_dmgInc,
+              node: burstSong_geo_dmgIncDisp,
             },
             {
-              node: burstSong_lunarcrystallize_dmgInc,
+              node: burstSong_lunarcrystallize_dmgIncDisp,
             },
           ],
         },
       },
+    }),
+    ct.headerTem('passive2', {
+      teamBuff: true,
+      fields: [
+        {
+          node: a4Song_geo_dmgIncDisp,
+        },
+        {
+          node: a4Song_lunarcrystallize_dmgIncDisp,
+        },
+      ],
     }),
   ]),
 
