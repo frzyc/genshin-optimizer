@@ -29,6 +29,8 @@ import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import ReplayIcon from '@mui/icons-material/Replay'
+import ScreenShareIcon from '@mui/icons-material/ScreenShare'
+import StopIcon from '@mui/icons-material/Stop'
 import UpdateIcon from '@mui/icons-material/Update'
 import {
   Alert,
@@ -230,6 +232,15 @@ export function DiscEditor({
     undefined as undefined | Omit<Processed, 'disc'>
   )
 
+  // Screen capture state
+  const [captureStream, setCaptureStream] = useState<MediaStream | null>(null)
+  const [captureInterval, setCaptureInterval] = useState<NodeJS.Timeout | null>(
+    null
+  )
+
+  // Use captureStream existence as isCapturing indicator
+  const isCapturing = !!captureStream
+
   const { fileName, imageURL, debugImgs, texts } = scannedData ?? {}
   const queueTotal = processedNum + outstandingNum + scanningNum
 
@@ -244,6 +255,150 @@ export function DiscEditor({
   const clearQueue = useCallback(() => {
     queue.clearQueue()
   }, [queue])
+
+  // Screen capture functions
+  const captureScreenshot = useCallback(
+    (stream: MediaStream) => {
+      try {
+        // Create video element to capture frame
+        const video = document.createElement('video')
+        video.srcObject = stream
+        video.muted = true
+        video.playsInline = true
+
+        const handleLoadedMetadata = () => {
+          // Create canvas to capture the frame
+          const canvas = document.createElement('canvas')
+          const ctx = canvas.getContext('2d')
+
+          if (!ctx) {
+            video.removeEventListener('loadedmetadata', handleLoadedMetadata)
+            return
+          }
+
+          const originalWidth = video.videoWidth
+          const originalHeight = video.videoHeight
+
+          // Check if the capture is within 90% of 16:9 ratio
+          const aspectRatio = originalWidth / originalHeight
+          const targetRatio = 16 / 9
+          const ratioTolerance = 0.1 // 10% tolerance
+          const isNear16to9 =
+            Math.abs(aspectRatio - targetRatio) <= targetRatio * ratioTolerance
+
+          let canvasWidth = originalWidth
+          let canvasHeight = originalHeight
+          let sourceX = 0
+          const sourceY = 0
+          let sourceWidth = originalWidth
+          const sourceHeight = originalHeight
+
+          // If it's close to 16:9 ratio, crop to keep only the right 1/3
+          if (isNear16to9) {
+            sourceX = Math.floor((originalWidth * 2) / 3) // Start from 2/3 of the width
+            sourceWidth = Math.floor(originalWidth / 3) // Take only 1/3 of the width
+            canvasWidth = sourceWidth
+            canvasHeight = originalHeight
+          }
+
+          canvas.width = canvasWidth
+          canvas.height = canvasHeight
+
+          // Draw the video frame to canvas with cropping
+          ctx.drawImage(
+            video,
+            sourceX,
+            sourceY,
+            sourceWidth,
+            sourceHeight,
+            0,
+            0,
+            canvasWidth,
+            canvasHeight
+          )
+
+          // Convert canvas to blob and create file
+          canvas.toBlob((blob) => {
+            if (blob) {
+              const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
+              const file = new File([blob], `screen-capture-${timestamp}.png`, {
+                type: 'image/png',
+              })
+
+              // Add to scanning queue
+              queue.addFiles([{ f: file, fName: file.name }])
+            }
+          }, 'image/png')
+
+          // Clean up
+          video.removeEventListener('loadedmetadata', handleLoadedMetadata)
+          video.srcObject = null
+        }
+
+        video.addEventListener('loadedmetadata', handleLoadedMetadata)
+        video.play().catch(console.error)
+      } catch (error) {
+        console.error('Failed to capture screenshot:', error)
+      }
+    },
+    [queue]
+  )
+
+  const stopScreenCapture = useCallback(() => {
+    if (captureInterval) {
+      clearInterval(captureInterval)
+      setCaptureInterval(null)
+    }
+
+    if (captureStream) {
+      captureStream.getTracks().forEach((track) => track.stop())
+      setCaptureStream(null)
+    }
+  }, [captureInterval, captureStream])
+
+  const startScreenCapture = async () => {
+    try {
+      // Check if getDisplayMedia is supported
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
+        alert(
+          'Screen capture is not supported in this browser. Please use a modern browser like Chrome, Firefox, or Edge.'
+        )
+        return
+      }
+
+      // Request screen capture permission
+      const stream = await navigator.mediaDevices.getDisplayMedia({
+        video: true,
+      })
+
+      setCaptureStream(stream)
+      onShow()
+
+      // Set up interval to capture screenshots every 5 second
+      const interval = setInterval(() => {
+        if (processedNum || outstandingNum || scanningNum || scannedData) return
+        captureScreenshot(stream)
+      }, 5000)
+
+      setCaptureInterval(interval)
+
+      // Handle stream end (user stops sharing)
+      stream.getVideoTracks()[0].addEventListener('ended', () => {
+        stopScreenCapture()
+      })
+    } catch (error) {
+      console.error('Failed to start screen capture:', error)
+      if (error instanceof Error && error.name === 'NotAllowedError') {
+        alert(
+          'Screen capture permission was denied. Please allow screen sharing to use this feature.'
+        )
+      } else {
+        alert(
+          'Failed to start screen capture. Please ensure you grant permission to share your screen.'
+        )
+      }
+    }
+  }
 
   const onUpload = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -263,6 +418,16 @@ export function DiscEditor({
     setScannedData(rest)
     setDisc((scannedDisc ?? {}) as Partial<ICachedDisc>)
   }, [queue, processedNum, scannedData, setDisc])
+
+  // Auto-reset when duplicate is detected during capture mode
+  if (
+    isCapturing &&
+    prevEditType === 'duplicate' &&
+    disc &&
+    Object.keys(disc).length > 0
+  ) {
+    reset()
+  }
 
   useEffect(() => {
     const pasteFunc = (e: Event) => {
@@ -291,6 +456,13 @@ export function DiscEditor({
       queue.callback = () => {}
     }
   }, [queue])
+
+  // Cleanup screen capture on unmount
+  useEffect(() => {
+    return () => {
+      stopScreenCapture()
+    }
+  }, [stopScreenCapture])
 
   return (
     <Suspense fallback={false}>
@@ -453,6 +625,22 @@ export function DiscEditor({
                               </Button>
                             </label>
                           </Grid>
+                          <Grid item>
+                            <Button
+                              onClick={
+                                isCapturing
+                                  ? stopScreenCapture
+                                  : startScreenCapture
+                              }
+                              startIcon={
+                                isCapturing ? <StopIcon /> : <ScreenShareIcon />
+                              }
+                              color={isCapturing ? 'error' : 'primary'}
+                              variant={'contained'}
+                            >
+                              {isCapturing ? 'Stop Capture' : 'Capture Screen'}
+                            </Button>
+                          </Grid>
                           {shouldShowDevComponents && debugImgs && (
                             <Grid item>
                               <DebugModal imgs={debugImgs} />
@@ -496,6 +684,12 @@ export function DiscEditor({
                               (100 * (processedNum + scanningNum)) / queueTotal
                             }
                           />
+                        )}
+                        {isCapturing && (
+                          <Alert severity="info" sx={{ mt: 1 }}>
+                            Screen capture is active. Screenshots will be taken
+                            every 5 seconds.
+                          </Alert>
                         )}
                         {!!queueTotal && (
                           <CardThemed sx={{ pl: 2 }}>
