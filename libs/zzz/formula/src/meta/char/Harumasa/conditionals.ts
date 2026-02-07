@@ -8,7 +8,7 @@ export const conditionals = {
     type: 'num',
     int_only: true,
     min: 0,
-    max: 6,
+    max: 3,
   },
   haOtoNoYa: { sheet: 'Harumasa', name: 'haOtoNoYa', type: 'bool' },
 } as const

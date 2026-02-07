@@ -1,0 +1,332 @@
+{
+  "name": "Sunna",
+  "fullName": "Sunna",
+  "basic": {
+    "BasicAttackMischiefMeteorHammer": {
+      "name": "Basic Attack: Mischief Meteor Hammer",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to four attacks ahead, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackNaughtyCatSpotted": {
+      "name": "Basic Attack: Naughty Cat Spotted",
+      "desc": {
+        "0": "During combat, when Sunna is off-field and there are no enemies with <ct color=#FFFFFF>Cat's Gaze</ct>, Bubblegum consumes 1 Claw Sharpener to automatically launch an attack, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "1": "When any squad member activates <ct color=#FFFFFF>Ether Veil</ct>, Sunna gains 2 <ct color=#FFFFFF>Claw Sharpeners</ct>.",
+        "2": "When any squad member applies an Attribute Anomaly to an enemy, Sunna gains 1 <ct color=#FFFFFF>Claw Sharpener</ct>. This effect can trigger at most once every 10s.",
+        "3": "Bubblegum inherits Sunna's initial ATK. Sunna can hold up to 6 <ct color=#FFFFFF>Claw Sharpeners</ct>."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeCantHitMe": {
+      "name": "Dodge: Can't Hit Me",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackSkywardHammer": {
+      "name": "Dash Attack: Skyward Hammer",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Launches enemies in front into the air, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterDelusionStrikeout": {
+      "name": "Dodge Counter: Delusion Strikeout",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Strikes enemies in front with a series of hammer blows, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackStarShooter": {
+      "name": "Special Attack: Star Shooter",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Shoots Bubblegum to attack enemies in front using an air gun, dealing <ct color=#F0D12B>Physical DMG</ct>. After activation, Bubblegum enters combat."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackBubblegumBarrage": {
+      "name": "EX Special Attack: Bubblegum Barrage",
+      "desc": {
+        "0": "With enough energy, press <IconSpecialReady /> to activate:",
+        "1": "Hurls Bubblegum at the target, dealing <ct color=#F0D12B>Physical DMG</ct>. After activation, Bubblegum enters combat.",
+        "2": "Upon activating this skill, all Agents in the squad gain Angelic Chord-ination for 40s.",
+        "3": "Landing a heavy attack with this skill triggers a <ct color=#FFFFFF>Quick Assist</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Bubblegum Barrage ",
+        "Bubblegum Barrage when quickly chaining into Special Photography Technique ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackSpecialPhotographyTechnique": {
+      "name": "EX Special Attack: Special Photography Technique",
+      "desc": {
+        "0": "While in the Angelic Chord-ination state, press <IconSpecialReady /> to activate, or during <ct color=#FFFFFF>EX Special Attack: Bubblegum Barrage</ct>, keep holding <IconSpecialReady /> to quickly activate:",
+        "1": "Attacks the target enemy in coordination with Bubblegum, dealing <ct color=#F0D12B>Physical DMG</ct>. After activation, Bubblegum enters combat.",
+        "2": "Before the heavy attack is executed, activates <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct>. While <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct> is active, all squad members gain an additional 50 ATK for 40s. Re-activating <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct> will cancel the existing instance of <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct>.",
+        "3": "Landing a heavy attack with this skill triggers a <ct color=#FFFFFF>Quick Assist</ct>.",
+        "4": "Character is invulnerable while using this skill. <ct color=#FFFFFF>EX Special Attack: Special Photography Technique</ct> can be used once each time Sunna enters the Angelic Chord-ination state."
+      },
+      "params": [
+        " ",
+        "(Coordinated) "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackDontMessWithTheCat": {
+      "name": "Chain Attack: Don't Mess With the Cat",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Charges forward on Bubblegum, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Landing a heavy attack with this skill triggers a <ct color=#FFFFFF>Quick Assist</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateSmashItAll": {
+      "name": "Ultimate: Smash It All!",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "After a series of hammer attacks, launches Bubblegum to cause an explosion, dealing massive <ct color=#F0D12B>Physical DMG</ct> to enemies in an area.",
+        "2": "On activating the heavy attack, gains 6 <ct color=#FFFFFF>Claw Sharpeners</ct>.",
+        "3": "Upon landing the downward attack from above on an enemy, triggers a <ct color=#FFFFFF>Quick Assist</ct> and restores <ct color=#2BAD00>{CAL:-50+AvatarSkillLevel(3)*250,1,2}</ct> HP to all squad members.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "HP Recovery "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistSonicBeatdown": {
+      "name": "Quick Assist: Sonic Beatdown",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Unleashes a series of hammer attacks against enemies in front, dealing <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistStageFright": {
+      "name": "Defensive Assist: Stage Fright",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpJumpTraining": {
+      "name": "Assist Follow-Up: Jump Training",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Continuously jumps forward on the inflatable hammer, dealing massive <ct color=#F0D12B>Physical DMG</ct> to enemies in front.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Cuteness Is Justice",
+    "desc": [
+      {
+        "0": "Characters in the <ct color=#FFFFFF>Angelic Chord-ination</ct> state gain increased ATK, equal to <ct color=#FFFFFF>30%</ct> of Sunna's initial ATK, up to a maximum of <ct color=#2BAD00>525</ct> ATK. When Sunna's initial ATK reaches 1,750, the ATK bonus granted to all squad members reaches its maximum.",
+        "1": "When attacks from Basic Attack: Naughty Cat Spotted, EX Special Attack: Bubblegum Barrage, EX Special Attack: Special Photography Technique, Chain Attack: Don't Mess With the Cat, or Ultimate: Smash It All! hit an enemy, apply <ct color=#FFFFFF>Cat's Gaze</ct> to the target for 12s. While Sunna is the currently active character, the duration of <ct color=#FFFFFF>Cat's Gaze</ct> is continuously refreshed. Some normal enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct> show reduced aggression toward Sunna.",
+        "2": "When <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Anomaly</ct> characters in the squad continuously land attacks on enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct>, <ct color=#FFFFFF>Cat's Gaze</ct> is triggered and removed:",
+        "3": "When triggered by an <ct color=#FFFFFF>Attack</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>150%</ct> of ATK to enemies in an area.",
+        "4": "When triggered by an <ct color=#FFFFFF>Anomaly</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>240%</ct> of ATK to enemies in an area. This DMG is guaranteed to CRIT, and the CRIT DMG is increased by <ct color=#2BAD00>80%</ct>.",
+        "5": "DMG dealt by <ct color=#FFFFFF>Cat's Gaze</ct> is treated as DMG dealt by the triggering Agent.",
+        "6": "When multiple enemies on the field have <ct color=#FFFFFF>Cat's Gaze</ct>, only the primary attack target's <ct color=#FFFFFF>Cat's Gaze</ct> is triggered. Upon triggering, <ct color=#FFFFFF>Cat's Gaze</ct> is removed from all enemies on the field.",
+        "7": "When an enemy is Stunned, the number of attacks required to trigger <ct color=#FFFFFF>Cat's Gaze</ct> is significantly reduced."
+      },
+      {
+        "0": "Characters in the <ct color=#FFFFFF>Angelic Chord-ination</ct> state gain increased ATK, equal to <ct color=#FFFFFF>30%</ct> of Sunna's initial ATK, up to a maximum of <ct color=#2BAD00>615</ct> ATK. When Sunna's initial ATK reaches 2,050, the ATK bonus granted to all squad members reaches its maximum.",
+        "1": "When attacks from Basic Attack: Naughty Cat Spotted, EX Special Attack: Bubblegum Barrage, EX Special Attack: Special Photography Technique, Chain Attack: Don't Mess With the Cat, or Ultimate: Smash It All! hit an enemy, apply <ct color=#FFFFFF>Cat's Gaze</ct> to the target for 12s. While Sunna is the currently active character, the duration of <ct color=#FFFFFF>Cat's Gaze</ct> is continuously refreshed. Some normal enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct> show reduced aggression toward Sunna.",
+        "2": "When <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Anomaly</ct> characters in the squad continuously land attacks on enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct>, <ct color=#FFFFFF>Cat's Gaze</ct> is triggered and removed:",
+        "3": "When triggered by an <ct color=#FFFFFF>Attack</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>175%</ct> of ATK to enemies in an area.",
+        "4": "When triggered by an <ct color=#FFFFFF>Anomaly</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>280%</ct> of ATK to enemies in an area. This DMG is guaranteed to CRIT, and the CRIT DMG is increased by <ct color=#2BAD00>90%</ct>.",
+        "5": "DMG dealt by <ct color=#FFFFFF>Cat's Gaze</ct> is treated as DMG dealt by the triggering Agent.",
+        "6": "When multiple enemies on the field have <ct color=#FFFFFF>Cat's Gaze</ct>, only the primary attack target's <ct color=#FFFFFF>Cat's Gaze</ct> is triggered. Upon triggering, <ct color=#FFFFFF>Cat's Gaze</ct> is removed from all enemies on the field.",
+        "7": "When an enemy is Stunned, the number of attacks required to trigger <ct color=#FFFFFF>Cat's Gaze</ct> is significantly reduced."
+      },
+      {
+        "0": "Characters in the <ct color=#FFFFFF>Angelic Chord-ination</ct> state gain increased ATK, equal to <ct color=#FFFFFF>30%</ct> of Sunna's initial ATK, up to a maximum of <ct color=#2BAD00>705</ct> ATK. When Sunna's initial ATK reaches 2,350, the ATK bonus granted to all squad members reaches its maximum.",
+        "1": "When attacks from Basic Attack: Naughty Cat Spotted, EX Special Attack: Bubblegum Barrage, EX Special Attack: Special Photography Technique, Chain Attack: Don't Mess With the Cat, or Ultimate: Smash It All! hit an enemy, apply <ct color=#FFFFFF>Cat's Gaze</ct> to the target for 12s. While Sunna is the currently active character, the duration of <ct color=#FFFFFF>Cat's Gaze</ct> is continuously refreshed. Some normal enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct> show reduced aggression toward Sunna.",
+        "2": "When <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Anomaly</ct> characters in the squad continuously land attacks on enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct>, <ct color=#FFFFFF>Cat's Gaze</ct> is triggered and removed:",
+        "3": "When triggered by an <ct color=#FFFFFF>Attack</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>200%</ct> of ATK to enemies in an area.",
+        "4": "When triggered by an <ct color=#FFFFFF>Anomaly</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>320%</ct> of ATK to enemies in an area. This DMG is guaranteed to CRIT, and the CRIT DMG is increased by <ct color=#2BAD00>100%</ct>.",
+        "5": "DMG dealt by <ct color=#FFFFFF>Cat's Gaze</ct> is treated as DMG dealt by the triggering Agent.",
+        "6": "When multiple enemies on the field have <ct color=#FFFFFF>Cat's Gaze</ct>, only the primary attack target's <ct color=#FFFFFF>Cat's Gaze</ct> is triggered. Upon triggering, <ct color=#FFFFFF>Cat's Gaze</ct> is removed from all enemies on the field.",
+        "7": "When an enemy is Stunned, the number of attacks required to trigger <ct color=#FFFFFF>Cat's Gaze</ct> is significantly reduced."
+      },
+      {
+        "0": "Characters in the <ct color=#FFFFFF>Angelic Chord-ination</ct> state gain increased ATK, equal to <ct color=#FFFFFF>30%</ct> of Sunna's initial ATK, up to a maximum of <ct color=#2BAD00>795</ct> ATK. When Sunna's initial ATK reaches 2,650, the ATK bonus granted to all squad members reaches its maximum.",
+        "1": "When attacks from Basic Attack: Naughty Cat Spotted, EX Special Attack: Bubblegum Barrage, EX Special Attack: Special Photography Technique, Chain Attack: Don't Mess With the Cat, or Ultimate: Smash It All! hit an enemy, apply <ct color=#FFFFFF>Cat's Gaze</ct> to the target for 12s. While Sunna is the currently active character, the duration of <ct color=#FFFFFF>Cat's Gaze</ct> is continuously refreshed. Some normal enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct> show reduced aggression toward Sunna.",
+        "2": "When <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Anomaly</ct> characters in the squad continuously land attacks on enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct>, <ct color=#FFFFFF>Cat's Gaze</ct> is triggered and removed:",
+        "3": "When triggered by an <ct color=#FFFFFF>Attack</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>225%</ct> of ATK to enemies in an area.",
+        "4": "When triggered by an <ct color=#FFFFFF>Anomaly</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>360%</ct> of ATK to enemies in an area. This DMG is guaranteed to CRIT, and the CRIT DMG is increased by <ct color=#2BAD00>120%</ct>.",
+        "5": "DMG dealt by <ct color=#FFFFFF>Cat's Gaze</ct> is treated as DMG dealt by the triggering Agent.",
+        "6": "When multiple enemies on the field have <ct color=#FFFFFF>Cat's Gaze</ct>, only the primary attack target's <ct color=#FFFFFF>Cat's Gaze</ct> is triggered. Upon triggering, <ct color=#FFFFFF>Cat's Gaze</ct> is removed from all enemies on the field.",
+        "7": "When an enemy is Stunned, the number of attacks required to trigger <ct color=#FFFFFF>Cat's Gaze</ct> is significantly reduced."
+      },
+      {
+        "0": "Characters in the <ct color=#FFFFFF>Angelic Chord-ination</ct> state gain increased ATK, equal to <ct color=#FFFFFF>30%</ct> of Sunna's initial ATK, up to a maximum of <ct color=#2BAD00>885</ct> ATK. When Sunna's initial ATK reaches 2,950, the ATK bonus granted to all squad members reaches its maximum.",
+        "1": "When attacks from Basic Attack: Naughty Cat Spotted, EX Special Attack: Bubblegum Barrage, EX Special Attack: Special Photography Technique, Chain Attack: Don't Mess With the Cat, or Ultimate: Smash It All! hit an enemy, apply <ct color=#FFFFFF>Cat's Gaze</ct> to the target for 12s. While Sunna is the currently active character, the duration of <ct color=#FFFFFF>Cat's Gaze</ct> is continuously refreshed. Some normal enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct> show reduced aggression toward Sunna.",
+        "2": "When <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Anomaly</ct> characters in the squad continuously land attacks on enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct>, <ct color=#FFFFFF>Cat's Gaze</ct> is triggered and removed:",
+        "3": "When triggered by an <ct color=#FFFFFF>Attack</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>250%</ct> of ATK to enemies in an area.",
+        "4": "When triggered by an <ct color=#FFFFFF>Anomaly</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>400%</ct> of ATK to enemies in an area. This DMG is guaranteed to CRIT, and the CRIT DMG is increased by <ct color=#2BAD00>130%</ct>.",
+        "5": "DMG dealt by <ct color=#FFFFFF>Cat's Gaze</ct> is treated as DMG dealt by the triggering Agent.",
+        "6": "When multiple enemies on the field have <ct color=#FFFFFF>Cat's Gaze</ct>, only the primary attack target's <ct color=#FFFFFF>Cat's Gaze</ct> is triggered. Upon triggering, <ct color=#FFFFFF>Cat's Gaze</ct> is removed from all enemies on the field.",
+        "7": "When an enemy is Stunned, the number of attacks required to trigger <ct color=#FFFFFF>Cat's Gaze</ct> is significantly reduced."
+      },
+      {
+        "0": "Characters in the <ct color=#FFFFFF>Angelic Chord-ination</ct> state gain increased ATK, equal to <ct color=#FFFFFF>30%</ct> of Sunna's initial ATK, up to a maximum of <ct color=#2BAD00>975</ct> ATK. When Sunna's initial ATK reaches 3,250, the ATK bonus granted to all squad members reaches its maximum.",
+        "1": "When attacks from Basic Attack: Naughty Cat Spotted, EX Special Attack: Bubblegum Barrage, EX Special Attack: Special Photography Technique, Chain Attack: Don't Mess With the Cat, or Ultimate: Smash It All! hit an enemy, apply <ct color=#FFFFFF>Cat's Gaze</ct> to the target for 12s. While Sunna is the currently active character, the duration of <ct color=#FFFFFF>Cat's Gaze</ct> is continuously refreshed. Some normal enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct> show reduced aggression toward Sunna.",
+        "2": "When <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Anomaly</ct> characters in the squad continuously land attacks on enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct>, <ct color=#FFFFFF>Cat's Gaze</ct> is triggered and removed:",
+        "3": "When triggered by an <ct color=#FFFFFF>Attack</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>275%</ct> of ATK to enemies in an area.",
+        "4": "When triggered by an <ct color=#FFFFFF>Anomaly</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>440%</ct> of ATK to enemies in an area. This DMG is guaranteed to CRIT, and the CRIT DMG is increased by <ct color=#2BAD00>140%</ct>.",
+        "5": "DMG dealt by <ct color=#FFFFFF>Cat's Gaze</ct> is treated as DMG dealt by the triggering Agent.",
+        "6": "When multiple enemies on the field have <ct color=#FFFFFF>Cat's Gaze</ct>, only the primary attack target's <ct color=#FFFFFF>Cat's Gaze</ct> is triggered. Upon triggering, <ct color=#FFFFFF>Cat's Gaze</ct> is removed from all enemies on the field.",
+        "7": "When an enemy is Stunned, the number of attacks required to trigger <ct color=#FFFFFF>Cat's Gaze</ct> is significantly reduced."
+      },
+      {
+        "0": "Characters in the <ct color=#FFFFFF>Angelic Chord-ination</ct> state gain increased ATK, equal to <ct color=#FFFFFF>30%</ct> of Sunna's initial ATK, up to a maximum of <ct color=#2BAD00>1,050</ct> ATK. When Sunna's initial ATK reaches 3,500, the ATK bonus granted to all squad members reaches its maximum.",
+        "1": "When attacks from Basic Attack: Naughty Cat Spotted, EX Special Attack: Bubblegum Barrage, EX Special Attack: Special Photography Technique, Chain Attack: Don't Mess With the Cat, or Ultimate: Smash It All! hit an enemy, apply <ct color=#FFFFFF>Cat's Gaze</ct> to the target for 12s. While Sunna is the currently active character, the duration of <ct color=#FFFFFF>Cat's Gaze</ct> is continuously refreshed. Some normal enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct> show reduced aggression toward Sunna.",
+        "2": "When <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Anomaly</ct> characters in the squad continuously land attacks on enemies affected by <ct color=#FFFFFF>Cat's Gaze</ct>, <ct color=#FFFFFF>Cat's Gaze</ct> is triggered and removed:",
+        "3": "When triggered by an <ct color=#FFFFFF>Attack</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>300%</ct> of ATK to enemies in an area.",
+        "4": "When triggered by an <ct color=#FFFFFF>Anomaly</ct> character, deals the Agent's Attribute DMG equal to <ct color=#2BAD00>480%</ct> of ATK to enemies in an area. This DMG is guaranteed to CRIT, and the CRIT DMG is increased by <ct color=#2BAD00>150%</ct>.",
+        "5": "DMG dealt by <ct color=#FFFFFF>Cat's Gaze</ct> is treated as DMG dealt by the triggering Agent.",
+        "6": "When multiple enemies on the field have <ct color=#FFFFFF>Cat's Gaze</ct>, only the primary attack target's <ct color=#FFFFFF>Cat's Gaze</ct> is triggered. Upon triggering, <ct color=#FFFFFF>Cat's Gaze</ct> is removed from all enemies on the field.",
+        "7": "When an enemy is Stunned, the number of attacks required to trigger <ct color=#FFFFFF>Cat's Gaze</ct> is significantly reduced."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Daydreamer's Counterpoint",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct> character or shares the same Faction:",
+      "1": "When characters inside <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct> land attacks on enemies, the target's Stun DMG Multiplier increases by 30% for 40s.",
+      "2": "When Sunna enters the battlefield, she gains 15 Energy. In Investigation Zone mode, the effect can trigger once every 180s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "\"Loneliness Corruption Symptoms\"",
+      "desc": "When Sunna enters the battlefield, she gains 15 Energy. In Investigation Zone Mode, this effect can trigger once every 180s. When <ct color=#FFFFFF>Cat's Gaze</ct> triggers and damages an enemy, the target's DEF is reduced by 7% for 40s, stacking up to 3 times. The duration of each stack is calculated separately.",
+      "flavor": {
+        "0": "It didn't matter if no one understood her. As long as she had music, that was enough. It didn't matter if no one ever talked to her first, either. She'd never expected them to anyway...",
+        "1": "Being surrounded by people made her so nervous that she fled the world, using delusions to fill the empty space it left behind. She was the master of her own tiny realm, setting up \"keep out\" warnings at the edges, then painting everything bright with music.",
+        "2": "\"I'm not like them. I—I'm a lonely genius!\"",
+        "3": "She puffed out her cheeks and quietly wiped away the lonely tear that slipped from the corner of her eye."
+      }
+    },
+    "2": {
+      "name": "\"Feline Go-With-the-Flow\"",
+      "desc": {
+        "0": "While Sunna is within any <ct color=#FFFFFF>Ether Veil</ct>, all squad members gain 10% ATK and she obtains 1 <ct color=#FFFFFF>Claw Sharpener</ct> every 10s. The number of attacks required to trigger <ct color=#FFFFFF>Cat's Gaze</ct> is reduced, and the DMG Multiplier on trigger is increased:",
+        "1": "When triggered by an <ct color=#FFFFFF>Attack</ct> character, the DMG Multiplier is increased by 200%.",
+        "2": "When triggered by an <ct color=#FFFFFF>Anomaly</ct> character, the DMG Multiplier is increased by 300%."
+      },
+      "flavor": {
+        "0": "\"That kid's an odd one, always humming strange songs alone in the corner...\"",
+        "1": "Having heard such remarks all her life, she stopped hoping for any other kind of judgment.",
+        "2": "Then, one warm and gentle afternoon, a dark-haired girl stretched her hand out like an angel.",
+        "3": "Ah... so she had always been seeking this sense of being understood. Always... waiting for someone she could call a friend.",
+        "4": "Even having grown accustomed to loneliness from endless practice, humans are still, in the end, social animals. That person lifted her out of damp, clinging solitude, and from then on, she had a shelter made of feathers."
+      }
+    },
+    "3": {
+      "name": "\"Transformation Apple\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "She has never before received praise from so many strangers.",
+        "1": "\"Those gentle songs gave me strength.\"",
+        "2": "\"Finding music I could resonate with at my saddest moment was so moving...\"",
+        "3": "\"This style of music is so cute!!\"",
+        "4": "The girl stares nervously at the screen. The small red dot marking new messages quivers along with her heartbeat, as she opens the same window over and over again—",
+        "5": "Just a little more... just a few more people seeing my music... a few more people seeing me, someone who's good for nothing but writing music...",
+        "6": "All I want is for a few more people to take power from this."
+      }
+    },
+    "4": {
+      "name": "\"Delusion Investigation Team\"",
+      "desc": "When Sunna uses her <ct color=#FFFFFF>Ultimate</ct>, all squad members deal <ct color=#FFFFFF>18%</ct> increased DMG for 60s.",
+      "flavor": {
+        "0": "From being dragged out the door by Nangong to signing her name on that contract... to the girl, the entire day passed as swiftly as a flash of summer lightning cutting through a rainy night.",
+        "1": "Like a dream, like playing house... in the end, it all belonged to the realm of \"delusion.\"",
+        "2": "The moment they walked out, they were no longer three separate individuals, but a group: the Angels of Delusion. And the moment she walked out, she stopped being only Sunna, the songwriter working behind the scenes, and became an idol standing before her fans, expressing herself onstage.",
+        "3": "—This overwhelming delusion descending upon her was the most incredible gift she had ever known."
+      }
+    },
+    "5": {
+      "name": "\"Galaxy Tramway\"",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The stars were strung across the night like gas lamps lit at dusk.",
+        "1": "She imagined that somewhere in the vast galaxy, someone was driving a clattering electric tram, setting off from pale morning light and heading straight toward infinity.",
+        "2": "The passengers were all adorable little creatures like cats, dogs, and bunnies, and the conductor was fluent in the languages of deep-sea fish and owls.",
+        "3": "Leaving behind the rush of everyday life, stepping away from mundane routines—",
+        "4": "\"If I could borrow the wings of the Angels of Delusion, maybe I could bring everyone into a world of music like this!\"",
+        "5": "Surrounded by the sugary aroma of a scented candle, she stretched with a soft yawn, then wrote this romantic dream onto the sheet music."
+      }
+    },
+    "6": {
+      "name": "\"Hollow Big Bang\"",
+      "desc": {
+        "0": "When Sunna uses an <ct color=#FFFFFF>EX Special Attack</ct>, she enters the <ct color=#FFFFFF>Focused Creation!</ct> state for 8s.",
+        "1": "While in the <ct color=#FFFFFF>Focused Creation!</ct> state, all attacks Sunna performs are guaranteed to CRIT, and her CRIT DMG increases by 0.03% of her initial ATK, up to a maximum of 105%.",
+        "2": "While in the <ct color=#FFFFFF>Focused Creation!</ct> state, Sunna's Anti-Interrupt Level is increased, and DMG taken is reduced by 40%.",
+        "3": "While in the <ct color=#FFFFFF>Focused Creation!</ct> state, Sunna can trigger <ct color=#FFFFFF>Cat's Gaze</ct>, its DMG being calculated using <ct color=#FFFFFF>Attack</ct> Agent rules. If <ct color=#FFFFFF>Cat's Gaze</ct> is triggered while Sunna has a <ct color=#FFFFFF>Claw Sharpener</ct>, the <ct color=#FFFFFF>Claw Sharpener</ct> is immediately consumed, and <ct color=#FFFFFF>Cat's Gaze</ct> is reapplied to the enemy.",
+        "4": "While in the <ct color=#FFFFFF>Focused Creation!</ct> state, DMG dealt when any squad member triggers <ct color=#FFFFFF>Cat's Gaze</ct> increases by <ct color=#FFFFFF>50%</ct>."
+      },
+      "flavor": {
+        "0": "\"Why did you choose to step onto the stage?\"",
+        "1": "Was it for the fans? For the glory under the spotlight? Or for that version of yourself who stayed in the corner, watching others play, too afraid to step forward?",
+        "2": "Maybe it was all of those. Or maybe it was none of them.",
+        "3": "All the girl knew was that the moment she gripped the microphone, her heartbeat would slow, and the world around her would fall quiet... until the drums kicked in, and the music rippled across the stage. In that split second, music's gentle light illuminated the time they all shared together.",
+        "4": "It felt as if they were angels, with wings capable of carrying everyone away from \"the here and now.\""
+      }
+    }
+  },
+  "potential": {}
+}

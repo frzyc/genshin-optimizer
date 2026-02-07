@@ -89,10 +89,11 @@
         "0": "While there are <ct color=#FFFFFF>X-Marked</ct> enemies on the field, Harumasa will enter the <ct color=#FFFFFF>Awakened</ct> state, switching <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru</ct> for <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>.",
         "1": "",
         "2": "While in the <ct color=#FFFFFF>Awakened</ct> state, press <IconNormal /> during a dodge to activate:",
-        "3": "Rush forwards to the closest <ct color=#FFFFFF>X-Marked</ct> enemy and execute a powerful slash, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "3": "Rush forward to the closest <ct color=#FFFFFF>X-Marked</ct> enemy and execute a powerful slash, dealing <ct color=#2EB6FF>Electric DMG</ct>. Hitting a Stunned enemy triggers Chasing Thunder, dealing 1 instance of additional <ct color=#2EB6FF>Electric DMG</ct>.",
         "4": "When the slash hits the target, it consumes 2 stacks of <ct color=#FFFFFF>Electro Prison</ct>. With less than 2 stacks of <ct color=#FFFFFF>Electro Prison</ct>, <ct color=#FFFFFF>X-Marked</ct> will be removed from the enemy. Before <ct color=#FFFFFF>X-Marked</ct> is removed, repeatedly press <IconNormal /> to repeatedly use <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>. While no <ct color=#FFFFFF>X-Marked</ct> enemies exist on the field, Harumasa leaves the <ct color=#FFFFFF>Awakened</ct> state.",
         "5": "While in the <ct color=#FFFFFF>Awakened</ct> state, press <IconNormal /> after <ct color=#FFFFFF>Basic Attack: Falling Feather</ct> to quickly follow up with <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>.",
-        "6": "During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%."
+        "6": "Enemy attacks can be blocked during the 1st hit of the skill. The pursuit effect of the second and third hits is increased.",
+        "7": "During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%."
       },
       "params": [
         "1st-Hit ",
@@ -125,6 +126,20 @@
         " ",
         "Energy Cost "
       ]
+    },
+    "EXSpecialAttackNowhereToRunPatrol": {
+      "name": "EX Special Attack: Nowhere to Run - Patrol",
+      "desc": {
+        "0": "With enough energy, press <IconSpecialReady /> after using the 4th/5th attack of <ct color=#FFFFFF>Basic Attack: Cloud Piercer</ct>, <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, an <ct color=#FFFFFF>Ultimate</ct>, <ct color=#FFFFFF>Dodge Counter: Hidden Edge</ct>, or <ct color=#FFFFFF>Quick Assist: Braced Bow</ct> to activate:",
+        "1": "Fire enhanced arrows forward in rapid succession, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "When the first enhanced arrow hits an enemy or the ground, 6 <ct color=#FFFFFF>Electro Quivers</ct> are generated. When the final enhanced arrow hits an enemy, it activates the <ct color=#FFFFFF>Electro Quivers</ct> on the field, firing <ct color=#FFFFFF>Ha-Oto no Ya</ct> at the target, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "3": "When the target's <ct color=#FFFFFF>Electro Prison</ct> stacks are close to the maximum, fewer <ct color=#FFFFFF>Electro Quivers</ct> will be activated.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
     }
   },
   "chain": {
@@ -145,6 +160,17 @@
       "desc": {
         "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
         "1": "Unleash a piercing attack on enemies in a large area ahead, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "ZanshinScatteredBlossoms": {
+      "name": "Zanshin - Scattered Blossoms",
+      "desc": {
+        "0": "Activates ALT automatically after Ultimate: Zanshin:",
+        "1": "Unleashes a wide-area piercing attack against enemies in front, dealing <ct color=#2EB6FF>Electric DMG</ct>. This is considered Ultimate DMG.",
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
@@ -192,13 +218,13 @@
   "core": {
     "name": "Core Passive: Day Break",
     "desc": [
-      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>10.6%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>6%</ct>.",
-      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>13%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>7%</ct>.",
-      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>15.4%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>8%</ct>.",
-      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>17.8%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>9%</ct>.",
-      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>20.2%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>10%</ct>.",
-      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>22.6%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>11%</ct>.",
-      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> increases by <ct color=#2BAD00>25%</ct>, and when Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> triggers a critical hit against an enemy, he gains 1 stack of <ct color=#FFFFFF>Gleaming Edge</ct>, for up to a maximum of 3 stacks per use of the skill and stacking up to 6 times, lasting 5s, repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct> by <ct color=#2BAD00>12%</ct>."
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate increase by <ct color=#2BAD00>10.6%</ct>. When Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>/<ct color=#FFFFFF>Ultimate</ct> triggers a critical hit against an enemy, he gains 1/6 stacks of <ct color=#FFFFFF>Gleaming Edge</ct>. Dash Attack: Hiten no Tsuru - Slash can grant a maximum of 3 stacks per activation, and <ct color=#FFFFFF>Gleaming Edge</ct> can stack up to 6 times, lasting 5s. Repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate by <ct color=#2BAD00>6%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate increase by <ct color=#2BAD00>13%</ct>. When Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>/<ct color=#FFFFFF>Ultimate</ct> triggers a critical hit against an enemy, he gains 1/6 stacks of <ct color=#FFFFFF>Gleaming Edge</ct>. Dash Attack: Hiten no Tsuru - Slash can grant a maximum of 3 stacks per activation, and <ct color=#FFFFFF>Gleaming Edge</ct> can stack up to 6 times, lasting 5s. Repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate by <ct color=#2BAD00>7%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate increase by <ct color=#2BAD00>15.4%</ct>. When Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>/<ct color=#FFFFFF>Ultimate</ct> triggers a critical hit against an enemy, he gains 1/6 stacks of <ct color=#FFFFFF>Gleaming Edge</ct>. Dash Attack: Hiten no Tsuru - Slash can grant a maximum of 3 stacks per activation, and <ct color=#FFFFFF>Gleaming Edge</ct> can stack up to 6 times, lasting 5s. Repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate by <ct color=#2BAD00>8%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate increase by <ct color=#2BAD00>17.8%</ct>. When Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>/<ct color=#FFFFFF>Ultimate</ct> triggers a critical hit against an enemy, he gains 1/6 stacks of <ct color=#FFFFFF>Gleaming Edge</ct>. Dash Attack: Hiten no Tsuru - Slash can grant a maximum of 3 stacks per activation, and <ct color=#FFFFFF>Gleaming Edge</ct> can stack up to 6 times, lasting 5s. Repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate by <ct color=#2BAD00>9%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate increase by <ct color=#2BAD00>20.2%</ct>. When Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>/<ct color=#FFFFFF>Ultimate</ct> triggers a critical hit against an enemy, he gains 1/6 stacks of <ct color=#FFFFFF>Gleaming Edge</ct>. Dash Attack: Hiten no Tsuru - Slash can grant a maximum of 3 stacks per activation, and <ct color=#FFFFFF>Gleaming Edge</ct> can stack up to 6 times, lasting 5s. Repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate by <ct color=#2BAD00>10%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate increase by <ct color=#2BAD00>22.6%</ct>. When Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>/<ct color=#FFFFFF>Ultimate</ct> triggers a critical hit against an enemy, he gains 1/6 stacks of <ct color=#FFFFFF>Gleaming Edge</ct>. Dash Attack: Hiten no Tsuru - Slash can grant a maximum of 3 stacks per activation, and <ct color=#FFFFFF>Gleaming Edge</ct> can stack up to 6 times, lasting 5s. Repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate by <ct color=#2BAD00>11%</ct>.",
+      "The CRIT Rate of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate increase by <ct color=#2BAD00>25%</ct>. When Harumasa's <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>/<ct color=#FFFFFF>Ultimate</ct> triggers a critical hit against an enemy, he gains 1/6 stacks of <ct color=#FFFFFF>Gleaming Edge</ct>. Dash Attack: Hiten no Tsuru - Slash can grant a maximum of 3 stacks per activation, and <ct color=#FFFFFF>Gleaming Edge</ct> can stack up to 6 times, lasting 5s. Repeated triggers reset the duration. Each stack of <ct color=#FFFFFF>Gleaming Edge</ct> increases the CRIT DMG of <ct color=#FFFFFF>Dash Attack: Hiten no Tsuru - Slash</ct>, Chasing Thunder, and Ultimate by <ct color=#2BAD00>12%</ct>."
     ]
   },
   "ability": {
@@ -261,5 +287,30 @@
       }
     }
   },
-  "potential": {}
+  "potential": {
+    "name": "Potential Awakening: Focus",
+    "desc": [
+      "",
+      {
+        "0": "When activating an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, increases ATK by <ct color=#2BAD00>4%</ct>. Dash Attack: Hiten no Tsuru - Slash and Chasing Thunder ignore <ct color=#2BAD00>5%</ct> of the target's <ct color=#2EB6FF>Electric RES</ct> for 12s. Repeated triggers reset the duration.",
+        "1": "Extends the duration of Core Passive's Gleaming Edge to 10s."
+      },
+      {
+        "0": "When activating an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, increases ATK by <ct color=#2BAD00>6%</ct>. Dash Attack: Hiten no Tsuru - Slash and Chasing Thunder ignore <ct color=#2BAD00>7.5%</ct> of the target's <ct color=#2EB6FF>Electric RES</ct> for 12s. Repeated triggers reset the duration.",
+        "1": "Extends the duration of Core Passive's Gleaming Edge to 10s."
+      },
+      {
+        "0": "When activating an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, increases ATK by <ct color=#2BAD00>8%</ct>. Dash Attack: Hiten no Tsuru - Slash and Chasing Thunder ignore <ct color=#2BAD00>10%</ct> of the target's <ct color=#2EB6FF>Electric RES</ct> for 12s. Repeated triggers reset the duration.",
+        "1": "Extends the duration of Core Passive's Gleaming Edge to 10s."
+      },
+      {
+        "0": "When activating an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, increases ATK by <ct color=#2BAD00>10%</ct>. Dash Attack: Hiten no Tsuru - Slash and Chasing Thunder ignore <ct color=#2BAD00>12.5%</ct> of the target's <ct color=#2EB6FF>Electric RES</ct> for 12s. Repeated triggers reset the duration.",
+        "1": "Extends the duration of Core Passive's Gleaming Edge to 10s."
+      },
+      {
+        "0": "When activating an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, increases ATK by <ct color=#2BAD00>12%</ct>. Dash Attack: Hiten no Tsuru - Slash and Chasing Thunder ignore <ct color=#2BAD00>15%</ct> of the target's <ct color=#2EB6FF>Electric RES</ct> for 12s. Repeated triggers reset the duration.",
+        "1": "Extends the duration of Core Passive's Gleaming Edge to 10s."
+      }
+    ]
+  }
 }

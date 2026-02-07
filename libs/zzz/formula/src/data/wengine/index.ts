@@ -1,5 +1,6 @@
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
+import AngelInTheShell from './sheets/AngelInTheShell'
 import BashfulDemon from './sheets/BashfulDemon'
 import BellicoseBlaze from './sheets/BellicoseBlaze'
 import BigCylinder from './sheets/BigCylinder'
@@ -70,6 +71,7 @@ import StreetSuperstar from './sheets/StreetSuperstar'
 import TheBrimstone from './sheets/TheBrimstone'
 import TheRestrained from './sheets/TheRestrained'
 import TheVault from './sheets/TheVault'
+import Thoughtbop from './sheets/Thoughtbop'
 import Timeweaver from './sheets/Timeweaver'
 import TremorTrigramVessel from './sheets/TremorTrigramVessel'
 import TusksOfFury from './sheets/TusksOfFury'
@@ -84,6 +86,7 @@ import YesterdayCalls from './sheets/YesterdayCalls'
 import ZanshinHerbCase from './sheets/ZanshinHerbCase'
 
 const data: TagMapNodeEntries[] = [
+  AngelInTheShell,
   BashfulDemon,
   BellicoseBlaze,
   BigCylinder,
@@ -154,6 +157,7 @@ const data: TagMapNodeEntries[] = [
   TheBrimstone,
   TheRestrained,
   TheVault,
+  Thoughtbop,
   Timeweaver,
   TremorTrigramVessel,
   TusksOfFury,

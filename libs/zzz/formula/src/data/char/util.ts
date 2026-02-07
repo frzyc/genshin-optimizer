@@ -401,7 +401,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ),
     // Core skill stat boost
     ...Object.entries(coreStats).map(([stat, values]) =>
-      stat === 'hp_'
+      stat === 'hp_' || stat === 'atk_'
         ? ownBuff.initial[stat].add(subscript(core, values))
         : ownBuff.base[stat].add(subscript(core, values))
     ),
