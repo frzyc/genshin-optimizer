@@ -266,6 +266,9 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
     if (key === 'AstraYao' && abilityName === 'Chord') return 'exSpecial'
     if (key === 'Banyue' && abilityName === 'DodgeImmovableMountain')
       return 'dodgeCounter'
+    if (key === 'Harumasa' && abilityName === 'ChasingThunder') return 'dash'
+    if (key === 'Harumasa' && abilityName === 'ZanshinScatteredBlossoms')
+      return 'ult'
     if (key === 'Lucy' && abilityName === 'GuardBoarsToArms') return 'basic'
     if (key === 'Lucy' && abilityName === 'GuardBoarsSpinningSwing')
       return 'basic'
@@ -401,7 +404,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ),
     // Core skill stat boost
     ...Object.entries(coreStats).map(([stat, values]) =>
-      stat === 'hp_'
+      stat === 'hp_' || stat === 'atk_'
         ? ownBuff.initial[stat].add(subscript(core, values))
         : ownBuff.base[stat].add(subscript(core, values))
     ),
