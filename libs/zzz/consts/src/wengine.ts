@@ -104,6 +104,7 @@ export const allWengineSubStatKeys = [
   'anomProf',
   'impact_',
   'enerRegen_',
+  'anomMas_',
 ] as const
 export type WengineSubStatKey = (typeof allWengineSubStatKeys)[number]
 
