@@ -2,27 +2,13 @@ import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { AngelInTheShell } from '@genshin-optimizer/zzz/formula'
-import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'AngelInTheShell'
-const [chg, _ch] = trans('wengine', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const dm = mappedStats.wengine[key]
+const [chg, ch] = trans('wengine', key)
 const icon = wengineAsset(key, 'icon')
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = AngelInTheShell.conditionals
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = AngelInTheShell.buffs
 
 const sheet: UISheetElement = {
@@ -36,6 +22,28 @@ const sheet: UISheetElement = {
           {(phase) => chg(`phaseDescs.${phase - 1}`)}
         </PhaseWrapper>
       ),
+    },
+    {
+      type: 'fields',
+      fields: [tagToTagField(buff.passive_anomProf.tag)],
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('onFieldOrSpecialUsed'),
+        metadata: cond.onFieldOrSpecialUsed,
+      },
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('enemyAnomaly'),
+        metadata: cond.enemyAnomaly,
+        fields: [
+          tagToTagField(buff.cond_common_dmg_.tag),
+          tagToTagField(buff.cond_anomaly_dmg_.tag),
+        ],
+      },
     },
   ],
 }

@@ -100,6 +100,13 @@
         "2nd-Hit ",
         "3rd-Hit "
       ]
+    },
+    "ChasingThunder": {
+      "name": "Chasing Thunder",
+      "desc": "",
+      "params": [
+        "Additional "
+      ]
     }
   },
   "special": {

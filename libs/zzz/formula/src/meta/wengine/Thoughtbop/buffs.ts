@@ -1,36 +1,36 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  cond_enerRegen: {
     sheet: 'Thoughtbop',
-    name: 'cond_dmg_',
+    name: 'cond_enerRegen',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'enerRegen',
+      sheet: 'Thoughtbop',
+      name: 'cond_enerRegen',
+    },
+  },
+  team_common_dmg_: {
+    sheet: 'Thoughtbop',
+    name: 'team_common_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
       q: 'common_dmg_',
       sheet: 'Thoughtbop',
-      name: 'cond_dmg_',
+      name: 'team_common_dmg_',
     },
   },
-  team_dmg_: {
+  team_atk_: {
     sheet: 'Thoughtbop',
-    name: 'team_dmg_',
+    name: 'team_atk_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'atk_',
       sheet: 'Thoughtbop',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'Thoughtbop',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'Thoughtbop',
-      name: 'enemy_defIgn_',
+      name: 'team_atk_',
     },
   },
 } as const

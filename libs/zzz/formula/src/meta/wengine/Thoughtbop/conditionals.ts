@@ -1,19 +1,9 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: {
+  offField: { sheet: 'Thoughtbop', name: 'offField', type: 'bool' },
+  physExSpecialUsed: {
     sheet: 'Thoughtbop',
-    name: 'boolConditional',
-    type: 'bool',
-  },
-  listConditional: {
-    sheet: 'Thoughtbop',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'Thoughtbop',
-    name: 'numConditional',
+    name: 'physExSpecialUsed',
     type: 'num',
     int_only: true,
     min: 0,

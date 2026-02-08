@@ -22,16 +22,21 @@ const dm = {
       data_gen.skillParams['dodge']['DodgeCounterHiddenEdge'],
     DashAttackHitenNoTsuruSlash:
       data_gen.skillParams['dodge']['DashAttackHitenNoTsuruSlash'],
+    ChasingThunder: data_gen.skillParams['dodge']['ChasingThunder'],
   },
   special: {
     SpecialAttackNowhereToHide:
       data_gen.skillParams['special']['SpecialAttackNowhereToHide'],
     EXSpecialAttackNowhereToRun:
       data_gen.skillParams['special']['EXSpecialAttackNowhereToRun'],
+    EXSpecialAttackNowhereToRunPatrol:
+      data_gen.skillParams['special']['EXSpecialAttackNowhereToRunPatrol'],
   },
   chain: {
     ChainAttackKaiHanare: data_gen.skillParams['chain']['ChainAttackKaiHanare'],
     UltimateZanshin: data_gen.skillParams['chain']['UltimateZanshin'],
+    ZanshinScatteredBlossoms:
+      data_gen.skillParams['chain']['ZanshinScatteredBlossoms'],
   },
   assist: {
     QuickAssistBracedBow:
@@ -43,11 +48,12 @@ const dm = {
   },
   core: {
     crit_: data_gen.coreParams[0],
-    stacks_gained: data_gen.coreParams[1][0],
-    stacks_per_skill: data_gen.coreParams[2][0],
-    max_stacks: data_gen.coreParams[3][0],
-    duration: data_gen.coreParams[4][0],
-    crit_dmg_: data_gen.coreParams[5],
+    stacks_gained_dash: data_gen.coreParams[1][0],
+    stacks_gained_ult: data_gen.coreParams[2][0],
+    stacks_per_skill: data_gen.coreParams[3][0],
+    max_stacks: data_gen.coreParams[4][0],
+    duration: data_gen.coreParams[5][0],
+    crit_dmg_: data_gen.coreParams[6],
   },
   ability: {
     common_dmg_: data_gen.abilityParams[0],
