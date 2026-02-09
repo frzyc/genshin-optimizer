@@ -13,6 +13,7 @@ import {
   tally,
   target,
   threshold,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -154,7 +155,7 @@ const [condA1AfterSkillBurstPath, condA1AfterSkillBurst] = cond(
   key,
   'a1AfterSkillBurst'
 )
-const a1AfterSkillBurst_geo_critRate_ = greaterEq(
+const a1AfterSkillBurst_geo_critRate_disp = greaterEq(
   input.asc,
   1,
   equal(
@@ -166,9 +167,15 @@ const a1AfterSkillBurst_geo_critRate_ = greaterEq(
       dm.constellation6.critRate_,
       dm.passive1.critRate_
     )
-  )
+  ),
+  { path: 'geo_critRate_', isTeamBuff: true }
 )
-const a1AfterSkillBurst_geo_critDMG_ = greaterEq(
+const a1AfterSkillBurst_geo_critRate_ = unequal(
+  target.charKey,
+  key,
+  a1AfterSkillBurst_geo_critRate_disp
+)
+const a1AfterSkillBurst_geo_critDMG_disp = greaterEq(
   input.asc,
   1,
   equal(
@@ -180,9 +187,15 @@ const a1AfterSkillBurst_geo_critDMG_ = greaterEq(
       dm.constellation6.critDMG_,
       dm.passive1.critDMG_
     )
-  )
+  ),
+  { path: 'geo_critDMG_', isTeamBuff: true }
 )
-const a1AfterSkillBurstGleam_eleMas = greaterEq(
+const a1AfterSkillBurst_geo_critDMG_ = unequal(
+  target.charKey,
+  key,
+  a1AfterSkillBurst_geo_critDMG_disp
+)
+const a1AfterSkillBurstGleam_eleMasDisp = greaterEq(
   input.asc,
   1,
   greaterEq(
@@ -198,7 +211,13 @@ const a1AfterSkillBurstGleam_eleMas = greaterEq(
         dm.passive1.gleamEleMas
       )
     )
-  )
+  ),
+  { path: 'eleMas', isTeamBuff: true }
+)
+const a1AfterSkillBurstGleam_eleMas = unequal(
+  target.charKey,
+  key,
+  a1AfterSkillBurstGleam_eleMasDisp
 )
 
 const hydroGeoCount = sum(tally.geo, tally.hydro)
@@ -478,13 +497,13 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: a1AfterSkillBurst_geo_critRate_,
+              node: a1AfterSkillBurst_geo_critRate_disp,
             },
             {
-              node: a1AfterSkillBurst_geo_critDMG_,
+              node: a1AfterSkillBurst_geo_critDMG_disp,
             },
             {
-              node: a1AfterSkillBurstGleam_eleMas,
+              node: a1AfterSkillBurstGleam_eleMasDisp,
             },
             {
               text: stg('duration'),
