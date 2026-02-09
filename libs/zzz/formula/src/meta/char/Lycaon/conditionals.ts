@@ -8,6 +8,14 @@ export const conditionals = {
     min: 0,
     max: 5,
   },
+  durationLeft: {
+    sheet: 'Lycaon',
+    name: 'durationLeft',
+    type: 'num',
+    int_only: true,
+    min: 0,
+    max: 8,
+  },
   exSpecial_assistFollowUp_hit: {
     sheet: 'Lycaon',
     name: 'exSpecial_assistFollowUp_hit',

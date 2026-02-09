@@ -348,6 +348,19 @@
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 254.76
         }
+      ],
+      "AssistFollowUpVengefulCounterattackGlacialWaltz": [
+        {
+          "DamagePercentage": 4.107,
+          "DamagePercentageGrowth": 0.374,
+          "StunRatio": 3.605,
+          "StunRatioGrowth": 0.164,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 12069.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 367.22
+        }
       ]
     }
   },
@@ -366,13 +379,20 @@
     "assist": {
       "QuickAssistWolfPack": [],
       "DefensiveAssistDisruptedHunt": [],
-      "AssistFollowUpVengefulCounterattack": []
+      "AssistFollowUpVengefulCounterattack": [],
+      "AssistFollowUpVengefulCounterattackGlacialWaltz": []
     }
   },
   "coreParams": [
     [0.4, 0.466, 0.533, 0.6, 0.666, 0.733, 0.8],
     [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25],
-    [30, 30, 30, 30, 30, 30, 30]
+    [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
+    [30, 30, 30, 30, 30, 30, 30],
+    [8, 8, 8, 8, 8, 8, 8],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06]
   ],
   "abilityParams": [0.35],
   "mindscapeParams": [
@@ -383,5 +403,5 @@
     [2],
     [0.1, 5, 12]
   ],
-  "potentialParams": []
+  "potentialParams": [[0, 0.05, 0.075, 0.1, 0.125, 0.15]]
 }

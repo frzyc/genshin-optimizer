@@ -1,4 +1,5 @@
 // This is a generated index file.
+import AngelInTheShell from './AngelInTheShell'
 import BashfulDemon from './BashfulDemon'
 import BellicoseBlaze from './BellicoseBlaze'
 import BigCylinder from './BigCylinder'
@@ -69,6 +70,7 @@ import StreetSuperstar from './StreetSuperstar'
 import TheBrimstone from './TheBrimstone'
 import TheRestrained from './TheRestrained'
 import TheVault from './TheVault'
+import Thoughtbop from './Thoughtbop'
 import Timeweaver from './Timeweaver'
 import TremorTrigramVessel from './TremorTrigramVessel'
 import TusksOfFury from './TusksOfFury'
@@ -83,6 +85,7 @@ import YesterdayCalls from './YesterdayCalls'
 import ZanshinHerbCase from './ZanshinHerbCase'
 
 const data = {
+  AngelInTheShell,
   BashfulDemon,
   BellicoseBlaze,
   BigCylinder,
@@ -153,6 +156,7 @@ const data = {
   TheBrimstone,
   TheRestrained,
   TheVault,
+  Thoughtbop,
   Timeweaver,
   TremorTrigramVessel,
   TusksOfFury,

@@ -2,6 +2,7 @@
 import Alice from './maps/Alice'
 import Anby from './maps/Anby'
 import Anton from './maps/Anton'
+import Aria from './maps/Aria'
 import AstraYao from './maps/AstraYao'
 import Banyue from './maps/Banyue'
 import Ben from './maps/Ben'
@@ -37,6 +38,7 @@ import Seth from './maps/Seth'
 import Soldier0Anby from './maps/Soldier0Anby'
 import Soldier11 from './maps/Soldier11'
 import Soukaku from './maps/Soukaku'
+import Sunna from './maps/Sunna'
 import Trigger from './maps/Trigger'
 import Vivian from './maps/Vivian'
 import Yanagi from './maps/Yanagi'
@@ -51,6 +53,7 @@ const maps = {
   Alice,
   Anby,
   Anton,
+  Aria,
   AstraYao,
   Banyue,
   Ben,
@@ -86,6 +89,7 @@ const maps = {
   Soldier0Anby,
   Soldier11,
   Soukaku,
+  Sunna,
   Trigger,
   Vivian,
   Yanagi,

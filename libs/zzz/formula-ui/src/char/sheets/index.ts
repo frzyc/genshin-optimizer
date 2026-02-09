@@ -4,6 +4,7 @@ import type { CharUISheet } from '../consts'
 import Alice from './Alice'
 import Anby from './Anby'
 import Anton from './Anton'
+import Aria from './Aria'
 import AstraYao from './AstraYao'
 import Banyue from './Banyue'
 import Ben from './Ben'
@@ -39,6 +40,7 @@ import Seth from './Seth'
 import Soldier0Anby from './Soldier0Anby'
 import Soldier11 from './Soldier11'
 import Soukaku from './Soukaku'
+import Sunna from './Sunna'
 import Trigger from './Trigger'
 import Vivian from './Vivian'
 import Yanagi from './Yanagi'
@@ -53,6 +55,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Alice,
   Anby,
   Anton,
+  Aria,
   AstraYao,
   Banyue,
   Ben,
@@ -88,6 +91,7 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
   Soldier0Anby,
   Soldier11,
   Soukaku,
+  Sunna,
   Trigger,
   Vivian,
   Yanagi,

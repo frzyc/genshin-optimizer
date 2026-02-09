@@ -34,6 +34,7 @@ function getSkillStrings(data: CharacterData['skills']) {
     'DashAttackTigerSevenFormsMountainKingsGameMomentum',
     'BasicAttackFallingPetalsDownfallFirstForm',
     'BasicAttackFallingPetalsDownfallSecondForm',
+    'ChasingThunder',
   ])
   return Object.fromEntries(
     Object.entries(data).map(([key, skill]) => [

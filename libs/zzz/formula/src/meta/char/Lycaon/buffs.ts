@@ -1,14 +1,51 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  core_dazeInc_: {
+  core_basic_dazeInc_: {
     sheet: 'Lycaon',
-    name: 'core_dazeInc_',
+    name: 'core_basic_dazeInc_',
     tag: {
       et: 'display',
       qt: 'combat',
       q: 'dazeInc_',
       sheet: 'Lycaon',
-      name: 'core_dazeInc_',
+      damageType1: 'basic',
+      name: 'core_basic_dazeInc_',
+    },
+  },
+  core_dodgeCounter_dazeInc_: {
+    sheet: 'Lycaon',
+    name: 'core_dodgeCounter_dazeInc_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dazeInc_',
+      sheet: 'Lycaon',
+      damageType1: 'dodgeCounter',
+      name: 'core_dodgeCounter_dazeInc_',
+    },
+  },
+  core_dash_dazeInc_: {
+    sheet: 'Lycaon',
+    name: 'core_dash_dazeInc_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dazeInc_',
+      sheet: 'Lycaon',
+      damageType1: 'dash',
+      name: 'core_dash_dazeInc_',
+    },
+  },
+  core_assistFollowUp_dazeInc_: {
+    sheet: 'Lycaon',
+    name: 'core_assistFollowUp_dazeInc_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dazeInc_',
+      sheet: 'Lycaon',
+      damageType1: 'assistFollowUp',
+      name: 'core_assistFollowUp_dazeInc_',
     },
   },
   core_ice_resRed_: {
@@ -21,6 +58,54 @@ export const buffs = {
       sheet: 'Lycaon',
       attribute: 'ice',
       name: 'core_ice_resRed_',
+    },
+  },
+  core_ether_resRed_: {
+    sheet: 'Lycaon',
+    name: 'core_ether_resRed_',
+    tag: {
+      et: 'display',
+      qt: 'common',
+      q: 'resRed_',
+      sheet: 'Lycaon',
+      attribute: 'ether',
+      name: 'core_ether_resRed_',
+    },
+  },
+  core_electric_resRed_: {
+    sheet: 'Lycaon',
+    name: 'core_electric_resRed_',
+    tag: {
+      et: 'display',
+      qt: 'common',
+      q: 'resRed_',
+      sheet: 'Lycaon',
+      attribute: 'electric',
+      name: 'core_electric_resRed_',
+    },
+  },
+  core_fire_resRed_: {
+    sheet: 'Lycaon',
+    name: 'core_fire_resRed_',
+    tag: {
+      et: 'display',
+      qt: 'common',
+      q: 'resRed_',
+      sheet: 'Lycaon',
+      attribute: 'fire',
+      name: 'core_fire_resRed_',
+    },
+  },
+  core_physical_resRed_: {
+    sheet: 'Lycaon',
+    name: 'core_physical_resRed_',
+    tag: {
+      et: 'display',
+      qt: 'common',
+      q: 'resRed_',
+      sheet: 'Lycaon',
+      attribute: 'physical',
+      name: 'core_physical_resRed_',
     },
   },
   ability_stun_: {

@@ -11,6 +11,7 @@
   "shield": "Shield",
   "heal": "Healing",
   "enterCombatOrSwitchIn": "Entering combat or switching in",
+  "offField": "Character is off-field",
   "uponLaunch": {
     "1": "Upon launching <strong>{{val1}}</strong>",
     "2": "Upon launching <strong>{{val1}}</strong> or <strong>{{val2}}</strong>",
@@ -26,7 +27,6 @@
   },
   "skills": {
     "basic": "Basic Attack",
-    "assistFollowUp": "Assist Follow-Up",
     "special": "Special Attack",
     "exSpecial": "EX Special Attack",
     "chain": "Chain Attack",

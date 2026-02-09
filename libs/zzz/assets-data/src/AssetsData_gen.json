@@ -474,6 +474,20 @@
       "trap": "IconRoleGeneral54.png",
       "select": "IconRoleSelect54.png",
       "interknot": "IconInterKnotRole0054.png"
+    },
+    "Sunna": {
+      "full": "IconRole58.png",
+      "circle": "IconRoleCircle58.png",
+      "trap": "IconRoleGeneral58.png",
+      "select": "IconRoleSelect58.png",
+      "interknot": "IconInterKnotRole0058.png"
+    },
+    "Aria": {
+      "full": "IconRole57.png",
+      "circle": "IconRoleCircle57.png",
+      "trap": "IconRoleGeneral57.png",
+      "select": "IconRoleSelect57.png",
+      "interknot": "IconInterKnotRole0057.png"
     }
   },
   "wengines": {
@@ -804,6 +818,14 @@
     "YesterdayCalls": {
       "icon": "Weapon_S_1481.png",
       "big": "Weapon_S_1481Big.png"
+    },
+    "Thoughtbop": {
+      "icon": "Weapon_S_1491.png",
+      "big": "Weapon_S_1491Big.png"
+    },
+    "AngelInTheShell": {
+      "icon": "Weapon_S_1501.png",
+      "big": "Weapon_S_1501Big.png"
     }
   }
 }
