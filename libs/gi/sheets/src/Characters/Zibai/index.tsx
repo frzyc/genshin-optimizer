@@ -549,6 +549,7 @@ const sheet: TalentSheet = {
       value: condC2ShiftMode,
       name: ct.ch('c2Cond'),
       canShow: greaterEq(tally.moonsign, 2, 1),
+      teamBuff: true,
       states: {
         on: {
           fields: [
