@@ -275,7 +275,15 @@ function CharChip() {
           <Box sx={{ whiteSpace: 'normal', textAlign: 'center' }}>
             <CharacterName characterKey={characterKey} gender={gender} />
           </Box>
-          <ImgIcon src={imgAssets.weaponTypes[weaponType]} />
+          <ImgIcon
+            src={imgAssets.weaponTypes[weaponType]}
+            sx={{
+              filter:
+                charEle === 'geo' || charEle === 'dendro'
+                  ? 'invert(100%)'
+                  : undefined,
+            }}
+          />
         </Typography>
       }
     />
