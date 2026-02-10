@@ -224,8 +224,10 @@ const c6Point_lunar_specialDmg_ = greaterEq(
 
 const strideAddl = {
   premod: {
-    geo_dmgInc: c2Moonfall_stride_dmgInc,
-    lunarcrystallize_dmgInc: a1Moonfall_stride_dmgInc,
+    lunarcrystallize_dmgInc: sum(
+      a1Moonfall_stride_dmgInc,
+      c2Moonfall_stride_dmgInc
+    ),
     lunarcrystallize_dmg_: c1FirstStride_stride_lunarcrystallize_dmg_,
   },
 }
