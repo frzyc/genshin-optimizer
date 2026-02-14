@@ -1,0 +1,190 @@
+{
+  "name": "哥倫比婭",
+  "title": "空月歸鄉",
+  "description": "於挪德卡萊誕生的「月之少女」，亦是歸鄉的空月。",
+  "constellationName": "？？？",
+  "auto": {
+    "name": "月露潑降",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻擊</strong>",
+        "1": "喚起月光的潮汐，進行至多三段的攻擊，造成<hydro>水元素傷害</hydro>。"
+      },
+      "charged": {
+        "0": "<strong>重擊</strong>",
+        "1": "消耗一定體力，短暫詠唱後，造成<hydro>水元素範圍傷害</hydro>。",
+        "2": "若擁有至少1枚<tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>草露</strong></tooltip>，哥倫比婭施放的重擊將會被替換為特殊、不消耗體力的重擊<strong>月露滌蕩</strong>：消耗一枚草露，對前方的敵人造成3次<dendro>草元素範圍傷害</dendro>，該傷害視為月綻放反應傷害。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻擊</strong>",
+        "1": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成<hydro>水元素範圍傷害</hydro>。"
+      }
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "三段傷害",
+      "3": "重擊傷害",
+      "4": "重擊體力消耗",
+      "5": "月露滌蕩傷害",
+      "6": "下墜期間傷害",
+      "7": "低空/高空墜地衝擊傷害",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "萬古潮汐",
+    "description": {
+      "0": "喚起月海的潮汐，造成<hydro>水元素範圍傷害</hydro>，並喚出<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>引力漣漪</strong></tooltip>。",
+      "1": "<strong>引力漣漪</strong>將跟隨場上角色，並持續對周圍的敵人造成<hydro>水元素範圍傷害</hydro>。<strong>引力漣漪</strong>存在期間，隊伍中附近的角色觸發月曜反應或造成月曜反應傷害時，將會為哥倫比婭累積特殊的<strong>引力值</strong>，累積至上限時，將會依據為哥倫比婭累積最多<strong>引力值</strong>的月曜反應的類型，對敵人造成不同類型的傷害。",
+      "2": "<strong>月兆·滿輝</strong>：<strong>引力漣漪</strong>會造成範圍更大的<hydro>水元素範圍傷害</hydro>。"
+    },
+    "skillParams": {
+      "0": "技能傷害",
+      "1": "引力漣漪·持續傷害",
+      "2": "引力干涉·月感電傷害",
+      "3": "引力干涉·月綻放傷害",
+      "4": "引力干涉·月結晶傷害",
+      "5": "引力值上限",
+      "6": "引力漣漪持續時間",
+      "7": "冷卻時間",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "她的鄉愁",
+    "description": {
+      "0": "以無穢的新月之名連接山與海，將身邊的大地短暫變換為<tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>月之領域</strong></tooltip>，並造成<hydro>水元素範圍傷害</hydro>。"
+    },
+    "skillParams": {
+      "0": "技能傷害",
+      "1": "月曜反應傷害提升",
+      "2": "月之領域持續時間",
+      "3": "冷卻時間",
+      "4": "元素能量",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "月亮誘發的瘋狂",
+    "description": {
+      "0": "觸發<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>引力干涉</strong></tooltip>時，哥倫比婭將獲得月誘效果，使自身的暴擊率提升5%，持續10秒。該效果至多疊加3層。"
+    }
+  },
+  "passive2": {
+    "name": "新月自己的法則",
+    "description": {
+      "0": "處於<tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>月之領域</strong></tooltip>中的角色觸發月曜反應時，將分別獲得以下效果：",
+      "1": [
+        "<strong>月感電反應</strong>：雷暴雲對符合條件的目標進行雷擊時，有33%機率額外進行一次雷擊。",
+        "<strong>月綻放反應</strong>：觸發月綻放反應時，將為隊伍提供一枚特殊的<tooltip ns=tooltips_gen baseKey18=11250003 values=[]><strong>山月草露</strong></tooltip>，每18秒至多依此方式為隊伍提供3枚山月草露。",
+        "<strong>月結晶反應</strong>：觸發月籠諧奏時，每枚月籠有33%機率額外進行一次攻擊。"
+      ]
+    }
+  },
+  "passive3": {
+    "name": "月兆祝賜·借汝月光",
+    "description": {
+      "0": "隊伍中的角色觸發感電/綻放/水元素結晶反應時，將轉為觸發月感電/月綻放/月結晶反應，且基於哥倫比婭的生命值上限，提升隊伍中角色造成的月曜反應的基礎傷害：每1000點生命值上限都將提升0.2%月曜反應的基礎傷害，至多依此方式提升7%傷害。",
+      "1": "<br/>",
+      "2": "此外，哥倫比婭在隊伍中時，隊伍的<strong>月兆</strong>將會上升一級。"
+    }
+  },
+  "passive": {
+    "name": "月的守望",
+    "description": {
+      "0": "處於挪德卡萊區域時，隊伍中自己的角色倒下時，哥倫比婭將復甦該角色，並為其恢復生命值，恢復值基於哥倫比婭的好感等級，該效果每100秒至多觸發一次。該效果在秘境、征討領域、深境螺旋中無效。",
+      "1": "此外，對受到月矩力影響的部分小動物，哥倫比婭似乎有著特殊的親和力…"
+    }
+  },
+  "constellation1": {
+    "name": "遍照花海，隱入群山",
+    "description": {
+      "0": "施放元素戰技<strong>萬古潮汐</strong>時，還會立刻觸發一次等同於<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>引力干涉</strong></tooltip>的效果，該效果每15秒至多觸發一次。",
+      "1": "<strong>月兆·滿輝</strong>",
+      "2": "觸發引力干涉時，若為哥倫比婭累積最多引力值的月曜反應類型為：",
+      "3": [
+        "<strong>月感電反應</strong>：為隊伍中自己的目前場上角色恢復6點元素能量。",
+        "<strong>月綻放反應</strong>：提升隊伍中自己的目前場上角色的抗打斷能力，持續8秒。",
+        "<strong>月結晶反應</strong>：喚出<strong>雨海護盾</strong>，傷害吸收量受益於哥倫比婭生命值上限的12%，對<hydro>水元素傷害</hydro>有250%的吸收效果，持續8秒。"
+      ],
+      "4": "<br/>",
+      "5": "隊伍中附近的所有角色造成的月曜反應傷害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>1.5%。"
+    }
+  },
+  "constellation2": {
+    "name": "為夜增輝，與君遙伴",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>引力值</strong></tooltip>的累積速度提升34%。",
+      "1": "觸發<strong>引力干涉</strong>時，哥倫比婭將獲得<strong>皎輝</strong>效果，生命值上限提升40%，持續8秒。",
+      "2": "<strong>月兆·滿輝</strong>：",
+      "3": "<strong>皎輝</strong>效果持續期間，若本次觸發<strong>引力干涉</strong>時，為哥倫比婭累積最多引力值的月曜反應類型為：",
+      "4": [
+        "<strong>月感電反應</strong>：隊伍中自己的目前場上角色攻擊力提升，提升值相當於哥倫比婭生命值上限的1%。",
+        "<strong>月綻放反應</strong>：隊伍中自己的目前場上角色元素精通提升，提升值相當於哥倫比婭生命值上限的0.35%。",
+        "<strong>月結晶反應</strong>：隊伍中自己的目前場上角色防禦力提升，提升值相當於哥倫比婭生命值上限的1%。"
+      ],
+      "5": "<br/>",
+      "6": "隊伍中附近的所有角色造成的月曜反應傷害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>7%。"
+    }
+  },
+  "constellation3": {
+    "name": "柔光凝露，夢湖起波",
+    "description": {
+      "0": "元素戰技<strong><tooltip ns=char_Columbina_gen baseKey18=skill>萬古潮汐</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。",
+      "2": "<br/>",
+      "3": "隊伍中附近的所有角色造成的月曜反應傷害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>1.5%。"
+    }
+  },
+  "constellation4": {
+    "name": "花嵐雲翳，山岩樹影",
+    "description": {
+      "0": "觸發<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>引力干涉</strong></tooltip>時，還會為哥倫比婭恢復4點元素能量。",
+      "1": "此外，依據為哥倫比婭累積最多<strong>引力值</strong>的月曜反應類型，若為月感電/月綻放/月結晶反應，則本次引力干涉造成的月曜反應傷害提升，提升值分別相當於哥倫比婭生命值上限的12.5%/2.5%/12.5%。上述效果每15秒至多觸發一次。",
+      "2": "<br/>",
+      "3": "隊伍中附近的所有角色造成的月曜反應傷害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>1.5%。"
+    }
+  },
+  "constellation5": {
+    "name": "萬籟俱寂，唯聞君唱",
+    "description": {
+      "0": "元素爆發<strong><tooltip ns=char_Columbina_gen baseKey18=burst>她的鄉愁</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。",
+      "2": "<br/>",
+      "3": "隊伍中附近的所有角色造成的月曜反應傷害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>1.5%。"
+    }
+  },
+  "constellation6": {
+    "name": "夜昏且暗，且隨月光",
+    "description": {
+      "0": "處於<tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>月之領域</strong></tooltip>中的所有角色觸發月曜反應後的8秒內，依據參與反應的元素類型，使隊伍中的所有角色造成的對應元素類型傷害的暴擊傷害提升80%。同種元素類型的暴擊傷害提升效果無法疊加。",
+      "1": "<br/>",
+      "2": "隊伍中附近的所有角色造成的月曜反應傷害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>7%。"
+    }
+  }
+}

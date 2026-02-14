@@ -6,19 +6,19 @@
   "passiveName": "Many Oaths of Dawn and Dusk",
   "passiveDescription": {
     "0": {
-      "0": "Increases ATK by <cryo>20%</cryo>. When party members obtain Elemental Shards from Crystallize reactions, the equipping character will gain 1 Seal, increasing Elemental Skill DMG by <cryo>18%</cryo>. The Seal lasts for 15s, and the equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s after their Elemental Skill deals DMG."
+      "0": "Increases ATK by <cryo>20%</cryo>. When party members obtain Elemental Shards from Crystallize or trigger Lunar-Crystallize reactions, the equipping character will gain 1 Seal, increasing Elemental Skill DMG by <cryo>18%</cryo>. The Seal lasts for 15s, and the equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s after their Elemental Skill deals DMG. Up to 1 Seal may be obtained every second through the Lunar-Crystallize reaction."
     },
     "1": {
-      "0": "Increases ATK by <cryo>25%</cryo>. When party members obtain Elemental Shards from Crystallize reactions, the equipping character will gain 1 Seal, increasing Elemental Skill DMG by <cryo>22.5%</cryo>. The Seal lasts for 15s, and the equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s after their Elemental Skill deals DMG."
+      "0": "Increases ATK by <cryo>25%</cryo>. When party members obtain Elemental Shards from Crystallize or Lunar-Crystallize reactions, the equipping character will gain 1 Seal, increasing Elemental Skill DMG by <cryo>22.5%</cryo>. The Seal lasts for 15s, and the equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s after their Elemental Skill deals DMG. Up to 1 Seal may be obtained every second through the Lunar-Crystallize reaction."
     },
     "2": {
-      "0": "Increases ATK by <cryo>30%</cryo>. When party members obtain Elemental Shards from Crystallize reactions, the equipping character will gain 1 Seal, increasing Elemental Skill DMG by <cryo>27%</cryo>. The Seal lasts for 15s, and the equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s after their Elemental Skill deals DMG."
+      "0": "Increases ATK by <cryo>30%</cryo>. When party members obtain Elemental Shards from Crystallize or trigger Lunar-Crystallize reactions, the equipping character will gain 1 Seal, increasing Elemental Skill DMG by <cryo>27%</cryo>. The Seal lasts for 15s, and the equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s after their Elemental Skill deals DMG. Up to 1 Seal may be obtained every second through the Lunar-Crystallize reaction."
     },
     "3": {
-      "0": "Increases ATK by <cryo>35%</cryo>. When party members obtain Elemental Shards from Crystallize reactions, the equipping character will gain 1 Seal, increasing Elemental Skill DMG by <cryo>31.5%</cryo>. The Seal lasts for 15s, and the equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s after their Elemental Skill deals DMG."
+      "0": "Increases ATK by <cryo>35%</cryo>. When party members obtain Elemental Shards from Crystallize or Lunar-Crystallize reactions, the equipping character will gain 1 Seal, increasing Elemental Skill DMG by <cryo>31.5%</cryo>. The Seal lasts for 15s, and the equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s after their Elemental Skill deals DMG. Up to 1 Seal may be obtained every second through the Lunar-Crystallize reaction."
     },
     "4": {
-      "0": "Increases ATK by <cryo>40%</cryo>. When party members obtain Elemental Shards from Crystallize reactions, the equipping character will gain 1 Seal, increasing Elemental Skill DMG by <cryo>36%</cryo>. The Seal lasts for 15s, and the equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s after their Elemental Skill deals DMG."
+      "0": "Increases ATK by <cryo>40%</cryo>. When party members obtain Elemental Shards from Crystallize or trigger Lunar-Crystallize reactions, the equipping character will gain 1 Seal, increasing Elemental Skill DMG by <cryo>36%</cryo>. The Seal lasts for 15s, and the equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s after their Elemental Skill deals DMG. Up to 1 Seal may be obtained every second through the Lunar-Crystallize reaction."
     }
   }
 }

@@ -49,7 +49,7 @@
       ],
       "2": "<br/>",
       "3": "<strong>Kuzey Diyarı Mızrak Fırtınası</strong>",
-      "4": "Flins önünde bir dizi mızrak çağırarak <electro>Elektrik Alan Hasarı</electro> verir ve 6sn boyunca <strong>Kadim Ritüel: Gecenin Varışı</strong> Element Patlaması, özel <strong>Gürleyen Senfoni</strong> olarak değişir.",
+      "4": "Flins önünde bir dizi mızrak çağırarak <electro>Elektrik Alan Hasarı</electro> verir ve 6sn boyunca <strong>Kadim Ritüel: Gecenin Varışı</strong> Element Patlaması, özel <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Gürleyen Senfoni</strong></tooltip> olarak değişir.",
       "5": "<strong>Kuzey Diyarı Mızrak Fırtınası</strong> temel Bekleme Süresi 6 saniyedir ve diğer etkiler tarafından değiştirilemez."
     },
     "skillParams": {
@@ -148,7 +148,7 @@
   "constellation3": {
     "name": "Gecedeki Yabancı",
     "description": {
-      "0": "<strong>Kadim Ritüel: Gecenin Varışı</strong> Seviyesini 3 artırır.",
+      "0": "<tooltip ns=char_Flins_gen baseKey18=burst><strong>Kadim Ritüel: Gecenin Varışı</strong></tooltip> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -156,20 +156,20 @@
     "name": "Kel Tepedeki Gece",
     "description": {
       "0": "Flins'in Saldırısı %20 artar.",
-      "1": "Ayrıca <strong>\"Alev Fısıltısı\"</strong> Yükseltme Yeteneği gelişir: Flins'in Element Ustalığı, Saldırısının %10'u kadar artar. Bu şekilde en fazla 220 artış sağlanabilir."
+      "1": "Ayrıca <tooltip ns=char_Flins_gen baseKey18=passive2><strong>\"Alev Fısıltısı\"</strong></tooltip> Yükseltme Yeteneği gelişir: Flins'in Element Ustalığı, Saldırısının %10'u kadar artar. Bu şekilde en fazla 220 artış sağlanabilir."
     }
   },
   "constellation5": {
     "name": "Sürgünün Gölgesi",
     "description": {
-      "0": "<strong>Kadim Ayin: Sırlı Işık</strong> Seviyesini 3 artırır.",
+      "0": "<tooltip ns=char_Flins_gen baseKey18=skill><strong>Kadim Ayin: Sırlı Işık</strong></tooltip> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
   "constellation6": {
     "name": "Ölüm Dansının Şarkıları",
     "description": {
-      "0": "Flins'in tetiklediği Ay Yüklü tepkimelerinin verdiği Hasar %35 <strong>artar</strong>.",
+      "0": "Flins'in tetiklediği Ay Yüklü tepkimelerinin verdiği Hasar %35 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>artar</strong></tooltip>.",
       "1": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Yakındaki tüm grup üyelerinin verdiği Ay Yüklü Hasarı %10 <strong>artar</strong>."
     }
   }

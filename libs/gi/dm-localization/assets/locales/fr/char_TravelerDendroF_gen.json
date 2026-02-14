@@ -110,6 +110,20 @@
       "0": "Chaque point de maîtrise élémentaire que {M#le voyageur}{F#la voyageuse} possède augmente les DGT infligés par <strong>Gerbe acérée</strong> de 0,15 %, et ceux de <strong>Manifestation surgente</strong> de 0,1 %."
     }
   },
+  "lockedPassive": {
+    "name": "Verlumine d'ailleurs",
+    "description": {
+      "0": "Permet {M#au voyageur}{F#à la voyageuse} de puiser une force nouvelle dans ses périples passés, lui accordant un <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effet de renforcement</strong></tooltip> supplémentaire pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance.",
+      "1": "<br/>",
+      "2": "De plus, lorsqu'un noyau Dendro (incluant les noyaux d'abondance et les graines de tromperie) apparaît sur le terrain à proximité ou que l'équipe obtient une rosée verdoyante, {M#le voyageur}{F#la voyageuse} obtient 1 lame de verdure verdoyante, ces deux manières permettant chacune d'accorder 1 lame toutes les 4 s maximum {M#au voyageur}{F#à la voyageuse} jusqu'à un maximum de 3 lames. Avec 3 lames de verdure verdoyante, effectuer une attaque chargée consomme toutes les lames pour déclencher une <strong>attaque chargée « Verdosité »</strong> spéciale.",
+      "3": "<br/>",
+      "4": "<strong>Attaque chargée « Verdosité »</strong>",
+      "5": [
+        " Chaque coup de l'attaque chargée inflige des <dendro>DGT Dendro</dendro> qui sont augmentés d'une valeur équivalant à 80 % de l'ATQ {M#du voyageur}{F#de la voyageuse} et génère 2 <strong>cœurs de liane</strong> sur place, ces derniers explosant respectivement après 4 s et 8 s afin d'infliger des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 120 % de l'ATQ {M#du voyageur}{F#de la voyageuse}. Ces DGT sont considérés comme des DGT d'attaque chargée.",
+        " Une <strong>attaque chargée « Verdosité »</strong> peut être déclenchée une fois toutes les 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Couvre-sol symbiotique",
     "description": {

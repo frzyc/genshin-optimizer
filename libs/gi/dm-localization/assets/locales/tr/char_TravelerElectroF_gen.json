@@ -111,6 +111,21 @@
       "0": "<strong>Yıldırım Kılıcı</strong> becerisinden Bolluk Tılsımının sağladığı Enerji Yüklemesi etkisini Gezginin Enerji Yüklemesinin %10'u kadar artırır."
     }
   },
+  "lockedPassive": {
+    "name": "Yabancı Yıldırım İzi",
+    "description": {
+      "0": "Geçmiş yolculuklarından yeni bir güç al. Rezonansa girdiğin her element için ek <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>güçlendirmeler</strong></tooltip> kazanırsın.",
+      "1": "<br/>",
+      "2": "Ayrıca yakındaki grup üyeleri bir Element Patlaması kullandığında Gezgin 1 kademe Yankılanan Şimşek Kılıcı kazanır, en fazla 3 kademe kazanabilir. 3 kademe Yankılanan Şimşek Kılıcı elde ettikten sonra Yüklü Saldırı yapmak, tüm Yankılanan Şimşek Kılıcı kademelerini tüketir ve Yüklü Saldırı gelişerek <strong>Yüklü Saldırı: İnfilak</strong> olur.",
+      "3": "<br/>",
+      "4": "<strong>Yüklü Saldırı: İnfilak</strong>",
+      "5": [
+        "İsabet eden her Yüklü Saldırı daha fazla <electro>Elektrik Hasarı</electro> verir. Hasar artışı, Gezginin Saldırısının %100'üne eşittir.",
+        "Bu saldırı düşmana isabet ettikten 3sn sonra ilave bir yıldırım darbesi tetiklenir. Bu darbe, Gezginin Saldırısının %200'ü kadar <electro>Elektrik Hasarı</electro> verir. Ayrıca 1 Bolluk Tılsımı oluşur. Bu Hasar, Yüklü Saldırı Hasarı sayılır.",
+        "<strong>Yüklü Saldırı: İnfilak</strong> en fazla 15 saniyede bir tetiklenebilir."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Bahar Bereketinin Yıldırımı",
     "description": {

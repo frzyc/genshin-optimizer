@@ -7,6 +7,7 @@ import constellation4 from './UI_Talent_S_PlayerRock_03.png'
 import constellation6 from './UI_Talent_S_PlayerRock_04.png'
 import passive1 from './UI_Talent_S_PlayerRock_05.png'
 import passive2 from './UI_Talent_S_PlayerRock_06.png'
+import lockedPassive from './UI_Talent_S_PlayerRock_07.png'
 import constellation5 from './UI_Talent_U_PlayerRock_01.png'
 import constellation3 from './UI_Talent_U_PlayerRock_02.png'
 
@@ -18,6 +19,7 @@ const data = {
   constellation4,
   constellation5,
   constellation6,
+  lockedPassive,
   passive1,
   passive2,
   skill,

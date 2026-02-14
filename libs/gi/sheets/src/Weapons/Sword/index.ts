@@ -24,6 +24,7 @@ import IronSting from './IronSting'
 import KagotsurubeIsshin from './KagotsurubeIsshin'
 import KeyOfKhajNisut from './KeyOfKhajNisut'
 import LightOfFoliarIncision from './LightOfFoliarIncision'
+import LightbearingMoonshard from './LightbearingMoonshard'
 import LionsRoar from './LionsRoar'
 import MistsplitterReforged from './MistsplitterReforged'
 import MoonweaversDawn from './MoonweaversDawn'
@@ -75,6 +76,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   IronSting,
   KagotsurubeIsshin,
   KeyOfKhajNisut,
+  LightbearingMoonshard,
   LightOfFoliarIncision,
   LionsRoar,
   MistsplitterReforged,

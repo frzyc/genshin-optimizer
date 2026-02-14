@@ -110,6 +110,22 @@
       "0": "Os abates com a <strong>Palma da Vórtice</strong> regeneram 2% de Vida por 5s. Este efeito pode ser ativado uma vez a cada 5s."
     }
   },
+  "lockedPassive": {
+    "name": "Fúria Zéfira Forasteira",
+    "description": {
+      "0": "Reúne novas forças das jornadas do passado. Para cada elemento que você ressoou, obtém um <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimento adicional</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Além disso, quando um membro próximo da equipe causa Danos Elementais <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ou <electro>Electro</electro> que atingem o oponente, {F#a}{M#o} Viajante obtém 1 acúmulo da Lâmina Zéfira da Alvorada do Tipo Elemental correspondente. É possível acumular Lâmina Zéfira da Alvorada do Tipo Elemental correspondente uma vez. Ao possuir pelo menos 2 acúmulos de Lâmina Zéfira da Alvorada e realizar um Ataque Carregado, consome todos os acúmulos de Lâmina Zéfira da Alvorada para convertê-lo <strong>Ataque Carregado: Vórtice do Vento</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Carregado: Vórtice do Vento</strong>",
+      "5": [
+        " Cada Ataque Carregado causa mais <anemo>Dano Anemo</anemo>, o aumento de Dano é de 60% do ATQ d{F#a}{M#o} Viajante.",
+        " Cada acúmulo de Tipo Elemental da Lâmina Zéfira da Alvorada invoca uma Lâmina de Vento do Tipo Elemental correspondente, causando 50% do ATQ d{F#a}{M#o} Viajante como Dano Elemental correspondente. Esse Dano é considerado Dano de Ataque Carregado.",
+        " É possível realizar um <strong>Ataque Carregado: Vórtice do Vento</strong> a cada 15s.",
+        " No período de realização de <strong>Ataque Carregado: Vórtice do Vento</strong>, não é possível obter Lâmina Zéfira da Alvorada."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Vórtice da Fúria",
     "description": {

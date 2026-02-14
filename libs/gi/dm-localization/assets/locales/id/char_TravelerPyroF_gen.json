@@ -109,6 +109,20 @@
       "0": "Setelah Karakter aktif berada dalam status <strong>Blazing Threshold</strong> atau <strong>Scorching Threshold</strong> memicu <pyro>reaksi terkait Pyro</pyro>, Traveler akan memulihkan 5 Energy. Efek ini dapat terpicu sekali setiap 12 detik. Selain itu, saat anggota party di sekitar memicu Nightsoul Burst, akan memulihkan 4 Energy Traveler."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Starfire",
+    "description": {
+      "0": "Menyerap kekuatan baru dari perjalanan masa lalu. Untuk setiap jenis elemen yang sudah diresonansi, Pengembara akan mendapatkan <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>efek penguatan</strong></tooltip> tambahan.",
+      "1": "<br/>",
+      "2": "Selain itu, saat Karakter party di sekitar memicu Nightsoul Burst, Pengembara akan mendapatkan 1 lapis efek Blade of the Sacred Flame yang dapat ditumpuk sampai 2 lapis. Saat memiliki 2 lapis Blade of the Sacred Flame dan melancarkan Charged Attack, Pengembara akan mengonsumsi seluruh Blade of the Sacred Flame dan serangannya berubah menjadi <strong>Charged Attack: Inferno</strong> spesial.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Inferno</strong>",
+      "5": [
+        "Setiap tahap Charged Attack akan mengakibatkan Nightsoul-aligned <pyro>Pyro DMG</pyro> yang lebih kuat. Peningkatan DMG-nya adalah sebesar 200% ATK Pengembara.",
+        "<strong>Charged Attack: Inferno</strong> dapat dilancarkan sekali setiap 15 detik."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Starfire's Flowing Light",
     "description": {

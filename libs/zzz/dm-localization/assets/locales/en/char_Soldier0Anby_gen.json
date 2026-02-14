@@ -96,7 +96,7 @@
       "name": "Special Attack: Azure Flash - Boundary",
       "desc": {
         "0": "When <ct color=#FFFFFF>Special Attack: Thunder Smite</ct> DMG is triggered:",
-        "1": "If <ct color=#FFFFFF>EX Special Attack: Sundering Bolt</ct> or <ct color=#FFFFFF>Special Attack: Azure Flash</ct> is currently being used, then <ct color=#FFFFFF>Special Attack: Azure Flash - Boundary</ct> will automatically trigger when the current skill ends, unleashing a flurry of slashes that deal multiple instances of <ct color=#2EB6FF>Electric DMG</ct>. This skill counts as an <ct color=#FFFFFF>Aftershock</ct>.",
+        "1": "If EX Special Attack: Sundering Bolt or Special Attack: Azure Flash is currently being used, then <ct color=#FFFFFF>Special Attack: Azure Flash - Boundary</ct> will automatically trigger when the current skill ends, unleashing a flurry of slashes that deal multiple instances of <ct color=#2EB6FF>Electric DMG</ct>. This skill counts as an <ct color=#FFFFFF>Aftershock</ct>.",
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
@@ -286,5 +286,16 @@
         "5": "\"Soldier 0, at your service... Huh, huh...?\""
       }
     }
+  },
+  "potential": {
+    "name": "Awakened Potential: Electropulse",
+    "desc": [
+      "",
+      "During Additional Ability: Voltage Surge, all squad members' <ct color=#FFFFFF>Aftershock</ct> DMG against enemies marked with <ct color=#FFFFFF>Silver Star</ct> is increased to <ct color=#2BAD00>34%</ct>.",
+      "During Additional Ability: Voltage Surge, all squad members' <ct color=#FFFFFF>Aftershock</ct> DMG against enemies marked with <ct color=#FFFFFF>Silver Star</ct> is increased to <ct color=#2BAD00>38%</ct>.",
+      "During Additional Ability: Voltage Surge, all squad members' <ct color=#FFFFFF>Aftershock</ct> DMG against enemies marked with <ct color=#FFFFFF>Silver Star</ct> is increased to <ct color=#2BAD00>42%</ct>.",
+      "During Additional Ability: Voltage Surge, all squad members' <ct color=#FFFFFF>Aftershock</ct> DMG against enemies marked with <ct color=#FFFFFF>Silver Star</ct> is increased to <ct color=#2BAD00>46%</ct>.",
+      "During Additional Ability: Voltage Surge, all squad members' <ct color=#FFFFFF>Aftershock</ct> DMG against enemies marked with <ct color=#FFFFFF>Silver Star</ct> is increased to <ct color=#2BAD00>50%</ct>."
+    ]
   }
 }

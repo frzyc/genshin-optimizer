@@ -1,4 +1,3 @@
-'use client'
 import { useDeferredValue, useEffect, useRef, useState } from 'react'
 
 /**

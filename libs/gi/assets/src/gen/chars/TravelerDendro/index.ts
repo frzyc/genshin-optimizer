@@ -9,6 +9,7 @@ import constellation5 from './UI_Talent_S_PlayerGrass_05.png'
 import constellation6 from './UI_Talent_S_PlayerGrass_06.png'
 import passive1 from './UI_Talent_U_PlayerGrass_01.png'
 import passive2 from './UI_Talent_U_PlayerGrass_02.png'
+import lockedPassive from './UI_Talent_U_PlayerGrass_03.png'
 
 const data = {
   burst,
@@ -18,6 +19,7 @@ const data = {
   constellation4,
   constellation5,
   constellation6,
+  lockedPassive,
   passive1,
   passive2,
   skill,

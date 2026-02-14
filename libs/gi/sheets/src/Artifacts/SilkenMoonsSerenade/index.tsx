@@ -1,4 +1,8 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
+import {
+  type ArtifactSetKey,
+  allLunarReactionKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   equalStr,
@@ -34,16 +38,10 @@ const [set4_eleMas, set4_eleMasInactive] = nonStackBuff(
   'eleMas',
   threshold(tally.moonsign, 2, 120, greaterEq(tally.moonsign, 1, 60))
 )
-const [set4_lunarcharged_dmg_, set4_lunarcharged_dmg_inactive] = nonStackBuff(
-  'gleamingmoondevotion',
-  'lunarcharged_dmg_',
-  percent(0.1)
-)
-const [set4_lunarbloom_dmg_, set4_lunarbloom_dmg_inactive] = nonStackBuff(
-  'gleamingmoondevotion',
-  'lunarbloom_dmg_',
-  percent(0.1)
-)
+const lunar_dmg_obj = objKeyValMap(allLunarReactionKeys, (k) => [
+  `${k}_dmg_`,
+  nonStackBuff('gleamingmoondevotion', `${k}_dmg_`, percent(0.1)),
+])
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -52,8 +50,7 @@ export const data: Data = dataObjForArtifactSheet(key, {
   teamBuff: {
     premod: {
       eleMas: set4_eleMas,
-      lunarcharged_dmg_: set4_lunarcharged_dmg_,
-      lunarbloom_dmg_: set4_lunarbloom_dmg_,
+      ...objMap(lunar_dmg_obj, (buffs) => buffs[0]),
     },
     nonStacking: {
       gleamingmoondevotion: set4TallyWrite,
@@ -87,21 +84,15 @@ const sheet: SetEffectSheet = {
               {
                 node: set4_eleMas,
               },
-              {
-                node: set4_lunarcharged_dmg_,
-              },
-              {
-                node: set4_lunarbloom_dmg_,
-              },
+              ...Object.values(lunar_dmg_obj).map((nodes) => ({
+                node: nodes[0],
+              })),
               {
                 node: set4_eleMasInactive,
               },
-              {
-                node: set4_lunarcharged_dmg_inactive,
-              },
-              {
-                node: set4_lunarbloom_dmg_inactive,
-              },
+              ...Object.values(lunar_dmg_obj).map((nodes) => ({
+                node: nodes[1],
+              })),
               {
                 text: stg('duration'),
                 value: 8,

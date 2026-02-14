@@ -1,4 +1,3 @@
-'use client'
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { notEmpty, objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
@@ -322,7 +321,11 @@ function getCharDataBundle(
     : [artifacts]
   const data = [
     ...artifactData,
-    dataObjForCharacterNew(charInfo, useCustom ? sheetData : undefined),
+    dataObjForCharacterNew(
+      charInfo,
+      database,
+      useCustom ? sheetData : undefined
+    ),
     dataObjForWeapon(weapon),
     sheetData,
     common, // NEED TO PUT THIS AT THE END

@@ -217,6 +217,19 @@
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 183.65
         }
+      ],
+      "EXSpecialAttackIntenseHeatTossingMethod": [
+        {
+          "DamagePercentage": 1.999,
+          "DamagePercentageGrowth": 0.182,
+          "StunRatio": 1.999,
+          "StunRatioGrowth": 0.091,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2499.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 90.83
+        }
       ]
     },
     "chain": {
@@ -324,7 +337,8 @@
     "special": {
       "SpecialAttackIntenseHeatAgingMethod": [],
       "EXSpecialAttackIntenseHeatStirringMethod": [],
-      "EXSpecialAttackIntenseHeatStirringMethodDoubleShot": []
+      "EXSpecialAttackIntenseHeatStirringMethodDoubleShot": [],
+      "EXSpecialAttackIntenseHeatTossingMethod": []
     },
     "chain": { "ChainAttackFuelFedFlame": [], "UltimateGloriousInferno": [] },
     "assist": {
@@ -354,5 +368,14 @@
     [0.3, 1],
     [2],
     [0.6, 0.5, 0.25, 18, 20]
+  ],
+  "potentialParams": [
+    [0, 1.8, 1.8, 1.8, 1.8, 1.8],
+    [0, 0.1, 0.1, 0.1, 0.1, 0.1],
+    [0, 1, 1.3, 1.6, 2, 2.5],
+    [0, 0.01, 0.0125, 0.015, 0.0175, 0.02],
+    [0, 25, 25, 25, 25, 25],
+    [0, 0.2, 0.2, 0.2, 0.2, 0.2],
+    [0, 1.35, 1.35, 1.35, 1.35, 1.35]
   ]
 }

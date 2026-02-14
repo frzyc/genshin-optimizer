@@ -1,0 +1,13 @@
+{
+  "harmony": {
+    "flat_dmg": "Harmony Flat DMG",
+    "dmg_": "Harmony DMG Bonus",
+    "crit_": "Harmony CRIT Rate",
+    "crit_dmg_": "Harmony CRIT DMG"
+  },
+  "exSpecialCond": "In the Darkbreaker state",
+  "coreCond": {
+    "etherVeil": "Ether Veil: Wellspring is active",
+    "dreamersNurseryRhyme": "In the Dreamer's Nursery Rhyme state"
+  }
+}

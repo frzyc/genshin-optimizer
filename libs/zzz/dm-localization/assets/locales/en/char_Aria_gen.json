@@ -1,0 +1,273 @@
+{
+  "name": "Aria",
+  "fullName": "Aria",
+  "basic": {
+    "BasicAttackSweetMelody": {
+      "name": "Basic Attack: Sweet Melody",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Launches up to four consecutive attacks forward, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After hitting an enemy with the fourth hit, 1 <ct color=#FFFFFF>Fandom Power</ct> is generated on the field after the attack ends."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackPerfectPitch": {
+      "name": "Basic Attack: Perfect Pitch",
+      "desc": {
+        "0": "Hold <IconNormal /> to activate:",
+        "1": "Aria enters a charging state and can reach three levels of charge. Releasing <IconNormal /> or reaching the maximum charge time causes Aria to unleash a powerful downward attack forward based on the current charge level, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "If there is <ct color=#FFFFFF>Fandom Power</ct> nearby while Aria is charging, she will absorb the <ct color=#FFFFFF>Fandom Power</ct>, with each absorbed <ct color=#FFFFFF>Fandom Power</ct> instantly increasing charge level by 1 and granting 1 stack of a buff that increases the next <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct>'s <ct color=#FE437E>Ether Anomaly Buildup</ct> by 10%. This buff can stack up to 2 times and is removed after the attack ends.",
+        "3": "After the 4th hit of <ct color=#FFFFFF>Basic Attack: Sweet Melody</ct>, <ct color=#FFFFFF>Special Attack: Full-Sugar Electronica - No Ice</ct>, an <ct color=#FFFFFF>EX Special Attack</ct>, the 3rd hit of <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct>, a <ct color=#FFFFFF>Quick Assist</ct>, a <ct color=#FFFFFF>Chain Attack</ct>, or an <ct color=#FFFFFF>Ultimate</ct>, if there are at least 2 <ct color=#FFFFFF>Fandom Power</ct> nearby, hold <IconNormal /> to consume 2 <ct color=#FFFFFF>Fandom Power</ct> and quickly activate the 3rd hit of <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct>. After the 3rd hit of <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct>, a <ct color=#FFFFFF>Chain Attack</ct>, or an <ct color=#FFFFFF>Ultimate</ct>, if there are at least 2 <ct color=#FFFFFF>Fandom Power</ct> nearby, the 3rd hit of <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> can also be quickly activated by pressing <IconNormal /> within a short window, consuming 2 <ct color=#FFFFFF>Fandom Power</ct>.",
+        "4": "Anti-Interrupt Level is increased while charging, and received DMG is reduced by 40%. Character is invulnerable while using this attack."
+      },
+      "params": [
+        "Charge Level One Attack ",
+        "Charge Level Two Attack ",
+        "Charge Level Three Attack ",
+        "Charge Level Three Attack (Coordinated) ",
+        "Enhanced Charge Attack ",
+        "Enhanced Charge Attack (Coordinated) "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeOnBeatPrecision": {
+      "name": "Dodge: On-Beat Precision",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "If activated during a <ct color=#FFFFFF>Basic Attack: Sweet Melody</ct> chain, this action does not reset the Basic Attack count.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackSilkySmoothCombo": {
+      "name": "Dash Attack: Silky-Smooth Combo",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Flies forward with a swift slashing attack, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "If activated during a <ct color=#FFFFFF>Basic Attack: Sweet Melody</ct> chain, this action does not reset the Basic Attack count."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterSlideShiftVariation": {
+      "name": "Dodge Counter: Slide-Shift Variation",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Unleashes a powerful slash against the target, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After using this skill, it can be immediately followed up with the 3rd hit of <ct color=#FFFFFF>Basic Attack: Sweet Melody</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackFullSugarElectronica": {
+      "name": "Special Attack: Full-Sugar Electronica",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Delivers a forward kick, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SpecialAttackFullSugarElectronicaNoIce": {
+      "name": "Special Attack: Full-Sugar Electronica - No Ice",
+      "desc": {
+        "0": "After the 4th hit of <ct color=#FFFFFF>Basic Attack: Sweet Melody</ct>, an <ct color=#FFFFFF>Assist Follow-Up</ct>, a <ct color=#FFFFFF>Chain Attack</ct>, or an <ct color=#FFFFFF>Ultimate</ct>, press <IconSpecial /> to activate:",
+        "1": "Delivers a quicker forward kick, dealing <ct color=#FE437E>Ether DMG</ct>. If the attack hits an enemy, 1 <ct color=#FFFFFF>Fandom Power</ct> is generated on the field after the attack ends.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackFallIntoDelusion": {
+      "name": "EX Special Attack: Fall Into Delusion",
+      "desc": {
+        "0": "With enough energy, press <IconSpecialReady /> to activate:",
+        "1": "Delivers a powerful forward kick followed by a sonic wave attack, dealing <ct color=#FE437E>Ether DMG</ct>. If the attack hits an enemy, 3 <ct color=#FFFFFF>Fandom Power</ct> are generated on the field after the attack ends.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackInstantlyHooked": {
+      "name": "EX Special Attack: Instantly Hooked",
+      "desc": {
+        "0": "After launching <ct color=#FFFFFF>EX Special Attack: Fall Into Delusion</ct>, and with enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Performs a powerful downward attack in front, dealing <ct color=#FE437E>Ether DMG</ct>. If the attack hits an enemy, 3 <ct color=#FFFFFF>Fandom Power</ct> are generated on the field after the attack ends.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackDreamCollab": {
+      "name": "Chain Attack: Dream Collab",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Launches a series of attacks forward, dealing massive <ct color=#FE437E>Ether DMG</ct>. 4 <ct color=#FFFFFF>Fandom Power</ct> are generated on the field on skill activation.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "Ultimate100Energy": {
+      "name": "Ultimate: 100% Energy",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Releases all her power, entering <ct color=#FFFFFF>Moment of Delusion</ct>, and fires multiple powerful shots at the target, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Upon entering <ct color=#FFFFFF>Moment of Delusion</ct>, Aria gains 3 stacks of <ct color=#FFFFFF>All-Out Cheering</ct> and activates <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct>. While <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct> is active, all squad members gain an additional 50 ATK for 30s. Re-activating <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct> will first cancel any existing instance of <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct>.",
+        "3": "While Aria is charging, if she has <ct color=#FFFFFF>All-Out Cheering</ct>, stacks of <ct color=#FFFFFF>All-Out Cheering</ct> are consumed first to charge. Each stack of <ct color=#FFFFFF>All-Out Cheering</ct> consumed increases the charge level by 2.",
+        "4": "Upon entering <ct color=#FFFFFF>Moment of Delusion</ct>, if Aria already has <ct color=#FFFFFF>All-Out Cheering</ct>, all remaining stacks of <ct color=#FFFFFF>All-Out Cheering</ct> are first converted into <ct color=#FFFFFF>Fandom Power</ct> and generated on the field. Each stack of <ct color=#FFFFFF>All-Out Cheering</ct> is converted into 2 <ct color=#FFFFFF>Fandom Power</ct>.",
+        "5": "<ct color=#FFFFFF>Moment of Delusion</ct> lasts for up to 15s. During <ct color=#FFFFFF>Moment of Delusion</ct>, Aria's <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> 3rd hit is upgraded to an enhanced version.",
+        "6": "When exiting <ct color=#FFFFFF>Moment of Delusion</ct>, if Aria has <ct color=#FFFFFF>All-Out Cheering</ct>, all remaining stacks of <ct color=#FFFFFF>All-Out Cheering</ct> are converted into <ct color=#FFFFFF>Fandom Power</ct> and generated on the field. Each stack of <ct color=#FFFFFF>All-Out Cheering</ct> is converted into 2 <ct color=#FFFFFF>Fandom Power</ct>.",
+        "7": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistShatterFantasy": {
+      "name": "Quick Assist: Shatter Fantasy",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Delivers a powerful slash to the target, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After using this skill, it can be immediately followed up with the 3rd hit of <ct color=#FFFFFF>Basic Attack: Sweet Melody</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistClutchSave": {
+      "name": "Defensive Assist: Clutch Save",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpEncoreSong": {
+      "name": "Assist Follow-Up: Encore Song",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Unleashes a powerful series of slashes on the target, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Innate Stage Presence",
+    "desc": [
+      {
+        "0": "Aria's Anomaly Proficiency increases by <ct color=#2BAD00>45</ct>.",
+        "1": "If Aria's 3rd hit of <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> lands a heavy attack on an enemy suffering an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, which resolves an additional instance of Attribute Anomaly DMG. The additional DMG is calculate as <ct color=#FE437E>13.8%</ct>/<ct color=#2EB6FF>7.2%</ct>/<ct color=#FF5521>17.9%</ct>/<ct color=#F0D12B>1.25%</ct>/<ct color=#98EFF0>1.8%</ct> per 10 points of initial Anomaly Mastery of the original Anomaly DMG. If the target is Stunned, the DMG ratio is further increased by <ct color=#FFFFFF>50%</ct>."
+      },
+      {
+        "0": "Aria's Anomaly Proficiency increases by <ct color=#2BAD00>52</ct>.",
+        "1": "If Aria's 3rd hit of <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> lands a heavy attack on an enemy suffering an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, which resolves an additional instance of Attribute Anomaly DMG. The additional DMG is calculate as <ct color=#FE437E>16%</ct>/<ct color=#2EB6FF>8.3%</ct>/<ct color=#FF5521>20.8%</ct>/<ct color=#F0D12B>1.46%</ct>/<ct color=#98EFF0>2.1%</ct> per 10 points of initial Anomaly Mastery of the original Anomaly DMG. If the target is Stunned, the DMG ratio is further increased by <ct color=#FFFFFF>50%</ct>."
+      },
+      {
+        "0": "Aria's Anomaly Proficiency increases by <ct color=#2BAD00>60</ct>.",
+        "1": "If Aria's 3rd hit of <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> lands a heavy attack on an enemy suffering an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, which resolves an additional instance of Attribute Anomaly DMG. The additional DMG is calculate as <ct color=#FE437E>18.3%</ct>/<ct color=#2EB6FF>9.5%</ct>/<ct color=#FF5521>23.8%</ct>/<ct color=#F0D12B>1.67%</ct>/<ct color=#98EFF0>2.4%</ct> per 10 points of initial Anomaly Mastery of the original Anomaly DMG. If the target is Stunned, the DMG ratio is further increased by <ct color=#FFFFFF>50%</ct>."
+      },
+      {
+        "0": "Aria's Anomaly Proficiency increases by <ct color=#2BAD00>67</ct>.",
+        "1": "If Aria's 3rd hit of <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> lands a heavy attack on an enemy suffering an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, which resolves an additional instance of Attribute Anomaly DMG. The additional DMG is calculate as <ct color=#FE437E>20.6%</ct>/<ct color=#2EB6FF>10.7%</ct>/<ct color=#FF5521>26.8%</ct>/<ct color=#F0D12B>1.88%</ct>/<ct color=#98EFF0>2.7%</ct> per 10 points of initial Anomaly Mastery of the original Anomaly DMG. If the target is Stunned, the DMG ratio is further increased by <ct color=#FFFFFF>50%</ct>."
+      },
+      {
+        "0": "Aria's Anomaly Proficiency increases by <ct color=#2BAD00>75</ct>.",
+        "1": "If Aria's 3rd hit of <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> lands a heavy attack on an enemy suffering an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, which resolves an additional instance of Attribute Anomaly DMG. The additional DMG is calculate as <ct color=#FE437E>22.9%</ct>/<ct color=#2EB6FF>11.9%</ct>/<ct color=#FF5521>29.8%</ct>/<ct color=#F0D12B>2.08%</ct>/<ct color=#98EFF0>3%</ct> per 10 points of initial Anomaly Mastery of the original Anomaly DMG. If the target is Stunned, the DMG ratio is further increased by <ct color=#FFFFFF>50%</ct>."
+      },
+      {
+        "0": "Aria's Anomaly Proficiency increases by <ct color=#2BAD00>82</ct>.",
+        "1": "If Aria's 3rd hit of <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> lands a heavy attack on an enemy suffering an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, which resolves an additional instance of Attribute Anomaly DMG. The additional DMG is calculate as <ct color=#FE437E>25.2%</ct>/<ct color=#2EB6FF>13.1%</ct>/<ct color=#FF5521>32.7%</ct>/<ct color=#F0D12B>2.29%</ct>/<ct color=#98EFF0>3.3%</ct> per 10 points of initial Anomaly Mastery of the original Anomaly DMG. If the target is Stunned, the DMG ratio is further increased by <ct color=#FFFFFF>50%</ct>."
+      },
+      {
+        "0": "Aria's Anomaly Proficiency increases by <ct color=#2BAD00>90</ct>.",
+        "1": "If Aria's 3rd hit of <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> lands a heavy attack on an enemy suffering an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it will trigger <ct color=#FFFFFF>Abloom</ct>, which resolves an additional instance of Attribute Anomaly DMG. The additional DMG is calculate as <ct color=#FE437E>27.5%</ct>/<ct color=#2EB6FF>14.3%</ct>/<ct color=#FF5521>35.7%</ct>/<ct color=#F0D12B>2.5%</ct>/<ct color=#98EFF0>3.6%</ct> per 10 points of initial Anomaly Mastery of the original Anomaly DMG. If the target is Stunned, the DMG ratio is further increased by <ct color=#FFFFFF>50%</ct>."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Collaborative Stage",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> or <ct color=#FFFFFF>Support</ct> character, or shares the same Faction:",
+      "1": "When <ct color=#FFFFFF>Ether Veil</ct> is activated, 4 <ct color=#FFFFFF>Fandom Power</ct> are generated on the field. This can trigger once every 1s.",
+      "2": "When any squad member applies <ct color=#FE437E>Corruption</ct> to an enemy, its duration is extended by 3s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Energetic Sound Waves",
+      "desc": "When Aria's <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct> deals DMG to enemies, it ignores 10% of the target's <ct color=#FE437E>Ether Anomaly Buildup RES</ct>. Additionally, when Aria triggers <ct color=#FFFFFF>Abloom</ct>, it has a chance to trigger a critical hit. The base CRIT Rate is 25%, and CRIT DMG is 25%. If initial Anomaly Mastery exceeds 100, each additional point of initial Anomaly Mastery increases this effect's CRIT Rate by 0.5%.",
+      "flavor": {
+        "0": "\"You see them? Everyone out there is waiting for us. So when the lights come up, we have to be full of energy. That's what it means to be an idol.\"",
+        "1": "—A few whispered words before going on stage."
+      }
+    },
+    "2": {
+      "name": "Fantastical Beat",
+      "desc": "When Aria attacks or triggers <ct color=#FFFFFF>Abloom</ct>, it ignores 16% of the target's DEF. During <ct color=#FFFFFF>Moment of Delusion</ct>, attacks and <ct color=#FFFFFF>Abloom</ct> triggers also ignore an additional 8% of the target's DEF.",
+      "flavor": "\"We don't have to sing it yet. Just close our eyes, feel it, and accept it. Then, on stage, through our performance, we'll make the whole audience fall in love with it.\""
+    },
+    "3": {
+      "name": "Delulu",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "\"Whether it's a dream or just a delusion, we just need to keep running toward a better version of ourselves. Everyone is worthy of being appreciated, and every effort will be remembered by someone.\""
+    },
+    "4": {
+      "name": "Mechanical Angel",
+      "desc": "When Aria triggers <ct color=#FFFFFF>Abloom</ct>, she gains 4 Energy and 70 Decibels. This effect can trigger once every 10s.",
+      "flavor": {
+        "0": "My wings are moonlight forged from tempered steel,",
+        "1": "with lines of code, each vibration made real.",
+        "2": "Gears bite into the rhythm of destiny,",
+        "3": "while silent electricity roars through me."
+      }
+    },
+    "5": {
+      "name": "Tears in the Rain",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "I once saw a city swallowed by the Hollows, its order reshaped by Ether. Everything beautiful was consumed by darkness, sinking into the long river of time... like tears fading in the rain."
+    },
+    "6": {
+      "name": "Construct's Dream",
+      "desc": "Upon entering the battlefield, Aria immediately gains 1,200 Decibels. In Investigation Zone mode, this effect can trigger once every 180s. After Aria enters <ct color=#FFFFFF>Moment of Delusion</ct>, she will not exit it, and <ct color=#FFFFFF>enhanced Basic Attack: Perfect Pitch</ct> and her <ct color=#FFFFFF>Ultimate</ct> deal 40% increased <ct color=#FE437E>Ether DMG</ct>. While in <ct color=#FFFFFF>Moment of Delusion</ct>, when an enemy on the field enters an Anomaly state, Aria gains 1 stacks of <ct color=#FFFFFF>All-Out Cheering</ct>. This effect can occur once every 6s. When gaining the <ct color=#FFFFFF>All-Out Cheering</ct> effect, if already at 3 stacks of <ct color=#FFFFFF>All-Out Cheering</ct>, any excess <ct color=#FFFFFF>All-Out Cheering</ct> is converted into 2 <ct color=#FFFFFF>Fandom Power</ct> and generated on the field.",
+      "flavor": {
+        "0": "Do you still remember that night in September, when love was born?",
+        "1": "Do you still remember the dancing on the stage, in those days when we fell into delusions?"
+      }
+    }
+  },
+  "potential": {}
+}

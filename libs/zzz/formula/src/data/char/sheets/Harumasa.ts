@@ -131,6 +131,17 @@ const sheet = register(
       ...core_dash_crit_,
       ...core_dash_crit_dmg_,
       ...m2_dash_dmg_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'dodge',
+      'ChasingThunder',
+      0,
+      { ...baseTag, damageType1: 'dash' },
+      'atk',
+      undefined,
+      ...core_dash_crit_,
+      ...core_dash_crit_dmg_
     )
   ),
 
@@ -143,11 +154,25 @@ const sheet = register(
   // Buffs
   registerBuff('core_dash_crit_', core_dash_crit_, undefined, undefined, false),
   registerBuff(
+    'core_ult_crit_',
+    ownBuff.combat.crit_.addWithDmgType(
+      'ult',
+      percent(subscript(char.core, dm.core.crit_))
+    )
+  ),
+  registerBuff(
     'core_dash_crit_dmg_',
     core_dash_crit_dmg_,
     undefined,
     undefined,
     false
+  ),
+  registerBuff(
+    'core_ult_crit_dmg_',
+    ownBuff.combat.crit_dmg_.addWithDmgType(
+      'ult',
+      prod(gleaming_edge, percent(subscript(char.core, dm.core.crit_dmg_)))
+    )
   ),
   registerBuff(
     'ability_common_dmg_',

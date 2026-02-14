@@ -1,0 +1,24 @@
+{
+  "name": "Sipario del notturno",
+  "description": {
+    "0": "Una perla di giada avvolta nella luce della luna. Anche nelle più fredde notti d'inverno, il suo calore gentile permane come una canzone."
+  },
+  "passiveName": "Ballata dei crocevia",
+  "passiveDescription": {
+    "0": {
+      "0": "I PS max aumentano di un <cryo>10%</cryo>. Quando s'innescano reazioni lunari o si infliggono DAN da reazione lunare agli avversari, il personaggio che equipaggia l'arma recupera <cryo>14</cryo> di energia e riceve l'effetto Vino sacro del Mare della fecondità per 12 s, che aumenta i PS max di un ulteriore <cryo>14%</cryo> e i DAN da CRIT dei DAN da reazione lunare di un <cryo>60%</cryo>. L'effetto di ripristino dell'energia può attivarsi non più di una volta ogni 18 s, anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "I PS max aumentano di un <cryo>12%</cryo>. Quando s'innescano reazioni lunari o si infliggono DAN da reazione lunare agli avversari, il personaggio che equipaggia l'arma recupera <cryo>15</cryo> di energia e riceve l'effetto Vino sacro del Mare della fecondità per 12 s, che aumenta i PS max di un ulteriore <cryo>16%</cryo> e i DAN da CRIT dei DAN da reazione lunare di un <cryo>80%</cryo>. L'effetto di ripristino dell'energia può attivarsi non più di una volta ogni 18 s, anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "I PS max aumentano di un <cryo>14%</cryo>. Quando s'innescano reazioni lunari o si infliggono DAN da reazione lunare agli avversari, il personaggio che equipaggia l'arma recupera <cryo>16</cryo> di energia e riceve l'effetto Vino sacro del Mare della fecondità per 12 s, che aumenta i PS max di un ulteriore <cryo>18%</cryo> e i DAN da CRIT dei DAN da reazione lunare di un <cryo>100%</cryo>. L'effetto di ripristino dell'energia può attivarsi non più di una volta ogni 18 s, anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "I PS max aumentano di un <cryo>16%</cryo>. Quando s'innescano reazioni lunari o si infliggono DAN da reazione lunare agli avversari, il personaggio che equipaggia l'arma recupera <cryo>17</cryo> di energia e riceve l'effetto Vino sacro del Mare della fecondità per 12 s, che aumenta i PS max di un ulteriore <cryo>20%</cryo> e i DAN da CRIT dei DAN da reazione lunare di un <cryo>120%</cryo>. L'effetto di ripristino dell'energia può attivarsi non più di una volta ogni 18 s, anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "I PS max aumentano di un <cryo>18%</cryo>. Quando s'innescano reazioni lunari o si infliggono DAN da reazione lunare agli avversari, il personaggio che equipaggia l'arma recupera <cryo>18</cryo> di energia e riceve l'effetto Vino sacro del Mare della fecondità per 12 s, che aumenta i PS max di un ulteriore <cryo>22%</cryo> e i DAN da CRIT dei DAN da reazione lunare di un <cryo>140%</cryo>. L'effetto di ripristino dell'energia può attivarsi non più di una volta ogni 18 s, anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

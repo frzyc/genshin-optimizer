@@ -1,0 +1,191 @@
+{
+  "name": "Columbina",
+  "title": "Retorno da Lua Nova",
+  "description": "A Dama da Lua nascida em Nod-Krai, além de ser a lua nova retornando para casa.",
+  "constellationName": "???",
+  "auto": {
+    "name": "Cascata do Orvalho do Luar",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Invoca uma maré do luar, realizando até 3 golpes consecutivos e causando <hydro>Dano Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina e, após uma canalização, causa <hydro>Dano Hydro em AdE</hydro>.",
+        "2": "Se possuir pelo menos 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Orvalho Verdejante</strong></tooltip>, o Ataque Carregado de Columbina será substituído pelo Ataque Carregado especial <strong>Lavagem do Orvalho Lunar</strong> que não consome Stamina: consome 1 Orvalho Verdejante para causar <dendro>Dano Dendro em AdE</dendro> 3 vezes contra os inimigos em frente. Esse Dano é considerado Dano de Florescimento Lunar."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em direção ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <hydro>Dano Hydro em uma AdE</hydro> durante o impacto com o chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Consumo de Stamina de Ataque Carregado",
+      "5": "Dano de Lavagem do Orvalho Lunar",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Maré Eterna",
+    "description": {
+      "0": "Invoca as marés da Lua, causando <hydro>Dano Hydro em AdE</hydro> e invocando a <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Onda Gravitacional</strong></tooltip>.",
+      "1": "<strong>Onda Gravitacional</strong> segue o personagem ativo e causa <hydro>Dano Hydro em AdE</hydro> continuamente contra os inimigos próximos. Enquanto <strong>Onda Gravitacional</strong> existir, quando um personagem próximo desencadear Reações Lunares ou causar Dano de Reações Lunares, Columbina acumulará <strong>Gravitação</strong> especial. Ao acumular até o valor máximo, causará tipos de Danos diferentes contra os inimigos de acordo com o valor máximo de <strong>Gravitação</strong> acumulado do tipo de Reação Lunar.",
+      "2": "<strong>Presságio Lunar: Reluzir Cheio</strong>: <strong>Onda Gravitacional</strong> causa <hydro>Dano Hydro em AdE</hydro> de maior alcance."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano Contínuo de Onda Gravitacional",
+      "2": "Dano de Carga Lunar de Interferência Kuuvahki",
+      "3": "Dano de Florescimento Lunar da Interferência Kuuvahki",
+      "4": "Dano de Cristalização Lunar da Interferência Kuuvahki",
+      "5": "Gravitação Máxima",
+      "6": "Duração de Onda Gravitacional",
+      "7": "Recarga",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Melancolia Sob o Luar",
+    "description": {
+      "0": "Colinas e marés se unem sob o luar prateado de uma lua nova. Temporariamente transforma o terreno próximo em <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Domínio Lunar</strong></tooltip> e causa <hydro>Dano Hydro em AdE</hydro>."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Aumento de Dano das Reações Lunares",
+      "2": "Duração de Domínio Lunar",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Mania Lunar",
+    "description": {
+      "0": "Ao desencadear<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Interferência Kuuvahki</strong></tooltip>, Columbina obtém o efeito Indução Lunar, aumentando sua Taxa CRIT em 5% por 10s. Esse efeito pode acumular até 3 vezes."
+    }
+  },
+  "passive2": {
+    "name": "Regras Próprias da Lua Nova",
+    "description": {
+      "0": "Quando personagens dentro do <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Domínio Lunar</strong></tooltip> desencadeiam reações Lunares, eles ganham os seguintes efeitos, respectivamente: ",
+      "1": [
+        " <strong>Carga Lunar</strong>: Quando as Nuvens Trovejantes realizam golpe(s) de relâmpago contra um alvo válido, há 33% de chance de realizar um golpe de relâmpago adicional. ",
+        " <strong>Florescimento Lunar</strong>: Ao desencadear reações de Florescimento Lunar, o grupo ganha um <tooltip ns=tooltips_gen baseKey18=11250003 values=[]><strong>Orvalho Verdejante da Montanha Lunar</strong></tooltip> especial. Até 3 Orvalhos Verdejantes da Montanha Lunar podem ser obtidos a cada 18s. ",
+        " <strong>Cristalização Lunar</strong>: Quando a Sonata da Jaula Lunar é desencadeada, cada Jaula Lunar tem 33% de chance de aplicar um ataque extra."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Bênção do Presságio Lunar: Serenata sob o Luar",
+    "description": {
+      "0": "Quando o personagem desencadeia uma reação de Eletricamente Carregado/Florescimento/Cristalização Hydro, será convertido para Carga Lunar/Florescimento Lunar/Cristalização Lunar respectivamente, e aumenta o Dano Básico de Reações Lunares causado pelos personagens com base na Vida Máxima de Columbina: cada 1000 de Vida Máxima aumenta o Dano Básico em 0.2%. É possível aumentar o Dano até 7% dessa forma.",
+      "1": "<br/>",
+      "2": "Além disso, quando Columbina está na equipe, aumenta o nível de <strong>Presságio Lunar</strong> em 1."
+    }
+  },
+  "passive": {
+    "name": "Vigília Lunar",
+    "description": {
+      "0": "Quando está em Nod-Krai e um personagem da equipe é derrotado, Columbina revive esse personagem e regenera a Vida desse personagem com base no nível de Amizade de Columbina. Esse efeito pode ser desencadeado uma vez a cada 100s. Esse efeito não funciona em domínios, domínios dizimados e no Abismo do Espiral.",
+      "1": "Além disso, Columbina parece possuir afinidade especial com certos animais influenciados por Kuuvahki..."
+    }
+  },
+  "constellation1": {
+    "name": "Resplendor Sobre Flores e Picos",
+    "description": {
+      "0": "Ao lançar a Habilidade Elemental <strong>Maré Eterna</strong>, desencadeia imediatamente um efeito equivalente a <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Interferência Kuuvahki</strong></tooltip>. Esse efeito pode ser desencadeado uma vez a cada 15s.",
+      "1": "<strong>Presságio Lunar: Reluzir Cheio</strong>",
+      "2": "Ao desencadear Interferência Kuuvahki, se o tipo de Reação Lunar que Columbina possui mais Gravitação for:",
+      "3": [
+        " <strong>Carga Lunar</strong>: regenera 6 de Energia Elemental para o personagem ativo.",
+        " <strong>Florescimento Lunar</strong>: aumenta a RES contra Interrupção do personagem ativo por 8s.",
+        " <strong>Cristalização Lunar</strong>: invoca <strong>Escudo da Chuva do Mar</strong>, com absorção de Dano de 12% da Vida Máxima de Columbina e com 250% de eficácia contra <hydro>Hydro</hydro> por 8s."
+      ],
+      "4": "<br/>",
+      "5": "O Dano de Reações Lunares de todos os membros próximos da equipe é <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Elevado</strong></tooltip> em 1.5%."
+    }
+  },
+  "constellation2": {
+    "name": "Esplendor Acompanhado",
+    "description": {
+      "0": "Aumenta a velocidade de acumulação de <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravitação</strong></tooltip> em 34%.",
+      "1": "Ao desencadear <strong>Interferência Kuuvahki</strong>, Columbina obtém o efeito <strong>Brilho Branco</strong> que aumenta sua Vida Máxima em 40% por 8s.",
+      "2": "<br/>",
+      "3": "<strong>Presságio Lunar: Reluzir Cheio</strong>:",
+      "4": "Na duração do efeito <strong>Brilho Branco</strong>, se desencadear<strong>Interferência Kuuvahki</strong>, e se o Tipo de Reação Lunar que acumulou Gravitação para Columbina for:",
+      "5": [
+        " <strong>Carga Lunar</strong>: aumenta o ATQ do personagem ativo. O aumento é equivalente a 1% da Vida Máxima de Columbina.",
+        " <strong>Florescimento Lunar</strong>: aumenta a Proficiência Elemental do personagem ativo. O aumento é equivalente a 0.35% da Vida Máxima de Columbina.",
+        " <strong>Cristalização Lunar</strong>: aumenta a DEF do personagem ativo. O aumento é equivalente a 1% da Vida Máxima de Columbina."
+      ],
+      "6": "<br/>",
+      "7": "O Dano de Reações Lunares de todos os membros próximos da equipe é <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Elevado</strong></tooltip> em 7%."
+    }
+  },
+  "constellation3": {
+    "name": "Brilho Onírico Sobre Águas Tranquilas",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Columbina_gen baseKey18=skill>Maré Eterna</tooltip></strong> em 3.",
+      "1": "Nível máximo de elvação é 15.",
+      "2": "<br/>",
+      "3": "Dano de Reações Lunares de todos os membros próximos da equipe é <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Elevado</strong></tooltip> em 1.5%."
+    }
+  },
+  "constellation4": {
+    "name": "Picos Entre Névoas Florais",
+    "description": {
+      "0": "Ao desencadear <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Interferência Kuuvahki</strong></tooltip>, regenera 4 de Energia Elemental para Columbina.",
+      "1": "Além disso, de acordo com o tipo de Reação Lunar que acumulou mais <strong>Gravitação</strong>, se for Carga Lunar/Florescimento Lunar/Cristalização Lunar, aumenta o Dano da Reação Lunar causado por essa Interferência Kuuvahki. O valor de aumento é baseado em 12.5%/2.5%/12.5% da Vida Máxima de Columbina. Esse efeito pode ser desencadeado uma vez a cada 15s.",
+      "2": "<br/>",
+      "3": "O Dano de Reações Lunares de todos os membros próximos da equipe é <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Elevado</strong></tooltip> em 1.5%."
+    }
+  },
+  "constellation5": {
+    "name": "Silêncio de uma Canção Solitária",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Columbina_gen baseKey18=burst>Melancolia Sob o Luar</tooltip></strong> em 3.",
+      "1": "Nível máximo é 15.",
+      "2": "<br/>",
+      "3": "O Dano de Reações Lunares de todos os membros próximos da equipe é <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Elevado</strong></tooltip> em 1.5%."
+    }
+  },
+  "constellation6": {
+    "name": "Atravessando a Escuridão com o Luar",
+    "description": {
+      "0": "Nos 8s após todos os personagens causarem uma Reação Lunar dentro de um <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Domínio Lunar</strong></tooltip>, aumenta o Dano CRIT do Tipo Elemental correspondente de todos os membros da equipe de acordo com o Tipo Elemental participante em 80%. Aumentos de Dano CRIT de Tipos Elementais idênticos não acumularão.",
+      "1": "<br/>",
+      "2": "O Dano de Reações Lunares de todos os membros próximos da equipe é <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Elevado</strong></tooltip> em 7%."
+    }
+  }
+}

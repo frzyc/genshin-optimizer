@@ -21,10 +21,12 @@ export const allDiscSetKeys = [
   'ProtoPunk',
   'PufferElectro',
   'ShadowHarmony',
+  'ShiningAria',
   'ShockstarDisco',
   'SoulRock',
   'SwingJazz',
   'ThunderMetal',
+  'WhiteWaterBallad',
   'WoodpeckerElectro',
   'YunkuiTales',
 ] as const
@@ -189,10 +191,12 @@ export const disc2pEffect: Record<
   ProtoPunk: { shield_: 0.15 },
   PufferElectro: { pen_: 0.08 },
   ShadowHarmony: { dmg_: 0.15 },
+  ShiningAria: { ether_dmg_: 0.1 },
   ShockstarDisco: { impact_: 0.06 },
   SoulRock: { def_: 0.16 },
   SwingJazz: { enerRegen_: 0.2 },
   ThunderMetal: { electric_dmg_: 0.1 },
+  WhiteWaterBallad: { physical_dmg_: 0.1 },
   WoodpeckerElectro: { crit_: 0.08 },
   YunkuiTales: { hp_: 0.1 },
 }
@@ -221,4 +225,6 @@ export const discSetNames: Record<DiscSetKey, string> = {
   KingOfTheSummit: 'King of the Summit',
   DawnsBloom: "Dawn's Bloom",
   MoonlightLullaby: 'Moonlight Lullaby',
+  WhiteWaterBallad: 'White Water Ballad',
+  ShiningAria: 'Shining Aria',
 }

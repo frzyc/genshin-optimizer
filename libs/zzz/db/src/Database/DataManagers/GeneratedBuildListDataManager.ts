@@ -1,19 +1,30 @@
+import { zodTypedRecord } from '@genshin-optimizer/common/database'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
+import { z } from 'zod'
 import type { DiscIds, ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
 
-export type GeneratedBuild = {
-  value: number //TODO: remove this when build display is more refined.
-  wengineId?: string
-  discIds: DiscIds
-}
+const discIdValueSchema = z.union([z.string(), z.undefined()])
+const discIdsSchema = zodTypedRecord(
+  allDiscSlotKeys,
+  discIdValueSchema
+) as z.ZodType<DiscIds>
 
-export interface GeneratedBuildList {
-  //generated opt builds
-  builds: Array<GeneratedBuild>
-  buildDate: number
-}
+const generatedBuildSchema = z.object({
+  value: z.number(),
+  wengineId: z.string().optional(),
+  discIds: discIdsSchema,
+})
+
+export type GeneratedBuild = z.infer<typeof generatedBuildSchema>
+
+const generatedBuildListSchema = z.object({
+  builds: z.array(generatedBuildSchema).catch([]),
+  buildDate: z.number().int().catch(0),
+})
+
+export type GeneratedBuildList = z.infer<typeof generatedBuildListSchema>
 
 export class GeneratedBuildListDataManager extends DataManager<
   string,
@@ -24,36 +35,30 @@ export class GeneratedBuildListDataManager extends DataManager<
   constructor(database: ZzzDatabase) {
     super(database, 'generatedBuildList')
   }
-  override validate(obj: object): GeneratedBuildList | undefined {
-    if (typeof obj !== 'object' || obj === null) return undefined
-    let { builds, buildDate } = obj as GeneratedBuildList
+  override validate(obj: unknown): GeneratedBuildList | undefined {
+    const result = generatedBuildListSchema.safeParse(obj)
+    if (!result.success) return undefined
 
-    if (!Array.isArray(builds)) {
-      builds = []
-      buildDate = 0
-    } else {
-      builds = builds
-        .map((build) => {
-          if (typeof build !== 'object' || build === null) return undefined
-          const { discIds: discIdsRaw, value } = build as GeneratedBuild
-          if (typeof value !== 'number') return undefined
-          if (typeof discIdsRaw !== 'object' || discIdsRaw === null)
-            return undefined
-          let { wengineId } = build as GeneratedBuild
-          if (wengineId && !this.database.wengines.get(wengineId))
-            wengineId = undefined
+    const { builds: rawBuilds, buildDate } = result.data
 
-          const discIds = objKeyMap(allDiscSlotKeys, (slotKey) =>
-            this.database.discs.get(discIdsRaw[slotKey])?.slotKey === slotKey
-              ? discIdsRaw[slotKey]
-              : undefined
-          )
+    // Validate builds with database lookups
+    const builds: GeneratedBuild[] = rawBuilds.map((build) => {
+      const { discIds: discIdsRaw, value } = build
+      let { wengineId } = build
 
-          return { discIds, wengineId, value }
-        })
-        .filter((b) => b) as GeneratedBuild[]
-      if (!Number.isInteger(buildDate)) buildDate = 0
-    }
+      // Validate wengineId exists in database
+      if (wengineId && !this.database.wengines.get(wengineId))
+        wengineId = undefined
+
+      // Validate discIds - ensure each disc exists and matches its slot
+      const discIds = objKeyMap(allDiscSlotKeys, (slotKey) =>
+        this.database.discs.get(discIdsRaw[slotKey])?.slotKey === slotKey
+          ? discIdsRaw[slotKey]
+          : undefined
+      )
+
+      return { discIds, wengineId, value }
+    })
 
     return {
       builds,

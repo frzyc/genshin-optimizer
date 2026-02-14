@@ -105,6 +105,21 @@
       "0": "Serangan tahap terakhir Normal Attack menimbulkan kerusakan yang mengakibatkan <geo>Geo DMG</geo> sebesar 60% ATK ke musuh di sekitar."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Adamantine",
+    "description": {
+      "0": "Menyerap kekuatan baru dari perjalanan masa lalu. Untuk setiap jenis elemen yang sudah diresonansi, Pengembara akan mendapatkan <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>efek penguatan</strong></tooltip> tambahan.",
+      "1": "<br/>",
+      "2": "Selain itu, saat Karakter party di sekitar dilindungi oleh Perisai, atau saat Perisai-nya digantikan karena alasan apa pun, atau saat membentuk <geo>Geo Construct</geo>, maka Pengembara akan mendapatkan 1 lapis efek Blade of Archaic Petra yang dapat ditumpuk sampai 3 lapis. Hanya bisa memperoleh 1 lapis Blade of Archaic Petra dengan cara ini setiap detik. Saat memiliki 3 lapis Blade of Archaic Petra dan melancarkan Charged Attack, Pengembara akan mengonsumsi seluruh Blade of the Archaic Petra dan serangannya berubah menjadi <strong>Charged Attack: Rockfell</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Rockfell</strong>",
+      "5": [
+        "Setiap tahap Charged Attack akan mengakibatkan <geo>Geo DMG</geo> yang lebih kuat. Peningkatan DMG-nya adalah sebesar 120% ATK Pengembara.",
+        "Kekuatan Perisai Karakter party di sekitar meningkat 20% selama 15 detik setelah serangan ini mengenai musuh.",
+        "<strong>Charged Attack: Rockfell</strong> dapat dilancarkan sekali setiap 15 detik."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Invincible Stonewall",
     "description": {

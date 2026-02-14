@@ -245,5 +245,6 @@
       "desc": "While in the <ct color=#FFFFFF>Frosted Banner</ct> state, the number of usable enhanced <ct color=#FFFFFF>Basic Attacks</ct> and enhanced <ct color=#FFFFFF>Dash Attacks</ct> is increased to 12, and also deal 45% more DMG.",
       "flavor": "Unlocking the safety device within the blade banner allows it to operate at full capacity. It's not just for combat... it's also handy for cooling down a meal."
     }
-  }
+  },
+  "potential": {}
 }

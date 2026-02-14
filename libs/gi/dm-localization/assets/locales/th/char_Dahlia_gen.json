@@ -113,13 +113,13 @@
   "passive1": {
     "name": "The Wind's Gentle Grace",
     "description": {
-      "0": "เมื่อตัวละครที่อยู่ภายใต้เอฟเฟกต์ \"Favonian Favor\" ของท่าไม้ตาย <strong>Radiant Psalter</strong> ทำให้เกิดปฏิกิริยาแช่แข็งแก่ศัตรู จะมอบเอฟเฟกต์ \"Benison\" ให้แก่ Dahlia 2 ชั้น โดยเอฟเฟกต์นี้สามารถเกิดขึ้นได้มากสุดหนึ่งครั้งใน 8 วินาที"
+      "0": "เมื่อตัวละครที่อยู่ภายใต้เอฟเฟกต์ \"Favonian Favor\" ของท่าไม้ตาย <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> ทำให้เกิดปฏิกิริยาแช่แข็งแก่ศัตรู จะมอบเอฟเฟกต์ \"Benison\" ให้แก่ Dahlia 2 ชั้น โดยเอฟเฟกต์นี้สามารถเกิดขึ้นได้มากสุดหนึ่งครั้งใน 8 วินาที"
     }
   },
   "passive2": {
     "name": "Prayer of Well-Wrought Joy",
     "description": {
-      "0": "เมื่อตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นของทีมตัวเอง อยู่ภายใต้เอฟเฟกต์ \"Favonian Favor\" ที่เกิดจากท่าไม้ตาย <strong>Radiant Psalter</strong> ความเร็วในการโจมตีจะเพิ่มขึ้น โดยค่าที่เพิ่มคือ: 0.5% ต่อทุก 1,000 หน่วย ของพลังชีวิตสูงสุดของ Dahlia และสามารถเพิ่มความเร็วในการโจมตีด้วยวิธีนี้ได้มากสุดถึง 20%"
+      "0": "เมื่อตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นของทีมตัวเอง อยู่ภายใต้เอฟเฟกต์ \"Favonian Favor\" ที่เกิดจากท่าไม้ตาย <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> ความเร็วในการโจมตีจะเพิ่มขึ้น โดยค่าที่เพิ่มคือ: 0.5% ต่อทุก 1,000 หน่วย ของพลังชีวิตสูงสุดของ Dahlia และสามารถเพิ่มความเร็วในการโจมตีด้วยวิธีนี้ได้มากสุดถึง 20%"
     }
   },
   "passive3": {
@@ -132,39 +132,39 @@
   "constellation1": {
     "name": "Infallible Procession",
     "description": {
-      "0": "ทุกครั้งที่ Dahlia ได้รับเอฟเฟกต์ \"Benison\" 1 ชั้นจากท่าไม้ตาย <strong>Radiant Psalter</strong> จะฟื้นฟูพลังงานธาตุ 2.5 หน่วย"
+      "0": "ทุกครั้งที่ Dahlia ได้รับเอฟเฟกต์ \"Benison\" 1 ชั้นจากท่าไม้ตาย <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> จะฟื้นฟูพลังงานธาตุ 2.5 หน่วย"
     }
   },
   "constellation2": {
     "name": "Revelation of Mercy",
     "description": {
-      "0": "หลังจากที่ Dahlia ใช้เอฟเฟกต์ \"Benison\" จากท่าไม้ตาย <strong>Radiant Psalter</strong> และอัญเชิญโล่พรศักดิ์สิทธิ์ ออกมา ประสิทธิภาพโล่ป้องกันของตัวละครที่ได้รับการปกป้องจากโล่พรศักดิ์สิทธิ์จะเพิ่มขึ้น 25% เป็นเวลา 12 วินาที"
+      "0": "หลังจากที่ Dahlia ใช้เอฟเฟกต์ \"Benison\" จากท่าไม้ตาย <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> และอัญเชิญโล่พรศักดิ์สิทธิ์ ออกมา ประสิทธิภาพโล่ป้องกันของตัวละครที่ได้รับการปกป้องจากโล่พรศักดิ์สิทธิ์จะเพิ่มขึ้น 25% เป็นเวลา 12 วินาที"
     }
   },
   "constellation3": {
     "name": "Windblume Offertory",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong>Radiant Psalter</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
     "name": "Collect of the Assembly",
     "description": {
-      "0": "ช่วงเวลาต่อเนื่องของเอฟเฟกต์ \"Favonian Favor\" ของท่าไม้ตาย <strong>Radiant Psalter</strong> เพิ่มขึ้น 3 วินาที"
+      "0": "ช่วงเวลาต่อเนื่องของเอฟเฟกต์ \"Favonian Favor\" ของท่าไม้ตาย <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> เพิ่มขึ้น 3 วินาที"
     }
   },
   "constellation5": {
     "name": "Let It Be Subtly So",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong>Immersive Ordinance</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Dahlia_gen baseKey18=skill>Immersive Ordinance</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {
     "name": "You Shall Go Out With Joy",
     "description": {
-      "0": "ตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น ที่ได้รับผลกระทบจากเอฟเฟกต์ \"Favonian Favor\" ของท่าไม้ตาย <strong>Radiant Psalter</strong> ความเร็วในการโจมตีจะเพิ่มขึ้น 10%",
+      "0": "ตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น ที่ได้รับผลกระทบจากเอฟเฟกต์ \"Favonian Favor\" ของท่าไม้ตาย <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> ความเร็วในการโจมตีจะเพิ่มขึ้น 10%",
       "1": "นอกจากนี้ เมื่อตัวละครที่อยู่ในการต่อสู้ในขณะนั้น ที่อยู่ภายใต้ผลกระทบของเอฟเฟกต์ Favonian Favor หมดสติ จะทำการ:",
       "2": [
         "ฟื้นชีวิตตัวละครดังกล่าว;",

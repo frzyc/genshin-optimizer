@@ -97,7 +97,7 @@
     "description": {
       "0": "Aino จะได้รับ เอฟเฟกต์เสริมพลังที่สอดคล้องกัน โดยขึ้นอยู่กับ<strong>ลัคนาจันทร์</strong>ของทีม",
       "1": "<br/>",
-      "2": "<strong>ลัคนาจันทร์ - จรัสแสง</strong>: ท่าไม้ตาย <strong>Precision Hydronic Cooler</strong> จะได้รับการเสริมพลัง: <strong>Cool Your Jets Ducky</strong> จะยิงกระสุนน้ำถี่ขึ้นกว่าเดิม และกระสุนน้ำจะสร้าง<hydro>ความเสียหายน้ำวงกว้าง</hydro> ที่มีขอบเขตกว้างขึ้น"
+      "2": "<strong>ลัคนาจันทร์ - จรัสแสง</strong>: ท่าไม้ตาย <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> จะได้รับการเสริมพลัง: <strong>Cool Your Jets Ducky</strong> จะยิงกระสุนน้ำถี่ขึ้นกว่าเดิม และกระสุนน้ำจะสร้าง<hydro>ความเสียหายน้ำวงกว้าง</hydro> ที่มีขอบเขตกว้างขึ้น"
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "The Theory of Ash—Field Equilibrium",
     "description": {
-      "0": "หลังจากที่ Aino ใช้สกิลธาตุ <strong>Musecatcher</strong> หรือท่าไม้ตาย <strong>Precision Hydronic Cooler</strong> ความชำนาญธาตุของตัว Aino เองจะเพิ่มขึ้น 80 หน่วย และความชำนาญธาตุของตัวละครอื่น ๆ ที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ในบริเวณใกล้เคียงเพิ่มขึ้น 80 หน่วย เป็นเวลา 15 วินาที",
+      "0": "หลังจากที่ Aino ใช้สกิลธาตุ <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong> หรือท่าไม้ตาย <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> ความชำนาญธาตุของตัว Aino เองจะเพิ่มขึ้น 80 หน่วย และความชำนาญธาตุของตัวละครอื่น ๆ ที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ในบริเวณใกล้เคียงเพิ่มขึ้น 80 หน่วย เป็นเวลา 15 วินาที",
       "1": "<br/>",
       "2": "เอฟเฟกต์การเพิ่มความชำนาญธาตุของกลุ่มดาวดังกล่าวจะไม่ซ้อนทับกัน"
     }
@@ -130,33 +130,33 @@
   "constellation2": {
     "name": "The Principle of Transference in Gear Differentials",
     "description": {
-      "0": "ในช่วงเวลาต่อเนื่องของ<strong>พื้นที่เย็นชุ่มฉ่ำ</strong> ของท่าไม้ตาย <strong>Precision Hydronic Cooler</strong> หาก Aino อยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้ เมื่อการโจมตีของตัวละครในทีมของตัวเอง ที่เข้าร่วมการต่อสู้ในขณะนั้น ถูกศัตรูที่อยู่ในบริเวณใกล้เคียง <strong>\"Cool Your Jets Ducky\"</strong> จะยิงกระสุนน้ำใส่ศัตรูดังกล่าวเพิ่มอีก 1 นัด สร้าง<hydro>ความเสียหายน้ำวงกว้าง</hydro> เท่ากับ 25% ของพลังโจมตี และ 100% ของความชำนาญธาตุของ Aino เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 5 วินาที และความเสียหายที่สร้าง จะถูกนับเป็นความเสียหายท่าไม้ตาย"
+      "0": "ในช่วงเวลาต่อเนื่องของ<strong>พื้นที่เย็นชุ่มฉ่ำ</strong> ของท่าไม้ตาย <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> หาก Aino อยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้ เมื่อการโจมตีของตัวละครในทีมของตัวเอง ที่เข้าร่วมการต่อสู้ในขณะนั้น ถูกศัตรูที่อยู่ในบริเวณใกล้เคียง <strong>\"Cool Your Jets Ducky\"</strong> จะยิงกระสุนน้ำใส่ศัตรูดังกล่าวเพิ่มอีก 1 นัด สร้าง<hydro>ความเสียหายน้ำวงกว้าง</hydro> เท่ากับ 25% ของพลังโจมตี และ 100% ของความชำนาญธาตุของ Aino เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 5 วินาที และความเสียหายที่สร้าง จะถูกนับเป็นความเสียหายท่าไม้ตาย"
     }
   },
   "constellation3": {
     "name": "Cake and the Art of Mechanism Repair",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong>Precision Hydronic Cooler</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
     "name": "Butter and Cats and the Law of Energy Supply",
     "description": {
-      "0": "เมื่อสกิลธาตุ <strong>Musecatcher</strong> โจมตีโดนศัตรู จะฟื้นฟูพลังงานธาตุให้แก่ Aino 10 หน่วย โดยสามารถฟื้นฟูพลังงานธาตุด้วยวิธีนี้ ได้มากสุดหนึ่งครั้งในทุก 10 วินาที"
+      "0": "เมื่อสกิลธาตุ <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong> โจมตีโดนศัตรู จะฟื้นฟูพลังงานธาตุให้แก่ Aino 10 หน่วย โดยสามารถฟื้นฟูพลังงานธาตุด้วยวิธีนี้ ได้มากสุดหนึ่งครั้งในทุก 10 วินาที"
     }
   },
   "constellation5": {
     "name": "Perpetual Turbine of Metal and Light",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong>Musecatcher</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {
     "name": "The Burden of Creative Genius",
     "description": {
-      "0": "ภายใน 15 วินาที หลังจากใช้ท่าไม้ตาย <strong>Precision Hydronic Cooler</strong> ความเสียหายที่เกิดจากปฏิกิริยาชาร์จไฟฟ้า, งอกเงย, ชาร์จจันทรา และงอกเงยจันทรา ของตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น และอยู่ในบริเวณใกล้เคียง จะเพิ่มขึ้น 15%",
+      "0": "ภายใน 15 วินาที หลังจากใช้ท่าไม้ตาย <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> ความเสียหายที่เกิดจากปฏิกิริยาชาร์จไฟฟ้า, งอกเงย, ชาร์จจันทรา, งอกเงยจันทรา และตกผลึกจันทรา ของตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น และอยู่ในบริเวณใกล้เคียง จะเพิ่มขึ้น 15%",
       "1": "<strong>ลัคนาจันทร์ - จรัสแสง</strong>: ความเสียหายที่เกิดจากปฏิกิริยาข้างต้นจะเพิ่มขึ้นอีก 20%"
     }
   }

@@ -1,0 +1,24 @@
+{
+  "name": "Lightbearing Moonshard",
+  "description": {
+    "0": "Pedang legendaris yang konon katanya ditempa oleh seorang Adeptus yang bersembunyi di mata air jernih dengan menggunakan cahaya bulan dari sumur. Wujud aslinya hanya akan terungkap saat senja dan fajar bertemu."
+  },
+  "passiveName": "Legacy of Lang-Gan",
+  "passiveDescription": {
+    "0": {
+      "0": "DEF +<cryo>20%</cryo>. Setelah Karakter yang mengenakan melancarkan Elemental Skill, DMG reaksi Lunar-Crystallize +<cryo>64%</cryo> selama 5 detik."
+    },
+    "1": {
+      "0": "DEF +<cryo>25%</cryo>. Setelah Karakter yang mengenakan melancarkan Elemental Skill, DMG reaksi Lunar-Crystallize +<cryo>80%</cryo> selama 5 detik."
+    },
+    "2": {
+      "0": "DEF +<cryo>30%</cryo>. Setelah Karakter yang mengenakan melancarkan Elemental Skill, DMG reaksi Lunar-Crystallize +<cryo>96%</cryo> selama 5 detik."
+    },
+    "3": {
+      "0": "DEF +<cryo>35%</cryo>. Setelah Karakter yang mengenakan melancarkan Elemental Skill, DMG reaksi Lunar-Crystallize +<cryo>112%</cryo> selama 5 detik."
+    },
+    "4": {
+      "0": "DEF +<cryo>40%</cryo>. Setelah Karakter yang mengenakan melancarkan Elemental Skill, DMG reaksi Lunar-Crystallize +<cryo>128%</cryo> selama 5 detik."
+    }
+  }
+}

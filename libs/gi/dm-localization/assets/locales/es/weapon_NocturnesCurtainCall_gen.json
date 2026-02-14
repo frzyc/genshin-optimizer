@@ -1,0 +1,24 @@
+{
+  "name": "Nocturno tras el Velo",
+  "description": {
+    "0": "Un orbe de jade cubierto con un fino velo del color de la luz de la luna que conserva una calidez similar a la de una canción incluso en las noches más frías de invierno."
+  },
+  "passiveName": "Balada de la encrucijada",
+  "passiveDescription": {
+    "0": {
+      "0": "La Vida Máx. aumenta en un <cryo>10%</cryo>. Cuando el portador de esta arma causa una Reacción Lunar o inflige daño de Reacción Lunar a un enemigo, recupera <cryo>14</cryo> pts. de Energía Elemental y obtiene el efecto de “licor divino del mar fértil” durante 12 s, el cual aumenta la Vida Máx. en un <cryo>14%</cryo> adicional y el Daño CRIT del daño de Reacción Lunar en un <cryo>60%</cryo>. El efecto de recuperación de Energía Elemental solo puede ocurrir una vez cada 18 s, y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "La Vida Máx. aumenta en un <cryo>12%</cryo>. Cuando el portador de esta arma causa una Reacción Lunar o inflige daño de Reacción Lunar a un enemigo, recupera <cryo>15</cryo> pts. de Energía Elemental y obtiene el efecto de “licor divino del mar fértil” durante 12 s, el cual aumenta la Vida Máx. en un <cryo>16%</cryo> adicional y el Daño CRIT del daño de Reacción Lunar en un <cryo>80%</cryo>. El efecto de recuperación de Energía Elemental solo puede ocurrir una vez cada 18 s, y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "La Vida Máx. aumenta en un <cryo>14%</cryo>. Cuando el portador de esta arma causa una Reacción Lunar o inflige daño de Reacción Lunar a un enemigo, recupera <cryo>16</cryo> pts. de Energía Elemental y obtiene el efecto de “licor divino del mar fértil” durante 12 s, el cual aumenta la Vida Máx. en un <cryo>18%</cryo> adicional y el Daño CRIT del daño de Reacción Lunar en un <cryo>100%</cryo>. El efecto de recuperación de Energía Elemental solo puede ocurrir una vez cada 18 s, y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "La Vida Máx. aumenta en un <cryo>16%</cryo>. Cuando el portador de esta arma causa una Reacción Lunar o inflige daño de Reacción Lunar a un enemigo, recupera <cryo>17</cryo> pts. de Energía Elemental y obtiene el efecto de “licor divino del mar fértil” durante 12 s, el cual aumenta la Vida Máx. en un <cryo>20%</cryo> adicional y el Daño CRIT del daño de Reacción Lunar en un <cryo>120%</cryo>. El efecto de recuperación de Energía Elemental solo puede ocurrir una vez cada 18 s, y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "La Vida Máx. aumenta en un <cryo>18%</cryo>. Cuando el portador de esta arma causa una Reacción Lunar o inflige daño de Reacción Lunar a un enemigo, recupera <cryo>18</cryo> pts. de Energía Elemental y obtiene el efecto de “licor divino del mar fértil” durante 12 s, el cual aumenta la Vida Máx. en un <cryo>22%</cryo> adicional y el Daño CRIT del daño de Reacción Lunar en un <cryo>140%</cryo>. El efecto de recuperación de Energía Elemental solo puede ocurrir una vez cada 18 s, y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

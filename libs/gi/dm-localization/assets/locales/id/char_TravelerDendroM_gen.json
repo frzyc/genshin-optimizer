@@ -110,6 +110,20 @@
       "0": "Setiap poin Elemental Mastery yang dimiliki oleh Pengembara sendiri akan meningkatkan 0,15% DMG yang diakibatkan oleh <strong>Razorgrass Blade</strong>, dan meningkatkan 0,1% DMG yang diakibatkan oleh <strong>Surgent Manifestation</strong>."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Verdalume",
+    "description": {
+      "0": "Menyerap kekuatan baru dari perjalanan masa lalu. Untuk setiap jenis elemen yang sudah diresonansi, Pengembara akan mendapatkan <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>efek penguatan</strong></tooltip> tambahan.",
+      "1": "<br/>",
+      "2": "Selain itu, saat medan di sekitar menghasilkan Dendro Core (termasuk Bountiful Core dan Seed of Deceit), atau saat party mendapatkan Verdant Dew, Pengembara akan mendapatkan 1 lapis efek Blade of Verdant Viridis. Masing-masing dari kedua cara di atas dapat menghasilkan 1 lapis Blade of Verdant Viridis sekali setiap 4 detik, dan dapat ditumpuk sampai 3 lapis. Saat memiliki 3 lapis Blade of Verdant Viridis dan melancarkan Charged Attack, Pengembara akan mengonsumsi seluruh Blade of Verdant Viridis dan serangannya berubah menjadi <strong>Charged Attack: Verdessence</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Verdessence</strong>",
+      "5": [
+        "Setiap tahap Charged Attack akan mengakibatkan <dendro>Dendro DMG</dendro> yang lebih kuat. Peningkatan DMG-nya adalah sebesar 80% ATK Pengembara. Selain itu akan tercipta dua <strong>Vinecore</strong> di lokasi awal, yang masing-masing akan meledak setelah 4/8 detik kemudian, mengakibatkan <dendro>Dendro DMG</dendro> sebesar 120% ATK Pengembara. DMG ini dianggap sebagai DMG Charged Attack.",
+        "<strong>Charged Attack: Verdessence</strong> dapat dilancarkan sekali setiap 15 detik."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Symbiotic Creeper",
     "description": {

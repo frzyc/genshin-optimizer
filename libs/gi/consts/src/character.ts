@@ -1,3 +1,8 @@
+import {
+  type AscensionKey,
+  ascensionMaxLevel,
+  validateLevelAsc,
+} from './common'
 import type { AdditiveReactionKey } from './go'
 import type { AmplifyingReactionKey } from './reaction'
 
@@ -30,9 +35,6 @@ export const allRegionKeys = [
   'nodKrai',
 ] as const
 export type RegionKey = (typeof allRegionKeys)[number]
-
-export const allAscensionKeys = [0, 1, 2, 3, 4, 5, 6] as const
-export type AscensionKey = (typeof allAscensionKeys)[number]
 
 export const allMoveKeys = [
   'normal',
@@ -107,6 +109,7 @@ export const nonTravelerCharacterKeys = [
   'Citlali',
   'Clorinde',
   'Collei',
+  'Columbina',
   'Cyno',
   'Dahlia',
   'Dehya',
@@ -127,8 +130,9 @@ export const nonTravelerCharacterKeys = [
   'Gorou',
   'HuTao',
   'Iansan',
-  'Ineffa',
+  'Illuga',
   'Ifa',
+  'Ineffa',
   'Jahoda',
   'Jean',
   'Kachina',
@@ -195,6 +199,7 @@ export const nonTravelerCharacterKeys = [
   'YumemizukiMizuki',
   'YunJin',
   'Zhongli',
+  'Zibai',
 ] as const
 export type NonTravelerCharacterKey = (typeof nonTravelerCharacterKeys)[number]
 
@@ -331,4 +336,33 @@ export const allowedAdditiveReactions: Partial<
   dendro: ['spread'],
   electro: ['aggravate'],
   anemo: ['aggravate'],
+}
+
+export const charMaxLevel = 100
+
+export const getCharMaxLevel = (
+  level: number,
+  ascension: AscensionKey
+): number => (level > 90 ? level : ascensionMaxLevel[ascension])
+
+export const getCharLevelString = (
+  level: number,
+  ascension: AscensionKey
+): string => `${level}/${getCharMaxLevel(level, ascension)}`
+
+export function validateCharLevelAsc(
+  inputLevel: number,
+  inputAscension: AscensionKey
+): { level: number; ascension: AscensionKey } {
+  let level = inputLevel
+  const ascension = inputAscension
+
+  if (typeof level === 'number' && level > 90) {
+    if (level > 97) level = 100
+    else if (level > 92) level = 95
+    else level = 90
+    return { level, ascension: 6 as AscensionKey }
+  }
+
+  return validateLevelAsc(level, ascension, charMaxLevel)
 }

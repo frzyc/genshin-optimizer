@@ -2,6 +2,7 @@ export const allWengineRarityKeys = ['S', 'A', 'B'] as const
 export type WengineRarityKey = (typeof allWengineRarityKeys)[number]
 
 export const allWengineKeys = [
+  'AngelInTheShell',
   'BashfulDemon',
   'BellicoseBlaze',
   'BigCylinder',
@@ -9,7 +10,9 @@ export const allWengineKeys = [
   'BoxCutter',
   'BunnyBand',
   'CannonRotor',
+  'CauldronOfClarity',
   'CinderCobalt',
+  'CloudcleaveRadiance',
   'CordisGermina',
   'DeepSeaVisitor',
   'DemaraBatteryMarkII',
@@ -23,6 +26,7 @@ export const allWengineKeys = [
   'GildedBlossom',
   'GrillOWisp',
   'HailstormShrine',
+  'HalfSugarBunny',
   'HeartstringNocturne',
   'HellfireGears',
   'Housekeeper',
@@ -69,6 +73,7 @@ export const allWengineKeys = [
   'TheBrimstone',
   'TheRestrained',
   'TheVault',
+  'Thoughtbop',
   'Timeweaver',
   'TremorTrigramVessel',
   'TusksOfFury',
@@ -99,6 +104,7 @@ export const allWengineSubStatKeys = [
   'anomProf',
   'impact_',
   'enerRegen_',
+  'anomMas_',
 ] as const
 export type WengineSubStatKey = (typeof allWengineSubStatKeys)[number]
 

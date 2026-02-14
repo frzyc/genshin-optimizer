@@ -1,0 +1,331 @@
+{
+  "10050001": {
+    "name": "Ek Güçlendirme Etkileri",
+    "description": {
+      "0": "Gezgin, etkileşime girdiği her element için bir özellik bonusu kazanır:",
+      "1": "<anemo>Rüzgar</anemo>: Kritik Oranı %10 artar.",
+      "2": "<geo>Toprak</geo>: Savunma %20 artar.",
+      "3": "<electro>Elektrik</electro>: Enerji Yüklemesi %20 artar.",
+      "4": "<dendro>Doğa</dendro>: Element Ustalığı 60 artar.",
+      "5": "<hydro>Su</hydro>: Can %20 artar.",
+      "6": "<pyro>Ateş</pyro>: Saldırı %20 artar.",
+      "7": "<cryo>Buz</cryo>: Kritik Hasar %20 artar."
+    }
+  },
+  "11120001": {
+    "name": "Soğuk Muhafaza Modu",
+    "description": {
+      "0": "<strong>Dokun</strong>",
+      "1": "Çok Amaçlı Yemek Mekasının Soğuk Muhafaza Modunu etkinleştirerek yakındaki düşmanlara <cryo>Buz Alan Hasarı</cryo> verir.",
+      "2": "<br/>",
+      "3": "<strong>Yemek Mekası: Soğuk Muhafaza Modu</strong>",
+      "4": "Mevcut aktif karakterini takip eder ve belirli aralıklarla düşmanlara Buzlu Parfeler ateşleyerek <cryo>Buz Hasarı</cryo> verir."
+    }
+  },
+  "11120002": {
+    "name": "Doğaçlama Pişirme Modu",
+    "description": {
+      "0": "<strong>Yemek Mekası: Doğaçlama Pişirme Modu</strong>",
+      "1": [
+        "Yemek Mekasını alana yerleştirir. Yemek Mekası element saldırılarını emebilir. Emilen element enerjisi belirli bir sınıra ulaştığında Escoffier, mekasındaki malzemeleri harika yemeklere dönüştürür.",
+        "Escoffier'nin yeni malzemeler almak için zamana ihtiyacı vardır, bu yüzden her hafta bu yemeklerden sadece belirli bir sayıda pişirebilir. Escoffier'nin yemek pişirme hakkı her Pazartesi saat 04:00'te yenilenir."
+      ]
+    }
+  },
+  "11130001": {
+    "name": "Destek Ateşi",
+    "description": {
+      "0": "Gece Ruhunun Lütfu durumundayken Ifa'nın Normal Saldırıları Destek Ateşine dönüşür.",
+      "1": "<strong>Dokun</strong>",
+      "2": "Bir Tonik Atışı yapar.",
+      "3": "<strong>Basılı Tut</strong>",
+      "4": "Sürekli olarak Tonik Atışları yapar.",
+      "5": "<strong>Tonik Atışı</strong>",
+      "6": "Gece Ruhu tesirli <anemo>Rüzgar Hasarı</anemo> verir ve bir düşmana isabet ettiğinde yakındaki tüm grup üyelerini Ifa'nın Element Ustalığına bağlı olarak iyileştirir."
+    }
+  },
+  "11130002": {
+    "name": "Kurtarma Kiti",
+    "description": {
+      "0": "En fazla 150 puan birikebilir. Ifa'nın sahip olduğu her Kurtarma Kiti puanı, yakındaki grup üyelerinin verdiği Elektrik Yüklü ve Girdap Hasarını %1,5 artırır, Ay Yüklü Hasarını ise %0,2 artırır. Ifa'nın Gece Ruhunun Lütfu durumu sona erdiğinde puanlar sıfırlanır."
+    }
+  },
+  "11130003": {
+    "name": "Gece Ruhunun Lütfu: Ifa",
+    "description": {
+      "0": "Sürekli olarak Gece Ruhu puanı tüketir. Gece Ruhu puanı tükendiğinde veya beceri tekrar kullanıldığında Ifa'nın Gece Ruhunun Lütfu durumu sona erer. Gece Ruhunun Lütfu şu özelliklere sahiptir:",
+      "1": [
+        "Ifa, Cacucu'nun yardımıyla süzülerek Hareket Hızını ve müdahaleye karşı direncini artırır. Bu durumda kalmak için Ifa sürekli olarak Gece Ruhu puanı tüketir. Depar atarken veya hızlanırken ekstra Gece Ruhu puanı tüketir.",
+        "Ifa, Normal Saldırı kullanırken Dokunma veya Basılı Tutma durumuna göre farklı türlerde Destek Ateşi açar."
+      ]
+    }
+  },
+  "11130004": {
+    "name": "Sakinleştirici İşaret",
+    "description": {
+      "0": "Bu İşaret kısa bir sürenin ardından patlayarak kaybolur ve ilgili element türünde Alan Hasarı verir. Sakinleştirici, isabet ettiği en fazla 4 düşmana Sakinleştirici İşaret uygulayabilir. Bir düşmana aynı anda farklı elementlerde İşaretler uygulanamaz."
+    }
+  },
+  "11130005": {
+    "name": "Yılan Kurnazlığı",
+    "description": {
+      "0": "Skirk, Yedi Aşamalı Parıltı modunu sürdürmek veya Yıkım: Harap Etme Element Patlamasını kullanmak için Yılan Kurnazlığı tüketebilir.",
+      "1": "<br/>",
+      "2": "Skirk şu yollarla Yılan Kurnazlığı puanı kazanabilir:",
+      "3": [
+        "Yıkım: Bükme Element Becerisini kullandıktan sonra.",
+        "Akıl Almaz Mantık Yükseltme Yeteneğini tetikleyip Boşluk Yarıkları soğurduktan sonra."
+      ],
+      "4": "<br/>",
+      "5": "Skirk, Yedi Aşamalı Parıltı modundayken alandan ayrıldığında ya da Yedi Aşamalı Parıltı modu sona erdiğinde Yılan Kurnazlığı puanları sıfırlanır."
+    }
+  },
+  "11130006": {
+    "name": "Yedi Aşamalı Parıltı",
+    "description": {
+      "0": "Skirk, <strong>Yıkım: Bükme</strong> Element Becerisini kullandığında belirli bir süreliğine bu moda geçer. Bu mod aşağıdaki özelliklere sahiptir:",
+      "1": [
+        "Sürekli olarak Yılan Kurnazlığı tüketir.",
+        "Normal ve Yüklü Saldırıların Etki Alanı ve Skirk'ün müdahaleye karşı direnci artar.",
+        "Normal, Yüklü ve Havadan Saldırılar, farklı herhangi bir element tesiriyle değişmeyecek şekilde <cryo>Buz Hasarına</cryo> dönüşür.",
+        " <strong>Yıkım: Harap Etme</strong> Element Patlaması, <strong>Yıkım: Tükeniş</strong> olarak değişir.",
+        "Skirk, depar atarken su üzerinde gidebilir.",
+        "Yılan Kurnazlığı tamamen tükendiğinde veya süre bittiğinde Skirk bu moddan çıkar ve Element Becerisi Bekleme Süresi başlar."
+      ]
+    }
+  },
+  "11130007": {
+    "name": "Akıl Almaz Mantık",
+    "description": {
+      "0": "Yakındaki grup üyeleri düşman üzerinde Donma, Süper İletim, Buz Girdabı veya Buz Kristalleşmesi tepkimelerini tetiklediğinde o düşmanın yakınında bir Boşluk Yarığı oluşur. Bu etki 2,5 saniyede bir tetiklenebilir. Savaş alanında aynı anda Skirk'ün yarattığı en fazla 3 Boşluk Yarığı bulunabilir.",
+      "1": "<br/>",
+      "2": "Skirk, yakınındaki Boşluk Yarıklarını aşağıdaki yollarla soğurur:",
+      "3": [
+        "Yedi Aşamalı Parıltı modundayken bir düşmana Yüklü Saldırı ile vurarak.",
+        "Yedi Aşamalı Parıltı modundayken <strong>Yıkım: Tükeniş</strong> Element Patlamasını kullanarak.",
+        "<strong>Yıkım: Bükme</strong> Element Becerisine Basılı Tutup hızlı hareket etmeye başlayarak."
+      ],
+      "4": "<br/>",
+      "5": "Skirk, soğurduğu her Yarık için 8 Yılan Kurnazlığı puanı kazanır."
+    }
+  },
+  "11130008": {
+    "name": "Unutulmaya Dönüş",
+    "description": {
+      "0": "Yakındaki <hydro>Su</hydro> grup üyelerinin <hydro>Su</hydro> elementi saldırıları düşmanlara vurduğunda veya Skirk dışındaki <cryo>Buz</cryo> grup üyelerinin <cryo>Buz</cryo> elementi saldırıları düşmanlara vurduğunda Skirk 20 saniyeliğine \"Ölümün Kıyısı\" etkisini kazanır. Bu etki 3 kademeye kadar birikebilir ve her kademenin süresi birbirinden bağımsızdır.",
+      "1": "Her karakter bu şekilde Skirk'e en fazla 1 \"Ölümün Kıyısı\" kademesi sağlayabilir.",
+      "2": "Her \"Ölümün Kıyısı\" kademesi, Yedi Aşamalı Parıltı modunda Skirk'ün Normal Saldırı Hasarını orijinal Hasarın %110/%120/%170'i kadar artırır. <strong>Yıkım: Harap Etme</strong> Element Patlaması Hasarını ise orijinal Hasarın %105/%115/%160'ı kadar artırır."
+    }
+  },
+  "11130009": {
+    "name": "Mukaddes Yağmur",
+    "description": {
+      "0": "Düşmanlar ya da yakındaki grup üyeleri Mukaddes Yağmura dokunduğunda kimin dokunduğuna göre farklı etkiler oluşur:",
+      "1": "Mukaddes Yağmura bir düşman dokunduğunda yakındaki düşmanlara <hydro>Su Alan Hasarı</hydro> veren bir patlama meydana gelir.",
+      "2": "Yakındaki bir grup üyesi dokunduğunda dokunan kişiyi havaya fırlatır.",
+      "3": "<br/>",
+      "4": "Savaş alanında aynı anda Dahlia'nın çağırdığı sadece 1 Mukaddes Yağmur bulunabilir."
+    }
+  },
+  "11130010": {
+    "name": "Favonius Lütfu",
+    "description": {
+      "0": "Dahlia, <strong>Işıltılı İlahi</strong> Element Patlamasını kullandığında grubundaki karakterlere bu etkiyi uygular.",
+      "1": "Bu etki aktifken mevcut Kutsal Lütuf Kalkanı Hasar alıp kırıldığında ya da süresi dolduğunda 1 Takdis tüketilerek yeni bir Kalkan çağrılabilir."
+    }
+  },
+  "11130011": {
+    "name": "Takdis",
+    "description": {
+      "0": "Dahlia, aşağıdaki yöntemlerle Takdis elde edebilir:",
+      "1": [
+        "Dahlia'nın bulunduğu gruptaki aktif grup üyesi Favonius Lütfu etkisindeyken bir düşmana 4 defa Normal Saldırı ile vurduğunda Dahlia 1 Takdis kademesi kazanır.",
+        "\"Rüzgarın Zarafeti\" Yükseltme Yeteneğinin etkisi tetiklendikten sonra Dahlia Takdis kademesi kazanır."
+      ],
+      "2": "<br/>",
+      "3": "Favonius Lütfu süresi boyunca Dahlia en fazla 4 Takdis kademesi elde edebilir."
+    }
+  },
+  "11160001": {
+    "name": "Birgitta",
+    "description": {
+      "0": "Ineffa'nın asistanı ve savaştaki yoldaşı. Element Becerisi veya Element Patlamasını kullanarak savaş alanına çağrılabilir.",
+      "1": "Eğer yakınlarda düşmanlar varsa Birgitta hızla bir düşmana yaklaşır ve her 2 saniyede bir Elektrik Akımı saldırısı yaparak <electro>Elektrik Alan Hasarı</electro> verir.",
+      "2": "Alanda aynı anda Ineffa tarafından çağrılan yalnızca bir tane Birgitta var olabilir.",
+      "3": "<br/>",
+      "4": "Ayrıca Nod-Krai'da iken çeşitli yöntemlerle Birgitta'nın görünüşünü değiştirmek mümkün olacak gibi görünüyor..."
+    }
+  },
+  "11190001": {
+    "name": "Donuk Koru Mabedi",
+    "description": {
+      "0": "<strong>Runo: Karsikko'nun Şafaksız İstirahati</strong> Element Becerisi kullanılarak çağrılabilen, Ay İlahicilerini koruyan bir büyü dizilimi.",
+      "1": "Donuk Koru Mabedi aktif karakteri takip eder ve dizilimin içindeki düşmanlara her 2 saniyede bir <dendro>Doğa Alan Hasarı</dendro> verir. Bu Hasar, Element Becerisi Hasarı sayılır."
+    }
+  },
+  "11190002": {
+    "name": "Ay Ezgisi",
+    "description": {
+      "0": "İlahileri birbirine dokuyarak birleştiren bir melodi. Element Patlaması kullanıldığında veya kullanıldıktan sonra bir süre boyunca Çiçeklenme, Aşırı Çiçeklenme, Filizlenme ve Ay Çiçeklenmesi Hasarlarını artıran Solgun İlahi kademelerine dönüştürülebilir.",
+      "1": "Lauma, <strong>Runo: Karsikko'nun Şafaksız İstirahati</strong> Element Becerisinin Basılı Tutma halini gerçekleştirmek için Taze Çiy tükettiğinde, tüketilen her Taze Çiy başına 1 Ay Ezgisi kademesi kazanır."
+    }
+  },
+  "11190003": {
+    "name": "Solgun İlahi",
+    "description": {
+      "0": "Çiçeklenme, Aşırı Çiçeklenme, Filizlenme ve Ay Çiçeklenmesi tepkimelerinin verdiği Hasarı artıran, Ay İlahicilerinin nesilden nesile aktardığı bir ilahi.",
+      "1": "<br/>",
+      "2": "Lauma şu yollarla Solgun İlahi kademesi kazanabilir:",
+      "3": [
+        "<strong>Runo: Ay İle Çarpan Kalpler</strong> Element Patlamasını kullandığında."
+      ],
+      "4": "<strong>Runo: Ay İle Çarpan Kalpler</strong> Element Patlamasını kullanması sonucu Ay Ezgisi kademelerini tükettiğinde.",
+      "5": [
+        "Donuk Koru Mabedi, <strong>\"Kanımı ve Terimi Ay Işığına Adarım\"</strong> Takımyıldız etkisini tetiklediğinde."
+      ],
+      "6": "<br/>",
+      "7": "Grup üyeleri Çiçeklenme, Aşırı Çiçeklenme, Filizlenme veya Ay Çiçeklenmesi Hasarı verdiğinde 1 kademe Solgun İlahi tüketilir ve verilen Hasar, Lauma'nın Element Ustalığına göre artar. Birden fazla düşmana aynı anda Hasar verilmesi halinde, vurulan düşman sayısına bağlı olarak birden fazla Solgun İlahi kademesi tüketilir.",
+      "8": "Her Solgun İlahi kademesinin süresi ayrı hesaplanır."
+    }
+  },
+  "11190004": {
+    "name": "Alacakaranlık Nöbeti",
+    "description": {
+      "0": "Grup üyelerinin verdiği Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme Hasarları Kritik Vuruş gerçekleştirebilir. Kritik Oranı %15, Kritik Hasarı %100 olarak sabittir. Bu etkiden alınan Kritik Oranı, bu Element Tepkimelerinin Kritik Vuruş yapmasını sağlayan diğer benzer etkilerden alınan Kritik Oranları ile birikir."
+    }
+  },
+  "11190005": {
+    "name": "Mehtap Duası",
+    "description": {
+      "0": "Grup üyelerinin Ay Çiçeklenmesi Kritik Oranı %10 artar, Kritik Hasarı ise %20 artar."
+    }
+  },
+  "11190007": {
+    "name": "Yükselme",
+    "description": {
+      "0": "Özel Hasar Artışı etkisi. Diğer Hasar Artış etkilerinden bağımsız olarak hesaplanır."
+    }
+  },
+  "11190008": {
+    "name": "Taze Çiy",
+    "description": {
+      "0": "Grup üyeleri Ay Çiçeklenmesi tepkimeleri tetiklediğinde bu kaynak kazanılır.",
+      "1": "Grubun bir Ay Çiçeklenmesi tetikledikten sonra 2,5sn boyunca, her 2,5 saniyede bir 1 Taze Çiy elde eder. Grubunun en fazla 3 Taze Çiyi olabilir. Bu süre içerisinde başka bir Ay Çiçeklenmesi tepkimesi tetiklediğinde bu etkinin süresi sıfırlanır."
+    }
+  },
+  "11200001": {
+    "name": "Gürleyen Senfoni",
+    "description": {
+      "0": "Daha az Element Enerjisi tüketerek özel bir Element Patlaması gerçekleştirir. Flins tek bir sefer <electro>Elektrik Alan Hasarı</electro> verir. Bu Hasar, Ay Yüklü Hasarı olarak kabul edilir.",
+      "1": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Yakınlarda Şimşek Bulutları olduğunda fazladan 1 sefer daha <electro>Elektrik Alan Hasarı</electro> verir. Bu Hasar da Ay Yüklü Hasarı sayılır."
+    }
+  },
+  "11220001": {
+    "name": "Gölge Dansı",
+    "description": {
+      "0": "Nefer, <strong>Senet Stratejisi: Binbir Gece Dansı</strong> Element Becerisini kullandıktan sonra bu duruma girer.",
+      "1": "Gölge Dansı durumundayken eğer en az 1 Taze Çiyin varsa Nefer'ın Yüklü Saldırıları değişerek özel Yüklü Saldırı \"Hayali Performans\" olur.",
+      "2": "Nefer, 3 Hayali Performans gerçekleştirdiğinde veya durumun süresi bittiğinde Gölge Dansı durumundan çıkar."
+    }
+  },
+  "11220002": {
+    "name": "Hayali Performans",
+    "description": {
+      "0": "<strong>Senet Stratejisi: Binbir Gece Dansı</strong> Element Becerisinin sonucunda Gölge Dansı durumuna girdiysen ve en az 1 Taze Çiyin varsa Nefer'ın Yüklü Saldırıları değişerek özel Yüklü Saldırı \"Hayali Performans\" olur. Hayali Performans Dayanıklılık tüketmez.",
+      "1": "Nefer, kendinin gölgelerini çağırarak düşmanlara karşı Ortak Saldırılar yapar. Nefer 2 aşama, gölgeler ise 3 aşama <dendro>Doğa Alan Hasarı</dendro> verir. Gölgelerin verdiği Hasar Ay Çiçeklenmesi Hasarı sayılır. Her Hayali Performanstan sonra gölgeler ilk çağrıldığı zaman 1 Taze Çiy tüketilir."
+    }
+  },
+  "11220003": {
+    "name": "Yanılgı Perdesi",
+    "description": {
+      "0": "Nefer, \"Ay Işığına Bahis\" Yükseltme Yeteneği ile \"Aldatıcı Tohumlar\" topladığında bu etkiyi kazanır ve Hayali Performansının verdiği Hasar artar.",
+      "1": "Her yanılgı Perdesi kademesi, Nefer'ın Hayali Performansının verdiği Hasarı %8 artırır. Başlangıçtaki maksimum kademe sayısı 3 ile sınırlıdır ve her kademe 9sn sürer. Her kademenin süresi birbirinden bağımsızdır."
+    }
+  },
+  "11230001": {
+    "name": "Temel Dönüşüm",
+    "description": {
+      "0": "<strong>İkili Form: Birleşme ve Ayrılma</strong> Element Becerisi kullanıldıktan sonra Durin 6 saniyeliğine bu etkiyi kazanır.",
+      "1": "Etki aktifken Element Becerisi butonuna basarak <strong>Saflığın Kabulü</strong> durumuna veya Normal Saldırı butonuna basarak <strong>Karanlığın Reddi</strong> durumuna gir.",
+      "2": "Durin bu durumlardayken farklı güçlendirmeler kazanır ve farklı Element Patlamaları kullanabilir."
+    }
+  },
+  "11240001": {
+    "name": "Miyavtastik Hazine Şişesi",
+    "description": {
+      "0": "Jahoda'nın <strong>Kurnaz Strateji: Ganimet Paylaşımı</strong> Element Becerisini kullandıktan sonra elde ettiği küçük bir element şişesi.",
+      "1": "Jahoda, Gölge Takibi durumundayken yakındaki düşmanlar <pyro>Ateş</pyro>, <hydro>Su</hydro>, <electro>Elektrik</electro> veya <cryo>Buz</cryo> etkisinde olursa Miyavtastik Hazine Şişesi o elemente dönüşür ve dolmaya başlar. Dönüşeceği elementin öncelik sırası şöyledir: <pyro>Ateş</pyro> > <hydro>Su</hydro> > <electro>Elektrik</electro> > <cryo>Buz</cryo>. Jahoda her Element Becerisi kullandığında Miyavtastik Hazine Şişesi bu şekilde bir dönüşüm geçirebilir.",
+      "2": "Miyavtastik Hazine Şişesi dolduğunda Jahoda onu hemen boşaltır, Gölge Takibi durumundan çıkar ve yakındaki düşmanlara tek seferlik <anemo>Rüzgar Hasarı</anemo> verir.",
+      "3": "Element Becerisi her kullanıldığında Jahoda yeni bir Miyavtastik Hazine Şişesi çıkarır.",
+      "4": "<br/>",
+      "5": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: <strong>Miyavtastik Hazine Şişesi</strong> dolduğunda Jahoda onu hemen boşaltmaz. Bunun yerine kısa bir süre boyunca, depolanan element enerjisini sürekli olarak tüketir ve yakındaki düşmanlara belirli aralıklarla <strong>Pofuduk Kedi Yumakları</strong> fırlatarak <strong>Miyavtastik Hazine Şişesinde</strong> depolanan element türünde Hasar verir."
+    }
+  },
+  "11240002": {
+    "name": "Kedisel Koordineli Destek Robotları",
+    "description": {
+      "0": "Eski bir hazine avcısı olan Jahoda'nın yanında taşıdığı aygıtlardan biri. <strong>Gizli Yetenekler: Avcının Yedi Aleti</strong> Element Patlamasını kullandığında ortaya çıkar.",
+      "1": "Kedisel Koordineli Destek Robotları sürekli olarak aktif karakterinin Canını yeniler. İyileştirilen karakterin Canı %70'in üzerindeyse yakındaki en düşük Cana sahip grup üyesinin de Canını yeniler.",
+      "2": "<br/>",
+      "3": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Yakındaki düşmanlar <pyro>Ateş</pyro>, <hydro>Su</hydro>, <electro>Elektrik</electro> veya <cryo>Buz</cryo> etkisindeyse Kedisel Koordineli Destek Robotları ilgili elemente dönüşür. Dönüşeceği elementin öncelik sırası şöyledir: <pyro>Ateş</pyro> > <hydro>Su</hydro> > <electro>Elektrik</electro> > <cryo>Buz</cryo>. Her konuşlandırmadan sonra Kedisel Koordineli Destek Robotu bu şekilde bir dönüşüm geçirebilir. Dönüşümden sonra Kedisel Koordineli Destek Robotu, yakındaki en fazla 3 düşmana belirli aralıklarla saldırarak ilgili element türünde Hasar verir."
+    }
+  },
+  "11250001": {
+    "name": "Yer Çekimi Dalgası",
+    "description": {
+      "0": "<strong>Ebedi Metcezir</strong> Element Becerisi kullanıldıktan sonra Columbina bir <strong>Yer Çekimi Dalgası</strong> çağırır.",
+      "1": "Yer Çekimi Dalgası, alandaki mevcut aktif karakteri takip eder ve yakındaki düşmanlara sürekli olarak <hydro>Su Alan Hasarı</hydro> verir.",
+      "2": "<br/>",
+      "3": "Ayrıca Yer Çekimi Dalgası alandayken yakındaki grup üyeleri Ay Tepkimeleri tetiklerse veya Ay Tepkimesi Hasarı verirse Columbina 2 saniyeliğine Yeni Ayın Alameti etkisini kazanır ve sürekli olarak <strong>Yer Çekimi</strong> biriktirir. Her 2 saniyede 20 Yer Çekimi biriktirilebilir.",
+      "4": "Columbina en fazla 60 Yer Çekimi biriktirebilir ve Yer Çekimi Dalgasının süresi sona erdiğinde bu birikim kaybolur.",
+      "5": "Yer Çekimi birikimi sınıra ulaştığında özel bir <strong>Yer Çekimi Müdahalesi</strong> tetiklenir. Columbina için en çok Yer Çekimi biriktiren Ay Tepkimesi türüne bağlı olarak farklı etkiler tetiklenir:",
+      "6": [
+        "<strong>Ay Yüklü</strong>: Yer Çekimi Müdahalesi tek seferlik <electro>Elektrik Alan Hasarı</electro> verir. Bu Hasar, Ay Yüklü Hasarı olarak kabul edilir. ",
+        "<strong>Ay Çiçeklenmesi</strong>: Yer Çekimi Müdahalesi yakındaki düşmanlara 5 Ay Çiyi Mührü fırlatarak <dendro>Doğa Hasarı</dendro> verir. Bu Hasar, Ay Çiçeklenmesi Hasarı olarak kabul edilir.",
+        "<strong>Ay Kristalleşmesi</strong>: Yer Çekimi Müdahalesi tek seferlik <geo>Toprak Alan Hasarı</geo> verir. Bu Hasar, Ay Kristalleşmesi Hasarı olarak kabul edilir."
+      ]
+    }
+  },
+  "11250002": {
+    "name": "Ay Alanı",
+    "description": {
+      "0": "Columbina'nın <strong>Mehtap Melankolisi</strong> Element Patlamasını kullandıktan sonra çağırdığı alan.",
+      "1": "Mevcut aktif karakterler <strong>Ay Alanı</strong> içindeyken tüm grup üyelerinin verdiği Ay Tepkimesi Hasarı artar."
+    }
+  },
+  "11250003": {
+    "name": "Ay Sırtı Çiyi",
+    "description": {
+      "0": "Columbina'nın Pasif Yeteneği <strong>Yeni Ayın Kanunu</strong> tarafından sağlanan özel bir Taze Çiy kaynağı. Maksimum kapasitesi ve süresi Taze Çiyden ayrı olarak hesaplanır.",
+      "1": "Grubun Taze Çiyi harcandığında onun yerine <strong>Ay Sırtı Çiyi</strong> tüketilir.",
+      "2": "Grubunda en fazla 3 adet <strong>Ay Sırtı Çiyi</strong> bulunabilir."
+    }
+  },
+  "11260001": {
+    "name": "Ay Döngüsü Değişimi",
+    "description": {
+      "0": "Zibai, <strong>Yerin ve Göğün Tezahürü</strong> Element Becerisini kullandıktan sonra bu moda geçer. Bu mod en fazla 15sn sürer ve şu özelliklere sahiptir:",
+      "1": [
+        "Normal ve Yüklü Saldırılar, başka tesirlerle değiştirilemez şekilde <geo>Toprak Hasarına</geo> dönüşür.",
+        "<strong>Yerin ve Göğün Tezahürü</strong> Element Becerisi de <strong>Ruh Atının Koşusu</strong> Element Becerisine dönüşür: Zibai en az 70 Döngü Değişimi Işıltısına sahip olduğunda 70 <strong>Döngü Değişimi Işıltısı</strong> harcayıp Ruh Atının Koşusu becerisini kullanarak iki defa <geo>Toprak Hasarı</geo> verebilir. İkinci hasar, Ay Kristalleşmesi Tepkimesi Hasarı olarak kabul edilir."
+      ],
+      "2": "<br/>",
+      "3": "En fazla 100 <strong>Döngü Değişimi Işıltısı</strong> puanı biriktirilebilir. Zibai bunları şu yollarla elde edebilir:",
+      "4": [
+        "<strong>Ay Döngüsü Değişimi</strong> modundayken her saniye 10 puan kazanır.",
+        "Normal Saldırılarıyla bir düşmana vurduğunda 5 puan kazanır. Bu şekilde her 0,5 saniyede bir Döngü Değişimi Işıltısı puanı kazanılabilir."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Ay Sembolü: Yükselen Parıltı</strong>",
+      "7": "Yakındaki grup üyeleri Ay Kristalleşmesi tepkimesi tetiklediğinde Zibai için 35 <strong>Döngü Değişimi Işıltısı</strong> puanı biriktirirler. Bu şekilde her 4 saniyede bir puan kazanılabilir. <strong>Ruh Atının Koşusu</strong> özel Element Becerisini kullanmak, bu şekilde elde edilen <strong>Döngü Değişimi Işıltısı</strong> bekleme süresini sıfırlar.",
+      "8": "<br/>",
+      "9": "Zibai, <strong>Ruh Atının Koşusu</strong> becerisini 4 defa kullandıktan sonra veya becerinin süresi dolduğunda bu moddan çıkar."
+    }
+  },
+  "11270001": {
+    "name": "Bülbülün Şarkısı",
+    "description": {
+      "0": "Illuga <strong>Gölgesiz Yansıma</strong> Element Patlamasını kullandıktan sonra kazanılan etki. Mevcut aktif karakterlerin verdiği <geo>Toprak Hasarını</geo> artırabilir."
+    }
+  }
+}

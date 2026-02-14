@@ -1,8 +1,4 @@
-import {
-  CardThemed,
-  ConditionalWrapper,
-  NextImage,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
   range,
@@ -86,7 +82,7 @@ export function CompactWengineCard({
           >
             <Box sx={{ display: 'flex', flexGrow: 1 }}>
               <Box
-                component={NextImage ? NextImage : 'img'}
+                component="img"
                 alt="Wengine Image"
                 src={wengineAsset(wengine.key, 'icon')}
                 sx={(theme) => ({
@@ -187,7 +183,7 @@ export function CompactWengineCard({
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 {range(1, 5).map((index: number) => (
                   <Box
-                    component={NextImage ? (NextImage as any) : 'img'}
+                    component={'img'}
                     key={`phase-active-${index}`}
                     src={wenginePhaseIcon(
                       index <= wengine.phase ? 'singlePhase' : 'singleNonPhase'

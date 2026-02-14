@@ -27,6 +27,7 @@ import Chongyun from './Chongyun'
 import Citlali from './Citlali'
 import Clorinde from './Clorinde'
 import Collei from './Collei'
+import Columbina from './Columbina'
 import Cyno from './Cyno'
 import Dahlia from './Dahlia'
 import Dehya from './Dehya'
@@ -48,6 +49,7 @@ import Gorou from './Gorou'
 import HuTao from './HuTao'
 import Iansan from './Iansan'
 import Ifa from './Ifa'
+import Illuga from './Illuga'
 import Ineffa from './Ineffa'
 import Jahoda from './Jahoda'
 import Jean from './Jean'
@@ -127,6 +129,7 @@ import Yoimiya from './Yoimiya'
 import YumemizukiMizuki from './YumemizukiMizuki'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
+import Zibai from './Zibai'
 
 const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Aino,
@@ -149,6 +152,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Citlali,
   Clorinde,
   Collei,
+  Columbina,
   Cyno,
   Dahlia,
   Dehya,
@@ -170,6 +174,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   HuTao,
   Iansan,
   Ifa,
+  Illuga,
   Ineffa,
   Jahoda,
   Jean,
@@ -249,6 +254,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
 } as const
 export function getCharSheet(charKey: CharacterKey, gender: GenderKey) {
   return characters[charKeyToCharSheetKey(charKey, gender)]

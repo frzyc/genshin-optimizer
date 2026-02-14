@@ -13,7 +13,6 @@ export const conditionals = {
     min: 0,
     max: 6,
   },
-  frostbite: { sheet: 'Miyabi', name: 'frostbite', type: 'bool' },
   frostburn: { sheet: 'Miyabi', name: 'frostburn', type: 'bool' },
   icefire: { sheet: 'Miyabi', name: 'icefire', type: 'bool' },
   level_3_charge_hit: {

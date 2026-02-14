@@ -111,6 +111,22 @@
       "1": "Efek ini dapat terpicu setiap 5 detik."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Windwrath",
+    "description": {
+      "0": "Menyerap kekuatan baru dari perjalanan masa lalu. Untuk setiap jenis elemen yang sudah diresonansi, Pengembara akan mendapatkan <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>efek penguatan</strong></tooltip> tambahan.",
+      "1": "<br/>",
+      "2": "Selain itu, saat jenis elemen Karakter party di sekitar adalah <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, atau <electro>Electro</electro> dan serangannya mengenai musuh, Pengembara akan mendapatkan 1 lapis efek Blade of the Dawn Breeze dengan elemen yang sesuai. Blade of the Dawn Breeze untuk setiap jenis elemen hanya dapat ditumpuk sampai 1 lapis. Saat memiliki setidaknya 2 lapis Blade of the Dawn Breeze dan melancarkan Charged Attack, Pengembara akan mengonsumsi seluruh Blade of the Dawn Breeze dan serangannya berubah menjadi <strong>Charged Attack: Whirlwind</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Whirlwind</strong>",
+      "5": [
+        "Setiap tahap Charged Attack akan mengakibatkan <anemo>Anemo DMG</anemo> yang lebih kuat. Peningkatan DMG-nya adalah sebesar 60% ATK Pengembara.",
+        "Untuk setiap satu lapis Blade of the Dawn Breeze dari elemen tertentu yang dikonsumsi, akan muncul Blade Wind dengan jenis elemen yang sesuai dan mengakibatkan Elemental DMG dengan jenis elemen yang sesuai sebesar 50% ATK Pengembara. DMG ini dianggap sebagai DMG Charged Attack.",
+        "<strong>Charged Attack: Whirlwind</strong> hanya dapat dilancarkan sekali setiap 15 detik.",
+        "Selagi melancarkan<strong>Charged Attack: Whirlwind</strong>, Pengembara tidak bisa mendapatkan lapisan Blade of the Dawn Breeze."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Raging Vortex",
     "description": {

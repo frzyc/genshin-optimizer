@@ -27,7 +27,7 @@ export const stg = (strKey: string) => (
 export const condReadNode = (path: string[]) =>
   customStringRead(['conditional', ...path])
 export function cond(
-  key: CharacterKey | WeaponKey | ArtifactSetKey,
+  key: CharacterKey | WeaponKey | ArtifactSetKey | 'Traveler',
   subKey: string
 ): [path: string[], node: ReadNode<string>] {
   const path = [key, subKey]
@@ -49,6 +49,7 @@ type CharTransKey =
   | 'TravelerDendro'
   | 'TravelerHydro'
   | 'TravelerPyro'
+  | 'Traveler'
 export function trans(typeKey: 'char', key: CharTransKey): Translated
 export function trans(typeKey: 'weapon', key: WeaponKey): Translated
 export function trans(typeKey: 'artifact', key: ArtifactSetKey): Translated

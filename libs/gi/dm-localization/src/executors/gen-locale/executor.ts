@@ -32,6 +32,7 @@ import {
   hakushinArtis,
   hakushinChars,
   hakushinWeapons,
+  hyperLinkNameExcelConifgData,
   languageMap,
   materialExcelConfigData,
   proudSkillExcelConfigData,
@@ -424,7 +425,6 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
   })
 
   //generate the MapHashes for localization for materials
-
   Object.entries(materialExcelConfigData).forEach(([_id, material]) => {
     const { nameTextMapHash } = material
     const key = nameToKey(TextMapEN[nameTextMapHash])
@@ -433,6 +433,18 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       name: nameTextMapHash,
     }
   })
+
+  //generate the MapHashes for localization for tooltips
+  Object.values(hyperLinkNameExcelConifgData).forEach(
+    ({ id, nameTextMapHash, descTextMapHash }) => {
+      // Non-character kits, from IT buffs, skip them
+      if (id < 10000000) return
+      mapHashData.tooltips[id] = {
+        name: nameTextMapHash,
+        description: [descTextMapHash, 'paragraph'],
+      }
+    }
+  )
 
   // Override
   mapHashDataOverride()
@@ -479,7 +491,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         if (processing === 'skillParamEncoding' && lang !== 'en') return
         const string = parsingFunctions[processing](
           lang as Language,
-          preprocess(rawString),
+          preprocess(rawString, `${keys[0]}_${keys[1]}_gen`),
           keys
         )
         if (string === undefined)
@@ -557,6 +569,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           'weaponKey',
           'elementalResonance',
           'material',
+          'tooltips',
           'charNames',
           'weaponNames',
           'artifactNames',
@@ -579,7 +592,10 @@ function getLocalizationForHakushinChar(key: NonTravelerCharacterKey) {
   const data = getHakushinCharData(key)
 
   function parseString(type: string, str: string) {
-    return parsingFunctions[type]('en', preprocess(str), ['char', key])
+    return parsingFunctions[type]('en', preprocess(str, `char_${key}_gen`), [
+      'char',
+      key,
+    ])
   }
   function getSkillParams(strs: string[]) {
     return Object.fromEntries(
@@ -709,20 +725,23 @@ function getLocalizationForHakushinWep(key: WeaponKey) {
 
   const localization = {
     name: data.Name,
-    description: parsingFunctions['paragraph']('en', preprocess(data.Desc), [
-      'weapon',
-      key,
-    ]),
+    description: parsingFunctions['paragraph'](
+      'en',
+      preprocess(data.Desc, `weapon_${key}_gen`),
+      ['weapon', key]
+    ),
     passiveName: data.Refinement[1].Name,
     passiveDescription: objKeyValMap(
       Object.values(data.Refinement),
-      (info, index) => [
-        index,
-        parsingFunctions['paragraph']('en', preprocess(info.Desc), [
-          'weapon',
-          key,
-        ]),
-      ]
+      (info, index) =>
+        [
+          index,
+          parsingFunctions['paragraph'](
+            'en',
+            preprocess(info.Desc, `weapon_${key}_gen`),
+            ['weapon', key]
+          ),
+        ] as [any, any]
     ),
   }
   return localization

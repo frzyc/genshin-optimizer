@@ -1,7 +1,6 @@
 import {
   CardThemed,
   ColorText,
-  NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
@@ -9,7 +8,7 @@ import {
   characterAsset,
   characterKeyToGenderedKey,
 } from '@genshin-optimizer/sr/assets'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import { type CharacterKey, getLevelString } from '@genshin-optimizer/sr/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/sr/db'
 import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
@@ -19,7 +18,7 @@ import {
 } from '@genshin-optimizer/sr/formula'
 import { getCharStat } from '@genshin-optimizer/sr/stats'
 import { ElementIcon, PathIcon } from '@genshin-optimizer/sr/svgicons'
-import { getLevelString, statToFixed } from '@genshin-optimizer/sr/util'
+import { statToFixed } from '@genshin-optimizer/sr/util'
 import {
   Box,
   CardActionArea,
@@ -94,7 +93,7 @@ function Header({ character }: { character: ICachedCharacter }) {
   return (
     <Box sx={{ display: 'flex' }}>
       <Box
-        component={NextImage ? NextImage : 'img'}
+        component="img"
         alt="Character Icon"
         src={characterAsset(genderedKey, 'icon')}
         sx={{

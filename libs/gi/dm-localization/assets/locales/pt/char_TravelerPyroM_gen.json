@@ -110,6 +110,20 @@
       "0": "Quando o personagem ativo está com <strong>Baluarte das Chamas</strong> ou <strong>Baluarte Flamejante</strong> e desencadear uma <pyro>reação relacionada ao Pyro</pyro> no inimigo, regenera 5 de Energia Elemental para {F#a}{M#o} Viajante. Esse efeito pode ser desencadeado uma vez a cada 12s. Além disso, quando um membro próximo da equipe desencadeia a Explosão do Espírito da Noite, regenera mais 4 de Energia Elemental para {F#a}{M#o} Viajante."
     }
   },
+  "lockedPassive": {
+    "name": "Fogo Estelar Forasteiro",
+    "description": {
+      "0": "Reúne novas forças das jornadas do passado. Para cada elemento que você ressoou, obtém um <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimento adicional</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Além disso, quando um membro próximo da equipe desencadeia Explosão do Espírito da Noite, {F#a}{M#o} Viajante obtém 1 acúmulo de Lâmina da Chama Sagrada, podendo acumular até 2 vezes. Ao possuir 2 acúmulos de Lâmina da Chama Sagrada e realizar um Ataque Carregado, consome todos esses acúmulos e realiza o especial <strong>Ataque Carregado: Chamas Devoradoras</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Carregado: Chamas Devoradoras</strong>",
+      "5": [
+        " Cada Ataque Carregado causa mais <pyro>Dano Pyro</pyro> com alinhamento Espírito da Noite. O aumento de Dano é 200% do ATQ d{F#a}{M#o} Viajante.",
+        " É possível realizar um <strong>Ataque Carregado: Chamas Devoradoras</strong> a cada 15s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Estrela Flamejante Reluzente",
     "description": {

@@ -110,6 +110,20 @@
       "0": "Nhân vật trong trận khi có <strong>Vòng Rực Cháy</strong> hoặc <strong>Vòng Thiêu Đốt</strong>, sau khi kích hoạt <pyro>phản ứng liên quan đến Nguyên Tố Hỏa</pyro> lên kẻ địch, sẽ hồi phục 5 điểm Năng Lượng Nguyên Tố cho Nhà Lữ Hành. Hiệu quả này mỗi 12s tối đa kích hoạt một lần. Ngoài ra, nhân vật trong đội gần đó khi kích hoạt Dạ Hồn Bùng Nổ, sẽ hồi phục cho Nhà Lữ Hành 4 điểm Năng Lượng Nguyên Tố."
     }
   },
+  "lockedPassive": {
+    "name": "Ánh Lửa Dị Bang",
+    "description": {
+      "0": "Đúc kết sức mạnh mới từ những chuyến hành trình đã qua. Khi cộng hưởng với mỗi loại nguyên tố, sẽ nhận được <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>hiệu quả cường hóa</strong></tooltip> thêm.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi nhân vật trong đội ở gần kích hoạt \"Dạ Hồn Bùng Nổ\", Nhà Lữ Hành sẽ nhận được 1 tầng \"Lưỡi Đao Lửa Thánh\", tối đa cộng dồn 2 tầng. Khi có 2 tầng Lưỡi Đao Lửa Thánh và thực hiện Trọng Kích, sẽ tiêu hao toàn bộ Lưỡi Đao Lửa Thánh và chuyển sang thực hiện <strong>Trọng Kích - Hỏa Diệt</strong> đặc biệt.",
+      "3": "<br/>",
+      "4": "<strong>Trọng Kích - Hỏa Diệt</strong>",
+      "5": "Mỗi đòn Trọng Kích sẽ gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> cao hơn và mang thuộc tính Dạ Hồn, sát thương tăng thêm tương đương 200% Tấn Công của Nhà Lữ Hành.",
+      "6": [
+        "Mỗi 15s tối đa được thực hiện một lần <strong>Trọng Kích - Hỏa Diệt</strong>."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Lửa Sao Sáng Rực",
     "description": {

@@ -139,7 +139,7 @@
     "name": "Shards Are Gems Too",
     "description": {
       "0": "Saat Kachina menaiki atau turun dari <strong>Turbo Twirly</strong>, akan menyerap Elemental Shard di sekitar yang dihasilkan oleh Crystallize.",
-      "1": "Selain itu, saat anggota party mendapatkan Elemental Shard ini, akan memulihkan 3 poin Energy Kachina. Pemulihan Energy yang bisa diperoleh dengan cara ini adalah maksimum sekali setiap 5 detik."
+      "1": "Selain itu, saat anggota party mendapatkan Elemental Shard ini atau memicu reaksi Lunar-Crystallize, akan memulihkan 3 poin Energy Kachina. Pemulihan Energy yang bisa diperoleh dengan cara ini adalah maksimum sekali setiap 5 detik."
     }
   },
   "constellation2": {

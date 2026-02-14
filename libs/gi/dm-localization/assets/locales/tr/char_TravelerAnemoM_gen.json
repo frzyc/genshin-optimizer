@@ -111,6 +111,22 @@
       "1": "Bu etki 5 saniyede bir uygulanabilir."
     }
   },
+  "lockedPassive": {
+    "name": "Yabancı Rüzgar Gazabı",
+    "description": {
+      "0": "Geçmiş yolculuklarından yeni bir güç al. Rezonansa girdiğin her bir element için ek <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>güçlendirmeler</strong></tooltip> kazanırsın.",
+      "1": "<br/>",
+      "2": "Ayrıca yakındaki grup üyelerinin <pyro>Ateş</pyro>, <hydro>Su</hydro>, <cryo>Buz</cryo> veya <electro>Elektrik</electro> saldırıları düşmanlara isabet ettiğinde Gezgin 1 kademe Şafak Esintisi Kılıcı kazanır. Her bir Element Türü 1 kademe Şafak Esintisi Kılıcı kazandırabilir. En az 2 kademe Şafak Esintisi Kılıcı elde ettikten sonra bir Yüklü Saldırı yapmak, tüm Şafak Esintisi Kılıcı kademelerini tüketir ve Yüklü Saldırı gelişerek <strong>Yüklü Saldırı: Kasırga</strong> olur.",
+      "3": "<br/>",
+      "4": "<strong>Yüklü Saldırı: Kasırga</strong>",
+      "5": [
+        "İsabet eden her Yüklü Saldırı daha fazla <anemo>Rüzgar Hasarı</anemo> verir. Hasar artışı, Gezginin Saldırısının %60'ına eşittir.",
+        "Belirli bir element türündeki bir Şafak Esintisi Kılıcı her tüketildiğinde, bu element türüyle eşleşen bir Kılıç Rüzgarı çağrılır ve Gezginin Saldırısının %50'si kadar Element Hasarı verir. Bu Hasar, Yüklü Saldırı Hasarı sayılır.",
+        "<strong>Yüklü Saldırı: Kasırga</strong> en fazla 15 saniyede bir tetiklenebilir.",
+        "<strong>Yüklü Saldırı: Kasırga</strong> süresince Şafak Esintisi Kılıcı elde edilemez."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Hiddetli Girdap",
     "description": {

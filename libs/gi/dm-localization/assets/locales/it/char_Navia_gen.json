@@ -42,7 +42,7 @@
   "skill": {
     "name": "Salva cristallina",
     "description": {
-      "0": "Quando un personaggio del gruppo ottiene un frammento elementale generato dalla reazione di Cristallizzazione, Navia riceve 1 accumulo di Bossolo di cristallo fino a un massimo di 6. A ogni accumulo ottenuto, la durata degli accumuli già in suo possesso viene ripristinata.",
+      "0": "Quando un personaggio del gruppo ottiene un frammento elementale generato dalla reazione di Cristallizzazione o quando innesca una reazione di Cristallizzazione lunare, Navia riceve 1 accumulo di Bossolo di cristallo, fino a un massimo di 6. A ogni accumulo ottenuto, la durata degli accumuli già in suo possesso viene ripristinata. Tramite la reazione di Cristallizzazione lunare, Navia ottiene fino a 1 accumulo di Bossolo di cristallo ogni secondo.",
       "1": "Quando spara, Navia consuma tutti gli accumuli e apre il suo elegante e letale Piombrello, scagliando Proiettili di cristallo di Rosula in grado di penetrare gli avversari e infliggere <geo>DAN da Geo</geo> all'impatto.",
       "2": "Quando vengono consumati 0/1/2/3 o più accumuli di Bossolo di cristallo, Navia spara rispettivamente 5/7/9/11 Proiettili di cristallo di Rosula. Maggiore è il numero di Proiettili che colpisce un avversario, maggiori sono i DAN subiti da quest'ultimo. Quando tutti e 11 i Proiettili colpiscono, viene inflitto un 200% della quantità di DAN originale.",
       "3": "In più, quando Navia consuma più di 3 accumuli di Bossolo di cristallo, ogni accumulo successivo al terzo aumenta i DAN inflitti dall'attacco del Piombrello di un 15% aggiuntivo.",

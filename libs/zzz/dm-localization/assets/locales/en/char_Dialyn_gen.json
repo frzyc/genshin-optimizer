@@ -69,7 +69,7 @@
       "desc": {
         "0": "With <ct color=#FFFFFF>Customer Complaint</ct>, hold <IconNormal /> to activate:",
         "1": "Delivers a forward martial salute attack. On activation, it consumes 1 <ct color=#FFFFFF>Customer Complaint</ct> and deals <ct color=#F0D12B>Physical DMG</ct>.",
-        "2": "On activation, the previous character's <ct color=#FFFFFF>Quick Assist</ct> is triggered.",
+        "2": "After activation, the previous character's <ct color=#FFFFFF>Quick Assist</ct> is triggered.",
         "3": "Character is invulnerable while using this skill."
       },
       "params": [
@@ -337,5 +337,6 @@
         "3": "\"Proxy, can I lie as well?\""
       }
     }
-  }
+  },
+  "potential": {}
 }

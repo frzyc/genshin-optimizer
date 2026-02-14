@@ -1,6 +1,8 @@
 import type { TagMapNodeEntries } from '../util'
+import ADayCarvedFromRisingWinds from './ADayCarvedFromRisingWinds'
 import Adventurer from './Adventurer'
 import ArchaicPetra from './ArchaicPetra'
+import AubadeOfMorningstarAndMoon from './AubadeOfMorningstarAndMoon'
 import Berserker from './Berserker'
 import BlizzardStrayer from './BlizzardStrayer'
 import BloodstainedChivalry from './BloodstainedChivalry'
@@ -58,8 +60,10 @@ import VourukashasGlow from './VourukashasGlow'
 import WanderersTroupe from './WanderersTroupe'
 
 const data: TagMapNodeEntries[] = [
+  ADayCarvedFromRisingWinds,
   Adventurer,
   ArchaicPetra,
+  AubadeOfMorningstarAndMoon,
   Berserker,
   BlizzardStrayer,
   BloodstainedChivalry,

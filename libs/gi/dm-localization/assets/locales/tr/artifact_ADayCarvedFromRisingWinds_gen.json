@@ -1,0 +1,29 @@
+{
+  "setName": "Rüzgarların Şekillendirdiği Bir Gün",
+  "setEffects": {
+    "2": "+%18 Saldırı.",
+    "4": "Bir Normal Saldırı, Yüklü Saldırı, Element Becerisi veya Element Patlaması bir düşmana isabet ettikten sonra 6 saniyeliğine Kır Rüzgarlarının Lütfu etkisi kazanılır: Saldırı %25 artar. Kuşanan karakter Cadının Ödevini tamamladıysa Kır Rüzgarlarının Lütfu gelişerek Kır Rüzgarlarının Azmi olur ve kuşanan karakterin Kritik Oranını fazladan %20 artırır. Bu etki, karakter savaş alanında olmasa da tetiklenebilir."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Rüzgar Çiçeğinin Vecizesi",
+      "desc": "Asla solmayan mavi bir kristal çiçek. Geçmiş çağlarda bin rüzgarı ve sayısız çiçeği uyandıran gezgin bir kıza ait olduğu söylenir."
+    },
+    "plume": {
+      "name": "Şafağın Muhteşem Yemini",
+      "desc": "Şafak kadar berrak, mavi bir tüy aksesuar. Geçmiş çağlarda adını terk etmiş bir muhafıza ait olduğu söylenir."
+    },
+    "sands": {
+      "name": "Bahar Şarkısında Bir Nota",
+      "desc": "Mavi kumlarla dolu bir kum saati. Bilinmeyen bir sebepten ötürü her ne kadar çevrilirse çevrilsin içindeki kumlar yerinden oynamaz."
+    },
+    "goblet": {
+      "name": "Heldenepos'un Anlatılmayan Hikayesi",
+      "desc": "Mavi yüzeyi zamanla eskimiş kadim bir kadeh. Geçmiş çağlarda isimsiz bir ozana ait olduğu söylenir."
+    },
+    "circlet": {
+      "name": "Aşk ve Ağıt Baladı",
+      "desc": "Yeşim ve mavi kristallerle bezeli, gösterişli bir saç aksesuarı. Geçmiş çağlarda Fırtına Efendisi tarafından gözde bir kişiye bahşedilmiş bir nişan olduğu söylenir."
+    }
+  }
+}

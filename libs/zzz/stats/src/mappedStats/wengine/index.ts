@@ -1,4 +1,5 @@
 // WARNING: Generated file, do not modify
+import AngelInTheShell from './maps/AngelInTheShell'
 import BashfulDemon from './maps/BashfulDemon'
 import BellicoseBlaze from './maps/BellicoseBlaze'
 import BigCylinder from './maps/BigCylinder'
@@ -6,7 +7,9 @@ import BlazingLaurel from './maps/BlazingLaurel'
 import BoxCutter from './maps/BoxCutter'
 import BunnyBand from './maps/BunnyBand'
 import CannonRotor from './maps/CannonRotor'
+import CauldronOfClarity from './maps/CauldronOfClarity'
 import CinderCobalt from './maps/CinderCobalt'
+import CloudcleaveRadiance from './maps/CloudcleaveRadiance'
 import CordisGermina from './maps/CordisGermina'
 import DeepSeaVisitor from './maps/DeepSeaVisitor'
 import DemaraBatteryMarkII from './maps/DemaraBatteryMarkII'
@@ -20,6 +23,7 @@ import FusionCompiler from './maps/FusionCompiler'
 import GildedBlossom from './maps/GildedBlossom'
 import GrillOWisp from './maps/GrillOWisp'
 import HailstormShrine from './maps/HailstormShrine'
+import HalfSugarBunny from './maps/HalfSugarBunny'
 import HeartstringNocturne from './maps/HeartstringNocturne'
 import HellfireGears from './maps/HellfireGears'
 import Housekeeper from './maps/Housekeeper'
@@ -66,6 +70,7 @@ import StreetSuperstar from './maps/StreetSuperstar'
 import TheBrimstone from './maps/TheBrimstone'
 import TheRestrained from './maps/TheRestrained'
 import TheVault from './maps/TheVault'
+import Thoughtbop from './maps/Thoughtbop'
 import Timeweaver from './maps/Timeweaver'
 import TremorTrigramVessel from './maps/TremorTrigramVessel'
 import TusksOfFury from './maps/TusksOfFury'
@@ -80,6 +85,7 @@ import YesterdayCalls from './maps/YesterdayCalls'
 import ZanshinHerbCase from './maps/ZanshinHerbCase'
 
 const maps = {
+  AngelInTheShell,
   BashfulDemon,
   BellicoseBlaze,
   BigCylinder,
@@ -87,7 +93,9 @@ const maps = {
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CauldronOfClarity,
   CinderCobalt,
+  CloudcleaveRadiance,
   CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
@@ -101,6 +109,7 @@ const maps = {
   GildedBlossom,
   GrillOWisp,
   HailstormShrine,
+  HalfSugarBunny,
   HeartstringNocturne,
   HellfireGears,
   Housekeeper,
@@ -147,6 +156,7 @@ const maps = {
   TheBrimstone,
   TheRestrained,
   TheVault,
+  Thoughtbop,
   Timeweaver,
   TremorTrigramVessel,
   TusksOfFury,

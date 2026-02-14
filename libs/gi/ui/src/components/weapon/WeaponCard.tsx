@@ -2,7 +2,6 @@ import {
   CardThemed,
   ConditionalWrapper,
   ImgIcon,
-  NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
@@ -11,12 +10,12 @@ import type {
   LocationCharacterKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharStat, getWeaponStat } from '@genshin-optimizer/gi/stats'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
-import { weaponAscensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -165,7 +164,7 @@ export function WeaponCardObj({
                 Lv. {level}
               </Typography>
               <Typography component="span" variant="h5" color="text.secondary">
-                /{weaponAscensionMaxLevel[ascension]}
+                /{ascensionMaxLevel[ascension]}
               </Typography>
               <Typography variant="h6">
                 <Trans t={t} i18nKey={'refinement'}>
@@ -178,7 +177,7 @@ export function WeaponCardObj({
               sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}
             >
               <Box
-                component={NextImage ? NextImage : 'img'}
+                component="img"
                 src={img ?? ''}
                 width="auto"
                 height="100%"

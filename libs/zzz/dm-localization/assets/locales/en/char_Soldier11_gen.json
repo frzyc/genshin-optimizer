@@ -19,13 +19,31 @@
       "name": "Basic Attack: Fire Suppression",
       "desc": {
         "0": "Press <IconNormal /> at the right moment to activate:",
-        "1": "Unleashes a set of more powerful slashes, dealing <ct color=#FF5521>Fire DMG</ct>."
+        "1": "Launches a stronger slash, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "When <ct color=#FFFFFF>Fire Suppression</ct> is guaranteed to trigger, pressing <IconNormal /> when the attack is about to end speeds up the transition into the next hit of <ct color=#FFFFFF>Basic Attack</ct>.",
+        "3": "When <ct color=#FFFFFF>Fire Suppression</ct> is guaranteed to trigger, the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct> string unlocks. Activating a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> powers up her next <ct color=#FFFFFF>Basic Attack</ct> 5th hit. A strengthened <ct color=#FFFFFF>Basic Attack</ct> 5th hit will consume all remaining guaranteed <ct color=#FFFFFF>Fire Suppression</ct> activations to deal additional <ct color=#FF5521>Fire DMG</ct> per activation spent.",
+        "4": "After triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, the current Basic Attack hit count is retained for 5s. After performing a <ct color=#FFFFFF>Dodge Counter</ct>, pressing <IconNormal /> resumes the <ct color=#FFFFFF>Basic Attack</ct> from the retained hit count."
       },
       "params": [
         "1st-Hit ",
         "2nd-Hit ",
         "3rd-Hit ",
-        "4th-Hit "
+        "4th-Hit ",
+        "5th-Hit ",
+        "Enhanced Basic Attack 5th-Hit ",
+        "Enhanced Basic Attack 5th-Hit Additional "
+      ]
+    },
+    "BasicAttackFireAssault": {
+      "name": "Basic Attack: Fire Assault",
+      "desc": {
+        "0": "Hold <IconNormal /> to activate: <ct color=#FFFFFF>Basic Attack: Fire Charge</ct>",
+        "1": "Release <IconNormal /> while Basic Attack: Fire Charge is activated to launch <ct color=#FFFFFF>Basic Attack: Fire Assault</ct>.",
+        "2": "If attacked by an enemy during <ct color=#FFFFFF>Basic Attack: Fire Assault</ct> or the moment <ct color=#FFFFFF>Basic Attack: Fire Charge</ct> is activated, a Block Counter can be triggered, negating that instance of DMG and granting 3 guaranteed triggers of <ct color=#FFFFFF>Fire Suppression</ct>. Press <IconNormal /> to follow up with the 3rd hit of a <ct color=#FFFFFF>Basic Attack</ct>, up to 8 times.",
+        "3": "While charging, tilting the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} launches <ct color=#FFFFFF>Basic Attack: Blazing Rush</ct>."
+      },
+      "params": [
+        "Basic Attack: Fire Assault "
       ]
     }
   },
@@ -87,9 +105,11 @@
       "name": "EX Special Attack: Fervent Fire",
       "desc": {
         "0": "With enough Energy, press <IconSpecialReady /> to activate:",
-        "1": "Slashes enemies nearby, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "1": "Executes a powerful slash against enemies nearby, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
         "2": "Character is invulnerable while using this skill.",
-        "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> will trigger <ct color=#FFFFFF>Fire Suppression</ct> for up to 15s or 8 times."
+        "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> are guaranteed to trigger <ct color=#FFFFFF>Fire Suppression</ct> for up to 30s or 8 times.",
+        "4": "After using this skill, press <IconNormal /> to immediately follow up with the 4th hit of a <ct color=#FFFFFF>Basic Attack</ct>.",
+        "5": "Soldier 11 enters the <ct color=#FFFFFF>Alert Stance</ct> after using this skill. While in <ct color=#FFFFFF>Alert Stance</ct>, if hit during a <ct color=#FFFFFF>Basic Attack</ct>, triggers <ct color=#FFFFFF>Basic Attack: Fire Charge</ct> to block the attack, followed by <ct color=#FFFFFF>Basic Attack: Fire Assault</ct>. After <ct color=#FFFFFF>Basic Attack: Fire Assault</ct> is performed, press <IconNormal /> to resume <ct color=#FFFFFF>Basic Attack</ct> from the retained Basic Attack hit count."
       },
       "params": [
         " ",
@@ -102,9 +122,11 @@
       "name": "Chain Attack: Uplifting Flame",
       "desc": {
         "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
-        "1": "Unleashes a powerful upward slash at enemies in a small area, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "1": "Slashes enemies in a small area ahead, then executes a powerful upwards slash, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
         "2": "Character is invulnerable while using this skill.",
-        "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> trigger <ct color=#FFFFFF>Fire Suppression</ct> for the next 15s, up to 8 times."
+        "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> are guaranteed to trigger <ct color=#FFFFFF>Fire Suppression</ct> for up to 30s or 8 times.",
+        "4": "After using this skill, press <IconNormal /> to immediately follow up with the 4th hit of a <ct color=#FFFFFF>Basic Attack</ct>.",
+        "5": "Soldier 11 enters the <ct color=#FFFFFF>Alert Stance</ct> after using this skill. While in <ct color=#FFFFFF>Alert Stance</ct>, if hit during a <ct color=#FFFFFF>Basic Attack</ct>, triggers <ct color=#FFFFFF>Basic Attack: Fire Charge</ct> to block the attack, followed by <ct color=#FFFFFF>Basic Attack: Fire Assault</ct>. After <ct color=#FFFFFF>Basic Attack: Fire Assault</ct> is performed, press <IconNormal /> to resume <ct color=#FFFFFF>Basic Attack</ct> from the retained Basic Attack hit count."
       },
       "params": [
         " "
@@ -114,9 +136,11 @@
       "name": "Ultimate: Bellowing Flame",
       "desc": {
         "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
-        "1": "Unleashes a powerful upward slash at enemies in a small area, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "1": "Slashes enemies nearby, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
         "2": "Character is invulnerable while using this skill.",
-        "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> trigger <ct color=#FFFFFF>Fire Suppression</ct> for the next 15s, up to 8 times."
+        "3": "After using this skill, Soldier 11's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> are guaranteed to trigger <ct color=#FFFFFF>Fire Suppression</ct> for up to 30s or 8 times.",
+        "4": "After using this skill, press <IconNormal /> to immediately follow up with the 4th hit of a <ct color=#FFFFFF>Basic Attack</ct>.",
+        "5": "Soldier 11 enters the <ct color=#FFFFFF>Alert Stance</ct> after using this skill. While in <ct color=#FFFFFF>Alert Stance</ct>, if hit during a <ct color=#FFFFFF>Basic Attack</ct>, triggers <ct color=#FFFFFF>Basic Attack: Fire Charge</ct> to block the attack, followed by <ct color=#FFFFFF>Basic Attack: Fire Assault</ct>. After <ct color=#FFFFFF>Basic Attack: Fire Assault</ct> is performed, press <IconNormal /> to resume <ct color=#FFFFFF>Basic Attack</ct> from the retained Basic Attack hit count."
       },
       "params": [
         " "
@@ -222,5 +246,16 @@
       },
       "flavor": "The flames of the sword distorted the air with their heat. Her movements grew ever more impassioned, as if that heat seeped into her spirit with every breath, igniting her thoughts."
     }
+  },
+  "potential": {
+    "name": "Awakened Potential: Infernal Blaze",
+    "desc": [
+      "",
+      "In Additional Ability: Fields of Fire, Soldier 11's CRIT DMG is increased by <ct color=#2BAD00>16%</ct>.",
+      "In Additional Ability: Fields of Fire, Soldier 11's CRIT DMG is increased by <ct color=#2BAD00>24%</ct>.",
+      "In Additional Ability: Fields of Fire, Soldier 11's CRIT DMG is increased by <ct color=#2BAD00>32%</ct>.",
+      "In Additional Ability: Fields of Fire, Soldier 11's CRIT DMG is increased by <ct color=#2BAD00>40%</ct>.",
+      "In Additional Ability: Fields of Fire, Soldier 11's CRIT DMG is increased by <ct color=#2BAD00>48%</ct>."
+    ]
   }
 }

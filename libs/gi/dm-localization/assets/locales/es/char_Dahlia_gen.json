@@ -115,13 +115,13 @@
   "passive1": {
     "name": "Gentil gracia del viento",
     "description": {
-      "0": "Cuando un personaje bajo los efectos de la gracia de Favonius de la Habilidad Definitiva, <strong>Salterio fulgurante</strong>, causa una reacción de Congelado contra un enemigo, Dahlia obtiene 2 cargas de beatitud. Este efecto solo puede ocurrir una vez cada 8 s."
+      "0": "Cuando un personaje bajo los efectos de la gracia de Favonius de la Habilidad Definitiva, <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio fulgurante</tooltip></strong>, causa una reacción de Congelado contra un enemigo, Dahlia obtiene 2 cargas de beatitud. Este efecto solo puede ocurrir una vez cada 8 s."
     }
   },
   "passive2": {
     "name": "Ingeniosa oración exultante",
     "description": {
-      "0": "Cuando tu personaje en uso del equipo está bajo los efectos de la gracia de Favonius de la Habilidad Definitiva, <strong>Salterio fulgurante</strong>, su Vel. de Ataque aumenta en función de la Vida Máx. de Dahlia. Por cada 1000 pts. de Vida Máx. que tenga Dahlia, la Vel. de Ataque aumenta en un 0.5%, hasta un máximo de un 20%."
+      "0": "Cuando tu personaje en uso del equipo está bajo los efectos de la gracia de Favonius de la Habilidad Definitiva, <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio fulgurante</tooltip></strong>, su Vel. de Ataque aumenta en función de la Vida Máx. de Dahlia. Por cada 1000 pts. de Vida Máx. que tenga Dahlia, la Vel. de Ataque aumenta en un 0.5%, hasta un máximo de un 20%."
     }
   },
   "passive3": {
@@ -134,39 +134,39 @@
   "constellation1": {
     "name": "Guía inmaculada",
     "description": {
-      "0": "Dahlia recupera 2.5 pts. de Energía Elemental por cada carga de beatitud obtenida con su Habilidad Definitiva, <strong>Salterio fulgurante</strong>."
+      "0": "Dahlia recupera 2.5 pts. de Energía Elemental por cada carga de beatitud obtenida con su Habilidad Definitiva, <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio fulgurante</tooltip></strong>."
     }
   },
   "constellation2": {
     "name": "Revelación compasiva",
     "description": {
-      "0": "Cuando Dahlia consume las cargas de beatitud de su Habilidad Definitiva, <strong>Salterio fulgurante</strong>, para crear un sacroescudo de gracia, la Protección de Escudo del personaje protegido por este aumenta en un 25% durante 12 s."
+      "0": "Cuando Dahlia consume las cargas de beatitud de su Habilidad Definitiva, <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio fulgurante</tooltip></strong>, para crear un sacroescudo de gracia, la Protección de Escudo del personaje protegido por este aumenta en un 25% durante 12 s."
     }
   },
   "constellation3": {
     "name": "Ofertorio vientofloral",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Salterio fulgurante</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio fulgurante</tooltip></strong> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
     "name": "Oración colectiva",
     "description": {
-      "0": "Aumenta en 3 s la duración del efecto de gracia de Favonius de la Habilidad Definitiva, <strong>Salterio fulgurante</strong>."
+      "0": "Aumenta en 3 s la duración del efecto de gracia de Favonius de la Habilidad Definitiva, <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio fulgurante</tooltip></strong>."
     }
   },
   "constellation5": {
     "name": "Ingenio sutil",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Ordenanza de la inmersión</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Dahlia_gen baseKey18=skill>Ordenanza de la inmersión</tooltip></strong> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
     "name": "Porque con alegría saldrán",
     "description": {
-      "0": "Aumenta en un 10% la Vel. de Ataque del personaje en uso bajo los efectos de gracia de Favonius de la Habilidad Definitiva, <strong>Salterio fulgurante</strong>.",
+      "0": "Aumenta en un 10% la Vel. de Ataque del personaje en uso bajo los efectos de gracia de Favonius de la Habilidad Definitiva, <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Salterio fulgurante</tooltip></strong>.",
       "1": "Además, cuando un personaje en uso bajo los efectos de gracia de Favonius es derrotado, ocurren inmediatamente los siguientes efectos:",
       "2": [
         "El personaje revive automáticamente.",

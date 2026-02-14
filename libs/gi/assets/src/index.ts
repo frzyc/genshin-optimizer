@@ -6,7 +6,6 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
-import type { StaticImageData } from 'next/image'
 import artifacts from './gen/artifacts'
 import chars from './gen/chars'
 import weapons from './gen/weapons'
@@ -41,9 +40,7 @@ export function characterAsset(
     case 'iconSide':
       return chars[charKeyToLocGenderedCharKey(ck, gender)][asset] //gender specific
     default:
-      return (chars[ck] as Record<characterAssetKey, string | StaticImageData>)[
-        asset
-      ]
+      return (chars[ck] as Record<characterAssetKey, string>)[asset]
   }
 }
 export function artifactAsset(ak: ArtifactSetKey, slotKey: ArtifactSlotKey) {

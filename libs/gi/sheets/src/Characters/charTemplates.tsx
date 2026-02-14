@@ -9,7 +9,6 @@ import {
 import { allStats, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { greaterEq, input, unequal } from '@genshin-optimizer/gi/wr'
-import type { StaticImageData } from 'next/image'
 import type { ReactNode } from 'react'
 import { st, trans } from '../SheetUtil'
 import type {
@@ -121,7 +120,7 @@ export const charTemplates = (
 const talentTemplate = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
-  img: string | StaticImageData,
+  img: string,
   docSections?: DocumentSection[],
   upgradedTextCondition?: NumNode
 ): TalentSheetElement => ({
@@ -153,7 +152,7 @@ const talentTemplate = (
 const talentHeader = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
-  img: string | StaticImageData,
+  img: string,
   upgradedTextCondition?: NumNode
 ): IDocumentHeader => {
   return {
@@ -179,7 +178,7 @@ function charSheetKeyToCharKey(csk: CharacterSheetKey): CharacterKey {
 const headerTemplate = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
-  img: string | StaticImageData,
+  img: string,
   partialSection: DocumentSection,
   upgradedTextCondition?: NumNode
 ): DocumentSection => ({
@@ -200,7 +199,7 @@ const conditionalTemplate = (
   talentKey: TalentSheetElementKey,
   partialCond: DocumentConditionalBase,
   tr: (i18key: string) => ReactNode,
-  img: string | StaticImageData,
+  img: string,
   upgradedTextCondition?: NumNode
 ): DocumentConditional => ({
   ...partialCond,

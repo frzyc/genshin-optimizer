@@ -49,7 +49,7 @@
       ],
       "2": "<br/>",
       "3": "<strong>북국의 장창</strong>",
-      "4": "플린스가 전방에 장창을 소환해 <electro>번개 원소 범위 피해</electro>를 주고, 그 후 6초 동안 플린스의 원소폭발 <strong>고대 예법·밤의 손님</strong>이 특수 원소폭발 <strong>낙뢰 교향곡</strong>으로 대체된다.",
+      "4": "플린스가 전방에 장창을 소환해 <electro>번개 원소 범위 피해</electro>를 주고, 그 후 6초 동안 플린스의 원소폭발 <strong>고대 예법·밤의 손님</strong>이 특수 원소폭발 <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>낙뢰 교향곡</strong></tooltip>으로 대체된다.",
       "5": "<strong>북국의 장창</strong>의 기본 재사용 대기시간은 6초이며, 해당 재사용 대기시간은 다른 효과의 영향을 받지 않는다"
     },
     "skillParams": {
@@ -148,7 +148,7 @@
   "constellation3": {
     "name": "습지를 방문한 손님",
     "description": {
-      "0": "원소폭발 <strong>고대 예법·밤의 손님</strong>의 스킬 레벨+3",
+      "0": "원소폭발 <tooltip ns=char_Flins_gen baseKey18=burst><strong>고대 예법·밤의 손님</strong></tooltip>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },
@@ -156,20 +156,20 @@
     "name": "밤에 포효하는 산",
     "description": {
       "0": "플린스의 공격력이 20% 증가한다.",
-      "1": "돌파 특성 <strong>「푸른불의 속삭임」</strong>이 강화된다: 플린스의 원소 마스터리가 플린스 공격력의 10%만큼 증가한다. 해당 방식을 통해 플린스의 원소 마스터리는 최대 220pt까지 증가한다"
+      "1": "돌파 특성 <tooltip ns=char_Flins_gen baseKey18=passive2><strong>「푸른불의 속삭임」</strong></tooltip>이 강화된다: 플린스의 원소 마스터리가 플린스 공격력의 10%만큼 증가한다. 해당 방식을 통해 플린스의 원소 마스터리는 최대 220pt까지 증가한다"
     }
   },
   "constellation5": {
     "name": "속세를 떠난 그림자",
     "description": {
-      "0": "원소전투 스킬 <strong>고대 율법·등불의 신비</strong>의 스킬 레벨+3",
+      "0": "원소전투 스킬 <tooltip ns=char_Flins_gen baseKey18=skill><strong>고대 율법·등불의 신비</strong></tooltip>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },
   "constellation6": {
     "name": "노래와 망자의 춤",
     "description": {
-      "0": "플린스가 적에게 주는 달 감전 반응 피해가 35% <strong>승격</strong>한다. ",
+      "0": "플린스가 적에게 주는 달 감전 반응 피해가 35% <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>승격</strong></tooltip>한다. ",
       "1": "<strong>달빛 징조·보름</strong>: 주변에 있는 파티 내 모든 캐릭터가 주는 달 감전 반응 피해가 10% <strong>승격</strong>한다"
     }
   }

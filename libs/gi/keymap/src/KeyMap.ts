@@ -126,6 +126,7 @@ export const allEleEnemyResKeys = allElementWithPhyKeys.map(
   (e) => `${e}_enemyRes_`
 ) as EleEnemyResKey[]
 
+type EleECritRateKey = `${ElementWithPhyKey}_critRate_`
 type EleECritDmgKey = `${ElementWithPhyKey}_critDMG_`
 
 Object.entries(elementalData).forEach(([e, { name }]) => {
@@ -134,6 +135,7 @@ Object.entries(elementalData).forEach(([e, { name }]) => {
 
   statMap[`${e}_enemyRes_`] = `Enemy ${name} DMG RES`
   statMap[`${e}_dmgInc`] = `${name} DMG Increase`
+  statMap[`${e}_critRate_`] = `${name} CRIT Rate Bonus`
   statMap[`${e}_critDMG_`] = `${name} CRIT DMG Bonus`
 })
 
@@ -142,6 +144,7 @@ type ElementExtKey =
   | EleResKey
   | EleEnemyResKey
   | EleDmgIncKey
+  | EleECritRateKey
   | EleECritDmgKey
 
 /* Hit move extension keys */
@@ -182,7 +185,8 @@ type NonSwirlReactionHitKey = `${
   | 'bloom'
   | 'lunarbloom'
   | 'burgeon'
-  | 'hyperbloom'}_hit`
+  | 'hyperbloom'
+  | 'lunarcrystallize'}_hit`
 type NonSwirlReactionMultiKey = `${keyof typeof transformativeReactions}_multi_`
 type TransformativeReactions =
   | SwirlReactionKey

@@ -1,0 +1,20 @@
+{
+  "name": "Cloudcleave Radiance",
+  "desc": {
+    "0": "From innocence to maturity, from confusion to resolve.",
+    "1": "The long path ahead stretches on, and she grips her sword and presses forward, walking a path untrodden.",
+    "2": "Until her blade flashes like a soaring swan, illuminating the clouds above.",
+    "3": "",
+    "4": "<ct color=#959595>\"Whenever I swing my sword, it grows warm... It's comforting.\" —Ye Shunguang</ct>"
+  },
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "The world may change, but my heart remains constant, like clouds standing eternal.",
+  "phase": "Jade Soul, Frozen Heart",
+  "phaseDescs": [
+    "The equipper's DMG ignores <ct color=#2BAD00>20%</ct> of the target's <ct color=#F0D12B>Physical RES</ct>. When the equipper activates an <ct color=#FFFFFF>Ether Veil</ct>, the equipper's DMG increases by <ct color=#2BAD00>25%</ct> and CRIT DMG increases by <ct color=#2BAD00>25%</ct> for 40s. Repeated triggers reset the duration.",
+    "The equipper's DMG ignores <ct color=#2BAD00>22%</ct> of the target's <ct color=#F0D12B>Physical RES</ct>. When the equipper activates an <ct color=#FFFFFF>Ether Veil</ct>, the equipper's DMG increases by <ct color=#2BAD00>28.7%</ct> and CRIT DMG increases by <ct color=#2BAD00>28.7%</ct> for 40s. Repeated triggers reset the duration.",
+    "The equipper's DMG ignores <ct color=#2BAD00>24%</ct> of the target's <ct color=#F0D12B>Physical RES</ct>. When the equipper activates an <ct color=#FFFFFF>Ether Veil</ct>, the equipper's DMG increases by <ct color=#2BAD00>32.5%</ct> and CRIT DMG increases by <ct color=#2BAD00>32.5%</ct> for 40s. Repeated triggers reset the duration.",
+    "The equipper's DMG ignores <ct color=#2BAD00>26%</ct> of the target's <ct color=#F0D12B>Physical RES</ct>. When the equipper activates an <ct color=#FFFFFF>Ether Veil</ct>, the equipper's DMG increases by <ct color=#2BAD00>36.2%</ct> and CRIT DMG increases by <ct color=#2BAD00>36.2%</ct> for 40s. Repeated triggers reset the duration.",
+    "The equipper's DMG ignores <ct color=#2BAD00>28%</ct> of the target's <ct color=#F0D12B>Physical RES</ct>. When the equipper activates an <ct color=#FFFFFF>Ether Veil</ct>, the equipper's DMG increases by <ct color=#2BAD00>40%</ct> and CRIT DMG increases by <ct color=#2BAD00>40%</ct> for 40s. Repeated triggers reset the duration."
+  ]
+}

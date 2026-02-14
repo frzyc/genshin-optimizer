@@ -3,6 +3,7 @@ export const allCharacterKeys = [
   'Alice',
   'Anby',
   'Anton',
+  'Aria',
   'AstraYao',
   'Banyue',
   'Ben',
@@ -38,12 +39,15 @@ export const allCharacterKeys = [
   'Soldier0Anby',
   'Soldier11',
   'Soukaku',
+  'Sunna',
   'Trigger',
   'Vivian',
   'Yanagi',
+  'YeShunguang',
   'Yidhari',
   'Yixuan',
   'Yuzuha',
+  'Zhao',
   'ZhuYuan',
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
@@ -74,6 +78,7 @@ export const allFactionKeys = [
   'Mockingbird',
   'YunkuiSummit',
   'SpookShack',
+  'KrampusComplianceAuthority',
 ] as const
 export type FactionKey = (typeof allFactionKeys)[number]
 

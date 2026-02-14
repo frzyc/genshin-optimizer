@@ -41,7 +41,7 @@
   "skill": {
     "name": "Cleaning Mode: Carrier Frequency",
     "description": {
-      "0": "Ineffa mengaktifkan Modul Pembersihan Tingkat Lanjut miliknya untuk mengakibatkan <electro>Electro DMG Area</electro> satu kali ke musuh di sekitar, menciptakan Optical Flow Shield Barrier, dan memanggil Asisten Pintar Serbabisa bernama <strong>Birgitta</strong>.",
+      "0": "Ineffa mengaktifkan Modul Pembersihan Tingkat Lanjut miliknya untuk mengakibatkan <electro>Electro DMG Area</electro> satu kali ke musuh di sekitar, menciptakan Optical Flow Shield Barrier, dan memanggil Asisten Pintar Serbabisa bernama <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>.",
       "1": "Ketahanan Optical Flow Shield Barrier didasarkan pada ATK Ineffa dan memiliki 250% pertahanan terhadap <electro>Electro DMG</electro>."
     },
     "skillParams": {
@@ -66,7 +66,7 @@
   "burst": {
     "name": "Supreme Instruction: Cyclonic Exterminator",
     "description": {
-      "0": "Ineffa dapat melancarkan Rocket Punch berupa <strong>Birgitta</strong> si Asisten Pintar Serbabisa untuk membersihkan musuhnya! Ineffa akan menembakkan Birgitta ke medan pertempuran dan mengakibatkan <electro>Electro DMG Area</electro>, kemudian Birgitta akan terus berada di medan pertempuran.",
+      "0": "Ineffa dapat melancarkan Rocket Punch berupa <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip> si Asisten Pintar Serbabisa untuk membersihkan musuhnya! Ineffa akan menembakkan Birgitta ke medan pertempuran dan mengakibatkan <electro>Electro DMG Area</electro>, kemudian Birgitta akan terus berada di medan pertempuran.",
       "1": "<br/>",
       "2": "Jika Birgitta yang dipanggil oleh Ineffa sudah ada di medan pertempuran, maka Skill ini akan memanggil ulang Birgitta di lokasi yang ditentukan dan mengulang durasinya."
     },
@@ -92,13 +92,13 @@
   "passive1": {
     "name": "Overclocking Circuit",
     "description": {
-      "0": "Jika ada awan petir yang dihasilkan oleh reaksi Lunar-Charged di sekitar saat <strong>Birgitta</strong> melancarkan serangan setrumannya, maka ia akan melancarkan serangan tambahan yang mengakibatkan <electro>Electro DMG Area</electro> sebesar 65% ATK Ineffa. DMG ini dianggap sebagai DMG Lunar-Charged."
+      "0": "Jika ada awan petir yang dihasilkan oleh reaksi Lunar-Charged di sekitar saat <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip> melancarkan serangan setrumannya, maka ia akan melancarkan serangan tambahan yang mengakibatkan <electro>Electro DMG Area</electro> sebesar 65% ATK Ineffa. DMG ini dianggap sebagai DMG Lunar-Charged."
     }
   },
   "passive2": {
     "name": "Panoramic Permutation Protocol",
     "description": {
-      "0": "Saat melancarkan Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong>, semua Karakter sendiri di dalam party akan mendapatkan efek Parameter Permutation. Parameter Permutation: Elemental Mastery Ineffa dan Karakter aktif sendiri meningkat sebesar 6% dari ATK Ineffa selama 20 detik."
+      "0": "Saat melancarkan Elemental Burst <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Supreme Instruction: Cyclonic Exterminator</tooltip></strong>, semua Karakter sendiri di dalam party akan mendapatkan efek Parameter Permutation. Parameter Permutation: Elemental Mastery Ineffa dan Karakter aktif sendiri meningkat sebesar 6% dari ATK Ineffa selama 20 detik."
     }
   },
   "passive3": {
@@ -126,14 +126,14 @@
   "constellation2": {
     "name": "Support Cleaning Module",
     "description": {
-      "0": "Setelah Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong> mengenai musuh, akan memberikan status Punishment Edict pada salah satu musuh yang terkena serangan. Setelah jeda singkat atau saat musuh ini diserang, musuh di sekitarnya akan terkena <electro>Electro DMG Area</electro> sebesar 300% ATK Ineffa. DMG ini dianggap sebagai DMG Lunar-Charged.",
+      "0": "Setelah Elemental Burst <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Supreme Instruction: Cyclonic Exterminator</tooltip></strong> mengenai musuh, akan memberikan status Punishment Edict pada salah satu musuh yang terkena serangan. Punishment Edict: Setelah jeda singkat atau saat musuh ini diserang, musuh di sekitarnya akan terkena <electro>Electro DMG Area</electro> sebesar 300% ATK Ineffa. DMG ini dianggap sebagai DMG Lunar-Charged.",
       "1": "Selain itu, saat Ineffa melancarkan Elemental Burst <strong>Supreme Instruction: Cyclonic Exterminator</strong>, Karakter aktif di sekitar akan mendapatkan Optical Flow Shield Barrier."
     }
   },
   "constellation3": {
     "name": "Enhanced Emotion Emulator",
     "description": {
-      "0": "Meningkatkan 3 level Elemental Skill <strong>Cleaning Mode: Carrier Frequency</strong>.",
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Ineffa_gen baseKey18=skill>Cleaning Mode: Carrier Frequency</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
@@ -146,7 +146,7 @@
   "constellation5": {
     "name": "Mirror's Dream Transcension",
     "description": {
-      "0": "Meningkatkan 3 level <strong>Supreme Instruction: Cyclonic Exterminator</strong>.",
+      "0": "Meningkatkan 3 level <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Supreme Instruction: Cyclonic Exterminator</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },

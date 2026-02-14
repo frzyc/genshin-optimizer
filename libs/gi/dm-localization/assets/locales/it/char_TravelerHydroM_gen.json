@@ -111,6 +111,22 @@
       "1": "Il bonus DAN massimo che è possibile ottenere in questo modo è pari a 5.000."
     }
   },
+  "lockedPassive": {
+    "name": "Acquacristallo straniero",
+    "description": {
+      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effetti positivi aggiuntivi</strong></tooltip> per ogni elemento con cui hai risuonato.",
+      "1": "<br/>",
+      "2": "Inoltre, quando i PS attuali dei membri vicini del gruppo aumentano o diminuiscono di un 5%, {F#la viaggiatrice}{M#il viaggiatore} ottiene 1 accumulo di Lama delle Mille acque. È possibile ottenere 1 accumulo in questo modo una volta ogni 4 s, fino a un massimo di 3 accumuli. Dopo aver raggiunto il numero massimo di accumuli, sferrare un attacco caricato li consuma tutti e trasforma l'attacco in un <strong>Attacco caricato: Legamaree</strong> speciale.",
+      "3": "<br/>",
+      "4": "<strong>Attacco caricato: Legamaree</strong>",
+      "5": [
+        " Ogni colpo di attacco caricato infligge <hydro>DAN da Hydro</hydro> aumentati. L'aumento dei DAN è pari a un 150% dell'ATT {F#della viaggiatrice}{M#del viaggiatore}.",
+        " Quando i PS {F#della viaggiatrice}{M#del viaggiatore} sono maggiori o uguali a un 50%, un 10% dei suoi PS max viene consumato per aumentare i DAN inflitti da ciascun attacco caricato di un 100% del suo ATT.",
+        " Quando i PS {F#della viaggiatrice}{M#del viaggiatore} sono inferiori a un 50%, colpire un nemico innesca un'iterazione di ripristino dei PS pari a un 25% dei PS max {F#della viaggiatrice}{M#del viaggiatore}.",
+        " È possibile scatenare <strong>Attacco caricato: Legamaree</strong> una volta ogni 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Lago esondante",
     "description": {

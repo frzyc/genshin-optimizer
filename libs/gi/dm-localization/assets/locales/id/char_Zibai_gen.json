@@ -1,0 +1,164 @@
+{
+  "name": "Zibai",
+  "title": "White Horse's Fleeting Spring",
+  "description": "Adeptus kuda putih dalam legenda Liyue yang dikenal dengan nama Zibai, sosok paling misterius di dalam mitologi Liyue.",
+  "constellationName": "Equa Alba",
+  "auto": {
+    "name": "Golden Blade's Petaled Touch",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Heaven and Earth Made Manifest",
+    "description": {
+      "0": "Memanggil bayangan dari kekuasaan masa lalu dan berganti ke mode <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Lunar Phase Shift</strong></tooltip>.",
+      "1": "Dalam mode ini, Normal Attack dan Charged Attack Zibai akan dikonversi menjadi <geo>Geo DMG</geo> yang tidak bisa ditimpa Elemental Infusion lainnya, dan akan mengakumulasi <strong>Phase Shift Radiance</strong> yang khusus dengan berbagai cara. Zibai dapat mengonsumsi Phase Shift Radiance untuk melancarkan Elemental Skill khusus <strong>Spirit Steed's Stride</strong>.",
+      "2": "<br/>",
+      "3": "<strong>Moonsign: Ascendant Gleam</strong>",
+      "4": "Saat berada dalam mode <strong>Lunar Phase Shift</strong> dan Zibai melancarkan Normal Attack, maka serangan tahap keempat akan mengakibatkan satu kali <geo>Geo DMG</geo> tambahan. DMG ini dianggap sebagai DMG reaksi Lunar-Crystallize."
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1 Lunar Phase Shift",
+      "1": "DMG Tahap 2 Lunar Phase Shift",
+      "2": "DMG Tahap 3 Lunar Phase Shift",
+      "3": "DMG Tahap 4 Lunar Phase Shift",
+      "4": "DMG Charged Attack Lunar Phase Shift",
+      "5": "DMG Tahap 1 Spirit Steed's Stride",
+      "6": "DMG Tahap 2 Spirit Steed's Stride",
+      "7": "DMG Tambahan Lunar Phase Shift Tahap 4",
+      "8": "Durasi Lunar Phase Shift",
+      "9": "Cooldown",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tri-Sphere Eminence",
+    "description": {
+      "0": "Zibai memanggil Jadelight Canopy untuk mengakibatkan dua kali <geo>Geo DMG</geo>. DMG tahap kedua dianggap sebagai DMG reaksi Lunar-Crystallize.",
+      "1": "Jika Zibai melancarkan skill ini saat berada dalam mode <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Lunar Phase Shift</strong></tooltip>, maka durasi Lunar Phase Shift ini akan diperpanjang 1,7 detik."
+    },
+    "skillParams": {
+      "0": "DMG Skill Tahap 1",
+      "1": "DMG Skill Tahap 2",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "The Selenic Adeptus Descends",
+    "description": {
+      "0": "Saat melancarkan Elemental Skill <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Heaven and Earth Made Manifest</tooltip></strong>, atau saat Karakter party di sekitar memicu Moondrift Harmony, Zibai akan mendapatkan efek <strong>Selenic Descent</strong> yang bertahan 4 detik: DMG serangan tahap 2 <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Spirit Steed's Stride</strong></tooltip> meningkat sebesar 60% DEF Zibai."
+    }
+  },
+  "passive2": {
+    "name": "Layered Peaks Pierce the Clouds",
+    "description": {
+      "0": "Untuk setiap 1 Karakter <geo>Geo</geo> lain di party, DEF Zibai akan meningkat 15%. Untuk setiap Karakter <hydro>Hydro</hydro> lain di party, Elemental Mastery Zibai akan meningkat 60 poin."
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: The Coursing Sun and Moon",
+    "description": {
+      "0": "Saat Karakter dalam party memicu reaksi Hydro Crystallize, reaksi tersebut akan dikonversi menjadi Lunar-Crystallize. Untuk setiap 100 poin DEF Zibai, DMG dasar reaksi Lunar-Crystallize meningkat 0,7%, dengan maksimum 14% peningkatan yang bisa didapatkan dengan cara ini.",
+      "1": "<br/>",
+      "2": "Selain itu, saat Zibai ada di dalam party, <strong>Moonsign</strong> party akan meningkat 1 level."
+    }
+  },
+  "passive": {
+    "name": "Moonlit Flower Forest",
+    "description": {
+      "0": "Saat tidak dalam kondisi bertempur di malam hari (pukul 18:00 - 06:00), Zibai akan memulihkan 1 Energy setiap 2 detik.",
+      "1": "<br/>",
+      "2": "Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss"
+    }
+  },
+  "constellation1": {
+    "name": "Burst Forth With Vigor, But Enter in Silence",
+    "description": {
+      "0": "Setelah melancarkan Elemental Skill <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Heaven and Earth Made Manifest</tooltip></strong>, Zibai akan langsung mengakumulasi 100 poin <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Phase Shift Radiance</strong></tooltip>, dan jumlah penggunaan maksimum <strong>Spirit Steed's Stride</strong> di setiap mode <strong>Lunar Phase Shift</strong> meningkat menjadi 5 kali.",
+      "1": "Selain itu, saat pertama kali memicu Spirit Steed's Stride setiap berganti ke mode Lunar Phase Shift, DMG reaksi Lunar-Crystallize yang diakibatkan oleh serangan tahap kedua Spirit Steed's Stride akan meningkat 220%."
+    }
+  },
+  "constellation2": {
+    "name": "At Birth Are Souls Born, and in Death Leave But Husks",
+    "description": {
+      "0": "Saat dalam mode <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Lunar Phase Shift</strong></tooltip>, DMG reaksi Lunar-Crystallize yang diakibatkan seluruh anggota party di sekitar meningkat 30%.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: Talenta Ascension <strong><tooltip ns=char_Zibai_gen baseKey18=passive1>The Selenic Adeptus Descends</tooltip></strong> mendapatkan peningkatan: DMG serangan tahap 2 <strong>Spirit Steed's Stride</strong> meningkat lagi sebesar 550% DEF Zibai. Harus membuka Talenta Ascension \"The Selenic Adeptus Descends\" terlebih dahulu."
+    }
+  },
+  "constellation3": {
+    "name": "Free From Constraints and Worldly Ties",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Heaven and Earth Made Manifest</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Spirit Passes, Then Form Follows",
+    "description": {
+      "0": "Saat berada dalam mode <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Lunar Phase Shift</strong></tooltip>, urutan serangan Normal Attack Zibai tidak akan direset, dan saat <strong>Spirit Steed's Stride</strong> mengenai musuh, Zibai akan mendapatkan efek <strong>Scattermoon Splendor</strong>: Saat melancarkan Normal Attack berikutnya, serangan tambahan di tahap ke-4 akan mengakibatkan DMG Lunar-Crystallize sebesar 250% DMG awal."
+    }
+  },
+  "constellation5": {
+    "name": "Perceive the Worthless and Debate It Not",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Zibai_gen baseKey18=burst>Tri-Sphere Eminence</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "The World, A Journey in Passing",
+    "description": {
+      "0": "Saat berada dalam mode <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Lunar Phase Shift</strong></tooltip>, efisiensi pengumpulan <strong>Phase Shift Radiance</strong> Zibai akan meningkat 50%.",
+      "1": "Selain itu, <strong>Spirit Steed's Stride</strong> akan langsung mengonsumsi seluruh Phase Shift Radiance yang dimiliki. Untuk setiap 1 poin Phase Shift Radiance di atas 70 poin yang terkonsumsi, DMG Spirit Steed's Stride dan DMG reaksi Lunar-Crystallize yang diakibatkan oleh Zibai selama 3 detik ke depan akan <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 1,6%. Efek ini tidak dapat ditumpuk."
+    }
+  }
+}

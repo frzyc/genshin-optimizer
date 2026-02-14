@@ -1,0 +1,24 @@
+{
+  "name": "Rappel de la nocturne",
+  "description": {
+    "0": "Une perle de jade, baignée par la lumière de la lune. Même au cœur des nuits d'hiver les plus froides, sa douce chaleur persiste comme une mélodie."
+  },
+  "passiveName": "Ballade des intersections",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les PV max de <cryo>10 %</cryo>. Lorsque le personnage équipé de l'arme déclenche une réaction sélène ou inflige des DGT de réaction sélène à un ennemi, il récupère <cryo>14</cryo> pts d'énergie élémentaire et obtient l'effet Ambroisie de la mer généreuse pendant 12 s : augmente les PV max de <cryo>14 %</cryo> supplémentaires et les DGT CRIT des DGT de réaction sélène de <cryo>60 %</cryo>. L'effet de restauration d'énergie peut être déclenché une fois toutes les 18 s et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Augmente les PV max de <cryo>12 %</cryo>. Lorsque le personnage équipé de l'arme déclenche une réaction sélène ou inflige des DGT de réaction sélène à un ennemi, il récupère <cryo>15</cryo> pts d'énergie élémentaire et obtient l'effet Ambroisie de la mer généreuse pendant 12 s : augmente les PV max de <cryo>16 %</cryo> supplémentaires et les DGT CRIT des DGT de réaction sélène de <cryo>80 %</cryo>. L'effet de restauration d'énergie peut être déclenché une fois toutes les 18 s et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Augmente les PV max de <cryo>14 %</cryo>. Lorsque le personnage équipé de l'arme déclenche une réaction sélène ou inflige des DGT de réaction sélène à un ennemi, il récupère <cryo>16</cryo> pts d'énergie élémentaire et obtient l'effet Ambroisie de la mer généreuse pendant 12 s : augmente les PV max de <cryo>18 %</cryo> supplémentaires et les DGT CRIT des DGT de réaction sélène de <cryo>100 %</cryo>. L'effet de restauration d'énergie peut être déclenché une fois toutes les 18 s et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Augmente les PV max de <cryo>16 %</cryo>. Lorsque le personnage équipé de l'arme déclenche une réaction sélène ou inflige des DGT de réaction sélène à un ennemi, il récupère <cryo>17</cryo> pts d'énergie élémentaire et obtient l'effet Ambroisie de la mer généreuse pendant 12 s : augmente les PV max de <cryo>20 %</cryo> supplémentaires et les DGT CRIT des DGT de réaction sélène de <cryo>120 %</cryo>. L'effet de restauration d'énergie peut être déclenché une fois toutes les 18 s et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Augmente les PV max de <cryo>18 %</cryo>. Lorsque le personnage équipé de l'arme déclenche une réaction sélène ou inflige des DGT de réaction sélène à un ennemi, il récupère <cryo>18</cryo> pts d'énergie élémentaire et obtient l'effet Ambroisie de la mer généreuse pendant 12 s : augmente les PV max de <cryo>22 %</cryo> supplémentaires et les DGT CRIT des DGT de réaction sélène de <cryo>140 %</cryo>. L'effet de restauration d'énergie peut être déclenché une fois toutes les 18 s et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

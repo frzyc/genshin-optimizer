@@ -239,6 +239,15 @@
   "BlazingSpirit": {
     "name": "炎魂値"
   },
+  "FortuneCoin": {
+    "name": "吉語銭"
+  },
+  "SightseeingExperience": {
+    "name": "漫遊見聞"
+  },
+  "TreasuredInsights": {
+    "name": "褒賞見聞"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -301,6 +310,9 @@
   },
   "ChroniclesOfTheRealms": {
     "name": "千界遊記"
+  },
+  "PrismaticCrystal": {
+    "name": "煌めく結晶"
   },
   "PyroSigil": {
     "name": "炎の印"
@@ -1118,6 +1130,15 @@
   "Jahoda": {
     "name": "ヤフォダ"
   },
+  "Columbina": {
+    "name": "コロンビーナ"
+  },
+  "Zibai": {
+    "name": "兹白"
+  },
+  "Illuga": {
+    "name": "イルーガ"
+  },
   "KachinasStellaFortuna": {
     "name": "カチーナの星屑"
   },
@@ -1186,6 +1207,15 @@
   },
   "JahodasStellaFortuna": {
     "name": "ヤフォダの星屑"
+  },
+  "ColumbinasStellaFortuna": {
+    "name": "コロンビーナの星屑"
+  },
+  "ZibaisStellaFortuna": {
+    "name": "兹白の星屑"
+  },
+  "IllugasStellaFortuna": {
+    "name": "イルーガの星屑"
   },
   "Apple": {
     "name": "リンゴ"
@@ -3643,6 +3673,12 @@
   },
   "MidsommarBerry": {
     "name": "ソマルの実"
+  },
+  "WinterIcelea": {
+    "name": "ヴィンテル草"
+  },
+  "PineAmber": {
+    "name": "琥珀香"
   },
   "BirchWood": {
     "name": "樺材"
@@ -8144,6 +8180,78 @@
   "SugarSculptureKuuhenki": {
     "name": "飴細工・月霊"
   },
+  "SuspiciousLuckySnowDelight": {
+    "name": "微妙な豊穣瑞雪餅"
+  },
+  "LuckySnowDelight": {
+    "name": "豊穣瑞雪餅"
+  },
+  "DeliciousLuckySnowDelight": {
+    "name": "美味しそうな豊穣瑞雪餅"
+  },
+  "SuspiciousCrispySpringRolls": {
+    "name": "微妙なカリカリ春巻き"
+  },
+  "CrispySpringRolls": {
+    "name": "カリカリ春巻き"
+  },
+  "DeliciousCrispySpringRolls": {
+    "name": "美味しそうなカリカリ春巻き"
+  },
+  "SuspiciousBerryHerbalCandy": {
+    "name": "微妙なフラワーベリーキャンディ"
+  },
+  "BerryHerbalCandy": {
+    "name": "フラワーベリーキャンディ"
+  },
+  "DeliciousBerryHerbalCandy": {
+    "name": "美味しそうなフラワーベリーキャンディ"
+  },
+  "SuspiciousVeggiePotSoup": {
+    "name": "微妙な野菜の缶詰スープ"
+  },
+  "VeggiePotSoup": {
+    "name": "野菜の缶詰スープ"
+  },
+  "DeliciousVeggiePotSoup": {
+    "name": "美味しそうな野菜の缶詰スープ"
+  },
+  "SuspiciousFiresideMerriment": {
+    "name": "微妙なキャンプファイヤーの狂喜"
+  },
+  "FiresideMerriment": {
+    "name": "キャンプファイヤーの狂喜"
+  },
+  "DeliciousFiresideMerriment": {
+    "name": "美味しそうなキャンプファイヤーの狂喜"
+  },
+  "SuspiciousMushroomPhantasm": {
+    "name": "微妙なパンダフル・キノコ"
+  },
+  "MushroomPhantasm": {
+    "name": "パンダフル・キノコ"
+  },
+  "DeliciousMushroomPhantasm": {
+    "name": "美味しそうなパンダフル・キノコ"
+  },
+  "FlavorOfSpring": {
+    "name": "春鮮揚げ"
+  },
+  "MoonlitMirage": {
+    "name": "遥かなる白月"
+  },
+  "NightwatchSoup": {
+    "name": "夜廻りのスープ"
+  },
+  "SugarSculptureColumbina": {
+    "name": "飴細工・コロンビーナ"
+  },
+  "SugarSculptureIlluga": {
+    "name": "飴細工・イルーガ"
+  },
+  "CharredMushroomPhantasm": {
+    "name": "焦げ炭のようなパンダフル・キノコ"
+  },
   "RecipeItem": {
     "name": "レシピアイテム"
   },
@@ -8918,6 +9026,24 @@
   "RecipeSpicedFriedChicken": {
     "name": "レシピ：スパイシーサクサクチキン"
   },
+  "RecipeLuckySnowDelight": {
+    "name": "レシピ：豊穣瑞雪餅"
+  },
+  "RecipeCrispySpringRolls": {
+    "name": "レシピ：カリカリ春巻き"
+  },
+  "RecipeBerryHerbalCandy": {
+    "name": "レシピ：フラワーベリーキャンディ"
+  },
+  "RecipeVeggiePotSoup": {
+    "name": "レシピ：野菜の缶詰スープ"
+  },
+  "RecipeFiresideMerriment": {
+    "name": "レシピ：キャンプファイヤーの狂喜"
+  },
+  "RecipeMushroomPhantasm": {
+    "name": "レシピ：パンダフル・キノコ"
+  },
   "CraftedItems": {
     "name": "合成産物"
   },
@@ -9467,6 +9593,15 @@
   "MistshroudHelmet": {
     "name": "暗き霧の兜"
   },
+  "FracturedEyeOfTheDeepShadow": {
+    "name": "暗黒の裂眼"
+  },
+  "AberrantCoreOfTheDeepShadow": {
+    "name": "暗黒の怪核"
+  },
+  "HookedBeakOfTheDeepShadow": {
+    "name": "暗黒のくちばし"
+  },
   "HurricaneSeed": {
     "name": "暴風の種"
   },
@@ -9706,6 +9841,18 @@
   },
   "CyclicMilitaryKuuvahkiCore": {
     "name": "軍用循環式クーヴァキコア"
+  },
+  "MaskOfTheVirtuousDoctor": {
+    "name": "賢医の仮面"
+  },
+  "MadmansRestraint": {
+    "name": "狂人の誓約"
+  },
+  "ElixirOfTheHeretic": {
+    "name": "異端の薬瓶"
+  },
+  "RemnantOfTheDreadwing": {
+    "name": "悪夢の枯骸"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔の王の瓦"
@@ -10063,6 +10210,9 @@
   },
   "MaskedBallInvitationLetter": {
     "name": "仮面舞踏会の招待状"
+  },
+  "SetGiftBoxGallop": {
+    "name": "ギフトボックス-「ギャロップ」"
   },
   "BEP": {
     "name": "紀行経験"
@@ -13004,8 +13154,14 @@
   "SomeonesLostPassword": {
     "name": "誰かが落とした合言葉のメモ"
   },
+  "MemorataCognoscentisJest": {
+    "name": "知識を持つ者の戯言"
+  },
   "InscriptaCognoscentisFeather": {
     "name": "知識を刻む者の黒羽"
+  },
+  "DevocinaCognoscentisSorrow": {
+    "name": "知識に添う者の哀慕"
   },
   "WeavenexaCognoscentisIntoxication": {
     "name": "知識を紡ぐ者の傾倒"
@@ -13018,6 +13174,9 @@
   },
   "SomeonesRequestForHelp": {
     "name": "誰かの救援要請"
+  },
+  "SpareBunkerHandwheel": {
+    "name": "避難所の予備ハンドル"
   },
   "BountyTokenTrickstersRedSatin": {
     "name": "賞金稼ぎの証：詐欺師の赤い絹"
@@ -13082,6 +13241,15 @@
   "SomeonesResearchNotes": {
     "name": "誰かの研究ノート"
   },
+  "TierIBunkerAccessCard": {
+    "name": "避難所のキーカード・初級"
+  },
+  "TierIIBunkerAccessCard": {
+    "name": "避難所のキーカード・中級"
+  },
+  "TierIIIBunkerAccessCard": {
+    "name": "避難所のキーカード・上級"
+  },
   "Toolkit": {
     "name": "工具セット"
   },
@@ -13129,6 +13297,18 @@
   },
   "OrderedNotes": {
     "name": "整理されたノート"
+  },
+  "GoldenKey": {
+    "name": "金の鍵"
+  },
+  "SilverKey": {
+    "name": "銀の鍵"
+  },
+  "IronKey": {
+    "name": "鉄の鍵"
+  },
+  "StrangeIronCoin": {
+    "name": "変わった鉄銭"
   },
   "ConchNotebook": {
     "name": "ホラガイノート"
@@ -13181,8 +13361,20 @@
   "HalfBurnedPage": {
     "name": "半分焦げたページ"
   },
+  "AgedPinecone": {
+    "name": "しなびたナッツ"
+  },
+  "AgedRye": {
+    "name": "傷んだライ麦"
+  },
   "CuratoriumFunds": {
     "name": "「秘聞の館」の資金"
+  },
+  "ShutterflashKamera": {
+    "name": "「瞬影」写真機"
+  },
+  "TheShiniestAndBrightestBerylConch": {
+    "name": "「一番キラキラした」蒼晶螺"
   },
   "RhinedottirsGift": {
     "name": "レインドットの「プレゼント」"
@@ -13208,11 +13400,173 @@
   "TaleOfDurin": {
     "name": "「ドゥリン」という名の物語"
   },
+  "LanternRiteGiftGiftOfRadiantNight": {
+    "name": "海灯祭の贈り物・明霄の礼"
+  },
+  "LanternRiteGiftGiftOfSeekingLight": {
+    "name": "海灯祭の贈り物・循灯の礼"
+  },
+  "LanternRiteGiftGiftOfDistantLonging": {
+    "name": "海灯祭の贈り物・遥念の礼"
+  },
+  "LanternRiteGiftGiftOfJoyousWishes": {
+    "name": "海灯祭の贈り物・喜願の礼"
+  },
+  "LanternRiteGiftGiftOfVenerableVirtue": {
+    "name": "海灯祭の贈り物・賀徳の礼"
+  },
+  "LanternRiteGiftGiftOfGuidingMoonlight": {
+    "name": "海灯祭の贈り物・月灯の礼"
+  },
+  "AncientIncantations": {
+    "name": "古い呪文"
+  },
+  "Wish": {
+    "name": "願い事"
+  },
+  "Moonlight": {
+    "name": "月光"
+  },
+  "LostNotesIV": {
+    "name": "失われたノート・4"
+  },
+  "LostNotesII": {
+    "name": "失われたノート・2"
+  },
+  "LostNotesI": {
+    "name": "失われたノート・1"
+  },
+  "IrismoonSeal": {
+    "name": "虹月の石符"
+  },
+  "TheWhiteHorseAdeptusMeetsTheWhiteHorseAdeptusInLiyueHarbor": {
+    "name": "「白馬の仙人、璃月港で白馬の仙人を見る」"
+  },
+  "AnAncientPoem": {
+    "name": "古詩一首"
+  },
+  "MarionettesNotebook": {
+    "name": "「傀儡」のノート"
+  },
+  "LostNotesIII": {
+    "name": "失われたノート・3"
+  },
+  "ProspectorsCommand": {
+    "name": "観測コマンド"
+  },
+  "ThatWhichHasLostItsPower": {
+    "name": "霊気が尽きたある物"
+  },
+  "FreshRye": {
+    "name": "新鮮なライ麦"
+  },
+  "TheFirstIronCoin": {
+    "name": "「最初の鉄銭」"
+  },
+  "SilverLampwick": {
+    "name": "シルバーランプの芯"
+  },
+  "UnknownPersonsAbandonedDiary": {
+    "name": "誰かが残した日誌"
+  },
+  "NeatlyWrittenDiaryI": {
+    "name": "丁寧に書かれた日記・1"
+  },
+  "NeatlyWrittenDiaryII": {
+    "name": "丁寧に書かれた日記・2"
+  },
+  "NeatlyWrittenDiaryIII": {
+    "name": "丁寧に書かれた日記・3"
+  },
+  "ForgottenKey": {
+    "name": "落とした鍵"
+  },
+  "AncientLogCarterScherbius": {
+    "name": "古い日誌（カーター・シェルビウス）"
+  },
+  "AncientLogAlainGuillotin": {
+    "name": "古い日誌（アラン・ギヨタン）"
+  },
+  "AncientLogJakobIngold": {
+    "name": "古い日誌（ジェイコブ・インゴルド）"
+  },
+  "TheResearchNotesOfMasterRuggiero": {
+    "name": "マスタールッジェロの研究ノート"
+  },
+  "TheBiographyOfGuillotinDeluxeEdition": {
+    "name": "ギヨタン伝（改訂上製本）"
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuria": {
+    "name": "レムリア衰亡史"
+  },
+  "TimeTrekker": {
+    "name": "時の旅人"
+  },
+  "AutomnequiSermonDictationConcerningTheApocalypse": {
+    "name": "モン・オトンヌキに関する記録-世界の滅亡について"
+  },
+  "AutomnequiSermonDictationExplicationsOnTheChymicalMarriage": {
+    "name": "モン・オトンヌキに関する記録-密合の解釈"
+  },
+  "GreatDetectiveHurlockTheAlchemistAndTheClockworkSaint": {
+    "name": "名探偵ハーロック・錬金術師とクロックワークの聖人"
+  },
+  "DamagedLogs": {
+    "name": "破損した日誌"
+  },
+  "BloodstainedLogs": {
+    "name": "血に染まった日記"
+  },
+  "MessilyWrittenNotes": {
+    "name": "歪んだ筆跡"
+  },
+  "CommunicationsLog": {
+    "name": "通信履歴"
+  },
+  "TerminalLog": {
+    "name": "端末ログ"
+  },
+  "NoteClippedInABook": {
+    "name": "本に挟まれていたメモ"
+  },
+  "AMessageFromTheLegendaryThiefReedMiller": {
+    "name": "大怪盗レッド・ミラーの書き置き"
+  },
+  "BrahesNotesI": {
+    "name": "ブライヒのメモ・1"
+  },
+  "BrahesNotesII": {
+    "name": "ブライヒのメモ・2"
+  },
+  "BrahesNotesIII": {
+    "name": "ブライヒのメモ・3"
+  },
+  "BrahesNotesIV": {
+    "name": "ブライヒのメモ・4"
+  },
+  "LetterBuriedInTheTimeCapsule": {
+    "name": "タイムカプセルの中にあった手紙"
+  },
+  "ABriefHistoryOfThePaleStarborn": {
+    "name": "蒼星フェイ史略"
+  },
+  "NightMurmursFromTheFarBorderVarcolac": {
+    "name": "辺境夜話・ヴァルコラク"
+  },
+  "TalesCarriedByTheNorthwind": {
+    "name": "朔風集"
+  },
+  "AncientHandwriting": {
+    "name": "古い筆跡"
+  },
   "TearsAmongTheStars": {
     "name": "星間の涙"
   },
   "ObsidianAncientName": {
     "name": "黒曜の古名"
+  },
+  "MoonPrayerBlossomFromColumbina": {
+    "name": "コロンビーナから贈られた祈月の花"
   },
   "SilkFlowerSeed": {
     "name": "「霓裳花」の種"
@@ -13336,6 +13690,12 @@
   },
   "LakkaberrySeed": {
     "name": "「ホワイトベリー」の種"
+  },
+  "WinterIceleaSeed": {
+    "name": "「ヴィンテル草」の種"
+  },
+  "PineAmberSeed": {
+    "name": "「琥珀香」の種"
   },
   "Medaka": {
     "name": "グッピー"
@@ -14105,6 +14465,30 @@
   "RadiantSpincrystal168": {
     "name": "旋曜玉帛・168"
   },
+  "RadiantSpincrystal169": {
+    "name": "旋曜玉帛・169"
+  },
+  "RadiantSpincrystal170": {
+    "name": "旋曜玉帛・170"
+  },
+  "RadiantSpincrystal171": {
+    "name": "旋曜玉帛・171"
+  },
+  "RadiantSpincrystal172": {
+    "name": "旋曜玉帛・172"
+  },
+  "RadiantSpincrystal173": {
+    "name": "旋曜玉帛・173"
+  },
+  "RadiantSpincrystal174": {
+    "name": "旋曜玉帛・174"
+  },
+  "RadiantSpincrystal175": {
+    "name": "旋曜玉帛・175"
+  },
+  "RadiantSpincrystal176": {
+    "name": "旋曜玉帛・176"
+  },
   "LanternFiber": {
     "name": "紙の繊維"
   },
@@ -14116,6 +14500,18 @@
   },
   "XiaoLantern": {
     "name": "霄灯"
+  },
+  "CelebratoryXiaoLantern": {
+    "name": "祭典の霄灯"
+  },
+  "GiftXiaoLantern": {
+    "name": "祝祭の霄灯"
+  },
+  "XiaoLanternFlightManual": {
+    "name": "霄灯飛陣譜"
+  },
+  "MoonLightsTheSkySpringBlossomsHigh": {
+    "name": "月灯の明霄、万象は悉く春"
   },
   "RimeWornFragment": {
     "name": "霜噬砕屑"
@@ -15132,13 +15528,31 @@
     "name": "ドゥリン・輝心"
   },
   "JahodaHelpingHand": {
-    "name": "ヤフォダ・助っ人"
+    "name": "ヤフォダ・手助け"
   },
   "TravelNotesBlazingSnow": {
     "name": "紀行・烈雪"
   },
   "CelebrationDreamReader": {
     "name": "祭典・夢習い"
+  },
+  "ColumbinaSomeday": {
+    "name": "コロンビーナ・幾時"
+  },
+  "ZibaiVeiledVista": {
+    "name": "兹白・煙景"
+  },
+  "IllugaNightmareSongbird": {
+    "name": "イルーガ・闇の夜鳴鶯"
+  },
+  "AchievementFarSighted": {
+    "name": "アチーブメント・眺望"
+  },
+  "NodKraiLanternOfLongestNight": {
+    "name": "ナド・クライ・長灯"
+  },
+  "TravelNotesLanternlitOde": {
+    "name": "紀行・天翔"
   },
   "EchoDandelionKnight": {
     "name": "軌跡·蒲公英騎士"
@@ -15523,6 +15937,9 @@
   },
   "TheLittleWitchsDictionary": {
     "name": "小さな魔女の辞典"
+  },
+  "JadelightCanopy": {
+    "name": "「青玄陽華の華笠」"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "説明：風神の瞳の共鳴石"
@@ -16028,6 +16445,27 @@
   "SignOfProsperity": {
     "name": "富の予兆"
   },
+  "CaseOverview": {
+    "name": "判例総覧"
+  },
+  "SnapshotEssentials": {
+    "name": "速写のコツ"
+  },
+  "UnderControl": {
+    "name": "完全掌握"
+  },
+  "TalismanicGrace": {
+    "name": "符を施し、霊を役す"
+  },
+  "TheArtOfCreation": {
+    "name": "創生の術"
+  },
+  "AdeptalArtisanry": {
+    "name": "巧の仙術"
+  },
+  "ByDecree": {
+    "name": "如律勅令"
+  },
   "FantasticalMarvel": {
     "name": "素晴らしきトリック"
   },
@@ -16186,6 +16624,9 @@
   },
   "BlackSerpentKnightRockbreakerAx": {
     "name": "黒蛇騎士・砕岩の斧"
+  },
+  "ConsecratedHornedCrocodile": {
+    "name": "聖骸ツノワニ"
   },
   "UndividedHeart": {
     "name": "唯一の心"
@@ -16568,6 +17009,15 @@
   "OnceStoodAgainstTheTideOfDarkWatersLikeBedrock": {
     "name": "「かつて、黒水の奔流を遮った磐石の如く…」"
   },
+  "FarToFall": {
+    "name": "悠遠"
+  },
+  "TrailsAmidstTheForestFog": {
+    "name": "霧立つ林中の痕跡"
+  },
+  "DeathlyOverflow": {
+    "name": "亡水溢流"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -16901,6 +17351,12 @@
   "NymphsDream": {
     "name": "水仙の夢"
   },
+  "StarcallersWatch": {
+    "name": "祭星者の眺め"
+  },
+  "FlameForgedInsight": {
+    "name": "知恵の溶炎"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -17089,6 +17545,9 @@
   },
   "Seymour": {
     "name": "セイモア"
+  },
+  "BonaAndCocouik": {
+    "name": "ポーナと「ココウィク」"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
@@ -17306,6 +17765,9 @@
   "NarrationFootnotes": {
     "name": "ナレーションの補足"
   },
+  "BrokenSea": {
+    "name": "砕けた海"
+  },
   "ABlessingFromM": {
     "name": "「魔女Mからの祝福」"
   },
@@ -17323,6 +17785,9 @@
   },
   "PlanToSaveTheWorld": {
     "name": "世界を救う計画"
+  },
+  "AnAdventureThroughTheMorningMist": {
+    "name": "「朝霧を越えた冒険」"
   },
   "Origin": {
     "name": "原初"
@@ -17395,6 +17860,12 @@
   },
   "SeaOfBygoneErasSlumber": {
     "name": "往日の海・深い眠り"
+  },
+  "FontaLakelightLuminescence": {
+    "name": "フォンタ・レイクライト"
+  },
+  "SeaOfBygoneErasCrown": {
+    "name": "往日の海・クラウン"
   },
   "BeginnerPlayerBadge": {
     "name": "初心者プレイヤーメダル"
@@ -17480,8 +17951,17 @@
   "AdventuresInBlazingHue": {
     "name": "燃えろ！ラクガキ大冒険"
   },
+  "AsHeavenAndEarthAreMadeAnew": {
+    "name": "新たなる天地"
+  },
   "TowardTheDistantHorizon": {
     "name": "物語の彼方"
+  },
+  "MelusentGift": {
+    "name": "メリュジーヌの贈り物"
+  },
+  "RainlitBambooReverie": {
+    "name": "竹林に響く雨音"
   },
   "RadiantPhantasm": {
     "name": "幻形の煌めき"
@@ -18053,6 +18533,18 @@
   "TimelessShine": {
     "name": "「不変の光」"
   },
+  "LightweightMetalLamp": {
+    "name": "軽量型金属ランプ"
+  },
+  "StandingStreetLampEfficiencyMaxed": {
+    "name": "スタンド式街灯-「省エネ設計」"
+  },
+  "VibrantXiaoLanternMayMyWishTravelFar": {
+    "name": "明彩霄灯-「良き願い、彼方へ」"
+  },
+  "VibrantXiaoLanternAMeetingWithFriends": {
+    "name": "明彩霄灯-「友と交わす約束」"
+  },
   "EfflorescentIllumination": {
     "name": "「花葉百相の光」"
   },
@@ -18302,6 +18794,9 @@
   "IndoorLongTableMarksOfLove": {
     "name": "屋内用テーブル-「丹精なお手入れ」"
   },
+  "WhispersInTheMoonlight": {
+    "name": "「静夜の密談」"
+  },
   "BreezeBlessedBed": {
     "name": "そよ風に守られたベッド"
   },
@@ -18334,6 +18829,9 @@
   },
   "TavernBedNotGreatNotTerrible": {
     "name": "酒場のベッド-「ほどほどの寝心地」"
+  },
+  "SimpleCareBed": {
+    "name": "簡易医療ベッド"
   },
   "PineReceptionCounter": {
     "name": "松の旅館受付"
@@ -18454,6 +18952,9 @@
   },
   "FactoryStoolMultiroleSeatingDevice": {
     "name": "工場の椅子-「オールラウンダー」"
+  },
+  "ToAFriend": {
+    "name": "「友へ」"
   },
   "NorthernStoneHearth": {
     "name": "北地の石造暖炉"
@@ -18649,6 +19150,12 @@
   },
   "MultifunctionalPedunculateOakWoodCatTree": {
     "name": "サマーオーク材の多機能キャットタワー"
+  },
+  "SimpleStretcherSteadyEvacuation": {
+    "name": "簡易担架-「平穏搬送」"
+  },
+  "BottomsUp": {
+    "name": "「豪快な一杯」"
   },
   "HiddenSecrets": {
     "name": "「隠された秘密」"
@@ -19111,6 +19618,9 @@
   },
   "TavernNoticeWhispersOfTheStreet": {
     "name": "酒場の掲示-「市井の噂」"
+  },
+  "FlagOfPiramida": {
+    "name": "「ピラミダの旗」"
   },
   "LingeringMoment": {
     "name": "「絆の時」"
@@ -19886,6 +20396,27 @@
   "SteelboundSecrecy": {
     "name": "「磐岩のように」"
   },
+  "AdjustableMetalBarrier": {
+    "name": "鉄製の調節可能なバリケード"
+  },
+  "SolitudeInTheCityOfTheEverWatchful": {
+    "name": "「守護の都の孤独」"
+  },
+  "ShelterInTheCityOfTheEverWatchful": {
+    "name": "「守護の都の庇護」"
+  },
+  "ACornerOfOnesOwn": {
+    "name": "「片隅の間」"
+  },
+  "CareInTheCityOfTheEverWatchful": {
+    "name": "「守護の都の加護」"
+  },
+  "ForgeInTheCityOfTheEverWatchful": {
+    "name": "「守護の都の鍛錬」"
+  },
+  "StarshynaWalking": {
+    "name": "「剣を携えて」"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "花鳥の噴水"
   },
@@ -20506,6 +21037,12 @@
   },
   "PetalsWithoutPerfume": {
     "name": "「香りを失った花」"
+  },
+  "LushVerdure": {
+    "name": "「緑流るる繁茂」"
+  },
+  "BrightVerdure": {
+    "name": "「緑流るる青翠」"
   },
   "FirShelves": {
     "name": "杉の物置台"
@@ -21311,6 +21848,9 @@
   "LeisurelyFeast": {
     "name": "「余暇の宴会」"
   },
+  "WarmAndCozy": {
+    "name": "「和やかな温もり」"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "酒屋の商品棚-「百杯飲み」"
   },
@@ -21451,6 +21991,18 @@
   },
   "VerticalBipolarTriLegTower": {
     "name": "立式三脚双極塔"
+  },
+  "CommandWithConfidence": {
+    "name": "「揺るがぬ指揮」"
+  },
+  "SimpleWeaponRackEasyAccess": {
+    "name": "簡易武器掛け-「取り出し容易」"
+  },
+  "LightkeepersMovingLighthouse": {
+    "name": "「ピカピカ移動ハウス」"
+  },
+  "ShimmerOfLife": {
+    "name": "「生気のきらめき」"
   },
   "SirCapyOfTheLongIncisors": {
     "name": "「ねむねむゲッシナイト」"

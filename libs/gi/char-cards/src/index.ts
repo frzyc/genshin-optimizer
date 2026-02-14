@@ -19,6 +19,7 @@ import Chongyun from './Character_Chongyun_Card.jpg'
 import Citlali from './Character_Citlali_Card.jpg'
 import Clorinde from './Character_Clorinde_Card.jpg'
 import Collei from './Character_Collei_Card.jpg'
+import Columbina from './Character_Columbina_Card.webp'
 import Cyno from './Character_Cyno_Card.jpg'
 import Dahlia from './Character_Dahlia_Card.jpg'
 import Dehya from './Character_Dehya_Card.jpg'
@@ -40,6 +41,7 @@ import Gorou from './Character_Gorou_Card.png'
 import HuTao from './Character_Hu_Tao_Card.png'
 import Iansan from './Character_Iansan_Card.jpg'
 import Ifa from './Character_Ifa_Card.jpg'
+import Illuga from './Character_Illuga_Card.webp'
 import Ineffa from './Character_Ineffa_Card.png'
 import Jahoda from './Character_Jahoda_Card.webp'
 import Jean from './Character_Jean_Card.jpg'
@@ -107,6 +109,7 @@ import Yoimiya from './Character_Yoimiya_Card.png'
 import YumemizukiMizuki from './Character_YumemizukiMizuki_Card.jpg'
 import YunJin from './Character_Yun_Jin_Card.jpg'
 import Zhongli from './Character_Zhongli_Card.png'
+import Zibai from './Character_Zibai_Card.webp'
 import TravelerF from './Traveler_Female_Card.jpg'
 import TravelerM from './Traveler_Male_Card.jpg'
 
@@ -131,6 +134,7 @@ const charCards = {
   Citlali,
   Clorinde,
   Collei,
+  Columbina,
   Cyno,
   Dahlia,
   Dehya,
@@ -152,6 +156,7 @@ const charCards = {
   HuTao,
   Iansan,
   Ifa,
+  Illuga,
   Ineffa,
   Jahoda,
   Jean,
@@ -221,6 +226,7 @@ const charCards = {
   YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
 } as const
 
 export function charCard(charKey: CharacterKey, gender: GenderKey) {

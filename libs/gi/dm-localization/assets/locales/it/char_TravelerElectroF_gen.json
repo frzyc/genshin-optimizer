@@ -111,6 +111,21 @@
       "0": "Aumenta l'effetto di ricarica d'energia conferito dall'Amuleto dell'abbondanza di <strong>Lama di fulmine</strong> di un 10% della ricarica d'energia de{F#lla}{M#l} viaggiat{F#rice}{M#ore}."
     }
   },
+  "lockedPassive": {
+    "name": "Lamposolco straniero",
+    "description": {
+      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effetti positivi aggiuntivi</strong></tooltip> per ogni elemento con cui hai risuonato.",
+      "1": "<br/>",
+      "2": "Inoltre, quando i membri vicini del gruppo sprigionano un Tripudio elementale, {F#la viaggiatrice}{M#il viaggiatore} ottiene 1 accumulo di Lama del Fulmine eclatante, fino a un massimo di 3 accumuli. Dopo aver raggiunto il numero massimo di accumuli, sferrare un attacco caricato li consuma tutti e trasforma l'attacco in un <strong>Attacco caricato: Detonazione</strong> speciale.",
+      "3": "<br/>",
+      "4": "<strong>Attacco caricato: Detonazione</strong>",
+      "5": [
+        " Ogni colpo di attacco caricato infligge <electro>DAN da Electro</electro> aumentati. L'aumento dei DAN è pari a un 100% dell'ATT {F#della viaggiatrice}{M#del viaggiatore}.",
+        " 3 s dopo aver colpito un nemico, viene scagliato 1 fulmine aggiuntivo, che infligge <electro>DAN da Electro</electro> pari a un 200% dell'ATT {F#della viaggiatrice}{M#del viaggiatore} e crea 1 Amuleto dell'abbondanza. Tali DAN sono considerati DAN da attacco caricato.",
+        " È possibile scatenare <strong>Attacco caricato: Detonazione</strong> una volta ogni 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Tuono primaverile della fertilità",
     "description": {

@@ -111,6 +111,22 @@
       "1": "Peningkatan DMG yang didapat dengan cara ini adalah maksimum 5.000 poin."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Aqualis",
+    "description": {
+      "0": "Menyerap kekuatan baru dari perjalanan masa lalu. Untuk setiap jenis elemen yang sudah diresonansi, Pengembara akan mendapatkan <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>efek penguatan</strong></tooltip> tambahan.",
+      "1": "<br/>",
+      "2": "Selain itu, saat HP Karakter dalam party bertambah atau berkurang 5%, Pengembara akan mendapatkan satu lapis efek Blade of Many Waters. Hanya bisa memperoleh 1 lapis Blade of Many Waters dengan cara ini setiap 4 detik, dan dapat ditumpuk sampai 3 lapis. Saat memiliki 3 lapis Blade of Many Waters dan melancarkan Charged Attack, Pengembara akan mengonsumsi seluruh Blade of Many Waters dan serangannya berubah menjadi <strong>Charged Attack: Tidebound</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Tidebound</strong>",
+      "5": [
+        "Setiap tahap Charged Attack akan mengakibatkan <hydro>Hydro DMG</hydro> yang lebih kuat. Peningkatan DMG-nya adalah sebesar 150% ATK Pengembara.",
+        "Saat HP Pengembara tidak kurang dari 50%, maka 10% dari Max HP Pengembara akan dikonsumsi untuk meningkatkan DMG setiap tahap Charged Attack sebesar 100% ATK Pengembara.",
+        "Saat HP Pengembara kurang dari 50%, akan mendapatkan pemulihan HP sebesar 25% Max HP Pengembara saat serangannya mengenai musuh.",
+        "<strong>Charged Attack: Tidebound</strong> dapat dilancarkan sekali setiap 15 detik."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Swelling Lake",
     "description": {

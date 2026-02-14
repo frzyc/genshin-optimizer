@@ -44,7 +44,7 @@
       "0": "เลียนแบบวิธีการต่อสู้ของ The Foul ทำให้เกิดเอฟเฟกต์ที่แตกต่างกันไปตามการกดและกดค้าง",
       "1": "<br/>",
       "2": "<strong>กด</strong>",
-      "3": "Skirk ได้รับ <strong>Serpent's Subtlety</strong> 45 หน่วย และเปลี่ยนเป็นโหมด <strong>Seven-Phase Flash</strong>",
+      "3": "Skirk ได้รับ <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Serpent's Subtlety</strong></tooltip> 45 หน่วย และเปลี่ยนเป็นโหมด <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong></tooltip>",
       "4": "<br/>",
       "5": "<strong>กดค้าง</strong>",
       "6": "Skirk ได้รับ Serpent's Subtlety 45 หน่วย และเคลื่อนที่อย่างรวดเร็วแบบต่อเนื่อง ภายใต้สถานะนี้ Skirk จะมีความสามารถในการต้านทานการหยุดชะงักเพิ่มขึ้น",
@@ -72,14 +72,14 @@
   "burst": {
     "name": "Havoc: Ruin",
     "description": {
-      "0": "ท่าไม้ตายของ Skirk ไม่ได้อาศัยพลังงานธาตุ แต่จะอาศัย <strong>Serpent's Subtlety</strong> แทน",
+      "0": "ท่าไม้ตายของ Skirk ไม่ได้อาศัยพลังงานธาตุ แต่จะอาศัย <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Serpent's Subtlety</strong></tooltip> แทน",
       "1": "เมื่อ Skirk มี Serpent's Subtlety อย่างน้อย 50 หน่วย Skirk จะใช้ Serpent's Subtlety ทั้งหมดเพื่อปล่อยท่าไม้ตาย ทำการฉีกกระชากมิติ และฟันโจมตีอย่างต่อเนื่องด้วยความเร็วสูง สร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo> ในขณะเดียวกัน ความเสียหายของท่าไม้ตายครั้งนี้จะเพิ่มขึ้น ตาม Serpent's Subtlety แต่ละหน่วยที่เกินมาจาก 50 หน่วยที่ Skirk มีในขณะที่ปล่อย ซึ่งสามารถนับ Serpent's Subtlety เพิ่มเติมด้วยวิธีนี้ได้สูงสุด 12 หน่วย",
       "2": "<br/>",
-      "3": "เมื่อ Skirk อยู่ในโหมด <strong>Seven-Phase Flash</strong> ท่าไม้ตาย \"Havoc: Ruin\" ของเธอจะถูกแทนที่ด้วย \"Havoc: Extinction\"",
+      "3": "เมื่อ Skirk อยู่ในโหมด <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong></tooltip> ท่าไม้ตาย \"Havoc: Ruin\" ของเธอจะถูกแทนที่ด้วย \"Havoc: Extinction\"",
       "4": "<br/>",
       "5": "<strong>Havoc: Extinction</strong>",
       "6": "สามารถปล่อยท่าไม้ตายได้โดยไม่ต้องใช้ Serpent's Subtlety",
-      "7": "หลังจากปล่อย Skirk จะได้รับเอฟเฟกต์ \"All Shall Wither\" และเอฟเฟกต์นี้จะคงอยู่จนกว่าโหมด Seven-Phase Flash จะสิ้นสุดลง; หลังจากปลดล็อกพรสวรรค์เพิ่มเติม <strong>Reason Beyond Reason</strong> แล้ว Skirk จะดูดซับรอยแยกมิติที่อยู่ใกล้เคียงในระยะที่กำหนด",
+      "7": "หลังจากปล่อย Skirk จะได้รับเอฟเฟกต์ \"All Shall Wither\" และเอฟเฟกต์นี้จะคงอยู่จนกว่าโหมด Seven-Phase Flash จะสิ้นสุดลง; หลังจากปลดล็อกพรสวรรค์เพิ่มเติม <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Reason Beyond Reason</strong></tooltip> แล้ว Skirk จะดูดซับรอยแยกมิติที่อยู่ใกล้เคียงในระยะที่กำหนด",
       "8": "ในช่วงเวลาต่อเนื่องของเอฟเฟกต์ \"All Shall Wither\" ในทุก 0.1 วินาที หลังจากที่ Skirk ใช้การโจมตีปกติถูกศัตรู จะเพิ่มความเสียหายที่เกิดจากการโจมตีปกติในครั้งนี้; หากปล่อย <strong>\"Havoc: Extinction\"</strong> และดูดซับรอยแยกมิติ ความเสียหายที่เกิดจากการโจมตีปกติในครั้งนี้จะเพิ่มขึ้นอีกขั้น โดยขึ้นอยู่กับจำนวนรอยแยกมิติที่ดูดซับ",
       "9": "เอฟเฟกต์นี้จะหายไปเมื่อเกิดครบ 10 ครั้ง"
     },
@@ -109,12 +109,12 @@
       "1": "<br/>",
       "2": "Skirk สามารถดูดซับรอยแยกมิติที่อยู่ในบริเวณใกล้เคียงได้ด้วยวิธีต่อไปนี้:",
       "3": [
-        "เมื่อการชาร์จโจมตีในโหมด <strong>Seven-Phase Flash</strong>  ถูกศัตรู;",
+        "เมื่อการชาร์จโจมตีในโหมด <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong> </tooltip> ถูกศัตรู;",
         "เมื่อใช้ท่าไม้ตายพิเศษ <strong>Havoc: Extinction</strong> ในโหมด Seven-Phase Flash",
         "เมื่อกดค้างเพื่อปล่อยสกิลธาตุ <strong>Havoc: Warp</strong> เพื่อเคลื่อนที่อย่างรวดเร็ว"
       ],
       "4": "<br/>",
-      "5": "ทุกครั้งที่ดูดซับรอยแยกมิติ 1 อัน Skirk จะได้รับ <strong>Serpent's Subtlety</strong> 8 หน่วย"
+      "5": "ทุกครั้งที่ดูดซับรอยแยกมิติ 1 อัน Skirk จะได้รับ <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Serpent's Subtlety</strong></tooltip> 8 หน่วย"
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
     "description": {
       "0": "เมื่อตัวละครในทีมที่อยู่ในบริเวณใกล้เคียงที่มีประเภทของธาตุเป็น<hydro>ธาตุน้ำ</hydro> สร้างการโจมตี<hydro>ธาตุน้ำ</hydro>ถูกศัตรู หรือตัวละครอื่น ๆ ในทีมที่อยู่ในบริเวณใกล้เคียงที่มีประเภทของธาตุเป็น<cryo>ธาตุน้ำแข็ง</cryo> สร้างการโจมตี<cryo>ธาตุน้ำแข็ง</cryo>ถูกศัตรู Skirk จะได้รับเอฟเฟกต์ Death's Crossing หนึ่งชั้น เป็นเวลา 20 วินาที โดยจะซ้อนทับกันได้มากสุด 3 ชั้น และแต่ละชั้นจะคำนวณช่วงเวลาต่อเนื่องแยกกัน",
       "1": "ตัวละครแต่ละตัวจะสามารถทำให้ Skirk ได้รับเอฟเฟกต์ Death's Crossing ด้วยวิธีนี้ได้มากสุด 1 ชั้น",
-      "2": "เอฟเฟกต์ Death's Crossing แต่ละชั้นจะทำให้การโจมตีปกติภายใต้โหมด <strong>Seven-Phase Flash</strong> ของ Skirk สร้างความเสียหายเป็น 110%/120%/170% ของความเสียหายเดิม และท่าไม้ตาย <strong>Havoc: Ruin</strong> จะสร้างความเสียหายเป็น 105%/115%/160% ของความเสียหายเดิม"
+      "2": "เอฟเฟกต์ Death's Crossing แต่ละชั้นจะทำให้การโจมตีปกติภายใต้โหมด <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong></tooltip> ของ Skirk สร้างความเสียหายเป็น 110%/120%/170% ของความเสียหายเดิม และท่าไม้ตาย <strong>Havoc: Ruin</strong> จะสร้างความเสียหายเป็น 105%/115%/160% ของความเสียหายเดิม"
     }
   },
   "passive3": {
@@ -134,43 +134,43 @@
   "constellation1": {
     "name": "Far to Fall",
     "description": {
-      "0": "เอฟเฟกต์พรสวรรค์เพิ่มเติม <strong>Reason Beyond Reason</strong> ได้รับการเสริมพลัง: ทุกครั้งที่ดูดซับรอยแยกมิติ 1 อัน จะเรียกดาบคริสตัลหนึ่งเล่มออกมาโจมตีศัตรูที่อยู่ใกล้เคียง โดยจะสร้าง<cryo>ความเสียหายน้ำแข็ง</cryo>เท่ากับ 500% ของพลังโจมตีของ Skirk ซึ่งความเสียหายนี้จะนับเป็นความเสียหายชาร์จโจมตี",
+      "0": "เอฟเฟกต์พรสวรรค์เพิ่มเติม <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Reason Beyond Reason</strong></tooltip> ได้รับการเสริมพลัง: ทุกครั้งที่ดูดซับรอยแยกมิติ 1 อัน จะเรียกดาบคริสตัลหนึ่งเล่มออกมาโจมตีศัตรูที่อยู่ใกล้เคียง โดยจะสร้าง<cryo>ความเสียหายน้ำแข็ง</cryo>เท่ากับ 500% ของพลังโจมตีของ Skirk ซึ่งความเสียหายนี้จะนับเป็นความเสียหายชาร์จโจมตี",
       "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Reason Beyond Reason\" ก่อน"
     }
   },
   "constellation2": {
     "name": "Into the Abyss",
     "description": {
-      "0": "หลังจากใช้สกิลธาตุ <strong>Havoc: Warp</strong> แล้ว Skirk จะได้รับ <strong>Serpent's Subtlety</strong> เพิ่มเติม 10 หน่วย",
+      "0": "หลังจากใช้สกิลธาตุ <strong>Havoc: Warp</strong> แล้ว Skirk จะได้รับ <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Serpent's Subtlety</strong></tooltip> เพิ่มเติม 10 หน่วย",
       "1": "เมื่อใช้ท่าไม้ตาย <strong>Havoc: Ruin</strong> จะเพิ่มเอฟเฟกต์ความเสียหายของท่าไม้ตายครั้งนี้ ซึ่งสามารถนับ Serpent's Subtlety เพิ่มเติมด้วยวิธีนี้ได้สูงสุด 10 หน่วย",
-      "2": "นอกจากนี้ หลังจาก Skirk ใช้ท่าไม้ตายพิเศษ <strong>Havoc: Extinction</strong> ในโหมด <strong>Seven-Phase Flash</strong> ภายใน 12.5 วินาที พลังโจมตีจะเพิ่มขึ้น 70% ซึ่งเอฟเฟกต์นี้จะหายไปเมื่อ Skirk ออกจากโหมด Seven-Phase Flash"
+      "2": "นอกจากนี้ หลังจาก Skirk ใช้ท่าไม้ตายพิเศษ <strong>Havoc: Extinction</strong> ในโหมด <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong></tooltip> ภายใน 12.5 วินาที พลังโจมตีจะเพิ่มขึ้น 70% ซึ่งเอฟเฟกต์นี้จะหายไปเมื่อ Skirk ออกจากโหมด Seven-Phase Flash"
     }
   },
   "constellation3": {
     "name": "Serendipitous Sin",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong>Havoc: Ruin</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <tooltip ns=char_Skirk_gen baseKey18=burst><strong>Havoc: Ruin</strong></tooltip> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
     "name": "Fractured Flow",
     "description": {
-      "0": "เอฟเฟกต์พรสวรรค์เพิ่มเติม <strong>Return to Oblivion</strong> ได้รับการเสริมพลัง: เอฟเฟกต์ Death's Crossing แต่ละชั้น จะทำให้พลังโจมตีของ Skirk เพิ่มขึ้น 10%/20%/40% ตามลำดับ",
+      "0": "เอฟเฟกต์พรสวรรค์เพิ่มเติม <tooltip ns=tooltips_gen baseKey18=11130008 values=[]><strong>Return to Oblivion</strong></tooltip> ได้รับการเสริมพลัง: เอฟเฟกต์ Death's Crossing แต่ละชั้น จะทำให้พลังโจมตีของ Skirk เพิ่มขึ้น 10%/20%/40% ตามลำดับ",
       "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Return to Oblivion\" ก่อน"
     }
   },
   "constellation5": {
     "name": "End of Wishes",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong>Havoc: Warp</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <tooltip ns=char_Skirk_gen baseKey18=skill><strong>Havoc: Warp</strong></tooltip> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {
     "name": "To the Source",
     "description": {
-      "0": "ทุกครั้งที่ Skirk ดูดซับรอยแยกมิติ 1 อันจากเอฟเฟกต์ของพรสวรรค์เพิ่มเติม <strong>Reason Beyond Reason</strong> จะได้รับเอฟเฟกต์ Havoc: Sever 1 ชั้น โดย Skirk สามารถใช้เอฟเฟกต์นี้ทำการโจมตีร่วมได้ และลดความเสียหายที่ได้รับในโหมด <strong>Seven-Phase Flash</strong> ลง เอฟเฟกต์นี้จะคงอยู่เป็นเวลา 15 วินาที ซ้อนทับกันได้มากสุด 3 ชั้น ซึ่งแต่ละชั้นจะคิดช่วงเวลาต่อเนื่องแยกกัน",
+      "0": "ทุกครั้งที่ Skirk ดูดซับรอยแยกมิติ 1 อันจากเอฟเฟกต์ของพรสวรรค์เพิ่มเติม <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Reason Beyond Reason</strong></tooltip> จะได้รับเอฟเฟกต์ Havoc: Sever 1 ชั้น โดย Skirk สามารถใช้เอฟเฟกต์นี้ทำการโจมตีร่วมได้ และลดความเสียหายที่ได้รับในโหมด <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Seven-Phase Flash</strong></tooltip> ลง เอฟเฟกต์นี้จะคงอยู่เป็นเวลา 15 วินาที ซ้อนทับกันได้มากสุด 3 ชั้น ซึ่งแต่ละชั้นจะคิดช่วงเวลาต่อเนื่องแยกกัน",
       "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"Reason Beyond Reason\" ก่อน",
       "2": "<br/>",
       "3": "<strong>Havoc: Sever</strong>",

@@ -1,0 +1,171 @@
+{
+  "name": "Illuga",
+  "title": "Nightmare's Burning Heart",
+  "description": "Anggota tim penyelidik \"Nightmare Orioles\", kapten paling muda di satuan Lightkeeper.",
+  "constellationName": "Oriolus",
+  "auto": {
+    "name": "Oathkeeper's Spear",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalur terjangan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Dawnbearing Songbird",
+    "description": {
+      "0": "Memanggil burung pembawa pesan bernama \"Aedon\" untuk bertempur bersama. Skill ini akan menghasilkan efek yang berbeda berdasarkan Mode Tekan atau Mode Tahan.",
+      "1": "<br/>",
+      "2": "<strong>Mode Tekan</strong>",
+      "3": "Aedon menerjang ke musuh di depannya dan mengakibatkan <geo>Geo DMG</geo> terhadap musuh yang dikenainya.",
+      "4": "<br/>",
+      "5": "<strong>Mode Tahan</strong>",
+      "6": "Memasuki Mode Membidik, dan memerintahkan Aedon untuk menerjang ke arah musuh yang dibidik, mengakibatkan <geo>Geo DMG</geo> terhadap musuh yang dikenainya."
+    },
+    "skillParams": {
+      "0": "DMG Tekan",
+      "1": "DMG Tahan",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Shadowless Reflection",
+    "description": {
+      "0": "Menyalakan api lentera untuk mengakibatkan <geo>Geo DMG Area</geo> dan mendapatkan efek \"Haunted Night's Oriole-Song\" yang bertahan selama 20 detik. Selama durasi ini, Illuga mendapatkan 21 lapis <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Nightingale's Song</strong></tooltip>. Saat Karakter aktif dalam party mengakibatkan <geo>Geo DMG</geo> terhadap musuh melalui Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst, maka Illuga akan mengonsumsi 1 lapis Nightingale's Song untuk meningkatkan DMG yang diakibatkan berdasarkan Elemental Mastery Illuga. Jika DMG-nya diakibatkan oleh reaksi Lunar-Crystallize, maka peningkatan DMG-nya akan menjadi semakin besar.",
+      "1": "Jika <geo>Geo DMG</geo> yang diakibatkan dengan cara di atas mengenai beberapa musuh sekaligus, maka jumlah lapisan Nightingale's Song akan dikonsumsi akan disesuaikan dengan jumlah musuh yang terkena serangan.",
+      "2": "<br/>",
+      "3": "Selain itu, jika Illuga melancarkan Elemental Burst saat ada <geo>Geo Construct</geo> yang diciptakan oleh Karakter party di sekitar, atau saat Karakter party di sekitar menciptakan <geo>Geo Construct</geo> selama Haunted Night's Oriole-Song aktif, maka setiap <geo>Geo Construct</geo> yang ada akan memberikan Illuga 5 lapis Nightingale's Song tambahan. Illuga hanya bisa mendapatkan maksimum 15 lapis Nightingale's Song tambahan dengan cara ini dalam 20 detik setelah melancarkan Elemental Burst.",
+      "4": "<br/>",
+      "5": "Efek Haunted Night's Oriole-Song akan berakhir saat seluruh lapisan Nightingale's Song habis atau saat durasi efeknya berakhir."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Peningkatan Geo DMG",
+      "2": "Peningkatan DMG Reaksi Lunar-Crystallize",
+      "3": "Nightingale's Song dari Elemental Burst",
+      "4": "Nightingale's Song dari Geo Construct",
+      "5": "Durasi",
+      "6": "Cooldown",
+      "7": "Konsumsi Energy",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Torchforger's Covenant",
+    "description": {
+      "0": "Setelah melancarkan Elemental Skill <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Dawnbearing Songbird</tooltip></strong> atau Elemental Burst <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Shadowless Reflection</tooltip></strong>, anggota party lain di sekitar akan mendapatkan efek \"Lightkeeper's Oath\" selama 20 detik: <geo>Geo DMG</geo> yang diakibatkan pada musuh akan mendapatkan CRIT Rate +5% dan CRIT DMG +10%.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>",
+      "3": "Karakter yang berada dalam pengaruh efek Lightkeeper's Oath akan mendapatkan peningkatan 50 poin Elemental Mastery."
+    }
+  },
+  "passive2": {
+    "name": "Demonhunter's Dusk",
+    "description": {
+      "0": "Efek <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Nightingale's Song</strong></tooltip> diperkuat: Saat ada 1/2/3 Karakter <hydro>Hydro</hydro> atau <geo>Geo</geo> di dalam party, Nightingale's Song akan meningkatkan DMG lagi sebesar 7%/14%/24% Elemental Mastery Illuga. Jika DMG yang disebutkan di atas merupakan DMG reaksi Lunar-Crystallize, maka peningkatannya menjadi sebesar 48%/96%/160% Elemental Mastery Illuga."
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Unwithering Winter",
+    "description": {
+      "0": "Saat Illuga berada di dalam party, <strong>Moonsign</strong> party meningkat 1 level."
+    }
+  },
+  "passive": {
+    "name": "Night Warden's Stride",
+    "description": {
+      "0": "Saat malam hari (18:00 - 06:00), anggota party sendiri mendapatkan efek Swift Stride: meningkatkan 10% Movement SPD.",
+      "1": "Efek ini tidak aktif dalam Domain, Domain Trounce, atau Spiral Abyss. Efek Swift Stride tidak dapat ditumpuk.",
+      "2": "Selain itu, Illuga sepertinya dapat memahami bisikan Perburuan Liar ...."
+    }
+  },
+  "constellation1": {
+    "name": "Vigilant Sentinel",
+    "description": {
+      "0": "Setelah Illuga yang berada di medan pertempuran memicu <geo>reaksi terkait Geo</geo>, dia akan mendapatkan 12 poin Energy. Efek ini dapat terpicu sekali setiap 15 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Elk With Fanged Antlers",
+    "description": {
+      "0": "Selama durasi efek Haunted Night's Oriole-Song dari Elemental Burst <tooltip ns=char_Illuga_gen baseKey18=burst><strong>Shadowless Reflection</strong></tooltip> berlangsung, untuk setiap 7 lapis <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Nightingale's Song</strong></tooltip> yang dikonsumsi, Illuga akan memanggil Aedon untuk menyerang satu musuh di sekitar, mengakibatkan satu kali <geo>Geo DMG</geo> sebesar 400% Elemental Mastery Illuga dan 200% DEF Illuga. DMG ini dianggap sebagai DMG Elemental Burst."
+    }
+  },
+  "constellation3": {
+    "name": "Earthshaking Maw",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Shadowless Reflection</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Solarhunting Wolf",
+    "description": {
+      "0": "Selama efek Haunted Night's Oriole-Song dari Elemental Burst <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Shadowless Reflection</tooltip></strong> aktif, DEF Karakter aktif party di sekitar meningkat 200 poin."
+    }
+  },
+  "constellation5": {
+    "name": "Hurricane Steed",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Dawnbearing Songbird</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Nightmare Orioles",
+    "description": {
+      "0": "Efek Lightkeeper's Oath dari Talenta Ascension <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>Torchforger's Covenant</tooltip></strong> diperkuat: <geo>Geo DMG</geo> yang diakibatkan terhadap musuh mendapatkan peningkatan CRIT Rate sebesar 10% dan CRIT DMG sebesar 30%.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>",
+      "3": "Karakter dalam efek \"Lightkeeper's Oath\" mendapatkan peningkatan 80 poin Elemental Mastery.",
+      "4": "Harus membuka Talenta Ascension <strong>Torchforger's Covenant</strong> terlebih dahulu."
+    }
+  }
+}

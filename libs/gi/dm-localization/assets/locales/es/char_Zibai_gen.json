@@ -1,0 +1,164 @@
+{
+  "name": "Zibai",
+  "title": "La Yegua del Manantial Escondido",
+  "description": "La Adeptus Yegua Blanca de las leyendas de Liyue, conocida como Zibai. Es la Adeptus más misteriosa de entre todos los mitos de la nación.",
+  "constellationName": "Equa Alba",
+  "auto": {
+    "name": "Toque floral filoáureo",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Manifestación terraceleste",
+    "description": {
+      "0": "Evoca un fragmento de sus antiguos poderes y cambia al modo <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>intersticio faselunar</strong></tooltip>.",
+      "1": "En este modo, el daño de los Ataques Normales y Cargados de Zibai se convierte en <geo>Daño Geo</geo>, el cual no puede sustituirse imbuyéndose de otro elemento, y también podrá acumular un <strong>fulgor intersticial</strong> especial de diferentes maneras. Zibai podrá consumir el fulgor intersticial para usar la Habilidad Elemental especial <strong>Pisotón yeguaespiritual</strong>.",
+      "2": "<br/>",
+      "3": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "4": "Cuando Zibai esté en modo <strong>intersticio faselunar</strong>, el cuarto golpe de su Ataque Normal infligirá <geo>Daño Geo</geo> una vez más. Este daño se considera daño de Cristalización Lunar."
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe de intersticio faselunar",
+      "1": "Daño de 2.º golpe de intersticio faselunar",
+      "2": "Daño de 3er golpe de intersticio faselunar",
+      "3": "Daño de 4.º golpe de intersticio faselunar",
+      "4": "Daño de ATQ Cargado de intersticio faselunar",
+      "5": "Daño de 1er golpe de Pisotón yeguaespiritual",
+      "6": "Daño de 2.º golpe de Pisotón yeguaespiritual",
+      "7": "Daño adicional del 4.º golpe de intersticio faselunar",
+      "8": "Duración de intersticio faselunar",
+      "9": "TdE",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Majestuosidad de los tres recintos",
+    "description": {
+      "0": "Zibai despliega un dosel divino e inflige dos golpes de <geo>Daño Geo</geo>. El segundo golpe se considera daño de Cristalización Lunar.",
+      "1": "Si Zibai está en el modo <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>intersticio faselunar</strong></tooltip> al usar esta habilidad, la duración de dicho modo se prolongará en 1.7 s."
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe de habilidad",
+      "1": "Daño de 2.º golpe de habilidad",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Descenso de la Adeptus lunar",
+    "description": {
+      "0": "Cuando usa la Habilidad Elemental, <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Manifestación terraceleste</tooltip></strong>, o cuando un personaje cercano del equipo activa la resonancia lunar, Zibai obtiene el efecto de <strong>descenso lunar</strong> durante 4 s, el cual aumenta el daño del segundo golpe de <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Pisotón yeguaespiritual</strong></tooltip> en una cantidad equivalente al 60% de su DEF."
+    }
+  },
+  "passive2": {
+    "name": "Cumbres perforanubes",
+    "description": {
+      "0": "Por cada personaje <geo>Geo</geo> (a excepción de Zibai) que haya en el equipo, la DEF de Zibai aumenta en un 15%. Por cada personaje <hydro>Hydro</hydro> que haya en el equipo, la Maestría Elemental de Zibai aumenta en 60 pts."
+    }
+  },
+  "passive3": {
+    "name": "Bendición presagiolunar: Fluir del sol y la luna",
+    "description": {
+      "0": "Cuando un personaje del equipo cause una reacción de Cristalización Hydro, esta se transformará en una reacción de Cristalización Lunar. El daño base de las reacciones de Cristalización Lunar de los personajes del equipo aumentará en un 0.7% por cada 100 pts. de DEF que tenga Zibai. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
+      "1": "<br/>",
+      "2": "Además, cuando Zibai esté en el equipo, el nivel de <strong>presagio lunar</strong> de los personajes aumentará en 1."
+    }
+  },
+  "passive": {
+    "name": "Flores bañadas por la luna",
+    "description": {
+      "0": "Zibai recupera 1 pt. de Energía Elemental cada 2 s cuando no está en combate por la noche (18-06 h).",
+      "1": "Este efecto no se activará en dominios, Dominios de la cruzada o en la Espiral del Abismo."
+    }
+  },
+  "constellation1": {
+    "name": "Surgir con ímpetu y entrar con serenidad",
+    "description": {
+      "0": "Tras usar la Habilidad Elemental, <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Manifestación terraceleste</tooltip></strong>, Zibai obtendrá inmediatamente 100 pts. de <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>fulgor intersticial</strong></tooltip>, y el máximo de cargas de <strong>Pisotón yeguaespiritual</strong> del modo <strong>intersticio faselunar</strong> aumenta a 5.",
+      "1": "Además, cada vez que Zibai cambie al modo intersticio faselunar, la primera vez que use Pisotón yeguaespiritual, el daño de Cristalización Lunar del segundo golpe aumentará en un 220%."
+    }
+  },
+  "constellation2": {
+    "name": "Almas del nacimiento y cascarones de la muerte",
+    "description": {
+      "0": "Cuando Zibai está en el modo <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>intersticio faselunar</strong></tooltip>, el daño de Cristalización Lunar de todos los personajes cercanos del equipo aumenta en un 30%.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "3": "Potencia el efecto del talento de ascensión <strong><tooltip ns=char_Zibai_gen baseKey18=passive1>Descenso de la Adeptus lunar</tooltip></strong>, de manera que el daño del segundo golpe de <strong>Pisotón yeguaespiritual</strong> aumenta adicionalmente en una cantidad equivalente al 550% de la DEF de Zibai. Es necesario desbloquear el talento de ascensión “Descenso de la Adeptus lunar”."
+    }
+  },
+  "constellation3": {
+    "name": "Libre de restricciones y ataduras mundanas",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Manifestación terraceleste</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "El alma se marcha y el cuerpo la sigue",
+    "description": {
+      "0": "Mientras esté en el modo <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>intersticio faselunar</strong></tooltip>, la secuencia de los Ataques Normales de Zibai no se reiniciará, y cuando golpee a un enemigo con <strong>Pisotón yeguaespiritual</strong>, obtendrá el efecto de <strong>esplendor disipalunas</strong>, el cual hace que el ataque adicional del cuarto golpe de su próximo Ataque Normal inflija daño de Cristalización Lunar en una cantidad equivalente al 250% del daño original."
+    }
+  },
+  "constellation5": {
+    "name": "Desinterés por lo fútil",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Zibai_gen baseKey18=burst>Majestuosidad de los tres recintos</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "El mundo, un viaje transitorio",
+    "description": {
+      "0": "Mientras esté en el modo <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>intersticio faselunar</strong></tooltip>, la eficiencia con la que Zibai obtiene <strong>fulgor intersticial</strong> aumentará en un 50%.",
+      "1": "Además, <strong>Pisotón yeguaespiritual</strong> pasa a consumir todos los pts. de fulgor intersticial, de manera que, por cada pt. adicional de fulgor intersticial consumido por encima de los 70 pts., el daño de Pisotón yeguaespiritual y el de Cristalización Lunar que Zibai inflige en los siguientes 3 s <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 1.6%. Este efecto no se puede acumular."
+    }
+  }
+}

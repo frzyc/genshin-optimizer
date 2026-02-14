@@ -41,7 +41,7 @@
   "skill": {
     "name": "Chế Độ Dọn Dẹp - Tần Số Ổn Định",
     "description": {
-      "0": "Ineffa khởi động Mô Đun Dọn Dẹp Cao Cấp, gây cho kẻ địch xung quanh một lần <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>, triển khai Khiên Dòng Chảy Quang Học và triệu hồi đơn vị hỗ trợ thông minh <strong>Birgitta</strong>.",
+      "0": "Ineffa khởi động Mô Đun Dọn Dẹp Cao Cấp, gây cho kẻ địch xung quanh một lần <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>, triển khai Khiên Dòng Chảy Quang Học và triệu hồi đơn vị hỗ trợ thông minh <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>.",
       "1": "Lượng hấp thụ sát thương của Khiên Dòng Chảy Quang Học phụ thuộc vào Tấn Công của Ineffa, có 250% hiệu quả hấp thụ với <electro>Sát Thương Nguyên Tố Lôi</electro>."
     },
     "skillParams": {
@@ -66,7 +66,7 @@
   "burst": {
     "name": "Chỉ Thị Tối Cao - Quét Sạch Toàn Bộ",
     "description": {
-      "0": "Đơn vị thông minh <strong>Birgitta</strong> sẽ hỗ trợ thực hiện Cú Đấm Hỏa Tiễn quét sạch kẻ địch! Ineffa phóng ra Birgitta, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> và để Birgitta ở lại chiến đấu.",
+      "0": "Đơn vị thông minh <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip> sẽ hỗ trợ thực hiện Cú Đấm Hỏa Tiễn quét sạch kẻ địch! Ineffa phóng ra Birgitta, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> và để Birgitta ở lại chiến đấu.",
       "1": "<br/>",
       "2": "Nếu trong trận có Birgitta do Ineffa triệu hồi, sẽ chuyển sang triệu hồi lại Birgitta ở vị trí mục tiêu và đặt lại thời gian duy trì."
     },
@@ -92,13 +92,13 @@
   "passive1": {
     "name": "Mạch Ép Xung",
     "description": {
-      "0": "Nếu xung quanh <strong>Birgitta</strong> có Mây Sấm Sét sinh ra bởi phản ứng Nguyệt-Điện Cảm, thì khi Birgitta tiến hành Phóng Điện sẽ thực hiện thêm một lần tấn công, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> bằng 65% Tấn Công của Ineffa. Sát thương này được xem là sát thương phản ứng Nguyệt-Điện Cảm."
+      "0": "Nếu xung quanh <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip> có Mây Sấm Sét sinh ra bởi phản ứng Nguyệt-Điện Cảm, thì khi Birgitta tiến hành Phóng Điện sẽ thực hiện thêm một lần tấn công, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> bằng 65% Tấn Công của Ineffa. Sát thương này được xem là sát thương phản ứng Nguyệt-Điện Cảm."
     }
   },
   "passive2": {
     "name": "Giao Thức Tái Tạo Toàn Phần",
     "description": {
-      "0": "Khi thi triển Kỹ Năng Nộ <strong>Chỉ Thị Tối Cao - Quét Sạch Toàn Bộ</strong>, sẽ cung cấp hiệu quả Tái Tạo Tham Số cho tất cả nhân vật của bản thân trong đội: Tăng cho Ineffa và nhân vật trong trận hiện tại một lượng Tinh Thông Nguyên Tố tương đương 6% Tấn Công của Ineffa, duy trì 20s."
+      "0": "Khi thi triển Kỹ Năng Nộ <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Chỉ Thị Tối Cao - Quét Sạch Toàn Bộ</tooltip></strong>, sẽ cung cấp hiệu quả Tái Tạo Tham Số cho tất cả nhân vật của bản thân trong đội: Tăng cho Ineffa và nhân vật trong trận hiện tại một lượng Tinh Thông Nguyên Tố tương đương 6% Tấn Công của Ineffa, duy trì 20s."
     }
   },
   "passive3": {
@@ -126,14 +126,14 @@
   "constellation2": {
     "name": "Mô Đun Hỗ Trợ Dọn Dẹp",
     "description": {
-      "0": "Sau khi Kỹ Năng Nộ <strong>Chỉ Thị Tối Cao - Quét Sạch Toàn Bộ</strong> trúng kẻ địch, sẽ gán trạng thái \"Sắc Lệnh Trừng Phạt\" cho một kẻ địch trong đó: Sau một thời gian ngắn hoặc khi kẻ địch này bị đánh bại, sẽ gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> tương đương 300% Tấn Công của Ineffa lên kẻ địch xung quanh mục tiêu đó, sát thương này được tính là sát thương phản ứng Nguyệt-Điện Cảm.",
+      "0": "Sau khi Kỹ Năng Nộ <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Chỉ Thị Tối Cao - Quét Sạch Toàn Bộ</tooltip></strong> trúng kẻ địch, sẽ gán trạng thái \"Sắc Lệnh Trừng Phạt\" cho một kẻ địch trong đó: Sau một thời gian ngắn hoặc khi kẻ địch này bị đánh bại, sẽ gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> tương đương 300% Tấn Công của Ineffa lên kẻ địch xung quanh mục tiêu đó, sát thương này được tính là sát thương phản ứng Nguyệt-Điện Cảm.",
       "1": "Ngoài ra, khi thi triển Kỹ Năng Nộ <strong>Chỉ Thị Tối Cao - Quét Sạch Toàn Bộ</strong> cũng sẽ tạo Khiên Dòng Chảy Quang Học cho nhân vật trong trận gần đó."
     }
   },
   "constellation3": {
     "name": "Trình Giả Lập Cảm Xúc",
     "description": {
-      "0": "Cấp kỹ năng <strong>Chế Độ Dọn Dẹp - Tần Số Ổn Định</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Ineffa_gen baseKey18=skill>Chế Độ Dọn Dẹp - Tần Số Ổn Định</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
@@ -146,7 +146,7 @@
   "constellation5": {
     "name": "Vượt Qua Giấc Mơ Gương",
     "description": {
-      "0": "Cấp kỹ năng <strong>Chỉ Thị Tối Cao - Quét Sạch Toàn Bộ</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Chỉ Thị Tối Cao - Quét Sạch Toàn Bộ</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },

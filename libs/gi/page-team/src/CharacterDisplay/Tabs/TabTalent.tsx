@@ -2,7 +2,6 @@ import {
   CardThemed,
   ConditionalWrapper,
   DropdownButton,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
@@ -51,6 +50,8 @@ const talentSpacing = {
 
 export default function CharacterTalentPane() {
   const { t } = useTranslation('sheet_gen')
+  // Load tooltip translations
+  useTranslation('tooltips_gen')
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -72,8 +73,7 @@ export default function CharacterTalentPane() {
     ['passive1', t('unlockPassive1'), 1],
     ['passive2', t('unlockPassive2'), 4],
     ['passive3', t('unlockPassive3'), 0],
-    // TODO: Update this if they add other locked passives
-    ['lockedPassive', t('witchPassive'), 0],
+    ['lockedPassive', t('unlockLockedPassive'), 0],
   ]
   const ascension = data.get(input.asc).value
   const constellation = data.get(input.constellation).value
@@ -307,7 +307,7 @@ function SkillDisplayCard({
           <Grid container sx={{ flexWrap: 'nowrap' }}>
             <Grid item>
               <Box
-                component={NextImage ? NextImage : 'img'}
+                component="img"
                 src={talentSheet?.img}
                 sx={{ width: 60, height: 'auto' }}
               />

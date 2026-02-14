@@ -95,6 +95,7 @@ import KeyOfKhajNisut from './KeyOfKhajNisut'
 import KingsSquire from './KingsSquire'
 import KitainCrossSpear from './KitainCrossSpear'
 import LightOfFoliarIncision from './LightOfFoliarIncision'
+import LightbearingMoonshard from './LightbearingMoonshard'
 import LionsRoar from './LionsRoar'
 import LithicBlade from './LithicBlade'
 import LithicSpear from './LithicSpear'
@@ -116,6 +117,7 @@ import MoonweaversDawn from './MoonweaversDawn'
 import MountainBracingBolt from './MountainBracingBolt'
 import MouunsMoon from './MouunsMoon'
 import NightweaversLookingGlass from './NightweaversLookingGlass'
+import NocturnesCurtainCall from './NocturnesCurtainCall'
 import OathswornEye from './OathswornEye'
 import OldMercsPal from './OldMercsPal'
 import OtherworldlyStory from './OtherworldlyStory'
@@ -325,6 +327,7 @@ const data = {
   KingsSquire,
   KitainCrossSpear,
   LightOfFoliarIncision,
+  LightbearingMoonshard,
   LionsRoar,
   LithicBlade,
   LithicSpear,
@@ -346,6 +349,7 @@ const data = {
   MountainBracingBolt,
   MouunsMoon,
   NightweaversLookingGlass,
+  NocturnesCurtainCall,
   OathswornEye,
   OldMercsPal,
   OtherworldlyStory,

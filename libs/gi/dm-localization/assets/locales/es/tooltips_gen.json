@@ -1,0 +1,332 @@
+{
+  "10050001": {
+    "name": "Fortalecimientos adicionales",
+    "description": {
+      "0": "{F#La}{M#El} Viajer{F#a}{M#o} obtiene una bonificación de atributo por cada elemento con el que haya resonado:",
+      "1": "<anemo>Anemo</anemo>: Prob. CRIT +10%.",
+      "2": "<geo>Geo</geo>: DEF +20%.",
+      "3": "<electro>Electro</electro>: Recarga de Energía +20%.",
+      "4": "<dendro>Dendro</dendro>: Maestría Elemental +60 pts.",
+      "5": "<hydro>Hydro</hydro>: Vida +20%.",
+      "6": "<pyro>Pyro</pyro>: ATQ +20%.",
+      "7": "<cryo>Cryo</cryo>: Daño CRIT +20%."
+    }
+  },
+  "11120001": {
+    "name": "Modo crioalmacenamiento",
+    "description": {
+      "0": "<br/>",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Activa el mecachef multitarea de amplio espectro en modo “crioalmacenamiento” e inflige <cryo>Daño Cryo en el AdE</cryo> a los enemigos cercanos.",
+      "4": "<br/>",
+      "5": "<strong>Mecachef: modo crioalmacenamiento</strong>",
+      "6": "El mecachef sigue al personaje en uso y, cada cierto tiempo, lanza un parfait helado a los enemigos cercanos que inflige <cryo>Daño Cryo</cryo>."
+    }
+  },
+  "11120002": {
+    "name": "Modo cocina improvisada",
+    "description": {
+      "0": "<strong>Mecachef: modo cocina improvisada</strong>",
+      "1": [
+        "Coloca al mecachef en el campo de batalla. El mecachef puede absorber ataques elementales. Cuando la Energía Elemental absorbida alcance el límite, Escoffier podrá convertir los ingredientes que ha colocado en él en platos de comida.",
+        "Escoffier necesita tiempo para comprar nuevos ingredientes y solo puede cocinar cierta cantidad de comida de esta manera semanalmente. Los intentos para cocinar se reinician todos los lunes a las 4:00 a.m."
+      ]
+    }
+  },
+  "11130001": {
+    "name": "Disparo auxiliar",
+    "description": {
+      "0": "En el estado de bendición noctámbula, los Ataques Normales de Ifá se convierten en “disparos auxiliares”.",
+      "1": "<strong>Pulsar una vez</strong>",
+      "2": "Dispara una bala medicinal.",
+      "3": "<strong>Mantener pulsado</strong>",
+      "4": "Dispara continuamente balas medicinales.",
+      "5": "<strong>Bala medicinal</strong>",
+      "6": "Inflige <anemo>Daño Anemo</anemo> de naturaleza noctámbula a los enemigos que tenga enfrente y, al golpear a un enemigo, regenera Vida a todos los miembros del equipo cercanos en función de la Maestría Elemental de Ifá."
+    }
+  },
+  "11130002": {
+    "name": "Fundamentos de rescate",
+    "description": {
+      "0": "Máximo: 150 pts. Por cada punto de fundamentos de rescate que tenga Ifá, el daño de las reacciones de Torbellino y Electrocargado de los personajes cercanos del equipo aumenta en un 1.5%, y el de la reacción de Electrocargado Lunar aumenta en un 0.2%. El efecto de fundamentos de rescate se eliminará cuando termine el estado de bendición noctámbula de Ifá."
+    }
+  },
+  "11130003": {
+    "name": "Bendición noctámbula: Ifá",
+    "description": {
+      "0": "Consume continuamente pts. de noctambulismo. Al agotarse todos o al usar de nuevo la habilidad, terminará la duración de la bendición noctámbula de Ifá. Dicha bendición tiene las siguientes propiedades:",
+      "1": [
+        "Flota con la ayuda de Cacucu, lo que aumenta la Vel. Movimiento y la RES a interrupción de Ifá. En este estado, consumirá pts. de noctambulismo continuamente para mantenerse en el aire. Al esprintar o elevarse, se consumen pts. de noctambulismo adicionales.",
+        "Al realizar un Ataque Normal, se ejecuta un “disparo auxiliar” de distintas formas dependiendo de si se pulsa una vez o se mantiene pulsado."
+      ]
+    }
+  },
+  "11130004": {
+    "name": "Marca tranquilizante",
+    "description": {
+      "0": "Explota y desaparece tras un breve lapso de tiempo para infligir Daño en el AdE del elemento correspondiente. Puede aplicarse una marca tranquilizante a un máximo de 4 enemigos golpeados. Un enemigo no podrá ser afectado al mismo tiempo por marcas tranquilizantes de elementos distintos."
+    }
+  },
+  "11130005": {
+    "name": "Astucia serpentina",
+    "description": {
+      "0": "Skirk puede consumir astucia serpentina para mantener su estado de distorsión heptafásica o para usar su Habilidad Definitiva, “Caos: Aniquilación”.",
+      "1": "<br/>",
+      "2": "Skirk puede obtener astucia serpentina de las siguientes formas:",
+      "3": [
+        "Tras usar su Habilidad Elemental, “Caos: Distorsión”.",
+        "Tras absorber el efecto de las fisuras del vacío activado con el talento de ascensión “La razón más allá de la razón”."
+      ],
+      "4": "<br/>",
+      "5": "Cuando Skirk se retira de combate mientras está en modo distorsión heptafásica o cuando dicho modo termina, se eliminan los pts. que tenga de astucia serpentina."
+    }
+  },
+  "11130006": {
+    "name": "Distorsión heptafásica",
+    "description": {
+      "0": "Skirk cambia a este modo durante cierto tiempo cuando usa su Habilidad Elemental, <strong>Caos: Distorsión</strong>. Dicho modo posee las siguientes características:",
+      "1": [
+        "Consume continuamente astucia serpentina.",
+        "Aumenta el AdE de los Ataques Normales y Cargados, así como la RES a interrupción de Skirk.",
+        "Al ejecutar un Ataque Normal, Cargado o Descendente, el daño que infligen se transforma en <cryo>Daño Cryo</cryo>, el cual no puede sustituirse imbuyéndose de otro elemento.",
+        "La Habilidad Definitiva, <strong>Caos: Aniquilación</strong>, se sustituye por la Habilidad Definitiva especial <strong>Caos: Exterminio</strong>.",
+        "Skirk puede moverse sobre el agua al esprintar.",
+        "Cuando se consuman todos los pts. de astucia serpentina o cuando termine su duración, Skirk saldrá de este modo y su Habilidad Elemental entrará en TdE."
+      ]
+    }
+  },
+  "11130007": {
+    "name": "La razón más allá de la razón",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo cause una reacción de Congelado, Superconductor, Torbellino Cryo o Cristalización Cryo contra un enemigo, se creará una fisura del vacío cerca de dicho oponente. Este efecto puede ocurrir, como mucho, una vez cada 2.5 s, y podrán crearse un máximo de 3 fisuras del vacío a la vez.",
+      "1": "<br/>",
+      "2": "Skirk puede absorber las fisuras del vacío que haya en un área cercana de las siguientes maneras:",
+      "3": [
+        "Cuando golpea a un enemigo con su Ataque Cargado mientras está en modo distorsión heptafásica.",
+        "Cuando usa la Habilidad Definitiva especial, <strong>Caos: Exterminio</strong>, del modo distorsión heptafásica.",
+        "Al mantener pulsada la Habilidad Elemental, <strong>Caos: Distorsión</strong>, para moverse a gran velocidad."
+      ],
+      "4": "<br/>",
+      "5": "Por cada fisura del vacío que absorba, Skirk obtendrá 8 pts. de astucia serpentina."
+    }
+  },
+  "11130008": {
+    "name": "Retorno al olvido",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo de tipo elemental <hydro>Hydro</hydro> golpee a un enemigo con un ataque <hydro>Hydro</hydro>, o cuando un personaje cercano del equipo de tipo elemental <cryo>Cryo</cryo> (a excepción de Skirk) golpee a un enemigo con un ataque <cryo>Cryo</cryo>, Skirk obtiene una carga del efecto “vado de la muerte” durante 20 s. Este efecto puede acumularse hasta 3 veces, y cada acumulación tiene su propia duración individual.",
+      "1": "Cada personaje puede otorgar, como máximo, 1 carga de vado de la muerte a Skirk de esta forma.",
+      "2": "Por cada carga de vado de la muerte que tenga Skirk, los Ataques Normales que ejecute mientras está en modo distorsión heptafásica infligirán un 110/120/170% del daño original, y su Habilidad Definitiva, <strong>Caos: Aniquilación</strong>, infligirá un 105/115/160% del daño original."
+    }
+  },
+  "11130009": {
+    "name": "Agua sacramental",
+    "description": {
+      "0": "Provoca distintos efectos dependiendo de si quien entra en contacto con el agua sacramental es un enemigo o un personaje cercano del equipo:",
+      "1": "Si quien entra en contacto con ella es un enemigo, el agua sacramental explotará e infligirá <hydro>Daño Hydro en el AdE</hydro> a los enemigos cercanos.",
+      "2": "Si quien lo hace es un personaje, el agua sacramental le hará dar un salto.",
+      "3": "<br/>",
+      "4": "Solo puede haber al mismo tiempo un agua sacramental creada por Dahlia."
+    }
+  },
+  "11130010": {
+    "name": "Gracia de Favonius",
+    "description": {
+      "0": "Dahlia otorga este efecto a tus personajes del equipo al usar su Habilidad Definitiva, <strong>Salterio fulgurante</strong>. Mientras dicho efecto está activo, cuando el efecto del sacroescudo de gracia se termina o cuando se destruye tras recibir daño, Dahlia puede consumir una carga de “beatitud” para volver a crear otro sacroescudo."
+    }
+  },
+  "11130011": {
+    "name": "Beatitud",
+    "description": {
+      "0": "Dahlia puede obtener el efecto de beatitud de las siguientes formas:",
+      "1": [
+        "Cuando tu personaje en uso del equipo golpea a los enemigos 4 veces con su Ataque Normal mientras está bajo los efectos de gracia de Favonius, Dahlia obtiene X cargas de beatitud.",
+        "Tras activar el efecto del talento de ascensión “Gentil gracia del viento”."
+      ],
+      "2": "<br/>",
+      "3": "Dahlia solo puede obtener un máximo de X cargas de beatitud durante el efecto de gracia de Favonius."
+    }
+  },
+  "11160001": {
+    "name": "Birgitta",
+    "description": {
+      "0": "Una ayudante que combate junto a Ineffa y que se puede invocar con la Habilidad Elemental o la Habilidad Definitiva.",
+      "1": "Si en las cercanías hay algún enemigo, cada 2 s, Birgitta se moverá rápidamente hasta cerca de él para ejecutar un ataque electrizador que inflige <electro>Daño Electro en el AdE</electro>.",
+      "2": "Solo puede haber al mismo tiempo una Birgitta creada por Ineffa.",
+      "3": "<br/>",
+      "4": "Además, en Nod Krai, parece que será posible cambiar el aspecto de Birgitta de cierta manera..."
+    }
+  },
+  "11190001": {
+    "name": "Santuario bosquescarcha",
+    "description": {
+      "0": "Un encantamiento que protege a la Cantalunas y que puede invocarse por medio de la Habilidad Elemental, <strong>Runo: Reposo sin alba del Karsikko</strong>.",
+      "1": "El santuario bosquescarcha seguirá al personaje en uso e infligirá <dendro>Daño Dendro en el AdE</dendro> cada 2 s a los enemigos que se encuentren dentro del área del hechizo. Esto se considera daño de Habilidad Elemental."
+    }
+  },
+  "11190002": {
+    "name": "Cántico lunar",
+    "description": {
+      "0": "Una melodía empleada para entretejer letanías. Al usar la Habilidad Definitiva o durante un breve periodo después de usarla, podrá convertirse en una letanía albar que mejora el daño de las reacciones de Florecimiento, Sobreflorecimiento, Crepitar y Florecimiento Lunar.",
+      "1": "Cuando Lauma consuma rocío de la espesura para liberar la Habilidad Elemental, <strong>Runo: Reposo sin alba del Karsikko</strong>, manteniéndola pulsada, obtendrá 1 cántico lunar por cada gota de rocío de la espesura consumida."
+    }
+  },
+  "11190003": {
+    "name": "Letanía albar",
+    "description": {
+      "0": "Una letanía transmitida de generación en generación entre las Cantalunas, capaz de aumentar el daño infligido por las reacciones de Florecimiento, Sobreflorecimiento, Crepitar y Florecimiento Lunar.",
+      "1": "<br/>",
+      "2": "Lauma puede obtener la letanía albar de las siguientes formas:",
+      "3": [
+        "Al usar la Habilidad Definitiva, <strong>Runo: Luna de mil corazones</strong>.",
+        "Al activarse el efecto de consumo de cánticos lunares de su Habilidad Definitiva, <strong>Runo: Luna de mil corazones</strong>.",
+        "Al activarse el efecto de santuario bosquescarcha de la constelación <strong>“Ofrezco mi sangre y mis lágrimas a la luna”</strong>."
+      ],
+      "4": "<br/>",
+      "5": "Cuando un personaje del equipo inflija daño a través de las reacciones de Florecimiento, Sobreflorecimiento, Crepitar o Florecimiento Lunar, se consumirá 1 carga de letanía albar para aumentar el daño infligido en función de la Maestría Elemental de Lauma. Si dicho daño golpea a varios enemigos a la vez, se consumirán cargas según el número de enemigos golpeados.",
+      "6": "Cada carga de letanía albar tiene su propia duración individual."
+    }
+  },
+  "11190004": {
+    "name": "Cantar crepuscular",
+    "description": {
+      "0": "El daño infligido por las reacciones de Florecimiento, Sobreflorecimiento y Crepitar causadas por los personajes del equipo puede asestar golpes CRIT, con una Prob. CRIT fija del 15% y un Daño CRIT fijo del 100%. La Prob. CRIT otorgada por este efecto puede acumularse con otras bonificaciones similares que proporcionen Prob. CRIT a dichas reacciones."
+    }
+  },
+  "11190005": {
+    "name": "Himno fulgorlunar",
+    "description": {
+      "0": "La Prob. CRIT y el Daño CRIT de las reacciones de Florecimiento Lunar causadas por los personajes del equipo aumentan en un 10% y en un 20% respectivamente."
+    }
+  },
+  "11190007": {
+    "name": "Ascenso",
+    "description": {
+      "0": "Efecto especial de aumento de daño que se calcula de forma independiente con respecto a otros efectos de aumento de daño."
+    }
+  },
+  "11190008": {
+    "name": "Rocío de la espesura",
+    "description": {
+      "0": "El equipo obtendrá este recurso cuando un personaje del mismo cause una reacción de Florecimiento Lunar.",
+      "1": "Tras causar una reacción de Florecimiento Lunar, el equipo recibirá una gota de rocío de la espesura cada 2.5 s durante 2.5 s. Se podrá acumular un máximo de 3 gotas de rocío de la espesura a la vez. Si se causa otra reacción de Florecimiento Lunar durante este tiempo, la duración del efecto se reiniciará."
+    }
+  },
+  "11200001": {
+    "name": "Sinfonía del trueno",
+    "description": {
+      "0": "Gasta menos Energía Elemental para usar la Habilidad Definitiva especial. Flins inflige 1 golpe de <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar.",
+      "1": "<strong>Presagio lunar: resplandor ascendente</strong> - Si hay alguna nube de tormenta en las cercanías, inflige 1 golpe más de <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar."
+    }
+  },
+  "11220001": {
+    "name": "Danza de las sombras",
+    "description": {
+      "0": "Néfer entra en este estado después de usar su Habilidad Elemental, <strong>Estrategia de senet: Danza de las mil noches</strong>.",
+      "1": "Si Néfer tiene al menos 1 gota de rocío de la espesura mientras danza de las sombras está activa, su Ataque Cargado se remplaza por el Ataque Cargado especial “Espectáculo fantasmagórico”.",
+      "2": "El estado de danza de las sombras se anulará cuando Néfer haya usado 3 veces “Espectáculo fantasmagórico” o cuando termine su duración."
+    }
+  },
+  "11220002": {
+    "name": "Espectáculo fantasmagórico",
+    "description": {
+      "0": "Cuando Néfer está en el estado de danza de las sombras creado mediante su Habilidad Elemental, <strong>Estrategia de senet: Danza de las mil noches</strong>, si tiene al menos 1 gota de rocío de la espesura, su Ataque Cargado se remplaza por el Ataque Cargado especial “Espectáculo fantasmagórico”, el cual no consume Aguante.",
+      "1": "Néfer creará ilusiones de sí misma que ejecutan ataques coordinados contra los enemigos, de manera que tanto ella como sus ilusiones infligirán 2 y 3 golpes de <dendro>Daño Dendro en el AdE</dendro> respectivamente. El daño infligido por las ilusiones se considera daño de Florecimiento Lunar, y las primeras ilusiones que cree cada vez que use “Espectáculo fantasmagórico” consumirán 1 gota de rocío de la espesura."
+    }
+  },
+  "11220003": {
+    "name": "Velo de la falsedad",
+    "description": {
+      "0": "El efecto que Néfer obtiene absorbiendo núcleos artificiosos mediante el talento de ascensión “Apuesta bajo la luna” puede aumentar el daño infligido con “Espectáculo fantasmagórico”.",
+      "1": "Por cada carga de velo de la falsedad, el daño que inflige Néfer con “Espectáculo fantasmagórico” aumenta en un 8% de su daño original. Inicialmente, este efecto puede acumularse hasta 3 veces, tiene una duración de 9 s y cada carga tiene su propia duración individual."
+    }
+  },
+  "11230001": {
+    "name": "Transmutación esencial",
+    "description": {
+      "0": "Efecto obtenido durante 6 s tras usar la Habilidad Elemental de Durin, <strong>Forma binaria: Convergencia y división</strong>.",
+      "1": "Mientras esté activo, Durin podrá pulsar una vez la Habilidad Elemental para entrar en el estado de <strong>confirmación de la pureza</strong> o pulsar una vez para ejecutar un Ataque Normal y entrar en el estado de <strong>negación de la oscuridad</strong>.",
+      "2": "En ambos estados, Durin obtendrá diferentes fortalecimientos y podrá usar Habilidades Definitivas distintas."
+    }
+  },
+  "11240001": {
+    "name": "Frasco maullisecreto",
+    "description": {
+      "0": "Un pequeño frasco elemental que saca Jahoda tras usar su Habilidad Elemental, <strong>Estratagema: Plan de reparto de riqueza</strong>.",
+      "1": "Cuando Jahoda se encuentre en el estado de persecución saqueasombras, si los enemigos cercanos están afectados por <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, el frasco maullisecreto cambiará al tipo elemental correspondiente y empezará a llenarse continuamente. El cambio elemental se producirá siguiendo el siguiente orden de prioridad: <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, <cryo>Cryo</cryo>. El frasco maullisecreto solo podrá sufrir un cambio por cada vez que se use la Habilidad Elemental.",
+      "2": "Cuando el frasco esté lleno, Jahoda saldrá del estado de persecución saqueasombras, infligirá una vez <anemo>Daño Anemo</anemo> a los enemigos cercanos y vaciará el frasco.",
+      "3": "Jahoda sacará un nuevo frasco maullisecreto cada vez que use su Habilidad Elemental.",
+      "4": "<br/>",
+      "5": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "6": "Cuando el <strong>frasco maullisecreto</strong> esté lleno, Jahoda no lo vaciará de inmediato, sino que consumirá continuamente el elemento del frasco durante un tiempo para disparar periódicamente <strong>gatibolitas blandisuaves</strong> a los enemigos cercanos, las cuales infligen daño del mismo tipo elemental que el frasco."
+    }
+  },
+  "11240002": {
+    "name": "Coordinadores gatunos de asistencia doméstica",
+    "description": {
+      "0": "Uno de los artilugios que llevaba Jahoda cuando era cazadora de tesoros. Los saca al usar la Habilidad Definitiva, <strong>Dispositivo secreto: Los siete artilugios de una cazadora</strong>.",
+      "1": "Los coordinadores gatunos de asistencia doméstica restaurarán Vida continuamente a tu personaje en uso del equipo. Si el personaje que recibe la curación tiene más del 70% de la Vida, también curarán al personaje cercano con menos Vida del equipo.",
+      "2": "<br/>",
+      "3": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "4": "Si los enemigos cercanos están afectados por <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, los coordinadores gatunos de asistencia doméstica cambiarán al tipo elemental correspondiente según el siguiente orden de prioridad: <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, <cryo>Cryo</cryo>. Los coordinadores gatunos de asistencia doméstica solo podrán sufrir un cambio elemental cada vez que se saquen al campo de batalla. Tras producirse dicho cambio, atacarán cada cierto tiempo a un máximo de 3 enemigos, a los cuales infligirán daño del elemento correspondiente."
+    }
+  },
+  "11250001": {
+    "name": "Oleaje gravitacional",
+    "description": {
+      "0": "Tras usar la Habilidad Elemental, <strong>Mareas inmemoriales</strong>, Colombina invocará un <strong>oleaje gravitacional</strong>.",
+      "1": "El oleaje gravitacional seguirá al personaje en uso e infligirá <hydro>Daño Hydro en el AdE</hydro> continuamente a los enemigos cercanos.",
+      "2": "<br/>",
+      "3": "Además, mientras el oleaje gravitacional esté activo, cuando un personaje cercano del equipo cause una Reacción Lunar o inflija daño de Reacción Lunar, Colombina obtendrá el efecto de “revelación de la Luna Nueva” durante los 2 s siguientes, con el que acumulará constantemente <strong>fuerza gravitatoria</strong>. Cada 2 s podrá acumular 20 pts. de fuerza gravitatoria.",
+      "4": "El límite de fuerza gravitatoria es de 60 pts., y dicho valor se eliminará cuando termine la duración de oleaje gravitacional.",
+      "5": "Al alcanzar el máximo de fuerza gravitatoria, se activará una <strong>interferencia gravitacional</strong> especial que producirá diferentes efectos según la Reacción Lunar que más fuerza gravitatoria haya otorgado a Colombina. Si dicha Reacción Lunar es:",
+      "6": [
+        "<strong>Electrocargado Lunar</strong>: la interferencia gravitacional infligirá una vez <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar.",
+        "<strong>Florecimiento Lunar</strong>: la interferencia gravitacional disparará 5 estelas rociolunares contra los enemigos cercanos, las cuales infligirán <dendro>Daño Dendro</dendro> considerado como daño de Florecimiento Lunar.",
+        "<strong>Cristalización Lunar</strong>: la interferencia gravitacional infligirá una vez <geo>Daño Geo en el AdE</geo> considerado como daño de Cristalización Lunar."
+      ]
+    }
+  },
+  "11250002": {
+    "name": "Dominio lunar",
+    "description": {
+      "0": "Un terreno especial creado por Colombina tras usar su Habilidad Definitiva, <strong>Nostalgia de la luz lunar</strong>.",
+      "1": "Cuando el personaje en uso se encuentre en el <strong>dominio lunar</strong>, el daño de las Reacciones Lunares de todos los personajes del equipo aumentará."
+    }
+  },
+  "11250003": {
+    "name": "Rocío cumbreluna",
+    "description": {
+      "0": "Un tipo de rocío de la espesura especial proporcionado por el talento pasivo de Colombina, <strong>La ley de la Luna Nueva</strong>. El límite y la duración de este tipo de rocío se calculan de forma independiente a los del rocío de la espesura.",
+      "1": "Cuando el rocío de la espesura del equipo se agote, en su lugar se consumirá el <strong>rocío cumbreluna</strong>.",
+      "2": "El límite de <strong>rocío cumbreluna</strong> es de 3 gotas."
+    }
+  },
+  "11260001": {
+    "name": "Intersticio faselunar",
+    "description": {
+      "0": "Zibai cambia a este modo tras usar su Habilidad Elemental, <strong>Manifestación terraceleste</strong>. Dicho modo dura 15 s y posee las siguientes propiedades:",
+      "1": [
+        "El daño de sus Ataques Normales y Cargados se convierte en <geo>Daño Geo</geo>, el cual no puede sustituirse imbuyéndose de otro elemento.",
+        "La Habilidad Elemental, <strong>Manifestación terraceleste</strong>, se remplaza por la Habilidad Elemental especial <strong>Pisotón yeguaespiritual</strong>, de manera que, cuando Zibai tenga al menos 70 pts. de fulgor intersticial, podrá consumirlos para usar Pisotón yeguaespiritual e infligir dos golpes de <geo>Daño Geo</geo>. El segundo golpe se considera daño de Cristalización Lunar."
+      ],
+      "2": "<br/>",
+      "3": "El límite de puntos de <strong>fulgor intersticial</strong> es 100, y Zibai puede obtenerlos de las siguientes formas:",
+      "4": [
+        "Cuando está en modo <strong>intersticio faselunar</strong>, obtiene 10 pts. de fulgor intersticial por segundo.",
+        "Al golpear a un enemigo con un Ataque Normal, obtiene 5 pts. de fulgor intersticial. Esto solo puede ocurrir una vez cada 0.5 s."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "7": "Cuando un personaje cercano del equipo causa una reacción de Cristalización Lunar, Zibai también obtiene 35 pts. de <strong>fulgor intersticial</strong>. Esto solo puede ocurrir una vez cada 4 s. Usar la Habilidad Elemental especial <strong>Pisotón yeguaespiritual</strong> reiniciará el TdE de la obtención de <strong>fulgor intersticial</strong> por medio de esta forma.",
+      "8": "<br/>",
+      "9": "Zibai saldrá de este modo cuando haya usado cuatro veces <strong>Pisotón yeguaespiritual</strong> o cuando termine su duración."
+    }
+  },
+  "11270001": {
+    "name": "Canto del ruiseñor",
+    "description": {
+      "0": "Este efecto, obtenido tras usar la Habilidad Definitiva de Illuga, <strong>Reflejo sin sombra</strong>, puede aumentar el <geo>Daño Geo</geo> que inflige el personaje en uso."
+    }
+  }
+}

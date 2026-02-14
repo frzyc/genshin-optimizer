@@ -111,6 +111,21 @@
       "0": "Aumenta a Recarga de Energia da <strong>Lâmina Raikage</strong> do Amuleto da Abundância em 10% com base na Recarga de Energia d{F#a}{M#o} Viajante."
     }
   },
+  "lockedPassive": {
+    "name": "Trovão Longínquo Forasteiro",
+    "description": {
+      "0": "Reúne novas forças das jornadas do passado. Para cada elemento que você ressoou, obtém um <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimento adicional</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Além disso, quando um membro próximo da equipe lança seu Supremo, {F#a}{M#o} Viajante obtém 1 acúmulo de Lâmina Omnielétrica, podendo acumular até 3 vezes. Ao possuir 3 acúmulos de Lâmina Omnielétrica e realizar um Ataque Carregado, consome todos os acúmulos de Lâmina Omnielétrica para realizar o especial <strong>Ataque Carregado: Trovoada</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Carregado: Trovoada</strong>",
+      "5": [
+        " Cada Ataque Carregado causa mais <electro>Dano Electro</electro>. O aumento de Dano é de 100% do ATQ d{F#a}{M#o} Viajante.",
+        " Nos 3s após atingir um inimigo, faz um raio adicional cair, causando 200% do ATQ d{F#a}{M#o} Viajante como <electro>Dano Electro</electro>, e gerando um Amuleto da Abundância. Esse Dano é considerado Dano de Ataque Carregado.",
+        " É possível realizar um <strong>Ataque Carregado: Trovoada</strong> uma vez a cada 15s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Trovão Primaveril da Fertilidade",
     "description": {

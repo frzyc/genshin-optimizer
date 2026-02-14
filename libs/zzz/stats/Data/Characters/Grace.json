@@ -147,6 +147,46 @@
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 143.34
         }
+      ],
+      "Pulse": [],
+      "SpecialAttackObstructionRemovalCycle": [
+        {
+          "DamagePercentage": 5.634,
+          "DamagePercentageGrowth": 0.513,
+          "StunRatio": 5.128,
+          "StunRatioGrowth": 0.234,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 13431,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 488.33
+        }
+      ],
+      "VortexClusterGrenadeBaseMultiplier": [
+        {
+          "DamagePercentage": 0.875,
+          "DamagePercentageGrowth": 0.08,
+          "StunRatio": 0,
+          "StunRatioGrowth": 0,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "PulseGrenadeMultiplier": [
+        {
+          "DamagePercentage": 0.42,
+          "DamagePercentageGrowth": 0.039,
+          "StunRatio": 0,
+          "StunRatioGrowth": 0,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
       ]
     },
     "chain": {
@@ -216,7 +256,11 @@
     },
     "special": {
       "SpecialAttackObstructionRemoval": [],
-      "EXSpecialAttackSuperchargedObstructionRemoval": []
+      "EXSpecialAttackSuperchargedObstructionRemoval": [],
+      "Pulse": [],
+      "SpecialAttackObstructionRemovalCycle": [],
+      "VortexClusterGrenadeBaseMultiplier": [],
+      "PulseGrenadeMultiplier": []
     },
     "chain": {
       "ChainAttackCollaborativeConstruction": [],
@@ -241,5 +285,6 @@
     [6, 6, 1, 0.2],
     [2],
     [2]
-  ]
+  ],
+  "potentialParams": [[0, 0.1, 0.15, 0.2, 0.25, 0.3], [0, 25, 25, 25, 25, 25]]
 }

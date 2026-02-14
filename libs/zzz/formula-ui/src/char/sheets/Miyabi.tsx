@@ -28,14 +28,6 @@ const sheet = createBaseSheet(key, {
     {
       type: 'conditional',
       conditional: {
-        label: ch('frostbiteCond'),
-        metadata: cond.frostbite,
-        fields: [fieldForBuff(buff.frostbite_crit_dmg_)],
-      },
-    },
-    {
-      type: 'conditional',
-      conditional: {
         label: ch('coreIcefireCond'),
         metadata: cond.icefire,
         fields: [fieldForBuff(buff.core_frost_anomBuildup_)],

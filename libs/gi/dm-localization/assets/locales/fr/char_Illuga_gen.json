@@ -1,0 +1,171 @@
+{
+  "name": "Illuga",
+  "title": "Cœur ardent des nuits terrifiantes",
+  "description": "Membre de l'escouade d'enquête appelée « Orioles des nuits terrifiantes », et le plus jeune chef d'escouade des Gardiens de lumière.",
+  "constellationName": "Oriolus",
+  "auto": {
+    "name": "Lance du prosélyte",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis en chemin."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Alouette de l'aube naissante",
+    "description": {
+      "0": "Invoque le fidèle oiseau messager « Aédon », différents effets se produisant selon la méthode de déclenchement :",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Aédon fonce vers les ennemis en avant, infligeant des <geo>DGT Géo</geo> aux ennemis touchés.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Passe en mode visée pour que Aédon fonce sur l'ennemi ciblé, infligeant des <geo>DGT Géo</geo> aux ennemis touchés."
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT appui long",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Reflet sans ombre",
+    "description": {
+      "0": "Allume la lanterne, infligeant des <geo>DGT Géo de zone</geo> et accordant l'effet Chant nocturne d'oriole pendant 20 s : pendant cette durée, Illuga obtient 21 cumuls de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>chant de rossignol</strong></tooltip>. Lorsqu'un personnage déployé de l'équipe à proximité inflige des <geo>DGT Géo</geo> à un ennemi avec une attaque normale, une attaque chargée, une attaque plongeante, une compétence élémentaire ou un déchaînement élémentaire, Illuga consomme 1 cumul de chant de rossignol pour augmenter les DGT selon sa maîtrise élémentaire, les DGT augmentant davantage s'ils sont le résultat d'une réaction de Sélénocristallisation.",
+      "1": "En infligeant ainsi des <geo>DGT Géo</geo> à plusieurs ennemis, le nombre de cumuls de chant de rossignol consommés dépend de la quantité d'ennemis touchés.",
+      "2": "<br/>",
+      "3": "De plus, lorsque Illuga utilise un déchaînement élémentaire alors qu'une <geo>construction Géo</geo> générée par un personnage de l'équipe à proximité est présente sur le champ de bataille, ou lorsqu'un personnage de l'équipe à proximité génère une <geo>construction Géo</geo> pendant la durée de l'effet Chant nocturne d'oriole, chaque <geo>construction Géo</geo> sur le terrain permet à Illuga d'obtenir 5 cumuls supplémentaires de chant de rossignol. Illuga peut obtenir un maximum de 15 cumuls supplémentaires de cette manière pendant les 20 s qui suivent chaque déclenchement de son déchaînement élémentaire.",
+      "4": "<br/>",
+      "5": "L'effet Chant nocturne d'oriole prend fin lorsque tous les cumuls de chant de rossignol sont épuisés ou à la fin de sa durée."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Bonus DGT Géo",
+      "2": "Bonus de DGT (Sélénocristallisation)",
+      "3": "Gain de chant de rossignol (déchaînement élémentaire)",
+      "4": "Gain de chant de rossignol (construction Géo)",
+      "5": "Durée",
+      "6": "Temps de recharge",
+      "7": "Énergie élémentaire",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Pacte du forge-torche",
+    "description": {
+      "0": "Après avoir utilisé la compétence élémentaire <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Alouette de l'aube naissante</tooltip></strong> ou le déchaînement élémentaire <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflet sans ombre</tooltip></strong>, les autres personnages de l'équipe à proximité obtiennent l'effet Serment de ratniki pendant 20 s : augmente le taux CRIT de 5 % et les DGT CRIT de 10 % en infligeant des <geo>DGT Géo</geo> à un ennemi.",
+      "1": "<br/>",
+      "2": "<strong>Signelune « Lueur ascendante »</strong>",
+      "3": "La maîtrise élémentaire des personnages bénéficiant de l'effet Serment de ratniki augmente de 50 pts."
+    }
+  },
+  "passive2": {
+    "name": "Crépuscule du chasseur de démons",
+    "description": {
+      "0": "Les effets du <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>chant de rossignol</strong></tooltip> sont renforcés : lorsque l'équipe contient 1/2/3 personnages <hydro>Hydro</hydro> ou <geo>Géo</geo>, le chant de rossignol augmente davantage les DGT d'une valeur équivalant respectivement à 7 %/14 %/24 % de la maîtrise élémentaire d'Illuga, cette augmentation valant respectivement 48 %/96 %/160 % de la maîtrise élémentaire d'Illuga s'il s'agit de DGT infligés par une réaction de Sélénocristallisation."
+    }
+  },
+  "passive3": {
+    "name": "Bénédiction de signelune : Inébranlable en hiver",
+    "description": {
+      "0": "Lorsque Illuga fait partie de l'équipe, la <strong>signelune</strong> de l'équipe augmente d'un niveau."
+    }
+  },
+  "passive": {
+    "name": "Foulée du veilleur de nuit",
+    "description": {
+      "0": "La nuit (18 h 00 - 06 h 00), vos personnages dans l'équipe obtiennent l'effet Foulée célère : augmente la VIT de déplacement de 10 %.",
+      "1": "Cet effet ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées, et ne peut pas être cumulé.",
+      "2": "De plus, Illuga semble capable de déchiffrer les murmures de la Chasse sauvage..."
+    }
+  },
+  "constellation1": {
+    "name": "Sentinelle vigilante",
+    "description": {
+      "0": "Lorsque Illuga a déclenché une <geo>réaction liée à l'élément Géo</geo> sur le terrain, il récupère 12 pts d'énergie élémentaire, cet effet pouvant être déclenché une fois toutes les 15 s."
+    }
+  },
+  "constellation2": {
+    "name": "Élan aux bois carnassiers",
+    "description": {
+      "0": "Pendant la durée de l'effet Chant nocturne d'oriole du déchaînement élémentaire <tooltip ns=char_Illuga_gen baseKey18=burst><strong>Reflet sans ombre</strong></tooltip>, Illuga invoque Aédon tous les 7 cumuls de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>chant de rossignol</strong></tooltip> consommés pour infliger une fois des <geo>DGT Géo</geo> d'une valeur équivalant à 400 % de sa maîtrise élémentaire et à 200 % de son DÉF à un ennemi proche, ces DGT étant considérés comme des DGT de déchaînement élémentaire."
+    }
+  },
+  "constellation3": {
+    "name": "Ours des rugissements sismiques",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflet sans ombre</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Loup des aurores pourchassées",
+    "description": {
+      "0": "Pendant la durée de l'effet Chant nocturne d'oriole du déchaînement élémentaire <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflet sans ombre</tooltip></strong>, la DÉF des personnages déployés de l'équipe à proximité augmente de 200 pts."
+    }
+  },
+  "constellation5": {
+    "name": "Destrier des vents hurlants",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Alouette de l'aube naissante</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Oriole des nuits terrifiantes",
+    "description": {
+      "0": "L'effet Serment de ratniki de l'aptitude d'élévation <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>« Pacte du forge-torche »</tooltip></strong> est renforcé : augmente les <geo>DGT Géo</geo> infligés aux ennemis et le taux CRIT de 10 % et les DGT CRIT de 30 %.",
+      "1": "<br/>",
+      "2": "<strong>Signelune « Lueur ascendante »</strong>",
+      "3": "La maîtrise élémentaire des personnages bénéficiant de l'effet Serment de ratniki augmente de 80 pts.",
+      "4": "L'aptitude d'élévation <strong>« Pacte du forge-torche »</strong> doit être déjà débloquée."
+    }
+  }
+}

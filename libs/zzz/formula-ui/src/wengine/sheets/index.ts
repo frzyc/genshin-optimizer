@@ -2,6 +2,7 @@
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 
+import AngelInTheShell from './AngelInTheShell'
 import BashfulDemon from './BashfulDemon'
 import BellicoseBlaze from './BellicoseBlaze'
 import BigCylinder from './BigCylinder'
@@ -9,7 +10,9 @@ import BlazingLaurel from './BlazingLaurel'
 import BoxCutter from './BoxCutter'
 import BunnyBand from './BunnyBand'
 import CannonRotor from './CannonRotor'
+import CauldronOfClarity from './CauldronOfClarity'
 import CinderCobalt from './CinderCobalt'
+import CloudcleaveRadiance from './CloudcleaveRadiance'
 import CordisGermina from './CordisGermina'
 import DeepSeaVisitor from './DeepSeaVisitor'
 import DemaraBatteryMarkII from './DemaraBatteryMarkII'
@@ -23,6 +26,7 @@ import FusionCompiler from './FusionCompiler'
 import GildedBlossom from './GildedBlossom'
 import GrillOWisp from './GrillOWisp'
 import HailstormShrine from './HailstormShrine'
+import HalfSugarBunny from './HalfSugarBunny'
 import HeartstringNocturne from './HeartstringNocturne'
 import HellfireGears from './HellfireGears'
 import Housekeeper from './Housekeeper'
@@ -69,6 +73,7 @@ import StreetSuperstar from './StreetSuperstar'
 import TheBrimstone from './TheBrimstone'
 import TheRestrained from './TheRestrained'
 import TheVault from './TheVault'
+import Thoughtbop from './Thoughtbop'
 import Timeweaver from './Timeweaver'
 import TremorTrigramVessel from './TremorTrigramVessel'
 import TusksOfFury from './TusksOfFury'
@@ -83,6 +88,7 @@ import YesterdayCalls from './YesterdayCalls'
 import ZanshinHerbCase from './ZanshinHerbCase'
 
 export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
+  AngelInTheShell,
   BashfulDemon,
   BellicoseBlaze,
   BigCylinder,
@@ -90,7 +96,9 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CauldronOfClarity,
   CinderCobalt,
+  CloudcleaveRadiance,
   CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
@@ -104,6 +112,7 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   GildedBlossom,
   GrillOWisp,
   HailstormShrine,
+  HalfSugarBunny,
   HeartstringNocturne,
   HellfireGears,
   Housekeeper,
@@ -150,6 +159,7 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   TheBrimstone,
   TheRestrained,
   TheVault,
+  Thoughtbop,
   Timeweaver,
   TremorTrigramVessel,
   TusksOfFury,

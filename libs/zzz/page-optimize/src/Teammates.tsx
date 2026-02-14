@@ -1,8 +1,5 @@
-import {
-  CardThemed,
-  DropdownButton,
-  ImgIcon,
-} from '@genshin-optimizer/common/ui'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
   characterAsset,
@@ -18,28 +15,26 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import { allStats, getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
-import { CharacterName, ZCard } from '@genshin-optimizer/zzz/ui'
-import { Grid, MenuItem, Stack } from '@mui/material'
+import {
+  CharacterName,
+  CharacterSingleSelectionModal,
+  ZCard,
+} from '@genshin-optimizer/zzz/ui'
+import { Button, Grid, Stack } from '@mui/material'
 import { Box } from '@mui/system'
-import { useCallback, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Suspense, useCallback, useState } from 'react'
 
 export function TeammatesSection() {
-  const { t } = useTranslation('page_optimize')
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
   const { teammates } = useCharOpt(characterKey)!
+  const [show, onShow, onHide] = useBoolState()
+  const [teammateIndex, setTeammateIndex] = useState<number | undefined>()
   const setTeammate = useCallback(
-    (teammateKey: CharacterKey | null, index?: number) =>
-      database.charOpts.setTeammate(characterKey, teammateKey, index),
+    (teammateKey: CharacterKey | null, index?: number) => {
+      database.charOpts.setTeammate(characterKey, teammateKey, index)
+    },
     [characterKey, database]
-  )
-  const allChars = useMemo(
-    () =>
-      database.chars.keys.filter(
-        (charKey) => !teammates.includes(charKey) && charKey !== characterKey
-      ),
-    [characterKey, database, teammates]
   )
   const icons = useCallback(
     (charKey: CharacterKey | undefined) =>
@@ -54,32 +49,34 @@ export function TeammatesSection() {
   )
 
   return (
-    <Grid container spacing={1} columns={{ xs: 1, sm: 1, md: 2 }}>
+    <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
+      <Suspense fallback={false}>
+        <CharacterSingleSelectionModal
+          show={show}
+          onHide={onHide}
+          onSelect={(ck) => setTeammate(ck, teammateIndex)}
+          showNone
+        />
+      </Suspense>
       {range(0, 1).map((i) => (
         <Grid item xs={1} key={i}>
           <Stack gap={1}>
-            <DropdownButton
+            <Button
               fullWidth
               color={
                 (!!teammates[i] && getCharStat(teammates[i]).attribute) ||
                 undefined
               }
-              title={
-                (!!teammates[i] && (
-                  <CharacterName characterKey={teammates[i]} />
-                )) ||
-                `Add ${i === 0 ? 'First' : 'Second'} Teammate`
-              }
+              onClick={() => {
+                setTeammateIndex(i)
+                onShow()
+              }}
             >
-              <MenuItem onClick={() => setTeammate(null, i)}>
-                {t('removeTeammate')}
-              </MenuItem>
-              {allChars.map((charKey) => (
-                <MenuItem onClick={() => setTeammate(charKey, i)} key={charKey}>
-                  {<CharacterName characterKey={charKey} />}
-                </MenuItem>
-              ))}
-            </DropdownButton>
+              {(!!teammates[i] && (
+                <CharacterName characterKey={teammates[i]} />
+              )) ||
+                `Add ${i === 0 ? 'First' : 'Second'} Teammate`}
+            </Button>
             {!!teammates[i] && (
               <ZCard bgt="dark">
                 <Grid

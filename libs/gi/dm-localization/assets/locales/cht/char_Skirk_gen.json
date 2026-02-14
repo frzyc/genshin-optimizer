@@ -44,7 +44,7 @@
       "0": "仿擬極惡騎的戰鬥風格，依據點按、長按，以不同的方式產生效果。",
       "1": "<br/>",
       "2": "<strong>點按</strong>",
-      "3": "絲柯克獲得45點<strong>蛇之狡謀</strong>，並切換至<strong>七相一閃</strong>模式。",
+      "3": "絲柯克獲得45點<tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>蛇之狡謀</strong></tooltip>，並切換至<tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>七相一閃</strong></tooltip>模式。",
       "4": "<br/>",
       "5": "<strong>長按</strong>",
       "6": "絲柯克獲得45點蛇之狡謀，並將持續快速移動，在該狀態下提高絲柯克的抗打斷能力。",
@@ -72,14 +72,14 @@
   "burst": {
     "name": "極惡技·滅",
     "description": {
-      "0": "絲柯克的元素爆發不依靠元素能量，而是依靠<strong>蛇之狡謀</strong>。",
+      "0": "絲柯克的元素爆發不依靠元素能量，而是依靠<tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>蛇之狡謀</strong></tooltip>。",
       "1": "當絲柯克擁有至少50點蛇之狡謀時，絲柯克可以消耗所有蛇之狡謀，施放元素爆發，撕裂前方的空間並進行高速的連續斬擊，造成<cryo>冰元素範圍傷害</cryo>。同時，依據施放時絲柯克擁有的蛇之狡謀超過50點的部分，每1點蛇之狡謀都將提升本次元素爆發造成的傷害，至多依此方式計入12點蛇之狡謀。",
       "2": "<br/>",
-      "3": "絲柯克處於<strong>七相一閃</strong>模式下時，元素爆發「極惡技·滅」將會被替換為「極惡技·盡」。",
+      "3": "絲柯克處於<tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>七相一閃</strong></tooltip>模式下時，元素爆發「極惡技·滅」將會被替換為「極惡技·盡」。",
       "4": "<br/>",
       "5": "<strong>極惡技·盡</strong>",
       "6": "無需消耗蛇之狡謀即可施放的特殊元素爆發。",
-      "7": "施放後，絲柯克將獲得凋盡效果，效果持續至七相一閃模式結束。解鎖突破天賦<strong>理外之理</strong>後，絲柯克還將汲取附近一定範圍內的虛境裂隙。",
+      "7": "施放後，絲柯克將獲得凋盡效果，效果持續至七相一閃模式結束。解鎖突破天賦<tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>理外之理</strong></tooltip>後，絲柯克還將汲取附近一定範圍內的虛境裂隙。",
       "8": "凋盡效果持續期間，每0.1秒，絲柯克的普通攻擊命中敵人後，將使本次普通攻擊造成的傷害提高。若施放<strong>極惡技·盡</strong>時，汲取了虛境裂隙，則會依據汲取的虛境裂隙枚數，使本次普通攻擊造成的傷害進一步提高。",
       "9": "該效果將在觸發次數達到10次時解除。"
     },
@@ -109,12 +109,12 @@
       "1": "<br/>",
       "2": "絲柯克可以透過以下方式，汲取附近一定範圍內的虛境裂隙：",
       "3": [
-        "在<strong>七相一閃</strong>模式下進行的重擊命中敵人時。",
+        "在<tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>七相一閃</strong></tooltip>模式下進行的重擊命中敵人時。",
         "施放七相一閃模式下的特殊元素爆發<strong>極惡技·盡</strong>時。",
         "長按施放元素戰技<strong>極惡技·閃</strong>進行快速移動時。"
       ],
       "4": "<br/>",
-      "5": "每汲取一枚虛境裂隙，絲柯克將獲得8點<strong>蛇之狡謀</strong>。"
+      "5": "每汲取一枚虛境裂隙，絲柯克將獲得8點<tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>蛇之狡謀</strong></tooltip>。"
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
     "description": {
       "0": "隊伍中附近的元素類型為<hydro>水元素</hydro>的角色的<hydro>水元素</hydro>攻擊命中敵人時，或是隊伍中附近的元素類型為<cryo>冰元素</cryo>的其他角色的<cryo>冰元素</cryo>攻擊命中敵人時，絲柯克將獲得一層持續20秒的死河渡斷效果，至多疊加3層，每層獨立計算持續時間。",
       "1": "每名角色至多依此方式使絲柯克獲得1層死河渡斷效果。",
-      "2": "每層死河渡斷效果會使絲柯克在<strong>七相一閃</strong>模式下時進行的普通攻擊造成原本110%/120%/170%的傷害，且施放的元素爆發<strong>極惡技·滅</strong>造成原本105%/115%/160%的傷害。"
+      "2": "每層死河渡斷效果會使絲柯克在<tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>七相一閃</strong></tooltip>模式下時進行的普通攻擊造成原本110%/120%/170%的傷害，且施放的元素爆發<strong>極惡技·滅</strong>造成原本105%/115%/160%的傷害。"
     }
   },
   "passive3": {
@@ -134,43 +134,43 @@
   "constellation1": {
     "name": "湮遠",
     "description": {
-      "0": "突破天賦<strong>理外之理</strong>的效果獲得強化：每汲取一枚虛境裂隙，就將召喚一枚晶刃攻擊附近的敵人，造成相當於絲柯克攻擊力500%的<cryo>冰元素傷害</cryo>，該傷害視為重擊傷害。",
+      "0": "突破天賦<tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>理外之理</strong></tooltip>的效果獲得強化：每汲取一枚虛境裂隙，就將召喚一枚晶刃攻擊附近的敵人，造成相當於絲柯克攻擊力500%的<cryo>冰元素傷害</cryo>，該傷害視為重擊傷害。",
       "1": "需要解鎖突破天賦「理外之理」。"
     }
   },
   "constellation2": {
     "name": "墜淵",
     "description": {
-      "0": "施放元素戰技<strong>極惡技·閃</strong>後，絲柯克將額外獲得10點<strong>蛇之狡謀</strong>。",
+      "0": "施放元素戰技<strong>極惡技·閃</strong>後，絲柯克將額外獲得10點<tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>蛇之狡謀</strong></tooltip>。",
       "1": "施放元素爆發<strong>極惡技·滅</strong>時，提升本次元素爆發傷害的效果，至多額外計入10點蛇之狡謀。",
-      "2": "此外，絲柯克施放<strong>七相一閃</strong>模式下的特殊元素爆發<strong>極惡技·盡</strong>後的12.5秒內，攻擊力提升70%，該效果會在絲柯克退出七相一閃模式時解除。"
+      "2": "此外，絲柯克施放<tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>七相一閃</strong></tooltip>模式下的特殊元素爆發<strong>極惡技·盡</strong>後的12.5秒內，攻擊力提升70%，該效果會在絲柯克退出七相一閃模式時解除。"
     }
   },
   "constellation3": {
     "name": "罪緣",
     "description": {
-      "0": "元素爆發<strong>極惡技·滅</strong>的技能等級提高3級。",
+      "0": "元素爆發<tooltip ns=char_Skirk_gen baseKey18=burst><strong>極惡技·滅</strong></tooltip>的技能等級提高3級。",
       "1": "至多提升至15級。"
     }
   },
   "constellation4": {
     "name": "流斷",
     "description": {
-      "0": "突破天賦<strong>萬流歸寂</strong>的效果獲得強化：每層死河渡斷效果還會使絲柯克的攻擊力提升10%/20%/40%。",
+      "0": "突破天賦<tooltip ns=tooltips_gen baseKey18=11130008 values=[]><strong>萬流歸寂</strong></tooltip>的效果獲得強化：每層死河渡斷效果還會使絲柯克的攻擊力提升10%/20%/40%。",
       "1": "需要解鎖突破天賦「萬流歸寂」。"
     }
   },
   "constellation5": {
     "name": "結願",
     "description": {
-      "0": "元素戰技<strong>極惡技·閃</strong>的技能等級提高3級。",
+      "0": "元素戰技<tooltip ns=char_Skirk_gen baseKey18=skill><strong>極惡技·閃</strong></tooltip>的技能等級提高3級。",
       "1": "至多提升至15級"
     }
   },
   "constellation6": {
     "name": "至源",
     "description": {
-      "0": "絲柯克每透過突破天賦<strong>理外之理</strong>的效果汲取一枚虛境裂隙，就會獲得一層極惡技·斬效果，絲柯克可以消耗該效果進行協同攻擊，並降低在<strong>七相一閃</strong>模式下受到的傷害，該效果持續15秒，至多疊加3層，每層獨立計算持續時間。",
+      "0": "絲柯克每透過突破天賦<tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>理外之理</strong></tooltip>的效果汲取一枚虛境裂隙，就會獲得一層極惡技·斬效果，絲柯克可以消耗該效果進行協同攻擊，並降低在<tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>七相一閃</strong></tooltip>模式下受到的傷害，該效果持續15秒，至多疊加3層，每層獨立計算持續時間。",
       "1": "需要解鎖突破天賦「理外之理」。",
       "2": "<br/>",
       "3": "<strong>極惡技·斬</strong>",

@@ -25,7 +25,7 @@
   },
   "EnduringRock": {
     "name": "Durabilidade de Geo",
-    "desc": "A Força do Escudo aumenta em 15%. Além disso, quando o personagem estiver protegido por um Escudo, possui os seguintes efeitos: Dano causado aumenta em 15%, além disso, ao causar Dano aos inimigos, a Resistência contra o Elemento Geo dos inimigos diminui em 20% por 15s."
+    "desc": "A Força do Escudo aumenta em 15%. Além disso, quando o personagem estiver protegido por um Escudo, ou quando Jaulas Lunares formadas por reações de Cristalização Lunar estiverem por perto, possuirão os seguintes efeitos especiais: Dano causado aumenta em 15%, ao causar Dano aos inimigos a Resistência contra o Elemento Geo deles diminui em 20% por 15s."
   },
   "SprawlingGreenery": {
     "name": "Videira Verdejante",

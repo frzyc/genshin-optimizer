@@ -165,6 +165,21 @@
       "0": "Increases the Energy Recharge effect granted by <strong>Lightning Blade</strong>'s Abundance Amulet by 10% of the Traveler's Energy Recharge."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Thundertrail",
+    "description": {
+      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>buffs</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "In addition, when nearby party members unleash an Elemental Burst, Traveler will receive 1 stack of Blade of Resounding Thunder, max 3 stacks. After obtaining 3 stacks of Blade of Resounding Thunder, performing a Charged Attack will consume all stacks of Blade of Resounding Thunder and transform into the special <strong>Charged Attack: Detonate</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Detonate</strong>",
+      "5": [
+        " Each Charged Attack hit deals increased <electro>Electro DMG</electro>. Increase in DMG is equal to 100% of Traveler's ATK. ",
+        " 3s after hitting the enemy, 1 additional lightning strike will be triggered, dealing <electro>Electro DMG</electro> equal to 200% of Traveler's ATK. 1 Abundance Amulet will also be created. This DMG is considered Charged Attack DMG.",
+        " <strong>Charged Attack: Detonate</strong> can be triggered up to once every 15s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Spring Thunder of Fertility",
     "description": {

@@ -108,8 +108,8 @@
   "passive1": {
     "name": "Kadim Deniz İktidarının Varisi",
     "description": {
-      "0": "Bir grup üyesi, düşman üzerinde Buharlaşma, Donma, Elektrik Yüklü, Ay Yüklü, Çiçeklenme, Ay Çiçeklenmesi, Su Girdabı veya Su Kristalleşmesi tepkimesi tetiklediğinde Neuvillette 30 saniyeliğine 1 kademe Kadim Ejder İhtişamı kazanır. 3 kademeye kadar birikebilir. Kadim Ejder İhtişamı, Yüklü Saldırı: Adil Yargının asıl Hasarının %110/%125/%160 oranında Hasar vermesini sağlar.",
-      "1": "Her bir Element Tepkimesi tarafından oluşturulan Kadim Ejder İhtişamı kademesi birbirinden bağımsızdır."
+      "0": "Bir grup üyesi, düşman üzerinde Buharlaşma, Donma, Elektrik Yüklü, Ay Yüklü, Çiçeklenme, Ay Çiçeklenmesi, Su Girdabı, Su Kristalleşmesi veya Ay Kristalleşmesi tepkimesi tetiklediğinde Neuvillette 30 saniyeliğine 1 kademe Kadim Ejder İhtişamı kazanır. 3 kademeye kadar birikebilir. Kadim Ejder İhtişamı, Yüklü Saldırı: Adil Yargının asıl Hasarının %110/%125/%160'ı kadar Hasar vermesini sağlar.",
+      "1": "Her bir Element Tepkimesi tarafından oluşturulan Kadim Ejder İhtişamı kademeleri birbirinden bağımsızdır."
     }
   },
   "passive2": {

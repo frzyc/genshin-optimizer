@@ -110,6 +110,20 @@
       "0": "Quando il personaggio attivo all'interno di una <strong>Soglia fiammeggiante</strong> o di una <strong>Soglia infuocata</strong> innesca una <pyro>reazione di Pyro</pyro>, {F#la viaggiatrice}{M#il viaggiatore} recupera 5 di energia. Quest'effetto può attivarsi una volta ogni 12 s. Inoltre, quando i membri del gruppo vicini innescano un Impeto dell'Anima della Notte, {F#la viaggiatrice}{M#il viaggiatore} recupera 4 di energia."
     }
   },
+  "lockedPassive": {
+    "name": "Fuocostella straniera",
+    "description": {
+      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effetti positivi aggiuntivi</strong></tooltip> per ogni elemento con cui hai risuonato.",
+      "1": "<br/>",
+      "2": "Inoltre, quando i membri vicini del gruppo innescano un Impeto dell'Anima della Notte, {F#la viaggiatrice}{M#il viaggiatore} ottiene 1 accumulo di Lama della Fiamma sacra, fino a un massimo di 2 accumuli. Dopo aver raggiunto il numero massimo di accumuli, sferrare un attacco caricato li consuma tutti e trasforma l'attacco in un <strong>Attacco caricato: Inferno</strong> speciale.",
+      "3": "<br/>",
+      "4": "<strong>Attacco caricato: Inferno</strong>",
+      "5": [
+        " Ogni colpo di attacco caricato infligge <pyro>DAN da Pyro</pyro> aumentati con attributo Anima della Notte. L'aumento dei DAN è pari a un 200% dell'ATT {F#della viaggiatrice}{M#del viaggiatore}.",
+        " È possibile scatenare <strong>Attacco caricato: Inferno</strong> una volta ogni 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Flusso della luce stellare",
     "description": {

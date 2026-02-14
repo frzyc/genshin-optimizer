@@ -1,8 +1,4 @@
-import {
-  CardThemed,
-  ModalWrapper,
-  NextImage,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Alert,
@@ -44,7 +40,7 @@ export function UploadExplainationModal({
           <Grid container spacing={1} mt={1}>
             <Grid item xs={8} md={6}>
               <Box
-                component={NextImage ? NextImage : 'img'}
+                component="img"
                 alt="snippet of the screen to take"
                 src={Snippet}
                 width="100%"
@@ -127,7 +123,7 @@ export function UploadExplainationModal({
             </Grid>
             <Grid item xs={8} md={5}>
               <Box
-                component={NextImage ? NextImage : 'img'}
+                component="img"
                 alt="main screen after importing stats"
                 src={scan_art_main}
                 width="100%"

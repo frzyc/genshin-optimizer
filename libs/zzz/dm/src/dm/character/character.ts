@@ -157,6 +157,10 @@ type CharacterRawData = {
       Desc2: string
     }
   >
+  PotentialDetail: Record<
+    string,
+    { Level: '1' | '2' | '3' | '4' | '5' | '6'; Name: string; Desc: string }
+  >
 }
 export type CharacterData = {
   id: string
@@ -185,6 +189,7 @@ export type CharacterData = {
   skillList: CharacterRawData['SkillList']
   cores: CharacterRawData['Passive']
   mindscapes: CharacterRawData['Talent']
+  potential: CharacterRawData['PotentialDetail']
   fullname: string
   name: string
 }
@@ -232,14 +237,20 @@ export const charactersDetailedJSONData = Object.fromEntries(
         coreStats: Object.values(raw.ExtraLevel).map(
           ({ Extra }) =>
             Object.fromEntries(
-              Object.values(Extra).map(({ Name, Value }) => [
-                coreStatMap[Name],
-                isPercentStat(coreStatMap[Name])
-                  ? Value / PERCENT_SCALING
-                  : coreStatMap[Name] === 'enerRegen'
-                    ? Value / FLAT_SCALING
-                    : Value,
-              ])
+              Object.values(Extra).map(({ Name, Value, Format }) => {
+                const statName = coreStatMap[Name]
+                const unit =
+                  Format.includes('%') && !isPercentStat(coreStatMap[Name])
+                    ? '_'
+                    : ''
+                const scaling =
+                  unit === '_' || isPercentStat(statName)
+                    ? PERCENT_SCALING
+                    : statName === 'enerRegen'
+                      ? FLAT_SCALING
+                      : 1
+                return [`${statName}${unit}`, Value / scaling]
+              })
             ) as Partial<
               Record<(typeof coreStatMap)[keyof typeof coreStatMap], number>
             >
@@ -287,6 +298,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
         skillList: raw.SkillList,
         cores: raw.Passive,
         mindscapes: raw.Talent,
+        potential: raw.PotentialDetail,
       }
       return [name, data] as const
     })

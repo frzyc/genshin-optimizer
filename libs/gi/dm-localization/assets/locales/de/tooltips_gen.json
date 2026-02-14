@@ -1,0 +1,329 @@
+{
+  "10050001": {
+    "name": "Zusätzliche Verstärkungseffekte",
+    "description": {
+      "0": "Verleiht {F#der}{M#dem} Reisenden für jedes Element, mit dem {F#sie}{M#er} im Einklang gestanden hat, einen Bonus für das entsprechende Attribut:",
+      "1": "<anemo>Anemo</anemo>: Erhöht die KT um 10 %.",
+      "2": "<geo>Geo</geo>: Erhöht die VTD um 20 %.",
+      "3": "<electro>Elektro</electro>: Erhöht die Aufladerate um 20 %.",
+      "4": "<dendro>Dendro</dendro>: Erhöht die Elementarkunde um 60 Punkte.",
+      "5": "<hydro>Hydro</hydro>: Erhöht die LP um 20 %.",
+      "6": "<pyro>Pyro</pyro>: Erhöht den ANG um 20 %.",
+      "7": "<cryo>Kryo</cryo>: Erhöht den kritischen Schaden um 20 %."
+    }
+  },
+  "11120001": {
+    "name": "Modus „Kaltlagerung“",
+    "description": {
+      "0": "<strong>Drücken</strong>",
+      "1": "Aktiviert den multifunktionalen Gastro-Mecha im Modus „Kaltlagerung“ und fügt den Gegnern in der Umgebung <cryo>Kryo-Flächenschaden</cryo> zu.",
+      "2": "<br/>",
+      "3": "<strong>Gastro-Mecha – Modus „Kaltlagerung“</strong>",
+      "4": "Folgt der aktuellen Figur und feuert in gewissen Abständen „Frostparfaits“ auf Gegner in der Nähe ab, die <cryo>Kryo-Schaden</cryo> verursachen."
+    }
+  },
+  "11120002": {
+    "name": "Modus „Improvisationskochen“",
+    "description": {
+      "0": "<strong>Gastro-Mecha – Modus „Improvisationskochen“</strong>",
+      "1": [
+        " Lässt den Gastro-Mecha erscheinen, der Elementarangriffe absorbieren kann und die Zutaten, die Escoffier zuvor in den Mecha gegeben hat, in ein leckeres Gericht umwandelt, sobald die absorbierte Elementarenergie die benötigte Menge erreicht.",
+        " Escoffier braucht Zeit, um neue Zutaten zu besorgen. Nur eine bestimmte Menge Gerichte kann pro Woche auf diese Weise zubereitet werden. Die Anzahl der Gerichte, die auf diese Weise zubereitet werden können, wird jeden Montag um 4 Uhr morgens zurückgesetzt."
+      ]
+    }
+  },
+  "11130001": {
+    "name": "Unterstützungsfeuer",
+    "description": {
+      "0": "Wandelt Ifas Standardangriffe im Zustand „Nachtseelensegen“ in „Unterstützungsfeuer“ um.",
+      "1": "<strong>Drücken</strong>",
+      "2": "Schießt eine Elixierkugel ab.",
+      "3": "<strong>Gedrückt halten</strong>",
+      "4": "Schießt fortlaufend Elixierkugeln ab.",
+      "5": "<strong>Elixierkugel</strong>",
+      "6": "Verursacht mit Nachtseelen versehenen <anemo>Anemo-Schaden</anemo> und stellt nach dem Treffen von Gegnern allen Truppenmitgliedern in der Nähe LP basierend auf Ifas Elementarkunde wieder her."
+    }
+  },
+  "11130002": {
+    "name": "Rettungsprinzipien",
+    "description": {
+      "0": "Auf 150 Punkte beschränkt. Erhöht den von Truppenmitgliedern in der Nähe mit den Reaktionen „Verwirbelung“ und „Unter Strom“ verursachten Schaden für jeden Punkt „Rettungsprinzipien“ von Ifa um 1,5 % und den durch die Reaktion „Mond unter Strom“ verursachten Schaden um 0,2 %. „Rettungsprinzipien“ werden entfernt, wenn Ifas Nachtseelensegen endet."
+    }
+  },
+  "11130003": {
+    "name": "Nachtseelensegen – Ifa",
+    "description": {
+      "0": "Verbraucht fortlaufend Nachtseelenpunkte. Wenn diese aufgebraucht sind oder wenn die Fähigkeit erneut eingesetzt wird, endet Ifas Nachtseelensegen. Der Zustand Nachtseelensegen hat die folgenden Eigenschaften:",
+      "1": [
+        " Ifa schwebt dank Cacucus Unterstützung, wodurch seine Bewegungsgeschwindigkeit und sein Unterbrechungs-WDS erhöht werden. In diesem Zustand verbraucht Ifa fortlaufend Nachtseelenpunkte, um seinen Schwebezustand aufrechtzuerhalten. Wenn Ifa rennt oder nach oben steigt, verbraucht er zusätzliche Nachtseelenpunkte.",
+        " Wenn Ifa einen Standardangriff ausführt, verwendet er, je nachdem, ob gedrückt oder gedrückt gehalten wird, unterschiedliche Arten von „Unterstützungsfeuer“."
+      ]
+    }
+  },
+  "11130004": {
+    "name": "Sedierungsmarker",
+    "description": {
+      "0": "Erlischt nach kurzer Zeit mit einer Explosion und verursacht damit Flächenschaden des jeweiligen Elements. Das therapeutische Sadativum kann bis zu 4 Gegner mit „Sedierungsmarkern“ versehen. Ein einzelner Gegner kann nicht gleichzeitig unter den Effekten von „Sedierungsmarkern“ mit verschiedenen Elementen stehen."
+    }
+  },
+  "11130005": {
+    "name": "List der Schlange",
+    "description": {
+      "0": "Skirk kann „List der Schlange“ verbrauchen, um den „Sieben-Phasen-Blitzmodus“ aufrechtzuerhalten oder ihre Spezialfähigkeit „Verdorbene Kunst – Zerstörung“ einzusetzen.",
+      "1": "<br/>",
+      "2": "Skirk kann die „List der Schlange“ auf folgende Weisen erhalten:",
+      "3": [
+        " Nach dem Einsetzen ihrer Elementarfähigkeit „Verdorbene Kunst – Verzerrung“.",
+        " Nach dem Auslösen des Effekts zur Absorption der „Leere-Risse“ des Aufstiegstalents „Vernunft jenseits der Vernunft“."
+      ],
+      "4": "<br/>",
+      "5": "Wenn Skirk im „Sieben-Phasen-Blitzmodus“ das Schlachtfeld verlässt oder der „Sieben-Phasen-Blitzmodus“ endet, wird sämtliche „List der Schlange“ von ihr entfernt."
+    }
+  },
+  "11130006": {
+    "name": "Sieben-Phasen-Blitz",
+    "description": {
+      "0": "Beim Auslösen ihrer Elementarfähigkeit <strong>„Verdorbene Kunst – Verzerrung“</strong> wechselt Skirk in diesen Modus, der eine gewisse Zeit lang hält und die folgenden Eigenschaften hat:",
+      "1": [
+        " Verbraucht fortlaufend „List der Schlange“.",
+        " Erhöht den Wirkungsbereich von Standardangriffen und heftigen Schlägen sowie Skirks Unterbrechungs-WDS.",
+        " Verursacht mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall <cryo>Kryo-Schaden</cryo>, der nicht von anderen Elementen überdeckt werden kann.",
+        " Ihre Spezialfähigkeit <strong>„Verdorbene Kunst – Zerstörung“</strong> wird durch die besondere Spezialfähigkeit <strong>„Verdorbene Kunst – Vernichtung“</strong> ersetzt.",
+        " Skirk kann sich während des Rennens auf Wasseroberflächen bewegen.",
+        " Dieser Modus endet, sobald die „List der Schlange“ aufgebraucht ist oder die Dauer abgelaufen ist. Danach verlässt Skirk diesen Modus und ihre Elementarfähigkeit wird in die Abklingphase übergehen."
+      ]
+    }
+  },
+  "11130007": {
+    "name": "Vernunft jenseits der Vernunft",
+    "description": {
+      "0": "Erzeugt, wenn Truppenmitglieder in der Nähe an Gegnern die Reaktionen Gefroren, Supraleiter, Kryo-Verwirbelung oder Kryo-Kristall auslösen, in der Nähe des Gegners einen Leere-Riss, 2,5 s Abklingzeit. Es können gleichzeitig nur 3 von Skirk selbst erzeugte Leere-Risse auf dem Feld existieren.",
+      "1": "<br/>",
+      "2": "Skirk kann auf die folgenden Weisen Leere-Risse in einem bestimmten Umkreis absorbieren:",
+      "3": [
+        " Wenn sie im „Sieben-Phasen-Blitzmodus“ Gegner mit heftigen Schlägen trifft.",
+        " Wenn sie im „Sieben-Phasen-Blitzmodus“ ihre besondere Spezialfähigkeit <strong>„Verdorbene Kunst – Vernichtung“</strong> auslöst.",
+        " Wenn sie durch Gedrückthalten ihre Elementarfähigkeit <strong>Verdorbene Kunst – Verzerrung</strong> auslöst, um sich schnell zu bewegen."
+      ],
+      "4": "<br/>",
+      "5": "Skirk erhält für jeden absorbierten Riss 8 Pkt. „List der Schlange“."
+    }
+  },
+  "11130008": {
+    "name": "Rückkehr ins Vergessen",
+    "description": {
+      "0": "Verleiht Skirk jedes Mal, wenn <hydro>Hydro</hydro>-Truppenmitglieder in der Nähe mit ihren <hydro>Hydro</hydro>-Angriffen Gegner treffen oder andere <cryo>Kryo</cryo>-Truppenmitglieder außer Skirk in der Nähe mit ihren <cryo>Kryo</cryo>-Angriffen Gegner treffen, für 20 s den Effekt „Kreuzung des Todes“. 3-fach stapelbar, Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
+      "1": "Jede Figur kann Skirk auf diese Weise maximal 1 Stapelung „Kreuzung des Todes“ verleihen.",
+      "2": "Für jede Stapelung „Kreuzung des Todes“ beträgt der von Skirk in ihrem Sieben-Phasen-Blitzmodus mit Standardangriffen verursachte Schaden 110/120/170 % des ursprünglichen Schadens und der durch ihre Spezialfähigkeit <strong>Verdorbene Kunst – Zerstörung</strong> verursachte Schaden 105/115/160 % des ursprünglichen Schadens."
+    }
+  },
+  "11130009": {
+    "name": "Nieselregen-Mysterium",
+    "description": {
+      "0": "Nachdem Gegner oder Truppenmitglieder in der Nähe das Nieselregen-Mysterium berühren, treten unterschiedliche Effekte auf, je nachdem, wer es berührt:",
+      "1": "Wenn ein Gegner das Mysterium berührt, explodiert es und verursacht <hydro>Hydro-Flächenschaden</hydro> an Gegnern in der Nähe.",
+      "2": "Wenn ein Truppenmitglied in der Nähe es berührt, wird es denjenigen, der es berührt, hoch in die Luft schicken.",
+      "3": "<br/>",
+      "4": "Es kann gleichzeitig nur ein von Dahlia selbst erschaffenes Nieselregen-Mysterium existieren."
+    }
+  },
+  "11130010": {
+    "name": "Favonius-Gunst",
+    "description": {
+      "0": "Verleiht den eigenen Figuren in der Truppe beim Anwenden von Dahlias Spezialfähigkeit <strong>„Glänzend reines Gebet“</strong> diesen Effekt.",
+      "1": "Während der Wirkungsdauer kann Dahlia beim Enden der Wirkungsdauer vom „Schild der heiligen Gunst“ oder bei dessen Zerstörung durch Schaden eine Stapelung des Effekts „Segen“ verbrauchen, um den „Schild der heiligen Gunst“ erneut zu beschwören."
+    }
+  },
+  "11130011": {
+    "name": "Segen",
+    "description": {
+      "0": "Dahlia kann den Effekt „Segen“ auf folgende Weisen erhalten:",
+      "1": [
+        " Dahlia erhält X Stapelung(en) des Effekts „Segen“ jedes Mal, wenn die eigene aktive Figur in der Truppe Gegner 4 Male mit Standardangriffen trifft, während ihr die „Favonius-Gunst“ verliehen wird.",
+        " Nach dem Auslösen des Effekts des Aufstiegstalents „Sanfte Anmut des Windes“."
+      ],
+      "2": "<br/>",
+      "3": "Dahlia kann höchstens X Stapelung(en) des Effekts „Segen“ pro Wirkungsdauer der „Favonius-Gunst“ erlangen."
+    }
+  },
+  "11160001": {
+    "name": "Birgitta",
+    "description": {
+      "0": "Ineffas Helferin im Kampf, die durch Anwenden der Elementarfähigkeit oder Spezialfähigkeit auf das Feld beschworen werden kann.",
+      "1": "Birgitta bewegt sich alle 2 s, wenn sich Gegner in der Nähe befinden, schnell in die Nähe eines Gegners und löst dabei eine Elektro-Entladung aus, die <electro>Elektro-Flächenschaden</electro> verursacht.",
+      "2": "Es kann immer nur eine von Ineffa selbst beschworene Birgitta existieren.",
+      "3": "<br/>",
+      "4": "In Nod-Krai scheint es außerdem auf irgendeine Weise möglich zu sein, Birgittas Aussehen zu verändern ..."
+    }
+  },
+  "11190001": {
+    "name": "Heiligtum des Frostwaldes",
+    "description": {
+      "0": "Eine Formation zum Beschützen der Mondkantorin, die durch Anwenden der Elementarfähigkeit <strong>Runo – Ewiger Schlaf am Karsikko</strong> beschworen werden kann.",
+      "1": "Heiligtum des Frostwaldes folgt der aktuellen Figur und fügt Gegnern in der Formation alle 2 s 1-mal <dendro>Dendro-Flächenschaden</dendro> zu. Hierdurch verursachter Schaden gilt als Schaden der Elementarfähigkeit."
+    }
+  },
+  "11190002": {
+    "name": "Mondgesang",
+    "description": {
+      "0": "Musikalische Noten, die zu einem Bittgesang verwoben werden können. Sie können, sobald eine Spezialfähigkeit angewendet wird oder innerhalb kurzer Zeit danach, in den „Aschfahlen Bittgesang“ umgewandelt werden, wodurch der Schaden der Reaktionen Sprießen, Supraspross, Flammenspross und Mondspross erhöht wird.",
+      "1": "Wenn Lauma Grünenden Tau verbraucht, um mit Gedrückthalten ihre Elementarfähigkeit <strong>Runo – Ewiger Schlaf am Karsikko</strong> anzuwenden, erhält sie für jede verbrauchte Stapelung Grünenden Tau eine Stapelung „Mondgesang“."
+    }
+  },
+  "11190003": {
+    "name": "Aschfahler Bittgesang",
+    "description": {
+      "0": "Ein Gesang der Mondkantorin, der von Generation zu Generation weitergegeben wurde und den Schaden der Reaktionen Sprießen, Supraspross, Flammenspross und Mondspross erhöhen kann.",
+      "1": "<br/>",
+      "2": "Lauma kann den Aschfahlen Bittgesang durch folgende Methoden erhalten:",
+      "3": [
+        " Anwenden der Spezialfähigkeit <strong>Runo – Vereint im Monde</strong>.",
+        " Auslösen des Effekts zum Verbrauchen von „Mondgesang“ der Spezialfähigkeit <strong>Runo – Vereint im Monde</strong>.",
+        " Auslösen des Effekts vom „Heiligtum des Frostwaldes“ des Sternbilds <strong>„Blut und Tränen opfere ich dem Mond“</strong>."
+      ],
+      "4": "<br/>",
+      "5": "Verbraucht, wenn eine Figur in der Truppe die Reaktionen Sprießen, Supraspross, Flammenspross oder Mondspross auslöst, 1 Stapelung von „Aschfahler Bittgesang“ und erhöht damit den verursachten Schaden basierend auf Laumas Elementarkunde. Verbraucht, wenn der oben beschriebene Schaden gleichzeitig mehrere Gegner trifft, so viele Stapelungen „Aschfahler Bittgesang“, wie Gegner getroffen werden.",
+      "6": "Die Wirkungsdauer jeder Stapelung von „Aschfahler Bittgesang“ wird unabhängig voneinander berechnet."
+    }
+  },
+  "11190004": {
+    "name": "Nachtgesang",
+    "description": {
+      "0": "Beim Verursachen der Reaktionen „Sprießen“, „Supraspross“ und „Flammenspross“ durch Truppenmitglieder können kritische Treffer ausgelöst werden, wobei die KT auf 15 % und der KSCH auf 100 % festgelegt sind. Die KT-Rate dieses Effekts ist mit der KT-Rate ähnlicher Effekte stapelbar, die den entsprechenden Elementarreaktionen kritische Treffer ermöglichen."
+    }
+  },
+  "11190005": {
+    "name": "Mondhymne",
+    "description": {
+      "0": "Erhöht, wenn ein Truppenmitglied durch die Reaktion „Mondspross“ Schaden verursacht, die KT des Schadens um 10 % und dessen KSCH um 20 %."
+    }
+  },
+  "11190007": {
+    "name": "Steigern",
+    "description": {
+      "0": "Ein besonderer Effekt zur SCH-Erhöhung, der unabhängig von anderen SCH-Erhöhungs-Effekten berechnet wird."
+    }
+  },
+  "11190008": {
+    "name": "Grünender Tau",
+    "description": {
+      "0": "Ressource, die der Truppe gewährt wird, nachdem die Truppenmitglieder die Reaktion Mondspross ausgelöst haben.",
+      "1": "Verleiht der Truppe innerhalb von 2,5 s nach Auslösen der Reaktion Mondspross alle 2,5 s 1 Stapelung „Grünender Tau“, insgesamt bis zu 3 Stapelungen. Wenn während der Wirkungsdauer die Reaktion Mondspross erneut ausgelöst wird, wird die Wirkungsdauer dieses Effekts aktualisiert."
+    }
+  },
+  "11200001": {
+    "name": "Donnersymphonie",
+    "description": {
+      "0": "Eine besondere Spezialfähigkeit, die weniger Elementarenergie benötigt, wenn Flins sie anwendet. Flins verursacht einmal <electro>Elektro-Flächenschaden</electro>, der als Schaden durch die Reaktion „Mond unter Strom“ gewertet wird.",
+      "1": "<strong>Mondomen – Reifer Glanz</strong>: Befindet sich in der Nähe eine Gewitterwolke, wird zusätzlich einmal <electro>Elektro-Flächenschaden</electro> verursacht, der als Schaden durch die Reaktion „Mond unter Strom“ gewertet wird."
+    }
+  },
+  "11220001": {
+    "name": "Schattentanz",
+    "description": {
+      "0": "Versetzt Nefer nach Anwenden der Elementarfähigkeit <strong>Spielstrategie – Tanz der tausend Nächte</strong> in diesen Zustand.",
+      "1": "Wandelt, wenn Nefer im Zustand „Schattentanz“ über mindestens 1 Stapelung Grünender Tau verfügt, ihren heftigen Schlag in den besonderen heftigen Schlag „Fantasmaauftritt“ um.",
+      "2": "Der Zustand „Schattentanz“ wird nach Nefers 3. Anwendung von „Fantasmaauftritt“ oder dem Ende der Wirkungsdauer aufgehoben."
+    }
+  },
+  "11220002": {
+    "name": "Fantasmaauftritt",
+    "description": {
+      "0": "Wandelt, wenn Nefer sich im durch die Elementarfähigkeit <strong>Spielstrategie – Tanz der tausend Nächte</strong> ausgelösten Zustand „Schattentanz“ befindet und über mindestens 1 Stapelung „Grünender Tau“ verfügt, ihren heftigen Schlag in den keine Ausdauer verbrauchenden, besonderen heftigen Schlag „Fantasmaauftritt“ um.",
+      "1": "Ruft Trugbilder von sich selbst herbei und greift gemeinsam mit ihnen den Gegner an, wobei Nefer und ihre Trugbilder jeweils 2 bzw. 3 Phasen von <dendro>Dendro-Flächenschaden</dendro> verursachen. Von ihren Trugbildern verursachter Schaden wird als Schaden der Reaktion Mondspross gewertet. Jedes Mal nach Anwenden vom „Fantasmaauftritt“ wird beim ersten Herbeirufen der Trugbilder 1 Stapelung „Grünender Tau“ verbraucht."
+    }
+  },
+  "11220003": {
+    "name": "Schleier der Scheingeheimnisse",
+    "description": {
+      "0": "Verleiht Nefer nach der Absorbierung von „Kernen der List“ durch ihr Aufstiegstalent „Glücksspiel im Mondschein“ diesen Effekt, der ihren durch „Fantasmaauftritt“ verursachten Schaden erhöht.",
+      "1": "Erhöht für jede Stapelung von „Schleier der Scheingeheimnisse“ den durch „Fantasmaauftritt“ verursachten Schaden um 8 %, anfänglich 3-fach stapelbar, hält 9 s. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet."
+    }
+  },
+  "11230001": {
+    "name": "Essenzumwandlung",
+    "description": {
+      "0": "Ein Effekt, den Durin nach dem Anwenden der Elementarfähigkeit <strong>Zweifach – Spannung und Schmelzung</strong> erhält, hält 6 s.",
+      "1": "Lässt Durin während der Dauer durchs Drücken der Elementarfähigkeit in den Zustand <strong>Bestätigung der Helligkeit</strong> oder durchs Drücken des Standardangriffs in den Zustand <strong>Leugnung der Dunkelheit</strong> eintreten.",
+      "2": "Verleiht Durin in beiden Zuständen unterschiedliche Verstärkungseffekte und lässt ihn unterschiedliche Spezialfähigkeit anwenden."
+    }
+  },
+  "11240001": {
+    "name": "Hululu-Geheimflasche",
+    "description": {
+      "0": "Ein kleiner Elementartrank, den Jahoda nach dem Anwenden ihrer Elementarfähigkeit <strong>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</strong> hervorholt.",
+      "1": "Wandelt, wenn Jahoda sich im Zustand „Schattenverfolgung“ befindet und Gegner in der Nähe vom <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Element betroffen sind, die Hululu-Geheimflasche in den entsprechenden Elementartyp um – in der Reihenfolge <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Elektro</electro> und <cryo>Kryo</cryo>– und füllt sie kontinuierlich auf. Die Hululu-Geheimflasche kann sich nach dem Anwenden der Elementarfähigkeit lediglich einmal umwandeln.",
+      "2": "Wenn die Hululu-Geheimflasche voll ist, verlässt Jahoda den Zustand „Schattenverfolgung“, fügt Gegnern in der Nähe einmal <anemo>Anemo-SCH</anemo> zu und leert die Hululu-Geheimflasche.",
+      "3": "Jahoda holt nach jedem Anwenden ihrer Elementarfähigkeit eine neue Hululu-Geheimflasche hervor.",
+      "4": "<br/>",
+      "5": "<strong>Mondomen – Reifer Glanz</strong>: Wenn die <strong>Hululu-Geheimflasche</strong> voll ist, wird Jahoda diese nicht sofort leeren, sondern das gefüllte Element über einen bestimmten Zeitraum verbrauchen und in gewissen Abständen <strong>flauschige Katzenbälle</strong> auf Gegner in der Nähe schießen, die Schaden des Elementartyps der <strong>Hululu-Geheimflasche</strong> verursachen."
+    }
+  },
+  "11240002": {
+    "name": "Katzenförmige Geräte für Hilfe und Koordination im Haushalt",
+    "description": {
+      "0": "Eines der kleinen Hilfsmittel, die die frühere Schatzjägerin Jahoda bei sich trug. Es wird hervorgenommen, nachdem sie ihre Spezialfähigkeit <strong>Geheimgeräte – Die sieben Objekte des Jägers</strong> angewendet hat.",
+      "1": "Katzenförmige Geräte für Hilfe und Koordination im Haushalt stellen dem aktuellen Truppenmitglied auf dem Feld fortlaufend LP wieder her und stellen zudem dem Truppenmitglied mit den wenigsten LP in der Nähe LP wieder her, wenn die LP der geheilten Figur über 70 % liegen.",
+      "2": "<br/>",
+      "3": "<strong>Mondomen – Reifer Glanz</strong>: Wandelt, wenn Gegner in der Nähe vom <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Element betroffen sind, die katzenförmigen Geräte für Hilfe und Koordination im Haushalt in der Reihenfolge <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Elektro</electro> und <cryo>Kryo</cryo> in den entsprechenden Elementartyp um. Bei jedem Hervorholen kann der Elementartyp der katzenförmigen Geräte für Hilfe und Koordination im Haushalt nur einmal umgewandelt werden. Nach der Umwandlung deren Elementartyps greifen sie in gewissen zeitlichen Abständen bis zu 3 Gegner in der Nähe an und verursachen den entsprechenden Elementar-Schaden."
+    }
+  },
+  "11250001": {
+    "name": "Gravitationswelle",
+    "description": {
+      "0": "Nach dem Anwenden der Elementarfähigkeit <strong>Ewige Gezeiten</strong> beschwört Columbina die <strong>Gravitationswelle</strong> herauf.",
+      "1": "Die Gravitationswelle folgt der aktuellen Figur und fügt den Gegnern in der Umgebung fortlaufend <hydro>Hydro-Flächenschaden</hydro> zu.",
+      "2": "<br/>",
+      "3": "Verleiht Columbina zudem 2 s lang den Effekt „Offenbarung des Neumonds“, wenn Truppenmitglieder in der Nähe während der Wirkungsdauer der Gravitationswelle eine Mondleuchten-Reaktion auslösen oder Schaden durch eine Mondleuchten-Reaktion verursachen. Dabei kann fortlaufend <strong>Gravitation</strong> angesammelt werden, alle 2 s 20 Punkte.",
+      "4": "Der Höchstwert der Gravitation liegt bei 60 Punkten. Diese werden nach dem Ende der Wirkungsdauer der Gravitationswelle entfernt.",
+      "5": "Wenn der Gravitations-Höchstwert erreicht wurde, wird eine spezielle <strong>Gravitations-Interferenz</strong> ausgelöst, die unterschiedliche Effekte hervorruft, abhängig davon, durch welche Art von Mondleuchten-Reaktion Columbina am meisten Gravitation angesammelt hat. Wenn die Art Mondleuchten-Reaktion, die am meisten Gravitation für Columbina gesammelt hat, folgende ist:",
+      "6": [
+        " <strong>Mond unter Strom</strong>: Die Gravitations-Interferenz verursacht einmal <electro>Elektro-Flächenschaden</electro>. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion „Mond unter Strom“.",
+        " <strong>Mondspross</strong>: Die Gravitations-Interferenz schießt 5 Mondtau-Siegel auf Gegner in der Umgebung ab, die <dendro>Dendro-Schaden</dendro> verursachen. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion „Mondspross“.",
+        " <strong>Mond-Kristallisation</strong>: Die Gravitations-Interferenz verursacht einmal <geo>Geo-Flächenschaden</geo>. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion „Mond-Kristallisation“."
+      ]
+    }
+  },
+  "11250002": {
+    "name": "Mondgebiet",
+    "description": {
+      "0": "Ein Gebiet, das Columbina nach dem Anwenden der Spezialfähigkeit <strong>Melancholie unterm Mond</strong> erschafft.",
+      "1": "Erhöht den von allen Truppenmitgliedern verursachten Schaden der Mondleuchten-Reaktionen, wenn sich die aktuelle Figur auf dem <strong>Mondgebiet</strong> befindet."
+    }
+  },
+  "11250003": {
+    "name": "Grünender Mondtau",
+    "description": {
+      "0": "Eine spezielle Form des Grünenden Taus, die durch Columbinas passives Talent <strong>Gesetz des Neumonds</strong> bereitgestellt wird. Die Obergrenze und Dauer werden separat vom Grünenden Tau berechnet.",
+      "1": "Wenn der Grünende Tau der Truppe aufgebraucht ist, wird stattdessen <strong>Grünender Mondtau</strong> verbraucht.",
+      "2": "Die Obergrenze des <strong>Grünenden Mondtaus</strong> beträgt drei Stapelungen."
+    }
+  },
+  "11260001": {
+    "name": "Wechsel des Mondabschnitts",
+    "description": {
+      "0": "Versetzt Zibai nach dem Anwenden der Elementarfähigkeit <strong>Himmel und Erde in Gestalt</strong> in diesen Modus. Dieser Modus dauert bis zu 15 s und verfügt über folgende Eigenschaften:",
+      "1": [
+        " Wandelt Schaden von Standardangriffen und heftigen Schlägen in <geo>Geo-SCH</geo> um, der nicht von anderen Elementen überdeckt werden kann.",
+        " Ersetzt die Elementarfähigkeit <strong>Himmel und Erde in Gestalt</strong> durch die besondere Elementarfähigkeit <strong>Galopp des Geisterrosses</strong>: Wenn Zibai über mindestens 70 Punkte <strong>Abschnittswechsel-Glanz</strong> verfügt, kann sie 70 Punkte Abschnittswechsel-Glanz verbrauchen, um Galopp des Geisterrosses anzuwenden und zweimal <geo>Geo-SCH</geo> zu verursachen, wobei der Schaden der zweiten Phase als Schaden durch die Reaktion Mond-Kristallisation gewertet wird."
+      ],
+      "2": "<br/>",
+      "3": "Die Obergrenze von <strong>Abschnittswechsel-Glanz</strong> beträgt 100 Punkte. Zibai kann auf folgende Art und Weise Abschnittswechsel-Glanz sammeln:",
+      "4": [
+        " Sammelt im Modus <strong>Wechsel des Mondabschnitts</strong> jede Sekunde 10 Punkte Abschnittswechsel-Glanz.",
+        " Sammelt beim Treffen von Gegnern mit Standardangriffen 5 Punkte Abschnittswechsel-Glanz. Auf diese Art und Weise kann alle 0,5 s einmal Abschnittswechsel-Glanz für Zibai gesammelt werden."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Mondomen – Reifer Glanz</strong> ",
+      "7": "Sammelt, wenn ein Truppenmitglied in der Nähe die Reaktion Mond-Kristallisation auslöst, 35 Punkte <strong>Abschnittswechsel-Glanz</strong> für Zibai. Auf diese Art und Weise kann alle 4 s einmal Abschnittswechsel-Glanz für Zibai gesammelt werden. Wenn die besondere Elementarfähigkeit <strong>Galopp des Geisterrosses</strong> ausgelöst wird, wird die Abklingzeit fürs Ansammeln des <strong>Abschnittswechsel-Glanzes</strong> auf diese Weise zurückgesetzt.",
+      "8": "<br/>",
+      "9": "Nach viermaligem Anwenden von <strong>Galopp des Geisterrosses</strong> oder nach dem Ende der Wirkungsdauer verlässt Zibai diesen Modus."
+    }
+  },
+  "11270001": {
+    "name": "Lied der Nachtigall",
+    "description": {
+      "0": "Der Effekt, den Illuga nach dem Anwenden der Spezialfähigkeit <strong>Schattenlose Reflektion</strong> erhält. Kann den durch die aktuelle Figur verursachten <geo>Geo-SCH</geo> erhöhen."
+    }
+  }
+}

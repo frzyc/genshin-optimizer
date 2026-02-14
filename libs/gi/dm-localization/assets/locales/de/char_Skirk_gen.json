@@ -44,7 +44,7 @@
       "0": "Imitiert den Kampfstil des „Reiters des Bösen“ und erzeugt je nachdem, ob gedrückt oder gedrückt gehalten wird, unterschiedliche Effekte.",
       "1": "<br/>",
       "2": "<strong>Drücken</strong>",
-      "3": "Skirk erhält 45 Pkt. <strong>„List der Schlange“</strong> und wechselt in den <strong>„Sieben-Phasen-Blitzmodus“</strong>.",
+      "3": "Skirk erhält 45 Pkt. <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>„List der Schlange“</strong></tooltip> und wechselt in den <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>„Sieben-Phasen-Blitzmodus“</strong></tooltip>.",
       "4": "<br/>",
       "5": "<strong>Gedrückt halten</strong>",
       "6": "Skirk erhält 45 Pkt. „List der Schlange“ und bewegt sich fortlaufend mit hoher Geschwindigkeit. In diesem Zustand ist Skirks Unterbrechungs-WDS erhöht.",
@@ -72,14 +72,14 @@
   "burst": {
     "name": "Verdorbene Kunst – Zerstörung",
     "description": {
-      "0": "Skirks Spezialfähigkeit ist nicht auf Elementarenergie angewiesen, sondern auf <strong>„List der Schlange“</strong>.",
+      "0": "Skirks Spezialfähigkeit ist nicht auf Elementarenergie angewiesen, sondern auf <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>„List der Schlange“</strong></tooltip>.",
       "1": "Wenn Skirk mindestens 50 Pkt. „List der Schlange“ hat, kann sie all ihre „List der Schlange“ verbrauchen, um ihre Spezialfähigkeit auszulösen: Sie zerreißt den Raum vor ihr und führt viele schnell aufeinanderfolgende Hiebe aus, die <cryo>Kryo-Flächenschaden</cryo> verursachen. Gleichzeitig wird beim Auslösen der Fähigkeit der von der diesmaligen Spezialfähigkeit verursachte Schaden basierend auf jedem Punkt ihrer „List der Schlange“, der über 50 Pkt. liegt, erhöht. Auf diese Weise können bis zu 12 Pkt. „List der Schlange“ angerechnet werden.",
       "2": "<br/>",
-      "3": "Wenn sich Skirk im <strong>Sieben-Phasen-Blitzmodus</strong> befindet, wird ihre Spezialfähigkeit „Verdorbene Kunst – Zerstörung“ durch „Verdorbene Kunst – Vernichtung“ ersetzt.",
+      "3": "Wenn sich Skirk im <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Sieben-Phasen-Blitzmodus</strong></tooltip> befindet, wird ihre Spezialfähigkeit „Verdorbene Kunst – Zerstörung“ durch „Verdorbene Kunst – Vernichtung“ ersetzt.",
       "4": "<br/>",
       "5": "<strong>Verdorbene Kunst – Vernichtung</strong>",
       "6": "Eine besondere Spezialfähigkeit, die ohne den Verbrauch von „List der Schlange“ ausgelöst werden kann.",
-      "7": "Nach dem Auslösen erhält Skirk den Effekt „Verwelkt“, der bis zum Ende des „Sieben-Phasen-Blitzmodus“ andauert. Nach dem Freischalten des Aufstiegstalents <strong>„Vernunft jenseits der Vernunft“</strong> kann Skirk auch Leere-Risse in einem bestimmten Umkreis absorbieren.",
+      "7": "Nach dem Auslösen erhält Skirk den Effekt „Verwelkt“, der bis zum Ende des „Sieben-Phasen-Blitzmodus“ andauert. Nach dem Freischalten des Aufstiegstalents <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>„Vernunft jenseits der Vernunft“</strong></tooltip> kann Skirk auch Leere-Risse in einem bestimmten Umkreis absorbieren.",
       "8": "Während der Wirkungsdauer des Effekts „Verwelkt“ verursachen die Standardangriffe von Skirk, die Gegner treffen, alle 0,1 s erhöhten Schaden. Wenn Skirk bei der Verwendung von <strong>„Verdorbene Kunst – Vernichtung“</strong> Leere-Risse absorbiert hat, dann erhöht sich der Schaden des diesmaligen Standardangriffs basierend auf der Anzahl der absorbierten Leere-Risse.",
       "9": "Dieser Effekt wird entfernt, sobald er 10-mal ausgelöst wurde."
     },
@@ -109,12 +109,12 @@
       "1": "<br/>",
       "2": "Skirk kann auf die folgenden Weisen Leere-Risse in einem bestimmten Umkreis absorbieren:",
       "3": [
-        " Wenn sie im <strong>„Sieben-Phasen-Blitzmodus“</strong> Gegner mit heftigen Schlägen trifft.",
+        " Wenn sie im <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>„Sieben-Phasen-Blitzmodus“</strong></tooltip> Gegner mit heftigen Schlägen trifft.",
         " Wenn sie im „Sieben-Phasen-Blitzmodus“ ihre besondere Spezialfähigkeit <strong>„Verdorbene Kunst – Vernichtung“</strong> auslöst.",
         " Wenn sie durch Gedrückthalten ihre Elementarfähigkeit <strong>Verdorbene Kunst – Verzerrung</strong> auslöst, um sich schnell zu bewegen."
       ],
       "4": "<br/>",
-      "5": "Skirk erhält für jeden absorbierten Riss 8 Pkt. <strong>„List der Schlange“</strong>."
+      "5": "Skirk erhält für jeden absorbierten Riss 8 Pkt. <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>„List der Schlange“</strong></tooltip>."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
     "description": {
       "0": "Verleiht Skirk jedes Mal, wenn <hydro>Hydro</hydro>-Truppenmitglieder in der Nähe mit ihren <hydro>Hydro</hydro>-Angriffen Gegner treffen oder andere <cryo>Kryo</cryo>-Truppenmitglieder außer Skirk in der Nähe mit ihren <cryo>Kryo</cryo>-Angriffen Gegner treffen, für 20 s den Effekt „Kreuzung des Todes“. 3-fach stapelbar, Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
       "1": "Jede Figur kann Skirk auf diese Weise maximal 1 Stapelung „Kreuzung des Todes“ verleihen.",
-      "2": "Für jede Stapelung „Kreuzung des Todes“ beträgt der von Skirk in ihrem <strong>Sieben-Phasen-Blitzmodus</strong> mit Standardangriffen verursachte Schaden 110/120/170 % des ursprünglichen Schadens und der durch ihre Spezialfähigkeit <strong>Verdorbene Kunst – Zerstörung</strong> verursachte Schaden 105/115/160 % des ursprünglichen Schadens."
+      "2": "Für jede Stapelung „Kreuzung des Todes“ beträgt der von Skirk in ihrem <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Sieben-Phasen-Blitzmodus</strong></tooltip> mit Standardangriffen verursachte Schaden 110/120/170 % des ursprünglichen Schadens und der durch ihre Spezialfähigkeit <strong>Verdorbene Kunst – Zerstörung</strong> verursachte Schaden 105/115/160 % des ursprünglichen Schadens."
     }
   },
   "passive3": {
@@ -134,43 +134,43 @@
   "constellation1": {
     "name": "Tiefer Fall",
     "description": {
-      "0": "Verstärkt den Effekt des Aufstiegstalents <strong>Vernunft jenseits der Vernunft</strong>: Für jeden absorbierten Leere-Riss wird eine Kristallklinge beschworen, die Gegner in der Nähe angreift und <cryo>Kryo-Schaden</cryo> in Höhe von 500 % von Skirks ANG verursacht. Hierdurch verursachter Schaden gilt als Schaden des heftigen Schlags.",
+      "0": "Verstärkt den Effekt des Aufstiegstalents <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Vernunft jenseits der Vernunft</strong></tooltip>: Für jeden absorbierten Leere-Riss wird eine Kristallklinge beschworen, die Gegner in der Nähe angreift und <cryo>Kryo-Schaden</cryo> in Höhe von 500 % von Skirks ANG verursacht. Hierdurch verursachter Schaden gilt als Schaden des heftigen Schlags.",
       "1": "Das Aufstiegstalent „Vernunft jenseits der Vernunft“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation2": {
     "name": "In den Abgrund",
     "description": {
-      "0": "Verleiht Skirk nach dem Anwenden ihrer Elementarfähigkeit <strong>Verdorbene Kunst – Verzerrung</strong> zusätzlich 10 Pkt. <strong>„List der Schlange“</strong>.",
+      "0": "Verleiht Skirk nach dem Anwenden ihrer Elementarfähigkeit <strong>Verdorbene Kunst – Verzerrung</strong> zusätzlich 10 Pkt. <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>„List der Schlange“</strong></tooltip>.",
       "1": "Verstärkt beim Auslösen der Spezialfähigkeit <strong>Verdorbene Kunst – Zerstörung</strong> deren verursachten Schaden, indem bis zu 10 zusätzliche Punkte von „List der Schlange“ mit hinzugezählt werden.",
-      "2": "Außerdem erhöht sich Skirks ANG für 12,5 s um 70 %, nachdem sie im Modus <strong>Sieben-Phasen-Blitz</strong> ihre besondere Spezialfähigkeit <strong>Verdorbene Kunst – Vernichtung</strong> ausgelöst hat. Dieser Effekt wird aufgehoben, wenn Skirk den Sieben-Phasen-Blitzmodus beendet."
+      "2": "Außerdem erhöht sich Skirks ANG für 12,5 s um 70 %, nachdem sie im Modus <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Sieben-Phasen-Blitz</strong></tooltip> ihre besondere Spezialfähigkeit <strong>Verdorbene Kunst – Vernichtung</strong> ausgelöst hat. Dieser Effekt wird aufgehoben, wenn Skirk den Sieben-Phasen-Blitzmodus beendet."
     }
   },
   "constellation3": {
     "name": "Schicksalhafte Verderbnis",
     "description": {
-      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Verdorbene Kunst – Zerstörung</strong> um 3.",
+      "0": "Erhöht die Stufe der Spezialfähigkeit <tooltip ns=char_Skirk_gen baseKey18=burst><strong>Verdorbene Kunst – Zerstörung</strong></tooltip> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation4": {
     "name": "Unterbrochener Fluss",
     "description": {
-      "0": "Verstärkt den Effekt des Aufstiegstalents <strong>Rückkehr ins Vergessen</strong>: Erhöht für jede Stapelung „Kreuzung des Todes“ den ANG von Skirk zusätzlich um 10/20/40 %.",
+      "0": "Verstärkt den Effekt des Aufstiegstalents <tooltip ns=tooltips_gen baseKey18=11130008 values=[]><strong>Rückkehr ins Vergessen</strong></tooltip>: Erhöht für jede Stapelung „Kreuzung des Todes“ den ANG von Skirk zusätzlich um 10/20/40 %.",
       "1": "Das Aufstiegstalent „Rückkehr ins Vergessen“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation5": {
     "name": "Letzter Wunsch",
     "description": {
-      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Verdorbene Kunst – Verzerrung</strong> um 3.",
+      "0": "Erhöht die Stufe der Elementarfähigkeit <tooltip ns=char_Skirk_gen baseKey18=skill><strong>Verdorbene Kunst – Verzerrung</strong></tooltip> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation6": {
     "name": "Zur Quelle",
     "description": {
-      "0": "Verleiht Skirk für jeden „Leere-Riss“, den sie durch das Aufstiegstalent <strong>„Vernunft jenseits der Vernunft“</strong> absorbiert hat, eine Stapelung des Effekts „Verdorbene Kunst – Enthauptung“. Indem sie „Verdorbene Kunst – Enthauptung“ verbraucht, kann Skirk abgestimmte Angriffe durchführen. Außerdem wird der Schaden, den sie im Modus <strong>Sieben-Phasen-Blitz</strong> erleidet, verringert. Die Stapelung des Effekts hält 15 s, 3-fach stapelbar, Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
+      "0": "Verleiht Skirk für jeden „Leere-Riss“, den sie durch das Aufstiegstalent <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>„Vernunft jenseits der Vernunft“</strong></tooltip> absorbiert hat, eine Stapelung des Effekts „Verdorbene Kunst – Enthauptung“. Indem sie „Verdorbene Kunst – Enthauptung“ verbraucht, kann Skirk abgestimmte Angriffe durchführen. Außerdem wird der Schaden, den sie im Modus <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Sieben-Phasen-Blitz</strong></tooltip> erleidet, verringert. Die Stapelung des Effekts hält 15 s, 3-fach stapelbar, Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
       "1": "Das Aufstiegstalent „Vernunft jenseits der Vernunft“ muss zuerst freigeschaltet werden.",
       "2": "<br/>",
       "3": "<strong>Verdorbene Kunst – Enthauptung</strong>",

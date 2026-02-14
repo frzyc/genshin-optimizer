@@ -49,7 +49,7 @@
       ],
       "2": "<br/>",
       "3": "<strong>Lancia burrascosa del Nord</strong>",
-      "4": "Flins evoca una tempesta di lance dinanzi a sé, infliggendo <electro>DAN da Electro ad area</electro> e trasformando il suo Tripudio elementale <strong>Rito ancestrale: Venuta della Notte</strong> nel Tripudio elementale speciale <strong>Sinfonia tonante</strong> per i successivi 6 s.",
+      "4": "Flins evoca una tempesta di lance dinanzi a sé, infliggendo <electro>DAN da Electro ad area</electro> e trasformando il suo Tripudio elementale <strong>Rito ancestrale: Venuta della Notte</strong> nel Tripudio elementale speciale <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Sinfonia tonante</strong></tooltip> per i successivi 6 s.",
       "5": "Il TdR di base di <strong>Lancia burrascosa del Nord</strong> è di 6 s e non viene influenzato da altri effetti."
     },
     "skillParams": {
@@ -148,7 +148,7 @@
   "constellation3": {
     "name": "Straniero nella notte",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Rito ancestrale: Venuta della Notte</strong>.",
+      "0": "Aumenta di 3 il livello di <tooltip ns=char_Flins_gen baseKey18=burst><strong>Rito ancestrale: Venuta della Notte</strong></tooltip>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
@@ -156,20 +156,20 @@
     "name": "Notte sulla montagna desolata",
     "description": {
       "0": "L'ATT di Flins aumenta di un 20%.",
-      "1": "Inoltre, il suo talento d'ascensione <strong>Fiamma sussurrante</strong> viene potenziato: la maestria elementale di Flins aumenta di un 10% del suo ATT. L'incremento massimo ottenibile in questo modo è di 220."
+      "1": "Inoltre, il suo talento d'ascensione <tooltip ns=char_Flins_gen baseKey18=passive2><strong>Fiamma sussurrante</strong></tooltip> viene potenziato: la maestria elementale di Flins aumenta di un 10% del suo ATT. L'incremento massimo ottenibile in questo modo è di 220."
     }
   },
   "constellation5": {
     "name": "Ombra dell'esule",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Rito ancestrale: Luce arcana</strong>.",
+      "0": "Aumenta di 3 il livello di <tooltip ns=char_Flins_gen baseKey18=skill><strong>Rito ancestrale: Luce arcana</strong></tooltip>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation6": {
     "name": "Canti e danze della morte",
     "description": {
-      "0": "I DAN inflitti agli avversari dalle reazioni di Carica lunare di Flins vengono <strong>innalzati</strong> di un 35%.",
+      "0": "I DAN inflitti agli avversari dalle reazioni di Carica lunare di Flins vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 35%.",
       "1": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, i DAN da Carica lunare di tutti i membri vicini del gruppo vengono <strong>innalzati</strong> di un 10%."
     }
   }

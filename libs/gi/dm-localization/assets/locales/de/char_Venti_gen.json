@@ -39,7 +39,7 @@
         "1": "Verleiht Venti, während das durch die Spezialfähigkeit <strong>Ode vom Anemo-Archon</strong> hervorgerufene Zentrum des Sturms existiert, folgende Verstärkungseffekte:",
         "2": [
           " Wandelt seinen Standardangriff in <strong>Orkanpfeile</strong> um, die Gegner durchbohren sowie Gegnern in ihrer Flugbahn größeren <anemo>Anemo-Schaden</anemo> zufügen können.",
-          " Verlängert die Dauer des Zentrums des Sturms, wenn Venti Gegner mit seinem Standardangriff trifft, um 1 s und die Abklingzeit um 0,5 s. 0,1 s Abklingzeit. Bis zu 2-mal nach jedem Anwenden der Spezialfähigkeit <strong>Zentrum des Sturms</strong> auslösbar."
+          " Verlängert die Dauer des Zentrums des Sturms, wenn Venti Gegner mit seinem Standardangriff trifft, um 1 s und die Abklingzeit um 0,5 s. 0,1 s Abklingzeit. Bis zu 2-mal nach jedem Anwenden der Spezialfähigkeit <strong>Ode vom Anemo-Archon</strong> auslösbar."
         ]
       }
     },
@@ -177,7 +177,7 @@
       "1": "Verleiht Venti nach dem Anwenden der Spezialfähigkeit <strong>Ode vom Anemo-Archon</strong> zusätzlich den Effekt <strong>Aufkommender Wind</strong> und aktualisiert die Abklingzeit der Elementarfähigkeit <strong>Sonett vom Himmel</strong>. Verleiht Venti nach dem Treffen eines Gegners mit einem <strong>Orkanpfeil</strong> ebenfalls mit einer Wahrscheinlichkeit von 25 % den Effekt <strong>Aufkommender Wind</strong>.",
       "2": "<br/>",
       "3": "<strong>Aufkommender Wind</strong>",
-      "4": "Verursacht beim Anwenden der Elementarfähigkeit <strong>Sonett vom Himmel</strong> durchs Drücken 300 % des ursprünglichen Schadens. Dieser Effekt hält 15 s und wird nach dem Anwenden von Ventis Elementarfähigkeit <strong>Sonett vom Himmel</strong> entfernt."
+      "4": "Verursacht beim Anwenden der Elementarfähigkeit <strong>Sonett vom Himmel</strong> durchs Drücken 300 % des ursprünglichen Schadens. Dieser Effekt hält 15 s und wird nach dem Anwenden von Ventis Elementarfähigkeit <strong>Sonett vom Himmel</strong> durchs Drücken entfernt."
     }
   },
   "constellation3": {
@@ -210,7 +210,7 @@
       "1": "Verringert bei Elementarumwandlung den entsprechenden Elementar-WDS auch um 20 %."
     },
     "upgradedDescription": {
-      "0": "Verringert den <anemo>Anemo-WDS</anemo> von Zielen, denen mit <strong>Ode vom Anemo-Archon</strong> Schaden zugefügt wird, um 20 %.",
+      "0": "Verringert den <anemo>Anemo-WDS</anemo> von Gegnern, denen mit <strong>Ode vom Anemo-Archon</strong> Schaden zugefügt wird, um 20 %.",
       "1": "Verringert bei Elementarumwandlung den entsprechenden Elementar-WDS auch um 20 %.",
       "2": "Gewährt zudem einen KSCH-Bonus von 100 % für den Schaden, den Venti diesen Gegnern zufügt."
     }

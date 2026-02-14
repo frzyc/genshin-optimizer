@@ -2,23 +2,24 @@ import type { Database } from '@genshin-optimizer/common/database'
 import type { GenderKey } from '@genshin-optimizer/gi/consts'
 import { allGenderKeys } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
+import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 import type { IGO, ImportResult } from '../exim'
 
-export interface IDBMeta {
-  name: string
-  lastEdit: number
-  gender: GenderKey
-}
+// Schema with defaults - single source of truth
+// Uses .catch() to provide fallback values for invalid data
+const createDbMetaSchema = (defaultName: string) =>
+  z.object({
+    name: z.string().catch(defaultName),
+    lastEdit: z.number().catch(0),
+    gender: z
+      .enum(allGenderKeys as unknown as [GenderKey, ...GenderKey[]])
+      .catch('F'),
+  })
 
-function dbMetaInit(database: Database): IDBMeta {
-  return {
-    name: `Database ${database.storage.getDBIndex()}`,
-    lastEdit: 0,
-    gender: 'F',
-  }
-}
+// Type derived from schema
+export type IDBMeta = z.infer<ReturnType<typeof createDbMetaSchema>>
 
 export class DBMetaEntry extends DataEntry<
   'dbMeta',
@@ -27,18 +28,18 @@ export class DBMetaEntry extends DataEntry<
   IDBMeta
 > {
   constructor(database: ArtCharDatabase) {
-    super(database, 'dbMeta', dbMetaInit, 'dbMeta')
+    const defaultName = (db: Database) => `Database ${db.storage.getDBIndex()}`
+    super(
+      database,
+      'dbMeta',
+      (db) => createDbMetaSchema(defaultName(db)).parse({}),
+      'dbMeta'
+    )
   }
-  override validate(obj: any): IDBMeta | undefined {
-    if (typeof obj !== 'object') return undefined
-    let { name, lastEdit, gender } = obj
-    if (typeof name !== 'string')
-      name = `Database ${this.database.storage.getDBIndex()}`
-    if (typeof lastEdit !== 'number') console.warn('lastEdit INVALID')
-    if (typeof lastEdit !== 'number') lastEdit = 0
-    if (!allGenderKeys.includes(gender)) gender = 'F'
-
-    return { name, lastEdit, gender } as IDBMeta
+  override validate(obj: unknown): IDBMeta | undefined {
+    const defaultName = `Database ${this.database.storage.getDBIndex()}`
+    const result = createDbMetaSchema(defaultName).safeParse(obj)
+    return result.success ? result.data : undefined
   }
   override importGOOD(go: IGO & IGOOD, _result: ImportResult): void {
     const data = go[this.dataKey]

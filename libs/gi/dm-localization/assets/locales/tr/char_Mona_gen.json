@@ -157,28 +157,20 @@
   "constellation1": {
     "name": "Batışın Kehaneti",
     "description": {
-      "0": "Kendi grup üyelerinden biri Alamet etkisi altındayken <hydro>Su içeren Element Tepkimelerinin</hydro> etkileri 8 saniyeliğine artar:",
+      "0": "Kendi grup üyelerinden biri, Alamet etkisindeki bir düşmana vurduğunda 8 saniyeliğine <hydro>Su ile ilgili Element Tepkimelerin</hydro> etkileri güçlenir:",
       "1": [
-        "Elektrik Yüklü Hasarı %15 artar.",
-        "Ay Yüklü Hasarı %15 artar.",
-        "Buharlaşma Hasarı %15 artar.",
-        "Su Girdabı Hasarı %15 artar.",
+        "Elektrik Yüklü Hasarı %15 artar, Ay Yüklü Hasarı %15 artar, Buharlaşma Hasarı %15 artar, Su Girdabı Hasarı %15 artar, Ay Kristalleşmesi Hasarı %15 artar.",
         "Donma süresi %15 uzar."
       ]
     },
     "upgradedDescription": {
-      "0": "Kendi grup üyelerinden biri Alamet etkisi altında bir düşmana vurduğunda 8 saniyeliğine <hydro>Su ile ilgili Element Tepkimelerinin</hydro> etkileri güçlenir:",
+      "0": "Kendi grup üyelerinden biri, Alamet etkisindeki bir düşmana vurduğunda 8 saniyeliğine <hydro>Su ile ilgili Element Tepkimelerin</hydro> etkileri güçlenir:",
       "1": [
-        "Elektrik Yüklü Hasarı %15 artar.",
-        "Ay Yüklü Hasarı %15 artar."
-      ],
-      "2": "Buharlaşma Hasarı %15 artar.",
-      "3": [
-        "Su Girdabı Hasarı %15 artar.",
+        "Elektrik Yüklü Hasarı %15 artar, Ay Yüklü Hasarı %15 artar, Buharlaşma Hasarı %15 artar, Su Girdabı Hasarı %15 artar, Ay Kristalleşmesi Hasarı %15 artar.",
         "Donma süresi %15 uzar."
       ],
-      "4": "<br/>",
-      "5": "Ayrıca savaş alanında olmayan grup üyelerin yukarıdaki etkiyi tetiklerse, yukarıdaki Su ile ilgili Element Tepkimelerinin Hasar Bonusu, orijinal etkisinin %160'ına yükseltilir."
+      "2": "<br/>",
+      "3": "Ayrıca savaş alanında olmayan grup üyelerin yukarıdaki etkiyi tetiklerse, yukarıdaki Su ile ilgili Element Tepkimelerinin Hasar Bonusu, orijinal etkisinin %160'ına yükseltilir."
     }
   },
   "constellation2": {

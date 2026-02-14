@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Erbe des Relikts der uralten See",
     "description": {
-      "0": "Neuvillette erhält für 30 s den Effekt „Glorie längst vergangener Drachen“, wenn Truppenmitglieder beim Gegner die Reaktionen „Verdampfen“, „Gefroren“, „Unter Strom“, „Mond unter Strom“, „Sprießen“, „Mondspross“, „Hydro-Verwirbelung“ oder „Hydro-Kristallisation“ auslösen. 3-fach stapelbar. Dieser Effekt erhöht den Schaden von „heftigem Schlag – Gerechter Vorstoß“ bei 1/2/3 Stapelungen auf 110/125/160 % des ursprünglichen Schadens.",
+      "0": "Neuvillette erhält für 30 s den Effekt „Glorie längst vergangener Drachen“, wenn Truppenmitglieder beim Gegner die Reaktionen „Verdampfen“, „Gefroren“, „Unter Strom“, „Mond unter Strom“, „Sprießen“, „Mondspross“, „Hydro-Verwirbelung“, „Hydro-Kristallisation“ oder „Mond-Kristallisation“ auslösen. 3-fach stapelbar. Dieser Effekt erhöht den Schaden von „heftigem Schlag – Gerechter Vorstoß“ bei 1/2/3 Stapelungen auf 110/125/160 % des ursprünglichen Schadens.",
       "1": "Jede „Glorie längst vergangener Drachen“, die durch jede Art von Elementarreaktionen erzeugt wird, existiert unabhängig voneinander."
     }
   },

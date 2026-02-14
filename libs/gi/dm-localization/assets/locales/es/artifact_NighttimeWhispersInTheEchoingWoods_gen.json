@@ -2,7 +2,7 @@
   "setName": "Murmullo del Bosque Reverberante",
   "setEffects": {
     "2": "ATQ +18%.",
-    "4": "Tras usar la Habilidad Elemental, el personaje obtiene un 20% de Bono de Daño Geo durante 10 s. Si está protegido por un escudo creado mediante la reacción de Cristalización, el anterior efecto aumenta en un 150%. Este aumento adicional se eliminará 1 s después de perder el escudo creado mediante Cristalización."
+    "4": "Tras usar la Habilidad Elemental, el personaje obtiene un 20% de Bono de Daño Geo durante 10 s. Si está protegido por un escudo creado mediante la reacción de Cristalización o si en las cercanías hay algún pilar lunar creado con la reacción de Cristalización Lunar, el anterior efecto aumenta en un 150%. Este aumento adicional se eliminará en 1 s si no se han cumplido los anteriores requisitos."
   },
   "pieces": {
     "flower": {

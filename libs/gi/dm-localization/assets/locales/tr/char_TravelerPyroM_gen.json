@@ -110,6 +110,20 @@
       "0": "<strong>Yakıcı Eşik</strong> veya <strong>Kavurucu Eşik</strong> içindeki mevcut aktif karakter <pyro>Ateş ile ilgili bir tepkime</pyro> tetiklediğinde Gezgin 5 Enerji yeniler. Bu etki 12 saniyede bir tetiklenebilir. Ayrıca yakındaki bir grup üyesi Gece Ruhu Patlaması tetiklediğinde Gezgin 4 Enerji yeniler."
     }
   },
+  "lockedPassive": {
+    "name": "Yabancı Yıldız Ateşi",
+    "description": {
+      "0": "Geçmiş yolculuklarından yeni bir güç al. Rezonansa girdiğin her element için ek <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>güçlendirmeler</strong></tooltip> kazanırsın.",
+      "1": "<br/>",
+      "2": "Ayrıca yakındaki grup üyeleri Gece Ruhu Patlaması tetiklediğinde Gezgin 1 kademe Kutsal Alev Kılıcı kazanır, toplamda en fazla 2 kademe kazanabilir. 2 kademe Kutsal Alev Kılıcı kazandıktan sonra bir Yüklü Saldırı yapmak, tüm Kutsal Alev Kılıcı kademelerini tüketir ve Yüklü Saldırı gelişerek <strong>Yüklü Saldırı: Cehennem</strong> olur.",
+      "3": "<br/>",
+      "4": "<strong>Yüklü Saldırı: Cehennem</strong>",
+      "5": [
+        "İsabet eden her Yüklü Saldırı, Gece Ruhu tesirli daha fazla <pyro>Ateş Hasarı</pyro> verir. Hasar artışı, Gezginin Saldırısının %200'üne eşittir.",
+        "<strong>Yüklü Saldırı: Cehennem</strong> en fazla 15 saniyede bir tetiklenebilir."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Yıldız Ateşinden Yayılan Işık",
     "description": {

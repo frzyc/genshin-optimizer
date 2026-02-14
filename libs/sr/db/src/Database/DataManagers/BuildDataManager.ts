@@ -1,21 +1,28 @@
+import { zodString, zodTypedRecord } from '@genshin-optimizer/common/database'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
-import type { RelicIds } from '../../Types'
+import { z } from 'zod'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
-export interface Build {
-  name: string
-  description: string
-  characterKey: CharacterKey
-  teamId?: string
 
-  lightConeId?: string
-  relicIds: RelicIds
-}
+const relicIdValueSchema = z.union([z.string(), z.undefined()])
+const relicIdsSchema = zodTypedRecord(allRelicSlotKeys, relicIdValueSchema)
+
+const buildSchema = z.object({
+  name: z.string().catch('Build Name'),
+  description: zodString(),
+  characterKey: z.enum(allCharacterKeys),
+  teamId: z.string().optional(),
+  lightConeId: z.string().optional(),
+  relicIds: relicIdsSchema.catch(objKeyMap(allRelicSlotKeys, () => undefined)),
+})
+
+export type Build = z.infer<typeof buildSchema>
+export type RelicIds = Build['relicIds']
 
 export class BuildDataManager extends DataManager<
   string,
@@ -27,29 +34,32 @@ export class BuildDataManager extends DataManager<
     super(database, 'builds')
   }
   override validate(obj: unknown): Build | undefined {
-    const { characterKey, teamId } = obj as Build
-    if (!allCharacterKeys.includes(characterKey)) return undefined
+    const result = buildSchema.safeParse(obj)
+    if (!result.success) return undefined
 
-    let { name, description, lightConeId, relicIds } = obj as Build
+    const {
+      name,
+      description,
+      characterKey,
+      teamId,
+      lightConeId: rawLightConeId,
+      relicIds: rawRelicIds,
+    } = result.data
 
-    // Cannot validate teamId, since on db init database.teams do not exist yet.
-    // if (teamId && !this.database.teams.get(teamId)) teamId = undefined
-    if (typeof name !== 'string') name = 'Build Name'
-    if (typeof description !== 'string') description = ''
+    // Validate lightConeId exists in database
+    let lightConeId = rawLightConeId
     if (lightConeId && !this.database.lightCones.get(lightConeId))
       lightConeId = undefined
 
-    if (typeof relicIds !== 'object')
-      relicIds = objKeyMap(allRelicSlotKeys, () => '')
-    else
-      relicIds = objKeyMap(allRelicSlotKeys, (sk) => {
-        const id = relicIds[sk]
-        if (!id) return ''
-        const relic = this.database.relics.get(id)
-        if (!relic) return ''
-        if (relic.slotKey !== sk) return ''
-        return id
-      })
+    // Validate relicIds - ensure each relic exists and matches its slot
+    const relicIds = objKeyMap(allRelicSlotKeys, (sk): string | undefined => {
+      const id = rawRelicIds?.[sk]
+      if (!id) return undefined
+      const relic = this.database.relics.get(id)
+      if (!relic || relic.slotKey !== sk) return undefined
+      return id
+    })
+
     return {
       name,
       characterKey,

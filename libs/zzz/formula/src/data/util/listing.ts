@@ -70,6 +70,7 @@ export const damageTypes = [
   'exSpecial',
   'chain',
   'ult',
+  'entrySkill',
   'quickAssist',
   'defensiveAssist',
   'evasiveAssist',

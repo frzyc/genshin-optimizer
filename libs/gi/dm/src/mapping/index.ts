@@ -1,5 +1,6 @@
 export * from './artifact'
 export * from './character'
+export * from './deobf'
 export * from './weapon'
 
 export const tagColor = {

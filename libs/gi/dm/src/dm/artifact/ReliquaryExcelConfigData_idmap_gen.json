@@ -2073,7 +2073,7 @@
   ],
   "23787": [
     15041,
-    "FeatherOfIndelibleSin"
+    "VesselOfPlenty"
   ],
   "23788": [
     15041,
@@ -2081,7 +2081,7 @@
   ],
   "23789": [
     15041,
-    "BloomOfTheMindsDesire"
+    "VesselOfPlenty"
   ],
   "23790": [
     15041,
@@ -2126,6 +2126,86 @@
   "23800": [
     15042,
     "FrostDevoteesDelirium"
+  ],
+  "23801": [
+    15043,
+    "MoonlitOfferingsLibation"
+  ],
+  "23802": [
+    15043,
+    "MoonlitOfferingsPartingLight"
+  ],
+  "23803": [
+    15043,
+    "MoonlitOfferingsSilverCrown"
+  ],
+  "23804": [
+    15043,
+    "MoonlitOfferingsOpulentDream"
+  ],
+  "23805": [
+    15043,
+    "MoonlitOfferingsFinalHour"
+  ],
+  "23806": [
+    15043,
+    "MoonlitOfferingsLibation"
+  ],
+  "23807": [
+    15043,
+    "MoonlitOfferingsPartingLight"
+  ],
+  "23808": [
+    15043,
+    "MoonlitOfferingsSilverCrown"
+  ],
+  "23809": [
+    15043,
+    "MoonlitOfferingsOpulentDream"
+  ],
+  "23810": [
+    15043,
+    "MoonlitOfferingsFinalHour"
+  ],
+  "23811": [
+    15044,
+    "HeldenepossUnspokenTale"
+  ],
+  "23812": [
+    15044,
+    "DawnsBrilliantOath"
+  ],
+  "23813": [
+    15044,
+    "MinnesangOfLoveAndLament"
+  ],
+  "23814": [
+    15044,
+    "WindborneFlowersSpruchdichtung"
+  ],
+  "23815": [
+    15044,
+    "ANoteInSpringsLeich"
+  ],
+  "23816": [
+    15044,
+    "HeldenepossUnspokenTale"
+  ],
+  "23817": [
+    15044,
+    "HeldenepossUnspokenTale"
+  ],
+  "23818": [
+    15044,
+    "HeldenepossUnspokenTale"
+  ],
+  "23819": [
+    15044,
+    "MinnesangOfLoveAndLament"
+  ],
+  "23820": [
+    15044,
+    "ANoteInSpringsLeich"
   ],
   "24101": [
     15001,
@@ -4406,6 +4486,166 @@
   "42554": [
     15042,
     "FrostDevoteesDelirium"
+  ],
+  "43412": [
+    15043,
+    "MoonlitOfferingsLibation"
+  ],
+  "43413": [
+    15043,
+    "MoonlitOfferingsLibation"
+  ],
+  "43422": [
+    15043,
+    "MoonlitOfferingsPartingLight"
+  ],
+  "43423": [
+    15043,
+    "MoonlitOfferingsPartingLight"
+  ],
+  "43432": [
+    15043,
+    "MoonlitOfferingsSilverCrown"
+  ],
+  "43433": [
+    15043,
+    "MoonlitOfferingsSilverCrown"
+  ],
+  "43442": [
+    15043,
+    "MoonlitOfferingsOpulentDream"
+  ],
+  "43443": [
+    15043,
+    "MoonlitOfferingsOpulentDream"
+  ],
+  "43452": [
+    15043,
+    "MoonlitOfferingsFinalHour"
+  ],
+  "43453": [
+    15043,
+    "MoonlitOfferingsFinalHour"
+  ],
+  "43513": [
+    15043,
+    "MoonlitOfferingsLibation"
+  ],
+  "43514": [
+    15043,
+    "MoonlitOfferingsLibation"
+  ],
+  "43523": [
+    15043,
+    "MoonlitOfferingsPartingLight"
+  ],
+  "43524": [
+    15043,
+    "MoonlitOfferingsPartingLight"
+  ],
+  "43533": [
+    15043,
+    "MoonlitOfferingsSilverCrown"
+  ],
+  "43534": [
+    15043,
+    "MoonlitOfferingsSilverCrown"
+  ],
+  "43543": [
+    15043,
+    "MoonlitOfferingsOpulentDream"
+  ],
+  "43544": [
+    15043,
+    "MoonlitOfferingsOpulentDream"
+  ],
+  "43553": [
+    15043,
+    "MoonlitOfferingsFinalHour"
+  ],
+  "43554": [
+    15043,
+    "MoonlitOfferingsFinalHour"
+  ],
+  "44412": [
+    15044,
+    "HeldenepossUnspokenTale"
+  ],
+  "44413": [
+    15044,
+    "HeldenepossUnspokenTale"
+  ],
+  "44422": [
+    15044,
+    "DawnsBrilliantOath"
+  ],
+  "44423": [
+    15044,
+    "DawnsBrilliantOath"
+  ],
+  "44432": [
+    15044,
+    "MinnesangOfLoveAndLament"
+  ],
+  "44433": [
+    15044,
+    "MinnesangOfLoveAndLament"
+  ],
+  "44442": [
+    15044,
+    "WindborneFlowersSpruchdichtung"
+  ],
+  "44443": [
+    15044,
+    "WindborneFlowersSpruchdichtung"
+  ],
+  "44452": [
+    15044,
+    "ANoteInSpringsLeich"
+  ],
+  "44453": [
+    15044,
+    "ANoteInSpringsLeich"
+  ],
+  "44513": [
+    15044,
+    "HeldenepossUnspokenTale"
+  ],
+  "44514": [
+    15044,
+    "HeldenepossUnspokenTale"
+  ],
+  "44523": [
+    15044,
+    "DawnsBrilliantOath"
+  ],
+  "44524": [
+    15044,
+    "DawnsBrilliantOath"
+  ],
+  "44533": [
+    15044,
+    "MinnesangOfLoveAndLament"
+  ],
+  "44534": [
+    15044,
+    "MinnesangOfLoveAndLament"
+  ],
+  "44543": [
+    15044,
+    "WindborneFlowersSpruchdichtung"
+  ],
+  "44544": [
+    15044,
+    "WindborneFlowersSpruchdichtung"
+  ],
+  "44553": [
+    15044,
+    "ANoteInSpringsLeich"
+  ],
+  "44554": [
+    15044,
+    "ANoteInSpringsLeich"
   ],
   "51110": [
     10001,

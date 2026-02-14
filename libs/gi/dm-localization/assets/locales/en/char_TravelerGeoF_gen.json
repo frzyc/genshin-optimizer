@@ -159,6 +159,21 @@
       "0": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as <geo>AoE Geo DMG</geo>."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Adamantine",
+    "description": {
+      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>buffs</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Additionally, when nearby party members become protected by a shield, when the shield is replaced for any reason, or when <geo>Geo Constructs</geo> are created, the Traveler will receive 1 stack of Blade of Archaic Petra, max 3 stacks. Up to 1 stack may be obtained every second in this way. After obtaining 3 stacks of Blade of Archaic Petra, performing a Charged Attack will consume all stacks of Blade of Archaic Petra and transform into the special <strong>Charged Attack: Rockfell</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Rockfell</strong>",
+      "5": [
+        " Each Charged Attack hit deals increased <geo>Geo DMG</geo>. Increase in DMG is equal to 120% of Traveler's ATK.",
+        " For 15s after hitting an opponent, nearby party members will have their shield strength temporarily increased by 20%.",
+        " <strong>Charged Attack: Rockfell</strong> can be triggered up to once every 15s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Invincible Stonewall",
     "description": {

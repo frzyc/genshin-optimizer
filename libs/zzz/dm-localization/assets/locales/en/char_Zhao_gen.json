@@ -1,0 +1,294 @@
+{
+  "name": "Zhao",
+  "fullName": "Zhao",
+  "basic": {
+    "BasicAttackGlacialJudgment": {
+      "name": "Basic Attack: Glacial Judgment",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Launches up to five slashes forward, the first dealing <ct color=#F0D12B>Physical DMG</ct>, and the following four <ct color=#98EFF0>Ice DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackFinalVerdict": {
+      "name": "Basic Attack: Final Verdict",
+      "desc": {
+        "0": "Hold <IconNormal /> to activate:",
+        "1": "After getting ready, Zhao starts charging up, then launches a forward slash on release, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "While charging, Zhao accumulates up to 5s of charge time. When the Finishing Move of <ct color=#FFFFFF>Basic Attack: Final Verdict</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Assist Follow-Up</ct> hits, the stored charge time is consumed to deal additional DMG. For every 1 second of charge time, Zhao deals <ct color=#2BAD00>{CAL:0.12+AvatarSkillLevel(0)*0.01,100,2}%</ct> of Max HP as additional DMG.",
+        "3": "When Zhao is in any <ct color=#FFFFFF>Ether Veil</ct>, if she gets switched out while charging, the charge can continue.",
+        "4": "If <ct color=#FFFFFF>Frostbite Points</ct> are maxed out when the skill activates, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to trigger <ct color=#FFFFFF>Ether Veil: Wellspring</ct> and a <ct color=#FFFFFF>Quick Assist</ct>. If a squadmate is then switched in via <ct color=#FFFFFF>Quick Assist</ct>, Zhao automatically follows up with <ct color=#FFFFFF>Basic Attack: Final Verdict</ct> and begins charging.",
+        "5": "During skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.",
+        "6": "While not the currently controlled character, the character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Charged Max HP Additional Multiplier "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeBunnyHop": {
+      "name": "Dodge: Bunny Hop",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackBouncingDash": {
+      "name": "Dash Attack: Bouncing Dash",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Slashes forward, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#98EFF0>Ice DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterSwiftBlink": {
+      "name": "Dodge Counter: Swift Blink",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Performs a falling slash ahead, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackShatterfrostSurge": {
+      "name": "Special Attack: Shatterfrost Surge",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Launches a forward slash, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Upon activating this skill, consumes 5% of current HP to grant all squad members HP regeneration equal to <ct color=#2BAD00>{CAL:1+AvatarSkillLevel(1)*0.06,1,2}%</ct> of Zhao's Max HP per second for 5s. The HP-consuming effects of <ct color=#FFFFFF>Special Attack: Shatterfrost Surge</ct> and <ct color=#FFFFFF>EX Special Attack: Frostflow Tundra</ct> can trigger at most once every 30s."
+      },
+      "params": [
+        " ",
+        "Percent HP Recovered "
+      ]
+    },
+    "EXSpecialAttackFrostflowTundra": {
+      "name": "EX Special Attack: Frostflow Tundra",
+      "desc": {
+        "0": "With enough energy, press <IconSpecialReady /> to activate:",
+        "1": "Launches multiple forward slashes, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Upon activating this skill, consumes 5% of current HP to grant all squad members HP regeneration equal to <ct color=#2BAD00>{CAL:1+AvatarSkillLevel(1)*0.06,1,2}%</ct> of Zhao's Max HP per second for 5s. The HP-consuming effects of <ct color=#FFFFFF>Special Attack: Shatterfrost Surge</ct> and <ct color=#FFFFFF>EX Special Attack: Frostflow Tundra</ct> can trigger at most once every 30s.",
+        "3": "Upon activating this skill, gain 20 <ct color=#FFFFFF>Frostbite Points</ct>. If <ct color=#FFFFFF>Frostbite Points</ct> are maxed out, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "4": "Upon activating this skill while in any <ct color=#FFFFFF>Ether Veil</ct>, a <ct color=#FFFFFF>Quick Assist</ct> is triggered. If a squadmate is then switched in via <ct color=#FFFFFF>Quick Assist</ct>, Zhao automatically follows up with <ct color=#FFFFFF>Basic Attack: Final Verdict</ct> and begins charging.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost ",
+        "Percent HP Recovered "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackTemporaryAlliance": {
+      "name": "Chain Attack: Temporary Alliance",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Launches multiple slashes in front, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "After using this skill, gains 5 <ct color=#FFFFFF>Frostbite Points</ct>. If <ct color=#FFFFFF>Frostbite Points</ct> are maxed out, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "3": "Upon activating this skill while in any <ct color=#FFFFFF>Ether Veil</ct>, a <ct color=#FFFFFF>Quick Assist</ct> is triggered. If a squadmate is then switched in via <ct color=#FFFFFF>Quick Assist</ct>, Zhao automatically follows up with <ct color=#FFFFFF>Basic Attack: Final Verdict</ct> and begins charging.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateBunnyBarrage": {
+      "name": "Ultimate: Bunny Barrage",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Launches consecutive attacks in front, followed by a falling slash, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "After using this skill, gains 20 <ct color=#FFFFFF>Frostbite Points</ct>. If <ct color=#FFFFFF>Frostbite Points</ct> are maxed out, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "3": "Upon activating this skill while in any <ct color=#FFFFFF>Ether Veil</ct>, a <ct color=#FFFFFF>Quick Assist</ct> is triggered. If a squadmate is then switched in via <ct color=#FFFFFF>Quick Assist</ct>, Zhao automatically follows up with <ct color=#FFFFFF>Basic Attack: Final Verdict</ct> and begins charging.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "EntrySkillBurstOfFrost": {
+      "name": "Entry Skill: Burst of Frost",
+      "desc": {
+        "0": "When Zhao has maximum <ct color=#FFFFFF>Frostbite Points</ct>, and is in combat, press <IconSwitch /> to activate:",
+        "1": "Launches consecutive attacks forward, followed by a slash, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Upon activating this skill, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "3": "Upon activating this skill, a <ct color=#FFFFFF>Quick Assist</ct> is triggered. If a squadmate is then switched in via <ct color=#FFFFFF>Quick Assist</ct>, Zhao automatically follows up with <ct color=#FFFFFF>Basic Attack: Final Verdict</ct> and begins charging.",
+        "4": "Activating this skill is considered as activating a <ct color=#FFFFFF>Quick Assist</ct>.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "QuickAssistPatchTheGaps": {
+      "name": "Quick Assist: Patch the Gaps",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Launches a falling slash in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistFrostveilSuppression": {
+      "name": "Defensive Assist: Frostveil Suppression",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpFrostlightReflection": {
+      "name": "Assist Follow-Up: Frostlight Reflection",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Launch multiple slashes in front, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Upon activating this skill, if <ct color=#FFFFFF>Frostbite Points</ct> are maxed out, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "3": "Upon activating this skill while in any <ct color=#FFFFFF>Ether Veil</ct>, a <ct color=#FFFFFF>Quick Assist</ct> is triggered. If a squadmate is then switched in via <ct color=#FFFFFF>Quick Assist</ct>, Zhao automatically follows up with <ct color=#FFFFFF>Basic Attack: Final Verdict</ct> and begins charging.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Ideal Colleague",
+    "desc": [
+      {
+        "0": "Zhao gains bonus CRIT Rate based on her initial Max HP, gaining <ct color=#2BAD00>0.8%</ct> CRIT Rate for every 1,000 initial Max HP.",
+        "1": "Upon entering the battlefield, Zhao gains 100 <ct color=#FFFFFF>Frostbite Points</ct>. This effect can trigger once every 180s in Investigation Zone mode. The maximum amount of <ct color=#FFFFFF>Frostbite Points</ct> is 100.",
+        "2": "When the currently active character's attacks hit an enemy, Zhao gains 6 <ct color=#FFFFFF>Frostbite Points</ct>. This can be triggered once every 3s.",
+        "3": "When <ct color=#FFFFFF>Frostbite Points</ct> are maxed out, switching Zhao to the field while in combat will activate her <ct color=#FFFFFF>Entry Skill</ct>.",
+        "4": "When Zhao activates her <ct color=#FFFFFF>Entry Skill</ct>, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "5": "While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members gain 5% Max HP for 40s. Re-activating <ct color=#FFFFFF>Ether Veil: Wellspring</ct> ends the existing instance before applying a new <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "6": "When Zhao activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, all squad members' ATK increase by <ct color=#2BAD00>100</ct> for 50s. Repeated triggers reset the duration."
+      },
+      {
+        "0": "Zhao gains bonus CRIT Rate based on her initial Max HP, gaining <ct color=#2BAD00>0.9%</ct> CRIT Rate for every 1,000 initial Max HP.",
+        "1": "Upon entering the battlefield, Zhao gains 100 <ct color=#FFFFFF>Frostbite Points</ct>. This effect can trigger once every 180s in Investigation Zone mode. The maximum amount of <ct color=#FFFFFF>Frostbite Points</ct> is 100.",
+        "2": "When the currently active character's attacks hit an enemy, Zhao gains 6 <ct color=#FFFFFF>Frostbite Points</ct>. This can be triggered once every 3s.",
+        "3": "When <ct color=#FFFFFF>Frostbite Points</ct> are maxed out, switching Zhao to the field while in combat will activate her <ct color=#FFFFFF>Entry Skill</ct>.",
+        "4": "When Zhao activates her <ct color=#FFFFFF>Entry Skill</ct>, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "5": "While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members gain 5% Max HP for 40s. Re-activating <ct color=#FFFFFF>Ether Veil: Wellspring</ct> ends the existing instance before applying a new <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "6": "When Zhao activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, all squad members' ATK increase by <ct color=#2BAD00>250</ct> for 50s. Repeated triggers reset the duration."
+      },
+      {
+        "0": "Zhao gains bonus CRIT Rate based on her initial Max HP, gaining <ct color=#2BAD00>1%</ct> CRIT Rate for every 1,000 initial Max HP.",
+        "1": "Upon entering the battlefield, Zhao gains 100 <ct color=#FFFFFF>Frostbite Points</ct>. This effect can trigger once every 180s in Investigation Zone mode. The maximum amount of <ct color=#FFFFFF>Frostbite Points</ct> is 100.",
+        "2": "When the currently active character's attacks hit an enemy, Zhao gains 6 <ct color=#FFFFFF>Frostbite Points</ct>. This can be triggered once every 3s.",
+        "3": "When <ct color=#FFFFFF>Frostbite Points</ct> are maxed out, switching Zhao to the field while in combat will activate her <ct color=#FFFFFF>Entry Skill</ct>.",
+        "4": "When Zhao activates her <ct color=#FFFFFF>Entry Skill</ct>, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "5": "While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members gain 5% Max HP for 40s. Re-activating <ct color=#FFFFFF>Ether Veil: Wellspring</ct> ends the existing instance before applying a new <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "6": "When Zhao activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, all squad members' ATK increase by <ct color=#2BAD00>400</ct> for 50s. Repeated triggers reset the duration."
+      },
+      {
+        "0": "Zhao gains bonus CRIT Rate based on her initial Max HP, gaining <ct color=#2BAD00>1.1%</ct> CRIT Rate for every 1,000 initial Max HP.",
+        "1": "Upon entering the battlefield, Zhao gains 100 <ct color=#FFFFFF>Frostbite Points</ct>. This effect can trigger once every 180s in Investigation Zone mode. The maximum amount of <ct color=#FFFFFF>Frostbite Points</ct> is 100.",
+        "2": "When the currently active character's attacks hit an enemy, Zhao gains 6 <ct color=#FFFFFF>Frostbite Points</ct>. This can be triggered once every 3s.",
+        "3": "When <ct color=#FFFFFF>Frostbite Points</ct> are maxed out, switching Zhao to the field while in combat will activate her <ct color=#FFFFFF>Entry Skill</ct>.",
+        "4": "When Zhao activates her <ct color=#FFFFFF>Entry Skill</ct>, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "5": "While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members gain 5% Max HP for 40s. Re-activating <ct color=#FFFFFF>Ether Veil: Wellspring</ct> ends the existing instance before applying a new <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "6": "When Zhao activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, all squad members' ATK increase by <ct color=#2BAD00>550</ct> for 50s. Repeated triggers reset the duration."
+      },
+      {
+        "0": "Zhao gains bonus CRIT Rate based on her initial Max HP, gaining <ct color=#2BAD00>1.2%</ct> CRIT Rate for every 1,000 initial Max HP.",
+        "1": "Upon entering the battlefield, Zhao gains 100 <ct color=#FFFFFF>Frostbite Points</ct>. This effect can trigger once every 180s in Investigation Zone mode. The maximum amount of <ct color=#FFFFFF>Frostbite Points</ct> is 100.",
+        "2": "When the currently active character's attacks hit an enemy, Zhao gains 6 <ct color=#FFFFFF>Frostbite Points</ct>. This can be triggered once every 3s.",
+        "3": "When <ct color=#FFFFFF>Frostbite Points</ct> are maxed out, switching Zhao to the field while in combat will activate her <ct color=#FFFFFF>Entry Skill</ct>.",
+        "4": "When Zhao activates her <ct color=#FFFFFF>Entry Skill</ct>, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "5": "While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members gain 5% Max HP for 40s. Re-activating <ct color=#FFFFFF>Ether Veil: Wellspring</ct> ends the existing instance before applying a new <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "6": "When Zhao activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, all squad members' ATK increase by <ct color=#2BAD00>700</ct> for 50s. Repeated triggers reset the duration."
+      },
+      {
+        "0": "Zhao gains bonus CRIT Rate based on her initial Max HP, gaining <ct color=#2BAD00>1.3%</ct> CRIT Rate for every 1,000 initial Max HP.",
+        "1": "Upon entering the battlefield, Zhao gains 100 <ct color=#FFFFFF>Frostbite Points</ct>. This effect can trigger once every 180s in Investigation Zone mode. The maximum amount of <ct color=#FFFFFF>Frostbite Points</ct> is 100.",
+        "2": "When the currently active character's attacks hit an enemy, Zhao gains 6 <ct color=#FFFFFF>Frostbite Points</ct>. This can be triggered once every 3s.",
+        "3": "When <ct color=#FFFFFF>Frostbite Points</ct> are maxed out, switching Zhao to the field while in combat will activate her <ct color=#FFFFFF>Entry Skill</ct>.",
+        "4": "When Zhao activates her <ct color=#FFFFFF>Entry Skill</ct>, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "5": "While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members gain 5% Max HP for 40s. Re-activating <ct color=#FFFFFF>Ether Veil: Wellspring</ct> ends the existing instance before applying a new <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "6": "When Zhao activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, all squad members' ATK increase by <ct color=#2BAD00>850</ct> for 50s. Repeated triggers reset the duration."
+      },
+      {
+        "0": "Zhao gains bonus CRIT Rate based on her initial Max HP, gaining <ct color=#2BAD00>1.4%</ct> CRIT Rate for every 1,000 initial Max HP.",
+        "1": "Upon entering the battlefield, Zhao gains 100 <ct color=#FFFFFF>Frostbite Points</ct>. This effect can trigger once every 180s in Investigation Zone mode. The maximum amount of <ct color=#FFFFFF>Frostbite Points</ct> is 100.",
+        "2": "When the currently active character's attacks hit an enemy, Zhao gains 6 <ct color=#FFFFFF>Frostbite Points</ct>. This can be triggered once every 3s.",
+        "3": "When <ct color=#FFFFFF>Frostbite Points</ct> are maxed out, switching Zhao to the field while in combat will activate her <ct color=#FFFFFF>Entry Skill</ct>.",
+        "4": "When Zhao activates her <ct color=#FFFFFF>Entry Skill</ct>, all <ct color=#FFFFFF>Frostbite Points</ct> are consumed to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "5": "While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members gain 5% Max HP for 40s. Re-activating <ct color=#FFFFFF>Ether Veil: Wellspring</ct> ends the existing instance before applying a new <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+        "6": "When Zhao activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, all squad members' ATK increase by <ct color=#2BAD00>1,000</ct> for 50s. Repeated triggers reset the duration."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Crystallization",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct>, <ct color=#FFFFFF>Anomaly</ct>, or <ct color=#FFFFFF>Support</ct> character:",
+      "1": "When Zhao is within any <ct color=#FFFFFF>Ether Veil</ct>, the whole squad's DMG increases by 10%. If Zhao's initial Max HP exceeds 15,000, every additional 400 initial Max HP increases this DMG bonus by an additional 1%, up to a total maximum increase of 40%. This bonus reaches its maximum when Zhao's initial Max HP reaches 27,000."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Righteous Verdict",
+      "desc": "When Zhao switches out of being the active character, all squad members' DMG ignores 15% of the target's All-Attribute RES for 50s.",
+      "flavor": {
+        "0": "\"Don't let that cute face fool you! I'll never forget that meeting — right there in front of a few dozen people, she pointed her finger and, with the sweetest expression, delivered the coldest verdict: 'If your company refuses any single item in this rectification list, you will be removed from TOPS. This isn't a threat — it's the objectively correct conclusion.' That image is forever etched in my mind! ...Still, I have to thank Miss Zhao.\"",
+        "1": "—A company manager who revived his business after a brutal restructuring, speaking with a conflicted look as he rubbed his temples."
+      }
+    },
+    "2": {
+      "name": "Krampus Senior",
+      "desc": "When Zhao recovers HP, her ATK increases by 20%, and other squad members' ATK increases by 15% for 50s. Repeated triggers reset the duration.",
+      "flavor": "Xiao'Zhao joined Krampus very early on, and even within the elite of the elite, the Krampus Compliance Authority, she's still addressed as \"senior.\" That's how it should be... if only the juniors who came after weren't all the type who value personality over protocol."
+    },
+    "3": {
+      "name": "Frostveil Edge",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Xiao'Zhao's weapon, \"Frostveil,\" is an experimental asset supplied through a confidential TOPS research project. Rather than merely projecting Ice-aligned Ether into strikes, the weapon channels Ether into its own structure. Under normal conditions, Frostveil is only half the weight of comparable weapons, but once in combat, its rapidly condensed ice edge gains far greater destructive power. The design might as well have been tailor-made for Xiao'Zhao."
+    },
+    "4": {
+      "name": "Featherlight Footsteps",
+      "desc": "When Zhao activates an <ct color=#FFFFFF>Ether Veil</ct>, she gains 250 Decibels. The CRIT DMG of her <ct color=#FFFFFF>Ultimate</ct>, <ct color=#FFFFFF>Chain Attack</ct>, and <ct color=#FFFFFF>Basic Attack: Final Verdict</ct> increase by 40%.",
+      "flavor": "Agile, light, and hard to pin down. Words once used to describe a little rabbit are now being used to describe a terrifying warrior wielding a massive blade, capable of cutting through anything..."
+    },
+    "5": {
+      "name": "Fuzzy Listener",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "If Xiao'Zhao's ears twitch unconsciously and perk up slightly, it means she's heard that which matters to her most. It could be intel, a mission, a deal... or praise."
+    },
+    "6": {
+      "name": "No Value Has Its Own Value",
+      "desc": "The CRIT Rate buff from <ct color=#FFFFFF>Core Passive: Ideal Colleague</ct> increases to 125% of the original value. The extra DMG gained from charging during <ct color=#FFFFFF>Basic Attack: Final Verdict</ct> increases to 140% of the original value, and accumulated charge time is no longer consumed when attacking.",
+      "flavor": {
+        "0": "The wall of beliefs she'd built since childhood, molded by so many people, has begun to crack because of one encounter.",
+        "1": "Xiao'Zhao now sees value differently: when something carries no listed price, it isn't useless, it's simply too precious for anything to stand as its equivalent."
+      }
+    }
+  },
+  "potential": {}
+}

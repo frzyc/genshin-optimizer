@@ -1,0 +1,190 @@
+{
+  "name": "Columbina",
+  "title": "Retour de l'astre de la nuit",
+  "description": "La Dame de la lune née à Nod-Krai, et la lune céleste de retour chez elle.",
+  "constellationName": "???",
+  "auto": {
+    "name": "Cascade de rosée lunaire",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Appelle une marée de lumière lunaire pour enchaîner jusqu'à 3 attaques qui infligent des <hydro>DGT Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour infliger des <hydro>DGT Hydro de zone</hydro> après un court délai.",
+        "2": "Si Columbina possède au moins 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>rosée verdoyante</strong></tooltip>, son attaque chargée est convertie en l'attaque chargée spéciale <strong>« Lavage de rosée lunaire »</strong> ne consommant pas d'endurance : consomme 1 rosée verdoyante pour infliger 3 fois des <dendro>DGT Dendro de zone</dendro> aux ennemis en avant, ces DGT étant considérés comme des DGT de réactions de Sélénofleurissement."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs, infligeant des DGT aux ennemis en chemin et des <hydro>DGT Hydro de zone</hydro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT Lavage de rosée lunaire",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Marée éternelle",
+    "description": {
+      "0": "Appelle une marée de mer lunaire, infligeant des <hydro>DGT Hydro de zone</hydro> et invoquant une <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>ondulation de gravité</strong></tooltip>.",
+      "1": "L'<strong>ondulation de gravité</strong> suit le personnage déployé et inflige des <hydro>DGT Hydro de zone</hydro> de façon continue aux ennemis proches. Pendant la durée d'une <strong>ondulation de gravité</strong>, Columbina cumule de la <strong>force gravitationnelle</strong> spéciale lorsqu'un personnage de l'équipe à proximité déclenche une réaction sélène ou inflige des DGT de réaction sélène. Une fois sa force gravitationnelle au maximum, Columbina inflige des DGT élémentaires selon le type de réaction sélène ayant permis de cumuler le plus de <strong>force gravitationnelle</strong>.",
+      "2": "<strong>Signelune « Lueur ascendante »</strong> : Les <strong>ondulations de gravité</strong> infligent des <hydro>DGT Hydro de zone</hydro> sur une zone plus étendue."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT continus (ondulation de gravité)",
+      "2": "DGT de Sélénocution (interférence gravitationnelle)",
+      "3": "DGT de Sélénofleurissement (interférence gravitationnelle)",
+      "4": "DGT de Sélénocristallisation (interférence gravitationnelle)",
+      "5": "Limite de force gravitationnelle",
+      "6": "Durée d'ondulation de gravité",
+      "7": "Temps de recharge",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Mélancolie sous la lune",
+    "description": {
+      "0": "Collines et marées s'unissent sous la lumière argentée d'une lune nouvelle et immaculée, transformant temporairement le terrain environnant en <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>domaine lunaire</strong></tooltip> et infligeant des <hydro>DGT Hydro de zone</hydro>."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Bonus de DGT (réaction sélène)",
+      "2": "Durée de domaine lunaire",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Attrait lunatique",
+    "description": {
+      "0": "En déclenchant une <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>interférence gravitationnelle</strong></tooltip>, Columbina obtient l'effet Tentation lunaire, augmentant son taux CRIT de 5 % pendant 10 s. Cet effet peut être cumulé 3 fois maximum."
+    }
+  },
+  "passive2": {
+    "name": "Loi de la nouvelle lune",
+    "description": {
+      "0": "Lorsqu'un personnage dans un <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>domaine lunaire</strong></tooltip> déclenche une réaction sélène, différents effets se produisent selon la réaction déclenchée :",
+      "1": [
+        " <strong>Réaction de Sélénocution</strong> : lorsqu'un nuage d'orage déclenche un éclair sur une cible valide, il a 33 % de chances de déclencher un éclair supplémentaire.",
+        "<strong>Réaction de Sélénofleurissement</strong> : déclencher une réaction de Sélénofleurissement accorde 1 <tooltip ns=tooltips_gen baseKey18=11250003 values=[]><strong>rosée de crête lunaire</strong></tooltip> spéciale à l'équipe, l'équipe pouvant obtenir un maximum de 3 rosées toutes les 18 s de cette manière.",
+        " <strong>Réaction de Sélénocristallisation</strong> : en déclenchant une harmonie de voile lunaire, chaque voile lunaire a 33 % de chances d'effectuer une attaque supplémentaire."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Bénédiction de signelune : Clair de lune accordée",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction d'Électrocution, de Fleurissement ou de Cristallisation Hydro, la réaction est convertie respectivement en réaction de Sélénocution, de Sélénofleurissement ou de Sélénocristallisation, et les DGT de base des réactions sélènes des personnages de l'équipe augmentent selon les PV max de Columbina : chaque tranche de 1 000 PV max augmente les DGT de base de 0,2 %, ces DGT pouvant être augmentés d'un maximum de 7 % de cette manière.",
+      "1": "<br/>",
+      "2": "De plus, la <strong>signelune</strong> de l'équipe augmente d'un niveau lorsque Columbina fait partie de l'équipe."
+    }
+  },
+  "passive": {
+    "name": "Veillée lunaire",
+    "description": {
+      "0": "Lorsqu'un de vos personnages dans l'équipe est vaincu dans la région de Nod-Krai, Columbina le ressuscite et restaure les PV de ce dernier selon son propre Niv. d'affinité, cet effet pouvant être déclenché une fois toutes les 100 s. Cet effet ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées.",
+      "1": "De plus, Columbina semble avoir une affinité particulière avec certains petits animaux affectés par le kuuvahki..."
+    }
+  },
+  "constellation1": {
+    "name": "Radiance sur les fleurs, au cœur des sommets",
+    "description": {
+      "0": "Utiliser la compétence élémentaire <strong>Marée éternelle</strong> déclenche immédiatement un effet similaire à une <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>interférence gravitationnelle</strong></tooltip>, cet effet pouvant être déclenché une fois toutes les 15 s.",
+      "1": "<strong>Signelune « Lueur ascendante »</strong>",
+      "2": "En déclenchant une interférence gravitationnelle, divers effets ont lieu selon le type de réaction sélène ayant permis à Columbina de cumuler le plus de force gravitationnelle :",
+      "3": [
+        " <strong>Réaction de Sélénocution</strong> : restaure 6 pts d'énergie élémentaire à votre personnage déployé.",
+        " <strong>Réaction de Sélénofleurissement</strong> : améliore la RÉS à l'interruption de votre personnage déployé pendant 8 s.",
+        " <strong>Réaction de Sélénocristallisation</strong> : invoque un <strong>bouclier de pluie marine</strong> pendant 8 s, bouclier dont l'absorption de DGT est égale à 12 % des PV max de Columbina et qui absorbe les <hydro>DGT Hydro</hydro> 250 % plus efficacement."
+      ],
+      "4": "<br/>",
+      "5": "Les DGT de réaction sélène infligés par tous les personnages de l'équipe à proximité bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 1,5 %."
+    }
+  },
+  "constellation2": {
+    "name": "Nuit en splendeur, jamais solitaire",
+    "description": {
+      "0": "La vitesse de cumul de la <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>force gravitationnelle</strong></tooltip> augmente de 34 %.",
+      "1": "En déclenchant une <strong>interférence gravitationnelle</strong>, Columbina obtient l'effet <strong>Éclat lunaire</strong>, augmentant ses PV max de 40 % pendant 8 s.",
+      "2": "<strong>Signelune « Lueur ascendante »</strong>",
+      "3": "Pendant la durée de l'effet <strong>Éclat lunaire</strong>, divers effets ont lieu selon le type de réaction sélène ayant permis à Columbina de cumuler le plus de force gravitationnelle lors du déclenchement de l'<strong>interférence gravitationnelle</strong> :",
+      "4": [
+        " <strong>Réaction de Sélénocution</strong> : l'ATQ de votre personnage déployé augmente d'une valeur équivalant à 1 % des PV max de Columbina.",
+        " <strong>Réaction de Sélénofleurissement</strong> : la maîtrise élémentaire de votre personnage déployé augmente d'une valeur équivalant à 0,35 % des PV max de Columbina.",
+        " <strong>Réaction de Sélénocristallisation</strong> : la DÉF de votre personnage déployé augmente d'une valeur équivalant à 1 % des PV max de Columbina."
+      ],
+      "5": "<br/>",
+      "6": "Les DGT de réaction sélène infligés par tous les personnages de l'équipe à proximité bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 7 %."
+    }
+  },
+  "constellation3": {
+    "name": "Lumière en rosée, ondulation sur le lac",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Columbina_gen baseKey18=skill>Marée éternelle</tooltip></strong> +3.",
+      "1": "Niveau max : 15",
+      "2": "<br/>",
+      "3": "Les DGT de réaction sélène infligés par tous les personnages de l'équipe à proximité bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 1,5 %."
+    }
+  },
+  "constellation4": {
+    "name": "Fleurs dans les brumes, crêtes sous les voiles",
+    "description": {
+      "0": "En déclenchant une <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>interférence gravitationnelle</strong></tooltip>, Columbina récupère 4 pts d'énergie élémentaire.",
+      "1": "De plus, si Columbina a cumulé le plus de <strong>force gravitationnelle</strong> grâce à des réactions de Sélénocution, de Sélénofleurissement ou de Sélénocristallisation, les DGT de réaction sélène infligés par l'interférence gravitationnelle augmentent respectivement d'une valeur équivalant à 12,5 %, 2,5 % ou 12,5 % des PV max de Columbina. Cet effet peut être déclenché une fois toutes les 15 s.",
+      "2": "<br/>",
+      "3": "Les DGT de réaction sélène infligés par tous les personnages de l'équipe à proximité bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 1,5 %."
+    }
+  },
+  "constellation5": {
+    "name": "Silence total, chant solitaire",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Columbina_gen baseKey18=burst>Mélancolie sous la lune</tooltip></strong> +3.",
+      "1": "Niveau max : 15",
+      "2": "<br/>",
+      "3": "Les DGT de réaction sélène infligés par tous les personnages de l'équipe à proximité bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 1,5 %."
+    }
+  },
+  "constellation6": {
+    "name": "Nuit lugubre, lune à travers",
+    "description": {
+      "0": "Lorsqu'un personnage dans un <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>champ lunaire</strong></tooltip> a déclenché une réaction sélène, les DGT CRIT des éléments correspondants au type de réaction augmentent de 80 % pendant 8 s. L'effet d'augmentation des DGT CRIT d'un même type élémentaire ne peut pas être cumulé.",
+      "1": "<br/>",
+      "2": "Les DGT de réaction sélène infligés par tous les personnages de l'équipe à proximité bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 7 %."
+    }
+  }
+}

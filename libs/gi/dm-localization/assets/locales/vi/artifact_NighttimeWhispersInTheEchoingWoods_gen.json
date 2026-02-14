@@ -2,7 +2,7 @@
   "setName": "Tiếng Đêm Trong Rừng Vang",
   "setEffects": {
     "2": "Tấn công tăng 18%",
-    "4": "Trong 10s sau khi thi triển Kỹ Năng Nguyên Tố, Sát Thương Nguyên Tố Nham tăng 20%; Nếu được khiên sản sinh từ phản ứng Kết Tinh bảo vệ, hiệu quả trên sẽ gia tăng 150%. Hiệu quả tăng thêm này sẽ mất sau 1s khi mất đi tấm khiên kết tinh bảo hộ."
+    "4": "Trong 10s sau khi thi triển Kỹ Năng Nguyên Tố, nhận 20% buff Sát Thương Nguyên Tố Nham. Nếu được khiên sinh ra từ phản ứng Kết Tinh bảo vệ, hoặc xung quanh có Trăng Trôi sinh ra từ phản ứng Nguyệt-Kết Tinh, hiệu quả trên sẽ gia tăng 150%. Hiệu quả tăng thêm này sẽ xóa sau 1s khi không thỏa mãn điều kiện nêu trên."
   },
   "pieces": {
     "flower": {

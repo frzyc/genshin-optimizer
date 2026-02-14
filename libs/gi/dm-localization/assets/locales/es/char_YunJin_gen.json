@@ -145,7 +145,7 @@
   "constellation4": {
     "name": "Pose bélica",
     "description": {
-      "0": "Cuando Yun Jin causa una reacción de Cristalización, su DEF aumenta en un 20% durante 12 s."
+      "0": "Cuando Yun Jin causa una reacción de Cristalización o Cristalización Lunar, su DEF aumenta en un 20% durante 12 s."
     }
   },
   "constellation5": {

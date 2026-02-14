@@ -1,0 +1,21 @@
+{
+  "name": "Thoughtbop",
+  "desc": {
+    "0": "Music is the girl's weapon against the world. The moment she puts on her headphones, she becomes a tiny hero on a quest to conquer the \"Kingdom of Unhappiness,\" proudly swinging her sword and shield and ordering the world to release the treasured fantasies it keeps stingily hidden away.",
+    "1": "But... every campaign runs into unexpected trouble now and then. Like that old friend who disguises herself as an angel while secretly being an evil demon queen — why is she always able to catch Sunna slacking off in some corner?!",
+    "2": "\"Hey, I went through all that trouble to help you assemble that W-Engine, and you're using it to slack off here?\"",
+    "3": "Sadly, this demon queen of unhappiness is far too powerful, and her arguments are always airtight... Every time this happens, the hero Sunna can only put down her weapon and scurry back to the practice room, once again locked in a battle of wits with those complicated dance steps she never quite manages to get right.",
+    "4": "",
+    "5": "<ct color=#959595>\"One day, I'll defeat the Demon Queen!\" —a certain hero who dares not reveal their name.</ct>"
+  },
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "Thoughts follow the veins of fantasy, weaving themselves into song.",
+  "phase": "Decibel Monologue",
+  "phaseDescs": [
+    "While not the active character, the equipper's Energy Regen increases by <ct color=#2BAD00>0.6</ct>/s. When the equipper uses an <ct color=#FFFFFF>EX Special Attack</ct> and deals <ct color=#F0D12B>Physical DMG</ct>, all squad members gain a buff that increases DMG dealt by <ct color=#2BAD00>12.5%</ct> for 40s, stacking up to 2 times. Repeated triggers reset the duration. At 2 stacks, characters gain an additional <ct color=#2BAD00>10%</ct> ATK. Only one instance of this effect can exist in the same squad.",
+    "While not the active character, the equipper's Energy Regen increases by <ct color=#2BAD00>0.69</ct>/s. When the equipper uses an <ct color=#FFFFFF>EX Special Attack</ct> and deals <ct color=#F0D12B>Physical DMG</ct>, all squad members gain a buff that increases DMG dealt by <ct color=#2BAD00>14.3%</ct> for 40s, stacking up to 2 times. Repeated triggers reset the duration. At 2 stacks, characters gain an additional <ct color=#2BAD00>11.5%</ct> ATK. Only one instance of this effect can exist in the same squad.",
+    "While not the active character, the equipper's Energy Regen increases by <ct color=#2BAD00>0.78</ct>/s. When the equipper uses an <ct color=#FFFFFF>EX Special Attack</ct> and deals <ct color=#F0D12B>Physical DMG</ct>, all squad members gain a buff that increases DMG dealt by <ct color=#2BAD00>16.1%</ct> for 40s, stacking up to 2 times. Repeated triggers reset the duration. At 2 stacks, characters gain an additional <ct color=#2BAD00>13%</ct> ATK. Only one instance of this effect can exist in the same squad.",
+    "While not the active character, the equipper's Energy Regen increases by <ct color=#2BAD00>0.87</ct>/s. When the equipper uses an <ct color=#FFFFFF>EX Special Attack</ct> and deals <ct color=#F0D12B>Physical DMG</ct>, all squad members gain a buff that increases DMG dealt by <ct color=#2BAD00>17.9%</ct> for 40s, stacking up to 2 times. Repeated triggers reset the duration. At 2 stacks, characters gain an additional <ct color=#2BAD00>14.5%</ct> ATK. Only one instance of this effect can exist in the same squad.",
+    "While not the active character, the equipper's Energy Regen increases by <ct color=#2BAD00>0.96</ct>/s. When the equipper uses an <ct color=#FFFFFF>EX Special Attack</ct> and deals <ct color=#F0D12B>Physical DMG</ct>, all squad members gain a buff that increases DMG dealt by <ct color=#2BAD00>20%</ct> for 40s, stacking up to 2 times. Repeated triggers reset the duration. At 2 stacks, characters gain an additional <ct color=#2BAD00>16%</ct> ATK. Only one instance of this effect can exist in the same squad."
+  ]
+}

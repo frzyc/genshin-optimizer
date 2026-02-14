@@ -111,6 +111,22 @@
       "1": "Cet effet peut être déclenché une fois toutes les 5 s."
     }
   },
+  "lockedPassive": {
+    "name": "Bourrasque d'ailleurs",
+    "description": {
+      "0": "Permet {M#au voyageur}{F#à la voyageuse} de puiser une force nouvelle dans ses périples passés, lui accordant un <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effet de renforcement</strong></tooltip> supplémentaire pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance.",
+      "1": "<br/>",
+      "2": "De plus, lorsque l'attaque d'un personnage de l'équipe à proximité de type <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ou <electro>Électro</electro> touche un ennemi, {M#le voyageur}{F#la voyageuse} obtient 1 lame de brise matinale de l'élément correspondant, chaque élément pouvant accorder 1 lame. Avec au moins 2 lames de brise matinale, effectuer une attaque chargée consomme toutes les lames pour déclencher une <strong>attaque chargée « Tourbillon »</strong> spéciale.",
+      "3": "<br/>",
+      "4": "<strong>Attaque chargée « Tourbillon »</strong>",
+      "5": [
+        " Chaque coup de l'attaque chargée inflige des <anemo>DGT Anémo</anemo> qui sont augmentés d'une valeur équivalant à 60 % de l'ATQ {M#du voyageur}{F#de la voyageuse}.",
+        " Consommer une lame de brise matinale d'un certain type élémentaire génère un vent de lame de l'élément correspondant qui inflige des DGT élémentaires d'une valeur équivalant à 50 % de l'ATQ {M#du voyageur}{F#de la voyageuse}, ces DGT étant considérés comme des DGT d'attaque chargée.",
+        " Une <strong>attaque chargée « Tourbillon »</strong> peut être déclenchée une fois toutes les 15 s.",
+        " Il est impossible d'obtenir des lames de brise matinale pendant une <strong>attaque chargée « Tourbillon »</strong>."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Vortex déchaîné",
     "description": {

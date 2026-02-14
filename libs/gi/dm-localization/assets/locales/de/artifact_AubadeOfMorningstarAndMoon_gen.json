@@ -1,0 +1,29 @@
+{
+  "setName": "Gesang von Stern und Mond",
+  "setEffects": {
+    "2": "Erhöht die Elementarkunde um 80 Punkte.",
+    "4": "Erhöht den mit Mondleuchten-Reaktionen verursachten Schaden um 20 %, wenn der Träger inaktiv in der Truppe ist. Erhöht den mit Mondleuchten-Reaktionen verursachten Schaden zusätzlich um 40 %, wenn die Mondomenstufe der Truppe mindestens Reifer Glanz ist. Dieser Effekt wird entfernt, wenn der Träger länger als 3 s aktiv auf dem Feld ist."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Opulenter Traum des Mondlichtopfers",
+      "desc": "Ein Blumenschmuck, den die Handwerker aus alten Zeiten mit großer Sorgfalt für die Statue der Göttin des leeren Mondes anfertigten, um ihre überwältigende Schönheit herauszustellen."
+    },
+    "plume": {
+      "name": "Durchsickerndes Licht des Mondlichtopfers",
+      "desc": "Eine Feder, aus der die Priester aus alten Zeiten Inspiration in Hülle und Fülle schöpften, wenn sie ihre Litaneien für den leeren Mond niederschrieben."
+    },
+    "sands": {
+      "name": "Letzte Stunde des Mondlichtopfers",
+      "desc": "Eine Sanduhr, die die Weisen aus alten Zeiten, die den leeren Mond um die Wahrheit ersuchten, bereithielten, um sich an die Stunde des Endes zu erinnern zu lassen."
+    },
+    "goblet": {
+      "name": "Trunk des Mondlichtopfers",
+      "desc": "Ein Weinkelch, der den Gläubigen aus alten Zeiten beim letzten ausgelassenen Festmahl anlässlich ihres Opferrituals für den leeren Mond verloren ging."
+    },
+    "circlet": {
+      "name": "Silberne Krone des Mondlichtopfers",
+      "desc": "Eine Silberkrone, die die Dichter aus alten Zeiten in jenem Moment abnahmen, in dem sie die letzte Silbe ihrer für den leeren Mond dargebotenen Lobgesänge gesprochen hatten."
+    }
+  }
+}

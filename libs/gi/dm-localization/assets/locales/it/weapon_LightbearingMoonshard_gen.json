@@ -1,0 +1,24 @@
+{
+  "name": "Frammento lunare portaluce",
+  "description": {
+    "0": "Una spada leggendaria che si dice sia stata forgiata col baluginio del chiaro di luna, raccolto in fondo a un pozzo da un'Adepta nascosta tra le limpide sorgenti. La sua vera forma si rivela solo quando il crepuscolo incontra l'alba."
+  },
+  "passiveName": "Eredità di Lang-Gan",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la DIF di un <cryo>20%</cryo>. I DAN inflitti dalle reazioni di Cristallizzazione lunare aumentano di un <cryo>64%</cryo> per 5 s dopo che il personaggio che equipaggia l'arma ha usato un'abilità elementale."
+    },
+    "1": {
+      "0": "Aumenta la DIF di un <cryo>25%</cryo>. I DAN inflitti dalle reazioni di Cristallizzazione lunare aumentano di un <cryo>80%</cryo> per 5 s dopo che il personaggio che equipaggia l'arma ha usato un'abilità elementale."
+    },
+    "2": {
+      "0": "Aumenta la DIF di un <cryo>30%</cryo>. I DAN inflitti dalle reazioni di Cristallizzazione lunare aumentano di un <cryo>96%</cryo> per 5 s dopo che il personaggio che equipaggia l'arma ha usato un'abilità elementale."
+    },
+    "3": {
+      "0": "Aumenta la DIF di un <cryo>35%</cryo>. I DAN inflitti dalle reazioni di Cristallizzazione lunare aumentano di un <cryo>112%</cryo> per 5 s dopo che il personaggio che equipaggia l'arma ha usato un'abilità elementale."
+    },
+    "4": {
+      "0": "Aumenta la DIF di un <cryo>40%</cryo>. I DAN inflitti dalle reazioni di Cristallizzazione lunare aumentano di un <cryo>128%</cryo> per 5 s dopo che il personaggio che equipaggia l'arma ha usato un'abilità elementale."
+    }
+  }
+}

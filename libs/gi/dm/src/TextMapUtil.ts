@@ -12,7 +12,10 @@ export const TextMapIT = JSON.parse(readDMJSON('TextMap/TextMapIT.json'))
 export const TextMapJP = JSON.parse(readDMJSON('TextMap/TextMapJP.json'))
 export const TextMapKR = JSON.parse(readDMJSON('TextMap/TextMapKR.json'))
 export const TextMapPT = JSON.parse(readDMJSON('TextMap/TextMapPT.json'))
-export const TextMapRU = JSON.parse(readDMJSON('TextMap/TextMapRU.json'))
+export const TextMapRU = {
+  ...JSON.parse(readDMJSON('TextMap/TextMapRU_0.json')),
+  ...JSON.parse(readDMJSON('TextMap/TextMapRU_1.json')),
+}
 export const TextMapTH = {
   ...JSON.parse(readDMJSON('TextMap/TextMapTH_0.json')),
   ...JSON.parse(readDMJSON('TextMap/TextMapTH_1.json')),

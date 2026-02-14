@@ -1,0 +1,171 @@
+{
+  "name": "Illuga",
+  "title": "Im Albtraum loderndes Herz",
+  "description": "Mitglied des Ermittlungstrupps „Albtraum-Pirol“. Der jüngste unter allen Truppführern der Lichthüter.",
+  "constellationName": "Oriolus",
+  "auto": {
+    "name": "Speer der Eidwächter",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden auf, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Singvogel der Morgendämmerung",
+    "description": {
+      "0": "Ruft den an seiner Seite kämpfenden Botenvogel „Aedon“ herbei und verursacht je nach einfachem Drücken oder Gedrückthalten unterschiedliche Effekte.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Aedon stürzt sich auf Gegner vor ihm und fügt den Gegnern, mit denen er in Kontakt kommt, <geo>Geo-SCH</geo> zu.",
+      "4": "<br/>",
+      "5": "<strong>Gedrückthalten</strong>",
+      "6": "Visiert Gegner an, woraufhin Aedon sich auf diese stürzt und den Gegnern, mit denen er in Kontakt kommt, <geo>Geo-SCH</geo> zufügt."
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "SCH bei Gedrückthalten",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Schattenlose Reflektion",
+    "description": {
+      "0": "Entfacht ein Licht, das <geo>Geo-Flächenschaden</geo> verursacht und den Effekt „Lied des nächtlichen Albtraums“ verleiht, hält 20 s: Verleiht Illuga während der Wirkungsdauer 21 Stapelungen <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Lied der Nachtigall</strong></tooltip>. Verbraucht, wenn aktuelle Truppenmitglieder in der Nähe Gegnern mit einem Standardangriff, heftigen Schlag, Angriff aus dem Fall, der Elementarfähigkeit oder Spezialfähigkeit <geo>Geo-SCH</geo> zufügen, 1 Stapelung „Lied der Nachtigall“ und erhöht den verursachten Schaden basierend auf Illugas Elementarkunde. Erhöht den Schaden zusätzlich, wenn es sich bei diesem Schaden um Schaden durch die Reaktion Mond-Kristallisation handelt.",
+      "1": "Verbraucht, wenn auf obige Art verursachter <geo>Geo-SCH</geo> gleichzeitig mehrere Gegner trifft, so viele Stapelungen „Lied der Nachtigall“ wie Gegner getroffen wurden.",
+      "2": "<br/>",
+      "3": "Verleiht Illuga zudem für jedes <geo>Geo-Objekt</geo> 5 Stapelungen „Lied der Nachtigall“, wenn sich ein von Truppenmitgliedern in der Nähe generiertes <geo>Geo-Objekt</geo> auf dem Feld befindet und Illuga seine Spezialfähigkeit anwendet, oder ein Truppenmitglied in der Nähe während der Wirkungsdauer von „Lied des nächtlichen Albtraums“ ein <geo>Geo-Objekt</geo> erschafft. Innerhalb von 20 s nach Anwendung der Spezialfähigkeit kann Illuga zusätzlich bis zu 15 Stapelungen „Lied der Nachtigall“ erhalten.",
+      "4": "<br/>",
+      "5": "Der Effekt „Lied des nächtlichen Albtraums“ wird beendet, wenn die Stapelungen von „Lied der Nachtigall“ aufgebraucht sind oder die Wirkungsdauer abgelaufen ist."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Geo-SCH-Bonus",
+      "2": "SCH-Bonus für Mond-Kristallisation",
+      "3": "Durch Spezialfähigkeit erhaltene Stapelungen von Lied der Nachtigall",
+      "4": "Beim Erstellen von Geo-Objekten erhaltene Stapelungen von Lied der Nachtigall",
+      "5": "Dauer",
+      "6": "Abklingzeit",
+      "7": "Elementarenergie",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Pakt der Fackelmacher",
+    "description": {
+      "0": "Verleiht anderen Truppenmitgliedern in der Nähe nach dem Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Singvogel der Morgendämmerung</tooltip></strong> oder der Spezialfähigkeit <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Schattenlose Reflektion</tooltip></strong> 20 s lang den Effekt „Schwur der Lichthüter“: Erhöht, wenn Gegnern <geo>Geo-SCH</geo> zugefügt wird, die KT des Geo-SCH um 5 % und den kritischen Schaden des Geo-SCH um 10 %.",
+      "1": "<br/>",
+      "2": "<strong>Mondomen – Reifer Glanz</strong> ",
+      "3": "Erhöht die Elementarkunde von Figuren, die von „Schwur der Lichthüter“ betroffen sind, um 50 Punkte."
+    }
+  },
+  "passive2": {
+    "name": "Dämmerung der Dämonenjäger",
+    "description": {
+      "0": "Verstärkt den Effekt <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Lied der Nachtigall</strong></tooltip>: Erhöht, wenn sich in der Truppe 1/2/3 <hydro>Hydro</hydro>- oder <geo>Geo</geo>-Figuren befinden, den verursachten Schaden mithilfe von „Lied der Nachtigall“ weiter. Die SCH-Erhöhung beträgt 7 % / 14 % / 24 % der Elementarkunde von Illuga. Erhöht, wenn es sich bei obigem Schaden um Schaden durch die Reaktion Mond-Kristallisation handelt, den Schaden stattdessen um 48 % / 96 % / 160 % der Elementarkunde von Illuga."
+    }
+  },
+  "passive3": {
+    "name": "Mondomen-Segen – Unvergänglich im Winter",
+    "description": {
+      "0": "Erhöht die Stufe vom <strong>Mondomen</strong> der Truppe um 1, wenn sich Illuga in der Truppe befindet."
+    }
+  },
+  "passive": {
+    "name": "Schritte der Nachtwächter",
+    "description": {
+      "0": "Verleiht den eigenen Figuren in der Truppe nachts (18 bis 6 Uhr) den Effekt „Schneller Schritt“: Erhöht die Bewegungs-GSW um 10 %.",
+      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund und ist nicht stapelbar.",
+      "2": "Außerdem scheint Illuga das Flüstern der Wilden Jagd zu verstehen ..."
+    }
+  },
+  "constellation1": {
+    "name": "Aufmerksame Wache",
+    "description": {
+      "0": "Stellt Illuga, nachdem dieser auf dem Feld eine <geo>Geo-Reaktion</geo> ausgelöst hat, 12 Punkte Elementarenergie wieder her, 15 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Elch mit spitzem Geweih",
+    "description": {
+      "0": "Illuga ruft während der Wirkungsdauer des Effekts „Lied des nächtlichen Albtraums“ der Spezialfähigkeit <tooltip ns=char_Illuga_gen baseKey18=burst><strong>Schattenlose Reflektion</strong></tooltip>, wenn 7 Stapelungen <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Lied der Nachtigall</strong></tooltip> verbraucht werden, Aedon herbei und fügt einem Gegner in der Umgebung einmal <geo>Geo-SCH</geo> in Höhe von 400 % von Illugas Elementarkunde und 200 % von seiner VTD zu, welcher als Schaden der Spezialfähigkeit gilt."
+    }
+  },
+  "constellation3": {
+    "name": "Erderschütternder Bär",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Schattenlose Reflektion</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Die Sonne jagender Wolf",
+    "description": {
+      "0": "Erhöht während der Wirkungsdauer des Effekts „Lied des nächtlichen Albtraums“ der Spezialfähigkeit <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Schattenlose Reflektion</tooltip></strong> die VTD von aktiven Truppenmitgliedern in der Nähe um 200 Punkte."
+    }
+  },
+  "constellation5": {
+    "name": "Pferd des Hurrikans",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Singvogel der Morgendämmerung</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Albtraum-Pirol",
+    "description": {
+      "0": "Verstärkt den Effekt „Schwur der Lichthüter“ des Aufstiegstalents <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>Pakt der Fackelmacher</tooltip></strong>: Erhöht die KT von Gegnern zugefügtem <geo>Geo-SCH</geo> um 10 % und den KSCH des den Gegnern zugefügten Geo-SCH um 30 %.",
+      "1": "<br/>",
+      "2": "<strong>Mondomen – Reifer Glanz</strong> ",
+      "3": "Erhöht die Elementarkunde von Figuren, die vom Effekt „Schwur der Lichthüter“ beeinflusst sind, um 80 Punkte.",
+      "4": "Das Aufstiegstalent <strong>Pakt der Fackelmacher</strong> muss zuerst freigeschaltet werden."
+    }
+  }
+}

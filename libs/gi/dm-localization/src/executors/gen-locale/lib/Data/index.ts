@@ -28,6 +28,10 @@ export const mapHashData = {
   >, // will be populated from datamine parsing pipeline
   artifactNames: {} as Record<ArtifactSetKey, number>, // will be populated from datamine parsing pipeline
   material: {} as Record<string, { name: number }>, // will be populated from datamine parsing pipeline
+  tooltips: {} as Record<
+    string,
+    { name: number; description: [number, string] }
+  >, // will be populated from datamine parsing pipeline
   sheet,
   weaponKey: {
     sword: 1338971918,

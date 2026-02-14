@@ -439,17 +439,19 @@ const sheet: TalentSheet = {
         {
           node: infoMut(dmgFormulas.constellation1.aimed, {
             name: ct.ch('addAimed'),
+            multi: 2,
           }),
         },
         {
           node: infoMut(dmgFormulas.constellation1.fully, {
             name: ct.ch('addFullAimed'),
+            multi: 2,
           }),
         },
         ...dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.constellation1[`hex${i}`], {
             name: ct.chg(`auto.skillParams.${i}`),
-            multi: i === 0 || i === 3 ? 2 : undefined,
+            multi: i === 0 || i === 3 ? 2 * 2 : 2,
           }),
         })),
       ],

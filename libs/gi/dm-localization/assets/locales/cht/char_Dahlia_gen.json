@@ -113,13 +113,13 @@
   "passive1": {
     "name": "風色柔願的眷寵",
     "description": {
-      "0": "處於元素爆發<strong>純耀的禱詠</strong>中的「西風之眷」效果影響下的角色對敵人觸發凍結反應時，將會為塔利雅賦予2層「祝頌」效果，該效果8秒內至多觸發一次。"
+      "0": "處於元素爆發<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純耀的禱詠</tooltip></strong>中的「西風之眷」效果影響下的角色對敵人觸發凍結反應時，將會為塔利雅賦予2層「祝頌」效果，該效果8秒內至多觸發一次。"
     }
   },
   "passive2": {
     "name": "黠巧歡愉的祈頌",
     "description": {
-      "0": "隊伍中自己的目前場上角色處於元素爆發<strong>純耀的禱詠</strong>中的「西風之眷」效果影響下時，攻擊速度將獲得提升，提升值基於塔利雅的生命值上限：每1000點生命值上限都將提升0.5%攻擊速度，至多依此方式提升至20%攻擊速度。"
+      "0": "隊伍中自己的目前場上角色處於元素爆發<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純耀的禱詠</tooltip></strong>中的「西風之眷」效果影響下時，攻擊速度將獲得提升，提升值基於塔利雅的生命值上限：每1000點生命值上限都將提升0.5%攻擊速度，至多依此方式提升至20%攻擊速度。"
     }
   },
   "passive3": {
@@ -132,39 +132,39 @@
   "constellation1": {
     "name": "無瑕之引",
     "description": {
-      "0": "塔利雅每獲得一層元素爆發<strong>純耀的禱詠</strong>中的「祝頌」效果，都將恢復2.5點元素能量。"
+      "0": "塔利雅每獲得一層元素爆發<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純耀的禱詠</tooltip></strong>中的「祝頌」效果，都將恢復2.5點元素能量。"
     }
   },
   "constellation2": {
     "name": "眷憐啟應",
     "description": {
-      "0": "塔利雅消耗元素爆發<strong>純耀的禱詠</strong>中的「祝頌」效果喚出聖眷護盾後，處於聖眷護盾庇護下的角色，護盾強效提升25%，持續12秒。"
+      "0": "塔利雅消耗元素爆發<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純耀的禱詠</tooltip></strong>中的「祝頌」效果喚出聖眷護盾後，處於聖眷護盾庇護下的角色，護盾強效提升25%，持續12秒。"
     }
   },
   "constellation3": {
     "name": "風花之奉",
     "description": {
-      "0": "元素爆發<strong>純耀的禱詠</strong>的技能等級提高3級。",
+      "0": "元素爆發<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純耀的禱詠</tooltip></strong>的技能等級提高3級。",
       "1": "至多提升至15級。"
     }
   },
   "constellation4": {
     "name": "眾願的集禱",
     "description": {
-      "0": "元素爆發<strong>純耀的禱詠</strong>中的「西風之眷」效果的持續時間延長3秒。"
+      "0": "元素爆發<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純耀的禱詠</tooltip></strong>中的「西風之眷」效果的持續時間延長3秒。"
     }
   },
   "constellation5": {
     "name": "遂成的狡意",
     "description": {
-      "0": "元素戰技<strong>聖浸的禮典</strong>的技能等級提高3級。",
+      "0": "元素戰技<strong><tooltip ns=char_Dahlia_gen baseKey18=skill>聖浸的禮典</tooltip></strong>的技能等級提高3級。",
       "1": "至多提升至15級。"
     }
   },
   "constellation6": {
     "name": "願一切歡睦陪伴你",
     "description": {
-      "0": "處於元素爆發<strong>純耀的禱詠</strong>中的「西風之眷」效果影響下的目前場上角色的攻擊速度提升10%。",
+      "0": "處於元素爆發<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純耀的禱詠</tooltip></strong>中的「西風之眷」效果影響下的目前場上角色的攻擊速度提升10%。",
       "1": "此外，處於西風之眷效果影響下的目前場上角色倒下時，則立即：",
       "2": [
         "復甦該角色；",

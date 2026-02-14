@@ -1,0 +1,190 @@
+{
+  "name": "Columbina",
+  "title": "Yeni Ayın Eve Dönüşü",
+  "description": "Nod-Krai'da doğan Ay Hanımı ve evine geri dönen yeni ay.",
+  "constellationName": "???",
+  "auto": {
+    "name": "Ay Çiyi Çağlayanı",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Mehtap Gelgitleri çağırarak <hydro>Su Hasarı</hydro> veren en fazla 3 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Kısa bir süre kullanıldıktan sonra belirli miktarda Dayanıklılık harcayarak <hydro>Su Alan Hasarı</hydro> verir.",
+        "2": "Eğer en az 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Taze Çiye</strong></tooltip> sahipsen Columbina'nın Yüklü Saldırısı değişerek özel Yüklü Saldırı <strong>Ay Çiyi Arınması</strong> olur. Bu özel Yüklü Saldırı Dayanıklılık harcamaz, 1 Taze Çiy tüketerek önündeki düşmanlara 3 defa <dendro>Doğa Alan Hasarı</dendro> verir. Bu Hasar Ay Çiçeklenmesi Hasarı sayılır."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <hydro>Su Alan Hasarı</hydro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Ay Çiyi Arınması Hasarı",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ebedi Metcezir",
+    "description": {
+      "0": "Aya Bağlı Metcezirleri uyandırarak <hydro>Su Alan Hasarı</hydro> verir ve bir <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Yer Çekimi Dalgası</strong></tooltip> çağırır.",
+      "1": "<strong>Yer Çekimi Dalgası</strong>, alandaki aktif karakteri takip eder ve etrafındaki düşmanlara sürekli <hydro>Su Alan Hasarı</hydro> verir. <strong>Yer Çekimi Dalgası</strong> alandayken yakındaki grup üyeleri Ay Tepkimelerini tetiklerse veya Ay Tepkimesi Hasarı verirse Columbina özel bir <strong>Yer Çekimi</strong> biriktirir. Yer Çekimi sınıra ulaştığında Columbina için en çok <strong>Yer Çekimi</strong> biriktiren Ay Tepkimesi türüne göre düşmanlara farklı türde hasarlar verilir.",
+      "2": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: <strong>Yer Çekimi Dalgası</strong> daha geniş bir alanda <hydro>Su Alan Hasarı</hydro> verir."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Yer Çekimi Dalgası: Sürekli Hasar",
+      "2": "Yer Çekimi Müdahalesi: Ay Yüklü Hasarı",
+      "3": "Yer Çekimi Müdahalesi: Ay Çiçeklenmesi Hasarı",
+      "4": "Yer Çekimi Müdahalesi: Ay Kristalleşmesi Hasarı",
+      "5": "Yer Çekimi Sınırı",
+      "6": "Yer Çekimi Dalgası Süresi",
+      "7": "BS",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Mehtap Melankolisi",
+    "description": {
+      "0": "Tepeler ve dalgalar, yeni ayın gümüş ışığı altında birleşir. Çevredeki araziyi geçici olarak <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Ay Alanına</strong></tooltip> dönüştürür ve <hydro>Su Alan Hasarı</hydro> verir."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Ay Tepkimesi Hasar Bonusu",
+      "2": "Ay Alanı Süresi",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ayın Delirten Çağrısı",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Yer Çekimi Müdahalesi</strong></tooltip> tetiklendiğinde Columbina, Delilik etkisi kazanır ve 10 saniyeliğine Kritik Oranını %5 artırır. Bu etki 3 kademeye kadar birikebilir."
+    }
+  },
+  "passive2": {
+    "name": "Yeni Ayın Kanunu",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Ay Alanı</strong></tooltip> içindeki karakterler Ay Tepkimeleri tetiklediğinde sırasıyla şu etkileri kazanırlar:",
+      "1": [
+        "<strong>Ay Yüklü</strong>: Şimşek Bulutu geçerli bir hedefe yıldırım darbeleri gönderdiğinde %33 ihtimalle ilave bir yıldırım darbesi daha gönderir.",
+        "<strong>Ay Çiçeklenmesi</strong>: Ay Çiçeklenmesi tepkimeleri tetiklendiğinde grup, özel bir <strong><tooltip ns=tooltips_gen baseKey18=11250003 values=[]>Ay Sırtı Çiyi</tooltip></strong> kazanır. Her 18 saniyede bir en fazla 3 Ay Sırtı Çiyi kazanılabilir.",
+        "<strong>Ay Kristalleşmesi</strong>: Ay Akıntısı Ahengi tetiklendiğinde her Ay Akıntısı %33 ihtimalle fazladan bir saldırı daha yapar."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Ay Sembolü Kutsaması: Ödünç Verilen Ay Işığı",
+    "description": {
+      "0": "Bir grup üyesi Elektrik Yüklü, Çiçeklenme veya Su Kristalleşmesi tepkimesi tetiklediğinde bu tepkime sırasıyla Ay Yüklü, Ay Çiçeklenmesi veya Ay Kristalleşmesi tepkimesine dönüşür. Grup üyeleri tarafından verilen Ay Tepkimesi Hasarı, Columbina'nın Maks. Can değerine göre bir Temel Hasar artışı kazanır. Her 1.000 Maks. Can başına Ay Tepkimelerinin Temel Hasarı %0,2 artar. Bu artış en fazla %7 olabilir.",
+      "1": "<br/>",
+      "2": "Ayrıca Columbina gruptayken grubun <strong>Ay Sembolü</strong> 1 seviye artar."
+    }
+  },
+  "passive": {
+    "name": "Ay Nöbeti",
+    "description": {
+      "0": "Nod-Krai bölgesindeyken bir grup üyesi saf dışı kaldığında Columbina o karakteri diriltir. Karakterin dirildiğinde sahip olacağı Can miktarı, Columbina'nın Arkadaşlık Seviyesine bağlıdır. Bu etki her 100 saniyede bir gerçekleşebilir. Bu etki Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında tetiklenemez.",
+      "1": "Ayrıca Columbina'nın Kuuvahkiden etkilenen hayvanlara karşı özel bir yakınlığı vardır..."
+    }
+  },
+  "constellation1": {
+    "name": "Çiçeklerin ve Tepelerin Parıltısı",
+    "description": {
+      "0": "Savaştayken <strong>Ebedi Metcezir</strong> Element Becerisi kullanıldığında derhal <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Yer Çekimi Müdahalesi</strong></tooltip> etkisine eşdeğer bir etki tetiklenir. Bu etki 15 saniyede bir tetiklenebilir.",
+      "1": "<strong>Ay Sembolü: Yükselen Parıltı</strong>",
+      "2": "Yer Çekimi Müdahalesi tetiklendiğinde Columbina için en çok Yer Çekimi biriktiren Ay Tepkimesi türüne bağlı olarak farklı etkiler tetiklenir:",
+      "3": [
+        "<strong>Ay Yüklü</strong>: Mevcut aktif karakterin 6 Enerji yeniler.",
+        "<strong>Ay Çiçeklenmesi</strong>: Aktif karakterinin müdahaleye karşı direnci 8 saniyeliğine artar.",
+        "<strong>Ay Kristalleşmesi</strong>: Bir <strong>Yağmur Denizi Kalkanı</strong> çağırır. Yağmur Denizi Kalkanının Hasar Emilimi, Columbina'nın Maks. Canının %12'sine eşittir ve 8 saniyeliğine <hydro>Su Hasarını</hydro> %250 verimlilikle emer."
+      ],
+      "4": "<br/>",
+      "5": "Yakındaki tüm grup üyelerinin Ay Tepkimesi Hasarı %1,5 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>yükselir</strong></tooltip>."
+    }
+  },
+  "constellation2": {
+    "name": "Yalnızlığın İhtişamı",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Yer Çekimi</strong></tooltip> biriktirme oranı %34 artar.",
+      "1": "<strong>Yer Çekimi Müdahalesi</strong> tetiklendiğinde Columbina, 8 saniyeliğine Maks. Canını %40 artıran <strong>Ay Parlaklığı</strong> etkisini kazanır.",
+      "2": "<strong>Ay Sembolü: Yükselen Parıltı</strong>:",
+      "3": "<strong>Ay Parlaklığı</strong> etkinken mevcut <strong>Yer Çekimi Müdahalesi</strong> tetiklenmesi sırasında Columbina için en çok Yer Çekimi biriktiren Ay Tepkimesi türüne bağlı olarak farklı etkiler tetiklenir:",
+      "4": [
+        "<strong>Ay Yüklü</strong>: Mevcut aktif karakterinin Saldırısı, Columbina'nın Maks. Canının %1'i kadar artar.",
+        "<strong>Ay Çiçeklenmesi</strong>: Mevcut aktif karakterinin Element Ustalığı, Columbina'nın Maks. Canının %0,35'i kadar artar.",
+        "<strong>Ay Kristalleşmesi</strong>: Mevcut aktif karakterinin Savunması, Columbina'nın Maks. Canının %1'i kadar artar."
+      ],
+      "5": "<br/>",
+      "6": "Yakındaki tüm grup üyelerinin Ay Tepkimesi Hasarı %7 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>yükselir</strong></tooltip>."
+    }
+  },
+  "constellation3": {
+    "name": "Sakin Sularda Rüya Gibi Bir Parıltı",
+    "description": {
+      "0": "<strong><tooltip ns=char_Columbina_gen baseKey18=skill>Ebedi Metcezir</tooltip></strong> Element Becerisi Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir.",
+      "2": "<br/>",
+      "3": "Yakındaki tüm grup üyelerinin Ay Tepkimesi Hasarı %1,5 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>yükselir</strong></tooltip>."
+    }
+  },
+  "constellation4": {
+    "name": "Çiçek Kokulu Sisler, Bulut Kaplı Tepeler",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Yer Çekimi Müdahalesi</strong></tooltip> tetiklendiğinde Columbina'ya 4 Element Enerjisi yenilenir.",
+      "1": "Ayrıca Columbina için en fazla <strong>Yer Çekimi</strong> biriktiren Ay Tepkimesi türü eğer Ay Yüklü, Ay Çiçeklenmesi veya Ay Kristalleşmesi ise Yer Çekimi Müdahalesinin bu sefer verdiği Ay Tepkimesi Hasarı, sırayla Columbina'nın Maks. Canının %12,5/%2,5/%12,5'i kadar artar. Bu etki her 15 saniyede en fazla bir defa tetiklenebilir.",
+      "2": "<br/>",
+      "3": "Yakındaki tüm grup üyelerinin Ay Tepkimesi Hasarı %1,5 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>yükselir</strong></tooltip>."
+    }
+  },
+  "constellation5": {
+    "name": "Sessizliğin Yalnız Şarkısı",
+    "description": {
+      "0": "<strong><tooltip ns=char_Columbina_gen baseKey18=burst>Mehtap Melankolisi</tooltip></strong> Element Patlaması Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir.",
+      "2": "<br/>",
+      "3": "Yakındaki tüm grup üyelerinin Ay Tepkimesi Hasarı %1,5 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>yükselir</strong></tooltip>."
+    }
+  },
+  "constellation6": {
+    "name": "Ay Işığında Karanlığın İçinden",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Ay Alanı</strong></tooltip> içindeki karakterler bir Ay Tepkimesi tetikledikten sonra 8 saniye boyunca, tepkimedeki elementlerde tüm grup üyeleri tarafından verilen ilgili Element Hasarının Kritik Hasarı %80 artar. Aynı Element Türü için Kritik Hasar artışı etkileri birikmez.",
+      "1": "<br/>",
+      "2": "Yakındaki tüm grup üyelerinin Ay Tepkimesi Hasarı %7 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>yükselir</strong></tooltip>."
+    }
+  }
+}

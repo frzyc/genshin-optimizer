@@ -1,0 +1,29 @@
+{
+  "setName": "Tag des aufkommenden Windes",
+  "setEffects": {
+    "2": "Erhöht den ANG um 18 %.",
+    "4": "Verleiht nach Treffen von Gegnern mit einem Standardangriff, heftigen Schlag, einer Elementarfähigkeit oder Spezialfähigkeit 6 s lang „Segen des Windes und des Hirtengesangs“: Erhöht den ANG um 25 %. Verbessert, wenn der Träger „Aufgabe der Hexe“ bereits abgeschlossen hat, „Segen des Windes und des Hirtengesangs“ zu „Willen des Windes und des Hirtengesangs“ und erhöht zusätzlich die KT des Trägers, der die Prüfung bestanden hat, um 20 %. Diese Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Spruchdichtung der Windblume",
+      "desc": "Eine ewig blühende graublaue Kristallblume, von der es heißt, sie habe einst einem wandernden Mädchen gehört, das Wind und Blüten herbeirufen konnte."
+    },
+    "plume": {
+      "name": "Eid des Morgenlichts",
+      "desc": "Eine blaugraue Feder, so rein wie das Morgenlicht. Sie soll einst einem Wächter gehört haben, der seinen Namen aufgegeben hat."
+    },
+    "sands": {
+      "name": "Note im Frühlingslied",
+      "desc": "Eine Sanduhr mit graublauem Sand, deren Inhalt sich aus irgendeinem Grund einfach nicht bewegen will, egal wie man sie auf den Kopf stellt."
+    },
+    "goblet": {
+      "name": "Unausgesprochene Bankettgespräche",
+      "desc": "Ein uralter blaugrauer Weinkelch, der angeblich einst einem namenlosen Barden aus längst vergangenen Zeiten gehörte."
+    },
+    "circlet": {
+      "name": "Ballade von Liebe und Klage",
+      "desc": "Ein edler Haarschmuck, besetzt mit Jade und graublauem Kristall. Es heißt, dass er in ferner Vergangenheit ein Andenken des Herrschers der Stürme an seinen geliebten Anhänger war."
+    }
+  }
+}

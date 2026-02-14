@@ -1,10 +1,10 @@
 import {
   BootstrapTooltip,
   ConditionalWrapper,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
+import { getLevelString as getWeaponLevelString } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import type { WeaponSheet } from '@genshin-optimizer/gi/sheets'
@@ -12,7 +12,6 @@ import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
-import { getWeaponLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, input } from '@genshin-optimizer/gi/wr'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
@@ -50,7 +49,7 @@ export function WeaponCardNano({
         }}
       >
         <Box
-          component={NextImage ? NextImage : 'img'}
+          component="img"
           src={imgAssets.weaponTypes[weaponTypeKey]}
           sx={{ width: '25%', height: 'auto', opacity: 0.7 }}
         />
@@ -111,7 +110,7 @@ export function WeaponCardNanoObj({
         >
           <WeaponNameTooltip weaponKey={weapon.key}>
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={weaponAsset(weapon.key, weapon.ascension >= 2)}
               sx={{ mx: -1, maxHeight: '100%', maxWidth: '100%' }}
             />

@@ -41,7 +41,7 @@
   "skill": {
     "name": "정화 모드·반송파",
     "description": {
-      "0": "이네파가 고급 청소 모듈을 가동해 주변의 적에게 <electro>번개 원소 범위 피해</electro>를 1회 주고, 광학 보호막을 펼치며, 다용도 스마트 보조 유닛 <strong>「비르지타」</strong>를 소환한다.",
+      "0": "이네파가 고급 청소 모듈을 가동해 주변의 적에게 <electro>번개 원소 범위 피해</electro>를 1회 주고, 광학 보호막을 펼치며, 다용도 스마트 보조 유닛 <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>「비르지타」</strong></tooltip>를 소환한다.",
       "1": "광학 보호막은 이네파 공격력의 영향을 받으며, <electro>번개 원소 피해</electro>에 대해 250%의 흡수 효과가 있다"
     },
     "skillParams": {
@@ -66,7 +66,7 @@
   "burst": {
     "name": "지고한 율령·광역 소탕",
     "description": {
-      "0": "다용도 스마트 보조 유닛 <strong>「비르지타」</strong>의 로켓 펀치로 적을 쓸어버린다! 이네파가 비르지타를 발사해 <electro>번개 원소 범위 피해</electro>를 주고, 비르지타를 필드 위에 남긴다.",
+      "0": "다용도 스마트 보조 유닛 <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>「비르지타」</strong></tooltip>의 로켓 펀치로 적을 쓸어버린다! 이네파가 비르지타를 발사해 <electro>번개 원소 범위 피해</electro>를 주고, 비르지타를 필드 위에 남긴다.",
       "1": "<br/>",
       "2": "필드 위에 이네파 자신이 소환한 비르지타가 존재할 경우, 목표 위치에 다시 비르지타를 소환하고 지속 시간을 갱신한다"
     },
@@ -92,13 +92,13 @@
   "passive1": {
     "name": "오버클럭",
     "description": {
-      "0": "<strong>「비르지타」</strong> 주변에 달 감전 반응으로 생성된 번개구름이 존재할 경우, 비르지타가 방전 공격 시 추가로 1회 공격해 이네파 공격력의 65%에 해당하는 <electro>번개 원소 범위 피해</electro>를 준다. 해당 피해는 달 감전 반응으로 주는 피해로 간주한다"
+      "0": "<tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>「비르지타」</strong></tooltip> 주변에 달 감전 반응으로 생성된 번개구름이 존재할 경우, 비르지타가 방전 공격 시 추가로 1회 공격해 이네파 공격력의 65%에 해당하는 <electro>번개 원소 범위 피해</electro>를 준다. 해당 피해는 달 감전 반응으로 주는 피해로 간주한다"
     }
   },
   "passive2": {
     "name": "광역 재구축 프로토콜",
     "description": {
-      "0": "원소폭발 <strong>지고한 율령·광역 소탕</strong> 발동 시, 파티 내 자신의 모든 캐릭터에게 「매개변수 재구성」 효과를 부여한다: 이네파 공격력의 6%를 기반으로, 이네파와 현재 필드 위에 있는 파티 내 자신의 캐릭터의 원소 마스터리가 증가한다. 지속 시간: 20초"
+      "0": "원소폭발 <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>지고한 율령·광역 소탕</tooltip></strong> 발동 시, 파티 내 자신의 모든 캐릭터에게 「매개변수 재구성」 효과를 부여한다: 이네파 공격력의 6%를 기반으로, 이네파와 현재 필드 위에 있는 파티 내 자신의 캐릭터의 원소 마스터리가 증가한다. 지속 시간: 20초"
     }
   },
   "passive3": {
@@ -126,14 +126,14 @@
   "constellation2": {
     "name": "보조 청소 모듈",
     "description": {
-      "0": "원소폭발 <strong>지고한 율령·광역 소탕</strong>이 적에게 명중 후, 그중 1기 적에게 「징벌 칙령」 상태를 부여한다: 짧은 시간이 지난 후, 또는 해당 적이 처치될 시, 해당 적 주변의 적에게 이네파 공격력의 300%에 해당하는 <electro>번개 원소 범위 피해</electro>를 준다. 해당 피해는 달 감전 반응으로 주는 피해로 간주한다.",
+      "0": "원소폭발 <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>지고한 율령·광역 소탕</tooltip></strong>이 적에게 명중 후, 그중 1기 적에게 「징벌 칙령」 상태를 부여한다: 짧은 시간이 지난 후, 또는 해당 적이 처치될 시, 해당 적 주변의 적에게 이네파 공격력의 300%에 해당하는 <electro>번개 원소 범위 피해</electro>를 준다. 해당 피해는 달 감전 반응으로 주는 피해로 간주한다.",
       "1": "또한 원소폭발 <strong>지고한 율령·광역 소탕</strong> 발동 시, 주변에 있는 현재 필드 위의 캐릭터에게도 광학 보호막을 부여한다"
     }
   },
   "constellation3": {
     "name": "고급 감정 펌웨어",
     "description": {
-      "0": "원소전투 스킬 <strong>정화 모드·반송파</strong>의 스킬 레벨+3",
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Ineffa_gen baseKey18=skill>정화 모드·반송파</tooltip></strong>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },
@@ -146,7 +146,7 @@
   "constellation5": {
     "name": "거울을 초월한 꿈",
     "description": {
-      "0": "원소폭발 <strong>지고한 율령·광역 소탕</strong>의 스킬 레벨+3",
+      "0": "원소폭발 <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>지고한 율령·광역 소탕</tooltip></strong>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },

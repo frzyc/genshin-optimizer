@@ -42,7 +42,7 @@
     "name": "Prevenzione delle malattie trasmesse per via aerea",
     "description": {
       "0": "La coppia esplosiva entra finalmente in azione! Ifa chiama Cacucu a dargli manforte.",
-      "1": "Dopo aver usato l'abilità, Ifa ottiene 80 punti Anima della Notte ed entra nello <strong>stato di Grazia dell'Anima della Notte</strong>, che gli permette di librarsi in aria con l'aiuto di Cacucu. Quando sferra attacchi normali in questo stato, usa diversi tipi di <strong>Fuoco di supporto</strong> in base alla durata della pressione, sparando dei Colpi rinvigorenti in grado di ripristinare PS di tutti i membri del gruppo.",
+      "1": "Dopo aver usato l'abilità, Ifa ottiene 80 punti Anima della Notte ed entra nello <tooltip ns=tooltips_gen baseKey18=11130003 values=[]><strong>stato di Grazia dell'Anima della Notte</strong></tooltip>, che gli permette di librarsi in aria con l'aiuto di Cacucu. Quando sferra attacchi normali in questo stato, usa diversi tipi di <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Fuoco di supporto</strong></tooltip> in base alla durata della pressione, sparando dei Colpi rinvigorenti in grado di ripristinare PS di tutti i membri del gruppo.",
       "2": "<br/>",
       "3": "Inoltre, quando è nello stato di Grazia dell'Anima della Notte, la pressione prolungata dell'abilità elementale <strong>Prevenzione delle malattie trasmesse per via aerea</strong> permette a Ifa di eseguire un attacco in picchiata con attributo Anima della Notte. Interrompere la pressione dell'abilità interrompe a sua volta l'attacco in picchiata, permettendo a Ifa di rimanere a mezz'aria. Se l'attacco in picchiata colpisce il suolo, lo stato di Grazia dell'Anima della Notte di Ifa termina."
     },
@@ -69,7 +69,7 @@
     "name": "Campo di sedazione composito",
     "description": {
       "0": "Spara un Sedativo terapeutico a un avversario (temporaneamente aggressivo). Il sedativo esplode all'impatto e crea una corrente d'aria vincolante che attira a sé oggetti e avversari vicini, infliggendo al contempo <anemo>DAN da Anemo ad area</anemo> con attributo Anima della Notte.",
-      "1": "Quando il Sedativo terapeutico colpisce un avversario affetto da <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, gli applica un <strong>Marchio di sedazione</strong>."
+      "1": "Quando il Sedativo terapeutico colpisce un avversario affetto da <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, gli applica un <tooltip ns=tooltips_gen baseKey18=11130004 values=[]><strong>Marchio di sedazione</strong></tooltip>."
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -93,7 +93,7 @@
   "passive1": {
     "name": "Visione del medico di campo",
     "description": {
-      "0": "Quando Ifa è nello stato di Grazia dell'Anima della Notte, ogni punto Anima della Notte posseduto dall'intero gruppo gli conferisce 1 punto di <strong>Fondamentali di soccorso</strong>. Ogni punto aumenta i DAN da Turbinio, Electrocarica e Carica lunare inflitti dai membri vicini del gruppo."
+      "0": "Quando Ifa è nello stato di Grazia dell'Anima della Notte, ogni punto Anima della Notte posseduto dall'intero gruppo gli conferisce 1 punto di <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>Fondamentali di soccorso</strong></tooltip>. Ogni punto aumenta i DAN da Turbinio, Electrocarica e Carica lunare inflitti dai membri vicini del gruppo."
     }
   },
   "passive2": {
@@ -118,42 +118,42 @@
   "constellation1": {
     "name": "Miscela dell'Elisir vitifero",
     "description": {
-      "0": "Quando <strong>Fuoco di supporto</strong> colpisce un avversario, l'energia di Ifa si ripristina di 6. Un ripristino di energia di questo tipo può innescarsi una volta ogni 8 s."
+      "0": "Quando <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Fuoco di supporto</strong></tooltip> colpisce un avversario, l'energia di Ifa si ripristina di 6. Un ripristino di energia di questo tipo può innescarsi una volta ogni 8 s."
     }
   },
   "constellation2": {
     "name": "Spirito guida dell'orazione balistica",
     "description": {
-      "0": "Quando Ifa è nello stato di Grazia dell'Anima della Notte, riceve 4 ulteriori punti di <strong>Fondamentali di soccorso</strong> per ogni punto Anima della Notte posseduto dall'intero gruppo oltre un minimo di 60.",
+      "0": "Quando Ifa è nello stato di Grazia dell'Anima della Notte, riceve 4 ulteriori punti di <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>Fondamentali di soccorso</strong></tooltip> per ogni punto Anima della Notte posseduto dall'intero gruppo oltre un minimo di 60.",
       "1": "Inoltre, il limite dei Fondamentali di soccorso di Ifa aumenta di 50.",
-      "2": "Richiede il talento d'ascensione <strong>Visione del medico di campo</strong>."
+      "2": "Richiede il talento d'ascensione <tooltip ns=char_Ifa_gen baseKey18=passive1><strong>Visione del medico di campo</strong></tooltip>."
     }
   },
   "constellation3": {
     "name": "Obiezione nei negoziati con la Notte",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Prevenzione delle malattie trasmesse per via aerea</strong>.",
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Ifa_gen baseKey18=skill>Prevenzione delle malattie trasmesse per via aerea</tooltip></strong>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation4": {
     "name": "Permutazione di ricettacoli logori",
     "description": {
-      "0": "La durata della corrente d'aria vincolante generata dal Tripudio elementale <strong>Campo di sedazione composito</strong> aumenta a 3 s.",
+      "0": "La durata della corrente d'aria vincolante generata dal Tripudio elementale <strong><tooltip ns=char_Ifa_gen baseKey18=burst>Campo di sedazione composito</tooltip></strong> aumenta a 3 s.",
       "1": "Inoltre, Ifa ottiene 100 di maestria elementale per 15 s dopo aver usato il Tripudio elementale <strong>Campo di sedazione composito</strong>."
     }
   },
   "constellation5": {
     "name": "Voto di coesistenza universale",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Campo di sedazione composito</strong>.",
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Ifa_gen baseKey18=burst>Campo di sedazione composito</tooltip></strong>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation6": {
     "name": "Giuramento del nodo piumato",
     "description": {
-      "0": "Quando Ifa usa la variante a pressione prolungata del suo <strong>Fuoco di supporto</strong>, c'è una probabilità del 50% di sparare un Colpo rinvigorente aggiuntivo che infligge DAN da Anemo pari a un 120% dell'ATT di Ifa. Tali DAN sono considerati DAN da attacco normale.",
+      "0": "Quando Ifa usa la variante a pressione prolungata del suo <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Fuoco di supporto</strong></tooltip>, c'è una probabilità del 50% di sparare un Colpo rinvigorente aggiuntivo che infligge DAN da Anemo pari a un 120% dell'ATT di Ifa. Tali DAN sono considerati DAN da attacco normale.",
       "1": "Inoltre, quando non è in combattimento, Ifa consuma un 20% in meno di punti Anima della Notte e di Flogisto quando è nello stato di Grazia dell'Anima della Notte."
     }
   }

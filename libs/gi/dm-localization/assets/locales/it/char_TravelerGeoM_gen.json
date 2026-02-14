@@ -104,6 +104,22 @@
       "0": "Il colpo finale di una combo d'attacco normale innesca un crollo, infliggendo un 60% dell'ATT come <geo>DAN da Geo ad area</geo>."
     }
   },
+  "lockedPassive": {
+    "name": "Adamantite straniera",
+    "description": {
+      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effetti positivi aggiuntivi</strong></tooltip> per ogni elemento con cui hai risuonato.",
+      "1": "<br/>",
+      "2": "<br/>",
+      "3": "Inoltre, quando i membri vicini del gruppo ottengono uno scudo, quando lo scudo viene sostituito per una qualsiasi ragione o quando vengono creati dei <geo>costrutti di Geo</geo>, {F#la viaggiatrice}{M#il viaggiatore} ottiene 1 accumulo di Lama della Roccia arcaica. È possibile ottenere 1 accumulo in questo modo ogni secondo, fino a un massimo di 3 accumuli. Dopo aver raggiunto il numero massimo di accumuli, sferrare un attacco caricato li consuma tutti e trasforma l'attacco in un <strong>Attacco caricato: Frana</strong> speciale.",
+      "4": "<br/>",
+      "5": "<strong>Attacco caricato: Frana</strong>",
+      "6": [
+        " Ogni colpo di attacco caricato infligge <geo>DAN da Geo</geo> aumentati. L'aumento dei DAN è pari a un 120% dell'ATT {F#della viaggiatrice}{M#del viaggiatore}.",
+        " Per 15 s dopo aver colpito un avversario, l'efficacia dello scudo dei membri vicini del gruppo aumenta temporaneamente di un 20%.",
+        " È possibile scatenare <strong>Attacco caricato: Frana</strong> una volta ogni 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Muro invalicabile",
     "description": {

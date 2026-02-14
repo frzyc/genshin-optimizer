@@ -1,18 +1,25 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: { sheet: 'Manato', name: 'boolConditional', type: 'bool' },
-  listConditional: {
+  assistFollowUpHitsEnemy: {
     sheet: 'Manato',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'Manato',
-    name: 'numConditional',
+    name: 'assistFollowUpHitsEnemy',
     type: 'num',
     int_only: true,
     min: 0,
-    max: 2,
+    max: 5,
   },
+  consumingHp_consecutiveStrikes: {
+    sheet: 'Manato',
+    name: 'consumingHp_consecutiveStrikes',
+    type: 'bool',
+  },
+  hpTallied: {
+    sheet: 'Manato',
+    name: 'hpTallied',
+    type: 'num',
+    int_only: true,
+    min: 0,
+    max: 50,
+  },
+  moltenEdge: { sheet: 'Manato', name: 'moltenEdge', type: 'bool' },
 } as const

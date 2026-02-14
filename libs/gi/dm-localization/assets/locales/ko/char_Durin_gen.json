@@ -41,7 +41,7 @@
   "skill": {
     "name": "이원식·융합분열",
     "description": {
-      "0": "영혼과 염원의 재료를 정화하여 <strong>본질 전환</strong>을 진행한다. 이 기간 동안 두린의 원소전투 스킬 <strong>이원식·융합분열</strong>이 특수 원소전투 스킬 <strong>전환·긍정의 백화</strong>로, 일반 공격 <strong>불꽃 날개 베기</strong>는 특수 원소전투 스킬 <strong>전환·부정의 흑도</strong>로 대체된다.",
+      "0": "영혼과 염원의 재료를 정화하여 <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>본질 전환</strong></tooltip>을 진행한다. 이 기간 동안 두린의 원소전투 스킬 <strong>이원식·융합분열</strong>이 특수 원소전투 스킬 <strong>전환·긍정의 백화</strong>로, 일반 공격 <strong>불꽃 날개 베기</strong>는 특수 원소전투 스킬 <strong>전환·부정의 흑도</strong>로 대체된다.",
       "1": "<br/>",
       "2": "<strong>전환·긍정의 백화</strong>",
       "3": "주변의 적에게 <pyro>불 원소 범위 피해</pyro>를 1회 주고, 본질 전환을 해제해 <strong>긍정의 백화</strong> 상태에 진입한다, 지속 시간: 30초.",
@@ -73,7 +73,7 @@
   "burst": {
     "name": "백화·흐르는 빛",
     "description": {
-      "0": "「야수」의 힘을 다양한 방식으로 해방한다. 두린의 <strong>본질 전환</strong> 상태에 따라 다른 원소폭발을 발동할 수 있다.",
+      "0": "「야수」의 힘을 다양한 방식으로 해방한다. 두린의 <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>본질 전환</strong></tooltip> 상태에 따라 다른 원소폭발을 발동할 수 있다.",
       "1": "<br/>",
       "2": "<strong>백화·흐르는 빛</strong>",
       "3": "두린이 <strong>긍정의 백화</strong> 상태일 경우, 원소폭발 <strong>백화·흐르는 빛</strong>을 발동해 전방의 적에게 <pyro>불 원소 범위 피해</pyro>를 3회 주고, 자신의 힘을 <strong>「백염룡」</strong> 형태로 발현한다. 「백염룡」은 현재 필드 위 캐릭터를 따라다니며 간헐적으로 주변의 적을 공격해 <pyro>불 원소 범위 피해</pyro>를 준다. 해당 피해는 원소폭발 피해로 간주한다.",
@@ -133,7 +133,7 @@
       "0": "<strong>마녀의 과제·세계</strong>를 완료하면, 두린이 <strong>마도</strong> 캐릭터가 된다. 파티에 마도 캐릭터를 2명 이상 편성하면 <strong>마도·비밀 의식</strong> 효과를 획득해 마도 캐릭터가 강화된다.",
       "1": "<br/>",
       "2": "<strong>마도·비밀 의식</strong>",
-      "3": "지속 시간을 제외한 돌파 특성 <strong>「신성한 빛의 공식」</strong>의 모든 효과가 75% 증가한다"
+      "3": "지속 시간을 제외한 돌파 특성 <tooltip ns=char_Durin_gen baseKey18=passive1><strong>「신성한 빛의 공식」</strong></tooltip>의 모든 효과가 75% 증가한다"
     }
   },
   "constellation1": {
@@ -157,20 +157,20 @@
   "constellation3": {
     "name": "불거울 현현",
     "description": {
-      "0": "원소폭발 <strong>백화·흐르는 빛</strong>의 스킬 레벨+3",
+      "0": "원소폭발 <strong><tooltip ns=char_Durin_gen baseKey18=burst>백화·흐르는 빛</tooltip></strong>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },
   "constellation4": {
     "name": "흐름의 근원",
     "description": {
-      "0": "두린의 원소폭발로 주는 피해가 40% 증가한다. 또한 운명의 자리 <strong>「적토의 역전」</strong>의 <strong>「순환의 계시」</strong> 소모 효과 발동 시 30%의 확률로 「순환의 계시」를 소모하지 않는다"
+      "0": "두린의 원소폭발로 주는 피해가 40% 증가한다. 또한 운명의 자리 <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>「적토의 역전」</tooltip></strong>의 <strong>「순환의 계시」</strong> 소모 효과 발동 시 30%의 확률로 「순환의 계시」를 소모하지 않는다"
     }
   },
   "constellation5": {
     "name": "불꽃의 분열",
     "description": {
-      "0": "원소전투 스킬 <strong>이원식·융합분열</strong>의 스킬 레벨+3",
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Durin_gen baseKey18=skill>이원식·융합분열</tooltip></strong>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },

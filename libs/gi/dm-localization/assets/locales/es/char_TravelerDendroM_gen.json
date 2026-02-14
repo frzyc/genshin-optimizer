@@ -110,6 +110,20 @@
       "0": "Por cada punto de Maestría Elemental que tenga {F#la Viajera}{M#el Viajero}, el daño de <strong>Espada hierbafilada</strong> aumenta en un 0.15%, y el de <strong>Dendromímesis</strong> aumenta en un 0.1%."
     }
   },
+  "lockedPassive": {
+    "name": "Orquídea extranjera",
+    "description": {
+      "0": "Obtienes nuevos poderes gracias a tus viajes pasados, de manera que ganarás <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimientos</strong></tooltip> adicionales por cada elemento con el que hayas resonado.",
+      "1": "<br/>",
+      "2": "Además, cuando en un lugar cercano del campo de batalla se cree un núcleo Dendro (incluyendo núcleos feraces y núcleos artificiosos), o cuando un personaje del equipo obtenga rocío de la espesura, {F#la}{M#el} Viajer{F#a}{M#o} obtendrá 1 carga de “filo hierbazur”. Cada uno de dos métodos otorgará {F#a la}{M#al} Viajer{F#a}{M#o} hasta 1 carga de filo hierbazur cada 4 s, acumulable hasta un máximo de 3 cargas. Al tener 3 cargas y ejecutar un Ataque Cargado, se consumirán todas las cargas de filo hierbazur para ejecutar un <strong>Ataque Cargado: Verdesencia</strong> especial.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Cargado: Verdesencia</strong>",
+      "5": [
+        "Cada golpe del Ataque Cargado inflige <dendro>Daño Dendro</dendro> adicional, con un aumento de daño equivalente al 80% del ATQ {F#de la}{M#del} Viajer{F#a}{M#o}, y también crea dos <strong>enredalotos</strong> en su ubicación, los cuales explotan después de 4/8 s respectivamente para infligir <dendro>Daño Dendro</dendro> en una cantidad equivalente al 120% del ATQ {F#de la}{M#del} Viajer{F#a}{M#o}. Este daño se considera daño de Ataque Cargado.",
+        "Como máximo, solo se puede ejecutar un <strong>Ataque Cargado: Verdesencia</strong> cada 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Enredadera simbiótica",
     "description": {

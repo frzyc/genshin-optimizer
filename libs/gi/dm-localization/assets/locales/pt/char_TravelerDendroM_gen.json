@@ -110,6 +110,20 @@
       "0": "Cada ponto de Proficiência Elemental que {M#o}{F#a} Viajante possui aumenta o Dano infligido pela <strong>Espada da Grama Afiada</strong> em 0.15% e o Dano infligido pelo <strong>Mímico Dendro</strong> em 0.1%."
     }
   },
+  "lockedPassive": {
+    "name": "Luz Verdejante Forasteira",
+    "description": {
+      "0": "Reúne novas forças das jornadas do passado. Para cada elemento que você ressoou, obtém um <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimento adicional</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Além disso, quando o membro ativo gera um Núcleo Dendro (inclui Núcleo da Riqueza e Núcleo da Falsidade), ou quando obtém um Orvalho Verdejante, {F#a}{M#o} Viajante obtém 1 acúmulo de Lâmina das Orquídeas. Estes dois métodos podem conceder, cada um, ao Viajante até 1 acúmulo da Lâmina das Orquídeas a cada 4s, com um máximo de 3 acúmulos. Quando possuir 3 Lâminas das Orquídeas e fizer um Ataque Carregado, consumirá todas as Lâminas das Orquídeas e realizará o especial <strong>Ataque Carregado: Gentileza Verde</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Carregado: Gentileza Verde</strong>",
+      "5": [
+        " Cada Ataque Carregado causa mais <dendro>Dano Dendro</dendro>, o aumento de Dano é 80% do ATQ d{F#a}{M#o} Viajante, e cria 2 <strong>Plataformas de Vinhas</strong> no local original que explodirão depois de 4/8s, causando 120% do ATQ d{F#a}{M#o} como <dendro>Dano Dendro</dendro>. Esse Dano é considerado Dano de Ataque Carregado.",
+        " É possível fazer um <strong>Ataque Carregado: Gentileza Verde</strong> uma vez a cada 15s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Videira Parasítica",
     "description": {

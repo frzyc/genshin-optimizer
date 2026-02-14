@@ -1,0 +1,29 @@
+{
+  "setName": "Aubade d'astre et de lune",
+  "setEffects": {
+    "2": "Augmente la maîtrise élémentaire de 80 pts.",
+    "4": "Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, les DGT de réaction sélène augmentent de 20 %, et de 40 % supplémentaires si le cycle signelunaire de l'équipe est au moins « Lueur ascendante ». Cet effet prend fin 3 s après que le personnage concerné est déployé."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Rêve d'offrande sous la lune",
+      "desc": "Un ornement floral minutieusement sculpté, destiné à mettre en valeur la beauté resplendissante des déesses des lunes célestes, créé dans les temps anciens par des artisans qui sculptaient leurs statues."
+    },
+    "plume": {
+      "name": "Lumière d'offrande sous la lune",
+      "desc": "Une plume qui, dans les temps anciens, accordait une inspiration sans limites aux prêtres qui rédigeaient des prières aux lunes célestes."
+    },
+    "sands": {
+      "name": "Finalité d'offrande sous la lune",
+      "desc": "Un sablier destiné à commémorer la dernière heure, préparé par des sages qui, dans les temps anciens, cherchaient la vérité auprès des lunes célestes."
+    },
+    "goblet": {
+      "name": "Libation d'offrande sous la lune",
+      "desc": "Une coupe à vin perdue lors des dernières festivités d'un rite antique, au cours duquel les croyants offraient autrefois des sacrifices aux lunes célestes."
+    },
+    "circlet": {
+      "name": "Couronne d'offrande sous la lune",
+      "desc": "Un cercle d'argent, mis de côté à la dernière syllabe d'un hymne, porté par les poètes qui, dans les temps anciens, chantaient les louanges des lunes célestes."
+    }
+  }
+}

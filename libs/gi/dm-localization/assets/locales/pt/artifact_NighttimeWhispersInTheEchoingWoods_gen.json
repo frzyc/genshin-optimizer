@@ -2,7 +2,7 @@
   "setName": "Ecos da Floresta Noturna",
   "setEffects": {
     "2": "ATQ +18%",
-    "4": "Nos 10s depois de usar uma Habilidade Elemental, aumenta o Bônus de Dano Geo em 20%. Se estiver protegido por um escudo gerado pela Reação de Cristalização, o efeito acima será aumentado em 150%, e esse aumento adicional desaparece 1s após perder esse escudo."
+    "4": "Nos 10s depois de usar uma Habilidade Elemental, aumenta o Bônus de Dano Geo em 20%. Se estiver protegido por um escudo gerado pela Reação de Cristalização, ou se houver uma Jaula Lunar próxima gerada por Cristalização Lunar por perto, o efeito acima será aumentado em 150%. Quando essas circunstâncias não forem satisfeitas, esse aumento adicional de Dano desaparece após 1s."
   },
   "pieces": {
     "flower": {

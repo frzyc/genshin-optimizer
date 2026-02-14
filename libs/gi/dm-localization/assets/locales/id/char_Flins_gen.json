@@ -49,7 +49,7 @@
       ],
       "2": "<br/>",
       "3": "<strong>Northland Spearstorm</strong>",
-      "4": "Flins memanggil sekumpulan tombak di hadapannya dan mengakibatkan <electro>Electro DMG Area</electro>. Selama 6 detik ke depan, Elemental Burst <strong>Ancient Ritual: Cometh the Night</strong> Flins juga akan berubah menjadi Elemental Burst khusus <strong>Thunderous Symphony</strong>.",
+      "4": "Flins memanggil sekumpulan tombak di hadapannya dan mengakibatkan <electro>Electro DMG Area</electro>. Selama 6 detik ke depan, Elemental Burst <strong>Ancient Ritual: Cometh the Night</strong> Flins juga akan berubah menjadi Elemental Burst khusus <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Thunderous Symphony</strong></tooltip>.",
       "5": "Cooldown dasar <strong>Northland Spearstorm</strong> adalah 6 detik, dan tidak akan terpengaruh oleh efek lain."
     },
     "skillParams": {
@@ -148,7 +148,7 @@
   "constellation3": {
     "name": "Stranger in the Night",
     "description": {
-      "0": "Meningkatkan 3 level <strong>Ancient Ritual: Cometh the Night</strong>.",
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Flins_gen baseKey18=burst>Ancient Ritual: Cometh the Night</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
@@ -156,20 +156,20 @@
     "name": "Night on Bald Mountain",
     "description": {
       "0": "ATK Flins meningkat 20%.",
-      "1": "Selain itu, Talenta Ascension <strong>Whispering Flame</strong> miliknya diperkuat: Elemental Mastery Flins meningkat sebesar 10% ATK Flins. Peningkatan Elemental Mastery yang dapat diperoleh dengan cara ini adalah maksimum 220 poin."
+      "1": "Selain itu, Talenta Ascension <tooltip ns=char_Flins_gen baseKey18=passive2><strong>Whispering Flame</strong></tooltip> miliknya diperkuat: Elemental Mastery Flins meningkat sebesar 10% ATK Flins. Peningkatan Elemental Mastery yang dapat diperoleh dengan cara ini adalah maksimum 220 poin."
     }
   },
   "constellation5": {
     "name": "Exile's Shadow",
     "description": {
-      "0": "Meningkatkan 3 level Elemental Skill <strong>Ancient Rite: Arcane Light</strong>.",
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Flins_gen baseKey18=skill>Ancient Rite: Arcane Light</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {
     "name": "Songs and Dances of Death",
     "description": {
-      "0": "DMG reaksi Lunar-Charged Flins terhadap musuh <strong>bertumbuh</strong> 35%.",
+      "0": "DMG reaksi Lunar-Charged Flins terhadap musuh <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 35%.",
       "1": "<strong>Moonsign: Ascendant Gleam</strong>: DMG reaksi Lunar-Charged yang diakibatkan semua Karakter sekitar dalam party <strong>bertumbuh</strong> 10%."
     }
   }

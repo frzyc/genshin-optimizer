@@ -19,6 +19,7 @@ import Chongyun from './Chongyun'
 import Citlali from './Citlali'
 import Clorinde from './Clorinde'
 import Collei from './Collei'
+import Columbina from './Columbina'
 import Cyno from './Cyno'
 import Dahlia from './Dahlia'
 import Dehya from './Dehya'
@@ -40,6 +41,7 @@ import Gorou from './Gorou'
 import HuTao from './HuTao'
 import Iansan from './Iansan'
 import Ifa from './Ifa'
+import Illuga from './Illuga'
 import Ineffa from './Ineffa'
 import Jahoda from './Jahoda'
 import Jean from './Jean'
@@ -113,6 +115,7 @@ import Yoimiya from './Yoimiya'
 import YumemizukiMizuki from './YumemizukiMizuki'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
+import Zibai from './Zibai'
 
 const data: TagMapNodeEntries[] = [
   Aino,
@@ -135,6 +138,7 @@ const data: TagMapNodeEntries[] = [
   Citlali,
   Clorinde,
   Collei,
+  Columbina,
   Cyno,
   Dahlia,
   Dehya,
@@ -155,8 +159,9 @@ const data: TagMapNodeEntries[] = [
   Gorou,
   HuTao,
   Iansan,
-  Ineffa,
+  Illuga,
   Ifa,
+  Ineffa,
   Jahoda,
   Jean,
   Kachina,
@@ -223,6 +228,7 @@ const data: TagMapNodeEntries[] = [
   YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
   TravelerAnemo,
   TravelerGeo,
   TravelerElectro,

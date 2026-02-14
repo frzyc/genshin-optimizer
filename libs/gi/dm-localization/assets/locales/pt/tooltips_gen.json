@@ -1,0 +1,328 @@
+{
+  "10050001": {
+    "name": "Efeitos bônus adicionais",
+    "description": {
+      "0": "Ressoando com cada elemento, {F#a}{M#o} Viajante obtém o fortalecimento do Atributo correspondente:",
+      "1": "<anemo>Anemo</anemo>: aumenta a Taxa CRIT em 10%.",
+      "2": "<geo>Geo</geo>: aumenta a DEF em 20%.",
+      "3": "<electro>Electro</electro>: aumenta a Recarga de Energia em 20%.",
+      "4": "<dendro>Dendro</dendro>: aumenta a Proficiência Elemental em 60.",
+      "5": "<hydro>Hydro</hydro>: aumenta a Vida em 20%.",
+      "6": "<pyro>Pyro</pyro>: aumenta o ATQ em 20%.",
+      "7": "<cryo>Cryo</cryo>: aumenta o Dano CRIT em 20%."
+    }
+  },
+  "11120001": {
+    "name": "Modo de Armazenamento Frio",
+    "description": {
+      "0": "<strong>Pressionar</strong>",
+      "1": "Ativa seu Robô Culinário Multiuso no modo de Armazenamento Frio e causa <cryo>Dano Cryo em uma AdE</cryo> aos inimigos próximos.",
+      "2": "<br/>",
+      "3": "<strong>Robô Culinário Multiuso: Modo de Armazenamento Frio</strong>",
+      "4": "Segue o personagem ativo atual e dispara Parfait Congelado contra inimigos próximos em intervalos, causando <cryo>Dano Cryo</cryo>."
+    }
+  },
+  "11120002": {
+    "name": "Culinária Improvisada",
+    "description": {
+      "0": "<strong>Robô Culinário: Modo Culinária Improvisada</strong>",
+      "1": [
+        " Coloca o Robô Culinário no campo. O Robô Culinário pode absorver os ataques Elementais. Quando a Energia Elemental absorvida alcançar o limite, Escoffier poderá converter os ingredientes colocados dentro em comidas fantásticas.",
+        " Escoffier precisa de tempo para coletar ingredientes novos. É possível fazer uma certa quantidade de Pratos por semana dessa maneira. A contagem de Prato é redefinida toda segunda-feira às 04:00 da manhã."
+      ]
+    }
+  },
+  "11130001": {
+    "name": "Disparo de Suporte",
+    "description": {
+      "0": "Quando está no estado Bênção do Espírito da Noite, o Ataque Normal de Ifa passa a realizar Disparos de Suporte.",
+      "1": "<strong>Pressionar</strong>",
+      "2": "Dispara Projétil Medicinal.",
+      "3": "<strong>Manter Pressionado</strong>",
+      "4": "Continuamente dispara Projéteis Medicinais.",
+      "5": "<strong>Projétil Medicinal</strong>",
+      "6": "Causa <anemo>Dano Anemo</anemo> com alinhamento Espírito da Noite, e quando atinge um inimigo próximo, regenera Vida para todos os membros da equipe. A Vida regenerada é baseada na Proficiência Elemental de Ifa."
+    }
+  },
+  "11130002": {
+    "name": "Essencial do Resgate",
+    "description": {
+      "0": "Máximo de 150 pontos. Cada ponto de Essencial do Resgate que Ifa possui aumenta o Dano causado por Reações de Redemoinho e Eletricamente Carregado dos membros próximos da equipe em 1.5%. O Dano causado por Reações de Eletricamente Carregado aumenta em 0.2% para cada ponto de Essencial do Resgate. Os pontos de Essencial do Resgate serão eliminados quando o estado Bênção do Espírito da Noite acabar."
+    }
+  },
+  "11130003": {
+    "name": "Bênção do Espírito da Noite: Ifa",
+    "description": {
+      "0": "Consome continuamente pontos de Espírito da Noite. Quando os pontos de Espírito da Noite acabarem, ou quando lançar novamente, encerrará o estado Bênção do Espírito da Noite de Ifa. O estado Bênção do Espírito da Noite possui os seguintes atributos:",
+      "1": [
+        " Flutua com a ajuda de Cacucu, aumentando a Veloc. Mov. e Resistência contra Interrupção de Ifa. Nesse estado, Ifa continuamente consome pontos de Espírito da Noite para flutuar no ar. Ao correr ou ascender, consome pontos de Espírito da Noite adicionais.",
+        " Ao fazer um Ataque Normal, lança Disparo de Suporte de maneiras diferentes se pressionar ou manter pressionado."
+      ]
+    }
+  },
+  "11130004": {
+    "name": "Marca Tranquilizante",
+    "description": {
+      "0": "Esse efeito explodirá e desaparecerá depois de um tempo, e causa Dano em AdE do Tipo Elemental correspondente. O Sedativo Terapêutico pode aplicar Marca Tranquilizante até 4 inimigos atingidos. Não é possível que o inimigo seja afetado por Marcas Tranquilizantes de mais de um Tipo Elemental."
+    }
+  },
+  "11130005": {
+    "name": "Sutileza da Serpente",
+    "description": {
+      "0": "Skirk pode consumir Sutileza da Serpente para manter seu modo Lampejo de Sete Fases ou para usar seu Supremo, Arte Apodrecida: Obliteração.",
+      "1": "<br/>",
+      "2": "Skirk pode obter pontos de Sutileza da Serpente das seguintes formas:",
+      "3": [
+        " Após usar sua Habilidade Elemental, Devastação: Lampejo.",
+        " Após ativar o efeito de seu Talento de Ascensão, \"Razão Além da Razão\", ao absorver Fendas do Vazio."
+      ],
+      "4": "<br/>",
+      "5": "Quando Skirk sai de campo ou quando o Lampejo de Sete Fases termina, seus pontos de Sutileza da Serpente serão removidos."
+    }
+  },
+  "11130006": {
+    "name": "Lampejo de Sete Fases",
+    "description": {
+      "0": "Skirk entrará nesse modo por um tempo determinado ao usar a Habilidade Elemental <strong>Devastação: Lampejo</strong>. Este modo possui as seguintes propriedades:",
+      "1": [
+        " Consome continuamente Sutileza da Serpente.",
+        " Aumenta a AdE dos Ataques Normais e Carregados, além da Resistência contra Interrupção de Skirk.",
+        " Ataques Normais, Carregados e Imersivos são convertidos em <cryo>Dano Cryo</cryo> que não pode ser substituído.",
+        " Seu Supremo, <strong>Arte Apodrecida: Obliteração</strong>, é convertido no Supremo especial <strong>Devastação: Obliteração</strong>.",
+        " Skirk pode se mover sobre a água ao Correr.",
+        " Skirk sairá desse modo quando a Sutileza da Serpente se esgotar completamente ou quando a duração terminar. Em seguida, a Habilidade Elemental entrará em Recarga."
+      ]
+    }
+  },
+  "11130007": {
+    "name": "Razão Além da Razão",
+    "description": {
+      "0": "Quando membros próximos da equipe desencadearem reações de Congelado, Supercondutor, Redemoinho Cryo ou Cristalização Cryo contra inimigos, uma Fenda do Vazio será criada próxima a esse inimigo. Esse efeito pode ser desencadeado uma vez a cada 2,5s. Um máximo de 3 Fendas do Vazio criadas pela própria Skirk pode existir simultaneamente em campo.",
+      "1": "<br/>",
+      "2": "Skirk pode usar os seguintes métodos para absorver Fendas do Vazio próximas:",
+      "3": [
+        " Ao acertar um inimigo com um Ataque Carregado no modo Lampejo de Sete Fases.",
+        " Ao usar o Supremo especial <strong>Devastação: Obliteração</strong> enquanto estiver no modo Lampejo de Sete Fases.",
+        " Ao Manter pressionada sua Habilidade Elemental <strong>Devastação: Lampejo</strong> para realizar um movimento rápido."
+      ],
+      "4": "<br/>",
+      "5": "Cada Fenda absorvida concederá a ela 8 pontos de Sutileza da Serpente."
+    }
+  },
+  "11130008": {
+    "name": "Retorno à Desolação",
+    "description": {
+      "0": "Quando membros próximos da equipe de Tipo Elemental <hydro>Hydro</hydro> atingirem um inimigo com um ataque <hydro>Hydro</hydro>, ou quando os outros personagens próximos da equipe de Tipo Elemental <cryo>Cryo</cryo>, exceto a própria Skirk, atingirem um inimigo com um ataque <cryo>Cryo</cryo>, Skirk receberá o efeito \"Encruzilhada da Morte\" por 20s. Máximo de 3 acúmulos, com a duração de cada acúmulo contada independentemente.",
+      "1": "Cada personagem pode conceder no máximo 1 acúmulo de \"Encruzilhada da Morte\" para Skirk dessa maneira.",
+      "2": "Cada acúmulo de \"Encruzilhada da Morte\" aumenta o Dano do Ataque Normal causado por Skirk no modo <strong>Lampejo de Sete Fases</strong> em 110%/120%/170% de seu Dano original e também aumenta o Dano causado por seu Supremo <strong>Arte Apodrecida: Obliteração</strong> em 105%/115%/160% de seu Dano original."
+    }
+  },
+  "11130009": {
+    "name": "Mistério da Chuva Neblinada",
+    "description": {
+      "0": "Quando os inimigos ou personagens próximos da equipe tocam o Mistério da Chuva Neblinada, gera efeitos diferentes de acordo com o modo que foi desencadeado:",
+      "1": "Se for o inimigo que tocou o Mistério da Chuva Neblinada, o Mistério da Chuva Neblinada explodirá, causando <hydro>Dano Hydro em AdE</hydro> contra os inimigos próximos.",
+      "2": "Se for o personagem próximo da equipe que tocou o Mistério da Chuva Neblinada, o Mistério da Chuva Neblinada ricocheteará quem o tocou para alto no ar.",
+      "3": "<br/>",
+      "4": "Só é possível existir um Mistério da Chuva Neblinada criado por Dahlia simultaneamente."
+    }
+  },
+  "11130010": {
+    "name": "Graça de Favonius",
+    "description": {
+      "0": "Quando Dahlia lança seu Supremo <strong>Pregação Radiante</strong>, concede esse efeito para os personagens da equipe.",
+      "1": "Quando o efeito Escudo da Graça acabar na sua duração, ou quando é destruído por Dano, Dahlia consome 1 acúmulo do efeito Bons Desejos para recriar o Escudo da Graça."
+    }
+  },
+  "11130011": {
+    "name": "Bons Desejos",
+    "description": {
+      "0": "Dahlia pode obter o efeito Bons Desejos das seguintes formas:",
+      "1": [
+        " Quando o personagem ativo atual estiver sob o efeito Graça de Favonius, e seu Ataque Normal atingir inimigos 4 vezes, Dahlia obtém 1 acúmulo do efeito Bons Desejos.",
+        " Depois que desencadear o efeito do Talento de Ascensão \"Amor Concedido Pelo Vento\"."
+      ],
+      "2": "<br/>",
+      "3": "Dahlia pode obter até X acúmulos de Bons Desejos em cada duração do efeito Graça de Favonius."
+    }
+  },
+  "11160001": {
+    "name": "Birgitta",
+    "description": {
+      "0": "Luta ao lado de Ineffa, pode ser invocada para o campo de batalha através da Habilidade Elemental ou do Supremo.",
+      "1": "Se houver inimigos por perto, Birgitta se moverá rapidamente para perto de um deles a cada 2s, e realizará um ataque elétrico que causa <electro>Dano Electro em AdE</electro>.",
+      "2": "É possível existir uma Birgitta criada por Ineffa simultaneamente.",
+      "3": "Além disso, em Nod-Krai, parece ser possível mudar a aparência de Birgitta de alguma forma..."
+    }
+  },
+  "11190001": {
+    "name": "Santuário da Floresta Congelada",
+    "description": {
+      "0": "Uma formação mágica que protege os Emissários da Canção Lunar, e que é invocada pela Habilidade Elemental <strong>Runo: Descanso da Noite Eterna</strong>.",
+      "1": "Santuário da Floresta Congelada acompanha o personagem ativo, e causa <dendro>Dano Dendro em AdE</dendro> uma vez contra inimigos que estejam na formação a cada 2s. Esse Dano é considerado Dano de Habilidade Elemental."
+    }
+  },
+  "11190002": {
+    "name": "Canção Lunar",
+    "description": {
+      "0": "Uma melodia usada para compor hinos. Pode ser convertida em uma Canção Azul para aumentar o Dano de Florescimento, Superflorescimento, Germinação e Florescimento Lunar ao lançar o Supremo ou depois de um certo tempo após lançar o Supremo.",
+      "1": "Quando Lauma consome o Orvalho Verdejantes ao manter pressionado para lançar a Habilidade Elemental <strong>Runo: Descanso da Noite Eterna</strong>, obterá um acúmulo de Canção Lunar para cada acúmulo de Orvalho Verdejante consumido."
+    }
+  },
+  "11190003": {
+    "name": "Canção Azul",
+    "description": {
+      "0": "Recita o canto da Emissária da Canção Lunar, podendo aumentar o Dano causado por Florescimento, Superflorescimento, Germinação e Florescimento Lunar.",
+      "1": "<br/>",
+      "2": "Lauma pode obter Canção Azul através das seguintes formas:",
+      "3": [
+        " Ao lançar o Supremo <strong>Runo: Todos os Corações se Tornam a Lua</strong>.",
+        " Ao desencadear o efeito Canção Lunar do Supremo <strong>Runo: Todos os Corações se Tornam a Lua</strong>."
+      ],
+      "4": "Ao desencadear o efeito Santuário da Floresta Congelada da Constelação <strong>\"Desejo Dar o Sangue e as Lágrimas à Lua\"</strong>.",
+      "5": "<br/>",
+      "6": "Quando um personagem da equipe causa Dano de Florescimento, Superflorescimento, Germinação e Florescimento Lunar, consome 1 acúmulo de Canção Azul para aumentar o Dano causado. O aumento de Dano é baseado na Proficiência Elemental de Lauma. Quando o Dano acima atinge muitos inimigos simultaneamente, consumirá a quantidade de acúmulos de Canção Azul de acordo com a quantidade de inimigos atingidos.",
+      "7": "Cada acúmulo de Canção Azul tem sua duração contada separadamente."
+    }
+  },
+  "11190004": {
+    "name": "Canção Noturna",
+    "description": {
+      "0": "O Dano de Florescimento, Superflorescimento e Germinação causado por um personagem pode causar um Acerto CRIT, com Taxa CRIT fixada em 15% e o Dano CRIT fixado em 100%. A Taxa CRIT fornecida por esse efeito pode acumular com a Taxa CRIT de efeitos similares que permitem essas reações elementais a causarem Acertos CRIT."
+    }
+  },
+  "11190005": {
+    "name": "Elegia da Lua",
+    "description": {
+      "0": "Aumenta a Taxa CRIT em 10% e o Dano CRIT em 20% para os personagens que causam Dano de Florescimento Lunar."
+    }
+  },
+  "11190007": {
+    "name": "Elevação",
+    "description": {
+      "0": "O efeito de aumento de Dano especial e os outros efeitos de aumento de Dano têm suas durações contadas separadamente."
+    }
+  },
+  "11190008": {
+    "name": "Orvalho Verdejante",
+    "description": {
+      "0": "Quando os membros da equipe desencadeiam Florescimento Lunar, fornece recursos para a equipe.",
+      "1": "Nos 2.5s após desencadear Florescimento Lunar, a cada 2.5s fornece um Orvalho Verdejante para a equipe, até o máximo de 3. Nesse período, desencadear Florescimento Lunar novamente redefinirá a duração desse efeito."
+    }
+  },
+  "11200001": {
+    "name": "Sinfonia Trovejante",
+    "description": {
+      "0": "Consome menos Energia para lançar o Supremo Especial. Flins causa <electro>Dano Electro em AdE</electro> que é considerado Dano de Carga Lunar uma vez.",
+      "1": "<strong>Presságio Lunar: Reluzir Cheio</strong>: se estiver perto de uma Nuvem Trovejante, causa mais uma instância de <electro>Dano Electro em AdE</electro> que é considerado Dano de Carga Lunar."
+    }
+  },
+  "11220001": {
+    "name": "Baile das Sombras",
+    "description": {
+      "0": "Depois de lançar <strong>Estratégia de Senet: Dança de Mil Noites</strong>, Nefer entra nesse estado.",
+      "1": "Quando está no estado Baile das Sombras, se possuir pelo menos 1 Orvalho Verdejante, o Ataque Carregado de Nefer será substituído pelo Ataque Carregado especial \"Truque Fantástico\".",
+      "2": "Baile das Sombras será removido quando lançar Truque Fantástico 3 vez(es), ou quando sua duração acabar."
+    }
+  },
+  "11220002": {
+    "name": "Truque Fantástico",
+    "description": {
+      "0": "Quando estiver no Baile das Sombras da Habilidade Elemental <strong>Estratégia de Senet: Dança de Mil Noites</strong>, se possuir pelo menos 1 Orvalho Verdejante, o Ataque Carregado de Nefer será convertido para o Ataque Carregado especial \"Truque Fantástico\" que não consome Stamina.",
+      "1": "Nefer invoca a Sombra Vazia para fazer um Ataque Coordenado contra o inimigo, com ela e sua Sombra Vazia causando <dendro>Dano Dendro em AdE</dendro> de 2/3 fase respectivamente. O Dano de Sombra Vazia é considerado Dano de Florescimento Lunar. A primeira Sombra Vazia invocada depois de lançar Truque Fantástico consumirá 1 Orvalho Verdejante."
+    }
+  },
+  "11220003": {
+    "name": "Cortina do Segredo Falso",
+    "description": {
+      "0": "O efeito obtido depois de absorver um Núcleo da Falsidade através do Talento de Ascensão \"Aposta Sob o Luar\" de Nefer permite aumentar o Dano causado por Truque Fantástico.",
+      "1": "Cada acúmulo de Cortina do Segredo Falso aumenta o Dano de Truque Fantástico em 8% do original, o valor inicial de acúmulos é de até 3 por até 9s. A duração de cada acúmulo é contada separadamente."
+    }
+  },
+  "11230001": {
+    "name": "Transmutação Essencial",
+    "description": {
+      "0": "Efeito obtido depois de Durin lançar a Habilidade Elemental <strong>Forma Binária: Convergência e Divisão</strong>, Durin ganha esse efeito por 6s.",
+      "1": "Nessa duração, Durin pode pressionar para lançar a Habilidade Elemental e entrar no estado <strong>Confirmação da Pureza</strong>, ou pressionar o Ataque Normal para entrar no estado <strong>Negação da Escuridão</strong>.",
+      "2": "Nesses dois estados, Durin pode obter fortalecimentos diferentes, e pode lançar Supremos diferentes."
+    }
+  },
+  "11240001": {
+    "name": "Garrafa Secreta Ronron",
+    "description": {
+      "0": "Pequena garrafa elemental jogada por Jahoda depois dela lançar sua Habilidade Elemental <strong>Estratagema Impressionante: Plano de Redistribuição de Riqueza</strong>.",
+      "1": "Quando Jahoda está no estado \"Perseguição Sombria\", se houver um inimigo próximo afetado por <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> ou <cryo>Cryo</cryo>, a Garrafa Secreta Ronron se converterá para o Tipo Elemental correspondente e encherá continuamente, priorizando a ordem <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> e <cryo>Cryo</cryo>. A Garrafa Secreta Ronron pode passar por essa Conversão Elemental uma vez por Habilidade Elemental lançada.",
+      "2": "Quando a Garrafa Secreta Ronron encher, Jahoda sairá do estado Perseguição Sombria e causará <anemo>Dano Anemo</anemo> uma vez contra os inimigos próximos, e esvaziará a Garrafa Secreta Ronron.",
+      "3": "Jahoda joga uma Garrafa Secreta Ronron nova cada vez que lançar sua Habilidade Elemental.",
+      "4": "<br/>",
+      "5": "<strong>Presságio Lunar: Reluzir Cheio</strong>: quando a <strong>Garrafa Secreta Ronron</strong> encher, Jahoda não esvaziará a <strong>Garrafa Secreta Ronron</strong> imediatamente, mas consumirá seu Elemento continuamente por um certo tempo, e disparará <strong>Bolas Miaufinhas</strong> periodicamente contra os inimigos próximos, causando Dano Elemental correspondente a <strong>Garrafa Secreta Ronron</strong>."
+    }
+  },
+  "11240002": {
+    "name": "Coordenador Felino de Assistência Doméstica",
+    "description": {
+      "0": "Uma das pequenas bugigangas que Jahoda, uma ex-caçadora de tesouro, costumava levar. É jogado depois de lançar o Supremo <strong>Dispositivo Secreto: Sete Itens do Caçador</strong>.",
+      "1": "O Coordenador Felino de Assistência Doméstica regenera Vida do personagem ativo continuamente. Se o personagem que receber a Cura tiver mais de 70% de Vida, regenera Vida para o personagem próximo da equipe com Vida mais baixa.",
+      "2": "<br/>",
+      "3": "<strong>Presságio Lunar: Reluzir Cheio</strong>: se houver um inimigo próximo afetado por <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> ou <cryo>Cryo</cryo>, o Coordenador Felino de Assistência Doméstica se converterá para o Tipo Elemental correspondente. A conversão segue a ordem de prioridade <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> e <cryo>Cryo</cryo>. É possível passar pela Conversão Elemental uma vez por Coordenador Felino de Assistência Doméstica jogado. Depois de passar pela Conversão Elemental, o Coordenador Felino de Assistência Doméstica atacará até 3 inimigos próximos periodicamente, causando Dano Elemental correspondente."
+    }
+  },
+  "11250001": {
+    "name": "Onda Gravitacional",
+    "description": {
+      "0": "Depois de lançar a Habilidade Elemental <strong>Maré Eterna</strong>, Columbina invoca <strong>Onda Gravitacional</strong>.",
+      "1": "Onda Gravitacional segue o personagem ativo, continuamente causando <hydro>Dano Hydro em AdE</hydro> contra os inimigos próximos.",
+      "2": "<br/>",
+      "3": "Além disso, enquanto Onda Gravitacional existir e um membro próximo da equipe causar Reações Lunares, ou causar Dano de Reações Lunares, Columbina obtém o efeito Sinal da Lua Nova pelos próximos 2s, acumulando <strong>Gravitação</strong> continuamente. É possível acumular 20 de Gravitação a cada 2s.",
+      "4": "O máximo de Gravitação é 60, e será removido quando a duração de Onda Gravitacional acabar.",
+      "5": "Quando Gravitação atingir o limite máximo, desencadeará a especial <strong>Interferência Kuuvahki</strong>, gerando efeitos diferentes de acordo com a quantidade máxima de Gravitação acumulada dos tipos de Reações Lunares de Columbina. Se o máximo de Gravitação acumulada por Columbina for da Reação Lunar do tipo:",
+      "6": [
+        " <strong>Carga Lunar</strong>: Interferência Kuuvahki causa uma instância de <electro>Dano Electro em AdE</electro>. Esse Dano é considerado Dano de Carga Lunar.",
+        " <strong>Florescimento Lunar</strong>: Interferência Lunar dispara 5 Selos Lunares contra os inimigos próximos, causando <dendro>Dano Dendro</dendro>. Esse Dano é considerado Dano de Florescimento Lunar.",
+        " <strong>Cristalização Lunar</strong>: Interferência Kuuvahki causa uma instância de <geo>Dano Geo em AdE</geo>. Esse Dano é considerado Dano de Cristalização Lunar."
+      ]
+    }
+  },
+  "11250002": {
+    "name": "Domínio Lunar",
+    "description": {
+      "0": "Depois de lançar o Supremo <strong>Melancolia Sob o Luar</strong>, Columbina invoca um domínio.",
+      "1": "Quando o personagem está dentro do <strong>Domínio Lunar</strong>, aumenta o Dano de Reações Lunares causados por todos os personagens."
+    }
+  },
+  "11250003": {
+    "name": "Orvalho Verdejante da Montanha Lunar",
+    "description": {
+      "0": "Um Orvalho Verdejante especial fornecido pelo Talento Passivo <strong>Regras Próprias da Lua Nova</strong> de Columbina. Sua capacidade máxima e duração são contadas separadamente.",
+      "1": "Quando o Orvalho Verdejante da equipe acabar, consumirá o <strong>Orvalho Verdejante da Montanha Lunar</strong>.",
+      "2": "Limite máximo de <strong>Orvalho Verdejante da Montanha Lunar</strong> é de 3."
+    }
+  },
+  "11260001": {
+    "name": "Conversão de Fase Lunar",
+    "description": {
+      "0": "Depois de lançar a Habilidade Elemental <strong>Céu e Terra Manifestados</strong>, Zibai troca para esse modo. Esse modo dura até 15s, e possui as seguintes propriedades:",
+      "1": [
+        " Ao realizar um Ataque Normal e Carregado, causa <geo>Dano Geo</geo> que não pode ser substituído.",
+        " A Habilidade Elemental <strong>Céu e Terra Manifestados</strong> será substituída pela Habilidade Elemental especial <strong>Passos do Alazão Espiritual</strong>. Quando Zibai possui pelo menos 70 de <strong>Radiância da Conversão</strong>, consome 70 acúmulo de Radiância da Conversão, lança Passos do Alazão Espiritual causando duas instâncias de <geo>Dano Geo</geo>, com o Dano do 2º Golpe é considerado Dano de Cristalização Lunar."
+      ],
+      "2": "<br/>",
+      "3": "Limite máximo de <strong>Radiância da Conversão</strong> é 100. Zibai pode acumular Radiância da Conversão das seguintes formas:",
+      "4": [
+        " Quando está no modo <strong>Conversão de Fase Lunar</strong>, acumula 10 de Radiância da Conversão por segundo.",
+        " Quando o Ataque Normal atinge o inimigo, acumula 5 de Radiância da Conversão. É possível acumular Radiância da Conversão uma vez a cada 0.5s dessa forma."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Presságio Lunar: Reluzir Cheio</strong>",
+      "7": "Quando um membro próximo da equipe desencadeia Cristalização Lunar, Zibai acumula 35 de <strong>Radiância da Conversão</strong>. É possível acumular Radiância da Conversão< uma vez a cada 4s dessa forma. Lançar a Habilidade Elemental especial <strong>Passos do Alazão Espiritual</strong> redefinirá a Recarga de <strong>Radiância da Conversão</strong> acumulada dessa forma.",
+      "8": "<br/>",
+      "9": "Depois de lançar <strong>Radiância da Conversão</strong> 4 vezes, ou quando a duração acabar, Zibai sai desse modo."
+    }
+  },
+  "11270001": {
+    "name": "Canção de Luscinia",
+    "description": {
+      "0": "Efeito que Illuga obtém depois de lançar seu Supremo <strong>Reflexo Vazio</strong>. Aumenta o <geo>Dano Geo</geo> causado pelo personagem atual."
+    }
+  }
+}

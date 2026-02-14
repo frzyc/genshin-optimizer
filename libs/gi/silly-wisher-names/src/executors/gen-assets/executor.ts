@@ -1,107 +1,108 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
-import { parse } from 'yaml'
+import { existsSync, mkdirSync, writeFileSync } from 'fs'
+import { langKeys } from '@genshin-optimizer/common/pipeline'
+import { PROJROOT_PATH, languageMap } from '../../../Translated/util'
 import type { GenAssetsExecutorSchema } from './schema'
-
-export const PROJROOT_PATH = `${process.env['NX_WORKSPACE_ROOT']}/libs/gi/silly-wisher-names`
-
-const languages = [
-  'en',
-  'chs',
-  'cht',
-  'ja',
-  'fr',
-  'it',
-  'de',
-  'es',
-  'ko',
-  'th',
-  'id',
-  'pt',
-  'ru',
-  'vi',
-  'pl',
-  'tr',
-] as const
-type LangKey = (typeof languages)[number]
-const data = Object.fromEntries(languages.map((l) => [l, {}])) as Record<
-  LangKey,
-  { [key: string]: string }
->
 
 const swKeyMap = {
   aether: 'TravelerM',
+  aino: 'Aino',
   albedo: 'Albedo',
   alhaitham: 'Alhaitham',
   aloy: 'Aloy',
   amber: 'Amber',
-  itto: 'AratakiItto',
   arlecchino: 'Arlecchino',
+  ayaka: 'KamisatoAyaka',
+  ayato: 'KamisatoAyato',
   baizhu: 'Baizhu',
   barbara: 'Barbara',
   beidou: 'Beidou',
   bennett: 'Bennett',
   candace: 'Candace',
   charlotte: 'Charlotte',
+  chasca: 'Chasca',
   chevreuse: 'Chevreuse',
   chiori: 'Chiori',
   chongyun: 'Chongyun',
+  citlali: 'Citlali',
+  clorinde: 'Clorinde',
   collei: 'Collei',
   cyno: 'Cyno',
+  dahlia: 'Dahlia',
   dehya: 'Dehya',
   diluc: 'Diluc',
   diona: 'Diona',
   dori: 'Dori',
+  durin: 'Durin',
+  emilie: 'Emilie',
+  escoffier: 'Escoffier',
   eula: 'Eula',
   faruzan: 'Faruzan',
   fischl: 'Fischl',
+  flins: 'Flins',
   freminet: 'Freminet',
   furina: 'Furina',
   gaming: 'Gaming',
   ganyu: 'Ganyu',
   gorou: 'Gorou',
+  heizou: 'ShikanoinHeizou',
   hutao: 'HuTao',
+  iansan: 'Iansan',
+  ifa: 'Ifa',
+  ineffa: 'Ineffa',
+  itto: 'AratakiItto',
+  jahoda: 'Jahoda',
   jean: 'Jean',
-  kazuha: 'KaedeharaKazuha',
+  kachina: 'Kachina',
   kaeya: 'Kaeya',
   kaveh: 'Kaveh',
-  ayaka: 'KamisatoAyaka',
-  ayato: 'KamisatoAyato',
+  kazuha: 'KaedeharaKazuha',
   keqing: 'Keqing',
+  kinich: 'Kinich',
   kirara: 'Kirara',
   klee: 'Klee',
-  sara: 'KujouSara',
+  kokomi: 'SangonomiyaKokomi',
   kuki: 'KukiShinobu',
+  lanyan: 'LanYan',
+  lauma: 'Lauma',
   layla: 'Layla',
   lisa: 'Lisa',
+  lumine: 'TravelerF',
   lynette: 'Lynette',
   lyney: 'Lyney',
-  lumine: 'TravelerF',
+  mavuika: 'Mavuika',
   mika: 'Mika',
   mona: 'Mona',
+  mualani: 'Mualani',
   nahida: 'Nahida',
   navia: 'Navia',
+  nefer: 'Nefer',
   neuvillette: 'Neuvillette',
   nilou: 'Nilou',
   ningguang: 'Ningguang',
   noelle: 'Noelle',
+  ororon: 'Ororon',
   qiqi: 'Qiqi',
   raiden: 'RaidenShogun',
   razor: 'Razor',
   rosaria: 'Rosaria',
-  kokomi: 'SangonomiyaKokomi',
+  sara: 'KujouSara',
   sayu: 'Sayu',
+  sethos: 'Sethos',
   shenhe: 'Shenhe',
-  heizou: 'ShikanoinHeizou',
+  sigewinne: 'Sigewinne',
+  skirk: 'Skirk',
   sucrose: 'Sucrose',
   tartaglia: 'Tartaglia',
   thoma: 'Thoma',
   tighnari: 'Tighnari',
+  varesa: 'Varesa',
   venti: 'Venti',
   wanderer: 'Wanderer',
   wriothesley: 'Wriothesley',
   xiangling: 'Xiangling',
   xianyun: 'Xianyun',
   xiao: 'Xiao',
+  xilonen: 'Xilonen',
   xingqiu: 'Xingqiu',
   xinyan: 'Xinyan',
   yae: 'YaeMiko',
@@ -109,52 +110,31 @@ const swKeyMap = {
   yaoyao: 'Yaoyao',
   yelan: 'Yelan',
   yoimiya: 'Yoimiya',
+  yumemizuki: 'YumemizukiMizuki',
   yunjin: 'YunJin',
   zhongli: 'Zhongli',
 } as const
 
-interface AssetSource {
-  mTerms: CharacterTerm[]
-}
-
-interface CharacterTerm {
-  Term: string
-  TermType: number
-  Description: string
-  Languages: string[]
-}
-
 export default async function runExecutor(_options: GenAssetsExecutorSchema) {
-  // Load translation files from Silly Wisher APK into the assets folder.
-  const namesFilePath = `${PROJROOT_PATH}/Translated/I2Languages.asset`
   const localeDir = `${PROJROOT_PATH}/assets/locales/`
 
-  const raw = parse(readFileSync(namesFilePath).toString())
-  const source = raw.MonoBehaviour.mSource as AssetSource
-
-  const characterNames = Object.fromEntries(
-    source.mTerms
-      .filter((term) => term.Term.startsWith('CharMemNames'))
-      .map((term) => [term.Term.split('/').at(1), term.Languages] as const)
-      .filter(([shortName, _]) => shortName && shortName in swKeyMap)
-      .map(
-        ([shortName, languages]) =>
-          [swKeyMap[shortName as keyof typeof swKeyMap], languages] as const
-      )
-  )
-
-  languages.forEach((lang, idx) => {
-    for (const name in characterNames) {
-      data[lang][name] = characterNames[name][idx]
-    }
-  })
-
-  Object.entries(data).map(([langkey, d]) => {
-    const content = JSON.stringify(d, null, 2)
+  langKeys.forEach((langkey) => {
+    const content = Object.fromEntries(
+      Object.entries(languageMap[langkey])
+        .filter(
+          ([key]) =>
+            key.startsWith('CharMemNames/') &&
+            Object.keys(swKeyMap).some((swKey) => key.includes(swKey))
+        )
+        .map(([key, value]) => [
+          swKeyMap[key.split('CharMemNames/')[1] as keyof typeof swKeyMap],
+          value,
+        ])
+    )
     const fileDir = `${localeDir}${langkey}`
     if (!existsSync(fileDir)) mkdirSync(fileDir, { recursive: true })
     const fileName = `${fileDir}/sillyWisher_charNames.json`
-    writeFileSync(fileName, content + '\n')
+    writeFileSync(fileName, JSON.stringify(content, undefined, 2) + '\n')
     console.log('Generated JSON at', fileName)
   })
   return {

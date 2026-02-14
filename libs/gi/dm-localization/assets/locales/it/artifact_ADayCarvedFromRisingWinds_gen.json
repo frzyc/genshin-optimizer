@@ -1,0 +1,29 @@
+{
+  "setName": "Un giorno scolpito dai venti ascendenti",
+  "setEffects": {
+    "2": "ATT +18%.",
+    "4": "Dopo aver colpito un avversario con un attacco normale, un attacco caricato, un'abilità o un Tripudio elementale, il personaggio che equipaggia il set ottiene l'effetto Benedizioni dei venti pastorali per 6 s, che aumenta l'ATT di un 25%. Se il personaggio ha completato i Compiti della strega, Benedizioni dei venti pastorali viene potenziato in Determinazione dei venti pastorali, che fornisce al personaggio anche un 20% di tasso di CRIT aggiuntivo. L'effetto può attivarsi anche quando il personaggio non è in campo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Spruchdichtung del fiore nel vento",
+      "desc": "Un fiore di cristallo azzurro che non appassisce mai. Si narra che sia appartenuto a una giovane viandante che invocava mille venti e fiori in un lontano passato."
+    },
+    "plume": {
+      "name": "Giuramento brillante dell'alba",
+      "desc": "Un accessorio piumato azzurro, chiaro come l'alba. Si narra che sia appartenuto a una guardia che rinunciò al suo nome in un lontano passato."
+    },
+    "sands": {
+      "name": "Nota nel leich della primavera",
+      "desc": "Una clessidra piena di sabbia azzurra. Per ragioni ignote, per quanto si provi a muoverla, i granelli al suo interno rimangono inamovibili."
+    },
+    "goblet": {
+      "name": "Racconto inespresso dell'heldenepos",
+      "desc": "Un antico calice, la cui superficie azzurra è stata consumata dal tempo. Si narra che sia appartenuto a un bardo senza nome in un lontano passato."
+    },
+    "circlet": {
+      "name": "Minnesang d'amore e lamento",
+      "desc": "Un lussuoso accessorio per capelli adornato con giada e cristalli azzurri. Si narra che sia stato un pegno conferito dal Signore delle Tempeste a un destinatario prediletto in un lontano passato."
+    }
+  }
+}

@@ -164,6 +164,20 @@
       "0": "Every point of Elemental Mastery the Traveler possesses increases the DMG dealt by <strong>Razorgrass Blade</strong> by 0.15% and the DMG dealt by <strong>Surgent Manifestation</strong> by 0.1%."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Verdalume",
+    "description": {
+      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>buffs</strong></tooltip>. ",
+      "1": "<br/>",
+      "2": "Additionally, when Dendro Cores (including Bountiful Cores, Seeds of Deceit) appear nearby on the field, or when the party obtains Verdant Dew, Traveler will receive 1 stack of Blade of Verdant Viridis. These two methods can each grant the Traveler up to 1 stack of Blade of Verdant Viridis every 4s, max 3 stacks. After obtaining 3 stacks of Blade of Verdant Viridis, performing a Charged Attack will consume all stacks of Blade of Verdant Viridis and transform into the special <strong>Charged Attack: Verdessence</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Verdessence</strong>",
+      "5": [
+        " Each Charged Attack hit deals increased <dendro>Dendro DMG</dendro>. The increase in DMG is equal to 80% of Traveler's ATK. Two <strong>Vinecores</strong> will also be created on the spot, which will explode after 4/8s respectively, inflicting <dendro>Dendro DMG</dendro> equal to 120% of Traveler's ATK. This DMG is considered Charged Attack DMG.",
+        " <strong>Charged Attack: Verdessence</strong> can be triggered up to once every 15s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Symbiotic Creeper",
     "description": {

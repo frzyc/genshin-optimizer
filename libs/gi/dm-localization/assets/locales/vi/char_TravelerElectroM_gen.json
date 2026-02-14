@@ -111,6 +111,21 @@
       "0": "Tăng hiệu quả Nạp Nguyên Tố do Khuyết Ngọc Dậy Sóng của <strong>Lôi Ảnh Kiếm</strong> cung cấp theo 10% hiệu quả Nạp Nguyên Tố của Nhà Lữ Hành."
     }
   },
+  "lockedPassive": {
+    "name": "Sấm Sét Dị Bang",
+    "description": {
+      "0": "Đúc kết sức mạnh mới từ những chuyến hành trình đã qua. Khi cộng hưởng với mỗi loại nguyên tố, sẽ nhận được <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>hiệu quả cường hóa</strong></tooltip> thêm.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi nhân vật trong đội ở gần thi triển Kỹ Năng Nộ, Nhà Lữ Hành sẽ nhận được 1 tầng \"Lưỡi Đao Vạn Lôi\", tối đa cộng dồn 3 tầng. Khi có 3 tầng Lưỡi Đao Vạn Lôi và thực hiện Trọng Kích, sẽ tiêu hao toàn bộ Lưỡi Đao Vạn Lôi và chuyển sang thực hiện <strong>Trọng Kích - Sương Lôi</strong> đặc biệt.",
+      "3": "<br/>",
+      "4": "<strong>Trọng Kích - Sương Lôi</strong>",
+      "5": [
+        "Mỗi đòn Trọng Kích sẽ gây <electro>Sát Thương Nguyên Tố Lôi</electro> cao hơn, sát thương tăng thêm tương đương 100% Tấn Công của Nhà Lữ Hành.",
+        "3s sau khi đánh trúng kẻ địch, sẽ gây thêm một đòn sét đánh, gây <electro>Sát Thương Nguyên Tố Lôi</electro> tương đương 200% Tấn Công của Nhà Lữ Hành và tạo ra 1 Khuyết Ngọc Dậy Sóng. Sát thương này được xem là sát thương Trọng Kích.",
+        "Mỗi 15s tối đa được thực hiện một lần <strong>Trọng Kích - Sương Lôi</strong>."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Sấm Sét Bội Thu",
     "description": {

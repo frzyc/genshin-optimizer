@@ -42,7 +42,6 @@ const {
   disorder_triggered,
   level_3_charge_hit,
   polar,
-  frostbite,
 } = allBoolConditionals(key)
 const { fallen_frost } = allNumConditionals(key, true, 0, dm.m1.max_stacks)
 
@@ -216,13 +215,6 @@ const sheet = register(
   ),
 
   // Buffs
-  // Not in actual sheet, but passive effect from Frostbite
-  registerBuff(
-    'frostbite_crit_dmg_',
-    teamBuff.combat.crit_dmg_.add(frostbite.ifOn(percent(0.1))),
-    undefined,
-    true
-  ),
   registerBuff(
     'ult_ice_dmg_',
     ownBuff.combat.dmg_.ice.add(

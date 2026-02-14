@@ -12,8 +12,8 @@
       },
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
-        "1": "Entra na Postura da Serpente, consumindo Stamina para se mover rapidamente por até 2.5s. Ao soltar essa Habilidade, quando a duração acabar ou a Stamina exaurir, Nefer retornará para o estado da Postura da Serpente, e consome uma certa quantidade adicional de Stamina para causar <dendro>Dano Dendro</dendro> contra o inimigo. Quando estiver no estado <strong>Baile das Sombras</strong>, seu consumo adicional de Stamina será reduzido.",
-        "2": "Além disso, quando Nefer está em Postura da Serpente, e lançar sua Habilidade Elemental <strong>Estratégia de Senet: Dança de Mil Noites</strong>, ou quando correr, não mais sairá da Postura da Serpente."
+        "1": "Entra na Postura da Serpente, consumindo Stamina para se mover rapidamente por até 2.5s. Ao soltar essa Habilidade, quando a duração acabar ou a Stamina exaurir, Nefer retornará para o estado da Postura da Serpente, e consome uma certa quantidade adicional de Stamina para causar <dendro>Dano Dendro</dendro> contra o inimigo. Quando estiver no estado <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Baile das Sombras</strong></tooltip>, seu consumo adicional de Stamina será reduzido.",
+        "2": "Além disso, quando Nefer está em Postura da Serpente, e lançar sua Habilidade Elemental <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Estratégia de Senet: Dança de Mil Noites</tooltip></strong>, ou quando correr, não mais sairá da Postura da Serpente."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",
@@ -42,8 +42,8 @@
   "skill": {
     "name": "Estratégia de Senet: Dança de Mil Noites",
     "description": {
-      "0": "Uma dança que dissolveu dinastias, gelada como uma noite de inverno no grande mar de areias, mas ainda com o carinho remanescente do luar. Nefer avança em frente, causando <dendro>Dano Dendro em AdE</dendro> e entrando no estado <strong>Baile das Sombras</strong>.",
-      "1": "No estado Baile das Sombras, se possuir pelo menos 1 <strong>Orvalho Verdejante</strong>, o Ataque Carregado lançado de Nefer será substituído pelo Ataque Carregado especial <strong>Truque Fantástico</strong> que não consome Stamina. O estado Baile das Sombras aumenta a RES contra interrupção de Nefer.",
+      "0": "Uma dança que dissolveu dinastias, gelada como uma noite de inverno no grande mar de areias, mas ainda com o carinho remanescente do luar. Nefer avança em frente, causando <dendro>Dano Dendro em AdE</dendro> e entrando no estado <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Baile das Sombras</strong></tooltip>.",
+      "1": "No estado Baile das Sombras, se possuir pelo menos 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Orvalho Verdejante</strong></tooltip>, o Ataque Carregado lançado de Nefer será substituído pelo Ataque Carregado especial <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Truque Fantástico</strong></tooltip> que não consome Stamina. O estado Baile das Sombras aumenta a RES contra interrupção de Nefer.",
       "2": "<br/>",
       "3": "Inicialmente possui 2 Usos.",
       "4": "<br/>",
@@ -71,7 +71,7 @@
   "burst": {
     "name": "Voto Sagrado: Fantasma do Olho Verdadeiro",
     "description": {
-      "0": "Concede a revelação para os mistérios da falsidade através da visão verdade de Thoth, causando <dendro>Dano Dendro em AdE</dendro> contra os inimigos em frente. Ao lançar, Nefer consome todas as <strong>Cortinas do Segredo Falso</strong>, aumentando o Dano dessa instância do Supremo.",
+      "0": "Concede a revelação para os mistérios da falsidade através da visão verdade de Thoth, causando <dendro>Dano Dendro em AdE</dendro> contra os inimigos em frente. Ao lançar, Nefer consome todas as <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Cortinas do Segredo Falso</strong></tooltip>, aumentando o Dano dessa instância do Supremo.",
       "1": "<br/>",
       "2": "<i>\"As bênçãos do Rei Íbis proclamadas pelos cantos das areias escaldantes são, na verdade, mais parecidas com maldições perversas.\"</i>"
     },
@@ -99,14 +99,14 @@
     "description": {
       "0": "Nefer obtém os seguintes fortalecimentos de acordo com o <strong>Presságio Lunar</strong> da equipe.",
       "1": "<br/>",
-      "2": "<strong>Presságio Lunar: Reluzir Cheio</strong>: ao lançar a Habilidade Elemental <strong>Estratégia de Senet: Dança de Mil Noites</strong>, mudará os Núcleos Dendro em campo para Núcleos da Falsidade, e nos próximos 15s, quando um personagem próximo desencadear Florescimento Lunar, substituirá os Núcleos Dendro e Núcleos da Riqueza para gerar Núcleos da Falsidade. Os Núcleos da Falsidade não podem desencadear Superflorescimento e Germinação, e também não podem explodir.",
-      "3": "Quando Nefer realizar um Ataque Carregado ou <strong>Truque Fantástico</strong>, poderá absorver os Núcleos da Falsidade dentro de uma certa AdE. Cada Núcleo da Falsidade absorvido fará ela obter 1 acúmulo de <strong>Cortina do Segredo Falso</strong>. Quando esse efeito acumular até 3 vezes ou redefinir a duração de 3 acúmulos, aumenta a Proficiência Elemental de Nefer em 100 por 8s."
+      "2": "<strong>Presságio Lunar: Reluzir Cheio</strong>: ao lançar a Habilidade Elemental <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Estratégia de Senet: Dança de Mil Noites</tooltip></strong>, mudará os Núcleos Dendro em campo para Núcleos da Falsidade, e nos próximos 15s, quando um personagem próximo desencadear Florescimento Lunar, substituirá os Núcleos Dendro e Núcleos da Riqueza para gerar Núcleos da Falsidade. Os Núcleos da Falsidade não podem desencadear Superflorescimento e Germinação, e também não podem explodir.",
+      "3": "Quando Nefer realizar um Ataque Carregado ou <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Truque Fantástico</strong></tooltip>, poderá absorver os Núcleos da Falsidade dentro de uma certa AdE. Cada Núcleo da Falsidade absorvido fará ela obter 1 acúmulo de <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Cortina do Segredo Falso</strong></tooltip>. Quando esse efeito acumular até 3 vezes ou redefinir a duração de 3 acúmulos, aumenta a Proficiência Elemental de Nefer em 100 por 8s."
     }
   },
   "passive2": {
     "name": "Filha das Areias",
     "description": {
-      "0": "Quando Nefer está no estado <strong>Baile das Sombras</strong>, durante 5s após um membro da equipe desencadear uma reação de Florescimento Lunar, o estado <strong>Postura da Serpente</strong> de Nefer fornecerá <strong>Orvalho Verdejante</strong> adicional. A cada 100 pontos de Proficiência Elemental de Nefer acima de 500, esse efeito adicional de provisão será fortalecido em 10%. O aumento máximo que pode ser alcançado dessa forma é de 50%."
+      "0": "Quando Nefer está no estado <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Baile das Sombras</strong></tooltip>, durante 5s após um membro da equipe desencadear uma reação de Florescimento Lunar, o estado <strong><tooltip ns=char_Nefer_gen baseKey18=normal>Postura da Serpente</tooltip></strong> de Nefer fornecerá <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Orvalho Verdejante</strong></tooltip> adicional. A cada 100 pontos de Proficiência Elemental de Nefer acima de 500, esse efeito adicional de provisão será fortalecido em 10%. O aumento máximo que pode ser alcançado dessa forma é de 50%."
     }
   },
   "passive3": {
@@ -126,44 +126,44 @@
   "constellation1": {
     "name": "O Plano é o Começo do Sucesso",
     "description": {
-      "0": "Aumenta o Dano Básico causado por Florescimento Lunar de <strong>Truque Fantástico</strong> de Nefer. O aumento é equivalente a 60% da Proficiência Elemental de Nefer. Esse efeito é cumulativo com o bônus de <strong>Cortina do Segredo Falso</strong>."
+      "0": "Aumenta o Dano Básico causado por Florescimento Lunar de <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Truque Fantástico</strong></tooltip> de Nefer. O aumento é equivalente a 60% da Proficiência Elemental de Nefer. Esse efeito é cumulativo com o bônus de <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Cortina do Segredo Falso</strong></tooltip>."
     }
   },
   "constellation2": {
     "name": "Precisão Planejada",
     "description": {
-      "0": "Fortalece o efeito do Talento de Ascensão <strong>Aposta Sob o Luar</strong>: prolonga a duração de <strong>Cortina do Segredo Falso</strong> por 5s, aumenta o máximo de acúmulos para 5, e o Dano de <strong>Truque Fantástico</strong> para 140% do Dano original causado. Quando Nefer lançar sua Habilidade Elemental <strong>Estratégia de Senet: Dança de Mil Noites</strong>, imediatamente obtém 2 acúmulos de Cortina do Segredo Falso. Além disso, quando acumular 5 Cortinas do Segredo Falso, ou quando redefinir a duração dos 5 acúmulos, aumenta a Proficiência Elemental de Nefer em 200 por 8s.",
+      "0": "Fortalece o efeito do Talento de Ascensão <tooltip ns=char_Nefer_gen baseKey18=passive1><strong>Aposta Sob o Luar</strong></tooltip>: prolonga a duração de <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Cortina do Segredo Falso</strong></tooltip> por 5s, aumenta o máximo de acúmulos para 5, e o Dano de <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Truque Fantástico</strong></tooltip> para 140% do Dano original causado. Quando Nefer lançar sua Habilidade Elemental <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Estratégia de Senet: Dança de Mil Noites</tooltip></strong>, imediatamente obtém 2 acúmulos de Cortina do Segredo Falso. Além disso, quando acumular 5 Cortinas do Segredo Falso, ou quando redefinir a duração dos 5 acúmulos, aumenta a Proficiência Elemental de Nefer em 200 por 8s.",
       "1": "É necessário desbloquear o Talento de Ascensão Aposta Sob o Luar."
     }
   },
   "constellation3": {
     "name": "Vestígios das Mentiras",
     "description": {
-      "0": "Aumenta o nível da Habilidade Elemental <strong>Estratégia de Senet: Dança de Mil Noites</strong> em 3 níveis. ",
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Estratégia de Senet: Dança de Mil Noites</tooltip></strong> em 3 níveis. ",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation4": {
     "name": "Mergulho da Rede do Mistério",
     "description": {
-      "0": "Quando Nefer é a personagem ativa e está no estado <strong>Baile das Sombras</strong>, o Orvalho Verdejante obtém um aumento de velocidade de 25%.",
+      "0": "Quando Nefer é a personagem ativa e está no estado <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Baile das Sombras</strong></tooltip>, o Orvalho Verdejante obtém um aumento de velocidade de 25%.",
       "1": "Além disso, quando Nefer está no Baile das Sombras, reduz a <dendro>RES Dendro</dendro> dos inimigos próximos em 20%. Quando Nefer não estiver no estado Baile das Sombras ou após se afastar uma certa distância dos inimigos, removerá esse efeito após 4.5s."
     }
   },
   "constellation5": {
     "name": "Oportunidade Única",
     "description": {
-      "0": "Aumenta o nível do Supremo <strong>Voto Sagrado: Fantasma do Olho Verdadeiro</strong> em 3.",
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Nefer_gen baseKey18=burst>Voto Sagrado: Fantasma do Olho Verdadeiro</tooltip></strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation6": {
     "name": "Momento da Reviravolta Decisiva",
     "description": {
-      "0": "Quando Nefer lança <strong>Truque Fantástico</strong>, seu próprio Dano do 2° Golpe será convertido para <dendro>Dano Dendro em AdE</dendro> equivalente a 85% de sua Proficiência Elemental. Além disso, quando a duração do ataque de Truque Fantástico acabar, causa uma instância de <dendro>Dano Dendro em AdE</dendro> equivalente a 120% de sua Proficiência Elemental. Esse Dano é considerado Dano de Florescimento Lunar causado por Truque Fantástico.",
+      "0": "Quando Nefer lança <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Truque Fantástico</strong></tooltip>, seu próprio Dano do 2° Golpe será convertido para <dendro>Dano Dendro em AdE</dendro> equivalente a 85% de sua Proficiência Elemental. Além disso, quando a duração do ataque de Truque Fantástico acabar, causa uma instância de <dendro>Dano Dendro em AdE</dendro> equivalente a 120% de sua Proficiência Elemental. Esse Dano é considerado Dano de Florescimento Lunar causado por Truque Fantástico.",
       "1": "<br/>",
       "2": "<strong>Presságio Lunar: Reluzir Cheio</strong>",
-      "3": "O Dano de Florescimento Lunar de Nefer é <strong>Elevado</strong> em 15%."
+      "3": "O Dano de Florescimento Lunar de Nefer é <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Elevado</strong></tooltip> em 15%."
     }
   }
 }

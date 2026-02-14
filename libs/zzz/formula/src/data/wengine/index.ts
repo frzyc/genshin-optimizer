@@ -1,5 +1,6 @@
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
+import AngelInTheShell from './sheets/AngelInTheShell'
 import BashfulDemon from './sheets/BashfulDemon'
 import BellicoseBlaze from './sheets/BellicoseBlaze'
 import BigCylinder from './sheets/BigCylinder'
@@ -7,7 +8,9 @@ import BlazingLaurel from './sheets/BlazingLaurel'
 import BoxCutter from './sheets/BoxCutter'
 import BunnyBand from './sheets/BunnyBand'
 import CannonRotor from './sheets/CannonRotor'
+import CauldronOfClarity from './sheets/CauldronOfClarity'
 import CinderCobalt from './sheets/CinderCobalt'
+import CloudcleaveRadiance from './sheets/CloudcleaveRadiance'
 import CordisGermina from './sheets/CordisGermina'
 import DeepSeaVisitor from './sheets/DeepSeaVisitor'
 import DemaraBatteryMarkII from './sheets/DemaraBatteryMarkII'
@@ -21,6 +24,7 @@ import FusionCompiler from './sheets/FusionCompiler'
 import GildedBlossom from './sheets/GildedBlossom'
 import GrillOWisp from './sheets/GrillOWisp'
 import HailstormShrine from './sheets/HailstormShrine'
+import HalfSugarBunny from './sheets/HalfSugarBunny'
 import HeartstringNocturne from './sheets/HeartstringNocturne'
 import HellfireGears from './sheets/HellfireGears'
 import Housekeeper from './sheets/Housekeeper'
@@ -67,6 +71,7 @@ import StreetSuperstar from './sheets/StreetSuperstar'
 import TheBrimstone from './sheets/TheBrimstone'
 import TheRestrained from './sheets/TheRestrained'
 import TheVault from './sheets/TheVault'
+import Thoughtbop from './sheets/Thoughtbop'
 import Timeweaver from './sheets/Timeweaver'
 import TremorTrigramVessel from './sheets/TremorTrigramVessel'
 import TusksOfFury from './sheets/TusksOfFury'
@@ -81,6 +86,7 @@ import YesterdayCalls from './sheets/YesterdayCalls'
 import ZanshinHerbCase from './sheets/ZanshinHerbCase'
 
 const data: TagMapNodeEntries[] = [
+  AngelInTheShell,
   BashfulDemon,
   BellicoseBlaze,
   BigCylinder,
@@ -88,7 +94,9 @@ const data: TagMapNodeEntries[] = [
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CauldronOfClarity,
   CinderCobalt,
+  CloudcleaveRadiance,
   CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
@@ -102,6 +110,7 @@ const data: TagMapNodeEntries[] = [
   GildedBlossom,
   GrillOWisp,
   HailstormShrine,
+  HalfSugarBunny,
   HeartstringNocturne,
   HellfireGears,
   Housekeeper,
@@ -148,6 +157,7 @@ const data: TagMapNodeEntries[] = [
   TheBrimstone,
   TheRestrained,
   TheVault,
+  Thoughtbop,
   Timeweaver,
   TremorTrigramVessel,
   TusksOfFury,

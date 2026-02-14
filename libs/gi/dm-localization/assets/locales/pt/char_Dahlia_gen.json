@@ -113,13 +113,13 @@
   "passive1": {
     "name": "Amor Concedido Pelo Vento",
     "description": {
-      "0": "Quando o personagem sob o efeito \"Graça de Favonius\" do Supremo <strong>Pregação Radiante</strong> desencadeia Congelado nos inimigos, concede 2 acúmulos do efeito Bons Desejos para Dahlia. Esse efeito pode ser desencadeado uma vez a cada 8s."
+      "0": "Quando o personagem sob o efeito \"Graça de Favonius\" do Supremo <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Pregação Radiante</tooltip></strong> desencadeia Congelado nos inimigos, concede 2 acúmulos do efeito Bons Desejos para Dahlia. Esse efeito pode ser desencadeado uma vez a cada 8s."
     }
   },
   "passive2": {
     "name": "Oração da Alegria Sincera",
     "description": {
-      "0": "Quando o seu personagem ativo da equipe estiver sob o efeito Graça de Favonius do Supremo <strong>Pregação Radiante</strong>, aumenta a velocidade de ataque. O valor do aumento é baseado na Vida Máxima de Dahlia: aumenta a velocidade em 0.5% para cada 1.000 de Vida Máxima. É possível aumentar a velocidade de ataque em até 20% dessa forma."
+      "0": "Quando o seu personagem ativo da equipe estiver sob o efeito Graça de Favonius do Supremo <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Pregação Radiante</tooltip></strong>, aumenta a velocidade de ataque. O valor do aumento é baseado na Vida Máxima de Dahlia: aumenta a velocidade em 0.5% para cada 1.000 de Vida Máxima. É possível aumentar a velocidade de ataque em até 20% dessa forma."
     }
   },
   "passive3": {
@@ -132,39 +132,39 @@
   "constellation1": {
     "name": "Procissão Infalível",
     "description": {
-      "0": "Cada vez que Dahlia obtiver 1 acúmulo de Bons Desejos do seu Supremo <strong>Pregação Radiante</strong>, ele recuperará 2.5 de Energia Elemental."
+      "0": "Cada vez que Dahlia obtiver 1 acúmulo de Bons Desejos do seu Supremo <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Pregação Radiante</tooltip></strong>, ele recuperará 2.5 de Energia Elemental."
     }
   },
   "constellation2": {
     "name": "Revelação da Misericórdia",
     "description": {
-      "0": "Após Dahlia consumir o(s) acúmulo(s) de Bons Desejos do seu Supremo <strong>Pregação Radiante</strong> para invocar o Escudo da Graça, o personagem protegido por esse Escudo terá a Força do Escudo aumentada em 25% por 12s."
+      "0": "Após Dahlia consumir o(s) acúmulo(s) de Bons Desejos do seu Supremo <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Pregação Radiante</tooltip></strong> para invocar o Escudo da Graça, o personagem protegido por esse Escudo terá a Força do Escudo aumentada em 25% por 12s."
     }
   },
   "constellation3": {
     "name": "Oferenda da Brisa Florescente",
     "description": {
-      "0": "Aumenta o nível do Supremo <strong>Pregação Radiante</strong> em 3.",
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Pregação Radiante</tooltip></strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation4": {
     "name": "Coleta da Assembleia",
     "description": {
-      "0": "A Graça de Favonius do Supremo de Dahlia, <strong>Pregação Radiante</strong>, dura 3 segundos a mais."
+      "0": "A Graça de Favonius do Supremo de Dahlia, <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Pregação Radiante</tooltip></strong>, dura 3 segundos a mais."
     }
   },
   "constellation5": {
     "name": "Que Assim Seja, Sutilmente",
     "description": {
-      "0": "Aumenta o nível da Habilidade Elemental <strong>Ordenança Imersiva</strong> em 3 níveis. ",
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Dahlia_gen baseKey18=skill>Ordenança Imersiva</tooltip></strong> em 3 níveis. ",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation6": {
     "name": "Saíreis com Alegria",
     "description": {
-      "0": "O personagem ativo atual afetado pela Graça de Favonius do Supremo <strong>Pregação Radiante</strong> tem sua Vel. de ATQ aumentada em 10%.",
+      "0": "O personagem ativo atual afetado pela Graça de Favonius do Supremo <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Pregação Radiante</tooltip></strong> tem sua Vel. de ATQ aumentada em 10%.",
       "1": "Além disso, quando um personagem ativo afetado pela Graça de Favonius for derrotado, será imediatamente:",
       "2": [
         " Revivido.",

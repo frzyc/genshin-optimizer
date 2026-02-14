@@ -97,7 +97,7 @@
     "description": {
       "0": "アイノはチームの<strong>月兆</strong>に応じて、強化効果を獲得する。",
       "1": "<br/>",
-      "2": "<strong>月兆・満照</strong>：元素爆発<strong>お水ひえひえ装置</strong>が強化され、<strong>「落ち着いた方がいいカモ？」</strong>の水弾発射間隔がより短くなり、より広範囲な<hydro>水元素範囲ダメージ</hydro>を与えるようになる。"
+      "2": "<strong>月兆・満照</strong>：元素爆発<strong><tooltip ns=char_Aino_gen baseKey18=burst>お水ひえひえ装置</tooltip></strong>が強化され、<strong>「落ち着いた方がいいカモ？」</strong>の水弾発射間隔がより短くなり、より広範囲な<hydro>水元素範囲ダメージ</hydro>を与えるようになる。"
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "灰と力場のバランス理論",
     "description": {
-      "0": "アイノが元素スキル<strong>アイデアキャッチャー</strong>または元素爆発<strong>お水ひえひえ装置</strong>を発動すると、アイノ自身と周囲のフィールド上の他のキャラクターの元素熟知+80、継続時間15秒。",
+      "0": "アイノが元素スキル<strong><tooltip ns=char_Aino_gen baseKey18=skill>アイデアキャッチャー</tooltip></strong>または元素爆発<strong><tooltip ns=char_Aino_gen baseKey18=burst>お水ひえひえ装置</tooltip></strong>を発動すると、アイノ自身と周囲のフィールド上の他のキャラクターの元素熟知+80、継続時間15秒。",
       "1": "<br/>",
       "2": "この命ノ星座による元素熟知のアップ効果は重ね掛けできない。"
     }
@@ -130,33 +130,33 @@
   "constellation2": {
     "name": "歯車差分の進数原理",
     "description": {
-      "0": "元素爆発<strong>お水ひえひえ装置</strong>の<strong>びしょぬれゾーン</strong>の継続時間中、アイノが待機中の場合、フィールドにいる自身のチーム内キャラクターの攻撃が近くの敵に命中した時、<strong>「落ち着いた方がいいカモ？」</strong>はその敵に対して追加で水弾を1発発射し、アイノの攻撃力25%と元素熟知100%を基にした<hydro>水元素範囲ダメージ</hydro>を与える。この効果は5秒毎に1回のみ発動可能。また、与えたダメージは元素爆発ダメージと見なされる。"
+      "0": "元素爆発<strong><tooltip ns=char_Aino_gen baseKey18=burst>お水ひえひえ装置</tooltip></strong>の<strong>びしょぬれゾーン</strong>の継続時間中、アイノが待機中の場合、フィールドにいる自身のチーム内キャラクターの攻撃が近くの敵に命中した時、<strong>「落ち着いた方がいいカモ？」</strong>はその敵に対して追加で水弾を1発発射し、アイノの攻撃力25%と元素熟知100%を基にした<hydro>水元素範囲ダメージ</hydro>を与える。この効果は5秒毎に1回のみ発動可能。また、与えたダメージは元素爆発ダメージと見なされる。"
     }
   },
   "constellation3": {
     "name": "ケーキと機械のリペアアート",
     "description": {
-      "0": "元素爆発<strong>お水ひえひえ装置</strong>のスキルLv.+3。",
+      "0": "元素爆発<strong><tooltip ns=char_Aino_gen baseKey18=burst>お水ひえひえ装置</tooltip></strong>のスキルLv.+3。",
       "1": "最大Lv.15まで。"
     }
   },
   "constellation4": {
     "name": "バターと猫と エネルギー供給の法則",
     "description": {
-      "0": "元素スキル<strong>アイデアキャッチャー</strong>が敵に命中すると、アイノの元素エネルギーが10ポイント回復する。この方法による元素エネルギーの回復は10秒毎に1回のみ可能。"
+      "0": "元素スキル<strong><tooltip ns=char_Aino_gen baseKey18=skill>アイデアキャッチャー</tooltip></strong>が敵に命中すると、アイノの元素エネルギーが10ポイント回復する。この方法による元素エネルギーの回復は10秒毎に1回のみ可能。"
     }
   },
   "constellation5": {
     "name": "金属と光の永久タービン",
     "description": {
-      "0": "元素スキル<strong>アイデアキャッチャー</strong>のスキルLv.+3。",
+      "0": "元素スキル<strong><tooltip ns=char_Aino_gen baseKey18=skill>アイデアキャッチャー</tooltip></strong>のスキルLv.+3。",
       "1": "最大Lv.15まで。"
     }
   },
   "constellation6": {
     "name": "天才なりの構築責任",
     "description": {
-      "0": "元素爆発<strong>お水ひえひえ装置</strong>を発動した後の15秒間、周囲のフィールド上キャラクターの感電、開花、月感電、月開花によるダメージ+15%。",
+      "0": "元素爆発<strong><tooltip ns=char_Aino_gen baseKey18=burst>お水ひえひえ装置</tooltip></strong>を発動した後の15秒間、周囲のフィールド上キャラクターの感電、開花、月感電、月開花、月結晶によるダメージ+15%。",
       "1": "<strong>月兆・満照</strong>：上記反応によるダメージがさらに+20%。"
     }
   }

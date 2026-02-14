@@ -199,7 +199,7 @@
   "constellation4": {
     "name": "Flower and a Fighter",
     "description": {
-      "0": "When Yun Jin triggers the Crystallize Reaction, her DEF is increased by 20% for 12s."
+      "0": "When Yun Jin triggers Crystallize or Lunar-Crystallize reactions, her DEF is increased by 20% for 12s."
     }
   },
   "constellation5": {

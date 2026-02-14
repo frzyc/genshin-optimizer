@@ -165,6 +165,22 @@
       "1": "The maximum DMG Bonus that can be gained this way is 5,000."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Aqualis",
+    "description": {
+      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>buffs</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Additionally, when nearby party members' current HP increases or decreases by 5%, Traveler will receive 1 stack of Blade of Many Waters. You can gain 1 stack of Blade of Many Waters this way once every 4s, max 3 stacks. After obtaining 3 stacks of Blade of Many Waters, performing a Charged Attack will consume all stacks of Blade of Many Waters and transform into the special <strong>Charged Attack: Tidebound</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Tidebound</strong>",
+      "5": [
+        " Each Charged Attack hit deals increased <hydro>Hydro DMG</hydro>. Increase in DMG is equal to 150% of Traveler's ATK,",
+        " When Traveler's HP is no less than 50%, 10% of Traveler's Max HP will be consumed to increase DMG inflicted by each Charged Attack hit by 100% of Traveler's ATK.",
+        " When Traveler's HP is lower than 50%, one instance of healing equal to 25% of Traveler's Max HP will be restored upon hitting an enemy.",
+        " <strong>Charged Attack: Tidebound</strong> can be triggered up to once every 15s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Swelling Lake",
     "description": {

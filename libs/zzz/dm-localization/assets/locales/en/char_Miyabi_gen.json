@@ -255,5 +255,6 @@
       "desc": "During <ct color=#FFFFFF>Shimotsuki Stance</ct>, Hoshimi Miyabi obtains <ct color=#FFFFFF>Polar</ct>, which increases <ct color=#FFFFFF>Basic Attack: Shimotsuki</ct> DMG by 30%. After obtaining <ct color=#FFFFFF>Polar</ct>, Hoshimi Miyabi will automatically draw her blade and unleash powerful slashes based on the current charge level upon consuming <ct color=#FFFFFF>Fallen Frost</ct>. Before <ct color=#FFFFFF>Fallen Frost</ct> is completely depleted, the draw and slashes will not interrupt charging under <ct color=#FFFFFF>Shimotsuki Stance</ct>. Each occurrence of <ct color=#FFFFFF>Shimotsuki Stance</ct> can perform up to 3 draws and slashes.",
       "flavor": "The more she battles, the more it becomes evident to outsiders: If there is a god of swordsmanship, it must greatly favor Hoshimi Miyabi."
     }
-  }
+  },
+  "potential": {}
 }

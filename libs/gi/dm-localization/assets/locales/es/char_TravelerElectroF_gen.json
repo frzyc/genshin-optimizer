@@ -111,6 +111,21 @@
       "0": "Aumenta la Energía recargada por el abalorio de la profusión creado mediante <strong>Espada electrosombría</strong> en una cantidad proporcional al 10% de la Recarga de Energía {F#de la Viajera}{M#del Viajero}."
     }
   },
+  "lockedPassive": {
+    "name": "Trueno lejano extranjero",
+    "description": {
+      "0": "Obtienes nuevos poderes gracias a tus viajes pasados, de manera que ganarás <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimientos</strong></tooltip> adicionales por cada elemento con el que hayas resonado.",
+      "1": "<br/>",
+      "2": "Además, cuando un personaje cercano del equipo use una Habilidad Definitiva, {F#la Viajera}{M#el Viajero} obtendrá 1 carga de “filo del trueno resonante”, acumulable hasta un máximo de 3 cargas. Al tener 3 cargas y ejecutar un Ataque Cargado, se consumirán todas las cargas de filo del trueno resonante para ejecutar un <strong>Ataque Cargado: Tormenta eléctrica</strong> especial.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Cargado: Tormenta eléctrica</strong>",
+      "5": [
+        "Cada golpe del Ataque Cargado inflige <electro>Daño Electro</electro> adicional, con un aumento de daño equivalente al 100% del ATQ {F#de la}{M#del} Viajer{F#a}{M#o}.",
+        "3 s después de golpear a un enemigo, caerá un rayo adicional que inflige <electro>Daño Electro</electro> en una cantidad equivalente al 200% del ATQ {F#de la}{M#del} Viajer{F#a}{M#o}, y que le otorga 1 abalorio de la profusión. Este daño se considera daño de Ataque Cargado.",
+        "Como máximo, solo se puede ejecutar un <strong>Ataque Cargado: Tormenta eléctrica</strong> cada 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Trueno de la cosecha primaveral",
     "description": {

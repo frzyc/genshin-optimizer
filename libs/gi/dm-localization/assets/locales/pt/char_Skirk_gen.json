@@ -44,7 +44,7 @@
       "0": "Imita o estilo de combate do \"Cavaleiro Abominável\". Produz efeitos diferentes dependendo se você Pressionar ou Manter pressionado.",
       "1": "<br/>",
       "2": "<strong>Pressionar</strong>",
-      "3": "Skirk obtém 45 <strong>Sutileza da Serpente</strong> e alterna para o modo <strong>Lampejo de Sete Fases</strong>.",
+      "3": "Skirk obtém 45 <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Sutileza da Serpente</strong></tooltip> e alterna para o modo <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Lampejo de Sete Fases</strong></tooltip>.",
       "4": "<br/>",
       "5": "<strong>Manter pressionado</strong>",
       "6": "Skirk obtém 45 Sutileza da Serpente e se moverá continuamente em alta velocidade. Sua Resistência contra Interrupção é aumentada nesse estado.",
@@ -72,14 +72,14 @@
   "burst": {
     "name": "Arte Apodrecida: Obliteração",
     "description": {
-      "0": "O Supremo de Skirk não depende de Energia Elemental, mas sim de <strong>Sutileza da Serpente</strong>.",
-      "1": "Quando Skirk tiver pelo menos 50 de <strong>Sutileza da Serpente</strong>, ela poderá consumir toda a sua <strong>Sutileza da Serpente</strong> para liberar seu Supremo, rasgando o espaço à sua frente e realizando cortes rápidos consecutivos que causam <cryo>Dano Cryo em uma AdE</cryo>. Ao mesmo tempo, o Dano causado por cada golpe desse Supremo poderá ser aumentado por cada ponto de <strong>Sutileza da Serpente</strong> acima de 50 no momento da ativação. Um máximo de 12 pontos poderá ser considerado para esse aumento.",
+      "0": "O Supremo de Skirk não depende de Energia Elemental, mas sim de <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Sutileza da Serpente</strong></tooltip>.",
+      "1": "Quando Skirk tiver pelo menos 50 de <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Sutileza da Serpente</strong></tooltip>, ela poderá consumir toda a sua <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Sutileza da Serpente</strong></tooltip> para liberar seu Supremo, rasgando o espaço à sua frente e realizando cortes rápidos consecutivos que causam <cryo>Dano Cryo em uma AdE</cryo>. Ao mesmo tempo, o Dano causado por cada golpe desse Supremo poderá ser aumentado por cada ponto de <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Sutileza da Serpente</strong></tooltip> acima de 50 no momento da ativação. Um máximo de 12 pontos poderá ser considerado para esse aumento.",
       "2": "<br/>",
-      "3": "Quando Skirk estiver no modo <strong>Lampejo de Sete Fases</strong>, o Supremo \"Arte Apodrecida: Obliteração\" será substituído por \"Devastação: Obliteração\".",
+      "3": "Quando Skirk estiver no modo <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Lampejo de Sete Fases</strong></tooltip>, o Supremo \"Arte Apodrecida: Obliteração\" será substituído por \"Devastação: Obliteração\".",
       "4": "<br/>",
       "5": "<strong>Devastação: Obliteração</strong>",
       "6": "Um Supremo especial que pode ser usado mesmo sem consumir Sutileza da Serpente.",
-      "7": "Após usá-lo, Skirk obterá o efeito \"Tudo Há de Murchar\", que durará até o término do Lampejo de Sete Fases. Após desbloquear o Talento de Ascensão <strong>Razão Além da Razão</strong>, ela também poderá absorver Fendas do Vazio próximas.",
+      "7": "Após usá-lo, Skirk obterá o efeito \"Tudo Há de Murchar\", que durará até o término do Lampejo de Sete Fases. Após desbloquear o Talento de Ascensão <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Razão Além da Razão</strong></tooltip>, ela também poderá absorver Fendas do Vazio próximas.",
       "8": "Enquanto \"Tudo Há de Murchar\" estiver ativo, a cada 0.1s, após o Ataque Normal de Skirk acertar um inimigo, esse Ataque Normal causará Dano aumentado. Se ela tiver absorvido alguma Fenda do Vazio ao usar o <strong>Devastação: Obliteração</strong>, o Dano desse Ataque Normal será ainda mais aumentado com base no número de Fendas absorvidas.",
       "9": "Esse efeito será cancelado após ser acionado 10 vezes."
     },
@@ -109,7 +109,7 @@
       "1": "<br/>",
       "2": "Skirk pode usar os seguintes métodos para absorver Fendas do Vazio próximas:",
       "3": [
-        " Ao acertar um inimigo com um Ataque Carregado no <strong>modo Lampejo de Sete Fases</strong>.",
+        " Ao acertar um inimigo com um Ataque Carregado no <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>modo Lampejo de Sete Fases</strong></tooltip>.",
         " Ao usar o Supremo especial <strong>Devastação: Obliteração</strong> enquanto estiver no modo Lampejo de Sete Fases.",
         " Ao Manter pressionada sua Habilidade Elemental <strong>Devastação: Lampejo</strong> para realizar se mover rapidamente."
       ],
@@ -122,7 +122,7 @@
     "description": {
       "0": "Quando membros próximos da equipe de Tipo Elemental <hydro>Hydro</hydro> atingirem um inimigo com um ataque <hydro>Hydro</hydro>, ou quando os outros personagens próximos da equipe de Tipo Elemental <cryo>Cryo</cryo>, exceto a própria Skirk, atingirem um inimigo com um ataque <cryo>Cryo</cryo>, Skirk receberá o efeito \"Encruzilhada da Morte\" por 20s. Máximo de 3 acúmulos, com a duração de cada acúmulo contada independentemente.",
       "1": "Cada personagem pode conceder no máximo 1 acúmulo de \"Encruzilhada da Morte\" para Skirk dessa maneira.",
-      "2": "Cada acúmulo de \"Encruzilhada da Morte\" aumenta o Dano do Ataque Normal causado por Skirk no modo <strong>Lampejo de Sete Fases</strong> em 110%/120%/170% de seu Dano original e também aumenta o Dano causado por seu Supremo <strong>Arte Apodrecida: Obliteração</strong> em 105%/115%/160% de seu Dano original."
+      "2": "Cada acúmulo de \"Encruzilhada da Morte\" aumenta o Dano do Ataque Normal causado por Skirk no modo <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Lampejo de Sete Fases</strong></tooltip> em 110%/120%/170% de seu Dano original e também aumenta o Dano causado por seu Supremo <strong>Arte Apodrecida: Obliteração</strong> em 105%/115%/160% de seu Dano original."
     }
   },
   "passive3": {
@@ -134,43 +134,43 @@
   "constellation1": {
     "name": "Queda Longínqua",
     "description": {
-      "0": "Aprimora os efeitos do Talento de Ascensão <strong>Razão Além da Razão</strong>: Skirk invocará uma lâmina de cristal por cada Fenda do Vazio absorvida para atacar inimigos próximos, causando 500% de seu ATQ como <cryo>Dano Cryo</cryo>. Esse Dano é considerado como Dano de Ataque Carregado.",
+      "0": "Aprimora os efeitos do Talento de Ascensão <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Razão Além da Razão</strong></tooltip>: Skirk invocará uma lâmina de cristal por cada Fenda do Vazio absorvida para atacar inimigos próximos, causando 500% de seu ATQ como <cryo>Dano Cryo</cryo>. Esse Dano é considerado como Dano de Ataque Carregado.",
       "1": "É necessário primeiro desbloquear o Talento de Ascensão <strong>Razão Além da Razão</strong>."
     }
   },
   "constellation2": {
     "name": "Ao Abismo",
     "description": {
-      "0": "Após desencadear sua Habilidade Elemental <strong>Devastação: Lampejo</strong>, Skirk obterá 10 pontos adicionais de <strong>Sutileza da Serpente</strong>.",
+      "0": "Após desencadear sua Habilidade Elemental <strong>Devastação: Lampejo</strong>, Skirk obterá 10 pontos adicionais de <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Sutileza da Serpente</strong></tooltip>.",
       "1": "Ao usar seu Supremo <strong>Arte Apodrecida: Obliteração</strong>, o Dano dessa instância do Supremo será aumentado ao considerar até 10 pontos adicionais de Sutileza da Serpente.",
-      "2": "Além disso, dentro de 12.5s após Skirk desencadear o Supremo especial <strong>Devastação: Obliteração</strong> enquanto estiver em seu modo <strong>Lampejo de Sete Fases</strong>, seu ATQ é aumentado em 70%. Este efeito será cancelado ao sair do modo Lampejo de Sete Fases."
+      "2": "Além disso, dentro de 12.5s após Skirk desencadear o Supremo especial <strong>Devastação: Obliteração</strong> enquanto estiver em seu modo <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Lampejo de Sete Fases</strong></tooltip>, seu ATQ é aumentado em 70%. Este efeito será cancelado ao sair do modo Lampejo de Sete Fases."
     }
   },
   "constellation3": {
     "name": "Pecado Fortuito",
     "description": {
-      "0": "Aumenta o nível do Supremo <strong>Arte Apodrecida: Obliteração</strong> em 3.",
+      "0": "Aumenta o nível do Supremo <tooltip ns=char_Skirk_gen baseKey18=burst><strong>Arte Apodrecida: Obliteração</strong></tooltip> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation4": {
     "name": "Fluxo Fraturado",
     "description": {
-      "0": "Aprimora os efeitos do Talento de Ascensão <strong>Retorno à Desolação</strong>: Cada acúmulo de Encruzilhada da Morte também aumenta o ATQ da Skirk em 10%/20%/40%.",
+      "0": "Aprimora os efeitos do Talento de Ascensão <tooltip ns=tooltips_gen baseKey18=11130008 values=[]><strong>Retorno à Desolação</strong></tooltip>: Cada acúmulo de Encruzilhada da Morte também aumenta o ATQ da Skirk em 10%/20%/40%.",
       "1": "É necessário desbloquear o Talento de Ascensão <strong>Retorno à Desolação</strong> primeiro."
     }
   },
   "constellation5": {
     "name": "Portadora de Desejos",
     "description": {
-      "0": "Aumenta o Nível da Habilidade Elemental <strong>Devastação: Lampejo</strong> em 3.",
+      "0": "Aumenta o Nível da Habilidade Elemental <tooltip ns=char_Skirk_gen baseKey18=skill><strong>Devastação: Lampejo</strong></tooltip> em 3.",
       "1": "O nível máximo de aprimoramento é 15."
     }
   },
   "constellation6": {
     "name": "Para a Fonte",
     "description": {
-      "0": "Cada Fenda do Vazio absorvida por Skirk através dos efeitos do Talento de Ascensão <strong>Razão Além da Razão</strong> concederá a ela 1 acúmulo de Devastação: Corte. Ela pode consumir esses acúmulos para iniciar ataques coordenados e reduzir o Dano recebido enquanto estiver no modo <strong>Lampejo de Sete Fases</strong>. Esse efeito dura 15s, pode acumular até 3 vezes, e a duração de cada acúmulo é contada separadamente.",
+      "0": "Cada Fenda do Vazio absorvida por Skirk através dos efeitos do Talento de Ascensão <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Razão Além da Razão</strong></tooltip> concederá a ela 1 acúmulo de Devastação: Corte. Ela pode consumir esses acúmulos para iniciar ataques coordenados e reduzir o Dano recebido enquanto estiver no modo <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Lampejo de Sete Fases</strong></tooltip>. Esse efeito dura 15s, pode acumular até 3 vezes, e a duração de cada acúmulo é contada separadamente.",
       "1": "É necessário desbloquear o Talento de Ascensão \"Razão Além da Razão\" primeiro.",
       "2": "<br/>",
       "3": "<strong>Devastação: Corte</strong>",

@@ -1,0 +1,192 @@
+{
+  "name": "Colombina",
+  "title": "La Luna Celestial Retornante",
+  "description": "La Doncella Lunar que nació en Nod Krai, así como la luna celestial que regresa a su hogar.",
+  "constellationName": "¿?",
+  "auto": {
+    "name": "Cascada rociolunar",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Invoca las mareas de la luz lunar para realizar hasta 3 ataques que infligen <hydro>Daño Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para infligir <hydro>Daño Hydro en el AdE</hydro> tras un breve periodo de canalización.",
+        "2": "Si tiene al menos 1 gota de <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>rocío de la espesura</strong></tooltip>, el Ataque Cargado de Colombina se remplaza por el Ataque Cargado especial <strong>Ablución rociolunar</strong>, el cual no consume Aguante. Este ataque consumirá 1 gota de rocío de la espesura para asestar 3 golpes de <dendro>Daño Dendro en el AdE</dendro> considerado como daño de Florecimiento Lunar a los enemigos que tenga enfrente."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Ablución rociolunar",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Mareas inmemoriales",
+    "description": {
+      "0": "Llama a las mareas lunares para infligir <hydro>Daño Hydro en el AdE</hydro> e invocar un <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>oleaje gravitacional</strong></tooltip>.",
+      "1": "El <strong>oleaje gravitacional</strong> seguirá al personaje en uso e infligirá <hydro>Daño Hydro en el AdE</hydro> continuamente a los enemigos cercanos. Mientras el <strong>oleaje gravitacional</strong> esté activo, cuando un personaje cercano del equipo cause una Reacción Lunar o inflija daño de Reacción Lunar, Colombina acumulará una <strong>fuerza gravitatoria</strong> especial. Al alcanzar la cantidad máxima, se infligirá daño de diferentes tipos a los enemigos según la Reacción Lunar que más <strong>fuerza gravitatoria</strong> haya otorgado a Colombina.",
+      "2": "<br/>",
+      "3": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "4": "El <strong>oleaje gravitacional</strong> infligirá <hydro>Daño Hydro en el AdE</hydro> en un área más grande."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño continuo del oleaje gravitacional",
+      "2": "Daño de Electrocargado Lunar de la interferencia gravitacional",
+      "3": "Daño de Florecimiento Lunar de la interferencia gravitacional",
+      "4": "Daño de Cristalización Lunar de la interferencia gravitacional",
+      "5": "Límite de fuerza gravitatoria",
+      "6": "Duración de oleaje gravitacional",
+      "7": "TdE",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Nostalgia de la luz lunar",
+    "description": {
+      "0": "Las montañas y las mareas se unen bajo la argéntea luz de la inmaculada Luna Nueva. Colombina transforma temporalmente el terreno a su alrededor en un <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>dominio lunar</strong></tooltip> e inflige <hydro>Daño Hydro en el AdE</hydro>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Aumento de daño de Reacción Lunar ",
+      "2": "Duración del dominio lunar",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Delirio selénico",
+    "description": {
+      "0": "Al activar una <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>interferencia gravitacional</strong></tooltip>, Colombina obtiene el efecto de “tentación lunar”, el cual aumenta su Prob. CRIT en un 5% durante 10 s. Este efecto puede acumularse hasta 3 veces."
+    }
+  },
+  "passive2": {
+    "name": "La ley de la Luna Nueva",
+    "description": {
+      "0": "Cuando un personaje que se encuentre en el <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>dominio lunar</strong></tooltip> cause una Reacción Lunar, obtendrá los siguientes efectos respectivamente:",
+      "1": [
+        "<strong>Electrocargado Lunar</strong>: cuando una nube de tormenta descargue un rayo sobre un objetivo válido, habrá un 33% de probabilidad de que descargue otro rayo adicional.",
+        "<strong>Florecimiento Lunar</strong>: causar una reacción de Florecimiento Lunar otorga al equipo 1 gota de <tooltip ns=tooltips_gen baseKey18=11250003 values=[]><strong>rocío cumbreluna</strong></tooltip> especial. El equipo podrá obtener un máximo de 3 gotas de rocío cumbreluna cada 18 s de esta manera.",
+        "<strong>Cristalización Lunar</strong>: al activar la resonancia lunar, cada pilar lunar tendrá un 33% de probabilidad de realizar un ataque adicional."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Bendición presagiolunar: Yo te brindo mi luz",
+    "description": {
+      "0": "Cuando un personaje del equipo cause una reacción de Electrocargado, Florecimiento o Cristalización Hydro, esta se transformará en una reacción de Electrocargado Lunar, Florecimiento Lunar o Cristalización Lunar, respectivamente. El daño base de las Reacciones Lunares de los personajes del equipo aumentará en un 0.2% por cada 1000 pts. de Vida Máx. que tenga Colombina. Como máximo, dicho daño puede aumentar en un 7% de esta manera.",
+      "1": "<br/>",
+      "2": "Además, cuando Colombina esté en el equipo, el nivel de <strong>presagio lunar</strong> de los personajes aumentará en 1."
+    }
+  },
+  "passive": {
+    "name": "Custodia de la luna",
+    "description": {
+      "0": "Cuando uno de tus personajes del equipo sea derrotado en Nod Krai, Colombina revivirá a dicho personaje y le restaurará cierta cantidad de Vida según el Niv. de Amistad de Colombina. Este efecto solo puede ocurrir una vez cada 100 s. Este efecto no se activará en dominios, Dominios de la cruzada o en la Espiral del Abismo.",
+      "1": "Además, parece que Colombina tiene un vínculo especial con algunos animales pequeños afectados por el kuuvahki..."
+    }
+  },
+  "constellation1": {
+    "name": "Un haz que ilumina las flores y las montañas",
+    "description": {
+      "0": "Al usar la Habilidad Elemental, <strong>Mareas inmemoriales</strong>, también se activará inmediatamente un efecto equivalente a una <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>interferencia gravitacional</strong></tooltip>. Esto solo podrá ocurrir una vez cada 15 s.",
+      "1": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "2": "Cuando se active una interferencia gravitacional, si la Reacción Lunar que más fuerza gravitatoria ha otorgado a Colombina es:",
+      "3": [
+        "<strong>Electrocargado Lunar</strong>: tu personaje en uso del equipo recupera 6 pts. de Energía Elemental.",
+        "<strong>Florecimiento Lunar</strong>: aumenta la RES a interrupción de tu personaje en uso del equipo durante 8 s.",
+        "<strong>Cristalización Lunar</strong>: invoca un <strong>escudo lluviamarino</strong> durante 8 s que absorbe daño en una cantidad equivalente al 12% de la Vida Máx. de Colombina, y que tiene un 250% de efectividad de absorción de <hydro>Daño Hydro</hydro>."
+      ],
+      "4": "<br/>",
+      "5": "El daño de Reacción Lunar de todos los personajes cercanos del equipo <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 1.5%."
+    }
+  },
+  "constellation2": {
+    "name": "Esplendor en compañía",
+    "description": {
+      "0": "La velocidad de acumulación de <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>fuerza gravitatoria</strong></tooltip> aumenta en un 34%.",
+      "1": "Cuando se active una <strong>interferencia gravitacional</strong>, Colombina obtendrá el efecto de <strong>esplendor argénteo</strong>, el cual aumenta su Vida Máx. en un 40% durante 8 s.",
+      "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "3": "Mientras el efecto de <strong>esplendor argénteo</strong> esté activo, si la Reacción Lunar que más fuerza gravitatoria ha otorgado a Colombina durante la <strong>interferencia gravitacional</strong> es:",
+      "4": [
+        "<strong>Electrocargado Lunar</strong>: el ATQ de tu personaje en uso del equipo aumenta en una cantidad equivalente al 1% de la Vida Máx. de Colombina.",
+        "<strong>Florecimiento Lunar</strong>: la Maestría Elemental de tu personaje en uso del equipo aumenta en una cantidad equivalente al 0.35% de la Vida Máx. de Colombina.",
+        "<strong>Cristalización Lunar</strong>: la DEF del personaje en uso del equipo aumenta en una cantidad equivalente al 1% de la Vida Máx. de Colombina."
+      ],
+      "5": "<br/>",
+      "6": "El daño de Reacción Lunar de todos los personajes cercanos del equipo <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 7%."
+    }
+  },
+  "constellation3": {
+    "name": "Un fulgor de ensueño a través de aguas calmas",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Columbina_gen baseKey18=skill>Mareas inmemoriales</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15.",
+      "2": "<br/>",
+      "3": "El daño de Reacción Lunar de todos los personajes cercanos del equipo <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 1.5%."
+    }
+  },
+  "constellation4": {
+    "name": "Cumbres nubosas entre bruma floral",
+    "description": {
+      "0": "Cuando se active una <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>interferencia gravitacional</strong></tooltip>, Colombina recuperará 4 pts. de Energía Elemental.",
+      "1": "Además, el daño de Reacción Lunar de la interferencia gravitacional aumentará según la Reacción Lunar que más <strong>fuerza gravitatoria</strong> haya otorgado a Colombina. Si dicha reacción ha sido Electrocargado Lunar/Florecimiento Lunar/Cristalización Lunar, el daño aumentará, respectivamente, en una cantidad equivalente al 12.5/2.5/12.5% de la Vida Máx. de Colombina. Este efecto solo puede ocurrir una vez cada 15 s.",
+      "2": "<br/>",
+      "3": "El daño de Reacción Lunar de todos los personajes cercanos del equipo <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 1.5%."
+    }
+  },
+  "constellation5": {
+    "name": "Una larga canción que acompaña al silencio",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Columbina_gen baseKey18=burst>Nostalgia de la luz lunar</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15.",
+      "2": "<br/>",
+      "3": "El daño de Reacción Lunar de todos los personajes cercanos del equipo <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 1.5%."
+    }
+  },
+  "constellation6": {
+    "name": "A través de la oscuridad, sigue la luz lunar",
+    "description": {
+      "0": "Cuando cualquier personaje que se encuentre en el <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>dominio lunar</strong></tooltip> cause una Reacción Lunar, el Daño CRIT del tipo elemental correspondiente de todos los personajes del equipo aumenta en un 80% durante 8 s. La bonificación de Daño CRIT de un mismo elemento no puede acumularse.",
+      "1": "<br/>",
+      "2": "El daño de Reacción Lunar de todos los personajes cercanos del equipo <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 7%."
+    }
+  }
+}

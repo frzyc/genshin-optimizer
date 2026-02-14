@@ -1,0 +1,191 @@
+{
+  "name": "Columbina",
+  "title": "Welkin Moon's Homecoming",
+  "description": "Gadis Bulan yang lahir di Nod-Krai, Bulan Hampa yang pulang ke kampung halamannya.",
+  "constellationName": "???",
+  "auto": {
+    "name": "Moondew Cascade",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Memanggil Moonlit Tides, melancarkan hingga 3 serangan yang mengakibatkan <hydro>Hydro DMG</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan <hydro>Hydro DMG area</hydro> setelah jeda singkat.",
+        "2": "Jika memiliki setidaknya 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Verdant Dew</strong></tooltip>, Charged Attack Columbina akan digantikan oleh Charged Attack khusus yang tidak mengonsumsi Stamina, yaitu <strong>Moondew Cleanse</strong>: Mengonsumsi 1 Verdant Dew untuk mengakibatkan 3 kali <dendro>Dendro DMG Area</dendro> terhadap musuh di depan. DMG ini dianggap sebagai DMG reaksi Lunar-Bloom."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <hydro>Hydro DMG area</hydro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Moondew Cleanse",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Eternal Tides",
+    "description": {
+      "0": "Membangkitkan Moonbound Tides untuk mengakibatkan <hydro>Hydro DMG Area</hydro> dan memanggil <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravity Ripple</strong></tooltip>.",
+      "1": "<strong>Gravity Ripple</strong> akan mengikuti Karakter aktif, dan terus mengakibatkan <hydro>Hydro DMG Area</hydro> terhadap musuh di sekitar. Selama <strong>Gravity Ripple</strong> aktif, jika Karakter party di sekitar memicu atau mengakibatkan DMG reaksi Lunar, maka Columbina akan mengakumulasi nilai <strong>Gravity</strong> yang spesial. Saat mencapai nilai Gravity maksimum, Columbina akan mengakibatkan DMG yang berbeda berdasarkan reaksi Lunar yang paling banyak mengakumulasi nilai <strong>Gravity</strong> untuk Columbina.",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: <strong>Gravity Ripple</strong> mengakibatkan <hydro>Hydro DMG Area</hydro> dalam radius yang lebih luas."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Berkelanjutan Gravity Ripple",
+      "2": "DMG Lunar-Charged Gravity Interference",
+      "3": "DMG Lunar-Bloom Gravity Interference",
+      "4": "DMG Lunar-Crystallize Gravity Interference",
+      "5": "Batas Maksimum Gravity",
+      "6": "Durasi Gravity Ripple",
+      "7": "Cooldown",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Moonlit Melancholy",
+    "description": {
+      "0": "Menghubungkan gunung dan laut atas nama bulan baru yang tak ternoda. Columbina membuat tanah di sekitarnya berubah menjadi <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Lunar Domain</strong></tooltip> untuk sementara dan mengakibatkan <hydro>Hydro DMG Area</hydro>."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Peningkatan DMG Reaksi Lunar",
+      "2": "Durasi Lunar Domain",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Lunacy's Lure",
+    "description": {
+      "0": "Saat memicu <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravity Interference</strong></tooltip>, Columbina akan mendapatkan efek Lunacy, membuat CRIT Rate diri sendiri meningkat 5% selama 10 detik. Efek ini dapat ditumpuk sampai 3 lapis."
+    }
+  },
+  "passive2": {
+    "name": "Law of the New Moon",
+    "description": {
+      "0": "Karakter yang berada dalam <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Lunar Domain</strong></tooltip> akan mendapatkan efek berikut saat memicu reaksi Lunar:",
+      "1": [
+        "<strong>Reaksi Lunar-Charged</strong>: Saat awan petir menyambar target yang memenuhi syarat, ada 33% kemungkinan untuk menyambar sekali lagi.",
+        "<strong>Reaksi Lunar-Bloom</strong>: Saat memicu reaksi Lunar-Bloom, party akan mendapatkan 1 lapis efek <tooltip ns=tooltips_gen baseKey18=11250003 values=[]><strong>Moonridge Dew</strong></tooltip> khusus, maksimum 3 Moonridge Dew dapat diperoleh dengan cara ini setiap 18 detik.",
+        "<strong>Reaksi Lunar-Crystallize</strong>: Saat memicu Moondrift Harmony, setiap Moondrift memiliki 33% kemungkinan untuk melakukan 1 kali serangan tambahan."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Moonlight, Lent Unto You",
+    "description": {
+      "0": "Saat Karakter di dalam party memicu reaksi Electro-Charged/Bloom/Hydro-Crystallize, reaksi tersebut akan dikonversi menjadi reaksi Lunar-Charged/Lunar-Bloom/Lunar-Crystallize. DMG dasar reaksi ini meningkat berdasarkan Max HP Columbina. Setiap 1.000 poin Max HP akan membuat DMG dasar reaksi Lunar meningkat 0,2%, hingga maksimum 7%.",
+      "1": "<br/>",
+      "2": "Selain itu saat Columbina berada di dalam party, <strong>Moonsign</strong> party meningkat 1 level."
+    }
+  },
+  "passive": {
+    "name": "Lunar Vigil",
+    "description": {
+      "0": "Jika Karakter sendiri di dalam party gugur saat berada di area Nod-Krai, Columbina akan membangkitkan Karakter ini dan memulihkan HP-nya. Jumlah HP yang dipulihkan akan didasarkan pada level Persahabatan Columbina. Efek ini dapat terpicu sekali setiap 100 detik. Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss.",
+      "1": "Selain itu, Columbina sepertinya memiliki kedekatan khusus dengan sebagian hewan yang dipengaruhi oleh kuuvahki ...."
+    }
+  },
+  "constellation1": {
+    "name": "Radiance Over Blossoms and Peaks",
+    "description": {
+      "0": "Melancarkan Elemental Skill <strong>Eternal Tides</strong> akan langsung memicu efek yang setara dengan <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravity Interference</strong></tooltip> satu kali. Efek ini dapat terpicu sekali setiap 15 detik.",
+      "1": "<strong>Moonsign: Ascendant Gleam</strong>",
+      "2": "Saat memicu Gravity Interference, jika jenis Gravity reaksi Lunar tertinggi yang diakumulasi Columbina adalah:",
+      "3": [
+        "<strong>Reaksi Lunar-Charged</strong>: Memulihkan 6 poin Energy untuk Karakter aktif sendiri dalam party.",
+        "<strong>Reaksi Lunar-Bloom</strong>: Meningkatkan ketahanan Karakter aktif sendiri terhadap interupsi selama 8 detik.",
+        "<strong>Reaksi Lunar-Crystallize</strong>: Menciptakan <strong>Rainsea Shield</strong> yang dapat menahan DMG sebesar 12% Max HP Columbina dan memiliki 250% pertahanan terhadap <hydro>Hydro DMG</hydro>, berlangsung selama 8 detik."
+      ],
+      "4": "<br/>",
+      "5": "DMG reaksi Lunar yang diakibatkan seluruh anggota party <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 1,5%."
+    }
+  },
+  "constellation2": {
+    "name": "Not in Lone Splendor",
+    "description": {
+      "0": "Nilai <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravity</strong></tooltip> akan terakumulasi 34% lebih cepat.",
+      "1": "Saat <strong>Gravity Interference</strong> terpicu, Columbina akan mendapatkan efek <strong>Lunar Brilliance</strong>, meningkatkan 40% Max HP Columbina selama 8 detik.",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>:",
+      "3": "Selama efek <strong>Lunar Brilliance</strong> aktif, untuk <strong>Gravity Interference</strong> yang terpicu kali ini, jika jenis reaksi Lunar yang memberikan nilai Gravity tertinggi untuk Columbina adalah:",
+      "4": [
+        "<strong>Reaksi Lunar-Charged</strong>: ATK Karakter aktif party sendiri meningkat sebesar 1% Max HP Columbina.",
+        "<strong>Reaksi Lunar-Bloom</strong>: Elemental Mastery Karakter aktif dalam party sendiri meningkat sebesar 0,35% Max HP Columbina.",
+        "<strong>Reaksi Lunar-Crystallize</strong>: DEF Karakter aktif dalam party sendiri meningkat sebesar 1% Max HP Columbina."
+      ],
+      "5": "<br/>",
+      "6": "DMG reaksi Lunar yang diakibatkan seluruh anggota party <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 7%."
+    }
+  },
+  "constellation3": {
+    "name": "Dreamlike Glow Across Tranquil Waters",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Columbina_gen baseKey18=skill>Eternal Tides</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15.",
+      "2": "<br/>",
+      "3": "DMG reaksi Lunar yang diakibatkan seluruh anggota party <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 1,5%."
+    }
+  },
+  "constellation4": {
+    "name": "Cloudveiled Ridges in Floral Mists",
+    "description": {
+      "0": "Saat memicu <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravity Interference</strong></tooltip>, akan memulihkan 4 poin Energy Columbina.",
+      "1": "<br/>",
+      "2": "Selain itu, berdasarkan jenis reaksi Lunar yang memberikan nilai <strong>Gravity</strong> tertinggi untuk Columbina, jika reaksinya adalah Lunar-Charged/Lunar-Bloom/Lunar-Crystallize, maka DMG reaksi Lunar yang diakibatkan oleh Gravity Interference kali ini akan meningkat sebesar 12,5%/2,5%/12,5% dari Max HP Columbina. Efek di atas dapat terpicu maksimum sekali setiap 15 detik.",
+      "3": "<br/>",
+      "4": "DMG reaksi Lunar yang diakibatkan seluruh anggota party <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 1,5%."
+    }
+  },
+  "constellation5": {
+    "name": "Silence Tending One Lone Song",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Columbina_gen baseKey18=burst>Moonlit Melancholy</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15.",
+      "2": "<br/>",
+      "3": "DMG reaksi Lunar yang diakibatkan seluruh anggota party di sekitar <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 1,5%."
+    }
+  },
+  "constellation6": {
+    "name": "Through Darkness Led by Moonlight",
+    "description": {
+      "0": "Setelah semua Karakter dalam party yang berada dalam <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Lunar Domain</strong></tooltip> memicu reaksi Lunar, CRIT DMG dari jenis elemen yang terlibat dalam reaksi elemental tersebut akan meningkat 80% selama 8 detik untuk seluruh Karakter dalam party. CRIT DMG untuk jenis elemen yang sama tidak dapat ditumpuk.",
+      "1": "<br/>",
+      "2": "DMG reaksi Lunar yang diakibatkan seluruh anggota party <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 7%."
+    }
+  }
+}

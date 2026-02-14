@@ -25,6 +25,10 @@ import {
   useLoadoutArtifacts,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import {
+  type FilterOption,
+  initialFilterOption,
+} from '@genshin-optimizer/gi/schema'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AddArtInfo,
@@ -41,11 +45,7 @@ import {
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
-import {
-  artifactFilterConfigs,
-  initialArtifactFilterOption,
-} from '@genshin-optimizer/gi/util'
+import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
@@ -98,8 +98,8 @@ function AddArtifactButton({ onClick }: AddArtifactButtonProps) {
 }
 
 const filterOptionReducer = (
-  state: Partial<ArtifactFilterOption>,
-  action: Partial<ArtifactFilterOption>
+  state: Partial<FilterOption>,
+  action: Partial<FilterOption>
 ) => ({ ...state, ...action })
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
@@ -113,7 +113,7 @@ export default function TabUpopt() {
   const { gender } = useDBMeta()
   const [filterOption, filterOptionDispatch] = useReducer(
     filterOptionReducer,
-    initialArtifactFilterOption()
+    initialFilterOption()
   )
 
   const [artifactIdToEdit, setArtifactIdToEdit] = useState<string | undefined>()

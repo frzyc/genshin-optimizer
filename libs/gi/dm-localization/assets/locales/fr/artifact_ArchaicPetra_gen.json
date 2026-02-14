@@ -2,7 +2,7 @@
   "setName": "Roche ancienne",
   "setEffects": {
     "2": "Confère un bonus de DGT Géo de 15 %.",
-    "4": "Lorsque vous obtenez un cristal issu d'une Cristallisation, tous les personnages de l'équipe bénéficient d'un bonus de DGT du second élément de la réaction de 35 % pendant 10 s. Cet effet ne peut s'appliquer qu'à un seul élément à la fois."
+    "4": "Lorsque vous obtenez un cristal issu d'une Cristallisation ou déclenchez une réaction de Sélénocristallisation, tous les personnages de l'équipe bénéficient d'un bonus de DGT du second élément de la réaction de 35 % pendant 10 s. Cet effet ne peut s'appliquer qu'à un seul élément à la fois."
   },
   "pieces": {
     "flower": {

@@ -1,11 +1,5 @@
-'use client'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import {
-  CardThemed,
-  ImgIcon,
-  ModalWrapper,
-  NextImage,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { FieldDisplayList } from '@genshin-optimizer/game-opt/sheet-ui'
 import { rarityDefIcon, wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { LocationKey } from '@genshin-optimizer/zzz/consts'
@@ -121,7 +115,7 @@ export function WengineEditor({
                   <Grid item xs={6} sm={12}>
                     <Box sx={{ position: 'relative', display: 'flex' }}>
                       <Box
-                        component={NextImage ? NextImage : 'img'}
+                        component="img"
                         src={img}
                         className={`grad-${wengineStat.rarity}star`}
                         sx={{

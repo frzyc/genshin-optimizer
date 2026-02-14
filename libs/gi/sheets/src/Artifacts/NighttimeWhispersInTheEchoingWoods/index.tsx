@@ -60,7 +60,7 @@ const sheet: SetEffectSheet = {
         value: condCrystallize,
         path: condCrystallizePath,
         canShow: equal(condAfterSkill, 'on', 1),
-        name: st('protectedByShieldCrystal'),
+        name: st('protectedByShieldCrystalOrLunar'),
         states: {
           on: {
             fields: [

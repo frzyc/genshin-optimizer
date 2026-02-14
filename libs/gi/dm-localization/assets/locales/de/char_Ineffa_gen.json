@@ -41,7 +41,7 @@
   "skill": {
     "name": "Reinigungsmodus – Stabile Rate",
     "description": {
-      "0": "Ineffa aktiviert das fortgeschrittene Reinigungsmodul, verursacht bei Gegnern in der Umgebung einmal <electro>Elektro-Flächenschaden</electro>, erschafft den Lichtstrom-Barriereschild und ruft die intelligente Mehrzweck-Assistenzeinheit <strong>Birgitta</strong> herbei.",
+      "0": "Ineffa aktiviert das fortgeschrittene Reinigungsmodul, verursacht bei Gegnern in der Umgebung einmal <electro>Elektro-Flächenschaden</electro>, erschafft den Lichtstrom-Barriereschild und ruft die intelligente Mehrzweck-Assistenzeinheit <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip> herbei.",
       "1": "Die Schildstärke des Lichtstrom-Barriereschilds basiert auf Ineffas ANG und hält bei <electro>Elektro-Schaden</electro> 250 % ab."
     },
     "skillParams": {
@@ -66,7 +66,7 @@
   "burst": {
     "name": "Höchstes Gesetz – Vollständige Beseitigung",
     "description": {
-      "0": "Beseitigt Gegner mithilfe der Raketenschläge der intelligenten Mehrzweck-Assistenzeinheit <strong>Birgitta</strong>! Schießt Birgitta ab und verursacht damit <electro>Elektro-Flächenschaden</electro>. Birgitta bleibt danach auf dem Feld.",
+      "0": "Beseitigt Gegner mithilfe der Raketenschläge der intelligenten Mehrzweck-Assistenzeinheit <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>! Schießt Birgitta ab und verursacht damit <electro>Elektro-Flächenschaden</electro>. Birgitta bleibt danach auf dem Feld.",
       "1": "<br/>",
       "2": "Wenn Birgitta zum Zeitpunkt von Ineffas Beschwörung bereits auf dem Feld ist, wird Birgitta erneut an dem Zielort beschworen und die Dauer wird zurückgesetzt."
     },
@@ -92,13 +92,13 @@
   "passive1": {
     "name": "Frequenzüberschreitender Schaltkreis",
     "description": {
-      "0": "Lässt <strong>Birgitta</strong>, wenn sich die durch die Reaktion „Mond unter Strom“ hervorgerufenen Gewitterwolken in der Nähe befinden und Birgitta eine Elektro-Entladung auslöst, einen zusätzlichen Angriff starten, der <electro>Elektro-Flächenschaden</electro> in Höhe von 65 % von Ineffas ANG verursacht. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion „Mond unter Strom“."
+      "0": "Lässt <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>, wenn sich die durch die Reaktion „Mond unter Strom“ hervorgerufenen Gewitterwolken in der Nähe befinden und Birgitta eine Elektro-Entladung auslöst, einen zusätzlichen Angriff starten, der <electro>Elektro-Flächenschaden</electro> in Höhe von 65 % von Ineffas ANG verursacht. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion „Mond unter Strom“."
     }
   },
   "passive2": {
     "name": "Vollbild-Rekonstruktionsprotokoll",
     "description": {
-      "0": "Verleiht beim Anwenden der Spezialfähigkeit <strong>Höchstes Gesetz – Vollständige Beseitigung</strong> allen eigenen Truppenmitgliedern den Effekt „Parameter-Rekonstruktion“: Erhöht die Elementarkunde von Ineffa und die der eigenen aktuellen Figur 20 s lang um 6 % von Ineffas ANG."
+      "0": "Verleiht beim Anwenden der Spezialfähigkeit <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Höchstes Gesetz – Vollständige Beseitigung</tooltip></strong> allen eigenen Truppenmitgliedern den Effekt „Parameter-Rekonstruktion“: Erhöht die Elementarkunde von Ineffa und die der eigenen aktuellen Figur 20 s lang um 6 % von Ineffas ANG."
     }
   },
   "passive3": {
@@ -126,14 +126,14 @@
   "constellation2": {
     "name": "Unterstützendes Reinigungsmodul",
     "description": {
-      "0": "Verleiht, nachdem Gegner von der Spezialfähigkeit <strong>Höchstes Gesetz – Vollständige Beseitigung</strong> getroffen worden sind, einem von ihnen den Effekt „Strafanordnung“: Fügt nach kurzer Verzögerung oder beim Besiegen des Gegners den Gegnern in seiner Nähe <electro>Elektro-Flächenschaden</electro> in Höhe von 300 % von Ineffas ANG zu. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion „Mond unter Strom“.",
+      "0": "Verleiht, nachdem Gegner von der Spezialfähigkeit <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Höchstes Gesetz – Vollständige Beseitigung</tooltip></strong> getroffen worden sind, einem von ihnen den Effekt „Strafanordnung“: Fügt nach kurzer Verzögerung oder beim Besiegen des Gegners den Gegnern in seiner Nähe <electro>Elektro-Flächenschaden</electro> in Höhe von 300 % von Ineffas ANG zu. Hierdurch verursachter Schaden gilt als Schaden durch die Reaktion „Mond unter Strom“.",
       "1": "Verleiht beim Auslösen der Spezialfähigkeit <strong>Höchstes Gesetz – Vollständige Beseitigung</strong> den aktuellen Truppenmitgliedern in der Nähe den Lichtstrom-Barriereschild."
     }
   },
   "constellation3": {
     "name": "Fortgeschrittenes Emotionsmodul",
     "description": {
-      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Reinigungsmodus – Stabile Rate</strong> um 3.",
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Ineffa_gen baseKey18=skill>Reinigungsmodus – Stabile Rate</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
@@ -146,7 +146,7 @@
   "constellation5": {
     "name": "Ein Traum jenseits des Spiegels",
     "description": {
-      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Höchstes Gesetz – Vollständige Beseitigung</strong> um 3.",
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Höchstes Gesetz – Vollständige Beseitigung</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },

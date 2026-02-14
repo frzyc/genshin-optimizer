@@ -1,0 +1,66 @@
+{
+  "key": "Columbina",
+  "ele": "hydro",
+  "region": "nodKrai",
+  "weaponType": "catalyst",
+  "birthday": {
+    "month": 1,
+    "day": 14
+  },
+  "rarity": 5,
+  "lvlCurves": [
+    {
+      "key": "hp",
+      "base": 1143.984,
+      "curve": "GROW_CURVE_HP_S5"
+    },
+    {
+      "key": "atk",
+      "base": 7.448,
+      "curve": "GROW_CURVE_ATTACK_S5"
+    },
+    {
+      "key": "def",
+      "base": 40.0861,
+      "curve": "GROW_CURVE_HP_S5"
+    }
+  ],
+  "ascensionBonus": {
+    "hp": [
+      0,
+      980.86285,
+      1677.7917,
+      2607.0303,
+      3303.959,
+      4000.888,
+      4697.817
+    ],
+    "def": [
+      0,
+      34.371,
+      58.7925,
+      91.3545,
+      115.776,
+      140.1975,
+      164.619
+    ],
+    "atk": [
+      0,
+      6.38552,
+      10.9226,
+      16.97204,
+      21.50912,
+      26.0462,
+      30.58328
+    ],
+    "critRate_": [
+      0,
+      0,
+      0.048,
+      0.096,
+      0.096,
+      0.144,
+      0.192
+    ]
+  }
+}

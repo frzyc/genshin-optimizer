@@ -167,13 +167,13 @@
   "passive1": {
     "name": "The Wind's Gentle Grace",
     "description": {
-      "0": "When characters affected by the Favonian Favor effect of the Elemental Burst <strong>Radiant Psalter</strong> trigger Frozen reactions on opponents, they will grant Dahlia 2 Benison stacks. This effect can trigger once every 8s."
+      "0": "When characters affected by the Favonian Favor effect of the Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> trigger Frozen reactions on opponents, they will grant Dahlia 2 Benison stacks. This effect can trigger once every 8s."
     }
   },
   "passive2": {
     "name": "Prayer of Well-Wrought Joy",
     "description": {
-      "0": "When your active party member is affected by the Favonian Favor effect of the Elemental Burst <strong>\"Radiant Psalter,\"</strong> their ATK SPD will increase based on Dahlia's Max HP: Every 1,000 Max HP will cause an increase of 0.5%, up to a maximum of 20%."
+      "0": "When your active party member is affected by the Favonian Favor effect of the Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>\"Radiant Psalter,\"</tooltip></strong> their ATK SPD will increase based on Dahlia's Max HP: Every 1,000 Max HP will cause an increase of 0.5%, up to a maximum of 20%."
     }
   },
   "passive3": {
@@ -186,39 +186,39 @@
   "constellation1": {
     "name": "Infallible Procession",
     "description": {
-      "0": "Each time Dahlia gains 1 of his Elemental Burst <strong>Radiant Psalter</strong>'s Benison stacks, he will regain 2.5 Elemental Energy."
+      "0": "Each time Dahlia gains 1 of his Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong>'s Benison stacks, he will regain 2.5 Elemental Energy."
     }
   },
   "constellation2": {
     "name": "Revelation of Mercy",
     "description": {
-      "0": "After Dahlia consumes his Elemental Burst <strong>Radiant Psalter</strong>'s Benison stacks to summon a Shield of Sacred Favor, the character protected by said Shield will gain 25% increased Shield Strength for 12s."
+      "0": "After Dahlia consumes his Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong>'s Benison stacks to summon a Shield of Sacred Favor, the character protected by said Shield will gain 25% increased Shield Strength for 12s."
     }
   },
   "constellation3": {
     "name": "Windblume Offertory",
     "description": {
-      "0": "Increases the Level of <strong>Radiant Psalter</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
     "name": "Collect of the Assembly",
     "description": {
-      "0": "The Favonian Favor from Dahlia's Elemental Burst <strong>Radiant Psalter</strong> lasts 3 more seconds."
+      "0": "The Favonian Favor from Dahlia's Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong> lasts 3 more seconds."
     }
   },
   "constellation5": {
     "name": "Let It Be Subtly So",
     "description": {
-      "0": "Increases the Level of <strong>Immersive Ordinance</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Dahlia_gen baseKey18=skill>Immersive Ordinance</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
     "name": "You Shall Go Out With Joy",
     "description": {
-      "0": "The current active character affected by the Elemental Burst <strong>Radiant Psalter</strong>'s Favonian Favor has their ATK SPD increased by 10%.",
+      "0": "The current active character affected by the Elemental Burst <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Radiant Psalter</tooltip></strong>'s Favonian Favor has their ATK SPD increased by 10%.",
       "1": "Additionally, when an active character affected by Favonian Favor falls, immediately:",
       "2": [
         " Revive them.",

@@ -42,13 +42,13 @@
   "skill": {
     "name": "Cerimônia Cristalina Flamejante",
     "description": {
-      "0": "Quando um personagem da equipe obtém um Fragmento gerado por uma reação de Cristalização, fornecerá para Navia 1 Fragmento da Rachadura. É possível acumular até 6 Fragmentos da Rachadura. Cada vez que desencadear, redefinirá a duração dos Fragmentos da Rachadura possuídos.",
+      "0": "Quando um personagem da equipe obtém um Fragmento gerado por uma reação de Cristalização ou desencadeia uma Reação de Cristalização Lunar, fornecerá para Navia 1 Fragmento da Rachadura. É possível acumular até 6 Fragmentos da Rachadura. Cada vez que desencadear, redefinirá a duração dos Fragmentos da Rachadura possuídos. É possível obter um Fragmento da Rachadura por segunda para Navia através da Cristalização Lunar.",
       "1": "Ao lançar, Navia consumirá todos os Fragmentos da Rachadura e revelará sua refinada arma guarda-chuva, disparando vários Projéteis Cristalinos Rosados que perfuram os inimigos, infligindo <geo>Dano Geo</geo> contra os inimigos que atingir.",
       "2": "Consumir 0/1/2/3 ou mais Fragmentos da Rachadura disparará 5/7/9/11 Projéteis Cristalinos Rosados respectivamente. Quanto mais Projéteis Cristalinos Rosados atingirem o mesmo inimigo, maior será o Dano causado contra esse inimigo. Se os 11 Projéteis Cristalinos Rosados atingirem, causará 200% do Dano original.",
       "3": "Além disso, quando consumir mais que três Fragmentos da Rachadura, para cada Fragmento da Rachadura excedente aumenta o Dano causado desse disparo em 15%.",
       "4": "<br/>",
       "5": "<strong>Manter Pressionado</strong>",
-      "6": "Entra no Modo de Mira, obtendo continuamente os fragmentos de Cristalização próximos, e quando acabar a duração, Manter Pressionado disparará um Projétil Cristalino Rosado igual ao de pressionar.",
+      "6": "Entra no Modo de Mira, obtendo continuamente os fragmentos de Cristalização próximos, e quando acabar a duração, disparará Projéteis Cristalinos Rosados com o mesmo efeito de quando a habilidade é pressionada.",
       "7": "<br/>",
       "8": "Inicialmente possui dois usos.",
       "9": "<br/>",

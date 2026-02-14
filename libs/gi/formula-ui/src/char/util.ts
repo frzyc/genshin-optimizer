@@ -10,7 +10,6 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import { travelerFKeys, travelerMKeys } from '@genshin-optimizer/gi/consts'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import type { StaticImageData } from 'next/image'
 import type { ReactNode } from 'react'
 import { trans } from '../util'
 import type { TalentSheetElementKey } from './consts'
@@ -67,7 +66,7 @@ export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
 const talentTemplate = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
-  img: string | StaticImageData,
+  img: string,
   documents?: Document[]
 ): UISheetElement => ({
   title: tr(`${talentKey}.name`),

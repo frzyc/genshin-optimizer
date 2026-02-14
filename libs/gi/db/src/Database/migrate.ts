@@ -13,7 +13,7 @@ import {
   travelerElements,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
-import type { CustomMultiTarget } from '../Interfaces/CustomMultiTarget'
+import type { CustomMultiTarget } from './DataManagers'
 import type { LoadoutDatum, Team, TeamCharacter } from './DataManagers'
 import type { IGO } from './exim'
 

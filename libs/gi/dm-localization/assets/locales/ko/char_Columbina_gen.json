@@ -1,0 +1,190 @@
+{
+  "name": "콜롬비나",
+  "title": "돌아온 공월",
+  "description": "노드크라이에서 태어난 「달의 소녀」. 돌아온 공월이기도 하다",
+  "constellationName": "???",
+  "auto": {
+    "name": "달 이슬비",
+    "fields": {
+      "normal": {
+        "0": "<strong>일반 공격</strong>",
+        "1": "달빛 조석을 소환하여 최대 3번 공격해 <hydro>물 원소 피해</hydro>를 준다."
+      },
+      "charged": {
+        "0": "<strong>강공격</strong>",
+        "1": "일정 스태미나를 소모해 짧은 영창 후 <hydro>물 원소 범위 피해</hydro>를 준다.",
+        "2": "<tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>풀 이슬</strong></tooltip>을 1개 이상 보유한 경우, 콜롬비나의 강공격은 스태미나를 소모하지 않는 특수 강공격 <strong>달 이슬 세례</strong>로 대체된다: 풀 이슬 1개를 소모해 전방의 적에게 <dendro>풀 원소 범위 피해</dendro>를 3회 준다. 해당 피해는 달 개화 반응 피해로 간주된다."
+      },
+      "plunging": {
+        "0": "<strong>낙하 공격</strong>",
+        "1": "공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 <hydro>물 원소 범위 피해</hydro>를 준다"
+      }
+    },
+    "skillParams": {
+      "0": "1단 공격 피해",
+      "1": "2단 공격 피해",
+      "2": "3단 공격 피해",
+      "3": "강공격 피해",
+      "4": "강공격 스태미나 소모",
+      "5": "달 이슬 세례 피해",
+      "6": "낙하 기간 피해",
+      "7": "저공/고공 추락 충격 피해",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "아득한 조석",
+    "description": {
+      "0": "달바다의 조석을 일으켜 <hydro>물 원소 범위 피해</hydro>를 주고 <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>인력 파동</strong></tooltip>을 소환한다.",
+      "1": "<strong>인력 파동</strong>은 필드 위 캐릭터를 따라다니며 주변의 적에게 지속적으로 <hydro>물 원소 범위 피해</hydro>를 준다. <strong>인력 파동</strong> 존재 기간 동안, 주변에 있는 파티 내 캐릭터가 달빛 반응을 발동하거나 달빛 반응 피해를 줄 시, 콜롬비나에게 특수한 <strong>인력</strong>이 축적된다. 최대치에 도달하면 콜롬비나가 가장 많은 <strong>인력</strong>을 축적한 달빛 반응의 타입에 따라 적에게 각기 다른 타입의 피해를 준다.",
+      "2": "<strong>달빛 징조·보름</strong>: <strong>인력 파동</strong>으로 더 큰 범위의 <hydro>물 원소 범위 피해</hydro>를 준다"
+    },
+    "skillParams": {
+      "0": "스킬 피해",
+      "1": "인력 파동·지속 피해",
+      "2": "인력 간섭·달 감전 피해",
+      "3": "인력 간섭·달 개화 피해",
+      "4": "인력 간섭·달 결정 피해",
+      "5": "인력 최대치",
+      "6": "인력 파동 지속 시간",
+      "7": "재사용 대기시간",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "향수에 잠긴 달",
+    "description": {
+      "0": "무구한 새로운 달의 이름으로 산과 바다를 잇고, 주변의 대지를 잠시 순결한 <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>달 영역</strong></tooltip>으로 바꾸어 <hydro>물 원소 범위 피해</hydro>를 준다"
+    },
+    "skillParams": {
+      "0": "스킬 피해",
+      "1": "달빛 반응 피해 증가",
+      "2": "달 영역 지속 시간",
+      "3": "재사용 대기시간",
+      "4": "원소 에너지",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "달의 유혹",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>인력 간섭</strong></tooltip> 발동 시, 콜롬비나가 유혹 효과를 획득해 자신의 치명타 확률이 5% 증가한다. 지속 시간: 10초, 최대 중첩수: 3스택"
+    }
+  },
+  "passive2": {
+    "name": "새로운 달의 법칙",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>달 영역</strong></tooltip> 안에 있는 캐릭터가 달빛 반응 발동 시, 다음과 같은 효과를 각각 획득한다:",
+      "1": [
+        "<strong>달 감전 반응</strong>: 번개구름이 조건에 부합하는 목표에게 뇌격 진행 시, 33%의 확률로 추가 뇌격이 1회 발동된다.",
+        "<strong>달 개화 반응</strong>: 달 개화 반응 발동 시, 파티에 특수한 <tooltip ns=tooltips_gen baseKey18=11250003 values=[]><strong>달빛 풀 이슬</strong></tooltip>을 제공한다. 18초마다 해당 방식으로 파티가 달빛 풀 이슬을 최대 3개 획득할 수 있다.",
+        "<strong>달 결정 반응</strong>: 달빛 조각 화음 발동 시, 달빛 조각마다 33% 확률로 1회의 추가 공격을 한다"
+      ]
+    }
+  },
+  "passive3": {
+    "name": "달빛 징조의 축복·월광",
+    "description": {
+      "0": "파티 내 캐릭터가 감전/개화/물 원소 결정 반응 발동 시, 달 감전/달 개화/달 결정 반응 발동으로 전환되며, 콜롬비나의 HP 최대치에 기반해 파티 내 캐릭터가 주는 달빛 반응의 기본 피해가 증가한다: HP 최대치 1000pt마다 달빛 반응의 기본 피해가 0.2% 증가한다. 해당 방식으로 피해가 최대 7% 증가한다.",
+      "1": "<br/>",
+      "2": "또한, 콜롬비나가 파티에 있을 경우 파티의 <strong>달빛 징조</strong>가 1레벨 상승한다"
+    }
+  },
+  "passive": {
+    "name": "달의 가호",
+    "description": {
+      "0": "노드크라이 구역에 있을 때, 파티 내 자신의 캐릭터가 전투 불능 상태가 되면 콜롬비나가 해당 캐릭터를 부활시키고 HP를 회복시킨다. 회복량은 콜롬비나 호감도 레벨에 따라 결정되며, 이 효과는 100초마다 최대 1회 발동된다. 해당 효과는 비경, 영역 토벌, 나선 비경에서 적용되지 않는다.",
+      "1": "또한, 콜롬비나는 달의 힘의 영향을 받은 일부 동물들에게 특별한 친화력을 가지고 있다"
+    }
+  },
+  "constellation1": {
+    "name": "꽃바다를 품은 산속의 달",
+    "description": {
+      "0": "원소전투 스킬 <strong>아득한 조석</strong> 발동 시, 즉시 <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>인력 간섭</strong></tooltip>과 동일한 효과가 1회 발동된다, 해당 효과는 15초마다 최대 1회 발동된다.",
+      "1": "<strong>달빛 징조·보름</strong>",
+      "2": "인력 간섭 발동 시, 콜롬비나가 가장 많은 인력을 축적한 달빛 반응 타입이:",
+      "3": [
+        "<strong>달 감전 반응</strong>일 경우: 현재 필드 위에 있는 파티 내 자신의 캐릭터의 원소 에너지를 6pt 회복한다.",
+        "<strong>달 개화 반응</strong>일 경우: 현재 필드 위에 있는 파티 내 자신의 캐릭터의 경직 저항력이 8초 동안 증가한다.",
+        "<strong>달 결정 반응</strong>일 경우: <strong>비바다 보호막</strong>을 소환한다. 피해 흡수량은 콜롬비나 HP 최대치의 12%의 영향을 받고, <hydro>물 원소 피해</hydro>에 대해 250%의 흡수 효과가 있다. 지속 시간: 8초."
+      ],
+      "4": "<br/>",
+      "5": "주변에 있는 파티 내 모든 캐릭터가 주는 달빛 반응 피해가 1.5% <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>승격</strong></tooltip>된다"
+    }
+  },
+  "constellation2": {
+    "name": "밤의 달빛과 그대의 동행",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>인력</strong></tooltip>의 축적 속도가 34% 증가한다.",
+      "1": "<strong>인력 간섭</strong> 발동 시, 콜롬비나가 <strong>광휘</strong> 효과를 획득해 HP 최대치가 40% 증가한다, 지속 시간: 8초.",
+      "2": "<strong>달빛 징조·보름</strong>:",
+      "3": "<strong>광휘</strong> 효과 지속 시간 동안 이번 <strong>인력 간섭</strong> 발동 시, 콜롬비나가 가장 많은 인력을 축적한 달빛 반응 타입이:",
+      "4": [
+        "<strong>달 감전 반응</strong>일 경우: 파티 내 자신의 현재 필드 위 캐릭터의 공격력이 콜롬비나 HP 최대치의 1%만큼 증가한다.",
+        "<strong>달 개화 반응</strong>일 경우: 파티 내 자신의 현재 필드 위 캐릭터의 원소 마스터리가 콜롬비나의 HP 최대치의 0.35%만큼 증가한다.",
+        "<strong>달 결정 반응</strong>일 경우: 파티 내 자신의 현재 필드 위 캐릭터의 방어력이 콜롬비나의 HP 최대치의 1%만큼 증가한다."
+      ],
+      "5": "<br/>",
+      "6": "주변에 있는 파티 내 모든 캐릭터가 주는 달빛 반응 피해가 7% <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>승격</strong></tooltip>된다"
+    }
+  },
+  "constellation3": {
+    "name": "빛의 결정과 꿈의 물결",
+    "description": {
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Columbina_gen baseKey18=skill>아득한 조석</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승.",
+      "2": "<br/>",
+      "3": "주변에 있는 파티 내 모든 캐릭터가 주는 달빛 반응 피해가 1.5% <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>승격</strong></tooltip>된다"
+    }
+  },
+  "constellation4": {
+    "name": "꽃과 산에 드리운 그림자",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>인력 간섭</strong></tooltip> 발동 시, 콜롬비나가 원소 에너지를 4pt 회복한다.",
+      "1": "또한, 콜롬비나가 가장 많은 <strong>인력</strong>을 축적한 달빛 반응 타입이 달 감전/달 개화/달 결정 반응일 경우, 이번 인력 간섭으로 주는 달빛 반응의 피해가 각각 콜롬비나 HP 최대치의 12.5%/2.5%/12.5%만큼 증가한다. 상술한 효과는 15초마다 최대 1회 발동된다.",
+      "2": "<br/>",
+      "3": "주변에 있는 파티 내 모든 캐릭터가 주는 달빛 반응 피해가 1.5% <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>승격</strong></tooltip>된다"
+    }
+  },
+  "constellation5": {
+    "name": "적막 속 그대의 노랫소리",
+    "description": {
+      "0": "원소폭발 <strong><tooltip ns=char_Columbina_gen baseKey18=burst>향수에 잠긴 달</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승",
+      "2": "<br/>",
+      "3": "주변에 있는 파티 내 모든 캐릭터가 주는 달빛 반응 피해가 1.5% <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>승격</strong></tooltip>된다"
+    }
+  },
+  "constellation6": {
+    "name": "어두운 밤 달빛의 인도",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>달 영역</strong></tooltip> 내에 있는 캐릭터가 달빛 반응 발동 후 8초 동안, 반응에 참여한 원소 타입에 따라 파티 내 모든 캐릭터가 해당 원소 타입으로 주는 치명타 피해가 80% 증가한다. 같은 원소 타입의 치명타 피해 증가 효과는 중첩되지 않는다.",
+      "1": "<br/>",
+      "2": "주변에 있는 파티 내 모든 캐릭터가 주는 달빛 반응 피해가 7% <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>승격</strong></tooltip>된다"
+    }
+  }
+}

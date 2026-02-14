@@ -111,6 +111,22 @@
       "1": "Solo puede ocurrir una vez cada 5 s."
     }
   },
+  "lockedPassive": {
+    "name": "Furia céfira extranjera",
+    "description": {
+      "0": "Obtienes nuevos poderes gracias a tus viajes pasados, de manera que ganarás <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimientos</strong></tooltip> adicionales por cada elemento con el que hayas resonado.",
+      "1": "<br/>",
+      "2": "Además, cuando un personaje cercano del equipo golpee a un enemigo con un ataque <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> o <electro>Electro</electro>, {F#la Viajera}{M#el Viajero} obtendrá 1 carga de “filo del viento matutino” del tipo elemental correspondiente. Cada filo del viento matutino de un tipo elemental puede acumularse hasta 1 vez. Al tener al menos 2 cargas y ejecutar un Ataque Cargado, se consumirán todas las cargas de filo del viento matutino para ejecutar un <strong>Ataque Cargado: Tornado</strong> especial.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Cargado: Tornado</strong>",
+      "5": [
+        "Cada golpe del Ataque Cargado infligirá <anemo>Daño Anemo</anemo> adicional, con un aumento de daño equivalente al 60% del ATQ {F#de la Viajera}{M#del Viajero}.",
+        "Por cada filo del viento matutino de un tipo elemental consumido, se creará una ráfaga de viento de dicho tipo que infligirá daño del elemento correspondiente equivalente al 50% del ATQ {F#de la Viajera}{M#del Viajero}. Este daño se considera daño de Ataque Cargado.",
+        "Como máximo, solo se puede ejecutar un <strong>Ataque Cargado: Tornado</strong> cada 15 s.",
+        "Durante el <strong>Ataque Cargado: Tornado</strong> no se podrán obtener cargas de filo del viento matutino."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Torbellino furioso",
     "description": {

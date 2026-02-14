@@ -110,6 +110,20 @@
       "0": "Gezginin sahip olduğu her bir Element Ustalığı puanı, <strong>Yaprak Kılıcı</strong> Hasarını %0,15 artırır; <strong>Bitkilerden Yükselen Işık</strong> Hasarını ise %0,1 artırır."
     }
   },
+  "lockedPassive": {
+    "name": "Yabancı Orman Işığı",
+    "description": {
+      "0": "Geçmiş yolculuklarından yeni bir güç al. Rezonansa girdiğin her element için ek <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>güçlendirmeler</strong></tooltip> kazanırsın.",
+      "1": "<br/>",
+      "2": "Ayrıca alanda yakında Doğa Çekirdekleri (Bereketli Çekirdekler ve Aldatıcı Tohumlar dahil) ortaya çıktığında veya grup Taze Çiy elde ettiğinde Gezgin 1 kademe Yeşil Yaşam Kılıcı kazanır. Bu iki yöntemle Gezgin en fazla her 4 saniyede 1 kademe, toplamda en fazla 3 kademe kazanabilir. 3 kademe Yeşil Yaşam Kılıcı elde ettikten sonra Yüklü Saldırı yapmak, tüm Yeşil Yaşam Kılıcı kademelerini tüketir ve Yüklü Saldırı gelişerek <strong>Yüklü Saldırı: Yeşil Öz</strong> olur.",
+      "3": "<br/>",
+      "4": "<strong>Yüklü Saldırı: Yeşil Öz</strong>",
+      "5": [
+        "İsabet eden her Yüklü Saldırı daha fazla <dendro>Doğa Hasarı</dendro> verir. Hasar artışı, Gezginin Saldırısının %80'ine eşittir. Ayrıca saldırıdan sonra anında iki adet <strong>Sarmaşık Çekirdeği</strong> oluşur. Bu çekirdekler sırasıyla 4/8 saniye sonra patlayarak Gezginin Saldırısının %120'si kadar <dendro>Doğa Hasarı</dendro> verir. Bu Hasar, Yüklü Saldırı Hasarı sayılır.",
+        "<strong>Yüklü Saldırı: Yeşil Öz</strong> en fazla 15 saniyede bir tetiklenebilir."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Simbiyot Sürüngen",
     "description": {

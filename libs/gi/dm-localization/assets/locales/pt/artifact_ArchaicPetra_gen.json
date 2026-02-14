@@ -2,7 +2,7 @@
   "setName": "Pedra Arcaica",
   "setEffects": {
     "2": "Obtém 15% de Bônus de Dano Geo.",
-    "4": "Ao obter um Fragmento Elemental por meio de uma Reação de Cristalização, todos os personagens na equipe ganham 35% de Dano para esse elemento em particular por 10s. Somente uma forma de Dano Elemental pode ser obtida dessa maneira a qualquer momento."
+    "4": "Ao obter um Fragmento Elemental por meio de uma Reação de Cristalização ou ao desencadear uma Reação de Cristalização Lunar, todos os personagens na equipe ganham 35% de Bônus de Dano para esse elemento em particular por 10s. Somente uma forma de Dano Elemental pode ser obtida dessa maneira a qualquer momento."
   },
   "pieces": {
     "flower": {
