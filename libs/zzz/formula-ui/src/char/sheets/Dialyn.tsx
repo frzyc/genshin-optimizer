@@ -38,11 +38,23 @@ const sheet = createBaseSheet(key, {
       },
     },
     {
-      type: 'fields',
-      fields: [
-        fieldForBuff(buff.ability_attack_dmg),
-        fieldForBuff(buff.ability_rupture_dmg),
-      ],
+      type: 'conditional',
+      conditional: {
+        label: ch('prevMember'),
+        metadata: cond.atk_sheerForce,
+      },
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: (_, value) => ch(`prevMemberCond.${value}`),
+        metadata: cond.prevMember,
+        badge: (_, value) => (value === 0 ? null : value),
+        fields: [
+          fieldForBuff(buff.ability_attack_dmg),
+          fieldForBuff(buff.ability_rupture_dmg),
+        ],
+      },
     },
   ],
   m1: [

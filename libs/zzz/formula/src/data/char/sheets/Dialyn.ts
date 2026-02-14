@@ -13,12 +13,13 @@ import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
+  allListConditionals,
+  allNumConditionals,
   customDmg,
   enemyDebuff,
   own,
   ownBuff,
   percent,
-  prevMember,
   register,
   registerBuff,
   team,
@@ -38,6 +39,9 @@ const { char } = own
 
 const { malicious_complaint, overwhelmingly_positive } =
   allBoolConditionals(key)
+// TODO: fix this cond to use actual previous member stats
+const { atk_sheerForce } = allNumConditionals(key, true, 0, 5000)
+const { prevMember } = allListConditionals(key, ['attack', 'rupture'])
 
 const ability_check = (a: NumNode | number, b?: NumNode | number) =>
   cmpGE(
@@ -53,31 +57,20 @@ const ability_check = (a: NumNode | number, b?: NumNode | number) =>
 const ability_attack_dmg = ownBuff.combat.flat_dmg.addWithDmgType(
   'exSpecial',
   ability_check(
-    // cmpEq(
-    //   prevMember.common.count.withSpecialty('attack'),
-    //   1,
-    prod(prevMember.final.atk, percent(dm.ability.attack_dmg))
-    // )
+    cmpEq(
+      prevMember.value,
+      1,
+      prod(atk_sheerForce, percent(dm.ability.attack_dmg))
+    )
   )
 )
 const ability_rupture_dmg = ownBuff.combat.flat_dmg.addWithDmgType(
   'exSpecial',
   ability_check(
     cmpEq(
-      // read({
-      //   src: 'Banyue',
-      //   preset: 'preset0',
-      //   et: 'own',
-      //   qt: 'common',
-      //   q: 'count',
-      //   sheet: 'iso',
-      //   damageType1: 'exSpecial',
-      //   attribute: 'physical',
-      //   specialty: 'rupture',
-      // }),
-      prevMember.char.specialty,
-      'rupture',
-      prod(prevMember.final.sheerForce, percent(dm.ability.rupture_dmg))
+      prevMember.value,
+      2,
+      prod(atk_sheerForce, percent(dm.ability.rupture_dmg))
     )
   )
 )

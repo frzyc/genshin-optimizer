@@ -1,18 +1,17 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: { sheet: 'Banyue', name: 'boolConditional', type: 'bool' },
-  listConditional: {
+  exSpecialBasicUsed: {
     sheet: 'Banyue',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
+    name: 'exSpecialBasicUsed',
+    type: 'bool',
   },
-  numConditional: {
+  tremor: { sheet: 'Banyue', name: 'tremor', type: 'bool' },
+  vidyaraja: {
     sheet: 'Banyue',
-    name: 'numConditional',
+    name: 'vidyaraja',
     type: 'num',
     int_only: true,
     min: 0,
-    max: 2,
+    max: 3,
   },
 } as const

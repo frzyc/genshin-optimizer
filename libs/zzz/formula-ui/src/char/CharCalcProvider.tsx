@@ -9,11 +9,7 @@ import type {
   DiscIds,
   ICachedCharacter,
 } from '@genshin-optimizer/zzz/db'
-import {
-  useCharacter,
-  useDiscs,
-  useWengine,
-} from '@genshin-optimizer/zzz/db-ui'
+import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import {
   charTagMapNodeEntries,
   conditionalEntries,
@@ -47,15 +43,6 @@ export function CharCalcProvider({
   children: ReactNode
 }) {
   const member0 = useCharacterAndEquipment(character, wengineId, discIds)
-  const char = useCharacter('Banyue')
-  const member1 = useCharacterAndEquipment(char!, undefined, {
-    '1': undefined,
-    '2': undefined,
-    '3': undefined,
-    '4': undefined,
-    '5': undefined,
-    '6': undefined,
-  })
 
   const calc = useMemo(
     () =>
@@ -67,8 +54,6 @@ export function CharCalcProvider({
         ]),
         // Add actual member data
         ...member0,
-        ...member1,
-        // TODO: Get enemy values from db
         ownBuff.common.critMode.add(charOpt.critMode),
         enemy.common.lvl.add(charOpt.enemyLvl),
         enemy.common.def.add(charOpt.enemyDef),
@@ -108,7 +93,7 @@ export function CharCalcProvider({
             .add(1),
         ]),
       ]),
-    [member0, member1, charOpt, character.key]
+    [member0, charOpt, character.key]
   )
   // Refresh the formula text cache per calc
   const formulaTextCache = useMemo(() => calc && new Map(), [calc])
@@ -123,7 +108,7 @@ export function CharCalcProvider({
 }
 
 function useCharacterAndEquipment(
-  character: ICachedCharacter,
+  character: ICachedCharacter | undefined,
   wengineId: string | undefined,
   discIds: DiscIds
 ) {
@@ -139,12 +124,14 @@ function useCharacterAndEquipment(
   )
   return useMemo(
     () =>
-      withMember(
-        character.key,
-        ...charTagMapNodeEntries(character),
-        ...wengineTagEntries,
-        ...discTagEntries
-      ),
+      character
+        ? withMember(
+            character.key,
+            ...charTagMapNodeEntries(character),
+            ...wengineTagEntries,
+            ...discTagEntries
+          )
+        : [],
     [character, wengineTagEntries, discTagEntries]
   )
 }

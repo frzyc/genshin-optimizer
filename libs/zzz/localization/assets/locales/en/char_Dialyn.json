@@ -1,4 +1,10 @@
 {
   "maliciousComplaint": "Enemy under the Malicious Complaint effect",
-  "overwhelminglyPositive": "Squad member under the Overwhelmingly Positive effect"
+  "overwhelminglyPositive": "Squad member under the Overwhelmingly Positive effect",
+  "prevMemberCond": {
+    "0": "Previous Teammate Specialty",
+    "1": "Attack",
+    "2": "Rupture"
+  },
+  "prevMember": "Previous Member ATK/Sheer Force"
 }

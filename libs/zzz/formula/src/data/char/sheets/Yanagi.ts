@@ -1,6 +1,7 @@
 import {
   cmpEq,
   cmpGE,
+  min,
   prod,
   subscript,
   sum,
@@ -134,7 +135,13 @@ const sheet = register(
           2,
           sum(
             prod(-1, sum(percent(1), percent(-dm.m2.polarity_disorder_mv_))),
-            prod(thrusts, percent(dm.m2.add_polarity_disorder_mv_))
+            prod(
+              min(
+                cmpGE(char.mindscape, 6, dm.m6.max_stacks, dm.m2.max_stacks),
+                thrusts
+              ),
+              percent(dm.m2.add_polarity_disorder_mv_)
+            )
           ),
           percent(-0.85)
         )
@@ -155,7 +162,13 @@ const sheet = register(
           2,
           sum(
             prod(-1, sum(percent(1), percent(-dm.m2.polarity_disorder_mv_))),
-            prod(thrusts, percent(dm.m2.add_polarity_disorder_mv_))
+            prod(
+              min(
+                cmpGE(char.mindscape, 6, dm.m6.max_stacks, dm.m2.max_stacks),
+                thrusts
+              ),
+              percent(dm.m2.add_polarity_disorder_mv_)
+            )
           ),
           percent(-0.85)
         )
