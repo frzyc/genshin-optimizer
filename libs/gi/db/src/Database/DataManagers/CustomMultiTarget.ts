@@ -3,7 +3,7 @@ import {
   zodString,
 } from '@genshin-optimizer/common/database'
 import {
-  type MultiOptHitModeKey,
+  type CharacterKey,
   allAdditiveReactions,
   allAmpReactionKeys,
   allInfusionAuraElementKeys,
@@ -12,34 +12,12 @@ import {
 import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
 import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'
 import { z } from 'zod'
-import type {
-  AddressItemTypesMap,
-  ConstantUnit,
-  CustomFunction,
-  CustomFunctionArgument,
-  CustomMultiTarget,
-  CustomTarget,
-  EnclosingHeadUnit,
-  EnclosingPartUnit,
-  ExpressionUnit,
-  FunctionUnit,
-  ItemAddress,
-  ItemRelations,
-  NullUnit,
-  OperationUnit,
-  TargetUnit,
-} from '../../Interfaces/CustomMultiTarget'
-import {
-  OperationSpecs,
-  isEnclosing,
-  isNonEnclosing,
-} from '../../Interfaces/CustomMultiTarget'
 
 export const MAX_NAME_LENGTH = 200
 export const MAX_DESC_LENGTH = 2000
 
 const bonusStatsSchema = z.preprocess(
-  (val) => {
+  (val: unknown) => {
     if (typeof val !== 'object' || val === null) return {}
     const result: Partial<Record<InputPremodKey, number>> = {}
     for (const [key, value] of Object.entries(val)) {
@@ -73,31 +51,266 @@ const customTargetSchema = z
     bonusStats: bonusStatsSchema,
     description: zodString(),
   })
-  .refine((ct) => ct.path[0] !== 'custom', {
+  .refine((ct: { path: string[] }) => ct.path[0] !== 'custom', {
     message: 'Path cannot start with "custom"',
   })
 
 export type CustomTarget = z.infer<typeof customTargetSchema>
 export type BonusStats = CustomTarget['bonusStats']
 
+const ExpressionOperations = [
+  'addition',
+  'subtraction',
+  'multiplication',
+  'division',
+  'priority',
+  'minimum',
+  'maximum',
+  'average',
+  'clamp',
+  'sum_fraction',
+] as const
+export type ExpressionOperation = (typeof ExpressionOperations)[number]
+export const isExpressionOperation = (op: unknown): op is ExpressionOperation =>
+  ExpressionOperations.includes(op as ExpressionOperation)
+
+const EnclosingOperations = [
+  'priority',
+  'minimum',
+  'maximum',
+  'average',
+  'clamp',
+  'sum_fraction',
+] as const
+export type EnclosingOperation = (typeof EnclosingOperations)[number]
+export const isEnclosing = (op: unknown): op is EnclosingOperation =>
+  EnclosingOperations.includes(op as EnclosingOperation)
+
+export type NonEnclosingOperation = Exclude<
+  ExpressionOperation,
+  EnclosingOperation
+>
+export const isNonEnclosing = (op: unknown): op is NonEnclosingOperation =>
+  isExpressionOperation(op) && !isEnclosing(op)
+
+interface NonEnclosingOperationSpec {
+  symbol: string
+  precedence: number
+  description: string | null
+}
+
+interface EnclosingOperationSpec {
+  symbol: string
+  precedence: number
+  arity: { min: number; max: number }
+  enclosing: { left: string; right: string }
+  description: string | null
+}
+
+const tes = (
+  symbol: string,
+  {
+    precedence = 3,
+    arity = { min: 1, max: Infinity },
+    enclosing = { left: '(', right: ')' },
+    description = null,
+  }: Partial<EnclosingOperationSpec> = {}
+) => ({
+  symbol,
+  precedence,
+  arity,
+  enclosing,
+  description,
+})
+
+const tnes = (
+  symbol: string,
+  {
+    precedence = 3,
+    description = null,
+  }: Partial<NonEnclosingOperationSpec> = {}
+) => ({
+  symbol,
+  precedence,
+  description,
+})
+
+export const OperationSpecs: Record<
+  NonEnclosingOperation,
+  NonEnclosingOperationSpec
+> &
+  Record<EnclosingOperation, EnclosingOperationSpec> = {
+  addition: tnes('+', { precedence: 1 }),
+  subtraction: tnes('-', { precedence: 1 }),
+  multiplication: tnes('*', { precedence: 2 }),
+  division: tnes('/', { precedence: 2 }),
+  priority: tes('', { arity: { min: 1, max: 1 } }),
+  minimum: tes('min'),
+  maximum: tes('max'),
+  average: tes('avg', {
+    description: 'avg(x1, x2, ..., xn) = (x1 + x2 + ... + xn) / n',
+  }),
+  clamp: tes('clamp', {
+    arity: { min: 3, max: 3 },
+    description: 'clamp(min, max, value) = min(max, max(min, value))',
+  }),
+  sum_fraction: tes('sum_fraction', {
+    arity: { min: 2, max: 2 },
+    description: 'sum_fraction(x1, x2) = x1 / (x1 + x2)',
+  }),
+} as const
+
+const ExpressionUnitTypes = [
+  'constant',
+  'target',
+  'operation',
+  'function',
+  'enclosing',
+  'null',
+] as const
+export type ExpressionUnitType = (typeof ExpressionUnitTypes)[number]
+export const isExpressionUnitType = (
+  type: unknown
+): type is ExpressionUnitType => {
+  return ExpressionUnitTypes.includes(type as ExpressionUnitType)
+}
+
+export interface TeamTarget {
+  char: CharacterKey
+  target: CustomMultiTarget
+}
+
+export type ExpressionUnit<
+  Target extends CustomTarget | TeamTarget = CustomTarget,
+> =
+  | ConstantUnit
+  | TargetUnit<Target>
+  | OperationUnit
+  | FunctionUnit
+  | EnclosingUnit
+  | NullUnit
+
+interface BaseUnit {
+  type: ExpressionUnitType
+  description?: string
+}
+
+export interface ConstantUnit extends BaseUnit {
+  type: 'constant'
+  value: number
+}
+
+export interface TargetUnit<
+  Target extends CustomTarget | TeamTarget = CustomTarget,
+> extends BaseUnit {
+  type: 'target'
+  target: Target
+}
+
+export interface OperationUnit extends BaseUnit {
+  type: 'operation'
+  operation: NonEnclosingOperation
+}
+
+export interface FunctionUnit extends BaseUnit {
+  type: 'function'
+  name: string
+}
+
+export type EnclosingUnit = EnclosingHeadUnit | EnclosingPartUnit
+
+export interface EnclosingHeadUnit extends BaseUnit {
+  type: 'enclosing'
+  part: 'head'
+  operation: EnclosingOperation
+}
+
+export interface EnclosingPartUnit extends BaseUnit {
+  type: 'enclosing'
+  part: 'comma' | 'tail'
+}
+
+export interface NullUnit extends BaseUnit {
+  type: 'null'
+  kind: 'operand' | 'operation'
+}
+
+export interface UnitAddress {
+  type: 'unit'
+  layer: number
+  index: number
+}
+
+export interface FunctionAddress {
+  type: 'function'
+  layer: number
+  index?: never
+}
+
+export interface ArgumentAddress {
+  type: 'argument'
+  layer: number
+  index: number
+}
+
+export type ItemAddress =
+  | UnitAddress
+  | FunctionAddress
+  | ArgumentAddress
+  | undefined
+
+export interface ItemRelations {
+  this: ItemAddress
+  related: NonNullable<ItemAddress>[]
+  dependent: NonNullable<ItemAddress>[]
+  independent: NonNullable<ItemAddress>[]
+  all: NonNullable<ItemAddress>[]
+}
+
+export interface CustomFunctionArgument {
+  name: string
+  description?: string
+}
+
+export interface CustomFunction {
+  name: string
+  args: CustomFunctionArgument[]
+  expression: ExpressionUnit[]
+  description?: string
+}
+
+export type AddressItemTypesMap =
+  | [FunctionAddress, CustomFunction]
+  | [ArgumentAddress, CustomFunctionArgument]
+  | [UnitAddress, ExpressionUnit]
+
+export type ExpressionItem =
+  | CustomFunction
+  | CustomFunctionArgument
+  | ExpressionUnit
+
 const customMultiTargetSchema = z.object({
   name: z
     .string()
     .catch('New Custom Target')
-    .transform((n) =>
+    .transform((n: string) =>
       n.length > MAX_NAME_LENGTH ? n.slice(0, MAX_NAME_LENGTH) : n
     ),
   description: z
     .string()
     .optional()
     .catch(undefined)
-    .transform((d) =>
+    .transform((d: string | undefined) =>
       d && d.length > MAX_DESC_LENGTH ? d.slice(0, MAX_DESC_LENGTH) : d
     ),
   targets: z.array(customTargetSchema).catch([]),
 })
 
-export type CustomMultiTarget = z.infer<typeof customMultiTargetSchema>
+type CustomMultiTargetBase = z.infer<typeof customMultiTargetSchema>
+export type CustomMultiTarget = CustomMultiTargetBase & {
+  functions?: CustomFunction[]
+  expression?: ExpressionUnit[]
+}
 
 export function initCustomMultiTarget(index: number): CustomMultiTarget {
   return {
@@ -232,60 +445,11 @@ function validateOptTarget(path: string[]): string[] {
   return path
 }
 function validateCustomTarget(ct: unknown): CustomTarget | undefined {
-  if (typeof ct !== 'object') return undefined
-  let {
-    weight,
-    path,
-    hitMode,
-    reaction,
-    infusionAura,
-    bonusStats,
-    description,
-  } = ct as CustomTarget
-
-  if (typeof weight !== 'number' || weight <= 0) weight = 1
-
-  if (!Array.isArray(path) || path[0] === 'custom') return undefined
-
-  path = validateOptTarget(path)
-
-  if (
-    !hitMode ||
-    typeof hitMode !== 'string' ||
-    !allMultiOptHitModeKeys.includes(hitMode as MultiOptHitModeKey)
-  )
-    hitMode = 'avgHit'
-
-  if (
-    reaction &&
-    !(allAmpReactionKeys as readonly string[]).includes(reaction) &&
-    !(allAdditiveReactions as readonly string[]).includes(reaction)
-  )
-    reaction = undefined
-
-  if (infusionAura && !allInfusionAuraElementKeys.includes(infusionAura))
-    infusionAura = undefined
-
-  if (!bonusStats) bonusStats = {}
-
-  if (typeof description !== 'string') description = ''
-
-  bonusStats = Object.fromEntries(
-    Object.entries(bonusStats).filter(
-      ([key, value]) =>
-        allInputPremodKeys.includes(key as InputPremodKey) &&
-        typeof value == 'number'
-    )
-  )
-
+  const result = customTargetSchema.safeParse(ct)
+  if (!result.success) return undefined
   return {
-    weight,
-    path,
-    hitMode,
-    reaction,
-    infusionAura,
-    bonusStats,
-    description,
+    ...result.data,
+    path: validateOptTarget(result.data.path),
   }
 }
 
@@ -631,16 +795,21 @@ function validateCustomExpression(
 export function validateCustomMultiTarget(
   cmt: unknown
 ): CustomMultiTarget | undefined {
-  if (typeof cmt !== 'object') return undefined
-  let { name, description, targets, functions, expression } =
-    cmt as CustomMultiTarget
-  if (typeof name !== 'string') name = 'New Custom Target'
-  else if (name.length > MAX_NAME_LENGTH) name = name.slice(0, MAX_NAME_LENGTH)
-  if (typeof description !== 'string') description = undefined
-  else if (description.length > MAX_DESC_LENGTH)
-    description = description.slice(0, MAX_DESC_LENGTH)
-  if (!Array.isArray(targets)) return undefined
-  targets = targets
+  const result = customMultiTargetSchema.safeParse(cmt)
+  if (!result.success) return undefined
+
+  const cmtObj = cmt as {
+    targets?: unknown[]
+    functions?: unknown
+    expression?: unknown
+  }
+
+  let { name, description, functions, expression } = cmtObj as CustomMultiTarget
+  const targetsInput = Array.isArray(cmtObj.targets) ? cmtObj.targets : []
+  description = result.data.description
+  name = result.data.name
+
+  const targets = targetsInput
     .map((t) => validateCustomTarget(t))
     .filter((t): t is NonNullable<CustomTarget> => t !== undefined)
   if (functions !== undefined) {
@@ -664,7 +833,7 @@ export function targetListToExpression(
   cmt: CustomMultiTarget
 ): CustomMultiTarget {
   const expression: ExpressionUnit[] = []
-  cmt.targets.forEach((t, i) => {
+  cmt.targets.forEach((t: CustomTarget, i: number) => {
     if (i > 0) {
       expression.push(
         initExpressionUnit({ type: 'operation', operation: 'addition' })
