@@ -367,7 +367,7 @@ const dmgFormulas = {
     ),
     ca2: dmgNode(
       'atk',
-      dm.skill.cDmg1,
+      dm.skill.cDmg2,
       'charged',
       anemoSturmData,
       a1Phec_sturm_mult_,
