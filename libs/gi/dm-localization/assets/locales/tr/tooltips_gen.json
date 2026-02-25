@@ -327,5 +327,27 @@
     "description": {
       "0": "Illuga <strong>Gölgesiz Yansıma</strong> Element Patlamasını kullandıktan sonra kazanılan etki. Mevcut aktif karakterlerin verdiği <geo>Toprak Hasarını</geo> artırabilir."
     }
+  },
+  "11280001": {
+    "name": "Fırtına Hücumu",
+    "description": {
+      "0": "Varka'yı bu moda geçirmek için Dokunarak <strong>Rüzgarın İnfazı</strong> Element Becerisini kullan.",
+      "1": "Bu moddayken Varka'nın Normal Saldırıları ve Yüklü Saldırıları daha fazla Hasar verir ancak Varka Havadan Saldırı yapamaz. Normal veya Yüklü Saldırı yaptığında çift elli kılıçları gruptaki karakterlerin Element Türlerine göre sırayla Element Hasarı verir:",
+      "2": [
+        "Sol eliyle tuttuğu çift elli kılıcın verdiği Hasar, diğer element tesirleriyle değiştirilemeyen <anemo>Rüzgar Hasarına</anemo> dönüşür.",
+        "Grupta <pyro>Ateş</pyro>, <hydro>Su</hydro>, <electro>Elektrik</electro> veya <cryo>Buz</cryo> karakterleri varsa sağ eliyle tuttuğu çift elli kılıç, Element Türlerinin belirtilen öncelik sırasına göre başka bir element tesiriyle değiştirilemeyen Element Hasarı verir."
+      ],
+      "3": "<br/>",
+      "4": "Ayrıca Varka bu moddayken grupta <pyro>Ateş</pyro>, <hydro>Su</hydro>, <electro>Elektrik</electro> veya <cryo>Buz</cryo> karakterleri varsa Varka'nın <strong>Rüzgarın İnfazı</strong> Element Becerisi, <strong>Dört Rüzgarın Yükselişi</strong> özel Element Becerisine dönüşür."
+    }
+  },
+  "11280002": {
+    "name": "Dört Rüzgarın Yükselişi",
+    "description": {
+      "0": "Varka'nın özel Element Becerisi. Varka, sağ eliyle tuttuğu çift elli kılıcın elementine karşılık gelen ve diğer element tesirleriyle değiştirilemeyen Element Alan Hasarı ve <anemo>Rüzgar Alan Hasarı</anemo> verir.",
+      "1": "Bekleme süresinde başlar ve maksimum 2 kullanım hakkı vardır.",
+      "2": "Varka <strong>Fırtına Hücumu</strong> modundayken Normal Saldırısı bir düşmana isabet ettiğinde <strong>Dört Rüzgarın Yükselişi</strong> becerisinin bekleme süresi 0,5 saniye azalır. Varka her <strong>Fırtına Hücumu</strong> moduna geçtiğinde bu etki 15 defaya kadar tetiklenebilir.",
+      "3": "Ayrıca Varka, <strong>Dört Rüzgarın Yükselişi</strong> kullanım haklarını harcayarak Dayanıklılık tüketmeyen özel <strong>Gök Yutan</strong> Yüklü Saldırısını gerçekleştirebilir. Bu saldırı, 2 defa Varka'nın sağ eliyle tuttuğu çift elli kılıcın elementine karşılık gelen ve diğer element tesirleriyle değiştirilemeyen Element Hasarı ve 2 defa da <anemo>Rüzgar Hasarı</anemo> verir."
+    }
   }
 }

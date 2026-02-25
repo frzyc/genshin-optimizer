@@ -1,0 +1,29 @@
+{
+  "name": "Gest of the Mighty Wolf",
+  "description": {
+    "0": "Konon pedang ini ditempa oleh tangan Ravenwood sendiri yang mewarisi nama Boreas, sebelum dia menjadi seorang knight."
+  },
+  "passiveName": "Indomitable Chivalry",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK SPD +10%. Saat Normal Attack mengenai musuh/saat melancarkan Elemental Skill/saat memulai Charged Attack, maka Karakter yang mengenakan akan mendapatkan 1/2/2 lapis Four Winds' Hymn: DMG yang diakibatkan +<cryo>7,5%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 4 kali dan dapat terpicu sekali setiap 0,01 detik.",
+      "1": "Selain itu, saat party memiliki efek Hexerei: Secret Rite, setiap lapis Four Winds' Hymn juga akan membuat CRIT DMG Karakter yang mengenakan +<cryo>7,5%</cryo>."
+    },
+    "1": {
+      "0": "ATK SPD +10%. Saat Normal Attack mengenai musuh/saat melancarkan Elemental Skill/saat memulai Charged Attack, maka Karakter yang mengenakan akan mendapatkan 1/2/2 lapis Four Winds' Hymn: DMG yang diakibatkan +<cryo>9,5%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 4 kali dan dapat terpicu sekali setiap 0,01 detik.",
+      "1": "Selain itu, saat party memiliki efek Hexerei: Secret Rite, setiap lapis Four Winds' Hymn juga akan membuat CRIT DMG Karakter yang mengenakan +<cryo>9,5%</cryo>."
+    },
+    "2": {
+      "0": "ATK SPD +10%. Saat Normal Attack mengenai musuh/saat melancarkan Elemental Skill/saat memulai Charged Attack, maka Karakter yang mengenakan akan mendapatkan 1/2/2 lapis Four Winds' Hymn: DMG yang diakibatkan +<cryo>11,5%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 4 kali dan dapat terpicu sekali setiap 0,01 detik.",
+      "1": "Selain itu, saat party memiliki efek Hexerei: Secret Rite, setiap lapis Four Winds' Hymn juga akan membuat CRIT DMG Karakter yang mengenakan +<cryo>11,5%</cryo>."
+    },
+    "3": {
+      "0": "ATK SPD +10%. Saat Normal Attack mengenai musuh/saat melancarkan Elemental Skill/saat memulai Charged Attack, maka Karakter yang mengenakan akan mendapatkan 1/2/2 lapis Four Winds' Hymn: DMG yang diakibatkan +<cryo>13,5%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 4 kali dan dapat terpicu sekali setiap 0,01 detik.",
+      "1": "Selain itu, saat party memiliki efek Hexerei: Secret Rite, setiap lapis Four Winds' Hymn juga akan membuat CRIT DMG Karakter yang mengenakan +<cryo>13,5%</cryo>."
+    },
+    "4": {
+      "0": "ATK SPD +10%. Saat Normal Attack mengenai musuh/saat melancarkan Elemental Skill/saat memulai Charged Attack, maka Karakter yang mengenakan akan mendapatkan 1/2/2 lapis Four Winds' Hymn: DMG yang diakibatkan +<cryo>15,5%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 4 kali dan dapat terpicu sekali setiap 0,01 detik.",
+      "1": "Selain itu, saat party memiliki efek Hexerei: Secret Rite, setiap lapis Four Winds' Hymn juga akan membuat CRIT DMG Karakter yang mengenakan +<cryo>15,5%</cryo>."
+    }
+  }
+}

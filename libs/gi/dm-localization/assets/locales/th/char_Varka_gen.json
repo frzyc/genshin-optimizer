@@ -1,0 +1,174 @@
+{
+  "name": "Varka",
+  "title": "อัศวินแห่ง Boreas",
+  "description": "แกรนด์มาสเตอร์ของกองอัศวินแห่ง Favonius, อัศวินแห่ง Boreas ผู้พิทักษ์ Mondstadt",
+  "constellationName": "Lupus Majoris",
+  "auto": {
+    "name": "Dancing Radiance",
+    "fields": {
+      "normal": {
+        "0": "<strong>โจมตีปกติ</strong>",
+        "1": "เลียนแบบระบำต่อสู้ของอัศวินโบราณ ใช้ดาบใหญ่สองเล่มโจมตีต่อเนื่องมากสุด 5 ครั้ง"
+      },
+      "charged": {
+        "0": "<strong>ชาร์จโจมตี</strong>",
+        "1": "ใช้พลังกายส่วนหนึ่ง เพื่อพุ่งตัวไปข้างหน้า และฟาดฟันดาบคู่อย่างทรงพลัง"
+      },
+      "plunging": {
+        "0": "<strong>โจมตีพุ่งลงจากอากาศ</strong>",
+        "1": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงสู่พื้น"
+      }
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "ความเสียหายขั้น 3",
+      "3": "ความเสียหายขั้น 4",
+      "4": "ความเสียหายขั้น 5",
+      "5": "ความเสียหายชาร์จโจมตี",
+      "6": "ชาร์จโจมตีใช้พลังกาย",
+      "7": "ความเสียหายพุ่งลง",
+      "8": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Windbound Execution",
+    "description": {
+      "0": "สำแดงให้เห็นถึงแก่นแท้ของวิชาดาบแห่ง Favonius ด้วยพลังอันสมบูรณ์แบบ ซึ่งทำให้เกิดเอฟเฟกต์ที่แตกต่างกันไป โดยขึ้นกับการกด หรือกดค้าง",
+      "1": "<br/>",
+      "2": "<strong>กด</strong>",
+      "3": "กระโจนไปข้างหน้าและฟาดฟัน สร้าง<anemo>ความเสียหายลมวงกว้าง</anemo> และเปลี่ยนเป็นโหมด <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Sturm und Drang (สลาตันพุ่งทะยาน)</strong></tooltip>",
+      "4": "เมื่ออยู่ในโหมด <strong>Sturm und Drang</strong> ความเสียหายจากการโจมตีปกติและชาร์จโจมตีของ Varka จะเพิ่มขึ้น ไม่สามารถทำการโจมตีพุ่งลงจากอากาศได้ และเมื่อทำการโจมตีปกติหรือชาร์จโจมตี จะใช้ดาบใหญ่คู่สร้างความเสียหายธาตุ ตามประเภทธาตุของตัวละครในทีม ที่ไม่สามารถซ้อนทับด้วยธาตุอื่นได้",
+      "5": "นอกจากนี้ เมื่ออยู่ในโหมด <strong>Sturm und Drang</strong> หากในทีมมีตัวละครธาตุ<pyro>ไฟ</pyro>, <hydro>น้ำ</hydro>, <electro>ไฟฟ้า</electro>หรือ<cryo>น้ำแข็ง</cryo> สกิลธาตุ <strong>Windbound Execution</strong> ของ Varka จะถูกเปลี่ยนเป็นสกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip> สร้างความเสียหายธาตุที่สอดคล้องกัน และ<anemo>ความเสียหายลม</anemo>; นอกจากนี้ Varka ยังสามารถใช้จำนวนครั้งที่สามารถใช้ได้ของสกิลธาตุพิเศษ <strong>Four Winds' Ascension</strong> เพื่อทำการชาร์จโจมตีพิเศษ <strong>Azure Devour</strong> ที่ไม่ใช้พลังกาย สร้างความเสียหายธาตุที่สอดคล้องกัน และ<anemo>ความเสียหายลม</anemo>",
+      "6": "<br/>",
+      "7": "หลังจาก<strong>กดค้าง</strong>",
+      "8": "เพื่อชาร์จพลัง และกระโดดไปข้างหน้า ระยะการกระโดดจะเพิ่มขึ้นตามเวลาในการชาร์จ"
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิล",
+      "1": "คูลดาวน์การกด",
+      "2": "คูลดาวน์การกดค้าง",
+      "3": "ระยะเวลาของ Sturm und Drang",
+      "4": "ความเสียหายขั้น 1 ของ Sturm und Drang",
+      "5": "ความเสียหายขั้น 2 ของ Sturm und Drang",
+      "6": "ความเสียหายขั้น 3 ของ Sturm und Drang",
+      "7": "ความเสียหายขั้น 4 ของ Sturm und Drang",
+      "8": "ความเสียหายขั้น 5 ของ Sturm und Drang",
+      "9": "ความเสียหายชาร์จโจมตี Sturm und Drang",
+      "10": "ความเสียหาย Four Winds' Ascension",
+      "11": "ความเสียหาย Azure Devour",
+      "12": "เวลาคูลดาวน์ Four Winds' Ascension",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Northwind Avatar",
+    "description": {
+      "0": "ฟาดโจมตีอย่างทรงพลังไปข้างหน้าต่อเนื่อง 2 ครั้งในนามของอัศวินแห่ง Boreas ผู้แข็งแกร่งที่สุด สร้าง<anemo>ความเสียหายลม</anemo> 2 ครั้ง",
+      "1": "หากมีตัวละครธาตุ<pyro>ไฟ</pyro>, <hydro>น้ำ</hydro>, <electro>ไฟฟ้า</electro> หรือ<cryo>น้ำแข็ง</cryo>อยู่ในทีม การฟาดโจมตีครั้งแรกจะเปลี่ยนเป็นการสร้างความเสียหายธาตุที่สอดคล้องกัน ตามลำดับก่อนหลังของประเภทธาตุข้างต้น"
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิลขั้น 1",
+      "1": "ความเสียหายสกิลขั้น 2",
+      "2": "คูลดาวน์",
+      "3": "พลังงานธาตุ",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dawn Wind's March",
+    "description": {
+      "0": "เมื่อมีตัวละครธาตุ<pyro>ไฟ</pyro>, <hydro>น้ำ</hydro>, <electro>ไฟฟ้า</electro> หรือ<cryo>น้ำแข็ง</cryo>อยู่ในทีม จะทำให้ Varka ได้รับ<anemo>โบนัสความเสียหายลม</anemo> 10% และโบนัสความเสียหายธาตุที่สอดคล้องกัน ตามพลังโจมตีของ Varka ทุก ๆ 1,000 หน่วย ตามลำดับประเภทธาตุข้างต้น (สามารถรับโบนัสความเสียหายด้วยวิธีนี้ได้เพียง 1 ประเภทธาตุจากประเภทธาตุที่กล่าวมาข้างต้นเท่านั้น) โดยสามารถรับโบนัสความเสียหายด้วยวิธีนี้ได้สูงสุด 25%",
+      "1": "<br/>",
+      "2": "นอกจากนี้ หากมีตัวละคร<anemo>ธาตุลม</anemo>อย่างน้อย 2 ตัว หรือมีตัวละครธาตุ<pyro>ไฟ</pyro>, <hydro>น้ำ</hydro>, <electro>ไฟฟ้า</electro> หรือ<cryo>น้ำแข็ง</cryo> ที่มีประเภทธาตุเดียวกันอย่างน้อย 2 ตัวในทีม การโจมตีปกติ, ชาร์จโจมตี, ชาร์จโจมตีพิเศษ <strong>Azure Devour</strong> และสกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip> ที่ Varka ใช้ในโหมด <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Sturm und Drang</strong></tooltip> จะสร้างความเสียหาย 140% ของความเสียหายเดิม; หากมีตัวละคร<anemo>ธาตุลม</anemo>อย่างน้อย 2 ตัว และมีตัวละครธาตุ<pyro>ไฟ</pyro>, <hydro>น้ำ</hydro>, <electro>ไฟฟ้า</electro> หรือ<cryo>น้ำแข็ง</cryo>ที่มีประเภทธาตุเดียวกันอย่างน้อย 2 ตัวในทีมพร้อมกัน จะเพิ่มเอฟเฟกต์ที่กล่าวมาข้างต้นเป็น 220%"
+    }
+  },
+  "passive2": {
+    "name": "Wind's Vanguard",
+    "description": {
+      "0": "เมื่อตัวละครในทีมที่อยู่ใกล้เคียงทำให้เกิดปฏิกิริยากระจาย Varka จะได้รับ <strong>\"Azure Fang's Oath\"</strong> 1 ชั้น ซึ่งทำให้การโจมตีปกติ, ชาร์จโจมตี, ชาร์จโจมตีพิเศษ <strong>Azure Devour</strong> และสกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip> ของ Varka ที่ปล่อยออกมา สร้างความเสียหายเพิ่มขึ้น 7.5% เอฟเฟกต์นี้คงอยู่เป็นเวลา 8 วินาที ซ้อนทับได้สูงสุด 4 ชั้น ตัวละครแต่ละตัวสามารถทำให้ Varka ได้รับ <strong>Azure Fang's Oath</strong> ด้วยวิธีนี้ได้สูงสุด 1 ชั้นต่อ 1 วินาที"
+    }
+  },
+  "passive3": {
+    "name": "Homebound Wind's Paean",
+    "description": {
+      "0": "ตัวละครจาก Mondstadt ในทีมทุกหนึ่งตัว จะทำให้ช่วงเวลาคูลดาวน์ของสกิลธาตุ <strong>Windbound Execution</strong> ที่ปล่อยโดยการกดค้างลดลง 5%",
+      "1": "เอฟเฟกต์ดังกล่าวจะไร้ผลเมื่ออยู่ในดันเจี้ยน, Trounce Domain และ Spiral Abyss"
+    }
+  },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Dawn's Return",
+    "description": {
+      "0": "หลังจากสำเร็จ<strong>แบบฝึกหัดของแม่มด: โจทย์ที่ไร้คำถาม</strong> Varka จะกลายเป็นตัวละคร<strong>มนตรา</strong> เมื่อจัดทีมโดยมีตัวละครมนตราในทีมอย่างน้อย 2 ตัว จะได้รับเอฟเฟกต์ <strong>Hexerei: Secret Rite</strong> ซึ่งจะเสริมพลังให้กับตัวละครมนตรา",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "สกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip> ได้รับการเสริมพลัง: เมื่อ Varka อยู่ในโหมด <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Sturm und Drang (สลาตันพุ่งทะยาน)</strong></tooltip> และโจมตีปกติโดนศัตรู ช่วงเวลาคูลดาวน์ของ <strong>Four Winds' Ascension</strong> จะลดลง 1 วินาที"
+    }
+  },
+  "constellation1": {
+    "name": "\"Come, Friend, Let Us Dance Beneath the Moon's Soft Glow\"",
+    "description": {
+      "0": "เมื่อ Varka สลับไปยังโหมด <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Sturm und Drang</strong></tooltip> จะได้รับจำนวนครั้งที่ใช้ได้สำหรับสกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip> เพิ่ม 1 ครั้ง",
+      "1": "นอกจากนี้ หลังจากสลับไปยังโหมด <strong>Sturm und Drang</strong> แล้ว Varka จะได้รับเอฟเฟกต์ <strong>\"Lyrical Libation\"</strong>: เมื่อปล่อยสกิลธาตุพิเศษ <strong>Four Winds' Ascension</strong> หรือทำการชาร์จโจมตีพิเศษ <strong>Azure Devour</strong> จะใช้เอฟเฟกต์นี้ ทำให้ <strong>Four Winds' Ascension</strong> หรือ <strong>Azure Devour</strong> สร้างความเสียหาย 200% ของความเสียหายเดิม"
+    }
+  },
+  "constellation2": {
+    "name": "\"When Dawn Breaks, Our Journey Shall Take Flight\"",
+    "description": {
+      "0": "เมื่อใช้สกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip> หรือทำการชาร์จโจมตีพิเศษ <strong>Azure Devour</strong> Varka จะโจมตีเพิ่มเติมอีก 1 ครั้ง สร้าง<anemo>ความเสียหายลมวงกว้าง</anemo> เท่ากับ 800% ของพลังโจมตี"
+    }
+  },
+  "constellation3": {
+    "name": "\"O Friend, Quaff Not the Bitter Wine That Brings Tears of Woe\"",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Varka_gen baseKey18=skill>Windbound Execution</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation4": {
+    "name": "\"For None May Take From Us Our Freedom of Song\"",
+    "description": {
+      "0": "เมื่อ Varka ทำให้เกิดปฏิกิริยากระจาย จะทำให้ตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียงได้รับ<anemo>โบนัสความเสียหายลม</anemo> และโบนัสความเสียหายธาตุที่สอดคล้องกับประเภทของธาตุที่เกี่ยวข้องกับปฏิกิริยาดังกล่าว 20% เป็นเวลา 10 วินาที"
+    }
+  },
+  "constellation5": {
+    "name": "\"Fill High the Cup With Fine Wine, for Tyrants Come and Go\"",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Varka_gen baseKey18=burst>Northwind Avatar</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation6": {
+    "name": "\"Beloved Mondstadt, Steadfast You Shall Shine\"",
+    "description": {
+      "0": "โหมด <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Sturm und Drang</strong></tooltip> ได้รับการเสริมพลัง:",
+      "1": [
+        "หลังจากปล่อยสกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip> แล้ว ภายในเวลาสั้น ๆ Varka สามารถกดสกิลธาตุ หรือกดค้างโจมตีปกติ เพื่อทำการชาร์จโจมตีพิเศษ <strong>Azure Devour</strong> เพิ่มเติมอีก 1 ครั้ง โดยไม่ใช้จำนวนครั้งที่ใช้ได้ของ Four Winds' Ascension;",
+        "ภายในช่วงเวลาสั้น ๆ หลังจากทำการชาร์จโจมตีพิเศษ <strong>Azure Devour</strong> แล้ว Varka สามารถกดสกิลธาตุ เพื่อปล่อย <strong>Four Winds' Ascension</strong> ได้ 1 ครั้ง โดยไม่ใช้จำนวนครั้งที่ใช้ได้ของ Four Winds' Ascension"
+      ],
+      "2": "เมื่อทำการชาร์จโจมตีพิเศษ Azure Devour เพิ่มเติม หรือปล่อยสกิลธาตุพิเศษ Four Winds' Ascension เพิ่มเติมด้วยวิธีการข้างต้น จะไม่สามารถเปิดใช้งานเอฟเฟกต์ดังกล่าวข้างต้นได้",
+      "3": "<br/>",
+      "4": "นอกจากนี้ เอฟเฟกต์ <strong>\"Azure Fang's Oath\"</strong> ในพรสวรรค์เพิ่มเติม <strong><tooltip ns=char_Varka_gen baseKey18=passive2>\"Wind's Vanguard\"</tooltip></strong> จะได้รับการเสริมพลัง: <strong>Azure Fang's Oath</strong> แต่ละชั้น จะทำให้ความแรงคริของ Varka เพิ่มขึ้น 20%"
+    }
+  }
+}

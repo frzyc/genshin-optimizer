@@ -94,7 +94,7 @@
   "passive1": {
     "name": "Ankunft des selenischen Adepten",
     "description": {
-      "0": "Verleiht Zibai beim Anwenden von <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Himmel und Erde in Gestalt</tooltip></strong> durch Zibai oder beim Auslösen von „Harmonie der Mondkäfige“ durch Truppenmitglieder in der Nähe 4 s lang den Effekt <strong>Selenische Ankunft</strong>: Erhöht den durch die zweite Angriffsphase von <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Galopp des Geisterrosses</strong></tooltip> verursachten Schaden um 60 % von Zibais VTD."
+      "0": "Verleiht Zibai beim Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Himmel und Erde in Gestalt</tooltip></strong> durch Zibai oder beim Auslösen von „Harmonie der Mondkäfige“ durch Truppenmitglieder in der Nähe 4 s lang den Effekt <strong>Selenische Ankunft</strong>: Erhöht den durch die zweite Angriffsphase von <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Galopp des Geisterrosses</strong></tooltip> verursachten Schaden um 60 % von Zibais VTD."
     }
   },
   "passive2": {
@@ -121,7 +121,7 @@
   "constellation1": {
     "name": "Mit großer Kraft auftauchen, doch in völliger Stille eintreten",
     "description": {
-      "0": "Sammelt nach dem Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Himmel und Erde in Gestalt</tooltip></strong> 100 Punkte <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Abschnittswechsel-Glanz</strong></tooltip> für Zibai an. Erhöht zudem im Modus <strong>Wechsel des Mondabschnitts</strong> die max. Anzahl der Nutzungen von <strong>Galopp des Geisterrosses</strong> auf 5.",
+      "0": "Zibai sammelt nach dem Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Himmel und Erde in Gestalt</tooltip></strong> sofort 100 Punkte <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Abschnittswechsel-Glanz</strong></tooltip> an. Erhöht zudem im Modus <strong>Wechsel des Mondabschnitts</strong> die max. Anzahl der Einsatzmöglichkeit von <strong>Galopp des Geisterrosses</strong> auf 5.",
       "1": "Erhöht des Weiteren nach jedem Wechseln in den Modus Wechsel des Mondabschnitts bei der ersten Anwendung von Galopp des Geisterrosses den Mond-Kristallisation-Schaden, der durch die 2. Angriffsphase verursacht wird, um 220 %."
     }
   },

@@ -325,5 +325,27 @@
     "description": {
       "0": "Hiệu quả nhận được sau khi Illuga thi triển Kỹ Năng Nộ <strong>Phản Chiếu Vô Hình</strong>, giúp nhân vật trong trận hiện tại tăng <geo>Sát Thương Nguyên Tố Nham</geo> gây ra."
     }
+  },
+  "11280001": {
+    "name": "Bão Táp Đột Kích",
+    "description": {
+      "0": "Sau khi nhấn thi triển Kỹ Năng Nguyên Tố <strong>Cuồng Phong Ập Đến</strong>, Varka sẽ chuyển sang chế độ này.",
+      "1": "Trong chế độ này, Varka sẽ tăng sát thương Tấn Công Thường và Trọng Kích, không thể thực hiện Tấn Công Khi Đáp. Khi Varka thực hiện Tấn Công Thường và Trọng Kích, sẽ căn cứ vào Loại Nguyên Tố của nhân vật trong đội, khiến hai thanh trọng kiếm lần lượt gây sát thương nguyên tố tương ứng không thể bị thay thế:",
+      "2": [
+        "Trọng kiếm tay trái sẽ chuyển sang gây <anemo>Sát Thương Nguyên Tố Phong</anemo> không thể bị thay thế.",
+        "Khi trong đội có nhân vật nguyên tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <electro>Lôi</electro> hoặc <cryo>Băng</cryo>, trọng kiếm tay phải sẽ gây sát thương nguyên tố tương ứng không thể bị thay thế dựa trên độ ưu tiên nguyên tố kể trên."
+      ],
+      "3": "<br/>",
+      "4": "Ngoài ra, khi trong chế độ này, nếu trong đội có nhân vật nguyên tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <electro>Lôi</electro> hoặc <cryo>Băng</cryo>, Kỹ Năng Nguyên Tố <strong>Cuồng Phong Ập Đến</strong> của Varka sẽ còn được thay thế bởi Kỹ Năng Nguyên Tố đặc biệt <strong>Tứ Phong Trỗi Dậy</strong>."
+    }
+  },
+  "11280002": {
+    "name": "Tứ Phong Trỗi Dậy",
+    "description": {
+      "0": "Kỹ Năng Nguyên Tố đặc biệt của Varka, gây cho kẻ địch sát thương phạm vi nguyên tố tương ứng không thể bị thay thế từ trọng kiếm tay phải của Varka và <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>.",
+      "1": "Ban đầu sẽ trong trạng thái chờ hồi chiêu, tối đa có 2 lần khả dụng.",
+      "2": "Khi Varka trong chế độ <strong>Bão Táp Đột Kích</strong> và Tấn Công Thường trúng kẻ địch, thời gian chờ của <strong>Tứ Phong Trỗi Dậy</strong> sẽ rút ngắn 0.5s. Sau mỗi lần chuyển sang chế độ <strong>Bão Táp Đột Kích</strong>, hiệu quả này tối đa kích hoạt 15 lần.",
+      "3": "Ngoài ra, Varka có thể tiêu hao số lần khả dụng của <strong>Tứ Phong Trỗi Dậy</strong> để thực hiện Trọng Kích đặc biệt <strong>Trời Xanh Cắn Xé</strong> không tiêu hao thể lực, gây 2 lần sát thương nguyên tố tương ứng không thể bị thay thế từ trọng kiếm tay phải của Varka và 2 lần <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+    }
   }
 }

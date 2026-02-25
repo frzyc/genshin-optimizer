@@ -100,6 +100,7 @@ import TravelerHydro from './TravelerHydro'
 import TravelerM from './TravelerM'
 import TravelerPyro from './TravelerPyro'
 import Varesa from './Varesa'
+import Varka from './Varka'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
@@ -221,6 +222,7 @@ const data = {
   TravelerM,
   TravelerPyro,
   Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,

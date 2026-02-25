@@ -1,0 +1,174 @@
+{
+  "name": "Varka",
+  "title": "Cavaleiro de Boreas",
+  "description": "Grande Mestre dos Cavaleiros de Favonius. Cavaleiro de Boreas, protetor de Mondstadt.",
+  "constellationName": "Lupus Majoris",
+  "auto": {
+    "name": "Valsa Radiante",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Imitando uma valsa cavalheiresca antiga, Varka empunha dois espadões para fazer até 5 golpes consecutivos"
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para avançar e realiza um golpe duplo de espada especialmente poderoso para a frente."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha do meio do ar para atingir o solo abaixo, causando Dano aos oponentes ao longo do caminho e Dano em uma AdE no impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano do Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Execução Zéfira",
+    "description": {
+      "0": "Manifesta a verdadeira essência da esgrima de Favonius com poder absoluto. Produz efeitos diferentes se pressionar ou manter pressionado.",
+      "1": "<br/>",
+      "2": "<strong>Pressionar</strong>",
+      "3": "Avança para frente com um salto e desferindo um golpe, causando <anemo>Dano Anemo em AdE</anemo> e troca para o modo <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Investida Furacão</strong></tooltip>.",
+      "4": "Quando está no modo <strong>Investida Furacão</strong>, aumenta o Dano do Ataque Normal e Carregado de Varka, impossibilita-o de realizar Ataques Imersivos, e ao realizar Ataques Normais e Carregados, usa dois Espadões para causar Dano Elemental que não pode ser substituído de acordo com os Tipos Elementais da equipe.",
+      "5": "Além disso, quando está no modo <strong>Investida Furacão</strong>, se houver personagens <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> ou <cryo>Cryo</cryo> na equipe, a Habilidade Elemental <strong>Execução Zéfira</strong> de Varka será substituída pela Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensão dos Quatro Ventos</strong></tooltip>, causando Dano Elemental correspondente e <anemo>Dano Anemo</anemo>. Além disso, Varka consumirá os Usos da Habilidade Elemental especial <strong>Ascensão dos Quatro Ventos</strong> para realizar um Ataque Carregado especial <strong>Devoração Cerúlea</strong> que não consome Stamina, causando Dano Elemental correspondente e <anemo>Dano Anemo</anemo>.",
+      "6": "<br/>",
+      "7": "<strong>Manter Pressionado</strong>",
+      "8": "Depois de carregar, salta para frente. O tempo de carregamento aumenta a distância do salto."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Recarga de Pressionar",
+      "2": "Recarga de Manter Pressionado",
+      "3": "Duração de Investida Furacão",
+      "4": "Dano do 1° Golpe de Investida Furacão",
+      "5": "Dano do 2° Golpe de Investida Furacão",
+      "6": "Dano do 3° Golpe de Investida Furacão",
+      "7": "Dano do 4° Golpe de Investida Furacão",
+      "8": "Dano do 5° Golpe de Investida Furacão",
+      "9": "Dano de Ataque Carregado de Investida Furacão",
+      "10": "Dano de Ascensão dos Quatro Ventos",
+      "11": "Dano de Devoração Cerúlea",
+      "12": "Recarga de Ascensão dos Quatro Ventos",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Avatar do Vento do Norte",
+    "description": {
+      "0": "Em nome do mais poderoso Cavaleiro de Boreas, desfere um poderoso ataque de corte duplo para frente, causando 2 instâncias de <anemo>Dano Anemo</anemo>.",
+      "1": "Se houver personagens <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> ou <cryo>Cryo</cryo> na equipe, o primeiro golpe será convertido para causar Dano Elemental correspondente, de acordo com a ordem de prioridade dos Tipos Elementais mencionados."
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe da Habilidade",
+      "1": "Dano do 2° Golpe da Habilidade",
+      "2": "Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Marcha do Vento da Alvorada",
+    "description": {
+      "0": "Quando a equipe possuir personagens <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> ou <cryo>Cryo</cryo>, de acordo com a ordem de prioridade Elemental acima, cada 1.000 de ATQ de Varka aumentam o <anemo>Bônus de Dano Anemo</anemo> e o Bônus do Dano Elemental correspondente em 10% dele (dentre esses elementos, só um elemento pode ganhar bônus de Dano dessa forma). É possível obter até 25% de bônus de Dano dessa forma.",
+      "1": "<br/>",
+      "2": "Além disso, se a equipe possuir pelo menos 2 personagens <anemo>Anemo</anemo> ou possuir pelo menos 2 personagens de Tipo Elemental <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> ou <cryo>Cryo</cryo>, os Ataques Normais, Ataques Carregados, Ataque Carregado especial <strong>Devoração Cerúlea</strong> e a Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensão dos Quatro Ventos</strong></tooltip> que Varka causa ou lança enquanto está no modo <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Investida Furacão</strong></tooltip> causarão 140% do seu Dano original. Se a equipe possuir pelo menos 2 personagens <anemo>Anemo</anemo> e pelo menos 2 personagens de Tipo Elemental <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> ou <cryo>Cryo</cryo>, esse efeito é aumentado até 220%."
+    }
+  },
+  "passive2": {
+    "name": "Vanguarda do Vento",
+    "description": {
+      "0": "Quando um membro próximo da equipe desencadeia Redemoinho, Varka obterá 1 acúmulo de <strong>Juramento da Presa Cerúlea</strong>, aumentando o Dano de seu Ataque Normal, Ataque Carregado, Ataque Carregado especial <strong>Devoração Cerúlea</strong> e de sua Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensão dos Quatro Ventos</strong></tooltip> em 7.5% por 8s. Esse efeito pode ser acumulado até 4 vezes, e cada personagem pode fazer Varka obter 1 acúmulo de <strong>Juramento da Presa Cerúlea</strong> por segundo."
+    }
+  },
+  "passive3": {
+    "name": "Hino do Retorno do Vento",
+    "description": {
+      "0": "Para cada membro de Mondstadt, a recarga da Habilidade Elemental <strong>Execução Zéfira</strong> ao manter pressionado é reduzida em 5%.",
+      "1": "Esse efeito não será produzido em domínios, Domínios Dizimados e Abismo do Espiral."
+    }
+  },
+  "lockedPassive": {
+    "name": "Presente da Noite da Bruxa: Retorno da Alvorada",
+    "description": {
+      "0": "Depois de completar <strong>Tarefa da Bruxa: Pergunta Não Intitulada</strong>, Varka se tornará um personagem <strong>Mágico</strong>. Quando a equipe possuir pelo menos 2 personagens Mágicos, obtém o efeito <strong>Mágico: Ritual Secreto</strong>, fortalecendo os personagens Mágicos.",
+      "1": "<br/>",
+      "2": "<strong>Mágico: Ritual Secreto</strong>",
+      "3": "A Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensão dos Quatro Ventos</strong></tooltip> é fortalecida: quando Varka estiver no modo <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Investida Furacão</strong></tooltip> e atingir um inimigo com um Ataque Normal, reduz a recarga de <strong>Ascensão dos Quatro Ventos</strong> em 1s."
+    }
+  },
+  "constellation1": {
+    "name": "\"Venha, meu amigo, vamos dançar sob o leve luar.\"",
+    "description": {
+      "0": "Quando Varka troca para o modo <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Investida Furacão</strong></tooltip>, obtém 1 Uso adicional da Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensão dos Quatro Ventos</strong></tooltip>.",
+      "1": "Além disso, ao trocar para o modo <strong>Investida Furacão</strong>, Varka obtém o efeito <strong>Vinho da Canção</strong>: ao lançar a Habilidade Elemental especial <strong>Ascensão dos Quatro Ventos</strong>, ou ao realizar o Ataque Carregado especial <strong>Devoração Cerúlea</strong>, consome esse efeito para causar 200% de Dano original de <strong>Ascensão dos Quatro Ventos</strong> ou de <strong>Devoração Cerúlea</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "\"Quando a alvorada rompe, nossa jornada começa.\"",
+    "description": {
+      "0": "Ao lançar a Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensão dos Quatro Ventos</strong></tooltip>, ou ao realizar o Ataque Carregado especial <strong>Devoração Cerúlea</strong>, Varka faz um ataque adicional causando 800% do ATQ como <anemo>Dano Anemo em AdE</anemo>."
+    }
+  },
+  "constellation3": {
+    "name": "\"Ó, amigo, não beba o vinho amargo que lhe faz chorar.\"",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Varka_gen baseKey18=skill>Execução Zéfira</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Que ninguém tome a liberdade de nossa canção.\"",
+    "description": {
+      "0": "Quando Varka desencadear Redemoinho, faz com que todos os membros próximos da equipe obtenham 20% de <anemo>bônus de Dano Anemo</anemo> e o bônus de Dano Elemental correspondente participante da reação por 10s."
+    }
+  },
+  "constellation5": {
+    "name": "\"Encha a taça com vinho, assim os tiranos vêm e vão.\"",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Varka_gen baseKey18=burst>Avatar do Vento do Norte</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Amada Mondstadt, determinada você brilha.\"",
+    "description": {
+      "0": "O modo <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Investida Furacão</strong></tooltip> é fortalecido:",
+      "1": [
+        " Por um curto período de tempo após lançar a Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensão dos Quatro Ventos</strong></tooltip>, Varka pode pressionar a Habilidade Elemental ou manter pressionado seu Ataque Normal para fazer um Ataque Carregado especial adicional <strong>Devoração Cerúlea</strong> sem consumir Usos de Ascensão dos Quatro Ventos.",
+        " Por um tempo após realizar o Ataque Carregado <strong>Devoração Cerúlea</strong>, Varka pode pressionar a Habilidade Elemental para lançar uma <strong>Ascensão dos Quatro Ventos</strong> adicional que não consome Usos de Ascensão dos Quatro Ventos."
+      ],
+      "2": "Não é possível desencadear o efeito acima ao lançar o Ataque Carregado especial adicional Devoração Cerúlea ou o lançamento adicional da Habilidade Elemental Ascensão dos Quatro Ventos através dessas formas.",
+      "3": "<br/>",
+      "4": "Além disso, o efeito <strong>Juramento da Presa Cerúlea</strong> do Talento de Ascensão <strong><tooltip ns=char_Varka_gen baseKey18=passive2>Vanguarda do Vento</tooltip></strong> é fortalecido: cada acúmulo de <strong>Juramento da Presa Cerúlea</strong> aumenta o Dano CRIT de Varka em 20%."
+    }
+  }
+}

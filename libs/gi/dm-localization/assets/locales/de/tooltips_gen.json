@@ -325,5 +325,25 @@
     "description": {
       "0": "Der Effekt, den Illuga nach dem Anwenden der Spezialfähigkeit <strong>Schattenlose Reflektion</strong> erhält. Kann den durch die aktuelle Figur verursachten <geo>Geo-SCH</geo> erhöhen."
     }
+  },
+  "11280001": {
+    "name": "Ansturm der Winde",
+    "description": {
+      "0": "Versetzt Varka nach dem Drücken der Elementarfähigkeit <strong>Abflauender Sturm</strong> in diesen Modus.",
+      "1": "Erhöht, wenn Varka sich in diesem Modus befindet, den durch seine Standardangriffe und heftigen Schläge verursachten Schaden. Er kann dabei keine Angriffe aus dem Fall ausführen. Bei Standardangriffen und heftigen Schlägen verursachen seine beiden Großschwerter je nach Elementartyp der Figuren in der Truppe entsprechenden Elementar-Schaden, der nicht von anderen Elementen überdeckt werden kann:",
+      "2": "– Das Großschwert in der linken Hand verursacht <anemo>Anemo-SCH</anemo>, der nicht von anderen Elementen überdeckt werden kann.",
+      "3": "– Wenn sich <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Figuren in der Truppe befinden, verursacht das Großschwert in der rechten Hand gemäß der oben genannten Elementepriorität Schaden, der nicht von anderen Elementen überdeckt werden kann.",
+      "4": "<br/>",
+      "5": "Ersetzt zudem, wenn sich in diesem Modus <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Figuren in der Truppe befinden, Varkas Elementarfähigkeit <strong>Abflauender Sturm</strong> durch die besondere Elementarfähigkeit <strong>Aufkommen der vier Winde</strong>."
+    }
+  },
+  "11280002": {
+    "name": "Aufkommen der vier Winde",
+    "description": {
+      "0": "Varkas besondere Elementarfähigkeit, die Gegnern Flächenschaden des Elements des Großschwerts, das er in der rechten Hand hält, sowie <anemo>Anemo-Flächenschaden</anemo> zufügt, die nicht von anderen Elementen überdeckt werden können.",
+      "1": "Befindet sich anfänglich in der Abklingzeit und kann max. 2-mal angewendet werden.",
+      "2": "Verkürzt, wenn Varkas Standardangriffe im Modus <strong>Ansturm der Winde</strong> Gegner treffen, die Abklingzeit von <strong>Aufkommen der vier Winde</strong> um 0,5 s. Dieser Effekt kann nach jedem Wechsel in den Modus <strong>Ansturm der Winde</strong> bis zu 15-mal ausgelöst werden.",
+      "3": "Außerdem kann Varka die Anwendungsmöglichkeiten von <strong>Aufkommen der vier Winde</strong> verbrauchen, um den besonderen heftigen Schlag <strong>Azurbiss</strong> auszuführen, der keine Ausdauer verbraucht und 2-mal Schaden des Elements des Großschwerts, das er in der rechten Hand hält, sowie 2-mal <anemo>Anemo-Schaden</anemo> verursacht, die nicht von anderen Elementen überdeckt werden können."
+    }
   }
 }
