@@ -13,4 +13,6 @@ export const deobfPropMappings = {
   numberArray: 'JJBHODPMDGE',
   // AvatarSkillDepotExcelConfigData, correlates to string property in 2-length array in first object
   unlockCondition: 'KFLJPMODBIA',
+  // ProudSkillExcelConfigData, correlates to 4-length array in first object
+  costItems: 'NJMNABKGKIJ',
 } as const
