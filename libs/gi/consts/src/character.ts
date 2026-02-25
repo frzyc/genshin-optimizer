@@ -182,6 +182,7 @@ export const nonTravelerCharacterKeys = [
   'Thoma',
   'Tighnari',
   'Varesa',
+  'Varka',
   'Venti',
   'Wanderer',
   'Wriothesley',

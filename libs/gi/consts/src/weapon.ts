@@ -79,6 +79,7 @@ export const allWeaponClaymoreKeys = [
   'FlameForgedInsight',
   'ForestRegalia',
   'FruitfulHook',
+  'GestOfTheMightyWolf',
   'KatsuragikiriNagamasa',
   'LithicBlade',
   'LuxuriousSeaLord',
