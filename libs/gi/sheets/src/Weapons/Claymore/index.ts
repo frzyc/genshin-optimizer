@@ -14,6 +14,7 @@ import FerrousShadow from './FerrousShadow'
 import FlameForgedInsight from './FlameForgedInsight'
 import ForestRegalia from './ForestRegalia'
 import FruitfulHook from './FruitfulHook'
+import GestOfTheMightyWolf from './GestOfTheMightyWolf'
 import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
 import LithicBlade from './LithicBlade'
 import LuxuriousSeaLord from './LuxuriousSeaLord'
@@ -56,6 +57,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   FlameForgedInsight,
   ForestRegalia,
   FruitfulHook,
+  GestOfTheMightyWolf,
   KatsuragikiriNagamasa,
   LithicBlade,
   LuxuriousSeaLord,

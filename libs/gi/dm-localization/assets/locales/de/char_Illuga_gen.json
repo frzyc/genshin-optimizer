@@ -74,7 +74,7 @@
       "0": "Entfacht ein Licht, das <geo>Geo-Flächenschaden</geo> verursacht und den Effekt „Lied des nächtlichen Albtraums“ verleiht, hält 20 s: Verleiht Illuga während der Wirkungsdauer 21 Stapelungen <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Lied der Nachtigall</strong></tooltip>. Verbraucht, wenn aktuelle Truppenmitglieder in der Nähe Gegnern mit einem Standardangriff, heftigen Schlag, Angriff aus dem Fall, der Elementarfähigkeit oder Spezialfähigkeit <geo>Geo-SCH</geo> zufügen, 1 Stapelung „Lied der Nachtigall“ und erhöht den verursachten Schaden basierend auf Illugas Elementarkunde. Erhöht den Schaden zusätzlich, wenn es sich bei diesem Schaden um Schaden durch die Reaktion Mond-Kristallisation handelt.",
       "1": "Verbraucht, wenn auf obige Art verursachter <geo>Geo-SCH</geo> gleichzeitig mehrere Gegner trifft, so viele Stapelungen „Lied der Nachtigall“ wie Gegner getroffen wurden.",
       "2": "<br/>",
-      "3": "Verleiht Illuga zudem für jedes <geo>Geo-Objekt</geo> 5 Stapelungen „Lied der Nachtigall“, wenn sich ein von Truppenmitgliedern in der Nähe generiertes <geo>Geo-Objekt</geo> auf dem Feld befindet und Illuga seine Spezialfähigkeit anwendet, oder ein Truppenmitglied in der Nähe während der Wirkungsdauer von „Lied des nächtlichen Albtraums“ ein <geo>Geo-Objekt</geo> erschafft. Innerhalb von 20 s nach Anwendung der Spezialfähigkeit kann Illuga zusätzlich bis zu 15 Stapelungen „Lied der Nachtigall“ erhalten.",
+      "3": "Verleiht Illuga zudem für jedes <geo>Geo-Objekt</geo> 5 Stapelungen „Lied der Nachtigall“, wenn sich von Truppenmitgliedern in der Nähe generierte <geo>Geo-Objekte</geo> auf dem Feld befinden und Illuga seine Spezialfähigkeit anwendet, oder wenn ein Truppenmitglied in der Nähe während der Wirkungsdauer von „Lied des nächtlichen Albtraums“ <geo>Geo-Objekte</geo> erschafft. Innerhalb von 20 s nach Anwendung der Spezialfähigkeit kann Illuga zusätzlich bis zu 15 Stapelungen „Lied der Nachtigall“ auf diese Weise erhalten.",
       "4": "<br/>",
       "5": "Der Effekt „Lied des nächtlichen Albtraums“ wird beendet, wenn die Stapelungen von „Lied der Nachtigall“ aufgebraucht sind oder die Wirkungsdauer abgelaufen ist."
     },
@@ -161,7 +161,7 @@
   "constellation6": {
     "name": "Albtraum-Pirol",
     "description": {
-      "0": "Verstärkt den Effekt „Schwur der Lichthüter“ des Aufstiegstalents <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>Pakt der Fackelmacher</tooltip></strong>: Erhöht die KT von Gegnern zugefügtem <geo>Geo-SCH</geo> um 10 % und den KSCH des den Gegnern zugefügten Geo-SCH um 30 %.",
+      "0": "Verstärkt den Effekt „Schwur der Lichthüter“ des Aufstiegstalents <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>Pakt der Fackelmacher</tooltip></strong>: Erhöht die KT von Gegnern zugefügtem <geo>Geo-SCH</geo> um 10 % und den KSCH des den Gegnern zugefügten <geo>Geo-SCH</geo> um 30 %.",
       "1": "<br/>",
       "2": "<strong>Mondomen – Reifer Glanz</strong> ",
       "3": "Erhöht die Elementarkunde von Figuren, die vom Effekt „Schwur der Lichthüter“ beeinflusst sind, um 80 Punkte.",

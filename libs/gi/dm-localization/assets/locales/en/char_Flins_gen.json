@@ -210,7 +210,7 @@
     "name": "Night on Bald Mountain",
     "description": {
       "0": "Flins's ATK is increased by 20%.",
-      "1": "Additionally, his Ascension Talent <tooltip ns=char_Flins_gen baseKey18=passive2><strong>\"Whispering Flame\"</strong></tooltip> is enhanced: Flins's Elemental Mastery is increased by 10% of his ATK. The maximum increase obtainable this way is 220."
+      "1": "Additionally, his Ascension Talent <tooltip ns=char_Flins_gen baseKey18=passive2><strong>Whispering Flame</strong></tooltip> is enhanced: Flins's Elemental Mastery is increased by 10% of his ATK. The maximum increase obtainable this way is 220."
     }
   },
   "constellation5": {

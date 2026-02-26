@@ -158,7 +158,7 @@
       "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Columbina_gen baseKey18=skill>Eternal Tides</tooltip></strong>.",
       "1": "Maksimum: Lv. 15.",
       "2": "<br/>",
-      "3": "DMG reaksi Lunar yang diakibatkan seluruh anggota party <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 1,5%."
+      "3": "DMG reaksi Lunar yang diakibatkan seluruh anggota party di sekitar <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 1,5%."
     }
   },
   "constellation4": {

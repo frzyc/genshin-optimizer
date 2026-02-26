@@ -98,6 +98,7 @@ import TravelerGeo from './TravelerGeo'
 import TravelerHydro from './TravelerHydro'
 import TravelerPyro from './TravelerPyro'
 import Varesa from './Varesa'
+import Varka from './Varka'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
@@ -211,6 +212,7 @@ const data: TagMapNodeEntries[] = [
   Thoma,
   Tighnari,
   Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,

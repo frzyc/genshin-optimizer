@@ -273,7 +273,7 @@
       "0": "Setelah melancarkan Elemental Skill <strong>Eternal Tides</strong>, Columbina akan memanggil <strong>Gravity Ripple</strong>.",
       "1": "Gravity Ripple akan mengikuti Karakter aktif dan terus mengakibatkan <hydro>Hydro DMG Area</hydro> terhadap musuh di sekitar.",
       "2": "<br/>",
-      "3": "Selain itu, selama Gravitational Ripple aktif, jika ada Karakter party di sekitar yang memicu reaksi Lunar atau mengakibatkan DMG reaksi Lunar, maka Columbina akan mendapatkan efek New Moon's Omen selama 2 detik dan akan terus mengakumulasi nilai <strong>Gravity</strong> sebesar 20 poin setiap 2 detik.",
+      "3": "Selain itu, selama Gravity Ripple aktif, jika ada Karakter party di sekitar yang memicu reaksi Lunar atau mengakibatkan DMG reaksi Lunar, maka Columbina akan mendapatkan efek New Moon's Omen selama 2 detik dan akan terus mengakumulasi nilai <strong>Gravity</strong> sebesar 20 poin setiap 2 detik.",
       "4": "Nilai maksimum Gravity adalah 60 poin dan akan dihapus saat durasi Gravity Ripple berakhir.",
       "5": "Ketika nilai Gravity mencapai maksimum, akan memicu <strong>Gravity Interference</strong> spesial yang akan menghasilkan efek berbeda berdasarkan reaksi Lunar yang paling banyak mengakumulasi nilai Gravity untuk Columbina. Jika reaksi Lunar yang paling banyak mengakumulasi Gravity untuk Columbina adalah:",
       "6": [
@@ -323,6 +323,28 @@
     "name": "Nightingale's Song",
     "description": {
       "0": "Efek yang diperoleh setelah Illuga melancarkan Elemental Burst <strong>Shadowless Reflection</strong>. Efek ini dapat meningkatkan <geo>Geo DMG</geo> yang diakibatkan Karakter aktif."
+    }
+  },
+  "11280001": {
+    "name": "Sturm und Drang",
+    "description": {
+      "0": "Varka akan berganti ke mode ini setelah melancarkan Elemental Skill <strong>Windbound Execution</strong> dalam Mode Tekan.",
+      "1": "Saat berada dalam mode ini, DMG Normal Attack dan Charged Attack Varka akan meningkat, tetapi tidak bisa melancarkan Plunging Attack. Saat melancarkan Normal Attack dan Charged Attack, pedang claymore di kedua tangan Varka akan mengakibatkan Elemental DMG dengan jenis elemen yang sesuai berdasarkan jenis elemen Karakter dalam party (Elemental DMG ini tidak bisa ditimpa Elemental Infusion lainnya):",
+      "2": [
+        "DMG dari pedang claymore di tangan kirinya akan dikonversi menjadi <anemo>Anemo DMG</anemo> yang tidak bisa ditimpa Elemental Infusion lainnya.",
+        "Jika ada Karakter <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, atau <cryo>Cryo</cryo> dalam party, maka pedang claymore di tangan kanannya akan mengakibatkan Elemental DMG dengan jenis elemen yang sesuai berdasarkan urutan prioritas elemen yang disebutkan di atas."
+      ],
+      "3": "<br/>",
+      "4": "Selain itu, saat dalam mode ini, jika ada Karakter <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, atau <cryo>Cryo</cryo> dalam party, maka Elemental Skill Varka <strong>Windbound Execution</strong> akan dikonversi menjadi Elemental Skill Khusus <strong>Four Winds' Ascension</strong>."
+    }
+  },
+  "11280002": {
+    "name": "Four Winds' Ascension",
+    "description": {
+      "0": "Elemental Skill Khusus milik Varka. Mengakibatkan Elemental DMG Area yang tidak bisa ditimpa Elemental Infusion lainnya dan memiliki jenis elemen yang sesuai dengan pedang claymore di tangan kanan Varka, dan juga mengakibatkan <anemo>Anemo DMG Area</anemo>.",
+      "1": "Akan dimulai dengan cooldown dan memiliki jumlah penggunaan 2 kali.",
+      "2": "Saat Normal Attack Varka dalam mode <strong>Sturm und Drang</strong> mengenai musuh, maka CD <strong>Four Winds' Ascension</strong> akan berkurang 0,5 detik. Setiap kali berganti ke mode <strong>Sturm und Drang</strong>, efek ini dapat terpicu maksimum 15 kali.",
+      "3": "Selain itu, Varka dapat mengonsumsi jumlah penggunaan <strong>Four Winds' Ascension</strong> untuk melancarkan Charged Attack khusus yang tidak mengonsumsi Stamina, <strong>Azure Devour</strong>, untuk mengakibatkan 2 kali Elemental DMG (tidak bisa ditimpa Elemental Infusion lainnya) dengan jenis elemen yang sesuai dengan pedang claymore di tangan kanannya dan juga 2 kali <anemo>Anemo DMG</anemo>."
     }
   }
 }

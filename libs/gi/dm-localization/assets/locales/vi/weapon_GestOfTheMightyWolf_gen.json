@@ -1,0 +1,29 @@
+{
+  "name": "Chiến Hùng Ca Của Sói",
+  "description": {
+    "0": "Theo truyền thuyết, đây là thanh đại kiếm được người kế thừa danh hiệu \"Bắc Phong\" - Ravenwood đích thân rèn đúc trước khi trở thành kỵ sĩ."
+  },
+  "passiveName": "Đạo Kỵ Sĩ Bất Diệt",
+  "passiveDescription": {
+    "0": {
+      "0": "Tốc Độ Tấn Công tăng 10%. Khi Tấn Công Thường trúng kẻ địch/thi triển Kỹ Năng Nguyên Tố/bắt đầu Trọng Kích, người trang bị sẽ lần lượt nhận được 1/2/2 tầng \"Hệ Thơ Tứ Phong\": Sát thương gây ra tăng <cryo>7.5%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 4 lần, mỗi 0.01s tối đa kích hoạt một lần.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\", mỗi tầng Hệ Thơ Tứ Phong sẽ còn khiến người trang bị tăng <cryo>7.5%</cryo> Sát Thương Bạo Kích."
+    },
+    "1": {
+      "0": "Tốc Độ Tấn Công tăng 10%. Khi Tấn Công Thường trúng kẻ địch/thi triển Kỹ Năng Nguyên Tố/bắt đầu Trọng Kích, người trang bị sẽ lần lượt nhận được 1/2/2 tầng \"Hệ Thơ Tứ Phong\": Sát thương gây ra tăng <cryo>9.5%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 4 lần, mỗi 0.01s tối đa kích hoạt một lần.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\", mỗi tầng Hệ Thơ Tứ Phong sẽ còn khiến người trang bị tăng <cryo>9.5%</cryo> Sát Thương Bạo Kích."
+    },
+    "2": {
+      "0": "Tốc Độ Tấn Công tăng 10%. Khi Tấn Công Thường trúng kẻ địch/thi triển Kỹ Năng Nguyên Tố/bắt đầu Trọng Kích, người trang bị sẽ lần lượt nhận được 1/2/2 tầng \"Hệ Thơ Tứ Phong\": Sát thương gây ra tăng <cryo>11.5%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 4 lần, mỗi 0.01s tối đa kích hoạt một lần.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\", mỗi tầng Hệ Thơ Tứ Phong sẽ còn khiến người trang bị tăng <cryo>11.5%</cryo> Sát Thương Bạo Kích."
+    },
+    "3": {
+      "0": "Tốc Độ Tấn Công tăng 10%. Khi Tấn Công Thường trúng kẻ địch/thi triển Kỹ Năng Nguyên Tố/bắt đầu Trọng Kích, người trang bị sẽ lần lượt nhận được 1/2/2 tầng \"Hệ Thơ Tứ Phong\": Sát thương gây ra tăng <cryo>13.5%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 4 lần, mỗi 0.01s tối đa kích hoạt một lần.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\", mỗi tầng Hệ Thơ Tứ Phong sẽ còn khiến người trang bị tăng <cryo>13.5%</cryo> Sát Thương Bạo Kích."
+    },
+    "4": {
+      "0": "Tốc Độ Tấn Công tăng 10%. Khi Tấn Công Thường trúng kẻ địch/thi triển Kỹ Năng Nguyên Tố/bắt đầu Trọng Kích, người trang bị sẽ lần lượt nhận được 1/2/2 tầng \"Hệ Thơ Tứ Phong\": Sát thương gây ra tăng <cryo>15.5%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 4 lần, mỗi 0.01s tối đa kích hoạt một lần.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\", mỗi tầng Hệ Thơ Tứ Phong sẽ còn khiến người trang bị tăng <cryo>15.5%</cryo> Sát Thương Bạo Kích."
+    }
+  }
+}

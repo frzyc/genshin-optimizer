@@ -77,6 +77,7 @@ import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import FruitfulHook from './FruitfulHook'
+import GestOfTheMightyWolf from './GestOfTheMightyWolf'
 import HakushinRing from './HakushinRing'
 import Halberd from './Halberd'
 import Hamayumi from './Hamayumi'
@@ -296,6 +297,7 @@ const data: TagMapNodeEntries[] = [
   FlameForgedInsight,
   ForestRegalia,
   FruitfulHook,
+  GestOfTheMightyWolf,
   KatsuragikiriNagamasa,
   LithicBlade,
   LuxuriousSeaLord,

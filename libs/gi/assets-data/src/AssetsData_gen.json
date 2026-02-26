@@ -372,6 +372,10 @@
       "icon": "UI_EquipIcon_Claymore_RadianceSword",
       "awakenIcon": "UI_EquipIcon_Claymore_RadianceSword_Awaken"
     },
+    "GestOfTheMightyWolf": {
+      "icon": "UI_EquipIcon_Claymore_EnsisAquilonis",
+      "awakenIcon": "UI_EquipIcon_Claymore_EnsisAquilonis_Awaken"
+    },
     "BeginnersProtector": {
       "icon": "UI_EquipIcon_Pole_Gewalt",
       "awakenIcon": "UI_EquipIcon_Pole_Gewalt_Awaken"
@@ -3226,6 +3230,24 @@
       "constellation4": "UI_Talent_S_Illuga_03",
       "constellation5": "UI_Talent_U_Illuga_02",
       "constellation6": "UI_Talent_S_Illuga_04"
+    },
+    "Varka": {
+      "icon": "UI_AvatarIcon_Varka",
+      "iconSide": "UI_AvatarIcon_Side_Varka",
+      "banner": "UI_NameCardPic_Varka_P",
+      "bar": "UI_NameCardPic_Varka_Alpha",
+      "skill": "Skill_S_Varka_01",
+      "burst": "Skill_E_Varka_01_HD",
+      "passive1": "UI_Talent_S_Varka_06",
+      "passive2": "UI_Talent_S_Varka_05",
+      "passive3": "UI_Talent_S_Varka_07",
+      "lockedPassive": "UI_Talent_S_Varka_08",
+      "constellation1": "UI_Talent_S_Varka_01",
+      "constellation2": "UI_Talent_S_Varka_02",
+      "constellation3": "UI_Talent_U_Varka_01",
+      "constellation4": "UI_Talent_S_Varka_03",
+      "constellation5": "UI_Talent_U_Varka_02",
+      "constellation6": "UI_Talent_S_Varka_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

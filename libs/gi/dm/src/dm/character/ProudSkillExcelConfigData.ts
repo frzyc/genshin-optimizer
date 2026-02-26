@@ -15,7 +15,7 @@ type ProudSkillExcelConfigDataObf = {
   descTextMapHash: number //59436107,
   unlockDescTextMapHash: number //4234322242,
   icon: string //"UI_Talent_S_Noel_05",
-  costItems: CostItem[]
+  [deobfPropMappings.costItems]: CostItem[]
   // [
   //   {},
   //   {},
@@ -159,9 +159,10 @@ const proudSkillExcelConfigData = {} as {
 proudSkillExcelConfigDataSrc.forEach((dataObf) => {
   const {
     [deobfPropMappings.upgradedDescTextMapHash]: upgradedDescTextMapHash,
+    [deobfPropMappings.costItems]: costItems,
     ...dataTrim
   } = dataObf
-  const data = { ...dataTrim, upgradedDescTextMapHash }
+  const data = { ...dataTrim, upgradedDescTextMapHash, costItems }
   const { proudSkillGroupId, level } = data
   if (!proudSkillExcelConfigData[proudSkillGroupId])
     proudSkillExcelConfigData[proudSkillGroupId] = []

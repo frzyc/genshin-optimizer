@@ -2281,6 +2281,20 @@ export const formulas = {
       },
     },
   },
+  Varka: {
+    normal1: {
+      sheet: 'Varka',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Varka',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Venti: {
     normal1: {
       sheet: 'Venti',

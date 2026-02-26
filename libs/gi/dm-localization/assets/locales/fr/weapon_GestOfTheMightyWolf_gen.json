@@ -1,0 +1,29 @@
+{
+  "name": "Geste du loup puissant",
+  "description": {
+    "0": "La légende raconte que cette grande épée a été forgée par la main de Ravenwoodµ, qui hérita du nom de Borée, avant son accession à la chevalerie."
+  },
+  "passiveName": "Chevalerie indomptable",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente la VIT d'attaque de 10 %. Lorsqu'une attaque normale touche un ennemi, qu'une compétence élémentaire est initiée ou qu'une attaque chargée est déclenchée, le personnage équipé de l'arme obtient respectivement 1/2/2 cumuls d'hymne des quatre vents, augmentant les DGT infligés de <cryo>7,5 %</cryo> pendant 4 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,01 s.",
+      "1": "De plus, lorsque l'équipe bénéficie de l'effet Hexerei : Rituel secret, chaque cumul d'hymne des quatre vents augmente également les DGT CRIT du personnage équipé de l'arme de <cryo>7,5 %</cryo>."
+    },
+    "1": {
+      "0": "Augmente la VIT d'attaque de 10 %. Lorsqu'une attaque normale touche un ennemi, qu'une compétence élémentaire est initiée ou qu'une attaque chargée est déclenchée, le personnage équipé de l'arme obtient respectivement 1/2/2 cumuls d'hymne des quatre vents, augmentant les DGT infligés de <cryo>9,5 %</cryo> pendant 4 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,01 s.",
+      "1": "De plus, lorsque l'équipe bénéficie de l'effet Hexerei : Rituel secret, chaque cumul d'hymne des quatre vents augmente également les DGT CRIT du personnage équipé de l'arme de <cryo>9,5 %</cryo>."
+    },
+    "2": {
+      "0": "Augmente la VIT d'attaque de 10 %. Lorsqu'une attaque normale touche un ennemi, qu'une compétence élémentaire est initiée ou qu'une attaque chargée est déclenchée, le personnage équipé de l'arme obtient respectivement 1/2/2 cumuls d'hymne des quatre vents, augmentant les DGT infligés de <cryo>11,5 %</cryo> pendant 4 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,01 s.",
+      "1": "De plus, lorsque l'équipe bénéficie de l'effet Hexerei : Rituel secret, chaque cumul d'hymne des quatre vents augmente également les DGT CRIT du personnage équipé de l'arme de <cryo>11,5 %</cryo>."
+    },
+    "3": {
+      "0": "Augmente la VIT d'attaque de 10 %. Lorsqu'une attaque normale touche un ennemi, qu'une compétence élémentaire est initiée ou qu'une attaque chargée est déclenchée, le personnage équipé de l'arme obtient respectivement 1/2/2 cumuls d'hymne des quatre vents, augmentant les DGT infligés de <cryo>13,5 %</cryo> pendant 4 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,01 s.",
+      "1": "De plus, lorsque l'équipe bénéficie de l'effet Hexerei : Rituel secret, chaque cumul d'hymne des quatre vents augmente également les DGT CRIT du personnage équipé de l'arme de <cryo>13,5 %</cryo>."
+    },
+    "4": {
+      "0": "Augmente la VIT d'attaque de 10 %. Lorsqu'une attaque normale touche un ennemi, qu'une compétence élémentaire est initiée ou qu'une attaque chargée est déclenchée, le personnage équipé de l'arme obtient respectivement 1/2/2 cumuls d'hymne des quatre vents, augmentant les DGT infligés de <cryo>15,5 %</cryo> pendant 4 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les 0,01 s.",
+      "1": "De plus, lorsque l'équipe bénéficie de l'effet Hexerei : Rituel secret, chaque cumul d'hymne des quatre vents augmente également les DGT CRIT du personnage équipé de l'arme de <cryo>15,5 %</cryo>."
+    }
+  }
+}
