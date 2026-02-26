@@ -51,7 +51,7 @@
     },
     "skillParams": {
       "0": "Dano de Pressionar",
-      "1": "Manter pressionado",
+      "1": "Dano ao Manter pressionado",
       "2": "Tempo de Recarga",
       "3": "",
       "4": "",
@@ -74,7 +74,7 @@
       "0": "Acende uma lâmpada, causando <geo>Dano Geo em AdE</geo> e obtendo o efeito Pesadelo de Luscinia por 20s. Nessa duração, Illuga obtém 21 acúmulos de <tooltip ns=tooltips_gen baseKey18=11270001 values=[]><strong>Canção de Luscinia</strong></tooltip>. Quando o Ataque Normal, Carregado, Imersivo, a Habilidade Elemental ou o Supremo do personagem ativo próximo causar <geo>Dano Geo</geo> contra o inimigo, consome 1 acúmulo de Canção de Luscinia, aumentando o Dano causado. O valor do aumento é baseado na Proficiência Elemental de Illuga. Se esse Dano for Dano de Cristalização Lunar, aumenta ainda mais o Dano causado.",
       "1": "Quando o <geo>Dano Geo</geo> acima atingir mais de um inimigo simultaneamente, consumirá acúmulos de Canção de Luscinia correspondentes a quantidade de inimigos atingidos.",
       "2": "<br/>",
-      "3": "Além disso, quando Illuga é o personagem ativo e há uma <geo>Construção Geo</geo> criada por um personagem próximo e lançar seu Supremo, ou na duração do Pesadelo de Luscinia, e quando o personagem próximo criar uma <geo>Construção Geo</geo>, cada <geo>Construção Geo</geo> ativa farão Illuga obter 5 acúmulos adicionais de Canção de Luscinia. Illuga pode obter até 15 acúmulos adicionais de Canção de Luscinia nos 20s após lançar um Supremo dessa forma.",
+      "3": "Além disso, quando Illuga é o personagem ativo e há uma <geo>Construção Geo</geo> criada por um personagem próximo e lançar seu Supremo, ou na duração do Pesadelo de Luscinia, e quando o personagem próximo criar uma <geo>Construção Geo</geo>, cada <geo>Construção Geo</geo> ativa fará Illuga obter 5 acúmulos adicionais de Canção de Luscinia. Illuga pode obter até 15 acúmulos adicionais de Canção de Luscinia nos 20s após lançar um Supremo dessa forma.",
       "4": "<br/>",
       "5": "Quando os acúmulos de Canção de Luscinia acabarem, ou quando a duração acabar, o efeito Pesadelo de Luscinia será removido."
     },
@@ -100,7 +100,7 @@
   "passive1": {
     "name": "Juramento do Iluminador",
     "description": {
-      "0": "Depois que lançar a Habilidade Elemental <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Pássaro da Canção Matinal</tooltip></strong> ou o Supremo <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflexo Vazio</tooltip></strong>, todos os outros personagens da equipe obtém o efeito Juramento da Lâmpada por 20s: aumenta a Taxa CRIT em 5% o Dano CRIT em 10% contra os inimigos que sofrerem <geo>Dano Geo</geo>.",
+      "0": "Depois que lançar a Habilidade Elemental <strong><tooltip ns=char_Illuga_gen baseKey18=skill>Pássaro da Canção Matinal</tooltip></strong> ou o Supremo <strong><tooltip ns=char_Illuga_gen baseKey18=burst>Reflexo Vazio</tooltip></strong>, todos os outros personagens da equipe obtêm o efeito Juramento da Lâmpada por 20s: para <geo>Dano Geo</geo> causado a oponentes, a Taxa CRIT aumenta em 5% e o Dano CRIT aumenta em 10%.",
       "1": "<br/>",
       "2": "<strong>Presságio Lunar: Reluzir Cheio</strong>",
       "3": "Personagens afetados por Juramento da Lâmpada obtêm 50 de Proficiência Elemental."
@@ -122,7 +122,7 @@
     "name": "Caminhada do Vigilante Noturno",
     "description": {
       "0": "Durante a noite (18:00 - 06:00), os membros do seu grupo ganham o efeito Passos Ágeis: Veloc. Mov. aumenta em 10%.",
-      "1": "Não tem efeito em Domínios, Domínios Dizimados ou Abismo Espiral. O efeito Passos Ágeis não se acumula.",
+      "1": "Não tem efeito em Domínios, Domínios Dizimados ou Abismo do Espiral. O efeito Passos Ágeis não se acumula.",
       "2": "Além disso, Illuga parece entender os sussurros da Caçada Feroz..."
     }
   },
