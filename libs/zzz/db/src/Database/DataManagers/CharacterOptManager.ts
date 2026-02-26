@@ -317,7 +317,8 @@ export class CharacterOptManager extends DataManager<
 
         let { attribute, damageType1, damageType2 } = tag
 
-        if (q !== 'dmg_') attribute = undefined
+        if (q !== 'dmg_' && q !== 'sheer_dmg_' && q !== 'resIgn_')
+          attribute = undefined
         if (attribute)
           attribute = validateValue(attribute, allAttributeKeys) as
             | AttributeKey

@@ -24,7 +24,7 @@ import { z } from 'zod'
 
 export const substatSchema = z.object({
   key: zodEnumWithDefault([...allDiscSubStatKeys, ''] as const, ''),
-  upgrades: zodBoundedNumber(0, 5, 0),
+  upgrades: zodBoundedNumber(0, 6, 0),
 })
 
 const substatValidationSchema = z.object({

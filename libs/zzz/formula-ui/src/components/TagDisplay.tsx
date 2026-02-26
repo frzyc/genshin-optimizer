@@ -67,6 +67,7 @@ const labelMap = {
   resIgn_: 'Res Ignore',
   dazeInc_: 'Daze Increase',
   buff_: 'Buff Bonus',
+  sheer_dmg_: 'Sheer DMG',
 } as const
 function TagStrDisplay({
   tag,
