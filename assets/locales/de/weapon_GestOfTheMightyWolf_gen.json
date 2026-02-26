@@ -1,0 +1,29 @@
+{
+  "name": "Kampflied des Wolfs",
+  "description": {
+    "0": "In den Legenden heißt es, dass dieses Großschwert von Ravenwood höchstselbst, der den Titel des „Nordwinds“ geerbt hatte, noch bevor er zum Ritter aufgestiegen war, geschmiedet wurde."
+  },
+  "passiveName": "Unbeugsames Rittertum",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die Angriffs-GSW um 10 %. Verleiht dem Träger beim Treffen eines Gegners mit einem Standardangriff / Anwenden einer Elementarfähigkeit / Starten eines heftigen Schlags jeweils 1/2/2 Stapelungen „Gedichte der vier Winde“: Erhöht den verursachten Schaden 4 s lang um <cryo>7,5 %</cryo>, 4-fach stapelbar, 0,01 s Abklingzeit.",
+      "1": "Erhöht für jede Stapelung von „Gedichte der vier Winde“ zudem den KSCH des Trägers um <cryo>7,5 %</cryo>, wenn die Truppe den Effekt „Hexerei – Geheimes Ritual“ besitzt."
+    },
+    "1": {
+      "0": "Erhöht die Angriffs-GSW um 10 %. Verleiht dem Träger beim Treffen eines Gegners mit einem Standardangriff / Anwenden einer Elementarfähigkeit / Starten eines heftigen Schlags jeweils 1/2/2 Stapelungen „Gedichte der vier Winde“: Erhöht den verursachten Schaden 4 s lang um <cryo>9,5 %</cryo>, 4-fach stapelbar, 0,01 s Abklingzeit.",
+      "1": "Erhöht für jede Stapelung von „Gedichte der vier Winde“ zudem den KSCH des Trägers um <cryo>9,5 %</cryo>, wenn die Truppe den Effekt „Hexerei – Geheimes Ritual“ besitzt."
+    },
+    "2": {
+      "0": "Erhöht die Angriffs-GSW um 10 %. Verleiht dem Träger beim Treffen eines Gegners mit einem Standardangriff / Anwenden einer Elementarfähigkeit / Starten eines heftigen Schlags jeweils 1/2/2 Stapelungen „Gedichte der vier Winde“: Erhöht den verursachten Schaden 4 s lang um <cryo>11,5 %</cryo>, 4-fach stapelbar, 0,01 s Abklingzeit.",
+      "1": "Erhöht für jede Stapelung von „Gedichte der vier Winde“ zudem den KSCH des Trägers um <cryo>11,5 %</cryo>, wenn die Truppe den Effekt „Hexerei – Geheimes Ritual“ besitzt."
+    },
+    "3": {
+      "0": "Erhöht die Angriffs-GSW um 10 %. Verleiht dem Träger beim Treffen eines Gegners mit einem Standardangriff / Anwenden einer Elementarfähigkeit / Starten eines heftigen Schlags jeweils 1/2/2 Stapelungen „Gedichte der vier Winde“: Erhöht den verursachten Schaden 4 s lang um <cryo>13,5 %</cryo>, 4-fach stapelbar, 0,01 s Abklingzeit.",
+      "1": "Erhöht für jede Stapelung von „Gedichte der vier Winde“ zudem den KSCH des Trägers um <cryo>13,5 %</cryo>, wenn die Truppe den Effekt „Hexerei – Geheimes Ritual“ besitzt."
+    },
+    "4": {
+      "0": "Erhöht die Angriffs-GSW um 10 %. Verleiht dem Träger beim Treffen eines Gegners mit einem Standardangriff / Anwenden einer Elementarfähigkeit / Starten eines heftigen Schlags jeweils 1/2/2 Stapelungen „Gedichte der vier Winde“: Erhöht den verursachten Schaden 4 s lang um <cryo>15,5 %</cryo>, 4-fach stapelbar, 0,01 s Abklingzeit.",
+      "1": "Erhöht für jede Stapelung von „Gedichte der vier Winde“ zudem den KSCH des Trägers um <cryo>15,5 %</cryo>, wenn die Truppe den Effekt „Hexerei – Geheimes Ritual“ besitzt."
+    }
+  }
+}

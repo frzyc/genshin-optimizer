@@ -304,7 +304,7 @@
       "0": "Depois de lançar a Habilidade Elemental <strong>Céu e Terra Manifestados</strong>, Zibai troca para esse modo. Esse modo dura até 15s, e possui as seguintes propriedades:",
       "1": [
         " Ao realizar um Ataque Normal e Carregado, causa <geo>Dano Geo</geo> que não pode ser substituído.",
-        " A Habilidade Elemental <strong>Céu e Terra Manifestados</strong> será substituída pela Habilidade Elemental especial <strong>Passos do Alazão Espiritual</strong>. Quando Zibai possui pelo menos 70 de <strong>Radiância da Conversão</strong>, consome 70 acúmulo de Radiância da Conversão, lança Passos do Alazão Espiritual causando duas instâncias de <geo>Dano Geo</geo>, com o Dano do 2º Golpe é considerado Dano de Cristalização Lunar."
+        " A Habilidade Elemental <strong>Céu e Terra Manifestados</strong> será substituída pela Habilidade Elemental especial <strong>Passos do Alazão Espiritual</strong>. Quando Zibai possui pelo menos 70 de <strong>Radiância da Conversão</strong>, consome 70 acúmulos de Radiância da Conversão, lança Passos do Alazão Espiritual causando duas instâncias de <geo>Dano Geo</geo>, com o Dano do 2º Golpe sendo considerado Dano de Cristalização Lunar."
       ],
       "2": "<br/>",
       "3": "Limite máximo de <strong>Radiância da Conversão</strong> é 100. Zibai pode acumular Radiância da Conversão das seguintes formas:",
@@ -314,15 +314,37 @@
       ],
       "5": "<br/>",
       "6": "<strong>Presságio Lunar: Reluzir Cheio</strong>",
-      "7": "Quando um membro próximo da equipe desencadeia Cristalização Lunar, Zibai acumula 35 de <strong>Radiância da Conversão</strong>. É possível acumular Radiância da Conversão< uma vez a cada 4s dessa forma. Lançar a Habilidade Elemental especial <strong>Passos do Alazão Espiritual</strong> redefinirá a Recarga de <strong>Radiância da Conversão</strong> acumulada dessa forma.",
+      "7": "Quando um membro próximo da equipe desencadeia Cristalização Lunar, Zibai acumula 35 de <strong>Radiância da Conversão</strong>. É possível acumular Radiância da Conversão uma vez a cada 4s dessa forma. Lançar a Habilidade Elemental especial <strong>Passos do Alazão Espiritual</strong> redefinirá a Recarga de <strong>Radiância da Conversão</strong> acumulada dessa forma.",
       "8": "<br/>",
-      "9": "Depois de lançar <strong>Radiância da Conversão</strong> 4 vezes, ou quando a duração acabar, Zibai sai desse modo."
+      "9": "Depois de lançar <strong>Passos do Alazão Espiritual</strong> 4 vezes, ou quando a duração acabar, Zibai sai desse modo."
     }
   },
   "11270001": {
     "name": "Canção de Luscinia",
     "description": {
       "0": "Efeito que Illuga obtém depois de lançar seu Supremo <strong>Reflexo Vazio</strong>. Aumenta o <geo>Dano Geo</geo> causado pelo personagem atual."
+    }
+  },
+  "11280001": {
+    "name": "Investida Furacão",
+    "description": {
+      "0": "Depois de pressionar a Habilidade Elemental <strong>Execução Zéfira</strong>, Varka troca para esse modo.",
+      "1": "Quando está nesse modo, aumenta o Dano do Ataque Normal e Carregado de Varka, e o impossibilita de realizar Ataques Imersivos. Quando Varka fizer um Ataque Normal ou Carregado, empunhará dois espadões e causará Dano Elemental que não pode ser substituído de acordo com os Tipos Elementais dos personagens da equipe:",
+      "2": [
+        " O espadão empunhado na sua mão esquerda causará <anemo>Dano Anemo</anemo> que não pode ser substituído.",
+        " Quando a equipe possuir personagens <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> ou <cryo>Cryo</cryo>, o espadão empunhado na sua mão direita seguirá essa ordem de prioridade de Tipos Elementais para causar Dano Elemental que não pode ser substituído."
+      ],
+      "3": "<br/>",
+      "4": "Além disso, quando está nesse modo, se a equipe possuir personagens <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> ou <cryo>Cryo</cryo>, a Habilidade Elemental <strong>Execução Zéfira</strong> de Varka será substituída pela Habilidade Elemental especial <strong>Ascensão dos Quatro Ventos</strong>."
+    }
+  },
+  "11280002": {
+    "name": "Ascensão dos Quatro Ventos",
+    "description": {
+      "0": "Habilidade Elemental especial de Varka que causa <anemo>Dano Anemo em AdE</anemo> e Dano Elemental em AdE correspondente insubstituível com o espadão de sua mão direita.",
+      "1": "Inicia em recarga com até 2 Usos.",
+      "2": "Quando Varka está no modo <strong>Investida Furacão</strong> e atinge um Ataque Normal em um inimigo, reduz a recarga de <strong>Ascensão dos Quatro Ventos</strong> em 0.5s. Esse efeito pode ser desencadeado até 15 vezes depois de cada vez que trocar para o modo <strong>Investida Furacão</strong>.",
+      "3": "Além disso, Varka consome os Usos de <strong>Ascensão dos Quatro Ventos</strong> para realizar o Ataque Carregado especial <strong>Devoração Cerúlea</strong> que não consome Stamina, causando 2 instâncias de Dano Elemental correspondente insubstituível com o espadão de sua mão direita e 2 instâncias de <anemo>Dano Anemo</anemo>."
     }
   }
 }

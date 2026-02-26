@@ -115,7 +115,7 @@
       "4": "<strong>Ataque Carregado: Rochoso</strong>",
       "5": [
         " Cada Ataque Carregado causa mais <geo>Dano Geo</geo>. O aumento de Dano é de 120% do ATQ d{F#a}{M#o} Viajante.",
-        " Nos 15s após atingir um inimigo, personagens têm o efeito do escudo aumentado em 20%.",
+        " Nos 15s após atingir um inimigo, personagens próximos têm o efeito do escudo aumentado em 20%.",
         " É possível realizar um <strong>Ataque Carregado: Rochoso</strong> a cada 15s."
       ]
     }

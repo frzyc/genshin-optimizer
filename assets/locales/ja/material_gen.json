@@ -242,6 +242,9 @@
   "FortuneCoin": {
     "name": "吉語銭"
   },
+  "WindscapeSplendor": {
+    "name": "風境の光彩"
+  },
   "SightseeingExperience": {
     "name": "漫遊見聞"
   },
@@ -1139,6 +1142,9 @@
   "Illuga": {
     "name": "イルーガ"
   },
+  "Varka": {
+    "name": "ファルカ"
+  },
   "KachinasStellaFortuna": {
     "name": "カチーナの星屑"
   },
@@ -1216,6 +1222,9 @@
   },
   "IllugasStellaFortuna": {
     "name": "イルーガの星屑"
+  },
+  "VarkasStellaFortuna": {
+    "name": "ファルカの星屑"
   },
   "Apple": {
     "name": "リンゴ"
@@ -8252,6 +8261,18 @@
   "CharredMushroomPhantasm": {
     "name": "焦げ炭のようなパンダフル・キノコ"
   },
+  "SuspiciousGoldenTemperedJade": {
+    "name": "微妙な鍛金冷玉"
+  },
+  "GoldenTemperedJade": {
+    "name": "鍛金冷玉"
+  },
+  "DeliciousGoldenTemperedJade": {
+    "name": "美味しそうな鍛金冷玉"
+  },
+  "HeartyIndulgence": {
+    "name": "「爽快」"
+  },
   "RecipeItem": {
     "name": "レシピアイテム"
   },
@@ -9043,6 +9064,9 @@
   },
   "RecipeMushroomPhantasm": {
     "name": "レシピ：パンダフル・キノコ"
+  },
+  "RecipeGoldenTemperedJade": {
+    "name": "レシピ：鍛金冷玉"
   },
   "CraftedItems": {
     "name": "合成産物"
@@ -9853,6 +9877,9 @@
   },
   "RemnantOfTheDreadwing": {
     "name": "悪夢の枯骸"
+  },
+  "PrismaticSeveredTail": {
+    "name": "稜光の断尾"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔の王の瓦"
@@ -13382,6 +13409,12 @@
   "RaggedDoll": {
     "name": "古びた「人形」"
   },
+  "AccessInsignia": {
+    "name": "権限の記章"
+  },
+  "SeverelyContaminatedTeardropCrystal": {
+    "name": "深く汚染された涙の結晶"
+  },
   "ScribbledLetter": {
     "name": "乱雑な筆跡で書かれた手紙"
   },
@@ -13438,6 +13471,9 @@
   },
   "IrismoonSeal": {
     "name": "虹月の石符"
+  },
+  "MultiPurposeNegotiationTool": {
+    "name": "万能交渉アイテム"
   },
   "TheWhiteHorseAdeptusMeetsTheWhiteHorseAdeptusInLiyueHarbor": {
     "name": "「白馬の仙人、璃月港で白馬の仙人を見る」"
@@ -13511,6 +13547,15 @@
   "GreatDetectiveHurlockTheAlchemistAndTheClockworkSaint": {
     "name": "名探偵ハーロック・錬金術師とクロックワークの聖人"
   },
+  "EventInvitation": {
+    "name": "イベント招待状"
+  },
+  "FeatherlightMora": {
+    "name": "ふわふわしたモラ"
+  },
+  "HighlyElasticFishMeat": {
+    "name": "弾力性に富んだ魚肉"
+  },
   "DamagedLogs": {
     "name": "破損した日誌"
   },
@@ -13528,6 +13573,9 @@
   },
   "NoteClippedInABook": {
     "name": "本に挟まれていたメモ"
+  },
+  "DodocosEnchantedCandy": {
+    "name": "「ドドコのマジカルキャンディ」"
   },
   "AMessageFromTheLegendaryThiefReedMiller": {
     "name": "大怪盗レッド・ミラーの書き置き"
@@ -13551,13 +13599,31 @@
     "name": "蒼星フェイ史略"
   },
   "NightMurmursFromTheFarBorderVarcolac": {
-    "name": "辺境夜話・ヴァルコラク"
+    "name": "辺境夜話・鬣の狼"
   },
   "TalesCarriedByTheNorthwind": {
     "name": "朔風集"
   },
   "AncientHandwriting": {
     "name": "古い筆跡"
+  },
+  "ALetterCarriedByTheWind": {
+    "name": "風が運んできた手紙"
+  },
+  "VarkasInvitationTicket": {
+    "name": "ファルカの引換券"
+  },
+  "VarkasSecretStashOfCash": {
+    "name": "ファルカのへそくり"
+  },
+  "OnFungiCommunitiesDraftManuscript": {
+    "name": "『キノコン概論』暫定稿"
+  },
+  "LetterFromYaePublishingHouse": {
+    "name": "八重堂からの手紙"
+  },
+  "LetterFromTheAkademiya": {
+    "name": "教令院からの手紙"
   },
   "TearsAmongTheStars": {
     "name": "星間の涙"
@@ -15554,6 +15620,12 @@
   "TravelNotesLanternlitOde": {
     "name": "紀行・天翔"
   },
+  "VarkaLeadWolf": {
+    "name": "ファルカ・群狼の長"
+  },
+  "TravelNotesNortherlyWinds": {
+    "name": "紀行・北風"
+  },
   "EchoDandelionKnight": {
     "name": "軌跡·蒲公英騎士"
   },
@@ -15604,6 +15676,12 @@
   },
   "EchoFleeingSunlight": {
     "name": "軌跡・逃げ回る太陽"
+  },
+  "EchoFrostflakeHeron": {
+    "name": "軌跡・白鷺氷華"
+  },
+  "EchoPillarOfFortitude": {
+    "name": "軌跡・磐祭葉守"
   },
   "FaintGlow": {
     "name": "薄明"
@@ -15941,6 +16019,12 @@
   "JadelightCanopy": {
     "name": "「青玄陽華の華笠」"
   },
+  "SpotterKamera": {
+    "name": "探索写真機"
+  },
+  "HarmonicKeys": {
+    "name": "諧律のチェンバロ"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "説明：風神の瞳の共鳴石"
   },
@@ -16126,6 +16210,9 @@
   },
   "ScrollOfTheFieryFirmament": {
     "name": "「熾天の絵巻」"
+  },
+  "SphereOfFleetingShadow": {
+    "name": "「朧な影の球体装置」"
   },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "花雨に重なる雲山"
@@ -16466,6 +16553,45 @@
   "ByDecree": {
     "name": "如律勅令"
   },
+  "PoisedToDance": {
+    "name": "舞を待つ優雅な姿"
+  },
+  "FragrantTouch": {
+    "name": "芳香を楽しむ"
+  },
+  "BlearyEyes": {
+    "name": "眠たげな眼差し"
+  },
+  "LittleFriend": {
+    "name": "小さな友達"
+  },
+  "DignifiedAppearance": {
+    "name": "気品溢れる姿"
+  },
+  "TranquilRadiance": {
+    "name": "穏やかな光"
+  },
+  "NinjaReady": {
+    "name": "忍術準備完了"
+  },
+  "BubblesDrifting": {
+    "name": "ふわふわバブル"
+  },
+  "ValiantHero": {
+    "name": "豪胆の構え"
+  },
+  "ReaderInspired": {
+    "name": "読書の所感"
+  },
+  "PreparingForTreatment": {
+    "name": "治療準備"
+  },
+  "OniKingDominion": {
+    "name": "鬼王の威厳"
+  },
+  "RelaxedAppearance": {
+    "name": "悠然とした姿"
+  },
   "FantasticalMarvel": {
     "name": "素晴らしきトリック"
   },
@@ -16522,6 +16648,15 @@
   },
   "RedHotMeter": {
     "name": "レッドホット・リズム"
+  },
+  "ElysiumAndTheMoon": {
+    "name": "月と楽園"
+  },
+  "FrostmoonPrayers": {
+    "name": "霜月の祈り"
+  },
+  "MysteriousWhiteStar": {
+    "name": "鏡煙の白星"
   },
   "VigorousYapping": {
     "name": "元気いっぱいのお話し！"
@@ -16627,6 +16762,9 @@
   },
   "ConsecratedHornedCrocodile": {
     "name": "聖骸ツノワニ"
+  },
+  "GoldflameQucusaurTyrant": {
+    "name": "暴君・金焔のクク竜"
   },
   "UndividedHeart": {
     "name": "唯一の心"
@@ -17017,6 +17155,15 @@
   },
   "DeathlyOverflow": {
     "name": "亡水溢流"
+  },
+  "CompanionsCounsel": {
+    "name": "臨機の策応"
+  },
+  "RectifyingProcessor": {
+    "name": "循環整流器"
+  },
+  "FlamelordsBlessing": {
+    "name": "「焔の主の祝福」"
   },
   "MagicGuide": {
     "name": "魔導緒論"
@@ -17549,6 +17696,27 @@
   "BonaAndCocouik": {
     "name": "ポーナと「ココウィク」"
   },
+  "SilvermoonHall": {
+    "name": "銀月の庭"
+  },
+  "TidesealStone": {
+    "name": "潮印石"
+  },
+  "FrostmoonEnclave": {
+    "name": "霜月の里"
+  },
+  "NashaTown": {
+    "name": "ナシャタウン"
+  },
+  "KuuvahkiExperimentalDesignBureau": {
+    "name": "クーヴァキ実験設計局"
+  },
+  "ElementalTransfigurationSuperconductBlessing": {
+    "name": "元素変幻・超電導の祝福"
+  },
+  "ElementalTransfigurationVaporizeBlessing": {
+    "name": "元素変幻・蒸発の祝福"
+  },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
   },
@@ -17789,6 +17957,12 @@
   "AnAdventureThroughTheMorningMist": {
     "name": "「朝霧を越えた冒険」"
   },
+  "GeniussUpgradeTechnique": {
+    "name": "天才的な改造"
+  },
+  "ClinkClankLegion": {
+    "name": "カチャカチャ軍団"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -17866,6 +18040,9 @@
   },
   "SeaOfBygoneErasCrown": {
     "name": "往日の海・クラウン"
+  },
+  "NodKrai": {
+    "name": "ナド・クライ"
   },
   "BeginnerPlayerBadge": {
     "name": "初心者プレイヤーメダル"
@@ -17998,6 +18175,12 @@
   },
   "StarpiercerSublimation": {
     "name": "貫星・真化"
+  },
+  "PhantasmalGiftStarOmen": {
+    "name": "幻のギフト・スターオーメン"
+  },
+  "UnbreakableDurandarte": {
+    "name": "無毀・デュランガルド"
   },
   "AdventurerCamp": {
     "name": "冒険者の臨時拠点"
@@ -18290,6 +18473,39 @@
   "CompanionsHaven": {
     "name": "仲間と故郷"
   },
+  "AComfyRoomForGuestsFromNearAndFar": {
+    "name": "安らぎのゲストルーム"
+  },
+  "SweetSlumberBeneathTheMoon": {
+    "name": "月下の安らかな眠り"
+  },
+  "TheOrderlyGridOfSecrets": {
+    "name": "秘聞の整然たる秩序"
+  },
+  "TheBestestAndWarmestHome": {
+    "name": "温かな最高の家"
+  },
+  "PreBattleRespite": {
+    "name": "戦いの前の小休憩"
+  },
+  "WildernessOfTheFarNorth": {
+    "name": "北の果ての野原"
+  },
+  "BustlingBorderTown": {
+    "name": "賑やかな辺境の町"
+  },
+  "TranquilPrayerUnderTheMoon": {
+    "name": "月下の祈りの歌"
+  },
+  "SolitaryLightInTheLongNight": {
+    "name": "長き夜をともす孤灯"
+  },
+  "PromisingWorkshops": {
+    "name": "新進気鋭の工房"
+  },
+  "CrescentMoonSerenity": {
+    "name": "新月の静寂"
+  },
   "TimberWallWithJadeEaves": {
     "name": "木製軒先付き白壁"
   },
@@ -18307,6 +18523,9 @@
   },
   "LoftyTowersFashionableCanvas": {
     "name": "「高塔流行りのキャンバス」"
+  },
+  "BasesCoolingSecret": {
+    "name": "「拠点の涼しさの秘訣」"
   },
   "TraditionalCedarFlooring": {
     "name": "垂香の伝統床"
@@ -18326,6 +18545,9 @@
   "LoftyTowersFloorOfTrials": {
     "name": "「高塔の競技タイル」"
   },
+  "BaseAlloyFlooring": {
+    "name": "「拠点の合金床」"
+  },
   "CheckeredCedarCeiling": {
     "name": "垂香の格子柄天井"
   },
@@ -18343,6 +18565,9 @@
   },
   "LoftyTowersRadiantCeiling": {
     "name": "「高塔の輝く天井」"
+  },
+  "BasePaneledCeiling": {
+    "name": "「拠点の頑丈な天井」"
   },
   "TwoTierCandleChandelier": {
     "name": "二段式キャンドルシャンデリア"
@@ -18554,6 +18779,9 @@
   "LoftyTowersFlamingBrazier": {
     "name": "「高塔の燃え盛る奮起」"
   },
+  "BasesSoftTranquility": {
+    "name": "「拠点の静かな光」"
+  },
   "NorthernBirchFoldingCounter": {
     "name": "極北樺のコーナーカウンター"
   },
@@ -18613,6 +18841,21 @@
   },
   "FactoryCabinetSlapdashStorage": {
     "name": "工場の収納‐「気ままな積み重ね」"
+  },
+  "IndoorLowTableUniqueImportance": {
+    "name": "ローテーブル-「独自の価値」"
+  },
+  "IndoorBookshelfReaderlyLeisure": {
+    "name": "本棚-「憩いの読書」"
+  },
+  "IndoorCounterVisitorsWelcome": {
+    "name": "カウンター-「正式な訪問」"
+  },
+  "ToweringCabinet": {
+    "name": "「タワーキャビネット」"
+  },
+  "HotelWardrobeExtraRoom": {
+    "name": "客室のクローゼット-「大容量」"
   },
   "TwoTierLibraryBookshelf": {
     "name": "図書館の二段本棚"
@@ -18797,6 +19040,15 @@
   "WhispersInTheMoonlight": {
     "name": "「静夜の密談」"
   },
+  "CookieRound": {
+    "name": "「まんまるビスケット」"
+  },
+  "ClinkClankHouseOfStorage": {
+    "name": "「カチャカチャみんなのおうち」"
+  },
+  "FrostMoonRoundTableASoftBlueSky": {
+    "name": "霜月の円卓-「柔らかな蒼穹」"
+  },
   "BreezeBlessedBed": {
     "name": "そよ風に守られたベッド"
   },
@@ -18832,6 +19084,12 @@
   },
   "SimpleCareBed": {
     "name": "簡易医療ベッド"
+  },
+  "BestestLittleNest": {
+    "name": "「とっておきの小さなベッド」"
+  },
+  "FrostMoonStoneBedFreshCool": {
+    "name": "霜月の石の寝台-「身に沁みる涼」"
   },
   "PineReceptionCounter": {
     "name": "松の旅館受付"
@@ -18955,6 +19213,9 @@
   },
   "ToAFriend": {
     "name": "「友へ」"
+  },
+  "PedunculateOakWoodMoonrestBackedChair": {
+    "name": "サマーオークの椅子「枕月」"
   },
   "NorthernStoneHearth": {
     "name": "北地の石造暖炉"
@@ -19220,6 +19481,12 @@
   "IndoorRugStarlitNight": {
     "name": "絨毯-「闇夜の星章」"
   },
+  "FrostMoonCarpetLimpidHue": {
+    "name": "霜月の絨毯-「明澄一色」"
+  },
+  "FluffyLittleRug": {
+    "name": "「もふもふラグ」"
+  },
   "VibrantPotBornInFlames": {
     "name": "絢爛の陶磁器-「烈焔より生まれしもの」"
   },
@@ -19285,6 +19552,12 @@
   },
   "MiniatureCandlestandMiniatureSun": {
     "name": "小さな燭台-「小さな太陽」"
+  },
+  "RimehornGlimmer": {
+    "name": "「微かな凛光」"
+  },
+  "TwistyMushroom": {
+    "name": "「曲がりキノコ」"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "花瓶-「水色の落着き」"
@@ -19490,6 +19763,9 @@
   "BurstOfAppetite": {
     "name": "「食欲爆発」"
   },
+  "FrostMoonSmallTableAromaOfFreshFruit": {
+    "name": "霜月の側卓-「弾ける果実の香り」"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "「卓識の地の明察」"
   },
@@ -19516,6 +19792,9 @@
   },
   "MountainFireworks": {
     "name": "「山々の花火」"
+  },
+  "BranchesAgainstTheBlueSky": {
+    "name": "「紺碧の枝」"
   },
   "LandscapePaintingCountryHome": {
     "name": "風景画-「田舎の民家」"
@@ -19621,6 +19900,15 @@
   },
   "FlagOfPiramida": {
     "name": "「ピラミダの旗」"
+  },
+  "SteadfastAsIron": {
+    "name": "「堅鉄の守り」"
+  },
+  "BannerOfTheLightkeepers": {
+    "name": "「ライトキーパーの旗」"
+  },
+  "TavernWallLampHoveringHallwayLight": {
+    "name": "酒場の壁掛けランプ-「回廊の光」"
   },
   "LingeringMoment": {
     "name": "「絆の時」"
@@ -20416,6 +20704,30 @@
   },
   "StarshynaWalking": {
     "name": "「剣を携えて」"
+  },
+  "BaseAuxiliaryBuildingMultipurposeGreenhouse": {
+    "name": "拠点の別棟-「多目的温室」"
+  },
+  "BaseAuxiliaryBuildingSecretSpace": {
+    "name": "拠点の別棟-「秘密の空間」"
+  },
+  "BaseAuxiliaryBuildingWaterTower": {
+    "name": "拠点の別棟-「そびえ立つ給水塔」"
+  },
+  "BaseWindwheelAuxiliaryPower": {
+    "name": "拠点の風車-「補助動力」"
+  },
+  "BaseGateAccessLogic": {
+    "name": "拠点のゲート-「アクセス・ロジック」"
+  },
+  "BasePlatformSolidFoundation": {
+    "name": "拠点の足場-「礎」"
+  },
+  "BaseWallLineOfObstruction": {
+    "name": "拠点の壁-「防衛線」"
+  },
+  "BasePillarUniversalBeacon": {
+    "name": "拠点の柱-「万能ビーコン」"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "花鳥の噴水"
@@ -21611,6 +21923,9 @@
   "UtilityPocketDetector": {
     "name": "「実用型携帯探知機」"
   },
+  "GentleEmbrace": {
+    "name": "「優しき抱擁」"
+  },
   "WeatheredBambooFence": {
     "name": "長い年月を経た竹の柵"
   },
@@ -21694,6 +22009,12 @@
   },
   "UncertainBoundaries": {
     "name": "「隠されし境界線」"
+  },
+  "TownRailingConvenientBench": {
+    "name": "町の柵-「便利な椅子」"
+  },
+  "TownRailingBlueBlueWaves": {
+    "name": "町の柵-「蒼き波濤」"
   },
   "SmoothWoodenBench": {
     "name": "平らな木製ベンチ"
@@ -22027,5 +22348,8 @@
   },
   "DragonOnTheMove": {
     "name": "「魔龍出撃」"
+  },
+  "JumboSparksNSplashStatue": {
+    "name": "「ドッカン花火大神像」"
   }
 }

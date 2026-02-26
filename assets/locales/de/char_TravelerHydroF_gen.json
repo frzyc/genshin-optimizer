@@ -121,7 +121,7 @@
       "4": "<strong>Heftiger Schlag – Wasserkerker</strong>",
       "5": [
         " Verursacht erhöhten <hydro>Hydro-SCH</hydro> in jeder Angriffsphase des heftigen Schlags. Die SCH-Erhöhung beträgt 150 % des ANG {F#der}{M#des} Reisenden.",
-        " Verbraucht, wenn die LP {F#der}{M#des} Reisenden bei 50 % oder mehr liegen, LP in Höhe von 10 % der max. LP, um den durch jeden heftigen Schlag verursachten Schaden zusätzlich um 100 % des ANG {F#der}{M#des} Reisenden zu erhöhen.",
+        " Verbraucht, wenn die LP {F#der}{M#des} Reisenden bei 50 % oder mehr liegen, LP in Höhe von 10 % der max. LP, um den durch jede Angriffsphase des heftigen Schlags verursachten Schaden zusätzlich um 100 % des ANG {F#der}{M#des} Reisenden zu erhöhen.",
         " Stellt {F#der}{M#dem} Reisenden, wenn {F#deren}{M#dessen} LP unter 50 % liegen und {F#sie}{M#er} einen Gegner trifft, einmalig LP in Höhe von 25 % {F#ihrer}{M#seiner} max. LP wieder her.",
         " Der <strong>heftige Schlag – Wasserkerker</strong> kann alle 15 s nur einmal ausgeführt werden."
       ]

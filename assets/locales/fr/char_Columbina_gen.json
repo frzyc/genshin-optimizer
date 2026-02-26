@@ -182,7 +182,7 @@
   "constellation6": {
     "name": "Nuit lugubre, lune à travers",
     "description": {
-      "0": "Lorsqu'un personnage dans un <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>champ lunaire</strong></tooltip> a déclenché une réaction sélène, les DGT CRIT des éléments correspondants au type de réaction augmentent de 80 % pendant 8 s. L'effet d'augmentation des DGT CRIT d'un même type élémentaire ne peut pas être cumulé.",
+      "0": "Lorsqu'un personnage dans un <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>domaine lunaire</strong></tooltip> a déclenché une réaction sélène, les DGT CRIT des éléments correspondants au type de réaction infligés par tous les personnages de l'équipe augmentent de 80 % pendant 8 s. L'effet d'augmentation des DGT CRIT d'un même type élémentaire ne peut pas être cumulé.",
       "1": "<br/>",
       "2": "Les DGT de réaction sélène infligés par tous les personnages de l'équipe à proximité bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 7 %."
     }

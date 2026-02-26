@@ -1,0 +1,29 @@
+{
+  "name": "Balada do Poderoso Lobo",
+  "description": {
+    "0": "Lendas dizem que esse espadão foi forjado pelas mãos de Ravenwood, que herdou o nome de Boreas antes de virar um cavaleiro."
+  },
+  "passiveName": "Cavalheirismo Indominável",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Vel. de ATQ em 10%. Quando um Ataque Normal atinge um inimigo/lança Habilidade Elemental/inicia Ataque Carregado, o portador obtém 1/2/2 acúmulos de Poema dos Quatro Ventos: aumenta o Dano causado em <cryo>7.5%</cryo> por 4s. Acumulável até 4 vezes. Pode ser desencadeado uma vez a cada 0.01s.",
+      "1": "Além disso, quando a equipe possuir o efeito Mágico: Ritual Secreto, cada acúmulo de Poema dos Quatro Ventos aumenta o Dano CRIT do portador em <cryo>7.5%</cryo>."
+    },
+    "1": {
+      "0": "Aumenta a Vel. de ATQ em 10%. Quando um Ataque Normal atinge um inimigo/lança Habilidade Elemental/inicia Ataque Carregado, o portador obtém 1/2/2 acúmulos de Poema dos Quatro Ventos: aumenta o Dano causado em <cryo>9.5%</cryo> por 4s. Acumulável até 4 vezes. Pode ser desencadeado uma vez a cada 0.01s.",
+      "1": "Além disso, quando a equipe possuir o efeito Mágico: Ritual Secreto, cada acúmulo de Poema dos Quatro Ventos aumenta o Dano CRIT do portador em <cryo>9.5%</cryo>."
+    },
+    "2": {
+      "0": "Aumenta a Vel. de ATQ em 10%. Quando um Ataque Normal atinge um inimigo/lança Habilidade Elemental/inicia Ataque Carregado, o portador obtém 1/2/2 acúmulos de Poema dos Quatro Ventos: aumenta o Dano causado em <cryo>11.5%</cryo> por 4s. Acumulável até 4 vezes. Pode ser desencadeado uma vez a cada 0.01s.",
+      "1": "Além disso, quando a equipe possuir o efeito Mágico: Ritual Secreto, cada acúmulo de Poema dos Quatro Ventos aumenta o Dano CRIT do portador em <cryo>11.5%</cryo>."
+    },
+    "3": {
+      "0": "Aumenta a Vel. de ATQ em 10%. Quando um Ataque Normal atinge um inimigo/lança Habilidade Elemental/inicia Ataque Carregado, o portador obtém 1/2/2 acúmulos de Poema dos Quatro Ventos: aumenta o Dano causado em <cryo>13.5%</cryo> por 4s. Acumulável até 4 vezes. Pode ser desencadeado uma vez a cada 0.01s.",
+      "1": "Além disso, quando a equipe possuir o efeito Mágico: Ritual Secreto, cada acúmulo de Poema dos Quatro Ventos aumenta o Dano CRIT do portador em <cryo>13.5%</cryo>."
+    },
+    "4": {
+      "0": "Aumenta a Vel. de ATQ em 10%. Quando um Ataque Normal atinge um inimigo/lança Habilidade Elemental/inicia Ataque Carregado, o portador obtém 1/2/2 acúmulos de Poema dos Quatro Ventos: aumenta o Dano causado em <cryo>15.5%</cryo> por 4s. Acumulável até 4 vezes. Pode ser desencadeado uma vez a cada 0.01s.",
+      "1": "Além disso, quando a equipe possuir o efeito Mágico: Ritual Secreto, cada acúmulo de Poema dos Quatro Ventos aumenta o Dano CRIT do portador em <cryo>15.5%</cryo>."
+    }
+  }
+}

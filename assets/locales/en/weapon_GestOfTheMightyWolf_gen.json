@@ -1,0 +1,29 @@
+{
+  "name": "Gest of the Mighty Wolf",
+  "description": {
+    "0": "Legend has it that this greatsword was forged by the hand of Ravenwood, who inherited the name of Boreas, prior to his ascension to knighthood."
+  },
+  "passiveName": "Indomitable Chivalry",
+  "passiveDescription": {
+    "0": {
+      "0": "Increase ATK SPD by 10%. Every time the equipping character's Normal Attack(s) hit opponent(s), when they cast their Elemental Skill, or when they begin their Charged Attack(s), gain 1/2/2 stacks of Four Winds' Hymn respectively: DMG dealt is increased by <cryo>7.5%</cryo> for 4s. Max 4 stacks. This effect can be triggered once every 0.01s.",
+      "1": "Additionally, when the party has the \"Hexerei: Secret Rite\" effect, each stack of Four Winds' Hymn also increases the equipping character's CRIT DMG by <cryo>7.5%</cryo>."
+    },
+    "1": {
+      "0": "Increase ATK SPD by 10%. Every time the equipping character's Normal Attack(s) hit opponent(s), when they cast their Elemental Skill, or when they begin their Charged Attack(s), gain 1/2/2 stacks of Four Winds' Hymn respectively: DMG dealt is increased by <cryo>9.5%</cryo> for 4s. Max 4 stacks. This effect can be triggered once every 0.01s.",
+      "1": "Additionally, when the party has the \"Hexerei: Secret Rite\" effect, each stack of Four Winds' Hymn also increases the equipping character's CRIT DMG by <cryo>9.5%</cryo>."
+    },
+    "2": {
+      "0": "Increase ATK SPD by 10%. Every time the equipping character's Normal Attack(s) hit opponent(s), when they cast their Elemental Skill, or when they begin their Charged Attack(s), gain 1/2/2 stacks of Four Winds' Hymn respectively: DMG dealt is increased by <cryo>11.5%</cryo> for 4s. Max 4 stacks. This effect can be triggered once every 0.01s.",
+      "1": "Additionally, when the party has the \"Hexerei: Secret Rite\" effect, each stack of Four Winds' Hymn also increases the equipping character's CRIT DMG by <cryo>11.5%</cryo>."
+    },
+    "3": {
+      "0": "Increase ATK SPD by 10%. Every time the equipping character's Normal Attack(s) hit opponent(s), when they cast their Elemental Skill, or when they begin their Charged Attack(s), gain 1/2/2 stacks of Four Winds' Hymn respectively: DMG dealt is increased by <cryo>13.5%</cryo> for 4s. Max 4 stacks. This effect can be triggered once every 0.01s.",
+      "1": "Additionally, when the party has the \"Hexerei: Secret Rite\" effect, each stack of Four Winds' Hymn also increases the equipping character's CRIT DMG by <cryo>13.5%</cryo>."
+    },
+    "4": {
+      "0": "Increase ATK SPD by 10%. Every time the equipping character's Normal Attack(s) hit opponent(s), when they cast their Elemental Skill, or when they begin their Charged Attack(s), gain 1/2/2 stacks of Four Winds' Hymn respectively: DMG dealt is increased by <cryo>15.5%</cryo> for 4s. Max 4 stacks. This effect can be triggered once every 0.01s.",
+      "1": "Additionally, when the party has the \"Hexerei: Secret Rite\" effect, each stack of Four Winds' Hymn also increases the equipping character's CRIT DMG by <cryo>15.5%</cryo>."
+    }
+  }
+}

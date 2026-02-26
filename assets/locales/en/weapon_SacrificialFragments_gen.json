@@ -18,7 +18,7 @@
       "0": "After damaging an opponent with an Elemental Skill, the skill has a <cryo>70%</cryo> chance to end its own CD. Can only occur once every <cryo>19</cryo>s."
     },
     "4": {
-      "0": "After damaging an opponent with an Elemental Skill, the skill has a <cryo>80%</cryo> chance to end its own CD. Can only occur once every <cryo>16s</cryo>."
+      "0": "After damaging an opponent with an Elemental Skill, the skill has a <cryo>80%</cryo> chance to end its own CD. Can only occur once every <cryo>16</cryo>s."
     }
   }
 }

@@ -94,7 +94,7 @@
   "passive1": {
     "name": "A Adeptus Lunar Desce",
     "description": {
-      "0": "Ao lançar a Habilidade Elemental <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Céu e Terra Manifestados</tooltip></strong>, ou quando aliados próximos da equipe desencadearem Sonata da Jaula Lunar, Zibai obtém o efeito <tooltip ns=tooltips_gen baseKey18=11260001 values=[]>Descida Lunar</tooltip> por 4s: aumenta o Dano do 2º ataque causado por <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Passos do Alazão Espiritual</strong></tooltip> em 60% da DEF de Zibai."
+      "0": "Ao lançar a Habilidade Elemental <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Céu e Terra Manifestados</tooltip></strong>, ou quando aliados próximos da equipe desencadearem Sonata da Jaula Lunar, Zibai obtém o efeito <strong>Descida Lunar</strong> por 4s: aumenta o Dano do 2º ataque causado por <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Passos do Alazão Espiritual</strong></tooltip> em 60% da DEF de Zibai."
     }
   },
   "passive2": {
@@ -121,7 +121,7 @@
   "constellation1": {
     "name": "Avance Vigorosa e Silenciosamente",
     "description": {
-      "0": "Depois de lançar a Habilidade Elemental <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Céu e Terra Manifestados</tooltip></strong>, Zibai acumula 100 de <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Radiância da Conversão</strong></tooltip> e o número máximo de usos de <strong>Conversão de Fase Lunar</strong> é aumentado para 5.",
+      "0": "Depois de lançar a Habilidade Elemental <strong><tooltip ns=char_Zibai_gen baseKey18=skill>Céu e Terra Manifestados</tooltip></strong>, Zibai acumula 100 de <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Radiância da Conversão</strong></tooltip> e o número máximo de usos de <strong>Passos do Alazão Espiritual</strong> de <strong>Conversão de Fase Lunar</strong> é aumentado para 5.",
       "1": "Além disso, cada vez que trocar para o modo Conversão de Fase Lunar, aumenta o Dano de Cristalização Lunar do 2º Ataque da primeira vez que lançar <strong>Passos do Alazão Espiritual</strong> em 220%."
     }
   },
@@ -143,7 +143,7 @@
   "constellation4": {
     "name": "O Espírito Passa, a Forma Segue",
     "description": {
-      "0": "Quando está no modo <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Conversão de Fase Lunar</strong></tooltip>, o combo de Ataque Normal de Zibai não é redefinido, e quando <strong>Passos do Alazão Espiritual</strong> atinge um inimigo, Zibai obtém o efeito <strong>Dissipação Lunar</strong>: o 4º golpe do próximo Ataque Normal realize um ataque adicional e causa 250% do Dano original de Cristalização Lunar."
+      "0": "Quando está no modo <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>Conversão de Fase Lunar</strong></tooltip>, o combo de Ataque Normal de Zibai não é redefinido, e quando <strong>Passos do Alazão Espiritual</strong> atinge um inimigo, Zibai obtém o efeito <strong>Dissipação Lunar</strong>: o 4º golpe do próximo Ataque Normal realiza um ataque adicional e causa 250% do Dano original de Cristalização Lunar."
     }
   },
   "constellation5": {

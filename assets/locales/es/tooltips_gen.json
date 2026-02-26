@@ -328,5 +328,27 @@
     "description": {
       "0": "Este efecto, obtenido tras usar la Habilidad Definitiva de Illuga, <strong>Reflejo sin sombra</strong>, puede aumentar el <geo>Daño Geo</geo> que inflige el personaje en uso."
     }
+  },
+  "11280001": {
+    "name": "Sturm und Drang",
+    "description": {
+      "0": "Varka cambiará a este modo tras usar su Habilidad Elemental, <strong>Tempestad precipitante</strong>, pulsando una vez.",
+      "1": "Mientras esté en dicho modo, el daño infligido por sus Ataques Normales y Cargados aumentará y no podrá realizar Ataques Descendentes. Además, al ejecutar un Ataque Normal o Cargado, empuñará un mandoble en cada mano para infligir daño del elemento correspondiente, el cual no puede sustituirse imbuyéndose de otro elemento, en función de los tipos elementales de los personajes del equipo:",
+      "2": [
+        "Con el mandoble que empuña en la mano izquierda, infligirá <anemo>Daño Anemo</anemo>.",
+        "Si en el equipo hay algún personaje <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, con el mandoble que empuña en la mano derecha infligirá daño del elemento correspondiente según dicho orden de prioridad."
+      ],
+      "3": "<br/>",
+      "4": "Asimismo, si en el equipo hay algún personaje <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo> mientras Varka está en este modo, su Habilidad Elemental, <strong>Tempestad precipitante</strong>, se remplazará por la Habilidad Elemental especial <strong>Alzamiento de los Cuatro Vientos</strong>."
+    }
+  },
+  "11280002": {
+    "name": "Alzamiento de los Cuatro Vientos",
+    "description": {
+      "0": "La Habilidad Elemental especial de Varka. Con el mandoble que empuña en la mano derecha, inflige Daño en el AdE del elemento correspondiente, el cual no puede sustituirse imbuyéndose de otro elemento, así como <anemo>Daño Anemo en el AdE</anemo>.",
+      "1": "Tiene un máximo de 2 usos y comienza en TdE.",
+      "2": "Cuando Varka golpee a un enemigo con un Ataque Normal mientras esté en modo <strong>Sturm und Drang</strong>, el TdE de <strong>Alzamiento de los Cuatro Vientos</strong> se reducirá en 0.5 s. Este efecto podrá activarse hasta 15 veces cada vez que cambie a dicho modo.",
+      "3": "Además, Varka puede consumir los usos de <strong>Alzamiento de los Cuatro Vientos</strong> para ejecutar el Ataque Cargado especial <strong>Devorazul</strong>, el cual no consume Aguante. Este ataque infligirá 2 golpes de daño del elemento correspondiente al mandoble que empuña en la mano derecha, el cual no puede sustituirse imbuyéndose de otro elemento, y 2 golpes de <anemo>Daño Anemo</anemo>."
+    }
   }
 }
