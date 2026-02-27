@@ -1,4 +1,8 @@
 {
+  "title": "Settings",
+  "languageCard": {
+    "languageFormat": "Language: {{language}}"
+  },
   "DatabaseCard": {
     "title": "Database",
     "button": {

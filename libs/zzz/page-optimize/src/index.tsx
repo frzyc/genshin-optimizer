@@ -67,7 +67,7 @@ export default function PageOptimize() {
     [database.dbMeta]
   )
 
-  const { t } = useTranslation(['charNames_gen', 'page_character'])
+  const { t } = useTranslation(['charNames_gen', 'page_optimize'])
   const character = useCharacter(characterKey)
   if (characterKey && !character) database.chars.getOrCreate(characterKey)
   const charOpt = useCharOpt(characterKey)

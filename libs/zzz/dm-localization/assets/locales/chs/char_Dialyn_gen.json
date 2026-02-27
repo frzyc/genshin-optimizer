@@ -1,0 +1,342 @@
+{
+  "name": "琉音",
+  "fullName": "琉音",
+  "basic": {
+    "BasicAttackHappyToBeOfService": {
+      "name": "普通攻击：很高兴为您服务",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段攻击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackRockPaperScissors": {
+      "name": "普通攻击：猜拳把戏",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[强化特殊技：石头]</ct>或<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>后点按 <IconNormal /> 发动：",
+        "1": "分别进行至多两段攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升，受到的伤害降低40%。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeLineBusy": {
+      "name": "闪避：号码占线",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackSuddenCall": {
+      "name": "冲刺攻击：突然来电",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行突进攻击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterNumberUnavailable": {
+      "name": "闪避反击：无法接听",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动连续攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动后可直接衔接<ct color=#FFFFFF>[普通攻击：很高兴为您服务]</ct>的第四段攻击；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "EXSpecialAttackGetLost": {
+      "name": "强化特殊技：送客！",
+      "desc": {
+        "0": "拥有<ct color=#FFFFFF>[客诉]</ct>时，长按 <IconNormal /> 发动：",
+        "1": "向前方发动抱拳攻击，发动时消耗1点<ct color=#FFFFFF>[客诉]</ct>，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动后将触发上一位角色的<ct color=#FFFFFF>[快速支援]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SpecialAttackWelcomeGesture": {
+      "name": "特殊技：欢迎手势",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "丢出双环切割敌人，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackRock": {
+      "name": "强化特殊技：石头",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "发动拳头攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    },
+    "EXSpecialAttackScissors": {
+      "name": "强化特殊技：剪刀",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "发动剪刀攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    },
+    "EXSpecialAttackPaper": {
+      "name": "强化特殊技：布！",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "发动布攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackWelcomeMat": {
+      "name": "连携技：迎宾踏垫",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "向前方发动连续踢击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动后可直接衔接<ct color=#FFFFFF>[普通攻击：很高兴为您服务]</ct>的第四段攻击；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateServiceStoppedForNumberDialed": {
+      "name": "终结技：拨打用户即刻停机",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "快速突进向前方发动弹指攻击，造成大量<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动后可直接衔接<ct color=#FFFFFF>[普通攻击：很高兴为您服务]</ct>的第四段攻击；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistForwardCall": {
+      "name": "快速支援：呼叫转移",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动连续攻击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动后可直接衔接<ct color=#FFFFFF>[普通攻击：很高兴为您服务]</ct>的第四段攻击；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistDeclineCall": {
+      "name": "招架支援：拒绝通话",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "具有较为优秀的招架性能，承受高强度攻击时<ct color=#FFFFFF>[支援点数]</ct>的消耗量降低；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpBacktoBackCalls": {
+      "name": "支援突击：连环呼叫",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "快速突进并发动斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "招式发动后可直接衔接<ct color=#FFFFFF>[普通攻击：很高兴为您服务]</ct>的第四段攻击；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：五星客服热线",
+    "desc": [
+      {
+        "0": "进入战场时，琉音初始拥有60点<ct color=#FFFFFF>[好评]</ct>，初始暴击率超过50%时，每超过1%，冲击力提升<ct color=#2BAD00>1.4</ct>点，最多提升100点；",
+        "1": "发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>，持续8秒；",
+        "2": "发动<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：布！]</ct>，持续8秒；",
+        "3": "<ct color=#FFFFFF>[强化特殊技：布！]</ct>命中敌人时，敌人获得<ct color=#FFFFFF>[恶意投诉]</ct>效果，<ct color=#FFFFFF>[恶意投诉]</ct>效果下敌人进入失衡状态后的失衡持续时间提升2秒，失衡易伤倍率提升<ct color=#2BAD00>15%</ct>，从失衡状态恢复前<ct color=#FFFFFF>[恶意投诉]</ct>效果对同一目标最多触发一次，失衡持续时间提升效果与同类效果不可叠加，拥有<ct color=#FFFFFF>[恶意投诉]</ct>效果的敌人失衡结束时<ct color=#FFFFFF>[恶意投诉]</ct>效果结束；",
+        "4": "处于接战状态下，琉音每秒积攒0.6点<ct color=#FFFFFF>[好评]</ct>，发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>、<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>、<ct color=#FFFFFF>[强化特殊技：布！]</ct>的重击命中敌人时将积攒7.5点<ct color=#FFFFFF>[好评]</ct>，同一招式内最多积攒一次，最多积攒120点；",
+        "5": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音利用<ct color=#FFFFFF>[连携技：迎宾踏垫]</ct>、<ct color=#FFFFFF>[强化特殊技：送客！]</ct>、<ct color=#FFFFFF>[快速支援：呼叫转移]</ct>打开<ct color=#FFFFFF>[连携技]</ct>窗口时，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>，队友以此方式发动<ct color=#FFFFFF>[终结技]</ct>时，琉音消耗60点<ct color=#FFFFFF>[好评]</ct>；",
+        "6": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音发动<ct color=#FFFFFF>[强化特殊技：送客！]</ct>命中未打开<ct color=#FFFFFF>[连携技]</ct>窗口的敌人时，将消耗90点<ct color=#FFFFFF>[好评]</ct>强制打开<ct color=#FFFFFF>[连携技]</ct>窗口，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>；",
+        "7": "每当<ct color=#FFFFFF>[好评]</ct>积攒至90点或发动<ct color=#FFFFFF>[终结技]</ct>时，琉音获得1点<ct color=#FFFFFF>[客诉]</ct>，最多拥有1点<ct color=#FFFFFF>[客诉]</ct>。"
+      },
+      {
+        "0": "进入战场时，琉音初始拥有60点<ct color=#FFFFFF>[好评]</ct>，初始暴击率超过50%时，每超过1%，冲击力提升<ct color=#2BAD00>1.5</ct>点，最多提升100点；",
+        "1": "发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>，持续8秒；",
+        "2": "发动<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：布！]</ct>，持续8秒；",
+        "3": "<ct color=#FFFFFF>[强化特殊技：布！]</ct>命中敌人时，敌人获得<ct color=#FFFFFF>[恶意投诉]</ct>效果，<ct color=#FFFFFF>[恶意投诉]</ct>效果下敌人进入失衡状态后的失衡持续时间提升2秒，失衡易伤倍率提升<ct color=#2BAD00>17.5%</ct>，从失衡状态恢复前<ct color=#FFFFFF>[恶意投诉]</ct>效果对同一目标最多触发一次，失衡持续时间提升效果与同类效果不可叠加，拥有<ct color=#FFFFFF>[恶意投诉]</ct>效果的敌人失衡结束时<ct color=#FFFFFF>[恶意投诉]</ct>效果结束；",
+        "4": "处于接战状态下，琉音每秒积攒0.6点<ct color=#FFFFFF>[好评]</ct>，发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>、<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>、<ct color=#FFFFFF>[强化特殊技：布！]</ct>的重击命中敌人时将积攒7.5点<ct color=#FFFFFF>[好评]</ct>，同一招式内最多积攒一次，最多积攒120点；",
+        "5": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音利用<ct color=#FFFFFF>[连携技：迎宾踏垫]</ct>、<ct color=#FFFFFF>[强化特殊技：送客！]</ct>、<ct color=#FFFFFF>[快速支援：呼叫转移]</ct>打开<ct color=#FFFFFF>[连携技]</ct>窗口时，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>，队友以此方式发动<ct color=#FFFFFF>[终结技]</ct>时，琉音消耗60点<ct color=#FFFFFF>[好评]</ct>；",
+        "6": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音发动<ct color=#FFFFFF>[强化特殊技：送客！]</ct>命中未打开<ct color=#FFFFFF>[连携技]</ct>窗口的敌人时，将消耗90点<ct color=#FFFFFF>[好评]</ct>强制打开<ct color=#FFFFFF>[连携技]</ct>窗口，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>；",
+        "7": "每当<ct color=#FFFFFF>[好评]</ct>积攒至90点或发动<ct color=#FFFFFF>[终结技]</ct>时，琉音获得1点<ct color=#FFFFFF>[客诉]</ct>，最多拥有1点<ct color=#FFFFFF>[客诉]</ct>。"
+      },
+      {
+        "0": "进入战场时，琉音初始拥有60点<ct color=#FFFFFF>[好评]</ct>，初始暴击率超过50%时，每超过1%，冲击力提升<ct color=#2BAD00>1.6</ct>点，最多提升100点；",
+        "1": "发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>，持续8秒；",
+        "2": "发动<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：布！]</ct>，持续8秒；",
+        "3": "<ct color=#FFFFFF>[强化特殊技：布！]</ct>命中敌人时，敌人获得<ct color=#FFFFFF>[恶意投诉]</ct>效果，<ct color=#FFFFFF>[恶意投诉]</ct>效果下敌人进入失衡状态后的失衡持续时间提升2秒，失衡易伤倍率提升<ct color=#2BAD00>20%</ct>，从失衡状态恢复前<ct color=#FFFFFF>[恶意投诉]</ct>效果对同一目标最多触发一次，失衡持续时间提升效果与同类效果不可叠加，拥有<ct color=#FFFFFF>[恶意投诉]</ct>效果的敌人失衡结束时<ct color=#FFFFFF>[恶意投诉]</ct>效果结束；",
+        "4": "处于接战状态下，琉音每秒积攒0.6点<ct color=#FFFFFF>[好评]</ct>，发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>、<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>、<ct color=#FFFFFF>[强化特殊技：布！]</ct>的重击命中敌人时将积攒7.5点<ct color=#FFFFFF>[好评]</ct>，同一招式内最多积攒一次，最多积攒120点；",
+        "5": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音利用<ct color=#FFFFFF>[连携技：迎宾踏垫]</ct>、<ct color=#FFFFFF>[强化特殊技：送客！]</ct>、<ct color=#FFFFFF>[快速支援：呼叫转移]</ct>打开<ct color=#FFFFFF>[连携技]</ct>窗口时，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>，队友以此方式发动<ct color=#FFFFFF>[终结技]</ct>时，琉音消耗60点<ct color=#FFFFFF>[好评]</ct>；",
+        "6": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音发动<ct color=#FFFFFF>[强化特殊技：送客！]</ct>命中未打开<ct color=#FFFFFF>[连携技]</ct>窗口的敌人时，将消耗90点<ct color=#FFFFFF>[好评]</ct>强制打开<ct color=#FFFFFF>[连携技]</ct>窗口，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>；",
+        "7": "每当<ct color=#FFFFFF>[好评]</ct>积攒至90点或发动<ct color=#FFFFFF>[终结技]</ct>时，琉音获得1点<ct color=#FFFFFF>[客诉]</ct>，最多拥有1点<ct color=#FFFFFF>[客诉]</ct>。"
+      },
+      {
+        "0": "进入战场时，琉音初始拥有60点<ct color=#FFFFFF>[好评]</ct>，初始暴击率超过50%时，每超过1%，冲击力提升<ct color=#2BAD00>1.7</ct>点，最多提升100点；",
+        "1": "发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>，持续8秒；",
+        "2": "发动<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：布！]</ct>，持续8秒；",
+        "3": "<ct color=#FFFFFF>[强化特殊技：布！]</ct>命中敌人时，敌人获得<ct color=#FFFFFF>[恶意投诉]</ct>效果，<ct color=#FFFFFF>[恶意投诉]</ct>效果下敌人进入失衡状态后的失衡持续时间提升2秒，失衡易伤倍率提升<ct color=#2BAD00>22.5%</ct>，从失衡状态恢复前<ct color=#FFFFFF>[恶意投诉]</ct>效果对同一目标最多触发一次，失衡持续时间提升效果与同类效果不可叠加，拥有<ct color=#FFFFFF>[恶意投诉]</ct>效果的敌人失衡结束时<ct color=#FFFFFF>[恶意投诉]</ct>效果结束；",
+        "4": "处于接战状态下，琉音每秒积攒0.6点<ct color=#FFFFFF>[好评]</ct>，发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>、<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>、<ct color=#FFFFFF>[强化特殊技：布！]</ct>的重击命中敌人时将积攒7.5点<ct color=#FFFFFF>[好评]</ct>，同一招式内最多积攒一次，最多积攒120点；",
+        "5": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音利用<ct color=#FFFFFF>[连携技：迎宾踏垫]</ct>、<ct color=#FFFFFF>[强化特殊技：送客！]</ct>、<ct color=#FFFFFF>[快速支援：呼叫转移]</ct>打开<ct color=#FFFFFF>[连携技]</ct>窗口时，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>，队友以此方式发动<ct color=#FFFFFF>[终结技]</ct>时，琉音消耗60点<ct color=#FFFFFF>[好评]</ct>；",
+        "6": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音发动<ct color=#FFFFFF>[强化特殊技：送客！]</ct>命中未打开<ct color=#FFFFFF>[连携技]</ct>窗口的敌人时，将消耗90点<ct color=#FFFFFF>[好评]</ct>强制打开<ct color=#FFFFFF>[连携技]</ct>窗口，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>；",
+        "7": "每当<ct color=#FFFFFF>[好评]</ct>积攒至90点或发动<ct color=#FFFFFF>[终结技]</ct>时，琉音获得1点<ct color=#FFFFFF>[客诉]</ct>，最多拥有1点<ct color=#FFFFFF>[客诉]</ct>。"
+      },
+      {
+        "0": "进入战场时，琉音初始拥有60点<ct color=#FFFFFF>[好评]</ct>，初始暴击率超过50%时，每超过1%，冲击力提升<ct color=#2BAD00>1.8</ct>点，最多提升100点；",
+        "1": "发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>，持续8秒；",
+        "2": "发动<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：布！]</ct>，持续8秒；",
+        "3": "<ct color=#FFFFFF>[强化特殊技：布！]</ct>命中敌人时，敌人获得<ct color=#FFFFFF>[恶意投诉]</ct>效果，<ct color=#FFFFFF>[恶意投诉]</ct>效果下敌人进入失衡状态后的失衡持续时间提升2秒，失衡易伤倍率提升<ct color=#2BAD00>25%</ct>，从失衡状态恢复前<ct color=#FFFFFF>[恶意投诉]</ct>效果对同一目标最多触发一次，失衡持续时间提升效果与同类效果不可叠加，拥有<ct color=#FFFFFF>[恶意投诉]</ct>效果的敌人失衡结束时<ct color=#FFFFFF>[恶意投诉]</ct>效果结束；",
+        "4": "处于接战状态下，琉音每秒积攒0.6点<ct color=#FFFFFF>[好评]</ct>，发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>、<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>、<ct color=#FFFFFF>[强化特殊技：布！]</ct>的重击命中敌人时将积攒7.5点<ct color=#FFFFFF>[好评]</ct>，同一招式内最多积攒一次，最多积攒120点；",
+        "5": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音利用<ct color=#FFFFFF>[连携技：迎宾踏垫]</ct>、<ct color=#FFFFFF>[强化特殊技：送客！]</ct>、<ct color=#FFFFFF>[快速支援：呼叫转移]</ct>打开<ct color=#FFFFFF>[连携技]</ct>窗口时，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>，队友以此方式发动<ct color=#FFFFFF>[终结技]</ct>时，琉音消耗60点<ct color=#FFFFFF>[好评]</ct>；",
+        "6": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音发动<ct color=#FFFFFF>[强化特殊技：送客！]</ct>命中未打开<ct color=#FFFFFF>[连携技]</ct>窗口的敌人时，将消耗90点<ct color=#FFFFFF>[好评]</ct>强制打开<ct color=#FFFFFF>[连携技]</ct>窗口，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>；",
+        "7": "每当<ct color=#FFFFFF>[好评]</ct>积攒至90点或发动<ct color=#FFFFFF>[终结技]</ct>时，琉音获得1点<ct color=#FFFFFF>[客诉]</ct>，最多拥有1点<ct color=#FFFFFF>[客诉]</ct>。"
+      },
+      {
+        "0": "进入战场时，琉音初始拥有60点<ct color=#FFFFFF>[好评]</ct>，初始暴击率超过50%时，每超过1%，冲击力提升<ct color=#2BAD00>1.9</ct>点，最多提升100点；",
+        "1": "发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>，持续8秒；",
+        "2": "发动<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：布！]</ct>，持续8秒；",
+        "3": "<ct color=#FFFFFF>[强化特殊技：布！]</ct>命中敌人时，敌人获得<ct color=#FFFFFF>[恶意投诉]</ct>效果，<ct color=#FFFFFF>[恶意投诉]</ct>效果下敌人进入失衡状态后的失衡持续时间提升2秒，失衡易伤倍率提升<ct color=#2BAD00>27.5%</ct>，从失衡状态恢复前<ct color=#FFFFFF>[恶意投诉]</ct>效果对同一目标最多触发一次，失衡持续时间提升效果与同类效果不可叠加，拥有<ct color=#FFFFFF>[恶意投诉]</ct>效果的敌人失衡结束时<ct color=#FFFFFF>[恶意投诉]</ct>效果结束；",
+        "4": "处于接战状态下，琉音每秒积攒0.6点<ct color=#FFFFFF>[好评]</ct>，发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>、<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>、<ct color=#FFFFFF>[强化特殊技：布！]</ct>的重击命中敌人时将积攒7.5点<ct color=#FFFFFF>[好评]</ct>，同一招式内最多积攒一次，最多积攒120点；",
+        "5": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音利用<ct color=#FFFFFF>[连携技：迎宾踏垫]</ct>、<ct color=#FFFFFF>[强化特殊技：送客！]</ct>、<ct color=#FFFFFF>[快速支援：呼叫转移]</ct>打开<ct color=#FFFFFF>[连携技]</ct>窗口时，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>，队友以此方式发动<ct color=#FFFFFF>[终结技]</ct>时，琉音消耗60点<ct color=#FFFFFF>[好评]</ct>；",
+        "6": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音发动<ct color=#FFFFFF>[强化特殊技：送客！]</ct>命中未打开<ct color=#FFFFFF>[连携技]</ct>窗口的敌人时，将消耗90点<ct color=#FFFFFF>[好评]</ct>强制打开<ct color=#FFFFFF>[连携技]</ct>窗口，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>；",
+        "7": "每当<ct color=#FFFFFF>[好评]</ct>积攒至90点或发动<ct color=#FFFFFF>[终结技]</ct>时，琉音获得1点<ct color=#FFFFFF>[客诉]</ct>，最多拥有1点<ct color=#FFFFFF>[客诉]</ct>。"
+      },
+      {
+        "0": "进入战场时，琉音初始拥有60点<ct color=#FFFFFF>[好评]</ct>，初始暴击率超过50%时，每超过1%，冲击力提升<ct color=#2BAD00>2</ct>点，最多提升100点；",
+        "1": "发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>，持续8秒；",
+        "2": "发动<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>后，下一次发动的<ct color=#FFFFFF>[强化特殊技]</ct>变为<ct color=#FFFFFF>[强化特殊技：布！]</ct>，持续8秒；",
+        "3": "<ct color=#FFFFFF>[强化特殊技：布！]</ct>命中敌人时，敌人获得<ct color=#FFFFFF>[恶意投诉]</ct>效果，<ct color=#FFFFFF>[恶意投诉]</ct>效果下敌人进入失衡状态后的失衡持续时间提升2秒，失衡易伤倍率提升<ct color=#2BAD00>30%</ct>，从失衡状态恢复前<ct color=#FFFFFF>[恶意投诉]</ct>效果对同一目标最多触发一次，失衡持续时间提升效果与同类效果不可叠加，拥有<ct color=#FFFFFF>[恶意投诉]</ct>效果的敌人失衡结束时<ct color=#FFFFFF>[恶意投诉]</ct>效果结束；",
+        "4": "处于接战状态下，琉音每秒积攒0.6点<ct color=#FFFFFF>[好评]</ct>，发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>、<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>、<ct color=#FFFFFF>[强化特殊技：布！]</ct>的重击命中敌人时将积攒7.5点<ct color=#FFFFFF>[好评]</ct>，同一招式内最多积攒一次，最多积攒120点；",
+        "5": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音利用<ct color=#FFFFFF>[连携技：迎宾踏垫]</ct>、<ct color=#FFFFFF>[强化特殊技：送客！]</ct>、<ct color=#FFFFFF>[快速支援：呼叫转移]</ct>打开<ct color=#FFFFFF>[连携技]</ct>窗口时，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>，队友以此方式发动<ct color=#FFFFFF>[终结技]</ct>时，琉音消耗60点<ct color=#FFFFFF>[好评]</ct>；",
+        "6": "当<ct color=#FFFFFF>[好评]</ct>满90点且琉音发动<ct color=#FFFFFF>[强化特殊技：送客！]</ct>命中未打开<ct color=#FFFFFF>[连携技]</ct>窗口的敌人时，将消耗90点<ct color=#FFFFFF>[好评]</ct>强制打开<ct color=#FFFFFF>[连携技]</ct>窗口，下一位出场的角色会将此次<ct color=#FFFFFF>[连携技]</ct>强制升级为<ct color=#FFFFFF>[终结技]</ct>；",
+        "7": "每当<ct color=#FFFFFF>[好评]</ct>积攒至90点或发动<ct color=#FFFFFF>[终结技]</ct>时，琉音获得1点<ct color=#FFFFFF>[客诉]</ct>，最多拥有1点<ct color=#FFFFFF>[客诉]</ct>。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：场外连线",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[强攻]</ct>角色或<ct color=#FFFFFF>[命破]</ct>角色时触发：",
+      "1": "琉音造成的<ct color=#FFFFFF>[强化特殊技]</ct>伤害的暴击伤害提升50%；",
+      "2": "发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时全队角色获得<ct color=#FFFFFF>[好评如潮]</ct>效果，<ct color=#FFFFFF>[好评如潮]</ct>状态下的角色造成的伤害提升40%，持续15秒，琉音在<ct color=#FFFFFF>[好评如潮]</ct>状态下发动<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[终结技]</ct>时，若当前<ct color=#FFFFFF>[好评如潮]</ct>的剩余持续时间小于35秒，则将该状态的持续时间延长10秒；",
+      "3": "<ct color=#FFFFFF>[强化特殊技：石头]</ct>、<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>、<ct color=#FFFFFF>[强化特殊技：布！]</ct>重击命中时会根据队伍中琉音的上一位队友的特性造成额外伤害：",
+      "4": "队友为<ct color=#FFFFFF>[强攻]</ct>代理人时，<ct color=#FFFFFF>[强化特殊技：石头]</ct>、<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>、<ct color=#FFFFFF>[强化特殊技：布！]</ct>额外造成等同于该<ct color=#FFFFFF>[强攻]</ct>代理人320%攻击力的伤害；",
+      "5": "队友为<ct color=#FFFFFF>[命破]</ct>代理人时，<ct color=#FFFFFF>[强化特殊技：石头]</ct>、<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>、<ct color=#FFFFFF>[强化特殊技：布！]</ct>额外造成等同于该<ct color=#FFFFFF>[命破]</ct>代理人400%贯穿力的伤害。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "服务热情保持饱满",
+      "desc": "每秒积累的<ct color=#FFFFFF>[好评]</ct>与发动<ct color=#FFFFFF>[强化特殊技：石头]</ct>、<ct color=#FFFFFF>[强化特殊技：剪刀]</ct>、<ct color=#FFFFFF>[强化特殊技：布！]</ct>命中敌人时积累的<ct color=#FFFFFF>[好评]</ct>提升16%，<ct color=#FFFFFF>[好评如潮]</ct>状态下的角色无视敌人15%全属性伤害抗性。",
+      "flavor": {
+        "0": "欢迎来到「跨部门响应客服中心」！",
+        "1": "我们的服务宗旨是，永远保持笑容，永远对客户充满热情~！",
+        "2": "笑容？曾经最不熟练的表情，什么时候成了最习以为常的皮肤呢？",
+        "3": "「亲亲~有什么可以帮到您吗？当然~我的意思不是说我真的可以帮到您哦~！」"
+      }
+    },
+    "2": {
+      "name": "7×24热线畅通",
+      "desc": "<ct color=#FFFFFF>[恶意投诉]</ct>效果下敌人进入失衡状态后的失衡易伤倍率额外提升20%，所有单位对<ct color=#FFFFFF>[恶意投诉]</ct>效果下的敌人造成的伤害提升15%。",
+      "flavor": {
+        "0": "TOPS是全新艾利都最~大~的企业联合体，我们工作关乎着这座城市的生息~！",
+        "1": "我们是这座巨型机械最~重要~的润滑剂，所以我们的服务热线7×24小时要随时保持畅通！",
+        "2": "无时无刻从不停止的喧噪杂音么？没问题，那是我最熟悉的东西。",
+        "3": "「请您随时联系我~！反正不管您什么时候联系，我都是这么讨您嫌的样子呢~！」"
+      }
+    },
+    "3": {
+      "name": "空洞来电",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "空洞是一座巨大的坟墓，所有生命的响亮，都在漆黑的棺椁中寂静。",
+        "1": "但唯独对我来说，它是无法回绝的通话，是每一本日记的最后一页，是执念与痴怨的备忘录。",
+        "2": "虽然所有那些释怀或痴心的台词，都与我自己的故事无关。",
+        "3": "「没关系没关系~！我跟很多比您更无法沟通的客户沟通过呢~！」"
+      }
+    },
+    "4": {
+      "name": "往事从不如烟",
+      "desc": "进入战场时，琉音回复20点能量，在勘域模式中此效果180秒内最多触发一次；<ct color=#FFFFFF>[好评如潮]</ct>效果下，琉音攻击力提升500点。",
+      "flavor": {
+        "0": "因为个子小一点总是被当成小孩子，可我的童年早就结束了。",
+        "1": "那一天是哪一天呢？是第一次听到亡灵的絮语时么？是被当作牺牲者送入空洞时么？还是啼哭的第一个夜晚？ ",
+        "2": "无人庇护只好独自学步，忘不掉过往只好装作释怀。",
+        "3": "「我无意了解您人格的缺陷~但我很关心您童年创伤对我投诉率的影响~！」"
+      }
+    },
+    "5": {
+      "name": "谎话",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "人总是在被人在乎的时候说谎，却又在被人遗忘的时候吐露真相。",
+        "1": "这些不明智的抉择总是带来悔恨，我的工作不过是用昨天的悔恨，来让今天的悔恨少一些。",
+        "2": "我知道人总是讲谎话，但至少还有人愿意对我说谎。",
+        "3": "「我的策略建议是：在您人身攻击的间隙中，插入对您有利的胡说八道~！」"
+      }
+    },
+    "6": {
+      "name": "真言",
+      "desc": "通过<ct color=#FFFFFF>[核心被动]</ct>使其他队友以终结技入场后，该队友获得<ct color=#FFFFFF>[余音]</ct>效果，攻击命中敌人时琉音对敌人造成额外一次<ct color=#F0D12B>物理属性伤害</ct>，等同于琉音480%攻击力，该伤害被视为<ct color=#FFFFFF>[强化特殊技]</ct>伤害，1秒内最多触发一次，最多触发12次，重复获得<ct color=#FFFFFF>[余音]</ct>效果时刷新次数，同时只能有一名队友获得<ct color=#FFFFFF>[余音]</ct>效果。",
+      "flavor": {
+        "0": "但骤然降临的死亡就像时间的标本，将真相框定、凝结成了不会变更的模样。",
+        "1": "我从亡灵的手中取回这些标本， 把他们的死亡证明当作裁决书的底本。",
+        "2": "绝对客观的「真相」是唯一可以信赖的准绳，是指引我前路的唯一绳索，直到…",
+        "3": "「绳匠，我也可以说谎么？」"
+      }
+    }
+  },
+  "potential": {}
+}

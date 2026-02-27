@@ -1,0 +1,96 @@
+{
+  "editor": {
+    "title": "驱动盘编辑器",
+    "rarity": "稀有度",
+    "level": "等级",
+    "unknownPieceName": "未知部件名称",
+    "unknownSetName": "未知套装名称",
+    "curSubEff": "当前随机值",
+    "curSubEffDesc": "每升级3次驱动盘，你会获得一个副词条强化。<strong>随机值</strong>计算副词条强化的百分比。",
+    "maxSubEff": "最大随机值",
+    "maxSubEffDesc": "驱动盘的<strong>最大副词条随机值</strong>计算如果剩余升级全部强化最大值时的随机值。",
+    "substat": {
+      "selectSub": "选择数值",
+      "error": {
+        "noCalc": "无法计算属性强化。",
+        "noOverRoll": "副词条强化次数不能超过 {{value}} 次。"
+      },
+      "noRoll": "无强化",
+      "RollCount_one": "{{count}} 次强化",
+      "RollCount_other": "{{count}} 次强化",
+      "noStat": "无数值",
+      "eff": "随机值: <1></1>",
+      "noSubstat": "空",
+      "substatFormat": "副词条 {{value}}",
+      "nextRolls": "下次强化："
+    },
+    "preview": "驱动盘预览",
+    "dupeDisc": "检测到重复驱动盘",
+    "updateDisc": "检测到已升级驱动盘",
+    "beforeEdit": "编辑前",
+    "btnSave": "保存驱动盘",
+    "btnAdd": "添加驱动盘",
+    "btnClear": "清除",
+    "btnRandom": "随机",
+    "btnUpdate": "更新驱动盘",
+    "uploadBtn": "上传截图 (或 Ctrl-V)",
+    "clearPrompt": "当前有正在编辑的驱动盘。确定要清除编辑器吗？",
+    "delete": "删除",
+    "confirmDelete": "确定要删除这个驱动盘吗？"
+  },
+  "slot": "位置",
+  "slotName": "位置 {{slotKey}}",
+  "setEffectNum": "{{setNum}}件套",
+  "discFilter": "驱动盘筛选",
+  "efficiencyFilter": {
+    "title": "用于随机值计算的副词条"
+  },
+  "filterLocation": {
+    "location": "角色",
+    "inventory": "库存",
+    "currentlyEquipped": "当前已装备"
+  },
+  "button": {
+    "unequipDisc": "卸下驱动盘",
+    "unequipDiscs": "卸下驱动盘",
+    "deleteDiscs": "删除驱动盘",
+    "lockDiscs": "锁定驱动盘",
+    "unlockDiscs": "解锁驱动盘"
+  },
+  "buttonHint": "注意：上方红色按钮仅对<1>已筛选的驱动盘</1>生效",
+  "sortMap": {
+    "level": "等级",
+    "efficiency": "当前随机值",
+    "mefficiency": "最大随机值"
+  },
+  "mainStat": "主属性",
+  "showingNum_one": "显示 <1>{{count}}</1> / {{value}} 个驱动盘",
+  "showingNum_other": "显示 <1>{{count}}</1> / {{value}} 个驱动盘",
+  "resetFilters": "重置筛选",
+  "edit": "编辑驱动盘",
+  "autocompleteLabels": {
+    "mainStats": "主属性",
+    "substats": "副词条",
+    "set": "驱动盘套装",
+    "sets": "驱动盘套装"
+  },
+  "substat_one": "{{count}} 副词条",
+  "substat_other": "{{count}} 副词条",
+  "sub": "{{count}} 副词条",
+  "sub_one": "{{count}} 副词条",
+  "sub_other": "{{count}} 副词条",
+  "addNew": "添加新驱动盘",
+  "showDupes": "显示重复项",
+  "noDupAlert": "您的库存中没有重复的驱动盘。",
+  "cantDeleteLock": "无法删除已锁定的驱动盘",
+  "equippedDiscs": "所有已装备的驱动盘",
+  "unequippedDiscs": "所有未装备的驱动盘",
+  "locationsTooltip": "禁用\"所有已装备的驱动盘\"以按特定角色筛选",
+  "noDiscs": "看起来您还没有添加任何驱动盘。如果您愿意，可以使用<1>自动扫描器</1>来加速导入过程！",
+  "subheadings": {
+    "general": "常规",
+    "inventory": "库存",
+    "rollvalue": "随机值"
+  },
+  "noActiveSets": "无激活套装"
+}

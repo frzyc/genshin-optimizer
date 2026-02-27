@@ -1,7 +1,7 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
 import type { DamageType } from '@genshin-optimizer/zzz/formula'
-import { damageTypeKeysMap } from '@genshin-optimizer/zzz/formula-ui'
 import { Box, MenuItem } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
 export function DmgTypeDropdown<T extends DamageType>({
   dmgType,
@@ -12,11 +12,13 @@ export function DmgTypeDropdown<T extends DamageType>({
   keys: T[]
   setDmgType: (dmgType?: T) => void
 }) {
+  const { t } = useTranslation(['page_optimize', 'statKey_gen'])
   return (
     <DropdownButton
       title={
         <Box sx={{ textWrap: 'nowrap' }}>
-          Dmg Type: {dmgType ? damageTypeKeysMap[dmgType] : 'Any'}
+          {t('page_optimize:dmgType')}
+          {dmgType ? t(`statKey_gen:${dmgType}`) : t('page_optimize:any')}
         </Box>
       }
     >
@@ -26,7 +28,7 @@ export function DmgTypeDropdown<T extends DamageType>({
         disabled={!dmgType}
         onClick={() => setDmgType()}
       >
-        Any
+        {t('page_optimize:any')}
       </MenuItem>
       {keys.map((k) => (
         <MenuItem
@@ -35,7 +37,7 @@ export function DmgTypeDropdown<T extends DamageType>({
           disabled={dmgType === k}
           onClick={() => setDmgType(k)}
         >
-          {damageTypeKeysMap[k]}
+          {t(`statKey_gen:${k}`)}
         </MenuItem>
       ))}
     </DropdownButton>

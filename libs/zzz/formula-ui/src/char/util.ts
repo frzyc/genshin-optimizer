@@ -1,4 +1,5 @@
 import type { Attribute, DamageType, Tag } from '@genshin-optimizer/zzz/formula'
+import i18n from 'i18next'
 
 export function getVariant(tag: Tag) {
   const { attribute } = tag
@@ -21,23 +22,22 @@ export function getDmgType(tag: Tag) {
   return dmgType
 }
 
-// TODO: translation
 export const damageTypeKeysMap: Record<DamageType, string> = {
-  basic: 'Basic',
-  dash: 'Dash',
-  dodgeCounter: 'Dodge Counter',
-  special: 'Special',
-  exSpecial: 'EX Special',
-  chain: 'Chain',
-  ult: 'Ultimate',
-  entrySkill: 'Entry Skill',
-  quickAssist: 'Quick Assist',
-  defensiveAssist: 'Defensive Assist',
-  evasiveAssist: 'Evasive Assist',
-  assistFollowUp: 'Assist Follow Up',
-  anomaly: 'Anomaly',
-  disorder: 'Disorder',
-  aftershock: 'Aftershock',
-  elemental: 'Elemental',
-  sheer: 'Sheer',
+  get basic() { return i18n.t('sheet:skills.basic') },
+  get dash() { return i18n.t('statKey_gen:dash') },
+  get dodgeCounter() { return i18n.t('statKey_gen:dodgeCounter') },
+  get special() { return i18n.t('sheet:skills.special') },
+  get exSpecial() { return i18n.t('sheet:skills.exSpecial') },
+  get chain() { return i18n.t('sheet:skills.chain') },
+  get ult() { return i18n.t('sheet:skills.ult') },
+  get entrySkill() { return i18n.t('statKey_gen:entrySkill') },
+  get quickAssist() { return i18n.t('statKey_gen:quickAssist') },
+  get defensiveAssist() { return i18n.t('statKey_gen:defensiveAssist') },
+  get evasiveAssist() { return i18n.t('statKey_gen:evasiveAssist') },
+  get assistFollowUp() { return i18n.t('sheet:skills.assistFollowUp') },
+  get anomaly() { return i18n.t('statKey_gen:anomaly') },
+  get disorder() { return i18n.t('statKey_gen:disorder') },
+  get aftershock() { return i18n.t('sheet:skills.aftershock') },
+  get elemental() { return i18n.t('statKey_gen:elemental') },
+  get sheer() { return i18n.t('statKey_gen:sheer') },
 }

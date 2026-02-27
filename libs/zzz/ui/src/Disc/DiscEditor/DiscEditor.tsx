@@ -297,7 +297,7 @@ export function DiscEditor({
       <ModalWrapper open={show} onClose={onCloseModal}>
         <CardThemed bgt="dark">
           <CardHeader
-            title="Disc Editor"
+            title={t('editor.title')}
             action={
               <IconButton onClick={onCloseModal}>
                 <CloseIcon />
@@ -331,7 +331,7 @@ export function DiscEditor({
                 {/* level */}
                 <Box component="div" display="flex">
                   <TextField
-                    label="Level"
+                    label={t('editor.level')}
                     variant="filled"
                     sx={{ flexShrink: 1, flexGrow: 1, mr: 1, my: 0 }}
                     margin="dense"
@@ -375,7 +375,7 @@ export function DiscEditor({
                 <Stack direction="row" gap={1}>
                   <CardThemed bgt="light" sx={{ px: 2, py: 1 }}>
                     <Typography color="text.secondary">
-                      Slot [{slotKey}]
+                      {t('slot')} [{slotKey}]
                     </Typography>
                   </CardThemed>
                   <ButtonGroup sx={{ flexGrow: 1 }}>

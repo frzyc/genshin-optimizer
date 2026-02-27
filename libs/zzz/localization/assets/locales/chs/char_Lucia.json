@@ -1,0 +1,13 @@
+{
+  "harmony": {
+    "flat_dmg": "合唱固定伤害",
+    "dmg_": "合唱伤害加成",
+    "crit_": "合唱暴击率",
+    "crit_dmg_": "合唱暴击伤害"
+  },
+  "exSpecialCond": "在破暗状态",
+  "coreCond": {
+    "etherVeil": "以太帷幕·涌泉激活",
+    "dreamersNurseryRhyme": "在巡梦童谣状态"
+  }
+}

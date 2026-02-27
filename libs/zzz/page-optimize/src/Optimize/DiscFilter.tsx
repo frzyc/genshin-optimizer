@@ -29,6 +29,7 @@ import {
 } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useCallback, useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import { DiscLevelFilter } from './DiscLevelFilter'
 import { DiscSetFilter } from './DiscSetFilter'
 
@@ -37,6 +38,7 @@ export function DiscFilter({
 }: {
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
 }) {
+  const { t } = useTranslation('optimize')
   const [show, onOpen, onClose] = useBoolState()
   return (
     <CardThemed bgt="light">
@@ -54,9 +56,8 @@ export function DiscFilter({
             onClose={onClose}
             discsBySlot={discsBySlot}
           />
-          {/* TODO: localization */}
           <Button color="info" fullWidth onClick={onOpen}>
-            Disc Filter Config
+            {t('discFilterConfig')}
           </Button>
         </Stack>
       </CardContent>
@@ -70,9 +71,10 @@ function DiscTypo({
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
   slotKey: DiscSlotKey
 }) {
+  const { t } = useTranslation('optimize')
   return (
     <Typography>
-      Disc {slotKey}{' '}
+      {t('disc')} {slotKey}{' '}
       <SqBadge color={discsBySlot[slotKey].length ? 'primary' : 'error'}>
         {discsBySlot[slotKey].length}
       </SqBadge>
@@ -91,13 +93,14 @@ function DiscFilterModal({
   onClose: () => void
   disabled?: boolean
 }) {
+  const { t } = useTranslation('optimize')
   const { database } = useDatabaseContext()
   const { optConfigId, optConfig } = useContext(OptConfigContext)
   return (
     <ModalWrapper open={show} onClose={onClose}>
       <CardThemed>
         <CardHeader
-          title="Disc Filter"
+          title={t('discFilter')}
           action={
             <IconButton onClick={onClose}>
               <CloseIcon />
@@ -119,7 +122,7 @@ function DiscFilterModal({
                 }
                 color={optConfig.useEquipped ? 'success' : 'secondary'}
               >
-                Use equipped Discs
+                {t('useEquippedDiscs')}
               </Button>
               <SetFilter discBySlot={discsBySlot} disabled={disabled} />
             </Stack>

@@ -1,0 +1,294 @@
+{
+  "name": "照",
+  "fullName": "照",
+  "basic": {
+    "BasicAttackGlacialJudgment": {
+      "name": "普通攻击：凛冽裁决",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的斩击，第一段造成<ct color=#F0D12B>物理伤害</ct>，后四段造成<ct color=#98EFF0>冰属性伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    },
+    "BasicAttackFinalVerdict": {
+      "name": "普通攻击：最终裁决",
+      "desc": {
+        "0": "长按 <IconNormal /> 发动：",
+        "1": "预备后进入蓄力，松开时向前方进行斩击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "蓄力时，照将累积最多5秒蓄力时长，<ct color=#FFFFFF>[普通攻击：最终裁决]</ct>、<ct color=#FFFFFF>[连携技]</ct>或<ct color=#FFFFFF>[支援突击]</ct>的终结一击命中时，将消耗蓄力时长造成额外伤害，每有1秒蓄力时长，造成照<ct color=#2BAD00>{CAL:0.12+AvatarSkillLevel(0)*0.01,100,2}%</ct>最大生命值的额外伤害；",
+        "3": "照处于任意<ct color=#FFFFFF>[以太帷幕]</ct>中时，如果在蓄力中成为非当前操作中角色，可以继续进行蓄力；",
+        "4": "招式发动时，如果<ct color=#FFFFFF>[霜寒值]</ct>满，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>，并触发<ct color=#FFFFFF>[快速支援]</ct>，此时如果发动队友的<ct color=#FFFFFF>[快速支援]</ct>，照将自动衔接<ct color=#FFFFFF>[普通攻击：最终裁决]</ct>并进行蓄力；",
+        "5": "招式发动期间抗打断等级提升，受到的伤害降低40%；",
+        "6": "不为当前操作中角色时，招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "蓄力最大生命额外倍率"
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeBunnyHop": {
+      "name": "闪避：脱兔踏",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackBouncingDash": {
+      "name": "冲刺攻击：弹跳冲刺",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方发动斩击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#98EFF0>冰属性伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterSwiftBlink": {
+      "name": "闪避反击：倏忽闪",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前方发动下落斩击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackShatterfrostSurge": {
+      "name": "特殊技：碎冰溢寒",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方发动斩击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动时，消耗5%当前生命值，使全队角色每秒基于照<ct color=#2BAD00>{CAL:1+AvatarSkillLevel(1)*0.06,1,2}%</ct>最大生命值回复生命值，持续5秒，<ct color=#FFFFFF>[特殊技：碎冰溢寒]</ct>和<ct color=#FFFFFF>[强化特殊技：流霜冻土]</ct>的消耗生命效果每30秒最多触发一次。"
+      },
+      "params": [
+        " ",
+        "回复生命百分比"
+      ]
+    },
+    "EXSpecialAttackFrostflowTundra": {
+      "name": "强化特殊技：流霜冻土",
+      "desc": {
+        "0": "能量足够时，点按  <IconSpecialReady /> 发动：",
+        "1": "向前方连续发动斩击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动时，消耗5%当前生命值，使全队角色每秒基于照<ct color=#2BAD00>{CAL:1+AvatarSkillLevel(1)*0.06,1,2}%</ct>最大生命值回复生命值，持续5秒，<ct color=#FFFFFF>[特殊技：碎冰溢寒]</ct>和<ct color=#FFFFFF>[强化特殊技：流霜冻土]</ct>的消耗生命效果每30秒最多触发一次；",
+        "3": "招式发动时，积攒20点<ct color=#FFFFFF>[霜寒值]</ct>，如果<ct color=#FFFFFF>[霜寒值]</ct>满，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "4": "招式发动时，如果处于任意<ct color=#FFFFFF>[以太帷幕]</ct>中，将触发<ct color=#FFFFFF>[快速支援]</ct>，此时如果发动队友的<ct color=#FFFFFF>[快速支援]</ct>，照将自动衔接<ct color=#FFFFFF>[普通攻击：最终裁决]</ct>并进行蓄力；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗",
+        "回复生命百分比"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackTemporaryAlliance": {
+      "name": "连携技：临时合作",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "向前方发动连续斩击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动后，积攒5点<ct color=#FFFFFF>[霜寒值]</ct>，如果<ct color=#FFFFFF>[霜寒值]</ct>满，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "3": "招式发动后，如果处于任意<ct color=#FFFFFF>[以太帷幕]</ct>中，将触发<ct color=#FFFFFF>[快速支援]</ct>，此时如果发动队友的<ct color=#FFFFFF>[快速支援]</ct>，照将自动衔接<ct color=#FFFFFF>[普通攻击：最终裁决]</ct>并进行蓄力；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateBunnyBarrage": {
+      "name": "终结技：兔兔连斩",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "向前方连续攻击，随后下落斩击敌人，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动后，积攒20点<ct color=#FFFFFF>[霜寒值]</ct>，如果<ct color=#FFFFFF>[霜寒值]</ct>满，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "3": "招式发动后，如果处于任意<ct color=#FFFFFF>[以太帷幕]</ct>中，将触发<ct color=#FFFFFF>[快速支援]</ct>，此时如果发动队友的<ct color=#FFFFFF>[快速支援]</ct>，照将自动衔接<ct color=#FFFFFF>[普通攻击：最终裁决]</ct>并进行蓄力；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "EntrySkillBurstOfFrost": {
+      "name": "登场技：霜迸",
+      "desc": {
+        "0": "照的<ct color=#FFFFFF>[霜寒值]</ct>满，且处于接战状态下时，点按 <IconSwitch /> 发动：",
+        "1": "向前方连续攻击，随后发动斩击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动时，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "3": "招式发动时，触发<ct color=#FFFFFF>[快速支援]</ct>，此时如果发动队友的<ct color=#FFFFFF>[快速支援]</ct>，照将自动衔接<ct color=#FFFFFF>[普通攻击：最终裁决]</ct>并进行蓄力；",
+        "4": "招式发动时视为发动<ct color=#FFFFFF>[快速支援]</ct>；",
+        "5": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "QuickAssistPatchTheGaps": {
+      "name": "快速支援：查漏补缺",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "向前方发动下落斩击，造成<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistFrostveilSuppression": {
+      "name": "招架支援：霜婵镇场",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "具有较为优秀的招架性能，承受高强度攻击时<ct color=#FFFFFF>[支援点数]</ct>的消耗量降低；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpFrostlightReflection": {
+      "name": "支援突击：凛光返照",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "向前方连续斩击，造成大量<ct color=#98EFF0>冰属性伤害</ct>；",
+        "2": "招式发动时，如果<ct color=#FFFFFF>[霜寒值]</ct>满，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "3": "招式发动时，如果处于任意<ct color=#FFFFFF>[以太帷幕]</ct>中，将触发<ct color=#FFFFFF>[快速支援]</ct>，此时如果发动队友的<ct color=#FFFFFF>[快速支援]</ct>，照将自动衔接<ct color=#FFFFFF>[普通攻击：最终裁决]</ct>并进行蓄力；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：最佳同事",
+    "desc": [
+      {
+        "0": "照会额外根据初始最大生命值提高暴击率，每1000点初始最大生命值提高<ct color=#2BAD00>0.8%</ct>暴击率；",
+        "1": "进入战场时，照获得100点<ct color=#FFFFFF>[霜寒值]</ct>，在勘域模式中此效果180秒内最多触发一次，<ct color=#FFFFFF>[霜寒值]</ct>的上限为100点；",
+        "2": "当前操作中角色攻击命中敌人时，照积攒6点<ct color=#FFFFFF>[霜寒值]</ct>，每3秒最多触发一次；",
+        "3": "<ct color=#FFFFFF>[霜寒值]</ct>满时，如果处于接战状态下，将照换入前场可以发动<ct color=#FFFFFF>[登场技]</ct>；",
+        "4": "照发动<ct color=#FFFFFF>[登场技]</ct>时，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "5": "<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，照重复开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>前，将关闭已有的<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "6": "照开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>时，使全队角色的攻击力提升<ct color=#2BAD00>100</ct>点，持续50秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "照会额外根据初始最大生命值提高暴击率，每1000点初始最大生命值提高<ct color=#2BAD00>0.9%</ct>暴击率；",
+        "1": "进入战场时，照获得100点<ct color=#FFFFFF>[霜寒值]</ct>，在勘域模式中此效果180秒内最多触发一次，<ct color=#FFFFFF>[霜寒值]</ct>的上限为100点；",
+        "2": "当前操作中角色攻击命中敌人时，照积攒6点<ct color=#FFFFFF>[霜寒值]</ct>，每3秒最多触发一次；",
+        "3": "<ct color=#FFFFFF>[霜寒值]</ct>满时，如果处于接战状态下，将照换入前场可以发动<ct color=#FFFFFF>[登场技]</ct>；",
+        "4": "照发动<ct color=#FFFFFF>[登场技]</ct>时，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "5": "<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，照重复开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>前，将关闭已有的<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "6": "照开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>时，使全队角色的攻击力提升<ct color=#2BAD00>250</ct>点，持续50秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "照会额外根据初始最大生命值提高暴击率，每1000点初始最大生命值提高<ct color=#2BAD00>1%</ct>暴击率；",
+        "1": "进入战场时，照获得100点<ct color=#FFFFFF>[霜寒值]</ct>，在勘域模式中此效果180秒内最多触发一次，<ct color=#FFFFFF>[霜寒值]</ct>的上限为100点；",
+        "2": "当前操作中角色攻击命中敌人时，照积攒6点<ct color=#FFFFFF>[霜寒值]</ct>，每3秒最多触发一次；",
+        "3": "<ct color=#FFFFFF>[霜寒值]</ct>满时，如果处于接战状态下，将照换入前场可以发动<ct color=#FFFFFF>[登场技]</ct>；",
+        "4": "照发动<ct color=#FFFFFF>[登场技]</ct>时，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "5": "<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，照重复开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>前，将关闭已有的<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "6": "照开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>时，使全队角色的攻击力提升<ct color=#2BAD00>400</ct>点，持续50秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "照会额外根据初始最大生命值提高暴击率，每1000点初始最大生命值提高<ct color=#2BAD00>1.1%</ct>暴击率；",
+        "1": "进入战场时，照获得100点<ct color=#FFFFFF>[霜寒值]</ct>，在勘域模式中此效果180秒内最多触发一次，<ct color=#FFFFFF>[霜寒值]</ct>的上限为100点；",
+        "2": "当前操作中角色攻击命中敌人时，照积攒6点<ct color=#FFFFFF>[霜寒值]</ct>，每3秒最多触发一次；",
+        "3": "<ct color=#FFFFFF>[霜寒值]</ct>满时，如果处于接战状态下，将照换入前场可以发动<ct color=#FFFFFF>[登场技]</ct>；",
+        "4": "照发动<ct color=#FFFFFF>[登场技]</ct>时，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "5": "<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，照重复开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>前，将关闭已有的<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "6": "照开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>时，使全队角色的攻击力提升<ct color=#2BAD00>550</ct>点，持续50秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "照会额外根据初始最大生命值提高暴击率，每1000点初始最大生命值提高<ct color=#2BAD00>1.2%</ct>暴击率；",
+        "1": "进入战场时，照获得100点<ct color=#FFFFFF>[霜寒值]</ct>，在勘域模式中此效果180秒内最多触发一次，<ct color=#FFFFFF>[霜寒值]</ct>的上限为100点；",
+        "2": "当前操作中角色攻击命中敌人时，照积攒6点<ct color=#FFFFFF>[霜寒值]</ct>，每3秒最多触发一次；",
+        "3": "<ct color=#FFFFFF>[霜寒值]</ct>满时，如果处于接战状态下，将照换入前场可以发动<ct color=#FFFFFF>[登场技]</ct>；",
+        "4": "照发动<ct color=#FFFFFF>[登场技]</ct>时，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "5": "<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，照重复开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>前，将关闭已有的<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "6": "照开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>时，使全队角色的攻击力提升<ct color=#2BAD00>700</ct>点，持续50秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "照会额外根据初始最大生命值提高暴击率，每1000点初始最大生命值提高<ct color=#2BAD00>1.3%</ct>暴击率；",
+        "1": "进入战场时，照获得100点<ct color=#FFFFFF>[霜寒值]</ct>，在勘域模式中此效果180秒内最多触发一次，<ct color=#FFFFFF>[霜寒值]</ct>的上限为100点；",
+        "2": "当前操作中角色攻击命中敌人时，照积攒6点<ct color=#FFFFFF>[霜寒值]</ct>，每3秒最多触发一次；",
+        "3": "<ct color=#FFFFFF>[霜寒值]</ct>满时，如果处于接战状态下，将照换入前场可以发动<ct color=#FFFFFF>[登场技]</ct>；",
+        "4": "照发动<ct color=#FFFFFF>[登场技]</ct>时，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "5": "<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，照重复开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>前，将关闭已有的<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "6": "照开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>时，使全队角色的攻击力提升<ct color=#2BAD00>850</ct>点，持续50秒，重复触发时刷新持续时间。"
+      },
+      {
+        "0": "照会额外根据初始最大生命值提高暴击率，每1000点初始最大生命值提高<ct color=#2BAD00>1.4%</ct>暴击率；",
+        "1": "进入战场时，照获得100点<ct color=#FFFFFF>[霜寒值]</ct>，在勘域模式中此效果180秒内最多触发一次，<ct color=#FFFFFF>[霜寒值]</ct>的上限为100点；",
+        "2": "当前操作中角色攻击命中敌人时，照积攒6点<ct color=#FFFFFF>[霜寒值]</ct>，每3秒最多触发一次；",
+        "3": "<ct color=#FFFFFF>[霜寒值]</ct>满时，如果处于接战状态下，将照换入前场可以发动<ct color=#FFFFFF>[登场技]</ct>；",
+        "4": "照发动<ct color=#FFFFFF>[登场技]</ct>时，消耗所有<ct color=#FFFFFF>[霜寒值]</ct>，开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "5": "<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，照重复开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>前，将关闭已有的<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>；",
+        "6": "照开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>时，使全队角色的攻击力提升<ct color=#2BAD00>1000</ct>点，持续50秒，重复触发时刷新持续时间。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：凝聚力",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[强攻]</ct>或<ct color=#FFFFFF>[异常]</ct>或<ct color=#FFFFFF>[支援]</ct>角色时触发：",
+      "1": "照处于任意<ct color=#FFFFFF>[以太帷幕]</ct>中时，使全队造成的伤害提升10%，照的初始最大生命值高于15000点时，每超过400点初始最大生命值，可使增伤效果额外提升1%，初始效果与额外提升最大总共提升至40%，当初始最大生命值达到27000点时，上述增益效果达到最大值。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "凛然裁决",
+      "desc": "照被切换为非当前操作角色时，使全队角色造成的伤害无视目标15%全属性伤害抗性，持续50秒，重复触发时刷新持续时间。",
+      "flavor": {
+        "0": "「别被那可爱的外表迷惑了！我永远记得那场大会上，她当着几十号人的面挥着手指，用最可爱的样子说出最冷酷的裁决：『以上整改条目如有任何一条不接受，那贵司必将被剔除出TOPS，这不是威胁，是绝对正确的评估。』这个画面我一辈子都不忘不掉！…唉，但还是感谢照小姐。」",
+        "1": "——接受毁灭式整改后起死回生的某位企业管理者扶着额头，表情复杂地说道。"
+      }
+    },
+    "2": {
+      "name": "黑枝前辈",
+      "desc": "照的生命值回复时，提升20%攻击力，并使队伍中其他角色提升15%攻击力，持续50秒，重复触发时刷新持续时间。",
+      "flavor": "小照在早期就加入了黑枝，哪怕在精锐中的精锐——坎卜斯黑枝中也要被尊称一声「大前辈」，事情本应如此…怎奈后续加入的后辈同事们，都是一些遵循个性远大于遵守规矩的人。"
+    },
+    "3": {
+      "name": "霜婵冰刃",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "小照的武器名为「霜婵」，是TOPS秘密研发项目所提供的实验资产。使用这把武器时，并非单纯地释放冰属性以太造成打击，而是将以太转化为武器本身的一部分。通常状态下，「霜婵」只有同规格武器一半的重量，但在进入战斗状态时，快速凝结的前端冰刃能获得更强的破坏力，这个特性简直是为小照量身定做的。"
+    },
+    "4": {
+      "name": "轻盈踏痕",
+      "desc": "照开启<ct color=#FFFFFF>[以太帷幕]</ct>时，获得250点喧响值；<ct color=#FFFFFF>[终结技]</ct>、<ct color=#FFFFFF>[连携技]</ct>和<ct color=#FFFFFF>[普通攻击：最终裁决]</ct>的暴击伤害提升40%。",
+      "flavor": "灵活、轻盈、难以捕捉。这些本是描述小兔子的词汇，正被用来描述一位手持巨刃，无坚不摧的可怕战士…"
+    },
+    "5": {
+      "name": "毛茸茸聆听者",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": "如果小照的耳朵不自觉地抖了一下并且微微竖起，说明她听到了最在意的话语。可能是情报、任务、交易…或者夸奖。"
+    },
+    "6": {
+      "name": "无价亦是价值",
+      "desc": "<ct color=#FFFFFF>[核心被动：最佳同事]</ct>提高暴击率的效果提升至原本的125%；<ct color=#FFFFFF>[普通攻击：最终裁决]</ct>累积蓄力时长的额外伤害提升至原本的140%，并使累积的蓄力时长不会在攻击中被消耗。",
+      "flavor": {
+        "0": "自儿时起受无数人影响所筑成的观念壁垒，正因与一个人的相遇产生裂隙。",
+        "1": "小照对于「价值」的想法有了改变：有些东西没有标价，并非是它无用，而是珍贵到不存在对等的东西能与之交换。"
+      }
+    }
+  },
+  "potential": {}
+}

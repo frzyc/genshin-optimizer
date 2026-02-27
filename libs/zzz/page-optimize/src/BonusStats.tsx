@@ -110,9 +110,10 @@ function InitialStatDropdown({
   tag?: Tag
   onSelect: (key: BonusStatKey) => void
 }) {
+  const { t } = useTranslation('page_optimize')
   return (
     <DropdownButton
-      title={(tag && <TagDisplay tag={tag} />) ?? 'Add Bonus Stat'}
+      title={(tag && <TagDisplay tag={tag} />) ?? t('addBonusStat')}
     >
       {bonusStatKeys.map((statKey) => (
         <MenuItem key={statKey} onClick={() => onSelect(statKey)}>
@@ -227,18 +228,19 @@ function AttributeDropdown({
   tag: BonusStatTag
   setAttribute: (ele: Attribute | null) => void
 }) {
+  const { t } = useTranslation('page_optimize')
   return (
     <DropdownButton
       title={
         tag.attribute ? (
           <AttributeName attribute={tag.attribute} />
         ) : (
-          'No Attribute'
+          t('noAttribute')
         )
       }
       color={tag.attribute!}
     >
-      <MenuItem onClick={() => setAttribute(null)}>No Attribute</MenuItem>
+      <MenuItem onClick={() => setAttribute(null)}>{t('noAttribute')}</MenuItem>
       {allAttributeKeys.map((attr) => (
         <MenuItem key={attr} onClick={() => setAttribute(attr)}>
           <ColorText color={attr}>

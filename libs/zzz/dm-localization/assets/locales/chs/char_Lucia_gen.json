@@ -1,0 +1,297 @@
+{
+  "name": "卢西娅",
+  "fullName": "Lucia Elowen",
+  "basic": {
+    "BasicAttackOrbitalCombo": {
+      "name": "普通攻击：星轨连击",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多五段的打击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "其中，第五段攻击为<ct color=#FFFFFF>[随想]</ct>，发动时复现以骸形象对前方圆形区域敌人造成<ct color=#FE437E>以太伤害</ct>；",
+        "3": "处于接战状态下且未处于<ct color=#FFFFFF>[梦境]</ct>状态中时，卢西娅发动此<ct color=#FFFFFF>[随想]</ct>可获得40点<ct color=#FFFFFF>[梦境值]</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "Whim ",
+        "Harmony ",
+        "Aftershock "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeFadingSilhouette": {
+      "name": "闪避：曳影",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackRefraction": {
+      "name": "冲刺攻击：折光",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行快速打击，造成<ct color=#FE437E>以太伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterStardustEcho": {
+      "name": "闪避反击：星尘回响",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "闪避反击为<ct color=#FFFFFF>[随想]</ct>，发动时复现以骸形象向前方圆形区域发动下落攻击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "未处于<ct color=#FFFFFF>[梦境]</ct>状态中时，卢西娅发动此<ct color=#FFFFFF>[随想]</ct>可获得20点<ct color=#FFFFFF>[梦境值]</ct>，5秒内最多获得一次；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Whim ",
+        "Harmony "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSymphonyOfTheReaperStorm": {
+      "name": "特殊技：死神协奏曲·风暴",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "特殊技为<ct color=#FFFFFF>[随想]</ct>，发动时复现以骸形象向前方直线区域发动斩击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "处于接战状态下且未处于<ct color=#FFFFFF>[梦境]</ct>状态中时，卢西娅发动此<ct color=#FFFFFF>[随想]</ct>可获得20点<ct color=#FFFFFF>[梦境值]</ct>，5秒内最多获得一次。"
+      },
+      "params": [
+        "Whim ",
+        "Harmony ",
+        "Aftershock "
+      ]
+    },
+    "EXSpecialAttackSymphonyOfTheReaperDaybreak": {
+      "name": "强化特殊技：死神协奏曲·破晓",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "强化特殊技为<ct color=#FFFFFF>[合唱]</ct>，发动时复现以骸形象向前方直线区域发动强力斩击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "卢西娅发动<ct color=#FFFFFF>[合唱]</ct>时，为全队角色施加<ct color=#FFFFFF>[破暗]</ct>状态；<ct color=#FFFFFF>[破暗]</ct>状态下，贯穿力提升12点，卢西娅每拥有200点初始最大生命值，可使贯穿力额外提升<ct color=#2BAD00>{CAL:5+AvatarSkillLevel(1)*0.2,1,1}</ct>点，<ct color=#FFFFFF>[破暗]</ct>状态最多可提升<ct color=#2BAD00>{CAL:612+AvatarSkillLevel(1)*24,1,2}</ct>点贯穿力，状态持续20秒，重复触发时刷新持续时间，当卢西娅的初始最大生命值达到24000点时，上述增益效果达到最大值；",
+        "3": "<ct color=#FFFFFF>[合唱]</ct>造成伤害时，卢西娅会根据最大生命值的<ct color=#2BAD00>{CAL:0.34+AvatarSkillLevel(1)*0.03,100,2}%</ct>额外提升最后一段攻击的伤害；",
+        "4": "卢西娅发动强化特殊技后，若自身处于<ct color=#FFFFFF>[梦境]</ct>状态且<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效中，则使<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>的持续时间延长16秒；",
+        "5": "卢西娅发动强化特殊技后，可以直接衔接第五段<ct color=#FFFFFF>[普通攻击]</ct>；",
+        "6": "未处于<ct color=#FFFFFF>[梦境]</ct>状态中时，卢西娅发动此<ct color=#FFFFFF>[合唱]</ct>可获得60点<ct color=#FFFFFF>[梦境值]</ct>；",
+        "7": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗",
+        "贯穿力额外提升上限",
+        "Harmony Additional "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackStageOfBrilliance": {
+      "name": "连携技：璀色剧场",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "连携技为<ct color=#FFFFFF>[合唱]</ct>，发动时复现以骸形象将前方圆形区域敌人吸近并造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "未处于<ct color=#FFFFFF>[梦境]</ct>状态中时，卢西娅发动此<ct color=#FFFFFF>[合唱]</ct>可获得40点<ct color=#FFFFFF>[梦境值]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateChargeGreatArmor": {
+      "name": "终结技：进击，大铠甲！",
+      "desc": {
+        "0": "喧响等级达到[极]时，点按 <IconUltimateReady /> 发动：",
+        "1": "终结技为<ct color=#FFFFFF>[合唱]</ct>，发动时复现以骸形象，卢西娅骑乘以骸向前突进，保持按住方向键可控制骑乘方向并延长突进时间，最多延长至3秒，突进期间抗打断等级提升，受到的伤害降低40%，且卢西娅受到致命伤害时不会战败退场，生命值最多降低至1；",
+        "2": "在突进停止时对周身大范围区域发动强力打击造成<ct color=#FE437E>以太伤害</ct>，招式命中敌人时，将触发<ct color=#FFFFFF>[快速支援]</ct>，招式发动后会留下<ct color=#FFFFFF>[星光汇聚之地]</ct>，<ct color=#FFFFFF>[星光汇聚之地]</ct>持续8秒，当前操作中的角色在<ct color=#FFFFFF>[星光汇聚之地]</ct>内获得生命回复效果：每秒回复卢西娅最大生命值的<ct color=#2BAD00>{CAL:0.01+AvatarSkillLevel(3)*0.0005,100,2}%</ct>，该回复效果在角色离开<ct color=#FFFFFF>[星光汇聚之地]</ct>4秒后或下场时消失；",
+        "3": "若发动后卢西娅处于<ct color=#FFFFFF>[梦境]</ct>状态且<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效中，则使<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>的持续时间延长32秒；",
+        "4": "未处于<ct color=#FFFFFF>[梦境]</ct>状态中时，卢西娅发动此<ct color=#FFFFFF>[合唱]</ct>可获得100点<ct color=#FFFFFF>[梦境值]</ct>，且若发动此<ct color=#FFFFFF>[合唱]</ct>时自身处于<ct color=#FFFFFF>[梦境]</ct>状态，则可在下一次退出<ct color=#FFFFFF>[梦境]</ct>状态时获得100点<ct color=#FFFFFF>[梦境值]</ct>并重新进入<ct color=#FFFFFF>[梦境]</ct>状态，该效果不可重复获得；",
+        "5": "强力打击发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Charge Single-Hit ",
+        "终结技",
+        "每秒回复生命百分比"
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistCrushingMist": {
+      "name": "快速支援：迷雾重击",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "快速支援为<ct color=#FFFFFF>[随想]</ct>，发动时复现以骸形象向前方圆形区域发动下落攻击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "未处于<ct color=#FFFFFF>[梦境]</ct>状态中时，卢西娅发动此<ct color=#FFFFFF>[随想]</ct>可获得20点<ct color=#FFFFFF>[梦境值]</ct>，5秒内最多获得一次；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Whim ",
+        "Harmony ",
+        "Aftershock "
+      ]
+    },
+    "DefensiveAssistVoiceOfIllusoryDreams": {
+      "name": "招架支援：幻梦之声",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpHarmonyOfPaintedDreams": {
+      "name": "支援突击：绘梦和声",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "支援突击为<ct color=#FFFFFF>[合唱]</ct>，发动时复现以骸形象向前方圆形区域发动强力下落攻击，造成<ct color=#FE437E>以太伤害</ct>；",
+        "2": "未处于<ct color=#FFFFFF>[梦境]</ct>状态中时，卢西娅发动此<ct color=#FFFFFF>[合唱]</ct>可获得40点<ct color=#FFFFFF>[梦境值]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：迷途夜颂",
+    "desc": [
+      {
+        "0": "进入战场时，卢西娅立刻获得60点<ct color=#FFFFFF>[梦境值]</ct>，若在发动<ct color=#FFFFFF>[随想]</ct>或<ct color=#FFFFFF>[合唱]</ct>时，卢西娅的<ct color=#FFFFFF>[梦境值]</ct>达到100点，会进入<ct color=#FFFFFF>[梦境]</ct>状态；",
+        "1": "进入<ct color=#FFFFFF>[梦境]</ct>状态时，将触发<ct color=#FFFFFF>[快速支援]</ct>，并同时开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>，<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，重复触发延长持续时间，最多延长至300秒；",
+        "2": "当卢西娅处于<ct color=#FFFFFF>[梦境]</ct>状态中，发动任意<ct color=#FFFFFF>[随想]</ct>时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>将<ct color=#FFFFFF>[随想]</ct>升级为<ct color=#FFFFFF>[合唱]</ct>；其他操作中的角色攻击命中敌人时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>发动<ct color=#FFFFFF>[追加攻击]</ct>，<ct color=#FFFFFF>[追加攻击]</ct>为<ct color=#FFFFFF>[合唱]</ct>，卢西娅在发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>后，8秒内不会触发<ct color=#FFFFFF>[追加攻击]</ct>；",
+        "3": "卢西娅发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>时，会为全队角色施加<ct color=#FFFFFF>[巡梦童谣]</ct>状态，<ct color=#FFFFFF>[巡梦童谣]</ct>状态下，角色造成的伤害提升<ct color=#2BAD00>10%</ct>，持续12秒，重复触发时刷新持续时间；",
+        "4": "<ct color=#FFFFFF>[梦境值]</ct>不足或离开<ct color=#FFFFFF>[以太帷幕]</ct>时，卢西娅退出<ct color=#FFFFFF>[梦境]</ct>状态。"
+      },
+      {
+        "0": "进入战场时，卢西娅立刻获得60点<ct color=#FFFFFF>[梦境值]</ct>，若在发动<ct color=#FFFFFF>[随想]</ct>或<ct color=#FFFFFF>[合唱]</ct>时，卢西娅的<ct color=#FFFFFF>[梦境值]</ct>达到100点，会进入<ct color=#FFFFFF>[梦境]</ct>状态；",
+        "1": "进入<ct color=#FFFFFF>[梦境]</ct>状态时，将触发<ct color=#FFFFFF>[快速支援]</ct>，并同时开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>，<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，重复触发延长持续时间，最多延长至300秒；",
+        "2": "当卢西娅处于<ct color=#FFFFFF>[梦境]</ct>状态中，发动任意<ct color=#FFFFFF>[随想]</ct>时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>将<ct color=#FFFFFF>[随想]</ct>升级为<ct color=#FFFFFF>[合唱]</ct>；其他操作中的角色攻击命中敌人时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>发动<ct color=#FFFFFF>[追加攻击]</ct>，<ct color=#FFFFFF>[追加攻击]</ct>为<ct color=#FFFFFF>[合唱]</ct>，卢西娅在发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>后，8秒内不会触发<ct color=#FFFFFF>[追加攻击]</ct>；",
+        "3": "卢西娅发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>时，会为全队角色施加<ct color=#FFFFFF>[巡梦童谣]</ct>状态，<ct color=#FFFFFF>[巡梦童谣]</ct>状态下，角色造成的伤害提升<ct color=#2BAD00>11.7%</ct>，持续12秒，重复触发时刷新持续时间；",
+        "4": "<ct color=#FFFFFF>[梦境值]</ct>不足或离开<ct color=#FFFFFF>[以太帷幕]</ct>时，卢西娅退出<ct color=#FFFFFF>[梦境]</ct>状态。"
+      },
+      {
+        "0": "进入战场时，卢西娅立刻获得60点<ct color=#FFFFFF>[梦境值]</ct>，若在发动<ct color=#FFFFFF>[随想]</ct>或<ct color=#FFFFFF>[合唱]</ct>时，卢西娅的<ct color=#FFFFFF>[梦境值]</ct>达到100点，会进入<ct color=#FFFFFF>[梦境]</ct>状态；",
+        "1": "进入<ct color=#FFFFFF>[梦境]</ct>状态时，将触发<ct color=#FFFFFF>[快速支援]</ct>，并同时开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>，<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，重复触发延长持续时间，最多延长至300秒；",
+        "2": "当卢西娅处于<ct color=#FFFFFF>[梦境]</ct>状态中，发动任意<ct color=#FFFFFF>[随想]</ct>时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>将<ct color=#FFFFFF>[随想]</ct>升级为<ct color=#FFFFFF>[合唱]</ct>；其他操作中的角色攻击命中敌人时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>发动<ct color=#FFFFFF>[追加攻击]</ct>，<ct color=#FFFFFF>[追加攻击]</ct>为<ct color=#FFFFFF>[合唱]</ct>，卢西娅在发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>后，8秒内不会触发<ct color=#FFFFFF>[追加攻击]</ct>；",
+        "3": "卢西娅发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>时，会为全队角色施加<ct color=#FFFFFF>[巡梦童谣]</ct>状态，<ct color=#FFFFFF>[巡梦童谣]</ct>状态下，角色造成的伤害提升<ct color=#2BAD00>13.3%</ct>，持续12秒，重复触发时刷新持续时间；",
+        "4": "<ct color=#FFFFFF>[梦境值]</ct>不足或离开<ct color=#FFFFFF>[以太帷幕]</ct>时，卢西娅退出<ct color=#FFFFFF>[梦境]</ct>状态。"
+      },
+      {
+        "0": "进入战场时，卢西娅立刻获得60点<ct color=#FFFFFF>[梦境值]</ct>，若在发动<ct color=#FFFFFF>[随想]</ct>或<ct color=#FFFFFF>[合唱]</ct>时，卢西娅的<ct color=#FFFFFF>[梦境值]</ct>达到100点，会进入<ct color=#FFFFFF>[梦境]</ct>状态；",
+        "1": "进入<ct color=#FFFFFF>[梦境]</ct>状态时，将触发<ct color=#FFFFFF>[快速支援]</ct>，并同时开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>，<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，重复触发延长持续时间，最多延长至300秒；",
+        "2": "当卢西娅处于<ct color=#FFFFFF>[梦境]</ct>状态中，发动任意<ct color=#FFFFFF>[随想]</ct>时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>将<ct color=#FFFFFF>[随想]</ct>升级为<ct color=#FFFFFF>[合唱]</ct>；其他操作中的角色攻击命中敌人时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>发动<ct color=#FFFFFF>[追加攻击]</ct>，<ct color=#FFFFFF>[追加攻击]</ct>为<ct color=#FFFFFF>[合唱]</ct>，卢西娅在发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>后，8秒内不会触发<ct color=#FFFFFF>[追加攻击]</ct>；",
+        "3": "卢西娅发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>时，会为全队角色施加<ct color=#FFFFFF>[巡梦童谣]</ct>状态，<ct color=#FFFFFF>[巡梦童谣]</ct>状态下，角色造成的伤害提升<ct color=#2BAD00>15%</ct>，持续12秒，重复触发时刷新持续时间；",
+        "4": "<ct color=#FFFFFF>[梦境值]</ct>不足或离开<ct color=#FFFFFF>[以太帷幕]</ct>时，卢西娅退出<ct color=#FFFFFF>[梦境]</ct>状态。"
+      },
+      {
+        "0": "进入战场时，卢西娅立刻获得60点<ct color=#FFFFFF>[梦境值]</ct>，若在发动<ct color=#FFFFFF>[随想]</ct>或<ct color=#FFFFFF>[合唱]</ct>时，卢西娅的<ct color=#FFFFFF>[梦境值]</ct>达到100点，会进入<ct color=#FFFFFF>[梦境]</ct>状态；",
+        "1": "进入<ct color=#FFFFFF>[梦境]</ct>状态时，将触发<ct color=#FFFFFF>[快速支援]</ct>，并同时开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>，<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，重复触发延长持续时间，最多延长至300秒；",
+        "2": "当卢西娅处于<ct color=#FFFFFF>[梦境]</ct>状态中，发动任意<ct color=#FFFFFF>[随想]</ct>时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>将<ct color=#FFFFFF>[随想]</ct>升级为<ct color=#FFFFFF>[合唱]</ct>；其他操作中的角色攻击命中敌人时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>发动<ct color=#FFFFFF>[追加攻击]</ct>，<ct color=#FFFFFF>[追加攻击]</ct>为<ct color=#FFFFFF>[合唱]</ct>，卢西娅在发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>后，8秒内不会触发<ct color=#FFFFFF>[追加攻击]</ct>；",
+        "3": "卢西娅发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>时，会为全队角色施加<ct color=#FFFFFF>[巡梦童谣]</ct>状态，<ct color=#FFFFFF>[巡梦童谣]</ct>状态下，角色造成的伤害提升<ct color=#2BAD00>16.7%</ct>，持续12秒，重复触发时刷新持续时间；",
+        "4": "<ct color=#FFFFFF>[梦境值]</ct>不足或离开<ct color=#FFFFFF>[以太帷幕]</ct>时，卢西娅退出<ct color=#FFFFFF>[梦境]</ct>状态。"
+      },
+      {
+        "0": "进入战场时，卢西娅立刻获得60点<ct color=#FFFFFF>[梦境值]</ct>，若在发动<ct color=#FFFFFF>[随想]</ct>或<ct color=#FFFFFF>[合唱]</ct>时，卢西娅的<ct color=#FFFFFF>[梦境值]</ct>达到100点，会进入<ct color=#FFFFFF>[梦境]</ct>状态；",
+        "1": "进入<ct color=#FFFFFF>[梦境]</ct>状态时，将触发<ct color=#FFFFFF>[快速支援]</ct>，并同时开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>，<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，重复触发延长持续时间，最多延长至300秒；",
+        "2": "当卢西娅处于<ct color=#FFFFFF>[梦境]</ct>状态中，发动任意<ct color=#FFFFFF>[随想]</ct>时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>将<ct color=#FFFFFF>[随想]</ct>升级为<ct color=#FFFFFF>[合唱]</ct>；其他操作中的角色攻击命中敌人时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>发动<ct color=#FFFFFF>[追加攻击]</ct>，<ct color=#FFFFFF>[追加攻击]</ct>为<ct color=#FFFFFF>[合唱]</ct>，卢西娅在发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>后，8秒内不会触发<ct color=#FFFFFF>[追加攻击]</ct>；",
+        "3": "卢西娅发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>时，会为全队角色施加<ct color=#FFFFFF>[巡梦童谣]</ct>状态，<ct color=#FFFFFF>[巡梦童谣]</ct>状态下，角色造成的伤害提升<ct color=#2BAD00>18.3%</ct>，持续12秒，重复触发时刷新持续时间；",
+        "4": "<ct color=#FFFFFF>[梦境值]</ct>不足或离开<ct color=#FFFFFF>[以太帷幕]</ct>时，卢西娅退出<ct color=#FFFFFF>[梦境]</ct>状态。"
+      },
+      {
+        "0": "进入战场时，卢西娅立刻获得60点<ct color=#FFFFFF>[梦境值]</ct>，若在发动<ct color=#FFFFFF>[随想]</ct>或<ct color=#FFFFFF>[合唱]</ct>时，卢西娅的<ct color=#FFFFFF>[梦境值]</ct>达到100点，会进入<ct color=#FFFFFF>[梦境]</ct>状态；",
+        "1": "进入<ct color=#FFFFFF>[梦境]</ct>状态时，将触发<ct color=#FFFFFF>[快速支援]</ct>，并同时开启<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>，<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>生效期间，全队角色最大生命值提升5%，持续40秒，重复触发延长持续时间，最多延长至300秒；",
+        "2": "当卢西娅处于<ct color=#FFFFFF>[梦境]</ct>状态中，发动任意<ct color=#FFFFFF>[随想]</ct>时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>将<ct color=#FFFFFF>[随想]</ct>升级为<ct color=#FFFFFF>[合唱]</ct>；其他操作中的角色攻击命中敌人时，会消耗25点<ct color=#FFFFFF>[梦境值]</ct>发动<ct color=#FFFFFF>[追加攻击]</ct>，<ct color=#FFFFFF>[追加攻击]</ct>为<ct color=#FFFFFF>[合唱]</ct>，卢西娅在发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>后，8秒内不会触发<ct color=#FFFFFF>[追加攻击]</ct>；",
+        "3": "卢西娅发动招式升级或<ct color=#FFFFFF>[追加攻击]</ct>时，会为全队角色施加<ct color=#FFFFFF>[巡梦童谣]</ct>状态，<ct color=#FFFFFF>[巡梦童谣]</ct>状态下，角色造成的伤害提升<ct color=#2BAD00>20%</ct>，持续12秒，重复触发时刷新持续时间；",
+        "4": "<ct color=#FFFFFF>[梦境值]</ct>不足或离开<ct color=#FFFFFF>[以太帷幕]</ct>时，卢西娅退出<ct color=#FFFFFF>[梦境]</ct>状态。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：长夜诗篇",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[命破]</ct>角色或<ct color=#FFFFFF>[击破]</ct>角色时触发：",
+      "1": "施加<ct color=#FFFFFF>[破暗]</ct>状态时，额外附加暴击伤害提升30%效果。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "秘密朋友",
+      "desc": "<ct color=#FFFFFF>[巡梦童谣]</ct>状态额外附加造成伤害时无视敌人18%全属性伤害抗性和喧响值获取效率提升5%效果；且卢西娅发动招式升级时获得1层<ct color=#FFFFFF>[回音]</ct>，最多叠加4层，当<ct color=#FFFFFF>[巡梦童谣]</ct>状态结束时，若卢西娅持有<ct color=#FFFFFF>[回音]</ct>，则会自动消耗1层并重新为全队角色施加<ct color=#FFFFFF>[巡梦童谣]</ct>状态。",
+      "flavor": {
+        "0": "在还是个孩子的时候，奶奶就牵着卢西娅的手，将她带进了空洞。",
+        "1": "从此，她穿梭于漆黑的小径，狩猎于无边的空洞；画笔下描绘了擦肩而过的以骸，以太光芒构成了童年的所有光彩。",
+        "2": "「小时候，我有三个朋友：很强壮的黑盾，会瞬间移动的塔纳，还有特别特别厉害的大铠甲！」",
+        "3": "「后来，他们都不见啦…」",
+        "4": "「不过没关系！我把他们都画在了本子上——现在，只要挥挥法杖，我就能把他们都召唤出来！」"
+      }
+    },
+    "2": {
+      "name": "魔术大师",
+      "desc": "卢西娅处于<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>内时<ct color=#FFFFFF>[合唱]</ct>造成的伤害提升15%；拥有<ct color=#FFFFFF>[破暗]</ct>状态的代理人处于<ct color=#FFFFFF>[以太帷幕·涌泉]</ct>内时，额外获得贯穿伤害提升15%效果。",
+      "flavor": {
+        "0": "近来，新艾利都流传着一则关于「夜魔使者」的传说。",
+        "1": "「每到晚上十二点，夜魔使者就会出现在街头，给我们讲各种各样的故事！」",
+        "2": "「她还是个很厉害的魔术师！只要念起咒语，就能『哗啦啦』召唤出好多好多以骸，帮我们战斗！」",
+        "3": "「上次在空洞里迷路时，夜魔使者就是用这招把我们救出来的！」",
+        "4": "——上述内容由果核布、恶魔布和飞靶布口述"
+      }
+    },
+    "3": {
+      "name": "最佳搭档",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "——咚，咚咚。",
+        "1": "伴随着有规律的敲击声，一把烤串从窗口递了进来。",
+        "2": "「绳匠接着！刚出炉的烤肉搭配柠檬跳跳糖，契合得就像杜拉罕的左手刀和右手盾！」",
+        "3": "「吃完了的话…我们现在一起出去玩吧！」",
+        "4": "「我有预感，今晚一定能找到超级棒的怪谈素材——能『嘭』地一下掀翻论坛那种程度！」"
+      }
+    },
+    "4": {
+      "name": "深夜时间",
+      "desc": "当场上有<ct color=#FFFFFF>[以太帷幕]</ct>开启或延长时，卢西娅使全队角色获得100点喧响值，该效果15秒内最多触发一次。",
+      "flavor": {
+        "0": "对于「怪谈学者」来说，旺盛的好奇心、充沛的行动力以及说走就走的决心，都是必不可少的重要特质，卢西娅也是这样。",
+        "1": "正因如此，在刚来新艾利都的那段时间，她成为了治安局的常客。",
+        "2": "「说过多少次了，哪怕是追踪怪谈的时候，也不可以随随便便闯进工地——」",
+        "3": "「不要在街上睡觉，不可以半夜到处乱跑，不能在所有人面前冲进空洞…这些全都是『新艾利都生活守则』，需要好好遵守！」",
+        "4": "「实在睡不着的话，要不…唔，就去泰姆菲尔德庄园探险，顺便给爱丽丝讲点鬼故事怎么样？」"
+      }
+    },
+    "5": {
+      "name": "梦境守望人",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "夜色如墨深沉，繁星瑰丽璀璨。",
+        "1": "她从远方跋涉而来，带着故事、歌谣和未完成的诗篇。",
+        "2": "她摘下花朵，露水凝结在花瓣中，放在窗前。",
+        "3": "她守候着你的梦境，让它温暖安全。",
+        "4": "",
+        "5": "「早上好…诶，卢西娅是什么时候过来的？」",
+        "6": "「我不记得了，应该没有很久吧…毕竟，和绳匠在一起的时间总是过得很快。」"
+      }
+    },
+    "6": {
+      "name": "永不结束的旅途",
+      "desc": "卢西娅处于任意<ct color=#FFFFFF>[以太帷幕]</ct>内时，会根据自身初始最大生命值的2%提升自身攻击力，且<ct color=#FFFFFF>[合唱]</ct>必定暴击，<ct color=#FFFFFF>[合唱]</ct>造成暴击时暴击伤害提升30%。",
+      "flavor": {
+        "0": "卢西娅的生命是一场没有尽头的旅程。她在月色下奔跑寻觅，横跨一条又一条街道，走过一个又一个城市。",
+        "1": "故事的丝线编织出无数美梦，轻盈的歌声于夜灯下流淌。",
+        "2": "寻觅的脚步从不停歇，星空下的旅途永不终止。",
+        "3": "",
+        "4": "直到夜幕消褪，阳光升起，少女才伸着懒腰走出空洞。",
+        "5": "「哈欠…好困…可是大家都说最好别睡在空洞里…」",
+        "6": "「要不，还是去录像店打个地铺吧！」"
+      }
+    }
+  },
+  "potential": {}
+}

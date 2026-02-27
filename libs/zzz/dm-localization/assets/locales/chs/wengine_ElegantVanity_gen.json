@@ -1,0 +1,19 @@
+{
+  "name": "玲珑妆匣",
+  "desc": {
+    "0": "光芒的轮廓逐渐浮现，璀璨的彩光从匣内泄露，似真似幻，映射出舞台背后未曾言说的秘密，繁华与危机在其中悄然交错，让人不禁沉迷，无法移开视线。\n\n<ct color=#959595>「这可是秘密武器～女孩子的温柔、诱惑、力量、骄傲、光芒，全都藏在这个里面！」——嘉音用无名指将唇色晕染开，扣起妆匣嫣然一笑道。</ct>",
+    "1": "",
+    "2": "<ct color=#959595>\"This is my secret weapon~ All the gentleness, allure, strength, pride, and radiance of a girl are hidden inside!\"",
+    "3": "—Astra, blending her lip color with her ring finger, then closing the vanity case with a playful smile.</ct>"
+  },
+  "desc2": "装备后可提升[支援]代理人的战斗能力",
+  "desc3": "灿烂夺目的华彩之下，一份本真从未被掩盖。",
+  "phase": "卓卓千华",
+  "phaseDescs": [
+    "队伍中任意角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>、<ct color=#FFFFFF>[回避支援]</ct>入场时，为装备者回复<ct color=#2BAD00>5</ct>点能量，5秒内最多触发一次；装备者消耗25点或以上能量时，全队角色造成的伤害提升<ct color=#2BAD00>10%</ct>，最多叠加2层，持续20秒，重复触发时刷新持续时间，该效果全队唯一。",
+    "队伍中任意角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>、<ct color=#FFFFFF>[回避支援]</ct>入场时，为装备者回复<ct color=#2BAD00>5.5</ct>点能量，5秒内最多触发一次；装备者消耗25点或以上能量时，全队角色造成的伤害提升<ct color=#2BAD00>11.5%</ct>，最多叠加2层，持续20秒，重复触发时刷新持续时间，该效果全队唯一。",
+    "队伍中任意角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>、<ct color=#FFFFFF>[回避支援]</ct>入场时，为装备者回复<ct color=#2BAD00>6</ct>点能量，5秒内最多触发一次；装备者消耗25点或以上能量时，全队角色造成的伤害提升<ct color=#2BAD00>13%</ct>，最多叠加2层，持续20秒，重复触发时刷新持续时间，该效果全队唯一。",
+    "队伍中任意角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>、<ct color=#FFFFFF>[回避支援]</ct>入场时，为装备者回复<ct color=#2BAD00>6.5</ct>点能量，5秒内最多触发一次；装备者消耗25点或以上能量时，全队角色造成的伤害提升<ct color=#2BAD00>14.5%</ct>，最多叠加2层，持续20秒，重复触发时刷新持续时间，该效果全队唯一。",
+    "队伍中任意角色通过<ct color=#FFFFFF>[快速支援]</ct>、<ct color=#FFFFFF>[连携技]</ct>、<ct color=#FFFFFF>[招架支援]</ct>、<ct color=#FFFFFF>[回避支援]</ct>入场时，为装备者回复<ct color=#2BAD00>7</ct>点能量，5秒内最多触发一次；装备者消耗25点或以上能量时，全队角色造成的伤害提升<ct color=#2BAD00>16%</ct>，最多叠加2层，持续20秒，重复触发时刷新持续时间，该效果全队唯一。"
+  ]
+}

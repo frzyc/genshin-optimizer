@@ -1,0 +1,297 @@
+{
+  "name": "橘福福",
+  "fullName": "橘福福",
+  "basic": {
+    "BasicAttackTigerSevenFormsFlamingClaw": {
+      "name": "普通攻击：恶虎七式·燎身爪",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的斩击，造成<ct color=#F0D12B>物理伤害</ct>和<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "第三段攻击期间，连续点按 <IconNormal /> 可以维持连击，持续打击敌人；",
+        "3": "第三段攻击期间，长按或停顿后点按 <IconNormal /> ，将衔接第四段攻击；",
+        "4": "第三段攻击期间抗打断等级提升，受到伤害降低40%。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackHuWei": {
+      "name": "普通攻击：「虎威」",
+      "desc": {
+        "0": "战斗中，「虎威」会自动对敌人发动攻击， 造成<ct color=#FF5521>火属性伤害</ct>；",
+        "1": "命中敌人时，获得20点<ct color=#FFFFFF>[威风]</ct>，招式内最多触发一次；<ct color=#FFFFFF>[威风]</ct>上限为200点。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeTigerSevenFormsTigerwind": {
+      "name": "闪避：恶虎七式·风从虎",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackTigerSevenFormsTigerCharge": {
+      "name": "冲刺攻击：恶虎七式·虎奔",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前发动快速斩击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DashAttackTigerSevenFormsMountainKingsGame": {
+      "name": "冲刺攻击：恶虎七式·山君鼎戏",
+      "desc": {
+        "0": "<ct color=#FFFFFF>[冲刺攻击：恶虎七式·虎奔]</ct>发动后，长按 <IconNormal /> 发动：",
+        "1": "进入高速旋转状态，该状态下可以拖曳{LAYOUT_CONSOLECONTROLLER#操作杆}{LAYOUT_FALLBACK#摇杆}进行移动，接触敌人时造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "橘福福通过其他招式获得<ct color=#FFFFFF>[威势]</ct>后，会在高速旋转状态下带有火焰；接触敌人时消耗1点<ct color=#FFFFFF>[威势]</ct>，改为造成<ct color=#FF5521>火属性伤害</ct>并获得25点<ct color=#FFFFFF>[威风]</ct>，<ct color=#FFFFFF>[威势]</ct>上限为15点；",
+        "3": "橘福福消耗<ct color=#FFFFFF>[威势]</ct>造成<ct color=#FF5521>火属性伤害</ct>时，若<ct color=#FFFFFF>[威风]</ct>高于100点，会自动消耗100点<ct color=#FFFFFF>[威风]</ct>发动<ct color=#FFFFFF>[连携技：虎釜震煞]</ct>；",
+        "4": "松开 <IconNormal /> 可退出旋转状态，并丢出<ct color=#FFFFFF>「虎威」</ct>攻击敌人，造成<ct color=#FF5521>火属性伤害</ct>；切换至其他角色时，橘福福会继续处于旋转状态，尝试撞击最近的敌人；",
+        "5": "橘福福为当前操作中角色时，招式发动期间受到伤害降低40%，抗打断等级提升，不为当前操作中角色时，获得无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterTigerSevenFormsReignitedMountain": {
+      "name": "闪避反击：恶虎七式·离火回峰",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动多次斩击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DashAttackTigerSevenFormsMountainKingsGameMomentum": {
+      "name": "冲刺攻击：恶虎七式·山君鼎戏·威势",
+      "desc": "",
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackTigerSevenFormsMountainDescendingTiger": {
+      "name": "特殊技：恶虎七式·下山虎",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方进行旋转斩击后发动下落斩击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger": {
+      "name": "强化特殊技：恶虎七式改·下山猛虎",
+      "desc": {
+        "0": "能量足够时，点按 <IconSpecialReady /> 发动：",
+        "1": "挥舞<ct color=#FFFFFF>「虎威」</ct>向前方进行强力打击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "发动时获得3点<ct color=#FFFFFF>[威势]</ct>和80点<ct color=#FFFFFF>[威风]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "能量消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackTigerCauldronCollapse": {
+      "name": "连携技：虎釜崩",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "挥舞「虎威」对前方小范围敌人进行强力打击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "ChainAttackSuppressingTigerCauldron": {
+      "name": "连携技：虎釜震煞",
+      "desc": {
+        "0": "拥有至少100点<ct color=#FFFFFF>[威风]</ct>时，触发<ct color=#FFFFFF>[连携技]</ct>后自动发动：",
+        "1": "消耗100点<ct color=#FFFFFF>[威风]</ct>，打开「虎威」对前方小范围敌人发射火焰和爆米花打击敌人，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "拥有<ct color=#FFFFFF>[威势]</ct>且不为操作中角色时，招式结束会进入高速旋转状态；",
+        "3": "招式为<ct color=#FFFFFF>[追加攻击]</ct>，发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateTigerSevenFormsRagingTigerExplosion": {
+      "name": "终结技：恶虎七式·猛虎炸开花",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "使用「虎威」进行两次下落攻击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "发动时获得6点<ct color=#FFFFFF>[威势]</ct>和100点<ct color=#FFFFFF>[威风]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistDecisiveStomp": {
+      "name": "快速支援：怒决蹯",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动斩击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistSteadfastCrouchingTiger": {
+      "name": "招架支援：岿然虎踞",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpFeralBlazingMaw": {
+      "name": "支援突击：彪形焰颌",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动斩击后，使用<ct color=#FFFFFF>「虎威」</ct>追加一次下落攻击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "发动时获得1点<ct color=#FFFFFF>[威势]</ct>，10秒内最多获得1次；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：虎虎生威",
+    "desc": [
+      {
+        "0": "橘福福未使用「虎威」时，「虎威」会自动攻击敌人，并在命中敌人时获得<ct color=#FFFFFF>[威风]</ct>；",
+        "1": "「虎威」命中敌人时，若拥有至少100点<ct color=#FFFFFF>[威风]</ct>且橘福福不为当前操作中角色，橘福福会围绕目标敌人，发动<ct color=#FFFFFF>[连携技：虎釜震煞]</ct>；发动时，全队角色获得<ct color=#FFFFFF>[虎啸]</ct>效果：暴击伤害提升<ct color=#2BAD00>10%</ct>，橘福福的初始攻击力大于等于2800点时，每超过100点攻击力会使暴击伤害额外提升5%，最多额外提升30%；",
+        "2": "<ct color=#FFFFFF>[虎啸]</ct>状态下，角色的<ct color=#FFFFFF>[连携技]</ct>/<ct color=#FFFFFF>[终结技]</ct>造成的伤害提升<ct color=#2BAD00>10%/20%</ct>；",
+        "3": "<ct color=#FFFFFF>[虎啸]</ct>状态持续30秒，重复触发时刷新持续时间，橘福福处于<ct color=#FFFFFF>[虎啸]</ct>效果中，冲击力提升<ct color=#2BAD00>25点</ct>。"
+      },
+      {
+        "0": "橘福福未使用「虎威」时，「虎威」会自动攻击敌人，并在命中敌人时获得<ct color=#FFFFFF>[威风]</ct>；",
+        "1": "「虎威」命中敌人时，若拥有至少100点<ct color=#FFFFFF>[威风]</ct>且橘福福不为当前操作中角色，橘福福会围绕目标敌人，发动<ct color=#FFFFFF>[连携技：虎釜震煞]</ct>；发动时，全队角色获得<ct color=#FFFFFF>[虎啸]</ct>效果：暴击伤害提升<ct color=#2BAD00>11.7%</ct>，橘福福的初始攻击力大于等于2800点时，每超过100点攻击力会使暴击伤害额外提升5%，最多额外提升30%；",
+        "2": "<ct color=#FFFFFF>[虎啸]</ct>状态下，角色的<ct color=#FFFFFF>[连携技]</ct>/<ct color=#FFFFFF>[终结技]</ct>造成的伤害提升<ct color=#2BAD00>11.7%/23.3%</ct>；",
+        "3": "<ct color=#FFFFFF>[虎啸]</ct>状态持续30秒，重复触发时刷新持续时间，橘福福处于<ct color=#FFFFFF>[虎啸]</ct>效果中，冲击力提升<ct color=#2BAD00>29.2点</ct>。"
+      },
+      {
+        "0": "橘福福未使用「虎威」时，「虎威」会自动攻击敌人，并在命中敌人时获得<ct color=#FFFFFF>[威风]</ct>；",
+        "1": "「虎威」命中敌人时，若拥有至少100点<ct color=#FFFFFF>[威风]</ct>且橘福福不为当前操作中角色，橘福福会围绕目标敌人，发动<ct color=#FFFFFF>[连携技：虎釜震煞]</ct>；发动时，全队角色获得<ct color=#FFFFFF>[虎啸]</ct>效果：暴击伤害提升<ct color=#2BAD00>13.3%</ct>，橘福福的初始攻击力大于等于2800点时，每超过100点攻击力会使暴击伤害额外提升5%，最多额外提升30%；",
+        "2": "<ct color=#FFFFFF>[虎啸]</ct>状态下，角色的<ct color=#FFFFFF>[连携技]</ct>/<ct color=#FFFFFF>[终结技]</ct>造成的伤害提升<ct color=#2BAD00>13.3%/26.7%</ct>；",
+        "3": "<ct color=#FFFFFF>[虎啸]</ct>状态持续30秒，重复触发时刷新持续时间，橘福福处于<ct color=#FFFFFF>[虎啸]</ct>效果中，冲击力提升<ct color=#2BAD00>33.3点</ct>。"
+      },
+      {
+        "0": "橘福福未使用「虎威」时，「虎威」会自动攻击敌人，并在命中敌人时获得<ct color=#FFFFFF>[威风]</ct>；",
+        "1": "「虎威」命中敌人时，若拥有至少100点<ct color=#FFFFFF>[威风]</ct>且橘福福不为当前操作中角色，橘福福会围绕目标敌人，发动<ct color=#FFFFFF>[连携技：虎釜震煞]</ct>；发动时，全队角色获得<ct color=#FFFFFF>[虎啸]</ct>效果：暴击伤害提升<ct color=#2BAD00>15%</ct>，橘福福的初始攻击力大于等于2800点时，每超过100点攻击力会使暴击伤害额外提升5%，最多额外提升30%；",
+        "2": "<ct color=#FFFFFF>[虎啸]</ct>状态下，角色的<ct color=#FFFFFF>[连携技]</ct>/<ct color=#FFFFFF>[终结技]</ct>造成的伤害提升<ct color=#2BAD00>15%/30%</ct>；",
+        "3": "<ct color=#FFFFFF>[虎啸]</ct>状态持续30秒，重复触发时刷新持续时间，橘福福处于<ct color=#FFFFFF>[虎啸]</ct>效果中，冲击力提升<ct color=#2BAD00>37.5点</ct>。"
+      },
+      {
+        "0": "橘福福未使用「虎威」时，「虎威」会自动攻击敌人，并在命中敌人时获得<ct color=#FFFFFF>[威风]</ct>；",
+        "1": "「虎威」命中敌人时，若拥有至少100点<ct color=#FFFFFF>[威风]</ct>且橘福福不为当前操作中角色，橘福福会围绕目标敌人，发动<ct color=#FFFFFF>[连携技：虎釜震煞]</ct>；发动时，全队角色获得<ct color=#FFFFFF>[虎啸]</ct>效果：暴击伤害提升<ct color=#2BAD00>16.7%</ct>，橘福福的初始攻击力大于等于2800点时，每超过100点攻击力会使暴击伤害额外提升5%，最多额外提升30%；",
+        "2": "<ct color=#FFFFFF>[虎啸]</ct>状态下，角色的<ct color=#FFFFFF>[连携技]</ct>/<ct color=#FFFFFF>[终结技]</ct>造成的伤害提升<ct color=#2BAD00>16.7%/33.3%</ct>；",
+        "3": "<ct color=#FFFFFF>[虎啸]</ct>状态持续30秒，重复触发时刷新持续时间，橘福福处于<ct color=#FFFFFF>[虎啸]</ct>效果中，冲击力提升<ct color=#2BAD00>41.7点</ct>。"
+      },
+      {
+        "0": "橘福福未使用「虎威」时，「虎威」会自动攻击敌人，并在命中敌人时获得<ct color=#FFFFFF>[威风]</ct>；",
+        "1": "「虎威」命中敌人时，若拥有至少100点<ct color=#FFFFFF>[威风]</ct>且橘福福不为当前操作中角色，橘福福会围绕目标敌人，发动<ct color=#FFFFFF>[连携技：虎釜震煞]</ct>；发动时，全队角色获得<ct color=#FFFFFF>[虎啸]</ct>效果：暴击伤害提升<ct color=#2BAD00>18.3%</ct>，橘福福的初始攻击力大于等于2800点时，每超过100点攻击力会使暴击伤害额外提升5%，最多额外提升30%；",
+        "2": "<ct color=#FFFFFF>[虎啸]</ct>状态下，角色的<ct color=#FFFFFF>[连携技]</ct>/<ct color=#FFFFFF>[终结技]</ct>造成的伤害提升<ct color=#2BAD00>18.3%/36.7%</ct>；",
+        "3": "<ct color=#FFFFFF>[虎啸]</ct>状态持续30秒，重复触发时刷新持续时间，橘福福处于<ct color=#FFFFFF>[虎啸]</ct>效果中，冲击力提升<ct color=#2BAD00>45.8点</ct>。"
+      },
+      {
+        "0": "橘福福未使用「虎威」时，「虎威」会自动攻击敌人，并在命中敌人时获得<ct color=#FFFFFF>[威风]</ct>；",
+        "1": "「虎威」命中敌人时，若拥有至少100点<ct color=#FFFFFF>[威风]</ct>且橘福福不为当前操作中角色，橘福福会围绕目标敌人，发动<ct color=#FFFFFF>[连携技：虎釜震煞]</ct>；发动时，全队角色获得<ct color=#FFFFFF>[虎啸]</ct>效果：暴击伤害提升<ct color=#2BAD00>20%</ct>，橘福福的初始攻击力大于等于2800点时，每超过100点攻击力会使暴击伤害额外提升5%，最多额外提升30%；",
+        "2": "<ct color=#FFFFFF>[虎啸]</ct>状态下，角色的<ct color=#FFFFFF>[连携技]</ct>/<ct color=#FFFFFF>[终结技]</ct>造成的伤害提升<ct color=#2BAD00>20%/40%</ct>；",
+        "3": "<ct color=#FFFFFF>[虎啸]</ct>状态持续30秒，重复触发时刷新持续时间，橘福福处于<ct color=#FFFFFF>[虎啸]</ct>效果中，冲击力提升<ct color=#2BAD00>50点</ct>。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：八面威风",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[强攻]</ct>或<ct color=#FFFFFF>[命破]</ct>角色时触发：",
+      "1": "队伍中所有角色的喧响值上限提升1000点，<ct color=#FFFFFF>[强攻]</ct>或<ct color=#FFFFFF>[命破]</ct>角色发动<ct color=#FFFFFF>[终结技]</ct>时，该角色获得300点喧响值。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "超级可怕小老虎",
+      "desc": "进入战场时，橘福福的暴击率提升12%，立即获得100点<ct color=#FFFFFF>[威风]</ct>；橘福福的<ct color=#FFFFFF>[连携技]</ct>命中敌人时，目标处于失衡状态下时，失衡易伤倍率提升35%，持续30秒。",
+      "flavor": {
+        "0": "「告别与死生的课题，对孩子来说太难懂，对大人来说太沉重，对长者来说太残酷。」",
+        "1": "「但我不害怕——我是不会害怕的虎希人，早早地知晓这一课。」",
+        "2": "「我是超级可怕的大老虎，可爱小动物们请不要直视我的目光！」"
+      }
+    },
+    "2": {
+      "name": "神通广大青溟客",
+      "desc": "处于<ct color=#FFFFFF>[虎啸]</ct>状态下角色的暴击伤害额外提升22%；任意角色发动<ct color=#FFFFFF>[终结技]</ct>时，橘福福回复3点<ct color=#FFFFFF>[威势]</ct>。",
+      "flavor": {
+        "0": "「师父教我的术法真是神奇，虽然比不过那些童话和传说。」",
+        "1": "「如果我厉害一点——再厉害一点，是不是可以将那些命定的过往全都重来过，就像童话和传说。」",
+        "2": "「我一开始确实也摸不着头脑，但其实把握了关窍就很简单啦。我来教你吧，{F#小师妹}{M#小师弟}！」"
+      }
+    },
+    "3": {
+      "name": "仗义行侠少年郎",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「那一刻的善，那一刻的恶，或许都是一念之差。一念之差留下好多遗憾好多如果——还有好多牺牲与爱。」",
+        "1": "「我不聪明，大道理我不懂得许多，只好去做我觉得正确的选择。」",
+        "2": "「有福福大侠的地方，就有公义！」"
+      }
+    },
+    "4": {
+      "name": "降妖伏魔虎修者",
+      "desc": "橘福福处于<ct color=#FFFFFF>[虎啸]</ct>状态下时，自身的暴击伤害提升35%。",
+      "flavor": {
+        "0": "「以骸好可怕，强盗好可怕，空洞好可怕，没有星星的黑夜好可怕——可我是云岿山绝顶厉害的修者，我不可以退缩，不可以再看到我的故事发生。」",
+        "1": "「那堪黯晦绝此景，不忍山与月与云。」",
+        "2": "「我是云岿山绝顶厉害的修者！魑魅魍魉速速伏诛！」"
+      }
+    },
+    "5": {
+      "name": "神威盖世大师姐",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "「诸位安心——大师姐来了！」",
+        "1": "「小时候的那个我没有等到一直在等待的英雄，我不会让你等——我会成为你的英雄。」",
+        "2": "「福福可欺而师弟师妹不可欺！我去跟他拼了！嗷——！」"
+      }
+    },
+    "6": {
+      "name": "知我心中虎啸声",
+      "desc": "橘福福的<ct color=#FFFFFF>[连携技]</ct>造成的伤害提升30%；橘福福在高速旋转状态下时，消耗<ct color=#FFFFFF>[威势]</ct>命中敌人时，会发射3个爆米花，每个爆米花造成福福攻击力160%的伤害，且造成的伤害视为<ct color=#FFFFFF>[连携技]</ct>伤害。",
+      "flavor": {
+        "0": "「威风摇落山上月，气宇踏平洞中窟——师姐这句诗写得如何？有没有把师姐威风八面的气概写出来？」",
+        "1": "「侠名不重要，遗憾不重要，泪水不重要，总有一天会到来的离别也没关系。」",
+        "2": "「只要有你还记得，我曾勇敢咆哮过。」"
+      }
+    }
+  },
+  "potential": {}
+}

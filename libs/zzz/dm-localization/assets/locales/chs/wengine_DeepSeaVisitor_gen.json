@@ -1,0 +1,18 @@
+{
+  "name": "深海访客",
+  "desc": {
+    "0": "特制的大功率变温型音擎，能利用自身的降温功能快速冻结周围的物体；虽然它兼具极强的制冷能力与输出功率，是一款性能绝佳的战术音擎，不过对于艾莲来说，它最主要的用途是往开口处放入冰块，削成刨冰。",
+    "1": "",
+    "2": "<ct color=#959595>「我想把它带去学校用。尤其是夏天。但是莱卡恩和丽娜不允许…真麻烦。」——艾莲，一边吃冰一边摇头</ct>"
+  },
+  "desc2": "装备后可提升[强攻]代理人的战斗能力",
+  "desc3": "特制的大功率变温型音擎，兼具极强的制冷能力与输出功率，是艾莲惯用的音擎款式。",
+  "phase": "诸洋之王",
+  "phaseDescs": [
+    "<ct color=#98EFF0>冰属性伤害</ct>提升<ct color=#2BAD00>25%</ct>；<ct color=#FFFFFF>[普通攻击]</ct>命中敌人时，装备者的暴击率提升<ct color=#2BAD00>10%</ct>，持续8秒；<ct color=#FFFFFF>[冲刺攻击]</ct>造成<ct color=#98EFF0>冰属性伤害</ct>时，装备者的暴击率额外提升<ct color=#2BAD00>10%</ct>，持续15秒，每种增益效果单独结算持续时间。",
+    "<ct color=#98EFF0>冰属性伤害</ct>提升<ct color=#2BAD00>31.5%</ct>；<ct color=#FFFFFF>[普通攻击]</ct>命中敌人时，装备者的暴击率提升<ct color=#2BAD00>12.5%</ct>，持续8秒；<ct color=#FFFFFF>[冲刺攻击]</ct>造成<ct color=#98EFF0>冰属性伤害</ct>时，装备者的暴击率额外提升<ct color=#2BAD00>12.5%</ct>，持续15秒，每种增益效果单独结算持续时间。",
+    "<ct color=#98EFF0>冰属性伤害</ct>提升<ct color=#2BAD00>38%</ct>；<ct color=#FFFFFF>[普通攻击]</ct>命中敌人时，装备者的暴击率提升<ct color=#2BAD00>15%</ct>，持续8秒；<ct color=#FFFFFF>[冲刺攻击]</ct>造成<ct color=#98EFF0>冰属性伤害</ct>时，装备者的暴击率额外提升<ct color=#2BAD00>15%</ct>，持续15秒，每种增益效果单独结算持续时间。",
+    "<ct color=#98EFF0>冰属性伤害</ct>提升<ct color=#2BAD00>44.5%</ct>；<ct color=#FFFFFF>[普通攻击]</ct>命中敌人时，装备者的暴击率提升<ct color=#2BAD00>17.5%</ct>，持续8秒；<ct color=#FFFFFF>[冲刺攻击]</ct>造成<ct color=#98EFF0>冰属性伤害</ct>时，装备者的暴击率额外提升<ct color=#2BAD00>17.5%</ct>，持续15秒，每种增益效果单独结算持续时间。",
+    "<ct color=#98EFF0>冰属性伤害</ct>提升<ct color=#2BAD00>50%</ct>；<ct color=#FFFFFF>[普通攻击]</ct>命中敌人时，装备者的暴击率提升<ct color=#2BAD00>20%</ct>，持续8秒；<ct color=#FFFFFF>[冲刺攻击]</ct>造成<ct color=#98EFF0>冰属性伤害</ct>时，装备者的暴击率额外提升<ct color=#2BAD00>20%</ct>，持续15秒，每种增益效果单独结算持续时间。"
+  ]
+}

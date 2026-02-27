@@ -100,7 +100,7 @@
     }
   },
   "passive1": {
-    "name": "电感余震",
+    "name": "电感追击",
     "description": {
       "0": "重击命中时，会为敌人附加<strong>苍雷</strong>的引雷效果。"
     }

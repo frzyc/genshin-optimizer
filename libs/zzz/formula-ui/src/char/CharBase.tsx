@@ -9,7 +9,16 @@ import { specificDmgTypeKeys } from '@genshin-optimizer/zzz/db'
 import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
+import i18n from 'i18next'
 import { damageTypeKeysMap } from './util'
+
+const elementalDataI18n: Record<Attribute, string> = {
+  get electric() { return i18n.t('statKey_gen:electric') },
+  get fire() { return i18n.t('statKey_gen:fire') },
+  get ice() { return i18n.t('statKey_gen:ice') },
+  get physical() { return i18n.t('statKey_gen:physical') },
+  get ether() { return i18n.t('statKey_gen:ether') },
+}
 export const charBaseUiSheet: TagField[] = (
   [
     // hp/atk/def handled in TagDisplay
@@ -66,7 +75,7 @@ charBaseUiSheet.push(
         attribute: attr,
         name: 'standardDmgInst',
       },
-      title: <ColorText color={attr}>{elementalData[attr]} Damage</ColorText>,
+      title: <ColorText color={attr}>{elementalDataI18n[attr]} {i18n.t('statKey_gen:damage')}</ColorText>,
     })
   ),
   ...allAttributeKeys.map(
@@ -78,7 +87,7 @@ charBaseUiSheet.push(
         attribute: attr,
         name: 'sheerDmgInst',
       },
-      title: <ColorText color={attr}>{elementalData[attr]} Damage</ColorText>,
+      title: <ColorText color={attr}>{elementalDataI18n[attr]} {i18n.t('statKey_gen:damage')}</ColorText>,
     })
   ),
   // elemental dmg with dmg types
@@ -95,7 +104,7 @@ charBaseUiSheet.push(
         },
         title: (
           <ColorText color={attr}>
-            {elementalData[attr]} {damageTypeKeysMap[dmgType]} Damage
+            {elementalDataI18n[attr]} {damageTypeKeysMap[dmgType]} {i18n.t('statKey_gen:damage')}
           </ColorText>
         ),
       })
@@ -112,7 +121,7 @@ charBaseUiSheet.push(
         name: 'anomalyDmgInst',
       },
       title: (
-        <ColorText color={attr}>{elementalData[attr]} Anomaly Damage</ColorText>
+        <ColorText color={attr}>{elementalDataI18n[attr]} {i18n.t('statKey_gen:anomalyDamage')}</ColorText>
       ),
     })
   ),
@@ -146,7 +155,7 @@ charBaseUiSheet.push(
       },
       title: (
         <ColorText color={attr}>
-          {elementalData[attr]} Anomaly Buildup
+          {elementalDataI18n[attr]} {i18n.t('statKey_gen:anomalyBuildup')}
         </ColorText>
       ),
     })
@@ -158,6 +167,6 @@ charBaseUiSheet.push(
       q: 'dazeBuildup',
       name: 'dazeInst',
     },
-    title: 'Daze Buildup',
+    title: i18n.t('statKey_gen:dazeBuildup'),
   }
 )

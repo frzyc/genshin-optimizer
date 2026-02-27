@@ -1,0 +1,22 @@
+{
+  "name": "狸法七变化",
+  "desc": {
+    "0": "精巧的小型音擎，原本是第一次参加学校空洞实习时发的便宜货，但因为体积小巧便于携带，柚叶始终难以割舍。",
+    "1": "第一次改造，增大了音擎的输出功率；第二次改造，追加了两个以太异常特化组件；第三次改造，尝试修改了内部布线，但不慎引起短路，把裙子烧了个洞；第四次改造，真斗帮忙修好了短路弄坏的热传导组件，但请真斗吃饭花的钱，已经足够买3个新的热传导组件了；第五次改造，更换了新的共鸣腔；第六次改造，提升了对驱动盘高频信号的响应速度。",
+    "2": "很好，它终于是一件完美的、可以陪伴主人出生入死的神兵利器了！然而——",
+    "3": "「爸，你见我音擎没？」",
+    "4": "「系果边啊，我帮你改左个外壳啦，之前太核突！唔可以畀人话我个女冇眼光！」",
+    "5": "「爸！这可是音擎诶，你搞这么华丽，万一弄坏了多可惜啊！」",
+    "6": "「咁就咪搞啲会整坏音擎嘅危险嘢啦！」"
+  },
+  "desc2": "装备后可提升[支援]代理人的战斗能力",
+  "desc3": "巧夺天工的造型，饱含制作者对美的追求。",
+  "phase": "机巧玲珑",
+  "phaseDescs": [
+    "装备者的<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[终结技]</ct>造成<ct color=#F0D12B>物理伤害</ct>时，装备者<ct color=#FFFFFF>异常掌控</ct>提升<ct color=#2BAD00>30</ct>点，持续40秒；装备者的<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，使全队角色的<ct color=#FFFFFF>异常精通</ct>提升<ct color=#2BAD00>60</ct>点，持续40秒，该效果全队唯一。",
+    "装备者的<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[终结技]</ct>造成<ct color=#F0D12B>物理伤害</ct>时，装备者<ct color=#FFFFFF>异常掌控</ct>提升<ct color=#2BAD00>34</ct>点，持续40秒；装备者的<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，使全队角色的<ct color=#FFFFFF>异常精通</ct>提升<ct color=#2BAD00>69</ct>点，持续40秒，该效果全队唯一。",
+    "装备者的<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[终结技]</ct>造成<ct color=#F0D12B>物理伤害</ct>时，装备者<ct color=#FFFFFF>异常掌控</ct>提升<ct color=#2BAD00>39</ct>点，持续40秒；装备者的<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，使全队角色的<ct color=#FFFFFF>异常精通</ct>提升<ct color=#2BAD00>78</ct>点，持续40秒，该效果全队唯一。",
+    "装备者的<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[终结技]</ct>造成<ct color=#F0D12B>物理伤害</ct>时，装备者<ct color=#FFFFFF>异常掌控</ct>提升<ct color=#2BAD00>43</ct>点，持续40秒；装备者的<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，使全队角色的<ct color=#FFFFFF>异常精通</ct>提升<ct color=#2BAD00>87</ct>点，持续40秒，该效果全队唯一。",
+    "装备者的<ct color=#FFFFFF>[强化特殊技]</ct>或<ct color=#FFFFFF>[终结技]</ct>造成<ct color=#F0D12B>物理伤害</ct>时，装备者<ct color=#FFFFFF>异常掌控</ct>提升<ct color=#2BAD00>48</ct>点，持续40秒；装备者的<ct color=#FFFFFF>[追加攻击]</ct>命中敌人时，使全队角色的<ct color=#FFFFFF>异常精通</ct>提升<ct color=#2BAD00>96</ct>点，持续40秒，该效果全队唯一。"
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "name": "真斗",
+  "fullName": "狛野真斗",
+  "basic": {
+    "BasicAttackBlazingWindSlash": {
+      "name": "普通攻击：炽风斩",
+      "desc": {
+        "0": "点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多三段的斩击，造成<ct color=#F0D12B>物理伤害</ct>；",
+        "2": "在每一段攻击的发动阶段，点按 <IconSpecial /> 将触发[烬风]，使此次攻击造成更高<ct color=#FF5521>火属性伤害</ct>。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "1st-Hit (Triggering Scorchwind) ",
+        "2nd-Hit (Triggering Scorchwind) ",
+        "3rd-Hit (Triggering Scorchwind) "
+      ]
+    },
+    "BasicAttackBlazingWindMistySlash": {
+      "name": "普通攻击：炽风·胧切",
+      "desc": {
+        "0": "在[熔锋]状态下点按 <IconNormal /> 发动：",
+        "1": "向前方进行至多四段的斩击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动时，如果真斗的生命值在30%以上，则消耗3.5%最大生命值。"
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeRadiantBlade": {
+      "name": "闪避：曜刃",
+      "desc": {
+        "0": "点按 <IconEvade /> 发动：",
+        "1": "快速的冲刺闪避；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": []
+    },
+    "DashAttackRadiantBladeZanshin": {
+      "name": "冲刺攻击：曜刃·残心",
+      "desc": {
+        "0": "闪避时，点按 <IconNormal /> 发动：",
+        "1": "向前方进行肩撞攻击，造成<ct color=#F0D12B>物理伤害</ct>。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterRadiantBladeBattleSweep": {
+      "name": "闪避反击：曜刃·掠阵",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[极限闪避]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动斩击和拳击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackReturnToAshes": {
+      "name": "特殊技：归烬",
+      "desc": {
+        "0": "点按 <IconSpecial /> 发动：",
+        "1": "向前方斩击敌人，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "如果招式发动期间受到敌人攻击，在发动斩击时回复20%已损失生命值，<ct color=#FFFFFF>[特殊技：归烬]</ct>和<ct color=#FFFFFF>[特殊技：归烬·舍身]</ct>的生命回复效果每20秒最多触发一次；",
+        "3": "如果招式发动期间受到敌人攻击，强化此次斩击；",
+        "4": "招式发动期间受到伤害降低40%；",
+        "5": "招式发动期间抗打断等级提升。"
+      },
+      "params": [
+        " ",
+        "(Charged or Successful Block) "
+      ]
+    },
+    "SpecialAttackReturnToAshesSacrifice": {
+      "name": "特殊技：归烬·舍身",
+      "desc": {
+        "0": "长按 <IconSpecial /> 发动：",
+        "1": "进入蓄力状态，最多消耗10%最大生命值并回复100点<ct color=#FFFFFF>[炽心]</ct>，最多消耗生命值至最大生命值的30%；",
+        "2": "松开按键时，发动<ct color=#FFFFFF>[特殊技：归烬]</ct>，如果招式发动期间受到敌人攻击，在发动斩击时回复20%已损失生命值，<ct color=#FFFFFF>[特殊技：归烬]</ct>和<ct color=#FFFFFF>[特殊技：归烬·舍身]</ct>的生命回复效果每20秒最多触发一次；",
+        "3": "如果招式发动期间受到敌人攻击或者蓄力达到一定时长，强化此次斩击；",
+        "4": "招式发动期间受到伤害降低40%；",
+        "5": "招式发动期间抗打断等级提升。"
+      },
+      "params": []
+    },
+    "EXSpecialAttackReturnToAshesFall": {
+      "name": "强化特殊技：归烬·天坠",
+      "desc": {
+        "0": "在[熔锋]状态下，闪能足够时，点按  <IconSpecialReady_Rp /> 发动：",
+        "1": "跳起并发动向前方敌人发动下落斩击，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动时，回复33%最大生命值；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "闪能消耗"
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackBlazingEruption": {
+      "name": "连携技：极炽炎爆",
+      "desc": {
+        "0": "触发<ct color=#FFFFFF>[连携技]</ct>时，选择对应角色发动：",
+        "1": "丢出手中的剑，随后冲向敌人引发爆炸，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateMusouAratama": {
+      "name": "终结技：无想荒魂",
+      "desc": {
+        "0": "喧响等级达到<ct color=#FFFFFF>[极]</ct>时，点按 <IconUltimateReady /> 发动：",
+        "1": "跳起并发动向前方敌人发动下落斩击，随后引发爆炸，造成大量<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistLoneShadowRegroup": {
+      "name": "快速支援：孤影·归阵",
+      "desc": {
+        "0": "当前操作中的角色被击飞时，点按 <IconSwitch /> 发动：",
+        "1": "对前方敌人发动斩击和拳击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistLoneShadowMountainStand": {
+      "name": "招架支援：孤影·岳峙",
+      "desc": {
+        "0": "前场角色即将被攻击时，点按 <IconSwitch /> 发动：",
+        "1": "招架敌人的攻击，累积大量失衡值，并造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "招式发动时，回复75点<ct color=#FFFFFF>[炽心]</ct>；",
+        "3": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpLoneShadowBreakingFang": {
+      "name": "支援突击：孤影·断獠",
+      "desc": {
+        "0": "发动<ct color=#FFFFFF>[招架支援]</ct>后，点按 <IconNormal /> 发动：",
+        "1": "对前方敌人发动多段斩击，造成<ct color=#FF5521>火属性伤害</ct>；",
+        "2": "连点时，可以连续斩击敌人，最多额外连续斩击7次；",
+        "3": "连续斩击时，如果真斗的生命值在30%以上，则消耗2%最大生命值；",
+        "4": "招式发动期间拥有无敌效果。"
+      },
+      "params": [
+        " ",
+        "Combo Maximum "
+      ]
+    }
+  },
+  "core": {
+    "name": "核心被动：熔锋之势",
+    "desc": [
+      {
+        "0": "真斗会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "真斗发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "真斗发动<ct color=#FFFFFF>[特殊技：归烬·舍身]</ct>或<ct color=#FFFFFF>[招架支援]</ct>时，会累积<ct color=#FFFFFF>[炽心]</ct>，最多累积100点；当<ct color=#FFFFFF>[炽心]</ct>累积至75点时，真斗将进入<ct color=#FFFFFF>[熔锋]</ct>状态，<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗每秒消耗3.3点<ct color=#FFFFFF>[炽心]</ct>，<ct color=#FFFFFF>[炽心]</ct>耗尽时，退出<ct color=#FFFFFF>[熔锋]</ct>状态；",
+        "3": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的<ct color=#FFFFFF>[普通攻击]</ct>获得强化，并可以发动<ct color=#FFFFFF>[强化特殊技：归烬·天坠]</ct>；",
+        "4": "真斗在<ct color=#FFFFFF>[普通攻击：炽风·胧切]</ct>或<ct color=#FFFFFF>[支援突击]</ct>的连续斩击中消耗生命值时，使此次攻击的暴击伤害提升<ct color=#2BAD00>25%</ct>，闪能回复效率提升100%；",
+        "5": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的暴击率提升10%，<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>10%</ct>。"
+      },
+      {
+        "0": "真斗会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "真斗发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "真斗发动<ct color=#FFFFFF>[特殊技：归烬·舍身]</ct>或<ct color=#FFFFFF>[招架支援]</ct>时，会累积<ct color=#FFFFFF>[炽心]</ct>，最多累积100点；当<ct color=#FFFFFF>[炽心]</ct>累积至75点时，真斗将进入<ct color=#FFFFFF>[熔锋]</ct>状态，<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗每秒消耗3.3点<ct color=#FFFFFF>[炽心]</ct>，<ct color=#FFFFFF>[炽心]</ct>耗尽时，退出<ct color=#FFFFFF>[熔锋]</ct>状态；",
+        "3": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的<ct color=#FFFFFF>[普通攻击]</ct>获得强化，并可以发动<ct color=#FFFFFF>[强化特殊技：归烬·天坠]</ct>；",
+        "4": "真斗在<ct color=#FFFFFF>[普通攻击：炽风·胧切]</ct>或<ct color=#FFFFFF>[支援突击]</ct>的连续斩击中消耗生命值时，使此次攻击的暴击伤害提升<ct color=#2BAD00>29.2%</ct>，闪能回复效率提升100%；",
+        "5": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的暴击率提升10%，<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>11.7%</ct>。"
+      },
+      {
+        "0": "真斗会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "真斗发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "真斗发动<ct color=#FFFFFF>[特殊技：归烬·舍身]</ct>或<ct color=#FFFFFF>[招架支援]</ct>时，会累积<ct color=#FFFFFF>[炽心]</ct>，最多累积100点；当<ct color=#FFFFFF>[炽心]</ct>累积至75点时，真斗将进入<ct color=#FFFFFF>[熔锋]</ct>状态，<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗每秒消耗3.3点<ct color=#FFFFFF>[炽心]</ct>，<ct color=#FFFFFF>[炽心]</ct>耗尽时，退出<ct color=#FFFFFF>[熔锋]</ct>状态；",
+        "3": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的<ct color=#FFFFFF>[普通攻击]</ct>获得强化，并可以发动<ct color=#FFFFFF>[强化特殊技：归烬·天坠]</ct>；",
+        "4": "真斗在<ct color=#FFFFFF>[普通攻击：炽风·胧切]</ct>或<ct color=#FFFFFF>[支援突击]</ct>的连续斩击中消耗生命值时，使此次攻击的暴击伤害提升<ct color=#2BAD00>33.3%</ct>，闪能回复效率提升100%；",
+        "5": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的暴击率提升10%，<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>13.3%</ct>。"
+      },
+      {
+        "0": "真斗会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "真斗发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "真斗发动<ct color=#FFFFFF>[特殊技：归烬·舍身]</ct>或<ct color=#FFFFFF>[招架支援]</ct>时，会累积<ct color=#FFFFFF>[炽心]</ct>，最多累积100点；当<ct color=#FFFFFF>[炽心]</ct>累积至75点时，真斗将进入<ct color=#FFFFFF>[熔锋]</ct>状态，<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗每秒消耗3.3点<ct color=#FFFFFF>[炽心]</ct>，<ct color=#FFFFFF>[炽心]</ct>耗尽时，退出<ct color=#FFFFFF>[熔锋]</ct>状态；",
+        "3": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的<ct color=#FFFFFF>[普通攻击]</ct>获得强化，并可以发动<ct color=#FFFFFF>[强化特殊技：归烬·天坠]</ct>；",
+        "4": "真斗在<ct color=#FFFFFF>[普通攻击：炽风·胧切]</ct>或<ct color=#FFFFFF>[支援突击]</ct>的连续斩击中消耗生命值时，使此次攻击的暴击伤害提升<ct color=#2BAD00>37.5%</ct>，闪能回复效率提升100%；",
+        "5": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的暴击率提升10%，<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>15%</ct>。"
+      },
+      {
+        "0": "真斗会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "真斗发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "真斗发动<ct color=#FFFFFF>[特殊技：归烬·舍身]</ct>或<ct color=#FFFFFF>[招架支援]</ct>时，会累积<ct color=#FFFFFF>[炽心]</ct>，最多累积100点；当<ct color=#FFFFFF>[炽心]</ct>累积至75点时，真斗将进入<ct color=#FFFFFF>[熔锋]</ct>状态，<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗每秒消耗3.3点<ct color=#FFFFFF>[炽心]</ct>，<ct color=#FFFFFF>[炽心]</ct>耗尽时，退出<ct color=#FFFFFF>[熔锋]</ct>状态；",
+        "3": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的<ct color=#FFFFFF>[普通攻击]</ct>获得强化，并可以发动<ct color=#FFFFFF>[强化特殊技：归烬·天坠]</ct>；",
+        "4": "真斗在<ct color=#FFFFFF>[普通攻击：炽风·胧切]</ct>或<ct color=#FFFFFF>[支援突击]</ct>的连续斩击中消耗生命值时，使此次攻击的暴击伤害提升<ct color=#2BAD00>41.7%</ct>，闪能回复效率提升100%；",
+        "5": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的暴击率提升10%，<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>16.7%</ct>。"
+      },
+      {
+        "0": "真斗会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "真斗发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "真斗发动<ct color=#FFFFFF>[特殊技：归烬·舍身]</ct>或<ct color=#FFFFFF>[招架支援]</ct>时，会累积<ct color=#FFFFFF>[炽心]</ct>，最多累积100点；当<ct color=#FFFFFF>[炽心]</ct>累积至75点时，真斗将进入<ct color=#FFFFFF>[熔锋]</ct>状态，<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗每秒消耗3.3点<ct color=#FFFFFF>[炽心]</ct>，<ct color=#FFFFFF>[炽心]</ct>耗尽时，退出<ct color=#FFFFFF>[熔锋]</ct>状态；",
+        "3": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的<ct color=#FFFFFF>[普通攻击]</ct>获得强化，并可以发动<ct color=#FFFFFF>[强化特殊技：归烬·天坠]</ct>；",
+        "4": "真斗在<ct color=#FFFFFF>[普通攻击：炽风·胧切]</ct>或<ct color=#FFFFFF>[支援突击]</ct>的连续斩击中消耗生命值时，使此次攻击的暴击伤害提升<ct color=#2BAD00>45.8%</ct>，闪能回复效率提升100%；",
+        "5": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的暴击率提升10%，<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>18.3%</ct>。"
+      },
+      {
+        "0": "真斗会额外根据自身最大生命值提高贯穿力，每1点最大生命值将提高0.1点贯穿力；",
+        "1": "真斗发动招式造成的<ct color=#FF5521>火属性伤害</ct>均为贯穿伤害，无视敌人防御，使用贯穿力作为招式伤害倍率；",
+        "2": "真斗发动<ct color=#FFFFFF>[特殊技：归烬·舍身]</ct>或<ct color=#FFFFFF>[招架支援]</ct>时，会累积<ct color=#FFFFFF>[炽心]</ct>，最多累积100点；当<ct color=#FFFFFF>[炽心]</ct>累积至75点时，真斗将进入<ct color=#FFFFFF>[熔锋]</ct>状态，<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗每秒消耗3.3点<ct color=#FFFFFF>[炽心]</ct>，<ct color=#FFFFFF>[炽心]</ct>耗尽时，退出<ct color=#FFFFFF>[熔锋]</ct>状态；",
+        "3": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的<ct color=#FFFFFF>[普通攻击]</ct>获得强化，并可以发动<ct color=#FFFFFF>[强化特殊技：归烬·天坠]</ct>；",
+        "4": "真斗在<ct color=#FFFFFF>[普通攻击：炽风·胧切]</ct>或<ct color=#FFFFFF>[支援突击]</ct>的连续斩击中消耗生命值时，使此次攻击的暴击伤害提升<ct color=#2BAD00>50%</ct>，闪能回复效率提升100%；",
+        "5": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗的暴击率提升10%，<ct color=#FF5521>火属性伤害</ct>提升<ct color=#2BAD00>20%</ct>。"
+      }
+    ]
+  },
+  "ability": {
+    "name": "额外能力：复燃之心",
+    "desc": {
+      "0": "队伍中存在<ct color=#FFFFFF>[支援]</ct>或<ct color=#FFFFFF>[击破]</ct>角色时触发：",
+      "1": "真斗发动终结技时，获得8层[残焰]，发动连携技时，获得4层[残焰]，持续60秒，最多叠加20层，重复触发时刷新持续时间；真斗发动<ct color=#FFFFFF>[普通攻击：炽风·胧切]</ct>或<ct color=#FFFFFF>[支援突击]</ct>的连续斩击时，如果生命值低于100%最大生命值，则消耗一层[残焰]，回复2%最大生命值。"
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "流浪生存法则",
+      "desc": "真斗的生命值降低时，累积已损失生命值，每有相当于最大生命值1%的已损失生命值使<ct color=#FFFFFF>[支援突击]</ct>和<ct color=#FFFFFF>[普通攻击]</ct>造成的<ct color=#FF5521>火属性伤害</ct>提升0.4%，最多提升20%。",
+      "flavor": {
+        "0": "不幸的孩子都是相似的。",
+        "1": "曾经亲切的呼唤、温暖的灯光、欢快的约定…未经告别就猝然沉没；因为无形无状，所以再尖锐的獠牙也无法咬紧、再锋利的指甲也无法攥住。",
+        "2": "「我什么都能吃，又不太怕冷——如果说有什么『活下来的秘诀』，也许就是这些。」"
+      }
+    },
+    "2": {
+      "name": "昼夜、厨房与爱",
+      "desc": "<ct color=#FFFFFF>[熔锋]</ct>状态下，真斗无视目标8%<ct color=#FF5521>火属性伤害抗性</ct>；<ct color=#FFFFFF>[特殊技：归烬]</ct>或<ct color=#FFFFFF>[特殊技：归烬·舍身]</ct>发动期间受到敌人攻击后，点按 <IconNormal /> 可以发动<ct color=#FFFFFF>[支援突击]</ct>。",
+      "flavor": {
+        "0": "和谐的家庭关系也许就是这样——真斗、阿青和阿月，每个人都觉得自己是「被捡回家」的幸运儿。",
+        "1": "如果说还有什么值得争吵的事情，也许只剩下「最后一筷子青菜到底该谁吃」。",
+        "2": "「真的不好吃吗？那我下次再去饮茶仙问问，是不是有哪一步搞错了…」",
+        "3": "「…商业机密？！可是上次…我只是站着，那个厨师就全告诉我了。」"
+      }
+    },
+    "3": {
+      "name": "踏入怪谈世界",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "在论坛站稳脚跟的第一步，是起一个朗朗上口的昵称——所有人都觉得自己并不擅长此道，但对于偶尔要留校补考文学课的犬希人来说，这尤其困难。",
+        "1": "「…你不是已经知道了吗。就是那个、那个…咳，『泅珑de孤鬼』。」",
+        "2": "「——你明明就听清楚了！」",
+        "3": "「可恶。总有一天，我要改成『再提曾用名就空洞见』。」"
+      }
+    },
+    "4": {
+      "name": "幼年的誓言",
+      "desc": "最大生命值提升8%；<ct color=#FFFFFF>[特殊技：归烬]</ct>和<ct color=#FFFFFF>[特殊技：归烬·舍身]</ct>发动期间，真斗受到致命伤害时不会在招式发动期间战败退场，生命值最多降低至1，10秒内最多触发一次。",
+      "flavor": {
+        "0": "把自己想象成一头目光冷冽的孤狼，也许是每位青少年都会做的事…更何况，真斗在这件事上更具优势。",
+        "1": "如果不是溺想者的出现，他本可以和别人一样假装无事发生。",
+        "2": "「都说了，那只是我八岁时候的想法——」",
+        "3": "「『朋友』就是这样吗…你们确实没把我当作脆弱的人，但也没把我当作人。」"
+      }
+    },
+    "5": {
+      "name": "孤影归群",
+      "desc": "<ct color=#FFFFFF>[普通攻击]</ct>、<ct color=#FFFFFF>[闪避]</ct>、<ct color=#FFFFFF>[支援技]</ct>、<ct color=#FFFFFF>[特殊技]</ct>、<ct color=#FFFFFF>[连携技]</ct> 技能等级+2",
+      "flavor": {
+        "0": "事实上，即使有外形上的天然隔阂，真斗依然很受大家的欢迎。",
+        "1": "有人与他结成了友谊、有人想要寻求他的庇护，还有人…想找他帮忙打广告。",
+        "2": "「抱歉，我可能不是很适合为你的店铺做宣传。」",
+        "3": "「可我没有做什么『卧推』。除非你指的是…被以骸按在地上的时候，用胳膊推起重剑、抵挡它们乱挠的爪子？」"
+      }
+    },
+    "6": {
+      "name": "越过昔年梦",
+      "desc": "<ct color=#FFFFFF>[特殊技：归烬]</ct>命中处于失衡状态下的敌人时，真斗回复75点[炽心]，获得4层[残焰]，点按 <IconNormal /> 可以发动<ct color=#FFFFFF>[支援突击]</ct>，获得[残焰]的效果在20秒内最多触发一次；<ct color=#FFFFFF>[支援突击]</ct>命中敌人时，造成的<ct color=#FF5521>火属性伤害</ct>提升3%，持续8秒，最多叠加5层，重复触发刷新持续时间。",
+      "flavor": {
+        "0": "越过昔年的孤勇之梦，真斗拥抱了珍视的朋友们。\n\n但他偶尔还是会因为「朋友」而受挫，比如…在卫非地特色老火靓汤店。\n「我说要为你们『殿后』，不是这种——在喝椰子鸡汤的时候殿后。」\n「可是，喝蝎子汤的时候，怎么又轮到我冲锋了？」\n…最后还是冲锋了。",
+        "1": "Of course, these friends could still cause him trouble, like at Waifei Peninsula's specialty soup shop.",
+        "2": "\"When I said I'd cover the rear, I didn't mean while drinking coconut chicken soup.\"",
+        "3": "\"Then how come I'm the one on the front lines when it's scorpion soup?\"",
+        "4": "...But he charged ahead anyway."
+      }
+    }
+  },
+  "potential": {}
+}

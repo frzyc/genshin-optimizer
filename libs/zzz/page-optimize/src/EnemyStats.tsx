@@ -32,13 +32,23 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export function EnemyStatsSection() {
+  const { t } = useTranslation('page_optimize')
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
   const { enemyStats, enemyLvl, enemyDef, enemyStunMultiplier } =
     useCharOpt(characterKey)!
+
+  const enemyDoc: Document = useMemo(() => ({
+    type: 'conditional',
+    conditional: {
+      label: t('enemyIsStunned'),
+      metadata: enemyMeta.conditionals.isStunned,
+    },
+  }), [t])
 
   const setStat = useCallback(
     (tag: EnemyStatsTag, value: number | null, index?: number) =>
@@ -52,19 +62,19 @@ export function EnemyStatsSection() {
     <Stack spacing={1}>
       <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
         <NumberInputLazy
-          label="Enemy Lvl"
+          label={t('enemyLvl')}
           value={enemyLvl}
           inputProps={{ min: 0, sx: { width: '4em' } }}
           onChange={(v) => database.charOpts.set(characterKey, { enemyLvl: v })}
         />
         <NumberInputLazy
-          label="Enemy DEF"
+          label={t('enemyDef')}
           value={enemyDef}
           inputProps={{ min: 0, sx: { width: '4em' } }}
           onChange={(v) => database.charOpts.set(characterKey, { enemyDef: v })}
         />
         <NumberInputLazy
-          label="Enemy Stun Multiplier"
+          label={t('enemyStunMultiplier')}
           value={enemyStunMultiplier}
           inputProps={{ min: 0, sx: { width: '8em' } }}
           onChange={(v) =>
@@ -98,6 +108,7 @@ function InitialStatDropdown({
   tag?: Tag
   onSelect: (key: EnemyStatKey) => void
 }) {
+  const { t } = useTranslation('page_optimize')
   return (
     <DropdownButton
       title={
@@ -106,7 +117,7 @@ function InitialStatDropdown({
             tag={{ ...tag, qt: 'common', et: 'enemy', sheet: 'agg' }}
           />
         )) ??
-        'Add Enemy Stat'
+        t('addEnemyStat')
       }
     >
       {enemyStatKeys.map((statKey) => (
@@ -134,6 +145,7 @@ function EnemyStatDisplay({
   setValue: (value: number) => void
   onDelete: () => void
 }) {
+  const { t } = useTranslation('page_optimize')
   const isPercent = tag.q?.endsWith('_')
   return (
     <CardThemed bgt="light">
@@ -163,7 +175,7 @@ function EnemyStatDisplay({
           value={value}
           sx={{ flexBasis: 150, flexGrow: 1, height: '100%' }}
           onChange={setValue}
-          placeholder="Stat Value"
+          placeholder={t('statValue')}
           size="small"
           inputProps={{ sx: { textAlign: 'right' } }}
           InputProps={{
@@ -193,18 +205,19 @@ function AttributeDropdown({
   tag: EnemyStatsTag
   setAttribute: (ele: Attribute | null) => void
 }) {
+  const { t } = useTranslation('page_optimize')
   return (
     <DropdownButton
       title={
         tag.attribute ? (
           <AttributeName attribute={tag.attribute} />
         ) : (
-          'No Attribute'
+          t('noAttribute')
         )
       }
       color={tag.attribute!}
     >
-      <MenuItem onClick={() => setAttribute(null)}>No Attribute</MenuItem>
+      <MenuItem onClick={() => setAttribute(null)}>{t('noAttribute')}</MenuItem>
       {allAttributeKeys.map((attr) => (
         <MenuItem key={attr} onClick={() => setAttribute(attr)}>
           <ColorText color={attr}>
@@ -219,7 +232,8 @@ function AttributeDropdown({
 const enemyDoc: Document = {
   type: 'conditional',
   conditional: {
-    label: 'Enemy is Stunned',
+    label: 'enemyIsStunned',
+    labelKey: 'page_optimize:enemyIsStunned',
     metadata: enemyMeta.conditionals.isStunned,
   },
 }

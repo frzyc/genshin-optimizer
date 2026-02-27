@@ -37,6 +37,7 @@ import {
 } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useContext, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { WengineLevelFilter } from './WengineLevelFilter'
 export function WengineFilter({
   wengines,
@@ -45,6 +46,7 @@ export function WengineFilter({
   wengines: ICachedWengine[]
   disabled?: boolean
 }) {
+  const { t } = useTranslation('optimize')
   const { database } = useDatabaseContext()
   const { optConfigId, optConfig } = useContext(OptConfigContext)
   const [show, onOpen, onClose] = useBoolState()
@@ -63,7 +65,7 @@ export function WengineFilter({
             <Box
               sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}
             >
-              Wengines:{' '}
+              {t('wengines')}:{' '}
               <SqBadge color={wengines.length ? 'primary' : 'error'}>
                 {wengines.length}
               </SqBadge>
@@ -84,7 +86,7 @@ export function WengineFilter({
                 })
               }
             >
-              Optimize Wengine
+              {t('optWengine')}
             </Button>
           </Box>
           <WengineFilterModal
@@ -92,14 +94,13 @@ export function WengineFilter({
             onClose={onClose}
             wengines={wengines}
           />
-          {/* TODO: localization */}
           <Button
             color="info"
             fullWidth
             onClick={onOpen}
             disabled={disabled || !optConfig.optWengine}
           >
-            Wengine Filter Config
+            {t('wengineFilterConfig')}
           </Button>
         </Stack>
       </CardContent>
@@ -118,13 +119,14 @@ function WengineFilterModal({
   onClose: () => void
   disabled?: boolean
 }) {
+  const { t } = useTranslation('optimize')
   const { database } = useDatabaseContext()
   const { optConfigId, optConfig } = useContext(OptConfigContext)
   return (
     <ModalWrapper open={show} onClose={onClose}>
       <CardThemed>
         <CardHeader
-          title="Wengine Filter"
+          title={t('wengineFilterConfig')}
           action={
             <IconButton onClick={onClose}>
               <CloseIcon />
@@ -146,7 +148,7 @@ function WengineFilterModal({
                 }
                 color={optConfig.useEquippedWengine ? 'success' : 'secondary'}
               >
-                Use equipped Wengine
+                {t('useEquippedWengine')}
               </Button>
               <WengineCondSelector wengines={wengines} />
             </Stack>
@@ -205,6 +207,7 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
 }
 
 function WengineCondSelector({ wengines }: { wengines: ICachedWengine[] }) {
+  const { t } = useTranslation('optimize')
   const character = useCharacterContext()
   const charOpt = useCharOpt(character?.key)
   const { optConfig } = useContext(OptConfigContext)
@@ -220,10 +223,9 @@ function WengineCondSelector({ wengines }: { wengines: ICachedWengine[] }) {
   )
   return (
     <Box>
-      <Typography variant="h6">Wengine Condtional Configuration</Typography>
+      <Typography variant="h6">{t('wengineConditionalConfig')}</Typography>
       <Typography>
-        Wengine stats are displayed to be Lvl 60/60, P1, actual level/phase of
-        wengine will be used in the solver.
+        {t('wengineStatsNote')}
       </Typography>
       {character && charOpt && (
         <CharCalcMockCountProvider

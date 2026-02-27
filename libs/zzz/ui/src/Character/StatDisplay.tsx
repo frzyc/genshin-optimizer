@@ -1,7 +1,8 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { getUnitStr } from '@genshin-optimizer/common/util'
-import { type StatKey, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
+import { type StatKey } from '@genshin-optimizer/zzz/consts'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
+import { useTranslation } from 'react-i18next'
 
 export function StatDisplay({
   statKey,
@@ -12,11 +13,10 @@ export function StatDisplay({
   showPercent?: boolean
   disableIcon?: boolean
 }) {
-  // const { t: tk } = useTranslation('statKey_gen')
+  const { t: tk } = useTranslation('statKey_gen')
   const text = (
     <span>
-      {statKeyTextMap[statKey] ?? statKey}
-      {/* TODO: translation {tk(statKey)} */}
+      {tk(statKey)}
       {showPercent && getUnitStr(statKey)}
     </span>
   )

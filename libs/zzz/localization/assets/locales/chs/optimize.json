@@ -1,0 +1,29 @@
+{
+  "statFilter": "属性筛选",
+  "addStatFilter": "添加属性筛选",
+  "wengines": "音擎",
+  "optWengine": "优化音擎",
+  "wengineFilterConfig": "音擎筛选配置",
+  "discFilter": "驱动盘筛选",
+  "disc": "驱动盘",
+  "discFilterConfig": "驱动盘筛选配置",
+  "discSetConfig": "驱动盘套装配置",
+  "discLevelFilter": "驱动盘等级筛选",
+  "reset4pFilter": "重置4件套筛选",
+  "reset2pFilter": "重置2件套筛选",
+  "allow4p": "允许4件套",
+  "allow2p": "允许2件套",
+  "set2": "2件套",
+  "set4": "4件套",
+  "useEquippedWengine": "使用已装备音擎",
+  "useEquippedDiscs": "使用已装备驱动盘",
+  "computed": "已计算",
+  "computedSkipped": "已计算 + 跳过",
+  "cancel": "取消",
+  "optimize": "优化",
+  "wengineConditionalConfig": "音擎状态配置",
+  "wengineStatsNote": "音擎属性显示为 60/60级，1阶，求解器将使用实际等级/阶数。",
+  "constraintFilter": {
+    "tooltip": "约束筛选提示"
+  }
+}
