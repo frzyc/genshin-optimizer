@@ -272,14 +272,14 @@ export default function TabTheorycraft() {
         <DataContext.Provider value={dataContextValue}>
           <Box>
             <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-              <Grid item sx={{ flexGrow: -1, maxWidth: '350px' }}>
+              <Grid item sx={{ flexGrow: -1, maxWidth: '400px' }}>
                 <WeaponEditorCard
                   weaponTypeKey={weaponTypeKey}
                   disabled={solving}
                 />
                 <StatFilterCard disabled={solving} />
               </Grid>
-              <Grid item sx={{ flexGrow: -1 }}>
+              <Grid item sx={{ flexGrow: -2 }}>
                 <ArtifactMainStatAndSetEditor disabled={solving} />
               </Grid>
               <Grid item sx={{ flexGrow: 1 }}>

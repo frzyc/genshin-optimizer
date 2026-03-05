@@ -48,7 +48,16 @@ export default function StatFilterCard({
           </Box>
         </CardContent>
         <Divider />
-        <Box display="flex" flexDirection="column" gap={1}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          gap={1}
+          sx={{
+            '.MuiButtonBase-root': {
+              fontSize: '0.7rem',
+            },
+          }}
+        >
           <OptimizationTargetEditorList
             statFilters={statFilters}
             setStatFilters={setStatFilters}
