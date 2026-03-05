@@ -67,7 +67,7 @@ const dm = {
     skillDmg: skillParam_gen.skill[s++],
     skillDuration: skillParam_gen.skill[s++][0],
     hitArr: [
-      skillParam_gen.skill[s++], // 1
+      skillParam_gen.skill[s++], // 1 ele
       skillParam_gen.skill[s++], // 2.2 ele
       skillParam_gen.skill[s++], // 2.1
       skillParam_gen.skill[s++], // 3.2 ele
@@ -289,7 +289,7 @@ const dmgFormulas = {
       'atk',
       dm.skill.hitArr[0],
       'normal',
-      anemoSturmData,
+      phecSturmData,
       a1Phec_sturm_mult_,
       'skill'
     ),

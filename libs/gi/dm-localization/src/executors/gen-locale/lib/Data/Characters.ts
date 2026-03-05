@@ -11,6 +11,9 @@ type CharData = Record<
 const char: Partial<
   Record<LocationCharacterKey | LocationGenderedCharacterKey, CharData>
 > = {
+  Columbina: {
+    constellationName: 2821104034,
+  },
   Eula: {
     skill: {
       brandDMG: [3765549071, 'skillParam'],

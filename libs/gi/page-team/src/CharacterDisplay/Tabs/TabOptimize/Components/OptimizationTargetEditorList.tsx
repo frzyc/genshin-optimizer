@@ -155,7 +155,7 @@ function OptimizationTargetEditorItem({
   const isPercent = resolvedInfo?.unit === '%'
 
   return (
-    <Box sx={{ display: 'flex', gap: 1 }}>
+    <Box sx={{ display: 'flex', gap: 1, alignItems: 'stretch' }}>
       <ButtonGroup
         sx={{ '& .MuiButtonGroup-grouped': { minWidth: 24 }, width: '100%' }}
       >
@@ -182,13 +182,14 @@ function OptimizationTargetEditorItem({
       <NumberInputLazy
         float
         value={setting.value}
-        sx={{ flexBasis: 150, flexGrow: 1, height: '100%' }}
+        sx={{ flexBasis: 150, flexGrow: 1, alignItems: 'stretch' }}
         disabled={disabled}
         onChange={onChange}
         placeholder="Stat Value"
         size="small"
         inputProps={{ sx: { textAlign: 'right' } }}
         InputProps={{
+          sx: { flex: 1, fontSize: '0.9rem' },
           endAdornment: (
             <InputAdornment position="end" sx={{ ml: 0 }}>
               {isPercent ? '%' : undefined}{' '}
@@ -197,7 +198,7 @@ function OptimizationTargetEditorItem({
                 onClick={() => delTarget(path, index)}
                 edge="end"
               >
-                <DeleteForever fontSize="small" />
+                <DeleteForever sx={{ fontSize: '1.25rem' }} />
               </IconButton>
             </InputAdornment>
           ),
