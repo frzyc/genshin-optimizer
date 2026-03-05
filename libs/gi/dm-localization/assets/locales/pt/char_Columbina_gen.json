@@ -1,8 +1,8 @@
 {
+  "constellationName": "Columbina Hyposelenia.",
   "name": "Columbina",
   "title": "Retorno da Lua Nova",
   "description": "A Dama da Lua nascida em Nod-Krai, além de ser a lua nova retornando para casa.",
-  "constellationName": "???",
   "auto": {
     "name": "Cascata do Orvalho do Luar",
     "fields": {
