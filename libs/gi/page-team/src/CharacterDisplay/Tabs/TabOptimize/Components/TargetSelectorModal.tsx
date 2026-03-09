@@ -53,6 +53,9 @@ export function TargetSelectorModal({
               key,
               Object.fromEntries(
                 Object.entries(sectionObj).filter(([_sectionKey, node]) => {
+                  // Hide useless "Inactive" moonsign entries from the target selector modal.
+                  if (key === 'moonsign' && _sectionKey.endsWith('Inactive')) return false
+                  
                   const { unit, variant } = resolveInfo(node.info)
 
                   if (flatOnly && unit === '%') return false
