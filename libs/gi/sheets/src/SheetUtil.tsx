@@ -90,7 +90,7 @@ export function nonStackBuff(
   buffNode: NumNode | number
 ) {
   return [
-    equal(input.nonStacking[buffName], input.charKey, buffNode),
+    infoMut(equal(input.nonStacking[buffName], input.charKey, buffNode), { path }),
     unequal(input.nonStacking[buffName], input.charKey, buffNode, {
       path,
       isTeamBuff: true,
