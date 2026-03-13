@@ -81,7 +81,11 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
         <StarsDisplay stars={rarity} />
         <Box display="flex" gap={0.5}>
           {showFourLinerBadge && (
-            <SqBadge color="info">{t('initialSubstats.fourLiner')}</SqBadge>
+            <BootstrapTooltip title={t('initialSubstats.badgeTooltip')}>
+              <Box component="span" display="inline-flex">
+                <SqBadge color="info">{t('initialSubstats.fourLiner')}</SqBadge>
+              </Box>
+            </BootstrapTooltip>
           )}
           <SqBadge color={artifactLevelVariant(level)}>+{level}</SqBadge>
         </Box>
