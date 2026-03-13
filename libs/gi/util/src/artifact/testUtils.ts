@@ -4,6 +4,12 @@ import { getSubstatValuesPercent } from './artifact'
 
 type ArtifactInput = Partial<IArtifact> & Pick<IArtifact, 'level' | 'substats'>
 
+/**
+ * Builds a substat value from roll indices for artifact-focused tests.
+ *
+ * Passing `4` or `5` as the second argument selects that rarity explicitly.
+ * Otherwise the second argument is treated as the first roll index and defaults to 5-star values.
+ */
 export function rollValue(
   key: SubstatKey,
   rarityOrIndex: 4 | 5 | number,
@@ -17,7 +23,9 @@ export function rollValue(
   return indices.reduce((sum, index) => sum + values[index], 0)
 }
 
+/** Creates a minimal artifact fixture for artifact utility tests. */
 export function makeArtifact(artifact: ArtifactInput): IArtifact
+/** Creates a minimal artifact fixture with an `id` for filter-oriented tests. */
 export function makeArtifact(
   artifact: ArtifactInput & { id: string }
 ): IArtifact & { id: string }

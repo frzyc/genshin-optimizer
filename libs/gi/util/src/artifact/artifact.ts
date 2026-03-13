@@ -166,6 +166,12 @@ export function getTotalPossibleRolls(rarity: ArtifactRarity) {
   )
 }
 
+/**
+ * Infers whether a 5-star artifact started with four visible substats at level 0.
+ *
+ * Cached artifacts can read the resolved roll counts directly from `substats[i].rolls`.
+ * Plain schema artifacts fall back to `getArtifactMeta()` to infer those same rolls.
+ */
 export function hasFourInitialSubstats(artifact: IArtifact): boolean {
   if (artifact.rarity !== 5) return false
 
