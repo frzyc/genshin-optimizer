@@ -30,6 +30,7 @@ import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   artDisplayValue,
   getArtifactEfficiency,
+  hasFourInitialSubstats,
   getMainStatDisplayStr,
   getSubstatValue,
   getSubstatValuesPercent,
@@ -78,6 +79,7 @@ type Data = {
   effFilter?: Set<SubstatKey>
   extraButtons?: JSX.Element
   excluded?: boolean
+  hideInitialSubstatBadge?: boolean
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
@@ -98,6 +100,7 @@ export function ArtifactCardObj({
   effFilter = allSubstatFilter,
   extraButtons,
   excluded = false,
+  hideInitialSubstatBadge = false,
 }: {
   artifact: ICachedArtifact
 } & Data) {
@@ -185,6 +188,8 @@ export function ArtifactCardObj({
       })
   }, [database.builds, database.teamChars, artifact.slotKey, artifact.id])
   const artifactValid = maxEfficiency !== 0
+  const showFourLinerBadge =
+    !hideInitialSubstatBadge && hasFourInitialSubstats(artifact)
   const slotName = <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
   const slotDesc = <ArtifactSetSlotDesc setKey={setKey} slotKey={slotKey} />
   const slotDescTooltip = slotDesc && (
@@ -258,6 +263,18 @@ export function ArtifactCardObj({
                   label={<strong>{` +${level}`}</strong>}
                   color={artifactLevelVariant(level)}
                 />
+                {showFourLinerBadge && (
+                  <BootstrapTooltip
+                    title={t('initialSubstats.badgeTooltip')}
+                    placement="top"
+                  >
+                    <Chip
+                      size="small"
+                      color="info"
+                      label={<strong>{t('initialSubstats.fourLiner')}</strong>}
+                    />
+                  </BootstrapTooltip>
+                )}
                 {!slotName && <Skeleton variant="text" width={100} />}
                 {slotName && (
                   <Typography

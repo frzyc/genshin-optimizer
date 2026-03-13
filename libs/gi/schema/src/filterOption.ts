@@ -20,6 +20,8 @@ export type ArtifactSortKey = (typeof artifactSortKeys)[number]
 const lockedValues = ['locked', 'unlocked'] as const
 const excludedValues = ['excluded', 'included'] as const
 const linesValues = [1, 2, 3, 4] as const
+export const initialSubstatFilterKeys = ['fourLiner', 'notFourLiner'] as const
+export type InitialSubstatFilterKey = (typeof initialSubstatFilterKeys)[number]
 
 export const filterOptionSchema = z.object({
   artSetKeys: zodFilteredArray(allArtifactSetKeys, []),
@@ -37,6 +39,9 @@ export const filterOptionSchema = z.object({
   rvHigh: z.number().catch(900),
   useMaxRV: z.boolean().catch(false),
   lines: zodFilteredArray(linesValues, [...linesValues]),
+  initialSubstats: zodFilteredArray(initialSubstatFilterKeys, [
+    ...initialSubstatFilterKeys,
+  ]),
   excluded: zodFilteredArray(excludedValues, [...excludedValues]).optional(),
 })
 export type FilterOption = z.infer<typeof filterOptionSchema>

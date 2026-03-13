@@ -18,7 +18,11 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
-import type { FilterOption } from '@genshin-optimizer/gi/schema'
+import {
+  initialSubstatFilterKeys,
+  type FilterOption,
+} from '@genshin-optimizer/gi/schema'
+import { hasFourInitialSubstats } from '@genshin-optimizer/gi/util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
@@ -51,6 +55,7 @@ const excludedValues = ['excluded', 'included'] as const
 const rarityHandler = handleMultiSelect([...allArtifactRarityKeys])
 const lockedHandler = handleMultiSelect([...lockedValues])
 const lineHandler = handleMultiSelect([1, 2, 3, 4])
+const initialSubstatsHandler = handleMultiSelect([...initialSubstatFilterKeys])
 const excludedHandler = handleMultiSelect([...excludedValues])
 
 interface ArtifactFilterDisplayProps {
@@ -92,6 +97,7 @@ export function ArtifactFilterDisplay({
     rvHigh = 900,
     useMaxRV = false,
     lines = [],
+    initialSubstats = [...initialSubstatFilterKeys],
     excluded = [...excludedValues],
   } = filterOption
 
@@ -107,6 +113,7 @@ export function ArtifactFilterDisplay({
     mainStatTotal,
     subStatTotal,
     locationTotal,
+    initialSubstatsTotal,
     excludedTotal,
   } = useMemo(() => {
     const catKeys = {
@@ -119,6 +126,7 @@ export function ArtifactFilterDisplay({
       mainStatTotal: allMainStatKeys,
       subStatTotal: allSubstatKeys,
       locationTotal: [...allLocationCharacterKeys, ''],
+      initialSubstatsTotal: initialSubstatFilterKeys,
       excludedTotal: ['excluded', 'included'],
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
@@ -127,6 +135,9 @@ export function ArtifactFilterDisplay({
         const lock = art.lock ? 'locked' : 'unlocked'
         const lns = art.substats.filter((s) => s.value).length
         const equipped = location ? 'equipped' : 'unequipped'
+        const initialSubstatsKey = hasFourInitialSubstats(art)
+          ? 'fourLiner'
+          : 'notFourLiner'
         const excluded = excludedIds.includes(id) ? 'excluded' : 'included'
         // The slot filter is disabled during artifact swapping, in which case our artifact total displayed by
         // the filter should reflect only the slot being swapped.
@@ -138,6 +149,7 @@ export function ArtifactFilterDisplay({
           ctMap['equippedTotal'][equipped].total++
           ctMap['setTotal'][setKey].total++
           ctMap['mainStatTotal'][mainStatKey].total++
+          ctMap['initialSubstatsTotal'][initialSubstatsKey].total++
           substats.forEach((sub) => {
             const subKey = sub.key
             if (!subKey) return
@@ -156,6 +168,7 @@ export function ArtifactFilterDisplay({
           ctMap['equippedTotal'][equipped].current++
           ctMap['setTotal'][setKey].current++
           ctMap['mainStatTotal'][mainStatKey].current++
+          ctMap['initialSubstatsTotal'][initialSubstatsKey].current++
           // substats handled above
           // substats handled above
           ctMap['locationTotal'][location].current++
@@ -222,6 +235,30 @@ export function ArtifactFilterDisplay({
                 >
                   <Box whiteSpace="nowrap">{t('sub', { count: line })}</Box>
                   <Chip label={linesTotal[line]} size="small" />
+                </ToggleButton>
+              ))}
+            </SolidToggleButtonGroup>
+            <SolidToggleButtonGroup
+              fullWidth
+              value={initialSubstats}
+              size="small"
+            >
+              {initialSubstatFilterKeys.map((value) => (
+                <ToggleButton
+                  key={value}
+                  sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}
+                  value={value}
+                  onClick={() =>
+                    filterOptionDispatch({
+                      initialSubstats: initialSubstatsHandler(
+                        initialSubstats,
+                        value
+                      ) as Array<'fourLiner' | 'notFourLiner'>,
+                    })
+                  }
+                >
+                  <Box whiteSpace="nowrap">{t(`initialSubstats.${value}`)}</Box>
+                  <Chip label={initialSubstatsTotal[value]} size="small" />
                 </ToggleButton>
               ))}
             </SolidToggleButtonGroup>
