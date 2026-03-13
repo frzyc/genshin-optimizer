@@ -135,7 +135,7 @@ export function ArtifactFilterDisplay({
         const lock = art.lock ? 'locked' : 'unlocked'
         const lns = art.substats.filter((s) => s.value).length
         const equipped = location ? 'equipped' : 'unequipped'
-        const initialSubstats = hasFourInitialSubstats(art)
+        const initialSubstatsKey = hasFourInitialSubstats(art)
           ? 'fourLiner'
           : 'notFourLiner'
         const excluded = excludedIds.includes(id) ? 'excluded' : 'included'
@@ -149,7 +149,7 @@ export function ArtifactFilterDisplay({
           ctMap['equippedTotal'][equipped].total++
           ctMap['setTotal'][setKey].total++
           ctMap['mainStatTotal'][mainStatKey].total++
-          ctMap['initialSubstatsTotal'][initialSubstats].total++
+          ctMap['initialSubstatsTotal'][initialSubstatsKey].total++
           substats.forEach((sub) => {
             const subKey = sub.key
             if (!subKey) return
@@ -168,7 +168,7 @@ export function ArtifactFilterDisplay({
           ctMap['equippedTotal'][equipped].current++
           ctMap['setTotal'][setKey].current++
           ctMap['mainStatTotal'][mainStatKey].current++
-          ctMap['initialSubstatsTotal'][initialSubstats].current++
+          ctMap['initialSubstatsTotal'][initialSubstatsKey].current++
           // substats handled above
           // substats handled above
           ctMap['locationTotal'][location].current++
