@@ -1,37 +1,11 @@
 import { filterFunction } from '@genshin-optimizer/common/util'
-import {
-  initialFilterOption,
-  type IArtifact,
-} from '@genshin-optimizer/gi/schema'
-import { getSubstatValuesPercent } from './artifact'
+import { initialFilterOption } from '@genshin-optimizer/gi/schema'
 import { artifactFilterConfigs } from './artifactSortUtil'
-import type { SubstatKey } from '@genshin-optimizer/gi/consts'
-
-function rollValue(key: SubstatKey, rarity: 4 | 5, ...indices: number[]) {
-  const values = getSubstatValuesPercent(key, rarity)
-  return indices.reduce((sum, index) => sum + values[index], 0)
-}
-
-function makeArtifact(
-  id: string,
-  artifact: Partial<IArtifact> &
-    Pick<IArtifact, 'rarity' | 'level' | 'substats'>
-) {
-  return {
-    id,
-    setKey: artifact.setKey ?? 'GladiatorsFinale',
-    slotKey: artifact.slotKey ?? 'flower',
-    level: artifact.level,
-    rarity: artifact.rarity,
-    mainStatKey: artifact.mainStatKey ?? 'hp',
-    location: artifact.location ?? '',
-    lock: artifact.lock ?? false,
-    substats: artifact.substats,
-  }
-}
+import { makeArtifact, rollValue } from './testUtils'
 
 describe('artifactFilterConfigs()', () => {
-  const fourLiner = makeArtifact('four-liner', {
+  const fourLiner = makeArtifact({
+    id: 'four-liner',
     rarity: 5,
     level: 4,
     substats: [
@@ -41,7 +15,8 @@ describe('artifactFilterConfigs()', () => {
       { key: 'hp_', value: rollValue('hp_', 5, 3) },
     ],
   })
-  const notFourLiner = makeArtifact('not-four-liner', {
+  const notFourLiner = makeArtifact({
+    id: 'not-four-liner',
     rarity: 5,
     level: 4,
     substats: [
@@ -51,7 +26,8 @@ describe('artifactFilterConfigs()', () => {
       { key: 'hp_', value: rollValue('hp_', 5, 3) },
     ],
   })
-  const fourStar = makeArtifact('four-star', {
+  const fourStar = makeArtifact({
+    id: 'four-star',
     rarity: 4,
     level: 0,
     substats: [

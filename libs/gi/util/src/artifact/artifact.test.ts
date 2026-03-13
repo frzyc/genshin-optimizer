@@ -1,36 +1,13 @@
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
-import type { IArtifact } from '@genshin-optimizer/gi/schema'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   getSubstatEfficiency,
   getSubstatRolls,
-  getSubstatValuesPercent,
   hasFourInitialSubstats,
 } from './artifact'
-import type { SubstatKey } from '@genshin-optimizer/gi/consts'
+import { makeArtifact, rollValue } from './testUtils'
 
 const artifactSubstatRoll = allStats.art.subRoll
-
-function rollValue(key: SubstatKey, ...indices: number[]) {
-  const values = getSubstatValuesPercent(key, 5)
-  return indices.reduce((sum, index) => sum + values[index], 0)
-}
-
-function makeArtifact(
-  level: number,
-  substats: IArtifact['substats']
-): IArtifact {
-  return {
-    setKey: 'GladiatorsFinale',
-    slotKey: 'flower',
-    level,
-    rarity: 5,
-    mainStatKey: 'hp',
-    location: '',
-    lock: false,
-    substats,
-  }
-}
 
 describe('Substat Rolls/efficiency', () => {
   test('should have valid rolls in substat roll table', () => {
@@ -130,57 +107,72 @@ describe('Substat Rolls/efficiency', () => {
 
   describe('hasFourInitialSubstats()', () => {
     test('should detect a level 0 4-liner', () => {
-      const artifact = makeArtifact(0, [
-        { key: 'critRate_', value: rollValue('critRate_', 3) },
-        { key: 'critDMG_', value: rollValue('critDMG_', 3) },
-        { key: 'atk_', value: rollValue('atk_', 3) },
-        { key: 'hp_', value: rollValue('hp_', 3) },
-      ])
+      const artifact = makeArtifact({
+        level: 0,
+        substats: [
+          { key: 'critRate_', value: rollValue('critRate_', 3) },
+          { key: 'critDMG_', value: rollValue('critDMG_', 3) },
+          { key: 'atk_', value: rollValue('atk_', 3) },
+          { key: 'hp_', value: rollValue('hp_', 3) },
+        ],
+      })
 
       expect(hasFourInitialSubstats(artifact)).toBe(true)
     })
 
     test('should reject a level 0 3-liner', () => {
-      const artifact = makeArtifact(0, [
-        { key: 'critRate_', value: rollValue('critRate_', 3) },
-        { key: 'critDMG_', value: rollValue('critDMG_', 3) },
-        { key: 'atk_', value: rollValue('atk_', 3) },
-        { key: '', value: 0 },
-      ])
+      const artifact = makeArtifact({
+        level: 0,
+        substats: [
+          { key: 'critRate_', value: rollValue('critRate_', 3) },
+          { key: 'critDMG_', value: rollValue('critDMG_', 3) },
+          { key: 'atk_', value: rollValue('atk_', 3) },
+          { key: '', value: 0 },
+        ],
+      })
 
       expect(hasFourInitialSubstats(artifact)).toBe(false)
     })
 
     test('should detect a level 4 4-liner after one upgrade', () => {
-      const artifact = makeArtifact(4, [
-        { key: 'critRate_', value: rollValue('critRate_', 3, 2) },
-        { key: 'critDMG_', value: rollValue('critDMG_', 3) },
-        { key: 'atk_', value: rollValue('atk_', 3) },
-        { key: 'hp_', value: rollValue('hp_', 3) },
-      ])
+      const artifact = makeArtifact({
+        level: 4,
+        substats: [
+          { key: 'critRate_', value: rollValue('critRate_', 3, 2) },
+          { key: 'critDMG_', value: rollValue('critDMG_', 3) },
+          { key: 'atk_', value: rollValue('atk_', 3) },
+          { key: 'hp_', value: rollValue('hp_', 3) },
+        ],
+      })
 
       expect(hasFourInitialSubstats(artifact)).toBe(true)
     })
 
     test('should reject a level 4 3-liner after the fourth stat unlocks', () => {
-      const artifact = makeArtifact(4, [
-        { key: 'critRate_', value: rollValue('critRate_', 3) },
-        { key: 'critDMG_', value: rollValue('critDMG_', 3) },
-        { key: 'atk_', value: rollValue('atk_', 3) },
-        { key: 'hp_', value: rollValue('hp_', 3) },
-      ])
+      const artifact = makeArtifact({
+        level: 4,
+        substats: [
+          { key: 'critRate_', value: rollValue('critRate_', 3) },
+          { key: 'critDMG_', value: rollValue('critDMG_', 3) },
+          { key: 'atk_', value: rollValue('atk_', 3) },
+          { key: 'hp_', value: rollValue('hp_', 3) },
+        ],
+      })
 
       expect(hasFourInitialSubstats(artifact)).toBe(false)
     })
 
     test('should reject non-5-star artifacts', () => {
       const artifact = {
-        ...makeArtifact(0, [
-          { key: 'critRate_', value: 2.7 },
-          { key: 'critDMG_', value: 5.4 },
-          { key: 'atk_', value: 4.1 },
-          { key: 'hp_', value: 4.1 },
-        ]),
+        ...makeArtifact({
+          level: 0,
+          substats: [
+            { key: 'critRate_', value: 2.7 },
+            { key: 'critDMG_', value: 5.4 },
+            { key: 'atk_', value: 4.1 },
+            { key: 'hp_', value: 4.1 },
+          ],
+        }),
         rarity: 4 as const,
       }
 
@@ -188,12 +180,15 @@ describe('Substat Rolls/efficiency', () => {
     })
 
     test('should resolve ambiguous roll values through artifact meta inference', () => {
-      const artifact = makeArtifact(16, [
-        { key: 'critDMG_', value: 32.6 },
-        { key: 'critRate_', value: rollValue('critRate_', 3) },
-        { key: 'atk_', value: rollValue('atk_', 3) },
-        { key: 'hp_', value: rollValue('hp_', 3) },
-      ])
+      const artifact = makeArtifact({
+        level: 16,
+        substats: [
+          { key: 'critDMG_', value: 32.6 },
+          { key: 'critRate_', value: rollValue('critRate_', 3) },
+          { key: 'atk_', value: rollValue('atk_', 3) },
+          { key: 'hp_', value: rollValue('hp_', 3) },
+        ],
+      })
 
       expect(getSubstatRolls('critDMG_', 32.6, 5).length).toBeGreaterThan(1)
       expect(hasFourInitialSubstats(artifact)).toBe(true)
