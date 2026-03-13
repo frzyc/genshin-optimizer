@@ -176,6 +176,7 @@ export function hasFourInitialSubstats(artifact: IArtifact): boolean {
     const cachedRolls = (substat as typeof substat & { rolls?: number[] }).rolls
     if (cachedRolls) return sum + cachedRolls.length
 
+    // only use meta if substat not cached
     artifactMeta ??= getArtifactMeta(artifact).artifactMeta
     return sum + (artifactMeta.substats[index]?.rolls.length ?? 0)
   }, 0)
