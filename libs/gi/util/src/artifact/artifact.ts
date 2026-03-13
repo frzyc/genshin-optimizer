@@ -20,6 +20,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact } from '@genshin-optimizer/gi/schema'
 import { allStats, getArtSetStat } from '@genshin-optimizer/gi/stats'
+import type { ArtifactMeta } from './artifactMeta'
 import { getArtifactMeta } from './artifactMeta'
 
 export function artDisplayValue(value: number, unit: Unit): string {
@@ -164,6 +165,24 @@ export function getTotalPossibleRolls(rarity: ArtifactRarity) {
     artSubstatRollData[rarity].high + artSubstatRollData[rarity].numUpgrades
   )
 }
+
+export function hasFourInitialSubstats(artifact: IArtifact): boolean {
+  if (artifact.rarity !== 5) return false
+
+  let artifactMeta: ArtifactMeta | undefined
+  const totalActiveRolls = artifact.substats.reduce((sum, substat, index) => {
+    if (!substat.key || !substat.value) return sum
+
+    const cachedRolls = (substat as typeof substat & { rolls?: number[] }).rolls
+    if (cachedRolls) return sum + cachedRolls.length
+
+    artifactMeta ??= getArtifactMeta(artifact).artifactMeta
+    return sum + (artifactMeta.substats[index]?.rolls.length ?? 0)
+  }, 0)
+
+  return totalActiveRolls === 4 + Math.floor(artifact.level / 4)
+}
+
 const maxSubstatRollEfficiency = objKeyMap(allArtifactRarityKeys, (rarity) =>
   Math.max(
     ...allSubstatKeys.map(
