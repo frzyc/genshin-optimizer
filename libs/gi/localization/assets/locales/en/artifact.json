@@ -105,6 +105,11 @@
   "substat_other": "{{count}} substats",
   "sub_one": "{{count}} sub",
   "sub_other": "{{count}} subs",
+  "initialSubstats": {
+    "fourLiner": "4-Liner",
+    "notFourLiner": "Not 4-Liner",
+    "badgeTooltip": "Started with 4 substats"
+  },
   "addNew": "Add New Artifact",
   "showDup": "Show Duplicates",
   "noDupAlert": "There are no duplicate artifacts in your inventory.",

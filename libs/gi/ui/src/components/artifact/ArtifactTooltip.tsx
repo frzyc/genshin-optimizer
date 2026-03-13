@@ -8,7 +8,10 @@ import { clamp } from '@genshin-optimizer/common/util'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { getMainStatDisplayStr } from '@genshin-optimizer/gi/util'
+import {
+  getMainStatDisplayStr,
+  hasFourInitialSubstats,
+} from '@genshin-optimizer/gi/util'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -44,6 +47,7 @@ export function ArtifactTooltip({
   )
 }
 function ArtifactData({ art }: { art: ICachedArtifact }) {
+  const { t } = useTranslation('artifact')
   const { t: tk } = useTranslation('statKey_gen')
   const {
     setKey,
@@ -55,6 +59,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
     unactivatedSubstats,
   } = art
   const mainVariant = KeyMap.getVariant(mainStatKey)
+  const showFourLinerBadge = hasFourInitialSubstats(art)
   return (
     <Box p={1}>
       <Typography variant="h6">
@@ -74,7 +79,12 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
         }}
       >
         <StarsDisplay stars={rarity} />
-        <SqBadge color={artifactLevelVariant(level)}>+{level}</SqBadge>{' '}
+        <Box display="flex" gap={0.5}>
+          {showFourLinerBadge && (
+            <SqBadge color="info">{t('initialSubstats.fourLiner')}</SqBadge>
+          )}
+          <SqBadge color={artifactLevelVariant(level)}>+{level}</SqBadge>
+        </Box>
       </Typography>
       <Box py={1}>
         {substats.map(
