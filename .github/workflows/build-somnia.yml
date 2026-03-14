@@ -53,7 +53,7 @@ jobs:
         id: get-cache-key
         run: |
           echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v5
         with:
           path: .git/modules
           key: submodule-${{ steps.get-cache-key.outputs.key }}
