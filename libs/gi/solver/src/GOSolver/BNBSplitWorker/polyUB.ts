@@ -317,6 +317,7 @@ function sumM(...monomials: Monomial[][]): Monomial[] {
   return monomials.flat()
 }
 function prodM(...monomials: Monomial[][]): Monomial[] {
+  monomials = monomials.map((mons) => mons.filter((m) => m.$k))
   return cartesian(...monomials).map((monos) =>
     monos.reduce(
       (ret, nxt) => {
