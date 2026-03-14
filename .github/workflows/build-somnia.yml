@@ -48,7 +48,7 @@ jobs:
     timeout-minutes: 15
     name: 'call-build / build'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Get Cache Key
         id: get-cache-key
         run: |
@@ -59,7 +59,7 @@ jobs:
           key: submodule-${{ steps.get-cache-key.outputs.key }}
           restore-keys: |
             submodule-
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
           submodules: true
