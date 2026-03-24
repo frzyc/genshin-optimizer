@@ -26,7 +26,7 @@ jobs:
             echo "deploy_path=${{ github.event.number }}" >> $GITHUB_OUTPUT
           fi
       - name: Checkout external gh-pages
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ vars.PR_REPO }}
           ssh-key: ${{ secrets.PR_REPO_SSH_KEY }}
