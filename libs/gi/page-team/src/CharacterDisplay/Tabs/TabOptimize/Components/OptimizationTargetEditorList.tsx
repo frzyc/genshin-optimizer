@@ -155,7 +155,7 @@ function OptimizationTargetEditorItem({
   const isPercent = resolvedInfo?.unit === '%'
 
   return (
-    <Box sx={{ display: 'flex', gap: 1, alignItems: 'stretch' }}>
+    <Box sx={{ display: 'flex', gap: 1 }}>
       <ButtonGroup
         sx={{ '& .MuiButtonGroup-grouped': { minWidth: 24 }, width: '100%' }}
       >
@@ -182,7 +182,7 @@ function OptimizationTargetEditorItem({
       <NumberInputLazy
         float
         value={setting.value}
-        sx={{ flexBasis: 150, flexGrow: 1, alignItems: 'stretch' }}
+        sx={{ flexBasis: 150, flexGrow: 1, height: '100%' }}
         disabled={disabled}
         onChange={onChange}
         placeholder="Stat Value"
