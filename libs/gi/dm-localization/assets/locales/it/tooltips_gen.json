@@ -330,5 +330,27 @@
     "description": {
       "0": "L'effetto derivante dall'attivazione del Tripudio elementale di Illuga <strong>Riflesso senz'ombra</strong>. Può aumentare i <geo>DAN da Geo</geo> inflitti dal personaggio attivo attuale."
     }
+  },
+  "11280001": {
+    "name": "Sturm und Drang",
+    "description": {
+      "0": "Una modalità che si attiva usando l'abilità elementale di Varka <strong>Turbine della sentenza</strong>.",
+      "1": "Mentre è attiva, Varka infligge DAN da attacco normale e da attacco caricato aumentati e non può eseguire attacchi in picchiata. Quando sferra attacchi normali o caricati, le due claymore di Varka infliggono DAN elementali in base ai tipi elementali dei personaggi nel gruppo.",
+      "2": [
+        " I DAN inflitti dalla claymore nella mano sinistra vengono convertiti in <anemo>DAN da Anemo</anemo> non influenzabili da altre infusioni elementali.",
+        " Se nel gruppo sono presenti personaggi di <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, la claymore nella mano destra infligge i rispettivi DAN elementali, non influenzabili da altre infusioni, seguendo il suddetto ordine di priorità dei tipi elementali."
+      ],
+      "3": "<br/>",
+      "4": "Inoltre, mentre questa modalità è attiva, se nel gruppo sono presenti personaggi di <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, l'abilità elementale di Varka <strong>Turbine della sentenza</strong> viene convertita nell'abilità elementale speciale <strong>Ascensione dei Quattro Venti</strong>."
+    }
+  },
+  "11280002": {
+    "name": "Ascensione dei Quattro Venti",
+    "description": {
+      "0": "L'abilità elementale speciale di Varka. Infligge DAN elementali ad area corrispondenti all'elemento della claymore impugnata nella mano destra (non influenzabili da altre infusioni) e <anemo>DAN da Anemo ad area</anemo> agli avversari.",
+      "1": "Ha un TdR iniziale e dispone di un massimo di 2 utilizzi.",
+      "2": "Quando Varka si trova nella modalità <strong>Sturm und Drang</strong> e il suo attacco normale colpisce un avversario, il TdR di <strong>Ascensione dei Quattro Venti</strong> si riduce di 0,5 s. Quest'effetto può attivarsi fino a un massimo di 15 volte ogni volta che Varka passa alla modalità <strong>Sturm und Drang</strong>.",
+      "3": "Inoltre, Varka può consumare le cariche di <strong>Ascensione dei Quattro Venti</strong> per eseguire l'attacco caricato speciale <strong>Divorazzurro</strong>, che non consuma vigore e infligge 2 iterazioni di DAN elementali corrispondenti all'elemento della claymore impugnata nella mano destra (non influenzabili da altre infusioni) e 2 iterazioni di <anemo>DAN da Anemo</anemo>."
+    }
   }
 }

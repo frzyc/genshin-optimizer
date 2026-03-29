@@ -130,6 +130,7 @@ export const nonTravelerCharacterKeys = [
   'Gorou',
   'HuTao',
   'Iansan',
+  'Illuga',
   'Ifa',
   'Ineffa',
   'Jahoda',
@@ -181,6 +182,7 @@ export const nonTravelerCharacterKeys = [
   'Thoma',
   'Tighnari',
   'Varesa',
+  'Varka',
   'Venti',
   'Wanderer',
   'Wriothesley',
@@ -198,6 +200,7 @@ export const nonTravelerCharacterKeys = [
   'YumemizukiMizuki',
   'YunJin',
   'Zhongli',
+  'Zibai',
 ] as const
 export type NonTravelerCharacterKey = (typeof nonTravelerCharacterKeys)[number]
 

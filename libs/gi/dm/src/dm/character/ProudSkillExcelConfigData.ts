@@ -1,3 +1,4 @@
+import { deobfPropMappings } from '../../mapping'
 import { readDMJSON } from '../../util'
 
 type CostItem = {
@@ -14,7 +15,7 @@ type ProudSkillExcelConfigDataObf = {
   descTextMapHash: number //59436107,
   unlockDescTextMapHash: number //4234322242,
   icon: string //"UI_Talent_S_Noel_05",
-  costItems: CostItem[]
+  [deobfPropMappings.costItems]: CostItem[]
   // [
   //   {},
   //   {},
@@ -74,7 +75,7 @@ type ProudSkillExcelConfigDataObf = {
   //     0.0,
   //     0.0
   // ]
-  HCAOGPJPGLM: number // Text hash for upgraded version of passive
+  [deobfPropMappings.upgradedDescTextMapHash]: number // Text hash for upgraded version of passive
 }
 export type ProudSkillExcelConfigData = {
   proudSkillId: number //342101,
@@ -156,8 +157,12 @@ const proudSkillExcelConfigData = {} as {
 }
 
 proudSkillExcelConfigDataSrc.forEach((dataObf) => {
-  const { HCAOGPJPGLM: upgradedDescTextMapHash, ...dataTrim } = dataObf
-  const data = { ...dataTrim, upgradedDescTextMapHash }
+  const {
+    [deobfPropMappings.upgradedDescTextMapHash]: upgradedDescTextMapHash,
+    [deobfPropMappings.costItems]: costItems,
+    ...dataTrim
+  } = dataObf
+  const data = { ...dataTrim, upgradedDescTextMapHash, costItems }
   const { proudSkillGroupId, level } = data
   if (!proudSkillExcelConfigData[proudSkillGroupId])
     proudSkillExcelConfigData[proudSkillGroupId] = []

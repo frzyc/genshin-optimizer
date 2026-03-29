@@ -47,7 +47,11 @@ function LinkedTooltip({
     </>
   )
   return (
-    <BootstrapTooltip title={tooltipContent}>
+    <BootstrapTooltip
+      title={tooltipContent}
+      enterDelay={500}
+      enterNextDelay={500}
+    >
       <ColorText sx={{ textDecoration: 'underline' }} color={color}>
         {children}
       </ColorText>

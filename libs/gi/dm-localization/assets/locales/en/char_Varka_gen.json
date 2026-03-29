@@ -1,0 +1,228 @@
+{
+  "name": "Varka",
+  "title": "Knight of Boreas",
+  "description": "Grand Master of the Knights of Favonius. Knight of Boreas, protector of Mondstadt.",
+  "constellationName": "Lupus Majoris",
+  "auto": {
+    "name": "Dancing Radiance",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Imitating an ancient knightly war-dance, Varka wields dual claymores to perform up to 5 consecutive strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to charge forward and perform an especially powerful dual blade slash toward the front."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{2, percent(fixed: 1)}}%+{{1, percent(fixed: 1)}}%",
+      "2": "{{4, percent(fixed: 1)}}%+{{3, percent(fixed: 1)}}%",
+      "3": "{{5, percent(fixed: 1)}}%+{{6, percent(fixed: 1)}}%",
+      "4": "{{7, percent(fixed: 1)}}%+{{8, percent(fixed: 1)}}%",
+      "5": "{{9, percent(fixed: 1)}}%+{{10, percent(fixed: 1)}}%",
+      "6": "{{11, fixed(fixed: 1)}}",
+      "7": "{{12, percent(fixed: 1)}}%",
+      "8": "{{13, percent}}%/{{14, percent}}%",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Windbound Execution",
+    "description": {
+      "0": "Manifest the true essence of Favonius Bladework with absolute power. Produces different effects depending on whether the skill is Tapped or Held.",
+      "1": "<br/>",
+      "2": "<strong>Tap</strong>",
+      "3": "Leap forward and slash in one fluid motion, dealing <anemo>AoE Anemo DMG</anemo> and switching to <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Sturm und Drang</strong></tooltip> mode.",
+      "4": "While in <strong>Sturm und Drang</strong>, Varka's Normal Attack and Charged Attack DMG is increased, and he cannot perform Plunging Attacks. Also, when performing Normal or Charged Attacks, Varka's dual-wielded claymores will deal corresponding Elemental DMG based on the Elemental Types of the characters in the party, respectively. This Elemental DMG cannot be overridden by infusions.",
+      "5": "Additionally, when in <strong>Sturm und Drang</strong>, if there are <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> or <cryo>Cryo</cryo> characters in the party, Varka's Elemental Skill <strong>Windbound Execution</strong> will be converted to the special Elemental Skill, <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip>, dealing corresponding Elemental DMG and <anemo>Anemo DMG</anemo>. Additionally, Varka can also expend uses of the special Elemental Skill <strong>Four Winds' Ascension</strong> to perform a special Charged Attack, <strong>Azure Devour</strong>, that does not consume stamina to deal corresponding Elemental DMG and <anemo>Anemo DMG</anemo>.",
+      "6": "<br/>",
+      "7": "<strong>Hold</strong>",
+      "8": "After charging for a while, leap forward. The duration of the charge will increase the distance of the leap."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Press CD",
+      "2": "Hold CD",
+      "3": "Sturm und Drang Duration",
+      "4": "Sturm und Drang 1-Hit DMG",
+      "5": "Sturm und Drang 2-Hit DMG",
+      "6": "Sturm und Drang 3-Hit DMG",
+      "7": "Sturm und Drang 4-Hit DMG",
+      "8": "Sturm und Drang 5-Hit DMG",
+      "9": "Sturm und Drang Charged Attack DMG",
+      "10": "Four Winds' Ascension DMG",
+      "11": "Azure Devour DMG",
+      "12": "Four Winds' Ascension CD",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{18, fixed(fixed: 1)}}s",
+      "2": "{{19, fixed(fixed: 1)}}s",
+      "3": "{{1, fixed(fixed: 1)}}s",
+      "4": "{{2, percent(fixed: 1)}}%",
+      "5": "{{4, percent(fixed: 1)}}%+{{3, percent(fixed: 1)}}%",
+      "6": "{{6, percent(fixed: 1)}}%+{{5, percent(fixed: 1)}}%",
+      "7": "{{7, percent(fixed: 1)}}%+{{8, percent(fixed: 1)}}%",
+      "8": "{{9, percent(fixed: 1)}}%+{{10, percent(fixed: 1)}}%",
+      "9": "{{11, percent(fixed: 1)}}%+{{12, percent(fixed: 1)}}%",
+      "10": "{{13, percent(fixed: 1)}}%+{{14, percent(fixed: 1)}}%",
+      "11": "{{15, percent(fixed: 1)}}%×2+{{16, percent(fixed: 1)}}%×2",
+      "12": "{{17, fixed(fixed: 1)}}s",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Northwind Avatar",
+    "description": {
+      "0": "In the name of the mightiest Knight of Boreas, unleash a powerful double slash attack toward the front, dealing 2 instances of <anemo>Anemo DMG</anemo>.",
+      "1": "If there are <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> or <cryo>Cryo</cryo> characters in the party, the first slash will be converted to deal corresponding Elemental DMG according to the aforementioned priority order of Elemental Types."
+    },
+    "skillParams": {
+      "0": "Skill 1-Hit DMG",
+      "1": "Skill 2-Hit DMG",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, fixed(fixed: 1)}}s",
+      "3": "{{3}}",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dawn Wind's March",
+    "description": {
+      "0": "When there are <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> or <cryo>Cryo</cryo> characters in the party, according to the aforementioned priority order of Elemental Types, every 1,000 points of Varka's ATK will grant Varka a 10% <anemo>Anemo DMG Bonus</anemo> and corresponding Elemental DMG Bonus (among the aforementioned Elemental Types, only one element can gain bonus DMG this way). Up to 25% bonus DMG can be gained this way. ",
+      "1": "<br/>",
+      "2": "Additionally, if there are at least 2 <anemo>Anemo</anemo> characters, or at least 2 characters of the same Element among <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> or <cryo>Cryo</cryo> in the party, the Normal Attacks, Charged Attacks, Special Charged Attack <strong>Azure Devour</strong> and the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip> that Varka deals or unleashes while in the <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Sturm und Drang</strong></tooltip> mode will deal 140% of their original DMG. If there are at least 2 <anemo>Anemo</anemo> characters and at least 2 other characters of the same element among <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> or <cryo>Cryo</cryo> present in the party at the same time, the aforementioned effect will be increased to 220%."
+    }
+  },
+  "passive2": {
+    "name": "Wind's Vanguard",
+    "description": {
+      "0": "When nearby party members trigger Swirl reaction(s), Varka gains one stack of <strong>Azure Fang's Oath</strong>, increasing the DMG dealt by his Normal Attacks, Charged Attacks, special Charged Attack <strong>Azure Devour</strong> and special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip> by 7.5% for 8s. Max 4 stacks. Each character can grant Varka with 1 stack of <strong>Azure Fang's Oath</strong> every second this way."
+    }
+  },
+  "passive3": {
+    "name": "Homebound Wind's Paean",
+    "description": {
+      "0": "For every party member from Mondstadt, the Hold version of Varka's Elemental Skill <strong>Windbound Execution</strong>'s CD is decreased by 5%.",
+      "1": "This effect does not trigger in Domains, Trounce Domains, or the Spiral Abyss."
+    }
+  },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Dawn's Return",
+    "description": {
+      "0": "After completing <strong>Witch's Homework: The Untitled Question</strong>, Varka will become a <strong>Hexerei</strong> character. When the party includes at least 2 Hexerei characters, you will gain the <strong>Hexerei: Secret Rite</strong> effect, which enhances Hexerei characters.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "Enhances the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip>: When Varka hits an opponent with Normal Attack(s) in <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Sturm und Drang</strong></tooltip>, the CD of <strong>Four Winds' Ascension</strong> will be reduced by 1s."
+    }
+  },
+  "constellation1": {
+    "name": "\"Come, Friend, Let Us Dance Beneath the Moon's Soft Glow\"",
+    "description": {
+      "0": "When Varka switches to <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Sturm und Drang</strong></tooltip>, he will obtain an additional use of the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip>.",
+      "1": "Additionally, after switching to <strong>Sturm und Drang</strong>, Varka will gain the <strong>Lyrical Libation</strong> effect: When unleashing the special Elemental Skill <strong>Four Winds' Ascension</strong>, or when performing the special Charged Attack <strong>Azure Devour</strong>, Varka will consume this effect to deal 200% of the original DMG dealt by <strong>Four Winds' Ascension</strong> or <strong>Azure Devour</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "\"When Dawn Breaks, Our Journey Shall Take Flight\"",
+    "description": {
+      "0": "When unleashing the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip>, or when performing the special Charged Attack <strong>Azure Devour</strong>, Varka will perform an additional strike, dealing <anemo>AoE Anemo DMG</anemo> equal to 800% of Varka's ATK."
+    }
+  },
+  "constellation3": {
+    "name": "\"O Friend, Quaff Not the Bitter Wine That Brings Tears of Woe\"",
+    "description": {
+      "0": "Increases Elemental Skill <strong><tooltip ns=char_Varka_gen baseKey18=skill>Windbound Execution</tooltip></strong> Level by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"For None May Take From Us Our Freedom of Song\"",
+    "description": {
+      "0": "When Varka triggers a Swirl reaction, based on the Elemental Types involved in the reaction, all nearby party members gain a 20% <anemo>Anemo DMG Bonus</anemo> and the corresponding Elemental DMG Bonus for 10s."
+    }
+  },
+  "constellation5": {
+    "name": "\"Fill High the Cup With Fine Wine, for Tyrants Come and Go\"",
+    "description": {
+      "0": "Increases Elemental Burst <strong><tooltip ns=char_Varka_gen baseKey18=burst>Northwind Avatar</tooltip></strong> Level by 3.",
+      "1": " Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Beloved Mondstadt, Steadfast You Shall Shine\"",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Sturm und Drang</strong></tooltip> is enhanced:",
+      "1": [
+        " For a short time after unleashing the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip>, Tapping on Varka's Elemental Skill or Holding his Normal Attack will not expend any uses of Four Winds' Ascension, and will perform one additional instance of the special Charged Attack, <strong>Azure Devour</strong>.",
+        " For a short time after performing the special Charged Attack <strong>Azure Devour</strong>, tap on Varka's Elemental Skill to unleash an additional instance of <strong>Four Winds' Ascension</strong> without expending any uses of Four Winds' Ascension."
+      ],
+      "2": "When triggering an additional special Charged Attack, Azure Devour, or unleashing an additional special Elemental Skill, Four Winds' Ascension, in this manner, the above effect cannot be triggered.",
+      "3": "<br/>",
+      "4": "Additionally, the <strong>Azure Fang's Oath</strong> effect in Ascension Talent <strong><tooltip ns=char_Varka_gen baseKey18=passive2>Wind's Vanguard</tooltip></strong> is enhanced: Every stack of <strong>Azure Fang's Oath</strong> will increase Varka's CRIT DMG by 20%."
+    }
+  }
+}

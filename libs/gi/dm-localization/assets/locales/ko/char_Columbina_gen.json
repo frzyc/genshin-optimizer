@@ -101,7 +101,7 @@
       "0": "<tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>달 영역</strong></tooltip> 안에 있는 캐릭터가 달빛 반응 발동 시, 다음과 같은 효과를 각각 획득한다:",
       "1": [
         "<strong>달 감전 반응</strong>: 번개구름이 조건에 부합하는 목표에게 뇌격 진행 시, 33%의 확률로 추가 뇌격이 1회 발동된다.",
-        "<strong>달 개화 반응</strong>: 달 개화 반응 발동 시, 파티에 특수한 <tooltip ns=tooltips_gen baseKey18=11250003 values=[]><strong>달빛 풀 이슬</strong></tooltip>을 제공한다. 18초마다 해당 방식으로 파티가 달빛 풀 이슬을 최대 3개 획득할 수 있다.",
+        "<strong>달 개화 반응</strong>: 달 개화 반응 발동 시, 파티에 특수한 <tooltip ns=tooltips_gen baseKey18=11250003 values=[]><strong>달빛 풀 이슬</strong></tooltip>을 1개 제공한다. 18초마다 해당 방식으로 파티가 달빛 풀 이슬을 최대 3개 획득할 수 있다.",
         "<strong>달 결정 반응</strong>: 달빛 조각 화음 발동 시, 달빛 조각마다 33% 확률로 1회의 추가 공격을 한다"
       ]
     }

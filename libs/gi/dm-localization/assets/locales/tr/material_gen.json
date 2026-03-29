@@ -242,6 +242,9 @@
   "FortuneCoin": {
     "name": "Talih Parası"
   },
+  "WindscapeSplendor": {
+    "name": "Rüzgarın İhtişamı"
+  },
   "SightseeingExperience": {
     "name": "Gezi Deneyimi"
   },
@@ -1139,6 +1142,9 @@
   "Illuga": {
     "name": "Illuga"
   },
+  "Varka": {
+    "name": "Varka"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina'nın Yaşam Yıldızı"
   },
@@ -1216,6 +1222,9 @@
   },
   "IllugasStellaFortuna": {
     "name": "Illuga'nın Yaşam Yıldızı"
+  },
+  "VarkasStellaFortuna": {
+    "name": "Varka'nın Yaşam Yıldızı"
   },
   "Apple": {
     "name": "Elma"
@@ -8252,6 +8261,18 @@
   "CharredMushroomPhantasm": {
     "name": "Kömürleşmiş Mantar Hülyası"
   },
+  "SuspiciousGoldenTemperedJade": {
+    "name": "Altın Tavlı Yeşim (Tuhaf)"
+  },
+  "GoldenTemperedJade": {
+    "name": "Altın Tavlı Yeşim"
+  },
+  "DeliciousGoldenTemperedJade": {
+    "name": "Altın Tavlı Yeşim (Lezzetli)"
+  },
+  "HeartyIndulgence": {
+    "name": "Bol Kepçe Ziyafet"
+  },
   "RecipeItem": {
     "name": "Yemek Malzemesi"
   },
@@ -9043,6 +9064,9 @@
   },
   "RecipeMushroomPhantasm": {
     "name": "Tarif: Mantar Hülyası"
+  },
+  "RecipeGoldenTemperedJade": {
+    "name": "Tarif: Altın Tavlı Yeşim"
   },
   "CraftedItems": {
     "name": "Üretilen Malzemeler"
@@ -9853,6 +9877,9 @@
   },
   "RemnantOfTheDreadwing": {
     "name": "Kabus Kanadının Kalıntısı"
+  },
+  "PrismaticSeveredTail": {
+    "name": "Prizmatik Kopmuş Kuyruk"
   },
   "TileOfDecarabiansTower": {
     "name": "Decarabian'ın Kırık Çinisi"
@@ -13382,6 +13409,12 @@
   "RaggedDoll": {
     "name": "Yıpranmış Oyuncak Bebek"
   },
+  "AccessInsignia": {
+    "name": "Giriş Nişanı"
+  },
+  "SeverelyContaminatedTeardropCrystal": {
+    "name": "Yoğun Kirlenmiş Gözyaşı Kristali"
+  },
   "ScribbledLetter": {
     "name": "Karalanmış Mektup"
   },
@@ -13438,6 +13471,9 @@
   },
   "IrismoonSeal": {
     "name": "Ay Gözü Mührü"
+  },
+  "MultiPurposeNegotiationTool": {
+    "name": "Çok Amaçlı Müzakere Aracı"
   },
   "TheWhiteHorseAdeptusMeetsTheWhiteHorseAdeptusInLiyueHarbor": {
     "name": "Beyaz At Adeptus, Liyue Limanı'nda Beyaz At Adeptus ile Buluştu"
@@ -13511,6 +13547,15 @@
   "GreatDetectiveHurlockTheAlchemistAndTheClockworkSaint": {
     "name": "Büyük Dedektif Hurlock: Simyager ve Kurmalı Aziz"
   },
+  "EventInvitation": {
+    "name": "Etkinlik Davetiyesi"
+  },
+  "FeatherlightMora": {
+    "name": "Kuş Tüyü Kadar Hafif Mora"
+  },
+  "HighlyElasticFishMeat": {
+    "name": "Elastik Balık Eti"
+  },
   "DamagedLogs": {
     "name": "Hasarlı Günlükler"
   },
@@ -13528,6 +13573,9 @@
   },
   "NoteClippedInABook": {
     "name": "Bir Kitaba İliştirilmiş Not"
+  },
+  "DodocosEnchantedCandy": {
+    "name": "Dodoko'nun Büyülü Şekerlemesi"
   },
   "AMessageFromTheLegendaryThiefReedMiller": {
     "name": "Efsanevi Hırsız Reed Miller'dan Bir Mesaj"
@@ -13558,6 +13606,24 @@
   },
   "AncientHandwriting": {
     "name": "Kadim El Yazısı"
+  },
+  "ALetterCarriedByTheWind": {
+    "name": "Rüzgarın Getirdiği Bir Mektup"
+  },
+  "VarkasInvitationTicket": {
+    "name": "Varka'nın Davet Bileti"
+  },
+  "VarkasSecretStashOfCash": {
+    "name": "Varka'nın Gizli Para Zulası"
+  },
+  "OnFungiCommunitiesDraftManuscript": {
+    "name": "\"Mantar Toplulukları Üzerine\" Taslak Metni"
+  },
+  "LetterFromYaePublishingHouse": {
+    "name": "Yae Yayınevi'nden Gelen Mektup"
+  },
+  "LetterFromTheAkademiya": {
+    "name": "Akademiden Gelen Mektup"
   },
   "TearsAmongTheStars": {
     "name": "Yıldızlar Arasındaki Gözyaşları"
@@ -15554,6 +15620,12 @@
   "TravelNotesLanternlitOde": {
     "name": "Gezi Notları: Fener Işığında Övgüler"
   },
+  "VarkaLeadWolf": {
+    "name": "Varka: Lider Kurt"
+  },
+  "TravelNotesNortherlyWinds": {
+    "name": "Gezi Notları: Kuzey Rüzgarları"
+  },
   "EchoDandelionKnight": {
     "name": "Yankı: Karahindiba Şövalyesi"
   },
@@ -15604,6 +15676,12 @@
   },
   "EchoFleeingSunlight": {
     "name": "Yankı: Kaçan Güneş Işığı"
+  },
+  "EchoFrostflakeHeron": {
+    "name": "Yankı: Buz Balıkçılı"
+  },
+  "EchoPillarOfFortitude": {
+    "name": "Yankı: Metanet Abidesi"
   },
   "FaintGlow": {
     "name": "Soluk Işıltı"
@@ -15941,6 +16019,12 @@
   "JadelightCanopy": {
     "name": "Yeşim Işığı Gölgeliği"
   },
+  "SpotterKamera": {
+    "name": "Tespit Kamerası"
+  },
+  "HarmonicKeys": {
+    "name": "Armonik Klavye"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Talimatlar: Rüzgar Özü Rezonans Taşı"
   },
@@ -16126,6 +16210,9 @@
   },
   "ScrollOfTheFieryFirmament": {
     "name": "Alevli Göklerin Parşömeni"
+  },
+  "SphereOfFleetingShadow": {
+    "name": "Uçup Giden Gölge Küresi"
   },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "Dağların Altın Yağmuru"
@@ -16466,6 +16553,45 @@
   "ByDecree": {
     "name": "Ferman Buyruğu"
   },
+  "PoisedToDance": {
+    "name": "Dansa Hazır"
+  },
+  "FragrantTouch": {
+    "name": "Hoş Kokulu Dokunuş"
+  },
+  "BlearyEyes": {
+    "name": "Mahmur Gözler"
+  },
+  "LittleFriend": {
+    "name": "Küçük Arkadaş"
+  },
+  "DignifiedAppearance": {
+    "name": "Vakur Duruş"
+  },
+  "TranquilRadiance": {
+    "name": "Huzurlu Işıltı"
+  },
+  "NinjaReady": {
+    "name": "Ninja Hazır"
+  },
+  "BubblesDrifting": {
+    "name": "Süzülen Baloncuklar"
+  },
+  "ValiantHero": {
+    "name": "Cesur Kahraman"
+  },
+  "ReaderInspired": {
+    "name": "Hevesli Okur"
+  },
+  "PreparingForTreatment": {
+    "name": "Tedaviye Hazırlık"
+  },
+  "OniKingDominion": {
+    "name": "Oni Kral Egemenliği"
+  },
+  "RelaxedAppearance": {
+    "name": "Rahat Duruş"
+  },
   "FantasticalMarvel": {
     "name": "Olağanüstü Mucize"
   },
@@ -16522,6 +16648,15 @@
   },
   "RedHotMeter": {
     "name": "Ateşli Melodi"
+  },
+  "ElysiumAndTheMoon": {
+    "name": "Cennet ve Ay"
+  },
+  "FrostmoonPrayers": {
+    "name": "Donuk Aya Dualar"
+  },
+  "MysteriousWhiteStar": {
+    "name": "Gizemli Beyaz Yıldız"
   },
   "VigorousYapping": {
     "name": "Heyecanlı Sohbet"
@@ -16627,6 +16762,9 @@
   },
   "ConsecratedHornedCrocodile": {
     "name": "Kutsanmış Boynuzlu Timsah"
+  },
+  "GoldflameQucusaurTyrant": {
+    "name": "Altın Alevli Gukuzor Tiran"
   },
   "UndividedHeart": {
     "name": "Tek Yürek"
@@ -17017,6 +17155,15 @@
   },
   "DeathlyOverflow": {
     "name": "Ölümcül Taşkın"
+  },
+  "CompanionsCounsel": {
+    "name": "Yoldaş Yardımı"
+  },
+  "RectifyingProcessor": {
+    "name": "Düzeltme İşlemcisi"
+  },
+  "FlamelordsBlessing": {
+    "name": "Alevlerin Efendisi'nin Lütfu"
   },
   "MagicGuide": {
     "name": "Büyü Rehberi"
@@ -17549,6 +17696,27 @@
   "BonaAndCocouik": {
     "name": "Bona ve Cocouik"
   },
+  "SilvermoonHall": {
+    "name": "Gümüş Ay Salonu"
+  },
+  "TidesealStone": {
+    "name": "Gelgit Mührü Taşı"
+  },
+  "FrostmoonEnclave": {
+    "name": "Donuk Ay Yerleşkesi"
+  },
+  "NashaTown": {
+    "name": "Nasha Kasabası"
+  },
+  "KuuvahkiExperimentalDesignBureau": {
+    "name": "Kuuvahki Deneysel Tasarım Bürosu"
+  },
+  "ElementalTransfigurationSuperconductBlessing": {
+    "name": "Element Başkalaşımı: Süper İletim Lütfu"
+  },
+  "ElementalTransfigurationVaporizeBlessing": {
+    "name": "Element Başkalaşımı: Buharlaşma Lütfu"
+  },
   "ElementalResonanceWovenIce": {
     "name": "Element Rezonansı: Örülü Buzlar"
   },
@@ -17789,6 +17957,12 @@
   "AnAdventureThroughTheMorningMist": {
     "name": "\"Sabah Sisinde Bir Macera\""
   },
+  "GeniussUpgradeTechnique": {
+    "name": "Dahinin Geliştirme Tekniği"
+  },
+  "ClinkClankLegion": {
+    "name": "Çın Çın Lejyonu"
+  },
   "Origin": {
     "name": "Köken"
   },
@@ -17866,6 +18040,9 @@
   },
   "SeaOfBygoneErasCrown": {
     "name": "Kadim Çağlar Denizi: Taç"
+  },
+  "NodKrai": {
+    "name": "Nod-Krai"
   },
   "BeginnerPlayerBadge": {
     "name": "Acemi Oyuncu Rozeti"
@@ -17998,6 +18175,12 @@
   },
   "StarpiercerSublimation": {
     "name": "Yıldızdelen - Dönüşüm"
+  },
+  "PhantasmalGiftStarOmen": {
+    "name": "Hayali Hediye: Yıldız Alameti"
+  },
+  "UnbreakableDurandarte": {
+    "name": "Sarsılmaz: Durandarte"
   },
   "AdventurerCamp": {
     "name": "Maceracı Kampı"
@@ -18290,6 +18473,39 @@
   "CompanionsHaven": {
     "name": "Yoldaşların Sığınağı"
   },
+  "AComfyRoomForGuestsFromNearAndFar": {
+    "name": "Dört Bir Yandan Gelen Misafirler İçin Rahat Bir Oda"
+  },
+  "SweetSlumberBeneathTheMoon": {
+    "name": "Ay Altında Huzurlu Bir Uyku"
+  },
+  "TheOrderlyGridOfSecrets": {
+    "name": "Sırlar Düzeni"
+  },
+  "TheBestestAndWarmestHome": {
+    "name": "En Güzel ve En Sıcak Yuva"
+  },
+  "PreBattleRespite": {
+    "name": "Savaş Öncesi Mola"
+  },
+  "WildernessOfTheFarNorth": {
+    "name": "Uzak Kuzeyin Yabanı"
+  },
+  "BustlingBorderTown": {
+    "name": "Cıvıl Cıvıl Sınır Kasabası"
+  },
+  "TranquilPrayerUnderTheMoon": {
+    "name": "Ay Altında Huzurlu Dua"
+  },
+  "SolitaryLightInTheLongNight": {
+    "name": "Uzun Gecede Yalnız Bir Işık"
+  },
+  "PromisingWorkshops": {
+    "name": "Gelecek Vadeden Atölyeler"
+  },
+  "CrescentMoonSerenity": {
+    "name": "Hilal Huzuru"
+  },
   "TimberWallWithJadeEaves": {
     "name": "Yeşim Saçaklı Ahşap Duvar"
   },
@@ -18307,6 +18523,9 @@
   },
   "LoftyTowersFashionableCanvas": {
     "name": "Uzun Kulenin Şık Tuvali"
+  },
+  "BasesCoolingSecret": {
+    "name": "Üssün Soğutma Sırrı"
   },
   "TraditionalCedarFlooring": {
     "name": "Geleneksel Sedir Döşeme"
@@ -18326,6 +18545,9 @@
   "LoftyTowersFloorOfTrials": {
     "name": "Uzun Kulenin İmtihan Katı"
   },
+  "BaseAlloyFlooring": {
+    "name": "Alaşım Üs Zemini"
+  },
   "CheckeredCedarCeiling": {
     "name": "Kareli Sedir Tavan"
   },
@@ -18343,6 +18565,9 @@
   },
   "LoftyTowersRadiantCeiling": {
     "name": "Uzun Kulenin Aydınlık Tavanı"
+  },
+  "BasePaneledCeiling": {
+    "name": "Üs Tavan Paneli"
   },
   "TwoTierCandleChandelier": {
     "name": "İki Kademeli Avize"
@@ -18554,6 +18779,9 @@
   "LoftyTowersFlamingBrazier": {
     "name": "Uzun Kulenin Alevli Şamdanı"
   },
+  "BasesSoftTranquility": {
+    "name": "Üssün Sakin Huzuru"
+  },
   "NorthernBirchFoldingCounter": {
     "name": "Kuzey Huş Ağacı Köşeli Tezgah"
   },
@@ -18613,6 +18841,21 @@
   },
   "FactoryCabinetSlapdashStorage": {
     "name": "Fabrika Dolabı: \"Üstünkörü Depolama\""
+  },
+  "IndoorLowTableUniqueImportance": {
+    "name": "İç Mekan Alçak Masası: Eşsiz Önem"
+  },
+  "IndoorBookshelfReaderlyLeisure": {
+    "name": "İç Mekan Kitaplığı: Okuma Keyfi"
+  },
+  "IndoorCounterVisitorsWelcome": {
+    "name": "İç Mekan Tezgahı: Misafirleri Karşılama"
+  },
+  "ToweringCabinet": {
+    "name": "Kule Dolap"
+  },
+  "HotelWardrobeExtraRoom": {
+    "name": "Otel Gardırobu: Fazladan Yer"
   },
   "TwoTierLibraryBookshelf": {
     "name": "İki Raflı Kitaplık"
@@ -18797,6 +19040,15 @@
   "WhispersInTheMoonlight": {
     "name": "\"Ay Işığında Fısıltılar\""
   },
+  "CookieRound": {
+    "name": "Yuvarlak Kurabiye"
+  },
+  "ClinkClankHouseOfStorage": {
+    "name": "Çın Çın Depolama Evi"
+  },
+  "FrostMoonRoundTableASoftBlueSky": {
+    "name": "Donuk Ay Yuvarlak Masası: Yumuşak Mavi Bir Gökyüzü"
+  },
   "BreezeBlessedBed": {
     "name": "Zarif Esinti Yatağı"
   },
@@ -18832,6 +19084,12 @@
   },
   "SimpleCareBed": {
     "name": "Basit Hasta Yatağı"
+  },
+  "BestestLittleNest": {
+    "name": "Mini Mini Bir Yuva"
+  },
+  "FrostMoonStoneBedFreshCool": {
+    "name": "Donuk Ay Taş Yatağı: Ferah ve Serin"
   },
   "PineReceptionCounter": {
     "name": "Çam Resepsiyon Masası"
@@ -18955,6 +19213,9 @@
   },
   "ToAFriend": {
     "name": "\"Bir Arkadaşa\""
+  },
+  "PedunculateOakWoodMoonrestBackedChair": {
+    "name": "Saplı Meşe \"Ay Dinlencesi\" Arkalıklı Sandalye"
   },
   "NorthernStoneHearth": {
     "name": "Taş Şömine"
@@ -19220,6 +19481,12 @@
   "IndoorRugStarlitNight": {
     "name": "İç Mekan Halısı: \"Yıldızlı Gece\""
   },
+  "FrostMoonCarpetLimpidHue": {
+    "name": "Donuk Ay Halısı: Duru Renk"
+  },
+  "FluffyLittleRug": {
+    "name": "Pofuduk Küçük Halı"
+  },
   "VibrantPotBornInFlames": {
     "name": "Renkli Saksı: Alevlerden Doğan"
   },
@@ -19284,7 +19551,13 @@
     "name": "Filojiston Lambası: Yağmur Siperi"
   },
   "MiniatureCandlestandMiniatureSun": {
-    "name": "Minyatür Şamdanlık: Minyatür \"Güneş\""
+    "name": "Minyatür Şamdan: Minyatür \"Güneş\""
+  },
+  "RimehornGlimmer": {
+    "name": "Buzboynuz Pırıltısı"
+  },
+  "TwistyMushroom": {
+    "name": "Kıvrımlı Mantar"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Çiçek Aranjmanı: Mavi Huzur"
@@ -19490,6 +19763,9 @@
   "BurstOfAppetite": {
     "name": "İştah Patlaması"
   },
+  "FrostMoonSmallTableAromaOfFreshFruit": {
+    "name": "Donuk Ay Küçük Masası: Taze Meyve Aroması"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Bilgelik Diyarı İdrakı\""
   },
@@ -19516,6 +19792,9 @@
   },
   "MountainFireworks": {
     "name": "Dağ Havai Fişekleri"
+  },
+  "BranchesAgainstTheBlueSky": {
+    "name": "Mavi Göğe Uzanmış Dallar"
   },
   "LandscapePaintingCountryHome": {
     "name": "Peyzaj: Taşra Evi"
@@ -19621,6 +19900,15 @@
   },
   "FlagOfPiramida": {
     "name": "Piramida Bayrağı"
+  },
+  "SteadfastAsIron": {
+    "name": "Demir Gibi Kararlı"
+  },
+  "BannerOfTheLightkeepers": {
+    "name": "Işık Muhafızları Sancağı"
+  },
+  "TavernWallLampHoveringHallwayLight": {
+    "name": "Han Duvar Lambası: Süzülen Koridor Işığı"
   },
   "LingeringMoment": {
     "name": "Ölümsüz An"
@@ -20416,6 +20704,30 @@
   },
   "StarshynaWalking": {
     "name": "\"Starşinanın Yürüyüşü\""
+  },
+  "BaseAuxiliaryBuildingMultipurposeGreenhouse": {
+    "name": "Yardımcı Üs Binası: Çok Amaçlı Sera"
+  },
+  "BaseAuxiliaryBuildingSecretSpace": {
+    "name": "Yardımcı Üs Binası: Gizli Alan"
+  },
+  "BaseAuxiliaryBuildingWaterTower": {
+    "name": "Yardımcı Üs Binası: Su Kulesi"
+  },
+  "BaseWindwheelAuxiliaryPower": {
+    "name": "Üs Rüzgar Çarkı: Yardımcı Güç"
+  },
+  "BaseGateAccessLogic": {
+    "name": "Üs Kapısı: Erişim Mantığı"
+  },
+  "BasePlatformSolidFoundation": {
+    "name": "Üs Platformu: Sağlam Temel"
+  },
+  "BaseWallLineOfObstruction": {
+    "name": "Üs Duvarı: Engel Hattı"
+  },
+  "BasePillarUniversalBeacon": {
+    "name": "Üs Sütunu: Evrensel İşaret Feneri"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Kuş ve Çiçek Havuzu"
@@ -21611,6 +21923,9 @@
   "UtilityPocketDetector": {
     "name": "Kullanışlı Cep Dedektörü"
   },
+  "GentleEmbrace": {
+    "name": "Nazik Bir Sarılma"
+  },
   "WeatheredBambooFence": {
     "name": "Eski Bambu Çit"
   },
@@ -21694,6 +22009,12 @@
   },
   "UncertainBoundaries": {
     "name": "Muğlak Sınırlar"
+  },
+  "TownRailingConvenientBench": {
+    "name": "Kasaba Korkuluğu: Kullanışlı Bank"
+  },
+  "TownRailingBlueBlueWaves": {
+    "name": "Kasaba Korkuluğu: Mavi, Mavi, Masmavi"
   },
   "SmoothWoodenBench": {
     "name": "Pürüzsüz Ahşap Bank"
@@ -22027,5 +22348,8 @@
   },
   "DragonOnTheMove": {
     "name": "Hareketli Ejderha"
+  },
+  "JumboSparksNSplashStatue": {
+    "name": "Dev Kıvılcımlar ve Patlama Heykeli"
   }
 }

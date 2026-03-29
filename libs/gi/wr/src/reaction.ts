@@ -423,8 +423,8 @@ export function lunarDmg(
             path: `${variant}_baseDmg_`,
           })
         ),
-        input.total[`${variant}_dmgInc`],
-        input.total[`${transformativeReactions[variant].resist}_dmgInc`]
+        // Probably should apply to all, but there isn't any buff that applies to reaction-based damage yet
+        ...(base !== 'reaction' ? [input.total[`${variant}_dmgInc`]] : [])
       ),
       lookup(
         input.hit.hitMode,

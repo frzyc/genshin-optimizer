@@ -323,7 +323,29 @@
   "11270001": {
     "name": "Chant de rossignol",
     "description": {
-      "0": "Illuga bénéfice des effets du chant de rossignol après avoir utilisé son déchaînement élémentaire <strong>Reflet sans ombre</strong>, augmentant ainsi les <geo>DGT Géo</geo> infligés par le personnage déployé."
+      "0": "Illuga bénéficie des effets du chant de rossignol après avoir utilisé son déchaînement élémentaire <strong>Reflet sans ombre</strong>, augmentant ainsi les <geo>DGT Géo</geo> infligés par le personnage déployé."
+    }
+  },
+  "11280001": {
+    "name": "Charge de tempête",
+    "description": {
+      "0": "Varka active son mode Charge de tempête après avoir utilisé sa compétence élémentaire <strong>Exécution liée au vent</strong> avec un appui simple.",
+      "1": "Dans ce mode, les DGT infligés par les attaques normales et chargées de Varka augmentent, Varka ne peut plus effectuer d'attaques plongeantes, et les deux lames de ses attaques normales et chargées infligent chacune des DGT élémentaires ne pouvant pas être enchantés selon les éléments des personnages de l'équipe.",
+      "2": [
+        " La lame de sa main gauche est convertie pour infliger des <anemo>DGT Anémo</anemo> ne pouvant pas être enchantés.",
+        " Lorsque l'équipe contient un personnage <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> ou <cryo>Cryo</cryo>, la lame de sa main droite inflige des DGT élémentaires correspondants ne pouvant pas être enchantés, selon ce même ordre de priorité."
+      ],
+      "3": "<br/>",
+      "4": "De plus, si l'équipe contient un personnage <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> ou <cryo>Cryo</cryo> pendant que Varka est dans ce mode, sa compétence élémentaire <strong>Exécution liée au vent</strong> est convertie en la compétence élémentaire spéciale <strong>Ascension des quatre vents</strong>."
+    }
+  },
+  "11280002": {
+    "name": "Ascension des quatre vents",
+    "description": {
+      "0": "Cette compétence élémentaire spéciale de Varka inflige des DGT de zone ne pouvant pas être enchantés de l'élément correspondant à la lame de sa main droite, ainsi que des <anemo>DGT Anémo de zone</anemo>.",
+      "1": "Varka possède 2 utilisations disponibles après un TdR initial.",
+      "2": "Lorsque Varka touche un ennemi avec une attaque normale pendant sa <strong>charge de tempête</strong>, le TdR de son <strong>Ascension des quatre vents</strong> diminue de 0,5 s, cet effet pouvant être déclenché 15 fois maximum pendant chaque <strong>charge de tempête</strong>.",
+      "3": "De plus, Varka peut consommer les utilisations de son <strong>Ascension des quatre vents</strong> pour effectuer son attaque chargée spéciale <strong>Dévoreur azur</strong> qui ne consomme pas d'endurance, infligeant 2 fois des DGT ne pouvant pas être enchantés de l'élément correspondant à la lame de sa main droite, ainsi que 2 fois des <anemo>DGT Anémo</anemo>."
     }
   }
 }

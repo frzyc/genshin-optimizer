@@ -1,6 +1,6 @@
 {
-  "core_dazeInc_": "Basic Attack: Moon Hunter Charged Attack Daze Increase",
-  "coreCond": "When EX Special Attack: Thrill of the Hunt or Assist Follow-Up: Vengeful Counterattack hits an enemy",
+  "coreCond": "When EX Special Attack: Thrill of the Hunt, Assist Follow-Up: Vengeful Counterattack or Assist Follow-Up: Vengeful Counterattack - Glacial Waltz hits an enemy",
+  "durationLeft": "Encircle Prey duration left",
   "abilityCond": "When Lycaon hits a Stunned enemy",
   "m1_dazeInc_": "EX Special Attack: Thrill of the Hunt Daze Increase",
   "m1_fullCharge_dazeInc_": "EX Special Attack: Thrill of the Hunt Charged Attack Daze Increase",

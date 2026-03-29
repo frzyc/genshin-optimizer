@@ -87,6 +87,8 @@ export const WengineIdMap = {
   '14146': 'CordisGermina',
   '14147': 'WrathfulVajra',
   '14148': 'YesterdayCalls',
+  '14149': 'Thoughtbop',
+  '14150': 'AngelInTheShell',
 } as const
 
 export const specialityMap: Record<number, SpecialityKey> = {
@@ -113,5 +115,6 @@ export const subStatMap = {
   'CRIT DMG': 'crit_dmg_',
   'Energy Regen': 'enerRegen_',
   'Anomaly Proficiency': 'anomProf',
+  'Anomaly Mastery': 'anomMas_',
   'PEN Ratio': 'pen_',
 } as const

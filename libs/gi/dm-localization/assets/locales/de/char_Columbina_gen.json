@@ -43,7 +43,7 @@
     "name": "Ewige Gezeiten",
     "description": {
       "0": "Ruft Gezeiten des Mondmeeres herbei, verursacht <hydro>Hydro-Flächenschaden</hydro> und erschafft eine <tooltip ns=tooltips_gen baseKey18=11250001 values=[]><strong>Gravitationswelle</strong></tooltip>.",
-      "1": "Die <strong>Gravitationswelle</strong> folgt der aktuellen Figur und fügt Gegnern in der Umgebung fortlaufend <hydro>Hydro-Flächenschaden</hydro> zu. Während die <strong>Gravitationswelle</strong> existiert und Truppenmitglieder in der Nähe eine Mondleuchten-Reaktion auslösen oder Schaden durch eine Mondleuchten-Reaktion verursachen, wird eine besondere <strong>Gravitation</strong> für Columbina angesammelt. Fügt, wenn deren Maximalwert erreicht ist, Gegnern Schaden der Art der Mondleuchten-Reaktion zu, durch die Columbina am meisten <strong>Gravitation</strong> gesammelt hat.",
+      "1": "Die <strong>Gravitationswelle</strong> folgt der aktuellen Figur und fügt Gegnern in der Umgebung fortlaufend <hydro>Hydro-Flächenschaden</hydro> zu. Während die <strong>Gravitationswelle</strong> existiert und wenn Truppenmitglieder in der Nähe eine Mondleuchten-Reaktion auslösen oder Schaden durch eine Mondleuchten-Reaktion verursachen, wird ein bestimmter Wert von einer besonderen <strong>Gravitation</strong> für Columbina angesammelt. Fügt, wenn deren Maximalwert erreicht ist, Gegnern basierend auf der Art der Mondleuchten-Reaktion, durch die Columbina am meisten <strong>Gravitation</strong> gesammelt hat, unterschiedliche Arten von Schaden zu.",
       "2": "<strong>Mondomen – Reifer Glanz</strong>: Die <strong>Gravitationswelle</strong> verursacht <hydro>Hydro-Flächenschaden</hydro> mit größerer Reichweite."
     },
     "skillParams": {

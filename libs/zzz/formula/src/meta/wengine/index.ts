@@ -1,4 +1,5 @@
 // WARNING: Generated file, do not modify
+export * as AngelInTheShell from './AngelInTheShell'
 export * as BashfulDemon from './BashfulDemon'
 export * as BellicoseBlaze from './BellicoseBlaze'
 export * as BigCylinder from './BigCylinder'
@@ -69,6 +70,7 @@ export * as StreetSuperstar from './StreetSuperstar'
 export * as TheBrimstone from './TheBrimstone'
 export * as TheRestrained from './TheRestrained'
 export * as TheVault from './TheVault'
+export * as Thoughtbop from './Thoughtbop'
 export * as Timeweaver from './Timeweaver'
 export * as TremorTrigramVessel from './TremorTrigramVessel'
 export * as TusksOfFury from './TusksOfFury'

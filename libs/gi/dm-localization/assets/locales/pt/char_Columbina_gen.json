@@ -157,7 +157,7 @@
     "name": "Brilho Onírico Sobre Águas Tranquilas",
     "description": {
       "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Columbina_gen baseKey18=skill>Maré Eterna</tooltip></strong> em 3.",
-      "1": "Nível máximo de elvação é 15.",
+      "1": "Nível máximo de elevação é 15.",
       "2": "<br/>",
       "3": "Dano de Reações Lunares de todos os membros próximos da equipe é <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Elevado</strong></tooltip> em 1.5%."
     }
@@ -183,7 +183,7 @@
   "constellation6": {
     "name": "Atravessando a Escuridão com o Luar",
     "description": {
-      "0": "Nos 8s após todos os personagens causarem uma Reação Lunar dentro de um <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Domínio Lunar</strong></tooltip>, aumenta o Dano CRIT do Tipo Elemental correspondente de todos os membros da equipe de acordo com o Tipo Elemental participante em 80%. Aumentos de Dano CRIT de Tipos Elementais idênticos não acumularão.",
+      "0": "Nos 8s após os personagens causarem uma Reação Lunar dentro de um <tooltip ns=tooltips_gen baseKey18=11250002 values=[]><strong>Domínio Lunar</strong></tooltip>, aumenta o Dano CRIT do Tipo Elemental correspondente de todos os membros da equipe de acordo com o Tipo Elemental participante em 80%. Aumentos de Dano CRIT de Tipos Elementais idênticos não acumularão.",
       "1": "<br/>",
       "2": "O Dano de Reações Lunares de todos os membros próximos da equipe é <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Elevado</strong></tooltip> em 7%."
     }

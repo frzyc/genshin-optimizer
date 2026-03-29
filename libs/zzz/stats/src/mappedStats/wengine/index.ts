@@ -1,4 +1,5 @@
 // WARNING: Generated file, do not modify
+import AngelInTheShell from './maps/AngelInTheShell'
 import BashfulDemon from './maps/BashfulDemon'
 import BellicoseBlaze from './maps/BellicoseBlaze'
 import BigCylinder from './maps/BigCylinder'
@@ -69,6 +70,7 @@ import StreetSuperstar from './maps/StreetSuperstar'
 import TheBrimstone from './maps/TheBrimstone'
 import TheRestrained from './maps/TheRestrained'
 import TheVault from './maps/TheVault'
+import Thoughtbop from './maps/Thoughtbop'
 import Timeweaver from './maps/Timeweaver'
 import TremorTrigramVessel from './maps/TremorTrigramVessel'
 import TusksOfFury from './maps/TusksOfFury'
@@ -83,6 +85,7 @@ import YesterdayCalls from './maps/YesterdayCalls'
 import ZanshinHerbCase from './maps/ZanshinHerbCase'
 
 const maps = {
+  AngelInTheShell,
   BashfulDemon,
   BellicoseBlaze,
   BigCylinder,
@@ -153,6 +156,7 @@ const maps = {
   TheBrimstone,
   TheRestrained,
   TheVault,
+  Thoughtbop,
   Timeweaver,
   TremorTrigramVessel,
   TusksOfFury,

@@ -2,7 +2,7 @@
   "setName": "Aubade d'astre et de lune",
   "setEffects": {
     "2": "Augmente la maîtrise élémentaire de 80 pts.",
-    "4": "Lorsque le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé, les DGT de réaction sélène augmentent de 20 %, et de 40 % supplémentaires si le cycle signelunaire de l'équipe est au moins « Lueur ascendante ». Cet effet prend fin 3 s après que le personnage concerné est déployé."
+    "4": "Lorsque le personnage équipé de l'artéfact fait partie de l'équipe mais n'est pas déployé, les DGT de réaction sélène augmentent de 20 %, et de 40 % supplémentaires si le cycle signelunaire de l'équipe est au moins « Lueur ascendante ». Cet effet prend fin 3 s après que le personnage concerné est déployé."
   },
   "pieces": {
     "flower": {

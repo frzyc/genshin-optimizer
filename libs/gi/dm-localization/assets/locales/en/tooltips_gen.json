@@ -325,5 +325,27 @@
     "description": {
       "0": "The effect gained after Illuga unleashes his Elemental Burst <strong>Shadowless Reflection</strong>. It can increase the <geo>Geo DMG</geo> inflicted by current active characters."
     }
+  },
+  "11280001": {
+    "name": "Sturm und Drang",
+    "description": {
+      "0": "Tap to unleash Elemental Skill <strong>Windbound Execution</strong> for Varka to switch to this mode.",
+      "1": "While in this mode, Varka's Normal Attacks and Charged Attacks deal increased DMG, and he cannot perform Plunging Attacks. When Varka executes Normal or Charged Attacks, his dual-wielded claymores will deal corresponding Elemental DMG based on the Elemental Types of the characters in the party respectively:",
+      "2": [
+        " DMG dealt by the claymore wielded in his left hand will be converted to <anemo>Anemo DMG</anemo> that cannot be overridden by other infusions.",
+        " When there are <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> or <cryo>Cryo</cryo> characters in the party, the claymore wielded in his right hand deals corresponding Elemental DMG that cannot be overridden by infusions, following the aforementioned priority order of Elemental Types."
+      ],
+      "3": "<br/>",
+      "4": "Additionally, while in this mode, if there are <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> or <cryo>Cryo</cryo> characters in the party, Varka's Elemental Skill <strong>Windbound Execution</strong> will be converted to the special Elemental Skill, <strong>Four Winds' Ascension</strong>."
+    }
+  },
+  "11280002": {
+    "name": "Four Winds' Ascension",
+    "description": {
+      "0": "Varka's special Elemental Skill. Deals AoE Elemental DMG that cannot be overridden by infusions corresponding to the element of the claymore wielded in Varka's right hand, and <anemo>AoE Anemo DMG</anemo> to opponents.",
+      "1": "Starts on cooldown and has 2 maximum uses.",
+      "2": "When Varka is in <strong>Sturm und Drang</strong> mode and his Normal Attack hits an opponent, the CD of <strong>Four Winds' Ascension</strong> will be reduced by 0.5s. Every time Varka switches to the <strong>Sturm und Drang</strong> mode, this effect can be triggered up to 15 times.",
+      "3": "Additionally, Varka can expend uses of <strong>Four Winds' Ascension</strong> to perform a special Charged Attack, <strong>Azure Devour</strong>, that consumes no Stamina, dealing 2 instances of Elemental DMG corresponding to the element of the claymore wielded in his right hand, which cannot be overridden by infusions, and 2 instances of <anemo>Anemo DMG</anemo>."
+    }
   }
 }

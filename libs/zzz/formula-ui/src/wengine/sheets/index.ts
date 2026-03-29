@@ -2,6 +2,7 @@
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 
+import AngelInTheShell from './AngelInTheShell'
 import BashfulDemon from './BashfulDemon'
 import BellicoseBlaze from './BellicoseBlaze'
 import BigCylinder from './BigCylinder'
@@ -72,6 +73,7 @@ import StreetSuperstar from './StreetSuperstar'
 import TheBrimstone from './TheBrimstone'
 import TheRestrained from './TheRestrained'
 import TheVault from './TheVault'
+import Thoughtbop from './Thoughtbop'
 import Timeweaver from './Timeweaver'
 import TremorTrigramVessel from './TremorTrigramVessel'
 import TusksOfFury from './TusksOfFury'
@@ -86,6 +88,7 @@ import YesterdayCalls from './YesterdayCalls'
 import ZanshinHerbCase from './ZanshinHerbCase'
 
 export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
+  AngelInTheShell,
   BashfulDemon,
   BellicoseBlaze,
   BigCylinder,
@@ -156,6 +159,7 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   TheBrimstone,
   TheRestrained,
   TheVault,
+  Thoughtbop,
   Timeweaver,
   TremorTrigramVessel,
   TusksOfFury,

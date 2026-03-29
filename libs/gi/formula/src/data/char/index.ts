@@ -41,6 +41,7 @@ import Gorou from './Gorou'
 import HuTao from './HuTao'
 import Iansan from './Iansan'
 import Ifa from './Ifa'
+import Illuga from './Illuga'
 import Ineffa from './Ineffa'
 import Jahoda from './Jahoda'
 import Jean from './Jean'
@@ -97,6 +98,7 @@ import TravelerGeo from './TravelerGeo'
 import TravelerHydro from './TravelerHydro'
 import TravelerPyro from './TravelerPyro'
 import Varesa from './Varesa'
+import Varka from './Varka'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
@@ -114,6 +116,7 @@ import Yoimiya from './Yoimiya'
 import YumemizukiMizuki from './YumemizukiMizuki'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
+import Zibai from './Zibai'
 
 const data: TagMapNodeEntries[] = [
   Aino,
@@ -157,6 +160,7 @@ const data: TagMapNodeEntries[] = [
   Gorou,
   HuTao,
   Iansan,
+  Illuga,
   Ifa,
   Ineffa,
   Jahoda,
@@ -208,6 +212,7 @@ const data: TagMapNodeEntries[] = [
   Thoma,
   Tighnari,
   Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,
@@ -225,6 +230,7 @@ const data: TagMapNodeEntries[] = [
   YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
   TravelerAnemo,
   TravelerGeo,
   TravelerElectro,

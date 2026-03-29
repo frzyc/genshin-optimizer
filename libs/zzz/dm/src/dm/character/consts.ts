@@ -56,6 +56,8 @@ export const characterIdMap = {
   '1461': 'Seed',
   '1471': 'Banyue',
   '1481': 'Dialyn',
+  '1491': 'Sunna',
+  '1501': 'Aria',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {
@@ -96,6 +98,7 @@ export const characterRarityMap: Record<number, CharacterRarityKey> = {
 
 export const coreStatMap: Record<string, StatKey> = {
   'Base ATK': 'atk',
+  ATK: 'atk',
   Impact: 'impact',
   'CRIT Rate': 'crit_',
   'CRIT DMG': 'crit_dmg_',
