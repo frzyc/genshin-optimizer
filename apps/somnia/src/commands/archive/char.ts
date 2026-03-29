@@ -49,6 +49,7 @@ function getEmbed(
   const options = []
   //parse level
   let level = arg.length > 1 ? Number(arg.substring(1)) : 0
+  if (isNaN(level)) level = 0
   //talent level dropdown
   if (['n', 'e', 'q'].includes(arg[0])) {
     level = clamp(level, 0, 15)
