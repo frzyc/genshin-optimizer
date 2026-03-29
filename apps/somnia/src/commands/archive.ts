@@ -249,7 +249,7 @@ export function tooltip(text: string, lang = 'en') {
     const o = translate(namespace, key, lang, true)
     if (!o.name && !o.description) continue
     tooltips +=
-      "**" +
+      '**' +
       o.name +
       '**\n' +
       Object.values(o.description).flat().join('\n') +
