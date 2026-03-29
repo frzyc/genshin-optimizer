@@ -51,7 +51,11 @@ function getEmbed(
   const level = arg.length > 1 ? parseInt(arg.substring(1)) : 0
   //talent level dropdown
   if (['n', 'e', 'q'].includes(arg[0])) {
-    options.push(new StringSelectMenuOptionBuilder().setLabel('Tooltip').setValue(arg[0] + '0'))
+    options.push(
+      new StringSelectMenuOptionBuilder()
+        .setLabel('Tooltip')
+        .setValue(arg[0] + '0')
+    )
     for (const tl of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) {
       const menu = new StringSelectMenuOptionBuilder()
         .setLabel('Talent Level ' + tl)
@@ -68,10 +72,26 @@ function getEmbed(
     ]
   } else if (arg[0] === 'a') {
     //passive dropdown
-    options.push(new StringSelectMenuOptionBuilder().setLabel('All Passives').setValue(arg[0] + '0'))
-    options.push(new StringSelectMenuOptionBuilder().setLabel('1st Ascension Passive').setValue(arg[0] + '1'))
-    options.push(new StringSelectMenuOptionBuilder().setLabel('4th Ascension Passive').setValue(arg[0] + '4'))
-    options.push(new StringSelectMenuOptionBuilder().setLabel('Other Passives').setValue(arg[0] + '5'))
+    options.push(
+      new StringSelectMenuOptionBuilder()
+        .setLabel('All Passives')
+        .setValue(arg[0] + '0')
+    )
+    options.push(
+      new StringSelectMenuOptionBuilder()
+        .setLabel('1st Ascension Passive')
+        .setValue(arg[0] + '1')
+    )
+    options.push(
+      new StringSelectMenuOptionBuilder()
+        .setLabel('4th Ascension Passive')
+        .setValue(arg[0] + '4')
+    )
+    options.push(
+      new StringSelectMenuOptionBuilder()
+        .setLabel('Other Passives')
+        .setValue(arg[0] + '5')
+    )
     const selected = options.find(o => o.data.value === arg[0] + level)
     const label = selected?.data.label || 'Talent Level ' + level
     if (selected) selected.setDefault(true)
@@ -223,11 +243,12 @@ function normalsEmbed(
   const weapon = getCharStat(sheetKeyToCharKey(id)).weaponType
 
   const talentobj = auto.upgradedFields || auto.fields
-  let output = Object.keys(talentobj)
-    .map((key) => {
-      return fieldsJoin(talentobj[key])
-    })
-    .join('\n\n') + '\n\n'
+  let output =
+    Object.keys(talentobj)
+      .map((key) => {
+        return fieldsJoin(talentobj[key])
+      })
+      .join('\n\n') + '\n\n'
   if (level === 0) output += tooltip(output, lang)
 
   //make embed
@@ -235,8 +256,10 @@ function normalsEmbed(
     .setTitle(auto.name)
     .setDescription(clean(output))
     .setThumbnail(giURL(CommonAssetData.normalIcons[weapon]))
-
-  if (level > 0) embed.addFields(talentFields(namespace, 'auto', getCharParam(id).auto, level, lang))
+  if (level > 0)
+    embed.addFields(
+      talentFields(namespace, 'auto', getCharParam(id).auto, level, lang)
+    )
   return embed
 }
 
@@ -251,13 +274,16 @@ function skillEmbed(
   let output = Object.values(skill.description).flat().join('\n') + '\n\n'
   if (level === 0) output += tooltip(output, lang)
 
+  //make embed
   const embed = baseEmbed(id, lang)
     .setTitle(skill.name)
     .setDescription(clean(output))
-
   const thumbnail = getAssets(id).skill
   if (thumbnail) embed.setThumbnail(giURL(thumbnail))
-  if (level > 0) embed.addFields(talentFields(namespace, 'skill', getCharParam(id).skill, level, lang))
+  if (level > 0)
+    embed.addFields(
+      talentFields(namespace, 'skill', getCharParam(id).skill, level, lang)
+    )
   return embed
 }
 
@@ -272,13 +298,16 @@ function burstEmbed(
   let output = Object.values(burst.description).flat().join('\n') + '\n\n'
   if (level === 0) output += tooltip(output, lang)
 
+  //make embed
   const embed = baseEmbed(id, lang)
     .setTitle(burst.name)
     .setDescription(clean(output))
-
   const thumbnail = getAssets(id).burst
   if (thumbnail) embed.setThumbnail(giURL(thumbnail))
-  if (level > 0) embed.addFields(talentFields(namespace, 'burst', getCharParam(id).burst, level, lang))
+  if (level > 0)
+    embed.addFields(
+      talentFields(namespace, 'burst', getCharParam(id).burst, level, lang)
+    )
   return embed
 }
 
@@ -427,7 +456,7 @@ export async function charReaction(reaction: MessageReaction) {
     if (emoji === '🏳️‍⚧️')
       gender =
         embed.author.icon_url?.includes('Girl') ||
-          embed.thumbnail?.url.includes('Girl')
+        embed.thumbnail?.url.includes('Girl')
           ? 'M'
           : 'F'
     else if (emoji === '♀️') gender = 'F'
