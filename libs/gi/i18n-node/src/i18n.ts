@@ -33,7 +33,7 @@ i18nInstance.init({
     'artifactNames_gen',
     'weaponNames_gen',
     'statKey_gen',
-    'tooltips_gen'
+    'tooltips_gen',
   ],
   // Specify the default namespace.
   defaultNS: 'ui',

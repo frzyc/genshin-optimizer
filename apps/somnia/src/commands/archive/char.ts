@@ -1,4 +1,4 @@
-import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
+import { clamp, getUnitStr, valueString } from '@genshin-optimizer/common/util'
 import { AssetData, CommonAssetData } from '@genshin-optimizer/gi/assets-data'
 import {
   type CharacterSheetKey,
@@ -48,9 +48,10 @@ function getEmbed(
   //create dropdown menu
   const options = []
   //parse level
-  const level = arg.length > 1 ? parseInt(arg.substring(1)) : 0
+  let level = arg.length > 1 ? Number(arg.substring(1)) : 0
   //talent level dropdown
   if (['n', 'e', 'q'].includes(arg[0])) {
+    level = clamp(level, 0, 15)
     options.push(
       new StringSelectMenuOptionBuilder()
         .setLabel('Tooltip')
@@ -71,6 +72,7 @@ function getEmbed(
         .addOptions(options),
     ]
   } else if (arg[0] === 'a') {
+    level = [0, 1, 4, 5].includes(level) ? level : 0
     //passive dropdown
     options.push(
       new StringSelectMenuOptionBuilder()
@@ -92,7 +94,7 @@ function getEmbed(
         .setLabel('Other Passives')
         .setValue(arg[0] + '5')
     )
-    const selected = options.find(o => o.data.value === arg[0] + level)
+    const selected = options.find((o) => o.data.value === arg[0] + level)
     const label = selected?.data.label || 'Talent Level ' + level
     if (selected) selected.setDefault(true)
     res.components = [
@@ -102,6 +104,7 @@ function getEmbed(
         .addOptions(options),
     ]
   } else if (arg[0] === 'c') {
+    level = clamp(level, 0, 6)
     //constellation dropdown
     for (const cl of [0, 1, 2, 3, 4, 5, 6]) {
       const label = cl ? 'Constellation ' + cl : 'All Constellations'
@@ -371,7 +374,7 @@ function constellationsEmbed(
   let text = ''
   //select constellations
   const allCons = ['1', '2', '3', '4', '5', '6'] as const
-  if (level < 1 || level > 6) throw 'Invalid constellation.'
+  if (level < 0 || level > 6) throw 'Invalid constellation.'
   const showCons = level ? [allCons[level - 1]] : allCons
   for (const constellationId of showCons) {
     const constellation = translate(
