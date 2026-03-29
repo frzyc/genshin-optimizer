@@ -237,6 +237,17 @@ export async function run(interaction: ChatInputCommandInteraction) {
   }
 }
 
+export function tooltip(text: string, lang = 'en') {
+  let tooltips = ''
+  const list = [...text.matchAll(/<tooltip ns=([\S]+) baseKey18=([\S]+)(?: values=)?([\S]*?)>/g)]
+  for (const match of list) {
+    const [_full, namespace, key, _value] = match
+    const o = translate(namespace, key, lang, true)
+    tooltips += "**" + o.name + '**\n' + Object.values(o.description).flat().join('\n') + '\n\n'
+  }
+  return tooltips
+}
+
 export async function selectmenu(
   interaction: StringSelectMenuInteraction,
   args: string[]
