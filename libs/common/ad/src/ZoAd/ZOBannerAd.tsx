@@ -33,7 +33,6 @@ function ZOBannerAd({ children }: { children: ReactNode }) {
           width: '100%',
           height: '100%',
         }}
-        alt="Lootbar.gg advertisement"
       />
     </Box>
   )

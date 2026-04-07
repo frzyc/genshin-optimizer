@@ -2,7 +2,6 @@ import type { AdDims, AdProps } from '@genshin-optimizer/common/ad'
 import {
   getGOAd,
   getGODrakeAd,
-  getGOLootbarAd,
   getZOBannerAd,
   getZORectAd,
 } from '@genshin-optimizer/common/ad'
@@ -45,7 +44,6 @@ function getAdComponents(
     getGOAd,
     // getGODevAd,
     getGODrakeAd,
-    getGOLootbarAd,
     getZOBannerAd,
     getZORectAd,
   ]
