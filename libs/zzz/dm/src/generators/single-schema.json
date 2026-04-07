@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "GenerateSingleDeobfTemplate",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "file": {
+      "type": "string",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What file should a base deobf template be created for?"
+    }
+  },
+  "required": ["file"]
+}

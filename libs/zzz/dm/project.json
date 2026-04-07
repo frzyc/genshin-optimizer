@@ -3,6 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/zzz/dm/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "load-dm": {
       "options": {
@@ -17,7 +18,10 @@
     "get-hakushin": {
       "executor": "@genshin-optimizer/zzz/dm:gen-hakushin",
       "outputs": ["{projectRoot}/HakushinData/**/*"]
+    },
+    "deobf": {
+      "executor": "@genshin-optimizer/zzz/dm:deobf",
+      "outputs": ["{projectRoot}/ZenlessDataDeobf/**/*"]
     }
-  },
-  "tags": []
+  }
 }
