@@ -25,6 +25,7 @@ import Lucy from './maps/Lucy'
 import Lycaon from './maps/Lycaon'
 import Manato from './maps/Manato'
 import Miyabi from './maps/Miyabi'
+import NangongYu from './maps/NangongYu'
 import Nekomata from './maps/Nekomata'
 import Nicole from './maps/Nicole'
 import OrphieMagus from './maps/OrphieMagus'
@@ -76,6 +77,7 @@ const maps = {
   Lycaon,
   Manato,
   Miyabi,
+  NangongYu,
   Nekomata,
   Nicole,
   OrphieMagus,

@@ -26,6 +26,7 @@ import Lucy from './sheets/Lucy'
 import Lycaon from './sheets/Lycaon'
 import Manato from './sheets/Manato'
 import Miyabi from './sheets/Miyabi'
+import NangongYu from './sheets/NangongYu'
 import Nekomata from './sheets/Nekomata'
 import Nicole from './sheets/Nicole'
 import OrphieMagus from './sheets/OrphieMagus'
@@ -77,6 +78,7 @@ const data: TagMapNodeEntries[] = [
   Lycaon,
   Manato,
   Miyabi,
+  NangongYu,
   Nekomata,
   Nicole,
   OrphieMagus,
