@@ -920,6 +920,10 @@
       "icon": "UI_EquipIcon_Bow_Arianna",
       "awakenIcon": "UI_EquipIcon_Bow_Arianna_Awaken"
     },
+    "GoldenFrostboundOath": {
+      "icon": "UI_EquipIcon_Bow_Alkonost",
+      "awakenIcon": "UI_EquipIcon_Bow_Alkonost_Awaken"
+    },
     "QuantumCatalyst": {}
   },
   "artifacts": {
@@ -3248,6 +3252,24 @@
       "constellation4": "UI_Talent_S_Varka_03",
       "constellation5": "UI_Talent_U_Varka_02",
       "constellation6": "UI_Talent_S_Varka_04"
+    },
+    "Linnea": {
+      "icon": "UI_AvatarIcon_Linnea",
+      "iconSide": "UI_AvatarIcon_Side_Linnea",
+      "banner": "UI_NameCardPic_Linnea_P",
+      "bar": "UI_NameCardPic_Linnea_Alpha",
+      "skill": "Skill_S_Linnea_01",
+      "burst": "Skill_E_Linnea_01_HD",
+      "passive1": "UI_Talent_S_Linnea_05",
+      "passive2": "UI_Talent_S_Linnea_06",
+      "passive3": "UI_Talent_S_Linnea_07",
+      "passive": "UI_Talent_S_Linnea_08",
+      "constellation1": "UI_Talent_S_Linnea_01",
+      "constellation2": "UI_Talent_S_Linnea_02",
+      "constellation3": "UI_Talent_U_Linnea_01",
+      "constellation4": "UI_Talent_S_Linnea_03",
+      "constellation5": "UI_Talent_U_Linnea_02",
+      "constellation6": "UI_Talent_S_Linnea_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

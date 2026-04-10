@@ -1,0 +1,24 @@
+{
+  "name": "Golden Frostbound Oath",
+  "description": {
+    "0": "Busur panjang dari kayu putih kuno ini dahulu adalah milik Raja Jack Frost dari utara."
+  },
+  "passiveName": "Dawn's Salutation Returned",
+  "passiveDescription": {
+    "0": {
+      "0": "DEF +<cryo>16%</cryo>. Saat serangan Elemental Skill atau Lunar-Crystallize Karakter yang mengenakan mengenai musuh, akan mendapatkan efek Frost Fae's Favor selama 6 detik: Geo DMG yang diakibatkan Karakter yang mengenakan +<cryo>40%</cryo>, DMG reaksi Lunar-Crystallize +<cryo>40%</cryo>. Selama durasi ini, jika ada Moondrift di sekitar Karakter yang mengenakan, maka seluruh anggota party lain di sekitar akan mendapatkan efek Frost Fae's Mischief: Geo DMG yang diakibatkan +<cryo>20%</cryo>, DMG reaksi Lunar-Crystallize +<cryo>20%</cryo>. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "DEF +<cryo>20%</cryo>. Saat serangan Elemental Skill atau Lunar-Crystallize Karakter yang mengenakan mengenai musuh, akan mendapatkan efek Frost Fae's Favor selama 6 detik: Geo DMG yang diakibatkan Karakter yang mengenakan +<cryo>50%</cryo>, DMG reaksi Lunar-Crystallize +<cryo>50%</cryo>. Selama durasi ini, jika ada Moondrift di sekitar Karakter yang mengenakan, maka seluruh anggota party lain di sekitar akan mendapatkan efek Frost Fae's Mischief: Geo DMG yang diakibatkan +<cryo>25%</cryo>, DMG reaksi Lunar-Crystallize +<cryo>25%</cryo>. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "DEF +<cryo>24%</cryo>. Saat serangan Elemental Skill atau Lunar-Crystallize Karakter yang mengenakan mengenai musuh, akan mendapatkan efek Frost Fae's Favor selama 6 detik: Geo DMG yang diakibatkan Karakter yang mengenakan +<cryo>60%</cryo>, DMG reaksi Lunar-Crystallize +<cryo>60%</cryo>. Selama durasi ini, jika ada Moondrift di sekitar Karakter yang mengenakan, maka seluruh anggota party lain di sekitar akan mendapatkan efek Frost Fae's Mischief: Geo DMG yang diakibatkan +<cryo>30%</cryo>, DMG reaksi Lunar-Crystallize +<cryo>30%</cryo>. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "DEF +<cryo>28%</cryo>. Saat serangan Elemental Skill atau Lunar-Crystallize Karakter yang mengenakan mengenai musuh, akan mendapatkan efek Frost Fae's Favor selama 6 detik: Geo DMG yang diakibatkan Karakter yang mengenakan +<cryo>70%</cryo>, DMG reaksi Lunar-Crystallize +<cryo>70%</cryo>. Selama durasi ini, jika ada Moondrift di sekitar Karakter yang mengenakan, maka seluruh anggota party lain di sekitar akan mendapatkan efek Frost Fae's Mischief: Geo DMG yang diakibatkan +<cryo>35%</cryo>, DMG reaksi Lunar-Crystallize +<cryo>35%</cryo>. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "DEF +<cryo>32%</cryo>. Saat serangan Elemental Skill atau Lunar-Crystallize Karakter yang mengenakan mengenai musuh, akan mendapatkan efek Frost Fae's Favor selama 6 detik: Geo DMG yang diakibatkan Karakter yang mengenakan +<cryo>80%</cryo>, DMG reaksi Lunar-Crystallize +<cryo>80%</cryo>. Selama durasi ini, jika ada Moondrift di sekitar Karakter yang mengenakan, maka seluruh anggota party lain di sekitar akan mendapatkan efek Frost Fae's Mischief: Geo DMG yang diakibatkan +<cryo>40%</cryo>, DMG reaksi Lunar-Crystallize +<cryo>40%</cryo>. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

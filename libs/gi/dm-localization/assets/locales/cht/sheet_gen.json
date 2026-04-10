@@ -36,8 +36,8 @@
   "addEleDMG": "附加元素傷害",
   "hpRegenPerHit": "命中治療量",
   "press": {
-    "dmg": "點按傷害",
-    "cd": "點按冷卻時間"
+    "dmg": "",
+    "cd": ""
   },
   "hold": {
     "dmg": "長按傷害",

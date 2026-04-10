@@ -54330,6 +54330,406 @@
         ],
         "upgradeableSkills": []
       },
+      "Linnea": {
+        "auto": [
+          [
+            0.589969,
+            0.637989,
+            0.68601,
+            0.754611,
+            0.802632,
+            0.857513,
+            0.932974,
+            1.008435,
+            1.083896,
+            1.166217,
+            1.248538,
+            1.330859,
+            1.413181,
+            1.495502,
+            1.577823
+          ],
+          [
+            0.511519,
+            0.553155,
+            0.59479,
+            0.654269,
+            0.695904,
+            0.743488,
+            0.808914,
+            0.874341,
+            0.939768,
+            1.011143,
+            1.082518,
+            1.153893,
+            1.225267,
+            1.296642,
+            1.368017
+          ],
+          [
+            0.816312,
+            0.882756,
+            0.9492,
+            1.04412,
+            1.110564,
+            1.1865,
+            1.290912,
+            1.395324,
+            1.499736,
+            1.61364,
+            1.727544,
+            1.841448,
+            1.955352,
+            2.069256,
+            2.18316
+          ],
+          [
+            0.4386,
+            0.4743,
+            0.51,
+            0.561,
+            0.5967,
+            0.6375,
+            0.6936,
+            0.7497,
+            0.8058,
+            0.867,
+            0.9282,
+            0.9894,
+            1.0506,
+            1.1118,
+            1.173
+          ],
+          [
+            1.24,
+            1.333,
+            1.426,
+            1.55,
+            1.643,
+            1.736,
+            1.86,
+            1.984,
+            2.108,
+            2.232,
+            2.356,
+            2.48,
+            2.635,
+            2.79,
+            2.945
+          ],
+          [
+            0.568288,
+            0.614544,
+            0.6608,
+            0.72688,
+            0.773136,
+            0.826,
+            0.898688,
+            0.971376,
+            1.044064,
+            1.12336,
+            1.202656,
+            1.281952,
+            1.361248,
+            1.440544,
+            1.51984
+          ],
+          [
+            1.136335,
+            1.228828,
+            1.32132,
+            1.453452,
+            1.545944,
+            1.65165,
+            1.796995,
+            1.94234,
+            2.087686,
+            2.246244,
+            2.404802,
+            2.563361,
+            2.721919,
+            2.880478,
+            3.039036
+          ],
+          [
+            1.419344,
+            1.534872,
+            1.6504,
+            1.81544,
+            1.930968,
+            2.063,
+            2.244544,
+            2.426088,
+            2.607632,
+            2.80568,
+            3.003728,
+            3.201776,
+            3.399824,
+            3.597872,
+            3.79592
+          ]
+        ],
+        "skill": [
+          [
+            0.96,
+            1.032,
+            1.104,
+            1.2,
+            1.272,
+            1.344,
+            1.44,
+            1.536,
+            1.632,
+            1.728,
+            1.824,
+            1.92,
+            2.04,
+            2.16,
+            2.28
+          ],
+          [
+            1,
+            1.075,
+            1.15,
+            1.25,
+            1.325,
+            1.4,
+            1.5,
+            1.6,
+            1.7,
+            1.8,
+            1.9,
+            2,
+            2.125,
+            2.25,
+            2.375
+          ],
+          [
+            4,
+            4.3,
+            4.6,
+            5,
+            5.3,
+            5.6,
+            6,
+            6.4,
+            6.8,
+            7.2,
+            7.6,
+            8,
+            8.5,
+            9,
+            9.5
+          ],
+          [
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25,
+            25
+          ],
+          [
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18
+          ]
+        ],
+        "burst": [
+          [
+            770.3755,
+            847.42377,
+            930.8927,
+            1020.78235,
+            1117.0927,
+            1219.8236,
+            1328.9753,
+            1444.5477,
+            1566.5408,
+            1694.9546,
+            1829.7891,
+            1971.0442,
+            2118.72,
+            2272.8164,
+            2433.3337
+          ],
+          [
+            1.6,
+            1.72,
+            1.84,
+            2,
+            2.12,
+            2.24,
+            2.4,
+            2.56,
+            2.72,
+            2.88,
+            3.04,
+            3.2,
+            3.4,
+            3.6,
+            3.8
+          ],
+          [
+            154.0751,
+            169.48476,
+            186.17854,
+            204.15646,
+            223.41853,
+            243.96474,
+            265.79507,
+            288.90955,
+            313.30817,
+            338.9909,
+            365.9578,
+            394.20883,
+            423.744,
+            454.5633,
+            486.66675
+          ],
+          [
+            0.32,
+            0.344,
+            0.368,
+            0.4,
+            0.424,
+            0.448,
+            0.48,
+            0.512,
+            0.544,
+            0.576,
+            0.608,
+            0.64,
+            0.68,
+            0.72,
+            0.76
+          ],
+          [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ],
+          [
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15
+          ],
+          [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ]
+        ],
+        "passive1": [
+          [
+            0.15
+          ],
+          [
+            0.3
+          ]
+        ],
+        "passive2": [
+          [
+            0.05
+          ]
+        ],
+        "passive3": [
+          [
+            0.007
+          ],
+          [
+            0.14
+          ]
+        ],
+        "passive": [
+          [
+            0.2
+          ]
+        ],
+        "constellation1": [
+          6,
+          18,
+          10,
+          0.75,
+          5,
+          1.5
+        ],
+        "constellation2": [
+          0.4,
+          8,
+          1.5
+        ],
+        "constellation3": [],
+        "constellation4": [
+          5,
+          0.25,
+          0.25
+        ],
+        "constellation5": [],
+        "constellation6": [
+          0.25,
+          2,
+          0.75
+        ],
+        "upgradeableSkills": []
+      },
       "Somnia": {
         "auto": [
           [
@@ -62223,6 +62623,72 @@
             0.192,
             0.288,
             0.384
+          ]
+        }
+      },
+      "Linnea": {
+        "key": "Linnea",
+        "ele": "geo",
+        "region": "nodKrai",
+        "weaponType": "bow",
+        "birthday": {
+          "month": 5,
+          "day": 23
+        },
+        "rarity": 5,
+        "lvlCurves": [
+          {
+            "key": "hp",
+            "base": 770.28253,
+            "curve": "GROW_CURVE_HP_S5"
+          },
+          {
+            "key": "atk",
+            "base": 11.172,
+            "curve": "GROW_CURVE_ATTACK_S5"
+          },
+          {
+            "key": "def",
+            "base": 70.5994,
+            "curve": "GROW_CURVE_HP_S5"
+          }
+        ],
+        "ascensionBonus": {
+          "hp": [
+            0,
+            660.44763,
+            1129.7131,
+            1755.4003,
+            2224.6658,
+            2693.9312,
+            3163.1965
+          ],
+          "def": [
+            0,
+            60.534,
+            103.545,
+            160.893,
+            203.904,
+            246.915,
+            289.926
+          ],
+          "atk": [
+            0,
+            9.57828,
+            16.3839,
+            25.45806,
+            32.26368,
+            39.0693,
+            45.87492
+          ],
+          "critRate_": [
+            0,
+            0,
+            0.048,
+            0.096,
+            0.096,
+            0.144,
+            0.192
           ]
         }
       },
@@ -73154,6 +73620,53 @@
           }
         ],
         "refinementBonus": {},
+        "ascensionBonus": {
+          "atk": [
+            0,
+            31.1,
+            62.2,
+            93.4,
+            124.5,
+            155.6,
+            186.7
+          ]
+        }
+      },
+      "GoldenFrostboundOath": {
+        "weaponType": "bow",
+        "rarity": 5,
+        "mainStat": {
+          "type": "atk",
+          "base": 44.3358,
+          "curve": "GROW_CURVE_ATTACK_304"
+        },
+        "subStat": {
+          "type": "critDMG_",
+          "base": 0.192,
+          "curve": "GROW_CURVE_CRITICAL_301"
+        },
+        "lvlCurves": [
+          {
+            "key": "atk",
+            "base": 44.3358,
+            "curve": "GROW_CURVE_ATTACK_304"
+          },
+          {
+            "key": "critDMG_",
+            "base": 0.192,
+            "curve": "GROW_CURVE_CRITICAL_301"
+          }
+        ],
+        "refinementBonus": {
+          "def_": [
+            -1,
+            0.16,
+            0.2,
+            0.24,
+            0.28,
+            0.32
+          ]
+        },
         "ascensionBonus": {
           "atk": [
             0,
@@ -84897,6 +85410,9 @@
     "TreasuredInsights": {
       "type": "MATERIAL_NONE"
     },
+    "JointExhibitionPopularity": {
+      "type": "MATERIAL_NONE"
+    },
     "Primogem": {
       "type": "MATERIAL_ADSORBATE"
     },
@@ -85756,7 +86272,7 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Dahlia": {
-      "type": "MATERIAL_AVATAR"
+      "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Ineffa": {
       "type": "MATERIAL_GCG_CARD_FACE"
@@ -85768,7 +86284,7 @@
       "type": "MATERIAL_AVATAR"
     },
     "Aino": {
-      "type": "MATERIAL_AVATAR"
+      "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Nefer": {
       "type": "MATERIAL_AVATAR"
@@ -85789,6 +86305,9 @@
       "type": "MATERIAL_AVATAR"
     },
     "Varka": {
+      "type": "MATERIAL_AVATAR"
+    },
+    "Linnea": {
       "type": "MATERIAL_AVATAR"
     },
     "KachinasStellaFortuna": {
@@ -85870,6 +86389,9 @@
       "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
     },
     "VarkasStellaFortuna": {
+      "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+    },
+    "LinneasStellaFortuna": {
       "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
     },
     "Apple": {
@@ -88312,13 +88834,13 @@
       "type": "MATERIAL_EXCHANGE"
     },
     "IcyPebble": {
-      "type": "MATERIAL_EXCHANGE"
+      "type": "MATERIAL_QUEST"
     },
     "FrostlampFlower": {
-      "type": "MATERIAL_EXCHANGE"
+      "type": "MATERIAL_QUEST"
     },
     "NocturnalBlossom": {
-      "type": "MATERIAL_EXCHANGE"
+      "type": "MATERIAL_QUEST"
     },
     "MoonfallSilver": {
       "type": "MATERIAL_EXCHANGE"
@@ -88330,9 +88852,15 @@
       "type": "MATERIAL_EXCHANGE"
     },
     "WinterIcelea": {
-      "type": "MATERIAL_EXCHANGE"
+      "type": "MATERIAL_QUEST"
     },
     "PineAmber": {
+      "type": "MATERIAL_QUEST"
+    },
+    "WindrestFlower": {
+      "type": "MATERIAL_EXCHANGE"
+    },
+    "EtherwingMoth": {
       "type": "MATERIAL_EXCHANGE"
     },
     "BirchWood": {
@@ -90100,6 +90628,12 @@
       "type": "MATERIAL_ELEM_CRYSTAL"
     },
     "BorderlandShrineOfDepthsKey": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "MnemonicCluster": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "MemoryFactor": {
       "type": "MATERIAL_CONSUME"
     },
     "Dish": {
@@ -92919,6 +93453,30 @@
     "HeartyIndulgence": {
       "type": "MATERIAL_FOOD"
     },
+    "SuspiciousHarborFishBurger": {
+      "type": "MATERIAL_FOOD"
+    },
+    "HarborFishBurger": {
+      "type": "MATERIAL_FOOD"
+    },
+    "DeliciousHarborFishBurger": {
+      "type": "MATERIAL_FOOD"
+    },
+    "SuspiciousMillhavensMorningPlate": {
+      "type": "MATERIAL_FOOD"
+    },
+    "MillhavensMorningPlate": {
+      "type": "MATERIAL_FOOD"
+    },
+    "DeliciousMillhavensMorningPlate": {
+      "type": "MATERIAL_FOOD"
+    },
+    "IridescenceUnderTheTreesShade": {
+      "type": "MATERIAL_FOOD"
+    },
+    "SugarSculptureLinnea": {
+      "type": "MATERIAL_NOTICE_ADD_HP"
+    },
     "RecipeItem": {
       "type": "MATERIAL_CONSUME"
     },
@@ -93714,6 +94272,12 @@
     "RecipeGoldenTemperedJade": {
       "type": "MATERIAL_CONSUME"
     },
+    "RecipeHarborFishBurger": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "RecipeMillhavensMorningPlate": {
+      "type": "MATERIAL_CONSUME"
+    },
     "CraftedItems": {
       "type": "MATERIAL_EXCHANGE"
     },
@@ -94272,6 +94836,15 @@
     "HookedBeakOfTheDeepShadow": {
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
+    "FadedFlamingHilt": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
+    "FracturedFlamingHilt": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
+    "JeweledFlamingHilt": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
     "HurricaneSeed": {
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
@@ -94525,6 +95098,9 @@
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
     "PrismaticSeveredTail": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
+    "PlumeOfTheFallenWatcher": {
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
     "TileOfDecarabiansTower": {
@@ -94886,6 +95462,9 @@
     },
     "SetGiftBoxGallop": {
       "type": "MATERIAL_BEYOND_COSTUME_SELECTABLE_CHEST"
+    },
+    "TemperedInPractice": {
+      "type": "MATERIAL_CHEST"
     },
     "BEP": {
       "type": "MATERIAL_CONSUME"
@@ -98271,6 +98850,78 @@
     "LetterFromTheAkademiya": {
       "type": "MATERIAL_QUEST"
     },
+    "Unadorned": {
+      "type": "MATERIAL_NATURALIST_CODEX"
+    },
+    "BadgeNocturnalBlossom": {
+      "type": "MATERIAL_NATURALIST_CODEX"
+    },
+    "BadgeRainbowdropCrystal": {
+      "type": "MATERIAL_NATURALIST_CODEX"
+    },
+    "BadgeCapybara": {
+      "type": "MATERIAL_NATURALIST_CODEX"
+    },
+    "CompanionExclusive": {
+      "type": "MATERIAL_NATURALIST_CODEX"
+    },
+    "CompanionShared": {
+      "type": "MATERIAL_NATURALIST_CODEX"
+    },
+    "SpiritEnvoyChampionshipChampionMedal": {
+      "type": "MATERIAL_QUEST"
+    },
+    "SpecialPerfumeWindsBreath": {
+      "type": "MATERIAL_QUEST"
+    },
+    "ReassembledNote": {
+      "type": "MATERIAL_QUEST"
+    },
+    "CargoCrateFilledWithHeavyParts": {
+      "type": "MATERIAL_QUEST"
+    },
+    "LostBalloon": {
+      "type": "MATERIAL_QUEST"
+    },
+    "AStackOfPaper": {
+      "type": "MATERIAL_QUEST"
+    },
+    "SelectedMoonfallSilver": {
+      "type": "MATERIAL_QUEST"
+    },
+    "LohensWorkReport": {
+      "type": "MATERIAL_QUEST"
+    },
+    "ArcadiaTheEntombedCapital": {
+      "type": "MATERIAL_QUEST"
+    },
+    "ACornerOfValivija": {
+      "type": "MATERIAL_QUEST"
+    },
+    "VerasMelancholyFinalVolumeVersionII": {
+      "type": "MATERIAL_QUEST"
+    },
+    "VerasMelancholyFinalVolumeVersionI": {
+      "type": "MATERIAL_QUEST"
+    },
+    "TheDreamOfRhonabwy": {
+      "type": "MATERIAL_QUEST"
+    },
+    "TheSongOfAyKhanoum": {
+      "type": "MATERIAL_QUEST"
+    },
+    "TheCanonOfLoveDivineInspirationAndVirtue": {
+      "type": "MATERIAL_QUEST"
+    },
+    "Note": {
+      "type": "MATERIAL_QUEST"
+    },
+    "AncientMondstadtRoyalSeal": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "SegmentDomainControlModuleZeroParticle": {
+      "type": "MATERIAL_CONSUME"
+    },
     "TearsAmongTheStars": {
       "type": "MATERIAL_QUEST"
     },
@@ -98563,6 +99214,9 @@
       "type": "MATERIAL_EXCHANGE"
     },
     "NightgazeCrystalEye": {
+      "type": "MATERIAL_EXCHANGE"
+    },
+    "CeruleanDoppeldrake": {
       "type": "MATERIAL_EXCHANGE"
     },
     "WingsOfFirstFlight": {
@@ -99199,6 +99853,24 @@
       "type": "MATERIAL_BGM"
     },
     "RadiantSpincrystal176": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal177": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal178": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal179": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal180": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal181": {
+      "type": "MATERIAL_BGM"
+    },
+    "RadiantSpincrystal182": {
       "type": "MATERIAL_BGM"
     },
     "LanternFiber": {
@@ -100272,6 +100944,18 @@
     "TravelNotesNortherlyWinds": {
       "type": "MATERIAL_NAMECARD"
     },
+    "LinneaRattlingResonance": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "MondstadtWatchtower": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "EmptyTempleOverflowingMemories": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "TravelNotesHomecoming": {
+      "type": "MATERIAL_NAMECARD"
+    },
     "EchoDandelionKnight": {
       "type": "MATERIAL_AVATAR_TRACE"
     },
@@ -100669,6 +101353,12 @@
       "type": "MATERIAL_WIDGET"
     },
     "HarmonicKeys": {
+      "type": "MATERIAL_WIDGET"
+    },
+    "SegmentDomainTreasureCompass": {
+      "type": "MATERIAL_WIDGET"
+    },
+    "LinneasNaturalistArchive": {
       "type": "MATERIAL_WIDGET"
     },
     "InstructionsAnemoculusResonanceStone": {
@@ -101238,6 +101928,24 @@
     "RelaxedAppearance": {
       "type": "MATERIAL_PHOTOGRAPH_POSE"
     },
+    "AmiableConversation": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "RelaxedBearing": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "ContemplativePrayer": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "SumptuousFeast": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "VanquishingEvil": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "MeditativeReading": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
     "FantasticalMarvel": {
       "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
     },
@@ -101410,6 +102118,9 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "GoldflameQucusaurTyrant": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "ConsecratedFangedBeast": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "UndividedHeart": {
@@ -101811,6 +102522,15 @@
     "FlamelordsBlessing": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "YouShallGoOutWithJoy": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "TheBurdenOfCreativeGenius": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "WitheredReedsEclipseTheSun": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "MagicGuide": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
@@ -102150,6 +102870,12 @@
     "FlameForgedInsight": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "SnareHook": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "Blubberbeast": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "LiyueHarborWharf": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
@@ -102361,6 +103087,15 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "ElementalTransfigurationVaporizeBlessing": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "LepinePauline": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "ElementalTransfigurationBloomBlessing": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "ElementalTransfigurationLavaBlessing": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "ElementalResonanceWovenIce": {
@@ -102607,6 +103342,15 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "ClinkClankLegion": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "MoonsignAscendantGleam": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "MoonAndHomeland": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "CleaningTime": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Origin": {
@@ -103414,6 +104158,12 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "VibrantXiaoLanternAMeetingWithFriends": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "ShimmeringLuster": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "CityStreetLampLowLanternlight": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "EfflorescentIllumination": {
@@ -104442,6 +105192,9 @@
     "BranchesAgainstTheBlueSky": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "DecorativePottedPlantBuddingFragrance": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "LandscapePaintingCountryHome": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -104554,6 +105307,9 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "TavernWallLampHoveringHallwayLight": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TempleWallLampWarmRadiance": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "LingeringMoment": {
@@ -106002,6 +106758,18 @@
     "BrightVerdure": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "CradleOfFragrance": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "DecorativeFlowerBedVerdantOrder": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "FragrantConfluence": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "AsRainfallCascades": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "FirShelves": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -106458,6 +107226,9 @@
     "MoonlitQuietude": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "SmallStandingGlassDisplayCase": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "PoolOfSapphireGrace": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -106662,6 +107433,9 @@
     "TownRailingBlueBlueWaves": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "TempleOpenworkRailing": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "SmoothWoodenBench": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -106723,6 +107497,9 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "DiningBenchSteadfast": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "EchoesOfSilence": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "TwoStoryHilichurlSentryTower": {
@@ -106971,6 +107748,18 @@
     "ShimmerOfLife": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
+    "PavilionOfHiddenTreasures": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "TownNoticeboardOddsEndsAndEverythingBetween": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "CrimsonFlow": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "BloomingSplendor": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
     "SirCapyOfTheLongIncisors": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
@@ -106996,6 +107785,9 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "JumboSparksNSplashStatue": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "AllFangsAndSnarls": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     }
   }

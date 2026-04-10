@@ -36,8 +36,8 @@
   "addEleDMG": "Zusätzlicher Elementar-SCH",
   "hpRegenPerHit": "Heilung bei Treffer",
   "press": {
-    "dmg": "SCH bei Drücken",
-    "cd": "Abklingzeit für Drücken"
+    "dmg": "",
+    "cd": ""
   },
   "hold": {
     "dmg": "SCH bei Gedrückthalten",

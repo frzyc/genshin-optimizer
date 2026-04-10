@@ -251,6 +251,9 @@
   "TreasuredInsights": {
     "name": "Treasured Insights"
   },
+  "JointExhibitionPopularity": {
+    "name": "Joint Exhibition Popularity"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -1145,6 +1148,9 @@
   "Varka": {
     "name": "Varka"
   },
+  "Linnea": {
+    "name": "Linnea"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina's Stella Fortuna"
   },
@@ -1225,6 +1231,9 @@
   },
   "VarkasStellaFortuna": {
     "name": "Varka's Stella Fortuna"
+  },
+  "LinneasStellaFortuna": {
+    "name": "Linnea's Stella Fortuna"
   },
   "Apple": {
     "name": "Apple"
@@ -3689,6 +3698,12 @@
   "PineAmber": {
     "name": "Pine Amber"
   },
+  "WindrestFlower": {
+    "name": "Windrest Flower"
+  },
+  "EtherwingMoth": {
+    "name": "Etherwing Moth"
+  },
   "BirchWood": {
     "name": "Birch Wood"
   },
@@ -5455,6 +5470,12 @@
   },
   "BorderlandShrineOfDepthsKey": {
     "name": "Borderland Shrine of Depths Key"
+  },
+  "MnemonicCluster": {
+    "name": "Skill Cluster"
+  },
+  "MemoryFactor": {
+    "name": "Memory Factor"
   },
   "Dish": {
     "name": "Masakan"
@@ -8190,13 +8211,13 @@
     "name": "Sugar Sculpture: Kuuhenki"
   },
   "SuspiciousLuckySnowDelight": {
-    "name": "Suspicious Snow Delight"
+    "name": "Suspicious Lucky Snow Delight"
   },
   "LuckySnowDelight": {
-    "name": "Snow Delight"
+    "name": "Lucky Snow Delight"
   },
   "DeliciousLuckySnowDelight": {
-    "name": "Delicious Snow Delight"
+    "name": "Delicious Lucky Snow Delight"
   },
   "SuspiciousCrispySpringRolls": {
     "name": "Suspicious Crispy Spring Rolls"
@@ -8272,6 +8293,30 @@
   },
   "HeartyIndulgence": {
     "name": "Hearty Indulgence"
+  },
+  "SuspiciousHarborFishBurger": {
+    "name": "Suspicious Harbor Fish Burger"
+  },
+  "HarborFishBurger": {
+    "name": "Harbor Fish Burger"
+  },
+  "DeliciousHarborFishBurger": {
+    "name": "Delicious Harbor Fish Burger"
+  },
+  "SuspiciousMillhavensMorningPlate": {
+    "name": "Suspicious Millhaven's Morning Plate"
+  },
+  "MillhavensMorningPlate": {
+    "name": "Millhaven's Morning Plate"
+  },
+  "DeliciousMillhavensMorningPlate": {
+    "name": "Delicious Millhaven's Morning Plate"
+  },
+  "IridescenceUnderTheTreesShade": {
+    "name": "Iridescence Under the Tree's Shade"
+  },
+  "SugarSculptureLinnea": {
+    "name": "Sugar Sculpture: Linnea"
   },
   "RecipeItem": {
     "name": "Bahan Resep"
@@ -9048,7 +9093,7 @@
     "name": "Resep: Spiced Fried Chicken"
   },
   "RecipeLuckySnowDelight": {
-    "name": "Resep: Snow Delight"
+    "name": "Resep: Lucky Snow Delight"
   },
   "RecipeCrispySpringRolls": {
     "name": "Resep: Crispy Spring Rolls"
@@ -9067,6 +9112,12 @@
   },
   "RecipeGoldenTemperedJade": {
     "name": "Resep: Golden-Tempered Jade"
+  },
+  "RecipeHarborFishBurger": {
+    "name": "Resep: Harbor Fish Burger"
+  },
+  "RecipeMillhavensMorningPlate": {
+    "name": "Resep: Millhaven's Morning Plate"
   },
   "CraftedItems": {
     "name": "Hasil Craft"
@@ -9626,6 +9677,15 @@
   "HookedBeakOfTheDeepShadow": {
     "name": "Hooked Beak of the Deep Shadow"
   },
+  "FadedFlamingHilt": {
+    "name": "Faded Flaming Hilt"
+  },
+  "FracturedFlamingHilt": {
+    "name": "Fractured Flaming Hilt"
+  },
+  "JeweledFlamingHilt": {
+    "name": "Jeweled Flaming Hilt"
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed"
   },
@@ -9880,6 +9940,9 @@
   },
   "PrismaticSeveredTail": {
     "name": "Prismatic Severed Tail"
+  },
+  "PlumeOfTheFallenWatcher": {
+    "name": "Plume of the Fallen Watcher"
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
@@ -10240,6 +10303,9 @@
   },
   "SetGiftBoxGallop": {
     "name": "Set Kotak Hadiah: Mencongklang"
+  },
+  "TemperedInPractice": {
+    "name": "Pelatihan Penempaan"
   },
   "BEP": {
     "name": "BEP"
@@ -13625,6 +13691,78 @@
   "LetterFromTheAkademiya": {
     "name": "Surat dari Akademiya"
   },
+  "Unadorned": {
+    "name": "Unadorned"
+  },
+  "BadgeNocturnalBlossom": {
+    "name": "Badge: Nocturnal Blossom"
+  },
+  "BadgeRainbowdropCrystal": {
+    "name": "Badge: Rainbowdrop Crystal"
+  },
+  "BadgeCapybara": {
+    "name": "Badge: Capybara"
+  },
+  "CompanionExclusive": {
+    "name": "Companion: Exclusive"
+  },
+  "CompanionShared": {
+    "name": "Companion: Shared"
+  },
+  "SpiritEnvoyChampionshipChampionMedal": {
+    "name": "Medali Juara Sayembara Duta Jiwa"
+  },
+  "SpecialPerfumeWindsBreath": {
+    "name": "Parfum Spesial: Embusan Angin"
+  },
+  "ReassembledNote": {
+    "name": "Catatan yang Disusun Ulang"
+  },
+  "CargoCrateFilledWithHeavyParts": {
+    "name": "Peti Kargo Berisi Suku Cadang Berat"
+  },
+  "LostBalloon": {
+    "name": "Balon yang Hilang"
+  },
+  "AStackOfPaper": {
+    "name": "Tumpukan Kertas"
+  },
+  "SelectedMoonfallSilver": {
+    "name": "Moonfall Silver Pilihan"
+  },
+  "LohensWorkReport": {
+    "name": "Laporan Kerja Lohen"
+  },
+  "ArcadiaTheEntombedCapital": {
+    "name": "Arcadia, Ibu Kota yang Terkubur"
+  },
+  "ACornerOfValivija": {
+    "name": "Sudut Valivija"
+  },
+  "VerasMelancholyFinalVolumeVersionII": {
+    "name": "Kemelankolisan Vera (Volume Terakhir Versi II)"
+  },
+  "VerasMelancholyFinalVolumeVersionI": {
+    "name": "Kemelankolisan Vera (Volume Terakhir Versi I)"
+  },
+  "TheDreamOfRhonabwy": {
+    "name": "Mimpi Rhonabwy"
+  },
+  "TheSongOfAyKhanoum": {
+    "name": "Kidung Ay-Khanoum"
+  },
+  "TheCanonOfLoveDivineInspirationAndVirtue": {
+    "name": "Kitab Cinta, Inspirasi Ilahi, dan Kebajikan"
+  },
+  "Note": {
+    "name": "Catatan"
+  },
+  "AncientMondstadtRoyalSeal": {
+    "name": "Ancient Mondstadt Royal Seal"
+  },
+  "SegmentDomainControlModuleZeroParticle": {
+    "name": "Segment Domain Control Module: Zero Particle"
+  },
   "TearsAmongTheStars": {
     "name": "Air Mata di Lautan Bintang"
   },
@@ -13918,6 +14056,9 @@
   },
   "NightgazeCrystalEye": {
     "name": "Nightgaze Crystal-Eye"
+  },
+  "CeruleanDoppeldrake": {
+    "name": "Cerulean Doppeldrake"
   },
   "WingsOfFirstFlight": {
     "name": "Wings of First Flight"
@@ -14554,6 +14695,24 @@
   },
   "RadiantSpincrystal176": {
     "name": "Radiant Spincrystal 176"
+  },
+  "RadiantSpincrystal177": {
+    "name": "Radiant Spincrystal 177"
+  },
+  "RadiantSpincrystal178": {
+    "name": "Radiant Spincrystal 178"
+  },
+  "RadiantSpincrystal179": {
+    "name": "Radiant Spincrystal 179"
+  },
+  "RadiantSpincrystal180": {
+    "name": "Radiant Spincrystal 180"
+  },
+  "RadiantSpincrystal181": {
+    "name": "Radiant Spincrystal 181"
+  },
+  "RadiantSpincrystal182": {
+    "name": "Radiant Spincrystal 182"
   },
   "LanternFiber": {
     "name": "Lantern Fiber"
@@ -15626,6 +15785,18 @@
   "TravelNotesNortherlyWinds": {
     "name": "Catatan Perjalanan: Angin Utara"
   },
+  "LinneaRattlingResonance": {
+    "name": "Linnea: Rattling Resonance"
+  },
+  "MondstadtWatchtower": {
+    "name": "Mondstadt: Menara Pengawas"
+  },
+  "EmptyTempleOverflowingMemories": {
+    "name": "Empty Temple: Overflowing Memories"
+  },
+  "TravelNotesHomecoming": {
+    "name": "Catatan Perjalanan: Pulang Kampung"
+  },
   "EchoDandelionKnight": {
     "name": "Echo: Dandelion Knight"
   },
@@ -16024,6 +16195,12 @@
   },
   "HarmonicKeys": {
     "name": "Harmonic Keys"
+  },
+  "SegmentDomainTreasureCompass": {
+    "name": "Segment Domain Treasure Compass"
+  },
+  "LinneasNaturalistArchive": {
+    "name": "Linnea's Naturalist Archive"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Panduan: Anemoculus Resonance Stone"
@@ -16592,6 +16769,24 @@
   "RelaxedAppearance": {
     "name": "Sikap Santai"
   },
+  "AmiableConversation": {
+    "name": "Beramah-Tamah"
+  },
+  "RelaxedBearing": {
+    "name": "Sikap Santai"
+  },
+  "ContemplativePrayer": {
+    "name": "Berdoa Berkontemplasi"
+  },
+  "SumptuousFeast": {
+    "name": "Jamuan Mewah"
+  },
+  "VanquishingEvil": {
+    "name": "Menaklukkan Kejahatan"
+  },
+  "MeditativeReading": {
+    "name": "Membaca Bermeditasi"
+  },
   "FantasticalMarvel": {
     "name": "Fantastical Marvel"
   },
@@ -16765,6 +16960,9 @@
   },
   "GoldflameQucusaurTyrant": {
     "name": "Goldflame Qucusaurus Tyrant"
+  },
+  "ConsecratedFangedBeast": {
+    "name": "Consecrated Fanged Beast"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -17165,6 +17363,15 @@
   "FlamelordsBlessing": {
     "name": "Flamelord's Blessing"
   },
+  "YouShallGoOutWithJoy": {
+    "name": "You Shall Go Out With Joy"
+  },
+  "TheBurdenOfCreativeGenius": {
+    "name": "The Burden of Creative Genius"
+  },
+  "WitheredReedsEclipseTheSun": {
+    "name": "Withered Reeds Eclipse the Sun"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -17504,6 +17711,12 @@
   "FlameForgedInsight": {
     "name": "Flame-Forged Insight"
   },
+  "SnareHook": {
+    "name": "Snare Hook"
+  },
+  "Blubberbeast": {
+    "name": "Blubberbeast"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -17716,6 +17929,15 @@
   },
   "ElementalTransfigurationVaporizeBlessing": {
     "name": "Elemental Transfiguration: Vaporize Blessing"
+  },
+  "LepinePauline": {
+    "name": "Lepine-Pauline"
+  },
+  "ElementalTransfigurationBloomBlessing": {
+    "name": "Elemental Transfiguration: Bloom Blessing"
+  },
+  "ElementalTransfigurationLavaBlessing": {
+    "name": "Elemental Transfiguration: Lava Blessing"
   },
   "ElementalResonanceWovenIce": {
     "name": "Resonansi Elemental: Woven Ice"
@@ -17962,6 +18184,15 @@
   },
   "ClinkClankLegion": {
     "name": "Clink Clank Legion"
+  },
+  "MoonsignAscendantGleam": {
+    "name": "Moonsign: Ascendant Gleam"
+  },
+  "MoonAndHomeland": {
+    "name": "Moon and Homeland"
+  },
+  "CleaningTime": {
+    "name": "Cleaning Time"
   },
   "Origin": {
     "name": "Origin"
@@ -18769,6 +19000,12 @@
   },
   "VibrantXiaoLanternAMeetingWithFriends": {
     "name": "Lentera Xiao Cerah: Sampai Jumpa Kawanku"
+  },
+  "ShimmeringLuster": {
+    "name": "Kilau Memesona"
+  },
+  "CityStreetLampLowLanternlight": {
+    "name": "Lampu Jalan Kota: Pencahayaan Rendah"
   },
   "EfflorescentIllumination": {
     "name": "Iluminasi Berbunga"
@@ -19796,6 +20033,9 @@
   "BranchesAgainstTheBlueSky": {
     "name": "Ranting di Langit Biru"
   },
+  "DecorativePottedPlantBuddingFragrance": {
+    "name": "Pohon Bonsai Pemandangan: Keharuman yang Mekar"
+  },
   "LandscapePaintingCountryHome": {
     "name": "Lukisan Pemandangan: Kampung Halaman"
   },
@@ -19909,6 +20149,9 @@
   },
   "TavernWallLampHoveringHallwayLight": {
     "name": "Lampu Dinding Kedai: Cahaya Koridor"
+  },
+  "TempleWallLampWarmRadiance": {
+    "name": "Lampu Dinding Kuil: \"Cahaya Hangat\""
   },
   "LingeringMoment": {
     "name": "Momen tak Terlupakan"
@@ -21356,6 +21599,18 @@
   "BrightVerdure": {
     "name": "Hijau Mekar"
   },
+  "CradleOfFragrance": {
+    "name": "Buaian Wewangian"
+  },
+  "DecorativeFlowerBedVerdantOrder": {
+    "name": "Teras Berbunga Pemandangan: Susunan Hijau"
+  },
+  "FragrantConfluence": {
+    "name": "Pertemuan Wangi"
+  },
+  "AsRainfallCascades": {
+    "name": "Saat Hujan Mengalir"
+  },
   "FirShelves": {
     "name": "Rak Kayu Fir"
   },
@@ -21812,6 +22067,9 @@
   "MoonlitQuietude": {
     "name": "\"Bacaan Tenang Bawah Rembulan\""
   },
+  "SmallStandingGlassDisplayCase": {
+    "name": "Pajangan Vertikal Transparan Standar"
+  },
   "PoolOfSapphireGrace": {
     "name": "\"Kolam Renungan Awan\""
   },
@@ -22016,6 +22274,9 @@
   "TownRailingBlueBlueWaves": {
     "name": "Pagar Kota: Ombak Biru dan Biru"
   },
+  "TempleOpenworkRailing": {
+    "name": "Pagar Berukir Kuil"
+  },
   "SmoothWoodenBench": {
     "name": "Bangku Kayu Panjang yang Mulus"
   },
@@ -22078,6 +22339,9 @@
   },
   "DiningBenchSteadfast": {
     "name": "Kursi Makan: \"Kokoh\""
+  },
+  "EchoesOfSilence": {
+    "name": "Gema Keheningan"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "Menara Penjaga 2 Lapis Hilichurl"
@@ -22325,6 +22589,18 @@
   "ShimmerOfLife": {
     "name": "Kilauan Kehidupan"
   },
+  "PavilionOfHiddenTreasures": {
+    "name": "Paviliun Berharga"
+  },
+  "TownNoticeboardOddsEndsAndEverythingBetween": {
+    "name": "Papan Pengumuman Kota: Berbagai Obrolan"
+  },
+  "CrimsonFlow": {
+    "name": "Aliran Merah"
+  },
+  "BloomingSplendor": {
+    "name": "Kumpulan Warna-Warni"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "\"Kesatria Kapi Bertaring Panjang\""
   },
@@ -22351,5 +22627,8 @@
   },
   "JumboSparksNSplashStatue": {
     "name": "Patung Sparks 'n' Splash Jumbo"
+  },
+  "AllFangsAndSnarls": {
+    "name": "Taring Tajam Melolong"
   }
 }

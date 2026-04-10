@@ -36,8 +36,8 @@
   "addEleDMG": "Tambahan Elemental DMG",
   "hpRegenPerHit": "Pemulihan HP/Hit",
   "press": {
-    "dmg": "DMG Tekan",
-    "cd": "Cooldown (Mode Tekan)"
+    "dmg": "",
+    "cd": ""
   },
   "hold": {
     "dmg": "DMG Menahan",

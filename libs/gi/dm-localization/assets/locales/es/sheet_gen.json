@@ -36,8 +36,8 @@
   "addEleDMG": "Daño Elemental adicional",
   "hpRegenPerHit": "Curación al atacar",
   "press": {
-    "dmg": "Daño al pulsar una vez",
-    "cd": "TdE al pulsar una vez"
+    "dmg": "",
+    "cd": ""
   },
   "hold": {
     "dmg": "Daño al mantener pulsado",

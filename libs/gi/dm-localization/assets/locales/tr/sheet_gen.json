@@ -36,8 +36,8 @@
   "addEleDMG": "Ek Element Hasarı",
   "hpRegenPerHit": "Vuruş Başına Yenilenen Can",
   "press": {
-    "dmg": "Basma Hasarı",
-    "cd": "Basma BS"
+    "dmg": "",
+    "cd": ""
   },
   "hold": {
     "dmg": "Basılı Tutma Hasarı",

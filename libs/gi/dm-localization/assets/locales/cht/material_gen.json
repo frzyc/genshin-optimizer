@@ -251,6 +251,9 @@
   "TreasuredInsights": {
     "name": "珍賞見聞"
   },
+  "JointExhibitionPopularity": {
+    "name": "聯展熱度"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -1145,6 +1148,9 @@
   "Varka": {
     "name": "法爾伽"
   },
+  "Linnea": {
+    "name": "莉奈婭"
+  },
   "KachinasStellaFortuna": {
     "name": "卡齊娜的命星"
   },
@@ -1225,6 +1231,9 @@
   },
   "VarkasStellaFortuna": {
     "name": "法爾伽的命星"
+  },
+  "LinneasStellaFortuna": {
+    "name": "莉奈婭的命星"
   },
   "Apple": {
     "name": "蘋果"
@@ -3689,6 +3698,12 @@
   "PineAmber": {
     "name": "松珀香"
   },
+  "WindrestFlower": {
+    "name": "風息花"
+  },
+  "EtherwingMoth": {
+    "name": "空羽蛾"
+  },
   "BirchWood": {
     "name": "樺木"
   },
@@ -5455,6 +5470,12 @@
   },
   "BorderlandShrineOfDepthsKey": {
     "name": "邊域地靈龕之鑰"
+  },
+  "MnemonicCluster": {
+    "name": "技藝團塊"
+  },
+  "MemoryFactor": {
+    "name": "摹憶因子"
   },
   "Dish": {
     "name": "料理"
@@ -8273,6 +8294,30 @@
   "HeartyIndulgence": {
     "name": "「酣暢」"
   },
+  "SuspiciousHarborFishBurger": {
+    "name": "奇怪的海港魚魚堡"
+  },
+  "HarborFishBurger": {
+    "name": "海港魚魚堡"
+  },
+  "DeliciousHarborFishBurger": {
+    "name": "美味的海港魚魚堡"
+  },
+  "SuspiciousMillhavensMorningPlate": {
+    "name": "奇怪的早安風車鎮"
+  },
+  "MillhavensMorningPlate": {
+    "name": "早安風車鎮"
+  },
+  "DeliciousMillhavensMorningPlate": {
+    "name": "美味的早安風車鎮"
+  },
+  "IridescenceUnderTheTreesShade": {
+    "name": "「樹蔭下的虹彩」"
+  },
+  "SugarSculptureLinnea": {
+    "name": "糖雕・莉奈婭"
+  },
   "RecipeItem": {
     "name": "食譜道具"
   },
@@ -9068,6 +9113,12 @@
   "RecipeGoldenTemperedJade": {
     "name": "食譜：淬金冷玉"
   },
+  "RecipeHarborFishBurger": {
+    "name": "食譜：海港魚魚堡"
+  },
+  "RecipeMillhavensMorningPlate": {
+    "name": "食譜：早安風車鎮"
+  },
   "CraftedItems": {
     "name": "合成產物"
   },
@@ -9626,6 +9677,15 @@
   "HookedBeakOfTheDeepShadow": {
     "name": "深黯的鉤喙"
   },
+  "FadedFlamingHilt": {
+    "name": "失色的焰劍"
+  },
+  "FracturedFlamingHilt": {
+    "name": "殘失的焰劍"
+  },
+  "JeweledFlamingHilt": {
+    "name": "寶飾的焰劍"
+  },
   "HurricaneSeed": {
     "name": "颶風之種"
   },
@@ -9880,6 +9940,9 @@
   },
   "PrismaticSeveredTail": {
     "name": "稜光的斷尾"
+  },
+  "PlumeOfTheFallenWatcher": {
+    "name": "墮天的落羽"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
@@ -10240,6 +10303,9 @@
   },
   "SetGiftBoxGallop": {
     "name": "套裝禮箱-「奔騰」"
+  },
+  "TemperedInPractice": {
+    "name": "礪行復禮"
   },
   "BEP": {
     "name": "紀行經驗"
@@ -13625,6 +13691,78 @@
   "LetterFromTheAkademiya": {
     "name": "教令院的來信"
   },
+  "Unadorned": {
+    "name": "無裝飾"
+  },
+  "BadgeNocturnalBlossom": {
+    "name": "徽章·宿影花"
+  },
+  "BadgeRainbowdropCrystal": {
+    "name": "徽章·虹滴晶"
+  },
+  "BadgeCapybara": {
+    "name": "徽章·豚獸"
+  },
+  "CompanionExclusive": {
+    "name": "夥伴·獨占"
+  },
+  "CompanionShared": {
+    "name": "夥伴·共享"
+  },
+  "SpiritEnvoyChampionshipChampionMedal": {
+    "name": "「靈使競冠祭禮」冠軍獎牌"
+  },
+  "SpecialPerfumeWindsBreath": {
+    "name": "特製香水·風息"
+  },
+  "ReassembledNote": {
+    "name": "拼湊出的字條"
+  },
+  "CargoCrateFilledWithHeavyParts": {
+    "name": "裝有沉重零件的貨箱"
+  },
+  "LostBalloon": {
+    "name": "丟失的氣球"
+  },
+  "AStackOfPaper": {
+    "name": "一疊紙"
+  },
+  "SelectedMoonfallSilver": {
+    "name": "經過甄選的月落銀"
+  },
+  "LohensWorkReport": {
+    "name": "洛恩的工作報告"
+  },
+  "ArcadiaTheEntombedCapital": {
+    "name": "「棺中的廢都·阿卡狄亞」"
+  },
+  "ACornerOfValivija": {
+    "name": "「瓦力·韋傑的一隅」"
+  },
+  "VerasMelancholyFinalVolumeVersionII": {
+    "name": "少女薇拉的憂鬱·最終卷（第二版）"
+  },
+  "VerasMelancholyFinalVolumeVersionI": {
+    "name": "少女薇拉的憂鬱·最終卷（初版）"
+  },
+  "TheDreamOfRhonabwy": {
+    "name": "《羅納布韋之夢》"
+  },
+  "TheSongOfAyKhanoum": {
+    "name": "《阿伊·哈努姆之歌》"
+  },
+  "TheCanonOfLoveDivineInspirationAndVirtue": {
+    "name": "《愛、聖啟與美德的典律》"
+  },
+  "Note": {
+    "name": "便條"
+  },
+  "AncientMondstadtRoyalSeal": {
+    "name": "古蒙德宗室之印"
+  },
+  "SegmentDomainControlModuleZeroParticle": {
+    "name": "切片轄域管控模組·零質點"
+  },
   "TearsAmongTheStars": {
     "name": "星間之淚"
   },
@@ -13918,6 +14056,9 @@
   },
   "NightgazeCrystalEye": {
     "name": "夜色明眼魚"
+  },
+  "CeruleanDoppeldrake": {
+    "name": "綦假龍"
   },
   "WingsOfFirstFlight": {
     "name": "初始之翼"
@@ -14554,6 +14695,24 @@
   },
   "RadiantSpincrystal176": {
     "name": "旋曜玉帛·其一百七十六"
+  },
+  "RadiantSpincrystal177": {
+    "name": "旋曜玉帛·其一百七十七"
+  },
+  "RadiantSpincrystal178": {
+    "name": "旋曜玉帛·其一百七十八"
+  },
+  "RadiantSpincrystal179": {
+    "name": "旋曜玉帛·其一百七十九"
+  },
+  "RadiantSpincrystal180": {
+    "name": "旋曜玉帛·其一百八十"
+  },
+  "RadiantSpincrystal181": {
+    "name": "旋曜玉帛·其一百八十一"
+  },
+  "RadiantSpincrystal182": {
+    "name": "旋曜玉帛·其一百八十二"
   },
   "LanternFiber": {
     "name": "燈紙纖維"
@@ -15626,6 +15785,18 @@
   "TravelNotesNortherlyWinds": {
     "name": "紀行·北風"
   },
+  "LinneaRattlingResonance": {
+    "name": "莉奈婭·娑響"
+  },
+  "MondstadtWatchtower": {
+    "name": "蒙德·望樓"
+  },
+  "EmptyTempleOverflowingMemories": {
+    "name": "空殿·滿憶"
+  },
+  "TravelNotesHomecoming": {
+    "name": "紀行·逢歸"
+  },
   "EchoDandelionKnight": {
     "name": "遊跡·蒲公英騎士"
   },
@@ -16024,6 +16195,12 @@
   },
   "HarmonicKeys": {
     "name": "諧律鍵琴"
+  },
+  "SegmentDomainTreasureCompass": {
+    "name": "切片轄域尋寶羅盤"
+  },
+  "LinneasNaturalistArchive": {
+    "name": "莉奈婭的博物圖鑑"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "說明：風神瞳共鳴石"
@@ -16592,6 +16769,24 @@
   "RelaxedAppearance": {
     "name": "悠閒儀容"
   },
+  "AmiableConversation": {
+    "name": "和諧對談"
+  },
+  "RelaxedBearing": {
+    "name": "悠閒儀態"
+  },
+  "ContemplativePrayer": {
+    "name": "凝神禱告"
+  },
+  "SumptuousFeast": {
+    "name": "大快朵頤"
+  },
+  "VanquishingEvil": {
+    "name": "消滅罪惡"
+  },
+  "MeditativeReading": {
+    "name": "靜心閱覽"
+  },
   "FantasticalMarvel": {
     "name": "幻戲瑰意"
   },
@@ -16765,6 +16960,9 @@
   },
   "GoldflameQucusaurTyrant": {
     "name": "金焰絨翼龍暴君"
+  },
+  "ConsecratedFangedBeast": {
+    "name": "聖骸牙獸"
   },
   "UndividedHeart": {
     "name": "唯此一心"
@@ -17165,6 +17363,15 @@
   "FlamelordsBlessing": {
     "name": "「焰主之祝」"
   },
+  "YouShallGoOutWithJoy": {
+    "name": "願一切歡睦陪伴你"
+  },
+  "TheBurdenOfCreativeGenius": {
+    "name": "天才之為構造之責任"
+  },
+  "WitheredReedsEclipseTheSun": {
+    "name": "亡草蔽日"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -17504,6 +17711,12 @@
   "FlameForgedInsight": {
     "name": "拾慧鑄熔"
   },
+  "SnareHook": {
+    "name": "羅網勾針"
+  },
+  "Blubberbeast": {
+    "name": "膨膨獸"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -17716,6 +17929,15 @@
   },
   "ElementalTransfigurationVaporizeBlessing": {
     "name": "元素幻變：蒸發祝佑"
+  },
+  "LepinePauline": {
+    "name": "樂平波琳"
+  },
+  "ElementalTransfigurationBloomBlessing": {
+    "name": "元素幻變：綻放祝佑"
+  },
+  "ElementalTransfigurationLavaBlessing": {
+    "name": "元素幻變：火岩祝佑"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交織之冰"
@@ -17962,6 +18184,15 @@
   },
   "ClinkClankLegion": {
     "name": "叮鈴哐啷軍團"
+  },
+  "MoonsignAscendantGleam": {
+    "name": "月兆·滿輝"
+  },
+  "MoonAndHomeland": {
+    "name": "月與故鄉"
+  },
+  "CleaningTime": {
+    "name": "清掃時間"
   },
   "Origin": {
     "name": "原初"
@@ -18769,6 +19000,12 @@
   },
   "VibrantXiaoLanternAMeetingWithFriends": {
     "name": "明彩霄燈-「與友相約」"
+  },
+  "ShimmeringLuster": {
+    "name": "「爍爍螢光」"
+  },
+  "CityStreetLampLowLanternlight": {
+    "name": "城鎮路燈-「低空照明」"
   },
   "EfflorescentIllumination": {
     "name": "「花葉百相之光」"
@@ -19796,6 +20033,9 @@
   "BranchesAgainstTheBlueSky": {
     "name": "「連枝蔚藍」"
   },
+  "DecorativePottedPlantBuddingFragrance": {
+    "name": "景觀盆栽-「稚蕊呈芳」"
+  },
   "LandscapePaintingCountryHome": {
     "name": "風景畫-「鄉野民居」"
   },
@@ -19909,6 +20149,9 @@
   },
   "TavernWallLampHoveringHallwayLight": {
     "name": "酒館壁燈-「廊道懸光」"
+  },
+  "TempleWallLampWarmRadiance": {
+    "name": "神殿壁燈-「溫馨暖光」"
   },
   "LingeringMoment": {
     "name": "「縈絆之刻」"
@@ -21356,6 +21599,18 @@
   "BrightVerdure": {
     "name": "「綠意流動的青翠」"
   },
+  "CradleOfFragrance": {
+    "name": "「鬱紛的搖籃」"
+  },
+  "DecorativeFlowerBedVerdantOrder": {
+    "name": "景觀花壇-「陣列儼然」"
+  },
+  "FragrantConfluence": {
+    "name": "「鬱紛的締架」"
+  },
+  "AsRainfallCascades": {
+    "name": "「如雨瀑流動」"
+  },
   "FirShelves": {
     "name": "杉木置物架"
   },
@@ -21812,6 +22067,9 @@
   "MoonlitQuietude": {
     "name": "「月下靜讀」"
   },
+  "SmallStandingGlassDisplayCase": {
+    "name": "直立式小型透明展示櫃"
+  },
   "PoolOfSapphireGrace": {
     "name": "「靈沼雲池」"
   },
@@ -22016,6 +22274,9 @@
   "TownRailingBlueBlueWaves": {
     "name": "城鎮欄杆-「藍藍波濤」"
   },
+  "TempleOpenworkRailing": {
+    "name": "「神殿的鏤空低欄」"
+  },
   "SmoothWoodenBench": {
     "name": "平整的木製長凳"
   },
@@ -22078,6 +22339,9 @@
   },
   "DiningBenchSteadfast": {
     "name": "餐廳長椅-「紋絲不動」"
+  },
+  "EchoesOfSilence": {
+    "name": "「寂靜的迴響」"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "丘丘雙層警戒台"
@@ -22325,6 +22589,18 @@
   "ShimmerOfLife": {
     "name": "「如生機閃爍」"
   },
+  "PavilionOfHiddenTreasures": {
+    "name": "「蔽珍的樓亭」"
+  },
+  "TownNoticeboardOddsEndsAndEverythingBetween": {
+    "name": "城鎮告示-「雜事閒談」"
+  },
+  "CrimsonFlow": {
+    "name": "「赤色流動」"
+  },
+  "BloomingSplendor": {
+    "name": "「簇簇團團的繽紛」"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "「睏睏門牙騎士」"
   },
@@ -22351,5 +22627,8 @@
   },
   "JumboSparksNSplashStatue": {
     "name": "「轟轟火花大神像」"
+  },
+  "AllFangsAndSnarls": {
+    "name": "「嚎嚎利齒」"
   }
 }

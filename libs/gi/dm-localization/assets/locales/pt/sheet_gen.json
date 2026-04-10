@@ -36,8 +36,8 @@
   "addEleDMG": "Adição de Dano Elemental",
   "hpRegenPerHit": "Regeneração de Vida por Acerto",
   "press": {
-    "dmg": "Dano de Toque",
-    "cd": "Recarga ao Pressionar"
+    "dmg": "",
+    "cd": ""
   },
   "hold": {
     "dmg": "Dano ao Manter Pressionado",
