@@ -150,6 +150,7 @@ export const nonTravelerCharacterKeys = [
   'LanYan',
   'Lauma',
   'Layla',
+  'Linnea',
   'Lisa',
   'Lynette',
   'Lyney',

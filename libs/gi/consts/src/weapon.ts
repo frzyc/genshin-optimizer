@@ -169,6 +169,7 @@ export const allWeaponBowKeys = [
   'FadingTwilight',
   'FavoniusWarbow',
   'FlowerWreathedFeathers',
+  'GoldenFrostboundOath',
   'Hamayumi',
   'HuntersBow',
   'HuntersPath',

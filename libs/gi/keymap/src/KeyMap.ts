@@ -203,11 +203,17 @@ Object.entries(transformativeReactions).forEach(([reaction, { name }]) => {
 
 type LunarReactionsBaseDmgKey = `${LunarReactionKey}_baseDmg_`
 type LunarReactionsSpecialDmgKey = `${LunarReactionKey}_specialDmg_`
+type LunarReactionsReactionDmgIncKey = `${LunarReactionKey}_reactionDmgInc`
+type LunarReactionsDirectDmgIncKey = `${LunarReactionKey}_directDmgInc`
 allLunarReactionKeys.forEach((lr) => {
   statMap[`${lr}_baseDmg_`] =
     `${transformativeReactions[lr].name} Base DMG Multiplier`
   statMap[`${lr}_specialDmg_`] =
     `${transformativeReactions[lr].name} Special DMG Bonus`
+  statMap[`${lr}_reactionDmgInc`] =
+    `${transformativeReactions[lr].name} DMG Increase`
+  statMap[`${lr}_directDmgInc`] =
+    `${transformativeReactions[lr].name} DMG Increase`
 })
 
 type TransformativeReactionsCritRateKey =
@@ -257,6 +263,8 @@ export type StatKey =
   | TransformativeReactionsCritDMGKey
   | LunarReactionsBaseDmgKey
   | LunarReactionsSpecialDmgKey
+  | LunarReactionsReactionDmgIncKey
+  | LunarReactionsDirectDmgIncKey
   | CrystallizeKey
   | AmplifyingReactionsDmgKey
   | AmplifyingReactionsMultiKey

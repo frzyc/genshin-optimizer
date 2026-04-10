@@ -14,6 +14,7 @@ import EndOfTheLine from './EndOfTheLine'
 import FadingTwilight from './FadingTwilight'
 import FavoniusWarbow from './FavoniusWarbow'
 import FlowerWreathedFeathers from './FlowerWreathedFeathers'
+import GoldenFrostboundOath from './GoldenFrostboundOath'
 import Hamayumi from './Hamayumi'
 import HuntersBow from './HuntersBow'
 import HuntersPath from './HuntersPath'
@@ -61,6 +62,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   FadingTwilight,
   FavoniusWarbow,
   FlowerWreathedFeathers,
+  GoldenFrostboundOath,
   Hamayumi,
   HuntersBow,
   HuntersPath,
