@@ -251,6 +251,9 @@
   "TreasuredInsights": {
     "name": "Impression précieuse"
   },
+  "JointExhibitionPopularity": {
+    "name": "Popularité d'exposition conjointe"
+  },
   "Primogem": {
     "name": "Primo-gemme"
   },
@@ -1145,6 +1148,9 @@
   "Varka": {
     "name": "Varka"
   },
+  "Linnea": {
+    "name": "Linnea"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
   },
@@ -1225,6 +1231,9 @@
   },
   "VarkasStellaFortuna": {
     "name": "Stella Fortuna de Varka"
+  },
+  "LinneasStellaFortuna": {
+    "name": "Stella Fortuna de Linnea"
   },
   "Apple": {
     "name": "Pomme"
@@ -3689,6 +3698,12 @@
   "PineAmber": {
     "name": "Ambre de pin"
   },
+  "WindrestFlower": {
+    "name": "Fleur de Vent-repos"
+  },
+  "EtherwingMoth": {
+    "name": "Papillon à ailes d'éther"
+  },
   "BirchWood": {
     "name": "Bois de bouleau"
   },
@@ -5455,6 +5470,12 @@
   },
   "BorderlandShrineOfDepthsKey": {
     "name": "Clé de Sanctuaire des profondeurs de la frontière"
+  },
+  "MnemonicCluster": {
+    "name": "Groupe de capacité"
+  },
+  "MemoryFactor": {
+    "name": "Facteur de mémoire"
   },
   "Dish": {
     "name": "Plat"
@@ -8273,6 +8294,30 @@
   "HeartyIndulgence": {
     "name": "Indulgence sucrée"
   },
+  "SuspiciousHarborFishBurger": {
+    "name": "Burger au poisson du port (suspect)"
+  },
+  "HarborFishBurger": {
+    "name": "Burger au poisson du port"
+  },
+  "DeliciousHarborFishBurger": {
+    "name": "Burger au poisson du port (délicieux)"
+  },
+  "SuspiciousMillhavensMorningPlate": {
+    "name": "Assiette matinale de Meulavre (suspecte)"
+  },
+  "MillhavensMorningPlate": {
+    "name": "Assiette matinale de Meulavre"
+  },
+  "DeliciousMillhavensMorningPlate": {
+    "name": "Assiette matinale de Meulavre (délicieuse)"
+  },
+  "IridescenceUnderTheTreesShade": {
+    "name": "Iridescence à l'ombre d'un arbre"
+  },
+  "SugarSculptureLinnea": {
+    "name": "Sculpture en sucre : Linnea"
+  },
   "RecipeItem": {
     "name": "Ingrédient"
   },
@@ -9068,6 +9113,12 @@
   "RecipeGoldenTemperedJade": {
     "name": "Recette : Jade trempé doré"
   },
+  "RecipeHarborFishBurger": {
+    "name": "Recette : Burger au poisson du port"
+  },
+  "RecipeMillhavensMorningPlate": {
+    "name": "Recette : Assiette matinale de Meulavre"
+  },
   "CraftedItems": {
     "name": "Produit synthétisé"
   },
@@ -9626,6 +9677,15 @@
   "HookedBeakOfTheDeepShadow": {
     "name": "Bec crochu des fonds"
   },
+  "FadedFlamingHilt": {
+    "name": "Poignée enflammée délavée"
+  },
+  "FracturedFlamingHilt": {
+    "name": "Poignée enflammée fracturée"
+  },
+  "JeweledFlamingHilt": {
+    "name": "Poignée enflammée ornée"
+  },
   "HurricaneSeed": {
     "name": "Graine d'ouragan"
   },
@@ -9880,6 +9940,9 @@
   },
   "PrismaticSeveredTail": {
     "name": "Queue coupée prismatique"
+  },
+  "PlumeOfTheFallenWatcher": {
+    "name": "Plume de veilleur déchu"
   },
   "TileOfDecarabiansTower": {
     "name": "Tuile cassée de Décarabian"
@@ -10240,6 +10303,9 @@
   },
   "SetGiftBoxGallop": {
     "name": "Coffret cadeau : Galop"
+  },
+  "TemperedInPractice": {
+    "name": "Se forger par la pratique"
   },
   "BEP": {
     "name": "EXP PB"
@@ -13625,6 +13691,78 @@
   "LetterFromTheAkademiya": {
     "name": "Lettre de l'Académie"
   },
+  "Unadorned": {
+    "name": "Sans ornement"
+  },
+  "BadgeNocturnalBlossom": {
+    "name": "Badge : Fleur nocturne"
+  },
+  "BadgeRainbowdropCrystal": {
+    "name": "Badge : Cristal arc-en-gouttes"
+  },
+  "BadgeCapybara": {
+    "name": "Badge : Capybara"
+  },
+  "CompanionExclusive": {
+    "name": "Compagnonnage : Exclusif"
+  },
+  "CompanionShared": {
+    "name": "Compagnonnage : Partagé"
+  },
+  "SpiritEnvoyChampionshipChampionMedal": {
+    "name": "Médaille de champion du Championnat des envoyés spirituels"
+  },
+  "SpecialPerfumeWindsBreath": {
+    "name": "Parfum spécial : Souffle du vent"
+  },
+  "ReassembledNote": {
+    "name": "Note réassemblée"
+  },
+  "CargoCrateFilledWithHeavyParts": {
+    "name": "Caisses remplies de pièces lourdes"
+  },
+  "LostBalloon": {
+    "name": "Ballon perdu"
+  },
+  "AStackOfPaper": {
+    "name": "Tas de papier"
+  },
+  "SelectedMoonfallSilver": {
+    "name": "Argent de lune déchue sélectionné"
+  },
+  "LohensWorkReport": {
+    "name": "Rapport de travail de Lohen"
+  },
+  "ArcadiaTheEntombedCapital": {
+    "name": "Arcadia, la capitale ensevelie"
+  },
+  "ACornerOfValivija": {
+    "name": "Un coin de Valivija"
+  },
+  "VerasMelancholyFinalVolumeVersionII": {
+    "name": "La mélancolie de Véra - Tome final (Version 2)"
+  },
+  "VerasMelancholyFinalVolumeVersionI": {
+    "name": "La mélancolie de Véra - Tome final (Version 1)"
+  },
+  "TheDreamOfRhonabwy": {
+    "name": "Le rêve de Rhonabwy"
+  },
+  "TheSongOfAyKhanoum": {
+    "name": "La chanson d'Ay-Khanoum"
+  },
+  "TheCanonOfLoveDivineInspirationAndVirtue": {
+    "name": "Le code de l'amour, de l'inspiration divine et de la vertu"
+  },
+  "Note": {
+    "name": "Lettre"
+  },
+  "AncientMondstadtRoyalSeal": {
+    "name": "Ancien sceau royal de Mondstadt"
+  },
+  "SegmentDomainControlModuleZeroParticle": {
+    "name": "Module de contrôle du Domaine segmentaire : Particule zéro"
+  },
   "TearsAmongTheStars": {
     "name": "Larme parmi les étoiles"
   },
@@ -13918,6 +14056,9 @@
   },
   "NightgazeCrystalEye": {
     "name": "Cristieux nocturné"
+  },
+  "CeruleanDoppeldrake": {
+    "name": "Faux dragon céruléen"
   },
   "WingsOfFirstFlight": {
     "name": "Planeur du débutant"
@@ -14554,6 +14695,24 @@
   },
   "RadiantSpincrystal176": {
     "name": "Gyrocristal radiant 176"
+  },
+  "RadiantSpincrystal177": {
+    "name": "Gyrocristal radiant 177"
+  },
+  "RadiantSpincrystal178": {
+    "name": "Gyrocristal radiant 178"
+  },
+  "RadiantSpincrystal179": {
+    "name": "Gyrocristal radiant 179"
+  },
+  "RadiantSpincrystal180": {
+    "name": "Gyrocristal radiant 180"
+  },
+  "RadiantSpincrystal181": {
+    "name": "Gyrocristal radiant 181"
+  },
+  "RadiantSpincrystal182": {
+    "name": "Gyrocristal radiant 182"
   },
   "LanternFiber": {
     "name": "Cellulose de lanterne"
@@ -15626,6 +15785,18 @@
   "TravelNotesNortherlyWinds": {
     "name": "PB - Vents du nord"
   },
+  "LinneaRattlingResonance": {
+    "name": "Linnea - Résonance de cliquetis"
+  },
+  "MondstadtWatchtower": {
+    "name": "Mondstadt - Tour de guet"
+  },
+  "EmptyTempleOverflowingMemories": {
+    "name": "Temple vide - Souvenirs débordants"
+  },
+  "TravelNotesHomecoming": {
+    "name": "PB - Retour"
+  },
   "EchoDandelionKnight": {
     "name": "Écho : Chevalier au Pissenlit"
   },
@@ -16024,6 +16195,12 @@
   },
   "HarmonicKeys": {
     "name": "Touches harmoniques"
+  },
+  "SegmentDomainTreasureCompass": {
+    "name": "Détecteurs de trésors du Domaine segmentaire"
+  },
+  "LinneasNaturalistArchive": {
+    "name": "Archive naturaliste de Linnea"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instructions : Pierre de résonance Anémoculus"
@@ -16592,6 +16769,24 @@
   "RelaxedAppearance": {
     "name": "Apparence détendue"
   },
+  "AmiableConversation": {
+    "name": "Conversation amicale"
+  },
+  "RelaxedBearing": {
+    "name": "Comportement détendu"
+  },
+  "ContemplativePrayer": {
+    "name": "Prière contemplative"
+  },
+  "SumptuousFeast": {
+    "name": "Festin somptueux"
+  },
+  "VanquishingEvil": {
+    "name": "Éradication du mal"
+  },
+  "MeditativeReading": {
+    "name": "Lecture méditative"
+  },
   "FantasticalMarvel": {
     "name": "Merveille fantastique"
   },
@@ -16765,6 +16960,9 @@
   },
   "GoldflameQucusaurTyrant": {
     "name": "Tyran qucusaure de flamme dorée"
+  },
+  "ConsecratedFangedBeast": {
+    "name": "Caniné sacralisé"
   },
   "UndividedHeart": {
     "name": "Cœur indivisible"
@@ -17165,6 +17363,15 @@
   "FlamelordsBlessing": {
     "name": "Bénédiction du seigneur des flammes"
   },
+  "YouShallGoOutWithJoy": {
+    "name": "Que la joie suive"
+  },
+  "TheBurdenOfCreativeGenius": {
+    "name": "Fardeau du génie créatif"
+  },
+  "WitheredReedsEclipseTheSun": {
+    "name": "Roseaux desséchés éclipsant le soleil"
+  },
   "MagicGuide": {
     "name": "Guide de magie"
   },
@@ -17504,6 +17711,12 @@
   "FlameForgedInsight": {
     "name": "Perception forgée par les flammes"
   },
+  "SnareHook": {
+    "name": "Crochet de capture"
+  },
+  "Blubberbeast": {
+    "name": "Boudiné"
+  },
   "LiyueHarborWharf": {
     "name": "Quai du Port de Liyue"
   },
@@ -17716,6 +17929,15 @@
   },
   "ElementalTransfigurationVaporizeBlessing": {
     "name": "Transfiguration élémentaire : Grâce d'Évaporation"
+  },
+  "LepinePauline": {
+    "name": "Lépine-Pauline"
+  },
+  "ElementalTransfigurationBloomBlessing": {
+    "name": "Transfiguration élémentaire : Grâce de Fleurissement"
+  },
+  "ElementalTransfigurationLavaBlessing": {
+    "name": "Transfiguration élémentaire : Grâce de lave"
   },
   "ElementalResonanceWovenIce": {
     "name": "Résonance élémentaire : Glace tissée"
@@ -17962,6 +18184,15 @@
   },
   "ClinkClankLegion": {
     "name": "Légion Cling-clang"
+  },
+  "MoonsignAscendantGleam": {
+    "name": "Signelune « Lueur ascendante »"
+  },
+  "MoonAndHomeland": {
+    "name": "Lune et patrie"
+  },
+  "CleaningTime": {
+    "name": "Temps de nettoyage"
   },
   "Origin": {
     "name": "Origine"
@@ -18567,7 +18798,7 @@
     "name": "Plafond rayonnant de haute tour"
   },
   "BasePaneledCeiling": {
-    "name": "« Plafond robuste de la Base »"
+    "name": "« Plafond à panneaux de la base »"
   },
   "TwoTierCandleChandelier": {
     "name": "Lustre à deux rangées de chandelles"
@@ -18769,6 +19000,12 @@
   },
   "VibrantXiaoLanternAMeetingWithFriends": {
     "name": "Lanterne céleste éclatante « À la prochaine, mes amis »"
+  },
+  "ShimmeringLuster": {
+    "name": "Éclat chatoyant"
+  },
+  "CityStreetLampLowLanternlight": {
+    "name": "Réverbère de ville « Lanterne tamisée »"
   },
   "EfflorescentIllumination": {
     "name": "Illumination efflorescente"
@@ -19796,6 +20033,9 @@
   "BranchesAgainstTheBlueSky": {
     "name": "Branches contre le ciel bleu"
   },
+  "DecorativePottedPlantBuddingFragrance": {
+    "name": "Plante décorative en pot « Parfum bourgeonnant »"
+  },
   "LandscapePaintingCountryHome": {
     "name": "Tableau de paysage « Maison de campagne »"
   },
@@ -19909,6 +20149,9 @@
   },
   "TavernWallLampHoveringHallwayLight": {
     "name": "Lampe murale de taverne « Lumière flottante de couloir »"
+  },
+  "TempleWallLampWarmRadiance": {
+    "name": "Lampe murale de temple « Éclat chaleureux »"
   },
   "LingeringMoment": {
     "name": "« Moment suspendu »"
@@ -21356,6 +21599,18 @@
   "BrightVerdure": {
     "name": "Verdure florissante"
   },
+  "CradleOfFragrance": {
+    "name": "Berceau de parfum"
+  },
+  "DecorativeFlowerBedVerdantOrder": {
+    "name": "Massif floral décoratif « Ordre verdoyant »"
+  },
+  "FragrantConfluence": {
+    "name": "Confluence parfumée"
+  },
+  "AsRainfallCascades": {
+    "name": "Cascade de pluie"
+  },
   "FirShelves": {
     "name": "Râtelier en épicéa"
   },
@@ -21812,6 +22067,9 @@
   "MoonlitQuietude": {
     "name": "Quiétude sous la lune"
   },
+  "SmallStandingGlassDisplayCase": {
+    "name": "Petite vitrine en verre sur pied"
+  },
   "PoolOfSapphireGrace": {
     "name": "« Bassin mystique »"
   },
@@ -22016,6 +22274,9 @@
   "TownRailingBlueBlueWaves": {
     "name": "Rambarde de ville « Vagues bleu azur »"
   },
+  "TempleOpenworkRailing": {
+    "name": "Rambarde ajourée de temple"
+  },
   "SmoothWoodenBench": {
     "name": "Banc en bois lisse"
   },
@@ -22078,6 +22339,9 @@
   },
   "DiningBenchSteadfast": {
     "name": "Banc de restaurant « Inébranlable »"
+  },
+  "EchoesOfSilence": {
+    "name": "Écho du silence"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "Tour de sentinelle Brutocollinus"
@@ -22325,6 +22589,18 @@
   "ShimmerOfLife": {
     "name": "Scintillement de vie"
   },
+  "PavilionOfHiddenTreasures": {
+    "name": "Pavillon des trésors cachés"
+  },
+  "TownNoticeboardOddsEndsAndEverythingBetween": {
+    "name": "Panneau de village « De tout, de rien et tout le reste »"
+  },
+  "CrimsonFlow": {
+    "name": "Flux cramoisi"
+  },
+  "BloomingSplendor": {
+    "name": "Splendeur florissante"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "« Chevalier incisif »"
   },
@@ -22351,5 +22627,8 @@
   },
   "JumboSparksNSplashStatue": {
     "name": "Statue de fleur bombardier"
+  },
+  "AllFangsAndSnarls": {
+    "name": "« Tout croc, tout grognement »"
   }
 }

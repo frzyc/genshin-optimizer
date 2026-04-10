@@ -1,8 +1,8 @@
 {
+  "constellationName": "Columbina Hyposelenia",
   "name": "Columbina",
   "title": "จันทร์สุญตาคืนถิ่น",
   "description": "เทพธิดาแห่งจันทรา ที่ถือกำเนิดขึ้นใน Nod-Krai คือดวงจันทร์สุญตา ที่หวนกลับคืนสู่บ้านเกิด",
-  "constellationName": "???",
   "auto": {
     "name": "Moondew Cascade",
     "fields": {

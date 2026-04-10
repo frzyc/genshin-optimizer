@@ -129,7 +129,7 @@
     "name": "\"Vieni, danziamo sotto il dolce chiaro di luna\"",
     "description": {
       "0": "Quando Varka attiva la modalità <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Sturm und Drang</strong></tooltip>, ottiene un utilizzo aggiuntivo dell'abilità elementale speciale <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascensione dei Quattro Venti</strong></tooltip>.",
-      "1": "Inoltre, dopo aver attivato <strong>Sturm und Drang</strong>, Varka ottiene l'effetto <strong>Libagione lirica</strong>: quando scatena l'abilità elementale speciale <strong>Ascensione dei Quattro Venti</strong> o esegue l'attacco caricato speciale <strong>Divorazzurro</strong>, può consumare questo effetto per infliggere un 200% dei DAN originali di <strong>Ascensione dei Quattro Venti</strong> o <strong>Divorazzurro</strong>."
+      "1": "Inoltre, dopo aver attivato <strong>Sturm und Drang</strong>, Varka ottiene l'effetto <strong>Libagione lirica</strong>: quando scatena l'abilità elementale speciale <strong>Ascensione dei Quattro Venti</strong> o esegue l'attacco caricato speciale <strong>Divorazzurro</strong>, Varka consuma questo effetto per infliggere un 200% dei DAN originali di <strong>Ascensione dei Quattro Venti</strong> o <strong>Divorazzurro</strong>."
     }
   },
   "constellation2": {
