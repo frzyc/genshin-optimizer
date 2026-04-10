@@ -1,14 +1,13 @@
 import type { PropTypeKey } from '../../mapping'
-import { deobfPropMappings } from '../../mapping'
 import { propTypeMap } from '../../mapping'
 import { readDMJSON } from '../../util'
 
-type AvatarPromoteExcelConfigDataObf = {
+type AvatarPromoteExcelConfigData = {
   avatarPromoteId: number //2,
   promoteAudio: string //"",
   promoteLevel: number //1,
   scoinCost?: number //20000,
-  [deobfPropMappings.costItems]: Array<
+  costItems: Array<
     | {
         id: number //104161,
         count: number //1
@@ -58,7 +57,7 @@ type AvatarPromoteExcelConfigDataObf = {
 
 const ascensionSrc = JSON.parse(
   readDMJSON('ExcelBinOutput/AvatarPromoteExcelConfigData.json')
-) as AvatarPromoteExcelConfigDataObf[]
+) as AvatarPromoteExcelConfigData[]
 
 export type AscensionRecord = {
   props: { [key: string]: number }
@@ -81,7 +80,7 @@ ascensionSrc.forEach((asc) => {
     promoteLevel = 0,
     addProps,
     scoinCost,
-    [deobfPropMappings.costItems]: costItems,
+    costItems,
   } = asc
   if (!ascensionData[avatarPromoteId]) ascensionData[avatarPromoteId] = []
   ascensionData[avatarPromoteId][promoteLevel] = {
