@@ -22,6 +22,7 @@ import Chongyun from './portrait_chongyun.png'
 import Citlali from './portrait_citlali.png'
 import Clorinde from './portrait_clorinde.png'
 import Collei from './portrait_collei.png'
+import Columbina from './portrait_columbina.png'
 import Cyno from './portrait_cyno.png'
 import Dahlia from './portrait_dahlia.png'
 import Dehya from './portrait_dehya.png'
@@ -43,6 +44,7 @@ import Gorou from './portrait_gorou.png'
 import HuTao from './portrait_hutao.png'
 import Iansan from './portrait_iansan.png'
 import Ifa from './portrait_ifa.png'
+import Illuga from './portrait_illuga.png'
 import Ineffa from './portrait_ineffa.png'
 import AratakiItto from './portrait_itto.png'
 import Jahoda from './portrait_jahoda.png'
@@ -91,6 +93,7 @@ import Tartaglia from './portrait_tartaglia.png'
 import Thoma from './portrait_thoma.png'
 import Tighnari from './portrait_tightnari.png'
 import Varesa from './portrait_varesa.png'
+import Varka from './portrait_varka.png'
 import Venti from './portrait_venti.png'
 import Wanderer from './portrait_wanderer.png'
 import Wriothesley from './portrait_wriothesley.png'
@@ -108,6 +111,7 @@ import Yoimiya from './portrait_yoimiya.png'
 import YumemizukiMizuki from './portrait_yumemizuki.png'
 import YunJin from './portrait_yunjin.png'
 import Zhongli from './portrait_zhongli.png'
+import Zibai from './portrait_zibai.png'
 import ShikanoinHeizou from './potrait_heizou.png'
 
 const data = {
@@ -131,6 +135,7 @@ const data = {
   Citlali,
   Clorinde,
   Collei,
+  Columbina,
   Cyno,
   Dahlia,
   Dehya,
@@ -152,6 +157,7 @@ const data = {
   HuTao,
   Iansan,
   Ifa,
+  Illuga,
   Ineffa,
   Jahoda,
   Jean,
@@ -203,6 +209,7 @@ const data = {
   TravelerF,
   TravelerM,
   Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,
@@ -220,6 +227,7 @@ const data = {
   YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
 } as const
 
 export function portrait(charKey: CharacterKey, gender: GenderKey) {
