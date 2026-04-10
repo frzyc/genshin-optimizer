@@ -52,7 +52,7 @@
           "1": "Adicionalmente, por 20s após um personagem sem Presságio Lunar lançar uma Habilidade Elemental ou Supremo, ele aumentará o Dano de Reações Lunares causado por todos os personagens próximos baseado em seu próprio Tipo Elemental, até um máximo de 36%. Esse efeito não pode ser acumulado.",
           "2": "Se o Tipo Elemental do personagem desencadeando a reação for:",
           "3": [
-            "<pyro>Pyro</pyro>, ou <electro>Cryo</electro>: Aumenta esse Dano em 0.9% para cada 100 pontos de ATQ.",
+            "<pyro>Pyro</pyro>, <electro>Electro</electro> ou <cryo>Cryo</cryo>: Aumenta esse Dano em 0.9% para cada 100 pontos de ATQ.",
             " <hydro>Hydro</hydro>: Aumenta esse Dano em 0.6% para cada 1.000 pontos de Vida Máxima.",
             " <geo>Geo</geo>: Aumenta esse Dano em 1% para cada 100 pontos de DEF.",
             " <anemo>Anemo</anemo> ou <dendro>Dendro</dendro>: Aumenta esse Dano em 2.25% para cada 100 pontos de Proficiência Elemental."

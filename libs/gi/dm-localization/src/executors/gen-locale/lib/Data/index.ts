@@ -3,6 +3,7 @@ import type {
   LocationGenderedCharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
+import { MediumTextMapOffset } from '../common'
 import char from './Characters'
 import sheet from './sheet'
 export const mapHashData = {
@@ -34,15 +35,15 @@ export const mapHashData = {
   >, // will be populated from datamine parsing pipeline
   sheet,
   weaponKey: {
-    sword: 1338971918,
+    sword: 1338971918 - MediumTextMapOffset,
     polearm: 1654223994,
-    bow: 4066070434,
-    claymore: 2037297130,
-    catalyst: 43479985,
+    bow: 4066070434 - MediumTextMapOffset,
+    claymore: 2037297130 - MediumTextMapOffset,
+    catalyst: 43479985 - MediumTextMapOffset,
   },
   elementalResonance: {
     ProtectiveCanopy: {
-      name: 2109006394,
+      name: 2109006394 - MediumTextMapOffset,
       desc: 3556079627,
     },
     FerventFlames: {
@@ -55,11 +56,11 @@ export const mapHashData = {
     },
     ShatteringIce: {
       name: 1853529306,
-      desc: 2601161539,
+      desc: 2601161539 - MediumTextMapOffset,
     },
     HighVoltage: {
       name: 2331327954,
-      desc: 1982396323,
+      desc: 1982396323 - MediumTextMapOffset,
     },
     ImpetuousWinds: {
       name: 166087994,
@@ -67,30 +68,30 @@ export const mapHashData = {
     },
     EnduringRock: {
       name: 3018382842,
-      desc: 1707021043,
+      desc: 1707021043 - MediumTextMapOffset,
     },
     SprawlingGreenery: {
-      name: 1292621586,
-      desc: 2900013027,
+      name: 1292621586 - MediumTextMapOffset,
+      desc: 2900013027 - MediumTextMapOffset,
     },
     Moonsign: {
       name: 47522259,
       desc: [1400535123, 'paragraph'],
       nascentGleam: {
-        name: 3355827977,
-        desc: 2507050873,
+        name: 3355827977 - MediumTextMapOffset,
+        desc: 2507050873 - MediumTextMapOffset,
       },
       ascendantGleam: {
         name: 815173912,
         desc: [
-          [856180336, 'paragraph'],
+          [856180336 - MediumTextMapOffset, 'paragraph'],
           [604954065, 'paragraph'],
         ],
       },
     },
     Hexerei: {
       name: 1797652852,
-      desc: [838432396, 'paragraph'],
+      desc: [838432396 - MediumTextMapOffset, 'paragraph'],
     },
   },
   statKey: {
@@ -98,32 +99,32 @@ export const mapHashData = {
     hp_: 2404061249,
     atk: 638981362,
     atk_: 638981362,
-    def: 527947494,
-    def_: 527947494,
+    def: 527947494 - MediumTextMapOffset,
+    def_: 527947494 - MediumTextMapOffset,
     eleMas: 382595279,
-    enerRech_: 1735465728,
+    enerRech_: 1735465728 - MediumTextMapOffset,
     critRate_: 1916797986,
-    critDMG_: 4137936461,
+    critDMG_: 4137936461 - MediumTextMapOffset,
     heal_: 3911103831,
     physical_dmg_: 3763864883,
-    anemo_dmg_: 312842903,
-    geo_dmg_: 2557985416,
-    electro_dmg_: 3514877774,
-    hydro_dmg_: 3619239513,
-    pyro_dmg_: 999734248,
-    cryo_dmg_: 4054347456,
-    dendro_dmg_: 1824382851,
+    anemo_dmg_: 312842903 - MediumTextMapOffset,
+    geo_dmg_: 2557985416 - MediumTextMapOffset,
+    electro_dmg_: 3514877774 - MediumTextMapOffset,
+    hydro_dmg_: 3619239513 - MediumTextMapOffset,
+    pyro_dmg_: 999734248 - MediumTextMapOffset,
+    cryo_dmg_: 4054347456 - MediumTextMapOffset,
+    dendro_dmg_: 1824382851 - MediumTextMapOffset,
   },
   teams: {
-    team: 1969596378,
-    quickSetup: 3714868212,
+    team: 1969596378 - MediumTextMapOffset,
+    quickSetup: 3714868212 - MediumTextMapOffset,
   },
 } as const
 export function mapHashDataOverride() {
   mapHashData.charNames.TravelerF = 3241049361
-  mapHashData.charNames.TravelerM = 2329553598
+  mapHashData.charNames.TravelerM = 2329553598 - MediumTextMapOffset
   if (!mapHashData.char.TravelerF) mapHashData.char.TravelerF = {}
   mapHashData.char.TravelerF['name'] = 3241049361
   if (!mapHashData.char.TravelerM) mapHashData.char.TravelerM = {}
-  mapHashData.char.TravelerM['name'] = 2329553598
+  mapHashData.char.TravelerM['name'] = 2329553598 - MediumTextMapOffset
 }

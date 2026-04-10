@@ -346,5 +346,22 @@
       "2": "Saat Normal Attack Varka dalam mode <strong>Sturm und Drang</strong> mengenai musuh, maka CD <strong>Four Winds' Ascension</strong> akan berkurang 0,5 detik. Setiap kali berganti ke mode <strong>Sturm und Drang</strong>, efek ini dapat terpicu maksimum 15 kali.",
       "3": "Selain itu, Varka dapat mengonsumsi jumlah penggunaan <strong>Four Winds' Ascension</strong> untuk melancarkan Charged Attack khusus yang tidak mengonsumsi Stamina, <strong>Azure Devour</strong>, untuk mengakibatkan 2 kali Elemental DMG (tidak bisa ditimpa Elemental Infusion lainnya) dengan jenis elemen yang sesuai dengan pedang claymore di tangan kanannya dan juga 2 kali <anemo>Anemo DMG</anemo>."
     }
+  },
+  "11300001": {
+    "name": "Lumi: Bentuk Serangan",
+    "description": {
+      "0": "Lumi memiliki 3 jenis Bentuk Serangan yang berbeda.",
+      "1": "<br/>",
+      "2": "<strong>Super Power Form</strong>",
+      "3": "Lumi akan menggunakan <strong>Pound-Pound Pummeler</strong> untuk terus menyerang musuh di sekitar, mengakibatkan 2 kali <geo>Geo DMG Area</geo> untuk setiap serangannya.",
+      "4": "Jika ada Moondrift di sekitar, Lumi akan berganti antara menggunakan <strong>Pound-Pound Pummeler</strong> dan <strong>Heavy Overdrive Hammer</strong> untuk terus menyerang musuh di sekitar. <geo>Geo DMG Area</geo> yang diakibatkan <strong>Heavy Overdrive Hammer</strong> akan dianggap sebagai DMG reaksi Lunar-Crystallize.",
+      "5": "<br/>",
+      "6": "<strong>Ultimate Power Form</strong>",
+      "7": "Lumi akan menggunakan <strong>Million Ton Crush</strong> yang super dahsyat untuk mengakibatkan satu kali <geo>Geo DMG Area</geo> yang kuat dan dianggap sebagai DMG reaksi Lunar-Crystallize, kemudian berganti ke bentuk <strong>Standard Power Form</strong>.",
+      "8": "<br/>",
+      "9": "<strong>Standard Power Form</strong>",
+      "10": "Meski bentuk ini tidak sehebat bentuk yang lain, tapi tetap saja, hebat.",
+      "11": "Lumi akan menggunakan <strong>Pound-Pound Pummeler</strong> untuk terus menyerang musuh di sekitar dengan jeda yang lebih lama, mengakibatkan 2 kali <geo>Geo DMG Area</geo> untuk setiap serangannya."
+    }
   }
 }

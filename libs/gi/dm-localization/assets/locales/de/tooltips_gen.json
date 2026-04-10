@@ -345,5 +345,22 @@
       "2": "Verkürzt, wenn Varkas Standardangriffe im Modus <strong>Ansturm der Winde</strong> Gegner treffen, die Abklingzeit von <strong>Aufkommen der vier Winde</strong> um 0,5 s. Dieser Effekt kann nach jedem Wechsel in den Modus <strong>Ansturm der Winde</strong> bis zu 15-mal ausgelöst werden.",
       "3": "Außerdem kann Varka die Anwendungsmöglichkeiten von <strong>Aufkommen der vier Winde</strong> verbrauchen, um den besonderen heftigen Schlag <strong>Azurbiss</strong> auszuführen, der keine Ausdauer verbraucht und 2-mal Schaden des Elements des Großschwerts, das er in der rechten Hand hält, sowie 2-mal <anemo>Anemo-Schaden</anemo> verursacht, die nicht von anderen Elementen überdeckt werden können."
     }
+  },
+  "11300001": {
+    "name": "Lumi – Angriffsmodi",
+    "description": {
+      "0": "Lumi verfügt über drei verschiedene Angriffsmodi.",
+      "1": "<br/>",
+      "2": "<strong>Super-Modus</strong>",
+      "3": "Lumi nutzt den <strong>Hammerschlag</strong>, um Gegner in der Nähe fortlaufend anzugreifen. Jeder Angriff verursacht 2-mal <geo>Geo-Flächenschaden</geo>.",
+      "4": "Falls ein Mondkäfig in der Nähe ist, wechselt Lumi zwischen dem <strong>Hammerschlag</strong> und <strong>Krafthammer</strong>, um Gegner in der Nähe fortlaufend anzugreifen. <strong>Krafthammer</strong> verursacht <geo>Geo-Flächenschaden</geo>, der als Mond-Kristallisations-SCH gewertet wird.",
+      "5": "<br/>",
+      "6": "<strong>Ultra-Modus</strong>",
+      "7": "Lumi nutzt den ultimativen <strong>tonnenschweren Hammer</strong>, um Gegnern in der Nähe einmalig besonders starken <geo>Geo-Flächenschaden</geo> zuzufügen, der als Mond-Kristallisations-SCH gewertet wird. Danach wechselt Lumi zum <strong>Standard-Modus</strong>.",
+      "8": "<br/>",
+      "9": "<strong>Standard-Modus</strong>",
+      "10": "Nicht so mächtig wie die anderen Modi, aber trotzdem stark.",
+      "11": "Lumi nutzt den <strong>Hammerschlag</strong>, allerdings nun in längeren Abständen, um Gegner in der Nähe fortlaufend anzugreifen. Jeder Angriff verursacht 2-mal <geo>Geo-Flächenschaden</geo>."
+    }
   }
 }

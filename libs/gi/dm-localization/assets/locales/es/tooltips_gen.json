@@ -350,5 +350,22 @@
       "2": "Cuando Varka golpee a un enemigo con un Ataque Normal mientras esté en modo <strong>Sturm und Drang</strong>, el TdE de <strong>Alzamiento de los Cuatro Vientos</strong> se reducirá en 0.5 s. Este efecto podrá activarse hasta 15 veces cada vez que cambie a dicho modo.",
       "3": "Además, Varka puede consumir los usos de <strong>Alzamiento de los Cuatro Vientos</strong> para ejecutar el Ataque Cargado especial <strong>Devorazul</strong>, el cual no consume Aguante. Este ataque infligirá 2 golpes de daño del elemento correspondiente al mandoble que empuña en la mano derecha, el cual no puede sustituirse imbuyéndose de otro elemento, y 2 golpes de <anemo>Daño Anemo</anemo>."
     }
+  },
+  "11300001": {
+    "name": "Formas de ataque de Lumi",
+    "description": {
+      "0": "Lumi tiene tres formas de ataque diferentes.",
+      "1": "<br/>",
+      "2": "<strong>Forma superpoderosa</strong>",
+      "3": "Lumi usa sus <strong>aporreadores pum-pum</strong> para atacar continuamente a los enemigos cercanos e infligirles <geo>Daño Geo en el AdE</geo> 2 veces con cada ataque.",
+      "4": "Si hay un pilar lunar cerca, Lumi alternará entre los <strong>aporreadores pum-pum</strong> y las <strong>mazas potenciadas</strong> para atacar continuamente a los enemigos cercanos. Las <strong>mazas potenciadas</strong> infligen <geo>Daño Geo en el AdE</geo> considerado como daño de Cristalización Lunar.",
+      "5": "<br/>",
+      "6": "<strong>Forma ultrapoderosa</strong>",
+      "7": "Lumi usa sus ultrapoderosas <strong>megamazas aplastantes</strong> para infligir una vez a los enemigos cercanos un potentísimo golpe de <geo>Daño Geo en el AdE</geo> considerado como daño de Cristalización Lunar, y luego cambia a su <strong>forma poderosa</strong>.",
+      "8": "<br/>",
+      "9": "<strong>Forma poderosa</strong>",
+      "10": "Aunque no sea tan espectacular como las otras formas, sigue siendo bastante poderosa.",
+      "11": "Lumi usará sus <strong>aporreadores pum-pum</strong> a intervalos más largos para atacar continuamente a los enemigos cercanos e infligirles <geo>Daño Geo en el AdE</geo> 2 veces con cada ataque."
+    }
   }
 }

@@ -347,5 +347,22 @@
       "2": "Lorsque Varka touche un ennemi avec une attaque normale pendant sa <strong>charge de tempête</strong>, le TdR de son <strong>Ascension des quatre vents</strong> diminue de 0,5 s, cet effet pouvant être déclenché 15 fois maximum pendant chaque <strong>charge de tempête</strong>.",
       "3": "De plus, Varka peut consommer les utilisations de son <strong>Ascension des quatre vents</strong> pour effectuer son attaque chargée spéciale <strong>Dévoreur azur</strong> qui ne consomme pas d'endurance, infligeant 2 fois des DGT ne pouvant pas être enchantés de l'élément correspondant à la lame de sa main droite, ainsi que 2 fois des <anemo>DGT Anémo</anemo>."
     }
+  },
+  "11300001": {
+    "name": "Lumi : Formes d'attaque",
+    "description": {
+      "0": "Lumi possède trois formes d'attaque.",
+      "1": "<br/>",
+      "2": "<strong>Forme super puissante</strong>",
+      "3": "Lumi utilise son <strong>broyeur boum-boum</strong> pour attaquer sans cesse les ennemis proches, chaque attaque infligeant 2 fois des <geo>DGT Géo de zone</geo>.",
+      "4": "Si un voile lunaire est présent à proximité, Lumi alterne entre son <strong>broyeur boum-boum</strong> et son <strong>marteau de surcouple</strong> pour attaquer sans cesse les ennemis proches, le <strong>marteau de surcouple</strong> infligeant des <geo>DGT Géo de zone</geo> considérés comme des DGT de réaction de Sélénocristallisation.",
+      "5": "<br/>",
+      "6": "<strong>Forme ultra puissante</strong>",
+      "7": "Lumi utilise son puissant <strong>marteau d'un million de tonnes</strong> pour attaquer violemment une fois les ennemis proches, infligeant des <geo>DGT Géo de zone</geo> considérés comme des DGT de réaction de Sélénocristallisation avant de passer en <strong>forme puissante</strong>.",
+      "8": "<br/>",
+      "9": "<strong>Forme puissante</strong>",
+      "10": "Ce n'est peut-être pas aussi spectaculaire que les autres formes, mais ça n'en reste pas moins redoutable.",
+      "11": "Lumi utilise son <strong>broyeur boum-boum</strong> moins fréquemment pour attaquer sans cesse les ennemis proches, chaque attaque infligeant 2 fois des <geo>DGT Géo de zone</geo>."
+    }
   }
 }

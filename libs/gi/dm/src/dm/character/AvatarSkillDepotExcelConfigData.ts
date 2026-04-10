@@ -10,9 +10,9 @@ type AvatarSkillDepotExcelConfigDataObf = {
   talents: number[] //[341, 342, 343, 344, 345, 346],
   talentStarName: string //"Talent_Noel",
   // inherentProudSkillOpens
-  [deobfPropMappings.inherentProudSkillOpens]: {
+  inherentProudSkillOpens: {
     proudSkillGroupId?: number
-    [deobfPropMappings.needAvatarPromoteLevel]?: number // needAvatarPromoteLevel
+    needAvatarPromoteLevel?: number // needAvatarPromoteLevel
   }[]
   /*[
     {
@@ -92,22 +92,11 @@ const avatarSkillDepotExcelConfigData = Object.fromEntries(
     // Convert obfuscated properties to unobf names
     .map((obfSkill) => {
       const {
-        [deobfPropMappings.inherentProudSkillOpens]: inherentProudSkillOpens,
         [deobfPropMappings.lockedProudSkillOpens]: lockedProudSkillOpens,
         ...obfSkillTrim
       } = obfSkill
       return {
         ...obfSkillTrim,
-        inherentProudSkillOpens: inherentProudSkillOpens.map((openObf) => {
-          const {
-            [deobfPropMappings.needAvatarPromoteLevel]: needAvatarPromoteLevel,
-            ...openObfTrim
-          } = openObf
-          return {
-            ...openObfTrim,
-            needAvatarPromoteLevel,
-          }
-        }),
         lockedProudSkillOpens: lockedProudSkillOpens.map((openObf) => {
           const {
             [deobfPropMappings.numberArray]: numberArray,

@@ -1521,6 +1521,20 @@ export const formulas = {
       },
     },
   },
+  Linnea: {
+    normal1: {
+      sheet: 'Linnea',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Linnea',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Lisa: {
     normal1: {
       sheet: 'Lisa',

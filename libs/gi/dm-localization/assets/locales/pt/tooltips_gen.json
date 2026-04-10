@@ -346,5 +346,22 @@
       "2": "Quando Varka está no modo <strong>Investida Furacão</strong> e atinge um Ataque Normal em um inimigo, reduz a recarga de <strong>Ascensão dos Quatro Ventos</strong> em 0.5s. Esse efeito pode ser desencadeado até 15 vezes depois de cada vez que trocar para o modo <strong>Investida Furacão</strong>.",
       "3": "Além disso, Varka consome os Usos de <strong>Ascensão dos Quatro Ventos</strong> para realizar o Ataque Carregado especial <strong>Devoração Cerúlea</strong> que não consome Stamina, causando 2 instâncias de Dano Elemental correspondente insubstituível com o espadão de sua mão direita e 2 instâncias de <anemo>Dano Anemo</anemo>."
     }
+  },
+  "11300001": {
+    "name": "Lumi: Forma de Ataque",
+    "description": {
+      "0": "Lumi possui três Formas de Ataque diferentes.",
+      "1": "<br/>",
+      "2": "<strong>Forma Superpoderosa</strong>",
+      "3": "Lumi usará <strong>Golpeador Arrematador</strong> para atacar inimigos próximos continuamente. Cada ataque causará 2 instâncias de <geo>Dano Geo em AdE</geo>.",
+      "4": "Se houver uma Jaula Lunar por perto, Lumi alternará entre <strong>Golpeador Arrematador</strong> e <strong>Martelo Pesado da Sobrecarga</strong> para atacar inimigos próximos continuamente. <strong>Martelo Pesado da Sobrecarga</strong> causará <geo>Dano Geo em AdE</geo> que será considerado Dano de Cristalização Lunar.",
+      "5": "<br/>",
+      "6": "<strong>Forma de Poder Supremo</strong>",
+      "7": "Lumi usa o poderoso <strong>Esmagador de Milionárias Toneladas</strong> para causar muito <geo>Dano Geo em AdE</geo> que é considerado Dano de Cristalização Lunar uma vez, trocando para a <strong>Forma de Poder Normal</strong>.",
+      "8": "<br/>",
+      "9": "<strong>Forma de Poder Normal</strong>",
+      "10": "Não é tão chamativa quanto as outras formas, mas ainda é forte.",
+      "11": " Lumi usa o <strong>Golpeador Arrematador</strong> em intervalos maiores para atacar inimigos continuamente. Cada ataque causa 2 instâncias de <geo>Dano Geo em AdE</geo>."
+    }
   }
 }

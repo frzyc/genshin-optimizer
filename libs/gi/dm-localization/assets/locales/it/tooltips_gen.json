@@ -352,5 +352,22 @@
       "2": "Quando Varka si trova nella modalità <strong>Sturm und Drang</strong> e il suo attacco normale colpisce un avversario, il TdR di <strong>Ascensione dei Quattro Venti</strong> si riduce di 0,5 s. Quest'effetto può attivarsi fino a un massimo di 15 volte ogni volta che Varka passa alla modalità <strong>Sturm und Drang</strong>.",
       "3": "Inoltre, Varka può consumare le cariche di <strong>Ascensione dei Quattro Venti</strong> per eseguire l'attacco caricato speciale <strong>Divorazzurro</strong>, che non consuma vigore e infligge 2 iterazioni di DAN elementali corrispondenti all'elemento della claymore impugnata nella mano destra (non influenzabili da altre infusioni) e 2 iterazioni di <anemo>DAN da Anemo</anemo>."
     }
+  },
+  "11300001": {
+    "name": "Lumi: Forme d'attacco",
+    "description": {
+      "0": "Lumi possiede tre forme d'attacco diverse.",
+      "1": "<br/>",
+      "2": "<strong>Forma superpotente</strong>",
+      "3": "Lumi utilizza <strong>Pestaggio martellante</strong> per attaccare continuamente gli avversari vicini. Ogni attacco infligge 2 iterazioni di <geo>DAN da Geo ad area</geo>.",
+      "4": "Se ci sono delle Gabbie lunari nelle vicinanze, Lumi alterna <strong>Pestaggio martellante</strong> e <strong>Martello sovraccarico pesante</strong> per attaccare continuamente gli avversari vicini. <strong>Martello sovraccarico pesante</strong> infligge <geo>DAN da Geo ad area</geo>, considerati DAN da reazione di Cristallizzazione lunare.",
+      "5": "<br/>",
+      "6": "<strong>Forma superpotente finale</strong>",
+      "7": "Lumi usa la <strong>Polverizzazione devastante</strong> suprema, infliggendo un'iterazione particolarmente potente di <geo>DAN da Geo ad area</geo> considerati DAN da reazione di Cristallizzazione lunare, per poi passare alla <strong>Forma potente standard</strong>.",
+      "8": "<br/>",
+      "9": "<strong>Forma potente standard</strong>",
+      "10": "Nonostante non sia appariscente come le altre forme, è in grado di fare parecchio male.",
+      "11": "Lumi usa <strong>Pestaggio martellante</strong> a intervalli più lunghi per attaccare continuamente gli avversari vicini. Ogni attacco infligge 2 iterazioni di <geo>DAN da Geo ad area</geo>."
+    }
   }
 }

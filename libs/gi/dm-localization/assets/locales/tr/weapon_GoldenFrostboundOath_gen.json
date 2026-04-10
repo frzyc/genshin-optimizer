@@ -1,0 +1,24 @@
+{
+  "name": "Altuni Buzul Yemin",
+  "description": {
+    "0": "Kadim bir beyaz ağaçtan oyulmuş, geçmiş çağlarda bir zamanlar kuzey topraklarının Ayaz Perisi Kralı tarafından kullanılan bir uzun yay."
+  },
+  "passiveName": "Şafak Selamına Karşılık",
+  "passiveDescription": {
+    "0": {
+      "0": "Savunmayı <cryo>%16</cryo> artırır. Kuşanan karakterin Element Becerisi veya Ay Kristalleşmesi saldırıları düşmanlara isabet ettiğinde 6 saniyeliğine Buz Feyinin Lütfu etkisi kazanılır: Kuşanan karakter tarafından verilen Toprak Hasarı <cryo>%40</cryo>, Ay Kristalleşmesi Tepkimesi Hasarı <cryo>%40</cryo> artar. Bu etki aktifken kuşanan karakterin yakınında Ay Akıntısı varsa yakındaki diğer tüm grup üyeleri Buz Feyinin Muzipliği etkisini kazanır: Verilen Toprak Hasarı <cryo>%20</cryo>, Ay Kristalleşmesi Tepkimesi Hasarı <cryo>%20</cryo> artar. Bu etki, kuşanan karakter alanda olmasa bile tetiklenebilir."
+    },
+    "1": {
+      "0": "Savunmayı <cryo>%20</cryo> artırır. Kuşanan karakterin Element Becerisi veya Ay Kristalleşmesi saldırıları düşmanlara isabet ettiğinde 6 saniyeliğine Buz Feyinin Lütfu etkisi kazanılır: Kuşanan karakter tarafından verilen Toprak Hasarı <cryo>%50</cryo>, Ay Kristalleşmesi Tepkimesi Hasarı <cryo>%50</cryo> artar. Bu etki aktifken kuşanan karakterin yakınında Ay Akıntısı varsa yakındaki diğer tüm grup üyeleri Buz Feyinin Muzipliği etkisini kazanır: Verilen Toprak Hasarı <cryo>%25</cryo>, Ay Kristalleşmesi Tepkimesi Hasarı <cryo>%25</cryo> artar. Bu etki, kuşanan karakter alanda olmasa bile tetiklenebilir."
+    },
+    "2": {
+      "0": "Savunmayı <cryo>%24</cryo> artırır. Kuşanan karakterin Element Becerisi veya Ay Kristalleşmesi saldırıları düşmanlara isabet ettiğinde 6 saniyeliğine Buz Feyinin Lütfu etkisi kazanılır: Kuşanan karakter tarafından verilen Toprak Hasarı <cryo>%60</cryo>, Ay Kristalleşmesi Tepkimesi Hasarı <cryo>%60</cryo> artar. Bu etki aktifken kuşanan karakterin yakınında Ay Akıntısı varsa yakındaki diğer tüm grup üyeleri Buz Feyinin Muzipliği etkisini kazanır: Verilen Toprak Hasarı <cryo>%30</cryo>, Ay Kristalleşmesi Tepkimesi Hasarı <cryo>%30</cryo> artar. Bu etki, kuşanan karakter alanda olmasa bile tetiklenebilir."
+    },
+    "3": {
+      "0": "Savunmayı <cryo>%28</cryo> artırır. Kuşanan karakterin Element Becerisi veya Ay Kristalleşmesi saldırıları düşmanlara isabet ettiğinde 6 saniyeliğine Buz Feyinin Lütfu etkisi kazanılır: Kuşanan karakter tarafından verilen Toprak Hasarı <cryo>%70</cryo>, Ay Kristalleşmesi Tepkimesi Hasarı <cryo>%70</cryo> artar. Bu etki aktifken kuşanan karakterin yakınında Ay Akıntısı varsa yakındaki diğer tüm grup üyeleri Buz Feyinin Muzipliği etkisini kazanır: Verilen Toprak Hasarı <cryo>%35</cryo>, Ay Kristalleşmesi Tepkimesi Hasarı <cryo>%35</cryo> artar. Bu etki, kuşanan karakter alanda olmasa bile tetiklenebilir."
+    },
+    "4": {
+      "0": "Savunmayı <cryo>%32</cryo> artırır. Kuşanan karakterin Element Becerisi veya Ay Kristalleşmesi saldırıları düşmanlara isabet ettiğinde 6 saniyeliğine Buz Feyinin Lütfu etkisi kazanılır: Kuşanan karakter tarafından verilen Toprak Hasarı <cryo>%80</cryo>, Ay Kristalleşmesi Tepkimesi Hasarı <cryo>%80</cryo> artar. Bu etki aktifken kuşanan karakterin yakınında Ay Akıntısı varsa yakındaki diğer tüm grup üyeleri Buz Feyinin Muzipliği etkisini kazanır: Verilen Toprak Hasarı <cryo>%40</cryo>, Ay Kristalleşmesi Tepkimesi Hasarı <cryo>%40</cryo> artar. Bu etki, kuşanan karakter alanda olmasa bile tetiklenebilir."
+    }
+  }
+}
