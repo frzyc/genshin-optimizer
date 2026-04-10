@@ -36,8 +36,8 @@
   "addEleDMG": "부가 원소 피해",
   "hpRegenPerHit": "명중 치유량",
   "press": {
-    "dmg": "",
-    "cd": ""
+    "dmg": "짧은 터치 피해",
+    "cd": "짧은 터치 재사용 대기시간"
   },
   "hold": {
     "dmg": "홀드 피해",

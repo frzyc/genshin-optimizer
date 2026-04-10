@@ -36,8 +36,8 @@
   "addEleDMG": "Additional Elemental DMG",
   "hpRegenPerHit": "HP Regeneration Per Hit",
   "press": {
-    "dmg": "",
-    "cd": ""
+    "dmg": "Press DMG",
+    "cd": "Press CD"
   },
   "hold": {
     "dmg": "Hold DMG",

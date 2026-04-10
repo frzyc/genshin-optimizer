@@ -36,8 +36,8 @@
   "addEleDMG": "Sát Thương Nguyên Tố Kèm Theo",
   "hpRegenPerHit": "Hồi HP khi đánh trúng địch",
   "press": {
-    "dmg": "",
-    "cd": ""
+    "dmg": "Sát Thương Nhấn",
+    "cd": "CD Nhấn"
   },
   "hold": {
     "dmg": "Sát Thương Nhấn Giữ",

@@ -36,8 +36,8 @@
   "addEleDMG": "Bonus DGT élémentaires",
   "hpRegenPerHit": "Soins équipe",
   "press": {
-    "dmg": "",
-    "cd": ""
+    "dmg": "DGT appui simple",
+    "cd": "TdR appui simple"
   },
   "hold": {
     "dmg": "DGT appui long",
