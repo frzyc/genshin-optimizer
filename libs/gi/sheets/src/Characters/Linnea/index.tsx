@@ -520,6 +520,7 @@ const sheet: TalentSheet = {
       value: condC1TeamStacks,
       path: condC1TeamStacksPath,
       name: ct.ch('c1TeamCond'),
+      teamBuff: true,
       states: {
         on: {
           fields: [

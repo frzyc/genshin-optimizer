@@ -211,9 +211,9 @@ allLunarReactionKeys.forEach((lr) => {
   statMap[`${lr}_specialDmg_`] =
     `${transformativeReactions[lr].name} Special DMG Bonus`
   statMap[`${lr}_reactionDmgInc`] =
-    `${transformativeReactions[lr].name} DMG Increase`
+    `${transformativeReactions[lr].name} Reaction DMG Increase`
   statMap[`${lr}_directDmgInc`] =
-    `${transformativeReactions[lr].name} DMG Increase`
+    `${transformativeReactions[lr].name} Direct DMG Increase`
 })
 
 type TransformativeReactionsCritRateKey =

@@ -63,9 +63,9 @@ const data = {
   hpRegenPerHit: [3642811974 - MediumTextMapOffset, 'skillParam'],
   press: {
     //Press DMG
-    dmg: [3774314422, 'skillParam'],
+    dmg: [3774314422 - MediumTextMapOffset, 'skillParam'],
     //Press CD
-    cd: [956030924, 'skillParam'],
+    cd: [956030924 - MediumTextMapOffset, 'skillParam'],
   },
   hold: {
     //Hold DMG

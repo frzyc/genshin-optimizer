@@ -134,7 +134,7 @@ const burstSong_geo_dmgInc = equal(
   target.charKey,
   burstSong_geo_dmgIncDisp
 )
-const burstSong_lunarcrystallize_dmgIncDisp = equal(
+const burstSong_lunarcrystallize_directDmgIncDisp = equal(
   condBurstSong,
   'on',
   prod(
@@ -143,12 +143,12 @@ const burstSong_lunarcrystallize_dmgIncDisp = equal(
     }),
     input.total.eleMas
   ),
-  { path: 'lunarcrystallize_dmgInc', isTeamBuff: true }
+  { path: 'lunarcrystallize_directDmgInc', isTeamBuff: true }
 )
-const burstSong_lunarcrystallize_dmgInc = equal(
+const burstSong_lunarcrystallize_directDmgInc = equal(
   input.activeCharKey,
   target.charKey,
-  burstSong_lunarcrystallize_dmgIncDisp
+  burstSong_lunarcrystallize_directDmgIncDisp
 )
 
 const [condA1AfterSkillBurstPath, condA1AfterSkillBurst] = cond(
@@ -243,7 +243,7 @@ const a4Song_geo_dmgInc = equal(
   target.charKey,
   a4Song_geo_dmgIncDisp
 )
-const a4Song_lunarcrystallize_dmgIncDisp = greaterEq(
+const a4Song_lunarcrystallize_directDmgIncDisp = greaterEq(
   input.asc,
   4,
   equal(
@@ -260,12 +260,12 @@ const a4Song_lunarcrystallize_dmgIncDisp = greaterEq(
       )
     )
   ),
-  { path: 'lunarcrystallize_dmgInc', isTeamBuff: true }
+  { path: 'lunarcrystallize_directDmgInc', isTeamBuff: true }
 )
-const a4Song_lunarcrystallize_dmgInc = equal(
+const a4Song_lunarcrystallize_directDmgInc = equal(
   input.activeCharKey,
   target.charKey,
-  a4Song_lunarcrystallize_dmgIncDisp
+  a4Song_lunarcrystallize_directDmgIncDisp
 )
 
 const [condC4BurstActivePath, condC4BurstActive] = cond(key, 'c4BurstActive')
@@ -309,11 +309,13 @@ const dmgFormulas = {
       'burst'
     ),
     burstSong_geo_dmgIncDisp,
-    burstSong_lunarcrystallize_dmgIncDisp,
+    burstSong_lunarcrystallize_dmgIncDisp:
+      burstSong_lunarcrystallize_directDmgIncDisp,
   },
   passive2: {
     a4Song_geo_dmgIncDisp,
-    a4Song_lunarcrystallize_dmgIncDisp,
+    a4Song_lunarcrystallize_dmgIncDisp:
+      a4Song_lunarcrystallize_directDmgIncDisp,
   },
   constellation2: {
     dmg: greaterEq(
@@ -343,7 +345,7 @@ export const data = dataObjForCharacterSheet(
     teamBuff: {
       premod: {
         geo_dmgInc: burstSong_geo_dmgInc,
-        lunarcrystallize_dmgInc: burstSong_lunarcrystallize_dmgInc,
+        lunarcrystallize_directDmgInc: burstSong_lunarcrystallize_directDmgInc,
         geo_critRate_: a1AfterSkillBurst_geo_critRate_,
         geo_critDMG_: a1AfterSkillBurst_geo_critDMG_,
         eleMas: a1AfterSkillBurstGleam_eleMas,
@@ -356,7 +358,7 @@ export const data = dataObjForCharacterSheet(
     teamBuff: {
       premod: {
         geo_dmgInc: a4Song_geo_dmgInc,
-        lunarcrystallize_dmgInc: a4Song_lunarcrystallize_dmgInc,
+        lunarcrystallize_directDmgInc: a4Song_lunarcrystallize_directDmgInc,
       },
     },
   }
@@ -468,7 +470,7 @@ const sheet: TalentSheet = {
               node: burstSong_geo_dmgIncDisp,
             },
             {
-              node: burstSong_lunarcrystallize_dmgIncDisp,
+              node: burstSong_lunarcrystallize_directDmgIncDisp,
             },
           ],
         },
@@ -481,7 +483,7 @@ const sheet: TalentSheet = {
           node: a4Song_geo_dmgIncDisp,
         },
         {
-          node: a4Song_lunarcrystallize_dmgIncDisp,
+          node: a4Song_lunarcrystallize_directDmgIncDisp,
         },
       ],
     }),
