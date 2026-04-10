@@ -129,7 +129,7 @@
     "name": "\"Gel Dostum, Ayın Yumuşak Parıltısında Dans Edelim\"",
     "description": {
       "0": "Varka <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Fırtına Hücumuna</strong></tooltip> geçtiğinde özel Element Becerisi <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Dört Rüzgarın Yükselişi</strong></tooltip> için ek bir kullanım hakkı elde eder.",
-      "1": "Ayrıca <strong>Fırtına Hücumuna</strong> geçtikten sonra Varka, <strong>Lirik Ziyafet</strong> etkisini kazanır: <strong>Dört Rüzgarın Yükselişi</strong> özel Element Becerisi veya <strong>Gök Yutan</strong> özel Yüklü Saldırısı kullanıldığında, bu etkiyi tüketerek <strong>Dört Rüzgarın Yükselişi</strong> veya <strong>Gök Yutan</strong> tarafından verilen orijinal Hasarın %200'ü kadar Hasar verebilir."
+      "1": "Ayrıca <strong>Fırtına Hücumuna</strong> geçtikten sonra Varka, <strong>Lirik Ziyafet</strong> etkisini kazanır: <strong>Dört Rüzgarın Yükselişi</strong> özel Element Becerisi veya <strong>Gök Yutan</strong> özel Yüklü Saldırısı kullanıldığında, bu etkiyi tüketerek <strong>Dört Rüzgarın Yükselişi</strong> veya <strong>Gök Yutan</strong> tarafından verilen orijinal Hasarın %200'ü kadar Hasar verir."
     }
   },
   "constellation2": {

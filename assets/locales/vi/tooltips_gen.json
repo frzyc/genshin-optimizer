@@ -347,5 +347,22 @@
       "2": "Khi Varka trong chế độ <strong>Bão Táp Đột Kích</strong> và Tấn Công Thường trúng kẻ địch, thời gian chờ của <strong>Tứ Phong Trỗi Dậy</strong> sẽ rút ngắn 0.5s. Sau mỗi lần chuyển sang chế độ <strong>Bão Táp Đột Kích</strong>, hiệu quả này tối đa kích hoạt 15 lần.",
       "3": "Ngoài ra, Varka có thể tiêu hao số lần khả dụng của <strong>Tứ Phong Trỗi Dậy</strong> để thực hiện Trọng Kích đặc biệt <strong>Trời Xanh Cắn Xé</strong> không tiêu hao thể lực, gây 2 lần sát thương nguyên tố tương ứng không thể bị thay thế từ trọng kiếm tay phải của Varka và 2 lần <anemo>Sát Thương Nguyên Tố Phong</anemo>."
     }
+  },
+  "11300001": {
+    "name": "Lumi - Hình Thái Xuất Kích",
+    "description": {
+      "0": "Lumi sở hữu ba hình thái xuất kích khác nhau.",
+      "1": "<br/>",
+      "2": "<strong>Hình Thái Đáng Gờm</strong>",
+      "3": "Lumi sẽ dùng <strong>Đánh Đập Dồn Dập</strong> để liên tục tấn công kẻ địch ở gần, mỗi lần tấn công sẽ gây 2 lần <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo>.",
+      "4": "Nếu có Trăng Trôi ở gần, Lumi sẽ chuyển sang dùng <strong>Đánh Đập Dồn Dập</strong> và <strong>Búa Nặng Cường Lực</strong> để liên tục tấn công kẻ địch ở gần. <strong>Búa Nặng Cường Lực</strong> sẽ gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> và được xem là sát thương phản ứng Nguyệt-Kết Tinh.",
+      "5": "<br/>",
+      "6": "<strong>Hình Thái Tối Thượng</strong>",
+      "7": "Lumi sẽ dùng <strong>Búa Nặng Triệu Tấn</strong> cực kỳ lợi hại để gây cho kẻ địch xung quanh một lần <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> mạnh mẽ hơn và được xem là sát thương phản ứng Nguyệt-Kết Tinh, đồng thời chuyển sang <strong>Hình Thái Thông Thường</strong>.",
+      "8": "<br/>",
+      "9": "<strong>Hình Thái Thông Thường</strong>",
+      "10": "Tuy không ghê gớm bằng các hình thái khác, nhưng cũng vẫn rất lợi hại.",
+      "11": "Lumi sẽ dùng <strong>Đánh Đập Dồn Dập</strong> với giãn cách dài hơn để liên tục tấn công kẻ địch ở gần, mỗi lần tấn công sẽ gây 2 lần <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo>."
+    }
   }
 }

@@ -1,0 +1,186 @@
+{
+  "name": "Linnéa",
+  "title": "La Augur de Maravillas",
+  "description": "Una asesora del Gremio de Aventureros de Nod Krai y naturalista.",
+  "constellationName": "Alcyon",
+  "auto": {
+    "name": "Protocolo de captura",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Al apuntar, se acumularán fragmentos de roca en la punta de flecha. Una flecha rocosa totalmente cargada infligirá <geo>Daño Geo</geo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Disparo Preciso",
+      "4": "Disparo Preciso (carga completa)",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Contramedida: ¡Grito de guerra de Lumi!",
+    "description": {
+      "0": "¡A la aventura junto a Lumi! Lumi atacará de distintas formas dependiendo de cómo pulses esta habilidad.",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Lumi adoptará su <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forma superpoderosa</tooltip></strong> para atacar sin parar a los enemigos cercanos e infligirles <geo>Daño Geo en el AdE</geo>. Si hay algún pilar lunar en las cercanías, también infligirá a los enemigos cercanos <geo>Daño Geo en el AdE</geo> considerado como daño de Cristalización Lunar.",
+      "4": "<br/>",
+      "5": "<strong>Pulsar repetidamente</strong>",
+      "6": "¡Hora de mostrar su verdadero superpoder! Tras usar la Habilidad Elemental, si se pulsa repetidamente dicha habilidad o el Ataque Normal, Linnéa alimentará a Lumi con gemas relucientes. Tras saciarse, Lumi adoptará su <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forma ultrapoderosa</tooltip></strong> para infligir a los enemigos cercanos un potentísimo golpe de <geo>Daño Geo en el AdE</geo> considerado como daño de Cristalización Lunar, tras lo que cambiará a su <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forma poderosa</tooltip></strong>.",
+      "7": "Además, al pulsar repetidamente la Habilidad Elemental, la RES a interrupción de Linnéa aumentará.",
+      "8": "<br/>",
+      "9": "<i>“¡Adelante, Lumi!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de aporreadores pum-pum de Lumi",
+      "1": "Daño de mazas potenciadas de Lumi",
+      "2": "Daño de megamazas aplastantes de Lumi",
+      "3": "Duración de Lumi",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Memorando: Guía de supervivencia extrema",
+    "description": {
+      "0": "¡Incluso los maestros aventureros necesitan descansar de vez en cuando! Linnéa invoca a Lumi en su <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forma superpoderosa</tooltip></strong> para que restaure Vida a todos los miembros del equipo cercanos. Además, también regenerará continuamente la Vida de los personajes en uso cercanos durante un tiempo en función de la DEF de Linnéa.",
+      "1": "Si, al usar la Habilidad Definitiva, Lumi ya había sido invocada, en su lugar, se reiniciará la duración de Lumi sin que cambie su forma actual.",
+      "2": "<br/>",
+      "3": "<i>“Para un aventurero profesional, ¡salir vivo de una situación de vida o muerte es una regla mucho más importante que realizar un hallazgo sin precedentes!”.</i>"
+    },
+    "skillParams": {
+      "0": "Curación inicial",
+      "1": "Curación continua",
+      "2": "Duración de curación",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Notas de observación de campo",
+    "description": {
+      "0": "Mientras Lumi está en el campo de batalla, la <geo>RES Geo</geo> de los enemigos que haya cerca de ella se reduce en un 15%.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "3": "Se fortalecen la Habilidad Elemental de Linnéa, <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contramedida: ¡Grito de guerra de Lumi!</tooltip></strong>, y la Habilidad Definitiva, <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Memorando: Guía de supervivencia extrema</tooltip></strong>, de manera que, tras invocar a Lumi, la <geo>RES Geo</geo> de los enemigos que haya cerca de ella se reduce en un 15% adicional."
+    }
+  },
+  "passive2": {
+    "name": "Archivo de especies naturales",
+    "description": {
+      "0": "La Maestría Elemental de un determinado personaje del equipo aumentará en una cantidad equivalente al 5% de la DEF de Linnéa en función de quién sea tu personaje en uso.",
+      "1": [
+        "Si es un personaje con presagio lunar, aumenta la Maestría Elemental de dicho personaje.",
+        "Si no lo es, aumenta la Maestría Elemental de Linnéa."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Bendición presagiolunar: Estudio del hábitat",
+    "description": {
+      "0": "Cuando un personaje del equipo cause una reacción de Cristalización Hydro, esta se transformará en una reacción de Cristalización Lunar. El daño base de las reacciones de Cristalización Lunar de los personajes del equipo aumentará en un 0.7% por cada 100 pts. de DEF que tenga Linnéa. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
+      "1": "<br/>",
+      "2": "Además, cuando Linnéa esté en el equipo, el nivel de <strong>presagio lunar</strong> de los personajes aumentará en 1."
+    }
+  },
+  "passive": {
+    "name": "Aventurera maestra",
+    "description": {
+      "0": "Cuando Linnéa no está en combate, el tiempo de carga necesario para realizar un <strong>Disparo Preciso</strong> se reduce considerablemente, y dispara una <strong>flecha rápida y práctica</strong> especial que tiene diferentes efectos según el objetivo golpeado:",
+      "1": [
+        "Ciertos animales: la <strong>flecha rápida y práctica</strong> se transforma en una “red” especial que puede capturar la esencia de animales pequeños y usarla para materializar de nuevo su forma física. La cantidad de redes que se pueden usar semanalmente es limitada.",
+        "Minerales de forja: Linnéa envía a Lumi a destruir rápidamente los minerales marcados por la <strong>flecha rápida y práctica</strong> y recoger los fragmentos que caigan. Si Lumi no está activa, Linnéa la invocará durante un breve periodo de tiempo para que la ayude a recoger los minerales."
+      ],
+      "2": "<br/>",
+      "3": "El daño que la <strong>flecha rápida y práctica</strong> inflige a los enemigos se reduce a un 20% del daño original. Además, tras disparar cierta cantidad de <strong>flechas rápidas y prácticas</strong> en un corto periodo de tiempo, Linnéa necesitará descansar brevemente antes de poder seguir disparando."
+    }
+  },
+  "constellation1": {
+    "name": "Clasificación provisional",
+    "description": {
+      "0": "Al usar la Habilidad Elemental, <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contramedida: ¡Grito de guerra de Lumi!</tooltip></strong>, o al activar la resonancia lunar, Linnéa obtiene 6 cargas del efecto <strong>catálogo de campo</strong>, el cual dura 10 s y puede acumularse hasta 18 veces. Cuando un personaje cercano del equipo inflija daño de Cristalización Lunar, se consumirá 1 carga de catálogo de campo para aumentar el daño infligido en una cantidad equivalente al 75% de la DEF de Linnéa.",
+      "1": "Además, cuando Lumi use sus <strong>megamazas aplastantes</strong> mientras está en su <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forma ultrapoderosa</tooltip></strong>, Linnéa podrá consumir hasta 5 cargas de catálogo de campo para aumentar el daño infligido en una cantidad equivalente al 150% de su DEF por cada carga consumida."
+    }
+  },
+  "constellation2": {
+    "name": "Augurio de dicha y pesar",
+    "description": {
+      "0": "Tras activar una resonancia lunar, el Daño CRIT de todos los personajes <hydro>Hydro</hydro> o <geo>Geo</geo> del equipo aumenta en un 40% durante 8 s. Además, el Daño CRIT de las <strong>megamazas aplastantes</strong> de Lumi en su <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forma ultrapoderosa</tooltip></strong> aumenta en un 150% adicional.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "3": "Cuando Lumi use sus <strong>mazas potenciadas</strong> en su <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forma superpoderosa</tooltip></strong> o sus <strong>megamazas aplastantes</strong> en su forma ultrapoderosa, se activará una resonancia lunar. Para esta resonancia lunar, se considerará que todos los personajes <hydro>Hydro</hydro> y <geo>Geo</geo> del equipo han aplicado sus elementos en la reacción."
+    }
+  },
+  "constellation3": {
+    "name": "Páginas repletas de sucesos",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contramedida: ¡Grito de guerra de Lumi!</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Intuición de experta",
+    "description": {
+      "0": "Tras activar una resonancia lunar, tanto la DEF de Linnéa como la de tu personaje en uso del equipo aumentan en un 25% durante 5 s. Este aumento de DEF puede acumularse cuando el personaje en uso es Linnéa."
+    }
+  },
+  "constellation5": {
+    "name": "Regalo de despedida de la tierra de las hadas",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Memorando: Guía de supervivencia extrema</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sueño del Sabueso Dorado",
+    "description": {
+      "0": "Fortalece el efecto de la constelación <strong>Clasificación provisional</strong>, de manera que, al usar la Habilidad Elemental, <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contramedida: ¡Grito de guerra de Lumi!</tooltip></strong>, o al activar la resonancia lunar, Linnéa obtendrá directamente el máximo de cargas de <strong>catálogo de campo</strong>. Al consumir este efecto, se consumirá el doble de acumulaciones y el aumento de daño se incrementará a un 150% de la cantidad original.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "3": "El daño de Cristalización Lunar que infligen los personajes cercanos del equipo <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 25%."
+    }
+  }
+}

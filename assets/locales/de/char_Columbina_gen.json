@@ -1,8 +1,8 @@
 {
+  "constellationName": "Columbina Hyposelenia.",
   "name": "Columbina",
   "title": "Heimkehr des leeren Mondes",
   "description": "Das in Nod-Krai geborene „Mondmädchen“ und der leere Mond, der nach Hause zurückkehrt.",
-  "constellationName": "???",
   "auto": {
     "name": "Mondtau-Kaskade",
     "fields": {

@@ -349,5 +349,22 @@
       "2": "Varka <strong>Fırtına Hücumu</strong> modundayken Normal Saldırısı bir düşmana isabet ettiğinde <strong>Dört Rüzgarın Yükselişi</strong> becerisinin bekleme süresi 0,5 saniye azalır. Varka her <strong>Fırtına Hücumu</strong> moduna geçtiğinde bu etki 15 defaya kadar tetiklenebilir.",
       "3": "Ayrıca Varka, <strong>Dört Rüzgarın Yükselişi</strong> kullanım haklarını harcayarak Dayanıklılık tüketmeyen özel <strong>Gök Yutan</strong> Yüklü Saldırısını gerçekleştirebilir. Bu saldırı, 2 defa Varka'nın sağ eliyle tuttuğu çift elli kılıcın elementine karşılık gelen ve diğer element tesirleriyle değiştirilemeyen Element Hasarı ve 2 defa da <anemo>Rüzgar Hasarı</anemo> verir."
     }
+  },
+  "11300001": {
+    "name": "Lumi: Saldırı Formları",
+    "description": {
+      "0": "Lumi'nin üç farklı Saldırı Formu vardır.",
+      "1": "<br/>",
+      "2": "<strong>Süper Güç Formu</strong>",
+      "3": "Lumi, <strong>Bam Bam Pataklama</strong> kullanarak yakındaki düşmanlara sürekli olarak saldırır. Her saldırı 2 defa <geo>Toprak Alan Hasarı</geo> verir.",
+      "4": "Yakında Ay Akıntısı varsa Lumi, <strong>Bam Bam Pataklama</strong> ve <strong>Gümbürdeten Topuz</strong> arasında geçiş yaparak yakındaki düşmanlara sürekli olarak saldırır. <strong>Gümbürdeten Topuz</strong>, Ay Kristalleşmesi Tepkimesi Hasarı olarak kabul edilen <geo>Toprak Alan Hasarı</geo> verir.",
+      "5": "<br/>",
+      "6": "<strong>Mutlak Güç Formu</strong>",
+      "7": "Lumi, <strong>Milyon Tonluk Darbe</strong> kullanarak Ay Kristalleşmesi Tepkimesi Hasarı olarak kabul edilen, tek seferlik ekstra güçlü bir <geo>Toprak Alan Hasarı</geo> verir ve <strong>Standart Güç Formuna</strong> geçiş yapar.",
+      "8": "<br/>",
+      "9": "<strong>Standart Güç Formu</strong>",
+      "10": "Diğer formlar kadar gösterişli olmasa da yine de ciddi bir güce sahiptir.",
+      "11": "Lumi, yakındaki düşmanlara sürekli olarak saldırmak için daha uzun aralıklarla <strong>Bam Bam Pataklama</strong> kullanır. Her saldırı 2 defa <geo>Toprak Alan Hasarı</geo> verir."
+    }
   }
 }
