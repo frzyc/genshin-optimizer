@@ -132,6 +132,7 @@ function initBuildStatus(): BuildStatus {
     total: 0,
     testedPerSecond: 0,
     skippedPerSecond: 0,
+    changed: false,
   }
 }
 const audio = new Audio('assets/notification.mp3')
@@ -368,7 +369,8 @@ export default function TabBuild() {
       topN: maxBuildsToShow,
       plotBase: plotBaseNode,
     }
-    const status = {
+    const status: BuildStatus = {
+      type: 'active',
       tested: 0,
       failed: 0,
       skipped: 0,
@@ -376,12 +378,12 @@ export default function TabBuild() {
       testedPerSecond: 0,
       skippedPerSecond: 0,
       startTime: performance.now(),
-      needUpdate: false,
+      changed: false,
     }
+    setBuildStatus(status)
     const statusUpdateTimer = setInterval(() => {
-      if (status.needUpdate) {
-        status.needUpdate = false
-        setBuildStatus({ type: 'active', ...status })
+      if (status.changed) {
+        status.cb?.()
       }
     }, 100)
 
@@ -476,8 +478,8 @@ export default function TabBuild() {
     } finally {
       clearInterval(statusUpdateTimer)
       setBuildStatus({
-        type: 'inactive',
         ...status,
+        type: 'inactive',
         finishTime: performance.now(),
       })
     }
@@ -764,7 +766,7 @@ export default function TabBuild() {
       </ButtonGroup>
       <ScalesWith />
       {!!characterKey && (
-        <BuildAlert {...{ status: buildStatus, characterName }} />
+        <BuildAlert buildStatus={buildStatus} characterName={characterName} />
       )}
       {optimizationTarget && (
         <Box>
