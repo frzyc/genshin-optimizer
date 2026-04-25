@@ -21,7 +21,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     | 'testedPerSecond'
     | 'skippedPerSecond',
     number
-  >
+  > & { needUpdate: boolean }
   private exclusion: Count['exclusion']
   private topN: number
   private buildValues: { w: Worker; val: number }[]
@@ -151,6 +151,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
         lastTime = currentTime
         lastTested = this.status.tested
         lastSkipped = this.status.skipped
+        this.status.needUpdate = true
       }, 1000)
     } catch (e) {
       cleanup()
@@ -166,6 +167,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     this.status.tested += r.tested
     this.status.failed += r.failed
     this.status.skipped += r.skipped
+    this.status.needUpdate = true
 
     if (r.buildValues) {
       const { topN } = this,

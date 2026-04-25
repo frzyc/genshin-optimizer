@@ -206,7 +206,7 @@ export default function TabBuild() {
         return false
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
-      const mainStats = mainStatKeys[art.slotKey]
+      const mainStats = mainStatKeys[art.slotKey as keyof typeof mainStatKeys]
       if (mainStats?.length && !mainStats.includes(art.mainStatKey))
         return false
 
@@ -368,7 +368,7 @@ export default function TabBuild() {
       topN: maxBuildsToShow,
       plotBase: plotBaseNode,
     }
-    const status: Omit<BuildStatus, 'type'> = {
+    const status = {
       tested: 0,
       failed: 0,
       skipped: 0,
@@ -376,11 +376,14 @@ export default function TabBuild() {
       testedPerSecond: 0,
       skippedPerSecond: 0,
       startTime: performance.now(),
+      needUpdate: false,
     }
-    const statusUpdateTimer = setInterval(
-      () => setBuildStatus({ type: 'active', ...status }),
-      100
-    )
+    const statusUpdateTimer = setInterval(() => {
+      if (status.needUpdate) {
+        status.needUpdate = false
+        setBuildStatus({ type: 'active', ...status })
+      }
+    }, 100)
 
     const cancellationError = new Error()
     try {
@@ -761,9 +764,7 @@ export default function TabBuild() {
       </ButtonGroup>
       <ScalesWith />
       {!!characterKey && (
-        <BuildAlert
-          {...{ status: buildStatus, characterName, maxBuildsToShow }}
-        />
+        <BuildAlert {...{ status: buildStatus, characterName }} />
       )}
       {optimizationTarget && (
         <Box>
