@@ -12,37 +12,39 @@ export const buffs = {
       name: 'set2',
     },
   },
-  set4_dmg_: {
+  set4_anomProf: {
     sheet: 'NotesFromTheChained',
-    name: 'set4_dmg_',
+    name: 'set4_anomProf',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'anomProf',
       sheet: 'NotesFromTheChained',
-      name: 'set4_dmg_',
+      name: 'set4_anomProf',
     },
   },
-  team_dmg_: {
+  set4_anomaly_buff_: {
     sheet: 'NotesFromTheChained',
-    name: 'team_dmg_',
+    name: 'set4_anomaly_buff_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'buff_',
       sheet: 'NotesFromTheChained',
-      name: 'team_dmg_',
+      damageType1: 'anomaly',
+      name: 'set4_anomaly_buff_',
     },
   },
-  enemy_defIgn_: {
+  set4_disorder_buff_: {
     sheet: 'NotesFromTheChained',
-    name: 'enemy_defIgn_',
+    name: 'set4_disorder_buff_',
     tag: {
       et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
+      qt: 'combat',
+      q: 'buff_',
       sheet: 'NotesFromTheChained',
-      name: 'enemy_defIgn_',
+      damageType1: 'disorder',
+      name: 'set4_disorder_buff_',
     },
   },
 } as const

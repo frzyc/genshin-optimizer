@@ -2,23 +2,13 @@ import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { NotesFromTheChained } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 
 const key: DiscSetKey = 'NotesFromTheChained'
-const [chg, _ch] = trans('disc', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+const [chg, ch] = trans('disc', key)
 const icon = discDefIcon(key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = NotesFromTheChained.conditionals
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = NotesFromTheChained.buffs
 
 const sheet: UISheet<'2' | '4'> = {
@@ -39,6 +29,25 @@ const sheet: UISheet<'2' | '4'> = {
       {
         type: 'text',
         text: chg('desc4'),
+      },
+      {
+        type: 'conditional',
+        conditional: {
+          label: ch('set4_cond_abloom'),
+          metadata: cond.triggersAbloom,
+          fields: [tagToTagField(buff.set4_anomProf.tag)],
+        },
+      },
+      {
+        type: 'conditional',
+        conditional: {
+          label: ch('set4_cond_freeze'),
+          metadata: cond.triggersFreeze,
+          fields: [
+            tagToTagField(buff.set4_anomaly_buff_.tag),
+            tagToTagField(buff.set4_disorder_buff_.tag),
+          ],
+        },
       },
     ],
   },

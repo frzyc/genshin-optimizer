@@ -2,23 +2,13 @@ import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { BunnyInWonderland } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { tagToTagField, trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 
 const key: DiscSetKey = 'BunnyInWonderland'
-const [chg, _ch] = trans('disc', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+const [chg, ch] = trans('disc', key)
 const icon = discDefIcon(key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = BunnyInWonderland.conditionals
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = BunnyInWonderland.buffs
 
 const sheet: UISheet<'2' | '4'> = {
@@ -39,6 +29,14 @@ const sheet: UISheet<'2' | '4'> = {
       {
         type: 'text',
         text: chg('desc4'),
+      },
+      {
+        type: 'conditional',
+        conditional: {
+          label: ch('set4_cond'),
+          metadata: cond.exSpecial_assist,
+          fields: [tagToTagField(buff.set4_dmg_.tag)],
+        },
       },
     ],
   },
