@@ -9,6 +9,7 @@ import Ben from './Ben'
 import Billy from './Billy'
 import Burnice from './Burnice'
 import Caesar from './Caesar'
+import Cissia from './Cissia'
 import Corin from './Corin'
 import Dialyn from './Dialyn'
 import Ellen from './Ellen'
@@ -25,6 +26,7 @@ import Lucy from './Lucy'
 import Lycaon from './Lycaon'
 import Manato from './Manato'
 import Miyabi from './Miyabi'
+import NangongYu from './NangongYu'
 import Nekomata from './Nekomata'
 import Nicole from './Nicole'
 import OrphieMagus from './OrphieMagus'
@@ -60,6 +62,7 @@ const data = {
   Billy,
   Burnice,
   Caesar,
+  Cissia,
   Corin,
   Dialyn,
   Ellen,
@@ -76,6 +79,7 @@ const data = {
   Lycaon,
   Manato,
   Miyabi,
+  NangongYu,
   Nekomata,
   Nicole,
   OrphieMagus,

@@ -1,6 +1,7 @@
 // This is a generated index file.
 import AstralVoice from './AstralVoice'
 import BranchBladeSong from './BranchBladeSong'
+import BunnyInWonderland from './BunnyInWonderland'
 import ChaosJazz from './ChaosJazz'
 import ChaoticMetal from './ChaoticMetal'
 import DawnsBloom from './DawnsBloom'
@@ -10,6 +11,7 @@ import HormonePunk from './HormonePunk'
 import InfernoMetal from './InfernoMetal'
 import KingOfTheSummit from './KingOfTheSummit'
 import MoonlightLullaby from './MoonlightLullaby'
+import NotesFromTheChained from './NotesFromTheChained'
 import PhaethonsMelody from './PhaethonsMelody'
 import PolarMetal from './PolarMetal'
 import ProtoPunk from './ProtoPunk'
@@ -27,6 +29,7 @@ import YunkuiTales from './YunkuiTales'
 const data = {
   AstralVoice,
   BranchBladeSong,
+  BunnyInWonderland,
   ChaosJazz,
   ChaoticMetal,
   DawnsBloom,
@@ -36,6 +39,7 @@ const data = {
   InfernoMetal,
   KingOfTheSummit,
   MoonlightLullaby,
+  NotesFromTheChained,
   PhaethonsMelody,
   PolarMetal,
   ProtoPunk,

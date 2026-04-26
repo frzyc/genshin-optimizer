@@ -1,0 +1,14 @@
+{
+  "rarity": "S",
+  "type": "stun",
+  "atk_base": 48,
+  "second_statkey": "anomMas_",
+  "second_statvalue": 0.12,
+  "phase": [
+    { "params": [90, 0.15, 40, 2, 2, 60] },
+    { "params": [103, 0.17, 40, 2, 2, 69] },
+    { "params": [117, 0.195, 40, 2, 2, 78] },
+    { "params": [130, 0.21, 40, 2, 2, 87] },
+    { "params": [145, 0.24, 40, 2, 2, 96] }
+  ]
+}

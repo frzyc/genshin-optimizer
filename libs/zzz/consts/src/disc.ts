@@ -7,6 +7,7 @@ export type DiscSlotKey = (typeof allDiscSlotKeys)[number]
 export const allDiscSetKeys = [
   'AstralVoice',
   'BranchBladeSong',
+  'BunnyInWonderland',
   'ChaosJazz',
   'ChaoticMetal',
   'DawnsBloom',
@@ -16,6 +17,7 @@ export const allDiscSetKeys = [
   'InfernoMetal',
   'KingOfTheSummit',
   'MoonlightLullaby',
+  'NotesFromTheChained',
   'PhaethonsMelody',
   'PolarMetal',
   'ProtoPunk',
@@ -177,6 +179,7 @@ export const disc2pEffect: Record<
 > = {
   AstralVoice: { atk_: 0.1 },
   BranchBladeSong: { crit_dmg_: 0.16 },
+  BunnyInWonderland: { hp_: 0.1 },
   ChaosJazz: { anomProf: 30 },
   ChaoticMetal: { ether_dmg_: 0.1 },
   DawnsBloom: {}, // TODO: Handle this automatically. For now, we will need to add the 2p effect manually
@@ -186,6 +189,7 @@ export const disc2pEffect: Record<
   InfernoMetal: { fire_dmg_: 0.1 },
   KingOfTheSummit: { dazeInc_: 0.06 },
   MoonlightLullaby: { enerRegen_: 0.2 },
+  NotesFromTheChained: { ice_dmg_: 0.1 },
   PhaethonsMelody: { anomMas_: 0.08 },
   PolarMetal: { ice_dmg_: 0.1 },
   ProtoPunk: { shield_: 0.15 },
@@ -227,4 +231,6 @@ export const discSetNames: Record<DiscSetKey, string> = {
   MoonlightLullaby: 'Moonlight Lullaby',
   WhiteWaterBallad: 'White Water Ballad',
   ShiningAria: 'Shining Aria',
+  BunnyInWonderland: 'Bunny in Wonderland',
+  NotesFromTheChained: 'Notes From the Chained',
 }

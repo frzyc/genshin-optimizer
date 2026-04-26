@@ -3,6 +3,7 @@ import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import AstralVoice from './AstralVoice'
 import BranchBladeSong from './BranchBladeSong'
+import BunnyInWonderland from './BunnyInWonderland'
 import ChaosJazz from './ChaosJazz'
 import ChaoticMetal from './ChaoticMetal'
 import DawnsBloom from './DawnsBloom'
@@ -12,6 +13,7 @@ import HormonePunk from './HormonePunk'
 import InfernoMetal from './InfernoMetal'
 import KingOfTheSummit from './KingOfTheSummit'
 import MoonlightLullaby from './MoonlightLullaby'
+import NotesFromTheChained from './NotesFromTheChained'
 import PhaethonsMelody from './PhaethonsMelody'
 import PolarMetal from './PolarMetal'
 import ProtoPunk from './ProtoPunk'
@@ -29,6 +31,7 @@ import YunkuiTales from './YunkuiTales'
 export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
   AstralVoice,
   BranchBladeSong,
+  BunnyInWonderland,
   ChaosJazz,
   ChaoticMetal,
   DawnsBloom,
@@ -38,6 +41,7 @@ export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
   InfernoMetal,
   KingOfTheSummit,
   MoonlightLullaby,
+  NotesFromTheChained,
   PhaethonsMelody,
   PolarMetal,
   ProtoPunk,

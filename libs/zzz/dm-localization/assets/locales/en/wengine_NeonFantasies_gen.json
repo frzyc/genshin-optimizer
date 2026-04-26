@@ -1,0 +1,20 @@
+{
+  "name": "Neon Fantasies",
+  "desc": {
+    "0": "The neon disco light's misty shimmer intertwined with a playful angel's delusions, twisting into colors too blurred to name. Like every desire that can turn fatal, unpredictable and dangerous, yet no one could quite bring themselves to refuse.",
+    "1": "",
+    "2": "Even seeing through the obsession behind the delusion wasn't enough to resist the temptation of sinking into it.",
+    "3": "",
+    "4": "\"If you say it looks like an octopus sausage, I'll turn you into one.\" — The captain of the Angels of Delusion, eyes blazing as she glares at a certain squad member."
+  },
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "A risky and unpredictable delusion that's impossible to refuse.",
+  "phase": "Disco Demon",
+  "phaseDescs": [
+    "The equipper's Anomaly Proficiency increases by <ct color=#2BAD00>90</ct>. When the equipper's <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Basic Attack</ct> deals <ct color=#FE437E>Ether DMG</ct>, all squad members' DMG dealt increases by <ct color=#2BAD00>15%</ct> for 40s, stacking up to 2 times. This effect can trigger once per use of a skill and repeated triggers reset the duration. With 2 stacks, the equipper's Anomaly Proficiency increases by an additional <ct color=#2BAD00>60</ct>. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Anomaly Proficiency increases by <ct color=#2BAD00>103</ct>. When the equipper's <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Basic Attack</ct> deals <ct color=#FE437E>Ether DMG</ct>, all squad members' DMG dealt increases by <ct color=#2BAD00>17%</ct> for 40s, stacking up to 2 times. This effect can trigger once per use of a skill and repeated triggers reset the duration. With 2 stacks, the equipper's Anomaly Proficiency increases by an additional <ct color=#2BAD00>69</ct>. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Anomaly Proficiency increases by <ct color=#2BAD00>117</ct>. When the equipper's <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Basic Attack</ct> deals <ct color=#FE437E>Ether DMG</ct>, all squad members' DMG dealt increases by <ct color=#2BAD00>19.5%</ct> for 40s, stacking up to 2 times. This effect can trigger once per use of a skill and repeated triggers reset the duration. With 2 stacks, the equipper's Anomaly Proficiency increases by an additional <ct color=#2BAD00>78</ct>. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Anomaly Proficiency increases by <ct color=#2BAD00>130</ct>. When the equipper's <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Basic Attack</ct> deals <ct color=#FE437E>Ether DMG</ct>, all squad members' DMG dealt increases by <ct color=#2BAD00>21%</ct> for 40s, stacking up to 2 times. This effect can trigger once per use of a skill and repeated triggers reset the duration. With 2 stacks, the equipper's Anomaly Proficiency increases by an additional <ct color=#2BAD00>87</ct>. Only one instance of this effect can exist in the same squad.",
+    "The equipper's Anomaly Proficiency increases by <ct color=#2BAD00>145</ct>. When the equipper's <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Basic Attack</ct> deals <ct color=#FE437E>Ether DMG</ct>, all squad members' DMG dealt increases by <ct color=#2BAD00>24%</ct> for 40s, stacking up to 2 times. This effect can trigger once per use of a skill and repeated triggers reset the duration. With 2 stacks, the equipper's Anomaly Proficiency increases by an additional <ct color=#2BAD00>96</ct>. Only one instance of this effect can exist in the same squad."
+  ]
+}

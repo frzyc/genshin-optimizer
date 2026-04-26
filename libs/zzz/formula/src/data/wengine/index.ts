@@ -42,6 +42,7 @@ import MagneticStormCharlie from './sheets/MagneticStormCharlie'
 import MarcatoDesire from './sheets/MarcatoDesire'
 import Metanukimorphosis from './sheets/Metanukimorphosis'
 import MyriadEclipse from './sheets/MyriadEclipse'
+import NeonFantasies from './sheets/NeonFantasies'
 import OriginalTransmorpher from './sheets/OriginalTransmorpher'
 import PeacekeeperSpecialized from './sheets/PeacekeeperSpecialized'
 import PracticedPerfection from './sheets/PracticedPerfection'
@@ -57,6 +58,7 @@ import ReverbMarkIII from './sheets/ReverbMarkIII'
 import RiotSuppressorMarkVI from './sheets/RiotSuppressorMarkVI'
 import RoaringFurnace from './sheets/RoaringFurnace'
 import RoaringRide from './sheets/RoaringRide'
+import SerpentineSeeker from './sheets/SerpentineSeeker'
 import SeveredInnocence from './sheets/SeveredInnocence'
 import SharpenedStinger from './sheets/SharpenedStinger'
 import SixShooter from './sheets/SixShooter'
@@ -70,6 +72,7 @@ import SteelCushion from './sheets/SteelCushion'
 import StreetSuperstar from './sheets/StreetSuperstar'
 import TheBrimstone from './sheets/TheBrimstone'
 import TheRestrained from './sheets/TheRestrained'
+import TheSimmeringPot from './sheets/TheSimmeringPot'
 import TheVault from './sheets/TheVault'
 import Thoughtbop from './sheets/Thoughtbop'
 import Timeweaver from './sheets/Timeweaver'
@@ -128,6 +131,7 @@ const data: TagMapNodeEntries[] = [
   MarcatoDesire,
   Metanukimorphosis,
   MyriadEclipse,
+  NeonFantasies,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PracticedPerfection,
@@ -143,6 +147,7 @@ const data: TagMapNodeEntries[] = [
   RiotSuppressorMarkVI,
   RoaringFurnace,
   RoaringRide,
+  SerpentineSeeker,
   SeveredInnocence,
   SharpenedStinger,
   SixShooter,
@@ -156,6 +161,7 @@ const data: TagMapNodeEntries[] = [
   StreetSuperstar,
   TheBrimstone,
   TheRestrained,
+  TheSimmeringPot,
   TheVault,
   Thoughtbop,
   Timeweaver,
