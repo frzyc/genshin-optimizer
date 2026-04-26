@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "physical",
   "specialty": "support",
+  "faction": "AngelsOfDelusion",
   "stats": {
     "atk_base": 108,
     "atk_growth": 6.3517,

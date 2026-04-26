@@ -10,6 +10,7 @@ export const allCharacterKeys = [
   'Billy',
   'Burnice',
   'Caesar',
+  'Cissia',
   'Corin',
   'Dialyn',
   'Ellen',
@@ -26,6 +27,7 @@ export const allCharacterKeys = [
   'Lycaon',
   'Manato',
   'Miyabi',
+  'NangongYu',
   'Nekomata',
   'Nicole',
   'OrphieMagus',
@@ -79,6 +81,7 @@ export const allFactionKeys = [
   'YunkuiSummit',
   'SpookShack',
   'KrampusComplianceAuthority',
+  'AngelsOfDelusion',
 ] as const
 export type FactionKey = (typeof allFactionKeys)[number]
 

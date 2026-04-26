@@ -41,6 +41,7 @@ import MagneticStormCharlie from './MagneticStormCharlie'
 import MarcatoDesire from './MarcatoDesire'
 import Metanukimorphosis from './Metanukimorphosis'
 import MyriadEclipse from './MyriadEclipse'
+import NeonFantasies from './NeonFantasies'
 import OriginalTransmorpher from './OriginalTransmorpher'
 import PeacekeeperSpecialized from './PeacekeeperSpecialized'
 import PracticedPerfection from './PracticedPerfection'
@@ -56,6 +57,7 @@ import ReverbMarkIII from './ReverbMarkIII'
 import RiotSuppressorMarkVI from './RiotSuppressorMarkVI'
 import RoaringFurnace from './RoaringFurnace'
 import RoaringRide from './RoaringRide'
+import SerpentineSeeker from './SerpentineSeeker'
 import SeveredInnocence from './SeveredInnocence'
 import SharpenedStinger from './SharpenedStinger'
 import SixShooter from './SixShooter'
@@ -69,6 +71,7 @@ import SteelCushion from './SteelCushion'
 import StreetSuperstar from './StreetSuperstar'
 import TheBrimstone from './TheBrimstone'
 import TheRestrained from './TheRestrained'
+import TheSimmeringPot from './TheSimmeringPot'
 import TheVault from './TheVault'
 import Thoughtbop from './Thoughtbop'
 import Timeweaver from './Timeweaver'
@@ -127,6 +130,7 @@ const data = {
   MarcatoDesire,
   Metanukimorphosis,
   MyriadEclipse,
+  NeonFantasies,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PracticedPerfection,
@@ -142,6 +146,7 @@ const data = {
   RiotSuppressorMarkVI,
   RoaringFurnace,
   RoaringRide,
+  SerpentineSeeker,
   SeveredInnocence,
   SharpenedStinger,
   SixShooter,
@@ -155,6 +160,7 @@ const data = {
   StreetSuperstar,
   TheBrimstone,
   TheRestrained,
+  TheSimmeringPot,
   TheVault,
   Thoughtbop,
   Timeweaver,

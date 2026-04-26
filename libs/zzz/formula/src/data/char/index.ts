@@ -10,6 +10,7 @@ import Ben from './sheets/Ben'
 import Billy from './sheets/Billy'
 import Burnice from './sheets/Burnice'
 import Caesar from './sheets/Caesar'
+import Cissia from './sheets/Cissia'
 import Corin from './sheets/Corin'
 import Dialyn from './sheets/Dialyn'
 import Ellen from './sheets/Ellen'
@@ -26,6 +27,7 @@ import Lucy from './sheets/Lucy'
 import Lycaon from './sheets/Lycaon'
 import Manato from './sheets/Manato'
 import Miyabi from './sheets/Miyabi'
+import NangongYu from './sheets/NangongYu'
 import Nekomata from './sheets/Nekomata'
 import Nicole from './sheets/Nicole'
 import OrphieMagus from './sheets/OrphieMagus'
@@ -61,6 +63,7 @@ const data: TagMapNodeEntries[] = [
   Billy,
   Burnice,
   Caesar,
+  Cissia,
   Corin,
   Dialyn,
   Ellen,
@@ -77,6 +80,7 @@ const data: TagMapNodeEntries[] = [
   Lycaon,
   Manato,
   Miyabi,
+  NangongYu,
   Nekomata,
   Nicole,
   OrphieMagus,
