@@ -22711,6 +22711,7 @@
       "rarity": "S",
       "attribute": "physical",
       "specialty": "support",
+      "faction": "AngelsOfDelusion",
       "stats": {
         "atk_base": 108,
         "atk_growth": 6.3517,
@@ -23167,6 +23168,7 @@
       "rarity": "S",
       "attribute": "ether",
       "specialty": "anomaly",
+      "faction": "AngelsOfDelusion",
       "stats": {
         "atk_base": 124,
         "atk_growth": 7.4992,
@@ -23663,6 +23665,7 @@
       "rarity": "S",
       "attribute": "ether",
       "specialty": "stun",
+      "faction": "AngelsOfDelusion",
       "stats": {
         "atk_base": 107,
         "atk_growth": 6.3136,

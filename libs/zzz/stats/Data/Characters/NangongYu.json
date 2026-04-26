@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "ether",
   "specialty": "stun",
+  "faction": "AngelsOfDelusion",
   "stats": {
     "atk_base": 107,
     "atk_growth": 6.3136,
