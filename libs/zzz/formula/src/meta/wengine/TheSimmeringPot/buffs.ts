@@ -1,36 +1,25 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  cond_dazeInc_: {
     sheet: 'TheSimmeringPot',
-    name: 'cond_dmg_',
+    name: 'cond_dazeInc_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dazeInc_',
+      sheet: 'TheSimmeringPot',
+      name: 'cond_dazeInc_',
+    },
+  },
+  cond_common_dmg_: {
+    sheet: 'TheSimmeringPot',
+    name: 'cond_common_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
       q: 'common_dmg_',
       sheet: 'TheSimmeringPot',
-      name: 'cond_dmg_',
-    },
-  },
-  team_dmg_: {
-    sheet: 'TheSimmeringPot',
-    name: 'team_dmg_',
-    tag: {
-      et: 'display',
-      qt: 'combat',
-      q: 'common_dmg_',
-      sheet: 'TheSimmeringPot',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'TheSimmeringPot',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'TheSimmeringPot',
-      name: 'enemy_defIgn_',
+      name: 'cond_common_dmg_',
     },
   },
 } as const

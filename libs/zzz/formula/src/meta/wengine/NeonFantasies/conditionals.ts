@@ -1,19 +1,8 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: {
+  ether_exSpecial_basic: {
     sheet: 'NeonFantasies',
-    name: 'boolConditional',
-    type: 'bool',
-  },
-  listConditional: {
-    sheet: 'NeonFantasies',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'NeonFantasies',
-    name: 'numConditional',
+    name: 'ether_exSpecial_basic',
     type: 'num',
     int_only: true,
     min: 0,

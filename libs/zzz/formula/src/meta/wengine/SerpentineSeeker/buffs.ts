@@ -1,36 +1,26 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  passive_crit_: {
     sheet: 'SerpentineSeeker',
-    name: 'cond_dmg_',
+    name: 'passive_crit_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'crit_',
       sheet: 'SerpentineSeeker',
-      name: 'cond_dmg_',
+      name: 'passive_crit_',
     },
   },
-  team_dmg_: {
+  cond_electric_defIgn_: {
     sheet: 'SerpentineSeeker',
-    name: 'team_dmg_',
+    name: 'cond_electric_defIgn_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'defIgn_',
       sheet: 'SerpentineSeeker',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'SerpentineSeeker',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'SerpentineSeeker',
-      name: 'enemy_defIgn_',
+      attribute: 'electric',
+      name: 'cond_electric_defIgn_',
     },
   },
 } as const

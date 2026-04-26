@@ -3,14 +3,10 @@ import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
   own,
   ownBuff,
   percent,
   registerBuff,
-  teamBuff,
 } from '../../util'
 import {
   cmpSpecialtyAndEquipped,
@@ -23,39 +19,31 @@ const key: WengineKey = 'TheSimmeringPot'
 const dm = mappedStats.wengine[key]
 const { phase } = own.wengine
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { assistFollowUp } = allBoolConditionals(key)
 
 const sheet = registerWengine(
   key,
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
-  // TODO: Add formulas/buffs
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.combat.common_dmg_.add(
+    'cond_dazeInc_',
+    ownBuff.combat.dazeInc_.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(percent(subscript(phase, dm.cond_dmg_)))
+        assistFollowUp.ifOn(percent(subscript(phase, dm.dazeInc_)))
       )
     ),
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(
-      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
-    ),
-    showSpecialtyAndEquipped(key)
-  ),
-  registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(
-      cmpSpecialtyAndEquipped(key, numConditional)
+    'cond_common_dmg_',
+    ownBuff.combat.common_dmg_.add(
+      cmpSpecialtyAndEquipped(
+        key,
+        assistFollowUp.ifOn(percent(subscript(phase, dm.common_dmg_)))
+      )
     ),
     showSpecialtyAndEquipped(key)
   )
