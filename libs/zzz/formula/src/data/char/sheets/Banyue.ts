@@ -162,13 +162,17 @@ const sheet = register(
   registerBuff(
     'core_fire_dmg_',
     ownBuff.combat.dmg_.fire.add(
-      exSpecialFollowUpUsed.ifOn(percent(subscript(char.core, dm.core.fire_dmg_)))
+      exSpecialFollowUpUsed.ifOn(
+        percent(subscript(char.core, dm.core.fire_dmg_))
+      )
     )
   ),
   registerBuff(
     'core_crit_dmg_',
     ownBuff.combat.crit_dmg_.add(
-      exSpecialFollowUpUsed.ifOn(percent(subscript(char.core, dm.core.crit_dmg_)))
+      exSpecialFollowUpUsed.ifOn(
+        percent(subscript(char.core, dm.core.crit_dmg_))
+      )
     )
   ),
   registerBuff(
