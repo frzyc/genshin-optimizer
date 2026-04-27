@@ -49,7 +49,7 @@
       ],
       "2": "<br/>",
       "3": "<strong>Electrolanza del Reino del Norte</strong>",
-      "4": "Flins invoca frente a sí mismo una ráfaga de lanzas que inflige <electro>Daño Electro en el AdE</electro>, y que convierte durante 6 s su Habilidad Definitiva, <strong>Rito arcaico: Visita noctívaga</strong>, en la Habilidad Definitiva especial <strong>Sinfonía del trueno</strong>.",
+      "4": "Flins invoca frente a sí mismo una ráfaga de lanzas que inflige <electro>Daño Electro en el AdE</electro>, y que convierte durante 6 s su Habilidad Definitiva, <strong>Rito arcaico: Visita noctívaga</strong>, en la Habilidad Definitiva especial <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Sinfonía del trueno</strong></tooltip>.",
       "5": "El TdE base de <strong>Electrolanza del Reino del Norte</strong> es de 6 s, y no puede ser afectado por otros efectos."
     },
     "skillParams": {
@@ -152,7 +152,7 @@
   "constellation3": {
     "name": "Extraños en la noche",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Rito arcaico: Visita noctívaga</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <tooltip ns=char_Flins_gen baseKey18=burst><strong>Rito arcaico: Visita noctívaga</strong></tooltip> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
@@ -160,20 +160,20 @@
     "name": "Una noche en el Monte Pelado",
     "description": {
       "0": "El ATQ de Flins aumenta en un 20%.",
-      "1": "Además, fortalece el talento de ascensión <strong>Susurro de las llamas</strong>, de manera que la Maestría Elemental de Flins aumenta en una cantidad equivalente al 10% de su ATQ. La Maestría Elemental solo puede aumentar en un máximo de 220 pts. de esta manera."
+      "1": "Además, fortalece el talento de ascensión <tooltip ns=char_Flins_gen baseKey18=passive2><strong>Susurro de las llamas</strong></tooltip>, de manera que la Maestría Elemental de Flins aumenta en una cantidad equivalente al 10% de su ATQ. La Maestría Elemental solo puede aumentar en un máximo de 220 pts. de esta manera."
     }
   },
   "constellation5": {
     "name": "La sombra exiliada",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Ley ancestral: Luz arcana</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <tooltip ns=char_Flins_gen baseKey18=skill><strong>Ley ancestral: Luz arcana</strong></tooltip> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
     "name": "Cantos y danzas de la muerte",
     "description": {
-      "0": "El daño que inflige Flins a los enemigos con la reacción de Electrocargado Lunar <strong>asciende</strong> en un 35%.",
+      "0": "El daño que inflige Flins a los enemigos con la reacción de Electrocargado Lunar <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 35%.",
       "1": "<strong>Presagio lunar: resplandor ascendente</strong>",
       "2": "El daño que infligen todos los personajes cercanos del equipo a los enemigos con la reacción de Electrocargado Lunar <strong>asciende</strong> en un 10%."
     }

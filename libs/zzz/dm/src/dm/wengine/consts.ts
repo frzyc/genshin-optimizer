@@ -37,6 +37,7 @@ export const WengineIdMap = {
   '13015': 'MarcatoDesire',
   '13016': 'ReelProjector',
   '13019': 'CauldronOfClarity',
+  '13020': 'TheSimmeringPot',
   '13101': 'DemaraBatteryMarkII',
   '13103': 'TheVault',
   '13106': 'Housekeeper',
@@ -87,6 +88,10 @@ export const WengineIdMap = {
   '14146': 'CordisGermina',
   '14147': 'WrathfulVajra',
   '14148': 'YesterdayCalls',
+  '14149': 'Thoughtbop',
+  '14150': 'AngelInTheShell',
+  '14151': 'NeonFantasies',
+  '14152': 'SerpentineSeeker',
 } as const
 
 export const specialityMap: Record<number, SpecialityKey> = {
@@ -113,5 +118,6 @@ export const subStatMap = {
   'CRIT DMG': 'crit_dmg_',
   'Energy Regen': 'enerRegen_',
   'Anomaly Proficiency': 'anomProf',
+  'Anomaly Mastery': 'anomMas_',
   'PEN Ratio': 'pen_',
 } as const

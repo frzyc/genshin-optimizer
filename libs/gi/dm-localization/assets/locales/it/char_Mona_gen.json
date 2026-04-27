@@ -160,20 +160,14 @@
     "description": {
       "0": "Quando un membro del tuo gruppo colpisce un avversario sotto l'effetto di un Presagio, gli effetti delle <hydro>reazioni elementali di Hydro</hydro> vengono potenziati per 8 s.",
       "1": [
-        " I DAN da Electrocarica aumentano di un 15%.",
-        " I DAN da Carica lunare aumentano di un 15%.",
-        " I DAN da Vaporizzazione aumentano di un 15%.",
-        " I DAN da Turbinio di Hydro aumentano di un 15%.",
+        " I DAN da Electrocarica, Carica lunare, Vaporizzazione, Turbinio di Hydro e Cristallizzazione lunare aumentano di un 15%.",
         " La durata di Congelamento si estende di un 15%."
       ]
     },
     "upgradedDescription": {
       "0": "Quando un membro del tuo gruppo colpisce un avversario sotto l'effetto di un Presagio, gli effetti delle <hydro>reazioni elementali di Hydro</hydro> vengono potenziati per 8 s.",
       "1": [
-        " I DAN da Electrocarica aumentano di un 15%.",
-        " I DAN da Carica lunare aumentano di un 15%.",
-        " I DAN da Vaporizzazione aumentano di un 15%.",
-        " I DAN da Turbinio di Hydro aumentano di un 15%.",
+        " I DAN da Electrocarica, Carica lunare, Vaporizzazione, Turbinio di Hydro e Cristallizzazione lunare aumentano di un 15%.",
         " La durata di Congelamento si estende di un 15%."
       ],
       "2": "<br/>",

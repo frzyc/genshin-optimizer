@@ -56,6 +56,10 @@ export const characterIdMap = {
   '1461': 'Seed',
   '1471': 'Banyue',
   '1481': 'Dialyn',
+  '1491': 'Sunna',
+  '1501': 'Aria',
+  '1511': 'NangongYu',
+  '1521': 'Cissia',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {
@@ -87,6 +91,7 @@ export const factionMap: Record<number, FactionKey> = {
   10: 'YunkuiSummit',
   11: 'SpookShack',
   12: 'KrampusComplianceAuthority',
+  13: 'AngelsOfDelusion',
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {
@@ -96,6 +101,7 @@ export const characterRarityMap: Record<number, CharacterRarityKey> = {
 
 export const coreStatMap: Record<string, StatKey> = {
   'Base ATK': 'atk',
+  ATK: 'atk',
   Impact: 'impact',
   'CRIT Rate': 'crit_',
   'CRIT DMG': 'crit_dmg_',

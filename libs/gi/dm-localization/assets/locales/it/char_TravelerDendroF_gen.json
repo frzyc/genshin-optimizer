@@ -110,6 +110,20 @@
       "0": "Ogni punto di maestria elementale posseduto da{F#lla}{M#l} viaggiat{F#rice}{M#ore} aumenta i DAN inflitti da <strong>Foglialama affilata</strong> di uno 0,15% e i danni inflitti da <strong>Manifestazione silvestre</strong> dello 0,1%."
     }
   },
+  "lockedPassive": {
+    "name": "Verdeluce straniera",
+    "description": {
+      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effetti positivi aggiuntivi</strong></tooltip> per ogni elemento con cui hai risuonato.",
+      "1": "<br/>",
+      "2": "Inoltre, quando i nuclei di Dendro (inclusi Nuclei munifici e Semi dell'inganno) appaiono nelle vicinanze o quando il gruppo ottiene Rugiada verdeggiante, {F#la viaggiatrice}{M#il viaggiatore} ottiene 1 accumulo di Lama della Prosperità virente. Ciascuno di questi due metodi può fornire non più di 1 accumulo ogni 4 s, fino a un massimo di 3 accumuli. Dopo aver raggiunto il numero massimo di accumuli, sferrare un attacco caricato li consuma tutti e trasforma l'attacco in un <strong>Attacco caricato: Verdessenza</strong> speciale.",
+      "3": "<br/>",
+      "4": "<strong>Attacco caricato: Verdessenza</strong>",
+      "5": [
+        " Ogni colpo di attacco caricato infligge <dendro>DAN da Dendro</dendro> aumentati. L'aumento dei DAN è pari a un 80% dell'ATT {F#della viaggiatrice}{M#del viaggiatore}. In più, vengono generati 2 <strong>Nuclei rampicanti</strong> sul posto, che esplodono rispettivamente dopo 4 e 8 s, infliggendo <dendro>DAN da Dendro</dendro> pari a un 120% dell'ATT {F#della viaggiatrice}{M#del viaggiatore}. Tali DAN sono considerati DAN da attacco caricato.",
+        " È possibile scatenare <strong>Attacco caricato: Verdessenza</strong> una volta ogni 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Parassita rampicante",
     "description": {

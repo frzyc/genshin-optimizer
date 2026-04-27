@@ -107,7 +107,7 @@
   "passive1": {
     "name": "Herdeiro do Antigo Legado do Mar",
     "description": {
-      "0": "Quando um personagem da equipe desencadeia as Reações de Vaporização, Congelamento, Eletricamente Carregado, Carga Lunar, Florescimento, Florescimento Lunar, Redemoinho Hydro ou Reação de Cristalização Hydro, gerará 1 acúmulo do efeito \"Glória do Dragão\" para Neuvillette por 30s. É possível gerar até 3 acúmulos dessa forma. Assim, o Dano do Ataque Carregado: Justiça Igual aumenta em 110%/125%/160%.",
+      "0": "Quando um personagem da equipe desencadeia as Reações de Vaporização, Congelamento, Eletricamente Carregado, Carga Lunar, Florescimento, Florescimento Lunar, Redemoinho Hydro, Reação de Cristalização Hydro ou Cristalização Lunar em inimigos, gerará 1 acúmulo do efeito \"Glória do Dragão\" para Neuvillette por 30s. É possível gerar até 3 acúmulos dessa forma. Assim, o Dano do Ataque Carregado: Justiça Igual aumenta em 110%/125%/160%.",
       "1": "Os acúmulos de \"Glória do Dragão\" gerados por cada tipo de Reação Elemental são contados de forma independente."
     }
   },

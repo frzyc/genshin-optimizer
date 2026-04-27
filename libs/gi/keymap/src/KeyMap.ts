@@ -126,6 +126,7 @@ export const allEleEnemyResKeys = allElementWithPhyKeys.map(
   (e) => `${e}_enemyRes_`
 ) as EleEnemyResKey[]
 
+type EleECritRateKey = `${ElementWithPhyKey}_critRate_`
 type EleECritDmgKey = `${ElementWithPhyKey}_critDMG_`
 
 Object.entries(elementalData).forEach(([e, { name }]) => {
@@ -134,6 +135,7 @@ Object.entries(elementalData).forEach(([e, { name }]) => {
 
   statMap[`${e}_enemyRes_`] = `Enemy ${name} DMG RES`
   statMap[`${e}_dmgInc`] = `${name} DMG Increase`
+  statMap[`${e}_critRate_`] = `${name} CRIT Rate Bonus`
   statMap[`${e}_critDMG_`] = `${name} CRIT DMG Bonus`
 })
 
@@ -142,6 +144,7 @@ type ElementExtKey =
   | EleResKey
   | EleEnemyResKey
   | EleDmgIncKey
+  | EleECritRateKey
   | EleECritDmgKey
 
 /* Hit move extension keys */
@@ -182,7 +185,8 @@ type NonSwirlReactionHitKey = `${
   | 'bloom'
   | 'lunarbloom'
   | 'burgeon'
-  | 'hyperbloom'}_hit`
+  | 'hyperbloom'
+  | 'lunarcrystallize'}_hit`
 type NonSwirlReactionMultiKey = `${keyof typeof transformativeReactions}_multi_`
 type TransformativeReactions =
   | SwirlReactionKey
@@ -199,11 +203,17 @@ Object.entries(transformativeReactions).forEach(([reaction, { name }]) => {
 
 type LunarReactionsBaseDmgKey = `${LunarReactionKey}_baseDmg_`
 type LunarReactionsSpecialDmgKey = `${LunarReactionKey}_specialDmg_`
+type LunarReactionsReactionDmgIncKey = `${LunarReactionKey}_reactionDmgInc`
+type LunarReactionsDirectDmgIncKey = `${LunarReactionKey}_directDmgInc`
 allLunarReactionKeys.forEach((lr) => {
   statMap[`${lr}_baseDmg_`] =
     `${transformativeReactions[lr].name} Base DMG Multiplier`
   statMap[`${lr}_specialDmg_`] =
     `${transformativeReactions[lr].name} Special DMG Bonus`
+  statMap[`${lr}_reactionDmgInc`] =
+    `${transformativeReactions[lr].name} Reaction DMG Increase`
+  statMap[`${lr}_directDmgInc`] =
+    `${transformativeReactions[lr].name} Direct DMG Increase`
 })
 
 type TransformativeReactionsCritRateKey =
@@ -253,6 +263,8 @@ export type StatKey =
   | TransformativeReactionsCritDMGKey
   | LunarReactionsBaseDmgKey
   | LunarReactionsSpecialDmgKey
+  | LunarReactionsReactionDmgIncKey
+  | LunarReactionsDirectDmgIncKey
   | CrystallizeKey
   | AmplifyingReactionsDmgKey
   | AmplifyingReactionsMultiKey

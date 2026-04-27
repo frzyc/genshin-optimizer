@@ -1,5 +1,4 @@
-import type { AscensionKey } from './character'
-import type { RarityKey } from './common'
+import { type AscensionKey, type RarityKey, validateLevelAsc } from './common'
 
 export const allWeaponTypeKeys = [
   'sword',
@@ -34,6 +33,7 @@ export const allWeaponSwordKeys = [
   'IronSting',
   'KagotsurubeIsshin',
   'KeyOfKhajNisut',
+  'LightbearingMoonshard',
   'LightOfFoliarIncision',
   'LionsRoar',
   'MistsplitterReforged',
@@ -79,6 +79,7 @@ export const allWeaponClaymoreKeys = [
   'FlameForgedInsight',
   'ForestRegalia',
   'FruitfulHook',
+  'GestOfTheMightyWolf',
   'KatsuragikiriNagamasa',
   'LithicBlade',
   'LuxuriousSeaLord',
@@ -168,6 +169,7 @@ export const allWeaponBowKeys = [
   'FadingTwilight',
   'FavoniusWarbow',
   'FlowerWreathedFeathers',
+  'GoldenFrostboundOath',
   'Hamayumi',
   'HuntersBow',
   'HuntersPath',
@@ -231,6 +233,7 @@ export const allWeaponCatalystKeys = [
   'MappaMare',
   'MemoryOfDust',
   'NightweaversLookingGlass',
+  'NocturnesCurtainCall',
   'OathswornEye',
   'OtherworldlyStory',
   'PocketGrimoire',
@@ -302,3 +305,13 @@ export const allWeaponSubstatKeys = [
   'physical_dmg_',
 ] as const
 export type WeaponSubstatKey = (typeof allWeaponSubstatKeys)[number]
+
+// Weapon global max level constant
+const weaponGlobalMaxLevel = 90
+
+export function validateWeaponLevelAsc(
+  level: number,
+  ascension: AscensionKey
+): { level: number; ascension: AscensionKey } {
+  return validateLevelAsc(level, ascension, weaponGlobalMaxLevel)
+}

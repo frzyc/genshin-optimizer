@@ -26,11 +26,11 @@ import {
   allAttributeKeys,
   allCharacterKeys,
   allSpecialityKeys,
+  milestoneMaxLevel,
 } from '@genshin-optimizer/zzz/consts'
 import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
-import { milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
 import { Block } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
 import {
@@ -112,7 +112,7 @@ export function CharacterSingleSelectionModal({
       setSearchTerm(e.target.value)
     },
     onChangeSort: (sortType: CharacterSortKey) => {
-      database.displayCharacter.set({ sortType })
+      if (sortType !== 'new') database.displayCharacter.set({ sortType })
     },
     onChangeAsc: (ascending: boolean) => {
       database.displayCharacter.set({ ascending })

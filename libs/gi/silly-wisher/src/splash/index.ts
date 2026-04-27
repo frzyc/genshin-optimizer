@@ -1,8 +1,10 @@
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import TravelerM from './splash_aether.png'
+import Aino from './splash_aino.png'
 import Albedo from './splash_albedo.png'
 import Alhaitham from './splash_alhaitham.png'
+import Aloy from './splash_aloy.png'
 import Amber from './splash_amber.png'
 import Arlecchino from './splash_arlecchino.png'
 import KamisatoAyaka from './splash_ayaka.png'
@@ -20,15 +22,20 @@ import Chongyun from './splash_chongyun.png'
 import Citlali from './splash_citlali.png'
 import Clorinde from './splash_clorinde.png'
 import Collei from './splash_collei.png'
+import Columbina from './splash_columbina.png'
 import Cyno from './splash_cyno.png'
+import Dahlia from './splash_dahlia.png'
 import Dehya from './splash_dehya.png'
 import Diluc from './splash_diluc.png'
 import Diona from './splash_diona.png'
 import Dori from './splash_dori.png'
+import Durin from './splash_durin.png'
 import Emilie from './splash_emilie.png'
+import Escoffier from './splash_escoffier.png'
 import Eula from './splash_eula.png'
 import Faruzan from './splash_faruzan.png'
 import Fischl from './splash_fischl.png'
+import Flins from './splash_flins.png'
 import Freminet from './splash_freminet.png'
 import Furina from './splash_furina.png'
 import Gaming from './splash_gaming.png'
@@ -36,7 +43,12 @@ import Ganyu from './splash_ganyu.png'
 import Gorou from './splash_gorou.png'
 import ShikanoinHeizou from './splash_heizou.png'
 import HuTao from './splash_hutao.png'
+import Iansan from './splash_iansan.png'
+import Ifa from './splash_ifa.png'
+import Illuga from './splash_illuga.png'
+import Ineffa from './splash_ineffa.png'
 import AratakiItto from './splash_itto.png'
+import Jahoda from './splash_jahoda.png'
 import Jean from './splash_jean.png'
 import Kachina from './splash_kachina.png'
 import Kaeya from './splash_kaeya.png'
@@ -49,6 +61,7 @@ import Klee from './splash_klee.png'
 import SangonomiyaKokomi from './splash_kokomi.png'
 import KukiShinobu from './splash_kuki.png'
 import LanYan from './splash_lanyan.png'
+import Lauma from './splash_lauma.png'
 import Layla from './splash_layla.png'
 import Lisa from './splash_lisa.png'
 import TravelerF from './splash_lumine.png'
@@ -60,6 +73,7 @@ import Mona from './splash_mona.png'
 import Mualani from './splash_mualani.png'
 import Nahida from './splash_nahida.png'
 import Navia from './splash_navia.png'
+import Nefer from './splash_nefer.png'
 import Neuvillette from './splash_neuvillette.png'
 import Nilou from './splash_nilou.png'
 import Ningguang from './splash_ningguang.png'
@@ -74,10 +88,13 @@ import Sayu from './splash_sayu.png'
 import Sethos from './splash_sethos.png'
 import Shenhe from './splash_shenhe.png'
 import Sigewinne from './splash_sigewinne.png'
+import Skirk from './splash_skirk.png'
 import Sucrose from './splash_sucrose.png'
 import Tartaglia from './splash_tartaglia.png'
 import Thoma from './splash_thoma.png'
 import Tighnari from './splash_tighnari.png'
+import Varesa from './splash_varesa.png'
+import Varka from './splash_varka.png'
 import Venti from './splash_venti.png'
 import Wanderer from './splash_wanderer.png'
 import Wriothesley from './splash_wriothesley.png'
@@ -92,12 +109,16 @@ import Yanfei from './splash_yanfei.png'
 import Yaoyao from './splash_yaoyao.png'
 import Yelan from './splash_yelan.png'
 import Yoimiya from './splash_yoimiya.png'
+import YumemizukiMizuki from './splash_yumemizuki.png'
 import YunJin from './splash_yunjin.png'
 import Zhongli from './splash_zhongli.png'
+import Zibai from './splash_zibai.png'
 
 const charCards = {
+  Aino,
   Albedo,
   Alhaitham,
+  Aloy,
   Amber,
   Arlecchino,
   AratakiItto,
@@ -114,28 +135,38 @@ const charCards = {
   Citlali,
   Clorinde,
   Collei,
+  Columbina,
   Cyno,
+  Dahlia,
   Dehya,
   Diluc,
   Diona,
   Dori,
+  Durin,
   Emilie,
+  Escoffier,
   Eula,
   Faruzan,
   Fischl,
+  Flins,
   Freminet,
   Furina,
   Ganyu,
   Gaming,
   Gorou,
   HuTao,
+  Iansan,
+  Ifa,
+  Illuga,
+  Ineffa,
+  Jahoda,
   Jean,
   Kachina,
   KaedeharaKazuha,
   Kaeya,
-  Kaveh,
   KamisatoAyaka,
   KamisatoAyato,
+  Kaveh,
   Keqing,
   Kinich,
   Kirara,
@@ -143,6 +174,7 @@ const charCards = {
   KujouSara,
   KukiShinobu,
   LanYan,
+  Lauma,
   Layla,
   Lisa,
   Lynette,
@@ -153,6 +185,7 @@ const charCards = {
   Mualani,
   Nahida,
   Navia,
+  Nefer,
   Neuvillette,
   Nilou,
   Ningguang,
@@ -168,12 +201,15 @@ const charCards = {
   Shenhe,
   ShikanoinHeizou,
   Sigewinne,
+  Skirk,
   Sucrose,
   Tartaglia,
   Thoma,
   Tighnari,
   TravelerF,
   TravelerM,
+  Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,
@@ -188,8 +224,10 @@ const charCards = {
   Yaoyao,
   Yelan,
   Yoimiya,
+  YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
 } as const
 
 export function splash(charKey: CharacterKey, gender: GenderKey) {

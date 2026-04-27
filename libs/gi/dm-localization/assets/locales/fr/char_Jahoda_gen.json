@@ -42,7 +42,7 @@
   "skill": {
     "name": "Stratégie astucieuse : Partage de butin",
     "description": {
-      "0": "Jahoda fonce en avant et entre dans l'état Poursuite d'ombre dès qu'elle touche un ennemi. Dans cet état, Jahoda se déplace rapidement et continuellement : si un ennemi à proximité est affecté par l'élément <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> ou <cryo>Cryo</cryo>, Jahoda harmonise discrètement sa <strong>flasque au trésor ronronnant</strong> en l'élément correspondant et la remplit progressivement. À la fin de la durée ou en utilisant à nouveau sa compétence, Jahoda vide la <strong>flasque au trésor ronronnant</strong> pour infliger une fois des <anemo>DGT Anémo</anemo> aux ennemis proches. Lorsque la <strong>flasque au trésor ronronnant</strong> est pleine, Jahoda la vide immédiatement<strong></strong>, mettant fin à sa poursuite d'ombre et infligeant une fois des <anemo>DGT Anémo</anemo> plus importants aux ennemis proches.",
+      "0": "Jahoda fonce en avant et entre dans l'état Poursuite d'ombre dès qu'elle touche un ennemi. Dans cet état, Jahoda se déplace rapidement et continuellement : si un ennemi à proximité est affecté par l'élément <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> ou <cryo>Cryo</cryo>, Jahoda harmonise discrètement sa <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>flasque au trésor ronronnant</strong></tooltip> en l'élément correspondant et la remplit progressivement. À la fin de la durée ou en utilisant à nouveau sa compétence, Jahoda vide la <strong>flasque au trésor ronronnant</strong> pour infliger une fois des <anemo>DGT Anémo</anemo> aux ennemis proches. Lorsque la <strong>flasque au trésor ronronnant</strong> est pleine, Jahoda la vide immédiatement<strong></strong>, mettant fin à sa poursuite d'ombre et infligeant une fois des <anemo>DGT Anémo</anemo> plus importants aux ennemis proches.",
       "1": "Si Jahoda ne touche aucun ennemi lorsqu'elle fonce en avant, elle laisse une bombe fumigène sur place pour infliger une fois des <anemo>DGT Anémo</anemo> aux ennemis proches.",
       "2": "<br/>",
       "3": "<strong>Signelune « Lueur ascendante »</strong> : lorsque la <strong>flasque au trésor ronronnant</strong> est pleine, Jahoda ne la vide pas immédiatement<strong></strong>, mais consomme progressivement l'énergie élémentaire stockée à l'intérieur pour tirer de façon intermittente des <strong>bouboules miaou</strong> sur les ennemis proches, infligeant des DGT de l'élément de la <strong>flasque au trésor ronronnant</strong>. Lorsqu'une <strong>bouboule miaou</strong> touche un ennemi, elle accorde également 2 pts d'énergie élémentaire à Jahoda, cet effet pouvant être déclenché une fois toutes les 3,5 s.",
@@ -71,7 +71,7 @@
   "burst": {
     "name": "Atout secret : Sept gadgets du chasseur",
     "description": {
-      "0": "Il est temps d'utiliser les babioles du fond ! Jahoda sort deux <strong>chatssistants coordinateurs personnels</strong> et inflige une fois des <anemo>DGT Anémo</anemo> aux ennemis proches.",
+      "0": "Il est temps d'utiliser les babioles du fond ! Jahoda sort deux <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>chatssistants coordinateurs personnels</strong></tooltip> et inflige une fois des <anemo>DGT Anémo</anemo> aux ennemis proches.",
       "1": "<br/>",
       "2": "<i>« La coordination mutuelle, hein ? Vous sortez les moras pour la coopération, et on s'occupe de la coordination. C'est logique, non ? »</i>"
     },
@@ -97,7 +97,7 @@
   "passive1": {
     "name": "Plan pour toucher sa récompense",
     "description": {
-      "0": "Si l'équipe contient au moins 1 personnage <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> ou <cryo>Cryo</cryo>, les <strong>chatssistants coordinateurs personnels</strong> du déchaînement élémentaire <strong>Atout secret : Sept gadgets du chasseur</strong> sont renforcés selon la quantité de personnages de chaque élément.",
+      "0": "Si l'équipe contient au moins 1 personnage <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> ou <cryo>Cryo</cryo>, les <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>chatssistants coordinateurs personnels</strong></tooltip> du déchaînement élémentaire <strong>Atout secret : Sept gadgets du chasseur</strong> sont renforcés selon la quantité de personnages de chaque élément.",
       "1": "Jahoda prend secrètement note de ces personnages, l'élément représenté par le plus grand nombre de personnages déterminant l'effet bonus :",
       "2": [
         " <pyro>Pyro</pyro> : les <strong>chatssistants coordinateurs personnels</strong> infligent 130 % des DGT d'origine.",
@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Récompense de baies sucrées",
     "description": {
-      "0": "Lorsqu'un <strong>chatssistant coordinateur personnel</strong> du déchaînement élémentaire <strong>Atout secret : Sept gadgets du chasseur</strong> soigne votre personnage déployé, la maîtrise élémentaire de ce dernier augmente de 100 pts pendant 6 s si ses PV sont supérieurs à 70 %."
+      "0": "Lorsqu'un <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>chatssistant coordinateur personnel</strong></tooltip> du déchaînement élémentaire <strong>Atout secret : Sept gadgets du chasseur</strong> soigne votre personnage déployé, la maîtrise élémentaire de ce dernier augmente de 100 pts pendant 6 s si ses PV sont supérieurs à 70 %."
     }
   },
   "passive3": {
@@ -130,39 +130,39 @@
   "constellation1": {
     "name": "Une autre flasque !",
     "description": {
-      "0": "Lorsqu'une <strong>bouboule miaou</strong> tirée par une <strong>flasque au trésor ronronnant</strong> de la compétence élémentaire <strong>Stratégie astucieuse : Partage de butin</strong> touche un ennemi, il y a 50 % de chances qu'elle rebondisse pour infliger des DGT de l'élément correspondant aux ennemis à proximité."
+      "0": "Lorsqu'une <strong>bouboule miaou</strong> tirée par une <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>flasque au trésor ronronnant</strong></tooltip> de la compétence élémentaire <strong>Stratégie astucieuse : Partage de butin</strong> touche un ennemi, il y a 50 % de chances qu'elle rebondisse pour infliger des DGT de l'élément correspondant aux ennemis à proximité."
     }
   },
   "constellation2": {
     "name": "Présence d'esprit du filou",
     "description": {
-      "0": "<strong>Signelune « Lueur ascendante »</strong> : Grâce à l'aptitude d'élévation <strong>Plan pour toucher sa récompense</strong>, Jahoda prend également secrètement note du second élément représenté par le plus grand nombre de personnages, en plus du premier élément représenté par le plus grand nombre de personnages, ce qui permet d'activer simultanément les effets bonus d'un maximum de deux éléments. L'aptitude d'élévation « Plan pour toucher sa récompense » doit être déjà débloquée."
+      "0": "<strong>Signelune « Lueur ascendante »</strong> : Grâce à l'aptitude d'élévation <tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>Plan pour toucher sa récompense</strong></tooltip>, Jahoda prend également secrètement note du second élément représenté par le plus grand nombre de personnages, en plus du premier élément représenté par le plus grand nombre de personnages, ce qui permet d'activer simultanément les effets bonus d'un maximum de deux éléments. L'aptitude d'élévation « Plan pour toucher sa récompense » doit être déjà débloquée."
     }
   },
   "constellation3": {
     "name": "Pari désespéré",
     "description": {
-      "0": "Niveau d'aptitude <strong>Atout secret : Sept gadgets du chasseur</strong> +3.",
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Jahoda_gen baseKey18=burst>Atout secret : Sept gadgets du chasseur</tooltip></strong> +3.",
       "1": "Niveau max : 15"
     }
   },
   "constellation4": {
     "name": "Baies sauvages dans la poussière",
     "description": {
-      "0": "Lorsqu'un <strong>chatssistant coordinateur personnel</strong> du déchaînement élémentaire <strong>Atout secret : Sept gadgets du chasseur</strong> subit une conversion élémentaire, Jahoda récupère 4 pts d'énergie élémentaire."
+      "0": "Lorsqu'un <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>chatssistant coordinateur personnel</strong></tooltip> du déchaînement élémentaire <strong>Atout secret : Sept gadgets du chasseur</strong> subit une conversion élémentaire, Jahoda récupère 4 pts d'énergie élémentaire."
     }
   },
   "constellation5": {
     "name": "Le plus grand trésor",
     "description": {
-      "0": "Niveau d'aptitude <strong>Stratégie astucieuse : Partage de butin</strong> +3.",
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Jahoda_gen baseKey18=skill>Stratégie astucieuse : Partage de butin</tooltip></strong> +3.",
       "1": "Niveau max : 15"
     }
   },
   "constellation6": {
     "name": "La chance la plus petite",
     "description": {
-      "0": "<strong>Signelune « Lueur ascendante »</strong> : Pendant 20 s après qu'une <strong>flasque au trésor ronronnant</strong> de la compétence élémentaire <strong>Stratégie astucieuse : Partage de butin</strong> se remplit complètement, le taux CRIT des personnages signelunaires à proximité augmente de 5 % et leurs DGT CRIT augmentent de 40 %."
+      "0": "<strong>Signelune « Lueur ascendante »</strong> : Pendant 20 s après qu'une <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>flasque au trésor ronronnant</strong></tooltip> de la compétence élémentaire <strong>Stratégie astucieuse : Partage de butin</strong> se remplit complètement, le taux CRIT des personnages signelunaires à proximité augmente de 5 % et leurs DGT CRIT augmentent de 40 %."
     }
   }
 }

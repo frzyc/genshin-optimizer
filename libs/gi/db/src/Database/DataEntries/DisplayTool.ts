@@ -1,4 +1,9 @@
+import {
+  zodBoolean,
+  zodEnumWithDefault,
+} from '@genshin-optimizer/common/database'
 import { HOUR_MS } from '@genshin-optimizer/common/util'
+import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 
@@ -9,20 +14,27 @@ export const timeZones = {
   Asia: 8 * HOUR_MS,
   'TW, HK, MO': 8 * HOUR_MS,
 }
+const timeZoneKeys = Object.keys(timeZones) as [TimeZoneKey, ...TimeZoneKey[]]
 export type TimeZoneKey = keyof typeof timeZones
 
-interface IDisplayToolEntry {
-  resin: number
-  resinDate: number
-  timeZoneKey: TimeZoneKey
-}
+const displayToolSchema = z.object({
+  resin: z
+    .number()
+    .int()
+    .min(0)
+    .catch(() => RESIN_MAX),
+  resinDate: z
+    .number()
+    .int()
+    .min(0)
+    .catch(() => Date.now()),
+  timeZoneKey: zodEnumWithDefault(timeZoneKeys, timeZoneKeys[0]),
+  tcMode: zodBoolean().optional(),
+})
+export type IDisplayToolEntry = z.infer<typeof displayToolSchema>
 
-function initialTabOptimize(): IDisplayToolEntry {
-  return {
-    resin: RESIN_MAX,
-    resinDate: new Date().getTime(),
-    timeZoneKey: Object.keys(timeZones)[0] as TimeZoneKey,
-  }
+function initialState(): IDisplayToolEntry {
+  return displayToolSchema.parse({})
 }
 
 export class DisplayToolEntry extends DataEntry<
@@ -32,21 +44,10 @@ export class DisplayToolEntry extends DataEntry<
   IDisplayToolEntry
 > {
   constructor(database: ArtCharDatabase) {
-    super(database, 'display_tool', initialTabOptimize, 'display_tool')
+    super(database, 'display_tool', initialState, 'display_tool')
   }
-  override validate(obj: any): IDisplayToolEntry | undefined {
-    if (typeof obj !== 'object') return undefined
-    let { timeZoneKey, resin, resinDate } = obj
-    if (!Object.keys(timeZones).includes(timeZoneKey))
-      timeZoneKey = Object.keys(timeZones)[0]
-    if (typeof resin !== 'number' || resin < 0 || !Number.isInteger(resin))
-      resin = RESIN_MAX
-    if (
-      typeof resinDate !== 'number' ||
-      resinDate < 0 ||
-      !Number.isInteger(resinDate)
-    )
-      resinDate = new Date().getTime()
-    return { timeZoneKey, resin, resinDate } as IDisplayToolEntry
+  override validate(obj: unknown): IDisplayToolEntry | undefined {
+    const result = displayToolSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
 }

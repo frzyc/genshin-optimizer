@@ -164,6 +164,20 @@
       "0": "After the current active character inside a <strong>Blazing Threshold</strong> or <strong>Scorching Threshold</strong> triggers a <pyro>Pyro-related reaction</pyro>, the Traveler will regain 5 Energy. This can occur once every 12s. Additionally, when a nearby party member triggers a Nightsoul Burst, the Traveler will regain 4 Energy."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Starfire",
+    "description": {
+      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>buffs</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Additionally, when nearby party members trigger Nightsoul Burst, Traveler will receive 1 stack of Blade of the Sacred Flame, max 2 stacks. After obtaining 2 stacks of Blade of the Sacred Flame, performing a Charged Attack will consume all stacks of Blade of the Sacred Flame and transform into a special <strong>Charged Attack: Inferno</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Inferno</strong>",
+      "5": [
+        " Each Charged Attack hit deals increased, Nightsoul-aligned <pyro>Pyro DMG</pyro>. Increase in DMG is equal to 200% of Traveler's ATK.",
+        " <strong>Charged Attack: Inferno</strong> can be triggered up to once every 15s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Starfire's Flowing Light",
     "description": {

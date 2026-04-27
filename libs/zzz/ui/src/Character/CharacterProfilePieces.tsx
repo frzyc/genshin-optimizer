@@ -8,11 +8,11 @@ import {
 import {
   type CharacterKey,
   type MilestoneKey,
+  getLevelString,
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/zzz/db'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
-import { getLevelString } from '@genshin-optimizer/zzz/util'
 import { Box, Chip, FormControlLabel, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { MindscapesSwitch, ZCard } from '../Components'

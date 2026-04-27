@@ -49,7 +49,7 @@
       ],
       "2": "<br/>",
       "3": "<strong>Lança Tempestuosa do Norte</strong>",
-      "4": "Flins invoca uma formação de lanças em sua frente, causando <electro>Dano Electro em AdE</electro> e, nos próximos 6s seguintes, substitui o Supremo de Flins <strong>Ritual Antigo: Visita Noturna</strong> pelo Supremo especial <strong>Sinfonia Trovejante</strong>.",
+      "4": "Flins invoca uma formação de lanças em sua frente, causando <electro>Dano Electro em AdE</electro> e, nos próximos 6s seguintes, substitui o Supremo de Flins <strong>Ritual Antigo: Visita Noturna</strong> pelo Supremo especial <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Sinfonia Trovejante</strong></tooltip>.",
       "5": "A recarga base de <strong>Lança Tempestuosa do Norte</strong> é de 6s, essa recarga não é afetada por outros efeitos."
     },
     "skillParams": {
@@ -147,7 +147,7 @@
   "constellation3": {
     "name": "Visita Noturna do Forasteiro",
     "description": {
-      "0": "Aumenta o nível do Supremo <strong>Ritual Antigo: Visita Noturna</strong> em 3.",
+      "0": "Aumenta o nível do Supremo <tooltip ns=char_Flins_gen baseKey18=burst><strong>Ritual Antigo: Visita Noturna</tooltip></strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },
@@ -155,20 +155,20 @@
     "name": "Noite das Montanhas Desertas",
     "description": {
       "0": "Aumenta o ATQ de Flins em 20%.",
-      "1": "Além disso, fortalece o Talento de Ascensão <strong>Murmúrios Flamejantes</strong>: aumenta a Proficiência Elemental de Flins, o valor do aumento é equivalente a 10% do ATQ de Flins. É possível aumentar a Proficiência Elemental de Flins em até 220 dessa forma."
+      "1": "Além disso, fortalece o Talento de Ascensão <tooltip ns=char_Flins_gen baseKey18=passive2><strong>Murmúrios Flamejantes</strong></tooltip>: aumenta a Proficiência Elemental de Flins, o valor do aumento é equivalente a 10% do ATQ de Flins. É possível aumentar a Proficiência Elemental de Flins em até 220 dessa forma."
     }
   },
   "constellation5": {
     "name": "Sombra do Exílio",
     "description": {
-      "0": "Aumenta o nível da Habilidade Elemental <strong>Lei Antiga: Segredo da Lanterna Solitária</strong> em 3 níveis. ",
+      "0": "Aumenta o nível da Habilidade Elemental <tooltip ns=char_Flins_gen baseKey18=skill><strong>Lei Antiga: Segredo da Lanterna Solitária</tooltip></strong> em 3 níveis. ",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation6": {
     "name": "Canções e Danças da Morte",
     "description": {
-      "0": "Aumenta o Dano causado por Carga Lunar de <strong>Elevação</strong> de Flins contra os inimigos em 35%.",
+      "0": "Aumenta o Dano causado por Carga Lunar de <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Elevação</strong></tooltip> de Flins contra os inimigos em 35%.",
       "1": "<strong>Presságio Lunar: Reluzir Cheio</strong>: aumenta o Dano de Carga Lunar de <strong>Elevação</strong> de todos os membros próximos da equipe em 10%."
     }
   }

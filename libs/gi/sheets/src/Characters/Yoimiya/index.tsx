@@ -438,8 +438,6 @@ const sheet: TalentSheet = {
   passive2: ct.talentTem('passive2', [
     ct.condTem('passive2', {
       teamBuff: true,
-      // Hide for Yoimiya
-      canShow: unequal(input.activeCharKey, key, 1),
       path: condBurstPath,
       value: condBurst,
       name: st('afterUse.burst'),
@@ -460,11 +458,7 @@ const sheet: TalentSheet = {
     }),
     ct.condTem('passive1', {
       // Conditional from P1 for team buff display when P2 is activated
-      canShow: unequal(
-        input.activeCharKey,
-        key,
-        equal(condBurst, 'on', greaterEq(input.asc, 4, 1))
-      ),
+      canShow: equal(condBurst, 'on', greaterEq(input.asc, 4, 1)),
       teamBuff: true,
       value: condA1,
       path: condA1Path,

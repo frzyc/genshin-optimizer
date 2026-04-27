@@ -111,6 +111,22 @@
       "1": "Como máximo, el daño puede aumentar en 5000 pts. de esta manera."
     }
   },
+  "lockedPassive": {
+    "name": "Aguas extranjeras",
+    "description": {
+      "0": "Obtienes nuevos poderes gracias a tus viajes pasados, de manera que ganarás <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimientos</strong></tooltip> adicionales por cada elemento con el que hayas resonado.",
+      "1": "<br/>",
+      "2": "Además, cuando la Vida de un personaje cercano del equipo aumente o disminuya en un 5%, {F#la}{M#el} Viajer{F#a}{M#o} obtendrá 1 carga de “filo de todas las aguas”. Como máximo, se puede obtener 1 carga cada 4 s de esta forma, acumulable hasta un máximo de 3 cargas. Al tener 3 cargas y ejecutar un Ataque Cargado, se consumirán todas las cargas de filo de todas las aguas para ejecutar un <strong>Ataque Cargado: Hidroprisión</strong> especial.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Cargado: Hidroprisión</strong>",
+      "5": [
+        "Cada golpe del Ataque Cargado inflige <hydro>Daño Hydro</hydro> adicional, con un aumento de daño equivalente al 150% del ATQ {F#de la}{M#del} Viajer{F#a}{M#o}.",
+        "Cuando la Vida {F#de la}{M#del} Viajer{F#a}{M#o} no sea inferior al 50%, consumirá el 10% de su Vida Máx. para volver a aumentar el daño de cada golpe del Ataque Cargado en una cantidad equivalente al 100% de su ATQ.",
+        "Cuando la Vida {F#de la}{M#del} Viajer{F#a}{M#o} sea inferior al 50%, recuperará una vez el 25% de su Vida Máx. al golpear a un enemigo.",
+        "Como máximo, se puede ejecutar un <strong>Ataque Cargado: Hidroprisión</strong> cada 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Lagos undosos",
     "description": {

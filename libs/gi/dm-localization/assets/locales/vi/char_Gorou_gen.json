@@ -147,7 +147,7 @@
   "constellation2": {
     "name": "Ngồi: Vững Vàng Như Chuông",
     "description": {
-      "0": "Trong thời gian duy trì <strong>Uy Nghi Đại Tướng</strong>, sau khi nhân vật trong trận gần đó nhận mảnh kết tinh tạo ra từ phản ứng kết tinh, thì Uy Nghi Đại Tướng của Gorou sẽ kéo dài thêm 1s.",
+      "0": "Trong thời gian duy trì <strong>Uy Nghi Đại Tướng</strong>, sau khi nhân vật trong trận gần đó nhận mảnh tinh thể sinh ra từ phản ứng Kết Tinh hoặc kích hoạt phản ứng Nguyệt-Kết Tinh, thì Uy Nghi Đại Tướng của Gorou sẽ kéo dài thêm 1s.",
       "1": "Hiệu quả này mỗi 0.1s tối đa kích hoạt 1 lần, tối đa kéo dài thêm 3s bằng cách này."
     }
   },

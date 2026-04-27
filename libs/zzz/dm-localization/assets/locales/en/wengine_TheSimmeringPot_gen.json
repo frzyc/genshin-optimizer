@@ -1,0 +1,14 @@
+{
+  "name": "The Simmering Pot",
+  "desc": "\"Spicy without the burn, rich without the grease, bold on the first bite, with a sweet finish.\" Copy this review and leave a good review and photo to redeem one serving of Waifei Peninsula's handmade beef meatballs at Simmer hot pot.",
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "Whoa, that's hot! Seriously hot! But it's so good!",
+  "phase": "Red Chili Oil Hot Pot",
+  "phaseDescs": [
+    "When activating an <ct color=#FFFFFF>Assist Follow-Up</ct>, the equipper's Daze inflicted on the target increases by <ct color=#2BAD00>7.2%</ct>, and DMG dealt increases by <ct color=#2BAD00>7.2%</ct> for 30s. Repeated triggers reset the duration.",
+    "When activating an <ct color=#FFFFFF>Assist Follow-Up</ct>, the equipper's Daze inflicted on the target increases by <ct color=#2BAD00>8.2%</ct>, and DMG dealt increases by <ct color=#2BAD00>8.2%</ct> for 30s. Repeated triggers reset the duration.",
+    "When activating an <ct color=#FFFFFF>Assist Follow-Up</ct>, the equipper's Daze inflicted on the target increases by <ct color=#2BAD00>9.2%</ct>, and DMG dealt increases by <ct color=#2BAD00>9.2%</ct> for 30s. Repeated triggers reset the duration.",
+    "When activating an <ct color=#FFFFFF>Assist Follow-Up</ct>, the equipper's Daze inflicted on the target increases by <ct color=#2BAD00>10.2%</ct>, and DMG dealt increases by <ct color=#2BAD00>10.2%</ct> for 30s. Repeated triggers reset the duration.",
+    "When activating an <ct color=#FFFFFF>Assist Follow-Up</ct>, the equipper's Daze inflicted on the target increases by <ct color=#2BAD00>11.5%</ct>, and DMG dealt increases by <ct color=#2BAD00>11.5%</ct> for 30s. Repeated triggers reset the duration."
+  ]
+}

@@ -111,6 +111,21 @@
       "0": "Bonus Energy Recharge dari Abundance Amulet yang dihasilkan <strong>Lightning Blade</strong> akan meningkat sebesar 10% dari Energy Recharge Pengembara."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Thundertrail",
+    "description": {
+      "0": "Menyerap kekuatan baru dari perjalanan masa lalu. Untuk setiap jenis elemen yang sudah diresonansi, Pengembara akan mendapatkan <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>efek penguatan</strong></tooltip> tambahan.",
+      "1": "<br/>",
+      "2": "Selain itu, saat Karakter party di sekitar melancarkan Elemental Burst, Pengembara akan mendapatkan 1 lapis efek Blade of Resounding Thunder yang dapat ditumpuk sampai 3 lapis. Saat memiliki 3 lapis Blade of Resounding Thunder dan melancarkan Charged Attack, Pengembara akan mengonsumsi seluruh Blade of Resounding Thunder dan serangannya berubah menjadi <strong>Charged Attack: Detonate</strong> khusus.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Detonate</strong>",
+      "5": [
+        "Setiap tahap Charged Attack akan mengakibatkan <electro>Electro DMG</electro> yang lebih kuat. Peningkatan DMG-nya adalah sebesar 100% ATK Pengembara.",
+        "Dalam 3 detik setelah mengenai musuh, akan muncul satu serangan petir yang mengakibatkan <electro>Electro DMG</electro> sebesar 200% ATK Pengembara dan menghasilkan 1 Abundance Amulet. DMG ini dianggap sebagai DMG Charged Attack.",
+        "<strong>Charged Attack: Detonate</strong> dapat dilancarkan sekali setiap 15 detik."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Spring Thunder of Fertility",
     "description": {

@@ -1,0 +1,183 @@
+{
+  "name": "Linnea",
+  "title": "Lữ Khách Uyên Bác",
+  "description": "Cố vấn của Hiệp Hội Nhà Mạo Hiểm phân hội Nod-Krai, là nhà tự nhiên học.",
+  "constellationName": "Cung Khải Dụ Điểu",
+  "auto": {
+    "name": "Phương Án Bắt Gọn",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiến hành <strong>ngắm bắn</strong> chuẩn hơn, có sát thương cao hơn.",
+        "2": "Khi ngắm bắn, nham thạch sẽ tích tụ liên tục trên mũi tên. Mũi tên tích đầy nham thạch sẽ gây <geo>Sát Thương Nguyên Tố Nham</geo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên liên tiếp xuống mặt đất, đồng thời lao nhanh xuống đất và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Ngắm Bắn",
+      "4": "Tụ Lực Ngắm Bắn",
+      "5": "Sát Thương Khi Đáp",
+      "6": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Đối Sách - Lumi Xung Trận!",
+    "description": {
+      "0": "Mạo hiểm cùng với Lumi! Dựa trên cách thức nhấn khác nhau, Lumi sẽ xuất kích dưới hình thái khác nhau.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Lumi sẽ xuất kích dưới <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Hình Thái Đáng Gờm</tooltip></strong>, liên tục tấn công kẻ địch ở gần, gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo>. Nếu có Trăng Trôi ở gần, Lumi sẽ còn gây cho kẻ địch xung quanh <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> và được xem là sát thương phản ứng Nguyệt-Kết Tinh.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn Liên Tục</strong>",
+      "6": "Đến lúc thể hiện bản lĩnh siêu lợi hại rồi! Sau khi dùng Kỹ Năng Nguyên Tố, liên tục nhấn Kỹ Năng Nguyên Tố hoặc Tấn Công Thường, Linnea sẽ ném cho Lumi ăn những viên đá quý lấp lánh, Lumi no bụng sẽ xuất kích dưới <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Hình Thái Tối Thượng</tooltip></strong>, gây cho kẻ địch xung quanh một lần <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> mạnh mẽ hơn và được xem là sát thương phản ứng Nguyệt-Kết Tinh, đồng thời chuyển sang <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Hình Thái Thông Thường</tooltip></strong>.",
+      "7": "Ngoài ra, khi liên tục nhấn Kỹ Năng Nguyên Tố, sẽ tăng khả năng Kháng Gián Đoạn cho Linnea.",
+      "8": "<br/>",
+      "9": "<i>\"Giao hết cho nhóc đó, Lumi!\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát thương Lumi Đánh Đập Dồn Dập",
+      "1": "Sát thương Lumi Búa Nặng Cường Lực",
+      "2": "Sát thương Lumi Búa Nặng Triệu Tấn",
+      "3": "Thời gian duy trì Lumi",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ghi Chú - Sinh Tồn Trong Tuyệt Cảnh",
+    "description": {
+      "0": "Ngay cả những nhà mạo hiểm bậc thầy cũng cần phải nghỉ ngơi hợp lý! Linnea triệu gọi Lumi xuất kích dưới <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Hình Thái Đáng Gờm</tooltip></strong>, hồi phục HP cho tất cả nhân vật trong đội ở gần, đồng thời trong khoảng thời gian tiếp theo sẽ liên tục hồi phục HP cho nhân vật trong trận hiện tại ở gần, lượng hồi phục sẽ căn cứ vào Phòng Ngự của Linnea.",
+      "1": "Khi thi triển Kỹ Năng Nộ, nếu Lumi đã xuất kích, thì sẽ chuyển sang đặt lại thời gian duy trì của Lumi và sẽ không thay đổi hình thái xuất kích của Lumi.",
+      "2": "<br/>",
+      "3": "<i>\"Với một nhà mạo hiểm chuyên nghiệp mà nói, so với các phát hiện chưa từng có, thì việc rút lui an toàn trong tuyệt cảnh mới là quy tắc tối quan trọng!\"</i>"
+    },
+    "skillParams": {
+      "0": "Lượng trị liệu lần đầu",
+      "1": "Lượng trị liệu duy trì",
+      "2": "Thời gian duy trì trị liệu",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sổ Tay Quan Sát Vùng Hoang Dã",
+    "description": {
+      "0": "Khi Lumi trong trận, kẻ địch xung quanh Lumi sẽ giảm 15% <geo>Kháng Nguyên Tố Nham</geo>.",
+      "1": "<br/>",
+      "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Đối Sách - Lumi Xung Trận!</tooltip></strong> và Kỹ Năng Nộ <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Ghi Chú - Sinh Tồn Trong Tuyệt Cảnh</tooltip></strong> của Linnea sẽ được cường hóa. Sau khi triệu hồi Lumi ra trận, kẻ địch xung quanh Lumi sẽ giảm thêm 15% <geo>Kháng Nguyên Tố Nham</geo>."
+    }
+  },
+  "passive2": {
+    "name": "Cẩm Nang Khoa Học Tự Nhiên Muôn Loài",
+    "description": {
+      "0": "Căn cứ vào nhân vật ra trận hiện tại trong đội bản thân, Linnea sẽ tăng Tinh Thông Nguyên Tố cho nhân vật chỉ định trong đội, mức tăng dựa trên 5% Phòng Ngự của Linnea. Nếu nhân vật ra trận hiện tại trong đội bản thân:",
+      "1": [
+        "Là nhân vật Nguyệt Triệu: Tăng Tinh Thông Nguyên Tố cho nhân vật này.",
+        "Không phải nhân vật Nguyệt Triệu: Tăng Tinh Thông Nguyên Tố cho bản thân Linnea."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Chúc Phúc Nguyệt Triệu - Khảo Sát Môi Trường Sống",
+    "description": {
+      "0": "Khi nhân vật trong đội kích hoạt phản ứng Kết Tinh Nguyên Tố Thủy, sẽ chuyển thành phản ứng Nguyệt-Kết Tinh, đồng thời tăng sát thương cơ bản của phản ứng Nguyệt-Kết Tinh nhân vật trong đội gây ra dựa trên Phòng Ngự của Linnea: Mỗi 100 điểm Phòng Ngự sẽ tăng 0.7% sát thương cơ bản của phản ứng Nguyệt-Kết Tinh, tối đa tăng 14% sát thương theo cách này.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi Linnea trong đội, <strong>Nguyệt Triệu</strong> của đội sẽ tăng 1 cấp."
+    }
+  },
+  "passive": {
+    "name": "Nhà Mạo Hiểm Bậc Thầy",
+    "description": {
+      "0": "Khi không trong trạng thái chiến đấu, Linnea thực hiện <strong>ngắm bắn</strong> sẽ giảm mạnh thời gian tụ lực, đồng thời chuyển sang bắn <strong>Mũi Tên Siêu Tiện Lợi</strong> đặc biệt, căn cứ vào mục tiêu bị bắn trúng để sản sinh hiệu quả khác nhau. Nếu mục tiêu bị bắn trúng là:",
+      "1": [
+        "Động vật nhất định: <strong>Mũi Tên Siêu Tiện Lợi</strong> sẽ chuyển hóa thành \"Lưới\" đặc thù, có thể bắt được thần hình của động vật, lấy đó làm trung gian và biến ra hình dạng của động vật nhỏ. Số lần dùng \"Lưới\" mỗi tuần sẽ có giới hạn.",
+        "Khoáng vật dùng để chế tạo: Linnea sẽ cử Lumi đến nhanh chóng phá hủy khoáng vật bị <strong>Mũi Tên Siêu Tiện Lợi</strong> đánh dấu, đồng thời thu thập khoáng thạch rơi ra. Nếu Lumi không trong trận, sẽ triệu hồi Lumi trong giây lát để giúp đỡ Linnea thu thập khoáng thạch."
+      ],
+      "2": "<br/>",
+      "3": "Sát thương <strong>Mũi Tên Siêu Tiện Lợi</strong> gây ra cho kẻ địch sẽ giảm còn 20% sát thương gốc. Ngoài ra, sau khi bắn một lượng nhất định <strong>Mũi Tên Siêu Tiện Lợi</strong> trong thời gian ngắn, Linnea cần nghỉ ngơi trong giây lát mới có thể bắn tiếp."
+    }
+  },
+  "constellation1": {
+    "name": "Phân Loại Chưa Hoàn Thiện",
+    "description": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Đối Sách - Lumi Xung Trận!</tooltip></strong>, hoặc khi kích hoạt Trăng Trôi Hòa Tấu, Linnea sẽ nhận được 6 tầng hiệu quả <strong>Biên Tập Trải Nghiệm</strong>, hiệu quả này duy trì 10s, tối đa cộng dồn 18 tầng. Khi nhân vật trong đội ở gần gây sát thương phản ứng Nguyệt-Kết Tinh, sẽ tiêu hao một tầng Biên Tập Trải Nghiệm để tăng sát thương gây ra, mức tăng tương đương 75% Phòng Ngự của Linnea.",
+      "1": "Ngoài ra, khi Lumi dùng <strong>Búa Nặng Triệu Tấn</strong> trong <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Hình Thái Tối Thượng</tooltip></strong>, Linnea có thể tiêu hao tối đa 5 tầng Biên Tập Trải Nghiệm, mỗi tầng sẽ tăng sát thương gây ra tương đương 150% Phòng Ngự của Linnea."
+    }
+  },
+  "constellation2": {
+    "name": "Chỉ Dụ Vui Và Buồn",
+    "description": {
+      "0": "Trong 8s sau khi kích hoạt Trăng Trôi Hòa Tấu, tất cả nhân vật nguyên tố <hydro>Thủy</hydro> và <geo>Nham</geo> trong đội sẽ tăng 40% Sát Thương Bạo Kích, đồng thời Lumi dùng <strong>Búa Nặng Triệu Tấn</strong> trong <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Hình Thái Tối Thượng</tooltip></strong> sẽ tăng thêm 150% Sát Thương Bạo Kích.",
+      "1": "<br/>",
+      "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Khi Lumi dùng <strong>Búa Nặng Cường Lực</strong> trong <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Hình Thái Đáng Gờm</tooltip></strong>, hoặc khi dùng <strong>Búa Nặng Triệu Tấn</strong> trong Hình Thái Tối Thượng, sẽ kích hoạt một lần Trăng Trôi Hòa Tấu và Trăng Trôi Hòa Tấu lần này sẽ xem như tất cả nhân vật nguyên tố <hydro>Thủy</hydro> và <geo>Nham</geo> trong đội đều gán ấn nguyên tố trong phản ứng."
+    }
+  },
+  "constellation3": {
+    "name": "Trang Ghi Chép Náo Nhiệt",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Đối Sách - Lumi Xung Trận!</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Trực Giác Của Chuyên Gia",
+    "description": {
+      "0": "Trong 5s sau khi kích hoạt Trăng Trôi Hòa Tấu, Linnea và nhân vật ra trận hiện tại trong đội bản thân sẽ lần lượt tăng 25% Phòng Ngự. Khi Linnea trong trận, hiệu quả tăng Phòng Ngự nêu trên sẽ được cộng dồn."
+    }
+  },
+  "constellation5": {
+    "name": "Quà Chia Tay Đất Tiên",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Ghi Chú - Sinh Tồn Trong Tuyệt Cảnh</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Mộng Khuyển Săn Hoàng Kim",
+    "description": {
+      "0": "Hiệu quả Cung Mệnh <strong>Phân Loại Chưa Hoàn Thiện</strong> sẽ được cường hóa: Khi thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Đối Sách - Lumi Xung Trận!</tooltip></strong> hoặc khi kích hoạt Trăng Trôi Hòa Tấu, Linnea sẽ lập tức nhận hiệu quả <strong>Biên Tập Trải Nghiệm</strong> với số tầng tối đa. Khi tiêu hao <strong>Biên Tập Trải Nghiệm</strong>, sẽ tiêu hao số tầng gấp đôi mức gốc, và khiến hiệu quả tăng sát thương tăng đến 150% mức ban đầu.",
+      "1": "<br/>",
+      "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Sát thương phản ứng Nguyệt-Kết Tinh gây ra bởi nhân vật trong đội ở gần sẽ <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Thăng Tiến</strong></tooltip> 25%."
+    }
+  }
+}

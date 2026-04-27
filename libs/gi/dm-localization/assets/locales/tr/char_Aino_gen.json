@@ -97,7 +97,7 @@
     "description": {
       "0": "Aino, grubun <strong>Ay Sembolüne</strong> karşılık gelen farklı güçlendirmeler kazanır.",
       "1": "<br/>",
-      "2": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Aino'nun <strong>Hassas Hidronik Soğutucu</strong> Element Patlaması gelişir: <strong>Sakin Ol Şampiyon Ördek</strong> daha sık su topu fırlatır ve su topları daha geniş bir etki alanında <hydro>Su Alan Hasarı</hydro> verir."
+      "2": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Aino'nun <strong><tooltip ns=char_Aino_gen baseKey18=burst>Hassas Hidronik Soğutucu</tooltip></strong> Element Patlaması gelişir: <strong>Sakin Ol Şampiyon Ördek</strong> daha sık su topu fırlatır ve su topları daha geniş bir etki alanında <hydro>Su Alan Hasarı</hydro> verir."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "Kül ve Kuvvet Alanı Dengesi Teoremi",
     "description": {
-      "0": "Aino, <strong>İlham Kapanı</strong> Element Becerisini veya <strong>Hassas Hidronik Soğutucu</strong> Element Patlamasını kullandığında Element Ustalığı 80 artar. Yakındaki diğer aktif grup üyelerinin 15 saniyeliğine Element Ustalığı 80 artar.",
+      "0": "Aino, <strong><tooltip ns=char_Aino_gen baseKey18=skill>İlham Kapanı</tooltip></strong> Element Becerisini veya <strong><tooltip ns=char_Aino_gen baseKey18=burst>Hassas Hidronik Soğutucu</tooltip></strong> Element Patlamasını kullandığında Element Ustalığı 80 artar. Yakındaki diğer aktif grup üyelerinin 15 saniyeliğine Element Ustalığı 80 artar.",
       "1": "<br/>",
       "2": "Bu Takımyıldızın Element Ustalığı artış etkileri birikmez."
     }
@@ -130,33 +130,33 @@
   "constellation2": {
     "name": "Dişli Diferansiyel Geçiş Prensibi",
     "description": {
-      "0": "Aino eğer <strong>Hassas Hidronik Soğutucu</strong> Element Patlamasının <strong>Odaklı Hidronik Soğutma Bölgesi</strong> etkinken savaş alanında değilse, aktif grup üyesi yakındaki bir düşmana saldırıp vurduğunda <strong>Sakin Ol Şampiyon Ördek</strong> düşmana fazladan bir su topu fırlatarak Aino'nun Saldırısının %25'i ve Element Ustalığının %100'ü kadar <hydro>Su Alan Hasarı</hydro> verir. Bu Hasar, Element Patlaması Hasarı sayılır. Bu etki 5 saniyede bir tetiklenebilir."
+      "0": "Aino eğer <strong>Hassas Hidronik Soğutucu</strong> Element Patlamasının <strong><tooltip ns=char_Aino_gen baseKey18=burst>Odaklı Hidronik Soğutma Bölgesi</tooltip></strong> etkinken savaş alanında değilse, aktif grup üyesi yakındaki bir düşmana saldırıp vurduğunda <strong>Sakin Ol Şampiyon Ördek</strong> düşmana fazladan bir su topu fırlatarak Aino'nun Saldırısının %25'i ve Element Ustalığının %100'ü kadar <hydro>Su Alan Hasarı</hydro> verir. Bu Hasar, Element Patlaması Hasarı sayılır. Bu etki 5 saniyede bir tetiklenebilir."
     }
   },
   "constellation3": {
     "name": "Kek ve Mekanizma Bakım Sanatı",
     "description": {
-      "0": "<strong>Hassas Hidronik Soğutucu</strong> Seviyesini 3 artırır.",
+      "0": "<strong><tooltip ns=char_Aino_gen baseKey18=burst>Hassas Hidronik Soğutucu</tooltip></strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
   "constellation4": {
     "name": "Tereyağı, Kediler ve Enerji Kaynağı Kanunu",
     "description": {
-      "0": "<strong>İlham Kapanı</strong> Element Becerisi bir düşmana isabet ettiğinde Aino 10 Element Enerjisi yeniler. Bu şekilde her 10 saniyede bir Enerji yenilenebilir."
+      "0": "<strong><tooltip ns=char_Aino_gen baseKey18=skill>İlham Kapanı</tooltip></strong> Element Becerisi bir düşmana isabet ettiğinde Aino 10 Element Enerjisi yeniler. Bu şekilde her 10 saniyede bir Enerji yenilenebilir."
     }
   },
   "constellation5": {
     "name": "Sonsuz Metal ve Işık Türbini",
     "description": {
-      "0": "<strong>İlham Kapanı</strong> Seviyesini 3 artırır.",
+      "0": "<strong><tooltip ns=char_Aino_gen baseKey18=skill>İlham Kapanı</tooltip></strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
   "constellation6": {
     "name": "Yaratıcı Dehanın Ağırlığı",
     "description": {
-      "0": "Aino <strong>Hassas Hidronik Soğutucu</strong> Element Patlamasını kullandıktan sonra 15sn boyunca, yakındaki aktif karakterlerin verdiği Elektrik Yüklü, Çiçeklenme, Ay Yüklü ve Ay Çiçeklenmesi tepkimesi Hasarları %15 artar.",
+      "0": "Aino <strong><tooltip ns=char_Aino_gen baseKey18=burst>Hassas Hidronik Soğutucu</tooltip></strong> Element Patlamasını kullandıktan sonra 15sn boyunca, yakındaki aktif karakterlerin verdiği Elektrik Yüklü, Çiçeklenme, Ay Yüklü, Ay Çiçeklenmesi ve Ay Kristalleşmesi tepkimelerinin Hasarları %15 artar.",
       "1": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Yukarıda bahsedilen tepkimelerin verdikleri Hasar %20 daha artar."
     }
   }

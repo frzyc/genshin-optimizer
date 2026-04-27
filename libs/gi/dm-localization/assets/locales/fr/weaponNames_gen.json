@@ -50,6 +50,7 @@
   "PeakPatrolSong": "Chanson de patrouille de sommet",
   "Azurelight": "Éclazur",
   "AthameArtis": "Athame Artis",
+  "LightbearingMoonshard": "Éclat lunaire luminescent",
   "WasterGreatsword": "Épée d'entraînement",
   "OldMercsPal": "Lame du mercenaire",
   "FerrousShadow": "Ombre ferreuse",
@@ -91,6 +92,7 @@
   "Verdict": "Condamneur",
   "FangOfTheMountainKing": "Croc du roi de la montagne",
   "AThousandBlazingSuns": "Mille soleils brûlants",
+  "GestOfTheMightyWolf": "Geste du loup puissant",
   "BeginnersProtector": "Lance du débutant",
   "IronPoint": "Pointe de fer",
   "WhiteTassel": "Pampille blanche",
@@ -180,6 +182,7 @@
   "VividNotions": "Notions colorées",
   "NightweaversLookingGlass": "Miroir du tisse-nuit",
   "ReliquaryOfTruth": "Reliquaire de la vérité",
+  "NocturnesCurtainCall": "Rappel de la nocturne",
   "HuntersBow": "Arc de chasse",
   "SeasonedHuntersBow": "Arc de chasse aguerri",
   "RavenBow": "Arc du corbeau",
@@ -226,5 +229,6 @@
   "SilvershowerHeartstrings": "Corde de pluie blanche",
   "AstralVulturesCrimsonPlumage": "Plumage cramoisi du vautour astral",
   "TheDaybreakChronicles": "Les chroniques de l'aube",
+  "GoldenFrostboundOath": "Serment de gel doré",
   "QuantumCatalyst": "Quantum Cat-alyst"
 }

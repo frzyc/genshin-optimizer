@@ -53,7 +53,7 @@
       "9": "일정 시간마다 에스코피에가 「냉장」 모드로 요리 장치 가동 시, 솟구치는 칼날을 소환해 우시아 성질의 <cryo>얼음 원소 범위 피해</cryo>를 준다.",
       "10": "<br/>",
       "11": "<strong>홀드</strong>",
-      "12": "<strong>즉흥 요리</strong> 모드로 전방위 다목적 요리 장치를 가동한다"
+      "12": "<tooltip ns=tooltips_gen baseKey18=11120002 values=[]><strong>즉흥 요리</strong></tooltip> 모드로 전방위 다목적 요리 장치를 가동한다"
     },
     "skillParams": {
       "0": "스킬 피해",
@@ -101,19 +101,19 @@
   "passive1": {
     "name": "밥이 보약",
     "description": {
-      "0": "원소폭발 <strong>현란한 칼솜씨</strong> 발동 후, 에스코피에가 9초 동안 지속되는 「식이요법」 효과를 획득한다: 1초마다 주변에 있는 현재 필드 위 캐릭터의 HP를 회복한다. 회복량: 에스코피에 자신의 공격력의 138.24%"
+      "0": "원소폭발 <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>현란한 칼솜씨</tooltip></strong> 발동 후, 에스코피에가 9초 동안 지속되는 「식이요법」 효과를 획득한다: 1초마다 주변에 있는 현재 필드 위 캐릭터의 HP를 회복한다. 회복량: 에스코피에 자신의 공격력의 138.24%"
     }
   },
   "passive2": {
     "name": "영감의 조미료",
     "description": {
-      "0": "파티 내 <hydro>물 원소</hydro> 또는 <cryo>얼음 원소</cryo> 캐릭터가 1/2/3/4명 존재할 경우, 에스코피에의 원소전투 스킬 <strong>저온 조리법</strong> 또는 원소폭발 <strong>현란한 칼솜씨</strong>가 적에게 명중 시, 해당 적의 <hydro>물 원소 내성</hydro>과 <cryo>얼음 원소 내성</cryo>이 5%/10%/15%/55% 감소한다. 지속 시간: 12초"
+      "0": "파티 내 <hydro>물 원소</hydro> 또는 <cryo>얼음 원소</cryo> 캐릭터가 1/2/3/4명 존재할 경우, 에스코피에의 원소전투 스킬 <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>저온 조리법</tooltip></strong> 또는 원소폭발 <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>현란한 칼솜씨</tooltip></strong>가 적에게 명중 시, 해당 적의 <hydro>물 원소 내성</hydro>과 <cryo>얼음 원소 내성</cryo>이 5%/10%/15%/55% 감소한다. 지속 시간: 12초"
     }
   },
   "passive3": {
     "name": "시시각각 즉흥 요리",
     "description": {
-      "0": "홀드로 원소전투 스킬 <strong>저온 조리법</strong> 발동 시, 「즉흥 요리」 모드로 전방위 다목적 요리 장치를 가동한다.",
+      "0": "홀드로 원소전투 스킬 <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>저온 조리법</tooltip></strong> 발동 시, 「즉흥 요리」 모드로 전방위 다목적 요리 장치를 가동한다.",
       "1": "<br/>",
       "2": "<strong>요리 장치·즉흥 요리 모드</strong>",
       "3": [
@@ -125,42 +125,42 @@
   "constellation1": {
     "name": "미각을 깨우는 식전 공연",
     "description": {
-      "0": "파티 내 캐릭터 4명의 원소 타입이 모두 <hydro>물 원소</hydro> 또는 <cryo>얼음 원소</cryo>일 경우, 에스코피에의 원소전투 스킬 <strong>저온 조리법</strong> 또는 원소폭발 <strong>현란한 칼솜씨</strong> 발동 후, 15초 동안 주변에 있는 파티 내 모든 캐릭터가 <cryo>얼음 원소 피해</cryo>를 줄 시의 치명타 피해가 60% 증가한다.",
+      "0": "파티 내 캐릭터 4명의 원소 타입이 모두 <hydro>물 원소</hydro> 또는 <cryo>얼음 원소</cryo>일 경우, 에스코피에의 원소전투 스킬 <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>저온 조리법</tooltip></strong> 또는 원소폭발 <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>현란한 칼솜씨</tooltip></strong> 발동 후, 15초 동안 주변에 있는 파티 내 모든 캐릭터가 <cryo>얼음 원소 피해</cryo>를 줄 시의 치명타 피해가 60% 증가한다.",
       "1": "돌파 특성 「영감의 조미료」를 해금해야 한다"
     }
   },
   "constellation2": {
     "name": "예술의 경지에 이른 스튜",
     "description": {
-      "0": "에스코피에가 <strong>냉장 모드</strong>로 요리 장치 가동 시, 15초 동안 지속되는 「즉석 요리」 효과를 획득한다: 지속 시간 동안 에스코피에가 「냉요리」를 5스택 획득한다. 에스코피에를 제외한 주변에 있는 현재 필드 위 캐릭터가 일반 공격, 강공격, 낙하 공격, 원소전투 스킬 또는 원소폭발로 적에게 <cryo>얼음 원소 피해</cryo>를 줄 시, 「냉요리」를 1스택 소모해 주는 피해가 에스코피에 공격력의 240%만큼 증가한다.",
+      "0": "에스코피에가 <tooltip ns=tooltips_gen baseKey18=11120001 values=[]><strong>냉장 모드</strong></tooltip>로 요리 장치 가동 시, 15초 동안 지속되는 「즉석 요리」 효과를 획득한다: 지속 시간 동안 에스코피에가 「냉요리」를 5스택 획득한다. 에스코피에를 제외한 주변에 있는 현재 필드 위 캐릭터가 일반 공격, 강공격, 낙하 공격, 원소전투 스킬 또는 원소폭발로 적에게 <cryo>얼음 원소 피해</cryo>를 줄 시, 「냉요리」를 1스택 소모해 주는 피해가 에스코피에 공격력의 240%만큼 증가한다.",
       "1": "한 번의 <cryo>얼음 원소 피해</cryo>가 동시에 다수의 적에게 명중 시, 명중한 적의 수에 따라 「냉요리」의 스택이 소모된다"
     }
   },
   "constellation3": {
     "name": "캐러멜화의 마법",
     "description": {
-      "0": "원소전투 스킬 <strong>저온 조리법</strong>의 스킬 레벨+3",
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>저온 조리법</tooltip></strong>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },
   "constellation4": {
     "name": "로즈마리 비밀 레시피",
     "description": {
-      "0": "<strong>식이요법</strong>의 지속 시간이 6초 연장된다. 지속 시간 동안 <strong>식이요법</strong>을 통해 치유 발동 시, 일정 확률로 치유량이 100% 증가하고 에스코피에가 원소 에너지를 2pt 회복한다. 확률은 에스코피에 자신의 치명타 확률과 동일하다. 한 번의 <strong>식이요법</strong> 지속 시간 동안 해당 효과는 최대 7회 발동된다.",
+      "0": "<tooltip ns=char_Escoffier_gen baseKey18=passive1><strong>식이요법</strong></tooltip>의 지속 시간이 6초 연장된다. 지속 시간 동안 <strong>식이요법</strong>을 통해 치유 발동 시, 일정 확률로 치유량이 100% 증가하고 에스코피에가 원소 에너지를 2pt 회복한다. 확률은 에스코피에 자신의 치명타 확률과 동일하다. 한 번의 <strong>식이요법</strong> 지속 시간 동안 해당 효과는 최대 7회 발동된다.",
       "1": "돌파 특성 「밥이 보약」을 해금해야 한다"
     }
   },
   "constellation5": {
     "name": "다채로운 소스의 교향곡",
     "description": {
-      "0": "원소폭발 <strong>현란한 칼솜씨</strong>의 스킬 레벨+3",
+      "0": "원소폭발 <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>현란한 칼솜씨</tooltip></strong>의 스킬 레벨+3",
       "1": "최대 Lv.15까지 상승"
     }
   },
   "constellation6": {
     "name": "무지갯빛 티타임",
     "description": {
-      "0": "<strong>요리 장치·냉장 모드</strong>가 강화된다:",
+      "0": "<tooltip ns=tooltips_gen baseKey18=11120001 values=[]><strong>요리 장치·냉장 모드</strong></tooltip>가 강화된다:",
       "1": [
         "현재 필드 위에 있는 파티 내 자신의 캐릭터의 일반 공격, 강공격 또는 낙하 공격이 적에게 명중 시, 요리 장치·냉장 모드가 추가로 특급 서리 파르페를 1개 발사해 에스코피에 공격력의 500%에 해당하는 <cryo>얼음 원소 범위 피해</cryo>를 준다. 해당 피해는 원소전투 스킬 피해로 간주한다."
       ],

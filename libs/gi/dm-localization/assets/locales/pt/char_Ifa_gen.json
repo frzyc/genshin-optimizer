@@ -42,7 +42,7 @@
     "name": "Prevenção de Doenças Aéreas",
     "description": {
       "0": "É hora dos manos! Ifa invoca Cacucu como seu suporte na batalha.",
-      "1": "Depois de lançar, Ifa obtém 80 pontos de Espírito da Noite, e entra no estado <strong>Bênção do Espírito da Noite</strong>. Enquanto estiver nesse estado, Ifa flutuará com a ajuda de Cacucu, e ao fazer um Ataque Normal, realizará um <strong>Disparo de Suporte</strong> de maneiras diferentes caso pressione ou mantenha pressionado, disparando um Projétil Medicinal que pode regenerar Vida para todos os membros da equipe.",
+      "1": "Depois de lançar, Ifa obtém 80 pontos de Espírito da Noite, e entra no estado <tooltip ns=tooltips_gen baseKey18=11130003 values=[]><strong>Bênção do Espírito da Noite</strong></tooltip>. Enquanto estiver nesse estado, Ifa flutuará com a ajuda de Cacucu, e ao fazer um Ataque Normal, realizará um <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Disparo de Suporte</strong></tooltip> de maneiras diferentes caso pressione ou mantenha pressionado, disparando um Projétil Medicinal que pode regenerar Vida para todos os membros da equipe.",
       "2": "<br/>",
       "3": "Além disso, quando estiver no estado Bênção do Espírito da Noite, ao manter pressionado para lançar a Habilidade Elemental <strong>Prevenção de Doenças Aéreas</strong>, Ifa realizará um Ataque Imersivo com alinhamento Espírito da Noite. Soltar o botão da Habilidade Elemental interromperá o Ataque Imersivo, mantendo-se no ar flutuando. Quando o Ataque Imersivo atingir o chão, o estado Bênção do Espírito da Noite de Ifa acabará."
     },
@@ -69,7 +69,7 @@
     "name": "Campo de Composto Sedativo",
     "description": {
       "0": "Dispara um Sedativo Terapêutico contra um (temporariamente agressivo) oponente. O sedativo explodirá ao atingir, gerando uma corrente de vento que atrai os objetos e inimigos próximos, causando <anemo>Dano Anemo em AdE</anemo> com alinhamento Espírito da Noite.",
-      "1": "Quando o Sedativo Terapêutico atinge um oponente afetado por <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, aplicará o efeito <strong>Marca Tranquilizante</strong> nele."
+      "1": "Quando o Sedativo Terapêutico atinge um oponente afetado por <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, aplicará o efeito <tooltip ns=tooltips_gen baseKey18=11130004 values=[]><strong>Marca Tranquilizante</strong></tooltip> nele."
     },
     "skillParams": {
       "0": "Dano de Habilidade",
@@ -93,7 +93,7 @@
   "passive1": {
     "name": "Campo de Visão Médica",
     "description": {
-      "0": "Quando Ifa está no estado Bênção do Espírito da Noite, obtém 1 ponto de <strong>Essencial do Resgate</strong> para cada ponto de Espírito da Noite da soma total de todos os membros atuais da equipe. Essencial do Resgate pode aumentar o Dano causado por Redemoinho, Eletricamente Carregado e Carga Lunar de personagens próximos."
+      "0": "Quando Ifa está no estado Bênção do Espírito da Noite, obtém 1 ponto de <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>Essencial do Resgate</strong></tooltip> para cada ponto de Espírito da Noite da soma total de todos os membros atuais da equipe. Essencial do Resgate pode aumentar o Dano causado por Redemoinho, Eletricamente Carregado e Carga Lunar de personagens próximos."
     }
   },
   "passive2": {
@@ -118,42 +118,42 @@
   "constellation1": {
     "name": "Concocção de Poção Vitífera",
     "description": {
-      "0": "Quando o <strong>Disparo de Suporte</strong> atinge um inimigo, regenera 6 de Energia Elemental para Ifa. É possível regenerar Energia Elemental dessa forma uma vez a cada 8s."
+      "0": "Quando o <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Disparo de Suporte</strong></tooltip> atinge um inimigo, regenera 6 de Energia Elemental para Ifa. É possível regenerar Energia Elemental dessa forma uma vez a cada 8s."
     }
   },
   "constellation2": {
     "name": "Espírito Guia da Oração Balística",
     "description": {
-      "0": "Quando Ifa está no estado Bênção do Espírito da Noite, cada ponto de Espírito da Noite acima da soma atual total de 60 pontos de Espírito da Noite de todos os membros da equipe faz Ifa obter 4 pontos de <strong>Essencial do Resgate</strong>.",
+      "0": "Quando Ifa está no estado Bênção do Espírito da Noite, cada ponto de Espírito da Noite acima da soma atual total de 60 pontos de Espírito da Noite de todos os membros da equipe faz Ifa obter 4 pontos de <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>Essencial do Resgate</strong></tooltip>.",
       "1": "Além disso, o limite de Essencial do Resgate de Ifa é aumentado em 50 pontos.",
-      "2": "É necessário ter desbloqueado o Talento de Ascensão <strong>Campo de Visão Médica</strong>."
+      "2": "É necessário ter desbloqueado o Talento de Ascensão <tooltip ns=char_Ifa_gen baseKey18=passive1><strong>Campo de Visão Médica</strong></tooltip>."
     }
   },
   "constellation3": {
     "name": "Refutação em Negociações Com a Noite",
     "description": {
-      "0": "Aumenta o nível da Habilidade Elemental <strong>Prevenção de Doenças Aéreas</strong> em 3 níveis. ",
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Ifa_gen baseKey18=skill>Prevenção de Doenças Aéreas</tooltip></strong> em 3 níveis. ",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation4": {
     "name": "Permutação do Recipiente Deteriorado",
     "description": {
-      "0": "Prolonga a duração da corrente de vento aprisionadora gerada pelo Supremo <strong>Campo de Composto Sedativo</strong> por 3s.",
+      "0": "Prolonga a duração da corrente de vento aprisionadora gerada pelo Supremo <strong><tooltip ns=char_Ifa_gen baseKey18=burst>Campo de Composto Sedativo</tooltip></strong> por 3s.",
       "1": "Além disso, depois de lançar o Supremo <strong>Campo de Composto Sedativo</strong>, aumenta a Proficiência Elemental de Ifa em 100 por 15s."
     }
   },
   "constellation5": {
     "name": "Voto de Coexistência Universal",
     "description": {
-      "0": "Aumenta o nível do Supremo <strong>Campo de Composto Sedativo</strong> em 3.",
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Ifa_gen baseKey18=burst>Campo de Composto Sedativo</tooltip></strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation6": {
     "name": "Juramento em um Nó Emplumado",
     "description": {
-      "0": "Quando Ifa mantém pressionado para fazer <strong>Disparo de Suporte</strong>, possui 50% de chance de disparar um Projétil Medicinal adicional, causando Dano Anemo com base em 120% do ATQ de Ifa. Esse Dano é considerado Dano de Ataque Normal.",
+      "0": "Quando Ifa mantém pressionado para fazer <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Disparo de Suporte</strong></tooltip>, possui 50% de chance de disparar um Projétil Medicinal adicional, causando Dano Anemo com base em 120% do ATQ de Ifa. Esse Dano é considerado Dano de Ataque Normal.",
       "1": "Além disso, quando não está em combate, o estado Bênção do Espírito da Noite de Ifa consome 20% a menos de pontos de Espírito da Noite e de Flogisto."
     }
   }

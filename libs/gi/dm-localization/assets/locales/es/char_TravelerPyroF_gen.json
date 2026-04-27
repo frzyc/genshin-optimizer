@@ -110,6 +110,20 @@
       "0": "Cuando el personaje en uso afectado por el <strong>umbral flagrante</strong> o el <strong>umbral abrasador</strong> causa una <pyro>Reacción Elemental Pyro</pyro>, {F#la Viajera}{M#el Viajero} recupera 5 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 12 s. Además, cuando un personaje cercano del equipo causa una explosión noctámbula, {F#la Viajera}{M#el Viajero} recupera 4 pts. de Energía Elemental."
     }
   },
+  "lockedPassive": {
+    "name": "Fuego estelar extranjero",
+    "description": {
+      "0": "Obtienes nuevos poderes gracias a tus viajes pasados, de manera que ganarás <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimientos</strong></tooltip> adicionales por cada elemento con el que hayas resonado.",
+      "1": "<br/>",
+      "2": "Además, cuando un personaje cercano del equipo cause una explosión noctámbula, {F#la Viajera}{M#el Viajero} obtendrá 1 carga de “filo sacrofuego”, acumulable hasta un máximo de 2 cargas. Al tener 2 cargas y ejecutar un Ataque Cargado, se consumirán todas las cargas de filo sacrofuego para ejecutar un <strong>Ataque Cargado: Infierno</strong> especial.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Cargado: Infierno</strong>",
+      "5": [
+        "Cada golpe del Ataque Cargado inflige <pyro>Daño Pyro</pyro> de naturaleza noctámbula adicional, con un aumento equivalente al 200% del ATQ {F#de la}{M#del} Viajer{F#a}{M#o}.",
+        "Como máximo, solo se puede ejecutar un <strong>Ataque Cargado: Infierno</strong> cada 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Estrella fulgente",
     "description": {

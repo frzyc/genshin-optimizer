@@ -48,24 +48,24 @@ jobs:
     timeout-minutes: 15
     name: 'call-build / build'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Get Cache Key
         id: get-cache-key
         run: |
           echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v5
         with:
           path: .git/modules
           key: submodule-${{ steps.get-cache-key.outputs.key }}
           restore-keys: |
             submodule-
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
           submodules: true
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: 'yarn'
       - name: Yarn install
         run: |

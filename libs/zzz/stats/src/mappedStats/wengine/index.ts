@@ -1,4 +1,5 @@
 // WARNING: Generated file, do not modify
+import AngelInTheShell from './maps/AngelInTheShell'
 import BashfulDemon from './maps/BashfulDemon'
 import BellicoseBlaze from './maps/BellicoseBlaze'
 import BigCylinder from './maps/BigCylinder'
@@ -40,6 +41,7 @@ import MagneticStormCharlie from './maps/MagneticStormCharlie'
 import MarcatoDesire from './maps/MarcatoDesire'
 import Metanukimorphosis from './maps/Metanukimorphosis'
 import MyriadEclipse from './maps/MyriadEclipse'
+import NeonFantasies from './maps/NeonFantasies'
 import OriginalTransmorpher from './maps/OriginalTransmorpher'
 import PeacekeeperSpecialized from './maps/PeacekeeperSpecialized'
 import PracticedPerfection from './maps/PracticedPerfection'
@@ -55,6 +57,7 @@ import ReverbMarkIII from './maps/ReverbMarkIII'
 import RiotSuppressorMarkVI from './maps/RiotSuppressorMarkVI'
 import RoaringFurnace from './maps/RoaringFurnace'
 import RoaringRide from './maps/RoaringRide'
+import SerpentineSeeker from './maps/SerpentineSeeker'
 import SeveredInnocence from './maps/SeveredInnocence'
 import SharpenedStinger from './maps/SharpenedStinger'
 import SixShooter from './maps/SixShooter'
@@ -68,7 +71,9 @@ import SteelCushion from './maps/SteelCushion'
 import StreetSuperstar from './maps/StreetSuperstar'
 import TheBrimstone from './maps/TheBrimstone'
 import TheRestrained from './maps/TheRestrained'
+import TheSimmeringPot from './maps/TheSimmeringPot'
 import TheVault from './maps/TheVault'
+import Thoughtbop from './maps/Thoughtbop'
 import Timeweaver from './maps/Timeweaver'
 import TremorTrigramVessel from './maps/TremorTrigramVessel'
 import TusksOfFury from './maps/TusksOfFury'
@@ -83,6 +88,7 @@ import YesterdayCalls from './maps/YesterdayCalls'
 import ZanshinHerbCase from './maps/ZanshinHerbCase'
 
 const maps = {
+  AngelInTheShell,
   BashfulDemon,
   BellicoseBlaze,
   BigCylinder,
@@ -124,6 +130,7 @@ const maps = {
   MarcatoDesire,
   Metanukimorphosis,
   MyriadEclipse,
+  NeonFantasies,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PracticedPerfection,
@@ -139,6 +146,7 @@ const maps = {
   RiotSuppressorMarkVI,
   RoaringFurnace,
   RoaringRide,
+  SerpentineSeeker,
   SeveredInnocence,
   SharpenedStinger,
   SixShooter,
@@ -152,7 +160,9 @@ const maps = {
   StreetSuperstar,
   TheBrimstone,
   TheRestrained,
+  TheSimmeringPot,
   TheVault,
+  Thoughtbop,
   Timeweaver,
   TremorTrigramVessel,
   TusksOfFury,

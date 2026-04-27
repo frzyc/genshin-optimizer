@@ -17,24 +17,24 @@ import type { CharOpt } from './DataManagers'
 
 export const currentDBVersion = 2
 
-export function migrateZOD(
-  zo: IZenlessObjectDescription & IZZZDatabase
+export function migrateZOOD(
+  zood: IZenlessObjectDescription & IZZZDatabase
 ): IZenlessObjectDescription & IZZZDatabase {
-  const version = zo.dbVersion ?? 0
+  const version = zood.dbVersion ?? 0
   function migrateVersion(version: number, cb: () => void) {
-    const dbver = zo.dbVersion ?? 0
+    const dbver = zood.dbVersion ?? 0
     if (dbver < version) {
       cb()
       // Update version upon each successful migration, so we don't
       // need to migrate that part again if later parts fail.
-      zo.dbVersion = version
+      zood.dbVersion = version
     }
   }
 
   // Change code name keys to char name keys
   migrateVersion(2, () => {
     function migrateData(oldKey: string, newKey: CharacterKey) {
-      const chars = zo['characters'] as ICharacter[]
+      const chars = zood['characters'] as ICharacter[]
       if (chars) {
         const char = chars.find((c) => (c.key as string) === oldKey)
         if (char) {
@@ -43,7 +43,7 @@ export function migrateZOD(
         }
       }
 
-      const charOpts = zo['charOpts'] as CharOpt[]
+      const charOpts = zood['charOpts'] as CharOpt[]
       if (charOpts) {
         const charOpt = charOpts.find(
           (c) => ((c as any)['id'] as string) === oldKey
@@ -62,7 +62,7 @@ export function migrateZOD(
         }
       }
 
-      const charMetas = zo['charMetas'] as ICharMeta[]
+      const charMetas = zood['charMetas'] as ICharMeta[]
       if (charMetas) {
         const charMeta = charMetas.find(
           (c) => ((c as any)['id'] as string) === oldKey
@@ -73,14 +73,14 @@ export function migrateZOD(
         }
       }
 
-      const discs = zo.discs
+      const discs = zood.discs
       if (discs) {
         discs
           .filter((disc) => (disc.location as string) === oldKey)
           .forEach((disc) => (disc.location = newKey))
       }
 
-      const weng = zo['wengines'] as IWengine[]
+      const weng = zood['wengines'] as IWengine[]
       if (weng) {
         weng
           .filter((weng) => (weng.location as string) === oldKey)
@@ -91,10 +91,10 @@ export function migrateZOD(
     migrateData('QingYi', 'Qingyi')
   })
 
-  zo.dbVersion = currentDBVersion
+  zood.dbVersion = currentDBVersion
   if (version > currentDBVersion)
     throw new Error(`Database version ${version} is not supported`)
-  return zo
+  return zood
 }
 
 /**

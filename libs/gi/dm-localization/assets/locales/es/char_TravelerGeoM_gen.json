@@ -105,6 +105,21 @@
       "0": "El último golpe del Ataque Normal provoca una destrucción que inflige un 60% de <geo>Daño Geo</geo> a los enemigos dentro del AdE."
     }
   },
+  "lockedPassive": {
+    "name": "Adamantita extranjera",
+    "description": {
+      "0": "Obtienes nuevos poderes gracias a tus viajes pasados, de manera que ganarás <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>fortalecimientos</strong></tooltip> adicionales por cada elemento con el que hayas resonado.",
+      "1": "<br/>",
+      "2": "Además, cuando los personajes cercanos del equipo estén protegidos por un escudo, cuando el escudo se sustituya por cualquier motivo o cuando se genere una <geo>creación Geo</geo>, {F#la}{M#el} Viajer{F#a}{M#o} obtendrá 1 carga de “filo petreoarcaico”, acumulable hasta un máximo de 3 cargas. Como máximo, se puede obtener 1 carga por segundo de esta forma. Al tener 3 cargas y ejecutar un Ataque Cargado, se consumirán todas las cargas de filo petreoarcaico para ejecutar un <strong>Ataque Cargado: Desprendimiento</strong> especial.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Cargado: Desprendimiento</strong>",
+      "5": [
+        "Cada golpe del Ataque Cargado infligirá <geo>Daño Geo</geo> adicional, con un aumento de daño equivalente al 120% del ATQ {F#de la}{M#del} Viajer{F#a}{M#o}.",
+        "Tras golpear a un enemigo, la Protección de Escudo de los personajes cercanos del equipo aumentará en un 20% durante 15 s.",
+        "Solo se puede ejecutar un <strong>Ataque Cargado: Desprendimiento</strong> una vez cada 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Muro inquebrantable",
     "description": {

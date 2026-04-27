@@ -2,7 +2,7 @@
   "setName": "Retroceso del Meteorito",
   "setEffects": {
     "2": "Protección de Escudo +35%.",
-    "4": "Los Ataque Normales y Cargados obtienen un 40% de daño adicional mientras estés bajo la protección de un escudo."
+    "4": "Los Ataques Normales y Cargados obtienen un 40% de daño adicional mientras estés bajo la protección de un escudo."
   },
   "pieces": {
     "flower": {

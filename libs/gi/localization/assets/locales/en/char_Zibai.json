@@ -1,0 +1,10 @@
+{
+  "a1Cond": "Under the <strong>Moonfall</strong> effect",
+  "stride_dmgInc": "Spirit Steed's Stride Addl. DMG Increase",
+  "stride_lunarcrystallize_dmg_": "Spirit Steed's Stride Lunar-Crystallize DMG Bonus",
+  "shift_lunarcrystallize_mult_": "Lunar Phase Shift Lunar-Crystallize Mult.",
+  "c1Cond": "First <strong>Spirit Steed's Stride</strong> after switching to <strong>Lunar Phase Shift</strong> mode",
+  "c2Cond": "In the <strong>Lunar Phase Shift</strong> mode",
+  "c4Cond": "Under the <strong>Scattermoon Splendor</strong> effect",
+  "c6Cond": "<strong>Phase Shift Radiance</strong> consumed above 70"
+}

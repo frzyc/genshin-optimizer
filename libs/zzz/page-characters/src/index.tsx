@@ -206,8 +206,12 @@ export default function PageCharacter() {
   const sortByButtonProps = {
     sortKeys: [...sortKeys],
     value: sortType,
-    onChange: (sortType: string) =>
-      database.displayCharacter.set({ sortType: sortType as CharacterSortKey }),
+    onChange: (sortType: CharacterSortKey) => {
+      if (sortType !== 'new')
+        database.displayCharacter.set({
+          sortType: sortType,
+        })
+    },
     ascending: ascending,
     onChangeAsc: (ascending: boolean) =>
       database.displayCharacter.set({ ascending }),

@@ -41,7 +41,7 @@
   "skill": {
     "name": "Nhị Nguyên - Hội Tụ Và Phân Chia",
     "description": {
-      "0": "Tinh lọc chất liệu của linh hồn và ước nguyện để tiến hành <strong>Chuyển Hóa Tinh Chất</strong>. Trong thời gian này, Kỹ Năng Nguyên Tố <strong>Nhị Nguyên - Hội Tụ Và Phân Chia</strong> của Durin sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <strong>Chuyển Hóa - Xác Nhận Hóa Trắng</strong>, Tấn Công Thường <strong>Chém Cánh Rực Rỡ</strong> sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <strong>Chuyển Hóa - Phủ Nhận Độ Đen</strong>.",
+      "0": "Tinh lọc chất liệu của linh hồn và ước nguyện để tiến hành <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Chuyển Hóa Tinh Chất</strong></tooltip>. Trong thời gian này, Kỹ Năng Nguyên Tố <strong>Nhị Nguyên - Hội Tụ Và Phân Chia</strong> của Durin sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <strong>Chuyển Hóa - Xác Nhận Hóa Trắng</strong>, Tấn Công Thường <strong>Chém Cánh Rực Rỡ</strong> sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <strong>Chuyển Hóa - Phủ Nhận Độ Đen</strong>.",
       "1": "<br/>",
       "2": "<strong>Chuyển Hóa - Xác Nhận Hóa Trắng</strong>",
       "3": "Gây một lần <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> lên kẻ địch ở gần, xóa bỏ Chuyển Hóa Tinh Chất và tiến vào trạng thái <strong>Xác Nhận Hóa Trắng</strong> trong 30s.",
@@ -73,7 +73,7 @@
   "burst": {
     "name": "Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển",
     "description": {
-      "0": "Giải phóng sức mạnh của \"Thú\" dưới cách thức khác nhau. Căn cứ vào trạng thái <strong>Chuyển Hóa Tinh Chất</strong> của Durin để thi triển Kỹ Năng Nộ khác nhau.",
+      "0": "Giải phóng sức mạnh của \"Thú\" dưới cách thức khác nhau. Căn cứ vào trạng thái <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Chuyển Hóa Tinh Chất</strong></tooltip> của Durin để thi triển Kỹ Năng Nộ khác nhau.",
       "1": "<br/>",
       "2": "<strong>Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển</strong>",
       "3": "Nếu Durin trong trạng thái <strong>Xác Nhận Hóa Trắng</strong>, sẽ thi triển Kỹ Năng Nộ <strong>Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển</strong>, gây ba lần <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> lên kẻ địch phía trước, và phô diễn sức mạnh của bản thân dưới hình thái <strong>Rồng Lửa Trắng</strong>. Rồng Lửa Trắng sẽ đi theo nhân vật trong trận hiện tại, tấn công kẻ địch xung quanh theo chu kỳ, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>. Sát thương này được xem là sát thương Kỹ Năng Nộ.",
@@ -133,7 +133,7 @@
       "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Về Thế Giới Này</strong>, Durin sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
       "1": "<br/>",
       "2": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
-      "3": "Tất cả hiệu quả trong Thiên Phú Đột Phá <strong>Ánh Sáng Hiện Diện Theo Thần Số</strong> sẽ tăng 75% (ngoại trừ thời gian duy trì)."
+      "3": "Tất cả hiệu quả trong Thiên Phú Đột Phá <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Ánh Sáng Hiện Diện Theo Thần Số</strong></tooltip> sẽ tăng 75% (ngoại trừ thời gian duy trì)."
     }
   },
   "constellation1": {
@@ -157,20 +157,20 @@
   "constellation3": {
     "name": "Gương Lửa Hiển Hiện",
     "description": {
-      "0": "Cấp kỹ năng <strong>Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Durin_gen baseKey18=burst>Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation4": {
     "name": "Cội Nguồn Dâng Trào",
     "description": {
-      "0": "Durin tăng 40% sát thương Kỹ Năng Nộ. Ngoài ra, khi kích hoạt hiệu quả tiêu hao <strong>Vòng Tròn Khai Sáng</strong> trong Cung Mệnh <strong>Đất Đỏ Nghịch Chuyển</strong>, có 30% xác suất không tiêu hao Vòng Tròn Khai Sáng."
+      "0": "Durin tăng 40% sát thương Kỹ Năng Nộ. Ngoài ra, khi kích hoạt hiệu quả tiêu hao <strong>Vòng Tròn Khai Sáng</strong> trong Cung Mệnh <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Đất Đỏ Nghịch Chuyển</tooltip></strong>, có 30% xác suất không tiêu hao Vòng Tròn Khai Sáng."
     }
   },
   "constellation5": {
     "name": "Vết Nứt Rực Lửa",
     "description": {
-      "0": "Cấp kỹ năng <strong>Nhị Nguyên - Hội Tụ Và Phân Chia</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Durin_gen baseKey18=skill>Nhị Nguyên - Hội Tụ Và Phân Chia</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },

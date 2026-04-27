@@ -41,7 +41,7 @@
   "skill": {
     "name": "Binary Form: Convergence and Division",
     "description": {
-      "0": "ชำระล้างสสารแห่งวิญญาณ และความปรารถนาให้บริสุทธิ์ เพื่อทำการ<strong>แปรแก่นสสาร</strong> ในระหว่างนี้ สกิลธาตุ <strong>Binary Form: Convergence and Division</strong> ของ Durin จะเปลี่ยนเป็นสกิลธาตุพิเศษ <strong>Transmutation: Confirmation of Purity</strong> และการโจมตีปกติ <strong>Radiant Wingslash</strong> จะเปลี่ยนเป็นสกิลธาตุพิเศษ <strong>Transmutation: Denial of Darkness</strong>",
+      "0": "ชำระล้างสสารแห่งวิญญาณ และความปรารถนาให้บริสุทธิ์ เพื่อทำการ<tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>แปรแก่นสสาร</strong></tooltip> ในระหว่างนี้ สกิลธาตุ <strong>Binary Form: Convergence and Division</strong> ของ Durin จะเปลี่ยนเป็นสกิลธาตุพิเศษ <strong>Transmutation: Confirmation of Purity</strong> และการโจมตีปกติ <strong>Radiant Wingslash</strong> จะเปลี่ยนเป็นสกิลธาตุพิเศษ <strong>Transmutation: Denial of Darkness</strong>",
       "1": "<br/>",
       "2": "<strong>Transmutation: Confirmation of Purity</strong>",
       "3": "สร้าง<pyro>ความเสียหายไฟวงกว้าง</pyro> แก่ศัตรูที่อยู่ในบริเวณใกล้เคียงหนึ่งครั้ง ยกเลิกการแปรแก่นสสาร และเข้าสู่สถานะ <strong>Confirmation of Purity</strong> เป็นเวลา 30 วินาที",
@@ -73,7 +73,7 @@
   "burst": {
     "name": "Principle of Purity: As the Light Shifts",
     "description": {
-      "0": "ปลดปล่อยพลังของ \"อสูร\" ด้วยวิธีที่แตกต่างกัน โดยขึ้นอยู่กับสถานะ<strong>แปรแก่นสสาร</strong>ของ Durin ทำให้ Durin สามารถปล่อยท่าไม้ตายที่แตกต่างกันได้",
+      "0": "ปลดปล่อยพลังของ \"อสูร\" ด้วยวิธีที่แตกต่างกัน โดยขึ้นอยู่กับสถานะ<tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>แปรแก่นสสาร</strong></tooltip>ของ Durin ทำให้ Durin สามารถปล่อยท่าไม้ตายที่แตกต่างกันได้",
       "1": "<br/>",
       "2": "<strong>Principle of Purity: As the Light Shifts</strong>",
       "3": "หาก Durin อยู่ในสถานะ <strong>Confirmation of Purity</strong> จะใช้ท่าไม้ตาย <strong>Principle of Purity: As the Light Shifts</strong> สร้าง<pyro>ความเสียหายไฟวงกว้าง</pyro>แก่ศัตรูที่อยู่ด้านหน้า 3 ครั้ง และแปลงพลังของตนเองให้อยู่ในรูป <strong>\"มังกรเพลิงสีขาว\"</strong> ซึ่งจะติดตามตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น และโจมตีศัตรูรอบข้างเป็นระยะ สร้าง<pyro>ความเสียหายไฟวงกว้าง</pyro> โดยความเสียหายนี้จะถูกมองว่าเป็นความเสียหายจากท่าไม้ตาย",
@@ -133,7 +133,7 @@
       "0": "หลังจากสำเร็จ<strong>แบบฝึกหัดของแม่มด: ปริศนาของโลกนี้</strong> Durin จะกลายเป็นตัวละคร<strong>มนตรา</strong> เมื่อจัดทีมโดยมีตัวละครมนตราอย่างน้อย 2 ตัว จะได้รับเอฟเฟกต์ <strong>Hexerei: Secret Rite</strong> ซึ่งจะเสริมพลังให้กับตัวละครมนตรา",
       "1": "<br/>",
       "2": "<strong>Hexerei: Secret Rite</strong>",
-      "3": "เอฟเฟกต์ทั้งหมดในพรสวรรค์เพิ่มเติม <strong>Light Manifest of the Divine Calculus</strong> (ยกเว้นช่วงระยะเวลาต่อเนื่อง) จะเพิ่มขึ้น 75%"
+      "3": "เอฟเฟกต์ทั้งหมดในพรสวรรค์เพิ่มเติม <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Light Manifest of the Divine Calculus</strong></tooltip> (ยกเว้นช่วงระยะเวลาต่อเนื่อง) จะเพิ่มขึ้น 75%"
     }
   },
   "constellation1": {
@@ -156,20 +156,20 @@
   "constellation3": {
     "name": "Flame Mirror's Revelation",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong>Principle of Purity: As the Light Shifts</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Durin_gen baseKey18=burst>Principle of Purity: As the Light Shifts</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
     "name": "Emanare's Source",
     "description": {
-      "0": "ความเสียหายจากท่าไม้ตายของ Durin เพิ่มขึ้น 40% นอกจากนี้ เมื่อทำให้เกิดเอฟเฟกต์ที่ใช้ <strong>Cycle of Enlightenment</strong> ในกลุ่มดาว <strong>Adamah's Redemption</strong> มีโอกาส 30% ที่จะไม่ใช้ Cycle of Enlightenment"
+      "0": "ความเสียหายจากท่าไม้ตายของ Durin เพิ่มขึ้น 40% นอกจากนี้ เมื่อทำให้เกิดเอฟเฟกต์ที่ใช้ <strong>Cycle of Enlightenment</strong> ในกลุ่มดาว <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Adamah's Redemption</tooltip></strong> มีโอกาส 30% ที่จะไม่ใช้ Cycle of Enlightenment"
     }
   },
   "constellation5": {
     "name": "Scouring Flame's Sundering",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong>Binary Form: Convergence and Division</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Durin_gen baseKey18=skill>Binary Form: Convergence and Division</tooltip></strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },

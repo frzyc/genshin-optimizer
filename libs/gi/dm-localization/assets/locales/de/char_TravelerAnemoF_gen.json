@@ -111,6 +111,22 @@
       "1": "5 s Abklingzeit."
     }
   },
+  "lockedPassive": {
+    "name": "Wind aus der Fremde",
+    "description": {
+      "0": "Verleiht {F#der}{M#dem} Reisenden Kraft aus der Vergangenheit und für jedes Element, mit dem {F#sie}{M#er} im Einklang gestanden hat, zusätzliche <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>Verstärkungseffekte</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Verleiht {F#der}{M#dem} Reisenden zudem, wenn ein Truppenmitglied in der Nähe Gegner mit einem Angriff des Elementartyps <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Kryo</cryo> oder <electro>Elektro</electro> trifft, 1 Stapelung „Klinge des Morgenwinds“ des entsprechenden Elements. „Klinge des Morgenwinds“ von jedem Elementartyp ist nur 1-fach stapelbar. Verbraucht, wenn mindestens 2 Stapelungen „Klinge des Morgenwinds“ vorhanden sind und {F#die}{M#der} Reisende einen heftigen Schlag ausführt, alle Stapelungen und wandelt den heftigen Schlag in den besonderen <strong>heftigen Schlag – Wirbelwind</strong> um.",
+      "3": "<br/>",
+      "4": "<strong>Heftiger Schlag – Wirbelwind</strong>",
+      "5": [
+        " Verursacht erhöhten <anemo>Anemo-SCH</anemo> in jeder Angriffsphase des heftigen Schlags. Die SCH-Erhöhung beträgt 60 % des ANG {F#der}{M#des} Reisenden.",
+        " Generiert für jede verbrauchte „Klinge des Morgenwinds“ eines bestimmten Elementartyps einen Schwertwind des entsprechenden Elementartyps, der entsprechenden Elementar-Schaden in Höhe von 50 % des ANG {F#der}{M#des} Reisenden verursacht. Hierdurch verursachter Schaden gilt als Schaden durch heftige Schläge.",
+        " Der <strong>heftige Schlag – Wirbelwind</strong> kann alle 15 s nur einmal ausgeführt werden.",
+        " Verleiht während der Ausführung eines <strong>heftigen Schlags – Wirbelwind</strong> keine „Klinge des Morgenwinds“."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Wirbelnder Wind",
     "description": {

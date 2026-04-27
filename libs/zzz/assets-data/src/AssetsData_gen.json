@@ -143,6 +143,18 @@
       "cd_s": "ItemSuitShiningAria_S.png",
       "cd_a": "ItemSuitShiningAria_A.png",
       "cd_b": "ItemSuitShiningAria_B.png"
+    },
+    "BunnyInWonderland": {
+      "circle": "SuitBunnyinWonderland.png",
+      "cd_s": "ItemSuitBunnyinWonderland_S.png",
+      "cd_a": "ItemSuitBunnyinWonderland_A.png",
+      "cd_b": "ItemSuitBunnyinWonderland_B.png"
+    },
+    "NotesFromTheChained": {
+      "circle": "SuitNotesFromtheChained.png",
+      "cd_s": "ItemSuitNotesFromtheChained_S.png",
+      "cd_a": "ItemSuitNotesFromtheChained_A.png",
+      "cd_b": "ItemSuitNotesFromtheChained_B.png"
     }
   },
   "chars": {
@@ -474,6 +486,34 @@
       "trap": "IconRoleGeneral54.png",
       "select": "IconRoleSelect54.png",
       "interknot": "IconInterKnotRole0054.png"
+    },
+    "Sunna": {
+      "full": "IconRole58.png",
+      "circle": "IconRoleCircle58.png",
+      "trap": "IconRoleGeneral58.png",
+      "select": "IconRoleSelect58.png",
+      "interknot": "IconInterKnotRole0058.png"
+    },
+    "Aria": {
+      "full": "IconRole57.png",
+      "circle": "IconRoleCircle57.png",
+      "trap": "IconRoleGeneral57.png",
+      "select": "IconRoleSelect57.png",
+      "interknot": "IconInterKnotRole0057.png"
+    },
+    "NangongYu": {
+      "full": "IconRole59.png",
+      "circle": "IconRoleCircle59.png",
+      "trap": "IconRoleGeneral59.png",
+      "select": "IconRoleSelect59.png",
+      "interknot": "IconInterKnotRole0059.png"
+    },
+    "Cissia": {
+      "full": "IconRole60.png",
+      "circle": "IconRoleCircle60.png",
+      "trap": "IconRoleGeneral60.png",
+      "select": "IconRoleSelect60.png",
+      "interknot": "IconInterKnotRole0060.png"
     }
   },
   "wengines": {
@@ -604,6 +644,10 @@
     "CauldronOfClarity": {
       "icon": "Weapon_A_Common_19.png",
       "big": "Weapon_A_Common_19Big.png"
+    },
+    "TheSimmeringPot": {
+      "icon": "Weapon_A_Common_20.png",
+      "big": "Weapon_A_Common_20Big.png"
     },
     "DemaraBatteryMarkII": {
       "icon": "Weapon_A_1011.png",
@@ -804,6 +848,22 @@
     "YesterdayCalls": {
       "icon": "Weapon_S_1481.png",
       "big": "Weapon_S_1481Big.png"
+    },
+    "Thoughtbop": {
+      "icon": "Weapon_S_1491.png",
+      "big": "Weapon_S_1491Big.png"
+    },
+    "AngelInTheShell": {
+      "icon": "Weapon_S_1501.png",
+      "big": "Weapon_S_1501Big.png"
+    },
+    "NeonFantasies": {
+      "icon": "Weapon_S_1511.png",
+      "big": "Weapon_S_1511Big.png"
+    },
+    "SerpentineSeeker": {
+      "icon": "Weapon_S_1521.png",
+      "big": "Weapon_S_1521Big.png"
     }
   }
 }

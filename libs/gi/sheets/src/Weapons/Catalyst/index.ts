@@ -26,6 +26,7 @@ import MagicGuide from './MagicGuide'
 import MappaMare from './MappaMare'
 import MemoryOfDust from './MemoryOfDust'
 import NightweaversLookingGlass from './NightweaversLookingGlass'
+import NocturnesCurtainCall from './NocturnesCurtainCall'
 import OathswornEye from './OathswornEye'
 import OtherworldlyStory from './OtherworldlyStory'
 import PocketGrimoire from './PocketGrimoire'
@@ -77,6 +78,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   MappaMare,
   MemoryOfDust,
   NightweaversLookingGlass,
+  NocturnesCurtainCall,
   OathswornEye,
   OtherworldlyStory,
   PocketGrimoire,

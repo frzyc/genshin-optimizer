@@ -111,6 +111,22 @@
       "1": "Questo effetto può avvenire solo una volta ogni 5 s."
     }
   },
+  "lockedPassive": {
+    "name": "Iravento straniero",
+    "description": {
+      "0": "Trai nuova forza dai tuoi viaggi passati. Ottieni <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effetti positivi aggiuntivi</strong></tooltip> per ogni elemento con cui hai risuonato.",
+      "1": "<br/>",
+      "2": "Inoltre, quando gli attacchi dei membri vicini del gruppo il cui elemento è <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> o <electro>Electro</electro> colpiscono gli avversari, {F#la viaggiatrice}{M#il viaggiatore} ottiene 1 accumulo di Lama della Brezza mattutina. Ogni tipo elementale può fornire 1 accumulo di Lama della Brezza mattutina. Dopo aver ottenuto almeno 2 accumuli, sferrare un attacco caricato li consuma tutti e trasforma l'attacco in un <strong>Attacco caricato: Turbine</strong> speciale.",
+      "3": "<br/>",
+      "4": "<strong>Attacco caricato: Turbine</strong>",
+      "5": [
+        " Ogni colpo di attacco caricato infligge <anemo>DAN da Anemo</anemo> aumentati. L'aumento dei DAN è pari a un 60% dell'ATT {F#della viaggiatrice}{M#del viaggiatore}.",
+        " Per ogni accumulo di Lama della Brezza mattutina consumato, viene evocato anche un Vento affilato del tipo elementale corrispondente, che infligge DAN elementali pari a un 50% dell'ATT {F#della viaggiatrice}{M#del viaggiatore}. Tali DAN sono considerati DAN da attacco caricato.",
+        " È possibile scatenare <strong>Attacco caricato: Turbine</strong> una volta ogni 15 s.",
+        " Durante la durata di <strong>Attacco caricato: Turbine</strong>, non è possibile ottenere accumuli di Lama della Brezza mattutina."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Vortice furente",
     "description": {

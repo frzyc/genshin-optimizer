@@ -107,14 +107,23 @@ export const transformativeReactions: Record<
     resist: 'dendro',
     canCrit: true,
   },
+  lunarcrystallize: {
+    name: 'Lunar-Crystallize',
+    multi: 0.96,
+    variants: ['hydro', 'geo'],
+    resist: 'geo',
+    canCrit: true,
+  },
 } as const
 export const crittableTransformativeReactions = [
+  'lunarcharged',
   'burning',
   'bloom',
   'burgeon',
   'hyperbloom',
   'lunarbloom',
   'swirl',
+  'lunarcrystallize',
 ] as const
 export type CrittableTransformativeReactionsKey =
   (typeof crittableTransformativeReactions)[number]

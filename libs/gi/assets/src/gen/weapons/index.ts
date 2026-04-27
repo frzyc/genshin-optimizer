@@ -77,6 +77,8 @@ import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import FruitfulHook from './FruitfulHook'
+import GestOfTheMightyWolf from './GestOfTheMightyWolf'
+import GoldenFrostboundOath from './GoldenFrostboundOath'
 import HakushinRing from './HakushinRing'
 import Halberd from './Halberd'
 import Hamayumi from './Hamayumi'
@@ -95,6 +97,7 @@ import KeyOfKhajNisut from './KeyOfKhajNisut'
 import KingsSquire from './KingsSquire'
 import KitainCrossSpear from './KitainCrossSpear'
 import LightOfFoliarIncision from './LightOfFoliarIncision'
+import LightbearingMoonshard from './LightbearingMoonshard'
 import LionsRoar from './LionsRoar'
 import LithicBlade from './LithicBlade'
 import LithicSpear from './LithicSpear'
@@ -116,6 +119,7 @@ import MoonweaversDawn from './MoonweaversDawn'
 import MountainBracingBolt from './MountainBracingBolt'
 import MouunsMoon from './MouunsMoon'
 import NightweaversLookingGlass from './NightweaversLookingGlass'
+import NocturnesCurtainCall from './NocturnesCurtainCall'
 import OathswornEye from './OathswornEye'
 import OldMercsPal from './OldMercsPal'
 import OtherworldlyStory from './OtherworldlyStory'
@@ -307,6 +311,8 @@ const data = {
   Frostbearer,
   FruitOfFulfillment,
   FruitfulHook,
+  GestOfTheMightyWolf,
+  GoldenFrostboundOath,
   HakushinRing,
   Halberd,
   Hamayumi,
@@ -325,6 +331,7 @@ const data = {
   KingsSquire,
   KitainCrossSpear,
   LightOfFoliarIncision,
+  LightbearingMoonshard,
   LionsRoar,
   LithicBlade,
   LithicSpear,
@@ -346,6 +353,7 @@ const data = {
   MountainBracingBolt,
   MouunsMoon,
   NightweaversLookingGlass,
+  NocturnesCurtainCall,
   OathswornEye,
   OldMercsPal,
   OtherworldlyStory,

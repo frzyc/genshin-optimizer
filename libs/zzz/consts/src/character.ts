@@ -3,12 +3,14 @@ export const allCharacterKeys = [
   'Alice',
   'Anby',
   'Anton',
+  'Aria',
   'AstraYao',
   'Banyue',
   'Ben',
   'Billy',
   'Burnice',
   'Caesar',
+  'Cissia',
   'Corin',
   'Dialyn',
   'Ellen',
@@ -25,6 +27,7 @@ export const allCharacterKeys = [
   'Lycaon',
   'Manato',
   'Miyabi',
+  'NangongYu',
   'Nekomata',
   'Nicole',
   'OrphieMagus',
@@ -38,6 +41,7 @@ export const allCharacterKeys = [
   'Soldier0Anby',
   'Soldier11',
   'Soukaku',
+  'Sunna',
   'Trigger',
   'Vivian',
   'Yanagi',
@@ -77,6 +81,7 @@ export const allFactionKeys = [
   'YunkuiSummit',
   'SpookShack',
   'KrampusComplianceAuthority',
+  'AngelsOfDelusion',
 ] as const
 export type FactionKey = (typeof allFactionKeys)[number]
 

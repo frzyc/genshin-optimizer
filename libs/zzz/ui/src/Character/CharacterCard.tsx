@@ -8,12 +8,12 @@ import {
   type CharacterKey,
   type MilestoneKey,
   allSkillKeys,
+  milestoneMaxLevel,
 } from '@genshin-optimizer/zzz/consts'
 import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
 import type { CharacterDatum } from '@genshin-optimizer/zzz/stats'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
-import { milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
 import { Badge, CardActionArea, Typography } from '@mui/material'
 import type { Variant } from '@mui/material/styles/createTypography'
 import { Box } from '@mui/system'

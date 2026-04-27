@@ -1,4 +1,5 @@
 import type { InternalElement } from '../../mapping'
+import { deobfPropMappings } from '../../mapping'
 import { readDMJSON } from '../../util'
 
 type AvatarSkillExcelConfigDataObf = {
@@ -24,7 +25,7 @@ type AvatarSkillExcelConfigDataObf = {
   buffIcon: string //"",
   proudSkillGroupId: number //3439,
   globalValueKey: string //""
-  IACNAENANDH: number // Text hash for upgraded version of skill
+  [deobfPropMappings.upgradedDescTextMapHash]: number // Text hash for upgraded version of skill
 }
 type AvatarSkillExcelConfigData = {
   id: number // 10343,
@@ -56,8 +57,11 @@ const avatarSkillExcelConfigDataSrc = JSON.parse(
 ) as AvatarSkillExcelConfigDataObf[]
 const avatarSkillExcelConfigData = Object.fromEntries(
   avatarSkillExcelConfigDataSrc.map((dataObf) => {
-    const { IACNAENANDH, ...dataTrim } = dataObf
-    const data = { ...dataTrim, upgradedDescTextMapHash: IACNAENANDH }
+    const {
+      [deobfPropMappings.upgradedDescTextMapHash]: upgradedDescTextMapHash,
+      ...dataTrim
+    } = dataObf
+    const data = { ...dataTrim, upgradedDescTextMapHash }
     return [data.id, data]
   })
 ) as { [id: number]: AvatarSkillExcelConfigData }

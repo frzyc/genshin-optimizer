@@ -109,6 +109,21 @@
       "0": "Confère un bonus supplémentaire de recharge d'énergie à l'amulette d'abondance générée par <strong>Lame d'éclair</strong> équivalant à 10 % de la recharge d'énergie {M#du voyageur}{F#de la voyageuse}."
     }
   },
+  "lockedPassive": {
+    "name": "Tonnerre d'ailleurs",
+    "description": {
+      "0": "Permet {M#au voyageur}{F#à la voyageuse} de puiser une force nouvelle dans ses périples passés, lui accordant un <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effet de renforcement</strong></tooltip> supplémentaire pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance.",
+      "1": "<br/>",
+      "2": "De plus, lorsqu'un personnage de l'équipe à proximité utilise un déchaînement élémentaire, {M#le voyageur}{F#la voyageuse} obtient 1 lame de tonnerre tonitruant, un maximum de 3 lames pouvant être obtenu. Avec 3 lames de tonnerre tonitruant, effectuer une attaque chargée consomme toutes les lames pour déclencher une <strong>attaque chargée « Détonation »</strong> spéciale.",
+      "3": "<br/>",
+      "4": "<strong>Attaque chargée « Détonation »</strong>",
+      "5": [
+        " Chaque coup de l'attaque chargée inflige des <electro>DGT Électro</electro> qui sont augmentés d'une valeur équivalant à 100 % de l'ATQ {M#du voyageur}{F#de la voyageuse}.",
+        " 3 s après avoir touché un ennemi, un coup de foudre supplémentaire est déclenché pour infliger des <electro>DGT Électro</electro> d'une valeur équivalant à 200 % de l'ATQ {M#du voyageur}{F#de la voyageuse} et générer une amulette d'abondance, ces DGT étant considérés comme des DGT d'attaque chargée.",
+        " Une <strong>attaque chargée « Détonation »</strong> peut être déclenchée une fois toutes les 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Orage de récolte printanière",
     "description": {

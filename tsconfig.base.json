@@ -114,6 +114,7 @@
       "@genshin-optimizer/gi/prisma-schema": [
         "libs/gi/prisma-schema/src/index.ts"
       ],
+      "@genshin-optimizer/gi/schema": ["libs/gi/schema/src/index.ts"],
       "@genshin-optimizer/gi/sheets": ["libs/gi/sheets/src/index.ts"],
       "@genshin-optimizer/gi/silly-wisher": [
         "libs/gi/silly-wisher/src/index.ts"
@@ -162,6 +163,7 @@
       ],
       "@genshin-optimizer/sr/page-team": ["libs/sr/page-team/src/index.tsx"],
       "@genshin-optimizer/sr/page-teams": ["libs/sr/page-teams/src/index.tsx"],
+      "@genshin-optimizer/sr/schema": ["libs/sr/schema/src/index.ts"],
       "@genshin-optimizer/sr/solver": ["libs/sr/solver/src/index.ts"],
       "@genshin-optimizer/sr/srod": ["libs/sr/srod/src/index.ts"],
       "@genshin-optimizer/sr/stats": ["libs/sr/stats/src/index.ts"],
@@ -206,6 +208,7 @@
       "@genshin-optimizer/zzz/page-wengines": [
         "libs/zzz/page-wengines/src/index.tsx"
       ],
+      "@genshin-optimizer/zzz/schema": ["libs/zzz/schema/src/index.ts"],
       "@genshin-optimizer/zzz/solver": ["libs/zzz/solver/src/index.ts"],
       "@genshin-optimizer/zzz/stats": ["libs/zzz/stats/src/index.ts"],
       "@genshin-optimizer/zzz/svgicons": ["libs/zzz/svgicons/src/index.ts"],
